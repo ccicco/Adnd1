@@ -1,40 +1,134 @@
 // ============================================================================
-// Adnd1 — ai/actor.cpp
-// Actor derived values + the encounter driver.
+// Adnd1 — ai/actor.cpp — R18 DELTA
+//
+// Edits to the committed ai/actor.cpp from R15:
+//   1. resolveMelee: after the sleep-wake block, before the death
+//      check, add the specials loop (below).
+//   2. New method Encounter::resolveSpecial (below).
+//   3. monsters/MonsterRegistry.cpp toActor(): copy specials into
+//      Actor (snippet at the bottom of this file).
 // ============================================================================
 
-#include "actor.h"
+// --- in resolveMelee, insert after the sleep-wake block, BEFORE
+//     the "if (!defender.alive())" death check -------------------------------
 
-#include <cstdio>
-
-namespace ai {
-
-// ----------------------------------------------------------------------------
-// Actor derived values
-// ----------------------------------------------------------------------------
-
-int Actor::armorClass() const {
-    if (isCharacter) {
-        return items::effectiveAc(armor, shield, 0, dex);
+    // R18: special attacks on a hit (monsters)
+    if (!attacker.isCharacter) {
+        for (const auto& sp : attacker.specials)
+            resolveSpecial(attacker, defender, sp);
     }
-    // monster base: unarmored 9 minus half hit dice (convention;
-    // real monster ACs arrive with the Lua registry)
-    int ac = 9 - (int)(hitDice / 2);
-    if (ac < 1) ac = 1;
-    if (hasStatus(spelleffects::STATUS_SHIELDED)) ac -= 2;
-    return ac;
+
+// --- new method at the end of ai::Encounter ----------------------------------
+
+// R18: special attack resolution. Type values mirror
+// monsters::SpecialAttackType (1 poison, 2 paralysis, 3 energy
+// drain, 4 breath weapon). Saves roll against R6 tables with the
+// defender's class/level (monsters save as fighters at HD level).
+void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
+                               const ActorSpecial& sp) {
+    auto trySaveVs = [&](int saveCategory, int penalty) {
+        int target = rules::saveTarget(
+            defender.isCharacter ? defender.classIndex : 0,
+            defender.isCharacter ? defender.level
+                                 : rules::monsterEffectiveLevel(defender.hitDice),
+            (rules::SaveCategory)saveCategory);
+        // penalty makes saving HARDER by raising the target
+        return rules::attemptSave(m_dice, target + penalty, 0);
+    };
+
+    switch (sp.type) {
+        case 1: {   // POISON: save or take extra damage
+            bool saved = trySaveVs(sp.saveCategory > 0 ? sp.saveCategory
+                                                       : rules::SAVE_DEATH_POISON,
+                                   sp.savePenalty);
+            if (saved) {
+                logLine(defender.name + " shrugs off " + sp.name);
+            } else {
+                int dmg = (int)m_dice.roll(
+                    (uint32_t)(sp.diceCount > 0 ? sp.diceCount : 2),
+                    (uint32_t)(sp.diceSides > 0 ? sp.diceSides : 6), 0);
+                if (dmg < 1) dmg = 1;
+                defender.hp -= dmg;
+                logLine(defender.name + " suffers " + sp.name +
+                        " (" + std::to_string(dmg) + " damage)!");
+                if (!defender.alive()) {
+                    defender.hp = 0;
+                    logLine(defender.name + " is slain by " + sp.name + "!");
+                }
+            }
+            break;
+        }
+        case 2: {   // PARALYSIS: save or held (ghoul touch)
+            bool saved = trySaveVs(sp.saveCategory > 0 ? sp.saveCategory
+                                                       : rules::SAVE_PETRIFY_POLY,
+                                   sp.savePenalty);
+            if (saved) {
+                logLine(defender.name + " resists " + sp.name);
+            } else if (defender.alive()) {
+                spelleffects::StatusEffect st;
+                st.kind = spelleffects::STATUS_HELD;   // paralysis = held
+                st.roundsRemaining = 6;   // ghoul paralysis lasts hours
+                                          // in 1e; combat-scale rounds
+                defender.addStatus(st);
+                logLine(defender.name + " is paralyzed by " + sp.name + "!");
+            }
+            break;
+        }
+        case 3: {   // ENERGY DRAIN: no save in 1e
+            if (defender.alive()) {
+                defender.drainLevel(sp.drainLevels);
+                if (defender.isCharacter)
+                    logLine(defender.name + " is DRAINED (" +
+                            std::to_string(sp.drainLevels) +
+                            " level" + (sp.drainLevels > 1 ? "s" : "") +
+                            ")!");
+                else
+                    logLine(defender.name + " is drained by " + sp.name + "!");
+                if (!defender.alive())
+                    logLine(defender.name + " withers to nothing!");
+            }
+            break;
+        }
+        case 4: {   // BREATH WEAPON: dice damage, save for half
+            int dmg = (int)m_dice.roll(
+                (uint32_t)(sp.diceCount > 0 ? sp.diceCount : 3),
+                (uint32_t)(sp.diceSides > 0 ? sp.diceSides : 6), 0);
+            bool saved = trySaveVs(sp.saveCategory > 0 ? sp.saveCategory
+                                                       : rules::SAVE_BREATH,
+                                   sp.savePenalty);
+            if (saved) dmg /= 2;
+            if (dmg < 1) dmg = 1;
+            defender.hp -= dmg;
+            logLine(defender.name + " is caught by " + sp.name +
+                    " (" + std::to_string(dmg) + " damage)!");
+            if (!defender.alive()) {
+                defender.hp = 0;
+                logLine(defender.name + " is slain by " + sp.name + "!");
+            }
+            break;
+        }
+        default:
+            break;
+    }
 }
 
-int Actor::hitAdjustment(const Actor& defender) const {
-    if (isCharacter) {
-        rules::AcType at = rules::acTypeForAc(defender.armorClass());
-        return items::attackAdjustment(weapon, exStr, str, at);
-    }
-    return 0;   // monsters: flat
-}
-
-int Actor::toHit(const Actor& defender) const {
-    int ac = defender.armorClass();
+// ============================================================================
+// monsters/MonsterRegistry.cpp — R18 DELTA
+// In toActor(), after "a.morale = def->morale; ... a.isLeader = ...",
+// add the specials copy:
+//
+//     for (const auto& sp : def->specials) {
+//         ai::ActorSpecial as;
+//         as.type = (int)sp.type;
+//         as.name = sp.name;
+//         as.saveCategory = sp.saveCategory;
+//         as.savePenalty = sp.savePenalty;
+//         as.diceCount = sp.diceCount;
+//         as.diceSides = sp.diceSides;
+//         as.drainLevels = sp.drainLevels;
+//         a.specials.push_back(as);
+//     }
+// ============================================================================    int ac = defender.armorClass();
     if (isCharacter) {
         return rules::attackNumber(classIndex, level, ac);
     }
