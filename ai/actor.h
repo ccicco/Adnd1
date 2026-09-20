@@ -1,40 +1,68 @@
 // ============================================================================
-// Adnd1 — ai/actor.h
-// The unified entity layer: one Actor type for characters and
-// monsters, plus the encounter driver that runs whole fights on the
-// R7 scheduler with R5/R6/R8/R14 resolution.
+// Adnd1 — ai/actor.h — R18 DELTA (special attacks carried by Actor)
+//
+// Apply these edits to the committed ai/actor.h from R15:
+//   1. The specials live in their own struct to avoid a circular
+//      include (monsters/ includes ai/). ActorSpecial mirrors
+//      monsters::SpecialAttack.
+//   2. Add to Actor: std::vector<ActorSpecial> specials; + drainLevel
+//   3. Add to Encounter (public): resolveSpecial()
 // ============================================================================
 
-#pragma once
+// --- paste into ai/actor.h, above struct Actor ------------------------------
 
-#include "../rules/dice.h"
-#include "../rules/combat.h"
-#include "../rules/saves.h"
-#include "../rules/turn.h"
-#include "../spelleffects/spelleffects.h"
-#include "../items/items.h"
-#include "../dm/dm.h"
+// Special attack carried by an Actor (mirrors monsters::SpecialAttack
+// without the dependency; the registry converts on toActor()).
+struct ActorSpecial {
+    int  type = 0;          // monsters::SpecialAttackType values:
+                            // 1 poison, 2 paralysis, 3 energy drain,
+                            // 4 breath weapon
+    std::string name;
+    int  saveCategory = 0;  // rules/SaveCategory
+    int  savePenalty = 0;   // modifier on the save target
+    int  diceCount = 0;
+    int  diceSides = 0;
+    int  drainLevels = 1;
+};
 
-#include <string>
-#include <vector>
+// --- add inside struct Actor ------------------------------------------------
 
-namespace ai {
+    // R18: special attacks (copied from MonsterDef by the registry)
+    std::vector<ActorSpecial> specials;
 
-using rules::Dice;
+    // R18: energy drain bookkeeping for characters
+    void drainLevel(int levels = 1) {
+        for (int i = 0; i < levels; ++i) {
+            if (isCharacter) {
+                if (level <= 1) {
+                    // drained to level 0: the actor falls
+                    hp = 0;
+                    return;
+                }
+                --level;
+                // proportional hp loss (average die per level)
+                int lost = (classIndex == 0) ? 5 : 4;
+                maxHp -= lost;
+                if (maxHp < 1) maxHp = 1;
+                hp -= lost;
+                if (hp < 1) hp = 1;   // drain never kills outright
+            } else {
+                // monsters: lose a hit die
+                if (hitDice <= 1.0f) { hp = 0; return; }
+                hitDice -= 1.0f;
+                maxHp -= 4;
+                if (maxHp < 1) maxHp = 1;
+                if (hp > maxHp) hp = maxHp;
+            }
+        }
+    }
 
-// ----------------------------------------------------------------------------
-// Actor: a combatant. Characters fill the character fields; monsters
-// fill the monster fields. Resolution paths use whichever is set.
-// ----------------------------------------------------------------------------
-struct Actor {
-    std::string name = "Actor";
-    int  team = 0;                 // 0 = party, 1 = monsters
+// --- add to Encounter public section ----------------------------------------
 
-    // identity: character or monster
-    bool isCharacter = false;
-    // character path
-    int  classIndex = 0;           // CharClass index
-    int  level      = 1;
+    // R18: resolve a special attack that landed (called by
+    // resolveMelee after a hit). Logs and applies effects.
+    void resolveSpecial(Actor& attacker, Actor& defender,
+                        const ActorSpecial& sp);    int  level      = 1;
     uint8_t str = 10, dex = 10, con = 10, intel = 10, wis = 10, cha = 10;
     rules::ExceptionalStrength exStr{};
     items::WeaponInstance weapon;
