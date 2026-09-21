@@ -10,6 +10,10 @@
 // R24: multi-member parties — pickFoeForPartyActor now receives the
 //      attacking actor so the app's target hook is consulted PER
 //      MEMBER (each character can hold its own target selection).
+// R25: quaff command — requestDrink(memberIndex) makes that member
+//      drink a potion instead of attacking this round (ACTION_DRINK
+//      on the segment scheduler, end of round per R7); the quaff
+//      hook applies the effect and owns the potion inventory.
 // ============================================================================
 
 #pragma once
@@ -180,6 +184,23 @@ public:
     // Party breaks off next round: monsters swing freely, fight ends.
     void requestFlee() { m_fleeRequested = true; }
 
+    // ---- R25: quaff command -----------------------------------------------
+    // Request that the given party member (index into the party
+    // vector) drink a healing potion THIS round instead of
+    // attacking: their action becomes ACTION_DRINK scheduled at
+    // the end of the round (R7 drink convention). The effect is
+    // applied by the quaff hook when the scheduler reaches the
+    // event — the hook owns the potion inventory and the heal, so
+    // the driver stays inventory-free. If the member cannot act
+    // when the event comes up (held, asleep, down), the hook is
+    // NOT called and no potion is consumed. A new request
+    // overwrites a pending one; a flee-interrupted round drops it.
+    void requestDrink(int memberIndex) { m_drinkMember = memberIndex; }
+
+    void setQuaffHook(std::function<void(Actor& drinker)> hook) {
+        m_quaffHook = std::move(hook);
+    }
+
     // R21: free swing by a monster against a party member (used by
     // the flee sequence; resolved through the normal melee path).
     int partingSwing(Actor& attacker, Actor& defender);
@@ -195,6 +216,9 @@ private:
     std::function<int(const Actor&, const std::vector<Actor>&)>
         m_targetHook;                       // R21
     bool m_fleeRequested = false;           // R21
+
+    int  m_drinkMember = -1;                // R25 (-1 = none)
+    std::function<void(Actor&)> m_quaffHook;   // R25
 
     void logLine(const std::string& s);
     int  teamAlive(int team) const;
