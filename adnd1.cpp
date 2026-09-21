@@ -1,10 +1,17 @@
 // ============================================================================
 // Adnd1 — a 2D tile-based CRPG implementing AD&D 1st Edition rules
-// Rebuild tranche R21: commands bite. Target selection drives who
-// Rolf strikes; flee runs through the encounter driver.
+// Rebuild tranche R22: treasure + XP/level-ups. The reward loop.
+//
+//   - Victory pays XP: each slain monster's xpValue (Lua defs),
+//     divided among surviving party members
+//   - Level-ups on thresholds (rules::xpForLevel): hp roll with
+//     conHPAdjustment, per-die floor 1
+//   - Cleared lairs drop treasure: coins (gp), 10% potion, 5%
+//     magic weapon (+1 long sword for now)
+//   - HUD shows XP toward next level, gold, kills
 //
 // Build (MinGW, Lua 5.4):
-//   g++ -std=c++17 -I. -Ilua/include adnd1.cpp rules/dice.cpp rules/character.cpp rules/combat.cpp rules/saves.cpp rules/turn.cpp spells/spells.cpp spelleffects/spelleffects.cpp items/items.cpp dm/dm.cpp dm/dungeon.cpp ai/actor.cpp monsters/MonsterRegistry.cpp lua/src/liblua.a -o adnd1.exe -mwindows
+//   g++ -std=c++17 -I. -Ilua/include adnd1.cpp rules/dice.cpp rules/character.cpp rules/combat.cpp rules/saves.cpp rules/turn.cpp rules/classes.cpp spells/spells.cpp spelleffects/spelleffects.cpp items/items.cpp dm/dm.cpp dm/dungeon.cpp ai/actor.cpp monsters/MonsterRegistry.cpp lua/src/liblua.a -o adnd1.exe -mwindows
 // ============================================================================
 
 #define WIN32_LEAN_AND_MEAN
@@ -13,6 +20,7 @@
 #include "world/map.h"
 #include "rules/dice.h"
 #include "rules/combat.h"
+#include "rules/classes.h"
 #include "dm/dm.h"
 #include "dm/dungeon.h"
 #include "ai/actor.h"
@@ -92,6 +100,8 @@ struct RoomOccupant {
     std::string monsterKey;
     int         count = 0;
     int         denX = 0, denY = 0;
+    // R22: treasure sits in the lair, looted on victory
+    bool looted = false;
 };
 
 struct Occupancy {
@@ -109,6 +119,20 @@ struct Occupancy {
 };
 
 // ----------------------------------------------------------------------------
+// Treasure (R22): simple, lair-based
+// ----------------------------------------------------------------------------
+
+struct Treasure {
+    int  gold = 0;
+    bool potionHealing = false;    // heals 2d4+2 on pickup use (later)
+    bool magicSword = false;       // +1 long sword
+
+    bool empty() const {
+        return gold == 0 && !potionHealing && !magicSword;
+    }
+};
+
+// ----------------------------------------------------------------------------
 // Party / camera
 // ----------------------------------------------------------------------------
 
@@ -116,6 +140,11 @@ struct Party {
     int x = 0, y = 0;
     ai::Actor fighter;
     bool formed = false;
+
+    // R22: career stats
+    int  xp = 0;
+    int  gold = 0;
+    int  kills = 0;
 
     void formDefault() {
         fighter.name = "Rolf";
@@ -132,6 +161,37 @@ struct Party {
         formed = true;
     }
     bool alive() const { return formed && fighter.alive(); }
+
+    // R22: XP to the NEXT level (0 = at cap for display purposes)
+    int nextLevelXp() const {
+        int lvl = fighter.level + 1;
+        if (lvl > rules::CLASS_LEVEL_CAP[fighter.classIndex]) return -1;
+        return rules::xpForLevel(fighter.classIndex, lvl);
+    }
+
+    // R22: apply XP, level up as thresholds are crossed. Each level
+    // rolls the class hit die + con adjustment (floor 1 per die).
+    void gainXp(int amount, rules::Dice& dice, MessageLog& log) {
+        xp += amount;
+
+        int cap = rules::CLASS_LEVEL_CAP[fighter.classIndex];
+        while (fighter.level < cap &&
+               xp >= rules::xpForLevel(fighter.classIndex,
+                                       fighter.level + 1)) {
+            ++fighter.level;
+            int conAdj = rules::conHPAdjustment(fighter.classIndex,
+                                                fighter.con);
+            int die = rules::rollHitPoints(fighter.classIndex,
+                                           fighter.level, conAdj, dice);
+            fighter.maxHp += die;
+            fighter.hp += die;   // 1e: new hp are immediately usable
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "Rolf attains level %d! (+%d hp, now %d/%d)",
+                     fighter.level, die, fighter.hp, fighter.maxHp);
+            log.add(buf);
+        }
+    }
 };
 
 struct Camera {
@@ -156,7 +216,7 @@ enum GameMode : int {
 };
 
 // ----------------------------------------------------------------------------
-// Combat state — interactive, with commands WIRED to the driver (R21)
+// Combat state — interactive, commands wired to the driver (R21)
 // ----------------------------------------------------------------------------
 
 struct CombatState {
@@ -164,7 +224,7 @@ struct CombatState {
     int  lastResult = -1;
     bool over = false;
 
-    int  selectedTarget = 0;    // roster index the player chose
+    int  selectedTarget = 0;
 
     void start(std::vector<ai::Actor> party, std::vector<ai::Actor> foes,
                uint64_t seed) {
@@ -174,16 +234,12 @@ struct CombatState {
         over = false;
         selectedTarget = 0;
 
-        // R21: the hook answers "who does the party strike?" —
-        // the driver consults it every time a party actor attacks
         encounter->setPlayerTargetHook(
             [this](const ai::Actor&, const std::vector<ai::Actor>& foes) {
                 if (selectedTarget >= 0 &&
                     selectedTarget < (int)foes.size() &&
                     foes[selectedTarget].alive())
                     return selectedTarget;
-                // selection invalid: front-most living (driver
-                // fallback handles it too, but be explicit)
                 for (int i = 0; i < (int)foes.size(); ++i)
                     if (foes[i].alive()) return i;
                 return 0;
@@ -246,6 +302,9 @@ struct AppState {
     CombatState combat;
     int         combatRoomIndex = -1;
 
+    // key of the monsters in the current fight (for XP on victory)
+    std::string combatMonsterKey;
+
     void newDungeon(uint64_t s) {
         seed = s;
         dungeon = dm::generateDungeon(s);
@@ -282,6 +341,7 @@ struct AppState {
         for (auto& room : occupancy.rooms) {
             room.monsterKey.clear();
             room.count = 0;
+            room.looted = false;
             if (rng.below(100) >= 50) continue;
             room.monsterKey =
                 candidates[(size_t)rng.below((uint32_t)candidates.size())];
@@ -314,6 +374,73 @@ struct AppState {
         return -1;
     }
 
+    // R22: roll the treasure for a lair (level-scaled, simple)
+    Treasure rollTreasure(int roomIndex) {
+        Treasure t;
+        (void)roomIndex;
+        // coins: 3d6 x 10 gp, scaled by dungeon level
+        t.gold = (int)dice.roll(3, 6, 0) * 10 * dungeonLevel;
+        // 10% a healing potion
+        if (rng.below(100) < 10) t.potionHealing = true;
+        // 5% a +1 long sword
+        if (rng.below(100) < 5) t.magicSword = true;
+        return t;
+    }
+
+    // R22: pay XP for slain monsters and loot the lair treasure.
+    // Called on a party victory only.
+    void awardVictory() {
+        if (!combat.encounter || combat.lastResult != 0) return;
+
+        // XP: each slain monster's xpValue, divided among survivors
+        const monsters::MonsterDef* def = registry.find(combatMonsterKey);
+        int perMonster = def ? def->xpValue : 10;
+        int survivors = 0;
+        for (const auto& a : combat.encounter->party())
+            if (a.alive()) ++survivors;
+        if (survivors < 1) survivors = 1;
+
+        int slain = 0;
+        for (const auto& m : combat.encounter->monsters())
+            if (!m.alive()) ++slain;
+
+        if (slain > 0) {
+            int totalXp = perMonster * slain;
+            int share = totalXp / survivors;
+            party.kills += slain;
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "%d slain, %d xp each.", slain, share);
+            log.add(buf);
+            party.gainXp(share, dice, log);
+        }
+
+        // treasure in the lair
+        if (combatRoomIndex >= 0) {
+            RoomOccupant& room = occupancy.rooms[combatRoomIndex];
+            if (!room.monsterKey.empty()) {
+                Treasure t = rollTreasure(combatRoomIndex);
+                if (t.gold > 0) {
+                    party.gold += t.gold;
+                    char buf[96];
+                    snprintf(buf, sizeof buf,
+                             "You loot %d gp.", t.gold);
+                    log.add(buf);
+                }
+                if (t.potionHealing)
+                    log.add("You find a potion of healing!");
+                if (t.magicSword) {
+                    log.add("You find a +1 long sword!");
+                    party.fighter.weapon.id = items::WPN_LONG_SWORD;
+                    party.fighter.weapon.plus = 1;
+                }
+                room.monsterKey.clear();
+                room.count = 0;
+                room.looted = true;
+            }
+        }
+    }
+
     void spawnRoomEncounter(int roomIndex) {
         if (mode == MODE_COMBAT) return;
         if (!party.alive()) return;
@@ -339,6 +466,7 @@ struct AppState {
 
         combat.start({party.fighter}, foes, rng.below(0x7FFFFFFF));
         combatRoomIndex = roomIndex;
+        combatMonsterKey = room.monsterKey;
         mode = MODE_COMBAT;
     }
 
@@ -362,17 +490,16 @@ struct AppState {
         log.add(buf);
 
         combatRoomIndex = -1;
+        combatMonsterKey = key;
         combat.start({party.fighter}, foes, rng.below(0x7FFFFFFF));
         mode = MODE_COMBAT;
     }
 
-    // R21: flee is now a request to the driver — free swings and
-    // the dex check resolve inside stepRound()
     void playerFlee() {
         if (mode != MODE_COMBAT || !combat.encounter || combat.over)
             return;
         combat.requestFlee();
-        combat.step();               // resolves the break-off
+        combat.step();
         if (combat.over) endCombat();
     }
 
@@ -380,6 +507,10 @@ struct AppState {
         if (combat.encounter) {
             if (!combat.encounter->party().empty())
                 party.fighter = combat.encounter->party()[0];
+
+            // R22: XP + loot on victory (before outcome logging so
+            // the level-up lines land near the victory line)
+            awardVictory();
 
             const char* outcome = "?";
             switch (combat.lastResult) {
@@ -391,13 +522,6 @@ struct AppState {
             }
             log.add(outcome);
 
-            if (combat.lastResult == 0 && combatRoomIndex >= 0) {
-                RoomOccupant& room = occupancy.rooms[combatRoomIndex];
-                if (!room.monsterKey.empty()) {
-                    room.monsterKey.clear();
-                    room.count = 0;
-                }
-            }
             if (combat.lastResult == 1) {
                 log.add("GAME OVER - press N for a new dungeon.");
             }
@@ -544,7 +668,7 @@ static void drawView(HDC dc, const AppState& s) {
 }
 
 // ----------------------------------------------------------------------------
-// Drawing: combat view — rosters with selection highlight
+// Drawing: combat view
 // ----------------------------------------------------------------------------
 
 static void drawCombatantRow(HDC dc, int x, int y, int w,
@@ -644,18 +768,27 @@ static void drawHud(HDC dc, const AppState& s) {
     SetBkColor(dc, RGB(25, 22, 18));
     SetTextColor(dc, RGB(200, 190, 160));
 
+    // R22: XP progress line
+    int next = party.nextLevelXp();
+    char xpBuf[48];
+    if (next < 0)
+        snprintf(xpBuf, sizeof xpBuf, "XP %d (cap)", party.xp);
+    else
+        snprintf(xpBuf, sizeof xpBuf, "XP %d/%d", party.xp, next);
+
     char line[192];
     snprintf(line, sizeof line,
-             "Rolf HP %d/%d   Turn: %d   Seed: %llu   Rooms: %d (%d lairs)   Lvl %d",
-             party.fighter.hp, party.fighter.maxHp, s.turnCount,
-             (unsigned long long)s.seed,
-             (int)s.dungeon.rooms.size(), s.countOccupied(),
-             s.dungeonLevel);
+             "Rolf Lv%d  HP %d/%d  %s  %d gp  Kills %d  Turn %d  Seed %llu",
+             party.fighter.level, party.fighter.hp, party.fighter.maxHp,
+             xpBuf, party.gold, party.kills, s.turnCount,
+             (unsigned long long)s.seed);
     TextOutA(dc, 12, VIEW_H + 8, line, (int)strlen(line));
 
     snprintf(line, sizeof line,
-             "[arrows/WASD] move  [N] new dungeon  [E] wander encounter  "
-             "[F] plant wight  [esc] quit");
+             "Lvl %d  Rooms: %d (%d lairs)  [arrows/WASD] move  "
+             "[N] new dungeon  [E] wander  [F] plant wight  [esc] quit",
+             s.dungeonLevel, (int)s.dungeon.rooms.size(),
+             s.countOccupied());
     TextOutA(dc, 12, VIEW_H + 32, line, (int)strlen(line));
 
     SetTextColor(dc, RGB(160, 150, 120));
@@ -683,7 +816,6 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
 
         case WM_KEYDOWN:
             if (g_app.mode == MODE_COMBAT) {
-                // ---- combat keys (R21: all wired to the driver) ----
                 switch (wp) {
                     case VK_TAB:
                         g_app.combat.cycleTarget(
@@ -691,7 +823,6 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         break;
 
                     case VK_SPACE:
-                        // attack the selected target + advance round
                         if (g_app.combat.step())
                             g_app.endCombat();
                         break;
@@ -707,7 +838,6 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         break;
 
                     default:
-                        // number keys 1-9 select targets directly
                         if (wp >= '1' && wp <= '9') {
                             int idx = (int)(wp - '1');
                             if (g_app.combat.encounter &&
@@ -721,7 +851,6 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         break;
                 }
             } else {
-                // ---- explore keys ----
                 switch (wp) {
                     case VK_LEFT:  case 'A': onPartyMove(-1,  0); break;
                     case VK_RIGHT: case 'D': onPartyMove( 1,  0); break;
@@ -737,7 +866,7 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                             g_app.spawnWanderingEncounter();
                         break;
 
-                    case 'F': {  // plant a wight in the nearest room
+                    case 'F': {
                         if (!g_app.party.alive()) break;
                         int best = -1;
                         long bestDist = -1;
