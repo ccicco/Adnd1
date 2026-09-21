@@ -11,6 +11,11 @@
 //      replaced by one ACTION_DRINK at segment 10 (end of round,
 //      R7 drink convention); the quaff hook applies the effect
 //      when the scheduler reaches the event.
+// R27: cast command — a requested member's melee submissions are
+//      replaced by one ACTION_SPELL at the side's initiative
+//      segment + casting time; resolveCast resolves it through
+//      spelleffects::resolveSpell and applies hp/status/note
+//      results back to the actors.
 // ============================================================================
 
 #include "actor.h"
@@ -348,6 +353,115 @@ int Encounter::partingSwing(Actor& attacker, Actor& defender) {
     return dmg;
 }
 
+// ----------------------------------------------------------------------------
+// R27: cast resolution
+// ----------------------------------------------------------------------------
+
+// Resolve a party member's spell: pick targets by the SpellDef's
+// shape, run spelleffects::resolveSpell (saves, MR, damage dice,
+// statuses are all decided there), then apply the per-target
+// results back to the live actors. Slot consumption happens here,
+// after the silence/slot guards pass.
+void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
+    const spells::SpellDef& s = spells::spell(id);
+
+    // silence blocks the verbal component — nothing consumed
+    if (caster.hasStatus(spelleffects::STATUS_SILENCED)) {
+        logLine(caster.name + " cannot speak the words!");
+        return;
+    }
+    if (s.level < 1 || s.level > 3) return;
+    if (caster.slotsByLevel[s.level - 1] <= 0) {
+        logLine(caster.name + " has no level-" +
+                std::to_string(s.level) + " slots left!");
+        return;
+    }
+    --caster.slotsByLevel[s.level - 1];
+    logLine(caster.name + " casts " + s.name + "!");
+
+    // pick targets by shape (caller-side targeting, R14 contract)
+    std::vector<Actor*> targets;
+    bool healing = (id == spells::CL_CURE_LIGHT_WOUNDS ||
+                    id == spells::CL_CURE_SERIOUS_WOUNDS);
+    switch (s.target) {
+        case spells::TARGET_SELF:
+            targets.push_back(&caster);
+            break;
+        case spells::TARGET_AREA:
+        case spells::TARGET_CREATURES:
+            for (auto& m : m_monsters)
+                if (m.alive()) targets.push_back(&m);
+            break;
+        case spells::TARGET_CREATURE:
+        case spells::TARGET_SPECIAL:
+        default:
+            if (healing) {
+                // cure: the most-wounded living ally (explore-quaff
+                // parity; harming undead with cure is deferred)
+                Actor* best = nullptr;
+                for (auto& p : m_party) {
+                    if (!p.alive()) continue;
+                    if (!best || (p.maxHp - p.hp) >
+                                 (best->maxHp - best->hp))
+                        best = &p;
+                }
+                if (best) targets.push_back(best);
+            } else {
+                // single foe: the member's own selection (R21/R24
+                // hook), falling back to front-most living
+                Actor* t = pickFoeForPartyActor(caster);
+                if (t) targets.push_back(t);
+            }
+            break;
+    }
+    if (targets.empty()) return;
+
+    std::vector<spelleffects::TargetDesc> descs;
+    for (const Actor* t : targets)
+        descs.push_back(t->asTarget());
+
+    spelleffects::SpellCastResult r =
+        spelleffects::resolveSpell(m_dice, id, caster.level, descs);
+
+    for (size_t i = 0; i < r.perTarget.size() &&
+                       i < targets.size(); ++i) {
+        const spelleffects::TargetResult& tr = r.perTarget[i];
+        Actor& t = *targets[i];
+        if (!tr.affected) continue;
+
+        if (tr.damage > 0) {
+            t.hp -= tr.damage;
+            // sleepers wake when damaged (mirror the melee rule)
+            if (t.alive() &&
+                t.hasStatus(spelleffects::STATUS_SLEEP)) {
+                for (auto& st : t.statuses)
+                    if (st.kind == spelleffects::STATUS_SLEEP)
+                        st.kind = spelleffects::STATUS_NONE;
+                t.tickStatuses();
+                logLine(t.name + " wakes up!");
+            }
+            if (!t.alive()) {
+                t.hp = 0;
+                logLine(t.name + " is down!");
+            }
+        } else if (tr.damage < 0) {
+            // negative = healing (R14 TargetResult contract)
+            int before = t.hp;
+            t.hp -= tr.damage;
+            if (t.hp > t.maxHp) t.hp = t.maxHp;
+            logLine(t.name + " is healed (+" +
+                    std::to_string(t.hp - before) + " hp)");
+        }
+
+        if (tr.status.kind != spelleffects::STATUS_NONE &&
+            t.alive())
+            t.addStatus(tr.status);
+
+        if (tr.note[0] != '\0')
+            logLine(std::string(tr.note));
+    }
+}
+
 int Encounter::stepRound() {
     ++m_round;
 
@@ -412,8 +526,14 @@ int Encounter::stepRound() {
     int drinkMember = m_drinkMember;
     m_drinkMember = -1;
 
+    // R27: capture + clear the cast request for this round
+    int castMember = m_castMember;
+    spells::SpellId castSpell = m_castSpell;
+    m_castMember = -1;
+
     auto submitTeam = [&](std::vector<Actor>& team, int baseSeg,
-                          int drinkIdx) {
+                          int drinkIdx, int castIdx,
+                          spells::SpellId castId) {
         for (auto& a : team) {
             if (!a.canAct()) continue;
             int idx = (int)(&a - team.data());
@@ -425,6 +545,20 @@ int Encounter::stepRound() {
                 act.actorId = a.team * 1000 + idx;
                 act.segment = 10;               // end of round
                 sched.submit(act, 10);
+                continue;
+            }
+            // R27: the casting member's round is consumed — one
+            // ACTION_SPELL at initiative segment + casting time
+            // (scheduleAction adds castingTime and clamps to 10)
+            if (idx == castIdx) {
+                const spells::SpellDef& sd = spells::spell(castId);
+                rules::Action act;
+                act.type = rules::ACTION_SPELL;
+                act.actorId = a.team * 1000 + idx;
+                act.castingTime = sd.castingTime;
+                act.segment = baseSeg + sd.castingTime;
+                if (act.segment > 10) act.segment = 10;
+                sched.submit(act, baseSeg);
                 continue;
             }
             rules::Action act;
@@ -440,8 +574,8 @@ int Encounter::stepRound() {
             }
         }
     };
-    submitTeam(m_party, baseSegP, drinkMember);
-    submitTeam(m_monsters, baseSegM, -1);
+    submitTeam(m_party, baseSegP, drinkMember, castMember, castSpell);
+    submitTeam(m_monsters, baseSegM, -1, -1, castSpell);
     sched.beginRound();
 
     // resolve in segment order
@@ -457,6 +591,15 @@ int Encounter::stepRound() {
         // potions left, the round is still consumed)
         if (isParty && idx == drinkMember) {
             if (m_quaffHook) m_quaffHook(attacker);
+            continue;
+        }
+
+        // R27: the cast event — resolveCast runs the spell through
+        // spelleffects and applies results to the actors
+        if (isParty && idx == castMember &&
+            ev.action.type == rules::ACTION_SPELL) {
+            resolveCast(attacker, castSpell);
+            if (teamAlive(0) == 0 || teamAlive(1) == 0) break;
             continue;
         }
 
