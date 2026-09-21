@@ -24,6 +24,10 @@
 //      attacker's DEX reaction adjustment (rules::dexReactionAdj,
 //      PHB p.11-12 missile fire adjustment) for characters; STR
 //      stays excluded (PHB). Closes the R28-logged gap.
+// R35: ammo counting — each missile shot spends one from
+//      Actor::missileAmmo (characters); the round scheduler caps
+//      the rate of fire at the remaining count, and a dry quiver
+//      falls through to melee submissions.
 // ============================================================================
 
 #include "actor.h"
@@ -480,9 +484,18 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
 // missile fire (PHB p.11-12 reaction adjustment, R32). Damage
 // uses the weapon's small/medium or large dice by target size,
 // plus the weapon's enchantment. Sleepers wake when struck
-// (melee rule parity).
+// (melee rule parity). R35: each character shot spends one
+// missile from the quiver (hit or miss).
 void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
     if (!attacker.canAct() || !defender.alive()) return;
+
+    // R35: engine-authoritative gate — a dry quiver fires nothing
+    if (attacker.isCharacter && attacker.missileAmmo <= 0) {
+        logLine(attacker.name + "'s quiver is empty");
+        return;
+    }
+    // R35: spend the missile whether it hits or misses
+    if (attacker.isCharacter) --attacker.missileAmmo;
 
     // gating: defender requires +N weapon (R5)
     int wpnPlus = attacker.isCharacter ? attacker.rangedWeapon.plus
@@ -653,11 +666,16 @@ int Encounter::stepRound() {
             // R28: the shooting member's round is missile fire —
             // one ACTION_MISSILE per shot at the rate of fire,
             // first at the initiative segment, follow-ups +5
-            // segments apart (R7 convention)
-            if (idx == shootIdx && a.hasRangedWeapon()) {
+            // segments apart (R7 convention). R35: shots are
+            // capped at the quiver count; a dry quiver (or no
+            // missile weapon) falls through to melee.
+            if (idx == shootIdx && a.hasRangedWeapon() &&
+                (!a.isCharacter || a.missileAmmo > 0)) {
                 const items::WeaponDef& w =
                     items::weapon(a.rangedWeapon.id);
                 int shots = w.rateOfFire > 0 ? w.rateOfFire : 1;
+                if (a.isCharacter && shots > a.missileAmmo)
+                    shots = a.missileAmmo;   // R35: dry quiver cap
                 for (int i = 0; i < shots; ++i) {
                     rules::Action act;
                     act.type = rules::ACTION_MISSILE;
