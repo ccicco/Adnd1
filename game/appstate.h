@@ -45,6 +45,17 @@
 // armed member (first below 20, else least-supplied — R39
 // convention). Saves are not possible in town (mode resets to
 // EXPLORE on load).
+// R42 (three features): (1) town expansion — the inn sells a
+// safe night's rest (10 gp: full slots, quivers, and 1 hp/level
+// healing, NO wander check), the temple heals the most-wounded
+// member to full (100 gp), the smith sells +1 long swords
+// (500 gp, first living fighter); (2) movement + range bands —
+// missile fire is bounded by the weapon's short range
+// (rangeTens*10 feet, PHB p.39); the round-1 volley lasts
+// rangeBandsOf() rounds before melee closes (1 band = 10' range
+// factor);(3) dungeon scaling — monster lair sizes and treasure
+// gold now scale with depth (cap 2+level/2, gold multiplier
+// 100%+25%/level above 1).
 // ============================================================================
 
 #pragma once
@@ -854,6 +865,85 @@ struct AppState {
         log.add(buf);
     }
 
+    // R42: the inn — a safe night's rest (10 gp). Full slots
+    // (restoreSlots), full quivers (restockAmmo), 1 hp/level
+    // natural healing each — and NO wander check: that is what
+    // the silver buys (explore [R] rest is free but risky)
+    void townInnRest() {
+        if (mode != MODE_TOWN) return;
+        if (party.gold < 10) {
+            log.add("The innkeeper wants 10 gp for the night.");
+            return;
+        }
+        party.gold -= 10;
+        restoreSlots();
+        restockAmmo();
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            int heal = c.level;
+            if (c.hp + heal > c.maxHp) heal = c.maxHp - c.hp;
+            if (heal > 0) c.hp += heal;
+        }
+        log.add("A safe night at the inn. Spells, quivers, and "
+                "wounds mend.");
+    }
+
+    // R42: the temple — heal the most-wounded living member to
+    // full (100 gp). Cheaper per-hp than potions at scale, but
+    // only in town and one member at a time
+    void townTempleHeal() {
+        if (mode != MODE_TOWN) return;
+        Character* best = nullptr;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            if (!best || (c.maxHp - c.hp) > (best->maxHp - best->hp))
+                best = &c;
+        }
+        if (!best || best->hp >= best->maxHp) {
+            log.add("The priests see no wounds to mend.");
+            return;
+        }
+        if (party.gold < 100) {
+            log.add("The high priest asks 100 gp for a cure.");
+            return;
+        }
+        party.gold -= 100;
+        best->hp = best->maxHp;
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "%s is restored to %d hp.",
+                 best->name.c_str(), best->hp);
+        log.add(buf);
+    }
+
+    // R42: the smith — a +1 long sword (500 gp), claimed by the
+    // first living fighter whose blade is not already magic
+    void townBuySword() {
+        if (mode != MODE_TOWN) return;
+        Character* taker = nullptr;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            if (c.classIndex != rules::CLASS_FIGHTER) continue;
+            if (c.weapon.id == items::WPN_LONG_SWORD &&
+                c.weapon.plus >= 1) continue;
+            taker = &c;
+            break;
+        }
+        if (!taker) {
+            log.add("No fighter needs a blade today.");
+            return;
+        }
+        if (party.gold < 500) {
+            log.add("The smith wants 500 gp for the enchanted "
+                    "blade.");
+            return;
+        }
+        party.gold -= 500;
+        taker->weapon.id = items::WPN_LONG_SWORD;
+        taker->weapon.plus = 1;
+        log.add(taker->name + " buys a +1 long sword.");
+    }
+
     void restExplore() {
         if (mode != MODE_EXPLORE) return;
         if (!party.alive()) return;
@@ -902,7 +992,10 @@ struct AppState {
     }
 
     int roomCountCap() const {
-        return dungeonLevel >= 2 ? 3 : 2;
+        // R42: lairs grow with depth (2 on level 1, +1 per two
+        // levels beyond, capped at 5)
+        int cap = 2 + (dungeonLevel - 1) / 2;
+        return cap > 5 ? 5 : cap;
     }
 
     int roomAt(int x, int y) const {
@@ -929,7 +1022,12 @@ struct AppState {
     Treasure rollTreasure(int roomIndex) {
         Treasure t;
         (void)roomIndex;
+        // R42: gold scales up with depth — 25% more per level
+        // above the first (the dungeon hoards grow richer)
+        int goldMult = 100 + 25 * (dungeonLevel - 1);
+        if (goldMult > 200) goldMult = 200;   // cap at +100%
         t.gold = (int)dice.roll(3, 6, 0) * 10 * dungeonLevel;
+        t.gold = t.gold * goldMult / 100;
         if (rng.below(100) < 10) t.potionHealing = true;
         if (rng.below(100) < 5) t.magicSword = true;
         if (rng.below(100) < 10) t.missileWeapon = true;   // R28
@@ -1107,10 +1205,16 @@ struct AppState {
         // short bow, kobolds sling). The Lua registry data carries
         // no ranged flag, so the app owns this list — verification
         // debt if the Lua keys ever change.
-        for (auto& m : foes)
+        // R42: also seed rangedRounds from the weapon's short
+        // range band (PHB p.39: short bow 50' = 5 bands, sling
+        // 50' = 5 bands) — volley rounds before melee closes.
+        for (auto& m : foes) {
             if (!m.isCharacter &&
-                (monsterKey == "goblin" || monsterKey == "kobold"))
+                (monsterKey == "goblin" || monsterKey == "kobold")) {
                 m.monsterRanged = true;
+                m.rangedRounds = 5;   // 50' short range, 10' bands
+            }
+        }
         combat.start(partyActors(), std::move(foes),
                      rng.below(0x7FFFFFFF));
         combat.encounter->setQuaffHook(
