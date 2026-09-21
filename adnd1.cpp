@@ -6,6 +6,12 @@
 // rest (wandering encounter) restores nothing. Slot state lives in
 // Character::slotsByLevel (game/party.h) and is managed by
 // AppState::restoreSlots / restExplore (game/appstate.h).
+// Rebuild tranche R36: throw command — in combat, [t] has the
+// active member hurl their melee weapon (dagger/hand axe/spear):
+// one shot from the weapon's own dice/plus, then unarmed 1d2
+// fists for the rest of the encounter (recovered afterward).
+// Wired to AppState::combatThrow (game/appstate.h), resolved by
+// Encounter::requestThrow / resolveMissile (ai/actor.*).
 // R31 heritage: file split — adnd1.cpp is now the Win32/GDI
 // shell only (renderer, drawing, window proc, input); the game
 // simulation moved verbatim to game/ headers:
@@ -447,8 +453,8 @@ static void drawCombat(HDC dc, const CombatState& cs) {
     char line[160];
     snprintf(line, sizeof line,
              "COMBAT!  [q/e] member  [tab/1-9] target  [p] quaff  "
-             "[c] spells  [x] shoot  [space] attack+round  [f] flee  "
-             "[esc] auto-resolve");
+             "[c] spells  [x] shoot  [t] hurl  "
+             "[space] attack+round  [f] flee  [esc] auto-resolve");
     TextOutA(dc, 20, 14, line, (int)strlen(line));
 
     if (!cs.encounter) return;
@@ -821,6 +827,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'X':
                     case 'x':
                         g_app.combatShoot();
+                        break;
+
+                    // R36: active member hurls their melee weapon
+                    case 'T':
+                    case 't':
+                        g_app.combatThrow();
                         break;
 
                     // R27: open the active member's spell menu
