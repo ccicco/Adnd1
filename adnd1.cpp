@@ -22,6 +22,12 @@
 // smith (+1 long sword, 500 gp); treasure gold and lair sizes
 // scale with dungeon depth. Missile range bands are NOT in this
 // tranche (driver work — split out to keep this one shell-only).
+// Rebuild tranche R43: training + range + stock — town gains
+// [6] training hall (1500 gp x level, promotes queued level-ups),
+// [7] armorer (chain mail, 75 gp), [8] scribe (spell scroll,
+// 200 gp); [x] shoot in combat is refused once the range closes
+// (5 rounds). Wired to AppState::townTrain / townBuyChain /
+// townBuyScroll / combatShoot gate (game/appstate.h).
 // R31 heritage: file split — adnd1.cpp is now the Win32/GDI
 // shell only (renderer, drawing, window proc, input); the game
 // simulation moved verbatim to game/ headers:
@@ -739,13 +745,21 @@ static void drawTown(HDC dc, const AppState& s) {
     snprintf(line, sizeof line, "[5] Smith — +1 long sword, 500 gp");
     TextOutA(dc, 20, 192, line, (int)strlen(line));
 
+    // R43: training and stock
+    snprintf(line, sizeof line, "[6] Training hall — next level, 1500 gp x level");
+    TextOutA(dc, 20, 216, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[7] Armorer — chain mail, 75 gp");
+    TextOutA(dc, 20, 240, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[8] Scribe — spell scroll, 200 gp");
+    TextOutA(dc, 20, 264, line, (int)strlen(line));
+
     SetTextColor(dc, RGB(160, 150, 120));
     snprintf(line, sizeof line, "[B]/[Esc] return to the dungeon");
-    TextOutA(dc, 20, 216, line, (int)strlen(line));
+    TextOutA(dc, 20, 288, line, (int)strlen(line));
 
     // quiver summary so arrow buys are informed
     SetTextColor(dc, RGB(200, 190, 160));
-    int y = 252;
+    int y = 324;
     for (const auto& c : s.party.members) {
         if (!items::weapon(c.rangedWeapon.id).missile) continue;
         char nm[9];
@@ -864,6 +878,19 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
 
                     case '5':
                         g_app.townBuySword();
+                        break;
+
+                    // R43: training and stock
+                    case '6':
+                        g_app.townTrain();
+                        break;
+
+                    case '7':
+                        g_app.townBuyChain();
+                        break;
+
+                    case '8':
+                        g_app.townBuyScroll();
                         break;
 
                     case 'B':
