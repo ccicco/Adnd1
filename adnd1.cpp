@@ -1,6 +1,8 @@
 // ============================================================================
 // Adnd1 — a 2D tile-based CRPG implementing AD&D 1st Edition rules
 // Rebuild tranche R25: usable potions.
+// Rebuild tranche R26: treasure XP — looted gold awards XP at
+//   1 gp = 1 xp, split among living members on victory.
 //
 //   - Party carries a potion pool (from R22 treasure finds)
 //   - [P] quaff in EXPLORE heals the most-wounded living member
@@ -680,6 +682,17 @@ struct AppState {
                     snprintf(buf, sizeof buf,
                              "You loot %d gp.", t.gold);
                     log.add(buf);
+                    // R26: treasure XP — 1 gp = 1 xp, split among
+                    // living members like combat XP (victory only;
+                    // fleeing leaves loot AND xp behind)
+                    int goldShare = t.gold / survivors;
+                    if (goldShare > 0) {
+                        snprintf(buf, sizeof buf,
+                                 "Treasure worth %d xp each.",
+                                 goldShare);
+                        log.add(buf);
+                        party.gainXp(goldShare, dice, log);
+                    }
                 }
                 if (t.potionHealing) {
                     ++party.potions;
