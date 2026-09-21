@@ -15,6 +15,11 @@
 // (20 missiles at creation / bow find / load; not persisted in
 // v1 saves); each shot spends one (endCombat sync), and a dry
 // quiver blocks the shoot command and falls back to melee.
+// R36: throw command — combatThrow() has the active member hurl
+// their melee weapon (dagger/hand axe/spear): one shot from the
+// weapon's own dice/plus, then unarmed 1d2 fists for the rest of
+// the encounter (the weapon is recovered afterward — Actor state
+// only, nothing persisted).
 // ============================================================================
 
 #pragma once
@@ -1022,6 +1027,25 @@ struct AppState {
         }
         combat.encounter->requestShoot(combat.activeMember);
         log.add("Missiles readied — [space] to resolve the round.");
+    }
+
+    // R36: the ACTIVE member hurls their melee weapon this round
+    // (dagger/hand axe/spear) — one shot from the weapon's own
+    // dice/plus, then bare fists until the fight ends (the weapon
+    // is recovered afterward)
+    void combatThrow() {
+        if (mode != MODE_COMBAT || !combat.encounter || combat.over)
+            return;
+        const auto& partyActors = combat.encounter->party();
+        if (combat.activeMember < 0 ||
+            combat.activeMember >= (int)partyActors.size())
+            return;
+        if (!partyActors[combat.activeMember].meleeThrowable()) {
+            log.add("That member has nothing to hurl.");
+            return;
+        }
+        combat.encounter->requestThrow(combat.activeMember);
+        log.add("Weapon readied to hurl — [space] to resolve the round.");
     }
 
     void spawnRoomEncounter(int roomIndex) {
