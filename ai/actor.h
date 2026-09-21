@@ -30,6 +30,10 @@
 //      (knownSpells, copied from Character by toActor); the app's
 //      castable list filters on it. Clerics cast freely (prayers,
 //      PHB — no book), so the filter is MU-only.
+// R35: ammo counting — Actor::missileAmmo tracks shots left in
+//      the quiver (Characters only, synced from/to the roster);
+//      each resolveMissile shot spends one, and a dry quiver
+//      means no ACTION_MISSILE events (the member melees).
 // ============================================================================
 
 #pragma once
@@ -86,6 +90,10 @@ struct Actor {
     // character carries none — id WPN_DAGGER with a false missile
     // flag in the registry, so check hasRangedWeapon() instead.
     items::WeaponInstance rangedWeapon;
+    // R35: shots remaining in the quiver (characters only; the
+    // Character roster owns the durable count, synced on combat
+    // start/end). Monsters fire freely (no tracked ammo).
+    int missileAmmo = 0;
     items::ArmorInstance  armor;
     bool shield = false;
 
@@ -282,8 +290,10 @@ public:
     // by the app before calling; a member without one just melees).
     // Targeting uses the member's own foe selection (R21/R24 hook).
     // STR does not modify missile to-hit or damage (PHB); DEX
-    // missile adjustment is deferred (logged). Ammunition is
-    // assumed at hand (no arrow counting — logged simplification).
+    // missile adjustment is deferred (logged). R35: ammunition is
+    // counted — each shot spends one from Actor::missileAmmo, and
+    // a dry quiver means the member melees instead (the app also
+    // gates the command; the engine check is authoritative).
     // A new request overwrites a pending one; a flee-interrupted
     // round drops it.
     void requestShoot(int memberIndex) {
