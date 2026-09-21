@@ -46,6 +46,13 @@
 //      fight (no range/movement system yet — logged
 //      simplification). resolveMissile's monster path (own damage
 //      dice, no quiver) resolves the shots.
+// R42: range bands — missile fire is bounded by the weapon's
+//      short range (rangeTens * 10 feet, PHB p.39). The R37
+//      round-1 volley now lasts as many rounds as the weapon has
+//      range bands (short bow 5 → 5 rounds), tracked on the
+//      Actor (rangedRounds). Party shooters are unaffected
+//      (their fire is command-driven); once the bands close, the
+//      monsters melee.
 // ============================================================================
 
 #pragma once
@@ -125,6 +132,11 @@ struct Actor {
     // round 1, then melees. Set by the app from the monster key
     // (the Lua registry data carries no ranged flag).
     bool  monsterRanged = false;
+    // R42: rounds of missile fire left before the range closes.
+    // Set from the monster key's implied weapon when the app
+    // marks monsterRanged; each volley round decrements it, and
+    // at zero the monster closes to melee.
+    int   rangedRounds = 0;
     int   magicResistPct = 0;
     bool  undead = false;
 
