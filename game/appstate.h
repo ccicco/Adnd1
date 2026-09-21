@@ -67,6 +67,23 @@
 // (3) town stock — [7] chain mail (75 gp, first armored-eligible
 // member in worse), [8] spell scroll (200 gp, one random unknown
 // L1 MU spell added to the first MU's book).
+// R44 (five features): (1) stronghold — a name-level member
+// (level == class cap) builds a keep ([0], 10,000 gp); rents
+// (200 gp) collect on every return to town and training is
+// halved while it stands; (2) identify scrolls — treasure can
+// yield scrolls and UNIDENTIFIED magic items (plus rolled but
+// hidden); the scribe sells scrolls ([9], 100 gp) and [I] reads
+// one over the first pending item, applying weapon or armor
+// enchant; (3) henchman — [H] posts a 100 gp offer (DMG p.36
+// simplified); on acceptance a level-1 fighter joins as an
+// extra party actor (chain + shield kit), upkeep 100 gp/level
+// bills each return to town, loyalty (50 + best Cha reaction
+// adj) is checked on descending — a failed roll loses the hire;
+// (4) monster roster expansion — six new Lua bestiary files
+// (bandit, wolf, hobgoblin, gnoll, lizard man, bugbear) and
+// hobgoblin joins the missile-armed key list; (5) town hub
+// polish — a company status panel (roster, henchman, keep,
+// scrolls) beside the shop menu.
 // ============================================================================
 
 #pragma once
@@ -131,10 +148,13 @@ struct Treasure {
     bool missileWeapon = false;   // R28: short bow find
     bool ammoBundle = false;      // R39: 20 arrows on the ground
     bool thrownDagger = false;    // R40: +1 dagger find
+    bool identifyScroll = false;  // R44: scroll of identify
+    bool unidentifiedItem = false;   // R44: magic item, unknown
 
     bool empty() const {
         return gold == 0 && !potionHealing && !magicSword &&
-               !missileWeapon && !ammoBundle && !thrownDagger;
+               !missileWeapon && !ammoBundle && !thrownDagger &&
+               !identifyScroll && !unidentifiedItem;
     }
 };
 
@@ -538,6 +558,25 @@ struct AppState {
         for (int i : party.pendingTraining)
             fprintf(f, " %d", i);
         fprintf(f, "\n");
+        // R44: career extras (optional lines, v1-compatible —
+        // the loader's optional-tag chain treats each as absent
+        // in older saves)
+        fprintf(f, "stronghold %d %d\n",
+                party.strongholdBuilt ? 1 : 0,
+                party.strongholdOwner);
+        if (party.henchmanPresent)
+            fprintf(f, "henchman %d %d %d %d %s\n",
+                    party.henchmanHp, party.henchmanMaxHp,
+                    party.henchmanLevel, party.henchmanLoyalty,
+                    party.henchmanName.c_str());
+        else
+            fprintf(f, "henchman 0\n");
+        fprintf(f, "idscrolls %d\n", party.identifyScrolls);
+        fprintf(f, "items %d",
+                (int)party.unidentified.size());
+        for (const auto& it : party.unidentified)
+            fprintf(f, " %d %d", it.kind, it.plus);
+        fprintf(f, "\n");
         for (const auto& c : party.members) {
             fprintf(f,
                 "member %s %d %d %d %d %d\n",
@@ -603,10 +642,13 @@ struct AppState {
             log.add("adnd1.sav is corrupt (career).");
             return false;
         }
-        // R43: optional training-queue line (v1 saves lack it).
-        // If the next tag is not "training", push it back for
-        // the member loop (R33 pushback pattern).
-        if (fscanf(f, "%15s", tag) == 1) {
+        // R44: generalized optional-tag chain — any number of
+        // party-level optional lines may appear between the
+        // career line and the member loop (v1 saves have none,
+        // R43 saves have "training"); the first unrecognized
+        // tag is pushed back for the member loop (R33 pattern)
+        for (;;) {
+            if (fscanf(f, "%15s", tag) != 1) break;
             if (strcmp(tag, "training") == 0) {
                 int nt = 0;
                 if (fscanf(f, "%d", &nt) != 1 || nt < 0 ||
@@ -625,9 +667,77 @@ struct AppState {
                     }
                     p.pendingTraining.push_back(ti);
                 }
+            } else if (strcmp(tag, "stronghold") == 0) {
+                int b = 0, ow = -1;
+                if (fscanf(f, "%d %d", &b, &ow) != 2 ||
+                    (b != 0 && b != 1) || ow < -1 || ow >= n) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (keep).");
+                    return false;
+                }
+                p.strongholdBuilt = (b == 1);
+                p.strongholdOwner = ow;
+            } else if (strcmp(tag, "henchman") == 0) {
+                int present = 0;
+                if (fscanf(f, "%d", &present) != 1 ||
+                    (present != 0 && present != 1)) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (hire).");
+                    return false;
+                }
+                if (present == 1) {
+                    int hp = 0, mx = 0, lv = 0, loy = 0;
+                    char nm[NAME_MAX_CHARS + 1] = "";
+                    if (fscanf(f, "%d %d %d %d %16s",
+                               &hp, &mx, &lv, &loy, nm) != 5 ||
+                        hp < 1 || mx < 1 || lv < 1 ||
+                        loy < 0 || loy > 125) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (hire).");
+                        return false;
+                    }
+                    p.henchmanPresent = true;
+                    p.henchmanName = nm;
+                    p.henchmanHp = hp;
+                    p.henchmanMaxHp = mx;
+                    p.henchmanLevel = lv;
+                    p.henchmanLoyalty = loy;
+                }
+            } else if (strcmp(tag, "idscrolls") == 0) {
+                int sc = 0;
+                if (fscanf(f, "%d", &sc) != 1 || sc < 0 ||
+                    sc > 99) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (scrolls).");
+                    return false;
+                }
+                p.identifyScrolls = sc;
+            } else if (strcmp(tag, "items") == 0) {
+                int ni = 0;
+                if (fscanf(f, "%d", &ni) != 1 || ni < 0 ||
+                    ni > 99) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (items).");
+                    return false;
+                }
+                for (int k = 0; k < ni; ++k) {
+                    int kd = 0, pl = 0;
+                    if (fscanf(f, "%d %d", &kd, &pl) != 2 ||
+                        (kd != 0 && kd != 1) || pl < 1 ||
+                        pl > 3) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (item).");
+                        return false;
+                    }
+                    Party::PendingItem it;
+                    it.kind = kd;
+                    it.plus = pl;
+                    p.unidentified.push_back(it);
+                }
             } else {
                 strcpy(pendingTag, tag);
                 hasPending = true;
+                break;
             }
         }
         for (int i = 0; i < n; ++i) {
@@ -855,11 +965,57 @@ struct AppState {
         if (mode != MODE_EXPLORE) return;
         mode = MODE_TOWN;
         log.add("You return to the town above.");
+        // R44: the keep pays its rents on every return (the
+        // delve cadence stands in for the month — simplified
+        // stronghold economics)
+        if (party.strongholdBuilt) {
+            party.gold += 200;
+            log.add("The keep's steward delivers 200 gp in "
+                    "rents.");
+        }
+        // R44: henchman upkeep — 100 gp/level billed on each
+        // return (DMG p.26 monthly support, delve cadence). A
+        // short purse dents loyalty; below 25 he walks.
+        if (party.henchmanPresent) {
+            int upkeep = 100 * party.henchmanLevel;
+            if (party.gold >= upkeep) {
+                party.gold -= upkeep;
+                char buf[96];
+                snprintf(buf, sizeof buf,
+                         "%s is paid %d gp for his service.",
+                         party.henchmanName.c_str(), upkeep);
+                log.add(buf);
+            } else {
+                party.henchmanLoyalty -= 10;
+                log.add("The purse is too thin to pay " +
+                        party.henchmanName +
+                        " — he takes note.");
+            }
+            if (party.henchmanLoyalty < 25) {
+                log.add(party.henchmanName +
+                        " packs his kit and quits the company.");
+                party.henchmanPresent = false;
+            }
+        }
     }
 
     // [B]/Esc in town — dive back in at the same depth
     void leaveTown() {
         if (mode != MODE_TOWN) return;
+        // R44: the loyalty check that gates each delve (DMG
+        // p.37 — a disloyal hire refuses the descent; the roll
+        // simplified to a single d100 vs loyalty)
+        if (party.henchmanPresent) {
+            int roll = (int)rng.below(100) + 1;
+            if (roll > party.henchmanLoyalty) {
+                log.add(party.henchmanName +
+                        "'s nerve fails; he quits the company.");
+                party.henchmanPresent = false;
+            } else {
+                log.add(party.henchmanName +
+                        " shoulders his pack and follows.");
+            }
+        }
         mode = MODE_EXPLORE;
         log.add("You descend once more.");
     }
@@ -928,6 +1084,15 @@ struct AppState {
             int heal = c.level;
             if (c.hp + heal > c.maxHp) heal = c.maxHp - c.hp;
             if (heal > 0) c.hp += heal;
+        }
+        // R44: the henchman bunks with the company — same 1
+        // hp/level natural healing
+        if (party.henchmanPresent &&
+            party.henchmanHp < party.henchmanMaxHp) {
+            int heal = party.henchmanLevel;
+            if (party.henchmanHp + heal > party.henchmanMaxHp)
+                heal = party.henchmanMaxHp - party.henchmanHp;
+            party.henchmanHp += heal;
         }
         log.add("A safe night at the inn. Spells, quivers, and "
                 "wounds mend.");
@@ -1010,6 +1175,9 @@ struct AppState {
         }
         Character& c = party.members[idx];
         int cost = 1500 * (c.level + 1);
+        // R44: the keep's masters-at-arms instruct their lord's
+        // company at half fees
+        if (party.strongholdBuilt) cost /= 2;
         if (party.gold < cost) {
             char buf[96];
             snprintf(buf, sizeof buf,
@@ -1118,6 +1286,202 @@ struct AppState {
         log.add(buf);
     }
 
+    // R44: the keep — a name-level member raises a stronghold.
+    // 10,000 gp is a rebuild-scale simplification of the DMG
+    // p.83 barony costs (the book's castle economics are far
+    // larger than delve treasure supports); name level here is
+    // the class level cap (fighter 9, MU 11, cleric 9, thief 10)
+    void townBuildStronghold() {
+        if (mode != MODE_TOWN) return;
+        if (party.strongholdBuilt) {
+            log.add("The keep already flies your banner.");
+            return;
+        }
+        int owner = -1;
+        for (int i = 0; i < (int)party.members.size(); ++i) {
+            const Character& c = party.members[i];
+            if (c.hp <= 0) continue;
+            if (c.level >=
+                rules::CLASS_LEVEL_CAP[c.classIndex]) {
+                owner = i;
+                break;
+            }
+        }
+        if (owner < 0) {
+            log.add("Only a member at name level may hold "
+                    "land.");
+            return;
+        }
+        if (party.gold < 10000) {
+            log.add("The masons want 10,000 gp for the keep.");
+            return;
+        }
+        party.gold -= 10000;
+        party.strongholdBuilt = true;
+        party.strongholdOwner = owner;
+        log.add(party.members[owner].name +
+                " raises a keep — rents will follow.");
+    }
+
+    // R44: the scribe also stocks identify scrolls (100 gp)
+    void townBuyIdentify() {
+        if (mode != MODE_TOWN) return;
+        if (party.gold < 100) {
+            log.add("The scribe wants 100 gp for the scroll.");
+            return;
+        }
+        party.gold -= 100;
+        ++party.identifyScrolls;
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "Bought an identify scroll (%d carried, "
+                 "%d gp left).",
+                 party.identifyScrolls, party.gold);
+        log.add(buf);
+    }
+
+    // R44: [I] — read an identify scroll over the first
+    // pending item. The enchant was rolled at loot time but
+    // hidden from the company; identification applies it.
+    void useIdentifyScroll() {
+        if (mode != MODE_TOWN) return;
+        if (party.identifyScrolls <= 0) {
+            log.add("You carry no identify scroll.");
+            return;
+        }
+        if (party.unidentified.empty()) {
+            log.add("Nothing in the pack wants identifying.");
+            return;
+        }
+        Party::PendingItem it = party.unidentified.front();
+        party.unidentified.erase(
+            party.unidentified.begin());
+        --party.identifyScrolls;
+        if (it.kind == 0) {
+            // magic weapon — the first living fighter (then
+            // anyone) whose blade is a lesser enchant
+            Character* taker = nullptr;
+            for (auto& c : party.members) {
+                if (c.hp <= 0) continue;
+                if (c.classIndex != rules::CLASS_FIGHTER)
+                    continue;
+                if (c.weapon.plus < it.plus) { taker = &c; break; }
+            }
+            if (!taker) {
+                for (auto& c : party.members) {
+                    if (c.hp <= 0) continue;
+                    if (c.weapon.plus < it.plus) {
+                        taker = &c;
+                        break;
+                    }
+                }
+            }
+            if (taker) {
+                taker->weapon.id = items::WPN_LONG_SWORD;
+                taker->weapon.plus = it.plus;
+                char buf[96];
+                snprintf(buf, sizeof buf,
+                         "The scroll reveals a long sword +%d! "
+                         "%s claims it.",
+                         it.plus, taker->name.c_str());
+                log.add(buf);
+            } else {
+                log.add("The scroll reveals a long sword — "
+                        "but no one can better his blade. It "
+                        "is sold for 200 gp.");
+                party.gold += 200;
+            }
+        } else {
+            // enchanted armor — the first living fighter or
+            // cleric whose armor is a lesser enchant
+            Character* taker = nullptr;
+            for (auto& c : party.members) {
+                if (c.hp <= 0) continue;
+                if (c.classIndex != rules::CLASS_FIGHTER &&
+                    c.classIndex != rules::CLASS_CLERIC)
+                    continue;
+                if (c.armor.plus < it.plus) { taker = &c; break; }
+            }
+            if (taker) {
+                taker->armor.plus = it.plus;
+                char buf[96];
+                snprintf(buf, sizeof buf,
+                         "The scroll reveals enchanted armor "
+                         "(+%d)! %s claims it.",
+                         it.plus, taker->name.c_str());
+                log.add(buf);
+            } else {
+                log.add("The scroll reveals enchanted armor — "
+                        "but no one can better his mail. It "
+                        "is sold for 200 gp.");
+                party.gold += 200;
+            }
+        }
+    }
+
+    // R44: [H] — post a henchman offer (DMG p.36 simplified:
+    // 100 gp spent regardless, acceptance d100 vs interest =
+    // 25% + the best living member's Cha reaction adj)
+    void townHireHenchman() {
+        if (mode != MODE_TOWN) return;
+        if (party.henchmanPresent) {
+            log.add(party.henchmanName +
+                    " already rides with the company.");
+            return;
+        }
+        if (party.gold < 100) {
+            log.add("The crier wants 100 gp to post the "
+                    "offer.");
+            return;
+        }
+        party.gold -= 100;
+        int chaAdj = 0;
+        for (const auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            int adj = rules::chaReactionAdj(c.abilities.cha);
+            if (adj > chaAdj) chaAdj = adj;
+        }
+        int interest = 25 + chaAdj;
+        int roll = (int)rng.below(100) + 1;
+        if (roll > interest) {
+            log.add("No one answers the company's offer.");
+            return;
+        }
+        // a level-1 fighter answers (stats averaged for the
+        // hire — a simplification vs the book's rolled men)
+        static const char* NAMES[] = {
+            "Bors", "Gareth", "Hult", "Marda",
+            "Oswin", "Pell", "Roderic", "Sela"
+        };
+        std::string name;
+        for (const char* cand : NAMES) {
+            bool taken = false;
+            for (const auto& c : party.members)
+                if (c.name == cand) taken = true;
+            if (!taken) { name = cand; break; }
+        }
+        if (name.empty()) {
+            log.add("A sellsword answers, but the company is "
+                    "too well known — he declines.");
+            return;
+        }
+        party.henchmanPresent = true;
+        party.henchmanName = name;
+        party.henchmanLevel = 1;
+        party.henchmanMaxHp =
+            (int)dice.roll(1, 10, 0) + 1;   // CON-ish adj
+        if (party.henchmanMaxHp < 2) party.henchmanMaxHp = 2;
+        party.henchmanHp = party.henchmanMaxHp;
+        party.henchmanLoyalty = 50 + chaAdj;
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "%s the fighter answers the offer! (loyalty "
+                 "%d%%)",
+                 party.henchmanName.c_str(),
+                 party.henchmanLoyalty);
+        log.add(buf);
+    }
+
     void restExplore() {
         if (mode != MODE_EXPLORE) return;
         if (!party.alive()) return;
@@ -1207,6 +1571,8 @@ struct AppState {
         if (rng.below(100) < 10) t.missileWeapon = true;   // R28
         if (rng.below(100) < 15) t.ammoBundle = true;      // R39
         if (rng.below(100) < 5) t.thrownDagger = true;     // R40
+        if (rng.below(100) < 8) t.identifyScroll = true;   // R44
+        if (rng.below(100) < 5) t.unidentifiedItem = true; // R44
         return t;
     }
 
@@ -1354,6 +1720,24 @@ struct AppState {
                                 "no one can carry more.");
                     }
                 }
+                // R44: an identify scroll joins the satchel
+                if (t.identifyScroll) {
+                    ++party.identifyScrolls;
+                    log.add("You find a scroll of identify!");
+                }
+                // R44: an unidentified magic item — the enchant
+                // is rolled now but hidden until a scroll is
+                // read over it ([I] in town)
+                if (t.unidentifiedItem) {
+                    Party::PendingItem it;
+                    it.kind = (int)rng.below(2);
+                    it.plus = 1 +
+                        (rng.below(100) < 10 ? 1 : 0);
+                    party.unidentified.push_back(it);
+                    log.add("You find an unidentified magic "
+                            "item — a scribe's scroll would "
+                            "serve.");
+                }
                 room.monsterKey.clear();
                 room.count = 0;
                 room.looted = true;
@@ -1367,6 +1751,9 @@ struct AppState {
         for (const auto& c : party.members)
             if (c.hp > 0)
                 v.push_back(c.toActor());
+        // R44: the henchman fights alongside the roster
+        if (party.henchmanPresent && party.henchmanHp > 0)
+            v.push_back(party.henchmanActor());
         return v;
     }
 
@@ -1384,7 +1771,10 @@ struct AppState {
         // 50' = 5 bands) — volley rounds before melee closes.
         for (auto& m : foes) {
             if (!m.isCharacter &&
-                (monsterKey == "goblin" || monsterKey == "kobold")) {
+                if (!m.isCharacter &&
+                    (monsterKey == "goblin" ||
+                     monsterKey == "kobold" ||
+                     monsterKey == "hobgoblin")) {   // R44: MM bows
                 m.monsterRanged = true;
                 m.rangedRounds = 5;   // 50' short range, 10' bands
             }
@@ -1580,6 +1970,19 @@ struct AppState {
                     // R35: spent ammo persists (quiver count)
                     c.missileAmmo = a.missileAmmo;
                     break;
+                }
+                // R44: the henchman syncs back too (hp and any
+                // energy-drained levels)
+                if (party.henchmanPresent &&
+                    a.name == party.henchmanName) {
+                    party.henchmanHp = a.hp;
+                    party.henchmanMaxHp = a.maxHp;
+                    party.henchmanLevel = a.level;
+                    if (party.henchmanHp <= 0) {
+                        log.add(party.henchmanName +
+                                " has fallen in the fight.");
+                        party.henchmanPresent = false;
+                    }
                 }
             }
 
