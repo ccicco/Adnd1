@@ -17,6 +17,10 @@
 //   to adnd1.sav (plain text); [L] restores it and generates a
 //   fresh dungeon at the saved depth. The company is saved, not
 //   the floor (no mid-dungeon state persisted — logged).
+// Rebuild tranche R30: prime-requisite XP adjustment — gainXp
+//   now applies the PHB prime-requisite % bonus/penalty per
+//   member (rules::primeRequisitePct on the class prime
+//   requisite score), closing the R22-logged gap.
 //
 //   - Party carries a potion pool (from R22 treasure finds)
 //   - [P] quaff in EXPLORE heals the most-wounded living member
@@ -252,13 +256,24 @@ struct Party {
         return false;
     }
 
-    // per-member XP + level-ups (R22 logic, looped over the roster).
-    // NOTE: prime-requisite XP% bonus (R3 primeRequisitePct) is NOT
-    // applied yet — deferred to a later tranche (logged).
+    // per-member XP + level-ups (R22 logic, looped over the
+    // roster). R30: the PHB prime-requisite XP adjustment is
+    // applied per member — a high prime requisite earns a bonus
+    // (% of the award), a low one a penalty; the creation screen
+    // has shown this % since R24, the award pipe now honors it.
     void gainXp(int amount, rules::Dice& dice, MessageLog& log) {
         for (auto& c : members) {
             if (c.hp <= 0) continue;   // the dead earn nothing
-            c.xp += amount;
+            // R30: prime-requisite % (PHB p.20 class notes) —
+            // e.g. STR 16+ fighter +10%, STR 9 fighter -20%
+            int primeAb = c.abilities.get(
+                (rules::Ability)rules::primeRequisite(
+                    c.classIndex));
+            int pct = rules::primeRequisitePct(
+                (uint8_t)primeAb);
+            int gained = amount + (amount * pct) / 100;
+            if (gained < 0) gained = 0;   // penalty floors at 0
+            c.xp += gained;
             int cap = rules::CLASS_LEVEL_CAP[c.classIndex];
             while (c.level < cap &&
                    c.xp >= rules::xpForLevel(c.classIndex,
