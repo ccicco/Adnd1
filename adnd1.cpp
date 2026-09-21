@@ -17,6 +17,11 @@
 // [2] buys 20 arrows (30 gp), [B]/Esc returns to the dungeon at
 // the same depth. Wired to AppState::enterTown / leaveTown /
 // townBuyPotion / townBuyArrows (game/appstate.h).
+// Rebuild tranche R42: town services + scaling — town gains
+// [3] inn (safe rest, 10 gp), [4] temple heal (100 gp), [5]
+// smith (+1 long sword, 500 gp); treasure gold and lair sizes
+// scale with dungeon depth. Missile range bands are NOT in this
+// tranche (driver work — split out to keep this one shell-only).
 // R31 heritage: file split — adnd1.cpp is now the Win32/GDI
 // shell only (renderer, drawing, window proc, input); the game
 // simulation moved verbatim to game/ headers:
@@ -726,13 +731,21 @@ static void drawTown(HDC dc, const AppState& s) {
     snprintf(line, sizeof line, "[2] Fletcher — 20 arrows, 30 gp");
     TextOutA(dc, 20, 120, line, (int)strlen(line));
 
+    // R42: the expanded services
+    snprintf(line, sizeof line, "[3] Inn — safe night's rest, 10 gp");
+    TextOutA(dc, 20, 144, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[4] Temple — full heal (one member), 100 gp");
+    TextOutA(dc, 20, 168, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[5] Smith — +1 long sword, 500 gp");
+    TextOutA(dc, 20, 192, line, (int)strlen(line));
+
     SetTextColor(dc, RGB(160, 150, 120));
     snprintf(line, sizeof line, "[B]/[Esc] return to the dungeon");
-    TextOutA(dc, 20, 168, line, (int)strlen(line));
+    TextOutA(dc, 20, 216, line, (int)strlen(line));
 
     // quiver summary so arrow buys are informed
     SetTextColor(dc, RGB(200, 190, 160));
-    int y = 216;
+    int y = 252;
     for (const auto& c : s.party.members) {
         if (!items::weapon(c.rangedWeapon.id).missile) continue;
         char nm[9];
@@ -838,6 +851,19 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
 
                     case '2':
                         g_app.townBuyArrows();
+                        break;
+
+                    // R42: the expanded services
+                    case '3':
+                        g_app.townInnRest();
+                        break;
+
+                    case '4':
+                        g_app.townTempleHeal();
+                        break;
+
+                    case '5':
+                        g_app.townBuySword();
                         break;
 
                     case 'B':
