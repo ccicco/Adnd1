@@ -34,6 +34,11 @@
 //      the quiver (Characters only, synced from/to the roster);
 //      each resolveMissile shot spends one, and a dry quiver
 //      means no ACTION_MISSILE events (the member melees).
+// R36: throw command — requestThrow(memberIndex) makes that member
+//      HURL their melee weapon (dagger/hand axe/spear, PHB p.38):
+//      one ACTION_MISSILE shot whose dice/plus come from the melee
+//      weapon; the weapon is spent for the encounter (unarmed
+//      1d2 fists afterwards) and recovered after the fight.
 // ============================================================================
 
 #pragma once
@@ -94,6 +99,14 @@ struct Actor {
     // Character roster owns the durable count, synced on combat
     // start/end). Monsters fire freely (no tracked ammo).
     int missileAmmo = 0;
+    // R36: thrown-weapon state. "throwing" marks a hurl request
+    // pending this round; "weaponThrown" marks the melee weapon
+    // as spent for the rest of the encounter (hurled into the
+    // fray — recovered afterward, PHB missile-retrieval
+    // convention). Both reset per encounter (the Actor is built
+    // from the Character roster fresh each fight).
+    bool throwing = false;
+    bool weaponThrown = false;
     items::ArmorInstance  armor;
     bool shield = false;
 
@@ -142,6 +155,15 @@ struct Actor {
     bool hasRangedWeapon() const {
         const items::WeaponDef& w = items::weapon(rangedWeapon.id);
         return w.missile;
+    }
+
+    // R36: the melee weapon can be hurled (dagger/hand axe/spear,
+    // PHB p.38) and hasn't been thrown already this encounter
+    bool meleeThrowable() const {
+        return isCharacter && !weaponThrown &&
+               (weapon.id == items::WPN_DAGGER ||
+                weapon.id == items::WPN_HAND_AXE ||
+                weapon.id == items::WPN_SPEAR);
     }
 
     // ---- derived values ----------------------------------------------------
@@ -300,6 +322,19 @@ public:
         m_shootMember = memberIndex;
     }
 
+    // R36: throw command — requestThrow(memberIndex) makes that
+    // member HURL their melee weapon this round: one shot at the
+    // side's initiative segment (rate of fire 1). Dice, plus and
+    // the +N gating all come from the melee weapon; DEX reaction
+    // adjustment applies (R32 convention), STR does not (PHB).
+    // The weapon is spent for the encounter (unarmed 1d2 fists
+    // afterwards) and recovered after the fight. The app gates on
+    // meleeThrowable() before calling; a new request overwrites a
+    // pending one; a flee-interrupted round drops it.
+    void requestThrow(int memberIndex) {
+        m_throwMember = memberIndex;
+    }
+
     // R21: free swing by a monster against a party member (used by
     // the flee sequence; resolved through the normal melee path).
     int partingSwing(Actor& attacker, Actor& defender);
@@ -323,6 +358,8 @@ private:
     spells::SpellId m_castSpell = spells::MU_SLEEP;    // R27
 
     int  m_shootMember = -1;                // R28 (-1 = none)
+
+    int  m_throwMember = -1;                // R36 (-1 = none)
 
     void logLine(const std::string& s);
     int  teamAlive(int team) const;
