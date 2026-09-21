@@ -14,6 +14,12 @@
 //      drink a potion instead of attacking this round (ACTION_DRINK
 //      on the segment scheduler, end of round per R7); the quaff
 //      hook applies the effect and owns the potion inventory.
+// R27: cast command — requestCast(memberIndex, SpellId) makes that
+//      member cast a spell instead of attacking this round
+//      (ACTION_SPELL at initiative segment + casting time, per
+//      R7/R13). The driver resolves the effect engine-
+//      authoritatively via spelleffects::resolveSpell; spell slots
+//      live on the Actor (slotsByLevel, app-initialized).
 // ============================================================================
 
 #pragma once
@@ -22,6 +28,7 @@
 #include "../rules/combat.h"
 #include "../rules/saves.h"
 #include "../rules/turn.h"
+#include "../spells/spells.h"
 #include "../spelleffects/spelleffects.h"
 #include "../items/items.h"
 #include "../dm/dm.h"
@@ -85,6 +92,19 @@ struct Actor {
 
     // R18: special attacks (copied from MonsterDef by the registry)
     std::vector<ActorSpecial> specials;
+
+    // R27: spell slots by level (index 0 = spell level 1).
+    // Characters only — the app initializes these from
+    // spells::spellSlots when the encounter party is built
+    // (Character::toActor); the driver decrements them when a
+    // cast resolves. Refreshed each encounter (per-day slot
+    // tracking is deferred — logged simplification).
+    int  slotsByLevel[3] = {0, 0, 0};
+
+    bool isCaster() const {
+        return isCharacter &&
+               (classIndex == 1 || classIndex == 2);   // MU / cleric
+    }
 
     // ---- derived values ----------------------------------------------------
     int armorClass() const;        // R12 effectiveAc (chars) / 10-HD base (mon)
@@ -201,6 +221,27 @@ public:
         m_quaffHook = std::move(hook);
     }
 
+    // ---- R27: cast command -------------------------------------------------
+    // Request that the given party member (index into the party
+    // vector) cast a spell THIS round instead of attacking: their
+    // action becomes ACTION_SPELL, resolving at the side's
+    // initiative segment + the spell's casting time (R7 scheduler,
+    // R13 casting times). The driver resolves the effect engine-
+    // authoritatively via spelleffects::resolveSpell — targeting by
+    // the SpellDef's shape: single-target spells use the member's
+    // own foe selection (the R21/R24 target hook), area/multi-
+    // target spells hit every living foe, cure spells heal the
+    // most-wounded living ally, TARGET_SELF affects the caster.
+    // Slot accounting lives on the Actor (slotsByLevel, consumed
+    // only when the cast actually resolves; a silenced or slotless
+    // cast consumes nothing and the round is still spent). A new
+    // request overwrites a pending one; a flee-interrupted round
+    // drops it.
+    void requestCast(int memberIndex, spells::SpellId id) {
+        m_castMember = memberIndex;
+        m_castSpell  = id;
+    }
+
     // R21: free swing by a monster against a party member (used by
     // the flee sequence; resolved through the normal melee path).
     int partingSwing(Actor& attacker, Actor& defender);
@@ -220,6 +261,9 @@ private:
     int  m_drinkMember = -1;                // R25 (-1 = none)
     std::function<void(Actor&)> m_quaffHook;   // R25
 
+    int  m_castMember = -1;                             // R27
+    spells::SpellId m_castSpell = spells::MU_SLEEP;    // R27
+
     void logLine(const std::string& s);
     int  teamAlive(int team) const;
     bool teamCanAct(int team) const;
@@ -229,6 +273,11 @@ private:
     // pick the target for a party actor (hook-aware, R21; per-actor
     // since R24 — the hook receives the attacking member)
     Actor* pickFoeForPartyActor(const Actor& attacker);
+
+    // R27: resolve a party member's cast through spelleffects and
+    // apply the per-target results (hp, statuses, notes) back to
+    // the affected actors
+    void resolveCast(Actor& caster, spells::SpellId id);
 };
 
 } // namespace ai
