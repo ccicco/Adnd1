@@ -1,12 +1,18 @@
 // ============================================================================
 // Adnd1 — a 2D tile-based CRPG implementing AD&D 1st Edition rules
-// Rebuild tranche R23: dungeon stairs + deeper levels. The loop
-// completes: descend, fight, loot, level, descend deeper.
+// Rebuild tranche R24: character creation / party roster.
 //
-//   - Stairs-down sits in the room farthest from the entry
-//   - Stepping on them descends: dungeonLevel++, fresh dungeon,
-//     monster pool and treasure scale with depth
-//   - Party career (HP, XP, gold, equipment, level) persists down
+//   - MODE_CREATE state machine: roll abilities (4d6-drop-lowest),
+//     pick class (eligibility + prime requisite XP% shown), name
+//     the character (typed via WM_CHAR), repeat for up to 6 members
+//   - Party size adjustable at creation time (+/- keys, 1-6)
+//   - The hardcoded solo Rolf (formDefault) is GONE: every game
+//     starts from an empty roster (rebuild decision R24, Option B)
+//   - Encounter party vector is built from the roster; each member
+//     holds its own combat target (per-member target hook, keyed
+//     by actor name); Q/E cycles the active member
+//   - XP/level-ups per member; gold/kills stay party-level
+//   - Dedicated creation RNG stream (dungeon/sim RNG untouched)
 //
 // Build (MinGW, Lua 5.4):
 //   g++ -std=c++17 -I. -Ilua/include adnd1.cpp rules/dice.cpp rules/character.cpp rules/combat.cpp rules/saves.cpp rules/turn.cpp rules/classes.cpp spells/spells.cpp spelleffects/spelleffects.cpp items/items.cpp dm/dm.cpp dm/dungeon.cpp ai/actor.cpp monsters/MonsterRegistry.cpp lua/src/liblua.a -o adnd1.exe -mwindows
@@ -17,6 +23,7 @@
 
 #include "world/map.h"
 #include "rules/dice.h"
+#include "rules/character.h"
 #include "rules/combat.h"
 #include "rules/classes.h"
 #include "dm/dm.h"
@@ -26,6 +33,7 @@
 #include "items/items.h"
 
 #include <algorithm>
+#include <cctype>
 #include <cstdint>
 #include <cstdio>
 #include <cstring>
@@ -44,6 +52,19 @@ static const int VIEW_H = TILE_H * VIEW_TILES_Y;   // 608
 static const int HUD_H  = 96;
 static const int WINDOW_W = VIEW_W;
 static const int WINDOW_H = VIEW_H + HUD_H;
+
+// ----------------------------------------------------------------------------
+// R24: party roster constants
+// ----------------------------------------------------------------------------
+
+static const int PARTY_MAX      = 6;   // hard ceiling
+static const int PARTY_DEFAULT  = 6;   // starting cap (adjustable 1-6)
+static const int NAME_MAX_CHARS = 16;
+
+static const char* CLASS_NAMES[4] = {
+    "Fighter", "Magic-User", "Cleric", "Thief"
+};
+static const char CLASS_INITIALS[4] = { 'F', 'M', 'C', 'T' };
 
 // ----------------------------------------------------------------------------
 // Message log
@@ -130,59 +151,103 @@ struct Treasure {
 };
 
 // ----------------------------------------------------------------------------
-// Party / camera
+// R24: Character — the durable career record for one party member.
+// The combat Actor is built from this at encounter spawn (toActor)
+// and synced back by name when the fight ends.
+// ----------------------------------------------------------------------------
+
+struct Character {
+    std::string name;
+    rules::AbilityScores     abilities;
+    rules::ExceptionalStrength exStr;   // fighter group + STR 18 only
+    int  classIndex = 0;
+    int  xp   = 0;
+    int  level = 1;
+    int  hp = 0, maxHp = 0;
+
+    items::WeaponInstance weapon;
+    items::ArmorInstance  armor;
+    bool shield = false;
+
+    ai::Actor toActor() const {
+        ai::Actor a;
+        a.name        = name;
+        a.team        = 0;
+        a.isCharacter = true;
+        a.classIndex  = classIndex;
+        a.level       = level;
+        a.str    = abilities.str;
+        a.dex    = abilities.dex;
+        a.con    = abilities.con;
+        a.intel  = abilities.int_;
+        a.wis    = abilities.wis;
+        a.cha    = abilities.cha;
+        a.exStr  = exStr;
+        a.weapon = weapon;
+        a.armor  = armor;
+        a.shield = shield;
+        a.hp     = hp;
+        a.maxHp  = maxHp;
+        a.morale = dm::MORALE_FANATIC;   // player party never breaks
+        return a;
+    }
+
+    // "18/76" style display for exceptional strength
+    std::string strDisplay() const {
+        char buf[16];
+        if (exStr.has)
+            snprintf(buf, sizeof buf, "18/%02d",
+                     exStr.pct >= 100 ? 0 : exStr.pct);
+        else
+            snprintf(buf, sizeof buf, "%d", (int)abilities.str);
+        return buf;
+    }
+};
+
+// ----------------------------------------------------------------------------
+// R24: Party — a roster of Characters. Gold and kill counts stay
+// party-level (split loot, shared glory); XP/HP/level are per member.
 // ----------------------------------------------------------------------------
 
 struct Party {
     int x = 0, y = 0;
-    ai::Actor fighter;
+    std::vector<Character> members;
     bool formed = false;
 
-    int  xp = 0;
-    int  gold = 0;
-    int  kills = 0;
+    int gold = 0;
+    int kills = 0;
 
-    void formDefault() {
-        fighter.name = "Rolf";
-        fighter.isCharacter = true;
-        fighter.classIndex = 0;   // fighter
-        fighter.level = 1;
-        fighter.str = 14; fighter.dex = 12; fighter.con = 12;
-        fighter.intel = 9; fighter.wis = 10; fighter.cha = 10;
-        fighter.weapon.id = items::WPN_LONG_SWORD;
-        fighter.armor.id = items::ARMOR_CHAIN_MAIL;
-        fighter.shield = true;
-        fighter.hp = fighter.maxHp = 9;
-        fighter.morale = dm::MORALE_FANATIC;
-        formed = true;
-    }
-    bool alive() const { return formed && fighter.alive(); }
-
-    int nextLevelXp() const {
-        int lvl = fighter.level + 1;
-        if (lvl > rules::CLASS_LEVEL_CAP[fighter.classIndex]) return -1;
-        return rules::xpForLevel(fighter.classIndex, lvl);
+    bool alive() const {
+        if (!formed) return false;
+        for (const auto& c : members)
+            if (c.hp > 0) return true;
+        return false;
     }
 
+    // per-member XP + level-ups (R22 logic, looped over the roster).
+    // NOTE: prime-requisite XP% bonus (R3 primeRequisitePct) is NOT
+    // applied yet — deferred to a later tranche (logged).
     void gainXp(int amount, rules::Dice& dice, MessageLog& log) {
-        xp += amount;
-
-        int cap = rules::CLASS_LEVEL_CAP[fighter.classIndex];
-        while (fighter.level < cap &&
-               xp >= rules::xpForLevel(fighter.classIndex,
-                                       fighter.level + 1)) {
-            ++fighter.level;
-            int conAdj = rules::conHPAdjustment(fighter.classIndex,
-                                                fighter.con);
-            int die = rules::rollHitPoints(fighter.classIndex,
-                                           fighter.level, conAdj, dice);
-            fighter.maxHp += die;
-            fighter.hp += die;
-            char buf[96];
-            snprintf(buf, sizeof buf,
-                     "Rolf attains level %d! (+%d hp, now %d/%d)",
-                     fighter.level, die, fighter.hp, fighter.maxHp);
-            log.add(buf);
+        for (auto& c : members) {
+            if (c.hp <= 0) continue;   // the dead earn nothing
+            c.xp += amount;
+            int cap = rules::CLASS_LEVEL_CAP[c.classIndex];
+            while (c.level < cap &&
+                   c.xp >= rules::xpForLevel(c.classIndex,
+                                             c.level + 1)) {
+                ++c.level;
+                int conAdj = rules::conHPAdjustment(c.classIndex,
+                                                    c.abilities.con);
+                int die = rules::rollHitPoints(c.classIndex,
+                                               c.level, conAdj, dice);
+                c.maxHp += die;
+                c.hp += die;
+                char buf[96];
+                snprintf(buf, sizeof buf,
+                         "%s attains level %d! (+%d hp, now %d/%d)",
+                         c.name.c_str(), c.level, die, c.hp, c.maxHp);
+                log.add(buf);
+            }
         }
     }
 };
@@ -204,12 +269,101 @@ struct Camera {
 // ----------------------------------------------------------------------------
 
 enum GameMode : int {
-    MODE_EXPLORE = 0,
+    MODE_CREATE = 0,   // R24: character creation
+    MODE_EXPLORE,
     MODE_COMBAT,
 };
 
 // ----------------------------------------------------------------------------
-// Combat state — interactive, commands wired to the driver (R21)
+// R24: Creation state — ROLL -> CLASS -> NAME, per member.
+// Uses its own RNG stream so dungeon/sim determinism is untouched.
+// ----------------------------------------------------------------------------
+
+enum CreationStage : int {
+    CR_ROLL = 0,
+    CR_CLASS,
+    CR_NAME,
+};
+
+struct CreationState {
+    CreationStage stage = CR_ROLL;
+
+    rules::Rng  creationRng{1};
+    rules::Dice creationDice{creationRng};
+
+    rules::AbilityScores rolled;
+    int  classPick = 0;              // highlighted class row
+    std::string nameBuf;
+
+    int partySizeCap = PARTY_DEFAULT;
+    bool done = false;               // finished -> begin delve
+
+    void rollFresh() {
+        rolled = rules::rollAbilities(creationDice,
+                                      rules::GEN_4D6_DROP);
+        stage = CR_ROLL;
+        classPick = 0;
+        nameBuf.clear();
+    }
+
+    // eligibility: prime requisite score meets the class minimum
+    bool classEligible(int classIndex) const {
+        int ab = rolled.get(
+            (rules::Ability)rules::primeRequisite(classIndex));
+        return ab >= rules::classMinAbility(classIndex);
+    }
+
+    // finalize the pending member with the chosen class
+    Character makeMember(int classIndex) {
+        Character c;
+        c.abilities = rolled;
+        c.classIndex = classIndex;
+        c.level = 1;
+
+        // exceptional strength: fighter group at STR 18
+        if (classIndex == rules::CLASS_FIGHTER &&
+            rolled.str == 18) {
+            c.exStr.has = true;
+            c.exStr.pct = rules::rollExceptionalStrength(creationDice);
+        }
+
+        // level-1 hit points (canonical signature, R4b)
+        int conAdj = rules::conHPAdjustment(classIndex, rolled.con);
+        c.hp = c.maxHp = rules::rollHitPoints(classIndex, 1,
+                                              conAdj, creationDice);
+
+        // default equipment per class (R24 decision; respects
+        // classes armorAllowed/shieldAllowed by construction)
+        switch (classIndex) {
+            case rules::CLASS_FIGHTER:
+                c.weapon.id = items::WPN_LONG_SWORD;
+                c.armor.id  = items::ARMOR_PLATE;
+                c.shield    = true;
+                break;
+            case rules::CLASS_MAGIC_USER:
+                c.weapon.id = items::WPN_DAGGER;
+                c.armor.id  = items::ARMOR_NONE_EQUIPPED;
+                c.shield    = false;
+                break;
+            case rules::CLASS_CLERIC:
+                c.weapon.id = items::WPN_MACE;
+                c.armor.id  = items::ARMOR_CHAIN_MAIL;
+                c.shield    = true;
+                break;
+            case rules::CLASS_THIEF:
+                c.weapon.id = items::WPN_SHORT_SWORD;
+                c.armor.id  = items::ARMOR_LEATHER;
+                c.shield    = false;
+                break;
+        }
+        return c;
+    }
+};
+
+// ----------------------------------------------------------------------------
+// Combat state — interactive, commands wired to the driver (R21).
+// R24: one target selection PER PARTY MEMBER (keyed by actor name
+// in the hook), plus an active-member cursor for command entry.
 // ----------------------------------------------------------------------------
 
 struct CombatState {
@@ -217,22 +371,37 @@ struct CombatState {
     int  lastResult = -1;
     bool over = false;
 
-    int  selectedTarget = 0;
+    std::vector<int> selectedTargets;   // per party member, foe index
+    std::vector<std::string> memberNames;   // snapshot at start
+    int  activeMember = 0;
 
     void start(std::vector<ai::Actor> party, std::vector<ai::Actor> foes,
                uint64_t seed) {
+        memberNames.clear();
+        for (const auto& a : party)
+            memberNames.push_back(a.name);
+        selectedTargets.assign(party.size(), 0);
+        activeMember = 0;
+
         encounter = std::make_unique<ai::Encounter>(
             std::move(party), std::move(foes), seed);
         lastResult = -1;
         over = false;
-        selectedTarget = 0;
 
+        // R24: the hook receives the attacking member; we look up
+        // that member's own target selection by name (names are
+        // unique — creation enforces it)
         encounter->setPlayerTargetHook(
-            [this](const ai::Actor&, const std::vector<ai::Actor>& foes) {
-                if (selectedTarget >= 0 &&
-                    selectedTarget < (int)foes.size() &&
-                    foes[selectedTarget].alive())
-                    return selectedTarget;
+            [this](const ai::Actor& attacker,
+                   const std::vector<ai::Actor>& foes) {
+                for (int i = 0; i < (int)memberNames.size(); ++i) {
+                    if (memberNames[i] != attacker.name) continue;
+                    int t = selectedTargets[i];
+                    if (t >= 0 && t < (int)foes.size() &&
+                        foes[t].alive())
+                        return t;
+                    break;   // fall through to front-most
+                }
                 for (int i = 0; i < (int)foes.size(); ++i)
                     if (foes[i].alive()) return i;
                 return 0;
@@ -251,19 +420,48 @@ struct CombatState {
             encounter->requestFlee();
     }
 
+    int livingPartyCount() const {
+        if (!encounter) return 0;
+        int n = 0;
+        for (const auto& a : encounter->party())
+            if (a.alive()) ++n;
+        return n;
+    }
+
+    // cycle the ACTIVE MEMBER's target among living foes
     int cycleTarget(int dir) {
-        if (!encounter) return selectedTarget;
+        if (!encounter) return 0;
+        if (activeMember < 0 ||
+            activeMember >= (int)selectedTargets.size())
+            return 0;
         const auto& mons = encounter->monsters();
         int n = (int)mons.size();
-        if (n == 0) return selectedTarget;
+        if (n == 0) return 0;
+        int& sel = selectedTargets[activeMember];
         for (int hop = 1; hop <= n; ++hop) {
-            int cand = (selectedTarget + dir * hop + n * 8) % n;
+            int cand = (sel + dir * hop + n * 8) % n;
             if (mons[cand].alive()) {
-                selectedTarget = cand;
+                sel = cand;
                 break;
             }
         }
-        return selectedTarget;
+        return sel;
+    }
+
+    // cycle which party member receives commands (Q/E)
+    int cycleMember(int dir) {
+        if (!encounter) return activeMember;
+        const auto& party = encounter->party();
+        int n = (int)party.size();
+        if (n == 0) return activeMember;
+        for (int hop = 1; hop <= n; ++hop) {
+            int cand = (activeMember + dir * hop + n * 8) % n;
+            if (party[cand].alive()) {
+                activeMember = cand;
+                break;
+            }
+        }
+        return activeMember;
     }
 };
 
@@ -290,8 +488,11 @@ struct AppState {
     // systems
     monsters::MonsterRegistry registry;
 
+    // R24: creation
+    CreationState creation;
+    GameMode      mode = MODE_CREATE;
+
     // combat
-    GameMode    mode = MODE_EXPLORE;
     CombatState combat;
     int         combatRoomIndex = -1;
     std::string combatMonsterKey;
@@ -304,7 +505,7 @@ struct AppState {
         dungeon = dm::generateDungeon(s);
         map = dungeon.map;
         occupancy.init(dungeon);
-        if (!party.formed) party.formDefault();
+        // R24: no formDefault — the roster comes from creation
         party.x = dungeon.entryX;
         party.y = dungeon.entryY;
         cam.follow(party);
@@ -320,6 +521,29 @@ struct AppState {
                  dungeonLevel, (int)dungeon.rooms.size(),
                  countOccupied());
         log.add(buf);
+    }
+
+    // R24: creation is finished — the delve begins
+    void beginDelve() {
+        party.formed = true;
+        creation.done = true;
+        mode = MODE_EXPLORE;
+        newDungeon(1);
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "The party of %d descends into the dungeon.",
+                 (int)party.members.size());
+        log.add(buf);
+    }
+
+    // R24: full reset after a wipe — back to creation, career gone
+    void resetToCreation() {
+        party = Party{};
+        creation = CreationState{};
+        creation.rollFresh();
+        dungeonLevel = 1;
+        mode = MODE_CREATE;
+        log.add("The party is no more. Roll a new company.");
     }
 
     // R23: stairs in the room whose center is farthest from the
@@ -355,8 +579,7 @@ struct AppState {
     }
 
     // R23: descend. Career (hp/xp/gold/equipment/level) persists —
-    // newDungeon only calls formDefault when the party isn't
-    // formed yet. Depth scales monsters and treasure.
+    // depth scales monsters and treasure.
     void descend() {
         ++dungeonLevel;
         log.add("You descend the worn stairs...");
@@ -464,14 +687,31 @@ struct AppState {
                     log.add("You find a potion of healing!");
                 if (t.magicSword) {
                     log.add("You find a +1 long sword!");
-                    party.fighter.weapon.id = items::WPN_LONG_SWORD;
-                    party.fighter.weapon.plus = 1;
+                    // R24: claimed by the first living fighter
+                    for (auto& c : party.members) {
+                        if (c.hp > 0 &&
+                            c.classIndex == rules::CLASS_FIGHTER) {
+                            c.weapon.id = items::WPN_LONG_SWORD;
+                            c.weapon.plus = 1;
+                            log.add(c.name + " claims it.");
+                            break;
+                        }
+                    }
                 }
                 room.monsterKey.clear();
                 room.count = 0;
                 room.looted = true;
             }
         }
+    }
+
+    // R24: build the encounter party from the living roster
+    std::vector<ai::Actor> partyActors() const {
+        std::vector<ai::Actor> v;
+        for (const auto& c : party.members)
+            if (c.hp > 0)
+                v.push_back(c.toActor());
+        return v;
     }
 
     void spawnRoomEncounter(int roomIndex) {
@@ -497,7 +737,7 @@ struct AppState {
                      room.count, mname);
         log.add(buf);
 
-        combat.start({party.fighter}, foes, rng.below(0x7FFFFFFF));
+        combat.start(partyActors(), foes, rng.below(0x7FFFFFFF));
         combatRoomIndex = roomIndex;
         combatMonsterKey = room.monsterKey;
         mode = MODE_COMBAT;
@@ -524,7 +764,7 @@ struct AppState {
 
         combatRoomIndex = -1;
         combatMonsterKey = key;
-        combat.start({party.fighter}, foes, rng.below(0x7FFFFFFF));
+        combat.start(partyActors(), foes, rng.below(0x7FFFFFFF));
         mode = MODE_COMBAT;
     }
 
@@ -538,8 +778,17 @@ struct AppState {
 
     void endCombat() {
         if (combat.encounter) {
-            if (!combat.encounter->party().empty())
-                party.fighter = combat.encounter->party()[0];
+            // R24: sync fight results back to the roster BY NAME
+            // (hp, level — energy drain can strip levels)
+            for (const auto& a : combat.encounter->party()) {
+                for (auto& c : party.members) {
+                    if (c.name != a.name) continue;
+                    c.hp = a.hp;
+                    c.maxHp = a.maxHp;
+                    c.level = a.level;
+                    break;
+                }
+            }
 
             awardVictory();
 
@@ -554,7 +803,9 @@ struct AppState {
             log.add(outcome);
 
             if (combat.lastResult == 1) {
-                log.add("GAME OVER - press N for a new dungeon.");
+                log.add("GAME OVER - press N to roll a new party.");
+            } else if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new party.");
             }
         }
         combat.encounter.reset();
@@ -563,6 +814,129 @@ struct AppState {
 };
 
 static AppState g_app;
+
+// ----------------------------------------------------------------------------
+// Creation input (R24)
+// ----------------------------------------------------------------------------
+
+static bool nameTaken(const std::string& n) {
+    for (const auto& c : g_app.party.members)
+        if (c.name == n) return true;
+    return false;
+}
+
+static void creationKeyDown(WPARAM wp) {
+    CreationState& cr = g_app.creation;
+    AppState& s = g_app;
+
+    // party size cap: adjustable at any creation stage
+    if (wp == VK_OEM_PLUS || wp == VK_ADD || wp == '=') {
+        if (cr.partySizeCap < PARTY_MAX) ++cr.partySizeCap;
+        return;
+    }
+    if (wp == VK_OEM_MINUS || wp == VK_SUBTRACT || wp == '-') {
+        if (cr.partySizeCap > 1) --cr.partySizeCap;
+        // dropping the cap below the roster size trims the tail
+        while ((int)s.party.members.size() > cr.partySizeCap)
+            s.party.members.pop_back();
+        return;
+    }
+
+    switch (cr.stage) {
+        case CR_ROLL:
+            switch (wp) {
+                case 'R':
+                    cr.rollFresh();
+                    break;
+                case VK_RETURN:
+                    cr.stage = CR_CLASS;
+                    break;
+                case 'D':
+                    // begin the delve with the roster as-is
+                    if (!s.party.members.empty())
+                        s.beginDelve();
+                    break;
+            }
+            break;
+
+        case CR_CLASS:
+            switch (wp) {
+                case '1': case '2': case '3': case '4': {
+                    int idx = (int)(wp - '1');
+                    if (cr.classEligible(idx)) {
+                        cr.classPick = idx;
+                        cr.stage = CR_NAME;
+                    }
+                    break;
+                }
+                case VK_ESCAPE:
+                    cr.stage = CR_ROLL;   // back to reroll
+                    break;
+            }
+            break;
+
+        case CR_NAME:
+            if (wp == VK_ESCAPE) {
+                cr.stage = CR_CLASS;      // back to class choice
+                cr.nameBuf.clear();
+            }
+            break;
+    }
+}
+
+static void creationChar(WPARAM ch) {
+    CreationState& cr = g_app.creation;
+    if (cr.stage != CR_NAME) return;
+    if (ch == '\r' || ch == '\n') return;   // Enter handled in KEYDOWN
+    if (ch == 8) {                          // backspace
+        if (!cr.nameBuf.empty())
+            cr.nameBuf.pop_back();
+        return;
+    }
+    if (ch >= 32 && ch < 127 &&
+        (int)cr.nameBuf.size() < NAME_MAX_CHARS) {
+        cr.nameBuf.push_back((char)ch);
+    }
+}
+
+// confirm the name and add the member
+static void creationConfirmName() {
+    CreationState& cr = g_app.creation;
+    AppState& s = g_app;
+
+    std::string n = cr.nameBuf;
+    if (n.empty()) {
+        char buf[32];
+        snprintf(buf, sizeof buf, "Hero%d",
+                 (int)s.party.members.size() + 1);
+        n = buf;
+    }
+    if (nameTaken(n)) {
+        // unique names keep the combat hook keyed by name sound
+        int suffix = 2;
+        std::string base = n;
+        while (nameTaken(n)) {
+            char buf[40];
+            snprintf(buf, sizeof buf, "%s%d", base.c_str(), suffix++);
+            n = buf;
+        }
+    }
+
+    Character c = cr.makeMember(cr.classPick);
+    c.name = n;
+    s.party.members.push_back(c);
+
+    char buf[96];
+    snprintf(buf, sizeof buf, "%s the %s joins the party.",
+             c.name.c_str(), CLASS_NAMES[c.classIndex]);
+    s.log.add(buf);
+
+    if ((int)s.party.members.size() >= cr.partySizeCap) {
+        s.beginDelve();   // roster full — off we go
+    } else {
+        cr.rollFresh();   // next member
+    }
+}
 
 // ----------------------------------------------------------------------------
 // Movement (EXPLORE mode)
@@ -679,6 +1053,34 @@ static void drawStairsMarker(HDC dc, int px, int py) {
     DeleteObject(cp);
 }
 
+// R24: party formation — each member's initial in a cluster on the
+// party tile (dead members are not drawn)
+static void drawPartyFormation(HDC dc, const Party& party,
+                               int cx, int cy) {
+    static const int OFFS[6][2] = {
+        { -7, -7 }, {  7, -7 }, { -7,  7 }, {  7,  7 },
+        {  0, -13 }, {  0,  13 }
+    };
+    SetBkMode(dc, TRANSPARENT);
+    int n = 0;
+    for (const auto& c : party.members) {
+        if (c.hp <= 0) continue;
+        if (n >= 6) break;
+        int mx = cx + OFFS[n][0] - 5;
+        int my = cy + OFFS[n][1] - 7;
+        HBRUSH br = CreateSolidBrush(RGB(220, 40, 40));
+        RECT r = { mx, my, mx + 11, my + 13 };
+        FillRect(dc, &r, br);
+        DeleteObject(br);
+        char initial[2] = { (char)toupper((unsigned char)c.name[0]), 0 };
+        if (!c.name.empty()) {
+            SetTextColor(dc, RGB(255, 255, 255));
+            TextOutA(dc, mx + 2, my, initial, 1);
+        }
+        ++n;
+    }
+}
+
 static void drawView(HDC dc, const AppState& s) {
     const Map& map = s.map;
     const Camera& cam = s.cam;
@@ -723,15 +1125,7 @@ static void drawView(HDC dc, const AppState& s) {
     if (!party.alive()) return;
     int ppx = (party.x - cam.x) * TILE_W + TILE_W / 2;
     int ppy = (party.y - cam.y) * TILE_H + TILE_H / 2;
-    HBRUSH partyBr  = CreateSolidBrush(RGB(220, 40, 40));
-    HPEN   partyPen = CreatePen(PS_SOLID, 2, RGB(255, 255, 255));
-    HPEN   oldPen = (HPEN)SelectObject(dc, partyPen);
-    HBRUSH oldBr  = (HBRUSH)SelectObject(dc, partyBr);
-    Ellipse(dc, ppx - 10, ppy - 10, ppx + 10, ppy + 10);
-    SelectObject(dc, oldPen);
-    SelectObject(dc, oldBr);
-    DeleteObject(partyPen);
-    DeleteObject(partyBr);
+    drawPartyFormation(dc, party, ppx, ppy);
 }
 
 // ----------------------------------------------------------------------------
@@ -788,8 +1182,8 @@ static void drawCombat(HDC dc, const CombatState& cs) {
     SetTextColor(dc, RGB(220, 200, 160));
     char line[160];
     snprintf(line, sizeof line,
-             "COMBAT!  [tab/1-9] target  [space] attack+round  "
-             "[f] flee  [esc] auto-resolve");
+             "COMBAT!  [q/e] member  [tab/1-9] target  [space] "
+             "attack+round  [f] flee  [esc] auto-resolve");
     TextOutA(dc, 20, 14, line, (int)strlen(line));
 
     if (!cs.encounter) return;
@@ -799,8 +1193,10 @@ static void drawCombat(HDC dc, const CombatState& cs) {
     SetTextColor(dc, RGB(140, 210, 140));
     TextOutA(dc, 20, 48, "PARTY", 5);
     int y = 70;
-    for (const auto& a : party) {
-        drawCombatantRow(dc, 20, y, VIEW_W / 2 - 40, a, true, false);
+    for (size_t i = 0; i < party.size(); ++i) {
+        // active member gets the selection box
+        bool sel = ((int)i == cs.activeMember) && party[i].alive();
+        drawCombatantRow(dc, 20, y, VIEW_W / 2 - 40, party[i], true, sel);
         y += 26;
     }
 
@@ -808,7 +1204,10 @@ static void drawCombat(HDC dc, const CombatState& cs) {
     TextOutA(dc, VIEW_W / 2 + 20, 48, "MONSTERS", 8);
     y = 70;
     for (size_t i = 0; i < mons.size(); ++i) {
-        bool sel = ((int)i == cs.selectedTarget) && mons[i].alive();
+        // the ACTIVE MEMBER's current target is highlighted
+        int tgt = (cs.activeMember < (int)cs.selectedTargets.size())
+                      ? cs.selectedTargets[cs.activeMember] : -1;
+        bool sel = ((int)i == tgt) && mons[i].alive();
         drawCombatantRow(dc, VIEW_W / 2 + 20, y, VIEW_W / 2 - 40,
                          mons[i], false, sel);
         y += 26;
@@ -825,6 +1224,157 @@ static void drawCombat(HDC dc, const CombatState& cs) {
     }
 }
 
+// ----------------------------------------------------------------------------
+// Drawing: creation view (R24)
+// ----------------------------------------------------------------------------
+
+static void drawCreate(HDC dc, const AppState& s) {
+    const CreationState& cr = s.creation;
+
+    RECT vr = { 0, 0, WINDOW_W, WINDOW_H };
+    HBRUSH back = CreateSolidBrush(RGB(10, 9, 7));
+    FillRect(dc, &vr, back);
+    DeleteObject(back);
+    SetBkMode(dc, TRANSPARENT);
+
+    // title + party size
+    SetTextColor(dc, RGB(230, 210, 160));
+    char line[160];
+    snprintf(line, sizeof line,
+             "FORGE YOUR PARTY   members %d/%d   "
+             "[+/-] party size (1-%d)",
+             (int)s.party.members.size(), cr.partySizeCap, PARTY_MAX);
+    TextOutA(dc, 20, 14, line, (int)strlen(line));
+
+    // roster so far
+    SetTextColor(dc, RGB(150, 200, 150));
+    TextOutA(dc, 20, 44, "THE COMPANY:", 12);
+    int y = 66;
+    if (s.party.members.empty()) {
+        SetTextColor(dc, RGB(120, 110, 95));
+        TextOutA(dc, 30, y, "(none yet)", 10);
+        y += 22;
+    } else {
+        for (const auto& c : s.party.members) {
+            char row[96];
+            snprintf(row, sizeof row, "  %s  %s %d  HP %d/%d  STR %s",
+                     c.name.c_str(), CLASS_NAMES[c.classIndex],
+                     c.level, c.hp, c.maxHp, c.strDisplay().c_str());
+            SetTextColor(dc, c.hp > 0 ? RGB(170, 220, 170)
+                                      : RGB(110, 110, 110));
+            TextOutA(dc, 30, y, row, (int)strlen(row));
+            y += 22;
+        }
+    }
+
+    // ---- stage panel -------------------------------------------------------
+    int py = 260;
+    SetTextColor(dc, RGB(220, 200, 160));
+
+    switch (cr.stage) {
+        case CR_ROLL: {
+            TextOutA(dc, 20, py, "THE DICE DECIDE (4d6, drop lowest)",
+                     33);
+            py += 30;
+
+            static const char* ABIL[6] = {
+                "STR", "INT", "WIS", "DEX", "CON", "CHA"
+            };
+            const rules::AbilityScores& a = cr.rolled;
+            int vals[6] = { a.str, a.int_, a.wis, a.dex, a.con, a.cha };
+
+            for (int i = 0; i < 6; ++i) {
+                char row[64];
+                snprintf(row, sizeof row, "  %s  %2d",
+                         ABIL[i], vals[i]);
+                SetTextColor(dc, RGB(210, 195, 165));
+                TextOutA(dc, 40, py, row, (int)strlen(row));
+                py += 24;
+            }
+
+            // derived adjustments
+            char der[160];
+            snprintf(der, sizeof der,
+                     "melee hit %+#d  dmg %+#d   react %+#d  AC %+#d   "
+                     "hp/die %+#d",
+                     rules::strHitAdj(a.str,
+                                      rules::ExceptionalStrength{}),
+                     rules::strDmgAdj(a.str,
+                                      rules::ExceptionalStrength{}),
+                     rules::dexReactionAdj(a.dex),
+                     rules::dexDefensiveAdj(a.dex),
+                     rules::conHPAdj(a.con));
+            SetTextColor(dc, RGB(160, 175, 190));
+            TextOutA(dc, 40, py + 8, der, (int)strlen(der));
+
+            SetTextColor(dc, RGB(190, 175, 140));
+            TextOutA(dc, 20, VIEW_H - 60,
+                     "[R] reroll   [Enter] accept roll",
+                     31);
+            if (!s.party.members.empty())
+                TextOutA(dc, 20, VIEW_H - 38,
+                         "[D] begin the delve with this company",
+                         38);
+            break;
+        }
+
+        case CR_CLASS: {
+            TextOutA(dc, 20, py, "CHOOSE A CLASS", 15);
+            py += 30;
+            for (int i = 0; i < 4; ++i) {
+                int ab = cr.rolled.get(
+                    (rules::Ability)rules::primeRequisite(i));
+                int xpPct = rules::primeRequisitePct((uint8_t)ab);
+                bool ok = cr.classEligible(i);
+                char row[96];
+                snprintf(row, sizeof row, "  [%d] %-12s  %s %2d  "
+                         "(%+#d%% XP)  %s",
+                         i + 1, CLASS_NAMES[i],
+                         rules::abilityName(
+                             (rules::Ability)rules::primeRequisite(i)),
+                         ab, xpPct,
+                         ok ? "" : "- requires 9+");
+                SetTextColor(dc, ok ? RGB(210, 195, 165)
+                                    : RGB(110, 105, 95));
+                TextOutA(dc, 40, py, row, (int)strlen(row));
+                py += 26;
+            }
+            SetTextColor(dc, RGB(190, 175, 140));
+            TextOutA(dc, 20, VIEW_H - 60,
+                     "[1-4] choose class   [esc] back to roll",
+                     39);
+            break;
+        }
+
+        case CR_NAME: {
+            TextOutA(dc, 20, py, "NAME THIS CHARACTER", 20);
+            py += 30;
+            char prompt[96];
+            snprintf(prompt, sizeof prompt, "  Name: %s_",
+                     cr.nameBuf.c_str());
+            SetTextColor(dc, RGB(230, 220, 190));
+            TextOutA(dc, 40, py, prompt, (int)strlen(prompt));
+            SetTextColor(dc, RGB(190, 175, 140));
+            TextOutA(dc, 20, VIEW_H - 60,
+                     "[type] name   [Enter] confirm   [esc] back",
+                     42);
+            break;
+        }
+    }
+
+    // log tail at the bottom of the HUD area
+    SetTextColor(dc, RGB(160, 150, 120));
+    TextOutA(dc, 12, VIEW_H + 56, s.log.get(1).c_str(),
+             (int)s.log.get(1).size());
+    SetTextColor(dc, RGB(230, 220, 180));
+    TextOutA(dc, 12, VIEW_H + 76, s.log.get(0).c_str(),
+             (int)s.log.get(0).size());
+}
+
+// ----------------------------------------------------------------------------
+// Drawing: HUD
+// ----------------------------------------------------------------------------
+
 static void drawHud(HDC dc, const AppState& s) {
     const Party& party = s.party;
     RECT hr = { 0, VIEW_H, WINDOW_W, WINDOW_H };
@@ -835,26 +1385,31 @@ static void drawHud(HDC dc, const AppState& s) {
     SetBkColor(dc, RGB(25, 22, 18));
     SetTextColor(dc, RGB(200, 190, 160));
 
-    int next = party.nextLevelXp();
-    char xpBuf[48];
-    if (next < 0)
-        snprintf(xpBuf, sizeof xpBuf, "XP %d (cap)", party.xp);
-    else
-        snprintf(xpBuf, sizeof xpBuf, "XP %d/%d", party.xp, next);
-
-    char line[192];
-    snprintf(line, sizeof line,
-             "Rolf Lv%d  HP %d/%d  %s  %d gp  Kills %d  Turn %d  Seed %llu",
-             party.fighter.level, party.fighter.hp, party.fighter.maxHp,
-             xpBuf, party.gold, party.kills, s.turnCount,
-             (unsigned long long)s.seed);
+    // R24: roster line — every member, name truncated to 8 chars
+    char line[256];
+    line[0] = 0;
+    size_t len = 0;
+    for (const auto& c : party.members) {
+        if (len > sizeof line - 32) break;
+        char tok[40];
+        char nm[9];
+        strncpy(nm, c.name.c_str(), 8);
+        nm[8] = 0;
+        snprintf(tok, sizeof tok, "%s%s %c%d %d/%d   ",
+                 c.hp > 0 ? "" : "†",
+                 nm, CLASS_INITIALS[c.classIndex],
+                 c.level, c.hp, c.maxHp);
+        strcat(line, tok);
+        len = strlen(line);
+    }
     TextOutA(dc, 12, VIEW_H + 8, line, (int)strlen(line));
 
     snprintf(line, sizeof line,
-             "Dungeon Lvl %d  Rooms: %d (%d lairs)  [arrows/WASD] move  "
-             "[N] new dungeon  [E] wander  [esc] quit",
+             "Dungeon Lvl %d  Rooms: %d (%d lairs)  %d gp  Kills %d  "
+             "Turn %d  Seed %llu",
              s.dungeonLevel, (int)s.dungeon.rooms.size(),
-             s.countOccupied());
+             s.countOccupied(), party.gold, party.kills,
+             s.turnCount, (unsigned long long)s.seed);
     TextOutA(dc, 12, VIEW_H + 32, line, (int)strlen(line));
 
     SetTextColor(dc, RGB(160, 150, 120));
@@ -880,12 +1435,34 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
             return 0;
         }
 
+        case WM_CHAR:
+            if (g_app.mode == MODE_CREATE)
+                creationChar(wp);
+            InvalidateRect(hwnd, nullptr, FALSE);
+            return 0;
+
         case WM_KEYDOWN:
-            if (g_app.mode == MODE_COMBAT) {
+            if (g_app.mode == MODE_CREATE) {
+                creationKeyDown(wp);
+                // Enter in the NAME stage confirms the member
+                // (creationKeyDown only moves between stages)
+                if (wp == VK_RETURN &&
+                    g_app.creation.stage == CR_NAME &&
+                    g_app.mode == MODE_CREATE) {
+                    creationConfirmName();
+                }
+            } else if (g_app.mode == MODE_COMBAT) {
                 switch (wp) {
                     case VK_TAB:
                         g_app.combat.cycleTarget(
                             (GetKeyState(VK_SHIFT) & 0x8000) ? -1 : 1);
+                        break;
+
+                    case 'Q':
+                        g_app.combat.cycleMember(-1);
+                        break;
+                    case 'E':
+                        g_app.combat.cycleMember(1);
                         break;
 
                     case VK_SPACE:
@@ -910,8 +1487,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                                 idx < (int)g_app.combat.encounter
                                          ->monsters().size() &&
                                 g_app.combat.encounter
-                                        ->monsters()[idx].alive()) {
-                                g_app.combat.selectedTarget = idx;
+                                        ->monsters()[idx].alive() &&
+                                g_app.combat.activeMember <
+                                    (int)g_app.combat
+                                        .selectedTargets.size()) {
+                                g_app.combat.selectedTargets
+                                    [g_app.combat.activeMember] = idx;
                             }
                         }
                         break;
@@ -924,9 +1505,14 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case VK_DOWN:  case 'S': onPartyMove( 0,  1); break;
 
                     case 'N':
-                        // new dungeon resets depth but KEEPS career
-                        g_app.dungeonLevel = 1;
-                        g_app.newDungeon(g_app.seed + 1);
+                        if (g_app.party.alive()) {
+                            // new dungeon resets depth but KEEPS career
+                            g_app.dungeonLevel = 1;
+                            g_app.newDungeon(g_app.seed + 1);
+                        } else {
+                            // wiped: roll a fresh company
+                            g_app.resetToCreation();
+                        }
                         break;
 
                     case 'E':
@@ -946,12 +1532,15 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
             PAINTSTRUCT ps;
             HDC wndDC = BeginPaint(hwnd, &ps);
             if (g_app.rend.memDC) {
-                if (g_app.mode == MODE_COMBAT) {
+                if (g_app.mode == MODE_CREATE) {
+                    drawCreate(g_app.rend.memDC, g_app);
+                } else if (g_app.mode == MODE_COMBAT) {
                     drawCombat(g_app.rend.memDC, g_app.combat);
+                    drawHud(g_app.rend.memDC, g_app);
                 } else {
                     drawView(g_app.rend.memDC, g_app);
+                    drawHud(g_app.rend.memDC, g_app);
                 }
-                drawHud(g_app.rend.memDC, g_app);
                 BitBlt(wndDC, 0, 0, WINDOW_W, WINDOW_H,
                        g_app.rend.memDC, 0, 0, SRCCOPY);
             }
@@ -983,7 +1572,8 @@ int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, int nCmdShow) {
             "Adnd1", MB_OK | MB_ICONWARNING);
     }
 
-    g_app.newDungeon(1);
+    // R24: start at creation — the first roll is on the house
+    g_app.creation.rollFresh();
 
     WNDCLASSW wc = {};
     wc.style         = CS_HREDRAW | CS_VREDRAW;
