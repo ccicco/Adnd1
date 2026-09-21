@@ -38,6 +38,13 @@
 // +1 dagger: claimed by the first living member whose melee
 // weapon is throwable (dagger/hand axe/spear) or weaker; it can
 // be hurled with [t] (R36) at +1 to hit and damage.
+// R41: town hub — a new MODE_TOWN screen reached with [B] from
+// the dungeon. The temple sells healing potions (50 gp), the
+// fletcher sells 20-arrow bundles (30 gp). [B]/Esc returns to
+// the dungeon at the same depth. Buying arrows needs a missile-
+// armed member (first below 20, else least-supplied — R39
+// convention). Saves are not possible in town (mode resets to
+// EXPLORE on load).
 // ============================================================================
 
 #pragma once
@@ -129,6 +136,7 @@ enum GameMode : int {
     MODE_CREATE = 0,   // R24: character creation
     MODE_EXPLORE,
     MODE_COMBAT,
+    MODE_TOWN,         // R41: shops between dives
 };
 
 // ----------------------------------------------------------------------------
@@ -782,6 +790,68 @@ struct AppState {
             if (!items::weapon(c.rangedWeapon.id).missile) continue;
             c.missileAmmo = 20;
         }
+    }
+
+    // ---- R41: town hub ------------------------------------------------------
+
+    // [B] from the dungeon — retire to town for supplies
+    void enterTown() {
+        if (mode != MODE_EXPLORE) return;
+        mode = MODE_TOWN;
+        log.add("You return to the town above.");
+    }
+
+    // [B]/Esc in town — dive back in at the same depth
+    void leaveTown() {
+        if (mode != MODE_TOWN) return;
+        mode = MODE_EXPLORE;
+        log.add("You descend once more.");
+    }
+
+    // the temple sells healing potions (50 gp)
+    void townBuyPotion() {
+        if (mode != MODE_TOWN) return;
+        if (party.gold < 50) {
+            log.add("The priest shakes his head — 50 gp.");
+            return;
+        }
+        party.gold -= 50;
+        ++party.potions;
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "Bought a potion of healing (%d carried, %d gp left).",
+                 party.potions, party.gold);
+        log.add(buf);
+    }
+
+    // the fletcher sells 20-arrow bundles (30 gp) — taker follows
+    // the R39 loot convention (first armed member below 20, else
+    // the least-supplied one)
+    void townBuyArrows() {
+        if (mode != MODE_TOWN) return;
+        Character* taker = nullptr;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            if (!items::weapon(c.rangedWeapon.id).missile) continue;
+            if (!taker || c.missileAmmo < taker->missileAmmo)
+                taker = &c;
+            if (taker->missileAmmo < 20) break;
+        }
+        if (!taker) {
+            log.add("The fletcher shrugs — no one carries a bow.");
+            return;
+        }
+        if (party.gold < 30) {
+            log.add("The fletcher wants 30 gp.");
+            return;
+        }
+        party.gold -= 30;
+        taker->missileAmmo += 20;
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "Bought 20 arrows (%s carries %d, %d gp left).",
+                 taker->name.c_str(), taker->missileAmmo, party.gold);
+        log.add(buf);
     }
 
     void restExplore() {
