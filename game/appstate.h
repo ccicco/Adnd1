@@ -7,6 +7,10 @@
 // R33: spellbook wiring — MU starting spell at creation, the
 // castable list filters by known spells, and saveGame/loadGame
 // grow an optional per-MU "spells" line (v1 saves still load).
+// R34: per-day slots — Character::slotsByLevel persists across
+// encounters (endCombat sync), [R] rest restores slots + natural
+// healing with a wandering-encounter interrupt risk; descend and
+// load also refill the pool.
 // ============================================================================
 
 #pragma once
@@ -155,6 +159,15 @@ struct CreationState {
         int conAdj = rules::conHPAdjustment(classIndex, rolled.con);
         c.hp = c.maxHp = rules::rollHitPoints(classIndex, 1,
                                               conAdj, creationDice);
+
+        // R34: casters start with their full level-1 slot pool
+        if (classIndex == 1 || classIndex == 2) {
+            spells::SpellClass sc = classIndex == 1
+                ? spells::SPELL_MU : spells::SPELL_CLERIC;
+            for (int lv = 1; lv <= 3; ++lv)
+                c.slotsByLevel[lv - 1] =
+                    spells::spellSlots(sc, 1, lv);
+        }
 
         // R33: the MU starts with one random L1 spell in the book
         // (PHB: a beginning magic-user has a single first-level
@@ -649,6 +662,7 @@ struct AppState {
         creation.done = true;
         dungeonLevel = depth;
         mode = MODE_EXPLORE;
+        restoreSlots();   // R34: slots are not persisted — full pool on load
         newDungeon(seed + 1000 + dungeonLevel);
         char buf[96];
         snprintf(buf, sizeof buf,
@@ -696,11 +710,52 @@ struct AppState {
         ++dungeonLevel;
         log.add("You descend the worn stairs...");
         newDungeon(seed + 1000 + dungeonLevel);
+        // R34: the descent takes hours — slots return with the
+        // new level (keeps a descended company from being stuck
+        // dry with no rest opportunity)
+        restoreSlots();
         char buf[96];
         snprintf(buf, sizeof buf,
                  "Dungeon level %d. The air grows colder.",
                  dungeonLevel);
         log.add(buf);
+    }
+
+    // R34: refill every caster's slots to their class-table pool
+    void restoreSlots() {
+        for (auto& c : party.members) {
+            if (c.classIndex != 1 && c.classIndex != 2) continue;
+            spells::SpellClass sc = c.classIndex == 1
+                ? spells::SPELL_MU : spells::SPELL_CLERIC;
+            for (int lv = 1; lv <= 3; ++lv)
+                c.slotsByLevel[lv - 1] =
+                    spells::spellSlots(sc, c.level, lv);
+        }
+    }
+
+    // R34: rest — restore slots and natural healing (1 hp per
+    // level, PHB daily recovery), but the camp may be attacked:
+    // a wandering-encounter check first; an interrupted rest
+    // restores NOTHING (the party fights on, tired and dry)
+    void restExplore() {
+        if (mode != MODE_EXPLORE) return;
+        if (!party.alive()) return;
+
+        log.add("The party makes camp...");
+        if (dm::wanderCheck(dice, wander)) {
+            log.add("The rest is interrupted!");
+            spawnWanderingEncounter();
+            return;
+        }
+
+        restoreSlots();
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;   // the dead do not heal
+            int heal = c.level;
+            if (c.hp + heal > c.maxHp) heal = c.maxHp - c.hp;
+            if (heal > 0) c.hp += heal;
+        }
+        log.add("The company rests. Spells and wounds mend.");
     }
 
     int countOccupied() const {
@@ -1017,6 +1072,9 @@ struct AppState {
                     c.hp = a.hp;
                     c.maxHp = a.maxHp;
                     c.level = a.level;
+                    // R34: spent slots persist (per-day tracking)
+                    for (int lv = 0; lv < 3; ++lv)
+                        c.slotsByLevel[lv] = a.slotsByLevel[lv];
                     break;
                 }
             }
