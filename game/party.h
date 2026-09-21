@@ -9,6 +9,10 @@
 // across encounters; toActor carries the CURRENT pool (not a
 // fresh one), and the app restores it on rest (or descend, to
 // keep a loaded/descended company from being stuck dry).
+// R44: the career extras — the stronghold (name-level keep),
+// the henchman (a hired NPC fighter who fights alongside the
+// roster), and the identify economy (scrolls + unidentified
+// magic items waiting on a scribe's verdict).
 // ============================================================================
 
 #pragma once
@@ -133,6 +137,59 @@ struct Party {
     // roll is deferred too — the whole level-up waits. XP
     // thresholds still gate normally.
     std::vector<int> pendingTraining;   // member indices awaiting training
+
+    // R44: the stronghold — a member at name level (their class
+    // level cap) may build a keep (10,000 gp, a rebuild-scale
+    // simplification of the DMG p.83 barony costs; the book's
+    // stronghold economics are far larger). Once built it pays
+    // rents on every return to town and halves training fees
+    // (the keep's masters-at-arms instruct their lord's company).
+    bool strongholdBuilt = false;
+    int  strongholdOwner = -1;   // member index of the lord
+
+    // R44: the henchman — one hired NPC (DMG p.36 simplified:
+    // a 100 gp offer, acceptance vs interest, loyalty 50 + Cha
+    // reaction adj). A level-1 fighter who fights as an extra
+    // party actor; upkeep 100 gp/level is billed on each return
+    // to town (delve cadence stands in for the month), and a
+    // failed loyalty roll on descending sends him home.
+    bool        henchmanPresent = false;
+    std::string henchmanName;
+    int  henchmanHp = 0, henchmanMaxHp = 0;
+    int  henchmanLevel  = 1;
+    int  henchmanLoyalty = 50;
+
+    // R44: identify economy — scrolls (found or bought, 100 gp
+    // at the scribe) reveal unidentified magic items. kind 0 =
+    // magic weapon (long sword), kind 1 = enchanted armor; the
+    // plus was rolled at loot time but stays unknown to the
+    // COMPANY until a scroll is read over the item.
+    int  identifyScrolls = 0;
+    struct PendingItem { int kind = 0; int plus = 0; };
+    std::vector<PendingItem> unidentified;
+
+    // R44: the henchman's combat actor (a fighter of his level;
+    // fixed average stats keep the hire a one-roll affair —
+    // simplification vs the book's rolled applicants)
+    ai::Actor henchmanActor() const {
+        ai::Actor a;
+        a.name        = henchmanName;
+        a.team        = 0;
+        a.isCharacter = true;
+        a.classIndex  = 0;   // fighter
+        a.level       = henchmanLevel;
+        a.str = 12; a.dex = 11; a.con = 12;
+        a.intel = 9; a.wis = 10; a.cha = 10;
+        a.weapon = items::WeaponInstance();
+        a.weapon.id = items::WPN_LONG_SWORD;
+        a.armor  = items::ArmorInstance();
+        a.armor.id = items::ARMOR_CHAIN_MAIL;   // PHB p.36 kit
+        a.shield = true;
+        a.hp     = henchmanHp;
+        a.maxHp  = henchmanMaxHp;
+        a.morale = dm::MORALE_FANATIC;   // loyalty gates delves, not rounds
+        return a;
+    }
 
     bool alive() const {
         if (!formed) return false;
