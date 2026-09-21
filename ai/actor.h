@@ -20,6 +20,12 @@
 //      R7/R13). The driver resolves the effect engine-
 //      authoritatively via spelleffects::resolveSpell; spell slots
 //      live on the Actor (slotsByLevel, app-initialized).
+// R28: shoot command — requestShoot(memberIndex) makes that member
+//      fire missiles this round instead of melee (ACTION_MISSILE
+//      events at the initiative segment, +5 per follow-up shot, R7
+//      rate-of-fire convention). Uses the Actor's rangedWeapon slot
+//      (a second WeaponInstance — PHB characters carry melee AND
+//      missile weapons); STR does not add to missile attacks (PHB).
 // ============================================================================
 
 #pragma once
@@ -72,6 +78,10 @@ struct Actor {
     uint8_t str = 10, dex = 10, con = 10, intel = 10, wis = 10, cha = 10;
     rules::ExceptionalStrength exStr{};
     items::WeaponInstance weapon;
+    // R28: missile weapon slot (bow/crossbow/sling). Empty when the
+    // character carries none — id WPN_DAGGER with a false missile
+    // flag in the registry, so check hasRangedWeapon() instead.
+    items::WeaponInstance rangedWeapon;
     items::ArmorInstance  armor;
     bool shield = false;
 
@@ -104,6 +114,12 @@ struct Actor {
     bool isCaster() const {
         return isCharacter &&
                (classIndex == 1 || classIndex == 2);   // MU / cleric
+    }
+
+    // R28: true when the ranged slot holds a real missile weapon
+    bool hasRangedWeapon() const {
+        const items::WeaponDef& w = items::weapon(rangedWeapon.id);
+        return w.missile;
     }
 
     // ---- derived values ----------------------------------------------------
@@ -242,6 +258,24 @@ public:
         m_castSpell  = id;
     }
 
+    // ---- R28: shoot command -------------------------------------------------
+    // Request that the given party member (index into the party
+    // vector) fire their missile weapon THIS round instead of
+    // melee: their action becomes ACTION_MISSILE events — one per
+    // shot at the weapon's rate of fire, first at the side's
+    // initiative segment, follow-ups +5 segments (R7 convention).
+    // Requires the ranged slot to hold a missile weapon (checked
+    // by the app before calling; a member without one just melees).
+    // Targeting uses the member's own foe selection (R21/R24 hook).
+    // STR does not modify missile to-hit or damage (PHB); DEX
+    // missile adjustment is deferred (logged). Ammunition is
+    // assumed at hand (no arrow counting — logged simplification).
+    // A new request overwrites a pending one; a flee-interrupted
+    // round drops it.
+    void requestShoot(int memberIndex) {
+        m_shootMember = memberIndex;
+    }
+
     // R21: free swing by a monster against a party member (used by
     // the flee sequence; resolved through the normal melee path).
     int partingSwing(Actor& attacker, Actor& defender);
@@ -264,6 +298,8 @@ private:
     int  m_castMember = -1;                             // R27
     spells::SpellId m_castSpell = spells::MU_SLEEP;    // R27
 
+    int  m_shootMember = -1;                // R28 (-1 = none)
+
     void logLine(const std::string& s);
     int  teamAlive(int team) const;
     bool teamCanAct(int team) const;
@@ -278,6 +314,9 @@ private:
     // apply the per-target results (hp, statuses, notes) back to
     // the affected actors
     void resolveCast(Actor& caster, spells::SpellId id);
+
+    // R28: resolve one missile shot (no STR mods; missile dice)
+    void resolveMissile(Actor& attacker, Actor& defender);
 };
 
 } // namespace ai
