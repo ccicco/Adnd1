@@ -1,14 +1,12 @@
 // ============================================================================
 // Adnd1 — a 2D tile-based CRPG implementing AD&D 1st Edition rules
-// Rebuild tranche R22: treasure + XP/level-ups. The reward loop.
+// Rebuild tranche R23: dungeon stairs + deeper levels. The loop
+// completes: descend, fight, loot, level, descend deeper.
 //
-//   - Victory pays XP: each slain monster's xpValue (Lua defs),
-//     divided among surviving party members
-//   - Level-ups on thresholds (rules::xpForLevel): hp roll with
-//     conHPAdjustment, per-die floor 1
-//   - Cleared lairs drop treasure: coins (gp), 10% potion, 5%
-//     magic weapon (+1 long sword for now)
-//   - HUD shows XP toward next level, gold, kills
+//   - Stairs-down sits in the room farthest from the entry
+//   - Stepping on them descends: dungeonLevel++, fresh dungeon,
+//     monster pool and treasure scale with depth
+//   - Party career (HP, XP, gold, equipment, level) persists down
 //
 // Build (MinGW, Lua 5.4):
 //   g++ -std=c++17 -I. -Ilua/include adnd1.cpp rules/dice.cpp rules/character.cpp rules/combat.cpp rules/saves.cpp rules/turn.cpp rules/classes.cpp spells/spells.cpp spelleffects/spelleffects.cpp items/items.cpp dm/dm.cpp dm/dungeon.cpp ai/actor.cpp monsters/MonsterRegistry.cpp lua/src/liblua.a -o adnd1.exe -mwindows
@@ -100,7 +98,6 @@ struct RoomOccupant {
     std::string monsterKey;
     int         count = 0;
     int         denX = 0, denY = 0;
-    // R22: treasure sits in the lair, looted on victory
     bool looted = false;
 };
 
@@ -119,13 +116,13 @@ struct Occupancy {
 };
 
 // ----------------------------------------------------------------------------
-// Treasure (R22): simple, lair-based
+// Treasure
 // ----------------------------------------------------------------------------
 
 struct Treasure {
     int  gold = 0;
-    bool potionHealing = false;    // heals 2d4+2 on pickup use (later)
-    bool magicSword = false;       // +1 long sword
+    bool potionHealing = false;
+    bool magicSword = false;
 
     bool empty() const {
         return gold == 0 && !potionHealing && !magicSword;
@@ -141,7 +138,6 @@ struct Party {
     ai::Actor fighter;
     bool formed = false;
 
-    // R22: career stats
     int  xp = 0;
     int  gold = 0;
     int  kills = 0;
@@ -162,15 +158,12 @@ struct Party {
     }
     bool alive() const { return formed && fighter.alive(); }
 
-    // R22: XP to the NEXT level (0 = at cap for display purposes)
     int nextLevelXp() const {
         int lvl = fighter.level + 1;
         if (lvl > rules::CLASS_LEVEL_CAP[fighter.classIndex]) return -1;
         return rules::xpForLevel(fighter.classIndex, lvl);
     }
 
-    // R22: apply XP, level up as thresholds are crossed. Each level
-    // rolls the class hit die + con adjustment (floor 1 per die).
     void gainXp(int amount, rules::Dice& dice, MessageLog& log) {
         xp += amount;
 
@@ -184,7 +177,7 @@ struct Party {
             int die = rules::rollHitPoints(fighter.classIndex,
                                            fighter.level, conAdj, dice);
             fighter.maxHp += die;
-            fighter.hp += die;   // 1e: new hp are immediately usable
+            fighter.hp += die;
             char buf[96];
             snprintf(buf, sizeof buf,
                      "Rolf attains level %d! (+%d hp, now %d/%d)",
@@ -301,9 +294,10 @@ struct AppState {
     GameMode    mode = MODE_EXPLORE;
     CombatState combat;
     int         combatRoomIndex = -1;
-
-    // key of the monsters in the current fight (for XP on victory)
     std::string combatMonsterKey;
+
+    // R23: stairs down — placed in the room farthest from entry
+    int stairsX = -1, stairsY = -1;
 
     void newDungeon(uint64_t s) {
         seed = s;
@@ -317,13 +311,60 @@ struct AppState {
         turnCount = 0;
         rng.seed(s * 7919 + 13);
 
+        placeStairs();
         populateRooms();
 
         char buf[96];
         snprintf(buf, sizeof buf,
-                 "You descend... seed %llu, %d rooms, %d occupied.",
-                 (unsigned long long)s, (int)dungeon.rooms.size(),
+                 "Level %d: %d rooms, %d occupied.",
+                 dungeonLevel, (int)dungeon.rooms.size(),
                  countOccupied());
+        log.add(buf);
+    }
+
+    // R23: stairs in the room whose center is farthest from the
+    // entry point. The tile itself stays floor — the marker and
+    // the step check carry the meaning (no map.h changes needed).
+    void placeStairs() {
+        long bestDist = -1;
+        int  bx = -1, by = -1;
+        for (const auto& room : occupancy.rooms) {
+            long dx = room.denX - dungeon.entryX;
+            long dy = room.denY - dungeon.entryY;
+            long dist = dx * dx + dy * dy;
+            if (dist > bestDist) {
+                bestDist = dist;
+                bx = room.denX;
+                by = room.denY;
+            }
+        }
+        // keep the stairs clear of a monster den: nudge to the
+        // room's corner if the den is occupied
+        for (auto& room : occupancy.rooms) {
+            if (room.denX == bx && room.denY == by) {
+                const auto& r = dungeon.rooms[room.roomIndex];
+                if (!room.monsterKey.empty() && r.w >= 3 && r.h >= 3) {
+                    bx = r.x;      // top-left corner tile
+                    by = r.y;
+                }
+                break;
+            }
+        }
+        stairsX = bx;
+        stairsY = by;
+    }
+
+    // R23: descend. Career (hp/xp/gold/equipment/level) persists —
+    // newDungeon only calls formDefault when the party isn't
+    // formed yet. Depth scales monsters and treasure.
+    void descend() {
+        ++dungeonLevel;
+        log.add("You descend the worn stairs...");
+        newDungeon(seed + 1000 + dungeonLevel);
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "Dungeon level %d. The air grows colder.",
+                 dungeonLevel);
         log.add(buf);
     }
 
@@ -374,25 +415,18 @@ struct AppState {
         return -1;
     }
 
-    // R22: roll the treasure for a lair (level-scaled, simple)
     Treasure rollTreasure(int roomIndex) {
         Treasure t;
         (void)roomIndex;
-        // coins: 3d6 x 10 gp, scaled by dungeon level
         t.gold = (int)dice.roll(3, 6, 0) * 10 * dungeonLevel;
-        // 10% a healing potion
         if (rng.below(100) < 10) t.potionHealing = true;
-        // 5% a +1 long sword
         if (rng.below(100) < 5) t.magicSword = true;
         return t;
     }
 
-    // R22: pay XP for slain monsters and loot the lair treasure.
-    // Called on a party victory only.
     void awardVictory() {
         if (!combat.encounter || combat.lastResult != 0) return;
 
-        // XP: each slain monster's xpValue, divided among survivors
         const monsters::MonsterDef* def = registry.find(combatMonsterKey);
         int perMonster = def ? def->xpValue : 10;
         int survivors = 0;
@@ -415,7 +449,6 @@ struct AppState {
             party.gainXp(share, dice, log);
         }
 
-        // treasure in the lair
         if (combatRoomIndex >= 0) {
             RoomOccupant& room = occupancy.rooms[combatRoomIndex];
             if (!room.monsterKey.empty()) {
@@ -508,8 +541,6 @@ struct AppState {
             if (!combat.encounter->party().empty())
                 party.fighter = combat.encounter->party()[0];
 
-            // R22: XP + loot on victory (before outcome logging so
-            // the level-up lines land near the victory line)
             awardVictory();
 
             const char* outcome = "?";
@@ -549,6 +580,12 @@ static void onPartyMove(int dx, int dy) {
     s.party.y = ny;
     s.cam.follow(s.party);
     ++s.turnCount;
+
+    // R23: stairs check first — descending is the priority action
+    if (s.party.x == s.stairsX && s.party.y == s.stairsY) {
+        s.descend();
+        return;
+    }
 
     int roomIdx = s.occupiedRoomNear(s.party.x, s.party.y);
     if (roomIdx >= 0) {
@@ -620,6 +657,28 @@ static void drawMonsterMarker(HDC dc, int px, int py, int count) {
     }
 }
 
+// R23: stairs marker — a cool blue ring with a down-chevron
+static void drawStairsMarker(HDC dc, int px, int py) {
+    HBRUSH br = CreateSolidBrush(RGB(50, 70, 130));
+    HPEN   pen = CreatePen(PS_SOLID, 2, RGB(150, 190, 255));
+    HPEN   oldPen = (HPEN)SelectObject(dc, pen);
+    HBRUSH oldBr  = (HBRUSH)SelectObject(dc, br);
+    Ellipse(dc, px - 11, py - 11, px + 11, py + 11);
+    SelectObject(dc, oldPen);
+    SelectObject(dc, oldBr);
+    DeleteObject(pen);
+    DeleteObject(br);
+
+    // chevron pointing down
+    HPEN cp = CreatePen(PS_SOLID, 3, RGB(220, 235, 255));
+    HPEN op = (HPEN)SelectObject(dc, cp);
+    MoveToEx(dc, px - 6, py - 3, nullptr);
+    LineTo(dc, px, py + 3);
+    LineTo(dc, px + 6, py - 3);
+    SelectObject(dc, op);
+    DeleteObject(cp);
+}
+
 static void drawView(HDC dc, const AppState& s) {
     const Map& map = s.map;
     const Camera& cam = s.cam;
@@ -651,6 +710,14 @@ static void drawView(HDC dc, const AppState& s) {
             continue;
         drawMonsterMarker(dc, sx * TILE_W + TILE_W / 2,
                           sy * TILE_H + TILE_H / 2, room.count);
+    }
+
+    // R23: stairs marker
+    if (s.stairsX >= 0) {
+        int sx = s.stairsX - cam.x, sy = s.stairsY - cam.y;
+        if (sx >= 0 && sy >= 0 && sx < VIEW_TILES_X && sy < VIEW_TILES_Y)
+            drawStairsMarker(dc, sx * TILE_W + TILE_W / 2,
+                             sy * TILE_H + TILE_H / 2);
     }
 
     if (!party.alive()) return;
@@ -768,7 +835,6 @@ static void drawHud(HDC dc, const AppState& s) {
     SetBkColor(dc, RGB(25, 22, 18));
     SetTextColor(dc, RGB(200, 190, 160));
 
-    // R22: XP progress line
     int next = party.nextLevelXp();
     char xpBuf[48];
     if (next < 0)
@@ -785,8 +851,8 @@ static void drawHud(HDC dc, const AppState& s) {
     TextOutA(dc, 12, VIEW_H + 8, line, (int)strlen(line));
 
     snprintf(line, sizeof line,
-             "Lvl %d  Rooms: %d (%d lairs)  [arrows/WASD] move  "
-             "[N] new dungeon  [E] wander  [F] plant wight  [esc] quit",
+             "Dungeon Lvl %d  Rooms: %d (%d lairs)  [arrows/WASD] move  "
+             "[N] new dungeon  [E] wander  [esc] quit",
              s.dungeonLevel, (int)s.dungeon.rooms.size(),
              s.countOccupied());
     TextOutA(dc, 12, VIEW_H + 32, line, (int)strlen(line));
@@ -858,6 +924,8 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case VK_DOWN:  case 'S': onPartyMove( 0,  1); break;
 
                     case 'N':
+                        // new dungeon resets depth but KEEPS career
+                        g_app.dungeonLevel = 1;
                         g_app.newDungeon(g_app.seed + 1);
                         break;
 
@@ -865,28 +933,6 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         if (g_app.party.alive())
                             g_app.spawnWanderingEncounter();
                         break;
-
-                    case 'F': {
-                        if (!g_app.party.alive()) break;
-                        int best = -1;
-                        long bestDist = -1;
-                        for (auto& room : g_app.occupancy.rooms) {
-                            if (!room.monsterKey.empty()) continue;
-                            long dx = room.denX - g_app.party.x;
-                            long dy = room.denY - g_app.party.y;
-                            long dist = dx * dx + dy * dy;
-                            if (bestDist < 0 || dist < bestDist) {
-                                bestDist = dist;
-                                best = room.roomIndex;
-                            }
-                        }
-                        if (best >= 0) {
-                            g_app.occupancy.rooms[best].monsterKey = "wight";
-                            g_app.occupancy.rooms[best].count = 1;
-                            g_app.log.add("A cold presence settles nearby...");
-                        }
-                        break;
-                    }
 
                     case VK_ESCAPE:
                         PostQuitMessage(0);
