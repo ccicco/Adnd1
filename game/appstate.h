@@ -30,6 +30,10 @@
 // (descend) restocks at the same time it refills slots. Load
 // already refills. Ammo stays a physical resource otherwise —
 // wandering-encounter-interrupted rests restore nothing.
+// R39: ammo as treasure — victorious room loot can include a
+// bundle of arrows (20): added to the quiver of the first living
+// missile-armed member, or stockpiled on the least-supplied one
+// when everyone is armed. Bows (R28) and arrows now both drop.
 // ============================================================================
 
 #pragma once
@@ -92,10 +96,11 @@ struct Treasure {
     bool potionHealing = false;
     bool magicSword = false;
     bool missileWeapon = false;   // R28: short bow find
+    bool ammoBundle = false;      // R39: 20 arrows on the ground
 
     bool empty() const {
         return gold == 0 && !potionHealing && !magicSword &&
-               !missileWeapon;
+               !missileWeapon && !ammoBundle;
     }
 };
 
@@ -853,6 +858,7 @@ struct AppState {
         if (rng.below(100) < 10) t.potionHealing = true;
         if (rng.below(100) < 5) t.magicSword = true;
         if (rng.below(100) < 10) t.missileWeapon = true;   // R28
+        if (rng.below(100) < 15) t.ammoBundle = true;      // R39
         return t;
     }
 
@@ -938,6 +944,34 @@ struct AppState {
                             log.add(c.name + " takes it.");
                             break;
                         }
+                    }
+                }
+                // R39: a bundle of arrows — given to the first
+                // living missile-armed member BELOW the 20 cap,
+                // else the least-supplied one (stacking quivers is
+                // a simplification: no encumbrance, no cap split)
+                if (t.ammoBundle) {
+                    Character* taker = nullptr;
+                    for (auto& c : party.members) {
+                        if (c.hp <= 0) continue;
+                        if (!items::weapon(
+                                c.rangedWeapon.id).missile) continue;
+                        if (!taker || c.missileAmmo < taker->missileAmmo)
+                            taker = &c;
+                        if (taker->missileAmmo < 20) break;
+                    }
+                    if (taker) {
+                        taker->missileAmmo += 20;
+                        char buf[96];
+                        snprintf(buf, sizeof buf,
+                                 "You find a bundle of arrows! "
+                                 "%s now carries %d.",
+                                 taker->name.c_str(),
+                                 taker->missileAmmo);
+                        log.add(buf);
+                    } else {
+                        log.add("You find a bundle of arrows, but "
+                                "no one can carry more.");
                     }
                 }
                 room.monsterKey.clear();
