@@ -39,6 +39,13 @@
 //      one ACTION_MISSILE shot whose dice/plus come from the melee
 //      weapon; the weapon is spent for the encounter (unarmed
 //      1d2 fists afterwards) and recovered after the fight.
+// R37: monster missile attacks — Actor::monsterRanged marks a
+//      missile-armed monster; such monsters fire an opening
+//      volley (one ACTION_MISSILE per attack routine) in the
+//      FIRST round only, then close to melee for the rest of the
+//      fight (no range/movement system yet — logged
+//      simplification). resolveMissile's monster path (own damage
+//      dice, no quiver) resolves the shots.
 // ============================================================================
 
 #pragma once
@@ -114,6 +121,10 @@ struct Actor {
     float hitDice = 1.0f;
     int   monsterAttacks = 1;      // attack routines per round
     int   monsterDamageCount = 1, monsterDamageSides = 6;
+    // R37: missile-armed monster — fires an opening volley in
+    // round 1, then melees. Set by the app from the monster key
+    // (the Lua registry data carries no ranged flag).
+    bool  monsterRanged = false;
     int   magicResistPct = 0;
     bool  undead = false;
 
