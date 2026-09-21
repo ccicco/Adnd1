@@ -13,6 +13,10 @@
 //   member fire missiles this round (ACTION_MISSILE events at
 //   the rate of fire, +5 segments apart). No STR mods on
 //   missile attacks (PHB); ammo uncounted (logged).
+// Rebuild tranche R29: save/load — [K] writes the party career
+//   to adnd1.sav (plain text); [L] restores it and generates a
+//   fresh dungeon at the saved depth. The company is saved, not
+//   the floor (no mid-dungeon state persisted — logged).
 //
 //   - Party carries a potion pool (from R22 treasure finds)
 //   - [P] quaff in EXPLORE heals the most-wounded living member
@@ -609,6 +613,160 @@ struct AppState {
         dungeonLevel = 1;
         mode = MODE_CREATE;
         log.add("The party is no more. Roll a new company.");
+    }
+
+    // ----------------------------------------------------------------
+    // R29: save/load. Plain-text career file "adnd1.sav" in the
+    // working directory. The COMPANY is saved, not the floor: no
+    // dungeon layout, occupancy, or combat state persists — loading
+    // regenerates a fresh dungeon at the saved depth (the
+    // deterministic newDungeon pipeline). Format: one token stream,
+    // version-tagged; unknown/short files are rejected cleanly.
+    // ----------------------------------------------------------------
+    static const char* SAVE_FILE() { return "adnd1.sav"; }
+
+    bool saveGame() const {
+        if (!party.formed || party.members.empty()) {
+            log.add("No company to save yet.");
+            return false;
+        }
+        FILE* f = fopen(SAVE_FILE(), "w");
+        if (!f) {
+            log.add("Cannot open adnd1.sav for writing!");
+            return false;
+        }
+        fprintf(f, "ADND1 %d\n", 1);   // format version
+        fprintf(f, "party %d\n",
+                (int)party.members.size());
+        fprintf(f, "gold %d kills %d potions %d depth %d\n",
+                party.gold, party.kills, party.potions,
+                dungeonLevel);
+        for (const auto& c : party.members) {
+            fprintf(f,
+                "member %s %d %d %d %d %d\n",
+                c.name.c_str(), c.classIndex, c.xp, c.level,
+                c.hp, c.maxHp);
+            fprintf(f, "abil %d %d %d %d %d %d %d %d\n",
+                (int)c.abilities.str, (int)c.abilities.int_,
+                (int)c.abilities.wis,  (int)c.abilities.dex,
+                (int)c.abilities.con,  (int)c.abilities.cha,
+                c.exStr.has ? 1 : 0, c.exStr.pct);
+            fprintf(f, "gear %d %d %d %d %d %d %d\n",
+                (int)c.weapon.id, c.weapon.plus,
+                (int)c.rangedWeapon.id, c.rangedWeapon.plus,
+                (int)c.armor.id, c.armor.plus,
+                c.shield ? 1 : 0);
+        }
+        fclose(f);
+        log.add("The company is recorded (adnd1.sav).");
+        return true;
+    }
+
+    bool loadGame() {
+        FILE* f = fopen(SAVE_FILE(), "r");
+        if (!f) {
+            log.add("No adnd1.sav found.");
+            return false;
+        }
+        char tag[16];
+        int version = 0;
+        if (fscanf(f, "%15s %d", tag, &version) != 2 ||
+            strcmp(tag, "ADND1") != 0 || version != 1) {
+            fclose(f);
+            log.add("adnd1.sav is not a valid save (v1).");
+            return false;
+        }
+        int n = 0;
+        if (fscanf(f, "%15s %d", tag, &n) != 2 ||
+            strcmp(tag, "party") != 0 || n < 1 || n > PARTY_MAX) {
+            fclose(f);
+            log.add("adnd1.sav is corrupt (party).");
+            return false;
+        }
+        Party p;
+        int gold = 0, kills = 0, potions = 0, depth = 1;
+        if (fscanf(f, "%15s %d %15s %d %15s %d %15s %d",
+                   tag, &gold, tag, &kills, tag, &potions,
+                   tag, &depth) != 8 || depth < 1 ||
+            depth > 50) {
+            fclose(f);
+            log.add("adnd1.sav is corrupt (career).");
+            return false;
+        }
+        for (int i = 0; i < n; ++i) {
+            Character c;
+            char name[64];
+            int cl = 0;
+            if (fscanf(f, "%15s %63s %d %d %d %d %d", tag,
+                       name, &cl, &c.xp, &c.level, &c.hp,
+                       &c.maxHp) != 7 ||
+                strcmp(tag, "member") != 0 || cl < 0 ||
+                cl > 3 || c.maxHp < 1) {
+                fclose(f);
+                log.add("adnd1.sav is corrupt (member).");
+                return false;
+            }
+            c.name = name;
+            c.classIndex = cl;
+            int str, int_, wis, dex, con, cha, exHas, exPct;
+            if (fscanf(f, "%15s %d %d %d %d %d %d %d %d", tag,
+                       &str, &int_, &wis, &dex, &con, &cha,
+                       &exHas, &exPct) != 9 ||
+                strcmp(tag, "abil") != 0) {
+                fclose(f);
+                log.add("adnd1.sav is corrupt (abilities).");
+                return false;
+            }
+            c.abilities.str  = (uint8_t)str;
+            c.abilities.int_ = (uint8_t)int_;
+            c.abilities.wis  = (uint8_t)wis;
+            c.abilities.dex  = (uint8_t)dex;
+            c.abilities.con  = (uint8_t)con;
+            c.abilities.cha  = (uint8_t)cha;
+            c.exStr.has = (exHas != 0);
+            c.exStr.pct = exPct;
+            int wid, wpl, rid, rpl, aid, apl, sh;
+            if (fscanf(f, "%15s %d %d %d %d %d %d %d", tag,
+                       &wid, &wpl, &rid, &rpl, &aid, &apl,
+                       &sh) != 8 || strcmp(tag, "gear") != 0) {
+                fclose(f);
+                log.add("adnd1.sav is corrupt (gear).");
+                return false;
+            }
+            if (wid < 0 || wid >= (int)items::WPN_COUNT ||
+                rid < 0 || rid >= (int)items::WPN_COUNT ||
+                aid < 0 || aid >= (int)items::ARMOR_COUNT) {
+                fclose(f);
+                log.add("adnd1.sav is corrupt (gear ids).");
+                return false;
+            }
+            c.weapon.id        = (items::WeaponId)wid;
+            c.weapon.plus      = wpl;
+            c.rangedWeapon.id  = (items::WeaponId)rid;
+            c.rangedWeapon.plus = rpl;
+            c.armor.id         = (items::ArmorId)aid;
+            c.armor.plus       = apl;
+            c.shield           = (sh != 0);
+            p.members.push_back(c);
+        }
+        fclose(f);
+
+        // commit: career restored, fresh dungeon at saved depth
+        p.formed = true;
+        p.gold = gold;
+        p.kills = kills;
+        p.potions = potions;
+        party = p;
+        creation.done = true;
+        dungeonLevel = depth;
+        mode = MODE_EXPLORE;
+        newDungeon(seed + 1000 + dungeonLevel);
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "The company of %d returns (depth %d).",
+                 n, dungeonLevel);
+        log.add(buf);
+        return true;
     }
 
     // R23: stairs in the room whose center is farthest from the
@@ -1542,8 +1700,8 @@ static void drawCreate(HDC dc, const AppState& s) {
 
             SetTextColor(dc, RGB(190, 175, 140));
             TextOutA(dc, 20, VIEW_H - 60,
-                     "[R] reroll   [Enter] accept roll",
-                     31);
+                     "[R] reroll   [Enter] accept roll   [L] load save",
+                     46);
             if (!s.party.members.empty())
                 TextOutA(dc, 20, VIEW_H - 38,
                          "[D] begin the delve with this company",
@@ -1639,7 +1797,8 @@ static void drawHud(HDC dc, const AppState& s) {
 
     snprintf(line, sizeof line,
              "Dungeon Lvl %d  Rooms: %d (%d lairs)  %d gp  Potions %d  "
-             "Kills %d  Turn %d  Seed %llu  [P] quaff",
+             "Kills %d  Turn %d  Seed %llu  [P] quaff  "
+             "[K] save  [L] load",
              s.dungeonLevel, (int)s.dungeon.rooms.size(),
              s.countOccupied(), party.gold, party.potions,
              party.kills, s.turnCount, (unsigned long long)s.seed);
@@ -1676,7 +1835,14 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
 
         case WM_KEYDOWN:
             if (g_app.mode == MODE_CREATE) {
-                creationKeyDown(wp);
+                // R29: [L] resumes a saved company from the
+                // creation screen (before any dice are rolled);
+                // any other key falls through to creation flow
+                if (wp == 'L' || wp == 'l') {
+                    g_app.loadGame();   // stays in CREATE on fail
+                } else {
+                    creationKeyDown(wp);
+                }
                 // Enter in the NAME stage confirms the member
                 // (creationKeyDown only moves between stages)
                 if (wp == VK_RETURN &&
@@ -1793,6 +1959,21 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'P':
                     case 'p':
                         g_app.quaffExplore();
+                        break;
+
+                    // R29: save the company / load a saved one
+                    case 'K':
+                    case 'k':
+                        if (g_app.party.alive())
+                            g_app.saveGame();
+                        else
+                            g_app.log.add(
+                                "The dead leave no records.");
+                        break;
+
+                    case 'L':
+                    case 'l':
+                        g_app.loadGame();
                         break;
 
                     case VK_ESCAPE:
