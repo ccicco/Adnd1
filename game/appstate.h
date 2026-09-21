@@ -4,6 +4,9 @@
 // modes, creation state, combat state, and AppState itself.
 // Moved verbatim from adnd1.cpp, R31 — no windows.h here; the
 // shell (adnd1.cpp) owns the Renderer.
+// R33: spellbook wiring — MU starting spell at creation, the
+// castable list filters by known spells, and saveGame/loadGame
+// grow an optional per-MU "spells" line (v1 saves still load).
 // ============================================================================
 
 #pragma once
@@ -152,6 +155,24 @@ struct CreationState {
         int conAdj = rules::conHPAdjustment(classIndex, rolled.con);
         c.hp = c.maxHp = rules::rollHitPoints(classIndex, 1,
                                               conAdj, creationDice);
+
+        // R33: the MU starts with one random L1 spell in the book
+        // (PHB: a beginning magic-user has a single first-level
+        // spell; rebuild picks it by lot)
+        if (classIndex == 1) {
+            std::vector<int> l1;
+            for (int id = 0; id < spells::SPELL_COUNT; ++id) {
+                const spells::SpellDef& s =
+                    spells::spell((spells::SpellId)id);
+                if (s.sclass == spells::SPELL_MU && s.level == 1)
+                    l1.push_back(id);
+            }
+            if (!l1.empty()) {
+                int pick = (int)creationDice.roll(
+                    1, (uint32_t)l1.size(), 0) - 1;
+                c.knownSpells.push_back(l1[pick]);
+            }
+        }
 
         // default equipment per class (R24 decision; respects
         // classes armorAllowed/shieldAllowed by construction)
@@ -321,6 +342,9 @@ struct CombatState {
             if (s.level < 1 || s.level > 3) continue;
             if (s.level > maxLv) continue;
             if (a.slotsByLevel[s.level - 1] <= 0) continue;
+            // R33: MUs cast only what their book holds (cleric
+            // prayers remain free)
+            if (mu && !a.knowsSpell(id)) continue;
             out.push_back((spells::SpellId)id);
         }
         return out;
@@ -448,6 +472,15 @@ struct AppState {
                 (int)c.rangedWeapon.id, c.rangedWeapon.plus,
                 (int)c.armor.id, c.armor.plus,
                 c.shield ? 1 : 0);
+            // R33: the MU spellbook (one line per MU; other
+            // classes write nothing — v1 saves stay readable)
+            if (c.classIndex == 1) {
+                fprintf(f, "spells %d",
+                        (int)c.knownSpells.size());
+                for (int s : c.knownSpells)
+                    fprintf(f, " %d", s);
+                fprintf(f, "\n");
+            }
         }
         fclose(f);
         log.add("The company is recorded (adnd1.sav).");
@@ -461,6 +494,10 @@ struct AppState {
             return false;
         }
         char tag[16];
+        // R33: one-token pushback — holds a tag read past the
+        // optional spells line so the next member parse reuses it
+        char pendingTag[16] = "";
+        bool hasPending = false;
         int version = 0;
         if (fscanf(f, "%15s %d", tag, &version) != 2 ||
             strcmp(tag, "ADND1") != 0 || version != 1) {
@@ -489,10 +526,20 @@ struct AppState {
             Character c;
             char name[64];
             int cl = 0;
-            if (fscanf(f, "%15s %63s %d %d %d %d %d", tag,
+            // R33: tag comes from the pushback buffer when the
+            // optional spells line was absent (v1 saves)
+            if (hasPending) {
+                strcpy(tag, pendingTag);
+                hasPending = false;
+            } else if (fscanf(f, "%15s", tag) != 1) {
+                fclose(f);
+                log.add("adnd1.sav is corrupt (short).");
+                return false;
+            }
+            if (strcmp(tag, "member") != 0 ||
+                fscanf(f, "%63s %d %d %d %d %d",
                        name, &cl, &c.xp, &c.level, &c.hp,
-                       &c.maxHp) != 7 ||
-                strcmp(tag, "member") != 0 || cl < 0 ||
+                       &c.maxHp) != 6 || cl < 0 ||
                 cl > 3 || c.maxHp < 1) {
                 fclose(f);
                 log.add("adnd1.sav is corrupt (member).");
@@ -539,9 +586,59 @@ struct AppState {
             c.armor.id         = (items::ArmorId)aid;
             c.armor.plus       = apl;
             c.shield           = (sh != 0);
+
+            // R33: optional spellbook line (MUs in new saves).
+            // If the next tag is not "spells", push it back for
+            // the next member iteration (v1 save compat).
+            if (fscanf(f, "%15s", tag) == 1) {
+                if (strcmp(tag, "spells") == 0) {
+                    int ns = 0;
+                    if (fscanf(f, "%d", &ns) != 1 || ns < 0 ||
+                        ns > spells::SPELL_COUNT) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (spells).");
+                        return false;
+                    }
+                    for (int k = 0; k < ns; ++k) {
+                        int sid = 0;
+                        if (fscanf(f, "%d", &sid) != 1 ||
+                            sid < 0 ||
+                            sid >= spells::SPELL_COUNT) {
+                            fclose(f);
+                            log.add("adnd1.sav is corrupt (sid).");
+                            return false;
+                        }
+                        c.knownSpells.push_back(sid);
+                    }
+                } else {
+                    strcpy(pendingTag, tag);
+                    hasPending = true;
+                }
+            }
             p.members.push_back(c);
         }
         fclose(f);
+
+        // R33: v1 saves predate the spellbook — grant each MU a
+        // default book (one random L1 spell, creation convention)
+        for (auto& c : p.members) {
+            if (c.classIndex == 1 && c.knownSpells.empty()) {
+                std::vector<int> l1;
+                for (int id = 0; id < spells::SPELL_COUNT;
+                     ++id) {
+                    const spells::SpellDef& s =
+                        spells::spell((spells::SpellId)id);
+                    if (s.sclass == spells::SPELL_MU &&
+                        s.level == 1)
+                        l1.push_back(id);
+                }
+                if (!l1.empty()) {
+                    int pick = (int)dice.roll(
+                        1, (uint32_t)l1.size(), 0) - 1;
+                    c.knownSpells.push_back(l1[pick]);
+                }
+            }
+        }
 
         // commit: career restored, fresh dungeon at saved depth
         p.formed = true;
