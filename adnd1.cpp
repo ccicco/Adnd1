@@ -28,6 +28,14 @@
 // 200 gp); [x] shoot in combat is refused once the range closes
 // (5 rounds). Wired to AppState::townTrain / townBuyChain /
 // townBuyScroll / combatShoot gate (game/appstate.h).
+// Rebuild tranche R44: five features — [0] keep (name level,
+// 10,000 gp; rents + half-price training), [9] identify scroll
+// (100 gp) and [I] to read one over pending magic loot, [H] the
+// henchman offer (100 gp; an NPC fighter joins the fights, upkeep
+// on return, loyalty gates descending), six new Lua bestiary
+// files, and a town status panel (roster, hire, keep, scrolls).
+// Wired to AppState::townBuildStronghold / townBuyIdentify /
+// useIdentifyScroll / townHireHenchman (game/appstate.h).
 // R31 heritage: file split — adnd1.cpp is now the Win32/GDI
 // shell only (renderer, drawing, window proc, input); the game
 // simulation moved verbatim to game/ headers:
@@ -753,13 +761,23 @@ static void drawTown(HDC dc, const AppState& s) {
     snprintf(line, sizeof line, "[8] Scribe — spell scroll, 200 gp");
     TextOutA(dc, 20, 264, line, (int)strlen(line));
 
+    // R44: the new services
+    snprintf(line, sizeof line, "[9] Scribe — identify scroll, 100 gp");
+    TextOutA(dc, 20, 288, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[0] Masons — build a keep, 10,000 gp (name level)");
+    TextOutA(dc, 20, 312, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[H] Crier — post a henchman offer, 100 gp");
+    TextOutA(dc, 20, 336, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[I] Read an identify scroll");
+    TextOutA(dc, 20, 360, line, (int)strlen(line));
+
     SetTextColor(dc, RGB(160, 150, 120));
     snprintf(line, sizeof line, "[B]/[Esc] return to the dungeon");
-    TextOutA(dc, 20, 288, line, (int)strlen(line));
+    TextOutA(dc, 20, 384, line, (int)strlen(line));
 
     // quiver summary so arrow buys are informed
     SetTextColor(dc, RGB(200, 190, 160));
-    int y = 324;
+    int y = 420;
     for (const auto& c : s.party.members) {
         if (!items::weapon(c.rangedWeapon.id).missile) continue;
         char nm[9];
@@ -770,6 +788,60 @@ static void drawTown(HDC dc, const AppState& s) {
         TextOutA(dc, 20, y, line, (int)strlen(line));
         y += 22;
     }
+
+    // R44: company status panel — roster, hire, keep, scrolls
+    SetTextColor(dc, RGB(220, 200, 160));
+    snprintf(line, sizeof line, "THE COMPANY");
+    TextOutA(dc, 430, 96, line, (int)strlen(line));
+    SetTextColor(dc, RGB(200, 190, 160));
+    static const char* CLASS_LETTER = "FMCT";
+    int sy = 120;
+    for (const auto& c : s.party.members) {
+        char nm[9];
+        strncpy(nm, c.name.c_str(), 8);
+        nm[8] = 0;
+        if (c.hp <= 0) {
+            snprintf(line, sizeof line, "%s  fallen", nm);
+        } else {
+            snprintf(line, sizeof line, "%s  %c%d  %d/%d",
+                     nm, CLASS_LETTER[c.classIndex & 3],
+                     c.level, c.hp, c.maxHp);
+        }
+        TextOutA(dc, 430, sy, line, (int)strlen(line));
+        sy += 22;
+    }
+    if (sy < 200) sy = 200;   // clear of a short roster
+    if (s.party.henchmanPresent) {
+        char nm[17];
+        strncpy(nm, s.party.henchmanName.c_str(), 16);
+        nm[16] = 0;
+        snprintf(line, sizeof line,
+                 "%s (hire) F%d  %d/%d  loy %d%%",
+                 nm, s.party.henchmanLevel, s.party.henchmanHp,
+                 s.party.henchmanMaxHp, s.party.henchmanLoyalty);
+        TextOutA(dc, 430, sy, line, (int)strlen(line));
+        sy += 22;
+    }
+    if (s.party.strongholdBuilt &&
+        s.party.strongholdOwner >= 0 &&
+        s.party.strongholdOwner <
+            (int)s.party.members.size()) {
+        char nm[9];
+        strncpy(nm,
+            s.party.members[s.party.strongholdOwner]
+                .name.c_str(),
+            8);
+        nm[8] = 0;
+        snprintf(line, sizeof line, "The keep of %s stands.",
+                 nm);
+        TextOutA(dc, 430, sy, line, (int)strlen(line));
+        sy += 22;
+    }
+    snprintf(line, sizeof line,
+             "Identify scrolls: %d  (unidentified: %d)",
+             s.party.identifyScrolls,
+             (int)s.party.unidentified.size());
+    TextOutA(dc, 430, sy, line, (int)strlen(line));
 }
 
 static void drawHud(HDC dc, const AppState& s) {
@@ -793,7 +865,7 @@ static void drawHud(HDC dc, const AppState& s) {
         strncpy(nm, c.name.c_str(), 8);
         nm[8] = 0;
         snprintf(tok, sizeof tok, "%s%s %c%d %d/%d   ",
-                 c.hp > 0 ? "" : "†",
+                 c.hp > 0 ? "" : "â ",
                  nm, CLASS_INITIALS[c.classIndex],
                  c.level, c.hp, c.maxHp);
         strcat(line, tok);
@@ -891,6 +963,25 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
 
                     case '8':
                         g_app.townBuyScroll();
+                        break;
+
+                    // R44: keep, scrolls, and the hire
+                    case '9':
+                        g_app.townBuyIdentify();
+                        break;
+
+                    case '0':
+                        g_app.townBuildStronghold();
+                        break;
+
+                    case 'H':
+                    case 'h':
+                        g_app.townHireHenchman();
+                        break;
+
+                    case 'I':
+                    case 'i':
+                        g_app.useIdentifyScroll();
                         break;
 
                     case 'B':
