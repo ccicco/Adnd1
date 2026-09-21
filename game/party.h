@@ -51,6 +51,7 @@ struct Character {
 
     items::WeaponInstance weapon;
     items::WeaponInstance rangedWeapon;   // R28: missile slot
+    int missileAmmo = 0;   // R35: arrows/bolts/stones on hand
     items::ArmorInstance  armor;
     bool shield = false;
 
@@ -84,6 +85,7 @@ struct Character {
         a.exStr  = exStr;
         a.weapon = weapon;
         a.rangedWeapon = rangedWeapon;   // R28
+        a.missileAmmo = missileAmmo;     // R35: live quiver count
         a.armor  = armor;
         a.shield = shield;
         a.hp     = hp;
