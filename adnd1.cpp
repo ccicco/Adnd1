@@ -1,4 +1,5 @@
 // ============================================================================
+// File: adnd1.cpp (repository root — the Win32/GDI shell)
 // Adnd1 — a 2D tile-based CRPG implementing AD&D 1st Edition rules
 // Rebuild tranche R34: per-day spell slots — casters keep a live slot
 // tally that only refills on rest (new [R] rest command in explore
@@ -36,6 +37,14 @@
 // files, and a town status panel (roster, hire, keep, scrolls).
 // Wired to AppState::townBuildStronghold / townBuyIdentify /
 // useIdentifyScroll / townHireHenchman (game/appstate.h).
+// Rebuild tranche R45: henchman advancement (half-share XP,
+// hit-die level-ups, a third of the take paid in town),
+// [S] sage lore and [Y] spy recon consults, [M] the peddler
+// (random identified magic item), dart traps in unoccupied
+// rooms (save vs death, thieves may disarm), and secret
+// doors found with [F] search. Wired to AppState::
+// springTrap / searchExplore / townSage / townSpy /
+// townPeddler (game/appstate.h).
 // R31 heritage: file split — adnd1.cpp is now the Win32/GDI
 // shell only (renderer, drawing, window proc, input); the game
 // simulation moved verbatim to game/ headers:
@@ -771,13 +780,21 @@ static void drawTown(HDC dc, const AppState& s) {
     snprintf(line, sizeof line, "[I] Read an identify scroll");
     TextOutA(dc, 20, 360, line, (int)strlen(line));
 
+    // R45: lore, recon, and the peddler
+    snprintf(line, sizeof line, "[S] Sage — what lairs below, 200 gp");
+    TextOutA(dc, 20, 384, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[Y] Spy — recon the level, 500 gp");
+    TextOutA(dc, 20, 408, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[M] Peddler — a magic item, 500 gp");
+    TextOutA(dc, 20, 432, line, (int)strlen(line));
+
     SetTextColor(dc, RGB(160, 150, 120));
     snprintf(line, sizeof line, "[B]/[Esc] return to the dungeon");
-    TextOutA(dc, 20, 384, line, (int)strlen(line));
+    TextOutA(dc, 20, 456, line, (int)strlen(line));
 
     // quiver summary so arrow buys are informed
     SetTextColor(dc, RGB(200, 190, 160));
-    int y = 420;
+    int y = 492;
     for (const auto& c : s.party.members) {
         if (!items::weapon(c.rangedWeapon.id).missile) continue;
         char nm[9];
@@ -984,6 +1001,22 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.useIdentifyScroll();
                         break;
 
+                    // R45: lore, recon, and the peddler
+                    case 'S':
+                    case 's':
+                        g_app.townSage();
+                        break;
+
+                    case 'Y':
+                    case 'y':
+                        g_app.townSpy();
+                        break;
+
+                    case 'M':
+                    case 'm':
+                        g_app.townPeddler();
+                        break;
+
                     case 'B':
                     case 'b':
                     case VK_ESCAPE:
@@ -1100,6 +1133,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'E':
                         if (g_app.party.alive())
                             g_app.spawnWanderingEncounter();
+                        break;
+
+                    // R45: search the walls for secret doors
+                    case 'F':
+                    case 'f':
+                        g_app.searchExplore();
                         break;
 
                     case 'P':
