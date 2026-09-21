@@ -56,6 +56,17 @@
 // factor);(3) dungeon scaling — monster lair sizes and treasure
 // gold now scale with depth (cap 2+level/2, gold multiplier
 // 100%+25%/level above 1).
+// R43 (three features): (1) DMG training — level-ups queue
+// (Party::pendingTraining) until the member trains at the town
+// hall ([6], 1500 gp x new level); promotion logic moved from
+// gainXp to Party::trainNext (hit die + R33 MU spell study);
+// queue persists in saves via an optional "training" line
+// (v1-compatible); (2) party-side range — the encounter carries
+// an abstract distance (5 bands, closes 1/round); [x] shoot is
+// refused once the range closes (thrown weapons exempt);
+// (3) town stock — [7] chain mail (75 gp, first armored-eligible
+// member in worse), [8] spell scroll (200 gp, one random unknown
+// L1 MU spell added to the first MU's book).
 // ============================================================================
 
 #pragma once
@@ -520,6 +531,13 @@ struct AppState {
         fprintf(f, "gold %d kills %d potions %d depth %d\n",
                 party.gold, party.kills, party.potions,
                 dungeonLevel);
+        // R43: the training queue (v1 saves lack this line — the
+        // loader treats it as optional)
+        fprintf(f, "training %d",
+                (int)party.pendingTraining.size());
+        for (int i : party.pendingTraining)
+            fprintf(f, " %d", i);
+        fprintf(f, "\n");
         for (const auto& c : party.members) {
             fprintf(f,
                 "member %s %d %d %d %d %d\n",
@@ -584,6 +602,33 @@ struct AppState {
             fclose(f);
             log.add("adnd1.sav is corrupt (career).");
             return false;
+        }
+        // R43: optional training-queue line (v1 saves lack it).
+        // If the next tag is not "training", push it back for
+        // the member loop (R33 pushback pattern).
+        if (fscanf(f, "%15s", tag) == 1) {
+            if (strcmp(tag, "training") == 0) {
+                int nt = 0;
+                if (fscanf(f, "%d", &nt) != 1 || nt < 0 ||
+                    nt > PARTY_MAX) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (training).");
+                    return false;
+                }
+                for (int k = 0; k < nt; ++k) {
+                    int ti = 0;
+                    if (fscanf(f, "%d", &ti) != 1 || ti < 0 ||
+                        ti >= n) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (tidx).");
+                        return false;
+                    }
+                    p.pendingTraining.push_back(ti);
+                }
+            } else {
+                strcpy(pendingTag, tag);
+                hasPending = true;
+            }
         }
         for (int i = 0; i < n; ++i) {
             Character c;
@@ -944,6 +989,135 @@ struct AppState {
         log.add(taker->name + " buys a +1 long sword.");
     }
 
+    // R43: the training hall — promote the first queued member
+    // (1500 gp x their next level, DMG p.86 convention
+    // simplified). One promotion per visit/key press.
+    void townTrain() {
+        if (mode != MODE_TOWN) return;
+        if (party.pendingTraining.empty()) {
+            log.add("No one is due a level.");
+            return;
+        }
+        // peek at the first valid queued member for the price
+        int idx = -1;
+        for (int i : party.pendingTraining) {
+            if (i >= 0 && i < (int)party.members.size() &&
+                party.members[i].hp > 0) { idx = i; break; }
+        }
+        if (idx < 0) {
+            log.add("No one is due a level.");
+            return;
+        }
+        Character& c = party.members[idx];
+        int cost = 1500 * (c.level + 1);
+        if (party.gold < cost) {
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "The training master wants %d gp.", cost);
+            log.add(buf);
+            return;
+        }
+        party.gold -= cost;
+        int trained = party.trainNext(dice, log);
+        if (trained >= 0) {
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "Training paid (%d gp).", cost);
+            log.add(buf);
+            // R34: a trained caster's slot pool may have grown —
+            // restore so the new slots are usable
+            restoreSlots();
+        }
+    }
+
+    // R43: the armorer — chain mail (75 gp, PHB list price) for
+    // the first living armor-eligible member (fighter or cleric)
+    // whose current armor is worse than chain
+    void townBuyChain() {
+        if (mode != MODE_TOWN) return;
+        Character* taker = nullptr;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            if (c.classIndex != rules::CLASS_FIGHTER &&
+                c.classIndex != rules::CLASS_CLERIC)
+                continue;
+            if ((int)c.armor.id >=
+                (int)items::ARMOR_CHAIN_MAIL)
+                continue;   // already chain or better
+            taker = &c;
+            break;
+        }
+        if (!taker) {
+            log.add("No one needs chain mail today.");
+            return;
+        }
+        if (party.gold < 75) {
+            log.add("The armorer wants 75 gp.");
+            return;
+        }
+        party.gold -= 75;
+        taker->armor.id = items::ARMOR_CHAIN_MAIL;
+        log.add(taker->name + " buys chain mail.");
+    }
+
+    // R43: the scribe — a spell scroll (200 gp): one random
+    // unknown L1 MU spell is copied into the first MU's book
+    // (chance-to-learn deferred to level-ups — buying knowledge
+    // is the simplification)
+    void townBuyScroll() {
+        if (mode != MODE_TOWN) return;
+        // gather unknown L1 MU spells
+        std::vector<int> unknown;
+        for (int id = 0; id < spells::SPELL_COUNT; ++id) {
+            const spells::SpellDef& s =
+                spells::spell((spells::SpellId)id);
+            if (s.sclass != spells::SPELL_MU || s.level != 1)
+                continue;
+            bool knownByAll = true;
+            for (auto& c : party.members)
+                if (c.classIndex == 1 && !c.knowsSpell(id))
+                    knownByAll = false;
+            if (!knownByAll) unknown.push_back(id);
+        }
+        if (unknown.empty()) {
+            log.add("The scribe has no scrolls you need.");
+            return;
+        }
+        Character* taker = nullptr;
+        for (auto& c : party.members) {
+            if (c.hp <= 0 || c.classIndex != 1) continue;
+            for (int id : unknown) {
+                if (!c.knowsSpell(id)) { taker = &c; break; }
+            }
+            if (taker) break;
+        }
+        if (!taker) {
+            log.add("No magic-user can study the scroll.");
+            return;
+        }
+        if (party.gold < 200) {
+            log.add("The scribe wants 200 gp.");
+            return;
+        }
+        party.gold -= 200;
+        // pick a spell this taker does not know
+        std::vector<int> forHim;
+        for (int id : unknown)
+            if (!taker->knowsSpell(id)) forHim.push_back(id);
+        int pick = forHim.empty()
+            ? unknown[0]
+            : forHim[(size_t)dice.roll(
+                  1, (uint32_t)forHim.size(), 0) - 1];
+        taker->knownSpells.push_back(pick);
+        const spells::SpellDef& s = spells::spell(
+            (spells::SpellId)pick);
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "%s copies %s into his spellbook.",
+                 taker->name.c_str(), s.name);
+        log.add(buf);
+    }
+
     void restExplore() {
         if (mode != MODE_EXPLORE) return;
         if (!party.alive()) return;
@@ -1298,6 +1472,13 @@ struct AppState {
             return;
         if (!partyActors[combat.activeMember].hasRangedWeapon()) {
             log.add("That member has no missile weapon.");
+            return;
+        }
+        // R43: the range must still be open — once the foes have
+        // closed, only melee (or a hurled weapon) serves
+        if (!combat.encounter->rangeOpen()) {
+            log.add("The foes are upon you — no time for "
+                    "missiles!");
             return;
         }
         // R35: dry quiver — nothing left to loose
