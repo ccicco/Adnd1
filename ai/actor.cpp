@@ -7,6 +7,10 @@
 //      attacking member (pickFoeForPartyActor receives the actor),
 //      and flee parting swings pick a RANDOM living party member
 //      instead of always the front-most.
+// R25: quaff command — a requested member's melee submissions are
+//      replaced by one ACTION_DRINK at segment 10 (end of round,
+//      R7 drink convention); the quaff hook applies the effect
+//      when the scheduler reaches the event.
 // ============================================================================
 
 #include "actor.h"
@@ -404,12 +408,28 @@ int Encounter::stepRound() {
     int baseSegP = rules::initiativeToSegment(pIni) + pSurp;
     int baseSegM = rules::initiativeToSegment(mIni) + mSurp;
 
-    auto submitTeam = [&](std::vector<Actor>& team, int baseSeg) {
+    // R25: capture + clear the drink request for this round
+    int drinkMember = m_drinkMember;
+    m_drinkMember = -1;
+
+    auto submitTeam = [&](std::vector<Actor>& team, int baseSeg,
+                          int drinkIdx) {
         for (auto& a : team) {
             if (!a.canAct()) continue;
+            int idx = (int)(&a - team.data());
+            // R25: the drinking member's round is consumed — one
+            // ACTION_DRINK at the end of the round, no melee
+            if (idx == drinkIdx) {
+                rules::Action act;
+                act.type = rules::ACTION_DRINK;
+                act.actorId = a.team * 1000 + idx;
+                act.segment = 10;               // end of round
+                sched.submit(act, 10);
+                continue;
+            }
             rules::Action act;
             act.type = rules::ACTION_MELEE;
-            act.actorId = a.team * 1000 + (&a - team.data());
+            act.actorId = a.team * 1000 + idx;
             // hasted actors act twice
             int attacks = a.attacksPerRound();
             if (a.hasStatus(spelleffects::STATUS_HASTED)) attacks *= 2;
@@ -420,8 +440,8 @@ int Encounter::stepRound() {
             }
         }
     };
-    submitTeam(m_party, baseSegP);
-    submitTeam(m_monsters, baseSegM);
+    submitTeam(m_party, baseSegP, drinkMember);
+    submitTeam(m_monsters, baseSegM, -1);
     sched.beginRound();
 
     // resolve in segment order
@@ -431,6 +451,14 @@ int Encounter::stepRound() {
         int idx = ev.actorId % 1000;
         Actor& attacker = isParty ? m_party[idx] : m_monsters[idx];
         if (!attacker.canAct()) continue;
+
+        // R25: the drink event — the quaff hook applies the potion
+        // (the hook owns inventory; if it does nothing, e.g. no
+        // potions left, the round is still consumed)
+        if (isParty && idx == drinkMember) {
+            if (m_quaffHook) m_quaffHook(attacker);
+            continue;
+        }
 
         // pick a living enemy
         Actor* target = nullptr;
