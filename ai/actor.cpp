@@ -32,6 +32,11 @@
 //      melee weapon (dice/plus from the weapon, spent for the
 //      encounter, unarmed 1d2 fists afterwards); resolveMissile
 //      reads the melee weapon through the Actor "throwing" flag.
+// R37: monster missile attacks — missile-armed monsters
+//      (Actor::monsterRanged, app-set from the monster key) fire
+//      an opening volley in round 1 (one ACTION_MISSILE per
+//      attack routine), then close to melee for the rest of the
+//      fight. resolveMissile's monster path resolves the shots.
 // ============================================================================
 
 #include "actor.h"
@@ -739,6 +744,25 @@ int Encounter::stepRound() {
                 sched.submit(act, baseSeg);
                 continue;
             }
+            // R37: missile-armed monsters — an opening volley in
+            // the FIRST round (one shot per attack routine at the
+            // R7 +5-segment spacing), then they close to melee
+            // (no range/movement system — logged simplification).
+            // Party members are never on this path (requests
+            // drive their rounds). Note: m_round was pre-
+            // incremented, so the first round is 1.
+            if (!a.isCharacter && a.monsterRanged && m_round == 1) {
+                int shots = a.attacksPerRound();
+                for (int i = 0; i < shots; ++i) {
+                    rules::Action act;
+                    act.type = rules::ACTION_MISSILE;
+                    act.actorId = a.team * 1000 + idx;
+                    act.rateOfFire = shots;
+                    act.segment = baseSeg + i * 5;
+                    sched.submit(act, baseSeg + i * 5);
+                }
+                continue;
+            }
             rules::Action act;
             act.type = rules::ACTION_MELEE;
             act.actorId = a.team * 1000 + idx;
@@ -785,9 +809,11 @@ int Encounter::stepRound() {
         // R28: missile events — the shooter's own selection (R21/
         // R24 hook) picks the target; resolveMissile does the rest
         // (R36: also the hurled-weapon event — a throwing flag
-        // with or without a ranged weapon in the slot)
+        // with or without a ranged weapon in the slot; R37: and
+        // the monsters' opening-volley shots)
         if (ev.action.type == rules::ACTION_MISSILE &&
-            (attacker.hasRangedWeapon() || attacker.throwing)) {
+            (attacker.hasRangedWeapon() || attacker.throwing ||
+             (!attacker.isCharacter && attacker.monsterRanged))) {
             Actor* target = nullptr;
             if (isParty) {
                 target = pickFoeForPartyActor(attacker);
