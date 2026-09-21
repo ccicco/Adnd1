@@ -12,6 +12,11 @@
 // fists for the rest of the encounter (recovered afterward).
 // Wired to AppState::combatThrow (game/appstate.h), resolved by
 // Encounter::requestThrow / resolveMissile (ai/actor.*).
+// Rebuild tranche R41: town hub — [B] from the dungeon opens the
+// town screen (MODE_TOWN): [1] buys a healing potion (50 gp),
+// [2] buys 20 arrows (30 gp), [B]/Esc returns to the dungeon at
+// the same depth. Wired to AppState::enterTown / leaveTown /
+// townBuyPotion / townBuyArrows (game/appstate.h).
 // R31 heritage: file split — adnd1.cpp is now the Win32/GDI
 // shell only (renderer, drawing, window proc, input); the game
 // simulation moved verbatim to game/ headers:
@@ -694,6 +699,52 @@ static void drawCreate(HDC dc, const AppState& s) {
 // Drawing: HUD
 // ----------------------------------------------------------------------------
 
+// R41: town screen — the shops between dives
+static void drawTown(HDC dc, const AppState& s) {
+    RECT vr = { 0, 0, VIEW_W, VIEW_H };
+    HBRUSH black = CreateSolidBrush(RGB(8, 6, 4));
+    FillRect(dc, &vr, black);
+    DeleteObject(black);
+
+    SetBkColor(dc, RGB(8, 6, 4));
+    SetTextColor(dc, RGB(220, 200, 160));
+    char line[160];
+
+    snprintf(line, sizeof line, "THE TOWN");
+    TextOutA(dc, 20, 14, line, (int)strlen(line));
+
+    SetTextColor(dc, RGB(200, 190, 160));
+    snprintf(line, sizeof line,
+             "The company rests above ground. "
+             "Purse: %d gp  Potions: %d",
+             s.party.gold, s.party.potions);
+    TextOutA(dc, 20, 48, line, (int)strlen(line));
+
+    SetTextColor(dc, RGB(200, 190, 160));
+    snprintf(line, sizeof line, "[1] Temple — potion of healing, 50 gp");
+    TextOutA(dc, 20, 96, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[2] Fletcher — 20 arrows, 30 gp");
+    TextOutA(dc, 20, 120, line, (int)strlen(line));
+
+    SetTextColor(dc, RGB(160, 150, 120));
+    snprintf(line, sizeof line, "[B]/[Esc] return to the dungeon");
+    TextOutA(dc, 20, 168, line, (int)strlen(line));
+
+    // quiver summary so arrow buys are informed
+    SetTextColor(dc, RGB(200, 190, 160));
+    int y = 216;
+    for (const auto& c : s.party.members) {
+        if (!items::weapon(c.rangedWeapon.id).missile) continue;
+        char nm[9];
+        strncpy(nm, c.name.c_str(), 8);
+        nm[8] = 0;
+        snprintf(line, sizeof line, "%s — quiver %d",
+                 nm, c.missileAmmo);
+        TextOutA(dc, 20, y, line, (int)strlen(line));
+        y += 22;
+    }
+}
+
 static void drawHud(HDC dc, const AppState& s) {
     const Party& party = s.party;
     RECT hr = { 0, VIEW_H, WINDOW_W, WINDOW_H };
@@ -726,7 +777,7 @@ static void drawHud(HDC dc, const AppState& s) {
     snprintf(line, sizeof line,
              "Dungeon Lvl %d  Rooms: %d (%d lairs)  %d gp  Potions %d  "
              "Kills %d  Turn %d  Seed %llu  [P] quaff  "
-             "[K] save  [L] load  [R] rest",
+             "[K] save  [L] load  [R] rest  [B] town",
              s.dungeonLevel, (int)s.dungeon.rooms.size(),
              s.countOccupied(), party.gold, party.potions,
              party.kills, s.turnCount, (unsigned long long)s.seed);
@@ -777,6 +828,23 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     g_app.creation.stage == CR_NAME &&
                     g_app.mode == MODE_CREATE) {
                     creationConfirmName();
+                }
+            } else if (g_app.mode == MODE_TOWN) {
+                // R41: town keys — shops and the way back down
+                switch (wp) {
+                    case '1':
+                        g_app.townBuyPotion();
+                        break;
+
+                    case '2':
+                        g_app.townBuyArrows();
+                        break;
+
+                    case 'B':
+                    case 'b':
+                    case VK_ESCAPE:
+                        g_app.leaveTown();
+                        break;
                 }
             } else if (g_app.mode == MODE_COMBAT) {
                 // R27: while the spell menu is open it owns the keys
@@ -901,6 +969,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.restExplore();
                         break;
 
+                    // R41: retreat to town
+                    case 'B':
+                    case 'b':
+                        g_app.enterTown();
+                        break;
+
                     // R29: save the company / load a saved one
                     case 'K':
                     case 'k':
@@ -932,6 +1006,9 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     drawCreate(g_rend.memDC, g_app);
                 } else if (g_app.mode == MODE_COMBAT) {
                     drawCombat(g_rend.memDC, g_app.combat);
+                    drawHud(g_rend.memDC, g_app);
+                } else if (g_app.mode == MODE_TOWN) {
+                    drawTown(g_rend.memDC, g_app);
                     drawHud(g_rend.memDC, g_app);
                 } else {
                     drawView(g_rend.memDC, g_app);
