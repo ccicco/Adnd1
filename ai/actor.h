@@ -7,6 +7,9 @@
 // R18: specials (poison/paralysis/energy drain/breath) + drainLevel.
 // R21: player command hook (target choice + flee) wired into the
 //      driver — see Encounter::setPlayerTargetHook / requestFlee.
+// R24: multi-member parties — pickFoeForPartyActor now receives the
+//      attacking actor so the app's target hook is consulted PER
+//      MEMBER (each character can hold its own target selection).
 // ============================================================================
 
 #pragma once
@@ -133,6 +136,11 @@ struct Actor {
 // front-most. requestFlee() flags the party to break off at the
 // start of the next round: monsters get free swings, then the fight
 // ends with result 2 (party fled).
+//
+// R24: the hook is consulted for EVERY party actor's attack and
+// receives that actor, so a multi-member party can hold one target
+// selection per member (the app keys off the attacker — e.g. by
+// name — to look up that member's chosen foe).
 // ----------------------------------------------------------------------------
 struct EncounterLogLine {
     std::string text;
@@ -194,8 +202,9 @@ private:
     bool checkTeamMorale(std::vector<Actor>& team, int otherTeamAlive);
     // resolve one melee attack, returns damage dealt (0 = miss)
     int  resolveMelee(Actor& attacker, Actor& defender);
-    // pick the target for a party actor (hook-aware, R21)
-    Actor* pickFoeForPartyActor();
+    // pick the target for a party actor (hook-aware, R21; per-actor
+    // since R24 — the hook receives the attacking member)
+    Actor* pickFoeForPartyActor(const Actor& attacker);
 };
 
 } // namespace ai
