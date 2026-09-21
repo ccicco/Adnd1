@@ -600,6 +600,10 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
 
 int Encounter::stepRound() {
     ++m_round;
+    // R43: the engagement range closes one 10' band per round —
+    // after 5 rounds the foes are at sword's length and party
+    // missile fire is impossible (rangeOpen gate)
+    if (m_distance > 0) --m_distance;
 
     // end conditions
     if (teamAlive(0) == 0) return 1;   // monsters win
