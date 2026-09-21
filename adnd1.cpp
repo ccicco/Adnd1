@@ -1,18 +1,15 @@
 // ============================================================================
 // Adnd1 — a 2D tile-based CRPG implementing AD&D 1st Edition rules
-// Rebuild tranche R24: character creation / party roster.
+// Rebuild tranche R25: usable potions.
 //
-//   - MODE_CREATE state machine: roll abilities (4d6-drop-lowest),
-//     pick class (eligibility + prime requisite XP% shown), name
-//     the character (typed via WM_CHAR), repeat for up to 6 members
-//   - Party size adjustable at creation time (+/- keys, 1-6)
-//   - The hardcoded solo Rolf (formDefault) is GONE: every game
-//     starts from an empty roster (rebuild decision R24, Option B)
-//   - Encounter party vector is built from the roster; each member
-//     holds its own combat target (per-member target hook, keyed
-//     by actor name); Q/E cycles the active member
-//   - XP/level-ups per member; gold/kills stay party-level
-//   - Dedicated creation RNG stream (dungeon/sim RNG untouched)
+//   - Party carries a potion pool (from R22 treasure finds)
+//   - [P] quaff in EXPLORE heals the most-wounded living member
+//   - [P] quaff in COMBAT: the active member drinks — the round
+//     is consumed via ACTION_DRINK on the segment scheduler
+//     (end of round, R7), resolved engine-authoritatively
+//   - Potion of healing: 2d4+2 hp, capped at max HP
+//   - The quaff hook owns inventory + heal; combat healing
+//     persists via the endCombat name-sync
 //
 // Build (MinGW, Lua 5.4):
 //   g++ -std=c++17 -I. -Ilua/include adnd1.cpp rules/dice.cpp rules/character.cpp rules/combat.cpp rules/saves.cpp rules/turn.cpp rules/classes.cpp spells/spells.cpp spelleffects/spelleffects.cpp items/items.cpp dm/dm.cpp dm/dungeon.cpp ai/actor.cpp monsters/MonsterRegistry.cpp lua/src/liblua.a -o adnd1.exe -mwindows
@@ -216,6 +213,7 @@ struct Party {
 
     int gold = 0;
     int kills = 0;
+    int potions = 0;   // R25: shared pool of healing potions
 
     bool alive() const {
         if (!formed) return false;
@@ -683,8 +681,14 @@ struct AppState {
                              "You loot %d gp.", t.gold);
                     log.add(buf);
                 }
-                if (t.potionHealing)
-                    log.add("You find a potion of healing!");
+                if (t.potionHealing) {
+                    ++party.potions;
+                    char buf[96];
+                    snprintf(buf, sizeof buf,
+                             "You find a potion of healing! (%d carried)",
+                             party.potions);
+                    log.add(buf);
+                }
                 if (t.magicSword) {
                     log.add("You find a +1 long sword!");
                     // R24: claimed by the first living fighter
@@ -714,6 +718,82 @@ struct AppState {
         return v;
     }
 
+    // R25: shared combat entry — starts the encounter and arms the
+    // quaff hook (the hook owns the potion pool and the heal, so
+    // the driver stays inventory-free)
+    void beginCombat(std::vector<ai::Actor> foes, int roomIndex,
+                     const std::string& monsterKey) {
+        combat.start(partyActors(), std::move(foes),
+                     rng.below(0x7FFFFFFF));
+        combat.encounter->setQuaffHook(
+            [this](ai::Actor& drinker) {
+                if (party.potions <= 0) {
+                    log.add("The potion satchel is empty!");
+                    return;
+                }
+                int heal = (int)dice.roll(2, 4, 2);
+                int before = drinker.hp;
+                drinker.hp += heal;
+                if (drinker.hp > drinker.maxHp)
+                    drinker.hp = drinker.maxHp;   // cap at max HP
+                --party.potions;
+                char buf[96];
+                snprintf(buf, sizeof buf,
+                         "%s quaffs a potion (+%d hp, now %d/%d).",
+                         drinker.name.c_str(), drinker.hp - before,
+                         drinker.hp, drinker.maxHp);
+                log.add(buf);
+            });
+        combatRoomIndex = roomIndex;
+        combatMonsterKey = monsterKey;
+        mode = MODE_COMBAT;
+    }
+
+    // R25: explore-mode quaff — heals the most-wounded living
+    // member; refuses (without consuming) if everyone is full
+    void quaffExplore() {
+        if (mode != MODE_EXPLORE) return;
+        if (party.potions <= 0) {
+            log.add("No potions left.");
+            return;
+        }
+        Character* best = nullptr;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            if (!best || (c.maxHp - c.hp) > (best->maxHp - best->hp))
+                best = &c;
+        }
+        if (!best) return;
+        if (best->hp >= best->maxHp) {
+            log.add("No one needs healing.");
+            return;
+        }
+        int heal = (int)dice.roll(2, 4, 2);
+        int before = best->hp;
+        best->hp += heal;
+        if (best->hp > best->maxHp) best->hp = best->maxHp;
+        --party.potions;
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "%s quaffs a potion (+%d hp, now %d/%d, %d left).",
+                 best->name.c_str(), best->hp - before,
+                 best->hp, best->maxHp, party.potions);
+        log.add(buf);
+    }
+
+    // R25: combat quaff — the ACTIVE member drinks this round
+    // (round consumed via ACTION_DRINK; effect resolves at the
+    // end of the round through the quaff hook)
+    void combatQuaff() {
+        if (mode != MODE_COMBAT || !combat.encounter || combat.over)
+            return;
+        if (party.potions <= 0) {
+            log.add("No potions left.");
+            return;
+        }
+        combat.encounter->requestDrink(combat.activeMember);
+    }
+
     void spawnRoomEncounter(int roomIndex) {
         if (mode == MODE_COMBAT) return;
         if (!party.alive()) return;
@@ -737,14 +817,10 @@ struct AppState {
                      room.count, mname);
         log.add(buf);
 
-        combat.start(partyActors(), foes, rng.below(0x7FFFFFFF));
-        combatRoomIndex = roomIndex;
-        combatMonsterKey = room.monsterKey;
-        mode = MODE_COMBAT;
+        beginCombat(std::move(foes), roomIndex, room.monsterKey);
     }
 
-    void spawnWanderingEncounter() {
-        if (mode == MODE_COMBAT) return;
+    void spawnWanderingEncounter() {        if (mode == MODE_COMBAT) return;
         if (!party.alive()) return;
 
         auto candidates = registry.keysForLevel(dungeonLevel);
@@ -762,10 +838,7 @@ struct AppState {
                  count, key.c_str());
         log.add(buf);
 
-        combatRoomIndex = -1;
-        combatMonsterKey = key;
-        combat.start(partyActors(), foes, rng.below(0x7FFFFFFF));
-        mode = MODE_COMBAT;
+        beginCombat(std::move(foes), -1, key);
     }
 
     void playerFlee() {
@@ -1182,8 +1255,8 @@ static void drawCombat(HDC dc, const CombatState& cs) {
     SetTextColor(dc, RGB(220, 200, 160));
     char line[160];
     snprintf(line, sizeof line,
-             "COMBAT!  [q/e] member  [tab/1-9] target  [space] "
-             "attack+round  [f] flee  [esc] auto-resolve");
+             "COMBAT!  [q/e] member  [tab/1-9] target  [p] quaff  "
+             "[space] attack+round  [f] flee  [esc] auto-resolve");
     TextOutA(dc, 20, 14, line, (int)strlen(line));
 
     if (!cs.encounter) return;
@@ -1405,11 +1478,11 @@ static void drawHud(HDC dc, const AppState& s) {
     TextOutA(dc, 12, VIEW_H + 8, line, (int)strlen(line));
 
     snprintf(line, sizeof line,
-             "Dungeon Lvl %d  Rooms: %d (%d lairs)  %d gp  Kills %d  "
-             "Turn %d  Seed %llu",
+             "Dungeon Lvl %d  Rooms: %d (%d lairs)  %d gp  Potions %d  "
+             "Kills %d  Turn %d  Seed %llu  [P] quaff",
              s.dungeonLevel, (int)s.dungeon.rooms.size(),
-             s.countOccupied(), party.gold, party.kills,
-             s.turnCount, (unsigned long long)s.seed);
+             s.countOccupied(), party.gold, party.potions,
+             party.kills, s.turnCount, (unsigned long long)s.seed);
     TextOutA(dc, 12, VIEW_H + 32, line, (int)strlen(line));
 
     SetTextColor(dc, RGB(160, 150, 120));
@@ -1475,6 +1548,11 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.playerFlee();
                         break;
 
+                    case 'P':
+                    case 'p':
+                        g_app.combatQuaff();
+                        break;
+
                     case VK_ESCAPE:
                         while (!g_app.combat.step()) {}
                         g_app.endCombat();
@@ -1518,6 +1596,11 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'E':
                         if (g_app.party.alive())
                             g_app.spawnWanderingEncounter();
+                        break;
+
+                    case 'P':
+                    case 'p':
+                        g_app.quaffExplore();
                         break;
 
                     case VK_ESCAPE:
