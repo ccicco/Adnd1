@@ -26,6 +26,10 @@
 //      rate-of-fire convention). Uses the Actor's rangedWeapon slot
 //      (a second WeaponInstance — PHB characters carry melee AND
 //      missile weapons); STR does not add to missile attacks (PHB).
+// R33: spellbook — Actor carries the MU's known spell ids
+//      (knownSpells, copied from Character by toActor); the app's
+//      castable list filters on it. Clerics cast freely (prayers,
+//      PHB — no book), so the filter is MU-only.
 // ============================================================================
 
 #pragma once
@@ -110,6 +114,16 @@ struct Actor {
     // cast resolves. Refreshed each encounter (per-day slot
     // tracking is deferred — logged simplification).
     int  slotsByLevel[3] = {0, 0, 0};
+
+    // R33: MU spellbook — known spell ids (spells::SpellId).
+    // Empty for non-MUs (they cast freely).
+    std::vector<int> knownSpells;
+
+    bool knowsSpell(int id) const {
+        for (int s : knownSpells)
+            if (s == id) return true;
+        return false;
+    }
 
     bool isCaster() const {
         return isCharacter &&
