@@ -20,6 +20,11 @@
 // weapon's own dice/plus, then unarmed 1d2 fists for the rest of
 // the encounter (the weapon is recovered afterward — Actor state
 // only, nothing persisted).
+// R37: monster missile attacks — beginCombat marks missile-armed
+// monsters from the monster key (goblin/kobold, MM convention:
+// goblins short bow, kobolds sling; key list is verification
+// debt — the Lua data files carry no ranged flag); they fire an
+// opening volley in round 1, then close to melee.
 // ============================================================================
 
 #pragma once
@@ -935,6 +940,14 @@ struct AppState {
     // the driver stays inventory-free)
     void beginCombat(std::vector<ai::Actor> foes, int roomIndex,
                      const std::string& monsterKey) {
+        // R37: mark missile-armed monsters (MM convention: goblins
+        // short bow, kobolds sling). The Lua registry data carries
+        // no ranged flag, so the app owns this list — verification
+        // debt if the Lua keys ever change.
+        for (auto& m : foes)
+            if (!m.isCharacter &&
+                (monsterKey == "goblin" || monsterKey == "kobold"))
+                m.monsterRanged = true;
         combat.start(partyActors(), std::move(foes),
                      rng.below(0x7FFFFFFF));
         combat.encounter->setQuaffHook(
