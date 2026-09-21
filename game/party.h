@@ -13,6 +13,10 @@
 // the henchman (a hired NPC fighter who fights alongside the
 // roster), and the identify economy (scrolls + unidentified
 // magic items waiting on a scribe's verdict).
+// R45: the hire's career — henchmanXp accrues at a half
+// share of awards, level-ups roll his hit die in the app;
+// delveGold accumulates the take so the hire's THIRD is
+// paid into henchmanPurse on each return to town.
 // ============================================================================
 
 #pragma once
@@ -158,6 +162,11 @@ struct Party {
     int  henchmanHp = 0, henchmanMaxHp = 0;
     int  henchmanLevel  = 1;
     int  henchmanLoyalty = 50;
+
+    // R45: the hire's career records
+    int  henchmanXp    = 0;    // half-share awards
+    int  henchmanPurse = 0;    // his third of each delve's take
+    int  delveGold     = 0;    // take since the last town visit
 
     // R44: identify economy — scrolls (found or bought, 100 gp
     // at the scribe) reveal unidentified magic items. kind 0 =
