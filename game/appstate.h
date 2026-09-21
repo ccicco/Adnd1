@@ -84,6 +84,24 @@
 // hobgoblin joins the missile-armed key list; (5) town hub
 // polish — a company status panel (roster, henchman, keep,
 // scrolls) beside the shop menu.
+// R45 (five features): (1) henchman advancement and shares —
+// the hire earns a half share of combat XP, levels (hit die
+// d10+1) at fighter thresholds, and takes a THIRD of each
+// delve's gold (accumulated in delveGold, paid into his
+// purse on every return to town); (2) sage and spy consults —
+// [S] 200 gp lists what lairs at this depth (the registry
+// roster, an in-game MM reference), [Y] 500 gp reveals the
+// CURRENT occupied rooms and their monster keys (simple
+// recon, DMG p.35 spying simplified); (3) the peddler [M] —
+// 500 gp for one random identified magic item (weapon +1,
+// armor +1, three potions, two identify scrolls, or a spell
+// scroll); (4) traps and secret doors — unoccupied rooms may
+// hide a dart trap (save vs death or 2d6; a thief in the
+// company may spot and disarm it first), walls hide secret
+// doors found with [F] search (1-in-6, thief 3-in-6; found
+// doors become ordinary doors); (5) MM reference — the sage
+// consult doubles as the bestiary lore service (true book
+// verification still awaits the re-uploaded MM PDF).
 // ============================================================================
 
 #pragma once
@@ -92,6 +110,7 @@
 #include "../rules/dice.h"
 #include "../rules/character.h"
 #include "../rules/classes.h"
+#include "../rules/saves.h"   // R45: trap saves
 #include "../dm/dm.h"
 #include "../dm/dungeon.h"
 #include "../ai/actor.h"
@@ -121,6 +140,14 @@ struct RoomOccupant {
     int         count = 0;
     int         denX = 0, denY = 0;
     bool looted = false;
+    // R45: 0 = no trap, 1 = armed dart trap, 2 = sprung
+    int trap = 0;
+};
+
+// R45: a secret door hides in a wall tile until found
+struct SecretDoor {
+    int  x = 0, y = 0;
+    bool found = false;
 };
 
 struct Occupancy {
@@ -479,6 +506,9 @@ struct AppState {
     // R23: stairs down — placed in the room farthest from entry
     int stairsX = -1, stairsY = -1;
 
+    // R45: the level's hidden doors
+    std::vector<SecretDoor> secretDoors;
+
     void newDungeon(uint64_t s) {
         seed = s;
         dungeon = dm::generateDungeon(s);
@@ -493,6 +523,7 @@ struct AppState {
 
         placeStairs();
         populateRooms();
+        placeSecretDoors();   // R45
 
         char buf[96];
         snprintf(buf, sizeof buf,
@@ -565,9 +596,11 @@ struct AppState {
                 party.strongholdBuilt ? 1 : 0,
                 party.strongholdOwner);
         if (party.henchmanPresent)
-            fprintf(f, "henchman %d %d %d %d %s\n",
+            fprintf(f, "henchman %d %d %d %d %d %d %d %s\n",
                     party.henchmanHp, party.henchmanMaxHp,
                     party.henchmanLevel, party.henchmanLoyalty,
+                    party.henchmanXp, party.henchmanPurse,
+                    party.delveGold,
                     party.henchmanName.c_str());
         else
             fprintf(f, "henchman 0\n");
@@ -702,6 +735,15 @@ struct AppState {
                     p.henchmanMaxHp = mx;
                     p.henchmanLevel = lv;
                     p.henchmanLoyalty = loy;
+                    // R45: the hire's career records —
+                    // OPTIONAL trailing ints (R44 saves lack
+                    // them; defaults 0 are fine)
+                    int hxp = 0, hpu = 0, dgv = 0;
+                    int got = fscanf(f, "%d %d %d",
+                                     &hxp, &hpu, &dgv);
+                    if (got >= 1) p.henchmanXp = hxp;
+                    if (got >= 2) p.henchmanPurse = hpu;
+                    if (got >= 3) p.delveGold = dgv;
                 }
             } else if (strcmp(tag, "idscrolls") == 0) {
                 int sc = 0;
@@ -997,6 +1039,21 @@ struct AppState {
                 party.henchmanPresent = false;
             }
         }
+        // R45: the hire's THIRD of the take (DMG p.36 — a
+        // stated share; this campaign promised a half share
+        // = a third of the delve's gold), paid at the exit
+        // into his purse
+        if (party.henchmanPresent && party.delveGold > 0) {
+            int cut = party.delveGold / 3;
+            party.henchmanPurse += cut;
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "%s is paid his share: %d gp (purse %d).",
+                     party.henchmanName.c_str(), cut,
+                     party.henchmanPurse);
+            log.add(buf);
+        }
+        party.delveGold = 0;
     }
 
     // [B]/Esc in town — dive back in at the same depth
@@ -1482,6 +1539,191 @@ struct AppState {
         log.add(buf);
     }
 
+    // R45: [S] the sage — 200 gp for lore on what lairs at
+    // this depth (the registry's level roster — an in-game
+    // Monster Manual reference; MM exact values remain
+    // verification debt until the book is re-uploaded)
+    void townSage() {
+        if (mode != MODE_TOWN) return;
+        if (party.gold < 200) {
+            log.add("The sage wants 200 gp for his lore.");
+            return;
+        }
+        auto keys = registry.keysForLevel(dungeonLevel);
+        if (keys.empty()) {
+            log.add("The sage knows nothing of this depth.");
+            return;
+        }
+        party.gold -= 200;
+        std::string lore = "The sage speaks of: ";
+        int shown = 0;
+        for (const auto& k : keys) {
+            if (shown >= 8) { lore += "..."; break; }
+            if (shown > 0) lore += ", ";
+            lore += k;
+            ++shown;
+        }
+        log.add(lore);
+        // one bestiary stat line for flavor (a random entry)
+        const monsters::MonsterDef* def =
+            registry.find(keys[(size_t)rng.below(
+                (uint32_t)keys.size())]);
+        if (def) {
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "Of %s: HD %d, AC %d, worth %d xp.",
+                     def->name, def->hd, def->ac, def->xpValue);
+            log.add(buf);
+        }
+    }
+
+    // R45: [Y] the spy — 500 gp for simple recon (DMG p.35
+    // spying simplified): the CURRENT level's occupied rooms
+    // and their monster keys
+    void townSpy() {
+        if (mode != MODE_TOWN) return;
+        int occupied = 0;
+        for (const auto& room : occupancy.rooms)
+            if (!room.monsterKey.empty()) ++occupied;
+        if (occupied == 0) {
+            log.add("The spy reports the level is swept "
+                    "clean.");
+            return;
+        }
+        if (party.gold < 500) {
+            log.add("The spy wants 500 gp for the mission.");
+            return;
+        }
+        party.gold -= 500;
+        std::string report = "The spy reports: ";
+        int shown = 0;
+        for (const auto& room : occupancy.rooms) {
+            if (room.monsterKey.empty()) continue;
+            if (shown >= 6) { report += "..."; break; }
+            if (shown > 0) report += ", ";
+            char tok[48];
+            snprintf(tok, sizeof tok, "%s x%d",
+                     room.monsterKey.c_str(), room.count);
+            report += tok;
+            ++shown;
+        }
+        log.add(report);
+    }
+
+    // R45: [M] the peddler — 500 gp for one random
+    // IDENTIFIED magic item (no scroll needed — the peddler
+    // knows his wares)
+    void townPeddler() {
+        if (mode != MODE_TOWN) return;
+        if (party.gold < 500) {
+            log.add("The peddler wants 500 gp for the item.");
+            return;
+        }
+        party.gold -= 500;
+        int pick = 1 + (int)rng.below(5);
+        switch (pick) {
+            case 1: {
+                // a +1 weapon for the first living member
+                // whose blade is a lesser enchant
+                Character* taker = nullptr;
+                for (auto& c : party.members) {
+                    if (c.hp <= 0) continue;
+                    if (c.weapon.plus < 1) { taker = &c; break; }
+                }
+                if (taker) {
+                    taker->weapon.id = items::WPN_LONG_SWORD;
+                    taker->weapon.plus = 1;
+                    log.add("A long sword +1! " +
+                            taker->name + " claims it.");
+                } else {
+                    party.potions += 3;
+                    log.add("The peddler is out of swords — "
+                            "three potions instead.");
+                }
+                break;
+            }
+            case 2: {
+                Character* taker = nullptr;
+                for (auto& c : party.members) {
+                    if (c.hp <= 0) continue;
+                    if (c.classIndex != rules::CLASS_FIGHTER &&
+                        c.classIndex != rules::CLASS_CLERIC)
+                        continue;
+                    if (c.armor.plus < 1) { taker = &c; break; }
+                }
+                if (taker) {
+                    taker->armor.plus = 1;
+                    log.add("Enchanted armor (+1)! " +
+                            taker->name + " claims it.");
+                } else {
+                    party.potions += 3;
+                    log.add("The peddler is out of armor — "
+                            "three potions instead.");
+                }
+                break;
+            }
+            case 3:
+                party.potions += 3;
+                log.add("Three potions of healing, wrapped "
+                        "in straw.");
+                break;
+            case 4:
+                party.identifyScrolls += 2;
+                log.add("Two identify scrolls, freshly "
+                        "inked.");
+                break;
+            default: {
+                // a spell scroll — one random unknown L1 MU
+                // spell to the first MU who lacks it (the
+                // peddler's stock is identified)
+                std::vector<int> cands;
+                for (int id = 0; id < spells::SPELL_COUNT;
+                     ++id) {
+                    const spells::SpellDef& s =
+                        spells::spell((spells::SpellId)id);
+                    if (s.sclass != spells::SPELL_MU ||
+                        s.level != 1)
+                        continue;
+                    for (auto& c : party.members) {
+                        if (c.hp <= 0 || c.classIndex != 1)
+                            continue;
+                        if (!c.knowsSpell(id)) {
+                            cands.push_back(id);
+                            break;
+                        }
+                    }
+                }
+                if (cands.empty()) {
+                    party.potions += 3;
+                    log.add("No scrolls your sages can use — "
+                            "three potions instead.");
+                } else {
+                    int sid = cands[(size_t)rng.below(
+                        (uint32_t)cands.size())];
+                    for (auto& c : party.members) {
+                        if (c.hp <= 0 || c.classIndex != 1)
+                            continue;
+                        if (!c.knowsSpell(sid)) {
+                            c.knownSpells.push_back(sid);
+                            const spells::SpellDef& s =
+                                spells::spell(
+                                    (spells::SpellId)sid);
+                            char buf[96];
+                            snprintf(buf, sizeof buf,
+                                     "A scroll of %s! %s "
+                                     "copies it into his "
+                                     "book.",
+                                     s.name, c.name.c_str());
+                            log.add(buf);
+                            break;
+                        }
+                    }
+                }
+                break;
+            }
+        }
+    }
+
     void restExplore() {
         if (mode != MODE_EXPLORE) return;
         if (!party.alive()) return;
@@ -1522,7 +1764,12 @@ struct AppState {
             room.monsterKey.clear();
             room.count = 0;
             room.looted = false;
-            if (rng.below(100) >= 50) continue;
+            room.trap = 0;
+            if (rng.below(100) >= 50) {
+                // R45: an unoccupied room may hide a dart trap
+                if (rng.below(100) < 15) room.trap = 1;
+                continue;
+            }
             room.monsterKey =
                 candidates[(size_t)rng.below((uint32_t)candidates.size())];
             room.count = 1 + (int)rng.below((uint32_t)roomCountCap());
@@ -1555,6 +1802,149 @@ struct AppState {
                 return room.roomIndex;
         }
         return -1;
+    }
+
+    // R45: the nearest room with an ARMED trap (the party
+    // springs it by walking in)
+    int trapRoomNear(int px, int py, int radius = 0) const {
+        for (const auto& room : occupancy.rooms) {
+            if (room.trap != 1) continue;
+            const auto& r = dungeon.rooms[room.roomIndex];
+            if (px >= r.x - radius && px < r.x + r.w + radius &&
+                py >= r.y - radius && py < r.y + r.h + radius)
+                return room.roomIndex;
+        }
+        return -1;
+    }
+
+    // R45: spring the dart trap in a room. A thief in the
+    // company may spot and disarm it first (1-in-3, the
+    // find/remove-trades instinct — simplified); otherwise a
+    // random living member saves vs death or eats 2d6.
+    void springTrap(int roomIndex) {
+        if (roomIndex < 0 ||
+            roomIndex >= (int)occupancy.rooms.size())
+            return;
+        RoomOccupant& room = occupancy.rooms[roomIndex];
+        if (room.trap != 1) return;
+
+        for (const auto& c : party.members) {
+            if (c.hp <= 0 || c.classIndex != 3) continue;
+            if (rng.below(3) == 0) {
+                room.trap = 2;
+                log.add(c.name + " spots a dart trap and "
+                        "disarms it.");
+                return;
+            }
+            break;   // one thief attempt per trap
+        }
+
+        room.trap = 2;
+        // pick the unlucky one who leads into the room
+        int victims[PARTY_MAX];
+        int nv = 0;
+        for (int i = 0; i < (int)party.members.size(); ++i)
+            if (party.members[i].hp > 0)
+                victims[nv++] = i;
+        if (nv == 0) return;
+        int vi = victims[(size_t)rng.below((uint32_t)nv)];
+        Character& c = party.members[vi];
+        int target = rules::saveTarget(
+            c.classIndex, c.level, rules::SAVE_DEATH_POISON);
+        if (rules::attemptSave(dice, target, 0)) {
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "A dart whistles past %s — saved!",
+                     c.name.c_str());
+            log.add(buf);
+            return;
+        }
+        int dmg = (int)dice.roll(2, 6, 0);
+        c.hp -= dmg;
+        char buf[96];
+        if (c.hp <= 0) {
+            c.hp = 0;
+            snprintf(buf, sizeof buf,
+                     "A trap! Darts strike %s for %d — %s "
+                     "falls!",
+                     c.name.c_str(), dmg, c.name.c_str());
+        } else {
+            snprintf(buf, sizeof buf,
+                     "A trap! Darts strike %s for %d.",
+                     c.name.c_str(), dmg);
+        }
+        log.add(buf);
+        if (!party.alive()) {
+            log.add("GAME OVER - press N to roll a new party.");
+        }
+    }
+
+    // R45: place secret doors — wall tiles that border floor
+    // (3 per level). Found doors become ordinary doors on
+    // the map; hidden ones render as plain wall.
+    void placeSecretDoors() {
+        secretDoors.clear();
+        int placed = 0;
+        int guard = 0;
+        while (placed < 3 && ++guard < 500) {
+            int x = 1 + (int)rng.below(MAP_TILES_X - 2);
+            int y = 1 + (int)rng.below(MAP_TILES_Y - 2);
+            if (map.at(x, y) != TILE_WALL) continue;
+            bool bordersFloor = false;
+            if (map.at(x + 1, y) == TILE_FLOOR ||
+                map.at(x - 1, y) == TILE_FLOOR ||
+                map.at(x, y + 1) == TILE_FLOOR ||
+                map.at(x, y - 1) == TILE_FLOOR)
+                bordersFloor = true;
+            if (!bordersFloor) continue;
+            bool tooClose = false;
+            for (const auto& d : secretDoors)
+                if (d.x == x && d.y == y) tooClose = true;
+            if (tooClose) continue;
+            SecretDoor d;
+            d.x = x;
+            d.y = y;
+            secretDoors.push_back(d);
+            ++placed;
+        }
+    }
+
+    // R45: [F] search — one turn spent feeling the walls.
+    // Each adjacent unfound secret door rolls 1-in-6 (a
+    // thief in the company raises it to 3-in-6 — his keen
+    // eyes lead the search). Found doors become TILE_DOOR.
+    void searchExplore() {
+        if (mode != MODE_EXPLORE) return;
+        if (!party.alive()) return;
+        ++turnCount;
+        bool hasThief = false;
+        for (const auto& c : party.members)
+            if (c.hp > 0 && c.classIndex == 3) hasThief = true;
+        int chance = hasThief ? 3 : 1;
+        bool found = false;
+        for (auto& d : secretDoors) {
+            if (d.found) continue;
+            int dx = d.x - party.x;
+            int dy = d.y - party.y;
+            if (dx < -1 || dx > 1 || dy < -1 || dy > 1)
+                continue;
+            if (dx != 0 && dy != 0) continue;   // orthogonal
+            if (dx == 0 && dy == 0) continue;
+            if ((int)rng.below(6) < chance) {
+                d.found = true;
+                map.set(d.x, d.y, TILE_DOOR);
+                found = true;
+            }
+        }
+        if (found) {
+            log.add("Your fingers find the seam of a secret "
+                    "door!");
+        } else {
+            log.add("You search the walls and find nothing.");
+        }
+        // the turn spent can draw a wanderer
+        if (dm::wanderCheck(dice, wander))
+            spawnWanderingEncounter();
     }
 
     Treasure rollTreasure(int roomIndex) {
@@ -1599,6 +1989,31 @@ struct AppState {
                      "%d slain, %d xp each.", slain, share);
             log.add(buf);
             party.gainXp(share, dice, log);
+            // R45: the hire earns a half share (DMG p.86 —
+            // henchmen take half a member's share)
+            if (party.henchmanPresent) {
+                party.henchmanXp += share / 2;
+                while (party.henchmanLevel <
+                           rules::CLASS_LEVEL_CAP[0] &&
+                       party.henchmanXp >=
+                           rules::xpForLevel(
+                               0, party.henchmanLevel + 1)) {
+                    ++party.henchmanLevel;
+                    int die =
+                        (int)dice.roll(1, 10, 0) + 1;
+                    party.henchmanMaxHp += die;
+                    party.henchmanHp += die;
+                    char buf[96];
+                    snprintf(buf, sizeof buf,
+                             "%s attains level %d! (+%d hp, "
+                             "now %d/%d)",
+                             party.henchmanName.c_str(),
+                             party.henchmanLevel, die,
+                             party.henchmanHp,
+                             party.henchmanMaxHp);
+                    log.add(buf);
+                }
+            }
         }
 
         if (combatRoomIndex >= 0) {
@@ -1607,6 +2022,7 @@ struct AppState {
                 Treasure t = rollTreasure(combatRoomIndex);
                 if (t.gold > 0) {
                     party.gold += t.gold;
+                    party.delveGold += t.gold;   // R45: the take
                     char buf[96];
                     snprintf(buf, sizeof buf,
                              "You loot %d gp.", t.gold);
