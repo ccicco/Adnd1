@@ -37,6 +37,10 @@
 //      an opening volley in round 1 (one ACTION_MISSILE per
 //      attack routine), then close to melee for the rest of the
 //      fight. resolveMissile's monster path resolves the shots.
+// R42: range bands — the monster volley lasts as many rounds as
+//      the weapon has range bands (rangedRounds on the Actor,
+//      app-set); each volley round decrements it, then melee
+//      closes. Party shooters are unaffected (command-driven).
 // ============================================================================
 
 #include "actor.h"
@@ -751,7 +755,12 @@ int Encounter::stepRound() {
             // Party members are never on this path (requests
             // drive their rounds). Note: m_round was pre-
             // incremented, so the first round is 1.
-            if (!a.isCharacter && a.monsterRanged && m_round == 1) {
+            // R42: the volley lasts rangedRounds rounds (range
+            // bands — the monsters fire while the distance
+            // holds, then close)
+            if (!a.isCharacter && a.monsterRanged &&
+                a.rangedRounds > 0) {
+                --a.rangedRounds;   // R42: band closes one round
                 int shots = a.attacksPerRound();
                 for (int i = 0; i < shots; ++i) {
                     rules::Action act;
