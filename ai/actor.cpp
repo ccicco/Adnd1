@@ -16,6 +16,10 @@
 //      segment + casting time; resolveCast resolves it through
 //      spelleffects::resolveSpell and applies hp/status/note
 //      results back to the actors.
+// R28: shoot command — a requested member's melee submissions are
+//      replaced by ACTION_MISSILE events (one per shot at the
+//      weapon's rate of fire, +5 segments apart); resolveMissile
+//      resolves each shot (missile dice, no STR mods).
 // ============================================================================
 
 #include "actor.h"
@@ -462,6 +466,79 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
     }
 }
 
+// ----------------------------------------------------------------------------
+// R28: missile resolution
+// ----------------------------------------------------------------------------
+
+// One missile shot: attack roll on the normal matrix, but STR does
+// not modify missile attacks or damage (PHB) — a neutral strength
+// is passed to the adjustment helpers. Damage uses the weapon's
+// small/medium or large dice by target size, plus the weapon's
+// enchantment. Sleepers wake when struck (melee rule parity).
+void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
+    if (!attacker.canAct() || !defender.alive()) return;
+
+    // gating: defender requires +N weapon (R5)
+    int wpnPlus = attacker.isCharacter ? attacker.rangedWeapon.plus
+                                       : 99;
+    if (!rules::weaponSufficient(defender.requiredPlusToHit,
+                                 wpnPlus)) {
+        logLine(attacker.name + "'s missiles cannot harm " +
+                defender.name);
+        return;
+    }
+
+    int toHit = attacker.toHit(defender);
+    // neutral STR: missiles get no strength adjustment (PHB)
+    int adj = 0;
+    if (attacker.isCharacter) {
+        rules::AcType at =
+            rules::acTypeForAc(defender.armorClass());
+        adj = items::attackAdjustment(
+            attacker.rangedWeapon, rules::ExceptionalStrength{},
+            10, at);
+    }
+    if (!rules::attackRollHits(m_dice, toHit, adj)) {
+        logLine(attacker.name + " misses " + defender.name +
+                " with a missile");
+        return;
+    }
+
+    int dmg;
+    if (attacker.isCharacter) {
+        const items::WeaponDef& w =
+            items::weapon(attacker.rangedWeapon.id);
+        bool large = defender.hitDice >= 8 && !defender.isCharacter;
+        dmg = (int)m_dice.roll(
+            large ? w.lCount : w.smCount,
+            large ? w.lSides : w.smSides, 0);
+        dmg += attacker.rangedWeapon.plus;
+    } else {
+        dmg = (int)m_dice.roll(
+            (uint32_t)attacker.monsterDamageCount,
+            (uint32_t)attacker.monsterDamageSides, 0);
+    }
+    if (dmg < 1) dmg = 1;
+
+    defender.hp -= dmg;
+    logLine(attacker.name + " hits " + defender.name +
+            " with a missile for " + std::to_string(dmg));
+
+    if (defender.hasStatus(spelleffects::STATUS_SLEEP) &&
+        defender.alive()) {
+        for (auto& s : defender.statuses)
+            if (s.kind == spelleffects::STATUS_SLEEP)
+                s.kind = spelleffects::STATUS_NONE;
+        defender.tickStatuses();
+        logLine(defender.name + " wakes up!");
+    }
+
+    if (!defender.alive()) {
+        defender.hp = 0;
+        logLine(defender.name + " is down!");
+    }
+}
+
 int Encounter::stepRound() {
     ++m_round;
 
@@ -531,9 +608,13 @@ int Encounter::stepRound() {
     spells::SpellId castSpell = m_castSpell;
     m_castMember = -1;
 
+    // R28: capture + clear the shoot request for this round
+    int shootMember = m_shootMember;
+    m_shootMember = -1;
+
     auto submitTeam = [&](std::vector<Actor>& team, int baseSeg,
                           int drinkIdx, int castIdx,
-                          spells::SpellId castId) {
+                          spells::SpellId castId, int shootIdx) {
         for (auto& a : team) {
             if (!a.canAct()) continue;
             int idx = (int)(&a - team.data());
@@ -561,6 +642,24 @@ int Encounter::stepRound() {
                 sched.submit(act, baseSeg);
                 continue;
             }
+            // R28: the shooting member's round is missile fire —
+            // one ACTION_MISSILE per shot at the rate of fire,
+            // first at the initiative segment, follow-ups +5
+            // segments apart (R7 convention)
+            if (idx == shootIdx && a.hasRangedWeapon()) {
+                const items::WeaponDef& w =
+                    items::weapon(a.rangedWeapon.id);
+                int shots = w.rateOfFire > 0 ? w.rateOfFire : 1;
+                for (int i = 0; i < shots; ++i) {
+                    rules::Action act;
+                    act.type = rules::ACTION_MISSILE;
+                    act.actorId = a.team * 1000 + idx;
+                    act.rateOfFire = shots;
+                    act.segment = baseSeg + i * 5;
+                    sched.submit(act, baseSeg + i * 5);
+                }
+                continue;
+            }
             rules::Action act;
             act.type = rules::ACTION_MELEE;
             act.actorId = a.team * 1000 + idx;
@@ -574,8 +673,9 @@ int Encounter::stepRound() {
             }
         }
     };
-    submitTeam(m_party, baseSegP, drinkMember, castMember, castSpell);
-    submitTeam(m_monsters, baseSegM, -1, -1, castSpell);
+    submitTeam(m_party, baseSegP, drinkMember, castMember, castSpell,
+               shootMember);
+    submitTeam(m_monsters, baseSegM, -1, -1, castSpell, -1);
     sched.beginRound();
 
     // resolve in segment order
@@ -599,6 +699,23 @@ int Encounter::stepRound() {
         if (isParty && idx == castMember &&
             ev.action.type == rules::ACTION_SPELL) {
             resolveCast(attacker, castSpell);
+            if (teamAlive(0) == 0 || teamAlive(1) == 0) break;
+            continue;
+        }
+
+        // R28: missile events — the shooter's own selection (R21/
+        // R24 hook) picks the target; resolveMissile does the rest
+        if (ev.action.type == rules::ACTION_MISSILE &&
+            attacker.hasRangedWeapon()) {
+            Actor* target = nullptr;
+            if (isParty) {
+                target = pickFoeForPartyActor(attacker);
+            } else {
+                for (auto& f : m_party)
+                    if (f.alive()) { target = &f; break; }
+            }
+            if (!target) break;
+            resolveMissile(attacker, *target);
             if (teamAlive(0) == 0 || teamAlive(1) == 0) break;
             continue;
         }
