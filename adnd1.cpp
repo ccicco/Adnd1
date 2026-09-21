@@ -8,6 +8,11 @@
 //   casting time, resolved through spelleffects (saves, MR,
 //   damage, statuses). Slots refresh per encounter (per-day
 //   tracking deferred — logged).
+// Rebuild tranche R28: ranged weapons — a second weapon slot
+//   (rangedWeapon) on Character/Actor; [X] makes the active
+//   member fire missiles this round (ACTION_MISSILE events at
+//   the rate of fire, +5 segments apart). No STR mods on
+//   missile attacks (PHB); ammo uncounted (logged).
 //
 //   - Party carries a potion pool (from R22 treasure finds)
 //   - [P] quaff in EXPLORE heals the most-wounded living member
@@ -149,9 +154,11 @@ struct Treasure {
     int  gold = 0;
     bool potionHealing = false;
     bool magicSword = false;
+    bool missileWeapon = false;   // R28: short bow find
 
     bool empty() const {
-        return gold == 0 && !potionHealing && !magicSword;
+        return gold == 0 && !potionHealing && !magicSword &&
+               !missileWeapon;
     }
 };
 
@@ -171,6 +178,7 @@ struct Character {
     int  hp = 0, maxHp = 0;
 
     items::WeaponInstance weapon;
+    items::WeaponInstance rangedWeapon;   // R28: missile slot
     items::ArmorInstance  armor;
     bool shield = false;
 
@@ -189,6 +197,7 @@ struct Character {
         a.cha    = abilities.cha;
         a.exStr  = exStr;
         a.weapon = weapon;
+        a.rangedWeapon = rangedWeapon;   // R28
         a.armor  = armor;
         a.shield = shield;
         a.hp     = hp;
@@ -369,6 +378,8 @@ struct CreationState {
                 c.weapon.id = items::WPN_SHORT_SWORD;
                 c.armor.id  = items::ARMOR_LEATHER;
                 c.shield    = false;
+                // R28: thieves start with a sling (PHB missile)
+                c.rangedWeapon.id = items::WPN_SLING;
                 break;
         }
         return c;
@@ -698,6 +709,7 @@ struct AppState {
         t.gold = (int)dice.roll(3, 6, 0) * 10 * dungeonLevel;
         if (rng.below(100) < 10) t.potionHealing = true;
         if (rng.below(100) < 5) t.magicSword = true;
+        if (rng.below(100) < 10) t.missileWeapon = true;   // R28
         return t;
     }
 
@@ -765,6 +777,20 @@ struct AppState {
                             c.weapon.id = items::WPN_LONG_SWORD;
                             c.weapon.plus = 1;
                             log.add(c.name + " claims it.");
+                            break;
+                        }
+                    }
+                }
+                // R28: short bow — claimed by the first living
+                // member with an empty ranged slot
+                if (t.missileWeapon) {
+                    log.add("You find a short bow!");
+                    for (auto& c : party.members) {
+                        if (c.hp > 0 &&
+                            !items::weapon(
+                                c.rangedWeapon.id).missile) {
+                            c.rangedWeapon.id = items::WPN_SHORT_BOW;
+                            log.add(c.name + " takes it.");
                             break;
                         }
                     }
@@ -859,6 +885,24 @@ struct AppState {
             return;
         }
         combat.encounter->requestDrink(combat.activeMember);
+    }
+
+    // R28: the ACTIVE member fires missiles this round — requires
+    // a missile weapon in the ranged slot (falls back to melee
+    // otherwise, with a log line so the player knows why)
+    void combatShoot() {
+        if (mode != MODE_COMBAT || !combat.encounter || combat.over)
+            return;
+        const auto& partyActors = combat.encounter->party();
+        if (combat.activeMember < 0 ||
+            combat.activeMember >= (int)partyActors.size())
+            return;
+        if (!partyActors[combat.activeMember].hasRangedWeapon()) {
+            log.add("That member has no missile weapon.");
+            return;
+        }
+        combat.encounter->requestShoot(combat.activeMember);
+        log.add("Missiles readied — [space] to resolve the round.");
     }
 
     void spawnRoomEncounter(int roomIndex) {
@@ -1323,7 +1367,7 @@ static void drawCombat(HDC dc, const CombatState& cs) {
     char line[160];
     snprintf(line, sizeof line,
              "COMBAT!  [q/e] member  [tab/1-9] target  [p] quaff  "
-             "[c] spells  [space] attack+round  [f] flee  "
+             "[c] spells  [x] shoot  [space] attack+round  [f] flee  "
              "[esc] auto-resolve");
     TextOutA(dc, 20, 14, line, (int)strlen(line));
 
@@ -1683,6 +1727,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'P':
                     case 'p':
                         g_app.combatQuaff();
+                        break;
+
+                    // R28: active member fires missiles this round
+                    case 'X':
+                    case 'x':
+                        g_app.combatShoot();
                         break;
 
                     // R27: open the active member's spell menu
