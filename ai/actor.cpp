@@ -20,6 +20,10 @@
 //      replaced by ACTION_MISSILE events (one per shot at the
 //      weapon's rate of fire, +5 segments apart); resolveMissile
 //      resolves each shot (missile dice, no STR mods).
+// R32: DEX missile adjustment — resolveMissile now applies the
+//      attacker's DEX reaction adjustment (rules::dexReactionAdj,
+//      PHB p.11-12 missile fire adjustment) for characters; STR
+//      stays excluded (PHB). Closes the R28-logged gap.
 // ============================================================================
 
 #include "actor.h"
@@ -470,11 +474,13 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
 // R28: missile resolution
 // ----------------------------------------------------------------------------
 
-// One missile shot: attack roll on the normal matrix, but STR does
+// One missile shot: attack roll on the normal matrix. STR does
 // not modify missile attacks or damage (PHB) — a neutral strength
-// is passed to the adjustment helpers. Damage uses the weapon's
-// small/medium or large dice by target size, plus the weapon's
-// enchantment. Sleepers wake when struck (melee rule parity).
+// is passed to the adjustment helpers — but DEX DOES apply to
+// missile fire (PHB p.11-12 reaction adjustment, R32). Damage
+// uses the weapon's small/medium or large dice by target size,
+// plus the weapon's enchantment. Sleepers wake when struck
+// (melee rule parity).
 void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
     if (!attacker.canAct() || !defender.alive()) return;
 
@@ -489,7 +495,8 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
     }
 
     int toHit = attacker.toHit(defender);
-    // neutral STR: missiles get no strength adjustment (PHB)
+    // neutral STR: missiles get no strength adjustment (PHB);
+    // DEX reaction adj applies to missile fire (R32, PHB p.11-12)
     int adj = 0;
     if (attacker.isCharacter) {
         rules::AcType at =
@@ -497,6 +504,7 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
         adj = items::attackAdjustment(
             attacker.rangedWeapon, rules::ExceptionalStrength{},
             10, at);
+        adj += rules::dexReactionAdj(attacker.dex);
     }
     if (!rules::attackRollHits(m_dice, toHit, adj)) {
         logLine(attacker.name + " misses " + defender.name +
