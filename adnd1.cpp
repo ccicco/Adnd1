@@ -3,6 +3,11 @@
 // Rebuild tranche R25: usable potions.
 // Rebuild tranche R26: treasure XP — looted gold awards XP at
 //   1 gp = 1 xp, split among living members on victory.
+// Rebuild tranche R27: spells in combat — MU/cleric members cast
+//   via [C] + number pick; ACTION_SPELL at initiative segment +
+//   casting time, resolved through spelleffects (saves, MR,
+//   damage, statuses). Slots refresh per encounter (per-day
+//   tracking deferred — logged).
 //
 //   - Party carries a potion pool (from R22 treasure finds)
 //   - [P] quaff in EXPLORE heals the most-wounded living member
@@ -30,6 +35,7 @@
 #include "ai/actor.h"
 #include "monsters/MonsterRegistry.h"
 #include "items/items.h"
+#include "spells/spells.h"
 
 #include <algorithm>
 #include <cctype>
@@ -188,6 +194,15 @@ struct Character {
         a.hp     = hp;
         a.maxHp  = maxHp;
         a.morale = dm::MORALE_FANATIC;   // player party never breaks
+        // R27: spell slots for casters (MU 1 / cleric 2), refreshed
+        // each encounter — per-day tracking deferred (logged)
+        if (a.classIndex == 1 || a.classIndex == 2) {
+            spells::SpellClass sc = a.classIndex == 1
+                ? spells::SPELL_MU : spells::SPELL_CLERIC;
+            for (int lv = 1; lv <= 3; ++lv)
+                a.slotsByLevel[lv - 1] =
+                    spells::spellSlots(sc, a.level, lv);
+        }
         return a;
     }
 
@@ -375,6 +390,9 @@ struct CombatState {
     std::vector<std::string> memberNames;   // snapshot at start
     int  activeMember = 0;
 
+    // R27: spell menu (opened with [C] for the active member)
+    bool spellMenuOpen = false;
+
     void start(std::vector<ai::Actor> party, std::vector<ai::Actor> foes,
                uint64_t seed) {
         memberNames.clear();
@@ -382,6 +400,7 @@ struct CombatState {
             memberNames.push_back(a.name);
         selectedTargets.assign(party.size(), 0);
         activeMember = 0;
+        spellMenuOpen = false;
 
         encounter = std::make_unique<ai::Encounter>(
             std::move(party), std::move(foes), seed);
@@ -462,6 +481,41 @@ struct CombatState {
             }
         }
         return activeMember;
+    }
+
+    // R27: spells the ACTIVE member can cast right now — right
+    // class, level gate (MU: INT, cleric: class level), and at
+    // least one slot remaining at that spell's level. The MU list
+    // is the full registry for now (chance-to-learn is deferred,
+    // logged simplification).
+    std::vector<spells::SpellId> castableSpells() const {
+        std::vector<spells::SpellId> out;
+        if (!encounter || over) return out;
+        if (activeMember < 0 ||
+            activeMember >= (int)memberNames.size())
+            return out;
+        const ai::Actor& a = encounter->party()[activeMember];
+        if (!a.isCaster()) return out;
+
+        int maxLv = 0;
+        if (a.classIndex == 1)   // MU: INT gates spell level
+            maxLv = spells::maxSpellLevelForInt(a.intel);
+        else
+            maxLv = spells::maxSpellLevelForClericLevel(a.level);
+
+        bool mu = (a.classIndex == 1);
+        for (int id = 0; id < spells::SPELL_COUNT; ++id) {
+            const spells::SpellDef& s =
+                spells::spell((spells::SpellId)id);
+            if (s.sclass != (mu ? spells::SPELL_MU
+                                : spells::SPELL_CLERIC))
+                continue;
+            if (s.level < 1 || s.level > 3) continue;
+            if (s.level > maxLv) continue;
+            if (a.slotsByLevel[s.level - 1] <= 0) continue;
+            out.push_back((spells::SpellId)id);
+        }
+        return out;
     }
 };
 
@@ -1269,7 +1323,8 @@ static void drawCombat(HDC dc, const CombatState& cs) {
     char line[160];
     snprintf(line, sizeof line,
              "COMBAT!  [q/e] member  [tab/1-9] target  [p] quaff  "
-             "[space] attack+round  [f] flee  [esc] auto-resolve");
+             "[c] spells  [space] attack+round  [f] flee  "
+             "[esc] auto-resolve");
     TextOutA(dc, 20, 14, line, (int)strlen(line));
 
     if (!cs.encounter) return;
@@ -1307,6 +1362,54 @@ static void drawCombat(HDC dc, const CombatState& cs) {
         TextOutA(dc, 20, ly, lg[i].text.c_str(),
                  (int)lg[i].text.size());
         ly += 22;
+    }
+
+    // R27: spell menu overlay — the active member's castable list
+    if (cs.spellMenuOpen && cs.encounter && !cs.over &&
+        cs.activeMember >= 0 &&
+        cs.activeMember < (int)cs.encounter->party().size()) {
+        auto list = cs.castableSpells();
+        const ai::Actor& a =
+            cs.encounter->party()[cs.activeMember];
+
+        int panelH = 60 + (int)list.size() * 24 + 10;
+        RECT panel = { 140, 140, VIEW_W - 140, 140 + panelH };
+        HBRUSH back = CreateSolidBrush(RGB(16, 14, 10));
+        FillRect(dc, &panel, back);
+        DeleteObject(back);
+        HPEN pen = CreatePen(PS_SOLID, 2, RGB(200, 180, 120));
+        HPEN oldPen = (HPEN)SelectObject(dc, pen);
+        MoveToEx(dc, panel.left, panel.top, nullptr);
+        LineTo(dc, panel.right, panel.top);
+        LineTo(dc, panel.right, panel.bottom);
+        LineTo(dc, panel.left, panel.bottom);
+        LineTo(dc, panel.left, panel.top);
+        SelectObject(dc, oldPen);
+        DeleteObject(pen);
+
+        SetTextColor(dc, RGB(230, 210, 160));
+        char head[96];
+        snprintf(head, sizeof head,
+                 "%s — SPELLS  ([1-9] cast, [c/esc] close)",
+                 a.name.c_str());
+        TextOutA(dc, 156, 152, head, (int)strlen(head));
+
+        int sy = 180;
+        for (size_t i = 0; i < list.size() && i < 9; ++i) {
+            const spells::SpellDef& s = spells::spell(list[i]);
+            char row[96];
+            snprintf(row, sizeof row,
+                     "  [%d] %-20s L%d  ct%d seg  (%d slots)",
+                     (int)i + 1, s.name, s.level, s.castingTime,
+                     a.slotsByLevel[s.level - 1]);
+            SetTextColor(dc, RGB(210, 195, 165));
+            TextOutA(dc, 166, sy, row, (int)strlen(row));
+            sy += 24;
+        }
+        if (list.empty()) {
+            SetTextColor(dc, RGB(150, 140, 120));
+            TextOutA(dc, 166, sy, "  (no spells available)", 23);
+        }
     }
 }
 
@@ -1538,7 +1641,23 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     creationConfirmName();
                 }
             } else if (g_app.mode == MODE_COMBAT) {
-                switch (wp) {
+                // R27: while the spell menu is open it owns the keys
+                if (g_app.combat.spellMenuOpen) {
+                    if (wp == 'C' || wp == 'c' || wp == VK_ESCAPE) {
+                        g_app.combat.spellMenuOpen = false;
+                    } else if (wp >= '1' && wp <= '9') {
+                        int pick = (int)(wp - '1');
+                        auto list = g_app.combat.castableSpells();
+                        if (pick < (int)list.size()) {
+                            g_app.combat.encounter->requestCast(
+                                g_app.combat.activeMember, list[pick]);
+                            g_app.combat.spellMenuOpen = false;
+                            g_app.log.add(
+                                "Spell readied — [space] to resolve "
+                                "the round.");
+                        }
+                    }
+                } else switch (wp) {
                     case VK_TAB:
                         g_app.combat.cycleTarget(
                             (GetKeyState(VK_SHIFT) & 0x8000) ? -1 : 1);
@@ -1564,6 +1683,16 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'P':
                     case 'p':
                         g_app.combatQuaff();
+                        break;
+
+                    // R27: open the active member's spell menu
+                    case 'C':
+                    case 'c':
+                        if (!g_app.combat.castableSpells().empty())
+                            g_app.combat.spellMenuOpen = true;
+                        else
+                            g_app.log.add(
+                                "That member cannot cast spells.");
                         break;
 
                     case VK_ESCAPE:
