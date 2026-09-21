@@ -5,6 +5,8 @@
 // R7 scheduler with R5/R6/R8/R14 resolution.
 //
 // R18: specials (poison/paralysis/energy drain/breath) + drainLevel.
+// R21: player command hook (target choice + flee) wired into the
+//      driver — see Encounter::setPlayerTargetHook / requestFlee.
 // ============================================================================
 
 #pragma once
@@ -17,6 +19,7 @@
 #include "../items/items.h"
 #include "../dm/dm.h"
 
+#include <functional>
 #include <string>
 #include <vector>
 
@@ -81,7 +84,6 @@ struct Actor {
     int toHit(const Actor& defender) const;   // full attack number
     int hitAdjustment(const Actor& defender) const;  // STR+plus+wvsAC
     int attacksPerRound() const;   // R7 meleeAttacks / monster routines
-    rules::SaveCategory lastSaveCat = rules::SAVE_SPELLS; // unused hook
 
     // R14 target descriptor view of this actor
     spelleffects::TargetDesc asTarget() const;
@@ -124,6 +126,13 @@ struct Actor {
 
 // ----------------------------------------------------------------------------
 // Encounter: two teams, run on the scheduler.
+//
+// R21: the app can install a target hook — called when a PARTY actor
+// is about to strike, it returns the index (into the monster list)
+// of the foe to attack. Returning a dead foe's index falls back to
+// front-most. requestFlee() flags the party to break off at the
+// start of the next round: monsters get free swings, then the fight
+// ends with result 2 (party fled).
 // ----------------------------------------------------------------------------
 struct EncounterLogLine {
     std::string text;
@@ -142,14 +151,30 @@ public:
     const std::vector<EncounterLogLine>& log() const { return m_log; }
     const std::vector<Actor>& party() const { return m_party; }
     const std::vector<Actor>& monsters() const { return m_monsters; }
+    std::vector<Actor>& monstersMutable() { return m_monsters; }
 
-    // single-round step (for interactive combat later)
+    // single-round step (interactive combat drives this)
     int stepRound();
 
-    // R18: resolve a special attack that landed (called by
-    // resolveMelee after a hit). Logs and applies effects.
+    // R18: resolve a special attack that landed.
     void resolveSpecial(Actor& attacker, Actor& defender,
                         const ActorSpecial& sp);
+
+    // ---- R21: player command surface --------------------------------------
+    // Called when a party actor attacks: returns foe index to strike.
+    // nullptr = auto (front-most living).
+    void setPlayerTargetHook(
+        std::function<int(const Actor& attacker,
+                          const std::vector<Actor>& foes)> hook) {
+        m_targetHook = std::move(hook);
+    }
+
+    // Party breaks off next round: monsters swing freely, fight ends.
+    void requestFlee() { m_fleeRequested = true; }
+
+    // R21: free swing by a monster against a party member (used by
+    // the flee sequence; resolved through the normal melee path).
+    int partingSwing(Actor& attacker, Actor& defender);
 
 private:
     std::vector<Actor> m_party;
@@ -159,12 +184,18 @@ private:
     std::vector<EncounterLogLine> m_log;
     int m_round = 0;
 
+    std::function<int(const Actor&, const std::vector<Actor>&)>
+        m_targetHook;                       // R21
+    bool m_fleeRequested = false;           // R21
+
     void logLine(const std::string& s);
-    int  teamAlive(int team) const;          // count of living actors
+    int  teamAlive(int team) const;
     bool teamCanAct(int team) const;
     bool checkTeamMorale(std::vector<Actor>& team, int otherTeamAlive);
     // resolve one melee attack, returns damage dealt (0 = miss)
     int  resolveMelee(Actor& attacker, Actor& defender);
+    // pick the target for a party actor (hook-aware, R21)
+    Actor* pickFoeForPartyActor();
 };
 
 } // namespace ai
