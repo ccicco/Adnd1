@@ -2,6 +2,7 @@
 // Adnd1 — ai/actor.cpp
 // Actor derived values + the encounter driver.
 // R18: special attack resolution (poison/paralysis/drain/breath).
+// R21: player target hook + flee request processed inside the driver.
 // ============================================================================
 
 #include "actor.h"
@@ -82,7 +83,7 @@ void Actor::tickStatuses() {
     // drop expired
     statuses.erase(
         std::remove_if(statuses.begin(), statuses.end(),
-             {
+            [](const spelleffects::StatusEffect& s) {
                 return s.kind == spelleffects::STATUS_NONE; }),
         statuses.end());
 }
@@ -199,16 +200,13 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
 }
 
 // ----------------------------------------------------------------------------
-// R18: special attack resolution. Type values mirror
-// monsters::SpecialAttackType (1 poison, 2 paralysis, 3 energy
-// drain, 4 breath weapon). Saves roll against R6 tables with the
-// defender's class/level (monsters save as fighters at HD level).
+// R18: special attack resolution
 // ----------------------------------------------------------------------------
 
 void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
                                const ActorSpecial& sp) {
     (void)attacker;
-    auto trySaveVs = & {
+    auto trySaveVs = [&](int saveCategory, int penalty) {
         int target = rules::saveTarget(
             defender.isCharacter ? defender.classIndex : 0,
             defender.isCharacter ? defender.level
@@ -294,6 +292,53 @@ void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
     }
 }
 
+// ----------------------------------------------------------------------------
+// R21: player command surface
+// ----------------------------------------------------------------------------
+
+// Pick the foe a party actor strikes: the hook decides; falls back
+// to front-most living. A hook-chosen foe that is dead also falls
+// back.
+Actor* Encounter::pickFoeForPartyActor() {
+    // front-most living
+    Actor* front = nullptr;
+    for (auto& m : m_monsters)
+        if (m.alive()) { front = &m; break; }
+    if (!front) return nullptr;
+
+    if (!m_targetHook) return front;
+
+    int idx = m_targetHook(m_party[0], m_monsters);
+    if (idx >= 0 && idx < (int)m_monsters.size() &&
+        m_monsters[idx].alive())
+        return &m_monsters[idx];
+    return front;   // invalid/dead choice: fall back
+}
+
+// A monster's free swing at a fleeing party member (normal melee
+// resolution, no specials — the beast is lunging, not scheming).
+int Encounter::partingSwing(Actor& attacker, Actor& defender) {
+    if (!attacker.alive() || !defender.alive()) return 0;
+
+    int toHit = attacker.toHit(defender);
+    int adj   = attacker.hitAdjustment(defender);
+    if (!rules::attackRollHits(m_dice, toHit, adj)) {
+        logLine(attacker.name + " misses the fleeing " + defender.name);
+        return 0;
+    }
+    int dmg = (int)m_dice.roll((uint32_t)attacker.monsterDamageCount,
+                               (uint32_t)attacker.monsterDamageSides, 0);
+    if (dmg < 1) dmg = 1;
+    defender.hp -= dmg;
+    logLine(attacker.name + " strikes " + defender.name +
+            " from behind for " + std::to_string(dmg) + "!");
+    if (!defender.alive()) {
+        defender.hp = 0;
+        logLine(defender.name + " is cut down in flight!");
+    }
+    return dmg;
+}
+
 int Encounter::stepRound() {
     ++m_round;
 
@@ -301,6 +346,34 @@ int Encounter::stepRound() {
     if (teamAlive(0) == 0) return 1;   // monsters win
     if (teamAlive(1) == 0) return 0;   // party wins
     if (!teamCanAct(0) && !teamCanAct(1)) return -1;
+
+    // ---- R21: flee request processed at the start of the round -----
+    if (m_fleeRequested) {
+        m_fleeRequested = false;
+        logLine("The party breaks off!");
+        // dex check on the fleeing party: d20 <= best dex = clean
+        int bestDex = 3;
+        for (const auto& a : m_party)
+            if (a.alive() && a.dex > bestDex) bestDex = a.dex;
+        int roll = (int)m_dice.roll(1, 20, 0);
+        bool clean = roll <= bestDex;
+        if (clean) {
+            logLine("You slip away cleanly.");
+        } else {
+            logLine("The monsters strike at your backs!");
+            for (auto& m : m_monsters) {
+                if (!m.alive()) continue;
+                for (auto& p : m_party) {
+                    if (!p.alive()) continue;
+                    partingSwing(m, p);
+                    break;   // one swing each, at the front-most
+                }
+                if (teamAlive(0) == 0) break;
+            }
+        }
+        if (teamAlive(0) == 0) return 1;   // cut down in flight
+        return 2;                          // party fled
+    }
 
     // surprise (first round only): 2d6 both sides (R7)
     int pSurp = 0, mSurp = 0;
@@ -323,7 +396,7 @@ int Encounter::stepRound() {
     int baseSegP = rules::initiativeToSegment(pIni) + pSurp;
     int baseSegM = rules::initiativeToSegment(mIni) + mSurp;
 
-    auto submitTeam = & {
+    auto submitTeam = [&](std::vector<Actor>& team, int baseSeg) {
         for (auto& a : team) {
             if (!a.canAct()) continue;
             rules::Action act;
@@ -351,11 +424,14 @@ int Encounter::stepRound() {
         Actor& attacker = isParty ? m_party[idx] : m_monsters[idx];
         if (!attacker.canAct()) continue;
 
-        // pick a living enemy (front-most)
-        std::vector<Actor>& foes = isParty ? m_monsters : m_party;
+        // pick a living enemy
         Actor* target = nullptr;
-        for (auto& f : foes)
-            if (f.alive()) { target = &f; break; }
+        if (isParty) {
+            target = pickFoeForPartyActor();   // R21: hook-aware
+        } else {
+            for (auto& f : m_party)
+                if (f.alive()) { target = &f; break; }
+        }
         if (!target) break;
 
         resolveMelee(attacker, *target);
