@@ -125,6 +125,14 @@ struct Party {
     int gold = 0;
     int kills = 0;
     int potions = 0;   // R25: shared pool of healing potions
+    // R43: DMG training — level-ups do NOT take effect until the
+    // member trains (1500 gp x new level, simplified flat rate
+    // from the DMG p.86 "1,500 x level" convention). Pending
+    // promotions queue here (member indices); the app charges
+    // gold and promotes in town. Simplification: the hit-die
+    // roll is deferred too — the whole level-up waits. XP
+    // thresholds still gate normally.
+    std::vector<int> pendingTraining;   // member indices awaiting training
 
     bool alive() const {
         if (!formed) return false;
@@ -139,6 +147,7 @@ struct Party {
     // (% of the award), a low one a penalty; the creation screen
     // has shown this % since R24, the award pipe now honors it.
     void gainXp(int amount, rules::Dice& dice, MessageLog& log) {
+        (void)dice;   // R43: hit dice roll moved to trainNext
         for (auto& c : members) {
             if (c.hp <= 0) continue;   // the dead earn nothing
             // R30: prime-requisite % (PHB p.20 class notes) —
@@ -151,68 +160,116 @@ struct Party {
             int gained = amount + (amount * pct) / 100;
             if (gained < 0) gained = 0;   // penalty floors at 0
             c.xp += gained;
+            // R43: DMG training — a level-up does not take effect
+            // until the member trains (1500 gp x new level, DMG
+            // p.86 convention simplified to a flat rate). The
+            // promotion queues here; the app promotes and charges
+            // in town. One queued promotion per award; further
+            // levels queue on later awards.
             int cap = rules::CLASS_LEVEL_CAP[c.classIndex];
-            while (c.level < cap &&
-                   c.xp >= rules::xpForLevel(c.classIndex,
-                                             c.level + 1)) {
-                ++c.level;
-                int conAdj = rules::conHPAdjustment(c.classIndex,
-                                                    c.abilities.con);
-                int die = rules::rollHitPoints(c.classIndex,
-                                               c.level, conAdj, dice);
-                c.maxHp += die;
-                c.hp += die;
+            if (c.level < cap &&
+                c.xp >= rules::xpForLevel(c.classIndex,
+                                          c.level + 1) &&
+                !isQueuedForTraining((int)(&c - members.data()))) {
+                pendingTraining.push_back(
+                    (int)(&c - members.data()));
                 char buf[96];
                 snprintf(buf, sizeof buf,
-                         "%s attains level %d! (+%d hp, now %d/%d)",
-                         c.name.c_str(), c.level, die, c.hp, c.maxHp);
+                         "%s is due a level — training costs %d "
+                         "gp in town.",
+                         c.name.c_str(), 1500 * (c.level + 1));
                 log.add(buf);
+            }
+        }
+    }
 
-                // R33: on a level-up an MU studies one new spell —
-                // a random unknown MU spell within INT-gated level,
-                // learned on a successful chance-to-learn roll
-                // (PHB p.10). Failure wastes the opportunity (the
-                // same spell may be attempted again at the next
-                // level — simplification vs PHB's permanent bar).
-                if (c.classIndex == 1) {
-                    int maxLv = spells::maxSpellLevelForInt(
-                        c.abilities.int_);
-                    std::vector<int> cands;
-                    for (int id = 0; id < spells::SPELL_COUNT;
-                         ++id) {
-                        const spells::SpellDef& s =
-                            spells::spell((spells::SpellId)id);
-                        if (s.sclass != spells::SPELL_MU)
-                            continue;
-                        if (s.level < 1 || s.level > maxLv)
-                            continue;
-                        if (c.knowsSpell(id)) continue;
-                        cands.push_back(id);
-                    }
-                    if (!cands.empty()) {
-                        int pick = (int)dice.roll(
-                            1, (uint32_t)cands.size(), 0) - 1;
-                        int sid = cands[pick];
-                        const spells::SpellDef& s =
-                            spells::spell((spells::SpellId)sid);
-                        if (spells::rollChanceToLearn(
-                                dice, c.abilities.int_)) {
-                            c.knownSpells.push_back(sid);
-                            char b2[96];
-                            snprintf(b2, sizeof b2,
-                                     "%s learns %s!",
-                                     c.name.c_str(), s.name);
-                            log.add(b2);
-                        } else {
-                            char b2[96];
-                            snprintf(b2, sizeof b2,
-                                     "%s fails to comprehend %s.",
-                                     c.name.c_str(), s.name);
-                            log.add(b2);
-                        }
+    // R43: is this member already queued?
+    bool isQueuedForTraining(int memberIndex) const {
+        for (int i : pendingTraining)
+            if (i == memberIndex) return true;
+        return false;
+    }
+
+    // R43: promote the first valid queued member — hit die, MU
+    // spell study and level matrices all happen here (the R22/
+    // R33 promotion logic, moved out of gainXp). One promotion
+    // per call; stale entries (dead members, roster shifts) are
+    // dropped. Returns the trained member's index, or -1.
+    int trainNext(rules::Dice& dice, MessageLog& log) {
+        while (!pendingTraining.empty()) {
+            int i = pendingTraining.front();
+            pendingTraining.erase(pendingTraining.begin());
+            if (i < 0 || i >= (int)members.size()) continue;
+            Character& c = members[i];
+            int cap = rules::CLASS_LEVEL_CAP[c.classIndex];
+            if (c.hp <= 0 || c.level >= cap ||
+                c.xp < rules::xpForLevel(c.classIndex,
+                                         c.level + 1))
+                continue;   // stale entry — try the next
+            ++c.level;
+            int conAdj = rules::conHPAdjustment(c.classIndex,
+                                                c.abilities.con);
+            int die = rules::rollHitPoints(c.classIndex,
+                                           c.level, conAdj, dice);
+            c.maxHp += die;
+            c.hp += die;
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "%s attains level %d! (+%d hp, now %d/%d)",
+                     c.name.c_str(), c.level, die, c.hp, c.maxHp);
+            log.add(buf);
+
+            // R33: on a level-up an MU studies one new spell —
+            // a random unknown MU spell within INT-gated level,
+            // learned on a successful chance-to-learn roll
+            // (PHB p.10). Failure wastes the opportunity (the
+            // same spell may be attempted again at the next
+            // level — simplification vs PHB's permanent bar).
+            if (c.classIndex == 1) {
+                int maxLv = spells::maxSpellLevelForInt(
+                    c.abilities.int_);
+                std::vector<int> cands;
+                for (int id = 0; id < spells::SPELL_COUNT;
+                     ++id) {
+                    const spells::SpellDef& s =
+                        spells::spell((spells::SpellId)id);
+                    if (s.sclass != spells::SPELL_MU)
+                        continue;
+                    if (s.level < 1 || s.level > maxLv)
+                        continue;
+                    if (c.knowsSpell(id)) continue;
+                    cands.push_back(id);
+                }
+                if (!cands.empty()) {
+                    int pick = (int)dice.roll(
+                        1, (uint32_t)cands.size(), 0) - 1;
+                    int sid = cands[pick];
+                    const spells::SpellDef& s =
+                        spells::spell((spells::SpellId)sid);
+                    if (spells::rollChanceToLearn(
+                            dice, c.abilities.int_)) {
+                        c.knownSpells.push_back(sid);
+                        char b2[96];
+                        snprintf(b2, sizeof b2,
+                                 "%s learns %s!",
+                                 c.name.c_str(), s.name);
+                        log.add(b2);
+                    } else {
+                        char b2[96];
+                        snprintf(b2, sizeof b2,
+                                 "%s fails to comprehend %s.",
+                                 c.name.c_str(), s.name);
+                        log.add(b2);
                     }
                 }
             }
+            // XP reaching another level queues the member again
+            if (c.level < cap &&
+                c.xp >= rules::xpForLevel(c.classIndex,
+                                          c.level + 1))
+                pendingTraining.push_back(i);
+            return i;
         }
+        return -1;
     }
 };
