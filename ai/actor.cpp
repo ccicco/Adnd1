@@ -28,6 +28,10 @@
 //      Actor::missileAmmo (characters); the round scheduler caps
 //      the rate of fire at the remaining count, and a dry quiver
 //      falls through to melee submissions.
+// R36: throw command — a requested member's round is one hurled
+//      melee weapon (dice/plus from the weapon, spent for the
+//      encounter, unarmed 1d2 fists afterwards); resolveMissile
+//      reads the melee weapon through the Actor "throwing" flag.
 // ============================================================================
 
 #include "actor.h"
@@ -186,12 +190,21 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
     // damage
     int dmg;
     if (attacker.isCharacter) {
-        const items::WeaponDef& w = items::weapon(attacker.weapon.id);
-        bool large = defender.hitDice >= 8 && !defender.isCharacter;
-        dmg = (int)m_dice.roll(
-            large ? w.lCount : w.smCount,
-            large ? w.lSides : w.smSides, 0);
-        dmg += attacker.weapon.plus;
+        if (attacker.weaponThrown) {
+            // R36: hurled the weapon earlier — bare fists (1d2,
+            // no weapon dice or plus; logged simplification of
+            // the PHB unarmed rules)
+            dmg = (int)m_dice.roll(1, 2, 0);
+        } else {
+            const items::WeaponDef& w =
+                items::weapon(attacker.weapon.id);
+            bool large =
+                defender.hitDice >= 8 && !defender.isCharacter;
+            dmg = (int)m_dice.roll(
+                large ? w.lCount : w.smCount,
+                large ? w.lSides : w.smSides, 0);
+            dmg += attacker.weapon.plus;
+        }
     } else {
         dmg = (int)m_dice.roll((uint32_t)attacker.monsterDamageCount,
                                (uint32_t)attacker.monsterDamageSides, 0);
@@ -485,21 +498,35 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
 // uses the weapon's small/medium or large dice by target size,
 // plus the weapon's enchantment. Sleepers wake when struck
 // (melee rule parity). R35: each character shot spends one
-// missile from the quiver (hit or miss).
+// missile from the quiver (hit or miss). R36: a hurled melee
+// weapon (Actor "throwing") uses the melee weapon's dice and
+// plus, skips quiver accounting, and is spent for the encounter.
 void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
     if (!attacker.canAct() || !defender.alive()) return;
 
-    // R35: engine-authoritative gate — a dry quiver fires nothing
-    if (attacker.isCharacter && attacker.missileAmmo <= 0) {
-        logLine(attacker.name + "'s quiver is empty");
-        return;
+    // R36: a hurled melee weapon — the weapon itself is the
+    // ammunition (no quiver accounting)
+    const bool hurled = attacker.isCharacter && attacker.throwing;
+    if (hurled) {
+        attacker.throwing = false;
+        attacker.weaponThrown = true;   // spent for the encounter
+    } else if (attacker.isCharacter) {
+        // R35: engine-authoritative gate — dry quiver fires nothing
+        if (attacker.missileAmmo <= 0) {
+            logLine(attacker.name + "'s quiver is empty");
+            return;
+        }
+        // R35: spend the missile whether it hits or misses
+        --attacker.missileAmmo;
     }
-    // R35: spend the missile whether it hits or misses
-    if (attacker.isCharacter) --attacker.missileAmmo;
+
+    // the weapon being fired: the hurled melee weapon, else the
+    // ranged slot
+    const items::WeaponInstance& fired =
+        hurled ? attacker.weapon : attacker.rangedWeapon;
 
     // gating: defender requires +N weapon (R5)
-    int wpnPlus = attacker.isCharacter ? attacker.rangedWeapon.plus
-                                       : 99;
+    int wpnPlus = attacker.isCharacter ? fired.plus : 99;
     if (!rules::weaponSufficient(defender.requiredPlusToHit,
                                  wpnPlus)) {
         logLine(attacker.name + "'s missiles cannot harm " +
@@ -515,25 +542,25 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
         rules::AcType at =
             rules::acTypeForAc(defender.armorClass());
         adj = items::attackAdjustment(
-            attacker.rangedWeapon, rules::ExceptionalStrength{},
+            fired, rules::ExceptionalStrength{},
             10, at);
         adj += rules::dexReactionAdj(attacker.dex);
     }
     if (!rules::attackRollHits(m_dice, toHit, adj)) {
         logLine(attacker.name + " misses " + defender.name +
-                " with a missile");
+                (hurled ? " with a hurled weapon"
+                        : " with a missile"));
         return;
     }
 
     int dmg;
     if (attacker.isCharacter) {
-        const items::WeaponDef& w =
-            items::weapon(attacker.rangedWeapon.id);
+        const items::WeaponDef& w = items::weapon(fired.id);
         bool large = defender.hitDice >= 8 && !defender.isCharacter;
         dmg = (int)m_dice.roll(
             large ? w.lCount : w.smCount,
             large ? w.lSides : w.smSides, 0);
-        dmg += attacker.rangedWeapon.plus;
+        dmg += fired.plus;
     } else {
         dmg = (int)m_dice.roll(
             (uint32_t)attacker.monsterDamageCount,
@@ -543,7 +570,9 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
 
     defender.hp -= dmg;
     logLine(attacker.name + " hits " + defender.name +
-            " with a missile for " + std::to_string(dmg));
+            (hurled ? " with a hurled weapon for "
+                    : " with a missile for ") +
+            std::to_string(dmg));
 
     if (defender.hasStatus(spelleffects::STATUS_SLEEP) &&
         defender.alive()) {
@@ -633,9 +662,19 @@ int Encounter::stepRound() {
     int shootMember = m_shootMember;
     m_shootMember = -1;
 
+    // R36: capture + clear the throw request for this round
+    int throwMember = m_throwMember;
+    m_throwMember = -1;
+
+    // R36: clear stale hurl markers — a throw event that never
+    // resolved last round (actor incapacitated first) must not
+    // misroute this round's arrow shots as hurled weapons
+    for (auto& a : m_party) a.throwing = false;
+
     auto submitTeam = [&](std::vector<Actor>& team, int baseSeg,
                           int drinkIdx, int castIdx,
-                          spells::SpellId castId, int shootIdx) {
+                          spells::SpellId castId, int shootIdx,
+                          int throwIdx) {
         for (auto& a : team) {
             if (!a.canAct()) continue;
             int idx = (int)(&a - team.data());
@@ -686,6 +725,20 @@ int Encounter::stepRound() {
                 }
                 continue;
             }
+            // R36: the hurling member's round is one thrown-weapon
+            // shot at the initiative segment (rate of fire 1) —
+            // resolveMissile reads the melee weapon via the
+            // "throwing" flag and spends it
+            if (idx == throwIdx && a.meleeThrowable()) {
+                a.throwing = true;
+                rules::Action act;
+                act.type = rules::ACTION_MISSILE;
+                act.actorId = a.team * 1000 + idx;
+                act.rateOfFire = 1;
+                act.segment = baseSeg;
+                sched.submit(act, baseSeg);
+                continue;
+            }
             rules::Action act;
             act.type = rules::ACTION_MELEE;
             act.actorId = a.team * 1000 + idx;
@@ -700,8 +753,8 @@ int Encounter::stepRound() {
         }
     };
     submitTeam(m_party, baseSegP, drinkMember, castMember, castSpell,
-               shootMember);
-    submitTeam(m_monsters, baseSegM, -1, -1, castSpell, -1);
+               shootMember, throwMember);
+    submitTeam(m_monsters, baseSegM, -1, -1, castSpell, -1, -1);
     sched.beginRound();
 
     // resolve in segment order
@@ -731,8 +784,10 @@ int Encounter::stepRound() {
 
         // R28: missile events — the shooter's own selection (R21/
         // R24 hook) picks the target; resolveMissile does the rest
+        // (R36: also the hurled-weapon event — a throwing flag
+        // with or without a ranged weapon in the slot)
         if (ev.action.type == rules::ACTION_MISSILE &&
-            attacker.hasRangedWeapon()) {
+            (attacker.hasRangedWeapon() || attacker.throwing)) {
             Actor* target = nullptr;
             if (isParty) {
                 target = pickFoeForPartyActor(attacker);
