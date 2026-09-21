@@ -53,6 +53,11 @@
 //      Actor (rangedRounds). Party shooters are unaffected
 //      (their fire is command-driven); once the bands close, the
 //      monsters melee.
+// R43: party-side range — the encounter carries an abstract
+//      distance (m_distance, 5 bands = 50' engagement range).
+//      It closes one band per round; party missile fire ([x])
+//      requires an open range. Thrown weapons are exempt (they
+//      can be hurled into melee — PHB simplification).
 // ============================================================================
 
 #pragma once
@@ -384,6 +389,8 @@ private:
 
     int  m_throwMember = -1;                // R36 (-1 = none)
 
+    int  m_distance = 5;   // R43: engagement range in 10' bands
+
     void logLine(const std::string& s);
     int  teamAlive(int team) const;
     bool teamCanAct(int team) const;
@@ -401,6 +408,11 @@ private:
 
     // R28: resolve one missile shot (no STR mods; missile dice)
     void resolveMissile(Actor& attacker, Actor& defender);
+
+    // R43: true while the engagement range is still open (the
+    // foes have not closed to melee). Party missile fire gates
+    // on this; monster volleys use their own rangedRounds.
+    bool rangeOpen() const { return m_distance > 0; }
 };
 
 } // namespace ai
