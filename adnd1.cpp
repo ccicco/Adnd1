@@ -1,14 +1,7 @@
 // ============================================================================
 // Adnd1 — a 2D tile-based CRPG implementing AD&D 1st Edition rules
-// Rebuild tranche R20: interactive combat. The player picks targets
-// and chooses to fight or flee; monsters keep their AI.
-//
-//   - COMBAT mode: [1-9] / [tab] select target, [space] attack +
-//     advance the round, [f] attempt flee, [esc] auto-resolve
-//   - Selected target highlighted in the monster roster
-//   - Flee: party tries to break off (dex check flavor); monsters
-//     get free swings as you disengage, then the fight ends
-//   - Everything else (rooms, lairs, wandering) unchanged from R19
+// Rebuild tranche R21: commands bite. Target selection drives who
+// Rolf strikes; flee runs through the encounter driver.
 //
 // Build (MinGW, Lua 5.4):
 //   g++ -std=c++17 -I. -Ilua/include adnd1.cpp rules/dice.cpp rules/character.cpp rules/combat.cpp rules/saves.cpp rules/turn.cpp spells/spells.cpp spelleffects/spelleffects.cpp items/items.cpp dm/dm.cpp dm/dungeon.cpp ai/actor.cpp monsters/MonsterRegistry.cpp lua/src/liblua.a -o adnd1.exe -mwindows
@@ -163,13 +156,7 @@ enum GameMode : int {
 };
 
 // ----------------------------------------------------------------------------
-// Combat state — interactive. The player commands the party actor;
-// the encounter driver resolves the whole round (monsters included).
-//
-// Interactive target selection works via a preference index: the
-// Encounter driver always attacks the front-most living enemy, so
-// we express the player's choice by ORDERING the monster list so
-// the chosen target is front-most when the round resolves.
+// Combat state — interactive, with commands WIRED to the driver (R21)
 // ----------------------------------------------------------------------------
 
 struct CombatState {
@@ -177,8 +164,7 @@ struct CombatState {
     int  lastResult = -1;
     bool over = false;
 
-    // player command state
-    int  selectedTarget = 0;    // index into monsters()
+    int  selectedTarget = 0;    // roster index the player chose
 
     void start(std::vector<ai::Actor> party, std::vector<ai::Actor> foes,
                uint64_t seed) {
@@ -187,7 +173,23 @@ struct CombatState {
         lastResult = -1;
         over = false;
         selectedTarget = 0;
+
+        // R21: the hook answers "who does the party strike?" —
+        // the driver consults it every time a party actor attacks
+        encounter->setPlayerTargetHook(
+            [this](const ai::Actor&, const std::vector<ai::Actor>& foes) {
+                if (selectedTarget >= 0 &&
+                    selectedTarget < (int)foes.size() &&
+                    foes[selectedTarget].alive())
+                    return selectedTarget;
+                // selection invalid: front-most living (driver
+                // fallback handles it too, but be explicit)
+                for (int i = 0; i < (int)foes.size(); ++i)
+                    if (foes[i].alive()) return i;
+                return 0;
+            });
     }
+
     bool step() {
         if (!encounter || over) return true;
         lastResult = encounter->stepRound();
@@ -195,17 +197,11 @@ struct CombatState {
         return over;
     }
 
-    // count living monsters
-    int livingMonsters() const {
-        if (!encounter) return 0;
-        int n = 0;
-        for (const auto& m : encounter->monsters())
-            if (m.alive()) ++n;
-        return n;
+    void requestFlee() {
+        if (encounter && !over)
+            encounter->requestFlee();
     }
 
-    // cycle target among living monsters; returns the roster index
-    // of the new selection
     int cycleTarget(int dir) {
         if (!encounter) return selectedTarget;
         const auto& mons = encounter->monsters();
@@ -219,28 +215,6 @@ struct CombatState {
             }
         }
         return selectedTarget;
-    }
-
-    // Reorder the monster list so the selected target is first among
-    // the living (the driver attacks front-most living). We can't
-    // reorder Encounter's internal vector directly (it's const via
-    // monsters()), so instead we re-issue: the Encounter class
-    // exposes a non-const monsters() only via party()/monsters()
-    // const... In this build we simply ROTATE via re-selection:
-    // selectedTarget is used by our own resolution hook below.
-    // (See combatCommand().)
-    int livingIndexOfSelection() const {
-        if (!encounter) return -1;
-        int living = -1, seen = 0;
-        const auto& mons = encounter->monsters();
-        for (int i = 0; i < (int)mons.size(); ++i) {
-            if (!mons[i].alive()) continue;
-            if (seen == 0 || i == selectedTarget) {
-                if (i == selectedTarget) return seen;
-            }
-            ++seen;
-        }
-        return living;
     }
 };
 
@@ -392,59 +366,14 @@ struct AppState {
         mode = MODE_COMBAT;
     }
 
-    // Player flees: monsters get free swings, then the fight ends
-    // with result 2 (party fled). A dexterity check decides whether
-    // the disengage is clean (no free swings).
+    // R21: flee is now a request to the driver — free swings and
+    // the dex check resolve inside stepRound()
     void playerFlee() {
         if (mode != MODE_COMBAT || !combat.encounter || combat.over)
             return;
-
-        combat.encounter->logLine("The party breaks off!");
-
-        // dex check: d20 <= dex = clean getaway
-        int roll = (int)dice.roll(1, 20, 0);
-        bool clean = roll <= party.fighter.dex;
-
-        if (!clean) {
-            combat.encounter->logLine(
-                "The monsters strike at your backs!");
-            // one free swing per living monster against the party
-            const auto& mons = combat.encounter->monsters();
-            for (const auto& m : mons) {
-                (void)m;
-                // resolved inside the encounter's own driver state:
-                // approximate with a direct roll against the fighter
-                // (full driver support for out-of-round swings comes
-                // with the R21 command rework)
-                int toHit = rules::attackMatrixFighter(
-                    rules::monsterEffectiveLevel(m.hitDice),
-                    party.fighter.armorClass());
-                if (rules::attemptSave(dice, 20 - (20 - toHit) + party.fighter.dex, 0)) {
-                    // treat as a hit for simplicity: damage roll
-                    int dmg = (int)dice.roll(1, 6, 0);
-                    if (dmg < 1) dmg = 1;
-                    party.fighter.hp -= dmg;
-                    char buf[96];
-                    snprintf(buf, sizeof buf,
-                             "%s hits Rolf for %d as he flees!",
-                             m.name.c_str(), dmg);
-                    combat.encounter->logLine(buf);
-                    if (!party.fighter.alive()) {
-                        party.fighter.hp = 0;
-                        combat.encounter->logLine(
-                            "Rolf is cut down in flight!");
-                    }
-                } else {
-                    combat.encounter->logLine(
-                        std::string(m.name) + " misses!");
-                }
-            }
-        } else {
-            combat.encounter->logLine("You slip away cleanly.");
-        }
-
-        combat.lastResult = 2;
-        combat.over = true;
+        combat.requestFlee();
+        combat.step();               // resolves the break-off
+        if (combat.over) endCombat();
     }
 
     void endCombat() {
@@ -615,7 +544,7 @@ static void drawView(HDC dc, const AppState& s) {
 }
 
 // ----------------------------------------------------------------------------
-// Drawing: combat view — rosters with SELECTION highlight
+// Drawing: combat view — rosters with selection highlight
 // ----------------------------------------------------------------------------
 
 static void drawCombatantRow(HDC dc, int x, int y, int w,
@@ -644,7 +573,6 @@ static void drawCombatantRow(HDC dc, int x, int y, int w,
     SetTextColor(dc, RGB(200, 190, 160));
     TextOutA(dc, x + 160 + barW, y, line, (int)strlen(line));
 
-    // selection box around the chosen target
     if (selected) {
         HPEN pen = CreatePen(PS_SOLID, 2, RGB(255, 255, 120));
         HPEN old = (HPEN)SelectObject(dc, pen);
@@ -755,7 +683,7 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
 
         case WM_KEYDOWN:
             if (g_app.mode == MODE_COMBAT) {
-                // ---- combat keys ----
+                // ---- combat keys (R21: all wired to the driver) ----
                 switch (wp) {
                     case VK_TAB:
                         g_app.combat.cycleTarget(
@@ -771,8 +699,6 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'F':
                     case 'f':
                         g_app.playerFlee();
-                        if (g_app.combat.over)
-                            g_app.endCombat();
                         break;
 
                     case VK_ESCAPE:
