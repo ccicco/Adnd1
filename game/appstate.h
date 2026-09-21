@@ -25,6 +25,11 @@
 // goblins short bow, kobolds sling; key list is verification
 // debt — the Lua data files carry no ranged flag); they fire an
 // opening volley in round 1, then close to melee.
+// R38: arrow restocking — quivers refill wherever slots do:
+// a completed rest (restExplore) renews both, and descending
+// (descend) restocks at the same time it refills slots. Load
+// already refills. Ammo stays a physical resource otherwise —
+// wandering-encounter-interrupted rests restore nothing.
 // ============================================================================
 
 #pragma once
@@ -734,6 +739,9 @@ struct AppState {
         // new level (keeps a descended company from being stuck
         // dry with no rest opportunity)
         restoreSlots();
+        // R38: quivers restock on the descent too — the trek to a
+        // new level is rest-like (slots precedent, R34)
+        restockAmmo();
         char buf[96];
         snprintf(buf, sizeof buf,
                  "Dungeon level %d. The air grows colder.",
@@ -757,6 +765,15 @@ struct AppState {
     // level, PHB daily recovery), but the camp may be attacked:
     // a wandering-encounter check first; an interrupted rest
     // restores NOTHING (the party fights on, tired and dry)
+    // R38: refill every quiver to 20 (members holding a missile
+    // weapon in the ranged slot). Mirrors restoreSlots.
+    void restockAmmo() {
+        for (auto& c : party.members) {
+            if (!items::weapon(c.rangedWeapon.id).missile) continue;
+            c.missileAmmo = 20;
+        }
+    }
+
     void restExplore() {
         if (mode != MODE_EXPLORE) return;
         if (!party.alive()) return;
@@ -769,6 +786,10 @@ struct AppState {
         }
 
         restoreSlots();
+        // R38: a completed rest renews arrows too — fletching and
+        // recovery time (interrupted rests restore nothing, as
+        // with slots)
+        restockAmmo();
         for (auto& c : party.members) {
             if (c.hp <= 0) continue;   // the dead do not heal
             int heal = c.level;
