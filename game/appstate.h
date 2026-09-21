@@ -11,6 +11,10 @@
 // encounters (endCombat sync), [R] rest restores slots + natural
 // healing with a wandering-encounter interrupt risk; descend and
 // load also refill the pool.
+// R35: ammo counting — Character::missileAmmo is the live quiver
+// (20 missiles at creation / bow find / load; not persisted in
+// v1 saves); each shot spends one (endCombat sync), and a dry
+// quiver blocks the shoot command and falls back to melee.
 // ============================================================================
 
 #pragma once
@@ -213,6 +217,8 @@ struct CreationState {
                 c.rangedWeapon.id = items::WPN_SLING;
                 break;
         }
+        // R35: everyone starts with a full quiver (20 missiles)
+        c.missileAmmo = 20;
         return c;
     }
 };
@@ -663,6 +669,10 @@ struct AppState {
         dungeonLevel = depth;
         mode = MODE_EXPLORE;
         restoreSlots();   // R34: slots are not persisted — full pool on load
+        // R35: quivers are not persisted either — full 20 on load
+        for (auto& c : party.members)
+            if (items::weapon(c.rangedWeapon.id).missile)
+                c.missileAmmo = 20;
         newDungeon(seed + 1000 + dungeonLevel);
         char buf[96];
         snprintf(buf, sizeof buf,
@@ -892,6 +902,8 @@ struct AppState {
                             !items::weapon(
                                 c.rangedWeapon.id).missile) {
                             c.rangedWeapon.id = items::WPN_SHORT_BOW;
+                            // R35: the find includes a quiver
+                            c.missileAmmo = 20;
                             log.add(c.name + " takes it.");
                             break;
                         }
@@ -1003,6 +1015,11 @@ struct AppState {
             log.add("That member has no missile weapon.");
             return;
         }
+        // R35: dry quiver — nothing left to loose
+        if (partyActors[combat.activeMember].missileAmmo <= 0) {
+            log.add("That member's quiver is empty.");
+            return;
+        }
         combat.encounter->requestShoot(combat.activeMember);
         log.add("Missiles readied — [space] to resolve the round.");
     }
@@ -1075,6 +1092,8 @@ struct AppState {
                     // R34: spent slots persist (per-day tracking)
                     for (int lv = 0; lv < 3; ++lv)
                         c.slotsByLevel[lv] = a.slotsByLevel[lv];
+                    // R35: spent ammo persists (quiver count)
+                    c.missileAmmo = a.missileAmmo;
                     break;
                 }
             }
