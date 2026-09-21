@@ -3,6 +3,8 @@
 // The career layer: Character (one member durable record) and
 // Party (the roster). Moved verbatim from adnd1.cpp, R31; the
 // file split that keeps adnd1.cpp to the Win32/GDI shell.
+// R33: the MU spellbook lives here (Character::knownSpells);
+// level-ups roll the chance-to-learn check (spells/ PHB p.10).
 // ============================================================================
 
 #pragma once
@@ -48,6 +50,16 @@ struct Character {
     items::ArmorInstance  armor;
     bool shield = false;
 
+    // R33: MU spellbook — known spell ids (spells::SpellId).
+    // Empty for non-MUs (clerics cast freely).
+    std::vector<int> knownSpells;
+
+    bool knowsSpell(int id) const {
+        for (int s : knownSpells)
+            if (s == id) return true;
+        return false;
+    }
+
     ai::Actor toActor() const {
         ai::Actor a;
         a.name        = name;
@@ -78,6 +90,8 @@ struct Character {
                 a.slotsByLevel[lv - 1] =
                     spells::spellSlots(sc, a.level, lv);
         }
+        // R33: the spellbook travels with the actor
+        a.knownSpells = knownSpells;
         return a;
     }
 
@@ -148,6 +162,51 @@ struct Party {
                          "%s attains level %d! (+%d hp, now %d/%d)",
                          c.name.c_str(), c.level, die, c.hp, c.maxHp);
                 log.add(buf);
+
+                // R33: on a level-up an MU studies one new spell —
+                // a random unknown MU spell within INT-gated level,
+                // learned on a successful chance-to-learn roll
+                // (PHB p.10). Failure wastes the opportunity (the
+                // same spell may be attempted again at the next
+                // level — simplification vs PHB's permanent bar).
+                if (c.classIndex == 1) {
+                    int maxLv = spells::maxSpellLevelForInt(
+                        c.abilities.int_);
+                    std::vector<int> cands;
+                    for (int id = 0; id < spells::SPELL_COUNT;
+                         ++id) {
+                        const spells::SpellDef& s =
+                            spells::spell((spells::SpellId)id);
+                        if (s.sclass != spells::SPELL_MU)
+                            continue;
+                        if (s.level < 1 || s.level > maxLv)
+                            continue;
+                        if (c.knowsSpell(id)) continue;
+                        cands.push_back(id);
+                    }
+                    if (!cands.empty()) {
+                        int pick = (int)dice.roll(
+                            1, (uint32_t)cands.size(), 0) - 1;
+                        int sid = cands[pick];
+                        const spells::SpellDef& s =
+                            spells::spell((spells::SpellId)sid);
+                        if (spells::rollChanceToLearn(
+                                dice, c.abilities.int_)) {
+                            c.knownSpells.push_back(sid);
+                            char b2[96];
+                            snprintf(b2, sizeof b2,
+                                     "%s learns %s!",
+                                     c.name.c_str(), s.name);
+                            log.add(b2);
+                        } else {
+                            char b2[96];
+                            snprintf(b2, sizeof b2,
+                                     "%s fails to comprehend %s.",
+                                     c.name.c_str(), s.name);
+                            log.add(b2);
+                        }
+                    }
+                }
             }
         }
     }
