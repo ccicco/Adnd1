@@ -3,6 +3,10 @@
 // Actor derived values + the encounter driver.
 // R18: special attack resolution (poison/paralysis/drain/breath).
 // R21: player target hook + flee request processed inside the driver.
+// R24: multi-member parties — the target hook is consulted per
+//      attacking member (pickFoeForPartyActor receives the actor),
+//      and flee parting swings pick a RANDOM living party member
+//      instead of always the front-most.
 // ============================================================================
 
 #include "actor.h"
@@ -293,13 +297,14 @@ void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
 }
 
 // ----------------------------------------------------------------------------
-// R21: player command surface
+// R21/R24: player command surface
 // ----------------------------------------------------------------------------
 
-// Pick the foe a party actor strikes: the hook decides; falls back
-// to front-most living. A hook-chosen foe that is dead also falls
-// back.
-Actor* Encounter::pickFoeForPartyActor() {
+// Pick the foe a party actor strikes: the hook decides (per-member
+// since R24 — the hook receives the attacking actor, so the app can
+// key each member's own target selection); falls back to front-most
+// living. A hook-chosen foe that is dead also falls back.
+Actor* Encounter::pickFoeForPartyActor(const Actor& attacker) {
     // front-most living
     Actor* front = nullptr;
     for (auto& m : m_monsters)
@@ -308,7 +313,7 @@ Actor* Encounter::pickFoeForPartyActor() {
 
     if (!m_targetHook) return front;
 
-    int idx = m_targetHook(m_party[0], m_monsters);
+    int idx = m_targetHook(attacker, m_monsters);
     if (idx >= 0 && idx < (int)m_monsters.size() &&
         m_monsters[idx].alive())
         return &m_monsters[idx];
@@ -347,7 +352,7 @@ int Encounter::stepRound() {
     if (teamAlive(1) == 0) return 0;   // party wins
     if (!teamCanAct(0) && !teamCanAct(1)) return -1;
 
-    // ---- R21: flee request processed at the start of the round -----
+    // ---- R21/R24: flee request processed at the start of the round ----
     if (m_fleeRequested) {
         m_fleeRequested = false;
         logLine("The party breaks off!");
@@ -361,13 +366,16 @@ int Encounter::stepRound() {
             logLine("You slip away cleanly.");
         } else {
             logLine("The monsters strike at your backs!");
+            // R24: each monster lunges at a RANDOM living party
+            // member, not always the front-most (multi-member fix)
+            std::vector<int> livingIdx;
+            for (int i = 0; i < (int)m_party.size(); ++i)
+                if (m_party[i].alive()) livingIdx.push_back(i);
             for (auto& m : m_monsters) {
-                if (!m.alive()) continue;
-                for (auto& p : m_party) {
-                    if (!p.alive()) continue;
-                    partingSwing(m, p);
-                    break;   // one swing each, at the front-most
-                }
+                if (!m.alive() || livingIdx.empty()) continue;
+                int pick = (int)m_rng.below(
+                    (uint32_t)livingIdx.size());
+                partingSwing(m, m_party[livingIdx[pick]]);
                 if (teamAlive(0) == 0) break;
             }
         }
@@ -427,7 +435,8 @@ int Encounter::stepRound() {
         // pick a living enemy
         Actor* target = nullptr;
         if (isParty) {
-            target = pickFoeForPartyActor();   // R21: hook-aware
+            // R24: hook-aware, per attacking member
+            target = pickFoeForPartyActor(attacker);
         } else {
             for (auto& f : m_party)
                 if (f.alive()) { target = &f; break; }
