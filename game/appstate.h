@@ -34,6 +34,10 @@
 // bundle of arrows (20): added to the quiver of the first living
 // missile-armed member, or stockpiled on the least-supplied one
 // when everyone is armed. Bows (R28) and arrows now both drop.
+// R40: thrown-weapon loot — victorious room loot can include a
+// +1 dagger: claimed by the first living member whose melee
+// weapon is throwable (dagger/hand axe/spear) or weaker; it can
+// be hurled with [t] (R36) at +1 to hit and damage.
 // ============================================================================
 
 #pragma once
@@ -97,10 +101,11 @@ struct Treasure {
     bool magicSword = false;
     bool missileWeapon = false;   // R28: short bow find
     bool ammoBundle = false;      // R39: 20 arrows on the ground
+    bool thrownDagger = false;    // R40: +1 dagger find
 
     bool empty() const {
         return gold == 0 && !potionHealing && !magicSword &&
-               !missileWeapon && !ammoBundle;
+               !missileWeapon && !ammoBundle && !thrownDagger;
     }
 };
 
@@ -859,6 +864,7 @@ struct AppState {
         if (rng.below(100) < 5) t.magicSword = true;
         if (rng.below(100) < 10) t.missileWeapon = true;   // R28
         if (rng.below(100) < 15) t.ammoBundle = true;      // R39
+        if (rng.below(100) < 5) t.thrownDagger = true;     // R40
         return t;
     }
 
@@ -928,6 +934,38 @@ struct AppState {
                             log.add(c.name + " claims it.");
                             break;
                         }
+                    }
+                }
+                // R40: +1 dagger — throwable loot. Claimed by the
+                // first living member whose melee weapon is either
+                // already throwable (an upgrade in plus — dagger
+                // over axe/spear swaps hurlability for enchantment)
+                // or non-throwable and weaker-armed (dagger damage
+                // beats bare fists, matches the 1d4 starter)
+                if (t.thrownDagger) {
+                    log.add("You find a +1 dagger!");
+                    Character* taker = nullptr;
+                    for (auto& c : party.members) {
+                        if (c.hp <= 0) continue;
+                        bool throwable = (c.weapon.id ==
+                                          items::WPN_DAGGER ||
+                                          c.weapon.id ==
+                                          items::WPN_HAND_AXE ||
+                                          c.weapon.id ==
+                                          items::WPN_SPEAR);
+                        bool upgrade = throwable
+                            ? c.weapon.plus < 1
+                            : (c.weapon.id == items::WPN_DAGGER ||
+                               c.weapon.plus < 1);
+                        if (upgrade) { taker = &c; break; }
+                    }
+                    if (taker) {
+                        taker->weapon.id = items::WPN_DAGGER;
+                        taker->weapon.plus = 1;
+                        log.add(taker->name + " claims it.");
+                    } else {
+                        log.add("No one can use it; it is left "
+                                "behind.");
                     }
                 }
                 // R28: short bow — claimed by the first living
