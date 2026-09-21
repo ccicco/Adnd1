@@ -5,6 +5,10 @@
 // file split that keeps adnd1.cpp to the Win32/GDI shell.
 // R33: the MU spellbook lives here (Character::knownSpells);
 // level-ups roll the chance-to-learn check (spells/ PHB p.10).
+// R34: per-day spell slots — Character::slotsByLevel persists
+// across encounters; toActor carries the CURRENT pool (not a
+// fresh one), and the app restores it on rest (or descend, to
+// keep a loaded/descended company from being stuck dry).
 // ============================================================================
 
 #pragma once
@@ -54,6 +58,10 @@ struct Character {
     // Empty for non-MUs (clerics cast freely).
     std::vector<int> knownSpells;
 
+    // R34: per-day spell slots by level (index 0 = spell level
+    // 1). Persisted across encounters; restored by rest.
+    int  slotsByLevel[3] = {0, 0, 0};
+
     bool knowsSpell(int id) const {
         for (int s : knownSpells)
             if (s == id) return true;
@@ -81,15 +89,10 @@ struct Character {
         a.hp     = hp;
         a.maxHp  = maxHp;
         a.morale = dm::MORALE_FANATIC;   // player party never breaks
-        // R27: spell slots for casters (MU 1 / cleric 2), refreshed
-        // each encounter — per-day tracking deferred (logged)
-        if (a.classIndex == 1 || a.classIndex == 2) {
-            spells::SpellClass sc = a.classIndex == 1
-                ? spells::SPELL_MU : spells::SPELL_CLERIC;
-            for (int lv = 1; lv <= 3; ++lv)
-                a.slotsByLevel[lv - 1] =
-                    spells::spellSlots(sc, a.level, lv);
-        }
+        // R34: slots persist — toActor carries the CURRENT pool
+        // (the app restores it on rest, not per encounter)
+        for (int lv = 0; lv < 3; ++lv)
+            a.slotsByLevel[lv] = slotsByLevel[lv];
         // R33: the spellbook travels with the actor
         a.knownSpells = knownSpells;
         return a;
