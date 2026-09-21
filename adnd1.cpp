@@ -1,6 +1,12 @@
 // ============================================================================
 // Adnd1 — a 2D tile-based CRPG implementing AD&D 1st Edition rules
-// Rebuild tranche R31: file split — adnd1.cpp is now the Win32/GDI
+// Rebuild tranche R34: per-day spell slots — casters keep a live slot
+// tally that only refills on rest (new [R] rest command in explore
+// mode), on descending a level, or on loading a save; interrupted
+// rest (wandering encounter) restores nothing. Slot state lives in
+// Character::slotsByLevel (game/party.h) and is managed by
+// AppState::restoreSlots / restExplore (game/appstate.h).
+// R31 heritage: file split — adnd1.cpp is now the Win32/GDI
 // shell only (renderer, drawing, window proc, input); the game
 // simulation moved verbatim to game/ headers:
 //   game/messagelog.h  — MessageLog
@@ -714,7 +720,7 @@ static void drawHud(HDC dc, const AppState& s) {
     snprintf(line, sizeof line,
              "Dungeon Lvl %d  Rooms: %d (%d lairs)  %d gp  Potions %d  "
              "Kills %d  Turn %d  Seed %llu  [P] quaff  "
-             "[K] save  [L] load",
+             "[K] save  [L] load  [R] rest",
              s.dungeonLevel, (int)s.dungeon.rooms.size(),
              s.countOccupied(), party.gold, party.potions,
              party.kills, s.turnCount, (unsigned long long)s.seed);
@@ -875,6 +881,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'P':
                     case 'p':
                         g_app.quaffExplore();
+                        break;
+
+                    // R34: rest — restore spell slots and heal
+                    case 'R':
+                    case 'r':
+                        g_app.restExplore();
                         break;
 
                     // R29: save the company / load a saved one
