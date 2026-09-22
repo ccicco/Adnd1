@@ -1,107 +1,125 @@
 // ============================================================================
-// Adnd1 — game/appstate.h
+// Adnd1 â game/appstate.h
 // The simulation core: room occupancy, treasure, camera, game
 // modes, creation state, combat state, and AppState itself.
-// Moved verbatim from adnd1.cpp, R31 — no windows.h here; the
+// Moved verbatim from adnd1.cpp, R31 â no windows.h here; the
 // shell (adnd1.cpp) owns the Renderer.
-// R33: spellbook wiring — MU starting spell at creation, the
+// R33: spellbook wiring â MU starting spell at creation, the
 // castable list filters by known spells, and saveGame/loadGame
 // grow an optional per-MU "spells" line (v1 saves still load).
-// R34: per-day slots — Character::slotsByLevel persists across
+// R34: per-day slots â Character::slotsByLevel persists across
 // encounters (endCombat sync), [R] rest restores slots + natural
 // healing with a wandering-encounter interrupt risk; descend and
 // load also refill the pool.
-// R35: ammo counting — Character::missileAmmo is the live quiver
+// R35: ammo counting â Character::missileAmmo is the live quiver
 // (20 missiles at creation / bow find / load; not persisted in
 // v1 saves); each shot spends one (endCombat sync), and a dry
 // quiver blocks the shoot command and falls back to melee.
-// R36: throw command — combatThrow() has the active member hurl
+// R36: throw command â combatThrow() has the active member hurl
 // their melee weapon (dagger/hand axe/spear): one shot from the
 // weapon's own dice/plus, then unarmed 1d2 fists for the rest of
-// the encounter (the weapon is recovered afterward — Actor state
+// the encounter (the weapon is recovered afterward â Actor state
 // only, nothing persisted).
-// R37: monster missile attacks — beginCombat marks missile-armed
+// R37: monster missile attacks â beginCombat marks missile-armed
 // monsters from the monster key (goblin/kobold, MM convention:
 // goblins short bow, kobolds sling; key list is verification
-// debt — the Lua data files carry no ranged flag); they fire an
+// debt â the Lua data files carry no ranged flag); they fire an
 // opening volley in round 1, then close to melee.
-// R38: arrow restocking — quivers refill wherever slots do:
+// R38: arrow restocking â quivers refill wherever slots do:
 // a completed rest (restExplore) renews both, and descending
 // (descend) restocks at the same time it refills slots. Load
-// already refills. Ammo stays a physical resource otherwise —
+// already refills. Ammo stays a physical resource otherwise â
 // wandering-encounter-interrupted rests restore nothing.
-// R39: ammo as treasure — victorious room loot can include a
+// R39: ammo as treasure â victorious room loot can include a
 // bundle of arrows (20): added to the quiver of the first living
 // missile-armed member, or stockpiled on the least-supplied one
 // when everyone is armed. Bows (R28) and arrows now both drop.
-// R40: thrown-weapon loot — victorious room loot can include a
+// R40: thrown-weapon loot â victorious room loot can include a
 // +1 dagger: claimed by the first living member whose melee
 // weapon is throwable (dagger/hand axe/spear) or weaker; it can
 // be hurled with [t] (R36) at +1 to hit and damage.
-// R41: town hub — a new MODE_TOWN screen reached with [B] from
+// R41: town hub â a new MODE_TOWN screen reached with [B] from
 // the dungeon. The temple sells healing potions (50 gp), the
 // fletcher sells 20-arrow bundles (30 gp). [B]/Esc returns to
 // the dungeon at the same depth. Buying arrows needs a missile-
-// armed member (first below 20, else least-supplied — R39
+// armed member (first below 20, else least-supplied â R39
 // convention). Saves are not possible in town (mode resets to
 // EXPLORE on load).
-// R42 (three features): (1) town expansion — the inn sells a
+// R42 (three features): (1) town expansion â the inn sells a
 // safe night's rest (10 gp: full slots, quivers, and 1 hp/level
 // healing, NO wander check), the temple heals the most-wounded
 // member to full (100 gp), the smith sells +1 long swords
-// (500 gp, first living fighter); (2) movement + range bands —
+// (500 gp, first living fighter); (2) movement + range bands â
 // missile fire is bounded by the weapon's short range
 // (rangeTens*10 feet, PHB p.39); the round-1 volley lasts
 // rangeBandsOf() rounds before melee closes (1 band = 10' range
-// factor);(3) dungeon scaling — monster lair sizes and treasure
+// factor);(3) dungeon scaling â monster lair sizes and treasure
 // gold now scale with depth (cap 2+level/2, gold multiplier
 // 100%+25%/level above 1).
-// R43 (three features): (1) DMG training — level-ups queue
+// R43 (three features): (1) DMG training â level-ups queue
 // (Party::pendingTraining) until the member trains at the town
 // hall ([6], 1500 gp x new level); promotion logic moved from
 // gainXp to Party::trainNext (hit die + R33 MU spell study);
 // queue persists in saves via an optional "training" line
-// (v1-compatible); (2) party-side range — the encounter carries
+// (v1-compatible); (2) party-side range â the encounter carries
 // an abstract distance (5 bands, closes 1/round); [x] shoot is
 // refused once the range closes (thrown weapons exempt);
-// (3) town stock — [7] chain mail (75 gp, first armored-eligible
+// (3) town stock â [7] chain mail (75 gp, first armored-eligible
 // member in worse), [8] spell scroll (200 gp, one random unknown
 // L1 MU spell added to the first MU's book).
-// R44 (five features): (1) stronghold — a name-level member
+// R44 (five features): (1) stronghold â a name-level member
 // (level == class cap) builds a keep ([0], 10,000 gp); rents
 // (200 gp) collect on every return to town and training is
-// halved while it stands; (2) identify scrolls — treasure can
+// halved while it stands; (2) identify scrolls â treasure can
 // yield scrolls and UNIDENTIFIED magic items (plus rolled but
 // hidden); the scribe sells scrolls ([9], 100 gp) and [I] reads
 // one over the first pending item, applying weapon or armor
-// enchant; (3) henchman — [H] posts a 100 gp offer (DMG p.36
+// enchant; (3) henchman â [H] posts a 100 gp offer (DMG p.36
 // simplified); on acceptance a level-1 fighter joins as an
 // extra party actor (chain + shield kit), upkeep 100 gp/level
 // bills each return to town, loyalty (50 + best Cha reaction
-// adj) is checked on descending — a failed roll loses the hire;
-// (4) monster roster expansion — six new Lua bestiary files
+// adj) is checked on descending â a failed roll loses the hire;
+// (4) monster roster expansion â six new Lua bestiary files
 // (bandit, wolf, hobgoblin, gnoll, lizard man, bugbear) and
 // hobgoblin joins the missile-armed key list; (5) town hub
-// polish — a company status panel (roster, henchman, keep,
+// polish â a company status panel (roster, henchman, keep,
 // scrolls) beside the shop menu.
-// R45 (five features): (1) henchman advancement and shares —
+// R45 (five features): (1) henchman advancement and shares â
 // the hire earns a half share of combat XP, levels (hit die
 // d10+1) at fighter thresholds, and takes a THIRD of each
 // delve's gold (accumulated in delveGold, paid into his
-// purse on every return to town); (2) sage and spy consults —
+// purse on every return to town); (2) sage and spy consults â
 // [S] 200 gp lists what lairs at this depth (the registry
 // roster, an in-game MM reference), [Y] 500 gp reveals the
 // CURRENT occupied rooms and their monster keys (simple
-// recon, DMG p.35 spying simplified); (3) the peddler [M] —
+// recon, DMG p.35 spying simplified); (3) the peddler [M] â
 // 500 gp for one random identified magic item (weapon +1,
 // armor +1, three potions, two identify scrolls, or a spell
-// scroll); (4) traps and secret doors — unoccupied rooms may
+// scroll); (4) traps and secret doors â unoccupied rooms may
 // hide a dart trap (save vs death or 2d6; a thief in the
 // company may spot and disarm it first), walls hide secret
 // doors found with [F] search (1-in-6, thief 3-in-6; found
-// doors become ordinary doors); (5) MM reference — the sage
+// doors become ordinary doors); (5) MM reference â the sage
 // consult doubles as the bestiary lore service (true book
 // verification still awaits the re-uploaded MM PDF).
+// R46 (six features): (1) NPC dialogue — [T] in town talks
+// with the locals (state-aware tavern chatter: hints about
+// pending training, unidentified loot, the hire, the keep,
+// and depth rumors); (2) psionics hook — Actor::psionic
+// (app-flagged by monster key, R37 pattern): a once-per-
+// encounter mind blast stuns a party member unless they
+// save vs spells; the mind flayer (new Lua file) carries
+// it; (3) henchman kit — [J] upgrades the hire to plate
+// (100 gp from HIS purse, not the company's gold); (4)
+// ship crew — [C] hires a 20-sailor coaster's company
+// (200 gp down); upkeep 40 gp each return, and the crew
+// takes 5% of every delve's take at the exit; (5) room
+// flavor — entering a room the first time describes it
+// (state-aware: occupied/trapped/looted/swept variants);
+// (6) L4+ spell slots — all slot arrays widened to 6
+// levels (the spells:: tables carry the columns; the L4-6
+// spell DATA pass is next — it needs the current spells/
+// files read back).
 // ============================================================================
 
 #pragma once
@@ -142,6 +160,7 @@ struct RoomOccupant {
     bool looted = false;
     // R45: 0 = no trap, 1 = armed dart trap, 2 = sprung
     int trap = 0;
+    bool flavorSeen = false;   // R46: first-entry description
 };
 
 // R45: a secret door hides in a wall tile until found
@@ -209,7 +228,7 @@ enum GameMode : int {
 };
 
 // ----------------------------------------------------------------------------
-// R24: Creation state — ROLL -> CLASS -> NAME, per member.
+// R24: Creation state â ROLL -> CLASS -> NAME, per member.
 // Uses its own RNG stream so dungeon/sim determinism is untouched.
 // ----------------------------------------------------------------------------
 
@@ -270,7 +289,7 @@ struct CreationState {
         if (classIndex == 1 || classIndex == 2) {
             spells::SpellClass sc = classIndex == 1
                 ? spells::SPELL_MU : spells::SPELL_CLERIC;
-            for (int lv = 1; lv <= 3; ++lv)
+            for (int lv = 1; lv <= 6; ++lv)   // R46: 6 levels
                 c.slotsByLevel[lv - 1] =
                     spells::spellSlots(sc, 1, lv);
         }
@@ -326,7 +345,7 @@ struct CreationState {
 };
 
 // ----------------------------------------------------------------------------
-// Combat state — interactive, commands wired to the driver (R21).
+// Combat state â interactive, commands wired to the driver (R21).
 // R24: one target selection PER PARTY MEMBER (keyed by actor name
 // in the hook), plus an active-member cursor for command entry.
 // ----------------------------------------------------------------------------
@@ -359,7 +378,7 @@ struct CombatState {
 
         // R24: the hook receives the attacking member; we look up
         // that member's own target selection by name (names are
-        // unique — creation enforces it)
+        // unique â creation enforces it)
         encounter->setPlayerTargetHook(
             [this](const ai::Actor& attacker,
                    const std::vector<ai::Actor>& foes) {
@@ -433,7 +452,7 @@ struct CombatState {
         return activeMember;
     }
 
-    // R27: spells the ACTIVE member can cast right now — right
+    // R27: spells the ACTIVE member can cast right now â right
     // class, level gate (MU: INT, cleric: class level), and at
     // least one slot remaining at that spell's level. The MU list
     // is the full registry for now (chance-to-learn is deferred,
@@ -503,7 +522,7 @@ struct AppState {
     int         combatRoomIndex = -1;
     std::string combatMonsterKey;
 
-    // R23: stairs down — placed in the room farthest from entry
+    // R23: stairs down â placed in the room farthest from entry
     int stairsX = -1, stairsY = -1;
 
     // R45: the level's hidden doors
@@ -514,7 +533,7 @@ struct AppState {
         dungeon = dm::generateDungeon(s);
         map = dungeon.map;
         occupancy.init(dungeon);
-        // R24: no formDefault — the roster comes from creation
+        // R24: no formDefault â the roster comes from creation
         party.x = dungeon.entryX;
         party.y = dungeon.entryY;
         cam.follow(party);
@@ -533,7 +552,7 @@ struct AppState {
         log.add(buf);
     }
 
-    // R24: creation is finished — the delve begins
+    // R24: creation is finished â the delve begins
     void beginDelve() {
         party.formed = true;
         creation.done = true;
@@ -546,7 +565,7 @@ struct AppState {
         log.add(buf);
     }
 
-    // R24: full reset after a wipe — back to creation, career gone
+    // R24: full reset after a wipe â back to creation, career gone
     void resetToCreation() {
         party = Party{};
         creation = CreationState{};
@@ -559,7 +578,7 @@ struct AppState {
     // ----------------------------------------------------------------
     // R29: save/load. Plain-text career file "adnd1.sav" in the
     // working directory. The COMPANY is saved, not the floor: no
-    // dungeon layout, occupancy, or combat state persists — loading
+    // dungeon layout, occupancy, or combat state persists â loading
     // regenerates a fresh dungeon at the saved depth (the
     // deterministic newDungeon pipeline). Format: one token stream,
     // version-tagged; unknown/short files are rejected cleanly.
@@ -582,14 +601,14 @@ struct AppState {
         fprintf(f, "gold %d kills %d potions %d depth %d\n",
                 party.gold, party.kills, party.potions,
                 dungeonLevel);
-        // R43: the training queue (v1 saves lack this line — the
+        // R43: the training queue (v1 saves lack this line â the
         // loader treats it as optional)
         fprintf(f, "training %d",
                 (int)party.pendingTraining.size());
         for (int i : party.pendingTraining)
             fprintf(f, " %d", i);
         fprintf(f, "\n");
-        // R44: career extras (optional lines, v1-compatible —
+        // R44: career extras (optional lines, v1-compatible â
         // the loader's optional-tag chain treats each as absent
         // in older saves)
         fprintf(f, "stronghold %d %d\n",
@@ -626,7 +645,7 @@ struct AppState {
                 (int)c.armor.id, c.armor.plus,
                 c.shield ? 1 : 0);
             // R33: the MU spellbook (one line per MU; other
-            // classes write nothing — v1 saves stay readable)
+            // classes write nothing â v1 saves stay readable)
             if (c.classIndex == 1) {
                 fprintf(f, "spells %d",
                         (int)c.knownSpells.size());
@@ -647,7 +666,7 @@ struct AppState {
             return false;
         }
         char tag[16];
-        // R33: one-token pushback — holds a tag read past the
+        // R33: one-token pushback â holds a tag read past the
         // optional spells line so the next member parse reuses it
         char pendingTag[16] = "";
         bool hasPending = false;
@@ -675,7 +694,7 @@ struct AppState {
             log.add("adnd1.sav is corrupt (career).");
             return false;
         }
-        // R44: generalized optional-tag chain — any number of
+        // R44: generalized optional-tag chain â any number of
         // party-level optional lines may appear between the
         // career line and the member loop (v1 saves have none,
         // R43 saves have "training"); the first unrecognized
@@ -735,7 +754,7 @@ struct AppState {
                     p.henchmanMaxHp = mx;
                     p.henchmanLevel = lv;
                     p.henchmanLoyalty = loy;
-                    // R45: the hire's career records —
+                    // R45: the hire's career records â
                     // OPTIONAL trailing ints (R44 saves lack
                     // them; defaults 0 are fine)
                     int hxp = 0, hpu = 0, dgv = 0;
@@ -879,7 +898,7 @@ struct AppState {
         }
         fclose(f);
 
-        // R33: v1 saves predate the spellbook — grant each MU a
+        // R33: v1 saves predate the spellbook â grant each MU a
         // default book (one random L1 spell, creation convention)
         for (auto& c : p.members) {
             if (c.classIndex == 1 && c.knownSpells.empty()) {
@@ -909,8 +928,8 @@ struct AppState {
         creation.done = true;
         dungeonLevel = depth;
         mode = MODE_EXPLORE;
-        restoreSlots();   // R34: slots are not persisted — full pool on load
-        // R35: quivers are not persisted either — full 20 on load
+        restoreSlots();   // R34: slots are not persisted â full pool on load
+        // R35: quivers are not persisted either â full 20 on load
         for (auto& c : party.members)
             if (items::weapon(c.rangedWeapon.id).missile)
                 c.missileAmmo = 20;
@@ -924,7 +943,7 @@ struct AppState {
     }
 
     // R23: stairs in the room whose center is farthest from the
-    // entry point. The tile itself stays floor — the marker and
+    // entry point. The tile itself stays floor â the marker and
     // the step check carry the meaning (no map.h changes needed).
     void placeStairs() {
         long bestDist = -1;
@@ -955,17 +974,17 @@ struct AppState {
         stairsY = by;
     }
 
-    // R23: descend. Career (hp/xp/gold/equipment/level) persists —
+    // R23: descend. Career (hp/xp/gold/equipment/level) persists â
     // depth scales monsters and treasure.
     void descend() {
         ++dungeonLevel;
         log.add("You descend the worn stairs...");
         newDungeon(seed + 1000 + dungeonLevel);
-        // R34: the descent takes hours — slots return with the
+        // R34: the descent takes hours â slots return with the
         // new level (keeps a descended company from being stuck
         // dry with no rest opportunity)
         restoreSlots();
-        // R38: quivers restock on the descent too — the trek to a
+        // R38: quivers restock on the descent too â the trek to a
         // new level is rest-like (slots precedent, R34)
         restockAmmo();
         char buf[96];
@@ -981,13 +1000,13 @@ struct AppState {
             if (c.classIndex != 1 && c.classIndex != 2) continue;
             spells::SpellClass sc = c.classIndex == 1
                 ? spells::SPELL_MU : spells::SPELL_CLERIC;
-            for (int lv = 1; lv <= 3; ++lv)
+            for (int lv = 1; lv <= 6; ++lv)   // R46: 6 levels
                 c.slotsByLevel[lv - 1] =
                     spells::spellSlots(sc, c.level, lv);
         }
     }
 
-    // R34: rest — restore slots and natural healing (1 hp per
+    // R34: rest â restore slots and natural healing (1 hp per
     // level, PHB daily recovery), but the camp may be attacked:
     // a wandering-encounter check first; an interrupted rest
     // restores NOTHING (the party fights on, tired and dry)
@@ -1002,20 +1021,20 @@ struct AppState {
 
     // ---- R41: town hub ------------------------------------------------------
 
-    // [B] from the dungeon — retire to town for supplies
+    // [B] from the dungeon â retire to town for supplies
     void enterTown() {
         if (mode != MODE_EXPLORE) return;
         mode = MODE_TOWN;
         log.add("You return to the town above.");
         // R44: the keep pays its rents on every return (the
-        // delve cadence stands in for the month — simplified
+        // delve cadence stands in for the month â simplified
         // stronghold economics)
         if (party.strongholdBuilt) {
             party.gold += 200;
             log.add("The keep's steward delivers 200 gp in "
                     "rents.");
         }
-        // R44: henchman upkeep — 100 gp/level billed on each
+        // R44: henchman upkeep â 100 gp/level billed on each
         // return (DMG p.26 monthly support, delve cadence). A
         // short purse dents loyalty; below 25 he walks.
         if (party.henchmanPresent) {
@@ -1031,7 +1050,7 @@ struct AppState {
                 party.henchmanLoyalty -= 10;
                 log.add("The purse is too thin to pay " +
                         party.henchmanName +
-                        " — he takes note.");
+                        " â he takes note.");
             }
             if (party.henchmanLoyalty < 25) {
                 log.add(party.henchmanName +
@@ -1039,12 +1058,22 @@ struct AppState {
                 party.henchmanPresent = false;
             }
         }
-        // R45: the hire's THIRD of the take (DMG p.36 — a
+        // R45: the hire's THIRD of the take (DMG p.36 â a
         // stated share; this campaign promised a half share
         // = a third of the delve's gold), paid at the exit
         // into his purse
+        int crewCut = 0;
+        if (party.crewHired && party.delveGold > 0) {
+            crewCut = party.delveGold / 20;
+            if (crewCut > 0) {
+                char cbuf[96];
+                snprintf(cbuf, sizeof cbuf,
+                         "The crew's share: %d gp.", crewCut);
+                log.add(cbuf);
+            }
+        }
         if (party.henchmanPresent && party.delveGold > 0) {
-            int cut = party.delveGold / 3;
+            int cut = (party.delveGold - crewCut) / 3;
             party.henchmanPurse += cut;
             char buf[96];
             snprintf(buf, sizeof buf,
@@ -1054,13 +1083,23 @@ struct AppState {
             log.add(buf);
         }
         party.delveGold = 0;
+        // R46: crew wages — 20 sailors at 2 gp (DMG p.34),
+        // billed each return (delve cadence)
+        if (party.crewHired) {
+            if (party.gold >= 40) {
+                party.gold -= 40;
+                log.add("The crew is paid 40 gp in wages.");
+            } else {
+                log.add("The crew grumbles over unpaid "
+                        "wages.");
+            }
+        }
     }
-
-    // [B]/Esc in town — dive back in at the same depth
+    // [B]/Esc in town â dive back in at the same depth
     void leaveTown() {
         if (mode != MODE_TOWN) return;
         // R44: the loyalty check that gates each delve (DMG
-        // p.37 — a disloyal hire refuses the descent; the roll
+        // p.37 â a disloyal hire refuses the descent; the roll
         // simplified to a single d100 vs loyalty)
         if (party.henchmanPresent) {
             int roll = (int)rng.below(100) + 1;
@@ -1081,7 +1120,7 @@ struct AppState {
     void townBuyPotion() {
         if (mode != MODE_TOWN) return;
         if (party.gold < 50) {
-            log.add("The priest shakes his head — 50 gp.");
+            log.add("The priest shakes his head â 50 gp.");
             return;
         }
         party.gold -= 50;
@@ -1093,7 +1132,7 @@ struct AppState {
         log.add(buf);
     }
 
-    // the fletcher sells 20-arrow bundles (30 gp) — taker follows
+    // the fletcher sells 20-arrow bundles (30 gp) â taker follows
     // the R39 loot convention (first armed member below 20, else
     // the least-supplied one)
     void townBuyArrows() {
@@ -1107,7 +1146,7 @@ struct AppState {
             if (taker->missileAmmo < 20) break;
         }
         if (!taker) {
-            log.add("The fletcher shrugs — no one carries a bow.");
+            log.add("The fletcher shrugs â no one carries a bow.");
             return;
         }
         if (party.gold < 30) {
@@ -1123,9 +1162,9 @@ struct AppState {
         log.add(buf);
     }
 
-    // R42: the inn — a safe night's rest (10 gp). Full slots
+    // R42: the inn â a safe night's rest (10 gp). Full slots
     // (restoreSlots), full quivers (restockAmmo), 1 hp/level
-    // natural healing each — and NO wander check: that is what
+    // natural healing each â and NO wander check: that is what
     // the silver buys (explore [R] rest is free but risky)
     void townInnRest() {
         if (mode != MODE_TOWN) return;
@@ -1142,7 +1181,7 @@ struct AppState {
             if (c.hp + heal > c.maxHp) heal = c.maxHp - c.hp;
             if (heal > 0) c.hp += heal;
         }
-        // R44: the henchman bunks with the company — same 1
+        // R44: the henchman bunks with the company â same 1
         // hp/level natural healing
         if (party.henchmanPresent &&
             party.henchmanHp < party.henchmanMaxHp) {
@@ -1155,7 +1194,7 @@ struct AppState {
                 "wounds mend.");
     }
 
-    // R42: the temple — heal the most-wounded living member to
+    // R42: the temple â heal the most-wounded living member to
     // full (100 gp). Cheaper per-hp than potions at scale, but
     // only in town and one member at a time
     void townTempleHeal() {
@@ -1183,7 +1222,7 @@ struct AppState {
         log.add(buf);
     }
 
-    // R42: the smith — a +1 long sword (500 gp), claimed by the
+    // R42: the smith â a +1 long sword (500 gp), claimed by the
     // first living fighter whose blade is not already magic
     void townBuySword() {
         if (mode != MODE_TOWN) return;
@@ -1211,7 +1250,7 @@ struct AppState {
         log.add(taker->name + " buys a +1 long sword.");
     }
 
-    // R43: the training hall — promote the first queued member
+    // R43: the training hall â promote the first queued member
     // (1500 gp x their next level, DMG p.86 convention
     // simplified). One promotion per visit/key press.
     void townTrain() {
@@ -1249,13 +1288,13 @@ struct AppState {
             snprintf(buf, sizeof buf,
                      "Training paid (%d gp).", cost);
             log.add(buf);
-            // R34: a trained caster's slot pool may have grown —
+            // R34: a trained caster's slot pool may have grown â
             // restore so the new slots are usable
             restoreSlots();
         }
     }
 
-    // R43: the armorer — chain mail (75 gp, PHB list price) for
+    // R43: the armorer â chain mail (75 gp, PHB list price) for
     // the first living armor-eligible member (fighter or cleric)
     // whose current armor is worse than chain
     void townBuyChain() {
@@ -1285,9 +1324,9 @@ struct AppState {
         log.add(taker->name + " buys chain mail.");
     }
 
-    // R43: the scribe — a spell scroll (200 gp): one random
+    // R43: the scribe â a spell scroll (200 gp): one random
     // unknown L1 MU spell is copied into the first MU's book
-    // (chance-to-learn deferred to level-ups — buying knowledge
+    // (chance-to-learn deferred to level-ups â buying knowledge
     // is the simplification)
     void townBuyScroll() {
         if (mode != MODE_TOWN) return;
@@ -1343,7 +1382,7 @@ struct AppState {
         log.add(buf);
     }
 
-    // R44: the keep — a name-level member raises a stronghold.
+    // R44: the keep â a name-level member raises a stronghold.
     // 10,000 gp is a rebuild-scale simplification of the DMG
     // p.83 barony costs (the book's castle economics are far
     // larger than delve treasure supports); name level here is
@@ -1377,7 +1416,7 @@ struct AppState {
         party.strongholdBuilt = true;
         party.strongholdOwner = owner;
         log.add(party.members[owner].name +
-                " raises a keep — rents will follow.");
+                " raises a keep â rents will follow.");
     }
 
     // R44: the scribe also stocks identify scrolls (100 gp)
@@ -1397,7 +1436,7 @@ struct AppState {
         log.add(buf);
     }
 
-    // R44: [I] — read an identify scroll over the first
+    // R44: [I] â read an identify scroll over the first
     // pending item. The enchant was rolled at loot time but
     // hidden from the company; identification applies it.
     void useIdentifyScroll() {
@@ -1415,7 +1454,7 @@ struct AppState {
             party.unidentified.begin());
         --party.identifyScrolls;
         if (it.kind == 0) {
-            // magic weapon — the first living fighter (then
+            // magic weapon â the first living fighter (then
             // anyone) whose blade is a lesser enchant
             Character* taker = nullptr;
             for (auto& c : party.members) {
@@ -1443,13 +1482,13 @@ struct AppState {
                          it.plus, taker->name.c_str());
                 log.add(buf);
             } else {
-                log.add("The scroll reveals a long sword — "
+                log.add("The scroll reveals a long sword â "
                         "but no one can better his blade. It "
                         "is sold for 200 gp.");
                 party.gold += 200;
             }
         } else {
-            // enchanted armor — the first living fighter or
+            // enchanted armor â the first living fighter or
             // cleric whose armor is a lesser enchant
             Character* taker = nullptr;
             for (auto& c : party.members) {
@@ -1468,7 +1507,7 @@ struct AppState {
                          it.plus, taker->name.c_str());
                 log.add(buf);
             } else {
-                log.add("The scroll reveals enchanted armor — "
+                log.add("The scroll reveals enchanted armor â "
                         "but no one can better his mail. It "
                         "is sold for 200 gp.");
                 party.gold += 200;
@@ -1476,7 +1515,7 @@ struct AppState {
         }
     }
 
-    // R44: [H] — post a henchman offer (DMG p.36 simplified:
+    // R44: [H] â post a henchman offer (DMG p.36 simplified:
     // 100 gp spent regardless, acceptance d100 vs interest =
     // 25% + the best living member's Cha reaction adj)
     void townHireHenchman() {
@@ -1505,7 +1544,7 @@ struct AppState {
             return;
         }
         // a level-1 fighter answers (stats averaged for the
-        // hire — a simplification vs the book's rolled men)
+        // hire â a simplification vs the book's rolled men)
         static const char* NAMES[] = {
             "Bors", "Gareth", "Hult", "Marda",
             "Oswin", "Pell", "Roderic", "Sela"
@@ -1519,7 +1558,7 @@ struct AppState {
         }
         if (name.empty()) {
             log.add("A sellsword answers, but the company is "
-                    "too well known — he declines.");
+                    "too well known â he declines.");
             return;
         }
         party.henchmanPresent = true;
@@ -1539,8 +1578,8 @@ struct AppState {
         log.add(buf);
     }
 
-    // R45: [S] the sage — 200 gp for lore on what lairs at
-    // this depth (the registry's level roster — an in-game
+    // R45: [S] the sage â 200 gp for lore on what lairs at
+    // this depth (the registry's level roster â an in-game
     // Monster Manual reference; MM exact values remain
     // verification debt until the book is re-uploaded)
     void townSage() {
@@ -1577,7 +1616,7 @@ struct AppState {
         }
     }
 
-    // R45: [Y] the spy — 500 gp for simple recon (DMG p.35
+    // R45: [Y] the spy â 500 gp for simple recon (DMG p.35
     // spying simplified): the CURRENT level's occupied rooms
     // and their monster keys
     void townSpy() {
@@ -1610,8 +1649,8 @@ struct AppState {
         log.add(report);
     }
 
-    // R45: [M] the peddler — 500 gp for one random
-    // IDENTIFIED magic item (no scroll needed — the peddler
+    // R45: [M] the peddler â 500 gp for one random
+    // IDENTIFIED magic item (no scroll needed â the peddler
     // knows his wares)
     void townPeddler() {
         if (mode != MODE_TOWN) return;
@@ -1637,7 +1676,7 @@ struct AppState {
                             taker->name + " claims it.");
                 } else {
                     party.potions += 3;
-                    log.add("The peddler is out of swords — "
+                    log.add("The peddler is out of swords â "
                             "three potions instead.");
                 }
                 break;
@@ -1657,7 +1696,7 @@ struct AppState {
                             taker->name + " claims it.");
                 } else {
                     party.potions += 3;
-                    log.add("The peddler is out of armor — "
+                    log.add("The peddler is out of armor â "
                             "three potions instead.");
                 }
                 break;
@@ -1673,7 +1712,7 @@ struct AppState {
                         "inked.");
                 break;
             default: {
-                // a spell scroll — one random unknown L1 MU
+                // a spell scroll â one random unknown L1 MU
                 // spell to the first MU who lacks it (the
                 // peddler's stock is identified)
                 std::vector<int> cands;
@@ -1695,7 +1734,7 @@ struct AppState {
                 }
                 if (cands.empty()) {
                     party.potions += 3;
-                    log.add("No scrolls your sages can use — "
+                    log.add("No scrolls your sages can use â "
                             "three potions instead.");
                 } else {
                     int sid = cands[(size_t)rng.below(
@@ -1724,6 +1763,121 @@ struct AppState {
         }
     }
 
+    // R46: first-entry room flavor — one atmospheric line,
+    // state-aware (occupied, trapped, looted, swept)
+    void describeRoom(int roomIndex) {
+        if (roomIndex < 0 ||
+            roomIndex >= (int)occupancy.rooms.size())
+            return;
+        RoomOccupant& room = occupancy.rooms[roomIndex];
+        if (room.flavorSeen) return;
+        room.flavorSeen = true;
+        const char* line = nullptr;
+        if (!room.monsterKey.empty())
+            line = "Furs and cracked bones litter the floor â "
+                   "something lives here.";
+        else if (room.trap == 1)
+            line = "The dust lies thick and undisturbed "
+                   "here.";
+        else if (room.looted)
+            line = "Spent torch stubs and old scorch marks â "
+                   "someone camped here before you.";
+        else if (room.trap == 2)
+            line = "Darts jut from the wall at knee height.";
+        else
+            line = "A cold draft moves through the chamber.";
+        log.add(line);
+    }
+
+    // R46: [T] talk with the town locals — state-aware
+    // tavern chatter (the NPC dialogue system lite)
+    void townTalk() {
+        if (mode != MODE_TOWN) return;
+        std::vector<std::string> lines;
+        if (!party.pendingTraining.empty())
+            lines.push_back("The training master asks after "
+                            "your company, he says.");
+        if (!party.unidentified.empty())
+            lines.push_back("A scribe's eye could tell you "
+                            "what that odd gear of yours "
+                            "truly is.");
+        if (party.henchmanPresent)
+            lines.push_back(party.henchmanName +
+                            " nods from his table by the "
+                            "fire.");
+        if (party.strongholdBuilt)
+            lines.push_back("They say the keep up the road "
+                            "pays fair rents.");
+        if (party.crewHired)
+            lines.push_back("Your coaster's crew drinks at "
+                            "the harbor inn, loud as gulls.");
+        if (dungeonLevel >= 3)
+            lines.push_back("The deep levels? Mad, all of "
+                            "it. Mind the flayers, they "
+                            "say.");
+        else
+            lines.push_back("Goblins in the cellar, kobolds "
+                            "in the sewers same as ever.");
+        if (party.gold >= 10000)
+            lines.push_back("Masons would raise you a fine "
+                            "keep for that purse of yours.");
+        if (party.potions == 0)
+            lines.push_back("Dungeon-diving without potions? "
+                            "Bold. Or foolish.");
+        log.add(lines[(size_t)rng.below(
+            (uint32_t)lines.size())]);
+    }
+
+    // R46: [J] upgrade the hire's kit to plate — paid from
+    // HIS purse, not the company gold (tranche-124 convention)
+    void townUpgradeHire() {
+        if (mode != MODE_TOWN) return;
+        if (!party.henchmanPresent) {
+            log.add("You have no hire to equip.");
+            return;
+        }
+        if (party.henchmanPlate) {
+            log.add(party.henchmanName +
+                    " already wears plate.");
+            return;
+        }
+        if (party.henchmanPurse < 100) {
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "%s's purse holds only %d gp — the "
+                     "armorers want 100.",
+                     party.henchmanName.c_str(),
+                     party.henchmanPurse);
+            log.add(buf);
+            return;
+        }
+        party.henchmanPurse -= 100;
+        party.henchmanPlate = true;
+        log.add(party.henchmanName +
+                " buys plate from his own purse!");
+    }
+
+    // R46: [C] hire a ship's crew — a 20-sailor coaster's
+    // company (DMG p.34-35 simplified: 200 gp down, 40 gp
+    // wages each return, 5% of every take at the exit)
+    void townHireCrew() {
+        if (mode != MODE_TOWN) return;
+        if (party.crewHired) {
+            log.add("The coaster's company already sails "
+                    "with you.");
+            return;
+        }
+        if (party.gold < 200) {
+            log.add("The harbormaster wants 200 gp to sign "
+                    "a crew.");
+            return;
+        }
+        party.gold -= 200;
+        party.crewHired = true;
+        log.add("A coaster's company of twenty signs on. "
+                "They will ferry your takings to market.");
+    }
+
     void restExplore() {
         if (mode != MODE_EXPLORE) return;
         if (!party.alive()) return;
@@ -1736,7 +1890,7 @@ struct AppState {
         }
 
         restoreSlots();
-        // R38: a completed rest renews arrows too — fletching and
+        // R38: a completed rest renews arrows too â fletching and
         // recovery time (interrupted rests restore nothing, as
         // with slots)
         restockAmmo();
@@ -1765,6 +1919,7 @@ struct AppState {
             room.count = 0;
             room.looted = false;
             room.trap = 0;
+            room.flavorSeen = false;   // R46
             if (rng.below(100) >= 50) {
                 // R45: an unoccupied room may hide a dart trap
                 if (rng.below(100) < 15) room.trap = 1;
@@ -1819,7 +1974,7 @@ struct AppState {
 
     // R45: spring the dart trap in a room. A thief in the
     // company may spot and disarm it first (1-in-3, the
-    // find/remove-trades instinct — simplified); otherwise a
+    // find/remove-trades instinct â simplified); otherwise a
     // random living member saves vs death or eats 2d6.
     void springTrap(int roomIndex) {
         if (roomIndex < 0 ||
@@ -1854,7 +2009,7 @@ struct AppState {
         if (rules::attemptSave(dice, target, 0)) {
             char buf[96];
             snprintf(buf, sizeof buf,
-                     "A dart whistles past %s — saved!",
+                     "A dart whistles past %s â saved!",
                      c.name.c_str());
             log.add(buf);
             return;
@@ -1865,7 +2020,7 @@ struct AppState {
         if (c.hp <= 0) {
             c.hp = 0;
             snprintf(buf, sizeof buf,
-                     "A trap! Darts strike %s for %d — %s "
+                     "A trap! Darts strike %s for %d â %s "
                      "falls!",
                      c.name.c_str(), dmg, c.name.c_str());
         } else {
@@ -1879,7 +2034,7 @@ struct AppState {
         }
     }
 
-    // R45: place secret doors — wall tiles that border floor
+    // R45: place secret doors â wall tiles that border floor
     // (3 per level). Found doors become ordinary doors on
     // the map; hidden ones render as plain wall.
     void placeSecretDoors() {
@@ -1909,9 +2064,9 @@ struct AppState {
         }
     }
 
-    // R45: [F] search — one turn spent feeling the walls.
+    // R45: [F] search â one turn spent feeling the walls.
     // Each adjacent unfound secret door rolls 1-in-6 (a
-    // thief in the company raises it to 3-in-6 — his keen
+    // thief in the company raises it to 3-in-6 â his keen
     // eyes lead the search). Found doors become TILE_DOOR.
     void searchExplore() {
         if (mode != MODE_EXPLORE) return;
@@ -1950,7 +2105,7 @@ struct AppState {
     Treasure rollTreasure(int roomIndex) {
         Treasure t;
         (void)roomIndex;
-        // R42: gold scales up with depth — 25% more per level
+        // R42: gold scales up with depth â 25% more per level
         // above the first (the dungeon hoards grow richer)
         int goldMult = 100 + 25 * (dungeonLevel - 1);
         if (goldMult > 200) goldMult = 200;   // cap at +100%
@@ -1989,7 +2144,7 @@ struct AppState {
                      "%d slain, %d xp each.", slain, share);
             log.add(buf);
             party.gainXp(share, dice, log);
-            // R45: the hire earns a half share (DMG p.86 —
+            // R45: the hire earns a half share (DMG p.86 â
             // henchmen take half a member's share)
             if (party.henchmanPresent) {
                 party.henchmanXp += share / 2;
@@ -2027,7 +2182,7 @@ struct AppState {
                     snprintf(buf, sizeof buf,
                              "You loot %d gp.", t.gold);
                     log.add(buf);
-                    // R26: treasure XP — 1 gp = 1 xp, split among
+                    // R26: treasure XP â 1 gp = 1 xp, split among
                     // living members like combat XP (victory only;
                     // fleeing leaves loot AND xp behind)
                     int goldShare = t.gold / survivors;
@@ -2060,9 +2215,9 @@ struct AppState {
                         }
                     }
                 }
-                // R40: +1 dagger — throwable loot. Claimed by the
+                // R40: +1 dagger â throwable loot. Claimed by the
                 // first living member whose melee weapon is either
-                // already throwable (an upgrade in plus — dagger
+                // already throwable (an upgrade in plus â dagger
                 // over axe/spear swaps hurlability for enchantment)
                 // or non-throwable and weaker-armed (dagger damage
                 // beats bare fists, matches the 1d4 starter)
@@ -2092,7 +2247,7 @@ struct AppState {
                                 "behind.");
                     }
                 }
-                // R28: short bow — claimed by the first living
+                // R28: short bow â claimed by the first living
                 // member with an empty ranged slot
                 if (t.missileWeapon) {
                     log.add("You find a short bow!");
@@ -2108,7 +2263,7 @@ struct AppState {
                         }
                     }
                 }
-                // R39: a bundle of arrows — given to the first
+                // R39: a bundle of arrows â given to the first
                 // living missile-armed member BELOW the 20 cap,
                 // else the least-supplied one (stacking quivers is
                 // a simplification: no encumbrance, no cap split)
@@ -2141,7 +2296,7 @@ struct AppState {
                     ++party.identifyScrolls;
                     log.add("You find a scroll of identify!");
                 }
-                // R44: an unidentified magic item — the enchant
+                // R44: an unidentified magic item â the enchant
                 // is rolled now but hidden until a scroll is
                 // read over it ([I] in town)
                 if (t.unidentifiedItem) {
@@ -2151,7 +2306,7 @@ struct AppState {
                         (rng.below(100) < 10 ? 1 : 0);
                     party.unidentified.push_back(it);
                     log.add("You find an unidentified magic "
-                            "item — a scribe's scroll would "
+                            "item â a scribe's scroll would "
                             "serve.");
                 }
                 room.monsterKey.clear();
@@ -2173,27 +2328,31 @@ struct AppState {
         return v;
     }
 
-    // R25: shared combat entry — starts the encounter and arms the
+    // R25: shared combat entry â starts the encounter and arms the
     // quaff hook (the hook owns the potion pool and the heal, so
     // the driver stays inventory-free)
     void beginCombat(std::vector<ai::Actor> foes, int roomIndex,
                      const std::string& monsterKey) {
         // R37: mark missile-armed monsters (MM convention: goblins
         // short bow, kobolds sling). The Lua registry data carries
-        // no ranged flag, so the app owns this list — verification
+        // no ranged flag, so the app owns this list â verification
         // debt if the Lua keys ever change.
         // R42: also seed rangedRounds from the weapon's short
         // range band (PHB p.39: short bow 50' = 5 bands, sling
-        // 50' = 5 bands) — volley rounds before melee closes.
+        // 50' = 5 bands) â volley rounds before melee closes.
         for (auto& m : foes) {
             if (!m.isCharacter &&
-                if (!m.isCharacter &&
-                    (monsterKey == "goblin" ||
+                (monsterKey == "goblin" ||
                      monsterKey == "kobold" ||
                      monsterKey == "hobgoblin")) {   // R44: MM bows
                 m.monsterRanged = true;
                 m.rangedRounds = 5;   // 50' short range, 10' bands
             }
+            // R46: psionic monsters (the registry schema has no
+            // psionics field — the app owns the key list, R37
+            // pattern)
+            if (!m.isCharacter && monsterKey == "mind_flayer")
+                m.psionic = true;
         }
         combat.start(partyActors(), std::move(foes),
                      rng.below(0x7FFFFFFF));
@@ -2221,7 +2380,7 @@ struct AppState {
         mode = MODE_COMBAT;
     }
 
-    // R25: explore-mode quaff — heals the most-wounded living
+    // R25: explore-mode quaff â heals the most-wounded living
     // member; refuses (without consuming) if everyone is full
     void quaffExplore() {
         if (mode != MODE_EXPLORE) return;
@@ -2253,7 +2412,7 @@ struct AppState {
         log.add(buf);
     }
 
-    // R25: combat quaff — the ACTIVE member drinks this round
+    // R25: combat quaff â the ACTIVE member drinks this round
     // (round consumed via ACTION_DRINK; effect resolves at the
     // end of the round through the quaff hook)
     void combatQuaff() {
@@ -2266,7 +2425,7 @@ struct AppState {
         combat.encounter->requestDrink(combat.activeMember);
     }
 
-    // R28: the ACTIVE member fires missiles this round — requires
+    // R28: the ACTIVE member fires missiles this round â requires
     // a missile weapon in the ranged slot (falls back to melee
     // otherwise, with a log line so the player knows why)
     void combatShoot() {
@@ -2280,24 +2439,24 @@ struct AppState {
             log.add("That member has no missile weapon.");
             return;
         }
-        // R43: the range must still be open — once the foes have
+        // R43: the range must still be open â once the foes have
         // closed, only melee (or a hurled weapon) serves
         if (!combat.encounter->rangeOpen()) {
-            log.add("The foes are upon you — no time for "
+            log.add("The foes are upon you â no time for "
                     "missiles!");
             return;
         }
-        // R35: dry quiver — nothing left to loose
+        // R35: dry quiver â nothing left to loose
         if (partyActors[combat.activeMember].missileAmmo <= 0) {
             log.add("That member's quiver is empty.");
             return;
         }
         combat.encounter->requestShoot(combat.activeMember);
-        log.add("Missiles readied — [space] to resolve the round.");
+        log.add("Missiles readied â [space] to resolve the round.");
     }
 
     // R36: the ACTIVE member hurls their melee weapon this round
-    // (dagger/hand axe/spear) — one shot from the weapon's own
+    // (dagger/hand axe/spear) â one shot from the weapon's own
     // dice/plus, then bare fists until the fight ends (the weapon
     // is recovered afterward)
     void combatThrow() {
@@ -2312,7 +2471,7 @@ struct AppState {
             return;
         }
         combat.encounter->requestThrow(combat.activeMember);
-        log.add("Weapon readied to hurl — [space] to resolve the round.");
+        log.add("Weapon readied to hurl â [space] to resolve the round.");
     }
 
     void spawnRoomEncounter(int roomIndex) {
@@ -2373,7 +2532,7 @@ struct AppState {
     void endCombat() {
         if (combat.encounter) {
             // R24: sync fight results back to the roster BY NAME
-            // (hp, level — energy drain can strip levels)
+            // (hp, level â energy drain can strip levels)
             for (const auto& a : combat.encounter->party()) {
                 for (auto& c : party.members) {
                     if (c.name != a.name) continue;
@@ -2381,7 +2540,7 @@ struct AppState {
                     c.maxHp = a.maxHp;
                     c.level = a.level;
                     // R34: spent slots persist (per-day tracking)
-                    for (int lv = 0; lv < 3; ++lv)
+                    for (int lv = 0; lv < 6; ++lv)   // R46
                         c.slotsByLevel[lv] = a.slotsByLevel[lv];
                     // R35: spent ammo persists (quiver count)
                     c.missileAmmo = a.missileAmmo;
