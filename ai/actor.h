@@ -1,63 +1,63 @@
 // ============================================================================
-// Adnd1 — ai/actor.h
+// Adnd1 â ai/actor.h
 // The unified entity layer: one Actor type for characters and
 // monsters, plus the encounter driver that runs whole fights on the
 // R7 scheduler with R5/R6/R8/R14 resolution.
 //
 // R18: specials (poison/paralysis/energy drain/breath) + drainLevel.
 // R21: player command hook (target choice + flee) wired into the
-//      driver — see Encounter::setPlayerTargetHook / requestFlee.
-// R24: multi-member parties — pickFoeForPartyActor now receives the
+//      driver â see Encounter::setPlayerTargetHook / requestFlee.
+// R24: multi-member parties â pickFoeForPartyActor now receives the
 //      attacking actor so the app's target hook is consulted PER
 //      MEMBER (each character can hold its own target selection).
-// R25: quaff command — requestDrink(memberIndex) makes that member
+// R25: quaff command â requestDrink(memberIndex) makes that member
 //      drink a potion instead of attacking this round (ACTION_DRINK
 //      on the segment scheduler, end of round per R7); the quaff
 //      hook applies the effect and owns the potion inventory.
-// R27: cast command — requestCast(memberIndex, SpellId) makes that
+// R27: cast command â requestCast(memberIndex, SpellId) makes that
 //      member cast a spell instead of attacking this round
 //      (ACTION_SPELL at initiative segment + casting time, per
 //      R7/R13). The driver resolves the effect engine-
 //      authoritatively via spelleffects::resolveSpell; spell slots
 //      live on the Actor (slotsByLevel, app-initialized).
-// R28: shoot command — requestShoot(memberIndex) makes that member
+// R28: shoot command â requestShoot(memberIndex) makes that member
 //      fire missiles this round instead of melee (ACTION_MISSILE
 //      events at the initiative segment, +5 per follow-up shot, R7
 //      rate-of-fire convention). Uses the Actor's rangedWeapon slot
-//      (a second WeaponInstance — PHB characters carry melee AND
+//      (a second WeaponInstance â PHB characters carry melee AND
 //      missile weapons); STR does not add to missile attacks (PHB).
-// R33: spellbook — Actor carries the MU's known spell ids
+// R33: spellbook â Actor carries the MU's known spell ids
 //      (knownSpells, copied from Character by toActor); the app's
 //      castable list filters on it. Clerics cast freely (prayers,
-//      PHB — no book), so the filter is MU-only.
-// R35: ammo counting — Actor::missileAmmo tracks shots left in
+//      PHB â no book), so the filter is MU-only.
+// R35: ammo counting â Actor::missileAmmo tracks shots left in
 //      the quiver (Characters only, synced from/to the roster);
 //      each resolveMissile shot spends one, and a dry quiver
 //      means no ACTION_MISSILE events (the member melees).
-// R36: throw command — requestThrow(memberIndex) makes that member
+// R36: throw command â requestThrow(memberIndex) makes that member
 //      HURL their melee weapon (dagger/hand axe/spear, PHB p.38):
 //      one ACTION_MISSILE shot whose dice/plus come from the melee
 //      weapon; the weapon is spent for the encounter (unarmed
 //      1d2 fists afterwards) and recovered after the fight.
-// R37: monster missile attacks — Actor::monsterRanged marks a
+// R37: monster missile attacks â Actor::monsterRanged marks a
 //      missile-armed monster; such monsters fire an opening
 //      volley (one ACTION_MISSILE per attack routine) in the
 //      FIRST round only, then close to melee for the rest of the
-//      fight (no range/movement system yet — logged
+//      fight (no range/movement system yet â logged
 //      simplification). resolveMissile's monster path (own damage
 //      dice, no quiver) resolves the shots.
-// R42: range bands — missile fire is bounded by the weapon's
+// R42: range bands â missile fire is bounded by the weapon's
 //      short range (rangeTens * 10 feet, PHB p.39). The R37
 //      round-1 volley now lasts as many rounds as the weapon has
-//      range bands (short bow 5 → 5 rounds), tracked on the
+//      range bands (short bow 5 â 5 rounds), tracked on the
 //      Actor (rangedRounds). Party shooters are unaffected
 //      (their fire is command-driven); once the bands close, the
 //      monsters melee.
-// R43: party-side range — the encounter carries an abstract
+// R43: party-side range â the encounter carries an abstract
 //      distance (m_distance, 5 bands = 50' engagement range).
 //      It closes one band per round; party missile fire ([x])
 //      requires an open range. Thrown weapons are exempt (they
-//      can be hurled into melee — PHB simplification).
+//      can be hurled into melee â PHB simplification).
 // ============================================================================
 
 #pragma once
@@ -111,7 +111,7 @@ struct Actor {
     rules::ExceptionalStrength exStr{};
     items::WeaponInstance weapon;
     // R28: missile weapon slot (bow/crossbow/sling). Empty when the
-    // character carries none — id WPN_DAGGER with a false missile
+    // character carries none â id WPN_DAGGER with a false missile
     // flag in the registry, so check hasRangedWeapon() instead.
     items::WeaponInstance rangedWeapon;
     // R35: shots remaining in the quiver (characters only; the
@@ -121,7 +121,7 @@ struct Actor {
     // R36: thrown-weapon state. "throwing" marks a hurl request
     // pending this round; "weaponThrown" marks the melee weapon
     // as spent for the rest of the encounter (hurled into the
-    // fray — recovered afterward, PHB missile-retrieval
+    // fray â recovered afterward, PHB missile-retrieval
     // convention). Both reset per encounter (the Actor is built
     // from the Character roster fresh each fight).
     bool throwing = false;
@@ -133,7 +133,7 @@ struct Actor {
     float hitDice = 1.0f;
     int   monsterAttacks = 1;      // attack routines per round
     int   monsterDamageCount = 1, monsterDamageSides = 6;
-    // R37: missile-armed monster — fires an opening volley in
+    // R37: missile-armed monster â fires an opening volley in
     // round 1, then melees. Set by the app from the monster key
     // (the Lua registry data carries no ranged flag).
     bool  monsterRanged = false;
@@ -143,6 +143,14 @@ struct Actor {
     // at zero the monster closes to melee.
     int   rangedRounds = 0;
     int   magicResistPct = 0;
+
+    // R46: psionics hook — a psionic monster (flagged by the
+    // app from the monster key, the R37 monsterRanged pattern)
+    // opens with a mind blast once per encounter: one living
+    // party member saves vs spells or is stunned for the round
+    bool  psionic = false;
+    bool  psionicBlastUsed = false;
+    bool  psionicStunned = false;   // cleared at end of round
     bool  undead = false;
 
     // shared state
@@ -157,14 +165,14 @@ struct Actor {
     std::vector<ActorSpecial> specials;
 
     // R27: spell slots by level (index 0 = spell level 1).
-    // Characters only — the app initializes these from
+    // Characters only â the app initializes these from
     // spells::spellSlots when the encounter party is built
     // (Character::toActor); the driver decrements them when a
     // cast resolves. Refreshed each encounter (per-day slot
-    // tracking is deferred — logged simplification).
-    int  slotsByLevel[3] = {0, 0, 0};
+    // tracking is deferred â logged simplification).
+    int  slotsByLevel[6] = {0, 0, 0, 0, 0, 0};   // R46: 6 levels
 
-    // R33: MU spellbook — known spell ids (spells::SpellId).
+    // R33: MU spellbook â known spell ids (spells::SpellId).
     // Empty for non-MUs (they cast freely).
     std::vector<int> knownSpells;
 
@@ -242,7 +250,7 @@ struct Actor {
 // ----------------------------------------------------------------------------
 // Encounter: two teams, run on the scheduler.
 //
-// R21: the app can install a target hook — called when a PARTY actor
+// R21: the app can install a target hook â called when a PARTY actor
 // is about to strike, it returns the index (into the monster list)
 // of the foe to attack. Returning a dead foe's index falls back to
 // front-most. requestFlee() flags the party to break off at the
@@ -251,8 +259,8 @@ struct Actor {
 //
 // R24: the hook is consulted for EVERY party actor's attack and
 // receives that actor, so a multi-member party can hold one target
-// selection per member (the app keys off the attacker — e.g. by
-// name — to look up that member's chosen foe).
+// selection per member (the app keys off the attacker â e.g. by
+// name â to look up that member's chosen foe).
 // ----------------------------------------------------------------------------
 struct EncounterLogLine {
     std::string text;
@@ -298,7 +306,7 @@ public:
     // attacking: their action becomes ACTION_DRINK scheduled at
     // the end of the round (R7 drink convention). The effect is
     // applied by the quaff hook when the scheduler reaches the
-    // event — the hook owns the potion inventory and the heal, so
+    // event â the hook owns the potion inventory and the heal, so
     // the driver stays inventory-free. If the member cannot act
     // when the event comes up (held, asleep, down), the hook is
     // NOT called and no potion is consumed. A new request
@@ -315,7 +323,7 @@ public:
     // action becomes ACTION_SPELL, resolving at the side's
     // initiative segment + the spell's casting time (R7 scheduler,
     // R13 casting times). The driver resolves the effect engine-
-    // authoritatively via spelleffects::resolveSpell — targeting by
+    // authoritatively via spelleffects::resolveSpell â targeting by
     // the SpellDef's shape: single-target spells use the member's
     // own foe selection (the R21/R24 target hook), area/multi-
     // target spells hit every living foe, cure spells heal the
@@ -333,7 +341,7 @@ public:
     // ---- R28: shoot command -------------------------------------------------
     // Request that the given party member (index into the party
     // vector) fire their missile weapon THIS round instead of
-    // melee: their action becomes ACTION_MISSILE events — one per
+    // melee: their action becomes ACTION_MISSILE events â one per
     // shot at the weapon's rate of fire, first at the side's
     // initiative segment, follow-ups +5 segments (R7 convention).
     // Requires the ranged slot to hold a missile weapon (checked
@@ -341,7 +349,7 @@ public:
     // Targeting uses the member's own foe selection (R21/R24 hook).
     // STR does not modify missile to-hit or damage (PHB); DEX
     // missile adjustment is deferred (logged). R35: ammunition is
-    // counted — each shot spends one from Actor::missileAmmo, and
+    // counted â each shot spends one from Actor::missileAmmo, and
     // a dry quiver means the member melees instead (the app also
     // gates the command; the engine check is authoritative).
     // A new request overwrites a pending one; a flee-interrupted
@@ -350,7 +358,7 @@ public:
         m_shootMember = memberIndex;
     }
 
-    // R36: throw command — requestThrow(memberIndex) makes that
+    // R36: throw command â requestThrow(memberIndex) makes that
     // member HURL their melee weapon this round: one shot at the
     // side's initiative segment (rate of fire 1). Dice, plus and
     // the +N gating all come from the melee weapon; DEX reaction
@@ -398,7 +406,7 @@ private:
     // resolve one melee attack, returns damage dealt (0 = miss)
     int  resolveMelee(Actor& attacker, Actor& defender);
     // pick the target for a party actor (hook-aware, R21; per-actor
-    // since R24 — the hook receives the attacking member)
+    // since R24 â the hook receives the attacking member)
     Actor* pickFoeForPartyActor(const Actor& attacker);
 
     // R27: resolve a party member's cast through spelleffects and
