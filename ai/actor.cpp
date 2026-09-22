@@ -1,46 +1,51 @@
 // ============================================================================
-// Adnd1 — ai/actor.cpp
+// Adnd1 â ai/actor.cpp
 // Actor derived values + the encounter driver.
 // R18: special attack resolution (poison/paralysis/drain/breath).
 // R21: player target hook + flee request processed inside the driver.
-// R24: multi-member parties — the target hook is consulted per
+// R24: multi-member parties â the target hook is consulted per
 //      attacking member (pickFoeForPartyActor receives the actor),
 //      and flee parting swings pick a RANDOM living party member
 //      instead of always the front-most.
-// R25: quaff command — a requested member's melee submissions are
+// R25: quaff command â a requested member's melee submissions are
 //      replaced by one ACTION_DRINK at segment 10 (end of round,
 //      R7 drink convention); the quaff hook applies the effect
 //      when the scheduler reaches the event.
-// R27: cast command — a requested member's melee submissions are
+// R27: cast command â a requested member's melee submissions are
 //      replaced by one ACTION_SPELL at the side's initiative
 //      segment + casting time; resolveCast resolves it through
 //      spelleffects::resolveSpell and applies hp/status/note
 //      results back to the actors.
-// R28: shoot command — a requested member's melee submissions are
+// R28: shoot command â a requested member's melee submissions are
 //      replaced by ACTION_MISSILE events (one per shot at the
 //      weapon's rate of fire, +5 segments apart); resolveMissile
 //      resolves each shot (missile dice, no STR mods).
-// R32: DEX missile adjustment — resolveMissile now applies the
+// R32: DEX missile adjustment â resolveMissile now applies the
 //      attacker's DEX reaction adjustment (rules::dexReactionAdj,
 //      PHB p.11-12 missile fire adjustment) for characters; STR
 //      stays excluded (PHB). Closes the R28-logged gap.
-// R35: ammo counting — each missile shot spends one from
+// R35: ammo counting â each missile shot spends one from
 //      Actor::missileAmmo (characters); the round scheduler caps
 //      the rate of fire at the remaining count, and a dry quiver
 //      falls through to melee submissions.
-// R36: throw command — a requested member's round is one hurled
+// R36: throw command â a requested member's round is one hurled
 //      melee weapon (dice/plus from the weapon, spent for the
 //      encounter, unarmed 1d2 fists afterwards); resolveMissile
 //      reads the melee weapon through the Actor "throwing" flag.
-// R37: monster missile attacks — missile-armed monsters
+// R37: monster missile attacks â missile-armed monsters
 //      (Actor::monsterRanged, app-set from the monster key) fire
 //      an opening volley in round 1 (one ACTION_MISSILE per
 //      attack routine), then close to melee for the rest of the
 //      fight. resolveMissile's monster path resolves the shots.
-// R42: range bands — the monster volley lasts as many rounds as
+// R42: range bands â the monster volley lasts as many rounds as
 //      the weapon has range bands (rangedRounds on the Actor,
 //      app-set); each volley round decrements it, then melee
 //      closes. Party shooters are unaffected (command-driven).
+// R46: psionics hook — psionic monsters (app-flagged by key,
+//      the R37 pattern) open with a once-per-encounter mind
+//      blast: one living party member saves vs spells or is
+//      stunned for that round (psionicStunned, cleared at the
+//      end-of-round tick).
 // ============================================================================
 
 #include "actor.h"
@@ -130,6 +135,7 @@ bool Actor::canAct() const {
     if (!alive()) return false;
     if (hasStatus(spelleffects::STATUS_SLEEP)) return false;
     if (hasStatus(spelleffects::STATUS_HELD)) return false;
+    if (psionicStunned) return false;   // R46
     return true;
 }
 
@@ -200,7 +206,7 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
     int dmg;
     if (attacker.isCharacter) {
         if (attacker.weaponThrown) {
-            // R36: hurled the weapon earlier — bare fists (1d2,
+            // R36: hurled the weapon earlier â bare fists (1d2,
             // no weapon dice or plus; logged simplification of
             // the PHB unarmed rules)
             dmg = (int)m_dice.roll(1, 2, 0);
@@ -344,7 +350,7 @@ void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
 // ----------------------------------------------------------------------------
 
 // Pick the foe a party actor strikes: the hook decides (per-member
-// since R24 — the hook receives the attacking actor, so the app can
+// since R24 â the hook receives the attacking actor, so the app can
 // key each member's own target selection); falls back to front-most
 // living. A hook-chosen foe that is dead also falls back.
 Actor* Encounter::pickFoeForPartyActor(const Actor& attacker) {
@@ -364,7 +370,7 @@ Actor* Encounter::pickFoeForPartyActor(const Actor& attacker) {
 }
 
 // A monster's free swing at a fleeing party member (normal melee
-// resolution, no specials — the beast is lunging, not scheming).
+// resolution, no specials â the beast is lunging, not scheming).
 int Encounter::partingSwing(Actor& attacker, Actor& defender) {
     if (!attacker.alive() || !defender.alive()) return 0;
 
@@ -399,7 +405,7 @@ int Encounter::partingSwing(Actor& attacker, Actor& defender) {
 void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
     const spells::SpellDef& s = spells::spell(id);
 
-    // silence blocks the verbal component — nothing consumed
+    // silence blocks the verbal component â nothing consumed
     if (caster.hasStatus(spelleffects::STATUS_SILENCED)) {
         logLine(caster.name + " cannot speak the words!");
         return;
@@ -501,8 +507,8 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
 // ----------------------------------------------------------------------------
 
 // One missile shot: attack roll on the normal matrix. STR does
-// not modify missile attacks or damage (PHB) — a neutral strength
-// is passed to the adjustment helpers — but DEX DOES apply to
+// not modify missile attacks or damage (PHB) â a neutral strength
+// is passed to the adjustment helpers â but DEX DOES apply to
 // missile fire (PHB p.11-12 reaction adjustment, R32). Damage
 // uses the weapon's small/medium or large dice by target size,
 // plus the weapon's enchantment. Sleepers wake when struck
@@ -513,14 +519,14 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
 void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
     if (!attacker.canAct() || !defender.alive()) return;
 
-    // R36: a hurled melee weapon — the weapon itself is the
+    // R36: a hurled melee weapon â the weapon itself is the
     // ammunition (no quiver accounting)
     const bool hurled = attacker.isCharacter && attacker.throwing;
     if (hurled) {
         attacker.throwing = false;
         attacker.weaponThrown = true;   // spent for the encounter
     } else if (attacker.isCharacter) {
-        // R35: engine-authoritative gate — dry quiver fires nothing
+        // R35: engine-authoritative gate â dry quiver fires nothing
         if (attacker.missileAmmo <= 0) {
             logLine(attacker.name + "'s quiver is empty");
             return;
@@ -600,7 +606,7 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
 
 int Encounter::stepRound() {
     ++m_round;
-    // R43: the engagement range closes one 10' band per round —
+    // R43: the engagement range closes one 10' band per round â
     // after 5 rounds the foes are at sword's length and party
     // missile fire is impossible (rangeOpen gate)
     if (m_distance > 0) --m_distance;
@@ -655,7 +661,7 @@ int Encounter::stepRound() {
     int pIni = rules::rollInitiative(m_dice);
     int mIni = rules::rollInitiative(m_dice);
     int winner = rules::initiativeWinner(pIni, mIni);
-    if (winner == 0) logLine("Initiative tie — simultaneous!");
+    if (winner == 0) logLine("Initiative tie â simultaneous!");
 
     // build the round's action queue (R7 scheduler)
     rules::RoundScheduler sched;
@@ -679,7 +685,7 @@ int Encounter::stepRound() {
     int throwMember = m_throwMember;
     m_throwMember = -1;
 
-    // R36: clear stale hurl markers — a throw event that never
+    // R36: clear stale hurl markers â a throw event that never
     // resolved last round (actor incapacitated first) must not
     // misroute this round's arrow shots as hurled weapons
     for (auto& a : m_party) a.throwing = false;
@@ -691,7 +697,7 @@ int Encounter::stepRound() {
         for (auto& a : team) {
             if (!a.canAct()) continue;
             int idx = (int)(&a - team.data());
-            // R25: the drinking member's round is consumed — one
+            // R25: the drinking member's round is consumed â one
             // ACTION_DRINK at the end of the round, no melee
             if (idx == drinkIdx) {
                 rules::Action act;
@@ -701,7 +707,7 @@ int Encounter::stepRound() {
                 sched.submit(act, 10);
                 continue;
             }
-            // R27: the casting member's round is consumed — one
+            // R27: the casting member's round is consumed â one
             // ACTION_SPELL at initiative segment + casting time
             // (scheduleAction adds castingTime and clamps to 10)
             if (idx == castIdx) {
@@ -715,7 +721,7 @@ int Encounter::stepRound() {
                 sched.submit(act, baseSeg);
                 continue;
             }
-            // R28: the shooting member's round is missile fire —
+            // R28: the shooting member's round is missile fire â
             // one ACTION_MISSILE per shot at the rate of fire,
             // first at the initiative segment, follow-ups +5
             // segments apart (R7 convention). R35: shots are
@@ -739,7 +745,7 @@ int Encounter::stepRound() {
                 continue;
             }
             // R36: the hurling member's round is one thrown-weapon
-            // shot at the initiative segment (rate of fire 1) —
+            // shot at the initiative segment (rate of fire 1) â
             // resolveMissile reads the melee weapon via the
             // "throwing" flag and spends it
             if (idx == throwIdx && a.meleeThrowable()) {
@@ -752,15 +758,15 @@ int Encounter::stepRound() {
                 sched.submit(act, baseSeg);
                 continue;
             }
-            // R37: missile-armed monsters — an opening volley in
+            // R37: missile-armed monsters â an opening volley in
             // the FIRST round (one shot per attack routine at the
             // R7 +5-segment spacing), then they close to melee
-            // (no range/movement system — logged simplification).
+            // (no range/movement system â logged simplification).
             // Party members are never on this path (requests
             // drive their rounds). Note: m_round was pre-
             // incremented, so the first round is 1.
             // R42: the volley lasts rangedRounds rounds (range
-            // bands — the monsters fire while the distance
+            // bands â the monsters fire while the distance
             // holds, then close)
             if (!a.isCharacter && a.monsterRanged &&
                 a.rangedRounds > 0) {
@@ -794,6 +800,34 @@ int Encounter::stepRound() {
     submitTeam(m_monsters, baseSegM, -1, -1, castSpell, -1, -1);
     sched.beginRound();
 
+    // R46: psionic blast — before any action resolves, an
+    // unblasted psionic monster unleashes its mind thrust (once
+    // per encounter): a random living party member saves vs
+    // spells or is stunned for this round
+    for (auto& m : m_monsters) {
+        if (!m.alive() || !m.psionic || m.psionicBlastUsed)
+            continue;
+        m.psionicBlastUsed = true;
+        std::vector<int> living;
+        for (int i = 0; i < (int)m_party.size(); ++i)
+            if (m_party[i].alive()) living.push_back(i);
+        if (living.empty()) break;
+        int pick = (int)m_rng.below((uint32_t)living.size());
+        Actor& victim = m_party[living[pick]];
+        int target = rules::saveTarget(
+            victim.classIndex, victim.level,
+            rules::SAVE_SPELLS);
+        if (rules::attemptSave(m_dice, target, 0)) {
+            logLine(victim.name +
+                    " resists the psionic blast!");
+        } else {
+            victim.psionicStunned = true;
+            logLine("A psionic blast staggers " +
+                    victim.name + "!");
+        }
+        break;   // one blast per encounter opening
+    }
+
     // resolve in segment order
     rules::TurnEvent ev;
     while (sched.next(ev)) {
@@ -802,7 +836,7 @@ int Encounter::stepRound() {
         Actor& attacker = isParty ? m_party[idx] : m_monsters[idx];
         if (!attacker.canAct()) continue;
 
-        // R25: the drink event — the quaff hook applies the potion
+        // R25: the drink event â the quaff hook applies the potion
         // (the hook owns inventory; if it does nothing, e.g. no
         // potions left, the round is still consumed)
         if (isParty && idx == drinkMember) {
@@ -810,7 +844,7 @@ int Encounter::stepRound() {
             continue;
         }
 
-        // R27: the cast event — resolveCast runs the spell through
+        // R27: the cast event â resolveCast runs the spell through
         // spelleffects and applies results to the actors
         if (isParty && idx == castMember &&
             ev.action.type == rules::ACTION_SPELL) {
@@ -819,9 +853,9 @@ int Encounter::stepRound() {
             continue;
         }
 
-        // R28: missile events — the shooter's own selection (R21/
+        // R28: missile events â the shooter's own selection (R21/
         // R24 hook) picks the target; resolveMissile does the rest
-        // (R36: also the hurled-weapon event — a throwing flag
+        // (R36: also the hurled-weapon event â a throwing flag
         // with or without a ranged weapon in the slot; R37: and
         // the monsters' opening-volley shots)
         if (ev.action.type == rules::ACTION_MISSILE &&
@@ -856,9 +890,9 @@ int Encounter::stepRound() {
         if (teamAlive(0) == 0 || teamAlive(1) == 0) break;
     }
 
-    // statuses tick at end of round
-    for (auto& a : m_party) a.tickStatuses();
-    for (auto& a : m_monsters) a.tickStatuses();
+    // statuses tick at end of round; R46: psionic stun clears
+    for (auto& a : m_party) { a.tickStatuses(); a.psionicStunned = false; }
+    for (auto& a : m_monsters) { a.tickStatuses(); a.psionicStunned = false; }
 
     // morale between rounds (monsters first)
     if (teamAlive(1) > 0 && m_round >= 2) {
