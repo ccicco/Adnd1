@@ -1,22 +1,27 @@
 // ============================================================================
-// Adnd1 — game/party.h
+// Adnd1 â game/party.h
 // The career layer: Character (one member durable record) and
 // Party (the roster). Moved verbatim from adnd1.cpp, R31; the
 // file split that keeps adnd1.cpp to the Win32/GDI shell.
 // R33: the MU spellbook lives here (Character::knownSpells);
 // level-ups roll the chance-to-learn check (spells/ PHB p.10).
-// R34: per-day spell slots — Character::slotsByLevel persists
+// R34: per-day spell slots â Character::slotsByLevel persists
 // across encounters; toActor carries the CURRENT pool (not a
 // fresh one), and the app restores it on rest (or descend, to
 // keep a loaded/descended company from being stuck dry).
-// R44: the career extras — the stronghold (name-level keep),
+// R44: the career extras â the stronghold (name-level keep),
 // the henchman (a hired NPC fighter who fights alongside the
 // roster), and the identify economy (scrolls + unidentified
 // magic items waiting on a scribe's verdict).
-// R45: the hire's career — henchmanXp accrues at a half
+// R45: the hire's career â henchmanXp accrues at a half
 // share of awards, level-ups roll his hit die in the app;
 // delveGold accumulates the take so the hire's THIRD is
 // paid into henchmanPurse on each return to town.
+// R46: slot arrays widened to SIX spell levels (the spells::
+// tables already carry 6 columns — the L4-6 spell DATA pass
+// comes next); the hire's kit can be upgraded to plate
+// (henchmanPlate, bought from his own purse); a ship's crew
+// can be hired (crewHired — upkeep and a cut of the take).
 // ============================================================================
 
 #pragma once
@@ -43,7 +48,7 @@ static const int PARTY_DEFAULT  = 6;   // starting cap (adjustable 1-6)
 static const int NAME_MAX_CHARS = 16;
 
 // ----------------------------------------------------------------------------
-// R24: Character — the durable career record for one party member.
+// R24: Character â the durable career record for one party member.
 // The combat Actor is built from this at encounter spawn (toActor)
 // and synced back by name when the fight ends.
 // ----------------------------------------------------------------------------
@@ -63,13 +68,15 @@ struct Character {
     items::ArmorInstance  armor;
     bool shield = false;
 
-    // R33: MU spellbook — known spell ids (spells::SpellId).
+    // R33: MU spellbook â known spell ids (spells::SpellId).
     // Empty for non-MUs (clerics cast freely).
     std::vector<int> knownSpells;
 
     // R34: per-day spell slots by level (index 0 = spell level
     // 1). Persisted across encounters; restored by rest.
-    int  slotsByLevel[3] = {0, 0, 0};
+    // R46: widened to 6 levels (L4+ data pending; the spells::
+    // slot tables already carry the columns).
+    int  slotsByLevel[6] = {0, 0, 0, 0, 0, 0};
 
     bool knowsSpell(int id) const {
         for (int s : knownSpells)
@@ -99,9 +106,9 @@ struct Character {
         a.hp     = hp;
         a.maxHp  = maxHp;
         a.morale = dm::MORALE_FANATIC;   // player party never breaks
-        // R34: slots persist — toActor carries the CURRENT pool
+        // R34: slots persist â toActor carries the CURRENT pool
         // (the app restores it on rest, not per encounter)
-        for (int lv = 0; lv < 3; ++lv)
+        for (int lv = 0; lv < 6; ++lv)
             a.slotsByLevel[lv] = slotsByLevel[lv];
         // R33: the spellbook travels with the actor
         a.knownSpells = knownSpells;
@@ -121,7 +128,7 @@ struct Character {
 };
 
 // ----------------------------------------------------------------------------
-// R24: Party — a roster of Characters. Gold and kill counts stay
+// R24: Party â a roster of Characters. Gold and kill counts stay
 // party-level (split loot, shared glory); XP/HP/level are per member.
 // ----------------------------------------------------------------------------
 
@@ -133,16 +140,16 @@ struct Party {
     int gold = 0;
     int kills = 0;
     int potions = 0;   // R25: shared pool of healing potions
-    // R43: DMG training — level-ups do NOT take effect until the
+    // R43: DMG training â level-ups do NOT take effect until the
     // member trains (1500 gp x new level, simplified flat rate
     // from the DMG p.86 "1,500 x level" convention). Pending
     // promotions queue here (member indices); the app charges
     // gold and promotes in town. Simplification: the hit-die
-    // roll is deferred too — the whole level-up waits. XP
+    // roll is deferred too â the whole level-up waits. XP
     // thresholds still gate normally.
     std::vector<int> pendingTraining;   // member indices awaiting training
 
-    // R44: the stronghold — a member at name level (their class
+    // R44: the stronghold â a member at name level (their class
     // level cap) may build a keep (10,000 gp, a rebuild-scale
     // simplification of the DMG p.83 barony costs; the book's
     // stronghold economics are far larger). Once built it pays
@@ -151,7 +158,7 @@ struct Party {
     bool strongholdBuilt = false;
     int  strongholdOwner = -1;   // member index of the lord
 
-    // R44: the henchman — one hired NPC (DMG p.36 simplified:
+    // R44: the henchman â one hired NPC (DMG p.36 simplified:
     // a 100 gp offer, acceptance vs interest, loyalty 50 + Cha
     // reaction adj). A level-1 fighter who fights as an extra
     // party actor; upkeep 100 gp/level is billed on each return
@@ -167,8 +174,10 @@ struct Party {
     int  henchmanXp    = 0;    // half-share awards
     int  henchmanPurse = 0;    // his third of each delve's take
     int  delveGold     = 0;    // take since the last town visit
+    bool henchmanPlate = false;   // R46: plate kit upgrade
+    bool crewHired     = false;   // R46: a coaster's company
 
-    // R44: identify economy — scrolls (found or bought, 100 gp
+    // R44: identify economy â scrolls (found or bought, 100 gp
     // at the scribe) reveal unidentified magic items. kind 0 =
     // magic weapon (long sword), kind 1 = enchanted armor; the
     // plus was rolled at loot time but stays unknown to the
@@ -178,8 +187,15 @@ struct Party {
     std::vector<PendingItem> unidentified;
 
     // R44: the henchman's combat actor (a fighter of his level;
-    // fixed average stats keep the hire a one-roll affair —
+    // fixed average stats keep the hire a one-roll affair â
     // simplification vs the book's rolled applicants)
+    // R46: the kit ladder — chain + shield at hire, plate +
+    // shield after the [J] upgrade (bought from his purse)
+    items::ArmorId party_plate_kit() const {
+        return henchmanPlate ? items::ARMOR_PLATE
+                             : items::ARMOR_CHAIN_MAIL;
+    }
+
     ai::Actor henchmanActor() const {
         ai::Actor a;
         a.name        = henchmanName;
@@ -192,7 +208,7 @@ struct Party {
         a.weapon = items::WeaponInstance();
         a.weapon.id = items::WPN_LONG_SWORD;
         a.armor  = items::ArmorInstance();
-        a.armor.id = items::ARMOR_CHAIN_MAIL;   // PHB p.36 kit
+        a.armor.id = party_plate_kit();   // PHB p.36 kit ladder
         a.shield = true;
         a.hp     = henchmanHp;
         a.maxHp  = henchmanMaxHp;
@@ -209,14 +225,14 @@ struct Party {
 
     // per-member XP + level-ups (R22 logic, looped over the
     // roster). R30: the PHB prime-requisite XP adjustment is
-    // applied per member — a high prime requisite earns a bonus
+    // applied per member â a high prime requisite earns a bonus
     // (% of the award), a low one a penalty; the creation screen
     // has shown this % since R24, the award pipe now honors it.
     void gainXp(int amount, rules::Dice& dice, MessageLog& log) {
         (void)dice;   // R43: hit dice roll moved to trainNext
         for (auto& c : members) {
             if (c.hp <= 0) continue;   // the dead earn nothing
-            // R30: prime-requisite % (PHB p.20 class notes) —
+            // R30: prime-requisite % (PHB p.20 class notes) â
             // e.g. STR 16+ fighter +10%, STR 9 fighter -20%
             int primeAb = c.abilities.get(
                 (rules::Ability)rules::primeRequisite(
@@ -226,7 +242,7 @@ struct Party {
             int gained = amount + (amount * pct) / 100;
             if (gained < 0) gained = 0;   // penalty floors at 0
             c.xp += gained;
-            // R43: DMG training — a level-up does not take effect
+            // R43: DMG training â a level-up does not take effect
             // until the member trains (1500 gp x new level, DMG
             // p.86 convention simplified to a flat rate). The
             // promotion queues here; the app promotes and charges
@@ -241,7 +257,7 @@ struct Party {
                     (int)(&c - members.data()));
                 char buf[96];
                 snprintf(buf, sizeof buf,
-                         "%s is due a level — training costs %d "
+                         "%s is due a level â training costs %d "
                          "gp in town.",
                          c.name.c_str(), 1500 * (c.level + 1));
                 log.add(buf);
@@ -256,7 +272,7 @@ struct Party {
         return false;
     }
 
-    // R43: promote the first valid queued member — hit die, MU
+    // R43: promote the first valid queued member â hit die, MU
     // spell study and level matrices all happen here (the R22/
     // R33 promotion logic, moved out of gainXp). One promotion
     // per call; stale entries (dead members, roster shifts) are
@@ -271,7 +287,7 @@ struct Party {
             if (c.hp <= 0 || c.level >= cap ||
                 c.xp < rules::xpForLevel(c.classIndex,
                                          c.level + 1))
-                continue;   // stale entry — try the next
+                continue;   // stale entry â try the next
             ++c.level;
             int conAdj = rules::conHPAdjustment(c.classIndex,
                                                 c.abilities.con);
@@ -285,12 +301,12 @@ struct Party {
                      c.name.c_str(), c.level, die, c.hp, c.maxHp);
             log.add(buf);
 
-            // R33: on a level-up an MU studies one new spell —
+            // R33: on a level-up an MU studies one new spell â
             // a random unknown MU spell within INT-gated level,
             // learned on a successful chance-to-learn roll
             // (PHB p.10). Failure wastes the opportunity (the
             // same spell may be attempted again at the next
-            // level — simplification vs PHB's permanent bar).
+            // level â simplification vs PHB's permanent bar).
             if (c.classIndex == 1) {
                 int maxLv = spells::maxSpellLevelForInt(
                     c.abilities.int_);
