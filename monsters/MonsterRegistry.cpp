@@ -241,9 +241,12 @@ bool parseImportedDamage(lua_State* L, MonsterDef& def, std::string& error) {
     if (resolvedMin == resolvedMax) {
         def.damageCount = resolvedMin;
         def.damageSides = 1;
-    } else if (resolvedMin > 0 && resolvedMax % resolvedMin == 0) {
-        def.damageCount = resolvedMin;
-        def.damageSides = resolvedMax / resolvedMin;
+    } else if (resolvedMin == 1) {
+        def.damageCount = 1;
+        def.damageSides = resolvedMax;
+    } else {
+        def.damageCount = 0;
+        def.damageSides = 0;
     }
     return true;
 }

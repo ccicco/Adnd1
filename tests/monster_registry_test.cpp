@@ -209,6 +209,9 @@ void checkImportedAndLegacyLoads() {
         rules::Rng rng(3);
         rules::Dice dice(rng);
         ai::Actor actor = reg.toActor("mixed", dice, 21);
+        CHECK(actor.monsterArmorClass == 3);
+        CHECK(actor.monsterDamageMin == 2);
+        CHECK(actor.monsterDamageMax == 12);
         CHECK(actor.specials.size() == 1);
         if (actor.specials.size() == 1) {
             CHECK(actor.specials[0].type == monsters::SPECIAL_POISON);

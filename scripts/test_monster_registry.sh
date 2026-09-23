@@ -29,13 +29,31 @@ if [ -z "$LUA_MODULE" ]; then
   exit 1
 fi
 
-LUA_FLAGS="$(pkg-config --cflags --libs "$LUA_MODULE")"
+LUA_FLAGS=()
+while IFS= read -r -d '' flag; do
+  LUA_FLAGS+=("$flag")
+done < <(
+  LUA_MODULE="$LUA_MODULE" python3 - <<'PY'
+import os
+import shlex
+import subprocess
+import sys
+
+out = subprocess.check_output(
+    ["pkg-config", "--cflags", "--libs", os.environ["LUA_MODULE"]],
+    text=True,
+)
+for token in shlex.split(out):
+    sys.stdout.buffer.write(token.encode())
+    sys.stdout.buffer.write(b"\0")
+PY
+)
 
 g++ -std=c++17 -I"$ROOT" \
   "$ROOT/tests/monster_registry_test.cpp" \
   "$ROOT/monsters/MonsterRegistry.cpp" \
   "$ROOT/rules/dice.cpp" \
   -o "$BIN" \
-  $LUA_FLAGS
+  "${LUA_FLAGS[@]}"
 
 "$BIN"
