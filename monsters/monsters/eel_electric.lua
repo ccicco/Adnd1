@@ -16,7 +16,7 @@ return {
   xpValue = 38, -- 20 + 2/hp x 9 avg hp
   xpSource = "formula",
   frequency = "rare",
-  noAppearing = { min = 7, max = 3 },
+  noAppearing = { min = 3, max = 7 },
   lairPct = 0,
   treasure = { individual = nil, inLair = nil },
   move = { rate = 72, modes = { { mode = "walk", rate = 72 } } },

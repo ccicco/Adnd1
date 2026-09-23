@@ -4,7 +4,7 @@
 return {
   name = "BROWNIE",
   page = 12,
-  hitDice = "\u00bd",
+  hitDice = "½",
   hitDiceNum = 0.5,
   hitDiceBonus = 0,
   avgHp = 2,
@@ -21,7 +21,7 @@ return {
   treasure = { individual = nil, inLair = "O, P, Q" },
   move = { rate = 12, modes = { { mode = "walk", rate = 12 } } },
   size = "S",
-  sizeDetail = "1\u00bd' tall",
+  sizeDetail = "1½' tall",
   intelligence = "high",
   alignment = "lawful_good",
   specialAttacks = "Spells",

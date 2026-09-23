@@ -26,6 +26,8 @@ run_expect_failure() {
 
 run_expect_success lua5.4 "$VALIDATOR" \
   "$FIXTURES/valid_imported.lua" \
+  "$FIXTURES/valid_imported_variants.lua" \
+  "$FIXTURES/valid_imported_passive.lua" \
   "$FIXTURES/valid_legacy.lua" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
@@ -40,6 +42,9 @@ run_expect_failure lua5.4 "$VALIDATOR" \
 
 run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/invalid_nonfinite.lua" | grep -F "field 'hitDiceNum' must be a finite number" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/invalid_imported_variant_shape.lua" | grep -F "field 'armorClass' must not be an empty table" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/malformed.lua" | grep -F "Lua syntax/load error" >/dev/null
