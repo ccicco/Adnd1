@@ -42,6 +42,12 @@ run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/invalid_nonfinite.lua" | grep -F "field 'hitDiceNum' must be a finite number" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/invalid_nonfinite_positive_inf.lua" | grep -F "field 'hitDiceNum' must be a finite number" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/invalid_nonfinite_negative_inf.lua" | grep -F "field 'hitDiceNum' must be a finite number" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/malformed.lua" | grep -F "Lua syntax/load error" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
@@ -54,7 +60,13 @@ run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/invalid_damage_not_array.lua" | grep -F "field 'damage' must be a dense 1-based array" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/invalid_move_modes_not_array.lua" | grep -F "field 'move.modes' must be a dense 1-based array" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/legacy_missing_xp.lua" | grep -F "field 'xp' or 'xpValue' is required" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/mixed_schema.lua" | grep -F "record mixes imported and legacy schema fields" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/instruction_limit.lua" | grep -F "instruction limit exceeded while evaluating record" >/dev/null

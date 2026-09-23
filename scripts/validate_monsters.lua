@@ -199,17 +199,19 @@ local function validate_imported_schema(path, record)
             if type(modes) ~= "table" then
                 fail(path, "move.modes must be a table when present")
             else
-                for i, mode in ipairs(modes) do
-                    if type(mode) ~= "table" then
-                        fail(path, ("move.modes[%d] must be a table"):format(i))
-                    else
-                        check_string_value(path, ("move.modes[%d].mode"):format(i), mode.mode, true)
-                        check_number_in_table(path, mode, ("move.modes[%d]"):format(i), "rate", {
-                            required = true,
-                            integer = true,
-                            min = 0,
-                            max = 10000,
-                        })
+                if validate_array_table(path, "move.modes", modes) > 0 then
+                    for i, mode in ipairs(modes) do
+                        if type(mode) ~= "table" then
+                            fail(path, ("move.modes[%d] must be a table"):format(i))
+                        else
+                            check_string_value(path, ("move.modes[%d].mode"):format(i), mode.mode, true)
+                            check_number_in_table(path, mode, ("move.modes[%d]"):format(i), "rate", {
+                                required = true,
+                                integer = true,
+                                min = 0,
+                                max = 10000,
+                            })
+                        end
                     end
                 end
             end
@@ -240,7 +242,14 @@ end
 local function validate_file(path)
     checked = checked + 1
 
-    local env = {}
+    local env = setmetatable({}, {
+        __index = function(_, key)
+            error(("global '%s' is not available in validator sandbox"):format(tostring(key)), 0)
+        end,
+        __newindex = function(_, key)
+            error(("global assignment '%s' is not allowed in validator sandbox"):format(tostring(key)), 0)
+        end,
+    })
     local chunk, load_error = loadfile(path, "t", env)
     if not chunk then
         fail(path, "Lua syntax/load error: " .. tostring(load_error))
@@ -297,7 +306,17 @@ local function validate_file(path)
         end
     end
 
-    if record.hd ~= nil or record.ac ~= nil or record.attacks ~= nil then
+    local has_legacy_key = record.hd ~= nil or record.ac ~= nil or record.attacks ~= nil
+        or record.damageCount ~= nil or record.damageSides ~= nil
+    local has_imported_key = record.hitDiceNum ~= nil or record.page ~= nil
+        or record.noAppearing ~= nil or record.frequency ~= nil or record.move ~= nil
+
+    if has_legacy_key and has_imported_key then
+        fail(path, "record mixes imported and legacy schema fields")
+        return
+    end
+
+    if has_legacy_key then
         validate_legacy_schema(path, record)
     else
         validate_imported_schema(path, record)
