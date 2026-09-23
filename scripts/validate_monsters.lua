@@ -1,6 +1,7 @@
 local failures = 0
 local checked = 0
 local seen_names = {}
+local INSTRUCTION_LIMIT = 200000
 
 local function fail(path, message)
     io.stderr:write(path .. ": " .. message .. "\n")
@@ -225,7 +226,17 @@ local function validate_file(path)
         return
     end
 
+    local instruction_count = 0
+    local function hook()
+        instruction_count = instruction_count + 1
+        if instruction_count > INSTRUCTION_LIMIT then
+            error("instruction limit exceeded while evaluating record")
+        end
+    end
+
+    debug.sethook(hook, "", 1)
     local ok, record = pcall(chunk)
+    debug.sethook()
     if not ok then
         fail(path, "error while evaluating file: " .. tostring(record))
         return
@@ -247,10 +258,10 @@ local function validate_file(path)
         end
     end
 
-    if record.hitDiceNum ~= nil or record.hitDice ~= nil then
-        validate_imported_schema(path, record)
-    else
+    if record.hd ~= nil or record.ac ~= nil or record.attacks ~= nil then
         validate_legacy_schema(path, record)
+    else
+        validate_imported_schema(path, record)
     end
 end
 
