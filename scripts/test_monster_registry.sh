@@ -15,8 +15,13 @@ fi
 LUA_MODULE=""
 for candidate in lua5.4 lua lua-5.4 lua54; do
   if pkg-config --exists "$candidate"; then
-    LUA_MODULE="$candidate"
-    break
+    VERSION="$(pkg-config --modversion "$candidate")"
+    case "$VERSION" in
+      5.4.*)
+        LUA_MODULE="$candidate"
+        break
+        ;;
+    esac
   fi
 done
 if [ -z "$LUA_MODULE" ]; then
