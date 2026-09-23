@@ -117,7 +117,7 @@ inline bool readHenchmanSaveRecord(FILE* f, Party& p) {
     char line[HENCHMAN_SAVE_LINE_CHARS];
     if (!fgets(line, sizeof line, f)) return false;
     size_t len = strlen(line);
-    if (len == 0 || line[len - 1] != '\n')
+    if (len == 0 || (line[len - 1] != '\n' && !feof(f)))
         return false;
     return parseHenchmanSaveRecord(line, p);
 }

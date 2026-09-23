@@ -318,6 +318,8 @@ int main() {
         Party loaded;
         CHECK(!parseHenchmanSaveRecord(
             "1 7 11 3 88 444 555 666 Sellsword\n", loaded));
+        CHECK(!parseHenchmanSaveRecord(
+            "7 11 3 88 444 555 666\n", loaded));
         CHECK(!loaded.henchmanPresent);
         ScopedSaveDir dir;
         CHECK(dir.ok);
@@ -330,8 +332,10 @@ int main() {
                 char tag[16] = "";
                 CHECK(fscanf(f, "%15s", tag) == 1);
                 CHECK(std::strcmp(tag, "henchman") == 0);
-                CHECK(!readHenchmanSaveRecord(f, loaded));
+                bool ok = readHenchmanSaveRecord(f, loaded);
+                CHECK(ok);
                 fclose(f);
+                if (ok) checkHenchman(loaded);
             }
         }
     }
