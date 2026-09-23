@@ -45,6 +45,9 @@ run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/malformed.lua" | grep -F "Lua syntax/load error" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/missing_required_alignment.lua" | grep -F "field 'alignment' is required" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/instruction_limit.lua" | grep -F "instruction limit exceeded while evaluating record" >/dev/null
 
 echo "validator tests passed"

@@ -161,6 +161,9 @@ local function validate_imported_schema(path, record)
 
     local damage = record.damage
     if type(damage) == "table" then
+        if #damage == 0 then
+            fail(path, "field 'damage' must contain at least one entry")
+        end
         validate_damage(path, damage)
     end
 
@@ -235,9 +238,18 @@ local function validate_file(path)
     end
 
     local thread = coroutine.running()
-    debug.sethook(thread, hook, "", 1)
-    local ok, record = pcall(chunk)
+    local ok, record
+    local run_ok, run_error = xpcall(function()
+        debug.sethook(thread, hook, "", 1)
+        ok, record = pcall(chunk)
+    end, function(err)
+        return err
+    end)
     debug.sethook(thread)
+    if not run_ok then
+        fail(path, "error while evaluating file: " .. tostring(run_error))
+        return
+    end
     if not ok then
         fail(path, "error while evaluating file: " .. tostring(record))
         return
