@@ -16,6 +16,12 @@
 #include <string>
 #include <vector>
 
+enum { HENCHMAN_SAVE_INT_MAX_CHARS = 11 };
+enum {
+    HENCHMAN_SAVE_LINE_CHARS =
+        (8 * HENCHMAN_SAVE_INT_MAX_CHARS) + NAME_MAX_CHARS + 10
+};
+
 inline bool parseSaveIntToken(const std::string& s, int& out) {
     if (s.empty()) return false;
     char* end = nullptr;
@@ -108,10 +114,10 @@ inline bool parseHenchmanSaveRecord(const char* line, Party& p) {
 }
 
 inline bool readHenchmanSaveRecord(FILE* f, Party& p) {
-    char line[256];
+    char line[HENCHMAN_SAVE_LINE_CHARS];
     if (!fgets(line, sizeof line, f)) return false;
     size_t len = strlen(line);
-    if (len == 0 || (line[len - 1] != '\n' && !feof(f)))
+    if (len == 0 || line[len - 1] != '\n')
         return false;
     return parseHenchmanSaveRecord(line, p);
 }

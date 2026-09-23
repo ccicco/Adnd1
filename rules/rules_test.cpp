@@ -313,6 +313,29 @@ int main() {
     CHECK(!saveDir.empty());
     CHECK(!fs::exists(saveDir));
 
+    // ---- malformed/ambiguous henchman records fail cleanly ------------------
+    {
+        Party loaded;
+        CHECK(!parseHenchmanSaveRecord(
+            "1 7 11 3 88 444 555 666 Sellsword\n", loaded));
+        CHECK(!loaded.henchmanPresent);
+        ScopedSaveDir dir;
+        CHECK(dir.ok);
+        if (dir.ok) {
+            fs::path path = dir.dir / "adnd1.sav";
+            CHECK(writeFile(path, "henchman 7 11 3 88 444 555 666 Sellsword"));
+            FILE* f = fopen(path.string().c_str(), "r");
+            CHECK(f != nullptr);
+            if (f) {
+                char tag[16] = "";
+                CHECK(fscanf(f, "%15s", tag) == 1);
+                CHECK(std::strcmp(tag, "henchman") == 0);
+                CHECK(!readHenchmanSaveRecord(f, loaded));
+                fclose(f);
+            }
+        }
+    }
+
     std::printf("%d checks, %d failures\n", g_checks, g_failures);
     return g_failures == 0 ? 0 : 1;
 }
