@@ -187,7 +187,7 @@ local function validate_imported_schema(path, record)
 
     local move = record.move
     if type(move) == "table" then
-        check_number_in_table(path, move, "move", "rate", {
+        local move_rate = check_number_in_table(path, move, "move", "rate", {
             required = false,
             integer = true,
             min = 0,
@@ -195,11 +195,13 @@ local function validate_imported_schema(path, record)
         })
 
         local modes = move.modes
+        local has_modes = false
         if modes ~= nil then
             if type(modes) ~= "table" then
                 fail(path, "move.modes must be a table when present")
             else
                 if validate_array_table(path, "move.modes", modes) > 0 then
+                    has_modes = true
                     for i, mode in ipairs(modes) do
                         if type(mode) ~= "table" then
                             fail(path, ("move.modes[%d] must be a table"):format(i))
@@ -215,6 +217,10 @@ local function validate_imported_schema(path, record)
                     end
                 end
             end
+        end
+
+        if move_rate == nil and not has_modes then
+            fail(path, "field 'move' must include rate or at least one move.modes entry")
         end
     end
 end

@@ -63,6 +63,9 @@ run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/invalid_move_modes_not_array.lua" | grep -F "field 'move.modes' must be a dense 1-based array" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/invalid_move_missing_rate_and_modes.lua" | grep -F "field 'move' must include rate or at least one move.modes entry" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/legacy_missing_xp.lua" | grep -F "field 'xp' or 'xpValue' is required" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
@@ -70,5 +73,11 @@ run_expect_failure lua5.4 "$VALIDATOR" \
 
 run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/instruction_limit.lua" | grep -F "instruction limit exceeded while evaluating record" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/sandbox_global_read.lua" | grep -F "global 'UNKNOWN_GLOBAL' is not available in validator sandbox" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/sandbox_global_assign.lua" | grep -F "global assignment 'BAD_GLOBAL' is not allowed in validator sandbox" >/dev/null
 
 echo "validator tests passed"
