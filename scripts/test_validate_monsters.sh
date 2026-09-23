@@ -105,4 +105,7 @@ run_expect_failure "global 'UNKNOWN_GLOBAL' is not available in validator sandbo
 run_expect_failure "global assignment 'BAD_GLOBAL' is not allowed in validator sandbox" "1 error(s) in 1 monster file(s)" lua5.4 "$VALIDATOR" \
   "$FIXTURES/sandbox_global_assign.lua"
 
+run_expect_failure "error while evaluating file: coroutine yielded; file must return directly" "1 error(s) in 1 monster file(s)" lua5.4 "$VALIDATOR" \
+  "$FIXTURES/yield_record.lua"
+
 echo "validator tests passed"

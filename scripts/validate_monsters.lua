@@ -268,7 +268,9 @@ end
 local function validate_file(path)
     checked = checked + 1
 
-    local env = setmetatable({}, {
+    local env = setmetatable({
+        coroutine = { yield = coroutine.yield },
+    }, {
         __index = function(_, key)
             error(("global '%s' is not available in validator sandbox"):format(tostring(key)), 0)
         end,
@@ -296,6 +298,10 @@ local function validate_file(path)
     debug.sethook(co)
     if not ok then
         fail(path, "error while evaluating file: " .. tostring(record))
+        return
+    end
+    if coroutine.status(co) ~= "dead" then
+        fail(path, "error while evaluating file: coroutine yielded; file must return directly")
         return
     end
 
