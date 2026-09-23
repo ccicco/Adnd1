@@ -117,6 +117,23 @@ local function validate_damage(path, damage)
     end
 end
 
+local function validate_array_table(path, field_name, value)
+    local len = #value
+    local saw_entry = false
+    for key, _ in pairs(value) do
+        saw_entry = true
+        if type(key) ~= "number" or key % 1 ~= 0 or key < 1 or key > len then
+            fail(path, ("field '%s' must be a dense 1-based array"):format(field_name))
+            return 0
+        end
+    end
+    if not saw_entry then
+        fail(path, ("field '%s' must contain at least one entry"):format(field_name))
+        return 0
+    end
+    return len
+end
+
 local function validate_imported_schema(path, record)
     -- Broad sanity bounds only (not a full AD&D rules audit):
     -- page 1..5000, hit dice values up to 100, AC -30..30, attack count 1..20,
@@ -161,10 +178,9 @@ local function validate_imported_schema(path, record)
 
     local damage = record.damage
     if type(damage) == "table" then
-        if #damage == 0 then
-            fail(path, "field 'damage' must contain at least one entry")
+        if validate_array_table(path, "damage", damage) > 0 then
+            validate_damage(path, damage)
         end
-        validate_damage(path, damage)
     end
 
     check_number(path, record, "lairPct", { required = false, integer = true, min = 0, max = 100 })

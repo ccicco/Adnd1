@@ -51,6 +51,12 @@ run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/invalid_move_rate_fraction.lua" | grep -F "field 'move.rate' must be an integer" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/invalid_damage_not_array.lua" | grep -F "field 'damage' must be a dense 1-based array" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/legacy_missing_xp.lua" | grep -F "field 'xp' or 'xpValue' is required" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/instruction_limit.lua" | grep -F "instruction limit exceeded while evaluating record" >/dev/null
 
 echo "validator tests passed"
