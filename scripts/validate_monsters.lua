@@ -234,9 +234,10 @@ local function validate_file(path)
         end
     end
 
-    debug.sethook(hook, "", 1)
+    local thread = coroutine.running()
+    debug.sethook(thread, hook, "", 1)
     local ok, record = pcall(chunk)
-    debug.sethook()
+    debug.sethook(thread)
     if not ok then
         fail(path, "error while evaluating file: " .. tostring(record))
         return
