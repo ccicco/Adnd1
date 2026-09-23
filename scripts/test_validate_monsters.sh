@@ -6,9 +6,15 @@ VALIDATOR="$ROOT/scripts/validate_monsters.lua"
 FIXTURES="$ROOT/tests/fixtures/monster_validation"
 
 run_expect_success() {
+  local expected_message="$1"
+  shift
   local output
   output="$($@ 2>&1)"
-  echo "$output"
+  if [[ "$output" != *"$expected_message"* ]]; then
+    echo "Missing expected success message: $expected_message" >&2
+    echo "$output" >&2
+    exit 1
+  fi
 }
 
 run_expect_failure() {
@@ -37,11 +43,11 @@ run_expect_failure() {
   fi
 }
 
-run_expect_success lua5.4 "$VALIDATOR" \
+run_expect_success "Validated 2 monster files" lua5.4 "$VALIDATOR" \
   "$FIXTURES/valid_imported.lua" \
   "$FIXTURES/valid_legacy.lua" >/dev/null
 
-run_expect_success lua5.4 "$VALIDATOR" \
+run_expect_success "Validated 1 monster files" lua5.4 "$VALIDATOR" \
   "$FIXTURES/valid_lair_pct.lua" >/dev/null
 
 run_expect_failure "duplicate monster name" "1 error(s) in 2 monster file(s)" lua5.4 "$VALIDATOR" \

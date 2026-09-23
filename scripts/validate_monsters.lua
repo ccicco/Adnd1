@@ -294,8 +294,17 @@ local function validate_file(path)
 
     local co = coroutine.create(chunk)
     debug.sethook(co, hook, "", 1)
-    local ok, record = coroutine.resume(co)
+    local ok, record
+    local resumed, resume_error = xpcall(function()
+        ok, record = coroutine.resume(co)
+    end, function(err)
+        return err
+    end)
     debug.sethook(co)
+    if not resumed then
+        fail(path, "error while evaluating file: " .. tostring(resume_error))
+        return
+    end
     if not ok then
         fail(path, "error while evaluating file: " .. tostring(record))
         return
