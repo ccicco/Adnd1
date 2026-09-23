@@ -137,6 +137,7 @@
 #include "../spells/spells.h"
 
 #include "messagelog.h"
+#include "henchman_save.h"
 #include "party.h"
 
 #include <cstdint>
@@ -614,15 +615,7 @@ struct AppState {
         fprintf(f, "stronghold %d %d\n",
                 party.strongholdBuilt ? 1 : 0,
                 party.strongholdOwner);
-        if (party.henchmanPresent)
-            fprintf(f, "henchman %d %d %d %d %d %d %d %s\n",
-                    party.henchmanHp, party.henchmanMaxHp,
-                    party.henchmanLevel, party.henchmanLoyalty,
-                    party.henchmanXp, party.henchmanPurse,
-                    party.delveGold,
-                    party.henchmanName.c_str());
-        else
-            fprintf(f, "henchman 0\n");
+        writeHenchmanSaveRecord(f, party);
         fprintf(f, "idscrolls %d\n", party.identifyScrolls);
         fprintf(f, "items %d",
                 (int)party.unidentified.size());
@@ -730,39 +723,10 @@ struct AppState {
                 p.strongholdBuilt = (b == 1);
                 p.strongholdOwner = ow;
             } else if (strcmp(tag, "henchman") == 0) {
-                int present = 0;
-                if (fscanf(f, "%d", &present) != 1 ||
-                    (present != 0 && present != 1)) {
+                if (!readHenchmanSaveRecord(f, p)) {
                     fclose(f);
                     log.add("adnd1.sav is corrupt (hire).");
                     return false;
-                }
-                if (present == 1) {
-                    int hp = 0, mx = 0, lv = 0, loy = 0;
-                    char nm[NAME_MAX_CHARS + 1] = "";
-                    if (fscanf(f, "%d %d %d %d %16s",
-                               &hp, &mx, &lv, &loy, nm) != 5 ||
-                        hp < 1 || mx < 1 || lv < 1 ||
-                        loy < 0 || loy > 125) {
-                        fclose(f);
-                        log.add("adnd1.sav is corrupt (hire).");
-                        return false;
-                    }
-                    p.henchmanPresent = true;
-                    p.henchmanName = nm;
-                    p.henchmanHp = hp;
-                    p.henchmanMaxHp = mx;
-                    p.henchmanLevel = lv;
-                    p.henchmanLoyalty = loy;
-                    // R45: the hire's career records â
-                    // OPTIONAL trailing ints (R44 saves lack
-                    // them; defaults 0 are fine)
-                    int hxp = 0, hpu = 0, dgv = 0;
-                    int got = fscanf(f, "%d %d %d",
-                                     &hxp, &hpu, &dgv);
-                    if (got >= 1) p.henchmanXp = hxp;
-                    if (got >= 2) p.henchmanPurse = hpu;
-                    if (got >= 3) p.delveGold = dgv;
                 }
             } else if (strcmp(tag, "idscrolls") == 0) {
                 int sc = 0;

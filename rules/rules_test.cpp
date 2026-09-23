@@ -12,9 +12,14 @@
 // ============================================================================
 
 #include "../rules/dice.h"
+#include "../game/henchman_save.h"
 
 #include <cstdio>
 #include <cstring>
+#include <ctime>
+#include <filesystem>
+#include <fstream>
+#include <string>
 
 static int g_checks = 0;
 static int g_failures = 0;
@@ -26,6 +31,91 @@ static int g_failures = 0;
         std::printf("FAIL %s:%d  %s\n", __FILE__, __LINE__, #cond);   \
     }                                                                 \
 } while (0)
+
+namespace fs = std::filesystem;
+
+namespace {
+
+struct ScopedSaveDir {
+    fs::path dir;
+    bool ok = false;
+
+    ScopedSaveDir() {
+        std::error_code ec;
+        fs::path base = fs::temp_directory_path(ec);
+        if (ec) return;
+        long long stamp = (long long)std::time(nullptr);
+        for (int i = 0; i < 1000; ++i) {
+            dir = base / ("adnd1_rules_test_" +
+                          std::to_string(stamp) + "_" +
+                          std::to_string(i));
+            if (fs::exists(dir, ec)) {
+                if (ec) return;
+                continue;
+            }
+            if (!fs::create_directory(dir, ec) || ec) return;
+            ok = true;
+            return;
+        }
+    }
+
+    ~ScopedSaveDir() {
+        std::error_code ec;
+        fs::remove_all(dir, ec);
+    }
+};
+
+std::string readFile(const fs::path& path) {
+    std::ifstream in(path);
+    return std::string((std::istreambuf_iterator<char>(in)),
+                       std::istreambuf_iterator<char>());
+}
+
+bool writeFile(const fs::path& path, const std::string& text) {
+    std::ofstream out(path);
+    out << text;
+    return (bool)out;
+}
+
+bool rewriteLegacyHenchmanLine(const fs::path& path) {
+    const std::string current =
+        "henchman 7 11 3 88 444 555 666 Sellsword\n";
+    const std::string legacy =
+        "henchman 1 7 11 3 88 Sellsword 444 555 666\n";
+    std::string text = readFile(path);
+    size_t pos = text.find(current);
+    if (pos == std::string::npos) return false;
+    text.replace(pos, current.size(), legacy);
+    return writeFile(path, text);
+}
+
+void checkHenchman(const Party& p) {
+    CHECK(p.henchmanPresent);
+    CHECK(p.henchmanName == "Sellsword");
+    CHECK(p.henchmanHp == 7);
+    CHECK(p.henchmanMaxHp == 11);
+    CHECK(p.henchmanLevel == 3);
+    CHECK(p.henchmanLoyalty == 88);
+    CHECK(p.henchmanXp == 444);
+    CHECK(p.henchmanPurse == 555);
+    CHECK(p.delveGold == 666);
+}
+
+Party makeHenchmanParty() {
+    Party p;
+    p.henchmanPresent = true;
+    p.henchmanName = "Sellsword";
+    p.henchmanHp = 7;
+    p.henchmanMaxHp = 11;
+    p.henchmanLevel = 3;
+    p.henchmanLoyalty = 88;
+    p.henchmanXp = 444;
+    p.henchmanPurse = 555;
+    p.delveGold = 666;
+    return p;
+}
+
+} // namespace
 
 int main() {
     using namespace rules;
@@ -119,6 +209,135 @@ int main() {
         bool all = true;
         for (int f = 1; f <= 20; ++f) if (!seen[f]) { all = false; break; }
         CHECK(all);
+    }
+
+    // ---- henchman save/load round-trip --------------------------------------
+    fs::path saveDir;
+    {
+        ScopedSaveDir dir;
+        saveDir = dir.dir;
+        CHECK(dir.ok);
+        if (dir.ok) {
+            fs::path path = dir.dir / "adnd1.sav";
+            FILE* f = fopen(path.string().c_str(), "w");
+            CHECK(f != nullptr);
+            if (f) {
+                Party saved = makeHenchmanParty();
+                writeHenchmanSaveRecord(f, saved);
+                fclose(f);
+            }
+            Party loaded;
+            f = fopen(path.string().c_str(), "r");
+            CHECK(f != nullptr);
+            if (f) {
+                char tag[16] = "";
+                CHECK(fscanf(f, "%15s", tag) == 1);
+                CHECK(std::strcmp(tag, "henchman") == 0);
+                bool ok = readHenchmanSaveRecord(f, loaded);
+                CHECK(ok);
+                fclose(f);
+                if (ok) checkHenchman(loaded);
+            }
+        }
+    }
+    CHECK(!saveDir.empty());
+    CHECK(!fs::exists(saveDir));
+
+    // ---- absent henchman survives round-trip --------------------------------
+    saveDir.clear();
+    {
+        ScopedSaveDir dir;
+        saveDir = dir.dir;
+        CHECK(dir.ok);
+        if (dir.ok) {
+            fs::path path = dir.dir / "adnd1.sav";
+            FILE* f = fopen(path.string().c_str(), "w");
+            CHECK(f != nullptr);
+            if (f) {
+                Party saved;
+                writeHenchmanSaveRecord(f, saved);
+                fclose(f);
+            }
+            Party loaded;
+            f = fopen(path.string().c_str(), "r");
+            CHECK(f != nullptr);
+            if (f) {
+                char tag[16] = "";
+                CHECK(fscanf(f, "%15s", tag) == 1);
+                CHECK(std::strcmp(tag, "henchman") == 0);
+                CHECK(readHenchmanSaveRecord(f, loaded));
+                fclose(f);
+            }
+            CHECK(!loaded.henchmanPresent);
+            CHECK(loaded.henchmanName.empty());
+            CHECK(loaded.henchmanHp == 0);
+            CHECK(loaded.henchmanMaxHp == 0);
+            CHECK(loaded.henchmanXp == 0);
+            CHECK(loaded.henchmanPurse == 0);
+            CHECK(loaded.delveGold == 0);
+        }
+    }
+    CHECK(!saveDir.empty());
+    CHECK(!fs::exists(saveDir));
+
+    // ---- legacy flagged henchman line still loads ---------------------------
+    saveDir.clear();
+    {
+        ScopedSaveDir dir;
+        saveDir = dir.dir;
+        CHECK(dir.ok);
+        if (dir.ok) {
+            fs::path path = dir.dir / "adnd1.sav";
+            FILE* f = fopen(path.string().c_str(), "w");
+            CHECK(f != nullptr);
+            if (f) {
+                Party saved = makeHenchmanParty();
+                writeHenchmanSaveRecord(f, saved);
+                fclose(f);
+            }
+            CHECK(rewriteLegacyHenchmanLine(path));
+            Party loaded;
+            f = fopen(path.string().c_str(), "r");
+            CHECK(f != nullptr);
+            if (f) {
+                char tag[16] = "";
+                CHECK(fscanf(f, "%15s", tag) == 1);
+                CHECK(std::strcmp(tag, "henchman") == 0);
+                bool ok = readHenchmanSaveRecord(f, loaded);
+                CHECK(ok);
+                fclose(f);
+                if (ok) checkHenchman(loaded);
+            }
+        }
+    }
+    CHECK(!saveDir.empty());
+    CHECK(!fs::exists(saveDir));
+
+    // ---- malformed/ambiguous henchman records fail cleanly ------------------
+    {
+        Party loaded;
+        CHECK(!parseHenchmanSaveRecord(
+            "1 7 11 3 88 444 555 666 Sellsword\n", loaded));
+        CHECK(!parseHenchmanSaveRecord(
+            "7 11 3 88 444 555 666\n", loaded));
+        CHECK(!loaded.henchmanPresent);
+        ScopedSaveDir dir;
+        CHECK(dir.ok);
+        if (dir.ok) {
+            fs::path path = dir.dir / "adnd1.sav";
+            CHECK(writeFile(path, "henchman 7 11 3 88 444 555 666 Sellsword"));
+            FILE* f = fopen(path.string().c_str(), "r");
+            CHECK(f != nullptr);
+            if (f) {
+                char tag[16] = "";
+                CHECK(fscanf(f, "%15s", tag) == 1);
+                CHECK(std::strcmp(tag, "henchman") == 0);
+                bool ok = readHenchmanSaveRecord(f, loaded);
+                CHECK(ok);
+                fclose(f);
+                if (ok) checkHenchman(loaded);
+            }
+        }
     }
 
     std::printf("%d checks, %d failures\n", g_checks, g_failures);
