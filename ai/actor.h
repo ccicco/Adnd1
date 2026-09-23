@@ -132,6 +132,7 @@ struct Actor {
     // monster path
     float hitDice = 1.0f;
     int   monsterArmorClass = 9;
+    bool  hasMonsterArmorClass = false;
     int   monsterAttacks = 1;      // attack routines per round
     int   monsterDamageCount = 1, monsterDamageSides = 6;
     int   monsterDamageMin = 0, monsterDamageMax = 0;

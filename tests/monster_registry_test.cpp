@@ -113,6 +113,9 @@ void checkImportedAndLegacyLoads() {
         "  numAttacks = 2,\n"
         "  damage = { { min = 2, max = 12 } },\n"
         "  xpValue = 123,\n"
+        "  specialAttacks = {\n"
+        "    { type = \"poison\", name = \"Venom\", save = 1, penalty = -2 }\n"
+        "  },\n"
         "}\n"));
 
     monsters::MonsterRegistry reg;
@@ -195,6 +198,24 @@ void checkImportedAndLegacyLoads() {
         CHECK(mixed->damageMin == 2);
         CHECK(mixed->damageMax == 12);
         CHECK(mixed->xpValue == 123);
+        CHECK(mixed->specials.size() == 1);
+        if (mixed->specials.size() == 1) {
+            CHECK(mixed->specials[0].type == monsters::SPECIAL_POISON);
+            CHECK(mixed->specials[0].name == "Venom");
+            CHECK(mixed->specials[0].saveCategory == 1);
+            CHECK(mixed->specials[0].savePenalty == -2);
+        }
+
+        rules::Rng rng(3);
+        rules::Dice dice(rng);
+        ai::Actor actor = reg.toActor("mixed", dice, 21);
+        CHECK(actor.specials.size() == 1);
+        if (actor.specials.size() == 1) {
+            CHECK(actor.specials[0].type == monsters::SPECIAL_POISON);
+            CHECK(actor.specials[0].name == "Venom");
+            CHECK(actor.specials[0].saveCategory == 1);
+            CHECK(actor.specials[0].savePenalty == -2);
+        }
     }
 }
 

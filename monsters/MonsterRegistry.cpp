@@ -488,6 +488,7 @@ ai::Actor MonsterRegistry::toActor(const std::string& key,
     a.team = 1;
     a.hitDice = def->hitDice;
     a.monsterArmorClass = def->armorClass;
+    a.hasMonsterArmorClass = true;
     a.monsterAttacks = def->attacks;
     a.monsterDamageCount = def->damageCount;
     a.monsterDamageSides = def->damageSides;

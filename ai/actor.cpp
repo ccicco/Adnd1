@@ -79,6 +79,10 @@ int Actor::armorClass() const {
         return items::effectiveAc(armor, shield, 0, dex);
     }
     int ac = monsterArmorClass;
+    if (!hasMonsterArmorClass) {
+        ac = 9 - (int)(hitDice / 2);
+        if (ac < 1) ac = 1;
+    }
     if (hasStatus(spelleffects::STATUS_SHIELDED)) ac -= 2;
     return ac;
 }
