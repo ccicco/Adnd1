@@ -15,7 +15,9 @@ jobs:
       - name: Install Lua 5.4
         run: |
           sudo apt-get update
-          sudo apt-get install -y lua5.4
+          sudo apt-get install -y lua5.4 liblua5.4-dev pkg-config g++
+      - name: Build and run monster registry integration test
+        run: scripts/test_monster_registry.sh
       - name: Test monster validator
         run: scripts/test_validate_monsters.sh
       - name: Validate monster dataset

@@ -131,8 +131,13 @@ struct Actor {
 
     // monster path
     float hitDice = 1.0f;
+    int   monsterArmorClass = 9;
+    bool  hasMonsterArmorClass = false;
     int   monsterAttacks = 1;      // attack routines per round
     int   monsterDamageCount = 1, monsterDamageSides = 6;
+    int   monsterDamageBonus = 0;
+    int   monsterDamageMin = 0, monsterDamageMax = 0;
+    std::string monsterDamageRaw;
     // R37: missile-armed monster â fires an opening volley in
     // round 1, then melees. Set by the app from the monster key
     // (the Lua registry data carries no ranged flag).

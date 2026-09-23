@@ -55,6 +55,22 @@
 
 namespace ai {
 
+namespace {
+
+int rollMonsterDamage(const Actor& attacker, rules::Rng& rng,
+                      rules::Dice& dice) {
+    if (attacker.monsterDamageMin > 0 &&
+        attacker.monsterDamageMax >= attacker.monsterDamageMin)
+        return (int)rng.range((uint32_t)attacker.monsterDamageMin,
+                              (uint32_t)attacker.monsterDamageMax);
+
+    return (int)dice.roll((uint32_t)attacker.monsterDamageCount,
+                          (uint32_t)attacker.monsterDamageSides,
+                          attacker.monsterDamageBonus);
+}
+
+} // namespace
+
 // ----------------------------------------------------------------------------
 // Actor derived values
 // ----------------------------------------------------------------------------
@@ -63,10 +79,11 @@ int Actor::armorClass() const {
     if (isCharacter) {
         return items::effectiveAc(armor, shield, 0, dex);
     }
-    // monster base: unarmored 9 minus half hit dice (convention;
-    // real monster ACs arrive with the Lua registry)
-    int ac = 9 - (int)(hitDice / 2);
-    if (ac < 1) ac = 1;
+    int ac = monsterArmorClass;
+    if (!hasMonsterArmorClass) {
+        ac = 9 - (int)(hitDice / 2);
+        if (ac < 1) ac = 1;
+    }
     if (hasStatus(spelleffects::STATUS_SHIELDED)) ac -= 2;
     return ac;
 }
@@ -221,8 +238,7 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
             dmg += attacker.weapon.plus;
         }
     } else {
-        dmg = (int)m_dice.roll((uint32_t)attacker.monsterDamageCount,
-                               (uint32_t)attacker.monsterDamageSides, 0);
+        dmg = rollMonsterDamage(attacker, m_rng, m_dice);
     }
     if (dmg < 1) dmg = 1;
 
@@ -380,8 +396,7 @@ int Encounter::partingSwing(Actor& attacker, Actor& defender) {
         logLine(attacker.name + " misses the fleeing " + defender.name);
         return 0;
     }
-    int dmg = (int)m_dice.roll((uint32_t)attacker.monsterDamageCount,
-                               (uint32_t)attacker.monsterDamageSides, 0);
+    int dmg = rollMonsterDamage(attacker, m_rng, m_dice);
     if (dmg < 1) dmg = 1;
     defender.hp -= dmg;
     logLine(attacker.name + " strikes " + defender.name +
@@ -577,9 +592,7 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
             large ? w.lSides : w.smSides, 0);
         dmg += fired.plus;
     } else {
-        dmg = (int)m_dice.roll(
-            (uint32_t)attacker.monsterDamageCount,
-            (uint32_t)attacker.monsterDamageSides, 0);
+        dmg = rollMonsterDamage(attacker, m_rng, m_dice);
     }
     if (dmg < 1) dmg = 1;
 
