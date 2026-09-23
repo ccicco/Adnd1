@@ -279,10 +279,10 @@ local function validate_file(path)
         end
     end
 
-    local thread = coroutine.running()
+    local thread, is_main_thread = coroutine.running()
     local ok, record
     local run_ok, run_error = xpcall(function()
-        if thread ~= nil then
+        if thread ~= nil and not is_main_thread then
             debug.sethook(thread, hook, "", 1)
         else
             debug.sethook(hook, "", 1)
@@ -291,7 +291,7 @@ local function validate_file(path)
     end, function(err)
         return err
     end)
-    if thread ~= nil then
+    if thread ~= nil and not is_main_thread then
         debug.sethook(thread)
     else
         debug.sethook()
