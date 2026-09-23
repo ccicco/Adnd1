@@ -60,7 +60,13 @@ run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/invalid_damage_not_array.lua" | grep -F "field 'damage' must be a dense 1-based array" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/invalid_damage_sparse.lua" | grep -F "field 'damage' must be a dense 1-based array" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/invalid_move_modes_not_array.lua" | grep -F "field 'move.modes' must be a dense 1-based array" >/dev/null
+
+run_expect_failure lua5.4 "$VALIDATOR" \
+  "$FIXTURES/invalid_move_modes_sparse.lua" | grep -F "field 'move.modes' must be a dense 1-based array" >/dev/null
 
 run_expect_failure lua5.4 "$VALIDATOR" \
   "$FIXTURES/invalid_move_missing_rate_and_modes.lua" | grep -F "field 'move' must include rate or at least one move.modes entry" >/dev/null

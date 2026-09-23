@@ -118,20 +118,29 @@ local function validate_damage(path, damage)
 end
 
 local function validate_array_table(path, field_name, value)
-    local len = #value
     local saw_entry = false
+    local max_index = 0
     for key, _ in pairs(value) do
         saw_entry = true
-        if type(key) ~= "number" or key % 1 ~= 0 or key < 1 or key > len then
+        if type(key) ~= "number" or key % 1 ~= 0 or key < 1 then
             fail(path, ("field '%s' must be a dense 1-based array"):format(field_name))
             return 0
+        end
+        if key > max_index then
+            max_index = key
         end
     end
     if not saw_entry then
         fail(path, ("field '%s' must contain at least one entry"):format(field_name))
         return 0
     end
-    return len
+    for i = 1, max_index do
+        if value[i] == nil then
+            fail(path, ("field '%s' must be a dense 1-based array"):format(field_name))
+            return 0
+        end
+    end
+    return max_index
 end
 
 local function validate_imported_schema(path, record)
@@ -313,9 +322,15 @@ local function validate_file(path)
     end
 
     local has_legacy_key = record.hd ~= nil or record.ac ~= nil or record.attacks ~= nil
-        or record.damageCount ~= nil or record.damageSides ~= nil
-    local has_imported_key = record.hitDiceNum ~= nil or record.page ~= nil
-        or record.noAppearing ~= nil or record.frequency ~= nil or record.move ~= nil
+        or record.hpBonus ~= nil or record.damageCount ~= nil or record.damageSides ~= nil
+        or record.morale ~= nil or record.magicResist ~= nil or record.requiredPlus ~= nil
+        or record.levelTag ~= nil or record.undead ~= nil or record.isLeader ~= nil
+    local has_imported_key = record.page ~= nil or record.hitDice ~= nil
+        or record.hitDiceNum ~= nil or record.hitDiceBonus ~= nil or record.avgHp ~= nil
+        or record.armorClass ~= nil or record.numAttacks ~= nil or record.damage ~= nil
+        or record.xpPerHp ~= nil or record.frequency ~= nil or record.noAppearing ~= nil
+        or record.treasure ~= nil or record.move ~= nil or record.size ~= nil
+        or record.alignment ~= nil or record.text ~= nil or record.lairPct ~= nil
 
     if has_legacy_key and has_imported_key then
         fail(path, "record mixes imported and legacy schema fields")
