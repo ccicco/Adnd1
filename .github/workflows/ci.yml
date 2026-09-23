@@ -19,4 +19,10 @@ jobs:
       - name: Test monster validator
         run: scripts/test_validate_monsters.sh
       - name: Validate monster dataset
-        run: lua5.4 scripts/validate_monsters.lua monsters/monsters/*.lua
+        run: |
+          files=(monsters/monsters/*.lua)
+          if [ "${files[0]}" = "monsters/monsters/*.lua" ]; then
+            echo "No monster Lua files found under monsters/monsters/" >&2
+            exit 1
+          fi
+          lua5.4 scripts/validate_monsters.lua "${files[@]}"

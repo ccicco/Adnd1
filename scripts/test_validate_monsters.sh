@@ -41,6 +41,9 @@ run_expect_success lua5.4 "$VALIDATOR" \
   "$FIXTURES/valid_imported.lua" \
   "$FIXTURES/valid_legacy.lua" >/dev/null
 
+run_expect_success lua5.4 "$VALIDATOR" \
+  "$FIXTURES/valid_lair_pct.lua" >/dev/null
+
 run_expect_failure "duplicate monster name" "1 error(s) in 2 monster file(s)" lua5.4 "$VALIDATOR" \
   "$FIXTURES/duplicate_name_a.lua" \
   "$FIXTURES/duplicate_name_b.lua"
@@ -66,6 +69,9 @@ run_expect_failure "Lua syntax/load error" "1 error(s) in 1 monster file(s)" lua
 run_expect_failure "field 'alignment' is required" "1 error(s) in 1 monster file(s)" lua5.4 "$VALIDATOR" \
   "$FIXTURES/missing_required_alignment.lua"
 
+run_expect_failure "field 'lairPct' must be <= 100" "1 error(s) in 1 monster file(s)" lua5.4 "$VALIDATOR" \
+  "$FIXTURES/invalid_lair_pct.lua"
+
 run_expect_failure "field 'move.rate' must be an integer" "1 error(s) in 1 monster file(s)" lua5.4 "$VALIDATOR" \
   "$FIXTURES/invalid_move_rate_fraction.lua"
 
@@ -84,7 +90,7 @@ run_expect_failure "field 'move.modes' must be a dense 1-based array" "1 error(s
 run_expect_failure "field 'move' must include rate or at least one move.modes entry" "1 error(s) in 1 monster file(s)" lua5.4 "$VALIDATOR" \
   "$FIXTURES/invalid_move_missing_rate_and_modes.lua"
 
-run_expect_failure "field 'xp' or 'xpValue' is required" "1 error(s) in 1 monster file(s)" lua5.4 "$VALIDATOR" \
+run_expect_failure "field 'xpValue' is required (or legacy fallback 'xp')" "1 error(s) in 1 monster file(s)" lua5.4 "$VALIDATOR" \
   "$FIXTURES/legacy_missing_xp.lua"
 
 run_expect_failure "record mixes imported and legacy schema fields" "1 error(s) in 1 monster file(s)" lua5.4 "$VALIDATOR" \

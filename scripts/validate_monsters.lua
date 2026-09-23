@@ -239,8 +239,19 @@ local function validate_legacy_schema(path, record)
     check_number(path, record, "ac", { required = true, integer = true, min = -30, max = 30 })
     check_number(path, record, "attacks", { required = true, integer = true, min = 1, max = 20 })
 
-    if record.xp == nil and record.xpValue == nil then
-        fail(path, "field 'xp' or 'xpValue' is required")
+    local xp_value = record.xpValue
+    if xp_value == nil then
+        xp_value = record.xp
+    end
+    if xp_value == nil then
+        fail(path, "field 'xpValue' is required (or legacy fallback 'xp')")
+    else
+        check_number_value(path, "xpValue", xp_value, {
+            required = true,
+            integer = true,
+            min = 0,
+            max = 1000000000,
+        })
     end
     check_number(path, record, "xp", { required = false, integer = true, min = 0, max = 1000000000 })
     check_number(path, record, "xpValue", { required = false, integer = true, min = 0, max = 1000000000 })
