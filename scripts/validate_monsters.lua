@@ -173,6 +173,7 @@ local function validate_imported_schema(path, record)
     if type(move) == "table" then
         check_number_in_table(path, move, "move", "rate", {
             required = false,
+            integer = true,
             min = 0,
             max = 10000,
         })
@@ -189,6 +190,7 @@ local function validate_imported_schema(path, record)
                         check_string_value(path, ("move.modes[%d].mode"):format(i), mode.mode, true)
                         check_number_in_table(path, mode, ("move.modes[%d]"):format(i), "rate", {
                             required = true,
+                            integer = true,
                             min = 0,
                             max = 10000,
                         })
@@ -240,12 +242,20 @@ local function validate_file(path)
     local thread = coroutine.running()
     local ok, record
     local run_ok, run_error = xpcall(function()
-        debug.sethook(thread, hook, "", 1)
+        if thread ~= nil then
+            debug.sethook(thread, hook, "", 1)
+        else
+            debug.sethook(hook, "", 1)
+        end
         ok, record = pcall(chunk)
     end, function(err)
         return err
     end)
-    debug.sethook(thread)
+    if thread ~= nil then
+        debug.sethook(thread)
+    else
+        debug.sethook()
+    end
     if not run_ok then
         fail(path, "error while evaluating file: " .. tostring(run_error))
         return
