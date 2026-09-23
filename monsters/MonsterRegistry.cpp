@@ -239,14 +239,17 @@ bool parseImportedDamage(lua_State* L, MonsterDef& def, std::string& error) {
     def.damageMax = resolvedMax;
     def.damageRaw = resolvedRaw;
     if (resolvedMin == resolvedMax) {
-        def.damageCount = resolvedMin;
-        def.damageSides = 1;
+        def.damageCount = 0;
+        def.damageSides = 0;
+        def.damageBonus = resolvedMin;
     } else if (resolvedMin == 1) {
         def.damageCount = 1;
         def.damageSides = resolvedMax;
+        def.damageBonus = 0;
     } else {
         def.damageCount = 0;
         def.damageSides = 0;
+        def.damageBonus = 0;
     }
     return true;
 }
@@ -282,12 +285,11 @@ bool MonsterRegistry::loadFile(const std::string& path,
     def.key = key;
     def.name = luaGetStr(L, "name", key.c_str());
 
-    // Imported runtime aliases take precedence when present. Records
-    // without imported markers keep the legacy hd/ac/attacks schema.
-    const bool importedRuntime =
-        luaHasValue(L, "hitDiceNum") || luaHasValue(L, "hitDiceBonus") ||
-        luaHasValue(L, "armorClass") || luaHasValue(L, "numAttacks") ||
-        luaHasValue(L, "damage");
+    // Imported runtime aliases take precedence when the record opts
+    // into the imported schema with hitDiceNum. Transitional/legacy
+    // records that add other imported-looking fields continue to load
+    // via the legacy hd/ac/attacks keys until they provide hitDiceNum.
+    const bool importedRuntime = luaHasValue(L, "hitDiceNum");
 
     if (importedRuntime) {
         if (!luaHasValue(L, "hitDiceNum")) {
@@ -379,6 +381,7 @@ bool MonsterRegistry::loadFile(const std::string& path,
         def.attacks = luaGetInt(L, "attacks", 1);
         def.damageCount = luaGetInt(L, "damageCount", 1);
         def.damageSides = luaGetInt(L, "damageSides", 6);
+        def.damageBonus = 0;
         if (def.damageCount > 0 && def.damageSides > 0) {
             def.damageMin = def.damageCount;
             def.damageMax = def.damageCount * def.damageSides;
@@ -495,6 +498,7 @@ ai::Actor MonsterRegistry::toActor(const std::string& key,
     a.monsterAttacks = def->attacks;
     a.monsterDamageCount = def->damageCount;
     a.monsterDamageSides = def->damageSides;
+    a.monsterDamageBonus = def->damageBonus;
     a.monsterDamageMin = def->damageMin;
     a.monsterDamageMax = def->damageMax;
     a.monsterDamageRaw = def->damageRaw;

@@ -65,7 +65,8 @@ int rollMonsterDamage(const Actor& attacker, rules::Rng& rng,
                               (uint32_t)attacker.monsterDamageMax);
 
     return (int)dice.roll((uint32_t)attacker.monsterDamageCount,
-                          (uint32_t)attacker.monsterDamageSides, 0);
+                          (uint32_t)attacker.monsterDamageSides,
+                          attacker.monsterDamageBonus);
 }
 
 } // namespace

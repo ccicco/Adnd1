@@ -157,6 +157,7 @@ void checkImportedAndLegacyLoads() {
         CHECK(mindFlayer->damageMin == 2);
         CHECK(mindFlayer->damageMax == 2);
         CHECK(mindFlayer->damageRaw == "2 each");
+        CHECK(mindFlayer->damageBonus == 2);
         CHECK(mindFlayer->magicResist == 90);
         CHECK(mindFlayer->xpValue == 1400);
 
@@ -169,6 +170,7 @@ void checkImportedAndLegacyLoads() {
         CHECK(actor.monsterDamageMin == 2);
         CHECK(actor.monsterDamageMax == 2);
         CHECK(actor.monsterDamageRaw == "2 each");
+        CHECK(actor.monsterDamageBonus == 2);
         CHECK(actor.magicResistPct == 90);
         CHECK(actor.hp == 40);
         CHECK(actor.maxHp == 40);

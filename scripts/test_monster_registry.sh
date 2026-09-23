@@ -49,10 +49,25 @@ for token in shlex.split(out):
 PY
 )
 
+SOURCES=(
+  # Single source-of-truth for the portable engine units needed by
+  # the monster registry/runtime boundary test.
+  "$ROOT/tests/monster_registry_test.cpp"
+  "$ROOT/ai/actor.cpp"
+  "$ROOT/dm/dm.cpp"
+  "$ROOT/items/items.cpp"
+  "$ROOT/monsters/MonsterRegistry.cpp"
+  "$ROOT/rules/character.cpp"
+  "$ROOT/rules/combat.cpp"
+  "$ROOT/rules/dice.cpp"
+  "$ROOT/rules/saves.cpp"
+  "$ROOT/rules/turn.cpp"
+  "$ROOT/spelleffects/spelleffects.cpp"
+  "$ROOT/spells/spells.cpp"
+)
+
 g++ -std=c++17 -I"$ROOT" \
-  "$ROOT/tests/monster_registry_test.cpp" \
-  "$ROOT/monsters/MonsterRegistry.cpp" \
-  "$ROOT/rules/dice.cpp" \
+  "${SOURCES[@]}" \
   -o "$BIN" \
   "${LUA_FLAGS[@]}"
 
