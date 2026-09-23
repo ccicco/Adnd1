@@ -4,7 +4,7 @@
 return {
   name = "CENTIPEDE, Giant",
   page = 15,
-  hitDice = "\u00bd",
+  hitDice = "½",
   hitDiceNum = 0.5,
   hitDiceBonus = 0,
   avgHp = 2,
@@ -29,5 +29,5 @@ return {
   magicResistance = "Standard",
   psionic = "Nil",
   attackDefenseModes = "Nil",
-  text = "These nasty creatures are found nearly everywhere. They are aggressive and rush forth to bite their prey, injecting poison into the wound, but in many cases this poison is weak and not fatal (add +4 to saving throw die roll). Also, as the centipede is small, it is less likely to resist attacks which allow it a saving throw (-1 on die).\n\nCentipedes come in many colors \u2014 pale gray to black, red to brown.", -- complete Monster Manual prose, verbatim
+  text = "These nasty creatures are found nearly everywhere. They are aggressive and rush forth to bite their prey, injecting poison into the wound, but in many cases this poison is weak and not fatal (add +4 to saving throw die roll). Also, as the centipede is small, it is less likely to resist attacks which allow it a saving throw (-1 on die).\n\nCentipedes come in many colors — pale gray to black, red to brown.", -- complete Monster Manual prose, verbatim
 }

@@ -91,6 +91,80 @@ local function check_number_in_table(path, parent, parent_key, key, opts)
     return check_number_value(path, parent_key .. "." .. key, parent[key], opts)
 end
 
+local function check_armor_class(path, record)
+    local value = record.armorClass
+    if value == nil then
+        fail(path, "field 'armorClass' is required")
+        return
+    end
+
+    if is_finite_number(value) then
+        check_number_value(path, "armorClass", value, {
+            required = true,
+            integer = true,
+            min = -30,
+            max = 30,
+        })
+        return
+    end
+
+    if type(value) == "string" then
+        check_string_value(path, "armorClass", value, true)
+        return
+    end
+
+    if type(value) ~= "table" then
+        fail(path, "field 'armorClass' must be a finite number, non-empty string, or table")
+        return
+    end
+
+    if next(value) == nil then
+        fail(path, "field 'armorClass' must not be an empty table")
+        return
+    end
+
+    for i, entry in ipairs(value) do
+        local item_field = ("armorClass[%d]"):format(i)
+        if is_finite_number(entry) then
+            check_number_value(path, item_field, entry, {
+                required = true,
+                integer = true,
+                min = -30,
+                max = 30,
+            })
+        elseif type(entry) == "string" then
+            check_string_value(path, item_field, entry, true)
+        else
+            fail(path, ("field '%s' must be a finite number or non-empty string"):format(item_field))
+        end
+    end
+end
+
+local function check_num_attacks(path, record)
+    local value = record.numAttacks
+    if value == nil then
+        fail(path, "field 'numAttacks' is required")
+        return
+    end
+
+    if is_finite_number(value) then
+        check_number_value(path, "numAttacks", value, {
+            required = true,
+            integer = true,
+            min = 0,
+            max = 20,
+        })
+        return
+    end
+
+    if type(value) == "string" then
+        check_string_value(path, "numAttacks", value, true)
+        return
+    end
+
+    fail(path, "field 'numAttacks' must be a finite number or non-empty string")
+end
+
 local function validate_damage(path, damage)
     for i, attack in ipairs(damage) do
         if type(attack) ~= "table" then
@@ -126,14 +200,14 @@ local function validate_imported_schema(path, record)
     check_number(path, record, "hitDiceNum", { required = true, min = 0, max = 100 })
     check_number(path, record, "hitDiceBonus", { required = true, integer = true, min = -1000, max = 1000 })
     check_number(path, record, "avgHp", { required = true, min = 0, max = 100000 })
-    check_number(path, record, "armorClass", { required = true, integer = true, min = -30, max = 30 })
-    check_number(path, record, "numAttacks", { required = true, integer = true, min = 1, max = 20 })
+    check_armor_class(path, record)
+    check_num_attacks(path, record)
     check_table(path, record, "damage", true)
     check_number(path, record, "xp", { required = true, integer = true, min = 0, max = 1000000000 })
     check_number(path, record, "xpPerHp", { required = true, integer = true, min = 0, max = 1000000000 })
     check_number(path, record, "xpValue", { required = true, integer = true, min = 0, max = 1000000000 })
     check_string(path, record, "frequency", true)
-    check_table(path, record, "noAppearing", true)
+    check_table(path, record, "noAppearing", false)
     check_table(path, record, "treasure", true)
     check_table(path, record, "move", true)
     check_string(path, record, "size", false)

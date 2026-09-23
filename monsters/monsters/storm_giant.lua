@@ -18,7 +18,7 @@ return {
   frequency = "rare",
   noAppearing = { min = 1, max = 4 },
   lairPct = 55,
-  treasure = { individual = nil, inLair = "E, Q (\u00c3\u009710), S" },
+  treasure = { individual = nil, inLair = "E, Q (Ã10), S" },
   move = { rate = 15, modes = { { mode = "walk", rate = 15 } } },
   size = "L",
   sizeDetail = "21' tall",

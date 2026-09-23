@@ -21,7 +21,7 @@ return {
   treasure = { individual = "J, M, D, Q (x5) in lair", inLair = nil },
   move = { rate = 9, modes = { { mode = "walk", rate = 9 } } },
   size = "M",
-  sizeDetail = "6\u00bd' tall",
+  sizeDetail = "6½' tall",
   intelligence = "average",
   alignment = "lawful_evil",
   specialAttacks = "Nil",

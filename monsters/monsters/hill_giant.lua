@@ -21,7 +21,7 @@ return {
   treasure = { individual = nil, inLair = "D" },
   move = { rate = 12, modes = { { mode = "walk", rate = 12 } } },
   size = "L",
-  sizeDetail = "10\u00bd' tall",
+  sizeDetail = "10½' tall",
   intelligence = "low",
   alignment = "chaotic_evil",
   specialAttacks = "Hurling rocks for 2-16 hit points",

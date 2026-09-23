@@ -8,7 +8,7 @@ return {
   hitDiceNum = 0,
   hitDiceBonus = 0,
   avgHp = 0,
-  armorClass = { "n", "a" },
+  armorClass = "n/a",
   numAttacks = 0,
   damage = { { raw = "0" } },
   xp = 5,

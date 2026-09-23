@@ -21,7 +21,7 @@ return {
   treasure = { individual = nil, inLair = nil },
   move = { rate = 1, modes = { { mode = "walk", rate = 1 } } },
   size = "S",
-  sizeDetail = "about \u00bd\" long",
+  sizeDetail = "about ½\" long",
   intelligence = "non-",
   alignment = "neutral",
   specialAttacks = "Nil",
@@ -29,5 +29,5 @@ return {
   magicResistance = "Standard",
   psionic = "Nil",
   attackDefenseModes = "Nil",
-  text = "Ear seekers are small insectoids which are found in wood. They live by eating dead cellulose, but they need warm places in which to lay their eggs, and they favor places like ears. If this creature enters a warm place, it will always lay 9-16 tiny eggs and then crawl out to die. When the eggs hatch (4-24\n\nonly 4 or so feet tall, they weigh no less than 150 pounds due to their stocky muscular build. They live for no less than 350 years on the average.\n\nMountain Dwarves: These creatures are similar to their cousins, the hill dwarves, detailed above. The only differences are size (4\u00bd'+ tall), hit dice (1 + 1), and coloration (typically lighter with brown hair). They employ fewer crossbows (20% maximum) and more spears (30%). Mountain dwarves with 16 strength can work up to 7th level, with 17 strength to 8th level, and with 18 strength to 9th level. Mountain dwarves have a life span of 400 or more years.\n\nhours) the larvae eat the surrounding flesh, generally burrowing inwards to where the most food and body heat is, killing their host 90% of the time. A cure disease spell will destroy the eggs.", -- complete Monster Manual prose, verbatim
+  text = "Ear seekers are small insectoids which are found in wood. They live by eating dead cellulose, but they need warm places in which to lay their eggs, and they favor places like ears. If this creature enters a warm place, it will always lay 9-16 tiny eggs and then crawl out to die. When the eggs hatch (4-24\n\nonly 4 or so feet tall, they weigh no less than 150 pounds due to their stocky muscular build. They live for no less than 350 years on the average.\n\nMountain Dwarves: These creatures are similar to their cousins, the hill dwarves, detailed above. The only differences are size (4½'+ tall), hit dice (1 + 1), and coloration (typically lighter with brown hair). They employ fewer crossbows (20% maximum) and more spears (30%). Mountain dwarves with 16 strength can work up to 7th level, with 17 strength to 8th level, and with 18 strength to 9th level. Mountain dwarves have a life span of 400 or more years.\n\nhours) the larvae eat the surrounding flesh, generally burrowing inwards to where the most food and body heat is, killing their host 90% of the time. A cure disease spell will destroy the eggs.", -- complete Monster Manual prose, verbatim
 }

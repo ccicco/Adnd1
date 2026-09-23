@@ -29,5 +29,5 @@ return {
   magicResistance = "Standard",
   psionic = "Nil",
   attackDefenseModes = "Nil",
-  text = "This armadillo-like ornithischian weighs four or five tons \u2014 most of this weight being his armor plating, side spines, and great knobbed tail. If attacked (or threatened) this creature will lash its tail delivering blows of considerable force. They are herbivores of the same family as paleocincus.", -- complete Monster Manual prose, verbatim
+  text = "This armadillo-like ornithischian weighs four or five tons — most of this weight being his armor plating, side spines, and great knobbed tail. If attacked (or threatened) this creature will lash its tail delivering blows of considerable force. They are herbivores of the same family as paleocincus.", -- complete Monster Manual prose, verbatim
 }
