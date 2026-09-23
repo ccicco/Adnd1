@@ -51,6 +51,8 @@ struct MonsterDef {
     int         armorClass = 9;
     int         attacks = 1;      // routines per round
     int         damageCount = 1, damageSides = 6;
+    int         damageMin = 0, damageMax = 0;   // imported exact range
+    std::string damageRaw;        // imported prose/raw damage note
     int         morale = 12;
     int         magicResist = 0;
     bool        undead = false;
