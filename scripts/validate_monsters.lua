@@ -279,27 +279,10 @@ local function validate_file(path)
         end
     end
 
-    local thread, is_main_thread = coroutine.running()
-    local ok, record
-    local run_ok, run_error = xpcall(function()
-        if thread ~= nil and not is_main_thread then
-            debug.sethook(thread, hook, "", 1)
-        else
-            debug.sethook(hook, "", 1)
-        end
-        ok, record = pcall(chunk)
-    end, function(err)
-        return err
-    end)
-    if thread ~= nil and not is_main_thread then
-        debug.sethook(thread)
-    else
-        debug.sethook()
-    end
-    if not run_ok then
-        fail(path, "error while evaluating file: " .. tostring(run_error))
-        return
-    end
+    local co = coroutine.create(chunk)
+    debug.sethook(co, hook, "", 1)
+    local ok, record = coroutine.resume(co)
+    debug.sethook(co)
     if not ok then
         fail(path, "error while evaluating file: " .. tostring(record))
         return
