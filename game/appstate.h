@@ -133,6 +133,7 @@
 #include "../dm/dungeon.h"
 #include "../ai/actor.h"
 #include "../monsters/MonsterRegistry.h"
+#include "../monsters/MonsterXp.h"
 #include "../items/items.h"
 #include "../spells/spells.h"
 
@@ -521,6 +522,7 @@ struct AppState {
     CombatState combat;
     int         combatRoomIndex = -1;
     std::string combatMonsterKey;
+    monsters::xp::SpawnContext combatCtx;   // R50: rolled at spawn
 
     // R23: stairs down â placed in the room farthest from entry
     int stairsX = -1, stairsY = -1;
@@ -2125,18 +2127,22 @@ struct AppState {
         if (!combat.encounter || combat.lastResult != 0) return;
 
         const monsters::MonsterDef* def = registry.find(combatMonsterKey);
-        int perMonster = def ? def->xpValue : 10;
         int survivors = 0;
         for (const auto& a : combat.encounter->party())
             if (a.alive()) ++survivors;
         if (survivors < 1) survivors = 1;
 
         int slain = 0;
-        for (const auto& m : combat.encounter->monsters())
-            if (!m.alive()) ++slain;
+        int totalXp = 0;
+        for (const auto& m : combat.encounter->monsters()) {
+            if (m.alive()) continue;
+            ++slain;
+            monsters::xp::SpawnContext ctx = combatCtx;
+            ctx.actualHp = m.maxHp;      // the specimen actually fought
+            totalXp += def ? monsters::xp::xpForKill(*def, ctx) : 10;
+        }
 
         if (slain > 0) {
-            int totalXp = perMonster * slain;
             int share = totalXp / survivors;
             party.kills += slain;
             char buf[96];
@@ -2474,6 +2480,57 @@ struct AppState {
         log.add("Weapon readied to hurl â [space] to resolve the round.");
     }
 
+
+    // ------------------------------------------------------------------
+    // R50: roll the per-specimen context the XP dispatch needs, at
+    // spawn time. Dragons roll age (d8) and HD in their species range
+    // ("9-11"); the hydra rolls heads (MM1: 5-12); variable-HD animals
+    // roll in their text range ("12-36"). merged_mm1 needs nothing.
+    // ------------------------------------------------------------------
+    static int rangeLo(const std::string& t) {
+        int v = 0; bool any = false;
+        for (char c : t) {
+            if (isdigit((unsigned char)c)) { v = v*10 + (c-'0'); any = true; }
+            else if (any) break;
+        }
+        return any ? v : 0;
+    }
+    static int rangeHi(const std::string& t) {   // last int in "12 to 36"
+        int last = 0;
+        for (size_t i = 0; i < t.size();) {
+            if (isdigit((unsigned char)t[i])) {
+                int v = 0;
+                while (i < t.size() && isdigit((unsigned char)t[i])) {
+                    v = v*10 + (t[i]-'0'); ++i;
+                }
+                last = v;
+            } else ++i;
+        }
+        return last;
+    }
+    monsters::xp::SpawnContext rollSpawnContext(
+            const monsters::MonsterDef* def) {
+        monsters::xp::SpawnContext ctx;
+        if (!def) return ctx;
+        int lo = rangeLo(def->hitDiceText);
+        int hi = rangeHi(def->hitDiceText);
+        if (lo < 1) lo = def->hitDiceNum;
+        if (hi < lo) hi = lo;
+        const std::string& src = def->xpSource;
+        if (src == "age_bracket") {
+            ctx.ageBracket = 1 + (int)dice.roll(1, 8, 0);   // age 1-8
+            ctx.hd = lo + (int)rng.below((uint32_t)(hi - lo + 1));
+        } else if (src == "by_head_count") {
+            ctx.heads = 4 + (int)dice.roll(1, 8, 0);         // 5-12
+            ctx.hd = ctx.heads;
+        } else if (src == "by_hit_dice") {
+            ctx.hd = lo + (int)rng.below((uint32_t)(hi - lo + 1));
+        }
+        // by_level: 0-level default; the dungeon generator assigns
+        // class/levels when it starts placing leaders (R51)
+        return ctx;
+    }
+
     void spawnRoomEncounter(int roomIndex) {
         if (mode == MODE_COMBAT) return;
         if (!party.alive()) return;
@@ -2488,6 +2545,7 @@ struct AppState {
             foes.push_back(registry.toActor(room.monsterKey, dice));
 
         const monsters::MonsterDef* def = registry.find(room.monsterKey);
+        combatCtx = rollSpawnContext(def);          // R50
         const char* mname = def ? def->name.c_str() : "monster";
         char buf[96];
         if (room.count == 1)
@@ -2507,6 +2565,7 @@ struct AppState {
         if (candidates.empty()) return;
         std::string key =
             candidates[(size_t)rng.below((uint32_t)candidates.size())];
+        combatCtx = rollSpawnContext(registry.find(key));   // R50
 
         int count = 1 + (int)rng.below((uint32_t)roomCountCap());
         std::vector<ai::Actor> foes;
