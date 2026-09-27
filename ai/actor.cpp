@@ -46,6 +46,17 @@
 //      blast: one living party member saves vs spells or is
 //      stunned for that round (psionicStunned, cleared at the
 //      end-of-round tick).
+// R54: foe casters — classed NPC spellcasters (R53 party
+//      members) actually cast. One caster on the monster side
+//      submits an ACTION_SPELL per round (the party's one-cast
+//      convention): the AI picks by class — clerics heal a
+//      badly-wounded ally first, else hold person / cause
+//      wounds; magic-users open with sleep, favor fireball once
+//      3rd-level slots exist, magic missile otherwise, shield
+//      last. resolveCast is now side-aware (a foe's area spells
+//      sweep the PARTY; a foe's cure heals its own wounded).
+//      Spell slots gate every choice; monster-path foes (no
+//      slots) melee as always.
 // ============================================================================
 
 #include "actor.h"
@@ -394,6 +405,67 @@ int Encounter::partingSwing(Actor& attacker, Actor& defender) {
 }
 
 // ----------------------------------------------------------------------------
+// R54: foe caster AI â classed NPC spellcasters pick a spell
+// each round (one caster per side, the party's one-cast
+// convention). Choices are gated by the Actor's spell slots; a
+// monster-path foe (no slots) never qualifies.
+// ----------------------------------------------------------------------------
+
+namespace {
+
+bool foeCanCast(const Actor& a) {
+    if (!a.isCharacter || a.team == 0) return false;
+    if (a.classIndex == rules::CLASS_MAGIC_USER)
+        return a.knowsSpell(spells::MU_MAGIC_MISSILE) ||
+               a.knowsSpell(spells::MU_SLEEP) ||
+               a.knowsSpell(spells::MU_SHIELD) ||
+               a.knowsSpell(spells::MU_FIREBALL);
+    if (a.classIndex == rules::CLASS_CLERIC) {
+        for (int lv = 0; lv < 6; ++lv)
+            if (a.slotsByLevel[lv] > 0) return true;
+    }
+    return false;
+}
+
+// -1 = no cast this round
+int foeSpellChoice(const Actor& a,
+                   const std::vector<Actor>& allies,
+                   int round) {
+    if (a.classIndex == rules::CLASS_MAGIC_USER) {
+        // high-level: fireball from round 2 (the opening round
+        // goes to sleep â the classic save-or-drop opener)
+        if (round >= 2 && a.slotsByLevel[2] > 0 &&
+            a.knowsSpell(spells::MU_FIREBALL))
+            return spells::MU_FIREBALL;
+        if (round <= 2 && a.slotsByLevel[0] > 0 &&
+            a.knowsSpell(spells::MU_SLEEP))
+            return spells::MU_SLEEP;
+        if (a.slotsByLevel[0] > 0 &&
+            a.knowsSpell(spells::MU_MAGIC_MISSILE))
+            return spells::MU_MAGIC_MISSILE;
+        if (a.slotsByLevel[0] > 0 &&
+            a.knowsSpell(spells::MU_SHIELD))
+            return spells::MU_SHIELD;
+        return -1;
+    }
+    if (a.classIndex == rules::CLASS_CLERIC) {
+        // heal a badly-wounded ally first (half or worse)
+        for (const auto& m : allies)
+            if (m.alive() && m.hp * 2 <= m.maxHp &&
+                a.slotsByLevel[0] > 0)
+                return spells::CL_CURE_LIGHT_WOUNDS;
+        if (a.slotsByLevel[1] > 0 && round >= 2)
+            return spells::CL_HOLD_PERSON;
+        if (a.slotsByLevel[0] > 0)
+            return spells::CL_CAUSE_LIGHT_WOUNDS;
+        return -1;
+    }
+    return -1;
+}
+
+} // namespace
+
+// ----------------------------------------------------------------------------
 // R27: cast resolution
 // ----------------------------------------------------------------------------
 
@@ -419,18 +491,26 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
     --caster.slotsByLevel[s.level - 1];
     logLine(caster.name + " casts " + s.name + "!");
 
-    // pick targets by shape (caller-side targeting, R14 contract)
+    // pick targets by shape (caller-side targeting, R14 contract).
+    // R54: side-aware — a foe caster's spells target the
+    // party, and its heals target its own side.
     std::vector<Actor*> targets;
     bool healing = (id == spells::CL_CURE_LIGHT_WOUNDS ||
                     id == spells::CL_CURE_SERIOUS_WOUNDS);
+    bool foe = caster.team != 0;
     switch (s.target) {
         case spells::TARGET_SELF:
             targets.push_back(&caster);
             break;
         case spells::TARGET_AREA:
         case spells::TARGET_CREATURES:
-            for (auto& m : m_monsters)
-                if (m.alive()) targets.push_back(&m);
+            if (foe) {
+                for (auto& p : m_party)
+                    if (p.alive()) targets.push_back(&p);
+            } else {
+                for (auto& m : m_monsters)
+                    if (m.alive()) targets.push_back(&m);
+            }
             break;
         case spells::TARGET_CREATURE:
         case spells::TARGET_SPECIAL:
@@ -439,13 +519,17 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
                 // cure: the most-wounded living ally (explore-quaff
                 // parity; harming undead with cure is deferred)
                 Actor* best = nullptr;
-                for (auto& p : m_party) {
+                for (auto& p : foe ? m_monsters : m_party) {
                     if (!p.alive()) continue;
                     if (!best || (p.maxHp - p.hp) >
                                  (best->maxHp - best->hp))
                         best = &p;
                 }
                 if (best) targets.push_back(best);
+            } else if (foe) {
+                // single foe: front-most living party member
+                for (auto& p : m_party)
+                    if (p.alive()) { targets.push_back(&p); break; }
             } else {
                 // single foe: the member's own selection (R21/R24
                 // hook), falling back to front-most living
@@ -795,9 +879,26 @@ int Encounter::stepRound() {
             }
         }
     };
+    // R54: the monster side's caster this round (front-most
+    // qualifying foe; slots deplete so later rounds fall through
+    // to melee as the pool empties)
+    int monsterCastIdx = -1;
+    spells::SpellId monsterCastSpell = spells::MU_MAGIC_MISSILE;
+    for (int i = 0; i < (int)m_monsters.size(); ++i) {
+        const Actor& a = m_monsters[i];
+        if (!a.alive() || !a.canAct()) continue;
+        if (!foeCanCast(a)) continue;
+        int id = foeSpellChoice(a, m_monsters, m_round);
+        if (id < 0) continue;
+        monsterCastIdx = i;
+        monsterCastSpell = (spells::SpellId)id;
+        break;
+    }
+
     submitTeam(m_party, baseSegP, drinkMember, castMember, castSpell,
                shootMember, throwMember);
-    submitTeam(m_monsters, baseSegM, -1, -1, castSpell, -1, -1);
+    submitTeam(m_monsters, baseSegM, -1, monsterCastIdx,
+               monsterCastSpell, -1, -1);
     sched.beginRound();
 
     // R46: psionic blast — before any action resolves, an
@@ -845,10 +946,13 @@ int Encounter::stepRound() {
         }
 
         // R27: the cast event â resolveCast runs the spell through
-        // spelleffects and applies results to the actors
-        if (isParty && idx == castMember &&
+        // spelleffects and applies results to the actors.
+        // R54: and the monster side's caster (side-aware targeting)
+        if ((isParty && idx == castMember ||
+             !isParty && idx == monsterCastIdx) &&
             ev.action.type == rules::ACTION_SPELL) {
-            resolveCast(attacker, castSpell);
+            resolveCast(attacker,
+                        isParty ? castSpell : monsterCastSpell);
             if (teamAlive(0) == 0 || teamAlive(1) == 0) break;
             continue;
         }
