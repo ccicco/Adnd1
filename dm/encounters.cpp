@@ -718,6 +718,144 @@ int henchmanLevelFor(int masterLevel) {
 
 } // namespace
 
+// ----------------------------------------------------------------------------
+// R55: DMG p.176-177 party magic items â the level-chance
+// ladder and Tables I-IV. Only implementable outcomes carry a
+// mechanical effect (weapon/armor/shield/missile pluses); the
+// rest of each table (potions, scrolls, rings, staves, wands,
+// miscellany) is represented in the fiction but rolls as NONE.
+// Table II/III are headed "(d8, d6)": implemented as d8 within a
+// half, d6 1-3/4-6 picking the half (a uniform 1-16 reading of
+// the two-dice notation).
+// ----------------------------------------------------------------------------
+namespace {
+
+enum ItemKind { ITEM_NONE, ITEM_WPN, ITEM_RNG, ITEM_ARM, ITEM_SHD,
+                ITEM_ARM_SET };   // armor+shield sold as one set
+
+struct ItemRow {
+    int kind;   // ItemKind
+    int a, b;   // pluses (b = shield plus for ARM_SET rows)
+};
+
+// Table I (d20)
+const ItemRow kTableI[20] = {
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 1-3
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 4-6
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 7-9
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 10-12
+    {ITEM_ARM,1,0},    // 13: leather +1
+    {ITEM_SHD,1,0},    // 14: shield +1
+    {ITEM_WPN,1,0},    // 15: sword +1
+    {ITEM_RNG,1,0},    // 16: 10 arrows +1
+    {ITEM_RNG,2,0},    // 17: 4 bolts +2
+    {ITEM_WPN,1,0},    // 18: dagger +1 or +2 (+1 taken)
+    {ITEM_WPN,2,0},    // 19: javelin +2
+    {ITEM_WPN,1,0},    // 20: mace +1
+};
+
+// Table II (d8 + d6-half, 16 rows)
+const ItemRow kTableII[16] = {
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 1-3
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 4-6
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 7-9
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 10-12
+    {ITEM_ARM_SET,1,2},  // 13: chainmail +1, shield +2
+    {ITEM_ARM,4,0},      // 14: splint mail +4
+    {ITEM_WPN,3,0},      // 15: sword +3
+    {ITEM_WPN,2,0},      // 16: crossbow of speed / hammer +2
+};
+
+// Table III (d8 + d6-half, 16 rows)
+const ItemRow kTableIII[16] = {
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 1-3
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 4-6
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 7-9
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0},                    // 10-11
+    {ITEM_ARM_SET,3,2},  // 12: plate +3, shield +2
+    {ITEM_SHD,5,0},      // 13: shield +5
+    {ITEM_WPN,4,0},      // 14: sword +4, defender
+    {ITEM_WPN,3,0},      // 15: mace +3
+    {ITEM_WPN,3,0},      // 16: spear +3
+};
+
+// Table IV (d12)
+const ItemRow kTableIV[12] = {
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 1-3
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 4-6
+    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 7-9
+    {ITEM_ARM_SET,4,3},  // 10: plate +4, shield +3
+    {ITEM_WPN,1,0},      // 11: sword of wounding (+1 to-hit)
+    {ITEM_NONE,0,0},     // 12: arrow of slaying
+};
+
+const ItemRow& rollTable(rules::Dice& dice, const ItemRow* t, int n,
+                        bool halfDice) {
+    int row;
+    if (halfDice)   // "(d8, d6)": d6 1-3 -> first half, 4-6 second
+        row = (int)dice.roll(1, 8, 0) +
+              ((int)dice.roll(1, 6, 0) > 3 ? n / 2 : 0) - 1;
+    else
+        row = (int)dice.roll(1, (uint32_t)n, 0) - 1;
+    if (row < 0) row = 0;
+    if (row >= n) row = n - 1;
+    return t[row];
+}
+
+void applyItem(const ItemRow& r, PartyMember& m) {
+    switch (r.kind) {
+        case ITEM_WPN: if (r.a > m.wpnPlus) m.wpnPlus = r.a; break;
+        case ITEM_RNG: if (r.a > m.rngPlus) m.rngPlus = r.a; break;
+        case ITEM_ARM: if (r.a > m.armPlus) m.armPlus = r.a; break;
+        case ITEM_SHD: if (r.a > m.shdPlus) m.shdPlus = r.a; break;
+        case ITEM_ARM_SET:
+            if (r.a > m.armPlus) m.armPlus = r.a;
+            if (r.b > m.shdPlus) m.shdPlus = r.b;
+            break;
+        default: break;   // unmodeled device (fiction only)
+    }
+}
+
+// DMG p.176 level-chance ladder: {level, pctI, nI, pctII, nII,
+// pctIII, nIII, pctIV, nIV}. pct -1 = automatic (the printed
+// "3 items" rows). Level 13+ uses the 13th row.
+const int kLadder[13][9] = {
+    { 1,  10, 1,   0, 0,   0, 0,   0, 0},
+    { 2,  20, 2,   0, 0,   0, 0,   0, 0},
+    { 3,  30, 2,  10, 1,   0, 0,   0, 0},
+    { 4,  40, 2,  20, 1,   0, 0,   0, 0},
+    { 5,  50, 2,  30, 1,   0, 0,   0, 0},
+    { 6,  60, 3,  40, 2,   0, 0,   0, 0},
+    { 7,  70, 3,  50, 2,  10, 1,   0, 0},
+    { 8,  80, 3,  60, 2,  20, 1,   0, 0},
+    { 9,  90, 3,  70, 2,  30, 1,   0, 0},
+    {10,  -1, 3,  80, 2,  40, 1,   0, 0},
+    {11,  -1, 3,  90, 2,  50, 1,  10, 1},
+    {12,  -1, 3,  -1, 2,  60, 1,  20, 1},
+    {13,  -1, 3,  -1, 2,  -1, 1,  60, 1},
+};
+
+void rollMagicItemsFor(rules::Dice& dice, PartyMember& m) {
+    if (m.level < 1) return;   // men-at-arms: hp is all they need
+    int li = m.level - 1;
+    if (li > 12) li = 12;
+    const int* row = kLadder[li];
+    for (int t = 0; t < row[2]; ++t)                     // Table I
+        if (row[1] < 0 || (int)dice.roll(1, 100, 0) <= row[1])
+            applyItem(rollTable(dice, kTableI, 20, false), m);
+    for (int t = 0; t < row[4]; ++t)                     // Table II
+        if (row[3] < 0 || (int)dice.roll(1, 100, 0) <= row[3])
+            applyItem(rollTable(dice, kTableII, 16, true), m);
+    for (int t = 0; t < row[6]; ++t)                     // Table III
+        if (row[5] < 0 || (int)dice.roll(1, 100, 0) <= row[5])
+            applyItem(rollTable(dice, kTableIII, 16, true), m);
+    for (int t = 0; t < row[8]; ++t)                     // Table IV
+        if (row[7] < 0 || (int)dice.roll(1, 100, 0) <= row[7])
+            applyItem(rollTable(dice, kTableIV, 12, false), m);
+}
+
+} // namespace
+
 CharacterParty rollCharacterParty(rules::Dice& dice,
                                   int dungeonLevel, int monsterLevel) {
     CharacterParty p;
@@ -748,6 +886,7 @@ CharacterParty rollCharacterParty(rules::Dice& dice,
         PartyMember m;
         m.classIndex = classForProf(prof);
         m.level = characterLevelFor(dice, dungeonLevel, monsterLevel);
+        rollMagicItemsFor(dice, m);   // R55: DMG p.176-177
         p.members.push_back(m);
     }
 
@@ -781,6 +920,7 @@ CharacterParty rollCharacterParty(rules::Dice& dice,
             m.classIndex = classForProf(prof);
             m.level = henchmanLevelFor(
                 p.members[(size_t)(i % nChars)].level);
+            rollMagicItemsFor(dice, m);   // R55: henchmen too
         }
         p.members.push_back(m);
     }
