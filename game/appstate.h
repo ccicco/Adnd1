@@ -129,7 +129,21 @@
 // groups and dragon pairs keep the DMG head/age ranges per
 // specimen; the sage reads the table roster (dm::encounterKeys).
 // Character Subtable parties (classed NPCs) are R53.
-// ============================================================================
+// R53: the Character Subtable (DMG p.176) — party members are
+// real classed combatants (the ai::Actor character path: class
+// THAC0, armor AC, saves). Professions map to the engine's four
+// classes per the DMG's closest-approximation advice (druid ->
+// cleric, paladin/ranger -> fighter, illusionist -> magic-user,
+// assassin/bard -> thief, monk -> fighter). Levels follow the
+// book (dungeon/monster level through 4th, then d6+6 adjusted
+// toward the dungeon level); 2-5 characters plus men-at-arms
+// (dungeon levels 1-3) or classed henchmen at 1/3 the master's
+// level (4+) round the party to nine. NPC parties wander; room
+// lairs stay monsters. Party kills pay the by_level XP ladder
+// (xp::xpForNpc) with the specimen's actual hp. Simplifications:
+// average abilities, DMG p.176 level-typical kit, and the foe
+// AI melees (party foes do not cast).
+// ============================================================================================================================================
 
 #pragma once
 
@@ -1948,6 +1962,12 @@ struct AppState {
                 continue;
             }
             dm::DungeonEncounter e = rollDmEncounter();
+            if (e.isParty) {
+                // R53: NPC parties wander the halls — they do
+                // not lair; the room stays unoccupied (trap chance)
+                if (rng.below(100) < 15) room.trap = 1;
+                continue;
+            }
             if (e.key.empty() || e.count <= 0) {
                 // NO ENCOUNTER (or an R53 row re-rolled out):
                 // the room stays unoccupied (trap chance as above)
@@ -2172,7 +2192,14 @@ struct AppState {
             if (m.alive()) continue;
             ++slain;
             ctx.actualHp = m.maxHp;      // the specimen actually fought
-            totalXp += def ? monsters::xp::xpForKill(*def, ctx) : 10;
+            if (def)
+                totalXp += monsters::xp::xpForKill(*def, ctx);
+            else if (ctx.level > 0 || ctx.classIndex >= 0)
+                // R53: a Character Subtable party member (no lua
+                // record) — the def-free by_level ladder
+                totalXp += monsters::xp::xpForNpc(ctx);
+            else
+                totalXp += 10;
         }
 
         if (slain > 0) {
@@ -2626,6 +2653,130 @@ struct AppState {
         return e;
     }
 
+    // R53: kit for a classed NPC (DMG p.176 — 1st level
+    // scale/chain with standard weapons, 2nd+ plate; men-at-arms
+    // studded leather and spear; MUs unarmored with quarterstaff,
+    // thieves leather and short sword)
+    void kitNpc(ai::Actor& a, const dm::PartyMember& m) {
+        using namespace items;
+        if (m.manAtArms) {
+            a.armor.id = ARMOR_STUDDED_LEATHER;
+            a.weapon.id = WPN_SPEAR;
+            a.shield = false;
+            return;
+        }
+        switch (m.classIndex) {
+            case rules::CLASS_MAGIC_USER:
+                a.armor.id = ARMOR_NONE_EQUIPPED;
+                a.weapon.id = WPN_QUARTERSTAFF;
+                a.shield = false;
+                break;
+            case rules::CLASS_CLERIC:
+                a.armor.id = m.level >= 2 ? ARMOR_PLATE
+                                          : ARMOR_CHAIN_MAIL;
+                a.weapon.id = WPN_MACE;
+                a.shield = true;
+                break;
+            case rules::CLASS_THIEF:
+                a.armor.id = ARMOR_LEATHER;
+                a.weapon.id = WPN_SHORT_SWORD;
+                a.shield = false;
+                break;
+            default:   // fighter group
+                a.armor.id = m.level >= 2 ? ARMOR_PLATE
+                                          : ARMOR_CHAIN_MAIL;
+                a.weapon.id = WPN_LONG_SWORD;
+                a.shield = true;
+                break;
+        }
+    }
+
+    // R53: name for a party foe (short flavor, level-tagged)
+    std::string npcName(const dm::PartyMember& m, int index) {
+        const char* base = "Adventurer";
+        switch (m.classIndex) {
+            case rules::CLASS_MAGIC_USER: base = "Conjurer";   break;
+            case rules::CLASS_CLERIC:     base = "Acolyte";    break;
+            case rules::CLASS_THIEF:      base = "Cutpurse";   break;
+            default:                      base = "Sellsword";  break;
+        }
+        char buf[32];
+        if (m.manAtArms)
+            snprintf(buf, sizeof buf, "Man-at-arms %d", index);
+        else if (m.henchman)
+            snprintf(buf, sizeof buf, "Hireling %d", index);
+        else
+            snprintf(buf, sizeof buf, "%s %d", base, index);
+        return buf;
+    }
+
+    // R53: build the foe roster from a Character Subtable party.
+    // Each member is a real classed combatant (the Actor character
+    // path); hp rolls the class hit die per level (fixed hp beyond
+    // the name cap, R49 convention), men-at-arms take the 0-level
+    // man's 1-6. Foe contexts carry class/level for by_level XP.
+    std::vector<ai::Actor> buildFoesFromParty(
+            const dm::CharacterParty& party) {
+        std::vector<ai::Actor> foes;
+        if (party.empty()) return foes;
+        foeCtxs.clear();
+        int index = 1;
+        for (const auto& m : party.members) {
+            ai::Actor a;
+            a.team = 1;
+            a.isCharacter = true;
+            a.classIndex = m.classIndex;
+            a.level = m.level > 0 ? m.level : 1;   // matrices need 1+
+            a.name = npcName(m, index++);
+            kitNpc(a, m);
+            // abilities: average (the R24 commoner convention;
+            // PERSONAE-level generation is a later round)
+            a.str = a.dex = a.con = 10;
+            a.intel = a.wis = a.cha = 10;
+            // hp: class hit die per level (0-level man: 1-6)
+            if (m.level < 1) {
+                a.hp = a.maxHp = (int)dice.roll(1, 6, 0);
+            } else {
+                int cap = rules::CLASS_LEVEL_CAP[m.classIndex];
+                int die = rules::CLASS_HIT_DIE[m.classIndex];
+                int rolled = (int)dice.roll(
+                    (uint32_t)(m.level < cap ? m.level : cap),
+                    (uint32_t)die, 0);
+                int fixed = m.level > cap
+                    ? (m.level - cap) * rules::HP_BEYOND_CAP[m.classIndex]
+                    : 0;
+                a.hp = a.maxHp = rolled + fixed;
+                if (a.hp < 1) a.hp = a.maxHp = 1;
+            }
+            // DMG p.176: character parties do not check morale " + D + "
+            // play them as player characters
+            a.morale = dm::MORALE_FANATIC;
+            // spell slots (the foe AI melees, but the slots travel)
+            spells::SpellClass sc = m.classIndex ==
+                rules::CLASS_MAGIC_USER ? spells::SPELL_MU
+                : m.classIndex == rules::CLASS_CLERIC
+                    ? spells::SPELL_CLERIC : spells::SPELL_MU;
+            if (m.level > 0 &&
+                (m.classIndex == rules::CLASS_MAGIC_USER ||
+                 m.classIndex == rules::CLASS_CLERIC)) {
+                for (int lv = 0; lv < 6; ++lv)
+                    a.slotsByLevel[lv] = rules::spellSlots(
+                        sc, a.level, lv + 1);
+                if (m.classIndex == rules::CLASS_MAGIC_USER) {
+                    a.knownSpells.push_back(spells::MU_MAGIC_MISSILE);
+                    a.knownSpells.push_back(spells::MU_SLEEP);
+                    a.knownSpells.push_back(spells::MU_SHIELD);
+                }
+            }
+            monsters::xp::SpawnContext ctx;   // R53: by_level context
+            ctx.classIndex = m.classIndex;
+            ctx.level = m.level;   // 0 = the 0-level man ladder
+            foeCtxs.push_back(ctx);
+            foes.push_back(a);
+        }
+        return foes;
+    }
+
     void spawnRoomEncounter(int roomIndex) {
         if (mode == MODE_COMBAT) return;
         if (!party.alive()) return;
@@ -2660,6 +2811,18 @@ struct AppState {
         // Matrix, level table, subtables (Human/Dragon/etc.).
         // An empty key is NO ENCOUNTER (or an R53 re-roll row).
         dm::DungeonEncounter e = rollDmEncounter();
+        if (e.isParty) {
+            // R53: a Character Subtable party (DMG p.176)
+            std::vector<ai::Actor> foes = buildFoesFromParty(e.party);
+            if (foes.empty()) return;
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "A party of %d adventurers bars the way!",
+                     e.count);
+            log.add(buf);
+            beginCombat(std::move(foes), -1, e.key);
+            return;
+        }
         if (e.key.empty() || e.count <= 0) return;
         std::vector<ai::Actor> foes = buildFoesFromDm(e);
         if (foes.empty()) return;
