@@ -145,6 +145,13 @@
 // R55: NPC parties roll magic items (DMG p.176-177 Tables I-IV
 // level-chance ladder): weapon/armor/shield pluses land on the
 // equipped Actor gear; unmodeled devices are fiction-only.
+// R56: the gear is LOOTABLE â victory over a wandering NPC
+// party strips the best enchanted weapon/armor/shield from the
+// slain (claim conventions: same-weapon first, then equal-or-
+// better damage; armor by class weight rules; shields by
+// shieldAllowed) and a coin purse with treasure xp. The magic
+// shield persists: Character::shieldPlus (optional save line,
+// v1 compatible).
 // R54: NPC spellcasters CAST — one foe caster per round,
 // side-aware targeting, cleric heal-first AI, MU sleep opener
 // then fireball at 3rd-level slots (ai/actor.cpp foeSpellChoice).
@@ -681,6 +688,10 @@ struct AppState {
                 (int)c.rangedWeapon.id, c.rangedWeapon.plus,
                 (int)c.armor.id, c.armor.plus,
                 c.shield ? 1 : 0);
+            // R56: the magic-shield enchant (nonzero only â
+            // v1 saves carry no line and load as 0)
+            if (c.shieldPlus > 0)
+                fprintf(f, "shieldplus %d\n", c.shieldPlus);
             // R33: the MU spellbook (one line per MU; other
             // classes write nothing â v1 saves stay readable)
             if (c.classIndex == 1) {
@@ -903,11 +914,23 @@ struct AppState {
             c.armor.plus       = apl;
             c.shield           = (sh != 0);
 
-            // R33: optional spellbook line (MUs in new saves).
-            // If the next tag is not "spells", push it back for
-            // the next member iteration (v1 save compat).
-            if (fscanf(f, "%15s", tag) == 1) {
-                if (strcmp(tag, "spells") == 0) {
+            // R33/R56: optional per-member lines (v1 save
+            // compat). Consume "spells" and "shieldplus" in any
+            // order; any other tag is pushed back for the next
+            // member iteration.
+            bool optLoop = true;
+            while (optLoop) {
+                if (fscanf(f, "%15s", tag) != 1) break;
+                if (strcmp(tag, "shieldplus") == 0) {
+                    int sp = 0;
+                    if (fscanf(f, "%d", &sp) != 1 ||
+                        sp < 0 || sp > 5) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (shield).");
+                        return false;
+                    }
+                    c.shieldPlus = sp;
+                } else if (strcmp(tag, "spells") == 0) {
                     int ns = 0;
                     if (fscanf(f, "%d", &ns) != 1 || ns < 0 ||
                         ns > spells::SPELL_COUNT) {
@@ -929,6 +952,7 @@ struct AppState {
                 } else {
                     strcpy(pendingTag, tag);
                     hasPending = true;
+                    optLoop = false;
                 }
             }
             p.members.push_back(c);
@@ -2383,6 +2407,131 @@ struct AppState {
                 room.monsterKey.clear();
                 room.count = 0;
                 room.looted = true;
+            }
+        }
+
+        // R56: defeated NPC parties drop their gear. A wandering
+        // Character Subtable party (DMG p.176) fights with book-
+        // rolled magic items (R55) â the winners strip the
+        // fallen: the best enchanted weapon/armor/shield among the
+        // SLAIN (survivors keep theirs), plus a coin purse
+        // (adventurers carry walking money, not hoards â
+        // 2d6 x 10 x dungeon level, the design figure; same
+        // 1-gp-1-xp treasure convention as room hoards).
+        if (combatRoomIndex < 0 && combat.encounter) {
+            int bestWpn = 0, bestArm = 0, bestShd = 0;
+            items::WeaponId wpnId = items::WPN_LONG_SWORD;
+            items::ArmorId   armId = items::ARMOR_PLATE;
+            bool anyFoe = false;
+            for (const auto& m : combat.encounter->monsters()) {
+                if (!m.isCharacter) continue;
+                anyFoe = true;
+                if (m.alive()) continue;   // survivors keep gear
+                if (m.weapon.plus > bestWpn) {
+                    bestWpn = m.weapon.plus;
+                    wpnId = m.weapon.id;
+                }
+                if (m.armor.plus > bestArm) {
+                    bestArm = m.armor.plus;
+                    armId = m.armor.id;
+                }
+                if (m.shieldPlus > bestShd)
+                    bestShd = m.shieldPlus;
+            }
+            if (anyFoe) {
+                int gp = (int)dice.roll(2, 6, 0) * 10 * dungeonLevel;
+                if (gp > 0) {
+                    party.gold += gp;
+                    party.delveGold += gp;   // R45: the crew's cut
+                    char buf[96];
+                    snprintf(buf, sizeof buf,
+                             "You strip %d gp from the fallen.",
+                             gp);
+                    log.add(buf);
+                    int goldShare = gp / survivors;
+                    if (goldShare > 0) {
+                        snprintf(buf, sizeof buf,
+                                 "Worth %d xp each.", goldShare);
+                        log.add(buf);
+                        party.gainXp(goldShare, dice, log);
+                    }
+                }
+                if (bestWpn > 0) {
+                    const items::WeaponDef& w =
+                        items::weapon(wpnId);
+                    char buf[96];
+                    snprintf(buf, sizeof buf,
+                             "You take a +%d %s from the fallen!",
+                             bestWpn, w.name);
+                    log.add(buf);
+                    int wpnMax = w.smCount * w.smSides + w.smBonus;
+                    Character* taker = nullptr;
+                    for (auto& c : party.members) {
+                        if (c.hp <= 0) continue;
+                        if (c.weapon.plus >= bestWpn) continue;
+                        if (c.weapon.id == wpnId) {
+                            taker = &c;   // same steel, better steel
+                            break;
+                        }
+                    }
+                    if (!taker) {
+                        for (auto& c : party.members) {
+                            if (c.hp <= 0) continue;
+                            if (c.weapon.plus >= bestWpn) continue;
+                            const items::WeaponDef& cw =
+                                items::weapon(c.weapon.id);
+                            if (wpnMax >=
+                                cw.smCount * cw.smSides + cw.smBonus)
+                                { taker = &c; break; }
+                        }
+                    }
+                    if (taker) {
+                        taker->weapon.id = wpnId;
+                        taker->weapon.plus = bestWpn;
+                        log.add(taker->name + " claims it.");
+                    } else {
+                        log.add("No one can wield it; it is "
+                                "left behind.");
+                    }
+                }
+                if (bestArm > 0) {
+                    const items::ArmorDef& a =
+                        items::armor(armId);
+                    char buf[96];
+                    snprintf(buf, sizeof buf,
+                             "You take %s +%d from the fallen!",
+                             a.name, bestArm);
+                    log.add(buf);
+                    for (auto& c : party.members) {
+                        if (c.hp <= 0) continue;
+                        if (c.armor.plus >= bestArm) continue;
+                        if (!rules::armorAllowed(c.classIndex,
+                                                 a.weight))
+                            continue;
+                        c.armor.id = armId;
+                        c.armor.plus = bestArm;
+                        log.add(c.name + " claims it.");
+                        break;
+                    }
+                }
+                if (bestShd > 0) {
+                    char buf[96];
+                    snprintf(buf, sizeof buf,
+                             "You take a +%d shield from the "
+                             "fallen!", bestShd);
+                    log.add(buf);
+                    for (auto& c : party.members) {
+                        if (c.hp <= 0) continue;
+                        if (!rules::shieldAllowed(c.classIndex))
+                            continue;
+                        if (c.shield && c.shieldPlus >= bestShd)
+                            continue;
+                        c.shield = true;
+                        c.shieldPlus = bestShd;
+                        log.add(c.name + " claims it.");
+                        break;
+                    }
+                }
             }
         }
     }
