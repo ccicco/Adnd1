@@ -142,7 +142,10 @@
 // lairs stay monsters. Party kills pay the by_level XP ladder
 // (xp::xpForNpc) with the specimen's actual hp. Simplification:
 // average abilities (PERSONAE-grade generation is a later round).
-// R54: NPC spellcasters CAST " + M + " one foe caster per round,
+// R55: NPC parties roll magic items (DMG p.176-177 Tables I-IV
+// level-chance ladder): weapon/armor/shield pluses land on the
+// equipped Actor gear; unmodeled devices are fiction-only.
+// R54: NPC spellcasters CAST — one foe caster per round,
 // side-aware targeting, cleric heal-first AI, MU sleep opener
 // then fireball at 3rd-level slots (ai/actor.cpp foeSpellChoice).
 // ============================================================================================================================================
@@ -2731,6 +2734,25 @@ struct AppState {
             a.level = m.level > 0 ? m.level : 1;   // matrices need 1+
             a.name = npcName(m, index++);
             kitNpc(a, m);
+            // R55: DMG p.176-177 magic items â the rolled
+            // pluses land on the equipped gear (best-of, per the
+            // ladder rolls in dm::rollCharacterParty)
+            // DMG p.177: items must be SUITABLE to the individual
+            // (the book's own selection rule) â an MU wears
+            // no armor/shield, and only shield-allowed classes
+            // carry a magic shield (rules::shieldAllowed)
+            if (m.wpnPlus > 0) a.weapon.plus = m.wpnPlus;
+            if (m.armPlus > 0 &&
+                m.classIndex != rules::CLASS_MAGIC_USER)
+                a.armor.plus = m.armPlus;
+            if (m.shdPlus > 0 &&
+                rules::shieldAllowed(m.classIndex)) {
+                a.shield = true;      // a +N shield implies a shield
+                a.shieldPlus = m.shdPlus;
+            }
+            // rngPlus: NPC foes carry no ranged slot this round
+            // (documented simplification â R28 missile hooks
+            // are party-driven); missile pluses re-roll as flavor
             // abilities: average (the R24 commoner convention;
             // PERSONAE-level generation is a later round)
             a.str = a.dex = a.con = 10;
@@ -2750,7 +2772,7 @@ struct AppState {
                 a.hp = a.maxHp = rolled + fixed;
                 if (a.hp < 1) a.hp = a.maxHp = 1;
             }
-            // DMG p.176: character parties do not check morale " + D + "
+            // DMG p.176: character parties do not check morale —
             // play them as player characters
             a.morale = dm::MORALE_FANATIC;
             // spell slots (R54: the foe AI casts â see
