@@ -150,6 +150,47 @@ int tierForNpc(int classIndex, int level) {
 }
 
 // ----------------------------------------------------------------------------
+// R53: the def-free classed-NPC path (DMG p.85 by_level math).
+// Used by xpForKill's by_level dispatch AND directly for
+// Character Subtable party members, who have no lua record.
+// ----------------------------------------------------------------------------
+int xpForNpc(const SpawnContext& ctx) {
+    if (ctx.level <= 0) {
+        int hp = ctx.actualHp > 0 ? ctx.actualHp : 4;
+        return 5 + 1 * hp;               // 0-level man: 5 + 1/hp
+    }
+
+    if (ctx.classIndex >= 0 &&
+        ctx.classIndex < rules::CLASS_COUNT) {
+        // wired path: real class data
+        int lvl = ctx.level;
+        int hdRow = std::min(lvl, 20);   // table tops at 20
+        int t = tierForNpc(ctx.classIndex, lvl);
+        int hp = ctx.actualHp;
+        if (hp <= 0) {
+            // average hp of a lvl-level member of the class:
+            // levels below cap roll the die; beyond the cap the
+            // class adds a fixed HP_BEYOND_CAP per level
+            int cap = rules::CLASS_LEVEL_CAP[ctx.classIndex];
+            int die = rules::CLASS_HIT_DIE[ctx.classIndex];
+            int avgDie = (1 + die) / 2;   // d10 -> 5, d8 -> 4, ...
+            int rolled = std::min(lvl, cap) * (avgDie + ctx.conAdj);
+            int fixed  = (lvl > cap)
+                ? (lvl - cap) * rules::HP_BEYOND_CAP[ctx.classIndex]
+                : 0;
+            hp = std::max(1, rolled + fixed);
+        }
+        return baseForHd(hdRow) * t + perHpForHd(hdRow) * hp;
+    }
+
+    // unknown class: pre-wiring approximation (generic man-type)
+    int lvl = std::min(ctx.level, 10);
+    int hp  = ctx.actualHp;
+    if (hp <= 0) hp = lvl * 5;           // Con-avg fighter-ish
+    return baseForHd(lvl) * 2 + perHpForHd(lvl) * hp;
+}
+
+// ----------------------------------------------------------------------------
 // The dispatch
 // ----------------------------------------------------------------------------
 int xpForKill(const MonsterDef& def, const SpawnContext& ctx) {
@@ -213,41 +254,8 @@ int xpForKill(const MonsterDef& def, const SpawnContext& ctx) {
     // classed NPCs (men-types). DMG p.85: level is the HD row on the
     // monster table; tier from class/level; hp from the real class
     // hit die + Con adjustment (rules/classes wiring, R49+).
-    if (src == "by_level") {
-        if (ctx.level <= 0) {
-            int hp = ctx.actualHp > 0 ? ctx.actualHp : 4;
-            return 5 + 1 * hp;               // 0-level man: 5 + 1/hp
-        }
-
-        if (ctx.classIndex >= 0 &&
-            ctx.classIndex < rules::CLASS_COUNT) {
-            // wired path: real class data
-            int lvl = ctx.level;
-            int hdRow = std::min(lvl, 20);   // table tops at 20
-            int t = tierForNpc(ctx.classIndex, lvl);
-            int hp = ctx.actualHp;
-            if (hp <= 0) {
-                // average hp of a lvl-level member of the class:
-                // levels below cap roll the die; beyond the cap the
-                // class adds a fixed HP_BEYOND_CAP per level
-                int cap = rules::CLASS_LEVEL_CAP[ctx.classIndex];
-                int die = rules::CLASS_HIT_DIE[ctx.classIndex];
-                int avgDie = (1 + die) / 2;   // d10 -> 5, d8 -> 4, ...
-                int rolled = std::min(lvl, cap) * (avgDie + ctx.conAdj);
-                int fixed  = (lvl > cap)
-                    ? (lvl - cap) * rules::HP_BEYOND_CAP[ctx.classIndex]
-                    : 0;
-                hp = std::max(1, rolled + fixed);
-            }
-            return baseForHd(hdRow) * t + perHpForHd(hdRow) * hp;
-        }
-
-        // unknown class: pre-wiring approximation (generic man-type)
-        int lvl = std::min(ctx.level, 10);
-        int hp  = ctx.actualHp;
-        if (hp <= 0) hp = lvl * 5;           // Con-avg fighter-ish
-        return baseForHd(lvl) * std::max(tierOf(def), 2) + perHpForHd(lvl) * hp;
-    }
+    if (src == "by_level")
+        return xpForNpc(ctx);
 
     // unknown source: fall back to whatever the file carried
     return def.xpValue > 0 ? def.xpValue : def.xpBase;
