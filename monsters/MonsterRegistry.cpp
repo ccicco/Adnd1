@@ -555,7 +555,8 @@ const MonsterDef* MonsterRegistry::find(const std::string& key) const {
 }
 
 ai::Actor MonsterRegistry::toActor(const std::string& key,
-                                   rules::Dice& dice, int hp) const {
+                                   rules::Dice& dice, int hp,
+                                   int hdOverride, int hpPerDie) const {
     ai::Actor a;
     const MonsterDef* def = find(key);
     if (!def) {
@@ -568,6 +569,8 @@ ai::Actor MonsterRegistry::toActor(const std::string& key,
     a.isCharacter = false;
     a.team = 1;
     a.hitDice = def->hitDice;
+    if (hdOverride > 0)    // R51: effective HD (attack matrices follow)
+        a.hitDice = (float)hdOverride + def->hitDiceBonus / 4.0f;
     a.monsterAttacks = def->attacks;
     a.monsterDamageCount = def->damageCount;
     a.monsterDamageSides = def->damageSides;
@@ -580,8 +583,11 @@ ai::Actor MonsterRegistry::toActor(const std::string& key,
     // hp: roll hit dice + bonus, use the provided value, or fall
     // back to the book average for flat-hp monsters
     if (hp < 0) {
-        if (def->hitDiceNum >= 1) {
-            hp = (int)dice.roll((uint32_t)def->hitDiceNum, 8,
+        int diceCount = (hdOverride > 0) ? hdOverride : def->hitDiceNum;
+        if (hdOverride > 0 && hpPerDie > 0) {
+            hp = hdOverride * hpPerDie;   // R51: dragon age / hydra heads
+        } else if (diceCount >= 1) {
+            hp = (int)dice.roll((uint32_t)diceCount, 8,
                                 def->hitDiceBonus);
         } else if (def->avgHp > 0) {
             hp = def->avgHp;               // "199 hp" style monster
