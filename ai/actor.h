@@ -128,6 +128,9 @@ struct Actor {
     bool weaponThrown = false;
     items::ArmorInstance  armor;
     bool shield = false;
+    // R55: shield enchantment (+1..+5); effectiveAc already takes
+    // it, the Actor just never carried it. Default 0 = mundane.
+    int  shieldPlus = 0;
 
     // monster path
     float hitDice = 1.0f;
