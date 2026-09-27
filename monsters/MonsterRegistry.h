@@ -147,7 +147,9 @@ public:
                       int hp = -1, int hdOverride = -1,
                       int hpPerDie = 0) const;   // hp < 0 = roll from HD
 
-    // Monsters tagged for a dungeon level (Appendix C-ish filter)
+    // R52: DEPRECATED — superseded by dm/encounters.h (the
+    // real DMG Appendix C tables). Kept for regtest only; new
+    // code uses dm::encounterKeys / dm::rollDungeonEncounter.
     std::vector<std::string> keysForLevel(int dungeonLevel) const;
 
     const std::vector<std::string>& errors() const { return m_errors; }
