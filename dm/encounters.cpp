@@ -539,17 +539,32 @@ DungeonEncounter rollDungeonEncounter(
             if (pctile2 <= 25)      e.key = "bandit";
             else if (pctile2 <= 30) e.key = "berserker";
             else if (pctile2 <= 45) e.key = "bandit";
-            else break;                       // Character: R53
+            else {
+                // R53: Character Subtable party (DMG p.176)
+                e.party = rollCharacterParty(dice, dungeonLevel, mlv);
+                e.isParty = true;
+                e.key = "character_party";
+                e.count = e.party.size();
+                return e;
+            }
             if (!reg.find(e.key)) break;
             e.count = (e.key == "berserker")
                 ? 2 + (int)dice.roll(1, 7, 0)      // 3-9
                 : 4 + (int)dice.roll(1, 11, 0);    // 5-15
             return e;
         }
-        case ROW_CHARACTER:
+        case ROW_CHARACTER: {
+            // R53: the Character Subtable resolves here —
+            // a classed NPC party (DMG p.176)
+            e.party = rollCharacterParty(dice, dungeonLevel, mlv);
+            e.isParty = true;
+            e.key = "character_party";
+            e.count = e.party.size();
+            return e;
+        }
         case ROW_NONE:
         default:
-            return e;    // classed parties R53; NO ENCOUNTER final
+            return e;    // NO ENCOUNTER (Monster Level X 81-00)
         }
 
         // DMG advice: ignore & re-roll
@@ -622,6 +637,154 @@ std::vector<std::string> encounterKeys(
         }
     }
     return out;
+}
+
+// ----------------------------------------------------------------------------
+// R53: the Character Subtable (DMG p.176), verbatim ranges and
+// per-profession maxima. The engine's four classes absorb the
+// rest per the book's closest-approximation advice.
+// ----------------------------------------------------------------------------
+namespace {
+
+struct ProfRow { int lo, hi, max; };   // subtable percentile + max/party
+
+enum ProfId {
+    PROF_CLERIC, PROF_DRUID, PROF_FIGHTER, PROF_PALADIN, PROF_RANGER,
+    PROF_MU, PROF_ILLUSIONIST, PROF_THIEF, PROF_ASSASSIN, PROF_MONK_BARD,
+    PROF_COUNT
+};
+
+// 01-17 Cleric / 18-20 Druid / 21-60 Fighter / 61-62 Paladin /
+// 63-65 Ranger / 66-86 Magic-user / 87-88 Illusionist /
+// 89-98 Thief / 99 Assassin / 00 Monk or Bard
+const ProfRow kProfTable[PROF_COUNT] = {
+    {  1, 17, 3},   // cleric
+    { 18, 20, 2},   // druid
+    { 21, 60, 5},   // fighter
+    { 61, 62, 2},   // paladin
+    { 63, 65, 2},   // ranger
+    { 66, 86, 3},   // magic-user
+    { 87, 88, 1},   // illusionist
+    { 89, 98, 4},   // thief
+    { 99, 99, 2},   // assassin
+    {100,100, 1},   // monk or bard
+};
+
+int profFor(int pctile) {
+    for (int i = 0; i < PROF_COUNT; ++i)
+        if (pctile >= kProfTable[i].lo && pctile <= kProfTable[i].hi)
+            return i;
+    return PROF_FIGHTER;
+}
+
+// engine class per profession (closest approximation, DMG advice)
+int classForProf(int prof) {
+    switch (prof) {
+        case PROF_CLERIC:
+        case PROF_DRUID:        return rules::CLASS_CLERIC;
+        case PROF_MU:
+        case PROF_ILLUSIONIST:  return rules::CLASS_MAGIC_USER;
+        case PROF_THIEF:
+        case PROF_ASSASSIN:     return rules::CLASS_THIEF;
+        case PROF_MONK_BARD:    return rules::CLASS_THIEF;   // bard
+        default:                return rules::CLASS_FIGHTER; // fighter/
+    }                           // paladin/ranger/monk
+}
+
+// DMG p.176: character level = dungeon or monster level, whichever
+// is greater, through the 4th; thereafter d6+6 adjusted toward the
+// dungeon level (not to exceed 12 unless the dungeon is 16th+).
+int characterLevelFor(rules::Dice& dice, int dungeonLevel,
+                      int monsterLevel) {
+    int base = dungeonLevel > monsterLevel ? dungeonLevel : monsterLevel;
+    if (base < 1) base = 1;
+    if (base <= 4) return base;
+    int lvl = 6 + (int)dice.roll(1, 6, 0);       // 7-12
+    if (lvl > dungeonLevel)      --lvl;
+    else if (lvl < dungeonLevel) ++lvl;
+    if (lvl > 12 && dungeonLevel < 16) lvl = 12;
+    return lvl;
+}
+
+// DMG p.176: henchman level = master/3 (fractions below one-half
+// round down, else up), plus one level per three master levels
+// when the master is above 8th (bonus in whole levels).
+int henchmanLevelFor(int masterLevel) {
+    int base = (2 * masterLevel + 3) / 6;   // round-to-nearest thirds
+    int bonus = masterLevel > 8 ? masterLevel / 3 : 0;
+    int lvl = base + bonus;
+    return lvl < 1 ? 1 : lvl;
+}
+
+} // namespace
+
+CharacterParty rollCharacterParty(rules::Dice& dice,
+                                  int dungeonLevel, int monsterLevel) {
+    CharacterParty p;
+
+    // 2-5 characters (d4+1)
+    int nChars = 1 + (int)dice.roll(1, 4, 0);
+
+    int perProf[PROF_COUNT] = {0};
+    bool hasPaladin = false, hasAssassin = false;
+
+    for (int i = 0; i < nChars; ++i) {
+        int prof = PROF_FIGHTER;
+        // re-roll contradictions (paladin with assassin) and
+        // per-profession maxima (DMG: ignore such rolls)
+        for (int attempt = 0; attempt < 24; ++attempt) {
+            int pct = (int)dice.roll(1, 100, 0);
+            int cand = profFor(pct);
+            if (perProf[cand] >= kProfTable[cand].max) continue;
+            if ((cand == PROF_ASSASSIN && hasPaladin) ||
+                (cand == PROF_PALADIN && hasAssassin)) continue;
+            prof = cand;
+            break;
+        }
+        ++perProf[prof];
+        if (prof == PROF_PALADIN) hasPaladin = true;
+        if (prof == PROF_ASSASSIN) hasAssassin = true;
+
+        PartyMember m;
+        m.classIndex = classForProf(prof);
+        m.level = characterLevelFor(dice, dungeonLevel, monsterLevel);
+        p.members.push_back(m);
+    }
+
+    // followers round the party out to nine: men-at-arms on
+    // dungeon levels 1-3, classed henchmen on 4+
+    int followers = 9 - nChars;
+    bool menAtArms = dungeonLevel <= 3;
+    for (int i = 0; i < followers; ++i) {
+        PartyMember m;
+        if (menAtArms) {
+            // 0-level men: hp is all they need (DMG p.176)
+            m.manAtArms = true;
+            m.classIndex = rules::CLASS_FIGHTER;   // kit + saves
+            m.level = 0;
+        } else {
+            // henchmen: profession by subtable (paladins and
+            // party-contradictory assassins re-rolled), level
+            // one-third of the master's (rotating assignment)
+            int prof = PROF_FIGHTER;
+            for (int attempt = 0; attempt < 24; ++attempt) {
+                int pct = (int)dice.roll(1, 100, 0);
+                int cand = profFor(pct);
+                if (cand == PROF_PALADIN) continue;
+                if (cand == PROF_ASSASSIN &&
+                    (hasAssassin || hasPaladin)) continue;
+                if (perProf[cand] >= kProfTable[cand].max) continue;
+                prof = cand;
+                break;
+            }
+            m.henchman = true;
+            m.classIndex = classForProf(prof);
+            m.level = henchmanLevelFor(
+                p.members[(size_t)(i % nChars)].level);
+        }
+        p.members.push_back(m);
+    }
+    return p;
 }
 
 } // namespace dm
