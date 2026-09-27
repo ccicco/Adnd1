@@ -134,6 +134,22 @@ int tierOf(const MonsterDef& def) {
 }
 
 // ----------------------------------------------------------------------------
+// by_level tier (rules/classes wiring): spellcasters get their first
+// spells at 1st level in AD&D -> "special ability" x3. Fighters and
+// thieves are trained combatants -> "exceptional" x2. Beyond the
+// class's name cap (LEVEL_CAP 9-11), AD&D convention says such
+// characters command magical might too -> x4 for fighter/cleric.
+// ----------------------------------------------------------------------------
+int tierForNpc(int classIndex, int level) {
+    using namespace rules;
+    if (classIndex < 0 || classIndex >= CLASS_COUNT) return 2;
+    bool caster = (classIndex == CLASS_MAGIC_USER ||
+                   classIndex == CLASS_CLERIC);
+    if (level > CLASS_LEVEL_CAP[classIndex] && !caster) return 4;
+    return caster ? 3 : 2;
+}
+
+// ----------------------------------------------------------------------------
 // The dispatch
 // ----------------------------------------------------------------------------
 int xpForKill(const MonsterDef& def, const SpawnContext& ctx) {
@@ -194,15 +210,39 @@ int xpForKill(const MonsterDef& def, const SpawnContext& ctx) {
         return baseForHd(hd) * std::max(tierOf(def), 2) + perHpForHd(hd) * hp;
     }
 
-    // classed NPCs (men-types). 0-level: DMG man = HD<1 row.
-    // Leveled: TODO wire to rules/classes XP tables; until then the
-    // DMG-shaped approximation base(level) covers the common 1-10
-    // range sanely (a 5th-level fighter ~ 60+4/hp book value).
+    // classed NPCs (men-types). DMG p.85: level is the HD row on the
+    // monster table; tier from class/level; hp from the real class
+    // hit die + Con adjustment (rules/classes wiring, R49+).
     if (src == "by_level") {
         if (ctx.level <= 0) {
             int hp = ctx.actualHp > 0 ? ctx.actualHp : 4;
             return 5 + 1 * hp;               // 0-level man: 5 + 1/hp
         }
+
+        if (ctx.classIndex >= 0 &&
+            ctx.classIndex < rules::CLASS_COUNT) {
+            // wired path: real class data
+            int lvl = ctx.level;
+            int hdRow = std::min(lvl, 20);   // table tops at 20
+            int t = tierForNpc(ctx.classIndex, lvl);
+            int hp = ctx.actualHp;
+            if (hp <= 0) {
+                // average hp of a lvl-level member of the class:
+                // levels below cap roll the die; beyond the cap the
+                // class adds a fixed HP_BEYOND_CAP per level
+                int cap = rules::CLASS_LEVEL_CAP[ctx.classIndex];
+                int die = rules::CLASS_HIT_DIE[ctx.classIndex];
+                int avgDie = (1 + die) / 2;   // d10 -> 5, d8 -> 4, ...
+                int rolled = std::min(lvl, cap) * (avgDie + ctx.conAdj);
+                int fixed  = (lvl > cap)
+                    ? (lvl - cap) * rules::HP_BEYOND_CAP[ctx.classIndex]
+                    : 0;
+                hp = std::max(1, rolled + fixed);
+            }
+            return baseForHd(hdRow) * t + perHpForHd(hdRow) * hp;
+        }
+
+        // unknown class: pre-wiring approximation (generic man-type)
         int lvl = std::min(ctx.level, 10);
         int hp  = ctx.actualHp;
         if (hp <= 0) hp = lvl * 5;           // Con-avg fighter-ish
