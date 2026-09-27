@@ -142,6 +142,13 @@
 // lairs stay monsters. Party kills pay the by_level XP ladder
 // (xp::xpForNpc) with the specimen's actual hp. Simplification:
 // average abilities (PERSONAE-grade generation is a later round).
+// R57: PERSONAE-grade NPC abilities (DMG p.87 + p.176): 3d6
+// per score, race (p.176 table) and class (p.87 table) ability
+// adjustments, exceptional strength for fighters at STR 18, and
+// hp by the canonical per-level rollHitPoints with the rolled
+// Con adjustment (men-at-arms: the p.87 Mercenary row " DASH
+// STR +1, CON +3, 4 minimum hp). The R53 average-10 convention
+// is retired.
 // R55: NPC parties roll magic items (DMG p.176-177 Tables I-IV
 // level-chance ladder): weapon/armor/shield pluses land on the
 // equipped Actor gear; unmodeled devices are fiction-only.
@@ -2902,25 +2909,73 @@ struct AppState {
             // rngPlus: NPC foes carry no ranged slot this round
             // (documented simplification â R28 missile hooks
             // are party-driven); missile pluses re-roll as flavor
-            // abilities: average (the R24 commoner convention;
-            // PERSONAE-level generation is a later round)
-            a.str = a.dex = a.con = 10;
-            a.intel = a.wis = a.cha = 10;
-            // hp: class hit die per level (0-level man: 1-6)
+            // R57: PERSONAE-grade abilities (DMG p.87 + p.176):
+            // 3d6 per score, then race adjustments (race rolled
+            // on the p.176 table: 01-25 dwarf, 26-50 elf, 51-60
+            // gnome, 61-85 half-elf, 86-95 halfling, 96-00
+            // half-orc) and class adjustments per the p.87 table.
+            // Multi-class (p.176, ~20% of non-humans) is beyond
+            // the engine's four single classes â race
+            // adjusts abilities only (documented simplification).
+            int ab[6];
+            for (int i = 0; i < 6; ++i)
+                ab[i] = (int)dice.roll(3, 6, 0);
+            enum { S_, I_, W_, D_, C_, H_ };  // str int wis dex con cha
+            int raceRoll = (int)dice.roll(1, 100, 0);
+            if (raceRoll <= 25) {            // dwarf
+                ab[S_] += 1; ab[C_] += 1; ab[H_] -= 1;
+            } else if (raceRoll <= 50) {      // elf
+                ab[I_] += 1; ab[D_] += 1;
+            } else if (raceRoll <= 60) {      // gnome
+                ab[W_] += 1; ab[C_] += 1; ab[H_] -= 1;
+            } else if (raceRoll <= 95 && raceRoll >= 86) {  // halfling
+                ab[D_] += 1; ab[C_] += 1;
+            }   // half-elf / half-orc: no printed adjustment
             if (m.level < 1) {
-                a.hp = a.maxHp = (int)dice.roll(1, 6, 0);
+                // p.87 Occupation: Mercenary (level 0) â
+                // STR +1, CON +3 (men-at-arms)
+                ab[S_] += 1; ab[C_] += 3;
             } else {
-                int cap = rules::CLASS_LEVEL_CAP[m.classIndex];
-                int die = rules::CLASS_HIT_DIE[m.classIndex];
-                int rolled = (int)dice.roll(
-                    (uint32_t)(m.level < cap ? m.level : cap),
-                    (uint32_t)die, 0);
-                int fixed = m.level > cap
-                    ? (m.level - cap) * rules::HP_BEYOND_CAP[m.classIndex]
-                    : 0;
-                a.hp = a.maxHp = rolled + fixed;
-                if (a.hp < 1) a.hp = a.maxHp = 1;
+                // p.87 Class table (in addition to the PHB note;
+                // additive here, the engine has no minimums pass)
+                switch (m.classIndex) {
+                    case rules::CLASS_CLERIC:
+                        ab[W_] += 2; break;
+                    case rules::CLASS_MAGIC_USER:
+                        ab[I_] += 2; ab[D_] += 1; break;
+                    case rules::CLASS_THIEF:
+                        ab[D_] += 2; ab[I_] += 1; break;
+                    default:   // fighter group (fighter/paladin/
+                        ab[S_] += 2; ab[C_] += 1; break;  // ranger)
+                }
             }
+            for (int i = 0; i < 6; ++i) {
+                if (ab[i] > 18) ab[i] = 18;   // normal limits
+                if (ab[i] < 3) ab[i] = 3;
+            }
+            a.str = (uint8_t)ab[S_]; a.intel = (uint8_t)ab[I_];
+            a.wis = (uint8_t)ab[W_]; a.dex = (uint8_t)ab[D_];
+            a.con = (uint8_t)ab[C_]; a.cha = (uint8_t)ab[H_];
+            // exceptional strength: fighter group at STR 18
+            if (m.classIndex == rules::CLASS_FIGHTER &&
+                a.str == 18) {
+                a.exStr.has = true;
+                a.exStr.pct = rules::rollExceptionalStrength(dice);
+            }
+            // hp: the canonical per-level roll (R4b signature)
+            // with the PERSONAE Con adjustment per die
+            int conAdj = rules::conHPAdjustment(m.classIndex, a.con);
+            int hp = 0;
+            if (m.level < 1) {
+                hp = (int)dice.roll(1, 6, 0);   // 0-level man
+            } else {
+                for (int lv = 1; lv <= m.level; ++lv)
+                    hp += rules::rollHitPoints(m.classIndex, lv,
+                                               conAdj, dice);
+            }
+            if (m.level < 1 && hp < 4) hp = 4;   // p.87: mercenary min
+            if (hp < 1) hp = 1;
+            a.hp = a.maxHp = hp;
             // DMG p.176: character parties do not check morale —
             // play them as player characters
             a.morale = dm::MORALE_FANATIC;
@@ -2949,6 +3004,7 @@ struct AppState {
             monsters::xp::SpawnContext ctx;   // R53: by_level context
             ctx.classIndex = m.classIndex;
             ctx.level = m.level;   // 0 = the 0-level man ladder
+            ctx.conAdj = conAdj;  // R57: real Con, xp parity
             foeCtxs.push_back(ctx);
             foes.push_back(a);
         }
