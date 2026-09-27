@@ -72,7 +72,8 @@ namespace ai {
 
 int Actor::armorClass() const {
     if (isCharacter) {
-        return items::effectiveAc(armor, shield, 0, dex);
+        // R55: the carried shield enchantment applies
+        return items::effectiveAc(armor, shield, shieldPlus, dex);
     }
     // monster base: unarmored 9 minus half hit dice (convention;
     // real monster ACs arrive with the Lua registry)
