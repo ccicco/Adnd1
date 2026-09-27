@@ -33,6 +33,14 @@ struct PartyMember {
     int  level      = 0;    // 0 = 0-level man-at-arms
     bool henchman   = false;   // classed follower (Dungeon L4+)
     bool manAtArms  = false;   // 0-level retainer (Dungeon L1-3)
+    // R55: DMG p.176-177 party magic items. Only the outcomes the
+    // engine models are carried; potions/scrolls/rings and other
+    // unmodeled devices roll as no mechanical effect (the item
+    // exists in the fiction but does not touch combat here).
+    int  wpnPlus = 0;    // melee weapon enchantment
+    int  rngPlus = 0;    // missile enchantment (arrows/bolts)
+    int  armPlus = 0;    // armor enchantment
+    int  shdPlus = 0;    // shield enchantment
 };
 
 struct CharacterParty {
@@ -67,7 +75,9 @@ std::vector<std::string> encounterKeys(
 // dungeon/monster level (through 4th) or d6+6 adjusted toward
 // the dungeon level, then men-at-arms (levels 1-3) or classed
 // henchmen at 1/3 the master's level (levels 4+) rounding the
-// party out to nine members.
+// party out to nine members. R55: each character and henchman
+// then rolls magic items on the DMG p.176-177 level-chance
+// ladder (Table I-IV; implementable pluses only).
 CharacterParty rollCharacterParty(rules::Dice& dice,
                                   int dungeonLevel, int monsterLevel);
 
