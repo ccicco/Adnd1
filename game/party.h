@@ -67,6 +67,10 @@ struct Character {
     int missileAmmo = 0;   // R35: arrows/bolts/stones on hand
     items::ArmorInstance  armor;
     bool shield = false;
+    // R56: the magic-shield enchant (+1..+5), 0 = mundane. Won
+    // from defeated NPC parties; saved as an optional per-member
+    // line (v1 saves have none and load as 0).
+    int shieldPlus = 0;
 
     // R33: MU spellbook â known spell ids (spells::SpellId).
     // Empty for non-MUs (clerics cast freely).
@@ -103,6 +107,7 @@ struct Character {
         a.missileAmmo = missileAmmo;     // R35: live quiver count
         a.armor  = armor;
         a.shield = shield;
+        a.shieldPlus = shieldPlus;   // R56
         a.hp     = hp;
         a.maxHp  = maxHp;
         a.morale = dm::MORALE_FANATIC;   // player party never breaks
