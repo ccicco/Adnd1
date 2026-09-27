@@ -140,9 +140,11 @@
 // (dungeon levels 1-3) or classed henchmen at 1/3 the master's
 // level (4+) round the party to nine. NPC parties wander; room
 // lairs stay monsters. Party kills pay the by_level XP ladder
-// (xp::xpForNpc) with the specimen's actual hp. Simplifications:
-// average abilities, DMG p.176 level-typical kit, and the foe
-// AI melees (party foes do not cast).
+// (xp::xpForNpc) with the specimen's actual hp. Simplification:
+// average abilities (PERSONAE-grade generation is a later round).
+// R54: NPC spellcasters CAST " + M + " one foe caster per round,
+// side-aware targeting, cleric heal-first AI, MU sleep opener
+// then fireball at 3rd-level slots (ai/actor.cpp foeSpellChoice).
 // ============================================================================================================================================
 
 #pragma once
@@ -2751,7 +2753,8 @@ struct AppState {
             // DMG p.176: character parties do not check morale " + D + "
             // play them as player characters
             a.morale = dm::MORALE_FANATIC;
-            // spell slots (the foe AI melees, but the slots travel)
+            // spell slots (R54: the foe AI casts â see
+            // ai/actor.cpp foeSpellChoice; slots deplete)
             spells::SpellClass sc = m.classIndex ==
                 rules::CLASS_MAGIC_USER ? spells::SPELL_MU
                 : m.classIndex == rules::CLASS_CLERIC
@@ -2766,6 +2769,10 @@ struct AppState {
                     a.knownSpells.push_back(spells::MU_MAGIC_MISSILE);
                     a.knownSpells.push_back(spells::MU_SLEEP);
                     a.knownSpells.push_back(spells::MU_SHIELD);
+                    // R54: the deep-dungeon conjurer's heavier
+                    // artillery (3rd-level slots at MU 5+)
+                    a.knownSpells.push_back(spells::MU_FIREBALL);
+                    a.knownSpells.push_back(spells::MU_LIGHTNING_BOLT);
                 }
             }
             monsters::xp::SpawnContext ctx;   // R53: by_level context
