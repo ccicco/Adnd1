@@ -12,8 +12,11 @@
 //                   effective HD tier for the DMG formula.
 //   by_head_count : hydra — heads = hit dice.
 //   by_level      : classed NPCs (men-types, sahuagin clerics) —
-//                   XP by class & level (approximated until wired
-//                   to rules/classes; see note in the .cpp).
+//                   wired to rules/classes: level is the HD row on
+//                   the DMG p.85 monster table, tier by class/level
+//                   (spellcasters x3, others x2), hp from the class
+//                   hit die + Con. Falls back to the pre-wiring
+//                   approximation when ctx.classIndex is unknown.
 //
 // The 355 merged_mm1 entries carry exact cross-checked book XP; the
 // dispatch entries (43) resolve here at kill time from spawn context.
@@ -22,6 +25,7 @@
 #pragma once
 
 #include "MonsterRegistry.h"
+#include "../rules/classes.h"
 
 namespace monsters {
 namespace xp {
@@ -35,11 +39,20 @@ struct SpawnContext {
     int hd          = -1; // effective hit dice (by_hit_dice/age_bracket/
                           //   by_head_count). -1 = use def.hitDiceNum.
     int level       = 0;  // classed-NPC level (by_level). 0 = 0-level man.
+    int classIndex  = -1; // rules::CharClass (by_level). -1 = unknown:
+                          //   falls back to the generic approximation.
+    int conAdj      = 0;  // Con hp adjustment per die (by_level). 0 = avg.
     int heads       = 0;  // hydra heads (by_head_count). 0 = use def's HD.
     int ageBracket  = 0;  // dragon age 1-8 (age_bracket). 0 = use 5
                           //   (adult) for average-specimen figures.
     int actualHp    = 0;  // hit points of the killed specimen. 0 = book avg.
 };
+
+// by_level tier: spellcasters can use magic from 1st level (DMG
+// "special ability" -> x3); fighter/thief are trained combatants
+// ("exceptional" -> x2). Levels above the class's name cap (9-11)
+// imply magical might in AD&D convention -> x4 for fighter/cleric.
+int tierForNpc(int classIndex, int level);
 
 // DMG p.85 base XP for a monster of the given hit dice (tier 1, no
 // exceptional abilities). Rows 1-10 verified against the merged data:
