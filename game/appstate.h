@@ -120,6 +120,15 @@
 // levels (the spells:: tables carry the columns; the L4-6
 // spell DATA pass is next — it needs the current spells/
 // files read back).
+// R52: the real DMG Appendix C dungeon tables — dm/encounters.
+// {h,cpp} carry the Determination Matrix, Monster Level Tables
+// I-X, per-level Dragon Subtables (the Age Category column is
+// hit points per die), and the Human Subtable, OCR-verified
+// against the uploaded DMG (Premium reprint p.174-179). Room
+// lairs and wandering encounters roll from the tables; hydra
+// groups and dragon pairs keep the DMG head/age ranges per
+// specimen; the sage reads the table roster (dm::encounterKeys).
+// Character Subtable parties (classed NPCs) are R53.
 // ============================================================================
 
 #pragma once
@@ -131,6 +140,7 @@
 #include "../rules/saves.h"   // R45: trap saves
 #include "../dm/dm.h"
 #include "../dm/dungeon.h"
+#include "../dm/encounters.h"   // R52: Appendix C tables
 #include "../ai/actor.h"
 #include "../monsters/MonsterRegistry.h"
 #include "../monsters/MonsterXp.h"
@@ -162,6 +172,10 @@ struct RoomOccupant {
     // R45: 0 = no trap, 1 = armed dart trap, 2 = sprung
     int trap = 0;
     bool flavorSeen = false;   // R46: first-entry description
+    // R52: DMG Appendix C ranges — hydra heads per specimen,
+    // dragon age bracket (hp/die) per specimen
+    int headsLo = 0, headsHi = 0;
+    int ageLo = 0, ageHi = 0;
 };
 
 // R45: a secret door hides in a wall tile until found
@@ -1583,16 +1597,16 @@ struct AppState {
     }
 
     // R45: [S] the sage â 200 gp for lore on what lairs at
-    // this depth (the registry's level roster â an in-game
-    // Monster Manual reference; MM exact values remain
-    // verification debt until the book is re-uploaded)
+    // this depth. R52: the roster is the DMG Appendix C
+    // Determination Matrix for this dungeon level (the real
+    // tables, OCR-verified) â dm::encounterKeys.
     void townSage() {
         if (mode != MODE_TOWN) return;
         if (party.gold < 200) {
             log.add("The sage wants 200 gp for his lore.");
             return;
         }
-        auto keys = registry.keysForLevel(dungeonLevel);
+        auto keys = dm::encounterKeys(registry, dungeonLevel);
         if (keys.empty()) {
             log.add("The sage knows nothing of this depth.");
             return;
@@ -1915,23 +1929,36 @@ struct AppState {
     }
 
     void populateRooms() {
-        auto candidates = registry.keysForLevel(dungeonLevel);
-        if (candidates.empty()) return;
-
+        // R52: lairs roll from the DMG Appendix C tables —
+        // the Determination Matrix for this depth, then the
+        // Monster Level Table row (count, hydra heads, dragon
+        // hp/die brackets). The R42 depth cap still bounds lair
+        // size.
         for (auto& room : occupancy.rooms) {
             room.monsterKey.clear();
             room.count = 0;
             room.looted = false;
             room.trap = 0;
             room.flavorSeen = false;   // R46
+            room.headsLo = room.headsHi = 0;
+            room.ageLo = room.ageHi = 0;
             if (rng.below(100) >= 50) {
                 // R45: an unoccupied room may hide a dart trap
                 if (rng.below(100) < 15) room.trap = 1;
                 continue;
             }
-            room.monsterKey =
-                candidates[(size_t)rng.below((uint32_t)candidates.size())];
-            room.count = 1 + (int)rng.below((uint32_t)roomCountCap());
+            dm::DungeonEncounter e = rollDmEncounter();
+            if (e.key.empty() || e.count <= 0) {
+                // NO ENCOUNTER (or an R53 row re-rolled out):
+                // the room stays unoccupied (trap chance as above)
+                if (rng.below(100) < 15) room.trap = 1;
+                continue;
+            }
+            room.monsterKey = e.key;
+            room.count = e.count > roomCountCap()
+                ? roomCountCap() : e.count;
+            room.headsLo = e.headsLo; room.headsHi = e.headsHi;
+            room.ageLo = e.ageLo;     room.ageHi = e.ageHi;
         }
     }
 
@@ -2548,6 +2575,57 @@ struct AppState {
         return 0;
     }
 
+    // R52: one roll on the DMG Appendix C chain for this depth
+    // (d20 -> Determination Matrix -> level table -> subtable)
+    dm::DungeonEncounter rollDmEncounter() {
+        return dm::rollDungeonEncounter(registry, dice,
+            (int)dice.roll(1, 20, 0),
+            (int)dice.roll(1, 100, 0),
+            (int)dice.roll(1, 100, 0),
+            dungeonLevel);
+    }
+
+    // R52: build the foe roster from a DMG encounter. Each
+    // specimen rolls its own context (R51), pinned to the DMG
+    // ranges where the table carries them: hydra heads, dragon
+    // age bracket (hp/die, the subtable's Age Category column).
+    std::vector<ai::Actor> buildFoesFromDm(
+            const dm::DungeonEncounter& e) {
+        std::vector<ai::Actor> foes;
+        if (e.key.empty() || e.count <= 0) return foes;
+        const monsters::MonsterDef* def = registry.find(e.key);
+        if (!def) return foes;
+        foeCtxs.clear();
+        for (int i = 0; i < e.count; ++i) {
+            monsters::xp::SpawnContext ctx = rollSpawnContext(def);
+            if (e.headsLo > 0 && e.headsHi >= e.headsLo) {
+                ctx.heads = e.headsLo + (int)rng.below(
+                    (uint32_t)(e.headsHi - e.headsLo + 1));
+                ctx.hd = ctx.heads;   // by_head_count: heads = HD
+            }
+            if (e.ageLo > 0 && e.ageHi >= e.ageLo) {
+                ctx.ageBracket = e.ageLo + (int)rng.below(
+                    (uint32_t)(e.ageHi - e.ageLo + 1));
+            }
+            foeCtxs.push_back(ctx);
+            foes.push_back(registry.toActor(e.key, dice, -1,
+                                            ctx.hd,
+                                            hpPerDieFor(def, ctx)));
+        }
+        return foes;
+    }
+
+    // R52: a stored room lair back as a DMG encounter (the
+    // ranges survive population)
+    dm::DungeonEncounter encFromRoom(const RoomOccupant& r) {
+        dm::DungeonEncounter e;
+        e.key = r.monsterKey;
+        e.count = r.count;
+        e.headsLo = r.headsLo; e.headsHi = r.headsHi;
+        e.ageLo = r.ageLo;     e.ageHi = r.ageHi;
+        return e;
+    }
+
     void spawnRoomEncounter(int roomIndex) {
         if (mode == MODE_COMBAT) return;
         if (!party.alive()) return;
@@ -2558,17 +2636,11 @@ struct AppState {
         if (room.monsterKey.empty()) return;
 
         const monsters::MonsterDef* def = registry.find(room.monsterKey);
-        std::vector<ai::Actor> foes;
-        foeCtxs.clear();
-        for (int i = 0; i < room.count; ++i) {
-            // R51: each specimen rolls its own context (a group of
-            // dragons is not one age) and spawns from it
-            foeCtxs.push_back(rollSpawnContext(def));
-            const monsters::xp::SpawnContext& c = foeCtxs.back();
-            foes.push_back(registry.toActor(room.monsterKey, dice, -1,
-                                            c.hd,
-                                            hpPerDieFor(def, c)));
-        }
+        // R52: foes build through the DMG-range path (hydra
+        // heads / dragon age brackets, stored at population)
+        std::vector<ai::Actor> foes =
+            buildFoesFromDm(encFromRoom(room));
+        if (foes.empty()) return;
         const char* mname = def ? def->name.c_str() : "monster";
         char buf[96];
         if (room.count == 1)
@@ -2584,29 +2656,24 @@ struct AppState {
     void spawnWanderingEncounter() {        if (mode == MODE_COMBAT) return;
         if (!party.alive()) return;
 
-        auto candidates = registry.keysForLevel(dungeonLevel);
-        if (candidates.empty()) return;
-        std::string key =
-            candidates[(size_t)rng.below((uint32_t)candidates.size())];
-        const monsters::MonsterDef* def = registry.find(key);
-
-        int count = 1 + (int)rng.below((uint32_t)roomCountCap());
-        std::vector<ai::Actor> foes;
-        foeCtxs.clear();
-        for (int i = 0; i < count; ++i) {
-            foeCtxs.push_back(rollSpawnContext(def));   // R51: per foe
-            const monsters::xp::SpawnContext& c = foeCtxs.back();
-            foes.push_back(registry.toActor(key, dice, -1,
-                                            c.hd,
-                                            hpPerDieFor(def, c)));
-        }
+        // R52: the real DMG Appendix C roll — Determination
+        // Matrix, level table, subtables (Human/Dragon/etc.).
+        // An empty key is NO ENCOUNTER (or an R53 re-roll row).
+        dm::DungeonEncounter e = rollDmEncounter();
+        if (e.key.empty() || e.count <= 0) return;
+        std::vector<ai::Actor> foes = buildFoesFromDm(e);
+        if (foes.empty()) return;
 
         char buf[96];
-        snprintf(buf, sizeof buf, "%d wandering %s attack!",
-                 count, key.c_str());
+        if (e.count == 1)
+            snprintf(buf, sizeof buf, "A wandering %s attacks!",
+                     e.key.c_str());
+        else
+            snprintf(buf, sizeof buf, "%d wandering %ss attack!",
+                     e.count, e.key.c_str());
         log.add(buf);
 
-        beginCombat(std::move(foes), -1, key);
+        beginCombat(std::move(foes), -1, e.key);
     }
 
     void playerFlee() {
