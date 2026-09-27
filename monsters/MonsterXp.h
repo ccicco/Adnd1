@@ -75,5 +75,10 @@ int tierOf(const MonsterDef& def);
 // Total XP for killing one specimen. Dispatches on def.xpSource.
 int xpForKill(const MonsterDef& def, const SpawnContext& ctx);
 
+// R53: XP for a classed NPC killed OUTSIDE the lua registry —
+// Character Subtable party members (the def-free by_level
+// path; same DMG p.85 formula xpForKill dispatches to).
+int xpForNpc(const SpawnContext& ctx);
+
 } // namespace xp
 } // namespace monsters
