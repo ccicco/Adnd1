@@ -138,8 +138,14 @@ public:
 
     // Instantiate as a combat actor (hp rolled from HD + bonus; a
     // flat-hp monster with no dice uses its book average).
+    // R51: hdOverride rolls that many dice instead of the def's
+    // hitDiceNum (dragons: rolled species HD; hydra: heads; animals:
+    // rolled variable HD). hpPerDie > 0 gives FIXED hp per die
+    // instead of a roll (dragon age bracket 1-8; hydra 8/hd full).
+    // a.hitDice reflects the override so attack matrices follow.
     ai::Actor toActor(const std::string& key, rules::Dice& dice,
-                      int hp = -1) const;   // hp < 0 = roll from HD
+                      int hp = -1, int hdOverride = -1,
+                      int hpPerDie = 0) const;   // hp < 0 = roll from HD
 
     // Monsters tagged for a dungeon level (Appendix C-ish filter)
     std::vector<std::string> keysForLevel(int dungeonLevel) const;
