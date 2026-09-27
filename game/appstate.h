@@ -522,7 +522,9 @@ struct AppState {
     CombatState combat;
     int         combatRoomIndex = -1;
     std::string combatMonsterKey;
-    monsters::xp::SpawnContext combatCtx;   // R50: rolled at spawn
+    // R51: one context PER FOE (each dragon rolls its own age);
+    // awardVictory indexes by slain-monster position
+    std::vector<monsters::xp::SpawnContext> foeCtxs;
 
     // R23: stairs down â placed in the room farthest from entry
     int stairsX = -1, stairsY = -1;
@@ -2134,10 +2136,14 @@ struct AppState {
 
         int slain = 0;
         int totalXp = 0;
+        int idx = 0;
         for (const auto& m : combat.encounter->monsters()) {
+            monsters::xp::SpawnContext ctx =   // R51: per-foe context
+                (idx < (int)foeCtxs.size()) ? foeCtxs[idx]
+                                            : monsters::xp::SpawnContext();
+            ++idx;
             if (m.alive()) continue;
             ++slain;
-            monsters::xp::SpawnContext ctx = combatCtx;
             ctx.actualHp = m.maxHp;      // the specimen actually fought
             totalXp += def ? monsters::xp::xpForKill(*def, ctx) : 10;
         }
@@ -2531,6 +2537,17 @@ struct AppState {
         return ctx;
     }
 
+    // R51: fixed hp-per-die for the dispatch types that carry it
+    // (dragon age bracket 1-8; hydra heads are a full 8 hp each,
+    // MM1). Others roll dice in toActor.
+    static int hpPerDieFor(const monsters::MonsterDef* def,
+                           const monsters::xp::SpawnContext& c) {
+        if (!def) return 0;
+        if (def->xpSource == "age_bracket")  return c.ageBracket;
+        if (def->xpSource == "by_head_count") return 8;
+        return 0;
+    }
+
     void spawnRoomEncounter(int roomIndex) {
         if (mode == MODE_COMBAT) return;
         if (!party.alive()) return;
@@ -2540,12 +2557,18 @@ struct AppState {
         RoomOccupant& room = occupancy.rooms[roomIndex];
         if (room.monsterKey.empty()) return;
 
-        std::vector<ai::Actor> foes;
-        for (int i = 0; i < room.count; ++i)
-            foes.push_back(registry.toActor(room.monsterKey, dice));
-
         const monsters::MonsterDef* def = registry.find(room.monsterKey);
-        combatCtx = rollSpawnContext(def);          // R50
+        std::vector<ai::Actor> foes;
+        foeCtxs.clear();
+        for (int i = 0; i < room.count; ++i) {
+            // R51: each specimen rolls its own context (a group of
+            // dragons is not one age) and spawns from it
+            foeCtxs.push_back(rollSpawnContext(def));
+            const monsters::xp::SpawnContext& c = foeCtxs.back();
+            foes.push_back(registry.toActor(room.monsterKey, dice, -1,
+                                            c.hd,
+                                            hpPerDieFor(def, c)));
+        }
         const char* mname = def ? def->name.c_str() : "monster";
         char buf[96];
         if (room.count == 1)
@@ -2565,12 +2588,18 @@ struct AppState {
         if (candidates.empty()) return;
         std::string key =
             candidates[(size_t)rng.below((uint32_t)candidates.size())];
-        combatCtx = rollSpawnContext(registry.find(key));   // R50
+        const monsters::MonsterDef* def = registry.find(key);
 
         int count = 1 + (int)rng.below((uint32_t)roomCountCap());
         std::vector<ai::Actor> foes;
-        for (int i = 0; i < count; ++i)
-            foes.push_back(registry.toActor(key, dice));
+        foeCtxs.clear();
+        for (int i = 0; i < count; ++i) {
+            foeCtxs.push_back(rollSpawnContext(def));   // R51: per foe
+            const monsters::xp::SpawnContext& c = foeCtxs.back();
+            foes.push_back(registry.toActor(key, dice, -1,
+                                            c.hd,
+                                            hpPerDieFor(def, c)));
+        }
 
         char buf[96];
         snprintf(buf, sizeof buf, "%d wandering %s attack!",
