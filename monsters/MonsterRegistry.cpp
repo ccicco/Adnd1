@@ -1,6 +1,11 @@
 // ============================================================================
 // Adnd1 — monsters/MonsterRegistry.cpp
 // Lua 5.4 C API loading of monster files.
+//
+// R49: field mapping remapped to the mm2lua.py schema (v2) — see the
+// header. All coercers are defensive: the Lua files carry numbers,
+// strings, and mixed tables (armorClass = 2 or {2, "underside 4"}),
+// and nothing may crash or silently NaN on any of them.
 // ============================================================================
 
 #include "MonsterRegistry.h"
@@ -28,13 +33,6 @@ const char* specialAttackTypeName(SpecialAttackType t) {
 // ----------------------------------------------------------------------------
 
 namespace {
-
-bool luaHasValue(lua_State* L, const char* key) {
-    lua_getfield(L, -1, key);
-    bool has = !lua_isnil(L, -1);
-    lua_pop(L, 1);
-    return has;
-}
 
 int luaGetInt(lua_State* L, const char* key, int def) {
     lua_getfield(L, -1, key);
@@ -68,6 +66,162 @@ std::string luaGetStr(lua_State* L, const char* key, const char* def) {
     return v;
 }
 
+bool hasKey(lua_State* L, const char* key) {
+    // top of stack: the monster table
+    lua_getfield(L, -1, key);
+    bool present = !lua_isnoneornil(L, -1);
+    lua_pop(L, 1);
+    return present;
+}
+
+// first integer embedded in a string ("25%" -> 25, "Overall 2" -> 2)
+int firstIntIn(const std::string& s, int def) {
+    for (size_t i = 0; i < s.size(); ++i) {
+        if (isdigit((unsigned char)s[i])) {
+            int v = 0;
+            size_t j = i;
+            while (j < s.size() && isdigit((unsigned char)s[j])) {
+                v = v * 10 + (s[j] - '0');
+                ++j;
+            }
+            return v;
+        }
+    }
+    return def;
+}
+
+// ----------------------------------------------------------------------------
+// armorClass: number | table (first numeric entry) | string
+// Lua: armorClass = 2   /   { 2, "underside 4" }   /   "See below"
+// ----------------------------------------------------------------------------
+int luaGetArmorClass(lua_State* L, int def) {
+    lua_getfield(L, -1, "armorClass");
+    int v = def;
+    if (lua_isnumber(L, -1)) {
+        v = (int)lua_tointeger(L, -1);
+    } else if (lua_istable(L, -1)) {
+        // mixed list: take the first numeric entry, or the first
+        // integer embedded in a string entry ("Overall 2" -> 2)
+        size_t len = lua_rawlen(L, -1);
+        for (size_t i = 1; i <= len && v == def; ++i) {
+            lua_geti(L, -1, (lua_Integer)i);
+            if (lua_isnumber(L, -1)) v = (int)lua_tointeger(L, -1);
+            else if (lua_isstring(L, -1))
+                v = firstIntIn(lua_tostring(L, -1), def);
+            lua_pop(L, 1);
+        }
+    } else if (lua_isstring(L, -1)) {
+        v = firstIntIn(lua_tostring(L, -1), def);
+    }
+    lua_pop(L, 1);
+    return v;
+}
+
+// ----------------------------------------------------------------------------
+// numAttacks: number | string.
+//   "1 and 1" -> 2 (bite + tail, purple worm)      "2-4" -> 4 (use max)
+//   "1-2 or 2-5" style text -> firstIntIn as floor of 1.
+// ----------------------------------------------------------------------------
+int luaGetNumAttacks(lua_State* L, int def) {
+    lua_getfield(L, -1, "numAttacks");
+    int v = def;
+    if (lua_isnumber(L, -1)) {
+        v = (int)lua_tointeger(L, -1);
+    } else if (lua_isstring(L, -1)) {
+        std::string s = lua_tostring(L, -1);
+        // collect all integers
+        std::vector<int> nums;
+        for (size_t i = 0; i < s.size(); ++i) {
+            if (isdigit((unsigned char)s[i])) {
+                int n = 0;
+                size_t j = i;
+                while (j < s.size() && isdigit((unsigned char)s[j])) {
+                    n = n * 10 + (s[j] - '0');
+                    ++j;
+                }
+                nums.push_back(n);
+                i = j - 1;
+            }
+        }
+        if (!nums.empty()) {
+            if (s.find("and") != std::string::npos) {
+                // "1 and 1" -> sum
+                v = 0;
+                for (int n : nums) v += n;
+            } else {
+                // "2-4" / "2-8 by weapon" -> max
+                v = nums[0];
+                for (int n : nums) if (n > v) v = n;
+            }
+        }
+    }
+    if (v < 1) v = 1;
+    if (v > 10) v = 10;   // sanity clamp
+    lua_pop(L, 1);
+    return v;
+}
+
+// ----------------------------------------------------------------------------
+// damage: array of { min = a, max = b } (or { raw = "..." } entries).
+// Stores the routines; the primary (largest max) is approximated as
+// one die of (max-min+1) sides for Actor's single dice pair.
+// ----------------------------------------------------------------------------
+void luaGetDamage(lua_State* L, MonsterDef& def) {
+    lua_getfield(L, -1, "damage");
+    if (lua_istable(L, -1)) {
+        size_t len = lua_rawlen(L, -1);
+        for (size_t i = 1; i <= len; ++i) {
+            lua_geti(L, -1, (lua_Integer)i);
+            if (lua_istable(L, -1)) {
+                DamageRoutine r;
+                lua_getfield(L, -1, "min");
+                if (lua_isnumber(L, -1)) r.min = (int)lua_tointeger(L, -1);
+                lua_pop(L, 1);
+                lua_getfield(L, -1, "max");
+                if (lua_isnumber(L, -1)) r.max = (int)lua_tointeger(L, -1);
+                lua_pop(L, 1);
+                if (r.max >= r.min && r.max > 0)
+                    def.damageRoutines.push_back(r);
+            }
+            lua_pop(L, 1);
+        }
+    }
+    lua_pop(L, 1);
+
+    if (!def.damageRoutines.empty()) {
+        // primary routine: largest max damage
+        const DamageRoutine* best = &def.damageRoutines[0];
+        for (const auto& r : def.damageRoutines)
+            if (r.max > best->max) best = &r;
+        def.damageCount = 1;
+        def.damageSides = best->max - best->min + 1;
+        if (def.damageSides < 1) def.damageSides = 1;
+        if (def.damageSides > 100) def.damageSides = 100;  // sanity
+    }
+    // else: keep the 1d6 default (Nil-damage monsters: shrieker etc.)
+}
+
+// ----------------------------------------------------------------------------
+// magicResistance: number | "25%" | "Standard" | "Nil"
+// ----------------------------------------------------------------------------
+int luaGetMagicResist(lua_State* L, int def) {
+    lua_getfield(L, -1, "magicResistance");
+    int v = def;
+    if (lua_isnumber(L, -1)) {
+        v = (int)lua_tointeger(L, -1);
+    } else if (lua_isstring(L, -1)) {
+        std::string s = lua_tostring(L, -1);
+        // "25%" -> 25; "Standard"/"Nil"/"See below" -> 0 (no innate %)
+        v = firstIntIn(s, 0);
+    }
+    lua_pop(L, 1);
+    return v;
+}
+
+// ----------------------------------------------------------------------------
+// special attacks from the prose field (Lua specialAttacks string).
+// Keyword-matched; the R18 typed table form is still honored first.
+// ----------------------------------------------------------------------------
 SpecialAttackType parseSpecialType(const std::string& s) {
     if (s == "poison")        return SPECIAL_POISON;
     if (s == "paralysis")     return SPECIAL_PARALYSIS;
@@ -76,182 +230,132 @@ SpecialAttackType parseSpecialType(const std::string& s) {
     return SPECIAL_NONE;
 }
 
-std::string trim(const std::string& s) {
-    size_t start = 0;
-    while (start < s.size() &&
-           std::isspace((unsigned char)s[start])) ++start;
-    size_t end = s.size();
-    while (end > start &&
-           std::isspace((unsigned char)s[end - 1])) --end;
-    return s.substr(start, end - start);
+// lowercase contains-helper
+bool containsCI(const std::string& hay, const char* needle) {
+    std::string h;
+    h.reserve(hay.size());
+    for (char c : hay) h += (char)tolower((unsigned char)c);
+    return h.find(needle) != std::string::npos;
 }
 
-bool parseImportedMagicResist(lua_State* L, int& value, std::string& error) {
-    lua_getfield(L, -1, "magicResistance");
-    if (lua_isnil(L, -1)) {
-        lua_pop(L, 1);
-        value = 0;
-        return true;
+void deriveSpecials(MonsterDef& def) {
+    // (1) typed table form (R18 legacy / hand-authored files)
+    // handled in loadFile; here we derive from the text fields.
+
+    // (2) text keyword derivation
+    const std::string& atk = def.specialAttacksText;
+    const std::string& dfs = def.specialDefensesText;
+
+    bool haveEnergy = false, havePoison = false,
+         haveParalysis = false, haveBreath = false;
+    for (const auto& sp : def.specials) {
+        if (sp.type == SPECIAL_ENERGY_DRAIN)  haveEnergy = true;
+        if (sp.type == SPECIAL_POISON)        havePoison = true;
+        if (sp.type == SPECIAL_PARALYSIS)     haveParalysis = true;
+        if (sp.type == SPECIAL_BREATH_WEAPON) haveBreath = true;
     }
-    if (lua_isnumber(L, -1)) {
-        value = (int)lua_tointeger(L, -1);
-        lua_pop(L, 1);
-        return true;
+
+    if (!haveEnergy && (containsCI(atk, "energy drain") ||
+                        containsCI(atk, "drain"))) {
+        SpecialAttack sp;
+        sp.type = SPECIAL_ENERGY_DRAIN;
+        sp.name = "energy drain";
+        sp.drainLevels = 1;
+        // "2 levels" per hit? (vampire-like) — parse "N level"
+        int n = firstIntIn(atk, 1);
+        if (atk.find("level") != std::string::npos && n >= 1 && n <= 4)
+            sp.drainLevels = n;
+        def.specials.push_back(sp);
     }
-    if (!lua_isstring(L, -1)) {
-        error = "imported runtime field 'magicResistance' must be a percent string or number";
-        lua_pop(L, 1);
-        return false;
+    if (!havePoison && (containsCI(atk, "poison") ||
+                        containsCI(dfs, "poison"))) {
+        SpecialAttack sp;
+        sp.type = SPECIAL_POISON;
+        sp.name = "poison";
+        def.specials.push_back(sp);
     }
-    std::string text = trim(lua_tostring(L, -1));
+    if (!haveParalysis && (containsCI(atk, "paralys") ||
+                           containsCI(atk, "paralyz"))) {
+        SpecialAttack sp;
+        sp.type = SPECIAL_PARALYSIS;
+        sp.name = "paralysis";
+        def.specials.push_back(sp);
+    }
+    if (!haveBreath && containsCI(atk, "breath")) {
+        SpecialAttack sp;
+        sp.type = SPECIAL_BREATH_WEAPON;
+        sp.name = "breath weapon";
+        // dice from the damage routines when they look like breath
+        // (second routine for dragons: claws/claw/bite vs breath)
+        if (def.damageRoutines.size() >= 2) {
+            const DamageRoutine& r = def.damageRoutines[1];
+            sp.diceCount = 2;
+            sp.diceSides = r.max - r.min + 1;
+        }
+        def.specials.push_back(sp);
+    }
+}
+
+// ----------------------------------------------------------------------------
+// nested-table int reads: noAppearing = {min=..,max=..}, move = {rate=..}
+// ----------------------------------------------------------------------------
+int luaGetNestedInt(lua_State* L, const char* table, const char* field,
+                    int def) {
+    lua_getfield(L, -1, table);
+    int v = def;
+    if (lua_istable(L, -1)) {
+        lua_getfield(L, -1, field);
+        if (lua_isnumber(L, -1)) v = (int)lua_tointeger(L, -1);
+        lua_pop(L, 1);
+    } else if (lua_isnumber(L, -1)) {
+        v = (int)lua_tointeger(L, -1);   // tolerate a flat number
+    }
     lua_pop(L, 1);
-    if (text.empty() || text == "Standard" || text == "Nil") {
-        value = 0;
-        return true;
-    }
-    int percent = 0;
-    if (std::sscanf(text.c_str(), "%d%%", &percent) == 1) {
-        value = percent;
-        return true;
-    }
-    error = "imported runtime field 'magicResistance' must look like '90%' or 'Standard'";
+    return v;
+}
+
+// ----------------------------------------------------------------------------
+// heuristics (explicit Lua fields override where they exist)
+// ----------------------------------------------------------------------------
+bool looksUndead(const std::string& name) {
+    static const char* kw[] = {
+        "skeleton", "zombie", "ghoul", "wight", "wraith", "mummy",
+        "spectre", "specter", "vampire", "ghost", "lich", "shadow",
+        "ghast", nullptr
+    };
+    for (int i = 0; kw[i]; ++i)
+        if (containsCI(name, kw[i])) return true;
     return false;
 }
 
-bool parseFlatDamageRaw(const std::string& raw, int& damage) {
-    std::string text = trim(raw);
-    if (text.empty()) return false;
-
-    size_t pos = 0;
-    while (pos < text.size() &&
-           std::isdigit((unsigned char)text[pos])) ++pos;
-    if (pos == 0) return false;
-
-    int parsed = std::atoi(text.substr(0, pos).c_str());
-    std::string tail = trim(text.substr(pos));
-    for (char& ch : tail)
-        ch = (char)std::tolower((unsigned char)ch);
-
-    if (tail.empty() || tail == "each") {
-        damage = parsed;
-        return true;
-    }
-    return false;
+int requiredPlusFromText(const std::string& s) {
+    // "+2 or better" -> 2 ; "magic weapon(s)" -> 1
+    if (s.find("+2") != std::string::npos) return 2;
+    if (s.find("+3") != std::string::npos) return 3;
+    if (containsCI(s, "magic weapon")) return 1;
+    return 0;
 }
 
-bool parseImportedDamage(lua_State* L, MonsterDef& def, std::string& error) {
-    lua_getfield(L, -1, "damage");
-    if (lua_isnil(L, -1)) {
-        error = "imported runtime field 'damage' is required";
-        lua_pop(L, 1);
-        return false;
-    }
-    if (!lua_istable(L, -1)) {
-        error = "imported runtime field 'damage' must be a table";
-        lua_pop(L, 1);
-        return false;
-    }
+int moraleFromIntelligence(const std::string& intel) {
+    if (intel.empty()) return 12;
+    if (containsCI(intel, "non-") || containsCI(intel, "nil") ||
+        containsCI(intel, "none") || containsCI(intel, "semi"))
+        return 10;   // mindless/semi: fight on, no cunning retreat
+    if (containsCI(intel, "low") || containsCI(intel, "animal"))
+        return 9;
+    if (containsCI(intel, "average"))
+        return 11;
+    return 12;   // high/excellent/genius+: confident
+}
 
-    size_t len = lua_rawlen(L, -1);
-    if (len == 0) {
-        error = "imported runtime field 'damage' must not be empty";
-        lua_pop(L, 1);
-        return false;
-    }
-
-    bool haveProfile = false;
-    int resolvedMin = 0;
-    int resolvedMax = 0;
-    std::string resolvedRaw;
-
-    for (size_t i = 1; i <= len; ++i) {
-        lua_geti(L, -1, (lua_Integer)i);
-        if (!lua_istable(L, -1)) {
-            error = "imported runtime field 'damage[" +
-                    std::to_string(i) + "]' must be a table";
-            lua_pop(L, 2);
-            return false;
-        }
-
-        int entryMin = 0;
-        int entryMax = 0;
-        std::string entryRaw;
-
-        lua_getfield(L, -1, "raw");
-        if (lua_isstring(L, -1))
-            entryRaw = lua_tostring(L, -1);
-        lua_pop(L, 1);
-
-        if (!entryRaw.empty()) {
-            int flatDamage = 0;
-            if (!parseFlatDamageRaw(entryRaw, flatDamage)) {
-                error = "imported runtime field 'damage[" +
-                        std::to_string(i) + "].raw' (" + entryRaw +
-                        ") cannot be mapped to the current runtime damage model";
-                lua_pop(L, 2);
-                return false;
-            }
-            entryMin = flatDamage;
-            entryMax = flatDamage;
-        } else {
-            lua_getfield(L, -1, "min");
-            bool hasMin = lua_isnumber(L, -1);
-            if (hasMin) entryMin = (int)lua_tointeger(L, -1);
-            lua_pop(L, 1);
-
-            lua_getfield(L, -1, "max");
-            bool hasMax = lua_isnumber(L, -1);
-            if (hasMax) entryMax = (int)lua_tointeger(L, -1);
-            lua_pop(L, 1);
-
-            if (!hasMin || !hasMax) {
-                error = "imported runtime field 'damage[" +
-                        std::to_string(i) + "]' must provide numeric min/max or a raw string";
-                lua_pop(L, 2);
-                return false;
-            }
-            if (entryMin < 0 || entryMax < entryMin) {
-                error = "imported runtime field 'damage[" +
-                        std::to_string(i) + "]' has invalid min/max bounds";
-                lua_pop(L, 2);
-                return false;
-            }
-        }
-
-        if (!haveProfile) {
-            haveProfile = true;
-            resolvedMin = entryMin;
-            resolvedMax = entryMax;
-            resolvedRaw = entryRaw;
-        } else if (resolvedMin != entryMin || resolvedMax != entryMax ||
-                   resolvedRaw != entryRaw) {
-            error = "imported runtime field 'damage' has multiple attack profiles that cannot be represented by the current runtime model";
-            lua_pop(L, 2);
-            return false;
-        }
-
-        lua_pop(L, 1);
-    }
-
-    lua_pop(L, 1);
-
-    def.damageMin = resolvedMin;
-    def.damageMax = resolvedMax;
-    def.damageRaw = resolvedRaw;
-    if (resolvedMin == resolvedMax) {
-        def.damageCount = 0;
-        def.damageSides = 0;
-        def.damageBonus = resolvedMin;
-    } else if (resolvedMin == 1) {
-        def.damageCount = 1;
-        def.damageSides = resolvedMax;
-        def.damageBonus = 0;
-    } else {
-        def.damageCount = 0;
-        def.damageSides = 0;
-        def.damageBonus = 0;
-    }
-    return true;
+int levelTagFromHd(float hd) {
+    // crude Appendix C-ish banding: depth ~ HD/2
+    if (hd <= 2.0f)  return 1;
+    if (hd <= 4.0f)  return 2;
+    if (hd <= 6.0f)  return 3;
+    if (hd <= 9.0f)  return 4;
+    if (hd <= 13.0f) return 5;
+    return 6;
 }
 
 } // namespace
@@ -285,125 +389,83 @@ bool MonsterRegistry::loadFile(const std::string& path,
     def.key = key;
     def.name = luaGetStr(L, "name", key.c_str());
 
-    // Imported runtime aliases take precedence when the record opts
-    // into the imported schema with hitDiceNum. Transitional/legacy
-    // records that add other imported-looking fields continue to load
-    // via the legacy hd/ac/attacks keys until they provide hitDiceNum.
-    const bool importedRuntime = luaHasValue(L, "hitDiceNum");
-
-    if (importedRuntime) {
-        if (!luaHasValue(L, "hitDiceNum")) {
-            m_errors.push_back(key + ": imported runtime field 'hitDiceNum' is required");
-            lua_close(L);
-            return false;
-        }
-        if (!luaHasValue(L, "hitDiceBonus")) {
-            m_errors.push_back(key + ": imported runtime field 'hitDiceBonus' is required");
-            lua_close(L);
-            return false;
-        }
-        if (!luaHasValue(L, "armorClass")) {
-            m_errors.push_back(key + ": imported runtime field 'armorClass' is required");
-            lua_close(L);
-            return false;
-        }
-        if (!luaHasValue(L, "numAttacks")) {
-            m_errors.push_back(key + ": imported runtime field 'numAttacks' is required");
-            lua_close(L);
-            return false;
-        }
-        if (!luaHasValue(L, "xpValue")) {
-            m_errors.push_back(key + ": imported runtime field 'xpValue' is required");
-            lua_close(L);
-            return false;
-        }
-
-        lua_getfield(L, -1, "hitDiceNum");
-        if (!lua_isnumber(L, -1)) {
-            m_errors.push_back(key + ": imported runtime field 'hitDiceNum' must be a number");
-            lua_close(L);
-            return false;
-        }
-        def.hitDice = (float)lua_tonumber(L, -1);
-        lua_pop(L, 1);
-
-        lua_getfield(L, -1, "hitDiceBonus");
-        if (!lua_isnumber(L, -1)) {
-            m_errors.push_back(key + ": imported runtime field 'hitDiceBonus' must be a number");
-            lua_close(L);
-            return false;
-        }
-        def.hitPointBonus = (int)lua_tointeger(L, -1);
-        lua_pop(L, 1);
-
-        lua_getfield(L, -1, "armorClass");
-        if (!lua_isnumber(L, -1)) {
-            m_errors.push_back(key + ": imported runtime field 'armorClass' must be a numeric armor class");
-            lua_close(L);
-            return false;
-        }
-        def.armorClass = (int)lua_tointeger(L, -1);
-        lua_pop(L, 1);
-
-        lua_getfield(L, -1, "numAttacks");
-        if (!lua_isnumber(L, -1)) {
-            m_errors.push_back(key + ": imported runtime field 'numAttacks' must be a number");
-            lua_close(L);
-            return false;
-        }
-        def.attacks = (int)lua_tointeger(L, -1);
-        lua_pop(L, 1);
-
-        lua_getfield(L, -1, "xpValue");
-        if (!lua_isnumber(L, -1)) {
-            m_errors.push_back(key + ": imported runtime field 'xpValue' must be a number");
-            lua_close(L);
-            return false;
-        }
-        def.xpValue = (int)lua_tointeger(L, -1);
-        lua_pop(L, 1);
-
-        std::string importedError;
-        if (!parseImportedDamage(L, def, importedError)) {
-            m_errors.push_back(key + ": " + importedError);
-            lua_close(L);
-            return false;
-        }
-        if (!parseImportedMagicResist(L, def.magicResist, importedError)) {
-            m_errors.push_back(key + ": " + importedError);
-            lua_close(L);
-            return false;
+    // ---- hit dice (new schema; fall back to legacy hd/hpBonus) ----
+    if (hasKey(L, "hitDiceNum") || hasKey(L, "hitDice")) {
+        def.hitDiceNum   = luaGetInt(L, "hitDiceNum", 1);
+        def.hitDiceBonus = luaGetInt(L, "hitDiceBonus", 0);
+        def.hitDiceText  = luaGetStr(L, "hitDice", "1");
+        def.avgHp        = luaGetInt(L, "avgHp", 0);
+        if (def.hitDiceNum < 1 && def.avgHp > 0) {
+            // flat-hp monster ("50 hp"): equivalent dice from avg hp
+            float equiv = def.avgHp / 4.5f;
+            def.hitDice = equiv;
+        } else {
+            def.hitDice = (float)def.hitDiceNum + def.hitDiceBonus / 4.0f;
         }
     } else {
+        // legacy: hd / hpBonus
         def.hitDice = luaGetNum(L, "hd", 1.0f);
-        def.hitPointBonus = luaGetInt(L, "hpBonus", 0);
-        def.armorClass = luaGetInt(L, "ac", 9);
-        def.attacks = luaGetInt(L, "attacks", 1);
-        def.damageCount = luaGetInt(L, "damageCount", 1);
-        def.damageSides = luaGetInt(L, "damageSides", 6);
-        def.damageBonus = 0;
-        if (def.damageCount > 0 && def.damageSides > 0) {
-            def.damageMin = def.damageCount;
-            def.damageMax = def.damageCount * def.damageSides;
-        }
-        if (luaHasValue(L, "xpValue"))
-            def.xpValue = luaGetInt(L, "xpValue", 10);
-        else
-            def.xpValue = luaGetInt(L, "xp", 10);
+        def.hitDiceNum = (int)def.hitDice;
+        def.hitDiceBonus = luaGetInt(L, "hpBonus", 0);
     }
 
-    def.morale = luaGetInt(L, "morale", 12);
-    if (!importedRuntime)
-        def.magicResist = luaGetInt(L, "magicResist", 0);
-    def.undead = luaGetBool(L, "undead", false);
-    def.requiredPlus = luaGetInt(L, "requiredPlus", 0);
-    def.levelTag = luaGetInt(L, "levelTag", 1);
-    def.isLeader = luaGetBool(L, "isLeader", false);
+    // ---- armor class (new: number|string|table; legacy: ac) ----
+    if (hasKey(L, "armorClass"))
+        def.armorClass = luaGetArmorClass(L, 9);
+    else
+        def.armorClass = luaGetInt(L, "ac", 9);
 
-    // specialAttacks = { { type="poison", name="...", save=0,
-    //                      penalty=0, dice=0, sides=0, drain=1 }, ... }
+    // ---- attacks (new: numAttacks number|string; legacy: attacks) ----
+    if (hasKey(L, "numAttacks"))
+        def.attacks = luaGetNumAttacks(L, 1);
+    else
+        def.attacks = luaGetInt(L, "attacks", 1);
+
+    // ---- damage (new: damage array; legacy: damageCount/damageSides) ----
+    luaGetDamage(L, def);
+    if (def.damageRoutines.empty()) {
+        def.damageCount = luaGetInt(L, "damageCount", 1);
+        def.damageSides = luaGetInt(L, "damageSides", 6);
+    }
+
+    // ---- magic resistance (new: string %; legacy: number) ----
+    if (hasKey(L, "magicResistance"))
+        def.magicResist = luaGetMagicResist(L, 0);
+    else
+        def.magicResist = luaGetInt(L, "magicResist", 0);
+
+    // ---- XP (new: xp / xpPerHp / xpValue / xpSource; legacy: xp) ----
+    def.xpBase   = luaGetInt(L, "xp", 0);
+    def.xpPerHp  = luaGetInt(L, "xpPerHp", 0);
+    def.xpSource = luaGetStr(L, "xpSource", "");
+    if (hasKey(L, "xpValue")) {
+        def.xpValue = luaGetInt(L, "xpValue", 10);
+    } else if (def.xpBase > 0) {
+        // legacy xp field carried the whole value
+        def.xpValue = def.xpBase;
+    } else {
+        def.xpValue = 10;
+    }
+    // never award less than the base
+    if (def.xpValue < def.xpBase) def.xpValue = def.xpBase;
+
+    // ---- descriptive fields (R49) ----
+    def.frequency            = luaGetStr(L, "frequency", "");
+    def.noAppearingMin       = luaGetNestedInt(L, "noAppearing", "min", 0);
+    def.noAppearingMax       = luaGetNestedInt(L, "noAppearing", "max", 0);
+    def.lairPct              = luaGetInt(L, "lairPct", 0);
+    def.moveRate             = luaGetNestedInt(L, "move", "rate", 0);
+    def.size                 = luaGetStr(L, "size", "");
+    def.intelligence         = luaGetStr(L, "intelligence", "");
+    def.alignment            = luaGetStr(L, "alignment", "");
+    def.specialAttacksText   = luaGetStr(L, "specialAttacks", "");
+    def.specialDefensesText  = luaGetStr(L, "specialDefenses", "");
+    def.text                 = luaGetStr(L, "text", "");
+
+    // ---- specialAttacks: typed table form first (R18) ----
     lua_getfield(L, -1, "specialAttacks");
-    if (lua_istable(L, -1)) {
+    if (lua_istable(L, -1) && lua_rawlen(L, -1) > 0) {
+        // array of typed sub-tables { type="poison", ... }
         size_t len = lua_rawlen(L, -1);
         for (size_t i = 1; i <= len; ++i) {
             lua_geti(L, -1, (lua_Integer)i);
@@ -421,8 +483,22 @@ bool MonsterRegistry::loadFile(const std::string& path,
             }
             lua_pop(L, 1);   // the entry
         }
+        lua_pop(L, 1);   // specialAttacks
+    } else {
+        lua_pop(L, 1);
+        // text form (mm2lua schema): derive from the prose fields
+        deriveSpecials(def);
     }
-    lua_pop(L, 1);   // specialAttacks
+
+    // ---- heuristics (fields the Lua schema does not carry) ----
+    def.morale = luaGetInt(L, "morale",
+                           moraleFromIntelligence(def.intelligence));
+    def.undead = luaGetBool(L, "undead", looksUndead(def.name));
+    def.requiredPlus = luaGetInt(L, "requiredPlus",
+                                 requiredPlusFromText(def.specialDefensesText));
+    def.levelTag = luaGetInt(L, "levelTag",
+                             levelTagFromHd(def.hitDice));
+    def.isLeader = luaGetBool(L, "isLeader", false);
 
     lua_close(L);
     m_defs[key] = def;
@@ -431,8 +507,7 @@ bool MonsterRegistry::loadFile(const std::string& path,
 
 // ----------------------------------------------------------------------------
 // Directory load: platform-scoped. On Win32 uses FindFirstFileA;
-// otherwise returns -1 (the test harness writes temp files via a
-// directory the game controls — see test).
+// otherwise POSIX readdir (tests/dev on non-Windows).
 // ----------------------------------------------------------------------------
 
 #ifdef _WIN32
@@ -493,40 +568,27 @@ ai::Actor MonsterRegistry::toActor(const std::string& key,
     a.isCharacter = false;
     a.team = 1;
     a.hitDice = def->hitDice;
-    a.monsterArmorClass = def->armorClass;
-    a.hasMonsterArmorClass = true;
     a.monsterAttacks = def->attacks;
     a.monsterDamageCount = def->damageCount;
     a.monsterDamageSides = def->damageSides;
-    a.monsterDamageBonus = def->damageBonus;
-    a.monsterDamageMin = def->damageMin;
-    a.monsterDamageMax = def->damageMax;
-    a.monsterDamageRaw = def->damageRaw;
     a.magicResistPct = def->magicResist;
     a.undead = def->undead;
     a.requiredPlusToHit = def->requiredPlus;
     a.morale = def->morale;
     a.isLeader = def->isLeader;
-    for (const SpecialAttack& sp : def->specials) {
-        ai::ActorSpecial actorSp;
-        actorSp.type = (int)sp.type;
-        actorSp.name = sp.name;
-        actorSp.saveCategory = sp.saveCategory;
-        actorSp.savePenalty = sp.savePenalty;
-        actorSp.diceCount = sp.diceCount;
-        actorSp.diceSides = sp.diceSides;
-        actorSp.drainLevels = sp.drainLevels;
-        a.specials.push_back(actorSp);
-    }
 
-    // hp: roll hit dice + bonus, or use the provided value
+    // hp: roll hit dice + bonus, use the provided value, or fall
+    // back to the book average for flat-hp monsters
     if (hp < 0) {
-        int full = (int)def->hitDice;
-        float frac = def->hitDice - full;
-        int rolled = (int)dice.roll((uint32_t)(full > 0 ? full : 1), 8,
-                                    def->hitPointBonus);
-        if (frac > 0) rolled += (int)(frac * 8);   // +1 per 1/2 HD approx
-        hp = rolled < 1 ? 1 : rolled;
+        if (def->hitDiceNum >= 1) {
+            hp = (int)dice.roll((uint32_t)def->hitDiceNum, 8,
+                                def->hitDiceBonus);
+        } else if (def->avgHp > 0) {
+            hp = def->avgHp;               // "199 hp" style monster
+        } else {
+            hp = 1;                        // "1 hit point" degenerates
+        }
+        if (hp < 1) hp = 1;
     }
     a.hp = a.maxHp = hp;
     return a;

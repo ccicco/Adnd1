@@ -12,7 +12,6 @@
 #pragma once
 
 #include "../rules/combat.h"   // WeaponClass, AcType, weaponVsAc...
-#include "../rules/classes.h"  // ArmorWeight, ExceptionalStrength
 
 #include <cstdint>
 

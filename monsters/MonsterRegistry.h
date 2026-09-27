@@ -4,11 +4,24 @@
 // returns a table describing one monster; the registry loads the
 // directory and maps entries to ai::Actor via toActor().
 //
+// R49: remapped to the mm2lua.py schema (v2). New Lua field names:
+//   hitDiceNum / hitDiceBonus / avgHp        (was hd / hpBonus)
+//   armorClass  (number | table | string)    (was ac number)
+//   numAttacks  (number | string)            (was attacks)
+//   damage      (array of {min,max} routines) (was damageCount/damageSides)
+//   magicResistance (string "25%" etc.)      (was magicResist number)
+//   xp / xpPerHp / xpValue / xpSource        (xpValue = full kill XP)
+//   frequency, noAppearing, lairPct, move, size, intelligence, alignment,
+//   specialAttacks/specialDefenses (strings), text (full MM prose)
+// Old-style keys (hd/ac/attacks/...) are still honored as fallbacks.
+//
 // Lua C API only (Lua 5.4), per the original project convention.
 // ============================================================================
 
 #pragma once
 
+#include "../rules/character.h"
+#include "../rules/classes.h"
 #include "../ai/actor.h"
 
 #include <map>
@@ -41,26 +54,67 @@ struct SpecialAttack {
 };
 
 // ----------------------------------------------------------------------------
+// One damage routine from the Lua damage array ({min=..,max=..} entries).
+// ----------------------------------------------------------------------------
+struct DamageRoutine {
+    int min = 0;
+    int max = 0;
+};
+
+// ----------------------------------------------------------------------------
 // MonsterDef: one loaded monster.
 // ----------------------------------------------------------------------------
 struct MonsterDef {
     std::string key;              // file basename, e.g. "orc"
     std::string name;             // "Orc"
-    float       hitDice = 1.0f;
-    int         hitPointBonus = 0;
-    int         armorClass = 9;
-    int         attacks = 1;      // routines per round
-    int         damageCount = 1, damageSides = 6;
-    int         damageBonus = 0;  // legacy flat addend / exact imported flat
-    int         damageMin = 0, damageMax = 0;   // imported exact range
-    std::string damageRaw;        // imported prose/raw damage note
-    int         morale = 12;
-    int         magicResist = 0;
-    bool        undead = false;
-    int         requiredPlus = 0; // weapon gating (R5)
-    int         levelTag = 1;     // dungeon level tag (wandering tables)
-    int         xpValue = 10;
-    bool        isLeader = false;
+
+    // hit dice (Lua: hitDiceNum, hitDiceBonus, avgHp; hitDice display string)
+    float hitDice = 1.0f;          // hitDiceNum + hitDiceBonus/4 (compat)
+    int   hitDiceNum = 1;
+    int   hitDiceBonus = 0;
+    int   avgHp = 0;              // book-average hp (0 = unknown)
+
+    int   armorClass = 9;
+
+    // attacks: Lua numAttacks may be a number or text ("1 and 1")
+    int   attacks = 1;
+
+    // damage routines in order (Lua damage array). Actor carries only
+    // one dice pair, so toActor() maps the PRIMARY routine (largest
+    // max) to count/sides as an approximation:
+    //   min..max  ->  1 die of (max-min+1) sides   (1-4 -> 1d4, 2-24 -> 1d23)
+    // Flat bonuses are folded into the approximation (same average).
+    std::vector<DamageRoutine> damageRoutines;
+    int   damageCount = 1, damageSides = 6;
+
+    int   morale = 12;             // heuristic from intelligence if not given
+    int   magicResist = 0;         // Lua magicResistance "25%" -> 25
+
+    bool  undead = false;          // heuristic: name keywords
+    int   requiredPlus = 0;        // heuristic: specialDefenses text
+    int   levelTag = 1;            // heuristic: derived from HD
+    bool  isLeader = false;
+
+    // XP (Lua: xp base, xpPerHp, xpValue total for an average specimen,
+    // xpSource appendixE|formula)
+    int   xpBase = 0;
+    int   xpPerHp = 0;
+    int   xpValue = 10;            // full kill XP (base + per-hp x avgHp)
+    std::string xpSource;
+
+    // descriptive fields (R49: loaded, wiring later)
+    std::string hitDiceText;       // e.g. "4 + 3"
+    std::string frequency;        // "uncommon"
+    int   noAppearingMin = 0, noAppearingMax = 0;
+    int   lairPct = 0;
+    int   moveRate = 0;            // primary move rate (inches/10')
+    std::string size;              // "S"/"M"/"L"
+    std::string intelligence;      // "low", "average", ...
+    std::string alignment;         // "chaotic_evil"
+    std::string specialAttacksText; // verbatim SPECIAL ATTACKS field
+    std::string specialDefensesText;
+    std::string text;              // complete MM prose (bestiary viewer)
+
     std::vector<SpecialAttack> specials;
 };
 
@@ -82,7 +136,8 @@ public:
     // All loaded monsters
     const std::map<std::string, MonsterDef>& all() const { return m_defs; }
 
-    // Instantiate as a combat actor (hp rolled from HD + bonus).
+    // Instantiate as a combat actor (hp rolled from HD + bonus; a
+    // flat-hp monster with no dice uses its book average).
     ai::Actor toActor(const std::string& key, rules::Dice& dice,
                       int hp = -1) const;   // hp < 0 = roll from HD
 
