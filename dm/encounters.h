@@ -3,6 +3,9 @@
 // R52: DMG Appendix C dungeon encounter tables (Premium reprint
 // p.174-179; OCR-verified against the uploaded DMG).
 //
+// R58: reaction rolls for Character Subtable parties (DMG p.63
+// Encounter Reactions + p.176 Confrontation).
+//
 // Roll chain (initial dice passed in for determinism):
 //   d20 -> Determination Matrix -> Monster Level I-X
 //   percentile -> level table row
@@ -80,5 +83,26 @@ std::vector<std::string> encounterKeys(
 // ladder (Table I-IV; implementable pluses only).
 CharacterParty rollCharacterParty(rules::Dice& dice,
                                   int dungeonLevel, int monsterLevel);
+
+// R58: DMG p.63 Encounter Reactions applied to a Character
+// Subtable party per the p.176 Confrontation paragraph — the
+// strangers react before steel is drawn. chaAdj is the spokesman's
+// Charisma reaction adjustment (the engine's best-living-Cha
+// convention, same as henchman hiring); npcWeaker shifts the score
+// up 10 — "a character party feeling itself weak ... will
+// certainly attempt to avoid, negotiate, or ... bluff their way
+// out of actual combat" (p.176).
+enum class PartyReaction {
+    ViolentlyHostile,   // 01 or less-05: immediate attack
+    Hostile,            // 06-25: hostile, immediate action
+    UncertainNegative,  // 26-45: 55% prone toward negative
+    Neutral,            // 46-55: uninterested
+    UncertainPositive,  // 56-75: 55% prone toward positive
+    Friendly,          // 76-95: friendly, immediate action
+    Enthusiastic        // 96-00: enthusiastic acceptance
+};
+
+PartyReaction rollPartyReaction(rules::Dice& dice, int chaAdj,
+                                bool npcWeaker);
 
 } // namespace dm
