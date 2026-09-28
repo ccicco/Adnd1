@@ -26,6 +26,15 @@
 
 namespace dm {
 
+// R62: NPC race fiction — the DMG p.192 race check (printed
+// for city/town asterisked character types; applied here to
+// Character Subtable parties as the engine's NPC-race source).
+// Fiction-only: no stat adjustments, but class contradictions
+// re-roll per the 1e class/race allowances (gnome magic-users
+// read as illusionists, the closest-approximation convention).
+enum NpcRace { RACE_HUMAN = 0, RACE_DWARF, RACE_ELF, RACE_GNOME,
+               RACE_HALF_ELF, RACE_HALFLING, RACE_HALF_ORC };
+
 // R53: one member of a Character Subtable party (DMG p.176).
 // The engine carries four classes; unsupported professions map
 // per the DMG's "closest approximation" advice (druid->cleric,
@@ -36,6 +45,7 @@ struct PartyMember {
     int  level      = 0;    // 0 = 0-level man-at-arms
     bool henchman   = false;   // classed follower (Dungeon L4+)
     bool manAtArms  = false;   // 0-level retainer (Dungeon L1-3)
+    int  race = RACE_HUMAN;   // R62: NpcRace, fiction-only
     // R55: DMG p.176-177 party magic items. Only the outcomes the
     // engine models are carried; potions/scrolls/rings and other
     // unmodeled devices roll as no mechanical effect (the item
@@ -83,6 +93,16 @@ std::vector<std::string> encounterKeys(
 // ladder (Table I-IV; implementable pluses only).
 CharacterParty rollCharacterParty(rules::Dice& dice,
                                   int dungeonLevel, int monsterLevel);
+
+// R62: the p.192 race-check adjective for fiction strings
+// ("" for human / mixed parties): "dwarven ", "elven ", ...
+const char* npcRaceAdjective(int race);
+
+// R62: roll one NPC's race per the p.192 bands (01-08 dwarven,
+// 09-13 elven, 14-15 gnomish, 16-23 half-elven, 24-25
+// halfling, 26-30 half-orc, 31-00 human), re-rolling class
+// contradictions (24 attempts, then human).
+int rollNpcRace(rules::Dice& dice, int classIndex);
 
 // R58: DMG p.63 Encounter Reactions applied to a Character
 // Subtable party per the p.176 Confrontation paragraph — the
