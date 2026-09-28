@@ -290,4 +290,82 @@ std::vector<std::string> psionicEncounterKeys(
 bool spellResemblesPsionicPower(const std::string& name);
 
 
+// R67: DMG Appendix C PATROLS and CASTLE/FORTRESS tables
+// (Premium reprint p.182-183; OCR-verified against the
+// uploaded DMG). Inhabited-area encounters are patrols (5 in
+// 20); uninhabited-area encounters can discover strongholds
+// (1 in 20) — both gates are the caller's. Castle Table I
+// gives size class and type; Table II gives inhabitants per
+// size (the deserted-monster case rolls the OUTDOOR
+// encounter tables, ignoring men — the R63 caller's tool);
+// Sub-Table II.A the human occupants; Sub-Table II.B the
+// master's class and level (OCR overlap Assassin/Monk
+// corrected to 94-96 / 97-99 / 00, documented). Henchmen
+// 2-5, levels and magic items per the Character Subtable
+// (R53/R55/R62 conventions). Artillery per fortress type is
+// transcribed verbatim (rows grouped, mapping documented).
+// Detection maps the standard surprise die (1d6). Garrison
+// equipment and reaction fiction are the caller's,
+// documented in the .cpp. No appstate wiring.
+enum CastleSize { CASTLE_SMALL = 0, CASTLE_MEDIUM, CASTLE_LARGE };
+
+enum CastleInhabitants {
+    CASTLE_TOTALLY_DESERTED = 0,
+    CASTLE_DESERTED_MONSTER,   // roll the outdoor tables, ignore men
+    CASTLE_HUMANS,             // bandits / berserkers / dervishes
+    CASTLE_CHARACTER_TYPES    // master + henchmen stronghold
+};
+
+struct CastleType {
+    CastleSize size;
+    const char* type;    // e.g. "tower", "concentric castle"
+};
+
+struct CastleArtillery {
+    int ballistae;        // ballistae & scorpions
+    int lightCatapults;
+    int oilCauldrons;
+};
+
+enum CastleAwareness {
+    CASTLE_UNDETECTED = 0,
+    CASTLE_OCCUPANTS_AWARE,      // surprised on 1
+    CASTLE_OCCUPANTS_OUTSIDE     // surprised on 2
+};
+
+CastleType rollCastleType(int pctile);   // Table I
+CastleInhabitants castleInhabitants(int pctile, CastleSize size);   // Table II
+
+// Sub-Table II.A: "bandit", "berserker" or "dervish"
+// (brigand -> bandit, the R63 substitution, documented).
+const char* castleHumansType(int pctile);
+
+// "Numbers ... are given in the MONSTER MANUAL under the
+// heading of MEN" — registry noAppearing (R60 convention).
+int castleHumansCount(const monsters::MonsterRegistry& reg,
+                      rules::Dice& dice, const char* key);
+
+// Sub-Table II.B: the stronghold's master (R62 race, R55
+// magic items).
+PartyMember rollCastleMaster(rules::Dice& dice, int pctile);
+
+// 2-5 henchmen, levels per the Character Subtable (R53
+// henchmanLevelFor), R55 magic items, R62 race.
+CharacterParty rollCastleHenchmen(rules::Dice& dice,
+                                  const PartyMember& master);
+
+// Artillery per the printed table; the nine castle types map
+// onto the book's eight grouped rows (documented).
+CastleArtillery castleArtillery(const CastleType& castle);
+
+// Detection: the standard surprise die (1d6) — 1 = occupants
+// aware, 2 = aware and outside, 3+ = undetected.
+CastleAwareness castleAwareness(int surpriseDie);
+
+// The p.182 patrol: fighter (or ranger) leader 6-8,
+// lieutenant 4-5, sergeant 2-3, 3-4 1st-level men, 13-24
+// men-at-arms, cleric 6-7 (40%) / magic-user 5-8 (60%).
+CharacterParty rollPatrol(rules::Dice& dice, bool rangerLeader);
+
+
 } // namespace dm
