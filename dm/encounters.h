@@ -184,4 +184,32 @@ std::vector<std::string> outdoorEncounterKeys(
     OutdoorClime clime, OutdoorTerrain terrain);
 
 
+// R64: DMG Appendix C CITY/TOWN ENCOUNTER MATRIX (Premium
+// reprint p.190-192; OCR-verified against the uploaded DMG).
+// One matrix, two percentile columns (daytime / nighttime).
+// Asterisked types roll the p.191 race check (rollNpcRace,
+// R62); classed and service encounters resolve as character
+// parties built to the p.191-192 explanations with printed
+// level ranges; civilian fictions carry printed counts
+// (their flavor subtables are fiction the engine does not
+// model, documented in encounters.cpp). Numbers are the
+// printed city numbers, not the registry's wilderness-scale
+// noAppearing. City NPCs of 1st level or higher roll the
+// p.192 CHANCE PER LEVEL FOR MAGIC ITEM table. No appstate
+// wiring — the game has no city/town play yet (R60/R63
+// precedent).
+enum CityTime { CITY_DAY = 0, CITY_NIGHT };
+
+DungeonEncounter rollCityEncounter(
+    const monsters::MonsterRegistry& reg, rules::Dice& dice,
+    int pctile, int pctile2, CityTime time);
+
+// Every result key the matrix can produce — registry keys for
+// the monsters, fiction keys for civilians, party-type keys
+// for the classed and service encounters. The regtest-style
+// companion of rollCityEncounter.
+std::vector<std::string> cityEncounterKeys(
+    const monsters::MonsterRegistry& reg);
+
+
 } // namespace dm
