@@ -179,6 +179,7 @@
 #include "../rules/character.h"
 #include "../rules/classes.h"
 #include "../rules/saves.h"   // R45: trap saves
+#include "../rules/combat.h"   // R61: monsterEffectiveLevel (p.86 guard rule)
 #include "../dm/dm.h"
 #include "../dm/dungeon.h"
 #include "../dm/encounters.h"   // R52: Appendix C tables
@@ -224,6 +225,32 @@ struct SecretDoor {
     int  x = 0, y = 0;
     bool found = false;
 };
+
+// R61: DMG p.86 treasure XP guard rule. Gold converts 1 gp =
+// 1 xp only when the guardian's relative value equals or
+// exceeds the party's; a relatively weaker guardian awards on
+// the printed sliding scale (5:4, 3:2, 2:1, 3:1, "4 or more to
+// 1"). The book calls the comparison subjective ("must be based
+// upon the degree of challenge"); this engine's proxy is
+// average party level vs the guardian's average effective
+// level — the book's own worked example is exactly this
+// arithmetic (a 10th-level magic-user vs half-HD kobolds =
+// "about 20 to 1"). An unguarded hoard (no monster key) awards
+// 1:1; the delve itself was the challenge.
+inline int treasureXpForGold(int gold, double partyAvgLevel,
+                              double guardianAvgLevel) {
+    if (gold <= 0) return 0;
+    double r = (guardianAvgLevel > 0.0)
+             ? partyAvgLevel / guardianAvgLevel : 1.0;
+    double rate;                       // xp per gp
+    if      (r <= 1.0)  rate = 1.0;    // equal or stronger guardian
+    else if (r <= 1.25) rate = 4.0 / 5.0;
+    else if (r <= 1.5)  rate = 2.0 / 3.0;
+    else if (r <= 2.0)  rate = 1.0 / 2.0;
+    else if (r <= 3.0)  rate = 1.0 / 3.0;
+    else                rate = 1.0 / 4.0;  // "4 or more to 1"
+    return (int)(gold * rate + 0.5);
+}
 
 struct Occupancy {
     std::vector<RoomOccupant> rooms;
@@ -2292,10 +2319,30 @@ struct AppState {
                     snprintf(buf, sizeof buf,
                              "You loot %d gp.", t.gold);
                     log.add(buf);
-                    // R26: treasure XP â 1 gp = 1 xp, split among
-                    // living members like combat XP (victory only;
-                    // fleeing leaves loot AND xp behind)
-                    int goldShare = t.gold / survivors;
+                    // R26 treasure XP, R61: DMG p.86 guard rule.
+                    // 1 gp = 1 xp only when the guardian's
+                    // relative value equals or exceeds the
+                    // party's; weaker guardians award on the
+                    // printed sliding scale. Proxy: average
+                    // party level vs the hoard monster's
+                    // effective level (no key = unguarded
+                    // delve, 1:1). Split among living members
+                    // like combat XP (victory only; fleeing
+                    // leaves loot AND xp behind).
+                    double partyAvgLvl = 0.0;
+                    for (const auto& c : party.members)
+                        if (c.hp > 0) partyAvgLvl += c.level;
+                    partyAvgLvl /= (survivors > 0) ? survivors : 1;
+                    double guardLvl = 0.0;
+                    if (!room.monsterKey.empty()) {
+                        const monsters::MonsterDef* gd =
+                            registry.find(room.monsterKey);
+                        if (gd)
+                            guardLvl = rules::monsterEffectiveLevel(
+                                gd->hitDice);
+                    }
+                    int goldShare = treasureXpForGold(
+                        t.gold, partyAvgLvl, guardLvl) / survivors;
                     if (goldShare > 0) {
                         snprintf(buf, sizeof buf,
                                  "Treasure worth %d xp each.",
@@ -2463,7 +2510,25 @@ struct AppState {
                              "You strip %d gp from the fallen.",
                              gp);
                     log.add(buf);
-                    int goldShare = gp / survivors;
+                    // R61: DMG p.86 guard rule here too
+                    // (the guardian is the NPC party itself;
+                    // proxy: average level of the character
+                    // foes faced).
+                    double partyAvgLvl = 0.0;
+                    for (const auto& c : party.members)
+                        if (c.hp > 0) partyAvgLvl += c.level;
+                    partyAvgLvl /= (survivors > 0) ? survivors : 1;
+                    double guardLvl = 0.0;
+                    int guardN = 0;
+                    for (const auto& m :
+                         combat.encounter->monsters()) {
+                        if (!m.isCharacter) continue;
+                        guardLvl += m.level;
+                        ++guardN;
+                    }
+                    if (guardN > 0) guardLvl /= guardN;
+                    int goldShare = treasureXpForGold(
+                        gp, partyAvgLvl, guardLvl) / survivors;
                     if (goldShare > 0) {
                         snprintf(buf, sizeof buf,
                                  "Worth %d xp each.", goldShare);
