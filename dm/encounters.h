@@ -265,4 +265,29 @@ EtherCycloneResult rollEtherCyclone(rules::Dice& dice, int d20,
                                     bool saveMade);
 
 
+// R66: DMG Appendix C PSIONIC ENCOUNTER TABLE (Premium reprint
+// p.182; OCR-verified against the uploaded DMG). Used when the
+// party has employed psionic powers (or spells resembling
+// them) — the 1-in-4 gate is the caller's; the printed
+// spells list is implemented in spellResemblesPsionicPower.
+// Counts come from the printed Numbers column (yellow mold's
+// dash -> registry noAppearing). The demon/devil rows pick on
+// the second percentile (R65 sets); the Men row resolves as a
+// Character Subtable party. No appstate wiring.
+DungeonEncounter rollPsionicEncounter(
+    const monsters::MonsterRegistry& reg, rules::Dice& dice,
+    int pctile, int pctile2);
+
+// Every result key the table can produce — the regtest-style
+// companion of rollPsionicEncounter.
+std::vector<std::string> psionicEncounterKeys(
+    const monsters::MonsterRegistry& reg);
+
+// The printed "Spells Resembling Psionic Powers" list
+// (p.182): case-insensitive full-name match, with the
+// "(any)" families (charm, cure, detect, invisibility,
+// polymorph, tele-) matched by leading word.
+bool spellResemblesPsionicPower(const std::string& name);
+
+
 } // namespace dm
