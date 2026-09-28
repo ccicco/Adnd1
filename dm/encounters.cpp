@@ -2674,4 +2674,546 @@ std::vector<std::string> outdoorEncounterKeys(
     return out;
 }
 
+// ----------------------------------------------------------------------------
+// R64: the CITY/TOWN ENCOUNTER MATRIX — DMG Appendix C (Premium
+// reprint p.190-192, OCR-verified against the uploaded DMG). One
+// matrix, two percentile columns (daytime / nighttime; several
+// rows are night-only, marked "-" in the book). Asterisked types
+// (assassin, city guard, cleric, druid, fighter, illusionist,
+// magic-user, ranger, thief) roll the p.191 race check —
+// rollNpcRace (R62); unasterisked classed types are human (1e
+// class restrictions: paladin, monk, rake, city watch, city
+// official). Classed and service encounters resolve as
+// character parties built to the p.191-192 explanations; the
+// civilian fictions (beggar, drunk, goodwife, harlot, laborer,
+// peddler, gentleman, noble, mercenary, merchant, pilgrim,
+// press gang, ruffian, tradesman, bard) carry printed counts
+// but no bestiary entry — their flavor subtables (harlot type
+// p.192, drunk-of-what-type p.191, noble gender, ruffian 1-in-4
+// half-orc/humanoid) are fiction the engine does not model,
+// documented in the row comments. Numbers are the printed
+// encounter numbers, not the registry's wilderness-scale
+// noAppearing (bandit registry 20-200 vs. printed night 3-12;
+// giant rat registry 5-50 vs. printed 2-8 day / 4-24 night).
+// "Demon or Nycadaemon (60%/40%)" and "Devil or Mezzadaemon
+// (50%/50%)" re-roll per the R52 mezzodaemon/nycadaemon
+// precedent and the book's own advice ("they may be ignored
+// entirely if desirable", p.191). The lich half of "Vampire or
+// Lich (75%/25%)" and the ghast half of "Ghoul or Ghast
+// (30%/70%)" take the ghost treatment — one specimen — where
+// the book prints no separate number (lich) or the ghoul's
+// 4-16 (ghast, same-as-ghoul per the ghost text). Bard (of
+// "Monk or Bard 60%/40%") is a single fiction NPC: the 1e
+// bard's dual fighter/thief abilities are unmodeled here.
+// Book "Doppleganger" -> doppelganger (MM spelling,
+// the bestiary key). OCR defects corrected: night 36 printed "Ghost or Ghoul
+// (30%/70%)" is "Ghoul or Ghast" (37 is Ghost; the
+// explanations print both ghoul 4-16 and ghast);
+// "Wereat" -> Wererat, "Wereiger" -> Weretiger (night 91-93 /
+// 94). Day bandits print no number ("a nondescript group being
+// seen") — 3-12, the nighttime number, is used, documented.
+// City magic (p.192): 1st-or-higher classed city NPCs roll
+// the CHANCE PER LEVEL FOR MAGIC ITEM table per category;
+// potions, scrolls, rings, wands and misc magic have no
+// mechanical effect here (R55 precedent), protection devices
+// roll the printed subtable. No appstate wiring — the game
+// has no city/town play yet (R60/R63 precedent).
+
+namespace {
+
+struct CityRow {
+    short loDay, hiDay;      // daytime percentile (-0 = no row)
+    short loNight, hiNight;  // nighttime percentile
+    const char* key;
+};
+
+// CITY/TOWN ENCOUNTER MATRIX (DMG p.191)
+static const CityRow kCityMatrix[] = {
+{1,1,1,3,"assassin"},
+{2,2,4,5,"bandit"},
+{3,12,6,8,"beggar"},
+{13,13,9,10,"brigand"},
+{14,18,11,11,"city_guard"},
+{19,21,12,12,"city_official"},
+{22,23,13,21,"city_watchman"},
+{24,25,22,22,"cleric"},
+{0,0,23,23,"demon_or_nycadaemon"},
+{0,0,24,24,"devil_or_mezzadaemon"},
+{0,0,25,25,"doppelganger"},
+{26,26,26,26,"druid"},
+{27,27,27,31,"drunk"},
+{28,29,32,33,"fighter"},
+{30,33,34,35,"gentleman"},
+{0,0,36,36,"ghoul_or_ghast"},
+{0,0,37,37,"ghost"},
+{34,34,38,42,"giant_rat"},
+{35,39,43,43,"goodwife"},
+{40,41,44,50,"harlot"},
+{42,42,51,51,"illusionist"},
+{43,50,52,52,"laborer_or_peddler"},
+{51,51,53,53,"magic_user"},
+{52,55,54,58,"mercenary"},
+{56,62,59,60,"merchant"},
+{63,63,61,61,"monk_or_bard"},
+{0,0,62,62,"night_hag"},
+{64,65,63,64,"noble"},
+{66,66,65,65,"paladin"},
+{67,69,66,66,"pilgrim"},
+{70,70,67,67,"press_gang"},
+{71,72,68,71,"rake"},
+{0,0,72,72,"rakshasa"},
+{73,73,73,73,"ranger"},
+{74,78,74,80,"ruffian"},
+{0,0,81,81,"shadow"},
+{0,0,82,82,"spectre"},
+{79,82,83,88,"thief"},
+{83,97,89,90,"tradesman"},
+{98,98,91,93,"wererat"},
+{99,99,94,94,"weretiger"},
+{100,100,95,96,"werewolf"},
+{0,0,97,97,"wight"},
+{0,0,98,98,"will_o_wisp"},
+{0,0,99,99,"wraith"},
+{0,0,100,100,"vampire_or_lich"}
+};
+
+// printed encounter numbers for the non-party results
+int cityCountFor(rules::Dice& dice, const std::string& key, bool night) {
+    (void)night;
+    if (key == "bandit" || key == "brigand")
+        return 2 + (int)dice.roll(1, 10, 0);          // 3-12 night; day documented
+    if (key == "beggar")
+        return (int)dice.roll(1, 2, 0);               // 1, possibly 2
+    if (key == "doppelganger")
+        return 2 + (int)dice.roll(1, 4, 0);           // d4+2 = 3-6
+    if (key == "giant_rat")
+        return night
+            ? 1 + (int)dice.roll(1, 24, 0)            // 4-24 night
+            : (int)dice.roll(2, 4, 0);                // 2-8 day
+    if (key == "ghoul" || key == "ghast")
+        return 4 + (int)dice.roll(1, 13, 0);          // 4-16
+    if (key == "drunk")
+        return (int)dice.roll(1, 4, 0);               // 1-4 revelers/bums
+    if (key == "gentleman")
+        return (int)dice.roll(1, 5, 0);               // 1 + 0-4 company
+    if (key == "laborer")
+        return 2 + (int)dice.roll(1, 11, 0);          // 3-12
+    if (key == "peddler")
+        return 1;
+    if (key == "mercenary")
+        return 2 + (int)dice.roll(1, 11, 0);          // 3-12
+    if (key == "merchant")
+        return (int)dice.roll(1, 3, 0);               // 1-3 (night guards fiction)
+    if (key == "bard")
+        return 1;
+    if (key == "night_hag")
+        return (int)dice.roll(1, 2, 0);               // 1-2
+    if (key == "noble")
+        return 1;
+    if (key == "pilgrim")
+        return 2 + (int)dice.roll(1, 11, 0);          // 3-12
+    if (key == "press_gang")
+        return 1 + (int)dice.roll(1, 16, 0);          // 2-16
+    if (key == "rakshasa")
+        return (int)dice.roll(1, 3, 0);               // 1-3
+    if (key == "ruffian")
+        return 6 + (int)dice.roll(1, 6, 0);           // d6+6 = 7-12
+    if (key == "shadow")
+        return 2 + (int)dice.roll(1, 7, 0);           // 2-8
+    if (key == "spectre")
+        return (int)dice.roll(1, 3, 0);               // 1-3
+    if (key == "tradesman")
+        return (int)dice.roll(2, 4, 0);               // 2-8
+    if (key == "wererat")
+        return 2 + (int)dice.roll(1, 4, 0);           // 2-5
+    if (key == "weretiger")
+        return (int)dice.roll(1, 2, 0);               // 1-2
+    if (key == "werewolf")
+        return 2 + (int)dice.roll(1, 4, 0);           // 2-5
+    if (key == "wight")
+        return 2 + (int)dice.roll(1, 4, 0);           // 2-5
+    if (key == "will_o_wisp")
+        return (int)dice.roll(1, 2, 0);               // 1-2
+    if (key == "wraith")
+        return (int)dice.roll(1, 4, 0);              // 1-4
+    // ghost, ghoul's kin, vampire, lich, doppelganger's kin,
+    // goodwife, harlot, paladin-less singles: one specimen
+    return 1;
+}
+
+// p.192 protection device subtable (the mechanically usable
+// outcomes; the amulet of life protection has no mechanical
+// effect here — R55 precedent)
+enum { PROT_RING1, PROT_RING2, PROT_RING3, PROT_AMULET,
+       PROT_BRACERS6, PROT_BRACERS4, PROT_BRACERS2,
+       PROT_DISPLACEMENT, PROT_CLOAK1, PROT_CLOAK2, PROT_CLOAK3 };
+
+static int rollProtectionDevice(rules::Dice& dice) {
+    int p = (int)dice.roll(1, 100, 0);
+    if (p <= 25) return PROT_RING1;
+    if (p <= 30) return PROT_RING2;
+    if (p == 31) return PROT_RING3;
+    if (p == 32) return PROT_AMULET;
+    if (p <= 55) return PROT_BRACERS6;
+    if (p <= 70) return PROT_BRACERS4;
+    if (p <= 75) return PROT_BRACERS2;
+    if (p <= 82) return PROT_DISPLACEMENT;
+    if (p <= 95) return PROT_CLOAK1;
+    if (p <= 99) return PROT_CLOAK2;
+    return PROT_CLOAK3;
+}
+
+// "The power of the item must be commensurate with the level of
+// the possessor" (p.192): +1 at 1st-5th, +2 at 6th-11th, +3 at
+// 12th and above (documented approximation, R55's ladder spirit)
+static int plusForLevel(int level) {
+    if (level >= 12) return 3;
+    if (level >= 6)  return 2;
+    return 1;
+}
+
+} // namespace
+
+// R64: p.192 CHANCE PER LEVEL FOR MAGIC ITEM — one percentile
+// roll per category at (chance x level). Group 0: assassin,
+// fighter, thief, etc.; group 1: cleric, druid; group 2:
+// magic-user. The printed monk column has no engine class
+// (monks resolve as fighters per R53) — documented. Potions,
+// scrolls, rings, wands/staffs/rods and misc magic exist in
+// the fiction but have no mechanical effect here (R55).
+static void rollCityMagicItems(rules::Dice& dice, PartyMember& m) {
+    if (m.level < 1) return;   // 0-level men: hp is all they need
+
+    int group = (m.classIndex == rules::CLASS_CLERIC) ? 1
+              : (m.classIndex == rules::CLASS_MAGIC_USER) ? 2 : 0;
+
+    //                g0   g1   g2   (percent per level)
+    const int sword   [3] = { 10,  0,  0 };
+    const int miscWpn [3] = {  5, 10,  5 };
+    const int armor   [3] = { 10, 10,  0 };
+    const int protect [3] = {  2,  2, 10 };
+
+    int lvl = m.level;
+    if ((int)dice.roll(1, 100, 0) <= sword[group] * lvl)
+        m.wpnPlus = plusForLevel(lvl);
+    if ((int)dice.roll(1, 100, 0) <= miscWpn[group] * lvl)
+        m.rngPlus = plusForLevel(lvl);
+    if ((int)dice.roll(1, 100, 0) <= armor[group] * lvl) {
+        m.armPlus = plusForLevel(lvl);
+        // "Armor &/or Shield" — the shield is a coin-flip half
+        // of the category (documented split)
+        if ((int)dice.roll(1, 2, 0) == 2)
+            m.shdPlus = plusForLevel(lvl);
+    }
+    if ((int)dice.roll(1, 100, 0) <= protect[group] * lvl) {
+        switch (rollProtectionDevice(dice)) {
+            case PROT_RING1: case PROT_CLOAK1: m.shdPlus += 1; break;
+            case PROT_RING2: case PROT_CLOAK2: m.shdPlus += 2; break;
+            case PROT_RING3: case PROT_CLOAK3: m.shdPlus += 3; break;
+            // bracers replace armor: the AC-6/4/2 sets read as
+            // +2/+4/+6 unarmored (documented approximation)
+            case PROT_BRACERS6: m.armPlus = (m.armPlus > 2) ? m.armPlus : 2; break;
+            case PROT_BRACERS4: m.armPlus = (m.armPlus > 4) ? m.armPlus : 4; break;
+            case PROT_BRACERS2: m.armPlus = (m.armPlus > 6) ? m.armPlus : 6; break;
+            // cloak of displacement: -2 AC in the MM
+            case PROT_DISPLACEMENT: m.shdPlus += 2; break;
+            case PROT_AMULET:
+            default: break;   // fiction only
+        }
+    }
+}
+
+// R64: build a city party to the p.191-192 explanations.
+// asterisk = rollNpcRace (R62); unasterisked classed types are
+// human (1e class restrictions). Followers and leaders are
+// henchmen; 0-level guardsmen are men-at-arms (R53 shapes).
+static CharacterParty rollCityParty(rules::Dice& dice,
+                                    const char* type, bool night) {
+    CharacterParty p;
+    const std::string t(type);
+
+    auto add = [&](int classIndex, int level, bool asterisk) {
+        PartyMember m;
+        m.classIndex = classIndex;
+        m.level = level;
+        m.race = asterisk ? rollNpcRace(dice, classIndex)
+                          : RACE_HUMAN;
+        rollCityMagicItems(dice, m);
+        p.members.push_back(m);
+        return m;
+    };
+    auto addHench = [&](int classIndex, int level, bool asterisk) {
+        PartyMember m;
+        m.classIndex = classIndex;
+        m.level = level;
+        m.henchman = true;
+        m.race = asterisk ? rollNpcRace(dice, classIndex)
+                          : RACE_HUMAN;
+        rollCityMagicItems(dice, m);
+        p.members.push_back(m);
+    };
+    auto addMan = [&](int n) {
+        for (int i = 0; i < n; ++i) {
+            PartyMember m;
+            m.manAtArms = true;               // 0-level men (R53)
+            m.classIndex = rules::CLASS_FIGHTER;
+            m.level = 0;
+            m.race = RACE_HUMAN;
+            p.members.push_back(m);
+        }
+    };
+
+    if (t == "assassin") {
+        // 1-3 assassins; the book prints no level here — the
+        // 5th-8th ruffian bodyguard range, the only city
+        // assassin range printed, is used (documented)
+        int n = (int)dice.roll(1, 3, 0);
+        for (int i = 0; i < n; ++i)
+            add(rules::CLASS_THIEF, 4 + (int)dice.roll(1, 4, 0), true);
+    } else if (t == "cleric") {
+        // cleric 6th-11th (d6+5) + 0-5 lesser clerics (d4 level)
+        add(rules::CLASS_CLERIC, 5 + (int)dice.roll(1, 6, 0), true);
+        int n = (int)dice.roll(1, 6, 0) - 1;
+        for (int i = 0; i < n; ++i)
+            addHench(rules::CLASS_CLERIC, (int)dice.roll(1, 4, 0), true);
+    } else if (t == "druid") {
+        // druid 6th-11th; 50% 0-3 lesser druids (d4 level),
+        // else 1-4 fighters (d6 level)
+        add(rules::CLASS_CLERIC, 5 + (int)dice.roll(1, 6, 0), true);
+        if ((int)dice.roll(1, 2, 0) == 1) {
+            int n = (int)dice.roll(1, 4, 0) - 1;
+            for (int i = 0; i < n; ++i)
+                addHench(rules::CLASS_CLERIC, (int)dice.roll(1, 4, 0), true);
+        } else {
+            int n = (int)dice.roll(1, 4, 0);
+            for (int i = 0; i < n; ++i)
+                addHench(rules::CLASS_FIGHTER, (int)dice.roll(1, 6, 0), true);
+        }
+    } else if (t == "fighter") {
+        // fighter 6th-12th (2d4+4) + 0-3 henchmen (d4 level)
+        add(rules::CLASS_FIGHTER,
+            4 + (int)dice.roll(2, 4, 0), true);
+        int n = (int)dice.roll(1, 4, 0) - 1;
+        for (int i = 0; i < n; ++i)
+            addHench(rules::CLASS_FIGHTER, (int)dice.roll(1, 4, 0), true);
+    } else if (t == "illusionist") {
+        // illusionist 7th-10th (d4+6); 50% 0-3 apprentices
+        // (d4 level), else 1-3 fighter guards (d6 level)
+        add(rules::CLASS_MAGIC_USER,
+            6 + (int)dice.roll(1, 4, 0), true);
+        if ((int)dice.roll(1, 2, 0) == 1) {
+            int n = (int)dice.roll(1, 4, 0) - 1;
+            for (int i = 0; i < n; ++i)
+                addHench(rules::CLASS_MAGIC_USER,
+                         (int)dice.roll(1, 4, 0), true);
+        } else {
+            int n = (int)dice.roll(1, 3, 0);
+            for (int i = 0; i < n; ++i)
+                addHench(rules::CLASS_FIGHTER,
+                         (int)dice.roll(1, 6, 0), true);
+        }
+    } else if (t == "magic_user") {
+        // magic-user 7th-12th (d6+6) + 1-4 henchmen: 45%
+        // apprentices (d6 level), 30% fighter guards (d4+3),
+        // 25% a mixture "providing 2 or 4 henchmen" — the
+        // count is forced to 2 or 4 and split evenly
+        add(rules::CLASS_MAGIC_USER,
+            6 + (int)dice.roll(1, 6, 0), true);
+        int roll = (int)dice.roll(1, 100, 0);
+        if (roll <= 45) {
+            int n = (int)dice.roll(1, 4, 0);
+            for (int i = 0; i < n; ++i)
+                addHench(rules::CLASS_MAGIC_USER,
+                         (int)dice.roll(1, 6, 0), true);
+        } else if (roll <= 75) {
+            int n = (int)dice.roll(1, 4, 0);
+            for (int i = 0; i < n; ++i)
+                addHench(rules::CLASS_FIGHTER,
+                         3 + (int)dice.roll(1, 4, 0), true);
+        } else {
+            int n = ((int)dice.roll(1, 2, 0) == 1) ? 2 : 4;
+            for (int i = 0; i < n; ++i)
+                addHench((i % 2 == 0) ? rules::CLASS_MAGIC_USER
+                                      : rules::CLASS_FIGHTER,
+                         (i % 2 == 0) ? (int)dice.roll(1, 6, 0)
+                                      : 3 + (int)dice.roll(1, 4, 0),
+                         true);
+        }
+    } else if (t == "monk") {
+        // one monk, 7th-10th (d4+6); monks resolve as fighters
+        // (R53 closest-approximation), human (no asterisk)
+        add(rules::CLASS_FIGHTER, 6 + (int)dice.roll(1, 4, 0), false);
+    } else if (t == "paladin") {
+        // one paladin, 6th-9th (d4+5); human (1e requirement)
+        add(rules::CLASS_FIGHTER, 5 + (int)dice.roll(1, 4, 0), false);
+    } else if (t == "ranger") {
+        // one ranger, 7th-10th (d4+6), race-checked (*)
+        add(rules::CLASS_FIGHTER, 6 + (int)dice.roll(1, 4, 0), true);
+    } else if (t == "thief") {
+        // thief 8th-11th (d4+7) + 0-2 apprentices (d4 level)
+        add(rules::CLASS_THIEF, 7 + (int)dice.roll(1, 4, 0), true);
+        int n = (int)dice.roll(1, 3, 0) - 1;
+        for (int i = 0; i < n; ++i)
+            addHench(rules::CLASS_THIEF, (int)dice.roll(1, 4, 0), true);
+    } else if (t == "rake") {
+        // 2-5 young gentlemen fighters, 5th-10th (d6+4)
+        int n = 1 + (int)dice.roll(1, 4, 0);
+        for (int i = 0; i < n; ++i)
+            add(rules::CLASS_FIGHTER,
+                4 + (int)dice.roll(1, 6, 0), false);
+    } else if (t == "city_guard") {
+        // 2-16 0-level guardsmen; 1 leader (2 if more than 8,
+        // 3 if more than 12) of 2nd-5th (d4+1); plus an
+        // indentured magic-user of 1st-4th — all race-checked
+        // (the matrix asterisks the City guard)
+        int n = 1 + (int)dice.roll(1, 16, 0);
+        addMan(n);
+        int leaders = (n > 12) ? 3 : (n > 8) ? 2 : 1;
+        for (int i = 0; i < leaders; ++i)
+            addHench(rules::CLASS_FIGHTER,
+                     1 + (int)dice.roll(1, 4, 0), true);
+        addHench(rules::CLASS_MAGIC_USER,
+                 (int)dice.roll(1, 4, 0), true);
+    } else if (t == "city_watchman") {
+        // day: 5 men + 1st-3rd sergeant; night: double numbers
+        // plus a 4th/5th-level lieutenant; always accompanied
+        // by an indentured cleric of 2nd-5th (d4+1)
+        addMan(night ? 10 : 5);
+        addHench(rules::CLASS_FIGHTER,
+                 (int)dice.roll(1, 3, 0), false);   // sergeant
+        if (night)
+            addHench(rules::CLASS_FIGHTER,
+                     3 + (int)dice.roll(1, 2, 0), false);  // lieutenant
+        addHench(rules::CLASS_CLERIC,
+                 1 + (int)dice.roll(1, 4, 0), false);
+    } else if (t == "city_official") {
+        // a minor bureaucrat (10% a major official with 2-8
+        // guards); always 1-4 personal fighters (d4 level).
+        // The official is fiction — a man-at-arms shape —
+        // the guards are classed. No asterisk: human.
+        addMan(1);
+        bool major = (int)dice.roll(1, 10, 0) == 10;
+        if (major)
+            addMan(1 + (int)dice.roll(1, 8, 0));
+        int n = (int)dice.roll(1, 4, 0);
+        for (int i = 0; i < n; ++i)
+            addHench(rules::CLASS_FIGHTER,
+                     (int)dice.roll(1, 4, 0), false);
+    }
+    (void)add;
+    return p;
+}
+
+DungeonEncounter rollCityEncounter(
+        const monsters::MonsterRegistry& reg, rules::Dice& dice,
+        int pctile, int pctile2, CityTime time) {
+    DungeonEncounter e;
+
+    for (int attempt = 0; attempt < 24; ++attempt) {
+        const CityRow* row = nullptr;
+        for (size_t i = 0;
+             i < sizeof kCityMatrix / sizeof kCityMatrix[0]; ++i) {
+            short lo, hi;
+            if (time == CITY_DAY) { lo = kCityMatrix[i].loDay;  hi = kCityMatrix[i].hiDay;  }
+            else                  { lo = kCityMatrix[i].loNight; hi = kCityMatrix[i].hiNight; }
+            if (lo > 0 && pctile >= lo && pctile <= hi)
+                { row = &kCityMatrix[i]; break; }
+        }
+        if (!row) return e;   // defensive: columns cover 01-00
+
+        std::string key = row->key;
+
+        // the book's own advice: "they may be ignored entirely
+        // if desirable ... treat these encounters as highly
+        // special" (p.191); nycadaemon/mezzadaemon are
+        // unimplemented (R52) — ignore & re-roll
+        if (key == "demon_or_nycadaemon" ||
+            key == "devil_or_mezzadaemon") {
+            pctile  = 1 + (int)dice.roll(1, 100, 0) - 1;
+            pctile2 = 1 + (int)dice.roll(1, 100, 0) - 1;
+            continue;
+        }
+
+        // printed 50/50 - 75/25 splits (second percentile)
+        if (key == "laborer_or_peddler")
+            key = (pctile2 <= 50) ? "laborer" : "peddler";
+        else if (key == "monk_or_bard")
+            key = (pctile2 <= 60) ? "monk" : "bard";
+        else if (key == "ghoul_or_ghast")
+            key = (pctile2 <= 30) ? "ghoul" : "ghast";
+        else if (key == "vampire_or_lich")
+            key = (pctile2 <= 75) ? "vampire" : "lich";
+        else if (key == "brigand")
+            key = "bandit";   // "the same as bandit encounters"
+
+        // classed / service encounters: character parties
+        if (key == "assassin" || key == "cleric" || key == "druid" ||
+            key == "fighter" || key == "illusionist" ||
+            key == "magic_user" || key == "monk" || key == "paladin" ||
+            key == "ranger" || key == "thief" || key == "rake" ||
+            key == "city_guard" || key == "city_official" ||
+            key == "city_watchman") {
+            e.party = rollCityParty(dice, key.c_str(),
+                                    time == CITY_NIGHT);
+            e.isParty = true;
+            e.key = key;
+            e.count = e.party.size();
+            return e;
+        }
+
+        e.key = key;
+        e.count = cityCountFor(dice, key,
+                               time == CITY_NIGHT);
+        (void)reg;   // fiction keys may not be registry keys;
+                     // the regtest companion lists both
+        return e;
+    }
+    return e;
+}
+
+// Every result key the matrix can produce — registry keys for
+// the monsters, fiction keys for the civilians, party-type
+// keys for the classed and service encounters (resolved as
+// character parties). The regtest companion of
+// rollCityEncounter.
+std::vector<std::string> cityEncounterKeys(
+        const monsters::MonsterRegistry& reg) {
+    std::vector<std::string> out;
+    for (size_t i = 0;
+         i < sizeof kCityMatrix / sizeof kCityMatrix[0]; ++i) {
+        std::string key = kCityMatrix[i].key;
+        if (key == "laborer_or_peddler") {
+            pushUnique(out, "laborer");
+            pushUnique(out, "peddler");
+            continue;
+        }
+        if (key == "monk_or_bard") {
+            pushUnique(out, "monk");
+            pushUnique(out, "bard");
+            continue;
+        }
+        if (key == "ghoul_or_ghast") {
+            pushUnique(out, "ghoul");
+            pushUnique(out, "ghast");
+            continue;
+        }
+        if (key == "vampire_or_lich") {
+            pushUnique(out, "vampire");
+            pushUnique(out, "lich");
+            continue;
+        }
+        if (key == "brigand") {
+            pushUnique(out, "bandit");
+            continue;
+        }
+        if (key == "demon_or_nycadaemon" ||
+            key == "devil_or_mezzadaemon")
+            continue;   // ignored & re-rolled (documented)
+        pushUnique(out, key.c_str());
+    }
+    (void)reg;
+    return out;
+}
+
+
 } // namespace dm
