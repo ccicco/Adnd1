@@ -3776,4 +3776,357 @@ std::vector<std::string> psionicEncounterKeys(
 }
 
 
+// ----------------------------------------------------------------------------
+// R67: the PATROL and CASTLE/FORTRESS tables — DMG Appendix C
+// (Premium reprint p.182-183, OCR-verified against the
+// uploaded DMG). These complete the outdoor tables' context:
+// inhabited areas are patrolled ("roll d20; 5 in 20 are
+// encounters with a patrol"), uninhabited areas occasionally
+// hold strongholds ("1 in 20 is an encounter which discovers
+// such a stronghold" — the party is within visual range,
+// 1/2 to 5 miles). Both gates are the caller's; the builders
+// below construct what is found.
+//
+// PATROLS (p.182): "commanded by a fighter (or ranger, where
+// applicable) of from 6th to 8th level, with a lieutenant of
+// from 4th to 5th level, and a sergeant of 2nd or 3rd level.
+// There will be from 3 to 4 1st level men and from 13 to 24
+// soldiers (men-at-arms) forming the main body ... Each
+// patrol will be accompanied by a cleric (40%) of 6th or 7th
+// level or a magic-user (60%) of 5th to 8th level." Arms are
+// fiction (no itemization in the engine, documented); the
+// book's pointer to Character Subtable party magic items is
+// honored via the R55 ladder (rollMagicItemsFor). Racial
+// composition is "appropriate to the area" — the caller's;
+// classed members roll R62 races, men-at-arms are human
+// (R53 convention).
+//
+// CASTLE TABLE I (p.182): size class and type, 01-00. CASTLE
+// TABLE II: inhabitants per size — totally deserted /
+// deserted (monster therein: "roll on the appropriate OUTDOOR
+// ENCOUNTER TABLE, ignoring any rolls which indicate men" —
+// the R63 rollOutdoorEncounter is the caller's tool) /
+// humans / character-types. SUB-TABLE II.A: humans are
+// bandits / brigands / berserkers / dervishes (brigand ->
+// bandit, the R63 substitution); "numbers and other details
+// ... are given in the MONSTER MANUAL under the heading of
+// MEN" — registry noAppearing (R60 convention), so
+// castleHumansCount uses the registry. SUB-TABLE II.B: the
+// master's class and level; henchmen 2-5 with level per the
+// Character Subtable (henchmanLevelFor, one-third the
+// master's, R53) and R55 magic items. OCR defect corrected
+// and documented: the printed "94-96 Assassin / 94-99 MONK
+// / 00 BARD" overlaps — the original prints Assassin 94-96,
+// Monk 97-99, Bard 00 (23rd level). The illusionist
+// covered-by-illusion and monk monastery notes are fiction,
+// documented. The garrison men-at-arms (heavy horse 9-12 /
+// light horse 9-16 / foot 13-24 / crossbow 7-12, each led
+// by a 3rd-4th level fighter) lost their per-class
+// assignment to an OCR image extraction — transcribed in
+// the comment below, fiction only, the caller assigns.
+//
+// ARTILLERY per fortress type: transcribed verbatim. The
+// printed eight rows do not map one-to-one onto the nine
+// castle types (the book groups); the engine maps by nearest
+// type, documented in castleArtillery. Detection: "roll a
+// surprise die ... if they are surprised, then the fortress
+// occupants know they are there — if surprise is 2 or
+// greater, the occupants are actually outside the place" —
+// castleAwareness maps the die directly (1d6: 1 = aware,
+// 2 = aware and outside, 3+ = undetected; the standard 1e
+// surprise die). Reaction fiction (welcome / joust / ransom)
+// is the caller's, per the p.183 text.
+//
+// Garrison units as printed (p.183, OCR image), fiction:
+//   9-12 heavy horse, splint mail & shield, lance, long
+//   sword, mace; 9-16 light horse, studded leather, light
+//   crossbow, long sword; 13-24 men-at-arms, scale mail,
+//   shield, spear, hand axe; 7-12 men-at-arms, scale mail,
+//   heavy crossbow, morning star. Cavalry stabled, fights
+//   on the walls; each unit led by a 3rd-4th level fighter
+//   with normal chances for magic items, in addition to the
+//   figures shown.
+
+namespace {
+
+struct CastleTypeRow {
+    short lo, hi;
+    CastleSize size;
+    const char* type;
+};
+
+// CASTLE TABLE I: SIZE CLASS AND TYPE (DMG p.182)
+static const CastleTypeRow kCastleTypeTable[] = {
+{1, 10, CASTLE_SMALL, "small shell keep"},
+{11, 25, CASTLE_SMALL, "tower"},
+{26, 35, CASTLE_SMALL, "moat house or friary"},
+{36, 45, CASTLE_MEDIUM, "large shell keep"},
+{46, 65, CASTLE_MEDIUM, "small walled castle with keep"},
+{66, 80, CASTLE_MEDIUM, "medium walled castle with keep"},
+{81, 88, CASTLE_LARGE, "concentric castle"},
+{89, 95, CASTLE_LARGE, "large walled castle with keep"},
+{96, 100, CASTLE_LARGE, "fortress complex"}
+};
+
+struct CastleInhRow {
+    short lo, hi;
+    CastleInhabitants cat;
+};
+
+// CASTLE TABLE II: INHABITANTS (per size class)
+static const CastleInhRow kCastleInhSmall[] = {
+{1, 45, CASTLE_TOTALLY_DESERTED},
+{46, 60, CASTLE_DESERTED_MONSTER},
+{61, 70, CASTLE_HUMANS},
+{71, 100, CASTLE_CHARACTER_TYPES}
+};
+static const CastleInhRow kCastleInhMedium[] = {
+{1, 30, CASTLE_TOTALLY_DESERTED},
+{31, 50, CASTLE_DESERTED_MONSTER},
+{51, 65, CASTLE_HUMANS},
+{66, 100, CASTLE_CHARACTER_TYPES}
+};
+static const CastleInhRow kCastleInhLarge[] = {
+{1, 15, CASTLE_TOTALLY_DESERTED},
+{16, 40, CASTLE_DESERTED_MONSTER},
+{41, 60, CASTLE_HUMANS},
+{61, 100, CASTLE_CHARACTER_TYPES}
+};
+
+// CASTLE SUB-TABLE II.A: HUMANS ARE (brigand -> bandit, the
+// R63 substitution, documented)
+static const struct { short lo, hi; const char* key; } kCastleHumansAre[] = {
+{1, 25, "bandit"},
+{26, 85, "bandit"},
+{86, 97, "berserker"},
+{98, 100, "dervish"}
+};
+
+struct CastleMasterRow {
+    short lo, hi;
+    int prof;      // ProfId
+    short lvlLo, lvlHi;
+};
+
+// CASTLE SUB-TABLE II.B: MASTER'S CLASS AND LEVEL. The OCR
+// printed Assassin 94-96 overlapping Monk 94-99; the
+// original prints Assassin 94-96 / Monk 97-99 / Bard 00
+// (corrected, documented above).
+static const CastleMasterRow kCastleMaster[] = {
+{1, 18, PROF_CLERIC, 9, 12},
+{19, 20, PROF_DRUID, 12, 13},
+{21, 65, PROF_FIGHTER, 9, 12},
+{66, 66, PROF_PALADIN, 9, 10},
+{67, 68, PROF_RANGER, 10, 13},
+{69, 80, PROF_MAGIC_USER, 11, 14},
+{81, 85, PROF_ILLUSIONIST, 10, 13},
+{86, 93, PROF_THIEF, 10, 14},
+{94, 96, PROF_ASSASSIN, 14, 14},
+{97, 99, PROF_MONK_BARD, 9, 12}   // monk,
+{100, 100, PROF_MONK_BARD, 23, 23}   // bard, 23rd
+};
+
+struct ArtilleryRow {
+    const char* type;
+    int ballistae, lightCatapults, oilCauldrons;
+};
+
+// ARTILLERY per fortress type (DMG p.183)
+static const ArtilleryRow kCastleArtillery[] = {
+{"moat house or friary", 2, 0, 1},
+{"tower", 1, 0, 1},
+{"shell keep", 0, 1, 2},
+{"small walled castle with keep", 1, 1, 2},
+{"medium walled castle with keep", 2, 2, 5},
+{"concentric castle", 4, 2, 6},
+{"large walled castle with keep", 4, 4, 8},
+{"fortress complex", 4, 4, 8}
+};
+
+} // namespace
+
+CastleType rollCastleType(int pctile) {
+    CastleType t;
+    size_t n = sizeof kCastleTypeTable / sizeof kCastleTypeTable[0];
+    for (size_t i = 0; i < n; ++i)
+        if (pctile >= kCastleTypeTable[i].lo &&
+            pctile <= kCastleTypeTable[i].hi) {
+            t.size = kCastleTypeTable[i].size;
+            t.type = kCastleTypeTable[i].type;
+            return t;
+        }
+    return t;   // defensive: column covers 01-00
+}
+
+CastleInhabitants castleInhabitants(int pctile, CastleSize size) {
+    const CastleInhRow* t = nullptr; size_t n = 0;
+    switch (size) {
+        case CASTLE_SMALL:  t = kCastleInhSmall;  n = sizeof kCastleInhSmall  / sizeof kCastleInhSmall[0];  break;
+        case CASTLE_MEDIUM: t = kCastleInhMedium; n = sizeof kCastleInhMedium / sizeof kCastleInhMedium[0]; break;
+        default:            t = kCastleInhLarge;  n = sizeof kCastleInhLarge  / sizeof kCastleInhLarge[0];  break;
+    }
+    for (size_t i = 0; i < n; ++i)
+        if (pctile >= t[i].lo && pctile <= t[i].hi)
+            return t[i].cat;
+    return CASTLE_TOTALLY_DESERTED;   // defensive
+}
+
+const char* castleHumansType(int pctile) {
+    size_t n = sizeof kCastleHumansAre / sizeof kCastleHumansAre[0];
+    for (size_t i = 0; i < n; ++i)
+        if (pctile >= kCastleHumansAre[i].lo &&
+            pctile <= kCastleHumansAre[i].hi)
+            return kCastleHumansAre[i].key;
+    return "bandit";   // defensive
+}
+
+int castleHumansCount(const monsters::MonsterRegistry& reg,
+                      rules::Dice& dice, const char* key) {
+    // "Numbers and other details of these humans are given in
+    // the MONSTER MANUAL under the heading of MEN" — registry
+    // noAppearing (R60 convention; 0/0 -> single specimen)
+    const monsters::MonsterDef* def = reg.find(key);
+    if (!def) return 1;
+    if (def->noAppearingMin > 0) {
+        int lo = def->noAppearingMin;
+        int hi = def->noAppearingMax < lo ? lo : def->noAppearingMax;
+        return (lo == hi)
+            ? lo
+            : lo + (int)dice.roll(1, (uint32_t)(hi - lo + 1), 0) - 1;
+    }
+    return 1;
+}
+
+// R67: the stronghold's master per Sub-Table II.B — class by
+// percentile, level uniform over the printed range, race per
+// R62, magic items per the R55 ladder (the book's Character
+// Subtable pointer).
+PartyMember rollCastleMaster(rules::Dice& dice, int pctile) {
+    PartyMember m;
+    size_t n = sizeof kCastleMaster / sizeof kCastleMaster[0];
+    const CastleMasterRow* row = nullptr;
+    for (size_t i = 0; i < n; ++i)
+        if (pctile >= kCastleMaster[i].lo &&
+            pctile <= kCastleMaster[i].hi)
+            { row = &kCastleMaster[i]; break; }
+    if (!row) return m;   // defensive: column covers 01-00
+    m.classIndex = classForProf(row->prof);
+    m.level = (row->lvlLo == row->lvlHi)
+        ? row->lvlLo
+        : row->lvlLo + (int)dice.roll(
+              1, (uint32_t)(row->lvlHi - row->lvlLo + 1), 0) - 1;
+    m.race = rollNpcRace(dice, m.classIndex);   // R62
+    rollMagicItemsFor(dice, m);                 // R55
+    return m;
+}
+
+// R67: the master's henchmen — "from 2-5 henchmen found
+// within a fortress," levels and magic items per the
+// Character Subtable (henchmanLevelFor, one-third of the
+// master's, R53; R62 race follows the master's folk where
+// the class allows — the R63 convention).
+CharacterParty rollCastleHenchmen(rules::Dice& dice,
+                                  const PartyMember& master) {
+    CharacterParty p;
+    int n = 1 + (int)dice.roll(1, 4, 0);           // 2-5
+    for (int i = 0; i < n; ++i) {
+        PartyMember m;
+        m.henchman = true;
+        m.classIndex = master.classIndex;   // the master's own
+        m.level = henchmanLevelFor(master.level);
+        m.race = raceAllowsClass(master.race, m.classIndex)
+               ? master.race
+               : rollNpcRace(dice, m.classIndex);
+        rollMagicItemsFor(dice, m);               // R55
+        p.members.push_back(m);
+    }
+    return p;
+}
+
+// R67: the artillery of the fortress, per the printed table.
+// The book's eight rows group the nine castle types; the
+// engine maps by nearest type (concentric -> the medium
+// concentric row; large walled / fortress complex -> the
+// large castle row), documented.
+CastleArtillery castleArtillery(const CastleType& castle) {
+    size_t n = sizeof kCastleArtillery / sizeof kCastleArtillery[0];
+    for (size_t i = 0; i < n; ++i)
+        if (std::string(kCastleArtillery[i].type) == castle.type)
+            return { kCastleArtillery[i].ballistae,
+                     kCastleArtillery[i].lightCatapults,
+                     kCastleArtillery[i].oilCauldrons };
+    // shell keeps share a row keyed "shell keep" (documented)
+    if (std::string(castle.type).find("shell keep") !=
+        std::string::npos)
+        for (size_t i = 0; i < n; ++i)
+            if (std::string(kCastleArtillery[i].type) == "shell keep")
+                return { kCastleArtillery[i].ballistae,
+                         kCastleArtillery[i].lightCatapults,
+                         kCastleArtillery[i].oilCauldrons };
+    return { 0, 0, 0 };
+}
+
+// R67: fortress detection per the p.183 rule — "roll a
+// surprise die ... if they are surprised, then the fortress
+// occupants know they are there — if surprise is 2 or
+// greater, the occupants are actually outside the place and
+// within normal surprise distance." The standard 1e
+// surprise die is 1d6; 1 = surprised (occupants aware),
+// 2 = surprised and the occupants are outside, 3+ = not
+// detected.
+CastleAwareness castleAwareness(int surpriseDie) {
+    if (surpriseDie <= 1) return CASTLE_OCCUPANTS_AWARE;
+    if (surpriseDie == 2) return CASTLE_OCCUPANTS_OUTSIDE;
+    return CASTLE_UNDETECTED;
+}
+
+// R67: build a patrol per the p.182 text — fighter (or
+// ranger) leader 6th-8th, lieutenant 4th-5th, sergeant
+// 2nd-3rd, 3-4 1st-level men, 13-24 men-at-arms, plus a
+// cleric 6th-7th (40%) or magic-user 5th-8th (60%). Classed
+// members roll R62 races and R55 magic items (the book's
+// Character Subtable pointer); men-at-arms are 0-level
+// humans (R53). Arms/armor fiction is not itemized
+// (documented).
+CharacterParty rollPatrol(rules::Dice& dice, bool rangerLeader) {
+    CharacterParty p;
+    auto add = [&](int classIndex, int level) {
+        PartyMember m;
+        m.classIndex = classIndex;
+        m.level = level;
+        m.race = rollNpcRace(dice, classIndex);   // R62
+        rollMagicItemsFor(dice, m);               // R55
+        p.members.push_back(m);
+    };
+    auto addMan = [&](int level, int count) {
+        for (int i = 0; i < count; ++i) {
+            PartyMember m;
+            m.manAtArms = true;
+            m.classIndex = rules::CLASS_FIGHTER;
+            m.level = level;
+            m.race = RACE_HUMAN;   // R53 convention
+            p.members.push_back(m);
+        }
+    };
+
+    // leader: fighter 6-8 (or ranger where applicable)
+    int leadLvl = 5 + (int)dice.roll(1, 3, 0);
+    add(rangerLeader ? rules::CLASS_FIGHTER : rules::CLASS_FIGHTER,
+        leadLvl);   // ranger kit not carried by classIndex (R53)
+    // lieutenant 4-5, sergeant 2-3
+    add(rules::CLASS_FIGHTER, 3 + (int)dice.roll(1, 2, 0));
+    add(rules::CLASS_FIGHTER, 1 + (int)dice.roll(1, 2, 0));
+    // 3-4 1st-level men
+    addMan(1, 2 + (int)dice.roll(1, 2, 0));
+    // 13-24 men-at-arms (0-level, R53 shapes)
+    addMan(0, 12 + (int)dice.roll(1, 12, 0));
+    // cleric 6-7 (40%) or magic-user 5-8 (60%)
+    if ((int)dice.roll(1, 100, 0) <= 40)
+        add(rules::CLASS_CLERIC, 5 + (int)dice.roll(1, 2, 0));
+    else
+        add(rules::CLASS_MAGIC_USER, 4 + (int)dice.roll(1, 4, 0));
+    return p;
+}
+
+
 } // namespace dm
