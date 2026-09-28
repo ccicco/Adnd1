@@ -743,7 +743,14 @@ struct AppState {
     // R24: full reset after a wipe â back to creation, career gone
     void resetToCreation() {
         party = Party{};
-        creation = CreationState{};
+        // R69: CreationState is non-copyable (its Dice holds a
+        // reference to creationRng) — reset fields explicitly
+        // instead of assigning a fresh temporary.
+        creation.stage = CR_ROLL;
+        creation.classPick = 0;
+        creation.nameBuf.clear();
+        creation.partySizeCap = PARTY_DEFAULT;
+        creation.done = false;
         creation.rollFresh();
         dungeonLevel = 1;
         mode = MODE_CREATE;
@@ -760,7 +767,7 @@ struct AppState {
     // ----------------------------------------------------------------
     static const char* SAVE_FILE() { return "adnd1.sav"; }
 
-    bool saveGame() const {
+    bool saveGame() {
         if (!party.formed || party.members.empty()) {
             log.add("No company to save yet.");
             return false;
@@ -1801,9 +1808,20 @@ struct AppState {
                 (uint32_t)keys.size())]);
         if (def) {
             char buf[96];
-            snprintf(buf, sizeof buf,
-                     "Of %s: HD %d, AC %d, worth %d xp.",
-                     def->name, def->hd, def->ac, def->xpValue);
+            // R69: the R49 Lua schema carries hitDiceText (the
+            // printed "4 + 3" form) and armorClass — the old
+            // hd/ac field names no longer exist
+            if (!def->hitDiceText.empty())
+                snprintf(buf, sizeof buf,
+                         "Of %s: HD %s, AC %d, worth %d xp.",
+                         def->name.c_str(),
+                         def->hitDiceText.c_str(),
+                         def->armorClass, def->xpValue);
+            else
+                snprintf(buf, sizeof buf,
+                         "Of %s: HD %d, AC %d, worth %d xp.",
+                         def->name.c_str(), def->hitDiceNum,
+                         def->armorClass, def->xpValue);
             log.add(buf);
         }
     }
@@ -3152,7 +3170,7 @@ struct AppState {
                 (m.classIndex == rules::CLASS_MAGIC_USER ||
                  m.classIndex == rules::CLASS_CLERIC)) {
                 for (int lv = 0; lv < 6; ++lv)
-                    a.slotsByLevel[lv] = rules::spellSlots(
+                    a.slotsByLevel[lv] = spells::spellSlots(
                         sc, a.level, lv + 1);
                 if (m.classIndex == rules::CLASS_MAGIC_USER) {
                     a.knownSpells.push_back(spells::MU_MAGIC_MISSILE);
