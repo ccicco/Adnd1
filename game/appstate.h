@@ -142,11 +142,19 @@
 // lairs stay monsters. Party kills pay the by_level XP ladder
 // (xp::xpForNpc) with the specimen's actual hp. Simplification:
 // average abilities (PERSONAE-grade generation is a later round).
+// R58: NPC-party reaction & parley (DMG p.63 Encounter
+// Reactions + p.176 Confrontation): wandering Character Subtable
+// parties now roll percentile + spokesman-Cha adjustment before
+// combat — hostile bands attack, uncertain ones dice it,
+// friendly ones pass by or share word of the dungeon (never
+// joining, per p.176). A party that feels weak gets +10 to avoid
+// or bluff (p.176). Also fixes a leftover placeholder glitch in
+// the R57 header note.
 // R57: PERSONAE-grade NPC abilities (DMG p.87 + p.176): 3d6
 // per score, race (p.176 table) and class (p.87 table) ability
 // adjustments, exceptional strength for fighters at STR 18, and
 // hp by the canonical per-level rollHitPoints with the rolled
-// Con adjustment (men-at-arms: the p.87 Mercenary row " DASH
+// Con adjustment (men-at-arms: the p.87 Mercenary row —
 // STR +1, CON +3, 4 minimum hp). The R53 average-10 convention
 // is retired.
 // R55: NPC parties roll magic items (DMG p.176-177 Tables I-IV
@@ -3049,12 +3057,89 @@ struct AppState {
             // R53: a Character Subtable party (DMG p.176)
             std::vector<ai::Actor> foes = buildFoesFromParty(e.party);
             if (foes.empty()) return;
+            // R58: DMG p.63 Encounter Reactions + p.176
+            // Confrontation — the strangers react before steel
+            // is drawn. Charisma adjustment follows the engine's
+            // best-living-Cha spokesman convention (henchman
+            // hire, R44); the p.63 loyalty adjustment is not
+            // modeled (documented simplification). The p.176
+            // "never join with adventurers" rule keeps friendly
+            // outcomes pass-by fiction only (no gifts/trade
+            // modeled this round).
+            int chaAdj = 0;
+            for (const auto& c : party.members) {
+                if (c.hp <= 0) continue;
+                int adj = rules::chaReactionAdj(c.abilities.cha);
+                if (adj > chaAdj) chaAdj = adj;
+            }
+            int partyLevels = 0;
+            for (const auto& c : party.members)
+                if (c.hp > 0) partyLevels += c.level;
+            if (party.henchmanPresent)
+                partyLevels += party.henchmanLevel;
+            int npcLevels = 0;
+            for (const auto& m : e.party.members)
+                npcLevels += m.level;
+            dm::PartyReaction react = dm::rollPartyReaction(
+                dice, chaAdj, npcLevels < partyLevels);
             char buf[96];
-            snprintf(buf, sizeof buf,
-                     "A party of %d adventurers bars the way!",
-                     e.count);
-            log.add(buf);
-            beginCombat(std::move(foes), -1, e.key);
+            switch (react) {
+            case dm::PartyReaction::ViolentlyHostile:
+                snprintf(buf, sizeof buf,
+                         "%d adventurers attack without a word!",
+                         e.count);
+                log.add(buf);
+                beginCombat(std::move(foes), -1, e.key);
+                return;
+            case dm::PartyReaction::Hostile:
+                snprintf(buf, sizeof buf,
+                         "%d adventurers size you up and attack!",
+                         e.count);
+                log.add(buf);
+                beginCombat(std::move(foes), -1, e.key);
+                return;
+            case dm::PartyReaction::UncertainNegative:
+                // p.63: 55% prone toward negative — they may
+                // still strike, or let the party pass
+                if ((int)dice.roll(1, 100, 0) <= 55) {
+                    snprintf(buf, sizeof buf,
+                             "%d wary adventurers draw steel!",
+                             e.count);
+                    log.add(buf);
+                    beginCombat(std::move(foes), -1, e.key);
+                    return;
+                }
+                log.add("The adventurers eye you warily, "
+                        "then let you pass.");
+                return;
+            case dm::PartyReaction::Neutral:
+                snprintf(buf, sizeof buf,
+                         "%d adventurers pass by, uninterested.",
+                         e.count);
+                log.add(buf);
+                return;
+            case dm::PartyReaction::UncertainPositive:
+                // p.63: 55% prone toward positive — a hail
+                // instead of silence
+                if ((int)dice.roll(1, 100, 0) <= 55)
+                    log.add("The adventurers hail you "
+                            "and move on.");
+                else
+                    log.add("The adventurers nod and pass by.");
+                return;
+            case dm::PartyReaction::Friendly:
+                snprintf(buf, sizeof buf,
+                         "%d adventurers hail you, share word "
+                         "of the dungeon, and depart.", e.count);
+                log.add(buf);
+                return;
+            case dm::PartyReaction::Enthusiastic:
+                snprintf(buf, sizeof buf,
+                         "%d adventurers greet you warmly and "
+                         "warn of dangers ahead!", e.count);
+                log.add(buf);
+                return;
+            }
             return;
         }
         if (e.key.empty() || e.count <= 0) return;
