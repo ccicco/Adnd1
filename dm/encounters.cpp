@@ -3216,4 +3216,372 @@ std::vector<std::string> cityEncounterKeys(
 }
 
 
+// ----------------------------------------------------------------------------
+// R65: the ASTRAL & ETHEREAL encounter tables — DMG Appendix C
+// (Premium reprint p.181, OCR-verified against the uploaded
+// DMG). "Encounters occur 1 in 20; check at the beginning,
+// midpoint, and end of the journey." Unlike the outdoor
+// tables, these print a Numbers column — counts come from the
+// table rows, not the registry. The astral/ethereal footnote
+// (*): basilisk, cockatrice, gorgon and medusa "do not
+// actually travel therein ... their possible appearance
+// applies only to situations in which the encounter allows
+// effect to extend from the Prime Material Plane; otherwise
+// ignore the encounter result and roll again" — carried as
+// PF_PRIME_ONLY, gated on the caller's primeAdjacent flag
+// and re-rolled when false (the R60 footnote-clime
+// precedent). "Dragon, chromatic" / "Dragon, platinum" are
+// Tiamat and Bahamut — the bestiary's chromatic_dragon /
+// platinum_dragon keys, documented. Demon/devil tiers are
+// pick-sets on the second percentile (R52 style): minor ->
+// the six type I-IV demons, major -> the ten type V/VI
+// demons, prince -> the R52 kPrinces pool, arch- ->
+// kArchDevils, greater -> horned/ice/pit_fiend, lesser ->
+// succubus/erinyes/barbed/bone devil. The bestiary's titans
+// are AC variants: elder (AC -2/-3), lesser (AC 1/2), major
+// (AC 0/1), picked on the second percentile. "Human
+// traveller" resolves as the ** modified Human Subtable
+// party (see rollPlanarTravellerParty). The Psychic Wind
+// and Ether Cyclone tables (chance 5% per plane crossed)
+// are transcribed verbatim as results the caller interprets
+// — the engine has no planar travel yet, so lost-days and
+// cord effects are fiction-only (documented; R60/R63 no-
+// wiring precedent).
+
+namespace {
+
+struct PlanarRow {
+    short lo, hi;             // percentile
+    const char* key;          // registry key or pseudo-key
+    short nMin, nMax;         // printed Numbers column
+    int flags;
+};
+enum { PF_NONE = 0, PF_PRIME_ONLY = 1 };
+
+static const PlanarRow kAstralTable[] = {
+{1, 4, "aerial_servant", 1, 1},
+{5, 10, "basilisk", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{11, 13, "cockatrice", 1, 4 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{14, 16, "PLANAR_DEMON_MAJOR", 1, 1}   // Demon, major -> type V/VI pick-set,
+{17, 22, "PLANAR_DEMON_MINOR", 1, 3}   // Demon, minor -> type I-IV pick-set,
+{23, 23, "PLANAR_DEMON_PRINCE", 1, 1}   // Demon, prince -> R52 kPrinces pool,
+{24, 24, "PLANAR_DEVIL_ARCH", 1, 1}   // Devil, arch- -> R52 kArchDevils pool,
+{25, 28, "PLANAR_DEVIL_GREATER", 1, 1}   // Devil, greater- -> horned/ice/pit_fiend,
+{29, 37, "PLANAR_DEVIL_LESSER", 1, 3}   // Devil, lesser- -> succubus/erinyes/barbed/bone,
+{38, 38, "chromatic_dragon", 1, 1}   // Dragon, chromatic (Tiamat),
+{39, 39, "platinum_dragon", 1, 1}   // Dragon, platinum (Bahamut),
+{40, 41, "gorgon", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{42, 46, "PLANAR_TRAVELLER", 0, 0}   // Human traveller - modified Human Subtable (**),
+{47, 49, "intellect_devourer", 1, 2},
+{50, 55, "invisible_stalker", 1, 3},
+{56, 61, "ki_rin", 1, 1},
+{62, 63, "medusa", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{64, 71, "night_hag", 1, 4},
+{72, 74, "nightmare", 1, 4},
+{75, 79, "rakshasa", 1, 3},
+{80, 91, "shedu", 2, 5},
+{92, 92, "PLANAR_TITAN_ELDER", 1, 1}   // Titan, elder -> AC -2/-3 variants,
+{93, 97, "PLANAR_TITAN_LESSER", 1, 1}   // Titan, lesser -> AC 1/2 variants,
+{98, 100, "PLANAR_TITAN_MAJOR", 1, 1}   // Titan, major -> AC 0/1 variants
+};
+
+static const PlanarRow kEtherealTable[] = {
+{1, 5, "aerial_servant", 1, 1},
+{6, 10, "basilisk", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{11, 13, "cockatrice", 1, 4 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{14, 18, "couatl", 1, 4},
+{19, 26, "djinni", 1, 6},
+{27, 27, "chromatic_dragon", 1, 1}   // Dragon, chromatic (Tiamat),
+{28, 28, "platinum_dragon", 1, 1}   // Dragon, platinum (Bahamut),
+{29, 30, "efreeti", 1, 3},
+{31, 37, "air_elemental", 1, 1}   // Elemental, air,
+{38, 39, "earth_elemental", 1, 1}   // Elemental, earth,
+{40, 41, "fire_elemental", 1, 1}   // Elemental, fire,
+{42, 42, "water_elemental", 1, 1}   // Elemental, water,
+{43, 48, "ghost", 1, 1},
+{49, 50, "gorgon", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{51, 52, "groaning_spirit", 1, 2},
+{53, 57, "PLANAR_TRAVELLER", 0, 0}   // Human traveller - same ** note,
+{58, 59, "intellect_devourer", 1, 2},
+{60, 62, "invisible_stalker", 1, 3},
+{63, 68, "ki_rin", 1, 1},
+{69, 76, "lammasu", 2, 8},
+{77, 78, "medusa", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{79, 80, "nightmare", 1, 4},
+{81, 82, "salamander", 2, 5},
+{83, 87, "phase_spider", 1, 6}   // Spider, phase,
+{88, 94, "thought_eater", 1, 3}   // Thought eaters,
+{95, 97, "wind_walker", 2, 5}   // Wind walkers,
+{98, 100, "xorn", 3, 6}
+};
+
+// pick-sets (second percentile modulo size)
+static const char* const kDemonMinor[] = {
+    "type_i_vrock", "type_ii_hezrou", "type_iii_glabrezu",
+    "type_iv_demon_bilwhr", "type_iv_demon_johud",
+    "type_iv_demon_nalfeshnee"
+};
+static const char* const kDemonMajor[] = {
+    "type_v_demon_aishapra", "type_v_demon_kevokulli",
+    "type_v_demon_marilith", "type_v_demon_rehnaremme",
+    "type_vi_demon_alzoll", "type_vi_demon_balor",
+    "type_vi_demon_errtu", "type_vi_demon_ndulu",
+    "type_vi_demon_tersath", "type_vi_demon_wendonai"
+};
+static const char* const kDevilGreater[] = {
+    "horned_devil", "ice_devil", "pit_fiend"
+};
+static const char* const kDevilLesser[] = {
+    "succubus", "erinyes", "barbed_devil", "bone_devil"
+};
+static const char* const kTitanElder[]  = { "elder_titan_ac_2", "elder_titan_ac_3" };
+static const char* const kTitanLesser[] = { "lesser_titan_ac_1", "lesser_titan_ac_2" };
+static const char* const kTitanMajor[]  = { "major_titan_ac_0", "major_titan_ac_1" };
+
+const PlanarRow* planarTable(PlanarBody body, size_t& n) {
+    if (body == PB_ASTRAL) {
+        n = sizeof kAstralTable / sizeof kAstralTable[0];
+        return kAstralTable;
+    }
+    n = sizeof kEtherealTable / sizeof kEtherealTable[0];
+    return kEtherealTable;
+}
+
+} // namespace
+
+// R65: the ** modified Human Subtable for planar travellers
+// (both tables reference it). "Party size will be only 1-6.
+// No limits to the number of characters of one class apply.
+// There will always be 1 cleric; if 2 or more in the party,
+// there will also be a minimum of 1 magic-user." Levels per
+// the printed class table: cleric 9-18, druid 7-14, fighter
+// 8-15, paladin 7-16, ranger 7-16, magic-user 11-20,
+// illusionist 10-17, thief 9-16, assassin 10-15, monk 8-17,
+// bard 11-18 (the bard's fighter 7th-8th / thief 6th-9th
+// dual abilities are unmodeled — the thief range, per the
+// R53 bard convention). The remaining members roll
+// professions on the standard subtable without per-class
+// maxima; the monk/bard split is 60/40 (city-matrix
+// precedent, documented). Race: rollNpcRace per class
+// (R62) — nothing printed, the character-party convention.
+// Magic items: the R55 ladder (rollMagicItemsFor), the
+// character-party convention, documented.
+static CharacterParty rollPlanarTravellerParty(rules::Dice& dice) {
+    CharacterParty p;
+    int n = (int)dice.roll(1, 6, 0);            // 1-6 members
+
+    auto profLevel = [&](int prof) {
+        switch (prof) {
+            case PROF_CLERIC:      return 8 + (int)dice.roll(1, 10, 0);   // 9-18
+            case PROF_DRUID:       return 6 + (int)dice.roll(1, 8, 0);     // 7-14
+            case PROF_FIGHTER:     return 7 + (int)dice.roll(1, 8, 0);     // 8-15
+            case PROF_PALADIN:     return 6 + (int)dice.roll(1, 10, 0);   // 7-16
+            case PROF_RANGER:      return 6 + (int)dice.roll(1, 10, 0);   // 7-16
+            case PROF_MU:          return 10 + (int)dice.roll(1, 10, 0);  // 11-20
+            case PROF_ILLUSIONIST: return 9 + (int)dice.roll(1, 8, 0);    // 10-17
+            case PROF_THIEF:       return 8 + (int)dice.roll(1, 8, 0);    // 9-16
+            case PROF_ASSASSIN:    return 9 + (int)dice.roll(1, 6, 0);    // 10-15
+            case PROF_MONK_BARD:   // monk 8-17 / bard thief 6-9
+                return ((int)dice.roll(1, 100, 0) <= 60)
+                     ? 7 + (int)dice.roll(1, 10, 0)
+                     : 5 + (int)dice.roll(1, 4, 0);
+            default:               return 8 + (int)dice.roll(1, 8, 0);
+        }
+    };
+    auto addMember = [&](int prof) {
+        PartyMember m;
+        m.classIndex = classForProf(prof);
+        m.level = profLevel(prof);
+        m.race = rollNpcRace(dice, m.classIndex);   // R62
+        rollMagicItemsFor(dice, m);                 // R55
+        p.members.push_back(m);
+    };
+
+    // always 1 cleric; 2+ members -> minimum 1 magic-user
+    addMember(PROF_CLERIC);
+    if (n >= 2) addMember(PROF_MU);
+    for (int i = (int)p.members.size(); i < n; ++i)
+        addMember(profFor((int)dice.roll(1, 100, 0)));
+    return p;
+}
+
+DungeonEncounter rollPlanarEncounter(
+        const monsters::MonsterRegistry& reg, rules::Dice& dice,
+        int pctile, int pctile2,
+        PlanarBody body, bool primeAdjacent) {
+    DungeonEncounter e;
+
+    size_t n = 0;
+    const PlanarRow* t = planarTable(body, n);
+
+    for (int attempt = 0; attempt < 24; ++attempt) {
+        const PlanarRow* row = nullptr;
+        for (size_t i = 0; i < n; ++i)
+            if (pctile >= t[i].lo && pctile <= t[i].hi)
+                { row = &t[i]; break; }
+        if (!row) return e;   // defensive: columns cover 01-00
+
+        // * footnote: prime-material perception creatures
+        // "otherwise, ignore the encounter result and roll
+        // again"
+        if ((row->flags & PF_PRIME_ONLY) && !primeAdjacent) {
+            pctile  = 1 + (int)dice.roll(1, 100, 0) - 1;
+            pctile2 = 1 + (int)dice.roll(1, 100, 0) - 1;
+            continue;
+        }
+
+        std::string key = row->key;
+        if      (key == "PLANAR_DEMON_MINOR")  key = kDemonMinor[pctile2 % 6];
+        else if (key == "PLANAR_DEMON_MAJOR")  key = kDemonMajor[pctile2 % 10];
+        else if (key == "PLANAR_DEMON_PRINCE") key = kPrinces[pctile2 % 4];
+        else if (key == "PLANAR_DEVIL_ARCH")   key = kArchDevils[pctile2 % 4];
+        else if (key == "PLANAR_DEVIL_GREATER") key = kDevilGreater[pctile2 % 3];
+        else if (key == "PLANAR_DEVIL_LESSER")  key = kDevilLesser[pctile2 % 4];
+        else if (key == "PLANAR_TITAN_ELDER")   key = kTitanElder[pctile2 % 2];
+        else if (key == "PLANAR_TITAN_LESSER")  key = kTitanLesser[pctile2 % 2];
+        else if (key == "PLANAR_TITAN_MAJOR")   key = kTitanMajor[pctile2 % 2];
+
+        if (key == "PLANAR_TRAVELLER") {
+            // ** modified Human Subtable party
+            e.party = rollPlanarTravellerParty(dice);
+            e.isParty = true;
+            e.key = "planar_traveller_party";
+            e.count = e.party.size();
+            return e;
+        }
+
+        const monsters::MonsterDef* def = reg.find(key);
+        if (def) {
+            e.key = key;
+            // printed Numbers column (uniform lo..hi; single
+            // results skip the roll)
+            e.count = (row->nMin == row->nMax)
+                ? row->nMin
+                : row->nMin + (int)dice.roll(
+                      1, (uint32_t)(row->nMax - row->nMin + 1), 0) - 1;
+            return e;
+        }
+
+        // DMG advice: ignore & re-roll
+        pctile  = 1 + (int)dice.roll(1, 100, 0) - 1;
+        pctile2 = 1 + (int)dice.roll(1, 100, 0) - 1;
+    }
+    return e;
+}
+
+// Every result key the table can produce — the regtest-style
+// companion of rollPlanarEncounter. Footnote (*) creatures
+// appear only when the encounter allows prime-material
+// effect; they are listed regardless (R60 precedent) and the
+// caller gates on primeAdjacent.
+std::vector<std::string> planarEncounterKeys(
+        const monsters::MonsterRegistry& reg, PlanarBody body) {
+    std::vector<std::string> out;
+    size_t n = 0;
+    const PlanarRow* t = planarTable(body, n);
+    for (size_t i = 0; i < n; ++i) {
+        const std::string key = t[i].key;
+        if      (key == "PLANAR_DEMON_MINOR")
+            for (const char* k : kDemonMinor) pushUnique(out, k);
+        else if (key == "PLANAR_DEMON_MAJOR")
+            for (const char* k : kDemonMajor) pushUnique(out, k);
+        else if (key == "PLANAR_DEMON_PRINCE")
+            for (const char* k : kPrinces) pushUnique(out, k);
+        else if (key == "PLANAR_DEVIL_ARCH")
+            for (const char* k : kArchDevils) pushUnique(out, k);
+        else if (key == "PLANAR_DEVIL_GREATER")
+            for (const char* k : kDevilGreater) pushUnique(out, k);
+        else if (key == "PLANAR_DEVIL_LESSER")
+            for (const char* k : kDevilLesser) pushUnique(out, k);
+        else if (key == "PLANAR_TITAN_ELDER")
+            for (const char* k : kTitanElder) pushUnique(out, k);
+        else if (key == "PLANAR_TITAN_LESSER")
+            for (const char* k : kTitanLesser) pushUnique(out, k);
+        else if (key == "PLANAR_TITAN_MAJOR")
+            for (const char* k : kTitanMajor) pushUnique(out, k);
+        else if (key == "PLANAR_TRAVELLER")
+            pushUnique(out, "planar_traveller_party");
+        else if (reg.find(key))
+            pushUnique(out, key.c_str());
+    }
+    return out;
+}
+
+// ----------------------------------------------------------------------------
+// R65: PSYCHIC WIND (astral) & ETHER CYCLONE (ethereal) — DMG
+// p.181, transcribed verbatim. "The chance of a delayed or
+// disrupted journey is 5% per plane crossed." The effects
+// are journey fiction the engine does not yet simulate (no
+// planar travel); the roll functions return the printed
+// result and the caller interprets. Day counts are uniform
+// over the printed range (the book prints only the range;
+// the spread is a documented approximation). The saving
+// throw versus magic (wind 20 / cyclone 19-20) is the
+// caller's — passed in as saveMade.
+enum class PsychicWindEffect {
+    Slowed,          // 1-12: +1 random encounter check
+    LostReturn,      // 13-16: lost 2-20 days, return to start
+    OffCourse,       // 17-19: random different destination
+    Storm            // 20: save vs magic or cord breaks
+};
+struct PsychicWindResult {
+    PsychicWindEffect effect;
+    int days = 0;             // LOST_RETURN / STORM success
+    bool cordBroken = false;  // STORM save failure (death)
+};
+
+PsychicWindResult rollPsychicWind(rules::Dice& dice, int d20,
+                                  bool saveMade) {
+    PsychicWindResult r;
+    if (d20 <= 12) {
+        r.effect = PsychicWindEffect::Slowed;
+    } else if (d20 <= 16) {
+        r.effect = PsychicWindEffect::LostReturn;
+        r.days = 1 + (int)dice.roll(1, 19, 0);       // 2-20
+    } else if (d20 <= 19) {
+        r.effect = PsychicWindEffect::OffCourse;
+    } else {
+        r.effect = PsychicWindEffect::Storm;
+        if (saveMade)
+            r.days = 3 + (int)dice.roll(1, 37, 0);    // 4-40
+        else
+            r.cordBroken = true;
+        // no-cord projection: lost AND different destination
+        // (p.181 note) — the caller reads cordBroken plus
+        // OffCourse semantics; fiction, documented
+    }
+    return r;
+}
+
+enum class EtherCycloneEffect {
+    BlownAbout,      // 1-10: random direction, +1 check
+    DifferentPlane,  // 11-15: usual encounter checks
+    LostNewPlane,    // 16-18: lost 5-60 days, random plane
+    StormAstral      // 19-20: lost 10-120 days; save or astral
+};
+struct EtherCycloneResult {
+    EtherCycloneEffect effect;
+    int days = 0;
+    bool blownToAstral = false;   // STORM save failure
+};
+
+EtherCycloneResult rollEtherCyclone(rules::Dice& dice, int d20,
+                                    bool saveMade) {
+    EtherCycloneResult r;
+    if (d20 <= 10) {
+        r.effect = EtherCycloneEffect::BlownAbout;
+    } else if (d20 <= 15) {
+        r.effect = EtherCycloneEffect::DifferentPlane;
+    } else if (d20 <= 18) {
+        r.effect = EtherCycloneEffect::LostNewPlane;
+        r.days = 4 + (int)dice.roll(1, 56, 0);        // 5-60
+    } else {
+        r.effect = EtherCycloneEffect::StormAstral;
+        r.days = 9 + (int)dice.roll(1, 111, 0);      // 10-120
+        r.blownToAstral = !saveMade;   // save: random ether-touched plane
+    }
+    return r;
+}
+
+
 } // namespace dm
