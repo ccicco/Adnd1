@@ -172,6 +172,34 @@
 // then fireball at 3rd-level slots (ai/actor.cpp foeSpellChoice).
 // ============================================================================================================================================
 
+// R68: overland travel — the DMG Appendix C outdoor play loop
+// (p.182-183, wired to the R63/R67 builders). From town, [O] sets
+// out; each day is a march ([T] outward, [H] homeward) across a
+// player-chosen terrain, with a night camp ([C]) that heals if
+// undisturbed. The DMG leaves the check cadence to the DM
+// ("whenever an encounter is indicated") — this campaign checks
+// once per march day and once per night camp (documented
+// fiction). The first three days from town are the INHABITED
+// band (OC_TEMPERATE_INHABITED tables, patrols 5 in 20,
+// DMG p.182); beyond it the WILDS (OC_TEMPERATE_WILD — the
+// campaign's fixed clime is temperate, the other climate sets
+// are the R63 module's for other campaigns, documented). In the
+// wilds 1 in 20 encounters discover a STRONGHOLD (p.182):
+// Castle Table I -> awareness (the p.183 surprise die; an
+// unaware party chooses [A]pproach or [P]ass, an aware one is
+// met) -> Table II -> totally deserted (a safe night's shelter,
+// fiction), deserted (the p.183 "roll the OUTDOOR ENCOUNTER
+// TABLE, ignoring men" monster — the Men Subtable keys are the
+// R63 set), humans (Sub-Table II.A bandits/berserkers/
+// dervishes, MM numbers via the registry), or character-types
+// (Sub-Table II.B master + 2-5 henchmen, R67 builders). Patrol
+// and garrison meetings roll the R58 party reaction (p.176
+// Confrontation); peaceful friendly garrisons grant shelter,
+// wilderness character parties may part with favors (R62
+// convention). Combat returns to the travel mode it began from
+// (endCombat restores the pre-combat mode). Saves are not
+// possible on the trail (the town convention, R41); load
+// returns to the dungeon.
 #pragma once
 
 #include "../world/map.h"
@@ -308,6 +336,7 @@ enum GameMode : int {
     MODE_EXPLORE,
     MODE_COMBAT,
     MODE_TOWN,         // R41: shops between dives
+    MODE_OVERLAND,     // R68: wilderness travel
 };
 
 // ----------------------------------------------------------------------------
@@ -578,6 +607,60 @@ struct CombatState {
 // App state
 // ----------------------------------------------------------------------------
 
+// ---- R68: overland travel state -------------------------------------------
+
+// A discovered stronghold awaiting the party's decision. The
+// Table II percentile is rolled at discovery and kept for the
+// approach, so [A]/[P] resolve the same castle.
+struct OverlandCastle {
+    bool                  pending = false;
+    dm::CastleType        type{};
+    dm::CastleAwareness   aware = dm::CASTLE_UNDETECTED;
+    int                   pctile = 0;   // Table II roll
+};
+
+struct OverlandState {
+    int           day = 0;        // days on the trail
+    int           daysOut = 0;    // 0 = in town; 1+ = leagues out
+    bool          homeward = false;
+    int           terrain = dm::T_PLAIN;   // the route's column
+    OverlandCastle castle;
+};
+
+// The inhabited band: the first kOverlandInhabitedDays of the
+// journey are patrolled civilized lands (documented fiction —
+// the DMG divides outdoor play into inhabited/patrolled and
+// uninhabited/wilderness sets, p.182).
+static const int kOverlandInhabitedDays = 3;
+
+// R63 terrain names for the travel screen ([1-8] route choice)
+inline const char* overlandTerrainName(int t) {
+    switch (t) {
+        case dm::T_PLAIN:     return "plains";
+        case dm::T_SCRUB:     return "scrub";
+        case dm::T_FOREST:    return "forest";
+        case dm::T_ROUGH:     return "rough";
+        case dm::T_DESERT:    return "desert";
+        case dm::T_HILLS:     return "hills";
+        case dm::T_MOUNTAINS: return "mountains";
+        case dm::T_MARSH:     return "marsh";
+    }
+    return "plains";
+}
+
+// The p.183 deserted-castle rule: "roll on the appropriate
+// OUTDOOR ENCOUNTER TABLE, ignoring any rolls which indicate
+// men." The men are the R63 Men Subtable keys (encounters.cpp
+// kOutMen: bandit, berserker, brigand->bandit, dervish,
+// nomad->dervish, merchant, pilgrim, caveman) and its Character
+// row (a wilderness character party isParty).
+inline bool overlandIndicatesMen(const dm::DungeonEncounter& e) {
+    if (e.isParty) return true;   // Men Subtable Character row
+    return e.key == "bandit"   || e.key == "berserker" ||
+           e.key == "dervish"  || e.key == "merchant" ||
+           e.key == "pilgrim"  || e.key == "caveman";
+}
+
 struct AppState {
     // world
     Map           map;
@@ -602,6 +685,12 @@ struct AppState {
 
     // combat
     CombatState combat;
+    // R68: combat returns to the mode it began from (explore or
+    // the overland trail); the town precedent keeps saves
+    // explore-only, so this is never persisted.
+    GameMode combatReturnMode = MODE_EXPLORE;
+    // R68: the journey
+    OverlandState overland;
     int         combatRoomIndex = -1;
     std::string combatMonsterKey;
     // R51: one context PER FOE (each dragon rolls its own age);
@@ -2675,6 +2764,7 @@ struct AppState {
                          drinker.hp, drinker.maxHp);
                 log.add(buf);
             });
+        combatReturnMode = mode;   // R68
         combatRoomIndex = roomIndex;
         combatMonsterKey = monsterKey;
         mode = MODE_COMBAT;
@@ -3345,6 +3435,493 @@ struct AppState {
             }
         }
         combat.encounter.reset();
-        mode = MODE_EXPLORE;
+        mode = combatReturnMode;   // R68: back to the trail
+        if (mode == MODE_OVERLAND) checkArrivedHome();
+    }
+
+    // ---- R68: overland travel ---------------------------------------------
+
+    // [O] from town — set out along the wild roads
+    void enterOverland() {
+        if (mode != MODE_TOWN) return;
+        overland = OverlandState{};
+        mode = MODE_OVERLAND;
+        log.add("The company sets out along the wild roads.");
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "Day 1 — the %s, within sight of town.",
+                 overlandTerrainName(overland.terrain));
+        log.add(buf);
+    }
+
+    // [1-8] — steer the route's terrain column (campaign-map
+    // fiction; the castle and encounter rolls both use it)
+    void overlandSetTerrain(int t) {
+        if (mode != MODE_OVERLAND) return;
+        if (t < dm::T_PLAIN || t > dm::T_MARSH) return;
+        if (overland.castle.pending) {
+            log.add("Decide the castle first — [A]pproach or [P]ass.");
+            return;
+        }
+        if (t == overland.terrain) return;
+        overland.terrain = t;
+        char buf[96];
+        snprintf(buf, sizeof buf, "You steer toward the %s.",
+                 overlandTerrainName(t));
+        log.add(buf);
+    }
+
+    // The p.182 bands: the first days out are the patrolled
+    // lands; beyond them, the wilderness
+    bool overlandInhabited() const {
+        return overland.daysOut < kOverlandInhabitedDays;
+    }
+
+    dm::OutdoorClime overlandClime() const {
+        return overlandInhabited()
+            ? dm::OC_TEMPERATE_INHABITED   // p.182: inhabited set
+            : dm::OC_TEMPERATE_WILD;       // p.182: wilderness set
+    }
+
+    // One encounter check — a march day or a night at camp (the
+    // cadence is this campaign's documented fiction; the DMG
+    // checks "whenever an encounter is indicated").
+    void overlandStep() {
+        if (mode != MODE_OVERLAND || !party.alive()) return;
+        if (overland.castle.pending) return;
+        int d20 = (int)dice.roll(1, 20, 0);
+        if (overlandInhabited()) {
+            // p.182: "WHEN AN ENCOUNTER IN SUCH AN AREA IS
+            // INDICATED, ROLL d20; 5 IN 20 ARE ENCOUNTERS WITH
+            // A PATROL."
+            if (d20 <= 5) { overlandPatrol(); return; }
+        } else {
+            // p.182: "roll d20; 1 in 20 is an encounter which
+            // discovers such a stronghold."
+            if (d20 == 1) { overlandDiscoverCastle(); return; }
+        }
+        overlandWildEncounter();
+    }
+
+    // The wilderness itself: one roll on the R63 outdoor tables
+    // for the route's clime and terrain column
+    void overlandWildEncounter() {
+        dm::DungeonEncounter e = dm::rollOutdoorEncounter(
+            registry, dice,
+            (int)dice.roll(1, 100, 0), (int)dice.roll(1, 100, 0),
+            overlandClime(),
+            (dm::OutdoorTerrain)overland.terrain);
+        if (e.isParty) {
+            // the Men Subtable Character row — a wilderness
+            // character party of levels 7-10 (R63, p.187 note)
+            overlandMeeting(e, "adventurers", true, false);
+            return;
+        }
+        if (e.key.empty() || e.count <= 0) {
+            log.add("The way passes without incident.");
+            return;
+        }
+        std::vector<ai::Actor> foes = buildFoesFromDm(e);
+        if (foes.empty()) return;
+        char buf[96];
+        if (e.count == 1)
+            snprintf(buf, sizeof buf, "A wild %s attacks!",
+                     e.key.c_str());
+        else
+            snprintf(buf, sizeof buf, "%d wild %ss attack!",
+                     e.count, e.key.c_str());
+        log.add(buf);
+        beginCombat(std::move(foes), -1, e.key);
+    }
+
+    // A patrol of the inhabited lands (R67 rollPatrol; the
+    // "ranger, where applicable" leader is area fiction — this
+    // campaign's patrols are fighter-led, documented)
+    void overlandPatrol() {
+        dm::DungeonEncounter e;
+        e.isParty = true;
+        e.key = "character_party";
+        e.party = dm::rollPatrol(dice, false);
+        e.count = (int)e.party.members.size();
+        if (e.count <= 0) return;
+        log.add("Riders on the road — a patrol!");
+        overlandMeeting(e, "patrol", false, false);
+    }
+
+    // R58 party-reaction meeting (DMG p.63 Encounter Reactions +
+    // the p.176 Confrontation paragraph), overland flavor: the
+    // best-living-Cha spokesman, the weaker-side adjustment,
+    // hostile steel or a peaceful pass. favors: the R62 friendly
+    // parting gifts (a potion or a coin pouch); shelter: friendly
+    // garrisons take the company in for the night.
+    void overlandMeeting(dm::DungeonEncounter& e, const char* noun,
+                         bool favors, bool shelter) {
+        std::vector<ai::Actor> foes = buildFoesFromParty(e.party);
+        if (foes.empty()) return;
+        int chaAdj = 0;
+        for (const auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            int adj = rules::chaReactionAdj(c.abilities.cha);
+            if (adj > chaAdj) chaAdj = adj;
+        }
+        int partyLevels = 0;
+        for (const auto& c : party.members)
+            if (c.hp > 0) partyLevels += c.level;
+        if (party.henchmanPresent)
+            partyLevels += party.henchmanLevel;
+        int npcLevels = 0;
+        for (const auto& m : e.party.members)
+            npcLevels += m.level;
+        dm::PartyReaction react = dm::rollPartyReaction(
+            dice, chaAdj, npcLevels < partyLevels);
+        char buf[96];
+        switch (react) {
+            case dm::PartyReaction::ViolentlyHostile:
+                snprintf(buf, sizeof buf,
+                         "The %s attacks without a word!", noun);
+                log.add(buf);
+                beginCombat(std::move(foes), -1, e.key);
+                return;
+            case dm::PartyReaction::Hostile:
+                snprintf(buf, sizeof buf,
+                         "The %s sizes you up and attacks!", noun);
+                log.add(buf);
+                beginCombat(std::move(foes), -1, e.key);
+                return;
+            case dm::PartyReaction::UncertainNegative:
+                // p.63: 55% prone toward negative
+                if ((int)dice.roll(1, 100, 0) <= 55) {
+                    snprintf(buf, sizeof buf,
+                             "The %s draws steel!", noun);
+                    log.add(buf);
+                    beginCombat(std::move(foes), -1, e.key);
+                    return;
+                }
+                snprintf(buf, sizeof buf,
+                         "The %s challenges you, then moves along.",
+                         noun);
+                log.add(buf);
+                return;
+            case dm::PartyReaction::Neutral:
+                snprintf(buf, sizeof buf,
+                         "The %s passes by, uninterested.", noun);
+                log.add(buf);
+                return;
+            case dm::PartyReaction::UncertainPositive:
+                if ((int)dice.roll(1, 100, 0) <= 55)
+                    log.add("They hail you and move on.");
+                else
+                    log.add("They nod and pass by.");
+                if (shelter) overlandSafeCamp(
+                    "They point you to shelter by their fire.");
+                return;
+            case dm::PartyReaction::Friendly:
+                snprintf(buf, sizeof buf,
+                         "The %s hails you, shares word of the "
+                         "trail, and departs.", noun);
+                log.add(buf);
+                if (shelter) overlandSafeCamp(
+                    "You are welcomed to their hall for the night.");
+                if (favors) {
+                    int favor = (int)dice.roll(1, 6, 0);
+                    if (favor == 1) {
+                        ++party.potions;
+                        log.add("One presses a potion of healing "
+                                "on you before going.");
+                    } else if (favor == 2) {
+                        int gift = (int)dice.roll(2, 6, 0) * 10;
+                        party.gold += gift;
+                        party.delveGold += gift;
+                        snprintf(buf, sizeof buf,
+                                 "They toss a pouch of %d gp to "
+                                 "your company!", gift);
+                        log.add(buf);
+                    }
+                }
+                return;
+            case dm::PartyReaction::Enthusiastic:
+                snprintf(buf, sizeof buf,
+                         "The %s greets you warmly and warns of "
+                         "dangers ahead!", noun);
+                log.add(buf);
+                if (shelter) overlandSafeCamp(
+                    "You feast in their hall until morning.");
+                if (favors) {
+                    int favor = (int)dice.roll(1, 6, 0);
+                    if (favor <= 2) {
+                        ++party.potions;
+                        log.add("One presses a potion of healing "
+                                "on you before going.");
+                    } else if (favor == 3) {
+                        int gift = (int)dice.roll(2, 6, 0) * 10;
+                        party.gold += gift;
+                        party.delveGold += gift;
+                        snprintf(buf, sizeof buf,
+                                 "They toss a pouch of %d gp to "
+                                 "your company!", gift);
+                        log.add(buf);
+                    }
+                }
+                return;
+        }
+    }
+
+    // A completed night's rest on the trail (the R34/R38
+    // convention: slots, quivers, 1 hp per level)
+    void overlandSafeCamp(const char* why) {
+        restoreSlots();
+        restockAmmo();
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            int heal = c.level;
+            if (c.hp + heal > c.maxHp) heal = c.maxHp - c.hp;
+            if (heal > 0) c.hp += heal;
+        }
+        log.add(why);
+        log.add("The company rests. Spells and wounds mend.");
+    }
+
+    // p.182: the party is within visual range of the
+    // stronghold — 1/2 to 5 miles; the R67 builders do the rest
+    void overlandDiscoverCastle() {
+        overland.castle.pending = true;
+        overland.castle.type =
+            dm::rollCastleType((int)dice.roll(1, 100, 0));
+        overland.castle.aware =
+            dm::castleAwareness((int)dice.roll(1, 6, 0));
+        overland.castle.pctile = (int)dice.roll(1, 100, 0);
+        dm::CastleArtillery art =
+            dm::castleArtillery(overland.castle.type);
+        char buf[160];
+        snprintf(buf, sizeof buf, "A %s rises in the distance!",
+                 overland.castle.type.type);
+        log.add(buf);
+        snprintf(buf, sizeof buf,
+                 "Its walls mount %d ballistae, %d catapults, "
+                 "%d cauldrons of oil.",
+                 art.ballistae, art.lightCatapults, art.oilCauldrons);
+        log.add(buf);
+        switch (overland.castle.aware) {
+            case dm::CASTLE_OCCUPANTS_AWARE:
+                // p.183: surprised on 1 — "the fortress occupants
+                // know they are there"
+                log.add("Watch fires flare — the occupants know "
+                        "you are there!");
+                overlandApproach();
+                return;
+            case dm::CASTLE_OCCUPANTS_OUTSIDE:
+                // p.183: surprise 2+ — the occupants are "actually
+                // outside the place and within normal surprise
+                // distance"
+                log.add("Riders from the castle are already "
+                        "outside the walls!");
+                overlandApproach();
+                return;
+            default:
+                log.add("Its occupants have not marked you — "
+                        "[A]pproach or [P]ass by.");
+                return;
+        }
+    }
+
+    // [A] — resolve the castle: Table II (the discovery roll's
+    // percentile) and the R67 builders
+    void overlandApproach() {
+        if (mode != MODE_OVERLAND) return;
+        if (!overland.castle.pending) return;
+        overland.castle.pending = false;
+        dm::CastleType t = overland.castle.type;
+        dm::CastleInhabitants inh = dm::castleInhabitants(
+            overland.castle.pctile, t.size);
+        int pctile2 = (int)dice.roll(1, 100, 0);
+        char buf[160];
+        switch (inh) {
+            case dm::CASTLE_TOTALLY_DESERTED:
+                // p.183: "in disrepair and upon close inspection
+                // appears empty" — the ruin shelters the company
+                // (fiction: a safe night's rest)
+                snprintf(buf, sizeof buf,
+                         "The %s is long deserted — empty halls "
+                         "and rotted gates.", t.type);
+                log.add(buf);
+                overlandSafeCamp("You shelter in the ruin; the "
+                                 "night passes undisturbed.");
+                return;
+            case dm::CASTLE_DESERTED_MONSTER: {
+                // p.183: "appears as totally deserted... but entry
+                // into the construction will discover the monster"
+                // — the OUTDOOR tables, ignoring men
+                snprintf(buf, sizeof buf,
+                         "The %s looks deserted — but something "
+                         "lairs within!", t.type);
+                log.add(buf);
+                dm::DungeonEncounter e;
+                int guard = 0;
+                do {
+                    e = dm::rollOutdoorEncounter(
+                        registry, dice,
+                        (int)dice.roll(1, 100, 0),
+                        (int)dice.roll(1, 100, 0),
+                        dm::OC_TEMPERATE_WILD,
+                        (dm::OutdoorTerrain)overland.terrain);
+                } while (guard++ < 24 &&
+                         (e.key.empty() || overlandIndicatesMen(e)));
+                if (e.key.empty() || e.count <= 0) {
+                    log.add("The halls stand silent.");
+                    return;
+                }
+                std::vector<ai::Actor> foes = buildFoesFromDm(e);
+                if (foes.empty()) return;
+                if (e.count == 1)
+                    snprintf(buf, sizeof buf,
+                             "The lair's tenant — a wild %s — "
+                             "springs its ambush!", e.key.c_str());
+                else
+                    snprintf(buf, sizeof buf,
+                             "The lair's tenants — %d wild %ss — "
+                             "spring their ambush!",
+                             e.count, e.key.c_str());
+                log.add(buf);
+                beginCombat(std::move(foes), -1, e.key);
+                return;
+            }
+            case dm::CASTLE_HUMANS: {
+                // Sub-Table II.A: bandits/berserkers/dervishes;
+                // "numbers... are given in the MONSTER MANUAL
+                // under the heading of MEN" — the registry
+                const char* key =
+                    dm::castleHumansType(pctile2);
+                int count =
+                    dm::castleHumansCount(registry, dice, key);
+                if (count <= 0) count = 1;
+                dm::DungeonEncounter e;
+                e.key = key;
+                e.count = count;
+                std::vector<ai::Actor> foes = buildFoesFromDm(e);
+                if (foes.empty()) {
+                    log.add("The brutes are gone into the hills.");
+                    return;
+                }
+                const monsters::MonsterDef* def = registry.find(key);
+                snprintf(buf, sizeof buf,
+                         "The %s is a den of %ss — %d attack!",
+                         t.type,
+                         def ? def->name.c_str() : key,
+                         count);
+                log.add(buf);
+                beginCombat(std::move(foes), -1, e.key);
+                return;
+            }
+            case dm::CASTLE_CHARACTER_TYPES: {
+                // Sub-Table II.B: the master and 2-5 henchmen
+                // (R67 builders), met by the R58 reaction
+                dm::PartyMember master =
+                    dm::rollCastleMaster(dice, pctile2);
+                dm::CharacterParty hench =
+                    dm::rollCastleHenchmen(dice, master);
+                dm::DungeonEncounter e;
+                e.isParty = true;
+                e.key = "character_party";
+                e.party.members.push_back(master);
+                for (const auto& m : hench.members)
+                    e.party.members.push_back(m);
+                e.count = (int)e.party.members.size();
+                if (e.count <= 0) return;
+                snprintf(buf, sizeof buf,
+                         "A banner flies over the %s — its master "
+                         "rides out to meet you.", t.type);
+                log.add(buf);
+                overlandMeeting(e, "garrison", false, true);
+                // falls through to the arrival check (combat
+                // started by a hostile meeting is mode-guarded)
+            }
+        }
+        // peaceful resolutions complete a homeward last league
+        // (combat paths arrive via endCombat instead)
+        checkArrivedHome();
+    }
+
+    // [P] — give the stronghold a wide berth
+    void overlandPass() {
+        if (mode != MODE_OVERLAND) return;
+        if (!overland.castle.pending) return;
+        overland.castle.pending = false;
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "You give the %s a wide berth and press on.",
+                 overland.castle.type.type);
+        log.add(buf);
+        checkArrivedHome();   // a bypassed castle on the last league
+    }
+
+    // [T] — a day's march outward
+    void overlandTravel() {
+        if (mode != MODE_OVERLAND) return;
+        if (overland.castle.pending) {
+            log.add("Decide the castle first — [A]pproach or [P]ass.");
+            return;
+        }
+        if (!party.alive()) return;
+        overland.homeward = false;
+        ++overland.day;
+        ++overland.daysOut;
+        char buf[96];
+        snprintf(buf, sizeof buf, "Day %d — the %s.",
+                 overland.day, overlandTerrainName(overland.terrain));
+        log.add(buf);
+        overlandStep();
+        checkArrivedHome();   // defensive no-op when daysOut > 0
+    }
+
+    // [H] — a day's march back toward town
+    void overlandHomeward() {
+        if (mode != MODE_OVERLAND) return;
+        if (overland.castle.pending) {
+            log.add("Decide the castle first — [A]pproach or [P]ass.");
+            return;
+        }
+        if (!party.alive()) return;
+        overland.homeward = true;
+        ++overland.day;
+        --overland.daysOut;
+        char buf[96];
+        snprintf(buf, sizeof buf, "Day %d — the road home, the %s.",
+                 overland.day, overlandTerrainName(overland.terrain));
+        log.add(buf);
+        overlandStep();
+        checkArrivedHome();
+    }
+
+    // [C] — camp for the night; an interrupted camp restores
+    // nothing (the R34 convention)
+    void overlandCamp() {
+        if (mode != MODE_OVERLAND) return;
+        if (overland.castle.pending) {
+            log.add("Decide the castle first — [A]pproach or [P]ass.");
+            return;
+        }
+        if (!party.alive()) return;
+        log.add("You make camp for the night...");
+        overlandStep();
+        if (mode != MODE_OVERLAND) return;   // interrupted by steel
+        if (overland.castle.pending) {
+            // a discovery in the night abandons the camp
+            log.add("The camp is abandoned.");
+            return;
+        }
+        overlandSafeCamp("The night passes undisturbed.");
+    }
+
+    // The homeward march's last league: within sight of the
+    // town walls (guarded by mode, so endCombat can call it)
+    void checkArrivedHome() {
+        if (mode != MODE_OVERLAND) return;
+        if (overland.daysOut > 0) return;
+        if (overland.castle.pending) return;
+        if (!party.alive()) return;
+        overland.daysOut = 0;
+        mode = MODE_TOWN;
+        log.add("The walls of town rise ahead — the journey "
+                "is over.");
     }
 };
