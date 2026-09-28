@@ -3129,8 +3129,13 @@ struct AppState {
             // hire, R44); the p.63 loyalty adjustment is not
             // modeled (documented simplification). The p.176
             // "never join with adventurers" rule keeps friendly
-            // outcomes pass-by fiction only (no gifts/trade
-            // modeled this round).
+            // outcomes pass-by; R62 adds small favors — friendly
+            // parties sometimes part with a potion or a coin
+            // pouch (no printed table: fiction extension). Gift
+            // gold earns NO xp — p.86 awards xp for treasure
+            // taken from a challenge; a gift is freely given.
+            // R62 also colors the meeting with the NPC party's
+            // race (DMG p.192 race check, fiction-only).
             int chaAdj = 0;
             for (const auto& c : party.members) {
                 if (c.hp <= 0) continue;
@@ -3148,18 +3153,36 @@ struct AppState {
             dm::PartyReaction react = dm::rollPartyReaction(
                 dice, chaAdj, npcLevels < partyLevels);
             char buf[96];
+            // R62: the NPC party's racial makeup colors the
+            // meeting — a wholly single-race party of dwarves
+            // reads as "dwarven adventurers" (p.192 fiction)
+            const char* racePrefix = "";
+            {
+                int byRace[7] = {0};
+                int total = 0;
+                for (const auto& m : e.party.members) {
+                    if (m.manAtArms) continue;
+                    ++byRace[m.race];
+                    ++total;
+                }
+                for (int r = 1; r < 7; ++r)
+                    if (total > 0 && byRace[r] == total) {
+                        racePrefix = dm::npcRaceAdjective(r);
+                        break;
+                    }
+            }
             switch (react) {
             case dm::PartyReaction::ViolentlyHostile:
                 snprintf(buf, sizeof buf,
-                         "%d adventurers attack without a word!",
-                         e.count);
+                         "%s%d adventurers attack without a "
+                         "word!", racePrefix, e.count);
                 log.add(buf);
                 beginCombat(std::move(foes), -1, e.key);
                 return;
             case dm::PartyReaction::Hostile:
                 snprintf(buf, sizeof buf,
-                         "%d adventurers size you up and attack!",
-                         e.count);
+                         "%s%d adventurers size you up and "
+                         "attack!", racePrefix, e.count);
                 log.add(buf);
                 beginCombat(std::move(foes), -1, e.key);
                 return;
@@ -3168,8 +3191,8 @@ struct AppState {
                 // still strike, or let the party pass
                 if ((int)dice.roll(1, 100, 0) <= 55) {
                     snprintf(buf, sizeof buf,
-                             "%d wary adventurers draw steel!",
-                             e.count);
+                             "%s%d wary adventurers draw "
+                             "steel!", racePrefix, e.count);
                     log.add(buf);
                     beginCombat(std::move(foes), -1, e.key);
                     return;
@@ -3179,8 +3202,8 @@ struct AppState {
                 return;
             case dm::PartyReaction::Neutral:
                 snprintf(buf, sizeof buf,
-                         "%d adventurers pass by, uninterested.",
-                         e.count);
+                         "%s%d adventurers pass by, "
+                         "uninterested.", racePrefix, e.count);
                 log.add(buf);
                 return;
             case dm::PartyReaction::UncertainPositive:
@@ -3194,15 +3217,55 @@ struct AppState {
                 return;
             case dm::PartyReaction::Friendly:
                 snprintf(buf, sizeof buf,
-                         "%d adventurers hail you, share word "
-                         "of the dungeon, and depart.", e.count);
+                         "%s%d adventurers hail you, share "
+                         "word of the dungeon, and depart.",
+                         racePrefix, e.count);
                 log.add(buf);
+                // R62: a friendly party may part with a small
+                // favor (d6: 1 potion, 2 coin pouch, else words)
+                {
+                    int favor = (int)dice.roll(1, 6, 0);
+                    if (favor == 1) {
+                        ++party.potions;
+                        log.add("One presses a potion of "
+                                "healing on you before going.");
+                    } else if (favor == 2) {
+                        int gift = (int)dice.roll(2, 6, 0) * 10
+                                 * dungeonLevel;
+                        party.gold += gift;
+                        party.delveGold += gift;
+                        snprintf(buf, sizeof buf,
+                                 "They toss a pouch of %d gp "
+                                 "to your company!", gift);
+                        log.add(buf);
+                    }
+                }
                 return;
             case dm::PartyReaction::Enthusiastic:
                 snprintf(buf, sizeof buf,
-                         "%d adventurers greet you warmly and "
-                         "warn of dangers ahead!", e.count);
+                         "%s%d adventurers greet you warmly "
+                         "and warn of dangers ahead!",
+                         racePrefix, e.count);
                 log.add(buf);
+                // R62: enthusiastic parties favor more often
+                // (d6: 1-2 potion, 3 coin pouch, else words)
+                {
+                    int favor = (int)dice.roll(1, 6, 0);
+                    if (favor <= 2) {
+                        ++party.potions;
+                        log.add("One presses a potion of "
+                                "healing on you before going.");
+                    } else if (favor == 3) {
+                        int gift = (int)dice.roll(2, 6, 0) * 10
+                                 * dungeonLevel;
+                        party.gold += gift;
+                        party.delveGold += gift;
+                        snprintf(buf, sizeof buf,
+                                 "They toss a pouch of %d gp "
+                                 "to your company!", gift);
+                        log.add(buf);
+                    }
+                }
                 return;
             }
             return;
