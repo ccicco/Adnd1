@@ -378,6 +378,13 @@ public:
     // the flee sequence; resolved through the normal melee path).
     int partingSwing(Actor& attacker, Actor& defender);
 
+    // R69: made public — the app's missile gate
+    // (combatShoot) queries whether the range is still open.
+    // R43: true while the engagement range is still open (the
+    // foes have not closed to melee). Party missile fire gates
+    // on this; monster volleys use their own rangedRounds.
+    bool rangeOpen() const { return m_distance > 0; }
+
 private:
     std::vector<Actor> m_party;
     std::vector<Actor> m_monsters;
@@ -420,10 +427,6 @@ private:
     // R28: resolve one missile shot (no STR mods; missile dice)
     void resolveMissile(Actor& attacker, Actor& defender);
 
-    // R43: true while the engagement range is still open (the
-    // foes have not closed to melee). Party missile fire gates
-    // on this; monster volleys use their own rangedRounds.
-    bool rangeOpen() const { return m_distance > 0; }
 };
 
 } // namespace ai
