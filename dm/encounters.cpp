@@ -719,7 +719,7 @@ int henchmanLevelFor(int masterLevel) {
 } // namespace
 
 // ----------------------------------------------------------------------------
-// R55: DMG p.176-177 party magic items â the level-chance
+// R55: DMG p.176-177 party magic items — the level-chance
 // ladder and Tables I-IV. Only implementable outcomes carry a
 // mechanical effect (weapon/armor/shield/missile pluses); the
 // rest of each table (potions, scrolls, rings, staves, wands,
@@ -944,6 +944,298 @@ PartyReaction rollPartyReaction(rules::Dice& dice, int chaAdj,
     if (score <= 75) return PartyReaction::UncertainPositive;
     if (score <= 95) return PartyReaction::Friendly;
     return PartyReaction::Enthusiastic;
+}
+
+// ----------------------------------------------------------------------------
+// R60: the underwater tables (DMG Appendix C, Premium reprint
+// p.179-181, OCR-verified): Fresh Water shallow (to 50') / deep
+// (below 50'), Salt Water (large bodies) shallow (to 100') /
+// deep (below 100'), and the Dinosaur Subtable. The DMG prints
+// no number columns — "The numbers of monsters encountered are
+// those shown in MONSTER MANUAL" — so count comes from the
+// registry's noAppearing fields (0/0 falls back to 1).
+//
+// Footnotes are modeled as re-rolls per the book's own
+// "otherwise roll again":
+//   *   cool waters only
+//   **  warm (sub-tropical and tropical) waters only
+// The Dinosaur Subtable adds: * deep water only (dinichthys);
+// the fresh-water ** gate rides on the parent Dinosaur rows
+// (Elasmosaurus / Mosasaurus / Plesiosaurus "must be in a
+// relatively warm clime" in fresh water).
+//
+// Key substitutions (no dedicated Lua record, per the R52
+// footnoted-substitution convention): Koalinth -> hobgoblin,
+// Kopoacinth -> gargoyle, Lacedon -> ghoul, Elf (aquatic) ->
+// elf, "Mottled (purple) worm" -> purple_worm, "Whale,
+// carnivorous" (large/medium/small) -> killer_whale (the MM's
+// carnivorous whale), plain "Whale" (large/medium/small) ->
+// whale. All other rows map 1:1 to registry keys (verified
+// against the 408-lua tree).
+// ----------------------------------------------------------------------------
+namespace {
+
+enum WaterFlagBits { WF_NONE = 0, WF_COOL_ONLY = 1, WF_WARM_ONLY = 2,
+                     WF_DEEP_ONLY = 4 };
+
+struct WaterRow { int lo, hi; const char* key; int flags; };
+
+// ---- Fresh Water, Shallow Water Encounters (to 50') — DMG p.180 ----
+static const WaterRow kFreshShallow[] = {
+    {  1,  6, "giant_beaver",    WF_COOL_ONLY},
+    {  7, 10, "giant_crayfish",  WF_NONE},
+    { 11, 18, "crocodile",       WF_WARM_ONLY},
+    { 19, 20, "giant_crocodile", WF_WARM_ONLY},
+    { 21, 23, "DINOSAUR",        WF_WARM_ONLY},
+    { 24, 26, "electric",        WF_WARM_ONLY},
+    { 27, 32, "giant_frog",      WF_NONE},
+    { 33, 34, "killer_frog",     WF_NONE},
+    { 35, 35, "poisonous_frog",  WF_NONE},
+    { 36, 40, "giant_gar",       WF_NONE},
+    { 41, 42, "green_slime",     WF_COOL_ONLY},
+    { 43, 47, "hippocampus",     WF_NONE},
+    { 48, 52, "hippopotamus",    WF_WARM_ONLY},
+    { 53, 56, "hobgoblin",       WF_NONE},   // Koalinth
+    { 57, 58, "gargoyle",        WF_NONE},   // Kopoacinth
+    { 59, 60, "ghoul",           WF_NONE},   // Lacedon
+    { 61, 65, "lamprey",         WF_COOL_ONLY},
+    { 66, 71, "giant_leech",     WF_NONE},
+    { 72, 76, "lizard_man",      WF_NONE},
+    { 77, 77, "water_naga",      WF_NONE},
+    { 78, 81, "nixie",           WF_COOL_ONLY},
+    { 82, 82, "nymph",           WF_NONE},
+    { 83, 87, "giant_otter",     WF_NONE},
+    { 88, 90, "giant_pike",      WF_NONE},
+    { 91, 94, "water_spider",    WF_NONE},
+    { 95, 99, "snapping_turtle", WF_NONE},
+    {100,100, "water_weird",     WF_NONE},
+};
+
+// ---- Fresh Water, Deep Water Encounters (below 50') — DMG p.180 ----
+static const WaterRow kFreshDeep[] = {
+    {  1,  1, "giant_beaver",    WF_COOL_ONLY},
+    {  2,  6, "water_beetle",    WF_NONE},
+    {  7,  9, "giant_crayfish",  WF_NONE},
+    { 10, 14, "giant_crocodile", WF_WARM_ONLY},
+    { 15, 20, "DINOSAUR",       WF_WARM_ONLY},
+    { 21, 21, "dragon_turtle",   WF_NONE},
+    { 22, 25, "electric",        WF_WARM_ONLY},
+    { 26, 32, "giant_gar",       WF_NONE},
+    { 33, 34, "storm_giant",     WF_NONE},
+    { 35, 36, "hippocampus",     WF_NONE},
+    { 37, 38, "hobgoblin",       WF_NONE},   // Koalinth
+    { 39, 43, "gargoyle",        WF_NONE},   // Kopoacinth
+    { 44, 47, "ghoul",           WF_NONE},   // Lacedon
+    { 48, 55, "giant_lamprey",   WF_COOL_ONLY},
+    { 56, 60, "lizard_man",      WF_NONE},
+    { 61, 63, "purple_worm",     WF_NONE},   // Mottled worm
+    { 64, 64, "water_naga",      WF_NONE},
+    { 65, 70, "nixie",           WF_NONE},
+    { 71, 76, "giant_otter",     WF_NONE},
+    { 77, 86, "giant_pike",      WF_NONE},
+    { 87, 95, "water_spider",    WF_NONE},
+    { 96, 99, "snapping_turtle", WF_NONE},
+    {100,100, "water_weird",     WF_NONE},
+};
+
+// ---- Salt Water, Shallow Water Encounters (to 100') — DMG p.181 ----
+static const WaterRow kSaltShallow[] = {
+    {  1,  2, "barracuda",            WF_NONE},
+    {  3,  5, "giant_crab",            WF_NONE},
+    {  6,  6, "giant_crayfish",        WF_NONE},
+    {  7,  8, "DINOSAUR",             WF_NONE},
+    {  9, 12, "dolphin",               WF_NONE},
+    { 13, 13, "giant_eel",            WF_NONE},
+    { 14, 17, "weed",                  WF_NONE},
+    { 18, 19, "elf",                   WF_NONE},   // Elf, aquatic
+    { 20, 21, "floating_eye",          WF_NONE},
+    { 22, 22, "storm_giant",           WF_NONE},
+    { 23, 26, "hippocampus",           WF_NONE},
+    { 27, 28, "ixitxachitl",           WF_NONE},
+    { 29, 34, "hobgoblin",             WF_NONE},   // Koalinth
+    { 35, 36, "gargoyle",              WF_NONE},   // Kopoacinth
+    { 37, 38, "ghoul",                 WF_NONE},   // Lacedon
+    { 39, 41, "locathah",              WF_NONE},
+    { 42, 43, "masher",                WF_NONE},
+    { 44, 46, "merman",                WF_NONE},
+    { 47, 47, "nymph",                 WF_NONE},
+    { 48, 49, "ochre_jelly",           WF_NONE},
+    { 50, 51, "octopus",               WF_NONE},
+    { 52, 54, "portuguese_man_o_war",  WF_NONE},
+    { 55, 56, "manta_ray",             WF_NONE},
+    { 57, 58, "pungi_ray",             WF_NONE},
+    { 59, 60, "sting_ray",             WF_NONE},
+    { 61, 65, "sahuagin",              WF_NONE},
+    { 66, 66, "sea_hag",               WF_NONE},
+    { 67, 72, "sea_horse",             WF_NONE},
+    { 73, 78, "sea_lion",              WF_NONE},
+    { 79, 81, "shark",                 WF_NONE},
+    { 82, 82, "giant_shark",           WF_NONE},
+    { 83, 83, "sea_snake",             WF_NONE},
+    { 84, 84, "giant_squid",           WF_NONE},
+    { 85, 87, "strangle_weed",         WF_NONE},
+    { 88, 90, "triton",                WF_NONE},
+    { 91, 91, "sea_turtle",            WF_NONE},
+    { 92, 92, "killer_whale",          WF_NONE},   // carnivorous large
+    { 93, 93, "killer_whale",          WF_NONE},   // carnivorous medium
+    { 94, 96, "killer_whale",          WF_NONE},   // carnivorous small
+    { 97, 97, "whale",                 WF_NONE},   // whale large
+    { 98, 98, "whale",                 WF_NONE},   // whale medium
+    { 99,100, "whale",                 WF_NONE},   // whale small
+};
+
+// ---- Salt Water, Deep Water Encounters (below 100') — DMG p.181 ----
+static const WaterRow kSaltDeep[] = {
+    {  1,  3, "giant_crayfish",   WF_NONE},
+    {  4,  5, "giant_crocodile",  WF_NONE},
+    {  6, 12, "DINOSAUR",        WF_NONE},
+    { 13, 20, "dolphin",          WF_NONE},
+    { 21, 21, "dragon_turtle",    WF_NONE},
+    { 22, 23, "giant_eel",       WF_NONE},
+    { 24, 24, "eye_of_the_deep",  WF_NONE},
+    { 25, 25, "storm_giant",      WF_NONE},
+    { 26, 30, "hippocampus",      WF_NONE},
+    { 31, 33, "ixitxachitl",      WF_NONE},
+    { 34, 35, "hobgoblin",        WF_NONE},   // Koalinth
+    { 36, 38, "gargoyle",         WF_NONE},   // Kopoacinth
+    { 39, 40, "ghoul",            WF_NONE},   // Lacedon
+    { 41, 42, "giant_lamprey",    WF_NONE},
+    { 43, 44, "locathah",         WF_NONE},
+    { 45, 45, "masher",           WF_NONE},
+    { 46, 50, "merman",           WF_NONE},
+    { 51, 52, "morkoth",          WF_NONE},
+    { 53, 54, "octopus",          WF_NONE},
+    { 55, 57, "manta_ray",        WF_NONE},
+    { 58, 61, "sahuagin",         WF_NONE},
+    { 62, 63, "sea_hag",          WF_NONE},
+    { 64, 68, "sea_horse",        WF_NONE},
+    { 69, 73, "sea_lion",         WF_NONE},
+    { 74, 78, "giant_shark",      WF_NONE},
+    { 79, 80, "sea_snake",        WF_NONE},
+    { 81, 82, "giant_squid",      WF_NONE},
+    { 83, 85, "triton",           WF_NONE},
+    { 86, 86, "sea_turtle",       WF_NONE},
+    { 87, 88, "killer_whale",     WF_NONE},   // carnivorous large
+    { 89, 90, "killer_whale",     WF_NONE},   // carnivorous medium
+    { 91, 92, "killer_whale",     WF_NONE},   // carnivorous small
+    { 93, 95, "whale",            WF_NONE},   // whale large
+    { 96, 98, "whale",            WF_NONE},   // whale medium
+    { 99,100, "whale",            WF_NONE},   // whale small
+};
+
+// ---- Dinosaur Subtable — DMG p.190 ----
+static const WaterRow kDinoSub[] = {
+    {  1, 15, "archelon_ischyros", WF_NONE},
+    { 16, 35, "dinichthys",        WF_DEEP_ONLY},
+    { 36, 55, "elasmosaurus",      WF_NONE},
+    { 56, 75, "mosasaurus",        WF_NONE},
+    { 76,100, "plesiosaurus",      WF_NONE},
+};
+
+const WaterRow* waterTable(WaterBody body, WaterDepth depth,
+                           size_t& count) {
+    const WaterRow* t;
+    if (body == WaterBody::FRESH) {
+        if (depth == WaterDepth::SHALLOW) {
+            t = kFreshShallow; count = sizeof kFreshShallow / sizeof kFreshShallow[0];
+        } else {
+            t = kFreshDeep;    count = sizeof kFreshDeep    / sizeof kFreshDeep[0];
+        }
+    } else {
+        if (depth == WaterDepth::SHALLOW) {
+            t = kSaltShallow;  count = sizeof kSaltShallow  / sizeof kSaltShallow[0];
+        } else {
+            t = kSaltDeep;     count = sizeof kSaltDeep     / sizeof kSaltDeep[0];
+        }
+    }
+    return t;
+}
+
+} // namespace
+
+DungeonEncounter rollWaterEncounter(
+        const monsters::MonsterRegistry& reg, rules::Dice& dice,
+        int pctile, int pctile2,
+        WaterBody body, WaterDepth depth, WaterClime clime) {
+    DungeonEncounter e;
+
+    size_t n = 0;
+    const WaterRow* t = waterTable(body, depth, n);
+
+    for (int attempt = 0; attempt < 24; ++attempt) {
+        const WaterRow* row = nullptr;
+        for (size_t i = 0; i < n; ++i)
+            if (pctile >= t[i].lo && pctile <= t[i].hi) { row = &t[i]; break; }
+        if (!row) return e;
+
+        // footnote clime gates (DMG: "otherwise roll again")
+        bool ok = true;
+        if ((row->flags & WF_COOL_ONLY) && clime == WaterClime::WARM)
+            ok = false;
+        if ((row->flags & WF_WARM_ONLY) && clime == WaterClime::COOL)
+            ok = false;
+
+        std::string key = row->key;
+        if (ok && key == "DINOSAUR") {
+            const WaterRow* dr = nullptr;
+            for (size_t i = 0;
+                 i < sizeof kDinoSub / sizeof kDinoSub[0]; ++i)
+                if (pctile2 >= kDinoSub[i].lo && pctile2 <= kDinoSub[i].hi)
+                    { dr = &kDinoSub[i]; break; }
+            if (!dr) return e;    // subtable covers 01-00; defensive
+            // Dinosaur Subtable *: deep water only (dinichthys)
+            if ((dr->flags & WF_DEEP_ONLY) && depth == WaterDepth::SHALLOW)
+                ok = false;
+            else
+                key = dr->key;
+        }
+
+        if (ok) {
+            const monsters::MonsterDef* def = reg.find(key);
+            if (def) {
+                e.key = key;
+                // numbers per MONSTER MANUAL (registry noAppearing;
+                // 0/0 falls back to a single specimen)
+                if (def->noAppearingMin > 0) {
+                    int lo = def->noAppearingMin;
+                    int hi = def->noAppearingMax < lo
+                           ? lo : def->noAppearingMax;
+                    e.count = (lo == hi)
+                        ? lo
+                        : lo + (int)dice.roll(1,
+                                (uint32_t)(hi - lo + 1), 0) - 1;
+                } else {
+                    e.count = 1;
+                }
+                return e;
+            }
+        }
+
+        // DMG advice: ignore & re-roll
+        pctile  = 1 + (int)dice.roll(1, 100, 0) - 1;
+        pctile2 = 1 + (int)dice.roll(1, 100, 0) - 1;
+    }
+    return e;
+}
+
+std::vector<std::string> waterEncounterKeys(
+        const monsters::MonsterRegistry& reg,
+        WaterBody body, WaterDepth depth) {
+    std::vector<std::string> out;
+    size_t n = 0;
+    const WaterRow* t = waterTable(body, depth, n);
+    for (size_t i = 0; i < n; ++i) {
+        std::string key = t[i].key;
+        if (key == "DINOSAUR") {
+            for (size_t d = 0;
+                 d < sizeof kDinoSub / sizeof kDinoSub[0]; ++d)
+                if (reg.find(kDinoSub[d].key))
+                    pushUnique(out, kDinoSub[d].key);
+        } else if (reg.find(key)) {
+            pushUnique(out, key.c_str());
+        }
+    }
+    return out;
 }
 
 } // namespace dm
