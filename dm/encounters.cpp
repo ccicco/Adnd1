@@ -3584,4 +3584,196 @@ EtherCycloneResult rollEtherCyclone(rules::Dice& dice, int d20,
 }
 
 
+// ----------------------------------------------------------------------------
+// R66: the PSIONIC ENCOUNTER TABLE — DMG Appendix C (Premium
+// reprint p.182, OCR-verified against the uploaded DMG).
+// "If you opt to include psionic powers in your campaign,
+// then certain random encounters will be with
+// psionically-empowered creatures ... if the player party has
+// used psionic powers during the last turn, or spells
+// resembling psionic powers during the last round, then the
+// chance for a psionic encounter will be 1 in 4 if an
+// encounter is otherwise indicated." The 1-in-4 gate is the
+// caller's (dice passed in, engine has no psionics yet);
+// spellResemblesPsionicPower below implements the printed
+// spells list. The table prints a Numbers column — counts
+// come from the table, not the registry — except the yellow
+// mold row's dash, which falls back to the registry's
+// noAppearing (the R60 convention, documented in-row). The
+// (*) demon/devil rows are "Dice for type or select" — the
+// R65 pick-sets on the second percentile, reused. The (**)
+// Men row refers to the DUNGEON RANDOM MONSTER TABLE's
+// Character Subtable — a character party; the R63 wilderness
+// convention rollCharacterParty(dice, 8, 8) is applied, as
+// the psionic table is not dungeon-level-tied (documented).
+// "Roll until an appropriate encounter occurs, ignoring
+// inappropriate results" — the caller's judgement; the
+// triton row's "1-3 of total are psionic" is fiction (the
+// count is the printed 10-60). No appstate wiring (R60/R63
+// no-wiring precedent).
+
+namespace {
+
+struct PsionicRow {
+    short lo, hi;         // percentile
+    const char* key;      // registry key or PSI_* pseudo-key
+    short nMin, nMax;     // printed Numbers column
+};
+
+// PSIONIC ENCOUNTER TABLE (DMG p.182)
+static const PsionicRow kPsionicTable[] = {
+{1, 5, "brain_mole", 1, 3},
+{6, 12, "cerebral_parasite", 3, 12},
+{13, 15, "couatl", 1, 4},
+{16, 18, "PSI_DEMON_MAJOR", 1, 2}   // Demon, major* -> R65 kDemonMajor,
+{19, 24, "PSI_DEMON_MINOR", 1, 4}   // Demon, minor* -> R65 kDemonMinor,
+{25, 26, "PSI_DEMON_PRINCE", 1, 1}   // Demon, prince* -> R52 kPrinces,
+{27, 28, "PSI_DEVIL_ARCH", 1, 1}   // Devil, arch-* -> R52 kArchDevils,
+{29, 34, "PSI_DEVIL_GREATER", 1, 2}   // Devil, greater-* -> R65 kDevilGreater,
+{35, 38, "gray_ooze", 1, 3},
+{39, 48, "intellect_devourer", 1, 2},
+{49, 51, "ki_rin", 1, 1}   // Ki-rin,
+{52, 56, "lich", 1, 1},
+{57, 62, "PSI_MEN", 0, 0}   // Men (human psionic)** -> Character Subtable party,
+{63, 69, "mind_flayer", 1, 4},
+{70, 72, "yellow_mold", 0, 0}   // Mold, yellow (dash) -> registry noAppearing (R60),
+{73, 82, "shedu", 2, 8},
+{83, 92, "su_monster", 1, 12}   // Su-monster,
+{93, 98, "titan", 1, 2}   // Titan -> bestiary's plain titan key,
+{99, 100, "triton", 10, 60}   // 1-3 of total are psionic (fiction, documented)
+};
+
+} // namespace
+
+// R66: the printed "Spells Resembling Psionic Powers" list
+// (p.182). The families — astral spell, augury, blink,
+// charm (any), clairadience, clairvoyance, cure (any),
+// detect (any), dimension door, enlarge, ESP, feather fall,
+// feign death, heat metal, heal, hypnotism, invisibility
+// (any), know alignment, levitation, plane shift,
+// polymorph (any), remove curse, shape change, stone tell,
+// tele- (any), temporal stasis. Matching is
+// case-insensitive on the full name; "(any)" families match
+// by the leading word (charm, cure, detect, invisibility,
+// polymorph, tele-). Magic items performing these powers
+// count as well (the book's note) — the caller's call.
+bool spellResemblesPsionicPower(const std::string& name) {
+    static const char* const exact[] = {
+        "astral spell", "augury", "blink", "clairadience",
+        "clairvoyance", "dimension door", "enlarge", "esp",
+        "feather fall", "feign death", "heat metal", "heal",
+        "hypnotism", "know alignment", "levitation",
+        "plane shift", "remove curse", "shape change",
+        "stone tell", "temporal stasis"
+    };
+    std::string lower;
+    for (char c : name) {
+        unsigned char u = (unsigned char)c;
+        lower.push_back((char)(u >= 'A' && u <= 'Z' ? u + 32 : u));
+    }
+    for (const char* e : exact)
+        if (lower == e) return true;
+    // "(any)" families — the printed leading word
+    static const char* const family[] = {
+        "charm", "cure", "detect", "invisibility",
+        "polymorph", "tele"
+    };
+    for (const char* f : family)
+        if (lower.rfind(f, 0) == 0) return true;
+    return false;
+}
+
+DungeonEncounter rollPsionicEncounter(
+        const monsters::MonsterRegistry& reg, rules::Dice& dice,
+        int pctile, int pctile2) {
+    DungeonEncounter e;
+
+    size_t n = sizeof kPsionicTable / sizeof kPsionicTable[0];
+
+    for (int attempt = 0; attempt < 24; ++attempt) {
+        const PsionicRow* row = nullptr;
+        for (size_t i = 0; i < n; ++i)
+            if (pctile >= kPsionicTable[i].lo &&
+                pctile <= kPsionicTable[i].hi)
+                { row = &kPsionicTable[i]; break; }
+        if (!row) return e;   // defensive: column covers 01-00
+
+        std::string key = row->key;
+        if      (key == "PSI_DEMON_MAJOR")   key = kDemonMajor[pctile2 % 10];
+        else if (key == "PSI_DEMON_MINOR")   key = kDemonMinor[pctile2 % 6];
+        else if (key == "PSI_DEMON_PRINCE")  key = kPrinces[pctile2 % 4];
+        else if (key == "PSI_DEVIL_ARCH")    key = kArchDevils[pctile2 % 4];
+        else if (key == "PSI_DEVIL_GREATER") key = kDevilGreater[pctile2 % 3];
+
+        if (key == "PSI_MEN") {
+            // (**) Character Subtable party — the R63
+            // wilderness convention (not dungeon-level-tied)
+            e.party = rollCharacterParty(dice, 8, 8);
+            e.isParty = true;
+            e.key = "character_party";
+            e.count = e.party.size();
+            return e;
+        }
+
+        const monsters::MonsterDef* def = reg.find(key);
+        if (def) {
+            e.key = key;
+            if (key == "yellow_mold") {
+                // printed dash: numbers per MONSTER MANUAL
+                // (registry noAppearing; 0/0 -> single patch)
+                if (def->noAppearingMin > 0) {
+                    int lo = def->noAppearingMin;
+                    int hi = def->noAppearingMax < lo
+                           ? lo : def->noAppearingMax;
+                    e.count = (lo == hi)
+                        ? lo
+                        : lo + (int)dice.roll(
+                              1, (uint32_t)(hi - lo + 1), 0) - 1;
+                } else {
+                    e.count = 1;
+                }
+            } else if (row->nMin == row->nMax) {
+                e.count = row->nMin;
+            } else {
+                // printed Numbers column
+                e.count = row->nMin + (int)dice.roll(
+                    1, (uint32_t)(row->nMax - row->nMin + 1), 0) - 1;
+            }
+            return e;
+        }
+
+        // DMG advice: ignore & re-roll
+        pctile  = 1 + (int)dice.roll(1, 100, 0) - 1;
+        pctile2 = 1 + (int)dice.roll(1, 100, 0) - 1;
+    }
+    return e;
+}
+
+// Every result key the table can produce — the regtest-style
+// companion of rollPsionicEncounter.
+std::vector<std::string> psionicEncounterKeys(
+        const monsters::MonsterRegistry& reg) {
+    std::vector<std::string> out;
+    size_t n = sizeof kPsionicTable / sizeof kPsionicTable[0];
+    for (size_t i = 0; i < n; ++i) {
+        const std::string key = kPsionicTable[i].key;
+        if      (key == "PSI_DEMON_MAJOR")
+            for (const char* k : kDemonMajor) pushUnique(out, k);
+        else if (key == "PSI_DEMON_MINOR")
+            for (const char* k : kDemonMinor) pushUnique(out, k);
+        else if (key == "PSI_DEMON_PRINCE")
+            for (const char* k : kPrinces) pushUnique(out, k);
+        else if (key == "PSI_DEVIL_ARCH")
+            for (const char* k : kArchDevils) pushUnique(out, k);
+        else if (key == "PSI_DEVIL_GREATER")
+            for (const char* k : kDevilGreater) pushUnique(out, k);
+        else if (key == "PSI_MEN")
+            pushUnique(out, "character_party");
+        else if (reg.find(key))
+            pushUnique(out, key.c_str());
+    }
+    return out;
+}
+
+
 } // namespace dm
