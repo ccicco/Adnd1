@@ -811,6 +811,9 @@ static void drawTown(HDC dc, const AppState& s) {
     TextOutA(dc, 20, 504, line, (int)strlen(line));
 
     SetTextColor(dc, RGB(160, 150, 120));
+    snprintf(line, sizeof line, "[O] Set out overland â the wild roads");
+    TextOutA(dc, 20, 528, line, (int)strlen(line));
+
     snprintf(line, sizeof line, "[B]/[Esc] return to the dungeon");
     TextOutA(dc, 20, 528, line, (int)strlen(line));
 
@@ -881,6 +884,95 @@ static void drawTown(HDC dc, const AppState& s) {
              s.party.identifyScrolls,
              (int)s.party.unidentified.size());
     TextOutA(dc, 430, sy, line, (int)strlen(line));
+}
+
+// ----------------------------------------------------------------------------
+// R68: the overland travel screen (MODE_OVERLAND)
+// ----------------------------------------------------------------------------
+
+static void drawOverland(HDC dc, const AppState& s) {
+    RECT vr = { 0, 0, VIEW_W, VIEW_H };
+    HBRUSH black = CreateSolidBrush(RGB(8, 6, 4));
+    FillRect(dc, &vr, black);
+    DeleteObject(black);
+
+    SetBkColor(dc, RGB(8, 6, 4));
+    SetTextColor(dc, RGB(220, 200, 160));
+    char line[160];
+
+    snprintf(line, sizeof line, "THE WILDS");
+    TextOutA(dc, 20, 14, line, (int)strlen(line));
+
+    // journey status
+    SetTextColor(dc, RGB(200, 190, 160));
+    snprintf(line, sizeof line,
+             "Day %d   %s   %s lands (%d days out)",
+             s.overland.day,
+             s.overland.homeward ? "the road home" : "outward bound",
+             s.overlandInhabited() ? "patrolled" : "wilderness",
+             s.overland.daysOut);
+    TextOutA(dc, 20, 48, line, (int)strlen(line));
+
+    // the route's terrain column, [1-8]
+    static const char* TERRAIN[8] = {
+        "plains", "scrub", "forest", "rough",
+        "desert", "hills", "mountains", "marsh"
+    };
+    int ty = 96;
+    for (int i = 0; i < 8; ++i) {
+        SetTextColor(dc, i == s.overland.terrain
+            ? RGB(240, 220, 170) : RGB(160, 150, 120));
+        snprintf(line, sizeof line, "[%d] %s%s",
+                 i + 1, TERRAIN[i],
+                 i == s.overland.terrain ? "   <- route" : "");
+        TextOutA(dc, 20, ty, line, (int)strlen(line));
+        ty += 22;
+    }
+
+    // the actions
+    SetTextColor(dc, RGB(200, 190, 160));
+    snprintf(line, sizeof line, "[T] March outward   [H] March homeward");
+    TextOutA(dc, 260, 96, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[C] Camp for the night");
+    TextOutA(dc, 260, 120, line, (int)strlen(line));
+
+    // a discovered castle owns the screen's third column
+    if (s.overland.castle.pending) {
+        SetTextColor(dc, RGB(230, 200, 140));
+        snprintf(line, sizeof line, "A %s!",
+                 s.overland.castle.type.type);
+        TextOutA(dc, 260, 168, line, (int)strlen(line));
+        SetTextColor(dc, RGB(200, 190, 160));
+        snprintf(line, sizeof line, "[A] Approach   [P] Pass by");
+        TextOutA(dc, 260, 192, line, (int)strlen(line));
+    }
+
+    // the company panel (the town screen's convention)
+    SetTextColor(dc, RGB(220, 200, 160));
+    snprintf(line, sizeof line, "THE COMPANY");
+    TextOutA(dc, 430, 96, line, (int)strlen(line));
+    SetTextColor(dc, RGB(200, 190, 160));
+    static const char* CLASS_LETTER = "FMCT";
+    int sy = 120;
+    for (const auto& c : s.party.members) {
+        char nm[9];
+        strncpy(nm, c.name.c_str(), 8);
+        nm[8] = 0;
+        if (c.hp <= 0) {
+            snprintf(line, sizeof line, "%s  fallen", nm);
+        } else {
+            snprintf(line, sizeof line, "%s  %c%d  %d/%d",
+                     nm, CLASS_LETTER[c.classIndex & 3],
+                     c.level, c.hp, c.maxHp);
+        }
+        TextOutA(dc, 430, sy, line, (int)strlen(line));
+        sy += 22;
+    }
+
+    SetTextColor(dc, RGB(160, 150, 120));
+    snprintf(line, sizeof line,
+             "Gold: %d  Potions: %d", s.party.gold, s.party.potions);
+    TextOutA(dc, 260, 240, line, (int)strlen(line));
 }
 
 static void drawHud(HDC dc, const AppState& s) {
@@ -1060,6 +1152,55 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case VK_ESCAPE:
                         g_app.leaveTown();
                         break;
+
+                    // R68: the wild roads
+                    case 'O':
+                    case 'o':
+                        g_app.enterOverland();
+                        break;
+                }
+            } else if (g_app.mode == MODE_OVERLAND) {
+                // R68: wilderness travel keys — [1-8] route
+                // terrain, [T] march outward, [H] homeward,
+                // [C] camp, [A]/[P] the discovered castle
+                switch (wp) {
+                    case '1': case '2': case '3': case '4':
+                    case '5': case '6': case '7': case '8':
+                        g_app.overlandSetTerrain(
+                            (int)(wp - '1'));
+                        break;
+
+                    case 'T':
+                    case 't':
+                        g_app.overlandTravel();
+                        break;
+
+                    case 'H':
+                    case 'h':
+                        g_app.overlandHomeward();
+                        break;
+
+                    case 'C':
+                    case 'c':
+                        g_app.overlandCamp();
+                        break;
+
+                    case 'A':
+                    case 'a':
+                        g_app.overlandApproach();
+                        break;
+
+                    case 'P':
+                    case 'p':
+                        g_app.overlandPass();
+                        break;
+
+                    // a wiped company rolls a fresh one
+                    case 'N':
+                    case 'n':
+                        if (!g_app.party.alive())
+                            g_app.resetToCreation();
+                        break;
                 }
             } else if (g_app.mode == MODE_COMBAT) {
                 // R27: while the spell menu is open it owns the keys
@@ -1230,6 +1371,9 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     drawHud(g_rend.memDC, g_app);
                 } else if (g_app.mode == MODE_TOWN) {
                     drawTown(g_rend.memDC, g_app);
+                    drawHud(g_rend.memDC, g_app);
+                } else if (g_app.mode == MODE_OVERLAND) {
+                    drawOverland(g_rend.memDC, g_app);
                     drawHud(g_rend.memDC, g_app);
                 } else {
                     drawView(g_rend.memDC, g_app);
