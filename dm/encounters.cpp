@@ -240,7 +240,7 @@ static const Row kLevel8[] = {
     { 22, 23, ROW_MONSTER, "clay_golem", 1, 1, 0, 0 },
     { 24, 26, ROW_HYDRA, "hydra", 13, 16, 1, 1 },
     { 27, 27, ROW_HYDRA, "hydra", 12, 12, 1, 1 },
-{ 28, 29, ROW_MONSTER, "intellect_devourer", 1, 2, 0, 0 },
+    { 28, 29, ROW_MONSTER, "intellect_devourer", 1, 2, 0, 0 },
     { 30, 35, ROW_MONSTER, "lurker_above", 1, 1, 0, 0 },
     { 36, 41, ROW_MONSTER, "brown_mold", 1, 1, 0, 0 },
     { 42, 43, ROW_MONSTER, "yellow_mold", 1, 1, 0, 0 },
