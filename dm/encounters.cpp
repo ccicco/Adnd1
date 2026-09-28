@@ -240,7 +240,7 @@ static const Row kLevel8[] = {
     { 22, 23, ROW_MONSTER, "clay_golem", 1, 1, 0, 0 },
     { 24, 26, ROW_HYDRA, "hydra", 13, 16, 1, 1 },
     { 27, 27, ROW_HYDRA, "hydra", 12, 12, 1, 1 },
-    { 28, 29, ROW_MONSTER, "intellect_devourer", 1, 2, 0, 0 },
+{ 28, 29, ROW_MONSTER, "intellect_devourer", 1, 2, 0, 0 },
     { 30, 35, ROW_MONSTER, "lurker_above", 1, 1, 0, 0 },
     { 36, 41, ROW_MONSTER, "brown_mold", 1, 1, 0, 0 },
     { 42, 43, ROW_MONSTER, "yellow_mold", 1, 1, 0, 0 },
@@ -925,6 +925,25 @@ CharacterParty rollCharacterParty(rules::Dice& dice,
         p.members.push_back(m);
     }
     return p;
+}
+
+// R58: DMG p.63 Encounter Reactions — percentile adjusted for
+// the spokesman's Charisma, compared to the printed bands. The
+// p.63 "loyalty adjustment as if the creature were a henchman" is
+// not modeled (documented simplification — the strangers owe
+// the party no tracked loyalty). The p.176 Confrontation shift:
+// a party that feels weak avoids, negotiates or bluffs (+10).
+PartyReaction rollPartyReaction(rules::Dice& dice, int chaAdj,
+                                bool npcWeaker) {
+    int score = (int)dice.roll(1, 100, 0) + chaAdj;
+    if (npcWeaker) score += 10;   // p.176 Confrontation
+    if (score <= 5)  return PartyReaction::ViolentlyHostile;
+    if (score <= 25) return PartyReaction::Hostile;
+    if (score <= 45) return PartyReaction::UncertainNegative;
+    if (score <= 55) return PartyReaction::Neutral;
+    if (score <= 75) return PartyReaction::UncertainPositive;
+    if (score <= 95) return PartyReaction::Friendly;
+    return PartyReaction::Enthusiastic;
 }
 
 } // namespace dm
