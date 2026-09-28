@@ -12,11 +12,13 @@
 //                   effective HD tier for the DMG formula.
 //   by_head_count : hydra — heads = hit dice.
 //   by_level      : classed NPCs (men-types, sahuagin clerics) —
-//                   wired to rules/classes: level is the HD row on
-//                   the DMG p.85 monster table, tier by class/level
-//                   (spellcasters x3, others x2), hp from the class
-//                   hit die + Con. Falls back to the pre-wiring
-//                   approximation when ctx.classIndex is unknown.
+//                   wired to rules/classes: per the p.85 footnote
+//                   "all levels as the n + 1 hit dice category", a
+//                   level-n character reads bracket row n+1; hp from
+//                   the class hit die + Con; spell use is an
+//                   exceptional ability (casters add EAXPA). Falls
+//                   back to the generic approximation when
+//                   ctx.classIndex is unknown.
 //
 // The 355 merged_mm1 entries carry exact cross-checked book XP; the
 // dispatch entries (43) resolve here at kill time from spawn context.
@@ -48,29 +50,63 @@ struct SpawnContext {
     int actualHp    = 0;  // hit points of the killed specimen. 0 = book avg.
 };
 
-// by_level tier: spellcasters can use magic from 1st level (DMG
-// "special ability" -> x3); fighter/thief are trained combatants
-// ("exceptional" -> x2). Levels above the class's name cap (9-11)
-// imply magical might in AD&D convention -> x4 for fighter/cleric.
-int tierForNpc(int classIndex, int level);
-
-// DMG p.85 base XP for a monster of the given hit dice (tier 1, no
-// exceptional abilities). Rows 1-10 verified against the merged data:
-// minima of (hitDiceNum -> xp) over the 355 cross-checked entries.
-// 11-20 interpolate the observed minima (12 HD -> 1300, 13 HD -> 1800);
-// 21+ is an x1.15/hd extension (MM1 prints no XP up there).
+// R59: DMG p.85 printed ladders, verified against the Premium
+// reprint (OCR page 86 of the upload). The pre-R59 ladders were
+// derived from merged-data minima and diverged from print above
+// 10 HD (and at HD 1/5/8 per-hp); they now follow the table:
+//
+//   bracket (HD)     BXPV   XP/HP   SAXPB   EAXPA
+//   up to 1-1          5      1       2      25
+//   1-1 to 1          10      1       4      35
+//   1+1 to 2          20      2       8      45
+//   2+1 to 3          35      3      15      55
+//   3+1 to 4          60      4      25      65
+//   4+1 to 5          90      5      40      75
+//   5+1 to 6         150      6      75     125
+//   6+1 to 7         225      8     125     175
+//   7+1 to 8         375     10     175     275
+//   8+1 to 9         600     12     300     400
+//   9+1 to 10+       900     14     450     600
+//   11 to 12+       1300     16     700     850
+//   13 to 14+       1800     18     950    1200
+//   15 to 16+       2400     20    1250    1600
+//   17 to 18+       3000     25    1550    2000
+//   19 to 20+       4000     30    2100    2500
+//   21 and up       5000     35    2600    3000
+//
+// The int argument is the bracket-ending row: a monster of n+1 HD
+// sits in the bracket ending at n+1 (rowForHd in the .cpp applies
+// the "+1" rule when the def carries hit dice bonus). Row 0 is
+// the sub-1-HD bracket. 21+ is FLAT per print (the pre-R59 code
+// compounded x1.15/hd past 20 — retired).
 int baseForHd(int hd);
 
-// DMG p.85 XP-per-hit-point ladder. Verified against the merged data
-// (e.g. aerial servant 16 HD -> 20/hp, elder titan 22 HD -> 35/hp).
+// DMG p.85 XP-per-hit-point ladder (printed bands; see the table
+// above). XP is awarded per hit point of the ACTUAL specimen.
 int perHpForHd(int hd);
 
-// Special-ability tier multiplier (DMG p.85): x1 none, x2 exceptional,
-// x3 special, x4 special+exceptional. Heuristic from the loaded def:
-// typed specials, magic resistance, weapon-plus requirement, and
-// strong text markers. Callers may override the result when the
-// encounter generator knows better (e.g. dragon spell ability).
-int tierOf(const MonsterDef& def);
+// DMG p.85 Special Ability X.P. Bonus (SAXPB) by the same bracket
+// rows. Additive per special ability, cumulative per the book
+// ("a gargoyle attacks 4 times per round and can be hit only by
+// magic weapons, so a double Special Ability X.P. Bonus should be
+// awarded").
+int saxpbForHd(int hd);
+
+// DMG p.85 Exceptional Ability X.P. Addition (EAXPA) by the same
+// bracket rows. Additive per exceptional ability, cumulative; may
+// be doubled for particularly powerful monsters (not modeled).
+int eaxpaForHd(int hd);
+
+// R59: the award is the printed ADDITIVE formula
+//   BXPV + XP/HP x hp + SAXPB x nSpecial + EAXPA x nExceptional
+// (book example: owlbear 30 hp = 150 + 180 + 75 = 405). The pre-R59
+// x2/x3/x4 tier multipliers are retired. Ability counts come from
+// the def: typed specials (poison/paralysis/drain/breath), magic
+// resistance, hit-only-by-magic, 4+ attacks, AC 0 or lower, high
+// damage (max > 24), high intelligence, and strong text markers.
+// Heuristic — the book hand-tunes its own suggested values.
+int specialCountOf(const MonsterDef& def);
+int exceptionalCountOf(const MonsterDef& def);
 
 // Total XP for killing one specimen. Dispatches on def.xpSource.
 int xpForKill(const MonsterDef& def, const SpawnContext& ctx);
