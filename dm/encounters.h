@@ -105,4 +105,28 @@ enum class PartyReaction {
 PartyReaction rollPartyReaction(rules::Dice& dice, int chaAdj,
                                 bool npcWeaker);
 
+// R60: DMG Appendix C underwater encounter tables (Premium
+// reprint p.179-181; OCR-verified against the uploaded DMG).
+// Fresh water (shallow to 50' / deep below 50'), large bodies of
+// salt water (shallow to 100' / deep below 100'), plus the
+// Dinosaur Subtable. The DMG prints no number columns — "The
+// numbers of monsters encountered are those shown in MONSTER
+// MANUAL" — so counts come from the registry's noAppearing
+// fields. Footnotes (* cool only / ** warm only; dinichthys deep
+// only) re-roll per the book's own "otherwise roll again".
+enum class WaterBody  { FRESH, SALT };
+enum class WaterDepth { SHALLOW, DEEP };
+enum class WaterClime { COOL, WARM };
+
+DungeonEncounter rollWaterEncounter(
+    const monsters::MonsterRegistry& reg, rules::Dice& dice,
+    int pctile, int pctile2,
+    WaterBody body, WaterDepth depth, WaterClime clime);
+
+// Every registry key the table (in both climes) can produce —
+// the regtest-style companion of rollWaterEncounter.
+std::vector<std::string> waterEncounterKeys(
+    const monsters::MonsterRegistry& reg,
+    WaterBody body, WaterDepth depth);
+
 } // namespace dm
