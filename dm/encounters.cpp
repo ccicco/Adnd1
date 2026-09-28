@@ -716,6 +716,23 @@ int henchmanLevelFor(int masterLevel) {
     return lvl < 1 ? 1 : lvl;
 }
 
+// R62: 1e class/race allowances for the fiction layer
+bool raceAllowsClass(int race, int classIndex) {
+    switch (race) {
+        case RACE_DWARF:
+        case RACE_HALFLING:
+            return classIndex == rules::CLASS_FIGHTER ||
+                   classIndex == rules::CLASS_THIEF;
+        case RACE_ELF:
+        case RACE_GNOME:
+            return classIndex != rules::CLASS_CLERIC;
+        case RACE_HALF_ORC:
+            return classIndex != rules::CLASS_MAGIC_USER;
+        default:
+            return true;   // human, half-elf: any class
+    }
+}
+
 } // namespace
 
 // ----------------------------------------------------------------------------
@@ -885,6 +902,7 @@ CharacterParty rollCharacterParty(rules::Dice& dice,
 
         PartyMember m;
         m.classIndex = classForProf(prof);
+        m.race = rollNpcRace(dice, m.classIndex);   // R62
         m.level = characterLevelFor(dice, dungeonLevel, monsterLevel);
         rollMagicItemsFor(dice, m);   // R55: DMG p.176-177
         p.members.push_back(m);
@@ -901,6 +919,7 @@ CharacterParty rollCharacterParty(rules::Dice& dice,
             m.manAtArms = true;
             m.classIndex = rules::CLASS_FIGHTER;   // kit + saves
             m.level = 0;
+            m.race = RACE_HUMAN;   // R62: 0-level men
         } else {
             // henchmen: profession by subtable (paladins and
             // party-contradictory assassins re-rolled), level
@@ -918,6 +937,15 @@ CharacterParty rollCharacterParty(rules::Dice& dice,
             }
             m.henchman = true;
             m.classIndex = classForProf(prof);
+            // R62: a henchman follows his master's folk when
+            // his profession allows it (design fiction)
+            {
+                int masterRace =
+                    p.members[(size_t)(i % nChars)].race;
+                m.race = raceAllowsClass(masterRace, m.classIndex)
+                       ? masterRace
+                       : rollNpcRace(dice, m.classIndex);
+            }
             m.level = henchmanLevelFor(
                 p.members[(size_t)(i % nChars)].level);
             rollMagicItemsFor(dice, m);   // R55: henchmen too
@@ -925,6 +953,35 @@ CharacterParty rollCharacterParty(rules::Dice& dice,
         p.members.push_back(m);
     }
     return p;
+}
+
+// R62: the p.192 race-check adjective for fiction strings.
+const char* npcRaceAdjective(int race) {
+    switch (race) {
+        case RACE_DWARF:     return "dwarven ";
+        case RACE_ELF:       return "elven ";
+        case RACE_GNOME:     return "gnomish ";
+        case RACE_HALF_ELF:  return "half-elven ";
+        case RACE_HALFLING:  return "halfling ";
+        case RACE_HALF_ORC:  return "half-orc ";
+        default:             return "";   // human
+    }
+}
+
+// R62: DMG p.192 race check with class-contradiction re-rolls.
+int rollNpcRace(rules::Dice& dice, int classIndex) {
+    for (int attempt = 0; attempt < 24; ++attempt) {
+        int pct = (int)dice.roll(1, 100, 0);
+        int race = RACE_HUMAN;
+        if      (pct <= 8)  race = RACE_DWARF;
+        else if (pct <= 13) race = RACE_ELF;
+        else if (pct <= 15) race = RACE_GNOME;
+        else if (pct <= 23) race = RACE_HALF_ELF;
+        else if (pct <= 25) race = RACE_HALFLING;
+        else if (pct <= 30) race = RACE_HALF_ORC;
+        if (raceAllowsClass(race, classIndex)) return race;
+    }
+    return RACE_HUMAN;
 }
 
 // R58: DMG p.63 Encounter Reactions — percentile adjusted for
