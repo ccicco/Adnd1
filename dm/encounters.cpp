@@ -967,11 +967,12 @@ PartyReaction rollPartyReaction(rules::Dice& dice, int chaAdj,
 // Key substitutions (no dedicated Lua record, per the R52
 // footnoted-substitution convention): Koalinth -> hobgoblin,
 // Kopoacinth -> gargoyle, Lacedon -> ghoul, Elf (aquatic) ->
-// elf, "Mottled (purple) worm" -> purple_worm, "Whale,
-// carnivorous" (large/medium/small) -> killer_whale (the MM's
-// carnivorous whale), plain "Whale" (large/medium/small) ->
-// whale. All other rows map 1:1 to registry keys (verified
-// against the 408-lua tree).
+// elf, "Mottled (purple) worm" -> purple_worm. R61: the
+// whale-size rows now map to distinct MM Whale entries —
+// carnivorous L/M/S -> sperm_whale/killer_whale/black_whale,
+// plain L/M/S -> whale/right_whale/white_whale_beluga
+// (R60 approximated them to single keys). All other rows map
+// 1:1 to registry keys (verified against the 408-lua tree).
 // ----------------------------------------------------------------------------
 namespace {
 
@@ -1076,12 +1077,12 @@ static const WaterRow kSaltShallow[] = {
     { 85, 87, "strangle_weed",         WF_NONE},
     { 88, 90, "triton",                WF_NONE},
     { 91, 91, "sea_turtle",            WF_NONE},
-    { 92, 92, "killer_whale",          WF_NONE},   // carnivorous large
+    { 92, 92, "sperm_whale",          WF_NONE},   // carnivorous large
     { 93, 93, "killer_whale",          WF_NONE},   // carnivorous medium
-    { 94, 96, "killer_whale",          WF_NONE},   // carnivorous small
+    { 94, 96, "black_whale",           WF_NONE},   // carnivorous small
     { 97, 97, "whale",                 WF_NONE},   // whale large
-    { 98, 98, "whale",                 WF_NONE},   // whale medium
-    { 99,100, "whale",                 WF_NONE},   // whale small
+    { 98, 98, "right_whale",           WF_NONE},   // whale medium
+    { 99,100, "white_whale_beluga",    WF_NONE},   // whale small
 };
 
 // ---- Salt Water, Deep Water Encounters (below 100') — DMG p.181 ----
@@ -1115,12 +1116,12 @@ static const WaterRow kSaltDeep[] = {
     { 81, 82, "giant_squid",      WF_NONE},
     { 83, 85, "triton",           WF_NONE},
     { 86, 86, "sea_turtle",       WF_NONE},
-    { 87, 88, "killer_whale",     WF_NONE},   // carnivorous large
+    { 87, 88, "sperm_whale",      WF_NONE},   // carnivorous large
     { 89, 90, "killer_whale",     WF_NONE},   // carnivorous medium
-    { 91, 92, "killer_whale",     WF_NONE},   // carnivorous small
+    { 91, 92, "black_whale",      WF_NONE},   // carnivorous small
     { 93, 95, "whale",            WF_NONE},   // whale large
-    { 96, 98, "whale",            WF_NONE},   // whale medium
-    { 99,100, "whale",            WF_NONE},   // whale small
+    { 96, 98, "right_whale",      WF_NONE},   // whale medium
+    { 99,100, "white_whale_beluga", WF_NONE},   // whale small
 };
 
 // ---- Dinosaur Subtable — DMG p.190 ----
