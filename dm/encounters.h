@@ -212,4 +212,57 @@ std::vector<std::string> cityEncounterKeys(
     const monsters::MonsterRegistry& reg);
 
 
+// R65: DMG Appendix C ASTRAL & ETHEREAL encounter tables
+// (Premium reprint p.181; OCR-verified against the uploaded
+// DMG). Both tables print a Numbers column — counts come
+// from the table, not the registry. The (*) footnote
+// creatures (basilisk, cockatrice, gorgon, medusa) apply
+// only when the encounter allows effect to extend from the
+// Prime Material Plane — gated on primeAdjacent, re-rolled
+// otherwise. Demon/devil tiers and the AC-variant titans
+// resolve as pick-sets on the second percentile; "Human
+// traveller" resolves as the (**) modified Human Subtable
+// party (rollPlanarTravellerParty, defined in the .cpp).
+// The Psychic Wind / Ether Cyclone tables are transcribed
+// as verbatim result structs — journey fiction only until
+// the engine has planar travel (R60/R63 no-wiring
+// precedent).
+enum PlanarBody { PB_ASTRAL = 0, PB_ETHEREAL };
+
+DungeonEncounter rollPlanarEncounter(
+    const monsters::MonsterRegistry& reg, rules::Dice& dice,
+    int pctile, int pctile2,
+    PlanarBody body, bool primeAdjacent);
+
+// Every result key the table can produce — the regtest-style
+// companion of rollPlanarEncounter.
+std::vector<std::string> planarEncounterKeys(
+    const monsters::MonsterRegistry& reg, PlanarBody body);
+
+// Psychic Wind (astral): d20 per the p.181 table. saveMade is
+// the party's saving throw versus magic, the caller's roll.
+enum class PsychicWindEffect {
+    Slowed, LostReturn, OffCourse, Storm
+};
+struct PsychicWindResult {
+    PsychicWindEffect effect;
+    int days;             // LostReturn / Storm success
+    bool cordBroken;      // Storm save failure (death)
+};
+PsychicWindResult rollPsychicWind(rules::Dice& dice, int d20,
+                                  bool saveMade);
+
+// Ether Cyclone (ethereal): d20 per the p.181 table.
+enum class EtherCycloneEffect {
+    BlownAbout, DifferentPlane, LostNewPlane, StormAstral
+};
+struct EtherCycloneResult {
+    EtherCycloneEffect effect;
+    int days;
+    bool blownToAstral;   // Storm save failure
+};
+EtherCycloneResult rollEtherCyclone(rules::Dice& dice, int d20,
+                                    bool saveMade);
+
+
 } // namespace dm
