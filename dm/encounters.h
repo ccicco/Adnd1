@@ -149,4 +149,39 @@ std::vector<std::string> waterEncounterKeys(
     const monsters::MonsterRegistry& reg,
     WaterBody body, WaterDepth depth);
 
+// R63: DMG Appendix C outdoor (wilderness) encounter tables
+// (Premium reprint p.182-191; OCR-verified against the uploaded
+// DMG). Eight climate tables, each across eight terrain columns,
+// with eleven terrain-column subtables resolved on the second
+// percentile (plus the tropical single-column Sphinx Subtable
+// and the pick-sets documented in encounters.cpp). Counts come
+// from the registry's noAppearing fields — the DMG prints no
+// number columns for the wilderness tables. The Men Subtable's
+// Character row resolves as a wilderness character party of
+// levels 7-10 (DMG p.187 special note): rollCharacterParty
+// (dice, 8, 8). No appstate wiring yet — the game has no
+// overland travel — matching the R60 underwater tables.
+enum OutdoorTerrain {
+    T_PLAIN = 0, T_SCRUB, T_FOREST, T_ROUGH,
+    T_DESERT, T_HILLS, T_MOUNTAINS, T_MARSH
+};
+
+enum OutdoorClime {
+    OC_ARCTIC = 0, OC_SUB_ARCTIC,
+    OC_TEMPERATE_WILD, OC_TEMPERATE_INHABITED,
+    OC_FAERIE, OC_PLEISTOCENE, OC_DINOSAUR_AGE, OC_TROPICAL
+};
+
+DungeonEncounter rollOutdoorEncounter(
+    const monsters::MonsterRegistry& reg, rules::Dice& dice,
+    int pctile, int pctile2,
+    OutdoorClime clime, OutdoorTerrain terrain);
+
+// Every registry key the climate/terrain column can produce —
+// the regtest-style companion of rollOutdoorEncounter.
+std::vector<std::string> outdoorEncounterKeys(
+    const monsters::MonsterRegistry& reg,
+    OutdoorClime clime, OutdoorTerrain terrain);
+
+
 } // namespace dm
