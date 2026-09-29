@@ -62,6 +62,30 @@ struct DamageRoutine {
 };
 
 // ----------------------------------------------------------------------------
+// R71: Treasure type letters (MM p.105). The Lua `treasure` field is
+// parsed into per-creature ("individuals") and in-lair letter lists.
+// Splits follow the printed TREASURE TYPE lines (Curtiss-verified):
+// semicolons/periods split the halves; for the comma-only
+// "Individuals ... in lair" strings the J-N per-individual band is
+// the default and the four book-verified exceptions are hard-coded
+// (hobgoblin, kobold, ettin, dervish).
+// ----------------------------------------------------------------------------
+struct TreasureEntry {
+    char letter = 'A';
+    int  times  = 1;          // "(x10)" multiplier
+    bool magicOnly = false;   // "G (magic)" / "C (magic only)"
+};
+
+struct TreasureSpec {
+    std::vector<TreasureEntry> individual;   // rolled per slain creature
+    std::vector<TreasureEntry> lair;          // rolled on a lair victory
+    bool certain = false;                     // "100% ..." prefix
+    bool empty() const {
+        return individual.empty() && lair.empty();
+    }
+};
+
+// ----------------------------------------------------------------------------
 // MonsterDef: one loaded monster.
 // ----------------------------------------------------------------------------
 struct MonsterDef {
@@ -114,6 +138,10 @@ struct MonsterDef {
     std::string specialAttacksText; // verbatim SPECIAL ATTACKS field
     std::string specialDefensesText;
     std::string text;              // complete MM prose (bestiary viewer)
+
+    // R71: treasure type letters + verbatim Lua text (bestiary/debug)
+    TreasureSpec treasure;
+    std::string treasureText;
 
     std::vector<SpecialAttack> specials;
 };
