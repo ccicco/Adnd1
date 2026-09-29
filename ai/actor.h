@@ -167,6 +167,11 @@ struct Actor {
     // R18: special attacks (copied from MonsterDef by the registry)
     std::vector<ActorSpecial> specials;
 
+    // R75: breath weapons fire at most once per encounter (1e dragons
+    // breathe a limited number of times/day; once per encounter is the
+    // combat-scale convention). Set by resolveSpecial case 4.
+    bool specialBreathUsed = false;
+
     // R27: spell slots by level (index 0 = spell level 1).
     // Characters only â the app initializes these from
     // spells::spellSlots when the encounter party is built
