@@ -661,8 +661,8 @@ static void drawCreate(HDC dc, const AppState& s) {
             // derived adjustments
             char der[160];
             snprintf(der, sizeof der,
-                     "melee hit %+#d  dmg %+#d   react %+#d  AC %+#d   "
-                     "hp/die %+#d",
+                     "melee hit %+d  dmg %+d   react %+d  AC %+d   "
+                     "hp/die %+d",
                      rules::strHitAdj(a.str,
                                       rules::ExceptionalStrength{}),
                      rules::strDmgAdj(a.str,
@@ -694,7 +694,7 @@ static void drawCreate(HDC dc, const AppState& s) {
                 bool ok = cr.classEligible(i);
                 char row[96];
                 snprintf(row, sizeof row, "  [%d] %-12s  %s %2d  "
-                         "(%+#d%% XP)  %s",
+                         "(%+d%% XP)  %s",
                          i + 1, CLASS_NAMES[i],
                          rules::abilityName(
                              (rules::Ability)rules::primeRequisite(i)),
@@ -813,6 +813,11 @@ static void drawTown(HDC dc, const AppState& s) {
     SetTextColor(dc, RGB(160, 150, 120));
     snprintf(line, sizeof line, "[O] Set out overland â the wild roads");
     TextOutA(dc, 20, 528, line, (int)strlen(line));
+
+    snprintf(line, sizeof line, "[V] Set sail - the crewed coaster");
+    TextOutA(dc, 20, 552, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[W] Walk the city streets");
+    TextOutA(dc, 20, 576, line, (int)strlen(line));
 
     snprintf(line, sizeof line, "[B]/[Esc] return to the dungeon");
     TextOutA(dc, 20, 528, line, (int)strlen(line));
@@ -973,6 +978,120 @@ static void drawOverland(HDC dc, const AppState& s) {
     snprintf(line, sizeof line,
              "Gold: %d  Potions: %d", s.party.gold, s.party.potions);
     TextOutA(dc, 260, 240, line, (int)strlen(line));
+}
+
+// ----------------------------------------------------------------------------
+// R70: the sea travel screen (MODE_SEA)
+// ----------------------------------------------------------------------------
+
+static void drawSea(HDC dc, const AppState& s) {
+    RECT vr = { 0, 0, VIEW_W, VIEW_H };
+    HBRUSH black = CreateSolidBrush(RGB(8, 10, 16));
+    FillRect(dc, &vr, black);
+    DeleteObject(black);
+
+    SetBkColor(dc, RGB(8, 10, 16));
+    SetTextColor(dc, RGB(220, 200, 160));
+    char line[160];
+
+    snprintf(line, sizeof line, "AT SEA");
+    TextOutA(dc, 20, 14, line, (int)strlen(line));
+
+    SetTextColor(dc, RGB(200, 190, 160));
+    snprintf(line, sizeof line,
+             "Day %d   %s   %s (%d days out)",
+             s.sea.day,
+             s.sea.homeward ? "the sea road home" : "outward bound",
+             s.sea.daysOut < kSeaCoastalDays
+                 ? "coastal waters" : "the open sea",
+             s.sea.daysOut);
+    TextOutA(dc, 20, 48, line, (int)strlen(line));
+
+    snprintf(line, sizeof line, "[T] Sail on   [H] Sail homeward");
+    TextOutA(dc, 260, 96, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[C] Anchor for the night");
+    TextOutA(dc, 260, 120, line, (int)strlen(line));
+
+    // the company panel (the travel screens' convention)
+    SetTextColor(dc, RGB(220, 200, 160));
+    snprintf(line, sizeof line, "THE COMPANY");
+    TextOutA(dc, 430, 96, line, (int)strlen(line));
+    SetTextColor(dc, RGB(200, 190, 160));
+    static const char* CLASS_LETTER = "FMCT";
+    int sy = 120;
+    for (const auto& c : s.party.members) {
+        char nm[9];
+        strncpy(nm, c.name.c_str(), 8);
+        nm[8] = 0;
+        if (c.hp <= 0) {
+            snprintf(line, sizeof line, "%s  fallen", nm);
+        } else {
+            snprintf(line, sizeof line, "%s  %c%d  %d/%d",
+                     nm, CLASS_LETTER[c.classIndex & 3],
+                     c.level, c.hp, c.maxHp);
+        }
+        TextOutA(dc, 430, sy, line, (int)strlen(line));
+        sy += 22;
+    }
+
+    SetTextColor(dc, RGB(160, 150, 120));
+    snprintf(line, sizeof line,
+             "Gold: %d  Potions: %d", s.party.gold, s.party.potions);
+    TextOutA(dc, 260, 168, line, (int)strlen(line));
+}
+
+// ----------------------------------------------------------------------------
+// R70: the city streets screen (MODE_CITY)
+// ----------------------------------------------------------------------------
+
+static void drawCity(HDC dc, const AppState& s) {
+    RECT vr = { 0, 0, VIEW_W, VIEW_H };
+    HBRUSH black = CreateSolidBrush(RGB(12, 10, 8));
+    FillRect(dc, &vr, black);
+    DeleteObject(black);
+
+    SetBkColor(dc, RGB(12, 10, 8));
+    SetTextColor(dc, RGB(220, 200, 160));
+    char line[160];
+
+    snprintf(line, sizeof line, "THE CITY STREETS");
+    TextOutA(dc, 20, 14, line, (int)strlen(line));
+
+    SetTextColor(dc, RGB(200, 190, 160));
+    snprintf(line, sizeof line,
+             "Gold: %d  Potions: %d", s.party.gold, s.party.potions);
+    TextOutA(dc, 20, 48, line, (int)strlen(line));
+
+    snprintf(line, sizeof line, "[1] An excursion by daylight");
+    TextOutA(dc, 20, 96, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[2] An excursion by night");
+    TextOutA(dc, 20, 120, line, (int)strlen(line));
+
+    SetTextColor(dc, RGB(160, 150, 120));
+    snprintf(line, sizeof line, "[B]/[Esc] back to town");
+    TextOutA(dc, 20, 168, line, (int)strlen(line));
+
+    // the company panel (the travel screens' convention)
+    SetTextColor(dc, RGB(220, 200, 160));
+    snprintf(line, sizeof line, "THE COMPANY");
+    TextOutA(dc, 430, 96, line, (int)strlen(line));
+    SetTextColor(dc, RGB(200, 190, 160));
+    static const char* CLASS_LETTER = "FMCT";
+    int sy = 120;
+    for (const auto& c : s.party.members) {
+        char nm[9];
+        strncpy(nm, c.name.c_str(), 8);
+        nm[8] = 0;
+        if (c.hp <= 0) {
+            snprintf(line, sizeof line, "%s  fallen", nm);
+        } else {
+            snprintf(line, sizeof line, "%s  %c%d  %d/%d",
+                     nm, CLASS_LETTER[c.classIndex & 3],
+                     c.level, c.hp, c.maxHp);
+        }
+        TextOutA(dc, 430, sy, line, (int)strlen(line));
+        sy += 22;
+    }
 }
 
 static void drawHud(HDC dc, const AppState& s) {
@@ -1158,6 +1277,17 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'o':
                         g_app.enterOverland();
                         break;
+
+                    // R70: sea and city
+                    case 'V':
+                    case 'v':
+                        g_app.enterSea();
+                        break;
+
+                    case 'W':
+                    case 'w':
+                        g_app.enterCity();
+                        break;
                 }
             } else if (g_app.mode == MODE_OVERLAND) {
                 // R68: wilderness travel keys — [1-8] route
@@ -1193,6 +1323,57 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'P':
                     case 'p':
                         g_app.overlandPass();
+                        break;
+
+                    // a wiped company rolls a fresh one
+                    case 'N':
+                    case 'n':
+                        if (!g_app.party.alive())
+                            g_app.resetToCreation();
+                        break;
+                }
+            } else if (g_app.mode == MODE_SEA) {
+                // R70: sea travel keys - [T] sail on, [H]
+                // homeward, [C] anchor for the night
+                switch (wp) {
+                    case 'T':
+                    case 't':
+                        g_app.seaTravel();
+                        break;
+
+                    case 'H':
+                    case 'h':
+                        g_app.seaHomeward();
+                        break;
+
+                    case 'C':
+                    case 'c':
+                        g_app.seaCamp();
+                        break;
+
+                    // a wiped company rolls a fresh one
+                    case 'N':
+                    case 'n':
+                        if (!g_app.party.alive())
+                            g_app.resetToCreation();
+                        break;
+                }
+            } else if (g_app.mode == MODE_CITY) {
+                // R70: city street keys - [1] day excursion,
+                // [2] night excursion, [B]/Esc back to town
+                switch (wp) {
+                    case '1':
+                        g_app.cityExcursion(dm::CITY_DAY);
+                        break;
+
+                    case '2':
+                        g_app.cityExcursion(dm::CITY_NIGHT);
+                        break;
+
+                    case 'B':
+                    case 'b':
+                    case VK_ESCAPE:
+                        g_app.leaveCity();
                         break;
 
                     // a wiped company rolls a fresh one
@@ -1374,6 +1555,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     drawHud(g_rend.memDC, g_app);
                 } else if (g_app.mode == MODE_OVERLAND) {
                     drawOverland(g_rend.memDC, g_app);
+                    drawHud(g_rend.memDC, g_app);
+                } else if (g_app.mode == MODE_SEA) {
+                    drawSea(g_rend.memDC, g_app);
+                    drawHud(g_rend.memDC, g_app);
+                } else if (g_app.mode == MODE_CITY) {
+                    drawCity(g_rend.memDC, g_app);
                     drawHud(g_rend.memDC, g_app);
                 } else {
                     drawView(g_rend.memDC, g_app);
