@@ -364,6 +364,196 @@ int levelTagFromHd(float hd) {
 // Loading
 // ----------------------------------------------------------------------------
 
+// ----------------------------------------------------------------------------
+// R71: parse the Lua `treasure` field (MM TREASURE TYPE line) into
+// per-creature and in-lair letter lists. All 104 observed string
+// formats parse; the four comma-only strings whose split disagrees
+// with the J-N per-individual default are hard-coded from the printed
+// TREASURE TYPE lines (Curtiss-verified 2026-09-29):
+//   hobgoblin "Individuals J, M, D, Q (x5) in lair" -> ind J,M,D; lair Q x5
+//   kobold    "Individuals J, O, Q (x5) in lair"   -> ind J,O;   lair Q x5
+//   ettin     "Individual O, C, Y in lair"         -> ind O,C;   lair Y
+//   dervish   "Individuals J (L), Z in lair"      -> ind J;     lair L,Z
+// As-printed quirks preserved: "none", "See below", and the bare
+// digits ("1", "6" — werewolf etc.) parse as empty; the verbatim text
+// stays in MonsterDef::treasureText.
+// ----------------------------------------------------------------------------
+namespace {
+
+struct TToken {
+    std::vector<char> letters;   // A-Z, ranges expanded
+    int  times      = 1;
+    bool magicOnly  = false;
+    int  keyword    = 0;   // 1 = "individual(s)", 2 = "lair"
+    bool separator  = false; // preceded by ';' or '.' (lair from here)
+};
+
+bool tHasWord(const std::string& s, const char* w) {
+    return std::string::npos != s.find(w);
+}
+
+std::vector<TToken> tTokenize(const std::string& text, bool& certain) {
+    std::vector<TToken> toks;
+    std::string cur;
+    bool sep = false;
+    auto push = [&]() {
+        if (cur.empty()) return;
+        TToken t;
+        t.separator = sep;
+        sep = false;
+        std::string low;
+        for (char c : cur) low.push_back((char)std::tolower((unsigned char)c));
+        if (tHasWord(low, "in lair")) {
+            size_t p = low.find("in lair");
+            cur.erase(p, 7);
+            low.erase(p, 7);
+        }
+        if (tHasWord(low, "individual")) {
+            t.keyword = 1;
+            size_t p = low.find("individual");
+            cur.erase(p, 12);   // "individuals" is 12; trims "s" next
+            while (p < cur.size() && !std::isalpha((unsigned char)cur[p]))
+                cur.erase(p, 1);
+        } else if (tHasWord(low, "lair")) {
+            t.keyword = 2;
+            size_t p = low.find("lair");
+            cur.erase(p, 4);
+            while (p < cur.size() && !std::isalpha((unsigned char)cur[p]))
+                cur.erase(p, 1);
+        }
+        // "100%" prefix (certainty flag; percentages other than 100
+        // are not printed in any MM entry)
+        if (low.find("100%") != std::string::npos) {
+            certain = true;
+            size_t p = cur.find('%');
+            cur.erase(0, p + 1);
+        }
+        // multiplier "(x 10)" / "(x20)" / unicode times
+        size_t po = cur.find('(');
+        if (po != std::string::npos) {
+            std::string in = cur.substr(po + 1);
+            size_t pc = in.find(')');
+            if (pc != std::string::npos) in = in.substr(0, pc);
+            std::string lowin;
+            for (char c : in)
+                lowin.push_back((char)std::tolower((unsigned char)c));
+            if (lowin.find("magic") != std::string::npos)
+                t.magicOnly = true;
+            else {
+                // digits in the parens -> multiplier
+                std::string digits;
+                for (char c : in)
+                    if (std::isdigit((unsigned char)c)) digits.push_back(c);
+                if (!digits.empty()) t.times = std::atoi(digits.c_str());
+            }
+            cur.erase(po);
+        }
+        // letters: collect capitals; expand "X-Y" ranges
+        for (size_t i = 0; i < cur.size(); ++i) {
+            char c = cur[i];
+            if (c >= 'A' && c <= 'Z') {
+                if (i + 2 < cur.size() && cur[i + 1] == '-' &&
+                    cur[i + 2] >= 'A' && cur[i + 2] <= 'Z') {
+                    for (char k = c; k <= cur[i + 2]; ++k)
+                        t.letters.push_back(k);
+                    i += 2;
+                } else {
+                    t.letters.push_back(c);
+                }
+            }
+        }
+        if (!t.letters.empty() || t.keyword) toks.push_back(t);
+        cur.clear();
+    };
+    for (char c : text) {
+        if (c == ',' || c == ';' || c == '.' || c == '\n') {
+            push();
+            if (c != ',') sep = true;
+        } else {
+            cur.push_back(c);
+        }
+    }
+    push();
+    return toks;
+}
+
+} // namespace
+
+static TreasureSpec parseTreasureText(const std::string& key,
+                                      const std::string& text) {
+    TreasureSpec spec;
+    (void)key;
+    std::string t;
+    for (char c : text) t.push_back(c);
+    // trim
+    while (!t.empty() && std::isspace((unsigned char)t.back())) t.pop_back();
+    size_t b = 0;
+    while (b < t.size() && std::isspace((unsigned char)t[b])) ++b;
+    t = t.substr(b);
+    if (t.empty()) return spec;
+    std::string low;
+    for (char c : t)
+        low.push_back((char)std::tolower((unsigned char)c));
+    if (low == "none" || low == "see below") return spec;
+    bool allDigits = !low.empty();
+    for (char c : low)
+        if (!std::isdigit((unsigned char)c)) { allDigits = false; break; }
+    if (allDigits) return spec;   // werewolf "6" etc., printed as-is
+
+    // Book-verified splits where the J-N default rule fails
+    struct Ov { const char* key; const char* ind; const char* lair; };
+    static const Ov ovs[] = {
+        { "hobgoblin", "JMD",  "Q" },
+        { "kobold",    "JO",   "Q" },
+        { "ettin",     "OC",   "Y"  },
+        { "dervish",   "J",    "LZ" },
+    };
+    for (const auto& o : ovs) {
+        if (key != o.key) continue;
+        for (char c : std::string(o.ind))
+            spec.individual.push_back({c, 1, false});
+        // kobold & hobgoblin: lair Q x5 (both print "(x5)")
+        bool q5 = key == "kobold" || key == "hobgoblin";
+        for (char c : std::string(o.lair))
+            spec.lair.push_back({c, q5 ? 5 : 1, false});
+        return spec;
+    }
+
+    bool certain = false;
+    auto toks = tTokenize(t, certain);
+    spec.certain = certain;
+
+    // Assignment: a ';'/.'/'Lair' keyword boundary splits the halves;
+    // otherwise the leading run of J-N letters (the MM's per-individual
+    // band) is individual treasure and everything after is lair.
+    bool haveBoundary = false;
+    for (const auto& tk : toks)
+        if (tk.separator || tk.keyword == 2) haveBoundary = true;
+
+    bool inInd = true, seenNonJN = false;
+    bool modeInd = true;
+    for (const auto& tk : toks) {
+        if (haveBoundary) {
+            if (tk.separator || tk.keyword == 2) modeInd = false;
+            if (tk.keyword == 1) modeInd = true;
+        } else {
+            if (!tk.letters.empty()) {
+                char c = tk.letters[0];
+                bool jn = (c >= 'J' && c <= 'N');
+                if (!jn && !seenNonJN) { seenNonJN = true; modeInd = false; }
+            }
+        }
+        for (char c : tk.letters) {
+            TreasureEntry e{c, tk.times, tk.magicOnly};
+            if (modeInd) spec.individual.push_back(e);
+            else         spec.lair.push_back(e);
+        }
+    }
+    (void)inInd;
+    return spec;
+}
+
+
 bool MonsterRegistry::loadFile(const std::string& path,
                                const std::string& key) {
     lua_State* L = luaL_newstate();
@@ -461,6 +651,10 @@ bool MonsterRegistry::loadFile(const std::string& path,
     def.specialAttacksText   = luaGetStr(L, "specialAttacks", "");
     def.specialDefensesText  = luaGetStr(L, "specialDefenses", "");
     def.text                 = luaGetStr(L, "text", "");
+
+    // ---- R71: treasure type letters ----
+    def.treasureText = luaGetStr(L, "treasure", "");
+    def.treasure = parseTreasureText(def.key, def.treasureText);
 
     // ---- specialAttacks: typed table form first (R18) ----
     lua_getfield(L, -1, "specialAttacks");
