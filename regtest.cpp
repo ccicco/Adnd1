@@ -19,7 +19,7 @@ int main() {
     }
     printf("loaded %d, errors %zu\n", n, reg.errors().size());
     for (auto& e : reg.errors()) printf("ERR: %s\n", e.c_str());
-    for (const char* k : {"wight", "purple_worm", "anhkheg", "goblin"}) {
+    for (const char* k : {"wight", "purple_worm", "ankheg", "goblin"}) {
         auto* d = reg.find(k);
         if (d) printf("%-12s AC%3d HD %.1f atk %d dmg 1d%d xp %d und %d\n",
             k, d->armorClass, d->hitDice, d->attacks, d->damageSides,
