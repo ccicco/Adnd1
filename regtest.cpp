@@ -96,5 +96,60 @@ int main() {
         }
         printf("encounter filter: %s\n", bad ? "FAIL" : "OK");
     }
+
+    // ---- R75: specials audit + toActor copy check ----------------------
+    // The bug: toActor() never copied def.specials onto the Actor, so
+    // R18's resolveSpecial was dead code for every registry monster.
+    {
+        int withSp = 0, drain = 0, pois = 0, para = 0, breath = 0;
+        for (const auto& kv : reg.all()) {
+            if (kv.second.specials.empty()) continue;
+            ++withSp;
+            for (const auto& sp : kv.second.specials) {
+                if (sp.type == monsters::SPECIAL_ENERGY_DRAIN) ++drain;
+                if (sp.type == monsters::SPECIAL_POISON)       ++pois;
+                if (sp.type == monsters::SPECIAL_PARALYSIS)    ++para;
+                if (sp.type == monsters::SPECIAL_BREATH_WEAPON) ++breath;
+            }
+        }
+        printf("specials census: %d monsters, drain %d poison %d "
+               "paralysis %d breath %d\n",
+               withSp, drain, pois, para, breath);
+        // census must be non-degenerate: a 408-monster bestiary with
+        // the keyword derivation MUST have found some of each class
+        if (drain < 1 || pois < 5 || para < 1 || breath < 5) {
+            printf("FAIL: specials census degenerate\n");
+            return 1;
+        }
+
+        // toActor must copy specials (the R75 fix) — test the first
+        // monster of each special type rather than hardcoded keys
+        rules::Rng rng2(999);
+        rules::Dice dice2(rng2);
+        int bad = 0;
+        const char* probe[4] = { nullptr, nullptr, nullptr, nullptr };
+        for (const auto& kv : reg.all()) {
+            for (const auto& sp : kv.second.specials) {
+                int t = (int)sp.type;
+                if (t >= 1 && t <= 4 && !probe[t - 1])
+                    probe[t - 1] = kv.second.key.c_str();
+            }
+        }
+        for (int t = 1; t <= 4; ++t) {
+            if (!probe[t - 1]) {
+                printf("FAIL: no monster with special type %d\n", t);
+                return 1;
+            }
+            auto* d = reg.find(probe[t - 1]);
+            ai::Actor a = reg.toActor(probe[t - 1], dice2);
+            if (a.specials.size() != d->specials.size()) { ++bad; continue; }
+            for (size_t i = 0; i < a.specials.size(); ++i)
+                if (a.specials[i].type != (int)d->specials[i].type ||
+                    a.specials[i].drainLevels != d->specials[i].drainLevels)
+                    ++bad;
+        }
+        printf("toActor specials: %s\n", bad ? "FAIL" : "OK");
+        if (bad) return 1;
+    }
     return 0;
 }
