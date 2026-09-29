@@ -20,7 +20,7 @@ return {
   xpValue = 68,
   xpSource = "merged_mm1",
   frequency = "uncommon",
-  noAppearing = "\u0014",
+  noAppearing = "",
   lairPct = 0,
   lairPctRaw = "none",
   treasure = "none",

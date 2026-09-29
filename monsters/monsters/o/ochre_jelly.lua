@@ -32,5 +32,5 @@ return {
   magicResistance = "standard",
   psionic = "none",
   attackDefenseModes = "none",
-  text = "Ochre jelly are a form of giant amoeba. They seep about in dungeons, hunting for any form of flesh or cellulose to devour \u0014 they far prefer the former. Their amorphous form allows them to flow through small spaces. They can travel along walls or ceilings with ease. The fluids excreted by these creatures dissolve flesh (3-12 hit points per round of exposure).\n\nStriking the ochre jelly with lightning bolts simply divides the creature into one or more smaller creatures, each doing one-half normal damage. Cold and attacks have normal effect.",
+  text = "Ochre jelly are a form of giant amoeba. They seep about in dungeons, hunting for any form of flesh or cellulose to devour  they far prefer the former. Their amorphous form allows them to flow through small spaces. They can travel along walls or ceilings with ease. The fluids excreted by these creatures dissolve flesh (3-12 hit points per round of exposure).\n\nStriking the ochre jelly with lightning bolts simply divides the creature into one or more smaller creatures, each doing one-half normal damage. Cold and attacks have normal effect.",
 }

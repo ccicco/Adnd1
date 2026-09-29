@@ -32,5 +32,5 @@ return {
   magicResistance = "50%",
   psionic = "none",
   attackDefenseModes = "none",
-  text = "Sylphs are very beautiful creatures similar to nymphs. The sylphs, however, dwell primarily in aerial places. They are fond of flitting about, and it is not likely that they will be encountered near the place where they dwell.\n\nSylphs sometimes (20%) befriend creatures of good alignment, aiding them in some way. A sylph has magical ability of 7th level (4 \u0014 1st level spells, 3 \u0014 2nd, 2 \u0014 3rd, and 1 \u0014 4th once per day) in addition to the abilities of invisibility at will and conjuring an air elemental once per week.\n\nSylphs speak their own and the common tongue.",
+  text = "Sylphs are very beautiful creatures similar to nymphs. The sylphs, however, dwell primarily in aerial places. They are fond of flitting about, and it is not likely that they will be encountered near the place where they dwell.\n\nSylphs sometimes (20%) befriend creatures of good alignment, aiding them in some way. A sylph has magical ability of 7th level (4  1st level spells, 3  2nd, 2  3rd, and 1  4th once per day) in addition to the abilities of invisibility at will and conjuring an air elemental once per week.\n\nSylphs speak their own and the common tongue.",
 }

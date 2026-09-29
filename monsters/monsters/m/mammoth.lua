@@ -32,5 +32,5 @@ return {
   magicResistance = "standard",
   psionic = "none",
   attackDefenseModes = "none",
-  text = "There are several varieties of mammoth, including the woolly and imperial \u0014\nthe latter sort being the largest. They inhabit climes ranging from subarctic to\nsubtropical of the Pleistocene epoch. These massive herbivores are quite\naggressive if threatened.\n\nAs with elephants (q.v.) and mastodons, the mammoth has 5 attack forms, but\nin general can apply no more than 2 versus a single opponent.\n\nThe tusks of the mammoth are 50% heavier than those of the elephant, and\ntheir value is proportionately higher.",
+  text = "There are several varieties of mammoth, including the woolly and imperial \nthe latter sort being the largest. They inhabit climes ranging from subarctic to\nsubtropical of the Pleistocene epoch. These massive herbivores are quite\naggressive if threatened.\n\nAs with elephants (q.v.) and mastodons, the mammoth has 5 attack forms, but\nin general can apply no more than 2 versus a single opponent.\n\nThe tusks of the mammoth are 50% heavier than those of the elephant, and\ntheir value is proportionately higher.",
 }
