@@ -74,7 +74,7 @@ int main() {
             }
             if (h.gemCount > 0) { ++s.gemHoards; s.gemPieces += h.gemCount; }
             if (h.jewelryCount > 0) {
-                ++s.jewelHoards; s.jewelryPieces += h.jewelryCount;
+                ++s.jewelHoards; s.jewelPieces += h.jewelryCount;
             }
             if (!h.magic.empty()) {
                 ++s.magicHoards;
@@ -126,4 +126,4 @@ int main() {
     }
     printf("\naudit done — compare the %% columns and avg gp against MM p.105\n");
     return 0;
-}
+                }
