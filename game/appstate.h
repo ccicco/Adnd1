@@ -200,6 +200,23 @@
 // (endCombat restores the pre-combat mode). Saves are not
 // possible on the trail (the town convention, R41); load
 // returns to the dungeon.
+// R70: sea travel + the city streets. [V] from town sets sail
+// with the hired crew (R46 crewHired; the coaster of the R46
+// ship-crew feature now carries the party): MODE_SEA, a day's
+// sail [T]/[H] rolls the R60 salt-water tables — coastal
+// waters (SHALLOW, the first kSeaCoastalDays) then the open
+// sea (DEEP), clime COOL (temperate waters, campaign fiction)
+// — with [C] anchoring for the night (the R34/R38 rest). A
+// landfall bills the town visit like any return. [W] from
+// town walks the streets: MODE_CITY, [1] a daytime excursion
+// and [2] a nighttime one, each a single roll on the R64
+// city matrix — classed/service parties meet by the p.176
+// Confrontation (the R68 meeting builder), registry monsters
+// fight, civilians are flavor (R64 fiction rows, printed
+// counts, no stats — documented). The R41+ "every return to
+// town" billing (rents, upkeep, shares, wages) is extracted
+// to billTownVisit() and now bills EVERY arrival — the R68
+// overland return previously bypassed it (documented fix).
 #pragma once
 
 #include "../world/map.h"
@@ -337,6 +354,8 @@ enum GameMode : int {
     MODE_COMBAT,
     MODE_TOWN,         // R41: shops between dives
     MODE_OVERLAND,     // R68: wilderness travel
+    MODE_SEA,          // R70: sea voyage (R60 salt-water tables)
+    MODE_CITY,         // R70: city streets (R64 matrix)
 };
 
 // ----------------------------------------------------------------------------
@@ -661,6 +680,43 @@ inline bool overlandIndicatesMen(const dm::DungeonEncounter& e) {
            e.key == "pilgrim"  || e.key == "caveman";
 }
 
+// ---- R70: sea + city travel state ----------------------------------------
+
+// The voyage: coastal waters (SHALLOW) for the first
+// kSeaCoastalDays days out, the open sea (DEEP) beyond —
+// DMG p.179 prints salt-water shallow "to 100'", and the
+// coastal/open-sea split is this campaign's fiction.
+static const int kSeaCoastalDays = 2;
+
+struct SeaState {
+    int day = 0;        // days on the water
+    int daysOut = 0;    // 0 = in port; 1+ = at sea
+    bool homeward = false;
+};
+
+// R64 fiction civilians: printed counts, no bestiary stats
+// (encounters.cpp documents) — city encounters with these
+// keys are flavor only. One line each; count is unused.
+inline const char* cityFlavor(const char* k) {
+    if (!k) return "The streets are busy.";
+    if (std::string(k) == "beggar")     return "Beggars hold out their hands.";
+    if (std::string(k) == "drunk")      return "A drunk sings loud in a doorway.";
+    if (std::string(k) == "goodwife")   return "A goodwife hurries past with her basket.";
+    if (std::string(k) == "harlot")     return "A woman of the evening waves from a doorway.";
+    if (std::string(k) == "laborer")    return "Laborers trudge past with their tools.";
+    if (std::string(k) == "peddler")    return "A peddler cries his wares.";
+    if (std::string(k) == "gentleman")  return "A gentleman tips his hat.";
+    if (std::string(k) == "noble")     return "A noble's palanquin shoulders past.";
+    if (std::string(k) == "mercenary")  return "Mercenaries lounge by a tavern door.";
+    if (std::string(k) == "merchant")  return "A merchant haggles over a crate of goods.";
+    if (std::string(k) == "pilgrim")    return "Pilgrims chant at a shrine.";
+    if (std::string(k) == "press_gang") return "Sailors shadow you - a press gang eyes the strong.";
+    if (std::string(k) == "ruffian")    return "Ruffians melt into an alley as the watch turns.";
+    if (std::string(k) == "tradesman")  return "Tradesmen call from their shopfronts.";
+    if (std::string(k) == "bard")       return "A bard strums in the square.";
+    return "The streets are busy.";
+}
+
 struct AppState {
     // world
     Map           map;
@@ -691,6 +747,8 @@ struct AppState {
     GameMode combatReturnMode = MODE_EXPLORE;
     // R68: the journey
     OverlandState overland;
+    // R70: the voyage
+    SeaState sea;
     int         combatRoomIndex = -1;
     std::string combatMonsterKey;
     // R51: one context PER FOE (each dragon rolls its own age);
@@ -1225,6 +1283,15 @@ struct AppState {
         if (mode != MODE_EXPLORE) return;
         mode = MODE_TOWN;
         log.add("You return to the town above.");
+        billTownVisit();   // R70: the shared arrival billing
+    }
+
+    // R70: the R41+ arrival billing - rents, henchman
+    // upkeep, shares and crew wages, billed on EVERY
+    // return to town (the delve-return, the overland
+    // march home, a sea landfall). Extracted verbatim
+    // from enterTown in R70.
+    void billTownVisit() {
         // R44: the keep pays its rents on every return (the
         // delve cadence stands in for the month â simplified
         // stronghold economics)
@@ -3938,8 +4005,188 @@ struct AppState {
         if (overland.castle.pending) return;
         if (!party.alive()) return;
         overland.daysOut = 0;
+        arriveTown();   // R70: arrival billing too
+        log.add("The walls of town rise aheadis over.");
+    }
+
+    // R70: any arrival in town - the delve return, the
+    // overland march home, a sea landfall - one billing path
+    void arriveTown() {
         mode = MODE_TOWN;
-        log.add("The walls of town rise ahead — the journey "
-                "is over.");
+        billTownVisit();
+        if (mode == MODE_OVERLAND) checkArrivedHome();
+        if (mode == MODE_SEA) checkArrivedSea();   // R70
+    }
+
+    // ---- R70: sea travel ----------------------------------------------
+
+    // [V] from town - set sail with the hired crew (R46)
+    void enterSea() {
+        if (mode != MODE_TOWN) return;
+        if (!party.alive()) return;
+        if (!party.crewHired) {
+            log.add("You have no crew - hire them in town "
+                    "first ([C] at the wharf).");
+            return;
+        }
+        sea = SeaState{};
+        mode = MODE_SEA;
+        log.add("The company sets sail aboard the coaster.");
+        log.add("Coastal waters - [T] to sail on, [H] for "
+                "home.");
+    }
+
+    // coastal waters vs the open sea (documented fiction)
+    dm::WaterDepth seaDepth() const {
+        return (sea.daysOut < kSeaCoastalDays)
+            ? dm::WaterDepth::SHALLOW : dm::WaterDepth::DEEP;
+    }
+
+    // one encounter check - a day's sail or a night at anchor
+    // (the R68 cadence convention: the DMG's check timing is
+    // the caller's)
+    void seaStep() {
+        if (mode != MODE_SEA || !party.alive()) return;
+        dm::DungeonEncounter e = dm::rollWaterEncounter(
+            registry, dice,
+            (int)dice.roll(1, 100, 0), (int)dice.roll(1, 100, 0),
+            dm::WaterBody::SALT, seaDepth(),
+            dm::WaterClime::COOL);
+        if (e.key.empty() || e.count <= 0) {
+            log.add("The sea is calm.");
+            return;
+        }
+        std::vector<ai::Actor> foes = buildFoesFromDm(e);
+        if (foes.empty()) return;
+        char buf[96];
+        if (e.count == 1)
+            snprintf(buf, sizeof buf,
+                     "It rises from the waves - a wild %s "
+                     "attacks the ship!", e.key.c_str());
+        else
+            snprintf(buf, sizeof buf,
+                     "%d wild %ss attack the ship!",
+                     e.count, e.key.c_str());
+        log.add(buf);
+        beginCombat(std::move(foes), -1, e.key);
+    }
+
+    // [T] - a day's sail outward
+    void seaTravel() {
+        if (mode != MODE_SEA) return;
+        if (!party.alive()) return;
+        sea.homeward = false;
+        ++sea.day;
+        ++sea.daysOut;
+        char buf[96];
+        snprintf(buf, sizeof buf, "Day %d at sea - the %s.",
+                 sea.day,
+                 sea.daysOut < kSeaCoastalDays
+                     ? "coastal waters" : "open sea");
+        log.add(buf);
+        seaStep();
+        checkArrivedSea();
+    }
+
+    // [H] - a day's sail back toward port
+    void seaHomeward() {
+        if (mode != MODE_SEA) return;
+        if (!party.alive()) return;
+        sea.homeward = true;
+        ++sea.day;
+        --sea.daysOut;
+        char buf[96];
+        snprintf(buf, sizeof buf, "Day %d - the sea road home.",
+                 sea.day);
+        log.add(buf);
+        seaStep();
+        checkArrivedSea();
+    }
+
+    // [C] - anchor for the night; an interrupted anchorage
+    // restores nothing (the R34 convention)
+    void seaCamp() {
+        if (mode != MODE_SEA) return;
+        if (!party.alive()) return;
+        log.add("You anchor for the night...");
+        seaStep();
+        if (mode != MODE_SEA) return;   // interrupted by steel
+        overlandSafeCamp("The night passes; the ship rides "
+                         "easy.");
+    }
+
+    // the homeward sail's last league: landfall (guarded by
+    // mode, so endCombat can complete the arrival too)
+    void checkArrivedSea() {
+        if (mode != MODE_SEA) return;
+        if (sea.daysOut > 0) return;
+        if (!party.alive()) return;
+        log.add("The coaster makes port - landfall at last.");
+        arriveTown();
+    }
+
+    // ---- R70: the city streets ----------------------------------------
+
+    // [W] from town - walk the streets (DMG p.190-192)
+    void enterCity() {
+        if (mode != MODE_TOWN) return;
+        if (!party.alive()) return;
+        mode = MODE_CITY;
+        log.add("You walk the streets of the city.");
+        log.add("[1] by day  [2] by night  [B] back to town.");
+    }
+
+    void leaveCity() {
+        if (mode != MODE_CITY) return;
+        mode = MODE_TOWN;
+        log.add("You return from the streets.");
+    }
+
+    // one excursion on the R64 matrix - daytime or nighttime
+    // column. Classed and service parties (the p.191-192
+    // explanations) meet by the p.176 Confrontation (the R68
+    // meeting builder); registry monsters fight; civilians
+    // are flavor (R64 fiction rows - printed counts, no
+    // stats, documented in encounters.cpp)
+    void cityExcursion(dm::CityTime t) {
+        if (mode != MODE_CITY) return;
+        if (!party.alive()) return;
+        log.add(t == dm::CITY_DAY
+            ? "You stroll out by daylight..."
+            : "You slip into the night streets...");
+        dm::DungeonEncounter e = dm::rollCityEncounter(
+            registry, dice,
+            (int)dice.roll(1, 100, 0), (int)dice.roll(1, 100, 0),
+            t);
+        if (e.isParty) {
+            // noun: the matrix key, underscores as spaces
+            std::string noun = e.key;
+            for (auto& ch : noun)
+                if (ch == '_') ch = ' ';
+            overlandMeeting(e, noun.c_str(), false, false);
+            return;
+        }
+        if (e.key.empty()) {
+            log.add("Nothing comes of it.");
+            return;
+        }
+        if (registry.find(e.key)) {
+            std::vector<ai::Actor> foes = buildFoesFromDm(e);
+            if (foes.empty()) return;
+            char buf[96];
+            if (e.count == 1)
+                snprintf(buf, sizeof buf,
+                         "A wild %s attacks in the alleys!",
+                         e.key.c_str());
+            else
+                snprintf(buf, sizeof buf,
+                         "%d wild %ss attack in the alleys!",
+                         e.count, e.key.c_str());
+            log.add(buf);
+            beginCombat(std::move(foes), -1, e.key);
+            return;
+        }
+        // fiction civilians - flavor only
+        log.add(cityFlavor(e.key.c_str()));
     }
 };
