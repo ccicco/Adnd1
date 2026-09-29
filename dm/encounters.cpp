@@ -2716,8 +2716,8 @@ std::vector<std::string> outdoorEncounterKeys(
 // the CHANCE PER LEVEL FOR MAGIC ITEM table per category;
 // potions, scrolls, rings, wands and misc magic have no
 // mechanical effect here (R55 precedent), protection devices
-// roll the printed subtable. No appstate wiring — the game
-// has no city/town play yet (R60/R63 precedent).
+// roll the printed subtable. WIRED SINCE R70 — the city
+// streets excursion loop rolls this matrix (game/appstate.h).
 
 namespace {
 
