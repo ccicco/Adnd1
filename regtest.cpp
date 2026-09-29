@@ -1,4 +1,5 @@
 #include "monsters/MonsterRegistry.h"
+#include "dm/encounters.h"
 #include <cstdio>
 #include <string>
 
@@ -50,6 +51,50 @@ int main() {
             if (bad) ++anom;
         }
         printf("xp audit: %d defs checked, %d anomalies\n", checked, anom);
+    }
+
+    // ---- R74: encounter generator smoke test --------------------------
+    // Deterministic + statistical checks over rollEncounter():
+    //   - every pick resolves to a loaded def
+    //   - count within [min,max] unless clamped to the cap
+    //   - lairPct==0 monsters never generate a lair
+    //   - unique monsters excluded unless allowed
+    {
+        rules::Rng rng(12345);
+        rules::Dice dice(rng);
+        dm::encounters::EncounterOptions opt;
+        int n = 2000, bad = 0, lairs = 0, clamped = 0;
+        for (int i = 0; i < n; ++i) {
+            dm::encounters::Encounter e;
+            if (!dm::encounters::rollEncounter(reg, dice, opt, e)) {
+                ++bad; continue;
+            }
+            if (!e.def) { ++bad; continue; }
+            int lo = e.def->noAppearingMin, hi = e.def->noAppearingMax;
+            if (hi < lo) hi = lo;
+            if (!e.clamped && (e.count < lo || e.count > hi)) ++bad;
+            if (e.count < 1 || e.count > opt.countCap) ++bad;
+            if (e.clamped && e.rawCount <= opt.countCap) ++bad;
+            if (e.inLair && e.def->lairPct <= 0) ++bad;
+            if (e.def->frequency == "unique" || e.def->xpSource == "perm_x10")
+                ++bad;
+            if (e.inLair) ++lairs;
+            if (e.clamped) ++clamped;
+        }
+        // statistical: with 2000 rolls and the full bestiary, some
+        // lairs and clamped counts (goblin "40-400") must have appeared
+        if (lairs == 0 || clamped == 0) ++bad;
+        printf("encounter smoke: %d rolls, %d bad, %d lairs, %d clamped\n",
+               n, bad, lairs, clamped);
+        // alignment-filter sanity: every pick matches the filter
+        dm::encounters::EncounterOptions eo;
+        eo.alignmentFilter = "chaotic";
+        for (int i = 0; i < 500; ++i) {
+            dm::encounters::Encounter e;
+            if (!dm::encounters::rollEncounter(reg, dice, eo, e) ||
+                e.def->alignment.compare(0, 7, "chaotic") != 0) { ++bad; break; }
+        }
+        printf("encounter filter: %s\n", bad ? "FAIL" : "OK");
     }
     return 0;
 }
