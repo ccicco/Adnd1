@@ -270,7 +270,6 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
 
 void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
                                const ActorSpecial& sp) {
-    (void)attacker;
     auto trySaveVs = [&](int saveCategory, int penalty) {
         int target = rules::saveTarget(
             defender.isCharacter ? defender.classIndex : 0,
@@ -335,6 +334,9 @@ void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
             break;
         }
         case 4: {   // BREATH WEAPON: dice damage, save for half
+            // R75: once per encounter - no more breath on every hit
+            if (attacker.specialBreathUsed) break;
+            attacker.specialBreathUsed = true;
             int dmg = (int)m_dice.roll(
                 (uint32_t)(sp.diceCount > 0 ? sp.diceCount : 3),
                 (uint32_t)(sp.diceSides > 0 ? sp.diceSides : 6), 0);
