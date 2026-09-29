@@ -134,6 +134,8 @@ PartyReaction rollPartyReaction(rules::Dice& dice, int chaAdj,
 // MANUAL" — so counts come from the registry's noAppearing
 // fields. Footnotes (* cool only / ** warm only; dinichthys deep
 // only) re-roll per the book's own "otherwise roll again".
+// WIRED SINCE R70 — the sea travel loop rolls the salt-water
+// tables (see game/appstate.h, R70).
 enum class WaterBody  { FRESH, SALT };
 enum class WaterDepth { SHALLOW, DEEP };
 enum class WaterClime { COOL, WARM };
@@ -159,8 +161,8 @@ std::vector<std::string> waterEncounterKeys(
 // number columns for the wilderness tables. The Men Subtable's
 // Character row resolves as a wilderness character party of
 // levels 7-10 (DMG p.187 special note): rollCharacterParty
-// (dice, 8, 8). No appstate wiring yet — the game has no
-// overland travel — matching the R60 underwater tables.
+// (dice, 8, 8). WIRED SINCE R68 — the overland travel loop
+// rolls these tables (see game/appstate.h, R68/R70).
 enum OutdoorTerrain {
     T_PLAIN = 0, T_SCRUB, T_FOREST, T_ROUGH,
     T_DESERT, T_HILLS, T_MOUNTAINS, T_MARSH
@@ -195,9 +197,9 @@ std::vector<std::string> outdoorEncounterKeys(
 // model, documented in encounters.cpp). Numbers are the
 // printed city numbers, not the registry's wilderness-scale
 // noAppearing. City NPCs of 1st level or higher roll the
-// p.192 CHANCE PER LEVEL FOR MAGIC ITEM table. No appstate
-// wiring — the game has no city/town play yet (R60/R63
-// precedent).
+// p.192 CHANCE PER LEVEL FOR MAGIC ITEM table. WIRED SINCE
+// R70 — the city streets excursion loop rolls this matrix
+// (see game/appstate.h, R70).
 enum CityTime { CITY_DAY = 0, CITY_NIGHT };
 
 DungeonEncounter rollCityEncounter(
@@ -306,7 +308,8 @@ bool spellResemblesPsionicPower(const std::string& name);
 // transcribed verbatim (rows grouped, mapping documented).
 // Detection maps the standard surprise die (1d6). Garrison
 // equipment and reaction fiction are the caller's,
-// documented in the .cpp. No appstate wiring.
+// documented in the .cpp. WIRED SINCE R68 — the stronghold
+// discovery flow calls these builders (game/appstate.h).
 enum CastleSize { CASTLE_SMALL = 0, CASTLE_MEDIUM, CASTLE_LARGE };
 
 enum CastleInhabitants {
