@@ -711,10 +711,20 @@ int MonsterRegistry::loadDirectory(const std::string& dirPath) {
     std::string pattern = dirPath + "\\*.lua";
     WIN32_FIND_DATAA fd;
     HANDLE h = FindFirstFileA(pattern.c_str(), &fd);
-    if (h == INVALID_HANDLE_VALUE) return -1;
+    if (h == INVALID_HANDLE_VALUE) {
+        // R74: "no files" is not an error — POSIX opendir succeeds on an
+        // empty dir. Match that contract: only hard path errors are -1.
+        return GetLastError() == ERROR_FILE_NOT_FOUND ? 0 : -1;
+    }
     int count = 0;
     do {
         std::string fname = fd.cFileName;
+        // R74: FindFirstFileA 3-char-extension quirk — "*.lua" can also
+        // match e.g. "foo.luax" (8.3 short-name semantics). Guard exactly
+        // like the POSIX branch: only genuine .lua files.
+        if (fname.size() < 5 ||
+            fname.compare(fname.size() - 4, 4, ".lua") != 0)
+            continue;
         std::string key = fname.substr(0, fname.size() - 4);
         if (loadFile(dirPath + "\\" + fname, key)) ++count;
     } while (FindNextFileA(h, &fd));
