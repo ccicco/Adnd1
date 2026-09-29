@@ -127,7 +127,16 @@ static const JewelryClass kJewelry[7] = {
     {  2000, 12000, "platinum with gems",                true  },
 };
 
+static long long rollJewelry(rules::Dice& dice, const char** desc);
+
 long long rollJewelryValue(rules::Dice& dice) {
+    const char* desc = nullptr;
+    return rollJewelry(dice, &desc);
+}
+
+// R73: shared body — rolls a piece of jewelry and, if desc is non-null,
+// reports its final workmanship class for the loot log flavor.
+static long long rollJewelry(rules::Dice& dice, const char** desc) {
     int pct = d100(dice);
     int cls = (pct < 10) ? 0 : (pct < 20) ? 1 : (pct < 40) ? 2
            : (pct < 50) ? 3 : (pct < 70) ? 4 : (pct < 90) ? 5 : 6;
@@ -149,6 +158,7 @@ long long rollJewelryValue(rules::Dice& dice) {
         v += bonus;
     }
     if (v > 640000) v = 640000;
+    if (desc) *desc = kJewelry[cls].desc;
     return v;
 }
 
@@ -848,8 +858,14 @@ static void addGems(rules::Dice& dice, Hoard& h, const GemCell& g) {
     if (g.pct < 100 && !pctRoll(dice, g.pct)) return;
     int n = inRange(dice, g.lo, g.hi);
     for (int i = 0; i < n; ++i) {
-        h.gemValue += rollGemValue(dice);
+        long long v = rollGemValue(dice);
+        h.gemValue += v;
         ++h.gemCount;
+        // R73: flavor — name the stone in the loot log
+        char nb[96];
+        snprintf(nb, sizeof nb, "a %s worth %lld gp",
+                 gemName(dice, v), v);
+        h.notes.push_back(nb);
     }
 }
 
@@ -858,8 +874,15 @@ static void addJewelry(rules::Dice& dice, Hoard& h, const GemCell& j) {
     if (j.pct < 100 && !pctRoll(dice, j.pct)) return;
     int n = inRange(dice, j.lo, j.hi);
     for (int i = 0; i < n; ++i) {
-        h.jewelryValue += rollJewelryValue(dice);
+        const char* desc = "";
+        long long v = rollJewelry(dice, &desc);
+        h.jewelryValue += v;
         ++h.jewelryCount;
+        // R73: flavor — name the piece in the loot log
+        char nb[112];
+        snprintf(nb, sizeof nb,
+                 "jewelry of %s worth %lld gp", desc, v);
+        h.notes.push_back(nb);
     }
 }
 
