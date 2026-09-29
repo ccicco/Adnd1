@@ -16,11 +16,11 @@ namespace treasure {
 // ----------------------------------------------------------------------------
 // Dice helpers
 // ----------------------------------------------------------------------------
-static int d100(rules::Dice& d) { return (int)d.below(100); }        // 0-99
+static int d100(rules::Dice& d) { return (int)d.d100() - 1; }        // 0-99
 static int pctRoll(rules::Dice& d, int pct) { return d100(d) < pct; }
 static int inRange(rules::Dice& d, int lo, int hi) {                 // [lo,hi]
     if (hi <= lo) return lo;
-    return lo + (int)d.below((uint32_t)(hi - lo + 1));
+    return lo + (int)d.d((uint32_t)(hi - lo + 1)) - 1;
 }
 static int valIn(rules::Dice& d, int lo, int hi) {                  // 0 = n/a
     if (hi <= 0 || hi <= lo) return lo;
@@ -67,11 +67,11 @@ long long rollGemValue(rules::Dice& dice) {
     // The printed d10 variation roll; results 1 and 0 re-roll (bounded
     // by the book's +7 / -5 step caps).
     for (int guard = 0; guard < 8; ++guard) {
-        int r = (int)d.d10();
+        int r = (int)dice.d10();
         if (r >= 2 && r <= 9) {
             if (r == 2) v *= 2;                          // double base
-            else if (r == 3) v = v * (10 + (int)d.d6()) / 10;    // +10..60%
-            else if (r == 9) v = v * (10 - (int)d.d4()) / 10; // -10..40%
+            else if (r == 3) v = v * (10 + (int)dice.d6()) / 10;    // +10..60%
+            else if (r == 9) v = v * (10 - (int)dice.d4()) / 10; // -10..40%
             // 4-8 unchanged
             break;
         }
@@ -100,10 +100,10 @@ long long rollGemValue(rules::Dice& dice) {
 
 // Flavor name for a stone of the given base-value class band.
 static const char* gemName(rules::Dice& dice, long long v) {
-    if (v >= 1000) return kGemStones[dice.below(14)];
-    if (v >= 100)  return kFancy[dice.below(14)];
-    if (v >= 50)   return kSemiPrecious[dice.below(13)];
-    return kOrnamental[dice.below(12)];
+    if (v >= 1000) return kGemStones[dice.d(14) - 1];
+    if (v >= 100)  return kFancy[dice.d(14) - 1];
+    if (v >= 50)   return kSemiPrecious[dice.d(13) - 1];
+    return kOrnamental[dice.d(12) - 1];
 }
 
 // ----------------------------------------------------------------------------
@@ -136,15 +136,15 @@ long long rollJewelryValue(rules::Dice& dice) {
     // Workmanship: each 1 promotes (highest value in class, or next
     // class up where the base is re-determined and re-checked).
     for (int guard = 0; guard < 8; ++guard) {
-        if ((int)d.d10() != 1) break;
+        if ((int)dice.d10() != 1) break;
         if (cls == 6) { v = kJewelry[6].hi; break; }
         ++cls;
         v = inRange(dice, kJewelry[cls].lo, kJewelry[cls].hi);
     }
     // Exceptional stones in the setting (gem-set classes only)
-    if (kJewelry[cls].gemSet && (int)d.d8() == 1) {
+    if (kJewelry[cls].gemSet && (int)dice.d8() == 1) {
         long long bonus = 5000;
-        while ((int)d.d6() == 1 && bonus < 640000) bonus *= 2;
+        while ((int)dice.d6() == 1 && bonus < 640000) bonus *= 2;
         if (bonus > 640000) bonus = 640000;
         v += bonus;
     }
@@ -913,7 +913,7 @@ Hoard rollTreasureType(rules::Dice& dice, char letter,
                 break;
             case MK_SAW: {
                 // "sword, armor, or misc. weapon" — even thirds
-                int pick = (int)dice.below(3);
+                int pick = (int)dice.d(3) - 1;
                 int cat = (pick == 0) ? 10 : (pick == 1) ? 9 : 11;
                 h.magic.push_back(rollFromCategory(dice, cat));
                 break;
@@ -936,7 +936,7 @@ Hoard rollTreasureType(rules::Dice& dice, char letter,
             case MK_MISC_POTION:
                 // 1 misc. magic (E.1-E.5) plus 1 potion
                 h.magic.push_back(rollFromCategory(dice,
-                    4 + (int)dice.below(5)));
+                    4 + (int)dice.d(5) - 1));
                 h.magic.push_back(rollFromCategory(dice, 0));
                 break;
             case MK_EACH:
