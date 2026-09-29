@@ -228,6 +228,7 @@
 #include "../dm/dm.h"
 #include "../dm/dungeon.h"
 #include "../dm/encounters.h"   // R52: Appendix C tables
+#include "../dm/treasure.h"    // R71: MM treasure types
 #include "../ai/actor.h"
 #include "../monsters/MonsterRegistry.h"
 #include "../monsters/MonsterXp.h"
@@ -2482,7 +2483,98 @@ struct AppState {
             }
         }
 
-        if (combatRoomIndex >= 0) {
+        // ---- R71: MM Treasure Types (verified p.105 table) ----
+        // A monster carrying lair letters yields its hoard when the
+        // party wins a lair fight (combatRoomIndex >= 0); individual
+        // letters are looted from the slain on any victory (MM:
+        // "pieces per individual"). The legacy room hoard still
+        // applies to lair monsters without MM letters.
+        const bool mmLair = def && !def->treasure.lair.empty() &&
+                           combatRoomIndex >= 0;
+        dm::treasure::Hoard hoard;
+        if (def) {
+            if (mmLair)
+                for (const auto& e : def->treasure.lair)
+                    for (int t = 0; t < e.times; ++t)
+                        hoard.absorb(dm::treasure::rollTreasureType(
+                            dice, e.letter, 1, e.magicOnly));
+            for (const auto& e : def->treasure.individual)
+                for (int t = 0; t < e.times; ++t)
+                    hoard.absorb(dm::treasure::rollTreasureType(
+                        dice, e.letter, slain, e.magicOnly));
+        }
+        if (!hoard.empty()) {
+            char buf[192];
+            if (hoard.cp || hoard.sp || hoard.ep ||
+                hoard.gp || hoard.pp) {
+                snprintf(buf, sizeof buf,
+                         "The hoard holds %lld cp, %lld sp, "
+                         "%lld ep, %lld gp, %lld pp.",
+                         hoard.cp, hoard.sp, hoard.ep,
+                         hoard.gp, hoard.pp);
+                log.add(buf);
+            }
+            if (hoard.gemCount > 0) {
+                snprintf(buf, sizeof buf,
+                         "%d gems, worth %lld gp in all.",
+                         hoard.gemCount, hoard.gemValue);
+                log.add(buf);
+            }
+            if (hoard.jewelryCount > 0) {
+                snprintf(buf, sizeof buf,
+                         "%d pieces of jewelry, worth %lld gp.",
+                         hoard.jewelryCount, hoard.jewelryValue);
+                log.add(buf);
+            }
+            for (const auto& mi : hoard.magic) {
+                if (mi.qty > 1)
+                    snprintf(buf, sizeof buf,
+                             "You find: %s x%d "
+                             "(sale value %d gp each).",
+                             mi.name.c_str(), mi.qty, mi.gp);
+                else
+                    snprintf(buf, sizeof buf,
+                             "You find: %s (sale value %d gp).",
+                             mi.name.c_str(), mi.gp);
+                log.add(buf);
+                if (!mi.note.empty())
+                    log.add(mi.note);
+            }
+            for (const auto& n : hoard.notes)
+                log.add("You find " + n + ".");
+
+            // The take, appraised and carried (no item inventory);
+            // coins converted at the 1e exchange rates.
+            long long gpv = hoard.goldValue();
+            if (gpv > 0) {
+                party.gold += (int)gpv;
+                party.delveGold += (int)gpv;
+                snprintf(buf, sizeof buf,
+                         "The take is worth %lld gp.", gpv);
+                log.add(buf);
+                // R26 treasure XP, R61: the same DMG p.86 guard
+                // rule as the legacy hoard path
+                double partyAvgLvl = 0.0;
+                for (const auto& c : party.members)
+                    if (c.hp > 0) partyAvgLvl += c.level;
+                partyAvgLvl /= (survivors > 0) ? survivors : 1;
+                double guardLvl = 0.0;
+                if (mmLair && def)
+                    guardLvl = rules::monsterEffectiveLevel(
+                        def->hitDice);
+                int goldShare = treasureXpForGold(
+                    (int)gpv, partyAvgLvl, guardLvl) / survivors;
+                if (goldShare > 0) {
+                    snprintf(buf, sizeof buf,
+                             "Treasure worth %d xp each.",
+                             goldShare);
+                    log.add(buf);
+                    party.gainXp(goldShare, dice, log);
+                }
+            }
+        }
+
+        if (combatRoomIndex >= 0 && !mmLair) {
             RoomOccupant& room = occupancy.rooms[combatRoomIndex];
             if (!room.monsterKey.empty()) {
                 Treasure t = rollTreasure(combatRoomIndex);
