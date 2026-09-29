@@ -784,6 +784,22 @@ ai::Actor MonsterRegistry::toActor(const std::string& key,
     a.morale = def->morale;
     a.isLeader = def->isLeader;
 
+    // R75: copy special attacks onto the Actor. resolveSpecial (ai,
+    // R18) consumes these — but toActor never copied them, so no
+    // registry-spawned monster ever fired a special. The actor.h
+    // comment claimed this was already done; it wasn't.
+    for (const auto& sp : def->specials) {
+        ai::ActorSpecial as;
+        as.type        = (int)sp.type;
+        as.name        = sp.name;
+        as.saveCategory = sp.saveCategory;
+        as.savePenalty  = sp.savePenalty;
+        as.diceCount   = sp.diceCount;
+        as.diceSides   = sp.diceSides;
+        as.drainLevels = sp.drainLevels;
+        a.specials.push_back(as);
+    }
+
     // hp: roll hit dice + bonus, use the provided value, or fall
     // back to the book average for flat-hp monsters
     if (hp < 0) {
