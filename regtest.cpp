@@ -171,10 +171,11 @@ int main() {
             seenCat[m.category] = true;
             if (m.category == dm::treasure::MIC_POTION) {
                 ++potions;
-                // category contract: III.A rows are all "Potion of ..."
-                // ("Potion of" is 9 chars — an earlier compare(0,10,...)
-                // mismatched every potion; R76 fix)
-                if (m.name.compare(0, 9, "Potion of") != 0) ++bad;
+                // category contract: III.A rows are "Potion of ..." plus
+                // the printed Oil (64-69) and Philter (70-75) bands
+                if (m.name.compare(0, 9, "Potion of") != 0 &&
+                    m.name.compare(0, 7, "Oil of ") != 0 &&
+                    m.name.compare(0, 11, "Philter of ") != 0) ++bad;
                 if (m.isHealingPotion()) {
                     ++healing;
                     if (m.name != "Potion of Healing" &&
@@ -201,24 +202,26 @@ int main() {
                "(healing %d), scrolls %d, swords %d, armor %d\n",
                n, bad, potions, healing, scrolls, swords, armor);
 
-        // deterministic helper unit checks
+        // deterministic helper unit checks (own counter — the audit's
+        // `bad` must not leak here, the R75b lesson twice over)
+        int hbad = 0;
         dm::treasure::MagicItem u;
         u.category = dm::treasure::MIC_POTION;
-        u.name = "Potion of Healing";        if (!u.isHealingPotion()) ++bad;
-        u.name = "Potion of Flying";        if (u.isHealingPotion()) ++bad;
-        u.name = "Potion of Extra-Healing"; if (!u.isHealingPotion()) ++bad;
+        u.name = "Potion of Healing";        if (!u.isHealingPotion()) ++hbad;
+        u.name = "Potion of Flying";        if (u.isHealingPotion()) ++hbad;
+        u.name = "Potion of Extra-Healing"; if (!u.isHealingPotion()) ++hbad;
         u.category = dm::treasure::MIC_SWORD;   // category gates potions
-        if (u.isHealingPotion()) ++bad;
+        if (u.isHealingPotion()) ++hbad;
         u.name = "Sword +3, Frost Brand";
-        if (u.weaponPlus() != 3) ++bad;
+        if (u.weaponPlus() != 3) ++hbad;
         u.name = "Sword, Vorpal Weapon";
-        if (u.weaponPlus() != 0) ++bad;
+        if (u.weaponPlus() != 0) ++hbad;
         u.name = "Arrow +2";
-        if (u.weaponPlus() != 2) ++bad;
+        if (u.weaponPlus() != 2) ++hbad;
         u.name = "Cloak of Protection +4";
-        if (u.weaponPlus() != 4) ++bad;      // parse works anywhere
-        printf("magic helpers: %s\n", bad ? "FAIL" : "OK");
-        if (bad) return 1;
+        if (u.weaponPlus() != 4) ++hbad;      // parse works anywhere
+        printf("magic helpers: %s\n", hbad ? "FAIL" : "OK");
+        if (bad || hbad) return 1;
     }
     return 0;
             }
