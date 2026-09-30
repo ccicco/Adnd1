@@ -145,6 +145,9 @@ struct Party {
     int gold = 0;
     int kills = 0;
     int potions = 0;   // R25: shared pool of healing potions
+    // R77: carried scrolls (III.B finds; spell study/use is a later
+    // round — for now they're held, not sold)
+    int scrolls = 0;
     // R43: DMG training â level-ups do NOT take effect until the
     // member trains (1500 gp x new level, simplified flat rate
     // from the DMG p.86 "1,500 x level" convention). Pending
