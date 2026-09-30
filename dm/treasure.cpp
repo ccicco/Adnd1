@@ -193,6 +193,38 @@ bool MagicItem::isHealingPotion() const {
            name == "Potion of Extra-Healing";
 }
 
+// ---- R77: kind & curse classification ---------------------------------------
+static bool nameHas(const std::string& s, const char* kw) {
+    return strstr(s.c_str(), kw) != nullptr;
+}
+
+MagicItemKind MagicItem::kind() const {
+    switch (category) {
+        case MIC_SWORD:
+            return MIK_SWORD;
+        case MIC_SCROLL:
+            return MIK_SCROLL;
+        case MIC_ARMOR:
+            return nameHas(name, "Shield") ? MIK_SHIELD : MIK_ARMOR;
+        case MIC_WEAPON:
+            if (nameHas(name, "Arrow") || nameHas(name, "Bolt"))
+                return MIK_AMMO;
+            if (nameHas(name, "Bow") || nameHas(name, "Sling"))
+                return MIK_MISSILE;
+            return MIK_MELEE;
+        default:
+            return MIK_OTHER;
+    }
+}
+
+bool MagicItem::cursed() const {
+    // printed curse/trap rows (III.F/G/H): keep in sync with the tables
+    return nameHas(name, "Cursed") ||
+           nameHas(name, "Vulnerability") ||
+           nameHas(name, "attractor") ||
+           nameHas(name, "Backbiter");
+}
+
 int MagicItem::weaponPlus() const {
     // first "+N" in the printed name ("Sword +3, Frost Brand" -> 3;
     // "Arrow +2" (qty bundle) -> 2; no plus -> 0)
