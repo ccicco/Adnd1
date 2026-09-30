@@ -40,6 +40,34 @@ struct MagicItem {
     int  gp  = 0;
     int  qty = 1;
     std::string note;
+
+    // R76: which DMG table III category the item rolled from
+    // (the roller knows; the app consumes). -1 = unset/legacy.
+    int  category = -1;
+
+    // true for the healing draughts (DMG III.A rows 24-26 & 42-47);
+    // the party already carries potions as a counted stack
+    bool isHealingPotion() const;
+    // "+N" out of the printed name (0 = no plus in the name);
+    // meaningful for categories 10 (swords) and 11 (weapons)
+    int  weaponPlus() const;
+};
+
+// R76: magic item categories (DMG table III dispatch order)
+enum MagicItemCategory {
+    MIC_POTION     = 0,   // III.A potions
+    MIC_SCROLL     = 1,   // III.B scrolls
+    MIC_RING       = 2,   // III.C rings
+    MIC_ROD_STAFF  = 3,   // III.D rods/staves/wands
+    MIC_MISC1      = 4,   // III.E.1
+    MIC_MISC2      = 5,   // III.E.2
+    MIC_MISC3      = 6,   // III.E.3
+    MIC_MISC4      = 7,   // III.E.4
+    MIC_MISC5      = 8,   // III.E.5
+    MIC_ARMOR      = 9,   // III.F armor & shields
+    MIC_SWORD      = 10,  // III.G swords
+    MIC_WEAPON     = 11,  // III.H misc weapons
+    MIC_UNSET      = -1
 };
 
 // ----------------------------------------------------------------------------
