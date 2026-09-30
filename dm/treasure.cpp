@@ -8,6 +8,7 @@
 #include "treasure.h"
 
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
 
 namespace dm {
@@ -183,6 +184,26 @@ static MagicItem makeItem(rules::Dice& dice, const ItemRow& r) {
     m.gp = valIn(dice, r.gp, r.gpHi);
     if (r.qhi > 0) m.qty = inRange(dice, r.qlo, r.qhi);
     return m;
+}
+
+// ---- R76 helpers ------------------------------------------------------------
+bool MagicItem::isHealingPotion() const {
+    if (category != MIC_POTION) return false;
+    return name == "Potion of Healing" ||
+           name == "Potion of Extra-Healing";
+}
+
+int MagicItem::weaponPlus() const {
+    // first "+N" in the printed name ("Sword +3, Frost Brand" -> 3;
+    // "Arrow +2" (qty bundle) -> 2; no plus -> 0)
+    size_t p = name.find('+');
+    while (p != std::string::npos) {
+        if (p + 1 < name.size() && name[p + 1] >= '0' &&
+            name[p + 1] <= '9')
+            return atoi(name.c_str() + p + 1);
+        p = name.find('+', p + 1);
+    }
+    return 0;
 }
 
 // ---- III.A Potions ----------------------------------------------------------
@@ -711,7 +732,9 @@ static MagicItem adjustSpecial(rules::Dice& dice, const MagicItem& m) {
 
 // Categories: 0 potions, 1 scrolls, 2 rings, 3 rods/staves/wands,
 // 4-8 misc magic E.1-E.5, 9 armor & shields, 10 swords, 11 misc weapons.
-static MagicItem rollFromCategory(rules::Dice& dice, int cat) {
+// R76: the item carries its category (MagicItem::category) so the
+// app can act on what it is without re-parsing names.
+static MagicItem rollFromCategoryUnset(rules::Dice& dice, int cat) {
     switch (cat) {
         case 0:  return pickRow(dice, kPotions, COUNT_OF(kPotions));
         case 1:  return rollScroll(dice);
@@ -731,6 +754,12 @@ static MagicItem rollFromCategory(rules::Dice& dice, int cat) {
         case 10: return pickRow(dice, kSwords, COUNT_OF(kSwords));
         default: return pickRow(dice, kWeapons, COUNT_OF(kWeapons));
     }
+}
+
+static MagicItem rollFromCategory(rules::Dice& dice, int cat) {
+    MagicItem m = rollFromCategoryUnset(dice, cat);
+    if (m.category == MIC_UNSET) m.category = cat;
+    return m;
 }
 
 // III. Magic Items dispatch (DMG p.121): percentile into categories.
