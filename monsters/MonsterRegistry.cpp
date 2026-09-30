@@ -297,8 +297,50 @@ void deriveSpecials(MonsterDef& def) {
 }
 
 // ----------------------------------------------------------------------------
+// R75b: noAppearing/move are range STRINGS in the Lua data ("40-400",
+// "1-3 or 1-6", "1", "12\""), not the nested tables the R49 reads
+// expected — every monster loaded 0-0. parseIntRange takes the first
+// N-M pair in the text (so "1 to 2-12" -> 2-12, "1 (1-4)" -> 1-4);
+// a lone number is lo=hi=N ("1", "1 patch"); lo>hi swaps (a "7-3"
+// data typo). Returns false when no number exists (0-0; the war_dog
+// corruption is the one known case).
+// ----------------------------------------------------------------------------
+static bool parseIntRange(const std::string& s, int& lo, int& hi) {
+    lo = hi = 0;
+    // pass 1: first "N-M" pair
+    for (size_t i = 0; i < s.size(); ++i) {
+        if (!isdigit((unsigned char)s[i])) continue;
+        size_t j = i;
+        while (j < s.size() && isdigit((unsigned char)s[j])) ++j;
+        size_t k = j;
+        while (k < s.size() && s[k] == ' ') ++k;
+        if (k < s.size() && s[k] == '-' &&
+            k + 1 < s.size() && isdigit((unsigned char)s[k + 1])) {
+            size_t m = k + 1;
+            while (m < s.size() && isdigit((unsigned char)s[m])) ++m;
+            lo = atoi(s.substr(i, j - i).c_str());
+            hi = atoi(s.substr(k + 1, m - k - 1).c_str());
+            if (lo > hi) { int t = lo; lo = hi; hi = t; }
+            return true;
+        }
+        i = j - 1;   // not a pair; keep scanning
+    }
+    // pass 2: no pair — first bare number
+    for (size_t i = 0; i < s.size(); ++i) {
+        if (isdigit((unsigned char)s[i])) {
+            size_t j = i;
+            while (j < s.size() && isdigit((unsigned char)s[j])) ++j;
+            lo = hi = atoi(s.substr(i, j - i).c_str());
+            return true;
+        }
+    }
+    return false;
+}
+
+// ----------------------------------------------------------------------------
 // nested-table int reads: noAppearing = {min=..,max=..}, move = {rate=..}
 // ----------------------------------------------------------------------------
+
 int luaGetNestedInt(lua_State* L, const char* table, const char* field,
                     int def) {
     lua_getfield(L, -1, table);
@@ -641,10 +683,26 @@ bool MonsterRegistry::loadFile(const std::string& path,
 
     // ---- descriptive fields (R49) ----
     def.frequency            = luaGetStr(L, "frequency", "");
-    def.noAppearingMin       = luaGetNestedInt(L, "noAppearing", "min", 0);
-    def.noAppearingMax       = luaGetNestedInt(L, "noAppearing", "max", 0);
+    // R75b: parse the string forms the data actually uses; the R49
+    // nested-table reads stay as fallbacks for future data shapes
+    {
+        std::string nas = luaGetStr(L, "noAppearing", "");
+        if (!nas.empty())
+            parseIntRange(nas, def.noAppearingMin, def.noAppearingMax);
+        else {
+            def.noAppearingMin = luaGetNestedInt(L, "noAppearing", "min", 0);
+            def.noAppearingMax = luaGetNestedInt(L, "noAppearing", "max", 0);
+        }
+    }
     def.lairPct              = luaGetInt(L, "lairPct", 0);
-    def.moveRate             = luaGetNestedInt(L, "move", "rate", 0);
+    {
+        std::string mv = luaGetStr(L, "move", "");
+        int mlo = 0, mhi = 0;
+        if (!mv.empty() && parseIntRange(mv, mlo, mhi))
+            def.moveRate = mlo;
+        else
+            def.moveRate = luaGetNestedInt(L, "move", "rate", 0);
+    }
     def.size                 = luaGetStr(L, "size", "");
     def.intelligence         = luaGetStr(L, "intelligence", "");
     def.alignment            = luaGetStr(L, "alignment", "");
