@@ -154,5 +154,69 @@ int main() {
         printf("toActor specials: %s\n", bad ? "FAIL" : "OK");
         if (bad) return 1;
     }
+
+    // ---- R76: magic item category audit --------------------------------
+    // Every rolled item carries its DMG III category; healing potions
+    // are detectable by name+category; weapon plus parses from names.
+    {
+        rules::Rng rng3(777);
+        rules::Dice dice3(rng3);
+        int n = 20000, bad = 0, potions = 0, scrolls = 0, swords = 0,
+            armor = 0, healing = 0;
+        bool seenCat[12] = { false };
+        for (int i = 0; i < n; ++i) {
+            dm::treasure::MagicItem m =
+                dm::treasure::rollMagicItem(dice3);
+            if (m.category < 0 || m.category > 11) { ++bad; continue; }
+            seenCat[m.category] = true;
+            if (m.category == dm::treasure::MIC_POTION) {
+                ++potions;
+                // category contract: III.A rows are all "Potion of ..."
+                if (m.name.compare(0, 10, "Potion of") != 0) ++bad;
+                if (m.isHealingPotion()) {
+                    ++healing;
+                    if (m.name != "Potion of Healing" &&
+                        m.name != "Potion of Extra-Healing") ++bad;
+                }
+            }
+            if (m.category == dm::treasure::MIC_SCROLL) ++scrolls;
+            if (m.category == dm::treasure::MIC_SWORD) {
+                ++swords;
+                if (m.name.compare(0, 5, "Sword") != 0) ++bad;
+                // plus rows must parse to 1-5
+                int plus = m.weaponPlus();
+                if (plus > 5) ++bad;
+            }
+            if (m.category == dm::treasure::MIC_ARMOR) ++armor;
+        }
+        // statistical: 20000 rolls must hit every category, and the
+        // potion band (20%) must include healing draughts
+        for (int c = 0; c < 12; ++c)
+            if (!seenCat[c]) ++bad;
+        if (potions < 500 || scrolls < 300 || swords < 300 ||
+            armor < 500 || healing < 30) ++bad;
+        printf("magic item audit: %d rolls, bad %d, potions %d "
+               "(healing %d), scrolls %d, swords %d, armor %d\n",
+               n, bad, potions, healing, scrolls, swords, armor);
+
+        // deterministic helper unit checks
+        dm::treasure::MagicItem u;
+        u.category = dm::treasure::MIC_POTION;
+        u.name = "Potion of Healing";        if (!u.isHealingPotion()) ++bad;
+        u.name = "Potion of Flying";        if (u.isHealingPotion()) ++bad;
+        u.name = "Potion of Extra-Healing"; if (!u.isHealingPotion()) ++bad;
+        u.category = dm::treasure::MIC_SWORD;   // category gates potions
+        if (u.isHealingPotion()) ++bad;
+        u.name = "Sword +3, Frost Brand";
+        if (u.weaponPlus() != 3) ++bad;
+        u.name = "Sword, Vorpal Weapon";
+        if (u.weaponPlus() != 0) ++bad;
+        u.name = "Arrow +2";
+        if (u.weaponPlus() != 2) ++bad;
+        u.name = "Cloak of Protection +4";
+        if (u.weaponPlus() != 4) ++bad;      // parse works anywhere
+        printf("magic helpers: %s\n", bad ? "FAIL" : "OK");
+        if (bad) return 1;
+    }
     return 0;
-}
+            }
