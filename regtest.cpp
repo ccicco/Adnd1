@@ -72,7 +72,9 @@ int main() {
             if (!e.def) { ++bad; continue; }
             int lo = e.def->noAppearingMin, hi = e.def->noAppearingMax;
             if (hi < lo) hi = lo;
-            if (!e.clamped && (e.count < lo || e.count > hi)) ++bad;
+            if (lo == 0 && hi == 0) {   // R75b: no data — count forced 1
+                if (e.count != 1) ++bad;
+            } else if (!e.clamped && (e.count < lo || e.count > hi)) ++bad;
             if (e.count < 1 || e.count > opt.countCap) ++bad;
             if (e.clamped && e.rawCount <= opt.countCap) ++bad;
             if (e.inLair && e.def->lairPct <= 0) ++bad;
@@ -89,12 +91,13 @@ int main() {
         // alignment-filter sanity: every pick matches the filter
         dm::encounters::EncounterOptions eo;
         eo.alignmentFilter = "chaotic";
+        int fbad = 0;   // R75b: own counter — the smoke's `bad` leaked here
         for (int i = 0; i < 500; ++i) {
             dm::encounters::Encounter e;
             if (!dm::encounters::rollEncounter(reg, dice, eo, e) ||
-                e.def->alignment.compare(0, 7, "chaotic") != 0) { ++bad; break; }
+                e.def->alignment.compare(0, 7, "chaotic") != 0) { ++fbad; break; }
         }
-        printf("encounter filter: %s\n", bad ? "FAIL" : "OK");
+        printf("encounter filter: %s\n", fbad ? "FAIL" : "OK");
     }
 
     // ---- R75: specials audit + toActor copy check ----------------------
