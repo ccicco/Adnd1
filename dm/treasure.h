@@ -28,6 +28,20 @@
 namespace dm {
 namespace treasure {
 
+// R77: kind of a magic item — category refined by printed name.
+// The claim layer (appstate) uses this to decide who can take what.
+enum MagicItemKind : int {
+    MIK_NONE = 0,
+    MIK_SWORD,        // III.G blade — melee weapon slot
+    MIK_MELEE,        // III.H melee (axe/hammer/mace/spear/dagger..)
+    MIK_MISSILE,      // III.H bow/crossbow/sling — ranged slot
+    MIK_AMMO,         // III.H arrow/bolt bundle — quiver (deferred)
+    MIK_SHIELD,       // III.F shield rows — the shield slot
+    MIK_ARMOR,        // III.F armor rows — the armor slot
+    MIK_SCROLL,       // III.B scrolls — carried, studied later
+    MIK_OTHER         // rings/rods/misc — not claimable yet
+};
+
 // ----------------------------------------------------------------------------
 // One rolled magic item (DMG III.A-H rows). xp = the printed experience
 // point value (0 = none printed); gp = printed gold piece sale value;
@@ -51,6 +65,14 @@ struct MagicItem {
     // "+N" out of the printed name (0 = no plus in the name);
     // meaningful for categories 10 (swords) and 11 (weapons)
     int  weaponPlus() const;
+
+    // R77: what the item IS, derived from category + printed name —
+    // the claim layer (appstate) acts on kind, not raw category
+    MagicItemKind kind() const;
+    // R77: printed curses & traps (III.F/G/H cursed rows). Claimed
+    // categories skip cursed items — the party never "upgrades"
+    // into a Sword +1, Cursed or a Shield -1
+    bool cursed() const;
 };
 
 // R76: magic item categories (DMG table III dispatch order)
