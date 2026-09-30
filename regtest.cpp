@@ -172,7 +172,9 @@ int main() {
             if (m.category == dm::treasure::MIC_POTION) {
                 ++potions;
                 // category contract: III.A rows are all "Potion of ..."
-                if (m.name.compare(0, 10, "Potion of") != 0) ++bad;
+                // ("Potion of" is 9 chars — an earlier compare(0,10,...)
+                // mismatched every potion; R76 fix)
+                if (m.name.compare(0, 9, "Potion of") != 0) ++bad;
                 if (m.isHealingPotion()) {
                     ++healing;
                     if (m.name != "Potion of Healing" &&
