@@ -223,5 +223,100 @@ int main() {
         printf("magic helpers: %s\n", hbad ? "FAIL" : "OK");
         if (bad || hbad) return 1;
     }
+
+    // ---- R77: kind & curse classification audit -------------------------
+    // kind() must agree with category+name; cursed rows must carry
+    // the flag (claim layers skip them).
+    {
+        int kbad = 0;
+        // deterministic units
+        dm::treasure::MagicItem u;
+        u.category = dm::treasure::MIC_SWORD;
+        u.name = "Sword +3, Frost Brand";
+        if (u.kind() != dm::treasure::MIK_SWORD) ++kbad;
+        if (u.cursed()) ++kbad;
+        u.category = dm::treasure::MIC_SCROLL;
+        if (u.kind() != dm::treasure::MIK_SCROLL) ++kbad;
+        u.category = dm::treasure::MIC_ARMOR;
+        u.name = "Shield +2";
+        if (u.kind() != dm::treasure::MIK_SHIELD) ++kbad;
+        u.name = "Chain Mail +1";
+        if (u.kind() != dm::treasure::MIK_ARMOR) ++kbad;
+        u.category = dm::treasure::MIC_WEAPON;
+        u.name = "Arrow +2";
+        if (u.kind() != dm::treasure::MIK_AMMO) ++kbad;
+        u.name = "Bow +1";
+        if (u.kind() != dm::treasure::MIK_MISSILE) ++kbad;
+        u.name = "Mace +2";
+        if (u.kind() != dm::treasure::MIK_MELEE) ++kbad;
+        u.name = "Sword +1, Cursed";
+        if (!u.cursed()) ++kbad;               // curse detector
+        u.category = dm::treasure::MIC_ARMOR;
+        u.name = "Plate Mail of Vulnerability";
+        if (!u.cursed()) ++kbad;
+        u.name = "Shield -1, missile attractor";
+        if (!u.cursed()) ++kbad;
+        u.category = dm::treasure::MIC_WEAPON;
+        u.name = "Spear, Cursed Backbiter";
+        if (!u.cursed()) ++kbad;
+
+        // statistical: rolled items agree with category constraints
+        rules::Rng rng4(4242);
+        rules::Dice dice4(rng4);
+        int n = 20000, swords = 0, shields = 0, armor = 0,
+            melee = 0, missile = 0, ammo = 0, cursed = 0;
+        for (int i = 0; i < n; ++i) {
+            dm::treasure::MagicItem m =
+                dm::treasure::rollMagicItem(dice4);
+            switch (m.kind()) {
+            case dm::treasure::MIK_SWORD:
+                ++swords;
+                if (m.category != dm::treasure::MIC_SWORD) ++kbad;
+                break;
+            case dm::treasure::MIK_SHIELD:
+                ++shields;
+                if (m.category != dm::treasure::MIC_ARMOR ||
+                    m.name.find("Shield") == std::string::npos)
+                    ++kbad;
+                break;
+            case dm::treasure::MIK_ARMOR:
+                ++armor;
+                if (m.category != dm::treasure::MIC_ARMOR) ++kbad;
+                break;
+            case dm::treasure::MIK_MELEE:
+                ++melee;
+                if (m.category != dm::treasure::MIC_WEAPON) ++kbad;
+                break;
+            case dm::treasure::MIK_MISSILE:
+                ++missile;
+                if (m.category != dm::treasure::MIC_WEAPON) ++kbad;
+                break;
+            case dm::treasure::MIK_AMMO:
+                ++ammo;
+                if (m.category != dm::treasure::MIC_WEAPON) ++kbad;
+                break;
+            default:
+                break;
+            }
+            if (m.cursed()) {
+                ++cursed;
+                // curse words must actually appear (no false positives)
+                if (m.name.find("Cursed") == std::string::npos &&
+                    m.name.find("Vulnerability") == std::string::npos &&
+                    m.name.find("attractor") == std::string::npos &&
+                    m.name.find("Backbiter") == std::string::npos)
+                    ++kbad;
+            }
+        }
+        // every claimable band must occur across 20000 rolls
+        if (swords < 200 || shields < 100 || armor < 200 ||
+            melee < 100 || missile < 20 || ammo < 40 || cursed < 10)
+            ++kbad;
+        printf("kind audit: %d rolls, bad %d, swords %d, shields %d, "
+               "armor %d, melee %d, missile %d, ammo %d, cursed %d\n",
+               n, kbad, swords, shields, armor, melee, missile,
+               ammo, cursed);
+        if (kbad) return 1;
+    }
     return 0;
             }
