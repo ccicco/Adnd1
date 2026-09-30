@@ -2526,6 +2526,30 @@ struct AppState {
                          hoard.jewelryCount, hoard.jewelryValue);
                 log.add(buf);
             }
+            // R76: healing draughts are CARRIED, not sold — the
+            // party already stacks potions (quaff hook). Everything
+            // else stays appraised to gold (the R71 simplification,
+            // now one item narrower). Carried items leave the hoard
+            // before the take is appraised.
+            std::vector<dm::treasure::MagicItem> carriedOff;
+            for (auto it = hoard.magic.begin();
+                 it != hoard.magic.end(); ) {
+                if (it->isHealingPotion()) {
+                    carriedOff.push_back(*it);
+                    it = hoard.magic.erase(it);
+                } else {
+                    ++it;
+                }
+            }
+            for (const auto& mi : carriedOff) {
+                party.potions += mi.qty;
+                snprintf(buf, sizeof buf,
+                         "You find: %s x%d — carried (%d held).",
+                         mi.name.c_str(), mi.qty, party.potions);
+                log.add(buf);
+                if (!mi.note.empty())
+                    log.add(mi.note);
+            }
             for (const auto& mi : hoard.magic) {
                 if (mi.qty > 1)
                     snprintf(buf, sizeof buf,
