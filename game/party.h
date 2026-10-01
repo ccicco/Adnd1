@@ -328,6 +328,11 @@ struct Party {
     // fixed (R80) - the pack is cargo, never equipped.
     std::vector<PackItem> henchmanPack;
     bool crewHired     = false;   // R46: a coaster's company
+    // R105: the crew's nerve - 0..100, hired at 60. Wages
+    // mend it, short purses wear it, and below 25 the
+    // crew deserts at port. 0 on an older save = unknown,
+    // freshened to 60 on its next wage payment.
+    int  crewMorale = 0;
 
     // R44: identify economy - scrolls (found or bought, 100 gp
     // at the scribe) reveal unidentified magic items. kind 0 =
@@ -730,6 +735,20 @@ inline bool spendGold(Party& p, MessageLog& log, int cost,
     p.gold -= cost;
     return true;
 }
+
+// R105: the crew's nerve - the drift that moves it (wages
+// mend, a short purse wears, a rich delve's share warms)
+// and the floor beneath which the crew deserts at port.
+inline int clampCrewMorale(int m) {
+    if (m < 0)   return 0;
+    if (m > 100) return 100;
+    return m;
+}
+inline int crewDriftPaid()   { return  2; }
+inline int crewDriftUnpaid() { return -10; }
+inline int crewDriftShare()  { return  3; }
+inline int crewHireMorale()  { return  60; }
+inline int crewDesertBelow() { return 25; }
 
 // R95: the calendar. A dungeon day is 144 turns (the R89-R92
 // coherence bound: 120' unencumbered, 6 turns to the hour);

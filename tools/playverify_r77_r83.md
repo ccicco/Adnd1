@@ -178,6 +178,21 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R105: the crew's nerve
+- [ ] Hire the crew, save, load - the crew survives with
+      its morale (the crew line reads two ints)
+- [ ] Return to port with gold short - "grumbles over
+      unpaid wages", and repeated short returns wear the
+      nerve toward the floor
+- [ ] Three+ unpaid returns: the crew deserts ("slips
+      away by night"), crewHired is false, [C] rehires
+      at 200 gp with a fresh nerve
+- [ ] Paid returns and rich delves (crew share) recover
+      the nerve
+- [ ] A pre-R105 save (crew line with one int) loads with
+      unknown morale, freshened to 60 at its next wage
+      billing - no desertion on arrival
+
 ## R103: the carrot
 - [ ] [G] with a hire: 25 gp leaves the purse into his,
       loyalty +5; the message shows the new loyalty

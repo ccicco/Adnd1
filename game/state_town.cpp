@@ -107,6 +107,10 @@ void AppState::billTownVisit(){
         if (party.crewHired && party.delveGold > 0) {
             crewCut = party.delveGold / 20;
             if (crewCut > 0) {
+                // R105: a rich delve's share warms the
+                // crew's nerve
+                party.crewMorale = clampCrewMorale(
+                    party.crewMorale + crewDriftShare());
                 char cbuf[96];
                 snprintf(cbuf, sizeof cbuf,
                          "The crew's share: %d gp.", crewCut);
@@ -127,12 +131,28 @@ void AppState::billTownVisit(){
         // R46: crew wages - 20 sailors at 2 gp (DMG p.34),
         // billed each return (delve cadence)
         if (party.crewHired) {
+            // R105: an older save's crew arrives with an
+            // unknown nerve - freshen it to the hire's 60
+            if (party.crewMorale <= 0)
+                party.crewMorale = crewHireMorale();
             if (party.gold >= 40) {
                 party.gold -= 40;
+                party.crewMorale = clampCrewMorale(
+                    party.crewMorale + crewDriftPaid());
                 log.add("The crew is paid 40 gp in wages.");
             } else {
+                party.crewMorale = clampCrewMorale(
+                    party.crewMorale + crewDriftUnpaid());
                 log.add("The crew grumbles over unpaid "
                         "wages.");
+            }
+            // R105: the floor - a worn crew deserts at
+            // port, and the ferry dies with them
+            if (party.crewMorale < crewDesertBelow()) {
+                log.add("The crew slips away by night - "
+                        "the coaster sails without you.");
+                party.crewHired = false;
+                party.crewMorale = 0;
             }
         }
     }
@@ -960,6 +980,7 @@ void AppState::townHireCrew(){
                 "a crew."))
             return;
         party.crewHired = true;
+        party.crewMorale = crewHireMorale();   // R105
         log.add("A coaster's company of twenty signs on. "
                 "They will ferry your takings to market.");
     }

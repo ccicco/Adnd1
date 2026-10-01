@@ -135,8 +135,10 @@ bool AppState::saveGame(){
         // R101: the coaster's crew - its own optional line
         // (the crew exists without a hire; it too was never
         // persisted, and a reload forgot the ship sailed)
-        fprintf(f, "crew %d\n",
-                party.crewHired ? 1 : 0);
+        // R105: the crew's nerve rides as the second int
+        fprintf(f, "crew %d %d\n",
+                party.crewHired ? 1 : 0,
+                party.crewMorale);
         // R102: the carried scrolls (R77 finds, R81
         // study) - the sweep found them unsaved; a reload
         // wiped every held scroll
@@ -323,6 +325,20 @@ bool AppState::loadGame(){
                     return false;
                 }
                 p.crewHired = (cw == 1);
+                // R105: optional trailing morale (older
+                // saves stop at the flag; 0 = unknown)
+                int cm = 0;
+                if (fscanf(f, "%d", &cm) != 1) {
+                    clearerr(f);
+                    p.crewMorale = 0;
+                } else if (cm < 0 || cm > 100) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt "
+                            "(crew nerve).");
+                    return false;
+                } else {
+                    p.crewMorale = cm;
+                }
             } else if (strcmp(tag, "caldays") == 0) {
                 int cdays = 0;
                 if (fscanf(f, "%d", &cdays) != 1 ||
