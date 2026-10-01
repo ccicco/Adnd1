@@ -385,7 +385,7 @@ void AppState::awardVictory(){
                 if (mi.cursed()) {
                     // never claimed — stays appraised below
                 } else if (mi.isHealingPotion()) {
-                    party.potions += mi.qty;
+                    addCapped(party.potions, mi.qty, CARRIED_CAP);
                     snprintf(buf, sizeof buf,
                              "You find: %s x%d — carried (%d held).",
                              mi.name.c_str(), mi.qty, party.potions);
@@ -559,7 +559,7 @@ void AppState::awardVictory(){
                     }
                     case dm::treasure::MIK_SCROLL:
                         // III.B scrolls — carried, studied later
-                        party.scrolls += mi.qty;
+                        addCapped(party.scrolls, mi.qty, CARRIED_CAP);
                         snprintf(buf, sizeof buf,
                                  "You find: %s x%d — carried (%d held).",
                                  mi.name.c_str(), mi.qty,
@@ -568,9 +568,31 @@ void AppState::awardVictory(){
                         if (!mi.note.empty()) log.add(mi.note);
                         take = true;
                         break;
+                    case dm::treasure::MIK_AMMO:
+                        // R79: arrow/bolt bundles -> the quiver of
+                        // the first living member whose ranged weapon
+                        // fires them (count-only; per-arrow enchant
+                        // awaits real inventory). Singular specials
+                        // (Slaying, Direction) stay appraised — the
+                        // helper declines unenchanted names.
+                        for (auto& c : party.members) {
+                            if (c.hp <= 0) continue;
+                            if (claimAmmoBundle(c, mi.name, mi.qty)) {
+                                snprintf(buf, sizeof buf,
+                                         "%s pockets the %s x%d "
+                                         "(%d missiles).",
+                                         c.name.c_str(),
+                                         mi.name.c_str(), mi.qty,
+                                         c.missileAmmo);
+                                log.add(buf);
+                                take = true;
+                                break;
+                            }
+                        }
+                        break;
                     default:
-                        // MIK_AMMO (real inventory pending) and
-                        // MIK_OTHER stay appraised to gold
+                        // MIK_OTHER (rings/rods/misc) and declined
+                        // ammo stay appraised to gold
                         break;
                     }
                 }

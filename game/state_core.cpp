@@ -499,3 +499,61 @@ void AppState::restockAmmo(){
             c.missileAmmo = 20;
         }
     }
+
+// ---- R79: dumpEquipment ----
+void AppState::dumpEquipment(){
+        log.add("--- The company's kit ---");
+        char buf[192];
+        for (const auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            char melee[48], ranged[56], arm[48], sh[32];
+            if (c.weapon.plus > 0)
+                snprintf(melee, sizeof melee, "%s +%d",
+                         items::weapon(c.weapon.id).name,
+                         c.weapon.plus);
+            else
+                snprintf(melee, sizeof melee, "%s",
+                         items::weapon(c.weapon.id).name);
+            if (items::weapon(c.rangedWeapon.id).missile) {
+                if (c.rangedWeapon.plus > 0)
+                    snprintf(ranged, sizeof ranged, ", %s +%d "
+                             "(%d missiles)",
+                             items::weapon(c.rangedWeapon.id).name,
+                             c.rangedWeapon.plus, c.missileAmmo);
+                else
+                    snprintf(ranged, sizeof ranged, ", %s "
+                             "(%d missiles)",
+                             items::weapon(c.rangedWeapon.id).name,
+                             c.missileAmmo);
+            } else {
+                ranged[0] = 0;
+            }
+            if (c.armor.id != items::ARMOR_NONE_EQUIPPED) {
+                if (c.armor.plus > 0)
+                    snprintf(arm, sizeof arm, ", %s +%d",
+                             items::armor(c.armor.id).name,
+                             c.armor.plus);
+                else
+                    snprintf(arm, sizeof arm, ", %s",
+                             items::armor(c.armor.id).name);
+            } else {
+                arm[0] = 0;
+            }
+            if (c.shield) {
+                if (c.shieldPlus > 0)
+                    snprintf(sh, sizeof sh, ", shield +%d",
+                             c.shieldPlus);
+                else
+                    snprintf(sh, sizeof sh, ", shield");
+            } else {
+                sh[0] = 0;
+            }
+            snprintf(buf, sizeof buf, "%s: %s%s%s%s",
+                     c.name.c_str(), melee, ranged, arm, sh);
+            log.add(buf);
+        }
+        snprintf(buf, sizeof buf,
+                 "Carried: %d potions, %d scrolls, %d gp.",
+                 party.potions, party.scrolls, party.gold);
+        log.add(buf);
+    }

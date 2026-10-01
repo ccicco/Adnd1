@@ -804,6 +804,12 @@ struct AppState {
     // weapon in the ranged slot). Mirrors restoreSlots.
     void restockAmmo();
 
+    // R79: dump the company's kit to the log — per member weapon/
+    // ranged/armor/shield (with enchant plus), then the carried
+    // totals (potions, scrolls, gold). Engine-side; the Win32 key
+    // binding is a later shell diff.
+    void dumpEquipment();
+
     // ---- R41: town hub ------------------------------------------------------
 
     // [B] from the dungeon â retire to town for supplies

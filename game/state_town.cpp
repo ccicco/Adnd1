@@ -641,7 +641,7 @@ void AppState::townPeddler(){
                     log.add("A long sword +1! " +
                             taker->name + " claims it.");
                 } else {
-                    party.potions += 3;
+                    addCapped(party.potions, 3, CARRIED_CAP);
                     log.add("The peddler is out of swords â "
                             "three potions instead.");
                 }
@@ -661,14 +661,14 @@ void AppState::townPeddler(){
                     log.add("Enchanted armor (+1)! " +
                             taker->name + " claims it.");
                 } else {
-                    party.potions += 3;
+                    addCapped(party.potions, 3, CARRIED_CAP);
                     log.add("The peddler is out of armor â "
                             "three potions instead.");
                 }
                 break;
             }
             case 3:
-                party.potions += 3;
+                addCapped(party.potions, 3, CARRIED_CAP);
                 log.add("Three potions of healing, wrapped "
                         "in straw.");
                 break;
@@ -699,7 +699,7 @@ void AppState::townPeddler(){
                     }
                 }
                 if (cands.empty()) {
-                    party.potions += 3;
+                    addCapped(party.potions, 3, CARRIED_CAP);
                     log.add("No scrolls your sages can use â "
                             "three potions instead.");
                 } else {

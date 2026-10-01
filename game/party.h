@@ -363,3 +363,45 @@ struct Party {
         return -1;
     }
 };
+
+// ----------------------------------------------------------------------------
+// R79: the logistics helpers — ammo bundle claims and carried caps.
+// ----------------------------------------------------------------------------
+// R79: carried-stack ceilings. Potions/scrolls pool per party; the
+// quiver is per member. Caps keep decades of delve counters inside
+// sane ranges (nothing can run away toward int overflow).
+static const int CARRIED_CAP = 9999;   // party potions/scrolls
+static const int QUIVER_CAP  = 999;    // per-member missileAmmo
+
+// add to a capped counter; the counter never exceeds cap and can
+// still decrease (spending is uncapped)
+inline int addCapped(int& cur, int add, int cap) {
+    cur += add;
+    if (cur > cap) cur = cap;
+    return cur;
+}
+
+// R79: claim an arrow/bolt bundle into a member's quiver — true when
+// the bundle matched the member's RANGED weapon and was pocketed.
+// Only enchanted bundles claim ("Arrow +2", "Bolt +1"): the singular
+// specials (Arrow of Slaying, Arrow of Direction) stay appraised —
+// they are single shots, not quiver fodder. The quiver counts SHOTS;
+// per-arrow enchant tracking awaits the real-inventory tranche.
+inline bool claimAmmoBundle(Character& c, const std::string& name,
+                            int qty) {
+    if (qty <= 0 || c.hp <= 0) return false;
+    bool arrow = name.find("Arrow") != std::string::npos;
+    bool bolt  = name.find("Bolt")  != std::string::npos;
+    if (!arrow && !bolt) return false;
+    bool enchanted =
+        name.find("Arrow +") != std::string::npos ||
+        name.find("Bolt +")  != std::string::npos;
+    if (!enchanted) return false;
+    items::WeaponId id = c.rangedWeapon.id;
+    bool fits = (arrow && (id == items::WPN_SHORT_BOW ||
+                           id == items::WPN_LONG_BOW)) ||
+                (bolt  && id == items::WPN_CROSSBOW_LIGHT);
+    if (!fits) return false;
+    addCapped(c.missileAmmo, qty, QUIVER_CAP);
+    return true;
+}
