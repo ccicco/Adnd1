@@ -303,6 +303,10 @@ struct Party {
     int  henchmanHp = 0, henchmanMaxHp = 0;
     int  henchmanLevel  = 1;
     int  henchmanLoyalty = 50;
+    // R100: the hire's youth - rolled when he answers the
+    // call (a young fighter, the yard age). 0 = an older
+    // save's hire, unknown youth.
+    int  henchmanStartAge = 0;
 
     // R45: the hire's career records
     int  henchmanXp    = 0;    // half-share awards
@@ -736,6 +740,12 @@ inline int rollStartingAge(int classIndex, rules::Dice& d) {
 // career clock (365 days to the year)
 inline int ageYears(const Character& c, int careerDays) {
     return c.startAge + careerDays / 365;
+}
+
+// R100: the hire's age on the same clock (his youth rolled
+// at hire; 0 = unknown - an older save's hire)
+inline int hireAgeYears(const Party& p) {
+    return p.henchmanStartAge + p.careerDays / 365;
 }
 
 // R98: the years tell. Brackets (DMG p.11-12 convention,

@@ -178,6 +178,18 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R100: the hire's years
+- [ ] The hire's answer line reads "answers the offer at
+      N years!" (16..19)
+- [ ] The inn birthday that crosses a 365-day mark logs
+      the hire's birthday too
+- [ ] CRITICAL (R100 repair): save with a hired henchman,
+      then load - it must load clean, and the hire's name,
+      loyalty, xp, purse, kit pluses and age all survive
+      (pre-R100 such saves failed "corrupt (hire)")
+- [ ] An absent-hire save still writes "henchman 0" and
+      loads clean
+
 ## R98: the years tell
 - [ ] A member crossing 45/60/90 at an inn birthday logs
       "The years tell on him - the bend of the age."

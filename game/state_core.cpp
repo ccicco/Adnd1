@@ -96,15 +96,26 @@ bool AppState::saveGame(){
         fprintf(f, "stronghold %d %d\n",
                 party.strongholdBuilt ? 1 : 0,
                 party.strongholdOwner);
+        // R100 repair: the loader reads a present flag,
+        // then hp/max/level/loyalty, the NAME, then
+        // trailing ints. The old save wrote all nine ints
+        // before the name - its first int (the hire's hp,
+        // always >= 2) hit the present flag, and every
+        // save made with a hired henchman failed to load
+        // ("corrupt (hire)"). The name now rides early;
+        // six trailing ints follow (the sixth is the
+        // hire's startAge, R100).
         if (party.henchmanPresent)
-            fprintf(f, "henchman %d %d %d %d %d %d %d %d %d %s\n",
+            fprintf(f,
+                "henchman 1 %d %d %d %d %s %d %d %d %d %d %d\n",
                     party.henchmanHp, party.henchmanMaxHp,
                     party.henchmanLevel, party.henchmanLoyalty,
+                    party.henchmanName.c_str(),
                     party.henchmanXp, party.henchmanPurse,
                     party.delveGold,
                     party.henchmanWeaponPlus,
                     party.henchmanShieldPlus,
-                    party.henchmanName.c_str());
+                    party.henchmanStartAge);
         else
             fprintf(f, "henchman 0\n");
         // R86: the hire's pack (nonempty only - v1 saves load
@@ -271,14 +282,17 @@ bool AppState::loadGame(){
                     // OPTIONAL trailing ints (R44 saves lack
                     // them; defaults 0 are fine)
                     int hxp = 0, hpu = 0, dgv = 0, wpl = 0, spl = 0;
-                    int got = fscanf(f, "%d %d %d %d %d",
-                                     &hxp, &hpu, &dgv, &wpl, &spl);
+                    int hge = 0;   // R100: the hire's youth
+                    int got = fscanf(f, "%d %d %d %d %d %d",
+                                     &hxp, &hpu, &dgv, &wpl, &spl,
+                                     &hge);
                     if (got >= 1) p.henchmanXp = hxp;
                     if (got >= 2) p.henchmanPurse = hpu;
                     if (got >= 3) p.delveGold = dgv;
                     // R80: the hire's magic kit (optional trailing)
                     if (got >= 4) p.henchmanWeaponPlus = wpl;
                     if (got >= 5) p.henchmanShieldPlus = spl;
+                    if (got >= 6) p.henchmanStartAge = hge;
                 }
             } else if (strcmp(tag, "caldays") == 0) {
                 int cdays = 0;

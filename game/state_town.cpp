@@ -254,6 +254,17 @@ void AppState::townInnRest(){
                 }
             }
         }
+        // R100: the hire ages too - the same 365-day mark
+        // (a hire of unknown youth stays silent)
+        if (party.henchmanPresent &&
+            party.henchmanStartAge > 0) {
+            char hb[96];
+            snprintf(hb, sizeof hb,
+                     "%s turns %d years old.",
+                     party.henchmanName.c_str(),
+                     hireAgeYears(party));
+            log.add(hb);
+        }
         log.add("A safe night at the inn. Spells, quivers, and "
                 "wounds mend - a career day spent.");
 
@@ -623,11 +634,16 @@ void AppState::townHireHenchman(){
         if (party.henchmanMaxHp < 2) party.henchmanMaxHp = 2;
         party.henchmanHp = party.henchmanMaxHp;
         party.henchmanLoyalty = 50 + chaAdj;
+        // R100: the hire has a youth too - a young fighter
+        // answers the call (16..19, the yard age)
+        party.henchmanStartAge =
+            rollStartingAge(rules::CLASS_FIGHTER, dice);
         char buf[96];
         snprintf(buf, sizeof buf,
-                 "%s the fighter answers the offer! (loyalty "
-                 "%d%%)",
+                 "%s the fighter answers the offer at %d "
+                 "years! (loyalty %d%%)",
                  party.henchmanName.c_str(),
+                 party.henchmanStartAge,
                  party.henchmanLoyalty);
         log.add(buf);
     }
