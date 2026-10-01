@@ -76,7 +76,10 @@ void AppState::billTownVisit(){
         // return (DMG p.26 monthly support, delve cadence). A
         // short purse dents loyalty; below 25 he walks.
         if (party.henchmanPresent) {
-            int upkeep = 100 * party.henchmanLevel;
+            // R103: the raised hire earns 100 gp a visit
+            // more (the raise's price, paid forever)
+            int upkeep = henchmanUpkeep(
+                party.henchmanLevel, party.henchmanRaise);
             if (party.gold >= upkeep) {
                 party.gold -= upkeep;
                 char buf[96];
@@ -900,6 +903,36 @@ void AppState::townTalk(){
             (uint32_t)lines.size())]);
     }
 
+// ---- R103: the gift - a carrot to R94's stick ----
+void AppState::townGiftHire(){
+        if (mode != MODE_TOWN) return;
+        if (!party.henchmanPresent) {
+            log.add("You have no hire to gift.");
+            return;
+        }
+        if (party.henchmanLoyalty >= 100) {
+            log.add(party.henchmanName +
+                    " is content - he takes no gifts.");
+            return;
+        }
+        if (party.gold < 25) {
+            log.add("A gift wants 25 gp - the purse is "
+                    "too thin.");
+            return;
+        }
+        party.gold -= 25;
+        party.henchmanPurse += 25;
+        party.henchmanLoyalty = loyaltyDrift(
+            party.henchmanLoyalty, loyaltyGift());
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "You gift %s 25 gp - his eyes warm. "
+                 "(loyalty %d%%)",
+                 party.henchmanName.c_str(),
+                 party.henchmanLoyalty);
+        log.add(buf);
+    }
+
 // ---- townUpgradeHire ----
 void AppState::townUpgradeHire(){
         if (mode != MODE_TOWN) return;
@@ -908,8 +941,29 @@ void AppState::townUpgradeHire(){
             return;
         }
         if (party.henchmanPlate) {
+            // R103: the ladder's second rung - the raise
+            if (party.henchmanRaise) {
+                log.add(party.henchmanName +
+                        " has plate and a raise - there is "
+                        "nothing more to give him.");
+                return;
+            }
+            if (party.gold < 500) {
+                char buf[96];
+                snprintf(buf, sizeof buf,
+                         "A raise costs 500 gp - the purse "
+                         "holds %d.", party.gold);
+                log.add(buf);
+                return;
+            }
+            party.gold -= 500;
+            party.henchmanRaise = true;
+            party.henchmanLoyalty = loyaltyDrift(
+                party.henchmanLoyalty, loyaltyRaise());
             log.add(party.henchmanName +
-                    " already wears plate.");
+                    " takes the raise - his upkeep grows by "
+                    "100 gp a visit, and his loyalty with "
+                    "it.");
             return;
         }
         if (party.henchmanPurse < 100) {

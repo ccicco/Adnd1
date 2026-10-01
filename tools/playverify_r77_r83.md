@@ -178,6 +178,17 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R103: the carrot
+- [ ] [G] with a hire: 25 gp leaves the purse into his,
+      loyalty +5; the message shows the new loyalty
+- [ ] [G] at loyalty 100+: "is content - he takes no
+      gifts" (no gold moves)
+- [ ] [J] after plate: the raise - 500 gp, his upkeep
+      message on the next return reads 100/level +100
+- [ ] [J] after the raise: "nothing more to give him"
+- [ ] Save/load round-trips plate AND raise (eighth
+      trailing int); a pre-R103 save loads with no raise
+
 ## R102: the ledger of everything
 - [ ] Pick up scrolls in the dungeon, save, load - the
       satchel keeps its count (pre-R102 a reload wiped

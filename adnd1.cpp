@@ -1289,6 +1289,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.townUpgradeHire();
                         break;
 
+                    // R103: the gift - DMG p.35 morale
+                    case 'G':
+                    case 'g':
+                        g_app.townGiftHire();
+                        break;
+
                     case 'C':
                     case 'c':
                         g_app.townHireCrew();

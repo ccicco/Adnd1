@@ -313,6 +313,10 @@ struct Party {
     int  henchmanPurse = 0;    // his third of each delve's take
     int  delveGold     = 0;    // take since the last town visit
     bool henchmanPlate = false;   // R46: plate kit upgrade
+    // R103: the raise - a one-time 500 gp grant; his
+    // upkeep rises by 100 gp a visit forever (the carrot,
+    // DMG p.35). Never taken = false.
+    bool henchmanRaise = false;
     // R80: the hire's magic kit - a won sword's enchant and a won
     // magic shield's plus (armor stays the R46 plate ladder)
     int  henchmanWeaponPlus = 0;
@@ -701,6 +705,17 @@ inline int loyaltyDrift(int loy, int delta) {
 inline int loyaltyDriftDeepDescent() { return -2; }
 inline int loyaltyDriftDelveDone()   { return  3; }
 inline int loyaltyDriftHardWatch()   { return -1; }
+
+// R103: the carrot (DMG p.35 - gifts and raises recover
+// morale). A gift is 25 gp into his purse for +5 loyalty
+// (a content man, loyalty 100+, takes no gifts); a raise
+// is 500 gp once for +100 gp a visit of upkeep forever
+// and +10 loyalty.
+inline int loyaltyGift() { return  5; }
+inline int loyaltyRaise() { return 10; }
+inline int henchmanUpkeep(int level, bool hasRaise) {
+    return 100 * level + (hasRaise ? 100 : 0);
+}
 
 // R95: the calendar. A dungeon day is 144 turns (the R89-R92
 // coherence bound: 120' unencumbered, 6 turns to the hour);

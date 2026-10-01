@@ -110,7 +110,7 @@ bool AppState::saveGame(){
         // armor the hire paid 100 gp for from his purse)
         if (party.henchmanPresent)
             fprintf(f,
-                "henchman 1 %d %d %d %d %s %d %d %d %d %d %d %d\n",
+                "henchman 1 %d %d %d %d %s %d %d %d %d %d %d %d %d\n",
                     party.henchmanHp, party.henchmanMaxHp,
                     party.henchmanLevel, party.henchmanLoyalty,
                     party.henchmanName.c_str(),
@@ -119,7 +119,8 @@ bool AppState::saveGame(){
                     party.henchmanWeaponPlus,
                     party.henchmanShieldPlus,
                     party.henchmanStartAge,
-                    party.henchmanPlate ? 1 : 0);
+                    party.henchmanPlate ? 1 : 0,
+                    party.henchmanRaise ? 1 : 0);
         else
             fprintf(f, "henchman 0\n");
         // R86: the hire's pack (nonempty only - v1 saves load
@@ -297,9 +298,10 @@ bool AppState::loadGame(){
                     int hxp = 0, hpu = 0, dgv = 0, wpl = 0, spl = 0;
                     int hge = 0;   // R100: the hire's youth
                     int hpl = 0;   // R101: the plate kit
-                    int got = fscanf(f, "%d %d %d %d %d %d %d",
+                    int hrr = 0;   // R103: the raise
+                    int got = fscanf(f, "%d %d %d %d %d %d %d %d",
                                      &hxp, &hpu, &dgv, &wpl, &spl,
-                                     &hge, &hpl);
+                                     &hge, &hpl, &hrr);
                     if (got >= 1) p.henchmanXp = hxp;
                     if (got >= 2) p.henchmanPurse = hpu;
                     if (got >= 3) p.delveGold = dgv;
@@ -308,6 +310,7 @@ bool AppState::loadGame(){
                     if (got >= 5) p.henchmanShieldPlus = spl;
                     if (got >= 6) p.henchmanStartAge = hge;
                     if (got >= 7) p.henchmanPlate = (hpl != 0);
+                    if (got >= 8) p.henchmanRaise = (hrr != 0);
                 }
             } else if (strcmp(tag, "crew") == 0) {
                 // R101: optional line (older saves lack it -

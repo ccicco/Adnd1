@@ -933,6 +933,7 @@ struct AppState {
 
     // R46: [J] upgrade the hire's kit to plate - paid from
     // HIS purse, not the company gold (tranche-124 convention)
+    void townGiftHire();      // R103: [G] the 25 gp gift
     void townUpgradeHire();
 
     // R46: [C] hire a ship's crew - a 20-sailor coaster's
