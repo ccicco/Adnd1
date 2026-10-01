@@ -178,6 +178,17 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R102: the ledger of everything
+- [ ] Pick up scrolls in the dungeon, save, load - the
+      satchel keeps its count (pre-R102 a reload wiped
+      every held scroll)
+- [ ] Study scrolls in town after a load - the count
+      falls as scrolls are studied
+- [ ] The status line's scroll count matches after a
+      save/load round-trip
+- [ ] A pre-R102 save (no cscrolls line) loads with an
+      empty satchel, as before
+
 ## R101: the plate kit
 - [ ] Buy the hire's plate ([J], 100 gp from his purse),
       save, load - he still wears plate (pre-R101 the

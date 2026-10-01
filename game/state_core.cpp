@@ -136,6 +136,10 @@ bool AppState::saveGame(){
         // persisted, and a reload forgot the ship sailed)
         fprintf(f, "crew %d\n",
                 party.crewHired ? 1 : 0);
+        // R102: the carried scrolls (R77 finds, R81
+        // study) - the sweep found them unsaved; a reload
+        // wiped every held scroll
+        fprintf(f, "cscrolls %d\n", party.scrolls);
         fprintf(f, "idscrolls %d\n", party.identifyScrolls);
         fprintf(f, "items %d",
                 (int)party.unidentified.size());
@@ -381,6 +385,19 @@ bool AppState::loadGame(){
                     pi.plus = pl; pi.gp = gpv;
                     p.henchmanPack.push_back(pi);
                 }
+            } else if (strcmp(tag, "cscrolls") == 0) {
+                // R102: optional line (older saves lack it
+                // - the satchel was empty, matching the
+                // pre-fix reload behavior)
+                int scr = 0;
+                if (fscanf(f, "%d", &scr) != 1 ||
+                    scr < 0 || scr > CARRIED_CAP) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt "
+                            "(cscrolls).");
+                    return false;
+                }
+                p.scrolls = scr;
             } else if (strcmp(tag, "idscrolls") == 0) {
                 int sc = 0;
                 if (fscanf(f, "%d", &sc) != 1 || sc < 0 ||
