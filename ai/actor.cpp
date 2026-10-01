@@ -116,6 +116,7 @@ spelleffects::TargetDesc Actor::asTarget() const {
                               : rules::monsterEffectiveLevel(hitDice);
     t.saveBonus = 0;
     t.magicResistPct = isCharacter ? 0 : magicResistPct;
+    t.hitDice = hitDice;   // R82: Death Spell budgeting
     t.isUndead = undead;
     t.isLarge = hitDice >= 8;
     return t;
@@ -149,6 +150,7 @@ bool Actor::canAct() const {
     if (!alive()) return false;
     if (hasStatus(spelleffects::STATUS_SLEEP)) return false;
     if (hasStatus(spelleffects::STATUS_HELD)) return false;
+    if (hasStatus(spelleffects::STATUS_POLYMORPHED)) return false;
     if (psionicStunned) return false;   // R46
     return true;
 }

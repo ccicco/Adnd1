@@ -526,6 +526,15 @@ inline bool claimRing(Character& c, const std::string& name,
     return true;
 }
 
+// ----------------------------------------------------------------------------
+// R82: revival helper
+// ----------------------------------------------------------------------------
+// Raise Dead eligibility: a living 7th+ level cleric (PHB p. 46 -
+// clerics gain 5th-level spells at 7th, Raise Dead among them).
+inline bool canRaiseDead(const Character& c) {
+    return c.classIndex == 2 && c.level >= 7 && c.hp > 0;
+}
+
 // R81: the next spell a member could study from a scroll - the
 // lowest-level unknown spell of his class in id order
 // (deterministic; regtest pins it). -1 when the book is complete.

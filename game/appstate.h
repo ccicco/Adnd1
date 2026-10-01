@@ -816,6 +816,10 @@ struct AppState {
     // keybinding is a later shell diff.
     void townStudyScrolls();
 
+    // R82: a 7th+ level cleric raises one dead member (1000 gp
+    // offering, survival vs CON per PHB, raised at 1 hp).
+    void townRaiseDead();
+
     // ---- R41: town hub ------------------------------------------------------
 
     // [B] from the dungeon â retire to town for supplies

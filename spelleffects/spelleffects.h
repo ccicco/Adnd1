@@ -35,6 +35,7 @@ enum StatusKind : int {
     STATUS_SHIELDED,     // mage shield spell
     STATUS_FIRESHIELD,   // R81: Fire Shield - melee reflect
     STATUS_ANTIVENOM,    // R81: Slow/Neutralize Poison - save bonus
+    STATUS_POLYMORPHED,  // R82: Polymorph Other - held-like
     STATUS_COUNT
 };
 
@@ -43,6 +44,13 @@ struct StatusEffect {
     int        roundsRemaining = 0;
     int        magnitude = 0;    // e.g. shield AC bonus
 };
+
+// R82: Death Spell HD budget (PHB L6 MU): the spell snuffs out
+// up to 4 x caster level hit dice of creatures.
+inline int deathSpellBudget(int casterLevel) {
+    if (casterLevel < 1) casterLevel = 1;
+    return casterLevel * 4;
+}
 
 // R81: Fire Shield reflect - the melee attacker takes half the
 // damage dealt, rounded up, minimum 1
@@ -66,6 +74,7 @@ const char* statusName(StatusKind s);
 struct TargetDesc {
     int hp = 10;
     int maxHp = 10;
+    float hitDice = 1.0f;   // R82: Death Spell HD budgeting
     int saveClass   = 0;
     int saveLevel   = 1;
     int saveBonus   = 0;

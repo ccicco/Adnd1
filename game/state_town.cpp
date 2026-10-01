@@ -847,6 +847,51 @@ void AppState::arriveTown(){
         if (mode == MODE_SEA) checkArrivedSea();   // R70
     }
 
+// ---- R82: raise a dead member ----
+void AppState::townRaiseDead(){
+        if (mode != MODE_TOWN) return;
+        // the rite needs a living 7th+ level cleric
+        const Character* cleric = nullptr;
+        for (const auto& c : party.members) {
+            if (canRaiseDead(c)) { cleric = &c; break; }
+        }
+        if (!cleric) {
+            log.add("No cleric of 7th level or better is "
+                    "able to raise the dead.");
+            return;
+        }
+        // the first dead member (hp 0 in the roster)
+        Character* dead = nullptr;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) { dead = &c; break; }
+        }
+        if (!dead) {
+            log.add("No member of the company is dead.");
+            return;
+        }
+        if (party.gold < 1000) {
+            log.add("The temple demands a 1,000 gp offering "
+                    "for the rite.");
+            return;
+        }
+        party.gold -= 1000;
+        char buf[96];
+        int survival = rules::conResSurvival(dead->abilities.con);
+        if ((int)dice.roll(1, 100, 0) <= survival) {
+            dead->hp = 1;
+            snprintf(buf, sizeof buf,
+                     "%s returns to life at %s's word!",
+                     dead->name.c_str(), cleric->name.c_str());
+            log.add(buf);
+        } else {
+            snprintf(buf, sizeof buf,
+                     "%s's spirit cannot return; the offering "
+                     "is spent.",
+                     dead->name.c_str());
+            log.add(buf);
+        }
+    }
+
 // ---- R81: study the carried scrolls ----
 void AppState::townStudyScrolls(){
         if (mode != MODE_TOWN) return;

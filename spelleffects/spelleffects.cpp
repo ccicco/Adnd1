@@ -123,6 +123,11 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
     SpellCastResult out;
     const spells::SpellDef& s = spells::spell(id);
 
+    // R82: Death Spell HD budget - kills up to 4 x caster level
+    // hit dice of creatures, spent in target order
+    int deathBudget = (id == spells::MU_DEATH_SPELL)
+                          ? deathSpellBudget(casterLevel) : 0;
+
     for (const TargetDesc& t : targets) {
         TargetResult r;
 
@@ -176,6 +181,47 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
                 }
                 break;
             }
+            case spells::MU_DISINTEGRATE: {   // R82
+                // save vs. spells or disintegrated: lethal damage
+                r.affected = true;
+                r.saveMade = trySave(dice, s, t);
+                if (r.saveMade) {
+                    snprintf(r.note, sizeof r.note,
+                             "%s: saved", s.name);
+                } else {
+                    r.damage = t.hp;   // the target is destroyed
+                    snprintf(r.note, sizeof r.note,
+                             "%s: disintegrated!", s.name);
+                }
+                break;
+            }
+            case spells::MU_DEATH_SPELL: {   // R82
+                r.affected = true;
+                if (t.isUndead) {
+                    snprintf(r.note, sizeof r.note,
+                             "%s: no effect (undead)", s.name);
+                    break;
+                }
+                // no save; the HD budget decides (fractional HD
+                // costs 1 - a 4-hd budget takes four 1-hd orcs
+                // or one 4-hd ogre)
+                int cost = (int)t.hitDice;
+                if (cost < 1) cost = 1;
+                if (deathBudget >= 1 && cost <= deathBudget) {
+                    deathBudget -= cost;
+                    r.damage = t.hp;
+                    snprintf(r.note, sizeof r.note,
+                             "%s: life force snuffed out!", s.name);
+                } else {
+                    snprintf(r.note, sizeof r.note,
+                             "%s: unaffected", s.name);
+                }
+                break;
+            }
+            case spells::MU_POLYMORPH_OTHER:   // R82
+                r = resolveStatusSpell(dice, s, STATUS_POLYMORPHED,
+                                       s.durationRounds, t, false);
+                break;
             case spells::MU_FIRE_SHIELD:   // R81
                 r = resolveStatusSpell(dice, s, STATUS_FIRESHIELD,
                                        s.durationRounds, t, false);
