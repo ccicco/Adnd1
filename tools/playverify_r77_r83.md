@@ -178,6 +178,14 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R96: the town clock
+- [ ] An inn night (10 gp) advances the career day count
+      by one and the message says "a career day spent"
+- [ ] Training adds days equal to the new level; the
+      receipt reads "Training paid (N gp, D days)."
+- [ ] Temple healing changes no days (same-day service)
+- [ ] A save round-trips the grown career day count
+
 ## R95: the calendar
 - [ ] Each overland march ([T]/[H]) and sea sailing day
       increments the career day count

@@ -207,6 +207,9 @@ void AppState::townInnRest(){
             return;
         }
         party.gold -= 10;
+        // R96: the town clock - a night at the inn is a
+        // career day spent whole
+        ++party.careerDays;
         restoreSlots();
         restockAmmo();
         for (auto& c : party.members) {
@@ -225,7 +228,8 @@ void AppState::townInnRest(){
             party.henchmanHp += heal;
         }
         log.add("A safe night at the inn. Spells, quivers, and "
-                "wounds mend.");
+                "wounds mend - a career day spent.");
+
     }
 
 // ---- townTempleHeal ----
@@ -311,11 +315,18 @@ void AppState::townTrain(){
             return;
         }
         party.gold -= cost;
+        // R96: the town clock - training burns days equal
+        // to the new level on the career calendar. The
+        // count is taken BEFORE trainNext raises c.level
+        // (the receipt must not grow with the promotion).
+        int days = trainingDays(c.level + 1);
+        party.careerDays += days;
         int trained = party.trainNext(dice, log);
         if (trained >= 0) {
             char buf[96];
             snprintf(buf, sizeof buf,
-                     "Training paid (%d gp).", cost);
+                     "Training paid (%d gp, %d days).",
+                     cost, days);
             log.add(buf);
             // R34: a trained caster's slot pool may have grown -
             // restore so the new slots are usable

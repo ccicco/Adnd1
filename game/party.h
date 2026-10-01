@@ -703,6 +703,13 @@ inline int dungeonDays(int turnCount) {
     return turnCount / turnsPerDay();
 }
 
+// R96: the town clock. Training costs days equal to the
+// new level - a fair price for a fair mastery (the 2nd
+// rank is two days of drills, the 9th is nine).
+inline int trainingDays(int newLevel) {
+    return newLevel;
+}
+
 // R92: the road home - 12 turns per dungeon level (2 hours
 // of climbing the worn ways back; the ascent skips the
 // clearing and searching the descent spends, hence a third
