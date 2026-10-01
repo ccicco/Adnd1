@@ -152,6 +152,15 @@
       arrival wander check (camp parity: hours pass, one
       bite). The follower fight happens on the new level.
 
+## R92: the road home
+- [ ] Retreat to town ([B]): the return is no longer instant -
+      rarely "Something follows you to the stairs!" fires and
+      the fight happens ON the dungeon level (press [B] again
+      after winning to finish the climb; the mode only
+      switches on a clean road).
+- [ ] A normal return still reads "You return to the town
+      above." with the billing lines (rents, henchman pay).
+
 ## Sign-off
 - [ ] No mojibake anywhere on screen (every string is pure ASCII
       since R84 - report ANY stray glyph, it is a bug).

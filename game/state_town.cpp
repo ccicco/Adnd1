@@ -3,6 +3,20 @@
 // ---- enterTown ----
 void AppState::enterTown(){
         if (mode != MODE_EXPLORE) return;
+        // R92: the road home - the climb costs the delve's
+        // clock 12 turns per level (2h each), and the road
+        // gets one wander bite. The check rolls BEFORE the
+        // mode switch: a followed company fights on the level
+        // it stands on, not in the streets. The clock charge
+        // lands on the CLEAN road only - a bitten retreat
+        // costs combat rounds, and the post-fight [B] must
+        // not charge the climb twice.
+        if (dm::wanderCheck(dice, wander)) {
+            log.add("Something follows you to the stairs!");
+            spawnWanderingEncounter();
+            return;   // the town can wait; the fight cannot
+        }
+        turnCount += ascentTurns(dungeonLevel);
         mode = MODE_TOWN;
         log.add("You return to the town above.");
         billTownVisit();   // R70: the shared arrival billing

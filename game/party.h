@@ -653,6 +653,16 @@ inline int descentTurns() {
     return 36;
 }
 
+// R92: the road home - 12 turns per dungeon level (2 hours
+// of climbing the worn ways back; the ascent skips the
+// clearing and searching the descent spends, hence a third
+// of descentTurns per level). Pace-free (stairs parity),
+// one road wander check - rolled BEFORE the town switch so
+// a followed company fights where it stands.
+inline int ascentTurns(int dungeonLevel) {
+    return 12 * dungeonLevel;
+}
+
 // R88: the company's move rate - the slowest living member's
 // band sets the pace (the company moves together); a dead or
 // empty party is treated as unencumbered
