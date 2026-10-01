@@ -705,6 +705,24 @@ void AppState::dumpEquipment(){
                          PACK_CAP, pk.c_str());
                 log.add(buf);
             }
+            // R87: the burden - worn kit plus pack cargo vs the
+            // STR-scaled bands (PHB p.76); movement per band.
+            // The long-dormant items::encumbrance API finally
+            // has a consumer.
+            {
+                int wt = carriedWeight(c);
+                items::EncumbranceBand b =
+                    items::encumbranceBand(wt, c.abilities.str);
+                static const char* kBand[items::ENC_BAND_COUNT] = {
+                    "unencumbered", "lightly burdened",
+                    "moderately burdened", "heavily burdened"
+                };
+                snprintf(buf, sizeof buf,
+                         "  %s: %s (%d gp wt, move %d')",
+                         c.name.c_str(), kBand[b], wt,
+                         items::movementForBand(b));
+                log.add(buf);
+            }
         }
         snprintf(buf, sizeof buf,
                  "Carried: %d potions, %d scrolls, %d gp.",

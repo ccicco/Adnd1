@@ -139,4 +139,8 @@ int movementForBand(EncumbranceBand band);   // feet per turn
 int equippedWeight(const WeaponInstance& w, const ArmorInstance& a,
                    bool shield);
 
+// R87: the plain-shield weight (gp units) - was a file-static
+// in items.cpp; pack weights need it too.
+int shieldWeightGp();
+
 } // namespace items

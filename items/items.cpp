@@ -61,6 +61,8 @@ const ArmorDef& armor(ArmorId id) {
 }
 
 static const int SHIELD_WEIGHT_GP = 100;
+
+int shieldWeightGp() { return SHIELD_WEIGHT_GP; }
 static const int SHIELD_COST_GP   = 10;
 
 // ----------------------------------------------------------------------------

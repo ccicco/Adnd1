@@ -89,6 +89,19 @@
       peddle  [D] dump kit" above the quiver list (the quiver
       moved right - it used to collide with the [L]/[R] lines).
 
+## R87: the burden (encumbrance wired to the pack)
+- [ ] [D] dump kit: every member now prints a burden line,
+      e.g. "  Rolf: moderately burdened (920 gp wt, move 60')"
+      (worn kit + pack cargo, STR-scaled bands, PHB p.76).
+- [ ] A STR 10 member wearing plate armor can carry at most
+      ONE spare suit of plate in the pack - a second is
+      refused (over-heavy) and left appraised in the hoard.
+      A STR 18 member carries three.
+- [ ] The henchman shoulders cargo up to his own limit
+      (heavy threshold 1260 gp at STR 12, kit already 625);
+      past it the item stays appraised ("...shoulders..." only
+      while it fits).
+
 ## Sign-off
 - [ ] No mojibake anywhere on screen (every string is pure ASCII
       since R84 - report ANY stray glyph, it is a bug).

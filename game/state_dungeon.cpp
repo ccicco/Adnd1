@@ -704,7 +704,8 @@ void AppState::awardVictory(){
                     // pack is cargo only, the kit stays R80)
                     if (!take && party.henchmanPresent &&
                         party.henchmanHp > 0 &&
-                        (int)party.henchmanPack.size() < PACK_CAP) {
+                        (int)party.henchmanPack.size() < PACK_CAP &&
+                        henchmanCanShoulder(party, cand)) {
                         party.henchmanPack.push_back(cand);
                         snprintf(buf, sizeof buf,
                                  "%s shoulders the %s "

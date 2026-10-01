@@ -540,11 +540,56 @@ inline bool claimAmmoBundle(Character& c, const std::string& name,
 // ----------------------------------------------------------------------------
 // R85: the pack helpers
 // ----------------------------------------------------------------------------
-// carry an item; false when the pack is full (the caller appraises)
+// R87: the weight of one carried item (gp units, item tables;
+// PackItem stores no weight - it is derived, never saved)
+inline int packItemWeight(const PackItem& p) {
+    if (p.kind == 2) return items::shieldWeightGp();
+    if (p.kind == 1) {
+        if (p.id < 0 || p.id >= (int)items::ARMOR_COUNT) return 0;
+        return items::armor((items::ArmorId)p.id).weightGp;
+    }
+    if (p.id < 0 || p.id >= (int)items::WPN_COUNT) return 0;
+    return items::weapon((items::WeaponId)p.id).weightGp;
+}
+
+// R87: total load - worn kit plus pack cargo (gp units)
+inline int carriedWeight(const Character& c) {
+    int wt = items::equippedWeight(c.weapon, c.armor, c.shield);
+    for (const auto& q : c.pack) wt += packItemWeight(q);
+    return wt;
+}
+
+// carry an item; false when the pack is full (the caller
+// appraises) or when the carry would push the member into
+// the HEAVY encumbrance band (STR-scaled, PHB p.76 - the
+// strong shoulder more; the weak stop sooner)
 inline bool packAdd(Character& c, const PackItem& p) {
     if ((int)c.pack.size() >= PACK_CAP) return false;
+    if (items::encumbranceBand(carriedWeight(c) +
+                                   packItemWeight(p),
+                               c.abilities.str) ==
+        items::ENC_HEAVY)
+        return false;
     c.pack.push_back(p);
     return true;
+}
+
+// R87: the hire's load - fixed kit (sword, kit-ladder armor,
+// shield) plus his mule cargo
+inline int henchmanCarryWeight(const Party& p) {
+    int wt = items::weapon(items::WPN_LONG_SWORD).weightGp +
+             items::armor(p.party_plate_kit()).weightGp +
+             items::shieldWeightGp();
+    for (const auto& q : p.henchmanPack) wt += packItemWeight(q);
+    return wt;
+}
+
+// R87: can the hire shoulder one more item without going
+// HEAVY? (his STR is the fixed 12 of the henchmanActor kit)
+inline bool henchmanCanShoulder(const Party& p, const PackItem& it) {
+    return items::encumbranceBand(henchmanCarryWeight(p) +
+                                      packItemWeight(it),
+                                  12) != items::ENC_HEAVY;
 }
 
 // the item's display name, reconstructed from the item tables
