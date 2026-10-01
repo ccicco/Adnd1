@@ -48,6 +48,12 @@ static const int PARTY_MAX      = 6;   // hard ceiling
 static const int PARTY_DEFAULT  = 6;   // starting cap (adjustable 1-6)
 static const int NAME_MAX_CHARS = 16;
 
+// R79: carried-stack ceilings. Potions/scrolls pool per party; the
+// quiver is per member. Caps keep decades of delve counters inside
+// sane ranges (nothing can run away toward int overflow).
+static const int CARRIED_CAP = 9999;   // party potions/scrolls
+static const int QUIVER_CAP  = 999;    // per-member missileAmmo
+
 // ----------------------------------------------------------------------------
 // R80: quiver bundles — per-shot enchant tracking. Bands of {plus,
 // count}; the front band fires first (mundane before magic, so
@@ -449,12 +455,6 @@ struct Party {
 
 // R79: the logistics helpers — ammo bundle claims and carried caps.
 // ----------------------------------------------------------------------------
-// R79: carried-stack ceilings. Potions/scrolls pool per party; the
-// quiver is per member. Caps keep decades of delve counters inside
-// sane ranges (nothing can run away toward int overflow).
-static const int CARRIED_CAP = 9999;   // party potions/scrolls
-static const int QUIVER_CAP  = 999;    // per-member missileAmmo
-
 // add to a capped counter; the counter never exceeds cap and can
 // still decrease (spending is uncapped)
 inline int addCapped(int& cur, int add, int cap) {
