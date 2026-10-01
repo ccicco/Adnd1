@@ -34,7 +34,7 @@ struct GenState {
     // carve a corridor tile (only over void; keep floors)
     void carveCorr(int x, int y) {
         if (!map.inBounds(x, y)) return;
-        if (map.tiles[y][x] == TILE_VOID) {
+        if (map.tiles[y][x] == world::TILE_VOID) {
             map.tiles[y][x] = world::TILE_CORR;
             ++carved;
         }

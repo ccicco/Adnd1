@@ -113,12 +113,12 @@ const char* titleFor(int classIndex, int level) {
 
 int primeRequisite(int classIndex) {
     switch (classIndex) {
-        case CLASS_FIGHTER:    return AB_STR;
-        case CLASS_MAGIC_USER: return AB_INT;
-        case CLASS_CLERIC:     return AB_WIS;
-        case CLASS_THIEF:      return AB_DEX;
+        case CLASS_FIGHTER:    return ABILITY_STR;
+        case CLASS_MAGIC_USER: return ABILITY_INT;
+        case CLASS_CLERIC:     return ABILITY_WIS;
+        case CLASS_THIEF:      return ABILITY_DEX;
     }
-    return AB_STR;
+    return ABILITY_STR;
 }
 
 int classMinAbility(int classIndex) {
