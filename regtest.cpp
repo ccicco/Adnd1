@@ -346,9 +346,10 @@ int main() {
         c.hp = 0;
         if (claimAmmoBundle(c, "Arrow +1", 20)) ++bad;
         c.hp = 10;
-        // quiver cap
+        // quiver cap: the bundle still pockets (true), the count
+        // just stops at the cap
         c.missileAmmo = QUIVER_CAP;
-        if (claimAmmoBundle(c, "Arrow +1", 20)) ++bad;
+        if (!claimAmmoBundle(c, "Arrow +1", 20)) ++bad;
         if (c.missileAmmo != QUIVER_CAP) ++bad;
         // carried-stack cap: clamps up, never down
         int stack = CARRIED_CAP - 4;

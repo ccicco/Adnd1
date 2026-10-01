@@ -32,6 +32,7 @@
 #include "../items/items.h"
 #include "../ai/actor.h"
 #include "../dm/dm.h"
+#include "messagelog.h"
 #include "../spells/spells.h"
 
 #include <cstdint>
