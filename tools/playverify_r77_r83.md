@@ -178,6 +178,15 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R98: the years tell
+- [ ] A member crossing 45/60/90 at an inn birthday logs
+      "The years tell on him - the bend of the age."
+- [ ] The bend: STR/CON/DEX -1/-2/-3, INT/WIS +1/+2/+3,
+      CHA untouched, scores clamp 3..18
+- [ ] The bend applies once per bracket (a save made
+      after the birthday round-trips the bent scores)
+- [ ] Members under 45 see no change at their birthdays
+
 ## R97: the gray beard
 - [ ] A new member's join line reads "joins the party at
       N years" (fighter 16-19, cleric/thief 19-22, MU 26-40)

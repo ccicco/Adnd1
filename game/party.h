@@ -738,6 +738,51 @@ inline int ageYears(const Character& c, int careerDays) {
     return c.startAge + careerDays / 365;
 }
 
+// R98: the years tell. Brackets (DMG p.11-12 convention,
+// book-verify pending): young < 45, middle 45..59,
+// old 60..89, venerable 90+.
+inline int ageBracket(int age) {
+    if (age < 45) return 0;
+    if (age < 60) return 1;
+    if (age < 90) return 2;
+    return 3;
+}
+
+// the bend by bracket: STR/CON/DEX fall 1/2/3, INT/WIS
+// rise 1/2/3, CHA is untouched (a face is a face)
+inline int ageAbilityDelta(int bracket, rules::Ability a) {
+    if (bracket <= 0) return 0;
+    int mag = bracket;   // 1/2/3
+    switch (a) {
+        case rules::ABILITY_STR:
+        case rules::ABILITY_CON:
+        case rules::ABILITY_DEX:
+            return -mag;
+        case rules::ABILITY_INT:
+        case rules::ABILITY_WIS:
+            return mag;
+        default:
+            return 0;
+    }
+}
+
+// apply the bracket advance to a member (once, at the
+// birthday that crosses into it); clamps 3..18
+inline void applyAgeBracket(Character& c, int newBracket) {
+    const rules::Ability as[5] = {
+        rules::ABILITY_STR, rules::ABILITY_INT,
+        rules::ABILITY_WIS, rules::ABILITY_DEX,
+        rules::ABILITY_CON };
+    for (int i = 0; i < 5; ++i) {
+        int d = ageAbilityDelta(newBracket, as[i]);
+        if (d == 0) continue;
+        int v = (int)c.abilities.get(as[i]) + d;
+        if (v < 3)  v = 3;
+        if (v > 18) v = 18;
+        c.abilities.set(as[i], (uint8_t)v);
+    }
+}
+
 // R92: the road home - 12 turns per dungeon level (2 hours
 // of climbing the worn ways back; the ascent skips the
 // clearing and searching the descent spends, hence a third

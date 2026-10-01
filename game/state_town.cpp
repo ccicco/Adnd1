@@ -241,6 +241,17 @@ void AppState::townInnRest(){
                          c.name.c_str(),
                          ageYears(c, party.careerDays));
                 log.add(ab);
+                // R98: the years tell - the birthday that
+                // crosses a bracket applies its bend once
+                int newB = ageBracket(
+                    ageYears(c, party.careerDays));
+                int oldB = ageBracket(
+                    ageYears(c, party.careerDays - 1));
+                if (newB > oldB) {
+                    applyAgeBracket(c, newB);
+                    log.add("The years tell on him - "
+                            "the bend of the age.");
+                }
             }
         }
         log.add("A safe night at the inn. Spells, quivers, and "

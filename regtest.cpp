@@ -1144,5 +1144,85 @@ int main() {
         printf("R97 gray beard audit: bad %d\n", bad);
         if (bad) return 1;
     }
+
+    // ---- R98: years tell audit ----
+    {
+        int bad = 0;
+        // bracket thresholds: 44 young, 45 middle, 60 old,
+        // 90 venerable
+        if (ageBracket(44) != 0) ++bad;
+        if (ageBracket(45) != 1) ++bad;
+        if (ageBracket(59) != 1) ++bad;
+        if (ageBracket(60) != 2) ++bad;
+        if (ageBracket(89) != 2) ++bad;
+        if (ageBracket(90) != 3) ++bad;
+        // the bend by bracket
+        if (ageAbilityDelta(0, rules::ABILITY_STR) != 0)
+            ++bad;
+        if (ageAbilityDelta(1, rules::ABILITY_STR) != -1)
+            ++bad;
+        if (ageAbilityDelta(2, rules::ABILITY_CON) != -2)
+            ++bad;
+        if (ageAbilityDelta(3, rules::ABILITY_DEX) != -3)
+            ++bad;
+        if (ageAbilityDelta(1, rules::ABILITY_INT) != 1)
+            ++bad;
+        if (ageAbilityDelta(2, rules::ABILITY_WIS) != 2)
+            ++bad;
+        if (ageAbilityDelta(3, rules::ABILITY_INT) != 3)
+            ++bad;
+        if (ageAbilityDelta(3, rules::ABILITY_CHA) != 0)
+            ++bad;
+        // the bend applies once and clamps 3..18
+        {
+            Character c;
+            c.abilities.set(rules::ABILITY_STR, 18);
+            c.abilities.set(rules::ABILITY_CON,  3);
+            c.abilities.set(rules::ABILITY_INT, 17);
+            c.abilities.set(rules::ABILITY_WIS, 10);
+            c.abilities.set(rules::ABILITY_DEX,  9);
+            applyAgeBracket(c, 1);   // middle age
+            if (c.abilities.get(rules::ABILITY_STR) != 17)
+                ++bad;
+            if (c.abilities.get(rules::ABILITY_CON) != 3)
+                ++bad;                // clamped, no floor break
+            if (c.abilities.get(rules::ABILITY_INT) != 18)
+                ++bad;                // clamped at the ceiling
+            if (c.abilities.get(rules::ABILITY_WIS) != 11)
+                ++bad;
+            if (c.abilities.get(rules::ABILITY_DEX) != 8)
+                ++bad;
+            if (c.abilities.get(rules::ABILITY_CHA) != 10)
+                ++bad;                // untouched
+        }
+        // a full life: 18/3/17/10/9/9 through three bends
+        {
+            Character c;
+            c.abilities.set(rules::ABILITY_STR, 18);
+            c.abilities.set(rules::ABILITY_CON,  9);
+            c.abilities.set(rules::ABILITY_INT, 17);
+            c.abilities.set(rules::ABILITY_WIS, 10);
+            c.abilities.set(rules::ABILITY_DEX,  9);
+            applyAgeBracket(c, 1);
+            applyAgeBracket(c, 2);
+            applyAgeBracket(c, 3);
+            // STR 18-6=12, CON 9-6=3, INT 17+6=18 (clamped),
+            // WIS 10+6=16, DEX 9-6=3, CHA 10
+            if (c.abilities.get(rules::ABILITY_STR) != 12)
+                ++bad;
+            if (c.abilities.get(rules::ABILITY_CON) != 3)
+                ++bad;
+            if (c.abilities.get(rules::ABILITY_INT) != 18)
+                ++bad;
+            if (c.abilities.get(rules::ABILITY_WIS) != 16)
+                ++bad;
+            if (c.abilities.get(rules::ABILITY_DEX) != 3)
+                ++bad;
+            if (c.abilities.get(rules::ABILITY_CHA) != 10)
+                ++bad;
+        }
+        printf("R98 years tell audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
     return 0;
             }
