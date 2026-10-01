@@ -251,6 +251,15 @@ struct Party {
 
     int gold = 0;
     int kills = 0;
+
+    // R93: the career ledger - completed delves, the
+    // deepest level ever reached, and the gross gold hauled
+    // over the company's life (before shares). delveCount
+    // increments on the clean-road RETURN only - a company
+    // that never comes back was never a delve in the books.
+    int  delveCount   = 0;
+    int  deepestLevel = 0;
+    long totalGold    = 0;
     int potions = 0;   // R25: shared pool of healing potions
     // R77: carried scrolls (III.B finds; spell study/use is a later
     // round - for now they're held, not sold)
@@ -651,6 +660,12 @@ inline int restTurns(bool interrupted) {
 // arrival wander check accompanies it (camp parity).
 inline int descentTurns() {
     return 36;
+}
+
+// R93: the deepest-depth tracker (career; depth 1 counts -
+// a first delve is a delve)
+inline int deepestOf(int cur, int level) {
+    return level > cur ? level : cur;
 }
 
 // R92: the road home - 12 turns per dungeon level (2 hours

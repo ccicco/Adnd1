@@ -161,6 +161,23 @@
 - [ ] A normal return still reads "You return to the town
       above." with the billing lines (rents, henchman pay).
 
+## R93: the ledger
+- [ ] Return to town ([B], clean road): after "You return to
+      the town above." the report line prints
+      "Delve #1 complete - 1200 gp hauled (career: depth 3,
+      1200 gp)." - count, gross haul, career depth and
+      lifetime gold. The count increments ONLY on the return
+      (a bitten retreat retried does not double-count; the
+      count closes on the clean road).
+- [ ] Descend deeper on a later delve and the career depth
+      in the report grows (never shrinks).
+- [ ] HUD: when the company is laden (Move under 120') the
+      status line shows "Move 60'*" - the asterisk is the
+      encumbrance cue (120' shows no star).
+- [ ] Save ([K]) and load ([L]): the ledger survives the
+      round trip; a pre-R93 save loads with a clean ledger
+      (Delve #1 on the next return).
+
 ## Sign-off
 - [ ] No mojibake anywhere on screen (every string is pure ASCII
       since R84 - report ANY stray glyph, it is a bug).

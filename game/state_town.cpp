@@ -19,6 +19,19 @@ void AppState::enterTown(){
         turnCount += ascentTurns(dungeonLevel);
         mode = MODE_TOWN;
         log.add("You return to the town above.");
+        // R93: the ledger closes the delve - count it, bank
+        // the gross take, report (delveGold is the gross
+        // take; the crew/hire shares are paid out of it in
+        // billTownVisit below)
+        ++party.delveCount;
+        party.totalGold += party.delveGold;
+        char rb[128];
+        snprintf(rb, sizeof rb,
+                 "Delve #%d complete - %d gp hauled "
+                 "(career: depth %d, %ld gp).",
+                 party.delveCount, party.delveGold,
+                 party.deepestLevel, party.totalGold);
+        log.add(rb);
         billTownVisit();   // R70: the shared arrival billing
     }
 

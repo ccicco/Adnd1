@@ -32,6 +32,10 @@ void AppState::beginDelve(){
         creation.done = true;
         mode = MODE_EXPLORE;
         newDungeon(1);
+        // R93: a first-level delve is still the deepest for a
+        // fresh company
+        party.deepestLevel =
+            deepestOf(party.deepestLevel, 1);
         char buf[96];
         snprintf(buf, sizeof buf,
                  "The party of %d descends into the dungeon.",
@@ -73,6 +77,11 @@ bool AppState::saveGame(){
         fprintf(f, "gold %d kills %d potions %d depth %d\n",
                 party.gold, party.kills, party.potions,
                 dungeonLevel);
+        // R93: the career ledger (optional line - v1 saves
+        // load with a zeroed ledger)
+        fprintf(f, "ledger %d %d %ld\n",
+                party.delveCount, party.deepestLevel,
+                party.totalGold);
         // R43: the training queue (v1 saves lack this line - the
         // loader treats it as optional)
         fprintf(f, "training %d",
@@ -266,6 +275,22 @@ bool AppState::loadGame(){
                     if (got >= 4) p.henchmanWeaponPlus = wpl;
                     if (got >= 5) p.henchmanShieldPlus = spl;
                 }
+            } else if (strcmp(tag, "ledger") == 0) {
+                // R93: optional line (v1 saves lack it)
+                int dcnt = 0, ddep = 0;
+                long tgold = 0;
+                if (fscanf(f, "%d %d %ld", &dcnt, &ddep,
+                           &tgold) != 3 ||
+                    dcnt < 0 || dcnt > 99999 ||
+                    ddep < 0 || ddep > 50 ||
+                    tgold < 0 || tgold > 1000000000L) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (ledger).");
+                    return false;
+                }
+                p.delveCount = dcnt;
+                p.deepestLevel = ddep;
+                p.totalGold = tgold;
             } else if (strcmp(tag, "hpack") == 0) {
                 int nhp = 0;
                 if (fscanf(f, "%d", &nhp) != 1 ||
@@ -580,6 +605,9 @@ void AppState::placeStairs(){
 // ---- descend ----
 void AppState::descend(){
         ++dungeonLevel;
+        // R93: the career ledger tracks the deepest level
+        party.deepestLevel =
+            deepestOf(party.deepestLevel, dungeonLevel);
         log.add("You descend the worn stairs...");
         newDungeon(seed + 1000 + dungeonLevel);
         // R91: the trek lands on the NEW level's clock (the
