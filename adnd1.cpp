@@ -269,13 +269,10 @@ static void onPartyMove(int dx, int dy) {
     // a slower one accrues debt and ticks late - the wander
     // check only fires on ticks, so the laden are bitten
     // four times per step at 30'.
-    s.moveDebt += paceStepTenths(partyMoveRate(s.party));
-    bool ticked = false;
-    while (s.moveDebt >= 10) {
-        s.moveDebt -= 10;
-        ++s.turnCount;
-        ticked = true;
-    }
+    int ticked = ticksFromDebt(s.moveDebt,
+                               paceStepTenths(
+                                   partyMoveRate(s.party)));
+    s.turnCount += ticked;
 
     // R23: stairs check first - descending is the priority action
     if (s.party.x == s.stairsX && s.party.y == s.stairsY) {

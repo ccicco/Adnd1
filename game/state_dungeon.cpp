@@ -6,6 +6,8 @@ void AppState::restExplore(){
         if (!party.alive()) return;
 
         log.add("The party makes camp...");
+        // R90: the interrupted camp still burns watch turns
+        turnCount += restTurns(true);
         if (dm::wanderCheck(dice, wander)) {
             log.add("The rest is interrupted!");
             spawnWanderingEncounter();
@@ -23,6 +25,9 @@ void AppState::restExplore(){
             if (c.hp + heal > c.maxHp) heal = c.maxHp - c.hp;
             if (heal > 0) c.hp += heal;
         }
+        // R90: a completed camp costs 48 turns (8 hours) -
+        // the clock finally sees sleep (rest is pace-free)
+        turnCount += restTurns(false);
         log.add("The company rests. Spells and wounds mend.");
     }
 

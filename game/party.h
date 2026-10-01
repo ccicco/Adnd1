@@ -621,6 +621,29 @@ inline int paceStepTenths(int moveRate) {
     return 1200 / moveRate;
 }
 
+// R89/R90: the shared tick math - charge stepTenths onto the
+// debt and return how many whole turns ticked. Kept here (not
+// in adnd1.cpp) so the clock model is one function, used by
+// the move path and pinned by the regtest.
+inline int ticksFromDebt(int& moveDebt, int stepTenths) {
+    moveDebt += stepTenths;
+    int t = 0;
+    while (moveDebt >= 10) {
+        moveDebt -= 10;
+        ++t;
+    }
+    return t;
+}
+
+// R90: what a camp costs the clock - a completed rest is 48
+// turns (PHB: a turn is 10 minutes, so 8 hours of sleep at 6
+// turns to the hour); one jumped in ambush is 4 turns of
+// watch before the halls come calling. Rest is pace-free:
+// sleeping is not movement, no matter the load.
+inline int restTurns(bool interrupted) {
+    return interrupted ? 4 : 48;
+}
+
 // R88: the company's move rate - the slowest living member's
 // band sets the pace (the company moves together); a dead or
 // empty party is treated as unencumbered

@@ -130,6 +130,19 @@
       far more often; watch "Movement in the distance..." and
       count turns per step).
 
+## R90: the camp clock
+- [ ] Rest in the dungeon ([R]): on success the HUD Turn jumps
+      by 48 (8 hours of camp - sleep finally costs time); an
+      interrupted rest ("The rest is interrupted!") jumps it
+      by 4 (the watch before the ambush).
+- [ ] Quaff a potion in the dungeon ([P]): Turn advances by
+      1 and the quaff can draw "Movement in the distance..."
+      (drinking in the halls is not free; combat quaffs are
+      unchanged - combat time is the round system).
+- [ ] Walking behavior is unchanged from R89 (one turn per
+      step unburdened, four at 30') - the refactor onto the
+      shared tick math must be invisible.
+
 ## Sign-off
 - [ ] No mojibake anywhere on screen (every string is pure ASCII
       since R84 - report ANY stray glyph, it is a bug).

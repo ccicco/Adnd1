@@ -91,6 +91,11 @@ void AppState::quaffExplore(){
                  best->name.c_str(), best->hp - before,
                  best->hp, best->maxHp, party.potions);
         log.add(buf);
+        // R90: drinking in the halls costs a turn - and the
+        // turn can draw a wanderer (search parity)
+        turnCount += 1;
+        if (dm::wanderCheck(dice, wander))
+            spawnWanderingEncounter();
     }
 
 // ---- combatQuaff ----
