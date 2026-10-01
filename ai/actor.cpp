@@ -612,6 +612,7 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
     if (hurled) {
         attacker.throwing = false;
         attacker.weaponThrown = true;   // spent for the encounter
+        attacker.ammoPlus = 0;   // R80: hurled weapons carry no arrow enchant
     } else if (attacker.isCharacter) {
         // R35: engine-authoritative gate â dry quiver fires nothing
         if (attacker.missileAmmo <= 0) {
@@ -620,6 +621,8 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
         }
         // R35: spend the missile whether it hits or misses
         --attacker.missileAmmo;
+        // R80: the fired shot's enchant (front band first)
+        attacker.ammoPlus = attacker.takeAmmoPlus();
     }
 
     // the weapon being fired: the hurled melee weapon, else the
@@ -628,7 +631,8 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
         hurled ? attacker.weapon : attacker.rangedWeapon;
 
     // gating: defender requires +N weapon (R5)
-    int wpnPlus = attacker.isCharacter ? fired.plus : 99;
+    // R80: the arrow's enchant counts toward +N-to-hit gating
+    int wpnPlus = attacker.isCharacter ? fired.plus + attacker.ammoPlus : 99;
     if (!rules::weaponSufficient(defender.requiredPlusToHit,
                                  wpnPlus)) {
         logLine(attacker.name + "'s missiles cannot harm " +
@@ -647,6 +651,7 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
             fired, rules::ExceptionalStrength{},
             10, at);
         adj += rules::dexReactionAdj(attacker.dex);
+        adj += attacker.ammoPlus;   // R80: the arrow's enchant
     }
     if (!rules::attackRollHits(m_dice, toHit, adj)) {
         logLine(attacker.name + " misses " + defender.name +
@@ -663,6 +668,7 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
             large ? w.lCount : w.smCount,
             large ? w.lSides : w.smSides, 0);
         dmg += fired.plus;
+        dmg += attacker.ammoPlus;   // R80: arrow plus
     } else {
         dmg = (int)m_dice.roll(
             (uint32_t)attacker.monsterDamageCount,

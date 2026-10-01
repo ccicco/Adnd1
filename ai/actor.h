@@ -118,6 +118,18 @@ struct Actor {
     // Character roster owns the durable count, synced on combat
     // start/end). Monsters fire freely (no tracked ammo).
     int missileAmmo = 0;
+    // R80: per-shot ammunition enchant — filled from the Character's
+    // quiver bands at combat start (front band first); each shot
+    // pops one entry. 0 = mundane. Monsters never use it.
+    int ammoPlus = 0;
+    int ammoQueue[64];
+    int ammoQueueLen = 0;
+    int ammoQueuePos = 0;
+    int takeAmmoPlus() {
+        if (ammoQueuePos < ammoQueueLen)
+            return ammoQueue[ammoQueuePos++];
+        return 0;
+    }
     // R36: thrown-weapon state. "throwing" marks a hurl request
     // pending this round; "weaponThrown" marks the melee weapon
     // as spent for the rest of the encounter (hurled into the

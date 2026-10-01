@@ -596,6 +596,34 @@ void AppState::awardVictory(){
                         break;
                     }
                 }
+                // R80: the hire's claim — when no member took the
+                // item, the henchman upgrades his kit (sword plus,
+                // shield plus; the plate ladder is unchanged, and
+                // only III.G swords arm him — his kit is fixed)
+                if (!take && !mi.cursed() &&
+                    party.henchmanPresent && party.henchmanHp > 0 &&
+                    mi.qty == 1) {
+                    if (mi.kind() == dm::treasure::MIK_SWORD &&
+                        party.henchmanWeaponPlus < mi.weaponPlus()) {
+                        party.henchmanWeaponPlus = mi.weaponPlus();
+                        snprintf(buf, sizeof buf,
+                                 "%s takes the %s!",
+                                 party.henchmanName.c_str(),
+                                 mi.name.c_str());
+                        log.add(buf);
+                        take = true;
+                    } else if (mi.kind() == dm::treasure::MIK_SHIELD &&
+                               party.henchmanShieldPlus <
+                                   mi.weaponPlus()) {
+                        party.henchmanShieldPlus = mi.weaponPlus();
+                        snprintf(buf, sizeof buf,
+                                 "%s takes the %s.",
+                                 party.henchmanName.c_str(),
+                                 mi.name.c_str());
+                        log.add(buf);
+                        take = true;
+                    }
+                }
                 if (take) {
                     carriedOff.push_back(mi);
                     it = hoard.magic.erase(it);

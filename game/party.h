@@ -66,6 +66,9 @@ struct Character {
     items::WeaponInstance weapon;
     items::WeaponInstance rangedWeapon;   // R28: missile slot
     int missileAmmo = 0;   // R35: arrows/bolts/stones on hand
+    // R80: the quiver's enchant composition — bands of {plus, count},
+    // front band fires first (mundane before magic)
+    std::vector<AmmoBundle> quiver;
     items::ArmorInstance  armor;
     bool shield = false;
     // R56: the magic-shield enchant (+1..+5), 0 = mundane. Won
@@ -106,6 +109,12 @@ struct Character {
         a.weapon = weapon;
         a.rangedWeapon = rangedWeapon;   // R28
         a.missileAmmo = missileAmmo;     // R35: live quiver count
+        // R80: per-shot enchant queue — front band first
+        a.ammoQueueLen = 0;
+        a.ammoQueuePos = 0;
+        for (const auto& b : quiver)
+            for (int i = 0; i < b.count && a.ammoQueueLen < 64; ++i)
+                a.ammoQueue[a.ammoQueueLen++] = b.plus;
         a.armor  = armor;
         a.shield = shield;
         a.shieldPlus = shieldPlus;   // R56
@@ -184,6 +193,10 @@ struct Party {
     int  henchmanPurse = 0;    // his third of each delve's take
     int  delveGold     = 0;    // take since the last town visit
     bool henchmanPlate = false;   // R46: plate kit upgrade
+    // R80: the hire's magic kit — a won sword's enchant and a won
+    // magic shield's plus (armor stays the R46 plate ladder)
+    int  henchmanWeaponPlus = 0;
+    int  henchmanShieldPlus = 0;
     bool crewHired     = false;   // R46: a coaster's company
 
     // R44: identify economy â scrolls (found or bought, 100 gp
@@ -216,9 +229,11 @@ struct Party {
         a.intel = 9; a.wis = 10; a.cha = 10;
         a.weapon = items::WeaponInstance();
         a.weapon.id = items::WPN_LONG_SWORD;
+        a.weapon.plus = henchmanWeaponPlus;   // R80
         a.armor  = items::ArmorInstance();
         a.armor.id = party_plate_kit();   // PHB p.36 kit ladder
         a.shield = true;
+        a.shieldPlus = henchmanShieldPlus;   // R80
         a.hp     = henchmanHp;
         a.maxHp  = henchmanMaxHp;
         a.morale = dm::MORALE_FANATIC;   // loyalty gates delves, not rounds
@@ -366,6 +381,71 @@ struct Party {
 };
 
 // ----------------------------------------------------------------------------
+// R80: quiver bundles — per-shot enchant tracking. Bands of {plus,
+// count}; the front band fires first (mundane before magic, so
+// enchanted shots are spent last), same-plus claims merge, and the
+// total stays under QUIVER_CAP.
+// ----------------------------------------------------------------------------
+struct AmmoBundle {
+    int plus  = 0;    // enchant (+1..+3 in III.H bundles)
+    int count = 0;    // arrows/bolts in the band
+};
+
+inline int quiverTotal(const std::vector<AmmoBundle>& q) {
+    int n = 0;
+    for (const auto& b : q) n += b.count;
+    return n;
+}
+
+// the plus of the next shot to fire (front band; 0 = mundane)
+inline int quiverNextPlus(const std::vector<AmmoBundle>& q) {
+    for (const auto& b : q)
+        if (b.count > 0) return b.plus;
+    return 0;
+}
+
+// add a band (same-plus merge); over-cap trims the TAIL bands first
+inline void quiverAdd(std::vector<AmmoBundle>& q, int plus,
+                      int count, int cap = QUIVER_CAP) {
+    if (count <= 0) return;
+    for (auto& b : q)
+        if (b.plus == plus) { b.count += count; count = 0; break; }
+    if (count > 0) {
+        AmmoBundle nb;
+        nb.plus = plus;
+        nb.count = count;
+        q.push_back(nb);
+    }
+    int over = quiverTotal(q) - cap;
+    while (over > 0 && !q.empty()) {
+        AmmoBundle& tail = q.back();
+        int take = tail.count < over ? tail.count : over;
+        tail.count -= take;
+        over -= take;
+        if (tail.count <= 0) q.pop_back();
+    }
+}
+
+// consume n shots front-first
+inline void quiverConsumeShots(std::vector<AmmoBundle>& q, int n) {
+    if (n <= 0) return;
+    while (n > 0 && !q.empty()) {
+        AmmoBundle& front = q.front();
+        int take = front.count < n ? front.count : n;
+        front.count -= take;
+        n -= take;
+        if (front.count <= 0) q.erase(q.begin());
+    }
+}
+
+// refill the mundane band to n (rest convention: 20 shots)
+inline void quiverRestock(std::vector<AmmoBundle>& q, int n) {
+    for (auto& b : q)
+        if (b.plus == 0) { b.count = n; return; }
+    quiverAdd(q, 0, n);
+}
+
+// ----------------------------------------------------------------------------
 // R79: the logistics helpers — ammo bundle claims and carried caps.
 // ----------------------------------------------------------------------------
 // R79: carried-stack ceilings. Potions/scrolls pool per party; the
@@ -403,6 +483,25 @@ inline bool claimAmmoBundle(Character& c, const std::string& name,
                            id == items::WPN_LONG_BOW)) ||
                 (bolt  && id == items::WPN_CROSSBOW_LIGHT);
     if (!fits) return false;
-    addCapped(c.missileAmmo, qty, QUIVER_CAP);
+    // R80: bundle-aware — a legacy flat count becomes the mundane
+    // band, the enchanted band joins behind it (merged by plus),
+    // and the derived total keeps the R79 cap
+    if (c.quiver.empty() && c.missileAmmo > 0) {
+        AmmoBundle b;
+        b.count = c.missileAmmo;
+        c.quiver.push_back(b);
+    }
+    int plus = 0;
+    size_t p = name.find('+');
+    while (p != std::string::npos) {
+        if (p + 1 < name.size() && name[p + 1] >= '0' &&
+            name[p + 1] <= '9') {
+            plus = name[p + 1] - '0';   // bundles print +1..+3
+            break;
+        }
+        p = name.find('+', p + 1);
+    }
+    quiverAdd(c.quiver, plus, qty);
+    c.missileAmmo = quiverTotal(c.quiver);
     return true;
 }

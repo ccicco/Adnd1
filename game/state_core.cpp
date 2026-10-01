@@ -86,11 +86,13 @@ bool AppState::saveGame(){
                 party.strongholdBuilt ? 1 : 0,
                 party.strongholdOwner);
         if (party.henchmanPresent)
-            fprintf(f, "henchman %d %d %d %d %d %d %d %s\n",
+            fprintf(f, "henchman %d %d %d %d %d %d %d %d %d %s\n",
                     party.henchmanHp, party.henchmanMaxHp,
                     party.henchmanLevel, party.henchmanLoyalty,
                     party.henchmanXp, party.henchmanPurse,
                     party.delveGold,
+                    party.henchmanWeaponPlus,
+                    party.henchmanShieldPlus,
                     party.henchmanName.c_str());
         else
             fprintf(f, "henchman 0\n");
@@ -233,12 +235,15 @@ bool AppState::loadGame(){
                     // R45: the hire's career records â
                     // OPTIONAL trailing ints (R44 saves lack
                     // them; defaults 0 are fine)
-                    int hxp = 0, hpu = 0, dgv = 0;
-                    int got = fscanf(f, "%d %d %d",
-                                     &hxp, &hpu, &dgv);
+                    int hxp = 0, hpu = 0, dgv = 0, wpl = 0, spl = 0;
+                    int got = fscanf(f, "%d %d %d %d %d",
+                                     &hxp, &hpu, &dgv, &wpl, &spl);
                     if (got >= 1) p.henchmanXp = hxp;
                     if (got >= 2) p.henchmanPurse = hpu;
                     if (got >= 3) p.delveGold = dgv;
+                    // R80: the hire's magic kit (optional trailing)
+                    if (got >= 4) p.henchmanWeaponPlus = wpl;
+                    if (got >= 5) p.henchmanShieldPlus = spl;
                 }
             } else if (strcmp(tag, "idscrolls") == 0) {
                 int sc = 0;
@@ -496,7 +501,8 @@ void AppState::restoreSlots(){
 void AppState::restockAmmo(){
         for (auto& c : party.members) {
             if (!items::weapon(c.rangedWeapon.id).missile) continue;
-            c.missileAmmo = 20;
+            quiverRestock(c.quiver, 20);   // R80: bundle-aware
+            c.missileAmmo = quiverTotal(c.quiver);
         }
     }
 
@@ -551,6 +557,26 @@ void AppState::dumpEquipment(){
             snprintf(buf, sizeof buf, "%s: %s%s%s%s",
                      c.name.c_str(), melee, ranged, arm, sh);
             log.add(buf);
+            // R80: quiver composition when enchanted bands are held
+            bool magicBands = false;
+            for (const auto& b : c.quiver)
+                if (b.plus > 0) magicBands = true;
+            if (magicBands) {
+                std::string bands;
+                for (const auto& b : c.quiver) {
+                    if (b.count <= 0) continue;
+                    char bb[32];
+                    if (b.plus > 0) snprintf(bb, sizeof bb,
+                                             " +%d x%d",
+                                             b.plus, b.count);
+                    else snprintf(bb, sizeof bb,
+                                  " %d mundane", b.count);
+                    bands += bb;
+                }
+                snprintf(buf, sizeof buf, "  %s's quiver:%s",
+                         c.name.c_str(), bands.c_str());
+                log.add(buf);
+            }
         }
         snprintf(buf, sizeof buf,
                  "Carried: %d potions, %d scrolls, %d gp.",

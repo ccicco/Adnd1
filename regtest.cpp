@@ -1,6 +1,7 @@
 #include "monsters/MonsterRegistry.h"
 #include "dm/encounters.h"
 #include "game/party.h"
+#include "spells/spells.h"
 #include <cstdio>
 #include <string>
 
@@ -348,6 +349,7 @@ int main() {
         c.hp = 10;
         // quiver cap: the bundle still pockets (true), the count
         // just stops at the cap
+        c.quiver.clear();   // R80: bundle semantics
         c.missileAmmo = QUIVER_CAP;
         if (!claimAmmoBundle(c, "Arrow +1", 20)) ++bad;
         if (c.missileAmmo != QUIVER_CAP) ++bad;
@@ -358,6 +360,63 @@ int main() {
         addCapped(stack, -50, CARRIED_CAP);
         if (stack != CARRIED_CAP - 50) ++bad;
         printf("R79 claim/caps audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+
+    // ---- R80: quiver bundle math --------------------------------------
+    {
+        int bad = 0;
+        Character c;
+        c.hp = 10;
+        // same-plus merge + tail-trim cap
+        quiverAdd(c.quiver, 0, 4);
+        quiverAdd(c.quiver, 2, 3);
+        quiverAdd(c.quiver, 0, 2);      // merges into the 0-band
+        if (quiverTotal(c.quiver) != 9) ++bad;
+        if (quiverNextPlus(c.quiver) != 0) ++bad;
+        quiverAdd(c.quiver, 5, 1000);   // over the cap: tail trims
+        if (quiverTotal(c.quiver) != QUIVER_CAP) ++bad;
+        // front-first consumption: mundane before magic
+        c.quiver.clear();
+        quiverAdd(c.quiver, 0, 4);
+        quiverAdd(c.quiver, 2, 3);
+        quiverConsumeShots(c.quiver, 5);
+        if (quiverTotal(c.quiver) != 2) ++bad;
+        if (quiverNextPlus(c.quiver) != 2) ++bad;
+        quiverConsumeShots(c.quiver, 99);   // drains
+        if (quiverTotal(c.quiver) != 0) ++bad;
+        // restock refills the mundane band only
+        quiverRestock(c.quiver, 20);
+        if (quiverTotal(c.quiver) != 20) ++bad;
+        quiverAdd(c.quiver, 2, 3);
+        quiverRestock(c.quiver, 20);   // leaves the +2 band alone
+        if (quiverTotal(c.quiver) != 23) ++bad;
+        if (quiverNextPlus(c.quiver) != 0) ++bad;
+        printf("R80 quiver audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+
+    // ---- R80: spell table L4-6 -----------------------------------------
+    {
+        int bad = 0, mu = 0, cl = 0, l46 = 0;
+        for (int id = 0; id < spells::SPELL_COUNT; ++id) {
+            const spells::SpellDef& s =
+                spells::spell((spells::SpellId)id);
+            if (s.level < 1 || s.level > 6) ++bad;
+            if (s.sclass != spells::SPELL_MU &&
+                s.sclass != spells::SPELL_CLERIC) ++bad;
+            if (s.sclass == spells::SPELL_MU) ++mu; else ++cl;
+            if (s.level >= 4) {
+                ++l46;
+                // a slot row exists that can cast it
+                if (spells::spellSlots(s.sclass, 12, s.level) < 1)
+                    ++bad;
+            }
+        }
+        if (l46 < 12) ++bad;   // the R80 roster landed
+        printf("R80 spells audit: %d spells (MU %d, CL %d), "
+               "L4-6 %d, bad %d\n",
+               spells::SPELL_COUNT, mu, cl, l46, bad);
         if (bad) return 1;
     }
     return 0;

@@ -140,18 +140,23 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
             // ---- damage -----------------------------------------------------
             case spells::MU_FIREBALL:
             case spells::MU_LIGHTNING_BOLT:
+            case spells::MU_ICE_STORM:      // R80
+            case spells::MU_CONE_OF_COLD:   // R80
                 r = resolveDamageSpell(dice, s, casterLevel, t);
                 break;
 
             // ---- healing ----------------------------------------------------
             case spells::CL_CURE_LIGHT_WOUNDS:
             case spells::CL_CURE_SERIOUS_WOUNDS:
+            case spells::CL_CURE_CRITICAL_WOUNDS:   // R80
+            case spells::CL_HEAL:                   // R80
                 r = resolveHealingSpell(dice, s, casterLevel, t);
                 break;
 
             // ---- damage (cleric reversible) --------------------------------
             case spells::CL_CAUSE_LIGHT_WOUNDS:
             case spells::CL_CAUSE_SERIOUS_WOUNDS:
+            case spells::CL_CAUSE_CRITICAL_WOUNDS:  // R80
                 r = resolveDamageSpell(dice, s, casterLevel, t);
                 break;
 
@@ -172,6 +177,7 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
                 break;
             }
             case spells::MU_CHARM_PERSON:
+            case spells::MU_CHARM_MONSTER:   // R80
                 r = resolveStatusSpell(dice, s, STATUS_CHARMED, 0, t, true);
                 break;
             case spells::MU_SHIELD:
@@ -193,6 +199,7 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
                 r = resolveStatusSpell(dice, s, STATUS_HELD,
                                        s.durationRounds, t, false);
                 break;
+            case spells::MU_HOLD_MONSTER:   // R80
             case spells::CL_HOLD_PERSON:
                 r = resolveStatusSpell(dice, s, STATUS_HELD,
                                        s.durationRounds, t, false);

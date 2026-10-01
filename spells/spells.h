@@ -68,6 +68,23 @@ enum SpellId : int {
     CL_CAUSE_SERIOUS_WOUNDS,
     CL_DISPEL_MAGIC,
     CL_PRAYER,
+    // --- R80: levels 4-6 (appended AFTER the legacy ids so saved
+    //     knownSpells indices stay valid) ---
+    MU_POLYMORPH_OTHER,
+    MU_ICE_STORM,
+    MU_FIRE_SHIELD,
+    MU_CHARM_MONSTER,
+    MU_CONE_OF_COLD,
+    MU_TELEPORT,
+    MU_HOLD_MONSTER,
+    MU_DEATH_SPELL,
+    MU_DISINTEGRATE,
+    CL_CURE_CRITICAL_WOUNDS,
+    CL_CAUSE_CRITICAL_WOUNDS,
+    CL_NEUTRALIZE_POISON,
+    CL_RAISE_DEAD,
+    CL_INSECT_PLAGUE,
+    CL_HEAL,
     SPELL_COUNT
 };
 

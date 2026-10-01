@@ -54,6 +54,25 @@ static const SpellDef kSpells[SPELL_COUNT] = {
     { "Cause Serious Wounds",SPELL_CLERIC,2, 3,  0,  0,  -1, TARGET_CREATURE,   0, 2, 8, true  },
     { "Dispel Magic",      SPELL_CLERIC,  3,  4, 12,  0,  -1, TARGET_SPECIAL,    0, 0, 0, false },
     { "Prayer",            SPELL_CLERIC,  3,  4,  0, 60,  -1, TARGET_AREA,       3, 0, 0, false },
+    // ---- R80: levels 4-6 (PHB premium reprint; values carry the
+    // file's standing verification debt — printed tables win).
+    // Utility rows land "known, cast pending" (resolveSpell
+    // default); combat rows are wired in spelleffects.cpp.
+    { "Polymorph Other",     SPELL_MU,     4,  4,  6,  0,   2, TARGET_CREATURE,   0, 0, 0, false },
+    { "Ice Storm",           SPELL_MU,     4,  4, 10,  4,  -1, TARGET_AREA,       3, 2, 8, false },
+    { "Fire Shield",         SPELL_MU,     4,  4,  0, 60,  -1, TARGET_SELF,       0, 0, 0, false },
+    { "Charm Monster",       SPELL_MU,     4,  4, 12,  0,   4, TARGET_CREATURES,  0, 0, 0, false },
+    { "Cone of Cold",        SPELL_MU,     5,  5,  0,  0,   3, TARGET_AREA,       2, 1, 6, false },
+    { "Teleport",            SPELL_MU,     5,  2,  0,  0,  -1, TARGET_SPECIAL,    0, 0, 0, false },
+    { "Hold Monster",        SPELL_MU,     5,  5, 12,  6,   4, TARGET_CREATURES,  0, 0, 0, false },
+    { "Death Spell",         SPELL_MU,     6,  6,  6,  0,  -1, TARGET_AREA,       4, 0, 0, false },
+    { "Disintegrate",        SPELL_MU,     6,  6,  6,  0,   4, TARGET_CREATURE,   0, 0, 0, false },
+    { "Cure Critical Wounds",SPELL_CLERIC, 4,  4,  0,  0,  -1, TARGET_CREATURE,   0, 3, 8, true  },
+    { "Cause Critical Wounds",SPELL_CLERIC, 4,  4,  0,  0,  -1, TARGET_CREATURE,   0, 3, 8, true  },
+    { "Neutralize Poison",   SPELL_CLERIC, 4,  4,  0,  0,  -1, TARGET_CREATURE,   0, 0, 0, true  },
+    { "Raise Dead",          SPELL_CLERIC, 5,  5,  0,  0,  -1, TARGET_CREATURE,   0, 0, 0, true  },
+    { "Insect Plague",       SPELL_CLERIC, 5,  5,  3, 12,  -1, TARGET_AREA,       3, 2, 8, true  },
+    { "Heal",                SPELL_CLERIC, 6,  6,  0,  0,  -1, TARGET_CREATURE,   0, 8, 8, true  },
 };
 
 const SpellDef& spell(SpellId id) {

@@ -612,7 +612,11 @@ void AppState::endCombat(){
                     // R34: spent slots persist (per-day tracking)
                     for (int lv = 0; lv < 6; ++lv)   // R46
                         c.slotsByLevel[lv] = a.slotsByLevel[lv];
-                    // R35: spent ammo persists (quiver count)
+                    // R35: spent ammo persists; R80: the bundle
+                    // composition is consumed front-first to match
+                    // the shots the actor fired this fight
+                    quiverConsumeShots(
+                        c.quiver, c.missileAmmo - a.missileAmmo);
                     c.missileAmmo = a.missileAmmo;
                     break;
                 }
