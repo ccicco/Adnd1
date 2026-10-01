@@ -124,6 +124,14 @@ bool AppState::saveGame(){
             // R81: the Ring of Protection bonus (nonzero only)
             if (c.ringPlus > 0)
                 fprintf(f, "ringplus %d\n", c.ringPlus);
+            // R85: the pack (nonempty members only - v1 saves
+            // carry no lines and load with an empty pack)
+            if (!c.pack.empty()) {
+                fprintf(f, "pack %d\n", (int)c.pack.size());
+                for (const auto& pi : c.pack)
+                    fprintf(f, "pk %d %d %d %d\n",
+                            pi.kind, pi.id, pi.plus, pi.gp);
+            }
             // R33: the MU spellbook (one line per MU; other
             // classes write nothing - v1 saves stay readable)
             if (c.classIndex == 1) {
@@ -375,6 +383,47 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.shieldPlus = sp;
+                } else if (strcmp(tag, "pack") == 0) {
+                    int npk = 0;
+                    if (fscanf(f, "%d", &npk) != 1 ||
+                        npk < 0 || npk > PACK_CAP) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (pack).");
+                        return false;
+                    }
+                    for (int k = 0; k < npk; ++k) {
+                        char t2[16];
+                        int kd = 0, idd = 0, pl = 0, gpv = 0;
+                        if (fscanf(f, "%15s %d %d %d %d",
+                                   t2, &kd, &idd, &pl, &gpv)
+                                != 5 ||
+                            strcmp(t2, "pk") != 0 ||
+                            kd < 0 || kd > 2 ||
+                            pl < 0 || pl > 5 ||
+                            gpv < 0 || gpv > 100000) {
+                            fclose(f);
+                            log.add("adnd1.sav is corrupt (pk).");
+                            return false;
+                        }
+                        if (kd == 0 &&
+                            (idd < 0 ||
+                             idd >= (int)items::WPN_COUNT)) {
+                            fclose(f);
+                            log.add("adnd1.sav is corrupt (pkw).");
+                            return false;
+                        }
+                        if (kd == 1 &&
+                            (idd < 0 ||
+                             idd >= (int)items::ARMOR_COUNT)) {
+                            fclose(f);
+                            log.add("adnd1.sav is corrupt (pka).");
+                            return false;
+                        }
+                        PackItem pi;
+                        pi.kind = kd; pi.id = idd;
+                        pi.plus = pl; pi.gp = gpv;
+                        c.pack.push_back(pi);
+                    }
                 } else if (strcmp(tag, "spells") == 0) {
                     int ns = 0;
                     if (fscanf(f, "%d", &ns) != 1 || ns < 0 ||
@@ -592,6 +641,19 @@ void AppState::dumpEquipment(){
                 }
                 snprintf(buf, sizeof buf, "  %s's quiver:%s",
                          c.name.c_str(), bands.c_str());
+                log.add(buf);
+            }
+            // R85: the pack
+            if (!c.pack.empty()) {
+                std::string pk;
+                for (const auto& pi : c.pack) {
+                    if (!pk.empty()) pk += "; ";
+                    pk += packItemName(pi);
+                }
+                snprintf(buf, sizeof buf,
+                         "  %s's pack (%d/%d): %s",
+                         c.name.c_str(), (int)c.pack.size(),
+                         PACK_CAP, pk.c_str());
                 log.add(buf);
             }
         }

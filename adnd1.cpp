@@ -827,9 +827,15 @@ static void drawTown(HDC dc, const AppState& s) {
     snprintf(line, sizeof line, "[B]/[Esc] return to the dungeon");
     TextOutA(dc, 20, 600, line, (int)strlen(line));
 
-    // quiver summary so arrow buys are informed
+    // R85: the pack commands + quiver summary, right column -
+    // the menu column is full to y=600, and the quiver at 564
+    // collided with the R83 study/raise lines (never seen: no
+    // PC build has run since R68; fixed here)
     SetTextColor(dc, RGB(200, 190, 160));
-    int y = 564;
+    snprintf(line, sizeof line,
+             "PACK: [E] equip best  [P] peddle  [D] dump kit");
+    TextOutA(dc, 430, 340, line, (int)strlen(line));
+    int y = 368;
     for (const auto& c : s.party.members) {
         if (!items::weapon(c.rangedWeapon.id).missile) continue;
         char nm[9];
@@ -837,7 +843,7 @@ static void drawTown(HDC dc, const AppState& s) {
         nm[8] = 0;
         snprintf(line, sizeof line, "%s - quiver %d",
                  nm, c.missileAmmo);
-        TextOutA(dc, 20, y, line, (int)strlen(line));
+        TextOutA(dc, 430, y, line, (int)strlen(line));
         y += 22;
     }
 
@@ -1280,6 +1286,22 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'R':
                     case 'r':
                         g_app.townRaiseDead();
+                        break;
+
+                    // R85: the pack commands
+                    case 'E':
+                    case 'e':
+                        g_app.townSwapGear();
+                        break;
+
+                    case 'P':
+                    case 'p':
+                        g_app.townSellPack();
+                        break;
+
+                    case 'D':
+                    case 'd':
+                        g_app.dumpEquipment();
                         break;
 
                     case 'B':

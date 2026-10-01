@@ -847,6 +847,105 @@ void AppState::arriveTown(){
         if (mode == MODE_SEA) checkArrivedSea();   // R70
     }
 
+// ---- R85: equip the best of the pack ----
+void AppState::townSwapGear(){
+        if (mode != MODE_TOWN) return;
+        char buf[96];
+        int swaps = 0;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            for (size_t i = 0; i < c.pack.size(); ++i) {
+                const PackItem p = c.pack[i];
+                if (!packImproves(c, p)) continue;
+                // equip it; the old kit returns to the pack as a
+                // gp 0 keepsake (kept, never sold)
+                if (p.kind == 2) {
+                    PackItem old{};
+                    old.kind = 2;
+                    old.plus = c.shieldPlus;
+                    c.shield = true;
+                    c.shieldPlus = p.plus;
+                    c.pack[i] = old;
+                } else if (p.kind == 1) {
+                    PackItem old{};
+                    old.kind = 1;
+                    old.id = (int)c.armor.id;
+                    old.plus = c.armor.plus;
+                    c.armor.id = (items::ArmorId)p.id;
+                    c.armor.plus = p.plus;
+                    c.pack[i] = old;
+                } else {
+                    const items::WeaponDef& w = items::weapon(
+                        (items::WeaponId)p.id);
+                    PackItem old{};
+                    old.kind = 0;
+                    if (w.missile) {
+                        old.id = (int)c.rangedWeapon.id;
+                        old.plus = c.rangedWeapon.plus;
+                        c.rangedWeapon.id =
+                            (items::WeaponId)p.id;
+                        c.rangedWeapon.plus = p.plus;
+                        // parity with the MIK_MISSILE claim:
+                        // an empty quiver is handed 20 missiles
+                        if (c.missileAmmo <= 0)
+                            c.missileAmmo = 20;
+                    } else {
+                        old.id = (int)c.weapon.id;
+                        old.plus = c.weapon.plus;
+                        c.weapon.id = (items::WeaponId)p.id;
+                        c.weapon.plus = p.plus;
+                    }
+                    c.pack[i] = old;
+                }
+                snprintf(buf, sizeof buf,
+                         "%s equips the %s.",
+                         c.name.c_str(),
+                         packItemName(p).c_str());
+                log.add(buf);
+                ++swaps;
+            }
+        }
+        if (swaps == 0)
+            log.add("No pack gear improves the company's kit.");
+    }
+
+// ---- R85: peddle the pack ----
+void AppState::townSellPack(){
+        if (mode != MODE_TOWN) return;
+        char buf[128];
+        int total = 0, sold = 0, kept = 0;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            std::vector<PackItem> keep;
+            for (const auto& p : c.pack) {
+                if (p.gp > 0) {
+                    party.gold += p.gp;
+                    total += p.gp;
+                    ++sold;
+                    snprintf(buf, sizeof buf,
+                             "%s sells the %s for %d gp.",
+                             c.name.c_str(),
+                             packItemName(p).c_str(), p.gp);
+                    log.add(buf);
+                } else {
+                    keep.push_back(p);
+                    ++kept;
+                }
+            }
+            c.pack = keep;
+        }
+        if (sold == 0 && kept == 0) {
+            log.add("Nobody carries pack gear.");
+        } else {
+            snprintf(buf, sizeof buf,
+                     "The pack sale nets %d gp.", total);
+            log.add(buf);
+            if (kept > 0)
+                log.add("Keepsakes (swapped-out kit) stay "
+                        "unsold.");
+        }
+    }
+
 // ---- R82: raise a dead member ----
 void AppState::townRaiseDead(){
         if (mode != MODE_TOWN) return;

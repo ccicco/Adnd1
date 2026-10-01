@@ -13,7 +13,8 @@ echo "== [1/3] regtest build + battery (fresh binary) =="
 g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
   rules/dice.cpp rules/character.cpp rules/classes.cpp rules/combat.cpp \
   rules/saves.cpp rules/turn.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \
-  dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp regtest.cpp \
+  dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \
+  items/items.cpp regtest.cpp \
   -o regtest -L"$PREFIX/lib" -llua5.4 && ./regtest || fail=1
 
 echo "== [2/3] working tree hygiene =="

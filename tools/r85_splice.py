@@ -313,3 +313,377 @@ OK &= patch('game/state_dungeon.cpp',
                     it = hoard.magic.erase(it);""",
 'state_dungeon.cpp carry block')
 # R85-CHUNK-3-END
+# R85-CHUNK-4-START
+
+# ---------------------------------------------------------------------------
+# 4) state_town.cpp - the two commands
+# ---------------------------------------------------------------------------
+OK &= patch('game/state_town.cpp',
+"""// ---- R82: raise a dead member ----""",
+"""// ---- R85: equip the best of the pack ----
+void AppState::townSwapGear(){
+        if (mode != MODE_TOWN) return;
+        char buf[96];
+        int swaps = 0;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            for (size_t i = 0; i < c.pack.size(); ++i) {
+                const PackItem p = c.pack[i];
+                if (!packImproves(c, p)) continue;
+                // equip it; the old kit returns to the pack as a
+                // gp 0 keepsake (kept, never sold)
+                if (p.kind == 2) {
+                    PackItem old{};
+                    old.kind = 2;
+                    old.plus = c.shieldPlus;
+                    c.shield = true;
+                    c.shieldPlus = p.plus;
+                    c.pack[i] = old;
+                } else if (p.kind == 1) {
+                    PackItem old{};
+                    old.kind = 1;
+                    old.id = (int)c.armor.id;
+                    old.plus = c.armor.plus;
+                    c.armor.id = (items::ArmorId)p.id;
+                    c.armor.plus = p.plus;
+                    c.pack[i] = old;
+                } else {
+                    const items::WeaponDef& w = items::weapon(
+                        (items::WeaponId)p.id);
+                    PackItem old{};
+                    old.kind = 0;
+                    if (w.missile) {
+                        old.id = (int)c.rangedWeapon.id;
+                        old.plus = c.rangedWeapon.plus;
+                        c.rangedWeapon.id =
+                            (items::WeaponId)p.id;
+                        c.rangedWeapon.plus = p.plus;
+                        // parity with the MIK_MISSILE claim:
+                        // an empty quiver is handed 20 missiles
+                        if (c.missileAmmo <= 0)
+                            c.missileAmmo = 20;
+                    } else {
+                        old.id = (int)c.weapon.id;
+                        old.plus = c.weapon.plus;
+                        c.weapon.id = (items::WeaponId)p.id;
+                        c.weapon.plus = p.plus;
+                    }
+                    c.pack[i] = old;
+                }
+                snprintf(buf, sizeof buf,
+                         "%s equips the %s.",
+                         c.name.c_str(),
+                         packItemName(p).c_str());
+                log.add(buf);
+                ++swaps;
+            }
+        }
+        if (swaps == 0)
+            log.add("No pack gear improves the company's kit.");
+    }
+
+// ---- R85: peddle the pack ----
+void AppState::townSellPack(){
+        if (mode != MODE_TOWN) return;
+        char buf[128];
+        int total = 0, sold = 0, kept = 0;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            std::vector<PackItem> keep;
+            for (const auto& p : c.pack) {
+                if (p.gp > 0) {
+                    party.gold += p.gp;
+                    total += p.gp;
+                    ++sold;
+                    snprintf(buf, sizeof buf,
+                             "%s sells the %s for %d gp.",
+                             c.name.c_str(),
+                             packItemName(p).c_str(), p.gp);
+                    log.add(buf);
+                } else {
+                    keep.push_back(p);
+                    ++kept;
+                }
+            }
+            c.pack = keep;
+        }
+        if (sold == 0 && kept == 0) {
+            log.add("Nobody carries pack gear.");
+        } else {
+            snprintf(buf, sizeof buf,
+                     "The pack sale nets %d gp.", total);
+            log.add(buf);
+            if (kept > 0)
+                log.add("Keepsakes (swapped-out kit) stay "
+                        "unsold.");
+        }
+    }
+
+// ---- R82: raise a dead member ----""",
+'state_town.cpp commands')
+# R85-CHUNK-4-END
+# R85-CHUNK-5-START
+
+# ---------------------------------------------------------------------------
+# 5) state_core.cpp - save, load, dump
+# ---------------------------------------------------------------------------
+OK &= patch('game/state_core.cpp',
+"""            // R81: the Ring of Protection bonus (nonzero only)
+            if (c.ringPlus > 0)
+                fprintf(f, "ringplus %d\\n", c.ringPlus);""",
+"""            // R81: the Ring of Protection bonus (nonzero only)
+            if (c.ringPlus > 0)
+                fprintf(f, "ringplus %d\\n", c.ringPlus);
+            // R85: the pack (nonempty members only - v1 saves
+            // carry no lines and load with an empty pack)
+            if (!c.pack.empty()) {
+                fprintf(f, "pack %d\\n", (int)c.pack.size());
+                for (const auto& pi : c.pack)
+                    fprintf(f, "pk %d %d %d %d\\n",
+                            pi.kind, pi.id, pi.plus, pi.gp);
+            }""",
+'state_core.cpp save pack')
+
+OK &= patch('game/state_core.cpp',
+"""                } else if (strcmp(tag, "spells") == 0) {""",
+"""                } else if (strcmp(tag, "pack") == 0) {
+                    int npk = 0;
+                    if (fscanf(f, "%d", &npk) != 1 ||
+                        npk < 0 || npk > PACK_CAP) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (pack).");
+                        return false;
+                    }
+                    for (int k = 0; k < npk; ++k) {
+                        char t2[16];
+                        int kd = 0, idd = 0, pl = 0, gpv = 0;
+                        if (fscanf(f, "%15s %d %d %d %d",
+                                   t2, &kd, &idd, &pl, &gpv)
+                                != 5 ||
+                            strcmp(t2, "pk") != 0 ||
+                            kd < 0 || kd > 2 ||
+                            pl < 0 || pl > 5 ||
+                            gpv < 0 || gpv > 100000) {
+                            fclose(f);
+                            log.add("adnd1.sav is corrupt (pk).");
+                            return false;
+                        }
+                        if (kd == 0 &&
+                            (idd < 0 ||
+                             idd >= (int)items::WPN_COUNT)) {
+                            fclose(f);
+                            log.add("adnd1.sav is corrupt (pkw).");
+                            return false;
+                        }
+                        if (kd == 1 &&
+                            (idd < 0 ||
+                             idd >= (int)items::ARMOR_COUNT)) {
+                            fclose(f);
+                            log.add("adnd1.sav is corrupt (pka).");
+                            return false;
+                        }
+                        PackItem pi;
+                        pi.kind = kd; pi.id = idd;
+                        pi.plus = pl; pi.gp = gpv;
+                        c.pack.push_back(pi);
+                    }
+                } else if (strcmp(tag, "spells") == 0) {""",
+'state_core.cpp load pack')
+
+OK &= patch('game/state_core.cpp',
+"""                snprintf(buf, sizeof buf, "  %s's quiver:%s",
+                         c.name.c_str(), bands.c_str());
+                log.add(buf);
+            }
+""",
+"""                snprintf(buf, sizeof buf, "  %s's quiver:%s",
+                         c.name.c_str(), bands.c_str());
+                log.add(buf);
+            }
+            // R85: the pack
+            if (!c.pack.empty()) {
+                std::string pk;
+                for (const auto& pi : c.pack) {
+                    if (!pk.empty()) pk += "; ";
+                    pk += packItemName(pi);
+                }
+                snprintf(buf, sizeof buf,
+                         "  %s's pack (%d/%d): %s",
+                         c.name.c_str(), (int)c.pack.size(),
+                         PACK_CAP, pk.c_str());
+                log.add(buf);
+            }
+""",
+'state_core.cpp dump pack')
+# R85-CHUNK-5-END
+# R85-CHUNK-6-START
+
+# ---------------------------------------------------------------------------
+# 6) adnd1.cpp - keys + drawTown
+# ---------------------------------------------------------------------------
+OK &= patch('adnd1.cpp',
+"""                    case 'R':
+                    case 'r':
+                        g_app.townRaiseDead();
+                        break;
+""",
+"""                    case 'R':
+                    case 'r':
+                        g_app.townRaiseDead();
+                        break;
+
+                    // R85: the pack commands
+                    case 'E':
+                    case 'e':
+                        g_app.townSwapGear();
+                        break;
+
+                    case 'P':
+                    case 'p':
+                        g_app.townSellPack();
+                        break;
+
+                    case 'D':
+                    case 'd':
+                        g_app.dumpEquipment();
+                        break;
+""",
+'adnd1.cpp pack keys')
+
+OK &= patch('adnd1.cpp',
+"""    // quiver summary so arrow buys are informed
+    SetTextColor(dc, RGB(200, 190, 160));
+    int y = 564;""",
+"""    // R85: the pack commands + quiver summary, right column -
+    // the menu column is full to y=600, and the quiver at 564
+    // collided with the R83 study/raise lines (never seen: no
+    // PC build has run since R68; fixed here)
+    SetTextColor(dc, RGB(200, 190, 160));
+    snprintf(line, sizeof line,
+             "PACK: [E] equip best  [P] peddle  [D] dump kit");
+    TextOutA(dc, 430, 340, line, (int)strlen(line));
+    int y = 368;""",
+'adnd1.cpp pack header')
+
+OK &= patch('adnd1.cpp',
+"""        snprintf(line, sizeof line, "%s - quiver %d",
+                 nm, c.missileAmmo);
+        TextOutA(dc, 20, y, line, (int)strlen(line));""",
+"""        snprintf(line, sizeof line, "%s - quiver %d",
+                 nm, c.missileAmmo);
+        TextOutA(dc, 430, y, line, (int)strlen(line));""",
+'adnd1.cpp quiver x')
+
+# ---------------------------------------------------------------------------
+# 7) preflight.sh - items.cpp joins the regtest build
+# ---------------------------------------------------------------------------
+OK &= patch('tools/preflight.sh',
+"""  dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp regtest.cpp \\""",
+"""  dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \\
+  items/items.cpp regtest.cpp \\""",
+'preflight.sh build line')
+# R85-CHUNK-6-END
+# R85-CHUNK-7-START
+
+# ---------------------------------------------------------------------------
+# 8) regtest.cpp - the R85 audit
+# ---------------------------------------------------------------------------
+OK &= patch('regtest.cpp',
+"""        printf("R83 teleport audit: bad %d\\n", bad);
+        if (bad) return 1;
+    }
+    return 0;""",
+"""        printf("R83 teleport audit: bad %d\\n", bad);
+        if (bad) return 1;
+    }
+
+    // ---- R85: the pack audit ----
+    {
+        int bad = 0;
+        // packAdd honors the cap
+        Character c;
+        c.hp = 10;
+        PackItem p0{};
+        p0.kind = 0;
+        p0.id = (int)items::WPN_LONG_SWORD;
+        p0.plus = 1;
+        p0.gp = 100;
+        int added = 0;
+        while (packAdd(c, p0) && added < 99) ++added;
+        if (added != PACK_CAP) ++bad;
+        if (packAdd(c, p0)) ++bad;   // full pack refuses
+        // names reconstruct from the tables
+        PackItem w{};
+        w.kind = 0;
+        w.id = (int)items::WPN_LONG_SWORD;
+        w.plus = 2;
+        w.gp = 500;
+        if (packItemName(w) != "Long Sword +2") ++bad;
+        PackItem a{};
+        a.kind = 1;
+        a.id = (int)items::ARMOR_CHAIN_MAIL;
+        a.plus = 0;
+        a.gp = 75;
+        if (packItemName(a) != "Chain Mail") ++bad;
+        PackItem s{};
+        s.kind = 2;
+        s.id = 0;
+        s.plus = 1;
+        s.gp = 50;
+        if (packItemName(s) != "Shield +1") ++bad;
+        PackItem sb{};
+        sb.kind = 2;
+        sb.id = 0;
+        sb.plus = 0;
+        sb.gp = 10;
+        if (packItemName(sb) != "Shield") ++bad;
+        // improves routing
+        c.pack.clear();
+        c.weapon.id = items::WPN_LONG_SWORD;
+        c.weapon.plus = 0;
+        if (!packImproves(c, w)) ++bad;   // +2 over mundane
+        c.weapon.plus = 2;
+        if (packImproves(c, w)) ++bad;    // equal plus: no swap
+        c.shield = false;
+        c.shieldPlus = 0;
+        if (!packImproves(c, s)) ++bad;   // no shield: wear it
+        c.shield = true;
+        c.shieldPlus = 3;
+        if (packImproves(c, s)) ++bad;    // worse plus: no
+        // armor routing via effectiveAc
+        c.armor.id = items::ARMOR_LEATHER;
+        c.armor.plus = 0;
+        PackItem a2{};
+        a2.kind = 1;
+        a2.id = (int)items::ARMOR_CHAIN_MAIL;
+        a2.plus = 0;
+        a2.gp = 75;
+        if (!packImproves(c, a2)) ++bad;  // chain beats leather
+        c.armor.id = items::ARMOR_PLATE;
+        if (packImproves(c, a2)) ++bad;   // plate wins: no
+        // ranged routing: missile weapons look at the RANGED slot
+        PackItem b{};
+        b.kind = 0;
+        b.id = (int)items::WPN_SHORT_BOW;
+        b.plus = 1;
+        b.gp = 100;
+        c.rangedWeapon.id = items::WPN_SHORT_BOW;
+        c.rangedWeapon.plus = 0;
+        c.weapon.plus = 5;   // melee far better - must not matter
+        if (!packImproves(c, b)) ++bad;
+        c.rangedWeapon.plus = 3;
+        if (packImproves(c, b)) ++bad;
+        // dead members never improve
+        c.hp = 0;
+        if (packImproves(c, w)) ++bad;
+        printf("R85 pack audit: bad %d\\n", bad);
+        if (bad) return 1;
+    }
+    return 0;""",
+'regtest.cpp audit')
+
+# ---------------------------------------------------------------------------
+print("\\n".join(REPORT))
+print("R85 splice:", "ALL OK" if OK else "FAILURES PRESENT")
+sys.exit(0 if OK else 1)
+# R85-CHUNK-7-END
