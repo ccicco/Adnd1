@@ -178,6 +178,17 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R101: the plate kit
+- [ ] Buy the hire's plate ([J], 100 gp from his purse),
+      save, load - he still wears plate (pre-R101 the
+      reload silently stripped it and the 100 gp with it)
+- [ ] Hire the coaster's crew, save, load - the ship
+      remembers it sails (pre-R101 a reload forgot)
+- [ ] A save made before a hire/crew round-trips clean
+      (both lines absent, defaults false)
+- [ ] The plate is a fresh hire's ladder bottom again -
+      only the bought plate persists
+
 ## R100: the hire's years
 - [ ] The hire's answer line reads "answers the offer at
       N years!" (16..19)

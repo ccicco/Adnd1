@@ -105,9 +105,12 @@ bool AppState::saveGame(){
         // ("corrupt (hire)"). The name now rides early;
         // six trailing ints follow (the sixth is the
         // hire's startAge, R100).
+        // R101: the seventh trailing int is the plate kit
+        // (R46 - it was never persisted; a reload stripped
+        // armor the hire paid 100 gp for from his purse)
         if (party.henchmanPresent)
             fprintf(f,
-                "henchman 1 %d %d %d %d %s %d %d %d %d %d %d\n",
+                "henchman 1 %d %d %d %d %s %d %d %d %d %d %d %d\n",
                     party.henchmanHp, party.henchmanMaxHp,
                     party.henchmanLevel, party.henchmanLoyalty,
                     party.henchmanName.c_str(),
@@ -115,7 +118,8 @@ bool AppState::saveGame(){
                     party.delveGold,
                     party.henchmanWeaponPlus,
                     party.henchmanShieldPlus,
-                    party.henchmanStartAge);
+                    party.henchmanStartAge,
+                    party.henchmanPlate ? 1 : 0);
         else
             fprintf(f, "henchman 0\n");
         // R86: the hire's pack (nonempty only - v1 saves load
@@ -127,6 +131,11 @@ bool AppState::saveGame(){
                 fprintf(f, "pk %d %d %d %d\n",
                         pi.kind, pi.id, pi.plus, pi.gp);
         }
+        // R101: the coaster's crew - its own optional line
+        // (the crew exists without a hire; it too was never
+        // persisted, and a reload forgot the ship sailed)
+        fprintf(f, "crew %d\n",
+                party.crewHired ? 1 : 0);
         fprintf(f, "idscrolls %d\n", party.identifyScrolls);
         fprintf(f, "items %d",
                 (int)party.unidentified.size());
@@ -283,9 +292,10 @@ bool AppState::loadGame(){
                     // them; defaults 0 are fine)
                     int hxp = 0, hpu = 0, dgv = 0, wpl = 0, spl = 0;
                     int hge = 0;   // R100: the hire's youth
-                    int got = fscanf(f, "%d %d %d %d %d %d",
+                    int hpl = 0;   // R101: the plate kit
+                    int got = fscanf(f, "%d %d %d %d %d %d %d",
                                      &hxp, &hpu, &dgv, &wpl, &spl,
-                                     &hge);
+                                     &hge, &hpl);
                     if (got >= 1) p.henchmanXp = hxp;
                     if (got >= 2) p.henchmanPurse = hpu;
                     if (got >= 3) p.delveGold = dgv;
@@ -293,7 +303,19 @@ bool AppState::loadGame(){
                     if (got >= 4) p.henchmanWeaponPlus = wpl;
                     if (got >= 5) p.henchmanShieldPlus = spl;
                     if (got >= 6) p.henchmanStartAge = hge;
+                    if (got >= 7) p.henchmanPlate = (hpl != 0);
                 }
+            } else if (strcmp(tag, "crew") == 0) {
+                // R101: optional line (older saves lack it -
+                // the crew is simply not hired)
+                int cw = 0;
+                if (fscanf(f, "%d", &cw) != 1 ||
+                    (cw != 0 && cw != 1)) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (crew).");
+                    return false;
+                }
+                p.crewHired = (cw == 1);
             } else if (strcmp(tag, "caldays") == 0) {
                 int cdays = 0;
                 if (fscanf(f, "%d", &cdays) != 1 ||
