@@ -178,6 +178,22 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R106: the keep's ledger
+- [ ] Build the keep, idle ~30 career days (inn rests or
+      sea days), return - 200 gp upkeep bills ("the
+      garrison takes 200 gp (1 months' upkeep)")
+- [ ] The rents still deliver while the purse pays; save/
+      load round-trips the ledger (the stronghold line
+      reads five ints)
+- [ ] Delve often, return - months pass slower than
+      visits, upkeep bills only when a month truly passed
+- [ ] A thin purse at billing books a debt; while debt
+      stands the rents are garnished against it until
+      cleared
+- [ ] A pre-R106 save (two-int stronghold line) loads with
+      an unknown build day - the first return stamps it
+      and bills from THAT day (no retroactive debt)
+
 ## R105: the crew's nerve
 - [ ] Hire the crew, save, load - the crew survives with
       its morale (the crew line reads two ints)

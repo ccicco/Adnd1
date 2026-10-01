@@ -93,9 +93,13 @@ bool AppState::saveGame(){
         // R44: career extras (optional lines, v1-compatible -
         // the loader's optional-tag chain treats each as absent
         // in older saves)
-        fprintf(f, "stronghold %d %d\n",
+        // R106: the keep's ledger rides as three more
+        fprintf(f, "stronghold %d %d %d %d %d\n",
                 party.strongholdBuilt ? 1 : 0,
-                party.strongholdOwner);
+                party.strongholdOwner,
+                party.strongholdBuiltDay,
+                party.strongholdMonthsBilled,
+                party.strongholdDebt);
         // R100 repair: the loader reads a present flag,
         // then hp/max/level/loyalty, the NAME, then
         // trailing ints. The old save wrote all nine ints
@@ -269,6 +273,24 @@ bool AppState::loadGame(){
                 }
                 p.strongholdBuilt = (b == 1);
                 p.strongholdOwner = ow;
+                // R106: optional trailing ledger (older
+                // saves stop at the owner; -1/0/0 = unknown
+                // build day, no months billed, no debt)
+                int bd = -1, mb = 0, dt = 0;
+                int got3 = fscanf(f, "%d %d %d",
+                                  &bd, &mb, &dt);
+                if (got3 != 3) {
+                    clearerr(f);
+                } else if (bd < -1 || mb < 0 || dt < 0) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt "
+                            "(keep ledger).");
+                    return false;
+                } else {
+                    p.strongholdBuiltDay = bd;
+                    p.strongholdMonthsBilled = mb;
+                    p.strongholdDebt = dt;
+                }
             } else if (strcmp(tag, "henchman") == 0) {
                 int present = 0;
                 if (fscanf(f, "%d", &present) != 1 ||

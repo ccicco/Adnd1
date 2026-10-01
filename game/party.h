@@ -291,6 +291,14 @@ struct Party {
     // (the keep's masters-at-arms instruct their lord's company).
     bool strongholdBuilt = false;
     int  strongholdOwner = -1;   // member index of the lord
+    // R106: the keep's ledger - the career day it rose,
+    // the months of upkeep already billed, and the debt a
+    // thin purse booked (garnished from rents until
+    // cleared). BuiltDay -1 = an older save's keep: bills
+    // start from the arrival day.
+    int  strongholdBuiltDay = -1;
+    int  strongholdMonthsBilled = 0;
+    int  strongholdDebt = 0;
 
     // R44: the henchman - one hired NPC (DMG p.36 simplified:
     // a 100 gp offer, acceptance vs interest, loyalty 50 + Cha
@@ -749,6 +757,18 @@ inline int crewDriftUnpaid() { return -10; }
 inline int crewDriftShare()  { return  3; }
 inline int crewHireMorale()  { return  60; }
 inline int crewDesertBelow() { return 25; }
+
+// R106: the keep's ledger - a month is 30 career days
+// (the calendar's own clock); upkeep bills per month, and
+// an unknown build day (an older save's keep) bills from
+// the day the ledger was first read.
+inline int keepUpkeepPerMonth() { return 200; }
+inline int keepMonthsElapsed(int builtDay, int careerDays,
+                             int monthsBilled) {
+    if (builtDay < 0) return 0;
+    int m = (careerDays - builtDay) / 30 - monthsBilled;
+    return (m > 0) ? m : 0;
+}
 
 // R95: the calendar. A dungeon day is 144 turns (the R89-R92
 // coherence bound: 120' unencumbered, 6 turns to the hour);

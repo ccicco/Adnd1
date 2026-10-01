@@ -68,9 +68,55 @@ void AppState::billTownVisit(){
         // delve cadence stands in for the month - simplified
         // stronghold economics)
         if (party.strongholdBuilt) {
-            party.gold += 200;
-            log.add("The keep's steward delivers 200 gp in "
-                    "rents.");
+            // R106: the keep's ledger - while debt stands,
+            // the steward garnishes the rents against it
+            if (party.strongholdDebt > 0) {
+                int g = (party.strongholdDebt < 200)
+                            ? party.strongholdDebt : 200;
+                party.strongholdDebt -= g;
+                char dbuf[96];
+                snprintf(dbuf, sizeof dbuf,
+                         "The keep's rents go to its debt - "
+                         "%d gp of %d stands.",
+                         party.strongholdDebt, g);
+                log.add(dbuf);
+            } else {
+                party.gold += 200;
+                log.add("The keep's steward delivers 200 gp "
+                        "in rents.");
+            }
+            // R106: upkeep - 200 gp a month on the career
+            // clock; an older save's keep bills from today
+            if (party.strongholdBuiltDay < 0) {
+                party.strongholdBuiltDay = party.careerDays;
+                party.strongholdMonthsBilled = 0;
+            }
+            int months = keepMonthsElapsed(
+                party.strongholdBuiltDay, party.careerDays,
+                party.strongholdMonthsBilled);
+            if (months > 0) {
+                int cost = months * keepUpkeepPerMonth();
+                if (party.gold >= cost) {
+                    party.gold -= cost;
+                    char ubuf[96];
+                    snprintf(ubuf, sizeof ubuf,
+                             "The keep's garrison takes %d gp "
+                             "(%d months' upkeep).",
+                             cost, months);
+                    log.add(ubuf);
+                } else {
+                    party.strongholdDebt += cost - party.gold;
+                    char dbuf[96];
+                    snprintf(dbuf, sizeof dbuf,
+                             "The purse can't pay %d gp of "
+                             "upkeep - the steward books a "
+                             "debt of %d gp.",
+                             cost, party.strongholdDebt);
+                    log.add(dbuf);
+                    party.gold = 0;
+                }
+                party.strongholdMonthsBilled += months;
+            }
         }
         // R44: henchman upkeep - 100 gp/level billed on each
         // return (DMG p.26 monthly support, delve cadence). A
@@ -488,6 +534,10 @@ void AppState::townBuildStronghold(){
             return;
         party.strongholdBuilt = true;
         party.strongholdOwner = owner;
+        // R106: the ledger opens on the day the keep rose
+        party.strongholdBuiltDay = party.careerDays;
+        party.strongholdMonthsBilled = 0;
+        party.strongholdDebt = 0;
         log.add(party.members[owner].name +
                 " raises a keep - rents will follow.");
     }
