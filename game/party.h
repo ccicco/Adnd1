@@ -153,6 +153,10 @@ struct Character {
     int  xp   = 0;
     int  level = 1;
     int  hp = 0, maxHp = 0;
+    // R97: the gray beard - age at leaving the training
+    // hall; grows on the R95 career clock (ageYears).
+    // 0 = a v1 save member whose youth is unknown.
+    int  startAge = 0;
 
     items::WeaponInstance weapon;
     items::WeaponInstance rangedWeapon;   // R28: missile slot
@@ -708,6 +712,30 @@ inline int dungeonDays(int turnCount) {
 // rank is two days of drills, the 9th is nine).
 inline int trainingDays(int newLevel) {
     return newLevel;
+}
+
+// R97: the gray beard. Starting age by class (creation
+// convention; PHB book-verify pending): fighters leave the
+// yard young, magic-users leave the tower late.
+inline int startAgeBase(int classIndex) {
+    switch (classIndex) {
+        case rules::CLASS_FIGHTER:     return 15;
+        case rules::CLASS_MAGIC_USER:  return 24;
+        case rules::CLASS_CLERIC:      return 18;
+        default:                return 18;   // thief
+    }
+}
+
+inline int rollStartingAge(int classIndex, rules::Dice& d) {
+    if (classIndex == rules::CLASS_MAGIC_USER)
+        return startAgeBase(classIndex) + d.roll(2, 8, 0);
+    return startAgeBase(classIndex) + d.roll(1, 4, 0);
+}
+
+// age today: the starting age plus whole years on the
+// career clock (365 days to the year)
+inline int ageYears(const Character& c, int careerDays) {
+    return c.startAge + careerDays / 365;
 }
 
 // R92: the road home - 12 turns per dungeon level (2 hours

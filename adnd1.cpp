@@ -238,8 +238,9 @@ static void creationConfirmName() {
     s.party.members.push_back(c);
 
     char buf[96];
-    snprintf(buf, sizeof buf, "%s the %s joins the party.",
-             c.name.c_str(), CLASS_NAMES[c.classIndex]);
+    snprintf(buf, sizeof buf, "%s the %s joins the party at %d years.",
+             c.name.c_str(), CLASS_NAMES[c.classIndex],
+             c.startAge);
     s.log.add(buf);
 
     if ((int)s.party.members.size() >= cr.partySizeCap) {

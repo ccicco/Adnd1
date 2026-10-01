@@ -227,6 +227,22 @@ void AppState::townInnRest(){
                 heal = party.henchmanMaxHp - party.henchmanHp;
             party.henchmanHp += heal;
         }
+        // R97: the gray beard - the inn night that crosses
+        // a 365-day mark is a birthday (only members whose
+        // youth is known; delve-day batches can skip a
+        // crossing, the town clock catches most)
+        if (party.careerDays > 0 &&
+            party.careerDays % 365 == 0) {
+            for (auto& c : party.members) {
+                if (c.hp <= 0 || c.startAge <= 0) continue;
+                char ab[96];
+                snprintf(ab, sizeof ab,
+                         "%s turns %d years old.",
+                         c.name.c_str(),
+                         ageYears(c, party.careerDays));
+                log.add(ab);
+            }
+        }
         log.add("A safe night at the inn. Spells, quivers, and "
                 "wounds mend - a career day spent.");
 

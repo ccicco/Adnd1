@@ -178,6 +178,15 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R97: the gray beard
+- [ ] A new member's join line reads "joins the party at
+      N years" (fighter 16-19, cleric/thief 19-22, MU 26-40)
+- [ ] The inn night that crosses a 365-day career mark
+      logs "N turns M years old." for each living member
+- [ ] A save round-trips the age; a v1 save loads with
+      startAge 0 and no birthday lines
+- [ ] The delve report and training days are unaffected
+
 ## R96: the town clock
 - [ ] An inn night (10 gp) advances the career day count
       by one and the message says "a career day spent"

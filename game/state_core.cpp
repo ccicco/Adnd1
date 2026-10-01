@@ -141,6 +141,10 @@ bool AppState::saveGame(){
             // v1 saves carry no line and load as 0)
             if (c.shieldPlus > 0)
                 fprintf(f, "shieldplus %d\n", c.shieldPlus);
+            // R97: the gray beard (optional line - v1 saves
+            // load with an unknown youth, startAge 0)
+            if (c.startAge > 0)
+                fprintf(f, "age %d\n", c.startAge);
             // R81: the Ring of Protection bonus (nonzero only)
             if (c.ringPlus > 0)
                 fprintf(f, "ringplus %d\n", c.ringPlus);
@@ -450,7 +454,16 @@ bool AppState::loadGame(){
             bool optLoop = true;
             while (optLoop) {
                 if (fscanf(f, "%15s", tag) != 1) break;
-                if (strcmp(tag, "ringplus") == 0) {
+                if (strcmp(tag, "age") == 0) {
+                int ag = 0;
+                if (fscanf(f, "%d", &ag) != 1 ||
+                    ag < 15 || ag > 100) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (age).");
+                    return false;
+                }
+                c.startAge = ag;
+            } else if (strcmp(tag, "ringplus") == 0) {
                     int rg = 0;
                     if (fscanf(f, "%d", &rg) != 1 ||
                         rg < 0 || rg > 5) {

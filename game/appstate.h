@@ -404,6 +404,8 @@ struct CreationState {
         c.abilities = rolled;
         c.classIndex = classIndex;
         c.level = 1;
+        // R97: the gray beard - when the career begins
+        c.startAge = rollStartingAge(classIndex, creationDice);
 
         // exceptional strength: fighter group at STR 18
         if (classIndex == rules::CLASS_FIGHTER &&
