@@ -810,6 +810,12 @@ struct AppState {
     // binding is a later shell diff.
     void dumpEquipment();
 
+    // R81: study the carried scrolls (town) - each scroll is an MU
+    // spell scroll; one chance-to-learn roll per scroll, consumed
+    // on success or failure (PHB p.10 study convention). Win32
+    // keybinding is a later shell diff.
+    void townStudyScrolls();
+
     // ---- R41: town hub ------------------------------------------------------
 
     // [B] from the dungeon â retire to town for supplies

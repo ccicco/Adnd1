@@ -590,9 +590,26 @@ void AppState::awardVictory(){
                             }
                         }
                         break;
+                    case dm::treasure::MIK_OTHER:
+                        // R81: a Ring of Protection goes to the
+                        // first living member without one; every
+                        // other ring/rod/misc stays appraised
+                        for (auto& c : party.members) {
+                            if (c.hp <= 0) continue;
+                            if (claimRing(c, mi.name, mi.qty)) {
+                                snprintf(buf, sizeof buf,
+                                         "%s wears the %s.",
+                                         c.name.c_str(),
+                                         mi.name.c_str());
+                                log.add(buf);
+                                take = true;
+                                break;
+                            }
+                        }
+                        break;
                     default:
-                        // MIK_OTHER (rings/rods/misc) and declined
-                        // ammo stay appraised to gold
+                        // declined ammo and unclaimed rings/rods/
+                        // misc stay appraised to gold
                         break;
                     }
                 }

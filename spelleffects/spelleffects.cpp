@@ -176,6 +176,10 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
                 }
                 break;
             }
+            case spells::MU_FIRE_SHIELD:   // R81
+                r = resolveStatusSpell(dice, s, STATUS_FIRESHIELD,
+                                       s.durationRounds, t, false);
+                break;
             case spells::MU_CHARM_PERSON:
             case spells::MU_CHARM_MONSTER:   // R80
                 r = resolveStatusSpell(dice, s, STATUS_CHARMED, 0, t, true);
@@ -207,6 +211,14 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
             case spells::CL_SILENCE_15:
                 r = resolveStatusSpell(dice, s, STATUS_SILENCED,
                                        s.durationRounds, t, false);
+                break;
+            case spells::CL_SLOW_POISON:        // R81
+            case spells::CL_NEUTRALIZE_POISON:   // R81
+                r = resolveStatusSpell(dice, s, STATUS_ANTIVENOM,
+                                       s.durationRounds, t, false);
+                if (!r.saveMade && r.status.kind ==
+                        spelleffects::STATUS_ANTIVENOM)
+                    r.status.magnitude = 4;   // +4 on poison saves
                 break;
             case spells::CL_PROTECTION_FROM_EVIL:
                 r = resolveStatusSpell(dice, s, STATUS_PROT_EVIL,

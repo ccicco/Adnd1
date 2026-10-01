@@ -148,6 +148,8 @@ struct Character {
     // from defeated NPC parties; saved as an optional per-member
     // line (v1 saves have none and load as 0).
     int shieldPlus = 0;
+    // R81: Ring of Protection AC bonus (0 = none worn)
+    int ringPlus = 0;
 
     // R33: MU spellbook â known spell ids (spells::SpellId).
     // Empty for non-MUs (clerics cast freely).
@@ -191,6 +193,7 @@ struct Character {
         a.armor  = armor;
         a.shield = shield;
         a.shieldPlus = shieldPlus;   // R56
+        a.ringPlus = ringPlus;   // R81
         a.hp     = hp;
         a.maxHp  = maxHp;
         a.morale = dm::MORALE_FANATIC;   // player party never breaks
@@ -505,4 +508,39 @@ inline bool claimAmmoBundle(Character& c, const std::string& name,
     quiverAdd(c.quiver, plus, qty);
     c.missileAmmo = quiverTotal(c.quiver);
     return true;
+}
+
+// ----------------------------------------------------------------------------
+// R81: the ring + scroll-study helpers
+// ----------------------------------------------------------------------------
+// claim a Ring of Protection for a member (the III.C table prints no
+// +N in the name; +1 is the convention - documented simplification
+// vs the PHB's +1/+2 brackets). One ring per member, first taker
+// wins; every other ring/rod/misc stays appraised.
+inline bool claimRing(Character& c, const std::string& name,
+                      int qty) {
+    if (c.hp <= 0 || qty != 1 || c.ringPlus > 0) return false;
+    if (name.find("Ring of Protection") == std::string::npos)
+        return false;
+    c.ringPlus = 1;
+    return true;
+}
+
+// R81: the next spell a member could study from a scroll - the
+// lowest-level unknown spell of his class in id order
+// (deterministic; regtest pins it). -1 when the book is complete.
+inline int pickStudySpell(const Character& c) {
+    int best = -1;
+    int bestLv = 99;
+    for (int id = 0; id < spells::SPELL_COUNT; ++id) {
+        const spells::SpellDef& s =
+            spells::spell((spells::SpellId)id);
+        if (c.classIndex == 1 && s.sclass != spells::SPELL_MU)
+            continue;
+        if (c.classIndex == 2 && s.sclass != spells::SPELL_CLERIC)
+            continue;
+        if (c.knowsSpell(id)) continue;
+        if (s.level < bestLv) { bestLv = s.level; best = id; }
+    }
+    return best;
 }

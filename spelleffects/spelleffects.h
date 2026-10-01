@@ -33,6 +33,8 @@ enum StatusKind : int {
     STATUS_INVISIBLE,
     STATUS_PROT_EVIL,
     STATUS_SHIELDED,     // mage shield spell
+    STATUS_FIRESHIELD,   // R81: Fire Shield - melee reflect
+    STATUS_ANTIVENOM,    // R81: Slow/Neutralize Poison - save bonus
     STATUS_COUNT
 };
 
@@ -41,6 +43,13 @@ struct StatusEffect {
     int        roundsRemaining = 0;
     int        magnitude = 0;    // e.g. shield AC bonus
 };
+
+// R81: Fire Shield reflect - the melee attacker takes half the
+// damage dealt, rounded up, minimum 1
+inline int fireShieldDamage(int dmg) {
+    int r = dmg / 2 + (dmg % 2 ? 1 : 0);
+    return r < 1 ? 1 : r;
+}
 
 const char* statusName(StatusKind s);
 

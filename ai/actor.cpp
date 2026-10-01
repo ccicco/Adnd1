@@ -72,8 +72,10 @@ namespace ai {
 
 int Actor::armorClass() const {
     if (isCharacter) {
-        // R55: the carried shield enchantment applies
-        return items::effectiveAc(armor, shield, shieldPlus, dex);
+        // R55: the carried shield enchantment applies;
+        // R81: the Ring of Protection improves AC too
+        return items::effectiveAc(armor, shield, shieldPlus, dex)
+               - ringPlus;
     }
     // monster base: unarmored 9 minus half hit dice (convention;
     // real monster ACs arrive with the Lua registry)
@@ -242,6 +244,20 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
     logLine(attacker.name + " hits " + defender.name + " for " +
             std::to_string(dmg));
 
+    // R81: Fire Shield - melee attackers take half the dealt
+    // damage back (rounded up, min 1); melee contact only
+    if (defender.hasStatus(spelleffects::STATUS_FIRESHIELD) &&
+        attacker.alive()) {
+        int ref = spelleffects::fireShieldDamage(dmg);
+        attacker.hp -= ref;
+        logLine(defender.name + "'s fire shield sears " +
+                attacker.name + " (" + std::to_string(ref) + ")");
+        if (!attacker.alive()) {
+            attacker.hp = 0;
+            logLine(attacker.name + " is down!");
+        }
+    }
+
     // sleeping targets wake when struck
     if (defender.hasStatus(spelleffects::STATUS_SLEEP) && defender.alive()) {
         for (auto& s : defender.statuses)
@@ -276,6 +292,12 @@ void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
             defender.isCharacter ? defender.level
                                  : rules::monsterEffectiveLevel(defender.hitDice),
             (rules::SaveCategory)saveCategory);
+        // R81: antivenom (Slow/Neutralize Poison) eases
+        // death/poison saves by the status magnitude
+        if ((rules::SaveCategory)saveCategory ==
+                rules::SAVE_DEATH_POISON)
+            target -= defender.statusBonus(
+                spelleffects::STATUS_ANTIVENOM);
         // penalty makes saving HARDER by raising the target
         return rules::attemptSave(m_dice, target + penalty, 0);
     };

@@ -143,6 +143,8 @@ struct Actor {
     // R55: shield enchantment (+1..+5); effectiveAc already takes
     // it, the Actor just never carried it. Default 0 = mundane.
     int  shieldPlus = 0;
+    // R81: Ring of Protection AC bonus (0 = none worn)
+    int  ringPlus = 0;
 
     // monster path
     float hitDice = 1.0f;
@@ -233,6 +235,13 @@ struct Actor {
 
     // status helpers
     bool hasStatus(spelleffects::StatusKind k) const;
+    // R81: the best magnitude carried for a status (0 when none)
+    int statusBonus(spelleffects::StatusKind k) const {
+        int b = 0;
+        for (const auto& s : statuses)
+            if (s.kind == k && s.magnitude > b) b = s.magnitude;
+        return b;
+    }
     void addStatus(const spelleffects::StatusEffect& st);
     void tickStatuses();           // called each round
 

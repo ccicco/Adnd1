@@ -846,3 +846,51 @@ void AppState::arriveTown(){
         if (mode == MODE_OVERLAND) checkArrivedHome();
         if (mode == MODE_SEA) checkArrivedSea();   // R70
     }
+
+// ---- R81: study the carried scrolls ----
+void AppState::townStudyScrolls(){
+        if (mode != MODE_TOWN) return;
+        if (party.scrolls <= 0) {
+            log.add("You carry no scrolls to study.");
+            return;
+        }
+        int studied = 0, learned = 0;
+        char buf[96];
+        while (party.scrolls > 0) {
+            // the scroll goes to the first living MU with an
+            // unknown spell (III.B scrolls are MU spell scrolls;
+            // clerics pray, they do not study - PHB convention)
+            Character* taker = nullptr;
+            int sid = -1;
+            for (auto& c : party.members) {
+                if (c.hp <= 0 || c.classIndex != 1) continue;
+                int pick = pickStudySpell(c);
+                if (pick >= 0) { taker = &c; sid = pick; break; }
+            }
+            if (!taker) break;   // every book is complete
+            --party.scrolls;
+            ++studied;
+            const spells::SpellDef& s =
+                spells::spell((spells::SpellId)sid);
+            if (spells::rollChanceToLearn(dice,
+                    taker->abilities.int_)) {
+                taker->knownSpells.push_back(sid);
+                snprintf(buf, sizeof buf,
+                         "%s masters %s from a scroll!",
+                         taker->name.c_str(), s.name);
+                log.add(buf);
+                ++learned;
+            } else {
+                snprintf(buf, sizeof buf,
+                         "%s fails to master %s; the scroll "
+                         "crumbles.",
+                         taker->name.c_str(), s.name);
+                log.add(buf);
+            }
+        }
+        snprintf(buf, sizeof buf,
+                 "Studied %d scroll%s; %d spell%s learned.",
+                 studied, studied == 1 ? "" : "s",
+                 learned, learned == 1 ? "" : "s");
+        log.add(buf);
+    }

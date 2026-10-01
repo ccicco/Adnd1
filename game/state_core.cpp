@@ -121,6 +121,9 @@ bool AppState::saveGame(){
             // v1 saves carry no line and load as 0)
             if (c.shieldPlus > 0)
                 fprintf(f, "shieldplus %d\n", c.shieldPlus);
+            // R81: the Ring of Protection bonus (nonzero only)
+            if (c.ringPlus > 0)
+                fprintf(f, "ringplus %d\n", c.ringPlus);
             // R33: the MU spellbook (one line per MU; other
             // classes write nothing â v1 saves stay readable)
             if (c.classIndex == 1) {
@@ -354,7 +357,16 @@ bool AppState::loadGame(){
             bool optLoop = true;
             while (optLoop) {
                 if (fscanf(f, "%15s", tag) != 1) break;
-                if (strcmp(tag, "shieldplus") == 0) {
+                if (strcmp(tag, "ringplus") == 0) {
+                    int rg = 0;
+                    if (fscanf(f, "%d", &rg) != 1 ||
+                        rg < 0 || rg > 5) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (ring).");
+                        return false;
+                    }
+                    c.ringPlus = rg;
+                } else if (strcmp(tag, "shieldplus") == 0) {
                     int sp = 0;
                     if (fscanf(f, "%d", &sp) != 1 ||
                         sp < 0 || sp > 5) {
@@ -554,8 +566,13 @@ void AppState::dumpEquipment(){
             } else {
                 sh[0] = 0;
             }
-            snprintf(buf, sizeof buf, "%s: %s%s%s%s",
-                     c.name.c_str(), melee, ranged, arm, sh);
+            char rg[16];
+            if (c.ringPlus > 0) snprintf(rg, sizeof rg,
+                                          ", ring +%d",
+                                          c.ringPlus);
+            else rg[0] = 0;
+            snprintf(buf, sizeof buf, "%s: %s%s%s%s%s",
+                     c.name.c_str(), melee, ranged, arm, sh, rg);
             log.add(buf);
             // R80: quiver composition when enchanted bands are held
             bool magicBands = false;
