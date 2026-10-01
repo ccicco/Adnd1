@@ -463,5 +463,9 @@ void AppState::checkArrivedHome(){
         if (!party.alive()) return;
         overland.daysOut = 0;
         arriveTown();   // R70: arrival billing too
-        log.add("The walls of town rise aheadis over.");
+        // R95 repair: this string was mangled by a past
+        // round (two fragments collided) - "rise ahead" +
+        // "the journey is over"
+        log.add("The walls of town rise ahead - "
+                "the journey is over.");
     }
