@@ -823,6 +823,14 @@ struct AppState {
     // R83: bound to the [R] town key.
     void townRaiseDead();
 
+    // R85: the pack commands - [E] equips the best of every
+    // member's pack (old kit returns to the pack as a keepsake),
+    // [P] peddles the pack (sale-value items only; keepsakes
+    // stay). [D] dumps the kit (the R79 engine method, now
+    // key-bound - a standing backlog item).
+    void townSwapGear();
+    void townSellPack();
+
     // ---- R41: town hub ------------------------------------------------------
 
     // [B] from the dungeon - retire to town for supplies

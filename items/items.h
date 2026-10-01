@@ -13,6 +13,8 @@
 
 #include "../rules/combat.h"   // WeaponClass, AcType, weaponVsAc...
 
+#include "../rules/classes.h"   // ArmorWeight, ARMOR_NONE/LEATHER/CHAIN/PLATE
+#include "../rules/character.h" // ExceptionalStrength
 #include <cstdint>
 
 namespace items {

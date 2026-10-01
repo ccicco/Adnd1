@@ -382,6 +382,10 @@ void AppState::awardVictory(){
                  it != hoard.magic.end(); ) {
                 const dm::treasure::MagicItem& mi = *it;
                 bool take = false;
+                // R85: the pack-carry candidate - the gear cases
+                // set it when nobody equipped the item
+                PackItem cand{};
+                bool carryable = false;
                 if (mi.cursed()) {
                     // never claimed - stays appraised below
                 } else if (mi.isHealingPotion()) {
@@ -410,6 +414,13 @@ void AppState::awardVictory(){
                                 take = true;
                                 break;
                             }
+                        }
+                        if (!take) {   // R85: nobody wielded it
+                            cand.kind = 0;
+                            cand.id = (int)items::WPN_LONG_SWORD;
+                            cand.plus = mi.weaponPlus();
+                            cand.gp = mi.gp;
+                            carryable = true;
                         }
                         break;
                     case dm::treasure::MIK_MELEE: {
@@ -454,6 +465,13 @@ void AppState::awardVictory(){
                                     break;
                                 }
                             }
+                        if (!take && id != items::WPN_COUNT) {
+                            cand.kind = 0;
+                            cand.id = (int)id;
+                            cand.plus = mi.weaponPlus();
+                            cand.gp = mi.gp;
+                            carryable = true;
+                        }
                         break;
                     }
                     case dm::treasure::MIK_MISSILE: {
@@ -487,6 +505,13 @@ void AppState::awardVictory(){
                                     break;
                                 }
                             }
+                        if (!take && id != items::WPN_COUNT) {
+                            cand.kind = 0;
+                            cand.id = (int)id;
+                            cand.plus = mi.weaponPlus();
+                            cand.gp = mi.gp;
+                            carryable = true;
+                        }
                         break;
                     }
                     case dm::treasure::MIK_SHIELD:
@@ -506,6 +531,13 @@ void AppState::awardVictory(){
                                 take = true;
                                 break;
                             }
+                        }
+                        if (!take) {
+                            cand.kind = 2;
+                            cand.id = 0;
+                            cand.plus = mi.weaponPlus();
+                            cand.gp = mi.gp;
+                            carryable = true;
                         }
                         break;
                     case dm::treasure::MIK_ARMOR: {
@@ -555,6 +587,13 @@ void AppState::awardVictory(){
                                     break;
                                 }
                             }
+                        if (!take && id != items::ARMOR_COUNT) {
+                            cand.kind = 1;
+                            cand.id = (int)id;
+                            cand.plus = mi.weaponPlus();
+                            cand.gp = mi.gp;
+                            carryable = true;
+                        }
                         break;
                     }
                     case dm::treasure::MIK_SCROLL:
@@ -639,6 +678,26 @@ void AppState::awardVictory(){
                                  mi.name.c_str());
                         log.add(buf);
                         take = true;
+                    }
+                }
+                // R85: the pack - unclaimed uncursed gear is
+                // carried by the first living member with a free
+                // slot; full packs leave it appraised (as before)
+                if (!take && carryable && mi.qty == 1) {
+                    for (auto& c : party.members) {
+                        if (c.hp <= 0) continue;
+                        if (packAdd(c, cand)) {
+                            snprintf(buf, sizeof buf,
+                                     "%s carries the %s "
+                                     "(pack %d/%d).",
+                                     c.name.c_str(),
+                                     mi.name.c_str(),
+                                     (int)c.pack.size(),
+                                     PACK_CAP);
+                            log.add(buf);
+                            take = true;
+                            break;
+                        }
                     }
                 }
                 if (take) {

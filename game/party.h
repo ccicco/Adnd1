@@ -127,6 +127,24 @@ inline void quiverRestock(std::vector<AmmoBundle>& q, int n) {
 // and synced back by name when the fight ends.
 // ----------------------------------------------------------------------------
 
+// ----------------------------------------------------------------------------
+// R85: the pack - each member's carried gear slots. Found magic
+// gear that nobody equips on the spot is carried here (cap 6);
+// the town [E] command equips the best of it, [P] peddles it.
+// kind: 0 = weapon (id = items::WeaponId), 1 = armor
+// (id = items::ArmorId), 2 = shield (id unused). gp is the sale
+// value from the hoard's appraisal; swapped-out kit comes back
+// into the pack as a gp 0 keepsake (kept, never sold).
+// ----------------------------------------------------------------------------
+struct PackItem {
+    int kind = 0;
+    int id   = 0;
+    int plus = 0;
+    int gp   = 0;
+};
+
+static const int PACK_CAP = 6;
+
 struct Character {
     std::string name;
     rules::AbilityScores     abilities;
@@ -150,6 +168,9 @@ struct Character {
     int shieldPlus = 0;
     // R81: Ring of Protection AC bonus (0 = none worn)
     int ringPlus = 0;
+
+    // R85: the pack - carried gear awaiting equip or sale
+    std::vector<PackItem> pack;
 
     // R33: MU spellbook - known spell ids (spells::SpellId).
     // Empty for non-MUs (clerics cast freely).
@@ -508,6 +529,69 @@ inline bool claimAmmoBundle(Character& c, const std::string& name,
     quiverAdd(c.quiver, plus, qty);
     c.missileAmmo = quiverTotal(c.quiver);
     return true;
+}
+
+// ----------------------------------------------------------------------------
+// R85: the pack helpers
+// ----------------------------------------------------------------------------
+// carry an item; false when the pack is full (the caller appraises)
+inline bool packAdd(Character& c, const PackItem& p) {
+    if ((int)c.pack.size() >= PACK_CAP) return false;
+    c.pack.push_back(p);
+    return true;
+}
+
+// the item's display name, reconstructed from the item tables
+// (the save stores only kind/id/plus/gp - names are never saved)
+inline std::string packItemName(const PackItem& p) {
+    char buf[48];
+    if (p.kind == 2) {
+        if (p.plus > 0) snprintf(buf, sizeof buf,
+                                 "Shield +%d", p.plus);
+        else snprintf(buf, sizeof buf, "Shield");
+    } else if (p.kind == 1) {
+        const char* n = items::armor(
+            (items::ArmorId)p.id).name;
+        if (p.plus > 0) snprintf(buf, sizeof buf,
+                                 "%s +%d", n, p.plus);
+        else snprintf(buf, sizeof buf, "%s", n);
+    } else {
+        const char* n = items::weapon(
+            (items::WeaponId)p.id).name;
+        if (p.plus > 0) snprintf(buf, sizeof buf,
+                                 "%s +%d", n, p.plus);
+        else snprintf(buf, sizeof buf, "%s", n);
+    }
+    return buf;
+}
+
+// would the pack item improve the member's kit? Weapons compare
+// enchant plus in their own slot (missile weapons look at the
+// RANGED slot), armor compares effective AC (plus, DEX and
+// shield weighed), shields compare enchant. Strict improvement
+// only - equals never swap (no loops).
+inline bool packImproves(const Character& c, const PackItem& p) {
+    if (c.hp <= 0) return false;
+    if (p.kind == 2)
+        return !c.shield || c.shieldPlus < p.plus;
+    if (p.kind == 1) {
+        if (p.id < 0 || p.id >= (int)items::ARMOR_COUNT)
+            return false;
+        items::ArmorInstance cand;
+        cand.id = (items::ArmorId)p.id;
+        cand.plus = p.plus;
+        int oldAc = items::effectiveAc(
+            c.armor, c.shield, c.shieldPlus, c.abilities.dex);
+        int newAc = items::effectiveAc(
+            cand, c.shield, c.shieldPlus, c.abilities.dex);
+        return newAc < oldAc;   // lower = better
+    }
+    if (p.id < 0 || p.id >= (int)items::WPN_COUNT)
+        return false;
+    const items::WeaponDef& w =
+        items::weapon((items::WeaponId)p.id);
+    if (w.missile) return c.rangedWeapon.plus < p.plus;
+    return c.weapon.plus < p.plus;
 }
 
 // ----------------------------------------------------------------------------
