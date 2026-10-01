@@ -582,6 +582,16 @@ void AppState::descend(){
         ++dungeonLevel;
         log.add("You descend the worn stairs...");
         newDungeon(seed + 1000 + dungeonLevel);
+        // R91: the trek lands on the NEW level's clock (the
+        // reset above wiped the old debt - the company
+        // arrives 6 hours deeper, not at a fresh zero)
+        turnCount += descentTurns();
+        // R91: the stairs are the most-wandered ground - one
+        // arrival bite (camp parity: hours pass, one check)
+        if (dm::wanderCheck(dice, wander)) {
+            log.add("Something followed you down!");
+            spawnWanderingEncounter();
+        }
         // R34: the descent takes hours - slots return with the
         // new level (keeps a descended company from being stuck
         // dry with no rest opportunity)

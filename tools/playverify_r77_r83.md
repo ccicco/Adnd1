@@ -143,6 +143,15 @@
       step unburdened, four at 30') - the refactor onto the
       shared tick math must be invisible.
 
+## R91: the stairs
+- [ ] Descend the stairs (step onto them): the new level's
+      HUD Turn starts at 36 (the 6-hour trek lands on the new
+      level's clock - not a fresh zero).
+- [ ] Occasionally the arrival line "Something followed you
+      down!" appears with the level announcement - the one
+      arrival wander check (camp parity: hours pass, one
+      bite). The follower fight happens on the new level.
+
 ## Sign-off
 - [ ] No mojibake anywhere on screen (every string is pure ASCII
       since R84 - report ANY stray glyph, it is a bug).

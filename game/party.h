@@ -644,6 +644,15 @@ inline int restTurns(bool interrupted) {
     return interrupted ? 4 : 48;
 }
 
+// R91: what the stairs cost - 36 turns (6 hours of finding,
+// clearing and descending the worn way down; R34's
+// "the descent takes hours" made literal). Pace-free like
+// rest: the trek is route-finding, not open movement. One
+// arrival wander check accompanies it (camp parity).
+inline int descentTurns() {
+    return 36;
+}
+
 // R88: the company's move rate - the slowest living member's
 // band sets the pace (the company moves together); a dead or
 // empty party is treated as unencumbered
