@@ -509,7 +509,8 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
         logLine(caster.name + " cannot speak the words!");
         return;
     }
-    if (s.level < 1 || s.level > 3) return;
+    // R83: the L4-6 ladder is castable (was gated at 3)
+    if (s.level < 1 || s.level > 6) return;
     if (caster.slotsByLevel[s.level - 1] <= 0) {
         logLine(caster.name + " has no level-" +
                 std::to_string(s.level) + " slots left!");
@@ -517,6 +518,18 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
     }
     --caster.slotsByLevel[s.level - 1];
     logLine(caster.name + " casts " + s.name + "!");
+
+    // R83: Teleport is a party-level escape, not a per-target
+    // effect - the caster whisks the whole company home. The
+    // town is the party's established base, "very familiar" in
+    // PHB terms, so the mishap table is waived (documented
+    // simplification). The slot is spent above; the round ends
+    // (result 4) and the game layer lands the company in town.
+    if (id == spells::MU_TELEPORT && caster.team == 0) {
+        m_teleported = true;
+        logLine("The air folds around the company!");
+        return;
+    }
 
     // pick targets by shape (caller-side targeting, R14 contract).
     // R54: side-aware — a foe caster's spells target the
@@ -986,6 +999,8 @@ int Encounter::stepRound() {
             ev.action.type == rules::ACTION_SPELL) {
             resolveCast(attacker,
                         isParty ? castSpell : monsterCastSpell);
+            if (m_teleported) return 4;   // R83: the escape ends
+                                          // the round immediately
             if (teamAlive(0) == 0 || teamAlive(1) == 0) break;
             continue;
         }

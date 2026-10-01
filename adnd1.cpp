@@ -567,17 +567,20 @@ static void drawCombat(HDC dc, const CombatState& cs) {
         SetTextColor(dc, RGB(230, 210, 160));
         char head[96];
         snprintf(head, sizeof head,
-                 "%s â SPELLS  ([1-9] cast, [c/esc] close)",
+                 "%s â SPELLS  ([1-9A-G] cast, [esc] close)",
                  a.name.c_str());
         TextOutA(dc, 156, 152, head, (int)strlen(head));
 
         int sy = 180;
-        for (size_t i = 0; i < list.size() && i < 9; ++i) {
+        // R83: 16 cast keys - [1-9] then [A-G]
+        for (size_t i = 0; i < list.size() && i < 16; ++i) {
             const spells::SpellDef& s = spells::spell(list[i]);
+            char keych = (i < 9) ? (char)('1' + i)
+                                 : (char)('A' + (i - 9));
             char row[96];
             snprintf(row, sizeof row,
-                     "  [%d] %-20s L%d  ct%d seg  (%d slots)",
-                     (int)i + 1, s.name, s.level, s.castingTime,
+                     "  [%c] %-20s L%d  ct%d seg  (%d slots)",
+                     keych, s.name, s.level, s.castingTime,
                      a.slotsByLevel[s.level - 1]);
             SetTextColor(dc, RGB(210, 195, 165));
             TextOutA(dc, 166, sy, row, (int)strlen(row));
@@ -811,16 +814,18 @@ static void drawTown(HDC dc, const AppState& s) {
     TextOutA(dc, 20, 504, line, (int)strlen(line));
 
     SetTextColor(dc, RGB(160, 150, 120));
-    snprintf(line, sizeof line, "[O] Set out overland â the wild roads");
+    snprintf(line, sizeof line,
+             "[O] overland  [V] sea  [W] city - set out");
     TextOutA(dc, 20, 528, line, (int)strlen(line));
 
-    snprintf(line, sizeof line, "[V] Set sail - the crewed coaster");
+    // R83: the study desk and the temple rite
+    snprintf(line, sizeof line, "[L] Study the carried scrolls");
     TextOutA(dc, 20, 552, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[W] Walk the city streets");
+    snprintf(line, sizeof line, "[R] Raise a fallen member - 1,000 gp");
     TextOutA(dc, 20, 576, line, (int)strlen(line));
 
     snprintf(line, sizeof line, "[B]/[Esc] return to the dungeon");
-    TextOutA(dc, 20, 528, line, (int)strlen(line));
+    TextOutA(dc, 20, 600, line, (int)strlen(line));
 
     // quiver summary so arrow buys are informed
     SetTextColor(dc, RGB(200, 190, 160));
@@ -1266,6 +1271,17 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.townHireCrew();
                         break;
 
+                    // R83: the study desk and the temple rite
+                    case 'L':
+                    case 'l':
+                        g_app.townStudyScrolls();
+                        break;
+
+                    case 'R':
+                    case 'r':
+                        g_app.townRaiseDead();
+                        break;
+
                     case 'B':
                     case 'b':
                     case VK_ESCAPE:
@@ -1386,10 +1402,17 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
             } else if (g_app.mode == MODE_COMBAT) {
                 // R27: while the spell menu is open it owns the keys
                 if (g_app.combat.spellMenuOpen) {
-                    if (wp == 'C' || wp == 'c' || wp == VK_ESCAPE) {
+                    // R83: [esc] closes - letters are cast keys
+                    // now (a full-book MU needs [A-G] to reach the
+                    // L4-6 ladder)
+                    if (wp == VK_ESCAPE) {
                         g_app.combat.spellMenuOpen = false;
-                    } else if (wp >= '1' && wp <= '9') {
-                        int pick = (int)(wp - '1');
+                    } else if ((wp >= '1' && wp <= '9') ||
+                               (wp >= 'A' && wp <= 'G') ||
+                               (wp >= 'a' && wp <= 'g')) {
+                        int pick = (wp <= '9')
+                                       ? (int)(wp - '1')
+                                       : 9 + (int)(wp - (wp < 'a' ? 'A' : 'a'));
                         auto list = g_app.combat.castableSpells();
                         if (pick < (int)list.size()) {
                             g_app.combat.encounter->requestCast(

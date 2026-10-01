@@ -400,6 +400,11 @@ public:
         m_throwMember = memberIndex;
     }
 
+    // R83: a party Teleport ends the encounter - the game layer
+    // reads this after the round to route the company to town
+    // (result 4, no spoils).
+    bool teleported() const { return m_teleported; }
+
     // R21: free swing by a monster against a party member (used by
     // the flee sequence; resolved through the normal melee path).
     int partingSwing(Actor& attacker, Actor& defender);
@@ -432,6 +437,8 @@ private:
     int  m_shootMember = -1;                // R28 (-1 = none)
 
     int  m_throwMember = -1;                // R36 (-1 = none)
+
+    bool m_teleported = false;              // R83: Teleport escape
 
     int  m_distance = 5;   // R43: engagement range in 10' bands
 

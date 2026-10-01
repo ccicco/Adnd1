@@ -611,7 +611,9 @@ struct CombatState {
             if (s.sclass != (mu ? spells::SPELL_MU
                                 : spells::SPELL_CLERIC))
                 continue;
-            if (s.level < 1 || s.level > 3) continue;
+            // R83: the L4-6 ladder is castable - the old 1-3
+            // gate left R80/R82's higher spells forever pending
+            if (s.level < 1 || s.level > 6) continue;
             if (s.level > maxLv) continue;
             if (a.slotsByLevel[s.level - 1] <= 0) continue;
             // R33: MUs cast only what their book holds (cleric
@@ -812,12 +814,13 @@ struct AppState {
 
     // R81: study the carried scrolls (town) - each scroll is an MU
     // spell scroll; one chance-to-learn roll per scroll, consumed
-    // on success or failure (PHB p.10 study convention). Win32
-    // keybinding is a later shell diff.
+    // on success or failure (PHB p.10 study convention).
+    // R83: bound to the [L] town key.
     void townStudyScrolls();
 
     // R82: a 7th+ level cleric raises one dead member (1000 gp
     // offering, survival vs CON per PHB, raised at 1 hp).
+    // R83: bound to the [R] town key.
     void townRaiseDead();
 
     // ---- R41: town hub ------------------------------------------------------

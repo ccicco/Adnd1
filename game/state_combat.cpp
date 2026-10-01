@@ -600,6 +600,10 @@ void AppState::playerFlee(){
 
 // ---- endCombat ----
 void AppState::endCombat(){
+        // R83: a teleport escape - no spoils, and the company
+        // lands in town (read before the encounter resets)
+        bool teleported = combat.encounter &&
+                          combat.encounter->teleported();
         if (combat.encounter) {
             // R24: sync fight results back to the roster BY NAME
             // (hp, level â energy drain can strip levels)
@@ -635,7 +639,8 @@ void AppState::endCombat(){
                 }
             }
 
-            awardVictory();
+            if (!teleported)   // R83: no spoils from an escape
+                awardVictory();
 
             const char* outcome = "?";
             switch (combat.lastResult) {
@@ -643,6 +648,7 @@ void AppState::endCombat(){
                 case 1: outcome = "The party has fallen..."; break;
                 case 2: outcome = "You fled."; break;
                 case 3: outcome = "The monsters fled."; break;
+                case 4: outcome = "The company teleports away!"; break;
                 default: outcome = "The fight ends."; break;
             }
             log.add(outcome);
@@ -655,5 +661,9 @@ void AppState::endCombat(){
         }
         combat.encounter.reset();
         mode = combatReturnMode;   // R68: back to the trail
+        if (teleported) {   // R83: the spell lands the company
+            mode = MODE_TOWN;   // in town, not back on the trail
+            billTownVisit();
+        }
         if (mode == MODE_OVERLAND) checkArrivedHome();
     }
