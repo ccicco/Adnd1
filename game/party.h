@@ -260,6 +260,12 @@ struct Party {
     int  delveCount   = 0;
     int  deepestLevel = 0;
     long totalGold    = 0;
+
+    // R95: the career calendar - total days the company has
+    // been at it (dungeon, trail, sea; town days are free -
+    // recovery and trade). One clock across all three time
+    // models.
+    int  careerDays   = 0;
     int potions = 0;   // R25: shared pool of healing potions
     // R77: carried scrolls (III.B finds; spell study/use is a later
     // round - for now they're held, not sold)

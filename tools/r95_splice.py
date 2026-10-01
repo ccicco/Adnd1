@@ -37,12 +37,12 @@ def patch(path, anchor, repl, label):
     s = rd(path)
     if repl in s:
         print(label + ': already patched')
-        return
+        return True
     i = s.find(anchor)
     if i < 0:
         print(label + ': ANCHOR MISS')
         OK = False
-        return
+        return False
     s = s.replace(anchor, repl, 1)
     wr(path, s)
     print(label + ': patched')
