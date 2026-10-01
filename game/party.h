@@ -49,6 +49,73 @@ static const int PARTY_DEFAULT  = 6;   // starting cap (adjustable 1-6)
 static const int NAME_MAX_CHARS = 16;
 
 // ----------------------------------------------------------------------------
+// R80: quiver bundles — per-shot enchant tracking. Bands of {plus,
+// count}; the front band fires first (mundane before magic, so
+// enchanted shots are spent last), same-plus claims merge, and the
+// total stays under QUIVER_CAP.
+// ----------------------------------------------------------------------------
+struct AmmoBundle {
+    int plus  = 0;    // enchant (+1..+3 in III.H bundles)
+    int count = 0;    // arrows/bolts in the band
+};
+
+inline int quiverTotal(const std::vector<AmmoBundle>& q) {
+    int n = 0;
+    for (const auto& b : q) n += b.count;
+    return n;
+}
+
+// the plus of the next shot to fire (front band; 0 = mundane)
+inline int quiverNextPlus(const std::vector<AmmoBundle>& q) {
+    for (const auto& b : q)
+        if (b.count > 0) return b.plus;
+    return 0;
+}
+
+// add a band (same-plus merge); over-cap trims the TAIL bands first
+inline void quiverAdd(std::vector<AmmoBundle>& q, int plus,
+                      int count, int cap = QUIVER_CAP) {
+    if (count <= 0) return;
+    for (auto& b : q)
+        if (b.plus == plus) { b.count += count; count = 0; break; }
+    if (count > 0) {
+        AmmoBundle nb;
+        nb.plus = plus;
+        nb.count = count;
+        q.push_back(nb);
+    }
+    int over = quiverTotal(q) - cap;
+    while (over > 0 && !q.empty()) {
+        AmmoBundle& tail = q.back();
+        int take = tail.count < over ? tail.count : over;
+        tail.count -= take;
+        over -= take;
+        if (tail.count <= 0) q.pop_back();
+    }
+}
+
+// consume n shots front-first
+inline void quiverConsumeShots(std::vector<AmmoBundle>& q, int n) {
+    if (n <= 0) return;
+    while (n > 0 && !q.empty()) {
+        AmmoBundle& front = q.front();
+        int take = front.count < n ? front.count : n;
+        front.count -= take;
+        n -= take;
+        if (front.count <= 0) q.erase(q.begin());
+    }
+}
+
+// refill the mundane band to n (rest convention: 20 shots)
+inline void quiverRestock(std::vector<AmmoBundle>& q, int n) {
+    for (auto& b : q)
+        if (b.plus == 0) { b.count = n; return; }
+    quiverAdd(q, 0, n);
+}
+
+// ----------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------
 // R24: Character â the durable career record for one party member.
 // The combat Actor is built from this at encounter spawn (toActor)
 // and synced back by name when the fight ends.
@@ -380,72 +447,6 @@ struct Party {
     }
 };
 
-// ----------------------------------------------------------------------------
-// R80: quiver bundles — per-shot enchant tracking. Bands of {plus,
-// count}; the front band fires first (mundane before magic, so
-// enchanted shots are spent last), same-plus claims merge, and the
-// total stays under QUIVER_CAP.
-// ----------------------------------------------------------------------------
-struct AmmoBundle {
-    int plus  = 0;    // enchant (+1..+3 in III.H bundles)
-    int count = 0;    // arrows/bolts in the band
-};
-
-inline int quiverTotal(const std::vector<AmmoBundle>& q) {
-    int n = 0;
-    for (const auto& b : q) n += b.count;
-    return n;
-}
-
-// the plus of the next shot to fire (front band; 0 = mundane)
-inline int quiverNextPlus(const std::vector<AmmoBundle>& q) {
-    for (const auto& b : q)
-        if (b.count > 0) return b.plus;
-    return 0;
-}
-
-// add a band (same-plus merge); over-cap trims the TAIL bands first
-inline void quiverAdd(std::vector<AmmoBundle>& q, int plus,
-                      int count, int cap = QUIVER_CAP) {
-    if (count <= 0) return;
-    for (auto& b : q)
-        if (b.plus == plus) { b.count += count; count = 0; break; }
-    if (count > 0) {
-        AmmoBundle nb;
-        nb.plus = plus;
-        nb.count = count;
-        q.push_back(nb);
-    }
-    int over = quiverTotal(q) - cap;
-    while (over > 0 && !q.empty()) {
-        AmmoBundle& tail = q.back();
-        int take = tail.count < over ? tail.count : over;
-        tail.count -= take;
-        over -= take;
-        if (tail.count <= 0) q.pop_back();
-    }
-}
-
-// consume n shots front-first
-inline void quiverConsumeShots(std::vector<AmmoBundle>& q, int n) {
-    if (n <= 0) return;
-    while (n > 0 && !q.empty()) {
-        AmmoBundle& front = q.front();
-        int take = front.count < n ? front.count : n;
-        front.count -= take;
-        n -= take;
-        if (front.count <= 0) q.erase(q.begin());
-    }
-}
-
-// refill the mundane band to n (rest convention: 20 shots)
-inline void quiverRestock(std::vector<AmmoBundle>& q, int n) {
-    for (auto& b : q)
-        if (b.plus == 0) { b.count = n; return; }
-    quiverAdd(q, 0, n);
-}
-
-// ----------------------------------------------------------------------------
 // R79: the logistics helpers — ammo bundle claims and carried caps.
 // ----------------------------------------------------------------------------
 // R79: carried-stack ceilings. Potions/scrolls pool per party; the
