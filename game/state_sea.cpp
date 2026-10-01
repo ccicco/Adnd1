@@ -56,6 +56,7 @@ void AppState::seaTravel(){
         sea.homeward = false;
         ++sea.day;
         ++sea.daysOut;
+        ++party.careerDays;   // R95: the sea counts
         char buf[96];
         snprintf(buf, sizeof buf, "Day %d at sea - the %s.",
                  sea.day,
@@ -73,6 +74,7 @@ void AppState::seaHomeward(){
         sea.homeward = true;
         ++sea.day;
         --sea.daysOut;
+        ++party.careerDays;   // R95: the sea road counts
         char buf[96];
         snprintf(buf, sizeof buf, "Day %d - the sea road home.",
                  sea.day);

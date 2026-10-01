@@ -82,6 +82,7 @@ bool AppState::saveGame(){
         fprintf(f, "ledger %d %d %ld\n",
                 party.delveCount, party.deepestLevel,
                 party.totalGold);
+        fprintf(f, "caldays %d\n", party.careerDays);
         // R43: the training queue (v1 saves lack this line - the
         // loader treats it as optional)
         fprintf(f, "training %d",
@@ -275,6 +276,15 @@ bool AppState::loadGame(){
                     if (got >= 4) p.henchmanWeaponPlus = wpl;
                     if (got >= 5) p.henchmanShieldPlus = spl;
                 }
+            } else if (strcmp(tag, "caldays") == 0) {
+                int cdays = 0;
+                if (fscanf(f, "%d", &cdays) != 1 ||
+                    cdays < 0 || cdays > 100000) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (caldays).");
+                    return false;
+                }
+                p.careerDays = cdays;
             } else if (strcmp(tag, "ledger") == 0) {
                 // R93: optional line (v1 saves lack it)
                 int dcnt = 0, ddep = 0;

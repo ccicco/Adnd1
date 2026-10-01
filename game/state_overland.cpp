@@ -409,6 +409,7 @@ void AppState::overlandTravel(){
         overland.homeward = false;
         ++overland.day;
         ++overland.daysOut;
+        ++party.careerDays;   // R95: the trail counts
         char buf[96];
         snprintf(buf, sizeof buf, "Day %d - the %s.",
                  overland.day, overlandTerrainName(overland.terrain));
@@ -428,6 +429,7 @@ void AppState::overlandHomeward(){
         overland.homeward = true;
         ++overland.day;
         --overland.daysOut;
+        ++party.careerDays;   // R95: the trail counts
         char buf[96];
         snprintf(buf, sizeof buf, "Day %d - the road home, the %s.",
                  overland.day, overlandTerrainName(overland.terrain));

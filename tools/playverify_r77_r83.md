@@ -178,6 +178,15 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R95: the calendar
+- [ ] Each overland march ([T]/[H]) and sea sailing day
+      increments the career day count
+- [ ] The delve report line ends with the career day total
+- [ ] A save round-trips the caldays value; a v1 save loads
+      with 0 career days
+- [ ] The town arrival string reads "The walls of town rise
+      ahead - the journey is over." (no mangled text)
+
 ## R94: the nerve
 - [ ] With the henchman hired, descend DEEPER than ever
       before: the log shows "The unlit deeps weigh on

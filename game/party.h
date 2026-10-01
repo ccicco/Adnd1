@@ -694,6 +694,15 @@ inline int loyaltyDriftDeepDescent() { return -2; }
 inline int loyaltyDriftDelveDone()   { return  3; }
 inline int loyaltyDriftHardWatch()   { return -1; }
 
+// R95: the calendar. A dungeon day is 144 turns (the R89-R92
+// coherence bound: 120' unencumbered, 6 turns to the hour);
+// the trail and the sea count their own days directly.
+inline int turnsPerDay() { return 144; }
+
+inline int dungeonDays(int turnCount) {
+    return turnCount / turnsPerDay();
+}
+
 // R92: the road home - 12 turns per dungeon level (2 hours
 // of climbing the worn ways back; the ascent skips the
 // clearing and searching the descent spends, hence a third

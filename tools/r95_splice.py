@@ -46,6 +46,7 @@ def patch(path, anchor, repl, label):
     s = s.replace(anchor, repl, 1)
     wr(path, s)
     print(label + ': patched')
+    return True
 
 # ---------------------------------------------------------------------------
 # 1) state_overland.cpp - the mangled arrival string (pre-existing

@@ -43,6 +43,16 @@ void AppState::enterTown(){
             log.add(lb);
         }
         char rb[128];
+        // R95: the delve's days convert at 144 turns apiece
+        // and join the career clock
+        int dDays = dungeonDays(turnCount);
+        party.careerDays += dDays;
+        snprintf(rb, sizeof rb,
+                 "Delve #%d complete - %d gp hauled "
+                 "(career: depth %d, %ld gp, %d days).",
+                 party.delveCount, party.delveGold,
+                 party.deepestLevel, party.totalGold,
+                 party.careerDays);
         snprintf(rb, sizeof rb,
                  "Delve #%d complete - %d gp hauled "
                  "(career: depth %d, %ld gp).",
