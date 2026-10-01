@@ -178,6 +178,21 @@
       round trip; a pre-R93 save loads with a clean ledger
       (Delve #1 on the next return).
 
+## R94: the nerve
+- [ ] With the henchman hired, descend DEEPER than ever
+      before: the log shows "The unlit deeps weigh on
+      <name>." (only a new record moves him - known halls
+      do not).
+- [ ] An interrupted camp or a bitten retreat road shows no
+      line but quietly costs him 1 nerve (watch the loyalty
+      figure on the town screen roster if displayed).
+- [ ] A clean return shows "<name> is flush with the
+      success." (+3) after the Delve #N report line.
+- [ ] The existing quit checks are unchanged: loyalty below
+      25 in town billing, or a failed d100 at the descent
+      gate, still loses him - but the stat now moves with
+      the career instead of only dunning.
+
 ## Sign-off
 - [ ] No mojibake anywhere on screen (every string is pure ASCII
       since R84 - report ANY stray glyph, it is a bug).

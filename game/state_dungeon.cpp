@@ -10,6 +10,11 @@ void AppState::restExplore(){
         turnCount += restTurns(true);
         if (dm::wanderCheck(dice, wander)) {
             log.add("The rest is interrupted!");
+            // R94: the frightened watch costs him nerve
+            if (party.henchmanPresent && party.henchmanHp > 0)
+                party.henchmanLoyalty = loyaltyDrift(
+                    party.henchmanLoyalty,
+                    loyaltyDriftHardWatch());
             spawnWanderingEncounter();
             return;
         }

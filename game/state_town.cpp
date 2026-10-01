@@ -13,6 +13,11 @@ void AppState::enterTown(){
         // not charge the climb twice.
         if (dm::wanderCheck(dice, wander)) {
             log.add("Something follows you to the stairs!");
+            // R94: a frightened watch costs him a little nerve
+            if (party.henchmanPresent && party.henchmanHp > 0)
+                party.henchmanLoyalty = loyaltyDrift(
+                    party.henchmanLoyalty,
+                    loyaltyDriftHardWatch());
             spawnWanderingEncounter();
             return;   // the town can wait; the fight cannot
         }
@@ -25,6 +30,18 @@ void AppState::enterTown(){
         // billTownVisit below)
         ++party.delveCount;
         party.totalGold += party.delveGold;
+        // R94: a completed delve lifts the hire - shared
+        // success, and the purse to follow
+        if (party.henchmanPresent && party.henchmanHp > 0) {
+            party.henchmanLoyalty = loyaltyDrift(
+                party.henchmanLoyalty,
+                loyaltyDriftDelveDone());
+            char lb[96];
+            snprintf(lb, sizeof lb,
+                     "%s is flush with the success.",
+                     party.henchmanName.c_str());
+            log.add(lb);
+        }
         char rb[128];
         snprintf(rb, sizeof rb,
                  "Delve #%d complete - %d gp hauled "

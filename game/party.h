@@ -668,6 +668,26 @@ inline int deepestOf(int cur, int level) {
     return level > cur ? level : cur;
 }
 
+// R94: the hire's loyalty drift. Range 0..125 (the loader's
+// existing bounds); clampLoyalty keeps every drift in range.
+inline int clampLoyalty(int loy) {
+    if (loy < 0) return 0;
+    if (loy > 125) return 125;
+    return loy;
+}
+
+inline int loyaltyDrift(int loy, int delta) {
+    return clampLoyalty(loy + delta);
+}
+
+// R94: the career events that move him - a NEW deepest
+// record costs 2 (the unlit deeps wear), a completed delve
+// pays 3 (shared success, and the purse), a frightened
+// watch (interrupted camp or a bitten road) costs 1.
+inline int loyaltyDriftDeepDescent() { return -2; }
+inline int loyaltyDriftDelveDone()   { return  3; }
+inline int loyaltyDriftHardWatch()   { return -1; }
+
 // R92: the road home - 12 turns per dungeon level (2 hours
 // of climbing the worn ways back; the ascent skips the
 // clearing and searching the descent spends, hence a third

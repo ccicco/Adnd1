@@ -606,8 +606,22 @@ void AppState::placeStairs(){
 void AppState::descend(){
         ++dungeonLevel;
         // R93: the career ledger tracks the deepest level
+        int before = party.deepestLevel;
         party.deepestLevel =
             deepestOf(party.deepestLevel, dungeonLevel);
+        // R94: a NEW deepest record wears on the hire (only
+        // a record moves him - treading known halls does not)
+        if (party.deepestLevel > before &&
+            party.henchmanPresent && party.henchmanHp > 0) {
+            party.henchmanLoyalty = loyaltyDrift(
+                party.henchmanLoyalty,
+                loyaltyDriftDeepDescent());
+            char lb[96];
+            snprintf(lb, sizeof lb,
+                     "The unlit deeps weigh on %s.",
+                     party.henchmanName.c_str());
+            log.add(lb);
+        }
         log.add("You descend the worn stairs...");
         newDungeon(seed + 1000 + dungeonLevel);
         // R91: the trek lands on the NEW level's clock (the
