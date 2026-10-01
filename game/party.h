@@ -717,6 +717,20 @@ inline int henchmanUpkeep(int level, bool hasRaise) {
     return 100 * level + (hasRaise ? 100 : 0);
 }
 
+// R104: the town's scales - every shop asks the same
+// question of the purse; this is the single asking (the
+// maintenance survey found the guard-and-spend pattern
+// repeated across eighteen town shops).
+inline bool spendGold(Party& p, MessageLog& log, int cost,
+                      const std::string& refusal) {
+    if (p.gold < cost) {
+        log.add(refusal);
+        return false;
+    }
+    p.gold -= cost;
+    return true;
+}
+
 // R95: the calendar. A dungeon day is 144 turns (the R89-R92
 // coherence bound: 120' unencumbered, 6 turns to the hour);
 // the trail and the sea count their own days directly.

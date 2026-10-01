@@ -161,11 +161,9 @@ void AppState::leaveTown(){
 // ---- townBuyPotion ----
 void AppState::townBuyPotion(){
         if (mode != MODE_TOWN) return;
-        if (party.gold < 50) {
-            log.add("The priest shakes his head - 50 gp.");
+        if (!spendGold(party, log, 50,
+                "The priest shakes his head - 50 gp."))
             return;
-        }
-        party.gold -= 50;
         ++party.potions;
         char buf[96];
         snprintf(buf, sizeof buf,
@@ -189,11 +187,9 @@ void AppState::townBuyArrows(){
             log.add("The fletcher shrugs - no one carries a bow.");
             return;
         }
-        if (party.gold < 30) {
-            log.add("The fletcher wants 30 gp.");
+        if (!spendGold(party, log, 30,
+                "The fletcher wants 30 gp."))
             return;
-        }
-        party.gold -= 30;
         taker->missileAmmo += 20;
         char buf[96];
         snprintf(buf, sizeof buf,
@@ -205,11 +201,9 @@ void AppState::townBuyArrows(){
 // ---- townInnRest ----
 void AppState::townInnRest(){
         if (mode != MODE_TOWN) return;
-        if (party.gold < 10) {
-            log.add("The innkeeper wants 10 gp for the night.");
+        if (!spendGold(party, log, 10,
+                "The innkeeper wants 10 gp for the night."))
             return;
-        }
-        party.gold -= 10;
         // R96: the town clock - a night at the inn is a
         // career day spent whole
         ++party.careerDays;
@@ -286,11 +280,9 @@ void AppState::townTempleHeal(){
             log.add("The priests see no wounds to mend.");
             return;
         }
-        if (party.gold < 100) {
-            log.add("The high priest asks 100 gp for a cure.");
+        if (!spendGold(party, log, 100,
+                "The high priest asks 100 gp for a cure."))
             return;
-        }
-        party.gold -= 100;
         best->hp = best->maxHp;
         char buf[96];
         snprintf(buf, sizeof buf,
@@ -315,12 +307,10 @@ void AppState::townBuySword(){
             log.add("No fighter needs a blade today.");
             return;
         }
-        if (party.gold < 500) {
-            log.add("The smith wants 500 gp for the enchanted "
-                    "blade.");
+        if (!spendGold(party, log, 500,
+                "The smith wants 500 gp for the enchanted "
+                "blade."))
             return;
-        }
-        party.gold -= 500;
         taker->weapon.id = items::WPN_LONG_SWORD;
         taker->weapon.plus = 1;
         log.add(taker->name + " buys a +1 long sword.");
@@ -348,14 +338,11 @@ void AppState::townTrain(){
         // R44: the keep's masters-at-arms instruct their lord's
         // company at half fees
         if (party.strongholdBuilt) cost /= 2;
-        if (party.gold < cost) {
-            char buf[96];
-            snprintf(buf, sizeof buf,
-                     "The training master wants %d gp.", cost);
-            log.add(buf);
+        char tbuf[96];
+        snprintf(tbuf, sizeof tbuf,
+                 "The training master wants %d gp.", cost);
+        if (!spendGold(party, log, cost, tbuf))
             return;
-        }
-        party.gold -= cost;
         // R96: the town clock - training burns days equal
         // to the new level on the career calendar. The
         // count is taken BEFORE trainNext raises c.level
@@ -394,11 +381,9 @@ void AppState::townBuyChain(){
             log.add("No one needs chain mail today.");
             return;
         }
-        if (party.gold < 75) {
-            log.add("The armorer wants 75 gp.");
+        if (!spendGold(party, log, 75,
+                "The armorer wants 75 gp."))
             return;
-        }
-        party.gold -= 75;
         taker->armor.id = items::ARMOR_CHAIN_MAIL;
         log.add(taker->name + " buys chain mail.");
     }
@@ -435,11 +420,9 @@ void AppState::townBuyScroll(){
             log.add("No magic-user can study the scroll.");
             return;
         }
-        if (party.gold < 200) {
-            log.add("The scribe wants 200 gp.");
+        if (!spendGold(party, log, 200,
+                "The scribe wants 200 gp."))
             return;
-        }
-        party.gold -= 200;
         // pick a spell this taker does not know
         std::vector<int> forHim;
         for (int id : unknown)
@@ -480,11 +463,9 @@ void AppState::townBuildStronghold(){
                     "land.");
             return;
         }
-        if (party.gold < 10000) {
-            log.add("The masons want 10,000 gp for the keep.");
+        if (!spendGold(party, log, 10000,
+                "The masons want 10,000 gp for the keep."))
             return;
-        }
-        party.gold -= 10000;
         party.strongholdBuilt = true;
         party.strongholdOwner = owner;
         log.add(party.members[owner].name +
@@ -494,11 +475,9 @@ void AppState::townBuildStronghold(){
 // ---- townBuyIdentify ----
 void AppState::townBuyIdentify(){
         if (mode != MODE_TOWN) return;
-        if (party.gold < 100) {
-            log.add("The scribe wants 100 gp for the scroll.");
+        if (!spendGold(party, log, 100,
+                "The scribe wants 100 gp for the scroll."))
             return;
-        }
-        party.gold -= 100;
         ++party.identifyScrolls;
         char buf[96];
         snprintf(buf, sizeof buf,
@@ -593,12 +572,9 @@ void AppState::townHireHenchman(){
                     " already rides with the company.");
             return;
         }
-        if (party.gold < 100) {
-            log.add("The crier wants 100 gp to post the "
-                    "offer.");
+        if (!spendGold(party, log, 100,
+                "The crier wants 100 gp to post the offer."))
             return;
-        }
-        party.gold -= 100;
         int chaAdj = 0;
         for (const auto& c : party.members) {
             if (c.hp <= 0) continue;
@@ -654,16 +630,14 @@ void AppState::townHireHenchman(){
 // ---- townSage ----
 void AppState::townSage(){
         if (mode != MODE_TOWN) return;
-        if (party.gold < 200) {
-            log.add("The sage wants 200 gp for his lore.");
-            return;
-        }
         auto keys = dm::encounterKeys(registry, dungeonLevel);
         if (keys.empty()) {
             log.add("The sage knows nothing of this depth.");
             return;
         }
-        party.gold -= 200;
+        if (!spendGold(party, log, 200,
+                "The sage wants 200 gp for his lore."))
+            return;
         std::string lore = "The sage speaks of: ";
         int shown = 0;
         for (const auto& k : keys) {
@@ -708,11 +682,9 @@ void AppState::townSpy(){
                     "clean.");
             return;
         }
-        if (party.gold < 500) {
-            log.add("The spy wants 500 gp for the mission.");
+        if (!spendGold(party, log, 500,
+                "The spy wants 500 gp for the mission."))
             return;
-        }
-        party.gold -= 500;
         std::string report = "The spy reports: ";
         int shown = 0;
         for (const auto& room : occupancy.rooms) {
@@ -731,11 +703,9 @@ void AppState::townSpy(){
 // ---- townPeddler ----
 void AppState::townPeddler(){
         if (mode != MODE_TOWN) return;
-        if (party.gold < 500) {
-            log.add("The peddler wants 500 gp for the item.");
+        if (!spendGold(party, log, 500,
+                "The peddler wants 500 gp for the item."))
             return;
-        }
-        party.gold -= 500;
         int pick = 1 + (int)rng.below(5);
         switch (pick) {
             case 1: {
@@ -915,12 +885,10 @@ void AppState::townGiftHire(){
                     " is content - he takes no gifts.");
             return;
         }
-        if (party.gold < 25) {
-            log.add("A gift wants 25 gp - the purse is "
-                    "too thin.");
+        if (!spendGold(party, log, 25,
+                "A gift wants 25 gp - the purse is "
+                "too thin."))
             return;
-        }
-        party.gold -= 25;
         party.henchmanPurse += 25;
         party.henchmanLoyalty = loyaltyDrift(
             party.henchmanLoyalty, loyaltyGift());
@@ -948,15 +916,12 @@ void AppState::townUpgradeHire(){
                         "nothing more to give him.");
                 return;
             }
-            if (party.gold < 500) {
-                char buf[96];
-                snprintf(buf, sizeof buf,
-                         "A raise costs 500 gp - the purse "
-                         "holds %d.", party.gold);
-                log.add(buf);
+            char rbuf[96];
+            snprintf(rbuf, sizeof rbuf,
+                     "A raise costs 500 gp - the purse "
+                     "holds %d.", party.gold);
+            if (!spendGold(party, log, 500, rbuf))
                 return;
-            }
-            party.gold -= 500;
             party.henchmanRaise = true;
             party.henchmanLoyalty = loyaltyDrift(
                 party.henchmanLoyalty, loyaltyRaise());
@@ -990,12 +955,10 @@ void AppState::townHireCrew(){
                     "with you.");
             return;
         }
-        if (party.gold < 200) {
-            log.add("The harbormaster wants 200 gp to sign "
-                    "a crew.");
+        if (!spendGold(party, log, 200,
+                "The harbormaster wants 200 gp to sign "
+                "a crew."))
             return;
-        }
-        party.gold -= 200;
         party.crewHired = true;
         log.add("A coaster's company of twenty signs on. "
                 "They will ferry your takings to market.");
@@ -1160,12 +1123,10 @@ void AppState::townRaiseDead(){
             log.add("No member of the company is dead.");
             return;
         }
-        if (party.gold < 1000) {
-            log.add("The temple demands a 1,000 gp offering "
-                    "for the rite.");
+        if (!spendGold(party, log, 1000,
+                "The temple demands a 1,000 gp offering "
+                "for the rite."))
             return;
-        }
-        party.gold -= 1000;
         char buf[96];
         int survival = rules::conResSurvival(dead->abilities.con);
         if ((int)dice.roll(1, 100, 0) <= survival) {
