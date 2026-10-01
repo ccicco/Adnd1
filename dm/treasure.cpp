@@ -1,8 +1,8 @@
 // ============================================================================
-// Adnd1 — dm/treasure.cpp
+// Adnd1 - dm/treasure.cpp
 // R71: MM Treasure Types (p.105) + DMG treasure determination (pp.25-27,
 // 120-125). Data transcribed from the Curtiss-verified table files; see
-// treasure.h for provenance. All rolls through rules::Dice — deterministic.
+// treasure.h for provenance. All rolls through rules::Dice - deterministic.
 // ============================================================================
 
 #include "treasure.h"
@@ -29,7 +29,7 @@ static int valIn(rules::Dice& d, int lo, int hi) {                  // 0 = n/a
 }
 
 // ----------------------------------------------------------------------------
-// Gems — DMG p.25-26. Base value by percentile, then the d10 variation
+// Gems - DMG p.25-26. Base value by percentile, then the d10 variation
 // roll with the book's reroll/step rules. Returns the gem's gp value.
 // ----------------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ static const int kGemBase[6]    = { 10, 50, 100, 500, 1000, 5000 };
 static const long long kGemUp[7] = { 10000, 25000, 50000, 100000,
                                      250000, 500000, 1000000 };
 // Below 10 gp (dice result 0, per the printed rule): 5 gp, 1 gp, then
-// 10 sp, 5 sp, 1 sp — encoded in gp (a sp is 1/10 gp, cp 1/100).
+// 10 sp, 5 sp, 1 sp - encoded in gp (a sp is 1/10 gp, cp 1/100).
 static const long long kGemDown[5] = { 5, 1, 1, 0, 0 };
 
 static const char* kOrnamental[12] = {
@@ -108,7 +108,7 @@ static const char* gemName(rules::Dice& dice, long long v) {
 }
 
 // ----------------------------------------------------------------------------
-// Jewelry — DMG p.26. Percentile class, uniform value in the class range,
+// Jewelry - DMG p.26. Percentile class, uniform value in the class range,
 // d10 workmanship (each 1 promotes and re-checks), and for gem-set
 // pieces the d8 (+5,000) then d6 doubling chain, max 640,000 gp.
 // ----------------------------------------------------------------------------
@@ -135,7 +135,7 @@ long long rollJewelryValue(rules::Dice& dice) {
     return rollJewelry(dice, &desc);
 }
 
-// R73: shared body — rolls a piece of jewelry and, if desc is non-null,
+// R73: shared body - rolls a piece of jewelry and, if desc is non-null,
 // reports its final workmanship class for the loot log flavor.
 static long long rollJewelry(rules::Dice& dice, const char** desc) {
     int pct = d100(dice);
@@ -164,7 +164,7 @@ static long long rollJewelry(rules::Dice& dice, const char** desc) {
 }
 
 // ----------------------------------------------------------------------------
-// Magic item tables — DMG pp.121-125 (III.A-H). Rows are the printed
+// Magic item tables - DMG pp.121-125 (III.A-H). Rows are the printed
 // percentile bands; xp/gp are the printed values (xpHi/gpHi > xp/gp
 // mark printed ranges, rolled uniform). qlo/qhi > 0 mark bundled finds.
 // ----------------------------------------------------------------------------
@@ -621,7 +621,7 @@ static const ItemRow kSwords[] = {
 
 // ---- III.H Miscellaneous Weapons ------------------------------------------------
 // NOTE: rows 57-60 and 61-62 are BOTH printed "Hammer +2" with different
-// values (Curtiss-verified against p.125) — transcribed verbatim.
+// values (Curtiss-verified against p.125) - transcribed verbatim.
 static const ItemRow kWeapons[] = {
     { 1,8,    "Arrow +1", 20,0, 120,0, 2,24 },
     { 9,12,   "Arrow +2", 50,0, 300,0, 2,16 },
@@ -663,7 +663,7 @@ static const ItemRow kWeapons[] = {
 
 // ---- III.B Scrolls -----------------------------------------------------------
 // 01-60: N spells of the given level range (30% clerical, of which 25%
-// druidical; 10% of magic-user scrolls illusionist — noted in flavor).
+// druidical; 10% of magic-user scrolls illusionist - noted in flavor).
 struct ScrollRow { int lo, hi; int nSpells; int lvLo, lvHi; };
 static const ScrollRow kSpellScrolls[] = {
     { 1,10, 1, 1,4 }, { 11,16, 1, 1,6 }, { 17,19, 1, 2,9 },
@@ -815,7 +815,7 @@ MagicItem rollMagicItem(rules::Dice& dice) {
     return rollFromCategory(dice, rollCategory(dice));
 }
 
-// "Any N" — N rolls on table III (with the letter's printed exclusions).
+// "Any N" - N rolls on table III (with the letter's printed exclusions).
 static void addAnyItems(rules::Dice& dice, Hoard& h, int n,
                         bool noSwords, bool noWeapons) {
     for (int i = 0; i < n; ++i) {
@@ -839,7 +839,7 @@ static void addOneOfEach(rules::Dice& dice, Hoard& h, int nEach) {
             h.magic.push_back(rollFromCategory(dice, cat));
 }
 
-// A map per the DMG Map Table — flavor note only (maps never list
+// A map per the DMG Map Table - flavor note only (maps never list
 // their treasure; where they lead is the DM's province).
 static void addMap(rules::Dice& dice, Hoard& h) {
     int r = 1 + d100(dice);
@@ -851,14 +851,14 @@ static void addMap(rules::Dice& dice, Hoard& h) {
 }
 
 // ----------------------------------------------------------------------------
-// MM Treasure Types — the verified p.105 table.
+// MM Treasure Types - the verified p.105 table.
 // ----------------------------------------------------------------------------
 
 struct CoinCell { int lo, hi, pct; };       // nil = pct 0; J-N = pct -1
 struct GemCell  { int lo, hi, pct; };
 enum MagicKind {
     MK_NONE,        // letter has no magic column
-    MK_ANY,         // "Any N [plus extras]" — table III rolls
+    MK_ANY,         // "Any N [plus extras]" - table III rolls
     MK_SAW,         // "sword, armor, or misc. weapon"
     MK_POTIONS,     // 2-8 potions
     MK_SCROLLS,     // 1-4 scrolls
@@ -922,7 +922,7 @@ static void addGems(rules::Dice& dice, Hoard& h, const GemCell& g) {
         long long v = rollGemValue(dice);
         h.gemValue += v;
         ++h.gemCount;
-        // R73: flavor — name the stone in the loot log
+        // R73: flavor - name the stone in the loot log
         char nb[96];
         snprintf(nb, sizeof nb, "a %s worth %lld gp",
                  gemName(dice, v), v);
@@ -939,7 +939,7 @@ static void addJewelry(rules::Dice& dice, Hoard& h, const GemCell& j) {
         long long v = rollJewelry(dice, &desc);
         h.jewelryValue += v;
         ++h.jewelryCount;
-        // R73: flavor — name the piece in the loot log
+        // R73: flavor - name the piece in the loot log
         char nb[112];
         snprintf(nb, sizeof nb,
                  "jewelry of %s worth %lld gp", desc, v);
@@ -953,7 +953,7 @@ Hoard rollTreasureType(rules::Dice& dice, char letter,
     if (letter < 'A' || letter > 'Z') return h;
     const LetterDef& L = kLetters[letter - 'A'];
 
-    // J-N: "pieces per individual" — the coin itself, per creature
+    // J-N: "pieces per individual" - the coin itself, per creature
     if (L.cp.pct == -1) {
         h.cp = (long long)inRange(dice, L.cp.lo, L.cp.hi) * nCreatures;
         return h;
@@ -996,7 +996,7 @@ Hoard rollTreasureType(rules::Dice& dice, char letter,
                     h.magic.push_back(rollFromCategory(dice, 1));
                 break;
             case MK_SAW: {
-                // "sword, armor, or misc. weapon" — even thirds
+                // "sword, armor, or misc. weapon" - even thirds
                 int pick = (int)dice.d(3) - 1;
                 int cat = (pick == 0) ? 10 : (pick == 1) ? 9 : 11;
                 h.magic.push_back(rollFromCategory(dice, cat));

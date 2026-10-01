@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — monsters/MonsterRegistry.h
+// Adnd1 - monsters/MonsterRegistry.h
 // Lua-driven monster definitions. Each monsters/monsters/*.lua file
 // returns a table describing one monster; the registry loads the
 // directory and maps entries to ai::Actor via toActor().
@@ -175,7 +175,7 @@ public:
                       int hp = -1, int hdOverride = -1,
                       int hpPerDie = 0) const;   // hp < 0 = roll from HD
 
-    // R52: DEPRECATED — superseded by dm/encounters.h (the
+    // R52: DEPRECATED - superseded by dm/encounters.h (the
     // real DMG Appendix C tables). Kept for regtest only; new
     // code uses dm::encounterKeys / dm::rollDungeonEncounter.
     std::vector<std::string> keysForLevel(int dungeonLevel) const;

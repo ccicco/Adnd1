@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — abilities/abilities.h
+// Adnd1 - abilities/abilities.h
 // Character-facing special abilities: thief skills, class features.
 //
 // Source: Players Handbook (2012 Premium reprint), pp. 26-28 (thief

@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — rules/rules_test.cpp
+// Adnd1 - rules/rules_test.cpp
 // Minimal self-contained test harness. Every rules/ domain adds CHECKs here.
 //
 // Build & run (MinGW or Linux):

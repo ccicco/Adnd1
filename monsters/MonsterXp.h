@@ -1,17 +1,17 @@
 // ============================================================================
-// Adnd1 — monsters/MonsterXp.h
+// Adnd1 - monsters/MonsterXp.h
 // R49+: runtime XP resolution for monsters whose XP is not a fixed
 // number in the MM1 data (xpSource in the lua schema).
 //
-//   merged_mm1    : xp/xpPerHp/xpValue are book values — use as-is.
-//   perm_x10      : unique demon/devil princes — printed lump XP (xp field).
-//   role_variant  : variant of a base race — xp/xpValue already set.
-//   by_hit_dice   : variable-HD animals (horses, whales, sharks) —
+//   merged_mm1    : xp/xpPerHp/xpValue are book values - use as-is.
+//   perm_x10      : unique demon/devil princes - printed lump XP (xp field).
+//   role_variant  : variant of a base race - xp/xpValue already set.
+//   by_hit_dice   : variable-HD animals (horses, whales, sharks) -
 //                   roll HD at spawn, then DMG p.85 formula.
-//   age_bracket   : dragons — age bracket (1-8) sets hp/die and the
+//   age_bracket   : dragons - age bracket (1-8) sets hp/die and the
 //                   effective HD tier for the DMG formula.
-//   by_head_count : hydra — heads = hit dice.
-//   by_level      : classed NPCs (men-types, sahuagin clerics) —
+//   by_head_count : hydra - heads = hit dice.
+//   by_level      : classed NPCs (men-types, sahuagin clerics) -
 //                   wired to rules/classes: per the p.85 footnote
 //                   "all levels as the n + 1 hit dice category", a
 //                   level-n character reads bracket row n+1; hp from
@@ -78,7 +78,7 @@ struct SpawnContext {
 // sits in the bracket ending at n+1 (rowForHd in the .cpp applies
 // the "+1" rule when the def carries hit dice bonus). Row 0 is
 // the sub-1-HD bracket. 21+ is FLAT per print (the pre-R59 code
-// compounded x1.15/hd past 20 — retired).
+// compounded x1.15/hd past 20 - retired).
 int baseForHd(int hd);
 
 // DMG p.85 XP-per-hit-point ladder (printed bands; see the table
@@ -104,14 +104,14 @@ int eaxpaForHd(int hd);
 // the def: typed specials (poison/paralysis/drain/breath), magic
 // resistance, hit-only-by-magic, 4+ attacks, AC 0 or lower, high
 // damage (max > 24), high intelligence, and strong text markers.
-// Heuristic — the book hand-tunes its own suggested values.
+// Heuristic - the book hand-tunes its own suggested values.
 int specialCountOf(const MonsterDef& def);
 int exceptionalCountOf(const MonsterDef& def);
 
 // Total XP for killing one specimen. Dispatches on def.xpSource.
 int xpForKill(const MonsterDef& def, const SpawnContext& ctx);
 
-// R53: XP for a classed NPC killed OUTSIDE the lua registry —
+// R53: XP for a classed NPC killed OUTSIDE the lua registry -
 // Character Subtable party members (the def-free by_level
 // path; same DMG p.85 formula xpForKill dispatches to).
 int xpForNpc(const SpawnContext& ctx);

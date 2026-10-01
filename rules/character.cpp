@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — rules/character.cpp
+// Adnd1 - rules/character.cpp
 // PHB p.9-13 ability tables as constexpr arrays.
 // 2012 Premium reprint transcription; cross-checked vs 1979 scan.
 // ============================================================================

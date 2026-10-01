@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — dm/encounters.cpp — see encounters.h
+// Adnd1 - dm/encounters.cpp - see encounters.h
 //
 // R52: the DMG Appendix C dungeon tables (Premium reprint p.174-179,
 // OCR-verified against the uploaded DMG): Determination Matrix, Monster
@@ -556,7 +556,7 @@ DungeonEncounter rollDungeonEncounter(
             return e;
         }
         case ROW_CHARACTER: {
-            // R53: the Character Subtable resolves here —
+            // R53: the Character Subtable resolves here -
             // a classed NPC party (DMG p.176)
             e.party = rollCharacterParty(dice, dungeonLevel, mlv);
             e.isParty = true;
@@ -738,7 +738,7 @@ bool raceAllowsClass(int race, int classIndex) {
 } // namespace
 
 // ----------------------------------------------------------------------------
-// R55: DMG p.176-177 party magic items — the level-chance
+// R55: DMG p.176-177 party magic items - the level-chance
 // ladder and Tables I-IV. Only implementable outcomes carry a
 // mechanical effect (weapon/armor/shield/missile pluses); the
 // rest of each table (potions, scrolls, rings, staves, wands,
@@ -986,10 +986,10 @@ int rollNpcRace(rules::Dice& dice, int classIndex) {
     return RACE_HUMAN;
 }
 
-// R58: DMG p.63 Encounter Reactions — percentile adjusted for
+// R58: DMG p.63 Encounter Reactions - percentile adjusted for
 // the spokesman's Charisma, compared to the printed bands. The
 // p.63 "loyalty adjustment as if the creature were a henchman" is
-// not modeled (documented simplification — the strangers owe
+// not modeled (documented simplification - the strangers owe
 // the party no tracked loyalty). The p.176 Confrontation shift:
 // a party that feels weak avoids, negotiates or bluffs (+10).
 PartyReaction rollPartyReaction(rules::Dice& dice, int chaAdj,
@@ -1010,8 +1010,8 @@ PartyReaction rollPartyReaction(rules::Dice& dice, int chaAdj,
 // p.179-181, OCR-verified): Fresh Water shallow (to 50') / deep
 // (below 50'), Salt Water (large bodies) shallow (to 100') /
 // deep (below 100'), and the Dinosaur Subtable. The DMG prints
-// no number columns — "The numbers of monsters encountered are
-// those shown in MONSTER MANUAL" — so count comes from the
+// no number columns - "The numbers of monsters encountered are
+// those shown in MONSTER MANUAL" - so count comes from the
 // registry's noAppearing fields (0/0 falls back to 1).
 //
 // Footnotes are modeled as re-rolls per the book's own
@@ -1027,7 +1027,7 @@ PartyReaction rollPartyReaction(rules::Dice& dice, int chaAdj,
 // footnoted-substitution convention): Koalinth -> hobgoblin,
 // Kopoacinth -> gargoyle, Lacedon -> ghoul, Elf (aquatic) ->
 // elf, "Mottled (purple) worm" -> purple_worm. R61: the
-// whale-size rows now map to distinct MM Whale entries —
+// whale-size rows now map to distinct MM Whale entries -
 // carnivorous L/M/S -> sperm_whale/killer_whale/black_whale,
 // plain L/M/S -> whale/right_whale/white_whale_beluga
 // (R60 approximated them to single keys). All other rows map
@@ -1040,7 +1040,7 @@ enum WaterFlagBits { WF_NONE = 0, WF_COOL_ONLY = 1, WF_WARM_ONLY = 2,
 
 struct WaterRow { int lo, hi; const char* key; int flags; };
 
-// ---- Fresh Water, Shallow Water Encounters (to 50') — DMG p.180 ----
+// ---- Fresh Water, Shallow Water Encounters (to 50') - DMG p.180 ----
 static const WaterRow kFreshShallow[] = {
     {  1,  6, "giant_beaver",    WF_COOL_ONLY},
     {  7, 10, "giant_crayfish",  WF_NONE},
@@ -1071,7 +1071,7 @@ static const WaterRow kFreshShallow[] = {
     {100,100, "water_weird",     WF_NONE},
 };
 
-// ---- Fresh Water, Deep Water Encounters (below 50') — DMG p.180 ----
+// ---- Fresh Water, Deep Water Encounters (below 50') - DMG p.180 ----
 static const WaterRow kFreshDeep[] = {
     {  1,  1, "giant_beaver",    WF_COOL_ONLY},
     {  2,  6, "water_beetle",    WF_NONE},
@@ -1098,7 +1098,7 @@ static const WaterRow kFreshDeep[] = {
     {100,100, "water_weird",     WF_NONE},
 };
 
-// ---- Salt Water, Shallow Water Encounters (to 100') — DMG p.181 ----
+// ---- Salt Water, Shallow Water Encounters (to 100') - DMG p.181 ----
 static const WaterRow kSaltShallow[] = {
     {  1,  2, "barracuda",            WF_NONE},
     {  3,  5, "giant_crab",            WF_NONE},
@@ -1144,7 +1144,7 @@ static const WaterRow kSaltShallow[] = {
     { 99,100, "white_whale_beluga",    WF_NONE},   // whale small
 };
 
-// ---- Salt Water, Deep Water Encounters (below 100') — DMG p.181 ----
+// ---- Salt Water, Deep Water Encounters (below 100') - DMG p.181 ----
 static const WaterRow kSaltDeep[] = {
     {  1,  3, "giant_crayfish",   WF_NONE},
     {  4,  5, "giant_crocodile",  WF_NONE},
@@ -1183,7 +1183,7 @@ static const WaterRow kSaltDeep[] = {
     { 99,100, "white_whale_beluga", WF_NONE},   // whale small
 };
 
-// ---- Dinosaur Subtable — DMG p.190 ----
+// ---- Dinosaur Subtable - DMG p.190 ----
 static const WaterRow kDinoSub[] = {
     {  1, 15, "archelon_ischyros", WF_NONE},
     { 16, 35, "dinichthys",        WF_DEEP_ONLY},
@@ -1299,13 +1299,13 @@ std::vector<std::string> waterEncounterKeys(
 }
 
 // ----------------------------------------------------------------------------
-// R63: the outdoor (wilderness) encounter tables — DMG Appendix C
+// R63: the outdoor (wilderness) encounter tables - DMG Appendix C
 // (Premium reprint p.182-191, OCR-verified against the uploaded DMG).
 // Eight climate tables, each a creature-major table across eight
 // terrain columns: Plain, Scrub, Forest, Rough, Desert, Hills,
 // Mountains, Marsh. (Rough includes ruins within five miles of the
-// party per the book footnote.) Subtables — Demi-Human, Dragon, Frog,
-// Giant, Humanoid, Lycanthrope, Men, Snake, Sphinx, Spider, Undead —
+// party per the book footnote.) Subtables - Demi-Human, Dragon, Frog,
+// Giant, Humanoid, Lycanthrope, Men, Snake, Sphinx, Spider, Undead -
 // resolve on the second percentile against the same terrain column;
 // the tropical table's Sphinx footnote is a single-column subtable
 // instead. Pick-sets (Ki-rin/Lammasu/Shedu, Leprechaun/Brownie,
@@ -1313,8 +1313,8 @@ std::vector<std::string> waterEncounterKeys(
 // Wolf/Wild dog) resolve on the second percentile modulo set size;
 // Porcupine/Skunk maps to giant_porcupine/giant_skunk (the
 // bestiary carries the giant varieties only).
-// The DMG prints no number columns — "the numbers of monsters
-// encountered are those shown in MONSTER MANUAL" — so counts
+// The DMG prints no number columns - "the numbers of monsters
+// encountered are those shown in MONSTER MANUAL" - so counts
 // come from the registry's noAppearing fields, as in R60.
 // Substitutions documented in-row: Men, tribesmen -> caveman and
 // nomad -> dervish (no separate bestiary entries), brigand -> bandit,
@@ -2533,7 +2533,7 @@ static bool resolveOutdoorKey(const OutdoorRow* row, int terrain,
     return true;
 }
 
-// The registry keys one climate/terrain column can produce — the
+// The registry keys one climate/terrain column can produce - the
 // regtest-style companion of rollOutdoorEncounter.
 static void pushOutKeys(std::vector<std::string>& out,
                         const monsters::MonsterRegistry& reg,
@@ -2633,7 +2633,7 @@ DungeonEncounter rollOutdoorEncounter(
         if (!resolveOutdoorKey(row, ti, pctile2, key)) return e;
 
         if (key == "SUB_CHARACTER") {
-            // Men Subtable Character row — wilderness character
+            // Men Subtable Character row - wilderness character
             // party, levels 7-10 (p.187 note)
             e.party = rollCharacterParty(dice, 8, 8);
             e.isParty = true;
@@ -2677,12 +2677,12 @@ std::vector<std::string> outdoorEncounterKeys(
 }
 
 // ----------------------------------------------------------------------------
-// R64: the CITY/TOWN ENCOUNTER MATRIX — DMG Appendix C (Premium
+// R64: the CITY/TOWN ENCOUNTER MATRIX - DMG Appendix C (Premium
 // reprint p.190-192, OCR-verified against the uploaded DMG). One
 // matrix, two percentile columns (daytime / nighttime; several
 // rows are night-only, marked "-" in the book). Asterisked types
 // (assassin, city guard, cleric, druid, fighter, illusionist,
-// magic-user, ranger, thief) roll the p.191 race check —
+// magic-user, ranger, thief) roll the p.191 race check -
 // rollNpcRace (R62); unasterisked classed types are human (1e
 // class restrictions: paladin, monk, rake, city watch, city
 // official). Classed and service encounters resolve as
@@ -2690,7 +2690,7 @@ std::vector<std::string> outdoorEncounterKeys(
 // civilian fictions (beggar, drunk, goodwife, harlot, laborer,
 // peddler, gentleman, noble, mercenary, merchant, pilgrim,
 // press gang, ruffian, tradesman, bard) carry printed counts
-// but no bestiary entry — their flavor subtables (harlot type
+// but no bestiary entry - their flavor subtables (harlot type
 // p.192, drunk-of-what-type p.191, noble gender, ruffian 1-in-4
 // half-orc/humanoid) are fiction the engine does not model,
 // documented in the row comments. Numbers are the printed
@@ -2702,7 +2702,7 @@ std::vector<std::string> outdoorEncounterKeys(
 // precedent and the book's own advice ("they may be ignored
 // entirely if desirable", p.191). The lich half of "Vampire or
 // Lich (75%/25%)" and the ghast half of "Ghoul or Ghast
-// (30%/70%)" take the ghost treatment — one specimen — where
+// (30%/70%)" take the ghost treatment - one specimen - where
 // the book prints no separate number (lich) or the ghoul's
 // 4-16 (ghast, same-as-ghoul per the ghost text). Bard (of
 // "Monk or Bard 60%/40%") is a single fiction NPC: the 1e
@@ -2713,12 +2713,12 @@ std::vector<std::string> outdoorEncounterKeys(
 // explanations print both ghoul 4-16 and ghast);
 // "Wereat" -> Wererat, "Wereiger" -> Weretiger (night 91-93 /
 // 94). Day bandits print no number ("a nondescript group being
-// seen") — 3-12, the nighttime number, is used, documented.
+// seen") - 3-12, the nighttime number, is used, documented.
 // City magic (p.192): 1st-or-higher classed city NPCs roll
 // the CHANCE PER LEVEL FOR MAGIC ITEM table per category;
 // potions, scrolls, rings, wands and misc magic have no
 // mechanical effect here (R55 precedent), protection devices
-// roll the printed subtable. WIRED SINCE R70 — the city
+// roll the printed subtable. WIRED SINCE R70 - the city
 // streets excursion loop rolls this matrix (game/appstate.h).
 
 namespace {
@@ -2845,7 +2845,7 @@ int cityCountFor(rules::Dice& dice, const std::string& key, bool night) {
 
 // p.192 protection device subtable (the mechanically usable
 // outcomes; the amulet of life protection has no mechanical
-// effect here — R55 precedent)
+// effect here - R55 precedent)
 enum { PROT_RING1, PROT_RING2, PROT_RING3, PROT_AMULET,
        PROT_BRACERS6, PROT_BRACERS4, PROT_BRACERS2,
        PROT_DISPLACEMENT, PROT_CLOAK1, PROT_CLOAK2, PROT_CLOAK3 };
@@ -2876,11 +2876,11 @@ static int plusForLevel(int level) {
 
 } // namespace
 
-// R64: p.192 CHANCE PER LEVEL FOR MAGIC ITEM — one percentile
+// R64: p.192 CHANCE PER LEVEL FOR MAGIC ITEM - one percentile
 // roll per category at (chance x level). Group 0: assassin,
 // fighter, thief, etc.; group 1: cleric, druid; group 2:
 // magic-user. The printed monk column has no engine class
-// (monks resolve as fighters per R53) — documented. Potions,
+// (monks resolve as fighters per R53) - documented. Potions,
 // scrolls, rings, wands/staffs/rods and misc magic exist in
 // the fiction but have no mechanical effect here (R55).
 static void rollCityMagicItems(rules::Dice& dice, PartyMember& m) {
@@ -2902,7 +2902,7 @@ static void rollCityMagicItems(rules::Dice& dice, PartyMember& m) {
         m.rngPlus = plusForLevel(lvl);
     if ((int)dice.roll(1, 100, 0) <= armor[group] * lvl) {
         m.armPlus = plusForLevel(lvl);
-        // "Armor &/or Shield" — the shield is a coin-flip half
+        // "Armor &/or Shield" - the shield is a coin-flip half
         // of the category (documented split)
         if ((int)dice.roll(1, 2, 0) == 2)
             m.shdPlus = plusForLevel(lvl);
@@ -2966,7 +2966,7 @@ static CharacterParty rollCityParty(rules::Dice& dice,
     };
 
     if (t == "assassin") {
-        // 1-3 assassins; the book prints no level here — the
+        // 1-3 assassins; the book prints no level here - the
         // 5th-8th ruffian bodyguard range, the only city
         // assassin range printed, is used (documented)
         int n = (int)dice.roll(1, 3, 0);
@@ -3017,7 +3017,7 @@ static CharacterParty rollCityParty(rules::Dice& dice,
     } else if (t == "magic_user") {
         // magic-user 7th-12th (d6+6) + 1-4 henchmen: 45%
         // apprentices (d6 level), 30% fighter guards (d4+3),
-        // 25% a mixture "providing 2 or 4 henchmen" — the
+        // 25% a mixture "providing 2 or 4 henchmen" - the
         // count is forced to 2 or 4 and split evenly
         add(rules::CLASS_MAGIC_USER,
             6 + (int)dice.roll(1, 6, 0), true);
@@ -3066,7 +3066,7 @@ static CharacterParty rollCityParty(rules::Dice& dice,
     } else if (t == "city_guard") {
         // 2-16 0-level guardsmen; 1 leader (2 if more than 8,
         // 3 if more than 12) of 2nd-5th (d4+1); plus an
-        // indentured magic-user of 1st-4th — all race-checked
+        // indentured magic-user of 1st-4th - all race-checked
         // (the matrix asterisks the City guard)
         int n = 1 + (int)dice.roll(1, 16, 0);
         addMan(n);
@@ -3091,7 +3091,7 @@ static CharacterParty rollCityParty(rules::Dice& dice,
     } else if (t == "city_official") {
         // a minor bureaucrat (10% a major official with 2-8
         // guards); always 1-4 personal fighters (d4 level).
-        // The official is fiction — a man-at-arms shape —
+        // The official is fiction - a man-at-arms shape -
         // the guards are classed. No asterisk: human.
         addMan(1);
         bool major = (int)dice.roll(1, 10, 0) == 10;
@@ -3128,7 +3128,7 @@ DungeonEncounter rollCityEncounter(
         // the book's own advice: "they may be ignored entirely
         // if desirable ... treat these encounters as highly
         // special" (p.191); nycadaemon/mezzadaemon are
-        // unimplemented (R52) — ignore & re-roll
+        // unimplemented (R52) - ignore & re-roll
         if (key == "demon_or_nycadaemon" ||
             key == "devil_or_mezzadaemon") {
             pctile  = 1 + (int)dice.roll(1, 100, 0) - 1;
@@ -3173,7 +3173,7 @@ DungeonEncounter rollCityEncounter(
     return e;
 }
 
-// Every result key the matrix can produce — registry keys for
+// Every result key the matrix can produce - registry keys for
 // the monsters, fiction keys for the civilians, party-type
 // keys for the classed and service encounters (resolved as
 // character parties). The regtest companion of
@@ -3219,21 +3219,21 @@ std::vector<std::string> cityEncounterKeys(
 
 
 // ----------------------------------------------------------------------------
-// R65: the ASTRAL & ETHEREAL encounter tables — DMG Appendix C
+// R65: the ASTRAL & ETHEREAL encounter tables - DMG Appendix C
 // (Premium reprint p.181, OCR-verified against the uploaded
 // DMG). "Encounters occur 1 in 20; check at the beginning,
 // midpoint, and end of the journey." Unlike the outdoor
-// tables, these print a Numbers column — counts come from the
+// tables, these print a Numbers column - counts come from the
 // table rows, not the registry. The astral/ethereal footnote
 // (*): basilisk, cockatrice, gorgon and medusa "do not
 // actually travel therein ... their possible appearance
 // applies only to situations in which the encounter allows
 // effect to extend from the Prime Material Plane; otherwise
-// ignore the encounter result and roll again" — carried as
+// ignore the encounter result and roll again" - carried as
 // PF_PRIME_ONLY, gated on the caller's primeAdjacent flag
 // and re-rolled when false (the R60 footnote-clime
 // precedent). "Dragon, chromatic" / "Dragon, platinum" are
-// Tiamat and Bahamut — the bestiary's chromatic_dragon /
+// Tiamat and Bahamut - the bestiary's chromatic_dragon /
 // platinum_dragon keys, documented. Demon/devil tiers are
 // pick-sets on the second percentile (R52 style): minor ->
 // the six type I-IV demons, major -> the ten type V/VI
@@ -3246,7 +3246,7 @@ std::vector<std::string> cityEncounterKeys(
 // party (see rollPlanarTravellerParty). The Psychic Wind
 // and Ether Cyclone tables (chance 5% per plane crossed)
 // are transcribed verbatim as results the caller interprets
-// — the engine has no planar travel yet, so lost-days and
+// - the engine has no planar travel yet, so lost-days and
 // cord effects are fiction-only (documented; R60/R63 no-
 // wiring precedent).
 
@@ -3360,12 +3360,12 @@ const PlanarRow* planarTable(PlanarBody body, size_t& n) {
 // 8-15, paladin 7-16, ranger 7-16, magic-user 11-20,
 // illusionist 10-17, thief 9-16, assassin 10-15, monk 8-17,
 // bard 11-18 (the bard's fighter 7th-8th / thief 6th-9th
-// dual abilities are unmodeled — the thief range, per the
+// dual abilities are unmodeled - the thief range, per the
 // R53 bard convention). The remaining members roll
 // professions on the standard subtable without per-class
 // maxima; the monk/bard split is 60/40 (city-matrix
 // precedent, documented). Race: rollNpcRace per class
-// (R62) — nothing printed, the character-party convention.
+// (R62) - nothing printed, the character-party convention.
 // Magic items: the R55 ladder (rollMagicItemsFor), the
 // character-party convention, documented.
 static CharacterParty rollPlanarTravellerParty(rules::Dice& dice) {
@@ -3471,7 +3471,7 @@ DungeonEncounter rollPlanarEncounter(
     return e;
 }
 
-// Every result key the table can produce — the regtest-style
+// Every result key the table can produce - the regtest-style
 // companion of rollPlanarEncounter. Footnote (*) creatures
 // appear only when the encounter allows prime-material
 // effect; they are listed regardless (R60 precedent) and the
@@ -3510,7 +3510,7 @@ std::vector<std::string> planarEncounterKeys(
 }
 
 // ----------------------------------------------------------------------------
-// R65: PSYCHIC WIND (astral) & ETHER CYCLONE (ethereal) — DMG
+// R65: PSYCHIC WIND (astral) & ETHER CYCLONE (ethereal) - DMG
 // p.181, transcribed verbatim. "The chance of a delayed or
 // disrupted journey is 5% per plane crossed." The effects
 // are journey fiction the engine does not yet simulate (no
@@ -3519,7 +3519,7 @@ std::vector<std::string> planarEncounterKeys(
 // over the printed range (the book prints only the range;
 // the spread is a documented approximation). The saving
 // throw versus magic (wind 20 / cyclone 19-20) is the
-// caller's — passed in as saveMade.
+// caller's - passed in as saveMade.
 
 PsychicWindResult rollPsychicWind(rules::Dice& dice, int d20,
                                   bool saveMade) {
@@ -3538,7 +3538,7 @@ PsychicWindResult rollPsychicWind(rules::Dice& dice, int d20,
         else
             r.cordBroken = true;
         // no-cord projection: lost AND different destination
-        // (p.181 note) — the caller reads cordBroken plus
+        // (p.181 note) - the caller reads cordBroken plus
         // OffCourse semantics; fiction, documented
     }
     return r;
@@ -3565,7 +3565,7 @@ EtherCycloneResult rollEtherCyclone(rules::Dice& dice, int d20,
 
 
 // ----------------------------------------------------------------------------
-// R66: the PSIONIC ENCOUNTER TABLE — DMG Appendix C (Premium
+// R66: the PSIONIC ENCOUNTER TABLE - DMG Appendix C (Premium
 // reprint p.182, OCR-verified against the uploaded DMG).
 // "If you opt to include psionic powers in your campaign,
 // then certain random encounters will be with
@@ -3576,18 +3576,18 @@ EtherCycloneResult rollEtherCyclone(rules::Dice& dice, int d20,
 // encounter is otherwise indicated." The 1-in-4 gate is the
 // caller's (dice passed in, engine has no psionics yet);
 // spellResemblesPsionicPower below implements the printed
-// spells list. The table prints a Numbers column — counts
-// come from the table, not the registry — except the yellow
+// spells list. The table prints a Numbers column - counts
+// come from the table, not the registry - except the yellow
 // mold row's dash, which falls back to the registry's
 // noAppearing (the R60 convention, documented in-row). The
-// (*) demon/devil rows are "Dice for type or select" — the
+// (*) demon/devil rows are "Dice for type or select" - the
 // R65 pick-sets on the second percentile, reused. The (**)
 // Men row refers to the DUNGEON RANDOM MONSTER TABLE's
-// Character Subtable — a character party; the R63 wilderness
+// Character Subtable - a character party; the R63 wilderness
 // convention rollCharacterParty(dice, 8, 8) is applied, as
 // the psionic table is not dungeon-level-tied (documented).
 // "Roll until an appropriate encounter occurs, ignoring
-// inappropriate results" — the caller's judgement; the
+// inappropriate results" - the caller's judgement; the
 // triton row's "1-3 of total are psionic" is fiction (the
 // count is the printed 10-60). No appstate wiring (R60/R63
 // no-wiring precedent).
@@ -3626,7 +3626,7 @@ static const PsionicRow kPsionicTable[] = {
 } // namespace
 
 // R66: the printed "Spells Resembling Psionic Powers" list
-// (p.182). The families — astral spell, augury, blink,
+// (p.182). The families - astral spell, augury, blink,
 // charm (any), clairadience, clairvoyance, cure (any),
 // detect (any), dimension door, enlarge, ESP, feather fall,
 // feign death, heat metal, heal, hypnotism, invisibility
@@ -3636,7 +3636,7 @@ static const PsionicRow kPsionicTable[] = {
 // case-insensitive on the full name; "(any)" families match
 // by the leading word (charm, cure, detect, invisibility,
 // polymorph, tele-). Magic items performing these powers
-// count as well (the book's note) — the caller's call.
+// count as well (the book's note) - the caller's call.
 bool spellResemblesPsionicPower(const std::string& name) {
     static const char* const exact[] = {
         "astral spell", "augury", "blink", "clairadience",
@@ -3653,7 +3653,7 @@ bool spellResemblesPsionicPower(const std::string& name) {
     }
     for (const char* e : exact)
         if (lower == e) return true;
-    // "(any)" families — the printed leading word
+    // "(any)" families - the printed leading word
     static const char* const family[] = {
         "charm", "cure", "detect", "invisibility",
         "polymorph", "tele"
@@ -3686,7 +3686,7 @@ DungeonEncounter rollPsionicEncounter(
         else if (key == "PSI_DEVIL_GREATER") key = kDevilGreater[pctile2 % 3];
 
         if (key == "PSI_MEN") {
-            // (**) Character Subtable party — the R63
+            // (**) Character Subtable party - the R63
             // wilderness convention (not dungeon-level-tied)
             e.party = rollCharacterParty(dice, 8, 8);
             e.isParty = true;
@@ -3729,7 +3729,7 @@ DungeonEncounter rollPsionicEncounter(
     return e;
 }
 
-// Every result key the table can produce — the regtest-style
+// Every result key the table can produce - the regtest-style
 // companion of rollPsionicEncounter.
 std::vector<std::string> psionicEncounterKeys(
         const monsters::MonsterRegistry& reg) {
@@ -3757,13 +3757,13 @@ std::vector<std::string> psionicEncounterKeys(
 
 
 // ----------------------------------------------------------------------------
-// R67: the PATROL and CASTLE/FORTRESS tables — DMG Appendix C
+// R67: the PATROL and CASTLE/FORTRESS tables - DMG Appendix C
 // (Premium reprint p.182-183, OCR-verified against the
 // uploaded DMG). These complete the outdoor tables' context:
 // inhabited areas are patrolled ("roll d20; 5 in 20 are
 // encounters with a patrol"), uninhabited areas occasionally
 // hold strongholds ("1 in 20 is an encounter which discovers
-// such a stronghold" — the party is within visual range,
+// such a stronghold" - the party is within visual range,
 // 1/2 to 5 miles). Both gates are the caller's; the builders
 // below construct what is found.
 //
@@ -3777,32 +3777,32 @@ std::vector<std::string> psionicEncounterKeys(
 // fiction (no itemization in the engine, documented); the
 // book's pointer to Character Subtable party magic items is
 // honored via the R55 ladder (rollMagicItemsFor). Racial
-// composition is "appropriate to the area" — the caller's;
+// composition is "appropriate to the area" - the caller's;
 // classed members roll R62 races, men-at-arms are human
 // (R53 convention).
 //
 // CASTLE TABLE I (p.182): size class and type, 01-00. CASTLE
-// TABLE II: inhabitants per size — totally deserted /
+// TABLE II: inhabitants per size - totally deserted /
 // deserted (monster therein: "roll on the appropriate OUTDOOR
-// ENCOUNTER TABLE, ignoring any rolls which indicate men" —
+// ENCOUNTER TABLE, ignoring any rolls which indicate men" -
 // the R63 rollOutdoorEncounter is the caller's tool) /
 // humans / character-types. SUB-TABLE II.A: humans are
 // bandits / brigands / berserkers / dervishes (brigand ->
 // bandit, the R63 substitution); "numbers and other details
 // ... are given in the MONSTER MANUAL under the heading of
-// MEN" — registry noAppearing (R60 convention), so
+// MEN" - registry noAppearing (R60 convention), so
 // castleHumansCount uses the registry. SUB-TABLE II.B: the
 // master's class and level; henchmen 2-5 with level per the
 // Character Subtable (henchmanLevelFor, one-third the
 // master's, R53) and R55 magic items. OCR defect corrected
 // and documented: the printed "94-96 Assassin / 94-99 MONK
-// / 00 BARD" overlaps — the original prints Assassin 94-96,
+// / 00 BARD" overlaps - the original prints Assassin 94-96,
 // Monk 97-99, Bard 00 (23rd level). The illusionist
 // covered-by-illusion and monk monastery notes are fiction,
 // documented. The garrison men-at-arms (heavy horse 9-12 /
 // light horse 9-16 / foot 13-24 / crossbow 7-12, each led
 // by a 3rd-4th level fighter) lost their per-class
-// assignment to an OCR image extraction — transcribed in
+// assignment to an OCR image extraction - transcribed in
 // the comment below, fiction only, the caller assigns.
 //
 // ARTILLERY per fortress type: transcribed verbatim. The
@@ -3810,8 +3810,8 @@ std::vector<std::string> psionicEncounterKeys(
 // castle types (the book groups); the engine maps by nearest
 // type, documented in castleArtillery. Detection: "roll a
 // surprise die ... if they are surprised, then the fortress
-// occupants know they are there — if surprise is 2 or
-// greater, the occupants are actually outside the place" —
+// occupants know they are there - if surprise is 2 or
+// greater, the occupants are actually outside the place" -
 // castleAwareness maps the die directly (1d6: 1 = aware,
 // 2 = aware and outside, 3+ = undetected; the standard 1e
 // surprise die). Reaction fiction (welcome / joust / ransom)
@@ -3963,7 +3963,7 @@ const char* castleHumansType(int pctile) {
 int castleHumansCount(const monsters::MonsterRegistry& reg,
                       rules::Dice& dice, const char* key) {
     // "Numbers and other details of these humans are given in
-    // the MONSTER MANUAL under the heading of MEN" — registry
+    // the MONSTER MANUAL under the heading of MEN" - registry
     // noAppearing (R60 convention; 0/0 -> single specimen)
     const monsters::MonsterDef* def = reg.find(key);
     if (!def) return 1;
@@ -3977,7 +3977,7 @@ int castleHumansCount(const monsters::MonsterRegistry& reg,
     return 1;
 }
 
-// R67: the stronghold's master per Sub-Table II.B — class by
+// R67: the stronghold's master per Sub-Table II.B - class by
 // percentile, level uniform over the printed range, race per
 // R62, magic items per the R55 ladder (the book's Character
 // Subtable pointer).
@@ -4000,11 +4000,11 @@ PartyMember rollCastleMaster(rules::Dice& dice, int pctile) {
     return m;
 }
 
-// R67: the master's henchmen — "from 2-5 henchmen found
+// R67: the master's henchmen - "from 2-5 henchmen found
 // within a fortress," levels and magic items per the
 // Character Subtable (henchmanLevelFor, one-third of the
 // master's, R53; R62 race follows the master's folk where
-// the class allows — the R63 convention).
+// the class allows - the R63 convention).
 CharacterParty rollCastleHenchmen(rules::Dice& dice,
                                   const PartyMember& master) {
     CharacterParty p;
@@ -4046,9 +4046,9 @@ CastleArtillery castleArtillery(const CastleType& castle) {
     return { 0, 0, 0 };
 }
 
-// R67: fortress detection per the p.183 rule — "roll a
+// R67: fortress detection per the p.183 rule - "roll a
 // surprise die ... if they are surprised, then the fortress
-// occupants know they are there — if surprise is 2 or
+// occupants know they are there - if surprise is 2 or
 // greater, the occupants are actually outside the place and
 // within normal surprise distance." The standard 1e
 // surprise die is 1d6; 1 = surprised (occupants aware),
@@ -4060,7 +4060,7 @@ CastleAwareness castleAwareness(int surpriseDie) {
     return CASTLE_UNDETECTED;
 }
 
-// R67: build a patrol per the p.182 text — fighter (or
+// R67: build a patrol per the p.182 text - fighter (or
 // ranger) leader 6th-8th, lieutenant 4th-5th, sergeant
 // 2nd-3rd, 3-4 1st-level men, 13-24 men-at-arms, plus a
 // cleric 6th-7th (40%) or magic-user 5th-8th (60%). Classed

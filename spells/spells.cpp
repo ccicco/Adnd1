@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — spells/spells.cpp
+// Adnd1 - spells/spells.cpp
 // PHB spell data + slot tables.
 // ============================================================================
 
@@ -14,7 +14,7 @@ namespace spells {
 //   time = spell level in segments by convention when not printed;
 //   rebuild convention: MU casting time = spell level segments,
 //   cleric = spell level + 1 rounded per PHB spell descriptions
-//   where known — see verification debt).
+//   where known - see verification debt).
 // Damage scaling: MU damage spells 1d6 per caster level (fireball,
 // lightning bolt cap at 10d6+ per PHB; the engine caps at cast time).
 // ----------------------------------------------------------------------------
@@ -55,7 +55,7 @@ static const SpellDef kSpells[SPELL_COUNT] = {
     { "Dispel Magic",      SPELL_CLERIC,  3,  4, 12,  0,  -1, TARGET_SPECIAL,    0, 0, 0, false },
     { "Prayer",            SPELL_CLERIC,  3,  4,  0, 60,  -1, TARGET_AREA,       3, 0, 0, false },
     // ---- R80: levels 4-6 (PHB premium reprint; values carry the
-    // file's standing verification debt — printed tables win).
+    // file's standing verification debt - printed tables win).
     // Utility rows land "known, cast pending" (resolveSpell
     // default); combat rows are wired in spelleffects.cpp.
     { "Polymorph Other",     SPELL_MU,     4,  4,  6,  0,   2, TARGET_CREATURE,   0, 0, 0, false },

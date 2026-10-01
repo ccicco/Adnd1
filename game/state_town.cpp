@@ -11,14 +11,14 @@ void AppState::enterTown(){
 // ---- billTownVisit ----
 void AppState::billTownVisit(){
         // R44: the keep pays its rents on every return (the
-        // delve cadence stands in for the month â simplified
+        // delve cadence stands in for the month - simplified
         // stronghold economics)
         if (party.strongholdBuilt) {
             party.gold += 200;
             log.add("The keep's steward delivers 200 gp in "
                     "rents.");
         }
-        // R44: henchman upkeep â 100 gp/level billed on each
+        // R44: henchman upkeep - 100 gp/level billed on each
         // return (DMG p.26 monthly support, delve cadence). A
         // short purse dents loyalty; below 25 he walks.
         if (party.henchmanPresent) {
@@ -34,7 +34,7 @@ void AppState::billTownVisit(){
                 party.henchmanLoyalty -= 10;
                 log.add("The purse is too thin to pay " +
                         party.henchmanName +
-                        " â he takes note.");
+                        " - he takes note.");
             }
             if (party.henchmanLoyalty < 25) {
                 log.add(party.henchmanName +
@@ -42,7 +42,7 @@ void AppState::billTownVisit(){
                 party.henchmanPresent = false;
             }
         }
-        // R45: the hire's THIRD of the take (DMG p.36 â a
+        // R45: the hire's THIRD of the take (DMG p.36 - a
         // stated share; this campaign promised a half share
         // = a third of the delve's gold), paid at the exit
         // into his purse
@@ -67,7 +67,7 @@ void AppState::billTownVisit(){
             log.add(buf);
         }
         party.delveGold = 0;
-        // R46: crew wages — 20 sailors at 2 gp (DMG p.34),
+        // R46: crew wages - 20 sailors at 2 gp (DMG p.34),
         // billed each return (delve cadence)
         if (party.crewHired) {
             if (party.gold >= 40) {
@@ -84,7 +84,7 @@ void AppState::billTownVisit(){
 void AppState::leaveTown(){
         if (mode != MODE_TOWN) return;
         // R44: the loyalty check that gates each delve (DMG
-        // p.37 â a disloyal hire refuses the descent; the roll
+        // p.37 - a disloyal hire refuses the descent; the roll
         // simplified to a single d100 vs loyalty)
         if (party.henchmanPresent) {
             int roll = (int)rng.below(100) + 1;
@@ -105,7 +105,7 @@ void AppState::leaveTown(){
 void AppState::townBuyPotion(){
         if (mode != MODE_TOWN) return;
         if (party.gold < 50) {
-            log.add("The priest shakes his head â 50 gp.");
+            log.add("The priest shakes his head - 50 gp.");
             return;
         }
         party.gold -= 50;
@@ -129,7 +129,7 @@ void AppState::townBuyArrows(){
             if (taker->missileAmmo < 20) break;
         }
         if (!taker) {
-            log.add("The fletcher shrugs â no one carries a bow.");
+            log.add("The fletcher shrugs - no one carries a bow.");
             return;
         }
         if (party.gold < 30) {
@@ -161,7 +161,7 @@ void AppState::townInnRest(){
             if (c.hp + heal > c.maxHp) heal = c.maxHp - c.hp;
             if (heal > 0) c.hp += heal;
         }
-        // R44: the henchman bunks with the company â same 1
+        // R44: the henchman bunks with the company - same 1
         // hp/level natural healing
         if (party.henchmanPresent &&
             party.henchmanHp < party.henchmanMaxHp) {
@@ -263,7 +263,7 @@ void AppState::townTrain(){
             snprintf(buf, sizeof buf,
                      "Training paid (%d gp).", cost);
             log.add(buf);
-            // R34: a trained caster's slot pool may have grown â
+            // R34: a trained caster's slot pool may have grown -
             // restore so the new slots are usable
             restoreSlots();
         }
@@ -382,7 +382,7 @@ void AppState::townBuildStronghold(){
         party.strongholdBuilt = true;
         party.strongholdOwner = owner;
         log.add(party.members[owner].name +
-                " raises a keep â rents will follow.");
+                " raises a keep - rents will follow.");
     }
 
 // ---- townBuyIdentify ----
@@ -418,7 +418,7 @@ void AppState::useIdentifyScroll(){
             party.unidentified.begin());
         --party.identifyScrolls;
         if (it.kind == 0) {
-            // magic weapon â the first living fighter (then
+            // magic weapon - the first living fighter (then
             // anyone) whose blade is a lesser enchant
             Character* taker = nullptr;
             for (auto& c : party.members) {
@@ -446,13 +446,13 @@ void AppState::useIdentifyScroll(){
                          it.plus, taker->name.c_str());
                 log.add(buf);
             } else {
-                log.add("The scroll reveals a long sword â "
+                log.add("The scroll reveals a long sword - "
                         "but no one can better his blade. It "
                         "is sold for 200 gp.");
                 party.gold += 200;
             }
         } else {
-            // enchanted armor â the first living fighter or
+            // enchanted armor - the first living fighter or
             // cleric whose armor is a lesser enchant
             Character* taker = nullptr;
             for (auto& c : party.members) {
@@ -471,7 +471,7 @@ void AppState::useIdentifyScroll(){
                          it.plus, taker->name.c_str());
                 log.add(buf);
             } else {
-                log.add("The scroll reveals enchanted armor â "
+                log.add("The scroll reveals enchanted armor - "
                         "but no one can better his mail. It "
                         "is sold for 200 gp.");
                 party.gold += 200;
@@ -506,7 +506,7 @@ void AppState::townHireHenchman(){
             return;
         }
         // a level-1 fighter answers (stats averaged for the
-        // hire â a simplification vs the book's rolled men)
+        // hire - a simplification vs the book's rolled men)
         static const char* NAMES[] = {
             "Bors", "Gareth", "Hult", "Marda",
             "Oswin", "Pell", "Roderic", "Sela"
@@ -520,7 +520,7 @@ void AppState::townHireHenchman(){
         }
         if (name.empty()) {
             log.add("A sellsword answers, but the company is "
-                    "too well known â he declines.");
+                    "too well known - he declines.");
             return;
         }
         party.henchmanPresent = true;
@@ -569,7 +569,7 @@ void AppState::townSage(){
         if (def) {
             char buf[96];
             // R69: the R49 Lua schema carries hitDiceText (the
-            // printed "4 + 3" form) and armorClass — the old
+            // printed "4 + 3" form) and armorClass - the old
             // hd/ac field names no longer exist
             if (!def->hitDiceText.empty())
                 snprintf(buf, sizeof buf,
@@ -642,7 +642,7 @@ void AppState::townPeddler(){
                             taker->name + " claims it.");
                 } else {
                     addCapped(party.potions, 3, CARRIED_CAP);
-                    log.add("The peddler is out of swords â "
+                    log.add("The peddler is out of swords - "
                             "three potions instead.");
                 }
                 break;
@@ -662,7 +662,7 @@ void AppState::townPeddler(){
                             taker->name + " claims it.");
                 } else {
                     addCapped(party.potions, 3, CARRIED_CAP);
-                    log.add("The peddler is out of armor â "
+                    log.add("The peddler is out of armor - "
                             "three potions instead.");
                 }
                 break;
@@ -678,7 +678,7 @@ void AppState::townPeddler(){
                         "inked.");
                 break;
             default: {
-                // a spell scroll â one random unknown L1 MU
+                // a spell scroll - one random unknown L1 MU
                 // spell to the first MU who lacks it (the
                 // peddler's stock is identified)
                 std::vector<int> cands;
@@ -700,7 +700,7 @@ void AppState::townPeddler(){
                 }
                 if (cands.empty()) {
                     addCapped(party.potions, 3, CARRIED_CAP);
-                    log.add("No scrolls your sages can use â "
+                    log.add("No scrolls your sages can use - "
                             "three potions instead.");
                 } else {
                     int sid = cands[(size_t)rng.below(
@@ -739,13 +739,13 @@ void AppState::describeRoom(int roomIndex){
         room.flavorSeen = true;
         const char* line = nullptr;
         if (!room.monsterKey.empty())
-            line = "Furs and cracked bones litter the floor â "
+            line = "Furs and cracked bones litter the floor - "
                    "something lives here.";
         else if (room.trap == 1)
             line = "The dust lies thick and undisturbed "
                    "here.";
         else if (room.looted)
-            line = "Spent torch stubs and old scorch marks â "
+            line = "Spent torch stubs and old scorch marks - "
                    "someone camped here before you.";
         else if (room.trap == 2)
             line = "Darts jut from the wall at knee height.";
@@ -807,7 +807,7 @@ void AppState::townUpgradeHire(){
         if (party.henchmanPurse < 100) {
             char buf[96];
             snprintf(buf, sizeof buf,
-                     "%s's purse holds only %d gp — the "
+                     "%s's purse holds only %d gp - the "
                      "armorers want 100.",
                      party.henchmanName.c_str(),
                      party.henchmanPurse);

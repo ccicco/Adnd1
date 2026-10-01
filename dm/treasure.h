@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — dm/treasure.h
+// Adnd1 - dm/treasure.h
 // R71: Monster Manual Treasure Types (Premium reprint p.105, verified
 // cell-by-cell against the printed page) + DMG Random Treasure
 // Determination (pp.25-27, 120-125; Curtiss-verified OCR corrections
@@ -8,7 +8,7 @@
 // Tuerny, Jacinth, Heward's, twin Hammer +2 rows printed as-is).
 //
 // Scope: rollTreasureType(letter) reproduces a monster's hoard per the
-// MM table — coins (chance-gated ranges), gems and jewelry (DMG base
+// MM table - coins (chance-gated ranges), gems and jewelry (DMG base
 // value + variation rolls), and the maps-or-magic column (DMG tables
 // III / III.A-H, percentile into sub-tables exactly as printed).
 //
@@ -28,18 +28,18 @@
 namespace dm {
 namespace treasure {
 
-// R77: kind of a magic item — category refined by printed name.
+// R77: kind of a magic item - category refined by printed name.
 // The claim layer (appstate) uses this to decide who can take what.
 enum MagicItemKind : int {
     MIK_NONE = 0,
-    MIK_SWORD,        // III.G blade — melee weapon slot
+    MIK_SWORD,        // III.G blade - melee weapon slot
     MIK_MELEE,        // III.H melee (axe/hammer/mace/spear/dagger..)
-    MIK_MISSILE,      // III.H bow/crossbow/sling — ranged slot
-    MIK_AMMO,         // III.H arrow/bolt bundle — quiver (deferred)
-    MIK_SHIELD,       // III.F shield rows — the shield slot
-    MIK_ARMOR,        // III.F armor rows — the armor slot
-    MIK_SCROLL,       // III.B scrolls — carried, studied later
-    MIK_OTHER         // rings/rods/misc — not claimable yet
+    MIK_MISSILE,      // III.H bow/crossbow/sling - ranged slot
+    MIK_AMMO,         // III.H arrow/bolt bundle - quiver (deferred)
+    MIK_SHIELD,       // III.F shield rows - the shield slot
+    MIK_ARMOR,        // III.F armor rows - the armor slot
+    MIK_SCROLL,       // III.B scrolls - carried, studied later
+    MIK_OTHER         // rings/rods/misc - not claimable yet
 };
 
 // ----------------------------------------------------------------------------
@@ -66,11 +66,11 @@ struct MagicItem {
     // meaningful for categories 10 (swords) and 11 (weapons)
     int  weaponPlus() const;
 
-    // R77: what the item IS, derived from category + printed name —
+    // R77: what the item IS, derived from category + printed name -
     // the claim layer (appstate) acts on kind, not raw category
     MagicItemKind kind() const;
     // R77: printed curses & traps (III.F/G/H cursed rows). Claimed
-    // categories skip cursed items — the party never "upgrades"
+    // categories skip cursed items - the party never "upgrades"
     // into a Sword +1, Cursed or a Shield -1
     bool cursed() const;
 };
@@ -115,7 +115,7 @@ struct Hoard {
     // Total value in gold pieces at the 1e exchange rates, including
     // gem/jewelry appraisals and magic items at their printed sale
     // value (the engine carries no item inventory; the take is
-    // appraised and carried — simplification recorded in R71 notes).
+    // appraised and carried - simplification recorded in R71 notes).
     long long goldValue() const {
         long long v = cp / 100 + sp / 10 + ep * 5 / 10 + gp + pp * 10;
         v += gemValue + jewelryValue;
@@ -134,7 +134,7 @@ struct Hoard {
 
 // ----------------------------------------------------------------------------
 // Roll one MM Treasure Type letter (A-Z) once, per the verified p.105
-// table. magicOnly selects only the maps-or-magic column — the MM's
+// table. magicOnly selects only the maps-or-magic column - the MM's
 // "G (magic)" / "C (magic only)" annotations (e.g. lizard man entries).
 //
 // For J-N (the "pieces per individual" rows), nCreatures multiplies the
@@ -146,7 +146,7 @@ Hoard rollTreasureType(rules::Dice& dice, char letter,
                        int nCreatures = 1, bool magicOnly = false);
 
 // ----------------------------------------------------------------------------
-// Gem and jewelry appraisals (DMG pp.25-27) — exposed for tests.
+// Gem and jewelry appraisals (DMG pp.25-27) - exposed for tests.
 // Each gem: percentile base value, then the printed d10 variation roll
 // (rerolling 1/0 per the book's rules, bounded by the +/- step caps).
 // Each piece of jewelry: percentile class + uniform value in class,
@@ -156,7 +156,7 @@ Hoard rollTreasureType(rules::Dice& dice, char letter,
 long long rollGemValue(rules::Dice& dice);
 long long rollJewelryValue(rules::Dice& dice);
 
-// One item from the DMG Magic Items table (III) — percentile through
+// One item from the DMG Magic Items table (III) - percentile through
 // the sub-tables; potion/scroll/ring/rod/misc/armor/sword/weapon rows
 // resolved to name, xp, and gp sale value.
 MagicItem rollMagicItem(rules::Dice& dice);

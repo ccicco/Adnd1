@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — rules/classes.cpp
+// Adnd1 - rules/classes.cpp
 //
 // RE-AUTHORED from the R4 spec after the original upload was lost.
 // VERIFICATION DEBT: xpForLevel rows and titleFor ladders follow
@@ -70,7 +70,7 @@ int xpForLevel(int classIndex, int level) {
 }
 
 // ----------------------------------------------------------------------------
-// Titles (PLACEHOLDER LADDERS — display only; verify vs PHB p.20-31)
+// Titles (PLACEHOLDER LADDERS - display only; verify vs PHB p.20-31)
 // ----------------------------------------------------------------------------
 
 static const char* const TITLES_FIGHTER[9] = {

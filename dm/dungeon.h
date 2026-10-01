@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — dm/dungeon.h
+// Adnd1 - dm/dungeon.h
 // Walking dungeon generator on the Appendix A tables (dm/dm.h R8).
 // Deterministic per seed. Produces a world::Map plus a room list with
 // contents tags for the later monster/treasure placement layers.

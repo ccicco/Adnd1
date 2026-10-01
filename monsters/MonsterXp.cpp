@@ -1,9 +1,9 @@
 // ============================================================================
-// Adnd1 — monsters/MonsterXp.cpp
+// Adnd1 - monsters/MonsterXp.cpp
 // R49+: implementation of the xpSource dispatch (see MonsterXp.h).
 //
 // Design notes
-//   * The 355 merged_mm1 entries are exact book values — we never
+//   * The 355 merged_mm1 entries are exact book values - we never
 //     recompute those. xpForKill uses xp + xpPerHp * actualHp so an
 //     under- or over-average specimen awards correctly (DMG awards
 //     per hit point of the actual creature).
@@ -20,8 +20,8 @@
 //   6300/7400 vs the printed 4000 bracket) and compounded past 20
 //   (printed: flat 5000 at 21+); HD 1/5/8 per-hp also drifted.
 //   The award for resolved sources is now the printed ADDITIVE
-//   formula — BXPV + XP/HP x hp + SAXPB x nSpecial +
-//   EAXPA x nExceptional (book example: owlbear 30 hp = 405) —
+//   formula - BXPV + XP/HP x hp + SAXPB x nSpecial +
+//   EAXPA x nExceptional (book example: owlbear 30 hp = 405) -
 //   replacing the x2/x3/x4 tier-multiplier heuristic.
 // ============================================================================
 
@@ -54,7 +54,7 @@ int baseForHd(int hd) {
     return 5000;
 }
 
-// R59: printed "+1" bracket rule — a def of n (+p) HD sits in the
+// R59: printed "+1" bracket rule - a def of n (+p) HD sits in the
 // bracket ending at n+1 when it carries any hp-per-die bonus
 // (e.g. 4 + 1 -> "4 + 1 to 5" -> BXPV 90, not 60). Sub-1 HD (half
 // dice) reads the "up to 1 - 1" bracket (row 0).
@@ -129,7 +129,7 @@ int eaxpaForHd(int hd) {
 //   exceptional (***): energy drain, paralysis, poison, major
 //     breath weapon, magic resistance, spell use, swallowing
 //     whole, weakness, attacks causing max damage > 24.
-// Heuristic from the loaded def — the book hand-tunes its own
+// Heuristic from the loaded def - the book hand-tunes its own
 // suggested values, so counts approximate the printed examples
 // (owlbear: 1 special; dragon: 4 special / 3 exceptional).
 // ----------------------------------------------------------------------------
@@ -234,13 +234,13 @@ int exceptionalCountOf(const MonsterDef& def) {
 // Character Subtable party members, who have no lua record.
 // Printed p.85 footnote: "Treat peasants/levies as up to 1 - 1,
 // men-at-arms as 1 - 1 to 1, and all levels as the n + 1 hit dice
-// category" — a level-n character reads bracket row n+1. Spell
+// category" - a level-n character reads bracket row n+1. Spell
 // use is an exceptional ability (p.85 ***): casters add EAXPA.
 // ----------------------------------------------------------------------------
 int xpForNpc(const SpawnContext& ctx) {
     if (ctx.level <= 0) {
         // 0-level men-at-arms: "1 - 1 to 1" bracket (BXPV 10,
-        // 1 xp/hp — printed men-at-arms row; peasants/levies at 5
+        // 1 xp/hp - printed men-at-arms row; peasants/levies at 5
         // are never spawned by the encounter generator)
         int hp = ctx.actualHp > 0 ? ctx.actualHp : 4;
         return 10 + 1 * hp;
@@ -326,7 +326,7 @@ int xpForKill(const MonsterDef& def, const SpawnContext& ctx) {
     }
 
     // dragons: age bracket 1-8 sets hp/die; HD is the species range
-    // (black 6-8, red 9-11, etc.) — ctx.hd is the rolled dice.
+    // (black 6-8, red 9-11, etc.) - ctx.hd is the rolled dice.
     // Printed dragon example (ancient red, 88 hp): BXPV 1300 +
     // 16/hp + SAXPB x4 (armor class, special defense, high
     // intelligence, saving throw bonus) + EAXPA x3 (major breath
@@ -349,7 +349,7 @@ int xpForKill(const MonsterDef& def, const SpawnContext& ctx) {
 
     // hydra: heads == hit dice. Printed example: a 10-headed
     // hydra (80 hp) = BXPV 900 + XP/HP 14 x 80 + SAXPB 450 x1
-    // (multiple attacks) — the additive formula directly.
+    // (multiple attacks) - the additive formula directly.
     if (src == "by_head_count") {
         int hd = ctx.heads > 0 ? ctx.heads : def.hitDiceNum;
         if (hd < 1) hd = 5;   // MM1 default roll band 5-12

@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — rules/character.h
+// Adnd1 - rules/character.h
 // Ability scores and ability-score modifiers.
 //
 // Source: Players Handbook (2012 Premium reprint), pp. 9-13.
@@ -83,7 +83,7 @@ int dexDefensiveAdj(uint8_t dex);   // -4..+0  (better DEX = lower AC)
 // CON table (PHB p.12)
 //   hpAdj: bonus hp per hit die (clerics/fighters +1..+2 at high CON;
 //          full table applies to all classes per PHB, fighters gain the
-//          higher values — see rules/classes conHPAdjustment)
+//          higher values - see rules/classes conHPAdjustment)
 //   systemShock: percent (d100 <= value = survive)
 //   resurrectionSurvival: percent
 //   poisonSaveAdj: save modifier vs. poison
@@ -123,7 +123,7 @@ XPPct primeRequisitePct(uint8_t score);
 //   GEN_4D6_DROP: 4d6 drop lowest, in order (rebuild default for pre-gens;
 //                 logged as rebuild decision R3)
 // Both roll STR first, then INT, WIS, DEX, CON, CHA. Exceptional
-// strength is NOT rolled here — rolled on demand by the class layer
+// strength is NOT rolled here - rolled on demand by the class layer
 // for fighter-group characters (and only at STR 18).
 // ----------------------------------------------------------------------------
 enum GenMethod : int { GEN_3D6 = 0, GEN_4D6_DROP };

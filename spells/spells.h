@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — spells/spells.h
+// Adnd1 - spells/spells.h
 // Spell registry and spell-slot progressions. Data + slots only;
 // resolution of effects is spelleffects/ (R14).
 //
@@ -9,7 +9,7 @@
 //   - Spell slot tables: class tables pp. 20-36
 //   - Chance to learn: INT table p.10
 // Values follow the PHB as recorded in project notes (verification
-// debt — printed tables win when the PDF is re-uploaded).
+// debt - printed tables win when the PDF is re-uploaded).
 // ============================================================================
 
 #pragma once
@@ -119,7 +119,7 @@ SpellClass spellClass(SpellId id);
 // ----------------------------------------------------------------------------
 // Spell slots (PHB class tables): usable spells per spell level at
 // a given class level. Rows to name level; beyond, max row repeats
-// (1e: gained spells stop advancing — followers/strongholds take
+// (1e: gained spells stop advancing - followers/strongholds take
 // over; rebuild convention: hold at final row).
 // ----------------------------------------------------------------------------
 int spellSlots(SpellClass sc, int classLevel, int spellLevel);

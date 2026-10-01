@@ -8,7 +8,7 @@ void AppState::enterOverland(){
         log.add("The company sets out along the wild roads.");
         char buf[96];
         snprintf(buf, sizeof buf,
-                 "Day 1 — the %s, within sight of town.",
+                 "Day 1 - the %s, within sight of town.",
                  overlandTerrainName(overland.terrain));
         log.add(buf);
     }
@@ -18,7 +18,7 @@ void AppState::overlandSetTerrain(int t){
         if (mode != MODE_OVERLAND) return;
         if (t < dm::T_PLAIN || t > dm::T_MARSH) return;
         if (overland.castle.pending) {
-            log.add("Decide the castle first — [A]pproach or [P]ass.");
+            log.add("Decide the castle first - [A]pproach or [P]ass.");
             return;
         }
         if (t == overland.terrain) return;
@@ -67,7 +67,7 @@ void AppState::overlandWildEncounter(){
             overlandClime(),
             (dm::OutdoorTerrain)overland.terrain);
         if (e.isParty) {
-            // the Men Subtable Character row — a wilderness
+            // the Men Subtable Character row - a wilderness
             // character party of levels 7-10 (R63, p.187 note)
             overlandMeeting(e, "adventurers", true, false);
             return;
@@ -97,7 +97,7 @@ void AppState::overlandPatrol(){
         e.party = dm::rollPatrol(dice, false);
         e.count = (int)e.party.members.size();
         if (e.count <= 0) return;
-        log.add("Riders on the road — a patrol!");
+        log.add("Riders on the road - a patrol!");
         overlandMeeting(e, "patrol", false, false);
     }
 
@@ -248,14 +248,14 @@ void AppState::overlandDiscoverCastle(){
         log.add(buf);
         switch (overland.castle.aware) {
             case dm::CASTLE_OCCUPANTS_AWARE:
-                // p.183: surprised on 1 — "the fortress occupants
+                // p.183: surprised on 1 - "the fortress occupants
                 // know they are there"
-                log.add("Watch fires flare — the occupants know "
+                log.add("Watch fires flare - the occupants know "
                         "you are there!");
                 overlandApproach();
                 return;
             case dm::CASTLE_OCCUPANTS_OUTSIDE:
-                // p.183: surprise 2+ — the occupants are "actually
+                // p.183: surprise 2+ - the occupants are "actually
                 // outside the place and within normal surprise
                 // distance"
                 log.add("Riders from the castle are already "
@@ -263,7 +263,7 @@ void AppState::overlandDiscoverCastle(){
                 overlandApproach();
                 return;
             default:
-                log.add("Its occupants have not marked you — "
+                log.add("Its occupants have not marked you - "
                         "[A]pproach or [P]ass by.");
                 return;
         }
@@ -282,10 +282,10 @@ void AppState::overlandApproach(){
         switch (inh) {
             case dm::CASTLE_TOTALLY_DESERTED:
                 // p.183: "in disrepair and upon close inspection
-                // appears empty" — the ruin shelters the company
+                // appears empty" - the ruin shelters the company
                 // (fiction: a safe night's rest)
                 snprintf(buf, sizeof buf,
-                         "The %s is long deserted — empty halls "
+                         "The %s is long deserted - empty halls "
                          "and rotted gates.", t.type);
                 log.add(buf);
                 overlandSafeCamp("You shelter in the ruin; the "
@@ -294,9 +294,9 @@ void AppState::overlandApproach(){
             case dm::CASTLE_DESERTED_MONSTER: {
                 // p.183: "appears as totally deserted... but entry
                 // into the construction will discover the monster"
-                // — the OUTDOOR tables, ignoring men
+                // - the OUTDOOR tables, ignoring men
                 snprintf(buf, sizeof buf,
-                         "The %s looks deserted — but something "
+                         "The %s looks deserted - but something "
                          "lairs within!", t.type);
                 log.add(buf);
                 dm::DungeonEncounter e;
@@ -318,11 +318,11 @@ void AppState::overlandApproach(){
                 if (foes.empty()) return;
                 if (e.count == 1)
                     snprintf(buf, sizeof buf,
-                             "The lair's tenant — a wild %s — "
+                             "The lair's tenant - a wild %s - "
                              "springs its ambush!", e.key.c_str());
                 else
                     snprintf(buf, sizeof buf,
-                             "The lair's tenants — %d wild %ss — "
+                             "The lair's tenants - %d wild %ss - "
                              "spring their ambush!",
                              e.count, e.key.c_str());
                 log.add(buf);
@@ -332,7 +332,7 @@ void AppState::overlandApproach(){
             case dm::CASTLE_HUMANS: {
                 // Sub-Table II.A: bandits/berserkers/dervishes;
                 // "numbers... are given in the MONSTER MANUAL
-                // under the heading of MEN" — the registry
+                // under the heading of MEN" - the registry
                 const char* key =
                     dm::castleHumansType(pctile2);
                 int count =
@@ -348,7 +348,7 @@ void AppState::overlandApproach(){
                 }
                 const monsters::MonsterDef* def = registry.find(key);
                 snprintf(buf, sizeof buf,
-                         "The %s is a den of %ss — %d attack!",
+                         "The %s is a den of %ss - %d attack!",
                          t.type,
                          def ? def->name.c_str() : key,
                          count);
@@ -372,7 +372,7 @@ void AppState::overlandApproach(){
                 e.count = (int)e.party.members.size();
                 if (e.count <= 0) return;
                 snprintf(buf, sizeof buf,
-                         "A banner flies over the %s — its master "
+                         "A banner flies over the %s - its master "
                          "rides out to meet you.", t.type);
                 log.add(buf);
                 overlandMeeting(e, "garrison", false, true);
@@ -402,7 +402,7 @@ void AppState::overlandPass(){
 void AppState::overlandTravel(){
         if (mode != MODE_OVERLAND) return;
         if (overland.castle.pending) {
-            log.add("Decide the castle first — [A]pproach or [P]ass.");
+            log.add("Decide the castle first - [A]pproach or [P]ass.");
             return;
         }
         if (!party.alive()) return;
@@ -410,7 +410,7 @@ void AppState::overlandTravel(){
         ++overland.day;
         ++overland.daysOut;
         char buf[96];
-        snprintf(buf, sizeof buf, "Day %d — the %s.",
+        snprintf(buf, sizeof buf, "Day %d - the %s.",
                  overland.day, overlandTerrainName(overland.terrain));
         log.add(buf);
         overlandStep();
@@ -421,7 +421,7 @@ void AppState::overlandTravel(){
 void AppState::overlandHomeward(){
         if (mode != MODE_OVERLAND) return;
         if (overland.castle.pending) {
-            log.add("Decide the castle first — [A]pproach or [P]ass.");
+            log.add("Decide the castle first - [A]pproach or [P]ass.");
             return;
         }
         if (!party.alive()) return;
@@ -429,7 +429,7 @@ void AppState::overlandHomeward(){
         ++overland.day;
         --overland.daysOut;
         char buf[96];
-        snprintf(buf, sizeof buf, "Day %d — the road home, the %s.",
+        snprintf(buf, sizeof buf, "Day %d - the road home, the %s.",
                  overland.day, overlandTerrainName(overland.terrain));
         log.add(buf);
         overlandStep();
@@ -440,7 +440,7 @@ void AppState::overlandHomeward(){
 void AppState::overlandCamp(){
         if (mode != MODE_OVERLAND) return;
         if (overland.castle.pending) {
-            log.add("Decide the castle first — [A]pproach or [P]ass.");
+            log.add("Decide the castle first - [A]pproach or [P]ass.");
             return;
         }
         if (!party.alive()) return;

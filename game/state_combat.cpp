@@ -16,11 +16,11 @@ std::vector<ai::Actor> AppState::partyActors() const{
 void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std::string& monsterKey){
         // R37: mark missile-armed monsters (MM convention: goblins
         // short bow, kobolds sling). The Lua registry data carries
-        // no ranged flag, so the app owns this list â verification
+        // no ranged flag, so the app owns this list - verification
         // debt if the Lua keys ever change.
         // R42: also seed rangedRounds from the weapon's short
         // range band (PHB p.39: short bow 50' = 5 bands, sling
-        // 50' = 5 bands) â volley rounds before melee closes.
+        // 50' = 5 bands) - volley rounds before melee closes.
         for (auto& m : foes) {
             if (!m.isCharacter &&
                 (monsterKey == "goblin" ||
@@ -30,7 +30,7 @@ void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std
                 m.rangedRounds = 5;   // 50' short range, 10' bands
             }
             // R46: psionic monsters (the registry schema has no
-            // psionics field — the app owns the key list, R37
+            // psionics field - the app owns the key list, R37
             // pattern)
             if (!m.isCharacter && monsterKey == "mind_flayer")
                 m.psionic = true;
@@ -116,20 +116,20 @@ void AppState::combatShoot(){
             log.add("That member has no missile weapon.");
             return;
         }
-        // R43: the range must still be open â once the foes have
+        // R43: the range must still be open - once the foes have
         // closed, only melee (or a hurled weapon) serves
         if (!combat.encounter->rangeOpen()) {
-            log.add("The foes are upon you â no time for "
+            log.add("The foes are upon you - no time for "
                     "missiles!");
             return;
         }
-        // R35: dry quiver â nothing left to loose
+        // R35: dry quiver - nothing left to loose
         if (partyActors[combat.activeMember].missileAmmo <= 0) {
             log.add("That member's quiver is empty.");
             return;
         }
         combat.encounter->requestShoot(combat.activeMember);
-        log.add("Missiles readied â [space] to resolve the round.");
+        log.add("Missiles readied - [space] to resolve the round.");
     }
 
 // ---- combatThrow ----
@@ -145,7 +145,7 @@ void AppState::combatThrow(){
             return;
         }
         combat.encounter->requestThrow(combat.activeMember);
-        log.add("Weapon readied to hurl â [space] to resolve the round.");
+        log.add("Weapon readied to hurl - [space] to resolve the round.");
     }
 
 // ---- rollSpawnContext ----
@@ -292,11 +292,11 @@ std::vector<ai::Actor> AppState::buildFoesFromParty(const dm::CharacterParty& pa
             a.level = m.level > 0 ? m.level : 1;   // matrices need 1+
             a.name = npcName(m, index++);
             kitNpc(a, m);
-            // R55: DMG p.176-177 magic items â the rolled
+            // R55: DMG p.176-177 magic items - the rolled
             // pluses land on the equipped gear (best-of, per the
             // ladder rolls in dm::rollCharacterParty)
             // DMG p.177: items must be SUITABLE to the individual
-            // (the book's own selection rule) â an MU wears
+            // (the book's own selection rule) - an MU wears
             // no armor/shield, and only shield-allowed classes
             // carry a magic shield (rules::shieldAllowed)
             if (m.wpnPlus > 0) a.weapon.plus = m.wpnPlus;
@@ -309,7 +309,7 @@ std::vector<ai::Actor> AppState::buildFoesFromParty(const dm::CharacterParty& pa
                 a.shieldPlus = m.shdPlus;
             }
             // rngPlus: NPC foes carry no ranged slot this round
-            // (documented simplification â R28 missile hooks
+            // (documented simplification - R28 missile hooks
             // are party-driven); missile pluses re-roll as flavor
             // R57: PERSONAE-grade abilities (DMG p.87 + p.176):
             // 3d6 per score, then race adjustments (race rolled
@@ -317,7 +317,7 @@ std::vector<ai::Actor> AppState::buildFoesFromParty(const dm::CharacterParty& pa
             // gnome, 61-85 half-elf, 86-95 halfling, 96-00
             // half-orc) and class adjustments per the p.87 table.
             // Multi-class (p.176, ~20% of non-humans) is beyond
-            // the engine's four single classes â race
+            // the engine's four single classes - race
             // adjusts abilities only (documented simplification).
             int ab[6];
             for (int i = 0; i < 6; ++i)
@@ -334,7 +334,7 @@ std::vector<ai::Actor> AppState::buildFoesFromParty(const dm::CharacterParty& pa
                 ab[D_] += 1; ab[C_] += 1;
             }   // half-elf / half-orc: no printed adjustment
             if (m.level < 1) {
-                // p.87 Occupation: Mercenary (level 0) â
+                // p.87 Occupation: Mercenary (level 0) -
                 // STR +1, CON +3 (men-at-arms)
                 ab[S_] += 1; ab[C_] += 3;
             } else {
@@ -378,10 +378,10 @@ std::vector<ai::Actor> AppState::buildFoesFromParty(const dm::CharacterParty& pa
             if (m.level < 1 && hp < 4) hp = 4;   // p.87: mercenary min
             if (hp < 1) hp = 1;
             a.hp = a.maxHp = hp;
-            // DMG p.176: character parties do not check morale —
+            // DMG p.176: character parties do not check morale -
             // play them as player characters
             a.morale = dm::MORALE_FANATIC;
-            // spell slots (R54: the foe AI casts â see
+            // spell slots (R54: the foe AI casts - see
             // ai/actor.cpp foeSpellChoice; slots deplete)
             spells::SpellClass sc = m.classIndex ==
                 rules::CLASS_MAGIC_USER ? spells::SPELL_MU
@@ -417,7 +417,7 @@ std::vector<ai::Actor> AppState::buildFoesFromParty(const dm::CharacterParty& pa
 void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return;
         if (!party.alive()) return;
 
-        // R52: the real DMG Appendix C roll — Determination
+        // R52: the real DMG Appendix C roll - Determination
         // Matrix, level table, subtables (Human/Dragon/etc.).
         // An empty key is NO ENCOUNTER (or an R53 re-roll row).
         dm::DungeonEncounter e = rollDmEncounter();
@@ -426,16 +426,16 @@ void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return
             std::vector<ai::Actor> foes = buildFoesFromParty(e.party);
             if (foes.empty()) return;
             // R58: DMG p.63 Encounter Reactions + p.176
-            // Confrontation — the strangers react before steel
+            // Confrontation - the strangers react before steel
             // is drawn. Charisma adjustment follows the engine's
             // best-living-Cha spokesman convention (henchman
             // hire, R44); the p.63 loyalty adjustment is not
             // modeled (documented simplification). The p.176
             // "never join with adventurers" rule keeps friendly
-            // outcomes pass-by; R62 adds small favors — friendly
+            // outcomes pass-by; R62 adds small favors - friendly
             // parties sometimes part with a potion or a coin
             // pouch (no printed table: fiction extension). Gift
-            // gold earns NO xp — p.86 awards xp for treasure
+            // gold earns NO xp - p.86 awards xp for treasure
             // taken from a challenge; a gift is freely given.
             // R62 also colors the meeting with the NPC party's
             // race (DMG p.192 race check, fiction-only).
@@ -457,7 +457,7 @@ void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return
                 dice, chaAdj, npcLevels < partyLevels);
             char buf[96];
             // R62: the NPC party's racial makeup colors the
-            // meeting — a wholly single-race party of dwarves
+            // meeting - a wholly single-race party of dwarves
             // reads as "dwarven adventurers" (p.192 fiction)
             const char* racePrefix = "";
             {
@@ -490,7 +490,7 @@ void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return
                 beginCombat(std::move(foes), -1, e.key);
                 return;
             case dm::PartyReaction::UncertainNegative:
-                // p.63: 55% prone toward negative — they may
+                // p.63: 55% prone toward negative - they may
                 // still strike, or let the party pass
                 if ((int)dice.roll(1, 100, 0) <= 55) {
                     snprintf(buf, sizeof buf,
@@ -510,7 +510,7 @@ void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return
                 log.add(buf);
                 return;
             case dm::PartyReaction::UncertainPositive:
-                // p.63: 55% prone toward positive — a hail
+                // p.63: 55% prone toward positive - a hail
                 // instead of silence
                 if ((int)dice.roll(1, 100, 0) <= 55)
                     log.add("The adventurers hail you "
@@ -606,7 +606,7 @@ void AppState::endCombat(){
                           combat.encounter->teleported();
         if (combat.encounter) {
             // R24: sync fight results back to the roster BY NAME
-            // (hp, level â energy drain can strip levels)
+            // (hp, level - energy drain can strip levels)
             for (const auto& a : combat.encounter->party()) {
                 for (auto& c : party.members) {
                     if (c.name != a.name) continue;

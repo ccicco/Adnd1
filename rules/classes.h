@@ -1,12 +1,12 @@
 // ============================================================================
-// Adnd1 — rules/classes.h
+// Adnd1 - rules/classes.h
 // Character classes: caps, hit dice, XP thresholds, titles, primes.
 //
 // RE-AUTHORED from the R4 spec after the original upload was lost
 // from the repo. NOTE discipline: XP tables and title ladders are
 // transcribed from project notes and follow the standard 1e shape;
 // when the PHB PDF is re-uploaded, the printed tables win (PHB
-// p.20-31) — verify xpForLevel rows and titleFor ladders then.
+// p.20-31) - verify xpForLevel rows and titleFor ladders then.
 // ============================================================================
 
 #pragma once
@@ -67,7 +67,7 @@ extern const int CLASS_HIT_DIE[CLASS_COUNT];
 // (fighter 100k, MU 125k, cleric 112.5k, thief 110k).
 int xpForLevel(int classIndex, int level);
 
-// Display title for a class/level (PLACEHOLDER LADDERS — verify vs
+// Display title for a class/level (PLACEHOLDER LADDERS - verify vs
 // PHB p.20-31 in a later pass).
 const char* titleFor(int classIndex, int level);
 
@@ -100,7 +100,7 @@ bool armorAllowed(int classIndex, ArmorWeight weight);
 bool shieldAllowed(int classIndex);
 
 // Exceptional strength percentile (d100), for fighter-group
-// characters with STR 18 — the caller gates on those conditions;
+// characters with STR 18 - the caller gates on those conditions;
 // this just rolls 1-100.
 int rollExceptionalStrength(Dice& dice);
 

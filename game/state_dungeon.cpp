@@ -13,7 +13,7 @@ void AppState::restExplore(){
         }
 
         restoreSlots();
-        // R38: a completed rest renews arrows too â fletching and
+        // R38: a completed rest renews arrows too - fletching and
         // recovery time (interrupted rests restore nothing, as
         // with slots)
         restockAmmo();
@@ -36,7 +36,7 @@ int AppState::countOccupied() const{
 
 // ---- populateRooms ----
 void AppState::populateRooms(){
-        // R52: lairs roll from the DMG Appendix C tables —
+        // R52: lairs roll from the DMG Appendix C tables -
         // the Determination Matrix for this depth, then the
         // Monster Level Table row (count, hydra heads, dragon
         // hp/die brackets). The R42 depth cap still bounds lair
@@ -56,7 +56,7 @@ void AppState::populateRooms(){
             }
             dm::DungeonEncounter e = rollDmEncounter();
             if (e.isParty) {
-                // R53: NPC parties wander the halls — they do
+                // R53: NPC parties wander the halls - they do
                 // not lair; the room stays unoccupied (trap chance)
                 if (rng.below(100) < 15) room.trap = 1;
                 continue;
@@ -152,7 +152,7 @@ void AppState::springTrap(int roomIndex){
         if (rules::attemptSave(dice, target, 0)) {
             char buf[96];
             snprintf(buf, sizeof buf,
-                     "A dart whistles past %s â saved!",
+                     "A dart whistles past %s - saved!",
                      c.name.c_str());
             log.add(buf);
             return;
@@ -163,7 +163,7 @@ void AppState::springTrap(int roomIndex){
         if (c.hp <= 0) {
             c.hp = 0;
             snprintf(buf, sizeof buf,
-                     "A trap! Darts strike %s for %d â %s "
+                     "A trap! Darts strike %s for %d - %s "
                      "falls!",
                      c.name.c_str(), dmg, c.name.c_str());
         } else {
@@ -244,7 +244,7 @@ void AppState::searchExplore(){
 Treasure AppState::rollTreasure(int roomIndex){
         Treasure t;
         (void)roomIndex;
-        // R42: gold scales up with depth â 25% more per level
+        // R42: gold scales up with depth - 25% more per level
         // above the first (the dungeon hoards grow richer)
         int goldMult = 100 + 25 * (dungeonLevel - 1);
         if (goldMult > 200) goldMult = 200;   // cap at +100%
@@ -285,7 +285,7 @@ void AppState::awardVictory(){
                 totalXp += monsters::xp::xpForKill(*def, ctx);
             else if (ctx.level > 0 || ctx.classIndex >= 0)
                 // R53: a Character Subtable party member (no lua
-                // record) — the def-free by_level ladder
+                // record) - the def-free by_level ladder
                 totalXp += monsters::xp::xpForNpc(ctx);
             else
                 totalXp += 10;
@@ -299,7 +299,7 @@ void AppState::awardVictory(){
                      "%d slain, %d xp each.", slain, share);
             log.add(buf);
             party.gainXp(share, dice, log);
-            // R45: the hire earns a half share (DMG p.86 â
+            // R45: the hire earns a half share (DMG p.86 -
             // henchmen take half a member's share)
             if (party.henchmanPresent) {
                 party.henchmanXp += share / 2;
@@ -369,10 +369,10 @@ void AppState::awardVictory(){
                          hoard.jewelryCount, hoard.jewelryValue);
                 log.add(buf);
             }
-            // R77: the claim layer — magic finds go to living party
+            // R77: the claim layer - magic finds go to living party
             // members when they improve the member's gear; carried
             // stacks (potions, scrolls) pool. Cursed items (III.F/G/H
-            // rows) are never claimed — the party does not knowingly
+            // rows) are never claimed - the party does not knowingly
             // take up a Sword +1, Cursed. Ammo bundles await real
             // inventory (per-arrow tracking). Claimed and carried
             // items leave the hoard BEFORE the take is appraised:
@@ -383,11 +383,11 @@ void AppState::awardVictory(){
                 const dm::treasure::MagicItem& mi = *it;
                 bool take = false;
                 if (mi.cursed()) {
-                    // never claimed — stays appraised below
+                    // never claimed - stays appraised below
                 } else if (mi.isHealingPotion()) {
                     addCapped(party.potions, mi.qty, CARRIED_CAP);
                     snprintf(buf, sizeof buf,
-                             "You find: %s x%d — carried (%d held).",
+                             "You find: %s x%d - carried (%d held).",
                              mi.name.c_str(), mi.qty, party.potions);
                     log.add(buf);
                     if (!mi.note.empty()) log.add(mi.note);
@@ -558,10 +558,10 @@ void AppState::awardVictory(){
                         break;
                     }
                     case dm::treasure::MIK_SCROLL:
-                        // III.B scrolls — carried, studied later
+                        // III.B scrolls - carried, studied later
                         addCapped(party.scrolls, mi.qty, CARRIED_CAP);
                         snprintf(buf, sizeof buf,
-                                 "You find: %s x%d — carried (%d held).",
+                                 "You find: %s x%d - carried (%d held).",
                                  mi.name.c_str(), mi.qty,
                                  party.scrolls);
                         log.add(buf);
@@ -573,7 +573,7 @@ void AppState::awardVictory(){
                         // the first living member whose ranged weapon
                         // fires them (count-only; per-arrow enchant
                         // awaits real inventory). Singular specials
-                        // (Slaying, Direction) stay appraised — the
+                        // (Slaying, Direction) stay appraised - the
                         // helper declines unenchanted names.
                         for (auto& c : party.members) {
                             if (c.hp <= 0) continue;
@@ -613,10 +613,10 @@ void AppState::awardVictory(){
                         break;
                     }
                 }
-                // R80: the hire's claim — when no member took the
+                // R80: the hire's claim - when no member took the
                 // item, the henchman upgrades his kit (sword plus,
                 // shield plus; the plate ladder is unchanged, and
-                // only III.G swords arm him — his kit is fixed)
+                // only III.G swords arm him - his kit is fixed)
                 if (!take && !mi.cursed() &&
                     party.henchmanPresent && party.henchmanHp > 0 &&
                     mi.qty == 1) {
@@ -760,9 +760,9 @@ void AppState::awardVictory(){
                         }
                     }
                 }
-                // R40: +1 dagger â throwable loot. Claimed by the
+                // R40: +1 dagger - throwable loot. Claimed by the
                 // first living member whose melee weapon is either
-                // already throwable (an upgrade in plus â dagger
+                // already throwable (an upgrade in plus - dagger
                 // over axe/spear swaps hurlability for enchantment)
                 // or non-throwable and weaker-armed (dagger damage
                 // beats bare fists, matches the 1d4 starter)
@@ -792,7 +792,7 @@ void AppState::awardVictory(){
                                 "behind.");
                     }
                 }
-                // R28: short bow â claimed by the first living
+                // R28: short bow - claimed by the first living
                 // member with an empty ranged slot
                 if (t.missileWeapon) {
                     log.add("You find a short bow!");
@@ -808,7 +808,7 @@ void AppState::awardVictory(){
                         }
                     }
                 }
-                // R39: a bundle of arrows â given to the first
+                // R39: a bundle of arrows - given to the first
                 // living missile-armed member BELOW the 20 cap,
                 // else the least-supplied one (stacking quivers is
                 // a simplification: no encumbrance, no cap split)
@@ -841,7 +841,7 @@ void AppState::awardVictory(){
                     ++party.identifyScrolls;
                     log.add("You find a scroll of identify!");
                 }
-                // R44: an unidentified magic item â the enchant
+                // R44: an unidentified magic item - the enchant
                 // is rolled now but hidden until a scroll is
                 // read over it ([I] in town)
                 if (t.unidentifiedItem) {
@@ -851,7 +851,7 @@ void AppState::awardVictory(){
                         (rng.below(100) < 10 ? 1 : 0);
                     party.unidentified.push_back(it);
                     log.add("You find an unidentified magic "
-                            "item â a scribe's scroll would "
+                            "item - a scribe's scroll would "
                             "serve.");
                 }
                 room.monsterKey.clear();
@@ -862,10 +862,10 @@ void AppState::awardVictory(){
 
         // R56: defeated NPC parties drop their gear. A wandering
         // Character Subtable party (DMG p.176) fights with book-
-        // rolled magic items (R55) â the winners strip the
+        // rolled magic items (R55) - the winners strip the
         // fallen: the best enchanted weapon/armor/shield among the
         // SLAIN (survivors keep theirs), plus a coin purse
-        // (adventurers carry walking money, not hoards â
+        // (adventurers carry walking money, not hoards -
         // 2d6 x 10 x dungeon level, the design figure; same
         // 1-gp-1-xp treasure convention as room hoards).
         if (combatRoomIndex < 0 && combat.encounter) {

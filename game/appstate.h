@@ -1,126 +1,126 @@
 // ============================================================================
-// Adnd1 â game/appstate.h
+// Adnd1 - game/appstate.h
 // The simulation core: room occupancy, treasure, camera, game
 // modes, creation state, combat state, and AppState itself.
-// Moved verbatim from adnd1.cpp, R31 â no windows.h here; the
+// Moved verbatim from adnd1.cpp, R31 - no windows.h here; the
 // shell (adnd1.cpp) owns the Renderer.
-// R33: spellbook wiring â MU starting spell at creation, the
+// R33: spellbook wiring - MU starting spell at creation, the
 // castable list filters by known spells, and saveGame/loadGame
 // grow an optional per-MU "spells" line (v1 saves still load).
-// R34: per-day slots â Character::slotsByLevel persists across
+// R34: per-day slots - Character::slotsByLevel persists across
 // encounters (endCombat sync), [R] rest restores slots + natural
 // healing with a wandering-encounter interrupt risk; descend and
 // load also refill the pool.
-// R35: ammo counting â Character::missileAmmo is the live quiver
+// R35: ammo counting - Character::missileAmmo is the live quiver
 // (20 missiles at creation / bow find / load; not persisted in
 // v1 saves); each shot spends one (endCombat sync), and a dry
 // quiver blocks the shoot command and falls back to melee.
-// R36: throw command â combatThrow() has the active member hurl
+// R36: throw command - combatThrow() has the active member hurl
 // their melee weapon (dagger/hand axe/spear): one shot from the
 // weapon's own dice/plus, then unarmed 1d2 fists for the rest of
-// the encounter (the weapon is recovered afterward â Actor state
+// the encounter (the weapon is recovered afterward - Actor state
 // only, nothing persisted).
-// R37: monster missile attacks â beginCombat marks missile-armed
+// R37: monster missile attacks - beginCombat marks missile-armed
 // monsters from the monster key (goblin/kobold, MM convention:
 // goblins short bow, kobolds sling; key list is verification
-// debt â the Lua data files carry no ranged flag); they fire an
+// debt - the Lua data files carry no ranged flag); they fire an
 // opening volley in round 1, then close to melee.
-// R38: arrow restocking â quivers refill wherever slots do:
+// R38: arrow restocking - quivers refill wherever slots do:
 // a completed rest (restExplore) renews both, and descending
 // (descend) restocks at the same time it refills slots. Load
-// already refills. Ammo stays a physical resource otherwise â
+// already refills. Ammo stays a physical resource otherwise -
 // wandering-encounter-interrupted rests restore nothing.
-// R39: ammo as treasure â victorious room loot can include a
+// R39: ammo as treasure - victorious room loot can include a
 // bundle of arrows (20): added to the quiver of the first living
 // missile-armed member, or stockpiled on the least-supplied one
 // when everyone is armed. Bows (R28) and arrows now both drop.
-// R40: thrown-weapon loot â victorious room loot can include a
+// R40: thrown-weapon loot - victorious room loot can include a
 // +1 dagger: claimed by the first living member whose melee
 // weapon is throwable (dagger/hand axe/spear) or weaker; it can
 // be hurled with [t] (R36) at +1 to hit and damage.
-// R41: town hub â a new MODE_TOWN screen reached with [B] from
+// R41: town hub - a new MODE_TOWN screen reached with [B] from
 // the dungeon. The temple sells healing potions (50 gp), the
 // fletcher sells 20-arrow bundles (30 gp). [B]/Esc returns to
 // the dungeon at the same depth. Buying arrows needs a missile-
-// armed member (first below 20, else least-supplied â R39
+// armed member (first below 20, else least-supplied - R39
 // convention). Saves are not possible in town (mode resets to
 // EXPLORE on load).
-// R42 (three features): (1) town expansion â the inn sells a
+// R42 (three features): (1) town expansion - the inn sells a
 // safe night's rest (10 gp: full slots, quivers, and 1 hp/level
 // healing, NO wander check), the temple heals the most-wounded
 // member to full (100 gp), the smith sells +1 long swords
-// (500 gp, first living fighter); (2) movement + range bands â
+// (500 gp, first living fighter); (2) movement + range bands -
 // missile fire is bounded by the weapon's short range
 // (rangeTens*10 feet, PHB p.39); the round-1 volley lasts
 // rangeBandsOf() rounds before melee closes (1 band = 10' range
-// factor);(3) dungeon scaling â monster lair sizes and treasure
+// factor);(3) dungeon scaling - monster lair sizes and treasure
 // gold now scale with depth (cap 2+level/2, gold multiplier
 // 100%+25%/level above 1).
-// R43 (three features): (1) DMG training â level-ups queue
+// R43 (three features): (1) DMG training - level-ups queue
 // (Party::pendingTraining) until the member trains at the town
 // hall ([6], 1500 gp x new level); promotion logic moved from
 // gainXp to Party::trainNext (hit die + R33 MU spell study);
 // queue persists in saves via an optional "training" line
-// (v1-compatible); (2) party-side range â the encounter carries
+// (v1-compatible); (2) party-side range - the encounter carries
 // an abstract distance (5 bands, closes 1/round); [x] shoot is
 // refused once the range closes (thrown weapons exempt);
-// (3) town stock â [7] chain mail (75 gp, first armored-eligible
+// (3) town stock - [7] chain mail (75 gp, first armored-eligible
 // member in worse), [8] spell scroll (200 gp, one random unknown
 // L1 MU spell added to the first MU's book).
-// R44 (five features): (1) stronghold â a name-level member
+// R44 (five features): (1) stronghold - a name-level member
 // (level == class cap) builds a keep ([0], 10,000 gp); rents
 // (200 gp) collect on every return to town and training is
-// halved while it stands; (2) identify scrolls â treasure can
+// halved while it stands; (2) identify scrolls - treasure can
 // yield scrolls and UNIDENTIFIED magic items (plus rolled but
 // hidden); the scribe sells scrolls ([9], 100 gp) and [I] reads
 // one over the first pending item, applying weapon or armor
-// enchant; (3) henchman â [H] posts a 100 gp offer (DMG p.36
+// enchant; (3) henchman - [H] posts a 100 gp offer (DMG p.36
 // simplified); on acceptance a level-1 fighter joins as an
 // extra party actor (chain + shield kit), upkeep 100 gp/level
 // bills each return to town, loyalty (50 + best Cha reaction
-// adj) is checked on descending â a failed roll loses the hire;
-// (4) monster roster expansion â six new Lua bestiary files
+// adj) is checked on descending - a failed roll loses the hire;
+// (4) monster roster expansion - six new Lua bestiary files
 // (bandit, wolf, hobgoblin, gnoll, lizard man, bugbear) and
 // hobgoblin joins the missile-armed key list; (5) town hub
-// polish â a company status panel (roster, henchman, keep,
+// polish - a company status panel (roster, henchman, keep,
 // scrolls) beside the shop menu.
-// R45 (five features): (1) henchman advancement and shares â
+// R45 (five features): (1) henchman advancement and shares -
 // the hire earns a half share of combat XP, levels (hit die
 // d10+1) at fighter thresholds, and takes a THIRD of each
 // delve's gold (accumulated in delveGold, paid into his
-// purse on every return to town); (2) sage and spy consults â
+// purse on every return to town); (2) sage and spy consults -
 // [S] 200 gp lists what lairs at this depth (the registry
 // roster, an in-game MM reference), [Y] 500 gp reveals the
 // CURRENT occupied rooms and their monster keys (simple
-// recon, DMG p.35 spying simplified); (3) the peddler [M] â
+// recon, DMG p.35 spying simplified); (3) the peddler [M] -
 // 500 gp for one random identified magic item (weapon +1,
 // armor +1, three potions, two identify scrolls, or a spell
-// scroll); (4) traps and secret doors â unoccupied rooms may
+// scroll); (4) traps and secret doors - unoccupied rooms may
 // hide a dart trap (save vs death or 2d6; a thief in the
 // company may spot and disarm it first), walls hide secret
 // doors found with [F] search (1-in-6, thief 3-in-6; found
-// doors become ordinary doors); (5) MM reference â the sage
+// doors become ordinary doors); (5) MM reference - the sage
 // consult doubles as the bestiary lore service (true book
 // verification still awaits the re-uploaded MM PDF).
-// R46 (six features): (1) NPC dialogue — [T] in town talks
+// R46 (six features): (1) NPC dialogue - [T] in town talks
 // with the locals (state-aware tavern chatter: hints about
 // pending training, unidentified loot, the hire, the keep,
-// and depth rumors); (2) psionics hook — Actor::psionic
+// and depth rumors); (2) psionics hook - Actor::psionic
 // (app-flagged by monster key, R37 pattern): a once-per-
 // encounter mind blast stuns a party member unless they
 // save vs spells; the mind flayer (new Lua file) carries
-// it; (3) henchman kit — [J] upgrades the hire to plate
+// it; (3) henchman kit - [J] upgrades the hire to plate
 // (100 gp from HIS purse, not the company's gold); (4)
-// ship crew — [C] hires a 20-sailor coaster's company
+// ship crew - [C] hires a 20-sailor coaster's company
 // (200 gp down); upkeep 40 gp each return, and the crew
 // takes 5% of every delve's take at the exit; (5) room
-// flavor — entering a room the first time describes it
+// flavor - entering a room the first time describes it
 // (state-aware: occupied/trapped/looted/swept variants);
-// (6) L4+ spell slots — all slot arrays widened to 6
+// (6) L4+ spell slots - all slot arrays widened to 6
 // levels (the spells:: tables carry the columns; the L4-6
-// spell DATA pass is next — it needs the current spells/
+// spell DATA pass is next - it needs the current spells/
 // files read back).
-// R52: the real DMG Appendix C dungeon tables — dm/encounters.
+// R52: the real DMG Appendix C dungeon tables - dm/encounters.
 // {h,cpp} carry the Determination Matrix, Monster Level Tables
 // I-X, per-level Dragon Subtables (the Age Category column is
 // hit points per die), and the Human Subtable, OCR-verified
@@ -129,7 +129,7 @@
 // groups and dragon pairs keep the DMG head/age ranges per
 // specimen; the sage reads the table roster (dm::encounterKeys).
 // Character Subtable parties (classed NPCs) are R53.
-// R53: the Character Subtable (DMG p.176) — party members are
+// R53: the Character Subtable (DMG p.176) - party members are
 // real classed combatants (the ai::Actor character path: class
 // THAC0, armor AC, saves). Professions map to the engine's four
 // classes per the DMG's closest-approximation advice (druid ->
@@ -145,7 +145,7 @@
 // R58: NPC-party reaction & parley (DMG p.63 Encounter
 // Reactions + p.176 Confrontation): wandering Character Subtable
 // parties now roll percentile + spokesman-Cha adjustment before
-// combat — hostile bands attack, uncertain ones dice it,
+// combat - hostile bands attack, uncertain ones dice it,
 // friendly ones pass by or share word of the dungeon (never
 // joining, per p.176). A party that feels weak gets +10 to avoid
 // or bluff (p.176). Also fixes a leftover placeholder glitch in
@@ -154,34 +154,34 @@
 // per score, race (p.176 table) and class (p.87 table) ability
 // adjustments, exceptional strength for fighters at STR 18, and
 // hp by the canonical per-level rollHitPoints with the rolled
-// Con adjustment (men-at-arms: the p.87 Mercenary row —
+// Con adjustment (men-at-arms: the p.87 Mercenary row -
 // STR +1, CON +3, 4 minimum hp). The R53 average-10 convention
 // is retired.
 // R55: NPC parties roll magic items (DMG p.176-177 Tables I-IV
 // level-chance ladder): weapon/armor/shield pluses land on the
 // equipped Actor gear; unmodeled devices are fiction-only.
-// R56: the gear is LOOTABLE â victory over a wandering NPC
+// R56: the gear is LOOTABLE - victory over a wandering NPC
 // party strips the best enchanted weapon/armor/shield from the
 // slain (claim conventions: same-weapon first, then equal-or-
 // better damage; armor by class weight rules; shields by
 // shieldAllowed) and a coin purse with treasure xp. The magic
 // shield persists: Character::shieldPlus (optional save line,
 // v1 compatible).
-// R54: NPC spellcasters CAST — one foe caster per round,
+// R54: NPC spellcasters CAST - one foe caster per round,
 // side-aware targeting, cleric heal-first AI, MU sleep opener
 // then fireball at 3rd-level slots (ai/actor.cpp foeSpellChoice).
 // ============================================================================================================================================
 
-// R68: overland travel — the DMG Appendix C outdoor play loop
+// R68: overland travel - the DMG Appendix C outdoor play loop
 // (p.182-183, wired to the R63/R67 builders). From town, [O] sets
 // out; each day is a march ([T] outward, [H] homeward) across a
 // player-chosen terrain, with a night camp ([C]) that heals if
 // undisturbed. The DMG leaves the check cadence to the DM
-// ("whenever an encounter is indicated") — this campaign checks
+// ("whenever an encounter is indicated") - this campaign checks
 // once per march day and once per night camp (documented
 // fiction). The first three days from town are the INHABITED
 // band (OC_TEMPERATE_INHABITED tables, patrols 5 in 20,
-// DMG p.182); beyond it the WILDS (OC_TEMPERATE_WILD — the
+// DMG p.182); beyond it the WILDS (OC_TEMPERATE_WILD - the
 // campaign's fixed clime is temperate, the other climate sets
 // are the R63 module's for other campaigns, documented). In the
 // wilds 1 in 20 encounters discover a STRONGHOLD (p.182):
@@ -189,7 +189,7 @@
 // unaware party chooses [A]pproach or [P]ass, an aware one is
 // met) -> Table II -> totally deserted (a safe night's shelter,
 // fiction), deserted (the p.183 "roll the OUTDOOR ENCOUNTER
-// TABLE, ignoring men" monster — the Men Subtable keys are the
+// TABLE, ignoring men" monster - the Men Subtable keys are the
 // R63 set), humans (Sub-Table II.A bandits/berserkers/
 // dervishes, MM numbers via the registry), or character-types
 // (Sub-Table II.B master + 2-5 henchmen, R67 builders). Patrol
@@ -203,19 +203,19 @@
 // R70: sea travel + the city streets. [V] from town sets sail
 // with the hired crew (R46 crewHired; the coaster of the R46
 // ship-crew feature now carries the party): MODE_SEA, a day's
-// sail [T]/[H] rolls the R60 salt-water tables — coastal
+// sail [T]/[H] rolls the R60 salt-water tables - coastal
 // waters (SHALLOW, the first kSeaCoastalDays) then the open
 // sea (DEEP), clime COOL (temperate waters, campaign fiction)
-// — with [C] anchoring for the night (the R34/R38 rest). A
+// - with [C] anchoring for the night (the R34/R38 rest). A
 // landfall bills the town visit like any return. [W] from
 // town walks the streets: MODE_CITY, [1] a daytime excursion
 // and [2] a nighttime one, each a single roll on the R64
-// city matrix — classed/service parties meet by the p.176
+// city matrix - classed/service parties meet by the p.176
 // Confrontation (the R68 meeting builder), registry monsters
 // fight, civilians are flavor (R64 fiction rows, printed
-// counts, no stats — documented). The R41+ "every return to
+// counts, no stats - documented). The R41+ "every return to
 // town" billing (rents, upkeep, shares, wages) is extracted
-// to billTownVisit() and now bills EVERY arrival — the R68
+// to billTownVisit() and now bills EVERY arrival - the R68
 // overland return previously bypassed it (documented fix).
 #pragma once
 
@@ -260,7 +260,7 @@ struct RoomOccupant {
     // R45: 0 = no trap, 1 = armed dart trap, 2 = sprung
     int trap = 0;
     bool flavorSeen = false;   // R46: first-entry description
-    // R52: DMG Appendix C ranges — hydra heads per specimen,
+    // R52: DMG Appendix C ranges - hydra heads per specimen,
     // dragon age bracket (hp/die) per specimen
     int headsLo = 0, headsHi = 0;
     int ageLo = 0, ageHi = 0;
@@ -279,7 +279,7 @@ struct SecretDoor {
 // 1"). The book calls the comparison subjective ("must be based
 // upon the degree of challenge"); this engine's proxy is
 // average party level vs the guardian's average effective
-// level — the book's own worked example is exactly this
+// level - the book's own worked example is exactly this
 // arithmetic (a 10th-level magic-user vs half-HD kobolds =
 // "about 20 to 1"). An unguarded hoard (no monster key) awards
 // 1:1; the delve itself was the challenge.
@@ -360,7 +360,7 @@ enum GameMode : int {
 };
 
 // ----------------------------------------------------------------------------
-// R24: Creation state â ROLL -> CLASS -> NAME, per member.
+// R24: Creation state - ROLL -> CLASS -> NAME, per member.
 // Uses its own RNG stream so dungeon/sim determinism is untouched.
 // ----------------------------------------------------------------------------
 
@@ -477,7 +477,7 @@ struct CreationState {
 };
 
 // ----------------------------------------------------------------------------
-// Combat state â interactive, commands wired to the driver (R21).
+// Combat state - interactive, commands wired to the driver (R21).
 // R24: one target selection PER PARTY MEMBER (keyed by actor name
 // in the hook), plus an active-member cursor for command entry.
 // ----------------------------------------------------------------------------
@@ -510,7 +510,7 @@ struct CombatState {
 
         // R24: the hook receives the attacking member; we look up
         // that member's own target selection by name (names are
-        // unique â creation enforces it)
+        // unique - creation enforces it)
         encounter->setPlayerTargetHook(
             [this](const ai::Actor& attacker,
                    const std::vector<ai::Actor>& foes) {
@@ -584,7 +584,7 @@ struct CombatState {
         return activeMember;
     }
 
-    // R27: spells the ACTIVE member can cast right now â right
+    // R27: spells the ACTIVE member can cast right now - right
     // class, level gate (MU: INT, cleric: class level), and at
     // least one slot remaining at that spell's level. The MU list
     // is the full registry for now (chance-to-learn is deferred,
@@ -650,7 +650,7 @@ struct OverlandState {
 };
 
 // The inhabited band: the first kOverlandInhabitedDays of the
-// journey are patrolled civilized lands (documented fiction —
+// journey are patrolled civilized lands (documented fiction -
 // the DMG divides outdoor play into inhabited/patrolled and
 // uninhabited/wilderness sets, p.182).
 static const int kOverlandInhabitedDays = 3;
@@ -686,7 +686,7 @@ inline bool overlandIndicatesMen(const dm::DungeonEncounter& e) {
 // ---- R70: sea + city travel state ----------------------------------------
 
 // The voyage: coastal waters (SHALLOW) for the first
-// kSeaCoastalDays days out, the open sea (DEEP) beyond —
+// kSeaCoastalDays days out, the open sea (DEEP) beyond -
 // DMG p.179 prints salt-water shallow "to 100'", and the
 // coastal/open-sea split is this campaign's fiction.
 static const int kSeaCoastalDays = 2;
@@ -698,7 +698,7 @@ struct SeaState {
 };
 
 // R64 fiction civilians: printed counts, no bestiary stats
-// (encounters.cpp documents) — city encounters with these
+// (encounters.cpp documents) - city encounters with these
 // keys are flavor only. One line each; count is unused.
 inline const char* cityFlavor(const char* k) {
     if (!k) return "The streets are busy.";
@@ -758,7 +758,7 @@ struct AppState {
     // awardVictory indexes by slain-monster position
     std::vector<monsters::xp::SpawnContext> foeCtxs;
 
-    // R23: stairs down â placed in the room farthest from entry
+    // R23: stairs down - placed in the room farthest from entry
     int stairsX = -1, stairsY = -1;
 
     // R45: the level's hidden doors
@@ -766,16 +766,16 @@ struct AppState {
 
     void newDungeon(uint64_t s);
 
-    // R24: creation is finished â the delve begins
+    // R24: creation is finished - the delve begins
     void beginDelve();
 
-    // R24: full reset after a wipe â back to creation, career gone
+    // R24: full reset after a wipe - back to creation, career gone
     void resetToCreation();
 
     // ----------------------------------------------------------------
     // R29: save/load. Plain-text career file "adnd1.sav" in the
     // working directory. The COMPANY is saved, not the floor: no
-    // dungeon layout, occupancy, or combat state persists â loading
+    // dungeon layout, occupancy, or combat state persists - loading
     // regenerates a fresh dungeon at the saved depth (the
     // deterministic newDungeon pipeline). Format: one token stream,
     // version-tagged; unknown/short files are rejected cleanly.
@@ -787,18 +787,18 @@ struct AppState {
     bool loadGame();
 
     // R23: stairs in the room whose center is farthest from the
-    // entry point. The tile itself stays floor â the marker and
+    // entry point. The tile itself stays floor - the marker and
     // the step check carry the meaning (no map.h changes needed).
     void placeStairs();
 
-    // R23: descend. Career (hp/xp/gold/equipment/level) persists â
+    // R23: descend. Career (hp/xp/gold/equipment/level) persists -
     // depth scales monsters and treasure.
     void descend();
 
     // R34: refill every caster's slots to their class-table pool
     void restoreSlots();
 
-    // R34: rest â restore slots and natural healing (1 hp per
+    // R34: rest - restore slots and natural healing (1 hp per
     // level, PHB daily recovery), but the camp may be attacked:
     // a wandering-encounter check first; an interrupted rest
     // restores NOTHING (the party fights on, tired and dry)
@@ -806,7 +806,7 @@ struct AppState {
     // weapon in the ranged slot). Mirrors restoreSlots.
     void restockAmmo();
 
-    // R79: dump the company's kit to the log — per member weapon/
+    // R79: dump the company's kit to the log - per member weapon/
     // ranged/armor/shield (with enchant plus), then the carried
     // totals (potions, scrolls, gold). Engine-side; the Win32 key
     // binding is a later shell diff.
@@ -825,7 +825,7 @@ struct AppState {
 
     // ---- R41: town hub ------------------------------------------------------
 
-    // [B] from the dungeon â retire to town for supplies
+    // [B] from the dungeon - retire to town for supplies
     void enterTown();
 
     // R70: the R41+ arrival billing - rents, henchman
@@ -834,49 +834,49 @@ struct AppState {
     // march home, a sea landfall). Extracted verbatim
     // from enterTown in R70.
     void billTownVisit();
-    // [B]/Esc in town â dive back in at the same depth
+    // [B]/Esc in town - dive back in at the same depth
     void leaveTown();
 
     // the temple sells healing potions (50 gp)
     void townBuyPotion();
 
-    // the fletcher sells 20-arrow bundles (30 gp) â taker follows
+    // the fletcher sells 20-arrow bundles (30 gp) - taker follows
     // the R39 loot convention (first armed member below 20, else
     // the least-supplied one)
     void townBuyArrows();
 
-    // R42: the inn â a safe night's rest (10 gp). Full slots
+    // R42: the inn - a safe night's rest (10 gp). Full slots
     // (restoreSlots), full quivers (restockAmmo), 1 hp/level
-    // natural healing each â and NO wander check: that is what
+    // natural healing each - and NO wander check: that is what
     // the silver buys (explore [R] rest is free but risky)
     void townInnRest();
 
-    // R42: the temple â heal the most-wounded living member to
+    // R42: the temple - heal the most-wounded living member to
     // full (100 gp). Cheaper per-hp than potions at scale, but
     // only in town and one member at a time
     void townTempleHeal();
 
-    // R42: the smith â a +1 long sword (500 gp), claimed by the
+    // R42: the smith - a +1 long sword (500 gp), claimed by the
     // first living fighter whose blade is not already magic
     void townBuySword();
 
-    // R43: the training hall â promote the first queued member
+    // R43: the training hall - promote the first queued member
     // (1500 gp x their next level, DMG p.86 convention
     // simplified). One promotion per visit/key press.
     void townTrain();
 
-    // R43: the armorer â chain mail (75 gp, PHB list price) for
+    // R43: the armorer - chain mail (75 gp, PHB list price) for
     // the first living armor-eligible member (fighter or cleric)
     // whose current armor is worse than chain
     void townBuyChain();
 
-    // R43: the scribe â a spell scroll (200 gp): one random
+    // R43: the scribe - a spell scroll (200 gp): one random
     // unknown L1 MU spell is copied into the first MU's book
-    // (chance-to-learn deferred to level-ups â buying knowledge
+    // (chance-to-learn deferred to level-ups - buying knowledge
     // is the simplification)
     void townBuyScroll();
 
-    // R44: the keep â a name-level member raises a stronghold.
+    // R44: the keep - a name-level member raises a stronghold.
     // 10,000 gp is a rebuild-scale simplification of the DMG
     // p.83 barony costs (the book's castle economics are far
     // larger than delve treasure supports); name level here is
@@ -886,45 +886,45 @@ struct AppState {
     // R44: the scribe also stocks identify scrolls (100 gp)
     void townBuyIdentify();
 
-    // R44: [I] â read an identify scroll over the first
+    // R44: [I] - read an identify scroll over the first
     // pending item. The enchant was rolled at loot time but
     // hidden from the company; identification applies it.
     void useIdentifyScroll();
 
-    // R44: [H] â post a henchman offer (DMG p.36 simplified:
+    // R44: [H] - post a henchman offer (DMG p.36 simplified:
     // 100 gp spent regardless, acceptance d100 vs interest =
     // 25% + the best living member's Cha reaction adj)
     void townHireHenchman();
 
-    // R45: [S] the sage â 200 gp for lore on what lairs at
+    // R45: [S] the sage - 200 gp for lore on what lairs at
     // this depth. R52: the roster is the DMG Appendix C
     // Determination Matrix for this dungeon level (the real
-    // tables, OCR-verified) â dm::encounterKeys.
+    // tables, OCR-verified) - dm::encounterKeys.
     void townSage();
 
-    // R45: [Y] the spy â 500 gp for simple recon (DMG p.35
+    // R45: [Y] the spy - 500 gp for simple recon (DMG p.35
     // spying simplified): the CURRENT level's occupied rooms
     // and their monster keys
     void townSpy();
 
-    // R45: [M] the peddler â 500 gp for one random
-    // IDENTIFIED magic item (no scroll needed â the peddler
+    // R45: [M] the peddler - 500 gp for one random
+    // IDENTIFIED magic item (no scroll needed - the peddler
     // knows his wares)
     void townPeddler();
 
-    // R46: first-entry room flavor — one atmospheric line,
+    // R46: first-entry room flavor - one atmospheric line,
     // state-aware (occupied, trapped, looted, swept)
     void describeRoom(int roomIndex);
 
-    // R46: [T] talk with the town locals — state-aware
+    // R46: [T] talk with the town locals - state-aware
     // tavern chatter (the NPC dialogue system lite)
     void townTalk();
 
-    // R46: [J] upgrade the hire's kit to plate — paid from
+    // R46: [J] upgrade the hire's kit to plate - paid from
     // HIS purse, not the company gold (tranche-124 convention)
     void townUpgradeHire();
 
-    // R46: [C] hire a ship's crew — a 20-sailor coaster's
+    // R46: [C] hire a ship's crew - a 20-sailor coaster's
     // company (DMG p.34-35 simplified: 200 gp down, 40 gp
     // wages each return, 5% of every take at the exit)
     void townHireCrew();
@@ -947,18 +947,18 @@ struct AppState {
 
     // R45: spring the dart trap in a room. A thief in the
     // company may spot and disarm it first (1-in-3, the
-    // find/remove-trades instinct â simplified); otherwise a
+    // find/remove-trades instinct - simplified); otherwise a
     // random living member saves vs death or eats 2d6.
     void springTrap(int roomIndex);
 
-    // R45: place secret doors â wall tiles that border floor
+    // R45: place secret doors - wall tiles that border floor
     // (3 per level). Found doors become ordinary doors on
     // the map; hidden ones render as plain wall.
     void placeSecretDoors();
 
-    // R45: [F] search â one turn spent feeling the walls.
+    // R45: [F] search - one turn spent feeling the walls.
     // Each adjacent unfound secret door rolls 1-in-6 (a
-    // thief in the company raises it to 3-in-6 â his keen
+    // thief in the company raises it to 3-in-6 - his keen
     // eyes lead the search). Found doors become TILE_DOOR.
     void searchExplore();
 
@@ -969,28 +969,28 @@ struct AppState {
     // R24: build the encounter party from the living roster
     std::vector<ai::Actor> partyActors() const;
 
-    // R25: shared combat entry â starts the encounter and arms the
+    // R25: shared combat entry - starts the encounter and arms the
     // quaff hook (the hook owns the potion pool and the heal, so
     // the driver stays inventory-free)
     void beginCombat(std::vector<ai::Actor> foes, int roomIndex,
                      const std::string& monsterKey);
 
-    // R25: explore-mode quaff â heals the most-wounded living
+    // R25: explore-mode quaff - heals the most-wounded living
     // member; refuses (without consuming) if everyone is full
     void quaffExplore();
 
-    // R25: combat quaff â the ACTIVE member drinks this round
+    // R25: combat quaff - the ACTIVE member drinks this round
     // (round consumed via ACTION_DRINK; effect resolves at the
     // end of the round through the quaff hook)
     void combatQuaff();
 
-    // R28: the ACTIVE member fires missiles this round â requires
+    // R28: the ACTIVE member fires missiles this round - requires
     // a missile weapon in the ranged slot (falls back to melee
     // otherwise, with a log line so the player knows why)
     void combatShoot();
 
     // R36: the ACTIVE member hurls their melee weapon this round
-    // (dagger/hand axe/spear) â one shot from the weapon's own
+    // (dagger/hand axe/spear) - one shot from the weapon's own
     // dice/plus, then bare fists until the fight ends (the weapon
     // is recovered afterward)
     void combatThrow();
@@ -1047,7 +1047,7 @@ struct AppState {
     // ranges survive population)
     dm::DungeonEncounter encFromRoom(const RoomOccupant& r);
 
-    // R53: kit for a classed NPC (DMG p.176 — 1st level
+    // R53: kit for a classed NPC (DMG p.176 - 1st level
     // scale/chain with standard weapons, 2nd+ plate; men-at-arms
     // studded leather and spear; MUs unarmored with quarterstaff,
     // thieves leather and short sword)
@@ -1074,10 +1074,10 @@ struct AppState {
 
     // ---- R68: overland travel ---------------------------------------------
 
-    // [O] from town — set out along the wild roads
+    // [O] from town - set out along the wild roads
     void enterOverland();
 
-    // [1-8] — steer the route's terrain column (campaign-map
+    // [1-8] - steer the route's terrain column (campaign-map
     // fiction; the castle and encounter rolls both use it)
     void overlandSetTerrain(int t);
 
@@ -1087,7 +1087,7 @@ struct AppState {
 
     dm::OutdoorClime overlandClime() const;
 
-    // One encounter check — a march day or a night at camp (the
+    // One encounter check - a march day or a night at camp (the
     // cadence is this campaign's documented fiction; the DMG
     // checks "whenever an encounter is indicated").
     void overlandStep();
@@ -1097,7 +1097,7 @@ struct AppState {
     void overlandWildEncounter();
 
     // A patrol of the inhabited lands (R67 rollPatrol; the
-    // "ranger, where applicable" leader is area fiction — this
+    // "ranger, where applicable" leader is area fiction - this
     // campaign's patrols are fighter-led, documented)
     void overlandPatrol();
 
@@ -1115,23 +1115,23 @@ struct AppState {
     void overlandSafeCamp(const char* why);
 
     // p.182: the party is within visual range of the
-    // stronghold — 1/2 to 5 miles; the R67 builders do the rest
+    // stronghold - 1/2 to 5 miles; the R67 builders do the rest
     void overlandDiscoverCastle();
 
-    // [A] — resolve the castle: Table II (the discovery roll's
+    // [A] - resolve the castle: Table II (the discovery roll's
     // percentile) and the R67 builders
     void overlandApproach();
 
-    // [P] — give the stronghold a wide berth
+    // [P] - give the stronghold a wide berth
     void overlandPass();
 
-    // [T] — a day's march outward
+    // [T] - a day's march outward
     void overlandTravel();
 
-    // [H] — a day's march back toward town
+    // [H] - a day's march back toward town
     void overlandHomeward();
 
-    // [C] — camp for the night; an interrupted camp restores
+    // [C] - camp for the night; an interrupted camp restores
     // nothing (the R34 convention)
     void overlandCamp();
 

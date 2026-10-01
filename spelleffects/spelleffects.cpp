@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — spelleffects/spelleffects.cpp
+// Adnd1 - spelleffects/spelleffects.cpp
 // Resolution dispatch by spell and target type.
 // ============================================================================
 

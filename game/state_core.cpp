@@ -6,7 +6,7 @@ void AppState::newDungeon(uint64_t s){
         dungeon = dm::generateDungeon(s);
         map = dungeon.map;
         occupancy.init(dungeon);
-        // R24: no formDefault â the roster comes from creation
+        // R24: no formDefault - the roster comes from creation
         party.x = dungeon.entryX;
         party.y = dungeon.entryY;
         cam.follow(party);
@@ -42,7 +42,7 @@ void AppState::beginDelve(){
 void AppState::resetToCreation(){
         party = Party{};
         // R69: CreationState is non-copyable (its Dice holds a
-        // reference to creationRng) — reset fields explicitly
+        // reference to creationRng) - reset fields explicitly
         // instead of assigning a fresh temporary.
         creation.stage = CR_ROLL;
         creation.classPick = 0;
@@ -72,14 +72,14 @@ bool AppState::saveGame(){
         fprintf(f, "gold %d kills %d potions %d depth %d\n",
                 party.gold, party.kills, party.potions,
                 dungeonLevel);
-        // R43: the training queue (v1 saves lack this line â the
+        // R43: the training queue (v1 saves lack this line - the
         // loader treats it as optional)
         fprintf(f, "training %d",
                 (int)party.pendingTraining.size());
         for (int i : party.pendingTraining)
             fprintf(f, " %d", i);
         fprintf(f, "\n");
-        // R44: career extras (optional lines, v1-compatible â
+        // R44: career extras (optional lines, v1-compatible -
         // the loader's optional-tag chain treats each as absent
         // in older saves)
         fprintf(f, "stronghold %d %d\n",
@@ -117,7 +117,7 @@ bool AppState::saveGame(){
                 (int)c.rangedWeapon.id, c.rangedWeapon.plus,
                 (int)c.armor.id, c.armor.plus,
                 c.shield ? 1 : 0);
-            // R56: the magic-shield enchant (nonzero only â
+            // R56: the magic-shield enchant (nonzero only -
             // v1 saves carry no line and load as 0)
             if (c.shieldPlus > 0)
                 fprintf(f, "shieldplus %d\n", c.shieldPlus);
@@ -125,7 +125,7 @@ bool AppState::saveGame(){
             if (c.ringPlus > 0)
                 fprintf(f, "ringplus %d\n", c.ringPlus);
             // R33: the MU spellbook (one line per MU; other
-            // classes write nothing â v1 saves stay readable)
+            // classes write nothing - v1 saves stay readable)
             if (c.classIndex == 1) {
                 fprintf(f, "spells %d",
                         (int)c.knownSpells.size());
@@ -147,7 +147,7 @@ bool AppState::loadGame(){
             return false;
         }
         char tag[16];
-        // R33: one-token pushback â holds a tag read past the
+        // R33: one-token pushback - holds a tag read past the
         // optional spells line so the next member parse reuses it
         char pendingTag[16] = "";
         bool hasPending = false;
@@ -175,7 +175,7 @@ bool AppState::loadGame(){
             log.add("adnd1.sav is corrupt (career).");
             return false;
         }
-        // R44: generalized optional-tag chain â any number of
+        // R44: generalized optional-tag chain - any number of
         // party-level optional lines may appear between the
         // career line and the member loop (v1 saves have none,
         // R43 saves have "training"); the first unrecognized
@@ -235,7 +235,7 @@ bool AppState::loadGame(){
                     p.henchmanMaxHp = mx;
                     p.henchmanLevel = lv;
                     p.henchmanLoyalty = loy;
-                    // R45: the hire's career records â
+                    // R45: the hire's career records -
                     // OPTIONAL trailing ints (R44 saves lack
                     // them; defaults 0 are fine)
                     int hxp = 0, hpu = 0, dgv = 0, wpl = 0, spl = 0;
@@ -404,7 +404,7 @@ bool AppState::loadGame(){
         }
         fclose(f);
 
-        // R33: v1 saves predate the spellbook â grant each MU a
+        // R33: v1 saves predate the spellbook - grant each MU a
         // default book (one random L1 spell, creation convention)
         for (auto& c : p.members) {
             if (c.classIndex == 1 && c.knownSpells.empty()) {
@@ -434,8 +434,8 @@ bool AppState::loadGame(){
         creation.done = true;
         dungeonLevel = depth;
         mode = MODE_EXPLORE;
-        restoreSlots();   // R34: slots are not persisted â full pool on load
-        // R35: quivers are not persisted either â full 20 on load
+        restoreSlots();   // R34: slots are not persisted - full pool on load
+        // R35: quivers are not persisted either - full 20 on load
         for (auto& c : party.members)
             if (items::weapon(c.rangedWeapon.id).missile)
                 c.missileAmmo = 20;
@@ -483,11 +483,11 @@ void AppState::descend(){
         ++dungeonLevel;
         log.add("You descend the worn stairs...");
         newDungeon(seed + 1000 + dungeonLevel);
-        // R34: the descent takes hours â slots return with the
+        // R34: the descent takes hours - slots return with the
         // new level (keeps a descended company from being stuck
         // dry with no rest opportunity)
         restoreSlots();
-        // R38: quivers restock on the descent too â the trek to a
+        // R38: quivers restock on the descent too - the trek to a
         // new level is rest-like (slots precedent, R34)
         restockAmmo();
         char buf[96];

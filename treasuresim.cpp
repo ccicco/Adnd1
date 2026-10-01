@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — treasuresim.cpp (repo root, sibling of regtest.cpp)
+// Adnd1 - treasuresim.cpp (repo root, sibling of regtest.cpp)
 // R73: statistical audit of dm::treasure::rollTreasureType() against the
 // MM p.105 table (Curtiss-verified). Rolls every letter A-Z N times and
 // prints observed percentages/averages for eyeball comparison with the
@@ -37,7 +37,7 @@ static void fail(const char* why) {
 }
 
 int main() {
-    printf("R73 treasure drop-rate audit — %d rolls per letter\n\n", N);
+    printf("R73 treasure drop-rate audit - %d rolls per letter\n\n", N);
     printf("%-6s %6s %7s %7s %7s %7s %7s %8s\n",
            "letter", "%gems", "%jewel", "%magic",
            "avg gp", "avg val", "max val", "hoards");
@@ -124,6 +124,6 @@ int main() {
         printf("letter M with %2d creatures: avg gp per roll = %.1f\n",
                nc, (double)gp / 20000);
     }
-    printf("\naudit done — compare the %% columns and avg gp against MM p.105\n");
+    printf("\naudit done - compare the %% columns and avg gp against MM p.105\n");
     return 0;
                 }

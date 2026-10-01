@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — rules/saves.cpp
+// Adnd1 - rules/saves.cpp
 // PHB class save tables + DMG monster save rule.
 // ============================================================================
 
@@ -28,7 +28,7 @@ const char* saveCategoryName(SaveCategory s) {
 // category by 1 (floor 2) until the class's minimum column value.
 // NOTE (rebuild): values follow the standard 1e table shape as recorded
 // in the project notes. When the PHB PDF is re-uploaded, verify row by
-// row — the printed table wins on any disagreement (verification debt,
+// row - the printed table wins on any disagreement (verification debt,
 // see knowledge file).
 //
 // fighter (PHB p.22):

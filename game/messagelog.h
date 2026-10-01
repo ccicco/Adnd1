@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — game/messagelog.h
+// Adnd1 - game/messagelog.h
 // The scrolling message log (moved verbatim from adnd1.cpp, R31).
 // ============================================================================
 

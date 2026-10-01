@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — abilities/abilities.cpp
+// Adnd1 - abilities/abilities.cpp
 // PHB thief skill tables and ability checks.
 // ============================================================================
 
@@ -10,7 +10,7 @@ namespace abilities {
 // ----------------------------------------------------------------------------
 // Thief skill table (PHB p.28), levels 1-12.
 // NOTE (rebuild): verify line-by-line when the PHB PDF is re-uploaded
-// (verification debt — printed table wins).
+// (verification debt - printed table wins).
 // ----------------------------------------------------------------------------
 
 static const int kSkillRows = 12;
@@ -68,7 +68,7 @@ bool listenAtDoor(Dice& dice, int chanceIn6) {
 
 int listenChanceIn6(bool stoneDoor, bool isThief, int thiefLevel) {
     if (isThief) {
-        // thieves substitute their hear-noise percent — handled by
+        // thieves substitute their hear-noise percent - handled by
         // the caller with attemptThiefSkill; here map to a d6 band
         (void)thiefLevel;
         return 3;

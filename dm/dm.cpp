@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — dm/dm.cpp
+// Adnd1 - dm/dm.cpp
 // DMG morale, reactions, wandering, and Appendix A tables.
 // ============================================================================
 
@@ -15,7 +15,7 @@ namespace dm {
 //                            fleeing is the trigger, not also a bonus)
 // Situational modifiers applied to the TARGET (the base score):
 //   outnumbered            +2 to base (harder to break when you have
-//                            numbers? No — DMG: roll is against the
+//                            numbers? No - DMG: roll is against the
 //                            monster's base; outnumbering the
 //                            MONSTERS lowers their effective morale)
 // Rebuild convention (logged decision, from original morale tranche):

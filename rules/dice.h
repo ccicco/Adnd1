@@ -1,10 +1,10 @@
 // ============================================================================
-// Adnd1 — rules/dice.h
+// Adnd1 - rules/dice.h
 // Dice for AD&D 1st Edition: d4, d6, d8, d10, d12, d20, d100.
 //
 // All randomness flows through a seeded, deterministic Rng. The same seed
 // produces the same sequence everywhere (sim harness, gym, game) so batch
-// runs are reproducible. No global rand() — every roll is explicit.
+// runs are reproducible. No global rand() - every roll is explicit.
 // ============================================================================
 
 #pragma once
@@ -15,7 +15,7 @@
 namespace rules {
 
 // ----------------------------------------------------------------------------
-// Deterministic RNG — xorshift64*. Simple, fast, fully reproducible across
+// Deterministic RNG - xorshift64*. Simple, fast, fully reproducible across
 // platforms, good enough for dice. Seed 0 is remapped internally.
 // ----------------------------------------------------------------------------
 class Rng {

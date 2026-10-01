@@ -1,8 +1,8 @@
 // ============================================================================
-// Adnd1 — monsters/MonsterRegistry.cpp
+// Adnd1 - monsters/MonsterRegistry.cpp
 // Lua 5.4 C API loading of monster files.
 //
-// R49: field mapping remapped to the mm2lua.py schema (v2) — see the
+// R49: field mapping remapped to the mm2lua.py schema (v2) - see the
 // header. All coercers are defensive: the Lua files carry numbers,
 // strings, and mixed tables (armorClass = 2 or {2, "underside 4"}),
 // and nothing may crash or silently NaN on any of them.
@@ -261,7 +261,7 @@ void deriveSpecials(MonsterDef& def) {
         sp.type = SPECIAL_ENERGY_DRAIN;
         sp.name = "energy drain";
         sp.drainLevels = 1;
-        // "2 levels" per hit? (vampire-like) — parse "N level"
+        // "2 levels" per hit? (vampire-like) - parse "N level"
         int n = firstIntIn(atk, 1);
         if (atk.find("level") != std::string::npos && n >= 1 && n <= 4)
             sp.drainLevels = n;
@@ -299,7 +299,7 @@ void deriveSpecials(MonsterDef& def) {
 // ----------------------------------------------------------------------------
 // R75b: noAppearing/move are range STRINGS in the Lua data ("40-400",
 // "1-3 or 1-6", "1", "12\""), not the nested tables the R49 reads
-// expected — every monster loaded 0-0. parseIntRange takes the first
+// expected - every monster loaded 0-0. parseIntRange takes the first
 // N-M pair in the text (so "1 to 2-12" -> 2-12, "1 (1-4)" -> 1-4);
 // a lone number is lo=hi=N ("1", "1 patch"); lo>hi swaps (a "7-3"
 // data typo). Returns false when no number exists (0-0; the war_dog
@@ -325,7 +325,7 @@ static bool parseIntRange(const std::string& s, int& lo, int& hi) {
         }
         i = j - 1;   // not a pair; keep scanning
     }
-    // pass 2: no pair — first bare number
+    // pass 2: no pair - first bare number
     for (size_t i = 0; i < s.size(); ++i) {
         if (isdigit((unsigned char)s[i])) {
             size_t j = i;
@@ -417,7 +417,7 @@ int levelTagFromHd(float hd) {
 //   ettin     "Individual O, C, Y in lair"         -> ind O,C;   lair Y
 //   dervish   "Individuals J (L), Z in lair"      -> ind J;     lair L,Z
 // As-printed quirks preserved: "none", "See below", and the bare
-// digits ("1", "6" — werewolf etc.) parse as empty; the verbatim text
+// digits ("1", "6" - werewolf etc.) parse as empty; the verbatim text
 // stays in MonsterDef::treasureText.
 // ----------------------------------------------------------------------------
 namespace {
@@ -770,14 +770,14 @@ int MonsterRegistry::loadDirectory(const std::string& dirPath) {
     WIN32_FIND_DATAA fd;
     HANDLE h = FindFirstFileA(pattern.c_str(), &fd);
     if (h == INVALID_HANDLE_VALUE) {
-        // R74: "no files" is not an error — POSIX opendir succeeds on an
+        // R74: "no files" is not an error - POSIX opendir succeeds on an
         // empty dir. Match that contract: only hard path errors are -1.
         return GetLastError() == ERROR_FILE_NOT_FOUND ? 0 : -1;
     }
     int count = 0;
     do {
         std::string fname = fd.cFileName;
-        // R74: FindFirstFileA 3-char-extension quirk — "*.lua" can also
+        // R74: FindFirstFileA 3-char-extension quirk - "*.lua" can also
         // match e.g. "foo.luax" (8.3 short-name semantics). Guard exactly
         // like the POSIX branch: only genuine .lua files.
         if (fname.size() < 5 ||
@@ -843,7 +843,7 @@ ai::Actor MonsterRegistry::toActor(const std::string& key,
     a.isLeader = def->isLeader;
 
     // R75: copy special attacks onto the Actor. resolveSpecial (ai,
-    // R18) consumes these — but toActor never copied them, so no
+    // R18) consumes these - but toActor never copied them, so no
     // registry-spawned monster ever fired a special. The actor.h
     // comment claimed this was already done; it wasn't.
     for (const auto& sp : def->specials) {

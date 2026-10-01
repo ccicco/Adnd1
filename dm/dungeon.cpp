@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — dm/dungeon.cpp
+// Adnd1 - dm/dungeon.cpp
 // The walking generator: start at an entry, follow Appendix A passage
 // tables, carve rooms, place doors. Deterministic per seed.
 // ============================================================================
@@ -100,7 +100,7 @@ struct GenState {
             if (overBudget()) return;
 
             // roll a feature every few tiles (Appendix A rolls at
-            // intervals; simplified cadence — 1-in-3 per tile)
+            // intervals; simplified cadence - 1-in-3 per tile)
             if (steps >= 3 && (int)dice.d6() <= 2) {
                 PassageFeature f = rollPassageFeature(dice);
                 switch (f) {
@@ -202,7 +202,7 @@ DungeonResult generateDungeon(uint64_t seed, int tileBudget, int maxRooms) {
         for (int hop = 0; hop < 6; ++hop) {
             int px = x, py = y;
             g.walkPassage(x, y, dx, dy);
-            // walkPassage may have rotated (dx,dy is local) — detect
+            // walkPassage may have rotated (dx,dy is local) - detect
             // continuation by proximity: if we stopped near a turn,
             // re-roll direction. Simplified: continue in a new table
             // direction from where we ended.

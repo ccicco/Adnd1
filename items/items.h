@@ -1,12 +1,12 @@
 // ============================================================================
-// Adnd1 — items/items.h
+// Adnd1 - items/items.h
 // Weapons, armor, gear, encumbrance.
 //
 // Source: Players Handbook (2012 Premium reprint), pp. 35-39
 // (equipment tables: weapons damage by target size, armor AC,
 // gear costs/weights, encumbrance movement rates). Values follow
 // the PHB tables as recorded in project notes; verification debt
-// applies — printed table wins when the PHB PDF is re-uploaded.
+// applies - printed table wins when the PHB PDF is re-uploaded.
 // ============================================================================
 
 #pragma once
@@ -20,7 +20,7 @@ namespace items {
 // ----------------------------------------------------------------------------
 // Weapons (PHB p.36-38)
 //   damage vs small/medium and vs large targets, in dice notation
-//   (count, sides, bonus) — e.g. long sword 1d8 vs S/M, 1d12 vs L.
+//   (count, sides, bonus) - e.g. long sword 1d8 vs S/M, 1d12 vs L.
 //   Missile weapons carry range (in tens of feet) and rate of fire.
 // ----------------------------------------------------------------------------
 enum WeaponId : int {

@@ -7,36 +7,36 @@
 // zero gold); explore mode describes each room the first time
 // the party steps into it. Wired to AppState::townTalk /
 // townUpgradeHire / townHireCrew / describeRoom (game/appstate.h).
-// Adnd1 â a 2D tile-based CRPG implementing AD&D 1st Edition rules
-// Rebuild tranche R34: per-day spell slots â casters keep a live slot
+// Adnd1 - a 2D tile-based CRPG implementing AD&D 1st Edition rules
+// Rebuild tranche R34: per-day spell slots - casters keep a live slot
 // tally that only refills on rest (new [R] rest command in explore
 // mode), on descending a level, or on loading a save; interrupted
 // rest (wandering encounter) restores nothing. Slot state lives in
 // Character::slotsByLevel (game/party.h) and is managed by
 // AppState::restoreSlots / restExplore (game/appstate.h).
-// Rebuild tranche R36: throw command â in combat, [t] has the
+// Rebuild tranche R36: throw command - in combat, [t] has the
 // active member hurl their melee weapon (dagger/hand axe/spear):
 // one shot from the weapon's own dice/plus, then unarmed 1d2
 // fists for the rest of the encounter (recovered afterward).
 // Wired to AppState::combatThrow (game/appstate.h), resolved by
 // Encounter::requestThrow / resolveMissile (ai/actor.*).
-// Rebuild tranche R41: town hub â [B] from the dungeon opens the
+// Rebuild tranche R41: town hub - [B] from the dungeon opens the
 // town screen (MODE_TOWN): [1] buys a healing potion (50 gp),
 // [2] buys 20 arrows (30 gp), [B]/Esc returns to the dungeon at
 // the same depth. Wired to AppState::enterTown / leaveTown /
 // townBuyPotion / townBuyArrows (game/appstate.h).
-// Rebuild tranche R42: town services + scaling â town gains
+// Rebuild tranche R42: town services + scaling - town gains
 // [3] inn (safe rest, 10 gp), [4] temple heal (100 gp), [5]
 // smith (+1 long sword, 500 gp); treasure gold and lair sizes
 // scale with dungeon depth. Missile range bands are NOT in this
-// tranche (driver work â split out to keep this one shell-only).
-// Rebuild tranche R43: training + range + stock â town gains
+// tranche (driver work - split out to keep this one shell-only).
+// Rebuild tranche R43: training + range + stock - town gains
 // [6] training hall (1500 gp x level, promotes queued level-ups),
 // [7] armorer (chain mail, 75 gp), [8] scribe (spell scroll,
 // 200 gp); [x] shoot in combat is refused once the range closes
 // (5 rounds). Wired to AppState::townTrain / townBuyChain /
 // townBuyScroll / combatShoot gate (game/appstate.h).
-// Rebuild tranche R44: five features â [0] keep (name level,
+// Rebuild tranche R44: five features - [0] keep (name level,
 // 10,000 gp; rents + half-price training), [9] identify scroll
 // (100 gp) and [I] to read one over pending magic loot, [H] the
 // henchman offer (100 gp; an NPC fighter joins the fights, upkeep
@@ -52,20 +52,20 @@
 // doors found with [F] search. Wired to AppState::
 // springTrap / searchExplore / townSage / townSpy /
 // townPeddler (game/appstate.h).
-// R31 heritage: file split â adnd1.cpp is now the Win32/GDI
+// R31 heritage: file split - adnd1.cpp is now the Win32/GDI
 // shell only (renderer, drawing, window proc, input); the game
 // simulation moved verbatim to game/ headers:
-//   game/messagelog.h  â MessageLog
-//   game/party.h       â Character, Party, roster constants
-//   game/appstate.h    â Occupancy, Treasure, Camera, GameMode,
+//   game/messagelog.h  - MessageLog
+//   game/party.h       - Character, Party, roster constants
+//   game/appstate.h    - Occupancy, Treasure, Camera, GameMode,
 //                        CreationState, CombatState, AppState
 // The Renderer moved out of AppState to a shell-owned global
 // (g_rend) so game/ never includes windows.h. No behavior change.
 // Earlier tranches R24-R30: party creation, potions, treasure XP,
 // spells in combat, ranged weapons, save/load, prime-requisite
-// XP adjustment â see the git history for details.
+// XP adjustment - see the git history for details.
 //
-// Build (MinGW, Lua 5.4) — game/ headers are
+// Build (MinGW, Lua 5.4) - game/ headers are
 // header-only; R52 adds one translation unit,
 // dm/encounters.cpp:
 //   g++ -std=c++17 -I. -Ilua/include adnd1.cpp rules/dice.cpp rules/character.cpp rules/combat.cpp rules/saves.cpp rules/turn.cpp rules/classes.cpp spells/spells.cpp spelleffects/spelleffects.cpp items/items.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp ai/actor.cpp monsters/MonsterRegistry.cpp lua/src/liblua.a -o adnd1.exe -mwindows
@@ -100,7 +100,7 @@ static const char* CLASS_NAMES[4] = {
 static const char CLASS_INITIALS[4] = { 'F', 'M', 'C', 'T' };
 
 // ----------------------------------------------------------------------------
-// Renderer â GDI, double-buffered
+// Renderer - GDI, double-buffered
 // ----------------------------------------------------------------------------
 
 struct Renderer {
@@ -243,7 +243,7 @@ static void creationConfirmName() {
     s.log.add(buf);
 
     if ((int)s.party.members.size() >= cr.partySizeCap) {
-        s.beginDelve();   // roster full â off we go
+        s.beginDelve();   // roster full - off we go
     } else {
         cr.rollFresh();   // next member
     }
@@ -266,7 +266,7 @@ static void onPartyMove(int dx, int dy) {
     s.cam.follow(s.party);
     ++s.turnCount;
 
-    // R23: stairs check first â descending is the priority action
+    // R23: stairs check first - descending is the priority action
     if (s.party.x == s.stairsX && s.party.y == s.stairsY) {
         s.descend();
         return;
@@ -348,7 +348,7 @@ static void drawMonsterMarker(HDC dc, int px, int py, int count) {
     }
 }
 
-// R23: stairs marker â a cool blue ring with a down-chevron
+// R23: stairs marker - a cool blue ring with a down-chevron
 static void drawStairsMarker(HDC dc, int px, int py) {
     HBRUSH br = CreateSolidBrush(RGB(50, 70, 130));
     HPEN   pen = CreatePen(PS_SOLID, 2, RGB(150, 190, 255));
@@ -370,7 +370,7 @@ static void drawStairsMarker(HDC dc, int px, int py) {
     DeleteObject(cp);
 }
 
-// R24: party formation â each member's initial in a cluster on the
+// R24: party formation - each member's initial in a cluster on the
 // party tile (dead members are not drawn)
 static void drawPartyFormation(HDC dc, const Party& party,
                                int cx, int cy) {
@@ -541,7 +541,7 @@ static void drawCombat(HDC dc, const CombatState& cs) {
         ly += 22;
     }
 
-    // R27: spell menu overlay â the active member's castable list
+    // R27: spell menu overlay - the active member's castable list
     if (cs.spellMenuOpen && cs.encounter && !cs.over &&
         cs.activeMember >= 0 &&
         cs.activeMember < (int)cs.encounter->party().size()) {
@@ -567,7 +567,7 @@ static void drawCombat(HDC dc, const CombatState& cs) {
         SetTextColor(dc, RGB(230, 210, 160));
         char head[96];
         snprintf(head, sizeof head,
-                 "%s â SPELLS  ([1-9A-G] cast, [esc] close)",
+                 "%s - SPELLS  ([1-9A-G] cast, [esc] close)",
                  a.name.c_str());
         TextOutA(dc, 156, 152, head, (int)strlen(head));
 
@@ -744,7 +744,7 @@ static void drawCreate(HDC dc, const AppState& s) {
 // Drawing: HUD
 // ----------------------------------------------------------------------------
 
-// R41: town screen â the shops between dives
+// R41: town screen - the shops between dives
 static void drawTown(HDC dc, const AppState& s) {
     RECT vr = { 0, 0, VIEW_W, VIEW_H };
     HBRUSH black = CreateSolidBrush(RGB(8, 6, 4));
@@ -766,51 +766,51 @@ static void drawTown(HDC dc, const AppState& s) {
     TextOutA(dc, 20, 48, line, (int)strlen(line));
 
     SetTextColor(dc, RGB(200, 190, 160));
-    snprintf(line, sizeof line, "[1] Temple â potion of healing, 50 gp");
+    snprintf(line, sizeof line, "[1] Temple - potion of healing, 50 gp");
     TextOutA(dc, 20, 96, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[2] Fletcher â 20 arrows, 30 gp");
+    snprintf(line, sizeof line, "[2] Fletcher - 20 arrows, 30 gp");
     TextOutA(dc, 20, 120, line, (int)strlen(line));
 
     // R42: the expanded services
-    snprintf(line, sizeof line, "[3] Inn â safe night's rest, 10 gp");
+    snprintf(line, sizeof line, "[3] Inn - safe night's rest, 10 gp");
     TextOutA(dc, 20, 144, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[4] Temple â full heal (one member), 100 gp");
+    snprintf(line, sizeof line, "[4] Temple - full heal (one member), 100 gp");
     TextOutA(dc, 20, 168, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[5] Smith â +1 long sword, 500 gp");
+    snprintf(line, sizeof line, "[5] Smith - +1 long sword, 500 gp");
     TextOutA(dc, 20, 192, line, (int)strlen(line));
 
     // R43: training and stock
-    snprintf(line, sizeof line, "[6] Training hall â next level, 1500 gp x level");
+    snprintf(line, sizeof line, "[6] Training hall - next level, 1500 gp x level");
     TextOutA(dc, 20, 216, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[7] Armorer â chain mail, 75 gp");
+    snprintf(line, sizeof line, "[7] Armorer - chain mail, 75 gp");
     TextOutA(dc, 20, 240, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[8] Scribe â spell scroll, 200 gp");
+    snprintf(line, sizeof line, "[8] Scribe - spell scroll, 200 gp");
     TextOutA(dc, 20, 264, line, (int)strlen(line));
 
     // R44: the new services
-    snprintf(line, sizeof line, "[9] Scribe â identify scroll, 100 gp");
+    snprintf(line, sizeof line, "[9] Scribe - identify scroll, 100 gp");
     TextOutA(dc, 20, 288, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[0] Masons â build a keep, 10,000 gp (name level)");
+    snprintf(line, sizeof line, "[0] Masons - build a keep, 10,000 gp (name level)");
     TextOutA(dc, 20, 312, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[H] Crier â post a henchman offer, 100 gp");
+    snprintf(line, sizeof line, "[H] Crier - post a henchman offer, 100 gp");
     TextOutA(dc, 20, 336, line, (int)strlen(line));
     snprintf(line, sizeof line, "[I] Read an identify scroll");
     TextOutA(dc, 20, 360, line, (int)strlen(line));
 
     // R45: lore, recon, and the peddler
-    snprintf(line, sizeof line, "[S] Sage â what lairs below, 200 gp");
+    snprintf(line, sizeof line, "[S] Sage - what lairs below, 200 gp");
     TextOutA(dc, 20, 384, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[Y] Spy â recon the level, 500 gp");
+    snprintf(line, sizeof line, "[Y] Spy - recon the level, 500 gp");
     TextOutA(dc, 20, 408, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[M] Peddler â a magic item, 500 gp");
+    snprintf(line, sizeof line, "[M] Peddler - a magic item, 500 gp");
     TextOutA(dc, 20, 432, line, (int)strlen(line));
 
     // R46: talk, henchman plate, and ship crew
-    snprintf(line, sizeof line, "[T] Talk â town gossip, free");
+    snprintf(line, sizeof line, "[T] Talk - town gossip, free");
     TextOutA(dc, 20, 456, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[J] Outfit henchman in plate â his purse");
+    snprintf(line, sizeof line, "[J] Outfit henchman in plate - his purse");
     TextOutA(dc, 20, 480, line, (int)strlen(line));
-    snprintf(line, sizeof line, "[C] Hire ship crew â 200 gp, wages later");
+    snprintf(line, sizeof line, "[C] Hire ship crew - 200 gp, wages later");
     TextOutA(dc, 20, 504, line, (int)strlen(line));
 
     SetTextColor(dc, RGB(160, 150, 120));
@@ -835,13 +835,13 @@ static void drawTown(HDC dc, const AppState& s) {
         char nm[9];
         strncpy(nm, c.name.c_str(), 8);
         nm[8] = 0;
-        snprintf(line, sizeof line, "%s â quiver %d",
+        snprintf(line, sizeof line, "%s - quiver %d",
                  nm, c.missileAmmo);
         TextOutA(dc, 20, y, line, (int)strlen(line));
         y += 22;
     }
 
-    // R44: company status panel â roster, hire, keep, scrolls
+    // R44: company status panel - roster, hire, keep, scrolls
     SetTextColor(dc, RGB(220, 200, 160));
     snprintf(line, sizeof line, "THE COMPANY");
     TextOutA(dc, 430, 96, line, (int)strlen(line));
@@ -1109,7 +1109,7 @@ static void drawHud(HDC dc, const AppState& s) {
     SetBkColor(dc, RGB(25, 22, 18));
     SetTextColor(dc, RGB(200, 190, 160));
 
-    // R24: roster line â every member, name truncated to 8 chars
+    // R24: roster line - every member, name truncated to 8 chars
     char line[256];
     line[0] = 0;
     size_t len = 0;
@@ -1120,7 +1120,7 @@ static void drawHud(HDC dc, const AppState& s) {
         strncpy(nm, c.name.c_str(), 8);
         nm[8] = 0;
         snprintf(tok, sizeof tok, "%s%s %c%d %d/%d   ",
-                 c.hp > 0 ? "" : "Ã¢ÂÂ ",
+                 c.hp > 0 ? "" : "*",
                  nm, CLASS_INITIALS[c.classIndex],
                  c.level, c.hp, c.maxHp);
         strcat(line, tok);
@@ -1184,7 +1184,7 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     creationConfirmName();
                 }
             } else if (g_app.mode == MODE_TOWN) {
-                // R41: town keys â shops and the way back down
+                // R41: town keys - shops and the way back down
                 switch (wp) {
                     case '1':
                         g_app.townBuyPotion();
@@ -1306,7 +1306,7 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         break;
                 }
             } else if (g_app.mode == MODE_OVERLAND) {
-                // R68: wilderness travel keys — [1-8] route
+                // R68: wilderness travel keys - [1-8] route
                 // terrain, [T] march outward, [H] homeward,
                 // [C] camp, [A]/[P] the discovered castle
                 switch (wp) {
@@ -1419,7 +1419,7 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                                 g_app.combat.activeMember, list[pick]);
                             g_app.combat.spellMenuOpen = false;
                             g_app.log.add(
-                                "Spell readied â [space] to resolve "
+                                "Spell readied - [space] to resolve "
                                 "the round.");
                         }
                     }
@@ -1529,7 +1529,7 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.quaffExplore();
                         break;
 
-                    // R34: rest â restore spell slots and heal
+                    // R34: rest - restore spell slots and heal
                     case 'R':
                     case 'r':
                         g_app.restExplore();
@@ -1620,7 +1620,7 @@ int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, int nCmdShow) {
             "Adnd1", MB_OK | MB_ICONWARNING);
     }
 
-    // R24: start at creation â the first roll is on the house
+    // R24: start at creation - the first roll is on the house
     g_app.creation.rollFresh();
 
     WNDCLASSW wc = {};

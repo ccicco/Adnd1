@@ -1,7 +1,7 @@
 // ============================================================================
-// Adnd1 — spelleffects/spelleffects.h
+// Adnd1 - spelleffects/spelleffects.h
 // Spell resolution engine. Works on target DESCRIPTORS (hp, save
-// bonuses, MR) so both characters and monsters plug in — no actor
+// bonuses, MR) so both characters and monsters plug in - no actor
 // types here.
 //
 // Depends: rules/saves (R6), rules/dice (R1), spells/ (R13).
@@ -99,7 +99,7 @@ struct SpellCastResult {
 
 // ----------------------------------------------------------------------------
 // Resolve a spell cast at casterLevel against the given targets.
-// The caller decides who is in the area / multi-target set — this
+// The caller decides who is in the area / multi-target set - this
 // engine only resolves per target.
 // ----------------------------------------------------------------------------
 SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,

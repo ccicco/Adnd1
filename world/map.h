@@ -1,7 +1,7 @@
 // ============================================================================
-// Adnd1 — world/map.h
+// Adnd1 - world/map.h
 // Shared map types, extracted from adnd1.cpp (R9 refactor; behavior
-// unchanged — adnd1.cpp now includes this header).
+// unchanged - adnd1.cpp now includes this header).
 // ============================================================================
 
 #pragma once

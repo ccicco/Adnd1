@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — rules/saves.h
+// Adnd1 - rules/saves.h
 // Saving throws.
 //
 // Source: Players Handbook (2012 Premium reprint), class save tables
@@ -18,7 +18,7 @@ namespace rules {
 // ----------------------------------------------------------------------------
 // The five saving throw categories (PHB convention):
 //   1. Death, Poison (death/poison/poison spray etc.)
-//   2. Wands (paralysis/rod/staff/wand category — named for the rod/
+//   2. Wands (paralysis/rod/staff/wand category - named for the rod/
 //      staff/wand column; includes paralysis effects per PHB note)
 //   3. Petrification, Polymorph (paralysis-or-petrification-or-polymorph)
 //   4. Breath Weapon (dragon breath, gas, area effects)
@@ -36,7 +36,7 @@ enum SaveCategory : int {
 const char* saveCategoryName(SaveCategory s);
 
 // Save target number for a class/level (classIndex: 0 fighter, 1 MU,
-// 2 cleric, 3 thief — matches CharClass). d20 >= target succeeds.
+// 2 cleric, 3 thief - matches CharClass). d20 >= target succeeds.
 // Lower is better; targets improve (drop) with level.
 int saveTarget(int classIndex, int level, SaveCategory cat);
 
@@ -44,7 +44,7 @@ int saveTarget(int classIndex, int level, SaveCategory cat);
 // Modifiers assembled by the caller:
 //   WIS magical defense adjustment (rules/character wisMagDefAdj)
 //   CON poison save adjustment (vs. SAVE_DEATH_POISON)
-//   DEX reaction adj (vs. breath/AoE — DMG guidance)
+//   DEX reaction adj (vs. breath/AoE - DMG guidance)
 //   item/save bonuses (items layer later)
 // attemptSave rolls d20 + modifier >= target.
 // ----------------------------------------------------------------------------

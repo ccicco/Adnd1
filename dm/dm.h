@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — dm/dm.h
+// Adnd1 - dm/dm.h
 // The DM layer: morale, reactions, wandering monsters, dungeon
 // generation. The game adjudicates; the player plays.
 //
@@ -30,7 +30,7 @@ using rules::Rng;
 // Every monster has a base morale score. Checks happen at defined
 // triggers; 2d10 is rolled against adjustments + base score.
 //   score <= adjusted base : monster fights on
-//   score >  adjusted base : monster fails — flees/surrenders
+//   score >  adjusted base : monster fails - flees/surrenders
 // ----------------------------------------------------------------------------
 enum MoraleBase : int {
     MORALE_FANATIC  = 18,  // fights to the death: undead, mindless,
@@ -83,7 +83,7 @@ Reaction rollReaction(Dice& dice, int chaReactionAdj);
 // One check per turn of dungeon time (the hook in adnd1.cpp calls
 // this). Chance is per-level configurable (DMG suggests 1 in 12 base
 // at 1st-3rd dungeon levels; higher dungeon levels check at a worse
-// chance — tuned by dungeon level table when Appendix C is wired).
+// chance - tuned by dungeon level table when Appendix C is wired).
 // ----------------------------------------------------------------------------
 struct WanderConfig {
     int chanceOutOf12 = 1;    // base 1-in-12 (DMG default guidance)
@@ -104,7 +104,7 @@ int wanderDistance(Dice& dice);
 // roll doors where passages turn or end, generate rooms, stock
 // contents. Encoded here: the tables the generator rolls on. The map
 // assembly (tile writing) lives in dm/dungeon.cpp using the Map
-// struct from adnd1.cpp — for now the generator produces a tile grid
+// struct from adnd1.cpp - for now the generator produces a tile grid
 // via callback so it stays decoupled from the Win32 layer.
 // ----------------------------------------------------------------------------
 

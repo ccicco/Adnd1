@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — rules/combat.cpp
+// Adnd1 - rules/combat.cpp
 // DMG combat tables.
 // ============================================================================
 
@@ -11,7 +11,7 @@ namespace rules {
 // Fighter attack matrix (DMG p.74-75 "Combat Tables", men attacking).
 //
 // Columns: AC 10  9  8  7  6  5  4  3  2  1  0 -1
-// Rows (fighter level): classic 1e values —
+// Rows (fighter level): classic 1e values -
 //    L1: 10 11 12 13 14 15 16 17 18 19 20 20
 //    L2:  9 10 11 12 13 14 15 16 17 18 19 20
 //    L3:  8  9 10 11 12 13 14 15 16 17 18 19
@@ -25,7 +25,7 @@ namespace rules {
 //
 // NOTE (rebuild): rows 1-9 above are transcribed from the DMG table as
 // recorded in the project notes; the golden test (DMG p.71 Example of
-// Melee, tranche 42 original) pins five of these numbers — that check
+// Melee, tranche 42 original) pins five of these numbers - that check
 // lands when rules/turn exists. Values follow the well-known 1e matrix
 // where level bands shift by armor group; if any CHECK disagrees with
 // the printed DMG table, the printed table wins and the row is fixed.
@@ -203,7 +203,7 @@ TurnAttempt turnUndead(int clericLevel, int undeadKind) {
 
 int rollTurnCount(Dice& dice, int countDigit) {
     // count digits on the matrix are the number shown; the 1e rule is
-    // 2d6 turned when a number appears — the digit IS the 2d6 result
+    // 2d6 turned when a number appears - the digit IS the 2d6 result
     // band marker. We roll 2d6 (original tranche 51 convention: number
     // success turns weakest-first up to the rolled count).
     int r = (int)dice.roll(2, 6, 0);

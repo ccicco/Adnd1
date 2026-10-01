@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — items/items.cpp
+// Adnd1 - items/items.cpp
 // PHB p.35-39 equipment tables.
 // ============================================================================
 
@@ -12,7 +12,7 @@ namespace items {
 // Weapons (PHB p.37 table; damage vs S/M and L, missile data)
 // Weight in gp units (1 gp = 1/10 lb). Costs from the same table.
 // NOTE: values follow the standard 1e table from project notes
-// (verification debt — printed table wins).
+// (verification debt - printed table wins).
 // ----------------------------------------------------------------------------
 
 static const WeaponDef kWeapons[WPN_COUNT] = {

@@ -17,9 +17,12 @@ g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
   -o regtest -L"$PREFIX/lib" -llua5.4 && ./regtest || fail=1
 
 echo "== [2/3] working tree hygiene =="
+# R84: auto-clean - bytecode is always regenerable, so the gate
+# removes it instead of failing (it rode into a commit once, R80;
+# the FAIL taxed every splice round since)
 if [ -d tools/__pycache__ ]; then
-  echo "FAIL: tools/__pycache__ present (would ride into the commit)"
-  fail=1
+  rm -rf tools/__pycache__
+  echo "NOTE: removed tools/__pycache__ (auto-clean)"
 else
   echo "OK: no __pycache__"
 fi

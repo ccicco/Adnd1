@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 — rules/turn.h
+// Adnd1 - rules/turn.h
 // Time and the segment scheduler.
 //
 // Source: Dungeon Masters Guide (2012 Premium reprint):
@@ -11,7 +11,7 @@
 //     per turn; 1" = 10' dungeon, 10 yards outdoor per original
 //     tranche 38 convention)
 //   - Casting times, missile rate of fire: PHB spell + items tables
-//     (hooks — values arrive with items/spells layers)
+//     (hooks - values arrive with items/spells layers)
 //
 // The scheduler is a time-ordered event queue: an actor declares an
 // action, the action resolves at its segment. The DMG p.71 Example of
@@ -124,7 +124,7 @@ public:
     void submit(const Action& a, int initiativeSegment);
 
     // sort queued events by segment; stable for equal segments
-    // (submission order preserved — declaration order tiebreak)
+    // (submission order preserved - declaration order tiebreak)
     void beginRound();
 
     // pop events in segment order; false when the round is empty

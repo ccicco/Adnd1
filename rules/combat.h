@@ -1,11 +1,11 @@
 // ============================================================================
-// Adnd1 — rules/combat.h
+// Adnd1 - rules/combat.h
 // Attack matrices, weapon-vs-AC adjustments, undead turning.
 //
 // Source: Dungeon Masters Guide (2012 Premium reprint).
 //   - Attack matrices: DMG p.74-75 (combat tables; fighter matrix is the
 //     master, other classes row-shift into it)
-//   - Monster attacks: DMG p.80 "Monsters attacking" — attack as fighters
+//   - Monster attacks: DMG p.80 "Monsters attacking" - attack as fighters
 //     at a level derived from hit dice (section II)
 //   - Weapon vs AC adjustments: DMG p.38 table (weapon type vs armor class
 //     type: better/worse by 1-2)
@@ -36,7 +36,7 @@ namespace rules {
 int attackMatrixFighter(int level, int ac);
 
 // Class attack numbers: cleric/MU/thief attack as fighters at a lower
-// effective level (the 1e convention — the DMG prints separate tables
+// effective level (the 1e convention - the DMG prints separate tables
 // that are row-shifts of the fighter matrix):
 //   cleric: effective level = level (clerics use their own near-fighter
 //           progression; encoded as level - 2, min 1)
@@ -88,7 +88,7 @@ enum WeaponClass : int {
 //   vs plate, worse vs none/leather; slashing is neutral-biased.
 int weaponVsAcAdjustment(WeaponClass wc, AcType ac);
 
-// Derive the AC type from a descending AC number (armor mapping hook —
+// Derive the AC type from a descending AC number (armor mapping hook -
 // the items layer refines this once armor data exists; default mapping
 // follows the PHB armor table: 10-8 none/leather, 7-5 chain-scale,
 // 4-2 plate/splint, 1-0 field plate/full).
@@ -113,10 +113,10 @@ bool weaponSufficient(int requiredPlus, int weaponBonus);
 // ----------------------------------------------------------------------------
 
 enum TurnResult : int {
-    TURN_NONE = 0,      // dash — cannot affect
+    TURN_NONE = 0,      // dash - cannot affect
     TURN_COUNT,         // number shown: roll 2d6 turned
-    TURN_ALL,           // T — all turned
-    TURN_DESTROY,       // D — all destroyed
+    TURN_ALL,           // T - all turned
+    TURN_DESTROY,       // D - all destroyed
 };
 
 struct TurnAttempt {
