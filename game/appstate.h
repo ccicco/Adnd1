@@ -729,6 +729,7 @@ struct AppState {
     Camera        cam;
     MessageLog    log;
     int           turnCount = 0;
+    int           moveDebt   = 0;   // R89: pace tenths owed
     uint64_t      seed = 1;
     int           dungeonLevel = 1;
     rules::Rng    rng{1};

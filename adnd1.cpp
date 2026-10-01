@@ -264,7 +264,18 @@ static void onPartyMove(int dx, int dy) {
     s.party.x = nx;
     s.party.y = ny;
     s.cam.follow(s.party);
-    ++s.turnCount;
+    // R89: the pace - a step costs 1200/rate tenths of a turn.
+    // A 120' company ticks a full turn every step (as ever);
+    // a slower one accrues debt and ticks late - the wander
+    // check only fires on ticks, so the laden are bitten
+    // four times per step at 30'.
+    s.moveDebt += paceStepTenths(partyMoveRate(s.party));
+    bool ticked = false;
+    while (s.moveDebt >= 10) {
+        s.moveDebt -= 10;
+        ++s.turnCount;
+        ticked = true;
+    }
 
     // R23: stairs check first - descending is the priority action
     if (s.party.x == s.stairsX && s.party.y == s.stairsY) {
@@ -284,7 +295,7 @@ static void onPartyMove(int dx, int dy) {
         return;
     }
 
-    if (dm::wanderCheck(s.dice, s.wander)) {
+    if (ticked && dm::wanderCheck(s.dice, s.wander)) {
         int dist = dm::wanderDistance(s.dice);
         char buf[96];
         snprintf(buf, sizeof buf,

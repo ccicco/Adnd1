@@ -11,6 +11,7 @@ void AppState::newDungeon(uint64_t s){
         party.y = dungeon.entryY;
         cam.follow(party);
         turnCount = 0;
+        moveDebt   = 0;
         rng.seed(s * 7919 + 13);
 
         placeStairs();
@@ -710,7 +711,9 @@ void AppState::dumpEquipment(){
             // The long-dormant items::encumbrance API finally
             // has a consumer.
             {
-                int wt = carriedWeight(c);
+                // R89: the true load - kit, cargo, and the
+                // member's share of the company's coin
+                int wt = memberLoad(party, c);
                 items::EncumbranceBand b =
                     items::encumbranceBand(wt, c.abilities.str);
                 static const char* kBand[items::ENC_BAND_COUNT] = {
@@ -771,7 +774,9 @@ void AppState::dumpEquipment(){
             log.add(buf);
         }
         snprintf(buf, sizeof buf,
-                 "Carried: %d potions, %d scrolls, %d gp.",
-                 party.potions, party.scrolls, party.gold);
+                 "Carried: %d potions, %d scrolls, %d gp "
+                 "(coin %d wt each).",
+                 party.potions, party.scrolls, party.gold,
+                 coinWeightShare(party));
         log.add(buf);
     }

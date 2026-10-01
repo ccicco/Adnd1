@@ -592,6 +592,35 @@ inline bool henchmanCanShoulder(const Party& p, const PackItem& it) {
                                   12) != items::ENC_HEAVY;
 }
 
+// R89: the coin share - 10 gold coins weigh one gp unit
+// (PHB p.101, 10 coins to the pound); the pooled purse is
+// split evenly across the LIVING members (the hire is paid,
+// not a pack mule for coin). Coins are LIQUID: the packAdd
+// gear gate excludes them by design - the burden display,
+// the [E] warning and the pace tell the truth instead.
+inline int coinWeightShare(const Party& p) {
+    int living = 0;
+    for (const auto& c : p.members)
+        if (c.hp > 0) ++living;
+    if (living == 0) return 0;
+    return p.gold / (10 * living);
+}
+
+// R89: a member's true load - worn kit, pack cargo, and his
+// share of the company's coin
+inline int memberLoad(const Party& p, const Character& c) {
+    return carriedWeight(c) + coinWeightShare(p);
+}
+
+// R89: the pace cost of one step, tenths of a turn - a 120'
+// company pays 10 (one turn per step, as ever); a 30' company
+// pays 40 (four turns of dungeon time crawl past while the
+// laden company shuffles, and the halls get four bites at
+// the wander check)
+inline int paceStepTenths(int moveRate) {
+    return 1200 / moveRate;
+}
+
 // R88: the company's move rate - the slowest living member's
 // band sets the pace (the company moves together); a dead or
 // empty party is treated as unencumbered
@@ -600,7 +629,7 @@ inline int partyMoveRate(const Party& p) {
     for (const auto& c : p.members) {
         if (c.hp <= 0) continue;
         int m = items::movementForBand(
-            items::encumbranceBand(carriedWeight(c),
+            items::encumbranceBand(memberLoad(p, c),
                                    c.abilities.str));
         if (m < best) best = m;
     }

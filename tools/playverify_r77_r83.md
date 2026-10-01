@@ -114,6 +114,22 @@
 - [ ] Dungeon HUD status line now shows "Move N'" (company
       pace: the slowest living member's band; 120' unburdened).
 
+## R89: the scale + the pace
+- [ ] [D] dump kit: the "Carried:" line now ends
+      "(coin N wt each)" - the purse weighs (10 coins per
+      gp unit, split across living members).
+- [ ] Burden lines count the coin share: a lone member
+      hauling 20,000 gp shows "heavily burdened (2020 gp wt,
+      move 30')" and the HUD Move reads 30'.
+- [ ] Spend the purse in town and the company springs back to
+      120' instantly (coin is liquid).
+- [ ] The pace is mechanical: watch Turn on the HUD while
+      walking - an unburdened company advances one turn per
+      step; a 30' company gains four turns per step (wander
+      checks fire only on turns - the laden are interrupted
+      far more often; watch "Movement in the distance..." and
+      count turns per step).
+
 ## Sign-off
 - [ ] No mojibake anywhere on screen (every string is pure ASCII
       since R84 - report ANY stray glyph, it is a bug).

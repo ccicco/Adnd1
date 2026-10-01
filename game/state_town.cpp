@@ -906,7 +906,7 @@ void AppState::townSwapGear(){
                 // a HEAVY result is called out (deliberate
                 // overburden is a player choice; the R87 packAdd
                 // gate still stops pack CARRIES, not equips)
-                if (items::encumbranceBand(carriedWeight(c),
+                if (items::encumbranceBand(memberLoad(party, c),
                                            c.abilities.str) ==
                     items::ENC_HEAVY)
                     log.add("  (now heavily burdened - "
