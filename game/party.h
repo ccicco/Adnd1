@@ -592,6 +592,21 @@ inline bool henchmanCanShoulder(const Party& p, const PackItem& it) {
                                   12) != items::ENC_HEAVY;
 }
 
+// R88: the company's move rate - the slowest living member's
+// band sets the pace (the company moves together); a dead or
+// empty party is treated as unencumbered
+inline int partyMoveRate(const Party& p) {
+    int best = items::movementForBand(items::ENC_UNENCUMBERED);
+    for (const auto& c : p.members) {
+        if (c.hp <= 0) continue;
+        int m = items::movementForBand(
+            items::encumbranceBand(carriedWeight(c),
+                                   c.abilities.str));
+        if (m < best) best = m;
+    }
+    return best;
+}
+
 // the item's display name, reconstructed from the item tables
 // (the save stores only kind/id/plus/gp - names are never saved)
 inline std::string packItemName(const PackItem& p) {

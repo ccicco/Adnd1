@@ -902,6 +902,15 @@ void AppState::townSwapGear(){
                          c.name.c_str(),
                          packItemName(p).c_str());
                 log.add(buf);
+                // R88: allow-with-warning - the swap stands, but
+                // a HEAVY result is called out (deliberate
+                // overburden is a player choice; the R87 packAdd
+                // gate still stops pack CARRIES, not equips)
+                if (items::encumbranceBand(carriedWeight(c),
+                                           c.abilities.str) ==
+                    items::ENC_HEAVY)
+                    log.add("  (now heavily burdened - "
+                            "movement 30')");
                 ++swaps;
             }
         }

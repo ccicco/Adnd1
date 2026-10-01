@@ -724,6 +724,52 @@ void AppState::dumpEquipment(){
                 log.add(buf);
             }
         }
+        // R88: the hire's kit and cargo (he was absent from
+        // the dump entirely; kit is the fixed R80/R46 ladder)
+        if (party.henchmanPresent) {
+            char kmelee[48], karm[48], ksh[32];
+            if (party.henchmanWeaponPlus > 0)
+                snprintf(kmelee, sizeof kmelee, "Long Sword +%d",
+                         party.henchmanWeaponPlus);
+            else
+                snprintf(kmelee, sizeof kmelee, "Long Sword");
+            snprintf(karm, sizeof karm, ", %s",
+                     items::armor(party.party_plate_kit()).name);
+            if (party.henchmanShieldPlus > 0)
+                snprintf(ksh, sizeof ksh, ", shield +%d",
+                         party.henchmanShieldPlus);
+            else
+                snprintf(ksh, sizeof ksh, ", shield");
+            snprintf(buf, sizeof buf, "%s: %s%s%s",
+                     party.henchmanName.c_str(), kmelee, karm, ksh);
+            log.add(buf);
+            if (!party.henchmanPack.empty()) {
+                std::string pk;
+                for (const auto& pi : party.henchmanPack) {
+                    if (!pk.empty()) pk += "; ";
+                    pk += packItemName(pi);
+                }
+                snprintf(buf, sizeof buf,
+                         "  %s's pack (%d/%d): %s",
+                         party.henchmanName.c_str(),
+                         (int)party.henchmanPack.size(),
+                         PACK_CAP, pk.c_str());
+                log.add(buf);
+            }
+            // his burden at the fixed STR 12
+            int hwt = henchmanCarryWeight(party);
+            items::EncumbranceBand hb =
+                items::encumbranceBand(hwt, 12);
+            static const char* hBand[items::ENC_BAND_COUNT] = {
+                "unencumbered", "lightly burdened",
+                "moderately burdened", "heavily burdened"
+            };
+            snprintf(buf, sizeof buf,
+                     "  %s: %s (%d gp wt, move %d')",
+                     party.henchmanName.c_str(), hBand[hb], hwt,
+                     items::movementForBand(hb));
+            log.add(buf);
+        }
         snprintf(buf, sizeof buf,
                  "Carried: %d potions, %d scrolls, %d gp.",
                  party.potions, party.scrolls, party.gold);

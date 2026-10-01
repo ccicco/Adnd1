@@ -1142,11 +1142,12 @@ static void drawHud(HDC dc, const AppState& s) {
 
     snprintf(line, sizeof line,
              "Dungeon Lvl %d  Rooms: %d (%d lairs)  %d gp  Potions %d  "
-             "Kills %d  Turn %d  Seed %llu  [P] quaff  "
+             "Kills %d  Turn %d  Move %d'  Seed %llu  [P] quaff  "
              "[K] save  [L] load  [R] rest  [B] town",
              s.dungeonLevel, (int)s.dungeon.rooms.size(),
              s.countOccupied(), party.gold, party.potions,
-             party.kills, s.turnCount, (unsigned long long)s.seed);
+             party.kills, s.turnCount, partyMoveRate(party),
+             (unsigned long long)s.seed);
     TextOutA(dc, 12, VIEW_H + 32, line, (int)strlen(line));
 
     SetTextColor(dc, RGB(160, 150, 120));

@@ -102,6 +102,18 @@
       past it the item stays appraised ("...shoulders..." only
       while it fits).
 
+## R88: the warning + the hire's dump
+- [ ] [D] dump kit now ends with the henchman's block (when
+      hired): "Grimnir: Long Sword, Plate Mail, shield",
+      his cargo pack line, and his burden line (STR 12).
+- [ ] [E] on a member already over the HEAVY band (weak STR
+      in plate kit, or a pre-R87 save): the swap happens and
+      the log adds "  (now heavily burdened - movement 30')".
+      Swaps conserve carried weight (the old kit returns to
+      the pack) - the warning is a state echo, not a cause.
+- [ ] Dungeon HUD status line now shows "Move N'" (company
+      pace: the slowest living member's band; 120' unburdened).
+
 ## Sign-off
 - [ ] No mojibake anywhere on screen (every string is pure ASCII
       since R84 - report ANY stray glyph, it is a bug).
