@@ -39,6 +39,20 @@ and stay as they are. Shop behavior is unchanged - same
 prices, same refusals, same purse math; the R104 scales
 audit pins it.
 
+## R107 appendix - the lean gate
+
+The user spotted the doubled -Wswitch warning: every
+preflight compiled every Termux-visible TU twice (the R99
+syntax gate + the battery build). The gate now compiles
+only the build's complement (game/, ai/, spelleffects/,
+treasuresim.cpp) - every TU compiles exactly once per
+preflight, 36 compile passes down to 24. Coverage gain
+found by the survey: monsters/MonsterXp.cpp had never
+been compiled by ANY path (old gate never listed
+monsters/, build links only MonsterRegistry.cpp) while
+its xpForKill/xpForNpc are called from
+game/state_dungeon.cpp - it joined the gate.
+
 ## Standing rules from this survey
 
 1. Book data (encounters, xp tables) is allowed to be

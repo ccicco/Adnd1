@@ -6,6 +6,12 @@
 # caught the R97 enum defect lived only in chat notes, and
 # its ad-hoc "|| break" form exited SUCCESS on error. Here
 # the loop remembers failures; the gate ends RED.
+# R107 (the lean gate): the gate now compiles only the
+# TUs the battery build does NOT - every TU compiles
+# exactly once per preflight (the old gate doubled the
+# build's own files; the -Wswitch warning printed twice).
+# It also gained monsters/MonsterXp.cpp, which no compile
+# path had ever touched.
 # Usage:  ./tools/preflight.sh && git add -A && git commit -m "..." && git push
 # Exit 0 only when every check is green.
 
@@ -13,24 +19,36 @@ set -u
 cd "$(dirname "$0")/.."
 fail=0
 
-echo "== [1/4] per-file syntax gate (R99) =="
-# Every Termux-visible translation unit, one at a time, so
-# a failure names its file. NOT "|| break" - a break exits
-# the loop with the loop's last (successful) status and the
-# old ad-hoc gate printed SYNTAX-OK over real errors.
-# adnd1.cpp is skipped: the Win32/GDI shell needs windows.h
-# (MSVC verify pending, backlog).
-for f in game/*.cpp rules/*.cpp dm/*.cpp items/*.cpp \
-         spells/*.cpp spelleffects/*.cpp ai/*.cpp \
-         regtest.cpp treasuresim.cpp; do
+echo "== [1/4] syntax gate: the build's complement (R99/R107) =="
+# R107 (the lean gate): the battery build below compiles
+# rules/, dm/, items/, spells/, monsters/MonsterRegistry
+# .cpp and regtest.cpp - a syntax pass over the same files
+# was pure redundancy. This gate now covers ONLY the
+# complement, so every Termux-visible TU compiles exactly
+# once per preflight. Same R99 discipline: one file at a
+# time so a failure names its file, NOT "|| break" - the
+# loop remembers failures and the gate ends RED. A build
+# failure in the build's own files still names its file in
+# step 2 and ends RED there - attribution is kept.
+# NEW COVERAGE: monsters/MonsterXp.cpp was compiled by NO
+# path (the old loop never listed monsters/; the build
+# links only MonsterRegistry.cpp) while its xpForKill/
+# xpForNpc are called from game/state_dungeon.cpp - it
+# joins the gate here.
+# adnd1.cpp stays skipped: the Win32/GDI shell needs
+# windows.h (MSVC verify pending, backlog).
+checked=0
+for f in game/*.cpp ai/*.cpp spelleffects/*.cpp \
+         monsters/MonsterXp.cpp treasuresim.cpp; do
   if [ ! -f "$f" ]; then continue; fi
+  checked=$((checked + 1))
   if ! clang++ -fsyntax-only -std=c++17 -I. "$f"; then
     echo "SYNTAX FAIL: $f"
     fail=1
   fi
 done
 if [ "$fail" = 0 ]; then
-  echo "SYNTAX-OK: all Termux-visible translation units clean"
+  echo "SYNTAX-OK: $checked complement TUs clean (the battery build covers the rest)"
 fi
 
 echo "== [2/4] regtest build + battery (fresh binary) =="
