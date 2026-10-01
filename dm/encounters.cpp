@@ -3262,58 +3262,58 @@ enum { PF_NONE = 0, PF_PRIME_ONLY = 1 };
 
 static const PlanarRow kAstralTable[] = {
 {1, 4, "aerial_servant", 1, 1},
-{5, 10, "basilisk", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
-{11, 13, "cockatrice", 1, 4 | PF_PRIME_ONLY}   // * prime-adjacent only,
-{14, 16, "PLANAR_DEMON_MAJOR", 1, 1}   // Demon, major -> type V/VI pick-set,
-{17, 22, "PLANAR_DEMON_MINOR", 1, 3}   // Demon, minor -> type I-IV pick-set,
-{23, 23, "PLANAR_DEMON_PRINCE", 1, 1}   // Demon, prince -> R52 kPrinces pool,
-{24, 24, "PLANAR_DEVIL_ARCH", 1, 1}   // Devil, arch- -> R52 kArchDevils pool,
-{25, 28, "PLANAR_DEVIL_GREATER", 1, 1}   // Devil, greater- -> horned/ice/pit_fiend,
-{29, 37, "PLANAR_DEVIL_LESSER", 1, 3}   // Devil, lesser- -> succubus/erinyes/barbed/bone,
-{38, 38, "chromatic_dragon", 1, 1}   // Dragon, chromatic (Tiamat),
-{39, 39, "platinum_dragon", 1, 1}   // Dragon, platinum (Bahamut),
-{40, 41, "gorgon", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
-{42, 46, "PLANAR_TRAVELLER", 0, 0}   // Human traveller - modified Human Subtable (**),
+{5, 10, "basilisk", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
+{11, 13, "cockatrice", 1, 4 | PF_PRIME_ONLY}, // * prime-adjacent only,
+{14, 16, "PLANAR_DEMON_MAJOR", 1, 1}, // Demon, major -> type V/VI pick-set,
+{17, 22, "PLANAR_DEMON_MINOR", 1, 3}, // Demon, minor -> type I-IV pick-set,
+{23, 23, "PLANAR_DEMON_PRINCE", 1, 1}, // Demon, prince -> R52 kPrinces pool,
+{24, 24, "PLANAR_DEVIL_ARCH", 1, 1}, // Devil, arch- -> R52 kArchDevils pool,
+{25, 28, "PLANAR_DEVIL_GREATER", 1, 1}, // Devil, greater- -> horned/ice/pit_fiend,
+{29, 37, "PLANAR_DEVIL_LESSER", 1, 3}, // Devil, lesser- -> succubus/erinyes/barbed/bone,
+{38, 38, "chromatic_dragon", 1, 1}, // Dragon, chromatic (Tiamat),
+{39, 39, "platinum_dragon", 1, 1}, // Dragon, platinum (Bahamut),
+{40, 41, "gorgon", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
+{42, 46, "PLANAR_TRAVELLER", 0, 0}, // Human traveller - modified Human Subtable (**),
 {47, 49, "intellect_devourer", 1, 2},
 {50, 55, "invisible_stalker", 1, 3},
 {56, 61, "ki_rin", 1, 1},
-{62, 63, "medusa", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{62, 63, "medusa", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
 {64, 71, "night_hag", 1, 4},
 {72, 74, "nightmare", 1, 4},
 {75, 79, "rakshasa", 1, 3},
 {80, 91, "shedu", 2, 5},
-{92, 92, "PLANAR_TITAN_ELDER", 1, 1}   // Titan, elder -> AC -2/-3 variants,
-{93, 97, "PLANAR_TITAN_LESSER", 1, 1}   // Titan, lesser -> AC 1/2 variants,
+{92, 92, "PLANAR_TITAN_ELDER", 1, 1}, // Titan, elder -> AC -2/-3 variants,
+{93, 97, "PLANAR_TITAN_LESSER", 1, 1}, // Titan, lesser -> AC 1/2 variants,
 {98, 100, "PLANAR_TITAN_MAJOR", 1, 1}   // Titan, major -> AC 0/1 variants
 };
 
 static const PlanarRow kEtherealTable[] = {
 {1, 5, "aerial_servant", 1, 1},
-{6, 10, "basilisk", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
-{11, 13, "cockatrice", 1, 4 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{6, 10, "basilisk", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
+{11, 13, "cockatrice", 1, 4 | PF_PRIME_ONLY}, // * prime-adjacent only,
 {14, 18, "couatl", 1, 4},
 {19, 26, "djinni", 1, 6},
-{27, 27, "chromatic_dragon", 1, 1}   // Dragon, chromatic (Tiamat),
-{28, 28, "platinum_dragon", 1, 1}   // Dragon, platinum (Bahamut),
+{27, 27, "chromatic_dragon", 1, 1}, // Dragon, chromatic (Tiamat),
+{28, 28, "platinum_dragon", 1, 1}, // Dragon, platinum (Bahamut),
 {29, 30, "efreeti", 1, 3},
-{31, 37, "air_elemental", 1, 1}   // Elemental, air,
-{38, 39, "earth_elemental", 1, 1}   // Elemental, earth,
-{40, 41, "fire_elemental", 1, 1}   // Elemental, fire,
-{42, 42, "water_elemental", 1, 1}   // Elemental, water,
+{31, 37, "air_elemental", 1, 1}, // Elemental, air,
+{38, 39, "earth_elemental", 1, 1}, // Elemental, earth,
+{40, 41, "fire_elemental", 1, 1}, // Elemental, fire,
+{42, 42, "water_elemental", 1, 1}, // Elemental, water,
 {43, 48, "ghost", 1, 1},
-{49, 50, "gorgon", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{49, 50, "gorgon", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
 {51, 52, "groaning_spirit", 1, 2},
-{53, 57, "PLANAR_TRAVELLER", 0, 0}   // Human traveller - same ** note,
+{53, 57, "PLANAR_TRAVELLER", 0, 0}, // Human traveller - same ** note,
 {58, 59, "intellect_devourer", 1, 2},
 {60, 62, "invisible_stalker", 1, 3},
 {63, 68, "ki_rin", 1, 1},
 {69, 76, "lammasu", 2, 8},
-{77, 78, "medusa", 1, 2 | PF_PRIME_ONLY}   // * prime-adjacent only,
+{77, 78, "medusa", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
 {79, 80, "nightmare", 1, 4},
 {81, 82, "salamander", 2, 5},
-{83, 87, "phase_spider", 1, 6}   // Spider, phase,
-{88, 94, "thought_eater", 1, 3}   // Thought eaters,
-{95, 97, "wind_walker", 2, 5}   // Wind walkers,
+{83, 87, "phase_spider", 1, 6}, // Spider, phase,
+{88, 94, "thought_eater", 1, 3}, // Thought eaters,
+{95, 97, "wind_walker", 2, 5}, // Wind walkers,
 {98, 100, "xorn", 3, 6}
 };
 
@@ -3520,17 +3520,6 @@ std::vector<std::string> planarEncounterKeys(
 // the spread is a documented approximation). The saving
 // throw versus magic (wind 20 / cyclone 19-20) is the
 // caller's — passed in as saveMade.
-enum class PsychicWindEffect {
-    Slowed,          // 1-12: +1 random encounter check
-    LostReturn,      // 13-16: lost 2-20 days, return to start
-    OffCourse,       // 17-19: random different destination
-    Storm            // 20: save vs magic or cord breaks
-};
-struct PsychicWindResult {
-    PsychicWindEffect effect;
-    int days = 0;             // LOST_RETURN / STORM success
-    bool cordBroken = false;  // STORM save failure (death)
-};
 
 PsychicWindResult rollPsychicWind(rules::Dice& dice, int d20,
                                   bool saveMade) {
@@ -3555,17 +3544,6 @@ PsychicWindResult rollPsychicWind(rules::Dice& dice, int d20,
     return r;
 }
 
-enum class EtherCycloneEffect {
-    BlownAbout,      // 1-10: random direction, +1 check
-    DifferentPlane,  // 11-15: usual encounter checks
-    LostNewPlane,    // 16-18: lost 5-60 days, random plane
-    StormAstral      // 19-20: lost 10-120 days; save or astral
-};
-struct EtherCycloneResult {
-    EtherCycloneEffect effect;
-    int days = 0;
-    bool blownToAstral = false;   // STORM save failure
-};
 
 EtherCycloneResult rollEtherCyclone(rules::Dice& dice, int d20,
                                     bool saveMade) {
@@ -3627,21 +3605,21 @@ static const PsionicRow kPsionicTable[] = {
 {1, 5, "brain_mole", 1, 3},
 {6, 12, "cerebral_parasite", 3, 12},
 {13, 15, "couatl", 1, 4},
-{16, 18, "PSI_DEMON_MAJOR", 1, 2}   // Demon, major* -> R65 kDemonMajor,
-{19, 24, "PSI_DEMON_MINOR", 1, 4}   // Demon, minor* -> R65 kDemonMinor,
-{25, 26, "PSI_DEMON_PRINCE", 1, 1}   // Demon, prince* -> R52 kPrinces,
-{27, 28, "PSI_DEVIL_ARCH", 1, 1}   // Devil, arch-* -> R52 kArchDevils,
-{29, 34, "PSI_DEVIL_GREATER", 1, 2}   // Devil, greater-* -> R65 kDevilGreater,
+{16, 18, "PSI_DEMON_MAJOR", 1, 2}, // Demon, major* -> R65 kDemonMajor,
+{19, 24, "PSI_DEMON_MINOR", 1, 4}, // Demon, minor* -> R65 kDemonMinor,
+{25, 26, "PSI_DEMON_PRINCE", 1, 1}, // Demon, prince* -> R52 kPrinces,
+{27, 28, "PSI_DEVIL_ARCH", 1, 1}, // Devil, arch-* -> R52 kArchDevils,
+{29, 34, "PSI_DEVIL_GREATER", 1, 2}, // Devil, greater-* -> R65 kDevilGreater,
 {35, 38, "gray_ooze", 1, 3},
 {39, 48, "intellect_devourer", 1, 2},
-{49, 51, "ki_rin", 1, 1}   // Ki-rin,
+{49, 51, "ki_rin", 1, 1}, // Ki-rin,
 {52, 56, "lich", 1, 1},
-{57, 62, "PSI_MEN", 0, 0}   // Men (human psionic)** -> Character Subtable party,
+{57, 62, "PSI_MEN", 0, 0}, // Men (human psionic)** -> Character Subtable party,
 {63, 69, "mind_flayer", 1, 4},
-{70, 72, "yellow_mold", 0, 0}   // Mold, yellow (dash) -> registry noAppearing (R60),
+{70, 72, "yellow_mold", 0, 0}, // Mold, yellow (dash) -> registry noAppearing (R60),
 {73, 82, "shedu", 2, 8},
-{83, 92, "su_monster", 1, 12}   // Su-monster,
-{93, 98, "titan", 1, 2}   // Titan -> bestiary's plain titan key,
+{83, 92, "su_monster", 1, 12}, // Su-monster,
+{93, 98, "titan", 1, 2}, // Titan -> bestiary's plain titan key,
 {99, 100, "triton", 10, 60}   // 1-3 of total are psionic (fiction, documented)
 };
 
@@ -3920,11 +3898,11 @@ static const CastleMasterRow kCastleMaster[] = {
 {21, 65, PROF_FIGHTER, 9, 12},
 {66, 66, PROF_PALADIN, 9, 10},
 {67, 68, PROF_RANGER, 10, 13},
-{69, 80, PROF_MAGIC_USER, 11, 14},
+{69, 80, PROF_MU, 11, 14},
 {81, 85, PROF_ILLUSIONIST, 10, 13},
 {86, 93, PROF_THIEF, 10, 14},
 {94, 96, PROF_ASSASSIN, 14, 14},
-{97, 99, PROF_MONK_BARD, 9, 12}   // monk,
+{97, 99, PROF_MONK_BARD, 9, 12}, // monk,
 {100, 100, PROF_MONK_BARD, 23, 23}   // bard, 23rd
 };
 
