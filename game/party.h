@@ -294,6 +294,12 @@ struct Party {
     // magic shield's plus (armor stays the R46 plate ladder)
     int  henchmanWeaponPlus = 0;
     int  henchmanShieldPlus = 0;
+
+    // R86: the hire's pack - the mule slot. Gear the members
+    // cannot carry (full packs) is shouldered by the henchman
+    // and peddled in town with the rest ([P]). His kit stays
+    // fixed (R80) - the pack is cargo, never equipped.
+    std::vector<PackItem> henchmanPack;
     bool crewHired     = false;   // R46: a coaster's company
 
     // R44: identify economy - scrolls (found or bought, 100 gp

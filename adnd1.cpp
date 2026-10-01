@@ -1123,12 +1123,18 @@ static void drawHud(HDC dc, const AppState& s) {
         if (len > sizeof line - 32) break;
         char tok[40];
         char nm[9];
+        char pk[8] = "";
         strncpy(nm, c.name.c_str(), 8);
         nm[8] = 0;
-        snprintf(tok, sizeof tok, "%s%s %c%d %d/%d   ",
+        // R86: carriers show " pN" after their hp (the pack
+        // at a glance, dungeon HUD; empty packs stay quiet)
+        if (!c.pack.empty())
+            snprintf(pk, sizeof pk, " p%d",
+                     (int)c.pack.size());
+        snprintf(tok, sizeof tok, "%s%s %c%d %d/%d%s   ",
                  c.hp > 0 ? "" : "*",
                  nm, CLASS_INITIALS[c.classIndex],
-                 c.level, c.hp, c.maxHp);
+                 c.level, c.hp, c.maxHp, pk);
         strcat(line, tok);
         len = strlen(line);
     }

@@ -60,6 +60,35 @@
       "[L] Study the carried scrolls" and
       "[R] Raise a fallen member - 1,000 gp" lines.
 
+## R85: the pack (+ R86 hire's pack)
+- [ ] Win magic gear nobody equips (hoard rolls a weapon no
+      member improves with): the log shows
+      "Rolf carries the Long Sword +2 (pack 1/6)." - first
+      living member with a free slot, 6 slots each.
+- [ ] With every member's pack full, the next unclaimed gear
+      goes to the henchman instead:
+      "Grimnir shoulders the Chain Mail (hire's pack 1/6)."
+      (R86; no henchman = appraised as before.)
+- [ ] In town press [D] (dump kit): each carrier prints
+      "  Rolf's pack (1/6): Long Sword +2".
+- [ ] Press [E] (equip best): a member with a mundane sword and
+      a +2 in the pack shows "Rolf equips the Long Sword +2."
+      and the old kit returns as a keepsake (pack count stays;
+      the keepsake never sells).
+- [ ] Press [P] (peddle): sale-value items sell, ending with
+      "The pack sale nets N gp."; the henchman's cargo sells
+      too ("Grimnir sells the Chain Mail for 300 gp.");
+      keepsakes stay ("Keepsakes (swapped-out kit) stay
+      unsold.").
+- [ ] Dungeon HUD roster line: carriers show " pN" after hp
+      (R86, at-a-glance pack count).
+- [ ] Save ([K]) and load ([L]): packs (member and hire)
+      survive the round trip; a pre-R85 save loads clean with
+      empty packs.
+- [ ] Town screen right column: "PACK: [E] equip best  [P]
+      peddle  [D] dump kit" above the quiver list (the quiver
+      moved right - it used to collide with the [L]/[R] lines).
+
 ## Sign-off
 - [ ] No mojibake anywhere on screen (every string is pure ASCII
       since R84 - report ANY stray glyph, it is a bug).

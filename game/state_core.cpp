@@ -96,6 +96,15 @@ bool AppState::saveGame(){
                     party.henchmanName.c_str());
         else
             fprintf(f, "henchman 0\n");
+        // R86: the hire's pack (nonempty only - v1 saves load
+        // with an empty mule slot)
+        if (!party.henchmanPack.empty()) {
+            fprintf(f, "hpack %d\n",
+                    (int)party.henchmanPack.size());
+            for (const auto& pi : party.henchmanPack)
+                fprintf(f, "pk %d %d %d %d\n",
+                        pi.kind, pi.id, pi.plus, pi.gp);
+        }
         fprintf(f, "idscrolls %d\n", party.identifyScrolls);
         fprintf(f, "items %d",
                 (int)party.unidentified.size());
@@ -255,6 +264,46 @@ bool AppState::loadGame(){
                     // R80: the hire's magic kit (optional trailing)
                     if (got >= 4) p.henchmanWeaponPlus = wpl;
                     if (got >= 5) p.henchmanShieldPlus = spl;
+                }
+            } else if (strcmp(tag, "hpack") == 0) {
+                int nhp = 0;
+                if (fscanf(f, "%d", &nhp) != 1 ||
+                    nhp < 0 || nhp > PACK_CAP) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (hpack).");
+                    return false;
+                }
+                for (int k = 0; k < nhp; ++k) {
+                    char t2[16];
+                    int kd = 0, idd = 0, pl = 0, gpv = 0;
+                    if (fscanf(f, "%15s %d %d %d %d",
+                               t2, &kd, &idd, &pl, &gpv) != 5 ||
+                        strcmp(t2, "pk") != 0 ||
+                        kd < 0 || kd > 2 ||
+                        pl < 0 || pl > 5 ||
+                        gpv < 0 || gpv > 100000) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (hpk).");
+                        return false;
+                    }
+                    if (kd == 0 &&
+                        (idd < 0 ||
+                         idd >= (int)items::WPN_COUNT)) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (hpkw).");
+                        return false;
+                    }
+                    if (kd == 1 &&
+                        (idd < 0 ||
+                         idd >= (int)items::ARMOR_COUNT)) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (hpka).");
+                        return false;
+                    }
+                    PackItem pi;
+                    pi.kind = kd; pi.id = idd;
+                    pi.plus = pl; pi.gp = gpv;
+                    p.henchmanPack.push_back(pi);
                 }
             } else if (strcmp(tag, "idscrolls") == 0) {
                 int sc = 0;

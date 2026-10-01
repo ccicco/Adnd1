@@ -699,6 +699,23 @@ void AppState::awardVictory(){
                             break;
                         }
                     }
+                    // R86: the mule slot - the hire shoulders
+                    // what the members could not (same cap; his
+                    // pack is cargo only, the kit stays R80)
+                    if (!take && party.henchmanPresent &&
+                        party.henchmanHp > 0 &&
+                        (int)party.henchmanPack.size() < PACK_CAP) {
+                        party.henchmanPack.push_back(cand);
+                        snprintf(buf, sizeof buf,
+                                 "%s shoulders the %s "
+                                 "(hire's pack %d/%d).",
+                                 party.henchmanName.c_str(),
+                                 mi.name.c_str(),
+                                 (int)party.henchmanPack.size(),
+                                 PACK_CAP);
+                        log.add(buf);
+                        take = true;
+                    }
                 }
                 if (take) {
                     carriedOff.push_back(mi);

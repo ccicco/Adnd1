@@ -934,6 +934,27 @@ void AppState::townSellPack(){
             }
             c.pack = keep;
         }
+        // R86: the hire's pack goes under the same hammer - he
+        // carried it for the company, the gold is company gold
+        if (!party.henchmanPack.empty()) {
+            std::vector<PackItem> keep;
+            for (const auto& p : party.henchmanPack) {
+                if (p.gp > 0) {
+                    party.gold += p.gp;
+                    total += p.gp;
+                    ++sold;
+                    snprintf(buf, sizeof buf,
+                             "%s sells the %s for %d gp.",
+                             party.henchmanName.c_str(),
+                             packItemName(p).c_str(), p.gp);
+                    log.add(buf);
+                } else {
+                    keep.push_back(p);
+                    ++kept;
+                }
+            }
+            party.henchmanPack = keep;
+        }
         if (sold == 0 && kept == 0) {
             log.add("Nobody carries pack gear.");
         } else {
