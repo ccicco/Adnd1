@@ -9,6 +9,9 @@ living checklist: when a round closes an item,
 it flips the box in the SAME commit. Page cites
 are the book's own page numbers.
 
+R109 CLOSED divergence 1 of 6 (turning undead);
+the remaining five stay ranked below.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
@@ -61,29 +64,18 @@ Categories:
 
 ## Verified DIVERGENT (fix-round candidates, ranked)
 
-- [~] 1. **Turning undead (p.75-76, matrix III;
-      procedure p.77)** - the repo's mechanic is
-      not the book's. The book: roll d20, match
-      or exceed the cell -> turn 1-12 undead
-      (7-12 where starred, 1-2 for Special);
-      T = automatic turn, D = automatic destroy,
-      dash = no effect ever. The book's Skeleton
-      row across cleric levels 1-14+ is
-      10/7/4/T/T/D/D/D*/D*/D*; Zombie
-      13/10/7/T/T/...; Ghoul 16/13/10/4/T/...;
-      Shadow 19/16/13/7/4/...; Wight
-      20/19/16/10/7/4/...; Lich row ends
-      19/16/10; Special row 20/19/13. The repo
-      instead stores a count digit and rolls 2d6
-      with entirely different numbers (its
-      level-1 row begins {1,-1,...}). Both
-      mechanics AND values diverge. Also the
-      book's row order includes GHAST at slot 6
-      (the OCR reads "Ghost" there; slot 11 is
-      the true Ghost - resolve the row names
-      against a printed copy in the fix round).
-      This is the largest single divergence and
-      the first fix candidate.
+- [x] 1. **Turning undead (p.75-76, matrix III;
+      procedure p.77)** - CLOSED R109 (the fix-up
+      R109b landed the battery audit and this box
+      flip in the same commit). The repo now
+      carries the book's table cell for cell:
+      13 undead rows in the book's own order (the
+      OCR's row-6 "Ghost" was GHAST; slot 11 is
+      the true Ghost), columns cleric level
+      1-8 / 9-13 / 14+, d20 match-or-exceed,
+      T / D / D* / dash, counts 1-12 (7-12
+      starred, 1-2 Special), paladins two levels
+      below. Pinned by the R109 battery audit.
 - [~] 2. **Saving throws (p.79-80, matrix I)** -
       the book bands levels per class; the repo
       uses per-level linear rows. Book fighter
