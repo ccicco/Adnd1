@@ -138,6 +138,17 @@ bool rollChanceToLearn(Dice& dice, uint8_t int_) {
 }
 
 // ----------------------------------------------------------------------------
+// R115: the years magic steals (DMG p.14). Only haste is in
+// the registry today (its recipient pays 1 year); the rest
+// of the book's table rides the comment in spells.h until
+// those spells arrive.
+// ----------------------------------------------------------------------------
+int magicalAgingYears(SpellId id) {
+    if (id == MU_HASTE) return 1;   // p.14: under a haste spell
+    return 0;
+}
+
+// ----------------------------------------------------------------------------
 // Max spell level gates
 // ----------------------------------------------------------------------------
 

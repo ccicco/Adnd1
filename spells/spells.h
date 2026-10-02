@@ -134,6 +134,18 @@ int chanceToLearnPct(uint8_t int_);
 bool rollChanceToLearn(Dice& dice, uint8_t int_);
 
 // ----------------------------------------------------------------------------
+// R115: the years a spell steals (DMG p.14 magical aging
+// causes): a haste spell costs its recipient 1 year. The
+// caster-aged causes (limited wish 1, restoration 2,
+// resurrection 3, wish 3, alter reality 3, gate 5) return
+// their years when those spells enter the registry; the
+// speed potion's 1 year is the item layer's, and found
+// potions collapse into the healing stack today
+// (documented - open item in the gap report).
+// ----------------------------------------------------------------------------
+int magicalAgingYears(SpellId id);
+
+// ----------------------------------------------------------------------------
 // Maximum spell level castable (MU: INT gates; INT 11 = L2 spells,
 // 14 = 4th... PHB p.10 minimums). Clerics cast by class level only.
 // ----------------------------------------------------------------------------

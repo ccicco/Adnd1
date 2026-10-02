@@ -19,6 +19,9 @@ R113 CLOSED divergence 4 of 6 (class attack
 matrices).
 R114 CLOSED divergence 6 of 6 (aging) - all
 six of the original divergences are closed.
+R115 verified the magic-weapon-to-hit gate
+(p.76 - already the book's) and wired the
+first magical aging cause (haste, p.14).
 
 Categories:
 - [x] = verified against the book text
@@ -154,8 +157,8 @@ Categories:
       Humans only (no race field; documented),
       young adult is the as-rolled baseline,
       WIS clipped at 18 (documented). Magical
-      aging causes (haste, wish, etc., p.14)
-      remain an open item below.
+      aging causes are an open item below
+      (haste wired R115).
 
 ## Simplified or accepted by design
 
@@ -178,11 +181,36 @@ Categories:
 
 ## Open gaps (worth a round)
 
-- [ ] **Magic-weapon-to-hit gate (p.76)** - the
-      book's table: creatures struck only by
-      magic weapons need +1 at HD 4+1, +2 at
-      6+2, +3 at 8+3, +4 at 10+4 or better. No
-      such gate found in the repo.
+- [x] **Magic-weapon-to-hit gate (p.76)** -
+      VERIFIED R115: already implemented -
+      monsters' requiredPlus comes from the
+      Lua specials text (MonsterRegistry),
+      and rules::weaponSufficient gates both
+      the melee and missile paths
+      (ai/actor.cpp; the quiver's ammo
+      enchant counts toward it, R80).
+      Attacking monsters are always
+      sufficient: the book's attacker HD
+      column (+1 at HD 4+1...) governs
+      monsters hitting gated creatures,
+      which this repo's encounters (monsters
+      vs characters) never do - documented.
+      Pinned by the R115 battery audit.
+- [ ] **Magical aging causes, remainder
+      (p.14)** - haste is wired (R115:
+      spells::magicalAgingYears +
+      applyMagicalAging, landed at the
+      fight-end sync, persisted as
+      "mageage"). The caster-aged causes -
+      limited wish 1, restoration 2,
+      resurrection 3, wish 3, alter reality
+      3, gate 5 - await those spells
+      entering the registry; the speed
+      potion's 1 year awaits a potion
+      identity surviving pickup (found
+      potions collapse into the healing
+      stack today). The hire's stolen years
+      land nowhere (no hire brackets).
 - [ ] **Encounter reactions (p.63-64)** - the
       two-die reaction table and its
       attitude-by-roll results.

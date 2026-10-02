@@ -173,6 +173,13 @@ struct Actor {
     // shared state
     int  hp = 1, maxHp = 1;
     int  requiredPlusToHit = 0;    // gating: needs +N weapon (R5)
+    // R115: the years a spell stole from this character
+    // in the fight (DMG p.14 - haste costs its recipient
+    // 1). Rides the actor; the sync at fight's end lands
+    // them on the Character via applyMagicalAging.
+    // Monsters never age (the accumulate check is
+    // characters-only).
+    int  magicAgingYears = 0;
     int  morale = dm::MORALE_AVERAGE;
     bool isLeader = false;
 

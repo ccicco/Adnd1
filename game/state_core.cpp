@@ -176,6 +176,10 @@ bool AppState::saveGame(){
             // load with an unknown youth, startAge 0)
             if (c.startAge > 0)
                 fprintf(f, "age %d\n", c.startAge);
+            // R115: the years magic stole (optional line -
+            // v1 saves load with none stolen)
+            if (c.magicAgeYears > 0)
+                fprintf(f, "mageage %d\n", c.magicAgeYears);
             // R81: the Ring of Protection bonus (nonzero only)
             if (c.ringPlus > 0)
                 fprintf(f, "ringplus %d\n", c.ringPlus);
@@ -557,6 +561,15 @@ bool AppState::loadGame(){
                     return false;
                 }
                 c.startAge = ag;
+            } else if (strcmp(tag, "mageage") == 0) {
+                int mg = 0;
+                if (fscanf(f, "%d", &mg) != 1 ||
+                    mg < 0 || mg > 200) {
+                    fclose(f);
+                    log.add("adnd1.sav is corrupt (mageage).");
+                    return false;
+                }
+                c.magicAgeYears = mg;
             } else if (strcmp(tag, "ringplus") == 0) {
                     int rg = 0;
                     if (fscanf(f, "%d", &rg) != 1 ||

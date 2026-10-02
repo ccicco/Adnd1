@@ -620,6 +620,17 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
             t.alive())
             t.addStatus(tr.status);
 
+        // R115: the years the spell steals (DMG p.14)
+        // ride the actor and land on the Character at
+        // the sync. Characters only - monsters track no
+        // age. (The book's caster-aged causes - wish,
+        // gate, etc. - will land here too when those
+        // spells enter the registry.)
+        if (t.isCharacter && t.team == 0 && t.alive()) {
+            int yrs = spells::magicalAgingYears(id);
+            if (yrs > 0) t.magicAgingYears += yrs;
+        }
+
         if (tr.note[0] != '\0')
             logLine(std::string(tr.note));
     }

@@ -157,6 +157,12 @@ struct Character {
     // hall; grows on the R95 career clock (ageYears).
     // 0 = a v1 save member whose youth is unknown.
     int  startAge = 0;
+    // R115: the years magic stole (DMG p.14 - a haste
+    // spell costs its recipient 1). They ride the age
+    // clock inside ageYears; bracket crossings apply at
+    // the moment of aging (applyMagicalAging), the same
+    // per-crossing convention as the birthday path.
+    int  magicAgeYears = 0;
 
     items::WeaponInstance weapon;
     items::WeaponInstance rangedWeapon;   // R28: missile slot
@@ -805,9 +811,10 @@ inline int rollStartingAge(int classIndex, rules::Dice& d) {
 }
 
 // age today: the starting age plus whole years on the
-// career clock (365 days to the year)
+// career clock (365 days to the year), plus the years
+// magic stole (R115 - they ride the same brackets)
 inline int ageYears(const Character& c, int careerDays) {
-    return c.startAge + careerDays / 365;
+    return c.startAge + careerDays / 365 + c.magicAgeYears;
 }
 
 // R100: the hire's age on the same clock (his youth rolled
@@ -883,6 +890,24 @@ inline void applyAgeBracket(Character& c, int newBracket) {
         if (v > 18) v = 18;
         c.abilities.set(as[i], (uint8_t)v);
     }
+}
+
+// R115: magical aging (DMG p.14) - unnatural years (a
+// haste spell today; wish, gate and their kin when those
+// spells arrive) advance the recipient at once, and each
+// bracket entered on the way applies its bend
+// progressively - the book's cumulative adjustments, the
+// same per-crossing convention as the birthday path.
+// (The hire's stolen years land nowhere: hire aging has
+// no ability brackets - documented.)
+inline void applyMagicalAging(Character& c, int careerDays,
+                              int years) {
+    if (years <= 0) return;
+    int oldB = ageBracket(ageYears(c, careerDays));
+    c.magicAgeYears += years;
+    int newB = ageBracket(ageYears(c, careerDays));
+    for (int b = oldB + 1; b <= newB; ++b)
+        applyAgeBracket(c, b);
 }
 
 // R92: the road home - 12 turns per dungeon level (2 hours

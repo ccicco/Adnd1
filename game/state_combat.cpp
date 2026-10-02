@@ -627,6 +627,15 @@ void AppState::endCombat(){
                     quiverConsumeShots(
                         c.quiver, c.missileAmmo - a.missileAmmo);
                     c.missileAmmo = a.missileAmmo;
+                    // R115: the stolen years land on the
+                    // roster (DMG p.14 - a member hasted in
+                    // the fight aged in it)
+                    if (a.magicAgingYears > 0) {
+                        applyMagicalAging(c, party.careerDays,
+                                          a.magicAgingYears);
+                        log.add(c.name + " feels the stolen " +
+                                "years - magic's price.");
+                    }
                     break;
                 }
                 // R44: the henchman syncs back too (hp and any
