@@ -9,9 +9,9 @@
 //   - Other classes still row-shift into the fighter matrix (an
 //     approximation; the book prints separate matrices I.A/I.C/I.D -
 //     an open gap-report item)
-//   - Monster attacks: DMG p.80 "Monsters attacking" - attack as
-//     fighters at a level derived from hit dice (section II; the
-//     book's own monster matrix is an open gap-report item)
+//   - Monster attacks: DMG p.75-76 matrix II - the book's own HD-banded
+//     monster table, transcribed cell for cell by R112 (monsters do
+//     NOT attack as fighters)
 //   - Weapon vs AC adjustments: DMG p.38 table (weapon type vs armor
 //     class type: better/worse by 1-2)
 //   - Turning undead: DMG p.75-76 matrix III, 13 undead rows, cleric
@@ -57,9 +57,15 @@ int effectiveAttackLevel(int level, int classIndex);
 // classIndex: 0 fighter, 1 MU, 2 cleric, 3 thief (matches CharClass).
 int attackNumber(int classIndex, int level, int ac);
 
-// Monster attack: attack as fighter at effective level per DMG p.80 II.
-// HD  up to 1   -> level 1;  then roughly 1 level per HD, capped by the
-// matrix (rows to 20+).
+// Monster attack (DMG p.75-76 matrix II): to-hit number by the
+// monster's hit-dice band (12 bands, up to 1-1 through 16+) vs AC
+// 10 down to -10, clamped at either end. Targets may be negative or
+// above 20 (natural 20 / natural 1 convention as in attackRollHits).
+int attackMatrixMonster(float hitDice, int ac);
+
+// Monster effective level (DMG p.86 guard rule): hit dice to a level
+// for guard strength and similar non-combat uses. NOT used for
+// attacks (matrix II) or saves (monsterSaveLevel, rules/saves.h).
 int monsterEffectiveLevel(float hitDice);
 
 // Resolve one melee attack roll. Returns true on a hit.

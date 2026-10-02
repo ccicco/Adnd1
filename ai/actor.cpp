@@ -98,8 +98,7 @@ int Actor::toHit(const Actor& defender) const {
     if (isCharacter) {
         return rules::attackNumber(classIndex, level, ac);
     }
-    return rules::attackMatrixFighter(
-        rules::monsterEffectiveLevel(hitDice), ac);
+    return rules::attackMatrixMonster(hitDice, ac);
 }
 
 int Actor::attacksPerRound() const {
@@ -113,7 +112,7 @@ spelleffects::TargetDesc Actor::asTarget() const {
     t.hp = hp; t.maxHp = maxHp;
     t.saveClass = isCharacter ? classIndex : 0;   // monsters: fighter
     t.saveLevel = isCharacter ? level
-                              : rules::monsterEffectiveLevel(hitDice);
+                              : rules::monsterSaveLevel(hitDice);
     t.saveBonus = 0;
     t.magicResistPct = isCharacter ? 0 : magicResistPct;
     t.hitDice = hitDice;   // R82: Death Spell budgeting
@@ -292,7 +291,7 @@ void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
         int target = rules::saveTarget(
             defender.isCharacter ? defender.classIndex : 0,
             defender.isCharacter ? defender.level
-                                 : rules::monsterEffectiveLevel(defender.hitDice),
+                                 : rules::monsterSaveLevel(defender.hitDice),
             (rules::SaveCategory)saveCategory);
         // R81: antivenom (Slow/Neutralize Poison) eases
         // death/poison saves by the status magnitude

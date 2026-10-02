@@ -12,7 +12,10 @@ are the book's own page numbers.
 R109 CLOSED divergence 1 of 6 (turning undead).
 R110 CLOSED divergence 2 of 6 (saving throws).
 R111 CLOSED divergence 3 of 6 (fighter attack
-matrix); the remaining three stay ranked below.
+matrix).
+R112 CLOSED divergence 5 of 6 (monster attack
+matrix); divergences 4 (class matrices) and 6
+(aging) stay open.
 
 Categories:
 - [x] = verified against the book text
@@ -120,14 +123,21 @@ Categories:
       AC 10, the repo asks 10. The book's
       missile note is on the same page: -5 at
       long, -2 at medium range.
-- [~] 5. **Monster attack matrix (p.75-76
-      II)** - the book gives monsters their own
-      HD-banded matrix (AC-10 row 11/10/9/8/6/
-      5/3/2/0/-1/-2/-3 for bands 1/1+1-2/.../
-      16+). The repo derives monster attacks by
-      mapping HD onto the fighter matrix - a
-      close approximation, not the book's
-      table.
+- [x] 5. **Monster attack matrix (p.75-76
+      II)** - CLOSED R112. The repo now carries
+      the book's own HD-banded monster table:
+      12 hit-dice bands (up to 1-1 through
+      16+) vs AC 10 down to AC -10, transcribed
+      cell for cell (monsters do NOT attack as
+      fighters; a 16+ HD monster hits AC 10 on
+      any roll, target -3). The repo's float HD
+      cannot split the book's 1-1 vs 1 columns
+      (both store 1.0; goblin, the battery's
+      1.0 monster, is book 1-1 - documented
+      interpretation). Monster saves also now
+      step by monsterSaveLevel (matrix II.B,
+      from R110). Pinned by the R112 battery
+      audit.
 - [~] 6. **Aging (p.13-14)** - the book has
       FIVE brackets with human thresholds at
       41/61/91, cumulative effects, and a
