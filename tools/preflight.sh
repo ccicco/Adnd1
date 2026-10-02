@@ -14,12 +14,19 @@
 # path had ever touched.
 # Usage:  ./tools/preflight.sh && git add -A && git commit -m "..." && git push
 # Exit 0 only when every check is green.
+# R112c: two new checks born of the R112 mishap - (a) the
+# battery census: every audit printf in regtest.cpp must
+# appear EXACTLY ONCE in the battery output as "bad 0" (a
+# double-inserted audit block or a missing audit both end
+# RED); (b) hygiene FAILS when untracked file(s) exist but
+# no tracked file is modified - the shape of a splice that
+# never ran (the 7a86ee7 lesson). Steps renumbered to 5.
 
 set -u
 cd "$(dirname "$0")/.."
 fail=0
 
-echo "== [1/4] syntax gate: the build's complement (R99/R107) =="
+echo "== [1/5] syntax gate: the build's complement (R99/R107) =="
 # R107 (the lean gate): the battery build below compiles
 # rules/, dm/, items/, spells/, monsters/MonsterRegistry
 # .cpp and regtest.cpp - a syntax pass over the same files
@@ -51,15 +58,62 @@ if [ "$fail" = 0 ]; then
   echo "SYNTAX-OK: $checked complement TUs clean (the battery build covers the rest)"
 fi
 
-echo "== [2/4] regtest build + battery (fresh binary) =="
-g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
+echo "== [2/5] regtest build + battery (fresh binary) =="
+# R112c: tee keeps stdout byte-identical while the census gate
+# below reads the copy; PIPESTATUS keeps regtest's own exit
+# code authoritative (a failed battery still ends RED).
+batfile=$(mktemp)
+if g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
   rules/dice.cpp rules/character.cpp rules/classes.cpp rules/combat.cpp \
   rules/saves.cpp rules/turn.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \
   dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \
   items/items.cpp regtest.cpp \
-  -o regtest -L"$PREFIX/lib" -llua5.4 && ./regtest || fail=1
+  -o regtest -L"$PREFIX/lib" -llua5.4 && ./regtest | tee "$batfile"; then
+  [ "${PIPESTATUS[0]}" = 0 ] || fail=1
+else
+  fail=1
+fi
 
-echo "== [3/4] working tree hygiene =="
+echo "== [3/5] battery audit census (R112c) =="
+# Every audit printf pattern is read FROM regtest.cpp itself,
+# so the gate is self-maintaining: a round's new audit is
+# covered the moment its printf lands in regtest.cpp. The
+# pattern is the printf text up to (not including) the %d,
+# so it prefixes the printed line whatever the count is.
+# Each pattern must appear EXACTLY ONCE in the battery output
+# (a double-inserted audit block ends RED here - the R112b
+# lesson) and no audit may report a nonzero bad count.
+census_fail=0
+if [ ! -f "$batfile" ]; then
+  echo "CENSUS FAIL: no battery output (build failed?)"
+  census_fail=1
+fi
+while IFS= read -r pat; do
+  [ -n "$pat" ] || continue
+  n=$(grep -cF "$pat" "$batfile")
+  [ -n "$n" ] || n=0
+  if [ "$n" -ne 1 ]; then
+    echo "CENSUS FAIL: '$pat' appears $n times (expected exactly once)"
+    census_fail=1
+  fi
+done <<R112C_PATS
+$(grep 'printf("' regtest.cpp | grep -oE '[^"]*audit: bad %d' | sed 's/%d$//' | sort -u)
+R112C_PATS
+if grep -qE 'audit: bad [1-9]' "$batfile" 2>/dev/null; then
+  echo "CENSUS FAIL: an audit reported a nonzero bad count:"
+  grep -E 'audit: bad [1-9]' "$batfile"
+  census_fail=1
+fi
+naudits=$(grep -cE 'audit: bad ' "$batfile" 2>/dev/null)
+[ -n "$naudits" ] || naudits=0
+if [ "$census_fail" = 0 ]; then
+  echo "AUDIT CENSUS: $naudits audit lines, each exactly once, all bad 0"
+else
+  fail=1
+fi
+rm -f "$batfile"
+
+echo "== [4/5] working tree hygiene =="
 # R84: auto-clean - bytecode is always regenerable, so the gate
 # removes it instead of failing (it rode into a commit once, R80;
 # the FAIL taxed every splice round since)
@@ -72,9 +126,18 @@ fi
 if git status --porcelain | grep -q '^??'; then
   echo "NOTE: untracked files exist:"; git status --porcelain | grep '^??'
   echo "     (not a failure - confirm they belong in this commit)"
+  # R112c: untracked file(s) plus NO tracked modification is the
+  # shape of a splice that never ran (commit 7a86ee7 pushed a
+  # truncated splice with nothing else). Run the splice twice,
+  # or delete the script if abandoning the round.
+  if git diff --quiet && git diff --cached --quiet; then
+    echo "HYGIENE FAIL: untracked file(s) present but NO tracked file modified"
+    echo "  - did the splice run? (the 7a86ee7 lesson)"
+    fail=1
+  fi
 fi
 
-echo "== [4/4] branch check =="
+echo "== [5/5] branch check =="
 branch=$(git rev-parse --abbrev-ref HEAD)
 echo "on branch: $branch"
 if [ "$branch" = "main" ]; then
