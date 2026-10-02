@@ -777,6 +777,45 @@ inline int crewDriftShare()  { return  3; }
 inline int crewHireMorale()  { return  60; }
 inline int crewDesertBelow() { return 25; }
 
+// R121: SHIP'S OFFICERS (DMG p.35) - for every
+// 20 crewmen there must be 1 lieutenant and 2
+// mates (a short company still ships one
+// lieutenant - ceiling, documented)
+inline int crewLieutenantsFor(int crewmen) {
+    if (crewmen <= 0) return 0;
+    return (crewmen + 19) / 20;
+}
+inline int crewMatesFor(int crewmen) {
+    return 2 * crewLieutenantsFor(crewmen);
+}
+// officers' wages per month: masters, captains and
+// lieutenants 100 gp per level (a level-1 hire,
+// documented simplification - the book prices by
+// level); mates are serjeants at 30 gp (p.34).
+// Billed each return (the delve cadence, R46)
+inline int crewOfficerWages(int crewmen) {
+    if (crewmen <= 0) return 0;
+    return 100 +                                  // the captain
+           100 * crewLieutenantsFor(crewmen) +    // lieutenants
+           30  * crewMatesFor(crewmen);           // mates
+}
+// shares of a prize taken at sea or on land in
+// their presence (DMG p.35): the captain 25%,
+// each lieutenant 5%, each mate 1%, the crewmen
+// 5% among themselves; the remainder is the PC's
+inline int crewCaptainSharePct()    { return 25; }
+inline int crewLieutenantSharePct() { return  5; }
+inline int crewMateSharePct()       { return  1; }
+inline int crewCrewSharePct()       { return  5; }
+inline int crewOfficerSharePct(int crewmen) {
+    return crewCaptainSharePct()
+         + crewLieutenantSharePct() * crewLieutenantsFor(crewmen)
+         + crewMateSharePct()       * crewMatesFor(crewmen);
+}
+inline int crewTotalSharePct(int crewmen) {
+    return crewOfficerSharePct(crewmen) + crewCrewSharePct();
+}
+
 // R106: the keep's ledger - a month is 30 career days
 // (the calendar's own clock); upkeep bills per month, and
 // an unknown build day (an older save's keep) bills from

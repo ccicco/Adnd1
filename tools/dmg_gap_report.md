@@ -39,6 +39,10 @@ gates room and wandering encounters;
 only the starred bands attack) and
 listening at doors ([H], R118's table) -
 first callers for both.
+R121 CLOSED crew officers (p.35) - a
+captain, a lieutenant and two mates
+join the crew: wages 40 -> 300 gp, the
+take's cut 5% -> 37% (PC keeps 63%).
 
 Categories:
 - [x] = verified against the book text
@@ -298,8 +302,23 @@ Categories:
       the slots precedent). A fresh
       delve starts fresh-legged. Pinned
       by the R119 battery audit.
-- [ ] **Crew officers (p.35)** - officers and
-      their shares beyond the crew's 5%.
+- [x] **Crew officers (p.35)** - CLOSED R121:
+      for every 20 crewmen the book requires
+      1 lieutenant and 2 mates; the coaster's
+      company (R46, which admitted its
+      simplification) now ships a captain,
+      a lieutenant and two mates. Wages:
+      masters/captains/lieutenants 100 gp per
+      level per month (L1 hires - documented
+      simplification; the book prices by
+      level), mates are serjeants at 30 gp
+      (p.34) - 40 gp becomes 300 gp per
+      return. Shares: the captain 25%, the
+      lieutenant 5%, the mates 1% each, the
+      crew 5% among themselves (37% total;
+      the PC keeps 63%). No new save fields -
+      the officers ride the crewHired flag.
+      Pinned by the R121 battery audit.
 - [x] **Missile range modifiers (p.75)** -
       CLOSED R116: rules::missileRangeMod (-5
       long, -2 medium, the book's own note)

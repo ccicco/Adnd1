@@ -112,8 +112,10 @@
 // it; (3) henchman kit - [J] upgrades the hire to plate
 // (100 gp from HIS purse, not the company's gold); (4)
 // ship crew - [C] hires a 20-sailor coaster's company
-// (200 gp down); upkeep 40 gp each return, and the crew
-// takes 5% of every delve's take at the exit; (5) room
+// (200 gp down); upkeep 300 gp each return (20 sailors plus
+// a captain, a lieutenant and two mates, DMG p.35), and the
+// company takes 37% of every delve's take at the exit
+// (captain 25, lieutenant 5, mates 2, crew 5); (5) room
 // flavor - entering a room the first time describes it
 // (state-aware: occupied/trapped/looted/swept variants);
 // (6) L4+ spell slots - all slot arrays widened to 6
@@ -944,8 +946,9 @@ struct AppState {
     void townUpgradeHire();
 
     // R46: [C] hire a ship's crew - a 20-sailor coaster's
-    // company (DMG p.34-35 simplified: 200 gp down, 40 gp
-    // wages each return, 5% of every take at the exit)
+    // company; R121: with officers (DMG p.35) - 200 gp down,
+    // 300 gp wages each return, 37% of every take at the
+    // exit (captain 25, lieutenant 5, mates 2, crew 5)
     void townHireCrew();
 
     void restExplore();

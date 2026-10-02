@@ -151,7 +151,11 @@ void AppState::billTownVisit(){
         // into his purse
         int crewCut = 0;
         if (party.crewHired && party.delveGold > 0) {
-            crewCut = party.delveGold / 20;
+            // R121: the officers take their shares first
+            // (DMG p.35) - the captain 25%, the lieutenant
+            // 5%, the mates 1% each; then the crew's 5%
+            crewCut = party.delveGold
+                    * crewTotalSharePct(20) / 100;
             if (crewCut > 0) {
                 // R105: a rich delve's share warms the
                 // crew's nerve
@@ -159,7 +163,19 @@ void AppState::billTownVisit(){
                     party.crewMorale + crewDriftShare());
                 char cbuf[96];
                 snprintf(cbuf, sizeof cbuf,
-                         "The crew's share: %d gp.", crewCut);
+                         "Shares paid out: %d gp - captain "
+                         "%d, lieutenant %d, mates %d, crew "
+                         "%d.",
+                         crewCut,
+                         party.delveGold
+                             * crewCaptainSharePct() / 100,
+                         party.delveGold
+                             * crewLieutenantSharePct() / 100,
+                         party.delveGold
+                             * crewMateSharePct()
+                             * crewMatesFor(20) / 100,
+                         party.delveGold
+                             * crewCrewSharePct() / 100);
                 log.add(cbuf);
             }
         }
@@ -175,17 +191,25 @@ void AppState::billTownVisit(){
         }
         party.delveGold = 0;
         // R46: crew wages - 20 sailors at 2 gp (DMG p.34),
-        // billed each return (delve cadence)
+        // billed each return (delve cadence); R121: plus the
+        // officers (a captain, a lieutenant and two mates,
+        // DMG p.35) - 40 + 260 = 300 gp
         if (party.crewHired) {
             // R105: an older save's crew arrives with an
             // unknown nerve - freshen it to the hire's 60
             if (party.crewMorale <= 0)
                 party.crewMorale = crewHireMorale();
-            if (party.gold >= 40) {
-                party.gold -= 40;
+            int wages = 20 * 2 + crewOfficerWages(20);
+            if (party.gold >= wages) {
+                party.gold -= wages;
                 party.crewMorale = clampCrewMorale(
                     party.crewMorale + crewDriftPaid());
-                log.add("The crew is paid 40 gp in wages.");
+                char wbuf[96];
+                snprintf(wbuf, sizeof wbuf,
+                         "The company is paid %d gp in "
+                         "wages (crew 40, officers %d).",
+                         wages, crewOfficerWages(20));
+                log.add(wbuf);
             } else {
                 party.crewMorale = clampCrewMorale(
                     party.crewMorale + crewDriftUnpaid());
@@ -1036,8 +1060,10 @@ void AppState::townHireCrew(){
             return;
         party.crewHired = true;
         party.crewMorale = crewHireMorale();   // R105
-        log.add("A coaster's company of twenty signs on. "
-                "They will ferry your takings to market.");
+        log.add("A coaster's company signs on - twenty "
+                "sailors, a captain, a lieutenant and two "
+                "mates (DMG p.35). They will ferry your "
+                "takings to market.");
     }
 
 // ---- arriveTown ----
