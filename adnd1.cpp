@@ -1577,6 +1577,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.searchExplore();
                         break;
 
+                    // R120: listen at doors (DMG p.60)
+                    case 'H':
+                    case 'h':
+                        g_app.listenExplore();
+                        break;
+
                     case 'P':
                     case 'p':
                         g_app.quaffExplore();

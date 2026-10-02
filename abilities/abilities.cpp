@@ -101,6 +101,13 @@ bool listenAtDoor(Dice& dice, int chanceIn20) {
     return (int)dice.d20() <= chanceIn20;
 }
 
+int bestListenIn20(bool hasThief, int thiefLevel) {
+    // R120: the best ear leads - a thief's
+    // hear-noise skill, else the human band
+    if (hasThief) return thiefListenIn20(thiefLevel, 0);
+    return listenChanceIn20(LISTEN_HUMAN, 0);
+}
+
 int climbChancePct(bool isThief, int thiefLevel) {
     if (isThief) return thiefSkillBase(SKILL_CLIMB_WALLS, thiefLevel);
     return 40;   // sheer surface, non-thief (DMG)

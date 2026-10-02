@@ -83,6 +83,11 @@ int listenChanceIn20(ListenRace race, int keenIn20);
 int thiefListenIn20(int thiefLevel, int keenIn20);
 bool listenAtDoor(Dice& dice, int chanceIn20);  // d20 <= chance
 
+// R120: the best listener at the door - a thief
+// rides his hear-noise skill, otherwise the human
+// band (R114's no-race-field convention)
+int bestListenIn20(bool hasThief, int thiefLevel);
+
 // Climbing: non-thieves climb at 40% for sheer surfaces (DMG).
 int climbChancePct(bool isThief, int thiefLevel);
 

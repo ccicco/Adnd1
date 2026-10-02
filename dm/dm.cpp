@@ -70,6 +70,13 @@ Reaction rollReaction(Dice& dice, int chaReactionAdj) {
     return reactionForScore((int)dice.d100() + chaReactionAdj);
 }
 
+bool reactionAttacks(Reaction r) {
+    // 01-05 violently hostile ("immediate attack") and
+    // 06-25 hostile ("immediate action") - the starred
+    // bands; the rest is parley (DMG p.64)
+    return r == REACTION_VIOLENT || r == REACTION_HOSTILE;
+}
+
 // ----------------------------------------------------------------------------
 // Wandering monsters (DMG p.61)
 // ----------------------------------------------------------------------------

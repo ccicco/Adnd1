@@ -1,4 +1,5 @@
 #include "appstate.h"
+#include "abilities/abilities.h"   // R120: listening (p.60)
 
 // ---- restExplore ----
 void AppState::restExplore(){
@@ -1113,6 +1114,42 @@ void AppState::awardVictory(){
         }
     }
 
+// ---- listenExplore ----
+// R120: listening at doors (DMG p.60) - R118's first
+// caller. [H] - ear to the nearest portal. The best
+// listener leads (a thief's hear-noise skill, else the
+// human band); the die ALWAYS rolls (the book's DM
+// discipline - appear disinterested); silent creatures
+// (undead - the registry's flag) are never heard; the
+// hint is imprecise per the book: "never say 'You hear
+// ogres'".
+void AppState::listenExplore(){
+        if (mode != MODE_EXPLORE) return;
+        if (!party.alive()) return;
+        ++turnCount;
+        tickActivity(1);   // R119: the ear costs strain too
+        int thiefLevel = 0;
+        for (const auto& c : party.members)
+            if (c.hp > 0 && c.classIndex == 3 &&
+                c.level > thiefLevel)
+                thiefLevel = c.level;
+        int chance = abilities::bestListenIn20(
+            thiefLevel > 0, thiefLevel);
+        int roomIdx = occupiedRoomNear(party.x, party.y, 3);
+        bool heard = abilities::listenAtDoor(dice, chance);
+        if (roomIdx >= 0) {
+            const auto& room = occupancy.rooms[roomIdx];
+            const monsters::MonsterDef* def =
+                registry.find(room.monsterKey);
+            if (def && def->undead) heard = false;
+        }
+        if (roomIdx < 0 || !heard) {
+            log.add("You hear nothing.");
+            return;
+        }
+        log.add("You hear rumbling, voice-like sounds.");
+    }
+
 // ---- spawnRoomEncounter ----
 void AppState::spawnRoomEncounter(int roomIndex){
         if (mode == MODE_COMBAT) return;
@@ -1122,6 +1159,9 @@ void AppState::spawnRoomEncounter(int roomIndex){
             return;
         RoomOccupant& room = occupancy.rooms[roomIndex];
         if (room.monsterKey.empty()) return;
+        // R120: a parleyed room no longer leaps at the
+        // company (the parley gate rolled non-hostile)
+        if (room.parleyed) return;
 
         const monsters::MonsterDef* def = registry.find(room.monsterKey);
         // R52: foes build through the DMG-range path (hydra
@@ -1129,6 +1169,41 @@ void AppState::spawnRoomEncounter(int roomIndex){
         std::vector<ai::Actor> foes =
             buildFoesFromDm(encFromRoom(room));
         if (foes.empty()) return;
+        // R120: THE PARLEY GATE (DMG p.63-64, R117's first
+        // caller) - the monsters react before steel is drawn;
+        // only the book's two starred bands mean immediate
+        // attack. Charisma follows the engine's best-living-
+        // Cha spokesman convention (R58).
+        int chaAdj = 0;
+        for (const auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            int adj = rules::chaReactionAdj(c.abilities.cha);
+            if (adj > chaAdj) chaAdj = adj;
+        }
+        dm::Reaction react = dm::rollReaction(dice, chaAdj);
+        if (!dm::reactionAttacks(react)) {
+            room.parleyed = true;
+            const char* mname2 = def ? def->name.c_str() : "monster";
+            const char* calm =
+                react == dm::REACTION_NEUTRAL
+                    ? " ignores you." :
+                react == dm::REACTION_UNCERTAIN_NEG
+                    ? " grumbles and watches warily." :
+                react == dm::REACTION_UNCERTAIN_POS
+                    ? " seems curious about you." :
+                react == dm::REACTION_FRIENDLY
+                    ? " greets you warmly." :
+                    " hails you joyfully!";
+            char pbuf[96];
+            if (room.count == 1)
+                snprintf(pbuf, sizeof pbuf, "The %s%s",
+                         mname2, calm);
+            else
+                snprintf(pbuf, sizeof pbuf, "The %ss%s",
+                         mname2, calm);
+            log.add(pbuf);
+            return;
+        }
         const char* mname = def ? def->name.c_str() : "monster";
         char buf[96];
         if (room.count == 1)

@@ -34,6 +34,11 @@ d6 bands; abilities.cpp joins the battery
 build (it was compiled by nothing).
 R119 CLOSED forced rest (p.38) - one turn
 in six plus a turn after combat, gated.
+R120 WIRED parley (R117's reaction roll
+gates room and wandering encounters;
+only the starred bands attack) and
+listening at doors ([H], R118's table) -
+first callers for both.
 
 Categories:
 - [x] = verified against the book text

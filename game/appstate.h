@@ -260,6 +260,10 @@ struct RoomOccupant {
     // R45: 0 = no trap, 1 = armed dart trap, 2 = sprung
     int trap = 0;
     bool flavorSeen = false;   // R46: first-entry description
+    // R120: a non-hostile parley bought peace - the room's
+    // monsters no longer leap at the company (a deliberate-
+    // engage hook is a future round)
+    bool parleyed = false;
     // R52: DMG Appendix C ranges - hydra heads per specimen,
     // dragon age bracket (hp/die) per specimen
     int headsLo = 0, headsHi = 0;
@@ -975,6 +979,13 @@ struct AppState {
     // R45: place secret doors - wall tiles that border floor
     // (3 per level). Found doors become ordinary doors on
     // the map; hidden ones render as plain wall.
+    // R120: [H] listen at doors (DMG p.60) - ear to the
+    // nearest portal; the best listener leads (a thief's
+    // hear-noise, else the human band); silent creatures
+    // (undead) are never heard; the hint is imprecise per
+    // the book. Costs a turn.
+    void listenExplore();
+
     void placeSecretDoors();
 
     // R45: [F] search - one turn spent feeling the walls.

@@ -97,6 +97,11 @@ Reaction reactionForScore(int adjustedScore);
 // d100 + chaReactionAdj, banded (DMG p.64)
 Reaction rollReaction(Dice& dice, int chaReactionAdj);
 
+// R120: the book's two starred bands mean immediate
+// attack; every other band may be talked past (the
+// parley gate - the caller logs the color and defers)
+bool reactionAttacks(Reaction r);
+
 // ----------------------------------------------------------------------------
 // WANDERING MONSTERS (DMG p.61 + Appendix C)
 //

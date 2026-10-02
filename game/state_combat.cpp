@@ -582,6 +582,29 @@ void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return
         std::vector<ai::Actor> foes = buildFoesFromDm(e);
         if (foes.empty()) return;
 
+        // R120: the parley gate rides the wandering roll
+        // too (DMG p.63-64) - non-hostile bands pass by
+        int chaAdj = 0;
+        for (const auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            int adj = rules::chaReactionAdj(c.abilities.cha);
+            if (adj > chaAdj) chaAdj = adj;
+        }
+        dm::Reaction react = dm::rollReaction(dice, chaAdj);
+        if (!dm::reactionAttacks(react)) {
+            char pbuf[96];
+            if (e.count == 1)
+                snprintf(pbuf, sizeof pbuf,
+                         "A wandering %s eyes the company "
+                         "and moves on.", e.key.c_str());
+            else
+                snprintf(pbuf, sizeof pbuf,
+                         "%d wandering %ss eye the company "
+                         "and move on.", e.count, e.key.c_str());
+            log.add(pbuf);
+            return;
+        }
+
         char buf[96];
         if (e.count == 1)
             snprintf(buf, sizeof buf, "A wandering %s attacks!",
