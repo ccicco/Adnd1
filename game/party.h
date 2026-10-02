@@ -816,30 +816,54 @@ inline int hireAgeYears(const Party& p) {
     return p.henchmanStartAge + p.careerDays / 365;
 }
 
-// R98: the years tell. Brackets (DMG p.11-12 convention,
-// book-verify pending): young < 45, middle 45..59,
-// old 60..89, venerable 90+.
+// R114: the years tell. The book's five human age
+// categories (DMG p.13-14): young adult 14-20,
+// mature 21-40, middle aged 41-60, old 61-90,
+// venerable 91+. Humans only - the repo has no
+// race field (documented). R97's start ages all
+// fall inside young adult, which is the as-rolled
+// baseline: no creation-time adjustments (the
+// book's YA bend of +1 CON/-1 WIS is the baseline
+// itself, documented interpretation).
 inline int ageBracket(int age) {
-    if (age < 45) return 0;
-    if (age < 60) return 1;
-    if (age < 90) return 2;
-    return 3;
+    if (age <= 20) return 0;
+    if (age <= 40) return 1;
+    if (age <= 60) return 2;
+    if (age <= 90) return 3;
+    return 4;
 }
 
-// the bend by bracket: STR/CON/DEX fall 1/2/3, INT/WIS
-// rise 1/2/3, CHA is untouched (a face is a face)
+// the book's per-bracket adjustments (DMG p.14),
+// applied progressively at each bracket crossing
+// and cumulative. CHA is untouched at every
+// bracket (a face is a face). Clamps stay 3..18:
+// the book lets WIS exceed 18, clipped here
+// (documented simplification).
 inline int ageAbilityDelta(int bracket, rules::Ability a) {
     if (bracket <= 0) return 0;
-    int mag = bracket;   // 1/2/3
-    switch (a) {
-        case rules::ABILITY_STR:
-        case rules::ABILITY_CON:
-        case rules::ABILITY_DEX:
-            return -mag;
-        case rules::ABILITY_INT:
-        case rules::ABILITY_WIS:
-            return mag;
-        default:
+    switch (bracket) {
+        case 1:  // mature: +1 STR, +1 WIS
+            if (a == rules::ABILITY_STR) return 1;
+            if (a == rules::ABILITY_WIS) return 1;
+            return 0;
+        case 2:  // middle aged: -1 STR, -1 CON, +1 INT, +1 WIS
+            if (a == rules::ABILITY_STR) return -1;
+            if (a == rules::ABILITY_CON) return -1;
+            if (a == rules::ABILITY_INT) return 1;
+            if (a == rules::ABILITY_WIS) return 1;
+            return 0;
+        case 3:  // old: -2 STR, -2 DEX, -1 CON, +1 WIS
+            if (a == rules::ABILITY_STR) return -2;
+            if (a == rules::ABILITY_DEX) return -2;
+            if (a == rules::ABILITY_CON) return -1;
+            if (a == rules::ABILITY_WIS) return 1;
+            return 0;
+        default: // venerable: -1 STR, -1 DEX, -1 CON, +1 INT, +1 WIS
+            if (a == rules::ABILITY_STR) return -1;
+            if (a == rules::ABILITY_DEX) return -1;
+            if (a == rules::ABILITY_CON) return -1;
+            if (a == rules::ABILITY_INT) return 1;
+            if (a == rules::ABILITY_WIS) return 1;
             return 0;
     }
 }

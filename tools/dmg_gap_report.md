@@ -16,7 +16,9 @@ matrix).
 R112 CLOSED divergence 5 of 6 (monster attack
 matrix).
 R113 CLOSED divergence 4 of 6 (class attack
-matrices); divergence 6 (aging) stays open.
+matrices).
+R114 CLOSED divergence 6 of 6 (aging) - all
+six of the original divergences are closed.
 
 Categories:
 - [x] = verified against the book text
@@ -143,13 +145,17 @@ Categories:
       step by monsterSaveLevel (matrix II.B,
       from R110). Pinned by the R112 battery
       audit.
-- [~] 6. **Aging (p.13-14)** - the book has
-      FIVE brackets with human thresholds at
-      41/61/91, cumulative effects, and a
-      gentler CON decline than the repo
-      implements. R98's simplification is
-      documented but not the book. Accepted
-      until a round chooses otherwise.
+- [x] 6. **Aging (p.13-14)** - CLOSED R114.
+      The book's five human brackets (young
+      adult 14-20, mature 21-40, middle aged
+      41-60, old 61-90, venerable 91+) with
+      its per-bracket cumulative adjustments
+      (p.14) replace R98's symmetric bend.
+      Humans only (no race field; documented),
+      young adult is the as-rolled baseline,
+      WIS clipped at 18 (documented). Magical
+      aging causes (haste, wish, etc., p.14)
+      remain an open item below.
 
 ## Simplified or accepted by design
 
