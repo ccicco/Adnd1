@@ -14,8 +14,9 @@ R110 CLOSED divergence 2 of 6 (saving throws).
 R111 CLOSED divergence 3 of 6 (fighter attack
 matrix).
 R112 CLOSED divergence 5 of 6 (monster attack
-matrix); divergences 4 (class matrices) and 6
-(aging) stay open.
+matrix).
+R113 CLOSED divergence 4 of 6 (class attack
+matrices); divergence 6 (aging) stays open.
 
 Categories:
 - [x] = verified against the book text
@@ -110,19 +111,23 @@ Categories:
       gone. The book's optional 5%-per-level
       variant is not adopted. Pinned by the
       R111 battery audit.
-- [~] 4. **Class attack matrices (p.75 I.A,
-      I.C, I.D)** - the book gives clerics,
-      magic-users, and thieves their own
-      matrices with their own bands (cleric
-      1-3/4-6/7-9/...; MU 1-5/6-10/...; thief
-      per I.D). The repo approximates all
-      classes with effectiveAttackLevel shifts
-      on the fighter matrix (MU -3, cleric -2,
-      thief -4), which lands wrong on both
-      ends: a book MU level 1 needs 11 to hit
-      AC 10, the repo asks 10. The book's
-      missile note is on the same page: -5 at
-      long, -2 at medium range.
+- [x] 4. **Class attack matrices (p.75 I.A,
+      I.C, I.D)** - CLOSED R113. The repo now
+      carries the book's own tables for
+      clerics (I.A, 7 level bands), magic-
+      users (I.C, 5 bands) and thieves
+      (I.D, 6 bands), each 21 AC rows
+      transcribed cell for cell; fighters
+      keep matrix I.B (R111). The
+      effectiveAttackLevel row-shift
+      approximation is gone: a book MU
+      level 1 needs 11 to hit AC 10 (the
+      shifts asked 10). The book's thief
+      superscripts are backstab damage
+      multipliers, not attack numbers.
+      The book's missile note (-5 long,
+      -2 medium) is still an open item.
+      Pinned by the R113 battery audit.
 - [x] 5. **Monster attack matrix (p.75-76
       II)** - CLOSED R112. The repo now carries
       the book's own HD-banded monster table:

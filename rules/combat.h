@@ -42,16 +42,19 @@ namespace rules {
 // AC - only a natural 20 can hit, per the attackRollHits convention).
 int attackMatrixFighter(int level, int ac);
 
-// Class attack numbers: cleric/MU/thief attack as fighters at a lower
-// effective level (the 1e convention - the DMG prints separate tables
-// that are row-shifts of the fighter matrix):
-//   cleric: effective level = level (clerics use their own near-fighter
-//           progression; encoded as level - 2, min 1)
-//   thief:  effective level = level - 4, min 1  ( thieves attack worse
-//           than fighters)
-//   MU:     effective level = level - 3, min 1  (magic-users attack
-//           slightly worse than clerics)
-int effectiveAttackLevel(int level, int classIndex);
+// Class attack numbers (DMG p.75 I.A/I.C/I.D): the book's own
+// tables for cleric (I.A: bands 1-3/4-6/7-9/10-12/13-15/16-18/
+// 19+), magic-user (I.C: bands 1-5/6-10/11-15/16-20/21+) and
+// thief (I.D: bands 1-4/5-8/9-12/13-16/17-20/21+), each 21 AC
+// rows (10 down to -10), transcribed cell for cell by R113. The
+// effectiveAttackLevel row-shift approximation is gone. Targets
+// may be negative or above 20 (natural 20 / natural 1 convention
+// as in attackRollHits).
+
+// Convenience: to-hit number for a class/level vs AC.
+// classIndex: 0 fighter (matrix I.B), 1 MU (I.C), 2 cleric (I.A),
+// 3 thief (I.D) (matches CharClass).
+int attackNumber(int classIndex, int level, int ac);
 
 // Convenience: to-hit number for a class/level vs AC.
 // classIndex: 0 fighter, 1 MU, 2 cleric, 3 thief (matches CharClass).

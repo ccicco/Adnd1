@@ -134,23 +134,133 @@ int attackMatrixMonster(float hitDice, int ac) {
 }
 
 // ----------------------------------------------------------------------------
-// Class row-shifts (DMG prints separate class tables; the shifts below
-// reproduce them from the fighter matrix)
+// Class attack matrices (DMG p.75 I.A/I.C/I.D) - the book's own
+// tables for clerics (I.A), magic-users (I.C) and thieves (I.D),
+// transcribed cell for cell; fighters keep matrix I.B
+// (attackMatrixFighter, R111). The effectiveAttackLevel row-shift
+// approximation is gone (R113): a book MU level 1 needs 11 to hit
+// AC 10; the shifts asked 10.
 // ----------------------------------------------------------------------------
 
-int effectiveAttackLevel(int level, int classIndex) {
-    if (level < 1) level = 1;
-    switch (classIndex) {
-        case 0:  return level;            // fighter
-        case 1:  return level - 3 < 1 ? 1 : level - 3;  // MU
-        case 2:  return level - 2 < 1 ? 1 : level - 2;  // cleric
-        case 3:  return level - 4 < 1 ? 1 : level - 4;  // thief
-        default: return level;
-    }
+static const int kClassAcRows = 21;   // AC 10 .. AC -10
+
+// I.A bands: 1-3, 4-6, 7-9, 10-12, 13-15, 16-18, 19+
+static const int kClericMatrix[kClassAcRows][7] = {
+    /*  10 */ { 10,  8,  6,  4,  2,  0, -1 },
+    /*   9 */ { 11,  9,  7,  5,  3,  1,  0 },
+    /*   8 */ { 12, 10,  8,  6,  4,  2,  1 },
+    /*   7 */ { 13, 11,  9,  7,  5,  3,  2 },
+    /*   6 */ { 14, 12, 10,  8,  6,  4,  3 },
+    /*   5 */ { 15, 13, 11,  9,  7,  5,  4 },
+    /*   4 */ { 16, 14, 12, 10,  8,  6,  5 },
+    /*   3 */ { 17, 15, 13, 11,  9,  7,  6 },
+    /*   2 */ { 18, 16, 14, 12, 10,  8,  7 },
+    /*   1 */ { 19, 17, 15, 13, 11,  9,  8 },
+    /*   0 */ { 20, 18, 16, 14, 12, 10,  9 },
+    /*  -1 */ { 20, 19, 17, 15, 13, 11, 10 },
+    /*  -2 */ { 20, 20, 18, 16, 14, 12, 11 },
+    /*  -3 */ { 20, 20, 19, 17, 15, 13, 12 },
+    /*  -4 */ { 20, 20, 20, 18, 16, 14, 13 },
+    /*  -5 */ { 20, 20, 20, 19, 17, 15, 14 },
+    /*  -6 */ { 21, 20, 20, 20, 18, 16, 15 },
+    /*  -7 */ { 22, 20, 20, 20, 19, 17, 16 },
+    /*  -8 */ { 23, 21, 20, 20, 20, 18, 17 },
+    /*  -9 */ { 24, 22, 20, 20, 20, 19, 18 },
+    /* -10 */ { 25, 23, 21, 20, 20, 20, 19 },
+};
+
+// I.C bands: 1-5, 6-10, 11-15, 16-20, 21+
+static const int kMuMatrix[kClassAcRows][5] = {
+    /*  10 */ { 11,  9,  6,  3,  1 },
+    /*   9 */ { 12, 10,  7,  4,  2 },
+    /*   8 */ { 13, 11,  8,  5,  3 },
+    /*   7 */ { 14, 12,  9,  6,  4 },
+    /*   6 */ { 15, 13, 10,  7,  5 },
+    /*   5 */ { 16, 14, 11,  8,  6 },
+    /*   4 */ { 17, 15, 12,  9,  7 },
+    /*   3 */ { 18, 16, 13, 10,  8 },
+    /*   2 */ { 19, 17, 14, 11,  9 },
+    /*   1 */ { 20, 18, 15, 12, 10 },
+    /*   0 */ { 20, 19, 16, 13, 11 },
+    /*  -1 */ { 20, 20, 17, 14, 12 },
+    /*  -2 */ { 20, 20, 18, 15, 13 },
+    /*  -3 */ { 20, 20, 19, 16, 14 },
+    /*  -4 */ { 20, 20, 20, 17, 15 },
+    /*  -5 */ { 21, 20, 20, 18, 16 },
+    /*  -6 */ { 22, 20, 20, 19, 17 },
+    /*  -7 */ { 23, 21, 20, 20, 18 },
+    /*  -8 */ { 24, 22, 20, 20, 19 },
+    /*  -9 */ { 25, 23, 20, 20, 20 },
+    /* -10 */ { 26, 24, 21, 20, 20 },
+};
+
+// I.D bands: 1-4, 5-8, 9-12, 13-16, 17-20, 21+
+// (the book's superscripts are backstab damage multipliers, not
+// attack numbers - tracked with the thief special, not here)
+static const int kThiefMatrix[kClassAcRows][6] = {
+    /*  10 */ { 11,  9,  6,  4,  2,  0 },
+    /*   9 */ { 12, 10,  7,  5,  3,  1 },
+    /*   8 */ { 13, 11,  8,  6,  4,  2 },
+    /*   7 */ { 14, 12,  9,  7,  5,  3 },
+    /*   6 */ { 15, 13, 10,  8,  6,  4 },
+    /*   5 */ { 16, 14, 11,  9,  7,  5 },
+    /*   4 */ { 17, 15, 12, 10,  8,  6 },
+    /*   3 */ { 18, 16, 13, 11,  9,  7 },
+    /*   2 */ { 19, 17, 14, 12, 10,  8 },
+    /*   1 */ { 20, 18, 15, 13, 11,  9 },
+    /*   0 */ { 20, 19, 16, 14, 12, 10 },
+    /*  -1 */ { 20, 20, 17, 15, 13, 11 },
+    /*  -2 */ { 20, 20, 18, 16, 14, 12 },
+    /*  -3 */ { 20, 20, 19, 17, 15, 13 },
+    /*  -4 */ { 20, 20, 20, 18, 16, 14 },
+    /*  -5 */ { 21, 20, 20, 19, 17, 15 },
+    /*  -6 */ { 22, 20, 20, 20, 18, 16 },
+    /*  -7 */ { 23, 21, 20, 20, 19, 17 },
+    /*  -8 */ { 24, 22, 20, 20, 20, 18 },
+    /*  -9 */ { 25, 23, 20, 20, 20, 19 },
+    /* -10 */ { 26, 24, 21, 20, 20, 20 },
+};
+
+static int clericBand(int level) {
+    if (level < 1)   level = 1;
+    if (level <= 3)  return 0;
+    if (level <= 6)  return 1;
+    if (level <= 9)  return 2;
+    if (level <= 12) return 3;
+    if (level <= 15) return 4;
+    if (level <= 18) return 5;
+    return 6;                     // 19+
+}
+
+static int muBand(int level) {
+    if (level < 1)   level = 1;
+    if (level <= 5)  return 0;
+    if (level <= 10) return 1;
+    if (level <= 15) return 2;
+    if (level <= 20) return 3;
+    return 4;                     // 21+
+}
+
+static int thiefBand(int level) {
+    if (level < 1)   level = 1;
+    if (level <= 4)  return 0;
+    if (level <= 8)  return 1;
+    if (level <= 12) return 2;
+    if (level <= 16) return 3;
+    if (level <= 20) return 4;
+    return 5;                     // 21+
 }
 
 int attackNumber(int classIndex, int level, int ac) {
-    return attackMatrixFighter(effectiveAttackLevel(level, classIndex), ac);
+    int row = 10 - ac;
+    if (row < 0) row = 0;
+    if (row > kClassAcRows - 1) row = kClassAcRows - 1;
+    switch (classIndex) {
+        case 1:  return kMuMatrix[row][muBand(level)];
+        case 2:  return kClericMatrix[row][clericBand(level)];
+        case 3:  return kThiefMatrix[row][thiefBand(level)];
+        default: return attackMatrixFighter(level, ac);  // fighter/0-level
+    }
 }
 
 // ----------------------------------------------------------------------------
