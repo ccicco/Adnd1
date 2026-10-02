@@ -133,8 +133,10 @@ int wanderDistance(Dice& dice);
 // via callback so it stays decoupled from the Win32 layer.
 // ----------------------------------------------------------------------------
 
-// Passage width (in 10' tiles): 1 = 10' wide, 2 = 20' wide, 3 = 30'.
-int rollPassageWidth(Dice& dice);          // d20: 1-12 -> 1, 13-19 -> 2, 20 -> 3
+// R124: TABLE III.A (p.170) via appendixa.h - feet ->
+// 10' tiles, clamped 1-3 (5' is half a tile; the
+// special passages are pinned data, the walk clamps).
+int rollPassageWidth(Dice& dice);
 
 // At a passage T/junction: continues/crossing/turn table.
 enum PassageFeature : int {
@@ -146,7 +148,7 @@ enum PassageFeature : int {
     PASSAGE_DEAD_END,       // passage ends (door/chance)
     PASSAGE_FEATURE_COUNT
 };
-PassageFeature rollPassageFeature(Dice& dice);   // d20 table, App A
+PassageFeature rollPassageFeature(Dice& dice);   // R124: Table I via appendixa.h, mapped to the walk
 
 // Turn direction at a turn/junction: -1 left, +1 right (axis-relative).
 int rollTurnDirection(Dice& dice);               // d6: 1-3 left, 4-6 right
@@ -160,8 +162,9 @@ struct DoorState {
 };
 DoorState rollDoor(Dice& dice);
 
-// Room size in tiles: d6 pairs -> small/medium/large + dimensions.
-// Returns width x height in 10' tiles (e.g. 2x3, 4x6).
+// R124: TABLE V's room column (p.171) via appendixa.h
+// - 10'x10' .. 30'x40' in feet -> 10' tiles; the
+// book's blank 18-20 rows re-roll.
 void rollRoomSize(Dice& dice, int& w, int& h);
 
 // Room contents (Appendix A room contents table): empty, monster,
@@ -175,6 +178,6 @@ enum RoomContents : int {
     ROOM_TRAP,
     ROOM_CONTENTS_COUNT
 };
-RoomContents rollRoomContents(Dice& dice);   // d20 weighted table
+RoomContents rollRoomContents(Dice& dice);   // R124: Table V.F via appendixa.h - exact bands
 
 } // namespace dm

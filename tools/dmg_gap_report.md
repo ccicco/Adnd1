@@ -57,6 +57,23 @@ tracked and logged), the coaster on
 the book's sailed sea rate (50/day),
 the mounted and afloat tables pinned
 as data. Census 41.
+R124 CLOSED Appendix A dressing
+details (pp.169-172) - every table of
+the random dungeon generation appendix
+pinned row-by-row in the new
+dm/appendixa.h: periodic check, doors,
+side passages, widths, special passages
+with their bridge/boat/jumping
+chances, turns, chamber and room
+shapes, unusual shape and size, exits,
+contents and the stairway variant,
+treasure by level, containers, guards,
+hiding, stairs, tricks/traps, gas,
+caves, pools, lakes and magic pools.
+The walk's four helper rolls (width,
+features, room size, contents) are
+rewired to the exact tables - the
+verification debt paid. Census 42.
 
 Categories:
 - [x] = verified against the book text
@@ -401,9 +418,35 @@ Categories:
       a weeks-scale rule this day cadence
       does not model - documented. Pinned
       by the R123 battery audit.
-- [ ] **Appendix A dungeon dressing details
-      (pp.169-172)** - beyond what the generator
-      already pins.
+- [x] **Appendix A dungeon dressing details
+      (pp.169-172)** - CLOSED R124: all tables
+      pinned row-by-row in the new
+      dm/appendixa.h (Tables I-VIII.C:
+      periodic check, doors, side passages,
+      passage width, special passages with
+      the stream/river/chasm bridge-boat-
+      jumping chances, turns, chamber/room
+      shape and size, unusual shape and
+      size, exits count/location/direction,
+      room contents + the stairway variant
+      (the book's print skips band 6 - 1-5,
+      7-8 - pinned as printed, documented),
+      treasure by level, containers,
+      guarded-by, hidden-by, stairs with
+      their egress doors, trick/trap, gas,
+      caves, pools, lakes, magic pools and
+      their sub-tables). The walk's four
+      helpers (passage width, passage
+      features, room size, room contents)
+      are rewired to the exact tables -
+      R8's stand-in shapes and their
+      verification-debt notes are gone
+      (rooms use Table V's room column -
+      the blank 18-20 rows re-roll; the
+      chamber column and all unrendered
+      tables are pinned data for the future
+      layers). Pinned by the R124 battery
+      audit; census 42.
 - [ ] **Traps and dressing lists (pp.216-217)**
       - full tables vs the repo's trap set.
 - [ ] **Wilderness encounter tables

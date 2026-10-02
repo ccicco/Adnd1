@@ -4,6 +4,7 @@
 // ============================================================================
 
 #include "dm.h"
+#include "appendixa.h"   // R124: pp.169-172 pinned tables
 
 namespace dm {
 
@@ -96,22 +97,37 @@ int wanderDistance(Dice& dice) {
 // ----------------------------------------------------------------------------
 
 int rollPassageWidth(Dice& dice) {
-    int r = (int)dice.d20();
-    if (r <= 12) return 1;   // 10'
-    if (r <= 19) return 2;   // 20'
-    return 3;                // 30'
+    // R124: the book's TABLE III.A (p.170), pinned in
+    // appendixa.h: 1-12 10', 13-16 20', 17 30', 18 5',
+    // 19-20 SPECIAL (III.B). Feet to 10' tiles, clamped
+    // 1-3 for the walk: 5' is half a tile; the 40'-60'
+    // special passages with columns, streams, rivers and
+    // chasms are pinned data for a future terrain
+    // layer - the walk keeps corridor carving.
+    int ft = appendixa::passageWidthFeetFor((int)dice.d20());
+    if (ft < 0) ft = 40;   // special -> III.B's floor
+    int tiles = (ft + 9) / 10;
+    if (tiles > 3) tiles = 3;
+    return tiles;
 }
 
 PassageFeature rollPassageFeature(Dice& dice) {
-    int r = (int)dice.d20();
-    // Appendix A "passage" table shape (verification debt: exact
-    // weights vs printed table)
-    if (r <= 8)  return PASSAGE_STRAIGHT;
-    if (r <= 12) return PASSAGE_TURN;
-    if (r <= 15) return PASSAGE_T_JUNCTION;
-    if (r <= 17) return PASSAGE_CROSS;
-    if (r <= 19) return PASSAGE_CHAMBER;
-    return PASSAGE_DEAD_END;
+    // R124: the book's TABLE I (p.170), pinned in
+    // appendixa.h, mapped to the walk's carveable
+    // outcomes: a door (3-5) opens onto parallel space
+    // the walk does not render - straight; stairs (17)
+    // end the passage; a trick/trap (19) is pinned data
+    // (TABLE VII.), not a carve; a wandering monster
+    // (20) is an encounter cadence, not a feature.
+    switch (appendixa::passageCheckFor((int)dice.d20())) {
+        case appendixa::PC_SIDE:     return PASSAGE_T_JUNCTION;
+        case appendixa::PC_TURN:     return PASSAGE_TURN;
+        case appendixa::PC_CHAMBER:  return PASSAGE_CHAMBER;
+        case appendixa::PC_STAIRS:
+        case appendixa::PC_DEAD_END: return PASSAGE_DEAD_END;
+        default: break;
+    }
+    return PASSAGE_STRAIGHT;
 }
 
 int rollTurnDirection(Dice& dice) {
@@ -126,26 +142,26 @@ DoorState rollDoor(Dice& dice) {
 }
 
 void rollRoomSize(Dice& dice, int& w, int& h) {
-    // Appendix A room size: d6+d6 pairs; standard shape
-    int a = (int)dice.d6();
-    int b = (int)dice.d6();
-    // small 1-2, medium 3-4, large 5-6 scale factor
-    int scale = (a <= 2) ? 1 : (a <= 4) ? 2 : 3;
-    w = 1 + (b / 2) + scale;             // rough 2-6 tiles
-    h = 1 + ((int)dice.d6() / 2) + (scale == 3 ? 1 : 0);
-    if (w < 2) w = 2;
-    if (h < 2) h = 2;
+    // R124: the book's TABLE V (p.171), the room column,
+    // pinned in appendixa.h: 10'x10' .. 30'x40' in feet
+    // -> 10' tiles. The book prints the room column blank
+    // at 18-20 (the unusual shape/size sub-tables are
+    // chamber-only) - re-roll. The chamber column is
+    // pinned data for the future layer.
+    appendixa::SpaceShape s;
+    while (!appendixa::roomShapeFor((int)dice.d20(), s)) {}
+    w = s.wFt / 10;
+    h = s.hFt / 10;
+    if (w < 1) w = 1;
+    if (h < 1) h = 1;
 }
 
 RoomContents rollRoomContents(Dice& dice) {
-    int r = (int)dice.d20();
-    // Appendix A room contents weighted shape (verification debt)
-    if (r <= 8)  return ROOM_EMPTY;             // ~40%
-    if (r <= 13) return ROOM_MONSTER;           // ~30%
-    if (r <= 16) return ROOM_MONSTER_TREASURE;  // ~15%
-    if (r <= 18) return ROOM_TREASURE;          // ~10%
-    if (r == 19) return ROOM_SPECIAL;           // 5%
-    return ROOM_TRAP;                           // 5%
+    // R124: the book's TABLE V.F (p.171), pinned in
+    // appendixa.h: 1-12 empty, 13-14 monster, 15-17
+    // monster and treasure, 18 special, 19 trick/trap,
+    // 20 treasure.
+    return appendixa::roomContentsFor((int)dice.d20());
 }
 
 } // namespace dm
