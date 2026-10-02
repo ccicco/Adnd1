@@ -12,6 +12,9 @@ void AppState::newDungeon(uint64_t s){
         cam.follow(party);
         turnCount = 0;
         moveDebt   = 0;
+        turnsSinceRest = 0;   // R119: a fresh delve, fresh legs
+        restOwed  = false;
+        mustRest  = false;
         rng.seed(s * 7919 + 13);
 
         placeStairs();

@@ -258,6 +258,13 @@ static void onPartyMove(int dx, int dy) {
     AppState& s = g_app;
     if (s.mode != MODE_EXPLORE) return;
     if (!s.party.alive()) return;
+    // R119: forced rest (DMG p.38) - when the one-in-six
+    // rest (or the post-combat turn) is owed, the company
+    // is too winded to press on; camp with [R]
+    if (s.mustRest) {
+        s.log.add("Too winded to press on - rest first. [R]");
+        return;
+    }
 
     int nx = s.party.x + dx;
     int ny = s.party.y + dy;
@@ -274,6 +281,7 @@ static void onPartyMove(int dx, int dy) {
                                paceStepTenths(
                                    partyMoveRate(s.party)));
     s.turnCount += ticked;
+    s.tickActivity(ticked);   // R119: the one-in-six clock
 
     // R23: stairs check first - descending is the priority action
     if (s.party.x == s.stairsX && s.party.y == s.stairsY) {

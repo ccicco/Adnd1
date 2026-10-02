@@ -19,6 +19,12 @@ void AppState::restExplore(){
             return;
         }
 
+        // R119: the completed rest pays the forced-rest
+        // debt (DMG p.38); interrupted camps restore
+        // nothing, fatigue included (slots precedent)
+        turnsSinceRest = 0;
+        restOwed = false;
+        mustRest = false;
         restoreSlots();
         // R38: a completed rest renews arrows too - fletching and
         // recovery time (interrupted rests restore nothing, as
@@ -34,6 +40,21 @@ void AppState::restExplore(){
         // the clock finally sees sleep (rest is pace-free)
         turnCount += restTurns(false);
         log.add("The company rests. Spells and wounds mend.");
+    }
+
+// ---- tickActivity ----
+// R119: forced-rest bookkeeping (DMG p.38): every
+// active turn counts toward the one-in-six rest;
+// the sixth is owed and the gate closes until a
+// completed camp pays it.
+void AppState::tickActivity(int turns){
+        if (turns <= 0) return;
+        turnsSinceRest += turns;
+        if (forcedRestDue(turnsSinceRest)) {
+            if (!mustRest)
+                log.add("The company is worn - a rest is due. [R]");
+            mustRest = true;
+        }
     }
 
 // ---- countOccupied ----
@@ -220,6 +241,7 @@ void AppState::searchExplore(){
         if (mode != MODE_EXPLORE) return;
         if (!party.alive()) return;
         ++turnCount;
+        tickActivity(1);   // R119: the search is activity too
         bool hasThief = false;
         for (const auto& c : party.members)
             if (c.hp > 0 && c.classIndex == 3) hasThief = true;

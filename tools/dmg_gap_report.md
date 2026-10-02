@@ -32,6 +32,8 @@ R118 CLOSED listening at doors (p.60) -
 the book's racial d20 table replaces R11's
 d6 bands; abilities.cpp joins the battery
 build (it was compiled by nothing).
+R119 CLOSED forced rest (p.38) - one turn
+in six plus a turn after combat, gated.
 
 Categories:
 - [x] = verified against the book text
@@ -271,8 +273,26 @@ Categories:
       abilities.cpp now in the battery
       build (it was compiled by nothing
       on Termux before).
-- [ ] **Forced rest (p.38)** - characters
-      forced to rest after extended strain.
+- [x] **Forced rest (p.38)** - CLOSED
+      R119: the book requires rest at
+      least one turn in six, plus a turn
+      after every combat or other
+      strenuous activity. Pure helpers
+      (forcedRestDue: five active turns,
+      the sixth owed; strenuousRestTurns:
+      one) pin-able by the battery;
+      tickActivity counts every active
+      turn (movement ticks and the [F]
+      search); endCombat owes the turn
+      for a living company; when rest is
+      due the explore gate closes (too
+      winded to press on) until a
+      COMPLETED rest pays it - the camp
+      [R] or the inn (interrupted camps
+      restore nothing, fatigue included;
+      the slots precedent). A fresh
+      delve starts fresh-legged. Pinned
+      by the R119 battery audit.
 - [ ] **Crew officers (p.35)** - officers and
       their shares beyond the crew's 5%.
 - [x] **Missile range modifiers (p.75)** -

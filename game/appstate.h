@@ -732,6 +732,9 @@ struct AppState {
     MessageLog    log;
     int           turnCount = 0;
     int           moveDebt   = 0;   // R89: pace tenths owed
+    int           turnsSinceRest = 0; // R119: active turns since rest
+    bool          restOwed  = false;  // R119: combat owes a turn (p.38)
+    bool          mustRest  = false;  // R119: the gate - camp [R] to clear
     uint64_t      seed = 1;
     int           dungeonLevel = 1;
     rules::Rng    rng{1};
@@ -942,6 +945,12 @@ struct AppState {
     void townHireCrew();
 
     void restExplore();
+
+    // R119: forced rest (DMG p.38) - one turn in six,
+    // plus a turn after combat; when due, explore
+    // movement gates until the company camps ([R];
+    // the inn clears it too)
+    void tickActivity(int turns);
 
     int countOccupied() const;
 

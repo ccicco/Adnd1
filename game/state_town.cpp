@@ -273,6 +273,11 @@ void AppState::townInnRest(){
         // R96: the town clock - a night at the inn is a
         // career day spent whole
         ++party.careerDays;
+        // R119: a night at the inn is a completed rest
+        // too - the forced-rest debt clears (DMG p.38)
+        turnsSinceRest = 0;
+        restOwed = false;
+        mustRest = false;
         restoreSlots();
         restockAmmo();
         for (auto& c : party.members) {

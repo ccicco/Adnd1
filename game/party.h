@@ -690,6 +690,19 @@ inline int restTurns(bool interrupted) {
     return interrupted ? 4 : 48;
 }
 
+// R119: forced rest (DMG p.38, TIME IN THE DUNGEON):
+// a party rests at least one turn in six - five
+// active turns are allowed, the sixth is owed.
+inline bool forcedRestDue(int turnsSinceRest) {
+    return turnsSinceRest >= 5;
+}
+
+// R119: combat (or any other strenuous activity)
+// owes a turn of rest (DMG p.38)
+inline int strenuousRestTurns() {
+    return 1;
+}
+
 // R91: what the stairs cost - 36 turns (6 hours of finding,
 // clearing and descending the worn way down; R34's
 // "the descent takes hours" made literal). Pace-free like

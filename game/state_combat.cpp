@@ -673,6 +673,14 @@ void AppState::endCombat(){
                 log.add("GAME OVER - press N to roll a new party.");
             }
         }
+        // R119: forced rest (DMG p.38) - the fight spent
+        // them; a turn of rest is owed once back on the
+        // trail (a wiped company demands nothing)
+        if (party.alive()) {
+            restOwed = true;
+            mustRest = true;
+            log.add("The company is winded - a rest is owed. [R]");
+        }
         combat.encounter.reset();
         mode = combatReturnMode;   // R68: back to the trail
         if (teleported) {   // R83: the spell lands the company
