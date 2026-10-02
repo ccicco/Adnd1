@@ -141,74 +141,83 @@ bool weaponSufficient(int requiredPlus, int weaponBonus) {
 }
 
 // ----------------------------------------------------------------------------
-// Turning undead (DMG p.75 matrix)
-// Cleric level rows 1..8+ (row "C" columns skeleton..special):
-//   L1:  1  -  -  -  -  -  -  -  -  -  -  -
-//   L2:  T  1  -  -  -  -  -  -  -  -  -  -
-//   L3:  T  T  1  -  -  -  -  -  -  -  -  -
-//   L4:  D  T  T  1  -  -  -  -  -  -  -  -
-//   L5:  D  D  T  T  1  -  -  -  -  -  -  -
-//   L6:  D  D  D  T  T  1  -  -  -  -  -  -
-//   L7:  D  D  D  D  T  T  1  -  -  -  -  -
-//   L8:  D  D  D  D  D  T  T  1  -  -  -  -
-//   L9:  D  D  D  D  D  D  T  T  1  -  -  -
-//  L10:  D  D  D  D  D  D  D  T  T  1  -  -
-// (skeleton zombie ghoul shadow wight ghast wraith mummy spectre
-//  vampire lich)
-// Beyond 10 the matrix steps one column per level.
-// NOTE: exact printed rows get verified against the DMG when the
-// monsters layer wires turnUndead end-to-end; the diagonal structure
-// above is the standard 1e turn matrix shape.
+// Turning undead (DMG p.75-76 matrix III; procedure p.77)
+// The BOOK's table, transcribed cell for cell: 13 undead rows in the
+// book's own order, columns cleric level 1-8, 9-13, 14+. Roll d20;
+// match or exceed the number shown and 1-12 undead are turned (7-12
+// for the starred D* cells, 1-2 for the Special row). T = automatic
+// turn, D = automatic destroy, dash = no effect possible - a failed
+// roll cannot be retried against that undead. Paladins turn as a
+// cleric two levels below (p.75 footnote).
+// Encoding: -1 dash, 0 T, 1 D, 2 D*, 4-20 the d20 target.
 // ----------------------------------------------------------------------------
 
-static const int kTurnMatrixRows = 10;
-// encoding: -1 dash, 0..7 count digit, 10 T, 11 D
-static const int kTurnMatrix[kTurnMatrixRows][12] = {
-    /* L1  */ {  1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
-    /* L2  */ { 10,  1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
-    /* L3  */ { 10, 10,  1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
-    /* L4  */ { 11, 10, 10,  1, -1, -1, -1, -1, -1, -1, -1, -1 },
-    /* L5  */ { 11, 11, 10, 10,  1, -1, -1, -1, -1, -1, -1, -1 },
-    /* L6  */ { 11, 11, 11, 10, 10,  1, -1, -1, -1, -1, -1, -1 },
-    /* L7  */ { 11, 11, 11, 11, 10, 10,  1, -1, -1, -1, -1, -1 },
-    /* L8  */ { 11, 11, 11, 11, 11, 10, 10,  1, -1, -1, -1, -1 },
-    /* L9  */ { 11, 11, 11, 11, 11, 11, 10, 10,  1, -1, -1, -1 },
-    /* L10 */ { 11, 11, 11, 11, 11, 11, 11, 10, 10,  1, -1, -1 },
+static const int kTurnRows    = 13;
+static const int kTurnColumns = 10;   // levels 1-8, 9-13, 14+
+
+static const int kTurnMatrix[kTurnRows][kTurnColumns] = {
+    /* skeleton */ { 10,  7,  4,  0,  0,  1,  1,  2,  2,  2 },
+    /* zombie    */ { 13, 10,  7,  0,  0,  1,  1,  1,  2,  2 },
+    /* ghoul     */ { 16, 13, 10,  4,  0,  0,  1,  1,  1,  2 },
+    /* shadow    */ { 19, 16, 13,  7,  4,  0,  0,  1,  1,  2 },
+    /* wight     */ { 20, 19, 16, 10,  7,  4,  0,  0,  1,  1 },
+    /* ghast     */ { -1, 20, 19, 13, 10,  7,  4,  0,  0,  1 },
+    /* wraith    */ { -1, -1, 20, 16, 13, 10,  7,  4,  0,  1 },
+    /* mummy     */ { -1, -1, -1, 20, 16, 13, 10,  7,  4,  0 },
+    /* spectre   */ { -1, -1, -1, -1, 20, 16, 13, 10,  7,  0 },
+    /* vampire   */ { -1, -1, -1, -1, -1, 20, 16, 13, 10,  4 },
+    /* ghost     */ { -1, -1, -1, -1, -1, -1, 20, 16, 13,  7 },
+    /* lich      */ { -1, -1, -1, -1, -1, -1, -1, 19, 16, 10 },
+    /* special   */ { -1, -1, -1, -1, -1, -1, -1, 20, 19, 13 },
 };
 
 TurnAttempt turnUndead(int clericLevel, int undeadKind) {
     TurnAttempt t;
-    t.result = TURN_NONE;
-    t.countDigit = 0;
+    t.result    = TURN_NONE;
+    t.target    = 0;
+    t.countKind = TURN_COUNT_1_12;
 
     if (clericLevel < 1 || undeadKind < 0) return t;
+    if (undeadKind >= kTurnRows) return t;
 
-    int row = clericLevel - 1;
-    int col = undeadKind;
-    if (row >= kTurnMatrixRows) {
-        // beyond L10: shift one column per extra level
-        col -= (row - (kTurnMatrixRows - 1));
-        row = kTurnMatrixRows - 1;
+    // column: levels 1-8 are their own, 9-13 share one, 14+ the last
+    int col;
+    if (clericLevel <= 8)      col = clericLevel - 1;
+    else if (clericLevel < 14) col = 8;
+    else                       col = 9;
+
+    int v = kTurnMatrix[undeadKind][col];
+    switch (v) {
+    case -1: t.result = TURN_NONE;     break;   // dash
+    case  0: t.result = TURN_ALL;     break;   // T
+    case  1: t.result = TURN_DESTROY; break;   // D
+    case  2: t.result = TURN_DESTROY;          // D*
+             t.countKind = TURN_COUNT_7_12; break;
+    default: t.result = TURN_CHANCE;            // d20 target
+             t.target = v;
+             if (undeadKind == 12) t.countKind = TURN_COUNT_1_2;
+             break;
     }
-    if (col < 0) { t.result = TURN_DESTROY; return t; }  // everything dies
-    if (col > 11) return t;                              // beyond lich: no effect
-
-    int v = kTurnMatrix[row][col];
-    if (v == -1)      { t.result = TURN_NONE; }
-    else if (v == 10) { t.result = TURN_ALL; }
-    else if (v == 11) { t.result = TURN_DESTROY; }
-    else              { t.result = TURN_COUNT; t.countDigit = v; }
     return t;
 }
 
-int rollTurnCount(Dice& dice, int countDigit) {
-    // count digits on the matrix are the number shown; the 1e rule is
-    // 2d6 turned when a number appears - the digit IS the 2d6 result
-    // band marker. We roll 2d6 (original tranche 51 convention: number
-    // success turns weakest-first up to the rolled count).
-    int r = (int)dice.roll(2, 6, 0);
-    if (r < 1) r = 1;
-    return r;
+bool rollTurnSuccess(Dice& dice, const TurnAttempt& t) {
+    switch (t.result) {
+    case TURN_NONE:     return false;   // dash - no roll helps
+    case TURN_ALL:
+    case TURN_DESTROY:  return true;    // automatic
+    case TURN_CHANCE:   break;
+    }
+    int r = (int)dice.roll(1, 20, 0);
+    return r >= t.target;
+}
+
+int rollTurnCount(Dice& dice, const TurnAttempt& t) {
+    switch (t.countKind) {
+    case TURN_COUNT_7_12: return (int)dice.roll(1, 6, 0) + 6;
+    case TURN_COUNT_1_2:  return (int)dice.roll(1, 2, 0);
+    default:              return (int)dice.roll(1, 12, 0);
+    }
 }
 
 } // namespace rules

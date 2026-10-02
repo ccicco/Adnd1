@@ -1,6 +1,7 @@
 #include "monsters/MonsterRegistry.h"
 #include "dm/encounters.h"
 #include "game/party.h"
+#include "rules/combat.h"
 #include "spells/spells.h"
 #include <cstdio>
 #include <string>

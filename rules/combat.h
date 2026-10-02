@@ -103,33 +103,48 @@ AcType acTypeForAc(int ac);
 bool weaponSufficient(int requiredPlus, int weaponBonus);
 
 // ----------------------------------------------------------------------------
-// Turning undead (DMG p.75). The cleric turn matrix by cleric level
-// vs undead type. Result:
-//   'T'  turn all presented undead of the type
-//   'D'  destroy (skeleton/zombie rows at high level)
-//   0-9  number = 2d6 count turned (we return the digit; caller rolls)
-//   ' '  dash: no effect possible
-//   '*'  automatic success within 60' (treated as T here)
+// Turning undead (DMG p.75-76 matrix III; procedure p.77). Rows are the
+// undead in the book's own order, columns are cleric levels 1-8, 9-13,
+// 14+. Result:
+//   dash no effect possible, ever - a failed roll cannot be retried
+//   T    automatic turning - all presented undead of the type
+//   D    automatic destruction - all presented undead of the type
+//   D*   automatic destruction of 7-12 (the starred cells)
+//   4-20 a d20 target: match or exceed and 1-12 are turned
+// Paladins turn as a cleric two levels below (p.75 footnote).
 // ----------------------------------------------------------------------------
 
 enum TurnResult : int {
     TURN_NONE = 0,      // dash - cannot affect
-    TURN_COUNT,         // number shown: roll 2d6 turned
-    TURN_ALL,           // T - all turned
-    TURN_DESTROY,       // D - all destroyed
+    TURN_ALL,           // T - automatic turn
+    TURN_DESTROY,      // D - automatic destroy (countKind gives the count)
+    TURN_CHANCE,        // a d20 target must be matched or exceeded
+};
+
+enum TurnCount : int {
+    TURN_COUNT_1_12 = 0,   // d12 affected (the number cells)
+    TURN_COUNT_7_12 = 1,   // d6+6 affected (the starred D* cells)
+    TURN_COUNT_1_2  = 2,   // d2 affected (the Special row)
 };
 
 struct TurnAttempt {
     TurnResult result;
-    int        countDigit;   // valid when result == TURN_COUNT
+    int        target;     // d20 target when result == TURN_CHANCE
+    int        countKind;  // TurnCount: how many are affected on success
 };
 
 // undeadKind: 0 skeleton, 1 zombie, 2 ghoul, 3 shadow, 4 wight, 5 ghast,
-// 6 wraith, 7 mummy, 8 spectre, 9 vampire, 10 lich, 11 "special"
-// (ghast/banshee row per original tranche 55; see monsters layer).
+// 6 wraith, 7 mummy, 8 spectre, 9 vampire, 10 ghost, 11 lich, 12 special
+// (the book's own row order, matrix III; paladins subtract two levels).
 TurnAttempt turnUndead(int clericLevel, int undeadKind);
 
-// Roll the 2d6 for a TURN_COUNT attempt.
-int rollTurnCount(Dice& dice, int countDigit);
+// d20 match-or-exceed for TURN_CHANCE. The automatic results resolve
+// without a roll (true for TURN_ALL/TURN_DESTROY, false for TURN_NONE).
+bool rollTurnSuccess(Dice& dice, const TurnAttempt& t);
+
+// The affected count: d12 (1-12), d6+6 (7-12) for the starred D* cells,
+// d2 (1-2) for the Special row. Plain T and D affect all presented
+// undead of the type - the caller does not roll a count for them.
+int rollTurnCount(Dice& dice, const TurnAttempt& t);
 
 } // namespace rules
