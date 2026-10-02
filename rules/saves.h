@@ -2,9 +2,10 @@
 // Adnd1 - rules/saves.h
 // Saving throws.
 //
-// Source: Players Handbook (2012 Premium reprint), class save tables
-// (pp. 22-36) and Dungeon Masters Guide saving-throw rules (p. 80).
-// Cross-checked against the 1979 TSR scan.
+// Source: Dungeon Masters Guide (Premium reprint) pp.79-80, saving
+// throw matrices I and II - the banded per-class tables, the natural-1
+// rule, and the monster HD-to-level rule. (The earlier PHB-derived
+// linear rows were replaced by R110; the printed DMG table wins.)
 // ============================================================================
 
 #pragma once
@@ -46,16 +47,19 @@ int saveTarget(int classIndex, int level, SaveCategory cat);
 //   CON poison save adjustment (vs. SAVE_DEATH_POISON)
 //   DEX reaction adj (vs. breath/AoE - DMG guidance)
 //   item/save bonuses (items layer later)
-// attemptSave rolls d20 + modifier >= target.
+// attemptSave rolls d20 + modifier >= target. A natural 1 is ALWAYS
+// failure (DMG p.80), regardless of magical protections or modifiers.
 // ----------------------------------------------------------------------------
 bool attemptSave(Dice& dice, int target, int modifier);
 
 // ----------------------------------------------------------------------------
-// Monster saves (DMG p.80): monsters save on the fighter (men) save
-// matrix at their effective level derived from hit dice. The DMG
-// converts HD to a fighter level for saving throws the same way as
-// for attacks.
+// Monster saves (DMG p.80 matrix II): monsters save on the character
+// matrices - most as fighters. Hit dice equate to experience level,
+// with hit-point pluses stepping the creature up one die level per
+// 4 points (1+1..1+4 -> 2, 2+1..2+4 -> 3, ...).
 // ----------------------------------------------------------------------------
+int monsterSaveLevel(float hitDice);
+
 bool attemptMonsterSave(Dice& dice, float hitDice, SaveCategory cat,
                         int modifier = 0);
 

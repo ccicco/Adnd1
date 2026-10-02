@@ -9,8 +9,9 @@ living checklist: when a round closes an item,
 it flips the box in the SAME commit. Page cites
 are the book's own page numbers.
 
-R109 CLOSED divergence 1 of 6 (turning undead);
-the remaining five stay ranked below.
+R109 CLOSED divergence 1 of 6 (turning undead).
+R110 CLOSED divergence 2 of 6 (saving throws);
+the remaining four stay ranked below.
 
 Categories:
 - [x] = verified against the book text
@@ -57,10 +58,12 @@ Categories:
       example (405). R59's alignment holds.
 - [x] **Monster saves use character matrices
       (p.79-80, matrix II)** - the book's rule
-      that all monsters save as characters, HD
-      equating to level with +hp stepping, is
-      the repo's approach; the per-class value
-      divergence is logged below under saves.
+      that all monsters save as characters, with
+      HD equating to level and +hp stepping by
+      4, is the repo's approach; R110 aligned
+      the character matrices and added the
+      book's own HD-to-level stepping
+      (monsterSaveLevel).
 
 ## Verified DIVERGENT (fix-round candidates, ranked)
 
@@ -76,23 +79,20 @@ Categories:
       T / D / D* / dash, counts 1-12 (7-12
       starred, 1-2 Special), paladins two levels
       below. Pinned by the R109 battery audit.
-- [~] 2. **Saving throws (p.79-80, matrix I)** -
-      the book bands levels per class; the repo
-      uses per-level linear rows. Book fighter
-      1-2: PPDM 14, Petrify 15, Rod/Wand 16,
-      Breath 17, Spell 17 - the repo's level-1
-      fighter row is off by one in three
-      categories. Book cleric 1-3 PPDM is 10;
-      the repo's level-1 cleric death save is
-      14, four points harsher - the biggest
-      single-value miss. Book MU 1-5 PPDM 14,
-      Petrify 13, Rod/Wand 11; thief 1-4
-      13/12/14/16/15 - the thief happens to be
-      exact, the MU is wrong in two of five.
-      Divergence grows with level (book bands
-      improve in steps; the repo subtracts one
-      per level). Also: book rule "a roll of 1
-      is ALWAYS failure". Second fix candidate.
+- [x] 2. **Saving throws (p.79-80, matrix I)** -
+      CLOSED R110. The repo now carries the
+      book's BANDED matrices per class
+      (fighter 0/1-2/.../17+ incl. the 0-level
+      row; cleric 1-3/.../19+; MU 1-5/.../21+;
+      thief 1-4/.../21+), replacing the
+      per-level linear rows. The headline fix:
+      the cleric level-1 death save is now the
+      book's 10 (was 14). Also landed: the
+      book's rule that a natural 1 is ALWAYS
+      failure, and the monster matrix II rule -
+      HD equates to level with +hp stepping by
+      4 (monsterSaveLevel). Pinned by the R110
+      battery audit.
 - [~] 3. **Fighter attack matrix (p.75 I.B)** -
       the book is level-BANDED: 0, 1-2, 3-4,
       5-6, 7-8, 9-10, 11-12, 13-14, 15-16,
