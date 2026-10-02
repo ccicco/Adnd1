@@ -25,6 +25,9 @@ first magical aging cause (haste, p.14).
 R116 CLOSED the missile range modifiers
 (p.75) - -2 medium, -5 long, on the
 engagement distance.
+R117 CLOSED encounter reactions (p.64) -
+the book's percentile seven-band table
+replaces R8's 2d6 stand-in.
 
 Categories:
 - [x] = verified against the book text
@@ -214,9 +217,30 @@ Categories:
       potions collapse into the healing
       stack today). The hire's stolen years
       land nowhere (no hire brackets).
-- [ ] **Encounter reactions (p.63-64)** - the
-      two-die reaction table and its
-      attitude-by-roll results.
+- [x] **Encounter reactions (p.64)** -
+      CLOSED R117: the book's percentile
+      table (seven bands, 01-05 violently
+      hostile through 96-00
+      enthusiastically friendly) replaces
+      R8's 2d6 stand-in, which carried a
+      verification-debt NOTE. d100 +
+      chaReactionAdj (the hireling reaction
+      adjustment - the book's "as if the
+      creature were a henchman" charisma
+      machinery); the loyalty adjustment
+      applies only where a loyalty score
+      exists, which an encountered
+      creature has none (documented -
+      a caller with a real score
+      pre-adjusts). The starred bands read
+      "or morale check if appropriate" -
+      the caller's call, noted in the
+      enum. Pinned by the R117 battery
+      audit (all 13 band edges, both
+      clamps, enum order, 200-roll smoke).
+      No callers yet - the parley hook is
+      a future round (dead code until
+      then, but the book's own shape).
 - [ ] **Listening at doors (p.60)** - the
       chance and the elves' bonus.
 - [ ] **Forced rest (p.38)** - characters

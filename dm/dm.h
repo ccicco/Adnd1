@@ -63,18 +63,38 @@ struct MoraleState {
 bool moraleCheck(Dice& dice, const MoraleState& m, MoraleTrigger trig);
 
 // ----------------------------------------------------------------------------
-// REACTIONS (DMG p.71-72): 2d6 on the encounter reaction table, with
-// CHA reaction adjustment (R3) applied to the roll.
+// R117: ENCOUNTER REACTIONS (DMG p.64) - the book's own
+// table (replacing R8's 2d6 stand-in shape, which
+// carried a verification-debt NOTE). The book: roll
+// percentile dice, adjust for charisma and applicable
+// loyalty adjustment AS IF the creature were a
+// henchman of the character speaking, and compare to
+// the seven bands below. The charisma adjustment is
+// chaReactionAdj (PHB hireling reaction adjustment,
+// R3); the loyalty adjustment applies only where a
+// loyalty score exists, and an encountered creature
+// has none (documented interpretation - a caller
+// with a real loyalty score pre-adjusts the roll).
+// The book's stars on the two hostile bands: "or
+// morale check if appropriate" - the caller's call.
 // ----------------------------------------------------------------------------
 enum Reaction : int {
-    REACTION_HOSTILE   = 0,   // attacks immediately
-    REACTION_THREATEN  = 1,   // hostile, may attack if pressed
-    REACTION_INDIFFERENT= 2,  // neutral, goes about business
-    REACTION_NEUTRAL   = 3,   // neutral, may parley
-    REACTION_FRIENDLY  = 4,   // receptive, may aid
-    REACTION_HELPFUL   = 5    // actively assists
+    REACTION_VIOLENT      = 0,  // 01-05: violently hostile, immediate attack*
+    REACTION_HOSTILE      = 1,  // 06-25: hostile, immediate action*
+    REACTION_UNCERTAIN_NEG= 2,  // 26-45: uncertain, 55% prone toward negative
+    REACTION_NEUTRAL      = 3,  // 46-55: neutral - uninterested - uncertain
+    REACTION_UNCERTAIN_POS= 4,  // 56-75: uncertain, 55% prone toward positive
+    REACTION_FRIENDLY     = 5,  // 76-95: friendly, immediate action
+    REACTION_ENTHUSIASTIC = 6   // 96-00: enthusiastically friendly
 };
 
+// the book's band for an ADJUSTED percentile score
+// (clamped at both ends: 05 or less is violent, 96
+// or greater - the book's "96-00 (or greater)" - is
+// enthusiastic)
+Reaction reactionForScore(int adjustedScore);
+
+// d100 + chaReactionAdj, banded (DMG p.64)
 Reaction rollReaction(Dice& dice, int chaReactionAdj);
 
 // ----------------------------------------------------------------------------

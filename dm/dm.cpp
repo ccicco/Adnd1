@@ -51,25 +51,23 @@ bool moraleCheck(Dice& dice, const MoraleState& m, MoraleTrigger trig) {
 }
 
 // ----------------------------------------------------------------------------
-// Reactions (DMG p.71-72): 2d6 + CHA adj
-//   2      : hostile, attacks
-//   3-4    : threatening
-//   5-6    : indifferent
-//   7-8    : neutral
-//   9-11   : friendly
-//   12+    : helpful
-// NOTE: the printed DMG table's exact bands get verified in the book
-// pass (verification debt); this is the standard 1e shape.
+// R117: encounter reactions (DMG p.64) - the book's
+// percentile table, seven bands, replacing R8's 2d6
+// stand-in (its verification debt is paid here)
 // ----------------------------------------------------------------------------
 
+Reaction reactionForScore(int adjustedScore) {
+    if (adjustedScore <= 5)  return REACTION_VIOLENT;       // 01-05
+    if (adjustedScore <= 25) return REACTION_HOSTILE;        // 06-25
+    if (adjustedScore <= 45) return REACTION_UNCERTAIN_NEG;  // 26-45
+    if (adjustedScore <= 55) return REACTION_NEUTRAL;        // 46-55
+    if (adjustedScore <= 75) return REACTION_UNCERTAIN_POS;  // 56-75
+    if (adjustedScore <= 95) return REACTION_FRIENDLY;       // 76-95
+    return REACTION_ENTHUSIASTIC;                            // 96+
+}
+
 Reaction rollReaction(Dice& dice, int chaReactionAdj) {
-    int roll = (int)dice.roll(2, 6, 0) + chaReactionAdj;
-    if (roll <= 2)  return REACTION_HOSTILE;
-    if (roll <= 4)  return REACTION_THREATEN;
-    if (roll <= 6)  return REACTION_INDIFFERENT;
-    if (roll <= 8)  return REACTION_NEUTRAL;
-    if (roll <= 11) return REACTION_FRIENDLY;
-    return REACTION_HELPFUL;
+    return reactionForScore((int)dice.d100() + chaReactionAdj);
 }
 
 // ----------------------------------------------------------------------------
