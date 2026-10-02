@@ -653,6 +653,28 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
 void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
     if (!attacker.canAct() || !defender.alive()) return;
 
+    // R116: the range band (DMG p.75 - missiles are -2
+    // at medium range, -5 at long). Fired missile
+    // weapons only: a hurled melee weapon's thrown
+    // range is not in the registry (documented - it
+    // fires without the band mod), and the monsters'
+    // volley convention is 50' short range (R37),
+    // where the mod is 0. Beyond long range the shot
+    // is impossible - nothing is spent.
+    int rangeAdj = 0;
+    if (attacker.isCharacter && !attacker.throwing &&
+        attacker.hasRangedWeapon()) {
+        int shortFeet = items::weapon(attacker.rangedWeapon.id)
+                            .rangeTens * 10;
+        int distFeet = m_distance * 10;
+        if (!rules::missileInRange(distFeet, shortFeet)) {
+            logLine(attacker.name + "'s target is beyond " +
+                    "long range - no shot");
+            return;   // nothing spent: the shot is impossible
+        }
+        rangeAdj = rules::missileRangeMod(distFeet, shortFeet);
+    }
+
     // R36: a hurled melee weapon - the weapon itself is the
     // ammunition (no quiver accounting)
     const bool hurled = attacker.isCharacter && attacker.throwing;
@@ -699,6 +721,7 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
             10, at);
         adj += rules::dexReactionAdj(attacker.dex);
         adj += attacker.ammoPlus;   // R80: the arrow's enchant
+        adj += rangeAdj;   // R116: -2 medium / -5 long (DMG p.75)
     }
     if (!rules::attackRollHits(m_dice, toHit, adj)) {
         logLine(attacker.name + " misses " + defender.name +

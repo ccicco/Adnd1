@@ -119,6 +119,24 @@ AcType acTypeForAc(int ac);
 bool weaponSufficient(int requiredPlus, int weaponBonus);
 
 // ----------------------------------------------------------------------------
+// R116: missile range modifiers (DMG p.75 - "Missiles:
+// -5 at long range, -2 at medium range"). The registry
+// stores each missile weapon's SHORT range (items, PHB
+// p.38); medium is twice short and long three times -
+// the weapon tables' own shape for bows (documented
+// derivation; the M/L columns are not in the registry).
+// Beyond long range no shot is possible.
+// ----------------------------------------------------------------------------
+
+// true while the distance is within the weapon's long
+// range (3x short) - a shot at all
+bool missileInRange(int distanceFeet, int shortRangeFeet);
+
+// the book's to-hit modifier at that distance:
+// 0 at short, -2 at medium, -5 at long
+int missileRangeMod(int distanceFeet, int shortRangeFeet);
+
+// ----------------------------------------------------------------------------
 // Turning undead (DMG p.75-76 matrix III; procedure p.77). Rows are the
 // undead in the book's own order, columns are cleric levels 1-8, 9-13,
 // 14+. Result:

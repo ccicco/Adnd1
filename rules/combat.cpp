@@ -321,6 +321,20 @@ bool weaponSufficient(int requiredPlus, int weaponBonus) {
 }
 
 // ----------------------------------------------------------------------------
+// R116: missile range bands (DMG p.75)
+// ----------------------------------------------------------------------------
+
+bool missileInRange(int distanceFeet, int shortRangeFeet) {
+    return distanceFeet <= shortRangeFeet * 3;
+}
+
+int missileRangeMod(int distanceFeet, int shortRangeFeet) {
+    if (distanceFeet <= shortRangeFeet) return 0;        // short
+    if (distanceFeet <= shortRangeFeet * 2) return -2;  // medium
+    return -5;                                           // long
+}
+
+// ----------------------------------------------------------------------------
 // Turning undead (DMG p.75-76 matrix III; procedure p.77)
 // The BOOK's table, transcribed cell for cell: 13 undead rows in the
 // book's own order, columns cleric level 1-8, 9-13, 14+. Roll d20;

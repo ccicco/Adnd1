@@ -22,6 +22,9 @@ six of the original divergences are closed.
 R115 verified the magic-weapon-to-hit gate
 (p.76 - already the book's) and wired the
 first magical aging cause (haste, p.14).
+R116 CLOSED the missile range modifiers
+(p.75) - -2 medium, -5 long, on the
+engagement distance.
 
 Categories:
 - [x] = verified against the book text
@@ -220,9 +223,25 @@ Categories:
       forced to rest after extended strain.
 - [ ] **Crew officers (p.35)** - officers and
       their shares beyond the crew's 5%.
-- [ ] **Missile range modifiers (p.75)** - -5
-      long / -2 medium; verify or implement in
-      the combat round.
+- [x] **Missile range modifiers (p.75)** -
+      CLOSED R116: rules::missileRangeMod (-5
+      long, -2 medium, the book's own note)
+      rides the engagement distance in
+      resolveMissile - fired missile weapons
+      only. Medium is 2x and long 3x the
+      registry's short range (documented
+      derivation - the M/L columns are not in
+      the registry); hurled weapons are
+      exempt (no thrown ranges in the
+      registry - documented); the monsters'
+      volley is the 50' short convention
+      (R37, mod 0). Beyond long range no
+      shot is possible (nothing spent).
+      Under R43's 50' engagement geometry the
+      long band is unreachable in play (it
+      activates if the geometry ever opens);
+      the sling's opening volley is medium,
+      -2. Pinned by the R116 battery audit.
 - [ ] **Treasure line-diff (pp.120-125)** - see
       above; diff each table against the book.
 - [ ] **Outdoor movement (p.58-59)** - daily
