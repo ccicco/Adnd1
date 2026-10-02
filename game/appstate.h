@@ -651,7 +651,8 @@ struct OverlandCastle {
 
 struct OverlandState {
     int           day = 0;        // days on the trail
-    int           daysOut = 0;    // 0 = in town; 1+ = leagues out
+    int           daysOut = 0;    // 0 = in town; 1+ = days afield
+    int           milesOut = 0;   // R123: true miles from town
     bool          homeward = false;
     int           terrain = dm::T_PLAIN;   // the route's column
     OverlandCastle castle;
@@ -702,6 +703,7 @@ static const int kSeaCoastalDays = 2;
 struct SeaState {
     int day = 0;        // days on the water
     int daysOut = 0;    // 0 = in port; 1+ = at sea
+    int milesOut = 0;   // R123: true miles from port
     bool homeward = false;
 };
 
@@ -1160,6 +1162,10 @@ struct AppState {
     // [P] - give the stronghold a wide berth
     void overlandPass();
 
+    // R123: the day's true miles (DMG pp.58-59 afoot table -
+    // the slowest walker's pace, the route's terrain class)
+    int overlandMilesPerDay() const;
+
     // [T] - a day's march outward
     void overlandTravel();
 
@@ -1190,6 +1196,12 @@ struct AppState {
     // (the R68 cadence convention: the DMG's check timing is
     // the caller's)
     void seaStep();
+
+    // R123: the day's true miles at sea (DMG pp.58-59
+    // sailed table - the coaster's small-merchant sea
+    // rate, the book's printed 50; rolled lo..hi so a
+    // banded vessel would work too)
+    int seaMilesPerDay();
 
     // [T] - a day's sail outward
     void seaTravel();

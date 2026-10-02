@@ -32,6 +32,7 @@
 #include "../items/items.h"
 #include "../ai/actor.h"
 #include "../dm/dm.h"
+#include "../dm/outdoormove.h"   // R123: pp.58-59 daily rates
 #include "messagelog.h"
 #include "../spells/spells.h"
 
@@ -656,6 +657,28 @@ inline int coinWeightShare(const Party& p) {
 // share of the company's coin
 inline int memberLoad(const Party& p, const Character& c) {
     return carriedWeight(c) + coinWeightShare(p);
+}
+
+// R123: the company's afoot miles/day (DMG pp.58-59) - the
+// slowest walker sets the pace: each living member's book
+// burden class comes from his true load (kit, cargo, coin
+// share), the hire's from his fixed kit. 0 when nobody
+// walks (an empty or fallen company - the callers guard)
+inline int companyFootMilesPerDay(const Party& p,
+                                  dm::TerrainClass tc) {
+    int worst = 0;
+    for (const auto& c : p.members) {
+        if (c.hp <= 0) continue;   // the fallen are carried
+        int m = dm::footMilesPerDay(
+            dm::footBurdenFor(memberLoad(p, c)), tc);
+        if (worst == 0 || m < worst) worst = m;
+    }
+    if (p.henchmanPresent) {
+        int m = dm::footMilesPerDay(
+            dm::footBurdenFor(henchmanCarryWeight(p)), tc);
+        if (worst == 0 || m < worst) worst = m;
+    }
+    return worst;
 }
 
 // R89: the pace cost of one step, tenths of a turn - a 120'

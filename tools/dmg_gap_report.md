@@ -49,6 +49,14 @@ diffed row-by-row against the book:
 383 rows, dice bands, xp and gp values,
 bundle quantities, no divergence. The
 tables are now pinned, not just rolled.
+R123 CLOSED outdoor movement (pp.58-59)
+- the daily rates wired: afoot by
+burden and terrain (the company at its
+slowest walker's pace, true miles
+tracked and logged), the coaster on
+the book's sailed sea rate (50/day),
+the mounted and afloat tables pinned
+as data. Census 41.
 
 Categories:
 - [x] = verified against the book text
@@ -361,8 +369,38 @@ Categories:
       with MM Treasure Types (p.105, R71) -
       documented, not a divergence. Pinned by
       the R122 battery audit.
-- [ ] **Outdoor movement (p.58-59)** - daily
-      movement rates by terrain.
+- [x] **Outdoor movement (p.58-59)** - CLOSED
+      R123: the book's daily rates wired -
+      the afoot table (light/average/heavy
+      burden x normal/rugged/very-rugged
+      terrain: 30/20/10, 20/10/5, 10/5/2
+      miles/day) with the burden classes
+      from the true loads (<=25 / 26-60 /
+      61-90 lbs of gear; the strength/race
+      adjustment lives in the dungeon bands,
+      PHB p.76 - documented), the terrain
+      classes mapped to the 8 routes
+      (plains/scrub/desert normal,
+      forest/rough/hills rugged,
+      mountains/marsh very rugged), and the
+      company pace = the slowest walker
+      (hire included, the fallen skipped);
+      each march day logs its true miles and
+      tracks milesOut. The coaster sails
+      the book's small-merchant sea rate
+      (50 miles/day - the 50-60 band is
+      the lake column; the roll stays
+      generic lo..hi). The mounted
+      table (60/25/5, 40/20/5, 30/15/5,
+      draft 30/15/5, cart 25/15 and wagon
+      25/10 road-only) and both afloat
+      tables (oared and sailed, 8 vessels x
+      5 waters) are pinned as data - no
+      mounts or other vessels are in play
+      yet. The d4 long-voyage reduction is
+      a weeks-scale rule this day cadence
+      does not model - documented. Pinned
+      by the R123 battery audit.
 - [ ] **Appendix A dungeon dressing details
       (pp.169-172)** - beyond what the generator
       already pins.

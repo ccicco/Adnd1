@@ -20,6 +20,22 @@ void AppState::enterSea(){
 dm::WaterDepth AppState::seaDepth() const{
         return (sea.daysOut < kSeaCoastalDays)
             ? dm::WaterDepth::SHALLOW : dm::WaterDepth::DEEP;
+}
+
+// ---- seaMilesPerDay ----
+// R123: the DMG pp.58-59 sailed table - the coaster is a
+// small merchant; her sea column prints one number, 50
+// miles/day (the 50-60 band is the lake column). The roll
+// stays generic lo..hi so a banded vessel would work too;
+// the book's d4 long-voyage reduction applies to voyages
+// of weeks, which this day cadence does not model -
+// documented
+int AppState::seaMilesPerDay(){
+        int lo = dm::sailedMilesLo(dm::VESSEL_MERCHANT_SMALL,
+                                   dm::WATER_SEA);
+        int hi = dm::sailedMilesHi(dm::VESSEL_MERCHANT_SMALL,
+                                   dm::WATER_SEA);
+        return (int)dice.roll(1, hi - lo + 1, lo - 1);
     }
 
 // ---- seaStep ----
@@ -57,11 +73,16 @@ void AppState::seaTravel(){
         ++sea.day;
         ++sea.daysOut;
         ++party.careerDays;   // R95: the sea counts
-        char buf[96];
-        snprintf(buf, sizeof buf, "Day %d at sea - the %s.",
+        int miles = seaMilesPerDay();   // R123: 50
+        sea.milesOut += miles;
+        char buf[112];
+        snprintf(buf, sizeof buf,
+                 "Day %d at sea - the %s. The coaster runs "
+                 "%d miles (%d from port).",
                  sea.day,
                  sea.daysOut < kSeaCoastalDays
-                     ? "coastal waters" : "open sea");
+                     ? "coastal waters" : "open sea",
+                 miles, sea.milesOut);
         log.add(buf);
         seaStep();
         checkArrivedSea();
@@ -75,9 +96,14 @@ void AppState::seaHomeward(){
         ++sea.day;
         --sea.daysOut;
         ++party.careerDays;   // R95: the sea road counts
-        char buf[96];
-        snprintf(buf, sizeof buf, "Day %d - the sea road home.",
-                 sea.day);
+        int miles = seaMilesPerDay();   // R123: 50
+        sea.milesOut -= miles;
+        if (sea.milesOut < 0) sea.milesOut = 0;
+        char buf[112];
+        snprintf(buf, sizeof buf,
+                 "Day %d - the sea road home. The coaster "
+                 "logs %d miles (%d from port).",
+                 sea.day, miles, sea.milesOut);
         log.add(buf);
         seaStep();
         checkArrivedSea();

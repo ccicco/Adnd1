@@ -39,6 +39,17 @@ dm::OutdoorClime AppState::overlandClime() const{
         return overlandInhabited()
             ? dm::OC_TEMPERATE_INHABITED   // p.182: inhabited set
             : dm::OC_TEMPERATE_WILD;       // p.182: wilderness set
+}
+
+// ---- overlandMilesPerDay ----
+// R123: the DMG pp.58-59 afoot rate - the company moves at
+// the slowest walker's pace (the true loads decide the book's
+// burden classes; the terrain class is the route's)
+int AppState::overlandMilesPerDay() const{
+        if (mode != MODE_OVERLAND) return 0;
+        return companyFootMilesPerDay(
+            party, dm::terrainClass(
+                       (dm::OutdoorTerrain)overland.terrain));
     }
 
 // ---- overlandStep ----
@@ -410,9 +421,15 @@ void AppState::overlandTravel(){
         ++overland.day;
         ++overland.daysOut;
         ++party.careerDays;   // R95: the trail counts
-        char buf[96];
-        snprintf(buf, sizeof buf, "Day %d - the %s.",
-                 overland.day, overlandTerrainName(overland.terrain));
+        int miles = overlandMilesPerDay();   // R123: p.58-59
+        overland.milesOut += miles;
+        char buf[112];
+        snprintf(buf, sizeof buf,
+                 "Day %d - the %s. The company covers %d "
+                 "miles (%d from town).",
+                 overland.day,
+                 overlandTerrainName(overland.terrain),
+                 miles, overland.milesOut);
         log.add(buf);
         overlandStep();
         checkArrivedHome();   // defensive no-op when daysOut > 0
@@ -430,9 +447,16 @@ void AppState::overlandHomeward(){
         ++overland.day;
         --overland.daysOut;
         ++party.careerDays;   // R95: the trail counts
-        char buf[96];
-        snprintf(buf, sizeof buf, "Day %d - the road home, the %s.",
-                 overland.day, overlandTerrainName(overland.terrain));
+        int miles = overlandMilesPerDay();   // R123: p.58-59
+        overland.milesOut -= miles;
+        if (overland.milesOut < 0) overland.milesOut = 0;
+        char buf[112];
+        snprintf(buf, sizeof buf,
+                 "Day %d - the road home, the %s. The company "
+                 "covers %d miles (%d from town).",
+                 overland.day,
+                 overlandTerrainName(overland.terrain),
+                 miles, overland.milesOut);
         log.add(buf);
         overlandStep();
         checkArrivedHome();
