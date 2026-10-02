@@ -43,6 +43,12 @@ R121 CLOSED crew officers (p.35) - a
 captain, a lieutenant and two mates
 join the crew: wages 40 -> 300 gp, the
 take's cut 5% -> 37% (PC keeps 63%).
+R122 CLOSED the treasure line-diff
+(pp.120-125) - every implemented table
+diffed row-by-row against the book:
+383 rows, dice bands, xp and gp values,
+bundle quantities, no divergence. The
+tables are now pinned, not just rolled.
 
 Categories:
 - [x] = verified against the book text
@@ -195,10 +201,9 @@ Categories:
 - [x] **Treasure determination (pp.120-125)** -
       dm/treasure.cpp implements the map/
       monetary/magic structure, and the battery
-      pins 20k-roll behavior, but a full
-      line-by-line table diff against pp.120-125
-      has NOT been done. Kept open as an item
-      below until diffed.
+      pins 20k-roll behavior; the line-by-line
+      table diff was done R122 - no divergence
+      (the item below is closed).
 
 ## Open gaps (worth a round)
 
@@ -338,8 +343,24 @@ Categories:
       activates if the geometry ever opens);
       the sling's opening volley is medium,
       -2. Pinned by the R116 battery audit.
-- [ ] **Treasure line-diff (pp.120-125)** - see
-      above; diff each table against the book.
+- [x] **Treasure line-diff (pp.120-125)** -
+      VERIFIED R122: every implemented table
+      diffed line-by-line against the book -
+      383 rows across III.A/C-H plus the
+      Special artifact table (35+24+30+33+30+
+      33+36+35+29+26+26+36), dice bands, xp
+      and gp values, bundle quantities: no
+      divergence. The repo's name corrections
+      are the treasure.h print-errata list.
+      The III dispatch bands, the Map table
+      and the scroll structure (16 spell
+      bands, 8 protection scrolls, the 5x/3x
+      sale rules) verified with it. The book's
+      II.A/II.B/II.C hoard-construction
+      tables are DM tools the repo replaces
+      with MM Treasure Types (p.105, R71) -
+      documented, not a divergence. Pinned by
+      the R122 battery audit.
 - [ ] **Outdoor movement (p.58-59)** - daily
       movement rates by terrain.
 - [ ] **Appendix A dungeon dressing details

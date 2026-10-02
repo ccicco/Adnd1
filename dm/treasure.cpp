@@ -815,6 +815,52 @@ MagicItem rollMagicItem(rules::Dice& dice) {
     return rollFromCategory(dice, rollCategory(dice));
 }
 
+// ---- R122: line-diff pins ---------------------------------------------------
+// The battery reads any printed row of the pp.121-125 tables so they
+// are pinned, not just rolled (the R122 line-diff found all 383 rows
+// faithful). Category 1 (scrolls) has no ItemRow rows - its pin count
+// is the structure: 16 spell bands + 8 protection scrolls + 1 curse
+// row. Category 12 is the Special artifact table.
+static const ItemRow* pinTableFor(int category, int* n) {
+    switch (category) {
+        case 0:  *n = COUNT_OF(kPotions);   return kPotions;
+        case 2:  *n = COUNT_OF(kRings);     return kRings;
+        case 3:  *n = COUNT_OF(kRods);      return kRods;
+        case 4:  *n = COUNT_OF(kMisc1);     return kMisc1;
+        case 5:  *n = COUNT_OF(kMisc2);     return kMisc2;
+        case 6:  *n = COUNT_OF(kMisc3);     return kMisc3;
+        case 7:  *n = COUNT_OF(kMisc4);     return kMisc4;
+        case 8:  *n = COUNT_OF(kMisc5);     return kMisc5;
+        case 9:  *n = COUNT_OF(kArmor);     return kArmor;
+        case 10: *n = COUNT_OF(kSwords);    return kSwords;
+        case 11: *n = COUNT_OF(kWeapons);   return kWeapons;
+        case 12: *n = COUNT_OF(kArtifacts); return kArtifacts;
+        default: *n = 0; return nullptr;
+    }
+}
+
+int magicTablePinCount(int category) {
+    if (category == 1)
+        return COUNT_OF(kSpellScrolls) + 9;  // + protection & curse
+    int n = 0;
+    pinTableFor(category, &n);
+    return n;
+}
+
+bool magicTablePin(int category, int row, TablePin* out) {
+    if (!out || category == 1) return false;
+    int n = 0;
+    const ItemRow* t = pinTableFor(category, &n);
+    if (!t || row < 0 || row >= n) return false;
+    const ItemRow& r = t[row];
+    out->lo = r.lo;      out->hi = r.hi;
+    out->name = r.name;
+    out->xp = r.xp;      out->xpHi = r.xpHi;
+    out->gp = r.gp;      out->gpHi = r.gpHi;
+    out->qtyLo = r.qlo;  out->qtyHi = r.qhi;
+    return true;
+}
+
 // "Any N" - N rolls on table III (with the letter's printed exclusions).
 static void addAnyItems(rules::Dice& dice, Hoard& h, int n,
                         bool noSwords, bool noWeapons) {

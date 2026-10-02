@@ -161,5 +161,24 @@ long long rollJewelryValue(rules::Dice& dice);
 // resolved to name, xp, and gp sale value.
 MagicItem rollMagicItem(rules::Dice& dice);
 
+// ----------------------------------------------------------------------------
+// R122: line-diff pins - the battery reads any printed row of the DMG
+// pp.121-125 item tables so the tables are pinned, not just rolled.
+// category is a MagicItemCategory (0, 2-11) or 12 for the Special
+// artifact table. Category 1 (scrolls, III.B) has no ItemRow rows:
+// magicTablePinCount(1) pins its structure (16 spell bands + 8
+// protection scrolls + 1 curse row = 25) and magicTablePin refuses it.
+// ----------------------------------------------------------------------------
+struct TablePin {
+    int lo, hi;           // printed dice band
+    const char* name;     // printed name (errata-corrected, header list)
+    int xp, xpHi;         // printed x.p. value (a range if xpHi > 0)
+    int gp, gpHi;         // printed g.p. sale value (range if gpHi > 0)
+    int qtyLo, qtyHi;     // printed bundle ("2-24 in number"; 0 = single)
+};
+
+int  magicTablePinCount(int category);
+bool magicTablePin(int category, int row, TablePin* out);
+
 } // namespace treasure
 } // namespace dm
