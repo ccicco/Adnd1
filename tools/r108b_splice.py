@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# R108b splice: THE BOOK, WHOLE - replaces tools/dmg_gap_report.md
+# with the full-book edition (OCR pages 1-242 read end to end).
+# Pure docs round: no C++ changes, battery stays byte-identical.
+
+import os
+
+REPORT = r"""
 # DMG Gap Report - the book vs the repo
 
 R108b "THE BOOK, WHOLE" (the redo). The first
@@ -211,3 +219,22 @@ commit, and names its book page in the round
 message. The ranked divergences above are the
 natural next rounds: turning first, saves
 second, then the attack matrices.
+"""
+REPORT = REPORT.lstrip("\n")
+
+def main():
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "dmg_gap_report.md")
+    if os.path.exists(path):
+        with open(path, "r", encoding="ascii") as f:
+            old = f.read()
+        if old == REPORT:
+            print("gap report (whole book): already present")
+            print("R108b splice: ALL OK")
+            return
+    with open(path, "w", encoding="ascii", newline="\n") as f:
+        f.write(REPORT)
+    print("gap report (whole book): written")
+    print("R108b splice: ALL OK")
+
+main()
