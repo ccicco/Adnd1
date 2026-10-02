@@ -10,8 +10,9 @@ it flips the box in the SAME commit. Page cites
 are the book's own page numbers.
 
 R109 CLOSED divergence 1 of 6 (turning undead).
-R110 CLOSED divergence 2 of 6 (saving throws);
-the remaining four stay ranked below.
+R110 CLOSED divergence 2 of 6 (saving throws).
+R111 CLOSED divergence 3 of 6 (fighter attack
+matrix); the remaining three stay ranked below.
 
 Categories:
 - [x] = verified against the book text
@@ -93,17 +94,19 @@ Categories:
       HD equates to level with +hp stepping by
       4 (monsterSaveLevel). Pinned by the R110
       battery audit.
-- [~] 3. **Fighter attack matrix (p.75 I.B)** -
-      the book is level-BANDED: 0, 1-2, 3-4,
-      5-6, 7-8, 9-10, 11-12, 13-14, 15-16,
-      17+; the AC-10 row reads 10/8/6/4/2/0/
-      -2/-4/-6 continuing to AC -10. The repo
-      matches at levels 1-3 but diverges from
-      level 4 up (its per-level rows shift one
-      column per level; the book shifts per
-      two-level band), and the repo clamps at
-      20 / floor 2 where the book has genuine
-      negative targets down to -6 at AC 10.
+- [x] 3. **Fighter attack matrix (p.75 I.B)** -
+      CLOSED R111. The repo now carries the
+      book's own banded table: level bands
+      0, 1-2, 3-4, 5-6, 7-8, 9-10, 11-12,
+      13-14, 15-16, 17+ vs AC 10 down to
+      AC -10, transcribed cell for cell with
+      the book's negative targets intact (the
+      17+ band hits AC 10 on any roll; the
+      0-level human needs 11). The per-level
+      approximation and its floor-2 clamp are
+      gone. The book's optional 5%-per-level
+      variant is not adopted. Pinned by the
+      R111 battery audit.
 - [~] 4. **Class attack matrices (p.75 I.A,
       I.C, I.D)** - the book gives clerics,
       magic-users, and thieves their own

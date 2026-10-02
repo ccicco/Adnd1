@@ -3,15 +3,20 @@
 // Attack matrices, weapon-vs-AC adjustments, undead turning.
 //
 // Source: Dungeon Masters Guide (2012 Premium reprint).
-//   - Attack matrices: DMG p.74-75 (combat tables; fighter matrix is the
-//     master, other classes row-shift into it)
-//   - Monster attacks: DMG p.80 "Monsters attacking" - attack as fighters
-//     at a level derived from hit dice (section II)
-//   - Weapon vs AC adjustments: DMG p.38 table (weapon type vs armor class
-//     type: better/worse by 1-2)
-//   - Turning undead: DMG p.75 cleric turn matrix (rows 1-8+, columns
-//     skeleton..vampire; T=turn, D=destroy, number=2d6 turned, dash=no
-//     effect, *=auto within 60')
+//   - Fighter attack matrix: DMG p.75 matrix I.B, the book's own
+//     banded table (level bands 0, 1-2, ..., 17+ vs AC 10..-10) -
+//     transcribed cell for cell by R111, negatives included
+//   - Other classes still row-shift into the fighter matrix (an
+//     approximation; the book prints separate matrices I.A/I.C/I.D -
+//     an open gap-report item)
+//   - Monster attacks: DMG p.80 "Monsters attacking" - attack as
+//     fighters at a level derived from hit dice (section II; the
+//     book's own monster matrix is an open gap-report item)
+//   - Weapon vs AC adjustments: DMG p.38 table (weapon type vs armor
+//     class type: better/worse by 1-2)
+//   - Turning undead: DMG p.75-76 matrix III, 13 undead rows, cleric
+//     level columns 1-8/9-13/14+; d20 match-or-exceed, T/D/D*/dash,
+//     counts 1-12 (7-12 starred, 1-2 Special)
 // Cross-checked against the 1979 TSR scan (values verified identical).
 // ============================================================================
 
@@ -30,9 +35,11 @@ namespace rules {
 // everything on the printed tables).
 // ----------------------------------------------------------------------------
 
-// Fighter attack matrix: to-hit number by level (rows) vs AC (columns).
-// AC columns run 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1 (12 columns),
-// level rows 1..20 (index 0 = level 1).
+// Fighter attack matrix (DMG p.75 I.B): to-hit number by level band
+// vs AC. Bands: 0, 1-2, 3-4, 5-6, 7-8, 9-10, 11-12, 13-14, 15-16,
+// 17+; AC runs 10 down to -10, clamped at either end. Targets may be
+// negative (high band vs low AC) or above 20 (low band vs very low
+// AC - only a natural 20 can hit, per the attackRollHits convention).
 int attackMatrixFighter(int level, int ac);
 
 // Class attack numbers: cleric/MU/thief attack as fighters at a lower

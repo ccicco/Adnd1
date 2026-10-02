@@ -8,59 +8,59 @@
 namespace rules {
 
 // ----------------------------------------------------------------------------
-// Fighter attack matrix (DMG p.74-75 "Combat Tables", men attacking).
-//
-// Columns: AC 10  9  8  7  6  5  4  3  2  1  0 -1
-// Rows (fighter level): classic 1e values -
-//    L1: 10 11 12 13 14 15 16 17 18 19 20 20
-//    L2:  9 10 11 12 13 14 15 16 17 18 19 20
-//    L3:  8  9 10 11 12 13 14 15 16 17 18 19
-//    L4:  6  8  9 10 11 12 13 14 15 16 17 18
-//    L5:  4  6  8  9 10 11 12 13 14 15 16 17
-//    L6:  2  4  6  8  9 10 11 12 13 14 15 16
-//    L7:  2  2  4  6  8  9 10 11 12 13 14 15
-//    L8:  2  2  2  4  6  8  9 10 11 12 13 14
-//    L9:  2  2  2  2  4  6  8  9 10 11 12 13
-//   L10+: each further level steps the whole row one column better.
-//
-// NOTE (rebuild): rows 1-9 above are transcribed from the DMG table as
-// recorded in the project notes; the golden test (DMG p.71 Example of
-// Melee, tranche 42 original) pins five of these numbers - that check
-// lands when rules/turn exists. Values follow the well-known 1e matrix
-// where level bands shift by armor group; if any CHECK disagrees with
-// the printed DMG table, the printed table wins and the row is fixed.
+// Fighter attack matrix (DMG p.75, matrix I.B - fighters, paladins,
+// rangers, bards, and 0-level humans and halflings). The book's own
+// banded table, transcribed cell for cell: rows AC 10 down to AC -10
+// (21 rows), columns the level bands 0, 1-2, 3-4, 5-6, 7-8, 9-10,
+// 11-12, 13-14, 15-16, 17+ (10 bands). Targets are the book's own,
+// INCLUDING NEGATIVES (a 17+ fighter hits AC 10 on any d20 roll:
+// the printed target is -6; the 0-level human needs 11). The book's
+// optional 5%-per-level variant (p.75 special note) is NOT adopted -
+// the printed two-level bands are. The old per-level approximation
+// and its floor-2 clamp were replaced by R111.
 // ----------------------------------------------------------------------------
 
-static const int kFighterMatrix[9][12] = {
-    // AC: 10  9  8  7  6  5  4  3  2  1  0 -1
-    { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 20 },  // L1
-    {  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 },  // L2
-    {  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 },  // L3
-    {  6,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },  // L4
-    {  4,  6,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17 },  // L5
-    {  2,  4,  6,  8,  9, 10, 11, 12, 13, 14, 15, 16 },  // L6
-    {  2,  2,  4,  6,  8,  9, 10, 11, 12, 13, 14, 15 },  // L7
-    {  2,  2,  2,  4,  6,  8,  9, 10, 11, 12, 13, 14 },  // L8
-    {  2,  2,  2,  2,  4,  6,  8,  9, 10, 11, 12, 13 },  // L9
+static const int kFighterBands  = 10;   // 0, 1-2, 3-4, ..., 17+
+static const int kFighterAcRows = 21;  // AC 10 .. AC -10
+
+static const int kFighterMatrix[kFighterAcRows][kFighterBands] = {
+    // columns: band 0, 1-2, 3-4, 5-6, 7-8, 9-10, 11-12, 13-14, 15-16, 17+
+    /*  10 */ { 11, 10,  8,  6,  4,  2,  0, -2, -4, -6 },
+    /*   9 */ { 12, 11,  9,  7,  5,  3,  1, -1, -3, -5 },
+    /*   8 */ { 13, 12, 10,  8,  6,  4,  2,  0, -2, -4 },
+    /*   7 */ { 14, 13, 11,  9,  7,  5,  3,  1, -1, -3 },
+    /*   6 */ { 15, 14, 12, 10,  8,  6,  4,  2,  0, -2 },
+    /*   5 */ { 16, 15, 13, 11,  9,  7,  5,  3,  1, -1 },
+    /*   4 */ { 17, 16, 14, 12, 10,  8,  6,  4,  2,  0 },
+    /*   3 */ { 18, 17, 15, 13, 11,  9,  7,  5,  3,  1 },
+    /*   2 */ { 19, 18, 16, 14, 12, 10,  8,  6,  4,  2 },
+    /*   1 */ { 20, 19, 17, 15, 13, 11,  9,  7,  5,  3 },
+    /*   0 */ { 20, 20, 18, 16, 14, 12, 10,  8,  6,  4 },
+    /*  -1 */ { 20, 20, 19, 17, 15, 13, 11,  9,  7,  5 },
+    /*  -2 */ { 20, 20, 20, 18, 16, 14, 12, 10,  8,  6 },
+    /*  -3 */ { 20, 20, 20, 19, 17, 15, 13, 11,  9,  7 },
+    /*  -4 */ { 20, 20, 20, 20, 18, 16, 14, 12, 10,  8 },
+    /*  -5 */ { 21, 20, 20, 20, 19, 17, 15, 13, 11,  9 },
+    /*  -6 */ { 22, 21, 20, 20, 20, 18, 16, 14, 12, 10 },
+    /*  -7 */ { 23, 22, 20, 20, 20, 19, 17, 15, 13, 11 },
+    /*  -8 */ { 24, 23, 21, 20, 20, 20, 18, 16, 14, 12 },
+    /*  -9 */ { 25, 24, 22, 20, 20, 20, 19, 17, 15, 13 },
+    /* -10 */ { 26, 25, 23, 21, 20, 20, 20, 18, 16, 14 },
 };
 
-static int acColumn(int ac) {
-    // AC 10 -> col 0 ... AC -1 -> col 11
-    int col = 10 - ac;
-    if (col < 0)  col = 0;
-    if (col > 11) col = 11;
-    return col;
-}
-
 int attackMatrixFighter(int level, int ac) {
-    if (level < 1) level = 1;
-    int col = acColumn(ac);
-    if (level <= 9) return kFighterMatrix[level - 1][col];
-    // beyond L9: each level shifts one column better
-    int shift = level - 9;
-    int col2 = col - shift;
-    if (col2 < 0) return 2;   // floor: 2 always hits at high level
-    return kFighterMatrix[8][col2];
+    // level band: 0 level is its own column; then 1-2, 3-4, ... 17+
+    int band;
+    if (level <= 0) band = 0;
+    else {
+        band = (level + 1) / 2;
+        if (band > kFighterBands - 1) band = kFighterBands - 1;
+    }
+    // AC row: AC 10 is row 0, AC -10 is row 20; clamp past either end
+    int row = 10 - ac;
+    if (row < 0) row = 0;
+    if (row > kFighterAcRows - 1) row = kFighterAcRows - 1;
+    return kFighterMatrix[row][band];
 }
 
 // ----------------------------------------------------------------------------
