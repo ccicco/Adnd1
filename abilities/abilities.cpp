@@ -60,21 +60,45 @@ int backstabMultiplier(int thiefLevel) {
     return 5;
 }
 
-bool listenAtDoor(Dice& dice, int chanceIn6) {
-    if (chanceIn6 <= 0) return false;
-    if (chanceIn6 >= 6) return true;
-    return (int)dice.d6() <= chanceIn6;
+// R118: listening at doors (DMG p.60) - the
+// book's racial d20 table (R11's d6-band
+// approximation retired; no callers existed,
+// so the reshape is free)
+int raceListenIn20(ListenRace race) {
+    // the book's table: chance of hearing noise,
+    // in 20 (dwarf, elf, gnome, half-elf,
+    // halfling, half-orc, human)
+    static const int kChance[LISTEN_RACE_COUNT] = {
+        2, 3, 4, 2, 3, 3, 2
+    };
+    if (race < 0 || race >= LISTEN_RACE_COUNT)
+        return kChance[LISTEN_HUMAN];   // unknown -> human band
+    return kChance[race];
 }
 
-int listenChanceIn6(bool stoneDoor, bool isThief, int thiefLevel) {
-    if (isThief) {
-        // thieves substitute their hear-noise percent - handled by
-        // the caller with attemptThiefSkill; here map to a d6 band
-        (void)thiefLevel;
-        return 3;
-    }
-    if (stoneDoor) return 1;   // 1-in-10 approximated as worst band
-    return 2;                  // 1-2 on d6
+int listenChanceIn20(ListenRace race, int keenIn20) {
+    int chance = raceListenIn20(race) + keenIn20;
+    if (chance < 0)  chance = 0;
+    if (chance > 20) chance = 20;
+    return chance;
+}
+
+int thiefListenIn20(int thiefLevel, int keenIn20) {
+    // thieves ride their hear-noise skill (PHB):
+    // percent / 5 = in-20 bands (documented
+    // derivation; the PHB table's verification-
+    // debt NOTE rides)
+    int chance = thiefSkillBase(SKILL_HEAR_NOISE, thiefLevel) / 5
+               + keenIn20;
+    if (chance < 0)  chance = 0;
+    if (chance > 20) chance = 20;
+    return chance;
+}
+
+bool listenAtDoor(Dice& dice, int chanceIn20) {
+    if (chanceIn20 <= 0) return false;
+    if (chanceIn20 >= 20) return true;
+    return (int)dice.d20() <= chanceIn20;
 }
 
 int climbChancePct(bool isThief, int thiefLevel) {

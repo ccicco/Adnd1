@@ -28,6 +28,10 @@ engagement distance.
 R117 CLOSED encounter reactions (p.64) -
 the book's percentile seven-band table
 replaces R8's 2d6 stand-in.
+R118 CLOSED listening at doors (p.60) -
+the book's racial d20 table replaces R11's
+d6 bands; abilities.cpp joins the battery
+build (it was compiled by nothing).
 
 Categories:
 - [x] = verified against the book text
@@ -241,8 +245,32 @@ Categories:
       No callers yet - the parley hook is
       a future round (dead code until
       then, but the book's own shape).
-- [ ] **Listening at doors (p.60)** - the
-      chance and the elves' bonus.
+- [x] **Listening at doors (p.60)** -
+      CLOSED R118: the book's table is
+      racial d20 chances - dwarf 2, elf 3,
+      gnome 4, half-elf 2, halfling 3,
+      half-orc 3, human 2 in 20 (all seven
+      pinned) - replacing R11's d6-band
+      approximation. No race field, so
+      callers use the human band
+      (documented, R114 convention). The
+      keen-eared bonus (1 or 2 in 20) is
+      per-character state the repo does
+      not track - the caller passes it
+      (the DM notes it on the first
+      listen, per the book). Thieves ride
+      their hear-noise skill as pct/5
+      in-20 bands (documented derivation;
+      the PHB table's verification-debt
+      NOTE rides). Silent creatures,
+      sleeping/resting/alerted creatures:
+      the caller's gate (the book's own
+      rule). No callers yet - a door-
+      listening hook is a future round.
+      Pinned by the R118 battery audit;
+      abilities.cpp now in the battery
+      build (it was compiled by nothing
+      on Termux before).
 - [ ] **Forced rest (p.38)** - characters
       forced to rest after extended strain.
 - [ ] **Crew officers (p.35)** - officers and
