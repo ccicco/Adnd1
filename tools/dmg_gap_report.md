@@ -534,9 +534,9 @@ Categories:
       shape), and shoots / poison strike a random living
       member with the trap shape (save vs death/poison or
       2d6). R132's second-effects slice wires six more
-      (the R132 box). The other 54 attributes stay
-      dressing - documented; their effects ride future
-      rounds.
+      (the R132 box), R133's five more (the R133 box).
+      The other 49 attributes stay dressing - documented;
+      their effects ride future rounds.
       Transient like trapKind: rooms re-populate on load.
       Pinned by the R128 battery audit; census 46.
 - [x] **High-level spell slot tables (PHB
@@ -592,9 +592,27 @@ Categories:
       worthless - nothing gained. Takes/steals:
       10-60 gp from the purse (the print gives no
       figure - a rebuild convention, documented).
-      The remaining 54 attributes stay dressing;
+      The R133 slice wires five more (the R133 box).
+      The remaining 49 attributes stay dressing;
       their effects ride future rounds. Pinned by
       the R132 battery audit; census 50.
+- [x] **Appendix H third-effects slice (the R128
+      dressing debt, second five)** - CLOSED R133: the
+      mechanical set grows 11 -> 16. Attacks:
+      the animated feature strikes a random living
+      member for 1d8, no save. Fruit: a random
+      living member eats and heals 2d4+2 (the
+      potion shape, capped at max hp). Greed: a
+      scramble costs 10% of the purse. Teleports:
+      the company blinks to a random room center
+      on this level (the print's intra-level AREA
+      example). Collapsing: the ceiling comes down
+      - every living member saves vs death/poison
+      or takes 2d6. All five are rebuild
+      conventions (the print gives no figures);
+      documented. The remaining 49 attributes stay
+      dressing; their effects ride future rounds.
+      Pinned by the R133 battery audit; census 51.
 
 ## Out of scope by design
 

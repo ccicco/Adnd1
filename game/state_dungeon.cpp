@@ -268,7 +268,11 @@ void AppState::applyTrick(int roomIndex){
         // flesh to stone (save vs petrification),
         // electrical shock (5-50 hp, no save printed),
         // releases counterfeit (worthless), takes/steals
-        // (10-60 gp).
+        // (10-60 gp). R133: the third-effects slice -
+        // attacks (animated strike, 1d8), fruit (heals
+        // 2d4+2, the potion shape), greed (10% of the
+        // purse), teleports (intra-level, a random room
+        // center), collapsing (save or 2d6, everyone).
         if (roomIndex < 0 ||
             roomIndex >= (int)occupancy.rooms.size())
             return;
@@ -402,6 +406,126 @@ void AppState::applyTrick(int roomIndex){
                      "The %s steals %d gp and is gone.",
                      name.c_str(), gp);
             log.add(buf);
+        } else if (a == dm::appendixh::TA_ATTACKS) {
+            // R133: the animated feature strikes - 1d8,
+            // no save (the print gives no figure; the
+            // unarmed-strike convention)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int dmg = (int)dice.roll(1, 8, 0);
+            c.hp -= dmg;
+            char buf[192];
+            if (c.hp <= 0) {
+                c.hp = 0;
+                snprintf(buf, sizeof buf,
+                         "The %s strikes %s for %d - %s falls!",
+                         name.c_str(), c.name.c_str(), dmg,
+                         c.name.c_str());
+            } else {
+                snprintf(buf, sizeof buf,
+                         "The %s strikes %s for %d.",
+                         name.c_str(), c.name.c_str(), dmg);
+            }
+            log.add(buf);
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
+        } else if (a == dm::appendixh::TA_FRUIT) {
+            // R133: wholesome fruit - a random living
+            // member eats and heals 2d4+2, the potion
+            // shape, capped at max hp (the print gives no
+            // figure; convention)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int heal = (int)dice.roll(2, 4, 2);
+            int before = c.hp;
+            c.hp += heal;
+            if (c.hp > c.maxHp) c.hp = c.maxHp;
+            char buf[192];
+            snprintf(buf, sizeof buf,
+                     "The %s offers fruit - %s eats and "
+                     "heals %d (now %d/%d).",
+                     name.c_str(), c.name.c_str(),
+                     c.hp - before, c.hp, c.maxHp);
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_GREED) {
+            // R133: the greed aura - a scramble costs 10%
+            // of the purse (the print gives no figure;
+            // convention)
+            int lost = party.gold / 10;
+            if (lost > 0) {
+                party.gold -= lost;
+                char buf[160];
+                snprintf(buf, sizeof buf,
+                         "The %s glitters - the company "
+                         "scrambles and drops %d gp!",
+                         name.c_str(), lost);
+                log.add(buf);
+            } else {
+                log.add("The " + name + " glitters - but "
+                        "the purse is empty.");
+            }
+        } else if (a == dm::appendixh::TA_TELEPORTS) {
+            // R133: the print's intra-level AREA example -
+            // the company is relocated to a random room
+            // center on this level
+            if (dungeon.rooms.empty()) return;
+            int ri = (int)rng.below(
+                (uint32_t)dungeon.rooms.size());
+            const dm::GeneratedRoom& r = dungeon.rooms[ri];
+            party.x = r.x + r.w / 2;
+            party.y = r.y + r.h / 2;
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s flares - the company blinks "
+                     "across the level!",
+                     name.c_str());
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_COLLAPSING) {
+            // R133: the ceiling comes down - every living
+            // member saves vs death/poison or takes 2d6
+            // (the print gives no figure; the trap shape)
+            char buf[192];
+            snprintf(buf, sizeof buf,
+                     "The %s groans - the ceiling comes "
+                     "down!", name.c_str());
+            log.add(buf);
+            for (auto& c : party.members) {
+                if (c.hp <= 0) continue;
+                int target = rules::saveTarget(
+                    c.classIndex, c.level,
+                    rules::SAVE_DEATH_POISON);
+                if (rules::attemptSave(dice, target, 0)) {
+                    char b2[160];
+                    snprintf(b2, sizeof b2,
+                             "%s dives clear.", c.name.c_str());
+                    log.add(b2);
+                    continue;
+                }
+                int dmg = (int)dice.roll(2, 6, 0);
+                c.hp -= dmg;
+                char b2[192];
+                if (c.hp <= 0) {
+                    c.hp = 0;
+                    snprintf(b2, sizeof b2,
+                             "Rubble buries %s for %d - "
+                             "%s falls!",
+                             c.name.c_str(), dmg,
+                             c.name.c_str());
+                } else {
+                    snprintf(b2, sizeof b2,
+                             "Rubble bruises %s for %d.",
+                             c.name.c_str(), dmg);
+                }
+                log.add(b2);
+            }
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
         } else if (a == dm::appendixh::TA_SHOOTS ||
                    a == dm::appendixh::TA_POISON) {
             int victims[PARTY_MAX];

@@ -2779,14 +2779,14 @@ int main() {
                 dm::appendixh::TRICK_FEATURE_COUNT - 1,
                 dm::appendixh::TRICK_ATTRIBUTE_COUNT - 1)
             != "Well (Wish fulfillment, reversal)") ++bad;
-        // the two slices: exactly eleven mechanical (R132
-        // grew the set 5 -> 11; counterfeit flipped)
+        // the slices: exactly sixteen mechanical (R132
+        // grew the set 5 -> 11, R133 11 -> 16)
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 11) ++bad;
+            if (mech != 16) ++bad;
         }
         if (!dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_REL_COINS) ||
@@ -2892,6 +2892,44 @@ int main() {
         if (bad) return 1;
     }
 
+    // ---- R133: third-effects slice audit ----
+    // The Appendix H mechanical set grows to sixteen: the
+    // R132 eleven plus attacks, fruit, greed, teleports,
+    // and collapsing (all conventions - the print gives
+    // no figures for these five; the teleport follows
+    // the print's intra-level AREA example).
+    {
+        int bad = 0;
+        // exactly sixteen mechanical of 65
+        {
+            int mech = 0;
+            for (int a = 0;
+                 a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
+                if (dm::appendixh::trickIsMechanical(a)) ++mech;
+            if (mech != 16) ++bad;
+        }
+        // the R133 five are mechanical
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_ATTACKS)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_FRUIT)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_GREED)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_TELEPORTS)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_COLLAPSING)) ++bad;
+        // the deep waters stay dressing (engine limits)
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_WISH)) ++bad;
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_GRAVITY_GREATER)) ++bad;
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_POLYMORPH)) ++bad;
+        printf("R133 third-effects slice audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+
     // ---- R132: second-effects slice audit ----
     // The Appendix H mechanical set grows to eleven: the
     // R128 five plus ages, flesh to stone, both shocks,
@@ -2902,13 +2940,13 @@ int main() {
     // convention - the print gives no figure).
     {
         int bad = 0;
-        // exactly eleven mechanical of 65
+        // exactly sixteen mechanical of 65 (R133 grew it)
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 11) ++bad;
+            if (mech != 16) ++bad;
         }
         // the R132 six are mechanical
         if (!dm::appendixh::trickIsMechanical(

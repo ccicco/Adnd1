@@ -249,15 +249,26 @@ inline std::string trickSummary(int f, int a) {
 // both electrical shocks (5-50 hp, the pedestal example),
 // releases counterfeit (a worthless shower), and
 // takes/steals (10-60 gp - the print gives no figure; a
-// rebuild convention). The remaining 54 stay dressing;
-// their effects ride future rounds.
+// rebuild convention). R133 wires the third-effects
+// slice: attacks (an animated strike, 1d8 - convention),
+// fruit (heals a random living member 2d4+2, the potion
+// shape - convention), greed (a scramble costs 10% of
+// the purse - convention), teleports (an intra-level
+// relocation to a random room center, the print's AREA
+// example), collapsing (the ceiling comes down: every
+// living member saves vs death/poison or 2d6 -
+// convention). The remaining 49 stay dressing; their
+// effects ride future rounds.
 inline bool trickIsMechanical(int a) {
     return a == TA_REL_COINS || a == TA_REL_GEMS ||
            a == TA_REL_MAGIC_ITEM || a == TA_SHOOTS ||
            a == TA_POISON ||
            a == TA_AGES || a == TA_FLESH_TO_STONE ||
            a == TA_SHOCK_METAL || a == TA_SHOCK_MAGIC ||
-           a == TA_REL_COUNTERFEIT || a == TA_TAKES;
+           a == TA_REL_COUNTERFEIT || a == TA_TAKES ||
+           a == TA_ATTACKS || a == TA_FRUIT ||
+           a == TA_GREED || a == TA_TELEPORTS ||
+           a == TA_COLLAPSING;
 }
 
 }  // namespace appendixh
