@@ -917,6 +917,7 @@ void AppState::describeRoom(int roomIndex){
         RoomOccupant& room = occupancy.rooms[roomIndex];
         if (room.flavorSeen) return;
         room.flavorSeen = true;
+        char sprung[96];   // R125: the sprung-trap line
         const char* line = nullptr;
         if (!room.monsterKey.empty())
             line = "Furs and cracked bones litter the floor - "
@@ -927,8 +928,13 @@ void AppState::describeRoom(int roomIndex){
         else if (room.looted)
             line = "Spent torch stubs and old scorch marks - "
                    "someone camped here before you.";
-        else if (room.trap == 2)
-            line = "Darts jut from the wall at knee height.";
+        else if (room.trap == 2) {
+            // R125: name the sprung snare (App G)
+            snprintf(sprung, sizeof sprung,
+                     "The sprung trap (%s) lies quiet here.",
+                     dm::appendixg::trapName(room.trapKind));
+            line = sprung;
+        }
         else
             line = "A cold draft moves through the chamber.";
         log.add(line);

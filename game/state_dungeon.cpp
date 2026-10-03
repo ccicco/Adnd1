@@ -78,25 +78,47 @@ void AppState::populateRooms(){
             room.count = 0;
             room.looted = false;
             room.trap = 0;
+            room.trapKind = -1;   // R125: re-rolled at arming
             room.flavorSeen = false;   // R46
             room.headsLo = room.headsHi = 0;
             room.ageLo = room.ageHi = 0;
             if (rng.below(100) >= 50) {
                 // R45: an unoccupied room may hide a dart trap
-                if (rng.below(100) < 15) room.trap = 1;
+                if (rng.below(100) < 15) {
+                    room.trap = 1;   // R45 dart set
+                    // R125: Appendix G names the snare (d%);
+                    // the book lists names only, so the R45
+                    // save/2d6 mechanics stay the effect
+                    room.trapKind = (int)dm::appendixg::trapFor(
+                        1 + (int)rng.below(100));
+                }
                 continue;
             }
             dm::DungeonEncounter e = rollDmEncounter();
             if (e.isParty) {
                 // R53: NPC parties wander the halls - they do
                 // not lair; the room stays unoccupied (trap chance)
-                if (rng.below(100) < 15) room.trap = 1;
+                if (rng.below(100) < 15) {
+                    room.trap = 1;   // R45 dart set
+                    // R125: Appendix G names the snare (d%);
+                    // the book lists names only, so the R45
+                    // save/2d6 mechanics stay the effect
+                    room.trapKind = (int)dm::appendixg::trapFor(
+                        1 + (int)rng.below(100));
+                }
                 continue;
             }
             if (e.key.empty() || e.count <= 0) {
                 // NO ENCOUNTER (or an R53 row re-rolled out):
                 // the room stays unoccupied (trap chance as above)
-                if (rng.below(100) < 15) room.trap = 1;
+                if (rng.below(100) < 15) {
+                    room.trap = 1;   // R45 dart set
+                    // R125: Appendix G names the snare (d%);
+                    // the book lists names only, so the R45
+                    // save/2d6 mechanics stay the effect
+                    room.trapKind = (int)dm::appendixg::trapFor(
+                        1 + (int)rng.below(100));
+                }
                 continue;
             }
             room.monsterKey = e.key;
@@ -162,8 +184,10 @@ void AppState::springTrap(int roomIndex){
             if (c.hp <= 0 || c.classIndex != 3) continue;
             if (rng.below(3) == 0) {
                 room.trap = 2;
-                log.add(c.name + " spots a dart trap and "
-                        "disarms it.");
+                // R125: the book's name for the snare
+                log.add(c.name + " spots the trap (" +
+                        dm::appendixg::trapName(room.trapKind) +
+                        ") and disarms it.");
                 return;
             }
             break;   // one thief attempt per trap
@@ -184,23 +208,26 @@ void AppState::springTrap(int roomIndex){
         if (rules::attemptSave(dice, target, 0)) {
             char buf[96];
             snprintf(buf, sizeof buf,
-                     "A dart whistles past %s - saved!",
+                     "A trap! %s - %s saved!",
+                     dm::appendixg::trapName(room.trapKind),
                      c.name.c_str());
             log.add(buf);
             return;
         }
         int dmg = (int)dice.roll(2, 6, 0);
         c.hp -= dmg;
-        char buf[96];
+        char buf[128];   // R125: room for the book's long names
         if (c.hp <= 0) {
             c.hp = 0;
             snprintf(buf, sizeof buf,
-                     "A trap! Darts strike %s for %d - %s "
+                     "A trap! %s strikes %s for %d - %s "
                      "falls!",
+                     dm::appendixg::trapName(room.trapKind),
                      c.name.c_str(), dmg, c.name.c_str());
         } else {
             snprintf(buf, sizeof buf,
-                     "A trap! Darts strike %s for %d.",
+                     "A trap! %s strikes %s for %d.",
+                     dm::appendixg::trapName(room.trapKind),
                      c.name.c_str(), dmg);
         }
         log.add(buf);

@@ -447,8 +447,22 @@ Categories:
       tables are pinned data for the future
       layers). Pinned by the R124 battery
       audit; census 42.
-- [ ] **Traps and dressing lists (pp.216-217)**
-      - full tables vs the repo's trap set.
+- [x] **Traps and dressing lists (pp.216-217)**
+      - CLOSED R125: Appendix G's trap list (the d% TRAP
+      LIST, 46 kinds - band weights checked against a scan
+      of the printed page) is pinned row-by-row in the new
+      dm/appendixgh.h, and the R45 dart-trap set now rolls
+      its NAME from the table at arming: spring/disarm/
+      sprung-room lines quote the book name verbatim (the
+      book lists names only, so the R45 save-or-2d6 set
+      stays the effect). Appendix H's dressing lists (37
+      features, 65 attributes) are pinned as data for the
+      future special-rooms layer (trickSummary helper).
+      Pinned by the R125 battery audit; census 43. NOTE:
+      name spellings and the H lists are transcribed from
+      the 1eonline.info compilation of the pages and ride
+      the book-verify debt with the printed table as the
+      winner.
 - [ ] **Wilderness encounter tables
       (pp.182-189)** - the appendix C-style
       tables for outdoor play.

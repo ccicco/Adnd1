@@ -231,6 +231,7 @@
 #include "../dm/dungeon.h"
 #include "../dm/encounters.h"   // R52: Appendix C tables
 #include "../dm/treasure.h"    // R71: MM treasure types
+#include "../dm/appendixgh.h"  // R125: pp.216-217 trap/trick lists
 #include "../ai/actor.h"
 #include "../monsters/MonsterRegistry.h"
 #include "../monsters/MonsterXp.h"
@@ -261,6 +262,9 @@ struct RoomOccupant {
     bool looted = false;
     // R45: 0 = no trap, 1 = armed dart trap, 2 = sprung
     int trap = 0;
+    // R125: the Appendix G name rolled at arming (-1 none);
+    // transient - rooms re-populate on load
+    int trapKind = -1;
     bool flavorSeen = false;   // R46: first-entry description
     // R120: a non-hostile parley bought peace - the room's
     // monsters no longer leap at the company (a deliberate-
