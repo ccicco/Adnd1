@@ -280,7 +280,10 @@ void AppState::applyTrick(int roomIndex){
         // room-geometry slice - one-way (the way
         // seals), pivots/spinning (the room turns),
         // shifting (the walls flex), sliding (the
-        // floor tilts).
+        // floor tilts). R136: the odds-and-ends slice
+        // - rising (the flood), suspends (the float),
+        // appearing (the melt-away), invisible (the
+        // unseen strike), gaseous (the gas cloud).
         if (roomIndex < 0 ||
             roomIndex >= (int)occupancy.rooms.size())
             return;
