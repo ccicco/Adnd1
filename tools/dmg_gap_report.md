@@ -850,6 +850,28 @@ Categories:
       carries no war hammer - the R144 pin stands). Pinned by
       the R145
       weapon table audit; census 63.
+- [x] **The city flavor subtables (R64's named omissions)**
+      - CLOSED R146: the p.191 drunk identity table ("the
+      character(s) found drunk should be diced for" - 20
+      bands, assassin 01-02 through tradesman 98-00) and
+      the famous p.192 harlot type table (12 bands, the
+      slovenly trull 01-10 through the rich panderer
+      99-00 - Gygax, on why the table exists: built from
+      boredom with the genre's continual 'whores'
+      references, included in a spirit of
+      vocabulary-building, "no particular regrets") are
+      pinned as fiction-only descriptors and wired into
+      the city streets flavor strings (the book's MU /
+      Merc print in full; the compilation's 'Haughy
+      courtesan' is the printed 'haughty', corrected and
+      documented). Cell-verified at the raw-HTML level of
+      the 1eonline.info compilation - the repo-trusted
+      source; the DMG re-upload's OCR debt stands. Still
+      unmodeled fiction, named: noble gender (the book
+      prints nobleman-with-retainers 70% / noblewoman 25%
+      and no last 5%) and the ruffian 1-in-4
+      half-orc/humanoid note. Pinned by the R146 city
+      flavor audit; census 64.
 
 ## Out of scope by design
 

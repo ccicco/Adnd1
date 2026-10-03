@@ -195,6 +195,20 @@ void AppState::cityExcursion(dm::CityTime t){
             beginCombat(std::move(foes), -1, e.key);
             return;
         }
-        // fiction civilians - flavor only
-        log.add(cityFlavor(e.key.c_str()));
+        // fiction civilians - flavor only; R146: the
+        // p.191 drunk identity and p.192 harlot type
+        // subtables dress the two keyed rows
+        std::string line = cityFlavor(e.key.c_str());
+        if (e.key == "drunk") {
+            line = std::string("A drunk ") +
+                dm::cityDrunkKind(
+                    (int)dice.roll(1, 100, 0)) +
+                " sings loud in a doorway.";
+        } else if (e.key == "harlot") {
+            line = std::string("A ") +
+                dm::cityHarlotKind(
+                    (int)dice.roll(1, 100, 0)) +
+                " waves from a doorway.";
+        }
+        log.add(line);
     }

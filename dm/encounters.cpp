@@ -3054,10 +3054,13 @@ std::vector<OutdoorBand> outdoorSubBands(
 // civilian fictions (beggar, drunk, goodwife, harlot, laborer,
 // peddler, gentleman, noble, mercenary, merchant, pilgrim,
 // press gang, ruffian, tradesman, bard) carry printed counts
-// but no bestiary entry - their flavor subtables (harlot type
-// p.192, drunk-of-what-type p.191, noble gender, ruffian 1-in-4
-// half-orc/humanoid) are fiction the engine does not model,
-// documented in the row comments. Numbers are the printed
+// but no bestiary entry - their flavor subtables are
+// fiction the engine models only in part: the harlot type
+// (p.192) and drunk-of-what-type (p.191) tables are
+// pinned R146 (cityHarlotKind / cityDrunkKind); noble
+// gender and the ruffian 1-in-4 half-orc/humanoid note
+// stay unmodeled fiction, documented in the row
+// comments. Numbers are the printed
 // encounter numbers, not the registry's wilderness-scale
 // noAppearing (bandit registry 20-200 vs. printed night 3-12;
 // giant rat registry 5-50 vs. printed 2-8 day / 4-24 night).
@@ -3580,6 +3583,92 @@ std::vector<std::string> cityEncounterKeys(
     (void)reg;
     return out;
 }
+
+// ----------------------------------------------------------------------------
+// R146: the city flavor subtables R64 named as unmodeled -
+// the p.191 drunk identity table ("the character(s) found
+// drunk should be diced for") and the p.192 harlot type
+// table, both transcribed from the 1eonline.info
+// compilation (the repo-trusted source; the DMG re-upload's
+// OCR debt stands). Fiction-only descriptors: the app's
+// cityFlavor strings dress the "drunk" and "harlot" rows
+// with them; no combat effect. The book prints "MU" and
+// "Merc" in full as the fiction strings (magic-user,
+// mercenary); the printed book reads "haughty", the
+// compilation "Haughy" an OCR defect (corrected,
+// documented). The two remaining R64 flavor notes - noble
+// gender (70% nobleman / 25% noblewoman, the last 5%
+// unprinted) and the ruffian 1-in-4 half-orc/humanoid note
+// - stay unmodeled fiction (gap report).
+namespace {
+
+struct FlavorBand {
+    short lo, hi;
+    const char* kind;
+};
+
+// p.191: the drunk's dice-for identity (20 bands)
+static const FlavorBand kDrunkKinds[] = {
+    {   1,  2, "assassin" },
+    {   3,10, "bandit" },
+    { 11,18, "brigand" },
+    { 19,20, "city guard" },
+    { 21,22, "city official" },
+    { 23,25, "city watchman" },
+    { 26,27, "cleric" },
+    { 28,29, "druid" },
+    { 30,38, "fighter" },
+    { 39,45, "gentleman" },
+    { 46,48, "illusionist" },
+    { 49,63, "laborer" },
+    { 64,65, "magic-user" },
+    { 66,73, "mercenary" },
+    { 74,80, "merchant" },
+    { 81,82, "noble" },
+    { 83,90, "rake" },
+    { 91,95, "ruffian" },
+    { 96,97, "thief" },
+    { 98,100, "tradesman" },
+};
+
+// p.192: the harlot encounter type (12 bands)
+static const FlavorBand kHarlotKinds[] = {
+    {   1,10, "slovenly trull" },
+    { 11,25, "brazen strumpet" },
+    { 26,35, "cheap trollop" },
+    { 36,50, "typical streetwalker" },
+    { 51,65, "saucy tart" },
+    { 66,75, "wanton wench" },
+    { 76,85, "expensive doxy" },
+    { 86,90, "haughty courtesan" },
+    { 91,92, "aged madam" },
+    { 93,94, "wealthy procuress" },
+    { 95,98, "sly pimp" },
+    { 99,100, "rich panderer" },
+};
+
+const char* flavorKindFor(const FlavorBand* t, size_t n,
+                          int pctile) {
+    if (pctile < 1)   pctile = 1;
+    if (pctile > 100) pctile = 100;
+    for (size_t i = 0; i < n; ++i)
+        if (pctile >= t[i].lo && pctile <= t[i].hi)
+            return t[i].kind;
+    return "";
+}
+
+}   // namespace
+
+const char* cityDrunkKind(int pctile) {
+    return flavorKindFor(kDrunkKinds,
+        sizeof kDrunkKinds / sizeof kDrunkKinds[0], pctile);
+}
+
+const char* cityHarlotKind(int pctile) {
+    return flavorKindFor(kHarlotKinds,
+        sizeof kHarlotKinds / sizeof kHarlotKinds[0], pctile);
+}
+
 
 
 // ----------------------------------------------------------------------------

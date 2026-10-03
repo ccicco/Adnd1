@@ -268,8 +268,11 @@ std::vector<OutdoorBand> outdoorSubBands(
 // R62); classed and service encounters resolve as character
 // parties built to the p.191-192 explanations with printed
 // level ranges; civilian fictions carry printed counts
-// (their flavor subtables are fiction the engine does not
-// model, documented in encounters.cpp). Numbers are the
+// (their flavor subtables are fiction the engine models
+// only in part: the drunk identity and harlot type tables
+// are pinned R146 - cityDrunkKind / cityHarlotKind; the
+// rest stay unmodeled, documented in encounters.cpp).
+// Numbers are the
 // printed city numbers, not the registry's wilderness-scale
 // noAppearing. City NPCs of 1st level or higher roll the
 // p.192 CHANCE PER LEVEL FOR MAGIC ITEM table. WIRED SINCE
@@ -287,6 +290,16 @@ DungeonEncounter rollCityEncounter(
 // companion of rollCityEncounter.
 std::vector<std::string> cityEncounterKeys(
     const monsters::MonsterRegistry& reg);
+
+// R146: the two flavor subtables R64 named as unmodeled -
+// the p.191 drunk identity table ("the character(s) found
+// drunk should be diced for") and the p.192 harlot type
+// table - transcribed from the 1eonline.info compilation
+// (the repo-trusted source; the DMG re-upload's OCR debt
+// stands). Fiction-only descriptors for the city flavor
+// strings: 1-100 percentile, 00 reading as 100.
+const char* cityDrunkKind(int pctile);
+const char* cityHarlotKind(int pctile);
 
 
 // R65: DMG Appendix C ASTRAL & ETHEREAL encounter tables
