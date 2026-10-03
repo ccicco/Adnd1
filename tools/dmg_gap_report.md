@@ -789,6 +789,32 @@ Categories:
       flavor (the book's secret door 28-29 is a crypt
       lock here by convention). Pinned by the R143 crypt
       wing audit; census 61.
+- [x] **The p.71 Example of Melee golden test (the old
+      rules-core debt, never scheduled)** - CLOSED R144:
+      the book's own worked fight (Aggro the Axe's party
+      vs. Gutboy Barrelhouse's, transcribed from the
+      1eonline.info compilation - the DMG re-upload's OCR
+      died in the preface) is pinned against the engine's
+      combat core. The engine matches every printed
+      number it models: the seven matrix cells (F4/AC 10
+      = 8, T2/AC 10 = 11, F6/AC 5 = 11, F4/AC 5 = 13,
+      C4/AC 1 = 17, and the monk Balto's base 18 - via the
+      fighter approximation, the engine having no monk
+      class), STR 17 = +1 to hit/+1 damage, the 6th-level
+      fighter spell save of 14, and the mace-vs-plate +1
+      (17 - 1 = 16). The example's other numbers are the
+      book's OWN errors (Gygax: the example 'was added by
+      the editors, thus slipped past and never got
+      corrected' - Balto's staff '-7', the magic missile
+      '4-10') or per-weapon rows beyond the engine's
+      3-class p.38 approximation (the sling's +3 vs. no
+      armor, the axe's +1, the hammer's +1 vs. scale):
+      the engine deliberately does not copy the errors,
+      and the approximation rows are now STANDING
+      APPROXIMATIONS (a per-weapon p.38 table is a future
+      lane), as is the dwarf CON magic-save bonus (the
+      engine models CON only vs. poison). Pinned by the
+      R144 golden melee audit; census 62.
 
 ## Out of scope by design
 
