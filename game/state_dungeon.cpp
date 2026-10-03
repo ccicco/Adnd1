@@ -275,6 +275,15 @@ void AppState::engageTrick(){
             log.add("Nothing here begs engaging.");
             return;
         }
+        // R138: the talk-flavor parley - a talking
+        // feature answers the X key with its line
+        // (repeatable; talk never spends the trick).
+        if (dm::appendixh::trickIsTalky(
+                room.trickAttribute)) {
+            log.add(dm::appendixh::trickTalkLine(
+                room.trickAttribute));
+            return;
+        }
         if (!dm::appendixh::trickIsMechanical(
                 room.trickAttribute)) {
             log.add("The feature only mutters - it "

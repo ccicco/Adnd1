@@ -928,8 +928,12 @@ void AppState::describeRoom(int roomIndex){
                     dm::appendixh::trickSummary(
                         room.trickFeature,
                         room.trickAttribute) + ".");
-            if (dm::appendixh::trickIsMechanical(
-                    room.trickAttribute) && !room.trickDone) {
+            // R138: a talky feature also answers the X
+            // key - the first sight prompts as well.
+            if ((dm::appendixh::trickIsMechanical(
+                    room.trickAttribute) && !room.trickDone)
+                || dm::appendixh::trickIsTalky(
+                    room.trickAttribute)) {
                 log.add(dm::appendixh::trickEngagePrompt());
             }
             return;

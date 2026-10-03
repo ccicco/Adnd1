@@ -683,6 +683,19 @@ Categories:
       (trickEngagePrompt, dm/appendixgh.h) and the
       battery pins it exact. Pinned by the R137 hook
       audit; census 55.
+- [x] **Talk-flavor parley hook (the standing debt)** -
+      CLOSED R138: the talks-class Appendix H
+      attributes (asks, directs, points, suggests,
+      intelligent, and the six talks variants) stay
+      non-mechanical by design - they answer the
+      deliberate-engage hook instead. The X key in a
+      talky trick room logs the attribute's flavor
+      line (trickTalkLine, dm/appendixgh.h;
+      repeatable - talk never spends the trick), and
+      first sight shows the engage prompt. The battery
+      pins the eleven-line set: count, non-mechanical,
+      ASCII, pairwise distinct, and the smart line
+      exact. Pinned by the R138 parley audit; census 56.
 
 ## Out of scope by design
 

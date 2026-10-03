@@ -295,6 +295,60 @@ inline const char* trickEngagePrompt() {
 // conventions - the print gives no figures. The
 // remaining 36 stay dressing; their effects ride
 // future rounds.
+// ---- R138: the talk-flavor parley ----
+// The talks-class attributes stay NON-mechanical by
+// design: they answer the deliberate-engage hook (the
+// X key) with the line below - repeatable flavor;
+// talk never spends the trick. Pure data - the
+// battery pins the eleven-line set.
+inline bool trickIsTalky(int a) {
+    return a == TA_ASKS || a == TA_DIRECTS ||
+           a == TA_POINTS || a == TA_SUGGESTS ||
+           a == TA_INTELLIGENT ||
+           a == TA_TALKS_SMART ||
+           a == TA_TALKS_NONSENSE ||
+           a == TA_TALKS_POETRY ||
+           a == TA_TALKS_SINGING ||
+           a == TA_TALKS_SPELLS ||
+           a == TA_TALKS_YELLS;
+}
+
+inline const char* trickTalkLine(int a) {
+    if (a == TA_ASKS)
+        return "The feature asks after your quest - "
+               "and waits.";
+    if (a == TA_DIRECTS)
+        return "The feature directs you down a "
+               "corridor to the west.";
+    if (a == TA_POINTS)
+        return "The feature points the way onward.";
+    if (a == TA_SUGGESTS)
+        return "The feature suggests a quieter path "
+               "below.";
+    if (a == TA_INTELLIGENT)
+        return "The feature weighs you with quiet, "
+               "unblinking intelligence.";
+    if (a == TA_TALKS_SMART)
+        return "The feature speaks learnedly of the "
+               "dungeon's history.";
+    if (a == TA_TALKS_NONSENSE)
+        return "The feature babbles nonsense and "
+               "giggles.";
+    if (a == TA_TALKS_POETRY)
+        return "The feature recites an ode to fallen "
+               "heroes.";
+    if (a == TA_TALKS_SINGING)
+        return "The feature sings a low, wordless "
+               "melody.";
+    if (a == TA_TALKS_SPELLS)
+        return "The feature mutters syllables of "
+               "spellcraft.";
+    if (a == TA_TALKS_YELLS)
+        return "The feature bellows a warning at the "
+               "ceiling.";
+    return "";
+}
+
 inline bool trickIsMechanical(int a) {
     return a == TA_REL_COINS || a == TA_REL_GEMS ||
            a == TA_REL_MAGIC_ITEM || a == TA_SHOOTS ||
