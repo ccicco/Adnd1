@@ -73,6 +73,23 @@ static const SpellDef kSpells[SPELL_COUNT] = {
     { "Raise Dead",          SPELL_CLERIC, 5,  5,  0,  0,  -1, TARGET_CREATURE,   0, 0, 0, true  },
     { "Insect Plague",       SPELL_CLERIC, 5,  5,  3, 12,  -1, TARGET_AREA,       3, 2, 8, true  },
     { "Heal",                SPELL_CLERIC, 6,  6,  0,  0,  -1, TARGET_CREATURE,   0, 8, 8, true  },
+    // ---- R129: the DMG p.14 caster-aging spells (levels
+    // 7-9). "Known, cast pending" rows (the R80 utility
+    // convention): the slot tables encode levels 1-6, so
+    // spellSlots() yields 0 for these until the high-level
+    // (name level+) tables arrive in a future round -
+    // documented; the p.14 aging pins ride
+    // magicalAgingYears regardless. TARGET_SELF: the aging
+    // rider ages the target - for these rows the target IS
+    // the caster. Casting times ride the file's convention
+    // (MU = spell level segments, cleric = spell level + 1)
+    // under the standing verification debt.
+    { "Limited Wish",      SPELL_MU,     7,  7,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
+    { "Alter Reality",     SPELL_MU,     7,  7,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
+    { "Wish",              SPELL_MU,     9,  9,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
+    { "Gate",              SPELL_MU,     9,  9,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
+    { "Restoration",      SPELL_CLERIC,  7,  8,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
+    { "Resurrection",     SPELL_CLERIC,  7,  8,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
 };
 
 const SpellDef& spell(SpellId id) {
@@ -145,6 +162,14 @@ bool rollChanceToLearn(Dice& dice, uint8_t int_) {
 // ----------------------------------------------------------------------------
 int magicalAgingYears(SpellId id) {
     if (id == MU_HASTE) return 1;   // p.14: under a haste spell
+    // R129: the p.14 caster-aged causes (TARGET_SELF rows -
+    // the rider ages the caster)
+    if (id == MU_LIMITED_WISH)  return 1;   // p.14
+    if (id == CL_RESTORATION)   return 2;   // p.14
+    if (id == MU_ALTER_REALITY) return 3;   // p.14
+    if (id == MU_WISH)          return 3;   // p.14
+    if (id == CL_RESURRECTION)  return 3;   // p.14
+    if (id == MU_GATE)          return 5;   // p.14
     return 0;
 }
 

@@ -85,6 +85,17 @@ enum SpellId : int {
     CL_RAISE_DEAD,
     CL_INSECT_PLAGUE,
     CL_HEAL,
+    // --- R129: the DMG p.14 caster-aging spells (levels
+    //     7-9; appended ids keep saved knownSpells indices
+    //     valid). TARGET_SELF rows: the aging rider treats
+    //     the target as the caster (the book's semantics -
+    //     the p.14 years land on the caster).
+    MU_LIMITED_WISH,     // MU 7; caster ages 1 (p.14)
+    MU_ALTER_REALITY,    // MU 7; caster ages 3 (p.14)
+    MU_WISH,             // MU 9; caster ages 3 (p.14)
+    MU_GATE,             // MU 9; caster ages 5 (p.14)
+    CL_RESTORATION,      // CL 7; caster ages 2 (p.14)
+    CL_RESURRECTION,     // CL 7; caster ages 3 (p.14)
     SPELL_COUNT
 };
 
@@ -135,13 +146,15 @@ bool rollChanceToLearn(Dice& dice, uint8_t int_);
 
 // ----------------------------------------------------------------------------
 // R115: the years a spell steals (DMG p.14 magical aging
-// causes): a haste spell costs its recipient 1 year. The
-// caster-aged causes (limited wish 1, restoration 2,
-// resurrection 3, wish 3, alter reality 3, gate 5) return
-// their years when those spells enter the registry; the
-// speed potion's 1 year is the item layer's, and found
+// causes): a haste spell costs its recipient 1 year.
+// R129: the caster-aged causes are in the registry and
+// pinned - limited wish 1, restoration 2, resurrection 3,
+// wish 3, alter reality 3, gate 5 - their rows are
+// TARGET_SELF, so the aging rider's "target" IS the
+// caster (the book's semantics; see ai/actor.cpp). The
+// speed potion's 1 year remains the item layer's - found
 // potions collapse into the healing stack today
-// (documented - open item in the gap report).
+// (documented engine limit, named in the gap report).
 // ----------------------------------------------------------------------------
 int magicalAgingYears(SpellId id);
 

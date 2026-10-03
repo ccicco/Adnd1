@@ -429,11 +429,13 @@ int main() {
         for (int id = 0; id < spells::SPELL_COUNT; ++id) {
             const spells::SpellDef& s =
                 spells::spell((spells::SpellId)id);
-            if (s.level < 1 || s.level > 6) ++bad;
+            // R129: the band widens to 1-9 - the p.14
+            // caster-aging spells ride as levels 7-9
+            if (s.level < 1 || s.level > 9) ++bad;
             if (s.sclass != spells::SPELL_MU &&
                 s.sclass != spells::SPELL_CLERIC) ++bad;
             if (s.sclass == spells::SPELL_MU) ++mu; else ++cl;
-            if (s.level >= 4) {
+            if (s.level >= 4 && s.level <= 6) {
                 ++l46;
                 // a slot row exists that can cast it
                 if (spells::spellSlots(s.sclass, 12, s.level) < 1)
@@ -544,11 +546,13 @@ int main() {
         // INT gates the L5 (PHB p.10): 15 reaches L5, 16 reaches L6
         if (spells::maxSpellLevelForInt(15) != 5) ++bad;
         if (spells::maxSpellLevelForInt(16) != 6) ++bad;
-        // every registry row sits in 1..6 (the R83 gate domain)
+        // every registry row sits in 1..9 (the R83 gate
+        // domain, widened R129 alongside the R80 band: the
+        // six p.14 caster-aging spells ride as levels 7-9)
         for (int id = 0; id < spells::SPELL_COUNT; ++id) {
             const spells::SpellDef& s2 =
                 spells::spell((spells::SpellId)id);
-            if (s2.level < 1 || s2.level > 6) ++bad;
+            if (s2.level < 1 || s2.level > 9) ++bad;
         }
         printf("R83 teleport audit: bad %d\n", bad);
         if (bad) return 1;
@@ -2799,6 +2803,96 @@ int main() {
         if (dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_TALKS_NONSENSE)) ++bad;
         printf("R128 special rooms audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+
+    // ---- R129: caster aging audit ----
+    {
+        int bad = 0;
+        // the registry grew to 54: MU 31, CL 23
+        if (spells::SPELL_COUNT != 54) ++bad;
+        {
+            int mu = 0, cl = 0;
+            for (int id = 0; id < spells::SPELL_COUNT; ++id) {
+                const spells::SpellDef& s =
+                    spells::spell((spells::SpellId)id);
+                if (s.sclass == spells::SPELL_MU) ++mu;
+                else ++cl;
+            }
+            if (mu != 31 || cl != 23) ++bad;
+        }
+        // the six p.14 rows: name, class, level, self-target
+        {
+            const spells::SpellDef& d =
+                spells::spell(spells::MU_LIMITED_WISH);
+            if (std::string(d.name) != "Limited Wish" ||
+                d.sclass != spells::SPELL_MU || d.level != 7 ||
+                d.target != spells::TARGET_SELF) ++bad;
+        }
+        {
+            const spells::SpellDef& d =
+                spells::spell(spells::MU_ALTER_REALITY);
+            if (std::string(d.name) != "Alter Reality" ||
+                d.sclass != spells::SPELL_MU || d.level != 7 ||
+                d.target != spells::TARGET_SELF) ++bad;
+        }
+        {
+            const spells::SpellDef& d =
+                spells::spell(spells::MU_WISH);
+            if (std::string(d.name) != "Wish" ||
+                d.sclass != spells::SPELL_MU || d.level != 9 ||
+                d.target != spells::TARGET_SELF) ++bad;
+        }
+        {
+            const spells::SpellDef& d =
+                spells::spell(spells::MU_GATE);
+            if (std::string(d.name) != "Gate" ||
+                d.sclass != spells::SPELL_MU || d.level != 9 ||
+                d.target != spells::TARGET_SELF) ++bad;
+        }
+        {
+            const spells::SpellDef& d =
+                spells::spell(spells::CL_RESTORATION);
+            if (std::string(d.name) != "Restoration" ||
+                d.sclass != spells::SPELL_CLERIC ||
+                d.level != 7 ||
+                d.target != spells::TARGET_SELF) ++bad;
+        }
+        {
+            const spells::SpellDef& d =
+                spells::spell(spells::CL_RESURRECTION);
+            if (std::string(d.name) != "Resurrection" ||
+                d.sclass != spells::SPELL_CLERIC ||
+                d.level != 7 ||
+                d.target != spells::TARGET_SELF) ++bad;
+        }
+        // the DMG p.14 pins: the caster-aged causes
+        if (spells::magicalAgingYears(
+                spells::MU_LIMITED_WISH) != 1) ++bad;
+        if (spells::magicalAgingYears(
+                spells::CL_RESTORATION) != 2) ++bad;
+        if (spells::magicalAgingYears(
+                spells::MU_ALTER_REALITY) != 3) ++bad;
+        if (spells::magicalAgingYears(
+                spells::MU_WISH) != 3) ++bad;
+        if (spells::magicalAgingYears(
+                spells::CL_RESURRECTION) != 3) ++bad;
+        if (spells::magicalAgingYears(
+                spells::MU_GATE) != 5) ++bad;
+        // the R115 precedent stands
+        if (spells::magicalAgingYears(
+                spells::MU_HASTE) != 1) ++bad;
+        if (spells::magicalAgingYears(
+                spells::MU_FIREBALL) != 0) ++bad;
+        // cast-pending: the slot tables encode 1-6, so
+        // levels 7-9 yield no slots at any class level
+        if (spells::spellSlots(
+                spells::SPELL_MU, 12, 7) != 0) ++bad;
+        if (spells::spellSlots(
+                spells::SPELL_MU, 12, 9) != 0) ++bad;
+        if (spells::spellSlots(
+                spells::SPELL_CLERIC, 12, 7) != 0) ++bad;
+        printf("R129 caster aging audit: bad %d\n", bad);
         if (bad) return 1;
     }
 

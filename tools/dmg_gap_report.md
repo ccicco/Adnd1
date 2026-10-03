@@ -247,21 +247,35 @@ Categories:
       which this repo's encounters (monsters
       vs characters) never do - documented.
       Pinned by the R115 battery audit.
-- [ ] **Magical aging causes, remainder
-      (p.14)** - haste is wired (R115:
-      spells::magicalAgingYears +
-      applyMagicalAging, landed at the
-      fight-end sync, persisted as
-      "mageage"). The caster-aged causes -
-      limited wish 1, restoration 2,
-      resurrection 3, wish 3, alter reality
-      3, gate 5 - await those spells
-      entering the registry; the speed
-      potion's 1 year awaits a potion
-      identity surviving pickup (found
+- [x] **Magical aging causes, remainder
+      (p.14)** - CLOSED R129: the six
+      caster-aged causes enter the spell
+      registry - Limited Wish (MU7, ages the
+      caster 1), Alter Reality (MU7, 3),
+      Wish (MU9, 3), Gate (MU9, 5),
+      Restoration (CL7, 2), Resurrection
+      (CL7, 3) - appended ids so saved
+      knownSpells indices stay valid. Their
+      rows are TARGET_SELF: the R115 aging
+      rider ages the rider's target, which
+      for these spells IS the caster (the
+      book's semantics; the years land at
+      the fight-end sync, persisted as
+      "mageage"). The rows are "known, cast
+      pending" (the R80 utility convention):
+      the slot tables encode levels 1-6, so
+      spellSlots yields 0 for 7-9 until the
+      high-level (name level+) tables arrive
+      in a future round - documented; the
+      p.14 pins ride magicalAgingYears
+      regardless. Two documented engine
+      limits remain, named for the record:
+      the speed potion's 1 year (found
       potions collapse into the healing
-      stack today). The hire's stolen years
-      land nowhere (no hire brackets).
+      stack - no identity survives pickup)
+      and the hire's stolen years (no hire
+      brackets exist). Pinned by the R129
+      battery audit; census 47.
 - [x] **Encounter reactions (p.64)** -
       CLOSED R117: the book's percentile
       table (seven bands, 01-05 violently
