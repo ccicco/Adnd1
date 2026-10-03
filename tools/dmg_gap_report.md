@@ -537,6 +537,26 @@ Categories:
       documented; their effects ride future rounds.
       Transient like trapKind: rooms re-populate on load.
       Pinned by the R128 battery audit; census 46.
+- [x] **High-level spell slot tables (PHB
+      class tables)** - CLOSED R130: the slot tables
+      themselves were the last print-omission in the
+      spell pipeline - line-diffed against the
+      1eonline.info PHB compilation (class Table I +
+      the SPELLS USABLE appendix): 9 spell levels
+      encoded, MU printed rows to L20, cleric to L29,
+      final row holds beyond the print; the R80
+      project-notes rows 7-12 corrected to print; the
+      cleric 7th gate lands at 17 (the printed Wis-18
+      footnote at 16 not modeled - engine limit); the
+      INT gate extends 17 -> 7th, 18 -> 8th/9th (the
+      "highest intelligence" note - a convention
+      extension riding the standing verification
+      debt). The tables and gates now encode levels
+      7-9 (the R129 caster-aging spells resolve at
+      name level); the per-day slotsByLevel plumbing
+      still tracks 6 - named debt, rides future
+      rounds. Pinned by the R130 battery audit;
+      census 48.
 
 ## Out of scope by design
 

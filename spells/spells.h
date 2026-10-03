@@ -129,9 +129,15 @@ SpellClass spellClass(SpellId id);
 
 // ----------------------------------------------------------------------------
 // Spell slots (PHB class tables): usable spells per spell level at
-// a given class level. Rows to name level; beyond, max row repeats
-// (1e: gained spells stop advancing - followers/strongholds take
-// over; rebuild convention: hold at final row).
+// a given class level. R130 line-diffed the tables against the
+// 1eonline.info PHB compilation (the class Table I and the SPELLS
+// USABLE BY CLASS AND LEVEL appendix): MU printed rows run to L20,
+// cleric to L29, spell levels 1-9 / 1-7 encoded; the R80 project-
+// notes rows 7-12 were corrected to the printed values (rows 1-6
+// matched). Beyond the printed rows the final row holds. The
+// printed wisdom footnotes (6th: Wis 17 at cleric 11; 7th: Wis 18
+// at cleric 16) are not modeled - the level-only gates are
+// documented engine limits.
 // ----------------------------------------------------------------------------
 int spellSlots(SpellClass sc, int classLevel, int spellLevel);
 

@@ -76,9 +76,10 @@ static const SpellDef kSpells[SPELL_COUNT] = {
     // ---- R129: the DMG p.14 caster-aging spells (levels
     // 7-9). "Known, cast pending" rows (the R80 utility
     // convention): the slot tables encode levels 1-6, so
-    // spellSlots() yields 0 for these until the high-level
-    // (name level+) tables arrive in a future round -
-    // documented; the p.14 aging pins ride
+    // spellSlots() yielded 0 for these until R130 delivered
+    // the printed tables (MU to L20, cleric to L29); a
+    // 12th-level caster still has no 7th-9th slot, so the
+    // R129 pins stand - documented; the p.14 aging pins ride
     // magicalAgingYears regardless. TARGET_SELF: the aging
     // rider ages the target - for these rows the target IS
     // the caster. Casting times ride the file's convention
@@ -100,26 +101,86 @@ int spellLevel(SpellId id)      { return spell(id).level; }
 SpellClass spellClass(SpellId id) { return spell(id).sclass; }
 
 // ----------------------------------------------------------------------------
-// Slot tables (PHB p.20+)
-//   MU: L1: 1 slot;  L2: 2; L3: 2/1; L4: 3/2; L5: 4/2/1; L6: 4/2/2;
-//       L7: 5/3/2/1 ... (rows to L12)
-//   Cleric: L1: 1; L2: 2; L3: 2/1; L4: 3/2; L5: 3/3/1;
-//       L6: 4/3/2; L7: 5/3/2/1 ... (rows to L12)
-// Encoded: max spell level 6 (columns), levels 1-12 (rows).
+// Slot tables (PHB class tables - R130 line-diff against the
+// 1eonline.info PHB compilation: the class Table I and the
+// SPELLS USABLE BY CLASS AND LEVEL appendix, which agree row
+// for row except the MU L17 7th slot noted below. The R80
+// project-notes rows 7-12 were corrected to the printed
+// values; rows 1-6 matched. MU printed rows run to L20,
+// cleric to L29; beyond the printed rows the final row holds
+// (the compilation prints no further spell rows - the xp
+// line keeps advancing, the spell rows do not). The printed
+// wisdom footnotes (6th needs Wis 17 at cleric 11; 7th needs
+// Wis 18 at cleric 16) are not modeled - the level-only
+// gates put 7th at 17; documented engine limits. Values ride
+// the file's standing verification debt - the printed tables
+// win when the PDF is re-uploaded.)
 // ----------------------------------------------------------------------------
 
-static const int kSlots = 6;      // spell levels 1-6 encoded
-static const int kLevels = 12;    // class levels 1-12
+static const int kSlots = 9;      // spell levels 1-9 encoded
+static const int kLevels = 29;    // class levels 1-29 (rows)
 
 static const int kMuSlots[kLevels][kSlots] = {
-    {1,0,0,0,0,0},{2,0,0,0,0,0},{2,1,0,0,0,0},{3,2,0,0,0,0},
-    {4,2,1,0,0,0},{4,2,2,0,0,0},{5,3,2,1,0,0},{5,3,3,2,0,0},
-    {5,3,3,2,1,0},{5,4,4,2,1,0},{5,4,4,2,2,0},{5,4,4,3,2,1},
+    {1,0,0,0,0,0,0,0,0},   // L1 (unchanged - matches the print)
+    {2,0,0,0,0,0,0,0,0},   // L2
+    {2,1,0,0,0,0,0,0,0},   // L3
+    {3,2,0,0,0,0,0,0,0},   // L4
+    {4,2,1,0,0,0,0,0,0},   // L5
+    {4,2,2,0,0,0,0,0,0},   // L6
+    {4,3,2,1,0,0,0,0,0},   // L7 - corrected R130 (notes said 5,3,2,1)
+    {4,3,3,2,0,0,0,0,0},   // L8 - corrected R130 (notes said 5,3,3,2)
+    {4,3,3,2,1,0,0,0,0},   // L9 - corrected R130 (notes said 5,3,3,2,1)
+    {4,4,3,3,2,0,0,0,0},   // L10 - corrected R130 (notes said 5,4,4,2,1)
+    {4,4,4,3,3,0,0,0,0},   // L11 - corrected R130 (notes said 5,4,4,2,2)
+    {4,4,4,4,4,1,0,0,0},   // L12 - corrected R130 (notes said 5,4,4,3,2,1)
+    {5,5,5,4,4,2,0,0,0},   // L13 (printed; 7th at 14, 8th at 16, 9th at 18)
+    {5,5,5,4,4,2,1,0,0},   // L14
+    {5,5,5,5,5,2,1,0,0},   // L15
+    {5,5,5,5,5,3,2,1,0},   // L16
+    {5,5,5,5,5,3,2,2,0},   // L17 - the compilation's appendix prints 7th=2; its Table I prints 3 (documented fold; printed table wins on re-verify)
+    {5,5,5,5,5,3,3,2,1},   // L18 (the Wish circle)
+    {5,5,5,5,5,3,3,3,1},   // L19
+    {5,5,5,5,5,4,3,3,2},   // L20 (last printed row)
+    {5,5,5,5,5,4,3,3,2},   // L21 held
+    {5,5,5,5,5,4,3,3,2},   // L22 held
+    {5,5,5,5,5,4,3,3,2},   // L23 held
+    {5,5,5,5,5,4,3,3,2},   // L24 held
+    {5,5,5,5,5,4,3,3,2},   // L25 held
+    {5,5,5,5,5,4,3,3,2},   // L26 held
+    {5,5,5,5,5,4,3,3,2},   // L27 held
+    {5,5,5,5,5,4,3,3,2},   // L28 held
+    {5,5,5,5,5,4,3,3,2},   // L29 held (beyond the print, final row repeats)
 };
 static const int kClericSlots[kLevels][kSlots] = {
-    {1,0,0,0,0,0},{2,0,0,0,0,0},{2,1,0,0,0,0},{3,2,0,0,0,0},
-    {3,3,1,0,0,0},{4,3,2,0,0,0},{5,3,2,1,0,0},{5,4,3,2,0,0},
-    {5,4,4,2,1,0},{5,5,4,3,2,0},{5,5,5,3,2,1},{5,5,5,4,3,2},
+    {1,0,0,0,0,0,0,0,0},   // L1 (unchanged - matches the print)
+    {2,0,0,0,0,0,0,0,0},   // L2
+    {2,1,0,0,0,0,0,0,0},   // L3
+    {3,2,0,0,0,0,0,0,0},   // L4
+    {3,3,1,0,0,0,0,0,0},   // L5
+    {3,3,2,0,0,0,0,0,0},   // L6 - corrected R130 (notes said 4,3,2)
+    {3,3,2,1,0,0,0,0,0},   // L7 - corrected R130 (notes said 5,3,2,1)
+    {3,3,3,2,0,0,0,0,0},   // L8 - corrected R130 (notes said 5,4,3,2)
+    {4,4,3,2,1,0,0,0,0},   // L9 - corrected R130 (notes said 5,4,4,2,1)
+    {4,4,3,3,2,0,0,0,0},   // L10 - corrected R130 (notes said 5,5,4,3,2)
+    {5,4,4,3,2,1,0,0,0},   // L11 - corrected R130 (notes said 5,5,5,3,2,1); the printed * (Wis 17) on the 6th is not modeled
+    {6,5,5,3,3,2,0,0,0},   // L12 - corrected R130 (notes said 5,5,5,4,3,2)
+    {6,6,6,4,2,2,0,0,0},   // L13 - the printed 5th-level dip (2)
+    {6,6,6,5,3,2,0,0,0},   // L14
+    {7,7,7,5,4,2,0,0,0},   // L15
+    {7,7,7,6,5,3,1,0,0},   // L16 - the printed ** (Wis 18) on the 7th; the level gate puts 7th at 17
+    {8,8,8,6,5,3,1,0,0},   // L17
+    {8,8,8,7,6,4,1,0,0},   // L18
+    {9,9,9,7,6,4,2,0,0},   // L19
+    {9,9,9,8,7,5,2,0,0},   // L20
+    {9,9,9,9,8,6,2,0,0},   // L21
+    {9,9,9,9,9,6,3,0,0},   // L22
+    {9,9,9,9,9,7,3,0,0},   // L23
+    {9,9,9,9,9,8,3,0,0},   // L24
+    {9,9,9,9,9,8,4,0,0},   // L25
+    {9,9,9,9,9,9,4,0,0},   // L26
+    {9,9,9,9,9,9,5,0,0},   // L27
+    {9,9,9,9,9,9,6,0,0},   // L28
+    {9,9,9,9,9,9,7,0,0},   // L29 (last printed row)
 };
 
 int spellSlots(SpellClass sc, int classLevel, int spellLevel) {
@@ -179,23 +240,34 @@ int magicalAgingYears(SpellId id) {
 
 int maxSpellLevelForInt(uint8_t int_) {
     // PHB p.10 minimum INT by spell level: L1-2: 9, L3: 11, L4: 14,
-    // L5: 15, L6: 16+ ... encoded as a lookup
+    // L5: 15, L6: 16+ ... encoded as a lookup. R130 extends past
+    // 6th by the file's convention: 17 opens the 7th circle and
+    // 18 the 8th and 9th (the PHB's own "only the highest
+    // intelligence is able to comprehend the mighty magics
+    // contained in 9th level spells" note; a convention
+    // extension riding the standing verification debt)
     if (int_ < 9)  return 0;
     if (int_ < 11) return 2;
     if (int_ < 14) return 3;
     if (int_ < 15) return 4;
     if (int_ < 16) return 5;
-    return 6;
+    if (int_ < 17) return 6;
+    if (int_ < 18) return 7;
+    return 9;
 }
 
 int maxSpellLevelForClericLevel(int classLevel) {
+    // R130: 7th at 17 (the printed ** footnote puts a Wis-18
+    // cleric's first 7th at 16 - wisdom is not modeled; the
+    // level-only gate is the documented engine limit)
     if (classLevel < 1)  return 0;
     if (classLevel < 3)  return 1;
     if (classLevel < 5)  return 2;
     if (classLevel < 7)  return 3;
     if (classLevel < 9)  return 4;
     if (classLevel < 11) return 5;
-    return 6;
+    if (classLevel < 17) return 6;
+    return 7;
 }
 
 } // namespace spells
