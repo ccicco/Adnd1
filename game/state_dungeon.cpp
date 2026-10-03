@@ -68,6 +68,35 @@ int AppState::countOccupied() const{
 
 // ---- populateRooms ----
 void AppState::populateRooms(){
+        // R142: the sample dungeon - the DMG's own keyed
+        // delve (pp.94-96). The book keys its rooms
+        // exactly, so the generated dressing (dart traps,
+        // Appendix H curiosities, random lairs) stands down
+        // for the whole delve; the entry chamber lairs the
+        // book's large spider (the nine young of 1 hp are
+        // flavor - one adult is the convention, the book
+        // gives no fight mechanics for the brood).
+        if (seed == dm::sampledungeon::kSampleSeed) {
+            for (auto& room : occupancy.rooms) {
+                room.monsterKey.clear();
+                room.count = 0;
+                room.looted = false;
+                room.trap = 0;
+                room.trapKind = -1;
+                room.trickFeature = -1;
+                room.trickAttribute = -1;
+                room.trickDone = false;
+                room.flavorSeen = false;
+                room.parleyed = false;
+                room.headsLo = room.headsHi = 0;
+                room.ageLo = room.ageHi = 0;
+            }
+            if (!occupancy.rooms.empty()) {
+                occupancy.rooms[0].monsterKey = "large_spider";
+                occupancy.rooms[0].count = 1;
+            }
+            return;
+        }
         // R52: lairs roll from the DMG Appendix C tables -
         // the Determination Matrix for this depth, then the
         // Monster Level Table row (count, hydra heads, dragon
@@ -2170,6 +2199,69 @@ void AppState::awardVictory(){
 
         if (combatRoomIndex >= 0 && !mmLair) {
             RoomOccupant& room = occupancy.rooms[combatRoomIndex];
+            // R142: the sample dungeon - the book's own
+            // hoards ride the keyed rooms; the generated
+            // treasure roll stands down for them (the take
+            // earns no gold xp - a museum piece, not a
+            // guarded hoard; documented convention)
+            if (seed == dm::sampledungeon::kSampleSeed &&
+                combatRoomIndex < 3) {
+                if (combatRoomIndex == 0 && !room.looted) {
+                    // the goblin skull: 19 sp folded at 10:1
+                    // (2 gp, rounded) plus a 50 gp garnet
+                    int take = 52;
+                    party.gold += take;
+                    party.delveGold += take;
+                    log.add("In the goblin skull: 19 silver "
+                            "pieces and a garnet - 52 gp "
+                            "all told.");
+                    // a quarter of the ten rotting sacks
+                    // hide yellow mold (the book: save vs
+                    // poison or die)
+                    if ((int)rng.below(100) < 25) {
+                        log.add("One of the rotting sacks "
+                                "puffs YELLOW MOLD!");
+                        for (auto& c : party.members) {
+                            if (c.hp <= 0) continue;
+                            int target = rules::saveTarget(
+                                c.classIndex, c.level,
+                                rules::SAVE_DEATH_POISON);
+                            if (rules::attemptSave(
+                                    dice, target, 0)) {
+                                log.add(c.name + " breathes "
+                                        "shallow - safe.");
+                            } else {
+                                c.hp = 0;
+                                log.add(c.name + " inhales "
+                                        "the spores and "
+                                        "dies.");
+                            }
+                        }
+                        if (!party.alive())
+                            log.add("GAME OVER - press N to "
+                                    "roll a new party.");
+                    }
+                } else if (combatRoomIndex == 1 &&
+                           !room.looted) {
+                    log.add("The ivory tube holds a vellum "
+                            "map, water-ruined - only the "
+                            "first few chambers stay "
+                            "legible. The abbot's key fits "
+                            "nothing here: the crypts it "
+                            "opened ride a future round.");
+                } else if (combatRoomIndex == 2 &&
+                           !room.looted) {
+                    log.add("Seven stone knobs over empty "
+                            "socket holes - the seventh "
+                            "opens the south crypt door, "
+                            "but the book keys no crypt: "
+                            "the door stays shut (a future "
+                            "round).");
+                }
+                room.monsterKey.clear();
+                room.count = 0;
+                room.looted = true;
+            }
             if (!room.monsterKey.empty()) {
                 Treasure t = rollTreasure(combatRoomIndex);
                 if (t.gold > 0) {

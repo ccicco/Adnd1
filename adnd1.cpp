@@ -1623,6 +1623,16 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.engageTrick();
                         break;
 
+                    // R142: the sample dungeon - the DMG's
+                    // own keyed delve (pp.94-96), summoned
+                    // whole; any delve-N or stair walk
+                    // returns to the generated dungeon
+                    case 'M':
+                    case 'm':
+                        g_app.newDungeon(
+                            dm::sampledungeon::kSampleSeed);
+                        break;
+
                     case VK_ESCAPE:
                         PostQuitMessage(0);
                         return 0;

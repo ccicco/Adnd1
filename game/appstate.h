@@ -232,6 +232,7 @@
 #include "../dm/encounters.h"   // R52: Appendix C tables
 #include "../dm/treasure.h"    // R71: MM treasure types
 #include "../dm/appendixgh.h"  // R125: pp.216-217 trap/trick lists
+#include "../dm/sampledungeon.h"  // R142: pp.94-96 the DMG sample dungeon
 #include "../ai/actor.h"
 #include "../monsters/MonsterRegistry.h"
 #include "../monsters/MonsterXp.h"

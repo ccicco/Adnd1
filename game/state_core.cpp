@@ -3,7 +3,14 @@
 // ---- newDungeon ----
 void AppState::newDungeon(uint64_t s){
         seed = s;
-        dungeon = dm::generateDungeon(s);
+        // R142: the sample dungeon - the DMG's own keyed
+        // delve (pp.94-96, the MONASTERY CELLARS). Any
+        // other seed walks the generated dungeon as before.
+        if (s == dm::sampledungeon::kSampleSeed) {
+            dungeon = dm::sampledungeon::buildSampleDungeon();
+        } else {
+            dungeon = dm::generateDungeon(s);
+        }
         map = dungeon.map;
         occupancy.init(dungeon);
         // R24: no formDefault - the roster comes from creation
@@ -27,6 +34,13 @@ void AppState::newDungeon(uint64_t s){
                  dungeonLevel, (int)dungeon.rooms.size(),
                  countOccupied());
         log.add(buf);
+        // R142: name the delve when it is the book's own
+        if (seed == dm::sampledungeon::kSampleSeed) {
+            log.add("The Monastery Cellars - the DMG's own "
+                    "sample dungeon (pp.94-96), keyed, not "
+                    "generated. The M key walks you back "
+                    "out.");
+        }
     }
 
 // ---- beginDelve ----

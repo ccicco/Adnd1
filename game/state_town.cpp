@@ -917,6 +917,15 @@ void AppState::describeRoom(int roomIndex){
         RoomOccupant& room = occupancy.rooms[roomIndex];
         if (room.flavorSeen) return;
         room.flavorSeen = true;
+        // R142: the sample dungeon - the keyed rooms speak
+        // the book's own text (pure data in
+        // dm/sampledungeon.h), one first sight each
+        if (seed == dm::sampledungeon::kSampleSeed &&
+            roomIndex < 3) {
+            log.add(dm::sampledungeon::sampleRoomText(
+                roomIndex));
+            return;
+        }
         // R128: the special room - an Appendix H curiosity
         // commands the chamber (rolled at populate for an
         // unoccupied, untrapped room). The mechanical slice

@@ -451,7 +451,21 @@ void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return
         // R52: the real DMG Appendix C roll - Determination
         // Matrix, level table, subtables (Human/Dragon/etc.).
         // An empty key is NO ENCOUNTER (or an R53 re-roll row).
-        dm::DungeonEncounter e = rollDmEncounter();
+        // R142: the sample dungeon - the book's own wandering
+        // table (p.96): a d4 pick from the monastery halls
+        // column, count rolled inside the printed range. The
+        // crypt column stays data until the crypts exist.
+        dm::DungeonEncounter e;
+        if (seed == dm::sampledungeon::kSampleSeed) {
+            dm::sampledungeon::SampleWanderingRow w =
+                dm::sampledungeon::sampleWandering(
+                    false, 1 + (int)rng.below(4));
+            e.key = w.key;
+            e.count = w.lo + (int)rng.below(
+                (uint32_t)(w.hi - w.lo + 1));
+        } else {
+            e = rollDmEncounter();
+        }
         if (e.isParty) {
             // R53: a Character Subtable party (DMG p.176)
             std::vector<ai::Actor> foes = buildFoesFromParty(e.party);

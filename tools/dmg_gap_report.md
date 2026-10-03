@@ -750,6 +750,26 @@ Categories:
       cap, and longest-dimension rule, and the
       long-band-in-play scenario. Pinned by the R141
       engagement geometry audit; census 59.
+- [x] **The sample dungeon (DMG pp.94-96)** - CLOSED R142:
+      the MONASTERY CELLARS & SECRET CRYPTS, the book's own
+      teaching delve, walk as pure data
+      (dm/sampledungeon.h): the three keyed rooms - the 30
+      foot square entry chamber (exactly 3x3 tiles at 10
+      feet; the large spider lairs per the text, and the
+      goblin skull holds 19 sp and a 50 gp garnet, with
+      the book's 25 percent yellow-mold sack: save vs
+      poison or die), the water room (the stream, the
+      ivory tube with its water-ruined vellum map, the
+      abbot's curious key), and the ceremonial dome (the 9
+      foot platform, the seven stone knobs over empty
+      socket holes) - plus the book's two d4 wandering
+      tables (the halls column wired to the wander roll;
+      the crypt column is data for the future crypts, as
+      are the crypt-cleric row and the crypts behind the
+      seventh knob). The M key in the delve summons the
+      keyed map at kSampleSeed; every other seed walks the
+      generated dungeon exactly as before. Pinned by the
+      R142 sample dungeon audit; census 60.
 
 ## Out of scope by design
 
