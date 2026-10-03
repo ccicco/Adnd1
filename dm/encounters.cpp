@@ -1336,6 +1336,21 @@ std::vector<std::string> waterEncounterKeys(
 // 2nd "Werebear" row -> wereboar; Undead subtable 2nd "Ghost" row
 // -> ghast; Men subtable marsh pilgrim 36-30 -> 36-50 and tribesman
 // 31-00 -> 51-00.
+//
+// R126: the five climates the 1eonline.info Appendix C
+// compilation carries (Arctic, Sub-Arctic, both Temperate,
+// Tropical) are line-diffed band-for-band against it - clean
+// modulo the documented folds. Two more printed-gap
+// resolutions are now documented in-row (the giant-eagle
+// pattern): temperate wild scrub Humanoid 36-32 -> 26-32 and
+// tropical rough giant scorpion 84-84 -> 84-85. The
+// compilation omits the Faerie, Pleistocene and Age of
+// Dinosaurs tables - they ride the book-verify debt. Its
+// variant readings (tropical mountains dervish 29-30 apart
+// from bandit 23-28; marsh Men nomad/tribesman where the
+// reprint resolves pilgrim/tribesman) stay with the reprint:
+// the documented folds are pinned. Pinned by the R126
+// battery audit.
 
 namespace {
 
@@ -1550,7 +1565,7 @@ static const OutdoorRow kOutTemperateWild[] = {
   {30, 25, 25, 25, 19, 39, -1, -1}},
 {"SUB_HUMANOID",
   {31, 26, 26, 26, 20, 40, 33, 17},
-  {33, 32, 30, 30, 28, 50, 40, 30}},
+  {33, 32, 30, 30, 28, 50, 40, 30}},   // S 36-32 OCR -> 26-32 (Jackal 33-34 follows, covers the printed gap, documented),
 {"jackal",
   {34, 33, -1, -1, -1, -1, -1, -1},
   {38, 34, -1, -1, -1, -1, -1, -1}},   // 10% jackalwere (book fn **),
@@ -2175,7 +2190,7 @@ static const OutdoorRow kOutTropical[] = {
   {85, 84, -1, 83, -1, 85, 70, -1}},
 {"giant_scorpion",
   {86, 85, 61, 84, 84, -1, -1, -1},
-  {90, 86, 64, 85, 89, -1, -1, -1}},
+  {90, 86, 64, 85, 89, -1, -1, -1}},   // R 84-84 OCR -> 84-85 to cover the printed gap at 85 (poisonous snake 86-88 follows, documented),
 {"amphisbaena_snake",
   {91, -1, -1, -1, 90, -1, -1, -1},
   {92, -1, -1, -1, 91, -1, -1, -1}},
@@ -2673,6 +2688,87 @@ std::vector<std::string> outdoorEncounterKeys(
     size_t n = 0;
     const OutdoorRow* t = outTable(clime, n);
     if (t) pushOutKeys(out, reg, t, n, (int)terrain);
+    return out;
+}
+
+namespace {
+
+// R126: the subtable matrix behind a SUB_* pseudo-key (see
+// encounters.h; the tropical Sphinx Subtable is single-
+// column and never reaches here - outdoorSubBands handles
+// it before the lookup).
+const OutdoorRow* outSub(const std::string& subKey, size_t& n) {
+    if      (subKey == "SUB_DEMIHUMAN")   { n = sizeof kOutDemiHuman   / sizeof kOutDemiHuman[0];   return kOutDemiHuman; }
+    else if (subKey == "SUB_DRAGON")      { n = sizeof kOutDragon      / sizeof kOutDragon[0];      return kOutDragon; }
+    else if (subKey == "SUB_FROG")        { n = sizeof kOutFrog        / sizeof kOutFrog[0];        return kOutFrog; }
+    else if (subKey == "SUB_GIANT")       { n = sizeof kOutGiant       / sizeof kOutGiant[0];       return kOutGiant; }
+    else if (subKey == "SUB_HUMANOID")    { n = sizeof kOutHumanoid    / sizeof kOutHumanoid[0];    return kOutHumanoid; }
+    else if (subKey == "SUB_LYCANTHROPE") { n = sizeof kOutLycanthrope / sizeof kOutLycanthrope[0]; return kOutLycanthrope; }
+    else if (subKey == "SUB_MEN")         { n = sizeof kOutMen         / sizeof kOutMen[0];         return kOutMen; }
+    else if (subKey == "SUB_SNAKE")       { n = sizeof kOutSnake       / sizeof kOutSnake[0];       return kOutSnake; }
+    else if (subKey == "SUB_SPHINX")      { n = sizeof kOutSphinx      / sizeof kOutSphinx[0];      return kOutSphinx; }
+    else if (subKey == "SUB_SPIDER")      { n = sizeof kOutSpider       / sizeof kOutSpider[0];      return kOutSpider; }
+    else if (subKey == "SUB_UNDEAD")      { n = sizeof kOutUndead      / sizeof kOutUndead[0];      return kOutUndead; }
+    n = 0; return nullptr;
+}
+
+// R126: band order comparator (lo ascending)
+static bool outBandLess(const OutdoorBand& x,
+                        const OutdoorBand& y) {
+    return x.lo < y.lo;
+}
+
+// R126: collect a column's bands, low-ascending
+static void pushBands(std::vector<OutdoorBand>& out,
+                      const OutdoorRow* t, size_t n, int ti) {
+    for (size_t i = 0; i < n; ++i) {
+        if (t[i].lo[ti] < 0) continue;
+        OutdoorBand b;
+        b.key = t[i].key;
+        b.lo  = t[i].lo[ti];
+        b.hi  = t[i].hi[ti];
+        out.push_back(b);
+    }
+    std::stable_sort(out.begin(), out.end(), outBandLess);
+}
+
+} // namespace
+
+// R126: the printed band edges behind the tables - see
+// encounters.h.
+std::vector<OutdoorBand> outdoorBands(
+        OutdoorClime clime, OutdoorTerrain terrain) {
+    std::vector<OutdoorBand> out;
+    size_t n = 0;
+    const OutdoorRow* t = outTable(clime, n);
+    if (t) pushBands(out, t, n, (int)terrain);
+    return out;
+}
+
+std::vector<OutdoorBand> outdoorSubBands(
+        const std::string& subKey, OutdoorTerrain terrain) {
+    std::vector<OutdoorBand> out;
+    if (subKey == "SUB_SPHINX_T") {
+        // tropical footnote: single-column Sphinx Subtable
+        // (p.189) - 01-10/11-40/41-70/71-00
+        static const char* kSphinxT[4] = {
+            "androsphinx", "criosphinx",
+            "gynosphinx", "hieracosphinx"
+        };
+        static const int kLoT[4] = { 1, 11, 41, 71 };
+        static const int kHiT[4] = { 10, 40, 70, 100 };
+        for (int i = 0; i < 4; ++i) {
+            OutdoorBand b;
+            b.key = kSphinxT[i];
+            b.lo  = kLoT[i];
+            b.hi  = kHiT[i];
+            out.push_back(b);
+        }
+        return out;
+    }
+    size_t n = 0;
+    const OutdoorRow* sub = outSub(subKey, n);
+    if (sub) pushBands(out, sub, n, (int)terrain);
     return out;
 }
 

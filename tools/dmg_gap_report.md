@@ -463,9 +463,25 @@ Categories:
       the 1eonline.info compilation of the pages and ride
       the book-verify debt with the printed table as the
       winner.
-- [ ] **Wilderness encounter tables
-      (pp.182-189)** - the appendix C-style
-      tables for outdoor play.
+- [x] **Wilderness encounter tables
+      (pp.182-189)** - CLOSED R126: the R63 climate
+      matrices (Arctic, Sub-Arctic, Temperate Wild,
+      Temperate Inhabited, Faerie, Pleistocene, Age of
+      Dinosaurs, Tropical) and the eleven terrain-column
+      subtables (plus the tropical single-column Sphinx
+      footnote) are line-diffed against the 1eonline.info
+      Appendix C compilation: the five climates it carries
+      match band-for-band modulo the documented OCR folds,
+      and the two undocumented printed-gap resolutions
+      (temperate wild scrub Humanoid 36-32 -> 26-32,
+      tropical rough giant scorpion 84-84 -> 84-85) are now
+      documented in-row. The compilation omits the Faerie,
+      Pleistocene and Age of Dinosaurs tables - those three
+      ride the book-verify debt with the printed table as
+      the winner, as do the printing-variant readings
+      (tropical mountains dervish 29-30; marsh Men
+      nomad/tribesman). Pinned by the R126 battery audit;
+      census 44.
 - [ ] **Waterborne/aerial encounter tables
       (p.190)** - alongside the crew economy.
 

@@ -186,6 +186,25 @@ std::vector<std::string> outdoorEncounterKeys(
     const monsters::MonsterRegistry& reg,
     OutdoorClime clime, OutdoorTerrain terrain);
 
+// R126: the printed band edges behind outdoorEncounterKeys -
+// the regtest line-diff audit walks them (the R122 shape
+// applied to the R63 outdoor tables). One OutdoorBand per
+// printed band, low-ascending; a climate/terrain column the
+// climate does not serve comes back empty (the Arctic serves
+// Plain/Rough/Mountains only, etc.). outdoorSubBands takes a
+// SUB_* pseudo-key and its terrain column; the tropical
+// Sphinx Subtable is the p.189 single-column footnote and
+// reports under SUB_SPHINX_T for any terrain.
+struct OutdoorBand {
+    std::string key;
+    int lo;
+    int hi;
+};
+std::vector<OutdoorBand> outdoorBands(
+    OutdoorClime clime, OutdoorTerrain terrain);
+std::vector<OutdoorBand> outdoorSubBands(
+    const std::string& subKey, OutdoorTerrain terrain);
+
 
 // R64: DMG Appendix C CITY/TOWN ENCOUNTER MATRIX (Premium
 // reprint p.190-192; OCR-verified against the uploaded DMG).
