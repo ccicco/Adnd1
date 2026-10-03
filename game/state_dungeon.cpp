@@ -276,7 +276,11 @@ void AppState::applyTrick(int roomIndex){
         // R134: the deep slice - wish (a boon table:
         // heal all, restore one, or gold), gravity
         // greater (1d6 crush, everyone, no save),
-        // polymorph (save or 3d4 reshape).
+        // polymorph (save or 3d4 reshape). R135: the
+        // room-geometry slice - one-way (the way
+        // seals), pivots/spinning (the room turns),
+        // shifting (the walls flex), sliding (the
+        // floor tilts).
         if (roomIndex < 0 ||
             roomIndex >= (int)occupancy.rooms.size())
             return;
@@ -636,6 +640,104 @@ void AppState::applyTrick(int roomIndex){
                 log.add("GAME OVER - press N to roll a new "
                         "party.");
             }
+        } else if (a == dm::appendixh::TA_ONE_WAY) {
+            // R135: the way back seals - the company is
+            // committed to this room (a convention; the
+            // print gives no mechanics)
+            const dm::GeneratedRoom& gr =
+                dungeon.rooms[room.roomIndex];
+            party.x = gr.x + gr.w / 2;
+            party.y = gr.y + gr.h / 2;
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s thuds - the way back seals!",
+                     name.c_str());
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_PIVOTS) {
+            // R135: the room turns a quarter - the
+            // company's position rotates 90 degrees about
+            // the room center, clamped inside (the
+            // print gives no mechanics; a convention)
+            const dm::GeneratedRoom& gr =
+                dungeon.rooms[room.roomIndex];
+            int cx = gr.x + gr.w / 2;
+            int cy = gr.y + gr.h / 2;
+            int nx = cx - (party.y - cy);
+            int ny = cy + (party.x - cx);
+            if (nx < gr.x) nx = gr.x;
+            if (nx > gr.x + gr.w - 1) nx = gr.x + gr.w - 1;
+            if (ny < gr.y) ny = gr.y;
+            if (ny > gr.y + gr.h - 1) ny = gr.y + gr.h - 1;
+            party.x = nx;
+            party.y = ny;
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s pivots - the walls swing!",
+                     name.c_str());
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_SPINNING) {
+            // R135: a full half-turn - the company's
+            // position rotates 180 degrees about the
+            // room center, clamped inside (a convention)
+            const dm::GeneratedRoom& gr =
+                dungeon.rooms[room.roomIndex];
+            int cx = gr.x + gr.w / 2;
+            int cy = gr.y + gr.h / 2;
+            int nx = 2 * cx - party.x;
+            int ny = 2 * cy - party.y;
+            if (nx < gr.x) nx = gr.x;
+            if (nx > gr.x + gr.w - 1) nx = gr.x + gr.w - 1;
+            if (ny < gr.y) ny = gr.y;
+            if (ny > gr.y + gr.h - 1) ny = gr.y + gr.h - 1;
+            party.x = nx;
+            party.y = ny;
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s spins - the room whirls!",
+                     name.c_str());
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_SHIFTING) {
+            // R135: the walls flex - the company's
+            // position mirrors across the room's center
+            // line (a convention)
+            const dm::GeneratedRoom& gr =
+                dungeon.rooms[room.roomIndex];
+            int cx = gr.x + gr.w / 2;
+            party.x = 2 * cx - party.x;
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s shifts - the walls flex!",
+                     name.c_str());
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_SLIDING) {
+            // R135: the floor tilts - the company is
+            // shoved to a random edge tile of the room
+            // (a convention; the print gives no mechanics)
+            const dm::GeneratedRoom& gr =
+                dungeon.rooms[room.roomIndex];
+            if (gr.w <= 0 || gr.h <= 0) return;
+            int side = (int)rng.below((uint32_t)4);
+            int nx = 0, ny = 0;
+            if (side == 0) {
+                nx = gr.x;
+                ny = gr.y + (int)rng.below((uint32_t)gr.h);
+            } else if (side == 1) {
+                nx = gr.x + gr.w - 1;
+                ny = gr.y + (int)rng.below((uint32_t)gr.h);
+            } else if (side == 2) {
+                ny = gr.y;
+                nx = gr.x + (int)rng.below((uint32_t)gr.w);
+            } else {
+                ny = gr.y + gr.h - 1;
+                nx = gr.x + (int)rng.below((uint32_t)gr.w);
+            }
+            party.x = nx;
+            party.y = ny;
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s tilts - the company slides!",
+                     name.c_str());
+            log.add(buf);
         } else if (a == dm::appendixh::TA_SHOOTS ||
                    a == dm::appendixh::TA_POISON) {
             int victims[PARTY_MAX];

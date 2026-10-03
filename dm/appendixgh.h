@@ -265,7 +265,15 @@ inline std::string trickSummary(int f, int a) {
 // living member, no save), polymorph (a random living
 // member saves vs petrification/polymorph or takes 3d4
 // reshaping damage). All three are conventions - the
-// print gives no figures. The remaining 46 stay
+// print gives no figures. R135 wires the
+// room-geometry slice: one-way (the way back seals -
+// the company is committed to the room), pivots and
+// spinning (the room turns - the company's position
+// rotates about the room center, clamped inside),
+// shifting (the position mirrors across the center
+// line), sliding (the company is shoved to a random
+// room edge). All five are positional conventions -
+// the print gives no mechanics. The remaining 41 stay
 // dressing; their effects ride future rounds.
 inline bool trickIsMechanical(int a) {
     return a == TA_REL_COINS || a == TA_REL_GEMS ||
@@ -277,7 +285,10 @@ inline bool trickIsMechanical(int a) {
            a == TA_ATTACKS || a == TA_FRUIT ||
            a == TA_GREED || a == TA_TELEPORTS ||
            a == TA_COLLAPSING || a == TA_WISH ||
-           a == TA_GRAVITY_GREATER || a == TA_POLYMORPH;
+           a == TA_GRAVITY_GREATER || a == TA_POLYMORPH ||
+           a == TA_ONE_WAY || a == TA_PIVOTS ||
+           a == TA_SPINNING || a == TA_SHIFTING ||
+           a == TA_SLIDING;
 }
 
 }  // namespace appendixh

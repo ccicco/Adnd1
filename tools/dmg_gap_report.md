@@ -535,7 +535,8 @@ Categories:
       member with the trap shape (save vs death/poison or
       2d6). R132's second-effects slice wires six more
       (the R132 box), R133's five more (the R133 box),
-      R134's three deep (the R134 box). The other 46
+      R134's three deep (the R134 box), R135's five
+      geometry (the R135 box). The other 41
       attributes stay dressing - documented; their
       effects ride future rounds.
       Transient like trapKind: rooms re-populate on load.
@@ -594,8 +595,9 @@ Categories:
       10-60 gp from the purse (the print gives no
       figure - a rebuild convention, documented).
       The R133 slice wires five more (the R133 box),
-      R134's three deep waters (the R134 box). The
-      remaining 46 attributes stay dressing;
+      R134's three deep waters (the R134 box), R135's
+      five geometry (the R135 box). The
+      remaining 41 attributes stay dressing;
       their effects ride future rounds. Pinned by
       the R132 battery audit; census 50.
 - [x] **Appendix H third-effects slice (the R128
@@ -613,7 +615,8 @@ Categories:
       or takes 2d6. All five are rebuild
       conventions (the print gives no figures);
       documented. The R134 slice wires the three deep
-      waters (the R134 box). The remaining 46
+      waters (the R134 box), R135's five geometry
+      (the R135 box). The remaining 41
       attributes stay dressing; their effects ride
       future rounds.
       Pinned by the R133 battery audit; census 51.
@@ -631,6 +634,22 @@ Categories:
       remaining 46 attributes stay dressing; their
       effects ride future rounds. Pinned by the R134
       battery audit; census 52.
+- [x] **Appendix H room-geometry slice (the
+      positional five)** - CLOSED R135: the mechanical
+      set grows 19 -> 24. One-way: the way back seals
+      - the company is committed to the room's center.
+      Pivots: the room turns a quarter - the company's
+      position rotates 90 degrees about the room
+      center, clamped inside. Spinning: a full
+      half-turn - the position rotates 180 degrees.
+      Shifting: the walls flex - the position mirrors
+      across the room's center line. Sliding: the floor
+      tilts - the company is shoved to a random room
+      edge. All five are positional conventions (the
+      print gives no mechanics); documented. The
+      remaining 41 attributes stay dressing; their
+      effects ride future rounds. Pinned by the R135
+      battery audit; census 53.
 
 ## Out of scope by design
 
