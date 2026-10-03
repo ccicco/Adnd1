@@ -1615,6 +1615,14 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.loadGame();
                         break;
 
+                    // R137: the deliberate-engage hook - the
+                    // company chooses to spring the current
+                    // room's curiosity
+                    case 'X':
+                    case 'x':
+                        g_app.engageTrick();
+                        break;
+
                     case VK_ESCAPE:
                         PostQuitMessage(0);
                         return 0;

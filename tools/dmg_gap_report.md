@@ -671,6 +671,18 @@ Categories:
       attributes stay dressing; their effects ride
       future rounds. Pinned by the R136 battery audit;
       census 54.
+- [x] **Deliberate-engage hook (the standing debt)** -
+      CLOSED R137: the special-rooms layer no longer
+      springs a mechanical curiosity on first sight -
+      describeRoom announces the feature and prompts;
+      the company chooses. The X key (dungeon mode)
+      calls engageTrick: inside a trick room with an
+      unfired mechanical feature it fires (trickDone
+      set, applyTrick); elsewhere it logs guidance.
+      The prompt phrase is pure data
+      (trickEngagePrompt, dm/appendixgh.h) and the
+      battery pins it exact. Pinned by the R137 hook
+      audit; census 55.
 
 ## Out of scope by design
 

@@ -240,6 +240,15 @@ inline std::string trickSummary(int f, int a) {
            trickAttributeName(a) + ")";
 }
 
+// R137: the deliberate-engage hook - the prompt phrase
+// the dungeon logs when a mechanical curiosity is first
+// sighted (the sight alone no longer springs the
+// feature; the company chooses: X to engage, or move
+// on). Pure data - the battery pins the exact phrase.
+inline const char* trickEngagePrompt() {
+    return "Press X to engage the feature - or move on.";
+}
+
 // R128: the first-effects slice - the five attributes the
 // special-rooms layer wires to real mechanics (releases
 // coins/gems/magic item, shoots, poison; see

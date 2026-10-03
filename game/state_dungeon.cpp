@@ -256,6 +256,35 @@ void AppState::springTrap(int roomIndex){
         }
     }
 
+// ---- engageTrick ----
+// R137: the deliberate-engage hook - the company chooses
+// (the X key in the dungeon) to engage the current
+// room's curiosity; the first sight no longer springs
+// it (describeRoom only announces and prompts).
+void AppState::engageTrick(){
+        if (!party.alive()) return;
+        int roomIndex = roomAt(party.x, party.y);
+        if (roomIndex < 0) {
+            log.add("There is nothing here to engage - "
+                    "step inside a room first.");
+            return;
+        }
+        RoomOccupant& room = occupancy.rooms[roomIndex];
+        if (room.trickFeature < 0 ||
+            !room.monsterKey.empty() || room.trickDone) {
+            log.add("Nothing here begs engaging.");
+            return;
+        }
+        if (!dm::appendixh::trickIsMechanical(
+                room.trickAttribute)) {
+            log.add("The feature only mutters - it "
+                    "ignores the company.");
+            return;
+        }
+        room.trickDone = true;
+        applyTrick(roomIndex);
+}
+
 // ---- applyTrick ----
 void AppState::applyTrick(int roomIndex){
         // R128: the special room's mechanical effect - the

@@ -997,6 +997,12 @@ struct AppState {
     // item, shoots, poison - the trap-strike shape).
     void applyTrick(int roomIndex);
 
+    // R137: the deliberate-engage hook - the company
+    // chooses to engage the current room's trick (the
+    // X key in the dungeon); the first sight no longer
+    // springs the feature.
+    void engageTrick();
+
     // R45: place secret doors - wall tiles that border floor
     // (3 per level). Found doors become ordinary doors on
     // the map; hidden ones render as plain wall.

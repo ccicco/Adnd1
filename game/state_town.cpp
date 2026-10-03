@@ -920,7 +920,9 @@ void AppState::describeRoom(int roomIndex){
         // R128: the special room - an Appendix H curiosity
         // commands the chamber (rolled at populate for an
         // unoccupied, untrapped room). The mechanical slice
-        // pays out once per populate (trickDone).
+        // pays out once per populate (trickDone). R137: the
+        // payout now waits for a deliberate engage (the X
+        // key) - the first sight no longer springs it.
         if (room.trickFeature >= 0 && room.monsterKey.empty()) {
             log.add("Something odd commands the room: " +
                     dm::appendixh::trickSummary(
@@ -928,8 +930,7 @@ void AppState::describeRoom(int roomIndex){
                         room.trickAttribute) + ".");
             if (dm::appendixh::trickIsMechanical(
                     room.trickAttribute) && !room.trickDone) {
-                room.trickDone = true;
-                applyTrick(roomIndex);
+                log.add(dm::appendixh::trickEngagePrompt());
             }
             return;
         }
