@@ -534,9 +534,10 @@ Categories:
       shape), and shoots / poison strike a random living
       member with the trap shape (save vs death/poison or
       2d6). R132's second-effects slice wires six more
-      (the R132 box), R133's five more (the R133 box).
-      The other 49 attributes stay dressing - documented;
-      their effects ride future rounds.
+      (the R132 box), R133's five more (the R133 box),
+      R134's three deep (the R134 box). The other 46
+      attributes stay dressing - documented; their
+      effects ride future rounds.
       Transient like trapKind: rooms re-populate on load.
       Pinned by the R128 battery audit; census 46.
 - [x] **High-level spell slot tables (PHB
@@ -592,8 +593,9 @@ Categories:
       worthless - nothing gained. Takes/steals:
       10-60 gp from the purse (the print gives no
       figure - a rebuild convention, documented).
-      The R133 slice wires five more (the R133 box).
-      The remaining 49 attributes stay dressing;
+      The R133 slice wires five more (the R133 box),
+      R134's three deep waters (the R134 box). The
+      remaining 46 attributes stay dressing;
       their effects ride future rounds. Pinned by
       the R132 battery audit; census 50.
 - [x] **Appendix H third-effects slice (the R128
@@ -610,9 +612,25 @@ Categories:
       - every living member saves vs death/poison
       or takes 2d6. All five are rebuild
       conventions (the print gives no figures);
-      documented. The remaining 49 attributes stay
-      dressing; their effects ride future rounds.
+      documented. The R134 slice wires the three deep
+      waters (the R134 box). The remaining 46
+      attributes stay dressing; their effects ride
+      future rounds.
       Pinned by the R133 battery audit; census 51.
+- [x] **Appendix H deep-effects slice (the deep
+      waters)** - CLOSED R134: the mechanical set
+      grows 16 -> 19. Wish: a boon table roll - the
+      whole company healed, or a random living member
+      restored, or a gold shower (1d6 x 100 gp).
+      Gravity greater: the pull doubles - every living
+      member takes 1d6 crushing, no save. Polymorph:
+      a random living member saves vs
+      petrification/polymorph or takes 3d4 reshaping
+      damage. All three are rebuild conventions (the
+      print gives no figures); documented. The
+      remaining 46 attributes stay dressing; their
+      effects ride future rounds. Pinned by the R134
+      battery audit; census 52.
 
 ## Out of scope by design
 

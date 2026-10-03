@@ -257,8 +257,16 @@ inline std::string trickSummary(int f, int a) {
 // relocation to a random room center, the print's AREA
 // example), collapsing (the ceiling comes down: every
 // living member saves vs death/poison or 2d6 -
-// convention). The remaining 49 stay dressing; their
-// effects ride future rounds.
+// convention). R134 wires the deep-effects slice:
+// wish (a boon table - heal the company, restore a
+// random member, or a gold shower; the print gives no
+// table, so the rebuild keeps it benevolent), gravity
+// greater (the pull doubles - 1d6 crushing on every
+// living member, no save), polymorph (a random living
+// member saves vs petrification/polymorph or takes 3d4
+// reshaping damage). All three are conventions - the
+// print gives no figures. The remaining 46 stay
+// dressing; their effects ride future rounds.
 inline bool trickIsMechanical(int a) {
     return a == TA_REL_COINS || a == TA_REL_GEMS ||
            a == TA_REL_MAGIC_ITEM || a == TA_SHOOTS ||
@@ -268,7 +276,8 @@ inline bool trickIsMechanical(int a) {
            a == TA_REL_COUNTERFEIT || a == TA_TAKES ||
            a == TA_ATTACKS || a == TA_FRUIT ||
            a == TA_GREED || a == TA_TELEPORTS ||
-           a == TA_COLLAPSING;
+           a == TA_COLLAPSING || a == TA_WISH ||
+           a == TA_GRAVITY_GREATER || a == TA_POLYMORPH;
 }
 
 }  // namespace appendixh

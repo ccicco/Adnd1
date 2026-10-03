@@ -273,6 +273,10 @@ void AppState::applyTrick(int roomIndex){
         // 2d4+2, the potion shape), greed (10% of the
         // purse), teleports (intra-level, a random room
         // center), collapsing (save or 2d6, everyone).
+        // R134: the deep slice - wish (a boon table:
+        // heal all, restore one, or gold), gravity
+        // greater (1d6 crush, everyone, no save),
+        // polymorph (save or 3d4 reshape).
         if (roomIndex < 0 ||
             roomIndex >= (int)occupancy.rooms.size())
             return;
@@ -522,6 +526,112 @@ void AppState::applyTrick(int roomIndex){
                 }
                 log.add(b2);
             }
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
+        } else if (a == dm::appendixh::TA_WISH) {
+            // R134: the wish-granting echo - a boon table
+            // roll (the print gives no table; the rebuild
+            // keeps it benevolent)
+            int boon = (int)dice.roll(1, 3, 0);
+            char buf[192];
+            if (boon == 1) {
+                for (auto& c : party.members) {
+                    if (c.hp > 0) c.hp = c.maxHp;
+                }
+                snprintf(buf, sizeof buf,
+                         "The %s hums - the company's wounds "
+                         "close! A wish spent well.",
+                         name.c_str());
+            } else if (boon == 2) {
+                int vi = victimIndex();
+                if (vi >= 0) {
+                    party.members[vi].hp =
+                        party.members[vi].maxHp;
+                    snprintf(buf, sizeof buf,
+                             "The %s hums - %s is restored!",
+                             name.c_str(),
+                             party.members[vi].name.c_str());
+                } else {
+                    snprintf(buf, sizeof buf,
+                             "The %s hums - the echo fades.",
+                             name.c_str());
+                }
+            } else {
+                int gp = (int)dice.roll(1, 6, 0) * 100;
+                party.gold += gp;
+                snprintf(buf, sizeof buf,
+                         "The %s hums - a shower of %d gp!",
+                         name.c_str(), gp);
+            }
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_GRAVITY_GREATER) {
+            // R134: the pull doubles - every living member
+            // takes 1d6 crushing, no save (the print gives
+            // no figure; the convention)
+            char buf[192];
+            snprintf(buf, sizeof buf,
+                     "The %s drags - the weight doubles!",
+                     name.c_str());
+            log.add(buf);
+            for (auto& c : party.members) {
+                if (c.hp <= 0) continue;
+                int dmg = (int)dice.roll(1, 6, 0);
+                c.hp -= dmg;
+                char b2[160];
+                if (c.hp <= 0) {
+                    c.hp = 0;
+                    snprintf(b2, sizeof b2,
+                             "The crush fells %s (%d)!",
+                             c.name.c_str(), dmg);
+                } else {
+                    snprintf(b2, sizeof b2,
+                             "The crush bruises %s for %d.",
+                             c.name.c_str(), dmg);
+                }
+                log.add(b2);
+            }
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
+        } else if (a == dm::appendixh::TA_POLYMORPH) {
+            // R134: the reshaping radiance - a random living
+            // member saves vs petrification/polymorph or
+            // takes 3d4 reshaping damage (the print gives
+            // no figure; the convention)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level,
+                rules::SAVE_PETRIFY_POLY);
+            char buf[192];
+            if (rules::attemptSave(dice, target, 0)) {
+                snprintf(buf, sizeof buf,
+                         "The %s radiates - %s keeps their "
+                         "shape.",
+                         name.c_str(), c.name.c_str());
+            } else {
+                int dmg = (int)dice.roll(3, 4, 0);
+                c.hp -= dmg;
+                if (c.hp <= 0) {
+                    c.hp = 0;
+                    snprintf(buf, sizeof buf,
+                             "The %s reshapes %s - torn "
+                             "apart (%d)!",
+                             name.c_str(), c.name.c_str(),
+                             dmg);
+                } else {
+                    snprintf(buf, sizeof buf,
+                             "The %s reshapes %s for %d - "
+                             "they wobble back, changed.",
+                             name.c_str(), c.name.c_str(),
+                             dmg);
+                }
+            }
+            log.add(buf);
             if (!party.alive()) {
                 log.add("GAME OVER - press N to roll a new "
                         "party.");

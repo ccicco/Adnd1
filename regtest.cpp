@@ -2779,14 +2779,14 @@ int main() {
                 dm::appendixh::TRICK_FEATURE_COUNT - 1,
                 dm::appendixh::TRICK_ATTRIBUTE_COUNT - 1)
             != "Well (Wish fulfillment, reversal)") ++bad;
-        // the slices: exactly sixteen mechanical (R132
-        // grew the set 5 -> 11, R133 11 -> 16)
+        // the slices: exactly nineteen mechanical (R132
+        // 5 -> 11, R133 11 -> 16, R134 16 -> 19)
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 16) ++bad;
+            if (mech != 19) ++bad;
         }
         if (!dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_REL_COINS) ||
@@ -2892,6 +2892,38 @@ int main() {
         if (bad) return 1;
     }
 
+    // ---- R134: deep-effects slice audit ----
+    // The deep waters are wired: the R133 sixteen plus
+    // wish, gravity greater, and polymorph (all
+    // conventions - the print gives no figures; the
+    // wish stays benevolent: heal the company, restore
+    // a member, or a gold shower).
+    {
+        int bad = 0;
+        // exactly nineteen mechanical of 65
+        {
+            int mech = 0;
+            for (int a = 0;
+                 a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
+                if (dm::appendixh::trickIsMechanical(a)) ++mech;
+            if (mech != 19) ++bad;
+        }
+        // the R134 three are mechanical
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_WISH)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_GRAVITY_GREATER)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_POLYMORPH)) ++bad;
+        // the talk-flavor set stays dressing
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_TALKS_SMART)) ++bad;
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_SUGGESTS)) ++bad;
+        printf("R134 deep-effects slice audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+
     // ---- R133: third-effects slice audit ----
     // The Appendix H mechanical set grows to sixteen: the
     // R132 eleven plus attacks, fruit, greed, teleports,
@@ -2900,13 +2932,14 @@ int main() {
     // the print's intra-level AREA example).
     {
         int bad = 0;
-        // exactly sixteen mechanical of 65
+        // exactly nineteen mechanical of 65 (R134
+        // grew it)
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 16) ++bad;
+            if (mech != 19) ++bad;
         }
         // the R133 five are mechanical
         if (!dm::appendixh::trickIsMechanical(
@@ -2919,13 +2952,12 @@ int main() {
                 dm::appendixh::TA_TELEPORTS)) ++bad;
         if (!dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_COLLAPSING)) ++bad;
-        // the deep waters stay dressing (engine limits)
+        // the talk-flavor set stays dressing (R134 wired
+        // the deep waters: wish, gravity, polymorph)
         if (dm::appendixh::trickIsMechanical(
-                dm::appendixh::TA_WISH)) ++bad;
+                dm::appendixh::TA_TALKS_SMART)) ++bad;
         if (dm::appendixh::trickIsMechanical(
-                dm::appendixh::TA_GRAVITY_GREATER)) ++bad;
-        if (dm::appendixh::trickIsMechanical(
-                dm::appendixh::TA_POLYMORPH)) ++bad;
+                dm::appendixh::TA_SUGGESTS)) ++bad;
         printf("R133 third-effects slice audit: bad %d\n", bad);
         if (bad) return 1;
     }
@@ -2940,13 +2972,13 @@ int main() {
     // convention - the print gives no figure).
     {
         int bad = 0;
-        // exactly sixteen mechanical of 65 (R133 grew it)
+        // exactly nineteen mechanical of 65 (R134 grew it)
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 16) ++bad;
+            if (mech != 19) ++bad;
         }
         // the R132 six are mechanical
         if (!dm::appendixh::trickIsMechanical(
@@ -2961,13 +2993,14 @@ int main() {
                 dm::appendixh::TA_REL_COUNTERFEIT)) ++bad;
         if (!dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_TAKES)) ++bad;
-        // the deep waters stay dressing (engine limits)
-        if (dm::appendixh::trickIsMechanical(
-                dm::appendixh::TA_WISH)) ++bad;
-        if (dm::appendixh::trickIsMechanical(
-                dm::appendixh::TA_GRAVITY_GREATER)) ++bad;
+        // the flavor set stays dressing (R134 wired the
+        // deep waters: wish and gravity are mechanical)
         if (dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_TALKS_NONSENSE)) ++bad;
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_TALKS_POETRY)) ++bad;
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_POINTS)) ++bad;
         printf("R132 second-effects slice audit: bad %d\n", bad);
         if (bad) return 1;
     }
