@@ -533,8 +533,10 @@ Categories:
       releases magic item (the R44 unidentified-pickup
       shape), and shoots / poison strike a random living
       member with the trap shape (save vs death/poison or
-      2d6). The other 60 attributes stay dressing -
-      documented; their effects ride future rounds.
+      2d6). R132's second-effects slice wires six more
+      (the R132 box). The other 54 attributes stay
+      dressing - documented; their effects ride future
+      rounds.
       Transient like trapKind: rooms re-populate on load.
       Pinned by the R128 battery audit; census 46.
 - [x] **High-level spell slot tables (PHB
@@ -575,6 +577,24 @@ Categories:
       the printed tables still ride the
       verification debt. Pinned by the R131
       battery audit; census 49.
+- [x] **Appendix H second-effects slice (the R128
+      dressing debt, first six)** - CLOSED R132: the
+      mechanical set grows 5 -> 11. Ages: 10 years on
+      a random living member (the print's altar
+      example, via the R115 magical-aging shape).
+      Flesh to stone: save vs petrification or turned
+      to stone (the print's face example - save
+      versus magic or be transformed). Electrical
+      shock, metallic or magical: 5-50 hp on a
+      random living member, no save (the print's
+      pedestal example prints none). Releases
+      counterfeit: a shower of coins that crumbles
+      worthless - nothing gained. Takes/steals:
+      10-60 gp from the purse (the print gives no
+      figure - a rebuild convention, documented).
+      The remaining 54 attributes stay dressing;
+      their effects ride future rounds. Pinned by
+      the R132 battery audit; census 50.
 
 ## Out of scope by design
 

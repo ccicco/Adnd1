@@ -243,12 +243,21 @@ inline std::string trickSummary(int f, int a) {
 // R128: the first-effects slice - the five attributes the
 // special-rooms layer wires to real mechanics (releases
 // coins/gems/magic item, shoots, poison; see
-// game/state_dungeon.cpp, applyTrick). The remaining 60
-// stay dressing; their effects ride future rounds.
+// game/state_dungeon.cpp, applyTrick). R132 wires the
+// second-effects slice: ages (10 years, the altar example),
+// flesh to stone (save or petrified, the face example),
+// both electrical shocks (5-50 hp, the pedestal example),
+// releases counterfeit (a worthless shower), and
+// takes/steals (10-60 gp - the print gives no figure; a
+// rebuild convention). The remaining 54 stay dressing;
+// their effects ride future rounds.
 inline bool trickIsMechanical(int a) {
     return a == TA_REL_COINS || a == TA_REL_GEMS ||
            a == TA_REL_MAGIC_ITEM || a == TA_SHOOTS ||
-           a == TA_POISON;
+           a == TA_POISON ||
+           a == TA_AGES || a == TA_FLESH_TO_STONE ||
+           a == TA_SHOCK_METAL || a == TA_SHOCK_MAGIC ||
+           a == TA_REL_COUNTERFEIT || a == TA_TAKES;
 }
 
 }  // namespace appendixh

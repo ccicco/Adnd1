@@ -2779,13 +2779,14 @@ int main() {
                 dm::appendixh::TRICK_FEATURE_COUNT - 1,
                 dm::appendixh::TRICK_ATTRIBUTE_COUNT - 1)
             != "Well (Wish fulfillment, reversal)") ++bad;
-        // the first-effects slice: exactly five mechanical
+        // the two slices: exactly eleven mechanical (R132
+        // grew the set 5 -> 11; counterfeit flipped)
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 5) ++bad;
+            if (mech != 11) ++bad;
         }
         if (!dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_REL_COINS) ||
@@ -2797,8 +2798,9 @@ int main() {
                 dm::appendixh::TA_SHOOTS) ||
             !dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_POISON)) ++bad;
-        // the slice neighbors stay dressing
-        if (dm::appendixh::trickIsMechanical(
+        // R132: counterfeit joined the mechanical set; the
+        // talks stay dressing
+        if (!dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_REL_COUNTERFEIT)) ++bad;
         if (dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_TALKS_NONSENSE)) ++bad;
@@ -2887,6 +2889,48 @@ int main() {
         if (a.slotsByLevel[7] != 2) ++bad;
         if (a.slotsByLevel[8] != 1) ++bad;
         printf("R131 slot plumbing audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+
+    // ---- R132: second-effects slice audit ----
+    // The Appendix H mechanical set grows to eleven: the
+    // R128 five plus ages, flesh to stone, both shocks,
+    // counterfeit coins, and takes/steals (print sources:
+    // the altar ages 10 years, the face petrifies on a
+    // failed save, the pedestal shocks 5-50 hp;
+    // counterfeit crumbles worthless; takes/steals is a
+    // convention - the print gives no figure).
+    {
+        int bad = 0;
+        // exactly eleven mechanical of 65
+        {
+            int mech = 0;
+            for (int a = 0;
+                 a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
+                if (dm::appendixh::trickIsMechanical(a)) ++mech;
+            if (mech != 11) ++bad;
+        }
+        // the R132 six are mechanical
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_AGES)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_FLESH_TO_STONE)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_SHOCK_METAL)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_SHOCK_MAGIC)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_REL_COUNTERFEIT)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_TAKES)) ++bad;
+        // the deep waters stay dressing (engine limits)
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_WISH)) ++bad;
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_GRAVITY_GREATER)) ++bad;
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_TALKS_NONSENSE)) ++bad;
+        printf("R132 second-effects slice audit: bad %d\n", bad);
         if (bad) return 1;
     }
 

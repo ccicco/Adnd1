@@ -264,6 +264,11 @@ void AppState::applyTrick(int roomIndex){
         // no xp - an unguarded dressing find is not a hoard);
         // shoots/poison strike a random living member with
         // the trap shape (save vs death/poison or 2d6).
+        // R132: the second-effects slice - ages (10 years),
+        // flesh to stone (save vs petrification),
+        // electrical shock (5-50 hp, no save printed),
+        // releases counterfeit (worthless), takes/steals
+        // (10-60 gp).
         if (roomIndex < 0 ||
             roomIndex >= (int)occupancy.rooms.size())
             return;
@@ -272,6 +277,18 @@ void AppState::applyTrick(int roomIndex){
         const std::string name = dm::appendixh::trickSummary(
             room.trickFeature, room.trickAttribute);
         int a = room.trickAttribute;
+        // R132: the second-slice victim pick (the same
+        // random-living-member selection the trap shape
+        // uses, hoisted for the new branches)
+        auto victimIndex = [&]() -> int {
+            int victims[PARTY_MAX];
+            int nv = 0;
+            for (int i = 0; i < (int)party.members.size(); ++i)
+                if (party.members[i].hp > 0)
+                    victims[nv++] = i;
+            if (nv == 0) return -1;
+            return victims[(size_t)rng.below((uint32_t)nv)];
+        };
         if (a == dm::appendixh::TA_REL_COINS) {
             int gp = (int)dice.roll(2, 6, 0) * 10 * dungeonLevel;
             party.gold += gp;
@@ -302,6 +319,89 @@ void AppState::applyTrick(int roomIndex){
             log.add("The " + name + " yields an unidentified "
                     "magic item - a scribe's scroll would "
                     "serve.");
+        } else if (a == dm::appendixh::TA_AGES) {
+            // R132: the print's altar example - age the
+            // character 10 years (the R115 shape)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            applyMagicalAging(c, party.careerDays, 10);
+            log.add("The " + name + " ages " + c.name +
+                    " 10 years!");
+        } else if (a == dm::appendixh::TA_FLESH_TO_STONE) {
+            // R132: the print's face example - save versus
+            // magic or be transformed; the petrification
+            // save category, stone on failure
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level,
+                rules::SAVE_PETRIFY_POLY);
+            if (rules::attemptSave(dice, target, 0)) {
+                log.add("The " + name + " glooms - " +
+                        c.name + " saved!");
+                return;
+            }
+            c.hp = 0;
+            char buf[192];
+            snprintf(buf, sizeof buf,
+                     "The %s turns %s to stone - %s falls!",
+                     name.c_str(), c.name.c_str(),
+                     c.name.c_str());
+            log.add(buf);
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
+        } else if (a == dm::appendixh::TA_SHOCK_METAL ||
+                   a == dm::appendixh::TA_SHOCK_MAGIC) {
+            // R132: the print's pedestal example - a
+            // magical shock for 5-50 hit points (no save
+            // printed)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int dmg = (int)dice.roll(5, 10, 0);
+            c.hp -= dmg;
+            char buf[192];
+            if (c.hp <= 0) {
+                c.hp = 0;
+                snprintf(buf, sizeof buf,
+                         "The %s shocks %s for %d - %s falls!",
+                         name.c_str(), c.name.c_str(), dmg,
+                         c.name.c_str());
+            } else {
+                snprintf(buf, sizeof buf,
+                         "The %s shocks %s for %d.",
+                         name.c_str(), c.name.c_str(), dmg);
+            }
+            log.add(buf);
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
+        } else if (a == dm::appendixh::TA_REL_COUNTERFEIT) {
+            // R132: releases counterfeit - the shower crumbles
+            // worthless (nothing gained)
+            log.add("The " + name + " releases a shower of "
+                    "coins - counterfeit, crumbling to dust.");
+        } else if (a == dm::appendixh::TA_TAKES) {
+            // R132: takes/steals - 10-60 gp from the purse
+            // (the print gives no figure; a rebuild
+            // convention)
+            int gp = (int)dice.roll(1, 6, 0) * 10;
+            if (party.gold >= gp) {
+                party.gold -= gp;
+            } else {
+                gp = party.gold;
+                party.gold = 0;
+            }
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s steals %d gp and is gone.",
+                     name.c_str(), gp);
+            log.add(buf);
         } else if (a == dm::appendixh::TA_SHOOTS ||
                    a == dm::appendixh::TA_POISON) {
             int victims[PARTY_MAX];
