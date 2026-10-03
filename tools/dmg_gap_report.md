@@ -714,6 +714,26 @@ Categories:
       honest deeps (anti-magic, enrages) dressing, and
       the eleven never talky. Pinned by the R139
       change-family audit; census 57.
+- [x] **The final Appendix H sweep (closing the
+      list)** - CLOSED R140: twelve odds-ends wired -
+      animated (the company is buffeted, 1d4 each),
+      combination (a 1d6 strike and a repulse),
+      enlarges (save or STR rises, DEX thins), false
+      (only light and shadow - the trick is spent),
+      gravity lesser (a bob and drop), gravity nil
+      (the company floats to the room's center),
+      gravity varying (save or 1d6, everyone), moves
+      (carried to a random tile), randomly-acts (a
+      d3: strike, gift, or still), sloping (the low
+      edge takes the company), symbiotic (save or a
+      passenger settles - CON drops), wish reversal
+      (the inverted boon table: harm, aging, or the
+      purse bleeds). THE 65-ATTRIBUTE LIST IS CLOSED:
+      52 mechanical, 11 talky, and 2 dressing by
+      design (anti-magic needs a magic-use hook,
+      enrages needs a berserk hook - neither engine
+      exists; documented and pinned). Pinned by the
+      R140 final sweep audit; census 58.
 
 ## Out of scope by design
 

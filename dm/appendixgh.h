@@ -306,8 +306,23 @@ inline const char* trickEngagePrompt() {
 // and the trick is NOT spent), geases (a compulsion
 // settles - WIS drops), disintegrates (save or
 // gone). All eleven are conventions - the print
-// gives names only. The remaining 25 stay dressing;
-// their effects ride future rounds.
+// gives names only. R140 wires the final sweep:
+// animated (the furnishings buffet the company),
+// combination (a strike and a repulse), enlarges
+// (save or grow - STR up, DEX down), false (only
+// light and shadow - the trick is spent), gravity
+// lesser (a bob and drop), gravity nil (the company
+// floats to the room's center), gravity varying
+// (save or the crush), moves (the company is
+// carried), randomly-acts (a d3 - strike, gift, or
+// still), sloping (the low edge takes the company),
+// symbiotic (save or a passenger settles - CON
+// drops), wish reversal (the inverted boon table -
+// harm, aging, or the purse bleeds). All twelve are
+// conventions. THE LIST IS CLOSED: 52 mechanical,
+// 11 talky, 2 dressing by design (anti-magic needs
+// a magic-use hook, enrages needs a berserk hook -
+// neither engine exists; documented, pinned).
 // ---- R138: the talk-flavor parley ----
 // The talks-class attributes stay NON-mechanical by
 // design: they answer the deliberate-engage hook (the
@@ -388,7 +403,19 @@ inline bool trickIsMechanical(int a) {
            a == TA_RESISTING_GENERAL ||
            a == TA_RESISTING_SPECIFIC ||
            a == TA_GEASES ||
-           a == TA_DISINTEGRATES;
+           a == TA_DISINTEGRATES ||
+           a == TA_ANIMATED ||
+           a == TA_COMBINATION ||
+           a == TA_ENLARGES ||
+           a == TA_FALSE ||
+           a == TA_GRAVITY_LESSER ||
+           a == TA_GRAVITY_NIL ||
+           a == TA_GRAVITY_VARYING ||
+           a == TA_MOVES ||
+           a == TA_RANDOMLY_ACTS ||
+           a == TA_SLOPING ||
+           a == TA_SYMBIOTIC ||
+           a == TA_WISH_REVERSAL;
 }
 
 }  // namespace appendixh
