@@ -502,6 +502,27 @@ Categories:
       buccaneer, tribesman small craft -> caveman,
       mermaid -> merman). Pinned by the R127 battery
       audit; census 45.
+- [x] **Special rooms (Appendix H tricks,
+      pp.216-217)** - CLOSED R128: the R125-pinned dressing
+      lists are wired: an unoccupied, untrapped room has a
+      20% chance (the design figure - the book's H lists
+      are selection lists, not frequency tables, so no
+      printed weights exist; the odds ride the design debt)
+      to hold a curiosity - a uniform feature (of 37) +
+      attribute (of 65) rolled at populate, announced on
+      first entry via trickSummary ("Something odd commands
+      the room: Fountain (Talks singing)."). A room is a
+      snare OR a curiosity, never both (documented). The
+      first-effects slice pays out once (trickDone):
+      releases coins (2d6 x 10 x level, the delve take),
+      releases gems (1d3 at the DMG gem appraisal),
+      releases magic item (the R44 unidentified-pickup
+      shape), and shoots / poison strike a random living
+      member with the trap shape (save vs death/poison or
+      2d6). The other 60 attributes stay dressing -
+      documented; their effects ride future rounds.
+      Transient like trapKind: rooms re-populate on load.
+      Pinned by the R128 battery audit; census 46.
 
 ## Out of scope by design
 

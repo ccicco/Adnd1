@@ -917,6 +917,22 @@ void AppState::describeRoom(int roomIndex){
         RoomOccupant& room = occupancy.rooms[roomIndex];
         if (room.flavorSeen) return;
         room.flavorSeen = true;
+        // R128: the special room - an Appendix H curiosity
+        // commands the chamber (rolled at populate for an
+        // unoccupied, untrapped room). The mechanical slice
+        // pays out once per populate (trickDone).
+        if (room.trickFeature >= 0 && room.monsterKey.empty()) {
+            log.add("Something odd commands the room: " +
+                    dm::appendixh::trickSummary(
+                        room.trickFeature,
+                        room.trickAttribute) + ".");
+            if (dm::appendixh::trickIsMechanical(
+                    room.trickAttribute) && !room.trickDone) {
+                room.trickDone = true;
+                applyTrick(roomIndex);
+            }
+            return;
+        }
         char sprung[96];   // R125: the sprung-trap line
         const char* line = nullptr;
         if (!room.monsterKey.empty())

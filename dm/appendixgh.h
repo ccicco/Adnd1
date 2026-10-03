@@ -7,7 +7,10 @@
 // no mechanics - so this repo's R45 set stays the sprung
 // effect (save vs. death or 2d6, the thief spot chance);
 // Appendix G supplies the name, Appendix H supplies the
-// dressing lists for the future special-rooms layer.
+// dressing lists - WIRED SINCE R128: the special-rooms
+// layer rolls a feature + attribute per unoccupied,
+// untrapped room and pays the first-effects slice (see
+// game/state_dungeon.cpp, applyTrick).
 //
 // Verification note (rides the book-verify debt): the d%
 // band weights below were checked against a scan of the
@@ -235,6 +238,17 @@ inline const char* trickAttributeName(int a) {
 inline std::string trickSummary(int f, int a) {
     return std::string(trickFeatureName(f)) + " (" +
            trickAttributeName(a) + ")";
+}
+
+// R128: the first-effects slice - the five attributes the
+// special-rooms layer wires to real mechanics (releases
+// coins/gems/magic item, shoots, poison; see
+// game/state_dungeon.cpp, applyTrick). The remaining 60
+// stay dressing; their effects ride future rounds.
+inline bool trickIsMechanical(int a) {
+    return a == TA_REL_COINS || a == TA_REL_GEMS ||
+           a == TA_REL_MAGIC_ITEM || a == TA_SHOOTS ||
+           a == TA_POISON;
 }
 
 }  // namespace appendixh

@@ -79,6 +79,9 @@ void AppState::populateRooms(){
             room.looted = false;
             room.trap = 0;
             room.trapKind = -1;   // R125: re-rolled at arming
+            room.trickFeature = -1;   // R128: re-rolled below
+            room.trickAttribute = -1;
+            room.trickDone = false;
             room.flavorSeen = false;   // R46
             room.headsLo = room.headsHi = 0;
             room.ageLo = room.ageHi = 0;
@@ -91,6 +94,23 @@ void AppState::populateRooms(){
                     // save/2d6 mechanics stay the effect
                     room.trapKind = (int)dm::appendixg::trapFor(
                         1 + (int)rng.below(100));
+                } else if (rng.below(100) < 20) {
+                    // R128: Appendix H special rooms - an
+                    // unoccupied, untrapped room may hold a
+                    // curiosity (20%, the design figure: the
+                    // book's H lists are selection lists, not
+                    // frequency tables, so no printed weights
+                    // exist - the odds ride the design debt).
+                    // Uniform picks, the book gives no weights;
+                    // a room is a snare OR a curiosity, never
+                    // both (documented).
+                    room.trickFeature = (int)rng.below(
+                        (uint32_t)dm::appendixh::
+                        TRICK_FEATURE_COUNT);
+                    room.trickAttribute = (int)rng.below(
+                        (uint32_t)dm::appendixh::
+                        TRICK_ATTRIBUTE_COUNT);
+                    room.trickDone = false;
                 }
                 continue;
             }
@@ -233,6 +253,102 @@ void AppState::springTrap(int roomIndex){
         log.add(buf);
         if (!party.alive()) {
             log.add("GAME OVER - press N to roll a new party.");
+        }
+    }
+
+// ---- applyTrick ----
+void AppState::applyTrick(int roomIndex){
+        // R128: the special room's mechanical effect - the
+        // first-effects slice. Releases coins/gems/magic item
+        // pay out (the R56 strip convention: delveGold rides,
+        // no xp - an unguarded dressing find is not a hoard);
+        // shoots/poison strike a random living member with
+        // the trap shape (save vs death/poison or 2d6).
+        if (roomIndex < 0 ||
+            roomIndex >= (int)occupancy.rooms.size())
+            return;
+        RoomOccupant& room = occupancy.rooms[roomIndex];
+        if (room.trickFeature < 0) return;
+        const std::string name = dm::appendixh::trickSummary(
+            room.trickFeature, room.trickAttribute);
+        int a = room.trickAttribute;
+        if (a == dm::appendixh::TA_REL_COINS) {
+            int gp = (int)dice.roll(2, 6, 0) * 10 * dungeonLevel;
+            party.gold += gp;
+            party.delveGold += gp;   // R45: the take
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s releases %d gp - yours.",
+                     name.c_str(), gp);
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_REL_GEMS) {
+            int gems = (int)dice.roll(1, 3, 0);
+            long long worth = 0;
+            for (int i = 0; i < gems; ++i)
+                worth += dm::treasure::rollGemValue(dice);
+            party.gold += (int)worth;
+            party.delveGold += (int)worth;
+            char buf[192];
+            snprintf(buf, sizeof buf,
+                     "The %s releases %d gems, worth %lld gp.",
+                     name.c_str(), gems, worth);
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_REL_MAGIC_ITEM) {
+            // the R44 unidentified-pickup shape
+            Party::PendingItem it;
+            it.kind = (int)rng.below(2);
+            it.plus = 1 + (rng.below(100) < 10 ? 1 : 0);
+            party.unidentified.push_back(it);
+            log.add("The " + name + " yields an unidentified "
+                    "magic item - a scribe's scroll would "
+                    "serve.");
+        } else if (a == dm::appendixh::TA_SHOOTS ||
+                   a == dm::appendixh::TA_POISON) {
+            int victims[PARTY_MAX];
+            int nv = 0;
+            for (int i = 0; i < (int)party.members.size(); ++i)
+                if (party.members[i].hp > 0)
+                    victims[nv++] = i;
+            if (nv == 0) return;
+            int vi = victims[(size_t)rng.below((uint32_t)nv)];
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level, rules::SAVE_DEATH_POISON);
+            if (rules::attemptSave(dice, target, 0)) {
+                char buf[192];
+                snprintf(buf, sizeof buf,
+                         "The %s %s - %s saved!",
+                         name.c_str(),
+                         a == dm::appendixh::TA_POISON
+                             ? "belches venom" : "fires",
+                         c.name.c_str());
+                log.add(buf);
+                return;
+            }
+            int dmg = (int)dice.roll(2, 6, 0);
+            c.hp -= dmg;
+            char buf[224];
+            if (c.hp <= 0) {
+                c.hp = 0;
+                snprintf(buf, sizeof buf,
+                         "The %s %s %s for %d - %s falls!",
+                         name.c_str(),
+                         a == dm::appendixh::TA_POISON
+                             ? "envenoms" : "hits",
+                         c.name.c_str(), dmg, c.name.c_str());
+            } else {
+                snprintf(buf, sizeof buf,
+                         "The %s %s %s for %d.",
+                         name.c_str(),
+                         a == dm::appendixh::TA_POISON
+                             ? "envenoms" : "hits",
+                         c.name.c_str(), dmg);
+            }
+            log.add(buf);
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
         }
     }
 

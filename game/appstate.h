@@ -274,6 +274,13 @@ struct RoomOccupant {
     // dragon age bracket (hp/die) per specimen
     int headsLo = 0, headsHi = 0;
     int ageLo = 0, ageHi = 0;
+    // R128: Appendix H special rooms - the rolled trick
+    // (feature + attribute) for an unoccupied, untrapped
+    // room; transient, re-populated on load like trapKind.
+    // trickDone gates the one-shot mechanical effect.
+    int trickFeature = -1;
+    int trickAttribute = -1;
+    bool trickDone = false;
 };
 
 // R45: a secret door hides in a wall tile until found
@@ -984,6 +991,11 @@ struct AppState {
     // find/remove-trades instinct - simplified); otherwise a
     // random living member saves vs death or eats 2d6.
     void springTrap(int roomIndex);
+
+    // R128: apply a special room's mechanical trick effect
+    // (the first-effects slice: releases coins/gems/magic
+    // item, shoots, poison - the trap-strike shape).
+    void applyTrick(int roomIndex);
 
     // R45: place secret doors - wall tiles that border floor
     // (3 per level). Found doors become ordinary doors on
