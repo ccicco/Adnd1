@@ -95,6 +95,19 @@ void AppState::populateRooms(){
                 occupancy.rooms[0].monsterKey = "large_spider";
                 occupancy.rooms[0].count = 1;
             }
+            // R143: the crypt wing lairs per the book's own
+            // crypt-column area hints - area 24 ghouls,
+            // area 27 skeletons, areas 35-37 the cleric's
+            // hobgoblins (lair counts are the convention;
+            // the book keys no crypt rooms)
+            if (occupancy.rooms.size() >= 6) {
+                occupancy.rooms[3].monsterKey = "ghoul";
+                occupancy.rooms[3].count = 2;
+                occupancy.rooms[4].monsterKey = "skeleton";
+                occupancy.rooms[4].count = 4;
+                occupancy.rooms[5].monsterKey = "hobgoblin";
+                occupancy.rooms[5].count = 2;
+            }
             return;
         }
         // R52: lairs roll from the DMG Appendix C tables -
@@ -299,6 +312,24 @@ void AppState::engageTrick(){
             return;
         }
         RoomOccupant& room = occupancy.rooms[roomIndex];
+        // R143: the seventh knob - in the book's own sample
+        // dungeon, the ceremonial dome's seventh stone knob
+        // opens the south crypt door. The X key turns it
+        // (a second turn only says the door stands open).
+        if (seed == dm::sampledungeon::kSampleSeed &&
+            roomIndex == 2) {
+            if (dm::sampledungeon::cryptDoorOpen(map)) {
+                log.add("The crypt door already stands "
+                        "open to the south.");
+            } else {
+                dm::sampledungeon::openCryptDoor(map);
+                log.add("The SEVENTH KNOB turns - stone "
+                        "grinds, and a door swings open "
+                        "to the south. The Secret Crypts "
+                        "lie beyond.");
+            }
+            return;
+        }
         if (room.trickFeature < 0 ||
             !room.monsterKey.empty() || room.trickDone) {
             log.add("Nothing here begs engaging.");
@@ -2205,7 +2236,7 @@ void AppState::awardVictory(){
             // earns no gold xp - a museum piece, not a
             // guarded hoard; documented convention)
             if (seed == dm::sampledungeon::kSampleSeed &&
-                combatRoomIndex < 3) {
+                combatRoomIndex < 6) {
                 if (combatRoomIndex == 0 && !room.looted) {
                     // the goblin skull: 19 sp folded at 10:1
                     // (2 gp, rounded) plus a 50 gp garnet
@@ -2246,17 +2277,34 @@ void AppState::awardVictory(){
                     log.add("The ivory tube holds a vellum "
                             "map, water-ruined - only the "
                             "first few chambers stay "
-                            "legible. The abbot's key fits "
-                            "nothing here: the crypts it "
-                            "opened ride a future round.");
+                            "legible. The abbot's key is "
+                            "the crypts' own: beyond the "
+                            "seventh knob.");
                 } else if (combatRoomIndex == 2 &&
                            !room.looted) {
                     log.add("Seven stone knobs over empty "
                             "socket holes - the seventh "
-                            "opens the south crypt door, "
-                            "but the book keys no crypt: "
-                            "the door stays shut (a future "
-                            "round).");
+                            "opens the south crypt door. "
+                            "Turn it with the X key.");
+                } else if (combatRoomIndex == 3 &&
+                           !room.looted) {
+                    log.add("Gnawed bones stack the crypt's "
+                            "niches - ghouls kept this "
+                            "larder (area 24). The abbot's "
+                            "key fits the old crypt locks.");
+                } else if (combatRoomIndex == 4 &&
+                           !room.looted) {
+                    log.add("Rows of sunken biers - the "
+                            "faithful of the monastery "
+                            "rested here (area 27). The "
+                            "abbot's key fits the old "
+                            "crypt locks.");
+                } else if (combatRoomIndex == 5 &&
+                           !room.looted) {
+                    log.add("A defaced altar and torn "
+                            "vestments - the evil cleric "
+                            "kept this crypt (areas "
+                            "35-37).");
                 }
                 room.monsterKey.clear();
                 room.count = 0;

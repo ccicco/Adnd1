@@ -452,14 +452,45 @@ void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return
         // Matrix, level table, subtables (Human/Dragon/etc.).
         // An empty key is NO ENCOUNTER (or an R53 re-roll row).
         // R142: the sample dungeon - the book's own wandering
-        // table (p.96): a d4 pick from the monastery halls
-        // column, count rolled inside the printed range. The
-        // crypt column stays data until the crypts exist.
+        // table (p.96): a d4 pick from the right column -
+        // the monastery halls, or the crypts when the
+        // company walks the crypt wing - count rolled
+        // inside the printed range. R143: crypt row two is
+        // the book's evil 3rd-level cleric and his 2
+        // hobgoblins: the cleric is built as a Character
+        // foe (the engine's NPC kit) beside them; the book
+        // gives the crypt column as straight encounters,
+        // so no reaction gate on this row (documented).
         dm::DungeonEncounter e;
         if (seed == dm::sampledungeon::kSampleSeed) {
+            bool crypt = dm::sampledungeon::inCrypts(
+                party.x, party.y);
+            int roll = 1 + (int)rng.below(4);
+            if (crypt && roll == 2) {
+                dm::CharacterParty cp;
+                dm::PartyMember cm;
+                cm.classIndex = rules::CLASS_CLERIC;
+                cm.level = 3;
+                cp.members.push_back(cm);
+                std::vector<ai::Actor> foes =
+                    buildFoesFromParty(cp);
+                dm::DungeonEncounter hg;
+                hg.key = "hobgoblin";
+                hg.count = 2;
+                std::vector<ai::Actor> guards =
+                    buildFoesFromDm(hg);
+                foes.insert(foes.end(),
+                            guards.begin(), guards.end());
+                if (foes.empty()) return;
+                log.add("An evil cleric and 2 hobgoblins "
+                        "stalk the crypts!");
+                beginCombat(std::move(foes), -1,
+                           "hobgoblin");
+                return;
+            }
             dm::sampledungeon::SampleWanderingRow w =
                 dm::sampledungeon::sampleWandering(
-                    false, 1 + (int)rng.below(4));
+                    crypt, roll);
             e.key = w.key;
             e.count = w.lo + (int)rng.below(
                 (uint32_t)(w.hi - w.lo + 1));

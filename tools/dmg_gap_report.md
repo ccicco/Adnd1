@@ -770,6 +770,25 @@ Categories:
       keyed map at kSampleSeed; every other seed walks the
       generated dungeon exactly as before. Pinned by the
       R142 sample dungeon audit; census 60.
+- [x] **The sample dungeon's crypts (the future-crypts
+      debt)** - CLOSED R143: the SECRET CRYPTS are delved.
+      Three crypt chambers (the book's own crypt wandering
+      column names their lairs - area 24 ghouls, area 27
+      skeletons, areas 35-37 the cleric's hobgoblins; the
+      book itself keys no crypt rooms, so the chambers and
+      lair counts are conventions) hang off a spine south
+      of the ceremonial dome, SEALED behind the seventh
+      knob's door - rock until the X key turns the knob in
+      the dome. South of that door the wander roll switches
+      to the book's crypt column, and its second row walks
+      at last: the evil 3rd-level cleric, built as a
+      Character foe beside his 2 hobgoblins (the book
+      gives the crypt column as straight encounters - no
+      reaction gate on that row, documented). The crypt
+      texts speak on first sight; the abbot's key is
+      flavor (the book's secret door 28-29 is a crypt
+      lock here by convention). Pinned by the R143 crypt
+      wing audit; census 61.
 
 ## Out of scope by design
 

@@ -9,6 +9,10 @@
 // the seventh knob, the crypt wandering column, and the
 // crypt-cleric row ride the future-crypts debt: data now,
 // delve later.
+// R143: the crypts are DELVED - three crypt chambers off
+// a spine south of the dome, sealed behind the seventh
+// knob's door; the crypt wandering column is wired, the
+// evil cleric row included (the X key opens them in play).
 // ============================================================================
 
 #pragma once
@@ -34,11 +38,12 @@ struct SampleWanderingRow {
 };
 
 // The book's two d4 wandering columns (p.96). crypt=false:
-// the monastery halls; crypt=true: the crypt column (data
-// for the future crypts - nothing wires it yet). Crypt row
-// two is '1 third-level evil cleric and 2 hobgoblins': the
-// cleric needs a spell-caster encounter hook and rides
-// the debt; the row carries the hobgoblins.
+// the monastery halls; crypt=true: the crypt column (the
+// R143 wing - wired to the wander roll south of the knob
+// door). Crypt row two is '1 third-level evil cleric and
+// 2 hobgoblins': the caller builds the cleric as a
+// Character foe beside the hobgoblins (R143,
+// game/state_combat.cpp).
 inline SampleWanderingRow sampleWandering(bool crypt,
                                           int roll) {
     static const SampleWanderingRow halls[4] = {
@@ -58,18 +63,39 @@ inline SampleWanderingRow sampleWandering(bool crypt,
     return crypt ? crypts[roll - 1] : halls[roll - 1];
 }
 
-// The keyed room texts (room 1-3 of the book = indices
-// 0-2 here). Pure ASCII, pure data; the engine logs them
-// as the first-sight flavor of the keyed rooms.
+// The keyed room texts (room 1-3 of the book and the
+// three crypt chambers = indices 0-5 here). Pure ASCII,
+// pure data; the engine logs them as the first-sight
+// flavor of the keyed rooms.
 inline const char* sampleRoomText(int i) {
-    static const char* texts[3] = {
+    static const char* texts[6] = {
         "Cobwebs curtain this 30 foot square entry chamber; a goblin skull sits against the wall and ten rotting sacks slump nearby. When the wind gusts through the old oak door, it groans - and any torch flame gutters low.",
         "A stream slips north to south through this chamber, feeding a limed-over pool. Beside the water rests a skeleton in abbot robes, one hand folded around a curious key - and an ivory tube lies half in the stream, its vellum map water-ruined save for the first few chambers.",
-        "A dome some 25 feet across crowns this ceremonial chamber. A 9 foot platform rises at the far end, seven stone knobs set above empty socket holes - the seventh, the book says, opens the south crypt door."
+        "A dome some 25 feet across crowns this ceremonial chamber. A 9 foot platform rises at the far end, seven stone knobs set above empty socket holes - the seventh, the book says, opens the south crypt door.",
+        "Cold niches line this crypt, and the bones within are gnawed - the ghoul larder of the book's area 24.",
+        "Sunken biers rest in rows down this crypt - the faithful of the monastery stood them here (area 27).",
+        "A defaced altar and torn vestments foul this crypt - the evil cleric keeps it (areas 35-37)."
     };
     if (i < 0) i = 0;
-    if (i > 2) i = 2;
+    if (i > 5) i = 5;
     return texts[i];
+}
+
+// R143: the crypt door - the seventh knob opens it.
+// Sealed = the tile is rock (TILE_VOID); openCryptDoor
+// swings it to a door tile. inCrypts() bounds the crypt
+// wing for the crypt wandering column.
+const int kCryptDoorX = 47;
+const int kCryptDoorY = 34;
+inline void openCryptDoor(world::Map& m) {
+    m.set(kCryptDoorX, kCryptDoorY, world::TILE_DOOR);
+}
+inline bool cryptDoorOpen(const world::Map& m) {
+    return m.at(kCryptDoorX, kCryptDoorY) ==
+           world::TILE_DOOR;
+}
+inline bool inCrypts(int x, int y) {
+    return y >= kCryptDoorY;
 }
 
 // Build the keyed delve: three chambers joined by a
@@ -108,9 +134,41 @@ inline DungeonResult buildSampleDungeon() {
         m.set(x, 31, t);
     }
 
+    // R143: the SECRET CRYPTS wing - the book keys no
+    // crypt, but its crypt wandering column names three
+    // lairs (area 24 ghouls, area 27 skeletons, areas
+    // 35-37 the cleric's hobgoblins), so three crypt
+    // chambers hang off a spine south of the dome. The
+    // knob door tile stays rock until the X key turns
+    // the seventh knob (openCryptDoor) - the wing is
+    // carved but SEALED.
+    GeneratedRoom r3;   // the ghoul crypt (area 24)
+    r3.x = 40; r3.y = 38; r3.w = 4; r3.h = 3;
+    GeneratedRoom r4;   // the skeleton crypt (area 27)
+    r4.x = 46; r4.y = 38; r4.w = 4; r4.h = 3;
+    GeneratedRoom r5;   // the cleric's crypt (35-37)
+    r5.x = 52; r5.y = 38; r5.w = 4; r5.h = 3;
+    const GeneratedRoom* crs[3] = { &r3, &r4, &r5 };
+    for (int i = 0; i < 3; ++i) {
+        const GeneratedRoom& r = *crs[i];
+        for (int yy = 0; yy < r.h; ++yy)
+            for (int xx = 0; xx < r.w; ++xx)
+                m.set(r.x + xx, r.y + yy, world::TILE_FLOOR);
+    }
+    // the crypt descent from the dome's south jamb:
+    // corridor down, then the spine under the three
+    // chambers (the knob door tile itself is NOT carved)
+    for (int y = 35; y <= 36; ++y)
+        m.set(47, y, world::TILE_CORR);
+    for (int x = 40; x <= 55; ++x)
+        m.set(x, 37, world::TILE_CORR);
+
     res.rooms.push_back(r0);
     res.rooms.push_back(r1);
     res.rooms.push_back(r2);
+    res.rooms.push_back(r3);
+    res.rooms.push_back(r4);
+    res.rooms.push_back(r5);
     res.entryX = 31;   // the chamber center
     res.entryY = 31;
     return res;

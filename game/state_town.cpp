@@ -921,7 +921,7 @@ void AppState::describeRoom(int roomIndex){
         // the book's own text (pure data in
         // dm/sampledungeon.h), one first sight each
         if (seed == dm::sampledungeon::kSampleSeed &&
-            roomIndex < 3) {
+            roomIndex < 6) {
             log.add(dm::sampledungeon::sampleRoomText(
                 roomIndex));
             return;
