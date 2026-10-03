@@ -2779,15 +2779,15 @@ int main() {
                 dm::appendixh::TRICK_FEATURE_COUNT - 1,
                 dm::appendixh::TRICK_ATTRIBUTE_COUNT - 1)
             != "Well (Wish fulfillment, reversal)") ++bad;
-        // the slices: exactly twenty-nine mechanical
+        // the slices: exactly forty mechanical
         // (R132 5 -> 11, R133 11 -> 16, R134 16 -> 19,
-        // R135 19 -> 24, R136 24 -> 29)
+        // R135 19 -> 24, R136 24 -> 29, R139 29 -> 40)
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 29) ++bad;
+            if (mech != 40) ++bad;
         }
         if (!dm::appendixh::trickIsMechanical(
                 dm::appendixh::TA_REL_COINS) ||
@@ -2893,6 +2893,60 @@ int main() {
         if (bad) return 1;
     }
 
+    // ---- R139: engine-deep change-family audit ----
+    // The eleven deepest attributes are wired at last:
+    // the change family (align, attribute, class,
+    // minds, sex), both distorted readings, both
+    // resisting readings, geases, disintegrates - the
+    // mechanical set grows to forty (all conventions;
+    // the print gives names only).
+    {
+        int bad = 0;
+        {
+            int mech = 0;
+            for (int a = 0;
+                 a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
+                if (dm::appendixh::trickIsMechanical(a)) ++mech;
+            if (mech != 40) ++bad;
+        }
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_CHANGE_ALIGN) ||
+            !dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_CHANGE_ATTRIBUTE) ||
+            !dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_CHANGE_CLASS) ||
+            !dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_CHANGE_MINDS) ||
+            !dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_CHANGE_SEX)) ++bad;
+        if (!dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_DISTORTED_WL) ||
+            !dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_DISTORTED_HD) ||
+            !dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_RESISTING_GENERAL) ||
+            !dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_RESISTING_SPECIFIC) ||
+            !dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_GEASES) ||
+            !dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_DISINTEGRATES)) ++bad;
+        // the honest deeps stay dressing
+        if (dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_ANTI_MAGIC) ||
+            dm::appendixh::trickIsMechanical(
+                dm::appendixh::TA_ENRAGES)) ++bad;
+        // and the eleven never talk
+        if (dm::appendixh::trickIsTalky(
+                dm::appendixh::TA_CHANGE_ALIGN) ||
+            dm::appendixh::trickIsTalky(
+                dm::appendixh::TA_GEASES) ||
+            dm::appendixh::trickIsTalky(
+                dm::appendixh::TA_DISINTEGRATES)) ++bad;
+        printf("R139 engine-deep change-family audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+
     // ---- R138: talk-flavor parley audit ----
     // The talks-class attributes stay non-mechanical -
     // they answer the X key instead: the engage hook
@@ -2964,7 +3018,7 @@ int main() {
     // engine does not expose yet.
     {
         int bad = 0;
-        // exactly twenty-nine mechanical of 65 (the
+        // exactly forty mechanical of 65 (the
         // R136 five: rising, suspends, appearing,
         // invisible, gaseous)
         {
@@ -2972,7 +3026,7 @@ int main() {
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 29) ++bad;
+            if (mech != 40) ++bad;
         }
         // the R136 five are mechanical
         if (!dm::appendixh::trickIsMechanical(
@@ -3003,13 +3057,13 @@ int main() {
     // within the room rect).
     {
         int bad = 0;
-        // exactly twenty-nine mechanical of 65
+        // exactly forty mechanical of 65
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 29) ++bad;
+            if (mech != 40) ++bad;
         }
         // the R135 five are mechanical
         if (!dm::appendixh::trickIsMechanical(
@@ -3039,14 +3093,14 @@ int main() {
     // a member, or a gold shower).
     {
         int bad = 0;
-        // exactly twenty-nine mechanical of 65 (R135
+        // exactly forty mechanical of 65 (R135
         // and R136 grew it)
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 29) ++bad;
+            if (mech != 40) ++bad;
         }
         // the R134 three are mechanical
         if (!dm::appendixh::trickIsMechanical(
@@ -3072,14 +3126,14 @@ int main() {
     // the print's intra-level AREA example).
     {
         int bad = 0;
-        // exactly twenty-nine mechanical of 65
+        // exactly forty mechanical of 65
         // (R135 and R136 grew it)
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 29) ++bad;
+            if (mech != 40) ++bad;
         }
         // the R133 five are mechanical
         if (!dm::appendixh::trickIsMechanical(
@@ -3112,13 +3166,13 @@ int main() {
     // convention - the print gives no figure).
     {
         int bad = 0;
-        // exactly twenty-nine mechanical of 65 (R135 and R136 grew it)
+        // exactly forty mechanical of 65 (R135 and R136 grew it)
         {
             int mech = 0;
             for (int a = 0;
                  a < dm::appendixh::TRICK_ATTRIBUTE_COUNT; ++a)
                 if (dm::appendixh::trickIsMechanical(a)) ++mech;
-            if (mech != 29) ++bad;
+            if (mech != 40) ++bad;
         }
         // the R132 six are mechanical
         if (!dm::appendixh::trickIsMechanical(

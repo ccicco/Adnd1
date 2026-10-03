@@ -322,6 +322,18 @@ void AppState::applyTrick(int roomIndex){
         // - rising (the flood), suspends (the float),
         // appearing (the melt-away), invisible (the
         // unseen strike), gaseous (the gas cloud).
+        // R139: the engine-deep change-family slice -
+        // change align (save or WIS and CHA drop),
+        // change attribute (save or two abilities
+        // swap), change class (save or training
+        // unravels), change minds (save or INT drops),
+        // change sex (save or CHA drops), distorted
+        // WL (1d6, the bent weapon), distorted HD
+        // (save or max hp drops), resisting general
+        // (the company is repelled), resisting
+        // specific (repelled, and the trick is not
+        // spent), geases (save or WIS drops),
+        // disintegrates (save or gone).
         if (roomIndex < 0 ||
             roomIndex >= (int)occupancy.rooms.size())
             return;
@@ -741,6 +753,279 @@ void AppState::applyTrick(int roomIndex){
                      "The %s hums - the company floats!",
                      name.c_str());
             log.add(buf);
+        } else if (a == dm::appendixh::TA_CHANGE_ALIGN) {
+            // R139: alignments are not modeled - the
+            // convention: save vs spells or the
+            // victim's convictions waver (WIS and CHA
+            // each drop 1, floored at 3)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level, rules::SAVE_SPELLS);
+            if (rules::attemptSave(dice, target, 0)) {
+                log.add("The " + name + " hums - " +
+                        c.name + " stands firm.");
+                return;
+            }
+            if (c.abilities.get(rules::ABILITY_WIS) > 3)
+                c.abilities.set(rules::ABILITY_WIS,
+                    (uint8_t)(c.abilities.get(
+                        rules::ABILITY_WIS) - 1));
+            if (c.abilities.get(rules::ABILITY_CHA) > 3)
+                c.abilities.set(rules::ABILITY_CHA,
+                    (uint8_t)(c.abilities.get(
+                        rules::ABILITY_CHA) - 1));
+            log.add("The " + name + " remakes " + c.name +
+                    " - their convictions waver!");
+        } else if (a ==
+                   dm::appendixh::TA_CHANGE_ATTRIBUTE) {
+            // R139: save vs spells or two of the victim's
+            // abilities trade places (convention)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level, rules::SAVE_SPELLS);
+            if (rules::attemptSave(dice, target, 0)) {
+                log.add("The " + name + " flickers - " +
+                        c.name + " is unchanged.");
+                return;
+            }
+            int a1 = (int)rng.below((uint32_t)
+                rules::ABILITY_COUNT);
+            int a2 = (int)rng.below((uint32_t)
+                (rules::ABILITY_COUNT - 1));
+            if (a2 >= a1) ++a2;
+            uint8_t tmp = c.abilities.get(
+                (rules::Ability)a1);
+            c.abilities.set((rules::Ability)a1,
+                c.abilities.get((rules::Ability)a2));
+            c.abilities.set((rules::Ability)a2, tmp);
+            char buf[192];
+            snprintf(buf, sizeof buf,
+                     "The %s scrambles %s - %s and %s trade!",
+                     name.c_str(), c.name.c_str(),
+                     rules::abilityName((rules::Ability)a1),
+                     rules::abilityName((rules::Ability)a2));
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_CHANGE_CLASS) {
+            // R139: no class-change engine - convention:
+            // save vs spells or the victim's training
+            // unravels (xp resets to the level's start)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level, rules::SAVE_SPELLS);
+            if (rules::attemptSave(dice, target, 0)) {
+                log.add("The " + name + " gestures - " +
+                        c.name + " keeps their trade.");
+                return;
+            }
+            c.xp = rules::xpForLevel(c.classIndex,
+                                     c.level);
+            log.add("The " + name + " remakes " + c.name +
+                    " - their training unravels!");
+        } else if (a == dm::appendixh::TA_CHANGE_MINDS) {
+            // R139: save vs spells or the victim's
+            // thoughts scramble (INT drops 1, floored
+            // at 3 - convention)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level, rules::SAVE_SPELLS);
+            if (rules::attemptSave(dice, target, 0)) {
+                log.add("The " + name + " whispers - " +
+                        c.name + " keeps their wits.");
+                return;
+            }
+            if (c.abilities.get(rules::ABILITY_INT) > 3)
+                c.abilities.set(rules::ABILITY_INT,
+                    (uint8_t)(c.abilities.get(
+                        rules::ABILITY_INT) - 1));
+            log.add("The " + name + " scrambles " +
+                    c.name + "'s thoughts!");
+        } else if (a == dm::appendixh::TA_CHANGE_SEX) {
+            // R139: sex is not modeled - convention:
+            // save vs petrification (the transformation
+            // category) or the semblance is remade and
+            // CHA drops 1, floored at 3
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level,
+                rules::SAVE_PETRIFY_POLY);
+            if (rules::attemptSave(dice, target, 0)) {
+                log.add("The " + name + " shimmers - " +
+                        c.name + " is untouched.");
+                return;
+            }
+            if (c.abilities.get(rules::ABILITY_CHA) > 3)
+                c.abilities.set(rules::ABILITY_CHA,
+                    (uint8_t)(c.abilities.get(
+                        rules::ABILITY_CHA) - 1));
+            log.add("The " + name + " remakes " + c.name +
+                    "'s semblance!");
+        } else if (a == dm::appendixh::TA_DISTORTED_WL) {
+            // R139: distorted weapon lengths - the bent
+            // space turns the victim's own blow on them
+            // (1d6, no save - the unseen-strike shape)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int dmg = (int)dice.roll(1, 6, 0);
+            c.hp -= dmg;
+            char buf[192];
+            if (c.hp <= 0) {
+                c.hp = 0;
+                snprintf(buf, sizeof buf,
+                         "The %s bends %s's weapon awry - "
+                         "%d! %s falls!",
+                         name.c_str(), c.name.c_str(), dmg,
+                         c.name.c_str());
+            } else {
+                snprintf(buf, sizeof buf,
+                         "The %s bends %s's weapon awry - %d.",
+                         name.c_str(), c.name.c_str(), dmg);
+            }
+            log.add(buf);
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
+        } else if (a == dm::appendixh::TA_DISTORTED_HD) {
+            // R139: distorted hit dice - the victim's
+            // vitality is squeezed (save vs death/poison
+            // or max hp drops 1d6, floored at 1)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level,
+                rules::SAVE_DEATH_POISON);
+            if (rules::attemptSave(dice, target, 0)) {
+                log.add("The " + name + " warps - " +
+                        c.name + " keeps their vigor.");
+                return;
+            }
+            int loss = (int)dice.roll(1, 6, 0);
+            if (c.maxHp - loss < 1) loss = c.maxHp - 1;
+            c.maxHp -= loss;
+            if (c.hp > c.maxHp) c.hp = c.maxHp;
+            char buf[192];
+            snprintf(buf, sizeof buf,
+                     "The %s squeezes %s - %d vitality!",
+                     name.c_str(), c.name.c_str(), loss);
+            log.add(buf);
+        } else if (a ==
+                   dm::appendixh::TA_RESISTING_GENERAL) {
+            // R139: the feature resists - it repels the
+            // whole company to a random edge tile (the
+            // R135 sliding shape; convention)
+            const dm::GeneratedRoom& gr =
+                dungeon.rooms[room.roomIndex];
+            if (gr.w <= 0 || gr.h <= 0) return;
+            int side = (int)rng.below((uint32_t)4);
+            int nx = 0, ny = 0;
+            if (side == 0) {
+                nx = gr.x;
+                ny = gr.y + (int)rng.below((uint32_t)gr.h);
+            } else if (side == 1) {
+                nx = gr.x + gr.w - 1;
+                ny = gr.y + (int)rng.below((uint32_t)gr.h);
+            } else if (side == 2) {
+                ny = gr.y;
+                nx = gr.x + (int)rng.below((uint32_t)gr.w);
+            } else {
+                ny = gr.y + gr.h - 1;
+                nx = gr.x + (int)rng.below((uint32_t)gr.w);
+            }
+            party.x = nx;
+            party.y = ny;
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s resists - the company is "
+                     "repelled!", name.c_str());
+            log.add(buf);
+        } else if (a ==
+                   dm::appendixh::TA_RESISTING_SPECIFIC) {
+            // R139: resisting one specific thing - the
+            // company is repelled AND the trick is not
+            // spent (trickDone unwound - convention)
+            const dm::GeneratedRoom& gr =
+                dungeon.rooms[room.roomIndex];
+            if (gr.w <= 0 || gr.h <= 0) return;
+            int side = (int)rng.below((uint32_t)4);
+            int nx = 0, ny = 0;
+            if (side == 0) {
+                nx = gr.x;
+                ny = gr.y + (int)rng.below((uint32_t)gr.h);
+            } else if (side == 1) {
+                nx = gr.x + gr.w - 1;
+                ny = gr.y + (int)rng.below((uint32_t)gr.h);
+            } else if (side == 2) {
+                ny = gr.y;
+                nx = gr.x + (int)rng.below((uint32_t)gr.w);
+            } else {
+                ny = gr.y + gr.h - 1;
+                nx = gr.x + (int)rng.below((uint32_t)gr.w);
+            }
+            party.x = nx;
+            party.y = ny;
+            room.trickDone = false;
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s shrugs the attempt off - the "
+                     "company is repelled!", name.c_str());
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_GEASES) {
+            // R139: a quest compulsion - no quest engine,
+            // so the convention: save vs spells or a
+            // geas settles and WIS drops 1 (floored at 3)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level, rules::SAVE_SPELLS);
+            if (rules::attemptSave(dice, target, 0)) {
+                log.add("The " + name + " murmurs - " +
+                        c.name + " resists the geas.");
+                return;
+            }
+            if (c.abilities.get(rules::ABILITY_WIS) > 3)
+                c.abilities.set(rules::ABILITY_WIS,
+                    (uint8_t)(c.abilities.get(
+                        rules::ABILITY_WIS) - 1));
+            log.add("A geas settles over " + c.name +
+                    " - a duty unspoken rides them!");
+        } else if (a == dm::appendixh::TA_DISINTEGRATES) {
+            // R139: the hardest bite - save vs spells or
+            // the victim is gone (the flesh-to-stone
+            // shape, disintegrated instead)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int target = rules::saveTarget(
+                c.classIndex, c.level, rules::SAVE_SPELLS);
+            if (rules::attemptSave(dice, target, 0)) {
+                log.add("The " + name + " crackles - " +
+                        c.name + " holds fast!");
+                return;
+            }
+            c.hp = 0;
+            char buf[192];
+            snprintf(buf, sizeof buf,
+                     "The %s unmakes %s - only dust "
+                     "settles!", name.c_str(),
+                     c.name.c_str());
+            log.add(buf);
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
         } else if (a == dm::appendixh::TA_APPEARING) {
             // R136: the feature manifests before the
             // company - and melts away; the room's trick

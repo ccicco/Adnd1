@@ -293,8 +293,21 @@ inline const char* trickEngagePrompt() {
 // poison cloud - every living member saves vs
 // death/poison or takes 1d6). All five are
 // conventions - the print gives no figures. The
-// remaining 36 stay dressing; their effects ride
-// future rounds.
+// R139 wires the engine-deep change-family slice:
+// change align (the convictions waver - WIS and CHA
+// drop), change attribute (two abilities swap),
+// change class (training unravels - xp resets to the
+// level's start), change minds (INT drops), change
+// sex (semblance remade - CHA drops), distorted WL
+// (the bent space turns a weapon on its wielder),
+// distorted HD (vitality squeezed - max hp drops),
+// resisting general (the feature repels the whole
+// company), resisting specific (the same repulse,
+// and the trick is NOT spent), geases (a compulsion
+// settles - WIS drops), disintegrates (save or
+// gone). All eleven are conventions - the print
+// gives names only. The remaining 25 stay dressing;
+// their effects ride future rounds.
 // ---- R138: the talk-flavor parley ----
 // The talks-class attributes stay NON-mechanical by
 // design: they answer the deliberate-engage hook (the
@@ -364,7 +377,18 @@ inline bool trickIsMechanical(int a) {
            a == TA_SPINNING || a == TA_SHIFTING ||
            a == TA_SLIDING || a == TA_RISING ||
            a == TA_SUSPENDS || a == TA_APPEARING ||
-           a == TA_INVISIBLE || a == TA_GASEOUS;
+           a == TA_INVISIBLE || a == TA_GASEOUS ||
+           a == TA_CHANGE_ALIGN ||
+           a == TA_CHANGE_ATTRIBUTE ||
+           a == TA_CHANGE_CLASS ||
+           a == TA_CHANGE_MINDS ||
+           a == TA_CHANGE_SEX ||
+           a == TA_DISTORTED_WL ||
+           a == TA_DISTORTED_HD ||
+           a == TA_RESISTING_GENERAL ||
+           a == TA_RESISTING_SPECIFIC ||
+           a == TA_GEASES ||
+           a == TA_DISINTEGRATES;
 }
 
 }  // namespace appendixh

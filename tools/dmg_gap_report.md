@@ -696,6 +696,24 @@ Categories:
       pins the eleven-line set: count, non-mechanical,
       ASCII, pairwise distinct, and the smart line
       exact. Pinned by the R138 parley audit; census 56.
+- [x] **Engine-deep change-family slice (the hardest
+      mapping left)** - CLOSED R139: eleven Appendix H
+      attributes wired, mechanical set 29 -> 40, all
+      conventions (the print gives names only). Change
+      align (save or WIS and CHA drop), change
+      attribute (save or two abilities swap), change
+      class (save or training unravels - xp resets),
+      change minds (save or INT drops), change sex
+      (save or CHA drops), distorted WL (the bent
+      weapon, 1d6), distorted HD (save or max hp
+      drops), resisting general (the company is
+      repelled), resisting specific (repelled, and the
+      trick is not spent), geases (save or WIS drops),
+      disintegrates (save or gone). The battery pins
+      the set at forty, the eleven mechanical, the
+      honest deeps (anti-magic, enrages) dressing, and
+      the eleven never talky. Pinned by the R139
+      change-family audit; census 57.
 
 ## Out of scope by design
 
