@@ -13,25 +13,64 @@ namespace items {
 // Weight in gp units (1 gp = 1/10 lb). Costs from the same table.
 // NOTE: values follow the standard 1e table from project notes
 // (verification debt - printed table wins).
+// R145: the last member is the PHB p.38 'to hit' adjustment row
+// (columns AC 0..10, positive = easier), transcribed from the
+// 1eonline.info compilation (both p.38 charts - melee weapons
+// from the first, bows/crossbow/sling from the hurled/missile
+// chart; the sling row is the bullet's, the DMG p.71 example's
+// own weapon). Bow rows show the source's cell gaps (-4 to -1);
+// the composite bows on the same page show the same quirk, so
+// the rows are pinned as transcribed - the book-verify debt
+// stands.
 // ----------------------------------------------------------------------------
 
 static const WeaponDef kWeapons[WPN_COUNT] = {
-    // name             wclass              S/M dmg   L dmg    missile  range  rof  wt    cost
-    { "Dagger",         rules::WCLASS_PIERCING,   1,4,0,   1,3,0,   false,   0,  0,   20,     2 },
-    { "Hand Axe",       rules::WCLASS_SLASHING,   1,6,0,   1,4,0,   false,   0,  0,   50,     4 },
-    { "Short Sword",    rules::WCLASS_PIERCING,   1,6,0,   1,8,0,   false,   0,  0,   50,     8 },
-    { "Long Sword",     rules::WCLASS_SLASHING,   1,8,0,  1,12,0,   false,   0,  0,   75,    15 },
-    { "Battle Axe",     rules::WCLASS_SLASHING,   1,8,0,  1,8,0,    false,   0,  0,   70,     7 },
-    { "Mace",           rules::WCLASS_BLUDGEONING,1,6,0,  1,6,0,    false,   0,  0,   80,     8 },
-    { "Flail",          rules::WCLASS_BLUDGEONING,1,6,1,  2,7,1,    false,   0,  0,   80,    15 },
-    { "Morning Star",   rules::WCLASS_BLUDGEONING,2,4,0,  1,6,1,    false,   0,  0,  100,    10 },
-    { "Spear",          rules::WCLASS_PIERCING,   1,6,0,  1,8,0,    false,   0,  0,   60,     3 },
-    { "Quarterstaff",   rules::WCLASS_BLUDGEONING,1,6,0,  1,6,0,    false,   0,  0,   40,     0 },
-    { "Club",           rules::WCLASS_BLUDGEONING,1,6,0,  1,3,1,    false,   0,  0,   30,     0 },
-    { "Short Bow",      rules::WCLASS_PIERCING,   1,6,0,  1,6,0,    true,    5,  2,   20,    25 },
-    { "Long Bow",       rules::WCLASS_PIERCING,   1,6,0,  1,6,0,    true,    7,  2,   30,    40 },
-    { "Light Crossbow", rules::WCLASS_PIERCING,   1,4,0,  1,4,0,    true,    6,  1,   70,    10 },
-    { "Sling",          rules::WCLASS_BLUDGEONING,1,4,0,  1,4,1,    true,    4,  1,   10,     2 },
+    // name             wclass              S/M dmg   L dmg    missile  range  rof  wt    cost  p.38 row
+    { "Dagger",         rules::WCLASS_PIERCING,   1,4,0,   1,3,0,   false,   0,  0,   20,     2,
+      // R145: p.38 row, AC 0..10
+      {-4,-4,-3,-3,-2,-2, 0, 0,+1,+1,+3 } },
+    { "Hand Axe",       rules::WCLASS_SLASHING,   1,6,0,   1,4,0,   false,   0,  0,   50,     4,
+      // R145: p.38 row, AC 0..10
+      {-5,-4,-3,-2,-1,-1, 0, 0,+1,+1,+1 } },
+    { "Short Sword",    rules::WCLASS_PIERCING,   1,6,0,   1,8,0,   false,   0,  0,   50,     8,
+      // R145: p.38 row, AC 0..10
+      {-5,-4,-3,-2,-1, 0, 0, 0,+1, 0,+2 } },
+    { "Long Sword",     rules::WCLASS_SLASHING,   1,8,0,  1,12,0,   false,   0,  0,   75,    15,
+      // R145: p.38 row, AC 0..10
+      {-4,-3,-2,-1, 0, 0, 0, 0, 0,+1,+2 } },
+    { "Battle Axe",     rules::WCLASS_SLASHING,   1,8,0,  1,8,0,    false,   0,  0,   70,     7,
+      // R145: p.38 row, AC 0..10
+      {-5,-4,-3,-2,-1,-1, 0, 0,+1,+1,+2 } },
+    { "Mace",           rules::WCLASS_BLUDGEONING,1,6,0,  1,6,0,    false,   0,  0,   80,     8,
+      // R145: p.38 row, AC 0..10
+      {+2,+2,+1,+1,+1, 0, 0, 0, 0,+1,-1 } },
+    { "Flail",          rules::WCLASS_BLUDGEONING,1,6,1,  2,7,1,    false,   0,  0,   80,    15,
+      // R145: p.38 row, AC 0..10
+      {+3,+3,+2,+1,+1,+2,+1,+1,+1,+1,-1 } },
+    { "Morning Star",   rules::WCLASS_BLUDGEONING,2,4,0,  1,6,1,    false,   0,  0,  100,    10,
+      // R145: p.38 row, AC 0..10
+      { 0, 0, 0,+1,+1,+1,+1,+1,+1,+2,+2 } },
+    { "Spear",          rules::WCLASS_PIERCING,   1,6,0,  1,8,0,    false,   0,  0,   60,     3,
+      // R145: p.38 row, AC 0..10
+      {-2,-2,-2,-1,-1,-1, 0, 0, 0, 0, 0 } },
+    { "Quarterstaff",   rules::WCLASS_BLUDGEONING,1,6,0,  1,6,0,    false,   0,  0,   40,     0,
+      // R145: p.38 row, AC 0..10
+      {-9,-8,-7,-5,-3,-1, 0, 0,+1,+1,+1 } },
+    { "Club",           rules::WCLASS_BLUDGEONING,1,6,0,  1,3,1,    false,   0,  0,   30,     0,
+      // R145: p.38 row, AC 0..10
+      {-7,-6,-5,-4,-3,-2,-1,-1, 0, 0,+1 } },
+    { "Short Bow",      rules::WCLASS_PIERCING,   1,6,0,  1,6,0,    true,    5,  2,   20,    25,
+      // R145: p.38 row, AC 0..10
+      {-7,-6,-5,-4,-1, 0, 0,+1,+2,+2,+2 } },
+    { "Long Bow",       rules::WCLASS_PIERCING,   1,6,0,  1,6,0,    true,    7,  2,   30,    40,
+      // R145: p.38 row, AC 0..10
+      {-2,-1,-1, 0, 0,+1,+2,+3,+3,+3,+3 } },
+    { "Light Crossbow", rules::WCLASS_PIERCING,   1,4,0,  1,4,0,    true,    6,  1,   70,    10,
+      // R145: p.38 row, AC 0..10
+      {-3,-2,-2,-1, 0, 0,+1,+2,+3,+3,+3 } },
+    { "Sling",          rules::WCLASS_BLUDGEONING,1,4,0,  1,4,1,    true,    4,  1,   10,     2,
+      // R145: p.38 row, AC 0..10
+      {-3,-3,-2,-2,-1, 0, 0, 0,+2,+1,+3 } },
 };
 
 const WeaponDef& weapon(WeaponId id) {
@@ -69,11 +108,23 @@ static const int SHIELD_COST_GP   = 10;
 // Combat plumbing
 // ----------------------------------------------------------------------------
 
+// R145: the per-weapon p.38 row vs. effective AC. The
+// book's table runs AC 0-10; the clamps read the end
+// columns past the table's edges. NOTE: the book applies
+// these rows to humans, demihumans, and humanoids only -
+// the engine applies them to every defender (monsters
+// included), a named approximation (gap report).
+int weaponAcAdjustment(WeaponId id, int defenderAc) {
+    if (defenderAc < 0) defenderAc = 0;
+    if (defenderAc > 10) defenderAc = 10;
+    return weapon(id).acAdj[defenderAc];
+}
+
 int attackAdjustment(const WeaponInstance& w, const rules::ExceptionalStrength& ex,
-                     uint8_t str, rules::AcType defenderAc) {
+                     uint8_t str, int defenderAc) {
     int adj = rules::strHitAdj(str, ex);
     adj += w.plus;
-    adj += rules::weaponVsAcAdjustment(weapon(w.id).wclass, defenderAc);
+    adj += weaponAcAdjustment(w.id, defenderAc);
     return adj;
 }
 

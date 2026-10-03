@@ -54,6 +54,9 @@ struct WeaponDef {
     int  rateOfFire;             // shots per round (0 melee)
     int  weightGp;               // weight in gold-piece units (1 gp = 1/10 lb)
     int  costGp;                 // list price
+    // R145: the PHB p.38 'to hit' adjustment row, columns
+    // AC 0..10 (positive = easier to hit that armor)
+    int  acAdj[11];
 };
 
 const WeaponDef& weapon(WeaponId id);
@@ -103,10 +106,18 @@ struct ArmorInstance {
     int     plus = 0;
 };
 
+// R145: the per-weapon p.38 'to hit' adjustment vs. the
+// defender's effective AC. The book's table runs AC 0-10;
+// better-than-0 reads column 0, worse-than-10 column 10.
+// The book keys the column to apparent armor AC (magic and
+// DEX do not shift it); the engine folds the full effective
+// AC in - a named approximation (gap report).
+int weaponAcAdjustment(WeaponId id, int defenderAc);
+
 // Effective to-hit adjustment for an attack: STR adj + weapon plus +
-// weapon-vs-AC adjustment for the defender's armor.
+// the per-weapon p.38 adjustment vs. the defender's AC.
 int attackAdjustment(const WeaponInstance& w, const rules::ExceptionalStrength& ex,
-                     uint8_t str, rules::AcType defenderAc);
+                     uint8_t str, int defenderAc);
 
 // Effective AC for a defender: armor base, + DEX defensive adj
 // (negative = better), + shield (1 better), + armor plus.

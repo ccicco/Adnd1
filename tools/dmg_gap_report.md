@@ -815,6 +815,41 @@ Categories:
       lane), as is the dwarf CON magic-save bonus (the
       engine models CON only vs. poison). Pinned by the
       R144 golden melee audit; census 62.
+- [x] **The per-weapon p.38 'to hit' table (R144's standing
+      approximation)** - CLOSED R145: every weapon now
+      carries its own PHB p.38 armor-class adjustment row
+      (15 weapons x 11 columns, AC 0-10), replacing the
+      3-class bludgeon/pierce/slash approximation at the
+      items::attackAdjustment choke point (the old class
+      table stays as the rules-layer fallback, still pinned
+      by the R144 audit). Rows transcribed from the
+      1eonline.info compilation - the repo-trusted source -
+      both p.38 charts (melee rows from the first, the
+      short bow / long bow / light crossbow / sling rows
+      from the hurled-and-missile chart; the sling is the
+      bullet's row, the DMG p.71 example's own weapon);
+      the PHB re-upload's book-verify debt stands (the bow
+      rows' cell gaps are pinned as the source prints them -
+      the composite bows show the same quirk). Standing
+      approximations, named: (1) the column is the
+      defender's full effective AC (magic, DEX, and shield
+      all shift the column; the book keys apparent armor AC
+      and says magic/DEX do not shift it); (2) the rows
+      apply to every defender - monsters included - where
+      the book limits them to humans, demihumans, and
+      humanoids; (3) below AC 0 reads column 0 (the book's
+      table stops at AC 0); (4) Gygax himself ignored the
+      table (the 1eonline FAQ and Delta's D&D Hotspot both
+      note it) - the engine pins it anyway, by design. The
+      p.71 example's sling bullet +3 vs. no armor - R144's
+      named approximation - is now the engine's own row; the
+      example's axe '+1 vs. no armor' remains one of its
+      acknowledged editorial errors (the p.38 battle axe row
+      reads +2, and the engine follows p.38); the example's
+      hammer has no engine weapon (the 15-weapon registry
+      carries no war hammer - the R144 pin stands). Pinned by
+      the R145
+      weapon table audit; census 63.
 
 ## Out of scope by design
 
