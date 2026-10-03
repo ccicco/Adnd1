@@ -37,6 +37,30 @@ void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std
         }
         combat.start(partyActors(), std::move(foes),
                      rng.below(0x7FFFFFFF));
+        // R141: the opening range is geometry - a room fight
+        // opens at the chamber's longest interior dimension
+        // (10' bands, floored at the 50' corridor convention,
+        // capped at 120'); wandering and overland fights keep
+        // the 50' opening (no room to measure)
+        if (roomIndex >= 0 &&
+            roomIndex < (int)occupancy.rooms.size()) {
+            int grIdx = occupancy.rooms[roomIndex].roomIndex;
+            if (grIdx >= 0 &&
+                grIdx < (int)dungeon.rooms.size()) {
+                const dm::GeneratedRoom& gr =
+                    dungeon.rooms[grIdx];
+                int bands = rules::engagementBands(gr.w,
+                                                   gr.h);
+                combat.encounter->setOpeningBands(bands);
+                if (bands > 5) {
+                    char dbuf[96];
+                    snprintf(dbuf, sizeof dbuf,
+                             "The chamber yawns - the foes "
+                             "wait %d' away.", bands * 10);
+                    log.add(dbuf);
+                }
+            }
+        }
         combat.encounter->setQuaffHook(
             [this](ai::Actor& drinker) {
                 if (party.potions <= 0) {

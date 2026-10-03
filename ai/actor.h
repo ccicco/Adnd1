@@ -58,6 +58,11 @@
 //      It closes one band per round; party missile fire ([x])
 //      requires an open range. Thrown weapons are exempt (they
 //      can be hurled into melee - PHB simplification).
+// R141: the opening range is now geometry - a room fight opens
+//      at the chamber's longest interior dimension in 10' bands
+//      (rules::engagementBands: floored at the 50' corridor
+//      convention, capped at 120'); wandering and overland
+//      engagements keep the 50' opening.
 // ============================================================================
 
 #pragma once
@@ -422,6 +427,16 @@ public:
     // foes have not closed to melee). Party missile fire gates
     // on this; monster volleys use their own rangedRounds.
     bool rangeOpen() const { return m_distance > 0; }
+
+    // R141: the opening range is the room's own geometry
+    // (rules::engagementBands - a chamber fight opens
+    // wider than the 50' corridor convention). Clamped
+    // to 1-12 bands.
+    void setOpeningBands(int bands) {
+        if (bands < 1) bands = 1;
+        if (bands > 12) bands = 12;
+        m_distance = bands;
+    }
 
 private:
     std::vector<Actor> m_party;

@@ -734,6 +734,22 @@ Categories:
       enrages needs a berserk hook - neither engine
       exists; documented and pinned). Pinned by the
       R140 final sweep audit; census 58.
+- [x] **Engagement geometry (the R43 50' standing
+      debt)** - CLOSED R141: a room fight now OPENS at
+      the chamber's own geometry - the longest interior
+      dimension in 10' bands (rules::engagementBands,
+      floored at the 50' corridor convention, capped at
+      120') - and the range closes one band per round as
+      before. A wide chamber therefore opens wide, and
+      the R116 long-range band (-5, DMG p.75) is finally
+      reachable in play: a 12-tile chamber opens at
+      120', where a sling's long shot (40' short range)
+      is exactly possible at -5. Wandering and overland
+      engagements keep the 50' convention (no room to
+      measure). The battery pins the helper's floor,
+      cap, and longest-dimension rule, and the
+      long-band-in-play scenario. Pinned by the R141
+      engagement geometry audit; census 59.
 
 ## Out of scope by design
 

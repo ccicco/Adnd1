@@ -137,6 +137,23 @@ bool missileInRange(int distanceFeet, int shortRangeFeet);
 int missileRangeMod(int distanceFeet, int shortRangeFeet);
 
 // ----------------------------------------------------------------------------
+// R141: engagement geometry (closing the R43 50' debt)
+// ----------------------------------------------------------------------------
+// A room fight opens at the chamber's own geometry: the
+// longest interior dimension in 10' bands - floored at
+// the 50' corridor convention (5 bands) and capped at
+// 120' (12 bands, a sling's long range). A big chamber
+// therefore opens WIDE, and the R116 long band (-5) is
+// finally reachable in play. Wandering and overland
+// engagements keep the 50' convention (no room).
+inline int engagementBands(int roomW, int roomH) {
+    int longest = roomW > roomH ? roomW : roomH;
+    if (longest < 5) return 5;
+    if (longest > 12) return 12;
+    return longest;
+}
+
+// ----------------------------------------------------------------------------
 // Turning undead (DMG p.75-76 matrix III; procedure p.77). Rows are the
 // undead in the book's own order, columns are cleric levels 1-8, 9-13,
 // 14+. Result:
