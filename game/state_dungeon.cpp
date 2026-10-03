@@ -640,6 +640,151 @@ void AppState::applyTrick(int roomIndex){
                 log.add("GAME OVER - press N to roll a new "
                         "party.");
             }
+        } else if (a == dm::appendixh::TA_RISING) {
+            // R136: the water rises - every living
+            // member saves vs death/poison or takes 1d6
+            // (the print gives no figure; the trap
+            // shape)
+            char buf[192];
+            snprintf(buf, sizeof buf,
+                     "The %s gurgles - water rises fast!",
+                     name.c_str());
+            log.add(buf);
+            for (auto& c : party.members) {
+                if (c.hp <= 0) continue;
+                int target = rules::saveTarget(
+                    c.classIndex, c.level,
+                    rules::SAVE_DEATH_POISON);
+                if (rules::attemptSave(dice, target, 0)) {
+                    char b2[160];
+                    snprintf(b2, sizeof b2,
+                             "%s keeps their footing.",
+                             c.name.c_str());
+                    log.add(b2);
+                    continue;
+                }
+                int dmg = (int)dice.roll(1, 6, 0);
+                c.hp -= dmg;
+                char b2[192];
+                if (c.hp <= 0) {
+                    c.hp = 0;
+                    snprintf(b2, sizeof b2,
+                             "The flood drowns %s (%d) - "
+                             "%s falls!",
+                             c.name.c_str(), dmg,
+                             c.name.c_str());
+                } else {
+                    snprintf(b2, sizeof b2,
+                             "The flood batters %s for %d.",
+                             c.name.c_str(), dmg);
+                }
+                log.add(b2);
+            }
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
+        } else if (a == dm::appendixh::TA_SUSPENDS) {
+            // R136: gravity nil - the company floats up
+            // and drifts to a random interior tile (the
+            // print gives no mechanics; a convention)
+            const dm::GeneratedRoom& gr =
+                dungeon.rooms[room.roomIndex];
+            if (gr.w <= 0 || gr.h <= 0) return;
+            party.x = gr.x +
+                (int)rng.below((uint32_t)gr.w);
+            party.y = gr.y +
+                (int)rng.below((uint32_t)gr.h);
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s hums - the company floats!",
+                     name.c_str());
+            log.add(buf);
+        } else if (a == dm::appendixh::TA_APPEARING) {
+            // R136: the feature manifests before the
+            // company - and melts away; the room's trick
+            // is spent (a convention; the print gives no
+            // mechanics)
+            char buf[160];
+            snprintf(buf, sizeof buf,
+                     "The %s appears - and melts away. "
+                     "The room falls still.",
+                     name.c_str());
+            log.add(buf);
+            room.trickFeature = -1;
+        } else if (a == dm::appendixh::TA_INVISIBLE) {
+            // R136: an unseen strike - a random living
+            // member takes 1d6, no save (the print gives
+            // no figure; the convention)
+            int vi = victimIndex();
+            if (vi < 0) return;
+            Character& c = party.members[vi];
+            int dmg = (int)dice.roll(1, 6, 0);
+            c.hp -= dmg;
+            char buf[192];
+            if (c.hp <= 0) {
+                c.hp = 0;
+                snprintf(buf, sizeof buf,
+                         "Something unseen strikes %s for "
+                         "%d - %s falls!",
+                         c.name.c_str(), dmg,
+                         c.name.c_str());
+            } else {
+                snprintf(buf, sizeof buf,
+                         "Something unseen strikes %s for "
+                         "%d.",
+                         c.name.c_str(), dmg);
+            }
+            log.add(buf);
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
+        } else if (a == dm::appendixh::TA_GASEOUS) {
+            // R136: a poison cloud fills the room - every
+            // living member saves vs death/poison or
+            // takes 1d6 (the print gives no figure; the
+            // trap shape)
+            char buf[192];
+            snprintf(buf, sizeof buf,
+                     "The %s hisses - a sickly cloud "
+                     "spreads!",
+                     name.c_str());
+            log.add(buf);
+            for (auto& c : party.members) {
+                if (c.hp <= 0) continue;
+                int target = rules::saveTarget(
+                    c.classIndex, c.level,
+                    rules::SAVE_DEATH_POISON);
+                if (rules::attemptSave(dice, target, 0)) {
+                    char b2[160];
+                    snprintf(b2, sizeof b2,
+                             "%s breathes through it.",
+                             c.name.c_str());
+                    log.add(b2);
+                    continue;
+                }
+                int dmg = (int)dice.roll(1, 6, 0);
+                c.hp -= dmg;
+                char b2[192];
+                if (c.hp <= 0) {
+                    c.hp = 0;
+                    snprintf(b2, sizeof b2,
+                             "The cloud chokes %s (%d) - "
+                             "%s falls!",
+                             c.name.c_str(), dmg,
+                             c.name.c_str());
+                } else {
+                    snprintf(b2, sizeof b2,
+                             "The cloud burns %s for %d.",
+                             c.name.c_str(), dmg);
+                }
+                log.add(b2);
+            }
+            if (!party.alive()) {
+                log.add("GAME OVER - press N to roll a new "
+                        "party.");
+            }
         } else if (a == dm::appendixh::TA_ONE_WAY) {
             // R135: the way back seals - the company is
             // committed to this room (a convention; the

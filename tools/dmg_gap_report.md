@@ -536,7 +536,8 @@ Categories:
       2d6). R132's second-effects slice wires six more
       (the R132 box), R133's five more (the R133 box),
       R134's three deep (the R134 box), R135's five
-      geometry (the R135 box). The other 41
+      geometry (the R135 box), R136's five
+      odds-and-ends (the R136 box). The other 36
       attributes stay dressing - documented; their
       effects ride future rounds.
       Transient like trapKind: rooms re-populate on load.
@@ -616,7 +617,8 @@ Categories:
       conventions (the print gives no figures);
       documented. The R134 slice wires the three deep
       waters (the R134 box), R135's five geometry
-      (the R135 box). The remaining 41
+      (the R135 box), R136's five odds-and-ends
+      (the R136 box). The remaining 36
       attributes stay dressing; their effects ride
       future rounds.
       Pinned by the R133 battery audit; census 51.
@@ -650,6 +652,25 @@ Categories:
       remaining 41 attributes stay dressing; their
       effects ride future rounds. Pinned by the R135
       battery audit; census 53.
+- [x] **Appendix H odds-and-ends slice (the
+      stragglers)** - CLOSED R136: the mechanical set
+      grows 24 -> 29. Rising: water floods the room -
+      every living member saves vs death/poison or
+      takes 1d6. Suspends: gravity nil - the company
+      floats and drifts to a random interior tile.
+      Appearing: the feature manifests, startles, and
+      melts away - the room's trick is spent.
+      Invisible: an unseen strike - 1d6 on a random
+      living member, no save. Gaseous: a poison cloud -
+      every living member saves vs death/poison or
+      takes 1d6. Anti-magic STAYS dressing (an honest
+      suppression zone needs a magic-use hook the
+      engine does not expose yet); documented. All five
+      wired effects are rebuild conventions (the
+      print gives no figures). The remaining 36
+      attributes stay dressing; their effects ride
+      future rounds. Pinned by the R136 battery audit;
+      census 54.
 
 ## Out of scope by design
 

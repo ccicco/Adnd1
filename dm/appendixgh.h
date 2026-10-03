@@ -273,8 +273,19 @@ inline std::string trickSummary(int f, int a) {
 // shifting (the position mirrors across the center
 // line), sliding (the company is shoved to a random
 // room edge). All five are positional conventions -
-// the print gives no mechanics. The remaining 41 stay
-// dressing; their effects ride future rounds.
+// the print gives no mechanics. R136 wires the
+// odds-and-ends slice: rising (water floods the room -
+// every living member saves vs death/poison or takes
+// 1d6), suspends (gravity nil - the company floats to
+// a random interior tile), appearing (the feature
+// manifests, startles, and melts away - the room's
+// trick is spent), invisible (an unseen strike - 1d6
+// on a random living member, no save), gaseous (a
+// poison cloud - every living member saves vs
+// death/poison or takes 1d6). All five are
+// conventions - the print gives no figures. The
+// remaining 36 stay dressing; their effects ride
+// future rounds.
 inline bool trickIsMechanical(int a) {
     return a == TA_REL_COINS || a == TA_REL_GEMS ||
            a == TA_REL_MAGIC_ITEM || a == TA_SHOOTS ||
@@ -288,7 +299,9 @@ inline bool trickIsMechanical(int a) {
            a == TA_GRAVITY_GREATER || a == TA_POLYMORPH ||
            a == TA_ONE_WAY || a == TA_PIVOTS ||
            a == TA_SPINNING || a == TA_SHIFTING ||
-           a == TA_SLIDING;
+           a == TA_SLIDING || a == TA_RISING ||
+           a == TA_SUSPENDS || a == TA_APPEARING ||
+           a == TA_INVISIBLE || a == TA_GASEOUS;
 }
 
 }  // namespace appendixh
