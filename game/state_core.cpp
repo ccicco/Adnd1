@@ -787,7 +787,7 @@ void AppState::restoreSlots(){
             if (c.classIndex != 1 && c.classIndex != 2) continue;
             spells::SpellClass sc = c.classIndex == 1
                 ? spells::SPELL_MU : spells::SPELL_CLERIC;
-            for (int lv = 1; lv <= 6; ++lv)   // R46: 6 levels
+            for (int lv = 1; lv <= 9; ++lv)   // R131: 9 levels
                 c.slotsByLevel[lv - 1] =
                     spells::spellSlots(sc, c.level, lv);
         }

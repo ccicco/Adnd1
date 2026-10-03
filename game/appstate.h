@@ -440,7 +440,7 @@ struct CreationState {
         if (classIndex == 1 || classIndex == 2) {
             spells::SpellClass sc = classIndex == 1
                 ? spells::SPELL_MU : spells::SPELL_CLERIC;
-            for (int lv = 1; lv <= 6; ++lv)   // R46: 6 levels
+            for (int lv = 1; lv <= 9; ++lv)   // R131: 9 levels
                 c.slotsByLevel[lv - 1] =
                     spells::spellSlots(sc, 1, lv);
         }

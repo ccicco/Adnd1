@@ -557,6 +557,24 @@ Categories:
       still tracks 6 - named debt, rides future
       rounds. Pinned by the R130 battery audit;
       census 48.
+- [x] **Per-day slot plumbing 6 -> 9 (the R130
+      named debt)** - CLOSED R131: both
+      slotsByLevel arrays (Character and the
+      combat Actor) widened to nine, and every
+      loop that touches them widened with them:
+      the creation-time pool, restoreSlots (the
+      load-time rebuild - slots are not saved,
+      so the widen is v1-save-compatible), the
+      level-up rest-like refill, the encounter
+      spawn fill, the post-combat spent-slot
+      copy-back, toActor's pool carry, and the
+      foe cleric cast gate. Levels 7-9 are now
+      castable in play at name level (the R129
+      caster-aging spells resolve end to end).
+      The wisdom footnotes stay engine limits;
+      the printed tables still ride the
+      verification debt. Pinned by the R131
+      battery audit; census 49.
 
 ## Out of scope by design
 

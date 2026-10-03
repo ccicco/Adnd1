@@ -189,9 +189,11 @@ struct Character {
 
     // R34: per-day spell slots by level (index 0 = spell level
     // 1). Persisted across encounters; restored by rest.
-    // R46: widened to 6 levels (L4+ data pending; the spells::
-    // slot tables already carry the columns).
-    int  slotsByLevel[6] = {0, 0, 0, 0, 0, 0};
+    // R131: widened to 9 levels - the R130 printed tables made
+    // levels 7-9 real. Slots are NOT saved: restoreSlots
+    // rebuilds the full pool from the tables on load, so the
+    // widen is v1-save-compatible.
+    int  slotsByLevel[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     bool knowsSpell(int id) const {
         for (int s : knownSpells)
@@ -231,7 +233,9 @@ struct Character {
         a.morale = dm::MORALE_FANATIC;   // player party never breaks
         // R34: slots persist - toActor carries the CURRENT pool
         // (the app restores it on rest, not per encounter)
-        for (int lv = 0; lv < 6; ++lv)
+        // R131: all nine columns (the 7th-9th ride with the
+        // printed name-level tables)
+        for (int lv = 0; lv < 9; ++lv)
             a.slotsByLevel[lv] = slotsByLevel[lv];
         // R33: the spellbook travels with the actor
         a.knownSpells = knownSpells;

@@ -447,7 +447,8 @@ bool foeCanCast(const Actor& a) {
                a.knowsSpell(spells::MU_SHIELD) ||
                a.knowsSpell(spells::MU_FIREBALL);
     if (a.classIndex == rules::CLASS_CLERIC) {
-        for (int lv = 0; lv < 6; ++lv)
+        // R131: all nine columns - a 7th-circle slot counts
+        for (int lv = 0; lv < 9; ++lv)
             if (a.slotsByLevel[lv] > 0) return true;
     }
     return false;

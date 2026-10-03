@@ -395,7 +395,9 @@ std::vector<ai::Actor> AppState::buildFoesFromParty(const dm::CharacterParty& pa
             if (m.level > 0 &&
                 (m.classIndex == rules::CLASS_MAGIC_USER ||
                  m.classIndex == rules::CLASS_CLERIC)) {
-                for (int lv = 0; lv < 6; ++lv)
+                // R131: all nine columns - a name-level foe
+                // caster spawns with 7th-9th circle slots
+                for (int lv = 0; lv < 9; ++lv)
                     a.slotsByLevel[lv] = spells::spellSlots(
                         sc, a.level, lv + 1);
                 if (m.classIndex == rules::CLASS_MAGIC_USER) {
@@ -642,7 +644,8 @@ void AppState::endCombat(){
                     c.maxHp = a.maxHp;
                     c.level = a.level;
                     // R34: spent slots persist (per-day tracking)
-                    for (int lv = 0; lv < 6; ++lv)   // R46
+                    // R131: all nine columns ride home spent
+                    for (int lv = 0; lv < 9; ++lv)   // R131
                         c.slotsByLevel[lv] = a.slotsByLevel[lv];
                     // R35: spent ammo persists; R80: the bundle
                     // composition is consumed front-first to match

@@ -199,7 +199,7 @@ struct Actor {
     // (Character::toActor); the driver decrements them when a
     // cast resolves. Refreshed each encounter (per-day slot
     // tracking is deferred - logged simplification).
-    int  slotsByLevel[6] = {0, 0, 0, 0, 0, 0};   // R46: 6 levels
+    int  slotsByLevel[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};   // R131: 9 levels (the R130 tables)
 
     // R33: MU spellbook - known spell ids (spells::SpellId).
     // Empty for non-MUs (they cast freely).
