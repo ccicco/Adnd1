@@ -1299,6 +1299,274 @@ std::vector<std::string> waterEncounterKeys(
 }
 
 // ----------------------------------------------------------------------------
+// R127: the WATERBORNE encounter tables - DMG Appendix C
+// (Premium reprint p.190; line-diffed against the 1eonline
+// .info Appendix C compilation). The surface-travel
+// companion of the R60 underwater set: Fresh Water small
+// body / large body, Salt Water shallow (coastal) / deep.
+// The compilation omits the underwater tables, so those
+// stay on their R60 uploaded-DMG verification; the fresh
+// body size rides the depth enum (SHALLOW = small body,
+// DEEP = large body - the engine's documented selector).
+// The Dinosaur rows resolve on the shared p.190 Dinosaur
+// Subtable (second percentile). Footnote clime gates as
+// R60 (* cool only / ** warm only) re-roll per the book's
+// own "otherwise roll again"; the fresh-water Dinosaur
+// warm gate rides the parent row (the R60 convention -
+// the compilation prints the gate in the footnote text:
+// Elasmosaurus / Mosasaurus / Plesiosaurus "must be in a
+// relatively warm clime" in fresh water). Book readings
+// pinned as printed: the compilation prints nixie
+// cool-only in the small-body fresh table but warm-only
+// in the large-body one - both transcribed as printed
+// (the discrepancy rides the book-verify debt). Counts
+// come from the registry's noAppearing fields (the book
+// prints no number columns).
+// Substitutions documented in-row: Koalinth -> hobgoblin,
+// Kopoacinth -> gargoyle, Lacedon -> ghoul, Elf (aquatic)
+// -> elf (R60), Pirate -> buccaneer (no pirate record; the
+// MM Buccaneer entry covers sea-raiders), pirate
+// (tribesman with small craft) -> caveman (the repo's
+// tribesman convention), Mermaid -> merman (the MM Merman
+// entry covers mermaids); whales follow the R61 size
+// mapping (carnivorous L/M/S -> sperm / killer / black;
+// plain L/M/S -> whale / right / beluga).
+
+// ---- Fresh Water, Small Body of Water - DMG p.190 ----
+static const WaterRow kWaterFreshSmall[] = {
+    {  1, 15, "giant_beaver",     WF_COOL_ONLY},   // *
+    { 16, 30, "crocodile",        WF_WARM_ONLY},   // **
+    { 31, 40, "hippopotamus",     WF_WARM_ONLY},   // **
+    { 41, 60, "lizard_man",       WF_NONE},
+    { 61, 65, "nixie",            WF_COOL_ONLY},   // * (the large-body table prints ** - as printed, documented)
+    { 66, 70, "nymph",            WF_NONE},
+    { 71, 85, "giant_otter",      WF_NONE},
+    { 86, 98, "snapping_turtle",  WF_NONE},
+    { 99,100, "water_weird",      WF_NONE},
+};
+
+// ---- Fresh Water, Large Body of Water - DMG p.190 ----
+static const WaterRow kWaterFreshLarge[] = {
+    {  1,  2, "giant_beaver",     WF_COOL_ONLY},   // *
+    {  3,  4, "giant_crayfish",   WF_NONE},
+    {  5,  6, "crocodile",        WF_WARM_ONLY},   // **
+    {  7, 10, "giant_crocodile",  WF_WARM_ONLY},   // **
+    { 11, 15, "DINOSAUR",         WF_WARM_ONLY},   // the ** dino warm gate rides the parent row (R60 convention, documented)
+    { 16, 21, "giant_gar",        WF_NONE},
+    { 22, 23, "hippopotamus",     WF_WARM_ONLY},   // **
+    { 24, 26, "hobgoblin",        WF_NONE},   // Koalinth
+    { 27, 28, "gargoyle",         WF_NONE},   // Kopoacinth
+    { 29, 29, "ghoul",            WF_NONE},   // Lacedon
+    { 30, 33, "lizard_man",       WF_NONE},
+    { 34, 48, "buccaneer",        WF_NONE},   // Man, buccaneer (or warship)
+    { 49, 78, "merchant",         WF_NONE},   // Man, merchant
+    { 79, 84, "buccaneer",        WF_NONE},   // Man, pirate -> buccaneer (no pirate record, documented)
+    { 85, 85, "water_naga",       WF_NONE},
+    { 86, 90, "nixie",            WF_WARM_ONLY},   // ** (the small-body table prints * - as printed, documented)
+    { 91, 93, "giant_otter",      WF_NONE},
+    { 94, 97, "giant_pike",       WF_NONE},
+    { 98, 99, "snapping_turtle",  WF_NONE},
+    {100,100, "water_weird",      WF_NONE},
+};
+
+// ---- Salt Water, Shallow Waters, Coastal Waters, Small
+// ---- Inland Seas - DMG p.190
+static const WaterRow kWaterSaltShallow[] = {
+    {  1,  2, "giant_crocodile",  WF_WARM_ONLY},   // **
+    {  3, 10, "DINOSAUR",         WF_NONE},
+    { 11, 17, "dolphin",          WF_NONE},
+    { 18, 18, "dragon_turtle",    WF_NONE},
+    { 19, 20, "elf",              WF_NONE},   // Elf, aquatic
+    { 21, 21, "ixitxachitl",      WF_NONE},
+    { 22, 23, "hobgoblin",        WF_NONE},   // Koalinth
+    { 24, 24, "gargoyle",         WF_NONE},   // Kopoacinth
+    { 25, 25, "ghoul",            WF_NONE},   // Lacedon
+    { 26, 26, "locathah",         WF_NONE},
+    { 27, 35, "buccaneer",        WF_NONE},   // Man, buccaneer (warship)
+    { 36, 63, "merchant",         WF_NONE},   // Man, merchant
+    { 64, 67, "buccaneer",        WF_NONE},   // Man, pirate -> buccaneer (documented)
+    { 68, 70, "caveman",          WF_NONE},   // Man, pirate (tribesman with small craft) -> caveman (the tribesman convention, documented)
+    { 71, 73, "merman",           WF_NONE},   // Mermaid -> merman (the MM entry covers mermaids, documented)
+    { 74, 74, "nymph",            WF_NONE},
+    { 75, 75, "giant_octopus",    WF_NONE},   // Octopus, giant
+    { 76, 80, "sahuagin",         WF_NONE},
+    { 81, 83, "giant_shark",      WF_NONE},   // Shark, giant
+    { 84, 86, "sea_snake",        WF_NONE},   // Snake, sea
+    { 87, 89, "triton",           WF_NONE},
+    { 90, 90, "sea_turtle",       WF_NONE},   // Turtle, giant, sea
+    { 91, 96, "black_whale",      WF_NONE},   // Whale, carnivorous, small
+    { 97,100, "white_whale_beluga", WF_NONE}, // Whale, small
+};
+
+// ---- Salt Water, Deep Waters - DMG p.190 ----
+static const WaterRow kWaterSaltDeep[] = {
+    {  1,  5, "DINOSAUR",         WF_NONE},
+    {  6, 13, "dolphin",          WF_NONE},
+    { 14, 14, "dragon_turtle",    WF_NONE},
+    { 15, 16, "buccaneer",        WF_NONE},   // Man, buccaneer (warship)
+    { 17, 25, "merchant",         WF_NONE},   // Man, merchant
+    { 26, 27, "buccaneer",        WF_NONE},   // Man, pirate -> buccaneer (documented)
+    { 28, 35, "merman",           WF_NONE},
+    { 36, 40, "giant_octopus",    WF_NONE},   // Octopus, giant
+    { 41, 45, "sahuagin",         WF_NONE},
+    { 46, 50, "giant_shark",      WF_NONE},   // Shark, giant
+    { 51, 53, "sea_snake",        WF_NONE},   // Snake, sea
+    { 54, 55, "giant_squid",      WF_NONE},   // Squid, giant
+    { 56, 65, "triton",           WF_NONE},
+    { 66, 68, "sea_turtle",       WF_NONE},   // Turtle, giant, sea
+    { 69, 72, "sperm_whale",      WF_NONE},   // Whale, carnivorous, large
+    { 73, 78, "killer_whale",     WF_NONE},   // Whale, carnivorous, medium
+    { 79, 85, "black_whale",      WF_NONE},   // Whale, carnivorous, small
+    { 86, 90, "whale",            WF_NONE},   // Whale, large
+    { 91, 95, "right_whale",      WF_NONE},   // Whale, medium
+    { 96,100, "white_whale_beluga", WF_NONE}, // Whale, small
+};
+
+static const WaterRow* waterborneTable(WaterBody body,
+                                       WaterDepth depth,
+                                       size_t& count) {
+    const WaterRow* t;
+    if (body == WaterBody::FRESH) {
+        if (depth == WaterDepth::SHALLOW) {
+            t = kWaterFreshSmall; count = sizeof kWaterFreshSmall / sizeof kWaterFreshSmall[0];
+        } else {
+            t = kWaterFreshLarge; count = sizeof kWaterFreshLarge / sizeof kWaterFreshLarge[0];
+        }
+    } else {
+        if (depth == WaterDepth::SHALLOW) {
+            t = kWaterSaltShallow; count = sizeof kWaterSaltShallow / sizeof kWaterSaltShallow[0];
+        } else {
+            t = kWaterSaltDeep; count = sizeof kWaterSaltDeep / sizeof kWaterSaltDeep[0];
+        }
+    }
+    return t;
+}
+
+// R127: the waterborne roll - see encounters.h.
+DungeonEncounter rollWaterborneEncounter(
+        const monsters::MonsterRegistry& reg, rules::Dice& dice,
+        int pctile, int pctile2,
+        WaterBody body, WaterDepth depth, WaterClime clime) {
+    DungeonEncounter e;
+
+    size_t n = 0;
+    const WaterRow* t = waterborneTable(body, depth, n);
+
+    for (int attempt = 0; attempt < 24; ++attempt) {
+        const WaterRow* row = nullptr;
+        for (size_t i = 0; i < n; ++i)
+            if (pctile >= t[i].lo && pctile <= t[i].hi)
+                { row = &t[i]; break; }
+        if (!row) return e;
+
+        // footnote clime gates (DMG: "otherwise roll again")
+        bool ok = true;
+        if ((row->flags & WF_COOL_ONLY) && clime == WaterClime::WARM)
+            ok = false;
+        if ((row->flags & WF_WARM_ONLY) && clime == WaterClime::COOL)
+            ok = false;
+
+        std::string key = row->key;
+        if (ok && key == "DINOSAUR") {
+            const WaterRow* dr = nullptr;
+            for (size_t i = 0;
+                 i < sizeof kDinoSub / sizeof kDinoSub[0]; ++i)
+                if (pctile2 >= kDinoSub[i].lo
+                    && pctile2 <= kDinoSub[i].hi)
+                    { dr = &kDinoSub[i]; break; }
+            if (!dr) return e;    // subtable covers 01-00; defensive
+            // Dinosaur Subtable *: deep water only (dinichthys)
+            if ((dr->flags & WF_DEEP_ONLY)
+                && depth == WaterDepth::SHALLOW)
+                ok = false;
+            else
+                key = dr->key;
+        }
+
+        if (ok) {
+            const monsters::MonsterDef* def = reg.find(key);
+            if (def) {
+                e.key = key;
+                // numbers per MONSTER MANUAL (registry
+                // noAppearing; 0/0 falls back to a single
+                // specimen)
+                if (def->noAppearingMin > 0) {
+                    int lo = def->noAppearingMin;
+                    int hi = def->noAppearingMax < lo
+                           ? lo : def->noAppearingMax;
+                    e.count = (lo == hi)
+                        ? lo
+                        : lo + (int)dice.roll(1,
+                                (uint32_t)(hi - lo + 1), 0) - 1;
+                } else {
+                    e.count = 1;
+                }
+                return e;
+            }
+        }
+
+        // DMG advice: ignore & re-roll
+        pctile  = 1 + (int)dice.roll(1, 100, 0) - 1;
+        pctile2 = 1 + (int)dice.roll(1, 100, 0) - 1;
+    }
+    return e;
+}
+
+// Every registry key the waterborne table can produce - the
+// regtest-style companion of rollWaterborneEncounter.
+std::vector<std::string> waterborneEncounterKeys(
+        const monsters::MonsterRegistry& reg,
+        WaterBody body, WaterDepth depth) {
+    std::vector<std::string> out;
+    size_t n = 0;
+    const WaterRow* t = waterborneTable(body, depth, n);
+    for (size_t i = 0; i < n; ++i) {
+        std::string key = t[i].key;
+        if (key == "DINOSAUR") {
+            for (size_t d = 0;
+                 d < sizeof kDinoSub / sizeof kDinoSub[0]; ++d)
+                if (reg.find(kDinoSub[d].key))
+                    pushUnique(out, kDinoSub[d].key);
+        } else if (reg.find(key)) {
+            pushUnique(out, key.c_str());
+        }
+    }
+    return out;
+}
+
+// R127: the printed band edges - see encounters.h.
+std::vector<WaterborneBand> waterborneBands(
+        WaterBody body, WaterDepth depth) {
+    std::vector<WaterborneBand> out;
+    size_t n = 0;
+    const WaterRow* t = waterborneTable(body, depth, n);
+    for (size_t i = 0; i < n; ++i) {
+        WaterborneBand b;
+        b.key = t[i].key;
+        b.lo  = t[i].lo;
+        b.hi  = t[i].hi;
+        b.flags = t[i].flags;
+        out.push_back(b);
+    }
+    return out;
+}
+
+// The shared p.190 Dinosaur Subtable - see encounters.h.
+std::vector<WaterborneBand> dinosaurSubBands() {
+    std::vector<WaterborneBand> out;
+    for (size_t i = 0;
+         i < sizeof kDinoSub / sizeof kDinoSub[0]; ++i) {
+        WaterborneBand b;
+        b.key = kDinoSub[i].key;
+        b.lo  = kDinoSub[i].lo;
+        b.hi  = kDinoSub[i].hi;
+        b.flags = kDinoSub[i].flags;
+        out.push_back(b);
+    }
+    return out;
+}
+
+// ----------------------------------------------------------------------------
 // R63: the outdoor (wilderness) encounter tables - DMG Appendix C
 // (Premium reprint p.182-191, OCR-verified against the uploaded DMG).
 // Eight climate tables, each a creature-major table across eight

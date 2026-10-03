@@ -41,7 +41,10 @@ int AppState::seaMilesPerDay(){
 // ---- seaStep ----
 void AppState::seaStep(){
         if (mode != MODE_SEA || !party.alive()) return;
-        dm::DungeonEncounter e = dm::rollWaterEncounter(
+        // R127: the p.190 waterborne tables - a surface
+        // voyage rolls waterborne encounters (R70 had wired
+        // the R60 underwater set; the coaster sails the top)
+        dm::DungeonEncounter e = dm::rollWaterborneEncounter(
             registry, dice,
             (int)dice.roll(1, 100, 0), (int)dice.roll(1, 100, 0),
             dm::WaterBody::SALT, seaDepth(),
@@ -53,14 +56,22 @@ void AppState::seaStep(){
         std::vector<ai::Actor> foes = buildFoesFromDm(e);
         if (foes.empty()) return;
         char buf[96];
-        if (e.count == 1)
+        if (e.key == "buccaneer" || e.key == "merchant"
+            || e.key == "caveman") {
+            // R127: the waterborne Men rows - sails on the
+            // horizon, not fins below the keel
+            snprintf(buf, sizeof buf,
+                     "Sail ho! %d %ss close on the coaster - "
+                     "steel follows!", e.count, e.key.c_str());
+        } else if (e.count == 1) {
             snprintf(buf, sizeof buf,
                      "It rises from the waves - a wild %s "
                      "attacks the ship!", e.key.c_str());
-        else
+        } else {
             snprintf(buf, sizeof buf,
                      "%d wild %ss attack the ship!",
                      e.count, e.key.c_str());
+        }
         log.add(buf);
         beginCombat(std::move(foes), -1, e.key);
     }

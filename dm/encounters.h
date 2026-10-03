@@ -135,8 +135,10 @@ PartyReaction rollPartyReaction(rules::Dice& dice, int chaAdj,
 // MANUAL" - so counts come from the registry's noAppearing
 // fields. Footnotes (* cool only / ** warm only; dinichthys deep
 // only) re-roll per the book's own "otherwise roll again".
-// WIRED SINCE R70 - the sea travel loop rolls the salt-water
-// tables (see game/appstate.h, R70).
+// R70 wired the sea loop here; since R127 the sea travel
+// loop rolls the p.190 WATERBORNE tables instead (see the
+// R127 block above) - the underwater set stays pinned
+// data for the future diving layer.
 enum class WaterBody  { FRESH, SALT };
 enum class WaterDepth { SHALLOW, DEEP };
 enum class WaterClime { COOL, WARM };
@@ -151,6 +153,59 @@ DungeonEncounter rollWaterEncounter(
 std::vector<std::string> waterEncounterKeys(
     const monsters::MonsterRegistry& reg,
     WaterBody body, WaterDepth depth);
+
+// R127: DMG Appendix C WATERBORNE encounter tables (Premium
+// reprint p.190; line-diffed against the 1eonline.info
+// Appendix C compilation - the surface-travel companion of
+// the R60 underwater set, which the compilation omits and
+// which stays on its R60 uploaded-DMG verification). Four
+// tables: Fresh Water small body / large body, Salt Water
+// shallow (coastal) / deep; the fresh-water body size rides
+// the depth enum (SHALLOW = small body, DEEP = large body -
+// the engine's documented selector). Dinosaur rows resolve
+// on the shared p.190 Dinosaur Subtable against the second
+// percentile. The same footnote clime gates as R60 (* cool
+// only / ** warm only) re-roll per the book's own
+// "otherwise roll again"; the fresh-water Dinosaur warm
+// gate rides the parent row (the R60 convention). Counts
+// come from the registry's noAppearing fields (the book
+// prints no number columns for the waterborne tables
+// either). Substitutions documented in-row: Koalinth ->
+// hobgoblin, Kopoacinth -> gargoyle, Lacedon -> ghoul,
+// Elf (aquatic) -> elf (R60 conventions), Pirate ->
+// buccaneer and pirate (tribesman with small craft) ->
+// caveman (no pirate record; the repo's tribesman
+// convention), Mermaid -> merman (the MM Merman entry
+// covers mermaids); whales follow the R61 size mapping.
+// WIRED SINCE R127 - the sea travel loop rolls the
+// salt-water waterborne tables (see game/appstate.h, R70;
+// the R60 underwater set is pinned data for the future
+// diving layer).
+DungeonEncounter rollWaterborneEncounter(
+    const monsters::MonsterRegistry& reg, rules::Dice& dice,
+    int pctile, int pctile2,
+    WaterBody body, WaterDepth depth, WaterClime clime);
+
+// Every registry key the waterborne table (in both climes)
+// can produce - the regtest-style companion.
+std::vector<std::string> waterborneEncounterKeys(
+    const monsters::MonsterRegistry& reg,
+    WaterBody body, WaterDepth depth);
+
+// R127: the printed band edges behind the waterborne tables
+// and the p.190 Dinosaur Subtable (shared with the R60
+// underwater set) - the regtest line-diff audit walks them.
+// flags carries the footnote gates: 1 = cool waters only,
+// 2 = warm waters only, 4 = deep water only.
+struct WaterborneBand {
+    std::string key;
+    int lo;
+    int hi;
+    int flags;
+};
+std::vector<WaterborneBand> waterborneBands(
+    WaterBody body, WaterDepth depth);
+std::vector<WaterborneBand> dinosaurSubBands();
 
 // R63: DMG Appendix C outdoor (wilderness) encounter tables
 // (Premium reprint p.182-191; OCR-verified against the uploaded

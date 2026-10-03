@@ -482,8 +482,26 @@ Categories:
       (tropical mountains dervish 29-30; marsh Men
       nomad/tribesman). Pinned by the R126 battery audit;
       census 44.
-- [ ] **Waterborne/aerial encounter tables
-      (p.190)** - alongside the crew economy.
+- [x] **Waterborne/aerial encounter tables
+      (p.190)** - CLOSED R127: the four p.190 waterborne
+      tables (fresh water small/large body, salt water
+      shallow/coastal and deep) are pinned row-by-row,
+      line-diffed against the 1eonline.info Appendix C
+      compilation, and wired into the sea travel loop
+      (R70 had rolled the R60 underwater set; the coaster
+      now rolls surface encounters - buccaneers,
+      merchants, pirates, mermaids, whales - and the
+      underwater set stays pinned data for the future
+      diving layer). Dinosaur rows resolve on the shared
+      p.190 Dinosaur Subtable; the fresh-water warm gate
+      rides the parent row per the R60 convention.
+      Aerial: the DMG prints no separate aerial table -
+      airborne play resolves on the wilderness tables'
+      airborne rows (the ^75^ markers, pinned R63/R126),
+      documented. Substitutions pinned in-row (pirate ->
+      buccaneer, tribesman small craft -> caveman,
+      mermaid -> merman). Pinned by the R127 battery
+      audit; census 45.
 
 ## Out of scope by design
 

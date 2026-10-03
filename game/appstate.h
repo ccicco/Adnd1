@@ -365,7 +365,7 @@ enum GameMode : int {
     MODE_COMBAT,
     MODE_TOWN,         // R41: shops between dives
     MODE_OVERLAND,     // R68: wilderness travel
-    MODE_SEA,          // R70: sea voyage (R60 salt-water tables)
+    MODE_SEA,          // R70: sea voyage (R127 p.190 waterborne)
     MODE_CITY,         // R70: city streets (R64 matrix)
 };
 
