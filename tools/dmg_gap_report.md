@@ -196,6 +196,22 @@ DMG limits factor use to these caller-detected cases. The
 fireball example (sword 5 vs casting 3, dagger 2 vs 3,
 the two-handed no-chance) is pinned in the audit.
 Census 76.
+R159 PINNED striking to subdue (DMG p.67 + the MM
+dragon rules) - rules/subdue.h: the flat/butt/haft/
+pommel strike (otherwise a normal attack), the 75/25
+accounting (the print example 40 subdual = 10 real,
+cumulative, floored), applicability (MM-stated or
+humanoid size and type, never player characters), and
+the knockout JUDGMENT (cumulative subdual meets or
+exceeds remaining hit points). Dragon capture: announce
+intent before combat (killing form otherwise, fixed
+per dragon), silver/gold/chromatic/platinum unsubduable
+(brass, bronze, copper can be), the average-or-better
+attacker intelligence gate (JUDGMENT: 9), the percent
+ratio with halves up (the MM example 44/88 = 50, 67/88
+= 76, 77/88 = 88), the automatic 1:1 subdual, the
+100-800 gp per hit point d8 sale price, and the ridden
+convention. Census 77.
 
 Categories:
 - [x] = verified against the book text
@@ -1189,8 +1205,11 @@ Categories:
       weapon-vs-spell strike segment); rules/turn verified
       first and deliberately untouched - the print applies
       factors only in caller-detected cases.
-- [ ] **Striking to subdue (p.67)** - the knockout
-      procedure and subdual damage accounting.
+- [x] **Striking to subdue (p.67)** - pinned by R159:
+      rules/subdue.h (the 75/25 accounting, applicability,
+      the knockout threshold, and the MM dragon capture:
+      the kind table, the int gate, the percent ratio,
+      the automatic subdual, the sale price).
 - [ ] **Weaponless combat (pp.72-73)** - pummeling,
       wrestling, overbearing: the three procedures and
       their tables.
