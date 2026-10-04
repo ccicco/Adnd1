@@ -470,6 +470,47 @@ lines; the reconstruction was cross-validated
 against the known print readings and every
 probe matched. The caller reads the letter
 and plays the troops. Census 87.
+R170 PINNED followers for upper level player
+characters by class (DMG pp.16-18) -
+rules/followers.h: the cleric 7-category list
+(roll for each, all 0 level men-at-arms, every
+armor and weapon string pinned); the fighter
+leader and troops bands (levels 5/6/6/7 with
+the magic gear, the four company
+compositions); the ranger 2d12 count with the
+d% adjustment ladder (the +10 and +5 first
+roll only, the rerule, scores over 70
+special, one group per category); the thief
+4d6 count with the level modifier ladder, the
+six category bands, the race and level of
+thief tables, the humans table I, the
+12-row demi-humans table II, the multi-class
+thief professions and the always neutral good
+note; the animals, mounts, creatures and
+special creatures tables; the assassin 7d4
+guild count with the 75 percent desert, the
+race and level of assassin tables, the 25
+percent multi-class chance and the
+multi-classed assassin professions; the
+Grandfather/Grandmother ladder (1 8th, 2
+7th, 3 6th, 4 5th, 5 4th, 6 3rd, 7 2nd = 28,
+plus 4-16 1st level, up to 44 for the new
+leader); the arrival timing (d10 with d6 tens
+the first day 1-30, intervals 1-8 days, wait
+1-4 then gone forever, a henchman may
+receive); and the paladin warhorse (from 4th
+level, within a 7 days ride, a task of 2 or
+more weeks, possibly wild or guarded by an
+evil fighter of the same level, 10 years of
+service). JUDGMENTs: the OCR drops the
+half-orcish 26-50 band of the race of
+assassin table (pinned as the print runs);
+the OCR interleaves the multi-classed
+assassin table (the dwarf, elf and half-elf
+rows each print no other class permitted);
+the printed asterisks ride as flags. The
+caller rolls the dice and builds the
+rosters. Census 88.
 
 Categories:
 - [x] = verified against the book text
@@ -1547,9 +1588,12 @@ Categories:
       audit is the regtest.cpp R153 block). The
       locked-door parentheticals and the
       one-attempt-ever footnote are pinned with it.
-- [ ] **Followers by class (pp.16-18)** - the name-level
-      follower tables (cleric, fighter, ranger, thief,
-      assassin) for stronghold recruitment.
+- [x] **Followers by class (pp.16-18)** - PINNED
+      R170: rules/followers.h (the cleric, fighter,
+      ranger, thief and assassin recruitment tables
+      cell by cell, the multi-class tables, the
+      Grandfather ladder, the arrival timing and
+      the paladin warhorse).
 - [ ] **Secondary skills (p.12)** - the table and the
       when-to-use guidance for PC backgrounds.
 - [ ] **R146 fiction (the named omissions)** - the
