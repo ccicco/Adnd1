@@ -164,6 +164,21 @@ multi-class level math and the alignment curation are
 player-side (the print hands them to the table); the
 ability scores stay player-side too - the encounter
 party carries combat fields only. Census 74.
+R157 PINNED grenade-like missiles + holy/unholy water
+(DMG pp.64-65) - the thrown-flask layer: container sizes,
+the effect table (direct hit + splash dice), the 3-inch
+range bands, the item-save break rule (the p.80 matrix:
+ceramic flask 18/12, crystal vial 19/14), the 3-foot
+splash-save radius, the d6/d8 miss tables, the p.65
+holy/unholy water targeting (non-material undead
+unaffected), the flaming-oil crossing damage, the 2-5 gp
+vial cost and the boulder drops. JUDGMENT: the acid flask
+rides the ceramic row and the poison vial the crystal row
+(the print names only the oil flask and the holy-water
+vial); a drop under 10 feet reads at the window edge. The
+to-hit throw itself stays in the missile-fire lane; poison
+damage stays print-special (the caller holds the poison
+lane). Census 75.
 
 Categories:
 - [x] = verified against the book text
@@ -1144,9 +1159,13 @@ Categories:
       tables, first engine caller. The p.176 subtable
       rows keep their own R55 magic ladder (a different
       print; not conflated).
-- [ ] **Grenade-like missiles + holy/unholy water
-      (pp.64-65)** - thrown flasks: the break and splash
-      rules, the cone tables, vial costs and effects.
+- [x] **Grenade-like missiles + holy/unholy water
+      (pp.64-65)** - pinned by R157: rules/grenade.h, the
+      header-only flask layer (sizes, effect dice, range
+      bands, item-save breaks, the d8 direction cone,
+      holy/unholy targeting, oil crossing, vial cost,
+      boulder drops); the throw itself rides the
+      missile-fire lane.
 - [ ] **Weapon speed factors in initiative (p.66)** - the
       segment scheduler exists; the speed-factor table
       and its melee-initiative adjustments are unpinned
