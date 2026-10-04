@@ -51,16 +51,26 @@ struct AbilityScores {
 // d100: 01-50 -> 18/01-50, 51-75 -> 18/51-75, 76-90 -> 18/76-90,
 // 91-99 -> 18/91-99, 00 -> 18/00 (percentile strength 100).
 // The to-hit/damage/carry bands (PHB p.9) are indexed by 51/76/91/100.
+// R153 DIVERGENCE FIX: the original transcription carried
+// unsourced carry and press columns (35/45/55/70/80 lbs
+// and 90/130/160/200/240 press - neither prints on p.9)
+// and misread two band cells: the printed 18/91-99 row is
+// +2 hit / +5 damage (not +3/+6) and the 18/51-75 damage
+// is +3 (not +4). The printed Table II columns - gp weight
+// allowance, open doors on a d6 with the locked-door
+// parentheticals, bend bars/lift gates - replace them.
 // ----------------------------------------------------------------------------
 struct ExceptionalStrength {
     bool   has = false;     // only true for fighter group at STR 18
     uint8_t pct = 0;        // 1-100; 100 printed as "00"
 
-    // PHB p.9 table (bands: 01-50, 51-75, 76-90, 91-99, 00)
-    int  hitAdj()    const;   // -1..+3 to hit
-    int  dmgAdj()    const;   // -1..+6 damage
-    int  weightAllow() const; // lbs before minor penalty
-    int  press()     const;   // max press lbs (informational)
+    // PHB p.9 Table II (bands: 01-50, 51-75, 76-90, 91-99, 00)
+    int  hitAdj()    const;   // +1..+3 to hit
+    int  dmgAdj()    const;   // +3..+6 damage
+    int  weightAllowGp() const;      // +1,000..+3,000 g.p.
+    int  openDoorsMax() const;       // the best d6 chance (3..5)
+    int  openDoorsLockedMax() const; // 18/91-99: 1, 18/00: 2
+    int  bendBarsPct() const;        // 20..40 percent
 };
 
 // ----------------------------------------------------------------------------
@@ -69,6 +79,18 @@ struct ExceptionalStrength {
 // ----------------------------------------------------------------------------
 int strHitAdj(uint8_t str, const ExceptionalStrength& ex);
 int strDmgAdj(uint8_t str, const ExceptionalStrength& ex);
+
+// ----------------------------------------------------------------------------
+// STR Table II (PHB p.9), R153: the printed weight-allowance,
+// open-doors and bend-bars columns for the whole 3-18/00 table.
+// ex carries the five 18/xx rows at STR 18; scores beyond 18
+// (gauntlets, giant strength) clamp to the plain 18 row -
+// the printed table stops there (documented clamp).
+// ----------------------------------------------------------------------------
+int strWeightAllowGp(uint8_t str, const ExceptionalStrength& ex);
+int strOpenDoorsMax(uint8_t str, const ExceptionalStrength& ex);
+int strOpenDoorsLockedMax(uint8_t str, const ExceptionalStrength& ex);
+int strBendBarsPct(uint8_t str, const ExceptionalStrength& ex);
 
 // ----------------------------------------------------------------------------
 // DEX tables (PHB p.11-12)

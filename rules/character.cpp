@@ -44,13 +44,21 @@ void AbilityScores::set(Ability a, uint8_t v) {
 }
 
 // ----------------------------------------------------------------------------
-// Exceptional strength (PHB p.9)
-//   Band          Hit adj  Dmg adj  Weight allow  Max press
-//   18/01-50      +1       +3       35            90
-//   18/51-75      +2       +4       45            130
-//   18/76-90      +2       +5       55            160
-//   18/91-99      +3       +6       70            200
-//   18/00         +3       +6       80            240
+// Exceptional strength (PHB p.9), STR Table II as printed:
+//   Band       Hit adj  Dmg adj  Wt allow   Open doors  Bend bars
+//   18/01-50   +1       +3       +1,000     1-3         20%
+//   18/51-75   +2       +3       +1,250     1-4         25%
+//   18/76-90   +2       +4       +1,500     1-4         30%
+//   18/91-99   +2       +5       +2,000     1-4 (1)*    35%
+//   18/00      +3       +6       +3,000     1-5 (2)*    40%
+// * the parenthetical is the chances in 6 of forcing a
+//   locked, barred, magically held or wizard locked
+//   door - one attempt ever per door, a failed attempt
+//   can never succeed (the printed footnote).
+// R153 DIVERGENCE FIX, named in character.h: the original
+// transcription carried unsourced carry and press columns
+// and misread the 18/91-99 hit/damage and the 18/51-75
+// damage cells; the printed row values replace them.
 // ----------------------------------------------------------------------------
 
 static int exBand(const ExceptionalStrength& ex) {
@@ -63,27 +71,39 @@ static int exBand(const ExceptionalStrength& ex) {
 }
 
 int ExceptionalStrength::hitAdj() const {
-    static constexpr int adj[5]  = { 1, 2, 2, 3, 3 };
+    static constexpr int adj[5]  = { 1, 2, 2, 2, 3 };
     int b = exBand(*this);
     return b < 0 ? 0 : adj[b];
 }
 
 int ExceptionalStrength::dmgAdj() const {
-    static constexpr int adj[5]  = { 3, 4, 5, 6, 6 };
+    static constexpr int adj[5]  = { 3, 3, 4, 5, 6 };
     int b = exBand(*this);
     return b < 0 ? 0 : adj[b];
 }
 
-int ExceptionalStrength::weightAllow() const {
-    static constexpr int allow[5] = { 35, 45, 55, 70, 80 };
+int ExceptionalStrength::weightAllowGp() const {
+    static constexpr int allow[5] = { 1000, 1250, 1500, 2000, 3000 };
     int b = exBand(*this);
     return b < 0 ? 0 : allow[b];
 }
 
-int ExceptionalStrength::press() const {
-    static constexpr int press[5] = { 90, 130, 160, 200, 240 };
+int ExceptionalStrength::openDoorsMax() const {
+    static constexpr int door[5] = { 3, 4, 4, 4, 5 };
     int b = exBand(*this);
-    return b < 0 ? 0 : press[b];
+    return b < 0 ? 0 : door[b];
+}
+
+int ExceptionalStrength::openDoorsLockedMax() const {
+    static constexpr int door[5] = { 0, 0, 0, 1, 2 };
+    int b = exBand(*this);
+    return b < 0 ? 0 : door[b];
+}
+
+int ExceptionalStrength::bendBarsPct() const {
+    static constexpr int pct[5] = { 20, 25, 30, 35, 40 };
+    int b = exBand(*this);
+    return b < 0 ? 0 : pct[b];
 }
 
 // ----------------------------------------------------------------------------
@@ -102,7 +122,7 @@ int ExceptionalStrength::press() const {
 // ----------------------------------------------------------------------------
 
 int strHitAdj(uint8_t str, const ExceptionalStrength& ex) {
-    if (str < 3)  return -3;
+    if (str <= 3) return -3;   // the printed score-3 row
     if (str <= 5) return -2;
     if (str <= 7) return -1;
     if (str <= 15) return 0;
@@ -130,6 +150,59 @@ int strDmgAdj(uint8_t str, const ExceptionalStrength& ex) {
     if (str <= 22) return 5;
     if (str <= 24) return 6;
     return 7;   // 25
+}
+
+// ----------------------------------------------------------------------------
+// STR Table II, the printed carry / door / bend columns (R153)
+//   Score  Wt allow (g.p.)  Open doors  Bend bars
+//   3      -350             1           0%
+//   4-5    -250             1           0%
+//   6-7    -150             1           0%
+//   8-9    normal (0)       1-2         1%
+//   10-11  normal (0)       1-2         2%
+//   12-13  +100             1-2         4%
+//   14-15  +200             1-2         7%
+//   16     +350             1-3         10%
+//   17     +500             1-3         13%
+//   18     +750             1-3         16%
+//   18/xx  +1,000..+3,000   1-3..1-5    20%..40%
+// ----------------------------------------------------------------------------
+
+int strWeightAllowGp(uint8_t str, const ExceptionalStrength& ex) {
+    if (str < 4)  return -350;
+    if (str <= 5) return -250;
+    if (str <= 7) return -150;
+    if (str <= 11) return 0;
+    if (str <= 13) return 100;
+    if (str <= 15) return 200;
+    if (str == 16) return 350;
+    if (str == 17) return 500;
+    return ex.has ? ex.weightAllowGp() : 750;   // 18 and beyond
+}
+
+int strOpenDoorsMax(uint8_t str, const ExceptionalStrength& ex) {
+    if (str < 8)  return 1;
+    if (str <= 15) return 2;
+    if (str == 18 && ex.has) return ex.openDoorsMax();
+    return 3;   // 16, 17, plain 18 and beyond
+}
+
+int strOpenDoorsLockedMax(uint8_t str, const ExceptionalStrength& ex) {
+    if (str == 18 && ex.has) return ex.openDoorsLockedMax();
+    return 0;   // the parentheticals ride the 18/91-99 and
+                // 18/00 rows alone (the printed footnote)
+}
+
+int strBendBarsPct(uint8_t str, const ExceptionalStrength& ex) {
+    if (str < 8)  return 0;
+    if (str <= 9) return 1;
+    if (str <= 11) return 2;
+    if (str <= 13) return 4;
+    if (str <= 15) return 7;
+    if (str == 16) return 10;
+    if (str == 17) return 13;
+    if (str == 18 && ex.has) return ex.bendBarsPct();
+    return 16;   // plain 18 and beyond
 }
 
 // ----------------------------------------------------------------------------

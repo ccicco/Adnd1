@@ -113,6 +113,18 @@ desired direction, as printed). The lost-party
 procedure (back-track, re-roll the next day, describe
 terrain as if on course) is judge narration, printed
 and named, not engine data. Census 70.
+R153 PINNED the exceptional strength table (PHB p.9),
+a DIVERGENCE FIX round: the original transcription
+carried unsourced carry and press numbers and misread
+two band cells - the printed 18/91-99 row is +2 hit /
++5 damage (not +3/+6) and the 18/51-75 damage is +3
+(not +4). The full STR Table II now pins all five
+columns for the whole 3-18/00 table: hit probability,
+damage, the g.p. weight allowance (-350 through
++3,000), open doors on a d6 with the locked-door
+parentheticals (18/91-99: 1, 18/00: 2, one attempt
+ever) and bend bars/lift gates (0% through 40%).
+Census 71.
 
 Categories:
 - [x] = verified against the book text
@@ -1150,10 +1162,15 @@ Categories:
       the four exemption wordings. The caller is
       items::encumbranceBand (PHB p.38) - this is its
       printed per-item source.
-- [ ] **Exceptional strength (PHB p.9)** - the fighter 18
-      percentile roll (18/01 through 18/00) and the STR
-      Table II bend-bars / open-doors columns; verify
-      the abilities layer first.
+- [x] **Exceptional strength (PHB p.9)** - PINNED R153,
+      a divergence fix: the percentile roll itself was
+      already sound (rollExceptionalStrength, R120s),
+      but the band data misread two cells and carried
+      unsourced carry/press numbers - corrected to the
+      printed Table II, all five columns, 3-18/00 (the
+      audit is the regtest.cpp R153 block). The
+      locked-door parentheticals and the
+      one-attempt-ever footnote are pinned with it.
 - [ ] **Followers by class (pp.16-18)** - the name-level
       follower tables (cleric, fighter, ranger, thief,
       assassin) for stronghold recruitment.
