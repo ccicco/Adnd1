@@ -265,6 +265,26 @@ rows DIVERGE from the print from mid-table on
 18000 boundary; the MU, cleric and thief rows
 diverge above that) - the XP tables stay an
 open box. Census 80.
+R163 PINNED the poison table (DMG p.20) -
+rules/poison.h: the purchased-poison types,
+ingestive A-E and insinuative A-D, each with
+cost per dose (5-1,000 gp ingestive, 10-1,500
+insinuative), onset time with its unit (rounds,
+ingestive D 1 segment, ingestive E 1-4 turns),
+the damage classes (damage if saved, damage or
+death if not), the footnote victim save bonuses
+(+4/+3/+2/+1) and detection chances
+(80/65/40/15). JUDGMENT: grade E prints no
+footnotes - no save bonus, detection 0. The
+class rules: a studied assassin gives no
+penalty, an unstudied assassin +1 on the victim
+save, everyone else +2; monster poison is
+all-or-nothing and dual-use. The DMG p.28 blade
+venom decay rides here: insinuative, full the
+first day or hit, half the second, gone by the
+third, +4 on saves once decayed. The caller
+holds the save roll (the monster venom layer
+keeps its per-monster saves). Census 81.
 
 Categories:
 - [x] = verified against the book text
@@ -1278,10 +1298,11 @@ Categories:
       through the name levels; the cleric level 5 blank
       cell carries Curate down; the XP-row divergence is
       recorded in the header note).
-- [ ] **The poison table (p.20)** - the printed types:
-      ingest/injury, onset times, damage and effect
-      classes. The monster venom layer rolls per-monster
-      saves; the type table itself is unpinned.
+- [x] **The poison table (p.20)** - pinned by R163:
+      rules/poison.h (the ingestive/insinuative grade
+      table with cost, onset, damage classes, save
+      bonuses and detection chances; the efficiency
+      ladder; the blade-venom decay).
 - [ ] **The assassination table (p.75)** - the odds table
       proper; the p.19-20 spying rules are already wired
       (the spy).
