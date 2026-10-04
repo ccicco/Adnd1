@@ -93,6 +93,13 @@ int  conSystemShock(uint8_t con);    // 25..99 (%)
 int  conResSurvival(uint8_t con);    // 35..100 (%)
 int  conPoisonSaveAdj(uint8_t con);  // -2..+2
 
+// R147: dwarf CON magic-save bonus (PHB p.16) - applies
+// vs. wands/staves/rods, spells, and poison "in the same
+// manner". Book bands: CON 4-6 +1, 7-10 +2, 11-13 +3,
+// 14-17 +4, 18+ +5; the formula con*2/7 clamped 0..5
+// matches every band.
+int  dwarfConSaveBonus(uint8_t con); // 0..+5 (0 below CON 4)
+
 // ----------------------------------------------------------------------------
 // INT / WIS / CHA tables (PHB p.10-11)
 // ----------------------------------------------------------------------------

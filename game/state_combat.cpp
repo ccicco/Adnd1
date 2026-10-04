@@ -353,6 +353,17 @@ std::vector<ai::Actor> AppState::buildFoesFromParty(const dm::CharacterParty& pa
                 ab[i] = (int)dice.roll(3, 6, 0);
             enum { S_, I_, W_, D_, C_, H_ };  // str int wis dex con cha
             int raceRoll = (int)dice.roll(1, 100, 0);
+            // R147: the p.176 race lands on the foe Actor -
+            // NPC-foe dwarves carry their CON magic-save
+            // bonus into saves. The two race-only bands
+            // (half-elf 61-85, half-orc 96-00) previously
+            // fell through unnamed; they mark the race now.
+            if (raceRoll <= 25)      a.race = dm::RACE_DWARF;
+            else if (raceRoll <= 50) a.race = dm::RACE_ELF;
+            else if (raceRoll <= 60) a.race = dm::RACE_GNOME;
+            else if (raceRoll <= 85) a.race = dm::RACE_HALF_ELF;
+            else if (raceRoll <= 95) a.race = dm::RACE_HALFLING;
+            else                    a.race = dm::RACE_HALF_ORC;
             if (raceRoll <= 25) {            // dwarf
                 ab[S_] += 1; ab[C_] += 1; ab[H_] -= 1;
             } else if (raceRoll <= 50) {      // elf

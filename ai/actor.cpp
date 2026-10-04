@@ -61,6 +61,8 @@
 
 #include "actor.h"
 
+#include "../dm/encounters.h"   // R147: dm::NpcRace ints
+
 #include <algorithm>
 #include <cstdio>
 
@@ -120,6 +122,13 @@ spelleffects::TargetDesc Actor::asTarget() const {
     t.hitDice = hitDice;   // R82: Death Spell budgeting
     t.isUndead = undead;
     t.isLarge = hitDice >= 8;
+    // R147: dwarf CON magic-save bonus (PHB p.16) and the
+    // matrix II.D non-intelligence flag ride the target
+    // descriptor; trySave / trySaveVs apply them.
+    t.saveDwarfBonus =
+        (!isCharacter && race == dm::RACE_DWARF)
+            ? rules::dwarfConSaveBonus(con) : 0;
+    t.saveNonIntelligent = !isCharacter && nonIntelligent;
     return t;
 }
 
@@ -290,11 +299,25 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
 void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
                                const ActorSpecial& sp) {
     auto trySaveVs = [&](int saveCategory, int penalty) {
+        // R147: matrix II footnote D parity with
+        // spelleffects::trySave - non-intelligence halves
+        // the save level except vs. death/poison, and the
+        // dwarf CON bonus (PHB p.16) eases wands, spells
+        // and death-poison saves.
+        int lvl = defender.isCharacter
+            ? defender.level
+            : spelleffects::effectiveSaveLevel(
+                rules::monsterSaveLevel(defender.hitDice),
+                defender.nonIntelligent, saveCategory);
         int target = rules::saveTarget(
             defender.isCharacter ? defender.classIndex : 0,
-            defender.isCharacter ? defender.level
-                                 : rules::monsterSaveLevel(defender.hitDice),
+            lvl,
             (rules::SaveCategory)saveCategory);
+        if (!defender.isCharacter &&
+            defender.race == dm::RACE_DWARF &&
+            saveCategory != rules::SAVE_PETRIFY_POLY &&
+            saveCategory != rules::SAVE_BREATH)
+            target -= rules::dwarfConSaveBonus(defender.con);
         // R81: antivenom (Slow/Neutralize Poison) eases
         // death/poison saves by the status magnitude
         if ((rules::SaveCategory)saveCategory ==

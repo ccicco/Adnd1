@@ -220,6 +220,16 @@ int conPoisonSaveAdj(uint8_t con) {
     return v[conIndex(con)];
 }
 
+// R147: dwarf CON magic-save bonus (PHB p.16) - +1 per 3.5
+// points of CON, clamped 0..5. Matches every printed band
+// (4-6 +1, 7-10 +2, 11-13 +3, 14-17 +4, 18 +5).
+int dwarfConSaveBonus(uint8_t con) {
+    int b = ((int)con * 2) / 7;
+    if (b < 0) b = 0;
+    if (b > 5) b = 5;
+    return b;
+}
+
 // ----------------------------------------------------------------------------
 // INT (PHB p.10): number of additional languages beyond native tongue
 //   3: none; 4-5: +1; 6-8: +2; 9-12: +3 (bonus language allowed);

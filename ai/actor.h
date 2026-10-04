@@ -109,6 +109,13 @@ struct Actor {
 
     // identity: character or monster
     bool isCharacter = false;
+    // R147: race (dm::NpcRace int - party PCs stay human,
+    // 0; NPC-foe dwarves carry their CON magic-save bonus
+    // into saves) and the DMG p.80 matrix II footnote D
+    // flag (MM intelligence "non" - saves at half level
+    // except vs. death/poison).
+    int  race = 0;
+    bool nonIntelligent = false;
     // character path
     int  classIndex = 0;           // CharClass index
     int  level      = 1;
@@ -242,7 +249,8 @@ struct Actor {
     int hitAdjustment(const Actor& defender) const;  // STR+plus+wvsAC
     int attacksPerRound() const;   // R7 meleeAttacks / monster routines
 
-    // R14 target descriptor view of this actor
+    // R14 target descriptor view of this actor; R147: also
+    // lands the dwarf CON save bonus + matrix II.D flag
     spelleffects::TargetDesc asTarget() const;
 
     // status helpers

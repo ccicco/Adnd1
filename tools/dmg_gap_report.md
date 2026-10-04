@@ -812,8 +812,9 @@ Categories:
       the engine deliberately does not copy the errors,
       and the approximation rows are now STANDING
       APPROXIMATIONS (a per-weapon p.38 table is a future
-      lane), as is the dwarf CON magic-save bonus (the
-      engine models CON only vs. poison). Pinned by the
+      lane), as was the dwarf CON magic-save bonus until
+      R147 closed it (PHB p.16 - rules::dwarfConSaveBonus;
+      see the R147 boxes). Pinned by the
       R144 golden melee audit; census 62.
 - [x] **The per-weapon p.38 'to hit' table (R144's standing
       approximation)** - CLOSED R145: every weapon now
@@ -872,6 +873,56 @@ Categories:
       and no last 5%) and the ruffian 1-in-4
       half-orc/humanoid note. Pinned by the R146 city
       flavor audit; census 64.
+- [x] **The dwarf CON magic-save bonus + matrix II
+      footnote D (R144's named standing approximation
+      + the p.80 footnote)** - CLOSED R147: dwarves add
+      their constitution to saves vs. wands/staves/rods,
+      spells, and poison "in the same manner" (PHB
+      p.16) - pinned as rules::dwarfConSaveBonus (con*2/7
+      clamped 0..5, matching every printed band 4-6 +1
+      through 18 +5); NPC foes carry the rolled p.176
+      race on the Actor (the half-elf and half-orc
+      race-only bands now mark the race where they
+      previously fell through), and asTarget / trySaveVs
+      apply the bonus to wands, spells, and death-poison
+      saves (the party is human - only NPC-foe dwarves
+      benefit). Footnote D: non-intelligence saves at
+      half hit dice rounded up except vs. death/poison -
+      pinned as spelleffects::effectiveSaveLevel, consumed
+      by both trySave and the ai trySaveVs; toActor maps
+      MM intelligence "non" (containsCI, no dash -
+      "non-" wordings excluded; exactly 90 of the 408,
+      census-pinned; "animal" keeps the II.B step, a
+      named judgment call). Matrix II.C (classed monsters
+      saving on their most favorable matrix) stays a
+      named gap - the per-monster class pass is a future
+      lane. Pinned by the R147 dwarf CON + II.D audits;
+      census 67.
+- [x] **Appendix P: creating a party on the spur of the
+      moment (DMG pp.225-226)** - CLOSED R147: pinned as
+      the header-only dm/appendixp.h (the appendixa.h
+      pattern - data + rollers, the caller decides when).
+      The three level-band options per range (low 1-2 /
+      1-3 / 2-4, medium 5-7 / 5-8 / 7-9, upper 8-10 /
+      8-11 / 9-12), the 4d6-drop-lowest ability rolls,
+      the protective and weapons per-level percentage
+      tables (the four primary classes; the book's
+      subclass and UA/OA rows are its own variants, out
+      of scope), the potion rows (per-level chance, max
+      carried, the 10 printed types - the book's "0."
+      prints as type 10), the item/+2/+3 chance chain
+      (item = level x pct; above-90 excess folds into the
+      +2 chance; +3 is a straight 1% per level), and the
+      rollMemberMagic kit builder (one armor sort
+      chain/ring/chain/leather by class, one weapon sort
+      sword/dagger/mace/sword, a shield try for the
+      armored classes). Gonzo's worked example pinned:
+      15%/level chain at 9th = 135%, +2 chance 9 + 45 =
+      54 (rolled 51 - at least +2), +3 check 9 (rolled
+      99 - just +2). No caller yet - data + rollers
+      only (the p.176 convention-party generator is a
+      future lane). Pinned by the R147 Appendix P audit;
+      census 67.
 
 ## Out of scope by design
 

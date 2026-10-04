@@ -842,6 +842,16 @@ ai::Actor MonsterRegistry::toActor(const std::string& key,
     a.morale = def->morale;
     a.isLeader = def->isLeader;
 
+    // R147: matrix II footnote D - printed intelligence
+    // "non" (containsCI, no dash: "non-" is average-and-up
+    // wording, not the animal mind) flags the half-level
+    // save. "animal" keeps the II.B convention (a named
+    // judgment call); the audit census pins exactly 90 of
+    // the 408.
+    if (containsCI(def->intelligence, "non") &&
+        def->intelligence.find('-') == std::string::npos)
+        a.nonIntelligent = true;
+
     // R75: copy special attacks onto the Actor. resolveSpecial (ai,
     // R18) consumes these - but toActor never copied them, so no
     // registry-spawned monster ever fired a special. The actor.h

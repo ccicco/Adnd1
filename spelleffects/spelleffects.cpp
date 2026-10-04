@@ -58,9 +58,21 @@ bool tickStatus(StatusEffect& st) {
 static bool trySave(Dice& dice, const spells::SpellDef& s,
                     const TargetDesc& t) {
     if (s.saveCategory < 0) return false;   // no save allowed
-    int target = rules::saveTarget(t.saveClass, t.saveLevel,
+    // R147: matrix II.D halves the non-intelligent save
+    // level (except death/poison); the dwarf CON bonus
+    // (PHB p.16) eases wands, spells and death-poison
+    // saves.
+    int lvl = effectiveSaveLevel(t.saveLevel,
+                                 t.saveNonIntelligent,
+                                 s.saveCategory);
+    int target = rules::saveTarget(t.saveClass, lvl,
                                    (rules::SaveCategory)s.saveCategory);
-    return rules::attemptSave(dice, target, t.saveBonus);
+    int bonus = t.saveBonus;
+    if (s.saveCategory == rules::SAVE_WANDS ||
+        s.saveCategory == rules::SAVE_SPELLS ||
+        s.saveCategory == rules::SAVE_DEATH_POISON)
+        bonus += t.saveDwarfBonus;
+    return rules::attemptSave(dice, target, bonus);
 }
 
 // ----------------------------------------------------------------------------

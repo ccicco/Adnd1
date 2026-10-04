@@ -67,6 +67,8 @@ const char* statusName(StatusKind s);
 //   saveClass         0-3 (fighter/MU/cleric/thief matrix for target)
 //   saveLevel         target's class level for the save table
 //   saveBonus         flat modifier (WIS magic adj, rings, etc.)
+//   saveDwarfBonus    R147 dwarf CON magic-save bonus (PHB p.16)
+//   saveNonIntelligent  R147 matrix II.D half-level flag
 //   magicResistPct    MR checked before anything else
 //   isUndead          charm person etc. don't affect undead
 //   isLarge           some effects differ vs large targets
@@ -78,10 +80,29 @@ struct TargetDesc {
     int saveClass   = 0;
     int saveLevel   = 1;
     int saveBonus   = 0;
+    // R147: dwarf CON magic-save bonus (0 for everyone but
+    // NPC-foe dwarves) and the matrix II.D non-intelligence
+    // flag - applied by trySave / the ai save helper.
+    int saveDwarfBonus = 0;
+    bool saveNonIntelligent = false;
     int magicResistPct = 0;
     bool isUndead = false;
     bool isLarge  = false;
 };
+
+// R147: DMG p.80 matrix II footnote D - a creature of
+// non-intelligence saves at half its (II.B-stepped)
+// level, rounded up, except vs. death magic/poison where
+// the footnote grants no relief. Consumed by trySave and
+// the ai trySaveVs helper.
+inline int effectiveSaveLevel(int level, bool nonIntelligent,
+                              int saveCategory) {
+    if (level < 1) level = 1;
+    if (nonIntelligent &&
+        saveCategory != (int)rules::SAVE_DEATH_POISON)
+        return (level + 1) / 2;
+    return level;
+}
 
 // Per-target outcome of one spell.
 struct TargetResult {
