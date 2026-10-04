@@ -229,7 +229,15 @@ hold ladder (higher-percentage holds break lower), and
 the general notes (behind negates shield+dex, the
 weapon wielder fends first unless surprised, monster
 mode selection, bears grapple, monks unimpeded).
-Census 78.
+R161 PINNED attacks with two weapons (DMG p.70) -
+rules/twoweapon.h: one weapon in each hand (the shield
+option discarded), the second weapon a dagger or hand
+axe only, the penalty ladder (primary -2, secondary
+-4; eased above dex 15 - 16: -1/-3, 17: 0/-2, 18:
+0/-1 - never a positive rating), dex below 6 adding
+the PHB Reaction/Attacking Adjustment to EACH attack
+(caller-side), and the secondary weapon never acting
+as a shield or parrying device. Census 79.
 
 Categories:
 - [x] = verified against the book text
@@ -1233,9 +1241,11 @@ Categories:
       initiative priority, the 25/25/50 accounting, the
       base scores, every modifier, the three tables, the
       hold ladder, the general notes).
-- [ ] **Attacks with two weapons (p.70)** - the R7
-      double-attack named leader: the two-weapon
-      conventions for attack and armor class.
+- [x] **Attacks with two weapons (p.70)** - pinned by
+      R161: rules/twoweapon.h (the dagger/hand-axe
+      gate, the penalty ladder with the dex easing,
+      the low-dex add-to-each rule, no shield or
+      parry from the second weapon).
 - [ ] **Level title ladders (PHB class tables)** - the R4
       named leader: the printed per-level titles for the
       four engine classes.
