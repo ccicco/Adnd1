@@ -566,6 +566,20 @@ anti-septic line break is read as antiseptic; the
 compilation artifacts are normalized; Appendix J was
 OUT of scope by design until this round reversed it
 (user-authorized). Census 90.
+R173 PINNED Secondary skills (DMG p.12) - the
+player character non-professional skills -
+rules/secondary.h: the 23-band SECONDARY SKILLS
+TABLE cell by cell (the 21 named skills Armorer
+01-02 through Woodworker/cabinetmaker 65-67, the
+NO SKILL OF MEASURABLE WORTH band 68-85 and the
+ROLL TWICE IGNORING THIS RESULT HEREAFTER band
+86-00) and the when-to-use guidance (the intro,
+assignment and adjudication prose). JUDGMENTs:
+cell-verified against the book upload (band
+arithmetic 1-100 clean) and independently
+confirmed band for band by the mjyoung.net
+transcription; the upload spelling wins where the
+transcription paraphrases. Census 91.
 
 Categories:
 - [x] = verified against the book text
@@ -1650,8 +1664,9 @@ Categories:
       cell by cell, the multi-class tables, the
       Grandfather ladder, the arrival timing and
       the paladin warhorse).
-- [ ] **Secondary skills (p.12)** - the table and the
-      when-to-use guidance for PC backgrounds.
+- [x] **Secondary skills (p.12)** - PINNED R173:
+      rules/secondary.h (the 23-band table cell by
+      cell; the when-to-use guidance).
 - [ ] **R146 fiction (the named omissions)** - the
       noble gender hole is CLOSED R149: the split is
       a clean nobleman 75% / noblewoman 25% - a coin
