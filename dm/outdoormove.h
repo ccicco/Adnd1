@@ -152,4 +152,73 @@ inline int sailedMilesHi(VesselKind v, WaterKind w) {
     return k[v][w];
 }
 
+// ----------------------------------------------------------------------------
+// BECOMING LOST (p.49) - the overland navigation check, keyed to
+// the same 8 route terrains. The chance is X in 10, rolled prior
+// to the commencement of a day of movement; the direction of
+// lost travel is read from the dice clockwise, the intended
+// direction of travel as 12 o clock - the book prints NO
+// chance of the party ever accidentally moving in the desired
+// direction when lost, so the mapping never returns 0.
+// Deterministic: any dice use is the callers.
+// ----------------------------------------------------------------------------
+
+// the printed direction limitation per terrain
+enum DirectionLimit {
+    DL_60 = 0,    // 60 degrees left or right
+    DL_120,       // 120 degrees left or right (mountains)
+    DL_ANY,       // any direction (forest, marsh)
+    DL_COUNT
+};
+
+inline DirectionLimit directionLimitFor(OutdoorTerrain t) {
+    switch (t) {
+        case T_FOREST:
+        case T_MARSH:     return DL_ANY;
+        case T_MOUNTAINS: return DL_120;
+        default:          return DL_60;
+    }
+}
+
+// the printed chance in 10 of becoming lost (p.49)
+inline int lostChanceIn10(OutdoorTerrain t) {
+    switch (t) {
+        case T_PLAIN:     return 1;
+        case T_SCRUB:     return 3;
+        case T_FOREST:    return 7;
+        case T_ROUGH:     return 3;
+        case T_DESERT:    return 4;
+        case T_HILLS:     return 2;
+        case T_MOUNTAINS: return 5;
+        case T_MARSH:     return 6;
+    }
+    return 0;
+}
+
+// The heading error in degrees: negative = left of the
+// intended direction, positive = right. d6a and d6b are
+// d6 rolls, clamped 1-6 (the house fold discipline).
+//   - DL_60:  d6a alone, 1-3 = 60 left, 4-6 = 60 right.
+//   - DL_120: d6a picks the side, d6b the arc (1-3 = 60,
+//     4-6 = 120).
+//   - DL_ANY: d6a alone, read clockwise: 1 = right
+//     ahead, 2 = right behind, 3-4 = directly behind,
+//     5 = left behind, 6 = left ahead.
+inline int lostAngleDeg(int d6a, int d6b, DirectionLimit dl) {
+    if (d6a < 1) d6a = 1;
+    if (d6a > 6) d6a = 6;
+    if (d6b < 1) d6b = 1;
+    if (d6b > 6) d6b = 6;
+    if (dl == DL_60) return (d6a <= 3) ? -60 : 60;
+    if (dl == DL_120) {
+        int arc = (d6b <= 3) ? 60 : 120;
+        return (d6a <= 3) ? -arc : arc;
+    }
+    if (d6a == 1) return 60;    // right ahead
+    if (d6a == 2) return 120;   // right behind
+    if (d6a <= 4) return 180;   // directly behind (3-4)
+    if (d6a == 5) return -120;  // left behind
+    return -60;                 // left ahead
+}
+
 } // namespace dm

@@ -103,6 +103,16 @@ and tapestry ranges both ends; the tapestry open
 tail), the 1500 g.p. (150#) carry max and the
 four exemption wordings. The caller is
 items::encumbranceBand (PHB p.38). Census 69.
+R152 PINNED the becoming-lost check (DMG p.49): the
+dm/outdoormove.h lost section - the 8 terrain chances
+in 10 (plain 1 through forest 7), the three direction
+limitations (60 degrees on five terrains, 120 on
+mountains, any on forest and marsh) and the
+lost-heading dice read clockwise (no result ever the
+desired direction, as printed). The lost-party
+procedure (back-track, re-roll the next day, describe
+terrain as if on course) is judge narration, printed
+and named, not engine data. Census 70.
 
 Categories:
 - [x] = verified against the book text
@@ -1115,8 +1125,13 @@ Categories:
 - [ ] **Underwater spell use (p.57)** - the modifier
       table; the underwater encounter tables are pinned
       (R60/R127) but the spell columns are not.
-- [ ] **Chances of becoming lost (p.49)** - the overland
-      navigation check for the outdoor march.
+- [x] **Chances of becoming lost (p.49)** - PINNED
+      R152: the dm/outdoormove.h lost section (the audit
+      is the regtest.cpp R152 block): the chance in 10
+      per terrain, the direction limitation per terrain
+      and the deterministic heading mapping - the dice
+      are the callers. The R123 movement rates next to
+      it are the same outdoor march this check gates.
 - [ ] **Humanoid racial preferences (p.106)** - the
       association matrix for lair and population
       placement passes.
