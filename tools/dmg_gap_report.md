@@ -330,6 +330,40 @@ lost in the Ethereal for 5-30 days) are named
 options, the print marking them as the DMs own
 decisions. The d100 roll and all damage and
 duration bookkeeping are caller-side. Census 83.
+R166 PINNED intoxication and insanity (DMG
+pp.82-83) - rules/insanity.h: the intoxication
+table (bravery +1/+2/+4, morale +5/+10/+15
+percent, intelligence -1/-3/-6, wisdom
+-1/-4/-7, dexterity 0/-2/-5, charisma 0/-1/-4,
+attack dice 0/-1/-5 with opponent magic saves
+raised by the same, hit points 0/+1/+3; beyond
+great, comatose with 7-10 hours of sleep); the
+recovery table (slight 1-2 hours, moderate 2-4,
+great 4-6, comatose 7-10; mild stimulants x
+.80/.85/.90/.95, strong x .50/.55/.55/.60; a
+strong stimulant risks a permanent -1
+constitution at 5 percent per application); and
+the 20 named insanity types with the four MILD
+ones (dipsomania, kleptomania, schizoid,
+pathological liar) subject to psionic attack, the
+psionic-section duration classes (permanent
+until heal, restoration or wish, two forms;
+temporary 2-12 weeks; mild 1-4 weeks, one
+form), and each form printed numeric parameter
+(dipsomania 50/10, kleptomania seen 90 with
+thief stealing -10, dementia praecox 25,
+melancholia 50, schizophrenia 1-4 personalities
+at 1 in 6 per day, mania 1 in 6 per turn for
+2-12 turns with the 18/50, 18/75, 18/00
+strength states, manic-depressive 1-4 days at 90
+percent, hallucinatory 50 then 1-20 turns,
+sado-masochism 1-3 days, homicidal 1-4 day
+intervals then 1-6 day melancholia, hebephrenia
+75 then 1-6 hours, suicidal 10-80 percent with
+2-8 turn mania and 2-12 day melancholy,
+catatonia 1 percent cumulative per round). The
+behavioral prose is caller-side - the caller plays
+the insane character. Census 84.
 
 Categories:
 - [x] = verified against the book text
@@ -1357,9 +1391,11 @@ Categories:
       rules/miscibility.h (the d100 band table with the
       explosion, poison and boost numbers; the trigger
       conditions; the named campaign options).
-- [ ] **Intoxication and insanity (pp.82-83)** - the
-      alcohol and drugs effects with recovery tables;
-      the types of insanity.
+- [x] **Intoxication and insanity (pp.82-83)** - pinned
+      by R166: rules/insanity.h (the intoxication and
+      recovery tables; the 20 insanity types with
+      the mild-star, the duration classes and the
+      per-form numbers).
 - [ ] **PC disease + parasitic infestation (pp.13-14)**
       - contraction chance, occurrence and severity
       tables. The monster-borne disease layer exists
