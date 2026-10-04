@@ -179,6 +179,23 @@ vial); a drop under 10 feet reads at the window edge. The
 to-hit throw itself stays in the missile-fire lane; poison
 damage stays print-special (the caller holds the poison
 lane). Census 75.
+R158 PINNED weapon speed factors in initiative (DMG
+p.66 + the PHB p.38 factor column) - rules/weaponspeed.h:
+the named factor table (fist 1 through pike 13; the spear
+prints 6-8 and defaults 7, footman/horseman mace and
+flail named per the print), the simultaneous-initiative
+tie order (lower factor strikes first), the extra-attacks
+rule (difference at least twice the lower factor or 5+ =
+two attacks before the slower acts; 10+ adds a third
+simultaneous; never when closing or charging), and the
+weapon-vs-activity strike segment (factor minus the
+losing initiative die, negatives as positive, no
+modification on a tied round). rules/turn verified first:
+the scheduler carries NO factor logic and needs none - the
+DMG limits factor use to these caller-detected cases. The
+fireball example (sword 5 vs casting 3, dagger 2 vs 3,
+the two-handed no-chance) is pinned in the audit.
+Census 76.
 
 Categories:
 - [x] = verified against the book text
@@ -1166,10 +1183,12 @@ Categories:
       holy/unholy targeting, oil crossing, vial cost,
       boulder drops); the throw itself rides the
       missile-fire lane.
-- [ ] **Weapon speed factors in initiative (p.66)** - the
-      segment scheduler exists; the speed-factor table
-      and its melee-initiative adjustments are unpinned
-      (verify against rules/turn first).
+- [x] **Weapon speed factors in initiative (p.66)** - pinned
+      by R158: rules/weaponspeed.h (the p.38 factor table,
+      the tie order, the extra-attack windows, the
+      weapon-vs-spell strike segment); rules/turn verified
+      first and deliberately untouched - the print applies
+      factors only in caller-detected cases.
 - [ ] **Striking to subdue (p.67)** - the knockout
       procedure and subdual damage accounting.
 - [ ] **Weaponless combat (pp.72-73)** - pummeling,
