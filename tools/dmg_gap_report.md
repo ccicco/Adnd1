@@ -95,6 +95,14 @@ odors, air, general items, unexplained sounds)
 pinned edge for edge, with the R149 box band
 counts corrected (14/54/58, not 16/100/68; the
 band content was right). Census 68.
+R151 PINNED the Appendix O encumbrance table (DMG
+p.225): dm/appendixo.h, the appendixa.h pattern -
+the 64 standard-item weights in g.p. units (57
+exact rows; the four chests, gem, small jewelry
+and tapestry ranges both ends; the tapestry open
+tail), the 1500 g.p. (150#) carry max and the
+four exemption wordings. The caller is
+items::encumbranceBand (PHB p.38). Census 69.
 
 Categories:
 - [x] = verified against the book text
@@ -1116,9 +1124,17 @@ Categories:
       magical substances; conjured animals; summoned
       monsters - support tables for the conjure and
       summon spell effects.
-- [ ] **Appendix O, encumbrance of standard items
-      (p.225)** - items::encumbrance exists; the printed
-      weight table itself is unpinned.
+- [x] **Appendix O, encumbrance of standard items
+      (p.225)** - PINNED R151: dm/appendixo.h, the
+      appendixa.h pattern (pure data, header-only; the
+      audit is the regtest.cpp R151 block): the 64
+      printed weights in g.p. units, the 57 exact rows
+      and the 7 printed ranges (the four chests, gem,
+      small jewelry, tapestry) both ends, the tapestry
+      open tail, the 1500 g.p. (150#) carry max and
+      the four exemption wordings. The caller is
+      items::encumbranceBand (PHB p.38) - this is its
+      printed per-item source.
 - [ ] **Exceptional strength (PHB p.9)** - the fighter 18
       percentile roll (18/01 through 18/00) and the STR
       Table II bend-bars / open-doors columns; verify
