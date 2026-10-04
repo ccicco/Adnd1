@@ -3,10 +3,10 @@
 // Character classes: caps, hit dice, XP thresholds, titles, primes.
 //
 // RE-AUTHORED from the R4 spec after the original upload was lost
-// from the repo. NOTE discipline: XP tables and title ladders are
-// transcribed from project notes and follow the standard 1e shape;
-// when the PHB PDF is re-uploaded, the printed tables win (PHB
-// p.20-31) - verify xpForLevel rows and titleFor ladders then.
+// from the repo. NOTE discipline: the titleFor ladders are verified
+// against the PHB print by R162 (p.20-31); the XP tables are
+// transcribed from project notes and DIVERGE from the print from
+// mid-table on (an open box - see the gap report header note).
 // ============================================================================
 
 #pragma once
@@ -51,7 +51,8 @@ extern const int CLASS_LEVEL_CAP[CLASS_COUNT];
 
 // Fixed hp per level beyond the name cap: fighter 3, MU 1, cleric 2,
 // thief 2 (the 3/2/2/1-vs-3/1/2/2 convention question is settled
-// HERE as 3/1/2/2 in F/MU/C/T order; PHB verification pending)
+// HERE as 3/1/2/2 in F/MU/C/T order; verified against the PHB
+// print by R162)
 extern const int HP_BEYOND_CAP[CLASS_COUNT];
 
 // Hit die per class: d10 / d4 / d8 / d6
@@ -67,8 +68,9 @@ extern const int CLASS_HIT_DIE[CLASS_COUNT];
 // (fighter 100k, MU 125k, cleric 112.5k, thief 110k).
 int xpForLevel(int classIndex, int level);
 
-// Display title for a class/level (PLACEHOLDER LADDERS - verify vs
-// PHB p.20-31 in a later pass).
+// Display title for a class/level (the PHB p.20-31 printed
+// ladders, pinned by R162; the cleric level 5 blank cell carries
+// Curate down as the JUDGMENT).
 const char* titleFor(int classIndex, int level);
 
 // Prime requisite ability (returns an Ability enum value from

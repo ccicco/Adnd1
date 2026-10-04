@@ -2,10 +2,11 @@
 // Adnd1 - rules/classes.cpp
 //
 // RE-AUTHORED from the R4 spec after the original upload was lost.
-// VERIFICATION DEBT: xpForLevel rows and titleFor ladders follow
-// the standard 1e shape from project notes; the PHB printed tables
-// (p.20-31) win when re-uploaded. The HP_BEYOND_CAP convention and
-// linear adders are likewise flagged.
+// R162: the titleFor ladders and the HP_BEYOND_CAP convention are
+// verified against the PHB print (pp.20-31); the xpForLevel rows
+// DIVERGE from the print from mid-table on (fighter level 5 reads
+// 16000 against the printed 18000 boundary; the MU, cleric and
+// thief rows diverge above that) and stay open.
 // ============================================================================
 
 #include "classes.h"
@@ -70,7 +71,8 @@ int xpForLevel(int classIndex, int level) {
 }
 
 // ----------------------------------------------------------------------------
-// Titles (PLACEHOLDER LADDERS - display only; verify vs PHB p.20-31)
+// Titles (the PHB p.20-31 printed ladders - R162 verified; the
+// cleric level 5 cell prints blank and carries Curate down)
 // ----------------------------------------------------------------------------
 
 static const char* const TITLES_FIGHTER[9] = {
@@ -78,17 +80,18 @@ static const char* const TITLES_FIGHTER[9] = {
     "Myrmidon", "Champion", "Superhero", "Lord"
 };
 static const char* const TITLES_MAGIC_USER[11] = {
-    "Conjurer", "Conjurer", "Conjurer", "Conjurer", "Conjurer",
-    "Conjurer", "Conjurer", "Conjurer", "Conjurer", "Conjurer",
-    "Wizard"
+    "Prestidigitator", "Evoker", "Conjurer", "Theurgist",
+    "Thaumaturgist", "Magician", "Enchanter", "Warlock",
+    "Sorcerer", "Necromancer", "Wizard"
 };
 static const char* const TITLES_CLERIC[9] = {
     "Acolyte", "Adept", "Priest", "Curate", "Curate",
-    "Curate", "Curate", "Curate", "Patriarch"
+    "Canon", "Lama", "Patriarch", "High Priest"
 };
 static const char* const TITLES_THIEF[10] = {
-    "Rogue", "Rogue", "Rogue", "Rogue", "Rogue",
-    "Rogue", "Rogue", "Rogue", "Rogue", "Master Thief"
+    "Rogue (Apprentice)", "Footpad", "Cutpurse", "Robber",
+    "Burglar", "Filcher", "Sharper", "Magsman", "Thief",
+    "Master Thief"
 };
 
 const char* titleFor(int classIndex, int level) {

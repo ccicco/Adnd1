@@ -238,6 +238,33 @@ axe only, the penalty ladder (primary -2, secondary
 the PHB Reaction/Attacking Adjustment to EACH attack
 (caller-side), and the secondary weapon never acting
 as a shield or parrying device. Census 79.
+R162 PINNED level title ladders (PHB pp.20-31
+class tables) - rules/classes.cpp: the printed
+per-level titles for the four engine classes,
+replacing the placeholder ladders (the all-Conjurer
+MU run, the Curate run, the all-Rogue thief).
+Fighter: Veteran, Warrior, Swordsman, Hero,
+Swashbuckler, Myrmidon, Champion, Superhero,
+Lord. Magic-user: Prestidigitator, Evoker,
+Conjurer, Theurgist, Thaumaturgist, Magician,
+Enchanter, Warlock, Sorcerer, Necromancer,
+Wizard. Cleric: Acolyte, Adept, Priest, Curate,
+Canon, Lama, Patriarch, High Priest. Thief:
+Rogue (Apprentice), Footpad, Cutpurse, Robber,
+Burglar, Filcher, Sharper, Magsman, Thief,
+Master Thief. JUDGMENT: the cleric level 5 title
+cell prints blank and carries Curate down. The
+PHB display rows above the engine caps (Lord
+(10th Level) and the like) sit beyond
+CLASS_LEVEL_CAP and stay out of engine scope.
+The HP_BEYOND_CAP convention (3/1/2/2) is
+print-verified in passing. R162 FINDING while
+discharging the classes.h debt: the xpForLevel
+rows DIVERGE from the print from mid-table on
+(fighter level 5 reads 16000 against the printed
+18000 boundary; the MU, cleric and thief rows
+diverge above that) - the XP tables stay an
+open box. Census 80.
 
 Categories:
 - [x] = verified against the book text
@@ -1246,9 +1273,11 @@ Categories:
       gate, the penalty ladder with the dex easing,
       the low-dex add-to-each rule, no shield or
       parry from the second weapon).
-- [ ] **Level title ladders (PHB class tables)** - the R4
-      named leader: the printed per-level titles for the
-      four engine classes.
+- [x] **Level title ladders (PHB class tables)** - pinned by
+      R162: rules/classes.cpp (the four printed ladders
+      through the name levels; the cleric level 5 blank
+      cell carries Curate down; the XP-row divergence is
+      recorded in the header note).
 - [ ] **The poison table (p.20)** - the printed types:
       ingest/injury, onset times, damage and effect
       classes. The monster venom layer rolls per-monster
