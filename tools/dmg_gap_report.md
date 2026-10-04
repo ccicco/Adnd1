@@ -125,6 +125,21 @@ damage, the g.p. weight allowance (-350 through
 parentheticals (18/91-99: 1, 18/00: 2, one attempt
 ever) and bend bars/lift gates (0% through 40%).
 Census 71.
+R154 PINNED the PC races layer (PHB pp.15-18, Race
+Tables I-III): the racial ability adjustments with
+the Table III minimums and maximums (male and female
+columns), infravision, elven 90% and half-elven 30%
+sleep-and-charm resistance, the CON magic-save bonus
+for dwarf, gnome and halfling (the R147 shape), Race
+Table I class limitations, the footnoted Race Table
+II level caps, the goblin-kind and giant-kind
+to-hit lists and the detection lists - and the
+creation flow gains the RACE stage (ROLL -> RACE ->
+CLASS -> NAME; appstate + the Win32 shell). FINDING:
+the print gives the gnome the magic-save bonus ONLY -
+no poison line rides it (dwarf and halfling carry
+both); the open box claimed gnome poison saves, the
+print wins. Census 72.
 
 Categories:
 - [x] = verified against the book text
@@ -1080,18 +1095,18 @@ Categories:
       contents, misc items, jewelry, foodstuffs) are
       choose-as-desired aids, not band tables, and
       stay unpinned (named).
-- [ ] **PC races layer (PHB pp.15-18, Race Tables I-III)**
-      - the races half of the authored-but-unlanded R148
-      combined splice: gnome and halfling CON magic-save
-      and poison-save bonuses (con*2/7, the R147 dwarf
-      shape), elven 90% / half-elven 30% sleep-and-charm
-      resistance, infravision, the racial detection
-      lists, ability adjustments with min/max, footnoted
-      level caps, race to-hit adjustments vs. goblin-kind
-      and giant-kind, and the creation-stage
-      ROLL->RACE->CLASS->NAME flow. Must be re-authored
-      against current main - the combined splice is
-      stale (its 18 R147 patches already landed).
+- [x] **PC races layer (PHB pp.15-18, Race Tables I-III)**
+      - PINNED R154, re-authored against current main in
+      the new rules/races layer: the adjustments, the
+      Table III min/max (M/F), infravision, sleep-and-
+      charm resistance, the CON magic-save bonuses
+      (gnome poison corrected OUT - the print names
+      magic only), Race Tables I and II with every
+      printed footnote, the goblin-kind/giant-kind
+      to-hit lists and the detection lists; creation
+      gains the RACE stage and the save gains the
+      optional race line (the audit is the regtest.cpp
+      R154 block).
 - [ ] **Matrix II.C (classed monsters, most favorable
       matrix)** - the R147 named gap: the per-monster
       class pass, so a classed foe saves on its own

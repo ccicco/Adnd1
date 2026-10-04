@@ -150,6 +150,9 @@ struct Character {
     std::string name;
     rules::AbilityScores     abilities;
     rules::ExceptionalStrength exStr;   // fighter group + STR 18 only
+    // R154: racial stock (rules::CharRace; 0 = human, the
+    // v1-save default). Optional "race" line in the save.
+    int  race = 0;
     int  classIndex = 0;
     int  xp   = 0;
     int  level = 1;

@@ -160,12 +160,35 @@ static void creationKeyDown(WPARAM wp) {
                     cr.rollFresh();
                     break;
                 case VK_RETURN:
-                    cr.stage = CR_CLASS;
+                    cr.stage = CR_RACE;   // R154: race first
                     break;
                 case 'D':
                     // begin the delve with the roster as-is
                     if (!s.party.members.empty())
                         s.beginDelve();
+                    break;
+            }
+            break;
+
+        case CR_RACE:   // R154: the racial stock choice
+            switch (wp) {
+                case '1': case '2':
+                case '3': case '4':
+                case '5': case '6':
+                case '7': {
+                    int idx = (int)(wp - '1');
+                    if (cr.raceEligible(idx)) {
+                        cr.racePick = idx;
+                        cr.classPick = 0;
+                        cr.stage = CR_CLASS;
+                    }
+                    break;
+                }
+                case 'X':
+                    cr.female = !cr.female;   // Table III M/F
+                    break;
+                case VK_ESCAPE:
+                    cr.stage = CR_ROLL;   // back to the dice
                     break;
             }
             break;
@@ -181,7 +204,7 @@ static void creationKeyDown(WPARAM wp) {
                     break;
                 }
                 case VK_ESCAPE:
-                    cr.stage = CR_ROLL;   // back to reroll
+                    cr.stage = CR_RACE;   // back to race choice
                     break;
             }
             break;
@@ -238,9 +261,11 @@ static void creationConfirmName() {
     s.party.members.push_back(c);
 
     char buf[96];
-    snprintf(buf, sizeof buf, "%s the %s joins the party at %d years.",
-             c.name.c_str(), CLASS_NAMES[c.classIndex],
-             c.startAge);
+    snprintf(buf, sizeof buf,
+             "%s the %s %s joins the party at %d years.",
+             c.name.c_str(),
+             rules::raceName((rules::CharRace)c.race),
+             CLASS_NAMES[c.classIndex], c.startAge);
     s.log.add(buf);
 
     if ((int)s.party.members.size() >= cr.partySizeCap) {
@@ -695,12 +720,40 @@ static void drawCreate(HDC dc, const AppState& s) {
 
             SetTextColor(dc, RGB(190, 175, 140));
             TextOutA(dc, 20, VIEW_H - 60,
-                     "[R] reroll   [Enter] accept roll   [L] load save",
+                     "[R] reroll   [Enter] choose race   [L] load save",
                      46);
             if (!s.party.members.empty())
                 TextOutA(dc, 20, VIEW_H - 38,
                          "[D] begin the delve with this company",
                          38);
+            break;
+        }
+
+        case CR_RACE: {   // R154: the racial stock table
+            TextOutA(dc, 20, py, "CHOOSE A RACE", 13);
+            py += 30;
+            for (int i = 0; i < rules::RACE_CHAR_COUNT; ++i) {
+                bool ok = cr.raceEligible(i);
+                char row[96];
+                snprintf(row, sizeof row, "  [%d] %-10s  %s",
+                         i + 1,
+                         rules::raceName((rules::CharRace)i),
+                         ok ? "" : "- min scores unmet");
+                SetTextColor(dc, ok ? RGB(210, 195, 165)
+                                    : RGB(110, 105, 95));
+                TextOutA(dc, 40, py, row, (int)strlen(row));
+                py += 26;
+            }
+            char sx[64];
+            snprintf(sx, sizeof sx, "  [X] sex: %s",
+                     cr.female ? "female" : "male");
+            SetTextColor(dc, RGB(210, 195, 165));
+            TextOutA(dc, 40, py + 4, sx, (int)strlen(sx));
+            SetTextColor(dc, RGB(190, 175, 140));
+            const char* rhint =
+                "[1-7] choose race   [X] sex   [esc] back";
+            TextOutA(dc, 20, VIEW_H - 60, rhint,
+                     (int)strlen(rhint));
             break;
         }
 
@@ -727,7 +780,7 @@ static void drawCreate(HDC dc, const AppState& s) {
             }
             SetTextColor(dc, RGB(190, 175, 140));
             TextOutA(dc, 20, VIEW_H - 60,
-                     "[1-4] choose class   [esc] back to roll",
+                     "[1-4] choose class   [esc] back to race",
                      39);
             break;
         }

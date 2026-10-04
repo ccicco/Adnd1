@@ -225,6 +225,7 @@
 #include "../rules/dice.h"
 #include "../rules/character.h"
 #include "../rules/classes.h"
+#include "../rules/races.h"   // R154: Race Tables I-III
 #include "../rules/saves.h"   // R45: trap saves
 #include "../rules/combat.h"   // R61: monsterEffectiveLevel (p.86 guard rule)
 #include "../dm/dm.h"
@@ -384,6 +385,7 @@ enum GameMode : int {
 
 enum CreationStage : int {
     CR_ROLL = 0,
+    CR_RACE,    // R154: the racial stock stage
     CR_CLASS,
     CR_NAME,
 };
@@ -395,6 +397,8 @@ struct CreationState {
     rules::Dice creationDice{creationRng};
 
     rules::AbilityScores rolled;
+    int  racePick = 0;               // R154: highlighted race row
+    bool female = false;             // R154: Table III M/F columns
     int  classPick = 0;              // highlighted class row
     std::string nameBuf;
 
@@ -405,35 +409,64 @@ struct CreationState {
         rolled = rules::rollAbilities(creationDice,
                                       rules::GEN_4D6_DROP);
         stage = CR_ROLL;
+        racePick = 0;     // R154
+        female = false;   // R154
         classPick = 0;
         nameBuf.clear();
     }
 
-    // eligibility: prime requisite score meets the class minimum
+    // R154: the scores as this race would carry them - the
+    // racial adjustment applied, then the Table III maximum
+    // clamp (the print: adjusted scores are the actual
+    // scores for all game purposes)
+    rules::AbilityScores raceAdjusted() const {
+        rules::AbilityScores s = rolled;
+        rules::applyRacialAdjustments(s,
+            (rules::CharRace)racePick, female);
+        return s;
+    }
+
+    // R154: Table III eligibility - minimums met considering
+    // the racial bonuses
+    bool raceEligible(int raceIdx) const {
+        return rules::raceMeetsMinimums(rolled,
+            (rules::CharRace)raceIdx, female);
+    }
+
+    // eligibility: prime requisite meets the class minimum,
+    // and Race Table I allows the class for the race (R154)
     bool classEligible(int classIndex) const {
-        int ab = rolled.get(
+        int ab = raceAdjusted().get(
             (rules::Ability)rules::primeRequisite(classIndex));
-        return ab >= rules::classMinAbility(classIndex);
+        if (ab < rules::classMinAbility(classIndex))
+            return false;
+        return rules::classAllowedForRace(classIndex,
+            (rules::CharRace)racePick);
     }
 
     // finalize the pending member with the chosen class
     Character makeMember(int classIndex) {
         Character c;
-        c.abilities = rolled;
+        c.race = racePick;              // R154: the chosen stock
+        c.abilities = raceAdjusted();   // R154: adjusted is actual
         c.classIndex = classIndex;
         c.level = 1;
         // R97: the gray beard - when the career begins
         c.startAge = rollStartingAge(classIndex, creationDice);
 
         // exceptional strength: fighter group at STR 18
+        // (R154: the ADJUSTED score - a racial STR bonus can
+        // carry a male elf or half-orc fighter to 18)
         if (classIndex == rules::CLASS_FIGHTER &&
-            rolled.str == 18) {
+            c.abilities.str == 18) {
             c.exStr.has = true;
             c.exStr.pct = rules::rollExceptionalStrength(creationDice);
         }
 
         // level-1 hit points (canonical signature, R4b)
-        int conAdj = rules::conHPAdjustment(classIndex, rolled.con);
+        // R154: the ADJUSTED con (the racial bonus counts)
+        int conAdj = rules::conHPAdjustment(
+            classIndex, c.abilities.con);
         c.hp = c.maxHp = rules::rollHitPoints(classIndex, 1,
                                               conAdj, creationDice);
 

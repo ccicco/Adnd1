@@ -67,6 +67,8 @@ void AppState::resetToCreation(){
         // reference to creationRng) - reset fields explicitly
         // instead of assigning a fresh temporary.
         creation.stage = CR_ROLL;
+        creation.racePick = 0;      // R154
+        creation.female = false;    // R154
         creation.classPick = 0;
         creation.nameBuf.clear();
         creation.partySizeCap = PARTY_DEFAULT;
@@ -185,6 +187,10 @@ bool AppState::saveGame(){
                 (int)c.rangedWeapon.id, c.rangedWeapon.plus,
                 (int)c.armor.id, c.armor.plus,
                 c.shield ? 1 : 0);
+            // R154: racial stock (nonzero only - v1 saves
+            // carry no line and load as human)
+            if (c.race != 0)
+                fprintf(f, "race %d\n", c.race);
             // R56: the magic-shield enchant (nonzero only -
             // v1 saves carry no line and load as 0)
             if (c.shieldPlus > 0)
@@ -569,7 +575,17 @@ bool AppState::loadGame(){
             bool optLoop = true;
             while (optLoop) {
                 if (fscanf(f, "%15s", tag) != 1) break;
-                if (strcmp(tag, "age") == 0) {
+                if (strcmp(tag, "race") == 0) {
+                    int rc = 0;
+                    if (fscanf(f, "%d", &rc) != 1 ||
+                        rc < 0 ||
+                        rc >= rules::RACE_CHAR_COUNT) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (race).");
+                        return false;
+                    }
+                    c.race = rc;
+                } else if (strcmp(tag, "age") == 0) {
                 int ag = 0;
                 if (fscanf(f, "%d", &ag) != 1 ||
                     ag < 15 || ag > 100) {
