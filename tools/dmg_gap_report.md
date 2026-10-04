@@ -923,6 +923,96 @@ Categories:
       only (the p.176 convention-party generator is a
       future lane). Pinned by the R147 Appendix P audit;
       census 67.
+- [ ] **The book-verify pass (the standing debt)** - the
+      fresh DMG/PHB uploads (2026-10-04) make the whole
+      verification debt payable. The riders name their
+      winners: Appendix G/H spellings (R125), the Faerie
+      / Pleistocene / Age of Dinosaurs wilderness tables
+      and printing-variant readings (R126), the p.38
+      weapon rows (R145), the city flavor cells (R146),
+      and the p.71 example numbers (R144).
+- [ ] **PC races layer (PHB pp.15-18, Race Tables I-III)**
+      - the races half of the authored-but-unlanded R148
+      combined splice: gnome and halfling CON magic-save
+      and poison-save bonuses (con*2/7, the R147 dwarf
+      shape), elven 90% / half-elven 30% sleep-and-charm
+      resistance, infravision, the racial detection
+      lists, ability adjustments with min/max, footnoted
+      level caps, race to-hit adjustments vs. goblin-kind
+      and giant-kind, and the creation-stage
+      ROLL->RACE->CLASS->NAME flow. Must be re-authored
+      against current main - the combined splice is
+      stale (its 18 R147 patches already landed).
+- [ ] **Matrix II.C (classed monsters, most favorable
+      matrix)** - the R147 named gap: the per-monster
+      class pass, so a classed foe saves on its own
+      class matrix when that beats matrix II.
+- [ ] **Appendix P caller (the convention-party
+      generator)** - rollMemberMagic has no caller; wire
+      it into the p.176 party rows or a dm/encounters
+      generator.
+- [ ] **Grenade-like missiles + holy/unholy water
+      (pp.64-65)** - thrown flasks: the break and splash
+      rules, the cone tables, vial costs and effects.
+- [ ] **Weapon speed factors in initiative (p.66)** - the
+      segment scheduler exists; the speed-factor table
+      and its melee-initiative adjustments are unpinned
+      (verify against rules/turn first).
+- [ ] **Striking to subdue (p.67)** - the knockout
+      procedure and subdual damage accounting.
+- [ ] **Weaponless combat (pp.72-73)** - pummeling,
+      wrestling, overbearing: the three procedures and
+      their tables.
+- [ ] **Attacks with two weapons (p.70)** - the R7
+      double-attack named leader: the two-weapon
+      conventions for attack and armor class.
+- [ ] **Level title ladders (PHB class tables)** - the R4
+      named leader: the printed per-level titles for the
+      four engine classes.
+- [ ] **The poison table (p.20)** - the printed types:
+      ingest/injury, onset times, damage and effect
+      classes. The monster venom layer rolls per-monster
+      saves; the type table itself is unpinned.
+- [ ] **The assassination table (p.75)** - the odds table
+      proper; the p.19-20 spying rules are already wired
+      (the spy).
+- [ ] **Potion miscibility (p.119)** - the interactions
+      table for drinking incompatible potions.
+- [ ] **Intoxication and insanity (pp.82-83)** - the
+      alcohol and drugs effects with recovery tables;
+      the types of insanity.
+- [ ] **PC disease + parasitic infestation (pp.13-14)**
+      - contraction chance, occurrence and severity
+      tables. The monster-borne disease layer exists
+      (mummy rot); PC-side contraction does not.
+- [ ] **Underwater spell use (p.57)** - the modifier
+      table; the underwater encounter tables are pinned
+      (R60/R127) but the spell columns are not.
+- [ ] **Chances of becoming lost (p.49)** - the overland
+      navigation check for the outdoor march.
+- [ ] **Humanoid racial preferences (p.106)** - the
+      association matrix for lair and population
+      placement passes.
+- [ ] **Appendices K + L + M (pp.221-224)** - describing
+      magical substances; conjured animals; summoned
+      monsters - support tables for the conjure and
+      summon spell effects.
+- [ ] **Appendix O, encumbrance of standard items
+      (p.225)** - items::encumbrance exists; the printed
+      weight table itself is unpinned.
+- [ ] **Exceptional strength (PHB p.9)** - the fighter 18
+      percentile roll (18/01 through 18/00) and the STR
+      Table II bend-bars / open-doors columns; verify
+      the abilities layer first.
+- [ ] **Followers by class (pp.16-18)** - the name-level
+      follower tables (cleric, fighter, ranger, thief,
+      assassin) for stronghold recruitment.
+- [ ] **Secondary skills (p.12)** - the table and the
+      when-to-use guidance for PC backgrounds.
+- [ ] **R146 fiction (the named omissions)** - noble
+      gender (the book prints nobleman 70% / noblewoman
+      25% and no last 5%) and the ruffian 1-in-4
+      half-orc/humanoid note - city flavor follow-ups.
 
 ## Out of scope by design
 
@@ -932,7 +1022,10 @@ Categories:
   heal-craft subgames, psionic combat (p.77
   IV.A and following), planar travel tables,
   and the full non-standard-procedure magic
-  items list beyond what the battery pins.
+  items list beyond what the battery pins, the Boot
+  Hill / Gamma World / Metamorphosis Alpha
+  conversion tables (pp.112-114), and Appendix J
+  herbs, spices, and medicinal vegetation (p.220).
 
 ## How this doc lives
 
