@@ -88,6 +88,13 @@ axe, its +1 no error at all. Appendix I dressing
 named unpinned (a new open box). The compilation
 site has gone dark - the fresh uploads are the
 last standing source. Census 67.
+R150 PINNED the Appendix I dressing lists (the
+R149 bycatch): dm/appendixi.h, the appendixa.h
+pattern - the five band lists (air currents,
+odors, air, general items, unexplained sounds)
+pinned edge for edge, with the R149 box band
+counts corrected (14/54/58, not 16/100/68; the
+band content was right). Census 68.
 
 Categories:
 - [x] = verified against the book text
@@ -1025,21 +1032,24 @@ Categories:
       site has gone dark - the fresh uploads are
       the last standing source, and a cleaner scan
       wins any future cell.
-- [ ] **Appendix I, dungeon dressing (pp.219-221)** -
-      named R149 from the fresh read (a book-verify
-      pass bycatch, missed by the R148 sweep): the
-      printed lists are unpinned - air currents (16
-      bands, breeze, slight 01-05 through wind,
-      strong, moaning 96-00), odors (14, acrid 01-03
-      through urine 96-00), air (6, clear 01-70
-      through misted 99-00), general items (100,
-      arrow, broken 01 through wood pieces, rotting
-      98-00) and unexplained sounds (68, bang, slam
-      01-05 through whistling 99-00). The fresh
-      upload and a clean book read agree cell for
-      cell - the data is ready; the repo pins
-      Appendix A dressing only (R124, the
-      random-dungeon appendix).
+- [x] **Appendix I, dungeon dressing (pp.219-221)** -
+      PINNED R150: dm/appendixi.h, the appendixa.h
+      pattern (pure data, header-only, no caller yet;
+      the audit is the regtest.cpp R150 block). The
+      five band lists pinned edge for edge: air
+      currents, odors, air, general items and
+      unexplained sounds. COUNT CORRECTIONS (the
+      R149 box's own slips, named in the header): the
+      prints read 14 air-current bands (not 16), 54
+      general-item bands (not 100) and 58 sound bands
+      (not 68); odors (14) and air (6) were right -
+      the band CONTENT the box quoted was correct all
+      along. The selection-aid lists the book prints
+      alongside them (furnishings, torture chamber,
+      magic-user and religious furnishings, container
+      contents, misc items, jewelry, foodstuffs) are
+      choose-as-desired aids, not band tables, and
+      stay unpinned (named).
 - [ ] **PC races layer (PHB pp.15-18, Race Tables I-III)**
       - the races half of the authored-but-unlanded R148
       combined splice: gnome and halfling CON magic-save
