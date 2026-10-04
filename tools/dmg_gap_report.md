@@ -212,6 +212,24 @@ ratio with halves up (the MM example 44/88 = 50, 67/88
 = 76, 77/88 = 88), the automatic 1:1 subdual, the
 100-800 gp per hit point d8 sale price, and the ridden
 convention. Census 77.
+R160 PINNED weaponless combat (DMG pp.72-73) -
+rules/weaponless.h: PUMMEL, GRAPPLE, OVERBEAR - the
+shared variable (attacker column + d6, defender column +
+d4, spent on the base chance or the attack score,
+unconscious parties get none), the initiative priority
+(surprise, charging, dex, die roll), the damage
+accounting (25% actual pummel and grapple, 50% overbear,
+the rest restored 1 hp per round; 0 hp = unconscious
+1 round + 1 per point beyond, 4 beyond = 5 rounds; the
+1-round truss), the base scores (pummel opponent AC x
+10; grapple/overbear attacker AC x 10, magic devices
+ignored, +1% per armor plus), every printed modifier,
+the three result tables with their damage bases, the
+hold ladder (higher-percentage holds break lower), and
+the general notes (behind negates shield+dex, the
+weapon wielder fends first unless surprised, monster
+mode selection, bears grapple, monks unimpeded).
+Census 78.
 
 Categories:
 - [x] = verified against the book text
@@ -1210,9 +1228,11 @@ Categories:
       the knockout threshold, and the MM dragon capture:
       the kind table, the int gate, the percent ratio,
       the automatic subdual, the sale price).
-- [ ] **Weaponless combat (pp.72-73)** - pummeling,
-      wrestling, overbearing: the three procedures and
-      their tables.
+- [x] **Weaponless combat (pp.72-73)** - pinned by R160:
+      rules/weaponless.h (the shared variable, the
+      initiative priority, the 25/25/50 accounting, the
+      base scores, every modifier, the three tables, the
+      hold ladder, the general notes).
 - [ ] **Attacks with two weapons (p.70)** - the R7
       double-attack named leader: the two-weapon
       conventions for attack and armor class.
