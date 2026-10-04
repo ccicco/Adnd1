@@ -285,6 +285,23 @@ first day or hit, half the second, gone by the
 third, +4 on saves once decayed. The caller
 holds the save roll (the monster venom layer
 keeps its per-monster saves). Census 81.
+R164 PINNED the assassination table (DMG p.75) -
+rules/assassinate.h: the assassins table for
+assassinations, 15 rows (assassin level 1-15)
+against 10 victim bands (0-1 through 18+), every
+printed cell pinned; the printed dashes read as no
+chance. JUDGMENT: an attacker below level 1
+reads row 1, above 15 reads row 15. The footnote:
+the table also governs attacks on helpless
+opponents by any character class. The percentages
+are near optimum conditions - the caller adjusts
+up for perfect conditions (asleep and unguarded,
+absolute trust, very drunk and unguarded) and down
+for a wary, prepared or guarded victim; weapon
+damage always occurs and may kill even when the
+assassination roll fails (caller-side). The
+percentile roll is caller-side (the grenade.h
+pattern). Census 82.
 
 Categories:
 - [x] = verified against the book text
@@ -1303,9 +1320,11 @@ Categories:
       table with cost, onset, damage classes, save
       bonuses and detection chances; the efficiency
       ladder; the blade-venom decay).
-- [ ] **The assassination table (p.75)** - the odds table
-      proper; the p.19-20 spying rules are already wired
-      (the spy).
+- [x] **The assassination table (p.75)** - pinned by
+      R164: rules/assassinate.h (the 15x10 odds matrix
+      with the dashes as no chance, the band mapping,
+      the level clamps, the helpless-opponents
+      footnote).
 - [ ] **Potion miscibility (p.119)** - the interactions
       table for drinking incompatible potions.
 - [ ] **Intoxication and insanity (pp.82-83)** - the
