@@ -511,6 +511,43 @@ rows each print no other class permitted);
 the printed asterisks ride as flags. The
 caller rolls the dice and builds the
 rosters. Census 88.
+R171 PINNED Appendices K, L and M (DMG
+pp.221-224) - rules/klm.h: Appendix K - the
+appearance and consistency list (10), the
+transparency list (10 with the printed
+parentheticals, four asking the reader to
+determine), the color list (74 words in the 11
+printed groups METALLIC through ORANGE) and the
+taste and/or odor list (28), with the use
+alongside Appendix I dungeon dressing;
+Appendix L - the conjure animals prose (the
+fractional hit point cost charged against the
+total, random selection where several
+possibilities exist, the caster cannot specify)
+and the four hit dice category tables cell by
+cell (5, 4, 15 and 13 rows with every band,
+name and quarter cost), the printed 5-and-up
+animal roster, the whale 36 hit dice cost cap
+and the water note (swimmers and flying ones
+only); Appendix M - the summoned monsters
+prose (the evil parenthesis, the DM purview)
+and all 20 tables cell by cell: the 7 land
+tables (6, 6, 12, 12, 12, 16 and 34 rows) and
+the 13 fresh/salt water tables (31 rows).
+JUDGMENTs: the K lists were cell-verified
+against the 1eonline.info compilation (the
+repo-trusted source, the R146 precedent),
+which agrees with the upload wherever legible;
+the Appendix L 5-and-up band columns are OCR
+debt - an open finding, the roster is pinned;
+the Appendix M water tables for summonings
+II-VI are dropped by the upload and come
+from the trusted compilation, which agrees
+with the upload cell for cell on the I and VII
+water tables the upload shows; the herbs
+material interleaved in the upload K region
+belongs to Appendix J (p.220, a separate open
+box). The caller rolls and selects. Census 89.
 
 Categories:
 - [x] = verified against the book text
@@ -1564,10 +1601,11 @@ Categories:
       R169: rules/humrpref.h (the 81-cell matrix with
       the star marks, the letter key, the usage and
       the compatibility prose).
-- [ ] **Appendices K + L + M (pp.221-224)** - describing
-      magical substances; conjured animals; summoned
-      monsters - support tables for the conjure and
-      summon spell effects.
+- [x] **Appendices K + L + M (pp.221-224)** - PINNED
+      R171: rules/klm.h (the substance word lists, the
+      conjured animals categories, the 20 summoned
+      monsters tables; the Appendix L 5-and-up band
+      columns are the open OCR-debt finding).
 - [x] **Appendix O, encumbrance of standard items
       (p.225)** - PINNED R151: dm/appendixo.h, the
       appendixa.h pattern (pure data, header-only; the
