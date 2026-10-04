@@ -442,6 +442,34 @@ unless immediate aid), part water (as the
 clerical spell). The caller decides casting;
 the encounter tables stay pinned R60/R127.
 Census 86.
+R169 PINNED the humanoid racial preferences table
+(DMG p.106) - rules/humrpref.h: the nine-race
+basic acceptability matrix (bugbear, gnoll,
+goblin, hill giant, hobgoblin, kobold, ogre,
+orc, troll - each rated against the same nine),
+all 81 cells pinned with the star marks (18
+single-star cells: the race will bully and
+harass such humanoids; 3 double-star self
+cells - hobgoblin, orc, troll - where the
+others of the race are of a rival tribe or
+family group, the other six self cells print
+P); the six-letter key (P preference, G
+goodwill, T tolerate, N neutral negative, A
+antipathy - desert if leaders are weak, H
+hatred - breaks into open hostilities at the
+first opportunity or desert near a strong
+body of the hated); the usage prose (fighting
+or serving side by side within 12 inches,
+no intervening troops or screen); and the
+compatibility prose (demi-human troops use
+the PHB RACIAL PREFERENCES TABLE; lizard men
+hated by all save kobolds, and even kobolds
+suspicious, just as human troops are).
+JUDGMENT: the OCR wraps each row across
+lines; the reconstruction was cross-validated
+against the known print readings and every
+probe matched. The caller reads the letter
+and plays the troops. Census 87.
 
 Categories:
 - [x] = verified against the book text
@@ -1491,9 +1519,10 @@ Categories:
       and the deterministic heading mapping - the dice
       are the callers. The R123 movement rates next to
       it are the same outdoor march this check gates.
-- [ ] **Humanoid racial preferences (p.106)** - the
-      association matrix for lair and population
-      placement passes.
+- [x] **Humanoid racial preferences (p.106)** - PINNED
+      R169: rules/humrpref.h (the 81-cell matrix with
+      the star marks, the letter key, the usage and
+      the compatibility prose).
 - [ ] **Appendices K + L + M (pp.221-224)** - describing
       magical substances; conjured animals; summoned
       monsters - support tables for the conjure and
