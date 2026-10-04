@@ -302,6 +302,34 @@ damage always occurs and may kill even when the
 assassination roll fails (caller-side). The
 percentile roll is caller-side (the grenade.h
 pattern). Census 82.
+R165 PINNED potion miscibility (DMG p.119) -
+rules/miscibility.h: test whenever two potions are
+intermingled or one is consumed while another is
+still in effect (the roll made secretly). The d100
+bands: 01 explosion (internal 6-60 hp; an
+external mix blasts 1-10 hp within a 5 foot
+radius and 4-24 hp in a 10 foot radius, no save -
+the print renders the near radius as 5 double-
+prime feet, read as 5 feet); 02-03 lethal poison
+(the imbiber dead; an external mix a 10 foot gas
+cloud, save versus poison or die); 04-08 mild
+poison (nausea, -1 strength and -1 dexterity for
+5-20 rounds, no save; one potion cancelled, the
+other at half strength and duration, random
+which); 09-15 both destroyed; 16-25 one
+cancelled, the other normal; 26-35 both at half
+efficacy; 36-90 miscible (contradictory effects
+simply cancel); 91-99 one potion at 150 percent
+efficacy; 00 discovery (one potion only functions,
+its effect permanent, possible harmful side
+effects). The campaign-fixed certain results the
+print suggests (delusion mixes with anything,
+treasure finding plus any potion is lethal poison,
+oil of slipperiness plus etherealness: 50 percent
+lost in the Ethereal for 5-30 days) are named
+options, the print marking them as the DMs own
+decisions. The d100 roll and all damage and
+duration bookkeeping are caller-side. Census 83.
 
 Categories:
 - [x] = verified against the book text
@@ -1325,8 +1353,10 @@ Categories:
       with the dashes as no chance, the band mapping,
       the level clamps, the helpless-opponents
       footnote).
-- [ ] **Potion miscibility (p.119)** - the interactions
-      table for drinking incompatible potions.
+- [x] **Potion miscibility (p.119)** - pinned by R165:
+      rules/miscibility.h (the d100 band table with the
+      explosion, poison and boost numbers; the trigger
+      conditions; the named campaign options).
 - [ ] **Intoxication and insanity (pp.82-83)** - the
       alcohol and drugs effects with recovery tables;
       the types of insanity.
