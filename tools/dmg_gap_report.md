@@ -548,6 +548,24 @@ water tables the upload shows; the herbs
 material interleaved in the upload K region
 belongs to Appendix J (p.220, a separate open
 box). The caller rolls and selects. Census 89.
+R172 PINNED Appendix J (DMG p.220) - herbs, spices
+and medicinal vegetables - rules/herbs.h: the
+alphabetical plant and uses table, 171 rows, cell
+by cell (the compilation drops the turnip row and
+truncates the celery uses - both restored from the
+print), the 10 rows the book leaves with unknown
+uses, the one cross-reference row (blueberry - see
+bilberry) and the intro and closing prose.
+JUDGMENTs: the structure follows the 1eonline.info
+compilation (the repo-trusted source, the R146
+precedent), cell-verified against the book upload
+wherever legible, with per-run cell-count
+arithmetic used to detect compilation omissions;
+print spellings win where they differ; the benzoin
+anti-septic line break is read as antiseptic; the
+compilation artifacts are normalized; Appendix J was
+OUT of scope by design until this round reversed it
+(user-authorized). Census 90.
 
 Categories:
 - [x] = verified against the book text
@@ -1652,8 +1670,15 @@ Categories:
   and the full non-standard-procedure magic
   items list beyond what the battery pins, the Boot
   Hill / Gamma World / Metamorphosis Alpha
-  conversion tables (pp.112-114), and Appendix J
-  herbs, spices, and medicinal vegetation (p.220).
+  conversion tables (pp.112-114). Appendix J was
+  OUT until R172 reversed it - pinned now (see the
+  R172 note and the box below).
+
+- [x] **Appendix J: herbs, spices and medicinal
+      vegetables (p.220)** - PINNED R172:
+      rules/herbs.h (the 171-row plant and uses
+      table cell by cell; the turnip row the
+      compilation drops restored).
 
 ## How this doc lives
 
