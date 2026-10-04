@@ -98,6 +98,28 @@ int saveTarget(int classIndex, int level, SaveCategory cat) {
 }
 
 // ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// R155: matrix II.C most-favorable matrix - a classed monster
+// saves at the BEST score across its class matrices (each class at
+// its own level) vs the base target; the II.B fighter matrix stays
+// in the min (a classed foe never saves WORSE than the matrix II
+// convention).
+// ----------------------------------------------------------------------------
+
+int mostFavorableSaveTarget(int classMask, const int* levels,
+                            int baseClass, int baseLevel,
+                            SaveCategory cat) {
+    int best = saveTarget(baseClass, baseLevel, cat);
+    for (int ci = 0; ci < 4; ++ci) {
+        if (!(classMask & (1 << ci))) continue;
+        if (!levels || levels[ci] < 1) continue;
+        int t = saveTarget(ci, levels[ci], cat);
+        if (t < best) best = t;
+    }
+    return best;
+}
+
+// ----------------------------------------------------------------------------
 // Monster HD -> save level (DMG p.80 matrix II.B): hit dice equate to
 // experience level, with hit-point pluses stepping the creature up one
 // die level per 4 points (1+1..1+4 becomes 2, 1+5..1+8 becomes 3,

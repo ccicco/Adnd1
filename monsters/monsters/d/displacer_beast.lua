@@ -30,6 +30,8 @@ return {
   specialAttacks = "none",
   specialDefenses = "-2 on opponent's attack dice",
   magicResistance = "Save as 12th level fighter +2 on die",
+  saveAs = "fighter 12",
+  saveAsBonus = 2,
   psionic = "none",
   attackDefenseModes = "none",
   text = "A pack of these monsters always contains only full-grown beasts. The molecular vibrations of the displacer beast are such that it always appears to be 3' (left, right, ahead, or behind) from its actual position. Thus, these monsters always cause opponents to subtract 2 from attack dice rolls and add 2 to their dice rolls for saving throws. These fierce creatures hate all life, but they particularly hate blink dogs. In combat the displacer beast lashes out with its two tentacles, inflicting horrible wounds with the rough, horny edges of these appendages.\n\nDescription: This vaguely puma-like creature is bluish black, its tentacles are dead black, the horny edges of the tentacles are brownish yellow, and its eyes glow a hellish green.",

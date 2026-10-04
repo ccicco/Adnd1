@@ -67,6 +67,13 @@ static bool trySave(Dice& dice, const spells::SpellDef& s,
                                  s.saveCategory);
     int target = rules::saveTarget(t.saveClass, lvl,
                                    (rules::SaveCategory)s.saveCategory);
+    // R155: matrix II.C - a classed monster saves on its most
+    // favorable matrix; saveBonus carries the monster die bonus
+    // (displacer beast +2).
+    if (t.saveAsMask)
+        target = rules::mostFavorableSaveTarget(
+            t.saveAsMask, t.saveAsLevels, t.saveClass, lvl,
+            (rules::SaveCategory)s.saveCategory);
     int bonus = t.saveBonus;
     if (s.saveCategory == rules::SAVE_WANDS ||
         s.saveCategory == rules::SAVE_SPELLS ||

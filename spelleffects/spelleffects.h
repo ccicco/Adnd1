@@ -83,6 +83,11 @@ struct TargetDesc {
     // R147: dwarf CON magic-save bonus (0 for everyone but
     // NPC-foe dwarves) and the matrix II.D non-intelligence
     // flag - applied by trySave / the ai save helper.
+    // R155: matrix II.C (DMG p.80) - classed monsters save on
+    // their most favorable matrix; saveAsLevels[i] is the level
+    // for class index i (couatl: MU 5, cleric 7).
+    int saveAsMask = 0;
+    int saveAsLevels[4] = {0, 0, 0, 0};
     int saveDwarfBonus = 0;
     bool saveNonIntelligent = false;
     int magicResistPct = 0;

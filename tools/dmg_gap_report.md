@@ -140,6 +140,20 @@ the print gives the gnome the magic-save bonus ONLY -
 no poison line rides it (dwarf and halfling carry
 both); the open box claimed gnome poison saves, the
 print wins. Census 72.
+R155 PINNED matrix II.C (DMG p.80) - the classed
+monsters: a classed foe saves on its MOST FAVORABLE
+matrix (footnotes 1-2). The five MM1 write-ups that
+print class abilities (brownie, dolphin, displacer
+beast, couatl, ki-rin) gain the Lua saveAs key (class
+bits + per-class levels; the couatl carries MU 5 AND
+cleric 7), mostFavorableSaveTarget mins the save in
+spelleffects and the ai save helper, and the displacer
++2 save die rides the actor saveBonus. FINDING: the
+displacer magicResistance write-up (a save-as note)
+misparsed as 12% MR - fixed to read 0. Judgment left
+for a later lane: ixitxachitl (clerical, per-leader)
+and the humanoid classed leaders are per-encounter
+extras, not base-monster data. Census 73.
 
 Categories:
 - [x] = verified against the book text
@@ -1107,10 +1121,12 @@ Categories:
       gains the RACE stage and the save gains the
       optional race line (the audit is the regtest.cpp
       R154 block).
-- [ ] **Matrix II.C (classed monsters, most favorable
-      matrix)** - the R147 named gap: the per-monster
-      class pass, so a classed foe saves on its own
-      class matrix when that beats matrix II.
+- [x] **Matrix II.C (classed monsters, most favorable
+      matrix)** - pinned by R155: the saveAs data pass
+      (class bits + per-class levels, the Lua key) and
+      mostFavorableSaveTarget min the save in
+      spelleffects/trySave and the ai save helper; the
+      five MM1 classed write-ups carry the data.
 - [ ] **Appendix P caller (the convention-party
       generator)** - rollMemberMagic has no caller; wire
       it into the p.176 party rows or a dm/encounters

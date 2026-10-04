@@ -58,6 +58,26 @@ bool attemptSave(Dice& dice, int target, int modifier);
 // with hit-point pluses stepping the creature up one die level per
 // 4 points (1+1..1+4 -> 2, 2+1..2+4 -> 3, ...).
 // ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// R155: DMG p.80 matrix II.C - classed monsters. A monster whose
+// write-up gives it class abilities saves on its MOST FAVORABLE
+// matrix (footnotes 1-2: the best class score, or the matrix of
+// its area of ability). The Lua saveAs key parses into these class
+// bits with per-class levels (couatl: MU 5 AND cleric 7).
+// ----------------------------------------------------------------------------
+const int SAVE_AS_FIGHTER     = 1;
+const int SAVE_AS_MAGIC_USER  = 2;
+const int SAVE_AS_CLERIC      = 4;
+const int SAVE_AS_THIEF       = 8;
+
+// R155: the min target over the classes in the mask (each at its
+// own level, levels[classIndex]) vs the base class/level target -
+// the II.B fighter-matrix convention stays in the min. mask 0 (or
+// no usable bits) returns the plain base target.
+int mostFavorableSaveTarget(int classMask, const int* levels,
+                            int baseClass, int baseLevel,
+                            SaveCategory cat);
+
 int monsterSaveLevel(float hitDice);
 
 bool attemptMonsterSave(Dice& dice, float hitDice, SaveCategory cat,

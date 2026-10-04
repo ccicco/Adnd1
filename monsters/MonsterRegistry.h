@@ -114,6 +114,14 @@ struct MonsterDef {
     int   morale = 12;             // heuristic from intelligence if not given
     int   magicResist = 0;         // Lua magicResistance "25%" -> 25
 
+    // R155: matrix II.C (DMG p.80) - classed-monster saves:
+    // saveAs ("cleric 9" / "magic-user 5, cleric 7") parses into
+    // class bits with per-class levels; saveAsBonus is a flat die
+    // bonus (displacer +2).
+    int   saveAsMask = 0;
+    int   saveAsLevels[4] = {0, 0, 0, 0};
+    int   saveAsBonus = 0;
+
     bool  undead = false;          // heuristic: name keywords
     int   requiredPlus = 0;        // heuristic: specialDefenses text
     int   levelTag = 1;            // heuristic: derived from HD

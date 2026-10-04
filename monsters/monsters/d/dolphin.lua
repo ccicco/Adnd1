@@ -30,6 +30,7 @@ return {
   specialAttacks = "none",
   specialDefenses = "save as 4th level fighter",
   magicResistance = "standard",
+  saveAs = "fighter 4",
   psionic = "none",
   attackDefenseModes = "none",
   text = "Most dolphins simply roam the oceans in nomadic schools. A small number (10%), however, have formed underwater communities, and if one is located it is 75% probable that there will be from 1-4 additional communities of\n\ndolphins within a 5 mile radius. Communal dolphins will have from 2-5 swordfish (AC 6, move 24\", 1 + 1 dice, 2-12 hit points damage/attack) or 1-3 narwhales (AC 6, move 21\", 4 + 4 hit dice, 2-24 hit points damage/attack), depending on the climatic region, as guards.\n\nDolphins will attack any creature which threatens them, although they will help humans in distress. They particularly hate sharks of all sorts and will attack unless outnumbered by 2 or more to 1.",

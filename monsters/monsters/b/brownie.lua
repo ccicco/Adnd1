@@ -26,6 +26,7 @@ return {
   specialAttacks = "spells",
   specialDefenses = "save as 9th level cleric",
   magicResistance = "As above",
+  saveAs = "cleric 9",
   psionic = "none",
   attackDefenseModes = "none",
   text = "Brownies are distant relatives of halflings, (perhaps half halfling, half pixie) but they are smaller and far less common. They are basically friendly to humans and their ilk (dwarves, elves, and halflings), but because they are shy, they are seldom seen and favor quiet, pastoral areas in which to dwell. If encountered on friendly terms, brownies can often (50%) be convinced to help lawful good characters. They are able to make or repair items of wood, leather, metal, etc. with ease. They are also good guides. Brownies can use the following spells once per day: protection from evil, ventriloquism, dancing lights, continual light, mirror image (3 images), confusion, and dimension door. Brownies do not usually carry weapons other than short swords. They have exceptional senses in general, are never surprised, and have 18 dexterity. Brownies are capable of blending into the landscape very quickly, in effect using natural cover and speed to become invisible (and escape if desired).\n\nBesides their own language and the alignment tongue, brownies speak elvish, pixieish, and the language of sprites and halflings.",

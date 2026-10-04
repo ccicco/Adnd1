@@ -29,6 +29,7 @@ return {
   alignment = "lawful good",
   specialAttacks = "poison, magic use",
   specialDefenses = "become ethereal",
+  saveAs = "magic-user 5, cleric 7",
   magicResistance = "standard",
   psionic = "60-110",
   attackDefenseModes = "vary",

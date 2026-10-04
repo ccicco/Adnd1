@@ -117,7 +117,15 @@ spelleffects::TargetDesc Actor::asTarget() const {
     t.saveClass = isCharacter ? classIndex : 0;   // monsters: fighter
     t.saveLevel = isCharacter ? level
                               : rules::monsterSaveLevel(hitDice);
-    t.saveBonus = 0;
+    // R155: matrix II.C - the registry saveAs fields ride the
+    // target descriptor; the monster die bonus (displacer) rides
+    // saveBonus.
+    t.saveBonus = (!isCharacter) ? saveAsBonus : 0;
+    t.saveAsMask = (!isCharacter) ? saveAsMask : 0;
+    if (!isCharacter) {
+        for (int i = 0; i < 4; ++i)
+            t.saveAsLevels[i] = saveAsLevels[i];
+    }
     t.magicResistPct = isCharacter ? 0 : magicResistPct;
     t.hitDice = hitDice;   // R82: Death Spell budgeting
     t.isUndead = undead;
@@ -313,6 +321,12 @@ void Encounter::resolveSpecial(Actor& attacker, Actor& defender,
             defender.isCharacter ? defender.classIndex : 0,
             lvl,
             (rules::SaveCategory)saveCategory);
+        // R155: matrix II.C parity with spelleffects::trySave -
+        // a classed defender saves on its most favorable matrix.
+        if (!defender.isCharacter && defender.saveAsMask)
+            target = rules::mostFavorableSaveTarget(
+                defender.saveAsMask, defender.saveAsLevels,
+                0, lvl, (rules::SaveCategory)saveCategory);
         if (!defender.isCharacter &&
             defender.race == dm::RACE_DWARF &&
             saveCategory != rules::SAVE_PETRIFY_POLY &&

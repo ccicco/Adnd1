@@ -211,11 +211,51 @@ int luaGetMagicResist(lua_State* L, int def) {
         v = (int)lua_tointeger(L, -1);
     } else if (lua_isstring(L, -1)) {
         std::string s = lua_tostring(L, -1);
-        // "25%" -> 25; "Standard"/"Nil"/"See below" -> 0 (no innate %)
-        v = firstIntIn(s, 0);
+        // "25%" -> 25; "Standard"/"Nil"/"See below" -> 0 (no
+        // innate %). R155: a matrix II.C "Save as ..." note is
+        // not a percent - the old firstIntIn read the 12th-level
+        // displacer write-up as 12% magic resistance.
+        std::string low;
+        for (size_t i = 0; i < s.size() && i < 7; ++i)
+            low += (char)tolower((unsigned char)s[i]);
+        if (low == "save as")
+            v = 0;
+        else
+            v = firstIntIn(s, 0);
     }
     lua_pop(L, 1);
     return v;
+}
+
+// R155: matrix II.C saveAs - "cleric 9" / "magic-user 5, cleric 7"
+// parses into class bits + per-class levels (class names in the
+// CharClass order: fighter, magic-user, cleric, thief).
+void parseSaveAs(const std::string& s, int& mask, int* levels) {
+    mask = 0;
+    for (int i = 0; i < 4; ++i) levels[i] = 0;
+    static const char* const kNames[4] = {
+        "fighter", "magic-user", "cleric", "thief"
+    };
+    size_t pos = 0;
+    while (pos <= s.size()) {
+        size_t comma = s.find(",", pos);
+        std::string tok = s.substr(
+            pos, comma == std::string::npos
+                    ? std::string::npos : comma - pos);
+        size_t b = tok.find_first_not_of(" ");
+        if (b == std::string::npos) break;
+        size_t e = tok.find_last_not_of(" ");
+        tok = tok.substr(b, e - b + 1);
+        for (int i = 0; i < 4; ++i) {
+            std::string name = kNames[i];
+            if (tok.compare(0, name.size(), name) != 0) continue;
+            int lvl = firstIntIn(tok.substr(name.size()), 0);
+            if (lvl >= 1) { mask |= (1 << i); levels[i] = lvl; }
+            break;
+        }
+        if (comma == std::string::npos) break;
+        pos = comma + 1;
+    }
 }
 
 // ----------------------------------------------------------------------------
@@ -666,6 +706,12 @@ bool MonsterRegistry::loadFile(const std::string& path,
     else
         def.magicResist = luaGetInt(L, "magicResist", 0);
 
+    // ---- R155: matrix II.C saveAs (DMG p.80; the MM1 save-as
+    // write-ups) + the flat die bonus ----
+    parseSaveAs(luaGetStr(L, "saveAs", ""),
+                def.saveAsMask, def.saveAsLevels);
+    def.saveAsBonus = luaGetInt(L, "saveAsBonus", 0);
+
     // ---- XP (new: xp / xpPerHp / xpValue / xpSource; legacy: xp) ----
     def.xpBase   = luaGetInt(L, "xp", 0);
     def.xpPerHp  = luaGetInt(L, "xpPerHp", 0);
@@ -837,6 +883,11 @@ ai::Actor MonsterRegistry::toActor(const std::string& key,
     a.monsterDamageCount = def->damageCount;
     a.monsterDamageSides = def->damageSides;
     a.magicResistPct = def->magicResist;
+    // R155: matrix II.C - the saveAs fields ride the actor
+    a.saveAsMask = def->saveAsMask;
+    for (int i = 0; i < 4; ++i)
+        a.saveAsLevels[i] = def->saveAsLevels[i];
+    a.saveAsBonus = def->saveAsBonus;
     a.undead = def->undead;
     a.requiredPlusToHit = def->requiredPlus;
     a.morale = def->morale;

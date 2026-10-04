@@ -173,6 +173,12 @@ struct Actor {
     int   rangedRounds = 0;
     int   magicResistPct = 0;
 
+    // R155: matrix II.C (DMG p.80) - classed-monster saves, set
+    // by the registry from the Lua saveAs / saveAsBonus keys.
+    int   saveAsMask = 0;
+    int   saveAsLevels[4] = {0, 0, 0, 0};
+    int   saveAsBonus = 0;
+
     // R46: psionics hook - a psionic monster (flagged by the
     // app from the monster key, the R37 monsterRanged pattern)
     // opens with a mind blast once per encounter: one living
