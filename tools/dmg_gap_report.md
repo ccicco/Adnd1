@@ -154,6 +154,16 @@ misparsed as 12% MR - fixed to read 0. Judgment left
 for a later lane: ixitxachitl (clerical, per-leader)
 and the humanoid classed leaders are per-encounter
 extras, not base-monster data. Census 73.
+R156 PINNED the Appendix P caller (DMG pp.225-226) -
+the convention-party generator: rollSpurMember rolls
+the band/option level, the six 4d6-best-of scores and
+the magic kit, and rollConventionParty (dm/encounters)
+maps it onto the encounter party - rollMemberMagic,
+the R147 tables, gain their first engine caller. The
+multi-class level math and the alignment curation are
+player-side (the print hands them to the table); the
+ability scores stay player-side too - the encounter
+party carries combat fields only. Census 74.
 
 Categories:
 - [x] = verified against the book text
@@ -1127,10 +1137,13 @@ Categories:
       mostFavorableSaveTarget min the save in
       spelleffects/trySave and the ai save helper; the
       five MM1 classed write-ups carry the data.
-- [ ] **Appendix P caller (the convention-party
-      generator)** - rollMemberMagic has no caller; wire
-      it into the p.176 party rows or a dm/encounters
-      generator.
+- [x] **Appendix P caller (the convention-party
+      generator)** - pinned by R156: rollSpurMember
+      (level, the six 4d6-best-of scores, the kit) and
+      rollConventionParty in dm/encounters - the R147
+      tables, first engine caller. The p.176 subtable
+      rows keep their own R55 magic ladder (a different
+      print; not conflated).
 - [ ] **Grenade-like missiles + holy/unholy water
       (pp.64-65)** - thrown flasks: the break and splash
       rules, the cone tables, vial costs and effects.

@@ -14,6 +14,7 @@
 // ============================================================================
 
 #include "encounters.h"
+#include "appendixp.h"   // R156: Appendix P kits, the convention party
 
 #include <algorithm>
 #include <cstdint>
@@ -952,6 +953,39 @@ CharacterParty rollCharacterParty(rules::Dice& dice,
                 p.members[(size_t)(i % nChars)].level);
             rollMagicItemsFor(dice, m);   // R55: henchmen too
         }
+        p.members.push_back(m);
+    }
+    return p;
+}
+
+// ----------------------------------------------------------------------------
+// R156: DMG Appendix P (pp.225-226) - the convention party on the
+// spur of the moment. rollCharacterParty rolls the p.176 subtable
+// with the R55 magic ladder; THIS generator uses the Appendix P
+// tables: caller-chosen classes (the players select in the book),
+// the band/option level roll, and the kit from rollMemberMagic -
+// the R147 tables, first engine caller. The ability scores stay
+// player-side (the encounter party carries combat fields only);
+// multi-class level math and alignment curation are player-side.
+// ----------------------------------------------------------------------------
+
+CharacterParty rollConventionParty(rules::Dice& dice, int band,
+                                   int option,
+                                   const int* classIndices,
+                                   int count) {
+    CharacterParty p;
+    if (count < 1) count = 1;
+    if (count > 9) count = 9;   // the p.176 nine-member cap
+    for (int i = 0; i < count; ++i) {
+        appendixp::SpurMember s = appendixp::rollSpurMember(
+            dice, band, option, classIndices ? classIndices[i] : 0);
+        PartyMember m;
+        m.classIndex = s.classIndex;
+        m.level = s.level;
+        m.armPlus = s.kit.armorPlus;
+        m.wpnPlus = s.kit.weaponPlus;
+        m.shdPlus = s.kit.shieldPlus;
+        m.race = RACE_HUMAN;   // convention default (fiction-only)
         p.members.push_back(m);
     }
     return p;

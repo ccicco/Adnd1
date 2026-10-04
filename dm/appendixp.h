@@ -199,5 +199,35 @@ inline MemberMagic rollMemberMagic(rules::Dice& dice,
     return m;
 }
 
+// ----
+// R156: THE SPUR-OF-THE-MOMENT MEMBER (pp.225-226) - the
+// convention character pre-roll: the band/option level
+// roll, the six 4d6-best-of ability scores (the book has
+// the player arrange as desired - the engine just
+// supplies the six), and the magic kit. Multi-class level
+// math and alignment curation are player-side and stay
+// out of the engine.
+struct SpurMember {
+    int classIndex = 0;          // engine class (caller-chosen)
+    int level = 1;               // rolled in the band
+    int abilities[6] = {0, 0, 0, 0, 0, 0};   // STR INT WIS DEX CON CHA
+    MemberMagic kit;
+};
+
+inline SpurMember rollSpurMember(rules::Dice& dice, int band,
+                                 int option, int classIndex) {
+    if (classIndex < 0) classIndex = 0;
+    if (classIndex > 3) classIndex = 3;
+    SpurMember m;
+    m.classIndex = classIndex;
+    int lo = bandLevelLo(band, option);
+    int hi = bandLevelHi(band, option);
+    m.level = lo + (int)dice.roll(1, (uint32_t)(hi - lo + 1), 0) - 1;
+    for (int i = 0; i < 6; ++i)
+        m.abilities[i] = abilityRoll(dice);
+    m.kit = rollMemberMagic(dice, classIndex, m.level);
+    return m;
+}
+
 } // namespace appendixp
 } // namespace dm

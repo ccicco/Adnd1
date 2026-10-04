@@ -95,6 +95,18 @@ std::vector<std::string> encounterKeys(
 CharacterParty rollCharacterParty(rules::Dice& dice,
                                   int dungeonLevel, int monsterLevel);
 
+// R156: DMG Appendix P (pp.225-226) - a convention party on
+// the spur of the moment: caller-chosen classes (the book
+// has the players select race and class), levels rolled in
+// the band, and the magic kit from rollMemberMagic - the
+// R147 tables, first engine caller. Party shape: 1-9
+// members; the ability scores stay player-side (the
+// encounter party carries only the combat fields).
+CharacterParty rollConventionParty(rules::Dice& dice, int band,
+                                   int option,
+                                   const int* classIndices,
+                                   int count);
+
 // R62: the p.192 race-check adjective for fiction strings
 // ("" for human / mixed parties): "dwarven ", "elven ", ...
 const char* npcRaceAdjective(int race);
