@@ -994,6 +994,34 @@ immediate confrontation). New R206
 battery audit; census 122. Next: the
 DMG-only sweep continues.
 
+R207 landed the town taxation system (DMG
+p.90, DUTIES, EXCISES, FEES, TARIFFS,
+TAXES, TITHES, AND TOLLS) - the print
+worked example town, a seam with zero
+prior coverage. rules/taxation.h (the
+grenade.h pattern): the seven named tax
+kinds defined in place; the import duty
+(1 percent, doubled for foreigners),
+the 5 percent luxury tariff, the entry
+fee (1 copper a citizen, 5 a
+non-citizen, per head or wheel), the
+annual head tax (1 copper a peasant, 1
+silver a freeman, 1 gold a gentleman or
+noble), the 10 percent foreigner sales
+tax (no service tax on them), the tithe
+pledge, the 5 percent annual property
+tax, citizenship (one month plus 10
+gold), foreign currency (the 5 percent
+merchant fine, the 90 percent exchange -
+10 foreign coppers bring 9 domestic -
+the 100-noble limit with the 50 percent
+fine and the 24-hour changer grace, the
+10 percent gem surtax), and toll
+evasion (confiscation, fine and
+imprisonment possible). New R207 battery
+audit; census 123. Next: the DMG-only
+sweep continues.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
