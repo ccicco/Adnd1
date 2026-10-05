@@ -349,22 +349,32 @@ int wisMagDefAdj(uint8_t wis) {
 // ----------------------------------------------------------------------------
 
 int chaReactionAdj(uint8_t cha) {
-    if (cha <= 3)   return -4;
-    if (cha == 4)   return -3;
-    if (cha == 5)   return -2;
-    if (cha <= 8)   return -1;
-    if (cha <= 12)  return 0;
-    if (cha <= 14)  return 1;
-    if (cha <= 16)  return 2;
-    if (cha == 17)  return 3;
-    return 4;   // 18
+    // R193: the printed CHARISMA TABLE reaction
+    // adjustment, in PERCENT - the d100 reaction bands
+    // (dm.cpp rollReaction) read it directly
+    if (cha <= 3)  return -25;
+    if (cha == 4)  return -20;
+    if (cha == 5)  return -15;
+    if (cha == 6)  return -10;
+    if (cha == 7)  return -5;
+    if (cha <= 12) return  0;   // 8 through 12
+    if (cha == 13) return  5;
+    if (cha == 14) return 10;
+    if (cha == 15) return 15;
+    if (cha == 16)  return 25;
+    if (cha == 17)  return 30;
+    return 35;   // 18
 }
 
 int chaHenchmenMax(uint8_t cha) {
-    if (cha <= 3)   return 1;
-    if (cha <= 5)   return 2;
-    if (cha <= 8)   return 3;
-    if (cha <= 12)  return 4;
+    // R193: the printed maximum henchmen column -
+    // the two divergent cells repinned (cha 4 = 1,
+    // cha 12 = 5); the rest already matched
+    if (cha <= 4)  return 1;   // 3, 4
+    if (cha <= 6)  return 2;   // 5, 6
+    if (cha <= 8)  return 3;   // 7, 8
+    if (cha <= 11) return 4;   // 9 through 11
+    if (cha == 12)  return 5;   // R193: was 4
     if (cha == 13)  return 5;
     if (cha == 14)  return 6;
     if (cha == 15)  return 7;
@@ -374,19 +384,21 @@ int chaHenchmenMax(uint8_t cha) {
 }
 
 int chaLoyaltyBase(uint8_t cha) {
-    if (cha <= 3)  return 1;
-    if (cha == 4)  return 2;
-    if (cha == 5)  return 3;
-    if (cha <= 7)  return 4;
-    if (cha == 8)  return 5;
-    if (cha <= 11) return 6;
-    if (cha == 12) return 7;
-    if (cha == 13) return 8;
-    if (cha == 14) return 9;
-    if (cha == 15) return 10;
-    if (cha == 16) return 11;
-    if (cha == 17) return 12;
-    return 15;  // 18
+    // R193: the printed loyalty base column, in
+    // PERCENT - the subtraction from or addition
+    // to the henchmen loyalty scores
+    if (cha <= 3)  return -30;
+    if (cha == 4)  return -25;
+    if (cha == 5)  return -20;
+    if (cha == 6)  return -15;
+    if (cha == 7)  return -10;
+    if (cha == 8)  return -5;
+    if (cha <= 13) return 0;    // 9 through 13
+    if (cha == 14)  return 5;   // R193: percent
+    if (cha == 15)  return 15;
+    if (cha == 16)  return 20;
+    if (cha == 17)  return 30;
+    return 40;  // 18
 }
 
 // ----------------------------------------------------------------------------

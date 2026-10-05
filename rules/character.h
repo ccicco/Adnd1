@@ -126,9 +126,9 @@ int  dwarfConSaveBonus(uint8_t con); // 0..+5 (0 below CON 4)
 // ----------------------------------------------------------------------------
 int  intExtraLanguages(uint8_t int_);   // language count adj
 int  wisMagDefAdj(uint8_t wis);         // save vs. magic adj, -2..+2
-int  chaReactionAdj(uint8_t cha);       // -4..+4 (hireling reaction roll)
-int  chaHenchmenMax(uint8_t cha);       // 0..15 (max henchmen, morale-linked)
-int  chaLoyaltyBase(uint8_t cha);       // 1..12 base loyalty
+int  chaReactionAdj(uint8_t cha);       // the printed percent ladder -25..+35 (R193)
+int  chaHenchmenMax(uint8_t cha);       // 1..15 (the printed table, R193)
+int  chaLoyaltyBase(uint8_t cha);       // the printed percent ladder -30..+40 (R193)
 
 // ----------------------------------------------------------------------------
 // Prime requisites (PHB p.12-13): XP adjustment by class prime requisite.

@@ -807,6 +807,16 @@ spells/spells.cpp: clericSpellSlotsWithWis and
 rollClericSpellFailure. The R130 wisdom-not-modeled
 engine limit closes. New R192 battery audit; census
 109. Next: the gap report names the next round.
+R193 landed the charisma repin (PHB divergence 5,
+the live one): rules/character.cpp chaReactionAdj,
+chaLoyaltyBase and chaHenchmenMax repinned cell for
+cell to the printed CHARISMA TABLE - the reaction
+and loyalty ladders are now the printed PERCENT
+ladders (-25..+35, -30..+40); the d100 reaction
+bands read the percents directly; the two divergent
+henchmen cells repinned (cha 4 = 1, cha 12 = 5).
+New R193 battery audit; census 110. Next: the PHB
+divergences 3 (WIS) and 4 (INT).
 
 Categories:
 - [x] = verified against the book text

@@ -34,7 +34,8 @@ first, per the arc ordering rule): the DEX
 reaction ladder and the CON columns repinned to
 the print; the unsourced CON poison-save accessor
 retired. Census 95. The WIS, INT and CHA
-divergences (3, 4, 5) remain ranked fix rounds.
+divergences 3 (WIS) and 4 (INT) remain ranked fix rounds;
+5 (CHA, the live reaction feed) CLOSED R193.
 
 ## Verified against the book
 
@@ -110,18 +111,24 @@ divergences (3, 4, 5) remain ranked fix rounds.
       print reads 3-7 none, 8-9 one, 10-11 two,
       12-13 three, 14-15 four, 16 five, 17 six,
       18 seven. Currently display-only.
-- [~] 5. **CHA table (reaction adjustment, loyalty
+- [x] 5. **CHA table (reaction adjustment, loyalty
       base, henchmen - the CHARISMA TABLE page)** -
-      the engine reaction adjustment is a flat -4
-      through +4 ladder against the printed percent
-      ladder (-25 at 3 through +35 at 18); the
-      loyalty base reads 1 through 15 against the
-      printed -30 through +40 percent; the henchmen
-      count diverges at cha 4 (engine 2, print 1)
-      and cha 12 (engine 4, print 5). The reaction
-      accessor is LIVE and feeds the d100 reaction
-      bands (dm.cpp rollReaction) - the fix round
-      must re-scale to the printed percents.
+      CLOSED R193: all three accessors repinned
+      cell for cell. chaReactionAdj is now the
+      printed PERCENT ladder (-25 at 3 through
+      +35 at 18; 13 +5, 14 +10, 15 +15, 16 +25,
+      17 +30) - the live d100 reaction bands
+      (dm.cpp rollReaction, five party call sites)
+      read the printed percents directly, no band
+      re-carving needed. chaLoyaltyBase is the
+      printed percent ladder (-30 through +40;
+      14 +5, 15 +15, 16 +20, 17 +30). The henchmen
+      column repinned at its two divergent cells
+      (cha 4 = 1, cha 12 = 5) - the rest already
+      matched the print. The character.h range
+      comments repinned with them. The R193
+      battery audit walks all three columns, all
+      16 scores. Census 110.
 
 ## Open items (worth having)
 
