@@ -135,11 +135,24 @@ SpellClass spellClass(SpellId id);
 // cleric to L29, spell levels 1-9 / 1-7 encoded; the R80 project-
 // notes rows 7-12 were corrected to the printed values (rows 1-6
 // matched). Beyond the printed rows the final row holds. The
-// printed wisdom footnotes (6th: Wis 17 at cleric 11; 7th: Wis 18
-// at cleric 16) are not modeled - the level-only gates are
-// documented engine limits.
+// printed wisdom footnotes wired R192: the wisdom gates ride
+// rules/wisdom.h and clericSpellSlotsWithWis (6th: Wis 17;
+// 7th: Wis 18 - Wisdom Table I; the bonus spells and spell
+// failure ride the same header).
 // ----------------------------------------------------------------------------
 int spellSlots(SpellClass sc, int classLevel, int spellLevel);
+
+// ----------------------------------------------------------------------------
+// R192: the wisdom wiring (Wisdom Tables I and II): cleric
+// slots with the cumulative wisdom bonus (entitlement-
+// gated), the high-circle wisdom gates, and the low-
+// wisdom spell failure roll.
+// ----------------------------------------------------------------------------
+int clericBonusSpells(uint8_t wis, int spellLevel);
+int clericSpellSlotsWithWis(int classLevel, int spellLevel,
+                           uint8_t wis);
+int clericSpellFailurePct(uint8_t wis);
+bool rollClericSpellFailure(Dice& dice, uint8_t wis);
 
 // ----------------------------------------------------------------------------
 // Chance to learn a spell (PHB p.10 INT table): percent rolled on

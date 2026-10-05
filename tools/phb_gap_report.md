@@ -213,9 +213,26 @@ divergences (3, 4, 5) remain ranked fix rounds.
       bands now live in rules/attacksround.h and
       rules/turn.cpp (meleeAttacksPerRound was the
       unsourced level-8+ original note).
-- [ ] **Wisdom Table II, cleric bonus spells and
-      spell failure** - unwired; a wiring candidate
-      if engine scope wants it.
+- [x] **Wisdom Table II, cleric bonus spells and
+      spell failure - PINNED R192:** rules/wisdom.h
+      CREATED - Wisdom Table I (the magical attack
+      adjustment ladder 3 -3 through 18 +4, mental
+      attack forms only; the high-circle gates - 17
+      is the minimum wisdom for 6th level spells, 18
+      for 7th) and Wisdom Table II (the CUMULATIVE
+      bonus ladder - wis 13 one 1st through 18 two
+      1st, two 2nd, one 3rd, one 4th; the failure
+      ladder 20/15/10/5/0 at wis 9-13). WIRED in
+      spells/spells.cpp: clericSpellSlotsWithWis
+      (base slots + bonus, granted only when
+      entitled - the printed note; the Wis-17/18
+      gates close the R130 documented engine
+      limit; the printed L16 ** row already grants
+      the 7th at 16, the gate is wisdom-side) and
+      rollClericSpellFailure (d100 equal or less:
+      the spell is expended with no effect). The
+      R192 battery audit walks both tables cell
+      for cell and the wiring. Census 109.
 
 ## Out of engine scope (recorded, not defects)
 

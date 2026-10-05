@@ -798,6 +798,15 @@ worked examples already said unarmored AC 10); the
 other nine rows verified cell for cell. New R191
 battery audit; census 108. Next: the gap report names
 the next round.
+R192 landed the wisdom wiring: rules/wisdom.h
+CREATED (Wisdom Table I - the magical attack ladder
+and the Wis 17/18 high-circle gates; Wisdom Table II -
+the cumulative cleric bonus-spell ladder and the
+low-wisdom spell failure percent), wired into
+spells/spells.cpp: clericSpellSlotsWithWis and
+rollClericSpellFailure. The R130 wisdom-not-modeled
+engine limit closes. New R192 battery audit; census
+109. Next: the gap report names the next round.
 
 Categories:
 - [x] = verified against the book text

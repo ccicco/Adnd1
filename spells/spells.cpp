@@ -4,6 +4,7 @@
 // ============================================================================
 
 #include "spells.h"
+#include "../rules/wisdom.h"  // R192: Wisdom Tables I and II
 
 namespace spells {
 
@@ -110,9 +111,11 @@ SpellClass spellClass(SpellId id) { return spell(id).sclass; }
 // cleric to L29; beyond the printed rows the final row holds
 // (the compilation prints no further spell rows - the xp
 // line keeps advancing, the spell rows do not). The printed
-// wisdom footnotes (6th needs Wis 17 at cleric 11; 7th needs
-// Wis 18 at cleric 16) are not modeled - the level-only
-// gates put 7th at 17; documented engine limits. Values ride
+// wisdom footnotes are wired R192 (rules/wisdom.h and
+// clericSpellSlotsWithWis: the 6th needs Wis 17, the 7th
+// Wis 18 - Wisdom Table I; the printed ** puts a Wis-18
+// cleric's first 7th at 16, which the L16 table row
+// already grants - the gate is wisdom-side). Values ride
 // the file's standing verification debt - the printed tables
 // win when the PDF is re-uploaded.)
 // ----------------------------------------------------------------------------
@@ -192,6 +195,48 @@ int spellSlots(SpellClass sc, int classLevel, int spellLevel) {
 }
 
 // ----------------------------------------------------------------------------
+// R192: the wisdom wiring (PHB Wisdom Tables I and II)
+// ----------------------------------------------------------------------------
+
+// The cleric bonus spells at the wisdom score (the
+// printed cumulative ladder; the caller gates the
+// entitlement).
+int clericBonusSpells(uint8_t wis, int spellLevel) {
+    return rules::wisBonusSpells(wis, spellLevel);
+}
+
+// Cleric slots with wisdom: the printed table slots
+// PLUS the cumulative wisdom bonus - granted only
+// when the cleric is entitled to spells of that
+// level (base slots at least 1, the printed note) -
+// and the Table I high-circle gates applied: the 6th
+// needs Wis 17, the 7th Wis 18 (the R130 documented
+// engine limit now closed).
+int clericSpellSlotsWithWis(int classLevel, int spellLevel,
+                           uint8_t wis) {
+    if (spellLevel == 6 && wis < 17) return 0;
+    if (spellLevel == 7 && wis < 18) return 0;
+    int base = spellSlots(SPELL_CLERIC, classLevel, spellLevel);
+    if (base <= 0) return 0;
+    return base + rules::wisBonusSpells(wis, spellLevel);
+}
+
+// The chance of spell failure for low wisdom.
+int clericSpellFailurePct(uint8_t wis) {
+    return rules::wisSpellFailurePct(wis);
+}
+
+// The failure roll: percentile dice, and if the
+// number is equal to or less than the failure
+// number the spell is expended and has absolutely
+// no effect whatsoever.
+bool rollClericSpellFailure(Dice& dice, uint8_t wis) {
+    int pct = clericSpellFailurePct(wis);
+    if (pct <= 0) return false;
+    return (int)dice.d100() <= pct;
+}
+
+// ----------------------------------------------------------------------------
 // Chance to learn (PHB p.10)
 // ----------------------------------------------------------------------------
 
@@ -257,9 +302,10 @@ int maxSpellLevelForInt(uint8_t int_) {
 }
 
 int maxSpellLevelForClericLevel(int classLevel) {
-    // R130: 7th at 17 (the printed ** footnote puts a Wis-18
-    // cleric's first 7th at 16 - wisdom is not modeled; the
-    // level-only gate is the documented engine limit)
+    // R130: 7th at 17 in the level view (R192: the printed **
+    // footnote puts a Wis-18 cleric's first 7th at 16 -
+    // the level gate is the printed rule; the wisdom gate
+    // rides clericSpellSlotsWithWis, Wisdom Table I)
     if (classLevel < 1)  return 0;
     if (classLevel < 3)  return 1;
     if (classLevel < 5)  return 2;
