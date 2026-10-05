@@ -923,6 +923,22 @@ stays named. Closes the R144/R145 named approximation.
 New R203 battery audit; census 119. Next: the DMG-only
 tables still unpinned.
 
+R204 landed the item saving throw matrix (DMG p.80,
+matrix III, magical and non-magical items) - the
+DMG-only sweep seam grenade.h named and deferred:
+rules/itemsavethrow.h (the grenade.h pattern), the
+14 material rows x 11 attack forms cell for cell,
+the ceramic 18/12 and crystal 19/14 BLOW cells
+independently confirmed by the R157 break-save pins.
+The printed modifiers ride it: the magical ladder
+(+2 and +1 per plus above +1), the own-mode +5, the
+fall surfaces (hard 0, wood-like +1, fleshy +5)
+with the per-5-feet distance penalty, the hard-metal
+cold-strike -10 footnote, the normal-fire exposure
+rounds (parchment 1, cloth 2, bone 3). The save:
+d20 + adj >= cell. New R204 battery audit; census
+120. Next: the DMG-only sweep continues.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
