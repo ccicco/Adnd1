@@ -221,10 +221,31 @@ census grows with the arc):
       STR+WIS+DEX, the druid WIS+CHA (the primary
       returned). The R179 battery audit walks
       every row, title, cap and clamp. Census 96.
-- R180 qualification and race gates - the ability
-      minimums and the alignment requirements;
-      Race Table I class limitations and the Race
-      Table II level caps for the new classes.
+- [x] R180 the qualification and race gates - PINNED:
+      rules/subclassgates.h CREATED: the ability
+      minimums (paladin 12/9/13/-/9/17, ranger
+      13/13/14/-/14/-, druid WIS 12 CHA 15,
+      illusionist INT 15 DEX 16, assassin
+      12/11/-/12/-/-, monk 15/-/15/15/11/-), the
+      Table I alignment letters (LG paladin, G
+      ranger, N druid, A illusionist, E assassin,
+      L monk), the XP bonus rules (paladin STR and
+      WIS over 15, ranger STR INT WIS, druid WIS
+      CHA; the illusionist, assassin and monk
+      print none - the assassin class text is
+      explicit), Race Table I cell by cell (the
+      paladin and monk human only, the ranger and
+      druid half-elf and human, the illusionist
+      gnome and human, the assassin all but
+      halfling), and Race Table II with the
+      parentheses-equal-NPC-only convention (the
+      halfling druid (6); ranger half-elf 8;
+      illusionist gnome 7 with the footnote-8
+      conditional accessor; assassin 9/10/8/11
+      dwarf/elf/gnome/half-elf, unlimited
+      half-orc and human). The R180 battery audit
+      walks every cell, the footnote and the
+      meets-min and bonus probes. Census 97.
 - R181 attacks per melee round - the
       fighter-group table (also closes the open
       item above); the monk unarmed ladder and the

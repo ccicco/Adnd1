@@ -695,6 +695,17 @@ touched TUs (clang++ -fsyntax-only) whenever a
 round adds code that regtest includes - a
 header verified in isolation is not a build.
 Census stays 96 (no new audit).
+R180 landed the qualification and race gates:
+rules/subclassgates.h CREATED (the ability
+minimums, the Table I alignment letters, the XP
+bonus rules, Race Table I and Race Table II cell
+by cell, the halfling-druid NPC-only (6), the
+footnote-8 gnome illusionist conditional). The
+include landed with the audit (the R179 lesson
+held). New R180 battery audit; census 97. The
+assassin XP bonus pinned NONE - the class text
+prints no bonus despite the thief-group pattern.
+Next: R181 attacks per melee round.
 
 Categories:
 - [x] = verified against the book text
