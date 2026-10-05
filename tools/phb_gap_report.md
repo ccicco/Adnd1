@@ -307,10 +307,31 @@ census grows with the arc):
       reversible flag. The R183 battery audit
       walks every slot cell, every roster row and
       name spot-checks. Census 100.
-- R184 the paladin and ranger spell layers - the
-      spell progressions and the shared-list
-      wiring (lay on hands, curing, the ranger
-      giant-kind bonuses follow here).
+- [x] R184 the paladin and ranger spell layers - PINNED:
+      rules/palrangerspells.h CREATED: the
+      SPELLS USABLE BY CLASS AND LEVEL - PALADINS
+      table (levels 9-20 x 4 clerical spell
+      levels, every cell: 9th 1/1st, the 20th
+      3/3/3/3 max ability; below 9th no slots,
+      past 20th clamps) and the RANGERS table
+      (levels 8-17 x druidic 1-3 + MU 1-2,
+      every cell: 8th one druidic 1st, 9th adds
+      MU 1st, the 17th 2/2/2/2/2 max ability;
+      below 8th no slots, past 17th clamps),
+      the shared-list wiring (paladin: the cleric
+      list, never clerical scrolls; ranger: the
+      R182 druid roster levels 1-3 and the
+      magic-user list levels 1-2, learn-checked
+      as if a magic-user, no scrolls), and the
+      printed specials: lay on hands (2 hp per
+      level, once per day), cure disease (once
+      per week per five levels), the giant-class
+      damage bonus (+1 hp per ranger level vs
+      the 11 listed creatures: bugbear through
+      troll). The ranger surprise numbers and
+      the paladin turn-undead ladder are
+      recorded for R187+. The R184 battery audit
+      walks every cell and ladder. Census 101.
 - R185 multi-class and dual-class - the split
       experience machinery, the hit-dice and
       hit-point conventions, and the two-class

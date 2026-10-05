@@ -731,6 +731,14 @@ spell roster in the printed book order; no
 reversible flags - the section prints none).
 New R183 battery audit; census 100. Next:
 R184 the paladin and ranger spell layers.
+R184 landed the paladin and ranger spell
+layers: rules/palrangerspells.h CREATED (the
+paladin 9-20 x 4 progression, the ranger 8-17
+x 5 progression, the shared-list wiring, lay
+on hands, cure disease, the giant-class
+roster and bonus). New R184 battery audit;
+census 101. Next: R185 multi-class and
+dual-class.
 
 Categories:
 - [x] = verified against the book text
