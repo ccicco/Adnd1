@@ -143,13 +143,30 @@ divergences (3, 4, 5) remain ranked fix rounds.
       comment records the verify. The R188 battery
       audit walks every gate and the rounding. Census
       105.
-- [ ] **The PHB book-verify pass for the weapon
-      tables** - R144/R158 pinned from the
-      1eonline.info compilation; the PHB upload now
-      supplies the print charts (WEIGHT AND DAMAGE
-      BY WEAPON TYPE; WEAPON TYPES, GENERAL DATA AND
-      TO HIT ADJUSTMENTS) - a verify round can close
-      the standing compile-vs-print note.
+- [x] **The PHB book-verify pass for the weapon tables -
+      PINNED R189:** rules/weapontables.h CREATED:
+      the WEIGHT AND DAMAGE BY WEAPON TYPE chart (50
+      rows, every cell: the weight in gold pieces,
+      the S/M and L damage ranges; the spear weight
+      40-60 pinned as a range). The verify: every
+      readable speed-factor cell of the WEAPON TYPES
+      chart confirms the R158 engine ladder row for
+      row (18 named weapons; the spear default 7 sits
+      inside the printed 6-8; the horseman flail cell
+      is OCR-mangled - the engine 6 stays recorded
+      convention). The R144/R145 p.38 AC-adjustment
+      standing note CLOSES: R149 verified 8 of the 15
+      engine rows cell for cell against this upload;
+      the remaining AC cells are OCR-mangled (digit
+      runs where single modifiers belong) and stay
+      pinned to the 1eonline compilation. The printed
+      notes pin: the lances double from a charging
+      mount (rows 24-26), the spear set doubles, the
+      +2 back / +4 stunned-prone-motionless combat
+      note; the italics set-weapon roster is not
+      recoverable from this OCR - recorded. The R189
+      battery audit walks all 50 rows and the speed
+      cross-verify. Census 106.
 - [ ] **Starting money by class (the EQUIPPING THE
       CHARACTER section)** - the print: cleric 3d6
       (30-180 gp), fighter 5d4 (50-200), magic-user

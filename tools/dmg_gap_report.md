@@ -771,6 +771,14 @@ engine +5/0/-10/-20 rungs are unsourced convention
 (the DMG has no prime-requisite ladder at all). New
 R188 battery audit; census 105. Next: the gap report
 names the next round.
+R189 landed the weapon tables verify:
+rules/weapontables.h CREATED (the 50-row weight and
+damage chart, the speed cross-verify - all 18
+readable cells confirm the R158 ladder - and the
+printed notes; the R144/R145 AC standing note closes
+with the OCR limitation recorded). New R189 battery
+audit; census 106. Next: the gap report names the next
+round.
 
 Categories:
 - [x] = verified against the book text
