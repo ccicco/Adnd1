@@ -262,6 +262,32 @@ inline bool monkWallAssistedFallRequiresContact() {
     return true;
 }
 
+// ---- R201: the NPC monk alignment split ----
+//
+// The monk prose pin: non-player character monks
+// align 50% lawful good, 35% lawful neutral, 15%
+// lawful evil. The PC gate stays SUB_ALIGN_LAWFUL_
+// ONLY (rules/subclassgates.h); this split is NPC
+// generation data.
+inline int monkNpcAlignLawfulGoodPercent() { return 50; }
+
+inline int monkNpcAlignLawfulNeutralPercent() { return 35; }
+
+inline int monkNpcAlignLawfulEvilPercent() { return 15; }
+
+// The cumulative d100 band for each NPC alignment
+// index - 0 lawful good, 1 lawful neutral, 2 lawful
+// evil. The bands are contiguous and cover the die:
+// LG 1-50, LN 51-85, LE 86-100. Index out of range
+// returns the whole die (0-100 miss band).
+inline void monkNpcAlignRollRange(int index,
+                                    int& lo, int& hi) {
+    if (index == 0) { lo = 1;   hi = 50;  return; }
+    if (index == 1) { lo = 51;  hi = 85;  return; }
+    if (index == 2) { lo = 86;  hi = 100; return; }
+    lo = 0; hi = 100;
+}
+
 // ---- the monk surprise ladder ----
 
 // The chance of surprising the monk: 33% at
