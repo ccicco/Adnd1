@@ -716,6 +716,14 @@ level-8+ original note replaced by the print (the
 3/2 band opens at 7th; heavy-round convention, the
 full rates in the header). New R181 battery audit;
 census 98. Next: R182 the druid spell layer.
+R182 landed the druid spell layer:
+rules/druidspells.h CREATED (the 14x7
+spells-usable table cell by cell, the 77-
+spell roster with the reversible flags;
+the printed dash pins as 0, past-14th
+clamps to the 14th row). New R182 battery
+audit; census 99. Next: R183 the illusionist
+spell layer.
 
 Categories:
 - [x] = verified against the book text

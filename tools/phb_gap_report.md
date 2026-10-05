@@ -272,9 +272,23 @@ census grows with the arc):
       class; the actor layer carries base classes).
       The R181 battery audit walks every band, every
       monk cell and the repin. Census 98.
-- R182 the druid spell layer - the druid list
-      joins the registry with its own
-      spells-usable-by-level table.
+- [x] R182 the druid spell layer - PINNED:
+      rules/druidspells.h CREATED: the SPELLS
+      USABLE BY CLASS AND LEVEL - DRUIDS table
+      (14 druid levels x 7 spell levels, every
+      printed cell: level 1 reads two first-
+      level slots, the 14th reads 6/6/6/6/5/4/3,
+      the dashes pin as 0, past-14th queries clamp
+      to the 14th row) and the full roster - 77
+      spells with the printed level and the 16
+      reversible flags (per-level counts
+      12/12/12/12/8/12/9; Animal Friendship
+      through Transmute Metal To Wood, the
+      printed alphabetical order within each
+      level). The mistletoe component rules are
+      flavor (display concern). The R182 battery
+      audit walks every slot cell, every roster
+      row and name spot-checks. Census 99.
 - R183 the illusionist spell layer - the
       illusionist list likewise.
 - R184 the paladin and ranger spell layers - the
