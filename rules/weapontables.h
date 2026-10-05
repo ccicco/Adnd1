@@ -507,4 +507,117 @@ inline int weaponStunnedProneMotionlessBonus() {
     return 4;
 }
 
+// ----------------------------------------------------------------------------
+// R198: the class weapon allowlists - the CHARACTER CLASSES
+// TABLE II weapons column (the print, cell for cell). The
+// class rows in the printed order:
+//   0 cleric, 1 druid, 2 fighter, 3 paladin, 4 ranger,
+//   5 magic-user, 6 illusionist, 7 thief, 8 assassin,
+//   9 monk.
+// The fighter, paladin, ranger and assassin rows read any
+// - classUsesAnyWeapon; the limited rows name the chart
+// rows they allow. JUDGMENTs: the family words expand to
+// the chart variants - flail = footman and horseman flail,
+// mace = footman and horseman mace, staff = quarterstaff,
+// sling = sling bullet and sling stone, hammer = the plain
+// hammer alone - the lucern hammer is a pole arm, not the
+// cleric print row. The thief footnote: short, broad or
+// long sword but not bastard or two-handed. The monk pole
+// arm = the chart 15 pole-arm rows below; the awl pike and
+// the picks stay out. The crossbow prints no chart row of
+// its own - only its quarrels do - so it pins by name for
+// the monk and no one else.
+// ----------------------------------------------------------------------------
+
+    static const char* const kCleric[7] = {
+        "club", "footman flail", "horseman flail",
+        "hammer", "footman mace", "horseman mace",
+        "quarterstaff"
+    };
+    static const char* const kDruid[9] = {
+        "club", "dagger", "dart", "hammer", "scimitar",
+        "sling bullet", "sling stone", "spear",
+        "quarterstaff"
+    };
+    static const char* const kMuIll[3] = {
+        "dagger", "dart", "quarterstaff"
+    };
+    static const char* const kThief[8] = {
+        "club", "dagger", "dart", "sling bullet",
+        "sling stone", "short sword", "broad sword",
+        "long sword"
+    };
+    static const char* const kMonk[24] = {
+        "bo stick", "club", "crossbow", "dagger",
+        "hand axe", "javelin", "jo stick", "spear",
+        "quarterstaff",
+        "bardiche", "bec de corbin", "bill-guisarme",
+        "fauchard", "fauchard-fork", "military fork",
+        "glaive", "glaive-guisarme", "guisarme",
+        "guisarme-voulge", "halberd", "partisan",
+        "ransseur", "spetum", "voulge"
+    };
+
+inline bool classUsesAnyWeapon(int cls) {
+    return cls == 2 || cls == 3 || cls == 4 || cls == 8;
+}
+
+// The allowed weapon count, -1 on the any-weapon rows.
+inline int classAllowedWeaponCount(int cls) {
+    if (classUsesAnyWeapon(cls)) return -1;
+    if (cls == 0) return 7;    // cleric
+    if (cls == 1) return 9;    // druid
+    if (cls == 5 || cls == 6) return 3;    // MU, illusionist
+    if (cls == 7) return 8;    // thief
+    if (cls == 9) return 24;   // monk
+    return 0;
+}
+
+// The allowed chart name at index i (clamped).
+inline const char* classAllowedWeaponName(int cls, int i) {
+    if (i < 0) i = 0;
+    if (cls == 0) {
+        if (i > 6) i = 6;
+        return kCleric[i];   // cleric
+    }
+    if (cls == 1) {
+        if (i > 8) i = 8;
+        return kDruid[i];   // druid
+    }
+    if (cls == 5) {
+        if (i > 2) i = 2;
+        return kMuIll[i];   // MU and illusionist
+    }
+    if (cls == 6) {
+        if (i > 2) i = 2;
+        return kMuIll[i];   // illusionist, the same list
+    }
+    if (cls == 7) {
+        if (i > 7) i = 7;
+        return kThief[i];   // thief
+    }
+    if (cls == 9) {
+        if (i > 23) i = 23;
+        return kMonk[i];   // monk
+    }
+    return "club";   // out-of-range clamps
+}
+
+// The engine question: can class cls use the named
+// weapon? The any-weapon rows take everything.
+inline bool weaponAllowedForClass(int cls,
+                                   const char* weaponName) {
+    if (weaponName == 0) return false;
+    if (classUsesAnyWeapon(cls)) return true;
+    int n = classAllowedWeaponCount(cls);
+    if (n <= 0) return false;
+    for (int i = 0; i < n; ++i) {
+        const char* a = classAllowedWeaponName(cls, i);
+        const char* b = weaponName;
+        while (*a && *b && *a == *b) { ++a; ++b; }
+        if (*a == 0 && *b == 0) return true;   // exact match
+    }
+    return false;
+}
+
 } // namespace rules
