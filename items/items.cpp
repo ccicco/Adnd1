@@ -83,7 +83,11 @@ const WeaponDef& weapon(WeaponId id) {
 
 static const ArmorDef kArmors[ARMOR_COUNT] = {
     // name             baseAc  weight                    wtGp  costGp
-    { "None",             9,    rules::ARMOR_NONE,           0,     0 },
+    // R191: the printed ARMOR CLASS TABLE says None 10,
+    // shield only 9 - the engine read 9; the repin
+    // also matches the engine p.38 worked examples
+    // (Balto unarmored, AC 10).
+    { "None",            10,    rules::ARMOR_NONE,           0,     0 },
     { "Padded",           8,    rules::ARMOR_LEATHER,      100,     4 },
     { "Leather",          8,    rules::ARMOR_LEATHER,      150,     5 },
     { "Studded Leather",  7,    rules::ARMOR_LEATHER,      200,    15 },

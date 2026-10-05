@@ -184,11 +184,29 @@ divergences (3, 4, 5) remain ranked fix rounds.
       money is not printed (recorded). The R190
       battery audit walks all five rows. Census
       107.
-- [ ] **Armor Class table (the ARMOR section)** -
-      the printed AC ratings (none 10 through plate
-      and shield 2, magic pluses lowering AC)
-      deserve a cell-by-cell verify against the
-      items armor rows (R101 pinned the plate kit).
+- [x] **Armor Class table (the ARMOR section) -
+      PINNED R191:** rules/armorratings.h CREATED -
+      the printed ARMOR CLASS TABLE ladder (none 10,
+      shield only 9, through plate mail + shield 2),
+      the shield step, the magic rule (each +1
+      lowers AC 1; a +1 converts to a 5% lesser
+      likelihood of being hit), the flank/rear
+      shield negation and magic-armor-weightless
+      notes. The verify found ONE divergence: the
+      engine None armor row read baseAc 9 against
+      the printed 10 - REPINNED in items/items.cpp
+      (the repin also matches the engine p.38
+      worked examples, Balto unarmored AC 10; the
+      shield-only composite now reads the printed
+      9). The other nine rows verified cell for
+      cell: padded 8, leather 8, studded 7, ring 7,
+      scale 6, chain 5, splinted 4, banded 4, plate
+      3. The effectiveAc cap at 10 stays engine
+      convention (the p.38 columns run 0-10; a DEX
+      penalty cannot push effective AC past 10 -
+      recorded). The R191 battery audit walks the
+      engine rows, the composites and the worked
+      examples. Census 108.
 - [x] **Fighter attacks per melee round (the class
       tables section)** - PINNED R181: the engine
       convention verified and repinned - the printed

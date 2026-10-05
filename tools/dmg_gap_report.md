@@ -788,6 +788,16 @@ companion pin: the PLAYER CHARACTER EXPENSES rule,
 not less than 100 gp per level per month
 (pcMonthlySupportCost). New R190 battery audit; census
 107. Next: the gap report names the next round.
+R191 landed the armor class ratings:
+rules/armorratings.h CREATED (the printed ARMOR
+CLASS TABLE ladder, the shield step, the magic rule
+and the printed notes). The verify found ONE
+divergence: the engine None armor row read 9 against
+the printed 10 - repinned in items/items.cpp (the p.38
+worked examples already said unarmored AC 10); the
+other nine rows verified cell for cell. New R191
+battery audit; census 108. Next: the gap report names
+the next round.
 
 Categories:
 - [x] = verified against the book text

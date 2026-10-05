@@ -63,7 +63,8 @@ const WeaponDef& weapon(WeaponId id);
 
 // ----------------------------------------------------------------------------
 // Armor (PHB p.36) + shields
-//   AC values descending (unarmored 9 + DEX; armor sets the base).
+//   AC values descending (unarmored 10, the printed ARMOR
+//   CLASS TABLE R191; armor sets the base).
 //   ArmorWeight links to rules/classes armorAllowed.
 // ----------------------------------------------------------------------------
 enum ArmorId : int {
