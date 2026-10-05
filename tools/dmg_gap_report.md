@@ -676,6 +676,25 @@ survival (40-100) columns repinned cell by cell
 repinned -1, and the unsourced poison-save
 accessor retired. New R178c battery audit;
 census 95.
+R179 PINNED the six subclass foundations (the
+arc registry round): rules/subclasses.h CREATED,
+data-driven - the six PHB subclasses with the
+base-class map, caps, hit dice, the XP attain
+rows and title ladders from the printed tables,
+the adders, and the two-dice first levels
+(ranger, monk). New R179 battery audit; census
+96. The wiring rounds follow (qualification,
+attacks, spells, multi-class, the bard).
+R179b FIXED the R179 build: regtest.cpp now
+includes rules/subclasses.h (the R179 audit
+referenced the registry without the include -
+preflight failed with 20 errors and the census
+failed downstream of the missing binary).
+LESSON: the acid test must SYNTAX-CHECK the
+touched TUs (clang++ -fsyntax-only) whenever a
+round adds code that regtest includes - a
+header verified in isolation is not a build.
+Census stays 96 (no new audit).
 
 Categories:
 - [x] = verified against the book text

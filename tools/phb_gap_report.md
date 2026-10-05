@@ -197,13 +197,30 @@ The arc plan (each round flips its box HERE in the
 same commit, and adds its battery audit - the
 census grows with the arc):
 
-- R179 the six subclass foundations - the class
-      registry grows (new indices past the four
-      base classes), per-class level caps, hit
-      dice, the HP-beyond-cap convention, the XP
-      rows and the title ladders from the printed
-      subclass tables (PALADINS, RANGERS, DRUIDS,
-      ILLUSIONISTS, ASSASSINS, MONKS tables).
+- [x] R179 the six subclass foundations - PINNED:
+      rules/subclasses.h CREATED (the data-driven
+      registry - a future class lands as one
+      appended row): struct SubclassDef with the
+      base-class map (paladin/ranger fighter,
+      druid cleric, illusionist MU, assassin
+      thief, monk none), the caps with the
+      fixed-hp-past-cap convention (paladin 9/+3,
+      ranger 10/+2, druid 9/+2, illusionist 10/+1,
+      assassin 10/+2, monk 17 rolls through), the
+      hit dice (d10/d8/d8/d4/d6/d4), the XP attain
+      rows cell by cell from the printed tables
+      (the R176 convention), the adders (350k
+      paladin past the 11th, 325k ranger past the
+      12th, 220k illusionist past the 12th; the
+      druid, assassin and monk print none -
+      ceiling rows), and the full title ladders
+      (11/12/14/12/15/17 titles). JUDGMENTs: the
+      ranger and monk level 1 carries two dice
+      (the printed accumulated column reads 2);
+      the ranger primes STR+INT+WIS, the monk
+      STR+WIS+DEX, the druid WIS+CHA (the primary
+      returned). The R179 battery audit walks
+      every row, title, cap and clamp. Census 96.
 - R180 qualification and race gates - the ability
       minimums and the alignment requirements;
       Race Table I class limitations and the Race
