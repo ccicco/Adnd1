@@ -724,6 +724,13 @@ the printed dash pins as 0, past-14th
 clamps to the 14th row). New R182 battery
 audit; census 99. Next: R183 the illusionist
 spell layer.
+R183 landed the illusionist spell layer:
+rules/illusionspells.h CREATED (the 26x7
+spells-usable table cell by cell, the 61-
+spell roster in the printed book order; no
+reversible flags - the section prints none).
+New R183 battery audit; census 100. Next:
+R184 the paladin and ranger spell layers.
 
 Categories:
 - [x] = verified against the book text

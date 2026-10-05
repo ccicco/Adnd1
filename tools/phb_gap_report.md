@@ -289,8 +289,24 @@ census grows with the arc):
       flavor (display concern). The R182 battery
       audit walks every slot cell, every roster
       row and name spot-checks. Census 99.
-- R183 the illusionist spell layer - the
-      illusionist list likewise.
+- [x] R183 the illusionist spell layer - PINNED:
+      rules/illusionspells.h CREATED: the SPELLS
+      USABLE BY CLASS AND LEVEL - ILLUSIONISTS
+      table (26 illusionist levels x 7 spell
+      levels, every printed cell: level 1 reads
+      one first-level slot, the 26th reads
+      7/7/7/7/6/6/6, the dashes pin as 0,
+      past-26th queries clamp to the 26th row)
+      and the full roster - 61 spells in the
+      printed book order (per-level counts
+      8/16/11/5/12/4/5; Audible Glamer through
+      Vision). JUDGMENT: the illusionist section
+      prints NO Reversible markers (Continual
+      Darkness and Continual Light are separate
+      listed spells), so the roster carries no
+      reversible flag. The R183 battery audit
+      walks every slot cell, every roster row and
+      name spot-checks. Census 100.
 - R184 the paladin and ranger spell layers - the
       spell progressions and the shared-list
       wiring (lay on hands, curing, the ranger
