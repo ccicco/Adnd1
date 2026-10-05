@@ -206,28 +206,27 @@ int strBendBarsPct(uint8_t str, const ExceptionalStrength& ex) {
 }
 
 // ----------------------------------------------------------------------------
-// DEX (PHB p.11-12)
+// DEX (PHB p.11-12, the reaction ladder pinned R178c)
 //   Score  Reaction adj  Defensive adj
-//   3      -2           +4   (worse AC number)
-//   4      -1           +3
+//   3      -3           +4   (worse AC number)
+//   4      -2           +3
 //   5      -1           +2
 //   6      0            +1
-//   7      0            0
-//   8-14   0            0
+//   7-14   0            0
 //   15     0            -1
 //   16     +1           -2
 //   17     +2           -3
-//   18     +2           -4
+//   18     +3           -4
 // ----------------------------------------------------------------------------
 
 int dexReactionAdj(uint8_t dex) {
-    if (dex <= 3)  return -2;
-    if (dex <= 5)  return -1;
-    if (dex <= 14) return 0;
-    if (dex == 15) return 0;
+    if (dex <= 3)  return -3;
+    if (dex == 4)  return -2;
+    if (dex == 5)  return -1;
+    if (dex <= 15) return 0;
     if (dex == 16) return 1;
     if (dex == 17) return 2;
-    return 2;   // 18
+    return 3;   // 18
 }
 
 int dexDefensiveAdj(uint8_t dex) {
@@ -243,19 +242,20 @@ int dexDefensiveAdj(uint8_t dex) {
 }
 
 // ----------------------------------------------------------------------------
-// CON (PHB p.12)
-//   Score  HP adj  System shock  Res survival  Poison save adj
-//   3      -2      25%           30%           -2
-//   4      -1      30%           35%           -1
-//   5      -1      35%           40%           -1
-//   6-8    0       45-55%        45-55%        0
-//   9-12   0       60-75%        60-75%        0
-//   13-14  0       80-85%        80-85%        0
-//   15     +1      88%           90%           0
-//   16     +2      90%           93%           0
-//   17     +2      94%           96%           +1
-//   18     +2      96%           98%           +2
-//   (19+ rows exist for non-player characters; included for monsters)
+// CON (PHB p.12, pinned R178c cell by cell)
+//   Score  HP adj  System shock  Res survival
+//   3      -2      35%           40%
+//   4      -1      40%           45%
+//   5      -1      45%           50%
+//   6      -1      50%           55%
+//   7-12   0       55-75%        60-80%
+//   13-14  0       85%, 88%      90%, 92%
+//   15     +1      91%           94%
+//   16     +2      95%           96%
+//   17     +2      97%           98%
+//   18     +2      99%           100%
+//   (the unsourced poison-save column is retired
+//   R178c - not in the 1e print, and unused)
 // ----------------------------------------------------------------------------
 
 static int conIndex(uint8_t con) {
@@ -267,28 +267,23 @@ static int conIndex(uint8_t con) {
 
 int conHPAdj(uint8_t con) {
     static constexpr int adj[16] = {
-        -2, -1, -1,  0,  0,  0,  0,  0,  0,  0,  0,  0, 1,  2,  2,  2
+        -2, -1, -1, -1,  0,  0,  0,  0,  0,  0,  0,  0, 1,  2,  2,  2
     };
     return adj[conIndex(con)];
 }
 
 int conSystemShock(uint8_t con) {
     static constexpr int v[16] = {
-        25, 30, 35, 45, 50, 55, 60, 65, 70, 75, 80, 85, 88, 90, 94, 96
+        35, 40, 45, 50, 55, 60, 65, 70, 75,
+        80, 85, 88, 91, 95, 97, 99
     };
     return v[conIndex(con)];
 }
 
 int conResSurvival(uint8_t con) {
     static constexpr int v[16] = {
-        30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 93, 96, 98
-    };
-    return v[conIndex(con)];
-}
-
-int conPoisonSaveAdj(uint8_t con) {
-    static constexpr int v[16] = {
-        -2, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+        40, 45, 50, 55, 60, 65, 70, 75, 80,
+        85, 90, 92, 94, 96, 98, 100
     };
     return v[conIndex(con)];
 }

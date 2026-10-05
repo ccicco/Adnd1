@@ -29,6 +29,13 @@ requisite ladder is an open verify item. A report
 round adds no audit; the battery census stays 94
 until the first PHB fix round lands.
 
+R178c CLOSED divergences 1 and 2 (the live bugs
+first, per the arc ordering rule): the DEX
+reaction ladder and the CON columns repinned to
+the print; the unsourced CON poison-save accessor
+retired. Census 95. The WIS, INT and CHA
+divergences (3, 4, 5) remain ranked fix rounds.
+
 ## Verified against the book
 
 - [x] **STR Table II (p.9, ability adjustments)** -
@@ -70,31 +77,27 @@ until the first PHB fix round lands.
 
 ## Verified DIVERGENT (fix-round candidates, ranked)
 
-- [~] 1. **DEX Table I, reaction and attacking
+- [x] 1. **DEX Table I, reaction and attacking
       adjustment (the DEXTERITY TABLE I page)** -
-      engine cells diverge at dex 3 (engine -2,
-      print -3), dex 4 (engine -1, print -2) and
-      dex 18 (engine +2, print +3); 5 through 17
-      match. LIVE: the accessor feeds missile
-      attacks (ai/actor) and the surprise roll
-      (rules/turn). The defensive adjustment ladder
-      matches the print (the items.cpp armor class
-      wiring).
-- [~] 2. **CON table, the system shock and
+      CLOSED R178c: the ladder repinned to the
+      print (dex 3 -3, dex 4 -2, dex 18 +3; the
+      defensive ladder re-noted, already the
+      print). The live callers - missile attacks
+      (ai/actor) and the surprise roll
+      (rules/turn) - now read the printed cells;
+      the R178c battery audit walks both ladders.
+- [x] 2. **CON table, the system shock and
       resurrection survival columns (the
-      CONSTITUTION TABLE page)** - the engine system
-      shock reads 25 through 96 against the printed
-      35 through 99; the resurrection survival reads
-      30 through 98 against the printed 40 through
-      100 - every score diverges in both columns.
-      The resurrection column is LIVE (the
-      raise-dead roll and the R82 audit). The
-      character.cpp conHPAdj CON 6 cell reads 0
-      against the printed -1 (classes.cpp
-      conHPAdjustment already matches the print).
-      The poison-save column the engine carries
-      (conPoisonSaveAdj) is not in the 1e print at
-      all - unsourced, and unused.
+      CONSTITUTION TABLE page)** -
+      CLOSED R178c: both columns repinned to the
+      print cell by cell (shock 35 through 99;
+      resurrection survival 40 through 100 - the
+      LIVE raise-dead roll now reads the printed
+      values); the CON 6 hit-point cell repinned
+      -1; the unsourced poison-save accessor
+      (conPoisonSaveAdj) RETIRED - not in the 1e
+      print, and unused. The R178c battery audit
+      walks all three repinned columns.
 - [~] 3. **WIS Table I, magical attack adjustment
       (the WISDOM TABLE I page)** - the engine reads
       -2 through +2; the print reads 3 -3, 4 -2,

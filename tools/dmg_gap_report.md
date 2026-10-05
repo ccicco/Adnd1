@@ -665,6 +665,17 @@ progression, human or half-elf, always neutral)
 joins the arc as R186, after the multi-class
 round; the per-subclass specials renumber to
 R187+. No audit; census stays 94.
+R178c CLOSED the PHB report divergences 1 and 2
+(the live bugs first, per the arc ordering
+rule): rules/character.cpp - the DEX reaction
+ladder repinned (3 -3, 4 -2, 18 +3; missile
+attacks and surprise now read the print), the
+CON system-shock (35-99) and resurrection-
+survival (40-100) columns repinned cell by cell
+(the raise-dead roll), the CON 6 hit-point cell
+repinned -1, and the unsourced poison-save
+accessor retired. New R178c battery audit;
+census 95.
 
 Categories:
 - [x] = verified against the book text

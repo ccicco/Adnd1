@@ -102,18 +102,17 @@ int dexReactionAdj(uint8_t dex);    // -2..+2
 int dexDefensiveAdj(uint8_t dex);   // -4..+0  (better DEX = lower AC)
 
 // ----------------------------------------------------------------------------
-// CON table (PHB p.12)
+// CON table (PHB p.12, pinned R178c)
 //   hpAdj: bonus hp per hit die (clerics/fighters +1..+2 at high CON;
 //          full table applies to all classes per PHB, fighters gain the
 //          higher values - see rules/classes conHPAdjustment)
 //   systemShock: percent (d100 <= value = survive)
 //   resurrectionSurvival: percent
-//   poisonSaveAdj: save modifier vs. poison
+//   (the unsourced poison-save accessor is retired R178c)
 // ----------------------------------------------------------------------------
 int  conHPAdj(uint8_t con);          // -2..+2
-int  conSystemShock(uint8_t con);    // 25..99 (%)
-int  conResSurvival(uint8_t con);    // 35..100 (%)
-int  conPoisonSaveAdj(uint8_t con);  // -2..+2
+int  conSystemShock(uint8_t con);    // 35..99 (%)
+int  conResSurvival(uint8_t con);    // 40..100 (%)
 
 // R147: dwarf CON magic-save bonus (PHB p.16) - applies
 // vs. wands/staves/rods, spells, and poison "in the same
