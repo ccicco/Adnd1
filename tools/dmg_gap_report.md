@@ -817,6 +817,14 @@ bands read the percents directly; the two divergent
 henchmen cells repinned (cha 4 = 1, cha 12 = 5).
 New R193 battery audit; census 110. Next: the PHB
 divergences 3 (WIS) and 4 (INT).
+R194 landed the wisdom defense repin (PHB divergence
+3): rules/character.cpp wisMagDefAdj repinned to the
+printed Wisdom Table I ladder (-3..+4) by delegating to
+the R192 header pin rules::wisMagicalAttackAdj; the
+saves.h modifier note repins (mental attack forms
+only; the save rolls still do not call it - the caller
+assembles). New R194 battery audit; census 111. Next:
+the last PHB divergence, 4 (INT languages).
 
 Categories:
 - [x] = verified against the book text

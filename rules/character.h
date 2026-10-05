@@ -125,7 +125,7 @@ int  dwarfConSaveBonus(uint8_t con); // 0..+5 (0 below CON 4)
 // INT / WIS / CHA tables (PHB p.10-11)
 // ----------------------------------------------------------------------------
 int  intExtraLanguages(uint8_t int_);   // language count adj
-int  wisMagDefAdj(uint8_t wis);         // save vs. magic adj, -2..+2
+int  wisMagDefAdj(uint8_t wis);         // the printed ladder -3..+4 (R194, delegates to wisMagicalAttackAdj)
 int  chaReactionAdj(uint8_t cha);       // the printed percent ladder -25..+35 (R193)
 int  chaHenchmenMax(uint8_t cha);       // 1..15 (the printed table, R193)
 int  chaLoyaltyBase(uint8_t cha);       // the printed percent ladder -30..+40 (R193)

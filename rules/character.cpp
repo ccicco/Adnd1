@@ -5,6 +5,7 @@
 // ============================================================================
 
 #include "character.h"
+#include "wisdom.h"  // R194: Wisdom Table I (the print pin)
 
 namespace rules {
 
@@ -316,17 +317,16 @@ int intExtraLanguages(uint8_t int_) {
 }
 
 // ----------------------------------------------------------------------------
-// WIS (PHB p.11): magical defense adjustment
-//   3: -2; 4-5: -1; 6-8: -1; 9-12: 0; 13-14: 0; 15: +1; 16-17: +2; 18: +2
-//   (PHB prints 4-5 and 6-8 both -1)
+// WIS: Wisdom Table I, the magical attack adjustment -
+// REPINNED R194 to the print (3 -3, 4 -2, 5-7 -1, 8-14
+// 0, 15 +1, 16 +2, 17 +3, 18 +4): the old engine
+// convention read -2 through +2. The accessor now
+// DELEGATES to rules::wisMagicalAttackAdj (the R192
+// header pin - one ladder, not two).
 // ----------------------------------------------------------------------------
 
 int wisMagDefAdj(uint8_t wis) {
-    if (wis <= 3)   return -2;
-    if (wis <= 8)   return -1;
-    if (wis <= 14)  return 0;
-    if (wis == 15)  return 1;
-    return 2;   // 16-18
+    return rules::wisMagicalAttackAdj(wis);
 }
 
 // ----------------------------------------------------------------------------

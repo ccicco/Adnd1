@@ -43,7 +43,13 @@ int saveTarget(int classIndex, int level, SaveCategory cat);
 
 // ----------------------------------------------------------------------------
 // Modifiers assembled by the caller:
-//   WIS magical defense adjustment (rules/character wisMagDefAdj)
+//   WIS magical defense adjustment (rules/character wisMagDefAdj,
+//   the printed Wisdom Table I ladder R194 -3..+4; applies
+//   only to mental attack forms involving will force:
+//   beguiling, charming, fear, hypnosis, illusion, magic
+//   jarring, mass charming, phantasmal forces, possession,
+//   rulership, suggestion, telepathic attack - the save
+//   rolls do not call it; the caller assembles the modifier)
 //   CON poison save adjustment (vs. SAVE_DEATH_POISON)
 //   DEX reaction adj (vs. breath/AoE - DMG guidance)
 //   item/save bonuses (items layer later)

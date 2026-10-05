@@ -34,8 +34,8 @@ first, per the arc ordering rule): the DEX
 reaction ladder and the CON columns repinned to
 the print; the unsourced CON poison-save accessor
 retired. Census 95. The WIS, INT and CHA
-divergences 3 (WIS) and 4 (INT) remain ranked fix rounds;
-5 (CHA, the live reaction feed) CLOSED R193.
+divergence 4 (INT) remains the last ranked fix round;
+3 (WIS) CLOSED R194, 5 (CHA) CLOSED R193.
 
 ## Verified against the book
 
@@ -99,12 +99,24 @@ divergences 3 (WIS) and 4 (INT) remain ranked fix rounds;
       (conPoisonSaveAdj) RETIRED - not in the 1e
       print, and unused. The R178c battery audit
       walks all three repinned columns.
-- [~] 3. **WIS Table I, magical attack adjustment
-      (the WISDOM TABLE I page)** - the engine reads
-      -2 through +2; the print reads 3 -3, 4 -2,
-      5-7 -1, 8-14 none, 15 +1, 16 +2, 17 +3,
-      18 +4. Currently unwired (the saves.h note
-      points at it; the save rolls do not call it).
+- [x] 3. **WIS Table I, magical attack adjustment
+      (the WISDOM TABLE I page)** -
+      CLOSED R194: rules/character.cpp wisMagDefAdj
+      repinned to the print (3 -3, 4 -2, 5-7 -1,
+      8-14 0, 15 +1, 16 +2, 17 +3, 18 +4) by
+      DELEGATING to rules::wisMagicalAttackAdj
+      (the R192 header pin - one ladder, not two).
+      The saves.h modifier note repins: the
+      adjustment applies only to mental attack
+      forms involving will force (beguiling,
+      charming, fear, hypnosis, illusion, magic
+      jarring, mass charming, phantasmal forces,
+      possession, rulership, suggestion, telepathy)
+      - the save rolls still do not call it; the
+      caller assembles the modifier (the per-spell
+      mental-form flag is not yet engine data).
+      The R194 battery audit walks the ladder and
+      the delegation. Census 111.
 - [~] 4. **INT Table I, additional languages (the
       INTELLIGENCE TABLE I page)** - the engine
       ladder diverges at every score above 3; the
