@@ -11,9 +11,10 @@
 // JUDGMENTs: the K lists were cell-verified against
 // the 1eonline.info compilation (the repo-trusted
 // source, the R146 precedent); the Appendix L
-// 5-and-up band columns are OCR debt (open finding) -
-// the printed roster, the whale cap and the water
-// note are pinned; the Appendix M water tables for
+// 5-and-up section is pinned R175 (the full table
+// from the trusted compilation; the book upload
+// drops the band columns); the whale cap and the
+// water note are pinned; the Appendix M water tables for
 // summonings II-VI come from the trusted compilation,
 // which agrees with the upload on the I and VII water
 // tables the upload shows.
@@ -283,36 +284,68 @@ inline const ConjuredAnimalRow& klmConjRow(int c, int r) {
     return k[kOff[c] + r];
 }
 
-// The 5-and-up roster: the printed animal names.
-// The band columns of this section are OCR debt
-// (see the gap report open finding).
-inline int klmConjHigherRosterCount() { return 20; }
+// R175: the full 5-and-up section - hit dice
+// categories 5-14, every band, name and quarter
+// cost. Source: the 1eonline.info compilation
+// (the repo-trusted source), whose
+// conjure-animals page carries the complete
+// table the book upload drops. JUDGMENTs: the
+// R171 20-name roster was incomplete (buffalo,
+// skunk giant, lion, bear cave and boar giant
+// were absent) - replaced by the full table;
+// the compilation spelling woolly corrects the
+// pinned wooly; the bandless rows the print
+// dashes (9, 11, 13, 14) pin as lo/hi 0.
+struct ConjHigherRow {
+    int cat;           // hit dice category (5-14)
+    int lo, hi;        // 0,0 = the printed dash
+    const char* name;
+    int cost;          // quarter hit dice (5 = 20)
+};
 
-inline const char* klmConjHigherRosterName(int i) {
-    static const char* const k[20] = {
-        "ape, carnivorous",
-        "baluchitherium",
-        "bear, brown",
-        "elephant",
-        "elephant (loxodont)",
-        "hippopotamus",
-        "hyena, giant",
-        "lion, spotted",
-        "mammoth",
-        "mastodon",
-        "otter, giant",
-        "porcupine, giant",
-        "rhinoceros",
-        "rhinoceros, wooly",
-        "stag, giant",
-        "tiger",
-        "tiger, sabre-tooth",
-        "titanothere",
-        "whale (small)",
-        "wolverine, giant"
+inline int klmConjHigherCount() { return 26; }
+
+inline const ConjHigherRow& klmConjHigherRow(int i) {
+    static const ConjHigherRow k[26] = {
+        // category 5
+        { 5,   1, 10, "ape, carnivorous",  20 },
+        { 5,  11, 25, "buffalo",           20 },
+        { 5,  26, 35, "hyena, giant",      20 },
+        { 5,  36, 50, "otter, giant",      20 },
+        { 5,  51, 70, "skunk, giant",      20 },
+        { 5,  71, 85, "stag, giant",       20 },
+        { 5,  86,100, "wolverine, giant",  20 },
+        // category 6
+        { 6,   1, 40, "bear, brown",       25 },
+        { 6,  41, 60, "lion",              22 },
+        { 6,  61, 80, "porcupine, giant",  24 },
+        { 6,  81,100, "tiger",             25 },
+        // category 7
+        { 7,   1, 65, "boar, giant",       28 },
+        { 7,  66,100, "lion, spotted",     26 },
+        // category 8
+        { 8,   1, 30, "bear, cave",        30 },
+        { 8,  31, 70, "hippopotamus",      32 },
+        { 8,  71,100, "tiger, sabre-tooth", 30 },
+        // category 9 (bandless: the printed dash)
+        { 9,   0,  0, "rhinoceros",        34 },
+        // category 10
+        { 10,  1, 60, "elephant",          40 },
+        { 10, 61,100, "rhinoceros, woolly",40 },
+        // category 11 (bandless)
+        { 11,  0,  0, "elephant (loxodont)", 44 },
+        // category 12
+        { 12,  1, 60, "mastodon",          48 },
+        { 12, 61,100, "titanothere",       48 },
+        // category 13 (bandless)
+        { 13,  0,  0, "mammoth",           52 },
+        { 13,  0,  0, "whale (small)",     52 },
+        // category 14 (bandless)
+        { 14,  0,  0, "baluchitherium",    56 },
+        { 14,  0,  0, "whale (small)",     56 }
     };
     if (i < 0) i = 0;
-    if (i > 19) i = 19;
+    if (i > 25) i = 25;
     return k[i];
 }
 

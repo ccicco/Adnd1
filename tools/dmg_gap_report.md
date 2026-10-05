@@ -538,8 +538,10 @@ JUDGMENTs: the K lists were cell-verified
 against the 1eonline.info compilation (the
 repo-trusted source, the R146 precedent),
 which agrees with the upload wherever legible;
-the Appendix L 5-and-up band columns are OCR
-debt - an open finding, the roster is pinned;
+the Appendix L 5-and-up band columns were OCR
+debt, CLOSED R175 (the trusted compilation
+supplies the full 26-row table - see the R175
+header note);
 the Appendix M water tables for summonings
 II-VI are dropped by the upload and come
 from the trusted compilation, which agrees
@@ -594,6 +596,25 @@ cityNobleKind / cityNoblewomanSedan / cityRuffianKind
 in dm/encounters.cpp, wired to the city streets
 excursion lines (game/state_sea.cpp), audited by the
 R174 battery block. Census 92.
+R175 PINNED the Appendix L 5-and-up table (DMG
+p.222) - the R171 OCR-debt finding closed: the
+book upload drops the band columns, but the
+1eonline.info compilation (alive - its
+conjure-animals page carries the complete
+table) supplies the full section: hit dice
+categories 5-14, 26 rows cell by cell (the
+banded categories 5, 6, 7, 8, 10 and 12 with
+every dice-score column; the bandless rows 9,
+11, 13 and 14 the print dashes), every name
+and quarter cost. JUDGMENTs: the pinned
+20-name roster was incomplete (buffalo, skunk
+giant, lion, bear cave and boar giant were
+absent) - replaced by the full table; the
+compilation spelling woolly corrects the
+pinned wooly; the bandless rows pin as lo/hi
+0 (the printed dash). rules/klm.h; the R175
+battery audit carries the cell-by-cell check.
+Census 93.
 
 Categories:
 - [x] = verified against the book text
@@ -1656,7 +1677,9 @@ Categories:
       R171: rules/klm.h (the substance word lists, the
       conjured animals categories, the 20 summoned
       monsters tables; the Appendix L 5-and-up band
-      columns are the open OCR-debt finding).
+      columns were the OCR-debt finding, CLOSED
+      R175: the full 26-row table is pinned from
+      the trusted compilation).
 - [x] **Appendix O, encumbrance of standard items
       (p.225)** - PINNED R151: dm/appendixo.h, the
       appendixa.h pattern (pure data, header-only; the
