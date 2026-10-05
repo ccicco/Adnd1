@@ -846,6 +846,66 @@ accessors: minSpellsPerLevel / maxSpellsPerLevel
 (4/6 through 10/All; All = -1). New R196 battery
 audit; census 113. Next: the gap report names
 the next round.
+R197 landed the per-spell mental-form flag (the R194
+seam): spells::spellIsMentalForm flags the registry two
+will-force forms (charm person - charming; charm
+monster - mass charming); spellSaveModWis assembles the
+WIS magical defense adjustment via wisMagicalAttackAdj on
+those, 0 on everything else. JUDGMENT: the holds are NOT
+will-force forms - the PHB Serten spell immunity print
+groups hold with command, domination, fear and scare, apart
+from beguiling/charm/suggestion. Fear, hypnosis,
+suggestion, the phantasmal forces ride the flag when their
+registry rows arrive. New R197 battery audit; census 114.
+Next: the gap report names the next round.
+R198 landed the class weapon allowlists - the CHARACTER
+CLASSES TABLE II weapons column, the monk list home:
+rules/weapontables.h pins classUsesAnyWeapon (fighter,
+paladin, ranger, assassin), the limited lists (cleric 7
+chart rows, druid 9, MU/illusionist 3, thief 8, monk 24)
+and weaponAllowedForClass. JUDGMENTs: the family words
+expand to chart variants (flail/mace = footman + horseman,
+staff = quarterstaff, sling = bullet + stone, hammer =
+the plain hammer, NOT the lucern); thief sword = short/
+broad/long per the printed footnote, never bastard or
+two-handed; monk pole arm = the chart 15 pole-arm rows
+(pikes and picks out); crossbow pins by name for the monk
+alone (the chart prints only its quarrels). New R198
+battery audit; census 115. Next: the two allowance
+columns right of the weapons column.
+R199 landed the oil and poison columns of the CHARACTER
+CLASSES TABLE II - the table is now complete in the
+engine. The three-valued allowance encoding (1 yes, 0
+never, -1 referee discretion): classOilUse - yes for
+every class but the monk (the prose: not even flaming
+oil is usable by them); classPoisonUse - cleric never,
+paladin never, assassin yes, the rest the question mark;
+the evil-cleric footnote as its own modifier,
+classPoisonUseForAlignment - the prohibition is strictly
+for clerics NOT of evil alignment; the paladin never is
+unconditional. New R199 battery audit; census 116. Next:
+the seam reports name the monk falling rows.
+R200 landed the monk falling-while-climbing ladder (the
+print rows under the thief-ability paragraph): 4th
+(Disciple) fall up to 20 feet within 1 of a wall, 6th
+(Master) 30 within 4, 13th (Master of Winter) any
+distance within 8, with the wall-contact rule (damage-
+free only when periodic contact is possible; tree trunk,
+cliff face serve). rules/subclassspecials.h:
+monkWallAssistedFallFeet (0/20/30/-1-any), the proximity
+column (0/1/4/8), the contact rule. New R200 battery
+audit; census 117. Next: the NPC monk alignment split.
+R201 landed the NPC monk alignment split (the monk prose
+pin: NPC monks align 50% lawful good, 35% lawful
+neutral, 15% lawful evil): rules/subclassspecials.h -
+the three percent accessors plus monkNpcAlignRollRange
+(the cumulative d100 bands: LG 1-50, LN 51-85, LE
+86-100; out-of-range index the 0-100 miss band). The PC
+side stays gated by SUB_ALIGN_LAWFUL_ONLY. New R201
+battery audit; census 118. THE MONK PROSE SEAM IS FULLY
+MINED - surprise ladder, stun/kill, quivering palm,
+save advantages, falling ladder, NPC alignment split.
+Next: the DMG-only tables still unpinned.
 
 Categories:
 - [x] = verified against the book text
