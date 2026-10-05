@@ -907,6 +907,22 @@ MINED - surprise ladder, stun/kill, quivering palm,
 save advantages, falling ladder, NPC alignment split.
 Next: the DMG-only tables still unpinned.
 
+R203 landed the apparent-armor-AC repin - the p.38
+weapon-vs-armor column keys the armor the defender
+wears, not the magic/DEX-shifted effective AC (the DMG
+p.38 note: the adjustments are "for weapons versus
+specific types of armor, not necessarily against
+actual armor class"). items::apparentArmorAc(armor,
+shield) - armor base + shield one better, the plus and
+DEX do not shift it - is the new p.38 row key;
+weaponAcAdjustment/attackAdjustment read defenderArmorAc;
+the two ai/actor.cpp callers pass apparentArmorAc. The
+to-hit target still reads the full effective AC; the
+monster approximation (rows applied to every defender)
+stays named. Closes the R144/R145 named approximation.
+New R203 battery audit; census 119. Next: the DMG-only
+tables still unpinned.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

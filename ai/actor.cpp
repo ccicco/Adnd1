@@ -89,10 +89,13 @@ int Actor::armorClass() const {
 
 int Actor::hitAdjustment(const Actor& defender) const {
     if (isCharacter) {
-        // R145: the per-weapon p.38 row keys on the full
-        // effective AC (the old AcType fold is retired here)
+        // R203: the per-weapon p.38 row keys on the
+        // defender's apparent armor AC - the armor
+        // worn with shield; the magic/DEX-shifted effective
+        // AC stays the to-hit target, not the row key
         return items::attackAdjustment(weapon, exStr, str,
-                                       defender.armorClass());
+                items::apparentArmorAc(defender.armor,
+                                       defender.shield));
     }
     return 0;   // monsters: flat
 }
@@ -755,11 +758,12 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
     // DEX reaction adj applies to missile fire (R32, PHB p.11-12)
     int adj = 0;
     if (attacker.isCharacter) {
-        // R145: the per-weapon p.38 row keys on the full
-        // effective AC
+        // R203: missiles too - the per-weapon p.38 row keys
+        // on the defender's apparent armor AC
         adj = items::attackAdjustment(
             fired, rules::ExceptionalStrength{},
-            10, defender.armorClass());
+            10, items::apparentArmorAc(defender.armor,
+                                       defender.shield));
         adj += rules::dexReactionAdj(attacker.dex);
         adj += attacker.ammoPlus;   // R80: the arrow's enchant
         adj += rangeAdj;   // R116: -2 medium / -5 long (DMG p.75)

@@ -112,23 +112,35 @@ static const int SHIELD_COST_GP   = 10;
 // Combat plumbing
 // ----------------------------------------------------------------------------
 
-// R145: the per-weapon p.38 row vs. effective AC. The
+// R145: the per-weapon p.38 row vs. the defender's apparent
+// armor AC (R203 - the effective-AC fold is retired). The
 // book's table runs AC 0-10; the clamps read the end
 // columns past the table's edges. NOTE: the book applies
 // these rows to humans, demihumans, and humanoids only -
 // the engine applies them to every defender (monsters
 // included), a named approximation (gap report).
-int weaponAcAdjustment(WeaponId id, int defenderAc) {
-    if (defenderAc < 0) defenderAc = 0;
-    if (defenderAc > 10) defenderAc = 10;
-    return weapon(id).acAdj[defenderAc];
+int weaponAcAdjustment(WeaponId id, int defenderArmorAc) {
+    if (defenderArmorAc < 0) defenderArmorAc = 0;
+    if (defenderArmorAc > 10) defenderArmorAc = 10;
+    return weapon(id).acAdj[defenderArmorAc];
+}
+
+// R203: the apparent armor AC - the p.38 column key. The
+// armor's own printed AC: base + shield one better;
+// the enchantment plus and the DEX defensive adjustment do
+// NOT shift it (the to-hit target still reads the full
+// effective AC - only the p.38 row key uses this).
+int apparentArmorAc(const ArmorInstance& a, bool shield) {
+    int ac = armor(a.id).baseAc;
+    if (shield) ac -= 1;
+    return ac;
 }
 
 int attackAdjustment(const WeaponInstance& w, const rules::ExceptionalStrength& ex,
-                     uint8_t str, int defenderAc) {
+                     uint8_t str, int defenderArmorAc) {
     int adj = rules::strHitAdj(str, ex);
     adj += w.plus;
-    adj += weaponAcAdjustment(w.id, defenderAc);
+    adj += weaponAcAdjustment(w.id, defenderArmorAc);
     return adj;
 }
 

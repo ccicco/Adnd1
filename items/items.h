@@ -108,17 +108,27 @@ struct ArmorInstance {
 };
 
 // R145: the per-weapon p.38 'to hit' adjustment vs. the
-// defender's effective AC. The book's table runs AC 0-10;
-// better-than-0 reads column 0, worse-than-10 column 10.
-// The book keys the column to apparent armor AC (magic and
-// DEX do not shift it); the engine folds the full effective
-// AC in - a named approximation (gap report).
-int weaponAcAdjustment(WeaponId id, int defenderAc);
+// defender's APPARENT ARMOR AC. The book's table runs
+// AC 0-10; better-than-0 reads column 0, worse-than-10
+// column 10. R203 closes the named approximation: the
+// column keys to the armor the defender wears - armor
+// base + shield, magic and DEX do not shift it - per the
+// book's own p.38 note: the adjustments are for weapons
+// versus specific types of armor, not necessarily against
+// actual armor class.
+int weaponAcAdjustment(WeaponId id, int defenderArmorAc);
+
+// R203: the apparent armor AC - the armor's own printed AC,
+// armor base + shield one better. The enchantment plus and
+// the DEX defensive adjustment do NOT shift it - this is
+// the p.38 column key, distinct from effectiveAc.
+int apparentArmorAc(const ArmorInstance& a, bool shield);
 
 // Effective to-hit adjustment for an attack: STR adj + weapon plus +
-// the per-weapon p.38 adjustment vs. the defender's AC.
+// the per-weapon p.38 adjustment vs. the defender's apparent
+// armor AC.
 int attackAdjustment(const WeaponInstance& w, const rules::ExceptionalStrength& ex,
-                     uint8_t str, int defenderAc);
+                     uint8_t str, int defenderArmorAc);
 
 // Effective AC for a defender: armor base, + DEX defensive adj
 // (negative = better), + shield (1 better), + armor plus.
