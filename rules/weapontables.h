@@ -620,4 +620,61 @@ inline bool weaponAllowedForClass(int cls,
     return false;
 }
 
+// ----------------------------------------------------------------------------
+// R199: the oil and poison columns of the CHARACTER CLASSES
+// TABLE II - the two columns right of the weapons column
+// R198 pinned. The allowance encoding, both columns:
+//   1 = yes, 0 = never, -1 = referee discretion.
+// Oil: yes for every class but the monk - the monk cell
+// prints no, and the monk prose confirms: not even
+// flaming oil is usable by them. Poison: cleric never -
+// the footnote: the prohibition is strictly for clerics
+// not of evil alignment; paladin never, assassin yes,
+// every other class the question mark - the Note
+// Regarding Poison: the referee so allows.
+// ----------------------------------------------------------------------------
+
+// The three-valued allowance encoding, both columns:
+// 1 = yes, 0 = never, -1 = referee discretion.
+inline int classAllowanceYes() { return 1; }
+inline int classAllowanceNever() { return 0; }
+inline int classAllowanceReferee() { return -1; }
+
+// The Oil column, cell for cell. The class rows
+// in the printed order: 0 cleric, 1 druid, 2 fighter,
+// 3 paladin, 4 ranger, 5 magic-user, 6 illusionist,
+// 7 thief, 8 assassin, 9 monk. The monk cell prints no.
+inline int classOilUse(int cls) {
+    if (cls == 9) return 0;    // the monk: not even
+                                // flaming oil
+    return 1;    // yes - every other class row
+}
+
+// The Poison column, cell for cell. The cleric
+// cell prints never - but the footnote makes it
+// strictly for clerics not of evil alignment;
+// see classPoisonUseForAlignment below.
+inline int classPoisonUse(int cls) {
+    if (cls == 0) return 0;    // cleric: never
+    if (cls == 3) return 0;    // paladin: never
+    if (cls == 8) return 1;    // assassin: yes
+    return -1;   // the question mark: the referee
+                 // so allows - druid, fighter,
+                 // ranger, MU, illusionist, thief,
+                 // monk
+}
+
+// The cleric footnote, the alignment modifier: the
+// poison prohibition is strictly for clerics NOT
+// of evil alignment. An evil cleric reads the
+// discretion the footnote grants; a non-evil cleric
+// stays never. The paladin never is unconditional.
+// isEvil: the caller reads the alignment axis - here
+// a bool, true = evil.
+inline int classPoisonUseForAlignment(int cls,
+                                        bool isEvil) {
+    if (cls == 0 && isEvil) return -1;   // the footnote
+    return classPoisonUse(cls);
+}
+
 } // namespace rules
