@@ -3,10 +3,10 @@
 //
 // RE-AUTHORED from the R4 spec after the original upload was lost.
 // R162: the titleFor ladders and the HP_BEYOND_CAP convention are
-// verified against the PHB print (pp.20-31); the xpForLevel rows
-// DIVERGE from the print from mid-table on (fighter level 5 reads
-// 16000 against the printed 18000 boundary; the MU, cleric and
-// thief rows diverge above that) and stay open.
+// verified against the PHB print (pp.20-31); R176 repins the
+// xpForLevel rows to the printed XP boundaries cell by cell (the
+// R162 divergence closed - the printed adders, the band-lower-1
+// attain convention; see the R176 battery audit).
 // ============================================================================
 
 #include "classes.h"
@@ -24,36 +24,41 @@ const int HP_BEYOND_CAP[CLASS_COUNT]    = { 3, 1, 2, 2 };
 const int CLASS_HIT_DIE[CLASS_COUNT]    = { 10, 4, 8, 6 };
 
 // ----------------------------------------------------------------------------
-// XP tables (index = level - 1; rows through level 12, then linear)
-// NOTE: transcribed from project notes; verify vs PHB p.20-31.
+// XP tables (PHB pp.20-31 printed class tables, pinned R176).
+// Convention: the XP to ATTAIN level N is the printed band lower
+// bound - 1 (fighter level 5: the band 18,001-35,000 gives 18000);
+// level 1 is 0. Rows through level 13 (index = level-1); beyond,
+// each level adds the printed adder (fighter 250k past the 11th,
+// MU 375k past the 12th, cleric 225k past the 11th, thief 220k
+// past the 12th).
 // ----------------------------------------------------------------------------
 
 static const int XP_FIGHTER[13] = {
-        0,    2000,    4000,    8000,   16000,   35000,
-    70000,  125000,  250000,  350000,  450000,  550000,
-   650000
+        0,    2000,    4000,    8000,   18000,   35000,
+    70000,  125000,  250000,  500000,  750000, 1000000,
+  1250000
 };
 
 static const int XP_MAGIC_USER[13] = {
-        0,    2500,    5000,   10000,   20000,   40000,
-    60000,   80000,  105000,  135000,  165000,  195000,
-   225000
+        0,    2500,    5000,   10000,   22500,   40000,
+    60000,   90000,  135000,  250000,  375000,  750000,
+  1125000
 };
 
 static const int XP_CLERIC[13] = {
         0,    1500,    3000,    6000,   13000,   27500,
-    55000,  110000,  225000,  337500,  450000,  562500,
-   675000
+    55000,  110000,  225000,  450000,  675000,  900000,
+  1125000
 };
 
 static const int XP_THIEF[13] = {
         0,    1250,    2500,    5000,   10000,   20000,
-    42500,   70000,  110000,  160000,  210000,  260000,
-   310000
+    42500,   70000,  110000,  160000,  220000,  440000,
+   660000
 };
 
-// Linear adder per level beyond the 12-row tables
-static const int XP_ADDER[CLASS_COUNT] = { 100000, 125000, 112500, 110000 };
+// The printed adders per level beyond the table rows
+static const int XP_ADDER[CLASS_COUNT] = { 250000, 375000, 225000, 220000 };
 
 int xpForLevel(int classIndex, int level) {
     if (classIndex < 0 || classIndex >= CLASS_COUNT) return 0;

@@ -5,8 +5,8 @@
 // RE-AUTHORED from the R4 spec after the original upload was lost
 // from the repo. NOTE discipline: the titleFor ladders are verified
 // against the PHB print by R162 (p.20-31); the XP tables are
-// transcribed from project notes and DIVERGE from the print from
-// mid-table on (an open box - see the gap report header note).
+// pinned to the printed XP boundaries by R176 (the old project
+// notes rows diverged from the print mid-table and are retired).
 // ============================================================================
 
 #pragma once
@@ -63,9 +63,12 @@ extern const int CLASS_HIT_DIE[CLASS_COUNT];
 // ----------------------------------------------------------------------------
 
 // Total XP required to ATTAIN the given level (level 1 = 0).
-// Rows are defined through level 12 (13 entries, index = level-1);
-// beyond the table, each level adds the class's linear adder
-// (fighter 100k, MU 125k, cleric 112.5k, thief 110k).
+// Convention: the printed band's lower bound - 1
+// (PHB pp.20-31, pinned R176). Rows through level 13 (13
+// entries, index = level-1); beyond, each level adds the
+// printed adder (fighter 250k past the 11th, MU 375k past
+// the 12th, cleric 225k past the 11th, thief 220k past
+// the 12th).
 int xpForLevel(int classIndex, int level);
 
 // Display title for a class/level (the PHB p.20-31 printed

@@ -260,11 +260,12 @@ CLASS_LEVEL_CAP and stay out of engine scope.
 The HP_BEYOND_CAP convention (3/1/2/2) is
 print-verified in passing. R162 FINDING while
 discharging the classes.h debt: the xpForLevel
-rows DIVERGE from the print from mid-table on
-(fighter level 5 reads 16000 against the printed
+rows DIVERGED from the print from mid-table on
+(fighter level 5 read 16000 against the printed
 18000 boundary; the MU, cleric and thief rows
-diverge above that) - the XP tables stay an
-open box. Census 80.
+diverged above that) - CLOSED R176: the rows
+repinned to the print cell by cell.
+Census 80.
 R163 PINNED the poison table (DMG p.20) -
 rules/poison.h: the purchased-poison types,
 ingestive A-E and insinuative A-D, each with
@@ -614,7 +615,30 @@ compilation spelling woolly corrects the
 pinned wooly; the bandless rows pin as lo/hi
 0 (the printed dash). rules/klm.h; the R175
 battery audit carries the cell-by-cell check.
-Census 93.
+R176 PINNED the printed XP tables (PHB pp.20-31
+class tables) - the R162 FINDING closed: the PHB
+upload DOES carry the four printed XP boundary
+columns (the R162 round had read the title
+columns only). All four xpForLevel rows repinned
+to the print cell by cell - fighter 0, 2000,
+4000, 8000, 18000, 35000, 70000, 125000, 250000,
+500000, 750000, then 250k per level past the
+11th; MU 0, 2500, 5000, 10000, 22500, 40000,
+60000, 90000, 135000, 250000, 375000, 750000,
+1125000, then 375k past the 12th; cleric 0,
+1500, 3000, 6000, 13000, 27500, 55000, 110000,
+225000, 450000, 675000, then 225k past the
+11th; thief 0, 1250, 2500, 5000, 10000, 20000,
+42500, 70000, 110000, 160000, 220000, 440000,
+660000, then 220k past the 12th. JUDGMENT: the
+attain convention is the printed band lower
+bound - 1 (fighter level 5: 18,001-35,000 gives
+18000 - the old row read 16000); the engine
+linear-beyond convention is kept, now anchored
+on the printed adders. rules/classes.cpp; the
+R176 battery audit carries the row walk, the
+beyond-table probes and the clamps.
+Census 94.
 
 Categories:
 - [x] = verified against the book text
@@ -1632,7 +1656,7 @@ Categories:
       R162: rules/classes.cpp (the four printed ladders
       through the name levels; the cleric level 5 blank
       cell carries Curate down; the XP-row divergence is
-      recorded in the header note).
+      CLOSED R176 - the rows repinned to the print).
 - [x] **The poison table (p.20)** - pinned by R163:
       rules/poison.h (the ingestive/insinuative grade
       table with cost, onset, damage classes, save
