@@ -939,6 +939,32 @@ rounds (parchment 1, cloth 2, bone 3). The save:
 d20 + adj >= cell. New R204 battery audit; census
 120. Next: the DMG-only sweep continues.
 
+R205 landed the spying tables (DMG pp.19-20,
+the SPYING section after the assassin guild
+tables) - the lane rules/assassinate.h
+named and deferred in R164. rules/spying.h
+(the grenade.h pattern): the ASSASSIN SPYING
+TABLE (spy level 1-17 x simple/difficult/
+extraordinary, all 51 cells), the mission
+days (1-8 / 5-40 / as required), the chance
+of discovery (cumulative 1 percent per day
+capped at 10, minus the spy level, floor 1
+percent) with the four precaution tiers
+(none flat 1 percent per week; minimal the
+modified percent per week; moderate twice
+per week; strong doubled twice per week; a
+leading spy reads none) and the tenfold
+20-50-day post-capture window; the SPY
+FAILURE TABLE (the five bands, doubling as
+the discovery table) with the modifiers
+(difficult +10, extraordinary -5,
+discovered +25); the torture outcomes (1-2
+dead, 3-4 revealed, 5-6 turncoat); the
+fanatical rule (never a double agent, over
+60 suicide); the hired-spy 8th-level cap.
+New R205 battery audit; census 121. Next:
+the DMG-only sweep continues.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
