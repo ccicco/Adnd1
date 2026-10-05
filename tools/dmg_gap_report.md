@@ -763,6 +763,14 @@ quivering palm, the ranger surprise numbers, the
 paladin turn ladder). New R187 battery audit;
 census 104. Next: the gap report names the next
 round.
+R188 landed the prime requisite XP adjustment:
+rules/xpadjust.h CREATED (the printed per-class
++10% gates, the worked-example rounding), and the
+character.cpp comment now records the verify - the
+engine +5/0/-10/-20 rungs are unsourced convention
+(the DMG has no prime-requisite ladder at all). New
+R188 battery audit; census 105. Next: the gap report
+names the next round.
 
 Categories:
 - [x] = verified against the book text

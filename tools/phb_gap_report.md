@@ -125,14 +125,24 @@ divergences (3, 4, 5) remain ranked fix rounds.
 
 ## Open items (worth having)
 
-- [ ] **Prime requisite XP adjustment (the class
-      sections)** - the engine ladder reads +10, +5,
-      0, -10, -20 percent by prime requisite score;
-      the print carries the +10 percent
-      high-prime-requisite notes in the class
-      sections. The remaining rungs are unsourced
-      against the 1e print - verify, then repin or
-      record as convention.
+- [x] **Prime requisite XP adjustment - PINNED R188:**
+      rules/xpadjust.h CREATED: the printed per-class
+      +10% of earned experience gates (fighter STR,
+      magic-user INT, cleric WIS, thief DEX; paladin
+      STR and WIS, ranger STR INT and WIS, druid WIS
+      and CHA - each 16 or more; illusionist,
+      assassin and monk never) and the worked-example
+      rounding (975 -> +98 -> 1073, fractions round
+      up). The verify: the engine ladder +10 rung is
+      the printed rule; the +5, 0, -10 and -20 rungs
+      are ENGINE CONVENTION, unsourced - the PHB
+      class sections carry only the +10 percent
+      notes, the DMG adjustment section has no
+      prime-requisite ladder and the phrase does not
+      appear in the DMG at all. The character.cpp
+      comment records the verify. The R188 battery
+      audit walks every gate and the rounding. Census
+      105.
 - [ ] **The PHB book-verify pass for the weapon
       tables** - R144/R158 pinned from the
       1eonline.info compilation; the PHB upload now

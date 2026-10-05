@@ -390,7 +390,15 @@ int chaLoyaltyBase(uint8_t cha) {
 }
 
 // ----------------------------------------------------------------------------
-// Prime requisite XP adjustment (PHB p.12-13)
+// Prime requisite XP adjustment - the +10 rung at 16+ is the
+// printed rule (the class sections); the +5, 0, -10 and -20
+// rungs are ENGINE CONVENTION, unsourced against the 1e print
+// (verified R188) - the PHB class sections carry only the
+// +10 percent notes, the DMG ADJUSTMENT AND DIVISION OF
+// EXPERIENCE POINTS section has no prime-requisite ladder,
+// and the phrase prime requisite does not appear in the DMG
+// at all. The printed per-class gates and the worked-example
+// rounding (975 -> +98 -> 1073) live in rules/xpadjust.h.
 // ----------------------------------------------------------------------------
 
 XPPct primeRequisitePct(uint8_t score) {
