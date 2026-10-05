@@ -71,7 +71,16 @@ tables now read the print.
       explanations, engine classes)** - the
       54-spell registry, the by-level slot tables
       and the L4-6 casting gates pinned
-      R80/R130/R131; caster aging R129.
+      R80/R130/R131; caster aging R129. THE INT
+      TABLE II chance-to-know repin R196:
+      spells.cpp chanceToLearnPct was DIVERGENT
+      (the engine read 10 35, 16 70, 17 85,
+      18 95; the print reads 10-12 45, 15-16 65,
+      17 75, 18 85, 19+ 95) - repinned; the two
+      unmodeled columns pin as minSpellsPerLevel
+      and maxSpellsPerLevel (All = -1); the live
+      callers (party spell learning, town study)
+      now read the printed percents.
 - [x] **Death and revival (the CON resurrection
       survival column in use)** - R82; the audit
       range check covers the printed 40-100 column,

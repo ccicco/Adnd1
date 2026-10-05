@@ -240,24 +240,54 @@ bool rollClericSpellFailure(Dice& dice, uint8_t wis) {
 // Chance to learn (PHB p.10)
 // ----------------------------------------------------------------------------
 
+// R196: the printed INTELLIGENCE TABLE II chance-to-know
+// column (the engine ladder diverged at 10, 16, 17
+// and 18): 9 35, 10-12 45, 13-14 55, 15-16 65,
+// 17 75, 18 85, 19+ 95 (the printed or-more row).
+// The table starts at 9 - the MU minimum.
 int chanceToLearnPct(uint8_t int_) {
-    switch (int_) {
-        case 0: case 1: case 2: case 3: case 4:
-        case 5: case 6: case 7: case 8:  return 0;
-        case 9: case 10:                return 35;
-        case 11: case 12:               return 45;
-        case 13: case 14:               return 55;
-        case 15:                        return 65;
-        case 16:                        return 70;
-        case 17:                        return 85;
-        default:                        return 95;   // 18+
-    }
+    if (int_ <= 8)  return 0;
+    if (int_ == 9)  return 35;   // R196: the print
+    if (int_ <= 12) return 45;   // 10, 11, 12
+    if (int_ <= 14) return 55;   // 13, 14
+    if (int_ <= 16) return 65;   // 15, 16
+    if (int_ == 17) return 75;
+    if (int_ == 18) return 85;
+    return 95;   // 19 and up (the or-more row)
 }
 
 bool rollChanceToLearn(Dice& dice, uint8_t int_) {
     int pct = chanceToLearnPct(int_);
     if (pct <= 0) return false;
     return (int)dice.d100() <= pct;
+}
+
+// ----------------------------------------------------------------------------
+// R196: INTELLIGENCE TABLE II, the min and max spells-per-level
+// columns. All pins as -1 (the repo unlimited convention).
+// R196b: the accessors live at file scope - the nested-function fix.
+// ----------------------------------------------------------------------------
+
+int minSpellsPerLevel(uint8_t int_) {
+    if (int_ < 9)  return 0;
+    if (int_ == 9)  return 4;
+    if (int_ <= 12) return 5;   // 10, 11, 12
+    if (int_ <= 14) return 6;   // 13, 14
+    if (int_ <= 16) return 7;   // 15, 16
+    if (int_ == 17) return 8;
+    if (int_ == 18) return 9;
+    return 10;   // 19 and up
+}
+
+int maxSpellsPerLevel(uint8_t int_) {
+    if (int_ < 9)  return 0;
+    if (int_ == 9)  return 6;
+    if (int_ <= 12) return 7;   // 10, 11, 12
+    if (int_ <= 14) return 9;   // 13, 14
+    if (int_ <= 16) return 11;   // 15, 16
+    if (int_ == 17) return 14;
+    if (int_ == 18) return 18;
+    return -1;   // 19 and up: All (unlimited)
 }
 
 // ----------------------------------------------------------------------------

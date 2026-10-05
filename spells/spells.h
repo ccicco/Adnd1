@@ -155,13 +155,24 @@ int clericSpellFailurePct(uint8_t wis);
 bool rollClericSpellFailure(Dice& dice, uint8_t wis);
 
 // ----------------------------------------------------------------------------
-// Chance to learn a spell (PHB p.10 INT table): percent rolled on
-// d100 when an MU first studies a new spell. Min INT 9 to learn any.
-//   INT 9-10: 35%, 11-12: 45%, 13-14: 55%, 15: 65%, 16: 70%,
-//   17: 85%, 18: 95%
+// Chance to learn a spell (PHB p.10 INTELLIGENCE TABLE II,
+// repinned R196): percent rolled on d100 when an MU first
+// studies a new spell. Min INT 9 to learn any.
+//   INT 9: 35%, 10-12: 45%, 13-14: 55%, 15-16: 65%,
+//   17: 75%, 18: 85%, 19+: 95% (the printed or-more row)
 // ----------------------------------------------------------------------------
 int chanceToLearnPct(uint8_t int_);
 bool rollChanceToLearn(Dice& dice, uint8_t int_);
+
+// ----------------------------------------------------------------------------
+// R196: the INTELLIGENCE TABLE II spells-per-level columns -
+// which and how many of each group of spells (by level) the
+// MU can learn. All pins as -1 (unlimited). The printed
+// note: successive level groups are checked only when the
+// character reaches a level at which the group is usable.
+// ----------------------------------------------------------------------------
+int minSpellsPerLevel(uint8_t int_);
+int maxSpellsPerLevel(uint8_t int_);
 
 // ----------------------------------------------------------------------------
 // R115: the years a spell steals (DMG p.14 magical aging

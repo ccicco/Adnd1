@@ -835,6 +835,17 @@ THE FOUNDING-READ LIST IS EMPTY - all six PHB
 ability tables print-pinned (STR R153, DEX R178c,
 CON R178c, INT R195, WIS R194, CHA R193). Next:
 the gap report names the next round.
+R196 landed the INT Table II repin (a NEW seam
+find, post-founding-read): spells.cpp
+chanceToLearnPct diverged from the print at 10,
+16, 17 and 18 - repinned (9 35, 10-12 45, 13-14
+55, 15-16 65, 17 75, 18 85, 19+ 95); the live
+spell-learning rolls now read the printed
+percents. The two unmodeled columns pin as new
+accessors: minSpellsPerLevel / maxSpellsPerLevel
+(4/6 through 10/All; All = -1). New R196 battery
+audit; census 113. Next: the gap report names
+the next round.
 
 Categories:
 - [x] = verified against the book text
