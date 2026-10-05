@@ -739,6 +739,14 @@ on hands, cure disease, the giant-class
 roster and bonus). New R184 battery audit;
 census 101. Next: R185 multi-class and
 dual-class.
+R185 landed the multi-class and dual-class
+rules: rules/multiclass.h CREATED (the 22
+per-race combos, the hit-point quotient, the
+even XP split, the stalled hit dice, the
+thief and cleric allowances, the half-elf
+cleric WIS 13, the dual-class gates). New
+R185 battery audit; census 102. Next: R186
+the bard (Appendix II).
 
 Categories:
 - [x] = verified against the book text

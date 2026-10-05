@@ -332,10 +332,28 @@ census grows with the arc):
       the paladin turn-undead ladder are
       recorded for R187+. The R184 battery audit
       walks every cell and ladder. Census 101.
-- R185 multi-class and dual-class - the split
-      experience machinery, the hit-dice and
-      hit-point conventions, and the two-class
-      rules.
+- [x] R185 multi-class and dual-class - PINNED:
+      rules/multiclass.h CREATED: the per-race
+      MULTI-CLASS combination table (dwarf 1,
+      elf 4, gnome 3, half-elf 8, halfling 1,
+      half-orc 5, human 0 - every printed combo
+      as a class bitmask), the hit-point
+      quotient (sum the dice, adjust for CON,
+      divide by the class count, drop fractions
+      under 1/2, round 1/2 and up), the even XP
+      split, the stalled-hit-dice rule (a class
+      at its cap gives no further dice), the
+      thief-armor limitation, the cleric
+      edged-weapons allowance, the half-elf
+      multi-class cleric WIS 13, and the
+      human-only dual-class gates (15+ old
+      prime, 17+ new prime; the retained hit
+      dice, the 1st-level functions, the
+      negated XP on old-class use and the
+      level-exceeds mechanics recorded in the
+      header comments for the engine rounds).
+      The R185 battery audit walks every combo
+      cell, ladder and gate. Census 102.
 - R186 the bard (Appendix II) - the progression
       gates (fighter to 5th-7th, thief to
       5th-9th, then the bard), the ability
