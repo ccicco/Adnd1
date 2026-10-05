@@ -747,6 +747,14 @@ thief and cleric allowances, the half-elf
 cleric WIS 13, the dual-class gates). New
 R185 battery audit; census 102. Next: R186
 the bard (Appendix II).
+R186 landed the bard: rules/bard.h CREATED
+(the progression gates, the ability and
+race minimums, Bards Table I, Table II and
+Table III, the druid cast cap, the poetics
+layers, the henchmen ladder, the musical
+item bonuses). New R186 battery audit;
+census 103. Next: the gap report names the
+next round.
 
 Categories:
 - [x] = verified against the book text

@@ -354,25 +354,39 @@ census grows with the arc):
       header comments for the engine rounds).
       The R185 battery audit walks every combo
       cell, ladder and gate. Census 102.
-- R186 the bard (Appendix II) - the progression
-      gates (fighter to 5th-7th, thief to
-      5th-9th, then the bard), the ability
-      minimums (STR WIS DEX CHA 15+, INT 12,
-      CON 10), human or half-elf, always
-      neutral; Bards Table I (23 levels, bard XP
-      only, hit dice added to those already
-      earned, the druid spell slots capped at
-      12th-level druid ability until the 23rd),
-      Table II (colleges, the language gains,
-      the charm and legend lore percents) and
-      Table III (armor and weapons); the poetics
-      morale and ferocity layers, the song
+- [x] R186 the bard (Appendix II) - PINNED:
+      rules/bard.h CREATED: the gates (fighter
+      5th-7th, thief 5th-9th, then the druid
+      studies; STR WIS DEX CHA 15+, INT 12,
+      CON 10; human or half-elf; always
+      neutral), Bards Table I (23 levels: the
+      XP thresholds 0 through 3,000,001, the
+      titles Rhymer through M. Bard 23rd, the
+      hit dice 0* then 1-10 then 10+1 through
+      10+12 added to the retained fighter and
+      thief dice, the druid spell slots 1-5
+      every cell, the cast level capped at 12th
+      druid ability until the 23rd casts at
+      13th - the row-20 boundary pins as
+      1,800,001, the strictly increasing
+      sequence over the upload OCR 1,000,001),
+      Bards Table II (the colleges Probationer
+      through Magna Alumnae, the language
+      gains, the charm 15-95 and legend lore
+      0-99 percents, every cell), Bards Table
+      III (leather or magical chainmail, no
+      shield, the nine permitted weapons, oil
+      yes, poison never except by neutral evil
+      bards), the combat-as-fighter /
+      thief-functions / most-favorable-saves
+      wiring, the poetics layers (morale +10%,
+      hit +1, 2 rounds, 1 turn), the song
       negation, the musical charming rules, the
-      item knowledge lists, and the
-      most-favorite-table saves. Lands after
-      R185 - the bard builds on the fighter and
-      thief layers, the druid spell layer and
-      the dual-class machinery.
+      item knowledge lists, the henchmen ladder
+      (1 at 5th through any number at 23rd) and
+      the musical item bonuses. The R186
+      battery audit walks every cell of both
+      tables. Census 103.
 - R187+ the per-subclass specials that remain -
       the assassin fees and disguise layer, the
       monk special abilities, backstab for the
