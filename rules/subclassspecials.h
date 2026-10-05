@@ -224,6 +224,44 @@ inline const char* monkThiefAbilityName(int i) {
     return kNames[i];
 }
 
+// ---- R200: the falling-while-climbing ladder ----
+//
+// The print, right under the thief-ability paragraph: a
+// monk can fall while climbing and take no damage when
+// close enough to a wall. The rungs: 4th level (Disciple)
+// - up to 20 feet within 1 foot of a wall; 6th (Master) -
+// up to 30 feet within 4 feet; 13th (Master of Winter) - any
+// distance within 8 feet. The monk must have opportunity to
+// periodically make contact with the wall during the
+// descent; any similar surface - tree trunk, cliff face -
+// serves.
+//
+// The fall distance: 0 below 4th, 20 at 4th-5th, 30 at
+// 6th-12th, -1 (any distance) at 13th and up.
+inline int monkWallAssistedFallFeet(int level) {
+    if (level < 4)  return 0;
+    if (level < 6)  return 20;   // 4th-5th, within 1
+    if (level < 13) return 30;   // 6th-12th, within 4
+    return -1;   // 13th and up: any distance
+}
+
+// The proximity column: how close to the wall the fall
+// must happen. 1 foot at 4th-5th, 4 feet at 6th-12th,
+// 8 feet at 13th and up; 0 below 4th (no wall assist).
+inline int monkWallAssistedFallProximityFeet(int level) {
+    if (level < 4)  return 0;
+    if (level < 6)  return 1;
+    if (level < 13) return 4;
+    return 8;
+}
+
+// The wall-contact rule: the descent is damage-free only
+// when the monk can periodically touch the wall - the
+// print pins it as always required for the assist.
+inline bool monkWallAssistedFallRequiresContact() {
+    return true;
+}
+
 // ---- the monk surprise ladder ----
 
 // The chance of surprising the monk: 33% at
