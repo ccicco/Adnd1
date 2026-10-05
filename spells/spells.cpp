@@ -291,6 +291,42 @@ int maxSpellsPerLevel(uint8_t int_) {
 }
 
 // ----------------------------------------------------------------------------
+// R197: the printed Wisdom Table I note - the magical defense
+// adjustment applies only to mental attack forms involving
+// will force: beguiling, charming, fear, hypnosis, illusion,
+// magic jarring, mass charming, phantasmal forces, possession,
+// rulership, suggestion, telepathic attack. Per-spell engine
+// data: which registry spells ARE those forms. The 54-spell
+// registry holds two: charm person (charming) and charm
+// monster (mass charming). The holds are NOT will-force
+// forms - the PHB Serten spell immunity print groups hold
+// with command, domination, fear and scare, apart from
+// beguiling, charm and suggestion. Fear, hypnosis,
+// suggestion and the phantasmal forces ride the flag
+// when their registry rows arrive.
+// ----------------------------------------------------------------------------
+bool spellIsMentalForm(SpellId id) {
+    switch (id) {
+        case MU_CHARM_PERSON:     // charming
+        case MU_CHARM_MONSTER:    // mass charming
+            return true;
+        default:
+            return false;
+    }
+}
+
+// The save-modifier assembly: the WIS magical defense
+// adjustment - the printed Wisdom Table I ladder,
+// wisMagicalAttackAdj, the same one R194 wisMagDefAdj
+// delegates to - on mental-form spells; 0 on everything
+// else. The save rolls stay caller-assembled
+// (rules/saves.h); callers call this.
+int spellSaveModWis(SpellId id, uint8_t wis) {
+    if (!spellIsMentalForm(id)) return 0;
+    return rules::wisMagicalAttackAdj(wis);
+}
+
+// ----------------------------------------------------------------------------
 // R115: the years magic steals (DMG p.14). Only haste is in
 // the registry today (its recipient pays 1 year); the rest
 // of the book's table rides the comment in spells.h until

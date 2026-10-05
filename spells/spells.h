@@ -175,6 +175,22 @@ int minSpellsPerLevel(uint8_t int_);
 int maxSpellsPerLevel(uint8_t int_);
 
 // ----------------------------------------------------------------------------
+// R197: the per-spell mental-form flag. The printed Wisdom
+// Table I note: the magical defense adjustment applies
+// only to mental attack forms involving will force -
+// beguiling, charming, fear, hypnosis, illusion, magic
+// jarring, mass charming, phantasmal forces, possession,
+// rulership, suggestion, telepathic attack.
+// spellIsMentalForm is the per-spell engine data;
+// spellSaveModWis assembles the WIS magical defense
+// adjustment for those spells, 0 on everything else -
+// the save rolls stay caller-assembled (rules/saves.h).
+// Registry rows flagged: charm person, charm monster.
+// ----------------------------------------------------------------------------
+bool spellIsMentalForm(SpellId id);
+int  spellSaveModWis(SpellId id, uint8_t wis);
+
+// ----------------------------------------------------------------------------
 // R115: the years a spell steals (DMG p.14 magical aging
 // causes): a haste spell costs its recipient 1 year.
 // R129: the caster-aged causes are in the registry and
