@@ -755,6 +755,14 @@ layers, the henchmen ladder, the musical
 item bonuses). New R186 battery audit;
 census 103. Next: the gap report names the
 next round.
+R187 landed the per-subclass specials:
+rules/subclassspecials.h CREATED (the fee table,
+the disguise layer, backstab, the skill sharing,
+the monk specials A-K with stun/kill and the
+quivering palm, the ranger surprise numbers, the
+paladin turn ladder). New R187 battery audit;
+census 104. Next: the gap report names the next
+round.
 
 Categories:
 - [x] = verified against the book text

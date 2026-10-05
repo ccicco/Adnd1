@@ -387,10 +387,41 @@ census grows with the arc):
       the musical item bonuses. The R186
       battery audit walks every cell of both
       tables. Census 103.
-- R187+ the per-subclass specials that remain -
-      the assassin fees and disguise layer, the
-      monk special abilities, backstab for the
-      assassin, thief-skill sharing.
+- [x] R187 the per-subclass specials - PINNED:
+      rules/subclassspecials.h CREATED: the
+      MINIMUM FEES FOR ASSASSINATION table (15
+      rows x 8 victim bands, every cell, dashes
+      as 0; the noble-victim multiplier is a
+      referee judgment recorded in comments),
+      the disguise spotting layer (base 2% per
+      day, +2% per pose difference, max 8%; the
+      observer INT+WIS adjustment below 24 and
+      above 30), the backstab multipliers
+      (double through quintuple per four
+      levels, hit +20%/+4), the thief-skill
+      sharing (the assassin two levels below,
+      backstab at full level; the monk at
+      identical level with the six listed
+      abilities - open locks is the numbering
+      head the OCR swallowed), the monk surprise
+      ladder (33 at 1st, 32 at 2nd, down 2% per
+      level), the monk specials A-K (one per
+      level 3rd-13th: speak with animals, ESP
+      masking, disease immunity, catalepsy,
+      healing, speak with plants, charm
+      resistance, mind blast as 18 INT, poison
+      immunity, geas immunity, the quivering
+      palm), the open-hand stun and kill rules
+      (stun at 5+ over the needed roll, 1-6
+      rounds; kill percent AC + one per level
+      above 7th), the monk save advantages, the
+      ranger surprise numbers (surprises on d6
+      1-3, surprised on 1) and the paladin
+      turn-undead ladder (a cleric of paladin
+      level minus two, from 3rd; wraps the R147
+      matrix III) - the R184 records paid off.
+      The R187 battery audit walks every fee cell
+      and ladder. Census 104.
 
 Until a round lands, each subclass stays out of
 engine scope; the boxes flip per round. The
