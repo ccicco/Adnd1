@@ -659,6 +659,12 @@ queue live in the PHB gap report (the
 subclass arc section). The live ability-table
 divergences (DEX, CON) stay queued before the
 arc rounds.
+R178b AMENDED the arc scope: the bard (PHB
+Appendix II - the fighter-then-thief-then-druid
+progression, human or half-elf, always neutral)
+joins the arc as R186, after the multi-class
+round; the per-subclass specials renumber to
+R187+. No audit; census stays 94.
 
 Categories:
 - [x] = verified against the book text

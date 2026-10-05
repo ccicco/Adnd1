@@ -180,8 +180,11 @@ until the first PHB fix round lands.
 SCOPE DECISIONS (the user, 2026-10-05): the engine
 grows full subclass support - all six subclasses
 (paladin, ranger, druid, illusionist, assassin,
-monk), multi-class and dual-class (two-class)
-characters, and the full spell lists. The druid
+monk) plus the bard (Appendix II - the seventh
+path, a fighter-then-thief-then-druid
+progression), multi-class and dual-class
+(two-class) characters, and the full spell
+lists. The druid
 and illusionist lists bring spells beyond the
 current 54-spell registry; paladin and ranger
 progress through the existing cleric and
@@ -219,7 +222,26 @@ census grows with the arc):
       experience machinery, the hit-dice and
       hit-point conventions, and the two-class
       rules.
-- R186+ the per-subclass specials that remain -
+- R186 the bard (Appendix II) - the progression
+      gates (fighter to 5th-7th, thief to
+      5th-9th, then the bard), the ability
+      minimums (STR WIS DEX CHA 15+, INT 12,
+      CON 10), human or half-elf, always
+      neutral; Bards Table I (23 levels, bard XP
+      only, hit dice added to those already
+      earned, the druid spell slots capped at
+      12th-level druid ability until the 23rd),
+      Table II (colleges, the language gains,
+      the charm and legend lore percents) and
+      Table III (armor and weapons); the poetics
+      morale and ferocity layers, the song
+      negation, the musical charming rules, the
+      item knowledge lists, and the
+      most-favorite-table saves. Lands after
+      R185 - the bard builds on the fighter and
+      thief layers, the druid spell layer and
+      the dual-class machinery.
+- R187+ the per-subclass specials that remain -
       the assassin fees and disguise layer, the
       monk special abilities, backstab for the
       assassin, thief-skill sharing.
