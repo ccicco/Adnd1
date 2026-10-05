@@ -965,6 +965,35 @@ fanatical rule (never a double agent, over
 New R205 battery audit; census 121. Next:
 the DMG-only sweep continues.
 
+R206 landed pursuit and evasion of pursuit
+(DMG pp.67-69) - a seam with no prior
+coverage in any rules/ file and no mention
+in either gap report. rules/pursuit.h
+(the grenade.h pattern): underground,
+the pursuit likelihood ladder (semi-
+intelligent motivated 80 percent; low
+intelligence 20/40/80 by numbers, 100
+when the outnumbering pursuers feel
+greatly superior), the three end-
+condition cases by relative speed
+(100/50 feet/5 rounds; 150/80 feet/1
+turn; 200 feet/no cap), the food and
+treasure distractions with their d10
+arithmetic, the multiple-choice rule and
+the detection radii (corner 60 feet;
+metal 90, boots 60, quiet 30), the
+movement procedure (3 phases = 1 round,
+contact at 10 feet); outdoor, the BASE
+CHANCE OF EVADING PURSUIT table - base
+80 percent with the speed, terrain,
+size and light rows cell for cell -
+the surprise rule (surprised them:
+automatic; surprised: impossible) and
+the hourly recheck (0 or less:
+immediate confrontation). New R206
+battery audit; census 122. Next: the
+DMG-only sweep continues.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
