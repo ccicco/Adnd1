@@ -650,6 +650,15 @@ transcribed from project notes - the R162 XP
 finding class) plus the prime-requisite ladder
 as an open verify. A report round adds no
 audit; census stays 94.
+R178 OPENED the subclass arc (the scope round,
+no audit - census stays 94): full subclass
+support is now engine scope - the six
+subclasses, multi-class and dual-class, and
+the full spell lists. The arc plan and round
+queue live in the PHB gap report (the
+subclass arc section). The live ability-table
+divergences (DEX, CON) stay queued before the
+arc rounds.
 
 Categories:
 - [x] = verified against the book text
