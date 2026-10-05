@@ -300,20 +300,24 @@ int dwarfConSaveBonus(uint8_t con) {
 }
 
 // ----------------------------------------------------------------------------
-// INT (PHB p.10): number of additional languages beyond native tongue
-//   3: none; 4-5: +1; 6-8: +2; 9-12: +3 (bonus language allowed);
-//   13-15: +4; 16-17: +5; 18: +6 (literacy per INT table is a display
-//   concern, not encoded here)
+// INT: the INTELLIGENCE TABLE I additional-languages
+// column - REPINNED R195 to the print (3-7 none,
+// 8-9 one, 10-11 two, 12-13 three, 14-15 four,
+// 16 five, 17 six, 18 seven). The engine
+// convention diverged at every score above 3.
+// Display-only (literacy is a display concern,
+// not encoded).
 // ----------------------------------------------------------------------------
 
 int intExtraLanguages(uint8_t int_) {
-    if (int_ <= 3)   return 0;
-    if (int_ <= 5)   return 1;
-    if (int_ <= 8)   return 2;
-    if (int_ <= 12)  return 3;
-    if (int_ <= 15)  return 4;
-    if (int_ <= 17)  return 5;
-    return 6;   // 18
+    if (int_ <= 7)  return 0;   // R195: was 2 at 6-8
+    if (int_ <= 9)  return 1;   // 8, 9
+    if (int_ <= 11) return 2;   // 10, 11
+    if (int_ <= 13) return 3;   // 12, 13
+    if (int_ <= 15) return 4;   // 14, 15
+    if (int_ == 16) return 5;
+    if (int_ == 17) return 6;
+    return 7;   // 18
 }
 
 // ----------------------------------------------------------------------------

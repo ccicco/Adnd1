@@ -825,6 +825,16 @@ saves.h modifier note repins (mental attack forms
 only; the save rolls still do not call it - the caller
 assembles). New R194 battery audit; census 111. Next:
 the last PHB divergence, 4 (INT languages).
+R195 landed the INT languages repin (the LAST
+founding-read divergence, 4): rules/character.cpp
+intExtraLanguages repinned to the printed
+INTELLIGENCE TABLE I column (3-7 none through 18
+seven); the engine convention diverged at every
+score above 3. New R195 battery audit; census 112.
+THE FOUNDING-READ LIST IS EMPTY - all six PHB
+ability tables print-pinned (STR R153, DEX R178c,
+CON R178c, INT R195, WIS R194, CHA R193). Next:
+the gap report names the next round.
 
 Categories:
 - [x] = verified against the book text

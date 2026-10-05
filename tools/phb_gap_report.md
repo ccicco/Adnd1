@@ -34,8 +34,9 @@ first, per the arc ordering rule): the DEX
 reaction ladder and the CON columns repinned to
 the print; the unsourced CON poison-save accessor
 retired. Census 95. The WIS, INT and CHA
-divergence 4 (INT) remains the last ranked fix round;
-3 (WIS) CLOSED R194, 5 (CHA) CLOSED R193.
+every founding-read divergence is closed (R178c 1-2,
+R193 5, R194 3, R195 4) - all six PHB ability
+tables now read the print.
 
 ## Verified against the book
 
@@ -117,12 +118,21 @@ divergence 4 (INT) remains the last ranked fix round;
       mental-form flag is not yet engine data).
       The R194 battery audit walks the ladder and
       the delegation. Census 111.
-- [~] 4. **INT Table I, additional languages (the
-      INTELLIGENCE TABLE I page)** - the engine
-      ladder diverges at every score above 3; the
-      print reads 3-7 none, 8-9 one, 10-11 two,
-      12-13 three, 14-15 four, 16 five, 17 six,
-      18 seven. Currently display-only.
+- [x] 4. **INT Table I, additional languages (the
+      INTELLIGENCE TABLE I page)** -
+      CLOSED R195: rules/character.cpp
+      intExtraLanguages repinned to the print (3-7
+      none, 8-9 one, 10-11 two, 12-13 three, 14-15
+      four, 16 five, 17 six, 18 seven). The engine
+      convention diverged at every score above 3
+      (4-5 one, 6-8 two, 9-12 three, 13-15 four,
+      16-17 five, 18 six). Display-only accessor,
+      no other callers. The R195 battery audit
+      walks the column cell for cell. Census 112.
+      THE FOUNDING-READ DIVERGENCE LIST IS NOW
+      EMPTY - every PHB ability table is pinned to
+      the print (STR R153, DEX R178c, CON R178c,
+      INT R195, WIS R194, CHA R193).
 - [x] 5. **CHA table (reaction adjustment, loyalty
       base, henchmen - the CHARISMA TABLE page)** -
       CLOSED R193: all three accessors repinned
