@@ -639,6 +639,17 @@ on the printed adders. rules/classes.cpp; the
 R176 battery audit carries the row walk, the
 beyond-table probes and the clamps.
 Census 94.
+R177 CREATED the PHB gap report
+(tools/phb_gap_report.md) - the sibling
+whole-book inventory for the Players Handbook,
+same conventions: verified boxes, ranked
+divergences, open items, out-of-scope notes.
+The founding read verified FIVE ability-table
+divergences (the character.cpp ladders
+transcribed from project notes - the R162 XP
+finding class) plus the prime-requisite ladder
+as an open verify. A report round adds no
+audit; census stays 94.
 
 Categories:
 - [x] = verified against the book text
