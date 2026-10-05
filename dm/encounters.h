@@ -283,7 +283,10 @@ std::vector<OutdoorBand> outdoorSubBands(
 // (their flavor subtables are fiction the engine models
 // only in part: the drunk identity and harlot type tables
 // are pinned R146 - cityDrunkKind / cityHarlotKind; the
-// rest stay unmodeled, documented in encounters.cpp).
+// noble gender coin, the noblewoman sedan-chair detail
+// and the ruffian 1-in-4 note are pinned R174 (the
+// declarations below); the rest stay unmodeled,
+// documented in encounters.cpp).
 // Numbers are the
 // printed city numbers, not the registry's wilderness-scale
 // noAppearing. City NPCs of 1st level or higher roll the
@@ -312,6 +315,16 @@ std::vector<std::string> cityEncounterKeys(
 // strings: 1-100 percentile, 00 reading as 100.
 const char* cityDrunkKind(int pctile);
 const char* cityHarlotKind(int pctile);
+
+// R174: the two remaining city flavor notes - the noble
+// gender coin (nobleman 75% / noblewoman 25%) with the
+// noblewoman 75% sedan-chair likelihood (carriers and
+// linkboys at night), and the ruffian 1-in-4
+// half-orc/humanoid matrix footnote. Fiction-only
+// descriptors: 1-100 percentile, 00 reading as 100.
+const char* cityNobleKind(int pctile);
+const char* cityNoblewomanSedan(int pctile);
+const char* cityRuffianKind(int pctile);
 
 
 // R65: DMG Appendix C ASTRAL & ETHEREAL encounter tables

@@ -3091,10 +3091,11 @@ std::vector<OutdoorBand> outdoorSubBands(
 // but no bestiary entry - their flavor subtables are
 // fiction the engine models only in part: the harlot type
 // (p.192) and drunk-of-what-type (p.191) tables are
-// pinned R146 (cityHarlotKind / cityDrunkKind); noble
-// gender and the ruffian 1-in-4 half-orc/humanoid note
-// stay unmodeled fiction, documented in the row
-// comments. Numbers are the printed
+// pinned R146 (cityHarlotKind / cityDrunkKind); the
+// noble gender coin, the noblewoman sedan-chair detail
+// and the ruffian 1-in-4 half-orc/humanoid note are
+// pinned R174 (cityNobleKind / cityNoblewomanSedan /
+// cityRuffianKind). Numbers are the printed
 // encounter numbers, not the registry's wilderness-scale
 // noAppearing (bandit registry 20-200 vs. printed night 3-12;
 // giant rat registry 5-50 vs. printed 2-8 day / 4-24 night).
@@ -3630,10 +3631,16 @@ std::vector<std::string> cityEncounterKeys(
 // "Merc" in full as the fiction strings (magic-user,
 // mercenary); the printed book reads "haughty", the
 // compilation "Haughy" an OCR defect (corrected,
-// documented). The two remaining R64 flavor notes - noble
-// gender (70% nobleman / 25% noblewoman, the last 5%
-// unprinted) and the ruffian 1-in-4 half-orc/humanoid note
-// - stay unmodeled fiction (gap report).
+// documented). R174 pins the two remaining R64 flavor
+// notes below (the R149-corrected reading): noble
+// gender is a clean nobleman-with-retainers 75% /
+// noblewoman 25% coin; the noblewoman is 75% likely
+// to have a sedan chair, carriers and linkboys (at
+// night); the printed matrix footnote - 1 in 4
+// ruffians can be half-orc or of humanoid race
+// (goblin, hobgoblin, kobold, orc) - is banded as
+// five equal fifths of the quarter, the weights the
+// book leaves unstated (documented).
 namespace {
 
 struct FlavorBand {
@@ -3701,6 +3708,64 @@ const char* cityDrunkKind(int pctile) {
 const char* cityHarlotKind(int pctile) {
     return flavorKindFor(kHarlotKinds,
         sizeof kHarlotKinds / sizeof kHarlotKinds[0], pctile);
+}
+
+
+// ----------------------------------------------------------------------------
+// R174: the two remaining R64 city flavor notes, pinned
+// from the fresh DMG upload (p.191-192, both confirmed
+// by the R149 book-verify pass): the noble gender coin
+// - nobleman-with-retainers 75% / noblewoman 25% (the
+// corrected reading; the 70/25/no-last-5 guess is dead)
+// - and the noblewoman 75% sedan-chair likelihood (with
+// carriers and linkboys at night; the complement reads
+// her on foot). The ruffian matrix footnote (if
+// desired, 1 in 4 can be half-orc or of humanoid
+// race - goblin, hobgoblin, kobold, orc) is banded
+// as the printed 25% quarter split into five equal
+// fifths, the weights the book leaves unstated
+// (documented); the first band is the human
+// three-quarters. Like the R146 tables these are
+// fiction-only descriptors dressing the city flavor
+// strings - no combat effect. The note says CAN be:
+// the fiction never summons the bestiary half-orc /
+// goblin / hobgoblin / kobold / orc records.
+
+// p.191-192: the noble gender coin (2 bands)
+static const FlavorBand kNobleKinds[] = {
+    {  1, 75, "nobleman" },
+    { 76,100, "noblewoman" },
+};
+
+// p.192: the noblewoman ride (2 bands)
+static const FlavorBand kSedanKinds[] = {
+    {  1, 75, "sedan chair" },
+    { 76,100, "on foot" },
+};
+
+// p.191: the ruffian 1-in-4 matrix footnote (6 bands)
+static const FlavorBand kRuffianKinds[] = {
+    {   1, 75, "human" },
+    {  76, 80, "half-orc" },
+    {  81, 85, "goblin" },
+    {  86, 90, "hobgoblin" },
+    {  91, 95, "kobold" },
+    {  96,100, "orc" },
+};
+
+const char* cityNobleKind(int pctile) {
+    return flavorKindFor(kNobleKinds,
+        sizeof kNobleKinds / sizeof kNobleKinds[0], pctile);
+}
+
+const char* cityNoblewomanSedan(int pctile) {
+    return flavorKindFor(kSedanKinds,
+        sizeof kSedanKinds / sizeof kSedanKinds[0], pctile);
+}
+
+const char* cityRuffianKind(int pctile) {
+    return flavorKindFor(kRuffianKinds,
+        sizeof kRuffianKinds / sizeof kRuffianKinds[0], pctile);
 }
 
 

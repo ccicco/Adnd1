@@ -209,6 +209,35 @@ void AppState::cityExcursion(dm::CityTime t){
                 dm::cityHarlotKind(
                     (int)dice.roll(1, 100, 0)) +
                 " waves from a doorway.";
+        } else if (e.key == "noble") {
+            // R174: the noble gender coin and the
+            // noblewoman sedan-chair detail
+            std::string gender = dm::cityNobleKind(
+                (int)dice.roll(1, 100, 0));
+            if (gender == "noblewoman") {
+                std::string ride = dm::cityNoblewomanSedan(
+                    (int)dice.roll(1, 100, 0));
+                if (ride == "sedan chair") {
+                    line = "A noblewoman passes in a sedan "
+                        "chair, her carriers and guards "
+                        "about her.";
+                } else {
+                    line = "A noblewoman passes on foot "
+                        "with servants and guards.";
+                }
+            } else {
+                line = "A nobleman passes with his "
+                    "retainers and guards.";
+            }
+        } else if (e.key == "ruffian") {
+            // R174: the 1-in-4 half-orc/humanoid note
+            std::string kind = dm::cityRuffianKind(
+                (int)dice.roll(1, 100, 0));
+            if (kind != "human") {
+                line = std::string("Ruffians melt into an "
+                    "alley - one in four is ") + kind +
+                    " stock.";
+            }
         }
         log.add(line);
     }

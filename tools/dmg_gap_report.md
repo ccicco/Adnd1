@@ -580,6 +580,20 @@ arithmetic 1-100 clean) and independently
 confirmed band for band by the mjyoung.net
 transcription; the upload spelling wins where the
 transcription paraphrases. Census 91.
+R174 PINNED the R146 fiction leftovers (DMG p.191-192)
+- the two city flavor notes the R149 book-verify pass
+confirmed: the noble gender coin (nobleman-with-
+retainers 75% / noblewoman 25%) with the noblewoman
+75% sedan-chair likelihood (carriers and linkboys at
+night), and the ruffian matrix footnote (1 in 4 can
+be half-orc or of humanoid race - goblin, hobgoblin,
+kobold, orc - banded as five equal fifths of the
+quarter, the weights the book leaves unstated).
+Fiction-only descriptors, the R146 precedent:
+cityNobleKind / cityNoblewomanSedan / cityRuffianKind
+in dm/encounters.cpp, wired to the city streets
+excursion lines (game/state_sea.cpp), audited by the
+R174 battery block. Census 92.
 
 Categories:
 - [x] = verified against the book text
@@ -1430,7 +1444,12 @@ Categories:
       noblewoman 75% sedan-chair detail prints with
       it, and the ruffian 1-in-4 half-orc/humanoid
       note is the printed matrix footnote, confirmed.
-      Pinned by the R146 city
+      R174 CLOSED the pair: the noble gender coin, the
+      noblewoman sedan-chair likelihood and the
+      ruffian 1-in-4 note are pinned as fiction-only
+      descriptors (cityNobleKind / cityNoblewomanSedan
+      / cityRuffianKind), audited by the R174 battery
+      block. Pinned by the R146 city
       flavor audit; census 64.
 - [x] **The dwarf CON magic-save bonus + matrix II
       footnote D (R144's named standing approximation
@@ -1667,13 +1686,15 @@ Categories:
 - [x] **Secondary skills (p.12)** - PINNED R173:
       rules/secondary.h (the 23-band table cell by
       cell; the when-to-use guidance).
-- [ ] **R146 fiction (the named omissions)** - the
-      noble gender hole is CLOSED R149: the split is
-      a clean nobleman 75% / noblewoman 25% - a coin
-      now, not a table (see the R146 box). The
-      ruffian 1-in-4 half-orc/humanoid note and the
-      noblewoman 75% sedan-chair detail remain - city
-      flavor follow-ups.
+- [x] **R146 fiction (the named omissions)** - CLOSED
+      R174: the noble gender coin (nobleman 75% /
+      noblewoman 25%, the R149 correction), the
+      noblewoman 75% sedan-chair detail and the
+      ruffian 1-in-4 half-orc/humanoid note are all
+      pinned as fiction-only descriptors
+      (cityNobleKind / cityNoblewomanSedan /
+      cityRuffianKind), audited by the R174 battery
+      block. Census 92.
 
 ## Out of scope by design
 
