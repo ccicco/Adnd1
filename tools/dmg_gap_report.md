@@ -706,6 +706,16 @@ held). New R180 battery audit; census 97. The
 assassin XP bonus pinned NONE - the class text
 prints no bonus despite the thief-group pattern.
 Next: R181 attacks per melee round.
+R181 landed the attacks per melee round:
+rules/attacksround.h CREATED (the fighter-group
+bands with the printed level edges, the
+under-one-hit-die note, the monk unarmed ladder
+cell by cell, the monk weapon-damage bonus).
+rules/turn.cpp meleeAttacksPerRound repinned - the
+level-8+ original note replaced by the print (the
+3/2 band opens at 7th; heavy-round convention, the
+full rates in the header). New R181 battery audit;
+census 98. Next: R182 the druid spell layer.
 
 Categories:
 - [x] = verified against the book text

@@ -151,11 +151,12 @@ divergences (3, 4, 5) remain ranked fix rounds.
       and shield 2, magic pluses lowering AC)
       deserve a cell-by-cell verify against the
       items armor rows (R101 pinned the plate kit).
-- [ ] **Fighter attacks per melee round (the class
-      tables section)** - 1 per round at levels 1-6,
-      3 per 2 rounds at 7-12, 2 per round at 13 and
-      up (one per level against creatures under one
-      hit die); the engine convention is unverified.
+- [x] **Fighter attacks per melee round (the class
+      tables section)** - PINNED R181: the engine
+      convention verified and repinned - the printed
+      bands now live in rules/attacksround.h and
+      rules/turn.cpp (meleeAttacksPerRound was the
+      unsourced level-8+ original note).
 - [ ] **Wisdom Table II, cleric bonus spells and
       spell failure** - unwired; a wiring candidate
       if engine scope wants it.
@@ -246,10 +247,31 @@ census grows with the arc):
       half-orc and human). The R180 battery audit
       walks every cell, the footnote and the
       meets-min and bonus probes. Census 97.
-- R181 attacks per melee round - the
-      fighter-group table (also closes the open
-      item above); the monk unarmed ladder and the
-      under-one-hit-die note.
+- [x] R181 the attacks per melee round - PINNED:
+      rules/attacksround.h CREATED: the fighters,
+      paladins and rangers table (1/1, 3/2 at the
+      mid band, 2/1 at the high band; fighter and
+      paladin 7/13 edges, ranger 8/15 edges, any
+      thrusting or striking weapon), the table note
+      (one attack per fighter experience level per
+      round against creatures under one d8 and
+      non-exceptional 0-level humans and
+      semi-humans), the monk unarmed ladder cell by
+      cell (Monks Table II: AC class 10 to -3,
+      movement 15 to 32, the attacks slash column
+      1/1 to 4/1, open-hand damage 1-3 to 8-32),
+      and the monk weapon-damage bonus (half a hit
+      point per level, doubled form; the monk
+      attacks on the thief table, strength never
+      modifies the monk to-hit - recorded for the
+      specials rounds). rules/turn.cpp repinned:
+      meleeAttacksPerRound was fighters level 8+
+      from unsourced original notes - now the
+      heavy round of the printed cycle (the 3/2
+      band opens at 7th for the fighter base
+      class; the actor layer carries base classes).
+      The R181 battery audit walks every band, every
+      monk cell and the repin. Census 98.
 - R182 the druid spell layer - the druid list
       joins the registry with its own
       spells-usable-by-level table.

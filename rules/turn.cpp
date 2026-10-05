@@ -4,6 +4,7 @@
 // ============================================================================
 
 #include "turn.h"
+#include "attacksround.h"  // R181: the fighter-group print consults rules/attacksround.h
 
 #include <algorithm>
 
@@ -128,11 +129,19 @@ bool RoundScheduler::next(TurnEvent& out) {
 // ----------------------------------------------------------------------------
 
 int meleeAttacksPerRound(int classIndex, int level) {
-    // fighters L8+ (and monsters with noted routines) fight twice per
-    // round; everyone else once (original notes; the PHB/DMG exact
-    // level for weapon specialization double-attacks gets verified
-    // in the book pass)
-    if (classIndex == 0 && level >= 8) return 2;
+    // R181 repin: the printed 3/2 band opens at 7th level
+    // (the fighters, paladins and rangers attacks-per-melee-
+    // round table). The engine round model carries two swing
+    // slots (initiative and initiative+5), so this returns the
+    // routine count of the HEAVY round of the printed cycle:
+    // 1 below the 3/2 band, 2 in the 3/2 and 2/1 bands. The
+    // full printed rates (and the ranger band edges, which
+    // need the subclass id this base-class function does not
+    // carry) live in rules/attacksround.h.
+    if (classIndex == 0) {
+        rules::AtkRate r = rules::fighterGroupAttacks(0, level);
+        return (r.attacks >= 2) ? 2 : 1;
+    }
     return 1;
 }
 

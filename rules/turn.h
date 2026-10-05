@@ -142,8 +142,10 @@ private:
 // ----------------------------------------------------------------------------
 // Multiple attacks (DMG p.39, PHB fighter notes): fighters (and
 // monsters with multiple attack routines) act on both initiative and
-// initiative+5 segments by convention. High-level fighters (level 8+
-// per original notes) gain a second melee routine.
+// initiative+5 segments by convention. Fighters gain the second
+// routine in the printed 3/2 band (R181: the 3/2 band opens at 7th
+// level for the fighter base class; the printed rates live in
+// rules/attacksround.h).
 // ----------------------------------------------------------------------------
 int meleeAttacksPerRound(int classIndex, int level);
 
