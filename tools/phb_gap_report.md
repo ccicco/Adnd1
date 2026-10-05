@@ -167,12 +167,23 @@ divergences (3, 4, 5) remain ranked fix rounds.
       recoverable from this OCR - recorded. The R189
       battery audit walks all 50 rows and the speed
       cross-verify. Census 106.
-- [ ] **Starting money by class (the EQUIPPING THE
-      CHARACTER section)** - the print: cleric 3d6
+- [x] **Starting money by class (the MONEY section) -
+      PINNED R190:** rules/startmoney.h CREATED -
+      the printed STARTING MONEY table: cleric 3d6
       (30-180 gp), fighter 5d4 (50-200), magic-user
-      2d4 (20-80), thief 2d6 (20-120). The engine
-      party-creation convention is unverified
-      against the print.
+      2d4 (20-80), thief 2d6 (20-120), every class
+      row a dice roll TIMES 10 gold pieces, plus the
+      printed MONK row 5-20 gp (5d4) - the one entry
+      with NO x10 (the DMG MONEY section explains:
+      monks are ascetics). The DMG companion rule
+      pins with it: not less than 100 gp per level
+      per month support cost. The engine has NO
+      party-creation money code (verified
+      repo-wide) - the unverified-convention worry
+      resolves to a fresh pin; subclass starting
+      money is not printed (recorded). The R190
+      battery audit walks all five rows. Census
+      107.
 - [ ] **Armor Class table (the ARMOR section)** -
       the printed AC ratings (none 10 through plate
       and shield 2, magic pluses lowering AC)

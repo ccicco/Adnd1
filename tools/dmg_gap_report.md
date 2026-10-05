@@ -779,6 +779,15 @@ printed notes; the R144/R145 AC standing note closes
 with the OCR limitation recorded). New R189 battery
 audit; census 106. Next: the gap report names the next
 round.
+R190 landed the starting money by class:
+rules/startmoney.h CREATED (the PHB STARTING MONEY
+table - cleric 3d6, fighter 5d4, magic-user 2d4,
+thief 2d6, all x10 gp; the monk row 5d4 with NO x10,
+the DMG MONEY-section ascetic note) and the DMG
+companion pin: the PLAYER CHARACTER EXPENSES rule,
+not less than 100 gp per level per month
+(pcMonthlySupportCost). New R190 battery audit; census
+107. Next: the gap report names the next round.
 
 Categories:
 - [x] = verified against the book text
