@@ -1022,6 +1022,32 @@ imprisonment possible). New R207 battery
 audit; census 123. Next: the DMG-only
 sweep continues.
 
+R208 landed the social class and rank
+system (DMG pp.88-89) - the 19
+government forms with their defining
+traits, the worked example aristocracy
+(the service, land and income-tax rule
+with the 20 gold piece merchant land
+waiver; the senators, the tribunals and
+the senatorial police appointments), the
+town and city social structure (the
+upper, middle and lower classes and what
+each draws), the municipal offices (the
+lifetime mayor, the aldermen chosen by
+the upper and elected by the middle
+class, the strata of judiciary, military
+command, law, customs and tax officials,
+the common council and the petty
+officials, the constabulary), the
+non-hereditary knights with
+order-varying precedence, the northern
+European title ladder (emperor down to
+knight, 10, duke preceding prince per
+the print table) with the German
+equivalents and the 20 Asian titles. New
+R208 battery audit; census 124. Next:
+the DMG-only sweep continues.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
