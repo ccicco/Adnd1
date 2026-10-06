@@ -483,7 +483,7 @@ int main() {
 
     // ---- R80: spell table L4-6 -----------------------------------------
     {
-        int bad = 0, mu = 0, cl = 0, dr = 0, l46 = 0;
+        int bad = 0, mu = 0, cl = 0, dr = 0, il = 0, l46 = 0;
         for (int id = 0; id < spells::SPELL_COUNT; ++id) {
             const spells::SpellDef& s =
                 spells::spell((spells::SpellId)id);
@@ -491,12 +491,16 @@ int main() {
             // caster-aging spells ride as levels 7-9
             if (s.level < 1 || s.level > 9) ++bad;
             // R228: the druid registry rows ride
-            // SPELL_DRUID (77 spells, levels 1-7)
+            // SPELL_DRUID (77 spells, levels 1-7);
+            // R229: the illusionist rows ride
+            // SPELL_ILLUSIONIST (61 spells)
             if (s.sclass != spells::SPELL_MU &&
                 s.sclass != spells::SPELL_CLERIC &&
-                s.sclass != spells::SPELL_DRUID) ++bad;
+                s.sclass != spells::SPELL_DRUID &&
+                s.sclass != spells::SPELL_ILLUSIONIST) ++bad;
             if (s.sclass == spells::SPELL_MU) ++mu;
             else if (s.sclass == spells::SPELL_DRUID) ++dr;
+            else if (s.sclass == spells::SPELL_ILLUSIONIST) ++il;
             else ++cl;
             if (s.level >= 4 && s.level <= 6) {
                 ++l46;
@@ -517,9 +521,20 @@ int main() {
                     rules::druidSpell(i).reversible ||
                 s.sclass != spells::SPELL_DRUID) ++bad;
         }
-        printf("R80 spells audit: %d spells (MU %d, CL %d, DR %d), "
+        // R229: the illusionist rows match the R183
+        // roster cell by cell (level, class; the
+        // illusionist print carries no reversible
+        // markers)
+        for (int i = 0; i < rules::illusionistSpellTotal(); ++i) {
+            const spells::SpellDef& s = spells::spell(
+                (spells::SpellId)(
+                    spells::IL_AUDIBLE_GLAMER + i));
+            if (s.level != rules::illusionistSpell(i).level ||
+                s.sclass != spells::SPELL_ILLUSIONIST) ++bad;
+        }
+        printf("R80 spells audit: %d spells (MU %d, CL %d, DR %d, IL %d), "
                "L4-6 %d, bad %d\n",
-               spells::SPELL_COUNT, mu, cl, dr, l46, bad);
+               spells::SPELL_COUNT, mu, cl, dr, il, l46, bad);
         if (bad) return 1;
     }
 
@@ -10563,6 +10578,111 @@ int main() {
         printf("R228 druid registry parameters audit: bad %d\n", bad);
         if (bad) return 1;
     }
+    // ---- R229: the illusionist registry parameters audit ----
+    // The evaluable seam walk: the rules/illusionspells.h
+    // R229 parameter tables vs the book-pin arrays (the
+    // PHB illusionist spell description headers; the
+    // OCR-scattered blocks pinned as JUDGMENTs). The
+    // registry rows themselves are walked by the extended
+    // R80 battery block - spells.cpp structs are outside
+    // the audit_eval subset.
+    {
+        int bad = 0;
+        static const int kLv[61] = {
+            1, 1, 1, 1, 1, 1, 1, 1, 2, 2,
+            2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+            2, 2, 2, 2, 3, 3, 3, 3, 3, 3,
+            3, 3, 3, 3, 3, 4, 4, 4, 4, 4,
+            5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+            5, 5, 6, 6, 6, 6, 7, 7, 7, 7,
+            7,
+        };
+        static const int kCt[61] = {
+            5, 1, 1, 1, 1, 1, 1, 1, 2, 2,
+            2, 2, 2, 2, 2, 2, 3, 2, 4, 2,
+            50, 2, 0, 2, 3, 3, 3, 3, 3, 3,
+            3, 3, 4, 3, 4, 4, 4, 60, 4, 4,
+            5, 5, 60, 5, 5, 6, 2, 6, 5, 6,
+            5, 6, 9, 10, 5, 3, 0, 180, 7, 7,
+            7,
+        };
+        static const int kRg[61] = {
+            6, 1, 0, 0, 3, 6, 6, 3, 3, 0,
+            6, 0, 1, 0, 6, 0, 1, 0, 0, 0,
+            2, 3, 0, 1, 0, 6, 6, 0, 1, 1,
+            0, 6, 0, 3, 1, 8, 0, 0, 0, 3,
+            0, 3, 1, 0, 0, 3, 1, 1, 5, 1,
+            1, 3, 3, 0, 6, 1, 0, 0, 0, 1,
+            0,
+        };
+        static const int kDu[61] = {
+            3, 5, 2, 1, 1, 10, 0, 2, 0, 3,
+            0, 2, 4, 0, 0, 0, 0, 0, 0, 3,
+            0, 1, 0, 4, 0, 0, 0, 10, 0, 0,
+            20, 0, 4, 40, 0, 1, 30, 60, 1, 1,
+            1, 1, 60, 0, 1, 40, 40, 0, 0, 0,
+            1, 1, 1, 1, 0, 10, 0, 0, 0, 10,
+            0,
+        };
+        static const int kAo[61] = {
+            0, 0, 0, 0, 0, 2, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 1, 3, 6, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0,
+        };
+        static const int kSv[61] = {
+            -1, -1, -1, -1, 4, -1, -1, -1, 4, -1,
+            4, -1, -1, 4, -1, -1, -1, -1, 4, -1,
+            -1, 4, -1, -1, -1, -1, -1, -1, 4, 4,
+            -1, -1, -1, 4, -1, -1, -1, -1, -1, -1,
+            -1, -1, -1, -1, -1, 4, -1, -1, -1, -1,
+            -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+            -1,
+        };
+        static const int kTg[61] = {
+            4, 2, 0, 4, 3, 2, 2, 4, 1, 0,
+            1, 2, 2, 2, 2, 1, 4, 4, 2, 0,
+            2, 4, 1, 4, 2, 2, 2, 0, 2, 2,
+            4, 2, 1, 1, 2, 2, 3, 4, 1, 2,
+            2, 2, 4, 1, 4, 3, 4, 2, 4, 2,
+            2, 2, 4, 1, 4, 2, 0, 4, 2, 4,
+            0,
+        };
+        for (int i = 0; i < 61; ++i)
+            if (rules::illusionistSpellLevel(i) != kLv[i] ||
+                rules::illusionistSpellCt(i) != kCt[i] ||
+                rules::illusionistSpellRangeTens(i) != kRg[i] ||
+                rules::illusionistSpellDur(i) != kDu[i] ||
+                rules::illusionistSpellAoeTens(i) != kAo[i] ||
+                rules::illusionistSpellSaveCat(i) != kSv[i] ||
+                rules::illusionistSpellTarget(i) != kTg[i]) ++bad;
+        // the clamps: -5 and 99 read rows 0 and 60
+        if (rules::illusionistSpellLevel(-5) != kLv[0] ||
+            rules::illusionistSpellLevel(99) != kLv[60] ||
+            rules::illusionistSpellCt(99) != kCt[60]) ++bad;
+        // the level histogram ladder: the seam pins the
+        // printed roster counts (8/16/11/5/12/4/5 - R183);
+        // every seam level sits in 1..7
+        static const int kHist[7] = { 8, 16, 11, 5, 12, 4, 5 };
+        for (int l = 1; l <= 7; ++l)
+            if (rules::illusionistSpellCountByLevel(l) != kHist[l - 1]) ++bad;
+        for (int i = 0; i < 61; ++i)
+            if (rules::illusionistSpellLevel(i) < 1 ||
+                rules::illusionistSpellLevel(i) > 7) ++bad;
+        // the R183 slot table cross-checks (past 26 the
+        // table clamps to the 26th row; a spell-level 8
+        // query clamps to the 7th)
+        if (rules::illusionistSpellSlots(1, 1) != 1 ||
+            rules::illusionistSpellSlots(5, 2) != 2 ||
+            rules::illusionistSpellSlots(12, 4) != 3 ||
+            rules::illusionistSpellSlots(26, 7) != 6 ||
+            rules::illusionistSpellSlots(30, 8) != 6) ++bad;
+        printf("R229 illusionist registry parameters audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
     // ---- R163: the poison table audit -------------
     // DMG p.20: the purchased-poison table - ingestive
     // A-E and insinuative A-D, each with cost, onset
@@ -13765,18 +13885,21 @@ int main() {
     // ---- R129: caster aging audit ----
     {
         int bad = 0;
-        // the registry grew to 131 (R228): MU 31, CL 23, DR 77
-        if (spells::SPELL_COUNT != 131) ++bad;
+        // the registry grew to 192 (R229): MU 31, CL 23,
+        // DR 77, IL 61
+        if (spells::SPELL_COUNT != 192) ++bad;
         {
-            int mu = 0, cl = 0, dr = 0;
+            int mu = 0, cl = 0, dr = 0, il = 0;
             for (int id = 0; id < spells::SPELL_COUNT; ++id) {
                 const spells::SpellDef& s =
                     spells::spell((spells::SpellId)id);
                 if (s.sclass == spells::SPELL_MU) ++mu;
                 else if (s.sclass == spells::SPELL_DRUID) ++dr;
+                else if (s.sclass == spells::SPELL_ILLUSIONIST) ++il;
                 else ++cl;
             }
-            if (mu != 31 || cl != 23 || dr != 77) ++bad;
+            if (mu != 31 || cl != 23 || dr != 77 ||
+                il != 61) ++bad;
         }
         // the six p.14 rows: name, class, level, self-target
         {

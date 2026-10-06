@@ -6,6 +6,7 @@
 #include "spells.h"
 #include "../rules/wisdom.h"  // R192: Wisdom Tables I and II
 #include "../rules/druidspells.h"  // R228: the druid roster + parameter seam
+#include "../rules/illusionspells.h"  // R229: the illusionist roster + parameter seam
 
 namespace spells {
 
@@ -174,6 +175,72 @@ static const SpellDef kSpells[SPELL_COUNT] = {
     { "Fire Storm", SPELL_DRUID, 7, 9, 16, 1, 4, TARGET_AREA, 0, 0, 0, true },
     { "Reincarnate", SPELL_DRUID, 7, 60, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, false },
     { "Transmute Metal To Wood", SPELL_DRUID, 7, 9, 8, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    // ---- R229: the illusionist roster (61 spells;
+    // parameters per the rules/illusionspells.h R229
+    // seam - the PHB illusionist spell description
+    // headers; effects stay known, cast pending per
+    // the R80 utility convention) ----
+    { "Audible Glamer", SPELL_ILLUSIONIST, 1, 5, 6, 3, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Detect Invisibility", SPELL_ILLUSIONIST, 1, 1, 1, 5, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Change Self", SPELL_ILLUSIONIST, 1, 1, 0, 2, -1, TARGET_SELF, 0, 0, 0, false },
+    { "Gaze Reflection", SPELL_ILLUSIONIST, 1, 1, 0, 1, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Hypnotism", SPELL_ILLUSIONIST, 1, 1, 3, 1, 4, TARGET_CREATURES, 0, 0, 0, false },
+    { "Light", SPELL_ILLUSIONIST, 1, 1, 6, 10, -1, TARGET_AREA, 2, 0, 0, false },
+    { "Phantasmal Force", SPELL_ILLUSIONIST, 1, 1, 6, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Wall Of Fog", SPELL_ILLUSIONIST, 1, 1, 3, 2, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Blindness", SPELL_ILLUSIONIST, 2, 2, 3, 0, 4, TARGET_CREATURE, 0, 0, 0, false },
+    { "Blur", SPELL_ILLUSIONIST, 2, 2, 0, 3, -1, TARGET_SELF, 0, 0, 0, false },
+    { "Deafness", SPELL_ILLUSIONIST, 2, 2, 6, 0, 4, TARGET_CREATURE, 0, 0, 0, false },
+    { "Detect Magic", SPELL_ILLUSIONIST, 2, 2, 0, 2, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Fog Cloud", SPELL_ILLUSIONIST, 2, 2, 1, 4, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Hypnotic Pattern", SPELL_ILLUSIONIST, 2, 2, 0, 0, 4, TARGET_AREA, 0, 0, 0, false },
+    { "Improved Phantasmal Force", SPELL_ILLUSIONIST, 2, 2, 6, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Invisibility", SPELL_ILLUSIONIST, 2, 2, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Dispel Illusion", SPELL_ILLUSIONIST, 2, 3, 1, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Magic Mouth", SPELL_ILLUSIONIST, 2, 2, 0, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Fear", SPELL_ILLUSIONIST, 2, 4, 0, 0, 4, TARGET_AREA, 0, 0, 0, false },
+    { "Mirror Image", SPELL_ILLUSIONIST, 2, 2, 0, 3, -1, TARGET_SELF, 0, 0, 0, false },
+    { "Hallucinatory Terrain", SPELL_ILLUSIONIST, 2, 50, 2, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Misdirection", SPELL_ILLUSIONIST, 2, 2, 3, 1, 4, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Illusionary Script", SPELL_ILLUSIONIST, 2, 0, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Ventriloquism", SPELL_ILLUSIONIST, 2, 2, 1, 4, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Invisibility, 10' Radius", SPELL_ILLUSIONIST, 3, 3, 0, 0, -1, TARGET_AREA, 1, 0, 0, false },
+    { "Continual Darkness", SPELL_ILLUSIONIST, 3, 3, 6, 0, -1, TARGET_AREA, 3, 0, 0, false },
+    { "Continual Light", SPELL_ILLUSIONIST, 3, 3, 6, 0, -1, TARGET_AREA, 6, 0, 0, false },
+    { "Non-detection", SPELL_ILLUSIONIST, 3, 3, 0, 10, -1, TARGET_SELF, 0, 0, 0, false },
+    { "Emotion", SPELL_ILLUSIONIST, 3, 3, 1, 0, 4, TARGET_AREA, 0, 0, 0, false },
+    { "Paralyzation", SPELL_ILLUSIONIST, 3, 3, 1, 0, 4, TARGET_AREA, 0, 0, 0, false },
+    { "Rope Trick", SPELL_ILLUSIONIST, 3, 3, 0, 20, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Spectral Force", SPELL_ILLUSIONIST, 3, 3, 6, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Improved Invisibility", SPELL_ILLUSIONIST, 3, 4, 0, 4, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Suggestion", SPELL_ILLUSIONIST, 3, 3, 3, 40, 4, TARGET_CREATURE, 0, 0, 0, false },
+    { "Massmorph", SPELL_ILLUSIONIST, 3, 4, 1, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Confusion", SPELL_ILLUSIONIST, 4, 4, 8, 1, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Dispel Exhaustion", SPELL_ILLUSIONIST, 4, 4, 0, 30, -1, TARGET_CREATURES, 0, 0, 0, false },
+    { "Minor Creation", SPELL_ILLUSIONIST, 4, 60, 0, 60, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Phantasmal Killer", SPELL_ILLUSIONIST, 4, 4, 0, 1, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Shadow Monsters", SPELL_ILLUSIONIST, 4, 4, 3, 1, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Chaos", SPELL_ILLUSIONIST, 5, 5, 0, 1, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Demi-Shadow Monsters", SPELL_ILLUSIONIST, 5, 5, 3, 1, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Major Creation", SPELL_ILLUSIONIST, 5, 60, 1, 60, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Maze", SPELL_ILLUSIONIST, 5, 5, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Projected Image", SPELL_ILLUSIONIST, 5, 5, 0, 1, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Mass Suggestion", SPELL_ILLUSIONIST, 5, 6, 3, 40, 4, TARGET_CREATURES, 0, 0, 0, false },
+    { "Shadow Door", SPELL_ILLUSIONIST, 5, 2, 1, 40, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Permanent Illusion", SPELL_ILLUSIONIST, 5, 6, 1, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Shadow Magic", SPELL_ILLUSIONIST, 5, 5, 5, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Programmed Illusion", SPELL_ILLUSIONIST, 5, 6, 1, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Summon Shadow", SPELL_ILLUSIONIST, 5, 5, 1, 1, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Shades", SPELL_ILLUSIONIST, 5, 6, 3, 1, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Conjure Animals", SPELL_ILLUSIONIST, 6, 9, 3, 1, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "True Sight", SPELL_ILLUSIONIST, 6, 10, 0, 1, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Demi-Shadow Magic", SPELL_ILLUSIONIST, 6, 5, 6, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Veil", SPELL_ILLUSIONIST, 6, 3, 1, 10, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Alter Reality", SPELL_ILLUSIONIST, 7, 0, 0, 0, -1, TARGET_SELF, 0, 0, 0, false },
+    { "Astral Spell", SPELL_ILLUSIONIST, 7, 180, 0, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Prismatic Spray", SPELL_ILLUSIONIST, 7, 7, 0, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Prismatic Wall", SPELL_ILLUSIONIST, 7, 7, 1, 10, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Vision", SPELL_ILLUSIONIST, 7, 7, 0, 0, -1, TARGET_SELF, 0, 0, 0, false },
 };
 
 const SpellDef& spell(SpellId id) {
@@ -274,6 +341,11 @@ int spellSlots(SpellClass sc, int classLevel, int spellLevel) {
     // (druidSpellSlots clamps level 1-14, spell 1-7)
     if (sc == SPELL_DRUID)
         return rules::druidSpellSlots(classLevel, spellLevel);
+    // R229: the illusionist rows read the R183 slot
+    // table (illusionistSpellSlots clamps level 1-26,
+    // spell 1-7)
+    if (sc == SPELL_ILLUSIONIST)
+        return rules::illusionistSpellSlots(classLevel, spellLevel);
     if (classLevel < 1) classLevel = 1;
     if (classLevel > kLevels) classLevel = kLevels;
     return (sc == SPELL_MU ? kMuSlots : kClericSlots)

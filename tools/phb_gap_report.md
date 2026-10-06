@@ -609,9 +609,29 @@ arc boxes:
       Snakes 5, Transmute Rock to Mud 5,
       Confusion 7) - the printed TABLE (R182)
       wins. Census 144.
-- [ ] R229 the illusionist roster joins the
-      SpellId registry (61 spells, the same seam
-      shape as R228).
+- [x] R229 the illusionist roster joins the
+      SpellId registry - WIRED: 61 IL_ ids appended after
+      DR_TRANSMUTE_METAL_TO_WOOD (saved knownSpells
+      indices stay valid); SPELL_ILLUSIONIST joins
+      SpellClass; 61 kSpells rows with the PHB
+      illusionist spell-description header parameters
+      (the R228 druid conventions); the parameters
+      also land as the evaluable seam in
+      rules/illusionspells.h (seven clamped accessors -
+      no reversible markers in the illusionist print)
+      and spellSlots(SPELL_ILLUSIONIST, ...) delegates
+      to the R183 illusionistSpellSlots (levels 1-26,
+      spell 1-7 clamped). Effects stay
+      known-cast-pending (the R80 convention); the R80
+      battery walk extends to the illusionist rows and
+      checks them against the R183 roster cell by cell.
+      Thirteen OCR-scattered blocks pinned as JUDGMENTs
+      (the section interleaves neighbors; the q.v. MU/
+      cleric prints close the chains); six blocks print
+      a Level: divergent from the roster (Dispel
+      Illusion 3, Fear 3, Hallucinatory Terrain 3,
+      Illusionary Script 3, Improved Invisibility 4,
+      Massmorph 4) - the printed TABLE wins. Census 145.
 - [ ] the subclass creation gates - no
       character can yet BE a paladin, ranger,
       druid, illusionist, assassin, monk or

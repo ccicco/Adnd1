@@ -29,6 +29,7 @@ enum SpellClass : int {
     SPELL_MU = 0,
     SPELL_CLERIC,
     SPELL_DRUID,   // R228: the druid roster
+    SPELL_ILLUSIONIST,   // R229: the illusionist roster
     SPELL_CLASS_COUNT
 };
 
@@ -178,6 +179,67 @@ enum SpellId : int {
     DR_FIRE_STORM,          // druid 7
     DR_REINCARNATE,         // druid 7
     DR_TRANSMUTE_METAL_TO_WOOD, // druid 7
+    IL_AUDIBLE_GLAMER,          // illusionist 1
+    IL_DETECT_INVISIBILITY,     // illusionist 1
+    IL_CHANGE_SELF,             // illusionist 1
+    IL_GAZE_REFLECTION,         // illusionist 1
+    IL_HYPNOTISM,               // illusionist 1
+    IL_LIGHT,                   // illusionist 1
+    IL_PHANTASMAL_FORCE,        // illusionist 1
+    IL_WALL_OF_FOG,             // illusionist 1
+    IL_BLINDNESS,               // illusionist 2
+    IL_BLUR,                    // illusionist 2
+    IL_DEAFNESS,                // illusionist 2
+    IL_DETECT_MAGIC,            // illusionist 2
+    IL_FOG_CLOUD,               // illusionist 2
+    IL_HYPNOTIC_PATTERN,        // illusionist 2
+    IL_IMPROVED_PHANTASMAL_FORCE, // illusionist 2
+    IL_INVISIBILITY,            // illusionist 2
+    IL_DISPEL_ILLUSION,         // illusionist 2
+    IL_MAGIC_MOUTH,             // illusionist 2
+    IL_FEAR,                    // illusionist 2
+    IL_MIRROR_IMAGE,            // illusionist 2
+    IL_HALLUCINATORY_TERRAIN,   // illusionist 2
+    IL_MISDIRECTION,            // illusionist 2
+    IL_ILLUSIONARY_SCRIPT,      // illusionist 2
+    IL_VENTRILOQUISM,           // illusionist 2
+    IL_INVISIBILITY_10_RADIUS,  // illusionist 3
+    IL_CONTINUAL_DARKNESS,      // illusionist 3
+    IL_CONTINUAL_LIGHT,         // illusionist 3
+    IL_NON_DETECTION,           // illusionist 3
+    IL_EMOTION,                 // illusionist 3
+    IL_PARALYZATION,            // illusionist 3
+    IL_ROPE_TRICK,              // illusionist 3
+    IL_SPECTRAL_FORCE,          // illusionist 3
+    IL_IMPROVED_INVISIBILITY,   // illusionist 3
+    IL_SUGGESTION,              // illusionist 3
+    IL_MASSMORPH,               // illusionist 3
+    IL_CONFUSION,               // illusionist 4
+    IL_DISPEL_EXHAUSTION,       // illusionist 4
+    IL_MINOR_CREATION,          // illusionist 4
+    IL_PHANTASMAL_KILLER,       // illusionist 4
+    IL_SHADOW_MONSTERS,         // illusionist 4
+    IL_CHAOS,                   // illusionist 5
+    IL_DEMI_SHADOW_MONSTERS,    // illusionist 5
+    IL_MAJOR_CREATION,          // illusionist 5
+    IL_MAZE,                    // illusionist 5
+    IL_PROJECTED_IMAGE,         // illusionist 5
+    IL_MASS_SUGGESTION,         // illusionist 5
+    IL_SHADOW_DOOR,             // illusionist 5
+    IL_PERMANENT_ILLUSION,      // illusionist 5
+    IL_SHADOW_MAGIC,            // illusionist 5
+    IL_PROGRAMMED_ILLUSION,     // illusionist 5
+    IL_SUMMON_SHADOW,           // illusionist 5
+    IL_SHADES,                  // illusionist 5
+    IL_CONJURE_ANIMALS,         // illusionist 6
+    IL_TRUE_SIGHT,              // illusionist 6
+    IL_DEMI_SHADOW_MAGIC,       // illusionist 6
+    IL_VEIL,                    // illusionist 6
+    IL_ALTER_REALITY,           // illusionist 7
+    IL_ASTRAL_SPELL,            // illusionist 7
+    IL_PRISMATIC_SPRAY,         // illusionist 7
+    IL_PRISMATIC_WALL,          // illusionist 7
+    IL_VISION,                  // illusionist 7
     SPELL_COUNT
 };
 
