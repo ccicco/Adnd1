@@ -659,6 +659,30 @@ arc boxes:
       uncreatable; leveling, the specials hooks
       and multi/dual-class are the next arc
       items. Census 146.
+- [x] R231 the subclass leveling wire - WIRED:
+      rules/subclassgates.h gains the leveling seam
+      (subclassXpToAttain - the printed XP attain
+      rows with the adders, a private flat copy
+      per the R230 EVAL NOTE; subclassFixedHpLevel;
+      subclassHpBeyondFixed; subclassLevelStop (the
+      R179 levelCap pins - the name-cap analog, the
+      druid 14 hierarchy ceiling);
+      subclassLevelCapTotal - the leveling stop
+      minus a positive Table II race cap and the
+      footnote-8 gnome conditional); gainXp queues
+      promotions on the registry
+      ladder and applies the printed +10%
+      subclass experience bonus when the R180 rule
+      is earned (the illusionist, assassin and
+      monk print none); trainNext promotes on the
+      registry ladder (the subclass hit die and
+      con class, the fixed hp past the fixed-hp
+      level, the illusionist studying from the
+      R229 roster); the energy-drain trick resets
+      to the registry level start. The base-class
+      convention stands for plain members (the
+      engine stops them at the name cap) and the
+      henchman stays base-class. Census 147.
 - [ ] the per-subclass specials hooks (lay on
       hands, giant-class bonus, the monk
       unarmed ladder, backstab multipliers).

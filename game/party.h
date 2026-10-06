@@ -29,6 +29,7 @@
 #include "../rules/dice.h"
 #include "../rules/character.h"
 #include "../rules/classes.h"
+#include "../rules/subclassgates.h"  // R231: the subclass leveling seam
 #include "../items/items.h"
 #include "../ai/actor.h"
 #include "../dm/dm.h"
@@ -424,6 +425,14 @@ struct Party {
             int pct = rules::primeRequisitePct(
                 (uint8_t)primeAb);
             int gained = amount + (amount * pct) / 100;
+            // R231: the printed subclass experience bonus
+            // - +10% when the R180 rule is earned (the
+            // PHB percentage convention); the illusionist,
+            // assassin and monk print none
+            if (c.subclass >= 0 &&
+                rules::subclassXpBonusEarned(c.subclass,
+                                             c.abilities))
+                gained += amount / 10;
             if (gained < 0) gained = 0;   // penalty floors at 0
             c.xp += gained;
             // R43: DMG training - a level-up does not take effect
@@ -432,10 +441,22 @@ struct Party {
             // promotion queues here; the app promotes and charges
             // in town. One queued promotion per award; further
             // levels queue on later awards.
+            // R231: the subclass ladder - the registry XP
+            // table and the effective level cap (Table II
+            // with the footnote-8 gnome conditional); plain
+            // members read the base-class table
             int cap = rules::CLASS_LEVEL_CAP[c.classIndex];
+            int need = rules::xpForLevel(c.classIndex,
+                                        c.level + 1);
+            if (c.subclass >= 0) {
+                cap = rules::subclassLevelCapTotal(
+                    c.subclass, (rules::CharRace)c.race,
+                    c.abilities.int_, c.abilities.dex);
+                need = rules::subclassXpToAttain(c.subclass,
+                                                c.level + 1);
+            }
             if (c.level < cap &&
-                c.xp >= rules::xpForLevel(c.classIndex,
-                                          c.level + 1) &&
+                c.xp >= need &&
                 !isQueuedForTraining((int)(&c - members.data()))) {
                 pendingTraining.push_back(
                     (int)(&c - members.data()));
@@ -467,16 +488,49 @@ struct Party {
             pendingTraining.erase(pendingTraining.begin());
             if (i < 0 || i >= (int)members.size()) continue;
             Character& c = members[i];
+            // R231: the subclass stale check reads the
+            // registry ladder
             int cap = rules::CLASS_LEVEL_CAP[c.classIndex];
+            int need = rules::xpForLevel(c.classIndex,
+                                        c.level + 1);
+            if (c.subclass >= 0) {
+                cap = rules::subclassLevelCapTotal(
+                    c.subclass, (rules::CharRace)c.race,
+                    c.abilities.int_, c.abilities.dex);
+                need = rules::subclassXpToAttain(c.subclass,
+                                                c.level + 1);
+            }
             if (c.hp <= 0 || c.level >= cap ||
-                c.xp < rules::xpForLevel(c.classIndex,
-                                         c.level + 1))
+                c.xp < need)
                 continue;   // stale entry - try the next
             ++c.level;
-            int conAdj = rules::conHPAdjustment(c.classIndex,
-                                                c.abilities.con);
-            int die = rules::rollHitPoints(c.classIndex,
+            // R231: the subclass promotion die - the
+            // registry hit die and con class; past the
+            // fixed-hp level the fixed hp + conAdj (the
+            // R179 pins); the per-die floor is 1
+            int conAdj;
+            int die;
+            if (c.subclass >= 0) {
+                conAdj = rules::conHPAdjustment(
+                    rules::subclassConClass(c.subclass),
+                    c.abilities.con);
+                if (c.level >
+                        rules::subclassFixedHpLevel(
+                            c.subclass)) {
+                    die = rules::subclassHpBeyondFixed(
+                              c.subclass) + conAdj;
+                } else {
+                    die = (int)dice.roll(
+                              1, (uint32_t)rules::subclassHitDie(
+                                      c.subclass), 0) + conAdj;
+                }
+                if (die < 1) die = 1;
+            } else {
+                conAdj = rules::conHPAdjustment(
+                    c.classIndex, c.abilities.con);
+                die = rules::rollHitPoints(c.classIndex,
                                            c.level, conAdj, dice);
+            }
             c.maxHp += die;
             c.hp += die;
             char buf[96];
@@ -492,6 +546,12 @@ struct Party {
             // same spell may be attempted again at the next
             // level - simplification vs PHB's permanent bar).
             if (c.classIndex == 1) {
+                // R231: the illusionist studies from the
+                // illusionist roster (the R229 registry)
+                spells::SpellClass wanted =
+                    c.subclass == rules::SUB_ILLUSIONIST
+                        ? spells::SPELL_ILLUSIONIST
+                        : spells::SPELL_MU;
                 int maxLv = spells::maxSpellLevelForInt(
                     c.abilities.int_);
                 std::vector<int> cands;
@@ -499,7 +559,7 @@ struct Party {
                      ++id) {
                     const spells::SpellDef& s =
                         spells::spell((spells::SpellId)id);
-                    if (s.sclass != spells::SPELL_MU)
+                    if (s.sclass != wanted)
                         continue;
                     if (s.level < 1 || s.level > maxLv)
                         continue;
@@ -530,9 +590,10 @@ struct Party {
                 }
             }
             // XP reaching another level queues the member again
+            // R231: cap/need carry the subclass ladder from
+            // the stale check above
             if (c.level < cap &&
-                c.xp >= rules::xpForLevel(c.classIndex,
-                                          c.level + 1))
+                c.xp >= need)
                 pendingTraining.push_back(i);
             return i;
         }

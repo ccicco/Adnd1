@@ -343,4 +343,121 @@ inline int subclassLevelCapFor(int sub, CharRace r,
         return illusionistGnomeCap(intScore, dexScore);
     return kCap[si * 7 + ri];
 }
+
+// ---------------------------------------------------------------------------
+// R231: the leveling seam. The registry XP ladders
+// become the member leveling path: the printed XP
+// attain rows (the R176 convention), the adders
+// past them, the fixed-hp levels (past them the
+// fixed hp per level), and the effective leveling
+// stop (the R179 levelCap pins) minus the Race Table
+// II cap and the footnote-8 gnome conditional.
+//
+// EVAL NOTE (the R230 convention): plain ints and
+// private flat copies - the audit evaluator cannot
+// read the : int enums or the SubclassDef structs
+// the R179 registry carries; the battery pins the
+// copies against the same printed walks.
+// ---------------------------------------------------------------------------
+
+// The XP to ATTAIN the level (the printed band
+// lower bound - 1). Past the printed rows the
+// adder applies; adder 0 (druid, assassin, monk):
+// the top row repeats - the printed top is the
+// ceiling. Ragged rows pad with 0 (never read:
+// kLen guards).
+inline int subclassXpToAttain(int sub, int level) {
+    static const int kLen[6] = {
+        11, 12, 14, 12, 15, 17
+    };
+    static const int kXp[6][17] = {
+        { 0, 2750, 5500, 12000, 24000, 45000,
+          95000, 175000, 350000, 700000, 1050000,
+          0, 0, 0, 0, 0, 0 },
+        { 0, 2250, 4500, 10000, 20000, 40000,
+          90000, 150000, 225000, 325000, 650000,
+          975000, 0, 0, 0, 0, 0 },
+        { 0, 2000, 4000, 7500, 12500, 20000,
+          35000, 60000, 90000, 125000, 200000,
+          300000, 750000, 1500000, 0, 0, 0 },
+        { 0, 2250, 4500, 9000, 18000, 35000,
+          60000, 95000, 145000, 220000, 440000,
+          660000, 0, 0, 0, 0, 0 },
+        { 0, 1500, 3000, 6000, 12000, 25000,
+          50000, 100000, 200000, 300000, 425000,
+          575000, 750000, 1000000, 1500000, 0, 0 },
+        { 0, 2250, 4750, 10000, 22500, 47500,
+          98000, 200000, 350000, 500000, 700000,
+          950000, 1250000, 1750000, 2250000,
+          2750000, 3250000 }
+    };
+    static const int kAdd[6] = {
+        350000, 325000, 0, 220000, 0, 0
+    };
+    int si = sub;
+    if (si < 0) si = 0;
+    if (si > 5) si = 5;
+    if (level <= 1) return 0;
+    int n = kLen[si];
+    if (level <= n) return kXp[si][level - 1];
+    return kXp[si][n - 1] + (level - n) * kAdd[si];
+}
+
+// The fixed-hp level (the R179 levelCap pin: past
+// it the fixed hp per level): paladin 9, ranger
+// 10, druid 9, illusionist 10, assassin 10, monk
+// 17 (the monk rolls through all 17).
+inline int subclassFixedHpLevel(int sub) {
+    static const int kFixed[6] = {
+        9, 10, 9, 10, 10, 17
+    };
+    int si = sub;
+    if (si < 0) si = 0;
+    if (si > 5) si = 5;
+    return kFixed[si];
+}
+
+// The fixed hp per level past the fixed-hp level
+// (the R179 hpBeyondCap pin); the monk 0.
+inline int subclassHpBeyondFixed(int sub) {
+    static const int kHpB[6] = {
+        3, 2, 2, 1, 2, 0
+    };
+    int si = sub;
+    if (si < 0) si = 0;
+    if (si > 5) si = 5;
+    return kHpB[si];
+}
+
+// The leveling stop (the R179 levelCap pin: the
+// name-cap analog - paladin 9, ranger 10, druid 14
+// the hierarchy ceiling, illusionist 10, assassin
+// 10, monk 17). The engine convention stops plain
+// members at the name cap; this is the subclass
+// analog. NOTE the druid: leveling runs to 14 but
+// the fixed hp starts at the 9th (the print pin -
+// the two levels differ for the druid only).
+inline int subclassLevelStop(int sub) {
+    static const int kStop[6] = {
+        9, 10, 14, 10, 10, 17
+    };
+    int si = sub;
+    if (si < 0) si = 0;
+    if (si > 5) si = 5;
+    return kStop[si];
+}
+
+// The effective leveling cap: the leveling stop,
+// lowered by a positive Race Table II cap (the
+// footnote-8 gnome conditional included).
+inline int subclassLevelCapTotal(int sub, CharRace r,
+                                 int intScore,
+                                 int dexScore) {
+    int cap = subclassLevelStop(sub);
+    int rc = subclassLevelCapFor(sub, r,
+                                 intScore, dexScore);
+    if (rc > 0 && rc < cap) cap = rc;
+    return cap;
+}
+
 } // namespace rules

@@ -897,8 +897,13 @@ void AppState::applyTrick(int roomIndex){
                         c.name + " keeps their trade.");
                 return;
             }
-            c.xp = rules::xpForLevel(c.classIndex,
-                                     c.level);
+            // R231: the subclass drain reads the registry
+            // ladder (the level start)
+            c.xp = c.subclass >= 0
+                ? rules::subclassXpToAttain(c.subclass,
+                                            c.level)
+                : rules::xpForLevel(c.classIndex,
+                                    c.level);
             log.add("The " + name + " remakes " + c.name +
                     " - their training unravels!");
         } else if (a == dm::appendixh::TA_CHANGE_MINDS) {
