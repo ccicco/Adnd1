@@ -1323,6 +1323,54 @@ likely next pin material is the tables of
 the AD&D campaign milieu sections, upload
 lines ~8720+).
 
+R216 landed the magical research pins
+(DMG pp.114-119) - the holy/unholy
+water receptacles, the spell research
+economics, the manufacture gates and
+the potion rules. rules/magres.h (the
+grenade.h pattern): the five metals
+(copper, silver, electrum, gold,
+platinum) with vial capacity 6/10/18/
+32/50, the basin cost ranges 130-180 /
+1900-2400 / 8000-12000 / 19000-22000 /
+110000-200000 gp, font costs 200/500/
+1000/1500/2000 gp, vials 2-5 gp, font
+construction 4-10 weeks (2d4+2), one
+creation per week, 8 hours rest, one
+font per edifice, the defilement remake
+20-50 percent over 4-6 weeks, the
+lycanthropy delay 1-4 turns per vial,
+and mixed metals interpolating capacity
+(the print copper/silver 50/50 = 8
+vials, rounded to nearest); the spell
+research economics (200 gp per level
+per week base + 100-400 gp variable, no
+library x10, minimum weeks level + 1,
+interruption day = week lost, 8 h/day,
+chance 10 percent + 10 per extra 2000
+gp per level capped 50 + INT/WIS +
+level - 2 x spell level, impossible
+beyond MU 9th / cleric 7th, combo spells
+sum + 1, library gathering 1 week per
+level); the manufacture gates (cleric
+11, wizard 12, illusionist 11; books,
+artifacts, relics and the dwarven/elven
+specials DM-only); and the potion rules
+(MU 7th with alchemist, 11th optional at
+-50 percent, one at a time, lab 200-1000
+gp + 10 percent monthly upkeep, cost and
+days = the XP award, each 100 gp or
+fraction a day, no-XP base 200 gp,
+assassin poison 9th, delusion failure
+5-20 percent). Compilation cross-check:
+the sr.htm page is a Dragon editorial
+and stays OUT per the ground-truth rule;
+the upload is clean at this seam and is
+the sole source. New R216 battery audit;
+census 132. Next: the scroll and other
+magic item manufacture seams (upload
+lines ~9100+, pp.119+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
