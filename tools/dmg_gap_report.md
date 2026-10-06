@@ -1048,6 +1048,40 @@ equivalents and the 20 Asian titles. New
 R208 battery audit; census 124. Next:
 the DMG-only sweep continues.
 
+R209 landed the NPC personae facts
+tables (DMG pp.114-115, PERSONAE OF
+NON-PLAYER CHARACTERS) - a seam with
+zero prior coverage. rules/npcpersonae.h
+(the grenade.h pattern): the classed NPC
+ability dice adjustments (cleric wisdom
++2; the as-fighter ranger and paladin
+rows; magic-user, thief; the as-thief
+assassin adding strength +1; the druid
+12/14, ranger 12, paladin 17,
+illusionist 15/15 and monk 12/15/15
+minimums; the ability-limit clamp), the
+three occupations (laborer strength +1
+to +3, the level-0 mercenary with
+strength +1, constitution +3 and 4
+minimum hit points, the merchant 12/12
+intelligence/charisma minimums), the DMG
+demi-human adjustment table (dwarf, elf,
+gnome, halfling - its own table, not the
+PHB one), and the FACTS TABLES: alignment
+d10, possessions d10, appearance age and
+general d10s, sanity d10 with the
+insane/maniacal asterisk reroll rule,
+plus the p.11 die rules (general
+characters read any 1 as a 3 and any 6
+as a 4; special characters +1 per die
+under 6) and the three-tendency floor.
+The compilation annotations not in the
+print (wealth multipliers, sanity
+reaction percents) excluded. New R209
+battery audit; census 125. Next: the
+DMG-only sweep continues - the personae
+traits tables.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
