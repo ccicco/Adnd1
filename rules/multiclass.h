@@ -46,13 +46,17 @@ namespace rules {
 
 // ---- the combo alphabet (class bits) ----
 
-static const int MC_FIGHTER = 1;
-static const int MC_MAGIC_USER = 2;
-static const int MC_CLERIC = 4;
-static const int MC_THIEF = 8;
-static const int MC_ILLUSIONIST = 16;
-static const int MC_RANGER = 32;
-static const int MC_ASSASSIN = 64;
+// R233: a named enum (was static const ints) so
+// the audit_eval seam reads the same constants.
+enum McBits {
+    MC_FIGHTER = 1,
+    MC_MAGIC_USER = 2,
+    MC_CLERIC = 4,
+    MC_THIEF = 8,
+    MC_ILLUSIONIST = 16,
+    MC_RANGER = 32,
+    MC_ASSASSIN = 64,
+};
 
 // ---- the per-race combination table ----
 // Race order: human, dwarf, elf, gnome,
@@ -199,5 +203,65 @@ inline bool dualClassPrimeGate(int oldPrime,
 // restrictions to its own armor and weapons).
 // (Recorded as comments: engine rounds
 // consume these mechanics.)
+
+// ---- the R233 engine seam (plain ints, pure
+// expressions - the R230 evaluable-subset
+// convention: no while, no mutation, no bitwise
+// ops; the modulo ladder reads each bit) ----
+
+// The combo class count (the set-bit count).
+inline int multiClassCount(int mask) {
+    return (mask % 2 == 1 ? 1 : 0)
+         + (mask % 4 >= 2 ? 1 : 0)
+         + (mask % 8 >= 4 ? 1 : 0)
+         + (mask % 16 >= 8 ? 1 : 0)
+         + (mask % 32 >= 16 ? 1 : 0)
+         + (mask % 64 >= 32 ? 1 : 0)
+         + (mask % 128 >= 64 ? 1 : 0);
+}
+
+// The i-th set bit of the mask, low to high (the
+// fighter bit first - the primary-class order).
+// The below-counts c1..c6 say how many set bits
+// sit below each bit; a bit fires as the i-th
+// when its below-count equals i.
+inline int multiClassBitAt(int mask, int i) {
+    int c1 = mask % 2;
+    int c2 = c1 + (mask % 4 >= 2 ? 1 : 0);
+    int c3 = c2 + (mask % 8 >= 4 ? 1 : 0);
+    int c4 = c3 + (mask % 16 >= 8 ? 1 : 0);
+    int c5 = c4 + (mask % 32 >= 16 ? 1 : 0);
+    int c6 = c5 + (mask % 64 >= 32 ? 1 : 0);
+    return (mask % 2 == 1 && i == 0 ? 1 : 0)
+         + (mask % 4 >= 2 && i == c1 ? 2 : 0)
+         + (mask % 8 >= 4 && i == c2 ? 4 : 0)
+         + (mask % 16 >= 8 && i == c3 ? 8 : 0)
+         + (mask % 32 >= 16 && i == c4 ? 16 : 0)
+         + (mask % 64 >= 32 && i == c5 ? 32 : 0)
+         + (mask % 128 >= 64 && i == c6 ? 64 : 0);
+}
+
+// The runtime base class (CLASS_*) of a bit: the
+// illusionist rides the magic-user tables, the
+// ranger the fighter tables, the assassin the
+// thief tables (the R230 runtime-base convention).
+inline int multiClassBaseOfBit(int bit) {
+    return bit == MC_MAGIC_USER ? 1
+         : bit == MC_CLERIC ? 2
+         : bit == MC_THIEF ? 3
+         : bit == MC_ILLUSIONIST ? 1
+         : bit == MC_ASSASSIN ? 3
+         : 0;
+}
+
+// The registry subclass of a bit (-1 = a plain
+// base class; plain ints - the SUB_* values in the
+// subclasses.h order).
+inline int multiClassSubOfBit(int bit) {
+    return bit == MC_ILLUSIONIST ? 3
+         : bit == MC_RANGER ? 1
+         : bit == MC_ASSASSIN ? 4
+         : -1;
+}
 
 } // namespace rules

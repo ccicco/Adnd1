@@ -390,11 +390,16 @@ enum CreationStage : int {
     CR_RACE,    // R154: the racial stock stage
     CR_CLASS,
     CR_SUBCLASS,   // R230: the subclass offer stage
+    CR_MULTI,   // R233: the multi-class offer stage
     CR_NAME,
 };
 
 struct CreationState {
     CreationStage stage = CR_ROLL;
+
+    // R233: the multi-class combo pick (0 = the
+    // single-class path; else the R185 combo mask)
+    int multiMask = 0;
 
     rules::Rng  creationRng{1};
     rules::Dice creationDice{creationRng};
@@ -644,6 +649,128 @@ struct CreationState {
             c.armor.id = items::ARMOR_NONE_EQUIPPED;
             c.shield = false;
         }
+        return c;
+    }
+
+    // R233: the multi-class offer - the race printed
+    // combos (the R185 table)
+    int multiOfferCount() const {
+        return rules::multiClassComboCount(racePick);
+    }
+
+    int multiOfferAt(int row) const {
+        return rules::multiClassCombo(racePick, row);
+    }
+
+    // combo eligibility: every class of the combo
+    // passes its own gate (the class minimum on the
+    // ADJUSTED prime + Race Table I via classEligible;
+    // the subclass bits their R180 minimums and
+    // player-eligibility), plus the half-elf
+    // multi-class cleric WIS 13 (vs the single 9)
+    bool multiEligible(int mask) const {
+        if (!rules::multiClassAllowed(racePick, mask))
+            return false;
+        int n = rules::multiClassCount(mask);
+        for (int i = 0; i < n; ++i) {
+            int b = rules::multiClassBitAt(mask, i);
+            int base = rules::multiClassBaseOfBit(b);
+            int sub = rules::multiClassSubOfBit(b);
+            if (!classEligible(base)) return false;
+            if (sub >= 0 &&
+                !rules::subclassMeetsAbilityMin(sub,
+                        raceAdjusted()))
+                return false;
+            if (sub >= 0 &&
+                !rules::subclassPlayerAllowed(
+                    sub, (rules::CharRace)racePick))
+                return false;
+        }
+        if ((mask & rules::MC_CLERIC) != 0 &&
+            racePick == 4 &&
+            raceAdjusted().wis <
+                rules::halfelfClericWisMin())
+            return false;
+        return true;
+    }
+
+    // R233: finalize as a multi-class combo. The member
+    // rides the PRIMARY class - the first set bit (the
+    // fighter bit when the combo carries it - the best
+    // melee class on the swing - the JUDGMENT); the
+    // hit dice roll
+    // every class die, each with its con adjustment,
+    // and read the quotient (the R185 rule); the kit
+    // rides the MOST RESTRICTIVE armor allowance and
+    // the all-allow shield gate (the JUDGMENT)
+    Character makeMultiMember(int mask) {
+        int b0 = rules::multiClassBitAt(mask, 0);
+        int base0 = rules::multiClassBaseOfBit(b0);
+        int sub0 = rules::multiClassSubOfBit(b0);
+        Character c = sub0 >= 0
+            ? makeSubclassMember(sub0)
+            : makeMember(base0);
+        c.multiMask = mask;
+        c.subclass = sub0;   // every printed combo
+                             // rides a base-class
+                             // primary (the subclass
+                             // bits sit high); the
+                             // branch keeps a future
+                             // combo honest
+
+        // hit points: every class die, each with its
+        // con adjustment, quotient by the class count
+        // (the R185 pin); the per-die floor is 1
+        int n = rules::multiClassCount(mask);
+        int sum = 0;
+        for (int i = 0; i < n; ++i) {
+            int b = rules::multiClassBitAt(mask, i);
+            int base = rules::multiClassBaseOfBit(b);
+            int sub = rules::multiClassSubOfBit(b);
+            int conCls = sub >= 0
+                ? rules::subclassConClass(sub) : base;
+            int conAdj = rules::conHPAdjustment(
+                conCls, c.abilities.con);
+            int die = sub >= 0
+                ? rules::subclassHitDie(sub)
+                : rules::CLASS_HIT_DIE[base];
+            int d = (int)creationDice.roll(
+                1, (uint32_t)die, 0) + conAdj;
+            if (d < 1) d = 1;
+            sum += d;
+        }
+        int hp = rules::multiclassHpQuotient(sum, n);
+        if (hp < 1) hp = 1;
+        c.hp = c.maxHp = hp;
+
+        // the kit: the most restrictive armor among
+        // the combo (none < leather < chain < plate),
+        // the shield only when every class allows it
+        int w = 3;   // start permissive
+        bool sh = true;
+        for (int i = 0; i < n; ++i) {
+            int base = rules::multiClassBaseOfBit(
+                rules::multiClassBitAt(mask, i));
+            int bw = 3;
+            if (!rules::armorAllowed(base,
+                                     rules::ARMOR_PLATE)) {
+                if (rules::armorAllowed(base,
+                                        rules::ARMOR_CHAIN))
+                    bw = 2;
+                else if (rules::armorAllowed(
+                             base, rules::ARMOR_LEATHER))
+                    bw = 1;
+                else
+                    bw = 0;
+            }
+            if (bw < w) w = bw;
+            if (!rules::shieldAllowed(base)) sh = false;
+        }
+        c.armor.id = w == 3 ? items::ARMOR_PLATE
+                    : w == 2 ? items::ARMOR_CHAIN_MAIL
+                    : w == 1 ? items::ARMOR_LEATHER
+                             : items::ARMOR_NONE_EQUIPPED;
+        c.shield = sh;
         return c;
     }
 };

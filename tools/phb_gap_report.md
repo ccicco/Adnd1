@@ -710,6 +710,39 @@ arc boxes:
       and turn-undead numbers, stay data (the
       R187 records) - a combat-form command
       round owns them. Census 148.
-- [ ] multi-class and dual-class engine
-      (R185 data + comments, no runtime).
+- [x] R233 the multi-class engine - WIRED: the
+      R185 combo table is playable - the [M]
+      creation stage (the race printed combos,
+      the eligibility gates: every class passes
+      its own minimum on the ADJUSTED prime and
+      Race Table I, the subclass bits their R180
+      minimums and player-eligibility, the
+      half-elf multi-class cleric WIS 13), the
+      member factory (every class die rolls with
+      its con adjustment and reads the quotient
+      - the R185 rule; the kit rides the most
+      restrictive armor allowance and the
+      all-allow shield gate - the JUDGMENT); the
+      member rides the PRIMARY class - the first
+      set bit (the fighter bit when the combo
+      carries it - the best melee class on the
+      swing - the JUDGMENT; every printed combo
+      rides a base-class primary); the ranger,
+      assassin and illusionist bits roll their
+      R231 subclass dice on promotion; the
+      requisites average
+      (PHB p.20), the combo earns no
+      single-class bonus, the promotions queue
+      on the primary ladder and roll every
+      UNSTALLED class die (a class at its name
+      cap contributes none - the R185 stalled
+      pin), reading the quotient; the
+      v1-compatible multi save line; the R233
+      battery audit. Simplifications recorded:
+      the roster display shows the primary class
+      name; the caster slots fill from the
+      primary caster (no slot-summing).
+      Census 150.
+- [ ] dual-class engine (the human class-change
+      runtime; R185 comments, no engine yet).
 

@@ -208,10 +208,17 @@ static void creationKeyDown(WPARAM wp) {
                     if (cr.classEligible(idx)) {
                         cr.classPick = idx;
                         cr.subPick = -1;   // plain until chosen
+                        cr.multiMask = 0;  // R233: single path
                         cr.stage = CR_SUBCLASS;   // R230
                     }
                     break;
                 }
+                case 'M':   // R233: the combos
+                    if (rules::multiClassPossible(cr.racePick)) {
+                        cr.multiMask = 0;
+                        cr.stage = CR_MULTI;
+                    }
+                    break;
                 case VK_ESCAPE:
                     cr.stage = CR_RACE;   // back to race choice
                     break;
@@ -233,6 +240,28 @@ static void creationKeyDown(WPARAM wp) {
                     break;
                 }
                 case VK_ESCAPE:
+                    cr.stage = CR_CLASS;  // back to the class
+                    break;
+            }
+            break;
+
+        case CR_MULTI:   // R233: the multi-class offer
+            switch (wp) {
+                case '1': case '2': case '3':
+                case '4': case '5': case '6':
+                case '7': case '8': {
+                    int row = (int)(wp - '1');
+                    if (row < cr.multiOfferCount()) {
+                        int mask = cr.multiOfferAt(row);
+                        if (cr.multiEligible(mask)) {
+                            cr.multiMask = mask;
+                            cr.stage = CR_NAME;
+                        }
+                    }
+                    break;
+                }
+                case VK_ESCAPE:
+                    cr.multiMask = 0;
                     cr.stage = CR_CLASS;  // back to the class
                     break;
             }
@@ -285,7 +314,9 @@ static void creationConfirmName() {
         }
     }
 
-    Character c = cr.subPick >= 0
+    Character c = cr.multiMask != 0
+        ? cr.makeMultiMember(cr.multiMask)
+        : cr.subPick >= 0
         ? cr.makeSubclassMember(cr.subPick)
         : cr.makeMember(cr.classPick);
     c.name = n;
@@ -813,6 +844,10 @@ static void drawCreate(HDC dc, const AppState& s) {
             TextOutA(dc, 20, VIEW_H - 60,
                      "[1-4] choose class   [esc] back to race",
                      39);
+            if (rules::multiClassPossible(cr.racePick))
+                TextOutA(dc, 20, VIEW_H - 38,
+                         "[M] the multi-class combinations",
+                         32);
             break;
         }
 
@@ -845,6 +880,43 @@ static void drawCreate(HDC dc, const AppState& s) {
             SetTextColor(dc, RGB(190, 175, 140));
             TextOutA(dc, 20, VIEW_H - 60,
                      "[1-4] choose   [esc] back to class",
+                     35);
+            break;
+        }
+
+        case CR_MULTI: {   // R233: the combo offer
+            TextOutA(dc, 20, py, "CHOOSE A COMBINATION",
+                     20);
+            py += 30;
+            for (int r = 0;
+                 r < cr.multiOfferCount(); ++r) {
+                int mask = cr.multiOfferAt(r);
+                bool ok = cr.multiEligible(mask);
+                char mrow[96];
+                int n = rules::multiClassCount(mask);
+                std::string cn;
+                for (int i = 0; i < n; ++i) {
+                    int b = rules::multiClassBitAt(mask, i);
+                    int sub = rules::multiClassSubOfBit(b);
+                    if (i > 0) cn += "/";
+                    cn += sub >= 0
+                        ? rules::subclassDef(sub).name
+                        : CLASS_NAMES[
+                            rules::multiClassBaseOfBit(b)];
+                }
+                snprintf(mrow, sizeof mrow,
+                         "  [%d] %-18s  %s",
+                         r + 1, cn.c_str(),
+                         ok ? "" : "- not qualified");
+                SetTextColor(dc, ok ? RGB(210, 195, 165)
+                                    : RGB(110, 105, 95));
+                TextOutA(dc, 40, py, mrow,
+                         (int)strlen(mrow));
+                py += 26;
+            }
+            SetTextColor(dc, RGB(190, 175, 140));
+            TextOutA(dc, 20, VIEW_H - 60,
+                     "[1-8] choose   [esc] back to class",
                      35);
             break;
         }

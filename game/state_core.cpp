@@ -200,6 +200,10 @@ bool AppState::saveGame(){
             // never-used)
             if (c.layHandsDay >= 0)
                 fprintf(f, "layhands %d\n", c.layHandsDay);
+            // R233: the multi-class combo (only when set -
+            // v1 saves carry no line and load as single)
+            if (c.multiMask != 0)
+                fprintf(f, "multi %d\n", c.multiMask);
             // R56: the magic-shield enchant (nonzero only -
             // v1 saves carry no line and load as 0)
             if (c.shieldPlus > 0)
@@ -613,6 +617,15 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.layHandsDay = lh;
+                } else if (strcmp(tag, "multi") == 0) {
+                    int mm = 0;
+                    if (fscanf(f, "%d", &mm) != 1 ||
+                        mm < 0 || mm > 127) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (multi).");
+                        return false;
+                    }
+                    c.multiMask = mm;
                 } else if (strcmp(tag, "age") == 0) {
                 int ag = 0;
                 if (fscanf(f, "%d", &ag) != 1 ||

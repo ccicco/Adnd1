@@ -30,6 +30,7 @@
 #include "../rules/character.h"
 #include "../rules/classes.h"
 #include "../rules/subclassgates.h"  // R231: the subclass leveling seam
+#include "../rules/multiclass.h"  // R233: the multi-class engine
 #include "../items/items.h"
 #include "../ai/actor.h"
 #include "../dm/dm.h"
@@ -161,6 +162,10 @@ struct Character {
     // R232: the lay-on-hands career day (-1 = never used;
     // once per career day - the rest/camp day boundary)
     int  layHandsDay = -1;
+    // R233: the multi-class combo (0 = single-classed;
+    // else the R185 combo mask; the member rides the
+    // primary class - the first set bit)
+    int  multiMask = 0;
     int  xp   = 0;
     int  level = 1;
     int  hp = 0, maxHp = 0;
@@ -218,6 +223,15 @@ struct Character {
         a.isCharacter = true;
         a.classIndex  = classIndex;
         a.subclass    = subclass;   // R232: the specials hooks
+        // R233: a multi-class member rides the primary
+        // class - the FIRST set bit (the fighter bit
+        // when the combo carries it - the best melee
+        // class on the swing - the JUDGMENT)
+        if (multiMask != 0) {
+            int b = rules::multiClassBitAt(multiMask, 0);
+            a.classIndex = rules::multiClassBaseOfBit(b);
+            a.subclass   = rules::multiClassSubOfBit(b);
+        }
         a.level       = level;
         a.str    = abilities.str;
         a.dex    = abilities.dex;
@@ -428,12 +442,31 @@ struct Party {
                     c.classIndex));
             int pct = rules::primeRequisitePct(
                 (uint8_t)primeAb);
+            // R233: the multi-class requisites average
+            // (PHB p.20) - each class of the combo
+            // contributes its prime requisite
+            if (c.multiMask != 0) {
+                int n = rules::multiClassCount(c.multiMask);
+                int sum = 0;
+                for (int i = 0; i < n; ++i) {
+                    int b = rules::multiClassBitAt(
+                        c.multiMask, i);
+                    sum += c.abilities.get(
+                        (rules::Ability)rules::primeRequisite(
+                            rules::multiClassBaseOfBit(b)));
+                }
+                primeAb = sum / n;
+                pct = rules::primeRequisitePct(
+                    (uint8_t)primeAb);
+            }
             int gained = amount + (amount * pct) / 100;
             // R231: the printed subclass experience bonus
             // - +10% when the R180 rule is earned (the
             // PHB percentage convention); the illusionist,
             // assassin and monk print none
-            if (c.subclass >= 0 &&
+            // R233: the multi-class combo earns no
+            // single-class bonus (the JUDGMENT)
+            if (c.multiMask == 0 && c.subclass >= 0 &&
                 rules::subclassXpBonusEarned(c.subclass,
                                              c.abilities))
                 gained += amount / 10;
@@ -449,10 +482,29 @@ struct Party {
             // table and the effective level cap (Table II
             // with the footnote-8 gnome conditional); plain
             // members read the base-class table
+            // R233: a multi-class member queues on the
+            // primary class ladder (the first set bit)
             int cap = rules::CLASS_LEVEL_CAP[c.classIndex];
             int need = rules::xpForLevel(c.classIndex,
                                         c.level + 1);
-            if (c.subclass >= 0) {
+            if (c.multiMask != 0) {
+                int mb = rules::multiClassBitAt(
+                    c.multiMask, 0);
+                int msub = rules::multiClassSubOfBit(mb);
+                if (msub >= 0) {
+                    cap = rules::subclassLevelCapTotal(
+                        msub, (rules::CharRace)c.race,
+                        c.abilities.int_, c.abilities.dex);
+                    need = rules::subclassXpToAttain(
+                        msub, c.level + 1);
+                } else {
+                    cap = rules::CLASS_LEVEL_CAP[
+                        rules::multiClassBaseOfBit(mb)];
+                    need = rules::xpForLevel(
+                        rules::multiClassBaseOfBit(mb),
+                        c.level + 1);
+                }
+            } else if (c.subclass >= 0) {
                 cap = rules::subclassLevelCapTotal(
                     c.subclass, (rules::CharRace)c.race,
                     c.abilities.int_, c.abilities.dex);
@@ -494,10 +546,29 @@ struct Party {
             Character& c = members[i];
             // R231: the subclass stale check reads the
             // registry ladder
+            // R233: a multi-class member promotes on the
+            // primary class ladder (the first set bit)
             int cap = rules::CLASS_LEVEL_CAP[c.classIndex];
             int need = rules::xpForLevel(c.classIndex,
                                         c.level + 1);
-            if (c.subclass >= 0) {
+            if (c.multiMask != 0) {
+                int mb = rules::multiClassBitAt(
+                    c.multiMask, 0);
+                int msub = rules::multiClassSubOfBit(mb);
+                if (msub >= 0) {
+                    cap = rules::subclassLevelCapTotal(
+                        msub, (rules::CharRace)c.race,
+                        c.abilities.int_, c.abilities.dex);
+                    need = rules::subclassXpToAttain(
+                        msub, c.level + 1);
+                } else {
+                    cap = rules::CLASS_LEVEL_CAP[
+                        rules::multiClassBaseOfBit(mb)];
+                    need = rules::xpForLevel(
+                        rules::multiClassBaseOfBit(mb),
+                        c.level + 1);
+                }
+            } else if (c.subclass >= 0) {
                 cap = rules::subclassLevelCapTotal(
                     c.subclass, (rules::CharRace)c.race,
                     c.abilities.int_, c.abilities.dex);
@@ -514,7 +585,50 @@ struct Party {
             // R179 pins); the per-die floor is 1
             int conAdj;
             int die;
-            if (c.subclass >= 0) {
+            if (c.multiMask != 0) {
+                // R233: the multi-class promotion - every
+                // UNSTALLED class rolls its die (each with
+                // its con adjustment, the per-die floor 1),
+                // the quotient by the class count (the
+                // R185 rule); a class stalled at its name
+                // cap contributes no die
+                // (multiclassHitDieStalled - the R185 pin)
+                int n = rules::multiClassCount(c.multiMask);
+                int sum = 0;
+                for (int i = 0; i < n; ++i) {
+                    int b = rules::multiClassBitAt(
+                        c.multiMask, i);
+                    int base = rules::multiClassBaseOfBit(b);
+                    int sub = rules::multiClassSubOfBit(b);
+                    int conCls = sub >= 0
+                        ? rules::subclassConClass(sub) : base;
+                    int cAdj = rules::conHPAdjustment(
+                        conCls, c.abilities.con);
+                    int stop = sub >= 0
+                        ? rules::subclassLevelStop(sub)
+                        : rules::CLASS_LEVEL_CAP[base];
+                    if (rules::multiclassHitDieStalled(
+                            c.level, stop))
+                        continue;
+                    int d;
+                    if (sub >= 0 && c.level >
+                            rules::subclassFixedHpLevel(sub))
+                        d = rules::subclassHpBeyondFixed(sub)
+                            + cAdj;
+                    else if (sub >= 0)
+                        d = (int)dice.roll(1, (uint32_t)
+                            rules::subclassHitDie(sub), 0)
+                            + cAdj;
+                    else
+                        d = (int)dice.roll(1, (uint32_t)
+                            rules::CLASS_HIT_DIE[base], 0)
+                            + cAdj;
+                    if (d < 1) d = 1;
+                    sum += d;
+                }
+                die = rules::multiclassHpQuotient(sum, n);
+                if (die < 1) die = 1;
+            } else if (c.subclass >= 0) {
                 conAdj = rules::conHPAdjustment(
                     rules::subclassConClass(c.subclass),
                     c.abilities.con);
