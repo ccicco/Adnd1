@@ -158,6 +158,9 @@ struct Character {
     // R230: the registry subclass (rules::Subclass;
     // -1 = a plain class member; v1 saves load -1)
     int  subclass = -1;
+    // R232: the lay-on-hands career day (-1 = never used;
+    // once per career day - the rest/camp day boundary)
+    int  layHandsDay = -1;
     int  xp   = 0;
     int  level = 1;
     int  hp = 0, maxHp = 0;
@@ -214,6 +217,7 @@ struct Character {
         a.team        = 0;
         a.isCharacter = true;
         a.classIndex  = classIndex;
+        a.subclass    = subclass;   // R232: the specials hooks
         a.level       = level;
         a.str    = abilities.str;
         a.dex    = abilities.dex;

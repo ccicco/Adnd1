@@ -683,9 +683,33 @@ arc boxes:
       convention stands for plain members (the
       engine stops them at the name cap) and the
       henchman stays base-class. Census 147.
-- [ ] the per-subclass specials hooks (lay on
-      hands, giant-class bonus, the monk
-      unarmed ladder, backstab multipliers).
+- [x] R232 the per-subclass specials hooks -
+      WIRED: ai::Actor carries the registry
+      subclass (toActor copies it); the monk
+      reads the R181 open-hand ladder (the
+      attack rate and the Monks Table II damage;
+      the to-hit never modified by strength -
+      the R181 pin; the engine carries no
+      combat-form command, so the open hand is
+      the class signature and the staff rides
+      the pack - the JUDGMENT); the thief group
+      (thief and assassin) backstabs a
+      surprised foe in round one (+4 on the
+      die, the x2..x5 multiplier - the
+      surprise segment is the from-behind
+      reading, the JUDGMENT); the ranger adds
+      the giant-class damage bonus (+1 hp per
+      level vs the 11 listed creatures,
+      family-name matching the R184 caller
+      concern); the paladin lays on hands
+      (2 hp per level, once per career day,
+      the [F] town key, the most-wounded
+      member, the v1-compatible layhands save
+      line). The monk stun/kill and quivering
+      palm, and the ranger/paladin surprise
+      and turn-undead numbers, stay data (the
+      R187 records) - a combat-form command
+      round owns them. Census 148.
 - [ ] multi-class and dual-class engine
       (R185 data + comments, no runtime).
 

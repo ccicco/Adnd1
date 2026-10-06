@@ -1436,6 +1436,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.townRaiseDead();
                         break;
 
+                    // R232: the paladin touch
+                    case 'F':
+                    case 'f':
+                        g_app.townLayOnHands();
+                        break;
+
                     // R85: the pack commands
                     case 'E':
                     case 'e':

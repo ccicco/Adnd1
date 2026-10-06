@@ -70,7 +70,8 @@ if g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
   rules/saves.cpp rules/turn.cpp rules/races.cpp \
   dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \
   dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \
-  abilities/abilities.cpp items/items.cpp regtest.cpp \
+  abilities/abilities.cpp items/items.cpp ai/actor.cpp \
+  spelleffects/spelleffects.cpp regtest.cpp \
   -o regtest -L"$PREFIX/lib" -llua5.4 && ./regtest | tee "$batfile"; then
   [ "${PIPESTATUS[0]}" = 0 ] || fail=1
 else

@@ -62,6 +62,10 @@
 #include "actor.h"
 
 #include "../dm/encounters.h"   // R147: dm::NpcRace ints
+#include "../rules/subclasses.h"  // R232: the subclass ids
+#include "../rules/attacksround.h"  // R232: the monk ladder
+#include "../rules/subclassspecials.h"  // R232: backstab
+#include "../rules/palrangerspells.h"  // R232: the giant-class roster
 
 #include <algorithm>
 #include <cstdio>
@@ -89,6 +93,9 @@ int Actor::armorClass() const {
 
 int Actor::hitAdjustment(const Actor& defender) const {
     if (isCharacter) {
+        // R232: the monk open hand - the to-hit is never
+        // modified by strength bonuses (the R181 pin)
+        if (subclass == rules::SUB_MONK) return 0;
         // R203: the per-weapon p.38 row keys on the
         // defender's apparent armor AC - the armor
         // worn with shield; the magic/DEX-shifted effective
@@ -109,8 +116,19 @@ int Actor::toHit(const Actor& defender) const {
 }
 
 int Actor::attacksPerRound() const {
-    if (isCharacter)
+    if (isCharacter) {
+        // R232: the monk open-hand attacks - the R181
+        // ladder (Monks Table II); the engine round model
+        // carries two swing slots, so this returns the
+        // heavy round of the printed cycle (the turn.cpp
+        // convention)
+        if (subclass == rules::SUB_MONK) {
+            rules::AtkRate r =
+                rules::monkOpenHandAttacks(level);
+            return (r.attacks >= 2) ? 2 : 1;
+        }
         return rules::meleeAttacksPerRound(classIndex, level);
+    }
     return monsterAttacks;
 }
 
@@ -228,6 +246,36 @@ bool Encounter::checkTeamMorale(std::vector<Actor>& team, int otherTeamAlive) {
     return dm::moraleCheck(m_dice, ms, dm::MORALE_ON_50PCT_LOSS);
 }
 
+// R232: family-name matching for the giant-class roster
+
+// R232: the monk open-hand damage - the Monks Table II
+// row span, rolled in resolveMelee on the encounter
+// dice. ai::Actor carries no dice member of its own
+// (the R232 helper invented one); the dice live on
+// the Encounter (the R232b fix).
+// (the R184 caller concern): a lowercase exact match, or
+// a roster word as the trailing word of the name -
+// "hill giant" ends with " giant", "ogre mage" is exact.
+// A word-boundary check (" ettin", not "bettin") guards
+// the suffix.
+static bool giantClassFamilyMatch(const std::string& name) {
+    std::string low;
+    for (char ch : name)
+        low += (ch >= 'A' && ch <= 'Z')
+                ? (char)(ch + 32) : ch;
+    for (int i = 0; i < rules::rangerGiantClassCount();
+         ++i) {
+        std::string w = rules::rangerGiantClassName(i);
+        if (low == w) return true;
+        if (low.size() > w.size() + 1 &&
+            low[low.size() - w.size() - 1] == ' ' &&
+            low.compare(low.size() - w.size(), w.size(), w)
+                == 0)
+            return true;
+    }
+    return false;
+}
+
 int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
     if (!attacker.canAct() || !defender.alive()) return 0;
 
@@ -240,6 +288,15 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
 
     int toHit = attacker.toHit(defender);
     int adj   = attacker.hitAdjustment(defender);
+    // R232: backstab - a thief-group character striking a
+    // surprised foe (round one, the monster side surprised)
+    // strikes from behind: +4 on the die (the R187 pin).
+    // The engine has no facing; the surprise segment is
+    // the from-behind reading - the JUDGMENT.
+    bool backstab = attacker.isCharacter
+        && attacker.classIndex == 3
+        && m_round == 1 && m_monsSurprised > 0;
+    if (backstab) adj += rules::backstabHitBonusDie();
     if (!rules::attackRollHits(m_dice, toHit, adj)) {
         logLine(attacker.name + " misses " + defender.name);
         return 0;
@@ -252,7 +309,32 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
             // R36: hurled the weapon earlier - bare fists (1d2,
             // no weapon dice or plus; logged simplification of
             // the PHB unarmed rules)
-            dmg = (int)m_dice.roll(1, 2, 0);
+            // R232: the monk reads the R181 open-hand ladder
+            // (Monks Table II) instead of the fist die
+            if (attacker.subclass == rules::SUB_MONK) {
+                const rules::MonkLadderRow& mr =
+                    rules::monkLadderRow(attacker.level);
+                dmg = (int)m_dice.roll(
+                    1, (uint32_t)(mr.dmgHi - mr.dmgLo + 1),
+                    0) + mr.dmgLo - 1;
+            } else {
+                dmg = (int)m_dice.roll(1, 2, 0);
+            }
+        } else if (attacker.subclass == rules::SUB_MONK) {
+            // R232: the monk fights open-handed - the ladder
+            // damage replaces the weapon dice. The engine
+            // carries no combat-form command; the open hand
+            // is the class signature, the staff rides the
+            // pack (the JUDGMENT). The ladder row span
+            // rolls on the encounter dice - the same
+            // roll as the bare-fist path (the R232b fix)
+            {
+                const rules::MonkLadderRow& mr =
+                    rules::monkLadderRow(attacker.level);
+                dmg = (int)m_dice.roll(
+                    1, (uint32_t)(mr.dmgHi - mr.dmgLo + 1),
+                    0) + mr.dmgLo - 1;
+            }
         } else {
             const items::WeaponDef& w =
                 items::weapon(attacker.weapon.id);
@@ -262,11 +344,23 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
                 large ? w.lCount : w.smCount,
                 large ? w.lSides : w.smSides, 0);
             dmg += attacker.weapon.plus;
+            // R232: the ranger giant-class damage bonus -
+            // +1 hp per level vs the 11 listed creatures
+            // (family-name matching, the R184 caller
+            // concern)
+            if (attacker.subclass == rules::SUB_RANGER &&
+                giantClassFamilyMatch(defender.name))
+                dmg += rules::rangerGiantClassBonus(
+                    attacker.level);
         }
     } else {
         dmg = (int)m_dice.roll((uint32_t)attacker.monsterDamageCount,
                                (uint32_t)attacker.monsterDamageSides, 0);
     }
+    // R232: the backstab multiplier - the x2..x5 ladder by
+    // level (the R187 pin)
+    if (backstab)
+        dmg *= rules::backstabMultiplier(attacker.level);
     if (dmg < 1) dmg = 1;
 
     defender.hp -= dmg;
@@ -869,6 +963,9 @@ int Encounter::stepRound() {
                                std::to_string(pSurp) + " segments)!");
         if (mSurp > 0) logLine("The monsters are surprised (" +
                                std::to_string(mSurp) + " segments)!");
+        // R232: the backstab gate reads the monster-side
+        // surprise segments
+        m_monsSurprised = mSurp;
     }
 
     // initiative: d6 per side (R7)

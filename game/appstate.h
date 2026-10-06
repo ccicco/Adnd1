@@ -1001,6 +1001,10 @@ struct AppState {
     // R83: bound to the [R] town key.
     void townRaiseDead();
 
+    // R232: lay on hands - the paladin heals 2 hp per level,
+    // once per day (the [F] town key)
+    void townLayOnHands();
+
     // R85: the pack commands - [E] equips the best of every
     // member's pack (old kit returns to the pack as a keepsake),
     // [P] peddles the pack (sale-value items only; keepsakes

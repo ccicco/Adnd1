@@ -1282,6 +1282,58 @@ void AppState::townRaiseDead(){
         }
     }
 
+// ---- R232: lay on hands ----
+// The paladin heals 2 hp per level, once per day (the
+// career-day boundary = the rest/camp convention); the
+// target is the most-wounded living member.
+void AppState::townLayOnHands(){
+        if (mode != MODE_TOWN) return;
+        // the first living paladin
+        int pi = -1;
+        for (int i = 0; i < (int)party.members.size(); ++i) {
+            const Character& p = party.members[i];
+            if (p.hp > 0 && p.subclass == rules::SUB_PALADIN) {
+                pi = i;
+                break;
+            }
+        }
+        if (pi < 0) {
+            log.add("No paladin walks with the company.");
+            return;
+        }
+        Character& pal = party.members[pi];
+        if (pal.layHandsDay == party.careerDays) {
+            log.add(pal.name + " has already laid on hands "
+                    "today.");
+            return;
+        }
+        // the most-wounded living member
+        int ti = -1, worst = 0;
+        for (int i = 0; i < (int)party.members.size(); ++i) {
+            const Character& m = party.members[i];
+            if (m.hp <= 0 || m.hp >= m.maxHp) continue;
+            int missing = m.maxHp - m.hp;
+            if (missing > worst) { worst = missing; ti = i; }
+        }
+        if (ti < 0) {
+            log.add("The company is unhurt.");
+            return;
+        }
+        Character& tgt = party.members[ti];
+        int heal = 2 * pal.level;
+        if (heal > tgt.maxHp - tgt.hp)
+            heal = tgt.maxHp - tgt.hp;
+        tgt.hp += heal;
+        pal.layHandsDay = party.careerDays;
+        char buf[96];
+        snprintf(buf, sizeof buf,
+                 "%s lays on hands - %s regains %d hp "
+                 "(%d/%d).",
+                 pal.name.c_str(), tgt.name.c_str(), heal,
+                 tgt.hp, tgt.maxHp);
+        log.add(buf);
+    }
+
 // ---- R81: study the carried scrolls ----
 void AppState::townStudyScrolls(){
         if (mode != MODE_TOWN) return;

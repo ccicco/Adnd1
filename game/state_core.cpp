@@ -195,6 +195,11 @@ bool AppState::saveGame(){
             // v1 saves carry no line and load as none)
             if (c.subclass != -1)
                 fprintf(f, "subclass %d\n", c.subclass);
+            // R232: the lay-on-hands career day (only when
+            // used - v1 saves carry no line and load as
+            // never-used)
+            if (c.layHandsDay >= 0)
+                fprintf(f, "layhands %d\n", c.layHandsDay);
             // R56: the magic-shield enchant (nonzero only -
             // v1 saves carry no line and load as 0)
             if (c.shieldPlus > 0)
@@ -599,6 +604,15 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.subclass = sb;
+                } else if (strcmp(tag, "layhands") == 0) {
+                    int lh = -1;
+                    if (fscanf(f, "%d", &lh) != 1 ||
+                        lh < 0 || lh > 2000000) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (layhands).");
+                        return false;
+                    }
+                    c.layHandsDay = lh;
                 } else if (strcmp(tag, "age") == 0) {
                 int ag = 0;
                 if (fscanf(f, "%d", &ag) != 1 ||

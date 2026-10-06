@@ -118,6 +118,9 @@ struct Actor {
     bool nonIntelligent = false;
     // character path
     int  classIndex = 0;           // CharClass index
+    // R232: the registry subclass (rules::Subclass; -1 = a
+    // plain class member) - the specials hooks read it
+    int  subclass = -1;
     int  level      = 1;
     uint8_t str = 10, dex = 10, con = 10, intel = 10, wis = 10, cha = 10;
     rules::ExceptionalStrength exStr{};
@@ -459,6 +462,7 @@ private:
     rules::Dice m_dice;
     std::vector<EncounterLogLine> m_log;
     int m_round = 0;
+    int m_monsSurprised = 0;   // R232: monster-side surprise segments (round 1)
 
     std::function<int(const Actor&, const std::vector<Actor>&)>
         m_targetHook;                       // R21
