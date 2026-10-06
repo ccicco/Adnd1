@@ -1572,6 +1572,38 @@ type die rolls, upload lines ~9480-9520,
 DMG p.125-126), or the first un-pinned
 III.A-H surrounding prose seam.
 
+R221 landed the III.A potions prose pins
+(DMG pp.125-126, upload lines ~9480-9520)
+- the three footnotes that frame the
+III.A POTIONS table. rules/potions.h
+(the grenade.h pattern), keyed to the 35
+die bands of the engine III.A table in
+kPotions order: the * control potions
+(Animal Control, Dragon Control, Giant
+Control, Giant Strength, Human Control,
+Undead Control - effectiveness on the
+type of creature controlled must be
+determined by die roll; consult the item
+explanation); the ** DM-misleading potions
+(Delusion, Poison - the DM must mislead
+the holder so as to convince him the
+potion is not harmful); the (F)
+fighter-only potions (Giant Strength,
+Heroism, Invulnerability, Super-Heroism).
+JUDGMENTS: Plant Control prints with NO
+star (unlike every other control potion)
+and is pinned control-less as printed;
+Giant Strength prints BOTH * and (F). The
+row VALUES and dice-band continuity were
+already pinned by the R122 line-diff audit
+(magicTablePin), so this round pins only
+the footnote flags and re-pins the band
+edges. New R221 battery audit; census 137.
+Next: R222 - the III.B scrolls footnotes
+and prose (DMG pp.126-127, upload lines
+~9525+), or the first un-pinned III.A-H
+surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
