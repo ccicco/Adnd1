@@ -134,9 +134,26 @@ if git status --porcelain | grep -q '^??'; then
   # truncated splice with nothing else). Run the splice twice,
   # or delete the script if abandoning the round.
   if git diff --quiet && git diff --cached --quiet; then
-    echo "HYGIENE FAIL: untracked file(s) present but NO tracked file modified"
-    echo "  - did the splice run? (the 7a86ee7 lesson)"
-    fail=1
+    # R207c: the tool-only round shape - every untracked
+    # file a plain tools/*.py, never a splice script, with
+    # no tracked modification - is a tool delivery, not
+    # the 7a86ee7 never-ran-splice shape
+    tools_only=1
+    for f in $(git status --porcelain | grep '^??' | cut -c4-); do
+      case "$f" in
+        tools/*.py)
+          case "$f" in *splice*) tools_only=0 ;; esac
+          ;;
+        *) tools_only=0 ;;
+      esac
+    done
+    if [ "$tools_only" = 1 ]; then
+      echo "NOTE: tool-only round (R207c) - no splice expected, new tool(s) belong in this commit"
+    else
+      echo "HYGIENE FAIL: untracked file(s) present but NO tracked file modified"
+      echo "  - did the splice run? (the 7a86ee7 lesson)"
+      fail=1
+    fi
   fi
 fi
 
