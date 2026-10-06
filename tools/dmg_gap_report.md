@@ -1142,6 +1142,43 @@ DMG-only sweep continues - the special
 roles of the DM, hiring NPCs to cast
 spells, monsters and organization.
 
+R212 landed the NPC hire spell prices
+and the non-human troop control table
+(DMG pp.116-118) - a seam with zero
+prior coverage. rules/hirecost.h (the
+grenade.h pattern): the 40 cleric spell
+hire prices (the 18-row first table
+astral spell through earthquake plus
+the 22-row second table exorcise
+through true seeing - the upload OCR
+split names and costs into two lists;
+they pair by order, 22 and 22), each
+as base gold plus rate times a unit-
+selected quantity (flat, per person,
+per caster level, per recipient level,
+per person per caster level, per point
+of healing, base plus per question,
+base plus per caster level, base plus
+per recipient level - the restoration
+like-amount clause reads base 10000
+plus 1000 per recipient level); the
+travel x2 not-at-risk and x5-or-refuse
+at-risk factors, the 25% charm-opposite
+rule, the deliberate attack-spell and
+no-accompanying omissions, the
+interruption clause; and the USE OF
+NON-HUMAN TROOPS table (7 races x 3
+columns: no officers and weak leader,
+no officers and strong leader, officers
+and strong leader), the 25% friendly-
+humans fight chance, the weak-leader-
+plus-officers impossibility, the high-
+pay-is-weakness clause, and the demi-
+human master rule. New R212 battery
+audit; census 128. Next: the DMG-only
+sweep continues - construction, siege
+and the underworld.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
