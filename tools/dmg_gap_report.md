@@ -1651,6 +1651,35 @@ limited double-dagger rows, DMG p.127,
 upload lines ~9600-9640), or the next
 un-pinned III.A-H surrounding prose seam.
 
+R223 landed the III.C rings footnote pins
+(DMG p.127, upload lines ~9596-9623) - the
+two footnotes that frame the III.C RINGS
+table. rules/rings.h (the grenade.h
+pattern), keyed to the 24 die bands of the
+engine III.C table in kRings order: the
+double-dagger charge-limited rings (Djinni
+Summoning, Human Influence, Mammal
+Control, Multiple Wishes, Telekinesis,
+Three Wishes, Wizardry - these contain
+the most powerful magical abilities and
+may possess only a limited number of
+magical charges before being depleted,
+at the DM option) and the (M) ring
+(Wizardry: magic-user use only). JUDGMENT:
+Ring of Wizardry prints BOTH the
+double-dagger and the (M); both flags
+are set. The row VALUES were already
+pinned by the R122 line-diff audit; this
+round pins the footnote flags and the
+band edges. New R223 battery audit;
+census 139. Next: R224 - the III.D rods,
+staves and wands footnotes (the
+point-value asterisk, the class marks C/M/
+F/T/any and the charge notes, DMG
+pp.127-128, upload lines ~9625+), or the
+next un-pinned III.A-H surrounding prose
+seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
