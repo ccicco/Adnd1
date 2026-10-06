@@ -1680,6 +1680,38 @@ pp.127-128, upload lines ~9625+), or the
 next un-pinned III.A-H surrounding prose
 seam.
 
+R224 landed the III.D rods/staves/wands
+footnote pins (DMG pp.127-128, upload
+lines ~9625-9658) - the class-usable
+marks and the full-charges asterisk that
+frame the III.D RODS, STAVES, & WANDS
+table. rules/rodswands.h (the grenade.h
+pattern), keyed to the 30 die bands of the
+engine III.D table in kRods order: the (C)
+cleric-only, (M) magic-user-only, (F)
+fighter-only, (T) thief-only and (any)
+any-class marks (10 any rows, 10 cleric,
+14 magic-user, 2 fighter, 1 thief -
+Beguiling the only (T); Lordly Might the
+only (F); Smiting the (C, F); Absorption,
+Command, Striking and Fear the (C, M)
+rows; the staves Curing, the Magi, Power,
+the Serpent, Withering per the print),
+and the column-header asterisk: both the
+x.p. and g.p. values assume FULL charges
+are in the item. JUDGMENT: the (any) rows
+carry no individual class marks - the any
+flag and the four class flags are mutually
+exclusive per row, verified both ways in
+the audit. The row VALUES were already
+pinned by the R122 line-diff audit; this
+round pins the class marks and the band
+edges. New R224 battery audit; census 140.
+Next: R225 - the III.E miscellaneous magic
+table 1 class marks and footnotes (DMG
+p.128, upload lines ~9665+), or the next
+un-pinned III.A-H surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
