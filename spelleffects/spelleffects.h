@@ -80,6 +80,16 @@ struct TargetDesc {
     int saveClass   = 0;
     int saveLevel   = 1;
     int saveBonus   = 0;
+    // R227: the defender WIS - the Wisdom
+    // Table I magical defense adjustment
+    // rides the descriptor; resolveSpell
+    // folds spellSaveModWis(id, saveWis)
+    // into saveBonus (the WIS magic adj
+    // carrier the doc comment above
+    // reserved). Monsters keep the 10
+    // default - no adjustment (a
+    // character table).
+    uint8_t saveWis = 10;
     // R147: dwarf CON magic-save bonus (0 for everyone but
     // NPC-foe dwarves) and the matrix II.D non-intelligence
     // flag - applied by trySave / the ai save helper.

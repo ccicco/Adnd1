@@ -539,3 +539,53 @@ engine scope; the boxes flip per round. The
 ability-table divergences (the ranked list above)
 stay queued BEFORE the arc rounds - the live DEX
 and CON bugs first.
+
+## The wiring arc (OPENED R227 - the engine-call pass)
+
+The R179-R187 subclass layers and the DMG
+pin rounds landed DATA; the engine-call
+pass wires what has zero callers outside
+regtest. The founding read found: the
+Wisdom Table I magical defense adjustment
+unwired, the subclass registry playable by
+no character, the druid and illusionist
+rosters outside the SpellId enum, and the
+multi/dual-class layers data-only. The
+arc boxes:
+
+- [x] R227 the Wisdom Table I save wire - WIRED:
+      rules/wisdom.h gains the mental-form
+      gate seam wisMentalSaveAdj (the gated
+      ladder, flat 0 on non-mental forms);
+      spells::spellSaveModWis delegates to it
+      (it existed with zero callers); the
+      spelleffects TargetDesc gains saveWis
+      (10 default - monsters read no
+      adjustment, a character table);
+      resolveSpell folds the gate into
+      saveBonus - the field the TargetDesc
+      comment always reserved for the WIS
+      magic adj - so every spell save through
+      the chokepoint pays the ladder;
+      Actor::asTarget sets it for characters.
+      Charm person and charm monster are the
+      registry mental forms today; fear,
+      hypnosis, suggestion and phantasmal
+      forces ride the flag when their rows
+      arrive. Census 143.
+- [ ] R228 the druid and illusionist rosters
+      join the SpellId registry (139 spells,
+      rules/druidspells.h + illusionspells.h
+      are dead data today) - the largest item,
+      may split.
+- [ ] the subclass creation gates - no
+      character can yet BE a paladin, ranger,
+      druid, illusionist, assassin, monk or
+      bard (registry + gates + specials all
+      data-only).
+- [ ] the per-subclass specials hooks (lay on
+      hands, giant-class bonus, the monk
+      unarmed ladder, backstab multipliers).
+- [ ] multi-class and dual-class engine
+      (R185 data + comments, no runtime).
+

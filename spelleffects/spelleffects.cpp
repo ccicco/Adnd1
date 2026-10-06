@@ -147,7 +147,20 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
     int deathBudget = (id == spells::MU_DEATH_SPELL)
                           ? deathSpellBudget(casterLevel) : 0;
 
-    for (const TargetDesc& t : targets) {
+    for (TargetDesc t : targets) {
+        // R227: t is now a per-target copy:
+        // the Wisdom Table I magical defense
+        // adjustment (mental-form spells
+        // only; the WIS rides the descriptor)
+        // folds into saveBonus here - the
+        // field the TargetDesc comment
+        // reserves for it - so trySave pays
+        // it with every other caller-side
+        // modifier. The gate reads the spell
+        // id (charm person and charm monster
+        // are the registry mental forms
+        // today).
+        t.saveBonus += spells::spellSaveModWis(id, t.saveWis);
         TargetResult r;
 
         // magic resistance first (R6): blocks everything

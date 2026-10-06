@@ -129,6 +129,12 @@ spelleffects::TargetDesc Actor::asTarget() const {
         for (int i = 0; i < 4; ++i)
             t.saveAsLevels[i] = saveAsLevels[i];
     }
+    // R227: the defender WIS rides the
+    // descriptor - the Wisdom Table I
+    // magical defense adjustment on
+    // mental-form spell saves; monsters
+    // keep the 10 default (no adjustment).
+    t.saveWis = wis;
     t.magicResistPct = isCharacter ? 0 : magicResistPct;
     t.hitDice = hitDice;   // R82: Death Spell budgeting
     t.isUndead = undead;

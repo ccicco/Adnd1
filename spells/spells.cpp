@@ -322,8 +322,11 @@ bool spellIsMentalForm(SpellId id) {
 // else. The save rolls stay caller-assembled
 // (rules/saves.h); callers call this.
 int spellSaveModWis(SpellId id, uint8_t wis) {
-    if (!spellIsMentalForm(id)) return 0;
-    return rules::wisMagicalAttackAdj(wis);
+    // R227: delegates to the mental-form gate
+    // seam (rules/wisdom.h) - the same
+    // ladder, now wired into the spelleffects
+    // save chokepoint.
+    return rules::wisMentalSaveAdj(wis, spellIsMentalForm(id));
 }
 
 // ----------------------------------------------------------------------------

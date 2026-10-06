@@ -51,6 +51,25 @@ inline int wisMagicalAttackAdj(uint8_t wis) {
     return  4;   // 18
 }
 
+// R227: the mental-form gate - the Wisdom
+// Table I magical defense adjustment a
+// defender gets vs mental attack forms
+// involving will force (beguiling,
+// charming, fear, hypnosis, illusion,
+// mass charming, phantasmal forces,
+// possession, rulership, suggestion,
+// telepathic attack - the per-spell
+// registry flags ride
+// spells::spellIsMentalForm). 0 on
+// everything else. spells::spellSaveModWis
+// delegates here; the spelleffects save
+// chokepoint folds the result into the
+// target saveBonus.
+inline int wisMentalSaveAdj(uint8_t wis, bool mentalForm) {
+    if (!mentalForm) return 0;
+    return wisMagicalAttackAdj(wis);
+}
+
 // The Table I high-circle gates: the minimum
 // wisdom for use of the spell level (0 = no
 // printed minimum). The 6th needs Wis 17, the
