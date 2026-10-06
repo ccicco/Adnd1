@@ -1111,6 +1111,37 @@ audit; census 126. Next: the DMG-only sweep
 continues - the personae height and weight
 tables, the language determination.
 
+R211 landed the NPC height and weight
+tables and the language determination
+(DMG pp.115-116, the personae chapter
+tail) - a seam with zero prior coverage.
+rules/npcbody.h (the grenade.h pattern):
+the MALES and FEMALES height/weight
+tables (7 races: the averages, the under
+and over dice - the print range cells
+2-16 = 2d8, 4-40 = 4d10, 5-60 = 5d12,
+packed count*100+sides), the HEIGHT AND
+WEIGHT DETERMINATION percent bands (per
+race, both sexes: under/average/over
+edges for height and weight), and the
+RANDOM LANGUAGE DETERMINATION TABLE -
+100 faces, 55 kinds: brownie through
+xorn, the ten dragon faces, the eight
+giant faces (hill on 31-33), the three
+naga faces, 86-00 human foreign or other.
+GROUND TRUTH NOTE: the live compilation
+editorializes this seam (a Human NPC/PC
+row split with d20x10 entries citing
+OSRIC; half-orc male over-weight read as
+d20, human male over-weight as 5d6) - the
+book upload carries the print ranges and
+one human row, and is pinned (the
+R209/R210 exclusion rule). New R211
+battery audit; census 127. Next: the
+DMG-only sweep continues - the special
+roles of the DM, hiring NPCs to cast
+spells, monsters and organization.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
