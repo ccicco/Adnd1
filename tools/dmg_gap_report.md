@@ -1227,6 +1227,59 @@ the war machine fire tables, the siege
 attack values, and the construction
 defensive values (pp.108-110).
 
+R214 landed the war machine fire tables,
+the siege attack values, and the defensive
+values (DMG pp.108-110, the CONSTRUCTION &
+SIEGE tail) - a seam with zero prior
+coverage (the R157 grenade scatter and the
+R111 attack matrices are cross-links, not
+overlap). GROUND TRUTH NOTE: the upload OCR
+scrambles the crew column and interleaves
+the fire columns; the 1eonline compilation
+(seadow.htm) is the recovery source (the
+R209/R210 rule) and matches the upload cell
+values everywhere else - both sources agree
+on the attack matrix and the defensive
+tables. rules/siegefire.h (the grenade.h
+pattern): the six firing devices (field of
+fire 45/15/30/-/-/10 degrees, ranges in
+quarter-inch units, S-M and L damage edges,
+rate of fire in hundredths - the ballista
+1/4 to 1/2 at 2 to 4 crew, the ram and sow
+1/2 at 10 to 20), the crew rules (below
+minimum 50 percent, only the ballista
+doubles at max crew), the hit determination
+conventions (AC 0 targets, ballista AC 10,
+the movement, size, weather and direct-fire
+d20 modifiers), the trajectory and cover
+rules (flat ballista blocked, arched
+catapult fire over, unseen target = the
+grenade scatter, ballista fire impossible),
+the 22-row SIEGE ATTACK VALUES matrix in
+quarter-point units (Bigby fist 1/-/1/2-1/4
+per round through trebuchet missile
+8/-/5/3; the horn of blasting 18/6/8/4;
+dig earth 10; move earth 20; the
+per-caster-level fireball and lightning
+bolt with the wet-wood 50 percent clause;
+the earthquake dice rows 5-60/5-30; the sow
+screw clause), the 26-row CONSTRUCTION
+DEFENSIVE VALUES with the ranges (building
+wood 8-16, drawbridge 10-15, gate 8-12,
+palisade 6-12, tower round 40-80, tower
+square 30-50) and the barbican, supports,
+rampart and curtain-wall footnotes, the
+12-device MHP table (the ram catcher has no
+print value - pinned 0 with the note), and
+the additional attack forms (the mining
+breach 10 feet or 10 points, sapping per
+turn). New R214 battery audit; census 130.
+Next: the DMG-only sweep continues - the
+CONDUCTING THE GAME chapter (the dice
+control, the troublesome players, the
+campaign integration seams, DMG pp.110-112
+area, upload lines ~8560+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
