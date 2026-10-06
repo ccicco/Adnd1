@@ -483,16 +483,21 @@ int main() {
 
     // ---- R80: spell table L4-6 -----------------------------------------
     {
-        int bad = 0, mu = 0, cl = 0, l46 = 0;
+        int bad = 0, mu = 0, cl = 0, dr = 0, l46 = 0;
         for (int id = 0; id < spells::SPELL_COUNT; ++id) {
             const spells::SpellDef& s =
                 spells::spell((spells::SpellId)id);
             // R129: the band widens to 1-9 - the p.14
             // caster-aging spells ride as levels 7-9
             if (s.level < 1 || s.level > 9) ++bad;
+            // R228: the druid registry rows ride
+            // SPELL_DRUID (77 spells, levels 1-7)
             if (s.sclass != spells::SPELL_MU &&
-                s.sclass != spells::SPELL_CLERIC) ++bad;
-            if (s.sclass == spells::SPELL_MU) ++mu; else ++cl;
+                s.sclass != spells::SPELL_CLERIC &&
+                s.sclass != spells::SPELL_DRUID) ++bad;
+            if (s.sclass == spells::SPELL_MU) ++mu;
+            else if (s.sclass == spells::SPELL_DRUID) ++dr;
+            else ++cl;
             if (s.level >= 4 && s.level <= 6) {
                 ++l46;
                 // a slot row exists that can cast it
@@ -501,9 +506,20 @@ int main() {
             }
         }
         if (l46 < 12) ++bad;   // the R80 roster landed
-        printf("R80 spells audit: %d spells (MU %d, CL %d), "
+        // R228: the druid rows match the R182 roster
+        // cell by cell (level, reversible, class)
+        for (int i = 0; i < rules::druidSpellTotal(); ++i) {
+            const spells::SpellDef& s = spells::spell(
+                (spells::SpellId)(
+                    spells::DR_ANIMAL_FRIENDSHIP + i));
+            if (s.level != rules::druidSpell(i).level ||
+                (s.reversible ? 1 : 0) !=
+                    rules::druidSpell(i).reversible ||
+                s.sclass != spells::SPELL_DRUID) ++bad;
+        }
+        printf("R80 spells audit: %d spells (MU %d, CL %d, DR %d), "
                "L4-6 %d, bad %d\n",
-               spells::SPELL_COUNT, mu, cl, l46, bad);
+               spells::SPELL_COUNT, mu, cl, dr, l46, bad);
         if (bad) return 1;
     }
 
@@ -10424,6 +10440,129 @@ int main() {
         printf("R227 wis mental save wiring audit: bad %d\n", bad);
         if (bad) return 1;
     }
+    // ---- R228: the druid registry parameters audit ----
+    // The evaluable seam walk: the rules/druidspells.h
+    // R228 parameter tables vs the book-pin arrays (the
+    // PHB spell description headers). The registry rows
+    // themselves are walked by the extended R80 battery
+    // block - spells.cpp structs are outside the
+    // audit_eval subset.
+    {
+        int bad = 0;
+        static const int kLv[77] = {
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 2, 2, 2, 2, 2, 2, 2, 2,
+            2, 2, 2, 2, 3, 3, 3, 3, 3, 3,
+            3, 3, 3, 3, 3, 3, 4, 4, 4, 4,
+            4, 4, 4, 4, 4, 4, 4, 4, 5, 5,
+            5, 5, 5, 5, 5, 5, 6, 6, 6, 6,
+            6, 6, 6, 6, 6, 6, 6, 6, 7, 7,
+            7, 7, 7, 7, 7, 7, 7,
+        };
+        static const int kRv[77] = {
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+            0, 0, 0, 0, 0, 1, 0, 0, 1, 0,
+            0, 0, 0, 0, 0, 1, 0, 1, 0, 0,
+            0, 0, 0, 0, 0, 1, 0, 0, 0, 1,
+            0, 1, 0, 0, 1, 0, 0, 0, 1, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+            1, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+            0, 0, 0, 0, 1, 0, 0,
+        };
+        static const int kCt[77] = {
+            360, 3, 3, 3, 3, 4, 10, 10, 10, 10,
+            1, 3, 3, 4, 60, 4, 3, 60, 4, 10,
+            4, 4, 4, 4, 60, 10, 5, 5, 10, 5,
+            5, 30, 10, 10, 5, 5, 6, 0, 6, 6,
+            6, 6, 6, 6, 6, 6, 10, 60, 7, 7,
+            7, 60, 7, 5, 60, 7, 8, 10, 7, 60,
+            7, 8, 8, 3, 8, 8, 60, 60, 60, 9,
+            60, 60, 9, 5, 9, 60, 9,
+        };
+        static const int kRg[77] = {
+            1, 0, 0, 8, 8, 0, 0, 0, 0, 4,
+            0, 0, 0, 8, 1, 0, 1, 0, 4, 0,
+            0, 0, 0, 1, 0, 0, 8, 0, 16, 0,
+            16, 0, 0, 3, 0, 0, 4, 12, 0, 0,
+            8, 8, 8, 0, 4, 0, 0, 0, 8, 6,
+            0, 0, 0, 32, 8, 0, 8, 0, 4, 8,
+            16, 0, 16, 0, 0, 8, 0, 8, 4, 4,
+            0, 1, 0, 6, 16, 0, 8,
+        };
+        static const int kDu[77] = {
+            0, 12, 4, 10, 4, 10, 1, 10, 120, 0,
+            1, 2, 4, 0, 0, 0, 4, 0, 7, 10,
+            4, 2, 10, 0, 10, 0, 2, 0, 0, 0,
+            0, 0, 0, 1, 60, 60, 0, 0, 40, 0,
+            0, 0, 1, 10, 1, 0, 10, 2, 2, 0,
+            10, 0, 10, 10, 0, 0, 0, 10, 2, 10,
+            0, 0, 0, 0, 4, 10, 0, 1, 1, 10,
+            0, 60, 4, 0, 1, 0, 0,
+        };
+        static const int kAo[77] = {
+            0, 0, 0, 2, 4, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+            0, 0, 0, 0, 36, 0, 0, 0, 0, 0,
+            0, 1, 0, 0, 0, 0, 0, 0, 1, 0,
+            0, 0, 0, 0, 0, 0, 1, 4, 0, 0,
+            1, 0, 0, 2, 0, 0, 0, 1, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0,
+        };
+        static const int kSv[77] = {
+            4, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+            -1, -1, -1, 4, -1, -1, -1, 4, -1, -1,
+            -1, -1, 4, -1, 4, -1, 4, -1, -1, -1,
+            -1, -1, -1, -1, -1, -1, -1, 4, -1, -1,
+            -1, -1, 4, -1, -1, -1, -1, -1, -1, -1,
+            -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+            -1, -1, 4, -1, -1, -1, -1, -1, -1, -1,
+            -1, -1, -1, 4, 4, -1, -1,
+        };
+        static const int kTg[77] = {
+            1, 2, 2, 2, 2, 1, 2, 1, 4, 2,
+            4, 1, 1, 1, 2, 1, 1, 4, 4, 2,
+            4, 4, 4, 4, 2, 1, 1, 1, 2, 1,
+            4, 2, 2, 4, 0, 1, 4, 4, 2, 1,
+            2, 2, 4, 4, 2, 1, 2, 2, 2, 4,
+            2, 4, 2, 2, 4, 4, 4, 2, 2, 4,
+            2, 1, 1, 4, 2, 2, 4, 2, 4, 4,
+            4, 4, 4, 1, 2, 1, 4,
+        };
+        for (int i = 0; i < 77; ++i)
+            if (rules::druidSpellLevel(i) != kLv[i] ||
+                rules::druidSpellRev(i) != kRv[i] ||
+                rules::druidSpellCt(i) != kCt[i] ||
+                rules::druidSpellRangeTens(i) != kRg[i] ||
+                rules::druidSpellDur(i) != kDu[i] ||
+                rules::druidSpellAoeTens(i) != kAo[i] ||
+                rules::druidSpellSaveCat(i) != kSv[i] ||
+                rules::druidSpellTarget(i) != kTg[i]) ++bad;
+        // the clamps: -5 and 99 read rows 0 and 76
+        if (rules::druidSpellLevel(-5) != kLv[0] ||
+            rules::druidSpellLevel(99) != kLv[76] ||
+            rules::druidSpellCt(99) != kCt[76]) ++bad;
+        // the level histogram ladder: the seam pins
+        // the printed roster counts (12/12/12/12/8/
+        // 12/9 - R182); every seam level sits in 1..7
+        // (the reversible count 16 and the 11 Neg./
+        // half saves are properties of the pin arrays
+        // above, walked cellwise)
+        static const int kHist[7] = { 12, 12, 12, 12, 8, 12, 9 };
+        for (int l = 1; l <= 7; ++l)
+            if (rules::druidSpellCountByLevel(l) != kHist[l - 1]) ++bad;
+        for (int i = 0; i < 77; ++i)
+            if (rules::druidSpellLevel(i) < 1 ||
+                rules::druidSpellLevel(i) > 7) ++bad;
+        // the R182 slot table cross-checks (a spell-level
+        // 8 query clamps to the 7th: 3)
+        if (rules::druidSpellSlots(1, 1) != 2 ||
+            rules::druidSpellSlots(12, 4) != 4 ||
+            rules::druidSpellSlots(14, 7) != 3 ||
+            rules::druidSpellSlots(14, 8) != 3) ++bad;
+        printf("R228 druid registry parameters audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
     // ---- R163: the poison table audit -------------
     // DMG p.20: the purchased-poison table - ingestive
     // A-E and insinuative A-D, each with cost, onset
@@ -13626,17 +13765,18 @@ int main() {
     // ---- R129: caster aging audit ----
     {
         int bad = 0;
-        // the registry grew to 54: MU 31, CL 23
-        if (spells::SPELL_COUNT != 54) ++bad;
+        // the registry grew to 131 (R228): MU 31, CL 23, DR 77
+        if (spells::SPELL_COUNT != 131) ++bad;
         {
-            int mu = 0, cl = 0;
+            int mu = 0, cl = 0, dr = 0;
             for (int id = 0; id < spells::SPELL_COUNT; ++id) {
                 const spells::SpellDef& s =
                     spells::spell((spells::SpellId)id);
                 if (s.sclass == spells::SPELL_MU) ++mu;
+                else if (s.sclass == spells::SPELL_DRUID) ++dr;
                 else ++cl;
             }
-            if (mu != 31 || cl != 23) ++bad;
+            if (mu != 31 || cl != 23 || dr != 77) ++bad;
         }
         // the six p.14 rows: name, class, level, self-target
         {

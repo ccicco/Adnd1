@@ -28,6 +28,7 @@ using rules::Dice;
 enum SpellClass : int {
     SPELL_MU = 0,
     SPELL_CLERIC,
+    SPELL_DRUID,   // R228: the druid roster
     SPELL_CLASS_COUNT
 };
 
@@ -96,6 +97,87 @@ enum SpellId : int {
     MU_GATE,             // MU 9; caster ages 5 (p.14)
     CL_RESTORATION,      // CL 7; caster ages 2 (p.14)
     CL_RESURRECTION,     // CL 7; caster ages 3 (p.14)
+    // --- R228: the druid roster joins the registry (77
+    //     spells, the printed alphabetical order within
+    //     each level - the R182 roster order; appended ids
+    //     keep saved knownSpells indices valid) ---
+    DR_ANIMAL_FRIENDSHIP,   // druid 1
+    DR_DETECT_MAGIC,        // druid 1
+    DR_DETECT_SNARES_AND_PITS, // druid 1
+    DR_ENTANGLE,            // druid 1
+    DR_FAERIE_FIRE,         // druid 1
+    DR_INVISIBILITY_TO_ANIMALS, // druid 1
+    DR_LOCATE_ANIMALS,      // druid 1
+    DR_PASS_WITHOUT_TRACE,  // druid 1
+    DR_PREDICT_WEATHER,     // druid 1
+    DR_PURIFY_WATER,        // druid 1
+    DR_SHILLELAGH,          // druid 1
+    DR_SPEAK_WITH_ANIMALS,  // druid 1
+    DR_BARKSKIN,            // druid 2
+    DR_CHARM_PERSON_OR_MAMMAL, // druid 2
+    DR_CREATE_WATER,        // druid 2
+    DR_CURE_LIGHT_WOUNDS,   // druid 2
+    DR_FEIGN_DEATH,         // druid 2
+    DR_FIRE_TRAP,           // druid 2
+    DR_HEAT_METAL,          // druid 2
+    DR_LOCATE_PLANTS,       // druid 2
+    DR_OBSCUREMENT,         // druid 2
+    DR_PRODUCE_FLAME,       // druid 2
+    DR_TRIP,                // druid 2
+    DR_WARP_WOOD,           // druid 2
+    DR_CALL_LIGHTNING,      // druid 3
+    DR_CURE_DISEASE,        // druid 3
+    DR_HOLD_ANIMAL,         // druid 3
+    DR_NEUTRALIZE_POISON,   // druid 3
+    DR_PLANT_GROWTH,        // druid 3
+    DR_PROTECTION_FROM_FIRE, // druid 3
+    DR_PYROTECHNICS,        // druid 3
+    DR_SNARE,               // druid 3
+    DR_STONE_SHAPE,         // druid 3
+    DR_SUMMON_INSECTS,      // druid 3
+    DR_TREE,                // druid 3
+    DR_WATER_BREATHING,     // druid 3
+    DR_ANIMAL_SUMMONING_I,  // druid 4
+    DR_CALL_WOODLAND_BEINGS, // druid 4
+    DR_CONTROL_TEMPERATURE_10_RADIUS, // druid 4
+    DR_CURE_SERIOUS_WOUNDS, // druid 4
+    DR_DISPEL_MAGIC,        // druid 4
+    DR_HALLUCINATORY_FOREST, // druid 4
+    DR_HOLD_PLANT,          // druid 4
+    DR_PLANT_DOOR,          // druid 4
+    DR_PRODUCE_FIRE,        // druid 4
+    DR_PROTECTION_FROM_LIGHTNING, // druid 4
+    DR_REPEL_INSECTS,       // druid 4
+    DR_SPEAK_WITH_PLANTS,   // druid 4
+    DR_ANIMAL_GROWTH,       // druid 5
+    DR_ANIMAL_SUMMONING_II, // druid 5
+    DR_ANTI_PLANT_SHELL,    // druid 5
+    DR_COMMUNE_WITH_NATURE, // druid 5
+    DR_CONTROL_WINDS,       // druid 5
+    DR_INSECT_PLAGUE,       // druid 5
+    DR_WALL_OF_FIRE,        // druid 5
+    DR_PASS_PLANT,          // druid 5
+    DR_ANIMAL_SUMMONING_III, // druid 6
+    DR_ANTI_ANIMAL_SHELL,   // druid 6
+    DR_STICKS_TO_SNAKES,    // druid 6
+    DR_CONJURE_FIRE_ELEMENTAL, // druid 6
+    DR_TRANSMUTE_ROCK_TO_MUD, // druid 6
+    DR_CURE_CRITICAL_WOUNDS, // druid 6
+    DR_FEEBLEMIND,          // druid 6
+    DR_TRANSPORT_VIA_PLANTS, // druid 6
+    DR_TURN_WOOD,           // druid 6
+    DR_WALL_OF_THORNS,      // druid 6
+    DR_WEATHER_SUMMONING,   // druid 6
+    DR_CONFUSION,           // druid 6
+    DR_ANIMATE_ROCK,        // druid 7
+    DR_CONJURE_EARTH_ELEMENTAL, // druid 7
+    DR_CONTROL_WEATHER,     // druid 7
+    DR_CHARIOT_OF_SUSTARRE, // druid 7
+    DR_CREEPING_DOOM,       // druid 7
+    DR_FINGER_OF_DEATH,     // druid 7
+    DR_FIRE_STORM,          // druid 7
+    DR_REINCARNATE,         // druid 7
+    DR_TRANSMUTE_METAL_TO_WOOD, // druid 7
     SPELL_COUNT
 };
 

@@ -573,11 +573,45 @@ arc boxes:
       hypnosis, suggestion and phantasmal
       forces ride the flag when their rows
       arrive. Census 143.
-- [ ] R228 the druid and illusionist rosters
-      join the SpellId registry (139 spells,
-      rules/druidspells.h + illusionspells.h
-      are dead data today) - the largest item,
-      may split.
+- [x] R228 the druid roster joins the SpellId
+      registry - WIRED: 77 DR_ ids appended after
+      CL_RESURRECTION (saved knownSpells indices
+      stay valid); SPELL_DRUID joins SpellClass;
+      77 kSpells rows with the PHB spell-description
+      header parameters (casting time in segments:
+      a printed turn 60, a round 10, Special 0;
+      range in tens of feet, Touch 0; duration the
+      base rounds of a per-level scale, Permanent/
+      Special 0; save Neg./half = spells 4, none
+      -1; aoe the radius in tens where the print
+      gives a circle, diameter halved round-up;
+      paths/cubes/miles pin 0); the parameters
+      also land as the evaluable seam in
+      rules/druidspells.h (eight clamped accessors,
+      the grenade.h pattern) and
+      spellSlots(SPELL_DRUID, ...) delegates to
+      the R182 druidSpellSlots (levels 1-14,
+      spell 1-7 clamped). Effects stay
+      known-cast-pending (the R80 convention);
+      the R80 battery walk extends to the druid
+      rows and checks them against the R182 roster
+      cell by cell. Eight OCR-scattered blocks
+      pinned as JUDGMENTs: Entangle (table-form
+      header), Invisibility To Animals, Faerie
+      Fire, Insect Plague (cleric q.v.: ct 5, no
+      save), Conjure Fire Elemental (ct 6 rounds
+      = 60, no save), Weather Summoning (ct 1
+      turn = 60, the control-weather q.v.),
+      Animate Rock (ct 1 turn = 60, no save),
+      Conjure Earth Elemental (ct 9 segments, no
+      save). Three spell descriptions print a
+      Level: divergent from the roster (Sticks to
+      Snakes 5, Transmute Rock to Mud 5,
+      Confusion 7) - the printed TABLE (R182)
+      wins. Census 144.
+- [ ] R229 the illusionist roster joins the
+      SpellId registry (61 spells, the same seam
+      shape as R228).
 - [ ] the subclass creation gates - no
       character can yet BE a paladin, ranger,
       druid, illusionist, assassin, monk or

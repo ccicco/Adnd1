@@ -164,4 +164,162 @@ inline int druidSpellCountByLevel(int spellLevel) {
     return kByLevel[spellLevel - 1];
 }
 
+// ---------------------------------------------------------------------------
+// R228: the registry parameter seam. The R182 roster carries
+// identity (level, name, reversible); these tables carry the
+// per-spell registry parameters extracted from the PHB spell
+// description headers (Level/Range/Duration/Area of
+// Effect/Casting Time/Saving Throw blocks), in the engine
+// SpellDef conventions:
+//   - ct: casting time in SEGMENTS (a printed turn is 60,
+//     a printed round 10; Special pins 0);
+//   - range: tens of feet (Touch pins 0);
+//   - dur: base ROUNDS (a per-level scale pins its base
+//     number - the scaling itself is an effects-round
+//     concern; Permanent/Special pin 0; a turn is 10);
+//   - aoe: radius in TENS of feet where the print gives a
+//     circle (diameter halves, round up); paths, cubes,
+//     linear feet and square miles pin 0;
+//   - save: rules::SaveCategory (-1 none; the printed
+//     Neg./half pins SAVE_SPELLS = 4);
+//   - target: the SpellTarget enum value.
+// JUDGMENTs (the OCR-scattered blocks): Entangle (table-form
+// header read directly), Invisibility To Animals, Faerie Fire,
+// Insect Plague (mirrors the cleric q.v. row: ct 5, save
+// none), Conjure Fire Elemental (ct 6 rounds = 60; save
+// none), Weather Summoning (ct 1 turn = 60, the
+// control-weather q.v.), Animate Rock (ct 1 turn = 60, save
+// none), Conjure Earth Elemental (ct 9 segments, save none).
+// The spells.cpp registry rows carry the same values; the
+// R228 battery walks the match.
+// ---------------------------------------------------------------------------
+
+
+inline int druidSpellLevel(int i) {
+        static const int kLevel[77] = {
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 3, 3, 3, 3, 3, 3,
+        3, 3, 3, 3, 3, 3, 4, 4, 4, 4,
+        4, 4, 4, 4, 4, 4, 4, 4, 5, 5,
+        5, 5, 5, 5, 5, 5, 6, 6, 6, 6,
+        6, 6, 6, 6, 6, 6, 6, 6, 7, 7,
+        7, 7, 7, 7, 7, 7, 7,
+    };
+    if (i < 0) i = 0;
+    if (i > 76) i = 76;
+    return kLevel[i];
+}
+
+inline int druidSpellRev(int i) {
+        static const int kRev[77] = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 0, 1, 0, 0, 1, 0,
+        0, 0, 0, 0, 0, 1, 0, 1, 0, 0,
+        0, 0, 0, 0, 0, 1, 0, 0, 0, 1,
+        0, 1, 0, 0, 1, 0, 0, 0, 1, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+        1, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 1, 0, 0,
+    };
+    if (i < 0) i = 0;
+    if (i > 76) i = 76;
+    return kRev[i];
+}
+
+inline int druidSpellCt(int i) {
+        static const int kCt[77] = {
+        360, 3, 3, 3, 3, 4, 10, 10, 10, 10,
+        1, 3, 3, 4, 60, 4, 3, 60, 4, 10,
+        4, 4, 4, 4, 60, 10, 5, 5, 10, 5,
+        5, 30, 10, 10, 5, 5, 6, 0, 6, 6,
+        6, 6, 6, 6, 6, 6, 10, 60, 7, 7,
+        7, 60, 7, 5, 60, 7, 8, 10, 7, 60,
+        7, 8, 8, 3, 8, 8, 60, 60, 60, 9,
+        60, 60, 9, 5, 9, 60, 9,
+    };
+    if (i < 0) i = 0;
+    if (i > 76) i = 76;
+    return kCt[i];
+}
+
+inline int druidSpellRangeTens(int i) {
+        static const int kRng[77] = {
+        1, 0, 0, 8, 8, 0, 0, 0, 0, 4,
+        0, 0, 0, 8, 1, 0, 1, 0, 4, 0,
+        0, 0, 0, 1, 0, 0, 8, 0, 16, 0,
+        16, 0, 0, 3, 0, 0, 4, 12, 0, 0,
+        8, 8, 8, 0, 4, 0, 0, 0, 8, 6,
+        0, 0, 0, 32, 8, 0, 8, 0, 4, 8,
+        16, 0, 16, 0, 0, 8, 0, 8, 4, 4,
+        0, 1, 0, 6, 16, 0, 8,
+    };
+    if (i < 0) i = 0;
+    if (i > 76) i = 76;
+    return kRng[i];
+}
+
+inline int druidSpellDur(int i) {
+        static const int kDur[77] = {
+        0, 12, 4, 10, 4, 10, 1, 10, 120, 0,
+        1, 2, 4, 0, 0, 0, 4, 0, 7, 10,
+        4, 2, 10, 0, 10, 0, 2, 0, 0, 0,
+        0, 0, 0, 1, 60, 60, 0, 0, 40, 0,
+        0, 0, 1, 10, 1, 0, 10, 2, 2, 0,
+        10, 0, 10, 10, 0, 0, 0, 10, 2, 10,
+        0, 0, 0, 0, 4, 10, 0, 1, 1, 10,
+        0, 60, 4, 0, 1, 0, 0,
+    };
+    if (i < 0) i = 0;
+    if (i > 76) i = 76;
+    return kDur[i];
+}
+
+inline int druidSpellAoeTens(int i) {
+        static const int kAoe[77] = {
+        0, 0, 0, 2, 4, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 36, 0, 0, 0, 0, 0,
+        0, 1, 0, 0, 0, 0, 0, 0, 1, 0,
+        0, 0, 0, 0, 0, 0, 1, 4, 0, 0,
+        1, 0, 0, 2, 0, 0, 0, 1, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0,
+    };
+    if (i < 0) i = 0;
+    if (i > 76) i = 76;
+    return kAoe[i];
+}
+
+inline int druidSpellSaveCat(int i) {
+        static const int kSave[77] = {
+        4, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+        -1, -1, -1, 4, -1, -1, -1, 4, -1, -1,
+        -1, -1, 4, -1, 4, -1, 4, -1, -1, -1,
+        -1, -1, -1, -1, -1, -1, -1, 4, -1, -1,
+        -1, -1, 4, -1, -1, -1, -1, -1, -1, -1,
+        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+        -1, -1, 4, -1, -1, -1, -1, -1, -1, -1,
+        -1, -1, -1, 4, 4, -1, -1,
+    };
+    if (i < 0) i = 0;
+    if (i > 76) i = 76;
+    return kSave[i];
+}
+
+inline int druidSpellTarget(int i) {
+        static const int kTgt[77] = {
+        1, 2, 2, 2, 2, 1, 2, 1, 4, 2,
+        4, 1, 1, 1, 2, 1, 1, 4, 4, 2,
+        4, 4, 4, 4, 2, 1, 1, 1, 2, 1,
+        4, 2, 2, 4, 0, 1, 4, 4, 2, 1,
+        2, 2, 4, 4, 2, 1, 2, 2, 2, 4,
+        2, 4, 2, 2, 4, 4, 4, 2, 2, 4,
+        2, 1, 1, 4, 2, 2, 4, 2, 4, 4,
+        4, 4, 4, 1, 2, 1, 4,
+    };
+    if (i < 0) i = 0;
+    if (i > 76) i = 76;
+    return kTgt[i];
+}
 } // namespace rules

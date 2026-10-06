@@ -5,6 +5,7 @@
 
 #include "spells.h"
 #include "../rules/wisdom.h"  // R192: Wisdom Tables I and II
+#include "../rules/druidspells.h"  // R228: the druid roster + parameter seam
 
 namespace spells {
 
@@ -92,6 +93,87 @@ static const SpellDef kSpells[SPELL_COUNT] = {
     { "Gate",              SPELL_MU,     9,  9,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
     { "Restoration",      SPELL_CLERIC,  7,  8,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
     { "Resurrection",     SPELL_CLERIC,  7,  8,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
+    // ---- R228: the druid roster (77 spells; parameters per
+    // the rules/druidspells.h R228 seam - the PHB spell
+    // description headers; effects stay known, cast
+    // pending per the R80 utility convention) ----
+    { "Animal Friendship", SPELL_DRUID, 1, 360, 1, 0, 4, TARGET_CREATURE, 0, 0, 0, false },
+    { "Detect Magic", SPELL_DRUID, 1, 3, 0, 12, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Detect Snares & Pits", SPELL_DRUID, 1, 3, 0, 4, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Entangle", SPELL_DRUID, 1, 3, 8, 10, -1, TARGET_AREA, 2, 0, 0, false },
+    { "Faerie Fire", SPELL_DRUID, 1, 3, 8, 4, -1, TARGET_AREA, 4, 0, 0, false },
+    { "Invisibility To Animals", SPELL_DRUID, 1, 4, 0, 10, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Locate Animals", SPELL_DRUID, 1, 10, 0, 1, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Pass Without Trace", SPELL_DRUID, 1, 10, 0, 10, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Predict Weather", SPELL_DRUID, 1, 10, 0, 120, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Purify Water", SPELL_DRUID, 1, 10, 4, 0, -1, TARGET_AREA, 0, 0, 0, true },
+    { "Shillelagh", SPELL_DRUID, 1, 1, 0, 1, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Speak With Animals", SPELL_DRUID, 1, 3, 0, 2, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Barkskin", SPELL_DRUID, 2, 3, 0, 4, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Charm Person Or Mammal", SPELL_DRUID, 2, 4, 8, 0, 4, TARGET_CREATURE, 0, 0, 0, false },
+    { "Create Water", SPELL_DRUID, 2, 60, 1, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Cure Light Wounds", SPELL_DRUID, 2, 4, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, true },
+    { "Feign Death", SPELL_DRUID, 2, 3, 1, 4, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Fire Trap", SPELL_DRUID, 2, 60, 0, 0, 4, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Heat Metal", SPELL_DRUID, 2, 4, 4, 7, -1, TARGET_SPECIAL, 0, 0, 0, true },
+    { "Locate Plants", SPELL_DRUID, 2, 10, 0, 10, -1, TARGET_AREA, 1, 0, 0, false },
+    { "Obscurement", SPELL_DRUID, 2, 4, 0, 4, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Produce Flame", SPELL_DRUID, 2, 4, 0, 2, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Trip", SPELL_DRUID, 2, 4, 0, 10, 4, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Warp Wood", SPELL_DRUID, 2, 4, 1, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Call Lightning", SPELL_DRUID, 3, 60, 0, 10, 4, TARGET_AREA, 36, 0, 0, false },
+    { "Cure Disease", SPELL_DRUID, 3, 10, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, true },
+    { "Hold Animal", SPELL_DRUID, 3, 5, 8, 2, 4, TARGET_CREATURE, 0, 0, 0, false },
+    { "Neutralize Poison", SPELL_DRUID, 3, 5, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, true },
+    { "Plant Growth", SPELL_DRUID, 3, 10, 16, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Protection From Fire", SPELL_DRUID, 3, 5, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Pyrotechnics", SPELL_DRUID, 3, 5, 16, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Snare", SPELL_DRUID, 3, 30, 0, 0, -1, TARGET_AREA, 1, 0, 0, false },
+    { "Stone Shape", SPELL_DRUID, 3, 10, 0, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Summon Insects", SPELL_DRUID, 3, 10, 3, 1, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Tree", SPELL_DRUID, 3, 5, 0, 60, -1, TARGET_SELF, 0, 0, 0, false },
+    { "Water Breathing", SPELL_DRUID, 3, 5, 0, 60, -1, TARGET_CREATURE, 0, 0, 0, true },
+    { "Animal Summoning I", SPELL_DRUID, 4, 6, 4, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Call Woodland Beings", SPELL_DRUID, 4, 0, 12, 0, 4, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Control Temperature, 10' Radius", SPELL_DRUID, 4, 6, 0, 40, -1, TARGET_AREA, 1, 0, 0, false },
+    { "Cure Serious Wounds", SPELL_DRUID, 4, 6, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, true },
+    { "Dispel Magic", SPELL_DRUID, 4, 6, 8, 0, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Hallucinatory Forest", SPELL_DRUID, 4, 6, 8, 0, -1, TARGET_AREA, 0, 0, 0, true },
+    { "Hold Plant", SPELL_DRUID, 4, 6, 8, 1, 4, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Plant Door", SPELL_DRUID, 4, 6, 0, 10, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Produce Fire", SPELL_DRUID, 4, 6, 4, 1, -1, TARGET_AREA, 0, 0, 0, true },
+    { "Protection From Lightning", SPELL_DRUID, 4, 6, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Repel Insects", SPELL_DRUID, 4, 10, 0, 10, -1, TARGET_AREA, 1, 0, 0, false },
+    { "Speak With Plants", SPELL_DRUID, 4, 60, 0, 2, -1, TARGET_AREA, 4, 0, 0, false },
+    { "Animal Growth", SPELL_DRUID, 5, 7, 8, 2, -1, TARGET_AREA, 0, 0, 0, true },
+    { "Animal Summoning II", SPELL_DRUID, 5, 7, 6, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Anti-Plant Shell", SPELL_DRUID, 5, 7, 0, 10, -1, TARGET_AREA, 1, 0, 0, false },
+    { "Commune With Nature", SPELL_DRUID, 5, 60, 0, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Control Winds", SPELL_DRUID, 5, 7, 0, 10, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Insect Plague", SPELL_DRUID, 5, 5, 32, 10, -1, TARGET_AREA, 2, 0, 0, false },
+    { "Wall of Fire", SPELL_DRUID, 5, 60, 8, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Pass Plant", SPELL_DRUID, 5, 7, 0, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Animal Summoning III", SPELL_DRUID, 6, 8, 8, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Anti-Animal Shell", SPELL_DRUID, 6, 10, 0, 10, -1, TARGET_AREA, 1, 0, 0, false },
+    { "Sticks to Snakes", SPELL_DRUID, 6, 7, 4, 2, -1, TARGET_AREA, 0, 0, 0, true },
+    { "Conjure Fire Elemental", SPELL_DRUID, 6, 60, 8, 10, -1, TARGET_SPECIAL, 0, 0, 0, true },
+    { "Transmute Rock to Mud", SPELL_DRUID, 6, 7, 16, 0, -1, TARGET_AREA, 0, 0, 0, true },
+    { "Cure Critical Wounds", SPELL_DRUID, 6, 8, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, true },
+    { "Feeblemind", SPELL_DRUID, 6, 8, 16, 0, 4, TARGET_CREATURE, 0, 0, 0, false },
+    { "Transport Via Plants", SPELL_DRUID, 6, 3, 0, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Turn Wood", SPELL_DRUID, 6, 8, 0, 4, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Wall of Thorns", SPELL_DRUID, 6, 8, 8, 10, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Weather Summoning", SPELL_DRUID, 6, 60, 0, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Confusion", SPELL_DRUID, 6, 60, 8, 1, -1, TARGET_AREA, 0, 0, 0, false },
+    { "Animate Rock", SPELL_DRUID, 7, 60, 4, 1, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Conjure Earth Elemental", SPELL_DRUID, 7, 9, 4, 10, -1, TARGET_SPECIAL, 0, 0, 0, true },
+    { "Control Weather", SPELL_DRUID, 7, 60, 0, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Chariot Of Sustarre", SPELL_DRUID, 7, 60, 1, 60, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Creeping Doom", SPELL_DRUID, 7, 9, 0, 4, -1, TARGET_SPECIAL, 0, 0, 0, false },
+    { "Finger Of Death", SPELL_DRUID, 7, 5, 6, 0, 4, TARGET_CREATURE, 0, 0, 0, false },
+    { "Fire Storm", SPELL_DRUID, 7, 9, 16, 1, 4, TARGET_AREA, 0, 0, 0, true },
+    { "Reincarnate", SPELL_DRUID, 7, 60, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, false },
+    { "Transmute Metal To Wood", SPELL_DRUID, 7, 9, 8, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
 };
 
 const SpellDef& spell(SpellId id) {
@@ -188,6 +270,10 @@ static const int kClericSlots[kLevels][kSlots] = {
 
 int spellSlots(SpellClass sc, int classLevel, int spellLevel) {
     if (spellLevel < 1 || spellLevel > kSlots) return 0;
+    // R228: the druid rows read the R182 slot table
+    // (druidSpellSlots clamps level 1-14, spell 1-7)
+    if (sc == SPELL_DRUID)
+        return rules::druidSpellSlots(classLevel, spellLevel);
     if (classLevel < 1) classLevel = 1;
     if (classLevel > kLevels) classLevel = kLevels;
     return (sc == SPELL_MU ? kMuSlots : kClericSlots)
