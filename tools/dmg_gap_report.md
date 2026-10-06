@@ -1482,6 +1482,59 @@ sub-tables, II.A monetary, II.B magic,
 II.C combined hoard, upload lines ~9330+,
 pp.122-125).
 
+R219 landed the treasure random determination
+tables pins (DMG pp.120-123, upload lines
+~9330-9480) - the top-level determination
+tables the engine never implemented (the
+R122 line-diff closed the III.A-H item
+tables and the lair types; the gap report
+claim that dm/treasure.cpp implements the
+map/monetary/magic structure referred to
+the lair-type coin bundles, and these
+determination tables existed nowhere).
+rules/treasdet.h (the grenade.h pattern):
+Table I map or magic (01-10 the map table,
+11-00 the magic items table), Table II the
+map table (01-05 false, 06-70 monetary,
+71-90 magic, 91-00 a combined hoard; a map
+never lists its treasure, only the
+location), the outdoor destination
+sub-table (01-20 lair caves, 21-60 outdoors
+5-8 miles, 61-90 10-40 miles, 91-00 50-500
+miles; direction d8 with 1 north counting
+round), the containment sub-table (01-10
+buried unguarded, 11-20 water, 21-70 lair,
+71-80 ruins, 81-90 crypt, 91-00 town),
+Table II.A monetary treasure (the nine d20
+rows: cp 20,000-80,000 at 2d4 x 10,000; sp
+20,000-50,000 at d4+1 x 10,000; ep
+5,000-30,000 at 5d6 x 1,000; gp 3,000-
+18,000 at 3d6 x 1,000; pp 500-2,000 at 5d4
+x 100; gems 10-100 at d10 x 10; jewelry
+5-50 pieces at 5d10; row 18 roll twice and
+row 19 roll thrice discounting rolls above
+17; row 20 each monetary item above - read
+as one of each row 1 through 17, rows 18
+and 19 being re-roll instructions), and
+Table II.B magic treasure (1-5 any item
+plus 4 potions; 6-8 any 2 items; 9-12 one
+sword, one armor or shield, one misc
+weapon; 13-14 any 3 items with no sword or
+potions; 15-18 any 6 potions and any 6
+scrolls; 19 any 4 items, 1 a ring and 1 a
+rod; 20 any 5 items, 1 a rod and 1 misc
+magic) plus the design notes (the
+abandonment theft chance DM-set, low-value
+treasures less guarded, the magic table
+deliberately weighted to keep potent magic
+rare). The II.C combined hoard table is the
+R220 candidate. New R219 battery audit;
+census 135. Next: R220 - the II.C combined
+hoard table (upload lines ~9440-9470, the
+ten percentile rows mixing constrained
+monetary and magic sub-rolls with map
+leads, DMG p.123).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
