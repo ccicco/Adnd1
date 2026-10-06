@@ -632,11 +632,33 @@ arc boxes:
       Illusion 3, Fear 3, Hallucinatory Terrain 3,
       Illusionary Script 3, Improved Invisibility 4,
       Massmorph 4) - the printed TABLE wins. Census 145.
-- [ ] the subclass creation gates - no
-      character can yet BE a paladin, ranger,
-      druid, illusionist, assassin, monk or
-      bard (registry + gates + specials all
-      data-only).
+- [x] R230 the subclass creation gates -
+      WIRED: rules/subclassgates.h gains the
+      creation seam (the runtime base-class map -
+      the monk rides fighter, the JUDGMENT - the
+      con class, the starting-age band, the
+      two-dice flag, the subclass hit die, the
+      player-eligibility gate, the Table II
+      effective cap with the footnote-8 gnome
+      conditional); creation gains the
+      CR_SUBCLASS stage (the base class, then
+      its registry subclasses; the monk rides
+      the fighter list), the eligibility gate
+      (adjusted minimums + Race Table I),
+      makeSubclassMember (the subclass hit die,
+      the ranger/monk two dice each with the
+      per-die con adjustment, the
+      druid/illusionist slot fills, the
+      illusionist L1 book, the monk kit), the
+      save/load subclass line (v1-compatible),
+      the restoreSlots druid/illusionist
+      branches, and the member class-name
+      display. The alignment gates stay
+      data-only (no alignment concept yet) and
+      the bard (Appendix II) stays
+      uncreatable; leveling, the specials hooks
+      and multi/dual-class are the next arc
+      items. Census 146.
 - [ ] the per-subclass specials hooks (lay on
       hands, giant-class bonus, the monk
       unarmed ladder, backstab multipliers).

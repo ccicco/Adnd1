@@ -99,6 +99,14 @@ static const char* CLASS_NAMES[4] = {
 };
 static const char CLASS_INITIALS[4] = { 'F', 'M', 'C', 'T' };
 
+// R230: the member display class - the registry
+// subclass name when set, the base class otherwise
+static const char* memberClassName(const Character& c) {
+    if (c.subclass >= 0)
+        return rules::subclassDef(c.subclass).name;
+    return CLASS_NAMES[c.classIndex];
+}
+
 // ----------------------------------------------------------------------------
 // Renderer - GDI, double-buffered
 // ----------------------------------------------------------------------------
@@ -199,12 +207,33 @@ static void creationKeyDown(WPARAM wp) {
                     int idx = (int)(wp - '1');
                     if (cr.classEligible(idx)) {
                         cr.classPick = idx;
-                        cr.stage = CR_NAME;
+                        cr.subPick = -1;   // plain until chosen
+                        cr.stage = CR_SUBCLASS;   // R230
                     }
                     break;
                 }
                 case VK_ESCAPE:
                     cr.stage = CR_RACE;   // back to race choice
+                    break;
+            }
+            break;
+
+        case CR_SUBCLASS:   // R230: the subclass offer
+            switch (wp) {
+                case '1': case '2': case '3': case '4': {
+                    int row = (int)(wp - '1');
+                    if (row < cr.subclassOfferCount()) {
+                        int sub = cr.subclassOfferAt(row);
+                        if (sub < 0
+                            || cr.subclassEligible(sub)) {
+                            cr.subPick = sub;
+                            cr.stage = CR_NAME;
+                        }
+                    }
+                    break;
+                }
+                case VK_ESCAPE:
+                    cr.stage = CR_CLASS;  // back to the class
                     break;
             }
             break;
@@ -256,7 +285,9 @@ static void creationConfirmName() {
         }
     }
 
-    Character c = cr.makeMember(cr.classPick);
+    Character c = cr.subPick >= 0
+        ? cr.makeSubclassMember(cr.subPick)
+        : cr.makeMember(cr.classPick);
     c.name = n;
     s.party.members.push_back(c);
 
@@ -265,7 +296,7 @@ static void creationConfirmName() {
              "%s the %s %s joins the party at %d years.",
              c.name.c_str(),
              rules::raceName((rules::CharRace)c.race),
-             CLASS_NAMES[c.classIndex], c.startAge);
+             memberClassName(c), c.startAge);
     s.log.add(buf);
 
     if ((int)s.party.members.size() >= cr.partySizeCap) {
@@ -669,7 +700,7 @@ static void drawCreate(HDC dc, const AppState& s) {
         for (const auto& c : s.party.members) {
             char row[96];
             snprintf(row, sizeof row, "  %s  %s %d  HP %d/%d  STR %s",
-                     c.name.c_str(), CLASS_NAMES[c.classIndex],
+                     c.name.c_str(), memberClassName(c),
                      c.level, c.hp, c.maxHp, c.strDisplay().c_str());
             SetTextColor(dc, c.hp > 0 ? RGB(170, 220, 170)
                                       : RGB(110, 110, 110));
@@ -782,6 +813,39 @@ static void drawCreate(HDC dc, const AppState& s) {
             TextOutA(dc, 20, VIEW_H - 60,
                      "[1-4] choose class   [esc] back to race",
                      39);
+            break;
+        }
+
+        case CR_SUBCLASS: {   // R230: the subclass offer
+            TextOutA(dc, 20, py, "CHOOSE A SUBCLASS", 18);
+            py += 30;
+            for (int r = 0;
+                 r < cr.subclassOfferCount(); ++r) {
+                int sub = cr.subclassOfferAt(r);
+                bool ok = (sub < 0)
+                    || cr.subclassEligible(sub);
+                char srow[96];
+                if (sub < 0)
+                    snprintf(srow, sizeof srow,
+                             "  [%d] %-12s  (the base class)",
+                             r + 1,
+                             CLASS_NAMES[cr.classPick]);
+                else
+                    snprintf(srow, sizeof srow,
+                             "  [%d] %-12s  %s",
+                             r + 1,
+                             rules::subclassDef(sub).name,
+                             ok ? "" : "- not qualified");
+                SetTextColor(dc, ok ? RGB(210, 195, 165)
+                                    : RGB(110, 105, 95));
+                TextOutA(dc, 40, py, srow,
+                         (int)strlen(srow));
+                py += 26;
+            }
+            SetTextColor(dc, RGB(190, 175, 140));
+            TextOutA(dc, 20, VIEW_H - 60,
+                     "[1-4] choose   [esc] back to class",
+                     35);
             break;
         }
 

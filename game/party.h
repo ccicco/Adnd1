@@ -154,6 +154,9 @@ struct Character {
     // v1-save default). Optional "race" line in the save.
     int  race = 0;
     int  classIndex = 0;
+    // R230: the registry subclass (rules::Subclass;
+    // -1 = a plain class member; v1 saves load -1)
+    int  subclass = -1;
     int  xp   = 0;
     int  level = 1;
     int  hp = 0, maxHp = 0;

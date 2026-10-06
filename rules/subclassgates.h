@@ -216,4 +216,131 @@ inline bool subclassXpBonusEarned(int sub, const AbilityScores& s) {
     }
 }
 
+
+// ---------------------------------------------------------------------------
+// R230: the creation seam. The printed gates become a
+// character-creation gate chain: player eligibility
+// (Race Table I), the effective level cap (Table II
+// with the footnote-8 gnome illusionist conditional),
+// and the per-subclass creation parameters the engine
+// reads at the CR_SUBCLASS stage.
+//
+// JUDGMENTs:
+//   - the monk has no base class; its runtime base is
+//     CLASS_FIGHTER (the closest save matrix and kit;
+//     the specials round revisits) and it rides the
+//     fighter offer list at creation.
+//   - the monk con class is CLASS_THIEF (the registry
+//     group pin - NOT the fighter CON bonus group).
+//   - the monk starting age reads the fighter band.
+//   - the alignment requirements stay data-only: the
+//     engine has no alignment concept yet (a later
+//     arc round owns alignment).
+//
+// EVAL NOTE: these helpers use plain ints and private
+// flat copies of the R180 matrices - the audit
+// evaluator cannot parse the enum constants the R180
+// accessors read (the : int enums do not load). The
+// R230 battery pins the copies against the same
+// printed walks.
+// ---------------------------------------------------------------------------
+
+// The runtime base class (the save matrix, the gear
+// and the engine switches): paladin, ranger, druid,
+// illusionist, assassin, monk in registry order. The
+// monk rides CLASS_FIGHTER (the JUDGMENT).
+inline int subclassRuntimeBase(int sub) {
+    if (sub == 0) return 0;   // paladin -> fighter
+    if (sub == 1) return 0;   // ranger -> fighter
+    if (sub == 2) return 2;   // druid -> cleric
+    if (sub == 3) return 1;   // illusionist -> magic-user
+    if (sub == 4) return 3;   // assassin -> thief
+    return 0;                 // monk -> fighter
+}
+
+// The con-adjustment class: the paladin and ranger
+// join the fighter CON bonus group (the print); the
+// monk is not in the group (the registry pin).
+inline int subclassConClass(int sub) {
+    if (sub == 2) return 2;   // druid -> cleric
+    if (sub == 3) return 1;   // illusionist -> magic-user
+    if (sub == 4) return 3;   // assassin -> thief
+    if (sub == 5) return 3;   // monk -> thief
+    return 0;                 // paladin, ranger -> fighter
+}
+
+// The starting-age band (the base class table, PHB
+// p.20); the monk reads the fighter band.
+inline int subclassStartAgeBase(int sub) {
+    if (sub == 2) return 18;   // druid -> cleric band
+    if (sub == 3) return 24;   // illusionist -> MU band
+    if (sub == 4) return 18;   // assassin -> thief band
+    return 15;                 // paladin, ranger, monk
+}
+
+// Two hit dice at level 1 (the ranger and the monk -
+// the R179 JUDGMENT, the printed accumulated column).
+inline int subclassTwoDiceFirstLevel(int sub) {
+    if (sub == 1) return 1;   // ranger
+    if (sub == 5) return 1;   // monk
+    return 0;
+}
+
+// The subclass hit die (the registry pins:
+// paladin d10, ranger d8, druid d8, illusionist d4,
+// assassin d6, monk d4).
+inline int subclassHitDie(int sub) {
+    static const int kDie[6] = {
+        10, 8, 8, 4, 6, 4
+    };
+    if (sub < 0) sub = 0;
+    if (sub > 5) sub = 5;
+    return kDie[sub];
+}
+
+// Player eligibility: Race Table I, flat 42 (a private
+// copy - see the EVAL NOTE).
+inline int subclassPlayerAllowed(int sub, CharRace r) {
+    static const int kAllow[42] = {
+        1, 0, 0, 0, 0, 0, 0,
+        1, 0, 0, 0, 1, 0, 0,
+        1, 0, 0, 0, 1, 0, 0,
+        1, 0, 0, 1, 0, 0, 0,
+        1, 1, 1, 1, 1, 0, 1,
+        1, 0, 0, 0, 0, 0, 0
+    };
+    int si = sub;
+    if (si < 0) si = 0;
+    if (si > 5) si = 5;
+    int ri = (int)r;
+    if (ri < 0) ri = 0;
+    if (ri > 6) ri = 6;
+    return kAllow[si * 7 + ri];
+}
+
+// The effective level cap: Race Table II, flat 42 (a
+// private copy - see the EVAL NOTE), with the
+// footnote-8 gnome illusionist conditional. 0 =
+// forbidden; -1 = unlimited; positive = the printed
+// player cap; -n (n >= 2) = NPC-only cap n.
+inline int subclassLevelCapFor(int sub, CharRace r,
+                               int intScore, int dexScore) {
+    static const int kCap[42] = {
+        -1,  0,  0,  0,  0,  0,  0,
+        -1,  0,  0,  0,  8,  0,  0,
+        -1,  0,  0,  0, -1, -6,  0,
+        -1,  0,  0,  7,  0,  0,  0,
+        -1,  9, 10,  8, 11,  0, -1,
+        -1,  0,  0,  0,  0,  0,  0
+    };
+    int si = sub;
+    if (si < 0) si = 0;
+    if (si > 5) si = 5;
+    int ri = (int)r;
+    if (ri < 0) ri = 0;
+    if (ri > 6) ri = 6;
+    if (si == 3 && ri == 3)
+        return illusionistGnomeCap(intScore, dexScore);
+    return kCap[si * 7 + ri];
+}
 } // namespace rules

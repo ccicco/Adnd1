@@ -225,6 +225,8 @@
 #include "../rules/dice.h"
 #include "../rules/character.h"
 #include "../rules/classes.h"
+#include "../rules/subclasses.h"  // R230: the subclass registry
+#include "../rules/subclassgates.h"  // R230: the creation gates
 #include "../rules/races.h"   // R154: Race Tables I-III
 #include "../rules/saves.h"   // R45: trap saves
 #include "../rules/combat.h"   // R61: monsterEffectiveLevel (p.86 guard rule)
@@ -387,6 +389,7 @@ enum CreationStage : int {
     CR_ROLL = 0,
     CR_RACE,    // R154: the racial stock stage
     CR_CLASS,
+    CR_SUBCLASS,   // R230: the subclass offer stage
     CR_NAME,
 };
 
@@ -400,6 +403,7 @@ struct CreationState {
     int  racePick = 0;               // R154: highlighted race row
     bool female = false;             // R154: Table III M/F columns
     int  classPick = 0;              // highlighted class row
+    int  subPick = -1;               // R230: registry subclass, -1 = plain
     std::string nameBuf;
 
     int partySizeCap = PARTY_DEFAULT;
@@ -412,6 +416,7 @@ struct CreationState {
         racePick = 0;     // R154
         female = false;   // R154
         classPick = 0;
+        subPick = -1;   // R230
         nameBuf.clear();
     }
 
@@ -525,6 +530,120 @@ struct CreationState {
         }
         // R35: everyone starts with a full quiver (20 missiles)
         c.missileAmmo = 20;
+        return c;
+    }
+
+    // R230: the subclass offer rows for the chosen base:
+    // row 0 the plain base class, then every registry
+    // subclass whose runtime base matches (the monk
+    // rides the fighter list - the JUDGMENT)
+    int subclassOfferCount() const {
+        int n = 1;
+        for (int i = 0; i < rules::SUB_COUNT; ++i)
+            if (rules::subclassRuntimeBase(i) == classPick)
+                ++n;
+        return n;
+    }
+
+    // the registry index for offer row r;
+    // -1 = the plain base class (row 0)
+    int subclassOfferAt(int row) const {
+        if (row <= 0) return -1;
+        int n = 1;
+        for (int i = 0; i < rules::SUB_COUNT; ++i) {
+            if (rules::subclassRuntimeBase(i) == classPick) {
+                if (n == row) return i;
+                ++n;
+            }
+        }
+        return -1;
+    }
+
+    // R230: subclass eligibility - the base class must
+    // qualify, then the R180 gates on the ADJUSTED
+    // scores (the ability minimums) and Race Table I
+    // (player eligibility)
+    bool subclassEligible(int sub) const {
+        if (!classEligible(rules::subclassRuntimeBase(sub)))
+            return false;
+        if (!rules::subclassMeetsAbilityMin(sub,
+                raceAdjusted())) return false;
+        if (rules::subclassPlayerAllowed(sub,
+                (rules::CharRace)racePick) != 1)
+            return false;
+        return true;
+    }
+
+    // R230: finalize as a registry subclass (makeMember
+    // builds the base member; this overlays the subclass
+    // parameters)
+    Character makeSubclassMember(int sub) {
+        int base = rules::subclassRuntimeBase(sub);
+        Character c = makeMember(base);
+        c.subclass = sub;
+
+        // the start age reads the subclass band, with
+        // the base-class roll (2d8 the magic-user band,
+        // 1d4 otherwise - the p.20 convention)
+        if (base == rules::CLASS_MAGIC_USER)
+            c.startAge = rules::subclassStartAgeBase(sub)
+                + creationDice.roll(2, 8, 0);
+        else
+            c.startAge = rules::subclassStartAgeBase(sub)
+                + creationDice.roll(1, 4, 0);
+
+        // hit points: the subclass die; the ranger and
+        // monk roll TWO dice at level 1 (each die with
+        // its con adjustment - the engine per-die
+        // convention, the JUDGMENT; the floor is 1)
+        int conAdj = rules::conHPAdjustment(
+            rules::subclassConClass(sub), c.abilities.con);
+        int die = rules::subclassHitDie(sub);
+        int hp = (int)creationDice.roll(
+                     1, (uint32_t)die, 0) + conAdj;
+        if (rules::subclassTwoDiceFirstLevel(sub))
+            hp += (int)creationDice.roll(
+                      1, (uint32_t)die, 0) + conAdj;
+        if (hp < 1) hp = 1;
+        c.hp = c.maxHp = hp;
+
+        // slots: the druid and illusionist read their
+        // R228/R229 tables (the base fill is replaced)
+        if (sub == rules::SUB_DRUID) {
+            for (int lv = 1; lv <= 9; ++lv)   // R131
+                c.slotsByLevel[lv - 1] =
+                    spells::spellSlots(
+                        spells::SPELL_DRUID, 1, lv);
+        } else if (sub == rules::SUB_ILLUSIONIST) {
+            c.knownSpells.clear();   // the MU book out
+            for (int lv = 1; lv <= 9; ++lv)   // R131
+                c.slotsByLevel[lv - 1] =
+                    spells::spellSlots(
+                        spells::SPELL_ILLUSIONIST, 1, lv);
+            // the R33 convention: one random L1 spell
+            std::vector<int> l1;
+            for (int id = 0; id < spells::SPELL_COUNT;
+                 ++id) {
+                const spells::SpellDef& s =
+                    spells::spell((spells::SpellId)id);
+                if (s.sclass == spells::SPELL_ILLUSIONIST
+                    && s.level == 1) l1.push_back(id);
+            }
+            if (!l1.empty()) {
+                int pick = (int)creationDice.roll(
+                    1, (uint32_t)l1.size(), 0) - 1;
+                c.knownSpells.push_back(l1[pick]);
+            }
+        }
+
+        // the monk kit: quarterstaff, no armor, no
+        // shield (the JUDGMENT; the R24 sets stand for
+        // the rest)
+        if (sub == rules::SUB_MONK) {
+            c.weapon.id = items::WPN_QUARTERSTAFF;
+            c.armor.id = items::ARMOR_NONE_EQUIPPED;
+            c.shield = false;
+        }
         return c;
     }
 };

@@ -191,6 +191,10 @@ bool AppState::saveGame(){
             // carry no line and load as human)
             if (c.race != 0)
                 fprintf(f, "race %d\n", c.race);
+            // R230: the registry subclass (only when set -
+            // v1 saves carry no line and load as none)
+            if (c.subclass != -1)
+                fprintf(f, "subclass %d\n", c.subclass);
             // R56: the magic-shield enchant (nonzero only -
             // v1 saves carry no line and load as 0)
             if (c.shieldPlus > 0)
@@ -585,6 +589,16 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.race = rc;
+                } else if (strcmp(tag, "subclass") == 0) {
+                    int sb = -1;
+                    if (fscanf(f, "%d", &sb) != 1 ||
+                        sb < -1 ||
+                        sb >= rules::SUB_COUNT) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (subclass).");
+                        return false;
+                    }
+                    c.subclass = sb;
                 } else if (strcmp(tag, "age") == 0) {
                 int ag = 0;
                 if (fscanf(f, "%d", &ag) != 1 ||
@@ -815,8 +829,17 @@ void AppState::descend(){
 void AppState::restoreSlots(){
         for (auto& c : party.members) {
             if (c.classIndex != 1 && c.classIndex != 2) continue;
-            spells::SpellClass sc = c.classIndex == 1
-                ? spells::SPELL_MU : spells::SPELL_CLERIC;
+            // R230: the druid and illusionist read their own
+            // tables (the R228/R229 seams); plain members the
+            // base-class tables
+            spells::SpellClass sc =
+                c.subclass == rules::SUB_DRUID
+                    ? spells::SPELL_DRUID
+                    : c.subclass == rules::SUB_ILLUSIONIST
+                        ? spells::SPELL_ILLUSIONIST
+                        : c.classIndex == 1
+                            ? spells::SPELL_MU
+                            : spells::SPELL_CLERIC;
             for (int lv = 1; lv <= 9; ++lv)   // R131: 9 levels
                 c.slotsByLevel[lv - 1] =
                     spells::spellSlots(sc, c.level, lv);
