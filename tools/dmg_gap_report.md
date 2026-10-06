@@ -1712,6 +1712,38 @@ table 1 class marks and footnotes (DMG
 p.128, upload lines ~9665+), or the next
 un-pinned III.A-H surrounding prose seam.
 
+R225 landed the III.E table 1 footnote
+pins (DMG p.128, upload lines ~9674-9722)
+- the class marks and special rows that
+frame TABLE (III.E.) 1. rules/miscmagic1.h
+(the grenade.h pattern), keyed to the 33
+die bands of the engine III.E.1 table in
+kMisc1 order: the (C) marks (Book of
+Exalted Deeds, Book of Vile Darkness)
+and the (M) marks (Bowl Commanding
+Water Elementals, Bowl of Watery Death,
+Brazier Commanding Fire Elementals,
+Brazier of Sleep Smoke); the Artifact
+or Relic row (17, no values - see the
+Special table hereafter); the Bracers of
+Defense asterisk (60-79: the x.p. and
+g.p. values are PER ARMOR CLASS POINT
+above 10 - AC 6 worth 2,000 x.p. /
+12,000 g.p., four points); and Bucknard
+Everfull Purse (99-00) as the tiered-
+values row (the R122-pinned 1500-4000 /
+15000-40000 ranges match the printed
+1,500/2,500/4,000 tiers). The row VALUES
+were already pinned by the R122 line-diff
+audit; this round pins the class marks,
+the special rows and the band edges.
+New R225 battery audit; census 141.
+Next: R226 - the III.E table 2 class
+marks and the Cloak of Protection and
+Crystal Ball asterisk/notes (DMG p.128,
+upload lines ~9724-9760), or the next
+un-pinned III.A-H surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
