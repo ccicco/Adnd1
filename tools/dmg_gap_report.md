@@ -1082,6 +1082,35 @@ battery audit; census 125. Next: the
 DMG-only sweep continues - the personae
 traits tables.
 
+R210 landed the NPC personae traits
+tables (DMG pp.115-116, TRAITS TABLES) -
+a seam with zero prior coverage.
+rules/npctraits.h (the grenade.h pattern):
+the 24 General Tendencies (the d12 with the
+d6 half split: 1-3 the first twelve, 4-6 the
+second), the three-column Personality (d8
+d8 - average 1-5, extroverted 6-7,
+introverted 8, with the shared words as
+per-column codes), the 24 Interests (the d6
+halves, the four collector rows 17-20),
+Disposition, Intellect (the dreaming-through-
+brilliant rating modifiers), Collections,
+Nature, Materialism, Honesty, Bravery,
+Energy, Thrift, Morals (the perverted/sadistic/
+depraved asterisk reroll rule - the same
+shape as the R209 sanity rule) and Piety -
+plus the print encounter/offer reaction
+adjustment percents (neurotic the print
+asymmetry: minus 1 to plus 6; insane 1-10;
+maniacal 1-20; disposition 1-6; nature 1-4;
+tendencies 1-8; bravery 1-20; personality
+1-8; materialism 1-20). The compilation
+annotation columns (per-word percents) not
+in the print, excluded. New R210 battery
+audit; census 126. Next: the DMG-only sweep
+continues - the personae height and weight
+tables, the language determination.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
