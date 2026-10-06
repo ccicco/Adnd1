@@ -1371,6 +1371,66 @@ census 132. Next: the scroll and other
 magic item manufacture seams (upload
 lines ~9100+, pp.119+).
 
+R217 landed the scroll manufacture and
+fabrication pins (DMG pp.118-121) - the
+MANUFACTURE OF SCROLLS seam and the
+FABRICATION material that follows it.
+rules/scrollfab.h (the grenade.h pattern):
+the inscription gates (cleric, druid,
+magic-user, illusionist at 7th or higher,
+the spell one the inscriber can employ;
+the protection scroll split - clerical
+devils/possession/undead vs magic-user
+demons/elementals/lycanthropes/magic/
+petrification, curse scrolls by any spell
+user), the materials (papyrus 2 gp and up
++5 percent, parchment 4 gp and up +/-0,
+vellum 8 gp and up -5 percent, a fresh
+virgin quill per spell from a strange or
+magical creature - the 6 named quill
+beasts, ink from giant squid sepia or
+giant octopus ink with a different ink
+per spell), the preparation (one full day
+per spell level, continuous - leaving
+breaks the magic), the failure chance (20
+percent + 1 per spell level - the
+character level + the material modifier;
+the print example: 14th level cleric, 7th
+level spell, parchment = 13 percent; a
+percentile roll over the chance is a
+success, the print sets no floor),
+multiple spells (a failure blocks further
+spells, 7 spells maximum per scroll),
+transcription off a scroll (read magic
+plus the same time as scribing, the spell
+then disappears), the fabrication of
+other items (enchant an item - save
+clerical items; rest one day per 100 gp
+of XP value - 2000 xp = 20 days, no
+adventuring or spell use; permanency for
+permanent dweomers but not chargeable
+items), the cleric and druid retreat (a
+fortnight in retreat, a sennight fasting,
+a day of purification, a cumulative 1
+percent per day empowerment, 24 hours to
+charge), the illusionist gates (scrolls
+7th, one-shot and charged items 11th with
+major creation and the 16-hour instilling
+window, permanent dweomers 14th with
+alter reality and the unflawed 10000 gp
+gem), and the charmed or enslaved
+magic-user rule (totally unable to
+fabricate any magic item, the attempts
+fruitless). The non-standard items and
+command words seams remain; the upload is
+the sole source at this seam. New R217
+battery audit; census 133. Next: the USE
+OF MAGIC ITEMS seam - command words,
+crystal balls and scrying, drinking
+potions and applying oils, and the potion
+miscibility tables (upload lines ~9320+,
+pp.121+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
