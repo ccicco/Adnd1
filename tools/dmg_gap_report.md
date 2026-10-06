@@ -1535,6 +1535,43 @@ ten percentile rows mixing constrained
 monetary and magic sub-rolls with map
 leads, DMG p.123).
 
+R220 landed the combined hoard table pins
+(DMG p.123, upload lines ~9430-9470) - the
+II.C COMBINED HOARD table, the R219
+companion. rules/hoard.h (the grenade.h
+pattern): the ten percentile bands (01-20,
+21-40, 41-55, 56-65, 66-75, 76-80, 81-85,
+86-90, 91-96, 97-00) with their on-hand
+monetary rows (b0: 1-2; b1: 6-10; b2: 3-5
+and 6-10; b3: 1-2, 3-5 and 6-10; b4: 6-10
+and 11-12; b5: 3-5, 6-10, 11-12 and 16-17;
+b6/b7: the 20 row; b8/b9 none), their
+on-hand magic rows (b0/b1: 1-5; b2: 1-5 and
+15-18; b3: 9-12 and 13-14; b4: 6-8 and
+15-18; b5: 1-5 and 9-12; b6/b7 none; b8:
+20; b9: 15-18 and 20), the map-to-magic
+references of bands 81-90 (to 1-5 and to
+19), the map-to-monetary references of
+bands 91-00 (to 1-2 and 3-5; to 11-12 and
+13-15), and the design notes (the real
+finds; hidden, trapped, guarded, distant).
+The row references are stored as the R219
+sub-table band indices so the two headers
+interlock; the die 18/19 monetary re-roll
+instructions are never referenced by this
+table. With this round the whole RANDOM
+TREASURE DETERMINATION top-level structure
+(I, II, II.A, II.B, II.C) is pinned; the
+III.A-H item tables were already closed by
+R122. New R220 battery audit; census 136.
+Next: R221 - the III.A potions table
+prose rules that frame the item tables (the
+(F) fighter-only marks, the delusion and
+poison DM-misleading notes, the control-
+type die rolls, upload lines ~9480-9520,
+DMG p.125-126), or the first un-pinned
+III.A-H surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
