@@ -1179,6 +1179,54 @@ audit; census 128. Next: the DMG-only
 sweep continues - construction, siege
 and the underworld.
 
+R213 landed the construction and siege
+economics (DMG pp.106-108, the CONSTRUCTION
+& SIEGE head) - a seam with zero prior
+coverage (only incidental castle-artillery
+counts elsewhere). rules/construct.h (the
+grenade.h pattern): the MINING cubic volume
+table (8 miner groups x 3 rock types,
+cubic feet per 8 hours per miner - stone
+giant 500/350/175 at the top), the linear
+multiple-workers volume, the max miners
+per 10-foot shaft (16/12/8/6/4), the
+24-hour shifts with the 8-hour worker cap,
+the natural cave area chances (limestone 1
+in 10, other sedimentary 1 in 50, lava 1 in
+20, other igneous 1 in 100 - pinned as
+percents), the slave labor efficiency bands
+(foreman ratio 1:16 through 1:4 = 50
+through 80 percent) with the 1-guard-per-
+4-workers minimum, the CONSTRUCTION TIME
+pins (the ditch crew and heavy clay, the
+stone week per 10-foot cube with the 150
+percent = double and 250 percent = triple
+rate maximum, the 4-month stone and 2-month
+wood buildings, the 10-foot-per-day
+hoardings, the four castle estimates with
+the citizen labor 50 percent), the 44-row
+CONSTRUCTIONS cost table (arrow slit 3 gp
+through barred window 10 gp), the per-
+square-foot door and port adjustments, the
+stone course formula (the worked 950 gp
+example), the tunnel ground factors (soft
+1x, hard earth 2x, solid rock 5x), the
+ditch-rampart 20 percent, the battlement
+composition, the buttress count, and the
+12-row siege engine costs (ballista 75 gp
+through trebuchet 500 gp). PAGE-LABEL
+CORRECTION: the print TOC places the
+personae/hiring/troops seams at pp.100-106
+(height of characters p.102, non-human
+soldiers pp.105-106) - the R211 pp.115-116
+and R212 pp.116-118 include-comment labels
+read high; the pinned content is
+unaffected. New R213 battery audit; census
+129. Next: the DMG-only sweep continues -
+the war machine fire tables, the siege
+attack values, and the construction
+defensive values (pp.108-110).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
