@@ -1280,6 +1280,49 @@ control, the troublesome players, the
 campaign integration seams, DMG pp.110-112
 area, upload lines ~8560+).
 
+R215 landed the conducting the game pins
+(DMG pp.110-112) - a prose-heavy chapter
+whose numeric bones are now pinned.
+rules/conduct.h (the grenade.h pattern):
+the divine intervention procedure (the
+exemplary first-time asker 10 percent
+creature-sent chance; the 00 roll with the
+chance the deity itself comes equal to the
+character level; the six modifiers - each
+previous intervention STACKS -5 as a count,
+medial alignment -5, borderline -10,
+required direct confrontation -10,
+opposing diametric forces +1, proximate
+service +25, the five flags clamped to
+once each and no floor, the print sets
+none), the planes rule (Prime Material,
+Astral and Ethereal yes, Elemental DM
+option, Outer and Positive/Negative no,
+the elemental-gods block), the 7 secret
+dice-roll kinds, the system shock
+untouchability (never tampered, failure is
+forever dead), the player integration
+numbers (the d4+1 averaging die 2-5, the
+8th-level ceiling, the 4th-level start
+above it, the neophyte full-cooperation
+level 3), the multiple characters rules
+(no prohibition, no free interchange), and
+the troublesome-player measures (the
+charisma point, the always-surprising
+ethereal mummy). The Boot Hill / Gamma
+World conversion tables (pp.112-114) stay
+OUT by design. Compilation cross-check
+(the DDG divine intervention page) matches
+the upload, adding only the asked-for-not-
+received clarifying note. New R215 battery
+audit; census 131. Next: the DMG-only
+sweep continues - the ongoing campaign
+chapter and its seams (the campaign
+economics and time pins already landed; the
+likely next pin material is the tables of
+the AD&D campaign milieu sections, upload
+lines ~8720+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
