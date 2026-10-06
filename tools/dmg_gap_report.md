@@ -1604,6 +1604,53 @@ and prose (DMG pp.126-127, upload lines
 ~9525+), or the first un-pinned III.A-H
 surrounding prose seam.
 
+R222 landed the III.B scrolls prose pins
+(DMG pp.126-127, upload lines ~9532-9595)
+- the structure and prose of the III.B
+SCROLLS table. rules/scrollpins.h (the
+grenade.h pattern): the 16 spell-scroll
+rows (dice bands 01-60, spell counts and
+level ranges re-pinned, plus the printed
+ILLUSIONIST ALTERNATIVE RANGES - the or
+X-Y* halves on the 17-19, 25-27, 33-35,
+40-42, 47-49, 53-54 and 60 bands; JUDGMENT:
+pinned as data even though the engine
+roller reads only the main range, as the
+print gives no dice split for which half
+a found scroll uses; alt lo = main lo, alt
+hi lower on every alt row); the 8
+protection scroll rows with their
+table-printed x.p. values (2500, 2500,
+1500, 1000, 1500, 2000, 2000, 1500); the
+8-row curse sub-table (01-25 polymorph to
+equal-level monster that attacks, 26-30
+liquid, 31-40 transported 200-1,200 miles
+random direction, 41-50 another planet/
+plane/continuum, 51-75 disease fatal in
+2-8 turns unless cured, 76-90 explosive
+runes, 91-99 nearby item de-magicked,
+00 random spell at 12th level of
+magic-use); and the prose: 100 x.p. per
+spell level awarded only to characters
+who can use the spell, spell scrolls sell
+at 3x x.p. on the open market, protection
+scrolls at 5x, the DM must do his utmost
+to convince players a cursed scroll
+should be read (duplicity, coercion and
+threat), unread scrolls may fade in
+normal air, and a curse takes effect
+immediately. The engine III.B structure
+(kSpellScrolls, the protection list and
+the cursed-scroll name) was already in
+dm/treasure.cpp and faithful; this round
+pins what was never pinned. New R222
+battery audit; census 138. Next: R223 -
+the III.C rings footnotes (the (M)
+magic-user-only mark and the charge-
+limited double-dagger rows, DMG p.127,
+upload lines ~9600-9640), or the next
+un-pinned III.A-H surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
