@@ -1744,6 +1744,35 @@ Crystal Ball asterisk/notes (DMG p.128,
 upload lines ~9724-9760), or the next
 un-pinned III.A-H surrounding prose seam.
 
+R226 landed the III.E table 2 footnote
+pins (DMG p.128, upload lines ~9724-9760)
+- the class marks and asterisk rows that
+frame TABLE (III.E.) 2. rules/miscmagic2.h
+(the grenade.h pattern), keyed to the 30
+die bands of the engine III.E.2 table in
+kMisc2 order: the (C) mark (Candle of
+Invocation); the (M) marks (the two
+Censers, Crystal Ball, Crystal Hypnosis
+Ball, Eyes of Charming); the Cloak of
+Protection per-plus asterisk (33-55:
+1,000 x.p. / 10,000 g.p. per plus of
+protection - a +2 cloak is 2,000 /
+20,000); the Crystal Ball double
+asterisk (56-60: base 1,000 x.p. /
+5,000 g.p., add 100% for each
+additional feature); and the Eyes of
+Petrification triple asterisk (00:
+---*** in both value columns). The row
+VALUES were already pinned by the R122
+line-diff audit; this round pins the
+class marks, the asterisk rows and the
+band edges. New R226 battery audit;
+census 142. Next: R227 - the III.E
+table 3 footnotes (Figurine per-hit-die
+asterisk, DMG p.129, upload lines
+~9765+), or the next un-pinned III.A-H
+surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
