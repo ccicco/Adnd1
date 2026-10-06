@@ -1431,6 +1431,57 @@ potions and applying oils, and the potion
 miscibility tables (upload lines ~9320+,
 pp.121+).
 
+R218 landed the use of magic items and
+energy draining pins (DMG pp.119-122) -
+the USE OF MAGIC ITEMS seam and the
+ENERGY DRAINING BY UNDEAD OR DEVICE
+section that follows it (the potion
+miscibility table between them is already
+pinned by R165 and stays out).
+rules/energydrain.h (the grenade.h pattern):
+drinking potions (one segment to open and
+consume, then a d4+1 = 2-5 segment delay
+to full effect), applying oils (one segment
+to decant, 2-5 segments to spread),
+command words (a rod, staff or wand usually
+needs the proper word - learned from the
+possessor, hidden records, or the three
+informational spells: contact other plane,
+legend lore, speak with dead), crystal
+balls and scrying (detectable; a spell-user
+target checks the DETECTION OF INVISIBILITY
+table each round; darkness stops the viewing
+for the spell duration, dispel magic for a
+full day), the energy drain mechanics (the
+hit points gained with the level including
+the constitution bonus, all abilities of
+the level, XP to the mid-point of the next
+lower level; below 1st is a 0 level person
+never capable of gaining again; a 0 level
+individual drained is dead), the multiclass
+drain rules (always the highest level, ties
+to the greatest-XP class, a two-level drain
+splits one level per class), and the
+drained-all fate (an undead of the same
+sort as the slayer, lesser undead at half
+hit dice controlled by their master, the
+lesser vampire at half the former
+professional level - the print example: an
+8th level thief returns as a 4th level
+thief vampire, odd levels round down - and
+the full-hit-dice regain upon the
+destruction of the slayer). The treasure
+random determination tables (upload lines
+~9330+, the map/monetary/magic/combined
+hoard tables) are the natural next seam.
+New R218 battery audit; census 134. Next:
+R219 - the TREASURE RANDOM DETERMINATION
+tables (I. map or magic, II. the map table
+and its outdoor distance/containment
+sub-tables, II.A monetary, II.B magic,
+II.C combined hoard, upload lines ~9330+,
+pp.122-125).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
