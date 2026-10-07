@@ -1207,6 +1207,10 @@ struct AppState {
     // R235: the bardic studies - the Appendix II career
     void townBeginBardStudies();
 
+    // R236: the bardic lore - the Appendix II item
+    // knowledge (the town [X] key)
+    void townBardicLore();
+
     // R43: the armorer - chain mail (75 gp, PHB list price) for
     // the first living armor-eligible member (fighter or cleric)
     // whose current armor is worse than chain

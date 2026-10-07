@@ -452,10 +452,43 @@ inline bool bardCareerGate(int fighterLevel,
 
 // ---- the poetics layers ----
 
-static const int BARD_POETIC_ROUNDS = 2;
-static const int BARD_POETIC_TURN = 1;   // lasts 1 complete turn
-static const int BARD_MORALE_BONUS = 10; // percent
-static const int BARD_HIT_BONUS = 1;     // ferocity in attack
+// R236: the poetics seam - the constants ride a
+// named enum (the R233 McBits convention) with
+// pure-expression helpers (the evaluable subset;
+// nested ternaries, no logical operators) so
+// audit_eval reads the pins. The enum keeps the
+// R186 data-audit references alive.
+enum BardPoetics {
+    BARD_POETIC_ROUNDS = 2,
+    BARD_POETIC_TURN = 1,   // lasts 1 complete turn
+    BARD_MORALE_BONUS = 10, // percent
+    BARD_HIT_BONUS = 1,     // ferocity in attack
+};
+
+// The +1 ferocity on the party attacks (the
+// Appendix II poetics; the morale half is void -
+// the party is MORALE_FANATIC and never checks
+// morale).
+inline int bardPoeticsHitBonus() {
+    return BARD_HIT_BONUS;
+}
+
+// The rounds of playing before the poetics takes
+// hold (2 as printed).
+inline int bardPoeticsRoundsRequired() {
+    return BARD_POETIC_ROUNDS;
+}
+
+// The gate: the bard lives and the round has
+// passed the required playing. The 1-turn
+// duration is simplified to while the bard
+// lives - the JUDGMENT.
+inline int bardPoeticsActive(int round, int bardAlive) {
+    return (bardAlive == 1)
+        ? ((round >= 1 + bardPoeticsRoundsRequired())
+           ? 1 : 0)
+        : 0;
+}
 
 // ---- the henchmen ladder ----
 

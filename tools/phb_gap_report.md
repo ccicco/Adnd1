@@ -797,3 +797,30 @@ arc boxes:
       druid spell EFFECTS resolve on the generic
       combat layer. Census 154.
 
+- [x] R236 the bard specials - WIRED: the
+      Appendix II poetics and lore go live -
+      the ferocity (a living bard in the
+      company who has sung past the 2 printed
+      rounds grants the party +1 on melee
+      to-hit rolls in resolveMelee; the morale
+      half is void - the party is
+      MORALE_FANATIC; the 1-turn duration is
+      simplified to while the bard lives; melee
+      only - the R232 precedent), the item
+      knowledge (the [X] town key - the finest
+      living bard studies the front
+      unidentified find on a Table II legend
+      lore roll; a miss leaves the item queued,
+      retryable, no cost; a hit resolves like
+      the identify scroll - the same taker
+      logic, else sold for 200 gp), and the
+      college announcement (the studies-begin
+      message names the first college).
+      Simplifications recorded: the henchmen
+      ladder and the musical item bonuses stay
+      data-only (the R186 pins; no
+      bard-henchmen concept, no musical items
+      in the registry), and the song never
+      negates (no harpies or shriekers in the
+      monster special set). Census 155.
+

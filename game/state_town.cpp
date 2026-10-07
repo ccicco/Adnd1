@@ -528,14 +528,119 @@ void AppState::townBeginBardStudies(){
             char buf[128];
             snprintf(buf, sizeof buf,
                      "%s begins the druidical studies - "
-                     "a bard at 1st level (hit dice kept).",
-                     c.name.c_str());
+                     "a bard at 1st level (hit dice kept) "
+                     "- a %s of the first college.",
+                     c.name.c_str(),
+                     rules::bardCollege(1));
             log.add(buf);
             return;
         }
         log.add("No one can begin the bardic studies "
                 "(fighter 5th-7th, then thief 5th-9th, "
                 "the Appendix II minimums).");
+}
+
+// ---- townBardicLore ----
+// R236: the Appendix II item knowledge. The
+// finest living bard (highest level) studies the
+// front unidentified find: a Table II legend
+// lore roll. A miss leaves the item in the pack
+// (retryable, no cost); a hit resolves exactly
+// like the identify scroll - the same taker
+// logic, else sold for 200 gp.
+void AppState::townBardicLore(){
+        if (mode != MODE_TOWN) return;
+        const Character* bard = nullptr;
+        for (const auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            if (!c.bard) continue;
+            if (!bard || c.level > bard->level) bard = &c;
+        }
+        if (!bard) {
+            log.add("No bard rides with the company.");
+            return;
+        }
+        if (party.unidentified.empty()) {
+            log.add("Nothing in the pack wants "
+                    "identifying.");
+            return;
+        }
+        int roll = (int)rng.below(100) + 1;
+        int need = rules::bardLegendLorePercent(bard->level);
+        if (roll > need) {
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "%s cannot place the find - it stays "
+                     "in the pack (retryable).",
+                     bard->name.c_str());
+            log.add(buf);
+            return;
+        }
+        Party::PendingItem it = party.unidentified.front();
+        party.unidentified.erase(
+            party.unidentified.begin());
+        if (it.kind == 0) {
+            // magic weapon - the first living fighter
+            // (then anyone) whose blade is a lesser enchant
+            Character* taker = nullptr;
+            for (auto& c : party.members) {
+                if (c.hp <= 0) continue;
+                if (c.classIndex != rules::CLASS_FIGHTER)
+                    continue;
+                if (c.weapon.plus < it.plus) { taker = &c; break; }
+            }
+            if (!taker) {
+                for (auto& c : party.members) {
+                    if (c.hp <= 0) continue;
+                    if (c.weapon.plus < it.plus) {
+                        taker = &c;
+                        break;
+                    }
+                }
+            }
+            if (taker) {
+                taker->weapon.id = items::WPN_LONG_SWORD;
+                taker->weapon.plus = it.plus;
+                char buf[96];
+                snprintf(buf, sizeof buf,
+                         "%s places the find - a long sword "
+                         "+%d! %s claims it.",
+                         bard->name.c_str(), it.plus,
+                         taker->name.c_str());
+                log.add(buf);
+            } else {
+                log.add("The lore reveals a long sword - "
+                        "but no one can better his blade. "
+                        "It is sold for 200 gp.");
+                party.gold += 200;
+            }
+        } else {
+            // enchanted armor - the first living fighter
+            // or cleric whose armor is a lesser enchant
+            Character* taker = nullptr;
+            for (auto& c : party.members) {
+                if (c.hp <= 0) continue;
+                if (c.classIndex != rules::CLASS_FIGHTER &&
+                    c.classIndex != rules::CLASS_CLERIC)
+                    continue;
+                if (c.armor.plus < it.plus) { taker = &c; break; }
+            }
+            if (taker) {
+                taker->armor.plus = it.plus;
+                char buf[96];
+                snprintf(buf, sizeof buf,
+                         "%s places the find - enchanted "
+                         "armor (+%d)! %s claims it.",
+                         bard->name.c_str(), it.plus,
+                         taker->name.c_str());
+                log.add(buf);
+            } else {
+                log.add("The lore reveals enchanted armor - "
+                        "but no one can better his mail. "
+                        "It is sold for 200 gp.");
+                party.gold += 200;
+            }
+        }
 }
 
 // ---- townBuyChain ----

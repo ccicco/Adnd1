@@ -66,6 +66,7 @@
 #include "../rules/attacksround.h"  // R232: the monk ladder
 #include "../rules/subclassspecials.h"  // R232: backstab
 #include "../rules/palrangerspells.h"  // R232: the giant-class roster
+#include "../rules/bard.h"  // R236: the poetics ferocity
 
 #include <algorithm>
 #include <cstdio>
@@ -297,6 +298,17 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
         && attacker.classIndex == 3
         && m_round == 1 && m_monsSurprised > 0;
     if (backstab) adj += rules::backstabHitBonusDie();
+    // R236: the poetics ferocity - a living bard in
+    // the company has sung past the printed rounds;
+    // every party strike carries +1 (Appendix II).
+    if (attacker.isCharacter) {
+        int bardAlive = 0;
+        for (const auto& pa : m_party) {
+            if (pa.alive() && pa.bard) bardAlive = 1;
+        }
+        if (rules::bardPoeticsActive(m_round, bardAlive))
+            adj += rules::bardPoeticsHitBonus();
+    }
     if (!rules::attackRollHits(m_dice, toHit, adj)) {
         logLine(attacker.name + " misses " + defender.name);
         return 0;

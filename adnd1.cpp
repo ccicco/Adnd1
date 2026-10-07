@@ -1127,7 +1127,7 @@ static void drawTown(HDC dc, const AppState& s) {
     sy += 22;
     snprintf(line, sizeof line,
              "GUILD: [K] class change  [U] resort  "
-             "[A] bardic studies");
+             "[A] bardic studies  [X] lore");
     TextOutA(dc, 430, sy, line, (int)strlen(line));
 }
 
@@ -1546,6 +1546,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'A':
                     case 'a':
                         g_app.townBeginBardStudies();
+                        break;
+
+                    // R236: the bardic lore (Appendix II)
+                    case 'X':
+                    case 'x':
+                        g_app.townBardicLore();
                         break;
 
                     // R232: the paladin touch
