@@ -2060,6 +2060,64 @@ candidate seams are the rods/staves/
 wands and misc item explanation prose),
 or the next ranked gap.
 
+R244 landed the III.D rods explanation
+prose pins (DMG pp.141-142, upload
+lines ~10562-10687 - the FIRST prose
+round of the EXPLANATIONS AND
+DESCRIPTIONS section, upload ~9996+).
+rules/rodsprose.h (the grenade.h
+pattern, rp prefix): the section
+conventions (rods 50 charges minus
+0-9/d10-1, staves 25 minus 0-5/d6-1,
+wands 100 minus 0-19/d20-1 - six
+accessors; the completely drained
+item crumbles to powder, the
+distance-discharge command-word rule,
+magical silence stops the device) and
+the per-item facts of the SEVEN rods:
+Absorption (50 spell levels,
+1-segment casting, never recharged),
+Beguiling (2" radius, intelligence 1+,
+no save, 1 turn per charge,
+rechargeable), Cancellation (the 11-row
+item saving throw table - potion 20,
+scroll 19, ring 17, rod 14, staff 13,
+wand 15, misc magic 12, artifact/relic
+3, armor/shield 11 (8 if +5), sword 9
+(7 holy), misc weapon 10; drained
+items never restorable, the rod goes
+brittle), Lordly Might (10 lb, 16 Str,
+3 spell-like functions at 1 charge
+each, fear 6", drain 2-8 hp; the 4
+weapon forms +2/+1/+4/+3; the 3
+mundane uses, pole to 50 ft, 4,000 lb,
+doors at 30 ft, storm giant force;
+never recharged), Resurrection (once
+per day; the 11-class and 7-race
+charge tables; multi-classed takes the
+least favorable; never recharged),
+Rulership (12", 200-500 hit dice, save
+at intelligence 15 and 12 hit
+dice/levels, 5 segments to activate,
+1 turn per charge, never recharged),
+Smiting (+3, 4-11 damage, 8-22 and a
+20+ destroy vs golems with 1 charge
+per hit, 20+ vs outer-planar draws 1
+charge and triples damage, never
+recharged). The seven rods are the
+first seven rows of the engine III.D
+table (kRods bands 01-19, the staff
+rows from 20 - cross-checked against
+the R224 rodswands.h bands in the
+audit). New R244 battery audit;
+census 163. Next: R245 - the staves
+explanation prose (upload ~10688+),
+then the wands (upload ~10786+); the
+potions/scrolls/rings explanation prose
+(upload ~9998-10561) is also still
+open, as is the misc magic item
+explanation prose (upload ~10949+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
