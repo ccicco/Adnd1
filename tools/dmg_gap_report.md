@@ -1944,6 +1944,42 @@ elf-sized, 10% is dwarf-sized, and but
 lines ~9902+), or the next un-pinned
 III.A-H surrounding prose seam.
 
+R241 landed the III.F armor and shield
+pins (DMG p.129-130, upload lines
+~9870-9902, the RIGHT column of the
+two-column layout). rules/armorshield.h
+(the grenade.h pattern, as prefix):
+26 rows in kArmor order, Chain Mail +1
+01-05 through Shield -1 missile
+attractor 98-00 (band 100) - the x.p.
+point values and the g.p. sale values
+of every row (asXpValue, asSaleGp);
+the TWO cursed no-x.p. rows - Plate
+Mail of Vulnerability 40-44 and Shield
+-1 missile attractor 98-00 print ---
+(asNoXpCount 2, the R240 no-x.p.
+convention on just two rows); and the
+armor SIZE footnote: 65% of all armor
+is man-sized, 20% elf-sized, 10%
+dwarf-sized, 5% gnome or halfling
+sized (asManSizedPct, asElfSizedPct,
+asDwarfSizedPct, asSmallUserPct - sum
+100). NO class marks, asterisks or
+dual-value rows ride this table. The
+row NAMES were already pinned by the
+R122 line-diff audit; this round pins
+the values, band edges and the size
+footnote. New R241 battery audit;
+census 160. Next: R242 - the III.G
+swords table pins (DMG p.131; the
+sword size note: 70% longswords, 20%
+broadswords, 5% short swords, 4%
+bastard swords, 1% two-handed; the
+three cursed swords print --- g.p.
+sale values, upload lines ~9917+), or
+the next un-pinned III.A-H
+surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
