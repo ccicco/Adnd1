@@ -1820,6 +1820,57 @@ p.129-130, upload lines ~9827+), or
 the next un-pinned III.A-H surrounding
 prose seam.
 
+R238 landed the III.E table 4 footnote
+pins (DMG p.129-130, upload lines
+~9817-9898) - the class marks, the
+asterisk ladder and the dual-value rows
+that frame TABLE (III.E.) 4.
+rules/miscmagic4.h (the grenade.h
+pattern), keyed to the 36 die bands of
+the engine III.E.4 table in kMisc4 order:
+the (M) marks (the three Librams, the
+Manual of Golems with C, the Mirror of
+Life Trapping, the Pearl of Power); the
+(C) marks (the Manual of Golems with M,
+the Necklace of Prayer Beads, the Pearl
+of Wisdom, the two Nets with F and T,
+the three Phylacteries); the (F) marks
+(the Manual of Puissant Skill at Arms,
+the Mattock of the Titans, the Nets);
+the (T) marks (the Manual of Stealthy
+Pilfering, the Nets). The asterisk
+ladder: the Necklace of Missiles (24-27)
+single star - 50 x.p. / 200 g.p. PER HIT
+DIE of each missile; the Necklace of
+Prayer Beads (28-33) double star - PER
+SPECIAL BEAD; the Marvelous Pigments
+(43-44) triple star - PER POT of
+pigments; the Pearl of Power (45-46)
+quadruple star - PER LEVEL OF SPELL (all
+four footnotes ride the book upload this
+time - no restoration needed). The two
+DUAL-VALUE rows: the Medallion of ESP
+(13-15) at 1,000/3,000 x.p. and
+10,000/30,000 g.p., and the Feather
+Token (86-00) at 500/1,000 x.p. and
+2,000/7,000 g.p. (a new walk flag - the
+R225 tiered-purse analog). Cross-checked
+against the 1eonline.info compilation
+(which drops the Golems and Beads marks
+the upload carries - the upload is the
+book-text source, the R225/R226
+convention). The row VALUES were
+already pinned by the R122 line-diff
+audit; this round pins the class marks,
+the asterisk ladder, the dual-value rows
+and the band edges. New R238 battery
+audit; census 157. Next: R239 - the
+III.E table 5 footnotes (the Robe and
+Rug class marks, the Saw and Spade (F)
+marks, DMG p.130, upload lines ~9898+),
+or the next un-pinned III.A-H
+surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
