@@ -2240,6 +2240,72 @@ scrolls/rings explanation prose
 magic item explanations (~10949+)
 remain open after that.
 
+R247 landed the III.D wands
+explanation prose pins, part 2 of 3
+(DMG pp.144-145, upload lines
+~10828-10865). rules/wandsprose2.h
+(the grenade.h pattern, wd prefix,
+73 scalar accessors - no arrays
+this round): the remaining TEN
+wands - Illumination (4 functions:
+dancing lights 1 segment 1 charge;
+light 2 segments 1 charge;
+continual light 2 segments 2
+charges; sunburst 12" range,
+duration 1/10 of a second (pinned
+as 1 tenth), 4" globe, undead
+6-36 hp no save, others blinded
+2-12 segments, 3 segments 3
+charges; rechargeable), Illusion
+(14" range, 3 segments, 1 charge to
+effect and 1 per round to
+continue, rechargeable), Lightning
+(2 functions: shock 1-10 hp no
+save, metallic armor and shield
+discounted AC 10, 1 charge; bolt
+12-36 hp 6d6 with 1s counted as
+2s, 2 charges 2 segments; 1
+function per round, rechargeable),
+Magic Detection (3" radius, 1
+round, 1 charge per turn or
+fraction, 2% cumulative chance per
+round of malfunction,
+rechargeable), Metal and Mineral
+Detection (3" radius, 1 round,
+1 charge per full turn,
+rechargeable), Magic Missiles (2-5
+hp, 3 segments, 1 charge, max 2
+per round, rechargeable), Negation
+(100% any wand function, 75% other
+devices, 1 segment, once per
+round, 1 charge; the one wand
+that cannot be recharged),
+Paralyzation (ray 6", 5-20 rounds,
+3 segments, 1 charge, once per
+round, rechargeable), Polymorphing
+(ray 6", 3 segments, 1 charge,
+1 function per round,
+rechargeable), and Secret Door and
+Trap Location (radius 1.5 inch for
+secret doors - pinned as 3
+half-inches, the first half-inch
+pin since the 2.25 inch
+quarter-inch of R246 - and 3" for
+traps, 1 round, 1 charge,
+rechargeable). The ten wands are
+the engine kRods wand rows 6-15,
+bands 48-94, the wand of wonder
+from 95 (cross-checked against the
+R224 rodswands.h bands in the
+audit). New R247 battery audit;
+census 166. Next: R248 - the wand
+of wonder effect table (upload
+~10867-10947, 19 bands). The
+potions/scrolls/rings explanation
+prose (upload ~9998-10561) and
+the misc magic item explanations
+(~10949+) remain open after that.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
