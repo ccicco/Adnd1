@@ -1773,6 +1773,53 @@ asterisk, DMG p.129, upload lines
 ~9765+), or the next un-pinned III.A-H
 surrounding prose seam.
 
+R237 landed the III.E table 3 footnote
+pins (DMG p.129, upload lines ~9765-9825)
+- the class marks and the asterisk ladder
+that frame TABLE (III.E.) 3.
+rules/miscmagic3.h (the grenade.h
+pattern), keyed to the 33 die bands of
+the engine III.E.3 table in kMisc3
+order: the (C, F, T) marks (Gauntlets of
+Ogre Power 21-22, Gauntlets of Swimming
+and Climbing 23-25, Girdle of
+Femininity/Masculinity 28, Girdle of
+Giant Strength 29); the (C, F) mark
+(Horn of the Tritons 50-53); the (C)
+marks (Incense of Meditation 66-70,
+Incense of Obsession 71); the (F) marks
+(Javelin of Lightning 81-85, Javelin of
+Piercing 86-90); NO (M) rows ride this
+table. The asterisk ladder: the Figurine
+of Wondrous Power (01-15) single star -
+100 x.p. / 1,000 g.p. PER HIT DIE of
+the figurine; the Horn of Valhalla
+(54-60) double star - double for a
+bronze horn, triple for an iron horn;
+the Ioun Stones (72) triple star - per
+stone; the Instrument of the Bards
+(73-78) QUADRUPLE star - 1,000 x.p. /
+5,000 g.p. per level of instrument for
+bards (the fourth footnote the book
+upload DROPS - restored from the
+1eonline.info compilation, the R175
+precedent); and the Jewel of
+Flawlessness (92) per-facet row (no
+x.p., 1,000 g.p. per facet). The row
+VALUES were already pinned by the R122
+line-diff audit; this round pins the
+class marks, the asterisk ladder and
+the band edges. New R237 battery audit;
+census 156. Next: R238 - the III.E
+table 4 footnotes (the Libram and
+Manual class marks, the Necklace of
+Missiles per-hit-die asterisk, the
+Medallion dual values and the Pearl
+of Power per-spell-level star, DMG
+p.129-130, upload lines ~9827+), or
+the next un-pinned III.A-H surrounding
+prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
