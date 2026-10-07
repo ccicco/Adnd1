@@ -2176,6 +2176,70 @@ prose (upload ~9998-10561) and the
 misc magic item explanations
 (~10949+).
 
+R246 landed the III.D wands
+explanation prose pins, part 1 of 3
+(DMG pp.143-144, upload lines
+~10786-10826). rules/wandsprose.h
+(the grenade.h pattern, wd prefix,
+65 scalar accessors - no arrays
+this round): the section
+conventions (wands perform at 6th
+level of experience; at DM option
+1% of all wands are trapped to
+backfire) and the FIRST FIVE
+wands - Conjuration (11 recognized
+conjuration/summoning spells counted
+from print; monster summoning max
+6 charges at 1 per level, 5
+segments; curtain of blackness 600
+sq ft at 2 charges; prismatic
+sphere 1 charge per color; each
+function 5 segments, 1 per round;
+rechargeable), Enemy Detection (6"
+sphere, 1 charge per turn,
+rechargeable), Fear (cone 6" x 2",
+1 segment, flee 6 rounds, 1 charge
+per use, once per round,
+rechargeable), Fire (4 functions:
+burning hands 10 ft wide 12 ft long
+6 hp 1 segment 1 charge;
+pyrotechnics 2 segments 1 charge;
+fireball range 16", 2 segments, 2
+charges, 6 dice with 1s counted as
+2s = 12-36 hp; wall of fire 12
+square", 6 rounds, 8-18 hp touched
+(2d6+6), 2-8 within 1", 1-4 within
+2", ring circle 2.25 inch diameter
+- pinned as 9 quarter-inches; once
+per round, rechargeable), and Frost
+(3 functions: ice storm 6"
+distant, 1 segment, 1 charge; wall
+of ice 6 inches thick, 6" square
+area, 2 segments, 1 charge; cone of
+cold 6" long 2" terminal diameter,
+2 segments, c. -100 F, 6 dice
+12-36, 2 charges; once per round,
+rechargeable). The five wands are
+the engine kRods wand rows 1-5,
+bands 34-47, illumination from 48
+(cross-checked against the R224
+rodswands.h bands in the audit).
+New R246 battery audit; census 165.
+Next: R247 - the remaining ten
+wands (upload ~10828-10865:
+Illumination, Illusion, Lightning,
+Magic Detection, Metal and Mineral
+Detection, Magic Missiles,
+Negation, Paralyzation,
+Polymorphing, Secret Door and Trap
+Location), then R248 the wand of
+wonder effect table (upload
+~10867-10947). The potions/
+scrolls/rings explanation prose
+(upload ~9998-10561) and the misc
+magic item explanations (~10949+)
+remain open after that.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
