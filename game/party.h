@@ -31,6 +31,7 @@
 #include "../rules/classes.h"
 #include "../rules/subclassgates.h"  // R231: the subclass leveling seam
 #include "../rules/multiclass.h"  // R233: the multi-class engine
+#include "../rules/bard.h"  // R235: the bard engine
 #include "../items/items.h"
 #include "../ai/actor.h"
 #include "../dm/dm.h"
@@ -175,6 +176,10 @@ struct Character {
     // resorting to old-class functions; the XP is
     // negated until the new level exceeds the old)
     bool oldClassUse = false;
+    // R235: the bard career (true once the
+    // druidical studies begin - the Appendix II
+    // fighter/thief/bard path)
+    bool bard = false;
     int  xp   = 0;
     int  level = 1;
     int  hp = 0, maxHp = 0;
@@ -232,6 +237,7 @@ struct Character {
         a.isCharacter = true;
         a.classIndex  = classIndex;
         a.subclass    = subclass;   // R232: the specials hooks
+        a.bard        = bard;   // R235: the druid studies
         // R233: a multi-class member rides the primary
         // class - the FIRST set bit (the fighter bit
         // when the combo carries it - the best melee
@@ -381,6 +387,56 @@ struct Character {
                 break;
         }
         return true;
+    }
+
+    // R235: can this member begin the bardic
+    // studies? The print (Appendix II): the career
+    // runs fighter (to 5th-7th) then thief (to
+    // 5th-9th) - the member is a fighter-turned-
+    // thief (the R234 dual-class career) inside
+    // both windows, human or half-elf, with the
+    // ability minimums (STR WIS DEX CHA 15+,
+    // INT 12, CON 10).
+    bool canBeginBardStudies() const {
+        if (bard) return false;
+        if (!rules::bardRaceAllowed(race)) return false;
+        if (classIndex != 3) return false;
+        if (dualOldClass != 0) return false;
+        if (!rules::bardCareerGate(dualOldLevel, level))
+            return false;
+        return rules::bardAbilityGate(
+            abilities.str, abilities.wis,
+            abilities.dex, abilities.cha,
+            abilities.int_, abilities.con);
+    }
+
+    // R235: begin the studies - the bard career.
+    // The hit dice and hit points are RETAINED
+    // (the class d6s ride the Table I column from
+    // level 2); all functions restart at 1st
+    // level; the kit rides Table III (leather, no
+    // shield, a bard weapon - the long sword, a
+    // permitted Table III arm; the engine has no
+    // scimitar); the druid slots fill from Table
+    // I level 1.
+    void beginBardStudies() {
+        bard = true;
+        dualOldClass = -1;
+        dualOldLevel = 0;
+        oldClassUse = false;
+        classIndex = 2;   // the druidical caster base
+        subclass = -1;
+        level = 1;
+        xp = 0;
+        knownSpells.clear();
+        for (int lv = 0; lv < 9; ++lv)
+            slotsByLevel[lv] = 0;
+        for (int lv = 1; lv <= 5; ++lv)
+            slotsByLevel[lv - 1] =
+                rules::bardDruidSlots(1, lv);
+        weapon.id = items::WPN_LONG_SWORD;
+        armor.id  = items::ARMOR_LEATHER;
+        shield    = false;
     }
 };
 
@@ -558,6 +614,36 @@ struct Party {
                 log.add(nbuf);
                 continue;
             }
+            // R235: the bard levels on the Table I XP
+            // ladder (bard XP only - the R186 pin);
+            // the queue and message mirror the class
+            // ladder below, then the bard owns the
+            // member
+            if (c.bard) {
+                // R235b: the award itself (the flat bard
+                // XP - the Table I ladder counts bard XP
+                // only; no prime-requisite adjustment,
+                // the R186 pin); the R235 block queued
+                // but never awarded
+                c.xp += amount;
+                int bcap = 23;
+                int bneed = rules::bardXpForLevel(
+                    c.level + 1);
+                if (c.level < bcap && c.xp >= bneed &&
+                    !isQueuedForTraining(
+                        (int)(&c - members.data()))) {
+                    pendingTraining.push_back(
+                        (int)(&c - members.data()));
+                    char bbuf[96];
+                    snprintf(bbuf, sizeof bbuf,
+                             "%s is due a level - training "
+                             "costs %d gp in town.",
+                             c.name.c_str(),
+                             1500 * (c.level + 1));
+                    log.add(bbuf);
+                }
+                continue;
+            }
             // R30: prime-requisite % (PHB p.20 class notes) -
             // e.g. STR 16+ fighter +10%, STR 9 fighter -20%
             int primeAb = c.abilities.get(
@@ -674,7 +760,12 @@ struct Party {
             int cap = rules::CLASS_LEVEL_CAP[c.classIndex];
             int need = rules::xpForLevel(c.classIndex,
                                         c.level + 1);
-            if (c.multiMask != 0) {
+            // R235: a bard promotes on the Table I XP
+            // ladder, capped at the 23rd (M. Bard)
+            if (c.bard) {
+                cap = 23;
+                need = rules::bardXpForLevel(c.level + 1);
+            } else if (c.multiMask != 0) {
                 int mb = rules::multiClassBitAt(
                     c.multiMask, 0);
                 int msub = rules::multiClassSubOfBit(mb);
@@ -708,7 +799,28 @@ struct Party {
             // R179 pins); the per-die floor is 1
             int conAdj;
             int die;
-            if (c.dualOldClass >= 0) {
+            if (c.bard) {
+                // R235: the bard promotion die - the
+                // Table I d6 count gained this level
+                // (level 1 gains none - the fighter and
+                // thief dice are the retained base),
+                // each with the druidical con
+                // adjustment (the druid rides the
+                // cleric con class - the R230
+                // convention), the per-die floor 1
+                int nd = rules::bardHitDice(c.level)
+                        - rules::bardHitDice(c.level - 1);
+                conAdj = rules::conHPAdjustment(
+                    rules::subclassConClass(2),
+                    c.abilities.con);
+                die = 0;
+                for (int i = 0; i < nd; ++i) {
+                    int d = (int)dice.roll(1, 6, 0)
+                            + conAdj;
+                    if (d < 1) d = 1;
+                    die += d;
+                }
+            } else if (c.dualOldClass >= 0) {
                 // R234: the dual-class promotion die -
                 // no die while the new level has not
                 // exceeded the former level (the old

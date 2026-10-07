@@ -511,6 +511,33 @@ void AppState::townOldClassResort(){
         log.add("No member has two classes.");
 }
 
+// ---- townBeginBardStudies ----
+// R235: the druidical studies - a fighter-turned-
+// thief inside both printed windows (fighter 5th-
+// 7th, then thief 5th-9th) with the Appendix II
+// ability minimums begins the bard career. The
+// hit dice are retained; all functions restart at
+// 1st level (the R234 class-change convention).
+void AppState::townBeginBardStudies(){
+        if (mode != MODE_TOWN) return;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            if (c.bard) continue;
+            if (!c.canBeginBardStudies()) continue;
+            c.beginBardStudies();
+            char buf[128];
+            snprintf(buf, sizeof buf,
+                     "%s begins the druidical studies - "
+                     "a bard at 1st level (hit dice kept).",
+                     c.name.c_str());
+            log.add(buf);
+            return;
+        }
+        log.add("No one can begin the bardic studies "
+                "(fighter 5th-7th, then thief 5th-9th, "
+                "the Appendix II minimums).");
+}
+
 // ---- townBuyChain ----
 void AppState::townBuyChain(){
         if (mode != MODE_TOWN) return;

@@ -62,10 +62,15 @@ namespace rules {
 
 // ---- the gates ----
 
-static const int BARD_LEVEL_COUNT = 23;
-static const int BARD_PRIME_MIN = 15;   // STR WIS DEX CHA
-static const int BARD_INT_MIN = 12;
-static const int BARD_CON_MIN = 10;
+// R235: named enum constants (was static const
+// ints) so the audit_eval seam reads the same
+// values (the R233 McBits convention).
+enum BardPins {
+    BARD_LEVEL_COUNT = 23,
+    BARD_PRIME_MIN = 15,   // STR WIS DEX CHA
+    BARD_INT_MIN = 12,
+    BARD_CON_MIN = 10,
+};
 
 // True when the six ability scores meet the
 // printed minimums (STR WIS DEX CHA 15+,
@@ -424,6 +429,18 @@ inline bool bardOilAllowed() { return true; }
 
 inline bool bardPoisonAllowed(bool neutralEvil) {
     return neutralEvil;
+}
+
+// ---- the R235 career seam (pure expressions -
+// the evaluable-subset convention) ----
+
+// The career gate: the druid studies open to a
+// fighter-turned-thief inside BOTH printed
+// windows (fighter 5th-7th, then thief 5th-9th).
+inline bool bardCareerGate(int fighterLevel,
+                            int thiefLevel) {
+    return bardFighterWindow(fighterLevel)
+           && bardThiefWindow(thiefLevel);
 }
 
 // The wiring: combat at the fighter level

@@ -768,4 +768,32 @@ arc boxes:
       classes only (the printed paladin and ranger
       combinations stay future work), the roster
       prints the F6>M1 line. Census 152.
+- [x] R235 the bard engine - WIRED: the
+      Appendix II career is playable - the guild
+      studies (the [A] town key; the first member
+      who meets the gates begins), the gates (a
+      fighter-turned-thief inside BOTH printed
+      windows - fighter 5th-7th, then thief 5th-9th
+      - human or half-elf, the ability minimums
+      STR WIS DEX CHA 15+, INT 12, CON 10), the
+      studies (the hit dice and hit points
+      RETAINED, all functions at 1st level, the
+      Table III kit - leather, no shield, a bard
+      weapon - and the Table I level-1 druid
+      slots), the leveling (the Table I XP ladder,
+      bard XP only, capped at the 23rd; the Table
+      I d6 promotion column with the druidical con
+      adjustment), the combat castable list (the
+      druid roster from the Table I slot columns,
+      levels 1-5), the B roster line and the
+      v1-compatible bard save line. Simplifications
+      recorded: the alignment pin (always neutral)
+      stays data-only (no alignment concept yet),
+      the poetics layers, the colleges, the
+      henchmen ladder and the musical item bonuses
+      stay data-only (the R186 pins), the engine
+      has no scimitar (the kit rides the long
+      sword - a permitted Table III arm), the
+      druid spell EFFECTS resolve on the generic
+      combat layer. Census 154.
 

@@ -1066,6 +1066,11 @@ static void drawTown(HDC dc, const AppState& s) {
         nm[8] = 0;
         if (c.hp <= 0) {
             snprintf(line, sizeof line, "%s  fallen", nm);
+        } else if (c.bard) {
+            // R235: the bard roster line
+            snprintf(line, sizeof line,
+                     "%s  B%d  %d/%d",
+                     nm, c.level, c.hp, c.maxHp);
         } else if (c.dualOldClass >= 0) {
             // R234: the two-class roster line - the
             // former class and level, then the new
@@ -1121,7 +1126,8 @@ static void drawTown(HDC dc, const AppState& s) {
     // lines ride under the company column)
     sy += 22;
     snprintf(line, sizeof line,
-             "GUILD: [K] change class  [U] resort stance");
+             "GUILD: [K] class change  [U] resort  "
+             "[A] bardic studies");
     TextOutA(dc, 430, sy, line, (int)strlen(line));
 }
 
@@ -1534,6 +1540,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'U':
                     case 'u':
                         g_app.townOldClassResort();
+                        break;
+
+                    // R235: the bardic studies
+                    case 'A':
+                    case 'a':
+                        g_app.townBeginBardStudies();
                         break;
 
                     // R232: the paladin touch

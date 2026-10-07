@@ -5677,6 +5677,153 @@ int main() {
         printf("R234 dual-class engine audit: bad %d\n", bad);
         if (bad) return 1;
     }
+    // ---- R235a: the bard career seam audit ----
+    // The career windows, the Table I ladders and
+    // the gates (an evaluable block - verified by
+    // audit_eval).
+    {
+        int bad = 0;
+        // the career gate: fighter 5th-7th, then
+        // thief 5th-9th
+        if (!rules::bardCareerGate(5, 5)) ++bad;
+        if (!rules::bardCareerGate(7, 9)) ++bad;
+        if (rules::bardCareerGate(4, 5)) ++bad;
+        if (rules::bardCareerGate(8, 5)) ++bad;
+        if (rules::bardCareerGate(5, 4)) ++bad;
+        if (rules::bardCareerGate(5, 10)) ++bad;
+        // the Table I d6 column: 0 at 1st, 1-10 at
+        // 2nd-11th, then 10+1 through 10+12
+        if (rules::bardHitDice(1) != 0) ++bad;
+        if (rules::bardHitDice(2) != 1) ++bad;
+        if (rules::bardHitDice(11) != 10) ++bad;
+        if (rules::bardHitDice(12) != 11) ++bad;
+        if (rules::bardHitDice(23) != 22) ++bad;
+        if (rules::bardHitDice(0) != 0) ++bad;
+        if (rules::bardHitDice(24) != 22) ++bad;
+        // the Table I XP ladder (bard XP only)
+        if (rules::bardXpForLevel(1) != 0) ++bad;
+        if (rules::bardXpForLevel(2) != 2001) ++bad;
+        if (rules::bardXpForLevel(11) != 150001) ++bad;
+        if (rules::bardXpForLevel(12) != 200001) ++bad;
+        if (rules::bardXpForLevel(13) != 400001) ++bad;
+        if (rules::bardXpForLevel(20) != 1800001) ++bad;
+        if (rules::bardXpForLevel(23) != 3000001) ++bad;
+        // the Table I druid slots
+        if (rules::bardDruidSlots(1, 1) != 1) ++bad;
+        if (rules::bardDruidSlots(1, 2) != 0) ++bad;
+        if (rules::bardDruidSlots(4, 2) != 1) ++bad;
+        if (rules::bardDruidSlots(14, 5) != 2) ++bad;
+        if (rules::bardDruidSlots(15, 1) != 3) ++bad;
+        if (rules::bardDruidSlots(16, 1) != 4) ++bad;
+        if (rules::bardDruidSlots(19, 1) != 5) ++bad;
+        if (rules::bardDruidSlots(23, 5) != 5) ++bad;
+        // the druid ability cap: 12th until the 23rd
+        if (rules::bardDruidCastLevel(1) != 1) ++bad;
+        if (rules::bardDruidCastLevel(12) != 12) ++bad;
+        if (rules::bardDruidCastLevel(13) != 12) ++bad;
+        if (rules::bardDruidCastLevel(22) != 12) ++bad;
+        if (rules::bardDruidCastLevel(23) != 13) ++bad;
+        // the henchmen ladder
+        if (rules::bardHenchmen(4) != 0) ++bad;
+        if (rules::bardHenchmen(5) != 1) ++bad;
+        if (rules::bardHenchmen(8) != 2) ++bad;
+        if (rules::bardHenchmen(23) != 999) ++bad;
+        // the ability and race gates, Table III
+        if (!rules::bardAbilityGate(15, 15, 15, 15,
+                                12, 10)) ++bad;
+        if (rules::bardAbilityGate(14, 15, 15, 15,
+                                12, 10)) ++bad;
+        if (rules::bardAbilityGate(15, 15, 15, 15,
+                                11, 10)) ++bad;
+        if (!rules::bardRaceAllowed(0)) ++bad;
+        if (!rules::bardRaceAllowed(4)) ++bad;
+        if (rules::bardRaceAllowed(1)) ++bad;
+        if (rules::bardShieldAllowed()) ++bad;
+        if (!rules::bardOilAllowed()) ++bad;
+        printf("R235a bard career seam audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R235: the bard engine audit ----
+    // The career gates, the retained hit dice,
+    // the 1st-level restart, the Table I queue and
+    // the promotion die (an engine audit - the C++
+    // battery is the gate).
+    {
+        int bad = 0;
+        {
+            Character c;
+            c.race = 0;   // human
+            c.abilities.str = 15;
+            c.abilities.wis = 15;
+            c.abilities.dex = 15;
+            c.abilities.cha = 15;
+            c.abilities.int_ = 12;
+            c.abilities.con = 10;
+            c.classIndex = 3;   // the thief leg
+            c.level = 6;
+            c.dualOldClass = 0;   // the fighter leg
+            c.dualOldLevel = 6;
+            c.hp = c.maxHp = 30;
+            if (!c.canBeginBardStudies()) ++bad;
+            // the refusals: wrong race, fighter
+            // window, thief window, low CHA, a
+            // plain class, already a bard
+            c.race = 1;
+            if (c.canBeginBardStudies()) ++bad;
+            c.race = 0;
+            c.dualOldLevel = 4;
+            if (c.canBeginBardStudies()) ++bad;
+            c.dualOldLevel = 6;
+            c.level = 10;
+            if (c.canBeginBardStudies()) ++bad;
+            c.level = 6;
+            c.abilities.cha = 14;
+            if (c.canBeginBardStudies()) ++bad;
+            c.abilities.cha = 15;
+            c.classIndex = 0;
+            if (c.canBeginBardStudies()) ++bad;
+            c.classIndex = 3;
+            // the studies: hit dice kept, 1st-level
+            // restart, the Table III kit, the
+            // Table I level-1 slots
+            c.beginBardStudies();
+            if (!c.bard) ++bad;
+            if (c.classIndex != 2) ++bad;
+            if (c.subclass != -1) ++bad;
+            if (c.level != 1) ++bad;
+            if (c.xp != 0) ++bad;
+            if (c.hp != 30 || c.maxHp != 30) ++bad;
+            if (c.dualOldClass != -1) ++bad;
+            if (c.armor.id != items::ARMOR_LEATHER) ++bad;
+            if (c.shield) ++bad;
+            if (c.slotsByLevel[0] != 1) ++bad;
+            if (c.slotsByLevel[1] != 0) ++bad;
+            if (c.slotsByLevel[5] != 0) ++bad;
+            if (c.canBeginBardStudies()) ++bad;
+        }
+        // the Table I queue and the promotion die,
+        // on a live party train loop
+        {
+            Party p;
+            Character c;
+            c.name = "Rhymer";
+            c.bard = true;
+            c.classIndex = 2;
+            c.level = 1;
+            c.hp = c.maxHp = 30;
+            p.members.push_back(c);
+            rules::Rng r{7};
+            rules::Dice d(r);
+            MessageLog log;
+            p.gainXp(2500, d, log);
+            if (p.members[0].xp != 2500) ++bad;
+            if (p.trainNext(d, log) < 0) ++bad;
+            if (p.members[0].level != 2) ++bad;
+            if (p.members[0].maxHp <= 30) ++bad;
+        }
+        printf("R235 bard engine audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
     // ---- R181: the attacks per melee round audit ----
     // The fighter-group bands, the under-one-hit-die
     // note, every monk ladder cell, the monk weapon

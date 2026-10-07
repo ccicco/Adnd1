@@ -213,6 +213,11 @@ bool AppState::saveGame(){
                 fprintf(f, "olduse %d\n",
                         c.oldClassUse ? 1 : 0);
             }
+            // R235: the bard career (only when begun -
+            // v1 saves carry no line and load as
+            // single-classed)
+            if (c.bard)
+                fprintf(f, "bard %d\n", 1);
             // R56: the magic-shield enchant (nonzero only -
             // v1 saves carry no line and load as 0)
             if (c.shieldPlus > 0)
@@ -655,6 +660,15 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.oldClassUse = ou != 0;
+                } else if (strcmp(tag, "bard") == 0) {
+                    int bd = 0;
+                    if (fscanf(f, "%d", &bd) != 1 ||
+                        bd < 0 || bd > 1) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (bard).");
+                        return false;
+                    }
+                    c.bard = bd != 0;
                 } else if (strcmp(tag, "age") == 0) {
                 int ag = 0;
                 if (fscanf(f, "%d", &ag) != 1 ||
@@ -884,6 +898,17 @@ void AppState::descend(){
 // ---- restoreSlots ----
 void AppState::restoreSlots(){
         for (auto& c : party.members) {
+            // R235: a bard reads the Table I druid
+            // slot columns (levels 1-5; 6-9 empty)
+            if (c.bard) {
+                for (int lv = 1; lv <= 9; ++lv)
+                    c.slotsByLevel[lv - 1] =
+                        lv <= 5
+                            ? rules::bardDruidSlots(
+                                  c.level, lv)
+                            : 0;
+                continue;
+            }
             if (c.classIndex != 1 && c.classIndex != 2) continue;
             // R230: the druid and illusionist read their own
             // tables (the R228/R229 seams); plain members the

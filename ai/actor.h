@@ -121,6 +121,8 @@ struct Actor {
     // R232: the registry subclass (rules::Subclass; -1 = a
     // plain class member) - the specials hooks read it
     int  subclass = -1;
+    // R235: the bard career (the druidical studies)
+    bool bard = false;
     int  level      = 1;
     uint8_t str = 10, dex = 10, con = 10, intel = 10, wis = 10, cha = 10;
     rules::ExceptionalStrength exStr{};

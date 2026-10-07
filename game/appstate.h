@@ -903,6 +903,24 @@ struct CombatState {
         else
             maxLv = spells::maxSpellLevelForClericLevel(a.level);
 
+        // R235: a bard casts the druid roster from
+        // the Table I slot columns (levels 1-5; the
+        // MU book gate does not apply - the
+        // druidical studies are not a book)
+        if (a.bard) {
+            for (int id = 0; id < spells::SPELL_COUNT;
+                 ++id) {
+                const spells::SpellDef& s =
+                    spells::spell((spells::SpellId)id);
+                if (s.sclass != spells::SPELL_DRUID)
+                    continue;
+                if (s.level < 1 || s.level > 5) continue;
+                if (a.slotsByLevel[s.level - 1] <= 0)
+                    continue;
+                out.push_back((spells::SpellId)id);
+            }
+            return out;
+        }
         bool mu = (a.classIndex == 1);
         for (int id = 0; id < spells::SPELL_COUNT; ++id) {
             const spells::SpellDef& s =
@@ -1185,6 +1203,9 @@ struct AppState {
     // R234: the guild class-change and the resort stance
     void townChangeClass();
     void townOldClassResort();
+
+    // R235: the bardic studies - the Appendix II career
+    void townBeginBardStudies();
 
     // R43: the armorer - chain mail (75 gp, PHB list price) for
     // the first living armor-eligible member (fighter or cleric)
