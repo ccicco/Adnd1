@@ -1980,6 +1980,44 @@ sale values, upload lines ~9917+), or
 the next un-pinned III.A-H
 surrounding prose seam.
 
+R242 landed the III.G swords pins (DMG
+p.131, upload lines ~9906-9947, the
+RIGHT column of the two-column print).
+rules/swords.h (the grenade.h pattern,
+sw prefix): 26 rows in kSwords order,
+Sword +1 01-25 through Sword, Cursed
+Berserking 96-00 (band 100) - the x.p.
+point values and g.p. sale values of
+every row (swXpValue, swSaleGp); the
+THREE cursed swords print --- g.p.
+sale values (Sword +1 Cursed 86-90,
+Sword -2 Cursed 91-95, Sword, Cursed
+Berserking 96-00 - swNoSaleCount 3,
+pinned as 0 g.p.); the sword SIZE
+note: 70% longswords, 20% broadswords,
+5% short (small) swords, 4% bastard
+swords, 1% two-handed (swLongswordPct
+etc., sum 100); and the TWO
+tiered-bonus wrapped rows: the Flame
+Tongue +2 vs. regenerating, +3 vs.
+cold-using/inflammable/avian, +4 vs.
+undead, the Frost Brand +6 vs. fire
+using/dwelling (swFlameVsRegenBonus
+etc.). NO class marks or asterisks
+ride this table; the no-x.p. footnote
+after it belongs to the III.E Special
+table (pinned R240). The row NAMES
+were already pinned by the R122
+line-diff audit; this round pins the
+values, band edges, the size note and
+the tiered bonuses. New R242 battery
+audit; census 161. Next: R243 - the
+III.H misc weapons table pins (DMG
+p.131-132; the quantity ranges ride
+the arrow/bolt rows, upload lines
+~9949+), or the next un-pinned III.A-H
+surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
