@@ -1910,6 +1910,40 @@ no-x.p. convention, DMG p.130-131,
 upload lines ~9917+), or the next
 un-pinned III.A-H surrounding prose seam.
 
+R240 landed the III.E Special artifacts
+pins (DMG p.130-131, upload lines ~9917-
+9946) - the artifact g.p. sale value
+table that closes the III.E magic item
+block, TABLE (III.E.) Special.: 29 rows
+in kArtifacts order, the Axe of the
+Dwarvish Lords 01 through the Wand of
+Orcus 00 (band 100). rules/specart.h
+(the grenade.h pattern): the printed
+sale values (26 single-value rows,
+saSaleGp); the Orb of the Dragonkind
+41-47 uniform range 10-80,000 (read
+10,000 through 80,000 - saSaleGpHi,
+the R225 dual-value analog, count 1);
+the Teeth of Dahlver-Nar 93-98 at
+5,000 PER TOOTH (count 1); the Throne
+of the Gods 99 prints NO sale value
+(0 g.p., count 1); and the no-x.p.
+convention - the table footnote reads
+These items bring no experience points.
+(saXpValue, all 29 rows zero). The row
+NAMES were already pinned by the R122
+line-diff audit; this round pins the
+sale values, band edges and the value
+conventions. New R240 battery audit;
+census 159. Next: R241 - the III.F
+armor and shield table pins (DMG
+p.129-130; the armor size footnote:
+65% of all armor is man-sized, 20% is
+elf-sized, 10% is dwarf-sized, and but
+5% gnome or halfling sized, upload
+lines ~9902+), or the next un-pinned
+III.A-H surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
