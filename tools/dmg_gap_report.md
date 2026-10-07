@@ -2018,6 +2018,48 @@ the arrow/bolt rows, upload lines
 ~9949+), or the next un-pinned III.A-H
 surrounding prose seam.
 
+R243 landed the III.H misc weapons pins
+(DMG p.131-132, upload lines ~9949-9987)
+- the miscellaneous weapons table, the
+LAST of the III.A-H magic item tables.
+rules/mweapons.h (the grenade.h pattern,
+mw prefix): 36 rows in kWeapons order,
+Arrow +1 01-08 through Trident (Military
+Fork) +3 00 (band 100) - the x.p. point
+values and g.p. sale values of every row
+(mwXpValue, mwSaleGp); the FOUR ammo
+quantity ranges printed as the N-M in
+number suffixes (Arrow +1 2-24, Arrow +2
+2-16, Arrow +3 2-12, Bolt +2 2-20 -
+mwQtyLo/mwQtyHi, the 0/0 cells mean a
+single item, mwQtyRangeCount 4); the TWO
+duplicate Hammer +2 rows (57-60 at
+300/2,500 and 61-62 at 650/6,000, both
+printed verbatim, Curtiss-verified
+against p.125 - mwDuplicateNameCount 2);
+and the cursed Spear, Cursed Backbiter
+98-99 prints --- x.p. (mwNoXpCount 1).
+NO class marks or asterisks ride this
+table. The row NAMES were already
+pinned by the R122 line-diff audit; this
+round pins the values, band edges and
+the quantity ranges. New R243 battery
+audit; census 162. MILESTONE: the whole
+III.A-H magic item table block is now
+fully pinned (potions, scrolls, rings,
+rods/staves/wands, misc tables 1-5, the
+Special artifacts, armor and shields,
+swords and misc weapons). Next: R244 -
+the next un-pinned III.A-H surrounding
+prose seam (the EXPLANATIONS AND
+DESCRIPTIONS prose that follows the
+tables, upload lines ~9995+; the potions
+prose was pinned R221, the scrolls prose
+R222, the rings footnotes R223 - the
+candidate seams are the rods/staves/
+wands and misc item explanation prose),
+or the next ranked gap.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
