@@ -1871,6 +1871,45 @@ marks, DMG p.130, upload lines ~9898+),
 or the next un-pinned III.A-H
 surrounding prose seam.
 
+R239 landed the III.E table 5 footnote
+pins (DMG p.130, upload lines ~9898-9915)
+- the class marks that frame TABLE
+(III.E.) 5, the LAST of the miscellaneous
+magic sub-tables. rules/miscmagic5.h (the
+grenade.h pattern), keyed to the 35 die
+bands of the engine III.E.5 table in
+kMisc5 order: the (M) marks (the Robe of
+the Archmagi, Robe of Eyes, Robe of
+Powerlessness, Robe of Scintillating
+Colors with C, Robe of Useful Items, Rug
+of Welcome, Sphere of Annihilation,
+Talisman of the Sphere - count 8); the
+(C) marks (the Robe of Scintillating
+Colors with M, the Talismans of Pure
+Good and Ultimate Evil, the Tridents of
+Fish Command and Warning - count 5);
+the (F) marks (the Saw of Mighty Cutting,
+the Spade of Colossal Excavation, the
+Trident of Submission, the command/
+warning Tridents - count 5); the (T)
+marks (the Tridents of Fish Command and
+Warning - count 2). VERIFIED: NO asterisk
+rows, dual-value rows or footnotes ride
+this table - the print runs straight from
+the 91-00 Wings of Flying row to the
+TABLE (III.E.) Special artifacts table
+(a pure class-marks round, the R224 rods
+shape). The row VALUES were already
+pinned by the R122 line-diff audit; this
+round pins the class marks and the band
+edges. New R239 battery audit; census
+158. Next: R240 - the III.E Special
+artifacts table pins (the artifact names
+and the printed g.p. sale values, the
+no-x.p. convention, DMG p.130-131,
+upload lines ~9917+), or the next
+un-pinned III.A-H surrounding prose seam.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
