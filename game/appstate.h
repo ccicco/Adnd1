@@ -1182,6 +1182,10 @@ struct AppState {
     // simplified). One promotion per visit/key press.
     void townTrain();
 
+    // R234: the guild class-change and the resort stance
+    void townChangeClass();
+    void townOldClassResort();
+
     // R43: the armorer - chain mail (75 gp, PHB list price) for
     // the first living armor-eligible member (fighter or cleric)
     // whose current armor is worse than chain

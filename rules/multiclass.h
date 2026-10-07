@@ -172,8 +172,13 @@ inline int halfelfClericWisMin() {
 
 // ---- the dual-class gates (human only) ----
 
-static const int DUAL_CLASS_OLD_PRIME_MIN = 15;
-static const int DUAL_CLASS_NEW_PRIME_MIN = 17;
+// R234: named enum constants (was static const
+// ints) so the audit_eval seam reads the same
+// values (the R233 McBits convention).
+enum DualClassMins {
+    DUAL_CLASS_OLD_PRIME_MIN = 15,
+    DUAL_CLASS_NEW_PRIME_MIN = 17,
+};
 
 // True only for humans (the print: humans
 // may not multi-class; they may change class).
@@ -262,6 +267,28 @@ inline int multiClassSubOfBit(int bit) {
          : bit == MC_RANGER ? 1
          : bit == MC_ASSASSIN ? 4
          : -1;
+}
+
+// ---- the R234 dual-class seam (pure expressions
+// - the evaluable-subset convention) ----
+
+// The new-class hit die begins once the new level
+// EXCEEDS the former class level (the print: at
+// such time as the character has attained a level
+// which exceeds the former class level).
+inline int dualClassNewDieDue(int newLevel, int oldLevel) {
+    return newLevel > oldLevel ? 1 : 0;
+}
+
+// The XP negation: a dual-class member resorting to
+// former-class functions earns no experience, until
+// the new level exceeds the old (then the member
+// may mix functions freely). isDual is the 1/0 form
+// of dualOldClass >= 0; oldUse the stance.
+inline int dualClassXpNegated(int isDual, int newLevel,
+                              int oldLevel, int oldUse) {
+    return (isDual == 1 && oldUse == 1 &&
+            newLevel <= oldLevel) ? 1 : 0;
 }
 
 } // namespace rules

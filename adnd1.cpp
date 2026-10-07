@@ -1066,6 +1066,15 @@ static void drawTown(HDC dc, const AppState& s) {
         nm[8] = 0;
         if (c.hp <= 0) {
             snprintf(line, sizeof line, "%s  fallen", nm);
+        } else if (c.dualOldClass >= 0) {
+            // R234: the two-class roster line - the
+            // former class and level, then the new
+            snprintf(line, sizeof line,
+                     "%s  %c%d>%c%d  %d/%d",
+                     nm, CLASS_LETTER[c.dualOldClass & 3],
+                     c.dualOldLevel,
+                     CLASS_LETTER[c.classIndex & 3],
+                     c.level, c.hp, c.maxHp);
         } else {
             snprintf(line, sizeof line, "%s  %c%d  %d/%d",
                      nm, CLASS_LETTER[c.classIndex & 3],
@@ -1105,6 +1114,14 @@ static void drawTown(HDC dc, const AppState& s) {
              "Identify scrolls: %d  (unidentified: %d)",
              s.party.identifyScrolls,
              (int)s.party.unidentified.size());
+    TextOutA(dc, 430, sy, line, (int)strlen(line));
+
+    // R234: the guild class-change and the resort
+    // stance (the left column is full to y=600; the
+    // lines ride under the company column)
+    sy += 22;
+    snprintf(line, sizeof line,
+             "GUILD: [K] change class  [U] resort stance");
     TextOutA(dc, 430, sy, line, (int)strlen(line));
 }
 
@@ -1506,6 +1523,17 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'R':
                     case 'r':
                         g_app.townRaiseDead();
+                        break;
+
+                    // R234: the guild class-change and the resort
+                    case 'K':
+                    case 'k':
+                        g_app.townChangeClass();
+                        break;
+
+                    case 'U':
+                    case 'u':
+                        g_app.townOldClassResort();
                         break;
 
                     // R232: the paladin touch

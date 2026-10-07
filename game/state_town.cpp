@@ -457,6 +457,60 @@ void AppState::townTrain(){
         }
     }
 
+// ---- townChangeClass ----
+// R234: the guild - the human class change (the
+// print: 15+ in the old prime, 17+ in the new).
+// The first member who meets the gates switches
+// to the first qualifying base class (the
+// deterministic pick; the town has no dialogs).
+void AppState::townChangeClass(){
+        if (mode != MODE_TOWN) return;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            for (int nc = 0; nc < 4; ++nc) {
+                if (!c.canSwitchProfession(nc)) continue;
+                c.switchProfession(nc, dice);
+                static const char* NC[4] =
+                    { "fighter", "magic-user",
+                      "cleric", "thief" };
+                char buf[128];
+                snprintf(buf, sizeof buf,
+                         "%s ceases the old profession "
+                         "and takes up %s at 1st "
+                         "level (hit dice kept).",
+                         c.name.c_str(), NC[nc]);
+                log.add(buf);
+                log.add("No hit die until the new level "
+                        "exceeds the old; [U] resorts to "
+                        "former-class functions.");
+                return;
+            }
+        }
+        log.add("No one can change class (human, 15+ "
+                "old prime, 17+ new).");
+}
+
+// ---- townOldClassResort ----
+// R234: the former-class resort stance - while
+// held the member earns no experience (the print:
+// reversion negates it), until the new level
+// exceeds the old.
+void AppState::townOldClassResort(){
+        if (mode != MODE_TOWN) return;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            if (c.dualOldClass < 0) continue;
+            c.oldClassUse = !c.oldClassUse;
+            log.add(c.oldClassUse
+                ? "Resorting to former-class functions "
+                  "- no experience while this holds."
+                : "Performing strictly within the new "
+                  "profession.");
+            return;
+        }
+        log.add("No member has two classes.");
+}
+
 // ---- townBuyChain ----
 void AppState::townBuyChain(){
         if (mode != MODE_TOWN) return;

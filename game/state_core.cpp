@@ -204,6 +204,15 @@ bool AppState::saveGame(){
             // v1 saves carry no line and load as single)
             if (c.multiMask != 0)
                 fprintf(f, "multi %d\n", c.multiMask);
+            // R234: the dual-class career (only when
+            // switched - v1 saves carry no line and
+            // load as single)
+            if (c.dualOldClass >= 0) {
+                fprintf(f, "dual %d %d\n",
+                        c.dualOldClass, c.dualOldLevel);
+                fprintf(f, "olduse %d\n",
+                        c.oldClassUse ? 1 : 0);
+            }
             // R56: the magic-shield enchant (nonzero only -
             // v1 saves carry no line and load as 0)
             if (c.shieldPlus > 0)
@@ -626,6 +635,26 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.multiMask = mm;
+                } else if (strcmp(tag, "dual") == 0) {
+                    int oc = 0, ol = 0;
+                    if (fscanf(f, "%d %d", &oc, &ol) != 2 ||
+                        oc < 0 || oc > 3 ||
+                        ol < 1 || ol > 40) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (dual).");
+                        return false;
+                    }
+                    c.dualOldClass = oc;
+                    c.dualOldLevel = ol;
+                } else if (strcmp(tag, "olduse") == 0) {
+                    int ou = 0;
+                    if (fscanf(f, "%d", &ou) != 1 ||
+                        ou < 0 || ou > 1) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (olduse).");
+                        return false;
+                    }
+                    c.oldClassUse = ou != 0;
                 } else if (strcmp(tag, "age") == 0) {
                 int ag = 0;
                 if (fscanf(f, "%d", &ag) != 1 ||

@@ -166,6 +166,15 @@ struct Character {
     // else the R185 combo mask; the member rides the
     // primary class - the first set bit)
     int  multiMask = 0;
+    // R234: the dual-class career (-1 = never
+    // switched; else the former class index and
+    // its frozen level - the human class change)
+    int  dualOldClass = -1;
+    int  dualOldLevel = 0;
+    // R234: the former-class resort stance (true =
+    // resorting to old-class functions; the XP is
+    // negated until the new level exceeds the old)
+    bool oldClassUse = false;
     int  xp   = 0;
     int  level = 1;
     int  hp = 0, maxHp = 0;
@@ -276,6 +285,102 @@ struct Character {
         else
             snprintf(buf, sizeof buf, "%d", (int)abilities.str);
         return buf;
+    }
+
+    // R234: can this member change professions? The
+    // print: a human (the character with two classes
+    // must be human), 15+ in the prime requisite of
+    // the original class and 17+ in the new (the
+    // ADJUSTED scores - the stored abilities are the
+    // adjusted ones), a plain single-classed member
+    // (no combo, no registry subclass), a different
+    // base class, and ONE switch only (the second
+    // class - a further change is not the print).
+    bool canSwitchProfession(int newClass) const {
+        if (!rules::dualClassRaceAllowed(race))
+            return false;
+        if (multiMask != 0) return false;
+        if (subclass >= 0) return false;
+        if (dualOldClass >= 0) return false;
+        if (newClass < 0 || newClass > 3) return false;
+        if (newClass == classIndex) return false;
+        return rules::dualClassPrimeGate(
+            abilities.get((rules::Ability)
+                rules::primeRequisite(classIndex)),
+            abilities.get((rules::Ability)
+                rules::primeRequisite(newClass)));
+    }
+
+    // R234: cease the old profession and take up the
+    // new (the print: the hit dice and hit points are
+    // RETAINED; all other functions begin at 1st
+    // level of the new class; the kit rides the new
+    // profession; the caster slots and the MU book
+    // restart at 1st level - the makeMember
+    // conventions, re-ridden here)
+    bool switchProfession(int newClass, rules::Dice& dice) {
+        if (!canSwitchProfession(newClass)) return false;
+        dualOldClass = classIndex;
+        dualOldLevel = level;
+        oldClassUse = false;
+        classIndex = newClass;
+        level = 1;
+        xp = 0;
+        knownSpells.clear();
+        for (int lv = 0; lv < 9; ++lv)
+            slotsByLevel[lv] = 0;
+        if (newClass == 1 || newClass == 2) {
+            spells::SpellClass sc = newClass == 1
+                ? spells::SPELL_MU : spells::SPELL_CLERIC;
+            for (int lv = 1; lv <= 9; ++lv)
+                slotsByLevel[lv - 1] =
+                    spells::spellSlots(sc, 1, lv);
+        }
+        if (newClass == 1) {
+            std::vector<int> l1;
+            for (int id = 0; id < spells::SPELL_COUNT;
+                 ++id) {
+                const spells::SpellDef& s =
+                    spells::spell((spells::SpellId)id);
+                if (s.sclass == spells::SPELL_MU &&
+                    s.level == 1)
+                    l1.push_back(id);
+            }
+            if (!l1.empty()) {
+                int pick = (int)dice.roll(
+                    1, (uint32_t)l1.size(), 0) - 1;
+                knownSpells.push_back(l1[pick]);
+            }
+        }
+        if (newClass == rules::CLASS_FIGHTER &&
+            abilities.str == 18 && !exStr.has) {
+            exStr.has = true;
+            exStr.pct = rules::rollExceptionalStrength(dice);
+        }
+        switch (newClass) {
+            case rules::CLASS_FIGHTER:
+                weapon.id = items::WPN_LONG_SWORD;
+                armor.id  = items::ARMOR_PLATE;
+                shield    = true;
+                break;
+            case rules::CLASS_MAGIC_USER:
+                weapon.id = items::WPN_DAGGER;
+                armor.id  = items::ARMOR_NONE_EQUIPPED;
+                shield    = false;
+                break;
+            case rules::CLASS_CLERIC:
+                weapon.id = items::WPN_MACE;
+                armor.id  = items::ARMOR_CHAIN_MAIL;
+                shield    = true;
+                break;
+            case rules::CLASS_THIEF:
+                weapon.id = items::WPN_SHORT_SWORD;
+                armor.id  = items::ARMOR_LEATHER;
+                shield    = false;
+                rangedWeapon.id = items::WPN_SLING;
+                break;
+        }
+        return true;
     }
 };
 
@@ -435,6 +540,24 @@ struct Party {
         (void)dice;   // R43: hit dice roll moved to trainNext
         for (auto& c : members) {
             if (c.hp <= 0) continue;   // the dead earn nothing
+            // R234: the dual-class XP negation - a
+            // member resorting to former-class
+            // functions earns nothing (the print:
+            // reversion negates the experience),
+            // until the new level exceeds the old
+            // (then the functions mix freely)
+            if (rules::dualClassXpNegated(
+                    c.dualOldClass >= 0 ? 1 : 0,
+                    c.level, c.dualOldLevel,
+                    c.oldClassUse ? 1 : 0)) {
+                char nbuf[96];
+                snprintf(nbuf, sizeof nbuf,
+                         "%s earns no experience "
+                         "(former-class resort).",
+                         c.name.c_str());
+                log.add(nbuf);
+                continue;
+            }
             // R30: prime-requisite % (PHB p.20 class notes) -
             // e.g. STR 16+ fighter +10%, STR 9 fighter -20%
             int primeAb = c.abilities.get(
@@ -585,7 +708,25 @@ struct Party {
             // R179 pins); the per-die floor is 1
             int conAdj;
             int die;
-            if (c.multiMask != 0) {
+            if (c.dualOldClass >= 0) {
+                // R234: the dual-class promotion die -
+                // no die while the new level has not
+                // exceeded the former level (the old
+                // hit dice are retained, the new class
+                // rolls nothing below it); once
+                // exceeded, the engine canonical
+                // new-class die (the per-die floor 1)
+                if (rules::dualClassNewDieDue(
+                        c.level, c.dualOldLevel)) {
+                    conAdj = rules::conHPAdjustment(
+                        c.classIndex, c.abilities.con);
+                    die = rules::rollHitPoints(
+                        c.classIndex, c.level, conAdj, dice);
+                    if (die < 1) die = 1;
+                } else {
+                    die = 0;
+                }
+            } else if (c.multiMask != 0) {
                 // R233: the multi-class promotion - every
                 // UNSTALLED class rolls its die (each with
                 // its con adjustment, the per-die floor 1),

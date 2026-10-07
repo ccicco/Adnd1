@@ -743,6 +743,29 @@ arc boxes:
       name; the caster slots fill from the
       primary caster (no slot-summing).
       Census 150.
-- [ ] dual-class engine (the human class-change
-      runtime; R185 comments, no engine yet).
+- [x] R234 the dual-class engine - WIRED: the
+      human class change is playable - the guild
+      command (the [K] town key; the first member
+      who meets the gates switches to the first
+      qualifying base class - the deterministic
+      pick), the gates (human only, 15+ in the
+      ADJUSTED prime of the old class, 17+ in the
+      new, one switch only, a plain single-classed
+      member), the switch itself (the hit dice and
+      hit points RETAINED, all functions at 1st
+      level of the new class, the kit rides the new
+      profession, the caster slots and the MU book
+      restart at 1st level), the resort stance
+      (the [U] town key - while held the member
+      earns no experience, the print: reversion
+      negates it; free once the new level EXCEEDS
+      the old), and the promotion die (no die at or
+      below the old level; the engine canonical
+      new-class die once exceeded). Simplifications
+      recorded: the resort stance is a standing
+      town toggle (the engine has no per-adventure
+      XP boundary), the switch targets the base
+      classes only (the printed paladin and ranger
+      combinations stay future work), the roster
+      prints the F6>M1 line. Census 152.
 
