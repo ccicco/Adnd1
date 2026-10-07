@@ -2118,6 +2118,64 @@ potions/scrolls/rings explanation prose
 open, as is the misc magic item
 explanation prose (upload ~10949+).
 
+R245 landed the III.D staves explanation
+prose pins (DMG pp.142-143, upload
+lines ~10688-10785 - the second prose
+round of the EXPLANATIONS AND
+DESCRIPTIONS section). rules/
+stavesprose.h (the grenade.h pattern,
+stf prefix, 76 accessors): the staff
+conventions (8th level of magic-use,
+2 segments to discharge and 8 to build
+up again, nominal damage 8d6) and the
+SEVEN staves - Command (3 functions,
+2 for a magic-user; 1 charge per
+suggestion/charm, 1 per turn of
+control, 1 per 1" square of plants
+per turn; rechargeable), Curing (4
+functions, cure wounds 6-21 hp =
+3d6+3, 1 charge each, once per person
+per day, max twice per function, 8
+uses per 24 hours, rechargeable), the
+Magi (5 free powers, 10 at 1 charge,
+4 at 2 charges; elementals 8 hit dice,
+telekinesis 200 lb, +2 saves,
+absorption the only recharge), Power
+(6 one-charge and 3 two-charge powers;
++2 AC and saves, smite +2 3-8 hp, 1
+charge doubles but 2 do not triple;
+paralyzation cone 4" long 2" wide;
+rechargeable), the Serpent (python +2
+3-8 hp, snake 25 ft AC 3 49 hp 9"
+move, constriction 4-10 hp per round;
+adder +1 2-4 hp, head AC 5 20 hp 1
+turn, save versus poison or die; no
+charges, 60% pythons), Striking (+3,
+4-9 = d6+3, bonuses 3/6/9 at 1/2/3
+charges, max 3 per strike,
+rechargeable), Withering (+1, 2-5 hp,
+2 charges age 10 years, 3 wither a
+limb unless saved, ageless immune; NO
+recharge statement printed - unpinned).
+The retributive strike pins: globe 3"
+radius, damage 8/6/4 times the spell
+levels (1-25) by distance band, save
+for half, 50% plane travel for the
+breaker, 2 items capable (the magi and
+the power). The seven staves are the
+engine kRods rows 8-14, bands 20-33,
+the wand rows from 34 (cross-checked
+against the R224 rodswands.h bands in
+the audit). New R245 battery audit;
+census 164. Next: R246 - the wands
+explanation prose (upload
+~10786-10948, incl. the wand of
+wonder effect table), then the
+potions/scrolls/rings explanation
+prose (upload ~9998-10561) and the
+misc magic item explanations
+(~10949+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
