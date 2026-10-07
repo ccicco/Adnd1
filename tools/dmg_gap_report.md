@@ -2306,6 +2306,61 @@ prose (upload ~9998-10561) and
 the misc magic item explanations
 (~10949+) remain open after that.
 
+R248 landed the III.D wand of wonder
+effect table pins (DMG p.145, upload
+lines ~10867-10947) - the round that
+CLOSES the III.D wands arc (rods
+R244, staves R245, wands R246-R247,
+wonder R248). rules/wonder.h (the
+grenade.h pattern, wonder prefix, 42
+accessors - the 19-band table plus
+39 scalar effect facts, the first
+array header since R224): the bands
+tile 01-100 with no gaps or overlaps
+- 01-10 slow creature 1 turn, 11-18
+delude wielder 1 round (a second die
+roll), 19-25 gust of wind double
+force, 26-30 stinking cloud 3" range,
+31-33 heavy rain 1 round 6" radius,
+34-36 summon rhino 1-25 elephant
+26-50 mouse 51-00, 37-46 lightning
+bolt 7" x 0.5" as wand (the width
+pinned as 1 half-inch, continuing the
+R247 half-inch workaround), 47-49
+600 large butterflies 2 rounds
+blinding everyone including the
+wielder, 50-53 enlarge within 6",
+54-58 darkness 3" diameter
+hemisphere at 3" center distance,
+59-62 grass 16" square or 10 times
+normal size, 63-65 vanish non-living
+up to 1,000 pounds and 30 cubic
+feet, 66-69 diminish wielder to 1"
+height, 70-79 fireball as wand,
+80-84 invisibility covers the
+wielder, 85-87 leaves grow within
+6", 88-90 10-40 gems of 1 g.p. base
+value in a 3" stream each 1 h.p.
+with 5d4 for the number of hits
+(note: 5d4 gives 5-20 hits, not
+10-40 - the gem count and the hit
+roll are separate facts), 91-97
+shimmering colors 4" x 3" blinded
+1-6 rounds, 98-00 flesh to stone or
+reverse within 6". The wand uses 1
+charge per function and may not be
+recharged. The wonder is the engine
+kRods row 30, bands 95-100
+(cross-checked against the R224
+rodswands.h pins in the audit). New
+R248 battery audit; census 167. The
+III.D explanation prose is now fully
+pinned. The remaining open seams:
+the potions/scrolls/rings explanation
+prose (upload ~9998-10561) and the
+misc magic item explanations
+(~10949+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
