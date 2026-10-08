@@ -3707,6 +3707,120 @@ begins; the figurines,
 gauntlets and girdles
 follow).
 
+R266 landed the III.E misc
+magic explanation prose part
+10 (part2 lines 433-479;
+global = 11065 + part2
+line), Figurines of
+Wondrous Power - pinning
+the kMisc3 row 0 (the
+Figurine band 01-15, the
+single asterisk, per hit
+die values 100 xp / 1000
+gp, no class marks). ONE
+page header inside the
+slice strips (the 477
+TREASURE page), cutting
+the Serpentine Owl
+paragraph mid-sentence
+(the owl in / smaller
+form) - one seam,
+restored; the compilation
+also wraps the Goat of
+Travelling paragraph at a
+bare blank line (450/452,
+no page header) - one
+wrap artifact, restored.
+The figurine type table:
+01-15 ebony fly, 16-30
+golden lions, 31-40 ivory
+goats, 41-55 marble
+elephant, 56-65 obsidian
+steed, 66-85 onyx dog,
+86-00 serpentine owl.
+The figurines: Ebony Fly
+(pony size; AC 4, 4+4 HD,
+air maneuver class C; 48
+inches unladen, 36 at up
+to 210 pounds, 24 at
+211-350; 3 uses per week,
+12 hours per day), Golden
+Lions (2 adult lions, AC
+5/6, 5+2 HD; slain: 1
+full week; otherwise
+daily), Ivory Goats (a
+trio; after 3 uses each
+loses magic forever) -
+Travelling (mount AC 6,
+24 hp, 2 horn attacks
+1-8, 4 HD; 48 inches at
+280 pounds, minus 1 inch
+per 14 extra pounds; 24
+hours per week; rests 1
+day), Travail (hooves
+4-10, bite 2-8, horns
+2-12; charging: horns
+only at +6, 8-18 per
+horn; AC 0, 96 hp, 16 HD;
+once per month; moves 24
+inches), Terror (destrier
+mount, 36 inches, AC 2,
+48 hp, no own attacks;
+horns a +3 spear lance
+and a +6 sword; terror
+radius 3 inches, save or
+lose 50 percent strength
+and at least -3 to hit;
+once every 2 weeks),
+Marble Elephant (hand
+size statuette; types
+01-50 Asiatic, 51-90
+African, 91-93 Mammoth,
+94-00 Mastodon; 24 hours
+per use, 4 uses per
+month), Obsidian Steed (a
+nightmare; a good rider:
+10 percent per use to the
+Hades first layer floor,
+then statuette; 24 hours
+once per week; astral and
+ethereal carry rider and
+gear), Onyx Dog (war dog
+with int 8-10 and common
+speech; scent 100 percent
+within 1 hour, minus 10
+per hour after;
+infravision 90 feet;
+hidden 80, invisible 65,
+phased 50 percent; 6
+hours once per week;
+obeys only its owner),
+Serpentine Owl (horned
+owl AC 7, 24 inches, 2-4
+hp, 1-2 damage; giant
+form 3 uses only, then
+burnout; 95 percent
+silent, infravision 90
+feet, dark vision as full
+light and 2x human; mouse
+at 60 feet; counter-
+stealth reduced 50
+percent; telepathy reports
+to owner; int 2-4; giant
+form equals the giant
+owl). 90 accessors: 86
+scalars + 4 walkers (the
+figurine type and the
+elephant type tables).
+New R266 battery audit;
+census 184. Next: part 11
+- Flask of Curses onward
+in part2 from line 481
+(global 11546; the
+gauntlets, gems, girdles
+and helms follow; kMisc3
+rows 1+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
