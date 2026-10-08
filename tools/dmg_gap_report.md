@@ -4159,6 +4159,89 @@ part2 from line 630 (global
 instruments follow; kMisc3
 rows 24+).
 
+R270 landed the III.E misc
+magic explanation prose part
+14 (part2 lines 630-684;
+global = 11065 + part2 line),
+Incense of Obsession through
+the Fochlucan Bandore - pinning
+the kMisc3 rows 24-26: the (C)
+mark on the Incense of Obsession
+(row 24), the triple asterisk on
+the Ioun Stones (row 25, per
+stone), the quadruple asterisk
+on the Instrument of the Bards
+(rows 73-78, per level of
+instrument). ONE page header
+inside the slice (674, the
+TREASURE page) falls between the
+bandore paragraph and its song
+list - restored. The ioun stone
+table: the upload mangles rows
+3, 5 and 12 (the shape cells
+folded into the roll and color
+cells, the missing space in
+5pink) and wraps the
+regeneration cell across rows -
+the 15-row table restored from
+the 1eonline.info compilation
+(the R175 precedent). The
+items: Incense of Obsession
+(resembles the meditation
+incense; the cleric stays
+obsessed until all spells are
+cast or 24 hours pass; 2-8
+pieces, each burning 1 hour),
+Ioun Stones (14 sorts; within 3
+feet of the owner, orbit 1-3
+feet; 1-10 found; the 15-row
+property table: six stat stones
+at +1 point to an 18 maximum,
+the pale green prism +1 level,
+the clear and iridescent
+spindles sustain without food
+and water or air, the pearly
+white regenerates 1 hp per
+turn, the pale lavender absorbs
+to the 4th level and burns out
+at 10-40 absorbed levels, the
+lavender and green to the 8th
+at 20-80, the vibrant purple
+stores 2-12 levels, the dusty
+rose gives +1 protection, the
+dull gray 15-20 band is dead
+and adds 10 psionic points to a
+50 maximum; attacked as armor
+class -4 (the sign rides the
+comment), 10 hp to destroy,
+saves as hard metal +3),
+Instrument of the Bards (7
+instruments, bard college
+gated), Fochlucan Bandore (3
+strings; a 1st level bard or a
+non-bard: 50 percent per round
+to cast faerie fire, 10 percent
+the musician is limned; a
+qualified bard at base 50
+percent, the reverse reduced 1
+percent per level above 1st;
+4 songs: +10 percent charm,
+entangle, shillelagh and speak
+with animals once per day each;
+a 1st level bard: 30 percent
+works, else 70 percent for 2-8
+hp damage). 47 accessors: 41
+scalars + 6 walkers (the stone
+property table), no name
+collisions parts 1-13. New R270
+battery audit; census 188.
+Next: part 15 - Mac-Fuirmidh
+Cittern onward in part2 from
+line 686 (global 11751; the
+doss lute, canooth and the
+remaining instruments follow;
+kMisc3 row 26 continues).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
