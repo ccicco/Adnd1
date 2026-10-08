@@ -2858,6 +2858,91 @@ the TREASURE (MISCELLANEOUS
 MAGIC) headers are running
 page headers mid-paragraph).
 
+R256 landed the III.C rings
+explanation prose part 3 of 3
+(DMG pp.139-140, upload lines
+~10458-10561) - Spell Storing
+through X-Ray Vision.
+rules/ringsprose3.h (the rgp
+prefix, part 3 - 89 accessors:
+78 scalars + 11 array walkers):
+Spell Storing (2-5 d4+1, the
+cleric d6-to-d4 and
+magic-user d8-to-d6 level
+tables, druid and illusionist
+as cleric, the 12th level MU
+restore example, 5 segments),
+Spell Turning (3 exceptions,
+the scroll-is-not-a-device
+note, percentile rounding
+1-5 down 6-9 up, 05 = 0% and
+96 = 100%, saves +1 per 10%
+below 100%, the 09-or-less /
+91-or-more special save band,
+5% per 10% turned, the maze
+example 34% / 15% / 30% on
+15-20, the 4-row resonating
+field table, remove to
+receive, psionics are not
+spell casting), Swimming (21
+inch base, 50 foot dive, 1.5
+feet depth per 10 feet, 4
+rounds breath, 4 hours + 1
+hour rest), Telekinesis (the
+5-row weight table 250 to
+4000 gp, 1 segment,
+double-dagger), Three Wishes
+(3 wishes, 25% limited,
+double-dagger), Warmth (1 hp
+per turn, +2 saves, -1 per
+die), Water Walking (1200
+pounds, the 1.5 foot by 1
+inch per 100 pounds
+depressions), Weakness (1
+point per turn to 3, the
+invisible doubling, remove
+curse + dispel magic, the 5%
+berserk reversal to 18s),
+Wizardry (the 8-row doubling
+table, MU-only +
+double-dagger), X-Ray Vision
+(20 feet, the 5-substance
+penetration table, 100 sq ft
+per round, 90% secret doors,
+the 6-turn constitution drain
+2 points at 3 turns per hour,
+2 points recovery per day,
+exhausted at 2, resume at 3).
+ENGINE CROSS-CHECK: kRings
+rows 64-100 vs the R223 band
+pins; dagger cross-pins
+Telekinesis / Three Wishes /
+Wizardry against the
+R255-FIXED charge array;
+Weakness and X-Ray correctly
+unflagged. Upload notes: the
+TREASURE (RINGS) page header
+at 10531 splits the Water
+Walking paragraph
+mid-sentence (stripped, the
+R249 lesson); the Spell
+Turning damage example table
+is mangled in the upload
+(only fragment lines 2-8 /
+2-12 / 5-20 / 4-48 survive)
+- the rounding facts are
+pinned, the dropped table is
+not. New R256 battery audit;
+census 174. Next: III.E misc
+magic explanations (part1
+~10948-11067 continuing
+seamlessly into part2; global
+line = part1 line or ~11065 +
+part2 line, the TREASURE
+(MISCELLANEOUS MAGIC) headers
+are running page headers
+mid-paragraph).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
