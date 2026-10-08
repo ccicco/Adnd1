@@ -2476,6 +2476,82 @@ explanations (upload ~10282-10561),
 then the misc magic item
 explanations (~10949+).
 
+R251 landed the III.A potions
+explanation prose pins, part 3 of 3
+(DMG pp.136-137, upload lines
+~10129-10189) - the final sixteen
+potions, Invulnerability through
+Water Breathing. THIS CLOSES THE
+III.A POTIONS ARC END TO END (the
+R249 conventions through the R251
+final row, engine bands 01-100).
+rules/potionsprose3.h (the part-3
+pattern, the pot prefix continues -
+69 accessors, of which 5 are array
+walkers): Invulnerability (fewer
+than 4 hit dice cannot harm, armor
+class +2 classes, saves +2, 5-20
+rounds), Levitation (second level
+spell, 6,000 g.p. maximum),
+Longevity (1-12 years, 1% cumulative
+reversal), Oil of Etherealness (3
+rounds onset, 4 + 1-4 turns), Oil
+of Slipperiness (95% per round
+floor slip, 8 hours), Philter of
+Love (charm 4 + 1-4 turns), Philter
+of Persuasiveness (+25% reaction
+dice, suggest once per turn within
+3"), Plant Control (intelligence 5+
+save, 2" x 2" square, range 9",
+5-20 rounds), Poison (weak +1/+4,
+deadly -1/-4 or more, neutralize
+40%), Polymorph self (fourth level
+spell), Speed (+100%, 9" becomes
+18", ages 1 year, 5-20 rounds),
+Super-Heroism (below 13 levels; the
+4-row consumer table - energy
+levels 5/4/3/2, accumulated damage
+4+1/3+2/2+3/1+4 on d10; 5-30 melee
+rounds; the stray 06 5 upload row
+is paste noise and is skipped),
+Sweet Water (100,000 cubic feet
+water, 1,000 acid, initial period
+5-20 rounds), Treasure Finding
+(within 24", 10,000 copper or 100
+gems, 5-20 rounds), Undead Control
+(16 hit dice, saves -2, 5-20
+rounds; the 10-row d10 undead type
+table ghasts through zombies, the
+printed 0 row pinned as the 10
+face; the upload table is
+cell-mangled - the band digit and
+the name share a cell with no
+space on some rows), and Water
+Breathing (75% two doses, 25% four,
+one hour per dose plus 1-10
+rounds). The TREASURE (POTIONS)
+running page header splits the Oil
+of Slipperiness paragraph mid-
+sentence (upload ~10138) - stripped
+by the ground truth, per the R249
+page-header lesson. The sixteen
+potions are the engine kPotions
+rows 20-35, bands 55-100, closing
+the table at 100 (cross-checked band
+by band against the R221 potions.h
+pins in the audit). New R251
+battery audit; census 170. Next:
+the scrolls explanations (upload
+~10191-10280), then the rings
+explanations (upload ~10282-10561),
+then the misc magic item
+explanations III.E (part1 ~10948-
+11067 continuing seamlessly into
+part2; global line = part1 line or
+~11065 + part2 line, the TREASURE
+(MISCELLANEOUS MAGIC) headers are
+running page headers mid-paragraph).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
