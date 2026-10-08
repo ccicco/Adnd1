@@ -3265,6 +3265,130 @@ seam: line 157 ends one of
 the, line 161 continues
 nine alignments).
 
+R261 landed the III.E misc
+magic explanation prose part
+5 (part2 lines 155-220;
+global = 11065 + part2
+line), Candle of Invocation
+through Cloak of Protection -
+completing the kMisc2 rows
+0-10. THREE page headers
+inside the slice, all
+stripped (the R249 lesson):
+155 (TABLE (III.E.) 2.),
+159 and 183 (both TREASURE).
+TWO seams pinned exactly:
+the Candle (line 157 ends one
+of the, line 161 continues
+nine alignments) and the
+Cloak of Displacement (line
+180 ends with such as
+spells,, line 185 continues
+gaze weapon attacks).
+rules/miscprose5.h (the mmp
+prefix again, 60 accessors:
+50 scalars + 10 array
+walkers, no name collisions
+with parts 1-4): Candle of
+Invocation (nine alignments;
+cleric level +2 while
+aflame; any burning casts a
+gate, taper consumed; 4
+hour burn), Carpet of
+Flying (the 4-row table
+01-20 3x5 1 person 42
+through 81-00 6x9 4 persons
+24; command word, voice
+range; repairs only in the
+East), Censer Controlling
+Air Elementals (12 HD next
+round; incense of meditation
++3 per die and obeys;
+extinguished turns on the
+summoner; half foot wide, 1
+foot high), Censer of
+Summoning Hostile Air
+Elementals (cursed; 1-4
+enraged elementals, 1 per
+round; burns until the
+summoner or elementals die),
+Chime of Opening (mithral
+tube 1 foot; defeats hold
+portal and wizard lock below
+15th level; 1 round per
+function; the chained and
+locked chest 4-5 soundings;
+silence negates; 20-80
+charges, 20 + d6 x 10),
+Chime of Hunger (6 inch
+radius; eat at least 1
+round, save each round
+after; mirrors a chime of
+opening first), Cloak of
+Displacement (1-2 foot
+offset; first attack auto
+miss; then +2 AC and +2
+saves; 75% human/elven
+sized, 25% small), Cloak of
+Elvenkind (the 9-row
+invisibility table: heavy
+growth 100, light growth 99,
+open fields 95, rocky 98,
+buildings 90, bright room
+50, torch 95, infravision
+90, light 50; 90% human or
+elven sized, 10% small),
+Cloak of the Manta Ray
+(salt water trigger; 90%
+manta likeness; breathe
+underwater; move 18; AC at
+least 6; tail spine 1-6, no
+stun; arms free), Cloak of
+Poisonousness (handled
+safely; neutralize poison no
+effect; worn is stone dead;
+remove curse destroys the
+magic, then neutralize plus
+raise dead at minus 10%),
+Cloak of Protection (the
+5-row plus table 01-35 +1
+through 96-00 +5; +1 AC and
++1 save per plus; the +1
+example AC 10 to 9; stacks
+with items and leather only,
+never magical armor, other
+armor, or shields). ENGINE
+CROSS-CHECK: kMisc2 rows
+0-10 (Candle 1-6, Carpet
+7-8, Censer Air 9-10, Censer
+Hostile 11, Chime Open
+12-13, Chime Hunger 14,
+Displacement 15-18,
+Elvenkind 19-27, Manta
+28-30, Poisonous 31-32,
+Protection 33-55) plus the
+(C) mark on the Candle and
+the (M) marks on the two
+Censers, and the per-plus
+asterisk on row 10 -
+VERIFIED CORRECT, no
+R260-style off-by-one (the
+R226 pin already sat on row
+10). The R261 audit
+cross-pins the +2 cloak
+example (1000 xp / 10000 gp
+per plus -> 2000 / 20000).
+New R261 battery audit;
+census 179. Next: part 6 -
+Crystal Ball onward in
+part2 from line 222 (global
+11287; the Crystal Ball
+locating chance table and
+the Crystal Hypnosis Ball
+follow; the double-asterisk
+feature row 56-60 is
+R226-pinned).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
