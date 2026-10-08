@@ -66,9 +66,8 @@
 // against the R223 charge-limited rows. The
 // Mammal Control / Protection charge-limited
 // divergence (the R223 array flags the wrong
-// row) is documented in the gap report as
-// the ranked fix candidate. Pure data +
-// helpers, header-only (the grenade.h
+// row) was resolved by the R255 fix. Pure
+// data + helpers, header-only (the grenade.h
 // pattern).
 // ====================================================================
 
@@ -179,10 +178,9 @@ inline int rgpMammalControlTimeSegments() {
 
 inline int rgpMammalControlDaggerFlag() {
     // the prose entry carries the
-    // double-dagger; the R223 array
-    // does NOT flag row 9 - the
-    // documented divergence, the
-    // ranked fix candidate
+    // double-dagger; the R255 fix
+    // made the R223 array flag
+    // row 9 correctly
     return 1;
 }
 
@@ -285,10 +283,9 @@ inline int rgpProtectionRadiusFeet() {
 
 inline int rgpProtectionDaggerFlag() {
     // the prose entry carries NO
-    // double-dagger; the R223 array
-    // flags row 11 - the documented
-    // divergence, the ranked fix
-    // candidate
+    // double-dagger; the R255 fix
+    // made the R223 array leave
+    // row 11 unflagged correctly
     return 0;
 }
 

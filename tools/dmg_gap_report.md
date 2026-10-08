@@ -2760,7 +2760,8 @@ band edges; dagger cross-pins
 Human Influence and Multiple
 Wishes. DIVERGENCE FOUND BY
 THE GROUND TRUTH BEFORE ANY
-PIN (the ranked fix candidate):
+PIN (the ranked fix candidate,
+RESOLVED by R255):
 the R223 rings.h
 ringIsChargeLimited array flags
 Protection (row 11) and NOT
@@ -2791,6 +2792,64 @@ ringIsChargeLimited fix round
 amendment), then part 3
 (~10458-10561, Spell Storing
 through X-Ray Vision), then
+III.E (part1 ~10948-11067
+continuing seamlessly into
+part2; global line = part1
+line or ~11065 + part2 line,
+the TREASURE (MISCELLANEOUS
+MAGIC) headers are running
+page headers mid-paragraph).
+
+R255 landed the
+ringIsChargeLimited fix (the
+R223 divergence resolved -
+DMG p.137 table, upload
+~9590-9617: the double-
+dagger rows are Djinni
+Summoning, Human Influence,
+MAMMAL CONTROL, Multiple
+Wishes, Telekinesis, Three
+Wishes, Wizardry; the
+landed array wrongly flagged
+Protection row 11 instead of
+Mammal Control row 9). Fixed
+in rings.h ringIsChargeLimited
+(row 9 0->1, row 11 1->0,
+count stays 7); the R223
+regtest audit (kChg array
+swapped; the truthy assert
+list now 2/7/9/10/17/18/22;
+the negative list gains 11);
+the R254 audit NOTE (its
+cross-pin if now asserts
+rows 9 and 11 directly); the
+ringsprose2.h divergence
+comments (header banner,
+Mammal Control dagger flag,
+Protection dagger flag) now
+record the resolution; this
+gap note flipped. Five
+content files with the
+splice. No new audit line;
+census stays 173. Next: R256
+- rings part 3 (~10458-10561:
+Spell Storing d4+1 and the
+level table, Spell Turning (3
+exceptions, the percentile
+tables, the 09-or-less/
+91-or-more save note),
+Swimming (21 inch base, 50
+foot dive, 4 rounds),
+Telekinesis (the weight
+table), Three Wishes (25%
+limited), Warmth (+2 saves,
+-1 per die), Water Walking,
+Weakness (1 point per turn
+to 3, the invisible doubling,
+5% berserk reversal), Wizardry
+(the doubling table), X-Ray
+Vision (20 feet, the
+penetration depths)), then
 III.E (part1 ~10948-11067
 continuing seamlessly into
 part2; global line = part1

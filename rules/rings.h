@@ -80,12 +80,14 @@ inline int ringMuOnlyCount() {
 }
 
 inline int ringIsChargeLimited(int i) {
-    // the double-dagger charge-limited rows; i clamps
+    // the double-dagger charge-limited rows
+    // (the R255 fix: row 9 Mammal Control
+    // flagged, row 11 Protection not); i clamps
     if (i < 0) i = 0;
     if (i > 23) i = 23;
     static const int t[24] = {
-        0, 0, 1, 0, 0, 0, 0, 1, 0, 0,
-        1, 1, 0, 0, 0, 0, 0, 1, 1, 0,
+        0, 0, 1, 0, 0, 0, 0, 1, 0, 1,
+        1, 0, 0, 0, 0, 0, 0, 1, 1, 0,
         0, 0, 1, 0,
     };
     return t[i];

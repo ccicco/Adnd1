@@ -10783,8 +10783,8 @@ int main() {
             0, 0, 1, 0,
         };
         static const int kChg[24] = {
-            0, 0, 1, 0, 0, 0, 0, 1, 0, 0,
-            1, 1, 0, 0, 0, 0, 0, 1, 1, 0,
+            0, 0, 1, 0, 0, 0, 0, 1, 0, 1,
+            1, 0, 0, 0, 0, 0, 0, 1, 1, 0,
             0, 0, 1, 0,
         };
         for (int i = 0; i < 24; ++i)
@@ -10809,18 +10809,21 @@ int main() {
             rules::ringRowLo(23) != 100 ||
             rules::ringRowHi(23) != 100) ++bad;
         // the charge rows: the seven
-        // double-dagger rings
+        // double-dagger rings (the R255
+        // fix: row 9 Mammal Control IN,
+        // row 11 Protection OUT)
         if (rules::ringChargeLimitedCount() != 7) ++bad;
         if (!rules::ringIsChargeLimited(2) ||
             !rules::ringIsChargeLimited(7) ||
+            !rules::ringIsChargeLimited(9) ||
             !rules::ringIsChargeLimited(10) ||
-            !rules::ringIsChargeLimited(11) ||
             !rules::ringIsChargeLimited(17) ||
             !rules::ringIsChargeLimited(18) ||
             !rules::ringIsChargeLimited(22)) ++bad;
         if (rules::ringIsChargeLimited(0) ||
             rules::ringIsChargeLimited(1) ||
             rules::ringIsChargeLimited(3) ||
+            rules::ringIsChargeLimited(11) ||
             rules::ringIsChargeLimited(12) ||
             rules::ringIsChargeLimited(15) ||
             rules::ringIsChargeLimited(23)) ++bad;
@@ -13205,13 +13208,14 @@ int main() {
         for (int i = 0; i < 10; ++i)
             if (rules::ringRowLo(4 + i) != kCLo[i] ||
                 rules::ringRowHi(4 + i) != kCHi[i]) ++bad;
-        // the double-dagger cross-pins. NOTE: the R223
-        // array flags Protection (row 11) instead of
-        // Mammal Control (row 9) - the documented
-        // divergence, the ranked fix candidate; this
-        // audit asserts only the consistent rows
+        // the double-dagger cross-pins (the R255
+        // fix resolved the R223 divergence: row 9
+        // Mammal Control flagged, row 11 Protection
+        // not; the rows may now be asserted)
         if (rules::ringIsChargeLimited(7) != 1 ||
+            rules::ringIsChargeLimited(9) != 1 ||
             rules::ringIsChargeLimited(10) != 1 ||
+            rules::ringIsChargeLimited(11) != 0 ||
             rules::ringChargeLimitedCount() != 7) ++bad;
         // the protection 7-row value table
         static const int kPlo[7] = {
