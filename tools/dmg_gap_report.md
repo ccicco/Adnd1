@@ -4242,6 +4242,91 @@ doss lute, canooth and the
 remaining instruments follow;
 kMisc3 row 26 continues).
 
+R271 landed the III.E misc
+magic explanation prose part
+15 (part2 lines 686-764;
+global = 11065 + part2 line),
+Mac-Fuirmidh Cittern through
+the general properties and the
+type table - closing the
+Instrument of the Bards item
+(the kMisc3 row 26 quadruple
+asterisk, 1,000 xp / 5,000 gp
+per level of instrument). The
+upload DROPS the TREASURE page
+headers across the instruments
+run (none between 674 and
+792) - the page attribution
+rides the compilation TOC
+anchor (the instruments at
+pp.147-148); NO seam restored
+this round. The instrument
+facts verified against the
+compilation page
+instrumentofthebards.htm (the
+R175 precedent source). The
+items: Mac-Fuirmidh Cittern (50
+percent misuse, 3-12 damage,
+the 5th level gate, +15 percent
+charm, 3 songs: barkskin, cure
+light wounds, obscurement;
+lower bards cannot use it),
+Doss Lute (60 percent, 4-16,
+the 8th gate, +20 percent,
+hold animal, neutralize
+poison, protection from fire in
+a 10 feet radius), Canaith
+Mandolin (70 percent, 5-20,
+the 11th gate, +25 percent,
+cure serious wounds, dispel
+magic, protection from
+lightning in a 10 feet radius),
+Cli Lyre (80 percent, 6-24,
+the 14th gate, +30 percent,
+control winds, transmute rock
+to mud, wall of fire),
+Anstruth Harp (90 percent,
+8-32, the 17th gate, +35
+percent, cure critical wounds,
+wall of thorns, weather
+summoning), Ollamh Harp (no
+percent printed, the harm is
+certain: 10-40, the 20th gate,
++40 percent, confusion,
+control weather, fire storm).
+General properties: the 7
+instruments look exactly
+alike (dweomers); 4 abilities
+once each per day - protection
+from evil in a 10 feet radius,
+invisibility, levitate, fly -
+lasting the college order in
+turns 1-7, the magnus alumni 8
+turns; each ability 5 segments
+to activate, not less than 1
+full round; a charming ability
+above 100 percent saves at -1
+per 5 percent above (3-4
+rounding to the next 5). The
+type table: 1-5 bandore, 6-9
+cittern, 10-12 doss lute,
+13-15 canaith mandolin, 16-17
+cli lyre, 18-19 anstruth harp,
+20 ollamh harp. The level
+gates match the bard.h Table
+II college ladder (5th, 8th,
+11th, 14th, 17th, 20th). 51
+accessors: 49 scalars + 2
+walkers (the type die table),
+no name collisions parts 1-14.
+New R271 battery audit; census
+189. Next: part 16 -
+Iron Flask onward in part2
+from line 766 (global 11831;
+the javelins, jewels and
+Keoghtom ointment follow;
+kMisc3 rows 27+ begin).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
