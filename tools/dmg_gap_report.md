@@ -3821,6 +3821,107 @@ gauntlets, gems, girdles
 and helms follow; kMisc3
 rows 1+).
 
+R267 landed the III.E misc
+magic explanation prose part
+11 (part2 lines 481-530;
+global = 11065 + part2
+line), Flask of Curses
+through the Girdle of Giant
+Strength - pinning the
+kMisc3 rows 1-9, the (C, F,
+T) marks riding rows 4
+(Ogre Power), 5 (Swimming
+and Climbing), 8
+(Femininity/Masculinity) and
+9 (Giant Strength). ONE
+page header inside the slice
+strips (the 493 TREASURE
+page), cutting the Gem of
+Brightness paragraph
+mid-sentence (at the /
+option of the gem owner) -
+one seam, restored. The
+items: Flask of Curses
+(beaker-like, detection
+hides its nature; first
+unstopper curses nearby,
+then harmless), Gauntlets of
+Dexterity (+4 if dex 6 or
+less, +2 at 7-13, +1 at 14+;
+non-thieves as a 4th level
+thief, thieves +10 percent),
+Gauntlets of Fumbling (mimic
+dexterity or ogre power;
+curse: 50 percent drop
+chance per round, not both
+singly; dex -2; remove
+curse or wish only),
+Gauntlets of Ogre Power
+(18/00 strength; +3 to hit,
++6 damage), Gauntlets of
+Swimming and Climbing
+(triton 15 inches under,
+merman 18 on top; no water
+breathing; climb 95
+percent, thieves 99.5), Gem
+of Brightness (3 lights:
+pale cone 10 feet at 2.5
+radius free; ray 1 feet wide
+50 long, dazzle 1-4 rounds,
+1 charge; flash cone 30
+feet at 5 radius, blind
+1-4 rounds then -1 to -4
+permanent eye damage, 5
+charges; cure blindness or
+heal; 50 charges, no
+recharge; darkness drains 1
+or 1 round useless;
+continual darkness: 1 day
+useless or 5 charges), Gem
+of Seeing (30 inches
+cursory, 10 careful; 1
+round per 200 feet square,
+2 per 100; 5 percent
+hallucination), Girdle of
+Femininity/Masculinity
+(changes sex, then
+powerless; wish 50 percent,
+a god certain; 10 percent
+remove all sex), Girdle of
+Giant Strength (Hill 19
++3/+7, Stone 20 +3/+8,
+Frost 21 +4/+9, Fire 22
++4/+10, Cloud 23 +5/+11,
+Storm 24 +6/+12; open
+doors 7 in 8 (3), 7 in 8
+(3), 9 in 10 (4), 11 in 12
+(4), 11 in 12 (5), 19 in 20
+(7 in 8); weight allowance
++4500 to +12000; rock
+range 8 to 16 inches,
+damage 1-6 to 1-12,
+missile weight 140 to 212,
+bend bars 50 to 100
+percent; not cumulative
+except with ogre power
+gauntlets and magic war
+hammers). 63 accessors:
+49 scalars + 14 walkers
+(the strength and rock
+tables; the strength,
+damage and bend-bars
+ladders are arithmetic
+checks). New R267 battery
+audit; census 185. Next:
+part 12 - Helm of
+Brilliance onward in
+part2 from line 532
+(global 11597; the helm
+jewel functions, horns,
+horseshoes, incenses and
+instruments follow; kMisc3
+rows 10+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
