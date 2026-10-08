@@ -2704,6 +2704,101 @@ part2 line, the TREASURE
 are running page headers
 mid-paragraph).
 
+R254 landed the III.C rings
+explanation prose part 2 of 3
+(DMG pp.138-139, upload lines
+~10393-10457) - Feather Falling
+through Shooting Stars.
+rules/ringsprose2.h (the rgp
+prefix, part 2 - 67 accessors,
+of which 6 are array walkers):
+Feather Falling (5 feet),
+Fire Resistance (immune normal
+fires; very hot 10 per round /
+1 per segment; exceptionally
+hot saves +4, -2 per die floor
+1; the 24 hp / 25+ rule of
+thumb), Free Action (web hold
+slow, underwater, no water
+breathing), Human Influence
+(charisma 18, 21 levels, once
+per day, 3 segments,
+double-dagger), Invisibility
+(10% also inaudible), Mammal
+Control (intelligence 4 or
+less, 30 hit dice, 3 segments,
+double-dagger), Multiple
+Wishes (2-8 2d4,
+double-dagger), Protection
+(the 7-row value table 01-70
++1 through 98-00 +6 AC +1
+saves, rows 83 and 91 the 5
+foot radius saves-only, NO
+double-dagger), Regeneration
+(2 forms, 1 hp per turn,
+vampiric one-half, 01-90 /
+91-00), Shooting Stars (2
+modes; dancing lights once per
+hour, light twice per night 12
+range, ball lightning once per
+night - 1 to 4 balls, 12
+range, 4 rounds, 4 per round
+move, 3 foot diameter, the 4
+charge tiers 4/3/2/1 balls; 3
+stars per week, 12 impact +
+24 burst in a 1 diameter
+sphere, 7 range, saves -3
+within 2 / -1 within 2 to 4;
+indoors faerie fire twice per
+day, spark shower once per day
+- 20 feet to 10 feet breadth,
+2-8 no metal / 4-16 metal;
+casting 5 segments). ENGINE
+CROSS-CHECK: the ten kRings
+rows 16-63 vs the R223 rings.h
+band edges; dagger cross-pins
+Human Influence and Multiple
+Wishes. DIVERGENCE FOUND BY
+THE GROUND TRUTH BEFORE ANY
+PIN (the ranked fix candidate):
+the R223 rings.h
+ringIsChargeLimited array flags
+Protection (row 11) and NOT
+Mammal Control (row 9), while
+the R223 comment names Mammal
+Control and the prose carries
+the double-dagger on Mammal
+Control but not Protection -
+the R223 audit kChg pins the
+wrong array too; the fix round
+must swap rows 9 and 11 in
+rings.h and in the R223 audit
+kChg + its per-index asserts.
+The R254 audit deliberately
+does NOT assert the divergent
+rows. The TREASURE (RINGS)
+header at ~10432 splits the
+ball lightning paragraph
+mid-sentence (stripped, the
+R249 lesson); the upload drops
+the ball lightning charge die
+bands (only the 4/3/2/1 ball
+counts survive). New R254
+battery audit; census 173.
+Next: R255 the
+ringIsChargeLimited fix round
+(rings.h + the R223 audit
+amendment), then part 3
+(~10458-10561, Spell Storing
+through X-Ray Vision), then
+III.E (part1 ~10948-11067
+continuing seamlessly into
+part2; global line = part1
+line or ~11065 + part2 line,
+the TREASURE (MISCELLANEOUS
+MAGIC) headers are running
+page headers mid-paragraph).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
