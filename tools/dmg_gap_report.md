@@ -3020,6 +3020,67 @@ Holding onward in part2 (line
 part2 line), through the end
 of the III.E explanations.
 
+R258 landed the III.E misc
+magic explanation prose part 2
+(part2 lines 5-66; global =
+11065 + part2 line; no page
+headers inside the slice).
+rules/miscprose2.h (the mmp
+prefix again, 83 accessors: 74
+scalars + 9 array walkers): Bag
+of Holding (the 4-row quality
+table 01-30 15/250/30 through
+91-00 60/1500/250; overload or
+sharp pierce ruptures, contents
+lost in nilspace), Bag of
+Transmuting (one of the 4
+quality types, 2-5 proper uses,
+metals and gems to no worth,
+magic items to lead/glass/wood
+no save), Bag of Tricks (toss
+1-20 feet; d10 type bands 1-5,
+6-8, 9-0; 8 animals each; only
+the bands and counts are
+pinned - the animal stat
+columns are mangled in the
+upload, the R256 lesson; 1
+drawn at a time, slain or 1
+turn then ordered back, 10 per
+week), Beaker of Plentiful
+Potions (2-5 doses of 2-5
+potions, d4+1 count, 1 round
+pours of 1 dose, delusion and
+poison possible, 2: 1/day
+3/week, 3: 1/day 2/week, 4-5:
+1/week, 1 type lost per month),
+Boat, Folding (box 12/6/6
+inches; boat 10x4x2 with 1 pair
+of oars, holds 3-4; ship 24x8x6
+with 5 oar sets, carries 15; 3
+command words), Book of
+Exalted Deeds (1 week perusal,
++1 wisdom halfway XP, neutral
+20,000-80,000, evil -1 level +
+50% for 2-5 adventures, MU -1
+int or 2,000-20,000, thief 5-30
+hp -1 dex 10-60% convert at
+wisdom 15, assassin 5-40 hp,
+vanishes after perusal). ENGINE
+CROSS-CHECK: kMisc1 rows 10-15
+(Holding 22-26, Transmuting 27,
+Tricks 28-29, Beaker 30-31,
+Boat 32, Exalted 33) plus the
+Exalted (C) class mark at row
+15 (Boat row 14 as the
+negative control) against the
+R225 m1 pins. New R258 battery
+audit; census 176. Next: part 3
+- Book of Infinite Spells onward
+in part2 from line 67 (global =
+11065 + part2 line; the TREASURE
+page header at line 70 splits
+its page table).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
