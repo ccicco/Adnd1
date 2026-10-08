@@ -3607,6 +3607,106 @@ drums, the four dusts, the
 bottles and the eyes follow;
 rows 19+).
 
+R265 landed the III.E misc
+magic explanation prose part
+9 (part2 lines 402-429;
+global = 11065 + part2
+line), Drums of Deafening
+through Eyes of Petrification
+plus the eye-mix note -
+pinning the kMisc2 rows
+19-29, the slice that
+COMPLETES the 30-row table
+(Candle of Invocation through
+Eyes of Petrification). ONE
+page header inside the slice
+strips (the 417 TREASURE
+page), cutting the
+Eversmoking Bottle paragraph
+mid-sentence (until the /
+eversmoking bottle is
+stoppered) - one seam,
+restored. The R264 pointer
+said four dusts; the print
+shows three (Appearance,
+Disappearance, Sneezing and
+Choking). The items: Drums
+of Deafening (both drums:
+permanent deafness within 7
+inches, heal or similar
+cures; 1 inch zone stunned
+2-8 rounds), Drums of Panic
+(12 inches, safe zone 2
+inches, flee 1 turn per
+failed save, 3 rest rounds
+per 1 turn of flight, int 2
+saves -2, int 1 or less
+-4; both drum pairs are
+1.5 feet hemispheres), Dust
+of Appearance (2-20 turns;
+packet 10 feet radius, tube
+cone 1 to 15 feet wide and
+20 long; 5-50 containers;
+reveals invisible, out of
+phase, astral, ethereal;
+images; negates the
+displacement, elvenkind and
+blending cloaks), Dust of
+Disappearance (2-20 turns,
+11-20 sprinkled; even
+detect invisibility fails;
+the dust of appearance
+exception; AC 4 places
+better; attack does not
+obviate it), Dust of
+Sneezing and Choking (20
+feet radius; failed poison
+save dies, survivors
+choked 5-20 rounds),
+Efreeti Bottle (brass or
+bronze, lead stopper; 10
+percent insane attack, 10
+percent 3 wishes only, 80
+percent serve; issues in 1
+segment), Eversmoking
+Bottle (urn identical to
+the efreeti bottle; 50000
+cubic feet in 1 round,
+10000 more per round to
+120000; smokes until
+stoppered; command word
+reseals), Eyes of Charming
+(1 person per round; both
+lenses save -2, one lens
++2), Eyes of the Eagle
+(100x at 1 foot or more;
+2000 vs 20 feet; one cusp
+dizzy-stunned 1 round,
+then always cover 1 eye),
+Eyes of Minute Seeing (100x
+at 1 foot or less; seams,
+marks, compartments),
+Eyes of Petrification
+(instant stone; 25 percent
+as basilisk gaze including
+reflection), Mixing eye
+types (immediate insanity
+2-8 turns, 2d4). Engine
+rows 19-29: 77, 78-79,
+80-85, 86-91, 92, 93, 94,
+95, 96-97, 98-99, 100;
+only Eyes of Charming (M);
+row 29 the triple star.
+New R265 battery audit;
+census 183. Next: part 10 -
+Figurines of Wondrous Power
+onward in part2 from line
+433 (global 11498; TABLE
+III.E. 3, the kMisc3 rows,
+begins; the figurines,
+gauntlets and girdles
+follow).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
