@@ -3922,6 +3922,132 @@ horseshoes, incenses and
 instruments follow; kMisc3
 rows 10+).
 
+R268 landed the III.E misc
+magic explanation prose part
+12 (part2 lines 532-579;
+global = 11065 + part2
+line), Helm of Brilliance
+through the Horn of Bubbles -
+pinning the kMisc3 rows 10-17,
+NO class marks and NO
+asterisks ride these rows. ONE
+page header inside the slice
+(the 541 TREASURE page) falls
+between the jewel functions
+table and the Each gem
+paragraph of the Brilliance
+item - restored. The jewel
+functions table: the book
+upload flattens the four gem
+rows into the Diamond cell
+(the Ruby, Fire Opal and Opal
+cells empty) - the four-row
+table restored from the
+compilation (the R175
+precedent): Diamond prismatic
+spray (7th illusionist), Ruby
+wall of fire (5th druid), Fire
+Opal fireball (3rd
+magic-user), Opal light (1st
+cleric). The items: Helm of
+Brilliance (+2 armor, 10
+diamonds, 20 rubies, 30 fire
+opals, 40 opals; each gem one
+spell in 1 segment once, the
+helm once per round, spell
+level doubled; undead glow at
+30 feet, pain 1-6, skeletons
+and zombies exempt; sword of
+flame in 1 round, additional
+to specials; produce flame as
+a 5th level druid; double
+strength fire resistance, no
+augment; spent gems turn to
+powder, removal destroys, no
+re-magicking; a failed save
+versus magical fire: another
+save for the helm without
+magic, failed: the gems
+overload, multiple effects),
+Helm of Comprehending
+Languages and Reading Magic
+(90 percent strange tongues,
+80 magic writings, all or
+none; not spell use; a helmet
+of armor class 5), Helm of
+Opposite Alignment
+(indeterminate dweomer; curse
+on donning; good to evil,
+neutral to LE LG CE CG; the
+alteration desired; wish or
+alter reality only; no self
+return; paladin quest and
+atone; powerless after
+functioning), Helm of
+Telepathy (thoughts within 6
+inches; racial tongue over
+common over alignment
+tongues; 3 feet of stone, a
+quarter foot of iron, lead or
+gold sheeting blocks;
+directional, conscious effort;
+language or empathy;
+suggestion +5 percent per 2
+intelligence above, -5 per 1
+below; the subject save
+minus 1 per 2 below, plus 1
+per 1 above, equal flat; +4
+psionic attacks; +40 psionic
+strength), Helm of
+Teleportation (once per day
+as a magic-user, destination
+known, risk; a magic-user
+memorizes and refreshes:
+repeat 3 times and still
+personally teleport; the
+spell retained: 6 personal
+teleports, then a helm
+usage), Helm of Underwater
+Action (see and breathe;
+lenses from two compartments;
+5 times farther vision;
+obstructions block; the
+command word: an air globe
+until repeated), Horn of
+Blasting (a normal trumpet; a
+sound cone 12 inches by 3;
+save: stunned 1, deafened 2;
+fail: 1-10 damage, stunned 2,
+deafened 4; an ultrasonic
+pulse 1 foot by 10 inches; 3
+times a large catapult hit =
+18 structural points, smash a
+drawbridge or flatten a
+cottage; over once a day: 10
+percent cumulative explode,
+5-50 on the user; no
+charges; 2 percent cumulative
+shiver, no wielder damage),
+Horn of Bubbles (the bubbles
+blind the blower 2-20
+rounds; only when a slayer
+actively seeks the
+character; appearance may
+delay). 91 accessors: 87
+scalars + 4 walkers (the
+jewel functions table; the
+gem, spell-level, structural
+and explosion ladders are
+arithmetic checks). New R268
+battery audit; census 186.
+Next: part 13 - Horn of
+Collapsing onward in part2
+from line 581 (global 11646;
+the tritons, Valhalla,
+horseshoes, incenses and
+instruments follow; kMisc3
+rows 18+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
