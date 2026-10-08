@@ -3150,6 +3150,121 @@ Elementals onward in part2 from
 line 110 (global = 11065 +
 part2 line).
 
+R260 landed the III.E misc
+magic explanation prose part
+4 (part2 lines 110-153;
+global = 11065 + part2
+line), Bowl Commanding Water
+Elementals through Bucknard
+Everfull Purse - completing
+the kMisc1 table rows
+23-32. ONE page header
+inside the slice, stripped
+(the R249 lesson): line 127
+splits the Bracers of
+Defense AC table from
+Bracers of Defenselessness -
+no mid-sentence seam this
+time. rules/miscprose4.h
+(the mmp prefix again, 53
+accessors: 48 scalars + 5
+array walkers, no name
+collisions with parts 1-3):
+Bowl Commanding Water
+Elementals (12 HD; words 1
+round; fresh or salt; salt
++2 per die, max 8 hp per
+die), Bowl of Watery Death
+(save versus magic or shrunk
+to ant size; salt save at
+minus 2; drowns in 3-8
+rounds; freed only by animal
+growth, enlarge or wish;
+growth potion the same;
+sweet water another save;
+death permanent, even wish
+fails), Bracers of Defense
+(the 7-row AC table 01-05:8
+through 86-00:2; useless
+with armor, stack with
+other protections), Bracers
+of Defenselessness (serves
+until attacked in anger by
+a dangerous enemy; AC 10,
+negates all protections and
+dex bonuses; remove curse
+only), Brazier Commanding
+Fire Elementals (12 HD; fire
+lit 1 round; sulphur +1 per
+die, 2-9 hp per die),
+Brazier of Sleep Smoke (1
+inch radius cloud; save or
+deep sleep; a 12 HD fire
+elemental attacks the
+nearest creature; dispel
+magic or remove curse
+awakens), Brooch of
+Shielding (90% without gems;
+absorbs 101 hp of magic
+missile damage, then melts),
+Broom of Animated Attack
+(loop-the-loop dumps the
+rider 6-9 feet; attacks
+twice per round as a 4 HD
+monster; straw end blinds 1
+round; handle 1-3 damage;
+AC 7, 18 hp to destroy),
+Broom of Flying (30 inch
+speed; 182 pounds; 14 pounds
+per 1 inch slow; 30 degree
+climb or dive; fetches at 30
+inches), Bucknard Everfull
+Purse (26 coins per type the
+next morning; the 3 type
+bands 01-50 / 51-90 /
+91-00; emptied kills the
+magic; gems base 10 gp, max
+100 gp; abilities never
+change; the spice design
+note - the mangled coin
+columns noted not pinned,
+the R256 lesson). ENGINE
+CROSS-CHECK: kMisc1 rows
+23-32 (Bowl Cmd 56-58,
+Watery 59, Bracers 60-79,
+Defenseless 80-81, Brazier
+Fire 82-84, Sleep Smoke 85,
+Brooch 86-92, Broom Attack
+93, Broom Fly 94-98, Purse
+99-00) plus the (M) class
+marks on the two Bowls and
+two Braziers against the
+R225 m1 pins. FIX: the R225
+per-AC asterisk off-by-one
+- m1IsPerAcPointValued
+flagged row 26 (80-81
+Defenselessness) but the
+printed asterisk row is
+60-79 Bracers of Defense
+(row 25); the flag, the
+R225 audit kBrac table and
+its direct assertions now
+mark row 25, and the R260
+audit pins the printed AC 6
+example (2000 xp / 12000
+gp, four points above 10).
+New R260 battery audit;
+census 178. Next: part 5 -
+Candle of Invocation onward
+in part2 from line 155
+(global 11220; the TABLE
+(III.E.) 2. header at 155
+and the TREASURE header at
+159 both strip; the Candle
+seam: line 157 ends one of
+the, line 161 continues
+nine alignments).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

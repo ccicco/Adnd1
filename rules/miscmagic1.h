@@ -122,7 +122,7 @@ inline int m1IsPerAcPointValued(int i) {
     static const int t[33] = {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
         0, 0, 0,
     };
     return t[i];
