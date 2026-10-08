@@ -3389,6 +3389,75 @@ follow; the double-asterisk
 feature row 56-60 is
 R226-pinned).
 
+R262 landed the III.E misc
+magic explanation prose part
+6 (part2 lines 222-283;
+global = 11065 + part2
+line), Crystal Ball and
+Crystal Hypnosis Ball -
+completing the kMisc2 rows
+11-12. ONE page header
+inside the slice strips (the
+279 TREASURE page, the R249
+lesson); the slice is
+table-dense: the locating
+chance table (well known
+100, slightly 85, pictured
+50, part 50, garment 25,
+informed 25, slightly
+informed 20, other plane
+-25), the viewing period
+table (1 hour 3 times a day
+down to 1/6 hour once), the
+additional powers table
+(01-50 plain, 51-75
+clairaudience, 76-90 ESP,
+91-00 telepathy,
+communication only), the
+notice-by-class table
+(Fighter 2, Thief 6,
+Paladin 6, Assassin 5,
+Ranger 4, Monk 1, Bard 3).
+The spell function is 10th
+level; notice needs int 12
+or better; the int ladder
+1, 3, 6, 10, 15, 21 at int
+13-18 plus 1 percent per
+level; a dispel magic shuts
+the ball down 1 day; the
+spell-user detection uses
+the page 60 table; clerics
+and druids may take water
+basin or mirror scriers.
+Crystal Hypnosis Ball:
+cursed, indistinguishable,
+radiates magic not evil; the
+gazer gets a telepathic
+suggestion and slides under
+the influence (magic-user,
+lich, or other-planar power;
+servant, tool, or possession
+object), gradual or sudden
+at the referee call. ENGINE
+CROSS-CHECK: kMisc2 rows
+11-12 (Crystal Ball 56-60,
+Hypnosis 61), the (M) marks
+on both, and the
+double-asterisk row 11 -
+the R226 pin VERIFIED
+CORRECT (1000 xp / 5000 gp
+base, +100 percent per
+feature: clairaudience
+2000/10000, ESP 3000/15000,
+telepathy 4000/20000). New
+R262 battery audit; census
+180. Next: part 7 - Cube of
+Force onward in part2 from
+line 285 (global 11350; the
+cube of force charge table
+and the attack-form
+surcharge table follow).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
