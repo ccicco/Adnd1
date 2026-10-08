@@ -3458,6 +3458,76 @@ cube of force charge table
 and the attack-form
 surcharge table follow).
 
+R263 landed the III.E misc
+magic explanation prose part
+7 (part2 lines 285-322;
+global = 11065 + part2
+line), Cube of Force through
+Decanter of Endless Water -
+completing the kMisc2 rows
+13-17. ZERO page headers
+inside the slice (a first);
+ONE seam pins exactly (the
+Daern: line 314 ends but the
+person or, line 316 continues
+persons nearby). Cube of
+Force (36 charges, restored
+daily; wall of force 1 inch
+per side; the 6-face table
+1/1, 2/8, 3/6, 4/4, 6/3,
+0/normal; the 14-form attack
+surcharge table catapult 1
+through wall of fire 2; no
+casting into or out; mineral,
+ivory or bone), Cube of
+Frost Resistance (65 degrees
+F inside; absorbs cone of
+cold, ice storm, dragon
+breath; collapses over 50 hp
+per turn, renews after 1
+hour, destroyed over 100 hp;
+minus 40 F withstands only
+42 hp, the 2-per-minus-10
+math pinned), Cubic Gate
+(carnelian; 6 sides, 1 Prime
+Material, 5 chosen; 1 press
+opens a nexus, 10 percent per
+turn something comes
+through; 2 presses draw all
+within 5 feet; max 1 link),
+Daern Instant Fortress (20
+foot square, 30 high, 10 into
+ground; owner-only door;
+walls ignore all but
+catapults; 200 hp collapse,
+damage cumulative, wish
+restores 10; springs up in 1
+round, catching growth costs
+10-100 hp), Decanter of
+Endless Water (stream 1
+gallon, fountain 5 foot at 5,
+geyser 20 foot at 30; fresh
+or salt; geyser knocks the
+holder over and kills small
+animals; ceases on command).
+ENGINE CROSS-CHECK: kMisc2
+rows 13-17 (62-63, 64-65,
+66-67, 68-69, 70-72) and the
+negative-control stretch -
+no (C), no (M), no asterisk
+rows on 13-17; row 12 still
+carries its (M). The frost
+math cross-pins 50 - 2 x 4 =
+42. New R263 battery audit;
+census 181. Next: part 8 -
+Deck of Many Things onward
+in part2 from line 324
+(global 11389; the 22-plaque
+table and the per-plaque
+explanations follow; the
+deck sits on kMisc2 row 18,
+73-76).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
