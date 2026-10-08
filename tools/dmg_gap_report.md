@@ -2632,6 +2632,78 @@ part2; global line = part1 line or
 (MISCELLANEOUS MAGIC) headers are
 running page headers mid-paragraph).
 
+R253 landed the III.C rings
+explanation prose part 1 of 3
+(DMG pp.137-138, upload lines
+~10281-10392) - the general ring
+mechanics and the four lead
+rings: Contrariness, Delusion,
+Djinni Summoning, Elemental
+Command. rules/ringsprose.h (the
+grenade.h pattern, the rgp
+prefix - distinct from the R223
+ring prefix - 47 accessors, of
+which 3 are array walkers): max
+2 rings worn (none function if
+more), 1 per hand, 12th level of
+magic use, 20% malfunction for
+gnomes/dwarves/halflings, the 3
+cursed rings named (contrariness,
+delusion, weakness), the
+double-dagger charge note;
+Contrariness (the 6-band
+additional-properties table
+01-20 Flying through 81-00
+Strength 18/00, shocking grasp
+once per round, cumulative remove
+curse 00 = 100%); Delusion
+(removable at any time); Djinni
+Summoning (the djinni appears
+the next round, a killed servant
+makes the ring worthless);
+Elemental Command (4 types,
+elementals kept 5 feet away,
+charm attempt save -2, plane
+creatures attack at -1, wearer
+damage -1 per hit die, wearer
+saves +2, wearer attacks +4 or
+elemental saves -4, wearer
+damage +6 total, the 4-plane save
+penalty list all -2, only one
+power at a time, the four power
+lists - Air 5, Earth 6, Fire 5,
+Water 8 - with the once/twice
+per round/turn/day/week
+frequencies, water breathing 5
+foot radius, the four lesser-ring
+disguises, additional powers 5
+segments). Engine cross-check:
+the four kRings rows 1-15 vs the
+R223 rings.h band edges, djinni
+double-dagger vs
+ringIsChargeLimited row 2. The
+TREASURE (RINGS) running page
+header splits the Earth power
+list mid-list (upload ~10369),
+stripped by the ground truth per
+the R249 page-header lesson; the
+plane anchors mix hyphen and em
+dashes. New R253 battery audit;
+census 172. Next: part 2 (upload
+~10393-10457, Feather Falling
+through Shooting Stars), then
+part 3 (~10458-10561, Spell
+Storing through X-Ray Vision),
+then the misc magic item
+explanations III.E (part1
+~10948-11067 continuing
+seamlessly into part2; global
+line = part1 line or ~11065 +
+part2 line, the TREASURE
+(MISCELLANEOUS MAGIC) headers
+are running page headers
+mid-paragraph).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
