@@ -4048,6 +4048,117 @@ horseshoes, incenses and
 instruments follow; kMisc3
 rows 18+).
 
+R269 landed the III.E misc
+magic explanation prose part
+13 (part2 lines 581-626;
+global = 11065 + part2
+line), Horn of Collapsing
+through the Incense of
+Meditation - pinning the
+kMisc3 rows 18-23: the (C, F)
+mark on the Horn of the
+Tritons (row 19), the (C)
+mark on the Incense of
+Meditation (row 23), the
+Valhalla double asterisk
+(row 20). ONE page header
+inside the slice (the 592
+TREASURE page) cuts the
+Collapsing proper-use
+paragraph mid-sentence (at
+the 10 feet radius from
+the / central aiming
+point) - restored. ONE OCR
+artifact restored from the
+compilation (the R175
+precedent): the meditation
+survival clause reads
+(rounded down), the upload
+prints grounded down). The
+items: Horn of Collapsing
+(misfire without the rune
+or 10 percent anyway;
+outside: 2-12 fist-sized
+rocks at 1-6 each; indoors:
+3-36; underground: 5-20
+base times 1 per 10 feet
+of drop height; proper
+use aims at the roof 30-60
+feet beyond, collapses up
+to 20 by 20 feet, a 10
+feet radius, damage only
+indoors or underground),
+Horn of the Tritons (conch
+shell; once per day, a
+triton 3; calm 1 mile,
+dispels water elemental or
+weird; summon on a d6 band
+1-2 hippocampi 5-20, 3-5
+giant sea horses 5-30, 6
+sea lions 1-10, friendly;
+panic animal-or-lower
+intelligence, flee unless
+save, the savers minus 5
+to hit for 3-18 turns =
+30-180 rounds; heard by
+tritons 1 league), Horn of
+Valhalla (4 varieties,
+blown once every 7 days;
+silver 1-8, 4-10 at 2nd,
+any class; brass 9-15, 3-9
+at 3rd, C F T; bronze
+16-18, 2-8 at 4th, C F;
+iron 19-20, 2-5 at 5th, F;
+the wrong class is
+attacked; AC 4, 6 hp per
+die, sword and spear or
+axe and spear 50 50;
+fights until slain or
+6 turns; 50 percent
+aligned, radical
+difference: the blower
+attacked; bronze doubles
+and iron triples the
+1,000 xp / 15,000 gp base
+- the row 20 double
+asterisk), Horseshoes of
+Speed (4 iron shoes, never
+wear out; double speed; 1
+percent per 7 leagues that
+1 drops; one lost: 150
+percent; two lost: normal),
+Horseshoes of a Zephyr
+(travel without touching
+ground, water crossed, no
+tracks; normal speeds; no
+tire for 12 hours per day),
+Incense of Meditation
+(recognizable by a
+5th-plus cleric when
+burning; 8 hours of prayer:
+full and best spell
+effects, cure always max,
+broadest area, saves at
+minus 1, the dead revived
+with the not-surviving
+chance halved (rounded
+down); 2-8 pieces, one
+burns 8 hours, effects 24
+hours). 73 accessors: 60
+scalars + 13 walkers (the
+triton summon and Valhalla
+variety tables; the dice,
+level, percent and
+turn-rounds ladders are
+arithmetic checks). New
+R269 battery audit; census
+187. Next: part 14 - Incense
+of Obsession onward in
+part2 from line 630 (global
+11695; the ioun stones and
+instruments follow; kMisc3
+rows 24+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
