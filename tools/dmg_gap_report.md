@@ -2943,6 +2943,83 @@ part2 line, the TREASURE
 are running page headers
 mid-paragraph).
 
+R257 landed the III.E misc
+magic explanation prose part 1
+(part1 10949-11065 stitched
+into part2 at line 3 - the
+FIRST TWO-PART-FILE round).
+rules/miscprose1.h (the mmp
+prefix, 65 accessors: 60
+scalars + 5 array walkers):
+the section intro (not more
+than 2 or 3 duplicates; books:
+a second wish for exact
+contents), Alchemy Jug (11
+liquids - 16 gallons salt water
+down to 4 drams cyanide; 1 kind
+and 7 pourings per day; 2
+gallons per round, 8 rounds for
+the salt water), Amulet of
+Inescapable Location (DOUBLES
+likelihood and range - the
+cursed lure), Amulet of Life
+Protection (7 full days),
+Amulet of the Planes (d6: 1-3
+no add, 4-6 add 12 to d12; the
+17-row plane table 1-2 through
+21-24; the alternates 22
+Ethereal / 23 Astral / 24
+alternate Earth), Amulet of
+Proof (no aura), Apparatus of
+Kwalish (10 levers, 3 forward 6
+backward, pincers 4 feet 2-12
+damage at 25%, 900 feet depth,
+2 occupants, 2-5 hours air,
+AC 0, 100 leak 200 stave),
+Arrow of Direction (once per
+day, 7 times in 7 turns, 5
+request kinds), Bag of Beans
+(5-20 explosion in 10 feet,
+3-12 optimum, 1-2 beneficial,
+the 7-row bean table: 5-20
+berries of 100/500 gp gems, 50
+feet 5 turn smoke blinding 1-6
+rounds, 20 feet 1 turn gas),
+Bag of Devouring (90% ignore,
+60% close, base 75% less 5% per
++1, the 18/65% and 5/80%
+examples, 30 cubic feet, acts
+as bag of holding normal
+capacity, the 5% cumulative per
+turn swallow - THE SEAM FACT
+from part2 line 3 - creatures
+consumed in 7 segments). THE
+SEAM PINNED EXACTLY: part1 has
+11067 lines, last content line
+11065 ends IT HAS A 5%; part2
+line 1 is the page header,
+line 3 completes the sentence;
+the stitched sentence carries
+each turn it has a 5%
+cumulative chance of; global
+line = part1 line or 11065 +
+part2 line. ENGINE CROSS-
+CHECK: kMisc1 rows 0-6 (Alchemy
+Jug 1-2 through Arrow of
+Direction 14-16), row 8 Bag of
+Beans 18-20, row 9 Bag of
+Devouring 21 against the
+R225 m1 band pins. The TABLE
+(III.E.) 1. header at 10962
+is a running page header,
+stripped (the R249 lesson).
+New R257 battery audit; census
+175. Next: part 2 - Bag of
+Holding onward in part2 (line
+5 onward; global = 11065 +
+part2 line), through the end
+of the III.E explanations.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
