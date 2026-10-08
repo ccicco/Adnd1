@@ -2419,6 +2419,63 @@ and the rings explanations (upload
 ~10282-10561), then the misc magic
 item explanations (~10949+).
 
+R250 landed the III.A potions
+explanation prose pins, part 2 of 3
+(DMG pp.134-136, upload lines
+~10063-10128) - potions 10 through
+19 of the EXPLANATIONS section.
+rules/potionsprose2.h (the
+wandsprose2.h part-2 pattern, the
+pot prefix continues - 53 accessors,
+of which 15 are array walkers):
+Fire Resistance (damage -2 per die,
+saves +4; half dose -1 and +2; 1
+turn or 5 rounds), Flying (as the fly
+spell, 3rd level magic-user),
+Gaseous Form (base speed 3" per
+round, whirlwind double damage),
+Giant Control (1-2 giants, save -4
+if 1 / +2 if 2; the 6-row d20 giant
+type sub-table hill 1-5 through
+storm 20, tiling 1-20; 5-30 5d6
+rounds), Giant Strength (the 6-row
+die table: weight allowances
+4500-12000, damage bonuses +7
+through +12, rock base ranges
+8/16/10/12/14/16 inches, rock
+damage 1-6/1-12/1-8/1-8/1-10/1-12,
+bend bars/lift gates 50-100 percent
+- the upload table is cell-mangled
+and the ground truth parses it row
+by row), Growth (6 feet per quarter,
+24 feet full), Healing (4-10 2d4+2),
+Heroism (below 10 levels; the 3-row
+consumer table - energy levels 3/2/1
+for 1st-3rd/4th-6th/7th-9th,
+accumulated damage 3+1/2+2/1+3 on
+d10; the stray 04 4 upload row is
+paste noise and is skipped), Human
+Control (up to 32 levels/hit dice;
+the 8-row d20 type table dwarves 1-2
+through the mixed 20 row, the 20 row
+band and name in separate pipe
+cells; 5-30 rounds), and Invisibility
+(a gulp is 1/8 of the contents, 3-6
+turns). The ten potions are the
+engine kPotions rows 10-19, bands
+27-54, invulnerability from 55
+(cross-checked band by band against
+the R221 potions.h pins in the
+audit). New R250 battery audit;
+census 169. Next: R251 - potions
+part 3 (Invulnerability through
+Water Breathing, upload ~10129-10189),
+then the scrolls explanations (upload
+~10191-10280) and the rings
+explanations (upload ~10282-10561),
+then the misc magic item
+explanations (~10949+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
