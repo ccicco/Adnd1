@@ -89,6 +89,7 @@
 #include "rules/ringsprose3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins
 #include "rules/miscprose1.h"  // R257: the III.E misc magic explanation prose part 1 pins
 #include "rules/miscprose2.h"  // R258: the III.E misc magic explanation prose part 2 pins
+#include "rules/miscprose3.h"  // R259: the III.E misc magic explanation prose part 3 pins
 #include <cstdio>
 #include <string>
 
@@ -13756,6 +13757,129 @@ int main() {
             rules::mmpExaltedVanishesAfterPerusal() != 1 ||
             rules::mmpExaltedMaxBenefitTimes() != 1) ++bad;
         printf("R258 misc magic prose part 2 pins audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R259: the III.E misc magic explanation prose part 3 pins audit ----
+    // part2 lines 67-108 - Book of Infinite Spells
+    // through Boots of Striding and Springing,
+    // global = 11065 + part2 line; the page headers
+    // at 70 and 102 stripped (the R249 lesson),
+    // the 102 seam splits the levitation paragraph
+    // mid-sentence, pinned exactly.
+    {
+        int bad = 0;
+        // the seven items are the engine kMisc1 rows
+        // 16-22 (the R225 m1 band pins); the Vile
+        // (C) class mark is row 17, the Infinite
+        // row 16 is the negative control
+        if (rules::m1RowCount() != 33) ++bad;
+        static const int kM1Lo[7] = {
+            34, 35, 36, 37, 43, 48, 52,
+        };
+        static const int kM1Hi[7] = {
+            34, 35, 36, 42, 47, 51, 55,
+        };
+        for (int i = 0; i < 7; ++i)
+            if (rules::m1RowLo(16 + i) != kM1Lo[i] ||
+                rules::m1RowHi(16 + i) != kM1Hi[i]) ++bad;
+        if (rules::m1UsableByCleric(17) != 1 ||
+            rules::m1UsableByCleric(16) != 0) ++bad;
+        // the book of infinite spells
+        if (rules::mmpInfiniteFirstReadHpMin() != 5 ||
+            rules::mmpInfiniteFirstReadHpMax() != 20 ||
+            rules::mmpInfiniteFirstReadStunTurnsMin() != 5 ||
+            rules::mmpInfiniteFirstReadStunTurnsMax() != 20 ||
+            rules::mmpInfinitePageMin() != 23 ||
+            rules::mmpInfinitePageMax() != 30 ||
+            rules::mmpInfinitePageBase() != 22 ||
+            rules::mmpInfinitePageDieSides() != 8 ||
+            rules::mmpInfinitePageRowCount() != 5 ||
+            rules::mmpInfiniteLevelDieSides() != 10 ||
+            rules::mmpInfiniteMuLevelDieSides() != 12 ||
+            rules::mmpInfiniteLevelRerollLo() != 8 ||
+            rules::mmpInfiniteLevelRerollHi() != 10 ||
+            rules::mmpInfiniteMuLevelRerollLo() != 10 ||
+            rules::mmpInfiniteMuLevelRerollHi() != 12 ||
+            rules::mmpInfiniteRerollDieSides() != 6 ||
+            rules::mmpInfiniteMuRerollDieSides() != 8 ||
+            rules::mmpInfiniteVanishesAtLastPage() != 1 ||
+            rules::mmpInfiniteCastPerDay() != 1 ||
+            rules::mmpInfiniteCastPerDayIfKnown() != 4 ||
+            rules::mmpInfiniteTurnPctUsable() != 10 ||
+            rules::mmpInfiniteTurnPctForeign() != 20 ||
+            rules::mmpInfiniteTurnPctNonCasterCleric() != 25 ||
+            rules::mmpInfiniteTurnPctNonCasterMu() != 30) ++bad;
+        static const int kInfLo[5] = {
+            1, 31, 51, 61, 96,
+        };
+        static const int kInfHi[5] = {
+            30, 50, 60, 95, 100,
+        };
+        for (int i = 0; i < 5; ++i)
+            if (rules::mmpInfinitePageLo(i) != kInfLo[i] ||
+                rules::mmpInfinitePageHi(i) != kInfHi[i]) ++bad;
+        // the book of vile darkness
+        if (rules::mmpVileReadingWeeks() != 1 ||
+            rules::mmpVileWisdomGain() != 1 ||
+            rules::mmpVileHalfwayPct() != 50 ||
+            rules::mmpVileNeutralXpLossMin() != 30000 ||
+            rules::mmpVileNeutralXpLossMax() != 120000 ||
+            rules::mmpVileNeutralSplitPct() != 50 ||
+            rules::mmpVileGoodSaveCount() != 2 ||
+            rules::mmpVileGoodXpLossBase() != 250000 ||
+            rules::mmpVileGoodXpLossPerWis() != 10000 ||
+            rules::mmpVileGoodHandlingHpMin() != 5 ||
+            rules::mmpVileGoodHandlingHpMax() != 30 ||
+            rules::mmpVileNightHagPct() != 80 ||
+            rules::mmpVileNeutralHandlingHpMin() != 5 ||
+            rules::mmpVileNeutralHandlingHpMax() != 20) ++bad;
+        // the boots of dancing
+        if (rules::mmpDancingDisguisedBootTypeCount() != 4 ||
+            rules::mmpDancingTriggerCaseCount() != 2 ||
+            rules::mmpDancingAcPenalty() != 4 ||
+            rules::mmpDancingRemovalSpellCount() != 1) ++bad;
+        // the boots of elvenkind
+        if (rules::mmpElvenkindSilencePctWorst() != 95 ||
+            rules::mmpElvenkindSilencePctBest() != 100) ++bad;
+        // the boots of levitation (the 102 seam)
+        if (rules::mmpLevitationSpeedInchesPerRound() != 20 ||
+            rules::mmpLevitationWeightIncrementPounds() != 14 ||
+            rules::mmpLevitationWeightDieSides() != 20 ||
+            rules::mmpLevitationWeightBasePounds() != 280 ||
+            rules::mmpLevitationWeightMinPounds() != 294 ||
+            rules::mmpLevitationWeightMaxPounds() != 560) ++bad;
+        // the boots of speed
+        if (rules::mmpSpeedBaseMovementInches() != 24 ||
+            rules::mmpSpeedSlowPoundsPerInch() != 10 ||
+            rules::mmpSpeedFreeWeightPounds() != 200 ||
+            rules::mmpSpeedExampleHumanPounds() != 180 ||
+            rules::mmpSpeedExampleGearPounds() != 60 ||
+            rules::mmpSpeedExampleRateInches() != 20 ||
+            rules::mmpSpeedSackCoins() != 500 ||
+            rules::mmpSpeedSackSlowInches() != 5 ||
+            rules::mmpSpeedRestHoursPerMoveHour() != 1 ||
+            rules::mmpSpeedMaxContinuousHours() != 8 ||
+            rules::mmpSpeedAcBonus() != 2) ++bad;
+        // the boots of striding and springing
+        if (rules::mmpStridingBaseMovementInches() != 12 ||
+            rules::mmpStridingMaxHoursPerDay() != 12 ||
+            rules::mmpStridingRechargeHours() != 12 ||
+            rules::mmpStridingNormalPaceFeet() != 3 ||
+            rules::mmpStridingForwardJumpFeet() != 30 ||
+            rules::mmpStridingBackwardLeapFeet() != 9 ||
+            rules::mmpStridingVerticalSpringFeet() != 15 ||
+            rules::mmpStridingStumbleBasePct() != 20 ||
+            rules::mmpStridingStumbleDexAdjPct() != 3 ||
+            rules::mmpStridingStumbleDexThreshold() != 12 ||
+            rules::mmpStridingStumbleRowCount() != 6 ||
+            rules::mmpStridingAcBonus() != 1) ++bad;
+        static const int kStridingStumble[6] = {
+            17, 14, 11, 8, 5, 2,
+        };
+        for (int i = 0; i < 6; ++i)
+            if (rules::mmpStridingStumblePctByDex(i) !=
+                    kStridingStumble[i]) ++bad;
+        printf("R259 misc magic prose part 3 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

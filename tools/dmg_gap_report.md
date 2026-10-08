@@ -3081,6 +3081,75 @@ in part2 from line 67 (global =
 page header at line 70 splits
 its page table).
 
+R259 landed the III.E misc
+magic explanation prose part 3
+(part2 lines 67-108; global =
+11065 + part2 line). TWO page
+headers inside the slice, both
+stripped (the R249 lesson): line
+70 splits the page table from
+the Book of Infinite Spells
+intro, line 102 splits the Boots
+of Levitation paragraph
+mid-sentence - the seam pinned
+exactly (line 100 ends the
+ascent/descent speed phrase,
+line 104 continues ROUND
+(MINUTE); the stray table-title
+line 83 is a duplicated header,
+noted not pinned).
+rules/miscprose3.h (the mmp
+prefix again, 76 accessors: 73
+scalars + 3 array walkers): Book
+of Infinite Spells (5-20 hp,
+5-20 turns stunned on first
+read; 23-30 = 22 + d8 pages; the
+5-row page table; d10 level die,
+d12 for magic-user, 8-10 / 10-12
+reroll to d6 / d8; 1 cast per
+day, 4 if already castable; the
+10/20/25/30 page-turn ladder;
+vanishes at the last page), Book
+of Vile Darkness (1 week, +1
+wisdom halfway XP; neutral
+30,000-120,000 or turn evil, 50%
+either; good clerics 2 saves then
+250,000 less 10,000 per wisdom;
+other good 5-30 hp with 80% night
+hag; neutral 5-20 hp), Boots of
+Dancing (the other 4 useful types
+until melee or fleeing, AC
+penalty 4, remove curse only),
+Boots of Elvenkind (95% worst,
+100% best), Boots of Levitation
+(20 inches per round; d20 in 14
+pound increments over 280 base,
+294 to 560), Boots of Speed (24
+inch base, 1 inch per 10 pounds
+over 200, the 180/60 example at
+20, the 500 coin sack at 5, 1
+rest hour per move hour, 8 hours
+max, AC +2), Boots of Striding
+and Springing (12 inch base, 12
+hours + 12 recharge; 3 foot
+paces, 30/9/15 jumps; 20% stumble
+less 3% per dex above 12, the
+17/14/11/8/5/2 ladder; AC +1).
+ENGINE CROSS-CHECK: kMisc1 rows
+16-22 (Infinite 34, Vile 35,
+Dancing 36, Elvenkind 37-42,
+Levitation 43-47, Speed 48-51,
+Striding 52-55) plus the Vile
+(C) class mark at row 17
+(Infinite row 16 as the
+negative control) against the
+R225 m1 pins. New R259 battery
+audit; census 177. Next: part 4
+- Bowl Commanding Water
+Elementals onward in part2 from
+line 110 (global = 11065 +
+part2 line).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
