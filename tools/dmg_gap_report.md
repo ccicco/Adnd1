@@ -2361,6 +2361,64 @@ prose (upload ~9998-10561) and the
 misc magic item explanations
 (~10949+).
 
+R249 landed the III.A potions
+explanation prose pins, part 1 of 3
+(DMG pp.133-134, upload lines
+~9998-10062) - the sixth prose arc
+of the EXPLANATIONS section, the
+first after the III.D arc closed at
+R248. The TREASURE (POTIONS) etc.
+headings inside this seam are the
+book running page headers, not
+tables - the III.A/B/C tables were
+pinned by R122/R221-R224 long ago.
+rules/potionsprose.h (the grenade.h
+pattern, pot prefix - distinct from
+the R221 potion prefix - 56
+accessors, of which 5 are array
+walkers for the animal/dragon type
+sub-tables and the climbing armor
+table): the conventions (duration 4
+turns plus 1-4 more on d4; onset
+2-5 segments) and the first NINE
+potions - Animal Control (5-20
+rat-size, 3-12 man-size, 1-4
+half-ton-plus; save at intelligence
+5+; the 7-row d20 type sub-table
+tiling 1-20), Clairaudience (3", 2
+turns), Clairvoyance (3", 1 turn),
+Climbing (base 1% slip, 01 falls at
+the halfway d% check, 1 turn +
+5-20 rounds, +1% per 1,000 g.p.;
+armor rows studded leather 1, ring
+mail 2, scale mail 4, chainmail 7,
+banded/splinted 8, plate 10, magic
+armor 1), Delusion (90% tasters
+agree), Diminution (5% size, 50% on
+half dose, 6 turns + 2-5 d4+1),
+Dragon Control (charm within 6",
+save -2; the 12-row d20 type
+sub-table white 1-2 through good
+20, tiling 1-20; 5-20 5d4 rounds),
+ESP (5-40 5d8 rounds), and
+Extra-Healing (6-27 3d8+3 whole,
+1-8 per third). The nine potions
+are the engine kPotions rows 1-9,
+bands 01-26, fire resistance from
+27 (cross-checked against the R221
+potions.h pins in the audit). New
+R249 battery audit; census 168.
+Next: R250 - potions part 2 (Fire
+Resistance through Invisibility,
+upload ~10063-10128), R251 -
+potions part 3 (Invulnerability
+through Water Breathing, upload
+~10129-10189), then the scrolls
+explanations (upload ~10191-10280)
+and the rings explanations (upload
+~10282-10561), then the misc magic
+item explanations (~10949+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
