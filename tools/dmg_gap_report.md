@@ -3528,6 +3528,85 @@ explanations follow; the
 deck sits on kMisc2 row 18,
 73-76).
 
+R264 landed the III.E misc
+magic explanation prose part
+8 (part2 lines 324-400;
+global = 11065 + part2
+line), the Deck of Many
+Things - pinning the kMisc2
+row 18 (73-76). ONE page
+header inside the slice
+strips (the 360 TREASURE
+page); ZERO mid-sentence
+seams (a first). The deck:
+13 or 22 plaques at 75/25
+percent; draws announced
+beforehand (1, or 2, 3,
+even 4); the jester gives 2
+more draws; plaques replaced
+unless jester or fool;
+asterisk marks the 9 extras
+of the 22-pack; The Void
+and Donjon in bold face
+make the deck disappear.
+Per-plaque: Sun (item plus
+50000 xp), Moon (1-4
+wishes, ninth level spell,
+used in that many turns),
+Star (2 points, 19 cap, the
+6-ability fallback order),
+Comet (solo the next
+monster: mid-point of next
+level), Throne (charisma 18
+and a keep; already-18
+still +25 percent
+reactions), Key (map +20
+percent, 1 usable weapon),
+Knight (4th level fighter,
++1 per die, 18 max), Gem
+(20 jewelry or 50 gems at
+1000 gp base, xp capped at
+1 level), The Void (soul
+trapped, wish fails),
+Flames (Greater devil,
+enmity until death), Skull
+(minor Death AC -4, 33 hp,
+scythe 2-16 never missing
+and first; helpers summon
+their own Deaths; undead
+for spells; ignores cold,
+fire, electrical), Talons
+(all magic items instantly
+gone), Ruin (all wealth and
+property lost forever),
+Euryale (minus 3 saves,
+Fates or gods only), Rogue
+(1 henchman forever
+hostile), Balance (change
+alignment or be judged),
+Jester (10000 xp or 2 draws,
+discarded), Fool (mandatory
+payment and draw, 10000 xp),
+Vizier (one full answer),
+Idiot (1-4 int lost, redraw
+optional), Fates (cancel
+one event, party endures),
+Donjon (imprisoned, gear
+and spells stripped). The
+battery caught an assistant
+index error pre-splice (the
+fifth M mark sits on engine
+row 26, Eyes of Charming,
+not 25) - the print was
+clean. New R264 battery
+audit; census 182. Next:
+part 9 - Drums of Deafening
+onward in part2 from line
+402 (global 11467; the two
+drums, the four dusts, the
+bottles and the eyes follow;
+rows 19+).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
