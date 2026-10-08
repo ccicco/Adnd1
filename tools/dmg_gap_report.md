@@ -2552,6 +2552,86 @@ part2; global line = part1 line or
 (MISCELLANEOUS MAGIC) headers are
 running page headers mid-paragraph).
 
+R252 landed the III.B scrolls
+explanation prose pins (DMG
+pp.137-139, upload lines
+~10191-10280) - the second
+EXPLANATIONS arc opens: the general
+scroll mechanics and the EIGHT
+protection scrolls. rules/
+scrollsprose.h (the grenade.h
+pattern, the scp prefix - distinct
+from the R222 scroll prefix - 88
+accessors, of which 7 are array
+walkers): the class table (01-70
+magic-user then 01-10 illusionist,
+71-00 cleric then 01-25 druid -
+matching the engine 30% clerical
+of which 25% druidical and 10%
+illusionist flavor note), unread
+scrolls 5-30% likely to fade
+(d6 option), scroll spells written
+1 level above usable level never
+below 6th (sixth at 13th, seventh
+at 15th), the scroll fireball 6
+dice 6d6, spell failure 5% per
+level difference (the wish example
+18 - 1 = 17 x 5% = 85%), the
+6-row level-difference table
+(total failure 95/85/75/65/50/30,
+reverse-or-harmful 5/15/25/35/50/
+70), the scroll of 7 spells reducing
+to 6 on a read, and the eight
+protection scrolls: Demons (1 full
+round / 7 segments type VI / 3
+segments type III, 10 foot radius,
+5-20 5d4 rounds), Devils (1 round /
+7 greater / 3 lesser), Elementals
+(6 segments, the 5-variety table
+air 01-15 through all 61-00, 10
+foot radius, 24 hit dice specific
+16 all, 5-40 5d8 rounds),
+Lycanthropes (4 segments, the
+7-type table werebears 01-05
+through shape-changers 99-00, 10
+foot radius, 49 hit dice, pluses
+rounded down unless they exceed
++2, 5-30 rounds), Magic (8
+segments, 5 foot radius, 50% drain
+save 11 or better on d20, 5-30 5d6
+rounds), Petrification (5 segments,
+10 foot radius, 5-20 5d4 rounds),
+Possession (1 round, 10 foot
+radius, 10-60 rounds in 90% of
+scrolls, 10% have 10-60 turns but
+stationary), and Undead (4
+segments, 5 foot radius, 10 undead
+types cross-pinned against the
+R251 potUndeadTypeRowCount - the
+prose Cf. sanctions it - 35 hit
+dice/levels, 10-80 10d8 rounds).
+The eight scrolls are the engine
+III.B table rows 61-97 (rollScroll,
+the R222 scrollpins.h pins) -
+cross-checked band by band in the
+audit. The TREASURE (SCROLLS) and
+TREASURE (RINGS) running page
+headers are stripped by the ground
+truth - the RINGS header splits the
+Possession paragraph mid-sentence
+(upload ~10277), per the R249
+page-header lesson. New R252
+battery audit; census 171. Next:
+the rings explanations (upload
+~10282-10561, likely 3 parts),
+then the misc magic item
+explanations III.E (part1 ~10948-
+11067 continuing seamlessly into
+part2; global line = part1 line or
+~11065 + part2 line, the TREASURE
+(MISCELLANEOUS MAGIC) headers are
+running page headers mid-paragraph).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
