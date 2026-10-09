@@ -741,4 +741,189 @@ inline int sapHandRecordCombinations() {
     return 1;
 }
 
+inline int sapOrganPipeCount() {
+    // 77 great and small pipes
+    return 77;
+}
+
+inline int sapOrganStopCount() {
+    // the console keys beneath 13 ivory stops
+    return 13;
+}
+
+inline int sapOrganPedalCount() {
+    // 3 great foot pedals
+    return 3;
+}
+
+inline int sapOrganBellowsElemental() {
+    // the bellows worked by a chained air elemental
+    return 1;
+}
+
+inline int sapOrganStopsVaryVoice() {
+    // each stop sounds the pipes in a new voice
+    return 1;
+}
+
+inline int sapOrganKeysVaryNotes() {
+    // the keys vary the notes
+    return 1;
+}
+
+inline int sapOrganPedalPurposeUnknown() {
+    // no one is certain what the pedals serve
+    return 1;
+}
+
+inline int sapOrganStillWorksDespiteTime() {
+    // despite silenced pipes it works mighty magicks
+    return 1;
+}
+
+inline int sapOrganWrongStopsSummon() {
+    // wrong stops summon the undesired or wrong spell
+    return 1;
+}
+
+inline int sapOrganWrongKeysBackfire() {
+    // wrong keys unbind or the magic backfires
+    return 1;
+}
+
+inline int sapOrganMisplayAlignment() {
+    // improper playing may change the alignment
+    return 1;
+}
+
+inline int sapOrganDmAssignsStopsKeys() {
+    // the DM decides the stops and key sequences
+    return 1;
+}
+
+inline int sapOrganPowerTotal() {
+    // 7+7+3+7+7+3 - the total power count
+    return 34;
+}
+
+inline int sapOrganMisplayNegates() {
+    // misplaying negates, reverses, changes effects
+    return 1;
+}
+
+inline int sapHornResemblesCommonHorns() {
+    // exactly resembles horns of blasting, bubbles
+    return 1;
+}
+
+inline int sapHornSuggestedPowerPct() {
+    // the suggested 75 percent power share
+    return 75;
+}
+
+inline int sapHornSuggestedEffectPct() {
+    // the suggested 25 percent effect share
+    return 25;
+}
+
+inline int sapHornIgnoresInappropriate() {
+    // inappropriate results are ignored
+    return 1;
+}
+
+inline int sapCoatArndOfTdon() {
+    // the High Priest Arnd of Tdon possessed it
+    return 1;
+}
+
+inline int sapCoatChainLinksWeightless() {
+    // a shimmering shirt of almost weightless links
+    return 1;
+}
+
+inline int sapCoatCoveredAreaCount() {
+    // covers upper arms, torso and groin
+    return 3;
+}
+
+inline int sapCoatMinWearerHeightFt() {
+    // the minimum 3 foot human-shaped wearer
+    return 3;
+}
+
+inline int sapCoatMaxWearerHeightFt() {
+    // the maximum 8 foot human-shaped wearer
+    return 8;
+}
+
+inline int sapCoatInvulnerableCovered() {
+    // totally invulnerable on covered areas
+    return 1;
+}
+
+inline int sapCoatUncoveredAc() {
+    // AC 5 protection on all other areas
+    return 5;
+}
+
+inline int sapCoatSaveBonus() {
+    // +5 to saving throws as +5 magic armor
+    return 5;
+}
+
+inline int sapCoatFireResistance() {
+    // fire protection as a ring of fire resistance
+    return 1;
+}
+
+inline int sapCoatElementalImmunityCount() {
+    // acid, cold and electrical attacks: no effect
+    return 3;
+}
+
+inline int sapCoatPowerTotal() {
+    // 3+2+2+1+1+1 - the total power count
+    return 10;
+}
+
+inline int sapOrganPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        7, 7, 3, 7, 7, 3,
+    };
+    return t[i];
+}
+
+inline int sapHornBlastPowerTable(int i) {
+    // the power table per 1, 2 or 3 blasts; i clamps
+    if (i < 0) i = 0;
+    if (i > 2) i = 2;
+    static const int t[3] = {
+        1, 2, 5,
+    };
+    return t[i];
+}
+
+inline int sapHornBlastEffectTable(int i) {
+    // the effect table per 1, 2 or 3 blasts; i clamps
+    if (i < 0) i = 0;
+    if (i > 2) i = 2;
+    static const int t[3] = {
+        3, 6, 4,
+    };
+    return t[i];
+}
+
+inline int sapCoatPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        3, 2, 2, 1, 1, 1,
+    };
+    return t[i];
+}
+
 }  // namespace rules

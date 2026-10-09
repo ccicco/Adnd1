@@ -5914,6 +5914,107 @@ Coat of Arnd and the other
 descriptions follow; the III.E
 Special prose continue).
 
+R285 landed the III.E Special
+artifacts explanation prose part 6
+(part2 lines 1359-1403; global =
+11065 + part2 line),
+the Mystical Organ of Heward,
+the Horn of Change and
+the Invulnerable Coat of Arnd (DMG
+p.161-162), the ninth through the
+11th of the 29 artifact
+descriptions. The Organ: the
+Fables of Burdock mention a large
+musical instrument of such power
+the enchantments are only hinted
+at; 77 great and small pipes, a
+console with keys of black and
+white beneath 13 ivory stops, 3
+great foot pedals; the bellows
+worked by a conjured and chained
+air elemental of huge size; each
+stop sounds the pipes in a
+different voice, the keys vary the
+notes; no one is certain what
+purpose the foot pedals serve;
+despite time-silenced pipes and
+abused, unworkable keys and stops
+it still works mighty magicks when
+properly played; pulling the wrong
+stops summons something undesired
+or casts the wrong spell; wrong
+keys unbind what was called or the
+magic backfires; improper playing
+may change the alignment of the
+caster or manipulator; the DM
+decides which stops and key
+sequences do what; powers 7 each
+of tables I, II, IV and V, 3 each
+of III and VI, total 34;
+misplaying can negate, reverse or
+change the effects. The Horn:
+exactly resembles the more common
+magical horns, blasting or
+bubbles; 1 winding gives a table I
+power or a table III effect; 2
+soundings give II or VI; 3 blasts
+give V or IV; the DM dices the
+power-or-effect choice, 75 percent
+power and 25 percent effect
+suggested; inappropriate results
+are ignored. The Coat: the High
+Priest Arnd of Tdon the original
+possessor; a bright, shimmering
+shirt of fine, almost weightless
+chain links; covers the upper
+arms, torso and groin of any
+human-shaped wearer from 3 to 8
+feet tall; totally invulnerable to
+physical attacks on the covered
+areas, AC 5 protection everywhere
+else; adds +5 to saving throws as
+if +5 magic armor; fire protection
+as a ring of fire resistance;
+acid, cold and electrical attacks
+have no effect; powers 3 of table
+I, 2 each of II and III, 1 each of
+IV, V and VI, total 10.
+No page break falls inside the
+slice this round. The upload
+quirks: the power lines print the
+counts as N x table with the true
+multiplication sign, 10 of them;
+the 7 x I, 7 x II, 7 x IV and 7 x
+V Organ lines each wrap across two
+lines; the blank slots print 14
+underscores this section; the
+tunes paragraph prints curly
+double quotes and right single
+quotes; the warning dashes print
+as em-dashes; the Horn paragraph
+wraps across the 1387-1389 pair -
+all pinned as plain digits and
+words, apostrophe-free here. 33
+accessors: 29 scalars + 4 walkers
+(the organ power walker
+7,7,3,7,7,3, the horn blast
+walkers 1,2,5 and 3,6,4, the coat
+power walker 3,2,2,1,1,1), no name
+collisions with the miscprose and
+specart headers; the audit
+cross-pins the R240 sale table
+rows - the Organ band 26 at 25000,
+the Horn band 27 at 20000, the
+Coat band 28-29 at 47500
+(census 203). Next: R286 III.E
+Special part 7 - the Iron Flask of
+Tuerny the Merciless onward in
+part2 from line 1405 (global
+12470; the Jacinth of Inestimable
+Beauty, Johydees Mask and the
+other descriptions follow; the
+III.E Special prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
