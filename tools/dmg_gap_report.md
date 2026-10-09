@@ -4810,6 +4810,132 @@ and the feather token
 follow; kMisc4 rows 30+
 continue).
 
+R276 landed the III.E misc
+magic explanation prose
+part 20 (part2 lines 971-998;
+global = 11065 + part2 line),
+the Phylactery of Faithfulness,
+the Phylactery of Long Years,
+the Phylactery of Monstrous
+Attention, the Pipes of the
+Sewers, the Portable Hole and
+Quaals Feather Token (DMG
+p.153-154) - the slice pinning
+the kMisc4 rows 30-35 of the
+36-row III.E.4 table, closing
+it. This round has no seam:
+the slice starts at the 971
+head after the 970 blank and
+ends at the 998 token tail
+before the 999 blank, every
+paragraph complete. The
+upload quirks: the OCR splits
+three hyphenated words with a
+space (one- quarter, re-
+establish and non-
+dimensional); the curly
+apostrophes print in deitys,
+pipers, tokens and the Quaals
+item name (the engine spells
+the item with the straight
+mark); curly quotes wrap
+picked up, hole and to hit;
+the foot and inch primes print
+as curly marks; two
+multiplication signs ride the
+rat dice; the token rows
+separate with em-dashes - all
+pinned as plain digits and
+words. The part1 quirks: the
+Monstrous Attention row splits
+across two table lines (part1
+9851-9852, with --- in the
+x.p. column); the Feather
+Token row prints both dual
+value pairs in the x.p.
+column. The items: Phylactery
+of Faithfulness (worn normally
+by the cleric, aware of any
+action or item adverse to
+alignment and standing with the
+deity before performing it, if
+a prior moment is taken to
+contemplate; numberless prose,
+no accessor), Phylactery of
+Long Years (slows aging by
+one-quarter, even magical
+aging; the age 20 example ages
+9 months every 12, physically
+29 rather than 32 in 12
+years; 1 in 20 cursed to
+operate in reverse), Phylactery
+of Monstrous Attention (draws
+supernatural creatures of
+exactly the opposite alignment;
+at 10th or higher level the
+deity most powerful enemy
+interferes directly - a lawful
+good cleric attracts demons and
+eventually the notice of Orcus
+or Demogorgon; removal needs an
+exorcism spell and then a quest
+to re-establish the cleric),
+Pipes of the Sewers (10-60
+giant rats at 80 percent or
+30-180 normal rats at 20
+percent within 40 inches; a 1
+round delay per 5 inches
+traveled; 95 percent obey while
+the piper plays; ceasing sends
+them away at once; recalled, 70
+percent come and obey and 30
+percent turn upon the piper;
+against a controlling creature
+30 percent per round takeover,
+then 70 percent to maintain),
+Portable Hole (6 foot diameter
+opened fully, 10 foot deep
+extra-dimensional hole; about a
+turn of oxygen; a bag of
+holding inside tears a rift to
+the Astral Plane, both lost
+forever; the hole inside a bag
+opens a gate to another plane,
+creatures within 10 feet drawn,
+both destroyed), Quaals Feather
+Token (each usable but once:
+the anchor moors a craft
+immobile 1 full day; the bird
+drives off hostile avians or
+rides as a roc of the largest
+size for 1 day; the fan a
+strong breeze up to 8 hours a
+day, never on land; the swan
+boat swims at 24 inch speed
+carrying 8 horses and gear or
+32 men for 1 day; the tree a 6
+foot trunk, 60 foot height, 40
+foot top diameter; the whip a
++1 weapon at 9th level fighter
+to hit, 2-7 damage, bind fast
+2-7 rounds on a failed save,
+wielded up to 6 turns; other
+tokens may be added as
+desired). 44 accessors: 42
+scalars + 2 walkers (the token
+die bands), no name collisions
+parts 1-19. New R276 battery
+audit; census 194. Next:
+R277 III.E part 21 - the
+Robe of the Archmagi onward
+in part2 from
+line 1002 (global 12067; the
+robes, the three ropes, the
+two rugs, the saw, the four
+scarabs and the spade follow;
+the kMisc5 rows 1+
+continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
