@@ -6500,6 +6500,109 @@ Recorder of YeCind and the
 other descriptions follow; the
 III.E Special prose continue).
 
+R291 landed the III.E Special
+artifacts explanation prose
+part 12 (part2 lines 1625-1676;
+global = 11065 + part2 line),
+the 21st, 22nd and 23rd of the
+29 descriptions: the Queen
+Ehlissas Marvelous Nightingale,
+the Recorder of YeCind and
+the Ring of Gaxx. The Nightingale:
+Mordenkainen asserted it was
+made by Xagy and Joramy, the
+goddess of volcanic activity,
+17 centuries ago; Queen Ehlissa
+bent all to her will and it
+never escaped its confinement;
+a bejeweled songbird in a fine
+mesh of golden wires that
+springs to life, opens its
+wings, hops to the highest
+perch and performs; rumored
+eye rays of brilliant color,
+songs of wonder, and ray-and-
+song spells; a protective
+sphere of 30 feet against
+detection and magic or psionic
+intrusion, its occupants
+neither hungering nor
+thirsting; powers 4,0,1,1,1,1
+total 8. The Recorder of
+YeCind: a wind instrument that
+needs no musician and plays
+the most complicated of airs
+on command; always alarms if
+anything of its possessor
+(including itself) is stolen
+within 30 feet; plays
+clue-word songs telling what
+took place within 30 feet;
+rumored to cast spells by its
+notes; powers 5,2,1,1,1,1
+total 11. The Ring of Gaxx:
+totally alien origin, a
+platinum loop and a fine
+spinel of unknown type with
+unique workmanship; powers
+discovered only on a finger;
+a nine-faceted gem, each
+facing a different power
+toward the top; it turns
+itself when taken off, put on
+or the wearer sleeps; a random
+facet each day, secretly
+determined by the DM; one
+known facing reveals the
+order once all are known;
+unmarkable - even a wish will
+not help; powers 3,2,1,1,1,1
+total 9 - one power per facet.
+No break absorbed - the round
+closes on the standard blank at
+1676; no page seam claimed (no
+running heads between lines
+1450 and 1797). The quirks:
+Ehlissas and YeCind print with
+the curly right single quote;
+the 30 feet marks print as the
+curly feet mark; 17 true
+multiplication signs; three
+backslash continuation rows -
+the Nightingale V slot and the
+Recorder III and V slots; the
+Recorder table prints its
+slots before the count lines;
+the Gaxx III through VI rows
+print trailing commas; the
+Gaxx em dash before even a
+wish - all pinned as plain
+digits and words,
+apostrophe-free and
+backslash-free here. 35
+accessors: 32 scalars + 3
+walkers (the nightingale
+walker 4,0,1,1,1,1, the
+recorder walker 5,2,1,1,1,1,
+the gaxx walker 3,2,1,1,1,1),
+no name collisions with the
+miscprose and specart headers;
+the audit cross-pins the R240
+sale rows 20, 21 and 22 - the
+Nightingale band 64 at 112500,
+the Recorder band 65-66 at
+80000, the Gaxx band 67-68 at
+17500, all fixed rows, their
+zero high bounds carried by
+saSaleGpHi (census 209). Next:
+R292 III.E Special part 13 -
+the Rod of Seven Parts in
+part2 from line 1677 (global
+12842; the assembly table,
+the complete rod powers and
+the ordering note follow; the
+III.E Special prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

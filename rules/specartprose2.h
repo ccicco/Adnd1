@@ -1821,4 +1821,194 @@ inline int sapOrbMightRegaliaPowers() {
     return 1;
 }
 
+inline int sapNightingaleMadeByXagy() {
+    // Xagy is one of its makers
+    return 1;
+}
+
+inline int sapNightingaleJoramyCoMaker() {
+    // the volcano goddess Joramy is the other
+    return 1;
+}
+
+inline int sapNightingaleMadeCenturiesAgo() {
+    // Mordenkainen dated it this many centuries back
+    return 17;
+}
+
+inline int sapNightingaleEhlissaBentAll() {
+    // Queen Ehlissa bent all to her will
+    return 1;
+}
+
+inline int sapNightingaleNeverEscaped() {
+    // it never escaped its confinement
+    return 1;
+}
+
+inline int sapNightingaleGoldenWireCage() {
+    // held within a fine mesh of golden wires
+    return 1;
+}
+
+inline int sapNightingaleWingsPerchPerform() {
+    // wings open, hops to the perch, performs
+    return 1;
+}
+
+inline int sapNightingaleEyeRays() {
+    // its eyes shoot scintillating colored rays
+    return 1;
+}
+
+inline int sapNightingaleSongWonders() {
+    // its songs work magical wonders
+    return 1;
+}
+
+inline int sapNightingaleRaySongSpells() {
+    // rays and songs in combination weave spells
+    return 1;
+}
+
+inline int sapNightingaleSphereRadiusFeet() {
+    // the protective sphere radius, in feet
+    return 30;
+}
+
+inline int sapNightingaleSphereBlocksScrying() {
+    // no detection or magic or psionic intrusion
+    return 1;
+}
+
+inline int sapNightingaleNoHungerThirst() {
+    // those within neither hunger nor thirst
+    return 1;
+}
+
+inline int sapNightingalePowerTotal() {
+    // 4+0+1+1+1+1 - the total power count
+    return 8;
+}
+
+inline int sapNightingalePowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        4, 0, 1, 1, 1, 1,
+    };
+    return t[i];
+}
+
+inline int sapRecorderNeedsNoMusician() {
+    // it needs no musician to play it
+    return 1;
+}
+
+inline int sapRecorderPlaysOnCommand() {
+    // plays the most complicated airs on command
+    return 1;
+}
+
+inline int sapRecorderAlarmRadiusFeet() {
+    // the stolen-goods alarm radius, in feet
+    return 30;
+}
+
+inline int sapRecorderAlarmIncludesSelf() {
+    // it alarms for itself stolen as well
+    return 1;
+}
+
+inline int sapRecorderClueWordSongs() {
+    // information through clue-word songs
+    return 1;
+}
+
+inline int sapRecorderRumoredSpells() {
+    // rumored to cast spells with its notes
+    return 1;
+}
+
+inline int sapRecorderPowerTotal() {
+    // 5+2+1+1+1+1 - the total power count
+    return 11;
+}
+
+inline int sapRecorderPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        5, 2, 1, 1, 1, 1,
+    };
+    return t[i];
+}
+
+inline int sapGaxxAlienOrigin() {
+    // its origin is totally alien
+    return 1;
+}
+
+inline int sapGaxxPlatinumLoopSpinel() {
+    // a platinum loop about a fine spinel
+    return 1;
+}
+
+inline int sapGaxxUnknownGemType() {
+    // the workmanship unique, the gem unknown
+    return 1;
+}
+
+inline int sapGaxxFingerDiscovery() {
+    // donned on a finger to discover powers
+    return 1;
+}
+
+inline int sapGaxxFacetCount() {
+    // the nine-faceted gem
+    return 9;
+}
+
+inline int sapGaxxFacingToTop() {
+    // each facet powers when faced to the top
+    return 1;
+}
+
+inline int sapGaxxTurnsItself() {
+    // it turns itself off, on, or when asleep
+    return 1;
+}
+
+inline int sapGaxxDailyRandomFacet() {
+    // a random facet each day, secret to the DM
+    return 1;
+}
+
+inline int sapGaxxFacetOrderKnown() {
+    // one known facing reveals the order
+    return 1;
+}
+
+inline int sapGaxxCannotBeMarked() {
+    // unmarkable - even a wish will not help
+    return 1;
+}
+
+inline int sapGaxxPowerTotal() {
+    // 3+2+1+1+1+1 - the total power count
+    return 9;
+}
+
+inline int sapGaxxPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        3, 2, 1, 1, 1, 1,
+    };
+    return t[i];
+}
+
 }  // namespace rules
