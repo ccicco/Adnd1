@@ -6996,6 +6996,29 @@ descriptions are all landed -
 the III.E
 Special prose COMPLETE).
 
+R296 the PHB report scope round:
+diffing the PHB upload section
+list against the sibling ledger
+found five sections never
+explicitly pinned or marked
+OUT. Three recorded OUT: money
+changing, banks, loans and
+jewelers (the gold-only economy);
+Appendix V (the treasure division
+agreements - player-side);
+Appendix IV (the known planes -
+no planar layer). Two opened:
+the weapon proficiency table
+(initial slots, the -2 to -5
+non-proficiency penalty, the
+added-slot cadence - an R297
+pin candidate), and the thief
+function take plus DEX Table II
+(levels 1-17, the racial
+adjustments - a data-only R298
+candidate). No audit added; the
+battery census stays 213.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

@@ -824,3 +824,85 @@ arc boxes:
       negates (no harpies or shriekers in the
       monster special set). Census 155.
 
+## R296 the unrecorded-sections pass (the second
+scope round)
+
+R296 SCOPE PASS. Diffing the PHB upload section
+list against this ledger found five sections
+the report never explicitly pinned or marked
+OUT. They are recorded here, per the R177
+convention that a scope decision gets written
+down. A report round adds no audit; the battery
+census stays 213.
+
+## Open items (the R296 additions)
+
+- [ ] **Weapon Proficiency Table (the WEAPONS
+      section)** - ten class rows. Initial
+      slots: cleric 2, druid 2, fighter 4,
+      paladin 3, ranger 3, magic-user 1,
+      illusionist 1, thief 2, assassin 3,
+      monk 1. The non-proficiency to-hit
+      penalty: fighter, paladin, ranger and
+      assassin -2; cleric, thief and monk -3;
+      druid -4; magic-user and illusionist
+      -5. The added-slot cadence: monk 1 per 2
+      levels, fighter-types 1 per 3, cleric,
+      thief and assassin 1 per 4, druid 1 per
+      5, magic-user and illusionist 1 per 6.
+      The printed notes: proficiency with a
+      normal weapon is subsumed in the magical
+      weapon of the same type; the added slots
+      arrive at the indicated level count above
+      the 1st (the cleric example: two weapons
+      at 1st, three at 5th, four at 9th, five
+      at 13th). UNWIRED - no proficiency layer
+      exists in the engine; the pin candidate
+      wires the penalty into the to-hit path
+      and the slot counts as data. The R297
+      candidate.
+- [ ] **Thief Function Take table and DEXTERITY
+      TABLE II (the THIEF and DEXTERITY
+      sections)** - the take table runs thief
+      levels 1 through 17 across the eight
+      functions (pick pockets, open locks,
+      find/remove traps, move silently, hide
+      in shadows, hear noise, climb walls,
+      read languages), with the six racial
+      adjustment rows beneath (dwarf, elf,
+      gnome, half-elf, halfling, half-orc);
+      DEX Table II prints the five thief
+      adjustment columns for scores 9
+      through 18. The engine carries the six
+      shared ability names and the
+      monk/assassin level-sharing rules
+      (rules/subclassspecials.h) but performs
+      no thief rolls. A DATA-ONLY pin
+      candidate (the R186 poetics precedent),
+      not gameplay wiring. The R298 candidate.
+
+## Out of engine scope (the R296 additions)
+
+- Money changing, banks, loans and jewelers
+  (the MONETARY SYSTEM section) - the engine
+  economy is gold-only (starting money R190,
+  the town ledger R93, taxation R207); no
+  exchange or credit layer exists or is
+  wanted.
+- Appendix V (the suggested agreements for
+  division of treasure) - the party division
+  agreements are player-side; the mechanical
+  share machinery is R93/R103.
+- Appendix IV (the known planes of
+  existence) - the engine has no planar
+  layer; the planar references that matter
+  (the artifact prose) are DMG-side and
+  pinned there.
+
+The R178 subclass-arc precedent: OPEN the
+scope items first, pin them in following
+rounds, flip the boxes in the same commits.
+The two R296 open items follow that shape -
+the proficiency table first (it is live
+to-hit wiring), the thief tables after
+(data-only).
