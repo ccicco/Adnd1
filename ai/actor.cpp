@@ -67,6 +67,7 @@
 #include "../rules/subclassspecials.h"  // R232: backstab
 #include "../rules/palrangerspells.h"  // R232: the giant-class roster
 #include "../rules/bard.h"  // R236: the poetics ferocity
+#include "../rules/weaponprof.h"  // R297: the proficiency table
 
 #include <algorithm>
 #include <cstdio>
@@ -101,9 +102,21 @@ int Actor::hitAdjustment(const Actor& defender) const {
         // defender's apparent armor AC - the armor
         // worn with shield; the magic/DEX-shifted effective
         // AC stays the to-hit target, not the row key
-        return items::attackAdjustment(weapon, exStr, str,
+        int adj = items::attackAdjustment(weapon, exStr,
+                str,
                 items::apparentArmorAc(defender.armor,
                                        defender.shield));
+        // R297: the PHB Weapon Proficiency Table - a
+        // held weapon outside the RECORDED slots pays
+        // the class non-proficiency penalty (the seam
+        // rules::wpfNonProfHitAdj). The EMPTY list =
+        // the pre-R297 convention (unrecorded choices
+        // never pay); the monk open hand stays flat 0
+        // (the early return above, the R181/R232 pins)
+        if (!proficientWithWeapon(weapon.id))
+            adj += rules::wpfNonProfHitAdj(classIndex,
+                                           subclass);
+        return adj;
     }
     return 0;   // monsters: flat
 }

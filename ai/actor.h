@@ -131,6 +131,24 @@ struct Actor {
     // character carries none - id WPN_DAGGER with a false missile
     // flag in the registry, so check hasRangedWeapon() instead.
     items::WeaponInstance rangedWeapon;
+    // R297: the weapon proficiency slots (the PHB
+    // Weapon Proficiency Table, rules/weaponprof.h).
+    // The RECORDED weapon ids the character chose.
+    // EMPTY = proficiency unrecorded: the pre-R297
+    // convention holds (the held weapon is treated
+    // as proficient; no penalty paid) - the party
+    // roster carries no recordings yet. The kitNpc
+    // NPCs record their kit weapons. A held weapon
+    // outside a NON-EMPTY list pays the class
+    // non-proficiency penalty (hitAdjustment).
+    std::vector<int> profWeaponIds;
+    bool proficientWithWeapon(int weaponId) const {
+        if (!isCharacter) return true;   // monsters
+        if (profWeaponIds.empty()) return true;
+        for (int id : profWeaponIds)
+            if (id == weaponId) return true;
+        return false;
+    }
     // R35: shots remaining in the quiver (characters only; the
     // Character roster owns the durable count, synced on combat
     // start/end). Monsters fire freely (no tracked ammo).

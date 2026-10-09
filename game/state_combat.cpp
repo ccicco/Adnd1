@@ -286,6 +286,12 @@ void AppState::kitNpc(ai::Actor& a, const dm::PartyMember& m){
                 a.shield = true;
                 break;
         }
+        // R297: the kit weapon is the chosen
+        // proficiency (the PHB Weapon Proficiency
+        // Table - rules/weaponprof.h; the initial
+        // and added slots size the full list at a
+        // future choice round)
+        a.profWeaponIds.push_back(a.weapon.id);
     }
 
 // ---- npcName ----

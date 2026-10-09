@@ -837,30 +837,42 @@ census stays 213.
 
 ## Open items (the R296 additions)
 
-- [ ] **Weapon Proficiency Table (the WEAPONS
-      section)** - ten class rows. Initial
-      slots: cleric 2, druid 2, fighter 4,
-      paladin 3, ranger 3, magic-user 1,
-      illusionist 1, thief 2, assassin 3,
-      monk 1. The non-proficiency to-hit
-      penalty: fighter, paladin, ranger and
-      assassin -2; cleric, thief and monk -3;
-      druid -4; magic-user and illusionist
-      -5. The added-slot cadence: monk 1 per 2
-      levels, fighter-types 1 per 3, cleric,
-      thief and assassin 1 per 4, druid 1 per
-      5, magic-user and illusionist 1 per 6.
-      The printed notes: proficiency with a
-      normal weapon is subsumed in the magical
-      weapon of the same type; the added slots
-      arrive at the indicated level count above
-      the 1st (the cleric example: two weapons
-      at 1st, three at 5th, four at 9th, five
-      at 13th). UNWIRED - no proficiency layer
-      exists in the engine; the pin candidate
-      wires the penalty into the to-hit path
-      and the slot counts as data. The R297
-      candidate.
+- [x] **Weapon Proficiency Table (the WEAPONS
+      section) - PINNED R297:**
+      rules/weaponprof.h CREATED - the ten
+      printed rows (the initial slots, the
+      non-proficiency penalty, the added-slot
+      cadence) with the engine mapping
+      (wpfRowFor: the base-class pair to the
+      printed row; the subclass row wins when
+      the registry subclass is set, the
+      fighter default matches attackNumber),
+      the slot-at-level walker wpfSlotsAt
+      (the printed cleric example: 2 at 1st,
+      3 at 5th, 4 at 9th, 5 at 13th) and the
+      printed notes (the same-type magical
+      subsumption, the missile-or-melee reach,
+      the levels-above-the-1st cadence).
+      WIRED: the penalty seam wpfNonProfHitAdj
+      folds into Actor::hitAdjustment
+      (ai/actor.cpp) - a held weapon outside a
+      RECORDED slot list pays the class
+      penalty (-2 to -5); the empty list =
+      the pre-R297 convention (unrecorded
+      choices never pay), and the monk open
+      hand stays flat 0 (the R181/R232 pins).
+      The kitNpc NPCs record their kit weapons
+      (game/state_combat.cpp). Simplifications
+      recorded: the party roster carries no
+      recordings yet (a future round), the
+      slot COUNTS stay data (the engine sizes
+      no lists beyond the kit grant) and the
+      ranged-weapon slot is not yet recorded
+      (the missile path shares the same
+      hitAdjustment seam). The R297 battery
+      audit walks the three columns row by
+      row, the clamps, the mapping pair probes
+      and the seam identity. Census 214.
 - [ ] **Thief Function Take table and DEXTERITY
       TABLE II (the THIEF and DEXTERITY
       sections)** - the take table runs thief
