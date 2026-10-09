@@ -2231,4 +2231,239 @@ inline int sapRodCompleteTableUse(int i) {
     return t[i];
 }
 
+inline int sapSceptreCount() {
+    // the 3 Sceptres of Might
+    return 3;
+}
+
+inline int sapSceptreSourceCrownOfMight() {
+    // the legendary source: the Crown section
+    return 1;
+}
+
+inline int sapSceptreEvilBandLo() {
+    // the evil ethos band, low die
+    return 1;
+}
+
+inline int sapSceptreEvilBandHi() {
+    // the evil ethos band, high die
+    return 6;
+}
+
+inline int sapSceptreGoodBandLo() {
+    // the good ethos band, low die
+    return 7;
+}
+
+inline int sapSceptreGoodBandHi() {
+    // the good ethos band, high die
+    return 14;
+}
+
+inline int sapSceptreNeutralBandLo() {
+    // the neutrality ethos band, low die
+    return 15;
+}
+
+inline int sapSceptreNeutralBandHi() {
+    // the neutrality ethos band, high die
+    return 20;
+}
+
+inline int sapSceptreForeignEthosCrownEffects() {
+    // a foreign-ethos touch works the Crown effects
+    return 1;
+}
+
+inline int sapSceptreBronzeInlaidSilver() {
+    // wrought of bronze inlaid with silver
+    return 1;
+}
+
+inline int sapSceptreHugeStoneTipping() {
+    // a huge precious stone tips it
+    return 1;
+}
+
+inline int sapSceptreLengthFeet() {
+    // the length, in feet
+    return 2;
+}
+
+inline int sapSceptreValueGp() {
+    // the open market value, in gold pieces
+    return 150000;
+}
+
+inline int sapSceptreRodOfBeguiling() {
+    // it functions as a Rod of Beguiling
+    return 1;
+}
+
+inline int sapSceptreUseTotal() {
+    // 1+1+1 - the use total
+    return 3;
+}
+
+inline int sapSceptreCrownOrbComboNote() {
+    // combo powers with a same-ethos Crown or Orb
+    return 1;
+}
+
+inline int sapSceptreBlankSlotCount() {
+    // the DM-fill blanks, 3 rows of 3 runs each
+    return 9;
+}
+
+inline int sapSceptreTableUse(int i) {
+    // the uses per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        1, 1, 0, 0, 0, 1,
+    };
+    return t[i];
+}
+
+inline int sapKasOfVecnaTheLich() {
+    // recorded of the lich Vecna
+    return 1;
+}
+
+inline int sapKasBodyguardRightHand() {
+    // the bodyguard and right hand of Vecna
+    return 1;
+}
+
+inline int sapKasFlatchetDullGrayMetal() {
+    // a long and thin flatchet of dull gray metal
+    return 1;
+}
+
+inline int sapKasSharpPointKeenEdges() {
+    // sharp point, keen edges, magical properties
+    return 1;
+}
+
+inline int sapKasServedFaithfully() {
+    // Kas faithfully served the lich
+    return 1;
+}
+
+inline int sapKasHubrisGrew() {
+    // his power grew and so did his hubris
+    return 1;
+}
+
+inline int sapKasSwordUrgedHimOn() {
+    // the Sword constantly urged him on
+    return 1;
+}
+
+inline int sapKasGreaterThanVecna() {
+    // it said Kas was greater than Vecna himself
+    return 1;
+}
+
+inline int sapKasCouldRuleInVecnaStead() {
+    // with it Kas could rule in Vecna stead
+    return 1;
+}
+
+inline int sapKasDestroyedVecna() {
+    // legend: Kas and his Sword destroyed Vecna
+    return 1;
+}
+
+inline int sapKasDoomWroughtTogether() {
+    // Vecna wrought the lieutenant doom too
+    return 1;
+}
+
+inline int sapKasWorldBrighter() {
+    // the world was made brighter thereby
+    return 1;
+}
+
+inline int sapKasPowersOnlyHinted() {
+    // the powers and effects are only hinted at
+    return 1;
+}
+
+inline int sapKasRenownedSwordsman() {
+    // the most renowned swordsman of his age
+    return 1;
+}
+
+inline int sapKasPlusBonus() {
+    // the enchantment plus of the +6 defender
+    return 6;
+}
+
+inline int sapKasDefender() {
+    // it is a defender
+    return 1;
+}
+
+inline int sapKasDoubleDamageOffPlane() {
+    // double damage to off-plane creatures
+    return 1;
+}
+
+inline int sapKasNormalDamageOnOtherPlanes() {
+    // normal damage when on any other plane
+    return 1;
+}
+
+inline int sapKasShortSword() {
+    // a short sword
+    return 1;
+}
+
+inline int sapKasEvilChaoticAlignment() {
+    // highly evil and chaotic in alignment
+    return 1;
+}
+
+inline int sapKasIntelligence() {
+    // the sword intelligence
+    return 15;
+}
+
+inline int sapKasEgo() {
+    // the sword ego
+    return 19;
+}
+
+inline int sapKasTriesToControl() {
+    // it attempts to control whoever takes it
+    return 1;
+}
+
+inline int sapKasUseTotal() {
+    // 5+2+1+2+2+1 - the use total
+    return 13;
+}
+
+inline int sapKasBlankSlotCount() {
+    // the DM-fill blanks, one per use
+    return 13;
+}
+
+inline int sapKasPrintsInOrder() {
+    // the powers print in order I through VI
+    return 1;
+}
+
+inline int sapKasTableUse(int i) {
+    // the uses per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        5, 2, 1, 2, 2, 1,
+    };
+    return t[i];
+}
+
 }  // namespace rules

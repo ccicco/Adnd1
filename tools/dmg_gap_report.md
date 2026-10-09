@@ -6717,6 +6717,110 @@ Teeth of Dahlver-Nar and the
 other descriptions follow; the
 III.E Special prose continue).
 
+R293 landed the III.E Special
+artifacts explanation prose
+part 14 (part2 lines 1708-1743;
+global = 11065 + part2 line),
+the 25th and 26th of the 29
+descriptions: the Sceptre of
+Might, and the Sword of Kas.
+The Sceptre: 3 of them, the
+legendary source the foregoing
+Crown of Might section; ethos
+bands 1-6 evil, 7-14 good,
+15-20 neutrality - the same
+die bands the R290 Orb
+accessors carry; a foreign
+ethos touch works the Crown
+effects; bronze inlaid with
+silver and many fine gems, a
+huge precious stone tipping
+its 2 feet length; value
+150000 or more gold pieces; it
+functions as a Rod of
+Beguiling; powers one use each
+of tables I, II and VI (walker
+1,1,0,0,0,1, total 3);
+additional powers in combo
+with a Crown or Orb of the
+same ethos - see Crown of
+Might. No break absorbed - the
+round closes on the standard
+blank at 1743; no page seam
+claimed (no running heads
+between lines 1450 and 1797).
+The Sword of Kas: recorded of
+the lich Vecna - Kas the most
+evil and ruthless lieutenant,
+bodyguard and right hand; a
+long and thin flatchet of dull
+gray metal, unsurpassed
+hardness, sharp point, keen
+edges, magical properties; he
+served faithfully, his hubris
+grew, the Sword urging him on
+- greater than Vecna, he could
+rule in Vecna stead; legend:
+Kas and his Sword destroyed
+Vecna, but Vecna wrought the
+lieutenant doom too, the world
+made brighter. Its powers
+only hinted, yet Kas was the
+most renowned swordsman of
+his age; a +6 defender, double
+damage against creatures from
+planes other than the Prime
+Material, but only normal
+damage when on any plane other
+than it; a short sword, highly
+evil and chaotic; 15
+intelligence, 19 ego, and it
+will attempt to control
+whoever takes it; powers 5 of
+I, 2 of II, 1 of III, 2 of IV,
+2 of V, 1 of VI (walker
+5,2,1,2,2,1, total 13) -
+printed in order I through VI,
+unlike the Rod complete list.
+The quirks: the Vecna quote
+prints inside curly double
+quotes, its three curly
+apostrophes dropped here
+(characters, Vecnas,
+lieutenants); the 2 feet mark
+prints curly; nine true
+multiplication signs; one
+plus sign; the Sceptre table
+prints its Evil cells empty,
+double blanks under Good and
+single blanks under Neutrality
+- 9 underscore runs of 15; the
+Kas slots print 13 runs of 11
+underscores; the bands 75-91
+at 150000 and 92 at 97000 -
+all pinned as plain digits and
+words, apostrophe-free and
+backslash-free here. 45
+accessors: 43 scalars + 2
+walkers, no name collisions
+with the miscprose and
+specart headers; the audit
+cross-pins the R240 sale rows
+24 and 25 - the Sceptre band
+75-91 at 150000, a range row,
+its price fixed; the Kas band
+92 at 97000, a fixed
+single-die row; zero high
+bounds carried by saSaleGpHi
+(census 211). Next: R294
+III.E Special part 15 - the
+Teeth of Dahlver-Nar solo in
+part2 from line 1744 (global
+12809; the Throne of the Gods
+and the other descriptions
+follow; the III.E
+Special prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
