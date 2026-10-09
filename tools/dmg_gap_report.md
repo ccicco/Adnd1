@@ -5249,6 +5249,216 @@ four talismans follow; the
 kMisc5 rows 17+
 continue).
 
+R279 landed the III.E misc
+magic explanation prose
+part 23 (part2 lines 1083-1149;
+global = 11065 + part2 line),
+the Sphere of Annihilation, the
+Stone of Controlling Earth
+Elementals, the Stone of Good
+Luck, the Stone of Weight, the
+Talisman of Pure Good, the
+Talisman of the Sphere, the
+Talisman of Ultimate Evil, the
+Talisman of Zagy, the Tome of
+Clear Thought, the Tome of
+Leadership and Influence, the
+Tome of Understanding, the
+Trident of Fish Command, the
+Trident of Submission, the
+Trident of Warning, the Trident
+of Yearning, the Vacuous
+Grimoire, the Well of Many
+Worlds and the Wings of Flying
+(DMG p.156-158) - the closing
+slice pinning the kMisc5
+rows 17-34 of the 35-row
+III.E.5 table: with rows 0-5
+by part 21 and 6-16 by part
+22, the table is complete. This
+round has two seams restored:
+seam A is the p.156-157 page
+break between the Stone of Weight
+tail (1108) and the Talisman
+of Pure Good head (1113) with
+the blank pair at 1109-1110,
+the TREASURE (MISCELLANEOUS
+MAGIC) running head at 1111
+and the 1112 post-head blank;
+seam B splits the Fish Command
+paragraph between the 1127
+tail (but they will not) and
+the 1129 head (approach
+closer than 10 feet of the
+trident) across the single
+1128 blank - the p.157-158
+page break, no running head
+captured. The upload quirks:
+the foot and inch primes print
+as curly marks; curly quotes
+wrap to hit on the luckstone;
+curly apostrophes print
+throughout; the minus sign
+prints true on the Yearning
+cursed weapon; the plus-minus
+sign prints on the luckstone 1
+to 10 percent range; a
+multiplication sign prints in
+the cancellation 3d4 x 10
+damage; the OCR splits Non-
+clerics and largest/ deepest
+with spaces; the sphere
+control table prints as a
+nine-row level grid; the wings
+durations print as a bare
+three-line list - all pinned
+as plain digits and words,
+apostrophe-free here. The
+part1 quirks: the eighteen
+slice rows print side-by-side
+with armor-table columns
+(part1 9892-9910); the Earth
+Elementals row wraps its name
+across two lines; the
+Loadstone, Yearning and
+Vacuous rows print --- in the
+x.p. column; the Sphere and
+its Talisman carry the (M)
+marks, the Pure Good and
+Ultimate Evil the (C) marks,
+the command/warning Tridents
+the (C, F, T) marks and the
+Submission the lone (F). The
+items: Sphere of Annihilation
+(a 2 foot black globe, a hole
+in the multiverse; control
+range 40 feet, 1 inch per
+level once established, base
+move 10 feet per round; the
+intelligence bonus 1 percent
+per point 13-15 and 3 percent
+per point 16-18, 12 max at 18;
+the nine-row control grid from
+up to 5th at 8 feet 15 percent
+through 21st+ at 16 feet 80
+percent; failed control drifts
+it toward the user 1-4 rounds
+within 30 feet; 2 or more
+users drop the chance 5
+percent each, cumulative; a
+gate spell: 50 destroy, 35
+nothing, 15 tear an 18 inch
+gap; a rod of cancellation:
+mutual negation, 6 inch
+radius, 30-120 damage), Stone
+of Controlling Earth
+Elementals (12 dice from
+earth, 8 from rough stone or
+sand, none from worked stone;
+4 feet square and 4 cubic
+yards; appears in 1-4 rounds;
+one per day), Stone of Good
+Luck (+1, +5 percent where
+applicable, never on to hit,
+damage or spell failure dice;
+1 to 10 percent on item and
+treasure rolls), Stone of
+Weight (50 percent movement
+and attack reduction when
+quick movement is needed;
+cannot be discarded; dispel
+evil ends it), Talisman of
+Pure Good (swallows an evil
+cleric in a flaming crack; 7
+charges, never recharged;
+neutral touch 7-28 damage,
+evil touch 12-48, non-clerics
+safe), Talisman of the Sphere
+(non-magic-users take 5-30;
+doubles the intelligence
+bonus to 2 and 6 percent per
+point; checks every other
+round once held; an
+uncontrolled sphere
+approaches at 16 feet per
+round; a wand of negation
+stops the talisman, never
+the sphere), Talisman of
+Ultimate Evil (the exact
+opposite of pure good; 6
+charges), Talisman of Zagy
+(reaction-checked on touch:
+hostile acts as a loadstone
+and discarding costs 5-30;
+neutral stays 5-30 hours or
+until a wish; friendly stays
+charisma months, grants 1
+wish per 6 charisma points
+and warns within 20 feet of
+traps; a 10,000 gp diamond
+remains), Tome of Clear
+Thought (intelligence +1
+after 48 hours of reading
+over 6 days and a month of
+exercise; never twice), Tome
+of Leadership and Influence
+(charisma +1), Tome of
+Understanding (wisdom +1),
+Trident of Fish Command (a 6
+inch radius of fish save or
+fall under empathic command,
+one charge; free fish keep
+10 feet off; schooling fish
+check as one; 17-20 charges;
++1 weapon), Trident of
+Submission (a failed save
+means a morale check instead
+of attacking; poor morale
+surrenders, hopelessness 2-8
+rounds; 17-20 charges; +1
+weapon), Trident of Warning
+(locates hostile or hungry
+predators within 24 inches;
+1 round per scan; 19-24
+charges, 2 rounds each; +2
+weapon), Trident of Yearning
+(forces submersion in the
+deepest water; freed only by
+water breathing, wish or
+alter reality; -2 cursed; no
+water breathing granted),
+Vacuous Grimoire (2 saves
+versus magic or lose 1
+intelligence and 2 wisdom;
+burn it after remove curse),
+Well of Many Worlds (a
+portable hole into another
+world; traffic flows both
+ways), Wings of Flying (20
+foot bat wings; 2 turns at 32
+inches, 4 at 18, 8 at 12;
+then 1 hour rest; shorter
+flights need only 1 hour of
+quiet; under 1 turn none;
+once per day; 500 pound
+support).
+110 accessors: 104 scalars +
+6 walkers (the sphere control
+grid and the wings duration
+list), no name collisions
+parts 1-22. New R279 battery
+audit; census 197. Next:
+R280 III.E Special - the
+Notes Regarding Artifacts and
+Relics onward in part2 from
+line 1153 (global 12218; the
+kMisc5 prose series is closed
+at all 35 rows; the artifact
+and relic notes and powers
+tables follow; the III.E
+Special prose
+continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
