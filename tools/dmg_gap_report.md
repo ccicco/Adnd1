@@ -4327,6 +4327,77 @@ the javelins, jewels and
 Keoghtom ointment follow;
 kMisc3 rows 27+ begin).
 
+R272 landed the III.E misc
+magic explanation prose part
+16 (part2 lines 766-802;
+global = 11065 + part2
+line), Iron Flask through
+Keoghtom ointment (DMG
+p.148-149) - the slice
+completing the kMisc3
+rows 27-32, the 33-row
+III.E.3 table. ONE page
+header inside the slice
+(792, the TREASURE page)
+falls inside the javelin
+of lightning paragraph
+between 1-6 hit and
+points of damage -
+ONE seam restored this
+round; the page attribution
+rides the 1eonline.info
+compilation TOC (the
+jewels, magical at p.149).
+The flask contents table:
+the upload drops the pipe
+in three rows (82-83
+mezzodaemon, 94-97 water
+elemental, 98-99 wind
+walker) - the 19-row d100
+table pinned with the
+printed 00 row as the d100
+100 (the engine kMisc3
+93-00 precedent). The
+items: Iron Flask (range 6
+inches, one creature at a
+time, 1 turn or 1 hour of
+minor service, +2 save on
+a second attempt), Javelin
+of Lightning (+2 weapon,
+9 inch range, half-by-3
+inch stroke, 1-6 plus 20
+electrical, back stroke 20
+or 10, from 2-5, consumed),
+Javelin of Piercing (6
+inch range, +6 to hit, 7-12
+damage, from 2-8, one
+throw), Jewel of Attacks
+(100 percent wandering and
+100 percent pursuit, remove
+curse or atonement), Jewel
+of Flawlessness (100
+percent boost, 1 in 10 to
+2 in 10, 10-100 facets, a
+roll of 2 on d10 burns 1
+facet, then a spherical
+stone of no value),
+Keoghtom ointment (a 3 by 1
+inch jar, 5 applications,
+heals 9-12, from 1-3
+jars). 43 accessors: 41
+scalars + 2 walkers (the
+flask contents die
+table), no name collisions
+parts 1-15. New R272
+battery audit; census 190.
+Next: R273 III.E part 17 -
+the Libram of Gainful
+Conjuration onward in
+part2 from line 806
+(global 11871; the librams,
+lyre of building and
+manuals follow).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
