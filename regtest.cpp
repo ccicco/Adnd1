@@ -18558,6 +18558,124 @@ int main() {
             rules::saSaleGpHi(26) != 0) ++bad;
         printf("R294 special artifacts prose part 15 pins audit: bad %d\n", bad);
     }
+    // ---- R295: the III.E Special artifacts
+    // explanation prose part 16 ----
+    // The Throne of the Gods and the
+    // Wand of Orcus, the 28th and 29th
+    // descriptions, part2 lines 1782-1814.
+    // No break absorbed - the round closes
+    // on the standard blank at 1814; the
+    // page seam at 1797 absorbed (a running
+    // head inside the round).
+    {
+        int bad = 0;
+        // the Throne prose scalars
+        if (rules::sapThroneCarvenMountainHeart() != 1 ||
+            rules::sapThroneMassiveStoneChair() != 1 ||
+            rules::sapThroneMosaicsIvoryMetals() != 1 ||
+            rules::sapThroneSetAboutGems() != 1 ||
+            rules::sapThroneGodsActuallySat() != 1 ||
+            rules::sapThroneWithinGreatCavern() != 1 ||
+            rules::sapThroneImmobileImmovable() != 1 ||
+            rules::sapThroneAffectsAnyoneSeated() != 1 ||
+            rules::sapThroneCertainMagicItem() != 1 ||
+            rules::sapThroneMalevolentEffectToo() != 1 ||
+            rules::sapThroneItemGainOnlyOnce() != 1 ||
+            rules::sapThroneProperWordsGestures() != 1 ||
+            rules::sapThroneGraspOptions() != 3) ++bad;
+        // the Throne table scalars
+        if (rules::sapThroneUseTotal() != 14 ||
+            rules::sapThroneTableOneCount() != 3 ||
+            rules::sapThroneTableTwoCount() != 3 ||
+            rules::sapThroneTableThreeCount() != 2 ||
+            rules::sapThroneTableFourCount() != 2 ||
+            rules::sapThroneTableFiveCount() != 2 ||
+            rules::sapThroneTableSixCount() != 2 ||
+            rules::sapThroneBlankSlotCount() != 14 ||
+            rules::sapThroneXSignCount() != 6 ||
+            rules::sapThroneBulletLineCount() != 0) ++bad;
+        static const int kT[6] = {
+            3, 3, 2, 2, 2, 2,
+        };
+        for (int i = 0; i < 6; ++i)
+            if (rules::sapThroneTableUse(i) != kT[i]) ++bad;
+        if (rules::sapThroneTableUse(0) +
+            rules::sapThroneTableUse(1) +
+            rules::sapThroneTableUse(2) +
+            rules::sapThroneTableUse(3) +
+            rules::sapThroneTableUse(4) +
+            rules::sapThroneTableUse(5) !=
+            rules::sapThroneUseTotal()) ++bad;
+        // the Wand prose scalars
+        if (rules::sapWandDemonPrinceProperty() != 1 ||
+            rules::sapWandPassesToPrimeMaterial() != 1 ||
+            rules::sapWandWreakChaosEvil() != 1 ||
+            rules::sapWandMonsterManualRef() != 1 ||
+            rules::sapWandSavingThrowVersusMagic() != 1 ||
+            rules::sapWandAvoidsDeathAnnihilation() != 1 ||
+            rules::sapWandImmuneCount() != 6) ++bad;
+        // the Wand table scalars
+        if (rules::sapWandUseTotal() != 10 ||
+            rules::sapWandTableOneCount() != 4 ||
+            rules::sapWandTableTwoCount() != 2 ||
+            rules::sapWandTableThreeCount() != 2 ||
+            rules::sapWandTableFourCount() != 1 ||
+            rules::sapWandTableFiveCount() != 0 ||
+            rules::sapWandTableSixCount() != 1 ||
+            rules::sapWandBlankSlotCount() != 10 ||
+            rules::sapWandXSignCount() != 5 ||
+            rules::sapWandBulletLineCount() != 5 ||
+            rules::sapWandFourOneSpaceSeparator() != 1 ||
+            rules::sapWandFourOneCommaCount() != 2) ++bad;
+        static const int kW[6] = {
+            4, 2, 2, 1, 0, 1,
+        };
+        for (int i = 0; i < 6; ++i)
+            if (rules::sapWandTableUse(i) != kW[i]) ++bad;
+        if (rules::sapWandTableUse(0) +
+            rules::sapWandTableUse(1) +
+            rules::sapWandTableUse(2) +
+            rules::sapWandTableUse(3) +
+            rules::sapWandTableUse(4) +
+            rules::sapWandTableUse(5) !=
+            rules::sapWandUseTotal()) ++bad;
+        // the finale scalars and identities
+        if (rules::sapFinalXSignCount() != 11 ||
+            rules::sapFinalBlankRunCount() != 24 ||
+            rules::sapFinalUnderscoreRunLen() != 14 ||
+            rules::sapFinalCurlyApostropheCount() != 2 ||
+            rules::sapFinalEmDashCount() != 0 ||
+            rules::sapFinalPageSeamLine() != 1797 ||
+            rules::sapFinalSpecialDescriptionCount() != 29 ||
+            rules::sapFinalXSignCount() !=
+            rules::sapThroneXSignCount() +
+            rules::sapWandXSignCount() ||
+            rules::sapFinalBlankRunCount() !=
+            rules::sapThroneBlankSlotCount() +
+            rules::sapWandBlankSlotCount() ||
+            rules::sapThroneBlankSlotCount() !=
+            rules::sapThroneUseTotal() ||
+            rules::sapWandBlankSlotCount() !=
+            rules::sapWandUseTotal() ||
+            rules::sapWandBulletLineCount() !=
+            rules::sapWandXSignCount() ||
+            rules::sapWandTableFourCount() !=
+            rules::sapWandTableSixCount() ||
+            rules::sapWandFourOneCommaCount() !=
+            rules::sapWandTableOneCount() - 2) ++bad;
+        // the cross-pins: the R240 sale rows 27
+        // and 28 (the Throne priced ---, the
+        // Wand at 10000)
+        if (rules::saRowLo(27) != 99 ||
+            rules::saRowHi(27) != 99 ||
+            rules::saSaleGp(27) != 0 ||
+            rules::saSaleGpHi(27) != 0 ||
+            rules::saRowLo(28) != 100 ||
+            rules::saRowHi(28) != 100 ||
+            rules::saSaleGp(28) != 10000 ||
+            rules::saSaleGpHi(28) != 0) ++bad;
+        printf("R295 special artifacts prose part 16 pins audit: bad %d\n", bad);
+    }
     // ---- R227: the wis mental save wiring audit ----
     // PHB Wisdom Table I: the magical attack
     // saving throw adjustment now reaches the

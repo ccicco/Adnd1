@@ -6898,6 +6898,104 @@ line 1782 (global 12847; the
 III.E
 Special prose continue).
 
+R295 landed the III.E Special
+artifacts explanation prose
+part 16 (part2 lines 1782-1814;
+global = 11065 + part2 line),
+the 28th and 29th of the 29
+descriptions - the last of the
+plan, the set now COMPLETE.
+The Throne of the Gods:
+carven from the heart of a
+majestic mountain, a massive
+stone chair inlaid with
+mosaics of ivory and precious
+metals and set about with
+gems, a throne upon which
+certain gods actually sat when
+they walked the world; within
+a great cavern, part of the
+mountain core, immobile and
+immovable; anyone daring to
+seat himself or herself is
+subject to the effects;
+certain, per fables, to gain a
+magic item, but with a
+malevolent effect too; the item
+gain cannot repeat, but the
+Throne can still affect the
+seated one if the proper words
+and gestures are known and
+followed - the seated one
+grasps either arm, both, or
+none (3 options) and utters a
+command; powers 3 of I, 3 of
+II, 2 of III, 2 of IV, 2 of V,
+2 of VI (walker 3,3,2,2,2,2,
+total 14). The Wand of Orcus:
+the ghastly weapon, property of
+the demon prince Orcus, at
+times allowed to pass into the
+Prime Material Plane to wreak
+chaos and evil on all living
+things there; see MONSTER
+MANUAL, Demon, Orcus; the
+wielder lacks the full
+death-dealing power - the
+victim saves versus magic to
+avoid death or annihilation;
+six ranks unaffected at all:
+gods, godlings, demon lords,
+greater devils, saints,
+demi-gods; powers 4 of I, 2
+of II, 2 of III, 1 of IV, 1 of
+VI, no table V (walker
+4,2,2,1,0,1, total 10). The
+quirks: 11 true x-signs, 24
+blank runs of exactly 14
+underscores; the Throne lines
+carry no bullets but the Wand
+prints all 5 table lines with
+leading - bullets; the Wand
+4 x I line joins runs 3 and 4
+with a space, not a comma - 4
+runs, 2 commas; 2 curly
+apostrophes (the mountain
+core, the Throne magic), zero
+ASCII apostrophes, zero em
+dashes, all dropped here; the
+page seam absorbed at 1797
+(a running head inside the
+round); the round closes on
+the standard blank at 1814 and
+the head at 1815 sits outside
+it; No break absorbed. The
+sale rows 27 and 28
+cross-pinned: the Throne band
+99 priced --- (zero gold
+pieces), the Wand band 00 -
+the d100 wraps, row value 100
+- at 10,000; zero high bounds
+via saSaleGpHi (census 213).
+51 accessors: 49 scalars + 2
+walkers, no name collisions
+with the miscprose and
+specart headers; the audit
+probes exactly those and the
+identities - the blanks equal
+the uses for both artifacts,
+the final x-signs equal the
+two x-counts, the final blanks
+equal the two blank counts,
+the Wand bullets equal its
+x-signs, the Wand commas equal
+its I count minus 2, and the
+IV and VI Wand counts match.
+The 29 III.E Special artifact
+descriptions are all landed -
+the III.E
+Special prose COMPLETE).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

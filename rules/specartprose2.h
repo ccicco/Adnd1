@@ -2663,4 +2663,271 @@ inline int sapToothSetRightUse(int i) {
     return t[i];
 }
 
+inline int sapThroneCarvenMountainHeart() {
+    // carven from the heart of a majestic mountain
+    return 1;
+}
+
+inline int sapThroneMassiveStoneChair() {
+    // a massive stone chair
+    return 1;
+}
+
+inline int sapThroneMosaicsIvoryMetals() {
+    // inlaid with mosaics of ivory and metals
+    return 1;
+}
+
+inline int sapThroneSetAboutGems() {
+    // set about with gems
+    return 1;
+}
+
+inline int sapThroneGodsActuallySat() {
+    // certain gods actually sat on it
+    return 1;
+}
+
+inline int sapThroneWithinGreatCavern() {
+    // supposedly within a great cavern
+    return 1;
+}
+
+inline int sapThroneImmobileImmovable() {
+    // part of the mountain core, immovable
+    return 1;
+}
+
+inline int sapThroneAffectsAnyoneSeated() {
+    // anyone daring to seat is subject
+    return 1;
+}
+
+inline int sapThroneCertainMagicItem() {
+    // certain, per fables, to gain a magic item
+    return 1;
+}
+
+inline int sapThroneMalevolentEffectToo() {
+    // but subject to malevolent effect too
+    return 1;
+}
+
+inline int sapThroneItemGainOnlyOnce() {
+    // the same character cannot again gain
+    return 1;
+}
+
+inline int sapThroneProperWordsGestures() {
+    // the proper words and gestures, followed
+    return 1;
+}
+
+inline int sapThroneGraspOptions() {
+    // either arm, both, or none
+    return 3;
+}
+
+inline int sapThroneUseTotal() {
+    // 3+3+2+2+2+2 - the use total
+    return 14;
+}
+
+inline int sapThroneTableOneCount() {
+    // the uses of table I
+    return 3;
+}
+
+inline int sapThroneTableTwoCount() {
+    // the uses of table II
+    return 3;
+}
+
+inline int sapThroneTableThreeCount() {
+    // the uses of table III
+    return 2;
+}
+
+inline int sapThroneTableFourCount() {
+    // the uses of table IV
+    return 2;
+}
+
+inline int sapThroneTableFiveCount() {
+    // the uses of table V
+    return 2;
+}
+
+inline int sapThroneTableSixCount() {
+    // the uses of table VI
+    return 2;
+}
+
+inline int sapThroneBlankSlotCount() {
+    // the DM-fill blanks, one per use
+    return 14;
+}
+
+inline int sapThroneXSignCount() {
+    // the true multiplication signs, 6
+    return 6;
+}
+
+inline int sapThroneBulletLineCount() {
+    // the Throne lines carry no bullets
+    return 0;
+}
+
+inline int sapThroneTableUse(int i) {
+    // the uses per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        3, 3, 2, 2, 2, 2,
+    };
+    return t[i];
+}
+
+inline int sapWandDemonPrinceProperty() {
+    // the ghastly weapon of the demon prince
+    return 1;
+}
+
+inline int sapWandPassesToPrimeMaterial() {
+    // at times allowed to pass to the Prime
+    return 1;
+}
+
+inline int sapWandWreakChaosEvil() {
+    // to wreak chaos and evil on the living
+    return 1;
+}
+
+inline int sapWandMonsterManualRef() {
+    // see MONSTER MANUAL, Demon, Orcus
+    return 1;
+}
+
+inline int sapWandSavingThrowVersusMagic() {
+    // the victim saves versus magic
+    return 1;
+}
+
+inline int sapWandAvoidsDeathAnnihilation() {
+    // to avoid death or annihilation
+    return 1;
+}
+
+inline int sapWandImmuneCount() {
+    // gods, godlings, demon lords, greater
+    // devils, saints, demi-gods - 6 ranks
+    return 6;
+}
+
+inline int sapWandUseTotal() {
+    // 4+2+2+1+0+1 - the use total
+    return 10;
+}
+
+inline int sapWandTableOneCount() {
+    // the uses of table I
+    return 4;
+}
+
+inline int sapWandTableTwoCount() {
+    // the uses of table II
+    return 2;
+}
+
+inline int sapWandTableThreeCount() {
+    // the uses of table III
+    return 2;
+}
+
+inline int sapWandTableFourCount() {
+    // the uses of table IV
+    return 1;
+}
+
+inline int sapWandTableFiveCount() {
+    // the Wand prints no table V line
+    return 0;
+}
+
+inline int sapWandTableSixCount() {
+    // the uses of table VI
+    return 1;
+}
+
+inline int sapWandBlankSlotCount() {
+    // the DM-fill blanks, one per use
+    return 10;
+}
+
+inline int sapWandXSignCount() {
+    // the true multiplication signs, 5
+    return 5;
+}
+
+inline int sapWandBulletLineCount() {
+    // all 5 Wand table lines carry bullets
+    return 5;
+}
+
+inline int sapWandFourOneSpaceSeparator() {
+    // the 4 x I line joins runs 3 and 4
+    // with a space, not a comma
+    return 1;
+}
+
+inline int sapWandFourOneCommaCount() {
+    // only 2 commas on the 4 x I line
+    return 2;
+}
+
+inline int sapWandTableUse(int i) {
+    // the uses per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        4, 2, 2, 1, 0, 1,
+    };
+    return t[i];
+}
+
+inline int sapFinalXSignCount() {
+    // the round total of true x-signs
+    return 11;
+}
+
+inline int sapFinalBlankRunCount() {
+    // the round total of DM-fill blanks
+    return 24;
+}
+
+inline int sapFinalUnderscoreRunLen() {
+    // every blank is a 14-underscore run
+    return 14;
+}
+
+inline int sapFinalCurlyApostropheCount() {
+    // the mountain core, the Throne magic
+    return 2;
+}
+
+inline int sapFinalEmDashCount() {
+    // the section prints no em dashes
+    return 0;
+}
+
+inline int sapFinalPageSeamLine() {
+    // the absorbed running head, part2 line
+    return 1797;
+}
+
+inline int sapFinalSpecialDescriptionCount() {
+    // the 29 III.E Special descriptions
+    return 29;
+}
+
 }  // namespace rules
