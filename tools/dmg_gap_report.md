@@ -4398,6 +4398,114 @@ part2 from line 806
 lyre of building and
 manuals follow).
 
+R273 landed the III.E misc
+magic explanation prose part
+17 (part2 lines 806-841;
+global = 11065 + part2
+line), the three Librams, the
+Lyre of Building and the
+manuals of Bodily Health,
+Gainful Exercise, Golems,
+Puissant Skill at Arms and
+Quickness of Action (DMG
+p.149-150) - the slice
+pinning the kMisc4
+rows 0-8 of the 36-row
+III.E.4 table. ONE page
+header inside the slice
+(839, the TREASURE page)
+falls inside the manual of
+quickness paragraph between
+Only after and the month
+of training - ONE
+seam restored this round;
+the page attribution rides
+the compilation TOC index
+(the books and manuals at
+pp.149-150) on the
+R272-established p.149
+base. The upload drops the
+pipe in two part1 rows (02
+the Ineffable Damnation,
+08 the Puissant Skill at
+Arms); the bodily health
+paragraph carries a stray
+apostrophe artifact after
+the word manual (pinned as
+the upload prints it,
+apostrophe-free in the
+header). The items: Libram
+of Gainful Conjuration (a
+full week of study to the
+mid-point of the next
+level, 5-20 damage to a
+non-neutral reader with a
+like number of unconscious
+turns, remove curse plus 1
+month rest for the
+insane), Libram of
+Ineffable Damnation (evil
+benefit, 1 level lost from
+a non-evil look inside),
+Libram of Silver Magic
+(good benefit, vanishes
+after 1 week), Lyre of
+Building (negates horn of
+blasting, disintegrate or 6
+rounds of earth elemental
+attack once per day,
+builds once per week with
+3 turns of play equal to
+100 men for 3 days, false
+chord 20 percent, 5
+percent once known, 50
+percent disturbed),
+Manual of Bodily Health
+(24 hours over 3-5 days,
++1 constitution after a 1
+month regimen, forgotten
+in 3 months), Manual of
+Gainful Exercise (+1
+strength), Manual of
+Golems (4 sorts: clay
+1-5 1 month 65,000, flesh
+6-17 2 months 50,000,
+iron 18 4 months
+100,000, stone 19-20 3
+months 80,000; maker
+assumed 10th, cumulative
+10 percent per level
+under, cleric loses
+10,000-60,000 xp,
+magic-user loses 1 level,
+others take 6-36 damage),
+Manual of Puissant Skill
+at Arms (fighter only, 1
+month to the mid-point,
+forgotten in 3 months, a
+scanning magic-user is
+stunned 1-6 turns and
+loses 10,000-60,000 xp),
+Manual of Quickness of
+Action (3 days study, 1
+month practice, +1
+dexterity, remembered 3
+months). 47 accessors:
+43 scalars + 4 walkers
+(the golem die bands,
+months and costs), no
+name collisions parts
+1-16. New R273 battery
+audit; census 191. Next:
+R274 III.E part 18 - the
+Manual of Stealthy
+Pilfering onward in part2
+from line 843 (global
+11908; the mattock, maul,
+medallions and mirrors
+follow; kMisc4 rows 9+
+continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
