@@ -926,4 +926,154 @@ inline int sapCoatPowerCount(int i) {
     return t[i];
 }
 
+inline int sapFlaskHeavyUrn() {
+    // a small and heavy urn, easily carried
+    return 1;
+}
+
+inline int sapFlaskTurnipPlug() {
+    // stoppered with a turnip-shaped plug
+    return 1;
+}
+
+inline int sapFlaskSigilRunes() {
+    // engraved with sigils, glyphs, runes
+    return 1;
+}
+
+inline int sapFlaskWordCount() {
+    // opening, command, closing and sealing
+    return 3;
+}
+
+inline int sapFlaskPrisonerCount() {
+    // the 5 rumored prisoners within
+    return 5;
+}
+
+inline int sapFlaskServantEvilOnly() {
+    // the Servant loosed only for evil deeds
+    return 1;
+}
+
+inline int sapFlaskKillBeforeReturn() {
+    // it must kill before returning to prison
+    return 1;
+}
+
+inline int sapFlaskPowerTotal() {
+    // 3+0+1+0+1+1 - the total power count
+    return 6;
+}
+
+inline int sapJacinthGodFashioned() {
+    // fashioned by the gods themselves
+    return 1;
+}
+
+inline int sapJacinthMountainHeart() {
+    // the finest corundum from the mountain heart
+    return 1;
+}
+
+inline int sapJacinthFacetedBeams() {
+    // dozens of facets shoot brilliant beams
+    return 1;
+}
+
+inline int sapJacinthCharmRangeFt() {
+    // within 20 feet save vs magic or charmed
+    return 20;
+}
+
+inline int sapJacinthSultanPossessed() {
+    // Sultan Jehef Pehreen possessed it
+    return 1;
+}
+
+inline int sapJacinthKeolandTrailLost() {
+    // into Ket and Keoland, all trace lost
+    return 1;
+}
+
+inline int sapJacinthGraspPowers() {
+    // the possessor firmly grasps the gem
+    return 1;
+}
+
+inline int sapJacinthPowerTotal() {
+    // 2+2+1+1+1+1 - the total power count
+    return 8;
+}
+
+inline int sapMaskJohydeeTrickedEvil() {
+    // the priestess tricked the powers of evil
+    return 1;
+}
+
+inline int sapMaskOverthrewNation() {
+    // used to overthrow their hold on her nation
+    return 1;
+}
+
+inline int sapMaskCoversFace() {
+    // covers the whole face of the wearer
+    return 1;
+}
+
+inline int sapMaskAssumeLikeness() {
+    // assume the likeness of any human-like creature
+    return 1;
+}
+
+inline int sapMaskBlocksMindContact() {
+    // blocks all mind contact, detection, attack
+    return 1;
+}
+
+inline int sapMaskGazeImmunity() {
+    // total immunity to all gaze attacks
+    return 1;
+}
+
+inline int sapMaskGazeCreatureCount() {
+    // basilisk, catoblepas and medusa
+    return 3;
+}
+
+inline int sapMaskPowerTotal() {
+    // 2+1+0+0+0+1 - the total power count
+    return 4;
+}
+
+inline int sapFlaskPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        3, 0, 1, 0, 1, 1,
+    };
+    return t[i];
+}
+
+inline int sapJacinthPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        2, 2, 1, 1, 1, 1,
+    };
+    return t[i];
+}
+
+inline int sapMaskPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        2, 1, 0, 0, 0, 1,
+    };
+    return t[i];
+}
+
 }  // namespace rules

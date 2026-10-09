@@ -6015,6 +6015,105 @@ Beauty, Johydees Mask and the
 other descriptions follow; the
 III.E Special prose continue).
 
+R286 landed the III.E Special
+artifacts explanation prose part 7
+(part2 lines 1405-1451; global =
+11065 + part2 line),
+the Iron Flask of Tuerny the
+Merciless,
+the Jacinth of Inestimable Beauty
+and Johydees Mask (DMG p.162-163),
+the 12th through the 14th of the
+29 artifact descriptions. The
+Flask: a small and heavy urn,
+easily carried in a pack or by
+hand; stoppered with a
+turnip-shaped plug, engraved and
+embossed with sigils, glyphs and
+runes of power to contain the
+spirit within; the possessor need
+but know 3 words - opening,
+command, closing and sealing;
+rumored to imprison one of 5: a
+greater devil, a groaning spirit,
+a major demon, a night hag, a
+nycadaemon; the Servant loosed
+only to perform evil deeds, it
+must always kill before it can be
+commanded to return to its prison;
+powers 3 of table I, 1 each of
+III, V and VI, total 6. The
+Jacinth: the finest corundum gem
+from the heart of the largest
+mountain, fashioned by the gods
+themselves; a huge, priceless
+fiery orange jewel, exquisitely
+cut in dozens of facets which
+shoot forth brilliant beams; all
+who see it within 20 feet or less
+must save versus magic or be
+charmed; possessed by the Sultan
+Jehef Pehreen for a time, then
+passed into the Land of Ket and
+southward into Keoland, where all
+trace disappeared; the possessor
+firmly grasping the lustrous
+orange gem gains powers 2 each of
+tables I and II, 1 each of III
+through VI, total 8. The Mask: the
+high priestess Johydee tricked the
+powers of evil into making it,
+then wisely used it to overthrow
+their hold upon her nation;
+completely covers the face of the
+wearer and lets him or her assume
+the likeness of any human or
+human-like creature; prevents all
+forms of mind contact, detection
+or attack; total immunity to all
+gaze attacks (basilisk,
+catoblepas, medusa, etc.); powers
+2 of table I, 1 of II, 1 of VI,
+total 4. One seam restored: the
+p.162-163 page break falls between
+the Mask power table and the
+Kuroth Quill opener across the
+blank pair at 1448-1449, the
+TREASURE (ARTIFACTS & RELICS)
+running head at 1450 and the 1451
+post-head blank - nothing severed
+this time. The upload quirks: the
+power lines print the counts as N
+x table with the true
+multiplication sign, 10 of them;
+the prisoner names print one per
+line, 5 of them; the Pehreen,
+Johydees and Tuernys apostrophes
+print as the curly right single
+quote; the 20 feet range prints
+curly feet marks - all pinned as
+plain digits and words,
+apostrophe-free here. 27
+accessors: 24 scalars + 3 walkers
+(the flask power walker
+3,0,1,0,1,1, the jacinth power
+walker 2,2,1,1,1,1, the mask power
+walker 2,1,0,0,0,1), no name
+collisions with the miscprose and
+specart headers; the audit
+cross-pins the R240 sale table
+rows - the Flask band 30-31 at
+50000, the Jacinth band 32 at
+100000, the Mask band 33 at 40000
+(census 204). Next: R287 III.E
+Special part 8 - Kuroths Quill
+onward in part2 from line 1452
+(global 12517; the Mace of
+Cuthbert, the Machine of Lum the
+Mad and the other descriptions
+follow; the III.E Special prose
+continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
