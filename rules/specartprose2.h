@@ -1246,4 +1246,154 @@ inline int sapMachinePowerCount(int i) {
     return t[i];
 }
 
+inline int sapServantLumSameMake() {
+    // the same manufacture as the Machine of Lum
+    return 1;
+}
+
+inline int sapServantAutomatonHeightFt() {
+    // it stands over this many feet tall
+    return 9;
+}
+
+inline int sapServantDepthFt() {
+    // it is this many feet deep
+    return 6;
+}
+
+inline int sapServantWidthFt() {
+    // some 4 and one-half feet wide
+    return 4;
+}
+
+inline int sapServantInsideRiders() {
+    // the compartment holds this many man-sized
+    return 2;
+}
+
+inline int sapServantOutsideSittersMin() {
+    // 4 to 5 others may sit outside
+    return 4;
+}
+
+inline int sapServantCommandPhrases() {
+    // the possessor must know the proper phrases
+    return 1;
+}
+
+inline int sapServantUseCount() {
+    // transportation, attack device, fighting machine
+    return 3;
+}
+
+inline int sapServantArmorClass() {
+    // armor class minus 1 (a true-minus quirk)
+    return 1;
+}
+
+inline int sapServantHitPoints() {
+    // it withstands this many hit points
+    return 60;
+}
+
+inline int sapServantWeaponDamagePct() {
+    // weapons do only this percent of normal
+    return 50;
+}
+
+inline int sapServantRegenPerRound() {
+    // it self-repairs this many points per round
+    return 2;
+}
+
+inline int sapServantMagicResistPct() {
+    // its magic resistance, in percent
+    return 100;
+}
+
+inline int sapServantElementImmuneCount() {
+    // acid cold fire heat vacuum water - no effect
+    return 6;
+}
+
+inline int sapServantElectricalDamagePct() {
+    // electrical attacks do only this percent
+    return 20;
+}
+
+inline int sapServantSpeedInches() {
+    // its maximum speed, in inches
+    return 3;
+}
+
+inline int sapServantOperationHours() {
+    // hours of operation before it must rest
+    return 12;
+}
+
+inline int sapServantRestHours() {
+    // it must rest this many hours
+    return 1;
+}
+
+inline int sapServantPanicRangeInches() {
+    // the intelligent-viewer panic range, in inches
+    return 12;
+}
+
+inline int sapServantPanicSaveBonus() {
+    // the bonus on the panic save die roll
+    return 2;
+}
+
+inline int sapServantAttacksPerRound() {
+    // it attacks but this many times per round
+    return 1;
+}
+
+inline int sapServantBaseHitPct() {
+    // the base chance to hit, in percent
+    return 15;
+}
+
+inline int sapServantDexReduceFloor() {
+    // per point of dexterity above this
+    return 14;
+}
+
+inline int sapServantDexReducePct() {
+    // 2 and one-half percent per point above
+    return 2;
+}
+
+inline int sapServantDamageLowHp() {
+    // the low end of a hit, in hit points
+    return 10;
+}
+
+inline int sapServantDamageHighHp() {
+    // the high end of a hit, in hit points
+    return 100;
+}
+
+inline int sapServantObeysSecretLearners() {
+    // it obeys those who learn its secrets
+    return 1;
+}
+
+inline int sapServantPowerTotal() {
+    // 6+6+1+2+0+2 - the total power count
+    return 17;
+}
+
+inline int sapServantPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        6, 6, 1, 2, 0, 2,
+    };
+    return t[i];
+}
+
 }  // namespace rules

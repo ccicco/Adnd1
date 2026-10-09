@@ -6207,6 +6207,95 @@ and the other descriptions
 follow; the III.E Special prose
 continue).
 
+R288 landed the III.E Special
+artifacts explanation prose part 9
+(part2 lines 1498-1517; global =
+11065 + part2 line),
+the Mighty Servant of Leuk-O
+(DMG p.163), the 18th of the 29
+artifact descriptions. The
+Servant: of the same manufacture
+as the Machine of Lum; a towering
+automaton of crystal, unknown
+metals and strange fibrous
+material, over 9 feet tall, 6 feet
+deep and some 4 and one-half feet
+wide; a compartment inside for 2
+man-sized creatures and space for
+4 to 5 others to sit outside; the
+possessor who knows the command
+phrases can use it as a
+transportation mode, a magical
+attack device or a fighting
+machine - 3 uses; armor class
+minus 1, it withstands 60 hit
+points; all weapons do only 50
+percent of normal damage (round
+down); it regenerates 2 points
+per round; magic resistance 100
+percent; acid, cold, fire, heat,
+vacuum and water have no effect
+- 6 elements; electrical and
+lightning attacks cause only 20
+percent normal damage (round
+down), even when the resistance
+check fails; maximum speed 3
+inches; after each 12 hours of
+operation it must rest 1 hour;
+any intelligent viewer within 12
+inches must save versus magic
+with +2 on the die or flee in
+panic; it attacks 1 time per
+round with a base 15 percent
+chance to hit regardless of armor
+class; opponents with intelligence
+and dexterity of 15 or better
+reduce the base by 2 and
+one-half percent per point of
+dexterity above 14; a hit causes
+10-100 hit points of damage;
+powers 6 each of tables I and II,
+1 of III, 2 each of IV and VI,
+total 17; effects are triggered
+by major power use; it obeys the
+humans who learn its secrets of
+automation and control.
+No seam restored this time - no
+page break falls within these
+20 lines. The upload quirks: the
+height, depth and width print
+curly feet marks and the width
+prints the one-half fraction
+glyph; the armor class prints a
+true minus sign before the 1; the
+speed and panic range print the
+double-prime inches marks (3 and
+12); the dexterity reduction
+prints the one-half glyph again
+(2 and one-half percent); the
+power lines print the counts as N
+x table with the true
+multiplication sign, 5 of them,
+and the typeset wraps three of
+them (III, IV and VI) onto a
+single line - all pinned as plain
+digits and words, apostrophe-free
+here. 29 accessors: 28 scalars +
+1 walker (the servant power
+walker 6,6,1,2,0,2), no name
+collisions with the miscprose and
+specart headers; the audit
+cross-pins the R240 sale table
+row - the Servant band 39-40 at
+185000 (census 206). Next: R289
+III.E Special part 10 - the
+Orb of Dragonkind onward in
+part2 from line 1518 (global
+12583; the 8 jade globes, the
+notes and the other
+descriptions follow; the III.E
+Special prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
