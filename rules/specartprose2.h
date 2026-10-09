@@ -1076,4 +1076,174 @@ inline int sapMaskPowerCount(int i) {
     return t[i];
 }
 
+inline int sapQuillMasterThiefBest() {
+    // the master thief, most successful of his kind
+    return 1;
+}
+
+inline int sapQuillUnknownAntiquity() {
+    // a writing instrument of unknown antiquity
+    return 1;
+}
+
+inline int sapQuillBearsKurothName() {
+    // it now bears the name of Kuroth
+    return 1;
+}
+
+inline int sapQuillInfallibleScribe() {
+    // draws and writes infallibly upon command
+    return 1;
+}
+
+inline int sapQuillDepictsSeenSpoken() {
+    // depicts what its possessor sees or speaks
+    return 1;
+}
+
+inline int sapQuillPotionTreasureFinding() {
+    // it finds treasure as the potion does
+    return 1;
+}
+
+inline int sapQuillTreasureFindPerMonth() {
+    // the treasure finding, times per month
+    return 1;
+}
+
+inline int sapQuillPowerTotal() {
+    // 2+0+1+1+0+1 - the total power count
+    return 5;
+}
+
+inline int sapQuillPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        2, 0, 1, 1, 0, 1,
+    };
+    return t[i];
+}
+
+inline int sapMaceSaintCuthbertWeapon() {
+    // actually used by the Venerable Saint Cuthbert
+    return 1;
+}
+
+inline int sapMaceFollyOfError() {
+    // demonstrated the folly of error to the unbeliever
+    return 1;
+}
+
+inline int sapMaceRelicsEncased() {
+    // holy relics of the Saint encased within
+    return 1;
+}
+
+inline int sapMaceHitDamageBonus() {
+    // the bonus for both hitting and damage
+    return 5;
+}
+
+inline int sapMaceDisruptionEffects() {
+    // it also has disruption effects
+    return 1;
+}
+
+inline int sapMaceClericStrReq() {
+    // wieldable only by clerics of this strength
+    return 18;
+}
+
+inline int sapMaceLawfulGoodOnly() {
+    // the wielder must be of lawful good alignment
+    return 1;
+}
+
+inline int sapMacePowerTotal() {
+    // 3+2+0+0+0+1 - the total power count
+    return 6;
+}
+
+inline int sapMacePowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        3, 2, 0, 0, 0, 1,
+    };
+    return t[i];
+}
+
+inline int sapMachineGodsForgotten() {
+    // perhaps built by gods long forgotten
+    return 1;
+}
+
+inline int sapMachineWorkmanshipUnknown() {
+    // workmanship unlike anything known today
+    return 1;
+}
+
+inline int sapMachineBaronLumEmpire() {
+    // used by Baron Lum to build an empire
+    return 1;
+}
+
+inline int sapMachineLeverCount() {
+    // the number of levers it has
+    return 60;
+}
+
+inline int sapMachineDialCount() {
+    // the number of dials it has
+    return 40;
+}
+
+inline int sapMachineSwitchCount() {
+    // the number of switches it has
+    return 20;
+}
+
+inline int sapMachineControlsTotal() {
+    // levers + dials + switches
+    return 120;
+}
+
+inline int sapMachineHalfFunction() {
+    // about one-half of the controls still function
+    return 60;
+}
+
+inline int sapMachineWeightLb() {
+    // bulky and very heavy, in pounds
+    return 5500;
+}
+
+inline int sapMachineJoltDestroyMax() {
+    // a serious jolt destroys up to this many
+    return 4;
+}
+
+inline int sapMachineBoothCreatures() {
+    // the booth fits this many man-sized creatures
+    return 4;
+}
+
+inline int sapMachinePowerTotal() {
+    // 15+15+10+10+15+5 - the total power count
+    return 70;
+}
+
+inline int sapMachinePowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        15, 15, 10, 10, 15, 5,
+    };
+    return t[i];
+}
+
 }  // namespace rules

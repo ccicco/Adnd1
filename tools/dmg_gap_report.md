@@ -6114,6 +6114,99 @@ Mad and the other descriptions
 follow; the III.E Special prose
 continue).
 
+R287 landed the III.E Special
+artifacts explanation prose part 8
+(part2 lines 1452-1497; global =
+11065 + part2 line),
+Kuroths Quill, the Mace of
+Cuthbert and the Machine of Lum
+the Mad (DMG p.163), the 15th
+through the 17th of the 29
+artifact descriptions. The
+Quill: the master thief Kuroth
+was the most successful of his
+profession; a writing
+instrument of unknown antiquity
+which now bears his name; it
+draws and writes infallibly
+upon command, depicting
+whatever its possessor sees or
+speaks; it can find treasure
+(as a potion of treasure
+finding) 1 time per month;
+powers 2 of table I, 1 each of
+III, IV and VI, total 5. The
+Mace: the weapon actually used
+by the Venerable Saint Cuthbert
+of the Cudgel when he
+demonstrated the folly of error
+to the unbeliever; holy relics
+of the Saint are encased
+within it; +5 bonus for both
+hitting and damage plus
+disruption effects; only clerics
+of 18 strength and lawful good
+alignment can wield it and gain
+the powers; powers 3 of table I,
+2 of II, 1 of VI, total 6. The
+Machine: perhaps built by gods
+long forgotten, its workmanship
+unlike anything known today;
+used by Baron Lum to build an
+empire, its later fate unknown;
+60 levers, 40 dials and 20
+switches, only about one-half
+of the 120 controls still
+function; delicate, intricate,
+bulky and very heavy at 5,500
+pounds, it cannot be moved
+normally and a serious jolt
+destroys 1-4 functions which
+can never be restored; a booth
+of a size for 4 man-sized
+creatures (4 x 5 x 7 feet)
+stands within; you must matrix
+the controls to show which
+perform functions; powers 15
+each of tables I, II and V, 10
+each of III and IV, 5 of VI,
+total 70. No seam restored this
+time: the p.162-163 break fell
+in R286 and no page break falls
+within these 46 lines. The
+upload quirks: the Kuroths
+apostrophe prints as the curly
+right single quote; the power
+lines print the counts as N x
+table with the true
+multiplication sign, 13 of
+them; the booth dimensions
+print 4 x 5 x 7 with curly
+feet marks; the 5,500 pounds
+prints with a comma - all
+pinned as plain digits and
+words, apostrophe-free here.
+31 accessors: 28 scalars + 3
+walkers (the quill power walker
+2,0,1,1,0,1, the mace power
+walker 3,2,0,0,0,1, the
+machine power walker
+15,15,10,10,15,5), no name
+collisions with the miscprose
+and specart headers; the audit
+cross-pins the R240 sale table
+rows - the Quill band 34-35 at
+27500, the Mace band 36-37 at
+35000, the Machine band 38 at
+72500 (census 205). Next: R288
+III.E Special part 9 - the
+Mighty Servant of Leuk-O onward
+in part2 from line 1498 (global
+12563; the Orb of Dragonkind
+and the other descriptions
+follow; the III.E Special prose
+continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
