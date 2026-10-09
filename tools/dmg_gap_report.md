@@ -6821,6 +6821,83 @@ and the other descriptions
 follow; the III.E
 Special prose continue).
 
+R294 landed the III.E Special
+artifacts explanation prose
+part 15 (part2 lines 1744-1781;
+global = 11065 + part2 line),
+the 27th of the 29 descriptions:
+the Teeth of Dahlver-Nar solo. If
+any cleric was more powerful than
+the renowned Dahlver-Nar,
+histories do not tell us; the gods
+themselves gave him special
+powers, passed on to others by
+the great relics - his teeth;
+each Tooth has some power, and a
+full quarter, half, or all brings
+other grand benefits; to gain a
+tooth power the character places
+it into the mouth, where it
+grafts in place of a like missing
+tooth; never removed once
+emplaced short of the demise of
+the possessor; the powers and
+effects are cumulative. The tooth
+table: 32 teeth in 16 two-column
+rows, per-table counts 21, 4, 4,
+1, 0, 2 (walker 21,4,4,1,0,2,
+total 32); the lone IV is tooth
+21; the VI teeth are 7 and 14;
+the II teeth are 2, 16, 24 and
+28; the III teeth are 3, 9, 26
+and 29. The set table: 8
+two-column pair rows - the
+quarters 1-8 at II+VI, 9-16 at
+II+IV, 17-24 at II+III, 25-32
+at II+III - then the halves
+repeat those four rows verbatim;
+3 table V rows - 1-16, 17-32
+and 1-32 - each 1 x V; the
+right-column walker 0,0,4,2,0,2
+totals the 8 pair rows. The
+quirks: the cleanest section yet
+- zero apostrophes, curly or
+ASCII, zero em dashes, zero
+backslashes, zero percent signs;
+51 true x-signs and 51 blank
+runs of exactly 14 underscores -
+the x-sign count equals the
+blank count, both pinned. The
+sale row 26 cross-pinned: 93-98
+at 5,000/tooth - part1 prints the
+price with a per-tooth suffix,
+stripped here; a range row, its
+high bound zero via saSaleGpHi
+(census 212). 37 accessors: 35
+scalars + 2 walkers, no name
+collisions with the miscprose
+and specart headers; the audit
+probes exactly those and the
+identities - x-signs equal
+blanks, blanks equal the uses
+plus twice the pair rows plus
+the V rows, the left column
+equals the pair rows plus the V
+rows, the right column equals
+the pair rows, and the walker
+slots mirror the I, IV and VI
+scalars. No break absorbed - the
+round closes on the standard
+blank at 1781; no page seam
+claimed (no running heads
+between lines 1450 and 1797).
+Next: R295 III.E Special part 16
+- the Throne of the Gods and the
+Wand of Orcus in part2 from
+line 1782 (global 12847; the
+III.E
+Special prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

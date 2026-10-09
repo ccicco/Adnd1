@@ -2466,4 +2466,201 @@ inline int sapKasTableUse(int i) {
     return t[i];
 }
 
+inline int sapToothHistoriesSilent() {
+    // no history tells of a cleric more
+    // powerful than the renowned Dahlver-Nar
+    return 1;
+}
+
+inline int sapToothGodsGavePowers() {
+    // the gods themselves gave the powers
+    return 1;
+}
+
+inline int sapToothRelicsAreTeeth() {
+    // the great relics are his teeth
+    return 1;
+}
+
+inline int sapToothEachToothHasPower() {
+    // each of the Teeth has some power
+    return 1;
+}
+
+inline int sapToothCount() {
+    // the number of Teeth of Dahlver-Nar
+    return 32;
+}
+
+inline int sapToothBenefitLevels() {
+    // quarter, half, or all - 3 levels
+    return 3;
+}
+
+inline int sapToothQuarterCount() {
+    // a full quarter of the teeth
+    return 8;
+}
+
+inline int sapToothHalfCount() {
+    // half of the teeth
+    return 16;
+}
+
+inline int sapToothGraftsInMouth() {
+    // placed into the mouth to gain power
+    return 1;
+}
+
+inline int sapToothLikeMissingTooth() {
+    // grafts in place of a like missing tooth
+    return 1;
+}
+
+inline int sapToothNeverRemoved() {
+    // never removed once so emplaced
+    return 1;
+}
+
+inline int sapToothRemovalOnlyByDemise() {
+    // removal only by the possessor demise
+    return 1;
+}
+
+inline int sapToothPowersCumulative() {
+    // the powers and effects are cumulative
+    return 1;
+}
+
+inline int sapToothUseTotal() {
+    // the tooth table use total, 32 teeth
+    return 32;
+}
+
+inline int sapToothTableOneCount() {
+    // the teeth of table I in the tooth table
+    return 21;
+}
+
+inline int sapToothTableTwoCount() {
+    // the II teeth: 2, 16, 24 and 28
+    return 4;
+}
+
+inline int sapToothTableThreeCount() {
+    // the III teeth: 3, 9, 26 and 29
+    return 4;
+}
+
+inline int sapToothTableFourCount() {
+    // the lone table IV tooth
+    return 1;
+}
+
+inline int sapToothTableFiveCount() {
+    // the tooth table carries no table V
+    return 0;
+}
+
+inline int sapToothTableSixCount() {
+    // the VI teeth: 7 and 14
+    return 2;
+}
+
+inline int sapToothLoneFourTooth() {
+    // tooth 21 is the lone table IV tooth
+    return 21;
+}
+
+inline int sapToothFirstSixTooth() {
+    // tooth 7 is the first table VI tooth
+    return 7;
+}
+
+inline int sapToothSecondSixTooth() {
+    // tooth 14 is the second table VI tooth
+    return 14;
+}
+
+inline int sapToothUnderscoreRunLen() {
+    // every blank is a 14-underscore run
+    return 14;
+}
+
+inline int sapToothBlankSlotCount() {
+    // 32 + 8 x 2 + 3 DM-fill blanks
+    return 51;
+}
+
+inline int sapToothXSignCount() {
+    // the true multiplication signs, 51
+    return 51;
+}
+
+inline int sapToothSetPairRows() {
+    // the 8 two-column set table rows
+    return 8;
+}
+
+inline int sapToothSetQuarterRows() {
+    // the quarter rows: 1-8, 9-16,
+    // 17-24 and 25-32
+    return 4;
+}
+
+inline int sapToothSetHalfRepeatQuarters() {
+    // the half rows repeat the quarter rows
+    return 1;
+}
+
+inline int sapToothSetFiveRows() {
+    // the V rows: 1-16, 17-32 and 1-32
+    return 3;
+}
+
+inline int sapToothSetLeftTwoCount() {
+    // set table left column: 8 rows of II
+    return 8;
+}
+
+inline int sapToothSetLeftFiveCount() {
+    // set table left column: 3 rows of V
+    return 3;
+}
+
+inline int sapToothSetRightThreeCount() {
+    // set table right column III entries
+    return 4;
+}
+
+inline int sapToothSetRightFourCount() {
+    // set table right column IV entries
+    return 2;
+}
+
+inline int sapToothSetRightSixCount() {
+    // set table right column VI entries
+    return 2;
+}
+
+inline int sapToothTableUse(int i) {
+    // the teeth per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        21, 4, 4, 1, 0, 2,
+    };
+    return t[i];
+}
+
+inline int sapToothSetRightUse(int i) {
+    // right-column sets per I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        0, 0, 4, 2, 0, 2,
+    };
+    return t[i];
+}
+
 }  // namespace rules
