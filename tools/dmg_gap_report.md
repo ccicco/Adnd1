@@ -5459,6 +5459,81 @@ tables follow; the III.E
 Special prose
 continue).
 
+R280 landed the III.E Special
+artifacts and relics explanation
+prose part 1 (part2 lines
+1153-1182; global = 11065 +
+part2 line), the Notes Regarding
+Artifacts and Relics (DMG
+p.158-159) - the series opener
+before the 29 artifact
+descriptions that follow. The
+notes pinned: each artifact or
+relic is a singular thing; only
+1 of each may exist; the listing
+is crossed off when placed or
+found, with a clue substituted
+or the result ignored; the powers
+are only partially described,
+the DM assigning the major
+powers; lore is not found by
+chance; the balance and the
+nemesis-creature caution; the 5
+tables of powers and side
+effects after the descriptions;
+the three hireling behaviors
+when an item is foisted off
+(evil destroys or escapes,
+neutral dominates, good defects
+with the item); the 10-30
+percent loyalty drop when the
+holder is permanently harmed or
+killed; destruction by a single
+means; the deface save versus
+magic at minus 5 with failure
+equal to death; the four
+corruption traits; the permanent
+effects with the deity
+exception. This round has
+one seam restored: the p.158-159
+page break splits the opening
+paragraph between the 1153
+tail (only 1 of each may exist.
+As) and the 1158 head (each is
+placed by you) across the blank
+pair at 1154-1155, the TREASURE
+(ARTIFACTS & RELICS) running
+head at 1156 and the 1157
+post-head blank. The upload
+quirks: five em dashes print
+true; the deface save minus
+prints true as the U+2212 minus
+sign; the employer/ master slash
+split carries a space while
+giving/forcing prints joined -
+all pinned as plain digits and
+words, apostrophe-free here.
+20 accessors: 20 scalars and
+no walkers (the series opens
+with notes only; the 5 power
+tables and the destruction
+means table come after the 29
+descriptions in later rounds);
+no name collisions with the
+miscprose and specart headers,
+and the R240 sale table row
+count 29 is cross-pinned in
+the audit (census 198). Next:
+R281 III.E Special part 2 -
+the Axe of the Dwarvish Lords
+onward in part2 from
+line 1184 (global 12249; the
+Baba Yaga Hut, the Codex of
+the Infinite Planes and the
+other descriptions follow;
+the III.E Special prose
+continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
