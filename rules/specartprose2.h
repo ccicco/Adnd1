@@ -1396,4 +1396,169 @@ inline int sapServantPowerCount(int i) {
     return t[i];
 }
 
+inline int sapOrbGoodDeitiesOrigin() {
+    // the good deities conspired to devise it
+    return 1;
+}
+
+inline int sapOrbDemonsCorrupted() {
+    // demon servants changed the magic
+    return 1;
+}
+
+inline int sapOrbGlobeCount() {
+    // the globes of carven white jade
+    return 8;
+}
+
+inline int sapOrbOnePerAge() {
+    // 1 globe for each age of dragon life
+    return 1;
+}
+
+inline int sapOrbSmallestInches() {
+    // the smallest globe, in inches
+    return 3;
+}
+
+inline int sapOrbLargestInches() {
+    // the largest globe, in inches
+    return 10;
+}
+
+inline int sapOrbBasReliefCovered() {
+    // bas reliefs of entwined dragons cover it
+    return 1;
+}
+
+inline int sapOrbDragonEssence() {
+    // it holds the essence of all dragons
+    return 1;
+}
+
+inline int sapOrbHatchlingIntelligence() {
+    // the intelligence of the Hatchling
+    return 9;
+}
+
+inline int sapOrbHatchlingEgo() {
+    // the ego of the Hatchling
+    return 9;
+}
+
+inline int sapOrbHatchlingPowerTotal() {
+    // 3+0+0+0+0+0 - the total power count
+    return 3;
+}
+
+inline int sapOrbHatchlingPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        3, 0, 0, 0, 0, 0,
+    };
+    return t[i];
+}
+
+inline int sapOrbWyrmkinIntelligence() {
+    // the intelligence of the Wyrmkin
+    return 10;
+}
+
+inline int sapOrbWyrmkinEgo() {
+    // the ego of the Wyrmkin
+    return 10;
+}
+
+inline int sapOrbWyrmkinPowerTotal() {
+    // 2+1+0+0+0+0 - the total power count
+    return 3;
+}
+
+inline int sapOrbWyrmkinPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        2, 1, 0, 0, 0, 0,
+    };
+    return t[i];
+}
+
+inline int sapOrbDragonetteIntelligence() {
+    // the intelligence of the Dragonette
+    return 11;
+}
+
+inline int sapOrbDragonetteEgo() {
+    // the ego of the Dragonette
+    return 11;
+}
+
+inline int sapOrbDragonettePowerTotal() {
+    // 3+1+1+0+0+0 - the total power count
+    return 5;
+}
+
+inline int sapOrbDragonettePowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        3, 1, 1, 0, 0, 0,
+    };
+    return t[i];
+}
+
+inline int sapOrbDragonIntelligence() {
+    // the intelligence of the Dragon
+    return 12;
+}
+
+inline int sapOrbDragonEgo() {
+    // the ego of the Dragon
+    return 12;
+}
+
+inline int sapOrbDragonPowerTotal() {
+    // 4+1+1+0+0+0 - the total power count
+    return 6;
+}
+
+inline int sapOrbDragonPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        4, 1, 1, 0, 0, 0,
+    };
+    return t[i];
+}
+
+inline int sapOrbGreatSerpentIntelligence() {
+    // the intelligence of the Great Serpent
+    return 13;
+}
+
+inline int sapOrbGreatSerpentEgo() {
+    // the ego of the Great Serpent
+    return 13;
+}
+
+inline int sapOrbGreatSerpentPowerTotal() {
+    // 3+2+1+0+0+1 - the total power count
+    return 7;
+}
+
+inline int sapOrbGreatSerpentPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        3, 2, 1, 0, 0, 1,
+    };
+    return t[i];
+}
+
 }  // namespace rules

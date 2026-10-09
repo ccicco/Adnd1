@@ -6296,6 +6296,105 @@ notes and the other
 descriptions follow; the III.E
 Special prose continue).
 
+R289 landed the III.E Special
+artifacts explanation prose
+part 10 (part2 lines 1518-1556;
+global = 11065 + part2 line),
+the Orb of Dragonkind intro
+and its 1st through 5th globes,
+the first half of the 19th of
+the 29 artifact descriptions.
+The intro: certain good
+deities conspired to control
+the evil dragons plaguing
+mankind, demon servants of
+evil changed the magic to
+include all dragonkind and
+gave the Orbs inimical
+properties; 8 globes of
+carven white jade, 1 for
+each age of dragon life;
+the smallest but 3 inches
+across, the largest about
+10; each covered with bas
+reliefs of entwined dragons
+of incredible hardness,
+imprisoning the very
+essence of all dragons.
+Globe 1, the Hatchling:
+charms any very young
+dragon, intelligence 9, ego
+9, it controls the possessor
+when the pair equals or
+exceeds combined
+intelligence and wisdom;
+powers 3,0,0,0,0,0 total 3.
+Globe 2, the Wyrmkin: young
+dragons, 10 and 10; powers
+2,1,0,0,0,0 total 3. Globe
+3, the Dragonette: sub-adult
+dragons, 11 and 11; powers
+3,1,1,0,0,0 total 5. Globe
+4, the Dragon: young adult
+dragons, 12 and 12; powers
+4,1,1,0,0,0 total 6. Globe
+5, the Great Serpent: adult
+dragons, 13 and 13; powers
+3,2,1,0,0,1 total 7. The
+intelligence ladder rises
+by one, 9 through 13.
+One break absorbed: the
+extra blank pair at 1555-1556
+between globes 5 and 6.
+No page seam claimed -
+the upload prints no
+running heads between
+lines 1450 and 1797.
+The upload quirks: the
+part1 sale row names it
+Orb of the Dragonkind,
+with a the before
+Dragonkind, while part2
+drops the the - a
+the-quirk; the apostrophe
+in dragons prints as the
+curly right single quote;
+the power lines print N x
+table with the true
+multiplication sign, 13
+of them - all pinned as
+plain digits and words,
+apostrophe-free here. 28
+accessors: 23 scalars + 5
+walkers (the hatchling
+walker 3,0,0,0,0,0, the
+wyrmkin walker 2,1,0,0,0,0,
+the dragonette walker
+3,1,1,0,0,0, the dragon
+walker 4,1,1,0,0,0, the
+great serpent walker
+3,2,1,0,0,1), no name
+collisions with the
+miscprose and specart
+headers; the audit
+cross-pins the R240 sale
+row - the Dragonkind band
+41-47 at 10000 to 80000,
+the only range row, its
+high bound carried by
+saSaleGpHi (census 207).
+Next: R290 III.E Special
+part 11 - the Orb of
+Dragonkind continues with
+its 6th through 8th globes
+and the notes, in part2
+from line 1557 (global
+12622; the Firedrake, the
+Elder Wyrm, the Eternal
+Grand Dragon and the notes
+follow; the III.E Special
+prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
