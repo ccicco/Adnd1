@@ -5812,6 +5812,108 @@ other descriptions follow;
 the III.E Special prose
 continue).
 
+R284 landed the III.E Special
+artifacts explanation prose part 5
+(part2 lines 1318-1357; global =
+11065 + part2 line),
+the Eye of Vecna and the Hand of
+Vecna (DMG p.160-161) - the
+seventh and eighth of the 29
+artifact descriptions. The Eye:
+the phantom of the once supreme
+lich still roams the Material
+Plane; one eye and one hand
+survived his doom; the Eye glows
+like a feral creature, appears an
+agate until placed in an empty eye
+socket, then instantly and
+irrevocably grafts to the head,
+not removed or harmed without
+slaying the character; the host
+alignment immediately becomes
+neutral evil, never to change; the
+Eye bestows infravision and
+ultravision; powers 2 each of
+tables I and II, 1 each of IV and
+V (table III skipped); the primary
+power use causes a malevolent
+effect on the host. The Hand: his
+left hand, a mummified extremity,
+blackened and shriveled, possibly
+from a burned body; pressed
+against a forearm stump it grafts
+instantly, a functioning member
+with 18/00 strength in its grip,
+no to hit or damage bonuses; the
+host eventually turns neutral
+evil; a major power use wakes a
+spirit of great evil; a primary
+power use makes the host instantly
+neutral evil, very evil; the Hand
+can be severed before its powers
+are used with 100 percent
+certainty, each major power use
+subtracting 1 percent and each
+primary power use making success
+10 percent less likely, at 100
+percent subtraction no removal is
+possible and the character will
+know; the powers work through
+extended or curled finger
+combinations; powers 10 of table
+I, 5 of II, 2 each of III, IV and
+V, 1 of VI; nothing short of
+intervention from the most
+powerful of gods can alter the
+effects upon the host, and even
+the greatest deities are loath to
+meddle - the effects are
+irrevocable; the note asks the DM
+to devise and record the finger
+and hand position chart. This
+round has one seam restored: the
+p.160-161 page break splits the
+severing paragraph between the
+1332 tail (The Hand can be severed
+from) and the 1337 head (the host
+at any time before its powers are
+used) across the blank pair at
+1333-1334, the TREASURE (ARTIFACTS
+& RELICS) running head at 1335 and
+the 1336 post-head blank. The
+upload quirks: the power lines
+print the counts as N x table with
+the true multiplication sign, 10
+of them; the to hit fragment
+prints curly double quotes; the
+character part and VECNA HAND
+apostrophes print as the curly
+right single quote; the very evil
+and loath dashes print as true
+em-dashes; the hand 10 of table I
+power line wraps across three
+lines; the 2 of IV and 1 of VI
+lines drop the space after the
+colon - all pinned as plain digits
+and words, apostrophe-free here.
+28 accessors: 26 scalars + 2
+walkers (the eye power walker
+2,2,0,1,1 and the hand power
+walker 10,5,2,2,2,1), no name
+collisions with the miscprose and
+specart headers; the audit
+cross-pins the R240 sale table
+rows - the Eye band 23-24 at
+35000, the Hand band 25 at 60000
+(census 202). Next: R285 III.E
+Special part 6 - the Mystical
+Organ of Heward onward in part2
+from line 1359 (global 12424; the
+Horn of Change, the Invulnerable
+Coat of Arnd and the other
+descriptions follow; the III.E
+Special prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

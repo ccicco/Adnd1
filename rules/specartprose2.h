@@ -591,4 +591,154 @@ inline int sapCupTalismanPotionBandHi(int i) {
     return t[i];
 }
 
+inline int sapEyeVecnaPhantomRoams() {
+    // the phantom of the once supreme lich roams
+    return 1;
+}
+
+inline int sapEyeDoomSurvivors() {
+    // one eye and one hand survived his doom
+    return 2;
+}
+
+inline int sapEyeFeralGlow() {
+    // glows in the same manner as a feral creature
+    return 1;
+}
+
+inline int sapEyeAppearsAgate() {
+    // appears an agate until placed in an eye socket
+    return 1;
+}
+
+inline int sapEyeGraftIrrevocable() {
+    // grafts irrevocably, removed only by slaying
+    return 1;
+}
+
+inline int sapEyeHostNeutralEvil() {
+    // the host alignment becomes neutral evil, never changes
+    return 1;
+}
+
+inline int sapEyeGrantsInfravision() {
+    // the Eye bestows infravision to its host
+    return 1;
+}
+
+inline int sapEyeGrantsUltravision() {
+    // the Eye bestows ultravision to its host
+    return 1;
+}
+
+inline int sapEyePowerTotal() {
+    // 2 each of I-II, 1 each of IV-V (III skipped)
+    return 6;
+}
+
+inline int sapEyePowerCount(int i) {
+    // the powers per tables I-V; i clamps
+    if (i < 0) i = 0;
+    if (i > 4) i = 4;
+    static const int t[5] = {
+        2, 2, 0, 1, 1,
+    };
+    return t[i];
+}
+
+inline int sapEyePrimaryPowerMalevolent() {
+    // the primary power causes a malevolent effect
+    return 1;
+}
+
+inline int sapHandVecnaLeftHand() {
+    // his left hand, imbued with powers
+    return 1;
+}
+
+inline int sapHandMummifiedExtremity() {
+    // a blackened, shriveled mummified extremity
+    return 1;
+}
+
+inline int sapHandGripStrength() {
+    // a functioning member with 18/00 strength
+    return 18;
+}
+
+inline int sapHandGripStrengthRating() {
+    // the printed 00 rating of the 18/00 grip
+    return 0;
+}
+
+inline int sapHandGripHitOrDamageBonus() {
+    // no to hit or damage bonuses
+    return 0;
+}
+
+inline int sapHandHostTurnsNeutralEvil() {
+    // the host eventually turns neutral evil
+    return 1;
+}
+
+inline int sapHandMajorPowerWakesSpirit() {
+    // a major power use wakes a spirit of great evil
+    return 1;
+}
+
+inline int sapHandPrimaryPowerInstantEvil() {
+    // a primary power: instantly neutral evil
+    return 1;
+}
+
+inline int sapHandSeverBaseChancePct() {
+    // severed before powers used, 100 percent certainty
+    return 100;
+}
+
+inline int sapHandSeverMajorPenaltyPct() {
+    // each major power use subtracts 1 percent
+    return 1;
+}
+
+inline int sapHandSeverPrimaryPenaltyPct() {
+    // each primary power use: 10 percent less likely
+    return 10;
+}
+
+inline int sapHandNoRemovalAtLimit() {
+    // at 100 percent subtraction no removal, the host knows
+    return 1;
+}
+
+inline int sapHandFingerCombinations() {
+    // powers work through extended or curled fingers
+    return 1;
+}
+
+inline int sapHandPowerTotal() {
+    // 10 of I, 5 of II, 2 each of III-V, 1 of VI
+    return 22;
+}
+
+inline int sapHandPowerCount(int i) {
+    // the powers per table I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        10, 5, 2, 2, 2, 1,
+    };
+    return t[i];
+}
+
+inline int sapHandGodsOnlyAlteration() {
+    // only the most powerful of gods can alter the effects
+    return 1;
+}
+
+inline int sapHandRecordCombinations() {
+    // the note: devise and record the position chart
+    return 1;
+}
+
 }  // namespace rules
