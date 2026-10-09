@@ -1561,4 +1561,264 @@ inline int sapOrbGreatSerpentPowerCount(int i) {
     return t[i];
 }
 
+inline int sapOrbFiredrakeOldDragon() {
+    // the possessor charms any old dragon
+    return 1;
+}
+
+inline int sapOrbFiredrakeIntelligence() {
+    // the intelligence of the Firedrake
+    return 14;
+}
+
+inline int sapOrbFiredrakeEgo() {
+    // the ego of the Firedrake
+    return 14;
+}
+
+inline int sapOrbFiredrakePowerTotal() {
+    // 3+3+2+0+0+1 - the total power count
+    return 9;
+}
+
+inline int sapOrbFiredrakePowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        3, 3, 2, 0, 0, 1,
+    };
+    return t[i];
+}
+
+inline int sapOrbElderWyrmVeryOldDragon() {
+    // the possessor charms any very old dragon
+    return 1;
+}
+
+inline int sapOrbElderWyrmIntelligence() {
+    // the intelligence of the Elder Wyrm
+    return 16;
+}
+
+inline int sapOrbElderWyrmEgo() {
+    // the ego of the Elder Wyrm
+    return 16;
+}
+
+inline int sapOrbElderWyrmPowerTotal() {
+    // 4+3+2+1+1+1 - the total power count
+    return 12;
+}
+
+inline int sapOrbElderWyrmPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        4, 3, 2, 1, 1, 1,
+    };
+    return t[i];
+}
+
+inline int sapOrbEternalAncientDragon() {
+    // the possessor charms any ancient dragon
+    return 1;
+}
+
+inline int sapOrbEternalTiamatBahamutBonus() {
+    // saves, attacks and damage vs Tiamat or Bahamut
+    return 8;
+}
+
+inline int sapOrbEternalIntelligence() {
+    // the intelligence of the Eternal Grand Dragon
+    return 18;
+}
+
+inline int sapOrbEternalEgo() {
+    // the ego of the Eternal Grand Dragon
+    return 18;
+}
+
+inline int sapOrbEternalPowerTotal() {
+    // 4+3+2+1+2+1 - the total power count
+    return 13;
+}
+
+inline int sapOrbEternalPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        4, 3, 2, 1, 2, 1,
+    };
+    return t[i];
+}
+
+inline int sapOrbNotesEvilComponent() {
+    // all of these Orbs have a strong evil component
+    return 1;
+}
+
+inline int sapOrbNotesNeutralGoodResist() {
+    // a neutral or good character saves vs magic to resist
+    return 1;
+}
+
+inline int sapOrbNotesCharmRangeInches() {
+    // the charm range, in inches
+    return 5;
+}
+
+inline int sapOrbNotesCharmRounds() {
+    // the charm requires this many full rounds
+    return 1;
+}
+
+inline int sapOrbNotesAwakeAndAware() {
+    // the subject must be fully awake and aware
+    return 1;
+}
+
+inline int sapOrbNotesEvilAutoCharmed() {
+    // only evil dragons are automatically charmed
+    return 1;
+}
+
+inline int sapOrbNotesNeutralSavePenalty() {
+    // the neutral dragon save penalty, as a magnitude
+    return 4;
+}
+
+inline int sapOrbNotesGoodSavePenalty() {
+    // the good dragon save penalty, as a magnitude
+    return 2;
+}
+
+inline int sapOrbNotesCharmedWisdomPercent() {
+    // charmed characters keep this percent of wisdom
+    return 50;
+}
+
+inline int sapOrbNotesFeeblemindIntelligence() {
+    // feeblemind leaves this intelligence
+    return 3;
+}
+
+inline int sapOrbNotesInsanePercent() {
+    // insanity leaves this percent of normal
+    return 50;
+}
+
+inline int sapOrbNotesAwakeMindOnly() {
+    // the Orb controls only an active and awake mind
+    return 1;
+}
+
+inline int sapOrbNotesSacrificeDestruction() {
+    // destruction by sacrifice to a dragon at hand
+    return 1;
+}
+
+inline int sapOrbMightOrbCount() {
+    // the 3 Orbs of Might
+    return 3;
+}
+
+inline int sapOrbMightCrownSource() {
+    // the legendary source - the foregoing Crown of Might
+    return 1;
+}
+
+inline int sapOrbMightEvilDieLo() {
+    // the evil ethos die band low edge
+    return 1;
+}
+
+inline int sapOrbMightEvilDieHi() {
+    // the evil ethos die band high edge
+    return 6;
+}
+
+inline int sapOrbMightGoodDieLo() {
+    // the good ethos die band low edge
+    return 7;
+}
+
+inline int sapOrbMightGoodDieHi() {
+    // the good ethos die band high edge
+    return 14;
+}
+
+inline int sapOrbMightNeutralDieLo() {
+    // the neutrality ethos die band low edge
+    return 15;
+}
+
+inline int sapOrbMightNeutralDieHi() {
+    // the neutrality ethos die band high edge
+    return 20;
+}
+
+inline int sapOrbMightTouchDeathSave() {
+    // another ethos touching one saves vs magic or dies
+    return 1;
+}
+
+inline int sapOrbMightTouchDamageLo() {
+    // the damage on a successful save, low edge
+    return 4;
+}
+
+inline int sapOrbMightTouchDamageHi() {
+    // the damage on a successful save, high edge
+    return 24;
+}
+
+inline int sapOrbMightRegaliaTableFour() {
+    // with Crown and/or Sceptre, a Table IV malevolence
+    return 1;
+}
+
+inline int sapOrbMightPlatinumGems() {
+    // platinum, gem-encrusted, precious device atop
+    return 1;
+}
+
+inline int sapOrbMightValueGp() {
+    // the open market worth, in gold pieces
+    return 100000;
+}
+
+inline int sapOrbMightGemOfBrightness() {
+    // each Orb equals a Gem of Brightness
+    return 1;
+}
+
+inline int sapOrbMightPowerEthosCount() {
+    // the power table ethos columns - evil, good, neutrality
+    return 3;
+}
+
+inline int sapOrbMightPowerTotal() {
+    // 2+0+1+0+0+0 - the total power count per ethos
+    return 3;
+}
+
+inline int sapOrbMightPowerCount(int i) {
+    // the powers per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        2, 0, 1, 0, 0, 0,
+    };
+    return t[i];
+}
+
+inline int sapOrbMightRegaliaPowers() {
+    // additional regalia powers - see the Crown of Might
+    return 1;
+}
+
 }  // namespace rules

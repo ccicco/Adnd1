@@ -6395,6 +6395,111 @@ Grand Dragon and the notes
 follow; the III.E Special
 prose continue).
 
+R290 landed the III.E Special
+artifacts explanation prose
+part 11 (part2 lines 1557-1624;
+global = 11065 + part2 line),
+the Orb of Dragonkind globes 6
+through 8, the notes and the
+Orb of Might - the second half
+of the 19th and the 20th of
+the 29 artifact descriptions.
+Globe 6, the Firedrake: charms
+any old dragon, intelligence
+14, ego 14; powers 3,3,2,0,0,1
+total 9. Globe 7, the Elder
+Wyrm: very old dragons, 16 and
+16; powers 4,3,2,1,1,1 total
+12. Globe 8, the Eternal Grand
+Dragon: ancient dragons, 18 and
+18, +8 saves, attacks and
+damage vs Tiamat or Bahamut;
+powers 4,3,2,1,2,1 total 13.
+The intelligence ladder rises
+by two, 14 through 18. The
+notes: all of these Orbs have
+a strong component of evil; a
+neutral or good character saves
+versus magic to resist
+charming a neutral or good
+dragon; charm range 5 inches,
+1 full round, the subject
+fully awake and aware; only
+evil dragons charm
+automatically, neutral dragons
+save at -4, good dragons -2;
+charmed characters keep 50
+percent of normal wisdom;
+feeblemind leaves 3
+intelligence, insanity 50
+percent; the Orb controls only
+an active and awake mind;
+destruction typically by
+sacrifice to a dragon at hand,
+else the most sure and
+expeditious method. The Orb of
+Might: the legendary source is
+the foregoing Crown of Might; 3
+Orbs; the ethos bands 01-06
+evil, 07-14 good, 15-20
+neutrality; another ethos
+touching one saves versus magic
+or dies, 4-24 hit points on a
+successful save; with a Crown
+and/or Sceptre the survivor
+invokes a malevolent Table IV
+effect; platinum, gem-encrusted,
+worth 100000 or more gold
+pieces; equal to a Gem of
+Brightness; powers 2,0,1,0,0,0
+total 3 per ethos over 3
+columns; further regalia powers
+under the Crown of Might.
+No break absorbed - the round
+closes on the standard blank at
+1624; no page seam claimed
+(no running heads between
+lines 1450 and 1797). The
+upload quirks: the globe heads
+print Orb of the Firedrake,
+Orb of the Elder Wyrm and Orb
+of the Eternal Grand Dragon
+with the, while the Orb of
+Might head drops it; 18 power
+lines print N x table with the
+true multiplication sign; the
+charm range mark prints as the
+curly right double quote; the
+neutral and good save
+modifiers print with the true
+minus sign; the Might power
+table prints its good and
+neutrality table III slots as
+backslash continuation rows -
+all pinned as plain digits and
+words, apostrophe-free and
+backslash-free here. 48
+accessors: 44 scalars + 4
+walkers (the firedrake walker
+3,3,2,0,0,1, the elder wyrm
+walker 4,3,2,1,1,1, the eternal
+walker 4,3,2,1,2,1, the might
+walker 2,0,1,0,0,0), no name
+collisions with the miscprose
+and specart headers; the audit
+cross-pins the R240 sale row -
+the Might band 48-63 at 100000,
+a fixed row, its zero high
+bound carried by saSaleGpHi
+(census 208). Next: R291
+III.E Special part 12 -
+Queen Ehlissas Marvelous
+Nightingale in part2 from
+line 1625 (global 12690; the
+Recorder of YeCind and the
+other descriptions follow; the
+III.E Special prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
