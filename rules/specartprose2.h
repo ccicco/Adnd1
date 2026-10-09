@@ -400,4 +400,195 @@ inline int sapCrownSet3rdPowerCount(int i) {
     return t[i];
 }
 
+inline int sapCrystalOriginUnknown() {
+    // the origin and whereabouts entirely unknown
+    return 1;
+}
+
+inline int sapCrystalDiamondHard() {
+    // a diamond-hard mineral the size of a hand
+    return 1;
+}
+
+inline int sapCrystalTouchRaysBlackFlame() {
+    // touched it sends rays, a black flame leaps
+    return 1;
+}
+
+inline int sapCrystalCharmRadiusFeet() {
+    // all creatures within 30 feet save versus magic
+    return 30;
+}
+
+inline int sapCrystalCharmIsFireCharm() {
+    // or charmed as if by a fire charm spell
+    return 1;
+}
+
+inline int sapCrystalPowersByGazing() {
+    // powers drawn by gazing at the Ebon Flame
+    return 1;
+}
+
+inline int sapCrystalPowerTotal() {
+    // 4 of table I, 2 of II, 1 each of III-VI
+    return 10;
+}
+
+inline int sapCrystalPowerCount(int i) {
+    // the powers per table I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        4, 2, 1, 1, 1, 1,
+    };
+    return t[i];
+}
+
+inline int sapCupTalismanRelicCount() {
+    // a pair of holy relics
+    return 2;
+}
+
+inline int sapCupTalismanPaynimGift() {
+    // given by the gods of the Paynims to the
+    // most exalted high priest of lawful good
+    return 1;
+}
+
+inline int sapCupTalismanInvokedDevastationEra() {
+    // in the days following the Invoked Devastation
+    return 1;
+}
+
+inline int sapCupTalismanLostToRaiders() {
+    // lost to demi-human raiders, rumored Southeastern
+    return 1;
+}
+
+inline int sapCupTalismanPotionClassCount() {
+    // a cleric, druid, paladin or ranger possessing both
+    return 4;
+}
+
+inline int sapCupTalismanPotionPerWeek() {
+    // may create a potion once per week
+    return 1;
+}
+
+inline int sapCupGemCount() {
+    // set with 12 great gems in electrum settings
+    return 12;
+}
+
+inline int sapCupJewelryGpMin() {
+    // a jewelry value of 75,000 or more gold pieces
+    return 75000;
+}
+
+inline int sapCupRadiatesMagic() {
+    // the Cup does not radiate magic
+    return 0;
+}
+
+inline int sapCupPowerTotal() {
+    // 4 of table I plus 1 of table III
+    return 5;
+}
+
+inline int sapCupPowerCount(int i) {
+    // the cup powers per tables I-III; i clamps
+    if (i < 0) i = 0;
+    if (i > 2) i = 2;
+    static const int t[3] = {
+        4, 0, 1,
+    };
+    return t[i];
+}
+
+inline int sapTalismanPointCount() {
+    // a star of 8 points
+    return 8;
+}
+
+inline int sapTalismanPointGemCount() {
+    // a small gem tipping each point
+    return 8;
+}
+
+inline int sapTalismanBeadSetCount() {
+    // 8 sets of 3 beads each on the chain
+    return 8;
+}
+
+inline int sapTalismanBeadsPerSet() {
+    // silver beading, 8 sets of 3 beads each
+    return 3;
+}
+
+inline int sapTalismanJewelryGpMin() {
+    // a jewelry value of 10,000 or more gold pieces
+    return 10000;
+}
+
+inline int sapTalismanRadiatesMagic() {
+    // the Talisman does not radiate magic either
+    return 0;
+}
+
+inline int sapTalismanPowerTotal() {
+    // 2 of table II plus 1 of table IV
+    return 3;
+}
+
+inline int sapTalismanPowerCount(int i) {
+    // the talisman powers per tables I-IV; i clamps
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    static const int t[4] = {
+        0, 2, 0, 1,
+    };
+    return t[i];
+}
+
+inline int sapCupTalismanBothPowerTotal() {
+    // 1 each of tables V and VI from both
+    return 2;
+}
+
+inline int sapCupTalismanBothPowerCount(int i) {
+    // the both powers per tables V-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 1) i = 1;
+    static const int t[2] = {
+        1, 1,
+    };
+    return t[i];
+}
+
+inline int sapCupTalismanPotionBandCount() {
+    // the six bands of the potion table
+    return 6;
+}
+
+inline int sapCupTalismanPotionBandLo(int i) {
+    // the potion band lower edges; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        1, 6, 11, 16, 18, 20,
+    };
+    return t[i];
+}
+
+inline int sapCupTalismanPotionBandHi(int i) {
+    // the potion band upper edges; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        5, 10, 15, 17, 19, 20,
+    };
+    return t[i];
+}
+
 }  // namespace rules

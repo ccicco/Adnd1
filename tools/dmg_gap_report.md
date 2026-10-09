@@ -5710,6 +5710,108 @@ Hand of Vecna and the other
 descriptions follow; the
 III.E Special prose continue).
 
+R283 landed the III.E Special
+artifacts explanation prose
+part 4 (part2 lines 1270-1316;
+global = 11065 + part2 line),
+the Crystal
+of the Ebon Flame and the Cup and
+Talisman of Al Akbar (DMG p.160)
+- the fifth and sixth of the 29
+artifact descriptions. The
+Crystal: origin and whereabouts
+entirely unknown, a diamond-hard
+mineral the size of a hand,
+touched it sends rays of light
+with a black flame leaping in
+the jewel heart, all creatures
+within 30 feet save versus magic
+or charmed as if by a fire charm
+spell, the possessor draws
+powers by gazing at the Ebon
+Flame at its center; powers 4
+of table I, 2 of II, 1 each of
+III-VI. The Cup and Talisman: a
+pair of holy relics given by the
+gods of the Paynims to their most
+exalted high priest of lawful
+good alignment in the days
+following the Invoked
+Devastation (the same era the
+Axe was lost in), lost to
+demi-human raiders, last rumored
+in the Southeastern Bandit
+Kingdoms; the Cup of hammered
+gold and silver filigree set
+with 12 great gems in electrum
+settings, a jewelry value of
+75,000 or more gold pieces, not
+radiating magic, powers 4 of
+table I and 1 of III; the
+Talisman of hammered platinum,
+a star of 8 points with a small
+gem tipping each point hung
+from a gold and electrum chain
+of 8 sets of 3 silver beads, a
+jewelry value of 10,000 or more
+gold pieces, not radiating
+magic either, powers 2 of table
+II and 1 of IV; a cleric,
+druid, paladin or ranger
+possessing both may fill the
+cup with holy water, immerse
+the talisman and create a
+potion once per week - the d20
+potion table 1-5 healing, 6-10
+extra healing, 11-15 poison
+antidote balm, 16-17 cure
+disease salve, 18-19 remove
+curse ointment, 20 raise dead
+balm - and the possessor gains
+1 each of tables V and VI from
+both. No seam this round
+either: both descriptions lie
+wholly on p.160 - the p.160-161
+break splits the Hand of Vecna
+paragraph (a later round). The
+upload quirks: the power lines
+print the counts as N x table
+with the true multiplication
+sign, 12 of them; the 30 feet
+prime prints as the curly right
+single quote, as does the Al
+Akbar apostrophe; the jewelry
+value dashes print as true
+em-dashes; the cup 1 of III and
+the talisman 1 of IV power
+lines carry asterisk footnote
+markers; the potion table
+prints the 1-5 band split from
+its healing word - all pinned as
+plain digits and words,
+apostrophe-free here. 32
+accessors: 26 scalars + 6
+walkers (the crystal power
+walker, the cup, talisman and
+both power walkers and the
+potion band lo/hi walkers), no
+name collisions with the
+miscprose and specart headers;
+the audit cross-pins the R240
+sale table rows - the Crystal
+band 21 at 75000, the Cup and
+Talisman band 22 at 85000,
+the cup jewelry value 75000
+NOT its sale value (census 201).
+Next: R284 III.E Special part
+5 - the Eye of Vecna onward in
+part2 from line 1318 (global
+12383; the Hand of Vecna with
+the p.160-161 seam and the
+other descriptions follow;
+the III.E Special prose
+continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
