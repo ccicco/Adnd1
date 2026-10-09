@@ -4660,6 +4660,156 @@ nets, pigments, pearls and
 periapts follow; kMisc4
 rows 19+ continue).
 
+R275 landed the III.E misc
+magic explanation prose
+part 19 (part2 lines 905-969;
+global = 11065 + part2
+line), the Necklace of Prayer
+Beads, the Necklace of
+Strangulation, the Nets of
+Entrapment and Snaring,
+Nolzurs Marvelous Pigments,
+the Pearls of Power and
+Wisdom and the Periapts of
+Foul Rotting, Health, Proof
+Against Poison and Wound
+Closure (DMG p.152-153) -
+the slice pinning the kMisc4
+rows 19-29 of the 36-row
+III.E.4 table. ONE
+mid-sentence break: the
+pearl of power paragraph
+splits between a pearl of
+power (933) and enables the
+possessor (935), the upload
+prints no running head at
+the break - ONE
+seam restored this round;
+the slice rides the
+pp.152-153 attribution on
+the R274-established p.152
+base (the TREASURE running
+head at 903). The upload
+quirks: the bead table rows
+are split across multiple
+table lines (the karma and
+summons beads span three
+each); the part1 pigments
+row misplaces the
+apostrophe after the s; the
+net of entrapment prints
+the one-quarter character
+(mesh) and an en-dash (AC
+-10) - pinned as plain
+digits, apostrophe-free in
+the header. The items:
+Necklace of Prayer Beads
+(cleric only, 25-30 stones
+at 60 percent semi-precious
+and 40 fancy, 25 percent
+petition bonus, 3-6 special
+beads of 1,000 gp gems,
+each once per day: 1-5
+atonement as the 5th level
+spell, 6-10 blessing as the
+1st, 11-15 curing, 16-17
+karma casting 4 levels
+higher, 18 summons calling
+the deity at 90 percent,
+19-20 wind walking as the
+7th; known only via a
+commune, lost if removed),
+Necklace of Strangulation
+(constricts on wearing, 6
+damage per round until
+dead, removed only by
+alter reality, limited wish
+or wish, stays until a dry
+skeleton), Net of
+Entrapment (defies strength
+under 20, AC -10 to cut,
+sawing fails, hacking
+severs, 10 foot square with
+quarter-foot mesh, thrown
+20 feet, save versus magic
+or entrapped, drops or
+closes on command, up to a
+5 foot cube, loosened on
+command), Net of Snaring
+(entrapment look-alike,
+underwater only, shoots 3
+inches), Marvelous Pigments
+(one pot creates a 1,000
+cubic foot object depicted
+over a 100 square foot
+surface, only normal
+inanimate things, 1-4
+containers with a 1 foot
+instrument, 1 turn to
+depict, false valuables
+are tin lead paste brass
+bone), Pearl of Power
+(magic-user aid, once a
+day recalls any 1 memorized
+spell; table 01-25 first,
+26-45 second, 46-60 third,
+61-75 fourth, 76-85 fifth,
+86-92 sixth, 93-96 seventh,
+97-98 eighth, 99 ninth, 00
+recalls 2 spells of 1st to
+6th by d6; 1 in 20 reversed
+causes forgetting, removed
+only by exorcism or a
+wish), Pearl of Wisdom
+(cleric +1 wisdom at the
+30-day month expiration,
+kept or lost; 1 in 20
+reversed, loss permanent
+barring a wish or Tome of
+Understanding), Periapt of
+Foul Rotting (rotting
+leprosy on claim, removed
+by remove curse, cure
+disease then heal or wish,
+countered by crushed
+health periapt dust; else 1
+point each of dexterity
+constitution and charisma
+per week from week 1, dead
+at 0, losses permanent),
+Periapt of Health (immune
+to all diseases save the
+foul rotting), Periapt of
+Proof Against Poison (10
+percent save per plus where
+none allowed, normal score
+at penalty, plus on other
+saves; table 1-8 plus one,
+9-14 plus two, 15-18 plus
+three, 19-20 plus four),
+Periapt of Wound Closure
+(no open bleeding wounds,
+doubles healing, heals
+the non-healing).
+49 accessors: 41 scalars
++ 8 walkers (the bead, pearl
+and periapt die bands, the
+pearl spell levels and the
+periapt plus ladder), no
+name collisions parts
+1-18. New R275 battery
+audit; census 193. Next:
+R276 III.E part 20 - the
+Phylactery of Faithfulness
+onward in part2 from
+line 971 (global 12036; the
+long years and monstrous
+attention phylacteries, the
+pipes, the portable hole
+and the feather token
+follow; kMisc4 rows 30+
+continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
