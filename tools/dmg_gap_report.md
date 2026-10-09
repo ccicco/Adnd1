@@ -4506,6 +4506,160 @@ medallions and mirrors
 follow; kMisc4 rows 9+
 continue).
 
+R274 landed the III.E misc
+magic explanation prose part
+18 (part2 lines 843-900;
+global = 11065 + part2
+line), the Manual of Stealthy
+Pilfering, the Mattock and
+Maul of the Titans, the
+Medallions of ESP and
+Thought Projection, the
+Mirrors of Life Trapping,
+Mental Prowess and
+Opposition and the Necklaces
+of Adaptation and Missiles
+(DMG p.150-151) - the slice
+pinning the kMisc4
+rows 9-18 of the 36-row
+III.E.4 table. ONE
+mid-sentence break: the
+mirror of life trapping
+paragraph splits between
+not a (863) and factor
+(865), the upload prints no
+running head at the break -
+ONE seam restored this
+round; the slice rides the
+pp.150-151 attribution on
+the R273-established p.150
+base. The upload quirks:
+the necklace of missiles
+table is badly mangled (the
+pipes misplaced, fragments
+pushed into the wrong
+cells), the dash-separated
+count ladders reconstruct
+it and cross-check against
+the printed 9-12 example
+(one 7-dice, two 5-dice,
+four 3-dice); the stray
+apostrophe artifact after
+the word manual recurs (a
+like manual) and the
+pilfering paragraph prints
+magic- users with a space
+(pinned as the upload
+prints it, apostrophe-free
+in the header); the
+medallion table prints
+clean. The items: Manual
+of Stealthy Pilfering (thief
+only, 1 month practice to
+the mid-point, remembered
+3 months, assassins 5,000
+xp after 1 week pondering,
+fighters magic-users and
+monks no comprehension,
+clerics rangers and
+paladins take 5-20 damage,
+stunned a like number of
+rounds, failed save loses
+5,000-20,000 xp, atone in
+1 day or lose 1 wisdom),
+Mattock of the Titans (10
+feet, over 100 pounds,
+strength 20+, 100 cubic
+foot earth or 20 cubic foot
+rock per turn, +3 to hit,
+5-30 damage), Maul of the
+Titans (8 feet, over 150
+pounds, strength 21+, piles
+of 2 feet diameter driven 4
+feet per blow, 2 blows per
+round, oaken door 10 by 4
+by 2 inches smashed in 1
+blow, 2 if iron-bound, +2
+to hit, 10-40 damage),
+Medallion of ESP (path 1
+foot wide broadening 2
+feet every 10 feet to an
+11 foot maximum at 50
+feet, full round use,
+blocked by 3 foot stone,
+1/6 foot metal or lead
+gold platinum sheeting,
+malfunctions on 6 on d6,
+surface thoughts only;
+table 1-15 30 feet, 16-18
+30 feet with empathy, 19
+60 feet, 20 90 feet),
+Medallion of Thought
+Projection (like the ESP
+even as to range, also
+broadcasts the user
+thoughts, correct without
+projecting on 6), Mirror of
+Life Trapping (magic-user
+only, 4 square feet, 13-18
+cells, trigger within 30
+feet, save or trapped, 100
+percent unaware, 50
+avoiding, 20 aware,
+overflow frees 1 random,
+broken frees all), Mirror
+of Mental Prowess (reads
+thoughts even in unknown
+languages, scrys as a
+crystal ball with
+clairaudience into other
+planes, portal both ways,
+1 short question per week,
+5 by 2 feet), Mirror of
+Opposition (an exact
+duplicate with all items
+and powers attacks at
+once, either defeat makes
+it vanish), Necklace of
+Adaptation (ignores
+respiratory gases,
+breathes water, 7 days
+airless), Necklace of
+Missiles (golden globes
+hurled to 7 inches, burst
+as fireballs; table 1-4
+one 5-dice two 3-dice,
+5-8 one 6-dice two 4-dice
+two 2-dice, 9-12 one
+7-dice two 5-dice four
+3-dice, 13-16 one 8-dice
+two 6-dice two 4-dice four
+2-dice, 17-18 one 9-dice
+two 7-dice two 5-dice two
+3-dice, 19 one 10-dice two
+8-dice two 6-dice four
+4-dice, 20 one 11-dice two
+9-dice two 7-dice two
+5-dice two 3-dice; a
+failed save on magical
+fire detonates all). 67
+accessors: 59 scalars + 8
+walkers (the medallion
+bands, ranges and empathy;
+the necklace bands, hit
+dice columns and cells),
+no name collisions parts
+1-17. New R274 battery
+audit; census 192. Next:
+R275 III.E part 19 - the
+Necklace of Prayer Beads
+onward in part2 from line
+905 (global 11970; the
+strangulation necklace,
+nets, pigments, pearls and
+periapts follow; kMisc4
+rows 19+ continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
