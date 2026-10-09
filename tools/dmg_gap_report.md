@@ -6603,6 +6603,120 @@ the complete rod powers and
 the ordering note follow; the
 III.E Special prose continue).
 
+R292 landed the III.E Special
+artifacts explanation prose
+part 13 (part2 lines 1677-1707;
+global = 11065 + part2 line; the
+R291 next pointer misstated the
+global as 12842 - the correct
+global for line 1677 is 12742):
+the Rod of Seven Parts, the 24th
+of the 29 descriptions.
+No break absorbed - the round
+closes on the standard blank at
+1707; no page seam claimed (no
+running heads between lines 1450
+and 1797; the 1684 and 1694
+heads are the description own
+sub-heads, not page seams). The
+Wind Dukes of Aaqa are its
+legendary makers; built for the
+great battle of Pesh where
+Chaos and Law contended; smashed
+there, its parts scattered, yet
+nothing could destroy it; the
+sections recovered and put
+together in the correct order
+give a weapon of surpassing
+power. The 7 parts differ: the
+first is largest in length and
+diameter, the seventh smallest;
+no single part has any power or
+effect alone; singly each looks
+a short bar or baton, the
+seventh much the same as a
+short metal wand. The first part
+senses the direction of the
+second - but only when the
+finder thinks of the section as
+a fraction of a whole magic
+item; a found section leads only
+to the next higher numbered, not
+a lower one; an out-of-order
+touch teleports the higher
+numbered piece away, 100 to
+1,000 miles in a random
+direction; fully assembled it is
+almost 5 feet long. Three fitted
+sections and the possessor
+cannot let go while he or she
+lives, until all parts are
+joined; the powers of each part
+are cumulative whenever joined,
+but the full powers work only
+when all parts are joined; the
+Rod cannot be disassembled by
+its possessor, and each prime
+power use risks a 1 in 20 (5
+percent) breakup - the whole
+flies into its component pieces,
+teleporting 100-1200 miles away
+in random directions. The
+assembly table: parts 1-2 carry
+table III, 2-3 table I, 3-4
+table I, 4-5 table IV, 5-6
+table II, 6-7 table VI - one use
+each joint, total 6. The
+complete rod powers: table I
+once, table II once, table III
+twice, table V twice, table IV
+once - total 7. If the Rod is
+not assembled in order the
+powers are not cumulative; only
+the last piece joined stays
+active, all prior parts negated;
+in order the powers are
+cumulative, and the assembled
+Rod gains the additional full
+powers. The quirks: the 5 feet
+mark prints as the curly feet
+mark; nine em dashes - three in
+the prose, one per assembly
+row; eleven true multiplication
+signs; the out- of-order hyphen
+wraps across the 1677 line
+break; the 1680 range prints as
+100 to 1,000 with its comma, the
+1682 range as plain 100-1200;
+the power slots print as 13
+blank underscore runs of 11
+each, DM-filled; the complete
+list prints table V before table
+IV and carries no table VI slot
+though the assembly has one -
+all pinned as plain digits and
+words, apostrophe-free and
+backslash-free here. 41
+accessors: 38 scalars + 3
+walkers (the joint tables
+3,1,1,4,2,6, the joint uses
+1,1,1,1,1,1, the complete table
+uses 1,1,2,1,2,0), no name
+collisions with the miscprose
+and specart headers; the audit
+cross-pins the R240 sale row 23
+- the Rod band 69-74 at 25000,
+a range row, its price fixed,
+the zero high bound carried by
+saSaleGpHi (census 210). Next:
+R293 III.E Special part 14 -
+the Sceptre of Might and the
+Sword of Kas in part2 from
+line 1708 (global 12773; the
+Teeth of Dahlver-Nar and the
+other descriptions follow; the
+III.E Special prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

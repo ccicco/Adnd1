@@ -2011,4 +2011,224 @@ inline int sapGaxxPowerCount(int i) {
     return t[i];
 }
 
+inline int sapRodWindDukesMadeIt() {
+    // the Wind Dukes of Aaqa are its legendary makers
+    return 1;
+}
+
+inline int sapRodMadeForBattleOfPesh() {
+    // constructed for the great battle of Pesh
+    return 1;
+}
+
+inline int sapRodPeshChaosVersusLaw() {
+    // at Pesh, Chaos and Law contended
+    return 1;
+}
+
+inline int sapRodShatteredAtPesh() {
+    // it was shattered there, its parts scattered
+    return 1;
+}
+
+inline int sapRodNothingDestroysIt() {
+    // nothing could actually destroy it
+    return 1;
+}
+
+inline int sapRodCorrectOrderSurpassingPower() {
+    // correct-order assembly gives surpassing power
+    return 1;
+}
+
+inline int sapRodPartCount() {
+    // the number of parts of the Rod
+    return 7;
+}
+
+inline int sapRodPartsSlightlyDifferent() {
+    // the parts are slightly different from each other
+    return 1;
+}
+
+inline int sapRodFirstLargestLengthDiameter() {
+    // the first is largest in length and diameter
+    return 1;
+}
+
+inline int sapRodSeventhSmallest() {
+    // the seventh is the smallest
+    return 1;
+}
+
+inline int sapRodNoAlonePower() {
+    // no single part has any power or effect alone
+    return 1;
+}
+
+inline int sapRodPartsLookLikeBatons() {
+    // singly each appears a short bar or baton
+    return 1;
+}
+
+inline int sapRodSeventhLooksLikeWand() {
+    // the seventh looks much like a short metal wand
+    return 1;
+}
+
+inline int sapRodFirstSensesSecond() {
+    // the first part senses the direction of the second
+    return 1;
+}
+
+inline int sapRodSensingNeedsWholeThought() {
+    // sensing works only as a fraction of a whole
+    return 1;
+}
+
+inline int sapRodLeadsOnlyUpward() {
+    // a found section leads only to the next higher numbered
+    return 1;
+}
+
+inline int sapRodOutOfOrderTouchTeleports() {
+    // an out-of-order touch teleports the higher piece away
+    return 1;
+}
+
+inline int sapRodTeleportMinMiles() {
+    // the out-of-order teleport minimum, in miles
+    return 100;
+}
+
+inline int sapRodTeleportMaxMiles() {
+    // the out-of-order teleport maximum, in miles
+    return 1000;
+}
+
+inline int sapRodAssembledLengthFeet() {
+    // the fully assembled length, in feet
+    return 5;
+}
+
+inline int sapRodThreeSectionsGripLock() {
+    // three fitted sections hold the grip for life
+    return 1;
+}
+
+inline int sapRodPartPowersCumulative() {
+    // the powers of each part are cumulative when joined
+    return 1;
+}
+
+inline int sapRodFullPowersNeedAllParts() {
+    // the full powers work only when all parts are joined
+    return 1;
+}
+
+inline int sapRodCannotBeDisassembled() {
+    // the possessor cannot disassemble it
+    return 1;
+}
+
+inline int sapRodPrimeRiskDenominator() {
+    // each prime power use: 1 in this many breakup risk
+    return 20;
+}
+
+inline int sapRodPrimeRiskPercent() {
+    // the same breakup risk, in percent
+    return 5;
+}
+
+inline int sapRodBreakupTeleportMinMiles() {
+    // the breakup teleport minimum, in miles
+    return 100;
+}
+
+inline int sapRodBreakupTeleportMaxMiles() {
+    // the breakup teleport maximum, in miles
+    return 1200;
+}
+
+inline int sapRodOutOfOrderNotCumulative() {
+    // out-of-order assembly: the powers are not cumulative
+    return 1;
+}
+
+inline int sapRodLastPieceJoinedActive() {
+    // only the last piece joined stays active, prior negated
+    return 1;
+}
+
+inline int sapRodInOrderCumulative() {
+    // in-order assembly is cumulative to the full powers
+    return 1;
+}
+
+inline int sapRodAssemblyRowCount() {
+    // the assembly powers table rows
+    return 6;
+}
+
+inline int sapRodAssemblyUseTotal() {
+    // 1+1+1+1+1+1 - the assembly use total
+    return 6;
+}
+
+inline int sapRodCompleteUseTotal() {
+    // 1+1+2+2+1 - the complete rod use total
+    return 7;
+}
+
+inline int sapRodCompleteOrderQuirk() {
+    // the complete list prints table V before table IV
+    return 1;
+}
+
+inline int sapRodCompleteLacksTableVI() {
+    // no table VI slot, though the assembly has one
+    return 1;
+}
+
+inline int sapRodBlankSlotCount() {
+    // the DM-fill blank slots, 6 assembly + 7 complete
+    return 13;
+}
+
+inline int sapRodBlankSlotUnderscores() {
+    // the underscores per blank slot
+    return 11;
+}
+
+inline int sapRodJointTable(int i) {
+    // the assembly joint tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        3, 1, 1, 4, 2, 6,
+    };
+    return t[i];
+}
+
+inline int sapRodJointUseCount(int i) {
+    // the assembly joint use counts; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        1, 1, 1, 1, 1, 1,
+    };
+    return t[i];
+}
+
+inline int sapRodCompleteTableUse(int i) {
+    // the complete rod uses per tables I-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    static const int t[6] = {
+        1, 1, 2, 1, 2, 0,
+    };
+    return t[i];
+}
+
 }  // namespace rules
