@@ -5079,6 +5079,176 @@ and the spade follow; the kMisc5
 rows 7+
 continue).
 
+R278 landed the III.E misc
+magic explanation prose
+part 22 (part2 lines 1054-1081;
+global = 11065 + part2 line),
+the Rope of Climbing, the Rope
+of Constriction, the Rope of
+Entanglement, the rope note,
+the Rug of Smothering, the Rug
+of Welcome, the Saw of Mighty
+Cutting, the Scarab of Death,
+the Scarab of Enraging
+Enemies, the Scarab of
+Insanity, the Scarab of
+Protection and the Spade of
+Colossal Excavation (DMG
+p.154-156) - the slice pinning
+the kMisc5 rows 6-16 of the
+35-row III.E.5 table, the
+eleven consecutive rows
+opening with the Rope of
+Climbing. This round has
+two seams restored: seam A
+splits the Constriction
+paragraph between the 1056
+tail
+(delivers 2-12 hit) and the
+1058 head (points of damage)
+across the single 1057 blank
+- the p.154-155 page break,
+no running head captured;
+seam B is the p.155-156 page
+break between the Insanity
+tail (1074) and the Protection
+head (1079) with the blank
+pair at 1075-1076, the
+TREASURE (MISCELLANEOUS
+MAGIC) running head at 1077
+and the 1078 post-head blank.
+The upload quirks: the OCR
+splits spade- like with a
+space; the curly apostrophe
+prints in the victim
+possessive of the Scarab of
+Death; curly quotes wrap to
+hit in the enraging mods; the
+minus signs print true (the
+minus 2 AC pins, the minus 3
+armor class, the minus 10
+percent MR, the minus 2
+saves); the foot and inch
+primes print as curly marks;
+the welcome rug carries a
+multiplication sign on its
+6 x 9 flying size and the
+1/12 shrink fraction; the
+rope note prints as a heading
+line. The part1 quirks: the
+eleven slice rows print
+side-by-side with armor-table
+columns (part1 9881-9891);
+the Constriction, Smothering
+and Death rows print --- in
+the x.p. column; the Welcome,
+Saw and Spade rows carry the
+(M)/(F) marks. The items:
+Rope of Climbing (60 feet
+long, no thicker than a
+slender wand, 3 pounds,
+supports 3,000 pounds; moves
+10 feet per round on command;
+knots at 1 foot intervals,
+shortening to 50 feet), Rope
+of Constriction (resembles a
+climbing or entanglement
+rope; lashes the holder and
+1-4 others within 10 feet;
+2-12 hit points per round
+until dispelled; the entwined
+cannot free themselves; the
+rope is AC -2 and takes 22
+hit points to cut, all from
+one creature), Rope of
+Entanglement (lashes 20 feet
+or upward 10 feet; up to 8
+man-sized creatures by the
+equivalence chain 1 storm
+giant = 2 giants = 3 ogres =
+4 bugbears = 6 gnolls = 8 men
+= 10 elves = 12 dwarves = 16
+gnomes or kobolds; 1 segment
+to strike, 1 to entwine, 1
+for the command, 3 for the
+whole; AC -2, 22 hit points to
+cut, repairs in 6 turns,
+severing destroys it; note:
+a broken or severed rope
+loses its powers), Rug of
+Smothering (resembles a
+carpet of flying; rolls and
+suffocates in 3-6 rounds;
+blocked only by alter reality,
+animate object, hold plant or
+wish), Rug of Welcome (a 6 x 9
+carpet of flying; traps up to
+ogre-size as a rug of
+smothering; stiffens as steel
+27 feet long at 2 feet width,
+AC 0, 100 hit points to
+destroy; shrinks to 1/12
+size), Saw of Mighty Cutting
+(a 12 foot adamantite blade
+over 1 foot wide; 18/00
+strength alone or 2 persons
+of 17+ in tandem; 2 foot
+hardwood in 1 turn, 4 foot
+trunk in 3 turns, 1 foot
+diameter tree in 3 rounds; 6
+turns of work then 6 turns of
+rest), Scarab of Death
+(appears as a beneficial
+brooch; held over 1 round or
+within 1 foot of a warm body
+for 1 turn it becomes a
+burrowing beetle reaching the
+heart in 1 round; hard wood,
+ceramic, bone, ivory or metal
+containers prevent it),
+Scarab of Enraging Enemies
+(enrages intelligent
+hostiles within 4 inches
+failing saves; +1 to hit, +2
+damage, -3 armor class; the
+rage lasts 7-12 rounds; 19-24
+charges), Scarab of Insanity
+(insanity within 2 inches,
+saves at -2 and -10 percent
+magic resistance; insane 9-12
+rounds; 9-16 charges), Scarab
+of Protection (+1 saves
+versus magic, a save of 20
+when none possible; absorbs
+12 level drains or death
+touches, powdering at 12; 1
+in 20 reversed cursed (-2),
+1 in 5 of those fixed to +2
+by a 16th+ cleric, absorbing
+24), Spade of Colossal
+Excavation (8 feet long,
+blade 2 x 3 feet; any fighter
+with 18 strength; 1 cubic
+yard per round; 10 rounds of
+work then 5 of rest; hard pan
+and gravel twice as long,
+loose soil half).
+85 accessors: 84 scalars +
+1 walker (the man-sized
+equivalence chain), no name
+collisions parts 1-21. New
+R278 battery audit;
+census 196. Next: R279 III.E
+part 23 - the Sphere of
+Annihilation
+onward in part2 from
+line 1083 (global 12148;
+the sphere control table,
+the three stones and the
+four talismans follow; the
+kMisc5 rows 17+
+continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
