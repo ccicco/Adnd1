@@ -4936,6 +4936,149 @@ scarabs and the spade follow;
 the kMisc5 rows 1+
 continue).
 
+R277 landed the III.E misc
+magic explanation prose
+part 21 (part2 lines 1002-1052;
+global = 11065 + part2 line),
+the Robe of the Archmagi, the
+Robe of Blending, the Robe of
+Eyes, the Robe of Powerlessness,
+the Robe of Scintillating Colors
+and the Robe of Useful Items (DMG
+p.153-154) - the slice pinning
+the kMisc5 rows 0-5 of the 35-row
+III.E.5 table, opening it. This
+round has one seam: the
+Powerlessness paragraph splits
+between the 1018 tail (and
+becomes) and the 1021 head (weak
+as well), with the 1019-1020
+pair of blanks - the p.153-154
+page break with no running head -
+seam restored here. The upload
+quirks: the OCR splits two words
+with a space (magic- user and
+language/ noise); curly
+apostrophes print in the robe and
+wearer possessives; curly quotes
+wrap see, eyes and flowing; the
+foot and inch primes print as
+curly marks; the 20%/minus 4
+reduction prints the true minus
+sign; the coffer and window rows
+carry one-half and multiplication
+signs; the door and window rows
+separate with em-dashes - all
+pinned as plain digits and words.
+The part1 quirks: the six robe
+rows print side-by-side with
+armor-table columns (part1
+9875-9880); the Powerlessness row
+prints --- in the x.p. column;
+the Scintillating row misplaces
+2,750 after the (C, M) marks. The
+useful items table flattens its
+two header rows (Dice and Roll
+Result each on an own line) and
+prints 13 die bands, pinned as
+the twin walkers. The items: Robe
+of the Archmagi (white 45 percent
+good, gray 30 percent neutral,
+black 25 percent evil; AC 5
+armor, 5 percent magic
+resistance, +1 saves; worn spells
+cut foe magic resistance and
+saves by 20 percent and minus 4
+across seven charm-family spells;
+wrong-aligned donning: 18-51
+(11d4 + 7) hit points and
+18,000-51,000 experience lost;
+the gray or crossed clash: 6-24
+hit points and 6,000-24,000
+experience), Robe of Blending
+(cannot be detected by magical
+means; appears part of a rock
+wall, a plant, a creature,
+whatever is appropriate; never
+more than twice one-half normal
+height; exceptional (15+)
+intelligence: 1 percent per point
+within 3 inches; low (5+)
+intelligence with 10+ levels or
+hit dice: 1 percent per level or
+hit die; cumulative - the 18 int
+12th level example is 30 percent;
+checks each turn thereafter
+within the 3 inch range), Robe of
+Eyes (sees in all directions at
+once; infravision to 12 inches;
+ultravision; displaced or out of
+phase things in actual positions;
+invisible things within 24 inches
+(or 12); solid objects obstruct;
+astral or ethereal things unseen;
+illusions and secret doors unseen
+but hidden creatures detected -
+ambush or surprise impossible;
+tracks as a 12th level ranger; a
+light spell blinds 1-3 rounds, a
+continual light 2-8), Robe of
+Powerlessness (appears as another
+robe, only a magic aura detected;
+donning drops the wearer to 3
+intelligence and 3 strength;
+removed easily but restoring mind
+and body needs a remove curse and
+then a heal spell), Robe of
+Scintillating Colors (needs
+intelligence 15+ and wisdom 13+;
+sheds light in a 40 foot diameter
+sphere; a full round to start; a
+failed save versus magic stands
+opponents transfixed 2-5 rounds;
+each round of scintillation makes
+the wearer 5 percent harder to
+hit up to 25 percent (minus 5) at
+5 continuous rounds; then spell
+casting and activity within 1
+inch of the start point;
+non-combat hypnosis for 2-5
+turns), Robe of Useful Items (the
+wearer alone sees the patches;
+detach any 1 in 1 round; always 2
+each of the six base patches -
+dagger, pole (10 foot), lantern
+(filled and lit), rope (50 foot
+coil), mirror (large), sack
+(large); plus 4-16 diced items
+across 13 bands: 01-08 bag of 100
+gold pieces, 09-15 silver coffer
+(500 g.p. value), 16-22 iron
+door, 23-30 ten gems of 100 gold
+piece value each, 31-44 wooden
+ladder 24 feet long, 45-51 mule
+with saddle bags, 52-59 open pit
+of 10 cubic feet, 60-68 potion of
+extra healing, 69-75 rowboat 12
+feet long, 76-83 scroll of 1
+spell, 84-90 pair of war dogs,
+91-96 window (2 foot by 4 foot,
+up to 2 foot deep), 97-00 roll
+twice more; removed items never
+replaced). 67 accessors: 65
+scalars + 2 walkers (the useful
+item die bands), no name
+collisions parts 1-20. New R277
+battery audit; census 195. Next:
+R278 III.E part 22 - the Rope of
+Climbing onward in part2 from
+line 1054 (global 12119; the three
+ropes, the rope note, the two
+rugs, the saw, the four scarabs
+and the spade follow; the kMisc5
+rows 7+
+continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
