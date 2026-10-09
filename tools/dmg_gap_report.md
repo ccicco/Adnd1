@@ -5627,6 +5627,89 @@ Al Akbar and the other
 descriptions follow; the III.E
 Special prose continue).
 
+R282 landed the III.E Special
+artifacts and relics explanation
+prose part 3 (part2 lines
+1237-1268; global = 11065 +
+part2 line), the Crown of Might
+(DMG p.160) - the fourth of the
+29 artifact descriptions, the
+first item of the regalia
+sets of Might: great regalia
+for the special servants of the
+deities of each alignment, the
+champion of each ethic
+alignment - Evil, Good,
+Neutrality - given a crown, an
+orb and a sceptre, the 3
+complete sets scattered and
+lost over the centuries, mere
+possession benefiting a
+same-ethos character, a
+wrong-ethos touch dealing
+5-30 hit points with a save
+versus magic or instant death,
+the alignment table 01-06
+Evil, 07-14 Good, 15-20
+Neutrality, the wearer raised
+1 experience level with worn
+powers 2 of table I and 1
+each of tables II and III, an
+off-ethos Orb or Sceptre
+touch dealing the same damage
+and save with 1 malevolent
+power from table IV on a
+successful save, the
+same-ethos 2nd item of the
+set adding 1 each of tables
+I and II, the 3rd item
+adding 1 each of tables I,
+II, IV, V and VI, examination
+revealing no difference and
+detection not revealing the
+ethic alignment, a slender
+gold diadem set with 3
+precious stones of great
+size worth 50,000 or more
+gold pieces if openly sold.
+No seam this round: the slice
+lies wholly on p.160 - the
+p.160-161 break splits the
+Hand of Vecna paragraph (a
+later round). The upload
+quirks: the power tables print
+the counts as N x table with
+the true multiplication
+sign, 10 of them, in markdown
+tables of blank fills; the
+ethic alignment dashes print
+as true em-dashes; the wearer
+level line prints the curly
+apostrophe - all pinned as
+plain digits and words,
+apostrophe-free here. 21
+accessors: 16 scalars + 5
+walkers (the alignment band
+lo/hi walkers 1,7,15 and
+6,14,20, the worn power
+walker 2,1,1, the set 2nd
+item walker 1,1 and the set
+3rd item walker 1,1,1,1,1), no
+name collisions with the
+miscprose and specart
+headers; the audit cross-pins
+the R240 sale table row - the
+Crown band 05-20 at 50000
+(census 200). Next: R283 III.E
+Special part 4 - the Crystal
+of the Ebon Flame onward in
+part2 from line 1270 (global
+12335; the Cup and Talisman
+of Al Akbar, the Eye and the
+Hand of Vecna and the other
+descriptions follow; the
+III.E Special prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

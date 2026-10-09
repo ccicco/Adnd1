@@ -270,4 +270,134 @@ inline int sapCodexPowerCount(int i) {
     return t[i];
 }
 
+inline int sapCrownRegaliaSetCount() {
+    // these 3 complete sets bestow great powers
+    return 3;
+}
+
+inline int sapCrownItemsPerSet() {
+    // a crown, an orb and a sceptre per champion
+    return 3;
+}
+
+inline int sapCrownChampionEthosCount() {
+    // the champion of each ethic alignment
+    return 3;
+}
+
+inline int sapCrownPossessionBenefits() {
+    // mere possession benefits a same-ethos character
+    return 1;
+}
+
+inline int sapCrownWrongEthosDamageMin() {
+    // a wrong-ethos touch deals 5-30 hit points
+    return 5;
+}
+
+inline int sapCrownWrongEthosDamageMax() {
+    // the upper edge of the 5-30 hit points
+    return 30;
+}
+
+inline int sapCrownWrongEthosSaveOrDeath() {
+    // save versus magic or be instantly killed
+    return 1;
+}
+
+inline int sapCrownWearerLevelBonus() {
+    // raises the level of experience by 1 while worn
+    return 1;
+}
+
+inline int sapCrownWornPowerTotal() {
+    // 2 of table I plus 1 each of tables II-III
+    return 4;
+}
+
+inline int sapCrownOffEthosMalevolentCount() {
+    // 1 malevolent power on a successful save
+    return 1;
+}
+
+inline int sapCrownOffEthosMalevolentTable() {
+    // the malevolent power comes from table IV
+    return 4;
+}
+
+inline int sapCrownSet2ndPowerTotal() {
+    // the same-ethos 2nd item adds 1 each of I-II
+    return 2;
+}
+
+inline int sapCrownSet3rdPowerTotal() {
+    // the 3rd item adds 1 each of I, II, IV-VI
+    return 5;
+}
+
+inline int sapCrownDetectionRevealsAlignment() {
+    // detection magically will not reveal the alignment
+    return 0;
+}
+
+inline int sapCrownGemCount() {
+    // set with 3 precious stones of great size
+    return 3;
+}
+
+inline int sapCrownSaleGpMin() {
+    // 50,000 or more gold pieces if openly sold
+    return 50000;
+}
+
+inline int sapCrownAlignBandLo(int i) {
+    // the alignment band lower edges; i clamps
+    if (i < 0) i = 0;
+    if (i > 2) i = 2;
+    static const int t[3] = {
+        1, 7, 15,
+    };
+    return t[i];
+}
+
+inline int sapCrownAlignBandHi(int i) {
+    // the alignment band upper edges; i clamps
+    if (i < 0) i = 0;
+    if (i > 2) i = 2;
+    static const int t[3] = {
+        6, 14, 20,
+    };
+    return t[i];
+}
+
+inline int sapCrownWornPowerCount(int i) {
+    // the worn powers per tables I-III; i clamps
+    if (i < 0) i = 0;
+    if (i > 2) i = 2;
+    static const int t[3] = {
+        2, 1, 1,
+    };
+    return t[i];
+}
+
+inline int sapCrownSet2ndPowerCount(int i) {
+    // the 2nd item powers per tables I-II; i clamps
+    if (i < 0) i = 0;
+    if (i > 1) i = 1;
+    static const int t[2] = {
+        1, 1,
+    };
+    return t[i];
+}
+
+inline int sapCrownSet3rdPowerCount(int i) {
+    // the 3rd item powers per I, II, IV-VI; i clamps
+    if (i < 0) i = 0;
+    if (i > 4) i = 4;
+    static const int t[5] = {
+        1, 1, 1, 1, 1,
+    };
+    return t[i];
+}
+
 }  // namespace rules
