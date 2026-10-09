@@ -5534,6 +5534,99 @@ other descriptions follow;
 the III.E Special prose
 continue).
 
+R281 landed the III.E Special
+artifacts and relics explanation
+prose part 2 (part2 lines
+1184-1235; global = 11065 +
+part2 line), the Axe of the
+Dwarvish Lords, the Baba Yaga
+Hut and the Codex of the
+Infinite Planes (DMG
+p.159-160) - the first three of
+the 29 artifact descriptions.
+The Axe: a sword of sharpness
+blade backed by a +3 hammer
+head, the handle a battle or
+hand axe on command, returns 30
+feet to its thrower, dwarven
+abilities doubled for a dwarf,
+life span 50 percent longer,
+bears a curse, lost in the
+Invoked Devastation; powers 2
+of table I and 1 each of
+II-VI. The Hut: 15 feet
+diameter, 10 feet high, two
+fowl legs 12 feet long,
+infravision 120 feet, 30 rooms
+on 3 floors, moves 48 inches
+over swamp, 36 over rough or
+normal terrain and 12 over
+hills, obeys 1 key-phrase
+commander, comes from 1 league,
+the legs strike as a hill
+giant 2 per round at AC 2, 48
+hp each regenerating 1 per
+round, 5 foot granite walls;
+powers 4 of table I, 2 of II,
+1 each of III-VI. The Codex:
+99 damned pages, 99 percent
+doom at 1 percent cumulative
+per page, keys to instant
+transference to the planes,
+destroys any character under
+11th level on touch, 11th or
+higher save versus magic to
+command; powers 4 each of
+tables I and II, 2 each of
+III-VI, and the perusal note
+on activation. This round has
+one seam restored: the
+p.159-160 page break splits the
+Codex paragraph between the
+1216 tail (the work will
+destroy instantly any) and the
+1221 head (character under
+11th level) across the blank
+pair at 1217-1218, the TREASURE
+(ARTIFACTS & RELICS) running
+head at 1219 and the 1220
+post-head blank. The upload
+quirks: the power lines print
+the counts as N x table with
+the true multiplication sign,
+18 of them; the feet primes
+print as the curly right
+single quote and the inch
+primes as the curly right
+double quote; the Tzunk
+fragment prints curly quotes;
+the hit point/ melee round
+slash split carries a space -
+all pinned as plain digits and
+words, apostrophe-free here.
+37 accessors: 33 scalars + 4
+walkers (the three power-count
+walkers - 2,1,1,1,1,1 for the
+Axe, 4,2,1,1,1,1 for the Hut,
+4,4,2,2,2,2 for the Codex - and
+the hut move walker 48, 36,
+12), no name collisions with
+the miscprose and specart
+headers; the audit cross-pins
+the R240 sale table rows - the
+Axe band 01 at 55000, the Hut
+band 02 at 90000, the Codex
+band 03-04 at 62500 (census 199).
+Next: R282 III.E Special
+part 3 - the
+Crown of Might onward in
+part2 from line 1237 (global
+12302; the Crystal of the Ebon
+Flame, the Cup and Talisman of
+Al Akbar and the other
+descriptions follow; the III.E
+Special prose continue).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
