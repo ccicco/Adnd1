@@ -38,6 +38,8 @@ enum StatusKind : int {
     STATUS_POLYMORPHED,  // R82: Polymorph Other - held-like
     STATUS_ENTANGLED,   // R318: the hooked-net entrap
                            // (MM sahuagin - torn at STR 16+)
+    STATUS_LIGHT,       // R319: the light spell mark
+                        // (the vision fold - resolveCast)
     STATUS_COUNT
 };
 

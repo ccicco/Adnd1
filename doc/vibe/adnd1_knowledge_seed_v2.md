@@ -287,6 +287,28 @@ R172 were already dropped at the R171b/R172 era cut; git
   stayed small because the data was
   already pinned and regtested.
 
+- R318 landed 2026-10-10: commit 70216d6,
+  census 245, the net entrap layer (see
+  Current state above). RED then GREEN:
+  the preflight caught bad 1 - the N3
+  hold check. Lessons: (1) read the
+  ENGINE CODE, not the comment - the
+  tickStatus prose says permanent, the
+  code kills the zero-round mark at the
+  round-end tick, so the entrap
+  evaporated and the r318b fix re-asserts
+  the hooks each round (only the tear
+  frees); (2) the round-end status tick
+  is the interaction the sandbox cannot
+  trace - the preflight stays the only
+  gate that catches tick lifetimes; (3)
+  the letter rule held - the initial
+  splice committed alongside the fix,
+  history intact; (4) the fix splice kept
+  the audit as the gate and added a
+  second-round regression check (the
+  hold must survive two ticks).
+
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

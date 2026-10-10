@@ -2609,6 +2609,21 @@ void AppState::awardVictory(){
                         // other ring/rod/misc stays appraised
                         for (auto& c : party.members) {
                             if (c.hp <= 0) continue;
+                            // R319: the Helm of Underwater
+                            // Action - the carried light for
+                            // the deep (the claimRing
+                            // pattern); the water sight
+                            // quintuples at the pool fight
+                            if (claimUwHelm(c, mi.name,
+                                            mi.qty)) {
+                                snprintf(buf, sizeof buf,
+                                         "%s dons the %s!",
+                                         c.name.c_str(),
+                                         mi.name.c_str());
+                                log.add(buf);
+                                take = true;
+                                break;
+                            }
                             if (claimRing(c, mi.name, mi.qty)) {
                                 snprintf(buf, sizeof buf,
                                          "%s wears the %s.",

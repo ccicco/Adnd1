@@ -237,6 +237,10 @@ bool AppState::saveGame(){
             // R81: the Ring of Protection bonus (nonzero only)
             if (c.ringPlus > 0)
                 fprintf(f, "ringplus %d\n", c.ringPlus);
+            // R319: the helm (worn only - v1 saves
+            // carry no line and load without it)
+            if (c.uwHelm)
+                fprintf(f, "uwhelm 1\n");
             // R85: the pack (nonempty members only - v1 saves
             // carry no lines and load with an empty pack)
             if (!c.pack.empty()) {
@@ -700,6 +704,15 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.ringPlus = rg;
+                } else if (strcmp(tag, "uwhelm") == 0) {
+                    int uh = 0;
+                    if (fscanf(f, "%d", &uh) != 1 ||
+                        uh < 0 || uh > 1) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (helm).");
+                        return false;
+                    }
+                    c.uwHelm = uh != 0;
                 } else if (strcmp(tag, "shieldplus") == 0) {
                     int sp = 0;
                     if (fscanf(f, "%d", &sp) != 1 ||

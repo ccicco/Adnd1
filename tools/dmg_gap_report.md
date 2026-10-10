@@ -7326,8 +7326,10 @@ R315 throwers - a new STATUS_ENTANGLED
 (the held precedent) bars action; a
 volley hit entraps instead of wounding
 (resolveMissile, nets are used to
-entrap); the entrap is permanent until
-torn (the zero-round convention) and a
+entrap); the entrap holds until torn
+(the r318b hooks re-assert each round;
+a zero-round mark dies at the round-end
+tick) and a
 strength of 16 or greater tears free
 at the round start (uwNetEntrapStrTear,
 the stepRound fold before the end
@@ -7335,6 +7337,26 @@ conditions); weaker victims stay held -
 no escape roll exists, the print bars
 it. The census moves 244 -> 245 with
 the R318 audit.
+
+R319 the underwater vision
+multiples: the R311 vision paragraph
+closes - the depth seam (setDepthFt
+re-folds the water sight from the
+decay pin, fresh; the pool site stays
+the surface), a party light spell
+lifts the water sight (STATUS_LIGHT
+at the spell engine, the resolveCast
+fold; continual light stays recorded
+- a permanent mark dies at the
+round-end tick, the R318b lesson)
+and the claimed Helm of Underwater
+Action quintuples the pool sight
+(uwHelm on the claim layer, the
+claimRing pattern; the status-name
+array carried only 10 of the 14
+kinds - fixed alongside). The census
+moves 245 -> 246 with the R319
+audit.
 
 Categories:
 - [x] = verified against the book text

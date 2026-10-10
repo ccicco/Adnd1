@@ -208,6 +208,10 @@ struct Character {
     int shieldPlus = 0;
     // R81: Ring of Protection AC bonus (0 = none worn)
     int ringPlus = 0;
+    // R319: the Helm of Underwater Action worn
+    // (the claim layer; quintuples the water
+    // sight - the R311 helm pin)
+    bool uwHelm = false;
 
     // R299: the recorded weapon proficiency slots
     // (the PHB Weapon Proficiency Table). The kit
@@ -1588,6 +1592,22 @@ inline bool claimRing(Character& c, const std::string& name,
     if (name.find("Ring of Protection") == std::string::npos)
         return false;
     c.ringPlus = 1;
+    return true;
+}
+
+// --------------------------------------------------------------------------
+// R319: claim a Helm of Underwater Action for a
+// member (the claimRing pattern) - one helm per
+// member, the first living taker wins; every other
+// ring/rod/misc stays appraised.
+// --------------------------------------------------------------------------
+inline bool claimUwHelm(Character& c, const std::string& name,
+                        int qty) {
+    if (c.hp <= 0 || qty != 1 || c.uwHelm) return false;
+    if (name.find("Helm of Underwater Action") ==
+        std::string::npos)
+        return false;
+    c.uwHelm = true;
     return true;
 }
 

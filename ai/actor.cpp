@@ -226,6 +226,18 @@ Encounter::Encounter(std::vector<Actor> party, std::vector<Actor> monsters,
     : m_party(std::move(party)), m_monsters(std::move(monsters)),
       m_rng(seed), m_dice(m_rng) {}
 
+// R319: the depth fold - the R311 decay
+// pin re-folds the water sight (fresh; the
+// pool site stays the surface); the dry
+// fight keeps the R316 zero (the seam
+// never charges a sight there).
+void Encounter::setDepthFt(int ft) {
+    m_depthFt = ft;
+    if (m_waterFight)
+        m_visionFt =
+            rules::uwVisionDecayFt(0, ft);
+}
+
 void Encounter::logLine(const std::string& s) {
     m_log.push_back({s});
 }
@@ -833,6 +845,30 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
 
         if (tr.note[0] != '\0')
             logLine(std::string(tr.note));
+    }
+
+    // R319: the light fold - a party light
+    // spell in a water fight lifts the
+    // sight (the R311 light pin - 30 feet
+    // or +10 under 60, whichever greater);
+    // the dry fight keeps the R316 zero (no
+    // vision state). Continual light stays
+    // recorded (a permanent mark dies at
+    // the round-end tick - the R318b
+    // lesson).
+    if ((id == spells::MU_LIGHT ||
+         id == spells::CL_LIGHT ||
+         id == spells::IL_LIGHT) &&
+        caster.team == 0 && m_waterFight &&
+        !m_lightActive) {
+        m_lightActive = true;
+        m_visionFt =
+            rules::uwLightSpellVisionFt(
+                m_visionFt);
+        logLine("The light carries - "
+                "sight runs " +
+                std::to_string(m_visionFt) +
+                " feet.");
     }
 }
 

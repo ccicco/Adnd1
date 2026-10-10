@@ -77,27 +77,36 @@ void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std
             // distance pin charges the Encounter
             // state (fresh, surface depth - the
             // shallow JUDGMENT, the R312 crossing
-            // grain); the light-spell and helm
-            // multiples stay recorded (no
-            // active-light or carried-item layer
-            // exists)
+            // grain); the R319 helm multiple
+            // folds here (the claim layer); the
+            // light fold rides resolveCast
             combat.encounter->setVisionFt(
                 rules::uwVisionBaseFt(0));
+            // R319: the helm of underwater action
+            // quintuples the sight (the carried
+            // light - the first living member
+            // wearing one)
+            for (const auto& c : party.members)
+                if (c.hp > 0 && c.uwHelm) {
+                    combat.encounter->setVisionFt(
+                        combat.encounter->visionFt() *
+                        rules::uwHelmVisionMultiple());
+                    break;
+                }
             char vbuf[64];
             snprintf(vbuf, sizeof vbuf,
                      "Sight runs %d feet in the "
                      "clouded fresh water.",
-                     rules::uwVisionBaseFt(0));
+                     combat.encounter->visionFt());
             log.add(vbuf);
             // R317: the infravision print - the
             // R311 pin (infravision as in
             // dungeons) meets the R154 race
             // data: the company best
             // infravision eyes report their
-            // range (the light-spell and helm
-            // multiples stay recorded - no
-            // active-light or carried-item
-            // layer exists)
+            // range (the R319 light and helm
+            // folds charge the sight seam -
+            // resolveCast and the claim layer)
             if (rules::uwInfravisionSameAsDungeon())
             {
                 int infra = 0;

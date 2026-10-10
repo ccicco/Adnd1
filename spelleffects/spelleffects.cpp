@@ -12,7 +12,13 @@ namespace spelleffects {
 
 static const char* const kStatusNames[STATUS_COUNT] = {
     "None", "Asleep", "Charmed", "Hasted", "Slowed",
-    "Silenced", "Held", "Invisible", "Protected", "Shielded"
+    "Silenced", "Held", "Invisible", "Protected", "Shielded",
+    // R319: the array fell four names short
+    // of the enum (the R81/R82/R318 kinds read
+    // a null name); the light name rides the
+    // fold below.
+    "Fire Shield", "Antivenom", "Polymorphed", "Entrapped",
+    "Lit"
 };
 
 const char* statusName(StatusKind s) {
@@ -256,6 +262,20 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
                 break;
             case spells::MU_FIRE_SHIELD:   // R81
                 r = resolveStatusSpell(dice, s, STATUS_FIRESHIELD,
+                                       s.durationRounds, t, false);
+                break;
+            // R319: the light spell - the status
+            // mark (the rows save not); the vision
+            // fold rides resolveCast. The
+            // reversible darkness and the
+            // continual light stay recorded (no
+            // darkness notion; a permanent mark
+            // dies at the round-end tick - the
+            // R318b lesson).
+            case spells::MU_LIGHT:   // R319
+            case spells::CL_LIGHT:
+            case spells::IL_LIGHT:
+                r = resolveStatusSpell(dice, s, STATUS_LIGHT,
                                        s.durationRounds, t, false);
                 break;
             case spells::MU_CHARM_PERSON:

@@ -369,6 +369,21 @@ public:
     const std::vector<Actor>& party() const { return m_party; }
     const std::vector<Actor>& monsters() const { return m_monsters; }
     std::vector<Actor>& monstersMutable() { return m_monsters; }
+    // R319: the party-side mirror (the cast
+    // commands and the audits reach the live
+    // company actors; the monstersMutable
+    // pattern)
+    std::vector<Actor>& partyMutable() { return m_party; }
+    // R27/R319b: resolve a party member's cast
+    // through spelleffects and apply the
+    // per-target results (hp, statuses,
+    // notes) back to the affected actors -
+    // the PUBLIC cast seam (the R319b
+    // lesson: the audit drives a party
+    // cast, so the declaration rides the
+    // public block; the engine callers
+    // unchanged)
+    void resolveCast(Actor& caster, spells::SpellId id);
 
     // single-round step (interactive combat drives this)
     int stepRound();
@@ -518,11 +533,24 @@ public:
     // R316: the underwater vision seam - the
     // R311 distance pins charge this state at
     // the water fight (the fresh pool surface
-    // reads 50 feet; the depth decay and the
-    // light/helm multiples stay data - no depth
-    // or active-light layer exists).
+    // reads 50 feet; the R319 seams fold the
+    // sight - the depth decay pin at
+    // setDepthFt, the light pin at
+    // resolveCast, the helm pin at the app
+    // site).
     void setVisionFt(int ft) { m_visionFt = ft; }
     int  visionFt() const { return m_visionFt; }
+    // R319: the depth seam - setDepthFt
+    // re-folds the water sight from the R311
+    // decay pin (the pool site stays the
+    // surface - no dive site exists, the R312a
+    // seam precedent).
+    void setDepthFt(int ft);
+    int  depthFt() const { return m_depthFt; }
+    // R319: the company light - a party light
+    // spell in the water fight lifts the sight
+    // (the resolveCast fold).
+    bool lightActive() const { return m_lightActive; }
 
     // R313: the underwater strike probe (the
     // R311 combat pin): in a water fight a
@@ -562,6 +590,8 @@ private:
     bool m_waterFight = false;   // R313: the water fight
     bool m_aquatic = false;   // R314: the aquatic fold
     int  m_visionFt = 0;   // R316: the vision seam
+    int  m_depthFt = 0;   // R319: the depth seam
+    bool m_lightActive = false;   // R319: the light
 
     int  m_distance = 5;   // R43: engagement range in 10' bands
 
@@ -575,10 +605,10 @@ private:
     // since R24 - the hook receives the attacking member)
     Actor* pickFoeForPartyActor(const Actor& attacker);
 
-    // R27: resolve a party member's cast through spelleffects and
-    // apply the per-target results (hp, statuses, notes) back to
-    // the affected actors
-    void resolveCast(Actor& caster, spells::SpellId id);
+    // R27/R319b: the cast seam moved
+    // public (below, beside partyMutable -
+    // the audit drives a party cast; the
+    // engine callers unchanged)
 
     // R28: resolve one missile shot (no STR mods; missile dice)
     void resolveMissile(Actor& attacker, Actor& defender);
