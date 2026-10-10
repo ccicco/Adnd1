@@ -40,6 +40,8 @@ enum StatusKind : int {
                            // (MM sahuagin - torn at STR 16+)
     STATUS_LIGHT,       // R319: the light spell mark
                         // (the vision fold - resolveCast)
+    STATUS_WATERBREATHING,   // R320: the druid spell mark
+                             // (the breath fold)
     STATUS_COUNT
 };
 

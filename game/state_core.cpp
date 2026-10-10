@@ -241,6 +241,11 @@ bool AppState::saveGame(){
             // carry no line and load without it)
             if (c.uwHelm)
                 fprintf(f, "uwhelm 1\n");
+            // R320: the draught (held only - v1
+            // saves carry no line and load
+            // without it)
+            if (c.uwDraught)
+                fprintf(f, "uwdraught 1\n");
             // R85: the pack (nonempty members only - v1 saves
             // carry no lines and load with an empty pack)
             if (!c.pack.empty()) {
@@ -713,6 +718,15 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.uwHelm = uh != 0;
+                } else if (strcmp(tag, "uwdraught") == 0) {
+                    int ud = 0;
+                    if (fscanf(f, "%d", &ud) != 1 ||
+                        ud < 0 || ud > 1) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (draught).");
+                        return false;
+                    }
+                    c.uwDraught = ud != 0;
                 } else if (strcmp(tag, "shieldplus") == 0) {
                     int sp = 0;
                     if (fscanf(f, "%d", &sp) != 1 ||

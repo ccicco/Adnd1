@@ -551,6 +551,12 @@ public:
     // spell in the water fight lifts the sight
     // (the resolveCast fold).
     bool lightActive() const { return m_lightActive; }
+    // R320: the company breath - a party water
+    // breathing spell in the water fight marks
+    // the company (the resolveCast fold; no
+    // drowning site exists - the print is the
+    // charge).
+    bool breathActive() const { return m_breathActive; }
 
     // R313: the underwater strike probe (the
     // R311 combat pin): in a water fight a
@@ -592,6 +598,7 @@ private:
     int  m_visionFt = 0;   // R316: the vision seam
     int  m_depthFt = 0;   // R319: the depth seam
     bool m_lightActive = false;   // R319: the light
+    bool m_breathActive = false;   // R320: the breath
 
     int  m_distance = 5;   // R43: engagement range in 10' bands
 

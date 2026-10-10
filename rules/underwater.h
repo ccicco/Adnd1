@@ -58,10 +58,11 @@
 // dungeon range.
 //
 // RECORDED NOTES (ride the pin, not data): the
-// breathing aids (the water breathing, airy
-// water, shape change and wish spells; the
-// potion; the helm of underwater action and
-// the cloak of the manta ray), the one
+// breathing aids (the airy water, shape
+// change and wish spells; the cloak of the
+// manta ray - the water breathing spell, the
+// potion and the helm now charge the R319/
+// R320 seams), the one
 // unsheathed dagger carried between the teeth,
 // the swimmer vulnerable from every direction,
 // the infravision temperature-layer confusion,

@@ -2609,6 +2609,21 @@ void AppState::awardVictory(){
                         // other ring/rod/misc stays appraised
                         for (auto& c : party.members) {
                             if (c.hp <= 0) continue;
+                            // R320: the Potion of Water
+                            // Breathing - the carried
+                            // draught (the claimUwHelm
+                            // pattern); the pool fight
+                            // print charges it
+                            if (claimUwDraught(c, mi.name,
+                                              mi.qty)) {
+                                snprintf(buf, sizeof buf,
+                                         "%s pockets the %s!",
+                                         c.name.c_str(),
+                                         mi.name.c_str());
+                                log.add(buf);
+                                take = true;
+                                break;
+                            }
                             // R319: the Helm of Underwater
                             // Action - the carried light for
                             // the deep (the claimRing

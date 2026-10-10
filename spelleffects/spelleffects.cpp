@@ -18,7 +18,8 @@ static const char* const kStatusNames[STATUS_COUNT] = {
     // a null name); the light name rides the
     // fold below.
     "Fire Shield", "Antivenom", "Polymorphed", "Entrapped",
-    "Lit"
+    "Lit",
+    "Breathing"
 };
 
 const char* statusName(StatusKind s) {
@@ -277,6 +278,17 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
             case spells::IL_LIGHT:
                 r = resolveStatusSpell(dice, s, STATUS_LIGHT,
                                        s.durationRounds, t, false);
+                break;
+            // R320: the druid water breathing -
+            // the status mark (the row saves not,
+            // 60 rounds); the breath fold rides
+            // resolveCast. The airy water, shape
+            // change and wish variants stay
+            // recorded (not in the registry).
+            case spells::DR_WATER_BREATHING:   // R320
+                r = resolveStatusSpell(
+                    dice, s, STATUS_WATERBREATHING,
+                    s.durationRounds, t, false);
                 break;
             case spells::MU_CHARM_PERSON:
             case spells::MU_CHARM_MONSTER:   // R80

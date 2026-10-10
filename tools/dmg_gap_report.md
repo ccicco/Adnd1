@@ -7358,6 +7358,25 @@ kinds - fixed alongside). The census
 moves 245 -> 246 with the R319
 audit.
 
+R320 the breathing aids: the R311
+recorded-notes charge - the druid
+water breathing spell (a new
+STATUS_WATERBREATHING at the
+engine, the resolveCast fold in
+the water fight - the R319 light
+pattern) and the III.A potion (the
+claim layer, the R319 helm
+pattern, the uwdraught save line;
+no drowning site exists - the
+prints are the charge). The mud
+cloud (d6+6 rounds after the
+movement stops - no movement-
+stop notion) and the seaweed/
+shoal reducers (no seaweed or
+shoal tile) stay recorded. The
+census moves 246 -> 247 with the
+R320 audit.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

@@ -212,6 +212,9 @@ struct Character {
     // (the claim layer; quintuples the water
     // sight - the R311 helm pin)
     bool uwHelm = false;
+    // R320: the Potion of Water Breathing held
+    // (the claim layer; the pool fight print)
+    bool uwDraught = false;
 
     // R299: the recorded weapon proficiency slots
     // (the PHB Weapon Proficiency Table). The kit
@@ -1608,6 +1611,24 @@ inline bool claimUwHelm(Character& c, const std::string& name,
         std::string::npos)
         return false;
     c.uwHelm = true;
+    return true;
+}
+
+// --------------------------------------------------------------------------
+// R320: claim a Potion of Water Breathing for a
+// member (the claimUwHelm pattern) - one draught
+// per member, the first living taker wins; every
+// other misc stays appraised.
+// --------------------------------------------------------------------------
+inline bool claimUwDraught(Character& c,
+                           const std::string& name,
+                           int qty) {
+    if (c.hp <= 0 || qty != 1 || c.uwDraught)
+        return false;
+    if (name.find("Potion of Water Breathing") ==
+        std::string::npos)
+        return false;
+    c.uwDraught = true;
     return true;
 }
 

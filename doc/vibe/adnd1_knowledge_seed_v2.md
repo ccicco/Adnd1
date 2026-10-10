@@ -309,6 +309,28 @@ R172 were already dropped at the R171b/R172 era cut; git
   second-round regression check (the
   hold must survive two ticks).
 
+- R319 landed 2026-10-10: commit
+  c98c923, census 246, the underwater
+  vision multiples (see Current state
+  above). RED then GREEN: the build
+  caught the W2/W3 audit calls -
+  resolveCast sat private. Lessons: (1)
+  a public seam needs a PUBLIC
+  declaration - the partyMutable comment
+  promised cast access, the declaration
+  never moved (the r319b fix); (2) the
+  sandbox has no compiler - a C++
+  visibility error can only surface at
+  the Termux build, and the census
+  cascade (every audit appears 0 times)
+  means the build died before the
+  battery ran; (3) the light rows save
+  not, so the W scenarios stayed draw-
+  independent through the fix; (4) the
+  latent kStatusNames shortfall (10
+  names for 14 kinds) was found and
+  fixed by the survey, before it bit.
+
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

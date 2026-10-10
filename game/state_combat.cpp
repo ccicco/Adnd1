@@ -126,6 +126,18 @@ void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std
                     log.add(ibuf);
                 }
             }
+            // R320: the breathing aids - the
+            // carried draught holds (the claim
+            // layer); the spell fold rides
+            // resolveCast (the R319 light
+            // pattern); no drowning site
+            // exists - the print is the charge
+            for (const auto& c : party.members)
+                if (c.hp > 0 && c.uwDraught) {
+                    log.add("The draught of water breathing"
+                            " holds.");
+                    break;
+                }
         }
         // R141: the opening range is geometry - a room fight
         // opens at the chamber's longest interior dimension

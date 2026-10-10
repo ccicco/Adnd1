@@ -870,6 +870,20 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
                 std::to_string(m_visionFt) +
                 " feet.");
     }
+
+    // R320: the breath fold - the druid water
+    // breathing spell in a water fight marks
+    // the company (the R311 recorded-notes
+    // charge; no drowning site exists - the
+    // print IS the charge, the R319 light
+    // pattern).
+    if (id == spells::DR_WATER_BREATHING &&
+        caster.team == 0 && m_waterFight &&
+        !m_breathActive) {
+        m_breathActive = true;
+        logLine("The company breathes water"
+                " freely!");
+    }
 }
 
 // ----------------------------------------------------------------------------
