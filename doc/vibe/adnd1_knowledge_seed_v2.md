@@ -1,9 +1,9 @@
 ---
 name: adnd1-delivery
-description: How Adnd1 splice rounds reach Termux - the delivery format, the run ritual with md5 gates, and the hard-won lessons (R34-R312 era; the underwater seam era is open)
+description: How Adnd1 splice rounds reach Termux - the delivery format, the run ritual with md5 gates, and the hard-won lessons (R34-R313 era; the underwater seam era is open)
 ---
 
-# Adnd1 delivery protocol (current practice, R312 era)
+# Adnd1 delivery protocol (current practice, R313 era)
 
 Rebuilt at the R312 fresh start (v2). The full pre-restart
 history (rounds R172-R312 verbose, every lesson in context) is
@@ -163,16 +163,52 @@ R172 were already dropped at the R171b/R172 era cut; git
   data-driven (append a row, not a re-carve); when a sourcebook
   arc opens, it gets its own gap report against the same engine
   conventions.
-- Open threads: a deeper underwater layer (the vision decay, the
-  uw combat pins, a breathing mechanic), a strength
-  weight-allowance accessor (would un-caller-feed the R311 cap),
-  waterborne encounter wiring, or any fresh seam / sourcebook gap
-  report - next round is user choice.
+- R313 landed 2026-10-10: commit e6751ff, census 239, THE
+  UNDERWATER FIGHT (every chargeable open thread at once):
+  rules/uwfight.h (the seam - uwCrossCapLbs the R311 20-lb cap
+  fed by the R153 strWeightAllowGp ladder, un-caller-fed;
+  uwCrossLoadBars; uwStrikeAllowed thrusting-only;
+  uwMissileBarred total - no special crossbow pinned) wired at
+  the R312 crossing: the enterWater load gate (a living member
+  past the strength-fed cap bars the company, the bump
+  convention; the JUDGMENT - the surface paragraph carries no
+  load bar, the movement paragraph folds onto the crossing);
+  the water fight (ai/actor setWaterFight + the public
+  waterStrikeAllowed probe - the crushing and cleaving swings
+  fail; the bare fists, the monk open hand and the monsters
+  outside the gate); the combatShoot/combatThrow bars in the
+  pool. NOT charged (recorded in the seam header): the vision
+  decay (no engine vision layer), the breathing aids (recorded
+  notes, no print pin), the aquatic first strike and nets (no
+  aquatic monster roster). Audits R313a (seam, audit_eval
+  verified bad 0, 105 asserts) + R313 (engine, replica-walked
+  seeds).
+- Open threads: the vision decay seam (needs an engine vision
+  layer first), a breathing mechanic (needs a print pin), the
+  aquatic first strike and nets (need an aquatic monster
+  roster), the special crossbow (unpins the missile bar),
+  waterborne encounter wiring, or any fresh seam / sourcebook
+  gap report - next round is user choice.
 
 ## Round state (update each land)
 
 - R312 + R312b landed 2026-10-10: commit 8661437, census 237
   (the flooded crossing - see Current state above).
+- R313 landed 2026-10-10: commit e6751ff, census 239, the
+  underwater fight (see Current state above). GREEN on the
+  FIRST preflight (no b-round). Lessons: (1) the include-chain
+  grep earned its keep AGAIN pre-delivery - state_dungeon.cpp
+  called the uwfight accessors with no include (the R312b bite
+  class, caught in the sandbox, not by preflight); (2) splice
+  patch COUNT asserts must track the lettered patches (a patch
+  g assert read 8 with 7 landed - count the letters, not the
+  goal); (3) post-patch chronicle asserts must quote the line
+  AS WRAPPED (the 57-col gap report wraps mid-phrase - assert
+  a wrapped fragment, never the unwrapped sentence); (4) an
+  actor.h anchor line with an apostrophe in a comment (the 10'
+  bands line) cannot serve an apostrophe-free content block -
+  pick another anchor (the R175 apostrophe rule cuts both
+  ways).
 
 ## Knowledge maintenance
 
