@@ -7114,6 +7114,43 @@ engine site charges them yet; the
 battery census moves 232 -> 233 with
 the R309 audit.
 
+R310 the sage subsection pin (the
+last R307 open box paid - the dmg
+ledger clears): rules/sage.h (the
+grenade.h pattern): the
+fields-count table (6 dice bands);
+the fields of study - 7 fields
+carrying 68 special knowledge
+categories (the OCR column
+interleave resolved per the
+compilation cross-read:
+Chemistry restored to the
+physical universes, Trees
+restored to flora); the
+chance-of-knowing bands (4
+scopes by 3 natures, the
+out-of-fields exacting cell
+pinned -1, the scrambled 57-60
+major specific cell recovered);
+the sage characteristics (the
+ability dice rows, the nine
+alignment bands, 8d4 hit
+points, the spell limits and
+kinds); the offer table (200 to
+1,200 g.p. twice, the 20,000
+g.p. minimum); the efficiency
+milestones with the
+improvement ladder; the
+information discovery time and
+cost table (the rounds, hours
+and days bands, 100 to 1,000
+g.p. per day, the free-spread
+thresholds, the 51-100 percent
+unknown band at half cost). No
+engine site charges them yet;
+the battery census moves 233 ->
+234 with the R310 audit.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
@@ -8252,17 +8289,51 @@ cityRuffianKind), audited by the
       stays open below.
       Census 233. The
       ledger holds ONE open item.
-- [ ] **The sage subsection (upload
-      line 2110) - OPENED R307:** the
-      fields of study with the special
-      knowledge categories, the exact
-      versus learned question chances
-      and the location prose. A data
-      candidate: the fields and chance
-      bands pin dm/-side (the
-      appendixa.h pattern); no town
-      consultation site exists - the
-      judgment waits for the pin round.
+- [x] **The sage subsection (upload
+      line 2110) - PINNED R310:**
+      rules/sage.h (the grenade.h
+      pattern): the fields-count
+      table - 6 dice bands; the
+      fields of study - 7 fields
+      carrying 68 special knowledge
+      categories; the
+      chance-of-knowing table - 4
+      scopes by 3 natures with the
+      none cell pinned -1 (the
+      scrambled major row recovered
+      per the compilation
+      cross-read, which also
+      restores Chemistry to the
+      physical universes and Trees
+      to flora from the OCR column
+      interleave); the sage
+      characteristics - the six
+      ability dice rows, the nine
+      alignment bands, 8d4 hit
+      points, the spell limits (d4
+      + 2 for the 3-6 maximum, 1-4
+      spells per level, 1 ready);
+      the offer table (200 to 1,200
+      g.p. twice and the 20,000
+      g.p. minimum); the efficiency
+      economics (20000, 60000 and
+      100000 g.p. at 50, 90 and 100
+      percent) with the improvement
+      ladder; the information
+      discovery time and cost table
+      (the lone hours cell the
+      special-category specific
+      band; costs 100 to 1,000 g.p.
+      per day; the free-spread
+      thresholds 20 and 80 percent;
+      the 51-100 unknown band at
+      half cost). The hiring and
+      location prose rides as
+      recorded notes; no engine
+      site charges them yet (no
+      sage consultation layer).
+      Census 234. The ledger holds
+      ZERO open items.
 
 ## Out of scope by design
 
