@@ -36,6 +36,8 @@ enum StatusKind : int {
     STATUS_FIRESHIELD,   // R81: Fire Shield - melee reflect
     STATUS_ANTIVENOM,    // R81: Slow/Neutralize Poison - save bonus
     STATUS_POLYMORPHED,  // R82: Polymorph Other - held-like
+    STATUS_ENTANGLED,   // R318: the hooked-net entrap
+                           // (MM sahuagin - torn at STR 16+)
     STATUS_COUNT
 };
 

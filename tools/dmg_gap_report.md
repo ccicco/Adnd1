@@ -7320,6 +7320,22 @@ gates, raceInfravisionFeet reads). The
 census moves 243 -> 244 with the R317
 audit.
 
+R318 the net entrap layer: the MM
+sahuagin hooked nets charge the
+R315 throwers - a new STATUS_ENTANGLED
+(the held precedent) bars action; a
+volley hit entraps instead of wounding
+(resolveMissile, nets are used to
+entrap); the entrap is permanent until
+torn (the zero-round convention) and a
+strength of 16 or greater tears free
+at the round start (uwNetEntrapStrTear,
+the stepRound fold before the end
+conditions); weaker victims stay held -
+no escape roll exists, the print bars
+it. The census moves 244 -> 245 with
+the R318 audit.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

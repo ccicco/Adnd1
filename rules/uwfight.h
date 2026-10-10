@@ -134,4 +134,14 @@ inline int uwDeepCrossbowAllowed() {
     return 1;
 }
 
+// The net entrap: the MM grasp-and-tear
+// strength (the sahuagin hooked nets -
+// escape virtually impossible for victims
+// not able to grasp and tear with a
+// strength of 16 or greater; the R318
+// stepRound tear fold reads this pin).
+inline int uwNetEntrapStrTear() {
+    return 16;
+}
+
 }  // namespace rules

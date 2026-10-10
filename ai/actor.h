@@ -196,6 +196,10 @@ struct Actor {
     // round 1, then melees. Set by the app from the monster key
     // (the Lua registry data carries no ranged flag).
     bool  monsterRanged = false;
+    // R318: the net-entrap mark - the R315 net
+    // throwers entrapt on a volley hit (the MM
+    // hooked nets; resolveMissile reads this).
+    bool  netVolley = false;
     // R42: rounds of missile fire left before the range closes.
     // Set from the monster key's implied weapon when the app
     // marks monsterRanged; each volley round decrements it, and

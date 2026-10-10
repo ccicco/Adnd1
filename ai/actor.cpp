@@ -212,6 +212,7 @@ bool Actor::canAct() const {
     if (hasStatus(spelleffects::STATUS_SLEEP)) return false;
     if (hasStatus(spelleffects::STATUS_HELD)) return false;
     if (hasStatus(spelleffects::STATUS_POLYMORPHED)) return false;
+    if (hasStatus(spelleffects::STATUS_ENTANGLED)) return false;
     if (psionicStunned) return false;   // R46
     return true;
 }
@@ -930,6 +931,24 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
         return;
     }
 
+    // R318: the net volley entrap (the MM
+    // print) - a net hit entraps the victim,
+    // no wound (nets are used to entrap); the
+    // hooks hold until torn (the round-start
+    // fold re-asserts the mark every round;
+    // a zero-round status dies at the
+    // round-end tick - the R318b lesson)
+    if (attacker.netVolley && defender.alive()) {
+        spelleffects::StatusEffect st;
+        st.kind = spelleffects::STATUS_ENTANGLED;
+        st.roundsRemaining = 2;   // until torn
+        defender.addStatus(st);
+        logLine(defender.name +
+                " is entrapped in the hooked"
+                " net!");
+        return;
+    }
+
     int dmg;
     if (attacker.isCharacter) {
         const items::WeaponDef& w = items::weapon(fired.id);
@@ -1007,6 +1026,47 @@ int Encounter::stepRound() {
     // after 5 rounds the foes are at sword's length and party
     // missile fire is impossible (rangeOpen gate)
     if (m_distance > 0) --m_distance;
+
+    // R318: the net-entrap tear (the MM print)
+    // - a strength of 16 or greater grasps and
+    // tears the hooked net at the round start,
+    // BEFORE the end conditions (a strong member
+    // tears before the stalemate read); the
+    // weaker victims stay held (the hooks - no
+    // escape roll exists, the print bars it)
+    for (int t = 0; t < 2; ++t) {
+        auto& team = t == 0 ? m_party : m_monsters;
+        for (auto& a : team) {
+            if (!a.alive()) continue;
+            if (!a.hasStatus(
+                    spelleffects::STATUS_ENTANGLED))
+                continue;
+            if ((int)a.str >=
+                    rules::uwNetEntrapStrTear()) {
+                for (auto& st : a.statuses)
+                    if (st.kind ==
+                        spelleffects::
+                        STATUS_ENTANGLED)
+                        st.kind =
+                            spelleffects::
+                            STATUS_NONE;
+                a.tickStatuses();
+                logLine(a.name +
+                        " tears free of the net!");
+            } else {
+                // R318b: the hooks re-assert -
+                // a held victim stays held; the
+                // round-end tick would strip a
+                // spent mark, the fold restores
+                // it (only the tear frees)
+                for (auto& st : a.statuses)
+                    if (st.kind ==
+                        spelleffects::
+                        STATUS_ENTANGLED)
+                        st.roundsRemaining = 2;
+            }
+        }
+    }
 
     // end conditions
     if (teamAlive(0) == 0) return 1;   // monsters win

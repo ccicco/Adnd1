@@ -52,6 +52,8 @@ void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std
                  monsterKey == "locathah" ||
                  monsterKey == "merman")) {
                 m.monsterRanged = true;
+                m.netVolley = true;   // R318: the
+                                // entrap mark (actor.cpp)
                 m.rangedRounds =
                     monsterKey == "sahuagin"
                         ? rules::uwNetThrowSahuaginFt() / 10

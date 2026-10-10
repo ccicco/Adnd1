@@ -274,6 +274,19 @@ R172 were already dropped at the R171b/R172 era cut; git
   items, no depth notion (the light/helm
   multiples and the decay stay recorded).
 
+- R317 landed 2026-10-10: commit f98caa7,
+  census 244, the infravision fold (see
+  Current state above). GREEN on the FIRST
+  preflight. Lessons: (1) the survey kill-
+  list discipline paid - no STATUS_LIGHT,
+  no named pack items, no depth notion,
+  so the fold charged only the pins that
+  existed (uwInfravisionSameAsDungeon meets
+  raceInfravisionFeet); (2) no new state -
+  the print rode the R316 site; the round
+  stayed small because the data was
+  already pinned and regtested.
+
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
