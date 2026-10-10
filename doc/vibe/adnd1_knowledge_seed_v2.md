@@ -1,0 +1,154 @@
+---
+name: adnd1-delivery
+description: How Adnd1 splice rounds reach Termux - the delivery format, the run ritual with md5 gates, and the hard-won lessons (R34-R312 era; the underwater seam era is open)
+---
+
+# Adnd1 delivery protocol (current practice, R312 era)
+
+Rebuilt at the R312 fresh start (v2). The full pre-restart
+history (rounds R172-R312 verbose, every lesson in context) is
+backed up in the repo at doc/vibe/adnd1_knowledge_backup_v2.md
+(public: readable via the raw URL or the GitHub connector) -
+reference it on demand, never load it wholesale. Rounds before
+R172 were already dropped at the R171b/R172 era cut; git
+(ccicco/Adnd1, main) carries every commit.
+
+## Delivery format
+
+- The splice is delivered as a code canvas (e.g. the r312-splice
+  canvas). The user opens it, selects all, copies, and pastes ONCE
+  into nano: `nano tools/rNNN_splice.py`. The paste itself happens
+  on the Termux side BEFORE the ritual; NEVER write the paste step
+  as a ritual command (bit three times), and keep all paths
+  repo-root relative ./tools/...
+- Paste capacity is user-VERIFIED (R312 era): nano takes huge
+  pastes fine (a 1 MB paste proven); CAT is what chokes. NEVER
+  deliver repo files via cat heredoc on Termux - the old
+  chunked-heredoc format is dead; canvas + one nano paste
+  scales to any size.
+- The ritual is delivered as ONE code block with expected values
+  as inline # comments, AFTER the canvas reference (order
+  matters):
+
+  md5sum ./tools/rNNN_splice.py      # advisory (the paste drifts)
+  python3 -m py_compile ./tools/rNNN_splice.py && echo COMPILE-OK
+  python3 ./tools/rNNN_splice.py     # expect: ALL OK (applied N, already 0)
+  python3 ./tools/rNNN_splice.py     # expect: ALL OK (applied 0, already N)
+  md5sum rules/<created file>        # THE REAL GATE (when a file is created)
+  ./tools/preflight.sh               # expect GREEN + new audits bad 0 + AUDIT CENSUS: N
+  git add -A && git commit -m "RNNN: ..." && git push
+
+- The pasted splice md5 always drifts (nano artifacts); the splice
+  writes all created content programmatically with chr(10), so the
+  created files are byte-exact. The REAL gates are: py_compile,
+  the applied/already counts, the created-file md5, and preflight.
+
+## Recovery ritual (re-running a FIXED splice after a bad land)
+
+- FIRST rm the created file: the idempotence marker makes a broken
+  file report "already" and stay broken. Then expect
+  "applied 1, already N-1" on rerun.
+
+## Acid-test checklist (before delivering any splice)
+
+- Fresh tarball md5 must match HEAD before work (codeload:
+  https://codeload.github.com/ccicco/Adnd1/tar.gz/<sha>).
+- Idempotent (marker-based); assert after EVERY patch (the R142
+  lesson); the tail ALWAYS prints; ZERO literal backslash bytes
+  (BS = chr(92) only on printf continuation lines); no apostrophe
+  inside single-quoted content strings (Q = chr(39)).
+- Line bounds: 78 the created header, 76 regtest, 57 the gap
+  report.
+- Markers: a marker must be unique to the NEW text and ABSENT from
+  the PRE-patch file (R178c), and for created headers a ZERO-PARAM
+  accessor line (R311 - a parametered first choice never matched
+  the already path).
+- Apply twice on a fresh tree (applied N / already 0, then 0 / N);
+  a second virgin tree + splice must be byte-identical (diff -r).
+- Every static audit array: declared size == initializer count AND
+  every initializer line comma-terminated (R171b + R172).
+- R207c (THE gate): run `python3 tools/audit_eval.py RNNNa` and
+  demand "verified bad 0" - not UNVERIFIED - before delivery
+  (YELLOW = RED). New seams are written in the grenade.h evaluable
+  subset (constants, ternaries, clamp chains, tables, 1D arrays,
+  locals, cross-calls, C-truncation division, early returns;
+  no structs/engine objects). audit_eval loads all rules/*.h, so
+  cross-header calls resolve.
+- Engine audits: replica-walk every seeded scenario in Python
+  FIRST (the xorshift64* rng with rejection-sampling below; the
+  R304 discipline) and only then write the expected values;
+  simulate EVERY accessor the audit probes, including patched
+  engine functions (R181); pre-assert every roster index the audit
+  probes (R182); copy every engine identifier character-for-
+  character from the actual header, never comments or memory
+  (R180b); audit blocks are located by printf("LABEL audit: bad
+  and land between the prior round tail and the next head comment.
+- Census: assert the exact 'audit: bad' count before and after
+  (N -> N+1 per printf added); census line exactly once.
+- Brace/paren delta symmetric on every touched .cpp/.h.
+- Mutation test RED->GREEN on both sides (header value + audit
+  expected) before delivery.
+- THE INCLUDE-CHAIN RULE (R312b, third bite): every rules::
+  accessor a new TU calls needs its header IN that TU - grep the
+  include chain for each called accessor, never assume
+  transitivity (appstate.h does NOT carry the rules/ headers).
+- Preflight RED with ONE compile error and a wall of CENSUS FAILs
+  downstream = fix the compile, not the census (R179b/R180b/R227/
+  R312b). Engine-round preflight RED needs an rNNNb fix splice
+  BEFORE any push; both splices land in ONE commit.
+- No C++ compiler in the assistant sandbox: the compile proof is
+  the Termux preflight itself; eyeball every generated C++ span.
+- /tmp is wiped between turns and the splice working copy can be
+  wiped by turn-start re-downloads: canvases are the durable
+  copies (recover the body with tail -n +7 CANVAS.md). Deliver
+  canvases by building in /tmp and copying ONCE, then verify the
+  md5 across separate tool calls (the R310 guard revert;
+  chunked-edit fallback if it bites).
+
+## Current state (the seam era)
+
+- R311 landed: rules/underwater.h - the DMG UNDERWATER
+  ADVENTURES pins (surface swim, movement, vision, combat) as
+  data; the spell lists ride R168 (rules/uwspells.h).
+- R312 + R312b landed 2026-10-10: commit 8661437, census 237,
+  THE FLOODED CROSSING - the first ENGINE SITE the underwater
+  pins charge: rules/swimcross.h (the seam: swimArmorSwims 0/1/2
+  swim with studded leather reading METAL, the JUDGMENT;
+  swimMagicArmorSwims the dog paddle; swimCanSwim plus > 0 dog
+  paddles; swimLoadBeyondArmorLbs 1 lb = 10 g.p. with the worn
+  armor excluded; the one-roll-per-crossing, one-pool-per-delve
+  and 2-3-side pool JUDGMENTS); world/map.h TILE_WATER = 5
+  (walkable); placeFlood (a 2-3 x 2-3 ALL-FLOOR sheet clear of
+  the stairs and the entry, guard 500, draw order x,y,w,h FIXED)
+  called in newDungeon AFTER placeLockedDoors; enterWater (the
+  first living member failing the gate blocks with the bump
+  convention - turn, log, wanderCheck -> spawn; success logs the
+  plunge and each living swimmer rolls below(100) against
+  uwSurfaceDrownPct); adnd1.cpp gates dry-land -> water only and
+  paints the water brush. Audits R312a (seam) + R312 (engine,
+  seven replica-walked seeds).
+- The dmg gap report (tools/dmg_gap_report.md) holds ZERO open
+  items; the PHB arc is complete; every round appends its
+  chronicle paragraph to that report (no box flips pending).
+- The R298-R312 seam era pattern: pin the print as an evaluable
+  rules/ header (grenade.h subset), wire the ENGINE SITE in
+  state_dungeon.cpp (the R304 locked-door precedent: placement
+  guard loop + bump convention + wanderer ride), audit twice
+  (RNNNa seam for audit_eval, RNN engine on replica-walked
+  seeds), census +1 per audit.
+- STANDING SCOPE (user, 2026-10-05): more classes later from
+  Dragon Magazine, Unearthed Arcana (cavalier, barbarian,
+  thief-acrobat), campaigns, box sets - the class registry stays
+  data-driven (append a row, not a re-carve); when a sourcebook
+  arc opens, it gets its own gap report against the same engine
+  conventions.
+- Open threads: a deeper underwater layer (the vision decay, the
+  uw combat pins, a breathing mechanic), a strength
+  weight-allowance accessor (would un-caller-feed the R311 cap),
+  waterborne encounter wiring, or any fresh seam / sourcebook gap
+  report - next round is user choice.
+
+## Round state (update each land)
+
+- R312 + R312b landed 2026-10-10: commit 8661437, census 237
+  (the flooded crossing - see Current state above).
