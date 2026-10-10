@@ -7089,6 +7089,31 @@ The phb report carries its own R307
 pass; no audit added -
 the battery census stays 231.
 
+R309 the hirelings cost tables pin (an
+engine round): the first R307 open box
+paid. rules/hirelings.h (the grenade.h
+pattern): the STANDARD table - 10 rows,
+every daily cost in silver, every
+monthly cost in its printed coin
+(exactly one monthly column nonzero);
+the EXPERT table - 33 rows, the special
+rows pinned -1 (negotiated: captain,
+lieutenant, serjeant, sage, ship crew,
+ship master, spy, steward/castellan)
+and the asterisk rows (the four 100
+g.p. rows: armorer, engineer-architect,
+jeweler-gemcutter, weapon maker) paying
+10 percent per job on top. The standard
+employment bands ride (1 in 6 long-term
+without a bonus, 3 in 6 with double or
+treble the daily wage). The compilation
+cross-read agrees on every cell but
+adds two OSRIC-sourced rows (cook,
+groom) - excluded per the R211 rule. No
+engine site charges them yet; the
+battery census moves 232 -> 233 with
+the R309 audit.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
@@ -8192,27 +8217,41 @@ Categories:
 cityRuffianKind), audited by the
       block. Census 92.
 
-- [ ] **Standard and expert hirelings
+- [x] **Standard and expert hirelings
       cost tables (the STANDARD
       HIRELINGS TABLE OF DAILY AND
       MONTHLY COSTS, upload line 1817;
       the EXPERT HIRELINGS TABLE OF
       MONTHLY COSTS IN GOLD PIECES,
-      upload line 1873) - OPENED R307:**
-      the R121 officers slice
-      and the R212 NPC spell prices
-      never carried the tables. A
-      data candidate: the daily and
-      monthly bands pin rules-side
-      (the R300 pattern - pure data;
-      no site charges them until a
-      round wires one). The expert
-      types prose and the employment
-      prose ride this box, and the PHB
-      HIRELINGS prose rides it too
-      (the hireling count is never
-      charisma-limited; the loyalty
-      discussion is the henchmen one).
+      upload line 1873) - PINNED R309:**
+      rules/hirelings.h (the R300
+      pattern): the standard table -
+      10 rows, the daily costs in
+      silver, the monthly costs in the
+      printed coin (exactly one
+      monthly column nonzero per row);
+      the craft percent flags on
+      carpenter, leather worker and
+      tailor; the employment bands (1
+      in 6 long-term, 3 in 6 with a
+      double or treble daily-wage
+      bonus); the expert table - 33
+      rows, the mercenary soldier
+      block at rows 7-25, the special
+      rows pinned -1 and the asterisk
+      rows (the four 100 g.p. rows)
+      paying 10 percent per job. The
+      description prose (the armorer
+      skill bands and manufacture
+      times, the blacksmith output,
+      the jeweler bands, the race
+      multipliers) rides as recorded
+      notes; no engine site charges
+      them yet (no stronghold hiring
+      layer). The sage subsection
+      stays open below.
+      Census 233. The
+      ledger holds ONE open item.
 - [ ] **The sage subsection (upload
       line 2110) - OPENED R307:** the
       fields of study with the special
