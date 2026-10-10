@@ -382,6 +382,9 @@ static void onPartyMove(int dx, int dy) {
         if (fl >= 0) s.describeRoom(fl);
     }
 
+    // R301: an armed trap springs when the company steps in
+    s.checkTrapOnEntry();
+
     int roomIdx = s.occupiedRoomNear(s.party.x, s.party.y);
     if (roomIdx >= 0) {
         s.spawnRoomEncounter(roomIdx);

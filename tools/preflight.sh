@@ -46,9 +46,17 @@ echo "== [1/5] syntax gate: the build's complement (R99/R107) =="
 # joins the gate here.
 # adnd1.cpp stays skipped: the Win32/GDI shell needs
 # windows.h (MSVC verify pending, backlog).
+# R301: the engine audit drives live AppState
+# methods, so the battery build below now compiles
+# every game/*.cpp state TU and links
+# monsters/MonsterXp.cpp (xpForKill feeds
+# state_dungeon.cpp). The complement gate drops
+# game/*.cpp and MonsterXp.cpp from its loop (the
+# R107 NEW COVERAGE note above is the pre-R301
+# history); every TU still compiles exactly once.
 checked=0
-for f in game/*.cpp ai/*.cpp spelleffects/*.cpp \
-         monsters/MonsterXp.cpp treasuresim.cpp; do
+for f in ai/*.cpp spelleffects/*.cpp \
+         treasuresim.cpp; do
   if [ ! -f "$f" ]; then continue; fi
   checked=$((checked + 1))
   if ! clang++ -fsyntax-only -std=c++17 -I. "$f"; then
@@ -71,6 +79,10 @@ if g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
   dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \
   dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \
   abilities/abilities.cpp items/items.cpp ai/actor.cpp \
+  game/state_core.cpp game/state_dungeon.cpp \
+  game/state_combat.cpp game/state_town.cpp \
+  game/state_overland.cpp game/state_sea.cpp \
+  monsters/MonsterXp.cpp \
   spelleffects/spelleffects.cpp regtest.cpp \
   -o regtest -L"$PREFIX/lib" -llua5.4 && ./regtest | tee "$batfile"; then
   [ "${PIPESTATUS[0]}" = 0 ] || fail=1

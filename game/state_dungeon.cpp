@@ -1,5 +1,6 @@
 #include "appstate.h"
 #include "abilities/abilities.h"   // R120: listening (p.60)
+#include "rules/thieffunc.h"   // R301: the thief trap rolls
 
 // ---- restExplore ----
 void AppState::restExplore(){
@@ -235,6 +236,12 @@ int AppState::trapRoomNear(int px, int py, int radius) const{
     }
 
 // ---- springTrap ----
+// R301: the printed thief rolls - the R298
+// find/remove traps chances decide the
+// disarm (two percentile draws at or below
+// the adjusted chance; locate first, remove
+// second, one try each). The strike (save
+// vs death, 2d6) stays the R45 effect.
 void AppState::springTrap(int roomIndex){
         if (roomIndex < 0 ||
             roomIndex >= (int)occupancy.rooms.size())
@@ -244,7 +251,20 @@ void AppState::springTrap(int roomIndex){
 
         for (const auto& c : party.members) {
             if (c.hp <= 0 || c.classIndex != 3) continue;
-            if (rng.below(3) == 0) {
+            // R301: the printed find roll - percentile
+            // dice at or below the adjusted find/remove
+            // traps chance (the R298 tables; the draw
+            // runs in tenths, rules/thieffunc.h)
+            int find = (int)rng.below(1000);
+            if (!rules::thfAttemptSucceeds(find,
+                    rules::THF_TRAPS, c.level,
+                    c.race, (int)c.abilities.dex))
+                break;   // one thief attempt per trap
+            // the printed remove roll: separate, one try
+            int remove = (int)rng.below(1000);
+            if (rules::thfAttemptSucceeds(remove,
+                    rules::THF_TRAPS, c.level,
+                    c.race, (int)c.abilities.dex)) {
                 room.trap = 2;
                 // R125: the book's name for the snare
                 log.add(c.name + " spots the trap (" +
@@ -252,7 +272,11 @@ void AppState::springTrap(int roomIndex){
                         ") and disarms it.");
                 return;
             }
-            break;   // one thief attempt per trap
+            // located but not removed - it fires anyway
+            log.add(c.name + " spots the trap (" +
+                    dm::appendixg::trapName(room.trapKind) +
+                    ") - too late to disarm it!");
+            break;   // one try each, the print
         }
 
         room.trap = 2;
@@ -296,6 +320,21 @@ void AppState::springTrap(int roomIndex){
         if (!party.alive()) {
             log.add("GAME OVER - press N to roll a new party.");
         }
+    }
+
+// ---- checkTrapOnEntry ----
+// R301: the movement wire - the R45 springTrap
+// built the snare but nothing called it. The
+// shell step handler calls this on every step;
+// an armed trap in the chamber the company
+// stands in springs. The mode gate and the
+// location read live here so the battery can
+// drive the whole path.
+void AppState::checkTrapOnEntry(){
+        if (mode != MODE_EXPLORE) return;
+        int tr = trapRoomNear(party.x, party.y);
+        if (tr < 0) return;
+        springTrap(tr);
     }
 
 // ---- engageTrick ----

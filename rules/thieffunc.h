@@ -4,10 +4,11 @@
 // (the THIEF section, Premium 1e OCR
 // upload line 1620) and DEXTERITY TABLE II
 // (upload line 400) - a DATA-ONLY pin (the
-// R186 poetics precedent): the engine
-// performs no thief rolls; the tables, the
-// walkers and the adjusted-chance seam are
-// data for the future roll round.
+// R186 poetics precedent), WIRED R301: the
+// find/remove traps rolls now run at the
+// trap site (the thfAttemptSucceeds seam);
+// the other functions wait for engine sites
+// that do not exist yet.
 //
 // The take table: the base chance to perform
 // each of the eight thief functions (pick
@@ -166,9 +167,9 @@ inline int thfChanceTenths(int fn, int level,
     // adjustments (the printed notes: the
     // adjustments are additional pluses; a
     // percentile roll at or below the chance
-    // succeeds). DATA-ONLY - nothing calls
-    // this seam yet (the engine performs no
-    // thief rolls; a future round wires them)
+    // succeeds). R301: the trap site rolls
+    // this seam (the find and the remove
+    // draws); the other functions stay data
     return thfTakeTenths(fn, level) + 10 *
         (thfRaceAdj(race, fn) + thfDexAdj(dex, fn));
 }
@@ -209,6 +210,36 @@ inline int thfNoteRacialAdditional() {
     // the racial adjustments are additional
     // pluses on the adjusted base
     return 1;
+}
+
+// R301: the printed percentile roll - a score
+// equal to or less than the chance succeeds.
+// The engine draws the roll in TENTHS on the
+// 0-999 band (0.0 through 99.9 percent); the
+// boundary reads strict less-than, so a
+// printed whole-percent chance keeps its
+// exact printed odds (a 20 percent chance owns
+// exactly 200 of the 1000 draws) and the
+// printed climb walls decimal reads true
+// (99.1 percent owns 991). JUDGMENT: the
+// book rolls two percentile dice on a 1-100
+// scale; the tenths band is the same
+// distribution at the printed resolution.
+inline bool thfPercentileSucceeds(int rollTenths,
+                                  int chanceTenths) {
+    return rollTenths < chanceTenths;
+}
+
+// R301: one printed attempt - the percentile
+// draw against the adjusted chance. The trap
+// site (the find roll and the remove roll)
+// reads this seam; one try each, the print.
+inline bool thfAttemptSucceeds(int rollTenths, int fn,
+                               int level, int race,
+                               int dex) {
+    return thfPercentileSucceeds(
+        rollTenths,
+        thfChanceTenths(fn, level, race, dex));
 }
 
 }  // namespace rules

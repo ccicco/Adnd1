@@ -1305,11 +1305,19 @@ struct AppState {
     // springs it by walking in)
     int trapRoomNear(int px, int py, int radius = 0) const;
 
-    // R45: spring the dart trap in a room. A thief in the
-    // company may spot and disarm it first (1-in-3, the
-    // find/remove-trades instinct - simplified); otherwise a
-    // random living member saves vs death or eats 2d6.
+    // R45: spring the dart trap in a room. R301: a thief
+    // in the company rolls the printed find/remove traps
+    // chances first (two percentile draws at or below the
+    // adjusted chance - locate, then remove, one try
+    // each); otherwise a random living member saves vs
+    // death or eats 2d6.
     void springTrap(int roomIndex);
+
+    // R301: the movement wire - the shell step calls
+    // this; an armed trap in the chamber the company
+    // stands in springs (springTrap gains its first
+    // caller).
+    void checkTrapOnEntry();
 
     // R128: apply a special room's mechanical trick effect
     // (the first-effects slice: releases coins/gems/magic

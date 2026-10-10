@@ -876,9 +876,9 @@ census stays 213.
       TABLE II (the THIEF and DEXTERITY
       sections) - PINNED R298:**
       rules/thieffunc.h CREATED (a DATA-ONLY
-      pin, the R186 poetics precedent - the
-      engine performs no thief rolls; the
-      seam waits for a future roll round) -
+      pin, the R186 poetics precedent - WIRED
+      R301: the trap site now rolls the seam;
+      the other functions stay data) -
       the take table (upload line 1620) runs
       thief levels 1 through 17 across the
       eight functions (pick pockets, open
@@ -913,6 +913,44 @@ census stays 213.
       table cell by cell, the racial and DEX
       rows, the clamps and the printed
       example. Census 215.
+
+- [x] **The thief trap rolls wired - WIRED
+      R301:** the R298 seam gains its first
+      callers and the R45 springTrap its
+      first caller ever.
+      rules/thieffunc.h gains
+      thfPercentileSucceeds (the printed
+      equal-or-less convention on the 0-999
+      tenths band - a whole-percent chance
+      owns its exact thousandth slice and
+      the 99.1 climb walls decimal reads
+      true) and thfAttemptSucceeds (the
+      fold over thfChanceTenths).
+      springTrap retires the flat 1-in-3
+      disarm: the thief rolls the printed
+      find and remove chances (two separate
+      percentile draws, one try each;
+      located but not removed fires - the
+      too-late line) and the new
+      checkTrapOnEntry springs an armed
+      trap in the chamber the company
+      stands in (the shell step wire,
+      adnd1.cpp; the MODE_EXPLORE gate).
+      The other seven functions stay data
+      (no engine site rolls them yet:
+      pick pockets, open locks, move
+      silently, hide in shadows, hear
+      noise, climb walls, read
+      languages). The R301a battery audit
+      walks the percentile boundary and
+      the folded chances (evaluable -
+      verified by audit_eval); the R301
+      engine audit drives every
+      springTrap branch on seeded
+      sequences (the battery build now
+      links the game state and xp
+      sources). Census 221. The ledger
+      holds ZERO open items.
 
 ## R299 the party recordings round (the third
 scope pass rides)
