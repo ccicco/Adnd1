@@ -69,6 +69,7 @@
 #include "../rules/bard.h"  // R236: the poetics ferocity
 #include "../rules/weaponprof.h"  // R297: the proficiency table
 #include "../rules/thieffunc.h"  // R302: the silence percentile
+#include "../rules/uwfight.h"  // R313: the underwater strike gate
 
 #include <algorithm>
 #include <cstdio>
@@ -291,6 +292,19 @@ static bool giantClassFamilyMatch(const std::string& name) {
     return false;
 }
 
+// ---- waterStrikeAllowed ----
+// R313: the R311 underwater strike pin
+// probe (the seam, rules/uwfight.h) - the
+// gate decision for one attacker (see
+// actor.h).
+bool Encounter::waterStrikeAllowed(const Actor& a) const{
+        if (!a.isCharacter || !m_waterFight) return true;
+        if (a.weaponThrown) return true;
+        if (a.subclass == rules::SUB_MONK) return true;
+        return rules::uwStrikeAllowed(
+            (int)items::weapon(a.weapon.id).wclass) != 0;
+    }
+
 int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
     if (!attacker.canAct() || !defender.alive()) return 0;
 
@@ -303,6 +317,21 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
 
     int toHit = attacker.toHit(defender);
     int adj   = attacker.hitAdjustment(defender);
+    // R313: the underwater combat pin (R311) at
+    // the water fight: only the thrusting
+    // weapons strike underwater - the crushing
+    // and cleaving swings fail (the print; the
+    // aquatic first strike, the nets and the
+    // free-action notes stay data). The gate
+    // rides the public waterStrikeAllowed probe.
+    if (!waterStrikeAllowed(attacker)) {
+        const items::WeaponDef& w =
+            items::weapon(attacker.weapon.id);
+        logLine(attacker.name + " swings " + w.name +
+                 " - the water turns the stroke.");
+        return 0;
+    }
+
     // R232: backstab - a thief-group character striking a
     // surprised foe (round one, the monster side surprised)
     // strikes from behind: +4 on the die (the R187 pin).

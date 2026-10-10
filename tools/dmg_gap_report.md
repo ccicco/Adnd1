@@ -7218,6 +7218,36 @@ yet); the spell lists ride R168. The
 battery census moves 235 -> 237 with
 the R312a seam and R312 engine audits.
 
+R313 the underwater fight (every
+chargeable open thread at once): rules/
+uwfight.h (the seam - the strength-fed
+crossing cap uwCrossCapLbs, the R311
+20-lb equipment pin fed by the R153
+weight-allowance ladder, with the load
+gate; the thrusting-only strike
+uwStrikeAllowed; the missile bar - no
+special crossbow is pinned, the bar is
+total) wired at the R312 crossing: the
+laden member past the cap bars the
+company (the bump convention; the
+judgment - the surface paragraph carries
+no load bar, the movement paragraph
+folds onto the crossing), the water
+fight (ai/actor.cpp setWaterFight plus
+the waterStrikeAllowed probe - the
+crushing and cleaving swings fail, the
+bare fists, the monk open hand and the
+monsters outside the gate) and the
+missile and hurl bars in the pool
+(state_combat.cpp). The vision decay
+and the breathing pins stay data (no
+engine vision layer, no breathing print
+pin); the aquatic first strike and the
+nets stay data (no aquatic monster
+roster). The census moves 237 -> 239
+with the R313a seam and R313 engine
+audits.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

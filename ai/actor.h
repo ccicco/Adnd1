@@ -497,6 +497,23 @@ public:
         m_distance = bands;
     }
 
+    // R313: the water fight - the company
+    // stands in the flood pool (the app sets
+    // this at combat start); the R311
+    // underwater combat pins then gate the
+    // party strikes (waterStrikeAllowed).
+    void setWaterFight() { m_waterFight = true; }
+
+    // R313: the underwater strike probe (the
+    // R311 combat pin): in a water fight a
+    // party member strikes only with a
+    // thrusting weapon - the print: the
+    // crushing and cleaving swings fail. The
+    // bare fists of a hurled weapon and the
+    // monk open hand are not wielded weapons,
+    // and monsters are outside the gate.
+    bool waterStrikeAllowed(const Actor& a) const;
+
 private:
     std::vector<Actor> m_party;
     std::vector<Actor> m_monsters;
@@ -521,6 +538,8 @@ private:
     int  m_throwMember = -1;                // R36 (-1 = none)
 
     bool m_teleported = false;              // R83: Teleport escape
+
+    bool m_waterFight = false;   // R313: the water fight
 
     int  m_distance = 5;   // R43: engagement range in 10' bands
 

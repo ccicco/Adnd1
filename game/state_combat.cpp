@@ -1,4 +1,5 @@
 #include "appstate.h"
+#include "../rules/uwfight.h"  // R313: the underwater bars
 
 // ---- partyActors ----
 std::vector<ai::Actor> AppState::partyActors() const{
@@ -37,6 +38,11 @@ void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std
         }
         combat.start(partyActors(), std::move(foes),
                      rng.below(0x7FFFFFFF));
+        // R313: the water fight - the company
+        // standing in the flood pool fights under
+        // the R311 underwater combat pins
+        if (map.at(party.x, party.y) == TILE_WATER)
+            combat.encounter->setWaterFight();
         // R141: the opening range is geometry - a room fight
         // opens at the chamber's longest interior dimension
         // (10' bands, floored at the 50' corridor convention,
@@ -137,6 +143,16 @@ void AppState::combatQuaff(){
 void AppState::combatShoot(){
         if (mode != MODE_COMBAT || !combat.encounter || combat.over)
             return;
+        // R313: the underwater combat pin (R311) -
+        // missile fire is impossible underwater
+        // except the specially-made crossbow (no
+        // such item is pinned; the bar is total)
+        if (rules::uwMissileBarred() &&
+            map.at(party.x, party.y) == TILE_WATER) {
+            log.add("The water bars missile fire - no "
+                    "crossbow of the deep.");
+            return;
+        }
         const auto& partyActors = combat.encounter->party();
         if (combat.activeMember < 0 ||
             combat.activeMember >= (int)partyActors.size())
@@ -165,6 +181,14 @@ void AppState::combatShoot(){
 void AppState::combatThrow(){
         if (mode != MODE_COMBAT || !combat.encounter || combat.over)
             return;
+        // R313: the hurled weapon is a missile too -
+        // the underwater bar rides the throw
+        if (rules::uwMissileBarred() &&
+            map.at(party.x, party.y) == TILE_WATER) {
+            log.add("The water bars the hurl - no "
+                    "crossbow of the deep.");
+            return;
+        }
         const auto& partyActors = combat.encounter->party();
         if (combat.activeMember < 0 ||
             combat.activeMember >= (int)partyActors.size())

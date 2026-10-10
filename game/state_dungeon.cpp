@@ -5,6 +5,7 @@
 #include "rules/doorforce.h"  // R305: the door force folds
 #include "rules/swimcross.h"  // R312: the flooded crossing
 #include "rules/underwater.h"  // R311: the drown percent
+#include "rules/uwfight.h"  // R313: the crossing cap
 
 // ---- restExplore ----
 void AppState::restExplore(){
@@ -1936,6 +1937,36 @@ bool AppState::enterWater(int nx, int ny){
                          "flood bars the way.",
                          c.name.c_str(),
                          items::armor(c.armor.id).name);
+                log.add(buf);
+                // the turn spent can draw a wanderer
+                if (dm::wanderCheck(dice, wander))
+                    spawnWanderingEncounter();
+                return false;
+            }
+            // R313: the strength-fed equipment cap
+            // (the R311 underwater movement pin,
+            // un-caller-fed by the R153 allowance
+            // ladder): a living member loaded past
+            // the 20-pound cap moved by the
+            // strength weight allowance bars the
+            // company - the bump convention (the
+            // JUDGMENT: the surface paragraph
+            // carries no load bar, the movement
+            // paragraph folds onto the crossing)
+            if (rules::uwCrossLoadBars(
+                    rules::swimLoadBeyondArmorLbs(
+                        carriedWeight(c),
+                        items::armor(c.armor.id).weightGp),
+                    rules::uwCrossCapLbs(
+                        rules::strWeightAllowGp(
+                            c.abilities.str, c.exStr)))) {
+                ++turnCount;
+                tickActivity(1);   // R119: the refusal
+                char buf[96];
+                snprintf(buf, sizeof buf,
+                         "%s is too laden to swim - the "
+                         "flood bars the way.",
+                         c.name.c_str());
                 log.add(buf);
                 // the turn spent can draw a wanderer
                 if (dm::wanderCheck(dice, wander))
