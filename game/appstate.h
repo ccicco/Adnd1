@@ -1580,4 +1580,14 @@ struct AppState {
     // are flavor (R64 fiction rows - printed counts, no
     // stats, documented in encounters.cpp)
     void cityExcursion(dm::CityTime t);
+
+    // R303: [P] - the thief street lift (the
+    // PHB pick pockets print: one percentile
+    // against the chance cut 5 percent per
+    // victim level above the 3rd; a fail 21
+    // percent or more above reads noticed;
+    // success lifts the purse). The mode and
+    // alive gates ride (the cityExcursion
+    // convention).
+    void cityPickPockets();
 };

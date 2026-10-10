@@ -1,4 +1,6 @@
 #include "appstate.h"
+#include "rules/startmoney.h"   // R303: the passerby purse
+#include "rules/thieffunc.h"    // R303: the pockets roll
 
 // ---- enterSea ----
 void AppState::enterSea(){
@@ -146,7 +148,8 @@ void AppState::enterCity(){
         if (!party.alive()) return;
         mode = MODE_CITY;
         log.add("You walk the streets of the city.");
-        log.add("[1] by day  [2] by night  [B] back to town.");
+        log.add("[1] by day  [2] by night  [P] pick "
+                "pockets  [B] back to town.");
     }
 
 // ---- leaveCity ----
@@ -240,4 +243,71 @@ void AppState::cityExcursion(dm::CityTime t){
             }
         }
         log.add(line);
+    }
+
+// ---- cityPickPockets ----
+// R303: the printed pick pockets roll (the
+// PHB Notes Regarding Thief Functions): one
+// percentile at or below the chance CUT 5
+// percent per victim level above the 3rd; a
+// fail 21 percent or more above the chance
+// means the passerby notices. JUDGMENTS (the
+// print leaves them open): the passerby
+// reads a d4 trade and a d6 level; the
+// purse reads the R190 starting money dice
+// of that trade (the engine only prints
+// money by class - the printed random item
+// has no stranger inventory); a noticed
+// attempt draws the watch - a fine of a
+// tenth of the company purse (the R133
+// greed convention).
+void AppState::cityPickPockets(){
+        if (mode != MODE_CITY) return;
+        if (!party.alive()) return;
+        const Character* thief = nullptr;
+        for (const auto& c : party.members)
+            if (c.hp > 0 && c.classIndex == 3) {
+                thief = &c;
+                break;
+            }
+        if (!thief) {
+            log.add("No thief walks the streets "
+                    "with you.");
+            return;
+        }
+        // the passerby: trade and level
+        int vcls = (int)dice.roll(1, 4, 0) - 1;
+        int vlevel = (int)dice.roll(1, 6, 0);
+        // the printed percentile draw (tenths)
+        int roll = (int)rng.below(1000);
+        int chance = rules::thfPocketsChanceTenths(
+            thief->level, thief->race,
+            (int)thief->abilities.dex, vlevel);
+        if (rules::thfPercentileSucceeds(roll, chance)) {
+            // success: the purse lift (the R190
+            // starting money roll of the trade)
+            int purse = (int)dice.roll(
+                rules::startingMoneyDiceCount(vcls),
+                rules::startingMoneyDieFaces(vcls), 0)
+                * rules::startingMoneyMultiplier(vcls);
+            party.gold += purse;
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "%s lifts %d gp from a passerby.",
+                     thief->name.c_str(), purse);
+            log.add(buf);
+            return;
+        }
+        if (rules::thfPocketsVictimNotices(roll, chance)) {
+            // noticed: the watch fine (a tenth)
+            int fine = party.gold / 10;
+            party.gold -= fine;
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "A passerby notices the attempt - "
+                     "the watch takes %d gp.", fine);
+            log.add(buf);
+            return;
+        }
+        log.add("The lift fails, but nobody notices.");
     }

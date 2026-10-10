@@ -8,9 +8,10 @@
 // find/remove traps rolls now run at the
 // trap site (the thfAttemptSucceeds seam);
 // R302: the move silently roll now runs at
-// the surprise site; the other functions
-// wait for engine sites that do not exist
-// yet.
+// the surprise site; R303: the pick
+// pockets roll now runs at the city
+// street site; the others wait for engine
+// sites that do not exist yet.
 //
 // The take table: the base chance to perform
 // each of the eight thief functions (pick
@@ -173,7 +174,10 @@ inline int thfChanceTenths(int fn, int level,
     // this seam (the find and the remove
     // draws); R302: the surprise site rolls
     // the move silently draw (one per
-    // encounter); the rest stay data
+    // encounter); R303: the street site
+    // rolls the pick pockets draw (through
+    // the victim-cut seam); the rest stay
+    // data
     return thfTakeTenths(fn, level) + 10 *
         (thfRaceAdj(race, fn) + thfDexAdj(dex, fn));
 }
@@ -269,6 +273,35 @@ inline int thfSilenceSurpriseAdj(bool silent) {
 // report).
 inline int thfNoteSilenceEachMove() {
     return 1;
+}
+
+// R303: the pick pockets adjusted chance
+// seam - the printed base folded with the
+// printed victim cut: the potential victim
+// reduces the chance 5 percent per level
+// above the 3rd. The cut may drive the
+// chance below zero (every draw then
+// fails and the notice band reads off the
+// negative chance).
+inline int thfPocketsChanceTenths(int level, int race,
+                                   int dex,
+                                   int victimLevel) {
+    int cut = victimLevel > 3
+        ? (victimLevel - 3) * thfNotePocketsVictimCut()
+        : 0;
+    return thfChanceTenths(THF_PICK_POCKETS, level,
+                           race, dex) - 10 * cut;
+}
+
+// R303: the printed notice band - a failed
+// score 21 percent or more above the
+// chance means the victim notices the
+// attempt (the worked example: the 75
+// chance reads noticed from 96).
+inline bool thfPocketsVictimNotices(int rollTenths,
+                                    int chanceTenths) {
+    return rollTenths >= chanceTenths +
+        10 * thfNotePocketsNoticeBand();
 }
 
 }  // namespace rules

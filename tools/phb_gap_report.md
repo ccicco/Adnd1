@@ -879,8 +879,9 @@ census stays 213.
       pin, the R186 poetics precedent - WIRED
       R301: the trap site now rolls the seam;
       R302: the surprise site rolls the
-      move silently draw; the rest stay
-      data) -
+      move silently draw; R303: the street
+      site rolls the pick pockets draw;
+      the rest stay data) -
       the take table (upload line 1620) runs
       thief levels 1 through 17 across the
       eight functions (pick pockets, open
@@ -1004,6 +1005,55 @@ census stays 213.
       engine audit pins every scenario on
       seeded sequences (the R301 replica
       convention). Census 223. The ledger
+      holds ZERO open items.
+
+- [x] **The thief pockets wired - WIRED
+      R303:** the pick pockets column gains
+      its first engine site - the city
+      streets command ([P], the R70 shell).
+      rules/thieffunc.h gains
+      thfPocketsChanceTenths (the printed
+      base folded with the printed victim
+      cut - the potential victim reduces
+      the chance 5 percent per level above
+      the 3rd; the cut may cross zero) and
+      thfPocketsVictimNotices (the printed
+      notice band - a fail 21 percent or
+      more above the chance means the
+      victim notices; the worked example
+      walks live: 120 cut to 75, noticed
+      from 96). game/state_sea.cpp gains
+      cityPickPockets: the FIRST living
+      thief draws the passerby trade (d4,
+      the four engine classes) and level
+      (d6), then one printed percentile;
+      success lifts the purse, a noticed
+      fail draws the watch, a plain fail
+      reads quiet. JUDGMENTS (the print
+      leaves them open): the passerby
+      purse reads the R190 starting money
+      dice of the trade (the engine only
+      prints money by class; the printed
+      random item has no stranger
+      inventory to draw from), and a
+      noticed attempt costs a watch fine
+      of a tenth of the company purse (the
+      R133 greed convention). adnd1.cpp
+      keys [P] (the city switch and the
+      screen). The remaining functions
+      stay data (open locks - the dungeon
+      doors carry no lock data; hide in
+      shadows, hear noise, climb walls
+      and read languages - no engine
+      site; hear noise keeps the R120
+      portal listen convention, not the
+      R298 percentile). The R303a battery
+      audit walks the cut fold and the
+      notice band (evaluable - verified
+      by audit_eval); the R303 engine
+      audit pins every scenario on seeded
+      sequences (the R301 replica
+      convention). Census 225. The ledger
       holds ZERO open items.
 
 ## R299 the party recordings round (the third

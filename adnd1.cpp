@@ -1309,6 +1309,8 @@ static void drawCity(HDC dc, const AppState& s) {
     TextOutA(dc, 20, 96, line, (int)strlen(line));
     snprintf(line, sizeof line, "[2] An excursion by night");
     TextOutA(dc, 20, 120, line, (int)strlen(line));
+    snprintf(line, sizeof line, "[P] Pick pockets");
+    TextOutA(dc, 20, 144, line, (int)strlen(line));
 
     SetTextColor(dc, RGB(160, 150, 120));
     snprintf(line, sizeof line, "[B]/[Esc] back to town");
@@ -1673,7 +1675,8 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                 }
             } else if (g_app.mode == MODE_CITY) {
                 // R70: city street keys - [1] day excursion,
-                // [2] night excursion, [B]/Esc back to town
+                // [2] night excursion, [P] pick pockets,
+                // [B]/Esc back to town
                 switch (wp) {
                     case '1':
                         g_app.cityExcursion(dm::CITY_DAY);
@@ -1681,6 +1684,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
 
                     case '2':
                         g_app.cityExcursion(dm::CITY_NIGHT);
+                        break;
+
+                    // R303: the thief street lift
+                    case 'P':
+                    case 'p':
+                        g_app.cityPickPockets();
                         break;
 
                     case 'B':
