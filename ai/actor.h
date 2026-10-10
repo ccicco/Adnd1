@@ -511,6 +511,15 @@ public:
     // first (the stepRound fold, uwfight.h).
     void setAquatic() { m_aquatic = true; }
 
+    // R316: the underwater vision seam - the
+    // R311 distance pins charge this state at
+    // the water fight (the fresh pool surface
+    // reads 50 feet; the depth decay and the
+    // light/helm multiples stay data - no depth
+    // or active-light layer exists).
+    void setVisionFt(int ft) { m_visionFt = ft; }
+    int  visionFt() const { return m_visionFt; }
+
     // R313: the underwater strike probe (the
     // R311 combat pin): in a water fight a
     // party member strikes only with a
@@ -548,6 +557,7 @@ private:
 
     bool m_waterFight = false;   // R313: the water fight
     bool m_aquatic = false;   // R314: the aquatic fold
+    int  m_visionFt = 0;   // R316: the vision seam
 
     int  m_distance = 5;   // R43: engagement range in 10' bands
 

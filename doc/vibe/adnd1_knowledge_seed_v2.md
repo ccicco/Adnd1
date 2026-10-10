@@ -239,6 +239,21 @@ R172 were already dropped at the R171b/R172 era cut; git
   assert (the R314 census assert read the unwrapped
   phrase and failed in the sandbox - assert what the
   57-col wrap actually printed).
+- R315 landed 2026-10-10: commit 7c3801b, census
+  242, the net throwers of the waterborne table
+  (see Current state above). GREEN on the FIRST
+  preflight (no follow-up). Lessons: (1) PREFLIGHT
+  RIDES EVERY SPLICE - a seed or doc splice is not
+  exempt (the R314 convention note was wrong); (2)
+  ONE SPLICE PER ROUND - the seed round-state entry
+  rides the NEXT round splice as a patch (the entry
+  names the landed code commit, so it lands after
+  it); the letter suffix is ONLY for errors or bugs
+  (r312b the precedent - the R313/R314 seed rounds
+  broke the shape); (3) the MM arms rows read the
+  Lua roster - grep the monster text before any
+  fold; (4) no new pins - the R311 uwNet data
+  charged via the R37 monster-missile pattern.
 
 ## Knowledge maintenance
 

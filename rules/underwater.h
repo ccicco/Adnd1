@@ -75,8 +75,12 @@
 // untrained -4 and the strength-point range
 // stay recorded (no party net exists - the
 // PHB p.38 table carries no net row; no
-// allowance accessor exists); the rest rides
-// no engine layer yet (a state seam is the
+// allowance accessor exists); the vision
+// distances now charge the seam (R316 - the
+// Encounter vision state, the fresh-surface
+// fold; the depth decay stays data - no
+// depth layer exists); the rest rides no
+// engine layer yet (a state seam is the
 // future candidate).
 //
 // DATA-DRIVEN (the standing scope).

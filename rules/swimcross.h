@@ -28,9 +28,11 @@
 // the count JUDGMENT), a 2-3 by 2-3 tile
 // sheet of open floor clear of the
 // stairs and the entry. The underwater
-// MOVEMENT, VISION and COMBAT paragraphs
-// stay data (no underwater combat layer
-// exists - a future seam); the spell
+// MOVEMENT and COMBAT paragraphs charged
+// R313 (the crossing cap and the water
+// fight); VISION charges R316 (the
+// Encounter vision state - the
+// uwVisionBaseFt fold); the spell
 // lists ride R168 (rules/uwspells.h).
 //
 // The armor ids read plain ints (the

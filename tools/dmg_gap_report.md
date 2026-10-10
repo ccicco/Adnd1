@@ -7294,6 +7294,18 @@ range stay recorded (no party net
 exists). The census moves 241 -> 242
 with the R315 engine audit.
 
+R316 the underwater vision seam: the R311
+distance pins charge the new Encounter
+vision state (actor.h setVisionFt) at
+the water fight - the fresh pool surface
+reads uwVisionBaseFt (50 feet), printed
+when the company takes to the water; the
+dry fight keeps the zero default. The
+depth decay and the light/helm multiples
+stay data (no depth or active-light
+layer). The census moves 242 -> 243
+with the R316 seam audit.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

@@ -69,8 +69,25 @@ void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std
         // R313: the water fight - the company
         // standing in the flood pool fights under
         // the R311 underwater combat pins
-        if (map.at(party.x, party.y) == TILE_WATER)
+        if (map.at(party.x, party.y) == TILE_WATER) {
             combat.encounter->setWaterFight();
+            // R316: the vision seam - the R311
+            // distance pin charges the Encounter
+            // state (fresh, surface depth - the
+            // shallow JUDGMENT, the R312 crossing
+            // grain); the light-spell and helm
+            // multiples stay recorded (no
+            // active-light or carried-item layer
+            // exists)
+            combat.encounter->setVisionFt(
+                rules::uwVisionBaseFt(0));
+            char vbuf[64];
+            snprintf(vbuf, sizeof vbuf,
+                     "Sight runs %d feet in the "
+                     "clouded fresh water.",
+                     rules::uwVisionBaseFt(0));
+            log.add(vbuf);
+        }
         // R141: the opening range is geometry - a room fight
         // opens at the chamber's longest interior dimension
         // (10' bands, floored at the 50' corridor convention,
