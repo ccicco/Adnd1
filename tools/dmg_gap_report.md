@@ -7151,6 +7151,47 @@ engine site charges them yet;
 the battery census moves 233 ->
 234 with the R310 audit.
 
+R311 the underwater environment pin
+(the first round past the closed dmg
+ledger): rules/underwater.h (the
+grenade.h pattern): the surface
+swimming paragraph (metal armor
+impossible except magic armor - the
+dog paddle only; leather and padded
+at 5 percent drown per hour, +2 per 5
+pounds beyond the armor; winds above
+35 mph at 75 percent); the movement
+paragraph (swim impossible in armor
+heavier than leather or above 20
+pounds of equipment, the cap moving
+1 pound per 100 g.p. of strength
+bonus or penalty; the dungeon speeds
+and encumbrance ratios; free action
+at 3x the dungeon rate; the vertical
+at the same rate); the vision
+paragraph (50 feet fresh, 100 salt,
+the depth limit the distance limit;
+the decay -10 feet per 10 feet to 0
+at 60 fresh and 110 salt; the light
+spell 30 feet or +10 under 60,
+whichever greater; the helm
+quintuples both; infravision as
+dungeons; ultravision halved at 100,
+zero below 200; seaweed and grass to
+10 feet or nil, the shoals total, the
+mud d6+6 rounds); the combat
+paragraph (thrusting only; the
+aquatic first strike; free action any
+weapon with no penalty; nets 1 foot
+per strength point, the races 15,
+sahuagin 20, untrained -4; missiles
+out except the special crossbow at
+10x price and half range). The spell
+lists ride R168 (rules/uwspells.h).
+No engine site charges any of this
+yet; the battery census moves 234 ->
+235 with the R311 audit.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
