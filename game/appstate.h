@@ -1374,6 +1374,18 @@ struct AppState {
     const LockedDoor* lockedDoorAt(int x, int y) const;
     void bumpLockedDoor(int x, int y);
 
+    // R312: the flooded crossing - one water
+    // pool per delve (the R304 one-per-delve
+    // convention); the company enters the
+    // water tile only when every living
+    // member can swim (the R311 surface
+    // paragraph: metal armor bars the water,
+    // magic armor dog paddles, leather and
+    // padded roll the drown percent - one
+    // roll per crossing)
+    void placeFlood();
+    bool enterWater(int nx, int ny);
+
     // R305: [O] force - the company shoulders
     // the adjacent locked door: up to three
     // living members (the width cap) each

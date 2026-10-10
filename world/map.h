@@ -18,7 +18,8 @@ static const int VIEW_TILES_X = 25;  // viewport 25x19 tiles
 static const int VIEW_TILES_Y = 19;
 
 // ----------------------------------------------------------------------------
-// Tile types (0 = void/rock, 1 = floor, 2 = wall, 3 = door, 4 = corridor)
+// Tile types (0 = void/rock, 1 = floor, 2 = wall,
+// 3 = door, 4 = corridor, 5 = water)
 // ----------------------------------------------------------------------------
 
 enum Tile : uint8_t {
@@ -27,6 +28,7 @@ enum Tile : uint8_t {
     TILE_WALL     = 2,
     TILE_DOOR     = 3,
     TILE_CORR     = 4,
+    TILE_WATER    = 5,   // R312: the flooded crossing
 };
 
 struct Map {
@@ -43,7 +45,8 @@ struct Map {
     }
     bool walkable(int x, int y) const {
         uint8_t t = at(x, y);
-        return t == TILE_FLOOR || t == TILE_CORR || t == TILE_DOOR;
+        return t == TILE_FLOOR || t == TILE_CORR ||
+               t == TILE_DOOR || t == TILE_WATER;
     }
 };
 

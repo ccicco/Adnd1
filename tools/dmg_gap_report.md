@@ -7192,6 +7192,32 @@ No engine site charges any of this
 yet; the battery census moves 234 ->
 235 with the R311 audit.
 
+R312 the flooded crossing (the first
+engine site the R311 underwater pins
+charge): rules/swimcross.h (the seam -
+swimArmorSwims and swimCanSwim with
+the magic-armor dog paddle, the load
+beyond the armor in pounds, the
+one-roll-per-crossing judgment; the
+pool judgments) wired at world/map.h
+TILE_WATER (walkable), the placeFlood
+site (a 2-3 by 2-3 tile floor sheet
+clear of the stairs and the entry,
+one pool per delve the R304 convention)
+and the enterWater gate (the first
+living member in metal armor bars the
+company, magic armor excepted; the
+leather-or-padded swimmers roll the
+drown percent once per crossing; a
+blocked step spends a bump turn and
+can draw a wanderer); the water brush
+in the map draw. The underwater
+MOVEMENT, VISION and COMBAT paragraphs
+stay data (no underwater combat layer
+yet); the spell lists ride R168. The
+battery census moves 235 -> 237 with
+the R312a seam and R312 engine audits.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

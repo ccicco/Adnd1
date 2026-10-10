@@ -28,6 +28,7 @@ void AppState::newDungeon(uint64_t s){
         populateRooms();
         placeSecretDoors();   // R45
         placeLockedDoors();   // R304: the locked door feature
+        placeFlood();   // R312: the flooded crossing
         hiddenThief = false;   // R306: the hide flag
         scriptTried = false;   // R306: the script flag
 

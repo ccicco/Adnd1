@@ -361,6 +361,14 @@ static void onPartyMove(int dx, int dy) {
         s.bumpLockedDoor(nx, ny);
         return;
     }
+    // R312: the flooded crossing - the
+    // surface swim paragraph gates the
+    // water tile (the R311 pins)
+    if (s.map.at(nx, ny) == TILE_WATER &&
+        s.map.at(s.party.x, s.party.y) !=
+            TILE_WATER) {
+        if (!s.enterWater(nx, ny)) return;
+    }
     if (!s.map.walkable(nx, ny)) return;
     s.party.x = nx;
     s.party.y = ny;
@@ -418,6 +426,7 @@ static void drawTile(HDC dc, int px, int py, uint8_t t) {
         case TILE_CORR:  br = CreateSolidBrush(RGB( 45,  38,  30)); break;
         case TILE_WALL:  br = CreateSolidBrush(RGB(110, 105, 100)); break;
         case TILE_DOOR:  br = CreateSolidBrush(RGB(150, 100,  40)); break;
+        case TILE_WATER: br = CreateSolidBrush(RGB( 30,  60, 120)); break;
         default:         br = CreateSolidBrush(RGB(  5,   5,  10)); break;
     }
     RECT r = { px, py, px + TILE_W, py + TILE_H };

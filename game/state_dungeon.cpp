@@ -3,6 +3,8 @@
 #include "rules/thieffunc.h"   // R301: the thief trap rolls
 #include "rules/locktime.h"   // R304: the lock time draw
 #include "rules/doorforce.h"  // R305: the door force folds
+#include "rules/swimcross.h"  // R312: the flooded crossing
+#include "rules/underwater.h"  // R311: the drown percent
 
 // ---- restExplore ----
 void AppState::restExplore(){
@@ -1859,6 +1861,110 @@ void AppState::bumpLockedDoor(int x, int y){
         // the turn spent can draw a wanderer
         if (dm::wanderCheck(dice, wander))
             spawnWanderingEncounter();
+    }
+
+// ---- placeFlood ----
+// R312: the flooded crossing - one water
+// pool per delve (the R304 one-per-delve
+// convention; the count judgment): a 2-3
+// by 2-3 tile sheet of open floor clear
+// of the stairs and the entry (the way
+// down stays dry). The surface SWIMMING
+// paragraph (R311) governs the crossing.
+void AppState::placeFlood(){
+        int placed = 0;
+        int guard = 0;
+        while (placed < rules::floodPerDelveCount() &&
+               ++guard < 500) {
+            int x = 1 + (int)rng.below(MAP_TILES_X - 2);
+            int y = 1 + (int)rng.below(MAP_TILES_Y - 2);
+            int w = (int)rng.range(
+                rules::floodSideMin(),
+                rules::floodSideMax());
+            int h = (int)rng.range(
+                rules::floodSideMin(),
+                rules::floodSideMax());
+            bool allFloor = true;
+            for (int yy = y; yy < y + h; ++yy)
+                for (int xx = x; xx < x + w; ++xx)
+                    if (map.at(xx, yy) != TILE_FLOOR)
+                        allFloor = false;
+            if (!allFloor) continue;
+            bool onStairs =
+                stairsX >= x && stairsX < x + w &&
+                stairsY >= y && stairsY < y + h;
+            bool onEntry =
+                dungeon.entryX >= x &&
+                dungeon.entryX < x + w &&
+                dungeon.entryY >= y &&
+                dungeon.entryY < y + h;
+            if (onStairs || onEntry) continue;
+            for (int yy = y; yy < y + h; ++yy)
+                for (int xx = x; xx < x + w; ++xx)
+                    map.set(xx, yy, TILE_WATER);
+            ++placed;
+        }
+    }
+
+// ---- enterWater ----
+// R312: the company steps from dry land
+// into the water tile. The surface
+// SWIMMING paragraph (R311) gates the
+// crossing: the first living member in
+// metal armor bars the whole company
+// (magic armor dog paddles - the
+// exception) and the blocked step spends
+// a bump turn (the R304 convention),
+// wanderer and all; a passing gate logs
+// the plunge, and each living swimmer
+// rolls the drown percent ONCE (the
+// judgment - the per-hour print condensed
+// to the crossing). The step itself is
+// the normal pace cost (the caller moves
+// the company).
+bool AppState::enterWater(int nx, int ny){
+        (void)nx; (void)ny;
+        for (const auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            if (!rules::swimCanSwim((int)c.armor.id,
+                                    c.armor.plus)) {
+                ++turnCount;
+                tickActivity(1);   // R119: the refusal
+                char buf[96];
+                snprintf(buf, sizeof buf,
+                         "%s cannot swim in %s - the "
+                         "flood bars the way.",
+                         c.name.c_str(),
+                         items::armor(c.armor.id).name);
+                log.add(buf);
+                // the turn spent can draw a wanderer
+                if (dm::wanderCheck(dice, wander))
+                    spawnWanderingEncounter();
+                return false;
+            }
+        }
+        log.add("The company takes to the water.");
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            int loadLbs = rules::swimLoadBeyondArmorLbs(
+                carriedWeight(c),
+                items::armor(c.armor.id).weightGp);
+            int rolls = rules::swimDrownRollPerCrossing();
+            for (int r = 0; r < rolls; ++r) {
+                int roll = (int)rng.below(100);
+                if (roll < rules::uwSurfaceDrownPct(
+                        loadLbs)) {
+                    c.hp = 0;
+                    char buf[96];
+                    snprintf(buf, sizeof buf,
+                             "%s goes under - drowned.",
+                             c.name.c_str());
+                    log.add(buf);
+                    break;
+                }
+            }
+        }
+        return true;
     }
 
 // ---- forceLockedDoor ----
