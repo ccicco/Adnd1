@@ -863,13 +863,12 @@ census stays 213.
       hand stays flat 0 (the R181/R232 pins).
       The kitNpc NPCs record their kit weapons
       (game/state_combat.cpp). Simplifications
-      recorded: the party roster carries no
-      recordings yet (a future round), the
-      slot COUNTS stay data (the engine sizes
-      no lists beyond the kit grant) and the
-      ranged-weapon slot is not yet recorded
-      (the missile path shares the same
-      hitAdjustment seam). The R297 battery
+      recorded: the party roster recordings are
+      the R299 kit grant (the R299 section
+      below), the slot COUNTS stay data (the
+      engine sizes no lists beyond the kit
+      grant) and the ranged slot records with
+      the thief kit (R299). The R297 battery
       audit walks the three columns row by
       row, the clamps, the mapping pair probes
       and the seam identity. Census 214.
@@ -915,6 +914,88 @@ census stays 213.
       rows, the clamps and the printed
       example. Census 215.
 
+## R299 the party recordings round (the third
+scope pass rides)
+
+R299 WIRED the party roster into the R297
+penalty seam - the R297 simplification note
+above is amended (the future round landed).
+The kit grant at creation is the initial
+proficiency choice set:
+
+- [x] **The party kit weapon recordings -
+      WIRED R299:** the Character gains
+      profWeaponIds (game/party.h); the grant
+      method grantKitProficiencies records
+      the class kit - the melee arm every
+      kit carries, plus the ranged slot
+      where the kit carries a missile (the
+      thief rows: the short sword and the R28
+      sling; the monk records the R230 staff;
+      the bard the Appendix II long sword).
+      The grant lands at creation
+      (makeMember), the subclass overlay
+      (makeSubclassMember - the monk staff),
+      the profession switch (the old choices
+      do not persist), the bard studies and
+      the save load rebuild (the R33 v1
+      convention - the recordings are not
+      saved; a loaded member re-reads the
+      kit). toActor copies the list to the
+      combat Actor - a held weapon outside a
+      NON-EMPTY list now pays the class
+      penalty LIVE (a fighter with a claimed
+      battle axe pays -2; a magic-user with
+      a staff pays -5). Simplifications
+      recorded: the added-slot choices stay a
+      future choice round (the counts are
+      data), the grant ids are the engine
+      canon kits (the kit switches and the
+      grant agree - pinned by the engine
+      audit) and the henchman keeps the
+      empty-list convention. The rules seam
+      (wpfKitRecordsMelee,
+      wpfKitRecordsRanged, wpfKitGrantCount -
+      rules/weaponprof.h) pins the slot-count
+      convention; the R299 battery audit pair
+      walks the seam (evaluable) and the
+      engine wiring (the R233a/R233
+      precedent). Census 217.
+
+R299 SCOPE PASS (the third pass, riding this
+round): the upload sections diffed against
+this ledger again. Recorded: the HENCHMEN
+prose (the about-50% henchman award note)
+matches the R45 engine convention (cited
+DMG p.86; the PHB section carries no table
+to pin); the SILENT MOVEMENT prose reads the
+R298 move silently column (the surprise link
+rides the future thief roll round); the
+weather tables live inside the control
+weather spell prose (the registry is the
+engine spell layer). ONE new open item
+found and opened below.
+
+## Open items (the R299 addition)
+
+- [ ] **The equipment cost columns (the BASIC
+      EQUIPMENT AND SUPPLIES COSTS tables,
+      upload line 2113; the reference-sheet
+      repeats at upload line 13432)** - the
+      arms and armor list prices the engine
+      carries as items costGp (dead data: no
+      shop charges them - the town stores
+      price canonically; verified repo-wide)
+      were never battery-pinned. A DATA-ONLY
+      pin candidate (the R190 precedent): a
+      rules header walking the printed arms
+      and armor cost columns cell by cell.
+      The R300 candidate. The general
+      equipment rows (clothing, herbs,
+      livestock, provisions, religious items,
+      tack, transport) carry no engine layer
+      - out of engine scope.
+
 ## Out of engine scope (the R296 additions)
 
 - Money changing, banks, loans and jewelers
@@ -931,7 +1012,10 @@ census stays 213.
   existence) - the engine has no planar
   layer; the planar references that matter
   (the artifact prose) are DMG-side and
-  pinned there.
+  pinned there. R299: the full planar
+  material arrives with the Manual of the
+  Planes (the user decision); the pin
+  round waits for that source.
 
 The R178 subclass-arc precedent: OPEN the
 scope items first, pin them in following

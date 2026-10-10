@@ -535,6 +535,9 @@ struct CreationState {
         }
         // R35: everyone starts with a full quiver (20 missiles)
         c.missileAmmo = 20;
+        // R299: the kit grant records the initial
+        // proficiency choices
+        c.grantKitProficiencies();
         return c;
     }
 
@@ -649,6 +652,9 @@ struct CreationState {
             c.armor.id = items::ARMOR_NONE_EQUIPPED;
             c.shield = false;
         }
+        // R299: the subclass overlay re-records (the
+        // monk staff; the others re-read the base kit)
+        c.grantKitProficiencies();
         return c;
     }
 

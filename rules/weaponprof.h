@@ -50,9 +50,9 @@
 //     base row - the attackNumber default-class
 //     convention).
 //   - the slot COUNTS are data (the engine
-//     records no weapon choices yet beyond the
-//     kitNpc grant; the party roster carries
-//     none - a future round); the PENALTY is
+//     records no choices beyond the kit grants;
+//     the party roster records its class kit at
+//     creation - R299); the PENALTY is
 //     live wiring (Actor::hitAdjustment pays it
 //     when a recorded list excludes the held
 //     weapon). The monk open hand stays flat 0
@@ -178,4 +178,42 @@ inline int wpfNoteAddedAboveFirst() {
     return 1;
 }
 
+
+inline int wpfKitRecordsMelee() {
+    // R299: every class kit carries a melee arm
+    // - the kit grant records it as an initial
+    // proficiency choice (the engine has no
+    // choice UI; the added slots stay a future
+    // choice round)
+    return 1;
+}
+
+inline int wpfKitRecordsRanged(int classIndex,
+                               int subclass) {
+    // R299: the kit missile slot - the thief-base
+    // kits carry the sling (the R28 creation pin)
+    // and record it; a subclass kit rides its
+    // base-class kit (the makeSubclassMember
+    // convention; the monk staff is a melee arm).
+    // The subclass mapping mirrors
+    // subclassRuntimeBase (the agreement is
+    // pinned by the R299 battery audit).
+    int base = classIndex;
+    if (subclass == 2) base = 2;   // druid
+    if (subclass == 3) base = 1;   // illusionist
+    if (subclass == 4) base = 3;   // assassin
+    if (base == 3) return 1;   // the thief sling
+    return 0;
+}
+
+inline int wpfKitGrantCount(int classIndex,
+                            int subclass) {
+    // R299: the kit-grant recording count - the
+    // melee slot plus the ranged slot when the
+    // kit carries one (the Character grant,
+    // game/party.h; the engine kit ids are
+    // game-layer data, the COUNTS are the seam)
+    return wpfKitRecordsMelee() +
+           wpfKitRecordsRanged(classIndex, subclass);
+}
 }  // namespace rules

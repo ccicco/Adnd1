@@ -796,6 +796,14 @@ bool AppState::loadGame(){
             }
         }
 
+        // R299: the kit-proficiency rebuild (the R33
+        // v1 convention) - the recordings are not
+        // saved; a loaded member re-reads the class
+        // kit grant
+        for (auto& c : p.members)
+            if (c.profWeaponIds.empty())
+                c.grantKitProficiencies();
+
         // commit: career restored, fresh dungeon at saved depth
         p.formed = true;
         p.gold = gold;

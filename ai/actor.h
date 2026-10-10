@@ -136,9 +136,11 @@ struct Actor {
     // The RECORDED weapon ids the character chose.
     // EMPTY = proficiency unrecorded: the pre-R297
     // convention holds (the held weapon is treated
-    // as proficient; no penalty paid) - the party
-    // roster carries no recordings yet. The kitNpc
-    // NPCs record their kit weapons. A held weapon
+    // as proficient; no penalty paid). The roster
+    // records the class kit grant at creation
+    // (R299: game/party.h); a loaded save rebuilds
+    // it (game/state_core.cpp); the kitNpc NPCs
+    // record their kit weapons. A held weapon
     // outside a NON-EMPTY list pays the class
     // non-proficiency penalty (hitAdjustment).
     std::vector<int> profWeaponIds;

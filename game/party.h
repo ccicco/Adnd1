@@ -209,6 +209,14 @@ struct Character {
     // R81: Ring of Protection AC bonus (0 = none worn)
     int ringPlus = 0;
 
+    // R299: the recorded weapon proficiency slots
+    // (the PHB Weapon Proficiency Table). The kit
+    // grant at creation is the initial choice set;
+    // the added slots stay a future choice round.
+    // EMPTY = the pre-R297 convention (never pays).
+    // Holds items::WeaponId values.
+    std::vector<int> profWeaponIds;
+
     // R85: the pack - carried gear awaiting equip or sale
     std::vector<PackItem> pack;
 
@@ -228,6 +236,59 @@ struct Character {
         for (int s : knownSpells)
             if (s == id) return true;
         return false;
+    }
+
+    // R299: record the class kit as the initial
+    // weapon proficiency choices (the engine has
+    // no choice UI - the kit grant IS the initial
+    // slots; the counts stay data at the future
+    // choice round). The list CLEARS first: a
+    // profession change or subclass overlay
+    // re-grants the new kit (the old choices do
+    // not persist - recorded simplification).
+    // Called at creation (makeMember), the
+    // subclass overlay (makeSubclassMember), the
+    // profession switch, the bard studies and
+    // the save load rebuild (state_core.cpp).
+    void grantKitProficiencies() {
+        profWeaponIds.clear();
+        if (bard) {
+            // the bard career kit (Appendix II): the
+            // long sword, a permitted Table III arm
+            profWeaponIds.push_back(
+                (int)items::WPN_LONG_SWORD);
+            return;
+        }
+        if (subclass == rules::SUB_MONK) {
+            // the monk kit override (R230): the staff
+            profWeaponIds.push_back(
+                (int)items::WPN_QUARTERSTAFF);
+            return;
+        }
+        switch (classIndex) {
+            case rules::CLASS_MAGIC_USER:
+                profWeaponIds.push_back(
+                    (int)items::WPN_DAGGER);
+                break;
+            case rules::CLASS_CLERIC:
+                profWeaponIds.push_back(
+                    (int)items::WPN_MACE);
+                break;
+            case rules::CLASS_THIEF:
+                // the thief kit carries the missile
+                // slot (the R28 sling pin)
+                profWeaponIds.push_back(
+                    (int)items::WPN_SHORT_SWORD);
+                profWeaponIds.push_back(
+                    (int)items::WPN_SLING);
+                break;
+            default:
+                // the fighter groups and the class
+                // default (the attackNumber convention)
+                profWeaponIds.push_back(
+                    (int)items::WPN_LONG_SWORD);
+                break;
+        }
     }
 
     ai::Actor toActor() const {
@@ -279,6 +340,9 @@ struct Character {
             a.slotsByLevel[lv] = slotsByLevel[lv];
         // R33: the spellbook travels with the actor
         a.knownSpells = knownSpells;
+        // R299: the recorded proficiency slots travel
+        // with the actor (the hitAdjustment gate)
+        a.profWeaponIds = profWeaponIds;
         return a;
     }
 
@@ -386,6 +450,9 @@ struct Character {
                 rangedWeapon.id = items::WPN_SLING;
                 break;
         }
+        // R299: the new kit is the new recording
+        // (the old choices do not persist)
+        grantKitProficiencies();
         return true;
     }
 
@@ -437,6 +504,8 @@ struct Character {
         weapon.id = items::WPN_LONG_SWORD;
         armor.id  = items::ARMOR_LEATHER;
         shield    = false;
+        // R299: the bard career kit records
+        grantKitProficiencies();
     }
 };
 
