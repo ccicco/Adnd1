@@ -7035,6 +7035,21 @@ the dungeon door site (the phb report
 carries the round box; the battery
 census moves 225 -> 227).
 
+R305 PINNED the DMG FIRST DUNGEON ADVENTURE
+forcing prose: rules/doorforce.h, the
+grenade.h pattern - the typical 1-2 d6
+band, the very-heavy halves, the
+simultaneous-1s locked rule (the print
+reads two or even three - the JUDGMENT
+pins at two), the width caps (three at
+the standard door, one at a narrow), the
+wood-break full turn with its three noise
+checks, and the knock-only metal door.
+The PHB STR Table II open-doors
+parentheticals wire at the R304 locked
+door (the phb report carries the round
+box; the battery census moves 227 -> 229).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

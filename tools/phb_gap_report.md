@@ -44,6 +44,10 @@ tables now read the print.
       pinned R153: hit probability, damage, the
       weight allowance, open doors and bend bars or
       lift gates for the whole 3-18/00 run.
+      WIRED R305: the open-doors-locked
+      parentheticals now force the R304 lock
+      (the forcing prose pins in
+      rules/doorforce.h).
 - [x] **Race Tables I-III (pp.15-18)** - pinned
       R154: class limitations, the footnoted level
       caps, ability minimums and maximums (male and
@@ -1096,6 +1100,37 @@ census stays 213.
       seeded sequences (the replica walked
       the draws first). Census 227. The
       ledger holds ZERO open items.
+
+- [x] **The locked door forced - WIRED
+      R305:** the STR Table II open-doors
+      parentheticals gain their first engine
+      site. rules/doorforce.h CREATED (the
+      grenade.h pattern): the DMG FIRST
+      DUNGEON ADVENTURE forcing prose - the
+      typical 1-2 d6 band, the heavy-door
+      halves, the simultaneous-1s rule
+      (the print reads two or even three -
+      the JUDGMENT pins at two), the width
+      caps (three shoulders at the
+      standard door, one at a narrow), the
+      wood-break full turn with its three
+      noise checks and the knock-only metal
+      door (the band, the halves and the
+      break lane stay data - no site). The
+      site: [O] in the dungeon spends the
+      turn and puts up to three living
+      members on the adjacent lock - each
+      rolls the d6 against the parentheticals
+      (the wrench once ever per door), or
+      the simultaneous 1s tear the lock out.
+      The R305a battery audit walks the
+      forcing pins and their folds
+      (evaluable - verified by audit_eval);
+      the R305 engine audit pins every
+      scenario on seeded sequences (the
+      replica walked the draws first).
+      Census 229. The ledger
+      holds ZERO open items.
 
 ## R299 the party recordings round (the third
 scope pass rides)

@@ -1383,7 +1383,8 @@ static void drawHud(HDC dc, const AppState& s) {
     snprintf(line, sizeof line,
              "Dungeon Lvl %d  Rooms: %d (%d lairs)  %d gp  Potions %d  "
              "Kills %d  Turn %d  Move %d'%s  Seed %llu  [P] quaff  "
-             "[K] save  [L] load  [R] rest  [B] town",
+             "[O] force  [K] save  [L] load  [R] rest  "
+             "[B] town",
              s.dungeonLevel, (int)s.dungeon.rooms.size(),
              s.countOccupied(), party.gold, party.potions,
              party.kills, s.turnCount, partyMoveRate(party),
@@ -1845,6 +1846,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                     case 'P':
                     case 'p':
                         g_app.quaffExplore();
+                        break;
+
+                    // R305: force the adjacent locked door
+                    case 'O':
+                    case 'o':
+                        g_app.forceLockedDoor();
                         break;
 
                     // R34: rest - restore spell slots and heal

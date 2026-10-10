@@ -302,6 +302,7 @@ struct LockedDoor {
     int  x = 0, y = 0;
     bool opened = false;
     int  tryLevel = 0;
+    bool exTried = false;   // R305: the wrench once ever
 };
 
 // R61: DMG p.86 treasure XP guard rule. Gold converts 1 gp =
@@ -1366,6 +1367,15 @@ struct AppState {
     void placeLockedDoors();
     const LockedDoor* lockedDoorAt(int x, int y) const;
     void bumpLockedDoor(int x, int y);
+
+    // R305: [O] force - the company shoulders
+    // the adjacent locked door: up to three
+    // living members (the width cap) each
+    // roll the d6 against the R153 open-doors
+    // parentheticals (the wrench is once ever
+    // per door), or two simultaneous 1s tear
+    // the lock out (the DMG doors prose)
+    void forceLockedDoor();
 
     // R45: [F] search - one turn spent feeling the walls.
     // Each adjacent unfound secret door rolls 1-in-6 (a

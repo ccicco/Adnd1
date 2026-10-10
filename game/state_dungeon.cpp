@@ -2,6 +2,7 @@
 #include "abilities/abilities.h"   // R120: listening (p.60)
 #include "rules/thieffunc.h"   // R301: the thief trap rolls
 #include "rules/locktime.h"   // R304: the lock time draw
+#include "rules/doorforce.h"  // R305: the door force folds
 
 // ---- restExplore ----
 void AppState::restExplore(){
@@ -1808,6 +1809,87 @@ void AppState::bumpLockedDoor(int x, int y){
                          thief->name.c_str(), rounds);
             }
             log.add(buf);
+        }
+
+        // the turn spent can draw a wanderer
+        if (dm::wanderCheck(dice, wander))
+            spawnWanderingEncounter();
+    }
+
+// ---- forceLockedDoor ----
+// R305: [O] - the company puts its shoulders
+// to the adjacent locked door. The shove
+// spends the turn (the searchExplore
+// convention) and up to
+// doorWidthStandardAttempts living members
+// each roll the d6 against the R153
+// open-doors-locked parentheticals (the
+// exceptional wrench is once ever per door),
+// while doorLockedSimultaneousOnes
+// simultaneous 1s tear the lock out of the
+// frame (the DMG doors prose; the wander
+// check rides, the bump convention).
+void AppState::forceLockedDoor(){
+        if (mode != MODE_EXPLORE) return;
+        if (!party.alive()) return;
+
+        ++turnCount;
+        tickActivity(1);   // R119: the shove is work too
+
+        LockedDoor* door = nullptr;
+        for (auto& d : lockedDoors) {
+            if (d.opened) continue;
+            int dx = d.x - party.x;
+            int dy = d.y - party.y;
+            bool hits = (dx == 1 || dx == -1) && dy == 0;
+            hits = hits ||
+                   (dx == 0 && (dy == 1 || dy == -1));
+            if (hits) {
+                door = &d;
+                break;
+            }
+        }
+        if (door == nullptr) {
+            log.add("There is no locked door to force "
+                    "here.");
+        } else {
+            int ones = 0;
+            int attempts = 0;
+            bool opened = false;
+            for (const auto& c : party.members) {
+                if (attempts >=
+                        rules::doorWidthStandardAttempts())
+                    break;
+                if (c.hp <= 0) continue;
+                ++attempts;
+                int roll = 1 + (int)rng.below(6);
+                int lmax = rules::strOpenDoorsLockedMax(
+                    c.abilities.str, c.exStr);
+                if (lmax > 0 && !door->exTried) {
+                    door->exTried = true;
+                    if (roll <= lmax) {
+                        door->opened = true;
+                        opened = true;
+                        char buf[96];
+                        snprintf(buf, sizeof buf,
+                                 "%s wrenches the locked "
+                                 "door open!",
+                                 c.name.c_str());
+                        log.add(buf);
+                        break;
+                    }
+                }
+                if (roll == 1) ++ones;
+            }
+            if (!opened && ones >=
+                    rules::doorLockedSimultaneousOnes()) {
+                door->opened = true;
+                opened = true;
+                log.add("The shoulders slam home - the "
+                        "lock gives!");
+            }
+            if (!opened)
+                log.add("The door will not budge.");
         }
 
         // the turn spent can draw a wanderer
