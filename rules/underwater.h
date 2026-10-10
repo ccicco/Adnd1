@@ -79,9 +79,12 @@
 // distances now charge the seam (R316 - the
 // Encounter vision state, the fresh-surface
 // fold; the depth decay stays data - no
-// depth layer exists); the rest rides no
-// engine layer yet (a state seam is the
-// future candidate).
+// depth layer exists); the infravision
+// print charges R317 (the state_combat
+// fold - the R154 race data reads the
+// party best, the R311 pin gates); the
+// rest rides no engine layer yet (a state
+// seam is the future candidate).
 //
 // DATA-DRIVEN (the standing scope).
 // ===========================================================================

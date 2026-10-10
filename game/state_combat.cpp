@@ -87,6 +87,34 @@ void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std
                      "clouded fresh water.",
                      rules::uwVisionBaseFt(0));
             log.add(vbuf);
+            // R317: the infravision print - the
+            // R311 pin (infravision as in
+            // dungeons) meets the R154 race
+            // data: the company best
+            // infravision eyes report their
+            // range (the light-spell and helm
+            // multiples stay recorded - no
+            // active-light or carried-item
+            // layer exists)
+            if (rules::uwInfravisionSameAsDungeon())
+            {
+                int infra = 0;
+                for (const auto& c : party.members)
+                    if (c.hp > 0) {
+                        int f = rules::
+                            raceInfravisionFeet(
+                            (rules::CharRace)c.race);
+                        if (f > infra) infra = f;
+                    }
+                if (infra > 0) {
+                    char ibuf[64];
+                    snprintf(ibuf, sizeof ibuf,
+                             "Infravision reaches %d feet"
+                             " - as in the dungeons.",
+                             infra);
+                    log.add(ibuf);
+                }
+            }
         }
         // R141: the opening range is geometry - a room fight
         // opens at the chamber's longest interior dimension

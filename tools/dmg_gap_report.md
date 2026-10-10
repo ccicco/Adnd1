@@ -7306,6 +7306,20 @@ stay data (no depth or active-light
 layer). The census moves 242 -> 243
 with the R316 seam audit.
 
+R317 the infravision fold: the survey
+killed the light-spell and helm multiples
+(no STATUS_LIGHT, no named pack items)
+and the depth decay (no depth notion) -
+the one clean charge is the R311 print
+(infravision as in dungeons) meeting
+the R154 race data at the vision site:
+the company best infravision reports
+its range in the water fight (state_
+combat.cpp, uwInfravisionSameAsDungeon
+gates, raceInfravisionFeet reads). The
+census moves 243 -> 244 with the R317
+audit.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

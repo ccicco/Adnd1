@@ -254,6 +254,25 @@ R172 were already dropped at the R171b/R172 era cut; git
   Lua roster - grep the monster text before any
   fold; (4) no new pins - the R311 uwNet data
   charged via the R37 monster-missile pattern.
+- R316 landed 2026-10-10 (the r316b fix,
+  commit 9021b2c), census 243, the
+  underwater vision seam (see Current state
+  above). RED then GREEN: the sight print
+  displaced the R314 W1 line and the older
+  audit broke on its get(0); the r316b
+  window scan fixed it. Lessons: (1) a NEW
+  PRINT RIDES THE SHARED LOG - older audits
+  assert the LOG WINDOW, not the head (the
+  W1 scan is the pattern); (2) the sandbox
+  cannot build the C++ - the Termux
+  preflight is the ONLY gate that catches
+  print interactions; (3) the naming held -
+  the round record and the bug fix both
+  committed, initial splices are never
+  deleted; (4) the survey kills before the
+  fold - no STATUS_LIGHT, no named pack
+  items, no depth notion (the light/helm
+  multiples and the decay stay recorded).
 
 ## Knowledge maintenance
 
