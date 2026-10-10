@@ -7275,6 +7275,25 @@ vision decay stay data. The census
 moves 239 -> 241 with the R314a seam
 and R314 engine audits.
 
+R315 the net throwers of the waterborne
+table: the MM arms rows (sahuagin
+trident, net and dagger 50 percent;
+locathah and merman net rows) charge
+the DMG net throw pins at the
+state_combat beginCombat foes loop -
+the waterborne races open the water
+fight with a net volley (the R37
+monster-missile pattern, the R42 band
+spend), the bands read
+uwNetThrowSahuaginFt (20 feet = 2
+bands) and uwNetThrowUnderwaterRaceFt
+(15 feet = 1); on land the nets stay
+swapped for javelins (MM). The
+untrained -4 and the strength-point
+range stay recorded (no party net
+exists). The census moves 241 -> 242
+with the R315 engine audit.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

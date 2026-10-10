@@ -37,7 +37,10 @@
 // combatShoot fold in state_combat.cpp).
 //
 // NOT CHARGED (recorded, ride the R311
-// pin, not data): the net throw prose,
+// pin, not data): the net throw
+// untrained -4 and the strength-point
+// range (the throw itself is charged
+// R315 - the state_combat volley fold),
 // the free
 // action weapon exception (no free action
 // effect exists), the vision decay (no

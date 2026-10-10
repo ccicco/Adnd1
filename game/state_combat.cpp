@@ -30,6 +30,34 @@ void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std
                 m.monsterRanged = true;
                 m.rangedRounds = 5;   // 50' short range, 10' bands
             }
+            // R315: the net throwers of the
+            // waterborne table (MM arms rows -
+            // sahuagin trident, net and dagger
+            // 50 percent; locathah and merman
+            // net rows) open the water fight
+            // with a net volley (the R37
+            // pattern); the bands read the DMG
+            // throw pins (uwfight.h - sahuagin
+            // 20 feet = 2 bands, the underwater
+            // races 15 feet = 1). On land the
+            // nets stay swapped for javelins
+            // (MM) - the TILE_WATER gate. The
+            // untrained -4 stays recorded (no
+            // party net exists - the PHB p.38
+            // table carries no net row).
+            if (!m.isCharacter &&
+                map.at(party.x, party.y) ==
+                    TILE_WATER &&
+                (monsterKey == "sahuagin" ||
+                 monsterKey == "locathah" ||
+                 monsterKey == "merman")) {
+                m.monsterRanged = true;
+                m.rangedRounds =
+                    monsterKey == "sahuagin"
+                        ? rules::uwNetThrowSahuaginFt() / 10
+                        : rules::uwNetThrowUnderwaterRaceFt()
+                          / 10;
+            }
             // R46: psionic monsters (the registry schema has no
             // psionics field - the app owns the key list, R37
             // pattern)

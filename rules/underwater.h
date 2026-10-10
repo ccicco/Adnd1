@@ -68,10 +68,16 @@
 // the schools of fish, the mud even light
 // cannot penetrate, the stretched, weighted
 // and barbed net prose, and the keep-dry rule
-// for bows, scrolls and books. No engine site
-// charges any of this yet (no underwater game
-// layer exists - a state seam is the future
-// candidate).
+// for bows, scrolls and books. The net throw
+// is now charged (R315 - the state_combat
+// volley fold; sahuagin and the underwater
+// races throw at the DMG distances); the
+// untrained -4 and the strength-point range
+// stay recorded (no party net exists - the
+// PHB p.38 table carries no net row; no
+// allowance accessor exists); the rest rides
+// no engine layer yet (a state seam is the
+// future candidate).
 //
 // DATA-DRIVEN (the standing scope).
 // ===========================================================================
