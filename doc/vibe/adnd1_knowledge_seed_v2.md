@@ -1,9 +1,9 @@
 ---
 name: adnd1-delivery
-description: How Adnd1 splice rounds reach Termux - the delivery format, the run ritual with md5 gates, and the hard-won lessons (R34-R313 era; the underwater seam era is open)
+description: How Adnd1 splice rounds reach Termux - the delivery format, the run ritual with md5 gates, and the hard-won lessons (R34-R314 era; the underwater seam era is open)
 ---
 
-# Adnd1 delivery protocol (current practice, R313 era)
+# Adnd1 delivery protocol (current practice, R314 era)
 
 Rebuilt at the R312 fresh start (v2). The full pre-restart
 history (rounds R172-R312 verbose, every lesson in context) is
@@ -183,12 +183,30 @@ R172 were already dropped at the R171b/R172 era cut; git
   aquatic monster roster). Audits R313a (seam, audit_eval
   verified bad 0, 105 asserts) + R313 (engine, replica-walked
   seeds).
+- R314 landed 2026-10-10: commit cabfcd8, census 241, THE
+  DEEP CROSSBOW, THE AQUATIC FIRST STRIKE AND THE
+  WATERBORNE WANDERERS (one splice): items WPN_CROSSBOW_DEEP (fights
+  as the light crossbow - the p.38 AC row; half the range, 3
+  tens of feet; ten times the price, 120 g.p.; the R311
+  data) and the R313 missile bar lifted for it alone
+  (combatShoot, the uwDeepCrossbowAllowed fold; the throw
+  stays barred); the aquatic first strike folded at
+  actor.cpp stepRound (the waterborne monsters floor at
+  segment 1, the company earliest at 2 - the
+  significantly-longer weapon exception reads data, no
+  reach layer exists; the JUDGMENT: no roster is pinned,
+  aquatic means the encounter arrived via the waterborne
+  table); the waterborne wanderers at the flood pool (the
+  R127 fresh shallow cool table, the state_sea precedent;
+  the count rides the registry noAppearing; the aquatic
+  flag rides the encounter). The net throw prose stays
+  data (no net item is pinned). Audits R314a (seam,
+  audit_eval verified bad 0) + R314 (engine,
+  replica-walked seeds).
 - Open threads: the vision decay seam (needs an engine vision
   layer first), a breathing mechanic (needs a print pin), the
-  aquatic first strike and nets (need an aquatic monster
-  roster), the special crossbow (unpins the missile bar),
-  waterborne encounter wiring, or any fresh seam / sourcebook
-  gap report - next round is user choice.
+  net throw prose (needs a net item), or any fresh seam /
+  sourcebook gap report - next round is user choice.
 
 ## Round state (update each land)
 
@@ -209,6 +227,18 @@ R172 were already dropped at the R171b/R172 era cut; git
   bands line) cannot serve an apostrophe-free content block -
   pick another anchor (the R175 apostrophe rule cuts both
   ways).
+- R314 landed 2026-10-10: commit cabfcd8, census 241, the
+  deep crossbow and the aquatic wanderers (see Current
+  state above). GREEN on the FIRST preflight (no b-round).
+  Lessons: (1) the seam survey must GREP FOR THE PIN NAME
+  FIRST - the R311 header already pinned
+  uwAquaticFirstStrike, and the R314 seam reuses the
+  existing pin instead of redefining it (a redefinition
+  would shadow the data pin and break the R311 audit);
+  (2) the wrapped-fragment lesson rides EVERY gap-report
+  assert (the R314 census assert read the unwrapped
+  phrase and failed in the sandbox - assert what the
+  57-col wrap actually printed).
 
 ## Knowledge maintenance
 
