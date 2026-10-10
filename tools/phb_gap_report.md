@@ -873,25 +873,47 @@ census stays 213.
       audit walks the three columns row by
       row, the clamps, the mapping pair probes
       and the seam identity. Census 214.
-- [ ] **Thief Function Take table and DEXTERITY
+- [x] **Thief Function Take table and DEXTERITY
       TABLE II (the THIEF and DEXTERITY
-      sections)** - the take table runs thief
-      levels 1 through 17 across the eight
-      functions (pick pockets, open locks,
-      find/remove traps, move silently, hide
-      in shadows, hear noise, climb walls,
-      read languages), with the six racial
-      adjustment rows beneath (dwarf, elf,
-      gnome, half-elf, halfling, half-orc);
-      DEX Table II prints the five thief
-      adjustment columns for scores 9
-      through 18. The engine carries the six
-      shared ability names and the
-      monk/assassin level-sharing rules
-      (rules/subclassspecials.h) but performs
-      no thief rolls. A DATA-ONLY pin
-      candidate (the R186 poetics precedent),
-      not gameplay wiring. The R298 candidate.
+      sections) - PINNED R298:**
+      rules/thieffunc.h CREATED (a DATA-ONLY
+      pin, the R186 poetics precedent - the
+      engine performs no thief rolls; the
+      seam waits for a future roll round) -
+      the take table (upload line 1620) runs
+      thief levels 1 through 17 across the
+      eight functions (pick pockets, open
+      locks, find/remove traps, move
+      silently, hide in shadows, hear noise,
+      climb walls, read languages), pinned
+      in TENTHS of a percent (the printed
+      climb walls column carries a decimal
+      from the 11th level: 99.1% reads 991;
+      the read languages dash at levels 1-3
+      reads 0); the six racial adjustment
+      rows beneath (upload lines 1645-1650;
+      the human default reads 0) keyed to
+      the rules/races.h enum; and DEXTERITY
+      TABLE II (upload line 400), the five
+      thief adjustment columns for scores 9
+      through 18 (below the 9 reads the 9
+      row, above the 18 the 18 row - the
+      character.h DEX Table I convention;
+      hear noise, climb walls and read
+      languages print no column and read
+      0). The seam thfChanceTenths folds
+      base + race + DEX (the adjustments
+      additional pluses). The printed notes
+      pinned: the percentile roll (equal or
+      less succeeds), the 21% pick pockets
+      notice band, the 5% victim cut above
+      the 3rd (the printed 12th-level
+      half-elf example: 120 - 45 = 75) and
+      the locks/traps one-try rules. The
+      R298 battery audit walks the take
+      table cell by cell, the racial and DEX
+      rows, the clamps and the printed
+      example. Census 215.
 
 ## Out of engine scope (the R296 additions)
 
