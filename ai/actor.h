@@ -116,6 +116,11 @@ struct Actor {
     // except vs. death/poison).
     int  race = 0;
     bool nonIntelligent = false;
+    // R302: the PC CharRace (rules/races.h)
+    // for the thief percentile columns - the
+    // race field above stays the dm::NpcRace
+    // int (the R147 saves convention)
+    int  pcRace = 0;
     // character path
     int  classIndex = 0;           // CharClass index
     // R232: the registry subclass (rules::Subclass; -1 = a
@@ -363,6 +368,21 @@ public:
 
     // single-round step (interactive combat drives this)
     int stepRound();
+
+    // R302: the wired surprise roll - the
+    // party side reads the best living member
+    // DEX reaction adjustment (the DMG p.62
+    // most-favorable-member reading; the DEX
+    // reaction surprise note is individual-
+    // only and the engine keeps no per-member
+    // surprise clocks), and the first living
+    // thief rolls one printed move silently
+    // percentile (success -> the monster side
+    // takes the silence roll step,
+    // rules::thfSilenceSurpriseAdj). One roll
+    // per encounter - the movement
+    // granularity simplification.
+    void rollSurpriseWired(int& segsA, int& segsB);
 
     // R18: resolve a special attack that landed.
     void resolveSpecial(Actor& attacker, Actor& defender,

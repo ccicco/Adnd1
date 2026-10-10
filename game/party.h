@@ -299,6 +299,7 @@ struct Character {
         a.classIndex  = classIndex;
         a.subclass    = subclass;   // R232: the specials hooks
         a.bard        = bard;   // R235: the druid studies
+        a.pcRace      = race;   // R302: the thief percentile
         // R233: a multi-class member rides the primary
         // class - the FIRST set bit (the fighter bit
         // when the combo carries it - the best melee

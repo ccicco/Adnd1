@@ -878,7 +878,9 @@ census stays 213.
       rules/thieffunc.h CREATED (a DATA-ONLY
       pin, the R186 poetics precedent - WIRED
       R301: the trap site now rolls the seam;
-      the other functions stay data) -
+      R302: the surprise site rolls the
+      move silently draw; the rest stay
+      data) -
       the take table (upload line 1620) runs
       thief levels 1 through 17 across the
       eight functions (pick pockets, open
@@ -950,6 +952,58 @@ census stays 213.
       sequences (the battery build now
       links the game state and xp
       sources). Census 221. The ledger
+      holds ZERO open items.
+
+- [x] **The thief silence wired - WIRED
+      R302:** the move silently column
+      gains its first engine site - the
+      encounter surprise roll.
+      rules/thieffunc.h gains
+      thfSilenceSurpriseAdj (the SILENT
+      MOVEMENT print: success means an
+      improved chance to surprise; the
+      PHB surprise prose is d6-form, the
+      engine surprise is the DMG p.62 2d6
+      ladder, so the improvement pins as
+      one roll step on the surprised side
+      - JUDGMENT, the print carries no
+      ladder modifier) and
+      thfNoteSilenceEachMove (the printed
+      note; the site rolls it once per
+      encounter - the movement
+      granularity simplification).
+      ai/actor.h: the Actor gains pcRace
+      (the PC CharRace for the percentile;
+      toActor copies it, game/party.h) and
+      Encounter gains rollSurpriseWired:
+      the party side reads the best living
+      member DEX reaction adjustment (the
+      DMG most-favorable-member reading -
+      the DEX reaction surprise note is
+      individual-only and the engine keeps
+      no per-member clocks) and the first
+      living thief rolls the printed
+      percentile (success -> the monster
+      side takes the -2 step). stepRound
+      calls it (the hardcoded zero
+      adjustments retired; the log lines
+      and the R232 backstab gate read the
+      same segments, unchanged). A
+      multi-class member rides the primary
+      class (the R233 toActor convention)
+      - no silence roll. The elven and
+      halfling racial surprise prose
+      (4-in-6 alone or 90 feet ahead, not
+      in metal armor - PHB lines 705/780)
+      stays data: no engine site tracks
+      formation or metal armor yet. The
+      R302a battery audit walks the
+      silence step and the move silently
+      percentile boundaries (evaluable -
+      verified by audit_eval); the R302
+      engine audit pins every scenario on
+      seeded sequences (the R301 replica
+      convention). Census 223. The ledger
       holds ZERO open items.
 
 ## R299 the party recordings round (the third

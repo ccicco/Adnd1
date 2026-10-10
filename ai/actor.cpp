@@ -68,6 +68,7 @@
 #include "../rules/palrangerspells.h"  // R232: the giant-class roster
 #include "../rules/bard.h"  // R236: the poetics ferocity
 #include "../rules/weaponprof.h"  // R297: the proficiency table
+#include "../rules/thieffunc.h"  // R302: the silence percentile
 
 #include <algorithm>
 #include <cstdio>
@@ -937,6 +938,40 @@ void Encounter::resolveMissile(Actor& attacker, Actor& defender) {
     }
 }
 
+// R302: the wired surprise roll (the header
+// comment pins the convention). The draw
+// order: the percentile first (a living
+// thief), then the party 2d6 pair, then the
+// monster pair - the R302 engine audit pins
+// this order seed by seed.
+void Encounter::rollSurpriseWired(int& segsA, int& segsB) {
+    int pAdj = 0;
+    bool seen = false;
+    for (const Actor& a : m_party) {
+        if (!a.alive()) continue;
+        int adj = rules::dexReactionAdj(a.dex);
+        if (!seen || adj > pAdj) pAdj = adj;
+        seen = true;
+    }
+    int mAdj = 0;
+    for (const Actor& a : m_party) {
+        if (!a.alive()) continue;
+        if (a.classIndex != 3) continue;   // CLASS_THIEF
+        // R302: one printed move silently roll
+        // per encounter - the FIRST living
+        // thief carries it (a second thief
+        // adds no second roll)
+        int roll = (int)m_rng.below(1000);
+        if (rules::thfAttemptSucceeds(
+                roll, rules::THF_MOVE_SILENTLY,
+                a.level, a.pcRace, (int)a.dex))
+            mAdj = rules::thfSilenceSurpriseAdj(true);
+        break;
+    }
+    rules::rollSurprise(m_dice, pAdj, mAdj,
+                       segsA, segsB);
+}
+
 int Encounter::stepRound() {
     ++m_round;
     // R43: the engagement range closes one 10' band per round -
@@ -983,7 +1018,7 @@ int Encounter::stepRound() {
     // surprise (first round only): 2d6 both sides (R7)
     int pSurp = 0, mSurp = 0;
     if (m_round == 1) {
-        rules::rollSurprise(m_dice, 0, 0, pSurp, mSurp);
+        rollSurpriseWired(pSurp, mSurp);   // R302
         if (pSurp > 0) logLine("The party is surprised (" +
                                std::to_string(pSurp) + " segments)!");
         if (mSurp > 0) logLine("The monsters are surprised (" +

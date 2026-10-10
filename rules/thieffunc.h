@@ -7,8 +7,10 @@
 // R186 poetics precedent), WIRED R301: the
 // find/remove traps rolls now run at the
 // trap site (the thfAttemptSucceeds seam);
-// the other functions wait for engine sites
-// that do not exist yet.
+// R302: the move silently roll now runs at
+// the surprise site; the other functions
+// wait for engine sites that do not exist
+// yet.
 //
 // The take table: the base chance to perform
 // each of the eight thief functions (pick
@@ -169,7 +171,9 @@ inline int thfChanceTenths(int fn, int level,
     // percentile roll at or below the chance
     // succeeds). R301: the trap site rolls
     // this seam (the find and the remove
-    // draws); the other functions stay data
+    // draws); R302: the surprise site rolls
+    // the move silently draw (one per
+    // encounter); the rest stay data
     return thfTakeTenths(fn, level) + 10 *
         (thfRaceAdj(race, fn) + thfDexAdj(dex, fn));
 }
@@ -240,6 +244,31 @@ inline bool thfAttemptSucceeds(int rollTenths, int fn,
     return thfPercentileSucceeds(
         rollTenths,
         thfChanceTenths(fn, level, race, dex));
+}
+
+// R302: the surprise-site silence modifier.
+// The SILENT MOVEMENT print: success means
+// silent movement and an improved chance to
+// surprise an opponent. The PHB surprise
+// prose is d6-form (the silent party
+// doubles its surprise faces); the engine
+// surprise is the DMG p.62 2d6 ladder, so
+// the improvement pins as one roll step on
+// the surprised side (a band of the ladder)
+// - JUDGMENT: the print carries no
+// 2d6-ladder modifier.
+inline int thfSilenceSurpriseAdj(bool silent) {
+    return silent ? -2 : 0;
+}
+
+// R302: the printed note - moving silently
+// can be attempted each time the thief
+// moves. The encounter site rolls it once
+// per encounter (the movement granularity
+// simplification, recorded in the phb gap
+// report).
+inline int thfNoteSilenceEachMove() {
+    return 1;
 }
 
 }  // namespace rules
