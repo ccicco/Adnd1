@@ -114,6 +114,7 @@
 #include "rules/specartprose2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins
 #include "rules/weaponprof.h"  // R297: the PHB Weapon Proficiency Table
 #include "rules/thieffunc.h"  // R298: the thief function take table and DEX Table II
+#include "rules/equipcosts.h"  // R300: the equipment cost columns
 #include <cstdio>
 #include <string>
 
@@ -19212,6 +19213,155 @@ int main() {
                     (int)items::WPN_MACE)) ++bad;
         }
         printf("R299 party kit recordings engine audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R300a: the equipment cost columns seam audit ----
+    // The printed BASIC EQUIPMENT AND SUPPLIES COSTS tables
+    // (rules/equipcosts.h) walked cell for cell against this
+    // local ground truth, the clamps, the coin-unit identity
+    // (exactly one of the gold and silver columns nonzero on
+    // every arms row), the six silver ammo rows and the
+    // monetary-system pin (20 s.p. = 1 g.p.). The ENGINE side
+    // (the items costGp repins) is the engine audit below.
+    {
+        int bad = 0;
+        static const int kGold[52] = {
+             0,   1,   1,   5,   1,   7,   6,   6,  75, 100,
+            60,  15,  20,  12,   2,   0,   3,   8,   3,   8,
+             4,   6,  10,   5,   7,   9,   7,   1,   0,   6,
+             8,   4,   5,  10,   8,   5,   3,   0,   2,   4,
+            15,   0,   0,   1,   3,  25,  10,  15,   8,  30,
+             4,   2,
+        };
+        static const int kSilver[52] = {
+             2,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+             0,   0,   0,   0,   0,   5,   0,   0,   0,   0,
+             0,   0,   0,   0,   0,   0,   0,   0,  10,   0,
+             0,   0,   0,   0,   0,   0,   0,   1,   0,   0,
+             0,  15,  10,   0,   0,   0,   0,   0,   0,   0,
+             0,   0,
+        };
+        static const int kArmor[14] = {
+            90,  75,  15,  10,   5,   4,  400,  30,
+            45,  15,  10,   1,  80,  15,
+        };
+        // the row counts
+        if (rules::eqcArmsCount() != 52 ||
+            rules::eqcArmorCount() != 14) ++bad;
+        // the arms gold column, every row
+        for (int i = 0; i < 52; ++i)
+            if (rules::eqcArmsGold(i) != kGold[i]) ++bad;
+        // the arms silver column, every row
+        for (int i = 0; i < 52; ++i)
+            if (rules::eqcArmsSilver(i) != kSilver[i]) ++bad;
+        // the armor gold column, every row
+        for (int i = 0; i < 14; ++i)
+            if (rules::eqcArmorGold(i) != kArmor[i]) ++bad;
+        // the coin-unit identity: exactly one nonzero
+        // column on every arms row
+        for (int i = 0; i < 52; ++i)
+            if ((rules::eqcArmsGold(i) == 0) ==
+                (rules::eqcArmsSilver(i) == 0)) ++bad;
+        // the clamps: past either edge reads the edge row
+        // (the edges differ in both columns - the single
+        // arrow 0 gold 2 silver; the voulge 2 gold 0 silver)
+        if (rules::eqcArmsGold(-5) != 0 ||
+            rules::eqcArmsSilver(-5) != 2 ||
+            rules::eqcArmsGold(99) != 2 ||
+            rules::eqcArmsSilver(99) != 0) ++bad;
+        if (rules::eqcArmorGold(-5) != 90 ||
+            rules::eqcArmorGold(99) != 15) ++bad;
+        // the six silver rows are the ammo prices
+        if (rules::eqcArmsSilver(0) != 2 ||
+            rules::eqcArmsSilver(15) != 5 ||
+            rules::eqcArmsSilver(28) != 10 ||
+            rules::eqcArmsSilver(37) != 1 ||
+            rules::eqcArmsSilver(41) != 15 ||
+            rules::eqcArmsSilver(42) != 10) ++bad;
+        // the monetary-system pin
+        if (rules::eqcSilverPerGold() != 20) ++bad;
+        printf("R300a equipment cost columns seam audit: bad %d\n", bad);
+    }
+    // ---- R300: the equipment costs engine audit ----
+    // The items costGp column repinned to the printed tables
+    // (rules/equipcosts.h): every engine weapon and armor id
+    // maps to its printed row - the printed-table-wins debt
+    // paid. The recorded conventions: the quarterstaff and
+    // club are not in the print (0 stays the engine
+    // convention), the sling keeps the 2 g.p. engine price
+    // (the print prices the dozen sling and bullets bundle,
+    // 15 s.p.), the generic mace and flail read the footman
+    // rows and the unsold armor None reads 0. The shield
+    // file-static 10 g.p. equals the print Shield, small row
+    // (no accessor - recorded, not audited).
+    {
+        int bad = 0;
+        // the printed arms row each engine weapon reads
+        // (-1 = not in the print, 0 stays; -2 = the sling
+        // bundle convention, the engine keeps 2 g.p.)
+        static const int kRow[15] = {
+            14, 4, 48, 47, 3, 30, 18, 32, 43, -1,
+            -1, 11, 10, 13, -2,
+        };
+        for (int i = 0; i < 15; ++i) {
+            int want = 0;
+            if (kRow[i] >= 0)
+                want = rules::eqcArmsGold(kRow[i]);
+            if (kRow[i] == -2)
+                want = 2;
+            if (items::weapon((items::WeaponId)i).costGp != want)
+                ++bad;
+        }
+        // the printed armor row each engine armor id reads
+        // (-1 = the unsold None row, 0)
+        static const int kArow[10] = {
+            -1, 5, 4, 13, 7, 8, 1, 12, 0, 6,
+        };
+        for (int i = 0; i < 10; ++i) {
+            int want = 0;
+            if (kArow[i] >= 0)
+                want = rules::eqcArmorGold(kArow[i]);
+            if (items::armor((items::ArmorId)i).costGp != want)
+                ++bad;
+        }
+        // the repinned rows, spot-checked against the print
+        if (items::weapon(items::WPN_HAND_AXE).costGp != 1 ||
+            items::weapon(items::WPN_BATTLE_AXE).costGp != 5 ||
+            items::weapon(items::WPN_FLAIL).costGp != 3 ||
+            items::weapon(items::WPN_MORNING_STAR).costGp != 5 ||
+            items::weapon(items::WPN_SPEAR).costGp != 1 ||
+            items::weapon(items::WPN_SHORT_BOW).costGp != 15 ||
+            items::weapon(items::WPN_LONG_BOW).costGp != 60 ||
+            items::weapon(items::WPN_CROSSBOW_LIGHT).costGp != 12 ||
+            items::armor(items::ARMOR_SCALE_MAIL).costGp != 45)
+            ++bad;
+        // the kept rows: the print already agreed (dagger 2,
+        // short sword 8, long sword 15, mace 8, padded 4,
+        // leather 5, studded 15, ring 30, chain 75, splinted
+        // 80, banded 90, plate 400)
+        if (items::weapon(items::WPN_DAGGER).costGp != 2 ||
+            items::weapon(items::WPN_SHORT_SWORD).costGp != 8 ||
+            items::weapon(items::WPN_LONG_SWORD).costGp != 15 ||
+            items::weapon(items::WPN_MACE).costGp != 8 ||
+            items::armor(items::ARMOR_PADDED).costGp != 4 ||
+            items::armor(items::ARMOR_LEATHER).costGp != 5 ||
+            items::armor(items::ARMOR_STUDDED_LEATHER).costGp != 15 ||
+            items::armor(items::ARMOR_RING_MAIL).costGp != 30 ||
+            items::armor(items::ARMOR_CHAIN_MAIL).costGp != 75 ||
+            items::armor(items::ARMOR_SPLINTED).costGp != 80 ||
+            items::armor(items::ARMOR_BANDED).costGp != 90 ||
+            items::armor(items::ARMOR_PLATE).costGp != 400)
+            ++bad;
+        // the recorded conventions: the quarterstaff and
+        // club (not in the print), the sling (the bundle
+        // print, the 2 g.p. engine price) and the unsold
+        // armor None
+        if (items::weapon(items::WPN_QUARTERSTAFF).costGp != 0 ||
+            items::weapon(items::WPN_CLUB).costGp != 0 ||
+            items::weapon(items::WPN_SLING).costGp != 2 ||
+            items::armor(items::ARMOR_NONE_EQUIPPED).costGp != 0)
+            ++bad;
+        printf("R300 equipment costs engine audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

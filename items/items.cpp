@@ -10,9 +10,14 @@ namespace items {
 
 // ----------------------------------------------------------------------------
 // Weapons (PHB p.37 table; damage vs S/M and L, missile data)
-// Weight in gp units (1 gp = 1/10 lb). Costs from the same table.
-// NOTE: values follow the standard 1e table from project notes
-// (verification debt - printed table wins).
+// Weight in gp units (1 gp = 1/10 lb). R300: the costGp
+// column repinned to the printed BASIC EQUIPMENT AND SUPPLIES
+// COSTS tables (rules/equipcosts.h) - the printed-table-wins
+// debt paid. The rows NOT in the print (quarterstaff, club)
+// keep 0 as ENGINE CONVENTION; the sling keeps the 2 g.p.
+// engine price (the print prices the dozen sling and bullets
+// bundle, 15 s.p.); the generic mace and flail read the
+// printed footman rows (8 and 3 g.p.).
 // R145: the last member is the PHB p.38 'to hit' adjustment row
 // (columns AC 0..10, positive = easier), transcribed from the
 // 1eonline.info compilation (both p.38 charts - melee weapons
@@ -29,7 +34,7 @@ static const WeaponDef kWeapons[WPN_COUNT] = {
     { "Dagger",         rules::WCLASS_PIERCING,   1,4,0,   1,3,0,   false,   0,  0,   20,     2,
       // R145: p.38 row, AC 0..10
       {-4,-4,-3,-3,-2,-2, 0, 0,+1,+1,+3 } },
-    { "Hand Axe",       rules::WCLASS_SLASHING,   1,6,0,   1,4,0,   false,   0,  0,   50,     4,
+    { "Hand Axe",       rules::WCLASS_SLASHING,   1,6,0,   1,4,0,   false,   0,  0,   50,     1,
       // R145: p.38 row, AC 0..10
       {-5,-4,-3,-2,-1,-1, 0, 0,+1,+1,+1 } },
     { "Short Sword",    rules::WCLASS_PIERCING,   1,6,0,   1,8,0,   false,   0,  0,   50,     8,
@@ -38,19 +43,19 @@ static const WeaponDef kWeapons[WPN_COUNT] = {
     { "Long Sword",     rules::WCLASS_SLASHING,   1,8,0,  1,12,0,   false,   0,  0,   75,    15,
       // R145: p.38 row, AC 0..10
       {-4,-3,-2,-1, 0, 0, 0, 0, 0,+1,+2 } },
-    { "Battle Axe",     rules::WCLASS_SLASHING,   1,8,0,  1,8,0,    false,   0,  0,   70,     7,
+    { "Battle Axe",     rules::WCLASS_SLASHING,   1,8,0,  1,8,0,    false,   0,  0,   70,     5,
       // R145: p.38 row, AC 0..10
       {-5,-4,-3,-2,-1,-1, 0, 0,+1,+1,+2 } },
     { "Mace",           rules::WCLASS_BLUDGEONING,1,6,0,  1,6,0,    false,   0,  0,   80,     8,
       // R145: p.38 row, AC 0..10
       {+2,+2,+1,+1,+1, 0, 0, 0, 0,+1,-1 } },
-    { "Flail",          rules::WCLASS_BLUDGEONING,1,6,1,  2,7,1,    false,   0,  0,   80,    15,
+    { "Flail",          rules::WCLASS_BLUDGEONING,1,6,1,  2,7,1,    false,   0,  0,   80,     3,
       // R145: p.38 row, AC 0..10
       {+3,+3,+2,+1,+1,+2,+1,+1,+1,+1,-1 } },
-    { "Morning Star",   rules::WCLASS_BLUDGEONING,2,4,0,  1,6,1,    false,   0,  0,  100,    10,
+    { "Morning Star",   rules::WCLASS_BLUDGEONING,2,4,0,  1,6,1,    false,   0,  0,  100,     5,
       // R145: p.38 row, AC 0..10
       { 0, 0, 0,+1,+1,+1,+1,+1,+1,+2,+2 } },
-    { "Spear",          rules::WCLASS_PIERCING,   1,6,0,  1,8,0,    false,   0,  0,   60,     3,
+    { "Spear",          rules::WCLASS_PIERCING,   1,6,0,  1,8,0,    false,   0,  0,   60,     1,
       // R145: p.38 row, AC 0..10
       {-2,-2,-2,-1,-1,-1, 0, 0, 0, 0, 0 } },
     { "Quarterstaff",   rules::WCLASS_BLUDGEONING,1,6,0,  1,6,0,    false,   0,  0,   40,     0,
@@ -59,13 +64,13 @@ static const WeaponDef kWeapons[WPN_COUNT] = {
     { "Club",           rules::WCLASS_BLUDGEONING,1,6,0,  1,3,1,    false,   0,  0,   30,     0,
       // R145: p.38 row, AC 0..10
       {-7,-6,-5,-4,-3,-2,-1,-1, 0, 0,+1 } },
-    { "Short Bow",      rules::WCLASS_PIERCING,   1,6,0,  1,6,0,    true,    5,  2,   20,    25,
+    { "Short Bow",      rules::WCLASS_PIERCING,   1,6,0,  1,6,0,    true,    5,  2,   20,    15,
       // R145: p.38 row, AC 0..10
       {-7,-6,-5,-4,-1, 0, 0,+1,+2,+2,+2 } },
-    { "Long Bow",       rules::WCLASS_PIERCING,   1,6,0,  1,6,0,    true,    7,  2,   30,    40,
+    { "Long Bow",       rules::WCLASS_PIERCING,   1,6,0,  1,6,0,    true,    7,  2,   30,    60,
       // R145: p.38 row, AC 0..10
       {-2,-1,-1, 0, 0,+1,+2,+3,+3,+3,+3 } },
-    { "Light Crossbow", rules::WCLASS_PIERCING,   1,4,0,  1,4,0,    true,    6,  1,   70,    10,
+    { "Light Crossbow", rules::WCLASS_PIERCING,   1,4,0,  1,4,0,    true,    6,  1,   70,    12,
       // R145: p.38 row, AC 0..10
       {-3,-2,-2,-1, 0, 0,+1,+2,+3,+3,+3 } },
     { "Sling",          rules::WCLASS_BLUDGEONING,1,4,0,  1,4,1,    true,    4,  1,   10,     2,
@@ -92,7 +97,7 @@ static const ArmorDef kArmors[ARMOR_COUNT] = {
     { "Leather",          8,    rules::ARMOR_LEATHER,      150,     5 },
     { "Studded Leather",  7,    rules::ARMOR_LEATHER,      200,    15 },
     { "Ring Mail",        7,    rules::ARMOR_CHAIN,        250,    30 },
-    { "Scale Mail",       6,    rules::ARMOR_CHAIN,        400,    50 },
+    { "Scale Mail",       6,    rules::ARMOR_CHAIN,        400,    45 },
     { "Chain Mail",       5,    rules::ARMOR_CHAIN,        300,    75 },
     { "Splinted",         4,    rules::ARMOR_PLATE,        400,    80 },
     { "Banded",           4,    rules::ARMOR_PLATE,        350,    90 },

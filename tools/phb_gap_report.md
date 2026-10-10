@@ -978,23 +978,57 @@ found and opened below.
 
 ## Open items (the R299 addition)
 
-- [ ] **The equipment cost columns (the BASIC
+- [x] **The equipment cost columns (the BASIC
       EQUIPMENT AND SUPPLIES COSTS tables,
       upload line 2113; the reference-sheet
-      repeats at upload line 13432)** - the
-      arms and armor list prices the engine
-      carries as items costGp (dead data: no
-      shop charges them - the town stores
-      price canonically; verified repo-wide)
-      were never battery-pinned. A DATA-ONLY
-      pin candidate (the R190 precedent): a
-      rules header walking the printed arms
-      and armor cost columns cell by cell.
-      The R300 candidate. The general
-      equipment rows (clothing, herbs,
-      livestock, provisions, religious items,
-      tack, transport) carry no engine layer
-      - out of engine scope.
+      repeats at upload line 13432)** - PINNED
+      R300: rules/equipcosts.h CREATED - the
+      52 arms rows and the 14 armor rows
+      pinned cell by cell (eqcArmsGold,
+      eqcArmsSilver, eqcArmorGold and the
+      name arrays; exactly one coin unit
+      nonzero per arms row; the six silver
+      rows are the ammo prices - the single
+      arrow 2 s.p., the dart 5, the javelin
+      10, the light quarrel 1, the dozen
+      sling and bullets 15 and the score of
+      sling bullets 10) and the monetary pin
+      20 s.p. = 1 g.p. (eqcSilverPerGold).
+      Both upload copies read: the reference
+      sheet is legible, the equipment copy
+      interleaves - it resolves the empty
+      glaive cell to 6 g.p. and confirms the
+      left rows 1-28 and the right rows
+      1-24. The ENGINE items.cpp costGp
+      column REPINNED where it diverged
+      (9 repins: hand axe 4 to 1, battle axe
+      7 to 5, flail 15 to 3, morning star 10
+      to 5, spear 3 to 1, short bow 25 to 15,
+      long bow 40 to 60, light crossbow 10
+      to 12, scale mail 50 to 45) - the
+      printed-table-wins debt paid.
+      JUDGMENTs recorded: the generic mace
+      and flail read the printed footman
+      rows (8 and 3 g.p.); the quarterstaff
+      and club are not in the print (0 stays
+      ENGINE CONVENTION); the sling keeps
+      the 2 g.p. engine price (the print
+      prices the dozen-bullet bundle); the
+      shield file-static 10 g.p. equals the
+      print Shield, small row (no accessor -
+      recorded, not audited); the banded row
+      prints Bonded in one copy (the
+      standard banded mail, 90 g.p.). The
+      helmet rows and the ammo prices carry
+      no engine layer (dead data - no shop
+      charges them; the town stores price
+      canonically). The R300a battery audit
+      walks the seam (evaluable - verified
+      by audit_eval) and the R300 engine
+      audit maps every items weapon and
+      armor id to its printed row.
+      Census 219. The ledger holds ZERO
+      open items.
 
 ## Out of engine scope (the R296 additions)
 
