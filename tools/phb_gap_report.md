@@ -1309,25 +1309,45 @@ the battery census stays 231.
 
 ## Open items (the R307 addition)
 
-- [ ] **The general equipment cost
+- [x] **The general equipment cost
       lists (Clothing, Herbs,
-      Livestock, Provisions and
-      Transport; upload lines 2344-2430
+      Livestock, Miscellaneous
+      Equipment and Items,
+      Provisions, Religious Items,
+      Tack and Harness and
+      Transport; upload lines 2344-2437
       with the reference-sheet repeats
-      at 13473-13535) - OPENED R307:**
-      the R300 cost columns pinned the
-      52 arms and the 14 armor rows
-      only. The five general lists stay
-      unpinned (the clothing and
-      footwear prices, the herb costs,
-      livestock, the provisions and the
-      transport costs - mounts, tack
-      and vehicles). A data candidate:
-      rules/equipcosts.h grows the rows
-      (the R300 pattern; the
-      reference-sheet copies resolve any
-      ambiguous cell). The judgment
-      waits for the pin round.
+      at 13473-13541) - PINNED R308:**
+      rules/equipcosts.h grows the
+      general section: 99 rows across
+      the EIGHT printed lists (11, 3,
+      21, 29, 10, 6, 9 and 10), every
+      price in its printed coin (11
+      copper, 29 silver, 59 gold -
+      exactly one coin column nonzero
+      per row). The reference sheet is
+      the complete legible copy: it
+      resolves the scrambled herbs
+      cells (belladonna 4 s.p., garlic
+      bud 5 c.p., wolvesbane 10 s.p.)
+      and the eight transport cells
+      the equipment-section OCR drops;
+      the copies agree on every shared
+      cell. The monetary pins join the
+      R300 silver one (10 c.p. = 1
+      s.p., 200 c.p. = 1 g.p.). The
+      row order and the name
+      normalizations ride the R300
+      conventions (the foot marks
+      spelled out; the ampersands read
+      as and). No engine site charges
+      them yet (the town stores price
+      canonically); the R308 battery
+      audit walks every cell, the list
+      boundaries, the clamps, the coin
+      identity and the monetary pins.
+      Census 232. The ledger holds
+      ZERO open items.
 
 ## Out of engine scope (the R296 additions)
 
