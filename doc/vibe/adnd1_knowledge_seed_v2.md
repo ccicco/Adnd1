@@ -42,6 +42,9 @@ R172 were already dropped at the R171b/R172 era cut; git
   writes all created content programmatically with chr(10), so the
   created files are byte-exact. The REAL gates are: py_compile,
   the applied/already counts, the created-file md5, and preflight.
+- The repo is PUBLIC: the assistant reads the land via raw
+  URLs (web open) or the codeload tarball - the Termux
+  tarball ritual is not the only way to read it (R174).
 
 ## Recovery ritual (re-running a FIXED splice after a bad land)
 
@@ -62,7 +65,9 @@ R172 were already dropped at the R171b/R172 era cut; git
 - Markers: a marker must be unique to the NEW text and ABSENT from
   the PRE-patch file (R178c), and for created headers a ZERO-PARAM
   accessor line (R311 - a parametered first choice never matched
-  the already path).
+  the already path), and a SINGLE-LINE fragment of the header
+  comment - a marker wrapping across comment lines fails the
+  create-if-absent assert (R217).
 - Apply twice on a fresh tree (applied N / already 0, then 0 / N);
   a second virgin tree + splice must be byte-identical (diff -r).
 - Every static audit array: declared size == initializer count AND
@@ -74,9 +79,25 @@ R172 were already dropped at the R171b/R172 era cut; git
   locals, cross-calls, C-truncation division, early returns;
   no structs/engine objects). audit_eval loads all rules/*.h, so
   cross-header calls resolve.
+- ENUM COLLISIONS: audit_eval keeps ONE global enum table across
+  ALL rules/*.h - a new enum prefix can silently overwrite
+  another header's count (the SM_ scroll prefix collided with
+  siegefire.h) - grep rules/*.h for any new enum prefix BEFORE
+  landing it (scroll materials are now SCM_).
+- Table rounds: the band-contiguity loop (lo[i] == hi[i-1] +
+  1) is mandatory, and DERIVE the header arrays from the
+  ground-truth parse programmatically and diff them against the
+  splice arrays (the R241 DERIVED-CHECK) - never trust
+  hand-typed cells, even after a clean parse.
 - Engine audits: replica-walk every seeded scenario in Python
-  FIRST (the xorshift64* rng with rejection-sampling below; the
-  R304 discipline) and only then write the expected values;
+  FIRST (the R304 discipline) and only then write the expected
+  values. The canonical replica code (the seeded xorshift64*
+  rng with rejection sampling) lives IN THE REPO - every
+  engine-round splice carries it; tools/r312_splice.py is the
+  freshest copy (the class with nxt/below/rrange). ENGINE IDIOM
+  (R192b): rules::Dice wraps a rules::Rng& and the RNG OWNS
+  THE SEED - rules::Rng r(seed); rules::Dice d(r); with
+  separate Rng locals per independent roll.
   simulate EVERY accessor the audit probes, including patched
   engine functions (R181); pre-assert every roster index the audit
   probes (R182); copy every engine identifier character-for-
@@ -152,3 +173,13 @@ R172 were already dropped at the R171b/R172 era cut; git
 
 - R312 + R312b landed 2026-10-10: commit 8661437, census 237
   (the flooded crossing - see Current state above).
+
+## Knowledge maintenance
+
+- Each land appends ONE entry to Round state above (date,
+  commit, census, what landed, the lessons) - terse; the repo
+  carries the code and the gap reports.
+- When this file balloons past ~100KB, run the fresh start
+  again (v3): backup + seed + continuation prompt saved to
+  doc/vibe/ with a v3 suffix and committed BEFORE wiping
+  knowledge and chats - the v2 process is the template.
