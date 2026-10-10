@@ -7050,6 +7050,18 @@ parentheticals wire at the R304 locked
 door (the phb report carries the round
 box; the battery census moves 227 -> 229).
 
+R306 PINNED the DMG thief commentary folds:
+the hide site (hiding is never possible
+under direct or even indirect observation -
+the engine runs the unobserved attempt and
+the dice), the climb site (the climb walls
+haul at the pit trap - a coarse surface
+with ledges and cracks, the PHB print) and
+the script site (the read languages draw on
+the lair treasure map). The phb report
+carries the round box; the battery census
+moves 229 -> 231).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

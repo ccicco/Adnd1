@@ -141,6 +141,22 @@ inline const char* trapName(int kind) {
     return NAMES[kind];
 }
 
+// R306: the pit family - the five printed
+// Appendix G pit kinds (the trap page), for
+// the climb-walls haul at the trap site
+inline int trapPitKindMin() {
+    return 28;
+}
+
+inline int trapPitKindMax() {
+    return 32;
+}
+
+inline bool trapIsPit(int kind) {
+    return kind >= trapPitKindMin() &&
+           kind <= trapPitKindMax();
+}
+
 }  // namespace appendixg
 
 namespace appendixh {

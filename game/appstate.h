@@ -1108,6 +1108,12 @@ struct AppState {
     // R304: the locked doors of this delve
     std::vector<LockedDoor> lockedDoors;
 
+    // R306: the hidden thief - one absorbed
+    // wanderer per successful hide
+    bool hiddenThief = false;
+    // R306: the lair script - one read per delve
+    bool scriptTried = false;
+
     void newDungeon(uint64_t s);
 
     // R24: creation is finished - the delve begins
@@ -1376,6 +1382,17 @@ struct AppState {
     // per door), or two simultaneous 1s tear
     // the lock out (the DMG doors prose)
     void forceLockedDoor();
+
+    // R306: [I] hide - the first living thief
+    // blends into the shadows (the R298
+    // percentile); success lets one wanderer
+    // pass the company unseen
+    void hideExplore();
+
+    // R306: the lair script - the first living
+    // thief reads the monster hoard map (the
+    // printed percentile; one try per delve)
+    void readScript();
 
     // R45: [F] search - one turn spent feeling the walls.
     // Each adjacent unfound secret door rolls 1-in-6 (a

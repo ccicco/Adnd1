@@ -886,7 +886,10 @@ census stays 213.
       move silently draw; R303: the street
       site rolls the pick pockets draw;
       R304: the locked-door site rolls the
-      open locks draw; the rest stay data) -
+      open locks draw; WIRED R306: the
+      shadow, pit and script sites roll the
+      hide, climb and read draws; hear noise
+      keeps the R120 listen convention) -
       the take table (upload line 1620) runs
       thief levels 1 through 17 across the
       eight functions (pick pockets, open
@@ -1131,6 +1134,37 @@ census stays 213.
       replica walked the draws first).
       Census 229. The ledger
       holds ZERO open items.
+
+- [x] **The thief functions wired - WIRED
+      R306:** the last three take-table
+      columns gain their engine sites.
+      rules/thieffunc.h grows the site pins:
+      the observed-hide note (the DMG
+      commentary print - never under direct
+      observation; the engine runs
+      unobserved), the wander pass (one
+      absorbed wanderer per hide - the PHB
+      blend prose), the coarse climb surface
+      (the PHB print), the pit haul turn and
+      the script fold (one try per delve,
+      the 2d6 cache band). The sites: [I]
+      in the dungeon spends the turn and the
+      first living thief rolls the hide
+      percentile - success sets the flag and
+      the next wanderer passes unseen; the
+      pit trap draws the climb percentile
+      after the strike (a clean climb hauls
+      the victim out, a miss still hauls
+      but spends the turn); the lair victory
+      draws the read percentile once per
+      delve - success pays the coins cache.
+      The R306a battery audit walks the
+      boundaries and the pins (evaluable -
+      verified by audit_eval); the R306
+      engine audit pins every scenario on
+      seeded sequences (the replica walked
+      the draws first). Census 231. The
+      ledger holds ZERO open items.
 
 ## R299 the party recordings round (the third
 scope pass rides)

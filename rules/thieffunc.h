@@ -10,8 +10,10 @@
 // R302: the move silently roll now runs at
 // the surprise site; R303: the pick
 // pockets roll now runs at the city
-// street site; the others wait for engine
-// sites that do not exist yet.
+// street site; R306: the hide, climb and read
+// rolls run at the shadow, pit and script
+// sites (hear noise keeps the R120 portal
+// listen convention).
 //
 // The take table: the base chance to perform
 // each of the eight thief functions (pick
@@ -302,6 +304,63 @@ inline bool thfPocketsVictimNotices(int rollTenths,
                                     int chanceTenths) {
     return rollTenths >= chanceTenths +
         10 * thfNotePocketsNoticeBand();
+}
+
+
+// R306: the hide site note - the DMG
+// commentary print: hiding in shadows is
+// never possible under direct (or even
+// indirect) observation, and the unobserved
+// attempt still stands the hazard of the
+// dice. The engine site runs unobserved (no
+// foe on screen - the fold rides the flag).
+inline int thfNoteHideObserved() {
+    return 1;
+}
+
+// R306: the hidden pass - the PHB blend
+// print: the company remains unobserved, so
+// one wandering encounter passes unseen; the
+// hide roll bought the pass and the flag
+// folds at the spawn site
+inline int thfHideWanderPasses() {
+    return 1;
+}
+
+// R306: the climb site note - the PHB
+// print: climbing assumes the surface is
+// coarse and offers ledges and cracks for
+// toe and hand holds (no DEX column)
+inline int thfNoteClimbCoarseSurface() {
+    return 1;
+}
+
+// R306: the failed pit haul costs a full
+// turn - the climb missed, the ropes come
+// out, and the work draws the wander check
+inline int thfPitHaulFailTurns() {
+    return 1;
+}
+
+// R306: the script note - the PHB print:
+// from the 4th level the read languages
+// chance enables the reading of instructions
+// and treasure maps. JUDGMENT: the monster
+// lair holds one script per delve (one try,
+// spent whatever the roll reads)
+inline int thfReadScriptOncePerDelve() {
+    return 1;
+}
+
+// R306: the script cache band - the coins
+// cache behind the map rolls 2d6 (the
+// TA_REL_COINS shape, scaled by the level)
+inline int thfReadScriptCacheMin() {
+    return 2;
+}
+
+inline int thfReadScriptCacheMax() {
+    return 12;
 }
 
 }  // namespace rules

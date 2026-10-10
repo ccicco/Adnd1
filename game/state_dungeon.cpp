@@ -319,6 +319,51 @@ void AppState::springTrap(int roomIndex){
                      c.name.c_str(), dmg);
         }
         log.add(buf);
+
+        // R306: the pit haul - the first living
+        // thief climbs down the wall (the PHB
+        // print: climbing assumes a coarse
+        // surface with ledges and cracks). A
+        // clean climb costs nothing; a missed
+        // climb still hauls the victim out but
+        // spends the turn (the work draws the
+        // wander check, the bump convention)
+        if (dm::appendixg::trapIsPit(room.trapKind)) {
+            const Character* climber = nullptr;
+            for (const auto& t : party.members) {
+                if (t.hp <= 0 || t.classIndex != 3)
+                    continue;
+                climber = &t;
+                break;
+            }
+            if (climber != nullptr) {
+                int climb = (int)rng.below(1000);
+                char pbuf[128];
+                if (rules::thfAttemptSucceeds(climb,
+                        rules::THF_CLIMB_WALLS,
+                        climber->level, climber->race,
+                        (int)climber->abilities.dex)) {
+                    snprintf(pbuf, sizeof pbuf,
+                             "%s climbs down the pit "
+                             "wall and hauls %s out.",
+                             climber->name.c_str(),
+                             c.name.c_str());
+                    log.add(pbuf);
+                } else {
+                    ++turnCount;
+                    tickActivity(1);   // R119: the haul
+                    snprintf(pbuf, sizeof pbuf,
+                             "%s ropes %s out - the "
+                             "haul costs a turn.",
+                             climber->name.c_str(),
+                             c.name.c_str());
+                    log.add(pbuf);
+                    // the spent turn draws a wanderer
+                    if (dm::wanderCheck(dice, wander))
+                        spawnWanderingEncounter();
+                }
+            }
+        }
         if (!party.alive()) {
             log.add("GAME OVER - press N to roll a new party.");
         }
@@ -1897,6 +1942,103 @@ void AppState::forceLockedDoor(){
             spawnWanderingEncounter();
     }
 
+// ---- hideExplore ----
+// R306: [I] - the first living thief blends
+// into the shadows (the R298 percentile).
+// The DMG commentary print: hiding is never
+// possible under observation, and the
+// unobserved attempt still stands the dice -
+// the engine site runs unobserved. The
+// success folds at the wander site: one
+// wanderer passes the company unseen. The
+// turn spends (the bump convention).
+void AppState::hideExplore(){
+        if (mode != MODE_EXPLORE) return;
+        if (!party.alive()) return;
+
+        ++turnCount;
+        tickActivity(1);   // R119: the wait is work too
+
+        const Character* thief = nullptr;
+        for (const auto& t : party.members) {
+            if (t.hp <= 0 || t.classIndex != 3) continue;
+            thief = &t;
+            break;
+        }
+        if (thief == nullptr) {
+            log.add("No thief walks with you - the "
+                    "shadows stay empty.");
+        } else {
+            int roll = (int)rng.below(1000);
+            char buf[96];
+            if (rules::thfAttemptSucceeds(roll,
+                    rules::THF_HIDE_SHADOWS,
+                    thief->level, thief->race,
+                    (int)thief->abilities.dex)) {
+                hiddenThief = true;
+                snprintf(buf, sizeof buf,
+                         "%s melts into the shadows.",
+                         thief->name.c_str());
+            } else {
+                snprintf(buf, sizeof buf,
+                         "%s presses into the shadows - "
+                         "they betray the attempt.",
+                         thief->name.c_str());
+            }
+            log.add(buf);
+        }
+
+        // the turn spent can draw a wanderer
+        if (dm::wanderCheck(dice, wander))
+            spawnWanderingEncounter();
+    }
+
+// ---- readScript ----
+// R306: the lair script - the monster hoard
+// holds a treasure map (the PHB print: the
+// read languages chance enables the reading
+// of instructions and treasure maps). The
+// first living thief reads it once per
+// delve (the JUDGMENT); success pays the
+// coins cache (the 2d6 shape scaled by the
+// level).
+void AppState::readScript(){
+        if (scriptTried) return;
+        scriptTried = true;
+
+        const Character* thief = nullptr;
+        for (const auto& t : party.members) {
+            if (t.hp <= 0 || t.classIndex != 3) continue;
+            thief = &t;
+            break;
+        }
+        if (thief == nullptr) {
+            log.add("The script waits for a thief.");
+            return;
+        }
+        int roll = (int)rng.below(1000);
+        char buf[96];
+        if (rules::thfAttemptSucceeds(roll,
+                rules::THF_READ_LANGUAGES,
+                thief->level, thief->race,
+                (int)thief->abilities.dex)) {
+            int gp = (int)dice.roll(2, 6, 0) * 10 *
+                     dungeonLevel;
+            party.gold += gp;
+            party.delveGold += gp;
+            snprintf(buf, sizeof buf,
+                     "%s reads the script - a cache "
+                     "holds %d gp.",
+                     thief->name.c_str(), gp);
+        } else {
+            snprintf(buf, sizeof buf,
+                     "%s squints at the script - it "
+                     "stays cryptic.",
+                     thief->name.c_str());
+        }
+        log.add(buf);
+    }
+
 // ---- searchExplore ----
 void AppState::searchExplore(){
         if (mode != MODE_EXPLORE) return;
@@ -2027,6 +2169,8 @@ void AppState::awardVictory(){
         // applies to lair monsters without MM letters.
         const bool mmLair = def && !def->treasure.lair.empty() &&
                            combatRoomIndex >= 0;
+        // R306: the lair script - the hoard map
+        if (mmLair) readScript();
         dm::treasure::Hoard hoard;
         if (def) {
             if (mmLair)

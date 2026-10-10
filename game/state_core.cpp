@@ -28,6 +28,8 @@ void AppState::newDungeon(uint64_t s){
         populateRooms();
         placeSecretDoors();   // R45
         placeLockedDoors();   // R304: the locked door feature
+        hiddenThief = false;   // R306: the hide flag
+        scriptTried = false;   // R306: the script flag
 
         char buf[96];
         snprintf(buf, sizeof buf,

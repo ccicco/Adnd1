@@ -465,6 +465,16 @@ std::vector<ai::Actor> AppState::buildFoesFromParty(const dm::CharacterParty& pa
 void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return;
         if (!party.alive()) return;
 
+        // R306: the hidden thief - the hide roll
+        // bought one silent pass (the PHB blend
+        // prose); the flag is spent here
+        if (hiddenThief) {
+            hiddenThief = false;
+            log.add("The hidden company holds its "
+                    "breath - the wanderer passes.");
+            return;
+        }
+
         // R52: the real DMG Appendix C roll - Determination
         // Matrix, level table, subtables (Human/Dragon/etc.).
         // An empty key is NO ENCOUNTER (or an R53 re-roll row).
