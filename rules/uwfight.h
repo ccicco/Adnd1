@@ -31,15 +31,14 @@
 // swings fail; missile weapons are
 // impossible except the specially-made
 // crossbow (10x price, half the dungeon
-// range - the R311 data). No such item
-// is pinned in the engine, so the bar
-// reads total; the fold opens when the
-// crossbow is pinned.
+// range - the R311 data). R314: the deep
+// crossbow is pinned (items/items.h) - the
+// missile bar lifts for it alone (the
+// combatShoot fold in state_combat.cpp).
 //
 // NOT CHARGED (recorded, ride the R311
-// pin, not data): the aquatic first
-// strike (no aquatic monster roster is
-// pinned), the net throw prose, the free
+// pin, not data): the net throw prose,
+// the free
 // action weapon exception (no free action
 // effect exists), the vision decay (no
 // engine vision layer - a future seam)
@@ -88,10 +87,47 @@ inline int uwStrikeAllowed(int wclass) {
 }
 
 // Missile fire underwater is impossible
-// except the specially-made crossbow (no
-// such item is pinned - the bar reads
-// total until the crossbow lands).
+// except the specially-made crossbow
+// (R314: the deep crossbow is pinned in
+// items - the bar lifts for it alone at
+// the combatShoot fold).
 inline int uwMissileBarred() {
+    return 1;
+}
+
+// The aquatic first strike (the R311 pin
+// uwAquaticFirstStrike, above): the fold
+// floors the aquatic monsters at the
+// first segment and the company no
+// earlier than the second - the print
+// exception (the significantly-longer
+// company weapon) reads data, no reach
+// layer exists (the JUDGMENT: no aquatic
+// monster roster is pinned - aquatic
+// means the encounter arrived via the
+// waterborne table, the R127 fold).
+inline int uwAquaticFirstStrikeSegment() {
+    return 1;
+}
+
+// The company (the land-side weapons)
+// acts no earlier than this segment in
+// the aquatic first-strike fold.
+inline int uwCompanyEarliestSegment() {
+    return 2;
+}
+
+// The waterborne wanderer is the aquatic
+// monster (the R127 fresh-water table
+// feeds the flood pool).
+inline int uwWaterborneIsAquatic() {
+    return 1;
+}
+
+// The deep crossbow (the specially-made
+// underwater crossbow, R314, items) lifts
+// the underwater missile bar.
+inline int uwDeepCrossbowAllowed() {
     return 1;
 }
 

@@ -504,6 +504,13 @@ public:
     // party strikes (waterStrikeAllowed).
     void setWaterFight() { m_waterFight = true; }
 
+    // R314: the aquatic first strike - the
+    // encounter arrived via the waterborne
+    // table (the flood pool spawn); the R311
+    // print: the aquatic monsters strike
+    // first (the stepRound fold, uwfight.h).
+    void setAquatic() { m_aquatic = true; }
+
     // R313: the underwater strike probe (the
     // R311 combat pin): in a water fight a
     // party member strikes only with a
@@ -540,6 +547,7 @@ private:
     bool m_teleported = false;              // R83: Teleport escape
 
     bool m_waterFight = false;   // R313: the water fight
+    bool m_aquatic = false;   // R314: the aquatic fold
 
     int  m_distance = 5;   // R43: engagement range in 10' bands
 

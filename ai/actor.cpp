@@ -1068,6 +1068,24 @@ int Encounter::stepRound() {
     int baseSegP = rules::initiativeToSegment(pIni) + pSurp;
     int baseSegM = rules::initiativeToSegment(mIni) + mSurp;
 
+    // R314: the aquatic first strike (the
+    // R311 print and pin) - the waterborne
+    // monsters strike first in the water
+    // fight unless the company weapon is
+    // significantly longer; no reach layer
+    // exists, so the exception reads data
+    // and the fold floors the segments
+    // (rules/uwfight.h).
+    if (m_waterFight && m_aquatic &&
+        rules::uwAquaticFirstStrike()) {
+        baseSegM = mSurp +
+            rules::uwAquaticFirstStrikeSegment();
+        if (baseSegP <
+            rules::uwCompanyEarliestSegment())
+            baseSegP =
+                rules::uwCompanyEarliestSegment();
+    }
+
     // R25: capture + clear the drink request for this round
     int drinkMember = m_drinkMember;
     m_drinkMember = -1;

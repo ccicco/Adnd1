@@ -41,6 +41,8 @@ enum WeaponId : int {
     WPN_LONG_BOW,
     WPN_CROSSBOW_LIGHT,
     WPN_SLING,
+    WPN_CROSSBOW_DEEP,   // R314: the specially-made
+                           // underwater crossbow
     WPN_COUNT
 };
 

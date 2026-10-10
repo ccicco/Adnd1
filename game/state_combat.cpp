@@ -145,13 +145,28 @@ void AppState::combatShoot(){
             return;
         // R313: the underwater combat pin (R311) -
         // missile fire is impossible underwater
-        // except the specially-made crossbow (no
-        // such item is pinned; the bar is total)
+        // except the specially-made crossbow -
+        // R314: the deep crossbow is pinned (the
+        // seam fold uwDeepCrossbowAllowed); the bar
+        // lifts for it alone, and a member with no
+        // ranged weapon still reads the bar
         if (rules::uwMissileBarred() &&
             map.at(party.x, party.y) == TILE_WATER) {
-            log.add("The water bars missile fire - no "
-                    "crossbow of the deep.");
-            return;
+            const auto& pa =
+                combat.encounter->party();
+            bool deep =
+                combat.activeMember >= 0 &&
+                combat.activeMember <
+                    (int)pa.size() &&
+                pa[combat.activeMember]
+                    .rangedWeapon.id ==
+                    items::WPN_CROSSBOW_DEEP &&
+                rules::uwDeepCrossbowAllowed() != 0;
+            if (!deep) {
+                log.add("The water bars missile fire - no "
+                        "crossbow of the deep.");
+                return;
+            }
         }
         const auto& partyActors = combat.encounter->party();
         if (combat.activeMember < 0 ||
@@ -496,6 +511,49 @@ void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return
             hiddenThief = false;
             log.add("The hidden company holds its "
                     "breath - the wanderer passes.");
+            return;
+        }
+
+        // R314: the waterborne wanderer - the
+        // company standing in the flood pool
+        // rolls the DMG fresh-water table
+        // (R127, dm::rollWaterborneEncounter)
+        // instead of the dungeon matrix. The
+        // JUDGMENT: fresh, shallow, cool - the
+        // pool site (the state_sea precedent);
+        // the count rides the registry
+        // noAppearing. The waterborne monsters
+        // are the aquatic first strike (the
+        // R311 print) - the flag rides the
+        // encounter; the substituted keys
+        // stay land monsters.
+        if (map.at(party.x, party.y) == TILE_WATER) {
+            dm::DungeonEncounter e =
+                dm::rollWaterborneEncounter(
+                    registry, dice,
+                    (int)dice.roll(1, 100, 0),
+                    (int)dice.roll(1, 100, 0),
+                    dm::WaterBody::FRESH,
+                    dm::WaterDepth::SHALLOW,
+                    dm::WaterClime::COOL);
+            if (e.key.empty() || e.count <= 0) {
+                log.add("The pool stirs - nothing "
+                        "surfaces.");
+                return;
+            }
+            std::vector<ai::Actor> foes =
+                buildFoesFromDm(e);
+            if (foes.empty()) return;
+            char buf[96];
+            snprintf(buf, sizeof buf,
+                     "%d %s surface in the pool!",
+                     e.count, e.key.c_str());
+            log.add(buf);
+            beginCombat(std::move(foes), -1,
+                       e.key);
+            if (combat.encounter &&
+                rules::uwWaterborneIsAquatic())
+                combat.encounter->setAquatic();
             return;
         }
 

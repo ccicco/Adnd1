@@ -76,6 +76,15 @@ static const WeaponDef kWeapons[WPN_COUNT] = {
     { "Sling",          rules::WCLASS_BLUDGEONING,1,4,0,  1,4,1,    true,    4,  1,   10,     2,
       // R145: p.38 row, AC 0..10
       {-3,-3,-2,-2,-1, 0, 0, 0,+2,+1,+3 } },
+    { "Deep Crossbow",  rules::WCLASS_PIERCING,
+      1,4,0,  1,4,0,    true,    3,  1,   70,   120,
+      // R314: the specially-made underwater crossbow
+      // (the R311 print) - fights as the light crossbow
+      // (the p.38 row, AC 0..10), half the range (3
+      // tens of feet, the R311 divisor), ten times the
+      // price (120 g.p., the R311 multiple), the same
+      // 70-lb weight - the JUDGMENT
+      {-3,-2,-2,-1, 0, 0,+1,+2,+3,+3,+3 } },
 };
 
 const WeaponDef& weapon(WeaponId id) {

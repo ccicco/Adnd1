@@ -7248,6 +7248,33 @@ roster). The census moves 237 -> 239
 with the R313a seam and R313 engine
 audits.
 
+R314 the deep crossbow and the aquatic
+wanderers (one splice): the specially-
+made underwater crossbow pinned (items
+WPN_CROSSBOW_DEEP - fights as the light
+crossbow, half the range, ten times the
+price, the R311 data) and the R313
+missile bar lifted for it alone
+(state_combat.cpp combatShoot, the seam
+fold uwDeepCrossbowAllowed; the throw
+stays barred); the aquatic first strike
+(the R311 print and pin) folded at
+ai/actor.cpp stepRound - the waterborne
+monsters floor at segment 1, the company
+earliest at 2 (the significantly-longer
+weapon exception reads data, no reach
+layer; the JUDGMENT: no roster is
+pinned - aquatic means the encounter
+arrived via the waterborne table), with
+the waterborne wanderers at the flood
+pool (the R127 fresh shallow cool table,
+the state_sea precedent; the count rides
+the registry noAppearing). The net
+prose, the breathing mechanic and the
+vision decay stay data. The census
+moves 239 -> 241 with the R314a seam
+and R314 engine audits.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
