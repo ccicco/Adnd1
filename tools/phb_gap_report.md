@@ -881,7 +881,8 @@ census stays 213.
       R302: the surprise site rolls the
       move silently draw; R303: the street
       site rolls the pick pockets draw;
-      the rest stay data) -
+      R304: the locked-door site rolls the
+      open locks draw; the rest stay data) -
       the take table (upload line 1620) runs
       thief levels 1 through 17 across the
       eight functions (pick pockets, open
@@ -1055,6 +1056,46 @@ census stays 213.
       sequences (the R301 replica
       convention). Census 225. The ledger
       holds ZERO open items.
+
+- [x] **The thief locks wired - WIRED
+      R304:** the open locks column gains
+      its first engine site - the locked
+      door. rules/locktime.h CREATED (the
+      grenade.h pattern): the DMG THIEF
+      ABILITIES time pins (the pick takes
+      1-10 rounds on the complexity, most
+      locks 1-4; the traps roll rides the
+      locks time) and the doors prose
+      (wooden doors always metal bound,
+      metal doors usually locked), with
+      the per-delve count judgment (one
+      door; the print carries no count).
+      The site: one locked door per delve
+      (the R45 placement scan - a TILE_WALL
+      slot with open tiles on both sides
+      of one axis) prints as a TILE_DOOR
+      the company sees but cannot pass;
+      the bump spends the turn and the
+      first living thief works the lock
+      for the DMG time draw against the
+      printed percentile (the R298 seam;
+      one try per lock, a retry waits for
+      a higher level thief, the printed
+      note; the wander check rides, the
+      searchExplore convention). The
+      remaining functions stay data (hide
+      in shadows, climb walls, read
+      languages - no engine site; hear
+      noise keeps the R120 portal listen
+      convention, not the R298 percentile).
+      The R304a battery audit walks the
+      time pins and the open locks
+      percentile boundaries (evaluable -
+      verified by audit_eval); the R304
+      engine audit pins every scenario on
+      seeded sequences (the replica walked
+      the draws first). Census 227. The
+      ledger holds ZERO open items.
 
 ## R299 the party recordings round (the third
 scope pass rides)

@@ -27,6 +27,7 @@ void AppState::newDungeon(uint64_t s){
         placeStairs();
         populateRooms();
         placeSecretDoors();   // R45
+        placeLockedDoors();   // R304: the locked door feature
 
         char buf[96];
         snprintf(buf, sizeof buf,

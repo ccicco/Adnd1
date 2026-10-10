@@ -293,6 +293,17 @@ struct SecretDoor {
     bool found = false;
 };
 
+// R304: a locked door bars its tile until a
+// thief works the lock (the DMG doors prose
+// - metal doors are usually locked); one try
+// per lock, a retry waits for a higher level
+// thief (the printed note)
+struct LockedDoor {
+    int  x = 0, y = 0;
+    bool opened = false;
+    int  tryLevel = 0;
+};
+
 // R61: DMG p.86 treasure XP guard rule. Gold converts 1 gp =
 // 1 xp only when the guardian's relative value equals or
 // exceeds the party's; a relatively weaker guardian awards on
@@ -1093,6 +1104,9 @@ struct AppState {
     // R45: the level's hidden doors
     std::vector<SecretDoor> secretDoors;
 
+    // R304: the locked doors of this delve
+    std::vector<LockedDoor> lockedDoors;
+
     void newDungeon(uint64_t s);
 
     // R24: creation is finished - the delve begins
@@ -1341,6 +1355,17 @@ struct AppState {
     void listenExplore();
 
     void placeSecretDoors();
+
+    // R304: one locked door per delve - a
+    // visible TILE_DOOR the company cannot
+    // pass until the first living thief works
+    // the lock (the DMG time draw, 1-10
+    // rounds, against the printed open locks
+    // percentile; one try per lock, a retry
+    // waits for a higher level thief)
+    void placeLockedDoors();
+    const LockedDoor* lockedDoorAt(int x, int y) const;
+    void bumpLockedDoor(int x, int y);
 
     // R45: [F] search - one turn spent feeling the walls.
     // Each adjacent unfound secret door rolls 1-in-6 (a

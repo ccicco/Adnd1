@@ -7019,6 +7019,22 @@ adjustments - a data-only R298
 candidate). No audit added; the
 battery census stays 213.
 
+R304 PINNED the DMG THIEF ABILITIES time
+figures and the FIRST DUNGEON ADVENTURE
+doors prose: rules/locktime.h, the
+grenade.h pattern - the lock-pick time
+band (1-10 rounds on the complexity,
+most locks 1-4), the traps-time-rides-
+locks note, the wooden-doors-always-
+metal-bound and metal-doors-usually-
+locked prose, and the per-delve count
+judgment (one locked door; the print
+carries no count). The locked door
+wires the PHB open locks percentile at
+the dungeon door site (the phb report
+carries the round box; the battery
+census moves 225 -> 227).
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule

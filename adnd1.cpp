@@ -355,6 +355,12 @@ static void onPartyMove(int dx, int dy) {
 
     int nx = s.party.x + dx;
     int ny = s.party.y + dy;
+    // R304: a locked door bars the tile until
+    // picked
+    if (s.lockedDoorAt(nx, ny) != nullptr) {
+        s.bumpLockedDoor(nx, ny);
+        return;
+    }
     if (!s.map.walkable(nx, ny)) return;
     s.party.x = nx;
     s.party.y = ny;

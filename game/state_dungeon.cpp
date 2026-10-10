@@ -1,6 +1,7 @@
 #include "appstate.h"
 #include "abilities/abilities.h"   // R120: listening (p.60)
 #include "rules/thieffunc.h"   // R301: the thief trap rolls
+#include "rules/locktime.h"   // R304: the lock time draw
 
 // ---- restExplore ----
 void AppState::restExplore(){
@@ -1701,6 +1702,117 @@ void AppState::placeSecretDoors(){
             secretDoors.push_back(d);
             ++placed;
         }
+    }
+
+// ---- placeLockedDoors ----
+// R304: the DMG doors prose - metal doors
+// are usually locked. One locked door per
+// delve (the count judgment; the print
+// carries no count): a TILE_WALL slot with
+// open tiles on both sides of one axis (a
+// real passage to bar - the R45 secret-door
+// scan pattern). The door prints as a
+// TILE_DOOR the company sees but cannot
+// pass until a thief works it.
+void AppState::placeLockedDoors(){
+        lockedDoors.clear();
+        int placed = 0;
+        int guard = 0;
+        while (placed < rules::doorLockedPerDelveCount() &&
+               ++guard < 500) {
+            int x = 1 + (int)rng.below(MAP_TILES_X - 2);
+            int y = 1 + (int)rng.below(MAP_TILES_Y - 2);
+            if (map.at(x, y) != TILE_WALL) continue;
+            bool openAbove = map.at(x, y - 1) == TILE_FLOOR ||
+                             map.at(x, y - 1) == TILE_CORR;
+            bool openBelow = map.at(x, y + 1) == TILE_FLOOR ||
+                             map.at(x, y + 1) == TILE_CORR;
+            bool openLeft  = map.at(x - 1, y) == TILE_FLOOR ||
+                             map.at(x - 1, y) == TILE_CORR;
+            bool openRight = map.at(x + 1, y) == TILE_FLOOR ||
+                             map.at(x + 1, y) == TILE_CORR;
+            if (!((openAbove && openBelow) ||
+                  (openLeft && openRight))) continue;
+            map.set(x, y, TILE_DOOR);
+            LockedDoor d;
+            d.x = x;
+            d.y = y;
+            lockedDoors.push_back(d);
+            ++placed;
+        }
+    }
+
+// ---- lockedDoorAt ----
+// R304: the unopened lock at a tile (null
+// when the tile is free) - the movement
+// gate reads it
+const LockedDoor* AppState::lockedDoorAt(int x, int y) const{
+        for (const auto& d : lockedDoors)
+            if (!d.opened && d.x == x && d.y == y)
+                return &d;
+        return nullptr;
+    }
+
+// ---- bumpLockedDoor ----
+// R304: the company walks into the locked
+// door. The bump spends the turn (the
+// searchExplore convention) and the first
+// living thief works the lock for the DMG
+// time draw against the printed open locks
+// percentile (the R298 seam). One try per
+// lock (the printed note): a retry waits for
+// a higher level thief.
+void AppState::bumpLockedDoor(int x, int y){
+        LockedDoor* door = nullptr;
+        for (auto& d : lockedDoors)
+            if (!d.opened && d.x == x && d.y == y)
+                door = &d;
+        if (door == nullptr) return;
+
+        ++turnCount;
+        tickActivity(1);   // R119: the lock is work too
+
+        const Character* thief = nullptr;
+        for (const auto& c : party.members) {
+            if (c.hp <= 0 || c.classIndex != 3) continue;
+            thief = &c;
+            break;
+        }
+        if (thief == nullptr) {
+            log.add("The iron-bound door is locked - no "
+                    "thief walks with you.");
+        } else if (door->tryLevel >= thief->level) {
+            log.add("The lock resists - a higher level "
+                    "thief must try it.");
+        } else {
+            door->tryLevel = thief->level;
+            int rounds = rules::thfLocksPickRoundsMin() +
+                (int)rng.below(
+                    rules::thfLocksPickRoundsMax() -
+                    rules::thfLocksPickRoundsMin() + 1);
+            int roll = (int)rng.below(1000);
+            char buf[96];
+            if (rules::thfAttemptSucceeds(roll,
+                    rules::THF_OPEN_LOCKS, thief->level,
+                    thief->race,
+                    (int)thief->abilities.dex)) {
+                door->opened = true;
+                snprintf(buf, sizeof buf,
+                         "%s works the lock for %d "
+                         "rounds - it opens!",
+                         thief->name.c_str(), rounds);
+            } else {
+                snprintf(buf, sizeof buf,
+                         "%s works the lock for %d "
+                         "rounds - it resists.",
+                         thief->name.c_str(), rounds);
+            }
+            log.add(buf);
+        }
+
+        // the turn spent can draw a wanderer
+        if (dm::wanderCheck(dice, wander))
+            spawnWanderingEncounter();
     }
 
 // ---- searchExplore ----
