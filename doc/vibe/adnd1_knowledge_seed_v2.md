@@ -331,6 +331,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   names for 14 kinds) was found and
   fixed by the survey, before it bit.
 
+- R320 landed 2026-10-10: commit
+  94ca1df, census 247, the breathing
+  aids (the druid spell and the potion
+  claim). GREEN on the first paste.
+  Lessons: (1) an idempotency guard
+  must test the exact inserted text -
+  two R320 guards matched text that
+  never exists in the patched source
+  (a row with a trailing comma vs the
+  bare row; a contiguous phrase vs
+  the split string literal), both
+  caught by the sandbox double-run
+  before delivery; (2) a source scan
+  must match the literal split - the
+  print rode two string literals, so
+  the check scans the shared half;
+  (3) a pointer compare against a
+  string literal warns (-Wstring-
+  compare) - the later audits compare
+  through std::string.
+
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

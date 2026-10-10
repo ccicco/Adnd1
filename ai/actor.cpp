@@ -884,6 +884,18 @@ void Encounter::resolveCast(Actor& caster, spells::SpellId id) {
         logLine("The company breathes water"
                 " freely!");
     }
+
+    // R321: the wing fold - the MU fly
+    // spell marks the company (the DMG
+    // aerial chapter OUT reversal; no
+    // aerial fight site exists - the
+    // print IS the charge, the R320
+    // breath pattern).
+    if (id == spells::MU_FLY &&
+        caster.team == 0 && !m_flyActive) {
+        m_flyActive = true;
+        logLine("The company takes wing!");
+    }
 }
 
 // ----------------------------------------------------------------------------

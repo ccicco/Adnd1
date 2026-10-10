@@ -215,6 +215,10 @@ struct Character {
     // R320: the Potion of Water Breathing held
     // (the claim layer; the pool fight print)
     bool uwDraught = false;
+    // R321: the Potion of Flying held
+    // (the claim layer; the wing fold
+    // rides resolveCast)
+    bool flyPotion = false;
 
     // R299: the recorded weapon proficiency slots
     // (the PHB Weapon Proficiency Table). The kit
@@ -1629,6 +1633,21 @@ inline bool claimUwDraught(Character& c,
         std::string::npos)
         return false;
     c.uwDraught = true;
+    return true;
+}
+
+// R321: the Potion of Flying - one dose
+// held by one member (the claimUwDraught
+// pattern)
+inline bool claimFlyPotion(Character& c,
+                           const std::string& name,
+                           int qty) {
+    if (c.hp <= 0 || qty != 1 || c.flyPotion)
+        return false;
+    if (name.find("Potion of Flying") ==
+        std::string::npos)
+        return false;
+    c.flyPotion = true;
     return true;
 }
 

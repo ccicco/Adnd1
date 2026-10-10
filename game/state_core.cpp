@@ -246,6 +246,11 @@ bool AppState::saveGame(){
             // without it)
             if (c.uwDraught)
                 fprintf(f, "uwdraught 1\n");
+            // R321: the fly potion (held only
+            // - v1 saves carry no line and load
+            // without it)
+            if (c.flyPotion)
+                fprintf(f, "flypotion 1\n");
             // R85: the pack (nonempty members only - v1 saves
             // carry no lines and load with an empty pack)
             if (!c.pack.empty()) {
@@ -727,6 +732,15 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.uwDraught = ud != 0;
+                } else if (strcmp(tag, "flypotion") == 0) {
+                    int fp = 0;
+                    if (fscanf(f, "%d", &fp) != 1 ||
+                        fp < 0 || fp > 1) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (flypotion).");
+                        return false;
+                    }
+                    c.flyPotion = fp != 0;
                 } else if (strcmp(tag, "shieldplus") == 0) {
                     int sp = 0;
                     if (fscanf(f, "%d", &sp) != 1 ||

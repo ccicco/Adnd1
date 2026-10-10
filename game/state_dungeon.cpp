@@ -2609,6 +2609,21 @@ void AppState::awardVictory(){
                         // other ring/rod/misc stays appraised
                         for (auto& c : party.members) {
                             if (c.hp <= 0) continue;
+                            // R321: the Potion of Flying
+                            // - the carried dose (the
+                            // claimUwDraught pattern);
+                            // the wing fold charges the
+                            // spell side
+                            if (claimFlyPotion(c, mi.name,
+                                              mi.qty)) {
+                                snprintf(buf, sizeof buf,
+                                         "%s pockets the %s!",
+                                         c.name.c_str(),
+                                         mi.name.c_str());
+                                log.add(buf);
+                                take = true;
+                                break;
+                            }
                             // R320: the Potion of Water
                             // Breathing - the carried
                             // draught (the claimUwHelm

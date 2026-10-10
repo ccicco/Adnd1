@@ -42,6 +42,8 @@ enum StatusKind : int {
                         // (the vision fold - resolveCast)
     STATUS_WATERBREATHING,   // R320: the druid spell mark
                              // (the breath fold)
+    STATUS_FLYING,       // R321: the fly spell mark
+                        // (the wing fold)
     STATUS_COUNT
 };
 

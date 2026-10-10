@@ -19,7 +19,8 @@ static const char* const kStatusNames[STATUS_COUNT] = {
     // fold below.
     "Fire Shield", "Antivenom", "Polymorphed", "Entrapped",
     "Lit",
-    "Breathing"
+    "Breathing",
+    "Flying"
 };
 
 const char* statusName(StatusKind s) {
@@ -288,6 +289,17 @@ SpellCastResult resolveSpell(Dice& dice, spells::SpellId id,
             case spells::DR_WATER_BREATHING:   // R320
                 r = resolveStatusSpell(
                     dice, s, STATUS_WATERBREATHING,
+                    s.durationRounds, t, false);
+                break;
+            // R321: the MU fly - the status
+            // mark (the row saves not, 60
+            // rounds); the wing fold rides
+            // resolveCast. The levitate and
+            // the flight items stay pins (the
+            // aerial.h scalars).
+            case spells::MU_FLY:   // R321
+                r = resolveStatusSpell(
+                    dice, s, STATUS_FLYING,
                     s.durationRounds, t, false);
                 break;
             case spells::MU_CHARM_PERSON:

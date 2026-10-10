@@ -7377,6 +7377,25 @@ shoal tile) stay recorded. The
 census moves 246 -> 247 with the
 R320 audit.
 
+R321 the aerial chapter: the OUT
+reversal (the R172 appendix J
+precedent) - the DMG pp.49-53 pins
+(rules/aerial.h: the maneuver classes
+A-E with the turn degrees, the
+full-speed times and the hover; the
+climb-dive-ceiling, missile and
+wing-damage scalars) and the fly
+seams (the STATUS_FLYING mark, the
+resolveCast wing fold - the R320
+breath pattern; the Potion of Flying
+claim layer with the save line; no
+aerial fight site exists - the
+prints are the charge). The hex and
+written-orders methods stay OUT (no
+position or altitude layer). The
+census moves 247 -> 248 with the
+R321 audit.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
@@ -8563,8 +8582,13 @@ cityRuffianKind), audited by the
 
 ## Out of scope by design
 
-- OUT: Aerial and naval combat systems, siege
-  and war-machine rules, stronghold domain
+- OUT: naval combat systems, siege and
+  war-machine rules (the aerial chapter
+  reversed R321 - the rules/aerial.h pins
+  and the fly seams; the hex and
+  written-orders methods stay OUT - no
+  position or altitude layer), stronghold
+  domain
   income beyond the keep's ledger, disease and
   heal-craft subgames, psionic combat (p.77
   IV.A and following), planar travel tables,
