@@ -7062,6 +7062,33 @@ the lair treasure map). The phb report
 carries the round box; the battery census
 moves 229 -> 231).
 
+R307 the fresh gap pass (a report
+round): the upload section lists
+diffed against both ledgers again,
+the R296 convention. Two DMG opens
+(the boxes in the open-gaps section):
+the standard and expert hirelings
+cost tables (upload lines 1817 and
+1873 - the R121 officers slice and
+the R212 spell prices never carried
+them) and the sage subsection (the
+fields of study, the exact versus
+learned question chances; upload line
+2110). One bookkeeping repair: the
+patrols, fortresses and castle tables
+(upload lines 4517-4560) turn out
+pinned since R67 (dm/encounters.cpp,
+wired R68) - the report never carried
+the receipt; recorded here. Four
+recorded OUT: the helmet head-AC
+rule (upload line 1773), the peasants
+serfs and slaves section, the
+Appendix C appearance family and the
+glossary and afterword back matter.
+The phb report carries its own R307
+pass; no audit added -
+the battery census stays 231.
+
 Categories:
 - [x] = verified against the book text
 - [~] = verified DIVERGENT: the repo's rule
@@ -8162,8 +8189,41 @@ Categories:
       ruffian 1-in-4 half-orc/humanoid note are all
       pinned as fiction-only descriptors
       (cityNobleKind / cityNoblewomanSedan /
-      cityRuffianKind), audited by the R174 battery
+cityRuffianKind), audited by the
       block. Census 92.
+
+- [ ] **Standard and expert hirelings
+      cost tables (the STANDARD
+      HIRELINGS TABLE OF DAILY AND
+      MONTHLY COSTS, upload line 1817;
+      the EXPERT HIRELINGS TABLE OF
+      MONTHLY COSTS IN GOLD PIECES,
+      upload line 1873) - OPENED R307:**
+      the R121 officers slice
+      and the R212 NPC spell prices
+      never carried the tables. A
+      data candidate: the daily and
+      monthly bands pin rules-side
+      (the R300 pattern - pure data;
+      no site charges them until a
+      round wires one). The expert
+      types prose and the employment
+      prose ride this box, and the PHB
+      HIRELINGS prose rides it too
+      (the hireling count is never
+      charisma-limited; the loyalty
+      discussion is the henchmen one).
+- [ ] **The sage subsection (upload
+      line 2110) - OPENED R307:** the
+      fields of study with the special
+      knowledge categories, the exact
+      versus learned question chances
+      and the location prose. A data
+      candidate: the fields and chance
+      bands pin dm/-side (the
+      appendixa.h pattern); no town
+      consultation site exists - the
+      judgment waits for the pin round.
 
 ## Out of scope by design
 
@@ -8178,6 +8238,26 @@ Categories:
   conversion tables (pp.112-114). Appendix J was
   OUT until R172 reversed it - pinned now (see the
   R172 note and the box below).
+
+- OUT (R307): the helmet head-AC rule
+  (a great helm gives the head AC 1; a
+  blow in six strikes the unhelmeted
+  head, one in two vs an intelligent
+  foe - no hit-location layer; the
+  R300 helmet cost rows stay dead
+  data), the PEASANTS SERFS AND SLAVES
+  section (feudal weapon bans and
+  uprisings - domain simulator), the
+  Appendix C appearance family (the
+  magic-possessed and the
+  chance-per-level tables plus the
+  appearance dressing - the lair-hoard
+  convention already answers what an
+  encountered creature carries, and
+  the NPC personae appearance is
+  R209/R210) and the glossary and
+  afterword back matter (prose, no
+  tables).
 
 - [x] **Appendix J: herbs, spices and medicinal
       vegetables (p.220)** - PINNED R172:

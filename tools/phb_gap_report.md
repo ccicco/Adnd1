@@ -1282,6 +1282,53 @@ found and opened below.
       Census 219. The ledger holds ZERO
       open items.
 
+## R307 the fresh gap pass (the fourth
+scope round)
+
+R307 SCOPE PASS. Diffing the PHB upload
+section list against this ledger
+again, the R296/R299 convention. One
+section opened below; two recorded OUT
+(the R307 additions at the foot); the
+rest are covered notes: the HIRELINGS
+prose rides the DMG hirelings box the
+sibling ledger opens this round (the
+hireling count is never
+charisma-limited); the TIME and
+end-of-book INITIATIVE reads carry the
+DMG-side pins (the turn clock p.38,
+the R158 speed factors, the
+rules/turn.h round and segment
+conventions); the reference-sheet
+repeats of the pinned tables read as
+copies; the paladin Furthermore list
+and the monetary Thus prose are
+continuations of covered sections. A
+report round adds no audit;
+the battery census stays 231.
+
+## Open items (the R307 addition)
+
+- [ ] **The general equipment cost
+      lists (Clothing, Herbs,
+      Livestock, Provisions and
+      Transport; upload lines 2344-2430
+      with the reference-sheet repeats
+      at 13473-13535) - OPENED R307:**
+      the R300 cost columns pinned the
+      52 arms and the 14 armor rows
+      only. The five general lists stay
+      unpinned (the clothing and
+      footwear prices, the herb costs,
+      livestock, the provisions and the
+      transport costs - mounts, tack
+      and vehicles). A data candidate:
+      rules/equipcosts.h grows the rows
+      (the R300 pattern; the
+      reference-sheet copies resolve any
+      ambiguous cell). The judgment
+      waits for the pin round.
+
 ## Out of engine scope (the R296 additions)
 
 - Money changing, banks, loans and jewelers
@@ -1302,6 +1349,28 @@ found and opened below.
   material arrives with the Manual of the
   Planes (the user decision); the pin
   round waits for that source.
+
+## Out of engine scope (the R307
+additions)
+
+- INFRAVISION and ULTRAVISION (the
+  appendix at upload lines 11842-11848)
+  - infravision is pinned as the racial
+  datum (R154) and in the lighting
+  prose; the engine has no vision-block
+  layer (darkness gates the dungeon
+  sites by convention).
+- The end-of-book DM advice sections
+  (COMMUNICATION, NEGOTIATION,
+  OBEDIENCE, ORGANIZATION and
+  SUCCESSFUL ADVENTURES; upload lines
+  11931-12119) - advice prose with no
+  mechanical tables; the parley
+  machinery lives DMG-side (the R117
+  reactions, the R138 talk flavor),
+  the end-of-book INITIATIVE is the
+  R158 print and the traps prose is
+  R125.
 
 The R178 subclass-arc precedent: OPEN the
 scope items first, pin them in following
