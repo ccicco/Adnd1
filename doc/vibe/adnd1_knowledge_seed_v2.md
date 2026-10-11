@@ -1023,7 +1023,8 @@ R172 were already dropped at the R171b/R172 era cut; git
   (note end plus the next item)
   or it would double-insert;
   the ACID assert caught it.
-  GREEN on the first run.- R353 landed 2026-10-11: commit
+  GREEN on the first run.
+- R353 landed 2026-10-11: commit
   cef4de6, census 280, the UA
   new druid 5th level spells pin
   round (rules/uadruidspells5.h):
@@ -1039,6 +1040,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   (flagged pending the PDF); the
   casting time cell lost. GREEN on
   the first run.
+- R354 landed 2026-10-11: commit
+  ae75dd2, census 281, the UA
+  new druid 6th level spells pin
+  round (rules/uadruidspells6.h):
+  liveoak (the triggered treant
+  with the 3-inch movement
+  interleave decode) and water
+  to dust (the name garble, the
+  muddy multipliers and the
+  water-native save gate); the
+  family decodes the 7 turn as
+  1. Lesson: the R354 splice
+  dropped the leading blank
+  entry line, merging the R352
+  seed tail with the R353
+  record on one line - this
+  round repairs the merge; the
+  entry list must open with a
+  blank element. GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

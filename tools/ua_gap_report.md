@@ -785,7 +785,7 @@ fold; the R326 audit, census 253.
       - CLOSED R349: the item closed -
         all seven levels pinned
         (R343-R348 plus this round).
-- [ ] **The new druid spells** (pp.
+- [x] **The new druid spells** (pp.
       42-45) - 1st (ceremony, detect
       balance, detect poison,
       precipitation), 2nd (flame blade,
@@ -892,6 +892,29 @@ fold; the R326 audit, census 253.
         names - neither new name
         seam-checks there; the 7th
         level stays open.
+      - R355: the 7th level pinned
+        (rules/uadruidspells7.h) -
+        the two spell descriptions
+        (changestaff behind the
+        lost name header with the
+        hit-die ladder and the
+        wish-only recovery, sunray
+        with the blindness tiers
+        and the undead damage
+        split); the family decodes
+        the 7 round as 1; the item
+        header lists only
+        changestaff - the section
+        prints two spells, sunray
+        joins the pin; the R341
+        table pins stop at the
+        druid 6th - no 7th table
+        seam exists; the item
+        closes.
+      - CLOSED R355: the item
+        closed - all printed
+        levels pinned (R350-R354
+        plus this round).
 - [ ] **The new magic-user spells**
       (pp. 51-66) - one item per level:
       1st (alarm, armor, firewater,
