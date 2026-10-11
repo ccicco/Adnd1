@@ -813,6 +813,25 @@ fold; the R326 audit, census 253.
         names - none of the new
         names seam-checks; the 2nd
         through 7th levels stay open.
+      - R351: the 2nd level pinned
+        (rules/uadruidspells2.h) - the
+        four spell descriptions
+        (flame blade with the undead
+        and fire damage modifiers,
+        goodberry with the name
+        header lost, the reflecting
+        pool behind the "Pool ion -"
+        name garble with the
+        scrying mechanics, slow
+        poison with the herbal
+        antidote chance); the family
+        decodes the three 7s as 1
+        (flame blade prints the
+        clean 2); the R341 druid
+        table prints no 2nd-level
+        roster - all four names pin
+        from the prose; the 3rd
+        through 7th levels stay open.
 - [ ] **The new magic-user spells**
       (pp. 51-66) - one item per level:
       1st (alarm, armor, firewater,

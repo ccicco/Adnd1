@@ -962,6 +962,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   the fingerprint, md5 a
   convenience. GREEN on the
   first run.
+- R350 landed 2026-10-11: commit
+  037cdf6, census 277, the UA
+  new druid 1st level spells pin
+  round (rules/uadruidspells1.h):
+  ceremony (the nine varieties
+  with the cast-out permission
+  ladder), detect balance, detect
+  poison and precipitation (the
+  name header lost - identified
+  via the R343 clerical pin); the
+  family decodes the three 7s as
+  1; the druid ladder opens. The
+  ritual block is gates-only now
+  (the file creation is the
+  user-side step, done in nano).
+  Lesson: the second nano md5
+  drift with all gates green -
+  the double-run plus the census
+  stay the fingerprint. GREEN on
+  the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
