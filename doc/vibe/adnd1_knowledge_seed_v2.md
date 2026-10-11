@@ -1257,6 +1257,30 @@ R172 were already dropped at the R171b/R172 era cut; git
   all printed levels pinned
   (R356-R361 plus this round); GREEN
   on the first run.
+- R363 landed 2026-10-11: commit
+  3737448, census 290, the UA new
+  illusionist cantrips and 1st/2nd
+  level spells pin round
+  (rules/uailcantrips.h,
+  rules/uailspells1.h and
+  rules/uailspells2.h): the eight
+  cantrip descriptions (colored
+  lights with the globe ladder, dim,
+  haze, mask, mirage, noise, rainbow
+  and the two-d illusion the item
+  list missed), the chromatic orb
+  with the color-by-level ladder,
+  phantom armor at the printed 1st,
+  read magic, spook, alter self and
+  fascinate plus the ultravision and
+  wind reprints; the R342 IL table
+  seam prints only PHB names in the
+  readable columns; the delude and
+  wraithform third-level divergence
+  flagged pending the PDF; the item
+  stays open - the 3rd through 7th
+  levels pin later; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

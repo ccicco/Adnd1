@@ -1198,6 +1198,38 @@ fold; the R326 audit, census 253.
         of the new names seam-
         checks; the 3rd through 7th
         levels stay open.
+      - R364: the 3rd, 4th and 5th
+        levels pinned
+        (rules/uailspells3.h,
+        rules/uailspells4.h and
+        rules/uailspells5.h) - delude
+        and wraithform pinned at the
+        printed 3rd (the Level: 3
+        cells; the item-list 2nd
+        divergence stands, pending
+        the PDF); phantom steed and
+        phantom wind, absent from
+        the item list, pinned as
+        the print adds them under
+        the Third Level Spells
+        header; dispel magic,
+        rainbow pattern, solid fog
+        and vacancy at 4th (the
+        vacancy Level: 4 cell
+        matches the item list; the
+        solid fog level cell lost,
+        pinned from the section
+        header); the advanced
+        illusion named from the
+        item list (the name header
+        garbles), dream, magic
+        mirror and tempus fugit at
+        5th; the bare-7 cells read
+        as holes pending the PDF;
+        the R342 IL table 3rd-6th
+        columns stay lost; the 6th
+        and 7th levels pin in the
+        next round.
 
 ## Cantrips (a category of their own)
 
