@@ -1226,6 +1226,37 @@ R172 were already dropped at the R171b/R172 era cut; git
   fragments, none of the new names
   seam-checks; GREEN on the first
   run.
+- R362 landed 2026-10-11: commit
+  f9ef2b6, census 289, the UA new
+  magic-user 8th and 9th level
+  spells pin round
+  (rules/uamuspells8.h and
+  rules/uamuspells9.h): the four
+  8th-level descriptions (binding
+  with the lost range and duration
+  cells and the six forms with the
+  save ladder, demand behind the
+  garbled components cell, the
+  Otiluke telekinetic sphere behind
+  the garbled name header with the
+  lost range cell, sink with the
+  lost level cell and the sinking
+  ladder) and the four 9th-level
+  descriptions (crystalbrittle with
+  the item save ladder, succor with
+  the interleaved stat tail, energy
+  drain with the displaced casting
+  cell, the Mordenkainen disjunction
+  behind the garbled name header
+  with the artifact chances); the
+  R342 MU table seam checks demand
+  at index 0 and sink at index 8
+  with binding and the sphere
+  absent, and only the two PHB 9th
+  names print; the item CLOSED -
+  all printed levels pinned
+  (R356-R361 plus this round); GREEN
+  on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

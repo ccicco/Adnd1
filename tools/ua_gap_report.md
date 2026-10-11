@@ -1172,6 +1172,32 @@ fold; the R326 audit, census 253.
       the headers - the round that
       charges verifies against the
       spell table (p. 31) first.
+      - R363: the cantrips and the
+        1st and 2nd levels pinned
+        (rules/uailcantrips.h,
+        rules/uailspells1.h and
+        rules/uailspells2.h) - the
+        eight cantrip descriptions,
+        the chromatic orb with the
+        color-by-level ladder,
+        phantom armor, read magic,
+        spook, alter self and
+        fascinate plus the
+        ultravision and wind
+        reprints; the print places
+        phantom armor at 1st (a
+        clean Level: 1 cell) and
+        carries delude and
+        wraithform in the third-
+        level section - the
+        divergence from the item
+        list flagged pending the
+        PDF; the R342 IL table seam
+        prints only PHB names in
+        the readable columns, none
+        of the new names seam-
+        checks; the 3rd through 7th
+        levels stay open.
 
 ## Cantrips (a category of their own)
 
@@ -1225,6 +1251,25 @@ the gateway charge.
       category: colored lights, dim,
       haze, mask, mirage, noise, rainbow
       (7 named).
+      - R363: the eight cantrip
+        descriptions pinned
+        (rules/uailcantrips.h) -
+        colored lights with the
+        globe ladder, dim with the
+        half-radiance round, haze
+        with the missile and save
+        adjustments, mask, mirage,
+        noise, rainbow, and the
+        eighth the print adds
+        behind the item list (the
+        two-d illusion); the
+        casting-time cells print
+        fraction garbles - holes
+        pending the PDF; the box
+        stays open on the cantrip
+        tier seam (the registry
+        charge), the descriptions
+        are pinned.
 - [ ] **The cantrip acquisition rules**
       (DM pp. 79-80) - cross-ref to the
       DM section item; the apprentice
