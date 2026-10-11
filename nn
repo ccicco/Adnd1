@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+[ -z "$1" ] && { echo "usage: nn <round>"; exit 1; }
+nano "tools/r${1}_splice.py"
