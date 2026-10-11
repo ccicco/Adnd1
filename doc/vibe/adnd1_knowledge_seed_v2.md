@@ -982,6 +982,25 @@ R172 were already dropped at the R171b/R172 era cut; git
   the double-run plus the census
   stay the fingerprint. GREEN on
   the first run.
+- R351 landed 2026-10-11: commit
+  4f47d8a, census 278, the UA
+  new druid 2nd level spells pin
+  round (rules/uadruidspells2.h):
+  flame blade (the undead and
+  fire damage modifiers), the
+  goodberry reverse (the name
+  header lost), the reflecting
+  pool behind the "Pool ion -"
+  name garble (the scrying
+  mechanics with the
+  cast-through ladder) and slow
+  poison (the herbal antidote
+  chance); the family decodes
+  the three 7s as 1; the ritual
+  block dropped the invented
+  git pull and the paste step -
+  gates and landing only. GREEN
+  on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

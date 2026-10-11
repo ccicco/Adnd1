@@ -832,6 +832,31 @@ fold; the R326 audit, census 253.
         roster - all four names pin
         from the prose; the 3rd
         through 7th levels stay open.
+      - R352: the 3rd level pinned
+        (rules/uadruidspells3.h) - the
+        four spell descriptions
+        (cloudburst with the stat-
+        block interleave and the
+        call lightning exclusion,
+        know alignment with the
+        five-creature cap and the
+        no-reverse gate, spike
+        growth with the material
+        interleave, starshine with
+        the school tail lost); the
+        family decodes the 7 as 1
+        and the cloudburst
+        duration decodes from the
+        "1 ro" + "vol" fragments;
+        starshine seam-checks
+        against the R351 reflecting
+        pool pin; the R341 druid
+        table prints no 3rd-level
+        roster - all four names pin
+        from the prose; the 5th
+        through 7th levels stay open
+        (the UA prints no 4th-level
+        druid section).
 - [ ] **The new magic-user spells**
       (pp. 51-66) - one item per level:
       1st (alarm, armor, firewater,
