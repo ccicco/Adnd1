@@ -749,6 +749,21 @@ fold; the R326 audit, census 253.
         holes - noted pending the
         PDF; the 6th-7th levels
         stay open.
+      - R348: the 6th level pinned
+        (rules/uaclericspells6.h) -
+        forbiddance (the name header
+        never prints - identified by
+        the 2e descendant text) and
+        heroes feast (the twelve-hour
+        benefits); the family decodes
+        the two 7s as 1 (both
+        corroborated); the R341 table
+        prints four fragments - neither
+        name seam-checks; the name
+        header and the two prose
+        fragment regions are OCR
+        holes - noted pending the PDF;
+        the 7th level stays open.
 - [ ] **The new druid spells** (pp.
       42-45) - 1st (ceremony, detect
       balance, detect poison,

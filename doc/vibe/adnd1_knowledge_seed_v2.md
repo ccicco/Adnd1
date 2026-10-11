@@ -887,6 +887,36 @@ R172 were already dropped at the R171b/R172 era cut; git
   landed the eight R322-R327
   splice scripts; GREEN on the
   first run.
+- R347 landed 2026-10-11: commit
+  ed961b6, census 274, the UA
+  new cleric spells pin round,
+  the 5th level
+  (rules/uaclericspells5.h):
+  air walk with the ascent and
+  descent ladder and the gust
+  interplay, animate dead
+  monsters, golem with the four
+  material ladders, magic font
+  with the vial capacity rule,
+  rainbow with the four
+  applications and the seven
+  colors and draughts, and spike
+  stones (the prose prints in
+  the cleric chapter - the druid
+  item seam-checks against this
+  pin); the digit-garble family
+  decodes the three stat-cell
+  7s as 1; the rainbow
+  7-missiles and the golem
+  7-foot ceiling stay genuine;
+  the R341 table prints seven
+  fragments - magic font
+  seam-checks; the animate dead
+  monsters and rainbow Range
+  cells and the straw golem SD
+  decode are OCR holes - noted
+  pending the PDF; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
