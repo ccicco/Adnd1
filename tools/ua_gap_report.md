@@ -305,7 +305,7 @@ fold; the R326 audit, census 253.
       retainer cross-reference
       (DM p. 75); the R329 audit
       (census 256).
-- [ ] **The druid hierophant ladder**
+- [x] **The druid hierophant ladder**
       (pp. 16-18) - Druids Table I (p.
       17): the expanded ladder to 23rd
       (Hierophant of the Cabal), the
@@ -313,6 +313,29 @@ fold; the R326 audit, census 253.
       bonus spell levels, the elemental
       conjuring tables (the fire/earth/
       water/air dice rows).
+      - CLOSED R330: the pin round
+      (rules/hierophant.h): the
+      hierarchy (Great Druid 14th,
+      Grand Druid 15th with the
+      9 attendants and the 6
+      bonus spell levels, the 3
+      Archdruids), the abdication
+      (500,000 more, xp resets
+      to 1), the Table I ladder
+      (the band lows, the
+      titles, the 15+N hp
+      formula), the spell
+      abilities, the 16th-level
+      powers, the plane-entry
+      and conjure ladders, the
+      five conjuring tables, the
+      desire override; the earth
+      01-85 HD cell and the L21
+      title cell are OCR-lost
+      (documented in-header;
+      revisit with the PDF);
+      the R330 audit (census
+      257).
 - [ ] **Weapon specialization** (pp.
       18-19) - fighter and ranger only,
       chosen at creation; the slot costs

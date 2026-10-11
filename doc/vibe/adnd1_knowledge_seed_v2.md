@@ -578,6 +578,24 @@ R172 were already dropped at the R171b/R172 era cut; git
   grid text), not facts - fix
   needles against the extract,
   never the fact.
+- R329 landed 2026-10-11: commit
+  c128aec, census 256, the UA
+  paladin re-parented under the
+  cavalier pin round (rules/
+  paladin.h): the re-parenting
+  expressed as delegation - the
+  minima and the 0-level track
+  read the R328 cavalier pins,
+  the lawful-good gate, the
+  cavalier charge, the CHA
+  percentile growth. GREEN on
+  the first paste. Lesson: the
+  ACID run itself caught an
+  overcounted read-back assert
+  (cavalierMinAbility appears
+  twice - comment plus call);
+  count asserts against actual
+  file content, always.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
