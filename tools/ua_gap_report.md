@@ -997,6 +997,33 @@ fold; the R326 audit, census 253.
         absent are noted; the 3rd
         through 9th levels stay
         open.
+      - R358: the 3rd level pinned
+        (rules/uamuspells3.h) - the
+        eight spell descriptions
+        (cloudburst seam-checking
+        the R352 druid pin minus
+        the holy symbol, with the 3
+        diam. print flagged against
+        the druid 4; detect
+        illusion behind the lost
+        name tail and area length;
+        item; material behind the
+        degree range; the Melf
+        minute meteors behind the
+        empty range and the sepia
+        interleave; secret page
+        behind the 4th-heading
+        interleave; the sepia snake
+        sigil behind the lost
+        casting-time head; wind
+        wall behind the truncated
+        components cell); the family
+        decodes the 7s as 1; the
+        R342 MU table seam: four of
+        the eight names print
+        there, the four absent are
+        noted; the 4th through 9th
+        levels stay open.
 - [ ] **The new illusionist spells**
       (pp. 66-73) - the cantrips are
       their own category (below); 1st:

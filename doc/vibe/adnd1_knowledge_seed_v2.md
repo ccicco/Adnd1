@@ -1090,6 +1090,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   no 1st-level MU table seam
   exists. GREEN on the first
   run.
+- R357 landed 2026-10-11: commit
+  46924c5, census 284, the UA
+  new magic-user 2nd level spells
+  pin round (rules/uamuspells2.h):
+  the twelve spell descriptions
+  (bind, deeppockets behind the
+  lost name header, flaming
+  sphere, irritation, know
+  alignment behind the lost range
+  cell, the Melf acid arrow,
+  preserve, protection from
+  cantrips behind the From
+  Cantrips header garble, the
+  Tasha laughter, vocalize, whip
+  behind the lost level cell,
+  zephyr); the family decodes
+  the 7s as 1; the R342 MU table
+  seam prints eight of the twelve
+  names, the four absent noted.
+  GREEN on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
