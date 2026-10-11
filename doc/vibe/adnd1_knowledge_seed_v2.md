@@ -1110,6 +1110,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   seam prints eight of the twelve
   names, the four absent noted.
   GREEN on the first run.
+- R358 landed 2026-10-11: commit
+  8db9ec7, census 285, the UA
+  new magic-user 3rd level spells
+  pin round (rules/uamuspells3.h):
+  the eight spell descriptions
+  (cloudburst seam-checking the
+  R352 druid pin minus the holy
+  symbol with the 3 diam. print
+  flagged against the druid 4,
+  detect illusion behind the lost
+  name tail, item, material
+  behind the degree range, the
+  Melf minute meteors, secret
+  page behind the 4th-heading
+  interleave, the sepia snake
+  sigil, wind wall); the family
+  decodes the 7s as 1; the R342
+  MU table seam prints four of
+  the eight names, the four
+  absent noted. GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

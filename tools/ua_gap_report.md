@@ -1024,6 +1024,35 @@ fold; the R326 audit, census 253.
         there, the four absent are
         noted; the 4th through 9th
         levels stay open.
+      - R359: the 4th level pinned
+        (rules/uamuspells4.h) - the
+        eight spell descriptions
+        (dispel illusion behind the
+        lost name tail and the
+        garbled half-inch range,
+        the Evard black tentacles
+        behind the lost level and
+        range cells with the stray
+        gf line, the Leomund
+        secure shelter with the
+        scrambled wind sentence,
+        magic mirror with the
+        scrambled component list,
+        the Otiluke resilient
+        sphere with the lost globe
+        sentence, shout with the
+        scrambled area tail,
+        stoneskin behind the lost
+        level and range cells,
+        ultravision with the tail
+        past the 5th heading); the
+        family decodes the 7s as 1;
+        the R342 MU table seam:
+        seven of the eight names
+        print there, the Dispel
+        fragment cell reads as a
+        hole; the 5th through 9th
+        levels stay open.
 - [ ] **The new illusionist spells**
       (pp. 66-73) - the cantrips are
       their own category (below); 1st:
