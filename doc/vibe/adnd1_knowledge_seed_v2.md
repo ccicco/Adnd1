@@ -857,6 +857,36 @@ R172 were already dropped at the R171b/R172 era cut; git
   cat > + Ctrl-D stays the
   pinned save method; GREEN on
   the first run.
+- R346 landed 2026-10-11: commit
+  942031f, census 273, the UA
+  new cleric spells pin round,
+  the 4th level
+  (rules/uaclericspells4.h):
+  abjure with the implore
+  reverse, cloak of fear with
+  the bravery reverse, giant
+  insect with the count and
+  hit-dice ladders and the wasp
+  examples, imbue with spell
+  ability, spell immunity and
+  spike growth; the digit-garble
+  family decodes the five 7s as
+  1 (the cloak duration
+  corroborated by its clean
+  prose; the spike growth
+  casting and duration decodes
+  stay verbatim with doubt); the
+  R341 continued table prints
+  only fragments for the 4th
+  level - the six names pin
+  from the prose; the abjure
+  range and spike growth Level
+  cells are OCR holes - noted
+  pending the PDF; a
+  housekeeping commit (edb35d6)
+  landed the eight R322-R327
+  splice scripts; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

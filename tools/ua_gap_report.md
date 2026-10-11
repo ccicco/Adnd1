@@ -723,6 +723,32 @@ fold; the R326 audit, census 253.
         cell are OCR holes -
         noted pending the PDF; the
         5th-7th levels stay open.
+      - R347: the 5th level pinned
+        (rules/uaclericspells5.h) -
+        air walk, animate dead
+        monsters, golem (the four
+        material ladders), magic
+        font, rainbow (the four
+        applications, the seven
+        colors and draughts) and
+        spike stones (the prose
+        prints in the cleric
+        chapter; the druid item
+        seam-checks here); the
+        digit-garble family decodes
+        the three stat-cell 7s as
+        1; the rainbow 7-missiles
+        and the golem 7-foot
+        ceiling stay genuine; the
+        R341 table prints seven
+        fragments - magic font
+        seam-checks; the animate
+        dead monsters and rainbow
+        Range cells and the straw
+        golem SD decode are OCR
+        holes - noted pending the
+        PDF; the 6th-7th levels
+        stay open.
 - [ ] **The new druid spells** (pp.
       42-45) - 1st (ceremony, detect
       balance, detect poison,
