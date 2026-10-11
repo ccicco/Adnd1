@@ -32994,8 +32994,7 @@ int main() {
         if (!uad6WaterToDustMaterialMistletoe())
             ++bad;
         if (!uam6WaterSameAsDruid6th()) ++bad;
-        printf("R360 UA MU 5th and 6th level spells pin
-               " audit: bad %d\n", bad);
+        printf("R360 UA MU 5th/6th level spells pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
 
