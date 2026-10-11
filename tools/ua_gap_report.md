@@ -450,7 +450,7 @@ fold; the R326 audit, census 253.
       high-band rate and the
       footnote-1 tail are OCR-lost -
       stays open pending the PDF read.
-- [ ] **The thief-acrobat** (pp. 23-25)
+- [x] **The thief-acrobat** (pp. 23-25)
       - the split class at 6th (the
       5th-level thief may convert); the
       **Function Table** (p. 24, reads
@@ -467,6 +467,22 @@ fold; the R326 audit, census 253.
       extensions with the failure and
       recovery bands); the evasion 60
       percent cap.
+      - CLOSED R335: the pin round
+        (rules/acrobat.h) - the split
+        class at 6th, the Function
+        Table columns (the tumbling
+        attack and evasion ladders
+        pinned cell-by-cell, the
+        falling column pinned where
+        OCR survives), the tightrope
+        walk, the pole vault and high
+        jump bands, the broad jump and
+        extensions, the footnotes, the
+        Table III dex bonuses. The
+        vault/jump distance cells, the
+        racial adjustments row, Table II
+        and Table IV stay open pending
+        the PDF read.
 - [ ] **Money for cavaliers** (p. 25) -
       the starting gear by social class.
 

@@ -664,6 +664,18 @@ R172 were already dropped at the R171b/R172 era cut; git
   R327/R184 seams (the UA prose is
   OCR-lost). GREEN on the first
   paste. No new lessons.
+- R334 landed 2026-10-11: commit
+  a22d9a1, census 261, the UA
+  Thieves Table II pin round
+  (rules/thiefarmor.h): the armor
+  categories, the eight functions,
+  the verified cells and holes, the
+  footnotes; the paired attacks
+  table - the five classes, the band
+  edges, the verified rates. GREEN
+  on the first paste. No new
+  lessons; the item stays open
+  pending the PDF read.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
