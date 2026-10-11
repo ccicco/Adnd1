@@ -626,7 +626,7 @@ fold; the R326 audit, census 253.
         illusionist cantrip and
         3rd-6th columns are OCR-lost -
         noted pending the PDF read.
-- [ ] **The new cleric spells** (pp.
+- [x] **The new cleric spells** (pp.
       32-42) - one item per level: 1st
       (p. 33-35: endure cold/heat,
       invisibility to undead, magic
@@ -764,6 +764,27 @@ fold; the R326 audit, census 253.
         fragment regions are OCR
         holes - noted pending the PDF;
         the 7th level stays open.
+      - R349: the 7th level pinned
+        (rules/uaclericspells7.h) -
+        exaction (the duty or quest
+        with the alignment gates and
+        the bargain consequences) and
+        succor (the prepared-object
+        dweomer with the summons
+        reverse); the family decodes
+        the two 7s as 1; the exaction
+        range position-decodes from
+        the interleave; the R341
+        7th-level column prints no
+        fragments - both names pin
+        from the prose; the opener
+        word, the creature-example
+        garble and the two prose
+        shatters are OCR holes -
+        noted pending the PDF.
+      - CLOSED R349: the item closed -
+        all seven levels pinned
+        (R343-R348 plus this round).
 - [ ] **The new druid spells** (pp.
       42-45) - 1st (ceremony, detect
       balance, detect poison,

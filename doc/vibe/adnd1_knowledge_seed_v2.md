@@ -917,6 +917,28 @@ R172 were already dropped at the R171b/R172 era cut; git
   decode are OCR holes - noted
   pending the PDF; GREEN on the
   first run.
+- R348 landed 2026-10-11: commit
+  f9e1522, census 275, the UA
+  new cleric spells pin round,
+  the 6th level
+  (rules/uaclericspells6.h):
+  forbiddance (the name header
+  never prints - identified by
+  the near-verbatim 2e
+  descendant text; the ethics
+  and morals entry ladder with
+  the password gate) and heroes
+  feast (the twelve-hour
+  benefits and the one-hour
+  consume rule); the
+  digit-garble family decodes
+  the two 7s as 1 (both
+  corroborated); the
+  forbiddance 6s stay genuine;
+  the R341 table prints four
+  fragments - neither name
+  seam-checks; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
