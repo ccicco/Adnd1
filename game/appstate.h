@@ -228,6 +228,7 @@
 #include "../rules/subclasses.h"  // R230: the subclass registry
 #include "../rules/subclassgates.h"  // R230: the creation gates
 #include "../rules/races.h"   // R154: Race Tables I-III
+#include "../rules/subraces.h"  // R326: the sub-race picker
 #include "../rules/saves.h"   // R45: trap saves
 #include "../rules/combat.h"   // R61: monsterEffectiveLevel (p.86 guard rule)
 #include "../dm/dm.h"
@@ -400,6 +401,7 @@ enum GameMode : int {
 enum CreationStage : int {
     CR_ROLL = 0,
     CR_RACE,    // R154: the racial stock stage
+    CR_SUBRACE,  // R326: the sub-race offer
     CR_CLASS,
     CR_SUBCLASS,   // R230: the subclass offer stage
     CR_MULTI,   // R233: the multi-class offer stage
@@ -419,6 +421,7 @@ struct CreationState {
     rules::AbilityScores rolled;
     int  racePick = 0;               // R154: highlighted race row
     bool female = false;             // R154: Table III M/F columns
+    int  subracePick = 0;            // R326: picker row (SUB_* value)
     int  classPick = 0;              // highlighted class row
     int  subPick = -1;               // R230: registry subclass, -1 = plain
     std::string nameBuf;
@@ -432,6 +435,7 @@ struct CreationState {
         stage = CR_ROLL;
         racePick = 0;     // R154
         female = false;   // R154
+        subracePick = 0;  // R326
         classPick = 0;
         subPick = -1;   // R230
         nameBuf.clear();
@@ -455,6 +459,43 @@ struct CreationState {
             (rules::CharRace)raceIdx, female);
     }
 
+    // R326: the sub-race picker rows -
+    // SUB_NONE first, then the sub-races
+    // of the chosen stock (SUB_HUMAN
+    // stays a matrix id; humans carry
+    // the none row only)
+    int subraceOptionCount() const {
+        int n = 1;
+        if (racePick != (int)rules::RACE_HUMAN)
+            for (int s = 1;
+                 s < rules::SUBRACE_COUNT; ++s)
+                if (rules::subraceParentRace(
+                        (rules::CharSubRace)s)
+                    == (rules::CharRace)racePick)
+                    ++n;
+        return n;
+    }
+
+    // The sub-race of picker row i
+    // (off-menu rows read SUB_NONE)
+    rules::CharSubRace subraceOption(
+            int row) const {
+        if (row <= 0
+            || racePick == (int)rules::RACE_HUMAN)
+            return rules::SUB_NONE;
+        int n = 1;
+        for (int s = 1;
+             s < rules::SUBRACE_COUNT; ++s)
+            if (rules::subraceParentRace(
+                    (rules::CharSubRace)s)
+                == (rules::CharRace)racePick) {
+                if (n == row)
+                    return (rules::CharSubRace)s;
+                ++n;
+            }
+        return rules::SUB_NONE;
+    }
+
     // eligibility: prime requisite meets the class minimum,
     // and Race Table I allows the class for the race (R154)
     bool classEligible(int classIndex) const {
@@ -470,6 +511,8 @@ struct CreationState {
     Character makeMember(int classIndex) {
         Character c;
         c.race = racePick;              // R154: the chosen stock
+        c.female = female;              // R326: Table III M/F
+        c.uaSubrace = subracePick;      // R326: the chosen sub-race
         c.abilities = raceAdjusted();   // R154: adjusted is actual
         c.classIndex = classIndex;
         c.level = 1;

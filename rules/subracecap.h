@@ -148,19 +148,22 @@ inline UaClass uaClassOfMember(int classIndex,
 // the member is single-classed and the
 // class is a multi-class choice for the
 // race; the engine cap still binds
-// above. The dark-elf sex split rides
-// the creation round (the male columns
-// here).
+// above. The female flag selects
+// the printed female columns (the
+// dark-elf split; every other
+// sub-race reads the same column).
 inline int uaLevelCap(int baseCap,
                       CharSubRace s,
                       UaClass c,
                       const AbilityScores& a,
                       const ExceptionalStrength& ex,
-                      int multiMask) {
+                      int multiMask,
+                      int female = 0) {
     if (s == SUB_NONE || s == SUB_HUMAN)
         return baseCap;
     int limit = subraceLevelLimit(
-        s, c, uaColumnKey(c, a, ex), 0);
+        s, c, uaColumnKey(c, a, ex),
+        female);
     if (limit <= 0) return baseCap;
     if (multiMask == 0 && uaBonusEligible(s, c))
         limit += singleClassLevelBonus();

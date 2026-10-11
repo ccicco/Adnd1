@@ -73,6 +73,7 @@ void AppState::resetToCreation(){
         creation.stage = CR_ROLL;
         creation.racePick = 0;      // R154
         creation.female = false;    // R154
+        creation.subracePick = 0;    // R326
         creation.classPick = 0;
         creation.nameBuf.clear();
         creation.partySizeCap = PARTY_DEFAULT;
@@ -200,6 +201,11 @@ bool AppState::saveGame(){
             if (c.uaSubrace != 0)
                 fprintf(f, "uasub %d\n",
                         c.uaSubrace);
+            // R326: the member sex (only
+            // when female - v1 saves carry
+            // no line and load as male)
+            if (c.female)
+                fprintf(f, "fem 1\n");
             // R230: the registry subclass (only when set -
             // v1 saves carry no line and load as none)
             if (c.subclass != -1)
@@ -645,6 +651,15 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.uaSubrace = us;
+                } else if (strcmp(tag, "fem") == 0) {
+                    int fm = 0;
+                    if (fscanf(f, "%d", &fm) != 1 ||
+                        fm < 0 || fm > 1) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (fem).");
+                        return false;
+                    }
+                    c.female = (fm != 0);
                 } else if (strcmp(tag, "subclass") == 0) {
                     int sb = -1;
                     if (fscanf(f, "%d", &sb) != 1 ||

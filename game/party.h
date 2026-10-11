@@ -161,6 +161,11 @@ struct Character {
     // v1-save default). The Race Table II level-limit fold reads it.
     // Optional "uasub" line in the save.
     int  uaSubrace = 0;
+    // R326: the member sex (Table III M/F;
+    // the dark-elf Race Table II split reads
+    // it; v1 saves carry no line and load as
+    // male). Optional "fem" line in the save.
+    bool female = false;
     int  classIndex = 0;
     // R230: the registry subclass (rules::Subclass;
     // -1 = a plain class member; v1 saves load -1)
@@ -812,15 +817,14 @@ struct Party {
             // vital ability keyed per the p.8
             // print; the +2 single-class rule;
             // the engine cap still binds above).
-            // The dark-elf sex split rides the
-            // creation round (the male columns
-            // here).
+            // The dark-elf sex split reads
+            // the member sex flag (R326).
             cap = rules::uaLevelCap(cap,
                 (rules::CharSubRace)c.uaSubrace,
                 rules::uaClassOfMember(
                     c.classIndex, c.subclass),
                 c.abilities, c.exStr,
-                c.multiMask);
+                c.multiMask, c.female);
             if (c.level < cap &&
                 c.xp >= need &&
                 !isQueuedForTraining((int)(&c - members.data()))) {
@@ -896,15 +900,14 @@ struct Party {
             // vital ability keyed per the p.8
             // print; the +2 single-class rule;
             // the engine cap still binds above).
-            // The dark-elf sex split rides the
-            // creation round (the male columns
-            // here).
+            // The dark-elf sex split reads
+            // the member sex flag (R326).
             cap = rules::uaLevelCap(cap,
                 (rules::CharSubRace)c.uaSubrace,
                 rules::uaClassOfMember(
                     c.classIndex, c.subclass),
                 c.abilities, c.exStr,
-                c.multiMask);
+                c.multiMask, c.female);
             if (c.hp <= 0 || c.level >= cap ||
                 c.xp < need)
                 continue;   // stale entry - try the next

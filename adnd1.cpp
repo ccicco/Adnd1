@@ -188,7 +188,8 @@ static void creationKeyDown(WPARAM wp) {
                     if (cr.raceEligible(idx)) {
                         cr.racePick = idx;
                         cr.classPick = 0;
-                        cr.stage = CR_CLASS;
+                        cr.subracePick = 0;   // R326
+                        cr.stage = CR_SUBRACE;
                     }
                     break;
                 }
@@ -197,6 +198,26 @@ static void creationKeyDown(WPARAM wp) {
                     break;
                 case VK_ESCAPE:
                     cr.stage = CR_ROLL;   // back to the dice
+                    break;
+            }
+            break;
+
+        case CR_SUBRACE:   // R326: the UA sub-race offer
+            switch (wp) {
+                case '1': case '2': case '3':
+                case '4': case '5': case '6':
+                case '7': {
+                    int row = (int)(wp - '1');
+                    if (row < cr.subraceOptionCount()) {
+                        cr.subracePick = (int)
+                            cr.subraceOption(row);
+                        cr.classPick = 0;
+                        cr.stage = CR_CLASS;
+                    }
+                    break;
+                }
+                case VK_ESCAPE:
+                    cr.stage = CR_RACE;   // back to the stock
                     break;
             }
             break;
@@ -220,7 +241,7 @@ static void creationKeyDown(WPARAM wp) {
                     }
                     break;
                 case VK_ESCAPE:
-                    cr.stage = CR_RACE;   // back to race choice
+                    cr.stage = CR_SUBRACE;   // R326: back to the sub-race
                     break;
             }
             break;
@@ -860,12 +881,37 @@ static void drawCreate(HDC dc, const AppState& s) {
             }
             SetTextColor(dc, RGB(190, 175, 140));
             TextOutA(dc, 20, VIEW_H - 60,
-                     "[1-4] choose class   [esc] back to race",
-                     39);
+                     "[1-4] choose class   [esc] sub-race",
+                     35);
             if (rules::multiClassPossible(cr.racePick))
                 TextOutA(dc, 20, VIEW_H - 38,
                          "[M] the multi-class combinations",
                          32);
+            break;
+        }
+
+        case CR_SUBRACE: {   // R326: the UA sub-race offer
+            TextOutA(dc, 20, py, "CHOOSE A SUB-RACE", 13);
+            py += 30;
+            for (int i = 0;
+                 i < cr.subraceOptionCount(); ++i) {
+                rules::CharSubRace s =
+                    cr.subraceOption(i);
+                char row[96];
+                snprintf(row, sizeof row,
+                         "  [%d] %s", i + 1,
+                         rules::subraceName(s));
+                SetTextColor(dc, RGB(210, 195, 165));
+                TextOutA(dc, 40, py, row,
+                         (int)strlen(row));
+                py += 26;
+            }
+            SetTextColor(dc, RGB(190, 175, 140));
+            const char* hint =
+                "[1] none   [2+] the sub-races"
+                "   [esc] back";
+            TextOutA(dc, 20, VIEW_H - 60, hint,
+                     (int)strlen(hint));
             break;
         }
 

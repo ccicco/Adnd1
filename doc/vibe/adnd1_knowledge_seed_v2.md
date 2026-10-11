@@ -492,6 +492,33 @@ R172 were already dropped at the R171b/R172 era cut; git
   paste md5 drifts only the trailing
   newline (nano); the splice asserts
   are the tripwire.
+- R325 landed 2026-10-11: commit
+  2592126, census 252, the UA
+  Race Table II caller round
+  (rules/subracecap.h): the
+  uaLevelCap fold at the gainXp
+  queue and the trainer, the
+  uaSubrace field with its save
+  line, the +2 single-class rule
+  against the R185 combo layer.
+  GREEN on the second paste (one
+  fix round, r325b, folded by
+  amend): the U6 live walks
+  passed st.rng (a rules::Rng)
+  where gainXp and trainNext take
+  a rules::Dice reference - the
+  AppState dice{rng} member is
+  the bridge (reseeding rides
+  the reference). Lessons: (1)
+  the oracle must type-check
+  CALL SIGNATURES against the
+  landed headers, not just
+  identifier names - the r324b
+  case-gap twin; (2) a failed
+  build cascades the whole
+  census (the battery never
+  runs) - read the FIRST error,
+  not the census.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

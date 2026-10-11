@@ -124,6 +124,12 @@ uaLevelCap at the gainXp queue and
 the trainer, the uaSubrace field
 with its save line; the R325 audit,
 census 252).
+ The creation round CLOSED R326:
+the sub-race picker stage (the
+CR_SUBRACE offer), the female
+field with its save line, the
+dark-elf sex split live at the
+fold; the R326 audit, census 253.
 - [x] **The sub-races** (pp. 10-12) -
       CLOSED R323: the SubRaceTraits
       records - the duergar immunities,
