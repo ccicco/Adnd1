@@ -815,6 +815,28 @@ R172 were already dropped at the R171b/R172 era cut; git
   preflight gates are the real
   fingerprint; GREEN on the first
   paste.
+- R344 landed 2026-10-11: commit
+  7734ea9, census 271, the UA
+  new cleric spells pin round,
+  the 2nd level
+  (rules/uaclericspells2.h):
+  aid, detect life, dust devil,
+  enthrall, holy symbol,
+  messenger, withdraw and
+  wyvern watch; the digit-garble
+  family decodes the five 7s as
+  1; the R341 table hole at row
+  18 decodes as withdraw. A
+  nano-wrapped paste corrupted
+  the splice and a prompt-
+  prefixed runbook fed bash the
+  prompts - both cost a reset.
+  Lesson pinned: the save is
+  cat > + Ctrl-D and the runbook
+  carries bare commands; the
+  py_compile/awk/tail pre-check
+  gate runs before the first
+  splice. GREEN after the reset.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

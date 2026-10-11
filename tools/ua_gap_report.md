@@ -676,6 +676,29 @@ fold; the R326 audit, census 253.
         OCR holes - noted pending
         the PDF; the 3rd-7th levels
         stay open.
+      - R345: the 3rd level pinned
+        (rules/uaclericspells3.h) -
+        cloudburst, death's door,
+        flame walk, magical
+        vestment, meld into stone,
+        negative plane
+        protection, remove
+        paralysis and water walk;
+        the digit-garble family
+        decodes the six 7s as 1
+        (the negative plane
+        protection duration is
+        corroborated by its clean
+        prose); the R341
+        3rd-level column is fully
+        readable - no hole decode
+        this round; the cloudburst
+        range cell, the flame walk
+        lead sentence and the
+        water walk casting-time
+        numeral are OCR holes -
+        noted pending the PDF; the
+        4th-7th levels stay open.
 - [ ] **The new druid spells** (pp.
       42-45) - 1st (ceremony, detect
       balance, detect poison,
