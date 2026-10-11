@@ -939,6 +939,29 @@ R172 were already dropped at the R171b/R172 era cut; git
   fragments - neither name
   seam-checks; GREEN on the
   first run.
+- R349 landed 2026-10-11: commit
+  ba3dc04, census 276, the UA
+  new cleric 7th level spells pin
+  round (rules/uaclericspells7.h):
+  exaction (the alignment gates
+  and the bargain consequences)
+  and succor (the prepared-object
+  dweomer with the summons
+  reverse); the family decodes
+  the two 7s as 1; the item
+  CLOSED - all seven levels
+  pinned (R343-R349); the
+  new-cleric-spells gap item
+  checked off. Lesson: the user
+  built the splice in nano (not
+  the cat paste); the md5
+  drifted (whitespace) yet
+  py_compile, the width profile,
+  the double-run and the census
+  all passed - the gates stay
+  the fingerprint, md5 a
+  convenience. GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

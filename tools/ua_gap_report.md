@@ -795,6 +795,24 @@ fold; the R326 audit, census 253.
       starshine), 5th (moonbeam, spike
       stones), 6th (liveoak, transmute
       water to dust), 7th (changestaff).
+      - R350: the 1st level pinned
+        (rules/uadruidspells1.h) - the
+        four spell descriptions
+        (ceremony with the nine
+        varieties and the cast-out
+        permission ladder, detect
+        balance, detect poison with
+        the yew leaf, precipitation
+        with the name header lost -
+        identified via the R343
+        clerical pin); the family
+        decodes the three 7s as 1
+        (detect balance prints the
+        clean 1); the R341 druid
+        table prints the four PHB
+        names - none of the new
+        names seam-checks; the 2nd
+        through 7th levels stay open.
 - [ ] **The new magic-user spells**
       (pp. 51-66) - one item per level:
       1st (alarm, armor, firewater,
