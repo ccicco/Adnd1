@@ -949,6 +949,28 @@ fold; the R326 audit, census 253.
       telekinetic sphere, sink), 9th
       (crystalbrittle, energy drain, the
       Mordenkainen disjunction, succor).
+      - R356: the 1st level pinned
+        (rules/uamuspells1.h) - the
+        ten spell descriptions
+        (alarm with the lost range
+        and door-value cells, armor,
+        firewater, grease, melt
+        behind the run interleave,
+        mount with the level ladder,
+        precipitation seam-checking
+        the R343 clerical pin minus
+        the holy symbol, run, taunt
+        behind the scrambled opener,
+        wizard mark); the family
+        decodes the seven level-cell
+        and casting-time 7s as 1
+        (mount, run and taunt print
+        the clean 1); the R341
+        tables pin only cantrip
+        ranges - no 1st-level MU
+        table seam exists; the 2nd
+        through 9th levels stay
+        open.
 - [ ] **The new illusionist spells**
       (pp. 66-73) - the cantrips are
       their own category (below); 1st:

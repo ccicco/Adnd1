@@ -1060,6 +1060,21 @@ R172 were already dropped at the R171b/R172 era cut; git
   entry list must open with a
   blank element. GREEN on the
   first run.
+- R355 landed 2026-10-11: commit
+  a70626d, census 282, the UA
+  new druid 7th level spells pin
+  round (rules/uadruidspells7.h):
+  changestaff (the lost name
+  header, the hit-die ladder with
+  the wish-only recovery) and
+  sunray (the blindness tiers and
+  the undead damage split); the
+  family decodes the 7 round as
+  1; the druid spells item
+  CLOSED; the R354 seed merge
+  repaired (the entry list must
+  open with a blank element).
+  GREEN on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
