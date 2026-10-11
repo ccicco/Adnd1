@@ -408,6 +408,44 @@ R172 were already dropped at the R171b/R172 era cut; git
   state under the everything-and-
   the-kitchen-sink mission.
 
+- R323 landed 2026-10-11: commit
+  fe259f1, census 250, the UA
+  subrace layer (rules/subraces.h):
+  the CharSubRace and UaClass
+  enums, Race Table I with the
+  alignment column, the 17x17
+  preferences matrix (verified
+  cell by cell against the print),
+  the SubRaceTraits records, the
+  duergar/drow/svirfneblin reads.
+  GREEN on the third paste (two
+  fix rounds).
+  Lessons: (1) the compile gate is
+  the only proof of a seam - the
+  v1 splice landed clean on every
+  static check and still collided:
+  SUB_COUNT already named a
+  Subclass enum member in
+  subclasses.h, so the compiler
+  bound the traits table to their
+  count (6) and the build RED-cascaded
+  the whole census; the fix is the
+  rename (SUBRACE_COUNT), and the
+  audit at authoring time is now
+  collision-first: grep every new
+  identifier against every header
+  in the regtest TU before
+  authoring, then let the compile
+  arbitrate; (2) an unpushed commit
+  amends (git commit --amend
+  --no-edit) - a fix round folds
+  into the single round commit, no
+  fix-commit history noise; (3) a
+  fix splice takes the next letter
+  (r323b) and self-identifies in
+  its output; the md5 alone is a
+  weak signal when the paste drifts
+  a trailing newline.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

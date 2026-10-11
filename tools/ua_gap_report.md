@@ -106,21 +106,20 @@ pinned).
       and the alignment-requirements
       column, rules/subraces.h; the
       R323 seam audit.
-- [ ] **Race Table II** (pp. 8-9, the
-      level-limit sub-tables) - the six
-      sub-tables: dwarves (II.A), elves
-      (II.B/II.C with the dark-elf sex
-      split and the 18/01-18/00 exception
-      rows), gnomes (II.D), half-elves
-      (II.E), halflings (II.F), half-orcs
-      (II.G); reads clean; the footnoted
-      dual-ability gates (the ranger
-      intelligence/wisdom riders) and the
-      single-class +2 level bonus rule
-      ride with them. UNBLOCKED R323:
-      the seam exists; this is now a
-      plain engine charge (its own
-      round).
+- [x] **Race Table II** (pp. 8-9, the level-limit
+sub-tables) - CLOSED R324: the six sub-tables - II.A
+dwarves, II.B gnomes, II.C elves (both printed blocks),
+II.D half-elves, II.E halflings, II.F half-orcs (the
+print letters; the earlier report letters were off by the
+print) - the 47 columns with the dark-elf sex split and
+the 18/01-18/00 exception rows, the U reads, the
+footnoted ability gates (the ranger INT/ WIS riders with
+the OR footnote, the assassin INT/DEX riders, the druid
+CHA riders) and the escalation riders, the below-
+first-row floor rule, the +2 single-class rule;
+rules/subracelevels.h; the R324 audit (census 251). The
+leveling wiring (the class level-up site reading the
+limit) is the caller round.
 - [x] **The sub-races** (pp. 10-12) -
       CLOSED R323: the SubRaceTraits
       records - the duergar immunities,
