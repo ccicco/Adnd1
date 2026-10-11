@@ -745,6 +745,17 @@ R172 were already dropped at the R171b/R172 era cut; git
   pinned as printed; the item
   closed. GREEN on the first paste.
   No new lessons.
+- R340 landed 2026-10-11: commit
+  1288a5c, census 267, the UA new
+  weapons prose pin round
+  (rules/uanewweapons.h): the 16
+  printed descriptions, every
+  readable number pinned, the
+  khopesh slash-loss and whip 3d6
+  decodes documented; the item
+  stayed open (the DM pp. 77-79
+  half). GREEN on the first paste.
+  No new lessons.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

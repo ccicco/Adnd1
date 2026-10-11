@@ -598,6 +598,22 @@ fold; the R326 audit, census 253.
       spell-table appearance of the new
       tier; reads clean; the R80 registry
       is data-driven.
+      - R341: the readable tables
+        pinned (rules/uaspelltables.h)
+        - the cleric 1st-3rd table
+        (20 rows, seam-verified against
+        the R80 registry), the cleric
+        4th-7th fragments, the druid
+        tables (the four readable rows
+        seam-decoded as the 1st-level
+        roster, the Insect P| fragment
+        seam-decoded as Insect Plague)
+        and the MU cantrip table (64
+        names, the Gather/Polish merge
+        decoded); the MU spells tables
+        and the illusionist spell table
+        are OCR-scrambled - stays open
+        pending the PDF read.
 - [ ] **The new cleric spells** (pp.
       32-42) - one item per level: 1st
       (p. 33-35: endure cold/heat,
