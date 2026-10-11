@@ -31,6 +31,7 @@
 #include "../rules/classes.h"
 #include "../rules/subclassgates.h"  // R231: the subclass leveling seam
 #include "../rules/multiclass.h"  // R233: the multi-class engine
+#include "../rules/subracecap.h"  // R325: the Race Table II fold
 #include "../rules/bard.h"  // R235: the bard engine
 #include "../items/items.h"
 #include "../ai/actor.h"
@@ -156,6 +157,10 @@ struct Character {
     // R154: racial stock (rules::CharRace; 0 = human, the
     // v1-save default). Optional "race" line in the save.
     int  race = 0;
+    // R325: the UA sub-race (rules::CharSubRace; 0 = none/human, the
+    // v1-save default). The Race Table II level-limit fold reads it.
+    // Optional "uasub" line in the save.
+    int  uaSubrace = 0;
     int  classIndex = 0;
     // R230: the registry subclass (rules::Subclass;
     // -1 = a plain class member; v1 saves load -1)
@@ -801,6 +806,21 @@ struct Party {
                 need = rules::subclassXpToAttain(c.subclass,
                                                 c.level + 1);
             }
+            // R325: the UA Race Table II
+            // fold - a sub-raced member cap
+            // reads the level-limit column (the
+            // vital ability keyed per the p.8
+            // print; the +2 single-class rule;
+            // the engine cap still binds above).
+            // The dark-elf sex split rides the
+            // creation round (the male columns
+            // here).
+            cap = rules::uaLevelCap(cap,
+                (rules::CharSubRace)c.uaSubrace,
+                rules::uaClassOfMember(
+                    c.classIndex, c.subclass),
+                c.abilities, c.exStr,
+                c.multiMask);
             if (c.level < cap &&
                 c.xp >= need &&
                 !isQueuedForTraining((int)(&c - members.data()))) {
@@ -870,6 +890,21 @@ struct Party {
                 need = rules::subclassXpToAttain(c.subclass,
                                                 c.level + 1);
             }
+            // R325: the UA Race Table II
+            // fold - a sub-raced member cap
+            // reads the level-limit column (the
+            // vital ability keyed per the p.8
+            // print; the +2 single-class rule;
+            // the engine cap still binds above).
+            // The dark-elf sex split rides the
+            // creation round (the male columns
+            // here).
+            cap = rules::uaLevelCap(cap,
+                (rules::CharSubRace)c.uaSubrace,
+                rules::uaClassOfMember(
+                    c.classIndex, c.subclass),
+                c.abilities, c.exStr,
+                c.multiMask);
             if (c.hp <= 0 || c.level >= cap ||
                 c.xp < need)
                 continue;   // stale entry - try the next

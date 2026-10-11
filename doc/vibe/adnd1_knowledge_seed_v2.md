@@ -446,6 +446,52 @@ R172 were already dropped at the R171b/R172 era cut; git
   its output; the md5 alone is a
   weak signal when the paste drifts
   a trailing newline.
+- R324 landed 2026-10-11: commit
+  a7a6a5c, census 251, the UA
+  Character Race Table II
+  (rules/subracelevels.h): the six
+  sub-tables (II.A dwarves, II.B
+  gnomes, II.C elves both printed
+  blocks, II.D half-elves, II.E
+  halflings, II.F half-orcs), the 47
+  columns keyed by the vital ability
+  (score*1000; the exceptional
+  strength ladder 18/01-18/00 as
+  18010-18999 with 18/00 at 18999),
+  the dark-elf sex split, the U
+  reads, the footnoted ability gates
+  with the OR footnote, the
+  escalation riders, the floor rule,
+  the +2 single-class rule. GREEN on
+  the second paste (one fix round,
+  r324b, folded by amend).
+  Lessons: (1) the oracle must read
+  back out of the GENERATED header
+  text, not the intent - the
+  build-time simulation carried the
+  wild elf in the elf gates block
+  while the generated C++ omitted
+  SUB_ELF_WILD; the double-entry
+  check verified audit-vs-model,
+  never model-vs-header, so the
+  preflight read bad 2 and the
+  if-bad-return bail-out cascaded
+  the census (every audit after the
+  block read CENSUS FAIL); the
+  replay discipline (port the landed
+  C++ literally into Python, replay
+  the audit mechanically) found the
+  2 fails exactly; (2) preflight is
+  a pre-commit gate - run it before
+  the git add; a post-amend run
+  reads hygiene RED on a clean tree
+  (untracked splice files with no
+  modified tracked file is the
+  never-ran shape, and the amend
+  leaves exactly that); (3) the
+  paste md5 drifts only the trailing
+  newline (nano); the splice asserts
+  are the tripwire.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

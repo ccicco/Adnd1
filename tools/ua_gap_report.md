@@ -118,8 +118,12 @@ the OR footnote, the assassin INT/DEX riders, the druid
 CHA riders) and the escalation riders, the below-
 first-row floor rule, the +2 single-class rule;
 rules/subracelevels.h; the R324 audit (census 251). The
-leveling wiring (the class level-up site reading the
-limit) is the caller round.
+leveling wiring CLOSED R325: the
+level-up fold (rules/subracecap.h;
+uaLevelCap at the gainXp queue and
+the trainer, the uaSubrace field
+with its save line; the R325 audit,
+census 252).
 - [x] **The sub-races** (pp. 10-12) -
       CLOSED R323: the SubRaceTraits
       records - the duergar immunities,

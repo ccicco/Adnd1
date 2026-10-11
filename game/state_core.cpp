@@ -195,6 +195,11 @@ bool AppState::saveGame(){
             // carry no line and load as human)
             if (c.race != 0)
                 fprintf(f, "race %d\n", c.race);
+            // R325: the UA sub-race (only when set -
+            // v1 saves carry no line and load as none)
+            if (c.uaSubrace != 0)
+                fprintf(f, "uasub %d\n",
+                        c.uaSubrace);
             // R230: the registry subclass (only when set -
             // v1 saves carry no line and load as none)
             if (c.subclass != -1)
@@ -630,6 +635,16 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.race = rc;
+                } else if (strcmp(tag, "uasub") == 0) {
+                    int us = 0;
+                    if (fscanf(f, "%d", &us) != 1 ||
+                        us < 0 ||
+                        us >= rules::SUBRACE_COUNT) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (uasub).");
+                        return false;
+                    }
+                    c.uaSubrace = us;
                 } else if (strcmp(tag, "subclass") == 0) {
                     int sb = -1;
                     if (fscanf(f, "%d", &sb) != 1 ||
