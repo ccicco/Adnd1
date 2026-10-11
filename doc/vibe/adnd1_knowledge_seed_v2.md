@@ -1023,7 +1023,22 @@ R172 were already dropped at the R171b/R172 era cut; git
   (note end plus the next item)
   or it would double-insert;
   the ACID assert caught it.
-  GREEN on the first run.
+  GREEN on the first run.- R353 landed 2026-10-11: commit
+  cef4de6, census 280, the UA
+  new druid 5th level spells pin
+  round (rules/uadruidspells5.h):
+  moonbeam (the movable spotlight
+  beam with the color and vision
+  effects) and spike stones
+  (identical to the clerical); the
+  spike stones stat cells
+  seam-check the R347 clerical pin
+  exactly - but the school cell
+  prints Enhancement where the
+  clerical reads Enchantment
+  (flagged pending the PDF); the
+  casting time cell lost. GREEN on
+  the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

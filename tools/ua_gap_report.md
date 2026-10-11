@@ -876,6 +876,22 @@ fold; the R326 audit, census 253.
         names - neither new name
         seam-checks there; the 6th and
         7th levels stay open.
+      - R354: the 6th level pinned
+        (rules/uadruidspells6.h) - the
+        two spell descriptions (liveoak
+        with the triggered treant and
+        the 3-inch movement decode,
+        water to dust behind the name
+        garble with the muddy
+        multipliers and the
+        water-native save gate); the
+        family decodes the 7 as 1
+        (water to dust prints the
+        clean 6 and 8); the R341 druid
+        6th table prints five PHB
+        names - neither new name
+        seam-checks there; the 7th
+        level stays open.
 - [ ] **The new magic-user spells**
       (pp. 51-66) - one item per level:
       1st (alarm, armor, firewater,
