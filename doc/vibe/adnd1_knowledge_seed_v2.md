@@ -596,6 +596,28 @@ R172 were already dropped at the R171b/R172 era cut; git
   twice - comment plus call);
   count asserts against actual
   file content, always.
+- R330 landed 2026-10-11: commit
+  76df31d, census 257, the UA
+  druid hierophant ladder pin
+  round (rules/hierophant.h): the
+  hierarchy, the abdication, the
+  Table I ladder, the spell
+  abilities, the 16th-23rd
+  powers, the plane and conjure
+  ladders, the five conjuring
+  tables; the earth 01-85 HD
+  cell and the L21 title cell
+  documented as OCR holes. GREEN
+  on the first paste. Two
+  lessons: a seam comment naming
+  an identifier trips the
+  not-in assert (reword the
+  comment, not the assert); and
+  the balance checker must strip
+  comments before strings - the
+  unpaired inch-mark quote in a
+  comment swallowed real braces
+  and faked an imbalance.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

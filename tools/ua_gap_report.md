@@ -355,6 +355,17 @@ fold; the R326 audit, census 253.
       specialization (+3/+3, melee only,
       no pole arms or two-handed sword);
       the bonuses are not magical.
+      - R331: the prose pinned
+      (rules/weaponspec.h) - the
+      class gate, the slot costs,
+      the melee/bow/crossbow
+      reads, the double, the table
+      structure with the cleanly
+      readable cells; the
+      table's fraction cells are
+      OCR-mangled (no consistent
+      decode) - stays open pending
+      the PDF read.
 - [ ] **The barbarian** (pp. 18-21) -
       the ability requirements and the
       wisdom maximum; **Barbarians Table
