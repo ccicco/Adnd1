@@ -647,6 +647,17 @@ fold; the R326 audit, census 253.
       golem, magic font, rainbow), 6th
       (p. 41), 7th (p. 42: exaction,
       succor).
+      - R343: the 1st level pinned
+        (rules/uaclericspells1.h) - the
+        eight spell descriptions with the
+        digit-garble family (the four
+        "Level: 7" cells) decoded, the
+        ceremony variety ladder, the
+        portent 1d12/1d6 mechanics and
+        the magic stone ladder; the R341
+        table hole at row 13 decodes as
+        portent; the 2nd-7th levels stay
+        open.
 - [ ] **The new druid spells** (pp.
       42-45) - 1st (ceremony, detect
       balance, detect poison,

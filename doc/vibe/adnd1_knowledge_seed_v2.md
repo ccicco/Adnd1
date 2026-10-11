@@ -771,6 +771,29 @@ R172 were already dropped at the R171b/R172 era cut; git
   table stayed OCR-scrambled -
   part 2 next. GREEN on the first
   paste. No new lessons.
+- R342 landed 2026-10-11: commit
+  3bba003, census 269, the UA
+  spell tables pin round,
+  part 2
+  (rules/uaspelltables2.h):
+  the MU 1st-5th columns
+  (35/30/28/28/28 readable
+  names, every garble
+  position-decoded), the MU
+  7th-9th continued table and
+  the illusionist table; the
+  6th column and the fragment
+  cells are OCR holes - noted
+  pending the PDF; the item
+  closed. Lesson: the user
+  paste's md5 drifted (nano
+  whitespace) yet every gate
+  passed - the idempotent
+  double-run plus the census
+  are the real fingerprint;
+  md5 stays a convenience
+  check. GREEN on the first
+  paste.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
