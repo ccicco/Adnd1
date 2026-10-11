@@ -1001,6 +1001,29 @@ R172 were already dropped at the R171b/R172 era cut; git
   git pull and the paste step -
   gates and landing only. GREEN
   on the first run.
+- R352 landed 2026-10-11: commit
+  849d516, census 279, the UA
+  new druid 3rd level spells pin
+  round (rules/uadruidspells3.h):
+  cloudburst (the stat-block
+  interleave decoded with the
+  call lightning exclusion),
+  know alignment (the
+  five-creature cap, not
+  reversible), spike growth (the
+  material interleave with the
+  seven twigs) and starshine (the
+  school tail lost; seam-checks
+  the R351 reflecting pool pin);
+  the UA prints no 4th-level
+  druid section. Lesson: the gap
+  note tail line now ends two
+  prior notes - the insert
+  anchors on the two-line tail
+  (note end plus the next item)
+  or it would double-insert;
+  the ACID assert caught it.
+  GREEN on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

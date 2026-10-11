@@ -857,6 +857,25 @@ fold; the R326 audit, census 253.
         through 7th levels stay open
         (the UA prints no 4th-level
         druid section).
+      - R353: the 5th level pinned
+        (rules/uadruidspells5.h) - the
+        two spell descriptions (moonbeam
+        with the movable spotlight beam
+        and the color and vision
+        effects, spike stones identical
+        to the clerical); the family
+        decodes the 7 as 1 (moonbeam
+        prints the clean 5); the spike
+        stones stat cells seam-check
+        against the R347 clerical pin
+        (the school cell prints
+        Enhancement where the clerical
+        reads Enchantment - flagged; the
+        casting time cell lost); the R341
+        druid 5th table prints six PHB
+        names - neither new name
+        seam-checks there; the 6th and
+        7th levels stay open.
 - [ ] **The new magic-user spells**
       (pp. 51-66) - one item per level:
       1st (alarm, armor, firewater,
