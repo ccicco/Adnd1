@@ -352,6 +352,29 @@ R172 were already dropped at the R171b/R172 era cut; git
   compare) - the later audits compare
   through std::string.
 
+- R321 landed 2026-10-11: commit
+  cd6dc78, census 248, the
+  aerial chapter (the OUT
+  reversal; the pp.49-53 pins,
+  the fly seams). GREEN on the
+  first paste. Lessons: (1) a
+  count-assert must not match
+  its own inserted comment
+  text - four R321 asserts
+  counted phrases their own
+  comments carried (the
+  double-run caught all four
+  before delivery); (2) verify
+  a pre-existing count before
+  pinning it (the pockets-the
+  route had a third print
+  already); (3) the UA arc
+  opens R322 - the upload is
+  the source of truth, and
+  its OCR-mangled tables stay
+  recorded until the book
+  text arrives.
+
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
