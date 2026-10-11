@@ -837,6 +837,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   py_compile/awk/tail pre-check
   gate runs before the first
   splice. GREEN after the reset.
+- R345 landed 2026-10-11: commit
+  9988376, census 272, the UA
+  new cleric spells pin round,
+  the 3rd level
+  (rules/uaclericspells3.h):
+  cloudburst, death's door,
+  flame walk, magical vestment,
+  meld into stone, negative
+  plane protection, remove
+  paralysis and water walk; the
+  digit-garble family decodes
+  the six 7s as 1 (two
+  corroborated in-round); the
+  R341 3rd-level column is
+  fully readable - no hole
+  decode. The paste survived a
+  nano wrap this round, but
+  cat > + Ctrl-D stays the
+  pinned save method; GREEN on
+  the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

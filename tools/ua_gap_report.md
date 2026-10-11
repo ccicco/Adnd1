@@ -699,6 +699,30 @@ fold; the R326 audit, census 253.
         numeral are OCR holes -
         noted pending the PDF; the
         4th-7th levels stay open.
+      - R346: the 4th level pinned
+        (rules/uaclericspells4.h) -
+        abjure, cloak of fear,
+        giant insect (the count
+        and hit-dice ladders),
+        imbue with spell ability,
+        spell immunity and spike
+        growth; the digit-garble
+        family decodes the five
+        7s as 1 (the cloak
+        duration corroborated by
+        its clean prose; the spike
+        growth casting and
+        duration decodes stay
+        verbatim with doubt); the
+        R341 continued table
+        prints only fragments for
+        the 4th level - the six
+        names pin from the prose;
+        the abjure range cell and
+        the spike growth Level
+        cell are OCR holes -
+        noted pending the PDF; the
+        5th-7th levels stay open.
 - [ ] **The new druid spells** (pp.
       42-45) - 1st (ceremony, detect
       balance, detect poison,
