@@ -72,7 +72,7 @@ inline int uawtNewWeaponCount()
 // The row name (printed, or the
 // attribution judgment).
 inline const char* uawtName(int i) {
-    static const const char* k[67] = {
+    static const char* const k[67] = {
         "Aklys", "Atlatl and javelin", "Arrow", "Axe, Battle",
         "Axe, Hand or Throwing", "Bardiche", "Bec de Corbin",
         "Bill-Guisarme", "Blowgun and needle", "Bo Stick",

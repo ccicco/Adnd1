@@ -704,6 +704,22 @@ R172 were already dropped at the R171b/R172 era cut; git
   exception noted, not
   detailed. GREEN on the first
   paste. No new lessons.
+- R337 landed 2026-10-11: commit
+  924e41d, census 264, the UA
+  weight and damage pin round
+  (rules/uaweapontable.h): the
+  67-row roster, all 50 PHB rows
+  cell-verified against the R189
+  seam (the hyphen-loss pattern
+  proven row by row), the 17
+  new-weapon rows pinned where
+  printed or pattern-decoded.
+  GREEN on the first paste.
+  Lesson: the array-template
+  generator emitted a duplicate
+  const on the char* name row (a
+  benign -Wduplicate-decl-specifier
+  warning); fixed in R338.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

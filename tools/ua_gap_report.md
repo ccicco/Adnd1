@@ -530,6 +530,21 @@ fold; the R326 audit, census 253.
       adjustment rows.
 - [ ] **Weapons, hurled and missile,
       general data** (p. 28).
+      - R338: the fragment-verified
+      cells pinned (rules/uamissile.h)
+      - the 24-row roster, the range
+      column (the long range in tens
+      of feet, PHB-seam verified),
+      the AC-adjustment ladders
+      minus-loss decoded (the
+      pattern seam-proven on the
+      bow, crossbow and sling rows
+      against the R145 rows); the
+      rate column, the S/M range
+      cells and the tail AC cells
+      of the short rows are
+      OCR-lost - stays open
+      pending the PDF read.
 - [ ] **The Weapon Proficiency Table**
       (p. 26) - pairs with the R299
       layer.
