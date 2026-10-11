@@ -636,6 +636,21 @@ R172 were already dropped at the R171b/R172 era cut; git
   naming an identifier trips the
   not-in assert - reword the comment,
   not the assert.
+- R332 landed 2026-10-11: commit
+  b5380bd, census 259, the UA
+  barbarian pin round
+  (rules/barbarian.h): the
+  requirements and the wisdom
+  maximum, Barbarians Table I, the
+  magic detestation (the award tail
+  an OCR hole pinned as a bool), the
+  strike ladder, the saves, the
+  primary, secondary and tertiary
+  ability ladders. GREEN on the
+  first paste. No new lessons - the
+  R330/R331 ones held (the
+  comments-stripped-first balance
+  checker, the seam-comment naming).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

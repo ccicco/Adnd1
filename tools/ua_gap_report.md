@@ -413,12 +413,25 @@ fold; the R326 audit, census 253.
       holes (documented in-header).
       The horde and the level-actions
       summary ride their own rounds.
-- [ ] **The ranger expansion** (pp.
+- [x] **The ranger expansion** (pp.
       21-22) - the tracking rules, the
       giant-class combat bonus, the
       spell progression (druidic from
       8th to 3rd-level spells, MU from
       9th to 2nd-level spells).
+      - CLOSED R333: the pin round
+      (rules/uaranger.h) - the
+      tracking base and terrain
+      ladders, the indoor reads, the
+      identification ladder, the
+      giant-class roster expansion
+      11 -> 22 (gnoll decoded from
+      the garbled cell). The spell
+      progression cross-checked
+      against the landed R327/R184
+      pins (the UA prose is
+      OCR-lost). The ranger weapons
+      rules ride a later round.
 - [ ] **Thieves Table II** (p. 22) -
       the armor-effects penalties on
       thieving functions (non-leather
