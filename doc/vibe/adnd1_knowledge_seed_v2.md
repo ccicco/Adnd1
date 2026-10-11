@@ -519,6 +519,25 @@ R172 were already dropped at the R171b/R172 era cut; git
   census (the battery never
   runs) - read the FIRST error,
   not the census.
+- R326 landed 2026-10-11: commit
+  e01935a, census 253, the UA
+  creation round: the CR_SUBRACE
+  picker stage (rows from
+  subraceParentRace), the female
+  field with its fem save line,
+  makeMember wiring both fields,
+  the dark-elf sex split live at
+  the fold (the uaLevelCap female
+  leg; the R325 audit compiles
+  male on the default param).
+  GREEN on the first paste. The
+  oracle discipline held: the
+  mechanical parse of the stacked
+  case labels caught a hairfoot
+  column misread before it hit
+  C++, and the r325b signature
+  check is why the old audit
+  compiled unchanged.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

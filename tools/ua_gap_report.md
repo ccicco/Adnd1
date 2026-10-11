@@ -162,16 +162,34 @@ fold; the R326 audit, census 253.
 
 ### Character classes (pp. 12-25)
 
-- [ ] **Classes Table I** (p. 12, the
+- [x] **Classes Table I** (p. 12, the
       hit dice and level limits: cavalier
       d10, barbarian d12, ranger 2d8,
       monk 2d4, druid limit 23 hierophant)
       and **Table II** (p. 13, the armor
       and weapons permitted per class,
       with the cavalier/paladin station
-      notes) - both read clean; the
-      registry is data-driven (append the
-      rows).
+      notes) - CLOSED R327: the pin round
+      (rules/classtables.h): the
+      hit-die column with the two-dice
+      first levels, the note-1
+      social-standing generators (3d4+1
+      or d10+3), the ranger 11-dice and
+      monk 18-dice maxima, the druid 23,
+      the spell-ability legs (paladin
+      clerical 9th-4th, ranger druidic
+      8th-3rd and MU 9th-2nd, the thief
+      10th and assassin 12th scroll
+      reads), the Table II footnotes
+      (the station armor and weapon
+      bans, the oil siege exception,
+      the acrobat as-thief-plus row);
+      the weapon and oil/poison columns
+      ride the landed R198/R199 pins;
+      the cavalier and barbarian level
+      ladders ride their own class
+      rounds; the R327 audit (census
+      254).
 - [ ] **The cavalier** (pp. 14-16) - the
       minima (STR/DEX/CON 15, INT/WIS 10,
       good alignment); the social-class
