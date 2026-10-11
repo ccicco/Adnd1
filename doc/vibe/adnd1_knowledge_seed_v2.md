@@ -618,6 +618,24 @@ R172 were already dropped at the R171b/R172 era cut; git
   unpaired inch-mark quote in a
   comment swallowed real braces
   and faked an imbalance.
+- R331 landed 2026-10-11: commit
+  ae61566, census 258, the UA weapon
+  specialization prose pin round
+  (rules/weaponspec.h): the class gate,
+  the slot costs, the melee and
+  point-blank reads, the double, the
+  table structure with the cleanly
+  readable cells (the mangled fraction
+  cells read empty - the item stays
+  open pending the PDF). GREEN on the
+  first paste. Two lessons carried:
+  the balance checker must strip
+  comments before strings (an unpaired
+  inch-mark in a comment swallowed
+  real braces); and a seam comment
+  naming an identifier trips the
+  not-in assert - reword the comment,
+  not the assert.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

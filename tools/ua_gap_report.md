@@ -366,7 +366,7 @@ fold; the R326 audit, census 253.
       OCR-mangled (no consistent
       decode) - stays open pending
       the PDF read.
-- [ ] **The barbarian** (pp. 18-21) -
+- [x] **The barbarian** (pp. 18-21) -
       the ability requirements and the
       wisdom maximum; **Barbarians Table
       I** (p. 19: d12, 11 levels, +4 hp
@@ -400,6 +400,19 @@ fold; the R326 audit, census 253.
       long-distance signaling, running,
       small craft paddled and rowed,
       sound imitation, snare building).
+      - CLOSED R332: the pin round
+      (rules/barbarian.h) - the
+      requirements and the wisdom
+      maximum, Barbarians Table I, the
+      magic detestation, the natural
+      attack progression, the saves,
+      the primary/secondary/tertiary
+      ability ladders. The
+      running-leap formula and the
+      detestation award tail are OCR
+      holes (documented in-header).
+      The horde and the level-actions
+      summary ride their own rounds.
 - [ ] **The ranger expansion** (pp.
       21-22) - the tracking rules, the
       giant-class combat bonus, the
