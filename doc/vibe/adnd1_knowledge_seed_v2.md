@@ -676,6 +676,19 @@ R172 were already dropped at the R171b/R172 era cut; git
   on the first paste. No new
   lessons; the item stays open
   pending the PDF read.
+- R335 landed 2026-10-11: commit
+  ef84109, census 262, the UA
+  thief-acrobat pin round
+  (rules/acrobat.h): the split class
+  at 6th, Table I, the Function
+  Table columns (the tumbling
+  attack and evasion ladders
+  cell-by-cell, the falling column
+  where OCR survives), the
+  tightrope walk, the vault and
+  jump bands, the footnotes, the
+  Table III dex bonuses. GREEN on
+  the first paste. No new lessons.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

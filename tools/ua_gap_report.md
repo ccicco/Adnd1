@@ -483,8 +483,21 @@ fold; the R326 audit, census 253.
         racial adjustments row, Table II
         and Table IV stay open pending
         the PDF read.
-- [ ] **Money for cavaliers** (p. 25) -
+- [x] **Money for cavaliers** (p. 25) -
       the starting gear by social class.
+      - CLOSED R336: the pin round
+        (rules/cavmoney.h) - the six
+        stations in social-ladder
+        order, the gold ranges, the
+        printed formulas verified
+        times-ten against the printed
+        ranges and the R190 seam, the
+        equipment lists item-by-item
+        as printed, the tack and
+        esquire prose. The paladin
+        exception noted at DMG
+        pp. 88-89 but not detailed -
+        a hole pending the PDF read.
 
 ### Equipping the character (pp. 25-28)
 
