@@ -1131,6 +1131,33 @@ R172 were already dropped at the R171b/R172 era cut; git
   the eight names, the four
   absent noted. GREEN on the
   first run.
+- R359 landed 2026-10-11: commit
+  97e1ff2, census 286, the UA
+  new magic-user 4th level spells
+  pin round (rules/uamuspells4.h):
+  the eight spell descriptions
+  (dispel illusion behind the lost
+  name tail and the garbled
+  half-inch range, the Evard
+  black tentacles behind the lost
+  level and range cells with the
+  stray gf line, the Leomund
+  secure shelter with the
+  scrambled wind sentence, magic
+  mirror with the scrambled
+  component list, the Otiluke
+  resilient sphere with the lost
+  globe sentence, shout with the
+  scrambled area tail, stoneskin
+  behind the lost level and range
+  cells, ultravision with the tail
+  past the 5th heading); the R342
+  MU table seam prints seven of
+  the eight names, the Dispel
+  fragment cell reads as a hole;
+  the 5th through 9th
+  levels. GREEN on the first
+  run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

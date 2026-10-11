@@ -1053,6 +1053,41 @@ fold; the R326 audit, census 253.
         fragment cell reads as a
         hole; the 5th through 9th
         levels stay open.
+      - R360: the 5th and 6th levels
+        pinned (rules/uamuspells5.h
+        and rules/uamuspells6.h) - the
+        six 5th-level descriptions
+        (avoidance behind the lost
+        name header, dismissal behind
+        the belabourment interleave,
+        dolor with the range as
+        printed, fabricate, the Leomund
+        belabourment behind the lost
+        name header, sending) and the
+        six 6th-level descriptions
+        (chain lightning behind the
+        truncated range tail and the
+        garbled save fraction,
+        contingency behind the lost
+        casting cells, ensnarement
+        behind the lost name header,
+        eyebite behind the garbled
+        school tail, the Mordenkainen
+        lucubration behind the lost
+        name header, transmute water
+        to dust seam-checking the
+        druid pin minus the mistletoe
+        with the 6-segment print
+        flagged against the druid 8);
+        the family decodes the casting
+        and duration 7s as 1 with the
+        range 7s staying as printed;
+        the R342 MU table seam prints
+        four of the 5th-level names,
+        avoidance and dolor absent,
+        and the 6th-level column is
+        wholly lost; the 7th through
+        9th levels stay open.
 - [ ] **The new illusionist spells**
       (pp. 66-73) - the cantrips are
       their own category (below); 1st:
