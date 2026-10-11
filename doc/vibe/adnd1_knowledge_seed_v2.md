@@ -733,6 +733,18 @@ R172 were already dropped at the R171b/R172 era cut; git
   R337b duplicate-const fix rode.
   GREEN on the first paste. No new
   lessons.
+- R339 landed 2026-10-11: commit
+  a701ba9, census 266, the UA
+  proficiency pin round
+  (rules/uaprof.h): the 14-row
+  roster, seven rows cell-verified
+  against the R297 PHB seam, the
+  attributed fragment rows
+  (illusionist, thief, assassin), the
+  paladin and ranger deviations
+  pinned as printed; the item
+  closed. GREEN on the first paste.
+  No new lessons.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

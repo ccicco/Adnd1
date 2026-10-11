@@ -569,6 +569,25 @@ fold; the R326 audit, census 253.
       buckler, staff sling, whip (14
       named types, each with its own
       data row).
+      - R340: the fragment-verified
+        prose pinned
+        (rules/uanewweapons.h) - the
+        16 printed descriptions (the
+        14 item-named types plus the
+        hand-crossbow and falchion
+        prose), the khopesh slash-loss
+        and whip 3d6 decodes; the
+        harpoon failure die, the
+        hand-crossbow poison
+        sentence, the lasso severing
+        mechanics, the caltrop
+        trigger and the khopesh
+        leverage sentence are
+        OCR-lost, and the DM pp.
+        77-79 half is DMG material
+        absent from the UA extract -
+        stays open pending the
+        PDF/DMG read.
 
 ### Character spells (pp. 28-73)
 
