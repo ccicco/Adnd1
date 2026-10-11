@@ -558,6 +558,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   every new call signature
   against the landed includes
   before the paste.
+- R328 landed 2026-10-11: commit
+  e9b26eb, census 255, the UA
+  cavalier pin round (rules/
+  cavalier.h): the minima, the
+  race gate, the weapons of
+  choice, the parry and armor
+  reads, the horsemanship
+  ladder, the percentile
+  growth, the saves and
+  immunities, the chivalric
+  code, the Table I clean
+  cells (the 5/6/11/12 title
+  holes stay open). GREEN on
+  the first paste. Lesson:
+  the four oracle fails were
+  OCR needles (curly quotes,
+  hyphenated breaks, scrambled
+  grid text), not facts - fix
+  needles against the extract,
+  never the fact.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -279,13 +279,32 @@ fold; the R326 audit, census 253.
       the 3 hp per level after 10th, the
       300000 xp per level past 12th;
       reads clean.
-- [ ] **The paladin re-parented under
+- [x] **The paladin re-parented under
       the cavalier** (p. 16) - the R184
       touches landed; the cavalier-side
       abilities ride the cavalier charge;
       the retainer rules differ (DM p.
       75); paladins take no weapon
       specialization.
+      - CLOSED R329: the pin round
+      (rules/paladin.h): the
+      re-parenting (cavalier
+      sub-class, no longer
+      fighter), the minima (the
+      R328 requisites plus WIS
+      13 and CHA 17), the
+      lawful-good gate with the
+      stray read, the social
+      station with the 0-level
+      track delegation, the
+      no-prime-requisite and
+      no-specialization reads,
+      the cavalier charge (the
+      five abilities), the CHA
+      percentile growth, the
+      retainer cross-reference
+      (DM p. 75); the R329 audit
+      (census 256).
 - [ ] **The druid hierophant ladder**
       (pp. 16-18) - Druids Table I (p.
       17): the expanded ladder to 23rd
