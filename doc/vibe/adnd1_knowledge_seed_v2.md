@@ -1075,6 +1075,21 @@ R172 were already dropped at the R171b/R172 era cut; git
   repaired (the entry list must
   open with a blank element).
   GREEN on the first run.
+- R356 landed 2026-10-11: commit
+  79cb0ce, census 283, the UA
+  new magic-user 1st level spells
+  pin round (rules/uamuspells1.h):
+  the ten spell descriptions
+  (alarm, armor, firewater,
+  grease, melt, mount,
+  precipitation seam-checking
+  the R343 clerical pin minus
+  the holy symbol, run, taunt,
+  wizard mark); the family
+  decodes the seven 7s as 1;
+  no 1st-level MU table seam
+  exists. GREEN on the first
+  run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -971,6 +971,32 @@ fold; the R326 audit, census 253.
         table seam exists; the 2nd
         through 9th levels stay
         open.
+      - R357: the 2nd level pinned
+        (rules/uamuspells2.h) - the
+        twelve spell descriptions
+        (bind, deeppockets behind
+        the lost name header,
+        flaming sphere, irritation
+        with the two versions, know
+        alignment reversible behind
+        the lost range cell, the
+        Melf acid arrow, preserve
+        behind the lost area number,
+        protection from cantrips
+        behind the From Cantrips
+        header garble, the Tasha
+        laughter with the
+        intelligence save ladder,
+        vocalize, whip behind the
+        lost level cell, zephyr);
+        the family decodes the
+        casting-time and duration
+        7s as 1; the R342 MU table
+        seam: eight of the twelve
+        names print there, the four
+        absent are noted; the 3rd
+        through 9th levels stay
+        open.
 - [ ] **The new illusionist spells**
       (pp. 66-73) - the cantrips are
       their own category (below); 1st:
