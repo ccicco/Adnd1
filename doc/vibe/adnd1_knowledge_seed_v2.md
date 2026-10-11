@@ -689,6 +689,21 @@ R172 were already dropped at the R171b/R172 era cut; git
   jump bands, the footnotes, the
   Table III dex bonuses. GREEN on
   the first paste. No new lessons.
+- R336 landed 2026-10-11: commit
+  74ebf6a, census 263, the UA
+  cavalier money pin round
+  (rules/cavmoney.h): the six
+  stations in social-ladder
+  order, the gold ranges, the
+  printed formulas verified
+  times-ten against the printed
+  ranges and the R190 seam, the
+  equipment lists item-by-item
+  as printed, the tack and
+  esquire prose; the paladin
+  exception noted, not
+  detailed. GREEN on the first
+  paste. No new lessons.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

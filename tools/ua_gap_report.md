@@ -507,6 +507,22 @@ fold; the R326 audit, census 253.
       Costs table** (p. 26).
 - [ ] **Weapons, Weight and Damage by
       Type** (p. 26).
+      - R337: the fragment-verified
+      cells pinned (rules/uaweapontable.h)
+      - the 67-row roster, all 50 PHB
+      rows cell-verified against the
+      R189 seam (the hyphen-loss
+      pattern proven row by row),
+      the 17 new-weapon rows pinned
+      where printed or
+      pattern-decoded, the merged
+      rows split by seam; the
+      atlatl/harpoon/falchion
+      weights, the lasso damage
+      and the unattributable
+      garbled quarrel row are
+      OCR-lost - stays open
+      pending the PDF read.
 - [ ] **Weapons, hand-held, general
       data and to-hit adjustments** (p.
       27) - the speed factors, the
