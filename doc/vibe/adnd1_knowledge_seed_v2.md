@@ -794,6 +794,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   md5 stays a convenience
   check. GREEN on the first
   paste.
+- R343 landed 2026-10-11: commit
+  46c65dc, census 270, the UA
+  new cleric spells pin round,
+  the 1st level
+  (rules/uaclericspells1.h):
+  ceremony (the ten varieties and
+  the Sth-cell decodes), combine,
+  endure cold/heat, penetrate
+  disguise, invisibility to
+  undead, portent (the 1d12/1d6
+  mechanics), magic stone and
+  precipitation; the digit-garble
+  family decodes the four
+  "Level: 7" cells as 1; the R341
+  table hole at row 13 decodes as
+  portent. The md5 drifts are
+  benign paste whitespace - the
+  double-run, the census and the
+  preflight gates are the real
+  fingerprint; GREEN on the first
+  paste.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

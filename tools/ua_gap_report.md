@@ -658,6 +658,24 @@ fold; the R326 audit, census 253.
         table hole at row 13 decodes as
         portent; the 2nd-7th levels stay
         open.
+      - R344: the 2nd level pinned
+        (rules/uaclericspells2.h) -
+        aid, detect life, dust
+        devil, enthrall, holy
+        symbol, messenger, withdraw
+        (the segments = level + 1
+        formula) and wyvern watch;
+        the digit-garble family
+        decodes the five 7s as 1;
+        the R341 table hole at row
+        18 (the "draw" fragment)
+        decodes as withdraw; the
+        aid casting-time and
+        components cells and the
+        messenger range cell are
+        OCR holes - noted pending
+        the PDF; the 3rd-7th levels
+        stay open.
 - [ ] **The new druid spells** (pp.
       42-45) - 1st (ceremony, detect
       balance, detect poison,
