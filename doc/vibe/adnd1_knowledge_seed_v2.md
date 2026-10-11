@@ -1200,6 +1200,32 @@ R172 were already dropped at the R171b/R172 era cut; git
   repaired the split audit
   printf; GREEN on the first
   run.
+- R361 landed 2026-10-11: commit
+  5c52199, census 288, the UA
+  new magic-user 7th level spells
+  pin round (rules/uamuspells7.h):
+  the eight spell descriptions
+  (banishment behind the scrambled
+  stat head with the range
+  interleaved, forcecage with the
+  stat tail interleaved, the
+  Mordenkainen magnificent mansion
+  behind the garbled name header,
+  sequester behind the lost name
+  header, teleport without error
+  with the stat cells scrambled,
+  torment with the save ladder,
+  truename with the polymorph
+  verse ladder, volley with the
+  Explanation line lost, the last
+  two printing past the 8th-level
+  table page); the family decodes
+  the casting and duration 7s as
+  1; the R342 MU table seam
+  prints only the seven PHB
+  fragments, none of the new names
+  seam-checks; GREEN on the first
+  run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

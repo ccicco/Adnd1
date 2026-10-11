@@ -915,7 +915,7 @@ fold; the R326 audit, census 253.
         closed - all printed
         levels pinned (R350-R354
         plus this round).
-- [ ] **The new magic-user spells**
+- [x] **The new magic-user spells**
       (pp. 51-66) - one item per level:
       1st (alarm, armor, firewater,
       grease, melt, mount, precipitation,
@@ -1122,6 +1122,37 @@ fold; the R326 audit, census 253.
         fragments, none of the new
         names seam-checks; the 8th
         and 9th levels stay open.
+      - R362: the 8th and 9th levels
+        pinned (rules/uamuspells8.h
+        and rules/uamuspells9.h) - the
+        four 8th-level descriptions
+        (binding with the lost range
+        and duration cells and the six
+        forms with the save ladder,
+        demand behind the garbled
+        components cell, the Otiluke
+        telekinetic sphere behind the
+        garbled name header with the
+        lost range cell, sink with the
+        lost level cell and the
+        sinking ladder) and the four
+        9th-level descriptions
+        (crystalbrittle with the item
+        save ladder, succor with the
+        interleaved stat tail, energy
+        drain with the displaced casting
+        cell, the Mordenkainen
+        disjunction behind the garbled
+        name header with the artifact
+        chances); the R342 MU table
+        seam checks demand at index 0
+        and sink at index 8 with
+        binding and the sphere absent,
+        and only the two PHB 9th names
+        print; the item closes.
+      - CLOSED R362: the item closed
+        - all printed levels pinned
+        (R356-R361 plus this round).
 - [ ] **The new illusionist spells**
       (pp. 66-73) - the cantrips are
       their own category (below); 1st:
