@@ -1158,6 +1158,48 @@ R172 were already dropped at the R171b/R172 era cut; git
   the 5th through 9th
   levels. GREEN on the first
   run.
+- R360 landed 2026-10-11: commit
+  47a3e4f plus the 997ef44 b
+  follow-up, census 287, the
+  UA new magic-user 5th and
+  6th level spells pin round
+  (rules/uamuspells5.h and
+  rules/uamuspells6.h): the
+  twelve spell descriptions
+  (avoidance behind the lost
+  name header, dismissal
+  behind the belabourment
+  interleave, dolor with the
+  range as printed, fabricate,
+  the Leomund belabourment
+  behind the lost name header,
+  sending; chain lightning
+  behind the truncated range
+  tail and the garbled save
+  fraction, contingency
+  behind the lost casting
+  cells, ensnarement behind
+  the lost name header,
+  eyebite behind the garbled
+  school tail, the Mordenkainen
+  lucubration behind the lost
+  name header, transmute water
+  to dust seam-checking the
+  druid pin minus the mistletoe
+  with the 6-segment print
+  flagged against the druid 8);
+  the family decodes the
+  casting and duration 7s as
+  1 with the range 7s staying
+  as printed; the R342 MU
+  table seam prints four of
+  the 5th-level names,
+  avoidance and dolor absent,
+  and the 6th-level column is
+  wholly lost; the b follow-up
+  repaired the split audit
+  printf; GREEN on the first
+  run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

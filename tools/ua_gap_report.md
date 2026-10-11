@@ -1088,6 +1088,40 @@ fold; the R326 audit, census 253.
         and the 6th-level column is
         wholly lost; the 7th through
         9th levels stay open.
+      - R361: the 7th level pinned
+        (rules/uamuspells7.h) - the
+        eight spell descriptions
+        (banishment with the
+        scrambled stat head and
+        the range interleaved,
+        forcecage with the stat
+        tail interleaved and the
+        gap fraction garbled, the
+        Mordenkainen magnificent
+        mansion behind the garbled
+        name header with the level
+        cell lost, sequester behind
+        the lost name header,
+        teleport without error with
+        the stat cells scrambled,
+        torment with the range cell
+        lost and the save ladder
+        pinned, truename with the
+        stat tail interleaved and
+        the save fragment
+        unattributed, volley with
+        the Explanation line lost
+        and the stat cells holes,
+        the volley and truename
+        sections printing past the
+        8th-level table page); the
+        family decodes the casting
+        and duration 7s as 1; the
+        R342 MU table seam prints
+        only the seven PHB
+        fragments, none of the new
+        names seam-checks; the 8th
+        and 9th levels stay open.
 - [ ] **The new illusionist spells**
       (pp. 66-73) - the cantrips are
       their own category (below); 1st:
