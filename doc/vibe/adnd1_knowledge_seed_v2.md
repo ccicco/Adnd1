@@ -651,6 +651,19 @@ R172 were already dropped at the R171b/R172 era cut; git
   R330/R331 ones held (the
   comments-stripped-first balance
   checker, the seam-comment naming).
+- R333 landed 2026-10-11: commit
+  458c831, census 260, the UA
+  ranger expansion pin round
+  (rules/uaranger.h): the tracking
+  base and terrain ladders, the
+  indoor reads, the identification
+  ladder, the giant-class roster
+  expansion 11 -> 22 (gnoll decoded
+  from the garbled cell); the spell
+  progression closed via the landed
+  R327/R184 seams (the UA prose is
+  OCR-lost). GREEN on the first
+  paste. No new lessons.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

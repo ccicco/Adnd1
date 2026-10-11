@@ -438,6 +438,18 @@ fold; the R326 audit, census 253.
       armor, the elfin chain read); the
       **Attacks Per Melee Round Table**
       (p. 22) pairs with it.
+      - R334: the fragment-verified
+      cells pinned (rules/thiefarmor.h)
+      - the armor columns, the eight
+      functions, the sign-carries-
+      column decode, the footnotes,
+      the attacks classes, band edges
+      and verified rates; the Open
+      Locks cells, the missing
+      no-armor cells, the attacks
+      high-band rate and the
+      footnote-1 tail are OCR-lost -
+      stays open pending the PDF read.
 - [ ] **The thief-acrobat** (pp. 23-25)
       - the split class at 6th (the
       5th-level thief may convert); the
