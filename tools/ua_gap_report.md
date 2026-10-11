@@ -190,7 +190,7 @@ fold; the R326 audit, census 253.
       ladders ride their own class
       rounds; the R327 audit (census
       254).
-- [ ] **The cavalier** (pp. 14-16) - the
+- [x] **The cavalier** (pp. 14-16) - the
       minima (STR/DEX/CON 15, INT/WIS 10,
       good alignment); the social-class
       gate (Upper Class direct entry; the
@@ -254,6 +254,25 @@ fold; the R326 audit, census 253.
       twelve-point code, the knighting
       ceremony, the revocation read - the
       weapons of choice survive it).
+      - CLOSED R328: the pin round
+      (rules/cavalier.h): the minima,
+      the good-alignment gate, the
+      0-level track, the race gate,
+      the weapons-of-choice ladder
+      and the preferred weapons, the
+      parry and armor reads, the
+      mounted and horsemanship
+      ladders, the steed reads, the
+      percentile growth, the
+      training rule, the saves and
+      immunities, the negative-hp
+      window, the chivalric code
+      facts, the Table I XP ladder
+      and the known title cells (the
+      5, 6, 11 and 12 holes stay
+      open with the Cavaliers Table
+      I item); the R328 audit
+      (census 255).
 - [ ] **Cavaliers Table I** (p. 15) -
       the XP ladder, the level titles
       (Horseman to Cavalier Commander),

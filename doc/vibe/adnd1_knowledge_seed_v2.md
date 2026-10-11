@@ -538,6 +538,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   C++, and the r325b signature
   check is why the old audit
   compiled unchanged.
+- R327 landed 2026-10-11: commit
+  47dce47, census 254, the UA
+  Classes Tables I and II pin
+  round (rules/classtables.h):
+  the hit-die column, the
+  two-dice first levels, the
+  note-1 social-standing
+  generators (3d4+1 or d10+3),
+  the ranger 11-dice and monk
+  18-dice maxima, the druid 23,
+  the spell-ability legs, the
+  Table II footnotes, the
+  acrobat row. GREEN on the
+  first paste. Lesson: the
+  acrobat name reads needed
+  strcmp, so regtest gained
+  its cstring include - audit
+  every new call signature
+  against the landed includes
+  before the paste.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
