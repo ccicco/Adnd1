@@ -756,6 +756,21 @@ R172 were already dropped at the R171b/R172 era cut; git
   stayed open (the DM pp. 77-79
   half). GREEN on the first paste.
   No new lessons.
+- R341 landed 2026-10-11: commit
+  d619290, census 268, the UA spell
+  tables pin round, part 1
+  (rules/uaspelltables.h): the
+  cleric 1st-3rd table (20 rows,
+  seam-verified against the R80
+  registry), the cleric 4th-7th
+  fragments, the druid tables (the
+  readable rows seam-decoded as the
+  1st-level roster) and the MU
+  cantrip table (64 names); the MU
+  spells tables and the illusionist
+  table stayed OCR-scrambled -
+  part 2 next. GREEN on the first
+  paste. No new lessons.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

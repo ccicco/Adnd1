@@ -591,7 +591,7 @@ fold; the R326 audit, census 253.
 
 ### Character spells (pp. 28-73)
 
-- [ ] **The spell tables** (pp. 28-31) -
+- [x] **The spell tables** (pp. 28-31) -
       clerics 28-29, druids 29,
       magic-users 30-31, illusionists 31;
       the cantrip columns are the first
@@ -614,6 +614,18 @@ fold; the R326 audit, census 253.
         and the illusionist spell table
         are OCR-scrambled - stays open
         pending the PDF read.
+      - CLOSED R342: part 2 pinned
+        (rules/uaspelltables2.h) - the
+        MU 1st-5th columns
+        (35/30/28/28/28 readable names,
+        every garble position-decoded),
+        the MU 7th-9th continued table
+        (7/11/2) and the illusionist
+        table (5/4/1). The 6th column,
+        the fragment cells, the
+        illusionist cantrip and
+        3rd-6th columns are OCR-lost -
+        noted pending the PDF read.
 - [ ] **The new cleric spells** (pp.
       32-42) - one item per level: 1st
       (p. 33-35: endure cold/heat,
