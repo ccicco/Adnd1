@@ -720,6 +720,19 @@ R172 were already dropped at the R171b/R172 era cut; git
   const on the char* name row (a
   benign -Wduplicate-decl-specifier
   warning); fixed in R338.
+- R338 landed 2026-10-11: commit
+  1775600, census 265, the UA
+  missile data pin round
+  (rules/uamissile.h): the 24-row
+  roster, the range column decoded
+  as the long range in tens of feet
+  (PHB-seam verified), the
+  AC-adjustment ladders minus-loss
+  decoded (the pattern seam-proven
+  against the R145 rows); the
+  R337b duplicate-const fix rode.
+  GREEN on the first paste. No new
+  lessons.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

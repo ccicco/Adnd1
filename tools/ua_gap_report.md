@@ -545,9 +545,22 @@ fold; the R326 audit, census 253.
       of the short rows are
       OCR-lost - stays open
       pending the PDF read.
-- [ ] **The Weapon Proficiency Table**
+- [x] **The Weapon Proficiency Table**
       (p. 26) - pairs with the R299
       layer.
+      - CLOSED R339: the pin round
+        (rules/uaprof.h) - the 14-row
+        roster, seven rows cell-verified
+        against the R297 PHB seam, the
+        UA-new rows (cavalier, barbarian,
+        acrobat, bard), the attributed
+        fragment rows (illusionist, thief,
+        assassin), the paladin and ranger
+        deviations pinned as printed. The
+        cavalier penalty, the paladin and
+        assassin initials and the
+        facing-page notes are OCR-lost -
+        noted pending the PDF read.
 - [ ] **The new weapons** (pp. 26-28
       and DM pp. 77-79) - the aklys,
       atlatl, blowgun, caltrop, garrot,
