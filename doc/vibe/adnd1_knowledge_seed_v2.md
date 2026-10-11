@@ -375,6 +375,39 @@ R172 were already dropped at the R171b/R172 era cut; git
   recorded until the book
   text arrives.
 
+- R322 landed 2026-10-11: commit
+  f83e11b, census 249, the UA arc
+  opener: the comeliness pins
+  (rules/comeliness.h) and the
+  lossless ua gap report
+  (tools/ua_gap_report.md) with the
+  DEFERRED ontology (OUT nearly
+  empty by design), the
+  deferred-seams dependency graph,
+  the playability closure criterion,
+  the switchable treasure decision.
+  GREEN on the second paste.
+  Lessons: (1) a ritual block must
+  be paste-safe - prose annotations
+  in a shell block run as commands;
+  the first paste executed nothing
+  but noise and the splice never
+  ran (preflight RED caught it
+  before any git damage); (2) a
+  pasted splice can hash off by a
+  trailing newline (the nano save)
+  - wc -c against the recorded
+  byte count confirms the case, and
+  the internal asserts plus the
+  double-run are the content proof;
+  (3) the OUT/DEFERRED axis lesson:
+  the survey axis (can the engine
+  hold it today) is not the intent
+  axis (is it wanted, ever) -
+  DEFERRED is the default resting
+  state under the everything-and-
+  the-kitchen-sink mission.
+
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -76,7 +76,7 @@ pinned).
       with the same-race pairs (the
       engine elf carries the +1 sylvan
       read; the +2 gray/high subrace
-      grain stays recorded - no subrace
+      grain pins in the R323 subrace
       layer); the ten reaction bands; the
       100/150/200 initial-reaction
       multipliers; the fascinate wisdom
@@ -98,10 +98,14 @@ pinned).
 
 ### Character races (pp. 7-12)
 
-- [ ] **Race Table I** (p. 7, the
-      class-limit matrix, 15 racial types
-      against 13 classes) - reads clean;
-      needs the subrace layer first.
+- [x] **Race Table I** (p. 7, the
+      class-limit matrix, 15 racial
+      types against the 14 UA classes)
+      - CLOSED R323: the CharSubRace
+      and UaClass enums, the matrix
+      and the alignment-requirements
+      column, rules/subraces.h; the
+      R323 seam audit.
 - [ ] **Race Table II** (pp. 8-9, the
       level-limit sub-tables) - the six
       sub-tables: dwarves (II.A), elves
@@ -113,32 +117,39 @@ pinned).
       dual-ability gates (the ranger
       intelligence/wisdom riders) and the
       single-class +2 level bonus rule
-      ride with them.
-- [ ] **The sub-races** (pp. 10-12) -
-      the per-type mechanics: gray dwarves
-      (duergar: the illusion immunity, the
-      paralyzation and poison immunities,
-      the daylight penalty ladder, the
-      3-in-6 surprise, the undercommon
-      tongue), gray elves (the +1
-      intelligence, max 19), wood/sylvan
-      elves, wild/grugach elves (the trap
-      success bonuses), valley elves,
-      dark elves, deep gnomes (the
-      stone-cunning reads), the halfling
-      strains (hairfoot, stout,
-      tallfellow), the half-elf variants,
-      the half-orcs. The engine CharRace
-      enum carries seven races and no
-      subrace layer - the subrace layer
-      is the gateway pin for the whole
-      section.
-- [ ] **The Racial Preferences matrix**
-      (p. 12) - reads clean (the P/G/T/
-      N/A/H codes, 17x17); depends on the
-      subrace layer; the R117 reaction
-      table has no callers, so this is a
-      pin-only charge.
+      ride with them. UNBLOCKED R323:
+      the seam exists; this is now a
+      plain engine charge (its own
+      round).
+- [x] **The sub-races** (pp. 10-12) -
+      CLOSED R323: the SubRaceTraits
+      records - the duergar immunities,
+      surprise and daylight ladder;
+      the gray/valley +1 INT max 19;
+      the wood +1 STR/-1 INT; the
+      grugach +2 STR, the 90 traps,
+      the fighter/thief gate; the drow
+      +2 magic saves, the sex-split
+      movement, the two-weapon read,
+      the innate spell lists, the
+      light penalties; the svirfneblin
+      saves, the camouflage, the
+      earth elemental table, the
+      innate spells; the half-elf
+      ancestries with the grugach
+      no-instances read; the halfling
+      strains with the mixed-blood
+      stout read - rules/subraces.h.
+- [x] **The Racial Preferences matrix**
+      (p. 12) - CLOSED R323: the 17x17
+      letter matrix (the P/G/T/N/A/H
+      codes), the diagonal-P check and
+      the print asymmetries pinned; the
+      half-elf footnote (elves react as
+      the worse of half-elf or the
+      ancestor) named for the caller;
+      rules/subraces.h; pin-only until
+      the reaction site exists.
 
 ### Character classes (pp. 12-25)
 
@@ -807,10 +818,13 @@ The dependency graph: each seam gates
 the items named with it. A seam round
 lands before the items it gates.
 
-- [ ] The subrace layer - gates Race
-      Table I, Race Table II, the
-      sub-race mechanics, the Racial
-      Preferences matrix.
+- [x] The subrace layer - CLOSED R323
+      (rules/subraces.h; the R323 seam
+      audit, census 250). Race Table
+      II and the wiring (the race
+      selection site, the R117
+      reactions) remain its open
+      dependents.
 - [ ] The cantrip tier seam - a
       sub-1st registry tier; gates the
       cantrip category.
