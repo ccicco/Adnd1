@@ -1598,7 +1598,31 @@ R172 were already dropped at the R171b/R172 era cut; git
   OPEN, PDF-gated; the R379
   seam the rods ledger, the
   R375 seam the wand band;
-  GREEN on the first run.
+  GREEN on the first run.- R381 landed 2026-10-12: commit
+  1ae8f21, census 308, the UA
+  misc magic prose part 1 pin
+  round (rules/uamiscprose1.h):
+  thirteen A-C items pin -
+  eight fully clean (beads of
+  force, boots of the north,
+  boots winged, bracers of
+  archery, bracers of
+  brachiation, cloak of
+  arachnidia, cloak of the
+  bat, cyclocone) plus five
+  mechanics-clean with flagged
+  holes (the amulet versus
+  undead, the anything item,
+  the boccob book, the boots
+  of varied tracks, the chime
+  of interruption); nothing
+  in A-C fully garbles - the
+  item AMENDED, stays OPEN
+  for D-Z, PDF-gated; the
+  R380 seam the wands ledger,
+  the R375 seam the misc
+  band; GREEN on the first
+  run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

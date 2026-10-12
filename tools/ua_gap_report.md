@@ -1916,6 +1916,24 @@ DECIDED R374: RUN BOTH - the engine
         NOTHING in A-C fully garbles
         - the item stays OPEN for
         D-Z and the PDF.
+      - AMENDED R382: the misc magic
+        prose part 2 pin round
+        (rules/uamiscprose2.h) - the
+        D-E stretch, EIGHT items pin:
+        ONE fully clean (the dust of
+        tracelessness) plus SEVEN
+        mechanics-clean with flagged
+        holes (the deck of illusions'
+        card list, the dicerion's
+        description seam, the dust of
+        dryness' elemental-save cell,
+        the dust of illusion's intro,
+        the egg of desire's int seam,
+        the egg of reason's 18+ cell,
+        the egg of shattering's attack
+        seam); NOTHING in D-E fully
+        garbles - the item stays OPEN
+        for F-Z and the PDF.
 - [ ] **The new armor and shields and
       swords** (pp. 104-105) - the
       anything sword (the 3-form limit
