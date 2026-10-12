@@ -1417,11 +1417,28 @@ the gateway charge.
 
 ### Character spells (pp. 79-83)
 
-- [ ] **Cantrip acquisition, MU** (p.
+- [x] **Cantrip acquisition, MU** (p.
       79) - the known-count rules (the
       useful-per-intelligence read; the
       2-8/2-5 random counts; the 3
       developed cantrips cap).
+      - CLOSED R369: the pin round
+        (rules/uacantacq.h) - the five
+        random bands (reversed 2-8,
+        legerdemain 2-5, person-
+        affecting 2-8, personal 2-8,
+        haunting-sound 2-5) and the 3
+        developed cap with the DM
+        review and the spell-procedure
+        notes pin clean; the useful one
+        per point of intelligence by
+        free choice is decoded from the
+        garbled sentence (flagged
+        pending the PDF); the R365 seam
+        cross-checks the illusionist
+        bands (the documented
+        divergence), the R366 seam the
+        book counts; CLOSED.
 - [x] **The spell book rules** (pp.
       79-80) - the standard book
       capacities (36 cantrips, 24 spells

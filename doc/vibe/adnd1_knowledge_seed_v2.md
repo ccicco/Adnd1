@@ -1359,7 +1359,25 @@ R172 were already dropped at the R171b/R172 era cut; git
   items CLOSED; the R336 seam
   cross-checks the cavalier
   stations; GREEN on the first
-  run.
+  run.- R368 landed 2026-10-12: commit
+  37c7f1a, census 295, the UA
+  Cavaliers Table I pin round
+  (rules/uacavtable.h): the two
+  0-level rows, the 1st-level
+  footnote, the printed XP bands
+  (the level-11 band decoded), the
+  cumulative dice column, the level
+  titles - the 11th and 12th cells
+  newly readable (two of the four
+  R328 holes close), the level-5
+  grid Knight flagged, the level-6
+  cell and the 12-sided header cell
+  holes pending the PDF; the item
+  CLOSED; the R368b follow-up fixed
+  an off-by-one in the audit
+  title-loop mapping (bad 12 to 0);
+  the R328 seam cross-checks; GREEN
+  on the second run, after the fix.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
