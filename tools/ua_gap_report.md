@@ -2018,6 +2018,23 @@ DECIDED R374: RUN BOTH - the engine
       and the dweomer loss), the Final
       Word broadswords (the nine named,
       the +3 strikes-last read).
+      - AMENDED R387: the UA armor and
+        swords prose pin round
+        (rules/uaarmprose.h) - the
+        pp. 104-105 stretch, EIGHT items
+        pin: FOUR fully clean (the
+        anything armor, the short sword
+        of quickness, the sword of the
+        planes, the anything sword) plus
+        FOUR mechanics-clean with
+        flagged holes (the elfin chain
+        mail's size-table garble, the
+        plate's conform seam, the sun
+        blade's radiance seam, the Final
+        Word broadswords' names tail);
+        NOTHING fully garbles - the
+        item AMENDED, the prose pinned,
+        stays PDF-gated only.
 - [ ] **The new miscellaneous weapons**
       (pp. 105-106) - the Axe of
       Hurling (the return, the double

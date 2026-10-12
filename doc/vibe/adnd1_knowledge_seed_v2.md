@@ -1714,7 +1714,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   for S-Z, PDF-gated; the R384
   seam the part-4 ledger, the
   R375 seam the misc band;
-  GREEN on the first run.
+  GREEN on the first run.- R386 landed 2026-10-12: commit
+  e84e770, census 313, the UA
+  misc magic prose part 6 pin
+  round (rules/uamiscprose6.h):
+  five S-Z items pin - two
+  fully clean (the wind fan,
+  Zagyg's flowing flagon) plus
+  three mechanics-clean with
+  flagged holes (the stone
+  horse's activation word seam,
+  the ultimate solution's
+  transmutation seam,
+  Zagyg's spell component case's
+  gp tail); nothing in S-Z
+  fully garbles - the item
+  AMENDED, the prose pinned
+  A-Z, stays PDF-gated only;
+  the R385 seam the part-5
+  ledger, the R375 seam the
+  misc band; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
