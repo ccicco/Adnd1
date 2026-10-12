@@ -1759,6 +1759,32 @@ R172 were already dropped at the R171b/R172 era cut; git
   PDF-gated only; the R386 seam
   the part-6 ledger, the R375
   seam the misc band; GREEN on
+  the first run.- R388 landed 2026-10-12: commit
+  cc2a141, census 315, the UA
+  misc weapons prose pin round
+  (rules/uamweapprose.h): the
+  pp. 105-106 stretch, nine
+  items pin - six fully clean
+  (the bullet of impact, the
+  dagger Longtooth, the darts
+  of homing, the knife buckle,
+  the magic quarterstaff, the
+  scimitar of speed) plus
+  three mechanics-clean with
+  flagged holes (the axe of
+  hurling's familiarization
+  tail, the dagger of
+  throwing's range cells, the
+  hornblade's handle sentence)
+  the R388 audit block covers
+  in full; nothing fully
+  garbles - the item AMENDED,
+  the prose pinned, the
+  treasure prose sweep
+  complete, stays PDF-gated
+  only; the R387 seam the
+  armor ledger, the R375 seam
+  the misc band; GREEN on
   the first run.
 ## Knowledge maintenance
 

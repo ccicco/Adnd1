@@ -2100,6 +2100,27 @@ own index, one item each:
       Overbearing AC Adjustments;
       overlaps the R160 pin - reconcile
       before charging.
+      - AMENDED R389: the UA
+        weaponless combat appendix Q
+        pin round (rules/uaappendq.h)
+        - the pp. 106-108 stretch, SIX
+        items pin: ONE fully clean (the
+        throwing rules) plus FIVE
+        mechanics-clean with flagged
+        holes (the System I height
+        example cell, the Pummeling
+        Table row bodies, the kicking
+        tail, the grappling size bands,
+        the overbearing AC prose);
+        NOTHING fully garbles - the
+        item AMENDED, the prose
+        pinned, the R160 overlap
+        RECONCILED (the DMG pp. 72-73
+        system stays the engine
+        default, the UA System II
+        pins as its own data layer -
+        the R374 dial precedent),
+        stays PDF-gated only.
 - [ ] **Appendix R: non-lethal combat**
       (pp. 109-110) - the subdual rules
       (the intelligence bands, the flat
