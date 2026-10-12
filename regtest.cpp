@@ -35190,7 +35190,7 @@ int main() {
                 "Banneret", "Chevalier", "Cavalier",
                 "Cavalier, 11th", "Cavalier, 12th"};
             for (int i = 0; i < 14; ++i) {
-                int l = (i == 0) ? 0 : (i == 1 ? -1 : i - 2);
+                int l = (i == 0) ? 0 : (i == 1 ? -1 : i - 1);
                 if (strcmp(uacavtTitle(l), tn[i]) != 0)
                     ++bad;
             }
