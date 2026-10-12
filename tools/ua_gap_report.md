@@ -2128,6 +2128,33 @@ own index, one item each:
       grappling and disarming systems,
       the vanquishing read, the footing
       AC.
+      - AMENDED R390: the UA
+        non-lethal combat appendix
+        R pin round (rules/uaappendr.h)
+        - the pp. 109-110 stretch,
+        SEVEN items pin: TWO fully
+        clean (the subdual
+        eligibility, the subdual
+        damage accounting) plus
+        FIVE mechanics-clean with
+        flagged holes (the subdual
+        supercedes sentence, the
+        vanquishing loser sentence,
+        the chaotic constraints
+        line, the monks-druids
+        garble head, the disarming
+        scimitar seam); NOTHING
+        fully garbles - the item
+        AMENDED, the prose pinned,
+        the R159 overlap RECONCILED
+        (the DMG p.67 knockout
+        stays the engine default,
+        the UA subdual pins as its
+        own data layer - the R374
+        dial precedent), the R389
+        seam the System II
+        weaponless layer, stays
+        PDF-gated only.
 - [ ] **Appendix S: non-human deities**
       (pp. 109-122) - DEFERRED on a
       deity layer: the demi-human

@@ -1785,7 +1785,28 @@ R172 were already dropped at the R171b/R172 era cut; git
   only; the R387 seam the
   armor ledger, the R375 seam
   the misc band; GREEN on
-  the first run.
+  the first run.- R389 landed 2026-10-12: commit
+  b20764a, census 316, the UA
+  weaponless combat appendix Q
+  pin round (rules/uaappendq.h):
+  the pp. 106-108 stretch, 207
+  uaq pins, six items pin -
+  one fully clean (the
+  throwing rules) plus five
+  mechanics-clean with flagged
+  holes (the System I height
+  example cell, the Pummeling
+  Table row bodies, the kicking
+  tail, the grappling size
+  bands, the overbearing AC
+  prose); nothing fully
+  garbles; the R160 overlap
+  reconciled (the DMG system
+  stays the engine default,
+  the UA System II pins as its
+  own data layer); GREEN on
+  the first run after the
+  printf-label fix.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
