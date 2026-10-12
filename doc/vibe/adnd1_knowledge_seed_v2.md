@@ -1434,7 +1434,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   thief elfin rows, the R370 seam
   the barding weight read; two
   items CLOSED; GREEN on the
-  first run.
+  first run.- R372 landed 2026-10-12: commit
+  25881ba, census 299, the UA
+  cavalier followers pin round
+  (rules/uafollowers.h): the
+  men-at-arms dice ladder (all d4,
+  non-cumulative, the no-gain
+  rule), the four equipment
+  percentile rows with both
+  outfits each and the medium
+  warhorses at 91-00, the leader
+  rules, the neutral-cause and
+  evil-bandit reads with the 1
+  and 5 percent monster chances,
+  the henchman bonus and type
+  table, the retainer ladder
+  (the Knight prose conflict
+  flagged), the paladin
+  retainers; the R368 seam the
+  title cells, the R371 seam the
+  armor costs; two items CLOSED;
+  GREEN on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

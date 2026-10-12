@@ -1386,9 +1386,20 @@ the gateway charge.
         example; the R368 seam
         cross-checks the cavalier
         d10 floor; CLOSED.
-- [ ] **The comeliness creation note**
+- [x] **The comeliness creation note**
       (p. 74) - the DM pointer; rides
       the R322 pins.
+      - CLOSED R373: the pin round
+        (rules/uacomnote.h) - the DM
+        pointer to pages 6 and 7, the
+        characteristic read, the
+        effects on viewers and
+        reactors; the R322 seam
+        cross-checks the creation
+        roll and the charisma
+        ladder; the trailing
+        sentence garbles - flagged;
+        CLOSED.
 
 ### Character classes (pp. 74-75)
 
@@ -1503,11 +1514,25 @@ the gateway charge.
         aquatic steeds rules; the
         percentage sums
         cross-check; CLOSED.
-- [ ] **The new weapon descriptions**
+- [x] **The new weapon descriptions**
       (pp. 77-79) - the 14 named types
       (see the players section item);
       the pole-arm cross-refs point to
       Appendix T.
+      - CLOSED R373: rides the R340
+        pins (rules/uanewweapons.h) -
+        the 16-entry roster with the
+        14 item-list types marked; the
+        R337 seam cross-checks the
+        pole-arm rows (the hook
+        fauchard, the man catcher,
+        the lasso, the harpoon); the
+        residual OCR holes (the
+        harpoon failure-damage cell,
+        the khopesh leverage
+        sentence, the lasso severing
+        mechanics) await the PDF -
+        flagged; CLOSED.
 
 ### Character spells (pp. 79-83)
 
