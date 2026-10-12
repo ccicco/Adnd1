@@ -1522,7 +1522,25 @@ R172 were already dropped at the R171b/R172 era cut; git
   AMENDED, stays OPEN,
   PDF-gated; the R375 seam
   the skeleton; GREEN on the
-  first run.
+  first run.- R377 landed 2026-10-12: commit
+  fe06b2c, census 304, the UA
+  new scrolls protection prose
+  pin round (rules/uaprotscr.h):
+  eleven of the fifteen
+  protection-scroll types pin
+  clean (acid, breath weapons,
+  fire, gas, illusions,
+  paralyzation, plants,
+  poison, the traps trio at
+  50/30/20, water); four types
+  OCR-scramble (cold,
+  electricity, the two weapons
+  scrolls) - the item
+  AMENDED, stays OPEN,
+  PDF-gated; the R376 seam the
+  potions ledger, the R375
+  seam the scroll splits;
+  GREEN on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

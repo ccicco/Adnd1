@@ -1807,6 +1807,30 @@ DECIDED R374: RUN BOTH - the engine
         PDF-gated for the
         garbled remainder.
 - [ ] **The new rings** (pp. 92-94).
+      - AMENDED R378: the new
+        rings prose pin round
+        (rules/uaringprose.h) -
+        SIX of the thirteen
+        new-ring descriptions
+        pin clean (animal
+        friendship, anything,
+        blinking, jumping,
+        mind shielding,
+        truth); SEVEN
+        descriptions
+        OCR-scramble (boccob's
+        save list, chameleon's
+        detection tail,
+        clumsiness' power
+        table, faerie's
+        fraction cells, ram's
+        adjustment tail,
+        shocking grasp's
+        opening, sustenance's
+        reattune) - the item
+        stays OPEN, PDF-gated
+        for the garbled
+        remainder.
 - [ ] **The new rods and staves** (pp.
       94-96).
 - [ ] **The new wands** (pp. 96-97).
