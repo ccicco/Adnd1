@@ -1397,7 +1397,22 @@ R172 were already dropped at the R171b/R172 era cut; git
   bands (the documented
   divergence) and the R366 seam
   the book counts; GREEN on the
-  first run.
+  first run.- R370 landed 2026-10-12: commit
+  4571cf3, census 297, the UA
+  DM-section smalls part 1 pin
+  round (rules/uasmalls1.h):
+  Method V (the class-first prose
+  clean, the dice table cells a
+  flagged hole), the 12 starting
+  hit-point minimums with the
+  multi-class and con examples,
+  the barding movement table (two
+  lost cells flagged), the
+  endurance, magical-barding and
+  steeds rules; three items
+  CLOSED; the R368 seam
+  cross-checks the cavalier d10
+  floor; GREEN on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

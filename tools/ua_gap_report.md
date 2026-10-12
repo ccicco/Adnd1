@@ -1416,14 +1416,28 @@ the gateway charge.
 
 ### Armor, armor class and weapons (pp. 75-79)
 
-- [ ] **The expanded armor table** (p.
+- [x] **The expanded armor table** (p.
       75) - reads clean: banded 90 gp,
       bronze plate 100 gp, field plate
       2000 gp, full plate 4000 gp, the
       bulk and movement columns, the
       shield rows, elfin chain never
       sold.
-- [ ] **The new armor descriptions**
+      - CLOSED R371: the pin round
+        (rules/uaarmor.h) - the
+        banded, bronze plate, field
+        plate, full plate, ring,
+        scale, splint and studded
+        leather rows (the costs,
+        weights, movements and bulk
+        flags) and the three shield
+        rows pin clean; the elfin
+        chain cost cell garbles -
+        which confirms the clean
+        never-sold footnote; the
+        R191 seam cross-checks the
+        plate AC ladder; CLOSED.
+- [x] **The new armor descriptions**
       (pp. 75-76) - bronze plate (AC 4,
       +2 rear-attack exposure, rust
       immunity), elfin chain (thief-
@@ -1431,6 +1445,21 @@ the gateway charge.
       point per die absorption, the 12
       point cap, the repair costs),
       full plate.
+      - CLOSED R371: the pin round
+        (rules/uaarmor.h) - the four
+        descriptions pin clean: the
+        bronze plate AC 4 with the
+        +2 rear bonus and the rust
+        immunity, the elfin chain
+        thief-wearable read, the
+        field plate absorption with
+        the cap and the repair
+        costs, the full plate
+        construction; the R334 seam
+        cross-checks the elfin
+        chain thief rows and the
+        R370 seam the barding
+        weight read; CLOSED.
 - [x] **Warhorses and barding** (p. 76)
       - the barded movement rate table.
       - CLOSED R370: the pin round
