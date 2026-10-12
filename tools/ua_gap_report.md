@@ -1758,6 +1758,32 @@ DECIDED R374: RUN BOTH - the engine
         the item stays OPEN,
         PDF-gated.
 - [ ] **The new potions** (p. 90).
+      - AMENDED R376: the new
+        potions prose part 1 pin
+        round (rules/uapotprose.h)
+        - TWELVE of the nineteen
+        descriptions pin clean
+        (the four elixirs of
+        health, life, madness,
+        youth; the potion of
+        fire breath; the oils of
+        fiery burning,
+        fumbling, sharpness,
+        timelessness; the
+        potions of rainbow
+        hues, ventriloquism,
+        vitality); SEVEN
+        descriptions
+        OCR-scramble (acid
+        resistance,
+        disenchantment,
+        elemental, impact,
+        the philters of beauty
+        and glibness,
+        stammering) - the item
+        stays OPEN, PDF-gated
+        for the garbled
+        remainder.
 - [ ] **The new scrolls** (pp. 91-93).
 - [ ] **The new rings** (pp. 92-94).
 - [ ] **The new rods and staves** (pp.

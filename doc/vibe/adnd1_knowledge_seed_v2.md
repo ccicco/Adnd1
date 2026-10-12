@@ -1488,7 +1488,24 @@ R172 were already dropped at the R171b/R172 era cut; git
   the R220 seam the hoard bands;
   the decision record landed, no
   item flipped; GREEN on the
-  first run.
+  first run.- R375 landed 2026-10-12: commit
+  23efe0c, census 302, the UA
+  determination skeleton pin
+  round (rules/uadetskel.h): the
+  eight category bands and the
+  sub-table splits pin clean (the
+  misc magic carries SEVEN
+  sub-bands, not two), the scroll
+  footnotes pin (30 percent
+  clerical, 25 druidical, 10
+  illusionist, the DMG p. 121
+  cross-ref); the row bodies of
+  all eight tables OCR-scramble -
+  the all-read-clean claim
+  corrected, the item stays OPEN,
+  PDF-gated; the R374 dial seam
+  the modes; GREEN on the first
+  run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
