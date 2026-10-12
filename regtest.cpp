@@ -40205,7 +40205,7 @@ int main() {
                 != 2) ++bad;
             if (uapaSpearFamilyCount()
                 + uapaAxeFamilyTrueMemberCount()
-                >= uapaPartItemTotal()) ++bad;
+                < uapaPartItemTotal()) ++bad;
             if (uanwHookFauchardDismountPct()
                 != 20) ++bad;
             if (uanwHookFauchardSizeReqPct()
