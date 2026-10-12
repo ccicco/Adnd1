@@ -1690,7 +1690,31 @@ R172 were already dropped at the R171b/R172 era cut; git
   PDF-gated; the R383 seam the
   part-3 ledger, the R375 seam
   the misc band; GREEN on the
-  first run.
+  first run.- R385 landed 2026-10-12: commit
+  cc5a2bc, census 312, the UA
+  misc magic prose part 5 pin
+  round (rules/uamiscprose5.h):
+  eleven Q-S items pin - seven
+  fully clean (the robe of
+  stars, the scarab versus
+  golems, the shadow lanthorn,
+  the shoes of Fharlanghn, the
+  slippers of kicking, the
+  slippers of spider climbing,
+  the sovereign glue) plus four
+  mechanics-clean with flagged
+  holes (the quiver of
+  Ehlonna's command sentence,
+  the robe of vermin's removal
+  tail, the sheet of smallness'
+  intro seam, the spoon of
+  stirring's table cell);
+  nothing in Q-S fully garbles -
+  the item AMENDED, stays OPEN
+  for S-Z, PDF-gated; the R384
+  seam the part-4 ledger, the
+  R375 seam the misc band;
+  GREEN on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

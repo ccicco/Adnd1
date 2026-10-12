@@ -1996,6 +1996,22 @@ DECIDED R374: RUN BOTH - the engine
         table cell); NOTHING in Q-S
         fully garbles - the item stays
         OPEN for S-Z and the PDF.
+      - AMENDED R386: the misc magic
+        prose part 6 pin round
+        (rules/uamiscprose6.h) - the
+        S-Z close-out, FIVE items pin:
+        TWO fully clean (the wind fan,
+        Zagyg's flowing flagon) plus
+        THREE mechanics-clean with
+        flagged holes (the stone
+        horse's activation word seam,
+        the ultimate solution's
+        transmutation seam,
+        Zagyg's spell component case's
+        gp tail); NOTHING in S-Z fully
+        garbles - the item AMENDED,
+        the prose pinned A-Z, stays
+        PDF-gated only.
 - [ ] **The new armor and shields and
       swords** (pp. 104-105) - the
       anything sword (the 3-form limit
