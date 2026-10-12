@@ -1643,7 +1643,30 @@ R172 were already dropped at the R171b/R172 era cut; git
   GREEN on the second amend;
   the 382b using line and the
   382c egg-of-reason 66 check
-  ride the fixers.
+  ride the fixers.- R383 landed 2026-10-12: commit
+  1dbe6a0, census 310, the UA
+  misc magic prose part 3 pin
+  round (rules/uamiscprose3.h):
+  eleven G-H items pin - two
+  fully clean (the gloves of
+  missile snaring, the hat of
+  stupidity) plus nine
+  mechanics-clean with flagged
+  holes (the gem of insight,
+  the girdle of dwarvenkind,
+  the girdle of many pouches,
+  the gloves of thievery,
+  the hat of difference, the
+  hat of disguise, the
+  haversack, the horn of fog,
+  the horn of goodness);
+  nothing in G-H fully
+  garbles - the item AMENDED,
+  stays OPEN for I-Z,
+  PDF-gated; the R382 seam
+  the part-2 ledger, the
+  R375 seam the misc band;
+  GREEN on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

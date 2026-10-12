@@ -1956,6 +1956,26 @@ DECIDED R374: RUN BOTH - the engine
         eaten header); NOTHING in G-H
         fully garbles - the item stays
         OPEN for I-Z and the PDF.
+      - AMENDED R384: the misc magic
+        prose part 4 pin round
+        (rules/uamiscprose4.h) - the
+        I-P stretch, NINE items pin:
+        FIVE fully clean (the iron
+        bands of Bilarro, the lens of
+        detection, the mantle of
+        Celestian, the pearl of the
+        sirines, the pouch of
+        accessibility) plus FOUR
+        mechanics-clean with flagged
+        holes (the lens of
+        ultravision's diameter cell,
+        Murlynd's spoon's gruel tail,
+        the philosopher's stone's
+        transmutation cells, the
+        prison of Zagyg's attunement
+        seam); NOTHING in I-P fully
+        garbles - the item stays OPEN
+        for Q-Z and the PDF.
 - [ ] **The new armor and shields and
       swords** (pp. 104-105) - the
       anything sword (the 3-form limit
