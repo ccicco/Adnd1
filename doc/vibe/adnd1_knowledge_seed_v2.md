@@ -1454,7 +1454,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   retainers; the R368 seam the
   title cells, the R371 seam the
   armor costs; two items CLOSED;
-  GREEN on the first run.
+  GREEN on the first run.- R373 landed 2026-10-12: commit
+  7893f9c, census 300, the UA
+  comeliness note pin round
+  (rules/uacomnote.h): the DM
+  pointer to pages 6 and 7, the
+  characteristic read, the
+  effects on viewers and
+  reactors, the trailing sentence
+  hole flagged; the weapon
+  descriptions item closed
+  riding the R340 pins (the
+  16-entry roster with the 14
+  item-list types, the residual
+  OCR holes flagged); the R322
+  seam the creation roll and
+  charisma ladder, the R340
+  seam the roster, the R337
+  seam the pole-arm rows; two
+  items CLOSED; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

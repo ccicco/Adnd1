@@ -1717,6 +1717,18 @@ so per-source data has a landed
 precedent. The decision needs its own
 round before any treasure charge lands.
 
+DECIDED R374: RUN BOTH - the engine
+      carries the DMG and UA tables as
+      switchable alternatives behind a
+      dial (rules/uatreasuredial.h):
+      DMG (the default - the landed
+      audits stay authoritative), UA,
+      MERGED; playtesting picks; the
+      per-source precedent rides the
+      monster file format. The UA pin
+      rounds follow - the dial lands
+      first, the charge after.
+
 - [ ] **The random determination
       tables** (pp. 84-89) - the
       revised III.A (potions), III.B
