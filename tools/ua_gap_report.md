@@ -1785,6 +1785,27 @@ DECIDED R374: RUN BOTH - the engine
         for the garbled
         remainder.
 - [ ] **The new scrolls** (pp. 91-93).
+      - AMENDED R377: the new
+        scrolls protection prose
+        pin round
+        (rules/uaprotscr.h) -
+        ELEVEN of the fifteen
+        protection-scroll types
+        pin clean (acid, breath
+        weapons dragon and
+        non-dragon, fire, gas,
+        illusions,
+        paralyzation, plants,
+        poison, the traps trio
+        at 50 percent mechanical
+        / 30 magical / 20 any,
+        water); FOUR types
+        OCR-scramble (cold,
+        electricity, the two
+        weapons scrolls) - the
+        item stays OPEN,
+        PDF-gated for the
+        garbled remainder.
 - [ ] **The new rings** (pp. 92-94).
 - [ ] **The new rods and staves** (pp.
       94-96).

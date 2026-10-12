@@ -1505,7 +1505,24 @@ R172 were already dropped at the R171b/R172 era cut; git
   corrected, the item stays OPEN,
   PDF-gated; the R374 dial seam
   the modes; GREEN on the first
-  run.
+  run.- R376 landed 2026-10-12: commit
+  be2766f, census 303, the UA
+  new potions prose part 1
+  round (rules/uapotprose.h):
+  twelve of the nineteen
+  new-potion descriptions pin
+  clean (the four elixirs,
+  fire breath, the oils of
+  fiery burning, fumbling,
+  sharpness, timelessness,
+  rainbow hues,
+  ventriloquism, vitality);
+  seven descriptions
+  OCR-scramble - the item
+  AMENDED, stays OPEN,
+  PDF-gated; the R375 seam
+  the skeleton; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
