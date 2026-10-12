@@ -1301,6 +1301,24 @@ R172 were already dropped at the R171b/R172 era cut; git
   - the 6th and 7th levels pin in
   the next round; GREEN on the
   first run.
+- R365 landed 2026-10-12: commit
+  d7bb603, census 292, the UA new
+  illusionist 6th/7th levels,
+  acquisition and cost pin round
+  (rules/uailspells6.h,
+  rules/uailspells7.h,
+  rules/uailacquisition.h and
+  rules/uaspellcost.h): death fog,
+  mislead, phantasmagoria and the
+  mirage arcane at the printed 6th
+  (the item-list 7th divergence
+  flagged pending the PDF), shadow
+  walk and weird at 7th; the IL
+  spells item CLOSED - all printed
+  levels pinned R363-R365; the
+  acquisition item stays open (the
+  row boundaries garble); GREEN on
+  the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

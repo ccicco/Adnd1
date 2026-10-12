@@ -1404,7 +1404,7 @@ the gateway charge.
       useful-per-intelligence read; the
       2-8/2-5 random counts; the 3
       developed cantrips cap).
-- [ ] **The spell book rules** (pp.
+- [x] **The spell book rules** (pp.
       79-80) - the standard book
       capacities (36 cantrips, 24 spells
       of 1st-3rd, 16 of 4th-6th, 8 of
@@ -1416,6 +1416,20 @@ the gateway charge.
       aspects (the size, the 150 gp
       weight, the 450 gp encumbrance,
       the leather-book saves with +2).
+      - CLOSED R366: the pin round
+        (rules/uaspellbooks.h) - the
+        capacities with the one-fourth
+        travelling read, the costs with
+        the master-borne start, the
+        composition weeks, the physical
+        aspects with the +2 saves, the
+        values, the direct-casting
+        destroys and the learning
+        hours; the section opening, the
+        encumbrance cell and the
+        travelling thickness/weight
+        cells garble - holes
+        in-header, revisit with the PDF.
 - [ ] **Illusionist spell acquisition**
       (p. 80) - the starting list table;
       the illusionist book differences.
@@ -1444,10 +1458,22 @@ the gateway charge.
         item-payment and hostile-caster
         reads; the section prints
         clean - CLOSED.
-- [ ] **The spell explanations - the
+- [x] **The spell explanations - the
       referee commentary** (pp. 81-82) -
       the permanency list and the rest.
-- [ ] **Underwater spell use** (pp.
+      - CLOSED R366: the pin round
+        (rules/uaspellcomment.h) - the
+        personal permanency list (the six
+        detects and protections), the
+        22-name object/area list, the 5
+        percent vs 100 percent
+        constitution-loss reads, the
+        Serten's immunity commentary (the
+        24 names with the +9/+7/+5
+        bonuses - the band assignment
+        detaches in the print, flagged
+        pending the PDF); CLOSED.
+- [x] **Underwater spell use** (pp.
       81-83) - the per-spell underwater
       reads (the salt cantrip, the
       firewater float, the acid arrow
@@ -1455,8 +1481,32 @@ the gateway charge.
       change, the mansion option, the
       sink read, and the rest of the
       list).
-- [ ] **The effects of darkness** (p.
+      - CLOSED R366: the pin round
+        (rules/uauwspelluse.h) - the
+        cannot-use rosters (cleric,
+        druid, magic-user, the
+        illusionist fragment) with the
+        airy-water footnote, the
+        altered-effects reads (the water
+        walk bob, the magic font globe,
+        the transmute hole, the salt,
+        firewater, acid arrow, chain
+        lightning, mansion and sink, the
+        hippocampus steed); the MU
+        cantrip row and the MU/IL list
+        boundary garble - flagged
+        in-header, revisit with the PDF.
+- [x] **The effects of darkness** (p.
       82) - the combat effects ladder.
+      - CLOSED R366: the pin round
+        (rules/uadarkness.h) - the -4
+        unseen and -2 vague ladder, the
+        illumination exception, the
+        infravision converse with the
+        sub-race cross-refs, the faerie
+        fire conditions, the DM
+        moderation closer; the section
+        prints clean - CLOSED.
 
 ### The campaign (pp. 82-83)
 
