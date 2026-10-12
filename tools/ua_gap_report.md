@@ -2042,6 +2042,24 @@ DECIDED R374: RUN BOTH - the engine
       table, the 1500 XP and 15000 gp
       per plus) and the rest; the XP and
       GP value tables read clean.
+      - AMENDED R388: the UA misc
+        weapons prose pin round
+        (rules/uamweapprose.h) - the
+        pp. 105-106 stretch, NINE items
+        pin: SIX fully clean (the bullet
+        of impact, the dagger Longtooth,
+        the darts of homing, the knife
+        buckle, the magic quarterstaff,
+        the scimitar of speed) plus
+        THREE mechanics-clean with
+        flagged holes (the axe of
+        hurling's familiarization tail,
+        the dagger of throwing's range
+        cells, the hornblade's handle
+        sentence); NOTHING fully garbles
+        - the item AMENDED, the prose
+        pinned, the treasure prose sweep
+        complete, stays PDF-gated only.
 
 ### DM tables and charts (the manifest)
 

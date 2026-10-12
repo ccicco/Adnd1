@@ -1734,7 +1734,32 @@ R172 were already dropped at the R171b/R172 era cut; git
   the R385 seam the part-5
   ledger, the R375 seam the
   misc band; GREEN on the
-  first run.
+  first run.- R387 landed 2026-10-12: commit
+  5f9b91e, census 314, the UA
+  armor and swords prose pin
+  round (rules/uaarmprose.h):
+  the pp. 104-105 stretch,
+  eight items pin - four fully
+  clean (the anything armor,
+  the short sword of quickness,
+  the sword of the planes, the
+  anything sword) plus four
+  mechanics-clean with flagged
+  holes (the elfin chain
+  mail's size-table garble, the
+  plate's conform seam, the sun
+  blade's radiance seam, the
+  Final Word broadswords' names
+  tail), riding the construction
+  rule (+3 meteorite iron, +4
+  mithral alloyed, +5 adamantite
+  alloyed steel); nothing fully
+  garbles - the item AMENDED,
+  the prose pinned, stays
+  PDF-gated only; the R386 seam
+  the part-6 ledger, the R375
+  seam the misc band; GREEN on
+  the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
