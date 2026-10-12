@@ -1540,6 +1540,25 @@ R172 were already dropped at the R171b/R172 era cut; git
   PDF-gated; the R376 seam the
   potions ledger, the R375
   seam the scroll splits;
+  GREEN on the first run.- R378 landed 2026-10-12: commit
+  a414462, census 305, the UA
+  new rings prose pin round
+  (rules/uaringprose.h): six
+  of the thirteen new-ring
+  descriptions pin clean
+  (animal friendship,
+  anything, blinking,
+  jumping, mind shielding,
+  truth); seven
+  descriptions OCR-scramble
+  (boccob, chameleon,
+  clumsiness, faerie, ram,
+  shocking grasp,
+  sustenance) - the item
+  AMENDED, stays OPEN,
+  PDF-gated; the R377 seam
+  the scrolls ledger, the
+  R375 seam the ring band;
   GREEN on the first run.
 ## Knowledge maintenance
 

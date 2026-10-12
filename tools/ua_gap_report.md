@@ -1833,6 +1833,25 @@ DECIDED R374: RUN BOTH - the engine
         remainder.
 - [ ] **The new rods and staves** (pp.
       94-96).
+      - AMENDED R379: the new
+        rods and staves prose pin
+        round (rules/uarodstave.h)
+        - FOUR of the eleven
+        new descriptions pin
+        clean (the rod of
+        alertness, the rod of
+        security, the
+        staff-mace, the staff
+        of slinging); SEVEN
+        descriptions
+        OCR-scramble (flailing,
+        passage, splendor,
+        staff-spear, swarming
+        insects, thunder and
+        lightning, woodlands) -
+        the item stays OPEN,
+        PDF-gated for the
+        garbled remainder.
 - [ ] **The new wands** (pp. 96-97).
 - [ ] **The new miscellaneous magic
       items** (pp. 97-104) - the named
