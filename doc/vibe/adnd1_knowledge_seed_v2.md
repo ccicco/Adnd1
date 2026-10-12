@@ -1377,7 +1377,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   an off-by-one in the audit
   title-loop mapping (bad 12 to 0);
   the R328 seam cross-checks; GREEN
-  on the second run, after the fix.
+  on the second run, after the fix.- R369 landed 2026-10-12: commit
+  41ca7f2, census 296, the UA
+  cantrip acquisition pin round
+  (rules/uacantacq.h): the five
+  random known-count bands
+  (reversed 2-8, legerdemain 2-5,
+  person-affecting 2-8, personal
+  2-8, haunting-sound 2-5), the 3
+  developed cantrips cap with the
+  DM review, the read-as-spell and
+  recorded-as-spell notes; the
+  useful one per point of
+  intelligence free-choice read
+  decoded from the garbled sentence
+  (flagged pending the PDF); the
+  item CLOSED; the R365 seam
+  cross-checks the illusionist
+  bands (the documented
+  divergence) and the R366 seam
+  the book counts; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

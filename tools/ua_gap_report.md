@@ -1350,18 +1350,42 @@ the gateway charge.
 
 ### Creating the player character (pp. 74-75)
 
-- [ ] **Method V** (p. 74) - the
+- [x] **Method V** (p. 74) - the
       class-first generation, humans
       only; the dice-count table (the
       9d6 fighter strength, the Com
       column) reads clean; the minimum
       and maximum clamps.
-- [ ] **Starting hit-point minimums**
+      - CLOSED R370: the pin round
+        (rules/uasmalls1.h) - the
+        class-first humans-only
+        prose, the best-three-of-N
+        roll with the DM approval,
+        the minimum and maximum
+        clamps and the 9d6 fighter
+        strength example pin clean;
+        the dice-count table cells
+        extract empty - the cell
+        body a hole in-header
+        pending the PDF; CLOSED.
+- [x] **Starting hit-point minimums**
       (p. 74) - cavalier 6, paladin 6,
       cleric 5, druid 5, fighter 6,
       barbarian 7, ranger 9, magic-user
       3, illusionist 3, thief 4,
       assassin 4, monk 5.
+      - CLOSED R370: the pin round
+        (rules/uasmalls1.h) - the 12
+        class minimums (cavalier 6
+        to ranger 9), the
+        multi-class average rounded
+        up with the fighter/magic-
+        user 5 example, the
+        constitution adjustment
+        with the con-17 fighter 9
+        example; the R368 seam
+        cross-checks the cavalier
+        d10 floor; CLOSED.
 - [ ] **The comeliness creation note**
       (p. 74) - the DM pointer; rides
       the R322 pins.
@@ -1407,8 +1431,21 @@ the gateway charge.
       point per die absorption, the 12
       point cap, the repair costs),
       full plate.
-- [ ] **Warhorses and barding** (p. 76)
+- [x] **Warhorses and barding** (p. 76)
       - the barded movement rate table.
+      - CLOSED R370: the pin round
+        (rules/uasmalls1.h) - the
+        movement rate table (light
+        21/15, medium 17/15, heavy
+        14/13/12) with the medium
+        scale and heavy leather
+        cells lost (flagged), the
+        endurance rule, the
+        magical barding costs and
+        percentages, the flying and
+        aquatic steeds rules; the
+        percentage sums
+        cross-check; CLOSED.
 - [ ] **The new weapon descriptions**
       (pp. 77-79) - the 14 named types
       (see the players section item);
