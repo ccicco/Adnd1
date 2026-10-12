@@ -273,12 +273,30 @@ fold; the R326 audit, census 253.
       open with the Cavaliers Table
       I item); the R328 audit
       (census 255).
-- [ ] **Cavaliers Table I** (p. 15) -
+- [x] **Cavaliers Table I** (p. 15) -
       the XP ladder, the level titles
       (Horseman to Cavalier Commander),
       the 3 hp per level after 10th, the
       300000 xp per level past 12th;
       reads clean.
+      - CLOSED R368: the pin round
+        (rules/uacavtable.h) - the two
+        0-level rows, the 1st-level
+        footnote, the printed XP bands
+        (the level-11 band decoded from
+        its neighbors), the cumulative
+        dice column, the titles: the
+        11th and 12th cells newly
+        readable (two of the four R328
+        holes close), the level-5 grid
+        Knight with the prose conflict
+        flagged, the 3 hp per level
+        past 10th, the 300,000 xp past
+        12th; the level-6 title cell
+        and the 12-sided header cell
+        stay holes pending the PDF;
+        the R328 seam cross-checks;
+        CLOSED.
 - [x] **The paladin re-parented under
       the cavalier** (p. 16) - the R184
       touches landed; the cavalier-side

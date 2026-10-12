@@ -1340,6 +1340,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   ladder - all four items
   CLOSED; GREEN on the first
   run.
+- R367 landed 2026-10-12: commit
+  6047766, census 294, the UA
+  campaign social class and birth
+  pin round (rules/uasocialclass.h
+  and rules/uabirth.h): the
+  nine-band Social Class Table
+  with the 68-entry occupation
+  rosters, the starting-money
+  note with the cavalier/paladin
+  exception, the non-human
+  placements and the
+  one-rank-below profession rule;
+  the 13-row Birth Table, the
+  marital status split with the
+  one-class-below-the-father read
+  and the racial modifiers; both
+  items CLOSED; the R336 seam
+  cross-checks the cavalier
+  stations; GREEN on the first
+  run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
