@@ -1622,7 +1622,28 @@ R172 were already dropped at the R171b/R172 era cut; git
   R380 seam the wands ledger,
   the R375 seam the misc
   band; GREEN on the first
-  run.
+  run.- R382 landed 2026-10-12: commit
+  471ff43, census 309, the UA
+  misc magic prose part 2 pin
+  round (rules/uamiscprose2.h):
+  eight D-E items pin - one
+  fully clean (the dust of
+  tracelessness) plus seven
+  mechanics-clean with flagged
+  holes (the deck of illusions,
+  the dicerion, the dust of
+  dryness, the dust of illusion,
+  the egg of desire, the egg of
+  reason, the egg of shattering);
+  nothing in D-E fully garbles
+  - the item AMENDED, stays
+  OPEN for F-Z, PDF-gated; the
+  R381 seam the part-1 ledger,
+  the R375 seam the misc band;
+  GREEN on the second amend;
+  the 382b using line and the
+  382c egg-of-reason 66 check
+  ride the fixers.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

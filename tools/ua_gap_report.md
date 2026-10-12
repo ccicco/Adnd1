@@ -1934,6 +1934,28 @@ DECIDED R374: RUN BOTH - the engine
         seam); NOTHING in D-E fully
         garbles - the item stays OPEN
         for F-Z and the PDF.
+      - AMENDED R383: the misc magic
+        prose part 3 pin round
+        (rules/uamiscprose3.h) - the
+        G-H stretch, ELEVEN items pin:
+        TWO fully clean (the gloves of
+        missile snaring, the hat of
+        stupidity) plus NINE
+        mechanics-clean with flagged
+        holes (the gem of insight's
+        recall seam, the girdle of
+        dwarvenkind's racial block, the
+        girdle of many pouches' tail,
+        the gloves of thievery's level
+        cells, the hat of difference's
+        loss seam, the hat of
+        disguise's removal seam, the
+        haversack's quart merge, the
+        horn of fog's rounds/minutes
+        seam, the horn of goodness'
+        eaten header); NOTHING in G-H
+        fully garbles - the item stays
+        OPEN for I-Z and the PDF.
 - [ ] **The new armor and shields and
       swords** (pp. 104-105) - the
       anything sword (the 3-form limit
