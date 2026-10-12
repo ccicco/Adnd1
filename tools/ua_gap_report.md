@@ -1392,7 +1392,7 @@ the gateway charge.
 
 ### Character classes (pp. 74-75)
 
-- [ ] **The cavalier follower tables**
+- [x] **The cavalier follower tables**
       (p. 74) - the men-at-arms dice per
       level (1-4 at 4th through 48-192
       at 10th, non-cumulative, no gain
@@ -1404,7 +1404,21 @@ the gateway charge.
       neutral and evil follower rules;
       the 1 percent per level monster
       follower.
-- [ ] **The henchman rules** (p. 75) -
+      - CLOSED R372: the pin round
+        (rules/uafollowers.h) - the
+        dice ladder (all d4, the
+        min-count max-times-four
+        invariant), the four
+        equipment percentile rows
+        with both outfits each, the
+        leader and lieutenant
+        rules, the neutral-cause
+        and evil-bandit reads, the
+        1 and 5 percent monster
+        chances; the R371 seam
+        cross-checks the armor
+        costs; CLOSED.
+- [x] **The henchman rules** (p. 75) -
       the charisma +3 (good) or +1
       (else) bonus; the alignment-based
       henchman-type table; the retainer
@@ -1413,6 +1427,20 @@ the gateway charge.
       herald and Lancer guard at 7th,
       the extra man-at-arms at 8th); the
       paladin retainer rules.
+      - CLOSED R372: the pin round
+        (rules/uafollowers.h) - the
+        +3/+1 henchman bonus, the
+        alignment type table (the
+        paladin, thief and assassin
+        cells), the retainer ladder
+        (the prose Knight at 6th
+        flagged against the R368
+        grid's Knight at 5th), the
+        care-and-upkeep service, the
+        paladin cavalier-only
+        retainers; the R368 seam
+        cross-checks the title
+        cells; CLOSED.
 
 ### Armor, armor class and weapons (pp. 75-79)
 

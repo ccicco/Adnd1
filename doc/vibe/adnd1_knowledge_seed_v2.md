@@ -1412,7 +1412,29 @@ R172 were already dropped at the R171b/R172 era cut; git
   steeds rules; three items
   CLOSED; the R368 seam
   cross-checks the cavalier d10
-  floor; GREEN on the first run.
+  floor; GREEN on the first run.- R371 landed 2026-10-12: commit
+  cfa4ec9, census 298, the UA
+  expanded armor pin round
+  (rules/uaarmor.h): the armor and
+  encumbrance table rows (the
+  banded, bronze plate, field
+  plate, full plate, ring, scale,
+  splint and studded leather rows
+  with the costs, weights,
+  movements, bulk flags and the
+  shield rows) and the four
+  descriptions (the bronze plate
+  AC 4 with the rear-attack
+  exposure, the elfin chain
+  thief-wearable read, the field
+  plate absorption with the cap
+  and repair costs, the full
+  plate); the R191 seam the plate
+  AC ladder, the R334 seam the
+  thief elfin rows, the R370 seam
+  the barding weight read; two
+  items CLOSED; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
