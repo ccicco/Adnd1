@@ -2169,6 +2169,31 @@ own index, one item each:
       pike, the axe family); a data
       charge that pairs with the new
       weapon tables.
+      - AMENDED R391: the UA
+        pole-arm nomenclature
+        appendix T pin round
+        (rules/uaappendt.h) - the
+        pp. 123-129 stretch,
+        SEVEN items pin: TWO
+        fully clean (the spear
+        family, the axe family)
+        plus FIVE mechanics-clean
+        with flagged holes (the
+        classification system
+        paragraph, the fauchard
+        description, the Lucern/
+        bec comparison tail, the
+        combination intro and
+        features list, the
+        confusion sentence);
+        NOTHING fully garbles -
+        every classification
+        survives its scrambled
+        prose - the item AMENDED,
+        the prose pinned, the
+        R340 seam the hook
+        fauchard roster, stays
+        PDF-gated only.
 
 ## Players tables and charts (the manifest)
 

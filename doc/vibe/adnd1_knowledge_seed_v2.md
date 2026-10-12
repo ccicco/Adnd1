@@ -1806,7 +1806,31 @@ R172 were already dropped at the R171b/R172 era cut; git
   the UA System II pins as its
   own data layer); GREEN on
   the first run after the
-  printf-label fix.
+  printf-label fix.- R390 landed 2026-10-12: commit
+  ade8785, census 317, the UA
+  non-lethal combat appendix R
+  pin round (rules/uaappendr.h):
+  the pp. 109-110 stretch, 85
+  uanl pins, seven items pin -
+  two fully clean (the subdual
+  eligibility, the subdual
+  damage accounting) plus five
+  mechanics-clean with flagged
+  holes (the subdual supercedes
+  sentence, the vanquishing
+  loser sentence, the chaotic
+  constraints line, the
+  monks-druids garble head,
+  the disarming scimitar
+  seam); nothing fully
+  garbles; the R159 overlap
+  reconciled (the DMG p.67
+  knockout stays the engine
+  default, the UA subdual pins
+  as its own data layer), the
+  R389 seam the System II
+  weaponless layer; GREEN on
+  the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
