@@ -1739,6 +1739,24 @@ DECIDED R374: RUN BOTH - the engine
       shield), III.G (swords), III.H
       (miscellaneous weapons); all read
       clean.
+      - AMENDED R375: the skeleton
+        pin round (rules/uadetskel.h)
+        - the top-level bands and
+        sub-table splits pin clean;
+        the misc magic carries SEVEN
+        visible sub-bands (not two -
+        six named, the seventh
+        garbles); the scroll
+        footnotes pin (the 30 and 25
+        and 10 percents, the DMG p.
+        121 cross-ref); the row
+        bodies of all eight tables
+        OCR-scramble (dropped dice
+        bands, orphaned value rows,
+        merged columns) - the "all
+        read clean" claim corrected;
+        the item stays OPEN,
+        PDF-gated.
 - [ ] **The new potions** (p. 90).
 - [ ] **The new scrolls** (pp. 91-93).
 - [ ] **The new rings** (pp. 92-94).

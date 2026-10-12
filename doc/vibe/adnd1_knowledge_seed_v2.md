@@ -1473,6 +1473,21 @@ R172 were already dropped at the R171b/R172 era cut; git
   seam the roster, the R337
   seam the pole-arm rows; two
   items CLOSED; GREEN on the
+  first run.- R374 landed 2026-10-12: commit
+  1e9af1d, census 301, the UA
+  treasure dial decision round
+  (rules/uatreasuredial.h): THE
+  DECISION resolved RUN BOTH -
+  the DMG and UA tables ride as
+  switchable alternatives behind
+  a dial (DMG the default, UA,
+  MERGED), playtesting picks;
+  the per-source precedent
+  rides the monster file format;
+  the R219 seam the map bands,
+  the R220 seam the hoard bands;
+  the decision record landed, no
+  item flipped; GREEN on the
   first run.
 ## Knowledge maintenance
 
