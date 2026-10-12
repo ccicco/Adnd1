@@ -1319,6 +1319,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   acquisition item stays open (the
   row boundaries garble); GREEN on
   the first run.
+- R366 landed 2026-10-12: commit
+  3e742b3, census 293, the UA
+  DM-section spells pin round
+  (rules/uaspellbooks.h,
+  rules/uaspellcomment.h,
+  rules/uauwspelluse.h and
+  rules/uadarkness.h): the MU
+  spell book rules (the
+  capacities and costs, the
+  physical aspects, the values,
+  the direct-casting and
+  learning reads), the spell
+  explanations commentary (the
+  permanency lists and the
+  Serten's immunity with the
+  band assignment flagged), the
+  underwater spell use lists
+  and the effects of darkness
+  ladder - all four items
+  CLOSED; GREEN on the first
+  run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1510,15 +1510,40 @@ the gateway charge.
 
 ### The campaign (pp. 82-83)
 
-- [ ] **Social class and rank** (p. 82)
+- [x] **Social class and rank** (p. 82)
       - the Social Class Table; extends
       the R208 tables.
-- [ ] **Circumstances of birth** (p.
+      - CLOSED R367: the pin round
+        (rules/uasocialclass.h) - the
+        nine-band dice ladder with the
+        occupation rosters per band, the
+        no-effect-on-starting-money note
+        with the cavalier/paladin
+        exception, the non-human
+        placements, the one-rank-below
+        profession rule; the LLC label
+        cell garbles and the halfling
+        ULC parenthetical divergence
+        flagged pending the PDF; the
+        R336 seam cross-checks the
+        cavalier money stations.
+- [x] **Circumstances of birth** (p.
       83) - the Birth Table (the
       12-child ladder), the Parents
       Marital Status Table (the
       one-class-lower read for the
       unmarried).
+      - CLOSED R367: the pin round
+        (rules/uabirth.h) - the 13-row
+        birth ladder, the marital
+        status split with the
+        one-class-below-the-father
+        read, the racial modifiers
+        (the half-orc +10/+75 split);
+        the section intro garbles and
+        the high-elf sign cell lost -
+        flagged in-header pending the
+        PDF.
 
 ### Treasure (pp. 84-106) - THE DECISION
 
