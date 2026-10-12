@@ -1976,6 +1976,26 @@ DECIDED R374: RUN BOTH - the engine
         seam); NOTHING in I-P fully
         garbles - the item stays OPEN
         for Q-Z and the PDF.
+      - AMENDED R385: the misc magic
+        prose part 5 pin round
+        (rules/uamiscprose5.h) - the
+        Q-S stretch, ELEVEN items pin:
+        SEVEN fully clean (the robe of
+        stars, the scarab versus
+        golems, the shadow lanthorn,
+        the shoes of Fharlanghn, the
+        slippers of kicking, the
+        slippers of spider climbing,
+        the sovereign glue) plus FOUR
+        mechanics-clean with flagged
+        holes (the quiver of Ehlonna's
+        command sentence, the robe of
+        vermin's removal tail, the
+        sheet of smallness' intro
+        seam, the spoon of stirring's
+        table cell); NOTHING in Q-S
+        fully garbles - the item stays
+        OPEN for S-Z and the PDF.
 - [ ] **The new armor and shields and
       swords** (pp. 104-105) - the
       anything sword (the 3-form limit

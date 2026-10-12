@@ -1666,7 +1666,31 @@ R172 were already dropped at the R171b/R172 era cut; git
   PDF-gated; the R382 seam
   the part-2 ledger, the
   R375 seam the misc band;
-  GREEN on the first run.
+  GREEN on the first run.- R384 landed 2026-10-12: commit
+  876adbc, census 311, the UA
+  misc magic prose part 4 pin
+  round (rules/uamiscprose4.h):
+  nine I-P items pin - five
+  fully clean (the iron bands
+  of Bilarro, the lens of
+  detection, the mantle of
+  Celestian, the pearl of the
+  sirines, the pouch of
+  accessibility) plus four
+  mechanics-clean with flagged
+  holes (the lens of
+  ultravision's diameter cell,
+  Murlynd's spoon's gruel tail,
+  the philosopher's stone's
+  transmutation cells, the
+  prison of Zagyg's attunement
+  seam); nothing in I-P fully
+  garbles - the item AMENDED,
+  stays OPEN for Q-Z,
+  PDF-gated; the R383 seam the
+  part-3 ledger, the R375 seam
+  the misc band; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
