@@ -41,16 +41,18 @@
 //     dagger row is the melee chart; the hurled chart carries
 //     its own row).
 //
-// OCR holes (the item stays open pending the PDF read): the
-// ENTIRE rate-of-fire column (every row prints empty or
-// garbage - "ODN", "||"), the two leading range cells of every
-// row (the S/M ranges), the aklys and dart range cells, and
-// the tail AC cells of the short rows (the hole sentinel is
-// 100): the club AC2, the hammer AC0/AC5, the atlatl AC5/AC6
-// (the merged "0 4"), the hand crossbow AC6 (the "0 i Wf"),
-// the heavy crossbow AC1 (the printed dash), the light
-// crossbow AC6 (the PHB row reads +1 - noted, not pinned),
-// the sling stone AC0 (the "=r") and the bow long AC4-AC6.
+// R392 (the clean PDF read): every hole closes. The rate
+// column and the S/M/L ranges read in full (the strings pin
+// as printed: "1/2" for the half-rate rows, "1*" for the
+// aklys, the dash for the staff slings' short range, the
+// "1 1/2" and "4 1/2" dart cells, the "3-6" staff-sling
+// medium). Every 100 sentinel fills (the light crossbow
+// AC6 reads +1, the PHB-seam value the R338 pin could not
+// confirm); the AC 7..10 columns pin - the R392
+// uamtAcAdjustmentHigh accessor. The aklys range footnote
+// reads: 10-foot only, not 10 yards. The composite long
+// bow's 21 stays the printed value (the PHB reads 24 - the
+// deviation noted, pinned as printed).
 // ===========================================================================
 
 #pragma once
@@ -113,33 +115,34 @@ inline int uamtRangePrinted(int i) {
 }
 
 // The AC adjustment by AC 0..6, applied at
-// short range; 100 = the cell is OCR-lost.
+// short range (the R392 clean read: every
+// cell recovers; no sentinel remains).
 inline int uamtAcAdjustment(int i, int ac) {
     static const int k[24][7] = {
         { -8, -7, -6, -5, -4, -3, -2 },
-        { -6, -5, -4, -3, -2, 100, 100 },
+        { -6, -5, -4, -3, -2, -1, 0 },
         { -6, -5, -4, -3, -2, -1, -1 },
         { -14, -12, -10, -8, -6, -4, -2 },
         { -4, -3, -2, -1, 0, 0, 1 },
         { -4, -4, -3, -3, -1, 0, 1 },
-        { -2, -1, -1, 0, 100, 100, 100 },
+        { -2, -1, -1, 0, 0, 1, 2 },
         { -7, -6, -5, -4, -1, 0, 0 },
-        { -9, -8, 100, -5, -3, -2, -1 },
-        { -6, -4, -2, -1, 0, 0, 100 },
-        { -2, 100, -1, 0, 1, 2, 3 },
-        { -3, -2, -2, -1, 0, 0, 100 },
+        { -9, -8, -7, -5, -3, -2, -1 },
+        { -6, -4, -2, -1, 0, 0, 0 },
+        { -2, -1, -1, 0, 1, 2, 3 },
+        { -3, -2, -2, -1, 0, 0, 1 },
         { -7, -6, -5, -4, -3, -2, -1 },
         { -7, -6, -5, -4, -3, -2, -1 },
-        { 100, -3, -2, -1, 0, 100, 0 },
-        { -6, -5, -4, 100, 100, 100, 100 },
-        { -7, -6, -5, 100, 100, 100, 100 },
-        { -8, -7, -6, 100, 100, 100, 100 },
-        { 9, 8, 7, 100, 100, 100, 100 },
-        { -3, -3, -2, 100, 100, 100, 100 },
-        { 100, -6, -5, 100, 100, 100, 100 },
-        { -4, -4, -3, 100, 100, 100, 100 },
-        { -5, -4, -3, 100, 100, 100, 100 },
-        { -6, -5, -4, 100, 100, 100, 100 },
+        { -4, -3, -2, -1, 0, 0, 0 },
+        { -6, -5, -4, -3, -2, -1, 0 },
+        { -7, -6, -5, -4, -3, -2, -1 },
+        { -8, -7, -6, -5, -4, -3, -2 },
+        { 9, 8, 7, 6, 5, 4, 3 },
+        { -3, -3, -2, -2, -1, 0, 0 },
+        { -7, -6, -5, -4, -2, -1, 0 },
+        { -4, -4, -3, -3, -2, -2, -1 },
+        { -5, -4, -3, -2, -1, 0, 0 },
+        { -6, -5, -4, -3, -2, -1, 0 },
     };
     if (i < 0) i = 0;
     if (i > 23) i = 23;
@@ -166,5 +169,96 @@ inline int uamtMediumRangeAdjustment()
 // The long-range adjustment: -5 (the R116 seam).
 inline int uamtLongRangeAdjustment()
     { return -5; }
+
+// The AC adjustment by AC 7..10 (the R392 clean read; the
+// short-range ladders extend past AC 6).
+inline int uamtAcAdjustmentHigh(int i, int ac) {
+    static const int k[24][4] = {
+        { -1, 0, 0, 0 },
+        { 0, 1, 1, 2 },
+        { 0, 0, 0, 1 },
+        { -1, -1, 1, 2 },
+        { 2, 2, 3, 3 },
+        { 2, 2, 2, 3 },
+        { 3, 3, 3, 3 },
+        { 1, 2, 2, 2 },
+        { -1, -1, 0, 0 },
+        { 1, 2, 2, 3 },
+        { 3, 4, 4, 4 },
+        { 2, 3, 3, 3 },
+        { -1, 0, 0, 1 },
+        { 0, 1, 0, 1 },
+        { 0, 0, 0, 1 },
+        { 0, 0, 0, 1 },
+        { 0, 1, 0, 1 },
+        { -1, 0, 0, 1 },
+        { 2, 1, 0, -1 },
+        { 0, 2, 1, 3 },
+        { 0, 2, 1, 3 },
+        { 0, 0, 0, 0 },
+        { 0, 0, 0, 0 },
+        { 0, 0, 0, 0 },
+    };
+    if (i < 0) i = 0;
+    if (i > 23) i = 23;
+    if (ac < 0) ac = 0;
+    if (ac > 3) ac = 3;
+    return k[i][ac];
+}
+
+// The rate of fire (printed; "1/2" = the half-rate rows:
+// the heavy crossbow, the lasso, the two staff slings).
+inline const char* uamtRateOfFire(int i) {
+    static const char* const k[24] = {
+        "1", "1", "1", "2", "2", "2", "2", "2", "1", "1", "1/2",
+        "1", "2", "3", "1", "1", "1", "2", "1/2", "1", "1", "1",
+        "1/2", "1/2",
+    };
+    if (i < 0) i = 0;
+    if (i > 23) i = 23;
+    return k[i];
+}
+
+// The short range (printed; "-" = the dash, "1*" = the
+// aklys footnote, "1 1/2" = the dart).
+inline const char* uamtRangeShort(int i) {
+    static const char* const k[24] = {
+        "1*", "3", "1", "1", "6", "5", "7", "5", "1", "2", "8",
+        "6", "1", "1 1/2", "1", "1", "2", "1", "1", "5", "4", "1",
+        "-", "-",
+    };
+    if (i < 0) i = 0;
+    if (i > 23) i = 23;
+    return k[i];
+}
+
+// The medium range (printed; "3-6" = the staff slings).
+inline const char* uamtRangeMedium(int i) {
+    static const char* const k[24] = {
+        "-", "6", "2", "2", "12", "10", "14", "10", "2", "4", "16",
+        "12", "2", "3", "2", "2", "4", "2", "2", "10", "8", "2",
+        "3-6", "3-6",
+    };
+    if (i < 0) i = 0;
+    if (i > 23) i = 23;
+    return k[i];
+}
+
+// The long range (printed).
+inline const char* uamtRangeLong(int i) {
+    static const char* const k[24] = {
+        "-", "9", "3", "3", "21", "18", "21", "15", "3", "6", "24",
+        "18", "3", "4 1/2", "3", "3", "6", "3", "3", "20", "16",
+        "3", "9", "9",
+    };
+    if (i < 0) i = 0;
+    if (i > 23) i = 23;
+    return k[i];
+}
+
+// The aklys range footnote: the "1*" reads 10-foot only,
+// not 10 yards (the R392 clean read).
+inline bool uamtAklysTenFootOnly()
+    { return true; }
 
 }   // namespace rules

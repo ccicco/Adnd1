@@ -2200,46 +2200,82 @@ own index, one item each:
 Every named table from the players
 section own index, one item each:
 
-- [ ] Armor Class Table (p. 26).
-- [ ] Attacks Per Melee Round Table (p.
+- [x] Armor Class Table (p. 26).
+      - AMENDED R392: closed - the R371 pin (pp. 75-76) plus the R191
+        seam; the R392 clean p. 26 print agrees row for row
+- [x] Attacks Per Melee Round Table (p.
       22).
-- [ ] Barbarians (Fighters) Table I (p.
+      - AMENDED R392: closed - the R334 bands (rules/thiefarmor.h);
+        the R392 clean print confirms
+- [x] Barbarians (Fighters) Table I (p.
       19).
-- [ ] Cavaliers Table I (p. 15).
-- [ ] Character Class Limitations
+      - AMENDED R392: closed - the R332 pin (rules/barbarian.h)
+- [x] Cavaliers Table I (p. 15).
+      - AMENDED R392: closed - the R368 pin (rules/uacavtable.h)
+- [x] Character Class Limitations
       (Character Race Table I) (p. 7).
-- [ ] Character Level Limitations
+      - AMENDED R392: closed - the R323 pin (rules/subraces.h)
+- [x] Character Level Limitations
       (Character Race Table II) (pp.
       8-9, the six sub-tables).
-- [ ] Character Hit Dice, Spell Ability,
+      - AMENDED R392: closed - the R324 pin (rules/subracelevels.h)
+- [x] Character Hit Dice, Spell Ability,
       Class Level Limit (Character
       Classes Table I) (p. 12).
-- [ ] Character Armor and Weapons
+      - AMENDED R392: closed - the R327 pin (rules/classtables.h)
+- [x] Character Armor and Weapons
       Permitted (Character Classes Table
       II) (p. 13).
-- [ ] Druids (Clerics) Table I (p. 17).
-- [ ] Equipment and Supplies Costs (p.
+      - AMENDED R392: closed - the R327 pin (rules/classtables.h)
+- [x] Druids (Clerics) Table I (p. 17).
+      - AMENDED R392: closed - the R330 pin (rules/hierophant.h)
+- [x] Equipment and Supplies Costs (p.
       26).
-- [ ] Racial Preferences Table (p. 12).
-- [ ] Spell Tables (pp. 28-31): clerics
+      - AMENDED R392: PINNED R392 (rules/uaequip26.h) - the clean p.
+        26 print, four armor rows plus 19 arms rows, no holes
+- [x] Racial Preferences Table (p. 12).
+      - AMENDED R392: closed - the R323 pin (rules/subraces.h)
+- [x] Spell Tables (pp. 28-31): clerics
       28-29, druids 29, magic-users
       30-31, illusionists 31.
-- [ ] Thief-Acrobat Function Table (p.
+      - AMENDED R392: closed - the R341-R366 pins (the four
+        spell-table rounds)
+- [x] Thief-Acrobat Function Table (p.
       24).
-- [ ] Thief-Acrobat Table I (p. 23),
+      - AMENDED R392: closed - the R335 pin (rules/acrobat.h)
+- [x] Thief-Acrobat Table I (p. 23),
       Table II (p. 25), Table III (p.
       25), Table IV (p. 25).
-- [ ] Thieves Table II (p. 22).
-- [ ] Weapon Proficiency Table (p. 26).
-- [ ] Weapon Specialization Table for
+      - AMENDED R392: closed - the R335 pin (rules/acrobat.h)
+- [x] Thieves Table II (p. 22).
+      - AMENDED R392: closed - the R334 pin (rules/thiefarmor.h)
+- [x] Weapon Proficiency Table (p. 26).
+      - AMENDED R392: closed - the R339 pin (rules/uaprof.h); the R392
+        clean read fills every hole (the cavalier penalty 3, the
+        paladin and assassin initials 3, the barbarian 6, the ranger
+        3) and recovers the facing-page notes in full
+- [x] Weapon Specialization Table for
       Fighters and Rangers (p. 18).
-- [ ] Weapons, Weight and Damage by
+      - AMENDED R392: closed - the R331 pin (rules/weaponspec.h)
+- [x] Weapons, Weight and Damage by
       Type (p. 26).
-- [ ] Weapons, Hand-held, General Data
+      - AMENDED R392: closed - the R337 pin (rules/uaweapontable.h);
+        the R392 clean read fills every hole (the atlatl 30, the
+        harpoon 50-60, the falchion 60-80, the lasso dash), adds the
+        68th row (the hand-crossbow quarrels) and reconciles the
+        garrot L misdecode (1-6)
+- [x] Weapons, Hand-held, General Data
       and To-Hit Adjustments (p. 27).
-- [ ] Weapons, Hurled and Missile,
+      - AMENDED R392: PINNED R392 (rules/uahandheld.h) - the clean p.
+        27 print, 60 rows, the footnotes and the general note, no
+        holes
+- [x] Weapons, Hurled and Missile,
       General Data and To-Hit
       Adjustments (p. 28).
+      - AMENDED R392: closed - the R338 pin (rules/uamissile.h); the
+        R392 clean read fills every hole (the rate column, the S/M/L
+        ranges, the lost AC cells, the AC 7-10 columns) and the aklys
+        10-foot footnote
 
 ## Deferred (wanted, gated on a layer)
 

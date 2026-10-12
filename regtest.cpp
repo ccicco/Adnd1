@@ -109,6 +109,8 @@
 #include "rules/uaappendq.h"  // R389: the UA weaponless combat
 #include "rules/uaappendr.h"  // R390: the UA non-lethal combat
 #include "rules/uaappendt.h"  // R391: the UA pole-arm nomenclature
+#include "rules/uaequip26.h"  // R392: the UA equipment costs
+#include "rules/uahandheld.h"  // R392: the UA hand-held data
 #include "rules/humrpref.h"  // R169: p.106 humanoid racial preferences
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -27553,25 +27555,29 @@ int main() {
 
     // ---- R337: the UA weight and damage pin audit ----
     // The UA WEIGHT AND DAMAGE BY WEAPON TYPE table (p. 26) -
-    // the 67-row roster: all 50 PHB rows verified cell for
+    // the 68-row roster: all 50 PHB rows verified cell for
     // cell against the R189 chart seam (the hyphen-loss
     // pattern proven row by row), the 17 new-weapon rows
-    // pinned where printed or pattern-decoded; the holes
-    // (the atlatl/harpoon/falchion weights, the lasso
-    // damage) and the attributed rows (military fork,
-    // glaive-guisarme, the picks, the sap) are documented
-    // in the header. The item stays open pending the PDF.
+    // pinned where printed or pattern-decoded; the R392
+    // clean PDF read fills every hole (the atlatl 30, the
+    // harpoon 50-60, the falchion 60-80, the lasso dash)
+    // and adds the 68th row (the hand-crossbow quarrels),
+    // one misdecode reconciles (the garrot L 1-6) - the
+    // item AMENDED, closes.
     {
         using namespace rules;
         int bad = 0;
         // U1: the counts and the roster anchors
         {
-            if (uawtRowCount() != 67) ++bad;
+            if (uawtRowCount() != 68) ++bad;
             if (uawtSeamVerifiedCount() != 50) ++bad;
-            if (uawtNewWeaponCount() != 17) ++bad;
+            if (uawtNewWeaponCount() != 18) ++bad;
             if (strcmp(uawtName(0), "Aklys") != 0)
                 ++bad;
             if (strcmp(uawtName(66), "Whip") != 0)
+                ++bad;
+            if (strcmp(uawtName(67),
+                "Quarrel (or Bolt), hand") != 0)
                 ++bad;
             if (strcmp(uawtName(30), "Jo Stick")
                 != 0) ++bad;
@@ -27612,12 +27618,13 @@ int main() {
             if (uawtDamageSMMax(8) != 1) ++bad;
             if (uawtDamageLMin(8) != 1) ++bad;
             if (uawtDamageLMax(8) != 1) ++bad;
-            // the garrot: 1 / 1-4 / 1-8
+            // the garrot: 1 / 1-4 / 1-6 (the R392
+            // clean read; the 1-8 was hyphen-loss)
             if (uawtWeightMin(19) != 1) ++bad;
             if (uawtDamageSMMin(19) != 1) ++bad;
             if (uawtDamageSMMax(19) != 4) ++bad;
             if (uawtDamageLMin(19) != 1) ++bad;
-            if (uawtDamageLMax(19) != 8) ++bad;
+            if (uawtDamageLMax(19) != 6) ++bad;
             // the hook fauchard: 80 / 1-4 / 1-4
             if (uawtWeightMin(28) != 80) ++bad;
             if (uawtDamageSMMin(28) != 1) ++bad;
@@ -27678,24 +27685,26 @@ int main() {
             if (uawtDamageSMMax(0) != 6) ++bad;
             if (uawtDamageLMin(0) != 1) ++bad;
             if (uawtDamageLMax(0) != 3) ++bad;
-            // the atlatl: weight hole,
+            // the atlatl: weight 30,
             // damage 1-6 / 1-6
-            if (uawtWeightMin(1) != -1) ++bad;
+            if (uawtWeightMin(1) != 30) ++bad;
             if (uawtDamageSMMin(1) != 1) ++bad;
             if (uawtDamageSMMax(1) != 6) ++bad;
             if (uawtDamageLMin(1) != 1) ++bad;
             if (uawtDamageLMax(1) != 6) ++bad;
-            // the harpoon weight and the
-            // falchion weight: holes
-            if (uawtWeightMin(25) != -1) ++bad;
-            if (uawtWeightMin(59) != -1) ++bad;
+            // the harpoon weight 50-60, the
+            // falchion weight 60-80 (the
+            // R392 clean read)
+            if (uawtWeightMin(25) != 50) ++bad;
+            if (uawtWeightMin(59) != 60) ++bad;
             // the lasso: weight 20 pinned,
-            // the damage cells are holes
+            // the damage cells print the dash
+            // (0 damage, the R392 clean read)
             if (uawtWeightMin(35) != 20) ++bad;
-            if (uawtDamageSMMin(35) != -1) ++bad;
-            if (uawtDamageSMMax(35) != -1) ++bad;
-            if (uawtDamageLMin(35) != -1) ++bad;
-            if (uawtDamageLMax(35) != -1) ++bad;
+            if (uawtDamageSMMin(35) != 0) ++bad;
+            if (uawtDamageSMMax(35) != 0) ++bad;
+            if (uawtDamageLMin(35) != 0) ++bad;
+            if (uawtDamageLMax(35) != 0) ++bad;
         }
         // U5: the weight ranges and the
         // new-weapon flag agreement
@@ -27703,34 +27712,37 @@ int main() {
             // caltrop 2-4, spear 40-60,
             // whip 25-35; every other row
             // has max == min
-            static const int rng[3][3] = {
+            static const int rng[5][3] = {
                 {10, 2, 4},
                 {51, 40, 60},
-                {66, 25, 35}
+                {66, 25, 35},
+                {25, 50, 60},
+                {59, 60, 80}
             };
-            for (int r = 0; r < 3; ++r) {
+            for (int r = 0; r < 5; ++r) {
                 int i = rng[r][0];
                 if (uawtWeightMin(i) != rng[r][1])
                     ++bad;
                 if (uawtWeightMax(i) != rng[r][2])
                     ++bad;
             }
-            for (int i = 0; i < 67; ++i) {
+            for (int i = 0; i < 68; ++i) {
                 if (uawtWeightMin(i) < 0) continue;
                 bool ranged = i == 10 || i == 51
-                    || i == 66;
+                    || i == 66 || i == 25
+                    || i == 59;
                 if (uawtWeightMax(i)
                     != uawtWeightMin(i) && !ranged)
                     ++bad;
             }
             int newc = 0;
-            for (int i = 0; i < 67; ++i) {
+            for (int i = 0; i < 68; ++i) {
                 if (uawtIsNewWeapon(i)) ++newc;
                 if (uawtIsNewWeapon(i)
                     != (uawtPhbSeamIndex(i) < 0))
                     ++bad;
             }
-            if (newc != 17) ++bad;
+            if (newc != 18) ++bad;
         }
         // U6: the R189 seam census
         {
@@ -27747,9 +27759,10 @@ int main() {
     // verified), the AC-adjustment ladders minus-loss
     // decoded (the pattern seam-proven on the bow,
     // crossbow and sling rows against the R145
-    // engine rows); the rate column and the S/M
-    // ranges are OCR-lost - the item stays open
-    // pending the PDF. The R116 seam cross-checked.
+    // engine rows); the R392 clean PDF read fills
+    // the rate column, the S/M/L range strings and
+    // every lost AC cell, and adds the AC 7..10
+    // columns - the item AMENDED, closes.
     {
         using namespace rules;
         int bad = 0;
@@ -27853,27 +27866,66 @@ int main() {
             if (uamtAcAdjustment(1, 0) != -6) ++bad;
             if (uamtAcAdjustment(1, 4) != -2) ++bad;
         }
-        // U4: the OCR holes (the 100 sentinel)
+        // U4: the recovered cells (the R392 clean
+        // read; every 100 sentinel fills)
         {
             if (uamtAcAdjustment(0, 0) == 100) ++bad;
-            if (uamtAcAdjustment(8, 2) != 100) ++bad;
-            if (uamtAcAdjustment(14, 0) != 100) ++bad;
-            if (uamtAcAdjustment(14, 5) != 100) ++bad;
-            if (uamtAcAdjustment(1, 5) != 100) ++bad;
-            if (uamtAcAdjustment(1, 6) != 100) ++bad;
-            if (uamtAcAdjustment(9, 6) != 100) ++bad;
-            if (uamtAcAdjustment(10, 1) != 100) ++bad;
-            if (uamtAcAdjustment(11, 6) != 100) ++bad;
-            if (uamtAcAdjustment(20, 0) != 100) ++bad;
-            if (uamtAcAdjustment(6, 4) != 100) ++bad;
-            // the hole census: 24 rows x 7 = 168
-            // cells; count the non-holes
+            if (uamtAcAdjustment(8, 2) != -7) ++bad;
+            if (uamtAcAdjustment(14, 0) != -4) ++bad;
+            if (uamtAcAdjustment(14, 5) != 0) ++bad;
+            if (uamtAcAdjustment(1, 5) != -1) ++bad;
+            if (uamtAcAdjustment(1, 6) != 0) ++bad;
+            if (uamtAcAdjustment(9, 6) != 0) ++bad;
+            if (uamtAcAdjustment(10, 1) != -1) ++bad;
+            if (uamtAcAdjustment(11, 6) != 1) ++bad;
+            if (uamtAcAdjustment(20, 0) != -7) ++bad;
+            if (uamtAcAdjustment(6, 4) != 0) ++bad;
+            if (uamtAcAdjustment(6, 5) != 1) ++bad;
+            if (uamtAcAdjustment(6, 6) != 2) ++bad;
+            // the recovered census: every one of the
+            // 24 x 7 cells pins (no sentinel remains)
             int pinned = 0;
             for (int i = 0; i < 24; ++i)
                 for (int ac = 0; ac < 7; ++ac)
                     if (uamtAcAdjustment(i, ac)
                         != 100) ++pinned;
-            if (pinned != 120) ++bad;
+            if (pinned != 168) ++bad;
+            // the rate column and the S/M/L ranges
+            // (the printed strings)
+            if (strcmp(uamtRateOfFire(0), "1") != 0)
+                ++bad;
+            if (strcmp(uamtRateOfFire(10), "1/2")
+                != 0) ++bad;
+            if (strcmp(uamtRateOfFire(13), "3")
+                != 0) ++bad;
+            if (strcmp(uamtRangeShort(0), "1*")
+                != 0) ++bad;
+            if (uamtRangeShort(22)[0] != '-') ++bad;
+            if (strcmp(uamtRangeMedium(22), "3-6")
+                != 0) ++bad;
+            if (strcmp(uamtRangeLong(1), "9") != 0)
+                ++bad;
+            if (strcmp(uamtRangeShort(13),
+                "1 1/2") != 0) ++bad;
+            if (strcmp(uamtRangeLong(13),
+                "4 1/2") != 0) ++bad;
+            if (!uamtAklysTenFootOnly()) ++bad;
+            // the AC 7..10 columns (the R392
+            // accessor)
+            if (uamtAcAdjustmentHigh(18, 0) != 2)
+                ++bad;
+            if (uamtAcAdjustmentHigh(18, 3) != -1)
+                ++bad;
+            if (uamtAcAdjustmentHigh(0, 0) != -1)
+                ++bad;
+            if (uamtAcAdjustmentHigh(0, 3) != 0)
+                ++bad;
+            if (uamtAcAdjustmentHigh(3, 0) != -1)
+                ++bad;
+            if (uamtAcAdjustmentHigh(3, 1) != -1)
+                ++bad;
+            if (uamtAcAdjustmentHigh(3, 2) != 1) ++bad;
+            if (uamtAcAdjustmentHigh(3, 3) != 2) ++bad;
         }
         // U5: the prose notes and the R116 seam
         {
@@ -27939,10 +27991,12 @@ int main() {
     // (the R297 seam, verified live), the UA-new rows
     // (cavalier, barbarian, acrobat, bard), the attributed
     // fragment rows (illusionist, thief, assassin -
-    // documented JUDGMENTs), the paladin/ranger deviations
-    // from the PHB pinned as printed; the holes (cavalier
-    // penalty, paladin and assassin initials, the
-    // facing-page notes) documented. The item closes.
+    // documented JUDGMENTs); the R392 clean PDF read
+    // fills every hole (the cavalier penalty 3, the
+    // paladin and assassin initials 3) and reconciles
+    // the misdecodes (the barbarian 6, the ranger 3),
+    // the facing-page notes read in full - the item
+    // AMENDED, closes.
     {
         using namespace rules;
         int bad = 0;
@@ -27969,27 +28023,29 @@ int main() {
         // U2: the initial slots
         {
             static const int k[14] = {
-                3, -1, 2, 2, 4, 8, 8, 1,
-                1, 2, 2, -1, 1, 5
+                3, 3, 2, 2, 4, 6, 3, 1,
+                1, 2, 2, 3, 1, 5
             };
             for (int i = 0; i < 14; ++i)
                 if (uapfInitialSlots(i) != k[i])
                     ++bad;
-            // the holes: the paladin, the assassin
-            if (uapfInitialSlots(1) != -1) ++bad;
-            if (uapfInitialSlots(11) != -1) ++bad;
+            // the recovered cells: the paladin, the
+            // assassin (the R392 clean read)
+            if (uapfInitialSlots(1) != 3) ++bad;
+            if (uapfInitialSlots(11) != 3) ++bad;
         }
         // U3: the penalties (magnitudes)
         {
             static const int k[14] = {
-                -1, 3, 3, 4, 2, 1, 2, 5,
+                3, 3, 3, 4, 2, 1, 2, 5,
                 5, 3, 3, 2, 3, 2
             };
             for (int i = 0; i < 14; ++i)
                 if (uapfNonProfPenalty(i) != k[i])
                     ++bad;
-            // the hole: the cavalier
-            if (uapfNonProfPenalty(0) != -1) ++bad;
+            // the recovered cell: the cavalier
+            // prints 3 (the R392 clean read)
+            if (uapfNonProfPenalty(0) != 3) ++bad;
             // the deviations from the PHB (pinned
             // as printed): the paladin 3
             if (uapfNonProfPenalty(1) != 3) ++bad;
@@ -28035,11 +28091,12 @@ int main() {
                 ++bad;
             if (uapfPhbSeamRow(13) != -1) ++bad;
         }
-        // U6: the deviations pinned as printed
+        // U6: the deviations reconciled (the R392
+        // clean read)
         {
-            // the ranger initial 8 where the PHB
-            // (R297) reads 3 - the echo doubt noted
-            if (uapfInitialSlots(6) != 8) ++bad;
+            // the ranger initial 3: the asterisk row,
+            // the PHB (R297) agreement restored
+            if (uapfInitialSlots(6) != 3) ++bad;
             if (wpfInitialSlots(PROF_RANGER) != 3)
                 ++bad;
             // the paladin: UA penalty 3, cadence
@@ -28070,14 +28127,29 @@ int main() {
             if (uapfInitialSlots(0)
                     + (3 - 1) / uapfAddedCadence(0)
                 != 4) ++bad;
-            // the UA barbarian: 8 at 1st, 9 at 3rd
+            // the UA barbarian: 6 at 1st, 7 at 3rd
+            // (the R392 clean read)
             if (uapfInitialSlots(5)
                     + (3 - 1) / uapfAddedCadence(5)
-                != 9) ++bad;
+                != 7) ++bad;
         }
-        // U8: the hole ledger
+        // U8: the facing-page notes (the R392
+        // clean read: the notes recover in full)
         {
-            if (!uapfFacingPageNotesLost()) ++bad;
+            if (uapfFacingPageNotesLost()) ++bad;
+            if (uapfHorsemenInitialSlots() != 1)
+                ++bad;
+            if (uapfLancersInitialSlots() != 2)
+                ++bad;
+            if (uapfArmigersInitialSlots() != 3)
+                ++bad;
+            if (!uapfRestrictedWeaponChoice())
+                ++bad;
+            if (!uapfInitialAsterisk(0)) ++bad;
+            if (!uapfInitialAsterisk(1)) ++bad;
+            if (!uapfInitialAsterisk(6)) ++bad;
+            if (uapfInitialAsterisk(5)) ++bad;
+            if (uapfInitialAsterisk(13)) ++bad;
         }
         printf("R339 UA proficiency pin audit: bad %d\n", bad);
         if (bad) return 1;
@@ -40215,6 +40287,156 @@ int main() {
     }
 
 
+    // ---- R392: the UA players tables pin audit ----
+    // The players tables manifest sweep (20 items): the
+    // equipment and supplies costs table and the
+    // hand-held weapons table pin NEW (rules/uaequip26.h,
+    // rules/uahandheld.h); the weight/damage, missile and
+    // proficiency tables AMEND (the clean PDF read: every
+    // hole fills, three misdecodes reconcile - the garrot
+    // L damage, the barbarian initial, the ranger initial);
+    // the seventeen covered rides close the manifest.
+    {
+        using namespace rules;
+        int bad = 0;
+        // U1: the equipment and supplies costs
+        {
+            if (uaecArmorCount() != 4) ++bad;
+            if (uaecArmsCount() != 19) ++bad;
+            if (strcmp(uaecArmorName(0),
+                "Bronze Plate") != 0) ++bad;
+            if (uaecArmorCost(0) != 100) ++bad;
+            if (strcmp(uaecArmorName(1),
+                "Full Plate") != 0) ++bad;
+            if (uaecArmorCost(1) != 4000) ++bad;
+            if (strcmp(uaecArmorName(2),
+                "Field Plate") != 0) ++bad;
+            if (uaecArmorCost(2) != 2000) ++bad;
+            if (uaecArmorCost(3) != 5) ++bad;
+            if (strcmp(uaecArmsName(0), "Aklys")
+                != 0) ++bad;
+            if (uaecArmsCost(0) != 2) ++bad;
+            if (strcmp(uaecArmsName(5),
+                "Crossbow, hand") != 0) ++bad;
+            if (uaecArmsCost(5) != 300) ++bad;
+            if (strcmp(uaecArmsName(6),
+                "Quarrels for same") != 0) ++bad;
+            if (uaecArmsCost(6) != 100) ++bad;
+            if (uaecArmsCost(18) != 3) ++bad;
+            if (!uaecArmsPriceIsSilver(3)) ++bad;
+            if (!uaecArmsPriceIsSilver(4)) ++bad;
+            if (!uaecArmsPriceIsSilver(11)) ++bad;
+            if (uaecArmsPriceIsSilver(0)) ++bad;
+            if (!uaecArmsPriceIsElectrum(7)) ++bad;
+            if (uaecArmsPriceIsElectrum(0)) ++bad;
+            int gp = 0;
+            for (int i = 0; i < 19; ++i) {
+                if (uaecArmsPriceIsSilver(i)) continue;
+                if (uaecArmsPriceIsElectrum(i))
+                    continue;
+                ++gp;
+            }
+            if (gp != 15) ++bad;
+        }
+        // U2: the hand-held weapons table
+        {
+            if (uahhRowCount() != 60) ++bad;
+            if (strcmp(uahhName(0), "Aklys") != 0)
+                ++bad;
+            if (strcmp(uahhName(59), "Whip") != 0)
+                ++bad;
+            if (strcmp(uahhName(46), "Spetum")
+                != 0) ++bad;
+            if (strcmp(uahhLength(0), "c. 2'")
+                != 0) ++bad;
+            if (strcmp(uahhSpaceRequired(0), "2'")
+                != 0) ++bad;
+            if (uahhSpeedFactorMin(0) != 4) ++bad;
+            if (uahhSpeedFactorMax(0) != 4) ++bad;
+            if (uahhAklysSpeedBonus() != 1) ++bad;
+            // the n/a rows: the atlatl, the blowgun,
+            // the caltrop
+            if (uahhSpeedFactorMin(1) != -1) ++bad;
+            if (uahhSpeedFactorMin(7) != -1) ++bad;
+            if (uahhSpeedFactorMin(9) != -1) ++bad;
+            // the speed-factor ranges: the spear,
+            // the trident, the whip
+            if (uahhSpeedFactorMin(45) != 6) ++bad;
+            if (uahhSpeedFactorMax(45) != 8) ++bad;
+            if (uahhSpeedFactorMin(59) != 5) ++bad;
+            if (uahhSpeedFactorMax(59) != 8) ++bad;
+            // the aklys AC ladder (AC 0..6)
+            for (int ac = 0; ac < 7; ++ac)
+                if (uahhAcAdjustment(0, ac)
+                    != ac - 7) ++bad;
+            if (uahhAcAdjustment(5, 0) != 2) ++bad;
+            if (uahhAcAdjustment(5, 4) != 2) ++bad;
+            if (uahhAcAdjustment(5, 5) != 0) ++bad;
+            if (uahhAcAdjustment(5, 10) != -1) ++bad;
+            if (uahhAcAdjustment(59, 10) != 3) ++bad;
+            // the general note and the footnotes
+            if (uahhRearAttackBonus() != 2) ++bad;
+            if (uahhStunnedProneBonus() != 4) ++bad;
+            if (!uahhNoteSetDoubleVsCharge()) ++bad;
+            if (!uahhNoteDismountOnHit()) ++bad;
+            if (!uahhSetDoubleFlag(46)) ++bad;
+            if (!uahhSetDoubleFlag(50)) ++bad;
+            if (uahhSetDoubleFlag(0)) ++bad;
+            if (!uahhDismountFlag(12)) ++bad;
+            if (!uahhDismountFlag(42)) ++bad;
+            if (uahhDismountFlag(0)) ++bad;
+            int sd = 0, dm = 0;
+            for (int i = 0; i < 60; ++i) {
+                if (uahhSetDoubleFlag(i)) ++sd;
+                if (uahhDismountFlag(i)) ++dm;
+            }
+            if (sd != 2) ++bad;
+            if (dm != 8) ++bad;
+        }
+        // U3: the amended tables (the reconcile
+        // cross-checks)
+        {
+            if (uawtRowCount() != 68) ++bad;
+            if (uawtNewWeaponCount() != 18) ++bad;
+            if (strcmp(uawtName(67),
+                "Quarrel (or Bolt), hand") != 0)
+                ++bad;
+            if (!uawtIsNewWeapon(67)) ++bad;
+            if (uawtPhbSeamIndex(67) != -1) ++bad;
+            if (uawtWeightMin(67) != 1) ++bad;
+            if (uawtDamageSMMin(67) != 1) ++bad;
+            if (uawtDamageSMMax(67) != 3) ++bad;
+            if (uawtDamageLMin(67) != 1) ++bad;
+            if (uawtDamageLMax(67) != 2) ++bad;
+            if (uawtDamageLMax(19) != 6) ++bad;
+            if (!uawtDamagePrintsDash(35)) ++bad;
+            if (uawtDamagePrintsDash(0)) ++bad;
+            if (!uawtNote1ChargingMountDouble())
+                ++bad;
+            if (!uawtNote2SetDoubleVsCharge())
+                ++bad;
+            if (uawtNote3BladeClassLowInches()
+                != 15) ++bad;
+            if (uawtNote3BladeClassHighInches()
+                != 24) ++bad;
+            if (uawtNote4DisarmOnAcEightHit()
+                != 8) ++bad;
+            if (!uawtNote5BastardAsLongSword())
+                ++bad;
+            if (!uawtNote6VariantsSeePhb()) ++bad;
+            if (uapfInitialSlots(5) != 6) ++bad;
+            if (uapfInitialSlots(6) != 3) ++bad;
+            if (uapfNonProfPenalty(0) != 3) ++bad;
+            if (uapfFacingPageNotesLost()) ++bad;
+            if (strcmp(uamtRateOfFire(18), "1/2")
+                != 0) ++bad;
+            if (strcmp(uamtRangeShort(0), "1*")
+                != 0) ++bad;
+            if (!uamtAklysTenFootOnly()) ++bad;
+        }
+        printf("R392 UA players tables pin audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
     // ---- R227: the wis mental save wiring audit ----
     // PHB Wisdom Table I: the magical attack
     // saving throw adjustment now reaches the

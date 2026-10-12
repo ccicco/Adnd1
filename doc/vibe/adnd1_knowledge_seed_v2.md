@@ -1830,7 +1830,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   as its own data layer), the
   R389 seam the System II
   weaponless layer; GREEN on
-  the first run.
+  the first run.- R391 landed 2026-10-12: commit
+  3b87a93 plus the R391b fix,
+  census 318, the UA
+  Appendix T pole-arm
+  nomenclature pin round
+  (rules/uaappendt.h): the pp.
+  123-129 stretch, seven
+  items - two fully clean (the
+  spear family, the axe family)
+  plus five mechanics-clean with
+  flagged holes; nothing fully
+  garbles; the R391b lesson: the
+  audit cross-checks must
+  fail-on-wrong, not fire-on-
+  correct - the inverted
+  family-coverage check flipped
+  >= to <; RED until the fix,
+  GREEN after; every audit
+  check gets a Python
+  simulation pass before
+  publish.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

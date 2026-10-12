@@ -44,13 +44,18 @@
 //     prints 1/2 where the PHB reads 1/3 - the UA paladin rides
 //     the cavalier group's values, pinned as printed.
 //
-// OCR holes (the item closes; these stay on the PDF ledger): the
-// cavalier penalty cell (prints empty), the paladin initial cell
-// (prints empty - the stacked-group reading would share the
-// cavalier's 3, not pinned), the assassin initial cell (prints
-// empty), and the ENTIRE facing-page notes (the print points at
-// them: "(Notes to this table on facing page)" - the notes
-// themselves are OCR-lost).
+// R392 (the clean PDF read): every hole closes. The cavalier
+// penalty prints 3 (magnitude 3, the R297 convention); the
+// paladin and assassin initial cells print 3; the facing-page
+// notes read in full: the 0-level Horsemen 1 proficiency, the
+// 0-level Lancers 2, the 1st-level Armigers 3, and the
+// cavalier/ranger weapon-choice restriction. Two misdecodes
+// reconcile: the barbarian initial reads 6 (the pinned 8 was
+// an echo), the ranger initial 3 (the asterisk row) - the
+// deviations from the PHB resolve, the R297 seam now agrees
+// cell for cell on every shared row except the paladin
+// penalty/cadence pair, which rides the cavalier group as
+// printed.
 // ===========================================================================
 
 #pragma once
@@ -103,11 +108,13 @@ inline bool uapfNameIsAttributed(int i) {
     return k[i];
 }
 
-// The initial number of weapons; -1 = the cell prints empty
-// (a hole): the paladin and the assassin.
+// The initial number of weapons (the R392 clean read: the
+// paladin and assassin cells print 3, the barbarian 6,
+// the ranger 3 - the asterisk rows carry the choice
+// restriction).
 inline int uapfInitialSlots(int i) {
     static const int k[14] = {
-        3, -1, 2, 2, 4, 8, 8, 1, 1, 2, 2, -1, 1, 5
+        3, 3, 2, 2, 4, 6, 3, 1, 1, 2, 2, 3, 1, 5
     };
     if (i < 0) i = 0;
     if (i > 13) i = 13;
@@ -115,11 +122,11 @@ inline int uapfInitialSlots(int i) {
 }
 
 // The non-proficiency to-hit penalty MAGNITUDE (the R297
-// convention; the adjustment is negative). The cavalier cell
-// prints empty - a hole, -1.
+// convention; the adjustment is negative). The R392 clean
+// read: the cavalier cell prints 3.
 inline int uapfNonProfPenalty(int i) {
     static const int k[14] = {
-        -1, 3, 3, 4, 2, 1, 2, 5, 5, 3, 3, 2, 3, 2
+        3, 3, 3, 4, 2, 1, 2, 5, 5, 3, 3, 2, 3, 2
     };
     if (i < 0) i = 0;
     if (i > 13) i = 13;
@@ -137,10 +144,39 @@ inline int uapfAddedCadence(int i) {
     return k[i];
 }
 
-// The facing-page notes are wholly OCR-lost (the table's own
-// caption points at them); their existence pins, their
-// content does not.
+// The facing-page notes: the R392 clean read - the lost
+// flag flips false, the notes read in full below.
 inline bool uapfFacingPageNotesLost()
+    { return false; }
+
+// The 0-level Horsemen (cavaliers) have 1 weapon of
+// proficiency.
+inline int uapfHorsemenInitialSlots()
+    { return 1; }
+
+// The 0-level Lancers (cavaliers): 2 weapons.
+inline int uapfLancersInitialSlots()
+    { return 2; }
+
+// The 1st-level Armigers (cavaliers): 3 weapons.
+inline int uapfArmigersInitialSlots()
+    { return 3; }
+
+// Cavaliers and rangers are restricted in which weapons
+// they can choose to take proficiency in (see the class
+// descriptions).
+inline bool uapfRestrictedWeaponChoice()
     { return true; }
+
+// True when the row's initial cell prints the restriction
+// asterisk (the cavalier, paladin and ranger rows).
+inline bool uapfInitialAsterisk(int i) {
+    static const bool k[14] = {
+        1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0
+    };
+    if (i < 0) i = 0;
+    if (i > 13) i = 13;
+    return k[i];
+}
 
 }   // namespace rules
