@@ -1853,6 +1853,34 @@ DECIDED R374: RUN BOTH - the engine
         PDF-gated for the
         garbled remainder.
 - [ ] **The new wands** (pp. 96-97).
+      - AMENDED R380: the new
+        wands prose pin round
+        (rules/uawandprose.h) -
+        SEVEN of the twelve new
+        wand types pin: FIVE
+        fully clean (anything,
+        fireballs, flame
+        extinguishing, ice
+        storms, lightning
+        bolts) plus TWO
+        mechanics-clean with
+        flagged holes
+        (defoliation's opening
+        sentence, metal
+        command's dropped
+        verb); FIVE types
+        OCR-scramble (buckler's
+        activation sentence,
+        earth and stone's
+        charge mapping,
+        force's third-function
+        cost, size alteration's
+        effect magnitude,
+        steam and vapor's cone
+        dimensions) - the item
+        stays OPEN, PDF-gated
+        for the garbled
+        remainder.
 - [ ] **The new miscellaneous magic
       items** (pp. 97-104) - the named
       additions: the Egg of Reason, the

@@ -1559,7 +1559,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   PDF-gated; the R377 seam
   the scrolls ledger, the
   R375 seam the ring band;
-  GREEN on the first run.
+  GREEN on the first run.- R379 landed 2026-10-12: commit
+  1b76292, census 306, the UA
+  new rods staves prose pin
+  round (rules/uarodstave.h):
+  four of the eleven new
+  descriptions pin clean
+  (the rod of alertness, the
+  rod of security, the
+  staff-mace, the staff of
+  slinging); seven
+  descriptions OCR-scramble
+  (flailing, passage,
+  splendor, staff-spear,
+  swarming insects, thunder
+  and lightning, woodlands)
+  - the item AMENDED, stays
+  OPEN, PDF-gated; the R378
+  seam the rings ledger,
+  the R375 seam the rod
+  band; GREEN on the first
+  run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
