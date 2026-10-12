@@ -1153,7 +1153,7 @@ fold; the R326 audit, census 253.
       - CLOSED R362: the item closed
         - all printed levels pinned
         (R356-R361 plus this round).
-- [ ] **The new illusionist spells**
+- [x] **The new illusionist spells**
       (pp. 66-73) - the cantrips are
       their own category (below); 1st:
       the chromatic orb (p. 66-67,
@@ -1230,6 +1230,26 @@ fold; the R326 audit, census 253.
         columns stay lost; the 6th
         and 7th levels pin in the
         next round.
+      - CLOSED R365: the 6th and
+        7th levels pinned
+        (rules/uailspells6.h and
+        rules/uailspells7.h) - death
+        fog with the acid ladder,
+        mislead with the invisibility
+        cloak, phantasmagoria (the
+        level cell lost, pinned from
+        the section header), the
+        mirage arcane at the printed
+        6th (the item-list 7th
+        divergence flagged pending
+        the PDF), shadow walk with
+        the plane reads and weird
+        with the lost prose; all
+        printed levels now pinned
+        (R363-R365) - the item
+        CLOSED; the acquisition
+        rules and the cantrip tier
+        seam ride their own items.
 
 ## Cantrips (a category of their own)
 
@@ -1399,8 +1419,31 @@ the gateway charge.
 - [ ] **Illusionist spell acquisition**
       (p. 80) - the starting list table;
       the illusionist book differences.
-- [ ] **The cost of spell casting** (pp.
+      - R365: the fragment-verified
+        cells pinned
+        (rules/uailacquisition.h) -
+        the three-group start, the
+        five defensive rows, the
+        misc fragments, the DM
+        three-option note, the book
+        differences (24/16/8 and 6/4/2
+        with the MU first-level
+        book), the illusionist cantrip
+        counts; the offensive/misc row
+        boundaries garble - stays
+        open pending the PDF read.
+- [x] **The cost of spell casting** (pp.
       80-81).
+      - CLOSED R365: the pin round
+        (rules/uaspellcost.h) - the
+        200 gp per level basic fee with
+        the doubled components, the
+        10 percent/3x and 100
+        percent/3x surcharges, the
+        danger and aging clauses, the
+        item-payment and hostile-caster
+        reads; the section prints
+        clean - CLOSED.
 - [ ] **The spell explanations - the
       referee commentary** (pp. 81-82) -
       the permanency list and the rest.

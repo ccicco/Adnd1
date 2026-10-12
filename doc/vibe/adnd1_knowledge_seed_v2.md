@@ -1281,6 +1281,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   stays open - the 3rd through 7th
   levels pin later; GREEN on the
   first run.
+- R364 landed 2026-10-11: commit
+  141fbcb, census 291, the UA new
+  illusionist 3rd/4th/5th level
+  spells pin round
+  (rules/uailspells3.h,
+  rules/uailspells4.h and
+  rules/uailspells5.h): delude
+  and wraithform at the printed
+  3rd, phantom steed and phantom
+  wind pinned as the print adds
+  them, dispel magic, rainbow
+  pattern, solid fog and vacancy
+  at 4th, the advanced illusion,
+  dream, the magic mirror reprint
+  and tempus fugit at 5th; the
+  R342 IL table 3rd-6th columns
+  stay lost; the item stays open
+  - the 6th and 7th levels pin in
+  the next round; GREEN on the
+  first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
