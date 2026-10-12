@@ -81,7 +81,7 @@ inline int uawtNewWeaponCount()
 
 // The row name (printed, or the
 // attribution judgment).
-inline int uawtName(int i) {
+inline const char* uawtName(int i) {
     static const char* const k[68] = {
         "Aklys", "Atlatl and javelin", "Arrow", "Axe, Battle",
         "Axe, Hand or Throwing", "Bardiche", "Bec de Corbin",
@@ -109,7 +109,7 @@ inline int uawtName(int i) {
 }
 
 // True when the row is a UA-new weapon.
-inline int uawtIsNewWeapon(int i) {
+inline bool uawtIsNewWeapon(int i) {
     static const bool k[68] = {
         1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
         0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0,
