@@ -1892,6 +1892,30 @@ DECIDED R374: RUN BOTH - the engine
       Ehlonna, the Robe of Stars, the
       Scarab versus Golems, the Shadow
       Lanthorn, the Sheet of Smallness.
+      - AMENDED R381: the misc magic
+        prose part 1 pin round
+        (rules/uamiscprose1.h) - the
+        A-C stretch, THIRTEEN items
+        pin: EIGHT fully clean (the
+        beads of force, the boots of
+        the north, the boots winged,
+        the bracers of archery, the
+        bracers of brachiation, the
+        cloak of arachnidia, the
+        cloak of the bat, the
+        cyclocone) plus FIVE
+        mechanics-clean with flagged
+        holes (the amulet versus
+        undead's 9th-level cell, the
+        anything item's tail, the
+        boccob book's save cell and
+        scribing tail, the boots of
+        varied tracks' row-one
+        print, the chime of
+        interruption's opening);
+        NOTHING in A-C fully garbles
+        - the item stays OPEN for
+        D-Z and the PDF.
 - [ ] **The new armor and shields and
       swords** (pp. 104-105) - the
       anything sword (the 3-form limit

@@ -1579,7 +1579,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   seam the rings ledger,
   the R375 seam the rod
   band; GREEN on the first
-  run.
+  run.- R380 landed 2026-10-12: commit
+  867e10a, census 307, the UA
+  new wands prose pin round
+  (rules/uawandprose.h): seven
+  of the twelve wand types pin
+  - five fully clean
+  (anything, fireballs, flame
+  extinguishing, ice storms,
+  lightning bolts) plus two
+  mechanics-clean with flagged
+  holes (defoliation, metal
+  command); five types
+  OCR-scramble (buckler, earth
+  and stone, force, size
+  alteration, steam and vapor)
+  - the item AMENDED, stays
+  OPEN, PDF-gated; the R379
+  seam the rods ledger, the
+  R375 seam the wand band;
+  GREEN on the first run.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
