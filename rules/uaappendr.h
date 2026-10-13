@@ -12,10 +12,15 @@
 // loser sentence, the chaotic
 // constraints line, the
 // monks-druids garble head, the
-// disarming scimitar seam).
-// Nothing fully garbles - the
-// recoverable tails pin, the
-// destroyed heads flag. The R159
+// disarming scimitar seam) -
+// RESOLVED (R422): the clean
+// p. 109 read resolves the four
+// garbles and confirms the
+// scimitar seam as the print
+// itself; all seven items now
+// stand fully clean.
+// Nothing garbles - the R422
+// read resolves every hole. The R159
 // overlap RECONCILED: the DMG
 // p.67 knockout stays the engine
 // default; this header pins the
@@ -130,14 +135,20 @@ inline bool uanlSubduedTurnsIfPartyWeaker()
 // upper hand.
 inline bool uanlSubdualLastsWhileUpperHand()
     { return true; }
-// FLAG: the print splits
-// 'super-/previously published'
-// - the requirements and
-// effects of subdual under
-// this section supercede the
+// The requirements and effects
+// of subdual under this
+// section supercede the
 // previously published
-// material.
+// material - RESOLVED (R422):
+// the clean p. 109 read gives
+// the whole sentence; the
+// print never splits.
 inline bool uanlSubdualSupercedesPublished()
+    { return true; }
+// The supercedes sentence
+// prints clean - the R422
+// resolved read.
+inline bool uanlSubdualSupercedesReadsClean()
     { return true; }
 // In particular with regard
 // to the subdual of dragons -
@@ -210,12 +221,18 @@ inline bool uanlVanqPoisonedVorpalPerformReal()
 // damage.
 inline bool uanlVanqDamageNotedSeparately()
     { return true; }
-// FLAG: the print garbles
-// 'reduced to0 hit points, he'
-// - reduced to 0 hit points
-// makes the loser; the
-// 'must' tail garbles.
+// Reduced to 0 hit points
+// makes the loser - RESOLVED
+// (R422): the clean p. 109
+// read gives the whole
+// sentence, the tail
+// included.
 inline bool uanlVanqLoserAtZeroHp()
+    { return true; }
+// The loser must honorably
+// surrender immediately -
+// the R422 resolved tail.
+inline bool uanlVanqLoserMustHonorablySurrender()
     { return true; }
 // If both are reduced to 0 hit
 // points in the same round,
@@ -274,13 +291,19 @@ inline bool uanlVanqGoodCannotPerformEvil()
 // agreement.
 inline bool uanlVanqNeutralHasChoice()
     { return true; }
-// FLAG: the print garbles the
-// 're under no con-straints'
-// line - chaotic evil
-// opponents see no problem
-// striking after lowering
-// defenses.
+// Chaotic creatures are under
+// no constraints whatsoever;
+// chaotic evil opponents see
+// no problem striking after
+// lowering defenses - RESOLVED
+// (R422): the clean p. 109
+// read gives the whole line.
 inline bool uanlVanqChaoticEvilNoConstraints()
+    { return true; }
+// The chaotic constraints line
+// prints clean - the R422
+// resolved read.
+inline bool uanlVanqChaoticLineReadsClean()
     { return true; }
 // In general, vanquishing
 // combat takes place between
@@ -310,17 +333,19 @@ inline bool uanlVanqPastZeroFullDamage()
 // loss of honor.
 inline bool uanlVanqMultipleZeroRetiresHonor()
     { return true; }
-// FLAG: the print garbles the
-// sentence head (the monks
-// and druids stretch) - the
-// usage context recovers only
-// in part.
-inline bool uanlVanqMonksDruidsGarbleHead()
+// Used by monks and druids
+// seeking to advance to the
+// next level by combat -
+// RESOLVED (R422): the clean
+// p. 109 read gives the whole
+// sentence, head included
+// (the garbled-head flag
+// comes off).
+inline bool uanlVanqUsedByMonksAndDruids()
     { return true; }
 // Used seeking to advance to
 // the next level by combat
-// (the legible tail of the
-// garbled sentence).
+// (the tail, now clean).
 inline bool uanlVanqUsedToAdvanceLevelByCombat()
     { return true; }
 // Also used in lawful
@@ -409,12 +434,21 @@ inline bool uanlDisarmExampleScimitarDisarmsMace()
 // someone with a short sword.
 inline bool uanlDisarmExampleDaggerNotShortSword()
     { return true; }
-// FLAG: the scimitar example
-// names a weapon not in the
-// listed disarm weapons - a
-// print seam, pinned as
-// print.
+// The scimitar example names
+// a weapon not in the listed
+// disarm weapons - the
+// book's own seam. RESOLVED
+// (R422): the clean p. 109
+// read confirms the print
+// genuinely says "a scimitar
+// may disarm someone with a
+// mace" - pinned as printed.
 inline bool uanlDisarmScimitarSeam()
+    { return true; }
+// The scimitar seam is the
+// print itself - the R422
+// resolved read.
+inline bool uanlDisarmScimitarSeamIsPrint()
     { return true; }
 // The weapon falls at the
 // owner's feet if the same
@@ -445,21 +479,28 @@ inline bool uanlDisarmRecommendedWithSystemTwo()
 // items.
 inline int uanlPartItemTotal()
     { return 7; }
-// Two fully clean (the subdual
-// eligibility, the subdual
-// damage accounting).
+// All seven items fully clean -
+// RESOLVED (R422): the five
+// flagged holes resolve with
+// the clean p. 109 read (the
+// original two fully clean:
+// the subdual eligibility,
+// the subdual damage
+// accounting).
 inline int uanlPartCleanCount()
-    { return 2; }
-// Five mechanics-clean with
-// flagged holes (the subdual
-// supercedes sentence, the
-// vanquishing loser sentence,
-// the chaotic constraints line,
-// the monks-druids garble
-// head, the disarming scimitar
-// seam).
+    { return 7; }
+// Zero flagged holes remain -
+// RESOLVED (R422): the clean
+// p. 109 read resolves the
+// subdual supercedes sentence,
+// the vanquishing loser
+// sentence, the chaotic
+// constraints line and the
+// monks-druids head, and
+// confirms the disarming
+// scimitar seam as the print.
 inline int uanlPartFlaggedCount()
-    { return 5; }
+    { return 0; }
 // Nothing fully garbles - the
 // recoverable tails pin, the
 // destroyed heads flag.

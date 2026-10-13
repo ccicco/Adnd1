@@ -2827,7 +2827,7 @@ own index, one item each:
         weakest tail, the demon
         exception); all six parts
         fully clean.
-- [ ] **Appendix R: non-lethal combat**
+- [x] **Appendix R: non-lethal combat**
       (pp. 109-110) - the subdual rules
       (the intelligence bands, the flat
       and butt requirement), the
@@ -2861,6 +2861,24 @@ own index, one item each:
         seam the System II
         weaponless layer, stays
         PDF-gated only.
+      - AMENDED R422: the clean
+        p. 109 read resolves the
+        five flagged holes - the
+        subdual supercedes
+        sentence, the vanquishing
+        loser sentence, the
+        chaotic constraints line
+        and the monks-druids head
+        print whole; the
+        disarming scimitar seam
+        confirms as the print
+        itself (the example names
+        a weapon absent from the
+        list - the book's own
+        seam, pinned as
+        printed); all seven
+        items fully clean, the
+        box flips.
 - [ ] **Appendix S: non-human deities**
       (pp. 109-122) - DEFERRED on a
       deity layer: the demi-human

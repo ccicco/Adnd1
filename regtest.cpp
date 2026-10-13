@@ -40080,7 +40080,10 @@ int main() {
     // the chaotic constraints
     // line, the monks-druids
     // garble head, the disarming
-    // scimitar seam); the R159
+    // scimitar seam) - RESOLVED
+    // (R422): the clean p. 109
+    // read resolves all five;
+    // the R159
     // seam the DMG knockout, the
     // R389 seam the System II
     // layer.
@@ -40110,6 +40113,7 @@ int main() {
             if (!uanlSubduedTurnsIfPartyWeaker()) ++bad;
             if (!uanlSubdualLastsWhileUpperHand()) ++bad;
             if (!uanlSubdualSupercedesPublished()) ++bad;
+            if (!uanlSubdualSupercedesReadsClean()) ++bad;
             if (!uanlSubdualSupercedesDragonSubdual()) ++bad;
             if (!uanlVanqUsedByLawfulToSettle()) ++bad;
             if (!uanlVanqDuelOfHonor()) ++bad;
@@ -40124,6 +40128,7 @@ int main() {
             if (!uanlVanqPoisonedVorpalPerformReal()) ++bad;
             if (!uanlVanqDamageNotedSeparately()) ++bad;
             if (!uanlVanqLoserAtZeroHp()) ++bad;
+            if (!uanlVanqLoserMustHonorablySurrender()) ++bad;
             if (!uanlVanqDrawIfBothZeroSameRound()) ++bad;
             if (!uanlVanqWinnerDemandSingle()) ++bad;
             if (uanlVanqServiceExampleCount() != 4) ++bad;
@@ -40135,12 +40140,13 @@ int main() {
             if (!uanlVanqGoodCannotPerformEvil()) ++bad;
             if (!uanlVanqNeutralHasChoice()) ++bad;
             if (!uanlVanqChaoticEvilNoConstraints()) ++bad;
+            if (!uanlVanqChaoticLineReadsClean()) ++bad;
             if (!uanlVanqGenerallyTwoCombatants()) ++bad;
             if (!uanlVanqMultipleAllSideToZero()) ++bad;
             if (!uanlVanqZeroDamageMayContinue()) ++bad;
             if (!uanlVanqPastZeroFullDamage()) ++bad;
             if (!uanlVanqMultipleZeroRetiresHonor()) ++bad;
-            if (!uanlVanqMonksDruidsGarbleHead()) ++bad;
+            if (!uanlVanqUsedByMonksAndDruids()) ++bad;
             if (!uanlVanqUsedToAdvanceLevelByCombat()) ++bad;
             if (!uanlVanqLawfulCommunitiesApprehend()) ++bad;
             if (!uanlDisarmFighterCavalierOnly()) ++bad;
@@ -40163,14 +40169,15 @@ int main() {
             if (!uanlDisarmExampleScimitarDisarmsMace()) ++bad;
             if (!uanlDisarmExampleDaggerNotShortSword()) ++bad;
             if (!uanlDisarmScimitarSeam()) ++bad;
+            if (!uanlDisarmScimitarSeamIsPrint()) ++bad;
             if (!uanlDisarmFallsAtFeetIfSameSize()) ++bad;
             if (uanlDisarmFallsMinFeet() != 1) ++bad;
             if (uanlDisarmFallsMaxFeet() != 10) ++bad;
             if (uanlDisarmRecoverOptionsCount() != 3) ++bad;
             if (!uanlDisarmRecommendedWithSystemTwo()) ++bad;
             if (uanlPartItemTotal() != 7) ++bad;
-            if (uanlPartCleanCount() != 2) ++bad;
-            if (uanlPartFlaggedCount() != 5) ++bad;
+            if (uanlPartCleanCount() != 7) ++bad;
+            if (uanlPartFlaggedCount() != 0) ++bad;
             if (uanlPartGarbledCount() != 0) ++bad;
             if (uanlSubdualTemporaryPct()
                 + uanlSubdualRealPct() != 100)
@@ -45624,6 +45631,66 @@ int main() {
                 || uailcCastTimeDen(7) != 8)
             ++bad;
         printf("R421 UA IL cantrip cast-times pin audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R422: the appendix R
+    // resolution pin audit ----
+    // The clean p. 109 read
+    // resolves the five R390
+    // flagged holes: the subdual
+    // supercedes sentence prints
+    // whole ("supersedes
+    // previously published
+    // material, in particular
+    // with regard to the subdual
+    // of dragons"); the
+    // vanquishing loser sentence
+    // recovers its tail ("must
+    // honorably surrender
+    // immediately"); the chaotic
+    // constraints line prints
+    // whole ("under no constraints
+    // whatsoever"); the
+    // monks-druids head resolves
+    // ("It is also used by monks
+    // and druids seeking to
+    // advance to the next level by
+    // combat"); and the disarming
+    // scimitar seam confirms as
+    // the print itself - the
+    // example genuinely names the
+    // scimitar, a weapon absent
+    // from the six-entry length
+    // list (the book's own seam,
+    // pinned as printed). All
+    // seven items now stand fully
+    // clean; census 347 -> 348.
+    {
+        using namespace rules;
+        int bad = 0;
+        if (!uanlSubdualSupercedesReadsClean()
+                || !uanlVanqLoserMustHonorablySurrender()
+                || !uanlVanqChaoticLineReadsClean()
+                || !uanlVanqUsedByMonksAndDruids()
+                || !uanlDisarmScimitarSeamIsPrint())
+            ++bad;
+        if (uanlPartItemTotal() != 7
+                || uanlPartCleanCount() != 7
+                || uanlPartFlaggedCount() != 0
+                || uanlPartGarbledCount() != 0)
+            ++bad;
+        if (uanlPartCleanCount()
+                + uanlPartFlaggedCount()
+                + uanlPartGarbledCount()
+                != uanlPartItemTotal())
+            ++bad;
+        if (!uanlSubdualSupercedesPublished()
+                || !uanlSubdualSupercedesDragonSubdual()
+                || !uanlVanqLoserAtZeroHp()
+                || !uanlVanqChaoticEvilNoConstraints()
+                || !uanlDisarmScimitarSeam())
+            ++bad;
+        printf("R422 UA appendix R resolution pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

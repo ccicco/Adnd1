@@ -2575,6 +2575,50 @@ R172 were already dropped at the R171b/R172 era cut; git
   f4de3b1e) - benign (21st
   occurrence); the md5 stays
   advisory.
+- R421 landed 2026-10-13:
+  commits d20e300 + the
+  R421b repair 1aa2c2f +
+  the cleanup 365ec5b (one
+  push, preflight GREEN on
+  the repair run), the UA
+  IL CANTRIP CAST-TIMES
+  RESOLUTION (book pp. 65-66
+  + the p. 31 column read) -
+  the PDF read resolves the
+  eight casting-time cells
+  (colored lights, dim, haze
+  and mirage at 1/2; rainbow
+  at 1/3; mask, noise and
+  the two-d-lusion at 1/8 -
+  the census 4/1/3, the
+  2..10 band holds), the
+  mirage and two-d-lusion
+  school cells and areas,
+  the mirage somatic tail,
+  the colored-lights
+  reflection sentence and
+  the R342 IL cantrip column
+  (the eight names,
+  cross-checked against the
+  description roster row for
+  row); the IL cantrip
+  descriptions stand
+  hole-free, the gap box
+  flips, census 346 -> 347.
+  DEFECT SHIPPED in d20e300
+  (the push aborted): the
+  R421 audit printf carried
+  an unterminated string
+  literal (the R418 pattern);
+  R421b heals it (one patch,
+  census stays 347) and lands
+  the standing string-literal
+  parity gate; the cleanup
+  commit removes the stray
+  "347" artifact. The ./nn
+  save hash diverged -
+  benign (23rd occurrence);
+  the md5 stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
