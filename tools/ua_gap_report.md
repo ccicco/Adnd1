@@ -1315,6 +1315,40 @@ the gateway charge.
       names) - the item stays open
       on the pp. 45-52 descriptions,
       ungated.
+      - AMENDED R415: the
+        person-affecting
+        descriptions land (rules/
+        uacantrips4.h) - the 10
+        blocks pin schools (the
+        8/0/0/1/0/1 census -
+        Charm AS PRINTED, a NEW
+        school code; the scan's
+        "TVvitch" resolves as
+        Twitch via the live
+        roster), ALL 10 areas
+        clean (ZERO area holes -
+        the one-person six and
+        the one-creature four,
+        NEW area kinds), the
+        whole casting-time family
+        the recorded holes pending
+        the PDF read, the
+        mechanics pin (the blink
+        half-second, the cough
+        1-3 and giggle 2-3 second
+        bands, the scratch
+        second, and the YAWN
+        SLEEP SUSCEPTIBILITY -
+        the 2-round window, the
+        extra vulnerable creature,
+        the 4-HD band, the 41..44
+        re-roll band, the 52
+        reach, the 50% unaffected
+        chance, the derivation
+        cross-checking itself);
+        the personal and
+        haunting-sound descriptions
+        stay open.
       - AMENDED R414: the
         legerdemain descriptions
         land (rules/uacantrips3.h)

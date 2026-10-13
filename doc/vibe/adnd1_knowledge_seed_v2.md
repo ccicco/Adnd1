@@ -2382,6 +2382,37 @@ R172 were already dropped at the R171b/R172 era cut; git
   TWENTY-SECOND round running
   - benign; the md5 stays
   advisory.
+- R414 landed 2026-10-13:
+  commit 008066d (census 341,
+  preflight GREEN), the UA
+  LEGERDEMAIN CANTRIP
+  DESCRIPTIONS (pp. 48-49) -
+  the third of the six MU
+  cantrip description rounds;
+  the precedents ride; the
+  casting-time family records
+  as holes pending the PDF
+  read. rules/uacantrips3.h
+  (prefix ucl): the 6
+  legerdemain cantrips in
+  roster order, the school
+  census 0/0/3/1/2 (Illusion
+  a NEW school code), ALL 6
+  areas clean, the HIDE
+  DURATION LADDER (1 turn at
+  2 cubic yards to 1 segment
+  at 38) with the derivation
+  cross-check. THE SIM CAUGHT
+  AN R391-CLASS INVERTED
+  CROSS-CHECK pre-publish (the
+  first ladder derivation
+  fired on healthy data) -
+  the second live R391 catch.
+  First-try GREEN. The md5
+  diverged for the
+  TWENTY-THIRD round running
+  - benign; the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
