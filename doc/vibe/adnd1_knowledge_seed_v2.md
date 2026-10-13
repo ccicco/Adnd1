@@ -2069,6 +2069,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   PDF-gated prose now stands
   closed; the deferred seams
   remain.
+- R400b landed 2026-10-13:
+  commit c1313e3 (census 327,
+  preflight GREEN), the UA
+  comeliness site - the first
+  deferred seam closes: the
+  Character field (the raw 3d6
+  base roll, the optional uacom
+  save line), the creation roll
+  and the two parley-gate
+  reaction callers wire the
+  R322 and R117 pins. The first
+  R400 body failed the Termux
+  compile (the game TUs do not
+  pull rules/comeliness.h
+  transitively) - no commit
+  landed, the preflight RED gate
+  held, and the fix body rode as
+  R400b (the R392 convention,
+  user decision): the two
+  include patches, the audit
+  label stays R400.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

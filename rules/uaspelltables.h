@@ -200,8 +200,12 @@ inline const char* uastDruid6thName(int i) {
 }
 
 // ---- the magic-user cantrip table (p. 30) ----
-// Six categories, 64 names (the Gather/Polish merge decodes to
-// two; the Number column is OCR-lost).
+// Six categories, 66 names (the Gather/Polish
+// merge decodes to two; the Number column is
+// OCR-lost). R401 clean-read fix: the table
+// prints Tangle (reversed row 9) and Tweak
+// (personal row 9) - the R341 decode read 64,
+// missing both.
 inline int uastCantripCategoryCount()
     { return 6; }
 
@@ -215,9 +219,11 @@ inline const char* uastCantripCategoryName(int cat) {
     return k[cat];
 }
 
-// The name count per category (20, 11, 6, 10, 9, 8).
+// The name count per category (20, 12, 6,
+// 10, 10, 8 - the R401 clean-read fix adds
+// Tangle and Tweak).
 inline int uastCantripCount(int cat) {
-    static const int k[6] = { 20, 11, 6, 10, 9, 8 };
+    static const int k[6] = { 20, 12, 6, 10, 10, 8 };
     if (cat < 0) cat = 0;
     if (cat > 5) cat = 5;
     return k[cat];
@@ -230,8 +236,9 @@ inline const char* uastCantripName(int cat, int i) {
           "Polish", "Salt", "Shine", "Spice", "Sprout",
           "Stitch", "Sweeten", "Tie", "Warm", "Wrap" },
         { "Curdle", "Dirty", "Dusty", "Hairy", "Knot",
-          "Ravel", "Sour", "Spill", "Tarnish", "Untie",
-          "Wilt", "", "", "", "", "", "", "", "", "" },
+          "Ravel", "Sour", "Spill", "Tangle", "Tarnish",
+          "Untie", "Wilt", "", "", "", "", "", "", "",
+          "" },
         { "Change", "Distract", "Hide", "Mute", "Palm",
           "Present", "", "", "", "", "", "", "", "", "",
           "", "", "", "", "" },
@@ -239,8 +246,9 @@ inline const char* uastCantripName(int cat, int i) {
           "Scratch", "Sneeze", "Twitch", "Wink", "Yawn",
           "", "", "", "", "", "", "", "", "", "" },
         { "Bee", "Bluelight", "Bug", "Firefinger", "Gnats",
-          "Mouse", "Smokepuff", "Spider", "Unlock", "",
-          "", "", "", "", "", "", "", "", "", "" },
+          "Mouse", "Smokepuff", "Spider", "Tweak",
+          "Unlock", "", "", "", "", "", "", "", "", "",
+          "" },
         { "Creak", "Footfall", "Groan", "Moan", "Rattle",
           "Tap", "Thump", "Whistle", "", "",
           "", "", "", "", "", "", "", "", "", "" },

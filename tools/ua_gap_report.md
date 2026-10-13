@@ -623,6 +623,14 @@ fold; the R326 audit, census 253.
         and the illusionist spell table
         are OCR-scrambled - stays open
         pending the PDF read.
+      - AMENDED R401: the clean p. 30
+        read corrects the cantrip
+        roster - the reversed column
+        prints Tangle (row 9, 12 names)
+        and the personal column prints
+        Tweak (row 9, 10 names); the
+        roster reads 66 names; the
+        R341 audit asserts reseat.
       - CLOSED R342: part 2 pinned
         (rules/uaspelltables2.h) - the
         MU 1st-5th columns
@@ -1279,6 +1287,14 @@ the gateway charge.
 
 - [ ] **The magic-user cantrips** (pp.
       30-31 headers, 45-52 descriptions)
+      - AMENDED R401: the tier seam
+      closed (rules/cantriptier.h);
+      the clean p. 30 read confirms
+      the roster (Tangle reversed row
+      9, Tweak personal row 9, 66
+      names) - the item stays open
+      on the pp. 45-52 descriptions,
+      ungated.
       - six categories: useful (20
       named: chill, clean, color,
       dampen, dry, dust, exterminate,
@@ -1331,6 +1347,13 @@ the gateway charge.
         tier seam (the registry
         charge), the descriptions
         are pinned.
+      - AMENDED R401: the cantrip
+        tier seam CLOSED
+        (rules/cantriptier.h) - the
+        tier gate drops; the box
+        stays open only on the
+        casting-time fraction holes
+        pending the PDF read.
 - [ ] **The cantrip acquisition rules**
       (DM pp. 79-80) - cross-ref to the
       DM section item; the apprentice
@@ -2598,9 +2621,21 @@ lands before the items it gates.
       selection site, the R117
       reactions) remain its open
       dependents.
-- [ ] The cantrip tier seam - a
-      sub-1st registry tier; gates the
-      cantrip category.
+- [x] The cantrip tier seam -
+      CLOSED R401 (rules/cantriptier.h;
+      the R401 seam audit, census 328):
+      the p. 45 tier traits, the 0-level
+      per-day ladder by xp band, the
+      first-level discard and the
+      four-cantrip retention, the round
+      rules, the seven categories and
+      the roster totals. The clean p. 30
+      read amends the R341 decode
+      (Tangle, Tweak; 66 names). The
+      cantrip prose items are ungated
+      now - open on their own prose.
+      The MU/IL cantrip DESCRIPTIONS
+      remain the open dependents.
 - [ ] The treasure system dial - the
       reconcile/reverse/run-both switch;
       gates the treasure section.
