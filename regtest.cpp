@@ -45623,8 +45623,7 @@ int main() {
                 || uailcCastTimeDen(6) != 3
                 || uailcCastTimeDen(7) != 8)
             ++bad;
-        printf("R421 UA IL cantrip cast-times pin
-            " audit: bad %d\n", bad);
+        printf("R421 UA IL cantrip cast-times pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----
