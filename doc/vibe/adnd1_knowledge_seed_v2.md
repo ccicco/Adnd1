@@ -2219,6 +2219,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   running - benign; the md5
   stays advisory. THE SEAM
   LIST IS NOW EMPTY.
+- R406 landed 2026-10-13:
+  commit 0ae5310 (census 333,
+  preflight GREEN), the UA
+  Appendix S stat blocks -
+  the first ungated data round
+  riding the R405 seam;
+  rules/uaappends.h (prefix uas)
+  - the 23 blocks pin the
+  scan-clean numerics, the
+  tier/rating censuses live
+  against the seam, the 6985
+  HP drift catch, the scan
+  holes as sentinels. The
+  class lines, MOVE, stat
+  lines, prose and the
+  charts stay open. The
+  ./nn save hash diverged
+  for the fourteenth round
+  running - benign; the md5
+  stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

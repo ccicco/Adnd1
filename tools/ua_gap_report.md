@@ -2360,9 +2360,24 @@ own index, one item each:
       - CLOSED R370 + the R394 clean
         read (the dice-count matrix,
         rules/uasmalls1.h).
-- [ ] Clerical Quick Reference Chart,
+- [x] Clerical Quick Reference Chart,
       non-human deities (pp. 121-122) -
-      rides the Appendix S OUT.
+      CLOSED R407 (rules/uascharts.h;
+      the R407 charts pin audit, census
+      334): the five 8-column charts pin
+      all 23 rows (sphere, raiment,
+      colors, holy days, the sacrifice
+      frequency and form), the 13 named
+      sacred animals pin against the
+      seven none-cells, the cleric
+      gender reads pin (the dwarven
+      split, the elf/halfling
+      either-gender, the all-male
+      never-druid gnomish clerics), and
+      the frequency counts (monthly 10,
+      annually 4, before battle 2)
+      catch cell drift - live against
+      the R405 seam chart pins.
 - [x] Hit Points, Starting (p. 74).
       - CLOSED R370 (rules/uasmalls1.h).
 
@@ -2504,6 +2519,12 @@ own index, one item each:
         the pantheon prose, and the
         clerical quick-reference
         charts (pp. 121-122).
+      - AMENDED R407: the clerical
+        charts land (rules/uascharts.h)
+        - CLOSED as their own item; the
+        Appendix S box stays open on
+        the class lines, MOVE, the stat
+        lines and the pantheon prose.
 - [ ] **Appendix T: pole-arm
       nomenclature** (pp. 123-129) - the
       taxonomy (the bill hook, the
@@ -2660,6 +2681,10 @@ section own index, one item each:
     - the class lines, MOVE, stat
     lines, prose and the charts stay
     open.
+  - AMENDED R407: the charts land
+    (rules/uascharts.h) - the class
+    lines, MOVE, stat lines and the
+    prose stay open.
 
 ## Deferred engine seams (the gates)
 
