@@ -2150,6 +2150,32 @@ R172 were already dropped at the R171b/R172 era cut; git
   the tenth round running -
   benign; the md5 stays
   advisory.
+- R403 landed 2026-10-13:
+  commit feddba6 (census 330,
+  preflight GREEN), the mount
+  layer seam - the deferred
+  engine seam lands on the R321
+  aerial precedent: rules/
+  mountlayer.h (prefix mml, 10
+  inline functions) - the
+  layer contract (no mount
+  actor site; pins precede
+  site; the charge stays
+  open) and the six-feeder
+  registry (R123 movement,
+  R170 followers, R189 charge
+  damage, R321 aerial, R328
+  cavalier, R356 the mount
+  spell), with the flying
+  steed ladder cross-declared
+  against the cavalier
+  horsemanship tail. The
+  mounted-combat charge stays
+  open as its own ungated
+  item. The ./nn save hash
+  diverged for the eleventh
+  round running - benign; the
+  md5 stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

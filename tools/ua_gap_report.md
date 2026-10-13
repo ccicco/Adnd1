@@ -2604,6 +2604,14 @@ section own index, one item each:
 - DEFERRED: the psionic expansions (a
   psionics seam; the duergar doubled
   chance rides it).
+  - AMENDED R404: the seam lands -
+    rules/psionics.h pins the duergar
+    doubled chance and the
+    svirfneblin PC ban (the clean
+    UA pp. 10-11 scan); the psionic
+    expansions (the PHB sections,
+    the DMG p.77 combat) stay open
+    on their own reads.
 - CLOSED R400: the comeliness ENGINE
   site - the Character field and the
   reaction callers exist; the R322
@@ -2667,8 +2675,26 @@ lands before the items it gates.
       authoritative.
 - [ ] The deity layer - gates Appendix
       S.
-- [ ] The psionics seam - gates the
-      psionic expansions.
+- [x] The psionics seam -
+      CLOSED R404 (rules/psionics.h;
+      the R404 seam audit, census 331):
+      the layer contract (no psionic
+      site - the pins precede the
+      charge, the R403 mount
+      precedent), the open and OUT
+      records (the PHB sections OPEN;
+      the DMG p.77 combat OUT), and
+      the UA pp. 10-11 pins - the
+      duergar doubled chance (twice
+      the usual, double all
+      INT/WIS/CHA bonuses, only if
+      psionics are used) and the
+      svirfneblin PC ban - live
+      cross-checked against the three
+      feeders (R166 insanity, R323
+      subraces, R328 cavalier). The
+      psionic-combat charge stays
+      open - a new ungated item.
 - [x] The mount layer -
       CLOSED R403 (rules/mountlayer.h;
       the R403 seam audit, census 330):
