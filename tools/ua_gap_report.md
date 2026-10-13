@@ -2611,6 +2611,12 @@ section own index, one item each:
 - DEFERRED: the mounted-combat rules (a
   mount layer; the R321 aerial precedent
   - the pins would precede any site).
+  - AMENDED R403: the layer lands -
+    rules/mountlayer.h carries the
+    contract and the six-feeder
+    registry; the mounted-combat
+    charge stays open as its own
+    ungated item.
 - DEFERRED: Appendix S (a deity layer;
   see the appendices item).
 
@@ -2663,8 +2669,29 @@ lands before the items it gates.
       S.
 - [ ] The psionics seam - gates the
       psionic expansions.
-- [ ] The mount layer - gates the
-      mounted-combat rules.
+- [x] The mount layer -
+      CLOSED R403 (rules/mountlayer.h;
+      the R403 seam audit, census 330):
+      the layer contract (no mount
+      actor site - the pins precede
+      the site, the R321 aerial
+      precedent) and the six-feeder
+      registry - R123 the mounted
+      movement, R170 the followers
+      mounts, R189 the charge damage,
+      R321 the aerial environment,
+      R328 the cavalier mounted reads,
+      R356 the mount spell - all
+      cross-checked live in the audit,
+      with the flying steed ladder
+      (7th pegasus, 9th hippogriff,
+      11th griffon) cross-declared
+      against the cavalier
+      horsemanship tail. The
+      mounted-combat charge (the
+      mount actor, the mounted
+      resolution) stays open - a
+      new ungated item.
 - [x] The comeliness site -
       CLOSED R400: the Character field (the
       raw 3d6 base roll, the optional

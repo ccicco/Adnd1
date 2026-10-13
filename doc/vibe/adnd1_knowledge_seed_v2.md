@@ -2119,6 +2119,37 @@ R172 were already dropped at the R171b/R172 era cut; git
   ./nn save hash diverged for the
   ninth round running - benign;
   the md5 stays advisory.
+- R402 landed 2026-10-13:
+  commit 99f8bd2 (census 329,
+  preflight GREEN), the UA
+  treasure system dial - the
+  R374 RUN BOTH decision wires:
+  the runtime dial layer rides
+  rules/uatreasuredial.h (the
+  mode static, the
+  validity-gated setter, the
+  mode names, the dial-landed
+  pin; the pending pins flip
+  false - the UA pin rounds
+  landed) and the mode-aware
+  determination dispatch rides
+  dm/treasure.cpp (the UA
+  category bands, the carrier
+  map, the sub-table splits -
+  low the new UA table, high
+  the DMG original, the misc
+  seven sub-bands all UA - the
+  row resolution off the R395
+  bands, the MERGED union coin
+  flip; the TU pulls its own
+  rules includes - the R400
+  lesson). The DMG default
+  keeps the seventy landed
+  audits authoritative. The
+  ./nn save hash diverged for
+  the tenth round running -
+  benign; the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
