@@ -2555,6 +2555,16 @@ own index, one item each:
         damage divergence recorded;
         the class lines, MOVE and the
         pantheon prose stay open.
+      - AMENDED R410: the class
+        lines land (rules/
+        uasclasslines.h) - the six
+        printed lines per block pin
+        with the psionic lines
+        cross-checking the R406
+        rating codes live (the
+        Brandobaris missing line the
+        recorded sentinel); MOVE and
+        the pantheon prose stay open.
 - [ ] **Appendix T: pole-arm
       nomenclature** (pp. 123-129) - the
       taxonomy (the bill hook, the
@@ -2719,6 +2729,10 @@ section own index, one item each:
     land (rules/uasstatlines.h) - the
     class lines, MOVE and the
     pantheon prose stay open.
+  - AMENDED R410: the class lines
+    land (rules/uasclasslines.h) -
+    MOVE and the pantheon prose
+    stay open.
 
 ## Deferred engine seams (the gates)
 

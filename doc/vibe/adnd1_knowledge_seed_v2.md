@@ -2268,6 +2268,20 @@ R172 were already dropped at the R171b/R172 era cut; git
   for the sixteenth round
   running - benign; the md5
   stays advisory.
+- R409 landed 2026-10-13:
+  commit bac456b (census 336,
+  preflight GREEN), the UA
+  Appendix S stat lines -
+  rules/uasstatlines.h (prefix
+  usl) - the 23
+  S/I/W/D/C/CH/CM rows, the
+  R153/R322 cross-checks live,
+  the Cyrrollalee plus pair the
+  recorded hole, the Bahgtru
+  damage divergence recorded. The
+  md5 diverged for the
+  seventeenth round running -
+  benign; the md5 stays  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
