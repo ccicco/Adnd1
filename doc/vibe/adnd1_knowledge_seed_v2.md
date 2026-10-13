@@ -2413,6 +2413,40 @@ R172 were already dropped at the R171b/R172 era cut; git
   TWENTY-THIRD round running
   - benign; the md5 stays
   advisory.
+- R415 landed 2026-10-13:
+  commit c4dbccf (census 342,
+  preflight GREEN), the UA
+  PERSON-AFFECTING CANTRIP
+  DESCRIPTIONS (p. 49) - the
+  fourth of the six MU cantrip
+  description rounds; the
+  precedents ride. rules/
+  uacantrips4.h (prefix ucp):
+  the 10 person-affecting
+  cantrips in roster order,
+  the school census 8/0/0/1/0/1
+  (Charm AS PRINTED, a NEW
+  school code; the scan's
+  "TVvitch" resolves as Twitch
+  via the live roster), ALL 10
+  areas clean (the one-person
+  six and one-creature four,
+  NEW area kinds), the yawn
+  sleep susceptibility pins +
+  the band derivation
+  cross-check, the whole
+  casting-time family the
+  recorded holes pending the
+  PDF read. Two pre-publish
+  catches this round: a
+  miscounted call-count assert
+  and a bare comment line the
+  R412b class guard caught.
+  First-try GREEN on the user
+  side. The md5 diverged for
+  the SIXTEENTH round running
+  - benign; the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1315,6 +1315,54 @@ the gateway charge.
       names) - the item stays open
       on the pp. 45-52 descriptions,
       ungated.
+      - AMENDED R416: the
+        personal descriptions land
+        (rules/uacantrips5.h) - the
+        10 blocks pin schools (the
+        1/0/1/0/0/0/5/3 census -
+        Summoning and Conjuration
+        AS PRINTED, NEW school
+        codes; the scan's
+        "Flrefinger" resolves as
+        Firefinger via the live
+        roster), the areas pin
+        EIGHT clean (the one
+        summoned animal four, the
+        Gnats cubic foot, the
+        Smokepuff 1-foot cloud, the
+        Tweak creature, the Unlock
+        lock - NEW area kinds; the
+        Bluelight sphere and the
+        Firefinger line record as
+        the TWO area holes pending
+        the PDF read), the whole
+        casting-time family the
+        recorded holes, the range
+        unit family the recorded
+        holes (the numeral 1 pins),
+        the mechanics pin (the bee
+        90% sting, the bluelight
+        3-inch sphere + 5-foot
+        radius, the firefinger
+        one-half-foot jet + segment,
+        the gnats 1-4 segment
+        distraction, the smokepuff
+        six colors, the SPIDER
+        POISON READ - the 5% venom
+        chance, the 1-2 inch size,
+        the 1-segment bite, the +4
+        save, the 1/2 damage pair,
+        the 1-4 day sickness, the
+        slow-poison defer a garbled
+        numeral recorded as a hole
+        - and the tweak seven
+        portions + 1-segment
+        distraction + INT 7
+        threshold + 3d6, the band
+        derivations cross-checking
+        themselves); only the
+        haunting-sound descriptions
+        stay open.
       - AMENDED R415: the
         person-affecting
         descriptions land (rules/
