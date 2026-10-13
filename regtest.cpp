@@ -40224,7 +40224,10 @@ int main() {
     // bec comparison tail, the
     // combination intro and
     // features list, the
-    // confusion sentence); the
+    // confusion sentence) -
+    // RESOLVED (R424): the
+    // clean pp. 123-128 read
+    // resolves all five; the
     // R340 seam the hook
     // fauchard roster.
     {
@@ -40244,7 +40247,7 @@ int main() {
             if (!uapaSaxtorphMorningStarMisnamed()) ++bad;
             if (!uapaMaceShortShaftedFlanged()) ++bad;
             if (!uapaMorningStarLongerSpiked()) ++bad;
-            if (!uapaSystemParagraphGarbles()) ++bad;
+            if (!uapaSystemParagraphReadsClean()) ++bad;
             if (!uapaHuntingOrAgriculturalOrigin()) ++bad;
             if (!uapaSpecializedOrCombination()) ++bad;
             if (!uapaSpearDaggerAtopPole()) ++bad;
@@ -40299,7 +40302,7 @@ int main() {
             if (!uapaPeasantCleaverOrigin()) ++bad;
             if (!uapaFauchardSickleDevelopment()) ++bad;
             if (!uapaFauchardDismountFunction()) ++bad;
-            if (!uapaFauchardGarblesFull()) ++bad;
+            if (!uapaFauchardDescriptionReadsClean()) ++bad;
             if (!uapaFauchardPassedOutEarly()) ++bad;
             if (!uapaFauchardForkRemained()) ++bad;
             if (!uapaGlaiveKnifeBladedSpear()) ++bad;
@@ -40351,10 +40354,10 @@ int main() {
             if (!uapaBecDeCorbinBeakPunctures()) ++bad;
             if (!uapaBecDeCorbinBeakMajor()) ++bad;
             if (!uapaBecMoreSpecializedThanLucern()) ++bad;
-            if (!uapaLucernBecComparisonGarbles()) ++bad;
+            if (!uapaLucernBecComparisonReadsClean()) ++bad;
             if (!uapaSecondarySpearTipCombination()) ++bad;
             if (!uapaPartisanNotCombination()) ++bad;
-            if (!uapaCombinationIntroGarbles()) ++bad;
+            if (!uapaCombinationIntroReadsClean()) ++bad;
             if (uapaFauchardForkFormCount() != 2) ++bad;
             if (!uapaFauchardForkFormOneBackSpike()) ++bad;
             if (!uapaFauchardForkFormTwoReversed()) ++bad;
@@ -40363,7 +40366,7 @@ int main() {
             if (!uapaGuisarmeVoulgeHookFromBlade()) ++bad;
             if (!uapaGuisarmeVoulgeAllPurpose()) ++bad;
             if (uapaBillGuisarmeFeatureCount() != 4) ++bad;
-            if (!uapaBillGuisarmeFeaturesGarble()) ++bad;
+            if (!uapaBillGuisarmeFeaturesReadsClean()) ++bad;
             if (!uapaBillGuisarmeVoulgeLike()) ++bad;
             if (!uapaBillGuisarmePersistedLongest()) ++bad;
             if (!uapaScorpionBillGuisarmeForm()) ++bad;
@@ -40371,7 +40374,7 @@ int main() {
             if (!uapaPartisanWithAxeNotPoleAxe()) ++bad;
             if (!uapaStoneForkMisidentified()) ++bad;
             if (!uapaHalberdWithIncidentalFork()) ++bad;
-            if (!uapaConfusionSentenceGarbles()) ++bad;
+            if (!uapaConfusionSentenceReadsClean()) ++bad;
             if (!uapaCareShaftLengthHeadShape()) ++bad;
             if (!uapaInfantryVsCavalryPurpose()) ++bad;
             if (uapaSwissPikePct() != 40) ++bad;
@@ -40388,8 +40391,8 @@ int main() {
             if (!uapaSystemDerivedBritannica()) ++bad;
             if (uapaBibliographySourceCount() != 5) ++bad;
             if (uapaPartItemTotal() != 7) ++bad;
-            if (uapaPartCleanCount() != 2) ++bad;
-            if (uapaPartFlaggedCount() != 5) ++bad;
+            if (uapaPartCleanCount() != 7) ++bad;
+            if (uapaPartFlaggedCount() != 0) ++bad;
             if (uapaPartGarbledCount() != 0) ++bad;
             if (uapaSwissPikePct()
                 + uapaSwissHalberdPct()
@@ -45844,6 +45847,77 @@ int main() {
                 > uapnGnomeCountMax())
             ++bad;
         printf("R423 UA appendix S pantheon prose pin audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R424: the appendix T
+    // resolution pin audit ----
+    // The clean pp. 123-128 read
+    // resolves the five R391
+    // flagged holes: the
+    // classification system
+    // paragraph prints whole
+    // ("a system of
+    // classification and
+    // nomenclature is presented
+    // here that seems both
+    // reasonable and easy to
+    // use"); the fauchard
+    // description prints whole
+    // (the scythe/sickle
+    // development, the cut-and-
+    // thrust that did neither too
+    // well, the little parrying,
+    // the no-dismount early form,
+    // the later back hook); the
+    // Lucern/bec comparison tail
+    // prints whole ("for the
+    // latter weapon was not so
+    // specialized"); the
+    // combination intro prints
+    // whole ("it is necessary to
+    // ignore secondary spear tips
+    // when classifying pole
+    // arms"); the bill-guisarme
+    // features list prints whole
+    // ("a back spike for armor
+    // penetration" - no "armor
+    // ion" split exists in the
+    // print); and the confusion
+    // sentence prints whole ("is
+    // certainly understandable,
+    // and care must be taken in
+    // identifying such
+    // weapons"). All seven items
+    // now stand fully clean;
+    // census 349 -> 350.
+    {
+        using namespace rules;
+        int bad = 0;
+        if (!uapaSystemParagraphReadsClean()
+                || !uapaFauchardDescriptionReadsClean()
+                || !uapaLucernBecComparisonReadsClean()
+                || !uapaCombinationIntroReadsClean()
+                || !uapaBillGuisarmeFeaturesReadsClean()
+                || !uapaConfusionSentenceReadsClean())
+            ++bad;
+        if (uapaPartItemTotal() != 7
+                || uapaPartCleanCount() != 7
+                || uapaPartFlaggedCount() != 0
+                || uapaPartGarbledCount() != 0)
+            ++bad;
+        if (uapaPartCleanCount()
+                + uapaPartFlaggedCount()
+                + uapaPartGarbledCount()
+                != uapaPartItemTotal())
+            ++bad;
+        if (!uapaFauchardSickleDevelopment()
+                || !uapaSecondarySpearTipCombination()
+                || uapaBillGuisarmeFeatureCount() != 4
+                || !uapaCareShaftLengthHeadShape()
+                || !uapaHuntingOrAgriculturalOrigin()
+                || !uapaSystemDerivedBritannica())
+            ++bad;
+        printf("R424 UA appendix T resolution pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

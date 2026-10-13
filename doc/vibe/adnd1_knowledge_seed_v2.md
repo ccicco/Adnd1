@@ -2647,6 +2647,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   d135d3a864e1058bc621ff5a31c675d5)
   - benign; the md5 stays
   advisory.
+- R423 landed 2026-10-13:
+  commit a44b3d0 (census 349,
+  preflight GREEN on the FIRST
+  run, pushed a911b59..a44b3d0),
+  the UA APPENDIX S PANTHEON
+  PROSE - the five pantheon
+  intro sections (pp. 110-120,
+  the clean OCR read) pin as
+  rules/uapantheon.h (NEW,
+  prefix uapn), the censuses
+  cross-checked live against
+  the R405 seam (the described
+  counts mirror nhdPantheonSize
+  row for row, the sum mirrors
+  nhdDeityCount 23, the Moradin
+  rulings mirror the R405 seam
+  functions); the Appendix S
+  item CLOSES - the box flips,
+  nothing stays open; census
+  348 -> 349.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -2952,7 +2952,7 @@ own index, one item each:
         Appendix S item CLOSES - the
         box flips, nothing stays
         open.
-- [ ] **Appendix T: pole-arm
+- [x] **Appendix T: pole-arm
       nomenclature** (pp. 123-129) - the
       taxonomy (the bill hook, the
       fauchard-guisarme, the voulge, the
@@ -2984,6 +2984,21 @@ own index, one item each:
         R340 seam the hook
         fauchard roster, stays
         PDF-gated only.
+      - AMENDED R424: the clean
+        pp. 123-128 read resolves
+        the five flagged holes -
+        the classification system
+        paragraph, the fauchard
+        description, the Lucern/
+        bec comparison tail, the
+        combination intro, the
+        bill-guisarme features list
+        and the confusion sentence
+        print whole; all seven
+        items fully clean, the
+        box flips - the LAST open
+        book-content item in the
+        report closes.
 
 ## Players tables and charts (the manifest)
 

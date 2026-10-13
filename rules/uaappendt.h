@@ -12,10 +12,11 @@
 // description, the Lucern/bec
 // comparison tail, the
 // combination intro and features
-// list, the confusion sentence).
-// Nothing fully garbles - every
-// classification survives its
-// scrambled prose. The taxonomy
+// list, the confusion sentence)
+// - RESOLVED (R424): the clean
+// pp. 123-128 read resolves all
+// five; the seven items stand
+// fully clean. The taxonomy
 // pairs with the R340 new
 // weapons roster (the hook
 // fauchard seam). Pin-era
@@ -88,13 +89,16 @@ inline bool uapaMaceShortShaftedFlanged()
 // head with radiating spikes.
 inline bool uapaMorningStarLongerSpiked()
     { return true; }
-// FLAG: the print garbles the
-// system-rationale paragraph
-// head (the "reasonable"
-// line) - the classification
-// standard recovers only in
-// part.
-inline bool uapaSystemParagraphGarbles()
+// A system of classification
+// and nomenclature is presented
+// here that seems both
+// reasonable and easy to use -
+// RESOLVED (R424): the clean
+// p. 123 read gives the whole
+// sentence, the "reasonable"
+// line included; the print
+// never garbles.
+inline bool uapaSystemParagraphReadsClean()
     { return true; }
 // Most medieval weapons:
 // hunting weapons or
@@ -367,13 +371,16 @@ inline bool uapaFauchardSickleDevelopment()
 // dismounting.
 inline bool uapaFauchardDismountFunction()
     { return true; }
-// FLAG: the print scrambles
-// the fauchard description
-// body into column order -
-// the classification
-// survives, the prose
-// garbles.
-inline bool uapaFauchardGarblesFull()
+// The fauchard description
+// prints whole - RESOLVED
+// (R424): the clean p. 126
+// read gives the scythe/sickle
+// development, the cut-and-
+// thrust that did neither too
+// well, the little parrying,
+// the no-dismount early form
+// and the later back hook.
+inline bool uapaFauchardDescriptionReadsClean()
     { return true; }
 // The fauchard passed out
 // rather quickly.
@@ -629,13 +636,14 @@ inline bool uapaBecDeCorbinBeakMajor()
 // hammer.
 inline bool uapaBecMoreSpecializedThanLucern()
     { return true; }
-// FLAG: the print garbles the
-// Lucern/bec de corbin
-// comparison tail into column
-// order - the classifications
-// survive, the prose
+// "For the latter weapon was
+// not so specialized" -
+// RESOLVED (R424): the clean
+// p. 127 read prints the
+// Lucern/bec comparison tail
+// whole; the print never
 // garbles.
-inline bool uapaLucernBecComparisonGarbles()
+inline bool uapaLucernBecComparisonReadsClean()
     { return true; }
 // Technically, all pole arms
 // with a secondary spear tip
@@ -647,12 +655,15 @@ inline bool uapaSecondarySpearTipCombination()
 // thrusting weapon.
 inline bool uapaPartisanNotCombination()
     { return true; }
-// FLAG: the print garbles the
-// combination intro (the
-// "to ignore" line) - the
-// doctrine recovers in
-// part.
-inline bool uapaCombinationIntroGarbles()
+// It is necessary to ignore
+// secondary spear tips when
+// classifying pole arms -
+// RESOLVED (R424): the clean
+// p. 127 read prints the
+// combination intro whole,
+// the "to ignore" line
+// included.
+inline bool uapaCombinationIntroReadsClean()
     { return true; }
 // The fauchard-fork: two
 // general forms.
@@ -702,12 +713,14 @@ inline bool uapaGuisarmeVoulgeAllPurpose()
 // cutting edges - four.
 inline int uapaBillGuisarmeFeatureCount()
     { return 4; }
-// FLAG: the print splits the
-// features list (the "armor
-// ion" cell) - the roster
-// recovers, the prose
-// garbles.
-inline bool uapaBillGuisarmeFeaturesGarble()
+// "A back spike for armor
+// penetration" - RESOLVED
+// (R424): the clean p. 128
+// read prints the bill-
+// guisarme features list
+// whole; no "armor ion" split
+// exists in the print.
+inline bool uapaBillGuisarmeFeaturesReadsClean()
     { return true; }
 // Some bill-guisarmes have
 // sufficiently heavy blades
@@ -749,11 +762,16 @@ inline bool uapaStoneForkMisidentified()
 // incidental fork atop it.
 inline bool uapaHalberdWithIncidentalFork()
     { return true; }
-// FLAG: the print cuts the
-// confusion sentence tail
-// ("is certainly") - the
-// caution recovers in part.
-inline bool uapaConfusionSentenceGarbles()
+// Confusion regarding the
+// combination weapons "is
+// certainly understandable,
+// and care must be taken in
+// identifying such weapons" -
+// RESOLVED (R424): the clean
+// p. 128 read prints the
+// confusion sentence whole,
+// tail included.
+inline bool uapaConfusionSentenceReadsClean()
     { return true; }
 // Careful examination of the
 // shaft length and head shape
@@ -837,21 +855,27 @@ inline int uapaBibliographySourceCount()
 // items.
 inline int uapaPartItemTotal()
     { return 7; }
-// Two fully clean (the spear
-// family, the axe family).
+// All seven items fully clean -
+// RESOLVED (R424): the clean
+// pp. 123-128 read resolves the
+// five flagged holes (the
+// original two fully clean:
+// the spear family, the axe
+// family).
 inline int uapaPartCleanCount()
-    { return 2; }
-// Five mechanics-clean with
-// flagged holes (the
+    { return 7; }
+// Zero flagged holes remain -
+// RESOLVED (R424): the clean
+// pp. 123-128 read resolves the
 // classification system
 // paragraph, the fauchard
 // description, the Lucern/bec
 // comparison tail, the
 // combination intro and
-// features list, the
-// confusion sentence).
+// features list, and the
+// confusion sentence.
 inline int uapaPartFlaggedCount()
-    { return 5; }
+    { return 0; }
 // Nothing fully garbles -
 // every classification
 // survives its scrambled
