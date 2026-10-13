@@ -510,10 +510,30 @@ fold; the R326 audit, census 253.
 
 ### Equipping the character (pp. 25-28)
 
-- [ ] **The Armor Class Table** (p. 26)
-      - the expanded AC-by-armor table.
-- [ ] **The Equipment and Supplies
-      Costs table** (p. 26).
+- [x] **The Armor Class Table** (p. 26)
+      - CLOSED R408 (rules/uaac26.h;
+      the R408 armor class table pin
+      audit, census 335): the 11
+      composite rows pin directly
+      from the print (AC 10 to 0, the
+      printed armor sets, the 28
+      composites) - cross-checked
+      live against the R191 ladder,
+      the R371 bronze AC and the
+      R392 equipment costs. This
+      box was a stale duplicate of
+      the R392 manifest closure; the
+      direct pin now backs it.
+- [x] **The Equipment and Supplies
+      Costs table** (p. 26) - CLOSED
+      R392 (rules/uaequip26.h) and
+      re-verified R408 against the
+      independent djvu scan (the
+      R408 audit cross-checks the
+      four armor rows and the arms
+      rows live). This box was a
+      stale duplicate of the R392
+      manifest closure.
 - [ ] **Weapons, Weight and Damage by
       Type** (p. 26).
       - R337: the fragment-verified

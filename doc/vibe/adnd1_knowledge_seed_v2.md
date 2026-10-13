@@ -2239,6 +2239,22 @@ R172 were already dropped at the R171b/R172 era cut; git
   for the fourteenth round
   running - benign; the md5
   stays advisory.
+- R407 landed 2026-10-13:
+  commit a3570fb (census 334,
+  preflight GREEN), the UA
+  Appendix S clerical charts -
+  rules/uascharts.h (prefix usc)
+  - the five 8-column charts,
+  23 rows, the 13 sacred
+  animals, the gender reads,
+  the frequency catches. The
+  chart item CLOSES; Appendix
+  S stays open on the class
+  lines, MOVE, stat lines,
+  prose. The ./nn save hash
+  diverged for the fifteenth
+  round running - benign; the
+  md5 stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
