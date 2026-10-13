@@ -2049,6 +2049,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   battery - stable and
   benign; the md5 stays
   advisory.
+- R399 landed 2026-10-13:
+  commit 5433fe5 (census 326,
+  preflight GREEN), the UA
+  armor swords misc weapons
+  flagged holes completion:
+  the clean pp. 104-106 read
+  fills the last seven flagged
+  holes (uaasp 4/4 -> 8/0,
+  uamw 6/3 -> 9/0) - the ECM
+  size table row-one label and
+  height cells, the plate
+  conform parenthetical, the
+  sun blade radiance, the Final
+  Word nine appellations, the
+  axe of hurling tail, the
+  dagger of throwing ranges and
+  the hornblade handle. All
+  PDF-gated prose now stands
+  closed; the deferred seams
+  remain.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

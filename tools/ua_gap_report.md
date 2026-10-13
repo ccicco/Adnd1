@@ -2575,10 +2575,10 @@ section own index, one item each:
 - DEFERRED: the psionic expansions (a
   psionics seam; the duergar doubled
   chance rides it).
-- DEFERRED: the comeliness ENGINE site
-  (no comeliness field on Character -
-  the R322 pins charge when the site
-  exists).
+- CLOSED R400: the comeliness ENGINE
+  site - the Character field and the
+  reaction callers exist; the R322
+  pins are wired.
 - DEFERRED: the mounted-combat rules (a
   mount layer; the R321 aerial precedent
   - the pins would precede any site).
@@ -2610,9 +2610,23 @@ lands before the items it gates.
       psionic expansions.
 - [ ] The mount layer - gates the
       mounted-combat rules.
-- [ ] The comeliness site (a Character
-      field, the reaction callers) -
-      wires the R322 and R117 pins.
+- [x] The comeliness site -
+      CLOSED R400: the Character field (the
+      raw 3d6 base roll, the optional
+      "uacom" save line, the v1-save 0
+      default), the creation roll
+      (rollFresh/makeMember), and the two
+      parley-gate reaction callers
+      (state_dungeon, state_combat - the
+      spokesman reads the combined
+      charisma + comeliness
+      initial-contact adjustment, the
+      100/150/200 percentile of the
+      viewed score, the monster viewer
+      of another race). The fascinate
+      power, the order roll and the
+      illusion cap stay pinned data
+      (they gate on a fascinate site).
 - [ ] The code-level logging layer -
       bug and missing-functionality
       discovery at the code level.

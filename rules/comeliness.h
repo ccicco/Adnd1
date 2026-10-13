@@ -11,6 +11,13 @@
 // (no comeliness field; the reaction layer
 // itself has no callers) - the R311 pin-era
 // pattern: pin now, wire when a site exists.
+// R400: the site exists now - the
+// Character field, the creation roll
+// and the parley-gate reaction
+// callers read these pins. The
+// fascinate power, the order roll and
+// the illusion cap stay pinned data
+// (they gate on a fascinate site).
 //
 // The charisma ladder: charisma moves
 // comeliness point-for-point as it changes
@@ -168,5 +175,76 @@ inline int uaComelinessOrderDieCount()
     { return 3; }
 inline int uaComelinessOrderDieSides()
     { return 6; }
+
+// ---- R400: the site layer ----
+//
+// The score: the raw 3d6 base roll
+// (0 = unknown, the v1-save read)
+// plus the charisma ladder. The
+// point-for-point coupling rides the
+// CURRENT charisma - a cha change
+// moves the score the same distance.
+inline int uaComelinessScore(
+    int baseRoll, int cha) {
+    if (baseRoll <= 0) return 0;
+    return baseRoll
+        + uaComelinessChaAdj(cha);
+}
+
+// The viewed score for a viewer race:
+// the same-race pairs read 0 (the
+// print's halfling/human and
+// sylvan-elf/half-elf pairs), every
+// other viewer reads the viewed race's
+// cell. (The print's dwarf example -
+// base 9, cha 16 - reads 11; its own
+// "at 8" cell is loose arithmetic.)
+inline int uaComelinessEffective(
+    int score, CharRace viewed,
+    CharRace viewer) {
+    if (score <= 0) return 0;
+    if (viewed == viewer) return score;
+    if ((viewed == RACE_HUMAN
+         && viewer == RACE_HALFLING)
+        || (viewed == RACE_HALFLING
+            && viewer == RACE_HUMAN)
+        || (viewed == RACE_HALF_ELF
+            && viewer == RACE_ELF)
+        || (viewed == RACE_ELF
+            && viewer == RACE_HALF_ELF))
+        return score;
+    return score
+        + uaComelinessRacialAdj(viewed);
+}
+
+// The monster-viewer read: the parley
+// gate has no CharRace for the viewer,
+// so the viewed-race adjustment always
+// rides (a monster is of another race
+// by the site convention).
+inline int uaComelinessScoreOtherRace(
+    int baseRoll, int cha,
+    CharRace viewed) {
+    int s = uaComelinessScore(baseRoll, cha);
+    if (s <= 0) return 0;
+    return s
+        + uaComelinessRacialAdj(viewed);
+}
+
+// The initial-contact reaction
+// adjustment: the percent of the
+// VIEWED comeliness score - 100 at
+// +14 to +17, 150 at +18 to +21, 200
+// at +22 and up (the print: "22
+// comeliness equals +44%"). The bands
+// below interest carry no percentile -
+// the band text carries the effect.
+inline int uaComelinessReactionAdj(
+    int viewedScore) {
+    if (viewedScore <= 13) return 0;
+    return viewedScore
+        * uaComelinessReactionPct(
+              viewedScore) / 100;
+}
 
 }

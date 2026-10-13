@@ -166,6 +166,18 @@ struct Character {
     // it; v1 saves carry no line and load as
     // male). Optional "fem" line in the save.
     bool female = false;
+    // R400: the UA comeliness base roll
+    // (the R322 pins wired - the seventh
+    // attribute, 3d6 after the six). 0 =
+    // unknown (v1 saves carry no line and
+    // load as 0). Optional "uacom" line in
+    // the save. The effective score
+    // computes on demand: base + the
+    // charisma ladder (the point-for-point
+    // coupling rides the current cha) +
+    // the viewed-race adjustment (the
+    // reaction caller passes the viewer).
+    int  uaComBase = 0;
     int  classIndex = 0;
     // R230: the registry subclass (rules::Subclass;
     // -1 = a plain class member; v1 saves load -1)

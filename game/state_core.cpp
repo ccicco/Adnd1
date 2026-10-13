@@ -201,6 +201,12 @@ bool AppState::saveGame(){
             if (c.uaSubrace != 0)
                 fprintf(f, "uasub %d\n",
                         c.uaSubrace);
+            // R400: the comeliness base roll
+            // (only when known - v1 saves
+            // carry no line and load as 0)
+            if (c.uaComBase != 0)
+                fprintf(f, "uacom %d\n",
+                        c.uaComBase);
             // R326: the member sex (only
             // when female - v1 saves carry
             // no line and load as male)
@@ -651,6 +657,15 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.uaSubrace = us;
+                } else if (strcmp(tag, "uacom") == 0) {
+                    int cb = 0;
+                    if (fscanf(f, "%d", &cb) != 1 ||
+                        cb < 3 || cb > 18) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (uacom).");
+                        return false;
+                    }
+                    c.uaComBase = cb;
                 } else if (strcmp(tag, "fem") == 0) {
                     int fm = 0;
                     if (fscanf(f, "%d", &fm) != 1 ||

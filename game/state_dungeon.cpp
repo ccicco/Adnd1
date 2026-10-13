@@ -6,6 +6,7 @@
 #include "rules/swimcross.h"  // R312: the flooded crossing
 #include "rules/underwater.h"  // R311: the drown percent
 #include "rules/uwfight.h"  // R313: the crossing cap
+#include "rules/comeliness.h"  // R400: the parley gate
 
 // ---- restExplore ----
 void AppState::restExplore(){
@@ -3240,10 +3241,26 @@ void AppState::spawnRoomEncounter(int roomIndex){
         // only the book's two starred bands mean immediate
         // attack. Charisma follows the engine's best-living-
         // Cha spokesman convention (R58).
+        // R400: the comeliness site rides the
+        // spokesman - the initial-contact
+        // adjustment is the charisma ladder
+        // PLUS the comeliness percentile (the
+        // 100/150/200 read of the viewed
+        // score, the monster viewer of
+        // another race); the fascinate power
+        // and the order roll stay pinned
+        // data (no fascinate site)
         int chaAdj = 0;
         for (const auto& c : party.members) {
             if (c.hp <= 0) continue;
-            int adj = rules::chaReactionAdj(c.abilities.cha);
+            int adj =
+                rules::chaReactionAdj(
+                    c.abilities.cha)
+                + rules::uaComelinessReactionAdj(
+                      rules::uaComelinessScoreOtherRace(
+                          c.uaComBase,
+                          c.abilities.cha,
+                          (rules::CharRace)c.race));
             if (adj > chaAdj) chaAdj = adj;
         }
         dm::Reaction react = dm::rollReaction(dice, chaAdj);

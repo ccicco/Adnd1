@@ -424,6 +424,7 @@ struct CreationState {
     int  subracePick = 0;            // R326: picker row (SUB_* value)
     int  classPick = 0;              // highlighted class row
     int  subPick = -1;               // R230: registry subclass, -1 = plain
+    int  uaComRoll = 0;              // R400: the comeliness base
     std::string nameBuf;
 
     int partySizeCap = PARTY_DEFAULT;
@@ -432,6 +433,11 @@ struct CreationState {
     void rollFresh() {
         rolled = rules::rollAbilities(creationDice,
                                       rules::GEN_4D6_DROP);
+        // R400: the UA comeliness base
+        // roll - 3d6 after the six
+        // attributes (the R322 pin)
+        uaComRoll = (int)creationDice.roll(
+            3, 6, 0);
         stage = CR_ROLL;
         racePick = 0;     // R154
         female = false;   // R154
@@ -514,6 +520,11 @@ struct CreationState {
         c.female = female;              // R326: Table III M/F
         c.uaSubrace = subracePick;      // R326: the chosen sub-race
         c.abilities = raceAdjusted();   // R154: adjusted is actual
+        // R400: the UA comeliness base
+        // roll rides the member (the raw
+        // 3d6; the effective score computes
+        // at the reaction callers)
+        c.uaComBase = uaComRoll;
         c.classIndex = classIndex;
         c.level = 1;
         // R97: the gray beard - when the career begins
