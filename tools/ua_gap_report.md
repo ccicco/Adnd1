@@ -534,9 +534,19 @@ fold; the R326 audit, census 253.
       rows live). This box was a
       stale duplicate of the R392
       manifest closure.
-- [ ] **Weapons, Weight and Damage by
+- [x] **Weapons, Weight and Damage by
       Type** (p. 26).
       - R337: the fragment-verified
+      - AMENDED R420: flipped - the
+        R392 clean read (the manifest
+        item above) fills every hole
+        (the atlatl 30, the harpoon
+        50-60, the falchion 60-80, the
+        lasso dash, the garrot 1-6
+        misdecode reconciled); the R337
+        'stays open' tail is the
+        superseded stratum.
+
       cells pinned (rules/uaweapontable.h)
       - the 67-row roster, all 50 PHB
       rows cell-verified against the
@@ -552,14 +562,33 @@ fold; the R326 audit, census 253.
       garbled quarrel row are
       OCR-lost - stays open
       pending the PDF read.
-- [ ] **Weapons, hand-held, general
+- [x] **Weapons, hand-held, general
       data and to-hit adjustments** (p.
       27) - the speed factors, the
       size-class damage, the strength
       adjustment rows.
-- [ ] **Weapons, hurled and missile,
+
+      - AMENDED R420: flipped - the
+        clean p. 27 print pinned
+        (rules/uahandheld.h, the R392
+        manifest item above) - 60
+        rows, the footnotes and the
+        general note, no holes; the
+        box flips with the hygiene
+        sweep.
+- [x] **Weapons, hurled and missile,
       general data** (p. 28).
       - R338: the fragment-verified
+      - AMENDED R420: flipped - the
+        R392 clean read (the manifest
+        item above) fills every hole
+        (the rate column, the S/M/L
+        ranges, the lost AC cells, the
+        AC 7-10 columns, the aklys
+        10-foot footnote); the R338
+        'stays open' tail is the
+        superseded stratum.
+
       cells pinned (rules/uamissile.h)
       - the 24-row roster, the range
       column (the long range in tens
@@ -590,7 +619,7 @@ fold; the R326 audit, census 253.
         assassin initials and the
         facing-page notes are OCR-lost -
         noted pending the PDF read.
-- [ ] **The new weapons** (pp. 26-28
+- [x] **The new weapons** (pp. 26-28
       and DM pp. 77-79) - the aklys,
       atlatl, blowgun, caltrop, garrot,
       harpoon, hook fauchard, khopesh,
@@ -599,6 +628,17 @@ fold; the R326 audit, census 253.
       named types, each with its own
       data row).
       - R340: the fragment-verified
+      - AMENDED R420: flipped - rides
+        the DM-section closure (CLOSED
+        R373, the same R340 pins, the
+        manifest item); the residual
+        harpoon failure die, the
+        hand-crossbow poison sentence,
+        the lasso severing mechanics and
+        the DM pp. 77-79 half stay
+        flagged pending the PDF/DMG
+        read, as recorded there.
+
         prose pinned
         (rules/uanewweapons.h) - the
         16 printed descriptions (the
@@ -1305,9 +1345,20 @@ registry has no tier slot for a
 sub-1st level; a cantrip-tier seam is
 the gateway charge.
 
-- [ ] **The magic-user cantrips** (pp.
+- [x] **The magic-user cantrips** (pp.
       30-31 headers, 45-52 descriptions)
       - AMENDED R401: the tier seam
+      - AMENDED R420: flipped - the
+        R419 stratum resolves the last
+        recorded holes (the two areas,
+        the range units, the slow-poison
+        defer, the creak reads) and the
+        hole flags come off: the MU
+        cantrip descriptions stand
+        hole-free; the R401/R417 'stays
+        open' tails are the superseded
+        strata.
+
       closed (rules/cantriptier.h);
       the clean p. 30 read confirms
       the roster (Tangle reversed row
@@ -1637,11 +1688,18 @@ the gateway charge.
         stays open only on the
         casting-time fraction holes
         pending the PDF read.
-- [ ] **The cantrip acquisition rules**
+- [x] **The cantrip acquisition rules**
       (DM pp. 79-80) - cross-ref to the
       DM section item; the apprentice
       may develop at most 3 new
       cantrips.
+
+      - AMENDED R420: flipped - the
+        cross-referenced DM-section
+        item stands CLOSED R369 (rules/
+        uacantacq.h, the five random
+        bands and the 3-developed cap);
+        the players box rides it.
 
 ## Dungeon masters section (pp. 73-105)
 
@@ -2040,7 +2098,7 @@ DECIDED R374: RUN BOTH - the engine
         rounds R375/R395/R397 feed the
         roller; the charge follows.
 
-- [ ] **The random determination
+- [x] **The random determination
       tables** (pp. 84-89) - the
       revised III.A (potions), III.B
       (scrolls), III.C (rings), III.D
@@ -2090,7 +2148,7 @@ DECIDED R374: RUN BOTH - the engine
         column footnotes ride the
         prose rounds (the R221-
         224 precedent).
-- [ ] **The new potions** (p. 90).
+- [x] **The new potions** (p. 90).
       - AMENDED R376: the new
         potions prose part 1 pin
         round (rules/uapotprose.h)
@@ -2143,7 +2201,7 @@ DECIDED R374: RUN BOTH - the engine
         -25% reactions) - all
         nineteen descriptions
         pin (rules/uapotprose.h).
-- [ ] **The new scrolls** (pp. 91-93).
+- [x] **The new scrolls** (pp. 91-93).
       - AMENDED R377: the new
         scrolls protection prose
         pin round
@@ -2187,7 +2245,7 @@ DECIDED R374: RUN BOTH - the engine
         exemption) - all
         fifteen types pin
         (rules/uaprotscr.h).
-- [ ] **The new rings** (pp. 92-94).
+- [x] **The new rings** (pp. 92-94).
       - AMENDED R378: the new
         rings prose pin round
         (rules/uaringprose.h) -
@@ -2242,7 +2300,7 @@ DECIDED R374: RUN BOTH - the engine
         reattune week) - all
         thirteen descriptions
         pin (rules/uaringprose.h).
-- [ ] **The new rods and staves** (pp.
+- [x] **The new rods and staves** (pp.
       94-96).
       - AMENDED R379: the new
         rods and staves prose pin
@@ -2296,7 +2354,7 @@ DECIDED R374: RUN BOTH - the engine
         the d4 even chances) -
         all eleven descriptions
         pin (rules/uarodstave.h).
-- [ ] **The new wands** (pp. 96-97).
+- [x] **The new wands** (pp. 96-97).
       - AMENDED R380: the new
         wands prose pin round
         (rules/uawandprose.h) -
@@ -2355,7 +2413,7 @@ DECIDED R374: RUN BOTH - the engine
         fog cloud) - all twelve
         types pin
         (rules/uawandprose.h).
-- [ ] **The new miscellaneous magic
+- [x] **The new miscellaneous magic
       items** (pp. 97-104) - the named
       additions: the Egg of Reason, the
       Girdle of Many Pouches, the
@@ -2539,7 +2597,7 @@ DECIDED R374: RUN BOTH - the engine
         every part ledger runs
         clean, no flagged hole
         remains.
-- [ ] **The new armor and shields and
+- [x] **The new armor and shields and
       swords** (pp. 104-105) - the
       anything sword (the 3-form limit
       and the dweomer loss), the Final
@@ -2580,7 +2638,7 @@ DECIDED R374: RUN BOTH - the engine
         Rebutter, Replier,
         Retorter, Scather,
         Squelcher).
-- [ ] **The new miscellaneous weapons**
+- [x] **The new miscellaneous weapons**
       (pp. 105-106) - the Axe of
       Hurling (the return, the double
       hurled damage, the d20 bonus
@@ -2699,7 +2757,7 @@ own index, one item each:
 
 ## Appendices (pp. 106-129)
 
-- [ ] **Appendix Q: weaponless combat**
+- [x] **Appendix Q: weaponless combat**
       (pp. 106-108) - the pummeling,
       wrestling and overbearing systems,
       the Pummeling Table and the
