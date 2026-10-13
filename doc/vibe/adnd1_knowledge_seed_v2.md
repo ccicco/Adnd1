@@ -1971,6 +1971,33 @@ R172 were already dropped at the R171b/R172 era cut; git
   the copy passed the battery -
   stable and benign; the md5
   stays advisory.
+- R396 landed 2026-10-13:
+  commit daaad4a (census 323,
+  preflight GREEN), the UA
+  new-potions prose
+  completion: the clean pp.
+  90-91 read fills the
+  seven PDF-gated
+  descriptions (the oils of
+  acid resistance,
+  disenchantment, elemental
+  invulnerability, impact,
+  and the philters of
+  beauty, glibness,
+  stammering) - rules/
+  uapotprose.h takes the
+  fill sections, the part
+  ledger flips 12/7 ->
+  19/0, the R376 item
+  flips AMENDED R396: closed
+  - every UA potions-band
+  description pins. The
+  ./nn save hash diverged
+  for the fourth round
+  running yet the copy
+  passed the battery -
+  stable and benign; the
+  md5 stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

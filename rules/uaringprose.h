@@ -14,9 +14,10 @@
 // faerie's fraction cells,
 // ram's adjustment tail,
 // shocking grasp's opening,
-// sustenance's reattune) await
-// the PDF - the gap item
-// stays open. The scrolls and
+// sustenance's reattune) the
+// R397 clean read filled -
+// the gap item closed. The
+// scrolls and
 // skeleton seams ride in the
 // regtest audit, not here.
 namespace rules {
@@ -239,16 +240,483 @@ inline bool uarpTruthDweomerBlocksNotice()
 inline bool uarpTruthDweomerSilencesVoice()
     { return true; }
 
-// ---- the extract ledger ----
-// Six of the thirteen
-// descriptions pin; the
-// seven garbled ones stay
-// PDF-gated.
-inline int uarpCleanCount()
+// ---- the ring of boccob (the R397
+// clean read) ----
+// An ornate ring that appears
+// valuable but non-magical; even the
+// strongest magical detection
+// reveals nothing.
+inline bool uarpBoccobAppearsNonMagical()
+    { return true; }
+
+inline bool uarpBoccobUndetectable()
+    { return true; }
+
+// A contacting magical device
+// malfunctions and fails to affect
+// its target.
+inline bool uarpBoccobContactsDeviceFails()
+    { return true; }
+
+// A device failing its save versus
+// the ring turns non-magical.
+inline bool uarpBoccobFailedSaveNonMagical()
+    { return true; }
+
+// Each cancellation silences the
+// ring 1-4 hours.
+inline int uarpBoccobQuiescenceLoHours()
+    { return 1; }
+
+inline int uarpBoccobQuiescenceHiHours()
+    { return 4; }
+
+// Single-use items (a magic arrow, a
+// javelin of lightning) are not
+// cancelled, only their magic is
+// blunted.
+inline bool uarpBoccobSingleUseNotCancelled()
+    { return true; }
+
+// The immunity never prevents the
+// normal damage of such an item.
+inline bool uarpBoccobNormalDamageStill()
+    { return true; }
+
+// Item saves versus the
+// cancellation: 1 automatic failure;
+// 2 relics; 3 artifacts; 4 hand-held
+// weapons; 5 rods and staves; 6 all
+// other items; 7-20 any item saves.
+inline int uarpBoccobSaveAutoFailRoll()
+    { return 1; }
+
+inline int uarpBoccobSaveRelicRoll()
+    { return 2; }
+
+inline int uarpBoccobSaveArtifactRoll()
+    { return 3; }
+
+inline int uarpBoccobSaveHandWeaponRoll()
+    { return 4; }
+
+inline int uarpBoccobSaveRodStaffRoll()
+    { return 5; }
+
+inline int uarpBoccobSaveOtherRoll()
     { return 6; }
 
-inline int uarpGarbledCount()
+inline int uarpBoccobSaveAnySavesLo()
     { return 7; }
+
+inline int uarpBoccobSaveAnySavesHi()
+    { return 20; }
+
+// ---- the ring of chameleon power
+// (the R397 clean read) ----
+// Magical blending with the
+// surroundings: 90% invisibility in
+// foliage, against walls, and so
+// forth.
+inline int uarpChamInvisibilityPct()
+    { return 90; }
+
+// Amid creatures of intelligence 4
+// or greater within 6", the wearer
+// seems one of them; each turn of
+// association carries a 5%
+// cumulative detection chance.
+inline int uarpChamAssociateIntMin()
+    { return 4; }
+
+inline int uarpChamAssociateRangeIn()
+    { return 6; }
+
+inline int uarpChamDetectPctPerTurn()
+    { return 5; }
+
+// The association never persists
+// past 20 turns - the chance reaches
+// 100%.
+inline int uarpChamMaxAssociationTurns()
+    { return 20; }
+
+// Creatures of intelligence 16 or
+// greater add their intelligence
+// score to the base chance.
+inline int uarpChamIntBonusMin()
+    { return 16; }
+
+// Creatures of intelligence 3 or
+// lower detect the wearer
+// instinctively within 1".
+inline int uarpChamLowIntMax()
+    { return 3; }
+
+inline int uarpChamLowIntRangeIn()
+    { return 1; }
+
+// ---- the ring of clumsiness (the
+// R397 clean read) ----
+// A cursed ring radiating a
+// disguising secondary dweomer; it
+// takes effect only under stress -
+// combat, stealth, delicate
+// activity.
+inline bool uarpClumDisguisesBanefulNature()
+    { return true; }
+
+inline bool uarpClumTriggersUnderStress()
+    { return true; }
+
+// The secondary powers roll d%:
+// 01-10 free action, 11-20 feather
+// falling, 21-35 invisibility, 36-50
+// jumping, 51-60 swimming, 61-80
+// warmth, 81-00 water walking.
+inline int uarpClumSecondaryPowerCount()
+    { return 7; }
+
+inline int uarpClumFreeActionLo()
+    { return 1; }
+
+inline int uarpClumFreeActionHi()
+    { return 10; }
+
+inline int uarpClumFeatherFallLo()
+    { return 11; }
+
+inline int uarpClumFeatherFallHi()
+    { return 20; }
+
+inline int uarpClumInvisibilityLo()
+    { return 21; }
+
+inline int uarpClumInvisibilityHi()
+    { return 35; }
+
+inline int uarpClumJumpingLo()
+    { return 36; }
+
+inline int uarpClumJumpingHi()
+    { return 50; }
+
+inline int uarpClumSwimmingLo()
+    { return 51; }
+
+inline int uarpClumSwimmingHi()
+    { return 60; }
+
+inline int uarpClumWarmthLo()
+    { return 61; }
+
+inline int uarpClumWarmthHi()
+    { return 80; }
+
+inline int uarpClumWaterWalkLo()
+    { return 81; }
+
+inline int uarpClumWaterWalkHi()
+    { return 100; }
+
+// Dexterity drops to half normal,
+// rounded down; stealth and
+// precise-action chances halve the
+// same way.
+inline bool uarpClumDexHalvedDown()
+    { return true; }
+
+inline bool uarpClumStealthHalved()
+    { return true; }
+
+// Casting that handles a material or
+// somatic component succeeds only on
+// a save versus spell - else the
+// spell is botched and annulled.
+inline bool uarpClumComponentNeedsSave()
+    { return true; }
+
+// Only a dispel magic versus
+// 12th-level magic removes the ring,
+// destroying both dweomers.
+inline bool uarpClumRemovalIsDispel()
+    { return true; }
+
+inline int uarpClumRemovalVsLevel()
+    { return 12; }
+
+inline bool uarpClumRemovalDestroysBoth()
+    { return true; }
+
+// ---- the ring of faerie (the R397
+// clean read) ----
+// Given by the grey elves to their
+// closest associates and allies
+// only; each ring aligns to evil
+// (5%), good (75%), or neutrality
+// (20%).
+inline bool uarpFaerieGreyElfGift()
+    { return true; }
+
+inline int uarpFaerieEvilPct()
+    { return 5; }
+
+inline int uarpFaerieGoodPct()
+    { return 75; }
+
+inline int uarpFaerieNeutralPct()
+    { return 20; }
+
+// A ring of contrary alignment will
+// not function.
+inline bool uarpFaerieAlignmentMustMatch()
+    { return true; }
+
+// In woodlands the wearer is
+// detectable only by creatures able
+// to detect invisible objects.
+inline bool uarpFaerieWoodlandHideInvisible()
+    { return true; }
+
+// Alone and not in metal armor, the
+// wearer moves silently: a 01-67
+// roll (66 and two-thirds percent)
+// succeeds and grants surprise on
+// 1-4 on a d6.
+inline bool uarpFaerieSilenceNeedsAlone()
+    { return true; }
+
+inline bool uarpFaerieSilenceNoMetalArmor()
+    { return true; }
+
+inline int uarpFaerieSilentSuccessHi()
+    { return 67; }
+
+// A 68 or higher means the movement
+// noise carries that many feet.
+inline int uarpFaerieNoiseFeetMin()
+    { return 68; }
+
+inline int uarpFaerieSurpriseDieMin()
+    { return 1; }
+
+inline int uarpFaerieSurpriseDieMax()
+    { return 4; }
+
+// Infravision to 60 feet.
+inline int uarpFaerieInfravisionFeet()
+    { return 60; }
+
+// Concealed doors noted 16 and
+// two-thirds percent (1 on d6) in
+// passing, 50% when actively
+// searched.
+inline int uarpFaerieConcealedPassDie()
+    { return 1; }
+
+inline int uarpFaerieConcealedSearchedPct()
+    { return 50; }
+
+// Secret doors found 33 and
+// one-third percent (1-2 on d6) when
+// actively searched.
+inline int uarpFaerieSecretSearchedDieMin()
+    { return 1; }
+
+inline int uarpFaerieSecretSearchedDieMax()
+    { return 2; }
+
+// ---- the ring of the ram (the R397
+// clean read) ----
+// The ram-force strikes one target:
+// 1-6 at 1 charge, 2-12 at 2, 3-18
+// at 3 (the maximum); range 3".
+inline int uarpRamDmgLoOneCharge()
+    { return 1; }
+
+inline int uarpRamDmgHiOneCharge()
+    { return 6; }
+
+inline int uarpRamDmgLoTwoCharges()
+    { return 2; }
+
+inline int uarpRamDmgHiTwoCharges()
+    { return 12; }
+
+inline int uarpRamDmgLoThreeCharges()
+    { return 3; }
+
+inline int uarpRamDmgHiThreeCharges()
+    { return 18; }
+
+inline int uarpRamMaxChargesPerAttack()
+    { return 3; }
+
+inline int uarpRamRangeIn()
+    { return 3; }
+
+// A failed save versus spell knocks
+// the victim free - off walls,
+// ladders, ledges.
+inline bool uarpRamFailedSaveKnockedFree()
+    { return true; }
+
+// Save adjustments: smaller than
+// man-sized -1, larger +2, Strength
+// under 12 -1, Strength 18-20 +3,
+// Strength over 20 +6, four or more
+// legs +4, over 1,000 pounds +2, 2
+// charges -1, 3 charges -2.
+inline int uarpRamAdjSmaller()
+    { return -1; }
+
+inline int uarpRamAdjLarger()
+    { return 2; }
+
+inline int uarpRamAdjStrUnder12()
+    { return -1; }
+
+inline int uarpRamAdjStr18to20()
+    { return 3; }
+
+inline int uarpRamAdjStrOver20()
+    { return 6; }
+
+inline int uarpRamAdjFourLegs()
+    { return 4; }
+
+inline int uarpRamAdjOver1000Lbs()
+    { return 2; }
+
+inline int uarpRamAdjTwoCharges()
+    { return -1; }
+
+inline int uarpRamAdjThreeCharges()
+    { return -2; }
+
+// Doors open as an 18/00 Strength; 2
+// charges as Strength 19, 3 as
+// Strength 20; held or locked
+// portals included.
+inline int uarpRamDoorStrBase()
+    { return 18; }
+
+inline int uarpRamDoorStrTwoCharges()
+    { return 19; }
+
+inline int uarpRamDoorStrThreeCharges()
+    { return 20; }
+
+// Structural damage matches an
+// actual battering ram, with double
+// or triple damage at 2 or 3
+// charges.
+inline bool uarpRamStructuralAsBatteringRam()
+    { return true; }
+
+inline bool uarpRamStructuralDoubleTriple()
+    { return true; }
+
+// Magic items struck save versus
+// crushing blow only at the full 3
+// charges; non-magical items always
+// save against the impact.
+inline bool uarpRamItemsSaveOnlyAtThree()
+    { return true; }
+
+inline bool uarpRamItemsSaveVsCrushing()
+    { return true; }
+
+// Discovered with 6-60 charges;
+// recharged by enchant an item plus
+// Bigby's Clenched Fist.
+inline int uarpRamChargesLo()
+    { return 6; }
+
+inline int uarpRamChargesHi()
+    { return 60; }
+
+inline bool uarpRamRechargeNeedsFist()
+    { return true; }
+
+// ---- the ring of shocking grasp
+// (the R397 clean read) ----
+// Only a faint, unidentifiable aura
+// radiates; a successful touch
+// attack with the ring hand delivers
+// 7-14 (d8 + 6).
+inline bool uarpShockFaintUnidentifiable()
+    { return true; }
+
+inline bool uarpShockNeedsTouchHit()
+    { return true; }
+
+inline int uarpShockDmgLo()
+    { return 7; }
+
+inline int uarpShockDmgHi()
+    { return 14; }
+
+inline int uarpShockDmgDieSides()
+    { return 8; }
+
+inline int uarpShockDmgPlus()
+    { return 6; }
+
+// After three discharges the ring
+// goes inert for 1 turn.
+inline int uarpShockDischargesBeforeRest()
+    { return 3; }
+
+inline int uarpShockRestTurns()
+    { return 1; }
+
+// ---- the ring of sustenance (the
+// R397 clean read) ----
+// Life-sustaining nourishment
+// without food or drink; two hours
+// of sleep give the benefit of
+// eight.
+inline bool uarpSustNoFoodOrDrink()
+    { return true; }
+
+inline int uarpSustSleepHours()
+    { return 2; }
+
+inline int uarpSustSleepBenefitHours()
+    { return 8; }
+
+// A full week of wearing attunes the
+// ring; removal immediately drops
+// the benefits and demands a fresh
+// week.
+inline int uarpSustWearWeeks()
+    { return 1; }
+
+inline bool uarpSustRemovalResets()
+    { return true; }
+
+inline int uarpSustReattuneWeeks()
+    { return 1; }
+
+// After any seven consecutive days
+// of functioning the ring rests one
+// week.
+inline int uarpSustConsecutiveDays()
+    { return 7; }
+
+inline int uarpSustRestWeeks()
+    { return 1; }
+// ---- the extract ledger ----
+// All thirteen descriptions
+// pin - the R397 clean read
+// filled the seven the
+// extract garbled.
+inline int uarpCleanCount()
+    { return 13; }
+
+inline int uarpGarbledCount()
+    { return 0; }
 
 inline int uarpTotalTypes()
     { return 13; }

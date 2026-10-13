@@ -1853,6 +1853,28 @@ DECIDED R374: RUN BOTH - the engine
         item stays OPEN,
         PDF-gated for the
         garbled remainder.
+      - AMENDED R397: closed -
+        the clean PDF read (the
+        same clean OCR as
+        R394-R396) fills all
+        four: cold (the 3"
+        sphere, absolute-zero
+        normal cold, the
+        resist-cold +6 save
+        with quarter/eighth
+        damage), electricity
+        (the 2" sphere,
+        immunity, 3-12
+        rounds), weapons
+        magical (reader only,
+        the spell-missile
+        exemption) and
+        non-magic (the 1"
+        sphere, the
+        large-missile
+        exemption) - all
+        fifteen types pin
+        (rules/uaprotscr.h).
 - [ ] **The new rings** (pp. 92-94).
       - AMENDED R378: the new
         rings prose pin round
@@ -1878,6 +1900,36 @@ DECIDED R374: RUN BOTH - the engine
         stays OPEN, PDF-gated
         for the garbled
         remainder.
+      - AMENDED R397: closed -
+        the clean PDF read fills
+        all seven: boccob (the
+        1-6 item-save list,
+        7-20 auto-save, the
+        1-4 hour quiescence),
+        chameleon power (90%,
+        the 5% cumulative
+        detection, int 16+
+        bonus), clumsiness (the
+        seven-band d% table,
+        halved dexterity, the
+        dispel-vs-12th
+        removal), faerie (the
+        5/75/20 alignment, the
+        01-67 silence, the
+        door dice), ram (the
+        1-6/2-12/3-18 charge
+        ladder, the nine-entry
+        adjustment list, the
+        18/00-19-20 door
+        strengths, 6-60
+        charges), shocking
+        grasp (7-14, d8+6, three
+        discharges), sustenance
+        (the two-hours-for-
+        eight sleep, the
+        reattune week) - all
+        thirteen descriptions
+        pin (rules/uaringprose.h).
 - [ ] **The new rods and staves** (pp.
       94-96).
       - AMENDED R379: the new
@@ -1899,6 +1951,39 @@ DECIDED R374: RUN BOTH - the engine
         the item stays OPEN,
         PDF-gated for the
         garbled remainder.
+      - AMENDED R397: closed -
+        the clean PDF read fills
+        all seven: flailing (the
+        horseman/footman damage,
+        +3, both heads, the +4
+        protection charge),
+        passage (the five
+        functions, the astral
+        five, the MU-20th
+        recharge), splendor (the
+        continual 18 charisma,
+        the 7,000-10,000 gp
+        garb, the 1,500-3,000
+        square foot tent, not
+        rechargeable), the
+        staff-spear (the three
+        commands, the six-row
+        bonus/x.p./g.p. table),
+        swarming insects (60
+        plus ten per level, ten
+        insects per point, the
+        natural-AC-5 cutoff,
+        never recharged),
+        thunder and lightning
+        (the +2/+3 base, the
+        16-48 stroke, the
+        segments-equal-charges
+        rule), woodlands (the
+        three charge powers,
+        the +1-to-+4 ladder,
+        the d4 even chances) -
+        all eleven descriptions
+        pin (rules/uarodstave.h).
 - [ ] **The new wands** (pp. 96-97).
       - AMENDED R380: the new
         wands prose pin round
@@ -1928,6 +2013,36 @@ DECIDED R374: RUN BOTH - the engine
         stays OPEN, PDF-gated
         for the garbled
         remainder.
+      - AMENDED R397: closed -
+        the clean PDF read fills
+        the two flagged holes
+        (defoliation's never-
+        wood opening, metal
+        command's dropped
+        operational verb) and
+        all five garbled types:
+        buckler (the one-and-a-
+        half foot wand, the
+        cleric block, the
+        dagger/buckler/spiked
+        forms), earth and stone
+        (the half/1/2 charge
+        mapping, the 50% mud-
+        transmuters), force (the
+        4-foot +5 bastard-sword
+        shaft, the wall of
+        force, the hand at
+        half charge), size
+        alteration (the 50%
+        change, the hill/fire
+        giant strengths, the
+        system-shock removal),
+        steam and vapor (the
+        1-3-5 cone, the 6/4/2
+        dice decay, the 4-6-8
+        fog cloud) - all twelve
+        types pin
+        (rules/uawandprose.h).
 - [ ] **The new miscellaneous magic
       items** (pp. 97-104) - the named
       additions: the Egg of Reason, the

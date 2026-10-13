@@ -11,10 +11,11 @@
 // plants, poison, the traps
 // trio (50 mechanical, 30
 // magical, 20 any), water. The
-// four garbled types (cold,
+// four PDF-gated types (cold,
 // electricity, the two weapons
-// scrolls) await the PDF - the
-// gap item stays open. The
+// scrolls) the R397 clean read
+// filled - the gap item
+// closed. The
 // potions and skeleton seams
 // ride in the regtest audit,
 // not here.
@@ -284,17 +285,127 @@ inline int uapsWaterDurationLoTurns()
 inline int uapsWaterDurationHiTurns()
     { return 8; }
 
+// ---- the protection from cold
+// scroll (the R397 clean read) ----
+// Reading 3 segments; a 3" sphere;
+// normal cold resisted down to
+// absolute zero.
+inline int uapsColdReadingSegs()
+    { return 3; }
+
+inline int uapsColdSphereDiamIn()
+    { return 3; }
+
+inline bool uapsColdNormalToAbsoluteZero()
+    { return true; }
+
+// Against magical cold the scroll
+// acts as the clerical resist cold
+// spell with enhanced benefits.
+inline bool uapsColdActsAsResistCold()
+    { return true; }
+
+inline int uapsColdMagicalSaveBonus()
+    { return 6; }
+
+// Magical cold damages one-quarter
+// normal without a save, one-eighth
+// with one.
+inline bool uapsColdNoSaveDmgQuarter()
+    { return true; }
+
+inline bool uapsColdSavedDmgEighth()
+    { return true; }
+
+// The duration 5-8 turns (d4 + 4).
+inline int uapsColdDurationLoTurns()
+    { return 5; }
+
+inline int uapsColdDurationHiTurns()
+    { return 8; }
+
+// ---- the protection from
+// electricity scroll (the R397 clean
+// read) ----
+// Reading 5 segments; a 2" sphere;
+// immunity to any electrical attacks
+// and associated effects; 3-12
+// rounds (3d4).
+inline int uapsElecReadingSegs()
+    { return 5; }
+
+inline int uapsElecSphereDiamIn()
+    { return 2; }
+
+inline bool uapsElecImmuneAll()
+    { return true; }
+
+inline int uapsElecDurationLoRounds()
+    { return 3; }
+
+inline int uapsElecDurationHiRounds()
+    { return 12; }
+
+// ---- the protection from weapons,
+// magical scroll (the R397 clean
+// read) ----
+// Reading 1 round; the reader only;
+// the indicated magic weapon cannot
+// touch or harm; missile protection
+// does NOT extend to missiles
+// created by spell casting (such as
+// magic missile) or a spell-like
+// power; 5-8 rounds (d4 + 4).
+inline int uapsWeapMagReadingRounds()
+    { return 1; }
+
+inline bool uapsWeapMagReaderOnly()
+    { return true; }
+
+inline bool uapsWeapMagExemptsSpellMissiles()
+    { return true; }
+
+inline int uapsWeapMagDurationLoRounds()
+    { return 5; }
+
+inline int uapsWeapMagDurationHiRounds()
+    { return 8; }
+
+// ---- the protection from weapons,
+// non-magic scroll (the R397 clean
+// read) ----
+// Reading 1 round; a 1" sphere; the
+// indicated non-magical weapon
+// cannot touch or harm; missile
+// protection does NOT extend to
+// normal missiles of large size
+// (catapult projectiles, objects
+// hurled by giants); 5-8 rounds (d4
+// + 4).
+inline int uapsWeapNonMagReadingRounds()
+    { return 1; }
+
+inline int uapsWeapNonMagSphereDiamIn()
+    { return 1; }
+
+inline bool uapsWeapNonMagExemptsLargeMissiles()
+    { return true; }
+
+inline int uapsWeapNonMagDurationLoRounds()
+    { return 5; }
+
+inline int uapsWeapNonMagDurationHiRounds()
+    { return 8; }
 // ---- the extract ledger ----
-// Eleven of the fifteen types
-// pin clean; the four garbled
-// types (cold, electricity,
-// the two weapons scrolls)
-// stay PDF-gated.
+// All fifteen types pin -
+// the R397 clean read filled
+// the four the extract
+// garbled.
 inline int uapsCleanCount()
-    { return 11; }
+    { return 15; }
 
 inline int uapsGarbledCount()
-    { return 4; }
+    { return 0; }
 
 }   // namespace rules
 
