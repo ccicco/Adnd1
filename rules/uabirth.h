@@ -93,13 +93,17 @@ inline int uabirthElfDrowMod()
 inline int uabirthElfGrayMod()
     { return -30; }
 
-// The high-elf cell prints a bare 20 - the sign is
-// lost in the print; the magnitude pins.
+// The R394 clean read: the high-elf
+// cell prints -20 - the sign pins
+// negative like every other cell.
 inline int uabirthElfHighModMagnitude()
     { return 20; }
 
+inline int uabirthElfHighMod()
+    { return -20; }
+
 inline bool uabirthElfHighModSignLost()
-    { return true; }
+    { return false; }
 
 inline int uabirthElfWoodMod()
     { return -10; }
@@ -128,8 +132,10 @@ inline bool uabirthHumanNoMods()
     { return true; }
 
 // ---- the intro reads ----
+// The R394 clean read: the section
+// intro reads clean in the PDF.
 inline bool uabirthIntroGarbled()
-    { return true; }
+    { return false; }
 
 inline bool uabirthDmDecidesToMilieu()
     { return true; }

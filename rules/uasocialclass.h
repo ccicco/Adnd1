@@ -21,6 +21,10 @@
 //     small and rustic)" - the parenthetical reads
 //     against the printed band; the print wins, the
 //     divergence flagged pending the PDF.
+//   - R394: the clean PDF read fills the LLC
+//     label cell (the roster head is Freed
+//     slaves) and confirms the halfling
+//     parenthetical.
 //   - the R336 seam: the cavalier money stations name
 //     the LMC/MMC/UMC/LUC/MUC/UUC bands exactly - the
 //     band names pin to the R336 spellings.
@@ -91,7 +95,8 @@ inline int uasocRosterCount(int i) {
 
 inline const char* uasocRosterName(int i, int j) {
     static const char* const r0[8] = {
-        "slaves", "peasants", "tinkers",
+        "Freed slaves", "peasants",
+        "tinkers",
         "vagabonds", "beggars", "criminals",
         "low-level thieves",
         "low-level and mid-level assassins",
@@ -182,8 +187,10 @@ inline const char* uasocRosterName(int i, int j) {
     }
 }
 
+// The R394 clean read: the LLC label
+// cell reads clean.
 inline bool uasocLlcLabelCellGarbled()
-    { return true; }
+    { return false; }
 
 // ---- the intro reads ----
 // The table does not include any social or political
@@ -232,8 +239,11 @@ inline bool uasocGnomeULCToLMC()
 inline bool uasocHalflingULC()
     { return true; }
 
+// The R394 clean read: the halfling
+// parenthetical confirms the ULC
+// band.
 inline bool uasocHalflingParentheticalDivergence()
-    { return true; }
+    { return false; }
 
 inline bool uasocHalfElfSlightlyAboveHuman()
     { return true; }

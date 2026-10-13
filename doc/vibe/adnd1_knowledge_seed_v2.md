@@ -1879,6 +1879,37 @@ R172 were already dropped at the R171b/R172 era cut; git
   round now gets the static
   header check; commit only on
   GREEN.
+- R393 landed 2026-10-13: commit
+  b069288, census 320, the
+  PDF-read completion sweep: the
+  clean PDF fills the three
+  fragment-round holes -
+  weaponspec.h all 24 spec
+  cells plus the superseding
+  note; thiefarmor.h the Open
+  Locks 0/-5/-10, no-armor
+  dashes, band-2 2/1,
+  footnote-1 tail, footnote-4
+  orphaned (the print anomaly);
+  uailacquisition.h the IL
+  starting list column-wise
+  decode (the R365 interleave
+  corrected). regtest
+  R331/R334/R365 amend to the
+  filled reads; the R393 audit
+  lands before the R227 anchor;
+  the three gap items flip
+  AMENDED R393: closed. The
+  body was rebuilt semantically
+  after the sandbox lost the
+  verified original (the
+  published md5 differs by
+  design); the Termux copy via
+  ./nn hashed differently yet
+  passed the battery - the ./nn
+  save path may not be
+  byte-faithful; verify the tail
+  bytes next round.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

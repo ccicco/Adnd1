@@ -1356,9 +1356,11 @@ the gateway charge.
         clamps and the 9d6 fighter
         strength example pin clean;
         the dice-count table cells
-        extract empty - the cell
-        body a hole in-header
-        pending the PDF; CLOSED.
+        extract empty in the
+        markdown - the R394 clean
+        PDF read fills the 12 x 7
+        matrix cell by cell;
+        CLOSED clean.
 - [x] **Starting hit-point minimums**
       (p. 74) - cavalier 6, paladin 6,
       cleric 5, druid 5, fighter 6,
@@ -1504,7 +1506,13 @@ the gateway charge.
         percentages, the flying and
         aquatic steeds rules; the
         percentage sums
-        cross-check; CLOSED.
+        cross-check; the R394 clean
+        read repins the columns
+        (light 21/15/NA/NA, medium
+        17/15/12/NA, heavy
+        15/14/13/12 - the R370
+        heavy values sat one
+        column left); CLOSED clean.
 - [x] **The new weapon descriptions**
       (pp. 77-79) - the 14 named types
       (see the players section item);
@@ -1665,8 +1673,11 @@ the gateway charge.
         profession rule; the LLC label
         cell garbles and the halfling
         ULC parenthetical divergence
-        flagged pending the PDF; the
-        R336 seam cross-checks the
+        flagged pending the PDF - the
+        R394 clean read fills the
+        label (Freed slaves) and
+        confirms the parenthetical;
+        the R336 seam cross-checks the
         cavalier money stations.
 - [x] **Circumstances of birth** (p.
       83) - the Birth Table (the
@@ -1683,8 +1694,9 @@ the gateway charge.
         (the half-orc +10/+75 split);
         the section intro garbles and
         the high-elf sign cell lost -
-        flagged in-header pending the
-        PDF.
+        the R394 clean read fills
+        both (the intro clean, the
+        sign negative -20).
 
 ### Treasure (pp. 84-106) - THE DECISION
 
@@ -2053,26 +2065,52 @@ DECIDED R374: RUN BOTH - the engine
 Every named table from the DM section
 own index, one item each:
 
-- [ ] Armor, Types and Encumbrance (p.
-      75) - the armor table item above.
-- [ ] Barded Warhorse Movement Rate (p.
+- [x] Armor, Types and Encumbrance (p.
+      75).
+      - CLOSED R371 (rules/uaarmor.h);
+        the R394 manifest sweep.
+- [x] Barded Warhorse Movement Rate (p.
       76).
-- [ ] Birth Table (p. 83).
-- [ ] Character Generation Method V (p.
+      - CLOSED R370 + the R394 clean
+        read (the column repin,
+        rules/uasmalls1.h).
+- [x] Birth Table (p. 83).
+      - CLOSED R367 (rules/uabirth.h);
+        the R394 clean read confirms.
+
+- [x] Character Generation Method V (p.
       74).
+      - CLOSED R370 + the R394 clean
+        read (the dice-count matrix,
+        rules/uasmalls1.h).
 - [ ] Clerical Quick Reference Chart,
       non-human deities (pp. 121-122) -
       rides the Appendix S OUT.
-- [ ] Hit Points, Starting (p. 74).
-- [ ] Illusionist Spells, Starting List
+- [x] Hit Points, Starting (p. 74).
+      - CLOSED R370 (rules/uasmalls1.h).
+
+- [x] Illusionist Spells, Starting List
       (p. 80).
-- [ ] Overbearing, Armor Class
+      - CLOSED R365 + the R393 clean
+        read (rules/uailacquisition.h).
+- [x] Overbearing, Armor Class
       Adjustments (p. 108).
-- [ ] Parents Marital Status Table (p.
+      - CLOSED R389 + the R394 clean
+        read (the AC prose fill,
+        rules/uaappendq.h).
+- [x] Parents Marital Status Table (p.
       83).
-- [ ] Pummeling Table, Chance of
+      - CLOSED R367 (rules/uabirth.h).
+- [x] Pummeling Table, Chance of
       Stunning (p. 107).
-- [ ] Social Class Table (p. 82).
+      - CLOSED R389 + the R394 clean
+        read (the row bodies,
+        rules/uaappendq.h).
+- [x] Social Class Table (p. 82).
+      - CLOSED R367 + the R394 clean
+        read (the LLC label fill,
+        rules/uasocialclass.h).
+
 - [ ] Treasure Table III: Magic Items
       (p. 84) - the umbrella table; the
       sub-tables are the III.A-III.H
@@ -2108,6 +2146,20 @@ own index, one item each:
         pins as its own data layer -
         the R374 dial precedent),
         stays PDF-gated only.
+      - AMENDED R394: closed - the
+        clean pp. 106-108 read fills
+        every flagged hole (the System
+        I six-foot example, the
+        pummeling row bodies and
+        large-object damage, the
+        acrobat tumbling note, the
+        kicking tail, the grappling
+        purpose and size word and
+        Str-17 tail and M-band, the
+        overbearing AC prose and
+        weakest tail, the demon
+        exception); all six parts
+        fully clean.
 - [ ] **Appendix R: non-lethal combat**
       (pp. 109-110) - the subdual rules
       (the intelligence bands, the flat

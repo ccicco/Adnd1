@@ -35097,7 +35097,7 @@ int main() {
         int bad = 0;
         // ---- the uasoc pins ----
             if (uasocBandCount() != 9) ++bad;
-            if (!uasocLlcLabelCellGarbled()) ++bad;
+            if (uasocLlcLabelCellGarbled()) ++bad;
             if (!uasocTableExcludesPoliticalInfo()) ++bad;
             if (!uasocGuidelinesFollowTheTable()) ++bad;
             if (!uasocDmModelsToMilieu()) ++bad;
@@ -35110,7 +35110,7 @@ int main() {
             if (!uasocGrayElfLUC()) ++bad;
             if (!uasocGnomeULCToLMC()) ++bad;
             if (!uasocHalflingULC()) ++bad;
-            if (!uasocHalflingParentheticalDivergence()) ++bad;
+            if (uasocHalflingParentheticalDivergence()) ++bad;
             if (!uasocHalfElfSlightlyAboveHuman()) ++bad;
             if (!uasocHalfOrcLLC()) ++bad;
             if (!uasocNonHumanPlacementMilieuDependent()) ++bad;
@@ -35128,7 +35128,7 @@ int main() {
             if (uabirthElfDrowMod() != -15) ++bad;
             if (uabirthElfGrayMod() != -30) ++bad;
             if (uabirthElfHighModMagnitude() != 20) ++bad;
-            if (!uabirthElfHighModSignLost()) ++bad;
+            if (uabirthElfHighModSignLost()) ++bad;
             if (uabirthElfWoodMod() != -10) ++bad;
             if (uabirthElfOtherMod() != -15) ++bad;
             if (uabirthGnomeMod() != -20) ++bad;
@@ -35137,7 +35137,7 @@ int main() {
             if (uabirthHalfOrcBirthMod() != 10) ++bad;
             if (uabirthHalfOrcMaritalMod() != 75) ++bad;
             if (!uabirthHumanNoMods()) ++bad;
-            if (!uabirthIntroGarbled()) ++bad;
+            if (uabirthIntroGarbled()) ++bad;
             if (!uabirthDmDecidesToMilieu()) ++bad;
             if (!uabirthTablesAStartingPoint()) ++bad;
         // ---- the band table ----
@@ -35488,7 +35488,7 @@ int main() {
                 ++bad;
             if (uasm1MethodVFighterStrengthDice()
                     != 9) ++bad;
-            if (!uasm1MethodVTableCellsLost())
+            if (uasm1MethodVTableCellsLost())
                 ++bad;
         // ---- the starting hit points ----
             if (uasm1StartHpClassCount() != 12)
@@ -35521,30 +35521,36 @@ int main() {
         // ---- the barding table ----
             if (uasm1BardLightLeather() != 21)
                 ++bad;
-            if (uasm1BardLightChain() != 15)
+            if (!uasm1BardLightChainNa())
                 ++bad;
-            if (!uasm1BardLightScaleNa()) ++bad;
+            if (uasm1BardLightScale() != 15)
+                ++bad;
+            if (uasm1BardLightScaleNa()) ++bad;
             if (!uasm1BardLightPlateNa()) ++bad;
             if (uasm1BardMediumLeather() != 17)
                 ++bad;
-            if (uasm1BardMediumChain() != 15)
+            if (uasm1BardMediumChain() != 12)
                 ++bad;
-            if (!uasm1BardMediumScaleCellLost())
+            if (uasm1BardMediumScaleCellLost())
+                ++bad;
+            if (uasm1BardMediumScale() != 15)
                 ++bad;
             if (!uasm1BardMediumPlateNa()) ++bad;
-            if (!uasm1BardHeavyLeatherCellLost())
+            if (uasm1BardHeavyLeatherCellLost())
                 ++bad;
-            if (uasm1BardHeavyChain() != 14)
+            if (uasm1BardHeavyLeather() != 15)
                 ++bad;
-            if (uasm1BardHeavyScale() != 13)
+            if (uasm1BardHeavyChain() != 13)
+                ++bad;
+            if (uasm1BardHeavyScale() != 14)
                 ++bad;
             if (uasm1BardHeavyPlate() != 12)
                 ++bad;
             // the movement monotonicity:
             // heavier barding, slower
-            if (uasm1BardHeavyChain()
+            if (uasm1BardHeavyLeather()
                     <= uasm1BardHeavyScale()) ++bad;
-            if (uasm1BardHeavyScale()
+            if (uasm1BardHeavyChain()
                     <= uasm1BardHeavyPlate()) ++bad;
             if (uasm1BardLightLeather()
                     <= uasm1BardMediumLeather())
@@ -39656,7 +39662,7 @@ int main() {
             if (uaqSysOneHeightPctLimit() != 125) ++bad;
             if (uaqSysOneExampleShortFt() != 4) ++bad;
             if (uaqSysOneExampleTallFt() != 5) ++bad;
-            if (!uaqSysOneSixFtExampleGarbles()) ++bad;
+            if (uaqSysOneSixFtExampleGarbles()) ++bad;
             if (!uaqSysOneToHitStrengthOnlyMod()) ++bad;
             if (!uaqSysOneDefenderArmorDexMagic()) ++bad;
             if (uaqSysOnePummelDelaySegments() != 1) ++bad;
@@ -39679,7 +39685,7 @@ int main() {
             if (!uaqPumTargetNonUndeadNonVegetable()) ++bad;
             if (!uaqPumTargetPrimeNative()) ++bad;
             if (uaqPumCannotRosterCount() != 5) ++bad;
-            if (!uaqPumDemonExceptionGarbles()) ++bad;
+            if (uaqPumDemonExceptionGarbles()) ++bad;
             if (!uaqPumSameOrSmallerSizeClass()) ++bad;
             if (!uaqPumAnySizeIfTargetProne()) ++bad;
             if (uaqPumInitPenalty() != 4) ++bad;
@@ -39710,7 +39716,7 @@ int main() {
             if (!uaqPumEffAcMagicAndDexCount()) ++bad;
             if (!uaqPumAcaReadsFistOrOpenHand()) ++bad;
             if (uaqPumTableRows() != 3) ++bad;
-            if (uaqPumTableCols() != 4) ++bad;
+            if (uaqPumTableCols() != 3) ++bad;
             if (uaqPumExposedSmallSoftPerPt() != 2) ++bad;
             if (uaqPumExposedSmallSoftCap() != 40) ++bad;
             if (uaqPumExposedSmallHardPerPt() != 4) ++bad;
@@ -39723,7 +39729,7 @@ int main() {
             if (uaqPumFragPair2Cap() != 40) ++bad;
             if (uaqPumFragPair3PerPt() != 4) ++bad;
             if (uaqPumFragPair3Cap() != 75) ++bad;
-            if (!uaqPumTableRowBodiesGarble()) ++bad;
+            if (uaqPumTableRowBodiesGarble()) ++bad;
             if (!uaqPumStr1801PlusCountsAs1801()) ++bad;
             if (uaqPumExStrength() != 15) ++bad;
             if (!uaqPumExPaddedArmorExposed()) ++bad;
@@ -39744,16 +39750,16 @@ int main() {
             if (uaqPumSmallHardDamageLo() != 1) ++bad;
             if (uaqPumSmallHardDamageHi() != 3) ++bad;
             if (!uaqPumDamageWhetherOrNotStun()) ++bad;
-            if (!uaqPumLargeDamageCellsGarble()) ++bad;
+            if (uaqPumLargeDamageCellsGarble()) ++bad;
             if (!uaqPumMonksNoInitPenalty()) ++bad;
             if (!uaqPumMonksPummelOrOpenHand()) ++bad;
             if (uaqPumThievesBehindToHitBonus() != 4) ++bad;
-            if (!uaqPumThiefTumblingNoteGarbles()) ++bad;
+            if (uaqPumThiefTumblingNoteGarbles()) ++bad;
             if (uaqPumCavaliersBareHandToHitPenalty() != 2) ++bad;
             if (!uaqKickBareFeetSmallSoft()) ++bad;
             if (!uaqKickMetalShodSmallHard()) ++bad;
             if (!uaqKickSameSizeWaistDownArmorOnly()) ++bad;
-            if (!uaqKickSmallerTailGarbles()) ++bad;
+            if (uaqKickSmallerTailGarbles()) ++bad;
             if (uaqKickJumperClassCount() != 3) ++bad;
             if (!uaqKickJumperAnyPortionSameSize()) ++bad;
             if (!uaqKickHigherElevationAnyPortion()) ++bad;
@@ -39769,9 +39775,9 @@ int main() {
             if (!uaqGrapBeholderExample()) ++bad;
             if (!uaqGrapBoundOrcExample()) ++bad;
             if (!uaqGrapPurposeDelaysOrRestrains()) ++bad;
-            if (!uaqGrapPurposeSentenceGarbles()) ++bad;
+            if (uaqGrapPurposeSentenceGarbles()) ++bad;
             if (!uaqGrapLargerUnlessProne()) ++bad;
-            if (!uaqGrapLargerWordGarbles()) ++bad;
+            if (uaqGrapLargerWordGarbles()) ++bad;
             if (uaqGrapInitPenalty() != 1) ++bad;
             if (!uaqGrapSpoiledByPriorDamage()) ++bad;
             if (uaqGrapResolutionSteps() != 2) ++bad;
@@ -39789,7 +39795,7 @@ int main() {
             if (uaqGrapCounterAttacksAtPenalty() != 2) ++bad;
             if (!uaqGrapCounterAttackerKeepsMagicDex()) ++bad;
             if (!uaqGrapCounterStrToHitAsAcBonus()) ++bad;
-            if (!uaqGrapStr17ExampleTailGarbles()) ++bad;
+            if (uaqGrapStr17ExampleTailGarbles()) ++bad;
             if (!uaqGrapBreakByCounterGrapple()) ++bad;
             if (!uaqGrapBreakByBendBars()) ++bad;
             if (!uaqGrapBreakByAcrobatEvasion()) ++bad;
@@ -39803,7 +39809,7 @@ int main() {
             if (uaqGrapDefSBySizeMHi() != 2) ++bad;
             if (uaqGrapDefSBySizeL() != 1) ++bad;
             if (uaqGrapDefMMaxSizeM() != 3) ++bad;
-            if (!uaqGrapDefMBandsGarble()) ++bad;
+            if (uaqGrapDefMBandsGarble()) ++bad;
             if (uaqGrapDefLMaxSizeL() != 3) ++bad;
             if (uaqGrapProneMaxSizeS() != 8) ++bad;
             if (uaqGrapProneMaxSizeM() != 6) ++bad;
@@ -39819,7 +39825,7 @@ int main() {
             if (uaqOvbProneHitByBonus() != 4) ++bad;
             if (uaqOvbProneStrikePenalty() != 2) ++bad;
             if (!uaqOvbProneGrapplePummelAnySize()) ++bad;
-            if (!uaqOvbAcProseGarbles()) ++bad;
+            if (uaqOvbAcProseGarbles()) ++bad;
             if (uaqOvbAcRows() != 3) ++bad;
             if (uaqOvbAcCols() != 3) ++bad;
             if (uaqOvbAcDefSVsS() != 0) ++bad;
@@ -39839,7 +39845,7 @@ int main() {
             if (!uaqOvbGroupSingleRoll()) ++bad;
             if (uaqOvbPerExtraFigureBonus() != 1) ++bad;
             if (!uaqOvbWeakestToHitUsed()) ++bad;
-            if (!uaqOvbWeakestSentenceGarbles()) ++bad;
+            if (uaqOvbWeakestSentenceGarbles()) ++bad;
             if (uaqOvbTargetSMaxSizeS() != 6) ++bad;
             if (uaqOvbTargetSBySizeM() != 4) ++bad;
             if (uaqOvbTargetSBySizeL() != 2) ++bad;
@@ -39853,8 +39859,8 @@ int main() {
             if (!uaqR160DivergentSystemsRunBoth()) ++bad;
             if (!uaqR160OverlapReconciled()) ++bad;
             if (uaqPartItemTotal() != 6) ++bad;
-            if (uaqPartCleanCount() != 1) ++bad;
-            if (uaqPartFlaggedCount() != 5) ++bad;
+            if (uaqPartCleanCount() != 6) ++bad;
+            if (uaqPartFlaggedCount() != 0) ++bad;
             if (uaqPartGarbledCount() != 0) ++bad;
         // ---- the cross-checks ----
         // the height example:
@@ -40557,6 +40563,164 @@ int main() {
         printf("R393 PDF-read completion pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
+    // ---- R394: the UA DM tables
+    // manifest sweep pin audit ----
+    // The clean PDF read (pp. 74, 76,
+    // 82-83, 106-108) fills the flagged
+    // holes and closes the DM tables
+    // manifest: Method V (the 12 x 7
+    // dice-count matrix), the barding
+    // movement column repin (the R370
+    // labels sat one column off), the
+    // LLC label, the high-elf sign, the
+    // Appendix Q hole set. Ten manifest
+    // items flip CLOSED; the census
+    // 320 -> 321.
+    {
+        using namespace rules;
+        int bad = 0;
+        // ---- the Method V matrix ----
+            static const int mv[12][7] = {
+                {8, 6, 4, 7, 9, 3, 5},
+                {7, 5, 8, 3, 6, 9, 4},
+                {7, 4, 9, 5, 8, 6, 3},
+                {7, 4, 8, 5, 6, 9, 3},
+                {9, 3, 5, 7, 8, 6, 4},
+                {9, 3, 5, 7, 8, 6, 4},
+                {7, 6, 8, 5, 9, 4, 3},
+                {4, 9, 7, 8, 6, 5, 3},
+                {3, 8, 7, 9, 5, 6, 4},
+                {6, 5, 3, 9, 7, 4, 8},
+                {6, 7, 4, 9, 8, 3, 5},
+                {7, 5, 9, 8, 6, 4, 3},
+            };
+            if (uasm1MethodVClassCount() != 12)
+                ++bad;
+            if (uasm1MethodVAbilityCount() != 7)
+                ++bad;
+            for (int c = 0; c < 12; ++c) {
+                for (int a = 0; a < 7; ++a) {
+                    if (uasm1MethodVDice(c, a)
+                            != mv[c][a]) ++bad;
+                }
+            }
+            // the fighter strength cell
+            // matches the printed example
+            if (uasm1MethodVDice(4, 0)
+                    != uasm1MethodVFighterStrengthDice())
+                ++bad;
+            // every cell between 3 and 9
+            for (int c = 0; c < 12; ++c) {
+                for (int a = 0; a < 7; ++a) {
+                    if (uasm1MethodVDice(c, a) < 3)
+                        ++bad;
+                    if (uasm1MethodVDice(c, a) > 9)
+                        ++bad;
+                }
+            }
+        // ---- the barding repin ----
+            if (uasm1BardLightLeather()
+                    <= uasm1BardLightScale()) ++bad;
+            if (uasm1BardMediumLeather()
+                    <= uasm1BardMediumScale()) ++bad;
+            if (uasm1BardMediumScale()
+                    <= uasm1BardMediumChain()) ++bad;
+            if (uasm1BardHeavyLeather()
+                    <= uasm1BardHeavyScale()) ++bad;
+            if (uasm1BardHeavyScale()
+                    <= uasm1BardHeavyChain()) ++bad;
+            if (uasm1BardHeavyChain()
+                    <= uasm1BardHeavyPlate()) ++bad;
+            // the ladder: lighter horses
+            // run faster in leather
+            if (uasm1BardMediumLeather()
+                    <= uasm1BardHeavyLeather())
+                ++bad;
+        // ---- the social class fill ----
+            if (strcmp(uasocRosterName(0, 0),
+                    "Freed slaves") != 0) ++bad;
+            if (uasocLlcLabelCellGarbled()) ++bad;
+            if (uasocHalflingParentheticalDivergence())
+                ++bad;
+        // ---- the birth fill ----
+            if (uabirthElfHighMod() != -20) ++bad;
+            if (uabirthElfHighModMagnitude() != 20) ++bad;
+            if (uabirthElfHighModSignLost()) ++bad;
+        // ---- the Appendix Q fills ----
+            if (uaqSysOneSixFtExampleFt() != 6)
+                ++bad;
+            if (uaqSysOneSixFtLimitTenths() != 75)
+                ++bad;
+            // 6 feet at 125 percent is
+            // 75 tenths (7 1/2 feet)
+            if (uaqSysOneSixFtExampleFt()
+                    * uaqSysOneHeightPctLimit()
+                    / 10 != uaqSysOneSixFtLimitTenths())
+                ++bad;
+            if (!uaqPumSemiDemonException()) ++bad;
+            if (!uaqPumMergedMiddleColumn()) ++bad;
+            if (!uaqPumUnexSmallSoftNoEffect())
+                ++bad;
+            if (uaqPumUnexMergedPerPt() != 1) ++bad;
+            if (uaqPumUnexMergedCap() != 20) ++bad;
+            if (uaqPumUnexLargeHardPerPt() != 2)
+                ++bad;
+            if (uaqPumUnexLargeHardCap() != 40)
+                ++bad;
+            if (uaqPumSemiSmallSoftPerPt() != 1)
+                ++bad;
+            if (uaqPumSemiSmallSoftCap() != 20)
+                ++bad;
+            if (uaqPumSemiMergedPerPt() != 2) ++bad;
+            if (uaqPumSemiMergedCap() != 40) ++bad;
+            if (uaqPumSemiLargeHardPerPt() != 4)
+                ++bad;
+            if (uaqPumSemiLargeHardCap() != 75)
+                ++bad;
+            // the exposed row completes
+            // the 3 x 3 walk (the R389
+            // pins seam-agree)
+            if (uaqPumExposedSmallSoftPerPt()
+                    != uaqPumSemiMergedPerPt())
+                ++bad;
+            if (uaqPumExposedSmallHardPerPt()
+                    != uaqPumSemiLargeHardPerPt())
+                ++bad;
+            // the R389 fragment pairs
+            // attribute to the cells
+            if (uaqPumFragPair1PerPt()
+                    != uaqPumSemiSmallSoftPerPt())
+                ++bad;
+            if (uaqPumFragPair2PerPt()
+                    != uaqPumSemiMergedPerPt())
+                ++bad;
+            if (uaqPumFragPair3PerPt()
+                    != uaqPumSemiLargeHardPerPt())
+                ++bad;
+            if (uaqPumUnexMergedPerPt()
+                    != uaqPumFragPair1PerPt())
+                ++bad;
+            if (uaqPumLargeDamageLo() != 1) ++bad;
+            if (uaqPumLargeDamageHi() != 4) ++bad;
+            if (!uaqPumAcrobatAttackAdds()) ++bad;
+            if (uaqPumAcrobatStunCap() != 95) ++bad;
+            if (!uaqPumAcrobatDefenseSubtracts()) ++bad;
+            if (!uaqKickSmallerOverallArmor())
+                ++bad;
+            if (!uaqGrapStr17OneStepBetterAc())
+                ++bad;
+            if (uaqGrapDefMBySizeLHi()
+                    < uaqGrapDefSBySizeL())
+                ++bad;
+            if (!uaqOvbAllBonusesConsidered()) ++bad;
+            if (!uaqOvbAcModifiedForRelativeSize())
+                ++bad;
+            if (!uaqOvbAcAffectedFourPlusLegs())
+                ++bad;
+        printf("R394 UA DM tables manifest pin audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+
     // ---- R227: the wis mental save wiring audit ----
     // PHB Wisdom Table I: the magical attack
     // saving throw adjustment now reaches the

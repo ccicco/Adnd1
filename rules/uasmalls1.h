@@ -24,13 +24,13 @@
 //     rounded up with the fighter/magic-user 5
 //     example, the constitution adjustment with the
 //     con-17 fighter 9 example.
-//   - the barding table: light 21/15 with scale and
-//     plate not allowed, medium 17/15 with the scale
-//     cell garbled and plate not allowed, heavy
-//     14/13/12 with the leather cell lost - the two
-//     lost cells flagged pending the PDF; the
-//     endurance, magical-barding and other-steeds
-//     prose prints clean.
+//   - R394: the clean PDF read fills the
+//     Method V dice-count table (the 12 x 7
+//     matrix cell by cell) and repins the
+//     barding columns - the R370 labels sat
+//     one column off: light leather 21 scale
+//     15 chain NA, medium 17/15/12, heavy
+//     leather 15 scale 14 chain 13 plate 12.
 
 namespace rules {
 
@@ -65,10 +65,11 @@ inline bool uasm1MethodVMaxClampApplies()
 inline int uasm1MethodVFighterStrengthDice()
     { return 9; }
 
-// The dice-count table body extracts empty -
-// every cell a hole pending the PDF.
+// The dice-count table body extracts
+// empty in the markdown; the R394
+// clean PDF read fills the matrix.
 inline bool uasm1MethodVTableCellsLost()
-    { return true; }
+    { return false; }
 
 // ---- the starting hit-point minimums (p. 74) ----
 // Slots: 0 Cavalier, 1 Paladin, 2 Cleric,
@@ -104,18 +105,65 @@ inline bool uasm1StartHpConAdjustApplies()
 inline int uasm1StartHpExampleCon17Fighter()
     { return 9; }
 
-// ---- the barding movement table (p. 76) ----
-// Base movement rates in inches; NA = the
+// ---- the Method V dice-count
+// table (p. 74, the R394 clean
+// read) ----
+// Rows: 0 Cavalier, 1 Paladin,
+// 2 Cleric, 3 Druid, 4 Fighter,
+// 5 Barbarian, 6 Ranger,
+// 7 Magic-user, 8 Illusionist,
+// 9 Thief, 10 Assassin, 11 Monk.
+// Columns: 0 Str, 1 Int, 2 Wis,
+// 3 Dex, 4 Con, 5 Cha, 6 Com.
+inline int uasm1MethodVClassCount()
+    { return 12; }
+
+inline int uasm1MethodVAbilityCount()
+    { return 7; }
+
+inline int uasm1MethodVDice(int cls, int ab) {
+    static const int k[12][7] = {
+        {8, 6, 4, 7, 9, 3, 5},
+        {7, 5, 8, 3, 6, 9, 4},
+        {7, 4, 9, 5, 8, 6, 3},
+        {7, 4, 8, 5, 6, 9, 3},
+        {9, 3, 5, 7, 8, 6, 4},
+        {9, 3, 5, 7, 8, 6, 4},
+        {7, 6, 8, 5, 9, 4, 3},
+        {4, 9, 7, 8, 6, 5, 3},
+        {3, 8, 7, 9, 5, 6, 4},
+        {6, 5, 3, 9, 7, 4, 8},
+        {6, 7, 4, 9, 8, 3, 5},
+        {7, 5, 9, 8, 6, 4, 3},
+    };
+    if (cls < 0) cls = 0;
+    if (cls > 11) cls = 11;
+    if (ab < 0) ab = 0;
+    if (ab > 6) ab = 6;
+    return k[cls][ab];
+}
+
+// ---- the barding movement table (p. 76) ----// Base movement rates in inches; NA = the
 // heavier barding is not allowed on the
 // lighter horse.
 inline int uasm1BardLightLeather()
     { return 21; }
 
-inline int uasm1BardLightChain()
+// The R394 clean read: the light row
+// is leather 21, scale 15, chain NA
+// - the R370 15 sat on the scale
+// cell and the NA on the chain.
+inline int uasm1BardLightScale()
     { return 15; }
 
-inline bool uasm1BardLightScaleNa()
+inline bool uasm1BardLightChainNa()
     { return true; }
+
+inline int uasm1BardLightChain()
+    { return 0; }
+
+inline bool uasm1BardLightScaleNa()
+    { return false; }
 
 inline bool uasm1BardLightPlateNa()
     { return true; }
@@ -123,27 +171,36 @@ inline bool uasm1BardLightPlateNa()
 inline int uasm1BardMediumLeather()
     { return 17; }
 
-inline int uasm1BardMediumChain()
+// The R394 clean read: medium scale
+// 15, chain 12 - the R370 15 was
+// the scale value on the chain cell.
+inline int uasm1BardMediumScale()
     { return 15; }
 
-// The medium scale cell garbles in the
-// extract - a hole pending the PDF.
+inline int uasm1BardMediumChain()
+    { return 12; }
+
 inline bool uasm1BardMediumScaleCellLost()
-    { return true; }
+    { return false; }
 
 inline bool uasm1BardMediumPlateNa()
     { return true; }
 
-// The heavy leather cell is lost - a hole
-// pending the PDF.
+// The R394 clean read: the heavy row
+// is leather 15, scale 14, chain 13
+// - the R370 values sat one column
+// left.
+inline int uasm1BardHeavyLeather()
+    { return 15; }
+
 inline bool uasm1BardHeavyLeatherCellLost()
-    { return true; }
+    { return false; }
 
 inline int uasm1BardHeavyChain()
-    { return 14; }
+    { return 13; }
 
 inline int uasm1BardHeavyScale()
-    { return 13; }
+    { return 14; }
 
 inline int uasm1BardHeavyPlate()
     { return 12; }

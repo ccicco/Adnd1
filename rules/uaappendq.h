@@ -67,7 +67,7 @@ inline int uaqSysOneExampleTallFt()
 // height cell OCR-lost -
 // flagged, PDF-gated.
 inline bool uaqSysOneSixFtExampleGarbles()
-    { return true; }
+    { return false; }
 
 // The to-hit roll: the
 // standard class chance
@@ -191,7 +191,7 @@ inline int uaqPumCannotRosterCount()
 // cell OCR-lost - flagged,
 // PDF-gated.
 inline bool uaqPumDemonExceptionGarbles()
-    { return true; }
+    { return false; }
 
 // Same or smaller size class
 // only; any size if the
@@ -330,15 +330,17 @@ inline bool uaqPumAcaReadsFistOrOpenHand()
     { return true; }
 
 // The Pummeling Table: 3
-// vulnerability rows by 4
-// object columns, the
-// chance per point of
+// vulnerability rows by 3 data
+// columns (the R394 clean read: the
+// print merges small hard with
+// large soft in the middle
+// column), the chance per point of
 // strength of stunning;
 inline int uaqPumTableRows()
     { return 3; }
 
 inline int uaqPumTableCols()
-    { return 4; }
+    { return 3; }
 
 // the exposed row decoded
 // from the clean worked
@@ -399,7 +401,7 @@ inline int uaqPumFragPair3Cap()
 // OCR-lost - flagged,
 // PDF-gated.
 inline bool uaqPumTableRowBodiesGarble()
-    { return true; }
+    { return false; }
 
 // Strength 18/01 or higher
 // reads as 18/01 for
@@ -492,7 +494,7 @@ inline bool uaqPumDamageWhetherOrNotStun()
 // cells OCR-lost - flagged,
 // PDF-gated.
 inline bool uaqPumLargeDamageCellsGarble()
-    { return true; }
+    { return false; }
 
 // Class notes: monks take
 // no pummeling initiative
@@ -515,7 +517,7 @@ inline int uaqPumThievesBehindToHitBonus()
 // tumbling note OCR-lost -
 // flagged, PDF-gated;
 inline bool uaqPumThiefTumblingNoteGarbles()
-    { return true; }
+    { return false; }
 
 // cavaliers (with paladins)
 // pummel bare-handed at
@@ -542,7 +544,7 @@ inline bool uaqKickSameSizeWaistDownArmorOnly()
 // OCR-lost - flagged,
 // PDF-gated;
 inline bool uaqKickSmallerTailGarbles()
-    { return true; }
+    { return false; }
 
 // jumpers (monks,
 // thief-acrobats, barbarians)
@@ -621,7 +623,7 @@ inline bool uaqGrapPurposeDelaysOrRestrains()
 // OCR-lost - flagged,
 // PDF-gated).
 inline bool uaqGrapPurposeSentenceGarbles()
-    { return true; }
+    { return false; }
 
 // Larger creatures cannot
 // be grappled unless prone
@@ -632,7 +634,7 @@ inline bool uaqGrapLargerUnlessProne()
 // position-decoded,
 // flagged).
 inline bool uaqGrapLargerWordGarbles()
-    { return true; }
+    { return false; }
 
 // Initiative at -1; damage
 // earlier in the round
@@ -713,7 +715,7 @@ inline bool uaqGrapCounterStrToHitAsAcBonus()
 // the Str-17 example tail
 // OCR-lost - flagged);
 inline bool uaqGrapStr17ExampleTailGarbles()
-    { return true; }
+    { return false; }
 
 inline bool uaqGrapBreakByCounterGrapple()
     { return true; }
@@ -779,7 +781,7 @@ inline int uaqGrapDefMMaxSizeM()
 // band OCR-lost - flagged,
 // PDF-gated);
 inline bool uaqGrapDefMBandsGarble()
-    { return true; }
+    { return false; }
 
 // a size-L defender takes 3
 // size-L; a prone figure 8
@@ -854,7 +856,7 @@ inline bool uaqOvbProneGrapplePummelAnySize()
 // OCR-lost - flagged,
 // PDF-gated.
 inline bool uaqOvbAcProseGarbles()
-    { return true; }
+    { return false; }
 
 // The Armor Class Adjustment
 // for Size table reads
@@ -943,7 +945,7 @@ inline bool uaqOvbWeakestToHitUsed()
 // OCR-lost - flagged,
 // PDF-gated).
 inline bool uaqOvbWeakestSentenceGarbles()
-    { return true; }
+    { return false; }
 
 // The overbear counts read
 // clean: a size-S target
@@ -997,20 +999,136 @@ inline bool uaqR160DivergentSystemsRunBoth()
 inline bool uaqR160OverlapReconciled()
     { return true; }
 
-// The part ledger: six
-// items, one fully clean,
-// five flagged, none fully
-// garbled.
+// The part ledger: six items - the
+// R394 clean read fills every
+// flagged hole; all six fully
+// clean, none garbled.
 inline int uaqPartItemTotal()
     { return 6; }
 
 inline int uaqPartCleanCount()
-    { return 1; }
+    { return 6; }
 
 inline int uaqPartFlaggedCount()
-    { return 5; }
+    { return 0; }
 
 inline int uaqPartGarbledCount()
     { return 0; }
+// ---- the R394 clean-read fills ----
+// The clean PDF pages 106-108 fill
+// every flagged hole of the R389 pin.
+
+// System I: the six-foot example -
+// a six-foot being affects creatures
+// 7 1/2 feet or shorter.
+inline int uaqSysOneSixFtExampleFt()
+    { return 6; }
+
+inline int uaqSysOneSixFtLimitTenths()
+    { return 75; }
+
+// Pummeling: all demons, though not
+// semi-demons.
+inline bool uaqPumSemiDemonException()
+    { return true; }
+
+// The Pummeling Table row bodies: the
+// print merges small hard with large
+// soft in the middle column.
+inline bool uaqPumMergedMiddleColumn()
+    { return true; }
+
+// Unexposed: no effect small soft;
+// 1 percent per point and 20 at
+// 18/01 merged; 2 percent and 40
+// large hard.
+inline bool uaqPumUnexSmallSoftNoEffect()
+    { return true; }
+
+inline int uaqPumUnexMergedPerPt()
+    { return 1; }
+
+inline int uaqPumUnexMergedCap()
+    { return 20; }
+
+inline int uaqPumUnexLargeHardPerPt()
+    { return 2; }
+
+inline int uaqPumUnexLargeHardCap()
+    { return 40; }
+
+// Semi-exposed: 1 and 20 small soft;
+// 2 and 40 merged; 4 and 75 large
+// hard.
+inline int uaqPumSemiSmallSoftPerPt()
+    { return 1; }
+
+inline int uaqPumSemiSmallSoftCap()
+    { return 20; }
+
+inline int uaqPumSemiMergedPerPt()
+    { return 2; }
+
+inline int uaqPumSemiMergedCap()
+    { return 40; }
+
+inline int uaqPumSemiLargeHardPerPt()
+    { return 4; }
+
+inline int uaqPumSemiLargeHardCap()
+    { return 75; }
+
+// The large-object damage: all large
+// objects inflict 1-4.
+inline int uaqPumLargeDamageLo()
+    { return 1; }
+
+inline int uaqPumLargeDamageHi()
+    { return 4; }
+
+// The thief-acrobat tumbling note: the
+// Tumbling Attack percentage adds to
+// the own stun chance, capped at 95;
+// the Tumbling Defense percentage
+// subtracts from the attacker chance
+// while tumbling.
+inline bool uaqPumAcrobatAttackAdds()
+    { return true; }
+
+inline int uaqPumAcrobatStunCap()
+    { return 95; }
+
+inline bool uaqPumAcrobatDefenseSubtracts()
+    { return true; }
+
+// Kicking: a smaller target counts the
+// overall armor, the most vulnerable
+// read.
+inline bool uaqKickSmallerOverallArmor()
+    { return true; }
+
+// Grappling: the Str-17 example - an
+// effective armor class one step
+// better than usual.
+inline bool uaqGrapStr17OneStepBetterAc()
+    { return true; }
+
+// The size-M band: three size-M
+// attackers, or one or two size-L.
+inline int uaqGrapDefMBySizeLHi()
+    { return 2; }
+
+// Overbearing: all defensive bonuses
+// count; the effective AC modifies for
+// relative size and for four or more
+// legs.
+inline bool uaqOvbAllBonusesConsidered()
+    { return true; }
+
+inline bool uaqOvbAcModifiedForRelativeSize()
+    { return true; }
+
+inline bool uaqOvbAcAffectedFourPlusLegs()
+    { return true; }
 }   // namespace rules
 
