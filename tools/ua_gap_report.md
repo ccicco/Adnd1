@@ -2484,6 +2484,26 @@ own index, one item each:
       quick-reference charts. A deity
       layer is engineerable (the
       mission: everything includeable).
+      - AMENDED R406: the stat blocks
+        pin round (rules/uaappends.h)
+        - the 23 blocks pin their
+        scan-clean numerics (tier, AC,
+        HP, MR, rating, size, attacks
+        in halves, damage range,
+        alignment, plane) with the
+        tier/rating censuses live
+        against the R405 seam and the
+        6985 HP drift catch; the scan
+        holes record as sentinels
+        (Hanali AC, Shargaas attacks,
+        four unprinted damage reads).
+        STILL OPEN: the six
+        class/level lines per block,
+        the MOVE values, the
+        S/I/W/D/C/CH/CM stat lines,
+        the pantheon prose, and the
+        clerical quick-reference
+        charts (pp. 121-122).
 - [ ] **Appendix T: pole-arm
       nomenclature** (pp. 123-129) - the
       taxonomy (the bill hook, the
@@ -2635,6 +2655,11 @@ section own index, one item each:
     and the five clerical charts ride
     the seam as its own ungated data
     round.
+  - AMENDED R406: the stat block
+    numerics land (rules/uaappends.h)
+    - the class lines, MOVE, stat
+    lines, prose and the charts stay
+    open.
 
 ## Deferred engine seams (the gates)
 

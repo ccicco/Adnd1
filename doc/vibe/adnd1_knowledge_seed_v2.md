@@ -2200,6 +2200,25 @@ R172 were already dropped at the R171b/R172 era cut; git
   advisory. Ritual note: the
   ./nn step does not belong
   in the run ritual.
+- R405 landed 2026-10-13:
+  commit 548b966 (census 332,
+  preflight GREEN), the deity
+  layer seam - the LAST
+  in-scope seam; rules/
+  deities.h (prefix nhd, 24
+  inline functions) - the
+  Appendix S contract,
+  source, census and dwarven
+  reads, cross-checked
+  against the R169/R322/
+  R323/R404 feeders. The
+  stat blocks + charts ride
+  the seam ungated. The
+  ./nn save hash diverged
+  for the thirteenth round
+  running - benign; the md5
+  stays advisory. THE SEAM
+  LIST IS NOW EMPTY.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
