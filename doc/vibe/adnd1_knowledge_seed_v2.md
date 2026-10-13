@@ -2619,6 +2619,34 @@ R172 were already dropped at the R171b/R172 era cut; git
   save hash diverged -
   benign (23rd occurrence);
   the md5 stays advisory.
+- R422 landed 2026-10-13:
+  commit a911b59 (census 348,
+  preflight GREEN on the FIRST
+  run, pushed 365ec5b..a911b59),
+  the APPENDIX R RESOLUTION - the
+  clean p. 109 read resolves the
+  five R390 flagged holes: the
+  subdual supercedes sentence,
+  the vanquishing loser sentence
+  ("must honorably surrender
+  immediately"), the chaotic
+  constraints line ("under no
+  constraints whatsoever") and
+  the monks-druids head print
+  whole; the disarming scimitar
+  seam confirms as the print
+  itself (the example names the
+  scimitar, absent from the
+  six-entry list - the book's
+  own seam, pinned as printed);
+  all seven items fully clean,
+  the box flips; census 347 ->
+  348. The advisory md5 diverged
+  (6853301009da2dbb7087d714b0a097c9
+  vs the published
+  d135d3a864e1058bc621ff5a31c675d5)
+  - benign; the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

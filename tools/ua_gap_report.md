@@ -2879,7 +2879,7 @@ own index, one item each:
         printed); all seven
         items fully clean, the
         box flips.
-- [ ] **Appendix S: non-human deities**
+- [x] **Appendix S: non-human deities**
       (pp. 109-122) - DEFERRED on a
       deity layer: the demi-human
       pantheon prose, the clerical
@@ -2941,6 +2941,17 @@ own index, one item each:
         the hole sentinel; the
         pantheon prose ALONE stays
         open in Appendix S.
+      - AMENDED R423: the pantheon
+        prose lands (rules/uapantheon.h) - the five intro
+        sections pin with the
+        censuses cross-checked
+        live against the R405 seam
+        (the described counts mirror
+        nhdPantheonSize row for row,
+        the sum mirrors the 23); the
+        Appendix S item CLOSES - the
+        box flips, nothing stays
+        open.
 - [ ] **Appendix T: pole-arm
       nomenclature** (pp. 123-129) - the
       taxonomy (the bill hook, the
