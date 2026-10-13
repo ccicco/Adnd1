@@ -2312,6 +2312,42 @@ R172 were already dropped at the R171b/R172 era cut; git
   for the nineteenth round
   running - benign; the md5
   stays advisory.
+- R412 landed 2026-10-13:
+  commit 2927bfd (census 339,
+  preflight GREEN), the UA
+  USEFUL CANTRIP DESCRIPTIONS
+  (pp. 45-47) - the first of the
+  six MU cantrip description
+  rounds; the R363 precedent
+  rides; the casting-time family
+  records as holes pending the
+  PDF read. rules/uacantrips1.h
+  (prefix ucn): the 20 useful
+  cantrips in roster order, the
+  school census 7/4/7/2, the 14
+  clean areas, the six "7"-family
+  area garbles the recorded
+  holes, the mechanics pin (the
+  40 F pair, the 1-4 damage pair,
+  the salt limits, the tie range,
+  the shine revalue, the color
+  renewal, the polish floor).
+  FIRST RUN RED: the first body
+  emitted seven bare comment
+  lines in the mechanics pins
+  section - the C++ parse broke
+  (the R392 comment-emission
+  class); the R412b repair body
+  re-prefixed the seven lines in
+  place and landed both splice
+  bodies (commit 2927bfd); two
+  new guards ride since (the
+  line-classification lint, the
+  ucn identifier-resolution
+  check). The md5 diverged for
+  the TWENTY-FIRST round running
+  - benign; the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

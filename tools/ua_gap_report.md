@@ -1315,6 +1315,31 @@ the gateway charge.
       names) - the item stays open
       on the pp. 45-52 descriptions,
       ungated.
+      - AMENDED R413: the reversed
+        category descriptions land
+        (rules/uacantrips2.h) - the
+        12 blocks pin schools (the
+        3/0/7/2 census), ALL 12
+        areas print clean (ZERO
+        area holes - the Dirty 4
+        sq. yds. cross-checks the
+        Clean, the Dusty 10'
+        radius, the Ravel Special,
+        the Spill one container),
+        the whole casting-time
+        family the recorded holes
+        pending the PDF read (the
+        R363/R412 posture), the
+        mechanics pin (the hairy
+        growth pair, the knot and
+        tangle round ranges, the
+        sour pint, the spill
+        gallon, the tarnish/shine
+        live pair); the
+        legerdemain, person-
+        affecting, personal and
+        haunting-sound descriptions
+        stay open.
       - AMENDED R412: the useful
         category descriptions land
         (rules/uacantrips1.h) - the
