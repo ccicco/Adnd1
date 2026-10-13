@@ -125,14 +125,37 @@ inline int uclAreaKindCount(int a)
     return n;
 }
 
-// The casting-time hole family:
-// ALL 6 casting-time cells print
-// fraction garbles in the scan -
-// the whole family records as
-// holes pending the PDF read (the
-// R363/R412/R413 posture).
-inline bool uclCastTimesAreHoles()
-    { return true; }
+// The casting times: the
+// PDF read resolves the
+// whole family (R418) - the
+// real UA PDF prints every
+// cell clean, a unit
+// fraction, one segment
+// over the denominator. The
+// denominators, in roster
+// order: Change, Hide,
+// Mute and Palm at 1/10,
+// Distract at 1/3, Present
+// at 1/8.
+inline int uclCastTimeDen(int i)
+{
+    static const int D[6] = {
+        10, 3, 10, 10, 10, 8 };
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    return D[i];
+}
+
+// The casting-time
+// denominator census helper.
+inline int uclCastTimeDenCount(int d)
+{
+    int n = 0;
+    for (int i = 0; i < 6; ++i)
+        if (uclCastTimeDen(i) == d)
+            ++n;
+    return n;
+}
 
 // ---- the mechanics pins ----
 

@@ -1315,6 +1315,39 @@ the gateway charge.
       names) - the item stays open
       on the pp. 45-52 descriptions,
       ungated.
+      - AMENDED R418: the PDF
+        read lands - the
+        casting-time hole
+        families of the useful
+        (R412), reversed (R413)
+        and legerdemain (R414)
+        descriptions resolve:
+        38 cells, every one a
+        clean unit fraction one
+        segment over the
+        denominator (the useful
+        17/0/2/1, the reversed
+        4/1/5/2, the
+        legerdemain 0/1/1/4 at
+        1/2, 1/3, 1/8, 1/10);
+        the denominator censuses
+        count, the per-family
+        totals cross-check the
+        roster counts, the 2..10
+        norm band the cantrip
+        section header prints
+        cross-checks the read,
+        and the hole flags come
+        off. The person-affecting,
+        personal and haunting-
+        sound casting-time
+        families and the other
+        recorded holes (the two
+        R416 areas, the range
+        units, the slow-poison
+        defer, the creak reads)
+        stay open pending the
+        R419 resolution.
       - AMENDED R417: the
         haunting-sound
         descriptions land (rules/

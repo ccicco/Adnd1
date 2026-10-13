@@ -2483,6 +2483,35 @@ R172 were already dropped at the R171b/R172 era cut; git
   the SEVENTEENTH round running
   - benign; the md5 stays
   advisory.
+- R417 landed 2026-10-13:
+  commit 67c8f8a (census 344,
+  preflight GREEN), the UA
+  HAUNTING-SOUND CANTRIP
+  DESCRIPTIONS (pp. 50-51) -
+  the LAST of the six MU cantrip
+  description rounds; ALL SIX
+  now stand. rules/uacantrips6.h
+  (prefix uch): the 8 haunting-
+  sound cantrips in roster
+  order, the school census
+  3/0/0/0/5 (NO new codes),
+  ALL 8 areas clean (the
+  Special seven + the Tap
+  1 sq. ft., a NEW area kind),
+  the whistle pair pins clean
+  (faint 10, loud 30, the
+  loud == faint*3 derivation),
+  the tap 1..3 band, the
+  casting-time and range-unit
+  families the recorded holes
+  pending the PDF read. The
+  49-line AMENDED R416 gap
+  anchor was embedded byte-
+  exact via a generator. The
+  md5 diverged for the
+  EIGHTEENTH round running -
+  benign; the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -122,17 +122,45 @@ inline int ucrAreaKindCount(int a)
     return n;
 }
 
-// The casting-time hole family:
-// ALL 12 casting-time cells print
-// fraction garbles in the scan -
-// the whole family records as
-// holes pending the PDF read (the
-// R363/R412 posture). The Untie
-// block prints "Casting time:"
-// lowercase - the systematic OCR
-// read, noted.
-inline bool ucrCastTimesAreHoles()
-    { return true; }
+// The casting times: the
+// PDF read resolves the
+// whole family (R418) - the
+// real UA PDF prints every
+// cell clean, a unit
+// fraction, one segment
+// over the denominator. The
+// denominators, in roster
+// order: Curdle, Dirty and
+// Dusty at 1/8, Hairy at
+// 1/10, Knot at 1/2, Ravel
+// at 1/10, Sour at 1/2,
+// Spill and Tangle at 1/8,
+// Tarnish at 1/2, Untie at
+// 1/3 (the lowercase
+// Casting-time print, the
+// systematic OCR read,
+// noted in R413), Wilt at
+// 1/2.
+inline int ucrCastTimeDen(int i)
+{
+    static const int D[12] = {
+        8, 8, 8, 10, 2, 10, 2, 8, 8, 2,
+        3, 2 };
+    if (i < 0) i = 0;
+    if (i > 11) i = 11;
+    return D[i];
+}
+
+// The casting-time
+// denominator census helper.
+inline int ucrCastTimeDenCount(int d)
+{
+    int n = 0;
+    for (int i = 0; i < 12; ++i)
+        if (ucrCastTimeDen(i) == d)
+            ++n;
+    return n;
+}
 
 // ---- the mechanics pins ----
 

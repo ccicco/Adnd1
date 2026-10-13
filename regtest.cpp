@@ -44416,9 +44416,32 @@ int main() {
                 || ucnUseful(19).school != 2
                 || ucnUseful(19).areaKind != 2
                 || ucnUseful(19).areaVal != 1) ++bad;
-        // ---- the hole family ----
-        if (!ucnCastTimesAreHoles())
-            ++bad;
+        // ---- the casting times ----
+        // (the PDF read resolves the
+        // family - R418)
+
+        if (ucnCastTimeDen(0) != 2
+                || ucnCastTimeDen(1) != 2
+                || ucnCastTimeDen(2) != 2
+                || ucnCastTimeDen(3) != 2
+                || ucnCastTimeDen(4) != 2
+                || ucnCastTimeDen(5) != 2
+                || ucnCastTimeDen(6) != 10
+                || ucnCastTimeDen(7) != 2) ++bad;
+
+                || ucnCastTimeDen(8) != 2
+                || ucnCastTimeDen(9) != 8
+                || ucnCastTimeDen(10) != 2
+                || ucnCastTimeDen(11) != 8
+                || ucnCastTimeDen(12) != 2
+                || ucnCastTimeDen(13) != 2
+                || ucnCastTimeDen(14) != 2
+                || ucnCastTimeDen(15) != 2) ++bad;
+
+                || ucnCastTimeDen(16) != 2
+                || ucnCastTimeDen(17) != 2
+                || ucnCastTimeDen(18) != 2
+                || ucnCastTimeDen(19) != 2) ++bad;
         // ---- the mechanics ----
         if (ucnTempDeltaF() != 40)
             ++bad;
@@ -44570,9 +44593,23 @@ int main() {
                    .areaKind != 0
                 || ucrReversed(11)
                    .areaVal != 0) ++bad;
-        // ---- the hole family ----
-        if (!ucrCastTimesAreHoles())
-            ++bad;
+        // ---- the casting times ----
+        // (the PDF read resolves the
+        // family - R418)
+
+        if (ucrCastTimeDen(0) != 8
+                || ucrCastTimeDen(1) != 8
+                || ucrCastTimeDen(2) != 8
+                || ucrCastTimeDen(3) != 10
+                || ucrCastTimeDen(4) != 2
+                || ucrCastTimeDen(5) != 10
+                || ucrCastTimeDen(6) != 2
+                || ucrCastTimeDen(7) != 8) ++bad;
+
+                || ucrCastTimeDen(8) != 8
+                || ucrCastTimeDen(9) != 2
+                || ucrCastTimeDen(10) != 3
+                || ucrCastTimeDen(11) != 2) ++bad;
         // ---- the mechanics ----
         if (ucrHairyGrowthMinIn() != 2
                 || ucrHairyGrowthMaxIn() != 12
@@ -44689,9 +44726,16 @@ int main() {
                    .areaKind != 7
                 || uclLegerdemain(5)
                    .areaVal != 0) ++bad;
-        // ---- the hole family ----
-        if (!uclCastTimesAreHoles())
-            ++bad;
+        // ---- the casting times ----
+        // (the PDF read resolves the
+        // family - R418)
+
+        if (uclCastTimeDen(0) != 10
+                || uclCastTimeDen(1) != 3
+                || uclCastTimeDen(2) != 10
+                || uclCastTimeDen(3) != 10
+                || uclCastTimeDen(4) != 10
+                || uclCastTimeDen(5) != 8) ++bad;
         // ---- the mechanics ----
         if (uclChangeSizePctMax() != 50
                 || uclChangeBaseTurns() != 1
@@ -45209,6 +45253,79 @@ int main() {
                 || uchWhistleLoudFeet()
                    != uchWhistleFaintFeet() * 3) ++bad;
         printf("R417 UA haunting-sound cantrips pin audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R418: the cantrip
+    // casting-time resolution
+    // part 1 pin audit ----
+    // The PDF read resolves the
+    // whole casting-time families
+    // the R412 (useful), R413
+    // (reversed) and R414
+    // (legerdemain) rounds recorded
+    // as holes: all 38 cells print
+    // clean unit fractions, one
+    // segment over the denominator.
+    // The denominator censuses count
+    // (the useful 17/0/2/1, the
+    // reversed 4/1/5/2, the
+    // legerdemain 0/1/1/4 - at
+    // 1/2, 1/3, 1/8, 1/10), each
+    // family census totals its
+    // roster count, and every
+    // denominator sits in the 2..10
+    // band the cantrip section
+    // header prints (the cantrips
+    // cast in 1/10 to 1/2 segment
+    // norm); census 344 -> 345.
+    {
+        using namespace rules;
+        int bad = 0;
+        if (ucnCastTimeDenCount(2) != 17
+                || ucnCastTimeDenCount(3) != 0
+                || ucnCastTimeDenCount(8) != 2
+                || ucnCastTimeDenCount(10) != 1)
+            ++bad;
+        if (ucrCastTimeDenCount(2) != 4
+                || ucrCastTimeDenCount(3) != 1
+                || ucrCastTimeDenCount(8) != 5
+                || ucrCastTimeDenCount(10) != 2)
+            ++bad;
+        if (uclCastTimeDenCount(2) != 0
+                || uclCastTimeDenCount(3) != 1
+                || uclCastTimeDenCount(8) != 1
+                || uclCastTimeDenCount(10) != 4)
+            ++bad;
+        // the per-family totals
+        if (ucnCastTimeDenCount(2)
+                + ucnCastTimeDenCount(3)
+                + ucnCastTimeDenCount(8)
+                + ucnCastTimeDenCount(10)
+                != 20) ++bad;
+        if (ucrCastTimeDenCount(2)
+                + ucrCastTimeDenCount(3)
+                + ucrCastTimeDenCount(8)
+                + ucrCastTimeDenCount(10)
+                != 12) ++bad;
+        if (uclCastTimeDenCount(2)
+                + uclCastTimeDenCount(3)
+                + uclCastTimeDenCount(8)
+                + uclCastTimeDenCount(10)
+                != 6) ++bad;
+        // the 2..10 norm band
+        for (int i = 0; i < 20; ++i)
+            if (ucnCastTimeDen(i) < 2
+                || ucnCastTimeDen(i) > 10)
+                ++bad;
+        for (int i = 0; i < 12; ++i)
+            if (ucrCastTimeDen(i) < 2
+                || ucrCastTimeDen(i) > 10)
+                ++bad;
+        for (int i = 0; i < 6; ++i)
+            if (uclCastTimeDen(i) < 2
+                || uclCastTimeDen(i) > 10)
+                ++bad;
+        printf("R418 UA cantrip cast-times part 1 pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

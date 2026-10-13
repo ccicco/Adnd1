@@ -128,15 +128,42 @@ inline int ucnAreaKindCount(int a) {
     return n;
 }
 
-// The casting-time hole family:
-// ALL 20 casting-time cells print
-// fraction garbles in the scan -
-// the whole family records as
-// holes pending the PDF read (the
-// R363 illusionist-cantrips
-// posture).
-inline bool ucnCastTimesAreHoles()
-    { return true; }
+// The casting times: the
+// PDF read resolves the
+// whole family (R418) - the
+// real UA PDF prints every
+// cell clean, a unit
+// fraction, one segment
+// over the denominator. The
+// denominators, in roster
+// order: 17 at 1/2 (Chill,
+// Clean, Color, Dampen, Dry,
+// Dust, Flavor, Freshen,
+// Polish, Shine, Spice,
+// Sprout, Stitch, Sweeten,
+// Tie, Warm, Wrap),
+// Exterminate at 1/10,
+// Gather and Salt at 1/8.
+inline int ucnCastTimeDen(int i)
+{
+    static const int D[20] = {
+        2, 2, 2, 2, 2, 2, 10, 2, 2, 8,
+        2, 8, 2, 2, 2, 2, 2, 2, 2, 2 };
+    if (i < 0) i = 0;
+    if (i > 19) i = 19;
+    return D[i];
+}
+
+// The casting-time
+// denominator census helper.
+inline int ucnCastTimeDenCount(int d)
+{
+    int n = 0;
+    for (int i = 0; i < 20; ++i)
+        if (ucnCastTimeDen(i) == d)
+            ++n;
+    return n;
+}
 
 // ---- the mechanics pins ----
 
