@@ -1938,6 +1938,39 @@ R172 were already dropped at the R171b/R172 era cut; git
   still not byte-faithful (the
   R393 lesson); the R392 md5
   gate stays advisory.
+- R395 landed 2026-10-13: commit
+  1278168 (census 322, preflight
+  GREEN), the UA Treasure Table
+  III row bodies: the clean pp.
+  84-89 read delivers every row
+  body of all TWENTY-ONE tables
+  (573 rows, perfect 1-100
+  contiguity) - NEW
+  rules/uadetrows.h (23
+  accessors, flattened arrays:
+  dice bands, names, marks,
+  the x.p./g.p. columns as lo/
+  hi pairs with the -1 none
+  sentinel); the R375 skeleton
+  flips (row-bodies-garble
+  false x15 regtest sites; the
+  seventh misc sub-table name
+  III.E.7 reads clean) and the
+  category names correct to
+  Rings/Swords (the R375
+  extract read them singular);
+  both gap items flip AMENDED
+  R395: closed - the UA report
+  has no open table items. The
+  generator stack (gen/emit/
+  audit/build/sim) emits the
+  header, the audit and the
+  splice from rows.json. The
+  ./nn save hash diverged for
+  the third round running yet
+  the copy passed the battery -
+  stable and benign; the md5
+  stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -10,13 +10,13 @@
 // timelessness, and the potions
 // of rainbow hues,
 // ventriloquism, vitality. The
-// seven garbled descriptions
-// (acid resistance,
-// disenchantment, elemental,
-// impact, the philters of
-// beauty and glibness,
-// stammering) await the PDF -
-// the gap item stays open. The
+// seven PDF-gated fills
+// landed R396 (acid
+// resistance, disenchantment,
+// elemental, impact, the
+// philters of beauty,
+// glibness, stammering) -
+// the gap item closed. The
 // skeleton seam rides in the
 // regtest audit, not here.
 namespace rules {
@@ -315,15 +315,256 @@ inline int uappVitalityRecoveryHours()
 inline bool uappVitalityRidesRemaining()
     { return true; }
 
-// ---- the part ledger ----
-// Twelve of the nineteen
-// descriptions pin; the seven
-// garbled ones stay PDF-gated.
-inline int uappPartCleanCount()
+// ---- the oil of acid
+// resistance (the R396 clean
+// read) ----
+// Confers virtual
+// invulnerability to acid on
+// skin, cloth, or any other
+// material; one application
+// lasts a full day, but each
+// acid exposure eats the
+// remaining potency by as
+// many minutes as the acid
+// would have caused hit
+// points of damage to
+// exposed flesh.
+inline bool uappAcidResCoversAnyMaterial()
+    { return true; }
+
+inline int uappAcidResDurationHours()
+    { return 24; }
+
+// The largest black dragon
+// example: 64 minutes lost,
+// 32 with a save versus
+// breath weapon.
+inline int uappAcidResBigBlackMinutes()
+    { return 64; }
+
+inline int uappAcidResBigBlackSavedMinutes()
+    { return 32; }
+
+// One flask: one man-sized
+// creature for 24 hours, or
+// 24 creatures for one hour -
+// any combination between.
+inline int uappAcidResOneManSizeHours()
+    { return 24; }
+
+inline int uappAcidResOneHourCreatures()
+    { return 24; }
+
+// A horse is equivalent to
+// eight man-sized creatures.
+inline int uappAcidResHorseEqualsMen()
+    { return 8; }
+
+// ---- the oil of
+// disenchantment (the R396
+// clean read) ----
+// Removes all enchantment/
+// charm dweomers placed upon
+// living things; rubbed on an
+// object, the object's dweomer
+// is lost for 21-30 turns
+// (d10 + 20),
+// then returns once the oil
+// has lost its potency. The
+// oil radiates no magic and
+// masks the dweomer of
+// whatever it coats while
+// effective.
+inline bool uappDisenRemovesFromLiving()
+    { return true; }
+
+inline int uappDisenLostTurnsLo()
+    { return 21; }
+
+inline int uappDisenLostTurnsHi()
+    { return 30; }
+
+inline bool uappDisenItemRegainsDweomer()
+    { return true; }
+
+inline bool uappDisenRadiatesMagic()
+    { return false; }
+
+inline bool uappDisenMasksDweomer()
+    { return true; }
+
+// ---- the oil of elemental
+// invulnerability (the R396
+// clean read) ----
+// Equal chances of the four
+// basic sorts (air, earth,
+// fire, water - roll d4);
+// total invulnerability to
+// normal elemental forces on
+// the Prime Material Plane;
+// elemental creatures still
+// damage at -1 per die.
+inline int uappElemInvSortCount()
+    { return 4; }
+
+inline int uappElemInvSortDieSides()
+    { return 4; }
+
+inline bool uappElemInvNormalElementalProof()
+    { return true; }
+
+// A 10% chance any container
+// is usable on any Elemental
+// or Paraelemental Plane.
+inline int uappElemInvPlaneUsablePct()
+    { return 10; }
+
+inline int uappElemInvMonsterDamagePerDie()
+    { return -1; }
+
+// One individual for eight
+// days, or eight individuals
+// for one day.
+inline int uappElemInvCoverageIndividuals()
+    { return 8; }
+
+inline int uappElemInvCoverageDays()
+    { return 8; }
+
+// ---- the oil of impact (the
+// R396 clean read) ----
+// Charges blunt weapons and
+// missiles - hurled hammers,
+// hurled clubs, sling stones,
+// sling bullets - with a
+// powerful dweomer; a flask
+// holds 3-5 applications; a
+// hand-held weapon keeps the
+// dweomer 9-12 rounds, a
+// missile carries a single
+// charge.
+inline bool uappImpactBluntAndMissiles()
+    { return true; }
+
+inline int uappImpactMissileKindCount()
+    { return 4; }
+
+inline int uappImpactApplicationsLo()
+    { return 3; }
+
+inline int uappImpactApplicationsHi()
+    { return 5; }
+
+inline int uappImpactHandRoundsLo()
+    { return 9; }
+
+inline int uappImpactHandRoundsHi()
     { return 12; }
 
+inline bool uappImpactMissileSingleCharge()
+    { return true; }
+
+// One application treats 4-5
+// sling missiles or 2 larger
+// weapons.
+inline int uappImpactSlingPerAppLo()
+    { return 4; }
+
+inline int uappImpactSlingPerAppHi()
+    { return 5; }
+
+inline int uappImpactLargerWeaponsPerApp()
+    { return 2; }
+
+// The hand weapon gains +3 to
+// hit and +6 damage; missiles
+// are +3 both.
+inline int uappImpactHandHitBonus()
+    { return 3; }
+
+inline int uappImpactHandDamageBonus()
+    { return 6; }
+
+inline int uappImpactMissileHitBonus()
+    { return 3; }
+
+inline int uappImpactMissileDamageBonus()
+    { return 3; }
+
+// ---- the philter of beauty
+// (the R396 clean read) ----
+// +1 charisma (18 maximum) and
+// +1 to +4 comeliness for the
+// duration; if the effects wear
+// off within sight of a
+// creature influenced by the
+// enhanced scores, that
+// creature turns hostile and
+// attacks.
+inline int uappBeautyChaBonus()
+    { return 1; }
+
+inline int uappBeautyChaMax()
+    { return 18; }
+
+inline int uappBeautyComelinessLo()
+    { return 1; }
+
+inline int uappBeautyComelinessHi()
+    { return 4; }
+
+inline bool uappBeautyWearOffSightedHostile()
+    { return true; }
+
+// ---- the philter of
+// glibness (the R396 clean
+// read) ----
+// The imbiber speaks fluently
+// - even lies - smoothly and
+// undetectably; magical
+// investigation gives altered
+// results, revealing only a
+// minor stretching of the
+// truth.
+inline bool uappGlibSpeechUndetectable()
+    { return true; }
+
+inline bool uappGlibDetectLieShowsStretching()
+    { return true; }
+
+// ---- the philter of
+// stammering and stuttering
+// (the R396 clean read) ----
+// Seems a beneficial draught
+// (glibness or
+// persuasiveness), but nothing
+// meaningful can be said
+// properly - spell verbal
+// components, scroll text,
+// conversation all fail - and
+// hearers react at -25%.
+inline bool uappStamSeemsBeneficial()
+    { return true; }
+
+inline bool uappStamMeaningfulSpeechFails()
+    { return true; }
+
+inline bool uappStamHitsSpellComponents()
+    { return true; }
+
+inline int uappStamReactionPenaltyPct()
+    { return 25; }
+
+// ---- the part ledger ----
+// All nineteen descriptions
+// pin - the R396 clean read
+// filled the seven the
+// extract garbled.
+inline int uappPartCleanCount()
+    { return 19; }
+
 inline int uappPartGarbledCount()
-    { return 7; }
+    { return 0; }
 
 }   // namespace rules
 

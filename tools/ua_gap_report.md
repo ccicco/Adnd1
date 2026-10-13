@@ -1805,6 +1805,32 @@ DECIDED R374: RUN BOTH - the engine
         stays OPEN, PDF-gated
         for the garbled
         remainder.
+      - AMENDED R396: closed -
+        the clean pp. 90-91 read
+        (the same clean PDF as
+        R394/R395) fills all
+        seven: the oils of acid
+        resistance (the 64/32
+        black-dragon minutes,
+        the horse-equals-eight),
+        disenchantment (the
+        21-30 lost turns, the
+        dweomer masking),
+        elemental
+        invulnerability (the d4
+        sorts, the 10% plane
+        chance, the -1 per die),
+        impact (the 3-5
+        applications, the +3/+6
+        hand read), and the
+        philters of beauty (the
+        +1/+1-4 scores, the
+        wear-off hostility),
+        glibness (the undetectable
+        speech), stammering (the
+        -25% reactions) - all
+        nineteen descriptions
+        pin (rules/uapotprose.h).
 - [ ] **The new scrolls** (pp. 91-93).
       - AMENDED R377: the new
         scrolls protection prose
