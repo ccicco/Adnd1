@@ -24,6 +24,9 @@
 // armor and skeleton seams
 // ride in the regtest audit,
 // not here.
+// The R399 clean read
+// filled every flagged hole
+// named above.
 namespace rules {
 
 // ---- the axe of hurling ----
@@ -89,23 +92,25 @@ inline int uamwAohExampleLHi()
 inline bool uamwAohHandheldNormalDamage()
     { return true; }
 
-// The familiarization tail
-// OCR-scrambles; the
-// reconstruction: after each
-// week of use, the possessor
-// has a 1-in-8 chance (roll
-// of 1 on d8) to learn the
+// The R399 clean read fills
+// the tail: after each week
+// of use the possessor has
+// a 12 1/2% chance (roll of
+// 1 on d8) to learn the
 // full properties; in any
-// event fully known after 8
-// full weeks; flagged.
+// event fully known after
+// 8 full weeks.
 inline int uamwAohFamChanceDie()
     { return 8; }
 
 inline int uamwAohFamWeeksFull()
     { return 8; }
 
+inline int uamwAohFamChancePctX2()
+    { return 25; }
+
 inline bool uamwAohFamTailGarbles()
-    { return true; }
+    { return false; }
 
 // The bonus rides a d20 roll:
 // 1-5 +1, 6-10 +2, 11-15 +3,
@@ -292,8 +297,18 @@ inline bool uamwDthSuperbRangedWeapon()
 inline int uamwDthHurledRangeIn()
     { return 6; }
 
+// The R399 clean read fills
+// the cells: short/medium
+// range = 2"/4", the full
+// hurled distance 6".
+inline int uamwDthShortRangeIn()
+    { return 2; }
+
+inline int uamwDthMediumRangeIn()
+    { return 4; }
+
 inline bool uamwDthRangeCellsGarbles()
-    { return true; }
+    { return false; }
 
 // A successful thrown hit
 // inflicts twice normal
@@ -371,8 +386,19 @@ inline bool uamwHblAnimalHornResemblance()
 inline int uamwHblInspectionUnlikelyPct()
     { return 90; }
 
+// The R399 clean read fills
+// the sentence: a piece of
+// horn of 1/2' to 1 1/4'
+// in length, set in some
+// sort of handle or grip.
+inline int uamwHblHornLengthLoIn()
+    { return 6; }
+
+inline int uamwHblHornLengthHiIn()
+    { return 15; }
+
 inline bool uamwHblHandleSentenceGarbles()
-    { return true; }
+    { return false; }
 
 inline bool uamwHblFaintEnchantmentDweomer()
     { return true; }
@@ -839,17 +865,19 @@ inline int uamwSscPlus5Gp()
     { return 21000; }
 
 // ---- the part ledger ----
-// Nine items: six fully
-// clean, three flagged, none
-// fully garbled.
+// Nine items, all fully
+// clean - the R399 clean
+// read filled the three
+// flagged holes, none fully
+// garbled.
 inline int uamwPartItemTotal()
     { return 9; }
 
 inline int uamwPartCleanCount()
-    { return 6; }
+    { return 9; }
 
 inline int uamwPartFlaggedCount()
-    { return 3; }
+    { return 0; }
 
 inline int uamwPartGarbledCount()
     { return 0; }

@@ -38881,6 +38881,9 @@ int main() {
 
     // ---- R387: the UA armor and
     // swords prose pin audit ----
+    // The R399 clean read fills
+    // every flagged hole this
+    // block names.
     // The pp. 104-105 stretch:
     // eight pins - four fully
     // clean (the anything armor,
@@ -38968,7 +38971,7 @@ int main() {
             if (uaaspEcmManLargeHi() != 100) ++bad;
             if (uaaspEcmManNormalLbs() != 200) ++bad;
             if (uaaspEcmManLargeLbs() != 250) ++bad;
-            if (!uaaspEcmSizeTableGarbles()) ++bad;
+            if (uaaspEcmSizeTableGarbles()) ++bad;
             // the five size bands
             // tile the d100 exactly,
             // 10+5+65+15+5 = 100
@@ -39004,7 +39007,7 @@ int main() {
             if (!uaaspPltFieldOrFullPlate()) ++bad;
             if (!uaaspPltConformsToWearer()) ++bad;
             if (!uaaspPltSameRaceRequired()) ++bad;
-            if (!uaaspPltConformSeamGarbles()) ++bad;
+            if (uaaspPltConformSeamGarbles()) ++bad;
             if (uaaspPltFieldAbsorbPerPlus() != 10)
                 ++bad;
             if (uaaspPltFullAbsorbPerPlus() != 16)
@@ -39074,7 +39077,7 @@ int main() {
             if (!uaaspSubDoubleDamageVsNegative())
                 ++bad;
             if (!uaaspSubRadianceOnCommand()) ++bad;
-            if (!uaaspSubRadianceSeamGarbles())
+            if (uaaspSubRadianceSeamGarbles())
                 ++bad;
             if (uaaspSubRadianceStartFt() != 10)
                 ++bad;
@@ -39154,7 +39157,7 @@ int main() {
             if (uaaspFwbPommelGemGp() != 10000)
                 ++bad;
             if (!uaaspFwbEachGemDifferent()) ++bad;
-            if (!uaaspFwbNamesTailGarbles()) ++bad;
+            if (uaaspFwbNamesTailGarbles()) ++bad;
             // the nine blades with
             // differing alignments
             // still share the one
@@ -39162,8 +39165,8 @@ int main() {
             if (uaaspFwbKnownCount() != 9) ++bad;
         // ---- the part ledger ----
             if (uaaspPartItemTotal() != 8) ++bad;
-            if (uaaspPartCleanCount() != 4) ++bad;
-            if (uaaspPartFlaggedCount() != 4) ++bad;
+            if (uaaspPartCleanCount() != 8) ++bad;
+            if (uaaspPartFlaggedCount() != 0) ++bad;
             if (uaaspPartGarbledCount() != 0) ++bad;
             if (uaaspPartCleanCount()
                     + uaaspPartFlaggedCount()
@@ -39190,6 +39193,9 @@ int main() {
 
     // ---- R388: the UA misc
     // weapons prose pin audit ----
+    // The R399 clean read fills
+    // every flagged hole this
+    // block names.
     // The pp. 105-106 stretch:
     // nine pins - six fully
     // clean (the bullet of
@@ -39235,7 +39241,7 @@ int main() {
                 ++bad;
             if (uamwAohFamChanceDie() != 8) ++bad;
             if (uamwAohFamWeeksFull() != 8) ++bad;
-            if (!uamwAohFamTailGarbles()) ++bad;
+            if (uamwAohFamTailGarbles()) ++bad;
             if (!uamwAohBonusOnD20()) ++bad;
             if (uamwAohBand1Lo() != 1) ++bad;
             if (uamwAohBand1Hi() != 5) ++bad;
@@ -39349,7 +39355,7 @@ int main() {
             if (!uamwDthPerfectBalance()) ++bad;
             if (!uamwDthSuperbRangedWeapon()) ++bad;
             if (uamwDthHurledRangeIn() != 6) ++bad;
-            if (!uamwDthRangeCellsGarbles()) ++bad;
+            if (uamwDthRangeCellsGarbles()) ++bad;
             if (!uamwDthTwiceNormalDamage())
                 ++bad;
             if (uamwDthBonusLo() != 1) ++bad;
@@ -39390,7 +39396,7 @@ int main() {
                 ++bad;
             if (uamwHblInspectionUnlikelyPct()
                     != 90) ++bad;
-            if (!uamwHblHandleSentenceGarbles())
+            if (uamwHblHandleSentenceGarbles())
                 ++bad;
             if (!uamwHblFaintEnchantmentDweomer())
                 ++bad;
@@ -39643,8 +39649,8 @@ int main() {
                     != 3000) ++bad;
         // ---- the part ledger ----
             if (uamwPartItemTotal() != 9) ++bad;
-            if (uamwPartCleanCount() != 6) ++bad;
-            if (uamwPartFlaggedCount() != 3) ++bad;
+            if (uamwPartCleanCount() != 9) ++bad;
+            if (uamwPartFlaggedCount() != 0) ++bad;
             if (uamwPartGarbledCount() != 0) ++bad;
             if (uamwPartCleanCount()
                     + uamwPartFlaggedCount()
@@ -39652,8 +39658,8 @@ int main() {
                     != uamwPartItemTotal()) ++bad;
         // ---- the R387 armor seam ----
             if (uaaspPartItemTotal() != 8) ++bad;
-            if (uaaspPartCleanCount() != 4) ++bad;
-            if (uaaspPartFlaggedCount() != 4)
+            if (uaaspPartCleanCount() != 8) ++bad;
+            if (uaaspPartFlaggedCount() != 0)
                 ++bad;
             if (uaaspPartGarbledCount() != 0)
                 ++bad;
@@ -42271,6 +42277,106 @@ int main() {
             if (uamm6PartFlaggedCount()
                     != 0) ++bad;
         printf("R398 UA misc magic holes pin audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R399: the UA armor
+    // swords misc weapons holes
+    // pin audit ----
+    // The clean read (pp.
+    // 104-106) fills every
+    // flagged hole the two
+    // treasure prose headers
+    // carry - all seven flags
+    // drop and both part
+    // ledgers run clean/0.
+    {
+        using namespace rules;
+        int bad = 0;
+            if (uaaspEcmManNormalHeightIn() != 72) ++bad;
+            if (uaaspEcmManLargeHeightIn() != 78) ++bad;
+            if (!uaaspEcmRow1GnomeHalfling()) ++bad;
+            if (!uaaspPltAnyHumanWearsOwn()) ++bad;
+            if (!uaaspSubRadianceBrightYellow()) ++bad;
+            if (!uaaspSubRadianceEqualsDaylight()) ++bad;
+            if (uamwAohFamChancePctX2() != 25) ++bad;
+            if (uamwDthShortRangeIn() != 2) ++bad;
+            if (uamwDthMediumRangeIn() != 4) ++bad;
+            if (uamwHblHornLengthLoIn() != 6) ++bad;
+            if (uamwHblHornLengthHiIn() != 15) ++bad;
+            if (std::string(
+                    uaaspFwbAppellation(0))
+                    != "Answerer") ++bad;
+            if (std::string(
+                    uaaspFwbAppellation(1))
+                    != "Back-talker") ++bad;
+            if (std::string(
+                    uaaspFwbAppellation(2))
+                    != "Concluder") ++bad;
+            if (std::string(
+                    uaaspFwbAppellation(3))
+                    != "Last-quip") ++bad;
+            if (std::string(
+                    uaaspFwbAppellation(4))
+                    != "Rebutter") ++bad;
+            if (std::string(
+                    uaaspFwbAppellation(5))
+                    != "Replier") ++bad;
+            if (std::string(
+                    uaaspFwbAppellation(6))
+                    != "Retorter") ++bad;
+            if (std::string(
+                    uaaspFwbAppellation(7))
+                    != "Scather") ++bad;
+            if (std::string(
+                    uaaspFwbAppellation(8))
+                    != "Squelcher") ++bad;
+        // ---- the cross-checks
+        // ----
+            // the large suit stands
+            // six inches taller than
+            // the normal, and carries
+            // fifty more pounds
+            if (uaaspEcmManLargeHeightIn()
+                    - uaaspEcmManNormalHeightIn()
+                    != 6) ++bad;
+            if (uaaspEcmManNormalHeightIn()
+                    != 12 * 6) ++bad;
+            // the thrown-dagger range
+            // ladder steps two inches
+            // at a time, 2, 4, 6
+            if (uamwDthShortRangeIn()
+                    + 2 != uamwDthMediumRangeIn())
+                ++bad;
+            if (uamwDthMediumRangeIn()
+                    + 2 != uamwDthHurledRangeIn())
+                ++bad;
+            // the eight weekly 12
+            // 1/2% chances sum to a
+            // full 100% expectation
+            if (uamwAohFamWeeksFull()
+                    * uamwAohFamChancePctX2()
+                    != 200) ++bad;
+            // the horn band runs a
+            // half foot to one and
+            // a quarter feet, 6 and
+            // 15 inches
+            if (5 * uamwHblHornLengthLoIn()
+                    != 2 * uamwHblHornLengthHiIn())
+                ++bad;
+        // ---- the ledger seam ----
+            // both part ledgers run
+            // clean, no flags
+            if (uaaspPartCleanCount()
+                    != uaaspPartItemTotal())
+                ++bad;
+            if (uaaspPartFlaggedCount()
+                    != 0) ++bad;
+            if (uamwPartCleanCount()
+                    != uamwPartItemTotal())
+                ++bad;
+            if (uamwPartFlaggedCount()
+                    != 0) ++bad;
+        printf("R399 UA armor weapons holes pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

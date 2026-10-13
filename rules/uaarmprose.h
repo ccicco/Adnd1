@@ -24,6 +24,9 @@
 // and skeleton seams ride in
 // the regtest audit, not
 // here.
+// The R399 clean read
+// filled every flagged hole
+// named above.
 namespace rules {
 
 // ---- the construction rule
@@ -141,19 +144,18 @@ inline bool uaaspEcmMaySlightlyHinder()
 inline bool uaaspEcmRareForNonElves()
     { return true; }
 
-// The size table
-// OCR-scrambles (the header
-// and row labels
-// dislocate); the
-// reconstruction: five rows -
-// 01-10 hairfoot, 11-15
+// The R399 clean read
+// prints the table: five
+// rows - 01-10
+// gnome/halfling
+// (hairfoot), 11-15
 // dwarf/halfling (stout or
 // tallfellow), 16-80
 // elf/half-elf, 81-95
-// man-sized normal (up to 6
-// feet, 200 lbs.), 96-00
-// man-sized large (up to 250
-// lbs.); flagged.
+// man-sized, normal (up to
+// 6', 200 lbs.), 96-00
+// man-sized, large (up to
+// 6 1/2', 250 lbs.).
 inline int uaaspEcmSizeTableRows()
     { return 5; }
 
@@ -193,8 +195,20 @@ inline int uaaspEcmManNormalLbs()
 inline int uaaspEcmManLargeLbs()
     { return 250; }
 
-inline bool uaaspEcmSizeTableGarbles()
+// The R399 clean read fills
+// the row-one label and the
+// two height cells.
+inline int uaaspEcmManNormalHeightIn()
+    { return 72; }
+
+inline int uaaspEcmManLargeHeightIn()
+    { return 78; }
+
+inline bool uaaspEcmRow1GnomeHalfling()
     { return true; }
+
+inline bool uaaspEcmSizeTableGarbles()
+    { return false; }
 
 // ---- the plate ----
 // Field plate or full plate,
@@ -216,8 +230,16 @@ inline bool uaaspPltConformsToWearer()
 inline bool uaaspPltSameRaceRequired()
     { return true; }
 
-inline bool uaaspPltConformSeamGarbles()
+// The R399 clean read fills
+// the parenthetical: any
+// human wears human-sized,
+// any dwarf dwarf-sized,
+// etc.
+inline bool uaaspPltAnyHumanWearsOwn()
     { return true; }
+
+inline bool uaaspPltConformSeamGarbles()
+    { return false; }
 
 // Magical plate absorbs more
 // damage than non-magical of
@@ -364,8 +386,19 @@ inline bool uaaspSubDoubleDamageVsNegative()
 inline bool uaaspSubRadianceOnCommand()
     { return true; }
 
-inline bool uaaspSubRadianceSeamGarbles()
+// The R399 clean read
+// confirms the seam: the
+// blade sheds a bright
+// yellow radiance equaling
+// full daylight.
+inline bool uaaspSubRadianceBrightYellow()
     { return true; }
+
+inline bool uaaspSubRadianceEqualsDaylight()
+    { return true; }
+
+inline bool uaaspSubRadianceSeamGarbles()
+    { return false; }
 
 // The radiance begins within
 // a 10-foot radius, spreads
@@ -542,21 +575,42 @@ inline int uaaspFwbPommelGemGp()
 inline bool uaaspFwbEachGemDifferent()
     { return true; }
 
+// The R399 clean read fills
+// the nine appellations.
+inline const char* uaaspFwbAppellation(int i) {
+    static const char* const k[9] = {
+        "Answerer",
+        "Back-talker",
+        "Concluder",
+        "Last-quip",
+        "Rebutter",
+        "Replier",
+        "Retorter",
+        "Scather",
+        "Squelcher"
+    };
+    if (i < 0 || i >= 9)
+        return "";
+    return k[i];
+}
+
 inline bool uaaspFwbNamesTailGarbles()
-    { return true; }
+    { return false; }
 
 // ---- the part ledger ----
-// Eight items: four fully
-// clean, four flagged, none
-// fully garbled.
+// Eight items, all fully
+// clean - the R399 clean
+// read filled the four
+// flagged holes, none fully
+// garbled.
 inline int uaaspPartItemTotal()
     { return 8; }
 
 inline int uaaspPartCleanCount()
-    { return 4; }
+    { return 8; }
 
 inline int uaaspPartFlaggedCount()
-    { return 4; }
+    { return 0; }
 
 inline int uaaspPartGarbledCount()
     { return 0; }

@@ -2250,6 +2250,24 @@ DECIDED R374: RUN BOTH - the engine
         NOTHING fully garbles - the
         item AMENDED, the prose pinned,
         stays PDF-gated only.
+      - AMENDED R399: closed -
+        the clean read fills the
+        four flagged seams: the
+        elfin chain mail row-one
+        label (gnome/halfling,
+        hairfoot) and the 6 and
+        6 1/2' height cells, the
+        plate conform
+        parenthetical, the sun
+        blade radiance seam
+        (bright yellow, full
+        daylight), the nine
+        Final Word appellations
+        (Answerer, Back-talker,
+        Concluder, Last-quip,
+        Rebutter, Replier,
+        Retorter, Scather,
+        Squelcher).
 - [ ] **The new miscellaneous weapons**
       (pp. 105-106) - the Axe of
       Hurling (the return, the double
@@ -2275,6 +2293,20 @@ DECIDED R374: RUN BOTH - the engine
         - the item AMENDED, the prose
         pinned, the treasure prose sweep
         complete, stays PDF-gated only.
+      - AMENDED R399: closed -
+        the clean read fills the
+        three flagged seams: the
+        axe of hurling 12 1/2%
+        familiarization tail,
+        the dagger of throwing
+        range cells (2"/4"), the
+        hornblade's handle
+        sentence (a horn of 1/2'
+        to 1 1/4' in a grip).
+        With the armor and
+        swords item above the
+        UA treasure prose sweep
+        stands fully closed.
 
 ### DM tables and charts (the manifest)
 

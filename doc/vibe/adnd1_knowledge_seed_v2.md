@@ -2025,6 +2025,30 @@ R172 were already dropped at the R171b/R172 era cut; git
   battery - stable and
   benign; the md5 stays
   advisory.
+- R398 landed 2026-10-13:
+  commit 2a9f559 (census 325,
+  preflight GREEN), the UA
+  misc magic flagged holes
+  completion: the clean pp.
+  98-104 read fills all 33
+  flagged holes the six misc
+  magic prose parts carry
+  (rules/uamiscprose1.h
+  through
+  rules/uamiscprose6.h) -
+  every part ledger runs
+  clean, the four
+  provisional pins correct
+  (the lens diameter, the
+  philosopher's stone
+  pounds, the prison
+  shrink). The ./nn save
+  hash diverged for the
+  sixth round running yet
+  the copy passed the
+  battery - stable and
+  benign; the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
