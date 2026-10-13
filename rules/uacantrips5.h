@@ -107,6 +107,12 @@ const int UCO_AREA_CREATURE = 9;
 const int UCO_AREA_BEAST = 10;
 const int UCO_AREA_CLOUD = 11;
 const int UCO_AREA_LOCK = 12;
+// The sphere and the line NEW
+// this round (R419 - the PDF
+// read resolves the two area
+// holes).
+const int UCO_AREA_SPHERE = 13;
+const int UCO_AREA_LINE = 14;
 
 // One personal cantrip: the
 // name, the school, the area
@@ -125,9 +131,11 @@ struct UcoCantrip {
 inline const UcoCantrip& ucoPersonal(int i) {
     static const UcoCantrip T[10] = {
         { "Bee", 6, 10, 0 },
-        { "Bluelight", 7, -1, 0 },
+        { "Bluelight", 7,
+            UCO_AREA_SPHERE, 3 },
         { "Bug", 6, 10, 0 },
-        { "Firefinger", 2, -1, 0 },
+        { "Firefinger", 2,
+            UCO_AREA_LINE, 6 },
         { "Gnats", 6, 1, 1 },
         { "Mouse", 6, 10, 0 },
         { "Smokepuff", 0, 11, 1 },
@@ -164,24 +172,49 @@ inline int ucoAreaKindCount(int a)
     return n;
 }
 
-// The casting-time hole family:
-// ALL 10 casting-time cells print
-// fraction garbles in the scan -
-// the whole family records as
-// holes pending the PDF read (the
-// R363/R412/R413/R414/R415
-// posture).
-inline bool ucoCastTimesAreHoles()
-    { return true; }
+// The casting times: the
+// PDF read resolves the
+// whole family (R419) - the
+// real UA PDF prints every
+// cell clean, a unit
+// fraction, one segment
+// over the denominator. The
+// denominators, in roster
+// order:
+// order: Bee, Bluelight,
+// Bug, Gnats, Mouse, Spider
+// and Unlock at 1/2,
+// Firefinger, Smokepuff and
+// Tweak at 1/3.
+inline int ucoCastTimeDen(int i)
+{
+    static const int D[10] = {
+        2, 2, 2, 3, 2, 2, 3, 2, 3, 2 };
+    if (i < 0) i = 0;
+    if (i > 9) i = 9;
+    return D[i];
+}
 
-// The range hole family: the
+// The casting-time
+// denominator census helper.
+inline int ucoCastTimeDenCount(int d)
+{
+    int n = 0;
+    for (int i = 0; i < 10; ++i)
+        if (ucoCastTimeDen(i) == d)
+            ++n;
+    return n;
+}
+
+// The range units: the PDF read
+// resolves the glyphs (R419) - the
 // seven ranged blocks print the
-// numeral 1 clean but the
-// foot/inch glyphs garble - the
-// numeral pins, the unit family
-// records as holes pending the
-// PDF read.
-inline bool ucoRangeUnitsAreHoles()
+// AD&D 1" notation (one inch of
+// range, the ten-foot indoor
+// scale). The unit pins as inch;
+// the numeral 1 rides the
+// standing ucoRangeVal() pin.
+inline bool ucoRangeUnitIsInch()
     { return true; }
 
 // The range numeral (the seven
@@ -285,13 +318,12 @@ inline int ucoSpiderSickMinDays()
 inline int ucoSpiderSickMaxDays()
     { return 4; }
 
-// The slow poison defer: the
-// scan prints a garbled numeral
-// for the deferral - the value
-// records as a hole pending the
-// PDF read (never a guess).
-inline bool ucoSlowPoisonDeferIsHole()
-    { return true; }
+// The slow poison defer: the PDF
+// read resolves the garble (R419)
+// - a slow poison defers the
+// sickness for 1 day.
+inline int ucoSlowPoisonDeferDays()
+    { return 1; }
 
 // ---- the tweak read ----
 

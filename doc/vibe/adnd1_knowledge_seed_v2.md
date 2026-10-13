@@ -2512,6 +2512,40 @@ R172 were already dropped at the R171b/R172 era cut; git
   EIGHTEENTH round running -
   benign; the md5 stays
   advisory.
+- R418 landed 2026-10-13:
+  commits ade93bd + the R418b
+  repair 21a7031 (census 345,
+  preflight GREEN), the UA
+  CANTRIP CASTING-TIME
+  RESOLUTION PART 1 (book pp.
+  45-48) - the PDF read resolves
+  the useful (20), reversed (12)
+  and legerdemain (6) casting-
+  time families: 38 cells, ALL
+  clean unit fractions AS
+  PRINTED; the hole blocks amend
+  to uXXCastTimeDen accessors over
+  D[] arrays plus DenCount census
+  helpers; censuses 17/0/2/1,
+  4/1/5/2 and 0/1/1/4; the 2..10
+  norm band cross-checks. The
+  R418 body shipped RED (the
+  orphaned || pin chains - the
+  per-row emitter opened only the
+  FIRST chain with if ( - three
+  expected-expression compile
+  errors, the battery never
+  built, preflight cascaded into
+  hundreds of phantom CENSUS
+  FAILs); landed via the b-route
+  (the R392/R392b precedent). The
+  R418b repair added the standing
+  gates: NO chain may begin with
+  ||, and every regtest pin is
+  mirror-evaled against the
+  header D[] arrays. The ./nn
+  save hash diverged twice -
+  benign; the md5 stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

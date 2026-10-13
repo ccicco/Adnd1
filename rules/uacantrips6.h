@@ -127,24 +127,52 @@ inline int uchAreaKindCount(int a)
     return n;
 }
 
-// The casting-time hole family:
-// ALL 8 casting-time cells print
-// fraction garbles in the scan -
-// the whole family records as
-// holes pending the PDF read (the
-// R363/R412/R413/R414/R415/R416
-// posture).
-inline bool uchCastTimesAreHoles()
-    { return true; }
+// The casting times: the
+// PDF read resolves the
+// whole family (R419) - the
+// real UA PDF prints every
+// cell clean, a unit
+// fraction, one segment
+// over the denominator. The
+// denominators, in roster
+// order:
+// order: Creak, Footfall,
+// Groan, Tap and Whistle at
+// 1/6, Moan, Rattle and
+// Thump at 1/10 - the 1/6
+// lands inside the 2..10
+// band the p. 45 header
+// prints.
+inline int uchCastTimeDen(int i)
+{
+    static const int D[8] = {
+        6, 6, 6, 10, 10, 6, 10, 6 };
+    if (i < 0) i = 0;
+    if (i > 7) i = 7;
+    return D[i];
+}
 
-// The range unit hole family:
-// five blocks print the numerals
-// clean but the foot/inch
-// glyphs garble - the numerals
-// pin, the unit family records
-// as holes pending the PDF
-// read.
-inline bool uchRangeUnitsAreHoles()
+// The casting-time
+// denominator census helper.
+inline int uchCastTimeDenCount(int d)
+{
+    int n = 0;
+    for (int i = 0; i < 8; ++i)
+        if (uchCastTimeDen(i) == d)
+            ++n;
+    return n;
+}
+
+// The range units: the PDF read
+// resolves the glyphs (R419) - the
+// ranged blocks print the
+// AD&D 1" notation (one inch of
+// range, the ten-foot indoor
+// scale). The unit pins as inch;
+// the numerals ride the
+// standing uchRangeNearVal() and
+// uchFootfallFarVal() pins.
+inline bool uchRangeUnitIsInch()
     { return true; }
 
 // The near range numeral (the
@@ -161,26 +189,27 @@ inline int uchFootfallFarVal()
 
 // ---- the mechanics pins ----
 
-// The creak read: the former
-// sound (corroded-hinge door)
-// prints a garbled 1/3 segment -
-// a hole; the latter noise
+// The creak read (the PDF read
+// resolves the garble - R419):
+// the former sound (corroded-
+// hinge door) lasts 1/3
+// segment (the denominator
+// 3); the latter noise
 // (squeaking floorboards) lasts
 // half a segment (in halves).
-inline bool uchCreakFormerIsHole()
-    { return true; }
+inline int uchCreakFormerDen()
+    { return 3; }
 
 inline int uchCreakLatterHalfSegs()
     { return 1; }
 
-// The creak traverse: the scan
-// prints an ambiguous "1 0" for
-// the traversal distance - the
-// value records as a hole
-// pending the PDF read (never a
-// guess).
-inline bool uchCreakTraverseIsHole()
-    { return true; }
+// The creak traverse: the PDF
+// read resolves the ambiguity
+// (R419) - the latter noise
+// seems to traverse up to 10
+// feet distance.
+inline int uchCreakTraverseFeet()
+    { return 10; }
 
 // The moan read: the sound is
 // either a low-pitched haunting

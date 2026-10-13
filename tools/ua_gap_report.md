@@ -1315,6 +1315,40 @@ the gateway charge.
       names) - the item stays open
       on the pp. 45-52 descriptions,
       ungated.
+      - AMENDED R419: the PDF
+        read completes - the
+        casting-time hole
+        families of the person-
+        affecting (R415),
+        personal (R416) and
+        haunting-sound (R417)
+        descriptions resolve: 28
+        cells, every one a clean
+        unit fraction one segment
+        over the denominator (the
+        person-affecting 1/3/2/4,
+        the personal 7/3/0/0, the
+        haunting-sound 0/0/5/3 -
+        the 1/6 lands inside the
+        2..10 band the p. 45
+        header prints); the two
+        R416 areas resolve (the
+        Bluelight 1/4 foot sphere
+        and the Firefinger 1/2
+        foot line - NEW area
+        kinds, the values
+        cross-deriving against
+        the mechanics pins), the
+        range units resolve (the
+        AD&D 1" notation), the
+        slow-poison defer pins (1
+        day) and the creak reads
+        pin (the former 1/3
+        segment, the traverse 10
+        feet); the hole flags come
+        off - the MU cantrip
+        descriptions now stand
+        hole-free.
       - AMENDED R418: the PDF
         read lands - the
         casting-time hole

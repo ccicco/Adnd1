@@ -138,14 +138,39 @@ inline int ucpAreaKindCount(int a)
     return n;
 }
 
-// The casting-time hole family:
-// ALL 10 casting-time cells print
-// fraction garbles in the scan -
-// the whole family records as
-// holes pending the PDF read (the
-// R363/R412/R413/R414 posture).
-inline bool ucpCastTimesAreHoles()
-    { return true; }
+// The casting times: the
+// PDF read resolves the
+// whole family (R419) - the
+// real UA PDF prints every
+// cell clean, a unit
+// fraction, one segment
+// over the denominator. The
+// denominators, in roster
+// order:
+// order: Sneeze at 1/2,
+// Cough, Giggle and Twitch
+// at 1/3, Scratch and Yawn
+// at 1/8, Belch, Blink, Nod
+// and Wink at 1/10.
+inline int ucpCastTimeDen(int i)
+{
+    static const int D[10] = {
+        10, 10, 3, 3, 10, 8, 2, 3, 10, 8 };
+    if (i < 0) i = 0;
+    if (i > 9) i = 9;
+    return D[i];
+}
+
+// The casting-time
+// denominator census helper.
+inline int ucpCastTimeDenCount(int d)
+{
+    int n = 0;
+    for (int i = 0; i < 10; ++i)
+        if (ucpCastTimeDen(i) == d)
+            ++n;
+    return n;
+}
 
 // ---- the mechanics pins ----
 
