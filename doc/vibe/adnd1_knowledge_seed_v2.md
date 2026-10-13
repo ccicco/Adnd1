@@ -2297,6 +2297,21 @@ R172 were already dropped at the R171b/R172 era cut; git
   diverged for the eighteenth
   round running - benign; the
   md5 stays advisory.
+- R411 landed 2026-10-13:
+  commit 94e9302 (census 338,
+  preflight GREEN), the UA
+  Appendix S MOVE values -
+  rules/uamoves.h (prefix umv)
+  - the 23 rates, the five
+  alternates, the Aerdrie
+  flight-only flag; the Shargaas
+  garble the recorded hole; the
+  sanity ladders live; the
+  pantheon prose alone stays open
+  in Appendix S. The md5 diverged
+  for the nineteenth round
+  running - benign; the md5
+  stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

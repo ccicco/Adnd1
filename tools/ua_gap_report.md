@@ -1315,6 +1315,26 @@ the gateway charge.
       names) - the item stays open
       on the pp. 45-52 descriptions,
       ungated.
+      - AMENDED R412: the useful
+        category descriptions land
+        (rules/uacantrips1.h) - the
+        20 blocks pin schools (the
+        7/4/7/2 census), the 14
+        clean areas, the six
+        "7"-family garbles and the
+        whole casting-time family
+        the recorded holes pending
+        the PDF read (the R363
+        posture), the mechanics pin
+        (the 40 F pair, the 1-4
+        damage pair, the salt
+        limits, the tie range, the
+        shine revalue, the color
+        renewal, the polish floor);
+        the reversed, legerdemain,
+        person-affecting, personal
+        and haunting-sound
+        descriptions stay open.
       - six categories: useful (20
       named: chill, clean, color,
       dampen, dry, dust, exterminate,
