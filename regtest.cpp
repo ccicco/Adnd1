@@ -44429,7 +44429,7 @@ int main() {
                 || ucnCastTimeDen(6) != 10
                 || ucnCastTimeDen(7) != 2) ++bad;
 
-                || ucnCastTimeDen(8) != 2
+        if (ucnCastTimeDen(8) != 2
                 || ucnCastTimeDen(9) != 8
                 || ucnCastTimeDen(10) != 2
                 || ucnCastTimeDen(11) != 8
@@ -44438,7 +44438,7 @@ int main() {
                 || ucnCastTimeDen(14) != 2
                 || ucnCastTimeDen(15) != 2) ++bad;
 
-                || ucnCastTimeDen(16) != 2
+        if (ucnCastTimeDen(16) != 2
                 || ucnCastTimeDen(17) != 2
                 || ucnCastTimeDen(18) != 2
                 || ucnCastTimeDen(19) != 2) ++bad;
@@ -44606,7 +44606,7 @@ int main() {
                 || ucrCastTimeDen(6) != 2
                 || ucrCastTimeDen(7) != 8) ++bad;
 
-                || ucrCastTimeDen(8) != 8
+        if (ucrCastTimeDen(8) != 8
                 || ucrCastTimeDen(9) != 2
                 || ucrCastTimeDen(10) != 3
                 || ucrCastTimeDen(11) != 2) ++bad;
