@@ -1756,6 +1756,28 @@ DECIDED R374: RUN BOTH - the engine
         read clean" claim corrected;
         the item stays OPEN,
         PDF-gated.
+      - AMENDED R395: closed - the
+        clean pp. 84-89 read (the
+        same clean PDF as R394)
+        delivers every row body:
+        all TWENTY-ONE tables (the
+        eight categories' tables,
+        the .2 seconds, the seven
+        misc sub-tables) pin in
+        full (rules/uadetrows.h) -
+        the dice bands, the names,
+        the marks, the x.p./g.p.
+        columns; the skeleton
+        markers flip (the seventh
+        misc sub-table name
+        III.E.7 reads clean; the
+        category names Rings and
+        Swords corrected - the
+        R375 extract read them
+        singular); the value-
+        column footnotes ride the
+        prose rounds (the R221-
+        224 precedent).
 - [ ] **The new potions** (p. 90).
       - AMENDED R376: the new
         potions prose part 1 pin
@@ -2111,10 +2133,16 @@ own index, one item each:
         read (the LLC label fill,
         rules/uasocialclass.h).
 
-- [ ] Treasure Table III: Magic Items
+- [x] Treasure Table III: Magic Items
       (p. 84) - the umbrella table; the
       sub-tables are the III.A-III.H
       item above.
+      - AMENDED R395: closed - the
+        umbrella bands pinned R375
+        (rules/uadetskel.h) and the
+        sub-tables closed by the
+        R395 row-body charge
+        (rules/uadetrows.h).
 
 ## Appendices (pp. 106-129)
 

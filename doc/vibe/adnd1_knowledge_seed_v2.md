@@ -1910,6 +1910,34 @@ R172 were already dropped at the R171b/R172 era cut; git
   save path may not be
   byte-faithful; verify the tail
   bytes next round.
+- R394 landed 2026-10-13: commit
+  4095934 (census 321, preflight
+  GREEN), the UA DM tables
+  manifest sweep: the clean PDF
+  read (pp. 74, 76, 82-83,
+  106-108) fills every flagged
+  DM-section hole -
+  uasmalls1.h the Method V 12 x
+  7 dice matrix plus the barding
+  column repin (a divergence
+  fix: the R370 labels sat one
+  column off); uasocialclass.h
+  the LLC label and the Freed
+  slaves roster head; uabirth.h
+  the high-elf -20;
+  uaappendq.h all six parts
+  clean; TEN manifest items flip
+  CLOSED; the Clerical QR rides
+  Appendix S; Treasure Table III
+  stays open for R395. The
+  Termux copy hashed differently
+  from the published md5 yet
+  passed compile, the double-
+  run, census 321 and the full
+  battery - the ./nn save path
+  still not byte-faithful (the
+  R393 lesson); the R392 md5
+  gate stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -6,10 +6,11 @@
 // (pp. 84-89), R375: the
 // top-level category bands and
 // the sub-table splits. The row
-// bodies of the eight tables
-// OCR-scramble in the extract -
-// flagged; the item stays open,
-// PDF-gated. The dial ride: the
+// bodies ride R395 - the clean
+// PDF read fills every row
+// (rules/uadetrows.h); the
+// extract markers below flip
+// with it. The dial ride: the
 // R374 seam (checked in the
 // regtest audit, not here).
 namespace rules {
@@ -22,10 +23,10 @@ inline int uadsCategoryCount()
 
 inline const char* uadsCategoryName(int i) {
     static const char* const k[8] = {
-        "Potions", "Scrolls", "Ring",
+        "Potions", "Scrolls", "Rings",
         "Rods, Staves & Wands",
         "Miscellaneous Magic",
-        "Armor & Shields", "Sword",
+        "Armor & Shields", "Swords",
         "Miscellaneous Weapons",
     };
     if (i < 0) i = 0;
@@ -106,18 +107,18 @@ inline bool uadsSwordSecondTableIsIIG2()
 
 // ---- the miscellaneous magic
 // sub-tables ----
-// SEVEN visible sub-bands (not
-// two): six named IILE.1 through
-// IILE.6, the seventh's name
-// garbles in the extract.
+// SEVEN sub-bands, all named -
+// III.E.1 through III.E.7; the
+// R395 clean read names the
+// seventh the extract lost.
 inline int uadsMiscSubCount()
     { return 7; }
 
 inline int uadsMiscSubNamedCount()
-    { return 6; }
+    { return 7; }
 
 inline bool uadsMiscSubSeventhNameGarbles()
-    { return true; }
+    { return false; }
 
 inline int uadsMiscSubLo(int i) {
     static const int k[7] = {
@@ -162,13 +163,12 @@ inline int uadsScrollCurseDmgPage()
     { return 121; }
 
 // ---- the extract read ----
-// The row bodies of all eight
-// tables OCR-scramble: dropped
-// dice bands, orphaned value
-// rows, merged columns - the
-// bodies await the PDF.
+// The R395 clean read delivers
+// every row body - the marker
+// flips false (the rows pin in
+// rules/uadetrows.h).
 inline bool uadsRowBodiesGarble()
-    { return true; }
+    { return false; }
 
 }   // namespace rules
 
