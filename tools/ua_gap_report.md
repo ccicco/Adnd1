@@ -1315,7 +1315,43 @@ the gateway charge.
       names) - the item stays open
       on the pp. 45-52 descriptions,
       ungated.
-      - AMENDED R416: the
+      - AMENDED R417: the
+        haunting-sound
+        descriptions land (rules/
+        uacantrips6.h) - the 8
+        blocks pin schools (the
+        3/0/0/0/5/0/0/0 census -
+        NO new school codes; both
+        ride the standing codes),
+        ALL 8 areas clean (ZERO
+        area holes - the Special
+        seven and the Tap 1 sq. ft.,
+        a NEW area kind), the whole
+        casting-time family the
+        recorded holes, the range
+        unit family the recorded
+        holes (the near 1 and the
+        footfall far 2 numerals
+        pin), the creak traverse
+        an ambiguous garble
+        recorded as a hole, the
+        mechanics pin (the creak
+        latter half segment - the
+        former 1/3 a garbled hole;
+        the moan two flavors, the
+        rattle 2 seconds, the tap
+        once/twice/thrice 1..3
+        band, and the WHISTLE PAIR
+        - the faint 10 feet and the
+        loud 30 feet printing clean,
+        the loud == faint*3
+        derivation cross-checking
+        itself). ALL SIX MU cantrip
+        description rounds now
+        stand; the item stays open
+        ONLY on the recorded holes
+        pending the PDF read.
+          - AMENDED R416: the
         personal descriptions land
         (rules/uacantrips5.h) - the
         10 blocks pin schools (the

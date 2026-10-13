@@ -2447,6 +2447,42 @@ R172 were already dropped at the R171b/R172 era cut; git
   the SIXTEENTH round running
   - benign; the md5 stays
   advisory.
+- R416 landed 2026-10-13:
+  commit 51da28c (census 343,
+  preflight GREEN), the UA
+  PERSONAL CANTRIP
+  DESCRIPTIONS (pp. 49-50) -
+  the fifth of the six MU
+  cantrip description rounds;
+  the precedents ride. rules/
+  uacantrips5.h (prefix uco):
+  the 10 personal cantrips in
+  roster order, the school
+  census 1/0/1/0/0/0/5/3
+  (Summoning and Conjuration
+  AS PRINTED, NEW school
+  codes; the scan's
+  "Flrefinger" resolves as
+  Firefinger via the live
+  roster), the areas pin
+  EIGHT clean with TWO area
+  holes (the bluelight sphere
+  and the firefinger line),
+  the spider poison read +
+  the band derivations, the
+  casting-time, range-unit and
+  slow-poison-defer families
+  the recorded holes pending
+  the PDF read. One pre-publish
+  catch: a comma between
+  adjacent string literals split
+  the accessor line - the
+  R412b class guard caught it.
+  First-try GREEN on the user
+  side. The md5 diverged for
+  the SEVENTEENTH round running
+  - benign; the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
