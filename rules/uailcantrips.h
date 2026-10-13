@@ -18,8 +18,9 @@
 //     level - pinned, the list amended.
 //   - the casting-time cells print fraction garbles
 //     (/z, "2, />, "/s, /s and '/s segment) - the
-//     numerals never print clean; holes pending the
-//     PDF, not pinned as numeric data.
+//     numerals never print clean; RESOLVED (R421):
+//     the clean PDF read pins all eight cells (the
+//     uailcCastTimeDen family below).
 //   - the haze area cell prints 7" cube - the
 //     digit-garble family (the R356 precedent) decodes
 //     the 1" cube, flagged pending the PDF.
@@ -34,9 +35,12 @@
 //   - the mirage somatic tail garbles (a single pass)
 //     and the noise casting cell prints a bare s -
 //     flagged pending the PDF.
-//   - the R342 IL cantrip column is wholly lost
-//     (uas2IlCantripListLost) - none of the names
-//     seam-checks, asserted in the audit.
+//   - the R342 IL cantrip column: the scan read
+//     it wholly lost - RESOLVED (R421): the clean
+//     p. 31 read gives the whole column (the
+//     uas2IlCantrip roster), the eight names
+//     seam-checking this description roster row
+//     for row, asserted in the audit.
 // ===========================================================================
 
 #pragma once
@@ -98,12 +102,21 @@ inline int uailcLightsRangeInches()
 inline bool uailcLightsMovedAsDesired()
     { return true; }
 
-// The reflection sentence garbles; the
-// visual-capability read pins: pale blue or pink
-// hues leave the visual capabilities undisturbed,
-// other hues disturb them - flagged pending the PDF.
-inline bool uailcLightsReflectionSentenceGarbled()
-    { return true; }
+// The reflection sentence: the PDF read
+// resolves the garble (R421) - the
+// illumination from any one globe will
+// not cast reflections beyond 1 inch,
+// and the light shed cannot be detected
+// beyond 3 inches. The
+// visual-capability read stands: pale
+// blue or pink hues leave the visual
+// capabilities undisturbed, other hues
+// disturb them.
+inline int uailcLightsReflectionBeyondInches()
+    { return 1; }
+
+inline int uailcLightsDetectedBeyondInches()
+    { return 3; }
 
 inline bool uailcLightsPaleBluePinkSparesVision()
     { return true; }
@@ -121,10 +134,33 @@ inline bool uailcLightsMagicWord()
 inline bool uailcLightsDirectsWithFingers()
     { return true; }
 
-// The casting-time cell prints a fraction garble - a
-// hole pending the PDF.
-inline bool uailcLightsCastingCellGarbled()
-    { return true; }
+// The casting times: the PDF read (R421 -
+// the clean p. 65-66 print) resolves the
+// whole family - every cell a clean unit
+// fraction, one segment over the
+// denominator. The denominators, in roster
+// order (colored lights, dim, haze and
+// mirage at 1/2; rainbow at 1/3;
+// mask, noise and the two-d-lusion at 1/8):
+inline int uailcCastTimeDen(int i)
+{
+    static const int D[8] = { 2, 2, 2, 8,
+        2, 8, 3, 8 };
+    if (i < 0) i = 0;
+    if (i > 7) i = 7;
+    return D[i];
+}
+
+// The casting-time denominator census
+// helper.
+inline int uailcCastTimeDenCount(int d)
+{
+    int n = 0;
+    for (int i = 0; i < 8; ++i)
+        if (uailcCastTimeDen(i) == d)
+            ++n;
+    return n;
+}
 
 // ---- dim (Alteration) ----
 inline const char* uailcDimName()
@@ -180,8 +216,8 @@ inline int uailcDimRangeInches()
 inline bool uailcDimPhraseAndDownwardMotion()
     { return true; }
 
-inline bool uailcDimCastingCellGarbled()
-    { return true; }
+// The casting time: 1/2 segment (the PDF
+// read - R421); rides uailcCastTimeDen(1).
 
 // ---- haze (Alteration) ----
 inline const char* uailcHazeName()
@@ -193,8 +229,10 @@ inline const char* uailcHazeName()
 inline int uailcHazeAoeCubeInches()
     { return 1; }
 
-inline bool uailcHazeAoeCellGarbleDecoded()
-    { return true; }
+// The area cell: the PDF read confirms
+// the decode (R421) - the print reads
+// 1" cube CLEAN; the decode flag amends
+// away.
 
 // The atmosphere in the area becomes cloudy, as if
 // layered by smoke or filled with floating dust.
@@ -244,8 +282,8 @@ inline bool uailcHazeGustOfWindDisperses()
 inline bool uailcHazeHumAndHandPasses()
     { return true; }
 
-inline bool uailcHazeCastingCellGarbled()
-    { return true; }
+// The casting time: 1/2 segment (the PDF
+// read - R421); rides uailcCastTimeDen(2).
 
 // ---- mask (Illusion) ----
 inline const char* uailcMaskName()
@@ -285,22 +323,24 @@ inline int uailcMaskDurationRoundsMax()
 inline bool uailcMaskTouchThinkSpeak()
     { return true; }
 
-inline bool uailcMaskCastingCellGarbled()
-    { return true; }
+// The casting time: 1/8 segment (the PDF
+// read - R421); rides uailcCastTimeDen(3).
 
 // ---- mirage ----
 inline const char* uailcMirageName()
     { return "Mirage"; }
 
-// The school cell never prints - a hole pending the
-// PDF.
-inline bool uailcMirageSchoolCellLost()
+// The school cell: the PDF read resolves
+// the loss (R421) - the header prints
+// Mirage (Illusion).
+inline bool uailcMirageSchoolIsIllusion()
     { return true; }
 
-// The area cell prints a bare 2sq. fragment - a hole
-// pending the PDF.
-inline bool uailcMirageAoeCellGarbled()
-    { return true; }
+// The area cell: the PDF read resolves
+// the fragment (R421) - the print
+// reads 2 sq. " (two square inches).
+inline int uailcMirageAoeSquareInches()
+    { return 2; }
 
 // The caster causes an area to appear to be
 // something other than it is - an illusionary scene
@@ -339,14 +379,18 @@ inline bool uailcMirageTouchDispel()
 inline bool uailcMirageDispelIllusionOrMagic()
     { return true; }
 
-// The somatic tail garbles (a single pass to cause
-// the magic to begin); the casting cell prints a
-// bare segment fragment - the numeral lost - holes
-// pending the PDF.
-inline bool uailcMirageSomaticTailGarbled()
+// The somatic tail: the PDF read resolves
+// the garble (R421) - the caster
+// speaks a word or two descriptive of the
+// mirage and then makes a single pass
+// to cause the magic to begin; it is
+// maintained by concentration alone
+// thereafter. The casting cell prints 1/2
+// segment - rides uailcCastTimeDen(4).
+inline bool uailcMirageWordOrTwoThenSinglePass()
     { return true; }
 
-inline bool uailcMirageCastingNumeralLost()
+inline bool uailcMirageKeptByConcentrationAlone()
     { return true; }
 
 // ---- noise (Illusion) ----
@@ -388,10 +432,8 @@ inline int uailcNoiseRangeInches()
 inline bool uailcNoisePointAndImitate()
     { return true; }
 
-// The casting cell prints a bare s fragment - a
-// garble, a hole pending the PDF.
-inline bool uailcNoiseCastingCellGarbled()
-    { return true; }
+// The casting time: 1/8 segment (the PDF
+// read - R421); rides uailcCastTimeDen(5).
 
 // ---- rainbow (Alteration) ----
 inline const char* uailcRainbowName()
@@ -455,23 +497,25 @@ inline int uailcRainbowGazeMovingMax()
 inline bool uailcRainbowNameOfPowerPyramid()
     { return true; }
 
-inline bool uailcRainbowCastingCellGarbled()
-    { return true; }
+// The casting time: 1/3 segment (the PDF
+// read - R421); rides uailcCastTimeDen(6).
 
 // ---- the two-d-lusion ----
 // The name prints with an apostrophe: Two-D'lusion.
 inline const char* uailcTwodName()
     { return "Two-D'lusion"; }
 
-// The school cell never prints - a hole pending the
-// PDF.
-inline bool uailcTwodSchoolCellLost()
+// The school cell: the PDF read resolves
+// the loss (R421) - the header prints
+// Two-D'lusion (Illusion).
+inline bool uailcTwodSchoolIsIllusion()
     { return true; }
 
-// The area-of-effect cell prints empty - a hole
-// pending the PDF.
-inline bool uailcTwodAoeCellLost()
-    { return true; }
+// The area-of-effect cell: the PDF read
+// resolves the loss (R421) - the print
+// reads 4 sq. " (four square inches).
+inline int uailcTwodAoeSquareInches()
+    { return 4; }
 
 // Virtually the same as a phantasmal force spell in
 // most respects: the caster creates a
@@ -505,8 +549,8 @@ inline bool uailcTwodConcentrationMaintained()
 inline bool uailcTwodPhraseAndCircularMotion()
     { return true; }
 
-inline bool uailcTwodCastingCellGarbled()
-    { return true; }
+// The casting time: 1/8 segment (the PDF
+// read - R421); rides uailcCastTimeDen(7).
 
 }   // namespace rules
 

@@ -2546,6 +2546,35 @@ R172 were already dropped at the R171b/R172 era cut; git
   header D[] arrays. The ./nn
   save hash diverged twice -
   benign; the md5 stays advisory.
+- R419 landed 2026-10-13:
+  commit 058a00b (census 346,
+  preflight GREEN), the UA
+  CANTRIP CASTING-TIME
+  RESOLUTION PART 2 (book pp.
+  49-51) - the PDF read resolves
+  the person-affecting (10),
+  personal (10) and haunting-
+  sound (8) casting-time
+  families: 28 cells, all clean
+  unit fractions AS PRINTED; the
+  censuses 1/3/2/4, 7/3/0/0 and
+  0/0/5/3 (the 1/6 inside the
+  2..10 band); the two R416
+  areas (the Bluelight sphere,
+  the Firefinger line), the range
+  units (the AD&D 1" notation),
+  the slow-poison defer (1 day)
+  and the creak reads (the
+  former 1/3 segment, the
+  traverse 10 feet) resolve with
+  the read; the hole flags come
+  off - the MU cantrip
+  descriptions stand hole-free.
+  The ./nn save hash diverged
+  (50f18379 vs the published
+  f4de3b1e) - benign (21st
+  occurrence); the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

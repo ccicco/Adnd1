@@ -63,8 +63,10 @@
 // (the 9 lost); the registry rows absent from the print (Shield,
 // Sleep, Web, Whispering Wind, Monster Summoning II, Limited Wish,
 // Alter Reality, Wish, Gate) read as lost rows - noted, not pinned;
-// the illusionist cantrip column and the illusionist 3rd-6th columns
-// are wholly lost; the illusionist 2nd-level brace-garbage cell and
+// the illusionist 3rd-6th columns are
+// wholly lost (the cantrip column
+// RESOLVES - the R421 clean p. 31
+// read); the illusionist 2nd-level brace-garbage cell and
 // the "Phantom Wind" fragment read as holes (the "Mirror" tail
 // seam-decodes as Mirror Image).
 // ===========================================================================
@@ -300,9 +302,25 @@ inline const char* uas2Il7thName(int i) {
     return k[i];
 }
 
-// The illusionist minor-illusion cantrip column is wholly lost
-// (the cells print garbage; the acquisition prose survives).
-inline bool uas2IlCantripListLost()
-    { return true; }
+// The illusionist minor-illusion cantrip
+// column: the PDF read resolves the
+// loss (R421) - the clean p. 31
+// print gives the whole column, the
+// eight names in roster order,
+// matching the description roster
+// (rules/uailcantrips.h) row for row.
+inline int uas2IlCantripCount()
+    { return 8; }
+
+inline const char* uas2IlCantripName(int i) {
+    static const char* const k[8] = {
+        "Colored Lights", "Dim", "Haze", "Mask",
+        "Mirage", "Noise", "Rainbow",
+        "Two-D'lusion",
+    };
+    if (i < 0) i = 0;
+    if (i > 7) i = 7;
+    return k[i];
+}
 
 }   // namespace rules

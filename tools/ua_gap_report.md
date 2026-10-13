@@ -1657,7 +1657,7 @@ the gateway charge.
       rules (the segment costs, the
       verbal/somatic color) ride the
       descriptions.
-- [ ] **The illusionist cantrips** (pp.
+- [x] **The illusionist cantrips** (pp.
       65-66) - the minor-illusion
       category: colored lights, dim,
       haze, mask, mirage, noise, rainbow
@@ -1688,6 +1688,34 @@ the gateway charge.
         stays open only on the
         casting-time fraction holes
         pending the PDF read.
+      - AMENDED R421: the PDF read
+        resolves the whole ledger -
+        the eight casting-time cells
+        print clean (colored lights,
+        dim, haze and mirage at 1/2;
+        rainbow at 1/3; mask, noise
+        and the two-d-lusion at 1/8 -
+        the census 4/1/3, the band
+        holds); the mirage and
+        two-d-lusion school cells
+        print (Illusion); the areas
+        pin (the mirage 2 sq. inches,
+        the two-d-lusion 4 sq.
+        inches); the mirage somatic
+        tail reads clean; the
+        colored-lights reflection
+        sentence pins (the
+        reflections-beyond-1-inch and
+        the detected-beyond-3-inches
+        reads); and the clean p. 31
+        read resolves the R342 IL
+        cantrip column (the eight
+        names, cross-checking the
+        description roster row for
+        row). The IL cantrip
+        descriptions stand hole-free;
+        the box flips in the SAME
+        commit (the R420 lesson).
 - [x] **The cantrip acquisition rules**
       (DM pp. 79-80) - cross-ref to the
       DM section item; the apprentice
