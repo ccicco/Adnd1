@@ -2348,6 +2348,40 @@ R172 were already dropped at the R171b/R172 era cut; git
   the TWENTY-FIRST round running
   - benign; the md5 stays
   advisory.
+- R413 landed 2026-10-13:
+  commit a3f059f (census 340,
+  preflight GREEN), the UA
+  REVERSED CANTRIP
+  DESCRIPTIONS (pp. 47-48) -
+  the second of the six MU
+  cantrip description rounds;
+  the R363/R412 precedents
+  ride; the casting-time family
+  records as holes pending the
+  PDF read. rules/
+  uacantrips2.h (prefix ucr):
+  the 12 reversed cantrips in
+  roster order, the school
+  census 3/0/7/2, ALL 12 areas
+  clean (ZERO area holes - the
+  Dirty 4 sq. yds. cross-checks
+  the Clean, the Dusty 10'
+  radius, the Ravel Special,
+  the Spill one container),
+  the mechanics pin (the hairy
+  growth pair, the knot and
+  tangle ranges, the sour pint,
+  the spill gallon, the
+  tarnish/shine live pair).
+  The R412b guards rode their
+  first round clean (the
+  line-classification lint, the
+  ucr identifier-resolution
+  check). First-try GREEN. The
+  md5 diverged for the
+  TWENTY-SECOND round running
+  - benign; the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

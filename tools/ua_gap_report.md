@@ -1315,6 +1315,39 @@ the gateway charge.
       names) - the item stays open
       on the pp. 45-52 descriptions,
       ungated.
+      - AMENDED R414: the
+        legerdemain descriptions
+        land (rules/uacantrips3.h)
+        - the 6 blocks pin schools
+        (the 0/0/3/1/2 census -
+        Illusion a NEW school
+        code), ALL 6 areas clean
+        (ZERO area holes - the
+        one-object three, the
+        Distract Special, the
+        Palm/Present one small
+        item pair, a NEW area
+        kind), the whole
+        casting-time family the
+        recorded holes pending
+        the PDF read (the
+        R363/R412/R413 posture),
+        the mechanics pin (the
+        change 50% size band +
+        the turn/round/day
+        durations, the distract
+        10-foot range + segment,
+        the HIDE DURATION LADDER
+        (1 turn at 2 cubic yards
+        to 1 segment at 38,
+        cross-checking itself by
+        derivation), the mute
+        round, the palm segment,
+        the present 2-foot radius
+        + dozen coins); the
+        person-affecting, personal
+        and haunting-sound
+        descriptions stay open.
       - AMENDED R413: the reversed
         category descriptions land
         (rules/uacantrips2.h) - the
