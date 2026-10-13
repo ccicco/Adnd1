@@ -2282,6 +2282,21 @@ R172 were already dropped at the R171b/R172 era cut; git
   md5 diverged for the
   seventeenth round running -
   benign; the md5 stays  advisory.
+- R410 landed 2026-10-13:
+  commit e98c880 (census 337,
+  preflight GREEN), the UA
+  Appendix S class lines -
+  rules/uasclasslines.h (prefix
+  uascl) - the 23 blocks x 6
+  printed lines, the Nil
+  census 29, the psionic lines
+  cross-checking the R406
+  rating codes live (the
+  Brandobaris missing line the
+  recorded sentinel). The md5
+  diverged for the eighteenth
+  round running - benign; the
+  md5 stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

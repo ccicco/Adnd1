@@ -2565,6 +2565,15 @@ own index, one item each:
         Brandobaris missing line the
         recorded sentinel); MOVE and
         the pantheon prose stay open.
+      - AMENDED R411: the MOVE
+        values land (rules/uamoves.h)
+        - the 23 rates and the five
+        alternates pin with the
+        sanity ladders live; the
+        Shargaas garble records as
+        the hole sentinel; the
+        pantheon prose ALONE stays
+        open in Appendix S.
 - [ ] **Appendix T: pole-arm
       nomenclature** (pp. 123-129) - the
       taxonomy (the bill hook, the
@@ -2733,6 +2742,10 @@ section own index, one item each:
     land (rules/uasclasslines.h) -
     MOVE and the pantheon prose
     stay open.
+  - AMENDED R411: the MOVE values
+    land (rules/uamoves.h) - the
+    pantheon prose alone stays
+    open.
 
 ## Deferred engine seams (the gates)
 
