@@ -2255,6 +2255,19 @@ R172 were already dropped at the R171b/R172 era cut; git
   diverged for the fifteenth
   round running - benign; the
   md5 stays advisory.
+- R408 landed 2026-10-13:
+  commit cee2979 (census 335,
+  preflight GREEN), the UA p. 26
+  armor class table -
+  rules/uaac26.h (prefix uacr)
+  - the 11 composite rows, 28
+  composites, the
+  R191/R371/R392 cross-checks
+  live; the two stale duplicate
+  boxes close. The md5 diverged
+  for the sixteenth round
+  running - benign; the md5
+  stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

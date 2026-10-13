@@ -2545,6 +2545,16 @@ own index, one item each:
         Appendix S box stays open on
         the class lines, MOVE, the stat
         lines and the pantheon prose.
+      - AMENDED R409: the stat lines
+        land (rules/uasstatlines.h) -
+        the 23 S/I/W/D/C/CH/CM rows
+        pin with the R153/R322
+        cross-checks live, the
+        Cyrrollalee plus pair the
+        recorded hole, the Bahgtru
+        damage divergence recorded;
+        the class lines, MOVE and the
+        pantheon prose stay open.
 - [ ] **Appendix T: pole-arm
       nomenclature** (pp. 123-129) - the
       taxonomy (the bill hook, the
@@ -2705,6 +2715,10 @@ section own index, one item each:
     (rules/uascharts.h) - the class
     lines, MOVE, stat lines and the
     prose stay open.
+  - AMENDED R409: the stat lines
+    land (rules/uasstatlines.h) - the
+    class lines, MOVE and the
+    pantheon prose stay open.
 
 ## Deferred engine seams (the gates)
 
