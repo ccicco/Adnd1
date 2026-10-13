@@ -1998,6 +1998,33 @@ R172 were already dropped at the R171b/R172 era cut; git
   passed the battery -
   stable and benign; the
   md5 stays advisory.
+- R397 landed 2026-10-13:
+  commit 7e8cc89 (census 324,
+  preflight GREEN), the UA
+  scrolls rings rods staves
+  wands prose completion:
+  the clean pp. 91-98 read
+  fills the four PDF-gated
+  treasure items - the four
+  scroll types
+  (rules/uaprotscr.h), the
+  seven rings
+  (rules/uaringprose.h), the
+  seven rods and staves
+  (rules/uarodstave.h), the
+  two wand holes and five
+  garbled wands
+  (rules/uawandprose.h); all
+  four gap items flip
+  AMENDED R397: closed -
+  every UA treasure
+  description pins. The
+  ./nn save hash diverged
+  for the fifth round running
+  yet the copy passed the
+  battery - stable and
+  benign; the md5 stays
+  advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

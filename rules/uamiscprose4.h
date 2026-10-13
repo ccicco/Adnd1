@@ -23,6 +23,9 @@
 // part-3 and skeleton seams
 // ride in the regtest audit,
 // not here.
+// The R398 clean read
+// filled every flagged hole
+// named above.
 namespace rules {
 
 // ---- the iron bands of
@@ -147,15 +150,15 @@ inline int uamm4LulDetailRangeFt()
 inline bool uamm4LulMustBeHeldBeforeEye()
     { return true; }
 
-// The printed diameter cell
-// garbles ("1'z inches") -
-// read as about one and a
-// half inches; flagged.
-inline int uamm4LulDiameterIn()
-    { return 1; }
+// The R398 clean read fills
+// the cell: the lens is about
+// one and a half inches in
+// diameter - 15 tenths.
+inline int uamm4LulDiameterTenthsIn()
+    { return 15; }
 
 inline bool uamm4LulDiameterCellGarbles()
-    { return true; }
+    { return false; }
 
 // ---- the mantle of
 // Celestian ----
@@ -294,21 +297,24 @@ inline bool uamm4MslThickPastyGruel()
 inline bool uamm4MslCardboardFlavor()
     { return true; }
 
-// The nourishment seam
-// OCR-scrambles; the
-// reconstruction: the gruel
-// is highly nourishing, and
-// the spoon produces enough
-// in a day to feed up to
-// four humans; flagged.
+// The R398 clean read fills
+// the seam: the gruel is
+// highly nourishing,
+// sustains any diet, and the
+// spoon produces enough in a
+// day to feed up to four
+// humans.
 inline bool uamm4MslHighlyNourishing()
+    { return true; }
+
+inline bool uamm4MslSustainsAllDiets()
     { return true; }
 
 inline int uamm4MslFeedsHumansPerDay()
     { return 4; }
 
 inline bool uamm4MslGruelTailGarbles()
-    { return true; }
+    { return false; }
 
 // ---- the pearl of the
 // sirines ----
@@ -384,26 +390,31 @@ inline bool uamm4PstIronToSilver()
 inline bool uamm4PstLeadToGold()
     { return true; }
 
-// The transmutation amount
-// cells OCR-scramble; the
-// reconstruction: up to 50
+// The R398 clean read fills
+// the cells: from 50 to 500
 // pounds of iron into silver,
-// or 100 pounds of lead into
-// gold, from a single stone;
-// either an alchemist or a
-// magic-user can effectuate
-// it; flagged.
-inline int uamm4PstIronLbsPerStone()
+// or 10 to 100 pounds of lead
+// into gold, from a single
+// stone; either an alchemist
+// or a magic-user can
+// effectuate it.
+inline int uamm4PstIronLbsLo()
     { return 50; }
 
-inline int uamm4PstLeadLbsPerStone()
+inline int uamm4PstIronLbsHi()
+    { return 500; }
+
+inline int uamm4PstLeadLbsLo()
+    { return 10; }
+
+inline int uamm4PstLeadLbsHi()
     { return 100; }
 
 inline bool uamm4PstAlchemistOrMagicUser()
     { return true; }
 
 inline bool uamm4PstTransmutationCellsGarble()
-    { return true; }
+    { return false; }
 
 // All the quicksilver must be
 // employed at one time, on
@@ -537,15 +548,25 @@ inline int uamm4PzaDetectVaguePct()
 inline bool uamm4PzaErroneousClassPossible()
     { return true; }
 
-// The attunement sentence
-// OCR-scrambles; the
-// reconstruction: each prison
+// The R398 clean read fills
+// the seam: the cage carries
+// an anti-magic and
+// non-detection spell in and
+// upon it, and each prison
 // attunes itself to the
-// possessor when he or she
-// learns the activation
-// wording; flagged.
-inline bool uamm4PzaAttunementSeamGarbles()
+// possessor who learns the
+// activation wording.
+inline bool uamm4PzaPermanentAntiMagic()
     { return true; }
+
+inline bool uamm4PzaNonDetection()
+    { return true; }
+
+inline bool uamm4PzaAttunesToOwner()
+    { return true; }
+
+inline bool uamm4PzaAttunementSeamGarbles()
+    { return false; }
 
 // The activation word works
 // two effects: the cage door
@@ -591,15 +612,16 @@ inline bool uamm4PzaHistoryForNameless()
 
 // A failed save versus spell
 // shrinks the victim to about
-// a foot in height and
+// a quarter foot - three
+// inches - in height and
 // transports it
 // instantaneously into the
 // cage.
 inline bool uamm4PzaSaveVsSpell()
     { return true; }
 
-inline int uamm4PzaShrinksToHeightFt()
-    { return 1; }
+inline int uamm4PzaShrinksToHeightIn()
+    { return 3; }
 
 inline bool uamm4PzaTransportedIntoCage()
     { return true; }
@@ -658,17 +680,18 @@ inline bool uamm4PzaNoFoodOrDrinkNeeded()
     { return true; }
 
 // ---- the part ledger ----
-// Nine I-P items: five fully
-// clean, four flagged, none
-// fully garbled.
+// Nine I-P items, all fully
+// clean - the R398 clean read
+// filled the four flagged
+// holes, none fully garbled.
 inline int uamm4PartItemTotal()
     { return 9; }
 
 inline int uamm4PartCleanCount()
-    { return 5; }
+    { return 9; }
 
 inline int uamm4PartFlaggedCount()
-    { return 4; }
+    { return 0; }
 
 inline int uamm4PartGarbledCount()
     { return 0; }

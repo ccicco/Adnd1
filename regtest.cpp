@@ -37095,6 +37095,9 @@ int main() {
 
     // ---- R381: the UA misc magic
     // prose part 1 pin audit ----
+    // The R398 clean read fills
+    // every flagged hole this
+    // block names.
     // The A-C items (pp. 97-100),
     // thirteen pins: eight fully
     // clean (beads of force,
@@ -37139,7 +37142,7 @@ int main() {
             }
             if (uammAmuLevelForBand(4) != 9)
                 ++bad;
-            if (!uammAmuNinthCellGarbles()) ++bad;
+            if (uammAmuNinthCellGarbles()) ++bad;
             if (!uammAmuMustBeWorn()) ++bad;
             if (!uammAmuInertWhenNotWorn()) ++bad;
             if (uammAmuInertDaysOnDonning() != 7)
@@ -37165,7 +37168,7 @@ int main() {
                 ++bad;
             if (uammAnyLongTermUseLimit() != 3)
                 ++bad;
-            if (!uammAnyTailGarbles()) ++bad;
+            if (uammAnyTailGarbles()) ++bad;
         // ---- the beads of force ----
             if (uammBeaDiamEighthIn() != 6) ++bad;
             if (uammBeaWeightOunces() != 1) ++bad;
@@ -37194,12 +37197,12 @@ int main() {
             if (!uammBocWaterproofBoundLocked())
                 ++bad;
             if (uammBocSaveBonus() != 3) ++bad;
-            if (!uammBocSaveCellGarbles()) ++bad;
+            if (uammBocSaveCellGarbles()) ++bad;
             if (uammBocMaxSpellLevels() != 45)
                 ++bad;
             if (!uammBocPrizedAsTravellingBook())
                 ++bad;
-            if (!uammBocScribingTailGarbles())
+            if (uammBocScribingTailGarbles())
                 ++bad;
         // ---- the boots of the north ----
             if (!uammBnSnowNormalNoTracks()) ++bad;
@@ -37223,7 +37226,7 @@ int main() {
                 ++bad;
             if (uammBvtTrackTableCount() != 16)
                 ++bad;
-            if (!uammBvtRowOnePrintGarbles()) ++bad;
+            if (uammBvtRowOnePrintGarbles()) ++bad;
             // the four capabilities
             // ride the 16-entry table
             if (4 * uammBvtCapabilitiesPerPair()
@@ -37279,7 +37282,7 @@ int main() {
                     != 3 * uammBbMoveRatesCount())
                 ++bad;
         // ---- the chime of interruption ----
-            if (!uammChiOpeningGarbles()) ++bad;
+            if (uammChiOpeningGarbles()) ++bad;
             if (uammChiStrikesPerTurn() != 1) ++bad;
             if (uammChiToneRounds() != 3) ++bad;
             if (uammChiVerbalBlockRadiusFt() != 30)
@@ -37351,8 +37354,8 @@ int main() {
                     != uammCyCaughtDmgHi()) ++bad;
         // ---- the part ledger ----
             if (uammPartItemTotal() != 13) ++bad;
-            if (uammPartCleanCount() != 8) ++bad;
-            if (uammPartFlaggedCount() != 5) ++bad;
+            if (uammPartCleanCount() != 13) ++bad;
+            if (uammPartFlaggedCount() != 0) ++bad;
             if (uammPartGarbledCount() != 0) ++bad;
             if (uammPartCleanCount()
                     + uammPartFlaggedCount()
@@ -37376,6 +37379,9 @@ int main() {
 
     // ---- R382: the UA misc magic
     // prose part 2 pin audit ----
+    // The R398 clean read fills
+    // every flagged hole this
+    // block names.
     // The D-E stretch: eight pins -
     // one fully clean (the dust of
     // tracelessness) plus seven
@@ -37405,7 +37411,7 @@ int main() {
             if (!uamm2DekPickupDispelsInstantly())
                 ++bad;
             if (uamm2DekJokers() != 2) ++bad;
-            if (!uamm2DekCardListGarbles())
+            if (uamm2DekCardListGarbles())
                 ++bad;
         // ---- the dicerion ----
             if (!uamm2DicTwoBranches()) ++bad;
@@ -37454,7 +37460,7 @@ int main() {
                     != 4) ++bad;
             if (!uamm2DicBothBranchesNeedTapers())
                 ++bad;
-            if (!uamm2DicDescSeamGarbles())
+            if (uamm2DicDescSeamGarbles())
                 ++bad;
             // the still-air burn is
             // twice the gentle-draft
@@ -37481,7 +37487,7 @@ int main() {
             if (uamm2DdrElementalDmgLo() != 6
                     || uamm2DdrElementalDmgHi()
                     != 30) ++bad;
-            if (!uamm2DdrElementalSeamGarbles())
+            if (uamm2DdrElementalSeamGarbles())
                 ++bad;
             if (uamm2DdrPouchLo() != 11
                     || uamm2DdrPouchHi() != 20)
@@ -37509,7 +37515,7 @@ int main() {
             if (uamm2DilPouchLo() != 11
                     || uamm2DilPouchHi() != 20)
                 ++bad;
-            if (!uamm2DilIntroGarbles()) ++bad;
+            if (uamm2DilIntroGarbles()) ++bad;
         // ---- the dust of
         // tracelessness ----
             if (uamm2DtrChamberSqFt() != 1000)
@@ -37554,7 +37560,7 @@ int main() {
                     || uamm2EgdGpForSort(3) != 4000
                     || uamm2EgdGpForSort(4) != 3500)
                 ++bad;
-            if (!uamm2EgdIntSeamGarbles()) ++bad;
+            if (uamm2EgdIntSeamGarbles()) ++bad;
             // the bounds clamp holds;
             // the five XP values sum
             // to 3500
@@ -37583,7 +37589,7 @@ int main() {
                     != 66) ++bad;
             if (uamm2EgrSuccessChanceForScore(15)
                     != 70) ++bad;
-            if (!uamm2EgrHighScoreCellGarbles())
+            if (uamm2EgrHighScoreCellGarbles())
                 ++bad;
             if (!uamm2EgrRacialLimitsApply())
                 ++bad;
@@ -37626,7 +37632,7 @@ int main() {
                     != 2) ++bad;
             if (!uamm2EgsSaveVsCrushingBlow())
                 ++bad;
-            if (!uamm2EgsAttackSeamGarbles())
+            if (uamm2EgsAttackSeamGarbles())
                 ++bad;
             // the save radius is
             // twice the automatic
@@ -37636,8 +37642,8 @@ int main() {
                 ++bad;
         // ---- the part ledger ----
             if (uamm2PartItemTotal() != 8) ++bad;
-            if (uamm2PartCleanCount() != 1) ++bad;
-            if (uamm2PartFlaggedCount() != 7)
+            if (uamm2PartCleanCount() != 8) ++bad;
+            if (uamm2PartFlaggedCount() != 0)
                 ++bad;
             if (uamm2PartGarbledCount() != 0)
                 ++bad;
@@ -37647,8 +37653,8 @@ int main() {
                     != uamm2PartItemTotal()) ++bad;
         // ---- the R381 part-1 seam ----
             if (uammPartItemTotal() != 13) ++bad;
-            if (uammPartCleanCount() != 8) ++bad;
-            if (uammPartFlaggedCount() != 5)
+            if (uammPartCleanCount() != 13) ++bad;
+            if (uammPartFlaggedCount() != 0)
                 ++bad;
             if (uammPartGarbledCount() != 0)
                 ++bad;
@@ -37666,6 +37672,9 @@ int main() {
 
     // ---- R383: the UA misc magic
     // prose part 3 pin audit ----
+    // The R398 clean read fills
+    // every flagged hole this
+    // block names.
     // The G-H stretch: eleven pins -
     // two fully clean (the gloves of
     // missile snaring, the hat of
@@ -37701,7 +37710,7 @@ int main() {
             if (!uamm3GemWisLostBeyondPeriod())
                 ++bad;
             if (!uamm3GemSecondGemInert()) ++bad;
-            if (!uamm3GemRecallSeamGarbles())
+            if (uamm3GemRecallSeamGarbles())
                 ++bad;
             // the understanding arrives
             // at twice the feel-power week
@@ -37726,7 +37735,7 @@ int main() {
             if (!uamm3GdkNoGiantTypeAcBenefit())
                 ++bad;
             if (!uamm3GdkNoExtraLanguages()) ++bad;
-            if (!uamm3GdkRacialBlockGarbles())
+            if (uamm3GdkRacialBlockGarbles())
                 ++bad;
             // dwarves regard at twice
             // the stout-halfling gain
@@ -37752,7 +37761,7 @@ int main() {
                 ++bad;
             if (!uamm3GmpPrizedBySpellcasters())
                 ++bad;
-            if (!uamm3GmpTailSeamGarbles()) ++bad;
+            if (uamm3GmpTailSeamGarbles()) ++bad;
             // the 64 total = the eight
             // apparent x (the seven
             // behind + the one seen)
@@ -37781,7 +37790,7 @@ int main() {
                 ++bad;
             if (!uamm3GthInvisibleExceptMagic())
                 ++bad;
-            if (!uamm3GthLevelCellsGarble()) ++bad;
+            if (uamm3GthLevelCellsGarble()) ++bad;
             if (uamm3GthBonusPctIfAdvanced() != 5)
                 ++bad;
             if (!uamm3GthBonusNeedsStatedLevels())
@@ -37799,7 +37808,7 @@ int main() {
             if (!uamm3HdfProgressIndefinite())
                 ++bad;
             if (!uamm3HdfLostIfDiscarded()) ++bad;
-            if (!uamm3HdfLossSeamGarbles()) ++bad;
+            if (uamm3HdfLossSeamGarbles()) ++bad;
             if (!uamm3HdfHitPointsStayActual())
                 ++bad;
             if (!uamm3HdfAbilityScoresStayActual())
@@ -37817,7 +37826,7 @@ int main() {
                 ++bad;
             if (!uamm3HdgReusableOverAndOver())
                 ++bad;
-            if (!uamm3HdgRemovalSeamGarbles())
+            if (uamm3HdgRemovalSeamGarbles())
                 ++bad;
             if (!uamm3HdgAppearsAsAccessories())
                 ++bad;
@@ -37846,7 +37855,7 @@ int main() {
             if (uamm3HavSidePouchCuFt() != 2) ++bad;
             if (uamm3HavSidePouchLbs() != 20)
                 ++bad;
-            if (!uamm3HavQuartMergeGarbles())
+            if (uamm3HavQuartMergeGarbles())
                 ++bad;
             if (uamm3HavCentralCuFt() != 8) ++bad;
             if (uamm3HavCentralLbs() != 80) ++bad;
@@ -37876,13 +37885,13 @@ int main() {
                     != 8) ++bad;
             if (!uamm3HfgPauseStartsNewCloud())
                 ++bad;
-            if (!uamm3HfgRoundsMinutesSeamGarbles())
+            if (uamm3HfgRoundsMinutesSeamGarbles())
                 ++bad;
         // ---- the horn of
         // goodness ----
             if (!uamm3HgdAdaptsToEthicalDisposition())
                 ++bad;
-            if (!uamm3HgdHeaderSeamGarbles()) ++bad;
+            if (uamm3HgdHeaderSeamGarbles()) ++bad;
             if (!uamm3HgdNeutralNoPower()) ++bad;
             if (!uamm3HgdGoodProtectionFromEvil())
                 ++bad;
@@ -37900,8 +37909,8 @@ int main() {
                     != uamm3HgdDurationRounds()) ++bad;
         // ---- the part ledger ----
             if (uamm3PartItemTotal() != 11) ++bad;
-            if (uamm3PartCleanCount() != 2) ++bad;
-            if (uamm3PartFlaggedCount() != 9)
+            if (uamm3PartCleanCount() != 11) ++bad;
+            if (uamm3PartFlaggedCount() != 0)
                 ++bad;
             if (uamm3PartGarbledCount() != 0)
                 ++bad;
@@ -37911,8 +37920,8 @@ int main() {
                     != uamm3PartItemTotal()) ++bad;
         // ---- the R382 part-2 seam ----
             if (uamm2PartItemTotal() != 8) ++bad;
-            if (uamm2PartCleanCount() != 1) ++bad;
-            if (uamm2PartFlaggedCount() != 7)
+            if (uamm2PartCleanCount() != 8) ++bad;
+            if (uamm2PartFlaggedCount() != 0)
                 ++bad;
             if (uamm2PartGarbledCount() != 0)
                 ++bad;
@@ -37930,6 +37939,9 @@ int main() {
 
     // ---- R384: the UA misc magic
     // prose part 4 pin audit ----
+    // The R398 clean read fills
+    // every flagged hole this
+    // block names.
     // The I-P stretch: nine pins -
     // five fully clean (the iron
     // bands of Bilarro, the lens of
@@ -38008,8 +38020,8 @@ int main() {
                 ++bad;
             if (!uamm4LulMustBeHeldBeforeEye())
                 ++bad;
-            if (uamm4LulDiameterIn() != 1) ++bad;
-            if (!uamm4LulDiameterCellGarbles())
+            if (uamm4LulDiameterTenthsIn() != 15) ++bad;
+            if (uamm4LulDiameterCellGarbles())
                 ++bad;
             // the detail range is
             // half the outline range
@@ -38083,7 +38095,7 @@ int main() {
             if (!uamm4MslHighlyNourishing()) ++bad;
             if (uamm4MslFeedsHumansPerDay() != 4)
                 ++bad;
-            if (!uamm4MslGruelTailGarbles()) ++bad;
+            if (uamm4MslGruelTailGarbles()) ++bad;
         // ---- the pearl of the
         // sirines ----
             if (!uamm4PsiFaintEnchantmentAura())
@@ -38106,13 +38118,17 @@ int main() {
             if (!uamm4PstQuicksilverLined()) ++bad;
             if (!uamm4PstIronToSilver()) ++bad;
             if (!uamm4PstLeadToGold()) ++bad;
-            if (uamm4PstIronLbsPerStone() != 50)
+            if (uamm4PstIronLbsLo() != 50)
                 ++bad;
-            if (uamm4PstLeadLbsPerStone() != 100)
+            if (uamm4PstIronLbsHi() != 500)
+                ++bad;
+            if (uamm4PstLeadLbsLo() != 10)
+                ++bad;
+            if (uamm4PstLeadLbsHi() != 100)
                 ++bad;
             if (!uamm4PstAlchemistOrMagicUser())
                 ++bad;
-            if (!uamm4PstTransmutationCellsGarble())
+            if (uamm4PstTransmutationCellsGarble())
                 ++bad;
             if (!uamm4PstAllQuicksilverAtOnce())
                 ++bad;
@@ -38131,10 +38147,14 @@ int main() {
             if (!uamm4PstCfRaiseDead()) ++bad;
             if (!uamm4PstValuesOnlyUnopened())
                 ++bad;
-            // the lead transmutes at
-            // twice the iron weight
-            if (2 * uamm4PstIronLbsPerStone()
-                    != uamm4PstLeadLbsPerStone())
+            // the lead band is the
+            // iron band divided by
+            // five at both ends
+            if (uamm4PstIronLbsLo()
+                    / 5 != uamm4PstLeadLbsLo())
+                ++bad;
+            if (uamm4PstIronLbsHi()
+                    / 5 != uamm4PstLeadLbsHi())
                 ++bad;
             // the salt and powder
             // chances sum to a
@@ -38190,7 +38210,7 @@ int main() {
                 ++bad;
             if (!uamm4PzaErroneousClassPossible())
                 ++bad;
-            if (!uamm4PzaAttunementSeamGarbles())
+            if (uamm4PzaAttunementSeamGarbles())
                 ++bad;
             if (!uamm4PzaActivationWord()) ++bad;
             if (!uamm4PzaDoorHeldByWizardLock())
@@ -38205,7 +38225,7 @@ int main() {
             if (!uamm4PzaNeedsTrueName()) ++bad;
             if (!uamm4PzaHistoryForNameless()) ++bad;
             if (!uamm4PzaSaveVsSpell()) ++bad;
-            if (uamm4PzaShrinksToHeightFt() != 1)
+            if (uamm4PzaShrinksToHeightIn() != 3)
                 ++bad;
             if (!uamm4PzaTransportedIntoCage())
                 ++bad;
@@ -38226,8 +38246,8 @@ int main() {
                 ++bad;
         // ---- the part ledger ----
             if (uamm4PartItemTotal() != 9) ++bad;
-            if (uamm4PartCleanCount() != 5) ++bad;
-            if (uamm4PartFlaggedCount() != 4)
+            if (uamm4PartCleanCount() != 9) ++bad;
+            if (uamm4PartFlaggedCount() != 0)
                 ++bad;
             if (uamm4PartGarbledCount() != 0)
                 ++bad;
@@ -38237,8 +38257,8 @@ int main() {
                     != uamm4PartItemTotal()) ++bad;
         // ---- the R383 part-3 seam ----
             if (uamm3PartItemTotal() != 11) ++bad;
-            if (uamm3PartCleanCount() != 2) ++bad;
-            if (uamm3PartFlaggedCount() != 9)
+            if (uamm3PartCleanCount() != 11) ++bad;
+            if (uamm3PartFlaggedCount() != 0)
                 ++bad;
             if (uamm3PartGarbledCount() != 0)
                 ++bad;
@@ -38256,6 +38276,9 @@ int main() {
 
     // ---- R385: the UA misc magic
     // prose part 5 pin audit ----
+    // The R398 clean read fills
+    // every flagged hole this
+    // block names.
     // The Q-S stretch: eleven pins -
     // seven fully clean (the robe
     // of stars, the scarab versus
@@ -38293,7 +38316,7 @@ int main() {
                 ++bad;
             if (!uamm5QehProducesOnCommand()) ++bad;
             if (!uamm5QehOnePerRound()) ++bad;
-            if (!uamm5QehCommandSentenceGarbles())
+            if (uamm5QehCommandSentenceGarbles())
                 ++bad;
             // the javelin portion holds
             // three times the spear
@@ -38349,7 +38372,7 @@ int main() {
                 ++bad;
             if (!uamm5RveManualActionsHalfProb())
                 ++bad;
-            if (!uamm5RveRemovalTailGarbles()) ++bad;
+            if (uamm5RveRemovalTailGarbles()) ++bad;
             if (!uamm5RveRemovalNeedsRemoveCurse())
                 ++bad;
             // the spell-failure
@@ -38408,7 +38431,7 @@ int main() {
                 ++bad;
             if (!uamm5SsmOneSideWhite()) ++bad;
             if (!uamm5SsmOtherSideBlack()) ++bad;
-            if (!uamm5SsmIntroSeamGarbles()) ++bad;
+            if (uamm5SsmIntroSeamGarbles()) ++bad;
             if (!uamm5SsmAlterationAura()) ++bad;
             if (!uamm5SsmShrinksToTwelfth()) ++bad;
             if (!uamm5SsmNoArtifactsOrRelics())
@@ -38532,7 +38555,7 @@ int main() {
             if (uamm5SstMaxUsesPerPotion() != 3)
                 ++bad;
             if (!uamm5SstFourthUseRuins()) ++bad;
-            if (!uamm5SstTableCellGarbles()) ++bad;
+            if (uamm5SstTableCellGarbles()) ++bad;
             if (!uamm5SstDeterminedByTable()) ++bad;
             if (!uamm5SstSameResultChangesAppearance())
                 ++bad;
@@ -38557,8 +38580,8 @@ int main() {
                     + 1 != 100) ++bad;
         // ---- the part ledger ----
             if (uamm5PartItemTotal() != 11) ++bad;
-            if (uamm5PartCleanCount() != 7) ++bad;
-            if (uamm5PartFlaggedCount() != 4)
+            if (uamm5PartCleanCount() != 11) ++bad;
+            if (uamm5PartFlaggedCount() != 0)
                 ++bad;
             if (uamm5PartGarbledCount() != 0)
                 ++bad;
@@ -38568,8 +38591,8 @@ int main() {
                     != uamm5PartItemTotal()) ++bad;
         // ---- the R384 part-4 seam ----
             if (uamm4PartItemTotal() != 9) ++bad;
-            if (uamm4PartCleanCount() != 5) ++bad;
-            if (uamm4PartFlaggedCount() != 4)
+            if (uamm4PartCleanCount() != 9) ++bad;
+            if (uamm4PartFlaggedCount() != 0)
                 ++bad;
             if (uamm4PartGarbledCount() != 0)
                 ++bad;
@@ -38587,6 +38610,9 @@ int main() {
 
     // ---- R386: the UA misc magic
     // prose part 6 pin audit ----
+    // The R398 clean read fills
+    // every flagged hole this
+    // block names.
     // The S-Z close-out: five pins -
     // two fully clean (the wind fan,
     // Zagyg's flowing flagon) plus
@@ -38610,7 +38636,7 @@ int main() {
             if (!uamm6ShActivationWord()) ++bad;
             if (!uamm6ShAnimateCarryAttack())
                 ++bad;
-            if (!uamm6ShActivationSeamGarbles())
+            if (uamm6ShActivationSeamGarbles())
                 ++bad;
             if (uamm6ShCarriesLbs() != 1000)
                 ++bad;
@@ -38703,7 +38729,7 @@ int main() {
                 ++bad;
             if (uamm6UsoDistilledCuFtPerOunce()
                     != 1) ++bad;
-            if (!uamm6UsoTransmutationSeamGarbles())
+            if (uamm6UsoTransmutationSeamGarbles())
                 ++bad;
             if (!uamm6UsoLivingNeedsToHit())
                 ++bad;
@@ -38802,7 +38828,7 @@ int main() {
             if (uamm6ZscUsesHi() != 7) ++bad;
             if (uamm6ZscXpPerUse() != 100) ++bad;
             if (uamm6ZscGpPerUse() != 1000) ++bad;
-            if (!uamm6ZscGpTailGarbles()) ++bad;
+            if (uamm6ZscGpTailGarbles()) ++bad;
             // the xp and gp values
             // ride the uses band:
             // 200 to 700 XP, 2,000
@@ -38825,8 +38851,8 @@ int main() {
                     != uamm6ZscGpPerUse()) ++bad;
         // ---- the part ledger ----
             if (uamm6PartItemTotal() != 5) ++bad;
-            if (uamm6PartCleanCount() != 2) ++bad;
-            if (uamm6PartFlaggedCount() != 3)
+            if (uamm6PartCleanCount() != 5) ++bad;
+            if (uamm6PartFlaggedCount() != 0)
                 ++bad;
             if (uamm6PartGarbledCount() != 0)
                 ++bad;
@@ -38836,8 +38862,8 @@ int main() {
                     != uamm6PartItemTotal()) ++bad;
         // ---- the R385 part-5 seam ----
             if (uamm5PartItemTotal() != 11) ++bad;
-            if (uamm5PartCleanCount() != 7) ++bad;
-            if (uamm5PartFlaggedCount() != 4)
+            if (uamm5PartCleanCount() != 11) ++bad;
+            if (uamm5PartFlaggedCount() != 0)
                 ++bad;
             if (uamm5PartGarbledCount() != 0)
                 ++bad;
@@ -39145,8 +39171,8 @@ int main() {
                     != uaaspPartItemTotal()) ++bad;
         // ---- the R386 part-6 seam ----
             if (uamm6PartItemTotal() != 5) ++bad;
-            if (uamm6PartCleanCount() != 2) ++bad;
-            if (uamm6PartFlaggedCount() != 3)
+            if (uamm6PartCleanCount() != 5) ++bad;
+            if (uamm6PartFlaggedCount() != 0)
                 ++bad;
             if (uamm6PartGarbledCount() != 0)
                 ++bad;
@@ -42100,6 +42126,151 @@ int main() {
             if (uawdGarbledCount() != 0)
                 ++bad;
         printf("R397 UA treasure smalls pin audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R398: the UA misc magic
+    // flagged holes pin audit ----
+    // The clean read (pp.
+    // 98-104) fills every
+    // flagged hole the six
+    // misc prose parts carry -
+    // all 33 flags drop and
+    // every part ledger runs
+    // clean/0.
+    {
+        using namespace rules;
+        int bad = 0;
+            if (uammAnyLongTermHours() != 24) ++bad;
+            if (!uammBocSaveAsLeatherOrBook()) ++bad;
+            if (!uammBocRarelyFoundInscribed()) ++bad;
+            if (!uammBocKeptByOwners()) ++bad;
+            if (!uammBvtRowOneBasilisk()) ++bad;
+            if (!uammBvtRowSixteenWyvern()) ++bad;
+            if (uamm2DekRankRows() != 8) ++bad;
+            if (uamm2DekCardsPerRank() != 4) ++bad;
+            if (!uamm2DekAceIsRedDragon()) ++bad;
+            if (!uamm2DekLowRowIsTwo()) ++bad;
+            if (!uamm2DicBrightSilverMithral()) ++bad;
+            if (!uamm2DicDarkIronAdamantite()) ++bad;
+            if (uamm2DicBaseLegs() != 8) ++bad;
+            if (!uamm2DdrSaveOrDestroyed()) ++bad;
+            if (!uamm2DilResemblesChalkGraphite()) ++bad;
+            if (!uamm2DilChangesUnderScrutiny()) ++bad;
+            if (!uamm2EgdRemovalAlsoDispelMagic()) ++bad;
+            if (!uamm2EgdLowIntUnderSeven()) ++bad;
+            if (!uamm2EgdLowIntCovets()) ++bad;
+            if (!uamm2EgrHighScoreTenthPoint()) ++bad;
+            if (uamm2EgrEggsPerPointAbove18() != 10) ++bad;
+            if (uamm3GemYearsBetweenFunctions() != 50) ++bad;
+            if (uamm3GdkConBonus() != 1) ++bad;
+            if (!uamm3GdkSavesByCon()) ++bad;
+            if (uamm3GdkInfravisionIn() != 6) ++bad;
+            if (!uamm3GdkDepthDetection()) ++bad;
+            if (uamm3GthOpenLocksLevel() != 7) ++bad;
+            if (uamm3GthPickPocketsLevel() != 5) ++bad;
+            if (uamm3HdfLossRadiusMiles() != 1) ++bad;
+            if (uamm3HdfLossHours() != 24) ++bad;
+            if (!uamm3HdfLostIfStolen()) ++bad;
+            if (!uamm3HavAppearsQuart()) ++bad;
+            if (uamm3HfgDriftMinutesLo() != 2) ++bad;
+            if (uamm3HfgDriftMinutesHi() != 8) ++bad;
+            if (!uamm3HgdNamedGoodnessEvil()) ++bad;
+            if (uamm4LulDiameterTenthsIn() != 15) ++bad;
+            if (!uamm4MslSustainsAllDiets()) ++bad;
+            if (uamm4PstIronLbsLo() != 50) ++bad;
+            if (uamm4PstIronLbsHi() != 500) ++bad;
+            if (uamm4PstLeadLbsLo() != 10) ++bad;
+            if (uamm4PstLeadLbsHi() != 100) ++bad;
+            if (!uamm4PzaPermanentAntiMagic()) ++bad;
+            if (!uamm4PzaNonDetection()) ++bad;
+            if (!uamm4PzaAttunesToOwner()) ++bad;
+            if (uamm4PzaShrinksToHeightIn() != 3) ++bad;
+            if (!uamm5QehNamesVariants()) ++bad;
+            if (!uamm5SsmOneSideLargerPattern()) ++bad;
+            if (!uamm5SstAlsoTableThreeA()) ++bad;
+            if (!uamm6UsoAsDisintegrate()) ++bad;
+        // ---- the cross-checks
+        // ----
+            // the deck is eight
+            // rank rows of four
+            // plus the jokers
+            if (uamm2DekRankRows()
+                    * uamm2DekCardsPerRank()
+                    + uamm2DekJokers()
+                    != uamm2DekCardCount())
+                ++bad;
+            // ten eggs of reason
+            // raise an 18+ score
+            // one point
+            if (10 * uamm2EgrEggsPerPointAbove18()
+                    != 100) ++bad;
+            // the thievery locks
+            // outrank the pockets
+            if (uamm3GthOpenLocksLevel()
+                    <= uamm3GthPickPocketsLevel())
+                ++bad;
+            // the fog drift band
+            // runs 2-8 minutes
+            if (uamm3HfgDriftMinutesLo()
+                    >= uamm3HfgDriftMinutesHi())
+                ++bad;
+            // the anything tail is
+            // one day - 24 hours
+            if (uammAnyLongTermHours()
+                    != uammAnyLongTermUseLimit() * 8) ++bad;
+            // the lens diameter is
+            // one and a half inches
+            if (uamm4LulDiameterTenthsIn()
+                    / 10 != 1) ++bad;
+            if (uamm4LulDiameterTenthsIn()
+                    % 10 != 5) ++bad;
+            // the lead band is the
+            // iron band divided by
+            // five at both ends
+            if (uamm4PstIronLbsLo()
+                    / 5 != uamm4PstLeadLbsLo())
+                ++bad;
+            if (uamm4PstIronLbsHi()
+                    / 5 != uamm4PstLeadLbsHi())
+                ++bad;
+            // the prison shrink is
+            // a quarter foot
+            if (4 * uamm4PzaShrinksToHeightIn()
+                    != 12) ++bad;
+        // ---- the ledger seam ----
+            // all six part ledgers
+            // run clean, no flags
+            if (uammPartCleanCount()
+                    != uammPartItemTotal())
+                ++bad;
+            if (uammPartFlaggedCount()
+                    != 0) ++bad;
+            if (uamm2PartCleanCount()
+                    != uamm2PartItemTotal())
+                ++bad;
+            if (uamm2PartFlaggedCount()
+                    != 0) ++bad;
+            if (uamm3PartCleanCount()
+                    != uamm3PartItemTotal())
+                ++bad;
+            if (uamm3PartFlaggedCount()
+                    != 0) ++bad;
+            if (uamm4PartCleanCount()
+                    != uamm4PartItemTotal())
+                ++bad;
+            if (uamm4PartFlaggedCount()
+                    != 0) ++bad;
+            if (uamm5PartCleanCount()
+                    != uamm5PartItemTotal())
+                ++bad;
+            if (uamm5PartFlaggedCount()
+                    != 0) ++bad;
+            if (uamm6PartCleanCount()
+                    != uamm6PartItemTotal())
+                ++bad;
+            if (uamm6PartFlaggedCount()
+                    != 0) ++bad;
+        printf("R398 UA misc magic holes pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

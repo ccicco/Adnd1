@@ -2172,8 +2172,61 @@ DECIDED R374: RUN BOTH - the engine
         Zagyg's spell component case's
         gp tail); NOTHING in S-Z fully
         garbles - the item AMENDED,
-        the prose pinned A-Z, stays
-        PDF-gated only.
+      - AMENDED R398: closed -
+        the clean PDF read (the
+        same clean OCR as
+        R394-R397) fills every
+        flagged hole the six
+        misc magic prose parts
+        carry (33 flag seams,
+        rules/uamiscprose1.h
+        through
+        rules/uamiscprose6.h):
+        the amulet's 9th-level
+        cell, the anything
+        item's 24-hour tail, the
+        boccob book's save
+        category and scribing
+        tail, the boots of
+        varied tracks' row
+        prints, the chime's
+        opening, the deck of
+        illusions' card list
+        (eight ranks of four
+        plus the jokers), the
+        dicerion's description
+        seam, the dusts' seams,
+        the three egg seams,
+        the gem's 50-year
+        function, the girdles'
+        blocks, the gloves of
+        thievery's level cells
+        (7th/5th), the hats'
+        seams, the haversack's
+        quart, the horns' seams,
+        the lens' diameter (one
+        and a half inches),
+        Murlynd's spoon's diet
+        tail, the
+        philosopher's stone's
+        pounds cells (50-500
+        iron, 10-100 lead), the
+        prison's attunement and
+        quarter-foot shrink,
+        the quiver's command
+        sentence, the robe of
+        vermin's removal tail,
+        the sheet's pattern
+        side, the spoon of
+        stirring's table cells,
+        the stone
+        horse's activation, the
+        ultimate
+        solution's disintegrate
+        seam, Zagyg's gp tail -
+        every part ledger runs
+        clean, no flagged hole
+        remains.
 - [ ] **The new armor and shields and
       swords** (pp. 104-105) - the
       anything sword (the 3-form limit

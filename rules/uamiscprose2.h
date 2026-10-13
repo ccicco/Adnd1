@@ -23,6 +23,9 @@
 // part-1 and skeleton seams
 // ride in the regtest audit,
 // not here.
+// The R398 clean read
+// filled every flagged hole
+// named above.
 namespace rules {
 
 // ---- the deck of illusions
@@ -63,16 +66,32 @@ inline bool uamm2DekPickupDispelsInstantly()
     { return true; }
 
 // Two jokers, showing the
-// deck's owner. The card
-// list OCR-garbles (stray
-// rows, "bgoblin", "rc");
-// the deck mechanics read;
-// flagged.
+// deck's owner. The R398
+// clean read prints the list:
+// eight rank rows (ace down
+// to the deuce) of four
+// cards each - the ace is
+// the red dragon, the low
+// row shows goblins and
+// kobolds - 32 plaques plus
+// the jokers.
 inline int uamm2DekJokers()
     { return 2; }
 
-inline bool uamm2DekCardListGarbles()
+inline int uamm2DekRankRows()
+    { return 8; }
+
+inline int uamm2DekCardsPerRank()
+    { return 4; }
+
+inline bool uamm2DekAceIsRedDragon()
     { return true; }
+
+inline bool uamm2DekLowRowIsTwo()
+    { return true; }
+
+inline bool uamm2DekCardListGarbles()
+    { return false; }
 
 // ---- the dicerion of light
 // and darkness ----
@@ -218,8 +237,23 @@ inline int uamm2DicMagDarkBlindHi()
 inline bool uamm2DicBothBranchesNeedTapers()
     { return true; }
 
-inline bool uamm2DicDescSeamGarbles()
+// The R398 clean read fills
+// the description seam: the
+// bright branch silver and
+// mithral, the dark arm iron
+// and adamantite, the base
+// spreads to eight legs.
+inline bool uamm2DicBrightSilverMithral()
     { return true; }
+
+inline bool uamm2DicDarkIronAdamantite()
+    { return true; }
+
+inline int uamm2DicBaseLegs()
+    { return 8; }
+
+inline bool uamm2DicDescSeamGarbles()
+    { return false; }
 
 // ---- the dust of dryness
 // ----
@@ -269,8 +303,16 @@ inline int uamm2DdrElementalDmgLo()
 inline int uamm2DdrElementalDmgHi()
     { return 30; }
 
-inline bool uamm2DdrElementalSeamGarbles()
+// The R398 clean read fills
+// the seam: an elemental or
+// similar creature must
+// save versus spell or be
+// destroyed.
+inline bool uamm2DdrSaveOrDestroyed()
     { return true; }
+
+inline bool uamm2DdrElementalSeamGarbles()
+    { return false; }
 
 // A pouch holds 11-20
 // pinches and works while at
@@ -302,8 +344,19 @@ inline bool uamm2DilSimilarShapeOnly()
 inline int uamm2DilSizeVariancePct()
     { return 50; }
 
-inline bool uamm2DilIntroGarbles()
+// The R398 clean read fills
+// the intro: the powder
+// resembles chalk dust or
+// powdered graphite -
+// unless it is stared at.
+inline bool uamm2DilResemblesChalkGraphite()
     { return true; }
+
+inline bool uamm2DilChangesUnderScrutiny()
+    { return true; }
+
+inline bool uamm2DilIntroGarbles()
+    { return false; }
 
 // An unwilling recipient is
 // allowed a saving throw to
@@ -416,22 +469,27 @@ inline int uamm2EgdScarletHoldMinutes()
 inline bool uamm2EgdScarletRageAttacksFirst()
     { return true; }
 
-// Removal only by a magic
-// (the seam prints "a magic
-// or remove curse spell")
-// remove curse; the
-// low-intelligence seam
-// OCR-scrambles ("y an
-// egg"), the table reads;
-// flagged.
+// Removal only by a dispel
+// magic or remove curse
+// spell - the R398 clean
+// read fills the seam.
 inline bool uamm2EgdRemovalRemoveCurse()
+    { return true; }
+
+inline bool uamm2EgdRemovalAlsoDispelMagic()
     { return true; }
 
 inline bool uamm2EgdLowIntGrabsDropped()
     { return true; }
 
-inline bool uamm2EgdIntSeamGarbles()
+inline bool uamm2EgdLowIntUnderSeven()
     { return true; }
+
+inline bool uamm2EgdLowIntCovets()
+    { return true; }
+
+inline bool uamm2EgdIntSeamGarbles()
+    { return false; }
 
 // XP and gp sale values by
 // sort: Black 500 and 5,000,
@@ -494,13 +552,21 @@ inline int uamm2EgrSuccessChanceForScore(
     return 100 - 2 * sc;
 }
 
-// The 18-or-higher increment
-// cell OCR-garbles (""so
-// point at a time ... 10
-// eggs") - flagged; racial
+// The R398 clean read fills
+// the cell: scores of 18 or
+// higher rise only
+// one-tenth point at a time -
+// ten eggs of reason per
+// point above 18; racial
 // limitations apply.
-inline bool uamm2EgrHighScoreCellGarbles()
+inline bool uamm2EgrHighScoreTenthPoint()
     { return true; }
+
+inline int uamm2EgrEggsPerPointAbove18()
+    { return 10; }
+
+inline bool uamm2EgrHighScoreCellGarbles()
+    { return false; }
 
 inline bool uamm2EgrRacialLimitsApply()
     { return true; }
@@ -532,8 +598,13 @@ inline bool uamm2EgsShattersOnHandleOrDetect()
 inline int uamm2EgsFragRadiusIn()
     { return 1; }
 
+// The R398 clean read
+// confirms the attack
+// sentence - fragments strike
+// using actual armor class
+// only.
 inline bool uamm2EgsAttackSeamGarbles()
-    { return true; }
+    { return false; }
 
 // Creatures in the area are
 // attacked using actual armor
@@ -573,17 +644,18 @@ inline bool uamm2EgsSaveVsCrushingBlow()
     { return true; }
 
 // ---- the part ledger ----
-// Eight D-E items: one fully
-// clean, seven flagged, none
-// fully garbled.
+// Eight D-E items, all fully
+// clean - the R398 clean read
+// filled the seven flagged
+// holes, none fully garbled.
 inline int uamm2PartItemTotal()
     { return 8; }
 
 inline int uamm2PartCleanCount()
-    { return 1; }
+    { return 8; }
 
 inline int uamm2PartFlaggedCount()
-    { return 7; }
+    { return 0; }
 
 inline int uamm2PartGarbledCount()
     { return 0; }

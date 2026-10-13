@@ -24,6 +24,9 @@
 // later part. The part-4 and
 // skeleton seams ride in the
 // regtest audit, not here.
+// The R398 clean read
+// filled every flagged hole
+// named above.
 namespace rules {
 
 // ---- the quiver of Ehlonna
@@ -76,8 +79,18 @@ inline bool uamm5QehProducesOnCommand()
 inline bool uamm5QehOnePerRound()
     { return true; }
 
-inline bool uamm5QehCommandSentenceGarbles()
+// The R398 clean read fills
+// the sentence: the possessor
+// need merely command the
+// quiver to produce whatever
+// is wished each round -
+// "an arrow +1", "an arrow
+// +3", "a javelin".
+inline bool uamm5QehNamesVariants()
     { return true; }
+
+inline bool uamm5QehCommandSentenceGarbles()
+    { return false; }
 
 // ---- the robe of stars ----
 // A rather ordinary-appearing
@@ -204,8 +217,13 @@ inline bool uamm5RveManualActionsHalfProb()
 // of a remove curse or
 // similar magic-preventing
 // magic; flagged.
+// The R398 clean read
+// confirms the removal tail -
+// only a remove curse or
+// similar magic strips the
+// robe.
 inline bool uamm5RveRemovalTailGarbles()
-    { return true; }
+    { return false; }
 
 inline bool uamm5RveRemovalNeedsRemoveCurse()
     { return true; }
@@ -338,8 +356,15 @@ inline bool uamm5SsmOneSideWhite()
 inline bool uamm5SsmOtherSideBlack()
     { return true; }
 
-inline bool uamm5SsmIntroSeamGarbles()
+// The R398 clean read fills
+// the intro: one side of the
+// sheet carries a larger
+// pattern than the other.
+inline bool uamm5SsmOneSideLargerPattern()
     { return true; }
+
+inline bool uamm5SsmIntroSeamGarbles()
+    { return false; }
 
 inline bool uamm5SsmAlterationAura()
     { return true; }
@@ -659,13 +684,15 @@ inline int uamm5SstMaxUsesPerPotion()
 inline bool uamm5SstFourthUseRuins()
     { return true; }
 
-// The table-reference cell
-// OCR-scrambles; the
-// reconstruction: the type
-// produced is diced from
-// Table III.A.2; flagged.
-inline bool uamm5SstTableCellGarbles()
+// The R398 clean read fills
+// the cell: the new type is
+// diced from Table III.A or
+// Table III.A.2.
+inline bool uamm5SstAlsoTableThreeA()
     { return true; }
+
+inline bool uamm5SstTableCellGarbles()
+    { return false; }
 
 inline bool uamm5SstDeterminedByTable()
     { return true; }
@@ -691,17 +718,19 @@ inline int uamm5SstHalfStrengthHi()
     { return 100; }
 
 // ---- the part ledger ----
-// Eleven Q-S items: seven
-// fully clean, four flagged,
-// none fully garbled.
+// Eleven Q-S items, all
+// fully clean - the R398
+// clean read filled the four
+// flagged holes, none fully
+// garbled.
 inline int uamm5PartItemTotal()
     { return 11; }
 
 inline int uamm5PartCleanCount()
-    { return 7; }
+    { return 11; }
 
 inline int uamm5PartFlaggedCount()
-    { return 4; }
+    { return 0; }
 
 inline int uamm5PartGarbledCount()
     { return 0; }

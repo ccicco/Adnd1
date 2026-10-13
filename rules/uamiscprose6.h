@@ -21,6 +21,9 @@
 // skeleton seams ride in
 // the regtest audit, not
 // here.
+// The R398 clean read
+// filled every flagged hole
+// named above.
 namespace rules {
 
 // ---- the stone horse ----
@@ -52,8 +55,12 @@ inline bool uamm6ShActivationWord()
 inline bool uamm6ShAnimateCarryAttack()
     { return true; }
 
+// The R398 clean read prints
+// the activation seam clean -
+// the word animates the steed
+// to carry and attack.
 inline bool uamm6ShActivationSeamGarbles()
-    { return true; }
+    { return false; }
 
 // A stone horse carries
 // 1,000 pounds tirelessly
@@ -216,8 +223,16 @@ inline int uamm6UsoDistilledOunces()
 inline int uamm6UsoDistilledCuFtPerOunce()
     { return 1; }
 
-inline bool uamm6UsoTransmutationSeamGarbles()
+// The R398 clean read fills
+// the seam: an ounce dissolves
+// a cubic foot as a
+// disintegrate spell had been
+// employed.
+inline bool uamm6UsoAsDisintegrate()
     { return true; }
+
+inline bool uamm6UsoTransmutationSeamGarbles()
+    { return false; }
 
 // A living target requires a
 // successful roll to hit and
@@ -420,21 +435,26 @@ inline int uamm6ZscXpPerUse()
 inline int uamm6ZscGpPerUse()
     { return 1000; }
 
+// The R398 clean read fills
+// the gp tail: the sale value
+// runs 1,000 times the uses -
+// 2,000 to 7,000.
 inline bool uamm6ZscGpTailGarbles()
-    { return true; }
+    { return false; }
 
 // ---- the part ledger ----
-// Five S-Z items: two fully
-// clean, three flagged, none
-// fully garbled.
+// Five S-Z items, all fully
+// clean - the R398 clean read
+// filled the three flagged
+// holes, none fully garbled.
 inline int uamm6PartItemTotal()
     { return 5; }
 
 inline int uamm6PartCleanCount()
-    { return 2; }
+    { return 5; }
 
 inline int uamm6PartFlaggedCount()
-    { return 3; }
+    { return 0; }
 
 inline int uamm6PartGarbledCount()
     { return 0; }

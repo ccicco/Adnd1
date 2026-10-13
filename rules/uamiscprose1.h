@@ -26,6 +26,9 @@
 // and skeleton seams ride in
 // the regtest audit, not
 // here.
+// The R398 clean read
+// filled every flagged hole
+// named above.
 namespace rules {
 
 // ---- the amulet versus
@@ -75,8 +78,12 @@ inline int uammAmuBandHi(int i) {
     return k[i];
 }
 
+// The R398 clean read
+// confirms the 9th-level
+// cell - the turning table
+// prints clean.
 inline bool uammAmuNinthCellGarbles()
-    { return true; }
+    { return false; }
 
 // Must be worn at all times;
 // inert when not worn, and
@@ -140,8 +147,16 @@ inline bool uammAnyLongTermDisappears()
 inline int uammAnyLongTermUseLimit()
     { return 3; }
 
+// The R398 clean read fills
+// the tail: a long-term form
+// (such as a helm of
+// underwater action) lasts
+// one day - 24 hours.
+inline int uammAnyLongTermHours()
+    { return 24; }
+
 inline bool uammAnyTailGarbles()
-    { return true; }
+    { return false; }
 
 // ---- the beads of force ----
 // A small black sphere,
@@ -227,15 +242,18 @@ inline int uammBocSomeMereHeightIn()
 inline bool uammBocWaterproofBoundLocked()
     { return true; }
 
-// +3 on saving throws - the
-// save-category cell ("leather
-// or ...") OCR-truncates,
-// flagged.
+// +3 on saving throws, as
+// the "leather or book"
+// category - the R398
+// clean read fills the cell.
 inline int uammBocSaveBonus()
     { return 3; }
 
-inline bool uammBocSaveCellGarbles()
+inline bool uammBocSaveAsLeatherOrBook()
     { return true; }
+
+inline bool uammBocSaveCellGarbles()
+    { return false; }
 
 // The pages accept scribed
 // spells; a book holds up to
@@ -249,8 +267,21 @@ inline int uammBocMaxSpellLevels()
 inline bool uammBocPrizedAsTravellingBook()
     { return true; }
 
-inline bool uammBocScribingTailGarbles()
+// The R398 clean read fills
+// the tail: such librams are
+// totally unlikely to be
+// discovered randomly with
+// spells written therein -
+// enscribed works are kept
+// carefully by their owners.
+inline bool uammBocRarelyFoundInscribed()
     { return true; }
+
+inline bool uammBocKeptByOwners()
+    { return true; }
+
+inline bool uammBocScribingTailGarbles()
+    { return false; }
 
 // ---- the boots of the north
 // ----
@@ -305,8 +336,19 @@ inline int uammBvtCapabilitiesPerPair()
 inline int uammBvtTrackTableCount()
     { return 16; }
 
-inline bool uammBvtRowOnePrintGarbles()
+// The R398 clean read prints
+// the table - row one the
+// basilisk, row sixteen the
+// wyvern; the mechanics
+// already pin the rest.
+inline bool uammBvtRowOneBasilisk()
     { return true; }
+
+inline bool uammBvtRowSixteenWyvern()
+    { return true; }
+
+inline bool uammBvtRowOnePrintGarbles()
+    { return false; }
 
 // ---- the boots, winged ----
 // Up to two hours of flight
@@ -427,15 +469,13 @@ inline bool uammBbJumpMustCulminate()
 
 // ---- the chime of
 // interruption ----
-// The opening sentence
-// OCR-scrambles - the item
-// name garbles into the
-// mechanics; flagged. Struck
+// The R398 clean read prints
+// the opening clean; struck
 // only once per turn; the
 // resonant tone lasts three
 // full rounds.
 inline bool uammChiOpeningGarbles()
-    { return true; }
+    { return false; }
 
 inline int uammChiStrikesPerTurn()
     { return 1; }
@@ -633,19 +673,19 @@ inline bool uammCyNotReusable()
     { return true; }
 
 // ---- the part ledger ----
-// Thirteen A-C items: eight
-// fully clean, five
-// mechanics-clean with
+// Thirteen A-C items, all
+// fully clean - the R398
+// clean read filled the five
 // flagged holes, none fully
 // garbled.
 inline int uammPartItemTotal()
     { return 13; }
 
 inline int uammPartCleanCount()
-    { return 8; }
+    { return 13; }
 
 inline int uammPartFlaggedCount()
-    { return 5; }
+    { return 0; }
 
 inline int uammPartGarbledCount()
     { return 0; }

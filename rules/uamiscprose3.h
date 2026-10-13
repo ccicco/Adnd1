@@ -26,6 +26,9 @@
 // part-2 and skeleton seams
 // ride in the regtest audit,
 // not here.
+// The R398 clean read
+// filled every flagged hole
+// named above.
 namespace rules {
 
 // ---- the gem of insight ----
@@ -61,8 +64,15 @@ inline int uamm3GemIntGain()
 inline int uamm3GemWisGain()
     { return 1; }
 
+// The R398 clean read fills
+// the recall seam: any one
+// such gem functions but
+// once every 50 years.
+inline int uamm3GemYearsBetweenFunctions()
+    { return 50; }
+
 inline bool uamm3GemRecallSeamGarbles()
-    { return true; }
+    { return false; }
 
 // Keep it three months: past
 // the period the intelligence
@@ -131,8 +141,28 @@ inline bool uamm3GdkNoGiantTypeAcBenefit()
 inline bool uamm3GdkNoExtraLanguages()
     { return true; }
 
-inline bool uamm3GdkRacialBlockGarbles()
+// The R398 clean read fills
+// the racial block: +1
+// constitution, saving throw
+// bonuses based on total
+// constitution, 6"
+// infravision, and detection
+// of approximate depth
+// underground.
+inline int uamm3GdkConBonus()
+    { return 1; }
+
+inline bool uamm3GdkSavesByCon()
     { return true; }
+
+inline int uamm3GdkInfravisionIn()
+    { return 6; }
+
+inline bool uamm3GdkDepthDetection()
+    { return true; }
+
+inline bool uamm3GdkRacialBlockGarbles()
+    { return false; }
 
 // ---- the girdle of many
 // pouches ----
@@ -182,11 +212,12 @@ inline bool uamm3GmpFullOrEmptyAsDesired()
 inline bool uamm3GmpPrizedBySpellcasters()
     { return true; }
 
-// A garbled tail sentence (a
-// 50-years fragment) rides
-// the extract; flagged.
+// The R398 clean read shows
+// the 50-years fragment as
+// gem-of-insight bleed - the
+// girdle text reads whole.
 inline bool uamm3GmpTailSeamGarbles()
-    { return true; }
+    { return false; }
 
 // ---- the gloves of missile
 // snaring ----
@@ -248,17 +279,22 @@ inline bool uamm3GthFaintEnchantmentAura()
 inline bool uamm3GthInvisibleExceptMagic()
     { return true; }
 
-// Opens locks and picks
-// pockets as a thief of the
-// stated levels - the level
-// cells OCR-scramble ("Sth",
-// the 7th); a further +5% in
+// The R398 clean read fills
+// the level cells: open locks
+// as a 7th-level thief, pick
+// pockets as a 5th-level
+// thief; a further +5% in
 // both categories if the
 // wearer is already at or
-// above the stated levels;
-// flagged.
+// above the stated levels.
+inline int uamm3GthOpenLocksLevel()
+    { return 7; }
+
+inline int uamm3GthPickPocketsLevel()
+    { return 5; }
+
 inline bool uamm3GthLevelCellsGarble()
-    { return true; }
+    { return false; }
 
 inline int uamm3GthBonusPctIfAdvanced()
     { return 5; }
@@ -304,8 +340,23 @@ inline bool uamm3HdfProgressIndefinite()
 inline bool uamm3HdfLostIfDiscarded()
     { return true; }
 
-inline bool uamm3HdfLossSeamGarbles()
+// The R398 clean read fills
+// the loss seam: discard,
+// loss, theft, or a 24-hour
+// absence beyond a one-mile
+// radius loses all assumed
+// experience.
+inline int uamm3HdfLossRadiusMiles()
+    { return 1; }
+
+inline int uamm3HdfLossHours()
+    { return 24; }
+
+inline bool uamm3HdfLostIfStolen()
     { return true; }
+
+inline bool uamm3HdfLossSeamGarbles()
+    { return false; }
 
 // Hit points and ability
 // scores are always the
@@ -351,8 +402,8 @@ inline int uamm3HdgWeightPct()
 // Removing the hat dispels
 // the dweomer instantly, but
 // it can be used over and
-// over; the removal sentence
-// OCR-scrambles - flagged.
+// over - the R398 clean read
+// fills the removal seam.
 inline bool uamm3HdgRemovalDispelsInstantly()
     { return true; }
 
@@ -360,7 +411,7 @@ inline bool uamm3HdgReusableOverAndOver()
     { return true; }
 
 inline bool uamm3HdgRemovalSeamGarbles()
-    { return true; }
+    { return false; }
 
 // The hat itself can appear
 // as a comb, ribbon, head
@@ -432,8 +483,16 @@ inline int uamm3HavSidePouchCuFt()
 inline int uamm3HavSidePouchLbs()
     { return 20; }
 
-inline bool uamm3HavQuartMergeGarbles()
+// The R398 clean read fills
+// the merge: each side pouch
+// appears large enough to
+// hold about a quart of
+// material.
+inline bool uamm3HavAppearsQuart()
     { return true; }
+
+inline bool uamm3HavQuartMergeGarbles()
+    { return false; }
 
 // The large central portion:
 // 8 cubic feet, 80 pounds.
@@ -486,14 +545,19 @@ inline int uamm3HfgCloudLastsHiRounds()
 inline bool uamm3HfgPauseStartsNewCloud()
     { return true; }
 
-// The note drops abruptly at
-// the end (the OOO0O00-UMP!
-// artifact), and the duration
-// prose mixes rounds and
-// minutes - the book's own
-// seam; flagged.
+// The R398 clean read prints
+// the book's own seam: each
+// cloud lasts but 2-8 more
+// minutes after the next note
+// begins.
+inline int uamm3HfgDriftMinutesLo()
+    { return 2; }
+
+inline int uamm3HfgDriftMinutesHi()
+    { return 8; }
+
 inline bool uamm3HfgRoundsMinutesSeamGarbles()
-    { return true; }
+    { return false; }
 
 // ---- the horn of goodness
 // ----
@@ -507,8 +571,14 @@ inline bool uamm3HfgRoundsMinutesSeamGarbles()
 inline bool uamm3HgdAdaptsToEthicalDisposition()
     { return true; }
 
-inline bool uamm3HgdHeaderSeamGarbles()
+// The R398 clean read prints
+// the eaten header: the horn
+// is named goodness/evil.
+inline bool uamm3HgdNamedGoodnessEvil()
     { return true; }
+
+inline bool uamm3HgdHeaderSeamGarbles()
+    { return false; }
 
 // Absolutely neutral ethical
 // alignment: no power
@@ -546,17 +616,19 @@ inline bool uamm3HgdOncePerDay()
     { return true; }
 
 // ---- the part ledger ----
-// Eleven G-H items: two fully
-// clean, nine flagged, none
-// fully garbled.
+// Eleven G-H items, all
+// fully clean - the R398
+// clean read filled the nine
+// flagged holes, none fully
+// garbled.
 inline int uamm3PartItemTotal()
     { return 11; }
 
 inline int uamm3PartCleanCount()
-    { return 2; }
+    { return 11; }
 
 inline int uamm3PartFlaggedCount()
-    { return 9; }
+    { return 0; }
 
 inline int uamm3PartGarbledCount()
     { return 0; }
