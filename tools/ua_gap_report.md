@@ -2627,6 +2627,14 @@ section own index, one item each:
     ungated item.
 - DEFERRED: Appendix S (a deity layer;
   see the appendices item).
+  - AMENDED R405: the layer lands -
+    rules/deities.h pins the Appendix S
+    contract, source, census and
+    dwarven reads (the clean djvu
+    scan); the 23 deity stat blocks
+    and the five clerical charts ride
+    the seam as its own ungated data
+    round.
 
 ## Deferred engine seams (the gates)
 
@@ -2673,8 +2681,32 @@ lands before the items it gates.
       riding the dial) follows; the
       landed DMG audits stay
       authoritative.
-- [ ] The deity layer - gates Appendix
-      S.
+- [x] The deity layer -
+      CLOSED R405 (rules/deities.h;
+      the R405 seam audit, census 332):
+      the layer contract (no deity
+      actor site - the pins precede
+      the site, the R404 psionics
+      precedent), the Appendix S source
+      pins (pp. 109-122, the Roger E.
+      Moore DRAGON #58-63 material,
+      Moradin in Legends & Lore at 20
+      feet), the census (23 deities, 5
+      pantheons 5/5/4/4/5, the tiers
+      5/16/2, the ratings VI 10 III 5
+      IV 1 Nil 6 + Brandobaris
+      unrecorded), the dwarven reads
+      (twice normal size, no living
+      symbols, dual charismas, the -4
+      giant penalty), and the five
+      8-column clerical charts - live
+      cross-checked against the four
+      feeders (R169 the humanoid
+      matrix, R322 the comeliness
+      bands, R323 the subrace parents,
+      R404 the psx pins). The 23
+      stat blocks and the five charts
+      stay open - a new ungated item.
 - [x] The psionics seam -
       CLOSED R404 (rules/psionics.h;
       the R404 seam audit, census 331):

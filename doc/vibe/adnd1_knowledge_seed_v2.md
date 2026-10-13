@@ -2176,6 +2176,30 @@ R172 were already dropped at the R171b/R172 era cut; git
   diverged for the eleventh
   round running - benign; the
   md5 stays advisory.
+- R404 landed 2026-10-13:
+  commit 9dc9a90 (census 331,
+  preflight GREEN), the
+  psionics seam - rules/
+  psionics.h (prefix psx, 15
+  inline functions) - the
+  layer contract, the open/
+  OUT records (the PHB
+  sections OPEN, the DMG
+  p.77 combat OUT), the
+  duergar doubled chance
+  (twice the usual, double
+  all INT/WIS/CHA bonuses)
+  and the svirfneblin PC
+  ban, cross-checked against
+  the R166/R323/R328 feeders.
+  The psionic-combat charge
+  stays open. The ./nn save
+  hash diverged for the
+  twelfth round running -
+  benign; the md5 stays
+  advisory. Ritual note: the
+  ./nn step does not belong
+  in the run ritual.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
