@@ -26403,8 +26403,10 @@ int main() {
             if (!weaponSpecMagicStacks()) ++bad;
         }
         // U8: the table structure - the
-        // columns, the bands, the clean
-        // cells, the empty holes
+        // columns, the bands, all 24
+        // cells read (the R393 clean
+        // read; the superseding note
+        // pins)
         {
             if (weaponSpecTableColumnCount()
                 != 8) ++bad;
@@ -26442,17 +26444,18 @@ int main() {
             if (strcmp(
                 weaponSpecTableCellKnown(2, 7),
                 "5/2") != 0) ++bad;
-            // the OCR-lost cells read empty
-            if (weaponSpecTableCellKnown(0, 1)[0]
-                != 0) ++bad;
-            if (weaponSpecTableCellKnown(0, 2)[0]
-                != 0) ++bad;
-            if (weaponSpecTableCellKnown(0, 3)[0]
-                != 0) ++bad;
-            if (weaponSpecTableCellKnown(1, 5)[0]
-                != 0) ++bad;
-            if (weaponSpecTableCellKnown(2, 3)[0]
-                != 0) ++bad;
+            // the R393 clean read fills
+            // the lost cells
+            if (strcmp(weaponSpecTableCellKnown(
+                0, 1), "2/1") != 0) ++bad;
+            if (strcmp(weaponSpecTableCellKnown(
+                0, 2), "1/1") != 0) ++bad;
+            if (strcmp(weaponSpecTableCellKnown(
+                0, 3), "1/2") != 0) ++bad;
+            if (strcmp(weaponSpecTableCellKnown(
+                1, 5), "4/1") != 0) ++bad;
+            if (strcmp(weaponSpecTableCellKnown(
+                2, 3), "3/2") != 0) ++bad;
         }
         // U9: the R328 exclusion seam
         {
@@ -26938,20 +26941,33 @@ int main() {
             if (thiefArmorModifierKnown(7, 2)
                 != 0) ++bad;
         }
-        // U3: the OCR holes
+        // U3: the R393 clean read -
+        // every hole fills
         {
-            if (!thiefArmorCellIsHole(1, 0))
+            if (thiefArmorCellIsHole(1, 0))
                 ++bad;
-            if (!thiefArmorCellIsHole(1, 1))
+            if (thiefArmorCellIsHole(1, 1))
                 ++bad;
             if (thiefArmorCellIsHole(1, 2))
                 ++bad;
-            if (!thiefArmorCellIsHole(2, 0))
+            if (thiefArmorCellIsHole(2, 0))
                 ++bad;
-            if (!thiefArmorCellIsHole(5, 0))
+            if (thiefArmorCellIsHole(5, 0))
                 ++bad;
             if (thiefArmorCellIsHole(0, 0)) ++bad;
             if (thiefArmorCellIsHole(4, 1)) ++bad;
+            // Open Locks reads 0/-5/-10;
+            // the no-armor dashes read 0
+            if (thiefArmorModifierKnown(1, 0)
+                != 0) ++bad;
+            if (thiefArmorModifierKnown(1, 1)
+                != -5) ++bad;
+            if (thiefArmorModifierKnown(1, 2)
+                != -10) ++bad;
+            if (thiefArmorModifierKnown(2, 0)
+                != 0) ++bad;
+            if (thiefArmorModifierKnown(5, 0)
+                != 0) ++bad;
         }
         // U4: the footnotes
         {
@@ -26964,6 +26980,12 @@ int main() {
             if (!thiefArmorStuddedNeedsFullBodyCloak())
                 ++bad;
             if (!thiefArmorNoArmorBracersOrCloak())
+                ++bad;
+            if (!thiefArmorFootnoteOnePrintsInFull())
+                ++bad;
+            if (!thiefArmorNoArmorLargeDevicesBarred())
+                ++bad;
+            if (!thiefArmorFootnoteFourOrphaned())
                 ++bad;
         }
         // U5: the attacks classes and
@@ -27000,8 +27022,8 @@ int main() {
                 }
         }
         // U6: the band routing and the
-        // verified rates (the high band
-        // is a documented 0/0 hole)
+        // verified rates (the R393 clean
+        // read: the high band is 2/1)
         {
             if (uaAttacksBandForLevel(0, 1)
                 != 0) ++bad;
@@ -27027,9 +27049,9 @@ int main() {
                 ++bad;
             if (uaAttacksBandRounds(1) != 2)
                 ++bad;
-            if (uaAttacksBandAttacks(2) != 0)
+            if (uaAttacksBandAttacks(2) != 2)
                 ++bad;
-            if (uaAttacksBandRounds(2) != 0)
+            if (uaAttacksBandRounds(2) != 1)
                 ++bad;
             if (uaAttacksBandAttacks(3) != 5)
                 ++bad;
@@ -34673,24 +34695,43 @@ int main() {
         // ---- the illusionist cantrip counts ----
             if (!uailaThreeGroupsOneEach()) ++bad;
             if (!uailaAlwaysKnowsReadIllusionistMagic()) ++bad;
-            if (uailaDefensiveRowCount() != 5) ++bad;
-            if (!uailaRow1ColorSpray()) ++bad;
-            if (!uailaRow1AudibleGlamer()) ++bad;
-            if (!uailaRow1Darkness()) ++bad;
-            if (!uailaRow2Hypnotism()) ++bad;
-            if (!uailaRow3Light()) ++bad;
-            if (!uailaRow3GazeReflection()) ++bad;
-            if (!uailaRow4PhantasmalForce()) ++bad;
-            if (!uailaRow4WallOfFog()) ++bad;
-            if (!uailaRow5ChromaticOrb()) ++bad;
-            if (!uailaRow5ChromaticOrbIsChoose()) ++bad;
-            if (!uailaOffensiveMiscColumnsMerged()) ++bad;
-            if (!uailaMiscChangeSelf()) ++bad;
-            if (!uailaMiscDancingLights()) ++bad;
-            if (!uailaMiscDetect()) ++bad;
-            if (!uailaMiscDetectInvisibility()) ++bad;
-            if (!uailaMiscPhantomArmor()) ++bad;
-            if (!uailaRowBoundariesLost()) ++bad;
+            if (uailaOffensiveRowCount() != 6)
+                ++bad;
+            if (uailaDefensiveRowCount() != 6)
+                ++bad;
+            if (uailaMiscRowCount() != 6) ++bad;
+            if (!uailaOffRow1ColorSpray()) ++bad;
+            if (!uailaOffRow2Hypnotism()) ++bad;
+            if (!uailaOffRow3Light()) ++bad;
+            if (!uailaOffRow4PhantasmalForce())
+                ++bad;
+            if (!uailaOffRow5ChromaticOrb())
+                ++bad;
+            if (!uailaChromaticOrbPrintsPlain())
+                ++bad;
+            if (!uailaOffRow6Spook()) ++bad;
+            if (!uailaDefRow1AudibleGlamer())
+                ++bad;
+            if (!uailaDefRow2Darkness()) ++bad;
+            if (!uailaDefRow3GazeReflection())
+                ++bad;
+            if (!uailaDefRow4WallOfFog()) ++bad;
+            if (!uailaDefRow5PhantomArmor())
+                ++bad;
+            if (!uailaDefRow6IsChoose()) ++bad;
+            if (!uailaMiscRow1ChangeSelf())
+                ++bad;
+            if (!uailaMiscRow2DancingLights())
+                ++bad;
+            if (!uailaMiscRow3DetectIllusion())
+                ++bad;
+            if (!uailaMiscRow4DetectInvisibility())
+                ++bad;
+            if (!uailaMiscRow5IsChoose()) ++bad;
+            if (!uailaMiscRow6IsChooseAsterisk())
+                ++bad;
+            if (!uailaColumnsDecodeColumnWise())
+                ++bad;
             if (uailaDmOptionCount() != 3) ++bad;
             if (!uailaUaSpellsAddedForIllusionistsOnly()) ++bad;
             if (!uailaNotDoneForMagicUsers()) ++bad;
@@ -40435,6 +40476,85 @@ int main() {
             if (!uamtAklysTenFootOnly()) ++bad;
         }
         printf("R392 UA players tables pin audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R393: the PDF-read completion sweep
+    // pin audit ----
+    // The clean PDF read fills the three
+    // fragment-round holes; the amended
+    // R331/R334/R365 blocks cross-check
+    // here at the seams.
+    {
+        using namespace rules;
+        int bad = 0;
+        // U1: the spec-table corners
+        {
+            if (strcmp(
+                weaponSpecTableCellKnown(0, 3),
+                "1/2") != 0) ++bad;
+            if (strcmp(
+                weaponSpecTableCellKnown(1, 6),
+                "5/1") != 0) ++bad;
+            if (strcmp(
+                weaponSpecTableCellKnown(2, 4),
+                "2/1") != 0) ++bad;
+            if (!weaponSpecTableSupersedes())
+                ++bad;
+        }
+        // U2: the seam - the lasso/staff
+        // sling 13+ cell equals the
+        // attacks band-2 rate
+        {
+            if (strcmp(
+                weaponSpecTableCellKnown(2, 4),
+                "2/1") != 0) ++bad;
+            if (uaAttacksBandAttacks(2) != 2)
+                ++bad;
+            if (uaAttacksBandRounds(2) != 1)
+                ++bad;
+        }
+        // U3: the thief fills
+        {
+            if (thiefArmorCellIsHole(1, 0))
+                ++bad;
+            if (thiefArmorCellIsHole(1, 1))
+                ++bad;
+            if (thiefArmorCellIsHole(2, 0))
+                ++bad;
+            if (thiefArmorCellIsHole(5, 0))
+                ++bad;
+            if (thiefArmorModifierKnown(1, 0)
+                != 0) ++bad;
+            if (thiefArmorModifierKnown(1, 1)
+                != -5) ++bad;
+            if (thiefArmorModifierKnown(1, 2)
+                != -10) ++bad;
+            if (!thiefArmorFootnoteOnePrintsInFull())
+                ++bad;
+            if (!thiefArmorNoArmorLargeDevicesBarred())
+                ++bad;
+            if (!thiefArmorFootnoteFourOrphaned())
+                ++bad;
+        }
+        // U4: the IL column-wise decode
+        {
+            if (uailaOffensiveRowCount() != 6)
+                ++bad;
+            if (uailaDefensiveRowCount() != 6)
+                ++bad;
+            if (uailaMiscRowCount() != 6) ++bad;
+            if (!uailaOffRow6Spook()) ++bad;
+            if (!uailaDefRow2Darkness()) ++bad;
+            if (!uailaDefRow5PhantomArmor())
+                ++bad;
+            if (!uailaChromaticOrbPrintsPlain())
+                ++bad;
+            if (!uailaMiscRow6IsChooseAsterisk())
+                ++bad;
+            if (!uailaColumnsDecodeColumnWise())
+                ++bad;
+        }
+        printf("R393 PDF-read completion pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

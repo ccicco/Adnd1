@@ -1830,7 +1830,8 @@ R172 were already dropped at the R171b/R172 era cut; git
   as its own data layer), the
   R389 seam the System II
   weaponless layer; GREEN on
-  the first run.- R391 landed 2026-10-12: commit
+  the first run.
+- R391 landed 2026-10-12: commit
   3b87a93 plus the R391b fix,
   census 318, the UA
   Appendix T pole-arm
@@ -1851,6 +1852,33 @@ R172 were already dropped at the R171b/R172 era cut; git
   check gets a Python
   simulation pass before
   publish.
+- R392 landed 2026-10-12: 6cfd9c2
+  committed RED plus the R392b
+  repair a4bef30 (pushed
+  together, b23846f..a4bef30),
+  census 319, the UA players
+  tables manifest sweep (pp.
+  26-28, 20 manifest items): the
+  equipment costs and hand-held
+  tables pin NEW (uaequip26.h,
+  uahandheld.h), the
+  weight/damage, missile and
+  proficiency tables amend; the
+  clean PDF read fills every hole
+  (the garrot L 1-6, the 68th
+  row, the rate/range columns,
+  the AC 7-10 ladders, the
+  facing-page notes); the
+  manifest closes; the R392
+  lesson: the sim pass validates
+  semantics, not emitted C - four
+  C defects (a [1:-1] opener
+  strip, an unescaped inches
+  quote, two flipped return
+  types) shipped past it; every
+  round now gets the static
+  header check; commit only on
+  GREEN.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

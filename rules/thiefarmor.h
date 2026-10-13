@@ -16,19 +16,21 @@
 //   - the printed dashes (Read Languages) pin as 0, no modifier -
 //     the R184 dash convention.
 //   - the attacks table: the band row labels read clean for all
-//     five classes; the band-0 rate (1/1 round) is verified twice,
-//     the band-1 rate (3/2 rounds) once, the band-3 rate (5/2
-//     rounds) twice (cavalier 16th and paladin 19th). The band-2
-//     rate cells (fighter 13th up through paladin 12-18) print
-//     empty in the extract - a documented hole, 0/0, pending the
-//     PDF. The paladin band edges print 7-12 then 12-18 - the
-//     printed overlap at 12th pinned as printed.
+//     five classes; the R393 clean print fills the band-2 rate
+//     (2/1 round) - the band-0 (1/1), band-1 (3/2) and
+//     band-3 (5/2) fragment reads seam-agree. The paladin band
+//     edges print 7-12 then 12-18 - the printed overlap at 12th
+//     pinned as printed.
 //
-// OCR holes (the item stays open pending the PDF read): the Open
-// Locks row's "5% / -" tokens (sign and column assignment lost),
-// the no-armor cells that print no token (Open Locks, Find/Remove
-// Traps, Hear Noise), the attacks band-2 rate, and the footnote-1
-// tail (the bracers/cloak clause survives only as fragments).
+// R393 (the clean PDF read): every OCR hole fills. The Open Locks
+// row reads dash / -5% / -10%; the no-armor cells that printed no
+// token read as printed dashes (Find/Remove Traps, Hear Noise -
+// the R184 dash convention, 0); the attacks band-2 rate reads 2/1 round;
+// the footnote-1 tail prints in full (bracers of defense and/or a cloak,
+// but no large protective devices). One print anomaly stays
+// flagged: the Hide in Shadows row carries a footnote-4 marker
+// whose text prints nowhere on the clean
+// page - pinned as the orphaned marker.
 // ===========================================================================
 
 #pragma once
@@ -65,30 +67,27 @@ inline const char* thiefArmorFunctionName(int i) {
     return k[i];
 }
 
-// ---- the cells (p. 22) ----
+// ---- the cells (p. 22, the R393
+// clean read) ----
 // function 0-7, category 0-2 (0 = no
 // armor, 1 = elfin chain, 2 = studded
-// or padded). The lost cells read as
-// holes below; the printed dashes read
-// as 0.
+// or padded). Every cell reads; the
+// printed dashes read as 0 (the R184
+// dash convention).
 inline bool thiefArmorCellIsHole(
         int function, int category) {
-    switch (function) {
-        case 1:     // Open Locks
-            return category <= 1;
-        case 2:     // Find/Remove Traps
-        case 5:     // Hear Noise
-            return category == 0;
-        default:
-            return false;
-    }
+    // R393: every hole fills - no
+    // cell is a hole any longer
+    (void) function;
+    (void) category;
+    return false;
 }
 
 inline int thiefArmorModifierKnown(
         int function, int category) {
     static const int k[8][3] = {
         {5, -20, -30},   // Pick Pockets
-        {0, 0, -10},     // Open Locks
+        {0, -5, -10},    // Open Locks
         {0, -5, -10},    // Find/Remove
         {10, -10, -20},  // Move Silently
         {5, -10, -20},   // Hide in Shadows
@@ -103,21 +102,24 @@ inline int thiefArmorModifierKnown(
     return k[function][category];
 }
 
-// ---- the footnotes (p. 22) ----
-// Footnote 2: no dexterity bonuses
-// apply to thief functions (though
-// penalties do) in armor other than
-// simple leather. Footnote 3: the
-// armor is assumed covered by another
-// garment - elfin chain under normal
-// clothing, studded leather only by a
-// full body cloak. Footnote 1's tail
-// is OCR-lost; the surviving fragments
-// (cloak but no large protective
-// devices; of defense and/or a) fix
-// the no-armor clause as bracers
-// and/or cloak - pinned as the
-// clause's existence only.
+// ---- the footnotes (p. 22, the
+// R393 clean read) ----
+// Footnote 1 prints in full: the
+// no-armor category applies when
+// wearing bracers of defense
+// and/or a cloak, but no large
+// protective devices. Footnote 2: no
+// dexterity bonuses apply to thief
+// functions (though penalties do) in
+// armor other than simple leather.
+// Footnote 3: the armor is assumed
+// covered by another garment - elfin
+// chain under normal clothing,
+// studded leather only by a full
+// body cloak. The Hide in Shadows
+// row carries a footnote-4 marker
+// whose text prints nowhere - the
+// orphaned marker pinned as such.
 inline bool thiefArmorNoDexBonusInArmor()
     { return true; }
 
@@ -131,6 +133,18 @@ inline bool thiefArmorStuddedNeedsFullBodyCloak()
     { return true; }
 
 inline bool thiefArmorNoArmorBracersOrCloak()
+    { return true; }
+
+// R393: the footnote-1 tail prints
+// in full; the footnote-4 marker
+// prints with no text anywhere.
+inline bool thiefArmorFootnoteOnePrintsInFull()
+    { return true; }
+
+inline bool thiefArmorNoArmorLargeDevicesBarred()
+    { return true; }
+
+inline bool thiefArmorFootnoteFourOrphaned()
     { return true; }
 
 // ---- the Attacks Per Melee Round
@@ -152,25 +166,28 @@ inline const char* uaAttacksClassName(int i) {
     return k[i];
 }
 
-// ---- the bands (p. 22) ----
-// Four bands: 1/1 round, 3/2 rounds,
-// the OCR-lost high band, 5/2 rounds
-// (cavalier 16th up, paladin 19th
-// up). Fighter, barbarian and ranger
-// print three bands; cavalier and
+// ---- the bands (p. 22, the R393
+// clean read) ----
+// Four bands: 1/1 round, 3/2
+// rounds, 2/1 round (the clean
+// read fills the lost rate), 5/2
+// rounds (cavalier 16th up,
+// paladin 19th up). Fighter,
+// barbarian and ranger print
+// three bands; cavalier and
 // paladin four.
 inline int uaAttacksBandCount()
     { return 4; }
 
 inline int uaAttacksBandAttacks(int band) {
-    static const int k[4] = {1, 3, 0, 5};
+    static const int k[4] = {1, 3, 2, 5};
     if (band < 0) band = 0;
     if (band > 3) band = 3;
     return k[band];
 }
 
 inline int uaAttacksBandRounds(int band) {
-    static const int k[4] = {1, 2, 0, 2};
+    static const int k[4] = {1, 2, 1, 2};
     if (band < 0) band = 0;
     if (band > 3) band = 3;
     return k[band];

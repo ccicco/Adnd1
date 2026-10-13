@@ -354,7 +354,7 @@ fold; the R326 audit, census 253.
       revisit with the PDF);
       the R330 audit (census
       257).
-- [ ] **Weapon specialization** (pp.
+- [x] **Weapon specialization** (pp.
       18-19) - fighter and ranger only,
       chosen at creation; the slot costs
       (2 slots melee; a bow costs a
@@ -373,17 +373,12 @@ fold; the R326 audit, census 253.
       specialization (+3/+3, melee only,
       no pole arms or two-handed sword);
       the bonuses are not magical.
-      - R331: the prose pinned
-      (rules/weaponspec.h) - the
-      class gate, the slot costs,
-      the melee/bow/crossbow
-      reads, the double, the table
-      structure with the cleanly
-      readable cells; the
-      table's fraction cells are
-      OCR-mangled (no consistent
-      decode) - stays open pending
-      the PDF read.
+      - AMENDED R393: closed - the R331
+      pin (rules/weaponspec.h); the R393
+      clean PDF read fills all 24 table
+      cells (the six fragment cells
+      seam-agree row for row) and pins
+      the superseding note.
 - [x] **The barbarian** (pp. 18-21) -
       the ability requirements and the
       wisdom maximum; **Barbarians Table
@@ -450,24 +445,20 @@ fold; the R326 audit, census 253.
       pins (the UA prose is
       OCR-lost). The ranger weapons
       rules ride a later round.
-- [ ] **Thieves Table II** (p. 22) -
+- [x] **Thieves Table II** (p. 22) -
       the armor-effects penalties on
       thieving functions (non-leather
       armor, the elfin chain read); the
       **Attacks Per Melee Round Table**
       (p. 22) pairs with it.
-      - R334: the fragment-verified
-      cells pinned (rules/thiefarmor.h)
-      - the armor columns, the eight
-      functions, the sign-carries-
-      column decode, the footnotes,
-      the attacks classes, band edges
-      and verified rates; the Open
-      Locks cells, the missing
-      no-armor cells, the attacks
-      high-band rate and the
-      footnote-1 tail are OCR-lost -
-      stays open pending the PDF read.
+      - AMENDED R393: closed - the R334
+      pin (rules/thiefarmor.h); the R393
+      clean PDF read fills the Open Locks
+      cells (0/-5/-10), the no-armor
+      dashes, the attacks high-band rate
+      (2/1) and the footnote-1 tail; the
+      footnote-4 marker prints orphaned -
+      the print anomaly, documented.
 - [x] **The thief-acrobat** (pp. 23-25)
       - the split class at 6th (the
       5th-level thief may convert); the
@@ -1584,22 +1575,18 @@ the gateway charge.
         travelling thickness/weight
         cells garble - holes
         in-header, revisit with the PDF.
-- [ ] **Illusionist spell acquisition**
+- [x] **Illusionist spell acquisition**
       (p. 80) - the starting list table;
       the illusionist book differences.
-      - R365: the fragment-verified
-        cells pinned
-        (rules/uailacquisition.h) -
-        the three-group start, the
-        five defensive rows, the
-        misc fragments, the DM
-        three-option note, the book
-        differences (24/16/8 and 6/4/2
-        with the MU first-level
-        book), the illusionist cantrip
-        counts; the offensive/misc row
-        boundaries garble - stays
-        open pending the PDF read.
+      - AMENDED R393: closed - the R365
+        pin (rules/uailacquisition.h);
+        the R393 clean PDF read decodes
+        the starting list column-wise in
+        full (the R365 interleave
+        corrected: Darkness defensive row
+        2, Phantom Armor row 5, Chromatic
+        Orb plain offensive row 5, Spook
+        row 6).
 - [x] **The cost of spell casting** (pp.
       80-81).
       - CLOSED R365: the pin round

@@ -8,23 +8,24 @@
 // pin carries the exclusion read.
 //
 // The Weapon Specialization Table: the
-// column titles, the three level bands
-// and six cleanly readable cells are
-// pinned (weaponSpecTableCellKnown).
-// The other eighteen cells are
-// OCR-mangled in the extract (the
-// fractions lost their slashes and
-// digits: "21", "mn", "3n", "an",
-// "4an", "51", "2n", "312", "81") with
-// no consistent decode - they read
-// empty, documented here and in the gap
-// report item, which stays OPEN until
-// the PDF read. The 1-6 row's light-
-// crossbow cell is blank in the
-// extract. The crossbow medium-range
-// read (+1 hit, no damage bonus) is
-// fragment-verified in the scrambled
-// tail (the R329 discipline).
+// R393 clean PDF read pins all 24
+// cells (weaponSpecTableCellKnown) -
+// the six R331 fragment cells seam-
+// agree row for row (melee and other
+// missiles 3/2 at 1-6 and 5/2 at 13+,
+// light crossbow and lasso/staff
+// sling 3/2 at 7-12). The 1-6 row
+// reads 3/2, 2/1, 1/1, 1/2, 1/1,
+// 3/1, 4/1, 3/2; the 7-12 row 2/1,
+// 3/1, 3/2, 1/1, 3/2, 4/1, 5/1, 2/1;
+// the 13+ row 5/2, 4/1, 2/1, 3/2,
+// 2/1, 5/1, 6/1, 5/2. The printed
+// note: the table supersedes the
+// Attacks Per Melee Round Table for
+// specialists. The crossbow medium-
+// range read (+1 hit, no damage
+// bonus) is fragment-verified in the
+// scrambled tail (the R329 discipline).
 // ===========================================================================
 
 #pragma once
@@ -260,23 +261,30 @@ inline int weaponSpecTableBandHigh(int b) {
     return k[b];
 }
 
-// The cleanly readable cells: melee and
-// other-missiles 3/2 at 1-6 and 5/2 at
-// 13+; light crossbow and lasso/staff
-// sling 3/2 at 7-12. Every other cell
-// (and the 1-6 light-crossbow cell,
-// blank in the extract) reads empty -
-// the OCR-lost fraction cells
-// (documented in the header comment).
+// The R393 clean read: all 24 cells.
 inline const char* weaponSpecTableCellKnown(
         int band, int col) {
-    if (band == 0 && col == 0) return "3/2";
-    if (band == 0 && col == 7) return "3/2";
-    if (band == 1 && col == 2) return "3/2";
-    if (band == 1 && col == 4) return "3/2";
-    if (band == 2 && col == 0) return "5/2";
-    if (band == 2 && col == 7) return "5/2";
-    return "";
+    static const char* const k[3][8] = {
+        {"3/2", "2/1", "1/1", "1/2",
+         "1/1", "3/1", "4/1", "3/2"},
+        {"2/1", "3/1", "3/2", "1/1",
+         "3/2", "4/1", "5/1", "2/1"},
+        {"5/2", "4/1", "2/1", "3/2",
+         "2/1", "5/1", "6/1", "5/2"}
+    };
+    if (band < 0) band = 0;
+    if (band > 2) band = 2;
+    if (col < 0) col = 0;
+    if (col > 7) col = 7;
+    return k[band][col];
 }
+
+// The printed note under the table:
+// the figures supersede the Attacks
+// Per Melee Round Table whenever the
+// specialist wields the special
+// weapon.
+inline bool weaponSpecTableSupersedes()
+    { return true; }
 
 }   // namespace rules

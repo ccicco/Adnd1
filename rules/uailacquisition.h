@@ -9,17 +9,19 @@
 // site exists.
 //
 // JUDGMENTs (the decode method):
-//   - the starting-list table interleaves: the
-//     defensive rows print legibly (the five
-//     numbered rows with the multi-name cells);
-//     the offensive and misc columns merge into
-//     one garbled block (Change Self through
-//     Phantom Armor with two choose markers) -
-//     the row boundaries are lost, holes pending
-//     the PDF; the fragment names pin.
-//   - the chromatic orb row prints with the
-//     (choose) marker and the UA-addition note
-//     prints clean (spells from this work were
+//   - R393 (the clean PDF read, p. 80): the
+//     starting-list table decodes column-wise
+//     in full - three columns, six rows each;
+//     the R365 interleave decode corrects
+//     (Darkness defensive row 2, Phantom
+//     Armor defensive row 5, Chromatic Orb
+//     plain, Spook offensive row 6); the
+//     (choose) markers read as the defensive
+//     row 6 and the misc rows 5-6, the
+//     asterisk on the misc row 6.
+//   - the chromatic orb row prints plain (the
+//     R365 (choose) read corrects) and the
+//     UA-addition note prints clean (spells from this work were
 //     added to the initial lists for illusionists
 //     only, not for magic-users).
 //   - the book-difference list prints clean (the
@@ -42,62 +44,87 @@ inline bool uailaThreeGroupsOneEach()
 inline bool uailaAlwaysKnowsReadIllusionistMagic()
     { return true; }
 
-// The defensive rows: 1 - color spray, audible
-// glamer, darkness; 2 - hypnotism; 3 - light,
-// gaze reflection; 4 - phantasmal force, wall of
-// fog; 5 - chromatic orb (choose).
+// The R393 clean read (p. 80): the
+// starting list decodes column-wise,
+// three columns with six rows each.
+// Offensive: 1 - color spray; 2 -
+// hypnotism; 3 - light; 4 - phantasmal
+// force; 5 - chromatic orb (plain);
+// 6 - spook. Defensive: 1 - audible
+// glamer; 2 - darkness; 3 - gaze
+// reflection; 4 - wall of fog; 5 -
+// phantom armor; 6 - (choose).
+// Misc: 1 - change self; 2 - dancing
+// lights; 3 - detect illusion; 4 -
+// detect invisibility; 5 - (choose);
+// 6 - (choose)*.
+inline int uailaOffensiveRowCount()
+    { return 6; }
+
 inline int uailaDefensiveRowCount()
-    { return 5; }
+    { return 6; }
 
-inline bool uailaRow1ColorSpray()
+inline int uailaMiscRowCount()
+    { return 6; }
+
+inline bool uailaOffRow1ColorSpray()
     { return true; }
 
-inline bool uailaRow1AudibleGlamer()
+inline bool uailaOffRow2Hypnotism()
     { return true; }
 
-inline bool uailaRow1Darkness()
+inline bool uailaOffRow3Light()
     { return true; }
 
-inline bool uailaRow2Hypnotism()
+inline bool uailaOffRow4PhantasmalForce()
     { return true; }
 
-inline bool uailaRow3Light()
+inline bool uailaOffRow5ChromaticOrb()
     { return true; }
 
-inline bool uailaRow3GazeReflection()
+inline bool uailaChromaticOrbPrintsPlain()
     { return true; }
 
-inline bool uailaRow4PhantasmalForce()
+inline bool uailaOffRow6Spook()
     { return true; }
 
-inline bool uailaRow4WallOfFog()
+inline bool uailaDefRow1AudibleGlamer()
     { return true; }
 
-inline bool uailaRow5ChromaticOrb()
+inline bool uailaDefRow2Darkness()
     { return true; }
 
-inline bool uailaRow5ChromaticOrbIsChoose()
+inline bool uailaDefRow3GazeReflection()
     { return true; }
 
-inline bool uailaOffensiveMiscColumnsMerged()
+inline bool uailaDefRow4WallOfFog()
     { return true; }
 
-inline bool uailaMiscChangeSelf()
+inline bool uailaDefRow5PhantomArmor()
     { return true; }
 
-inline bool uailaMiscDancingLights()
+inline bool uailaDefRow6IsChoose()
     { return true; }
 
-inline bool uailaMiscDetect()
+inline bool uailaMiscRow1ChangeSelf()
     { return true; }
 
-inline bool uailaMiscDetectInvisibility()
+inline bool uailaMiscRow2DancingLights()
     { return true; }
 
-inline bool uailaMiscPhantomArmor()
+inline bool uailaMiscRow3DetectIllusion()
     { return true; }
 
-inline bool uailaRowBoundariesLost()
+inline bool uailaMiscRow4DetectInvisibility()
+    { return true; }
+
+inline bool uailaMiscRow5IsChoose()
+    { return true; }
+
+inline bool uailaMiscRow6IsChooseAsterisk()
+    { return true; }
+
+inline bool uailaColumnsDecodeColumnWise()
     { return true; }
 
 // The DM three-options note for the asterisked
