@@ -72,11 +72,12 @@ inline bool uatdMonsterFileTracksSource()
 inline bool uatdPlaytestingPicks()
     { return true; }
 
-// The UA pin rounds have not
-// landed yet - the dial lands
-// first.
+// R402: the UA pin rounds HAVE
+// landed (R375, R395, R397) -
+// the dial rides; the charge
+// follows.
 inline bool uatdUaPinRoundsPending()
-    { return true; }
+    { return false; }
 
 // ---- the carrier contract ----
 // Both table sets ride: DMG and
@@ -86,6 +87,50 @@ inline int uatdTableSetCount()
 
 // The MERGED mode carries both.
 inline bool uatdMergedCarriesBoth()
+    { return true; }
+
+// ---- R402: the runtime dial ----
+// The mode state rides a static
+// (the DMG default until
+// playtesting picks); the setter
+// gates on the validity.
+inline int& uatdModeRef() {
+    static int m = uatdDefaultMode();
+    return m;
+}
+
+// The current dial mode.
+inline int uatdMode()
+    { return uatdModeRef(); }
+
+inline bool uatdModeValid(int m)
+    { return m >= 0 &&
+      m < uatdModeCount(); }
+
+// Set the dial (an invalid ask
+// falls back to the default).
+inline void uatdSetMode(int m) {
+    if (!uatdModeValid(m))
+        m = uatdDefaultMode();
+    uatdModeRef() = m;
+}
+
+inline const char* uatdModeName(int m) {
+    static const char* const k[3] = {
+        "DMG", "UA", "MERGED"
+    };
+    if (m < 0) m = 0;
+    if (m > 2) m = 2;
+    return k[m];
+}
+
+// R402: the dial governs the
+// random determination dispatch
+// (the magic item roll); the
+// landed DMG audits stay
+// authoritative under the
+// default mode.
+inline bool uatdDialLanded()
     { return true; }
 
 }   // namespace rules

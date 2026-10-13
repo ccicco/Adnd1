@@ -2090,6 +2090,35 @@ R172 were already dropped at the R171b/R172 era cut; git
   user decision): the two
   include patches, the audit
   label stays R400.
+- R401 landed 2026-10-13:
+  commit 6cf9115 (census 328,
+  preflight GREEN), the UA
+  cantrip tier seam - the
+  sub-1st registry tier closes:
+  rules/cantriptier.h (prefix
+  cant, 31 inline functions) -
+  the p. 45 tier traits, the
+  0-level per-day xp ladder
+  (neophyte 1, initiate 2,
+  apprentice 3), the
+  first-level discard and the
+  four-cantrip retention, the
+  round rules, the seven
+  categories, the roster totals
+  (66 MU + 8 IL). The R341
+  decode corrects from the clean
+  p. 30 scan: the reversed column
+  prints Tangle, the personal
+  Tweak - 66 names; the R341
+  audit asserts reseat (Wilt 11,
+  Unlock 9). The sim healthy
+  pass caught two splice bugs
+  pre-publish (the IL name
+  asserts, the IL span assert) -
+  fixed before the handoff. The
+  ./nn save hash diverged for the
+  ninth round running - benign;
+  the md5 stays advisory.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

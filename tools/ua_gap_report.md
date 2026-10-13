@@ -1750,6 +1750,12 @@ DECIDED R374: RUN BOTH - the engine
       monster file format. The UA pin
       rounds follow - the dial lands
       first, the charge after.
+      - AMENDED R402: the dial lands -
+        the runtime mode state and the
+        UA-mode determination dispatch
+        ride (dm/treasure.cpp); the pin
+        rounds R375/R395/R397 feed the
+        roller; the charge follows.
 
 - [ ] **The random determination
       tables** (pp. 84-89) - the
@@ -2636,9 +2642,23 @@ lands before the items it gates.
       now - open on their own prose.
       The MU/IL cantrip DESCRIPTIONS
       remain the open dependents.
-- [ ] The treasure system dial - the
-      reconcile/reverse/run-both switch;
-      gates the treasure section.
+- [x] The treasure system dial -
+      CLOSED R402 (the dial state in
+      rules/uatreasuredial.h; the UA
+      determination dispatch in
+      dm/treasure.cpp; the R402 seam
+      audit, census 329): the DMG
+      default, the UA revised tables
+      (the R375/R395 data rides the
+      roller - the category bands, the
+      sub-table splits, the misc seven
+      sub-bands, the row resolution),
+      the MERGED union read (a
+      per-item coin flip). The charge
+      (the hoard and trove assembly
+      riding the dial) follows; the
+      landed DMG audits stay
+      authoritative.
 - [ ] The deity layer - gates Appendix
       S.
 - [ ] The psionics seam - gates the

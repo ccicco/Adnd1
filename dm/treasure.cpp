@@ -7,6 +7,15 @@
 
 #include "treasure.h"
 
+// R402: the treasure dial rides the
+// determination dispatch; this TU
+// pulls its own rules headers (the
+// R400 lesson - the engine TUs do
+// not pull rules/ transitively).
+#include "rules/uatreasuredial.h"
+#include "rules/uadetskel.h"
+#include "rules/uadetrows.h"
+
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -811,8 +820,176 @@ static int rollCategory(rules::Dice& dice) {
     return 11;
 }
 
+// ---- R402: the treasure dial (the UA
+// determination) ----
+// The dial routes the random
+// determination dispatch: DMG (the
+// default - the landed audits), UA
+// (the revised tables, the R375/R395
+// data), MERGED (both sets live - a
+// per-item coin flip picks the set).
+
+// The UA top-level category bands
+// (the printed order, eight
+// categories - uadetskel).
+static int rollCategoryUa(rules::Dice& dice) {
+    int r = 1 + d100(dice);
+    int cat = -1;
+    for (int i = 0;
+         i < rules::uadsCategoryCount();
+         ++i)
+        if (r >= rules::uadsCategoryLo(i)
+                && r
+                <= rules::uadsCategoryHi(i)) {
+            cat = i;
+            break;
+        }
+    if (cat < 0) cat = 7;
+    return cat;
+}
+
+// The UA category -> the DMG carrier
+// category (the misc band rides the
+// misc carrier; the MIK kinds do not
+// split the misc sub-tables).
+static int uaCategoryToDmg(int c) {
+    switch (c) {
+        case 0: return 0;   // potions
+        case 1: return 1;   // scrolls
+        case 2: return 2;   // rings
+        case 3: return 3;   // rods
+        case 4: return 8;   // misc magic
+        case 5: return 9;   // armor
+        case 6: return 10;  // swords
+        default: return 11; // weapons
+    }
+}
+
+// The split low bands (the new UA
+// table low, the DMG original high).
+static int uaSplitLo(int c) {
+    switch (c) {
+        case 0:
+            return rules::uadsPotionSplitLo();
+        case 1:
+            return rules::uadsScrollSplitLo();
+        case 2:
+            return rules::uadsRingSplitLo();
+        case 3:
+            return rules::uadsRodSplitLo();
+        case 5:
+            return rules::uadsArmorSplitLo();
+        case 6:
+            return rules::uadsSwordSplitLo();
+        default:
+            return rules::uadsWeaponSplitLo();
+    }
+}
+
+// The category primary UA table (the
+// uadetrows printed order).
+static int uaPrimaryTable(int c) {
+    switch (c) {
+        case 0: return 0;    // III.A
+        case 1: return 2;    // III.B
+        case 2: return 4;    // III.C
+        case 3: return 6;    // III.D
+        case 5: return 15;   // III.F
+        case 6: return 17;   // III.G
+        default: return 19;  // III.H
+    }
+}
+
+// A row of a UA table by percentile
+// (the R395 bands cover 01-00
+// contiguously).
+static int uaRowOfRoll(int t, int r) {
+    for (int i = 0;
+         i < rules::uadrowRowCount(t);
+         ++i)
+        if (r >= rules::uadrowRowLo(t, i)
+                && r
+                <= rules::uadrowRowHi(t, i))
+            return i;
+    return 0;
+}
+
+// Roll an item from a UA table row
+// (the -1 cells carry the print non-
+// numerics - the uadetrows
+// discipline).
+static MagicItem rollFromUaTable(
+        rules::Dice& dice, int t,
+        int carrier) {
+    int r = 1 + d100(dice);
+    int i = uaRowOfRoll(t, r);
+    MagicItem m;
+    m.name = rules::uadrowRowName(t, i);
+    m.xp = rules::uadrowRowXpLo(t, i);
+    m.gp = rules::uadrowRowGpLo(t, i);
+    m.category = carrier;
+    return m;
+}
+
+// The UA-mode determination: the
+// category band, then the split - the
+// low band rolls the new UA table,
+// the high band the DMG original.
+// Misc magic carries no split - the
+// seven sub-tables are all UA.
+static MagicItem rollMagicItemUa(
+        rules::Dice& dice) {
+    int c = rollCategoryUa(dice);
+    int carrier = uaCategoryToDmg(c);
+    if (c == 4) {
+        int r = 1 + d100(dice);
+        int t =
+            8 + rules::uadsMiscSubCount() - 1;
+        for (int i = 0;
+             i < rules::uadsMiscSubCount();
+             ++i)
+            if (r
+                    >= rules::uadsMiscSubLo(i)
+                    && r
+                    <= rules::uadsMiscSubHi(i)) {
+                t = 8 + i;
+                break;
+            }
+        return rollFromUaTable(dice, t,
+                               carrier);
+    }
+    int r2 = 1 + d100(dice);
+    if (r2 <= uaSplitLo(c))
+        return rollFromUaTable(
+            dice, uaPrimaryTable(c),
+            carrier);
+    return rollFromCategory(dice,
+                            carrier);
+}
+
+// MERGED: the union read - both
+// table sets live; a per-item coin
+// flip picks the set (playtesting
+// sees both).
+static MagicItem rollMagicItemMerged(
+        rules::Dice& dice) {
+    if (d100(dice) < 50)
+        return rollMagicItemUa(dice);
+    return rollFromCategory(dice,
+                            rollCategory(dice));
+}
+
 MagicItem rollMagicItem(rules::Dice& dice) {
-    return rollFromCategory(dice, rollCategory(dice));
+    // R402: the dial governs the
+    // dispatch; the DMG default keeps
+    // the landed audits authoritative
+    int mode = rules::uatdMode();
+    if (mode == rules::uatdModeUa())
+        return rollMagicItemUa(dice);
+    if (mode == rules::uatdModeMerged())
+        return rollMagicItemMerged(dice);
+    return rollFromCategory(dice,
+                            rollCategory(dice));
 }
 
 // ---- R122: line-diff pins ---------------------------------------------------
