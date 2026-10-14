@@ -3531,6 +3531,71 @@ R172 were already dropped at the R171b/R172 era cut; git
   already 6 (canvas r453-splice).
   Next after landing: the holding one breath
   (p. 43), then the drowning rules.
+- R454 landed 2026-10-14: commit e0a5480
+  (full e0a5480bcf6711eca0f55319809bbc5a
+  62809a03, census 379, pushed 8bda29f..
+  e0a5480, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG HOLDING ONE'S
+  BREATH, printed p. 43 - the surfacing rate (2
+  inches like the diving rate, doubled for the
+  unencumbered, reduced for moderate/heavy, and
+  needing ACTIVE work; the inert body rises by
+  natural buoyancy at one-half inch, 5 feet per
+  round, modified for encumbrance; the
+  deliberate-encumbrance dive-and-divest trick),
+  the non-cumulative diving-bonus note (the leap
+  extra depth added AFTER encumbrance, per the
+  6-inch moderately-encumbered 15-foot-leap
+  example), the breath formula (rounds equal to
+  ONE-THIRD of constitution, rounded up, deep
+  breath assumed, no strenuous activity, normal
+  movement and chest-opening/secret-passage/
+  spellcasting allowed), the halved penalties for
+  unprepared and for strenuous activity
+  (cumulative to ONE-FOURTH, with the one-round
+  floor), the expiration rules (a Constitution
+  Check once per round, cumulative +2 after the
+  first, per the con-12/4-round example - first
+  check at the end of the 5th round, +2 at the
+  6th, +4 at the 7th), the buoyancy-only
+  non-swimmer surfacing, the out-of-air
+  unconsciousness with the pulled-to-surface
+  requirement, the not-underwater ONE-ROUND
+  addition with the penalties applied after, and
+  the hold-before-affected gas rules (a small
+  dose as harmful as an extended one).
+  rules/wsgbreath.h NEW (31 inlines: 13 consts
+  + 18 bools, prefix whb - checked free in all
+  three TUs). Ground truth CLEAN two-way (the
+  user copy OCR page 44 vs the djvu word layer
+  Guide_0043 - every number matched; the djvu
+  garbles only the one-third fraction glyph
+  itself, corroborated by the printed con-12 ->
+  4-round example arithmetic; no eye-reads
+  needed). Gap 56/130 -> 57/129; census 378 ->
+  379. rverify GREEN on the FIRST build: 31
+  mutants, 0 missed. Spec md5s: 201df1df
+  authored / e7a704b7 +nl - the user-side file
+  hashed a05e8356 / e1d546db +nl, the
+  delivery-side newline variance EIGHT rounds
+  running (R447-R454; cosmetic every time - the
+  same 6 patches, clean mirror; diagnose the bn
+  fetch at the next mismatch).
+  GITHUB VERIFIED at the pinned full sha
+  e0a5480bcf6711eca0f55319809bbc5a
+  62809a03: census 379, the R454 audit with
+  the bad-0 printf at line 49878, the
+  include at line 159, wsgbreath.h 31
+  inlines, the gap 57 closed / 129 open
+  flipped with the Post-state at R454, the
+  R453 seed record in place, no whb hits in
+  the caller TUs, and the engine re-run on
+  the landed tree reads applied 0 /
+  already 6 (canvas r454-splice).
+  Next after landing: the movement in waterborne
+  vehicles (p. 44), then the capsizing and damage
+  to craft.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
