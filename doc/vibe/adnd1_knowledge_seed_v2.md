@@ -2828,3 +2828,6 @@ R172 were already dropped at the R171b/R172 era cut; git
   again (v3): backup + seed + continuation prompt saved to
   doc/vibe/ with a v3 suffix and committed BEFORE wiping
   knowledge and chats - the v2 process is the template.
+
+## Tooling (R428, 2026-10-14)
+- The splice engine landed: tools/splice_engine.py + speclib.py + rverify.py. A round is now a JSON spec run through the engine; the battery derives from the spec. Future splices insert records above as usual.
