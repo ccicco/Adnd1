@@ -3333,6 +3333,58 @@ R172 were already dropped at the R171b/R172 era cut; git
   (canvas r449-splice). Next after landing:
   the swimming rules with Table 24 (pp.
   41-42).
+- R450 landed 2026-10-14: commit 657c7fc
+  (full 657c7fc5d874d20bb53dc50d147534efe
+  f19460d, census 375, pushed 1c7b13c..
+  657c7fc, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG SWIMMING, printed p. 41 -
+  the intro, TABLE 24 EFFECTS OF ENCUMBRANCE ON SWIMMING, and the Endurance
+  and Speed subsections: the proficiency gate (only proficient swimmers propel
+  themselves; the nonproficient do not simply sink - the section covers
+  swimming and treading water); the three sub-skills (endurance, speed,
+  diving) with encumbrance as the most important factor for any swimmer; Table
+  24 (the five encumbrance rows x the four functions - none x2, light the
+  baseline, moderate halves with the doubled dive, heavy quarters with the
+  tripled dive, severe the dash everywhere but the tripled dive); the dash
+  means impossible (severe sinks in water deeper than his height, cannot
+  surface without dropping encumbrance); the endurance rules (base in turns =
+  levels + constitution, the 3-turns-per-rest-turn rate, the doubled
+  high-speed rate with the 1/10 endurance cut rounded up, the one-for-one
+  high-speed recovery, the 18-turn 6th-level-thief-con-12 example); the speed
+  rules (humans 40 feet per round, other races 30, monster stats supersede,
+  the 2/3 subsurface cut rounded up, the strength ladder +1/+2/+3 inches, the
+  light 1-3 and strong 4-6 current modifiers, the 0-inch hold position at
+  endurance cost, the mercy-of-the-current backward drift 1-3 inches, the
+  DM-determined currents with the gentle 1-2 and mountain 5-6 examples, the
+  surface-only high speed halved at a 0 rate). rules/wsgswim.h NEW (38
+  inlines, prefix wsm - the FIRST CHOICE wsw was TAKEN by the R429 hurricane
+  pins; wsm checked free in all three TUs). Ground truth: the
+  intro/Endurance/Speed prose CLEAN two-way (the user copy OCR vs the djvu
+  word layer Guide_0041 - every number matched); the Table 24 grid and the
+  strength/current modifier table GARBLED in the djvu word layer, so every
+  cell was confirmed by TWO independent IIIF eye-reads of leaf 41 - the OCR
+  and both eye-reads agree on all 20 Table 24 cells and all seven modifier
+  rows. Gap 52/134 -> 53/133; census 374 -> 375. rverify GREEN on the FIRST
+  build: 70 mutants, 0 missed. Spec md5s: 0575b256
+  authored / d3de318b +nl - the user-side file
+  hashed 759aaf3e / bfdaa64c +nl, the
+  delivery-side newline variance FOUR rounds
+  running (R447-R450; cosmetic every time -
+  the same 6 patches, clean mirror; diagnose
+  the bn fetch at the next mismatch).
+  GITHUB VERIFIED at the pinned full sha
+  657c7fc5d874d20bb53dc50d147534efe
+  f19460d: census 375, the R450 audit with
+  the bad-0 printf at line 49529, the
+  include at line 155, wsgswim.h 38
+  inlines, the gap 53 closed / 133 open
+  flipped with the Post-state at R450, the
+  R449 seed record in place, no wsm hits in
+  the caller TUs (canvas r450-splice).
+  Next after landing: the other effects of
+  moving water (p. 42), then the diving and
+  surfacing rules and the treading water.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
