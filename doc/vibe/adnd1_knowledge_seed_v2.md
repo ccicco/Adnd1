@@ -3794,6 +3794,68 @@ R172 were already dropped at the R171b/R172 era cut; git
   Next after landing: the portaging
   (p. 45), then the use of a capsized
   vessel (p. 46).
+- R458 landed 2026-10-14: commit 24b84d5
+  (full 24b84d5b61a1159579f63619af834
+  b9323c49a29, census 383, pushed 9dbb69e..
+  24b84d5, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG PORTAGING, printed pp. 45-46 (spans the
+  page break) - a pure-prose round (no
+  printed grid): the solo-portage gate (a
+  vessel smaller than a large rowboat can
+  be portaged by one character able to
+  support its encumbrance without becoming
+  severely encumbered); the severe-
+  encumbrance bar (severely encumbered
+  characters cannot portage or help to
+  portage); the portage-crew minimums and
+  twice-minimum maximums (one and two
+  below the large rowboat, two and four
+  for the large rowboat and small barge,
+  four and eight for the large barge; a
+  third carrier beyond the maximum is of
+  no use - the small-canoe example); and
+  the portage move rate (3 inches, 3
+  miles in eight hours, 30 feet per
+  round, regardless of terrain or overall
+  encumbrance status). rules/wsgportage.h
+  NEW (16 inlines: 6 consts + 8 bools +
+  the synthesized 2-column portage-crew
+  grid C28, prefix wpg, checked free in
+  all three TUs). Ground truth CLEAN
+  two-way: the user copy OCR (pages
+  46-47) vs the djvu word layer
+  (Guide_0045/0046) - the djvu garbles
+  only the page-break solo clause, which
+  the OCR reads whole and the continuation
+  text confirms; NO eye-reads needed.
+  Gap 60/126 -> 61/125; census 382 -> 383.
+  rverify GREEN: 30 mutants, 0 missed.
+  Spec md5s: 4089b5be60b8d1ffb4e695340d
+  53f77c user-side / 25744b106ccc627e361755
+  22000df386 +nl, vs 46e1f794 authored /
+  4089b5be +nl (canvas r458-splice) - the
+  delivery-side newline variance again,
+  TWELVE rounds running (R447-R458),
+  cosmetic every time (as in R457, the
+  user-side FILE hash matches the authored
+  +nl hash exactly, the +nl variant
+  drifts); diagnose the bn fetch at the
+  next mismatch. Base sha
+  9dbb69e26002d1fc8a9473d12d0f1a5feb
+  71577. GITHUB VERIFIED at 24b84d5b61a
+  1159579f63619af834b9323c49a29: census
+  383, the R458 audit line present, the
+  wsgportage.h include at line 163, 16
+  wpg inlines, the gap box [x] flipped,
+  Post-state at R458 once, the R457 seed
+  record in place, no wpg hits in the
+  caller TUs, and the engine re-run on
+  the landed tree reads applied 0 /
+  already 6 (canvas r458-splice).
+  Next after landing: the use of a
+  capsized vessel (p. 46), then the flying
+  mounts (p. 47).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
