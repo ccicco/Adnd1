@@ -55,7 +55,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Rappelling (p. 37) - R442: the 120-feet-per-round base speed, the +50% per-round check modifier, the hang-upside-down failure state, the once-per-round Dexterity recovery and the free-hanging variant (+30%, Dex at +2) pin as rules/wsgrapp.h
   - [x] Belaying (p. 37) - R443: the climbing-rope stats, the knot rules, the belayer check with the rope-length bound, the jolt second check with the secure exemption and the paired-belay sequence pin as rules/wsgbelay.h
   - [x] Use of grappling hooks (p. 38) - R444: the strength throw, the doubled secure horizontal throw, the one-round throw with the 1d4 re-coil, the 01-05 self-hit, the 3-foot climb bonus, Table 20 (the 10 terrain rows with the protrusion pair and the three catch chances) and the solid/not-solid procedure pin as rules/wsggrap.h
-  - [ ] Crossing a chasm on a rope (p. 38)
+  - [x] Crossing a chasm on a rope (p. 38) - R445: the two anchor factors, the thief-or-rope-use thrown loop, Table 21 (the five level-band ranges), the whirl-radius halving, the 20% hit formula with the halving conditions, the both-ends-anchored rule and the 30-feet-per-round crossing rate pin as rules/wsgchasm.h
   - [ ] The mountaineering proficiency (p. 39)
   - [ ] Movement on slippery horizontal surfaces (p. 39)
   - [ ] Jumping (p. 39)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R444: 47 closed, 139 open (the R444 round pins the grappling hooks - the strength throw with the secure horizontal doubling, the throw economy with the 01-05 self-hit, the 3-foot climb bonus, Table 20 with the solid/not-solid protrusion procedure and the 10-foot recheck; the next rounds continue the section - the chasm crossing with Table 21, the mountaineering proficiency and the slippery horizontal surfaces).
+Post-state at R445: 48 closed, 138 open (the R445 round pins the chasm crossing - the two anchor factors, the thief-or-rope-use thrown loop with Table 21, the 20% hit formula with the halving conditions, the both-ends-anchored rule and the 30-feet-per-round hand-over-hand crossing rate; the next rounds continue the section - the mountaineering proficiency, the slippery horizontal surfaces and the jumping rules).

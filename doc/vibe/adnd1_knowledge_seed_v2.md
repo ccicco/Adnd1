@@ -3124,6 +3124,31 @@ R172 were already dropped at the R171b/R172 era cut; git
   jolt 2 fallers), the gap 46 closed / 140 open, the R442 seed record in
   place, no wbl hits in the caller TUs. Next after landing: the grappling
   hooks (p. 38).
+- R444 landed 2026-10-14: commit 5e98ed9 (census 369, pushed
+  1f0a8d6..5e98ed9, preflight GREEN on the FIRST run), the WSG USE OF
+  GRAPPLING HOOKS, printed p. 38 - the hook prose and TABLE 20 GRAPPLING
+  SUCCESS: the 1/3-of-strength rounded-up times-10-feet throw (Str 8 = 30
+  feet); the horizontal throw doubled from a secure position with a 10-foot
+  whirling radius; the one-round throw with the 1d4 re-coil; the 01-05
+  self-hit for 1d6; the 3-FOOT climb bonus (the eye-read resolving the OCR
+  inch mark to the printed foot mark); Table 20 (the ten terrain rows x the
+  protrusion pair and the three catch chances, the last eye-read row 80/90
+  with 92/99/99); the solid vs not-solid procedure (solid holds indefinitely,
+  not-solid gives way after 1d6 rounds of climbing); the recheck-after-10-feet
+  rule. rules/wsggrap.h NEW (31 inlines, prefix wgh - checked free in all
+  three TUs). Ground truth THREE-WAY (the djvu garbled at the last Table 20
+  row, the strength fraction and the climb bonus; two independent IIIF
+  eye-reads per zone matched the user copy exactly). Gap 46/140 -> 47/139;
+  census 368 -> 369. rverify GREEN after two authoring-side RED fixes before
+  delivery (generator-syntax table_checks the engine cannot emit into C++; a
+  missing header_sections entry - both caught by the engine gates, rebuilt
+  GREEN): 76 mutants, 0 missed. Spec md5s: 6a33723c authored / 101ca4fb +nl.
+  GITHUB VERIFIED at the pinned full sha
+  5e98ed94345df88146ff53de9a5cf11161522e43: census 369, the R444 audit present
+  once, wsggrap.h 31 inlines, the Table 20 last row landed (80/90 with
+  92/99/99 at case 9), the gap 47 closed / 139 open, the R443 seed record in
+  place, no wgh hits in the caller TUs. Next after landing: the chasm crossing
+  (p. 38).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
