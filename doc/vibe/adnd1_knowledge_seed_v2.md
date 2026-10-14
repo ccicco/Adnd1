@@ -2957,6 +2957,29 @@ R172 were already dropped at the R171b/R172 era cut; git
   R435 audit present once, wsgclimb.h 43 inlines, the gap 35 closed / 151
   open, the R434 seed record in place. Next after landing: the climbing checks
   and Table 16 (p. 35).
+- R436 landed 2026-10-14: commit 9d34030 (census 361, pushed
+  76e9023..9d34030, preflight GREEN on the FIRST run - the sixth clean
+  first-try land in a row), the WSG CLIMBING CHECKS, printed p. 35 - Table 16
+  (the same 13 surface rows as Table 15 x the three condition modifiers to the
+  non-thief Climbing Rating, from the +70 rough gentle non-slippery bonus down
+  to the -50 cliff smooth no-ledges slippery penalty) with the 100 percent
+  no-fall and 5 percent floor rules, the other modifiers (encumbrance, race,
+  armor, strength and hands), the thief modifiers (the +30 auto rule, the
+  doubled and quadrupled falling chances, the shared 5 percent floor) and the
+  initial, intermediate and final check rules. rules/wsgcheck.h NEW (49
+  inlines, prefix wck, checked free). Ground truth three-way verified (the
+  djvu was missing the normal moderate, normal severe and both cliff smooth
+  rows and garbled the smooth gentle row; four IIIF full-res eye-reads matched
+  the user copy exactly). NOTE: the IIIF image path changed - use the
+  iiif.archive.org/image/iiif/2 full URL with the jp2.zip path; the Table 16
+  page is image file 0035.jp2. The first build had one TRUE-on-healthy example
+  (the no-fall worked case written as equality); rewritten as the comparison.
+  Gap 35/151 -> 37/149; census 360 -> 361. rverify GREEN: 85 mutants, 0
+  missed. Spec md5s: be5e4b95 authored / fda106d4 +nl. GITHUB VERIFIED at the
+  pinned full sha 9d3403089fe162b6329468792fd74f2fce5bb285: census 361, the
+  R436 audit present once, wsgcheck.h 49 inlines, the gap 37 closed / 149
+  open, the R435 seed record in place. Next after landing: the damage from
+  falling, Table 17 (p. 35).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -48,7 +48,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [ ] Surface conditions (p. 34)
   - [ ] Chance of falling (p. 34)
   - [x] Climbing checks (p. 35) - R436: the Table 16 modifiers, the other modifiers (the encumbrance, race, armor, strength and hands rules), the thief modifiers and the initial, intermediate and final check rules pin as rules/wsgcheck.h
-  - [ ] Damage from falling (p. 35)
+  - [x] Damage from falling (p. 35) - R437: the Table 17 damage bands, the falling-vs-tumbling distinction, the 1d6-cumulative basis and the fall rates pin as rules/wsgfall.h
   - [ ] Stopping a fall (p. 36)
   - [ ] Using rope for movement and climbing (p. 36)
   - [ ] Roping together (p. 37)
@@ -172,7 +172,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 14: movement of vehicles** (p. 33) - R434
 - [x] **Table 15: climbing movement rates** (p. 33) - R435
 - [x] **Table 16: modifiers to non-thief's climbing rating** (p. 35) - R436
-- [ ] **Table 17: damage from free fall or severe slope** (p. 35)
+- [x] **Table 17: damage from free fall or severe slope** (p. 35) - R437
 - [ ] **Table 18: damage from tumbling down moderate or gentle slope** (p. 36)
 - [ ] **Table 19: chance of stopping a fall or tumble** (p. 36)
 - [ ] **Table 20: grapple success** (p. 38)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R436: 37 closed, 149 open (the R436 round pins the climbing checks - Table 16 (the 13 surface rows x the three condition modifiers) with the other modifiers (the encumbrance, race, armor, strength and hands rules), the thief modifiers and the initial, intermediate and final check rules; the next rounds continue the section - the damage from falling, Table 17).
+Post-state at R437: 39 closed, 147 open (the R437 round pins the damage from falling - Table 17 (the six fall-distance bands x the cumulative damage dice) with the falling-vs-tumbling distinction and the fall rates; the next rounds continue the section - the tumbling damage Table 18, the stopping of a fall Table 19).
