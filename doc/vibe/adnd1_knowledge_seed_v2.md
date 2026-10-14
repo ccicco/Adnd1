@@ -2898,6 +2898,20 @@ R172 were already dropped at the R171b/R172 era cut; git
   loop variable read the last chain last limit - masked in R430 by its single
   chain, exposed here by the two). rverify GREEN: 153 mutants, 0 missed.
   Census 356 -> 357.
+- R433 landed 2026-10-14: commit eb8937f (census 358, pushed da25c98..eb8937f,
+  preflight GREEN on the FIRST run - the third clean first-try land in a row),
+  the WSG LAND-BASED ANIMALS, printed pp. 31-32 - Table 13 (the 18 mounts and
+  beasts of burden x the normal load, the maximum load and the
+  unencumbered/encumbered rates over the three terrain classes; a 0 = cannot
+  move there) with the two-designation rules, the forced-move stamina rules
+  (the hours equal half the current rate, capped at 12; the cumulative fatigue
+  chance 20/35/50 percent by terrain; the book own warhorse examples pinned)
+  and the accelerated no-rest +1/3 spillover (written division-free - the
+  float/int division class the sim exists to catch). rules/wsganimal.h NEW (28
+  inlines, prefix wam). Ground truth three-way verified; the Sheep, Yak and
+  light-war very-rugged cells absent from the djvu text layer were settled by
+  the IIIF full-resolution eye-reads. rverify GREEN: 164 mutants, 0 missed.
+  Census 357 -> 358.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -41,7 +41,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Terrain definitions for movement (p. 30) - R432: the normal, rugged and very-rugged classes with the snow-depth and stream-crossing thresholds
   - [x] Large-scale overland movement (p. 31) - R432: the inch-per-half-day scale, the 8-hour half-day, the 3/4 and 1/3 reductions and Table 12
   - [x] Encumbrance and movement for land-based animals (p. 32) - R433: the normal/maximum load rules, the forced-move stamina rules and Table 13 pin as rules/wsganimal.h
-  - [ ] Movement of land-based vehicles (p. 33)
+  - [x] Movement of land-based vehicles (p. 33) - R434: the cart, chariot and wagon rates and loads, the no-very-rugged rule and the pathless one-category-worse rule pin as rules/wsgvehicle.h
   - [ ] Movement across special terrain (p. 33)
   - [ ] Climbing (p. 34)
   - [ ] Surface types (p. 34)
@@ -169,7 +169,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 11: encumbrance limits for characters** (p. 30) - R432
 - [x] **Table 12: character movement on foot** (p. 31) - R432
 - [x] **Table 13: encumbrance limits and movement rates for animals** (p. 32) - R433
-- [ ] **Table 14: movement of vehicles** (p. 33)
+- [x] **Table 14: movement of vehicles** (p. 33) - R434
 - [ ] **Table 15: climbing movement rates** (p. 33)
 - [ ] **Table 16: modifiers to non-thief's climbing rating** (p. 35)
 - [ ] **Table 17: damage from free fall or severe slope** (p. 35)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R433: 31 closed, 155 open (the R433 round pins the land-based animals - Table 13 (the 18 mounts and beasts of burden x the normal and maximum loads and the unencumbered/encumbered rates over the three terrain classes) with the forced-move stamina rules (half-rate hours capped at 12, the cumulative 20/35/50 percent fatigue chances) and the accelerated no-rest +1/3 spillover; the next rounds continue the chapter - Table 14, the vehicles).
+Post-state at R434: 33 closed, 153 open (the R434 round pins the land-based vehicles - Table 14 (the 21 cart, chariot and wagon rows x the normal and rugged rates and the maximum loads) with the no-very-rugged rule and the pathless one-category-worse rule; the next rounds continue the chapter - movement across special terrain, Table 15, the climbing rates).
