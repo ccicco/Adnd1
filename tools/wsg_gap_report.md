@@ -63,7 +63,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Swimming (p. 41) - R450: the proficiency gate with the non-sinking rule, the three sub-skills, the encumbrance key factor, Table 24 (the five rows x the four functions, x2 through the dash), the endurance rules (levels+con, the 3-turn rest rate, the 1/10 high-speed cut with the one-for-one recovery) and the speed rules (the 40/30 base rates, the 2/3 subsurface cut, the strength/current modifiers, the 0-inch hold and the mercy-of-the-current drift, the surface-only high speed halved at 0) pin as rules/wsgswim.h
   - [x] Other effects of moving water (p. 42) - R451: the 1-10 stream hazard rating as the proficiency-check cadence, the 1d6 buffeting damage, the 1d3 nonproficient damage, the grab-a-protrusion Dex check with the two-round Strength hold and the waterfall rules (half damage at 40 feet, the breath save with the 40/100 thresholds, the one-tenth saved damage, the under-40 dive and the rocks void the mercy) pin as rules/wsgmwater.h
   - [x] Diving and surfacing (p. 42) - R452: the 2-inch/20-foot base downward swim rate with the moderate double and the heavy/severe triple, and the leap-height extra-depth ladder (5/15/25/35/40 feet -> 1/2/3/4/5 inches, capped at 5 beyond 40 feet, a 40-foot-or-more dive risking falling damage) pin as rules/wsgdive.h
-  - [ ] Treading water (p. 43)
+  - [x] Treading water (p. 43) - R453: the proficient twice-endurance turn limit (one endurance point per two turns), the nonproficient strength-score round limit modified for encumbrance like endurance, the Strength checks at expiry and every round with the cumulative +1, the 6-strength/12-round example, and the current rules (carried at the current speed, the proficient hold-position counted as swimming, the nonproficient sink-immediately) pin as rules/wsgtread.h
   - [ ] Holding one breath (p. 43)
   - [ ] Movement in waterborne vehicles (p. 44)
   - [ ] Capsizing and damage to craft (p. 45)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R452: 55 closed, 131 open (the R452 round pins the diving and surfacing - the 2-inch/20-foot base downward rate doubled for moderate and tripled for heavy/severe encumbrance, and the leap-height extra-depth ladder with the 5-inch cap beyond 40 feet and the falling-damage risk at 40 feet or more; the next rounds continue the chapter - the treading water).
+Post-state at R453: 56 closed, 130 open (the R453 round pins the treading water - the twice-endurance turn limit for the proficient, the strength-score round limit for the nonproficient with the encumbrance modification and the cumulative +1 Strength checks, and the current rules with the sink-immediately clause; the next rounds continue the chapter - the holding one breath).

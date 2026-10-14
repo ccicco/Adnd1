@@ -3425,6 +3425,60 @@ R172 were already dropped at the R171b/R172 era cut; git
   Next after landing: the diving and
   surfacing rules (p. 42), then the treading
   water.
+- R452 landed 2026-10-14: commit 8a59b1e
+  (full 8a59b1e73bcde4301a2b9bd8254c819747
+  1d44f0, census 377, pushed 94d5631..
+  8a59b1e, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG DIVING AND SURFACING,
+  printed p. 42
+  SURFACING, printed p. 42 - the base downward swim
+  rate 2 inches / 20 feet per round, doubled for
+  moderately encumbered and tripled for heavily or
+  severely encumbered characters (the same x2/x3/x3
+  the Table 24 dive column carries), the
+  leap-height extra-depth ladder (at least
+  5/15/25/35/40 feet -> 1/2/3/4/5 inches on the
+  first round of a dive), the 5-inch cap beyond 40
+  feet regardless of height, and the
+  falling-damage risk on a dive from 40 feet or
+  more per the waterfall text. rules/wsgdive.h NEW
+  (14 inlines: 7 consts + 5 bools + the 2-column
+  table, prefix wdv - checked free in all three
+  TUs). Ground truth CLEAN three-way: the user copy
+  OCR (page 43) vs the djvu word layer Guide_0042 -
+  the prose matched, but the djvu GARBLES the
+  printed table (the 35-feet row reads "36 feet",
+  the 40-feet row is mangled), so the ladder was
+  settled by TWO independent IIIF eye-reads of leaf
+  $42, which agree with the OCR exactly:
+  5/15/25/35/40 -> 1/2/3/4/5. Gap 54/132 -> 55/131;
+  census 376 -> 377. rverify GREEN on the FIRST
+  build: 22 mutants, 0 missed (one RED build
+  iteration on the author side: a cross-round
+  example referencing wsmDiveNum was dropped - the
+  engine's python-side model m knows only the
+  round's own names; the Table 24 agreement lives in
+  the audit comment). Spec md5s: d01492ce
+  authored / 7f45249b +nl - the user-side file
+  hashed 9baf38fe / a1e2369b +nl, the
+  delivery-side newline variance SIX rounds
+  running (R447-R452; cosmetic every time - the
+  same 6 patches, clean mirror; diagnose the bn
+  fetch at the next mismatch).
+  GITHUB VERIFIED at the pinned full sha
+  8a59b1e73bcde4301a2b9bd8254c819747
+  1d44f0: census 377, the R452 audit with
+  the bad-0 printf at line 49726, the
+  include at line 157, wsgdive.h 14
+  inlines, the gap 55 closed / 131 open
+  flipped with the Post-state at R452, the
+  R451 seed record in place, no wdv hits in
+  the caller TUs, and the engine re-run on
+  the landed tree reads applied 0 /
+  already 6 (canvas r452-splice).
+  Next after landing: the treading water (p. 43),
+  then the drowning rules.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
