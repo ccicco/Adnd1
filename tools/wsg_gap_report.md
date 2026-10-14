@@ -58,7 +58,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Crossing a chasm on a rope (p. 38) - R445: the two anchor factors, the thief-or-rope-use thrown loop, Table 21 (the five level-band ranges), the whirl-radius halving, the 20% hit formula with the halving conditions, the both-ends-anchored rule and the 30-feet-per-round crossing rate pin as rules/wsgchasm.h
   - [x] The mountaineering proficiency (p. 39) - R446: the pitons-anchors-not-holds rule, the special hammer, the placement knowledge, the mountaineer-led roped ascent, the piton backup uses and the 10%/100-pound/10% loosen rules pin as rules/wsgmntnr.h
   - [x] Movement on slippery horizontal surfaces (p. 39) - R447: the full-rate straight-line rule, the Dex check on anything but a very gradual turn or an abrupt stop/speed-up, the every-five-segments running check, the half-rate free turn, the full-round speed-change exemption and the no-direct-damage fall pin as rules/wsgslip.h
-  - [ ] Jumping (p. 39)
+  - [x] Jumping (p. 39) - R448: the any-character rule, the four-foot running advantage with the 20-foot straight run, the half-height high jump, the thin-barrier Dex check with the 1d3 five-foot heap damage, the per-jump die roll, Table 22 (the seven bands, 1d4+1 through 1d6+15) and the cumulative modifiers with the 2/1 floors pin as rules/wsgjump.h
   - [ ] Overland movement in reduced visibility (p. 40)
   - [ ] Swimming (p. 41)
   - [ ] Other effects of moving water (p. 42)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R447: 50 closed, 136 open (the R447 round pins the movement on slippery horizontal surfaces - the full-rate straight-line travel, the Dex check on anything other than a very gradual turn or an abrupt stop or speed-up, the every-five-segments Dex check while running even in a straight line, the half-rate free turn, the full-round speed-change exemption and the no-direct-damage fall; the next rounds continue the section - the jumping rules with Table 22).
+Post-state at R448: 51 closed, 135 open (the R448 round pins the jumping rules - the four-foot running advantage with the 20-foot straight run, the half-height high jump, the thin-barrier Dex check with the 1d3 heap damage, Table 22 with its seven level bands and the cumulative encumbrance/demihuman modifiers with the 2/1 floors; the next rounds continue the chapter - the overland movement in reduced visibility with Table 23).

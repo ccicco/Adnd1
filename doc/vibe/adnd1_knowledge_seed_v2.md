@@ -3201,6 +3201,46 @@ R172 were already dropped at the R171b/R172 era cut; git
   with the Post-state at R446, the R445 seed record in place, no wmt hits in
   the caller TUs. Next after landing: the slippery horizontal surfaces (p.
   39).
+- R447 landed 2026-10-14: commit 8a6f5c9
+  (full 8a6f5c9c1c010c04290a8ee0d00e31bd8f
+  d3acc8, census 372, pushed 457a607..
+  8a6f5c9, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG MOVEMENT ON SLIPPERY
+  HORIZONTAL SURFACES, printed p. 39 - the slippery prose (no table): the
+  caution/fall rule (a character who does not exercise caution risks slipping
+  and falling down - no direct damage, only an indirect cause of greater
+  problems to come); the full-rate straight-line rule (no fall risk traveling
+  straight); the Dex check on anything other than a very gradual turn or an
+  abrupt stop/speed-up; the running rule (a Dex check after every five
+  segments, even in a straight line); the half-rate free turn (turns need no
+  check at half the full normal movement rate); the full-round speed-change
+  exemption (a full round to slow down or speed up, full movement to
+  standstill or vice versa, needs no check). rules/wsgslip.h NEW (8 inlines,
+  prefix wsl - checked free in all three TUs). Ground truth CLEAN two-way (the
+  user copy OCR vs the djvu word layer Guide_0039 - every number matched, no
+  eye-reads). Gap 49/137 -> 50/136; census 371 -> 372. rverify GREEN on the
+  FIRST build: 8 mutants, 0 missed. Spec
+  md5s: b495d1da authored / 39486798 +nl -
+  but the user-side file (fetched via bn)
+  hashed 1871d1b6 / be4530a1 +nl, NOT the
+  authored pair: a delivery-side newline
+  variance, harmless (the engine applied the
+  same 6 patches and the census/audit mirror
+  was clean), but watch it - if the md5
+  mismatches again, diff the user-side spec
+  against the canvas before the splice.
+  (canvas r447-splice). GITHUB VERIFIED at
+  the pinned full sha
+  8a6f5c9c1c010c04290a8ee0d00e31bd8f
+  d3acc8: census 372, the R447 audit present
+  once with the bad-0 printf, the include at
+  line 152, wsgslip.h 8 inlines, the gap 50
+  closed / 136 open flipped with the
+  Post-state at R447, the R446 seed record
+  in place, no wsl hits in the caller TUs.
+  Next after landing: the jumping rules
+  with Table 22 (pp. 39-40).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
