@@ -3175,6 +3175,32 @@ R172 were already dropped at the R171b/R172 era cut; git
   (40/50/60/75/90 with default 90 at case 4), the gap 48 closed / 138 open,
   the R444 seed record in place, no wcx hits in the caller TUs. Next after
   landing: the mountaineering proficiency (p. 39).
+- R446 landed 2026-10-14: commit 457a607 (full
+  457a6077e44c9da7511638d1857aa4a8d5333954, census 371, pushed
+  a624caf..457a607, preflight GREEN on the FIRST run), the WSG THE
+  MOUNTAINEERING PROFICIENCY, printed p. 39 - the mountaineer prose (no
+  table): the essential tools and skills (pitons - metal spikes pounded into
+  cracks for a line anchor, never handholds or footholds; the special hammer,
+  a weapon hammer will not do; the placement knowledge only a mountaineer
+  has); the mountaineer-led roped ascent (one mountaineer enables the whole
+  group on a surface they could not climb, if all are roped together and he
+  leads); the piton-as-anchor uses (belayer backup, rappel anchor, chasm tie
+  point); the piton loosen rules (a 10% come-loose chance, checked the first
+  time it supports 100 pounds or more - pulling the rope does not count; a
+  passed check stays lodged until a mountaineer dislodges it; a 10% chance a
+  secured piton cannot be dislodged and must be left behind). rules/wsgmntnr.h
+  NEW (12 inlines, prefix wmt - checked free in all three TUs). Ground truth
+  CLEAN two-way (the user copy OCR vs the djvu word layer Guide_0039 - every
+  number matched, no eye-reads). Gap 48/138 -> 49/137; census 370 -> 371.
+  rverify GREEN on the FIRST build: 12 mutants, 0 missed; the DELIVERED spec
+  ran first-try clean on the user side. Spec md5s: e528319b authored /
+  cde774d5 +nl (the user paste hashed to the +nl variant exactly). GITHUB
+  VERIFIED at the pinned full sha 457a6077e44c9da7511638d1857aa4a8d5333954:
+  census 371, the R446 audit present once with the bad-0 printf, the include
+  at line 151, wsgmntnr.h 12 inlines, the gap 49 closed / 137 open flipped
+  with the Post-state at R446, the R445 seed record in place, no wmt hits in
+  the caller TUs. Next after landing: the slippery horizontal surfaces (p.
+  39).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

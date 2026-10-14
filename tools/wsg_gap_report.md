@@ -57,7 +57,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Use of grappling hooks (p. 38) - R444: the strength throw, the doubled secure horizontal throw, the one-round throw with the 1d4 re-coil, the 01-05 self-hit, the 3-foot climb bonus, Table 20 (the 10 terrain rows with the protrusion pair and the three catch chances) and the solid/not-solid procedure pin as rules/wsggrap.h
   - [x] Crossing a chasm on a rope (p. 38) - R445: the two anchor factors, the thief-or-rope-use thrown loop, Table 21 (the five level-band ranges), the whirl-radius halving, the 20% hit formula with the halving conditions, the both-ends-anchored rule and the 30-feet-per-round crossing rate pin as rules/wsgchasm.h
   - [x] The mountaineering proficiency (p. 39) - R446: the pitons-anchors-not-holds rule, the special hammer, the placement knowledge, the mountaineer-led roped ascent, the piton backup uses and the 10%/100-pound/10% loosen rules pin as rules/wsgmntnr.h
-  - [ ] Movement on slippery horizontal surfaces (p. 39)
+  - [x] Movement on slippery horizontal surfaces (p. 39) - R447: the full-rate straight-line rule, the Dex check on anything but a very gradual turn or an abrupt stop/speed-up, the every-five-segments running check, the half-rate free turn, the full-round speed-change exemption and the no-direct-damage fall pin as rules/wsgslip.h
   - [ ] Jumping (p. 39)
   - [ ] Overland movement in reduced visibility (p. 40)
   - [ ] Swimming (p. 41)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R446: 49 closed, 137 open (the R446 round pins the mountaineering proficiency - the pitons as line anchors with the special hammer and the placement knowledge, the mountaineer-led roped group ascent, the piton backup uses and the 10% loosen chance at the 100-pound first check with the 10% cannot-be-dislodged rule; the next rounds continue the section - the slippery horizontal surfaces and the jumping rules with Table 22).
+Post-state at R447: 50 closed, 136 open (the R447 round pins the movement on slippery horizontal surfaces - the full-rate straight-line travel, the Dex check on anything other than a very gradual turn or an abrupt stop or speed-up, the every-five-segments Dex check while running even in a straight line, the half-rate free turn, the full-round speed-change exemption and the no-direct-damage fall; the next rounds continue the section - the jumping rules with Table 22).
