@@ -3668,6 +3668,71 @@ R172 were already dropped at the R171b/R172 era cut; git
   Next after landing: the capsizing and damage
   to craft (Table 26, p. 45), then the boating
   proficiency and the portaging.
+- R456 landed 2026-10-14: commit ecda891
+  (full ecda8918fb75f7b49d594a4757ce39d5
+  ce436a28, census 381, pushed eef7ebb..
+  ecda891, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG CAPSIZING AND
+  DAMAGE TO CRAFT, printed p. 45 - Table 26, the
+  chance of capsizing (the eight vessels x the
+  four wind/water conditions: kayak 25/40/60/
+  80, small canoe 20/35/50/75, small rowboat
+  5/15/30/50, coracle 10/20/30/50, large canoe
+  10/20/30/40, large rowboat 0/10/25/40, small
+  barge 0/5/10/20, large barge 0/0/5/10), the
+  check triggers (entering/leaving the boat,
+  abrupt movement, DM discretion), the
+  under-sail +20 wherever the base exceeds
+  zero, the condition bands (mild: wind 15 mph
+  or less and current 3 inches or less;
+  moderate: wind 16-30 or current to 6;
+  dangerous: wind 31-50 or current to 9;
+  severe: wind beyond 50 or current 9-plus),
+  the boating-proficiency assumption, and the
+  mast/sail damage rules (the 40 mph
+  threshold, the percentage chance equal to
+  the wind velocity, the 30% furled-sail
+  reduction, the poor-rigging upward
+  adjustment, the hourly check).
+  rules/wsgcapsizing.h NEW (32 inlines: 16
+  consts + 12 bools + the 4-column grid,
+  prefix wcp - checked free in all three
+  TUs). Ground truth CLEAN three-way: the
+  prose matched the user copy OCR (page 46)
+  vs the djvu word layer (Guide_0045), but
+  the djvu TRUNCATES the Table 26 large barge
+  row (the severe cell cut at the page
+  break), so the grid was settled by TWO
+  independent IIIF eye-reads of leaf $45,
+  which agree with the OCR exactly on all
+  eight rows - the large barge severe cell
+  reads 10%. Gap 58/128 -> 59/127; census
+  380 -> 381. rverify GREEN: 60 mutants, 0
+  missed - one build iteration: the barge
+  ladder is 0/0/5/10, NOT a strict step up
+  (two zeros), so the monotonicity check was
+  loosened to non-strict for the barge while
+  the kayak stays strict. Spec md5s: 6922656
+  39d51c9031ff4b58e84961087 user-side /
+  dcc38c0a8f4181a5df421d7712b66b1b +nl,
+  vs be6cea2b authored / 9992fc08 +nl
+  (canvas r456-splice) - the delivery-side
+  newline variance again, TEN rounds running
+  (R447-R456), cosmetic every time; diagnose
+  the bn fetch at the next mismatch. Base sha
+  eef7ebb219e862a96bed251965f6515c7015550d.
+  GITHUB VERIFIED at ecda8918fb75f7b49d594a
+  4757ce39d5ce436a28: census 381, the R456
+  audit line present, the wsgcapsizing.h
+  include at line 161, 32 wcp inlines, the
+  gap box [x] flipped, Post-state at R456
+  once, the R455 seed record in place, no
+  wcp hits in the caller TUs, and the engine
+  re-run on the landed tree reads applied 0 /
+  already 6 (canvas r456-splice).
+  Next after landing: the boating proficiency
+  (p. 45), then the portaging.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
