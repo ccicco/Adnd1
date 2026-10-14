@@ -59,7 +59,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] The mountaineering proficiency (p. 39) - R446: the pitons-anchors-not-holds rule, the special hammer, the placement knowledge, the mountaineer-led roped ascent, the piton backup uses and the 10%/100-pound/10% loosen rules pin as rules/wsgmntnr.h
   - [x] Movement on slippery horizontal surfaces (p. 39) - R447: the full-rate straight-line rule, the Dex check on anything but a very gradual turn or an abrupt stop/speed-up, the every-five-segments running check, the half-rate free turn, the full-round speed-change exemption and the no-direct-damage fall pin as rules/wsgslip.h
   - [x] Jumping (p. 39) - R448: the any-character rule, the four-foot running advantage with the 20-foot straight run, the half-height high jump, the thin-barrier Dex check with the 1d3 five-foot heap damage, the per-jump die roll, Table 22 (the seven bands, 1d4+1 through 1d6+15) and the cumulative modifiers with the 2/1 floors pin as rules/wsgjump.h
-  - [ ] Overland movement in reduced visibility (p. 40)
+  - [x] Overland movement in reduced visibility (p. 40) - R449: the daylight assumption, the other-factors-first multiplication, the 1/1 clear-daylight cell, the daylight hazard-avoidance with the night exception, the infravision heat-only detection, the Dex check above the safe speed with the 2x cap and Table 23 (the three light rows x the five conditions, 1/1 to 1/8) pin as rules/wsgvis.h
   - [ ] Swimming (p. 41)
   - [ ] Other effects of moving water (p. 42)
   - [ ] Diving and surfacing (p. 42)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R448: 51 closed, 135 open (the R448 round pins the jumping rules - the four-foot running advantage with the 20-foot straight run, the half-height high jump, the thin-barrier Dex check with the 1d3 heap damage, Table 22 with its seven level bands and the cumulative encumbrance/demihuman modifiers with the 2/1 floors; the next rounds continue the chapter - the overland movement in reduced visibility with Table 23).
+Post-state at R449: 52 closed, 134 open (the R449 round pins the overland movement in reduced visibility - the other-factors-first multiplication with the 1/1 clear-daylight cell, the daylight hazard-avoidance with the night exception, the infravision heat-only detection, the Dex check above the safe speed with the 2x cap, and Table 23 with its three light rows x the five conditions from 1/1 to 1/8; the next rounds continue the chapter - the swimming rules with Table 24).

@@ -3241,6 +3241,51 @@ R172 were already dropped at the R171b/R172 era cut; git
   in place, no wsl hits in the caller TUs.
   Next after landing: the jumping rules
   with Table 22 (pp. 39-40).
+- R448 landed 2026-10-14: commit 55284c8
+  (full 55284c825feb42295cddc2dd6c913f364a
+  fb3d6b, census 373, pushed 8a6f5c9..
+  55284c8, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG JUMPING, printed pp.
+  39-40 - the jumping prose and TABLE 22 CHARACTERS' JUMPING ABILITY plus the
+  p. 40 modifiers: the any-character rule (thief-acrobats and barbarians
+  particularly skilled, but anyone can jump); the four-foot running advantage
+  with its 20-foot straight run (no space or time - standing is the best); the
+  half-height high jump; the flat-higher-surface roll landing; the
+  thin-barrier high jump + Dex check with the 1d3 heap damage at five feet or
+  higher and the next-round stand-up; the per-jump die roll (the 4th-level
+  1d3=3 example); Table 22 (the seven bands 1-6 through 23+ - standing 1d4+1
+  to 1d6+6, running 1d4+5 to 1d6+15, high 1d3 to 1d6+1, each cell split into
+  die and plus); the cumulative modifiers (moderate -1, heavy -2 and cannot
+  high jump, severe cannot jump at all, halfling -1 broad only, gnome/dwarf -2
+  broad and -1 high) with the 2-foot broad and 1-foot high floors.
+  rules/wsgjump.h NEW (28 inlines, prefix wjp - checked free in all three
+  TUs). Ground truth: the prose CLEAN two-way (the user copy OCR vs the djvu
+  word layer Guide_0039/Guide_0040); the Table 22 grid GARBLED in the djvu
+  word layer, so every cell was confirmed by TWO independent IIIF eye-reads of
+  leaf 39 - the OCR and both eye-reads agree on all 21 cells. Gap 50/136 ->
+  51/135; census 372 -> 373. rverify GREEN on the FIRST build: 64 mutants, 0
+  missed. Spec md5s: 8369062f authored /
+  9edc42c4 +nl - the user-side file hashed
+  576de88c / a0bc8674 +nl, the SAME
+  delivery-side newline variance as R447
+  (second round running; the engine applied
+  the same 6 patches with a clean audit
+  mirror, so it is cosmetic - but if it
+  repeats, diff the bn-fetched spec against
+  the canvas before the splice). GITHUB
+  VERIFIED at the pinned full sha
+  55284c825feb42295cddc2dd6c913f364a
+  fb3d6b: census 373, the R448 audit with
+  the bad-0 printf at line 49242, the
+  include at line 153, wsgjump.h 28
+  inlines, the gap 51 closed / 135 open
+  flipped with the Post-state at R448, the
+  R447 seed record in place, no wjp hits in
+  the caller TUs (canvas r448-splice).
+  Next after landing: the overland movement
+  in reduced visibility with Table 23 (p.
+  40).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
