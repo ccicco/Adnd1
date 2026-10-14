@@ -2838,6 +2838,22 @@ R172 were already dropped at the R171b/R172 era cut; git
   precip cap check band(90)+2 != 5 was TRUE on correct data and would have
   shipped bad 1 - now band(90) == 5 with the raw shift 5+2 = 7; the no-split
   gate caught 10 splits in the first build. Census 352 -> 353.
+- R429 landed 2026-10-14:
+  commit 2fbf672 (census 354, preflight GREEN, pushed b0acf8c..2fbf672), the
+  WSG special weather data slice, printed pp. 23-24 - the FIRST PURE-DATA
+  round: build_spec_r429.py (Vibe side) is only the ground-truth tables +
+  labels over build_spec_general; zero engine changes (Table 6 doubled to
+  half-points, Table 7 0/1/2 = -/D/X, Table 8 the 1dN die size, all sentinel
+  0). rules/wsgsplwx.h NEW (70 inlines, prefix wsw) - Table 6 hurricane
+  damage, Table 7 tornado codes (incl. the Wood and stone row), Table 8
+  hailstorm dice, plus the hurricane, gale, tornado, sandstorm and hailstorm
+  prose pins (45 consts, 11 bools, the hailstone-size chain). Ground truth
+  three-way verified (IIIF vs djvu vs the printed prose; the Table 7 row
+  labels re-read on the page image). rverify GREEN: 118 mutants, 0 missed. The
+  seed patch carried the R427 record. NEW CONVENTIONS: round spec JSONs live
+  in tools/ (untracked); the bn launcher names tools/spec_rXXX.json from the
+  round number; the nano trailing newline is documented behavior, both md5s
+  published, the md5 gate deterministic. Census 353 -> 354.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

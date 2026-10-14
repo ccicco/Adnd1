@@ -34,7 +34,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Temperature and wind (p. 21) - R427: Tables 4 and 5 with the how-to-use rules pin as rules/wsgenvfx.h
   - [x] Precipitation (p. 22) - R427: the moderate/heavy wind-line shifts pin as rules/wsgenvfx.h
   - [x] Special weather (p. 23) - R429: Tables 6-8 with the hurricane, gale, tornado, sandstorm and hailstorm pins as rules/wsgsplwx.h
-  - [ ] Damage from heat and cold (p. 25)
+  - [x] Damage from heat and cold (p. 25) - R430: Table 9 with the adjustment, hypothermia, frostbite and heatstroke pins as rules/wsgheat.h
   - [ ] Effects on equipment (p. 28)
 - [ ] **Encumbrance and movement** (pp. 30-49)
   - [ ] Encumbrance of characters (p. 30)
@@ -164,8 +164,8 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 6: hurricane damage to structures** (p. 23) - R429: the 3 intensity rows pin as rules/wsgsplwx.h
 - [x] **Table 7: tornado damage to structures** (p. 24) - R429: the 6 structure rows pin as rules/wsgsplwx.h
 - [x] **Table 8: hailstorm damage to characters** (p. 24) - R429: the 4 armor rows pin as rules/wsgsplwx.h
-- [ ] **Table 9: temperature damage to characters** (p. 26)
-- [ ] **Table 10: frostbite damage to characters** (p. 27)
+- [x] **Table 9: temperature damage to characters** (p. 26) - R430: the 25 bands pin as rules/wsgheat.h
+- [x] **Table 10: frostbite damage to characters** (p. 27) - R430: the 7 rows pin as rules/wsgheat.h
 - [ ] **Table 11: encumbrance limits for characters** (p. 30)
 - [ ] **Table 12: character movement on foot** (p. 31)
 - [ ] **Table 13: encumbrance limits and movement rates for animals** (p. 32)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R429: 20 closed, 166 open (the R429 round closes the special weather data slice - Table 6 (the hurricane damage, half-point encoded), Table 7 (the tornado none/damaged/destroyed codes) and Table 8 (the hailstorm dice) plus the section box; the heat/cold damage and the equipment effects stay open).
+Post-state at R430: 23 closed, 163 open (the R430 round closes the heat-and-cold data slice - Table 9 (the 25 temperature damage bands, 99 = dash) and Table 10 (the frostbite sixths shares with the single-part thresholds) plus the section box; the equipment effects stay open).
