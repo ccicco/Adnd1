@@ -2819,6 +2819,25 @@ R172 were already dropped at the R171b/R172 era cut; git
   newline - benign, the
   md5 stays advisory.
   Census 351 -> 352.
+- R427 landed 2026-10-14:
+  commit 9723174 (census 353, preflight GREEN, (census 353, preflight GREEN,
+  pushed 435aaac..9723174), the WSG environment data slice, printed pp. 21-22
+  - Table 4 (the 13 temperature bands, the str/dex/con, land-move num/den and
+  attack columns, 99 = no effect) and Table 5 (the 6 wind bands 0-10 to 80+,
+  the missile/melee and move num/den columns, 99 = xx impossible), the
+  how-to-use prose pins (the 2-turn strenuous window, the ex-str caps 18/17,
+  fractions round up, the damage floor 1, the greater of the two move
+  reductions, perpendicular one band lower) and the precipitation shifts
+  (moderate +1 band, heavy +2, capped at the bottom 80+ line).
+  rules/wsgenvfx.h NEW (38 inlines, prefix wse), verified cell for cell
+  three-way (the page image vs the text layer vs the book own examples: 105
+  deg band 10, -30 LM 1/2, 35 mph melee -2, 85/40 the greater reduction 2/3,
+  the 90-mph cap). tools/wsg_gap_report.md flips 5: post-state 16 closed, 170
+  open, 42 tables. Lessons: the 99 census was initialized to the expected
+  values and then incremented - now zeros plus a separate expected array; the
+  precip cap check band(90)+2 != 5 was TRUE on correct data and would have
+  shipped bad 1 - now band(90) == 5 with the raw shift 5+2 = 7; the no-split
+  gate caught 10 splits in the first build. Census 352 -> 353.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

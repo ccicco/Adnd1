@@ -33,7 +33,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Effects of the environment** (pp. 21-29)
   - [x] Temperature and wind (p. 21) - R427: Tables 4 and 5 with the how-to-use rules pin as rules/wsgenvfx.h
   - [x] Precipitation (p. 22) - R427: the moderate/heavy wind-line shifts pin as rules/wsgenvfx.h
-  - [ ] Special weather (p. 23)
+  - [x] Special weather (p. 23) - R429: Tables 6-8 with the hurricane, gale, tornado, sandstorm and hailstorm pins as rules/wsgsplwx.h
   - [ ] Damage from heat and cold (p. 25)
   - [ ] Effects on equipment (p. 28)
 - [ ] **Encumbrance and movement** (pp. 30-49)
@@ -161,9 +161,9 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 3: effects of clothing and armor on personal temperature** (p. 19) - R426: the 15 attire rows x the 4 columns pin as rules/wsgdress.h
 - [x] **Table 4: temperature effects** (p. 21) - R427: the 13 bands pin as rules/wsgenvfx.h
 - [x] **Table 5: wind velocity effects** (p. 21) - R427: the 6 bands pin as rules/wsgenvfx.h
-- [ ] **Table 6: hurricane damage to structures** (p. 23)
-- [ ] **Table 7: tornado damage to structures** (p. 24)
-- [ ] **Table 8: hailstorm damage to characters** (p. 24)
+- [x] **Table 6: hurricane damage to structures** (p. 23) - R429: the 3 intensity rows pin as rules/wsgsplwx.h
+- [x] **Table 7: tornado damage to structures** (p. 24) - R429: the 6 structure rows pin as rules/wsgsplwx.h
+- [x] **Table 8: hailstorm damage to characters** (p. 24) - R429: the 4 armor rows pin as rules/wsgsplwx.h
 - [ ] **Table 9: temperature damage to characters** (p. 26)
 - [ ] **Table 10: frostbite damage to characters** (p. 27)
 - [ ] **Table 11: encumbrance limits for characters** (p. 30)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R427: 16 closed, 170 open (the R427 round closes the environment data slice - Table 4 (the 13 temperature bands), Table 5 (the 6 wind bands), the how-to-use rules and the precipitation shifts - four boxes; the special weather, the heat/cold damage and the equipment effects stay open).
+Post-state at R429: 20 closed, 166 open (the R429 round closes the special weather data slice - Table 6 (the hurricane damage, half-point encoded), Table 7 (the tornado none/damaged/destroyed codes) and Table 8 (the hailstorm dice) plus the section box; the heat/cold damage and the equipment effects stay open).
