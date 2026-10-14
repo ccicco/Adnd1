@@ -40,7 +40,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Encumbrance of characters (p. 30) - R432: the gp-per-pound conversion, the bulk rule-of-thumb and Table 11 pin as rules/wsgencum.h
   - [x] Terrain definitions for movement (p. 30) - R432: the normal, rugged and very-rugged classes with the snow-depth and stream-crossing thresholds
   - [x] Large-scale overland movement (p. 31) - R432: the inch-per-half-day scale, the 8-hour half-day, the 3/4 and 1/3 reductions and Table 12
-  - [ ] Encumbrance and movement for land-based animals (p. 32)
+  - [x] Encumbrance and movement for land-based animals (p. 32) - R433: the normal/maximum load rules, the forced-move stamina rules and Table 13 pin as rules/wsganimal.h
   - [ ] Movement of land-based vehicles (p. 33)
   - [ ] Movement across special terrain (p. 33)
   - [ ] Climbing (p. 34)
@@ -168,7 +168,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 10: frostbite damage to characters** (p. 27) - R430: the 7 rows pin as rules/wsgheat.h
 - [x] **Table 11: encumbrance limits for characters** (p. 30) - R432
 - [x] **Table 12: character movement on foot** (p. 31) - R432
-- [ ] **Table 13: encumbrance limits and movement rates for animals** (p. 32)
+- [x] **Table 13: encumbrance limits and movement rates for animals** (p. 32) - R433
 - [ ] **Table 14: movement of vehicles** (p. 33)
 - [ ] **Table 15: climbing movement rates** (p. 33)
 - [ ] **Table 16: modifiers to non-thief's climbing rating** (p. 35)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R432: 29 closed, 157 open (the R432 round opens the encumbrance-and-movement chapter - Table 11 (the 14 strength rows x the Light/Moderate/Heavy/Severe gp limits) and Table 12 (the encumbrance category x the terrain class movement rates) with the bulk rule-of-thumb (x1 non-bulky, x2-3 bulky, x5 very bulky, 10 gp = 1 lb), the terrain definitions and the large-scale overland movement rules; the next rounds continue the chapter - Table 13, the land-based animals).
+Post-state at R433: 31 closed, 155 open (the R433 round pins the land-based animals - Table 13 (the 18 mounts and beasts of burden x the normal and maximum loads and the unencumbered/encumbered rates over the three terrain classes) with the forced-move stamina rules (half-rate hours capped at 12, the cumulative 20/35/50 percent fatigue chances) and the accelerated no-rest +1/3 spillover; the next rounds continue the chapter - Table 14, the vehicles).

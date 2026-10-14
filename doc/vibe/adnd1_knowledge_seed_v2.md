@@ -2885,6 +2885,19 @@ R172 were already dropped at the R171b/R172 era cut; git
   The landing took four takes; the recovery rules (pastes after the git
   surgery, never run past a failed md5 gate, the reflog recovers a dropped
   commit) hold from here. Census 355 -> 356.
+- R432 landed 2026-10-14: commit da25c98 (census 357, pushed 0d22d27..da25c98,
+  preflight GREEN on the FIRST run - the md5 gate matched the predicted +nl
+  variants exactly), the WSG ENCUMBRANCE AND MOVEMENT opener, printed pp.
+  30-31 - Table 11 (the 14 strength rows x the Light/Moderate/Heavy/Severe gp
+  limits, the plain-strength and the percentile row dispatch chains) and Table
+  12 (the encumbrance category x the terrain class, the normal and the
+  accelerated miles per half-day) with the bulk rule-of-thumb (x1 non-bulky,
+  x2-3 bulky, x5 very bulky, 10 gp = 1 lb), the terrain definitions and the
+  large-scale overland movement rules. rules/wsgencum.h NEW (54 inlines,
+  prefix wem). The round ALSO carried the rverify chain-limit fix (the leaked
+  loop variable read the last chain last limit - masked in R430 by its single
+  chain, exposed here by the two). rverify GREEN: 153 mutants, 0 missed.
+  Census 356 -> 357.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
