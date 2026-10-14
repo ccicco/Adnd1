@@ -3596,6 +3596,78 @@ R172 were already dropped at the R171b/R172 era cut; git
   Next after landing: the movement in waterborne
   vehicles (p. 44), then the capsizing and damage
   to craft.
+- R455 landed 2026-10-14: commit eef7ebb
+  (full eef7ebb219e862a96bed251965f65
+  15c7015550d, census 380, pushed e0a5480..
+  eef7ebb, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG MOVEMENT IN
+  WATERBORNE VEHICLES, printed p. 44 (with the
+  movement-modification prose continuing onto
+  p. 45) - Table 25, the eight inland vessels
+  (kayak, small canoe, small rowboat, coracle,
+  large canoe, large rowboat, small barge,
+  large barge) across length, width, the
+  passenger+gold capacity, the four large-scale
+  miles-per-half-day and four small-scale
+  feet-per-round rates (sail/oar, normal/max),
+  the encumbrance ranges (the large barge open
+  10000+ encoded as a 0-max sentinel), the
+  startup and hull ranges and the draughts;
+  plus the modifications (the current
+  drift/add/subtract, the 20-30 mph wind band
+  with -1/+2 per 10 mph, the 5 mph no-sail
+  floor, the right-angle max sail, the
+  into-wind 3-inch reduction to the 1-inch
+  minimum, the max-oar exertion ladder - two
+  turns on, one off, fatigued half speed,
+  forced one-turn exhaustion - and the
+  shorthanded proportional rowing with the
+  3-rowers large-rowboat example: 6 of 8
+  miles, 45 of 60 feet). rules/wsgvessels.h NEW
+  (55 inlines: 17 consts + 16 bools + the
+  22-column grid split into Table 25a the
+  characteristics / 25b the rates, prefix wvb -
+  checked free in all three TUs). Ground
+  truth CLEAN three-way: the prose matched the
+  user copy OCR (pages 45-46) vs the djvu word
+  layer (Guide_0044/0045), but the djvu
+  TRUNCATES Table 25 (six of eight rows, the
+  draught column garbled), so the grid was
+  settled by TWO independent IIIF eye-reads of
+  leaf $44 (1600px PNG - the 2400 scale is
+  capped for this leaf), which agree with the
+  OCR exactly on all eight rows and every cell.
+  Gap 57/129 -> 58/128; census 379 -> 380.
+  rverify GREEN: 209 mutants, 0 missed (the
+  biggest battery yet) - three build
+  iterations: the 22-column row literal broke
+  the 78-col audit bound (split into 25a/25b
+  with distinct C-array tags), then a bogus
+  draught cross-multiplication (a third is NOT
+  a half) and a broken replacement clause were
+  fixed. Spec md5s: 2d325067 authored /
+  b05c0189 +nl - the user-side file hashed
+  36230c3e / 766d0d9b +nl, the delivery-side
+  newline variance NINE rounds running
+  (R447-R455; cosmetic every time - the same 6
+  patches, clean mirror; diagnose the bn fetch
+  at the next mismatch).
+  GITHUB VERIFIED at the pinned full sha
+  eef7ebb219e862a96bed251965f65
+  15c7015550d: census 380, the R455 audit
+  with the bad-0 printf at line 50105, the
+  include at line 160, wsgvessels.h 55
+  inlines with both the C25a/C25b grids
+  landed, the gap 58 closed / 128 open
+  flipped with the Post-state at R455, the
+  R454 seed record in place, no wvb hits in
+  the caller TUs, and the engine re-run on
+  the landed tree reads applied 0 /
+  already 6 (canvas r455-splice).
+  Next after landing: the capsizing and damage
+  to craft (Table 26, p. 45), then the boating
+  proficiency and the portaging.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
