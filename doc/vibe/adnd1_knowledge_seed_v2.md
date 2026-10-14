@@ -3149,6 +3149,32 @@ R172 were already dropped at the R171b/R172 era cut; git
   92/99/99 at case 9), the gap 47 closed / 139 open, the R443 seed record in
   place, no wgh hits in the caller TUs. Next after landing: the chasm crossing
   (p. 38).
+- R445 landed 2026-10-14: commit a624caf (census 370, pushed
+  5e98ed9..a624caf, preflight GREEN on the FIRST run), the WSG CROSSING A
+  CHASM ON A ROPE, printed pp. 38-39 - the chasm prose and TABLE 21 THROWN
+  LOOP RANGES: the two anchor factors (a protrusion, a hold - the grappling
+  hook answers both via Table 20); the thrown loop (thief or rope-use
+  proficient only, target directly across or slightly above/below, never on a
+  vertical climb); Table 21 (the five level bands 40/50/60/75/90 feet, default
+  90 continuing the 17+ band); the 10-foot whirl-radius assumption with the
+  halved range otherwise; the 20% base hit with the +1%-per-foot closeness
+  bonus (the fog example 17th level at 50 feet = 30%, cross-multiplied); the
+  halving conditions (precip, wind over 20 mph, hampered visibility); the
+  both-ends-anchored rule with the near-side protrusion; the 30-feet-per-round
+  hand-over-hand crossing rate with the +2 Dex check for multiple hangers.
+  rules/wsgchasm.h NEW (18 inlines, prefix wcx - checked free in all three
+  TUs). Ground truth CLEAN two-way (the user copy OCR vs the djvu word layer
+  Guide_0038 with the Guide_0039 head - every number matched, no eye-reads).
+  Gap 47/139 -> 48/138; census 369 -> 370. rverify GREEN after one
+  authoring-side RED fix before delivery (a table_check with a wrong
+  arithmetic anchor - caught by the audit mirror, rebuilt GREEN): 22 mutants,
+  0 missed; the DELIVERED spec ran first-try clean on the user side. Spec
+  md5s: d8b1f7ca authored / 229d4126 +nl. GITHUB VERIFIED at the pinned full
+  sha a624cafc9dba8401f7a2dae80c543e0d9e51583c: census 370, the R445 audit
+  present once, wsgchasm.h 18 inlines, the Table 21 ladder landed
+  (40/50/60/75/90 with default 90 at case 4), the gap 48 closed / 138 open,
+  the R444 seed record in place, no wcx hits in the caller TUs. Next after
+  landing: the mountaineering proficiency (p. 39).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
