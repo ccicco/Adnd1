@@ -232,37 +232,47 @@ def emit_audit():
     return head + body + tail
 
 
-def _wrap_cond(cond, indent):
+def _wrap_cond(cond, first_prefix, cont_prefix):
     # greedy wrap on whole tokens. In an infix token
     # stream two adjacent operand tokens never occur, so
     # every break lands next to an operator or a paren -
     # no identifier ever splits; the no-split gate
-    # verifies this anyway
+    # verifies this anyway.
+    # R431: only the FIRST line of a wrapped
+    # condition carries the prefix ('if (' or '|| ');
+    # continuations are plain-indented. Re-prefixing
+    # every wrapped chunk with 'if (' emitted invalid
+    # C++ (each chunk opened a fresh paren and read as
+    # a new condition) - the cond syntax gate below
+    # now kills this class at emit time.
     toks = cond.split(' ')
     lines = []
     cur = []
+    pre = first_prefix
     for tk in toks:
         cand = ' '.join(cur + [tk])
-        if len(indent) + len(cand) > WIDTH and cur:
-            lines.append(indent + ' '.join(cur))
+        if len(pre) + len(cand) > WIDTH and cur:
+            lines.append(pre + ' '.join(cur))
             cur = [tk]
+            pre = cont_prefix
         else:
             cur.append(tk)
-    lines.append(indent + ' '.join(cur))
+    lines.append(pre + ' '.join(cur))
     return lines
 
 
 def emit_cond(conds, kw, pad):
     # emit 'if (c1\n            || c2\n        )'; every
     # condition wrapped at operator boundaries, whole
-    # tokens only
+    # tokens only. A wrapped chunk is NOT a new
+    # condition, so a continuation line never repeats
+    # the 'if (' or '|| ' prefix (the R431 fix)
     out = []
-    first = _wrap_cond(conds[0], '    %s (' % kw)
-    out.append(first[0])
-    out += first[1:]
+    out += _wrap_cond(conds[0], '    %s (' % kw,
+                      '        ')
     for c in conds[1:]:
-        w = _wrap_cond(c, '            || ')
-        out += w
+        out += _wrap_cond(c, '            || ',
+                          '            ')
     out.append('        )')
     return out
 
@@ -395,6 +405,85 @@ def gate_lines(txt, name, opener_ok):
 
 gate_lines(HDR_TXT, 'the header', True)
 gate_lines(AUD_BLOCK, 'the audit', False)
+
+
+# ---------- the cond syntax gate (the R431 lesson) ----------
+# The audit mirror proves the round's LOGIC in python;
+# this gate proves the emitted C++ PARSES: rejoin every
+# wrapped 'if (' statement and check the token stream
+# is a well-formed infix expression with balanced
+# parens. Born of the R430 landing: a condition longer
+# than 78 cols wrapped with 'if (' re-prefixing per
+# chunk, the regtest would not compile, and with the
+# preflight skipped nothing caught it until R431's.
+
+_COND_OPS = ('+', '-', '*', '/', '%', '==', '!=',
+             '<=', '>=', '<', '>', '&&', '||')
+
+
+def gate_cond_syntax(txt, name):
+    lines = txt.split(NL)
+    i = 0
+    while i < len(lines):
+        ln = lines[i]
+        if not ln.startswith('    if ('):
+            i += 1
+            continue
+        stmt = [ln]
+        j = i + 1
+        while (j < len(lines)
+               and lines[j].strip() != ')'):
+            if lines[j].startswith('    if ('):
+                die('a repeated if ( prefix in a '
+                    '%s condition - the R431 wrap '
+                    'class' % name)
+            stmt.append(lines[j])
+            j += 1
+        if j >= len(lines):
+            die('an unterminated if ( in %s' % name)
+        # the collector stops AT the ')' closer line
+        # without appending it, so the joined text is
+        # exactly 'if (' + the condition body
+        text = ' '.join(x.strip() for x in stmt)
+        expr = text[len('if ('):].rstrip()
+        if expr.count('(') != expr.count(')'):
+            die('unbalanced parens in a %s '
+                'condition: %r' % (name, expr[:40]))
+        expect_operand = True
+        for tk in expr.split(' '):
+            if tk in ('(', ')'):
+                continue
+            if expect_operand:
+                # strip prefix negation - but only in
+                # operand position; in operator position
+                # '!=' must stay whole
+                while tk.startswith('!'):
+                    tk = tk[1:]
+                if (tk.startswith('-')
+                        and len(tk) > 1):
+                    tk = tk[1:]
+                ok = (tk and (tk[0] in _idc
+                             or tk[0] == '(')
+                      and all(c in _idc or c in '()-'
+                              for c in tk))
+                if tk in _COND_OPS or not ok:
+                    die('an operand expected in a %s '
+                        'condition: %r'
+                        % (name, tk[:30]))
+                expect_operand = False
+            else:
+                if tk not in _COND_OPS:
+                    die('an operator expected in a %s '
+                        'condition: %r'
+                        % (name, tk[:30]))
+                expect_operand = True
+        if expect_operand:
+            die('a dangling operator in a %s '
+                'condition' % name)
+        i = j + 1
+
+
+gate_cond_syntax(AUD_BLOCK, 'audit')
 
 n_inline = HDR_TXT.count('inline ')
 if n_inline != S['inline_count']:

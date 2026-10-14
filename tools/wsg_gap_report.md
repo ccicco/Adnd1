@@ -35,7 +35,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Precipitation (p. 22) - R427: the moderate/heavy wind-line shifts pin as rules/wsgenvfx.h
   - [x] Special weather (p. 23) - R429: Tables 6-8 with the hurricane, gale, tornado, sandstorm and hailstorm pins as rules/wsgsplwx.h
   - [x] Damage from heat and cold (p. 25) - R430: Table 9 with the adjustment, hypothermia, frostbite and heatstroke pins as rules/wsgheat.h
-  - [ ] Effects on equipment (p. 28)
+  - [x] Effects on equipment (p. 28) - R431: the water, rust, leather, sand and dust rules pin as rules/wsgequip.h
 - [ ] **Encumbrance and movement** (pp. 30-49)
   - [ ] Encumbrance of characters (p. 30)
   - [ ] Terrain definitions for movement (p. 30)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R430: 23 closed, 163 open (the R430 round closes the heat-and-cold data slice - Table 9 (the 25 temperature damage bands, 99 = dash) and Table 10 (the frostbite sixths shares with the single-part thresholds) plus the section box; the equipment effects stay open).
+Post-state at R431: 24 closed, 162 open (the R431 round closes the equipment effects slice - the water and rust rules (the 2-day drying, the 2-week oiling, the armor crack on a 20 for over 4 damage, the shield near-miss split, the weapon break on a 1), the leather and rope rules, the wet-arrow penalty and the sand/dust chafe rules; the effects-of-the-environment chapter closes WHOLE - the next rounds start encumbrance and movement, Tables 11-12).

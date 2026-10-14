@@ -2854,6 +2854,22 @@ R172 were already dropped at the R171b/R172 era cut; git
   in tools/ (untracked); the bn launcher names tools/spec_rXXX.json from the
   round number; the nano trailing newline is documented behavior, both md5s
   published, the md5 gate deterministic. Census 353 -> 354.
+- R430 landed 2026-10-14:
+  commit ae2a14c (census 355, pushed 2fbf672..ae2a14c; the preflight was
+  SKIPPED that round - the cond-wrap defect it would have caught surfaced at
+  R431, the engine gained the cond syntax gate and the R430 regtest block was
+  regenerated clean), the WSG heat-and-cold data slice, printed pp. 25-27 -
+  Table 9 (the 25 temperature damage bands, Con/Dmg x unprotected/protected,
+  99 = the dash, the book own +3-then-+5 skip at 110-119) and Table 10 (the
+  frostbite shares in sixths with the single-part thresholds Feet 4 / Ears 6 /
+  Hands 8; the four combination-row cells BLANK IN PRINT, settled by the USER
+  EYE-READ after the archive scan blurred them and vision reads confabulated;
+  the user own copy upload agreed) plus the damage and Con-check adjustments,
+  hypothermia, frostbite and heatstroke prose. rules/wsgheat.h NEW (72
+  inlines, prefix wsh) - the heatstroke worked example pins as three checks
+  (2+6 = 8, 2-1 = 1, 2/3 of 10 rounded up = 7). rverify GREEN: 215 mutants, 0
+  missed. The nano-paste md5 matched the PREDICTED value exactly (the
+  deterministic md5 convention working). Census 354 -> 355.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -133,6 +133,7 @@
 #include "rules/wsgenvfx.h"  // R427: the WSG environment effects
 #include "rules/wsgsplwx.h"  // R429: the WSG special weather tables
 #include "rules/wsgheat.h"  // R430: the WSG heat and cold damage tables
+#include "rules/wsgequip.h"  // R431: the WSG effects on equipment
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -47074,23 +47075,92 @@ int main() {
             ++bad;
         // every Table 10 row shares all six sixths among the vulnerable parts
     if (wshFrostFeetShare(0) + wshFrostEarsShare(0) + wshFrostHandsShare(0) !=
-    if (6
+        6
             || wshFrostFeetShare(4) + wshFrostEarsShare(4) +
-            || wshFrostHandsShare(4) != 6
+            wshFrostHandsShare(4) != 6
             || wshFrostFeetShare(6) + wshFrostEarsShare(6) +
-            || wshFrostHandsShare(6) != 6
+            wshFrostHandsShare(6) != 6
         )
             ++bad;
         // a threshold only on the single-part rows: a nonzero threshold means
         // an all-share of 6 (0 whenever the shares sum to 6)
     if (wshFrostPts(0) * (6 - wshFrostFeetShare(0) - wshFrostEarsShare(0) -
-    if (wshFrostHandsShare(0)) + wshFrostPts(2) * (6 - wshFrostFeetShare(2) -
-    if (wshFrostEarsShare(2) - wshFrostHandsShare(2)) + wshFrostPts(3) * (6 -
-    if (wshFrostFeetShare(3) - wshFrostEarsShare(3) - wshFrostHandsShare(3))
-    if (!= 0
+        wshFrostHandsShare(0)) + wshFrostPts(2) * (6 - wshFrostFeetShare(2) -
+        wshFrostEarsShare(2) - wshFrostHandsShare(2)) + wshFrostPts(3) * (6 -
+        wshFrostFeetShare(3) - wshFrostEarsShare(3) - wshFrostHandsShare(3))
+        != 0
         )
             ++bad;
         printf("R430 WSG heat and cold pin audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R431 WSG equipment pin audit ----
+    // The equipment effects slice pins the water, rust, leather, sand and
+    // dust rules (rules/wsgequip.h, prefix weq): the moisture and rust
+    // mechanics, the leather and rope rules, the wet-arrow penalty and the
+    // chafe penalties; census 355 -> 356.
+    {
+        using namespace rules;
+        int bad = 0;
+    if (weqWetClothesDeltaTemp() != 10
+            || weqRustDryDays() != 2
+            || weqRustOilWeeks() != 2
+            || weqArmorCrackRoll() != 20
+            || weqArmorCrackDmgMin() != 4
+            || weqArmorCrackDen() != 3
+            || weqShieldSplitPct() != 50
+            || weqWeaponBreakRoll() != 1
+            || weqWeaponBreakDen() != 3
+            || weqBootsDryDays() != 2
+            || weqWetArrowPenalty() != -1
+            || weqChafeSurpriseDen() != 6
+            || weqChafeMoveNum() != 3
+            || weqChafeMoveDen() != 4
+            || weqChafeDexPenalty() != -1
+            || !weqRustedArmorNoAcPenalty()
+            || !weqArmorCrackOneStepWorse()
+            || !weqArmorSecondHitBreaks()
+            || !weqShieldNearMissSplits()
+            || !weqLeatherCrackedAsRusted()
+            || !weqLeatherHeatCracks()
+            || !weqMudCanCrackLeather()
+            || !weqWetKnotHardToUntie()
+            || !weqDryKnotLoosens()
+            || !weqArrowSpecialistExempt()
+            || !weqMagicalInkWaterproof()
+            || !weqSandAbrasionNegligible()
+            || !weqSandPotionDmCall()
+            || !weqDustNotAbrasive()
+            || !weqDustNoChafe()
+        )
+            ++bad;
+        // the wet-clothing example: wet gear at 30 degrees acts as 20 (10
+        // colder)
+    if (weqWetClothesDeltaTemp() != 10
+            || 30 - weqWetClothesDeltaTemp() != 20
+        )
+            ++bad;
+        // the armor crack gates: an unmodified 20 AND over 4 damage, then 1
+        // in 3
+    if (weqArmorCrackRoll() != 20
+            || weqArmorCrackDmgMin() != 4
+            || weqArmorCrackDen() != 3
+        )
+            ++bad;
+        // the shield and weapon breaks: 50 percent on the near-miss, 1 in 3
+        // on the unmodified 1
+    if (weqShieldSplitPct() != 50
+            || weqWeaponBreakRoll() != 1
+            || weqWeaponBreakDen() != 3
+        )
+            ++bad;
+        // the chafe penalties: +1 in 6 surprise, 3/4 speed, -1 dex
+    if (weqChafeSurpriseDen() != 6
+            || 3 * weqChafeMoveDen() != 4 * weqChafeMoveNum()
+            || weqChafeDexPenalty() != -1
+        )
+            ++bad;
+        printf("R431 WSG equipment pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----
