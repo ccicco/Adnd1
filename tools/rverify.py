@@ -130,15 +130,14 @@ for label, name, r, want in mutants:
     total += 1
     orig = M[name]
     if r == 'limit':
-        def mk(i, lim):
-            def f(x, _o=orig, _i=i, _l=lim):
-                # shift this one limit by +1
-                base_v = _o(x)
-                return base_v
-            return f
-        # a limit shift needs the chain rebuilt; emulate:
-        # value just at the limit must land one band high
-        def f(x, _lim=lim, _o=orig, _n=name):
+        # the value AT this limit must land one band high;
+        # R432 fix: use WANT (the unpacked limit) - the
+        # old code read the LEAKED loop variable 'lim',
+        # which held the LAST chain's last limit, so
+        # every chain mutant perturbed the same wrong
+        # point (masked in R430 by its single chain,
+        # exposed by R432's two chains)
+        def f(x, _lim=want, _o=orig, _n=name):
             if x == _lim:
                 return _o(x) + 1
             return _o(x)
@@ -171,4 +170,5 @@ if fails:
     sys.exit(1)
 print('RVERIFY: GREEN - restore, double-run, '
       'battery all clean')
+
 

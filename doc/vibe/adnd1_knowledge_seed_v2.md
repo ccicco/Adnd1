@@ -2870,6 +2870,21 @@ R172 were already dropped at the R171b/R172 era cut; git
   (2+6 = 8, 2-1 = 1, 2/3 of 10 rounded up = 7). rverify GREEN: 215 mutants, 0
   missed. The nano-paste md5 matched the PREDICTED value exactly (the
   deterministic md5 convention working). Census 354 -> 355.
+- R431 landed 2026-10-14: commit 0d22d27 (census 356, pushed ae2a14c..0d22d27,
+  preflight GREEN from a real compiled binary), the WSG EQUIPMENT EFFECTS data
+  slice, printed pp. 28-29 - the FIRST PURE-PROSE round (rules/wsgequip.h, 30
+  inlines, prefix weq): the water and rust rules (dry metal every 2 days, oil
+  every 2 weeks, the armor crack on an unmodified 20 for over 4 damage at
+  1-in-3, the shield near-miss split at 50 percent, the weapon break on an
+  unmodified 1 at 1-in-3), the leather and rope rules, the wet-arrow penalty
+  (the specialist exempt) and the sand/dust chafe rules; the
+  effects-of-the-environment chapter closes WHOLE. The round ALSO carried the
+  engine fix (_wrap_cond plain-indents the wrapped condition continuations;
+  the new gate_cond_syntax kills the broken-emit class at emit time) and the
+  R430 regtest block regenerated clean. rverify GREEN: 30 mutants, 0 missed.
+  The landing took four takes; the recovery rules (pastes after the git
+  surgery, never run past a failed md5 gate, the reflog recovers a dropped
+  commit) hold from here. Census 355 -> 356.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

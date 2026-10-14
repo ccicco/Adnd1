@@ -37,9 +37,9 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Damage from heat and cold (p. 25) - R430: Table 9 with the adjustment, hypothermia, frostbite and heatstroke pins as rules/wsgheat.h
   - [x] Effects on equipment (p. 28) - R431: the water, rust, leather, sand and dust rules pin as rules/wsgequip.h
 - [ ] **Encumbrance and movement** (pp. 30-49)
-  - [ ] Encumbrance of characters (p. 30)
-  - [ ] Terrain definitions for movement (p. 30)
-  - [ ] Large-scale overland movement (p. 31)
+  - [x] Encumbrance of characters (p. 30) - R432: the gp-per-pound conversion, the bulk rule-of-thumb and Table 11 pin as rules/wsgencum.h
+  - [x] Terrain definitions for movement (p. 30) - R432: the normal, rugged and very-rugged classes with the snow-depth and stream-crossing thresholds
+  - [x] Large-scale overland movement (p. 31) - R432: the inch-per-half-day scale, the 8-hour half-day, the 3/4 and 1/3 reductions and Table 12
   - [ ] Encumbrance and movement for land-based animals (p. 32)
   - [ ] Movement of land-based vehicles (p. 33)
   - [ ] Movement across special terrain (p. 33)
@@ -166,8 +166,8 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 8: hailstorm damage to characters** (p. 24) - R429: the 4 armor rows pin as rules/wsgsplwx.h
 - [x] **Table 9: temperature damage to characters** (p. 26) - R430: the 25 bands pin as rules/wsgheat.h
 - [x] **Table 10: frostbite damage to characters** (p. 27) - R430: the 7 rows pin as rules/wsgheat.h
-- [ ] **Table 11: encumbrance limits for characters** (p. 30)
-- [ ] **Table 12: character movement on foot** (p. 31)
+- [x] **Table 11: encumbrance limits for characters** (p. 30) - R432
+- [x] **Table 12: character movement on foot** (p. 31) - R432
 - [ ] **Table 13: encumbrance limits and movement rates for animals** (p. 32)
 - [ ] **Table 14: movement of vehicles** (p. 33)
 - [ ] **Table 15: climbing movement rates** (p. 33)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R431: 24 closed, 162 open (the R431 round closes the equipment effects slice - the water and rust rules (the 2-day drying, the 2-week oiling, the armor crack on a 20 for over 4 damage, the shield near-miss split, the weapon break on a 1), the leather and rope rules, the wet-arrow penalty and the sand/dust chafe rules; the effects-of-the-environment chapter closes WHOLE - the next rounds start encumbrance and movement, Tables 11-12).
+Post-state at R432: 29 closed, 157 open (the R432 round opens the encumbrance-and-movement chapter - Table 11 (the 14 strength rows x the Light/Moderate/Heavy/Severe gp limits) and Table 12 (the encumbrance category x the terrain class movement rates) with the bulk rule-of-thumb (x1 non-bulky, x2-3 bulky, x5 very bulky, 10 gp = 1 lb), the terrain definitions and the large-scale overland movement rules; the next rounds continue the chapter - Table 13, the land-based animals).
