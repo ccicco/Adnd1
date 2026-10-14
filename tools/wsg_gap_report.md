@@ -173,7 +173,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 15: climbing movement rates** (p. 33) - R435
 - [x] **Table 16: modifiers to non-thief's climbing rating** (p. 35) - R436
 - [x] **Table 17: damage from free fall or severe slope** (p. 35) - R437
-- [ ] **Table 18: damage from tumbling down moderate or gentle slope** (p. 36)
+- [x] **Table 18: damage from tumbling down moderate or gentle slope** (p. 36) - R438
 - [ ] **Table 19: chance of stopping a fall or tumble** (p. 36)
 - [ ] **Table 20: grapple success** (p. 38)
 - [ ] **Table 21: thrown loop ranges** (p. 38)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R437: 39 closed, 147 open (the R437 round pins the damage from falling - Table 17 (the six fall-distance bands x the cumulative damage dice) with the falling-vs-tumbling distinction and the fall rates; the next rounds continue the section - the tumbling damage Table 18, the stopping of a fall Table 19).
+Post-state at R438: 40 closed, 146 open (the R438 round pins the tumbling damage - Table 18 (the six slope rows x the three condition cells of abrasion-free feet, die and impact distance) with the entry format and the tumble rates; the next rounds continue the section - the stopping of a fall Table 19, the rope rules).

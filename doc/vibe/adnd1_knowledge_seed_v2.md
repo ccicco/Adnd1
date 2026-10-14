@@ -2980,6 +2980,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   R436 audit present once, wsgcheck.h 49 inlines, the gap 37 closed / 149
   open, the R435 seed record in place. Next after landing: the damage from
   falling, Table 17 (p. 35).
+- R437 landed 2026-10-14: commit 90e0813 (census 362, pushed
+  9d34030..90e0813, preflight GREEN on the FIRST run - the seventh clean
+  first-try land in a row), the WSG DAMAGE FROM FALLING, printed pp. 35-36 -
+  Table 17 (the six fall-distance bands x the band-minimum distances and the
+  cumulative damage dice: 10 feet 1d6, 11-20 3d6, 21-30 6d6, 31-40 10d6, 41-50
+  15d6, 51-or-more 20d6 the maximum) with the falling-vs-tumbling prose
+  (falling = a vertical drop, much more liable to cause serious injury or
+  death; tumbling down a moderate or gentle slope is Table 18, the next
+  round), the 1d6-cumulative-per-10-feet basis, the figures applying to free
+  fall AND tumbling down a severe slope, the smooth/slippery abrasion note and
+  the unimpeded rates (1000 feet per round free fall, 600-800 feet per round
+  down a severe slope). rules/wsgfall.h NEW (14 inlines, prefix wdf, checked
+  free). Ground truth three-way verified (the 11-20 feet dice cell MISSING
+  from the djvu; two eye-reads settled 3d6, matching the user copy). Gap
+  37/149 -> 39/147; census 361 -> 362. rverify GREEN on the FIRST build: 24
+  mutants, 0 missed. Spec md5s: 0961b993 authored / 8f86aadb +nl. GITHUB
+  VERIFIED at the pinned full sha 90e0813cad2980016f7ffc306c08fc986516e18c:
+  census 362, the R437 audit present once, wsgfall.h 14 inlines, the eye-read
+  cell landed, the gap 39 closed / 147 open, the R436 seed record in place.
+  Next after landing: the tumbling damage - Table 18 (p. 36).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
