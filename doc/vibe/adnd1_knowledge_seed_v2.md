@@ -3733,6 +3733,67 @@ R172 were already dropped at the R171b/R172 era cut; git
   already 6 (canvas r456-splice).
   Next after landing: the boating proficiency
   (p. 45), then the portaging.
+- R457 landed 2026-10-14: commit 9dbb69e
+  (full 9dbb69e26002d1fc8a9473d12d0f1
+  a5feb71577, census 382, pushed ecda891..
+  9dbb69e, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG THE BOATING
+  BOATING PROFICIENCY, printed p. 45 - a
+  pure-prose round (no printed grid): the
+  nonproficient movement penalties (the
+  kayak, small canoe and coracle reduced to
+  one-half of normal; the small rowboat,
+  large canoe, large rowboat and small barge
+  to two-thirds; the large barge to
+  three-quarters), applied BEFORE the wind
+  and current alterations; the capsize
+  penalty (+25% where the base chance is
+  greater than 0%, capped at 100%); the
+  proficient-crew benefits (the -20% capsize
+  per proficient character after the first,
+  the -20% mast/sail damage reduction where
+  they can secure the rigging or brace the
+  mast, the all-proficient waiver of the
+  movement penalties) and the sail-crew
+  minimums (two characters for the large
+  rowboat, small barge and large barge, one
+  for all the rest). rules/wsgboat.h NEW
+  (18 inlines: 6 consts + 9 bools + the
+  synthesized 3-column grid - the
+  movement-fraction num/den and the sail
+  crew for the eight vessels, C27 - prefix
+  wbp, checked free in all three TUs).
+  Ground truth CLEAN two-way: the prose
+  matched the user copy OCR (page 46) vs
+  the djvu word layer (Guide_0045) - NO
+  eye-reads needed (no printed table).
+  Gap 59/127 -> 60/126; census 381 -> 382.
+  rverify GREEN: 39 mutants, 0 missed.
+  Spec md5s: 5e6328d2c2edaa3349975d7e0
+  5653159 user-side / 4fd32208905f52f765a
+  65e7feb815e66 +nl, vs cd29ed00 authored /
+  5e6328d2 +nl (canvas r457-splice) - the
+  delivery-side newline variance again,
+  ELEVEN rounds running (R447-R457),
+  cosmetic every time (this round the
+  user-side FILE hash matches the authored
+  +nl hash exactly, the +nl variant drifts);
+  diagnose the bn fetch at the next
+  mismatch. Base sha
+  ecda8918fb75f7b49d594a4757ce39d5ce436a
+  28. GITHUB VERIFIED at 9dbb69e26002d1fc
+  a9473d12d0f1a5bfeb71577: census 382, the
+  R457 audit line present, the wsgboat.h
+  include at line 162, 18 wbp inlines, the
+  gap box [x] flipped, Post-state at R457
+  once, the R456 seed record in place, no
+  wbp hits in the caller TUs, and the
+  engine re-run on the landed tree reads
+  applied 0 / already 6 (canvas r457-splice).
+  Next after landing: the portaging
+  (p. 45), then the use of a capsized
+  vessel (p. 46).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
