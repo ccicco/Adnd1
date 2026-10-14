@@ -3000,6 +3000,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   census 362, the R437 audit present once, wsgfall.h 14 inlines, the eye-read
   cell landed, the gap 39 closed / 147 open, the R436 seed record in place.
   Next after landing: the tumbling damage - Table 18 (p. 36).
+- R438 landed 2026-10-14: commit e0bc5a3 (census 363, pushed
+  90e0813..e0bc5a3, preflight GREEN on the FIRST run - the eighth clean
+  first-try land in a row), the WSG TUMBLING DAMAGE, printed p. 36 - Table 18
+  (the six moderate-or-gentle slope rows x the three condition cells, each
+  entry split into the abrasion-free feet, the abrasion die and the impact
+  distance) encoded as a 9-column table with the entry-format prose, the
+  worst-case and gradual-stop impact rules, the flat-terrain extra abrasion
+  and the tumble rates; the book own worked example (the smooth moderate
+  slightly-slippery 40/3/20 cell) pinned as two division-free examples.
+  rules/wsgtumble.h NEW (26 inlines, prefix wdt, checked free). Ground truth
+  three-way verified (the two normal-row slippery cells settled by two IIIF
+  eye-reads, matching the user copy). NOTE: the first build had a row-index
+  slip in the worked example - the sim caught the two TRUE-on-healthy
+  examples. NOTE: the GitHub API was rate-limited at verify time - the full
+  sha came from the commit .patch page. Gap 39/147 -> 40/146; census 362 ->
+  363. rverify GREEN: 71 mutants, 0 missed. Spec md5s: eb40665c authored /
+  dc3c6146 +nl. GITHUB VERIFIED at the pinned full sha
+  e0bc5a3852dd4d49197fb62f5ae04f9aac1d8c43: census 363, the R438 audit present
+  once, wsgtumble.h 26 inlines, the eye-read cells landed, the gap 40 closed /
+  146 open, the R437 seed record in place. Next after landing: the stopping of
+  a fall - Table 19 (p. 36).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
