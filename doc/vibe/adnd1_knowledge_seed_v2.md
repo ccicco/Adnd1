@@ -3100,6 +3100,30 @@ R172 were already dropped at the R171b/R172 era cut; git
   modifiers landed (+50/+30, Dex +2), the gap 45 closed / 141 open, the R441
   seed record in place, no wrl hits in the caller TUs. Next after landing: the
   belaying (p. 37).
+- R443 landed 2026-10-14: commit 1f0a8d6 (census 368, pushed
+  e176cf3..1f0a8d6, preflight GREEN on the FIRST run), the WSG BELAYING,
+  printed p. 37 - the belay prose (no table): the climbing-rope intro (150 or
+  200 feet, half an inch, the 2000-pound limit, subject to the R440
+  weakening/breaking rules; the knot rules - only a rope-use proficient
+  character ties a full-strength knot, anyone else loses 500 pounds, different
+  diameters take the smaller limit minus 500); the belayer Climbing Check
+  (failure = the full fall, success bounded by the rope length); the
+  precarious-position jolt second check (failure = both fall) with the
+  secure-position exemption (checks 2 vs 1); the paired-belay sequence (last
+  cannot belay, leader cannot be belayed, one belay at a time, no climbing
+  while belaying, the middle faller drags none below, the failed belayer can
+  be saved by the character above, the first faller is unhelpable - only two
+  per rope). rules/wsgbelay.h NEW (23 inlines, prefix wbl - checked free in
+  all three TUs). Ground truth CLEAN two-way (the user copy OCR vs the djvu
+  word layer Guide_0037 with the Guide_0038 head continuation - every number
+  matched, no eye-reads). Gap 45/141 -> 46/140; census 367 -> 368. rverify
+  GREEN on the FIRST build: 23 mutants, 0 missed. Spec md5s: 1925ade4 authored
+  / 66c5e17d +nl. GITHUB VERIFIED at the pinned full sha
+  1f0a8d663f9c83344908056e4b283f292b837b70: census 368, the R443 audit present
+  once, wsgbelay.h 23 inlines, the belay cells landed (2000/500, checks 2/1,
+  jolt 2 fallers), the gap 46 closed / 140 open, the R442 seed record in
+  place, no wbl hits in the caller TUs. Next after landing: the grappling
+  hooks (p. 38).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
