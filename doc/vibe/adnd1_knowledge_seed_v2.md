@@ -3061,6 +3061,26 @@ R172 were already dropped at the R171b/R172 era cut; git
   landed (0/10/30/60/100), the gap 43 closed / 143 open, the R439 seed record
   in place, no wsr hits in the caller TUs. Next after landing: the roping
   together (p. 37).
+- R441 landed 2026-10-14: commit 1aa49f0 (census 366, pushed
+  4bf7254..1aa49f0, preflight GREEN on the FIRST run), the WSG ROPING
+  TOGETHER, printed p. 37 - the cascade prose (no table): adjacent climbers
+  must recheck even after a success earlier in the same round; a fallen end
+  character forces one adjacent check, a fallen middle character both sides;
+  the wrpCascadePenaltyPct switch ladder 0/10/20/30/40 - a -10% step per
+  fallen character beyond the first (the five-character example on a 200-foot
+  rope cascades -10, -20, -30); the last-pair extra check; the tie capacity -
+  50 feet ties two, one more per additional 50 feet. rules/wsgtog.h NEW (11
+  inlines, prefix wrp - checked free in all three TUs). Ground truth CLEAN
+  two-way (the user copy OCR vs the djvu word layer Guide_0037 - every number
+  matched, no eye-reads). Gap 43/143 -> 44/142; census 365 -> 366. rverify:
+  one authoring-side RED fix before delivery (the cascade switch argument off
+  by one - caught by the audit mirror, rebuilt GREEN: 10 mutants, 0 missed);
+  the DELIVERED spec ran first-try clean on the user side. Spec md5s: 7dabd14e
+  authored / e00f5747 +nl. GITHUB VERIFIED at the pinned full sha
+  1aa49f0ddd41f09f81d44a472357f60723960629: census 366, the R441 audit present
+  once, wsgtog.h 11 inlines, the cascade ladder landed (0/10/20/30/40), the
+  gap 44 closed / 142 open, the R440 seed record in place, no wrp hits in the
+  caller TUs. Next after landing: the rappelling (p. 37).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

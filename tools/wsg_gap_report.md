@@ -52,7 +52,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Stopping a fall (p. 36) - R439: the Table 19 stop fractions, the one-attempt rule, the 50/75/100-foot windows, the protrusion requirement and the slope-self-halt rule pin as rules/wsgstop.h
   - [x] Using rope for movement and climbing (p. 36) - R440: the standard 50-foot coil, the 1500-pound limit, the overload break chance, the weakening ladder and the weakened-rope break chance pin as rules/wsgrope.h
   - [x] Roping together (p. 37) - R441: the adjacent-recheck rule, the end/middle faller rules, the cascade penalty ladder, the last-pair extra check and the tie capacity pin as rules/wsgtog.h
-  - [ ] Rappelling (p. 37)
+  - [x] Rappelling (p. 37) - R442: the 120-feet-per-round base speed, the +50% per-round check modifier, the hang-upside-down failure state, the once-per-round Dexterity recovery and the free-hanging variant (+30%, Dex at +2) pin as rules/wsgrapp.h
   - [ ] Belaying (p. 37)
   - [ ] Use of grappling hooks (p. 38)
   - [ ] Crossing a chasm on a rope (p. 38)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R441: 44 closed, 142 open (the R441 round pins the roping together - the adjacent rechecks with the -10% cascade penalty per fallen character beyond the first, the end and middle faller rules, the last-pair extra check and the 50-feet-per-character tie capacity; the next rounds continue the section - the rappelling, the belaying and the grappling hooks).
+Post-state at R442: 45 closed, 141 open (the R442 round pins the rappelling - the 120-feet-per-round controlled descent with the +50% per-round Climbing Check, the lost-grip failure state and the free-hanging-rope variant at +30% with the +2 Dexterity modifier; the next rounds continue the section - the belaying, the grappling hooks and the chasm crossing).
