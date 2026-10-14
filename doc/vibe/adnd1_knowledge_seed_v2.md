@@ -3856,6 +3856,84 @@ R172 were already dropped at the R171b/R172 era cut; git
   Next after landing: the use of a
   capsized vessel (p. 46), then the flying
   mounts (p. 47).
+- R459 landed 2026-10-14: commit 5018a21
+  (full 5018a21a1136fa30a8349a0f4
+  4370746fdd6f366, census 384, pushed
+  24b84d5..5018a21, preflight GREEN on
+  the clean-run THIRD attempt, the splice
+  double-run clean: applied 6 /
+  already 6), the WSG USE OF A
+  CAPSIZED VESSEL, printed p. 46 - a
+  pure-prose round (no printed grid):
+  the natural buoyancy (most vessels
+  remain afloat just beneath the surface
+  after capsizing or hull damage); the
+  flotation preconditions (carrying no
+  passengers and not more than 10% of
+  the listed maximum cargo capacity,
+  with the small-rowboat example - toss
+  all but 200 gp worth and the foundering
+  craft sinks to slightly beneath the
+  surface and remains); the cling-to-the-
+  sides flotation (usable as long as the
+  weight is evenly distributed); the
+  twice-capacity support figure (eight
+  characters around a large rowboat of
+  normal capacity four); and the sink
+  rules (exceeding the weight limit or
+  uneven distribution sinks the craft
+  too far below to be usable).
+  rules/wsgcapsized.h NEW (13 inlines:
+  5 consts + 8 bools, prefix wcv,
+  checked free in all three TUs). Ground
+  truth CLEAN two-way: the user copy OCR
+  (page 47) vs the djvu word layer
+  (Guide_0046) - NO eye-reads needed.
+  The numbers cross-check against the
+  R455 Table 25 pin: the small rowboat
+  2000 gp cargo maximum gives the 10%
+  = 200 gp example, and the large
+  rowboat capacity 4 gives the twice-
+  capacity 8. Gap 61/125 -> 62/124;
+  census 383 -> 384. rverify GREEN:
+  13 mutants, 0 missed. REPAIRED before
+  landing: the first spec carried
+  Python-style '!= True' in two example
+  exprs - clean in the Python audit
+  mirror (True is valid Python) but
+  invalid C++ (5 undeclared-identifier
+  errors), caught by the user preflight
+  RED, nothing committed; fixed to
+  '!= 1' (valid both sides), tree
+  reverted, double-run and rverify
+  re-run clean. Lesson: NEVER use
+  Python True/False in example exprs -
+  use != 1 / == 0. Spec md5s:
+  f9b1a666c5c7fd2900d9777d8b2549f4
+  user-side / 840ec2eefee2a1a5b9909c13
+  7c961d77 +nl, vs 98403989 authored /
+  f9b1a666 +nl (canvas r459-splice) -
+  the delivery-side newline variance
+  again, THIRTEEN rounds running
+  (R447-R459), cosmetic every time (as
+  in R457/R458, the user-side FILE hash
+  matches the authored +nl hash exactly,
+  the +nl variant drifts). Base sha
+  24b84d5b61a1159579f63619af834b932
+  3c49a29. GITHUB VERIFIED at 5018a21a
+  1136fa30a8349a0f44370746fdd6f366:
+  census 384, the R459 audit line
+  present, the wsgcapsized.h include at
+  line 164, 13 wcv inlines, the gap box
+  [x] flipped, Post-state at R459 once,
+  the R458 seed record in place, NO True
+  tokens in the landed wcv audit block,
+  no wcv hits in the caller TUs, and the
+  engine re-run on the landed tree reads
+  applied 0 / already 6 (canvas
+  r459-splice). Next after landing: the
+  flying mounts (p. 47), then the to
+  fall or not to fall (p. 48).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
