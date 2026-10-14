@@ -3286,6 +3286,53 @@ R172 were already dropped at the R171b/R172 era cut; git
   Next after landing: the overland movement
   in reduced visibility with Table 23 (p.
   40).
+- R449 landed 2026-10-14: commit 1c7b13c
+  (full 1c7b13c9bdb75c5bca54a6a89117b75b
+  01690550, census 374, pushed 55284c8..
+  1c7b13c, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG OVERLAND MOVEMENT IN
+  REDUCED VISIBILITY, printed pp. 40-41 - the visibility prose and TABLE 23
+  MOVEMENT IN REDUCED VISIBILITY: the daylight assumption behind the
+  previously described rates; the other-factors-first multiplication
+  (encumb-rance, terrain, climbing applied to determine the current normal
+  rate, THEN multiplied by the table entry; the 1/1 clear-daylight cell means
+  no further reduction); the on-foot daylight hazard avoidance (no trees, no
+  roots) with the night exception (a pit or cliff edge unless the surface is
+  tested or probed with a pole); the infravision heat-only detection (a
+  warm-blooded ambush yes, a cliff edge usually no); the Dex check above the
+  maximum safe speed with the blunder/stop-short consequences (saddle, wagon
+  seat, chariot front) and the twice-the-figure cap; Table 23 (the three light
+  rows - daylight, moonlight, darkness - x the five conditions - clear,
+  moderate fog, heavy fog or snow, heavy snow with wind, blowing sand or dust
+  - from 1/1 down to 1/8, each cell split into numerator and denominator).
+  rules/wsgvis.h NEW (21 inlines, prefix wsv - checked free in all three TUs).
+  Ground truth: the prose CLEAN two-way (the user copy OCR vs the djvu word
+  layer Guide_0040/Guide_0041 - the 2x cap and the 1/8 sandstorm-in-darkness
+  example matched); the Table 23 grid GARBLED in the djvu word layer, so every
+  cell was confirmed by TWO independent IIIF eye-reads of leaf 40 - the OCR
+  and both eye-reads agree on all 15 fractions. Gap 51/135 -> 52/134; census
+  373 -> 374. rverify GREEN after TWO authoring-side RED fixes before delivery
+  (the monotonic row checks had the cross-multiplication inverted - caught by
+  the audit mirror, rebuilt GREEN): 41 mutants,
+  0 missed. Spec md5s: 9b9d6d0a authored /
+  d5a0467c +nl - the user-side file hashed
+  df55d840 / 9c41bb63 +nl, the delivery-side
+  newline variance now THREE rounds running
+  (R447-R449; cosmetic every time - the same 6
+  patches, clean mirror; diagnose the bn
+  fetch at the next mismatch). GITHUB VERIFIED
+  at the pinned full sha
+  1c7b13c9bdb75c5bca54a6a89117b75b
+  01690550: census 374, the R449 audit with
+  the bad-0 printf at line 49374, the include
+  at line 154, wsgvis.h 21 inlines, the gap
+  52 closed / 134 open flipped with the
+  Post-state at R449, the R448 seed record in
+  place, no wsv hits in the caller TUs
+  (canvas r449-splice). Next after landing:
+  the swimming rules with Table 24 (pp.
+  41-42).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
