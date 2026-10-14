@@ -43,7 +43,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Encumbrance and movement for land-based animals (p. 32) - R433: the normal/maximum load rules, the forced-move stamina rules and Table 13 pin as rules/wsganimal.h
   - [x] Movement of land-based vehicles (p. 33) - R434: the cart, chariot and wagon rates and loads, the no-very-rugged rule and the pathless one-category-worse rule pin as rules/wsgvehicle.h
   - [ ] Movement across special terrain (p. 33)
-  - [ ] Climbing (p. 34)
+  - [x] Climbing (p. 34) - R435: the Table 15 rates and restrictions, the encumbrance modifications, the surface types and conditions and the chance-of-falling rating pin as rules/wsgclimb.h
   - [ ] Surface types (p. 34)
   - [ ] Surface conditions (p. 34)
   - [ ] Chance of falling (p. 34)
@@ -170,7 +170,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 12: character movement on foot** (p. 31) - R432
 - [x] **Table 13: encumbrance limits and movement rates for animals** (p. 32) - R433
 - [x] **Table 14: movement of vehicles** (p. 33) - R434
-- [ ] **Table 15: climbing movement rates** (p. 33)
+- [x] **Table 15: climbing movement rates** (p. 33) - R435
 - [ ] **Table 16: modifiers to non-thief's climbing rating** (p. 35)
 - [ ] **Table 17: damage from free fall or severe slope** (p. 35)
 - [ ] **Table 18: damage from tumbling down moderate or gentle slope** (p. 36)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R434: 33 closed, 153 open (the R434 round pins the land-based vehicles - Table 14 (the 21 cart, chariot and wagon rows x the normal and rugged rates and the maximum loads) with the no-very-rugged rule and the pathless one-category-worse rule; the next rounds continue the chapter - movement across special terrain, Table 15, the climbing rates).
+Post-state at R435: 35 closed, 151 open (the R435 round pins the climbing - Table 15 (the 13 surface rows x the three condition rates and the per-cell restricted flags) with the encumbrance modifications, the surface types and conditions and the chance-of-falling rating; the next rounds continue the section - the climbing checks, Table 16).

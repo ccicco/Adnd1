@@ -2912,6 +2912,27 @@ R172 were already dropped at the R171b/R172 era cut; git
   light-war very-rugged cells absent from the djvu text layer were settled by
   the IIIF full-resolution eye-reads. rverify GREEN: 164 mutants, 0 missed.
   Census 357 -> 358.
+- R434 landed 2026-10-14: commit 3d74d6a (census 359, pushed
+  eb8937f..3d74d6a, preflight GREEN on the FIRST run - the fourth clean
+  first-try land in a row), the WSG LAND-BASED VEHICLES, printed p. 33 - Table
+  14 (the 21 cart, chariot and wagon rows by the animal team x the normal and
+  rugged miles-per-half-day rates and the maximum gp loads; a 0 rugged entry =
+  the vehicle cannot go there) with the prose rules (the miles-per-half-day
+  scale, the no-very-rugged rule, the flat-or-path assumption, the pathless
+  one-category-worse rule and the lightly-forested example). Key pins: the
+  small cart/pony 8/4/3500, the medium cart/pony cannot go rugged (0), the
+  large chariot/heavy horses fastest at 16/10, the large wagon/heavy horses
+  hauling the most at 15000 gp. rules/wsgvehicle.h NEW (15 inlines, prefix
+  wvv, checked free). Ground truth three-way verified (the djvu garbled four
+  rows settled by the IIIF full-res eye-reads; the compiled-tables copy reads
+  the cart medium/pony rugged cell as 6 - a djvu OCR error, the body text and
+  the user copy both read 0). Gap 31/155 -> 33/153; census 358 -> 359. rverify
+  GREEN: 75 mutants, 0 missed. Spec md5s: 357932ca authored / f5ed3223 +nl.
+  GITHUB VERIFIED at the pinned full sha
+  3d74d6ac18408f459bb55030360b5f54526d6f2c: census 359, the R434 audit
+  present, wsgvehicle.h 15 inlines, the gap 33 closed / 153 open, the R433
+  seed record in place. Next after landing: Table 15, the climbing rates - the
+  movement-across-special-terrain section.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
