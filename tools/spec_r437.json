@@ -1,0 +1,270 @@
+{
+ "round": 437,
+ "title": "the WSG damage from falling - Table 17 (the free-fall and severe-slope damage bands)",
+ "prefix": "wdf",
+ "header_file": "rules/wsgfall.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 361,
+ "inline_count": 14,
+ "audit_label": "R437 WSG falling damage pin audit",
+ "audit_comment": "The damage-from-falling slice pins Table 17 (the six fall-distance bands x the band-minimum distances and the cumulative damage dice) with the falling-vs-tumbling prose (the vertical-drop definition, the 1d6-cumulative-per-10-feet basis, the recurring-impact rule on severe slopes, the smooth/slippery abrasion note and the 1000 and 600-800 feet-per-round rates) (rules/wsgfall.h, prefix wdf); census 361 -> 362.",
+ "banner": {
+  "title": "The WSG DAMAGE FROM FALLING, R437: Table 17 (the damage from free fall or severe slope - the six fall-distance bands: 10 feet 1d6, 11-20 feet 3d6, 21-30 feet 6d6, 31-40 feet 10d6, 41-50 feet 15d6 and 51 feet or more 20d6, the maximum) with the prose rules: falling is distinguished from tumbling (the former much more liable to cause serious injury or death, the latter able in the least perilous circumstances to result in nothing more than a minor inconvenience; tumbling down a moderate or gentle slope is Table 18, the next round), falling describes a vertical drop (the character releases his hold on a cliff face or a severe slope and plummets until hitting a surface that stops the fall), the damage is 1d6 cumulative for each 10 feet fallen, the figures apply to free fall and to tumbling down a severe slope (the recurring impact with the slope plus the stop at the end), on a smooth and/or slippery slope the abrasion damage on the way down is not a great factor but the greater velocity makes the end result essentially the same as a rough slope at a slower speed, and an unimpeded fall covers 1000 feet per round in free fall or 600-800 feet per round down a severe slope depending on the texture and degree of slipperiness - the round continues the movement-across-special-terrain section. Census 361 -> 362.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 35-36; the user own copy OCR cross-checked against the archive djvu word layer (five of six rows clean; the 11-20 feet dice cell is MISSING from the djvu text layer) and the IIIF full-resolution eye-reads (two independent reads of the full table; the disputed 3d6 cell matched the user copy exactly).",
+  "sentinel": "The Table 17 figures are cumulative damage dice by the fall-distance band - 1d6 for each 10 feet fallen, capped at the 20d6 maximum in the 51-feet-or-more band. They apply to free fall and to tumbling down a severe slope."
+ },
+ "consts": [
+  {
+   "name": "wdfFallBandCount",
+   "value": 6,
+   "comment": "The Table 17 damage-band count (10, 11-20, 21-30, 31-40, 41-50 and 51-or-more feet)."
+  },
+  {
+   "name": "wdfFreeFallRate",
+   "value": 1000,
+   "comment": "A character whose fall is not impeded or stopped falls 1000 feet per round in free fall."
+  },
+  {
+   "name": "wdfSevereRateMin",
+   "value": 600,
+   "comment": "An unimpeded fall down a severe slope covers at least 600 feet per round."
+  },
+  {
+   "name": "wdfSevereRateMax",
+   "value": 800,
+   "comment": "An unimpeded fall down a severe slope covers at most 800 feet per round, depending on the texture and degree of slipperiness of the slope."
+  },
+  {
+   "name": "wdfMaxFallDice",
+   "value": 20,
+   "comment": "The 51-feet-or-more band damage is 20d6 - the maximum."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wdfFallingVsTumbling",
+   "value": true,
+   "comment": "A distinction is made between falling and tumbling - the former is much more liable to cause serious injury or death, while the latter can in the least perilous circumstances result in nothing more than a minor inconvenience."
+  },
+  {
+   "name": "wdfFallingIsVerticalDrop",
+   "value": true,
+   "comment": "Falling describes a vertical drop: the character releases his hold on a cliff face or a severe slope and plummets down until hitting a surface that stops the fall."
+  },
+  {
+   "name": "wdfDiceCumulativePer10Ft",
+   "value": true,
+   "comment": "A character takes damage from a fall at the rate of 1d6 cumulative for each 10 feet fallen."
+  },
+  {
+   "name": "wdfAppliesFreeFallOrSevere",
+   "value": true,
+   "comment": "The Table 17 damage figures apply whether the character is in free fall or tumbling down a severe slope."
+  },
+  {
+   "name": "wdfSevereTumbleRecurringImpact",
+   "value": true,
+   "comment": "Tumbling down a severe slope, the character is assumed to take some damage from recurring impact with the slope itself, in addition to being hurt when he comes to a stop at the end of the fall."
+  },
+  {
+   "name": "wdfSmoothSlipperyAbrasionNote",
+   "value": true,
+   "comment": "On a smooth and/or slippery severe slope, abrasion damage on the way down is not a great factor - but the body reaches a greater velocity, so the end result is essentially the same as tumbling down a rough slope at a slower speed."
+  },
+  {
+   "name": "wdfTumbleModerateGentleNext",
+   "value": true,
+   "comment": "Tumbling - handled by Table 18 - is what happens to a character who slips and leaves his feet, or releases his handholds and footholds, and tumbles down a moderate or gentle slope; it is pinned by the next round."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "Table 17: the damage from free fall or severe slope",
+   "tag": "17",
+   "count": "wdfFallBandCount",
+   "col_default": 0,
+   "cols": [
+    "wdfFallMinFt",
+    "wdfFallDice"
+   ],
+   "col_comments": [
+    "The band-minimum distance of the fall in feet by band row (the 10, 11-20, 21-30, 31-40, 41-50 and 51-or-more-feet bands; the final band is open-ended).",
+    "The cumulative damage dice for the band (1d6 for each 10 feet fallen; 20d6 is the maximum)."
+   ],
+   "audit_comment": "the Table 17 grid: the six fall-distance bands (the 10, 11-20, 21-30, 31-40, 41-50 and 51-or-more-feet bands) x the band-minimum distances and the cumulative damage dice",
+   "data": [
+    [
+     10,
+     1
+    ],
+    [
+     11,
+     3
+    ],
+    [
+     21,
+     6
+    ],
+    [
+     31,
+     10
+    ],
+    [
+     41,
+     15
+    ],
+    [
+     51,
+     20
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['wdfFallMinFt'](1) != 11 or m['wdfFallDice'](1) != 3",
+   "note": "the 11-20 feet band: 3d6 cumulative - the cell MISSING from the djvu text layer, settled by two full-res eye-reads"
+  },
+  {
+   "expr": "m['wdfFallDice'](5) != 20 or m['wdfFallDice'](5) != m['wdfMaxFallDice']()",
+   "note": "the 51-feet-or-more band is capped at the 20d6 maximum"
+  },
+  {
+   "expr": "m['wdfFreeFallRate']() != 1000 or m['wdfSevereRateMin']() + m['wdfSevereRateMax']() != 1400",
+   "note": "the unimpeded rates: 1000 feet per round in free fall, 600 through 800 feet per round down a severe slope (the 600 plus the 800 span 1400)"
+  },
+  {
+   "expr": "m['wdfFallDice'](1) - m['wdfFallDice'](0) * 3 != 0",
+   "note": "the first two bands: 3d6 at 20 feet is three times the 1d6 at 10 feet"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['wdfFallDice'](0) >= m['wdfFallDice'](1) or m['wdfFallDice'](1) >= m['wdfFallDice'](2) or m['wdfFallDice'](2) >= m['wdfFallDice'](3) or m['wdfFallDice'](3) >= m['wdfFallDice'](4) or m['wdfFallDice'](4) >= m['wdfFallDice'](5)",
+   "note": "the Table 17 dice are strictly increasing band by band"
+  },
+  {
+   "expr": "m['wdfFallMinFt'](1) != 11 or m['wdfFallMinFt'](2) != 21 or m['wdfFallMinFt'](3) != 31 or m['wdfFallMinFt'](4) != 41 or m['wdfFallMinFt'](5) != 51",
+   "note": "the Table 17 bands are contiguous 10-foot bands: each minimum sits one foot above the previous multiple of 10"
+  }
+ ],
+ "header_sections": {
+  "the falling prose rules": [
+   {
+    "kind": "const",
+    "name": "wdfFallBandCount"
+   },
+   {
+    "kind": "bool",
+    "name": "wdfFallingVsTumbling"
+   },
+   {
+    "kind": "bool",
+    "name": "wdfFallingIsVerticalDrop"
+   },
+   {
+    "kind": "bool",
+    "name": "wdfDiceCumulativePer10Ft"
+   },
+   {
+    "kind": "bool",
+    "name": "wdfAppliesFreeFallOrSevere"
+   },
+   {
+    "kind": "bool",
+    "name": "wdfSevereTumbleRecurringImpact"
+   },
+   {
+    "kind": "bool",
+    "name": "wdfSmoothSlipperyAbrasionNote"
+   },
+   {
+    "kind": "bool",
+    "name": "wdfTumbleModerateGentleNext"
+   }
+  ],
+  "the fall rates": [
+   {
+    "kind": "const",
+    "name": "wdfFreeFallRate"
+   },
+   {
+    "kind": "const",
+    "name": "wdfSevereRateMin"
+   },
+   {
+    "kind": "const",
+    "name": "wdfSevereRateMax"
+   }
+  ],
+  "Table 17: the free-fall and severe-slope damage": [
+   {
+    "kind": "table",
+    "name": "Table 17: the damage from free fall or severe slope"
+   },
+   {
+    "kind": "const",
+    "name": "wdfMaxFallDice"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] Damage from falling (p. 35)",
+   "to": "  - [x] Damage from falling (p. 35) - R437: the Table 17 damage bands, the falling-vs-tumbling distinction, the 1d6-cumulative basis and the fall rates pin as rules/wsgfall.h",
+   "note": "damage from falling"
+  },
+  {
+   "from": "- [ ] **Table 17: damage from free fall or severe slope** (p. 35)",
+   "to": "- [x] **Table 17: damage from free fall or severe slope** (p. 35) - R437",
+   "note": "Table 17"
+  },
+  {
+   "from": "Post-state at R436: 37 closed, 149 open (the R436 round pins the climbing checks - Table 16 (the 13 surface rows x the three condition modifiers) with the other modifiers (the encumbrance, race, armor, strength and hands rules), the thief modifiers and the initial, intermediate and final check rules; the next rounds continue the section - the damage from falling, Table 17).",
+   "to": "Post-state at R437: 39 closed, 147 open (the R437 round pins the damage from falling - Table 17 (the six fall-distance bands x the cumulative damage dice) with the falling-vs-tumbling distinction and the fall rates; the next rounds continue the section - the tumbling damage Table 18, the stopping of a fall Table 19).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 39,
+  "open": 147
+ },
+ "include_comment": "the WSG damage from falling",
+ "include_after": "#include \"rules/wsgcheck.h\"  // R436: the WSG climbing checks",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R436 landed 2026-10-14: commit 9d34030 (census 361, pushed",
+ "prev_record": [
+  "- R436 landed 2026-10-14: commit 9d34030 (census 361, pushed",
+  "  76e9023..9d34030, preflight GREEN on the FIRST run - the sixth clean",
+  "  first-try land in a row), the WSG CLIMBING CHECKS, printed p. 35 - Table 16",
+  "  (the same 13 surface rows as Table 15 x the three condition modifiers to the",
+  "  non-thief Climbing Rating, from the +70 rough gentle non-slippery bonus down",
+  "  to the -50 cliff smooth no-ledges slippery penalty) with the 100 percent",
+  "  no-fall and 5 percent floor rules, the other modifiers (encumbrance, race,",
+  "  armor, strength and hands), the thief modifiers (the +30 auto rule, the",
+  "  doubled and quadrupled falling chances, the shared 5 percent floor) and the",
+  "  initial, intermediate and final check rules. rules/wsgcheck.h NEW (49",
+  "  inlines, prefix wck, checked free). Ground truth three-way verified (the",
+  "  djvu was missing the normal moderate, normal severe and both cliff smooth",
+  "  rows and garbled the smooth gentle row; four IIIF full-res eye-reads matched",
+  "  the user copy exactly). NOTE: the IIIF image path changed - use the",
+  "  iiif.archive.org/image/iiif/2 full URL with the jp2.zip path; the Table 16",
+  "  page is image file 0035.jp2. The first build had one TRUE-on-healthy example",
+  "  (the no-fall worked case written as equality); rewritten as the comparison.",
+  "  Gap 35/151 -> 37/149; census 360 -> 361. rverify GREEN: 85 mutants, 0",
+  "  missed. Spec md5s: be5e4b95 authored / fda106d4 +nl. GITHUB VERIFIED at the",
+  "  pinned full sha 9d3403089fe162b6329468792fd74f2fce5bb285: census 361, the",
+  "  R436 audit present once, wsgcheck.h 49 inlines, the gap 37 closed / 149",
+  "  open, the R435 seed record in place. Next after landing: the damage from",
+  "  falling, Table 17 (p. 35)."
+ ]
+}

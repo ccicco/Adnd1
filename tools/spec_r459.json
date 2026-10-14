@@ -1,0 +1,257 @@
+{
+ "round": 459,
+ "title": "the WSG use of a capsized vessel",
+ "prefix": "wcv",
+ "header_file": "rules/wsgcapsized.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 383,
+ "inline_count": 13,
+ "audit_label": "R459 WSG capsized use pin audit",
+ "audit_comment": "The capsized-use slice pins the natural buoyancy (most vessels remain afloat just beneath the surface after capsizing or hull damage), the flotation preconditions (no passengers and no more than 10% of the listed maximum cargo capacity, with the small-rowboat 200 gp example), the cling-to-the-sides flotation with the even-weight-distribution requirement, the twice-capacity support figure (eight characters around a large rowboat), and the sink rules when the weight limit is exceeded or the weight is unevenly distributed (rules/wsgcapsized.h, prefix wcv); census 383 -> 384.",
+ "banner": {
+  "title": "The WSG USE OF A CAPSIZED VESSEL, R459: because of the natural buoyancy of the materials from which they are made, most vessels can remain afloat just beneath the surface of the water even after they are capsized or after they have suffered hull damage. However, this is true only of vessels that are carrying no passengers and not more than 10% of their listed maximum cargo capacity. For example, if characters in a small rowboat that is foundering can get out of it and toss overboard all but 200 gp worth of their cargo or gear, the craft will sink to slightly beneath the surface of the water and remain there. It is then possible for characters to cling to the sides of the craft and use it as a flotation device, as long as their weight is evenly distributed. A capsized craft will support a number of characters equal to twice its normal capacity; that is, up to eight characters can cluster around the sides of a large rowboat and use it to keep from going under themselves. If this weight limit is exceeded, or if the weight is not evenly distributed, the craft will sink too far below the surface to be usable in this fashion.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 46; the user own copy OCR (page 47) cross-checked against the archive djvu word layer (Guide_0046) - the prose reads clean two-way; NO eye-reads needed (a pure-prose section, no printed grid)."
+ },
+ "consts": [
+  {
+   "name": "wcvVesselCount",
+   "value": 8,
+   "comment": "The same eight vessels as Tables 25 and 26: kayak, small canoe, small rowboat, coracle, large canoe, large rowboat, small barge and large barge."
+  },
+  {
+   "name": "wcvMaxCargoPercent",
+   "value": 10,
+   "comment": "The flotation trick holds only for vessels carrying not more than 10% of their listed maximum cargo capacity."
+  },
+  {
+   "name": "wcvSupportMultiplier",
+   "value": 2,
+   "comment": "A capsized craft will support a number of characters equal to twice its normal capacity."
+  },
+  {
+   "name": "wcvExampleRowboatCargoGp",
+   "value": 200,
+   "comment": "The small-rowboat example: the foundering craft remains beneath the surface once all but 200 gp worth of cargo or gear is tossed overboard."
+  },
+  {
+   "name": "wcvExampleRowboatSupport",
+   "value": 8,
+   "comment": "The large-rowboat example: up to eight characters can cluster around the sides and use it to keep from going under."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wcvBuoyantJustBeneathSurface",
+   "value": true,
+   "comment": "Because of the natural buoyancy of their materials, most vessels can remain afloat just beneath the surface even after capsizing or hull damage."
+  },
+  {
+   "name": "wcvWorksAfterCapsizeOrHullDamage",
+   "value": true,
+   "comment": "The flotation holds both for a capsized vessel and for one that has suffered hull damage."
+  },
+  {
+   "name": "wcvRequiresNoPassengers",
+   "value": true,
+   "comment": "The flotation is true only of vessels carrying no passengers."
+  },
+  {
+   "name": "wcvCargoWithinMaxPercent",
+   "value": true,
+   "comment": "The flotation is true only of vessels carrying not more than 10% of their listed maximum cargo capacity."
+  },
+  {
+   "name": "wcvClingToSidesAsFlotation",
+   "value": true,
+   "comment": "Characters can cling to the sides of the sunken craft and use it as a flotation device."
+  },
+  {
+   "name": "wcvWeightMustBeEven",
+   "value": true,
+   "comment": "The flotation holds only as long as the clinging weight is evenly distributed."
+  },
+  {
+   "name": "wcvExcessWeightSinks",
+   "value": true,
+   "comment": "If the twice-capacity weight limit is exceeded, the craft sinks too far below the surface to be usable."
+  },
+  {
+   "name": "wcvUnevenWeightSinks",
+   "value": true,
+   "comment": "If the weight is not evenly distributed, the craft sinks too far below the surface to be usable."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['wcvMaxCargoPercent']() != 10 or m['wcvExampleRowboatCargoGp']() != 200 or m['wcvExampleRowboatCargoGp']() != 20 * m['wcvMaxCargoPercent']()",
+   "note": "the 10% cargo condition with the small-rowboat example: 200 gp is ten percent of the 2000 gp listed maximum cargo capacity"
+  },
+  {
+   "expr": "m['wcvSupportMultiplier']() != 2 or m['wcvExampleRowboatSupport']() != 8 or m['wcvExampleRowboatSupport']() != 4 * m['wcvSupportMultiplier']()",
+   "note": "the twice-capacity support: the large rowboat with a normal capacity of four supports eight clinging characters - twice its capacity"
+  },
+  {
+   "expr": "m['wcvRequiresNoPassengers']() != 1 or m['wcvCargoWithinMaxPercent']() != 1 or m['wcvWeightMustBeEven']() != 1",
+   "note": "the three preconditions: no passengers, cargo within the 10% limit, and the clinging weight evenly distributed"
+  },
+  {
+   "expr": "m['wcvExcessWeightSinks']() != 1 or m['wcvUnevenWeightSinks']() != 1",
+   "note": "the two sink triggers: exceeding the twice-capacity weight limit, or uneven weight distribution - either sinks the craft too far below the surface to be usable"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the buoyancy preconditions": [
+   {
+    "kind": "const",
+    "name": "wcvVesselCount"
+   },
+   {
+    "kind": "bool",
+    "name": "wcvBuoyantJustBeneathSurface"
+   },
+   {
+    "kind": "bool",
+    "name": "wcvWorksAfterCapsizeOrHullDamage"
+   },
+   {
+    "kind": "const",
+    "name": "wcvMaxCargoPercent"
+   },
+   {
+    "kind": "bool",
+    "name": "wcvRequiresNoPassengers"
+   },
+   {
+    "kind": "bool",
+    "name": "wcvCargoWithinMaxPercent"
+   },
+   {
+    "kind": "const",
+    "name": "wcvExampleRowboatCargoGp"
+   }
+  ],
+  "the flotation support": [
+   {
+    "kind": "const",
+    "name": "wcvSupportMultiplier"
+   },
+   {
+    "kind": "const",
+    "name": "wcvExampleRowboatSupport"
+   },
+   {
+    "kind": "bool",
+    "name": "wcvClingToSidesAsFlotation"
+   },
+   {
+    "kind": "bool",
+    "name": "wcvWeightMustBeEven"
+   }
+  ],
+  "the sink rules": [
+   {
+    "kind": "bool",
+    "name": "wcvExcessWeightSinks"
+   },
+   {
+    "kind": "bool",
+    "name": "wcvUnevenWeightSinks"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] Use of a capsized vessel (p. 46)",
+   "to": "  - [x] Use of a capsized vessel (p. 46) - R459: the natural buoyancy (most vessels remain afloat just beneath the surface after capsizing or hull damage), the flotation preconditions (no passengers and no more than 10% of the listed maximum cargo, with the small-rowboat 200 gp example), the cling-to-the-sides flotation requiring even weight distribution, the twice-capacity support figure (eight characters around a large rowboat) and the sink rules for excess or uneven weight) pin as rules/wsgcapsized.h",
+   "note": "use of a capsized vessel"
+  },
+  {
+   "from": "Post-state at R458: 61 closed, 125 open (the R458 round pins the portaging - the solo-portage gate, the portage crews with their twice-minimum maximums and the 3-inch move rate; the next rounds continue the chapter - the use of a capsized vessel and the flying mounts).",
+   "to": "Post-state at R459: 62 closed, 124 open (the R459 round pins the use of a capsized vessel - the buoyancy with its preconditions and the twice-capacity flotation with the sink rules; the next rounds continue the book - the flying mounts and the fall rules).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 62,
+  "open": 124
+ },
+ "include_comment": "the WSG use of a capsized vessel",
+ "include_after": "#include \"rules/wsgportage.h\"  // R458: the WSG portaging",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R458 landed 2026-10-14: commit 24b84d5",
+ "prev_record": [
+  "- R458 landed 2026-10-14: commit 24b84d5",
+  "  (full 24b84d5b61a1159579f63619af834",
+  "  b9323c49a29, census 383, pushed 9dbb69e..",
+  "  24b84d5, preflight GREEN on the FIRST run,",
+  "  the splice double-run clean: applied 6 /",
+  "  already 6), the WSG PORTAGING, printed pp. 45-46 (spans the",
+  "  page break) - a pure-prose round (no",
+  "  printed grid): the solo-portage gate (a",
+  "  vessel smaller than a large rowboat can",
+  "  be portaged by one character able to",
+  "  support its encumbrance without becoming",
+  "  severely encumbered); the severe-",
+  "  encumbrance bar (severely encumbered",
+  "  characters cannot portage or help to",
+  "  portage); the portage-crew minimums and",
+  "  twice-minimum maximums (one and two",
+  "  below the large rowboat, two and four",
+  "  for the large rowboat and small barge,",
+  "  four and eight for the large barge; a",
+  "  third carrier beyond the maximum is of",
+  "  no use - the small-canoe example); and",
+  "  the portage move rate (3 inches, 3",
+  "  miles in eight hours, 30 feet per",
+  "  round, regardless of terrain or overall",
+  "  encumbrance status). rules/wsgportage.h",
+  "  NEW (16 inlines: 6 consts + 8 bools +",
+  "  the synthesized 2-column portage-crew",
+  "  grid C28, prefix wpg, checked free in",
+  "  all three TUs). Ground truth CLEAN",
+  "  two-way: the user copy OCR (pages",
+  "  46-47) vs the djvu word layer",
+  "  (Guide_0045/0046) - the djvu garbles",
+  "  only the page-break solo clause, which",
+  "  the OCR reads whole and the continuation",
+  "  text confirms; NO eye-reads needed.",
+  "  Gap 60/126 -> 61/125; census 382 -> 383.",
+  "  rverify GREEN: 30 mutants, 0 missed.",
+  "  Spec md5s: 4089b5be60b8d1ffb4e695340d",
+  "  53f77c user-side / 25744b106ccc627e361755",
+  "  22000df386 +nl, vs 46e1f794 authored /",
+  "  4089b5be +nl (canvas r458-splice) - the",
+  "  delivery-side newline variance again,",
+  "  TWELVE rounds running (R447-R458),",
+  "  cosmetic every time (as in R457, the",
+  "  user-side FILE hash matches the authored",
+  "  +nl hash exactly, the +nl variant",
+  "  drifts); diagnose the bn fetch at the",
+  "  next mismatch. Base sha",
+  "  9dbb69e26002d1fc8a9473d12d0f1a5feb",
+  "  71577. GITHUB VERIFIED at 24b84d5b61a",
+  "  1159579f63619af834b9323c49a29: census",
+  "  383, the R458 audit line present, the",
+  "  wsgportage.h include at line 163, 16",
+  "  wpg inlines, the gap box [x] flipped,",
+  "  Post-state at R458 once, the R457 seed",
+  "  record in place, no wpg hits in the",
+  "  caller TUs, and the engine re-run on",
+  "  the landed tree reads applied 0 /",
+  "  already 6 (canvas r458-splice).",
+  "  Next after landing: the use of a",
+  "  capsized vessel (p. 46), then the flying",
+  "  mounts (p. 47)."
+ ]
+}

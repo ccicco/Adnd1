@@ -1,0 +1,454 @@
+{
+ "round": 444,
+ "title": "the WSG grappling hooks",
+ "prefix": "wgh",
+ "header_file": "rules/wsggrap.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 368,
+ "inline_count": 31,
+ "audit_label": "R444 WSG grappling hooks pin audit",
+ "audit_comment": "The grappling-hooks slice pins the 1/3-of-strength rounded-up times-10-feet throw (Str 8 = 30 feet), the horizontal throw (same as vertical on a 30-degree-or-less incline, doubled from a secure position with a 10-foot whirling radius), the one-round throw with the 1d4-round re-coil on a miss, the 01-05 self-hit for 1d6 damage on a missed throw directly above, the 3-foot climb bonus for the unencumbered, Table 20 GRAPPLING SUCCESS (10 terrain rows x the protrusion pair and the non-slippery/slightly slippery/slippery catch chances), the solid vs not-solid protrusion procedure (solid holds indefinitely, not-solid gives way after 1d6 rounds of climbing) and the recheck-after-10-feet rule (rules/wsggrap.h, prefix wgh); census 368 -> 369.",
+ "banner": {
+  "title": "The WSG USE OF GRAPPLING HOOKS, R444: the hook prose and Table 20 - the other piece of equipment any climber can use (thief or non-thief, mountaineer or not) is a grappling hook, a three- or four-pronged metal hook attached to the end of a rope and thrown toward a protrusion in hopes it catches and holds. Hooks are normally needed only for severe slopes and cliff faces but expedite a moderate slope, especially a slippery one. A character throws a hook upward a maximum of 1/3 of his strength score (rounded up) times 10 feet - strength 8 reaches 30 feet above the head. A horizontal throw (a 30-degree-or-less incline) matches the vertical distance unless the thrower is in a secure position with a 10-foot whirling radius, in which case he throws twice as far. A throw takes one round; a miss costs the next 1d4 rounds coiling the rope. A missed throw at a target directly above with a roll of 01-05 hits the thrower for 1d6 damage. Climbing an anchored rope gives a 3-foot bonus to the climbing movement rate if lightly or not encumbered, otherwise no movement benefit. Table 20 pairs the Chance of Protrusion (a percentile roll at or above the first number means a protrusion exists; at or above the second it is solid and holds indefinitely; between the two it gives way after 1d6 rounds of climbing) with the condition catch chances (a second percentile roll at or above the number means the throw succeeded); with no protrusion in range, recheck after traveling 10 feet vertically or horizontally. Census 368 -> 369.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 38; the user own copy OCR cross-checked against the archive djvu word layer (Guide_0038.djvu) with IIIF eye-reads - the djvu is garbled at the last Table 20 row (it reads 60/90 m 96 99), at the strength fraction and at the climb bonus; two independent eye-reads of each zone matched the user copy exactly: the last row is 80/90 with 92/99/99, the throw is 1/3 of strength rounded up times 10 feet, and the bonus is a 3-FOOT bonus (the OCR inch mark resolved to the printed foot mark, no plus sign). Every other cell and number matched the djvu clean.",
+  "sentinel": "The hook throw: 1/3 of strength (rounded up) times 10 feet, one round per attempt, 1d4 rounds to re-coil a miss, 01-05 on a missed throw directly above hits the thrower for 1d6. The Table 20 last row (cliff, smooth, no ledges): protrusion 80/90, catching at 92/99/99 - and a not-solid protrusion gives way after 1d6 rounds of climbing."
+ },
+ "consts": [
+  {
+   "name": "wghStrengthDivisor",
+   "value": 3,
+   "comment": "The maximum upward throw is 1/3 of the character strength score, rounded up, times 10 feet."
+  },
+  {
+   "name": "wghFeetPerStrengthUnit",
+   "value": 10,
+   "comment": "The rounded-up third of the strength score is multiplied by 10 feet - the example strength of 8 throws 30 feet."
+  },
+  {
+   "name": "wghStr8ThrowFt",
+   "value": 30,
+   "comment": "A character with a strength of 8 can throw the hook toward a protrusion as far as 30 feet above his head."
+  },
+  {
+   "name": "wghHorizontalInclineDeg",
+   "value": 30,
+   "comment": "A throw on an incline of 30 degrees or less is horizontal."
+  },
+  {
+   "name": "wghSecureWhirlRadiusFt",
+   "value": 10,
+   "comment": "A secure thrower needs a 10-foot radius of space around himself to whirl the hook in a circle before letting it go."
+  },
+  {
+   "name": "wghSecureHorizontalMult",
+   "value": 2,
+   "comment": "From a secure position, the horizontal throw goes twice as far as the maximum vertical throw."
+  },
+  {
+   "name": "wghThrowRounds",
+   "value": 1,
+   "comment": "It takes one round to make a throwing attempt with a grappling hook, regardless of the type of throw."
+  },
+  {
+   "name": "wghRecoilRoundsDice",
+   "value": 4,
+   "comment": "If the hook misses, the character must spend the next 1d4 rounds coiling the rope, whether for another attempt or to stow the equipment."
+  },
+  {
+   "name": "wghSelfHitRollMax",
+   "value": 5,
+   "comment": "Throwing at a target directly above oneself: if the throw misses and the die roll was 01-05, the thrower is hit by the hook."
+  },
+  {
+   "name": "wghSelfHitDamageDice",
+   "value": 6,
+   "comment": "The thrower hit by his own hook takes 1d6 points of damage."
+  },
+  {
+   "name": "wghClimbBonusFt",
+   "value": 3,
+   "comment": "A climber can climb up a rope anchored by a grappling hook at a 3-foot bonus to his normal climbing movement rate if lightly encumbered or not encumbered."
+  },
+  {
+   "name": "wghNonSolidGiveWayDice",
+   "value": 6,
+   "comment": "A protrusion between the two Chance of Protrusion numbers is not solid: if snagged, the hook gives way after 1d6 rounds are spent climbing up the rope."
+  },
+  {
+   "name": "wghTerrainCount",
+   "value": 10,
+   "comment": "Table 20 has ten terrain rows: the three moderate slopes, the three severe slopes and the four cliff types."
+  },
+  {
+   "name": "wghRecheckDistanceFt",
+   "value": 10,
+   "comment": "If no protrusion exists within throwing range, a character can check for protrusions again after traveling a distance of 10 feet vertically or horizontally."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wghAnyClimberCanUse",
+   "value": true,
+   "comment": "The grappling hook can be used by any climber - thief or non-thief, mountaineer or non-mountaineer."
+  },
+  {
+   "name": "wghThreeOrFourProngs",
+   "value": true,
+   "comment": "A grappling hook is a three- or four-pronged metal hook attached to the end of a rope and thrown toward a protrusion, in hopes that it catches and holds."
+  },
+  {
+   "name": "wghNeededSevereHandyModerate",
+   "value": true,
+   "comment": "Hooks are normally only needed for severe slopes and cliff faces, but expedite movement up a moderate slope, especially a slippery or slightly slippery one."
+  },
+  {
+   "name": "wghHorizontalSameAsVertical",
+   "value": true,
+   "comment": "A horizontal throw (an incline of 30 degrees or less) has the same maximum distance as a vertical toss, unless the thrower is secure with room to whirl."
+  },
+  {
+   "name": "wghSecurePositionDoubles",
+   "value": true,
+   "comment": "In a secure position with a 10-foot whirling radius, the horizontal throw goes twice as far as the maximum vertical throw."
+  },
+  {
+   "name": "wghAboveSelfDangerous",
+   "value": true,
+   "comment": "It can be dangerous to throw a hook toward a target directly above oneself - a missed throw rolling 01-05 hits the thrower for 1d6 damage."
+  },
+  {
+   "name": "wghClimbBonusLightOnly",
+   "value": true,
+   "comment": "The 3-foot climb bonus on an anchored rope applies only if the climber is lightly encumbered or not encumbered."
+  },
+  {
+   "name": "wghNoMovementBenefitOtherwise",
+   "value": true,
+   "comment": "In other cases the rope affords no benefit to movement - except, perhaps, to make upward movement possible where it was not possible before."
+  },
+  {
+   "name": "wghSolidHoldsIndefinitely",
+   "value": true,
+   "comment": "A protrusion roll at or above the second Chance of Protrusion number is solid: if the character snags it, the hook will hold indefinitely."
+  },
+  {
+   "name": "wghNotSolidGivesWay",
+   "value": true,
+   "comment": "A protrusion roll at or above the first number but less than the second is not solid: if snagged, the hook gives way after 1d6 rounds spent climbing up the rope."
+  },
+  {
+   "name": "wghSecondRollCatches",
+   "value": true,
+   "comment": "The Condition of Terrain numbers are the chance of catching a thrown hook on a protrusion, assuming one exists: a second percentile roll at or above the number means the throw was successful."
+  },
+  {
+   "name": "wghRecheckAfter10Ft",
+   "value": true,
+   "comment": "With no protrusion within throwing range, a character can check for protrusions again after traveling 10 feet vertically or horizontally."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "Table 20: GRAPPLING SUCCESS",
+   "tag": "20",
+   "count": "wghTerrainCount",
+   "col_default": 0,
+   "audit_comment": "the Table 20 grid: the ten terrain rows (the three moderate slopes, the three severe slopes and the four cliff types) x the Chance of Protrusion pair and the three condition catch chances - the last row (cliff, smooth, no ledges) is the eye-read row, protrusion 80/90 with 92/99/99",
+   "cols": [
+    "wghProtrusionFirst",
+    "wghProtrusionSecond",
+    "wghCatchNonSlippery",
+    "wghCatchSlightlySlippery",
+    "wghCatchSlippery"
+   ],
+   "col_comments": [
+    "The first Chance of Protrusion number, by terrain row: a percentile roll at or above it means a protrusion exists within throwing range.",
+    "The second Chance of Protrusion number: a roll at or above it means the protrusion is solid and the hook holds indefinitely; between the two numbers it is not solid and gives way after 1d6 rounds of climbing.",
+    "The chance of catching the thrown hook on a protrusion on a non-slippery surface (a second percentile roll at or above the number succeeds).",
+    "The catch chance on a slightly slippery surface.",
+    "The catch chance on a slippery surface."
+   ],
+   "data": [
+    [
+     30,
+     50,
+     50,
+     60,
+     70
+    ],
+    [
+     50,
+     70,
+     60,
+     72,
+     84
+    ],
+    [
+     70,
+     85,
+     64,
+     76,
+     86
+    ],
+    [
+     30,
+     40,
+     68,
+     80,
+     88
+    ],
+    [
+     50,
+     60,
+     72,
+     84,
+     90
+    ],
+    [
+     70,
+     80,
+     76,
+     88,
+     92
+    ],
+    [
+     20,
+     40,
+     80,
+     92,
+     94
+    ],
+    [
+     40,
+     60,
+     84,
+     96,
+     96
+    ],
+    [
+     60,
+     80,
+     88,
+     98,
+     98
+    ],
+    [
+     80,
+     90,
+     92,
+     99,
+     99
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['wghStr8ThrowFt']() != 30 or m['wghStrengthDivisor']() != 3 or m['wghFeetPerStrengthUnit']() != 10",
+   "note": "the throw formula: 1/3 of strength (8 -> 3 rounded up) times 10 feet = 30 feet for a strength of 8"
+  },
+  {
+   "expr": "m['wghThrowRounds']() != 1 or m['wghRecoilRoundsDice']() != 4 or m['wghSelfHitRollMax']() != 5 or m['wghSelfHitDamageDice']() != 6",
+   "note": "the throw economy: one round per attempt, 1d4 rounds to re-coil a miss, 01-05 self-hit for 1d6 damage"
+  },
+  {
+   "expr": "m['wghClimbBonusFt']() != 3 or m['wghRecheckDistanceFt']() != 10 or m['wghSecureWhirlRadiusFt']() != 10 or m['wghHorizontalInclineDeg']() != 30",
+   "note": "the small numbers: the 3-foot climb bonus, the 10-foot recheck distance, the 10-foot whirling radius and the 30-degree horizontal incline"
+  },
+  {
+   "expr": "m['wghProtrusionFirst'](0) != 30 or m['wghProtrusionSecond'](0) != 50 or m['wghCatchNonSlippery'](0) != 50 or m['wghCatchSlippery'](0) != 70",
+   "note": "the Table 20 first row (moderate slope, rough): protrusion 30/50, catching at 50/60/70"
+  },
+  {
+   "expr": "m['wghProtrusionFirst'](9) != 80 or m['wghProtrusionSecond'](9) != 90 or m['wghCatchNonSlippery'](9) != 92 or m['wghCatchSlightlySlippery'](9) != 99 or m['wghCatchSlippery'](9) != 99",
+   "note": "the Table 20 last row (cliff, smooth, no ledges - the eye-read row): protrusion 80/90, catching at 92/99/99"
+  },
+  {
+   "expr": "m['wghSecureHorizontalMult']() != 2 or m['wghStr8ThrowFt']() != m['wghSecureHorizontalMult']() * 15",
+   "note": "the secure horizontal throw: twice the vertical - a strength-8 thrower reaches 60 feet horizontally (30 x 2)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['wghProtrusionFirst'](0) >= m['wghProtrusionSecond'](0) or m['wghProtrusionFirst'](1) >= m['wghProtrusionSecond'](1) or m['wghProtrusionFirst'](2) >= m['wghProtrusionSecond'](2) or m['wghProtrusionFirst'](3) >= m['wghProtrusionSecond'](3) or m['wghProtrusionFirst'](4) >= m['wghProtrusionSecond'](4) or m['wghProtrusionFirst'](5) >= m['wghProtrusionSecond'](5) or m['wghProtrusionFirst'](6) >= m['wghProtrusionSecond'](6) or m['wghProtrusionFirst'](7) >= m['wghProtrusionSecond'](7) or m['wghProtrusionFirst'](8) >= m['wghProtrusionSecond'](8) or m['wghProtrusionFirst'](9) >= m['wghProtrusionSecond'](9)",
+   "note": "in every terrain row the first Chance of Protrusion number is below the second - the solid threshold exceeds the existence threshold"
+  },
+  {
+   "expr": "m['wghCatchNonSlippery'](0) > m['wghCatchSlightlySlippery'](0) or m['wghCatchSlightlySlippery'](0) > m['wghCatchSlippery'](0) or m['wghCatchNonSlippery'](5) > m['wghCatchSlightlySlippery'](5) or m['wghCatchSlightlySlippery'](5) > m['wghCatchSlippery'](5) or m['wghCatchNonSlippery'](9) > m['wghCatchSlightlySlippery'](9) or m['wghCatchSlightlySlippery'](9) > m['wghCatchSlippery'](9)",
+   "note": "the catch chance is non-decreasing as the terrain gets more slippery - the slipperier the surface, the better the hook holds (checked on the first, severe-smooth and last rows)"
+  },
+  {
+   "expr": "m['wghProtrusionFirst'](0) != 30 or m['wghProtrusionFirst'](1) != 50 or m['wghProtrusionFirst'](2) != 70 or m['wghProtrusionFirst'](3) != 30 or m['wghProtrusionFirst'](4) != 50 or m['wghProtrusionFirst'](5) != 70 or m['wghProtrusionFirst'](6) != 20 or m['wghProtrusionFirst'](7) != 40 or m['wghProtrusionFirst'](8) != 60 or m['wghProtrusionFirst'](9) != 80",
+   "note": "the existence thresholds read down the table 30/50/70 (moderate), 30/50/70 (severe), 20/40/60/80 (cliff) - rough terrain offers fewer protrusions, smooth terrain more"
+  }
+ ],
+ "header_sections": {
+  "the grappling-hook prose rules": [
+   {
+    "kind": "bool",
+    "name": "wghAnyClimberCanUse"
+   },
+   {
+    "kind": "bool",
+    "name": "wghThreeOrFourProngs"
+   },
+   {
+    "kind": "bool",
+    "name": "wghNeededSevereHandyModerate"
+   },
+   {
+    "kind": "const",
+    "name": "wghStrengthDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "wghFeetPerStrengthUnit"
+   },
+   {
+    "kind": "const",
+    "name": "wghStr8ThrowFt"
+   },
+   {
+    "kind": "const",
+    "name": "wghHorizontalInclineDeg"
+   },
+   {
+    "kind": "bool",
+    "name": "wghHorizontalSameAsVertical"
+   },
+   {
+    "kind": "const",
+    "name": "wghSecureWhirlRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "wghSecureHorizontalMult"
+   },
+   {
+    "kind": "bool",
+    "name": "wghSecurePositionDoubles"
+   },
+   {
+    "kind": "const",
+    "name": "wghThrowRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wghRecoilRoundsDice"
+   },
+   {
+    "kind": "bool",
+    "name": "wghAboveSelfDangerous"
+   },
+   {
+    "kind": "const",
+    "name": "wghSelfHitRollMax"
+   },
+   {
+    "kind": "const",
+    "name": "wghSelfHitDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "wghClimbBonusFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wghClimbBonusLightOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wghNoMovementBenefitOtherwise"
+   }
+  ],
+  "the Table 20 grapple success grid": [
+   {
+    "kind": "const",
+    "name": "wghTerrainCount"
+   },
+   {
+    "kind": "table",
+    "name": "Table 20: GRAPPLING SUCCESS"
+   },
+   {
+    "kind": "bool",
+    "name": "wghSolidHoldsIndefinitely"
+   },
+   {
+    "kind": "bool",
+    "name": "wghNotSolidGivesWay"
+   },
+   {
+    "kind": "const",
+    "name": "wghNonSolidGiveWayDice"
+   },
+   {
+    "kind": "bool",
+    "name": "wghSecondRollCatches"
+   },
+   {
+    "kind": "bool",
+    "name": "wghRecheckAfter10Ft"
+   },
+   {
+    "kind": "const",
+    "name": "wghRecheckDistanceFt"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] Use of grappling hooks (p. 38)",
+   "to": "  - [x] Use of grappling hooks (p. 38) - R444: the strength throw, the doubled secure horizontal throw, the one-round throw with the 1d4 re-coil, the 01-05 self-hit, the 3-foot climb bonus, Table 20 (the 10 terrain rows with the protrusion pair and the three catch chances) and the solid/not-solid procedure pin as rules/wsggrap.h",
+   "note": "grappling hooks"
+  },
+  {
+   "from": "Post-state at R443: 46 closed, 140 open (the R443 round pins the belaying - the climbing-rope stats with the knot rules, the belayer Climbing Check with the rope-length fall bound, the jolt second check with the secure-position exemption and the paired-belay sequence; the next rounds continue the section - the grappling hooks and the chasm crossing).",
+   "to": "Post-state at R444: 47 closed, 139 open (the R444 round pins the grappling hooks - the strength throw with the secure horizontal doubling, the throw economy with the 01-05 self-hit, the 3-foot climb bonus, Table 20 with the solid/not-solid protrusion procedure and the 10-foot recheck; the next rounds continue the section - the chasm crossing with Table 21, the mountaineering proficiency and the slippery horizontal surfaces).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 47,
+  "open": 139
+ },
+ "include_comment": "the WSG grappling hooks",
+ "include_after": "#include \"rules/wsgbelay.h\"  // R443: the WSG belaying",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R443 landed 2026-10-14: commit 1f0a8d6 (census 368, pushed",
+ "prev_record": [
+  "- R443 landed 2026-10-14: commit 1f0a8d6 (census 368, pushed",
+  "  e176cf3..1f0a8d6, preflight GREEN on the FIRST run), the WSG BELAYING,",
+  "  printed p. 37 - the belay prose (no table): the climbing-rope intro (150 or",
+  "  200 feet, half an inch, the 2000-pound limit, subject to the R440",
+  "  weakening/breaking rules; the knot rules - only a rope-use proficient",
+  "  character ties a full-strength knot, anyone else loses 500 pounds, different",
+  "  diameters take the smaller limit minus 500); the belayer Climbing Check",
+  "  (failure = the full fall, success bounded by the rope length); the",
+  "  precarious-position jolt second check (failure = both fall) with the",
+  "  secure-position exemption (checks 2 vs 1); the paired-belay sequence (last",
+  "  cannot belay, leader cannot be belayed, one belay at a time, no climbing",
+  "  while belaying, the middle faller drags none below, the failed belayer can",
+  "  be saved by the character above, the first faller is unhelpable - only two",
+  "  per rope). rules/wsgbelay.h NEW (23 inlines, prefix wbl - checked free in",
+  "  all three TUs). Ground truth CLEAN two-way (the user copy OCR vs the djvu",
+  "  word layer Guide_0037 with the Guide_0038 head continuation - every number",
+  "  matched, no eye-reads). Gap 45/141 -> 46/140; census 367 -> 368. rverify",
+  "  GREEN on the FIRST build: 23 mutants, 0 missed. Spec md5s: 1925ade4 authored",
+  "  / 66c5e17d +nl. GITHUB VERIFIED at the pinned full sha",
+  "  1f0a8d663f9c83344908056e4b283f292b837b70: census 368, the R443 audit present",
+  "  once, wsgbelay.h 23 inlines, the belay cells landed (2000/500, checks 2/1,",
+  "  jolt 2 fallers), the gap 46 closed / 140 open, the R442 seed record in",
+  "  place, no wbl hits in the caller TUs. Next after landing: the grappling",
+  "  hooks (p. 38)."
+ ]
+}

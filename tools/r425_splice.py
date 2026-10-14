@@ -1,136 +1,99 @@
 #!/usr/bin/env python3
-# r425_splice: the WSG ARC
-# OPENER, census 350 -> 351.
-# The wilderness proficiencies
-# (the WSG pp. 11-17, the R425
-# round) - the arc opener that
-# mirrors the R322 UA opener:
-# a NEW rules/ pin header, a
-# NEW lossless gap report, the
-# regtest include + audit.
+# r425_splice: the WSG ARC OPENER
+# - the wilderness proficiencies,
+# census 350 -> 351. The
+# Wilderness Survival Guide
+# (Mohan, 1986) opens against
+# the same engine conventions
+# as the UA report; the opener
+# rides the R322 precedent: the
+# first content section pins
+# with the report.
 #
-# The pins (the WSG printed
-# pp. 11-12, verified from the
-# scan - archive.org item
-# pdfy-B3Fz83tZ3TV7zOc8, pdf
-# page 13 = printed p. 12; the
-# Table 1/2 grids read from the
-# IIIF page image because the
-# text layer drops the grid
-# columns; the rule prose read
-# from the text layer, whole):
-#   - the Proficiency Check
-#     system: 1d20 vs the
-#     Appropriate Ability; an
-#     unmodified 19 or 20
-#     auto-fails; a score over
-#     18 counts as 18; even a
-#     score-18 character keeps
-#     at least a 10 percent
-#     (2-in-20) chance of
-#     failing; improving gives
-#     a cumulative -2 die-roll
-#     modifier per extra slot
-#     (a nonweapon slot gained
-#     at 3rd level or higher);
-#     an improved proficiency
-#     succeeds on an unmodified
-#     19; a natural 20 always
-#     fails.
-#   - Table 1 (the 14 class
-#     rows: the initial weapon/
-#     nonweapon slots and the
-#     add-per-N-levels column;
-#     the bard row reads "as
-#     other classes" - pinned
-#     as the -1 sentinel; the
-#     0-level horsemen footnote:
-#     one nonweapon proficiency,
-#     the second at 1st level).
-#   - Table 2 (the 25
-#     wilderness proficiency
-#     rows: the slots, the
-#     appropriate ability, the
-#     die-roll modifier; 99 =
-#     no modifier, and the
-#     no-check proficiencies
-#     cross-check against both
-#     the ability NA and the
-#     modifier 99).
-#   - the slot rules: a weapon
-#     slot may hold a nonweapon
-#     proficiency, never the
-#     reverse; the expanding
-#     optional rule: one extra
-#     nonweapon slot at 1st
-#     level, only if every
-#     nonweapon slot is filled
-#     right away - a delayed
-#     extra slot is lost and
-#     cannot be filled later.
+# The read (the OCR session
+# 8d6a65a0, pdf pages 12-13 =
+# printed 11-12, the grids read
+# CLEAN as Markdown tables):
+#   - the proficiency system:
+#     the Proficiency Check is
+#     an Ability Check (1d20 <=
+#     the Appropriate Ability
+#     succeeds), the natural 19
+#     or 20 auto-fails, the
+#     ability cap at 18, the
+#     minimum 10 pct fail chance,
+#     the -2-per-slot improving
+#     rule (eligible from 3rd
+#     level), the one-way
+#     weapon-slot flexibility,
+#     the expanding-slots
+#     optional rule, the
+#     negative-modifier-eases
+#     sign convention;
+#   - Table 1 (14 class rows):
+#     the initial weapon/
+#     nonweapon counts and the
+#     add-per-level denominators
+#     (cavalier and paladin 3/2
+#     per 2, cleric 2/3 per 4,
+#     druid 2/3 per 5, fighter
+#     4/2 per 3, barbarian 6/3
+#     per 2, ranger 3/2 per 3,
+#     MU and illusionist 1/3
+#     adding 1/2 per 6, thief
+#     and acrobat 2/3 per 4,
+#     assassin 3/2 per 4, monk
+#     1/1 per 2, bard as other
+#     classes adding per 4);
+#   - Table 2 (25 proficiency
+#     rows): the slots, the
+#     appropriate abilities and
+#     the die-roll modifiers
+#     (5 two-slot rows, 7
+#     no-check rows, riding
+#     land-based the best
+#     modifier at -3).
 #
-# Patches (5):
+# Patches (4 groups):
 #   - the seed takes the R424
-#     landed record
-#   - rules/wsgprof.h NEW (33
-#     inlines, prefix wsg -
-#     checked free, the
-#     collision gate keyed on
-#     the wsg call absence for
-#     idempotency)
+#     record
+#   - rules/wsgprof.h NEW (the
+#     system pins + the two
+#     tables, prefix wsg -
+#     checked free)
 #   - tools/wsg_gap_report.md
-#     NEW (the lossless
-#     whole-book inventory: the
-#     14 chapters, the DM
-#     section, the weather
-#     appendix, the compiled
-#     tables; all 42 tables
-#     from the book own Tables
-#     index as manifest line
-#     items; post-state 5
-#     closed, 181 open)
+#     NEW (the LOSSLESS
+#     whole-book inventory,
+#     every named table from
+#     the book own Tables index,
+#     the prose mechanics as
+#     sub-items)
 #   - regtest.cpp: the include
 #     after the uapantheon
-#     include; the R425 audit
-#     block before the R227
-#     anchor; census 350 -> 351
+#     include, the R425 audit
+#     before the R227 anchor;
+#     census 350 -> 351
 #
-# Guards: the census 351, the
-# audit label, the
-# string-literal parity gate
-# (the R421b lesson), the
+# Guards: the string-literal
+# parity gate (the R421b
+# lesson), the census 351, the
 # no-bare-'||' gate (the R418b
-# lesson), the include comment
-# whole (the R390 lesson), the
-# header statics (33 inlines,
-# lines <= 78 except the
-# 92-char opener, brace
-# balance, every line
-# classifiable C++ - the
-# INCIDENT-2 lesson, the wsg
-# identifier resolution - the
-# R412b lesson), the gap
+# lesson) over wsg, the
+# prefix-collision check (the
+# R411 lesson), the header
+# statics (lines <= 78, the
+# inline count), the gap
 # censuses, the seed record,
-# the caller contract, the
+# the caller contract and the
 # mixed applied/already ABORT
 # (the R420 lesson).
-#
-# The ritual: no nano, no ./nn
-# - the tree stays pristine;
-# a failed run restores by
-# re-fetching regtest.cpp and
-# the seed from the repo and
-# rm of the new files. The
-# splice is idempotent: a
-# second run applies nothing
-# and reports every patch
-# already in place.
 
 import io
 import os
 import re as _re
 
 NL = chr(10)
+BS = chr(92)
 
 applied = []
 already = []
@@ -169,192 +132,61 @@ def pair(path, old, new, label):
     applied.append(label)
 
 
-def newfile(path, text, label):
+def newfile(path, content, label):
     if os.path.exists(path):
-        if rd(path) == text:
+        if rd(path) == content:
             already.append(label)
         else:
-            die('%s exists, divergent'
+            die('%s: exists with'
+                ' different content'
                 % label)
-    else:
-        wr(path, text)
-        applied.append(label)
+        return
+    wr(path, content)
+    applied.append(label)
 
 
+WP = 'rules/wsgprof.h'
 RT = 'regtest.cpp'
-HD = 'rules/wsgprof.h'
-GR = 'tools/wsg_gap_report.md'
+GP = 'tools/wsg_gap_report.md'
 SD = ('doc/vibe/'
       'adnd1_knowledge_seed_v2.md')
-
-# ======== the pinned data ========
-
-# Table 1: the 14 class rows,
-# (initW, initNW, addW, addNW,
-# per-N-levels). The bard
-# initials are the -1 "as
-# other classes" sentinel.
-T1 = [
-    (3, 2, 1, 1, 2),   # CAVALIER
-    (3, 2, 1, 1, 2),   # Paladin
-    (2, 3, 1, 1, 4),   # CLERIC
-    (2, 3, 1, 1, 5),   # Druid
-    (4, 2, 1, 1, 3),   # FIGHTER
-    (6, 3, 1, 1, 2),   # Barbarian
-    (3, 2, 1, 1, 3),   # Ranger
-    (1, 3, 1, 2, 6),   # MAGIC-USER
-    (1, 3, 1, 2, 6),   # Illusionist
-    (2, 3, 1, 1, 4),   # THIEF
-    (2, 3, 1, 1, 4),   # Acrobat
-    (3, 2, 1, 1, 4),   # Assassin
-    (1, 1, 1, 1, 2),   # MONK
-    (-1, -1, 1, 1, 4),  # BARD
-]
-
-# Table 2: the 25 proficiency
-# rows, (slots, ability,
-# modifier). Ability codes: 1
-# WIS, 2 INT, 3 DEX, 4 CON,
-# 5 STR, 0 NA. Modifier 99 =
-# NA - the proficiency makes
-# no checks.
-T2 = [
-    (1, 1, 1),    # Alertness
-    (1, 1, 1),    # Animal Handling
-    (1, 2, 0),    # Animal Lore
-    (1, 0, 99),   # Blind-fighting
-    (1, 1, -1),   # Boating
-    (1, 3, -2),   # Charioteering
-    (1, 1, -1),   # Direction Sense
-    (2, 0, 99),   # Endurance
-    (1, 1, 1),    # Fire-building
-    (1, 1, 1),    # Fishing
-    (1, 2, 2),    # Foraging
-    (2, 1, -2),   # Healing
-    (1, 1, -1),   # Hunting
-    (1, 0, 99),   # Mountaineering
-    (1, 2, 0),    # Plant Lore
-    (2, 1, 2),    # Riding airborne
-    (1, 1, -3),   # Riding land
-    (1, 3, 0),    # Rope Use
-    (2, 4, 0),    # Running
-    (1, 0, 99),   # Survival cold
-    (2, 0, 99),   # Survival desert
-    (1, 0, 99),   # Survival heat
-    (1, 5, 0),    # Swimming
-    (1, 0, 99),   # Tracking
-    (1, 1, 1),    # Weather sense
-]
-
-# the roster and census
-# pre-checks (the censuses
-# derive from the tables, the
-# R410 lesson)
-if len(T1) != 14 or len(T2) != 25:
-    die('the roster sizes')
-dens = [r[4] for r in T1]
-if (dens.count(2) != 4
-        or dens.count(3) != 2
-        or dens.count(4) != 5
-        or dens.count(5) != 1
-        or dens.count(6) != 2):
-    die('the Table 1 denominators')
-if ([r[0] for r in T2].count(1)
-        != 20
-        or [r[0] for r in T2]
-        .count(2) != 5):
-    die('the Table 2 slot census')
-ab = [r[1] for r in T2]
-if (ab.count(1) != 11
-        or ab.count(2) != 3
-        or ab.count(3) != 2
-        or ab.count(4) != 1
-        or ab.count(5) != 1
-        or ab.count(0) != 7):
-    die('the Table 2 ability '
-        'census')
-md = [r[2] for r in T2]
-if (md.count(1) != 5
-        or md.count(2) != 2
-        or md.count(0) != 5
-        or md.count(-1) != 3
-        or md.count(-2) != 2
-        or md.count(-3) != 1
-        or md.count(99) != 7):
-    die('the Table 2 modifier '
-        'census')
-for s, a, m in T2:
-    if (a == 0) != (m == 99):
-        die('the never-check '
-            'cross-check')
-# the book own examples (the
-# cleric and the illusionist):
-# the add-per-N-levels
-# arithmetic - 1st level
-# counts, so the first add
-# comes ready to begin level
-# N+1
-if (T1[2][4] + 1 != 5
-        or T1[7][4] + 1 != 7
-        or T1[2][4] * 2 + 1 != 9
-        or T1[7][4] * 2 + 1
-        != 13):
-    die('the denominator '
-        'examples')
-
-# the prefix collision gate
-# (the R411 lesson): the wsg
-# prefix must be free - keyed
-# on the wsg CALL absence so a
-# re-run over a patched tree
-# stays GREEN (idempotency)
-RT0 = rd(RT)
-if ('wsgCheckRolls' not in RT0
-        and _re.search(r'\bwsg\w*\(',
-                       RT0)):
-    die('the wsg prefix is not '
-        'free in regtest')
 
 # ======== (a) the seed ========
 
 SEED_ENTRY = E(
     '- R424 landed 2026-10-13:',
-    '  commit 8e710fb (census',
-    '  350, preflight GREEN on',
-    '  the FIRST run, pushed',
-    '  a44b3d0..8e710fb), the',
-    '  APPENDIX T RESOLUTION -',
-    '  the LAST open',
-    '  book-content box in the',
-    '  UA gap report closes.',
-    '  The clean OCR read',
-    '  (pages 124/127/128/129 =',
-    '  printed 123/126/127/128)',
+    '  commit 8e710fb (census 350,',
+    '  preflight GREEN on the FIRST',
+    '  run, pushed a44b3d0..8e710fb),',
+    '  the APPENDIX T RESOLUTION -',
+    '  the LAST open book-content',
+    '  box in the UA report closes.',
+    '  The clean pp. 123-128 read',
     '  resolves the five R391',
-    '  flagged holes: the',
+    '  flagged holes (the',
     '  classification system',
     '  paragraph, the fauchard',
-    '  description, the',
-    '  Lucern/bec comparison',
-    '  tail, the combination',
-    '  intro, the bill-guisarme',
-    '  features list and the',
-    '  confusion sentence all',
-    '  print whole; every flag',
-    '  REPLACED 1:1 with a',
-    '  ReadsClean pin (the',
-    '  inline count 161 stays);',
-    '  the ledger flips clean 2',
-    '  -> 7, flagged 5 -> 0.',
-    '  Gap post-state: 102',
-    '  closed, 3 open (the two',
+    '  description, the Lucern/bec',
+    '  comparison tail, the',
+    '  combination intro, the',
+    '  bill-guisarme features list',
+    '  and the confusion sentence',
+    '  all print whole); ALL SIX',
+    '  flag names describe the',
+    '  garble (the R422',
+    '  monks-druids precedent),',
+    '  each flag REPLACED 1:1 with',
+    '  a ReadsClean pin, the',
+    '  inline count 161 stays;',
+    '  ledger clean 2->7, flagged',
+    '  5->0. Gap post-state:',
+    '  [x]=102, opens=3 (the two',
     '  logging layers + the',
-    '  legend line) - ALL',
-    '  book-content boxes are',
-    '  CLOSED. Sim: 7 value + 3',
-    '  expectation mutants all',
-    '  RED, clean GREEN.',
-    '  Census 349 -> 350.')
+    '  legend); ALL UA book-content',
+    '  boxes CLOSED - the UA arc',
+    '  is COMPLETE. The advisory',
+    '  md5 diverged benignly;',
+    '  the md5 stays advisory.')
 
 ANCH = NL + '## Knowledge maintenance'
 s = rd(SD)
@@ -370,1200 +202,1010 @@ else:
 
 # ======== (b) rules/wsgprof.h ========
 
-# the header: 33 inlines, the
-# system pins + the Table 1/2
-# switches + the ledger pins.
-# The opener is the 92-char
-# banner - the one allowed
-# exception to the 78-col
-# bound.
-
-HS = []  # header source lines
-
-HS += [
-    '// ' + '=' * 89,
+HEADER = E(
+    '// ==========================================================================',
     '// Adnd1 - rules/wsgprof.h',
     '// The WSG WILDERNESS',
-    '// PROFICIENCIES, R425:',
-    '// the wilderness arc',
-    '// opener. The printed',
-    '// p. 12 grids pin whole',
-    '// (Table 1: the 14 class',
-    '// rows; Table 2: the 25',
-    '// proficiency rows) with',
-    '// the Proficiency Check',
-    '// system, the improving',
-    '// rule and the slot rules;',
-    '// census 350 -> 351.',
-    '// Pin-era pattern (R322);',
-    '// the WSG arc mirrors the',
-    '// R322 UA opener.',
-    '//',
-    '// Provenance: the WSG',
-    '// scan (archive.org item',
-    '// pdfy-B3Fz83tZ3TV7zOc8),',
-    '// pdf page 13 = printed',
-    '// p. 12 - the Table 1/2',
-    '// grids read from the',
-    '// IIIF page image (the',
-    '// text layer drops the',
-    '// grid columns); the rule',
-    '// prose verified whole.',
+    '// PROFICIENCIES pins, R425:',
+    '// the arc opener - the',
+    '// proficiency system and its',
+    '// two tables (printed pp.',
+    '// 11-12, the clean OCR read).',
+    '// The Proficiency Check is an',
+    '// Ability Check: 1d20 against',
+    '// the Appropriate Ability,',
+    '// success at or below; the',
+    '// natural 19 or 20 auto-fails;',
+    '// the ability caps at 18 (the',
+    '// minimum 10 percent fail',
+    '// chance); improving a',
+    '// proficiency costs a slot and',
+    '// eases the roll by 2 per',
+    '// step (eligible from 3rd',
+    '// level); a weapon slot may',
+    '// hold a nonweapon skill,',
+    '// never the reverse; the',
+    '// negative modifier eases.',
+    '// Table 1: the 14 class rows',
+    '// (the initial weapon/',
+    '// nonweapon counts, the',
+    '// add-per-level denominators;',
+    '// the bard takes his initial',
+    '// counts from his other',
+    '// class). Table 2: the 25',
+    '// wilderness proficiencies',
+    '// (the slots; 5 two-slot rows,',
+    '// 7 no-check rows, riding',
+    '// land-based the best modifier',
+    '// at -3). Pin-era pattern',
+    '// (R322).',
     'namespace rules {',
     '',
-    '// ---- the Proficiency',
-    '// ---- Check system ----',
-    '',
-    '// A Proficiency Check is',
-    '// a roll of 1d20 against',
-    '// the Appropriate',
-    '// Ability.',
-    'inline bool wsgCheckRolls'
-    '1d20()',
-    '    { return true; }',
-    '// The check uses a',
-    '// twenty-sided die.',
-    'inline int '
-    'wsgCheckDieSides()',
+    '// The Proficiency Check is an',
+    '// Ability Check: roll 1d20.',
+    'inline int wsgCheckDieSides()',
     '    { return 20; }',
-    '// An unmodified die roll',
-    '// of 19 or 20 always',
-    '// fails.',
-    'inline int '
-    'wsgCheckAutoFail()',
-    '    { return 19; }',
-    '// An Appropriate Ability',
-    '// score greater than 18',
-    '// is treated as 18.',
-    'inline int wsgAbilityCap()',
+    '// Success at or below the',
+    '// Appropriate Ability score.',
+    'inline bool wsgCheckIsAbility'
+    'Check()',
+    '    { return true; }',
+    '// Any unmodified 19 or 20',
+    '// auto-fails, modifiers or no.',
+    'inline bool wsgNaturalNineteen'
+    'AutoFails()',
+    '    { return true; }',
+    'inline bool wsgNaturalTwenty'
+    'AutoFails()',
+    '    { return true; }',
+    '// An ability above 18 reads',
+    '// as 18 for the check.',
+    'inline int wsgCheckAbilityCap()',
     '    { return 18; }',
-    '// Even a character with an',
-    '// Appropriate Ability of',
-    '// 18 or better keeps at',
-    '// least a 10 percent',
-    '// (2 in 20) chance of',
-    '// failing any check.',
-    'inline int '
-    'wsgCheckFloorIn20()',
-    '    { return 2; }',
-    '// An improved proficiency',
-    '// succeeds on an',
-    '// unmodified 19.',
-    'inline bool '
-    'wsgImproved19Succeeds()',
-    '    { return true; }',
-    '// No matter how much a',
-    '// proficiency is improved,',
-    '// an unmodified 20 still',
-    '// fails.',
-    'inline bool '
-    'wsgNatural20Fails()',
-    '    { return true; }',
-    '// Improving an existing',
-    '// proficiency (a',
-    '// nonweapon slot gained at',
-    '// 3rd level or higher):',
-    '// each extra slot gives a',
-    '// cumulative -2 die-roll',
-    '// modifier.',
-    'inline int '
-    'wsgImprovingStep()',
+    '// The minimum fail chance: 2',
+    '// chances in 20, 10 percent.',
+    'inline int wsgMinFailChancePct()',
+    '    { return 10; }',
+    '// Improving a proficiency eases',
+    '// every subsequent check by 2',
+    '// per spent slot.',
+    'inline int wsgImproveDieModifier'
+    'PerSlot()',
     '    { return -2; }',
-    '// Improving uses slots',
-    '// gained at 3rd level or',
-    '// higher.',
-    'inline int '
-    'wsgImprovingMinLevel()',
+    '// Improvement is eligible from',
+    '// 3rd level upward.',
+    'inline int wsgImproveEligible'
+    'FromLevel()',
     '    { return 3; }',
-    '',
-    '// ---- the slot rules ----',
-    '',
-    '// A weapon proficiency',
-    '// slot can be filled with',
-    '// a nonweapon proficiency.',
-    'inline bool '
-    'wsgWeaponSlotHolds'
+    '// A weapon slot may hold a',
+    '// nonweapon skill.',
+    'inline bool wsgWeaponSlotHolds'
     'Nonweapon()',
     '    { return true; }',
-    '// The reverse is not',
-    '// allowed: a nonweapon',
-    '// slot never holds a',
-    '// weapon proficiency.',
-    'inline bool '
-    'wsgNonweaponSlotHolds'
-    'Weapon()',
+    '// The reverse is not allowed.',
+    'inline bool wsgNonweaponSlot'
+    'HoldsWeapon()',
     '    { return false; }',
-    '',
-    '// ---- the expanding',
-    '// ---- optional rule ----',
-    '',
-    '// The Dungeon Master may',
-    '// allow one additional',
-    '// nonweapon proficiency',
-    '// slot at 1st level -',
-    '// only if all of the',
-    '// character nonweapon',
-    '// slots are filled right',
-    '// away.',
-    'inline int '
-    'wsgExpandingBonusSlots()',
+    '// The optional rule: one extra',
+    '// nonweapon slot at 1st level,',
+    '// lost if the filling delays.',
+    'inline int wsgExpandOptional'
+    'ExtraSlots()',
     '    { return 1; }',
-    '// The extra slot comes at',
-    '// 1st level only.',
-    'inline bool '
-    'wsgExpandingFirst'
-    'LevelOnly()',
-    '    { return true; }',
-    '// A delayed extra slot is',
-    '// lost and cannot be',
-    '// filled later.',
-    'inline bool '
-    'wsgExpandingDelayed'
-    'IsLost()',
+    '// A negative die modifier',
+    '// reduces the roll - success',
+    '// grows easier.',
+    'inline bool wsgNegativeModifier'
+    'EasesSuccess()',
     '    { return true; }',
     '',
-    '// ---- the Table 1',
-    '// ---- footnotes ----',
-    '',
-    '// 0-level horsemen and',
-    '// lancers begin with one',
-    '// nonweapon proficiency.',
-    'inline int '
-    'wsgHorsemanZero'
-    'LevelSlots()',
-    '    { return 1; }',
-    '// The horseman second',
-    '// nonweapon proficiency',
-    '// arrives at 1st level.',
-    'inline int '
-    'wsgHorsemanSecond'
-    'SlotLevel()',
-    '    { return 1; }',
-    '// The bard Table 1 row',
-    '// reads "as other classes"',
-    '// - the -1 sentinel below.',
-    'inline bool '
-    'wsgBardAsOtherClasses()',
-    '    { return true; }',
-    '',
-    '// ---- Table 1: the 14',
-    '// ---- class rows ----',
-    '',
-    '// The census: 14 rows.',
-    'inline int wsgClassCount()',
+    '// Table 1: the 14 class rows,',
+    '// book order (cavalier,',
+    '// paladin, cleric, druid,',
+    '// fighter, barbarian, ranger,',
+    '// magic-user, illusionist,',
+    '// thief, acrobat, assassin,',
+    '// monk, bard).',
+    'inline int wsgClassRowCount()',
     '    { return 14; }',
-]
-
-
-# the Table 1 switches
-def t1_switch(name, col):
-    out = ['inline int %s(' % name,
-           '    int c)',
-           '    {',
-           '        switch (c) {']
-    for i, r in enumerate(T1):
-        out.append('        case %d:' % i)
-        out.append('            return %d;'
-                   % r[col])
-    out += ['        default:',
-            '            return 0;',
-            '        }',
-            '    }',
-            '']
-    return out
-
-
-HS += ['// The initial weapon',
-       '// slots by class (the',
-       '// left of the slash; the',
-       '// bard -1 sentinel = as',
-       '// other classes).']
-HS += t1_switch('wsgInitialWeaponSlots', 0)
-HS += ['// The initial nonweapon',
-       '// slots by class (the',
-       '// right of the slash).']
-HS += t1_switch(
-    'wsgInitialNonweaponSlots', 1)
-HS += ['// The weapon slots added',
-       '// per N levels (always',
-       '// 1).']
-HS += t1_switch('wsgAddWeaponSlots', 2)
-HS += ['// The nonweapon slots',
-       '// added per N levels',
-       '// (the magic-user and',
-       '// illusionist add 2).']
-HS += t1_switch(
-    'wsgAddNonweaponSlots', 3)
-HS += ['// The add-per-N-levels',
-       '// column by class; 1st',
-       '// level counts, so the',
-       '// first add comes ready',
-       '// to begin level N+1.',
-       '// (The census: 2x4, 3x2,',
-       '// 4x5, 5x1, 6x2.)']
-HS += t1_switch('wsgAddEveryLevels', 4)
-
-HS += [
     '',
-    '// ---- Table 2: the 25',
-    '// ---- proficiency rows ----',
+    '// The initial weapon slots per',
+    '// class row.',
+    'inline int wsgClassInitialWeapon('
+    'int cl)',
+    '{',
+    '    switch (cl) {',
+    '    case 0: return 3;',
+    '    case 1: return 3;',
+    '    case 2: return 2;',
+    '    case 3: return 2;',
+    '    case 4: return 4;',
+    '    case 5: return 6;',
+    '    case 6: return 3;',
+    '    case 7: return 1;',
+    '    case 8: return 1;',
+    '    case 9: return 2;',
+    '    case 10: return 2;',
+    '    case 11: return 3;',
+    '    case 12: return 1;',
+    '    default: return 0;',
+    '    }',
+    '}',
     '',
-    '// The census: 25 rows.',
-    'inline int wsgProfCount()',
+    '// The initial nonweapon slots',
+    '// per class row.',
+    'inline int wsgClassInitial'
+    'Nonweapon(int cl)',
+    '{',
+    '    switch (cl) {',
+    '    case 0: return 2;',
+    '    case 1: return 2;',
+    '    case 2: return 3;',
+    '    case 3: return 3;',
+    '    case 4: return 2;',
+    '    case 5: return 3;',
+    '    case 6: return 2;',
+    '    case 7: return 3;',
+    '    case 8: return 3;',
+    '    case 9: return 3;',
+    '    case 10: return 3;',
+    '    case 11: return 2;',
+    '    case 12: return 1;',
+    '    default: return 0;',
+    '    }',
+    '}',
+    '',
+    '// The weapon proficiencies added',
+    '// per eligibility.',
+    'inline int wsgClassAddWeapon('
+    'int cl)',
+    '{',
+    '    switch (cl) {',
+    '    case 7: return 1;',
+    '    case 8: return 1;',
+    '    default: return 1;',
+    '    }',
+    '}',
+    '',
+    '// The nonweapon proficiencies',
+    '// added per eligibility (the MU',
+    '// and illusionist add 1 per 2).',
+    'inline int wsgClassAddNonweapon('
+    'int cl)',
+    '{',
+    '    switch (cl) {',
+    '    case 7: return 2;',
+    '    case 8: return 2;',
+    '    default: return 1;',
+    '    }',
+    '}',
+    '',
+    '// The levels passed per',
+    '// eligibility (the add-per-level',
+    '// denominators).',
+    'inline int wsgClassAddPerLevels('
+    'int cl)',
+    '{',
+    '    switch (cl) {',
+    '    case 0: return 2;',
+    '    case 1: return 2;',
+    '    case 2: return 4;',
+    '    case 3: return 5;',
+    '    case 4: return 3;',
+    '    case 5: return 2;',
+    '    case 6: return 3;',
+    '    case 7: return 6;',
+    '    case 8: return 6;',
+    '    case 9: return 4;',
+    '    case 10: return 4;',
+    '    case 11: return 4;',
+    '    case 12: return 2;',
+    '    case 13: return 4;',
+    '    default: return 0;',
+    '    }',
+    '}',
+    '',
+    '// The bard row: the initial',
+    '// counts ride the other',
+    '// classes (the book own note).',
+    'inline bool wsgBardInitialAs'
+    'OtherClasses()',
+    '    { return true; }',
+    '',
+    '// Table 2: the 25 wilderness',
+    '// proficiencies, book order.',
+    'inline int wsgProficiencyCount()',
     '    { return 25; }',
     '',
-    '// The ability codes: 1',
-    '// WIS, 2 INT, 3 DEX,',
-    '// 4 CON, 5 STR, 0 NA.',
-    '// (The census: WIS 11,',
-    '// INT 3, DEX 2, CON 1,',
-    '// STR 1, NA 7.)',
-]
-
-
-# the Table 2 switches
-def t2_switch(name, col):
-    out = ['inline int %s(' % name,
-           '    int p)',
-           '    {',
-           '        switch (p) {']
-    for i, r in enumerate(T2):
-        out.append('        case %d:' % i)
-        out.append('            return %d;'
-                   % r[col])
-    out += ['        default:',
-            '            return 0;',
-            '        }',
-            '    }',
-            '']
-    return out
-
-
-HS += ['// The slots by',
-       '// proficiency (the',
-       '// census: 1x20, 2x5).']
-HS += t2_switch('wsgSlots', 0)
-HS += ['// The Appropriate',
-       '// Ability by',
-       '// proficiency; 0 = NA.']
-HS += t2_switch('wsgAbility', 1)
-HS += ['// The die-roll modifier',
-       '// by proficiency; 99 =',
-       '// NA - the proficiency',
-       '// never makes a check.']
-HS += t2_switch('wsgModifier', 2)
-
-HS += ['// True when the',
-       '// proficiency never makes',
-       '// a Proficiency Check',
-       '// (the NA-ability and the',
-       '// 99-modifier rows agree',
-       '// row for row).',
-       'inline bool '
-       'wsgProfNeverChecks(int p)',
-       '    {',
-       '        switch (p) {']
-NEVER = [i for i, r in enumerate(T2)
-         if r[2] == 99]
-for i in NEVER:
-    HS.append('        case %d:' % i)
-HS += ['            return true;',
-       '        default:',
-       '            return false;',
-       '        }',
-       '    }',
-       '']
-
-HS += [
-    '// ---- the ledger ----',
+    '// The slots required per',
+    '// proficiency row (endurance,',
+    '// healing, riding airborne,',
+    '// running and survival desert',
+    '// take two).',
+    'inline int wsgProficiencySlots('
+    'int pr)',
+    '{',
+    '    switch (pr) {',
+    '    case 7: return 2;',
+    '    case 11: return 2;',
+    '    case 15: return 2;',
+    '    case 18: return 2;',
+    '    case 20: return 2;',
+    '    default: return 1;',
+    '    }',
+    '}',
     '',
-    '// The Table 2 slot',
-    '// census: one-slot rows.',
-    'inline int '
-    'wsgSingleSlotProfs()',
-    '    { return 20; }',
-    '// The Table 2 slot',
-    '// census: two-slot rows.',
-    'inline int '
-    'wsgDoubleSlotProfs()',
+    '// The two-slot rows, counted.',
+    'inline int wsgTwoSlotProficiency'
+    'Count()',
     '    { return 5; }',
-    '// The Table 2 ability',
-    '// census: wisdom rows.',
-    'inline int wsgWisdomProfs()',
-    '    { return 11; }',
-    '// The census of the rows',
-    '// that never make a',
-    '// check.',
-    'inline int '
-    'wsgNeverCheckProfs()',
+    '',
+    '// The no-check rows (NA:',
+    '// blind-fighting, endurance,',
+    '// mountaineering, the three',
+    '// survivals, tracking).',
+    'inline int wsgNoCheckProficiency'
+    'Count()',
     '    { return 7; }',
-    '// The harshest Table 2',
-    '// modifier: riding,',
-    '// land-based.',
-    'inline int '
-    'wsgHardestModifier()',
+    '',
+    '// Riding land-based: one slot,',
+    '// the best die modifier at -3.',
+    'inline int wsgRidingLandBased'
+    'Slots()',
+    '    { return 1; }',
+    'inline int wsgRidingLandBased'
+    'Modifier()',
     '    { return -3; }',
     '',
+    '// Charioteering: dexterity at -2.',
+    'inline int wsgCharioteering'
+    'Modifier()',
+    '    { return -2; }',
+    '',
+    '// Foraging: intelligence, the',
+    '// hardest check at +2.',
+    'inline int wsgForagingModifier()',
+    '    { return 2; }',
+    '',
+    '// Riding airborne: two slots, +2.',
+    'inline int wsgRidingAirborne'
+    'Slots()',
+    '    { return 2; }',
+    '',
+    '// Healing: two slots, wisdom',
+    '// at -2.',
+    'inline int wsgHealingSlots()',
+    '    { return 2; }',
+    'inline int wsgHealingModifier()',
+    '    { return -2; }',
+    '',
+    '// Endurance and running: two',
+    '// slots apiece.',
+    'inline int wsgEnduranceSlots()',
+    '    { return 2; }',
+    'inline int wsgRunningSlots()',
+    '    { return 2; }',
+    '',
+    '// Survival desert: the lone',
+    '// two-slot survival.',
+    'inline int wsgSurvivalDesert'
+    'Slots()',
+    '    { return 2; }',
     '}   // namespace rules',
-]
+    '')
 
-HEADER = E(*HS) + NL
-
-newfile(HD, HEADER,
-        'rules/wsgprof.h')
-
-# the header statics:
-# 33 inlines, lines <= 78
-# except the 92-char opener,
-# brace balance, every line
-# classifiable C++ (the
-# INCIDENT-2 lesson)
-h = rd(HD)
-if h.count('inline ') != 33:
-    die('the header inline '
-        'count %d'
-        % h.count('inline '))
-lines = h.split(NL)
-for i, ln in enumerate(lines):
-    if i == 0:
-        if len(ln) != 92:
-            die('the header opener '
-                'is %d cols'
-                % len(ln))
-        continue
+# the header statics: ascii,
+# no line over 78, no
+# backslash bytes
+for ln in HEADER.split(NL):
     if len(ln) > 78:
-        die('the header line %d '
-            'is %d cols'
-            % (i, len(ln)))
-if h.count('{') != h.count('}'):
-    die('the header brace '
-        'balance')
-_CODE = _re.compile(
-    r'(^(inline |namespace |//)'
-    r'|^\} +//'
-    r'|^ +(\{|\}|case |default:'
-    r'|return |switch |int ))')
-for i, ln in enumerate(lines):
-    c = ln.strip()
-    if not c or c.startswith('//'):
-        continue
-    if not _CODE.match(ln):
-        die('the header line %d is '
-            'not classifiable C++ '
-            '(%r)'
-            % (i, ln[:40]))
+        die('the header line %d long'
+            ' (%r)' % (len(ln), ln))
+    for c in ln:
+        if ord(c) > 127:
+            die('the header holds'
+                ' non-ascii')
+    if BS in ln:
+        die('the header holds a'
+            ' backslash')
+
+newfile(WP, HEADER + NL,
+        'wsgprof.h: the pin header')
+
+# the prefix-collision check
+# (the R411 lesson): no wsg
+# identifier may pre-exist -
+# gated on the R425 audit being
+# absent (idempotent on the
+# second run)
+if ('R425 WSG proficiencies'
+        not in rd(RT)):
+    for p in ('regtest.cpp',
+              'rules/comeliness.h'):
+        t = rd(p)
+        if _re.search(r'(?<![\w])wsg\w',
+                      t):
+            die('a wsg identifier'
+                ' pre-exists in %s' % p)
 
 # ======== (c) tools/wsg_gap_report.md ========
 
-# the 14 chapters (the book
-# own Table of Contents
-# hierarchy - the front
-# matter pp. 1-4 stays out of
-# scope, as the UA report
-# scope note)
-CH = [
-    ('Overview of the wilderness',
-     'pp. 7-10', [
-        ('Terrain: desert', 'p. 7'),
-        ('Terrain: forest', 'p. 7'),
-        ('Terrain: hills', 'p. 8'),
-        ('Terrain: mountains',
-         'p. 8'),
-        ('Terrain: plains', 'p. 9'),
-        ('Terrain: seacoast',
-         'p. 9'),
-        ('Terrain: swamp', 'p. 9'),
-        ('Hierarchy of terrain',
-         'p. 9'),
-        ('Bodies of water', 'p. 9'),
-        ('Climate', 'p. 10'),
-    ]),
-    ('Wilderness proficiencies',
-     'pp. 11-17', [
-        ('Nonweapon proficiencies',
-         'p. 11'),
-        ('Choosing skills', 'p. 11'),
-        ('Success and failure - '
-         'the Proficiency Check '
-         'system', 'p. 11'),
-        ('Improving proficiencies',
-         'p. 11'),
-        ('Expanding proficiency '
-         'slots (optional rule)',
-         'p. 12'),
-        ('Proficiency descriptions',
-         'pp. 13-17'),
-    ]),
-    ('Dressing for the weather',
-     'pp. 18-20', [
-        ('Personal temperature',
-         'p. 18'),
-        ('Clothing', 'p. 18'),
-        ('Protected and '
-         'unprotected characters',
-         'p. 19'),
-        ('Clothing that functions '
-         'as armor', 'p. 19'),
-        ('Effects of exertion',
-         'p. 20'),
-    ]),
-    ('Effects of the environment',
-     'pp. 21-29', [
-        ('Temperature and wind',
-         'p. 21'),
-        ('Precipitation', 'p. 22'),
-        ('Special weather', 'p. 23'),
-        ('Damage from heat and '
-         'cold', 'p. 25'),
-        ('Effects on equipment',
-         'p. 28'),
-    ]),
-    ('Encumbrance and movement',
-     'pp. 30-49', [
-        ('Encumbrance of '
-         'characters', 'p. 30'),
-        ('Terrain definitions for '
-         'movement', 'p. 30'),
-        ('Large-scale overland '
-         'movement', 'p. 31'),
-        ('Encumbrance and movement '
-         'for land-based animals',
-         'p. 32'),
-        ('Movement of land-based '
-         'vehicles', 'p. 33'),
-        ('Movement across special '
-         'terrain', 'p. 33'),
-        ('Climbing', 'p. 34'),
-        ('Surface types', 'p. 34'),
-        ('Surface conditions',
-         'p. 34'),
-        ('Chance of falling',
-         'p. 34'),
-        ('Climbing checks', 'p. 35'),
-        ('Damage from falling',
-         'p. 35'),
-        ('Stopping a fall', 'p. 36'),
-        ('Using rope for movement '
-         'and climbing', 'p. 36'),
-        ('Roping together', 'p. 37'),
-        ('Rappelling', 'p. 37'),
-        ('Belaying', 'p. 37'),
-        ('Use of grappling hooks',
-         'p. 38'),
-        ('Crossing a chasm on a '
-         'rope', 'p. 38'),
-        ('The mountaineering '
-         'proficiency', 'p. 39'),
-        ('Movement on slippery '
-         'horizontal surfaces',
-         'p. 39'),
-        ('Jumping', 'p. 39'),
-        ('Overland movement in '
-         'reduced visibility',
-         'p. 40'),
-        ('Swimming', 'p. 41'),
-        ('Other effects of moving '
-         'water', 'p. 42'),
-        ('Diving and surfacing',
-         'p. 42'),
-        ('Treading water', 'p. 43'),
-        ('Holding one breath',
-         'p. 43'),
-        ('Movement in waterborne '
-         'vehicles', 'p. 44'),
-        ('Capsizing and damage to '
-         'craft', 'p. 45'),
-        ('The boating proficiency',
-         'p. 45'),
-        ('Portaging', 'p. 45'),
-        ('Use of a capsized '
-         'vessel', 'p. 46'),
-        ('Flying mounts', 'p. 47'),
-        ('To fall or not to fall',
-         'p. 48'),
-        ('Proficiency in airborne '
-         'riding', 'p. 49'),
-    ]),
-    ('Food and water',
-     'pp. 50-60', [
-        ('Going without food',
-         'p. 50'),
-        ('Going without water',
-         'p. 52'),
-        ('Effects on animals',
-         'p. 52'),
-        ('Minimum daily requirement '
-         'of food', 'p. 52'),
-        ('Minimum daily requirement '
-         'of water', 'p. 53'),
-        ('Food gathering', 'p. 53'),
-        ('Foraging', 'p. 53'),
-        ('Inedible plants', 'p. 54'),
-        ('Hunting', 'p. 55'),
-        ('Stalking a wounded '
-         'animal', 'p. 55'),
-        ('The hunting proficiency',
-         'p. 57'),
-        ('Fishing', 'p. 57'),
-        ('Consuming and carrying '
-         'food', 'p. 58'),
-        ('Finding water', 'p. 58'),
-        ('Where water is found',
-         'p. 59'),
-        ('Water in the desert',
-         'p. 60'),
-        ('Purifying water', 'p. 60'),
-    ]),
-    ('Camping and campfires',
-     'pp. 61-68', [
-        ('Natural shelters', 'p. 61'),
-        ('Portable shelters',
-         'p. 62'),
-        ('Rest and comfort', 'p. 64'),
-        ('How much sleep?', 'p. 64'),
-        ('Good sleep vs bad sleep',
-         'p. 65'),
-        ('Fire: friend and foe',
-         'p. 65'),
-        ('Precautions and perils',
-         'p. 66'),
-        ('Uncontrollable fires',
-         'p. 67'),
-        ('Damage from fire', 'p. 68'),
-    ]),
-    ('Medicine and first aid',
-     'pp. 69-71', [
-        ('Availability of '
-         'medicinal plants', 'p. 69'),
-        ('Proficiency in plant '
-         'lore', 'p. 70'),
-        ('Injuries and treatment',
-         'p. 70'),
-        ('First aid equipment',
-         'p. 71'),
-    ]),
-    ('Vision and visibility',
-     'pp. 72-75', [
-        ('Normal vision', 'p. 72'),
-        ('Infravision', 'p. 73'),
-        ('Ultravision', 'p. 74'),
-        ('Artificial illumination',
-         'p. 74'),
-    ]),
-    ('Natural hazards in the '
-     'wilderness', 'pp. 76-83', [
-        ('Volcanoes', 'p. 76'),
-        ('Lava eruptions', 'p. 76'),
-        ('Ash eruptions', 'p. 76'),
-        ('Explosive eruptions',
-         'p. 78'),
-        ('Earthquakes', 'p. 78'),
-        ('Tidal waves', 'p. 79'),
-        ('Floods and flash floods',
-         'p. 80'),
-        ('Avalanches, rockfalls, '
-         'and mudslides', 'p. 80'),
-        ('Quicksand', 'p. 83'),
-    ]),
-    ('Combat rules for '
-     'wilderness play',
-     'pp. 84-87', [
-        ('Fighting while climbing',
-         'p. 84'),
-        ('Fighting while '
-         'precariously balanced',
-         'p. 84'),
-        ('Fighting in water',
-         'p. 85'),
-        ('Fighting in poor '
-         'visibility', 'p. 86'),
-        ('Melee combat from a '
-         'mount', 'p. 86'),
-        ('Missile combat from a '
-         'mount', 'p. 86'),
-        ('Forcing opponents to '
-         'dismount', 'p. 87'),
-    ]),
-    ('Fatigue and exhaustion',
-     'pp. 88-89', [
-        ('Characters', 'p. 88'),
-        ('Land-based mounts and '
-         'pack animals', 'p. 88'),
-        ('Flying mounts', 'p. 89'),
-    ]),
-    ('Mounts and beasts of '
-     'burden', 'pp. 90-94', [
-        ('Animals as individuals',
-         'p. 91'),
-        ('Calming an excited '
-         'animal', 'p. 94'),
-        ('Understanding an animal',
-         'p. 94'),
-    ]),
-    ('Magic in the wilderness',
-     'pp. 95-102', [
-        ('Spells', 'p. 95'),
-        ('Potions', 'p. 100'),
-        ('Protection scrolls',
-         'p. 100'),
-        ('Rings', 'p. 100'),
-        ('Rods, staves, and wands',
-         'p. 101'),
-        ('Miscellaneous magic',
-         'p. 101'),
-    ]),
-]
+REPORT = E(
+    '# WSG Gap Report - the book vs the repo',
+    '',
+    'R425 ARC OPENER. The standing scope (the',
+    'seed, 2026-10-05) names more sourcebooks;',
+    'this report inventories the WILDERNESS',
+    'SURVIVAL GUIDE (Mohan, 1986) against the',
+    'same engine conventions as the UA report',
+    'and is, by design, lossless: it mirrors',
+    'the book own structure (the players and',
+    'DM mechanics pp. 5-102 in book order,',
+    'the DM section pp. 103-106, the weather',
+    'appendix pp. 107-119, the compiled tables',
+    'pp. 120-126, the index p. 127), every',
+    'named table from the book own Tables index',
+    '(42) sits inside its chapter as its own',
+    'line item (the manifest - nothing can be',
+    'skipped silently), the appendix A-series',
+    'tables (A1-A8) get their own line items',
+    '(the book own index omits them), and every',
+    'load-bearing prose mechanic from the book',
+    'own TOC is its own open sub-item. The',
+    'chapter order IS the round order; the',
+    'suites named in the section heads are the',
+    'round-sized work units. Engine scope',
+    'unchanged: the data-driven class and spell',
+    'registries (append a row, not a re-carve),',
+    'the rules/ pin headers, the battery',
+    'audits. Closure criterion: a box closes',
+    'when the feature PLAYS right - compiling',
+    'is not the test; the game-level logging',
+    'layer is the instrument (out of scope by',
+    'the user decision, as in the UA arc). The',
+    'OCR reads the WSG grids clean (Markdown',
+    'tables - a better grain than the UA scan);',
+    'the printed-page offset is pdf page minus',
+    'one.',
+    '',
+    'Conventions as the UA report: [x]',
+    'verified against the book text (with the',
+    'round); [~] verified DIVERGENT; [ ] open',
+    'item; DEFERRED for wants gated on an',
+    'engine layer not yet built. A round',
+    'closes an item by flipping the box in the',
+    'SAME commit. The existing engine seams',
+    'named in the items: the underwater layers',
+    '(R168, R311-R320), the infravision fold',
+    '(R317/R319), the mount layer (R403), the',
+    'overland layers (R92, R123, R152). The',
+    'universe: this book, the landed UA and',
+    'DMG and PHB reports, and - named for the',
+    'future - the house-rules and third-party',
+    'arcs.',
+    '',
+    '## Ch 1: Overview of the wilderness (pp.',
+    '## 7-10)',
+    '',
+    '- [ ] Terrain: desert (p. 7) - the',
+    '      definition and its play effects.',
+    '- [ ] Terrain: forest (p. 7).',
+    '- [ ] Terrain: hills (p. 8).',
+    '- [ ] Terrain: mountains (p. 8) - the',
+    '      snow line and the exposure rules.',
+    '- [ ] Terrain: plains (p. 9).',
+    '- [ ] Terrain: seacoast (p. 9) - the',
+    '      encounter-table translation note.',
+    '- [ ] Terrain: swamp (p. 9) - the',
+    '      standing-water definition.',
+    '- [ ] The hierarchy of terrain (p. 9):',
+    '      the 1-7 ranking (seacoast highest,',
+    '      mountains lowest) with the worked',
+    '      examples and the two overrides.',
+    '- [ ] Bodies of water (pp. 9-10) - the',
+    '      R168/R311-R320 underwater layers are',
+    '      the seam.',
+    '- [ ] Climate (pp. 10-11): the five',
+    '      climatic regions and the DMG/MM II',
+    '      translation rules - the keying the',
+    '      weather appendix rides.',
+    '',
+    '## Ch 2: Wilderness proficiencies (pp.',
+    '## 11-17) - the proficiency suite',
+    '',
+    '- [x] The proficiency system (pp. 11-12):',
+    '      the Proficiency Check (1d20 vs the',
+    '      Appropriate Ability, at or below',
+    '      succeeds), the natural 19/20',
+    '      auto-fail, the ability cap at 18, the',
+    '      10 percent minimum fail, the',
+    '      -2-per-slot improving rule (from 3rd',
+    '      level), the one-way weapon-slot',
+    '      flexibility, the expanding-slots',
+    '      optional rule.',
+    '      - AMENDED R425: the system pins',
+    '        (rules/wsgprof.h, prefix wsg), the',
+    '        censuses cross-checked live against',
+    '        the two tables (14 class rows, 25',
+    '        proficiency rows, 5 two-slot, 7',
+    '        no-check).',
+    '- [x] Table 1: Character Proficiencies',
+    '      (p. 12) - the 14 class rows: the',
+    '      initial weapon/nonweapon counts, the',
+    '      add-per-level denominators, the',
+    '      0-level horsemen/lancers note, the',
+    '      counting-levels rule.',
+    '      - AMENDED R425: pinned row for row',
+    '        (rules/wsgprof.h), the bard',
+    '        initial-as-other-classes note',
+    '        included.',
+    '- [x] Table 2: Wilderness Proficiencies',
+    '      (p. 12) - the 25 proficiencies:',
+    '      slots, appropriate ability, die-roll',
+    '      modifier per row.',
+    '      - AMENDED R425: pinned (the slot',
+    '        switch, the two-slot and no-check',
+    '        censuses, the riding land-based -3,',
+    '        the foraging +2).',
+    '- [ ] The proficiency descriptions suite',
+    '      (pp. 13-17) - the 25 descriptions,',
+    '      each carrying its own mechanics:',
+    '      alertness, animal handling, animal',
+    '      lore, blind-fighting, boating,',
+    '      charioteering, direction sense,',
+    '      endurance, fire-building, fishing,',
+    '      foraging, healing, hunting,',
+    '      mountaineering, plant lore, riding',
+    '      airborne, riding land-based, rope',
+    '      use, running, survival cold, survival',
+    '      desert, survival heat, swimming,',
+    '      tracking, weather sense (pinned in',
+    '      batch rounds, 8-9 per round).',
+    '',
+    '## Ch 3: Dressing for the weather (pp.',
+    '## 18-20)',
+    '',
+    '- [ ] Personal temperature and clothing',
+    '      (pp. 18-19) - the clothing layers.',
+    '- [ ] Table 3: Effects of clothing and',
+    '      armor on personal temperature (p.',
+    '      19).',
+    '- [ ] Protected and unprotected',
+    '      characters; the effects of exertion',
+    '      (p. 19).',
+    '- [ ] Clothing that functions as armor',
+    '      (pp. 19-20).',
+    '',
+    '## Ch 4: Effects of the environment (pp.',
+    '## 21-29) - the environment suite',
+    '',
+    '- [ ] Temperature and wind (pp. 21-22).',
+    '- [ ] Table 4: Temperature effects (p.',
+    '      21).',
+    '- [ ] Table 5: Wind velocity effects (p.',
+    '      21).',
+    '- [ ] Precipitation (pp. 22-23).',
+    '- [ ] Special weather (pp. 23-26).',
+    '- [ ] Table 6: Hurricane damage to',
+    '      structures (p. 23).',
+    '- [ ] Table 7: Tornado damage to',
+    '      structures (p. 24).',
+    '- [ ] Table 8: Hailstorm damage to',
+    '      characters (p. 24).',
+    '- [ ] Damage from heat and cold (pp.',
+    '      26-28).',
+    '- [ ] Table 9: Temperature damage to',
+    '      characters (p. 26).',
+    '- [ ] Table 10: Frostbite damage to',
+    '      characters (p. 27).',
+    '- [ ] Effects on equipment (pp. 28-29).',
+    '',
+    '## Ch 5: Encumbrance and movement (pp.',
+    '## 30-49) - the three suites',
+    '',
+    '- [ ] Encumbrance of characters (p. 30).',
+    '- [ ] Table 11: Encumbrance limits for',
+    '      characters (p. 30).',
+    '- [ ] Terrain definitions for movement',
+    '      (pp. 30-31).',
+    '- [ ] Large-scale overland movement (pp.',
+    '      31-32) - the overland suite; an',
+    '      engine-seam candidate riding R92/',
+    '      R123/R152 (the R312',
+    '      flooded-crossing precedent).',
+    '- [ ] Table 12: Character movement on',
+    '      foot (p. 31).',
+    '- [ ] Encumbrance and movement for',
+    '      land-based animals (pp. 32-33).',
+    '- [ ] Table 13: Encumbrance limits and',
+    '      movement rates for animals (p. 32).',
+    '- [ ] Movement of land-based vehicles',
+    '      (p. 33).',
+    '- [ ] Table 14: Movement of vehicles (p.',
+    '      33).',
+    '- [ ] Movement across special terrain',
+    '      (p. 33).',
+    '- [ ] Climbing (pp. 33-36) - the climbing',
+    '      and rope suite.',
+    '- [ ] Table 15: Climbing movement rates',
+    '      (p. 33).',
+    '- [ ] Surface types and conditions (pp.',
+    '      34-35).',
+    '- [ ] Table 16: Modifiers to non-thief',
+    '      climbing rating (p. 35).',
+    '- [ ] Chance of falling and climbing',
+    '      checks (pp. 34-35).',
+    '- [ ] Table 17: Damage from free fall or',
+    '      severe slope (p. 35).',
+    '- [ ] Table 18: Damage from tumbling down',
+    '      moderate or gentle slope (p. 36).',
+    '- [ ] Table 19: Chance of stopping a fall',
+    '      or tumble (p. 36).',
+    '- [ ] Rope work (pp. 36-38): roping',
+    '      together, rappelling, belaying, the',
+    '      chasm crossing.',
+    '- [ ] Table 20: Grappling success (p.',
+    '      38).',
+    '- [ ] Table 21: Thrown loop ranges (p.',
+    '      38).',
+    '- [ ] The mountaineering proficiency',
+    '      (p. 39).',
+    '- [ ] Movement on slippery horizontal',
+    '      surfaces (p. 39).',
+    '- [ ] Jumping (pp. 39-40).',
+    '- [ ] Table 22: Characters jumping ability',
+    '      (p. 39).',
+    '- [ ] Overland movement in reduced',
+    '      visibility (p. 40).',
+    '- [ ] Table 23: Movement in reduced',
+    '      visibility (p. 40).',
+    '- [ ] Swimming (pp. 41-44) - the water',
+    '      and air travel suite; the R168/',
+    '      R311-R320 underwater layers are the',
+    '      seam.',
+    '- [ ] Table 24: Effects of encumbrance on',
+    '      swimming (p. 41).',
+    '- [ ] Diving, surfacing, treading water,',
+    '      holding breath (pp. 42-43).',
+    '- [ ] Movement in waterborne vehicles',
+    '      (pp. 44-45).',
+    '- [ ] Table 25: Waterborne vehicle',
+    '      characteristics (p. 44).',
+    '- [ ] Capsizing and damage to craft (p.',
+    '      45).',
+    '- [ ] Table 26: Chance of capsizing (p.',
+    '      45).',
+    '- [ ] The boating proficiency and',
+    '      portaging (pp. 45-46).',
+    '- [ ] Use of a capsized vessel (p. 46).',
+    '- [ ] Flying mounts (pp. 47-49) - the',
+    '      R403 mount layer is the seam.',
+    '- [ ] Table 27: Characteristics of flying',
+    '      mounts (p. 47).',
+    '- [ ] To fall or not to fall (p. 48).',
+    '- [ ] Proficiency in airborne riding (p.',
+    '      49).',
+    '',
+    '## Ch 6: Food and water (pp. 50-60) - the',
+    '## survival suite',
+    '',
+    '- [ ] Going without food (p. 50).',
+    '- [ ] Table 28: Tolerance levels for lack',
+    '      of food (p. 50).',
+    '- [ ] Going without water (p. 52).',
+    '- [ ] Effects on animals (p. 52).',
+    '- [ ] Table 29: Water requirements for',
+    '      characters (p. 53).',
+    '- [ ] Minimum daily requirement of food',
+    '      and water (pp. 52-53).',
+    '- [ ] Food gathering (p. 53).',
+    '- [ ] Foraging (pp. 53-54).',
+    '- [ ] Table 30: Foraging success (p. 53).',
+    '- [ ] Inedible plants (p. 54).',
+    '- [ ] Hunting (pp. 55-57).',
+    '- [ ] Table 31: Hunting success (p. 55).',
+    '- [ ] Stalking a wounded animal (pp.',
+    '      55-56).',
+    '- [ ] The hunting proficiency (p. 57).',
+    '- [ ] Fishing (pp. 57-58).',
+    '- [ ] Table 32: Fishing success (p. 57).',
+    '- [ ] Consuming and carrying food (p. 58).',
+    '- [ ] Table 33: Chance of food spoilage',
+    '      (p. 58).',
+    '- [ ] Finding water (pp. 58-60).',
+    '- [ ] Table 34: Chance of finding water',
+    '      (p. 59).',
+    '- [ ] Water in the desert (p. 60).',
+    '- [ ] Purifying water (p. 60).',
+    '',
+    '## Ch 7: Camping and campfires (pp. 61-68)',
+    '## - the camp suite',
+    '',
+    '- [ ] Natural shelters (pp. 61-62).',
+    '- [ ] Table 35: Chance of finding natural',
+    '      shelter (p. 61).',
+    '- [ ] Portable shelters (pp. 62-64).',
+    '- [ ] Table 36: Portable shelter',
+    '      characteristics (p. 62).',
+    '- [ ] Rest and comfort (pp. 64-65): how',
+    '      much sleep, good sleep vs bad sleep.',
+    '- [ ] Table 37: Effects of lack of sleep',
+    '      (p. 64).',
+    '- [ ] Fire: friend and foe (pp. 65-68):',
+    '      precautions and perils,',
+    '      uncontrollable fires, damage from',
+    '      fire.',
+    '- [ ] Table 38: Campfire characteristics',
+    '      (p. 65).',
+    '- [ ] Table 39: Availability of fuel (p.',
+    '      66).',
+    '',
+    '## Ch 8: Medicine and first aid (pp.',
+    '## 69-71)',
+    '',
+    '- [ ] Availability of medicinal plants',
+    '      (p. 69).',
+    '- [ ] Table 40: Availability of medicinal',
+    '      plants (p. 69).',
+    '- [ ] Proficiency in plant lore (p. 70).',
+    '- [ ] Injuries and treatment (pp. 70-71).',
+    '- [ ] First aid equipment (p. 71).',
+    '',
+    '## Ch 9: Vision and visibility (pp.',
+    '## 72-75)',
+    '',
+    '- [ ] Normal vision (pp. 72-73).',
+    '- [ ] Table 41: Outdoor range of normal',
+    '      vision (p. 73).',
+    '- [ ] Infravision (pp. 73-74) - the',
+    '      R317/R319 infravision layers are the',
+    '      seam.',
+    '- [ ] Ultravision (p. 74).',
+    '- [ ] Artificial illumination (pp.',
+    '      74-75).',
+    '',
+    '## Ch 10: Natural hazards in the',
+    '## wilderness (pp. 76-83) - the hazards',
+    '## suite',
+    '',
+    '- [ ] Volcanoes: lava eruptions (pp.',
+    '      76-78).',
+    '- [ ] Volcanoes: ash eruptions (pp.',
+    '      76-78).',
+    '- [ ] Volcanoes: explosive eruptions (p.',
+    '      78).',
+    '- [ ] Earthquakes (pp. 78-79).',
+    '- [ ] Tidal waves (p. 79).',
+    '- [ ] Floods and flash floods (p. 80).',
+    '- [ ] Avalanches, rockfalls, and',
+    '      mudslides (pp. 80-83).',
+    '- [ ] Quicksand (p. 83).',
+    '',
+    '## Ch 11: Combat rules for wilderness play',
+    '## (pp. 84-87)',
+    '',
+    '- [ ] Fighting while climbing (p. 84).',
+    '- [ ] Fighting while precariously',
+    '      balanced (p. 84).',
+    '- [ ] Fighting in water (p. 85).',
+    '- [ ] Fighting in poor visibility (p. 86).',
+    '- [ ] Melee combat from a mount (p. 86).',
+    '- [ ] Missile combat from a mount (pp.',
+    '      86-87).',
+    '- [ ] Forcing opponents to dismount (p.',
+    '      87).',
+    '',
+    '## Ch 12: Fatigue and exhaustion (pp.',
+    '## 88-89)',
+    '',
+    '- [ ] Characters (p. 88).',
+    '- [ ] Land-based mounts and pack animals',
+    '      (p. 88).',
+    '- [ ] Flying mounts (p. 89).',
+    '',
+    '## Ch 13: Mounts and beasts of burden (pp.',
+    '## 90-94) - the mounts suite (rides R403)',
+    '',
+    '- [ ] Animals as individuals (pp. 91-94).',
+    '- [ ] Table 42: Reactions of animals (p.',
+    '      92).',
+    '- [ ] Calming an excited animal (p. 94).',
+    '- [ ] Understanding an animal (p. 94).',
+    '',
+    '## Ch 14: Magic in the wilderness (pp.',
+    '## 95-102) - the magic notes suite',
+    '',
+    '- [ ] Spells (pp. 95-100): the',
+    '      wilderness-effect notes on the',
+    '      existing spell roster (the',
+    '      data-driven registry takes rows).',
+    '- [ ] Potions (p. 100).',
+    '- [ ] Protection scrolls (p. 100).',
+    '- [ ] Rings (p. 100).',
+    '- [ ] Rods, staves, and wands (p. 101).',
+    '- [ ] Miscellaneous magic (pp. 101-102).',
+    '',
+    '## Ch 15: The DM section (pp. 103-106)',
+    '',
+    '- [ ] Starting from scratch (pp.',
+    '      103-106): the campaign-map design',
+    '      and the world-building advice - the',
+    '      DM-judgment layer (record-not-charge',
+    '      unless the user decides otherwise).',
+    '',
+    '## Ch 16: The world of weather (pp.',
+    '## 107-119) - the weather suite, the',
+    '## capstone',
+    '',
+    '- [ ] The climatic regions (pp. 107-109):',
+    '      the five bands in detail, the',
+    '      7-terrain x 5-climate keying.',
+    '- [ ] Table A1: Temperature variation',
+    '      (p. 109) - the letter-coded',
+    '      temperature ladder.',
+    '- [ ] Table A2: Day-to-day change (p.',
+    '      110) - the dice-driven state walk.',
+    '- [ ] Table A3: Precipitation variation',
+    '      (pp. 111-112).',
+    '- [ ] Table A4: Special weather (p. 113)',
+    '      - the four-letter codes.',
+    '- [ ] The special weather definitions (pp.',
+    '      113-116): the episode state',
+    '      machines - the cold wave, the',
+    '      drought, the hurricane (the',
+    '      once-per-month-per-200-mile rule),',
+    '      and the rest.',
+    '- [ ] Table A5: Humidity variation (p.',
+    '      117).',
+    '- [ ] Table A6: Humidity and effective',
+    '      temperature (p. 117).',
+    '- [ ] Table A7: Wind chill (p. 118) - the',
+    '      cross-index grid, the extrapolation',
+    '      and 40-mph cap rules.',
+    '- [ ] Table A8: Hours of daylight (p.',
+    '      118).',
+    '- [ ] The weather determination system as',
+    '      a whole (pp. 107-120) - the',
+    '      engine-seam candidate (the R312',
+    '      flooded-crossing precedent); pin the',
+    '      tables first, the generator is its',
+    '      own round.',
+    '',
+    '## Ch 17: The compiled tables (pp. 120-126)',
+    '',
+    '- [ ] The compiled tables reprint (pp.',
+    '      120-126): a free second read of the',
+    '      parent tables - each reprint',
+    '      verified cell for cell against its',
+    '      parent ([~] on divergence); closes',
+    '      with the parents.',
+    '',
+    '## Ch 18: The index (p. 127)',
+    '',
+    '- [x] The index (p. 127): a finding aid,',
+    '      no mechanics - recorded, not',
+    '      charged.',
+    )
 
-CLOSED_SUBS = {
-    'Success and failure - '
-    'the Proficiency Check '
-    'system',
-    'Improving proficiencies',
-    'Expanding proficiency '
-    'slots (optional rule)',
-}
+# the report statics: ascii,
+# every line within the
+# house bound
+for ln in REPORT.split(NL):
+    if len(ln) > 57:
+        die('the report line %d long'
+            ' (%r)' % (len(ln), ln[:40]))
+    for c in ln:
+        if ord(c) > 127:
+            die('the report holds'
+                ' non-ascii')
 
-# all 42 tables from the book
-# own Tables index (printed
-# p. 4): (num, title, page)
-TB = [
-    (1, 'character proficiencies',
-     12),
-    (2, 'wilderness proficiencies',
-     12),
-    (3, 'effects of clothing and '
-     'armor on personal '
-     'temperature', 19),
-    (4, 'temperature effects', 21),
-    (5, 'wind velocity effects',
-     21),
-    (6, 'hurricane damage to '
-     'structures', 23),
-    (7, 'tornado damage to '
-     'structures', 24),
-    (8, 'hailstorm damage to '
-     'characters', 24),
-    (9, 'temperature damage to '
-     'characters', 26),
-    (10, 'frostbite damage to '
-     'characters', 27),
-    (11, 'encumbrance limits for '
-     'characters', 30),
-    (12, 'character movement on '
-     'foot', 31),
-    (13, 'encumbrance limits and '
-     'movement rates for '
-     'animals', 32),
-    (14, 'movement of vehicles',
-     33),
-    (15, 'climbing movement rates',
-     33),
-    (16, "modifiers to non-thief's "
-     'climbing rating', 35),
-    (17, 'damage from free fall '
-     'or severe slope', 35),
-    (18, 'damage from tumbling '
-     'down moderate or gentle '
-     'slope', 36),
-    (19, 'chance of stopping a '
-     'fall or tumble', 36),
-    (20, 'grapple success', 38),
-    (21, 'thrown loop ranges', 38),
-    (22, "characters' jumping "
-     'ability', 39),
-    (23, 'movement in reduced '
-     'visibility', 40),
-    (24, 'effects of encumbrance '
-     'on swimming', 41),
-    (25, 'waterborne vehicle '
-     'characteristics', 44),
-    (26, 'chance of capsizing',
-     45),
-    (27, 'characteristics of '
-     'flying mounts', 47),
-    (28, 'tolerance levels for '
-     'lack of food', 50),
-    (29, 'water requirements for '
-     'characters', 53),
-    (30, 'foraging success', 53),
-    (31, 'hunting success', 55),
-    (32, 'fishing success', 57),
-    (33, 'chance of food '
-     'spoilage', 58),
-    (34, 'chance of finding '
-     'water', 59),
-    (35, 'chance of finding '
-     'natural shelter', 61),
-    (36, 'portable shelter '
-     'characteristics', 62),
-    (37, 'effects of lack of '
-     'sleep', 64),
-    (38, 'campfire characteristics',
-     65),
-    (39, 'availability of fuel',
-     66),
-    (40, 'availability of '
-     'medicinal plants', 69),
-    (41, 'outdoor range of normal '
-     'vision', 73),
-    (42, 'reactions of animals',
-     92),
-]
-if len(TB) != 42 or len(CH) != 14:
-    die('the report rosters')
+# the report censuses: the 42
+# named tables all present
+tbl = 0
+for i in range(1, 43):
+    if ('Table %d:' % i) in REPORT:
+        tbl += 1
+if tbl != 42:
+    die('the report names %d of'
+        ' the 42 tables' % tbl)
 
-RP = [
-    '# WSG Gap Report - the book '
-    'vs the repo',
-    '',
-    'R425 ARC OPENER. The '
-    'wilderness arc names the '
-    'Wilderness Survival Guide. '
-    'This report inventories the '
-    'whole WSG book against the '
-    'engine and is, by design, '
-    'lossless: it mirrors the '
-    'book own structure (the 14 '
-    'chapters, the DM section, '
-    'the weather appendix, the '
-    'compiled tables), every '
-    'named table from the book '
-    'own Tables index gets its '
-    'own line item (the '
-    'manifest - nothing can be '
-    'skipped silently), and '
-    'every load-bearing prose '
-    'mechanic is its own '
-    'sub-item rather than a '
-    'clause in a paragraph. '
-    'Engine scope unchanged: the '
-    'data-driven registries '
-    '(append a row, not a '
-    're-carve), the rules/ pin '
-    'headers, the battery '
-    'audits. Closure criterion: '
-    'a box closes when the '
-    'feature PLAYS right - '
-    'compiling is not the '
-    'test; a round closes an '
-    'item by flipping the box '
-    'in the SAME commit. The '
-    'universe: this book, the '
-    'landed DMG, PHB and UA '
-    'reports, and the engine '
-    'pins they carry; the '
-    'engine ingests any source '
-    'the same way (survey, gap '
-    'report, pins, provenance).',
-    '',
-    'Conventions as the UA '
-    'report: [x] verified '
-    'against the book text '
-    '(with the round); [~] '
-    'verified DIVERGENT; [ ] '
-    'open item; DEFERRED for '
-    'wants gated on an engine '
-    'layer not yet built. '
-    'Page cites are the PRINTED '
-    'book pages (the pdf page '
-    '= printed + 1; the Table '
-    '1/2 grids live on printed '
-    'p. 12).',
-    '',
-    '## The chapters (the book '
-    'own Table of Contents '
-    'hierarchy)',
-    '',
-]
-for title, pages, subs in CH:
-    RP.append('- [ ] **%s** (%s)'
-              % (title, pages))
-    for sub, pg in subs:
-        if sub in CLOSED_SUBS:
-            RP.append('  - [x] %s (%s) '
-                      '- R425: the check '
-                      'system and the '
-                      'improving/expanding '
-                      'rules pin as '
-                      'rules/wsgprof.h'
-                      % (sub, pg))
-        else:
-            RP.append('  - [ ] %s (%s)'
-                      % (sub, pg))
-RP += [
-    '',
-    '## The DM section, the '
-    'appendix, the compiled '
-    'tables',
-    '',
-    '- [ ] **Dungeon Master '
-    'section** (pp. 103-106)',
-    '  - [ ] Starting from '
-    'scratch (pp. 103-106)',
-    '- [ ] **Appendix: the world '
-    'of weather** '
-    '(pp. 107-119)',
-    '  - [ ] The weather system '
-    '(generation, the tables)',
-    '  - [ ] The weather effects '
-    'on play',
-    '- [ ] **Compiled tables** '
-    '(pp. 120-126)',
-    '',
-    '## The tables (the book own '
-    'Tables index - the '
-    'manifest)',
-    '',
-]
-for num, name, pg in TB:
-    if num <= 2:
-        RP.append('- [x] **Table %d: %s** '
-                  '(p. %d) - R425: the '
-                  'printed grids pin as '
-                  'rules/wsgprof.h'
-                  % (num, name, pg))
-    else:
-        RP.append('- [ ] **Table %d: %s** '
-                  '(p. %d)'
-                  % (num, name, pg))
-RP += [
-    '',
-    'Post-state at R425: 5 '
-    'closed, 181 open (the R425 '
-    'round closes the '
-    'Proficiency Check system, '
-    'the improving rule, the '
-    'expanding optional rule '
-    'and the two printed p. 12 '
-    'grids - five boxes; the 25 '
-    'proficiency descriptions '
-    'and everything else stay '
-    'open, worked top-down - '
-    'data tables first).',
-    '',
-]
-REPORT = NL.join(RP)
+newfile(GP, REPORT + NL,
+        'wsg_gap_report.md: the arc'
+        ' report')
 
-# the gap censuses: the
-# closed count takes every
-# [x] box (chapter level and
-# sub level - the amended
-# census, per the user
-# decision this round)
-g = REPORT
-if g.count('- [x]') != 5:
-    die('the gap closed count %d'
-        % g.count('- [x]'))
-opens = [l for l in g.split(NL)
-         if l.lstrip()
-         .startswith('- [ ]')]
-if len(opens) != 181:
-    die('the gap open count %d'
-        % len(opens))
-if g.count('**Table ') != 42:
-    die('the gap table manifest %d'
-        % g.count('**Table '))
-if ('- [x] **Table 1: '
-    'character proficiencies** '
-    '(p. 12) - R425:'
-    not in g):
-    die('the Table 1 box')
-if ('- [x] **Table 2: '
-    'wilderness proficiencies** '
-    '(p. 12) - R425:'
-    not in g):
-    die('the Table 2 box')
+# ======== (d) regtest.cpp ========
 
-newfile(GR, REPORT,
-        'the wsg gap report')
-
-# ======== (d) regtest.cpp -
-# ======== the include ========
-
+# the include rides after the
+# uapantheon include
 pair(RT,
-     '#include "rules/uapantheon.h"  '
-     '// R423: the UA Appendix S '
-     'pantheon prose',
-     '#include "rules/uapantheon.h"  '
-     '// R423: the UA Appendix S '
-     'pantheon prose' + NL
-     + '#include "rules/wsgprof.h"  '
-     '// R425: the WSG '
-     'wilderness proficiencies',
-     'regtest: the include line')
+     '#include "rules/uapantheon.h"  // R423:'
+     ' the UA Appendix S pantheon prose',
+     E('#include "rules/uapantheon.h"  // R423:'
+       ' the UA Appendix S pantheon prose',
+       '#include "rules/wsgprof.h"  // R425:'
+       ' the WSG wilderness proficiencies'),
+     'regtest: the include')
 
-# ======== (e) regtest.cpp -
-# ======== the R425 audit ========
-
-AUD = E(*[l.rstrip() for l in [
-    '    // ---- R425: the WSG',
-    '    // proficiencies pin ',
-    '    // audit ----',
-    '    // The wilderness arc ',
-    '    // opener pins the WSG ',
-    '    // proficiency system ',
-    '    // (rules/wsgprof.h, ',
-    '    // prefix wsg): the ',
-    '    // Proficiency Check ',
-    '    // system (1d20 vs the ',
-    '    // Appropriate Ability, ',
-    '    // the unmodified 19/20 ',
-    '    // auto-fail, the 18 ',
-    '    // cap, the 2-in-20 ',
-    '    // floor), the improving ',
-    '    // rule (a cumulative -2 ',
-    '    // per extra slot, from ',
-    '    // 3rd level; an improved ',
-    '    // 19 succeeds, a ',
-    '    // natural 20 always ',
-    '    // fails), the slot rules ',
-    '    // (a weapon slot may ',
-    '    // hold a nonweapon ',
-    '    // proficiency, never the ',
-    '    // reverse) and the ',
-    '    // expanding optional rule ',
-    '    // (one extra nonweapon ',
-    '    // slot at 1st level, all ',
-    '    // slots filled right ',
-    '    // away - a delayed slot ',
-    '    // is lost); Table 1 (the ',
-    '    // 14 class rows, the ',
-    '    // bard "as other classes" ',
-    '    // sentinel, the horseman ',
-    '    // footnote) and Table 2 ',
-    '    // (the 25 rows) pin with ',
-    '    // the censuses verified ',
-    '    // and the denominator ',
-    '    // arithmetic - the book ',
-    '    // own cleric and ',
-    '    // illusionist examples; ',
+# ---- the R425 audit block ----
+AUD = E(
+    '    // ---- R425: the WSG wilderness',
+    '    // proficiencies pin audit ----',
+    '    // The WSG arc opener: the',
+    '    // proficiency system (printed pp.',
+    '    // 11-12, the clean OCR read) and',
+    '    // its two tables pin as',
+    '    // rules/wsgprof.h (NEW, prefix',
+    '    // wsg): the Proficiency Check is',
+    '    // an Ability Check (1d20 at or',
+    '    // below the Appropriate Ability',
+    '    // succeeds; the natural 19 or 20',
+    '    // auto-fails; the ability caps at',
+    '    // 18, the minimum fail 10',
+    '    // percent), the improving rule',
+    '    // eases by 2 per slot from 3rd',
+    '    // level, the weapon slot holds a',
+    '    // nonweapon skill never the',
+    '    // reverse, the optional extra',
+    '    // slot rides 1st level; Table 1',
+    '    // pins 14 class rows (cavalier and',
+    '    // paladin 3/2 per 2, cleric 2/3',
+    '    // per 4, druid 2/3 per 5, fighter',
+    '    // 4/2 per 3, barbarian 6/3 per 2,',
+    '    // ranger 3/2 per 3, the MU and',
+    '    // illusionist 1/3 adding 1/2 per',
+    '    // 6, thief and acrobat 2/3 per 4,',
+    '    // assassin 3/2 per 4, monk 1/1',
+    '    // per 2, the bard as other classes',
+    '    // adding per 4); Table 2 pins 25',
+    '    // proficiency rows (5 two-slot,',
+    '    // 7 no-check, riding land-based',
+    '    // the best modifier at -3,',
+    '    // foraging the hardest at +2);',
     '    // census 350 -> 351.',
     '    {',
     '        using namespace rules;',
     '        int bad = 0;',
-    '        if (!wsgCheckRolls'
-    '1d20()',
-    '                || wsgCheckDie'
-    'Sides() != 20',
-    '                || wsgCheckAuto'
-    'Fail() != 19',
-    '                || wsgAbilityCap()',
-    '                != 18',
-    '                || wsgCheckFloor'
-    'In20() != 2',
-    '                || !wsgImproved19'
-    'Succeeds()',
-    '                || !wsgNatural20'
-    'Fails()',
-    '                || wsgImprovingStep()',
-    '                != -2',
-    '                || wsgImprovingMin'
-    'Level() != 3)',
-    '            ++bad;',
-    '        if (!wsgWeaponSlot'
-    'HoldsNonweapon()',
+    '        if (wsgCheckDieSides() != 20',
+    '                || !wsgCheckIsAbility'
+    'Check()',
+    '                || !wsgNaturalNineteen'
+    'AutoFails()',
+    '                || !wsgNaturalTwenty'
+    'AutoFails()',
+    '                || wsgCheckAbilityCap()'
+    ' != 18',
+    '                || wsgMinFailChancePct()'
+    ' != 10',
+    '                || wsgImproveDieModifier'
+    'PerSlot() != -2',
+    '                || wsgImproveEligible'
+    'FromLevel() != 3',
+    '                || !wsgWeaponSlotHolds'
+    'Nonweapon()',
     '                || wsgNonweaponSlot'
     'HoldsWeapon()',
-    '                || !wsgExpanding'
-    'BonusSlots()',
-    '                || !wsgExpanding'
-    'FirstLevelOnly()',
-    '                || !wsgExpanding'
-    'DelayedIsLost()',
-    '                || wsgHorsemanZero'
-    'LevelSlots() != 1',
-    '                || wsgHorsemanSecond'
-    'SlotLevel() != 1',
-    '                || !wsgBardAsOther'
-    'Classes()',
-    '                || wsgClassCount()',
-    '                != 14',
-    '                || wsgProfCount()',
-    '                != 25)',
+    '                || wsgExpandOptional'
+    'ExtraSlots() != 1',
+    '                || !wsgNegativeModifier'
+    'EasesSuccess())',
     '            ++bad;',
-    '        int d2 = 0, d3 = 0, '
-    'd4 = 0,',
-    '            d5 = 0, d6 = 0;',
-    '        for (int c = 0;',
-    '             c < wsgClassCount();',
-    '             ++c) {',
-    '            int d =',
-    '                wsgAddEvery'
-    'Levels(c);',
-    '            if (d == 2) ++d2;',
-    '            else if (d == 3) ++d3;',
-    '            else if (d == 4) ++d4;',
-    '            else if (d == 5) ++d5;',
-    '            else if (d == 6) ++d6;',
-    '            else ++bad;',
-    '            if (wsgAddWeapon'
-    'Slots(c) != 1)',
-    '                ++bad;',
-    '        }',
-    '        if (d2 != 4 || d3 != 2',
-    '                || d4 != 5 || d5 != 1',
-    '                || d6 != 2)',
+    '        if (wsgClassRowCount() != 14',
+    '                || wsgProficiencyCount()'
+    ' != 25',
+    '                || wsgTwoSlotProficiency'
+    'Count() != 5',
+    '                || wsgNoCheckProficiency'
+    'Count() != 7)',
     '            ++bad;',
-    '        if (wsgInitialWeapon'
-    'Slots(0) != 3',
-    '                || wsgInitial'
-    'NonweaponSlots(0)',
-    '                != 2',
-    '                || wsgInitialWeapon'
-    'Slots(4) != 4',
-    '                || wsgInitialWeapon'
-    'Slots(5) != 6',
-    '                || wsgInitial'
-    'NonweaponSlots(5)',
-    '                != 3',
-    '                || wsgInitialWeapon'
-    'Slots(7) != 1',
-    '                || wsgAddNonweapon'
-    'Slots(7) != 2',
-    '                || wsgInitialWeapon'
-    'Slots(12) != 1',
-    '                || wsgInitial'
-    'NonweaponSlots(12)',
-    '                != 1',
-    '                || wsgInitialWeapon'
-    'Slots(13) != -1',
-    '                || wsgInitial'
-    'NonweaponSlots(13)',
-    '                != -1',
-    '                || wsgAddEvery'
-    'Levels(13) != 4)',
+    '        if (wsgClassInitialWeapon(0)'
+    ' != 3',
+    '                || wsgClassInitial'
+    'Nonweapon(0) != 2',
+    '                || wsgClassAddPerLevels(0)'
+    ' != 2',
+    '                || wsgClassInitialWeapon(5)'
+    ' != 6',
+    '                || wsgClassInitial'
+    'Nonweapon(5) != 3',
+    '                || wsgClassAddPerLevels(7)'
+    ' != 6',
+    '                || wsgClassAddWeapon(7)'
+    ' != 1',
+    '                || wsgClassAddNonweapon(7)'
+    ' != 2',
+    '                || wsgClassInitialWeapon(12)'
+    ' != 1',
+    '                || wsgClassInitial'
+    'Nonweapon(12) != 1',
+    '                || wsgClassAddPerLevels(13)'
+    ' != 4',
+    '                || !wsgBardInitialAs'
+    'OtherClasses())',
     '            ++bad;',
-    '        if (wsgAddEveryLevels(2)',
-    '                + 1 != 5',
-    '                || wsgAddEvery'
-    'Levels(7) + 1 != 7',
-    '                || wsgAddEvery'
-    'Levels(2) * 2 + 1',
-    '                != 9',
-    '                || wsgAddEvery'
-    'Levels(7) * 2 + 1',
-    '                != 13)',
+    '        if (wsgProficiencySlots(7)'
+    ' != 2',
+    '                || wsgProficiencySlots(11)'
+    ' != 2',
+    '                || wsgProficiencySlots(15)'
+    ' != 2',
+    '                || wsgProficiencySlots(18)'
+    ' != 2',
+    '                || wsgProficiencySlots(20)'
+    ' != 2',
+    '                || wsgProficiencySlots(24)'
+    ' != 1',
+    '                || wsgRidingLandBased'
+    'Slots() != 1',
+    '                || wsgRidingLandBased'
+    'Modifier() != -3',
+    '                || wsgCharioteering'
+    'Modifier() != -2',
+    '                || wsgForagingModifier()'
+    ' != 2',
+    '                || wsgRidingAirborne'
+    'Slots() != 2',
+    '                || wsgHealingSlots() != 2',
+    '                || wsgHealingModifier()'
+    ' != -2',
+    '                || wsgEnduranceSlots()'
+    ' != 2',
+    '                || wsgRunningSlots()'
+    ' != 2',
+    '                || wsgSurvivalDesert'
+    'Slots() != 2)',
     '            ++bad;',
-    '        int n1 = 0, n2 = 0, '
-    'ssum = 0,',
-    '            aw = 0, ain = 0, '
-    'adx = 0,',
-    '            acon = 0, astr = 0, '
-    'ana = 0,',
-    '            p1 = 0, p2 = 0, '
-    'z0 = 0,',
-    '            m1 = 0, m2 = 0, '
-    'm3 = 0, na = 0;',
-    '        for (int p = 0;',
-    '             p < wsgProfCount();',
-    '             ++p) {',
-    '            if (wsgSlots(p) == 1)',
-    '                ++n1;',
-    '            else if (wsgSlots(p)',
-    '                     == 2)',
-    '                ++n2;',
-    '            else ++bad;',
-    '            ssum += wsgSlots(p);',
-    '            int a = wsgAbility(p);',
-    '            if (a == 1) ++aw;',
-    '            else if (a == 2) ++ain;',
-    '            else if (a == 3) ++adx;',
-    '            else if (a == 4) ++acon;',
-    '            else if (a == 5) ++astr;',
-    '            else if (a != 0)',
-    '                ++bad;',
-    '            else ++ana;',
-    '            int m = wsgModifier(p);',
-    '            if (m == 1) ++p1;',
-    '            else if (m == 2) ++p2;',
-    '            else if (m == 0) ++z0;',
-    '            else if (m == -1) ++m1;',
-    '            else if (m == -2) ++m2;',
-    '            else if (m == -3) ++m3;',
-    '            else if (m != 99)',
-    '                ++bad;',
-    '            else ++na;',
-    '            if (wsgProfNeverChecks(p)',
-    '                    != (wsgAbility(p)',
-    '                        == 0)',
-    '                    || wsgProfNever'
-    'Checks(p)',
-    '                    != (wsgModifier(p)',
-    '                        == 99))',
-    '                ++bad;',
-    '        }',
-    '        if (n1 != 20 || n2 != 5',
-    '                || ssum != 30',
-    '                || aw != 11',
-    '                || ain != 3',
-    '                || adx != 2',
-    '                || acon != 1',
-    '                || astr != 1',
-    '                || ana != 7',
-    '                || p1 != 5 || p2 != 2',
-    '                || z0 != 5',
-    '                || m1 != 3',
-    '                || m2 != 2',
-    '                || m3 != 1',
-    '                || na != 7)',
+    '        int twoslot = 0;',
+    '        for (int pr = 0;',
+    '             pr < wsgProficiencyCount();',
+    '             ++pr)',
+    '            if (wsgProficiencySlots(pr)'
+    ' == 2)',
+    '                ++twoslot;',
+    '        if (twoslot != wsgTwoSlot'
+    'ProficiencyCount())',
     '            ++bad;',
-    '        if (wsgSingleSlotProfs()',
-    '                != n1',
-    '                || wsgDoubleSlot'
-    'Profs() != n2',
-    '                || wsgWisdomProfs()',
-    '                != aw',
-    '                || wsgNeverCheck'
-    'Profs() != na',
-    '                || wsgHardest'
-    'Modifier() != -3)',
-    '            ++bad;',
-    '        printf("R425 WSG '
-    'proficiencies pin '
-    'audit: bad %d' + chr(92)
-    + 'n", bad);',
+    '        printf("R425 WSG proficiencies'
+    ' pin audit: bad'
+    ' %d' + BS + 'n", bad);',
     '        if (bad) return 1;',
-    '    }']])
+    '    }')
 
-R227 = ('    // ---- R227: the wis '
-        'mental save wiring '
-        'audit ----')
+R227 = ('    // ---- R227: the wis mental'
+        ' save wiring audit ----')
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R425 audit block')
 
 # ======== the verify pass ========
 
 if applied and already:
-    die('the mixed applied/already '
-        'state (the R420 lesson)')
+    die('the mixed applied/already'
+        ' state (the R420 lesson)')
 
 s = rd(RT)
 if s.count('audit: bad') != 351:
     die('the census %d'
         % s.count('audit: bad'))
-if s.count('R425 WSG '
-           'proficiencies pin '
-           'audit') != 1:
+if s.count('R425 WSG proficiencies') != 1:
     die('the R425 audit label')
 
-# the string-literal parity
-# gate (the R421b lesson): no
-# CODE line in the R425 audit
-# block may carry an
-# unterminated string literal
+# the string-literal parity gate
+# (the R421b lesson): no CODE
+# line in the R425 audit block
+# may carry an unterminated
+# string literal (comment lines
+# may hold lone quotes)
 for ln in AUD.split(NL):
     c = ln.lstrip()
     if (c and not c.startswith('//')
             and ln.count(chr(34)) % 2):
-        die('the R425 audit block '
-            'has an unterminated '
-            'string literal')
+        die('the R425 audit block has'
+            ' an unterminated string'
+            ' literal')
 
-# the no-bare-|| gate (the
-# R418b lesson): no wsg chain
-# may BEGIN with '||' - a
-# '||' line is legal only
-# inside an open chain
+# the no-bare-|| gate (the R418b
+# lesson): no wsg chain may BEGIN
+# with '||' - a '||' line is legal
+# only inside an open chain
 prev = ''
 for ln in s.split(NL):
     if ('wsg' in ln
@@ -1576,80 +1218,77 @@ for ln in s.split(NL):
         die('a bare || wsg line')
     prev = ln
 
-# the wsg identifier
-# resolution (the R412b
-# lesson): every wsg symbol
-# the audit calls must be
-# defined in the header
-called = set(_re.findall(
-    r'\b(wsg\w+)\s*\(', AUD))
-defined = set(_re.findall(
-    r'\b(wsg\w+)\s*\(', h))
-for sym in sorted(called):
-    if sym not in defined:
-        die('the audit calls %s, '
-            'undefined in the '
-            'header' % sym)
+# the header mirror
+h = rd(WP)
+for pin in ('wsgCheckDieSides',
+            'wsgNaturalNineteen'
+            'AutoFails',
+            'wsgClassAddPerLevels',
+            'wsgProficiencySlots',
+            'wsgRidingLandBased'
+            'Modifier'):
+    if pin not in h:
+        die('the %s pin missing from'
+            ' the header' % pin)
+    if pin not in s:
+        die('the %s pin missing from'
+            ' regtest' % pin)
 
-# the include comment whole
-# (the R390 lesson)
-if s.count('#include "rules/'
-          'wsgprof.h"  // R425: '
-          'the WSG wilderness '
-          'proficiencies') != 1:
+# the include line (the R390
+# lesson): the wsgprof include
+# comment must stay whole
+if s.count('#include "rules/wsgprof.h"'
+          '  // R425: the WSG wilderness'
+          ' proficiencies') != 1:
     die('the wsgprof include line')
 
-# the gap report on disk
-g = rd(GR)
-if g != REPORT:
-    die('the wsg gap report '
-        'diverges from the build')
-if g.count('- [x]') != 5:
+# the statics: no regtest
+# patch line over 76 columns
+for ln in AUD.split(NL):
+    if len(ln) > 76:
+        die('the regtest line %d long'
+            ' (%r)' % (len(ln), ln[:40]))
+
+# the gap censuses: the opener
+# post-state - closed boxes
+# (the 3 proficiency items + the
+# index), the open count
+g = rd(GP)
+closed = g.count(chr(10) + '- [x]')
+if closed != 4:
     die('the gap closed count %d'
-        % g.count('- [x]'))
+        % closed)
 opens = [l for l in g.split(NL)
-         if l.lstrip()
-         .startswith('- [ ]')]
-if len(opens) != 181:
+         if l.startswith('- [ ]')]
+if len(opens) != 149:
     die('the gap open count %d'
         % len(opens))
-if g.count('**Table ') != 42:
-    die('the gap table manifest')
 
 # the seed record
 if 'R424 landed 2026-10-13' not in rd(SD):
     die('the seed R424 record')
 
-# the caller contract: no
-# engine caller touches the
-# wsg pins
+# the caller contract: no engine
+# caller touches the wsg pins
 for path in ('dm/treasure.cpp',
              'game/state_combat.cpp'):
     if _re.search(r'\bwsg\w', rd(path)):
-        die('%s calls the wsg pins '
-            'early' % path)
+        die('%s calls the wsg pins'
+            ' early' % path)
 
-print('R425 splice: ALL OK '
-      '(applied %d, already %d)'
+print('R425 splice: ALL OK'
+      ' (applied %d, already %d)'
       % (len(applied), len(already)))
-print('NOTE: the WSG arc opener - '
-      'the wilderness')
-print('  proficiencies pin as '
-      'rules/wsgprof.h (33')
-print('  inlines, prefix wsg) with '
-      'the check')
-print('  system, Table 1 (the 14 '
-      'class rows), Table 2')
-print('  (the 25 proficiency rows), '
-      'the slot rules and')
-print('  the expanding optional '
-      'rule; the lossless')
-print('  wsg_gap_report.md opens '
-      'the wilderness arc')
-print('  (5 closed, 181 open, 42 '
-      'tables); census 350 '
-      '-> 351')
-print('commit: R425: the WSG arc '
-      'opener - the wilderness '
-      'proficiencies (census 351)')
-
+print('NOTE: the WSG arc opener - the')
+print('  wilderness proficiency system')
+print('  pins (rules/wsgprof.h, prefix')
+print('  wsg) with the Table 1 and Table')
+print('  2 censuses cross-checked live')
+print('  (14 class rows, 25 proficiency')
+print('  rows, 5 two-slot, 7 no-check);')
+print('  the wsg_gap_report.md opens the')
+print('  whole-book inventory - [x]=4,')
+print('  opens=149; census 350 -> 351')
+print('commit: R425: the WSG arc opener -'
+      ' the wilderness proficiencies'
+      ' (census 351)')
