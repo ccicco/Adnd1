@@ -53,7 +53,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Using rope for movement and climbing (p. 36) - R440: the standard 50-foot coil, the 1500-pound limit, the overload break chance, the weakening ladder and the weakened-rope break chance pin as rules/wsgrope.h
   - [x] Roping together (p. 37) - R441: the adjacent-recheck rule, the end/middle faller rules, the cascade penalty ladder, the last-pair extra check and the tie capacity pin as rules/wsgtog.h
   - [x] Rappelling (p. 37) - R442: the 120-feet-per-round base speed, the +50% per-round check modifier, the hang-upside-down failure state, the once-per-round Dexterity recovery and the free-hanging variant (+30%, Dex at +2) pin as rules/wsgrapp.h
-  - [ ] Belaying (p. 37)
+  - [x] Belaying (p. 37) - R443: the climbing-rope stats, the knot rules, the belayer check with the rope-length bound, the jolt second check with the secure exemption and the paired-belay sequence pin as rules/wsgbelay.h
   - [ ] Use of grappling hooks (p. 38)
   - [ ] Crossing a chasm on a rope (p. 38)
   - [ ] The mountaineering proficiency (p. 39)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R442: 45 closed, 141 open (the R442 round pins the rappelling - the 120-feet-per-round controlled descent with the +50% per-round Climbing Check, the lost-grip failure state and the free-hanging-rope variant at +30% with the +2 Dexterity modifier; the next rounds continue the section - the belaying, the grappling hooks and the chasm crossing).
+Post-state at R443: 46 closed, 140 open (the R443 round pins the belaying - the climbing-rope stats with the knot rules, the belayer Climbing Check with the rope-length fall bound, the jolt second check with the secure-position exemption and the paired-belay sequence; the next rounds continue the section - the grappling hooks and the chasm crossing).

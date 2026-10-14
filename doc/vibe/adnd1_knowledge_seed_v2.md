@@ -3081,6 +3081,25 @@ R172 were already dropped at the R171b/R172 era cut; git
   once, wsgtog.h 11 inlines, the cascade ladder landed (0/10/20/30/40), the
   gap 44 closed / 142 open, the R440 seed record in place, no wrp hits in the
   caller TUs. Next after landing: the rappelling (p. 37).
+- R442 landed 2026-10-14: commit e176cf3 (census 367, pushed
+  1aa49f0..e176cf3, preflight GREEN on the FIRST run), the WSG RAPPELLING,
+  printed p. 37 - the descent prose (no table): a rope-secured descent of a
+  non-horizontal surface at a base speed of 120 feet per round (encumbrance
+  and other penalties apply as for an ascent); a Climbing Check at +50% to the
+  Climbing Rating for every round or part of a round; a failed check means the
+  grip is lost - the character hangs upside down, spinning, until rescued or a
+  successful Dexterity Check (once per round); the free-hanging variant (no
+  surface to brace against) at +30% instead of +50%, with a +2 Dexterity
+  modifier on a failed check. rules/wsgrapp.h NEW (9 inlines, prefix wrl -
+  checked free in all three TUs). Ground truth CLEAN two-way (the user copy
+  OCR vs the djvu word layer Guide_0037 - every number matched, no eye-reads).
+  Gap 44/142 -> 45/141; census 366 -> 367. rverify GREEN on the FIRST build: 9
+  mutants, 0 missed. Spec md5s: feddcf09 authored / 58ec04c2 +nl. GITHUB
+  VERIFIED at the pinned full sha e176cf32b615d09a142b3eccf07b8f493f61617f:
+  census 367, the R442 audit present once, wsgrapp.h 9 inlines, the rappel
+  modifiers landed (+50/+30, Dex +2), the gap 45 closed / 141 open, the R441
+  seed record in place, no wrl hits in the caller TUs. Next after landing: the
+  belaying (p. 37).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
