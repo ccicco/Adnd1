@@ -3039,6 +3039,28 @@ R172 were already dropped at the R171b/R172 era cut; git
   once, wsgstop.h 20 inlines, the fraction cells landed (the cliff 0/0 dash),
   the gap 42 closed / 144 open, the R438 seed record in place. Next after
   landing: the rope rules (p. 36).
+- R440 landed 2026-10-14: commit 4bf7254 (census 365, pushed
+  a6536db..4bf7254, preflight GREEN on the FIRST run - the tenth clean
+  first-try land in a row), the WSG USING ROPE FOR MOVEMENT AND CLIMBING,
+  printed p. 36 - the rope prose (no table this round): the single most
+  important climbing equipment is a coil of rope; the standard 50-foot coil
+  (somewhat smaller than half an inch in diameter) supports up to 1500 pounds
+  without fraying or breaking; past the limit a 20 percent per-turn
+  non-cumulative break chance while the strain remains; the weakening chance
+  is cumulative - 10 percent after one turn of strain, 30 after two, 60 after
+  three, 100 after four (the wsrWeakenPct switch ladder); a weakened rope
+  breaks the next time it supports more than its limit at 40 percent per turn
+  non-cumulative. rules/wsgrope.h NEW (12 inlines, prefix wsr - wro was NOT
+  free; wsr checked free in all three TUs). Ground truth CLEAN two-way (the
+  user copy OCR vs the djvu word layer - the section reads clean in the djvu,
+  every number matched, no eye-reads needed). Gap 42/144 -> 43/143; census 364
+  -> 365. rverify GREEN on the FIRST build: 11 mutants, 0 missed. Spec md5s:
+  a88b0f6e authored / 44822213 +nl. GITHUB VERIFIED at the pinned full sha
+  4bf7254a845854d6b6cb811ba606ba6ba327b691: census 365, the R440 audit present
+  once with the bad 0 printf, wsgrope.h 12 inlines, the weakening ladder
+  landed (0/10/30/60/100), the gap 43 closed / 143 open, the R439 seed record
+  in place, no wsr hits in the caller TUs. Next after landing: the roping
+  together (p. 37).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
