@@ -3934,6 +3934,19 @@ R172 were already dropped at the R171b/R172 era cut; git
   r459-splice). Next after landing: the
   flying mounts (p. 47), then the to
   fall or not to fall (p. 48).
+- R460 landed 2026-10-14: commit 10c968e (full
+  10c968e20a8decdae84d73d14f584d8fd4104f51, census 385, pushed
+  5018a21..10c968e), the WSG FLYING MOUNTS, printed p. 47 - Table 27 in four
+  category grids (41 creatures x 7 columns: the normal and maximum loads with
+  the dash as max = normal, the full and reduced move rates, the MC on the
+  A=1..E=5 scale, the safe-turns/rest stamina pair), the column definitions
+  (the plummet rule, the single-rate 0 marker, the MC drop when ridden with E
+  unreducible, the over-load stamina cut), the solid-form footnote, the
+  listing criteria, the training and willingness rules, the triple-to-fifty
+  rations feeding and the even-distribution encumbrance with the 2:1 doubling.
+  rules/wsgflymounts.h NEW (60 inlines, prefix wfm, checked free in all three
+  TUs). Gap 62/124 -> 63/123; census 384 -> 385. The next round closes Chapter
+  5: the fall chance and the airborne riding proficiency on printed pp. 48-49.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
