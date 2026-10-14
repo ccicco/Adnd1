@@ -2753,6 +2753,72 @@ R172 were already dropped at the R171b/R172 era cut; git
   run and the GREEN
   preflight prove the body).
   Census 350 -> 351.
+- R426 landed 2026-10-14:
+  commit 435aaac (census
+  352, preflight GREEN,
+  pushed f313aa1..435aaac),
+  the dressing-for-the-
+  weather chapter closes
+  WHOLE - the first WSG
+  pin round after the arc
+  opener.
+  rules/wsgdress.h (NEW, 54
+  inlines, prefix wsd): the
+  four clothing categories
+  (very cold below 0, cold
+  0-30, moderate 31-75, hot
+  76+; the encumbrance
+  equivalents - plate mail
+  bulky 450 gp, ring mail
+  fairly bulky 250 gp,
+  leather non-bulky 150 gp,
+  none - the outfit costs
+  15/7/3 gp and the 6-sp
+  robe, the layer
+  equivalences 2-cold /
+  4-moderate), Table 3 (the
+  15 attire rows x the 4
+  temperature columns,
+  CUMULATIVE - the text
+  layer DROPPED the Splint
+  Mail label and the whole
+  Leather Armor row, the
+  grid re-read from the
+  page image), the
+  protected/unprotected
+  rules (the five category
+  clauses + the metal-armor
+  clause above 80, studded
+  leather not metal), the
+  three exertion regimes
+  and the clothing-as-armor
+  option (AC 8/9, the
+  10-percent miscast).
+  tools/wsg_gap_report.md
+  flips 8: 12 closed, 174
+  open, 42 tables.
+  INCIDENT: the first build
+  was committed RED (local
+  101082c, never pushed;
+  the push was ^C-d on the
+  RED preflight) - the
+  audit block split C++
+  identifiers across lines
+  (57 sites) and the column
+  switches emitted the
+  parameter without its
+  type; the reset route
+  landed one clean commit.
+  NEW GATE (the R426
+  lesson): the
+  no-split-identifier gate
+  in every splice verify
+  pass. The landed Termux
+  md5 diverged from the
+  published value by  exactly one trailing
+  newline - benign, the
+  md5 stays advisory.
+  Census 351 -> 352.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -31,8 +31,8 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Clothing that functions as armor (p. 19) - R426: the AC 8/9 option and the miscast risk pin as rules/wsgdress.h
   - [x] Effects of exertion (p. 20) - R426: the three regimes pin as rules/wsgdress.h
 - [ ] **Effects of the environment** (pp. 21-29)
-  - [ ] Temperature and wind (p. 21)
-  - [ ] Precipitation (p. 22)
+  - [x] Temperature and wind (p. 21) - R427: Tables 4 and 5 with the how-to-use rules pin as rules/wsgenvfx.h
+  - [x] Precipitation (p. 22) - R427: the moderate/heavy wind-line shifts pin as rules/wsgenvfx.h
   - [ ] Special weather (p. 23)
   - [ ] Damage from heat and cold (p. 25)
   - [ ] Effects on equipment (p. 28)
@@ -159,8 +159,8 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 1: character proficiencies** (p. 12) - R425: the printed grids pin as rules/wsgprof.h
 - [x] **Table 2: wilderness proficiencies** (p. 12) - R425: the printed grids pin as rules/wsgprof.h
 - [x] **Table 3: effects of clothing and armor on personal temperature** (p. 19) - R426: the 15 attire rows x the 4 columns pin as rules/wsgdress.h
-- [ ] **Table 4: temperature effects** (p. 21)
-- [ ] **Table 5: wind velocity effects** (p. 21)
+- [x] **Table 4: temperature effects** (p. 21) - R427: the 13 bands pin as rules/wsgenvfx.h
+- [x] **Table 5: wind velocity effects** (p. 21) - R427: the 6 bands pin as rules/wsgenvfx.h
 - [ ] **Table 6: hurricane damage to structures** (p. 23)
 - [ ] **Table 7: tornado damage to structures** (p. 24)
 - [ ] **Table 8: hailstorm damage to characters** (p. 24)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R426: 12 closed, 174 open (the R426 round closes the dressing-for-the-weather chapter whole - the personal temperature system, the four clothing categories, Table 3, the protected/unprotected rules, the exertion regimes and the clothing-as-armor option - seven boxes; the next rounds work top-down - data tables first).
+Post-state at R427: 16 closed, 170 open (the R427 round closes the environment data slice - Table 4 (the 13 temperature bands), Table 5 (the 6 wind bands), the how-to-use rules and the precipitation shifts - four boxes; the special weather, the heat/cold damage and the equipment effects stay open).
