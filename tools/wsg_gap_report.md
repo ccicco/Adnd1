@@ -24,12 +24,12 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Improving proficiencies (p. 11) - R425: the check system and the improving/expanding rules pin as rules/wsgprof.h
   - [x] Expanding proficiency slots (optional rule) (p. 12) - R425: the check system and the improving/expanding rules pin as rules/wsgprof.h
   - [ ] Proficiency descriptions (pp. 13-17)
-- [ ] **Dressing for the weather** (pp. 18-20)
-  - [ ] Personal temperature (p. 18)
-  - [ ] Clothing (p. 18)
-  - [ ] Protected and unprotected characters (p. 19)
-  - [ ] Clothing that functions as armor (p. 19)
-  - [ ] Effects of exertion (p. 20)
+- [x] **Dressing for the weather** (pp. 18-20) - R426: the whole chapter pins as rules/wsgdress.h
+  - [x] Personal temperature (p. 18) - R426: the Fahrenheit effective/personal temperature system pins as rules/wsgdress.h
+  - [x] Clothing (p. 18) - R426: the four categories (the ranges, the encumbrance equivalents, the costs) pin as rules/wsgdress.h
+  - [x] Protected and unprotected characters (p. 19) - R426: the five unprotected rules pin as rules/wsgdress.h
+  - [x] Clothing that functions as armor (p. 19) - R426: the AC 8/9 option and the miscast risk pin as rules/wsgdress.h
+  - [x] Effects of exertion (p. 20) - R426: the three regimes pin as rules/wsgdress.h
 - [ ] **Effects of the environment** (pp. 21-29)
   - [ ] Temperature and wind (p. 21)
   - [ ] Precipitation (p. 22)
@@ -158,7 +158,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 
 - [x] **Table 1: character proficiencies** (p. 12) - R425: the printed grids pin as rules/wsgprof.h
 - [x] **Table 2: wilderness proficiencies** (p. 12) - R425: the printed grids pin as rules/wsgprof.h
-- [ ] **Table 3: effects of clothing and armor on personal temperature** (p. 19)
+- [x] **Table 3: effects of clothing and armor on personal temperature** (p. 19) - R426: the 15 attire rows x the 4 columns pin as rules/wsgdress.h
 - [ ] **Table 4: temperature effects** (p. 21)
 - [ ] **Table 5: wind velocity effects** (p. 21)
 - [ ] **Table 6: hurricane damage to structures** (p. 23)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R425: 5 closed, 181 open (the R425 round closes the Proficiency Check system, the improving rule, the expanding optional rule and the two printed p. 12 grids - five boxes; the 25 proficiency descriptions and everything else stay open, worked top-down - data tables first).
+Post-state at R426: 12 closed, 174 open (the R426 round closes the dressing-for-the-weather chapter whole - the personal temperature system, the four clothing categories, Table 3, the protected/unprotected rules, the exertion regimes and the clothing-as-armor option - seven boxes; the next rounds work top-down - data tables first).

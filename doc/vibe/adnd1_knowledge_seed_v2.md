@@ -2704,6 +2704,55 @@ R172 were already dropped at the R171b/R172 era cut; git
   expectation mutants all
   RED, clean GREEN.
   Census 349 -> 350.
+- R425 landed 2026-10-14:
+  commit f313aa1 (census
+  351, preflight GREEN on
+  the FIRST run, pushed
+  8e710fb..f313aa1), the
+  WSG ARC OPENER - the
+  wilderness proficiencies.
+  rules/wsgprof.h (NEW, 33
+  inlines, prefix wsg): the
+  Proficiency Check system
+  (1d20 vs the Appropriate
+  Ability, the unmodified
+  19/20 auto-fail, the 18
+  cap, the 2-in-20 floor,
+  the -2 improving step
+  from 3rd level, an
+  improved 19 succeeds, a
+  natural 20 always fails),
+  the slot rules (a weapon
+  slot may hold a nonweapon
+  proficiency, never the
+  reverse), the expanding
+  optional rule (1st level
+  only, a delayed slot is
+  lost), the horseman
+  footnote, Table 1 (the 14
+  class rows, the bard "as
+  other classes" sentinel)
+  and Table 2 (the 25 rows)
+  as switches with the
+  censuses and the book own
+  denominator arithmetic.
+  tools/wsg_gap_report.md
+  (NEW): the lossless
+  whole-book inventory -
+  the 42-table manifest from
+  the book own Tables index,
+  the 14 chapters, the DM
+  section, the weather
+  appendix; 5 closed, 181
+  open, 42 tables. The
+  double-run 5/0 then 0/5;
+  the user Termux md5 was
+  not captured this round -
+  575a6199 stays advisory
+  (the compile, the double-
+  run and the GREEN
+  preflight prove the body).
+  Census 350 -> 351.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
