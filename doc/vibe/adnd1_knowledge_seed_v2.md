@@ -2667,6 +2667,43 @@ R172 were already dropped at the R171b/R172 era cut; git
   item CLOSES - the box flips,
   nothing stays open; census
   348 -> 349.
+- R424 landed 2026-10-13:
+  commit 8e710fb (census
+  350, preflight GREEN on
+  the FIRST run, pushed
+  a44b3d0..8e710fb), the
+  APPENDIX T RESOLUTION -
+  the LAST open
+  book-content box in the
+  UA gap report closes.
+  The clean OCR read
+  (pages 124/127/128/129 =
+  printed 123/126/127/128)
+  resolves the five R391
+  flagged holes: the
+  classification system
+  paragraph, the fauchard
+  description, the
+  Lucern/bec comparison
+  tail, the combination
+  intro, the bill-guisarme
+  features list and the
+  confusion sentence all
+  print whole; every flag
+  REPLACED 1:1 with a
+  ReadsClean pin (the
+  inline count 161 stays);
+  the ledger flips clean 2
+  -> 7, flagged 5 -> 0.
+  Gap post-state: 102
+  closed, 3 open (the two
+  logging layers + the
+  legend line) - ALL
+  book-content boxes are
+  CLOSED. Sim: 7 value + 3
+  expectation mutants all
+  RED, clean GREEN.
+  Census 349 -> 350.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
