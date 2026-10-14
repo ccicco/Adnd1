@@ -47,7 +47,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [ ] Surface types (p. 34)
   - [ ] Surface conditions (p. 34)
   - [ ] Chance of falling (p. 34)
-  - [ ] Climbing checks (p. 35)
+  - [x] Climbing checks (p. 35) - R436: the Table 16 modifiers, the other modifiers (the encumbrance, race, armor, strength and hands rules), the thief modifiers and the initial, intermediate and final check rules pin as rules/wsgcheck.h
   - [ ] Damage from falling (p. 35)
   - [ ] Stopping a fall (p. 36)
   - [ ] Using rope for movement and climbing (p. 36)
@@ -171,7 +171,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 13: encumbrance limits and movement rates for animals** (p. 32) - R433
 - [x] **Table 14: movement of vehicles** (p. 33) - R434
 - [x] **Table 15: climbing movement rates** (p. 33) - R435
-- [ ] **Table 16: modifiers to non-thief's climbing rating** (p. 35)
+- [x] **Table 16: modifiers to non-thief's climbing rating** (p. 35) - R436
 - [ ] **Table 17: damage from free fall or severe slope** (p. 35)
 - [ ] **Table 18: damage from tumbling down moderate or gentle slope** (p. 36)
 - [ ] **Table 19: chance of stopping a fall or tumble** (p. 36)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R435: 35 closed, 151 open (the R435 round pins the climbing - Table 15 (the 13 surface rows x the three condition rates and the per-cell restricted flags) with the encumbrance modifications, the surface types and conditions and the chance-of-falling rating; the next rounds continue the section - the climbing checks, Table 16).
+Post-state at R436: 37 closed, 149 open (the R436 round pins the climbing checks - Table 16 (the 13 surface rows x the three condition modifiers) with the other modifiers (the encumbrance, race, armor, strength and hands rules), the thief modifiers and the initial, intermediate and final check rules; the next rounds continue the section - the damage from falling, Table 17).

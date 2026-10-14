@@ -2933,6 +2933,30 @@ R172 were already dropped at the R171b/R172 era cut; git
   present, wsgvehicle.h 15 inlines, the gap 33 closed / 153 open, the R433
   seed record in place. Next after landing: Table 15, the climbing rates - the
   movement-across-special-terrain section.
+- R435 landed 2026-10-14: commit 76e9023 (census 360, pushed
+  3d74d6a..76e9023, preflight GREEN on the FIRST run - the fifth clean
+  first-try land in a row), the WSG CLIMBING, printed pp. 33-34 - Table 15
+  (the 13 surface rows x the three condition rates in feet per round for a
+  thief with the per-cell thief-or-mountaineering restricted flags) with the
+  climbing prose (all characters can climb, the non-thief half rate, the dex
+  Reaction/Attacking Adjustment, the no-tools assumption, the cracks assumed
+  except the gentle nonslippery slope, the thieves-only devoid rule), the
+  encumbrance modifications (the severe, heavy-or-moderate and light bands;
+  the cliff needs an unencumbered climber), the surface types (the degree
+  bands and elevation changes, under-15 not a slope, the overhang same rules)
+  and the chance of falling (100 minus the Climbing Rating, the non-thief 40,
+  the mountaineer-with-tools 80 on restricted surfaces, the d100 roll
+  at-or-under succeeds). Key pins: the rough gentle slope 90/60/30, every
+  cliff cell restricted, the cliff smooth no-ledges row 10*/5*/5*.
+  rules/wsgclimb.h NEW (43 inlines, prefix wcs - wcl was NOT free, hits wclass
+  in regtest; checked). Ground truth three-way verified (the cliff smooth
+  with-ledges non-slippery cell: the djvu reads 16*, two eye-reads settle
+  15*). Gap 33/153 -> 35/151; census 359 -> 360. rverify GREEN: 115 mutants, 0
+  missed. Spec md5s: d5c4631f authored / 3a4514a2 +nl. GITHUB VERIFIED at the
+  pinned full sha 76e9023b0174d3388d203cd1b9522e86cad33e67: census 360, the
+  R435 audit present once, wsgclimb.h 43 inlines, the gap 35 closed / 151
+  open, the R434 seed record in place. Next after landing: the climbing checks
+  and Table 16 (p. 35).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
