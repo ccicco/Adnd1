@@ -62,7 +62,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Overland movement in reduced visibility (p. 40) - R449: the daylight assumption, the other-factors-first multiplication, the 1/1 clear-daylight cell, the daylight hazard-avoidance with the night exception, the infravision heat-only detection, the Dex check above the safe speed with the 2x cap and Table 23 (the three light rows x the five conditions, 1/1 to 1/8) pin as rules/wsgvis.h
   - [x] Swimming (p. 41) - R450: the proficiency gate with the non-sinking rule, the three sub-skills, the encumbrance key factor, Table 24 (the five rows x the four functions, x2 through the dash), the endurance rules (levels+con, the 3-turn rest rate, the 1/10 high-speed cut with the one-for-one recovery) and the speed rules (the 40/30 base rates, the 2/3 subsurface cut, the strength/current modifiers, the 0-inch hold and the mercy-of-the-current drift, the surface-only high speed halved at 0) pin as rules/wsgswim.h
   - [x] Other effects of moving water (p. 42) - R451: the 1-10 stream hazard rating as the proficiency-check cadence, the 1d6 buffeting damage, the 1d3 nonproficient damage, the grab-a-protrusion Dex check with the two-round Strength hold and the waterfall rules (half damage at 40 feet, the breath save with the 40/100 thresholds, the one-tenth saved damage, the under-40 dive and the rocks void the mercy) pin as rules/wsgmwater.h
-  - [ ] Diving and surfacing (p. 42)
+  - [x] Diving and surfacing (p. 42) - R452: the 2-inch/20-foot base downward swim rate with the moderate double and the heavy/severe triple, and the leap-height extra-depth ladder (5/15/25/35/40 feet -> 1/2/3/4/5 inches, capped at 5 beyond 40 feet, a 40-foot-or-more dive risking falling damage) pin as rules/wsgdive.h
   - [ ] Treading water (p. 43)
   - [ ] Holding one breath (p. 43)
   - [ ] Movement in waterborne vehicles (p. 44)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R451: 54 closed, 132 open (the R451 round pins the other effects of moving water - the 1-10 hazard rating as the check cadence, the 1d6 buffeting and 1d3 nonproficient damage, the protrusion grab with the two-round strength hold, and the waterfall falling-damage rules with the breath save and the 40/100 thresholds; the next rounds continue the chapter - the diving and surfacing rules and the treading water).
+Post-state at R452: 55 closed, 131 open (the R452 round pins the diving and surfacing - the 2-inch/20-foot base downward rate doubled for moderate and tripled for heavy/severe encumbrance, and the leap-height extra-depth ladder with the 5-inch cap beyond 40 feet and the falling-damage risk at 40 feet or more; the next rounds continue the chapter - the treading water).

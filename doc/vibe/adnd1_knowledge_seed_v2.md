@@ -3385,6 +3385,46 @@ R172 were already dropped at the R171b/R172 era cut; git
   Next after landing: the other effects of
   moving water (p. 42), then the diving and
   surfacing rules and the treading water.
+- R451 landed 2026-10-14: commit 94d5631
+  (full 94d5631ce3b4e551a5a11435b34da6671
+  5fbe95e, census 376, pushed 657c7fc..
+  94d5631, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG OTHER EFFECTS OF MOVING
+  WATER, printed p. 42 - the rough-water prose (no table): the 1-10 stream
+  hazard rating (1 the most hazardous; the number = the rounds before a
+  proficiency check - rating 1 checks every round, rating 5 checks rounds 1,
+  6, 11 and every fifth round thereafter); the 1d6 buffeting damage on a
+  failed check; the virtually helpless nonproficient swimmer at 1d3 damage per
+  round; the grab-a-protrusion halt (a Dex check, a new attempt every round,
+  then a Strength check every two rounds to stay attached - failure sweeps him
+  downstream); the waterfall rules (40 feet or more = half normal free-fall
+  damage, a save vs breath weapon allowed - success at 40-100 feet = no
+  damage, success beyond 100 feet = one-tenth rounded up, under 40 feet = no
+  falling damage, treated as a normal dive; rocks at the base void the mercy -
+  damage assessed as a fall through the air). rules/wsgmwater.h NEW (20
+  inlines, prefix wmw - checked free in all three TUs). Ground truth CLEAN
+  two-way (the user copy OCR vs the djvu word layer Guide_0042 - every number
+  matched, no eye-reads). Gap 53/133 -> 54/132; census 375 -> 376. rverify
+  GREEN on the FIRST build: 20 mutants, 0 missed. Spec md5s: e4cce91b
+  authored / c402102b +nl - the user-side file
+  hashed ff222b09 / fd3b03ce +nl, the
+  delivery-side newline variance FIVE rounds
+  running (R447-R451; cosmetic every time -
+  the same 6 patches, clean mirror; diagnose
+  the bn fetch at the next mismatch).
+  GITHUB VERIFIED at the pinned full sha
+  94d5631ce3b4e551a5a11435b34da6671
+  5fbe95e: census 376, the R451 audit with
+  the bad-0 printf at line 49614, the
+  include at line 156, wsgmwater.h 20
+  inlines, the gap 54 closed / 132 open
+  flipped with the Post-state at R451, the
+  R450 seed record in place, no wmw hits in
+  the caller TUs (canvas r451-splice).
+  Next after landing: the diving and
+  surfacing rules (p. 42), then the treading
+  water.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
