@@ -50,7 +50,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Climbing checks (p. 35) - R436: the Table 16 modifiers, the other modifiers (the encumbrance, race, armor, strength and hands rules), the thief modifiers and the initial, intermediate and final check rules pin as rules/wsgcheck.h
   - [x] Damage from falling (p. 35) - R437: the Table 17 damage bands, the falling-vs-tumbling distinction, the 1d6-cumulative basis and the fall rates pin as rules/wsgfall.h
   - [x] Stopping a fall (p. 36) - R439: the Table 19 stop fractions, the one-attempt rule, the 50/75/100-foot windows, the protrusion requirement and the slope-self-halt rule pin as rules/wsgstop.h
-  - [ ] Using rope for movement and climbing (p. 36)
+  - [x] Using rope for movement and climbing (p. 36) - R440: the standard 50-foot coil, the 1500-pound limit, the overload break chance, the weakening ladder and the weakened-rope break chance pin as rules/wsgrope.h
   - [ ] Roping together (p. 37)
   - [ ] Rappelling (p. 37)
   - [ ] Belaying (p. 37)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R439: 42 closed, 144 open (the R439 round pins the stopping of a fall - Table 19 (the four surface rows x the three condition stop fractions) with the one-attempt rule, the attempt windows, the protrusion requirement and the slope-self-halt rule; the next rounds continue the section - the rope rules, the rappelling and belaying).
+Post-state at R440: 43 closed, 143 open (the R440 round pins the rope use - the standard 50-foot coil with the 1500-pound support limit, the overload break chance, the cumulative weakening ladder and the weakened-rope break chance; the next rounds continue the section - the roping together, the rappelling, the belaying and the grappling hooks).

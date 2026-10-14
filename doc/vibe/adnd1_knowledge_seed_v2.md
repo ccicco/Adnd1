@@ -3021,6 +3021,24 @@ R172 were already dropped at the R171b/R172 era cut; git
   once, wsgtumble.h 26 inlines, the eye-read cells landed, the gap 40 closed /
   146 open, the R437 seed record in place. Next after landing: the stopping of
   a fall - Table 19 (p. 36).
+- R439 landed 2026-10-14: commit a6536db (census 364, pushed
+  e0bc5a3..a6536db, preflight GREEN on the FIRST run - the ninth clean
+  first-try land in a row), the WSG STOPPING A FALL, printed p. 36 - Table 19
+  (the four surface rows x the three condition stop fractions, each a fraction
+  of the Climbing Rating: gentle 7/8-3/4-2/3, moderate 3/4-2/3-1/2, severe
+  2/3-1/2-1/4, cliff 1/2-1/4-dash) encoded as a 6-column numerator/
+  denominator table with the one-attempt rule, the 50/75/100-foot windows, the
+  protrusion requirement and the slope-self-halt rule; all fraction
+  comparisons written cross-multiplied, division-free. rules/wsgstop.h NEW (20
+  inlines, prefix wsf - wsp was NOT free). Ground truth three-way verified
+  (the djvu table zone heavily garbled; two IIIF eye-reads matched the user
+  copy exactly). Gap 40/146 -> 42/144; census 363 -> 364. rverify GREEN on the
+  FIRST build: 38 mutants, 0 missed. Spec md5s: d8d12995 authored / 4be67f21
+  +nl. GITHUB VERIFIED at the pinned full sha
+  a6536db0d65969519eec30118498033c888ea682: census 364, the R439 audit present
+  once, wsgstop.h 20 inlines, the fraction cells landed (the cliff 0/0 dash),
+  the gap 42 closed / 144 open, the R438 seed record in place. Next after
+  landing: the rope rules (p. 36).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
