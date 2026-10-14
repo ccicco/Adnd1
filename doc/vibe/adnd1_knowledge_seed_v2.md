@@ -3479,6 +3479,58 @@ R172 were already dropped at the R171b/R172 era cut; git
   already 6 (canvas r452-splice).
   Next after landing: the treading water (p. 43),
   then the drowning rules.
+- R453 landed 2026-10-14: commit 8bda29f
+  (full 8bda29f18f1a01cac45adaf3cf1f128
+  3bd498458, census 378, pushed 8a59b1e..
+  8bda29f, preflight GREEN on the FIRST run,
+  the splice double-run clean: applied 6 /
+  already 6), the WSG TREADING WATER,
+  printed p. 43 - the proficient calm-water hold (a
+  number of turns equal to TWICE the endurance
+  score, one endurance point per two turns), the
+  nonproficient limit (rounds equal to the
+  STRENGTH score, modified for encumbrance the
+  same way a swimmer's endurance is modified), the
+  expiry checks (a Strength Check at expiration
+  and every round thereafter, cumulative +1 after
+  the first, per the printed 6-strength/12-round
+  example - the strength limit doubled by the
+  unencumbered endurance multiplier, +1 at the
+  13th round, +2 at the 14th), and the current
+  rules (carried at the current speed modified
+  for encumbrance just as for swimming movement,
+  the proficient hold-position effectively
+  swimming with endurance assessed, the
+  nonproficient sinking immediately if he
+  resists). rules/wsgtread.h NEW (15 inlines: 6
+  consts + 9 bools, prefix wtw - checked free in
+  all three TUs). Ground truth CLEAN two-way
+  (the user copy OCR page 44 vs the djvu word
+  layer Guide_0043 - every number matched, the
+  only djvu garbles the section header and word
+  breaks, no eye-reads needed). Gap 55/131 ->
+  56/130; census 377 -> 378. rverify GREEN on
+  the FIRST build: 15 mutants, 0 missed. Spec
+  md5s: 7445288f authored / 47290237 +nl -
+  the user-side file hashed 048a40bf /
+  63780cdc +nl, the delivery-side newline
+  variance SEVEN rounds running (R447-R453;
+  cosmetic every time - the same 6 patches,
+  clean mirror; diagnose the bn fetch at the
+  next mismatch).
+  GITHUB VERIFIED at the pinned full sha
+  8bda29f18f1a01cac45adaf3cf1f128
+  3bd498458: census 378, the R453 audit with
+  the bad-0 printf at line 49786, the
+  include at line 158, wsgtread.h 15
+  inlines, the gap 56 closed / 130 open
+  flipped with the Post-state at R453, the
+  R452 seed record in place, no wtw hits in
+  the caller TUs, and the engine re-run on
+  the landed tree reads applied 0 /
+  already 6 (canvas r453-splice).
+  Next after landing: the holding one breath
+  (p. 43), then the drowning rules.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
