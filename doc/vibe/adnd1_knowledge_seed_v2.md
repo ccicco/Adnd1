@@ -4904,6 +4904,40 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   whichever-is-less one-increment path), not the full 10-foot
   step; cross-const arithmetic checks must respect
   whichever/minimum semantics before pinning equality.
+- R476 LANDED 2026-10-15: commit 21d9e59 (census 401, pushed
+  86ebdd8..21d9e59), the WSG UNCONTROLLABLE FIRES slice,
+  printed p. 67 - the sixth camping-arc round, a pure prose
+  round with NO table: the four cardinal rules of fire
+  discipline (do not build larger than needed with the
+  two-small-fires advice; never leave untended with the
+  sentry spark watch), the spark semantics (sparks and ash
+  once every 1d3 turns, carried downwind 10-30 feet by size
+  plus one foot per 1 mph of wind, a 1 in 6 catch chance on
+  combustible material, the wild fire that may char several
+  miles), the average-case growth ladder (tiny flame to small
+  in 1 turn, medium in 2, large in 4, uncontrollable within 6
+  turns - one hour - by height or area), the extinguishing
+  discipline (5 rounds small / 1 turn medium / 2 turns large,
+  halved by a helper or 1/2/4 gallons of water, doubled on
+  combustible material, a 1 in 10 residual chance, and the
+  2d4-turn flare-up of a campfire left alive), and the
+  uncontrollable-fire spread prose (rough circle stringing out
+  into a wind-driven wall of fire; animals and wise
+  characters flee ahead). 46 inlines (25 consts, 21 bools)
+  pin as rules/wsgblaze.h; census 400 -> 401; gap 101/85 ->
+  102/84 (uncontrollable fires p. 67 box; next: damage from
+  fire p. 68). md5 pair: authored no-nl
+  f4bc46529ddbdd42609b752ab7561c10, as-built
+  7a74ea54869f36c766e8c503be11ea17; verified at raw sha on
+  GitHub. GROUND TRUTH: two-way clean on every number, no
+  contested cells, no vision reads needed - the user's initial
+  two-small-tables report was an off-by-one against p. 66
+  (already landed in R475); confirm the print-page vs pdf-page
+  offset (printed p. 67 = pdf page 68) before doubting an
+  extraction. ENGINE: the audit mirror passed on the FIRST
+  build this round - applying the R475 whichever/minimum
+  lesson at design time (all ladder and equality checks
+  checked against the book semantics before building) pays.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

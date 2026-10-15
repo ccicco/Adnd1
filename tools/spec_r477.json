@@ -1,0 +1,467 @@
+{
+ "round": 477,
+ "title": "the WSG damage from fire slice - the firebreak and advance speed prose, the engulfment rule, the brief-contact and panic rules and the extreme-heat rule, printed p. 68",
+ "prefix": "wdm",
+ "header_file": "rules/wsgdmg.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 401,
+ "inline_count": 38,
+ "audit_label": "R477 WSG damage from fire pin audit",
+ "audit_comment": "The firebreak and advance prose (the half-wind or 5-mph advance, the trot escape, the firebreak with dig and move earth, the cut-in-half ruling, the cleared-area refuge), the engulfment rule (the 1d6+9 10-15 damage with the halved-rounded-up +4 Constitution Check and the one-third unconscious bar), the brief-contact rule (the 1d8 contact damage, the versus-normal-fire item saves, the 1d3 per burning item, the Wisdom Check calm-and-roll against the panic run with 1d4 per round), and the extreme-heat rule (5 feet large, 3 feet medium, 120 degrees, no activity adjustments) are audit examples.",
+ "banner": {
+  "title": "R477: the WSG DAMAGE FROM FIRE slice, printed p. 68 - the seventh camping-arc round, closing the camping-arc FIRE chapter by riding the uncontrollable-fires seam unpinned by R476 (whose round stopped at the fleeing prose): the advance and firebreak prose (an uncontrollable fire advances at one-half of the wind velocity or 5 mph in any case; a trot stays ahead in calm air or a light breeze; the firebreak of churned and cleared ground with dig and move earth and the 18-strength spade of colossal excavation; the cut-the-blaze-in-half ruling; the cleared-area refuge with its too-close peril), the engulfment rule (10-15 points of damage, 1d6+9, per round, cut in half rounded up on a successful Constitution Check with a +4 modifier to the die roll, with burn damage equal to one-third of the full normal hit-point total rendering the victim unconscious and ending his Constitution Checks), the brief-contact rule (1d8 points for leaping through a wall of fire, saves versus normal fire for every major item, 1d3 additional points per round per burning item until extinguished or discarded, the Wisdom Check to stay calm, hit the ground and roll, and the panic run at top speed in a random direction taking 1d4 per round until caught), and the extreme-heat rule (closer than 5 feet to a large fire or 3 feet to a medium fire counts as 120 degrees or higher per the Temperature Damage to Characters Table, with the activity-level adjustments waived), printed p. 68.",
+  "provenance": "Ground truth two-way clean on every number, no contested cells, no physical-page reads: the user-run Termux tesseract text of printed p. 68 (p68_full.txt, p68_tsv.tsv) vs the pdf embedded text layer (pdftotext -layout, pdf page 69, p68_pdfy.txt). The two readers AGREE on all prose numbers: the half-wind advance with the 5-mph floor, the 10-15 engulf damage as 1d6+9 with the +4 Constitution Check modifier and the halved-rounded-up reduction, the one-third unconscious threshold, the 1d8 brief contact, the 1d3 per burning item, the 1d4 panic damage, the 5-foot large and 3-foot medium heat distances at 120 degrees, and the 18-strength spade of colossal excavation. The page carries NO table, so no vision-on-png settler was needed; the printed-page-68 offset against pdf page 69 was confirmed at extraction time per the R476 lesson.",
+  "sentinel": "All prose numbers of printed p. 68 pinned (the advance speed, the engulf damage range with its check modifier, the unconscious threshold, the contact dice, the heat distances and temperature); the firebreak, refuge, panic and adjudication prose are audit examples."
+ },
+ "consts": [
+  {
+   "name": "wdmAdvanceWindDiv",
+   "value": 2,
+   "comment": "an uncontrollable fire advances at one-half of the wind velocity"
+  },
+  {
+   "name": "wdmAdvanceMinMph",
+   "value": 5,
+   "comment": "the fire advances at a speed of 5 mph in any case"
+  },
+  {
+   "name": "wdmEngulfDice",
+   "value": 1,
+   "comment": "a character engulfed in flames rolls 1d6"
+  },
+  {
+   "name": "wdmEngulfDieSides",
+   "value": 6,
+   "comment": "the engulf damage die is d6"
+  },
+  {
+   "name": "wdmEngulfBonus",
+   "value": 9,
+   "comment": "the engulf damage bonus is +9"
+  },
+  {
+   "name": "wdmEngulfMinDmg",
+   "value": 10,
+   "comment": "engulfment deals 10-15 points of damage per round"
+  },
+  {
+   "name": "wdmEngulfMaxDmg",
+   "value": 15,
+   "comment": "the top of the 10-15 engulf damage range"
+  },
+  {
+   "name": "wdmConCheckMod",
+   "value": 4,
+   "comment": "the Constitution Check to halve engulf damage takes a +4 modifier to the die roll"
+  },
+  {
+   "name": "wdmHalveDivisor",
+   "value": 2,
+   "comment": "the engulf damage is cut in half, rounded up, on a successful Constitution Check"
+  },
+  {
+   "name": "wdmUnconsciousNum",
+   "value": 1,
+   "comment": "burn damage equal to one-third of the full normal hit-point total renders the victim unconscious"
+  },
+  {
+   "name": "wdmUnconsciousDen",
+   "value": 3,
+   "comment": "the unconscious threshold denominator is one-third"
+  },
+  {
+   "name": "wdmBriefDieSides",
+   "value": 8,
+   "comment": "brief contact with a fire, such as leaping through a wall of fire, deals 1d8 points of damage"
+  },
+  {
+   "name": "wdmItemBurnDieSides",
+   "value": 3,
+   "comment": "every major item that catches fire adds 1d3 points of damage per round"
+  },
+  {
+   "name": "wdmPanicDieSides",
+   "value": 4,
+   "comment": "a panicked character takes 1d4 points of damage per round until caught and helped"
+  },
+  {
+   "name": "wdmHeatLargeFt",
+   "value": 5,
+   "comment": "closer than 5 feet to a large fire exposes the character to extreme heat"
+  },
+  {
+   "name": "wdmHeatMediumFt",
+   "value": 3,
+   "comment": "closer than 3 feet to a medium fire exposes the character to extreme heat"
+  },
+  {
+   "name": "wdmHeatTempDegrees",
+   "value": 120,
+   "comment": "the heat exposure counts as a temperature of 120 degrees or higher"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wdmTrotStaysAhead",
+   "value": true,
+   "comment": "in calm air or a light breeze a man or animal moving at a trot can stay safely ahead of the flames"
+  },
+  {
+   "name": "wdmFirebreakClears",
+   "value": true,
+   "comment": "a firebreak is an area of ground in the path of the fire churned up and cleared to remove most or all of the combustible material"
+  },
+  {
+   "name": "wdmDigMoveEarthHelp",
+   "value": true,
+   "comment": "spells such as dig and move earth are helpful in building a firebreak"
+  },
+  {
+   "name": "wdmSpadeCanKillFire",
+   "value": true,
+   "comment": "a party containing a fighter with 18 strength and a spade of colossal excavation may be able to kill a fire with a firebreak"
+  },
+  {
+   "name": "wdmFirebreakCutsInHalf",
+   "value": true,
+   "comment": "a single firebreak that cannot extinguish a very extensive fire can be used to cut the blaze in half, leaving two smaller fires"
+  },
+  {
+   "name": "wdmClearedAreaRefuge",
+   "value": true,
+   "comment": "characters without the means to extinguish an uncontrollable blaze may save themselves by clearing an area and remaining in that spot while the fire burns around them"
+  },
+  {
+   "name": "wdmRefugeStillRisky",
+   "value": true,
+   "comment": "characters in a cleared area may still suffer damage from heat or flames if they do not clear a large enough space and the fire gets too close"
+  },
+  {
+   "name": "wdmFireNotAlwaysLethal",
+   "value": true,
+   "comment": "in heroic fantasy direct exposure to fire is not always lethal, but it is not to be taken lightly"
+  },
+  {
+   "name": "wdmEngulfRequiresImmersion",
+   "value": true,
+   "comment": "the engulf rule applies only when the victim is fully within a fire or when most of the surface of his body, clothing and gear, is actually aflame"
+  },
+  {
+   "name": "wdmHalvedRoundedUp",
+   "value": true,
+   "comment": "the successful Constitution Check cuts the engulf damage in half, rounded up"
+  },
+  {
+   "name": "wdmUnconsciousLosesChecks",
+   "value": true,
+   "comment": "a character who suffers burn damage equal to one-third of his full normal hit points is rendered unconscious and is no longer allowed Constitution Checks to offset part of the damage"
+  },
+  {
+   "name": "wdmItemsSaveVsFire",
+   "value": true,
+   "comment": "on brief contact with fire every major piece of clothing or equipment carried must save versus normal fire to avoid being ignited"
+  },
+  {
+   "name": "wdmItemBurnPerRound",
+   "value": true,
+   "comment": "for every major item that catches fire the character suffers additional damage per round until the flame is extinguished or the item is discarded"
+  },
+  {
+   "name": "wdmWisCheckAvoids",
+   "value": true,
+   "comment": "a character whose gear catches fire can avoid damage with a successful Wisdom Check: remaining calm, hitting the ground and rolling"
+  },
+  {
+   "name": "wdmPanicRuns",
+   "value": true,
+   "comment": "an unsuccessful Wisdom Check means the character has panicked: he runs at top speed in a random direction, away from the fire if possible"
+  },
+  {
+   "name": "wdmPanicUntilCaught",
+   "value": true,
+   "comment": "the panicked character takes damage per round until another character catches him and helps put out the flames"
+  },
+  {
+   "name": "wdmHeatNeedsNoContact",
+   "value": true,
+   "comment": "a character need not be in direct contact with fire to be hurt by it: at short distances extreme heat can be almost as damaging as actual fire"
+  },
+  {
+   "name": "wdmHeatIgnoresActivity",
+   "value": true,
+   "comment": "near a fire the damage adjustments for level of activity do not apply: the inactive take just as much heat damage as the strenuous"
+  },
+  {
+   "name": "wdmHeatTableRef",
+   "value": true,
+   "comment": "the extreme-heat exposure uses the Temperature Damage to Characters Table from the Effects of the Environment section"
+  },
+  {
+   "name": "wdmBeyondSafeButHot",
+   "value": true,
+   "comment": "beyond the given distances the character is relatively safe but may still suffer damage from exposure to extremely high temperatures per the table"
+  },
+  {
+   "name": "wdmDmAdjudicatesUncovered",
+   "value": true,
+   "comment": "situations not covered by these rules call for reasonable Dungeon Master rulings on the amount of damage and the chance of avoiding it"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the advance speed: one-half of the wind velocity, or 5 mph in any case",
+   "expr": "m['wdmAdvanceWindDiv']() != 2 or m['wdmAdvanceMinMph']() != 5 or m['wdmAdvanceWindDiv']() < 1"
+  },
+  {
+   "note": "the engulf damage is 10-15 points of 1d6 + 9 per round",
+   "expr": "m['wdmEngulfDice']() != 1 or m['wdmEngulfDieSides']() != 6 or m['wdmEngulfBonus']() != 9 or m['wdmEngulfMinDmg']() != m['wdmEngulfDice']() + m['wdmEngulfBonus']() or m['wdmEngulfMaxDmg']() != m['wdmEngulfDieSides']() + m['wdmEngulfBonus']() or m['wdmEngulfMinDmg']() != 10 or m['wdmEngulfMaxDmg']() != 15"
+  },
+  {
+   "note": "the halving rule: cut in half rounded up on a successful Constitution Check with a +4 modifier",
+   "expr": "m['wdmConCheckMod']() != 4 or m['wdmHalveDivisor']() != 2"
+  },
+  {
+   "note": "the unconscious threshold is exactly one-third of the full normal hit points",
+   "expr": "m['wdmUnconsciousNum']() != 1 or m['wdmUnconsciousDen']() != 3 or m['wdmUnconsciousNum']() >= m['wdmUnconsciousDen']()"
+  },
+  {
+   "note": "the contact damage dice: 1d8 brief contact, 1d3 per burning item, 1d4 while panicked",
+   "expr": "m['wdmBriefDieSides']() != 8 or m['wdmItemBurnDieSides']() != 3 or m['wdmPanicDieSides']() != 4"
+  },
+  {
+   "note": "the heat distances: 5 feet for a large fire, 3 feet for a medium fire, at a temperature of 120 degrees or higher",
+   "expr": "m['wdmHeatLargeFt']() != 5 or m['wdmHeatMediumFt']() != 3 or m['wdmHeatTempDegrees']() != 120 or m['wdmHeatMediumFt']() >= m['wdmHeatLargeFt']()"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "The firebreak and the advance": [
+   {
+    "kind": "const",
+    "name": "wdmAdvanceWindDiv"
+   },
+   {
+    "kind": "const",
+    "name": "wdmAdvanceMinMph"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmTrotStaysAhead"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmFirebreakClears"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmDigMoveEarthHelp"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmSpadeCanKillFire"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmFirebreakCutsInHalf"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmClearedAreaRefuge"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmRefugeStillRisky"
+   }
+  ],
+  "The engulfment rule": [
+   {
+    "kind": "bool",
+    "name": "wdmFireNotAlwaysLethal"
+   },
+   {
+    "kind": "const",
+    "name": "wdmEngulfDice"
+   },
+   {
+    "kind": "const",
+    "name": "wdmEngulfDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "wdmEngulfBonus"
+   },
+   {
+    "kind": "const",
+    "name": "wdmEngulfMinDmg"
+   },
+   {
+    "kind": "const",
+    "name": "wdmEngulfMaxDmg"
+   },
+   {
+    "kind": "const",
+    "name": "wdmConCheckMod"
+   },
+   {
+    "kind": "const",
+    "name": "wdmHalveDivisor"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmEngulfRequiresImmersion"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmHalvedRoundedUp"
+   },
+   {
+    "kind": "const",
+    "name": "wdmUnconsciousNum"
+   },
+   {
+    "kind": "const",
+    "name": "wdmUnconsciousDen"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmUnconsciousLosesChecks"
+   }
+  ],
+  "The brief-contact rule": [
+   {
+    "kind": "const",
+    "name": "wdmBriefDieSides"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmItemsSaveVsFire"
+   },
+   {
+    "kind": "const",
+    "name": "wdmItemBurnDieSides"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmItemBurnPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmWisCheckAvoids"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmPanicRuns"
+   },
+   {
+    "kind": "const",
+    "name": "wdmPanicDieSides"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmPanicUntilCaught"
+   }
+  ],
+  "The heat rule": [
+   {
+    "kind": "bool",
+    "name": "wdmHeatNeedsNoContact"
+   },
+   {
+    "kind": "const",
+    "name": "wdmHeatLargeFt"
+   },
+   {
+    "kind": "const",
+    "name": "wdmHeatMediumFt"
+   },
+   {
+    "kind": "const",
+    "name": "wdmHeatTempDegrees"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmHeatIgnoresActivity"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmHeatTableRef"
+   },
+   {
+    "kind": "bool",
+    "name": "wdmBeyondSafeButHot"
+   }
+  ],
+  "The adjudication caveat": [
+   {
+    "kind": "bool",
+    "name": "wdmDmAdjudicatesUncovered"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the damage from fire box",
+   "from": "  - [ ] Damage from fire (p. 68)",
+   "to": "  - [x] Damage from fire (p. 68) - R477: the firebreak and advance prose with the engulfment rule, the brief-contact and panic rules and the extreme-heat rule pin as rules/wsgdmg.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R476: 102 closed, 84 open (the R476 round continues the camping arc - the uncontrollable fires rules with the fire discipline and extinguishing semantics pin as rules/wsgblaze.h; the next round continues - damage from fire (p. 68)).",
+   "to": "Post-state at R477: 103 closed, 83 open (the R477 round closes the camping arc FIRE chapter - the damage from fire rules with the firebreak and extinguishing semantics pin as rules/wsgdmg.h; the next round continues - medicine and first aid (pp. 69-71))."
+  }
+ ],
+ "gap_census": {
+  "closed": 103,
+  "open": 83
+ },
+ "include_comment": "the WSG damage from fire, and the firebreak and heat rules",
+ "include_after": "#include \"rules/wsgblaze.h\"  // R476: the WSG uncontrollable fires, and the fire discipline and extinguishing rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R476 LANDED 2026-10-15: commit 21d9e59 (census 401, pushed",
+ "prev_record": [
+  "- R476 LANDED 2026-10-15: commit 21d9e59 (census 401, pushed",
+  "  86ebdd8..21d9e59), the WSG UNCONTROLLABLE FIRES slice,",
+  "  printed p. 67 - the sixth camping-arc round, a pure prose",
+  "  round with NO table: the four cardinal rules of fire",
+  "  discipline (do not build larger than needed with the",
+  "  two-small-fires advice; never leave untended with the",
+  "  sentry spark watch), the spark semantics (sparks and ash",
+  "  once every 1d3 turns, carried downwind 10-30 feet by size",
+  "  plus one foot per 1 mph of wind, a 1 in 6 catch chance on",
+  "  combustible material, the wild fire that may char several",
+  "  miles), the average-case growth ladder (tiny flame to small",
+  "  in 1 turn, medium in 2, large in 4, uncontrollable within 6",
+  "  turns - one hour - by height or area), the extinguishing",
+  "  discipline (5 rounds small / 1 turn medium / 2 turns large,",
+  "  halved by a helper or 1/2/4 gallons of water, doubled on",
+  "  combustible material, a 1 in 10 residual chance, and the",
+  "  2d4-turn flare-up of a campfire left alive), and the",
+  "  uncontrollable-fire spread prose (rough circle stringing out",
+  "  into a wind-driven wall of fire; animals and wise",
+  "  characters flee ahead). 46 inlines (25 consts, 21 bools)",
+  "  pin as rules/wsgblaze.h; census 400 -> 401; gap 101/85 ->",
+  "  102/84 (uncontrollable fires p. 67 box; next: damage from",
+  "  fire p. 68). md5 pair: authored no-nl",
+  "  f4bc46529ddbdd42609b752ab7561c10, as-built",
+  "  7a74ea54869f36c766e8c503be11ea17; verified at raw sha on",
+  "  GitHub. GROUND TRUTH: two-way clean on every number, no",
+  "  contested cells, no vision reads needed - the user's initial",
+  "  two-small-tables report was an off-by-one against p. 66",
+  "  (already landed in R475); confirm the print-page vs pdf-page",
+  "  offset (printed p. 67 = pdf page 68) before doubting an",
+  "  extraction. ENGINE: the audit mirror passed on the FIRST",
+  "  build this round - applying the R475 whichever/minimum",
+  "  lesson at design time (all ladder and equality checks",
+  "  checked against the book semantics before building) pays."
+ ]
+}

@@ -100,7 +100,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Fire: friend and foe (p. 65) - R474: the campfire function prose and the three fire sizes with the Table 38 grids (fuel, start, refuel, wind resistance, capacity, visibility and the warmth-at-distance ladder) pin as rules/wsgfire.h
   - [x] Precautions and perils (p. 66) - R475: the no-safe-fire warning with the untended conflagration and the first cardinal rule (no fire on combustibles, the 1-3-turn clearing, the 100-foot spark carry) pin as rules/wsgfuel.h
   - [x] Uncontrollable fires (p. 67) - R476: the four fire-discipline rules with the spark carry and catch chance, the wild-fire growth ladder with the six-turn uncontrollable bar, the extinguishing times with the water and combustible semantics, and the spread prose pin as rules/wsgblaze.h
-  - [ ] Damage from fire (p. 68)
+  - [x] Damage from fire (p. 68) - R477: the firebreak and advance prose with the engulfment rule, the brief-contact and panic rules and the extreme-heat rule pin as rules/wsgdmg.h
 - [ ] **Medicine and first aid** (pp. 69-71)
   - [ ] Availability of medicinal plants (p. 69)
   - [ ] Proficiency in plant lore (p. 70)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R476: 102 closed, 84 open (the R476 round continues the camping arc - the uncontrollable fires rules with the fire discipline and extinguishing semantics pin as rules/wsgblaze.h; the next round continues - damage from fire (p. 68)).
+Post-state at R477: 103 closed, 83 open (the R477 round closes the camping arc FIRE chapter - the damage from fire rules with the firebreak and extinguishing semantics pin as rules/wsgdmg.h; the next round continues - medicine and first aid (pp. 69-71)).
