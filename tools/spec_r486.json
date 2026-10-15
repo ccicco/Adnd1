@@ -1,0 +1,1646 @@
+{
+ "round": 486,
+ "title": "the WSG natural hazards opener slice - the volcano eruption types with the 1d4 lava bands, the 1d6 ash bands and the explosive cloudkill, the earthquake classes from light through severe, and the tidal wave approach rules, printed pp. 76-79",
+ "prefix": "whz",
+ "header_file": "rules/wsghazd.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 410,
+ "inline_count": 160,
+ "audit_label": "R486 WSG natural hazards pin audit",
+ "audit_comment": "The natural hazards opener: three types of volcanic eruption, each volcano locked to one type - lava, ash, or explosive. Lava: magma inside, lava expelled; fluid magma sprays less violently, side fissures dissipate but never eliminate the crater flow; lava incinerates combustibles even barely flowing, and after it stops retains serious-burn heat for 2d3 weeks; a mobile character almost certainly avoids the 250-yards-per-hour flow, but the pyroclastic bombs and blocks are the greater danger. The 1d4 lava bands: 1-2 fluid magma for 2d6 days, 1d6 damage per turn within 500 yards, a 50-degree rise one quarter mile out tapering 10 degrees per quarter mile to nothing at 1.5 miles; 3 thick magma for 2d4 days, 1d4 per turn within 500 yards, a 30-degree rise dying at 1 mile; 4 thick magma plus pyroclastics - 1 percent per hour within 1000 yards, 2d6 from a hit, plus 5 percent and 1d6 per 100 yards closer. Ash: overshadowed lava, seldom violent past the initial blast; the 2000-3000 foot opaque cloud, lighter ash carried dozens of miles settling 3-4 inches; ash kills green plants yet is a supreme fertilizer; St. Helens 1980-1981, six incidents over 10 months, superheated-gas snowmelt mudslides over 100,000 acres, the May 18 1980 blast equal to 10 megatons flattening trees 4 miles out, the peak dropping from 9,677 to 8,364 feet. The 1d6 ash bands: 1-3 light to moderate, at least 12 hours daily for 1d4+2 weeks, 2 inches at 1d10+15 miles downwind, 6 inches within 1d6+4 miles, 1d3 burn per turn within 2000 yards unless sheltered, save versus breath weapon each turn against a choking fit (-4 to hit, +4 to be hit), two straight failures meaning 1d4 per round and death inside one turn without aid; 4-5 heavy, 1d6+5 hours daily for 1d3 weeks, significant ash at 1d6+9 miles, 9 inches within 1d6+2 miles, the danger zone widening to 4000 yards; 6 heavy plus pyroclastics for the first 3-8 days. Explosive: the opening salvo blows the top off, the peak collapsing into the magma chamber; sight range is mortal danger - the ash cloud and the 3-5-mile glowing avalanche exude double-strength cloudkill, half a round of breath slaying below 8+1 hit dice, 8+1 through 10+1 saving at -4, above saving normally; 1d3 days of ash puffs, lava leaks and tremors warn first. Earthquakes: fault-line pressure, shock waves outdamaging the shift, quakes triggering quakes, aftershocks for days, wilderness scope only. Light: seconds of shiver, no direct harm, but spells ruined, the jostled trap-working thief failing 50 percent of the time, the tightrope walker halved and falling without a Dexterity Check. Moderate: 10-15 seconds (d6+9), 20 percent shorter, 30 percent longer to 30; dislodges from precarious perches, the straddled limb needing both Dexterity and Strength, Climbing at -50 percent, the specialist missile at -2 save point blank, the non-specialist at -3, -5 and -7, melee at -3 with the slip-and-fall on a miss, rockfall or mudslide at the cliff base, the 1-in-8 uprooted tree, the fissure with falling, abrasion and crush. Severe: everything doubled, Climbing -100 percent, melee -6, the rockfall chance twice as great, 40-90 seconds, hit the ground. Tidal waves: born of undersea cataclysm, the ocean absorbing and passing on the shock for thousands of miles; sighted half a mile out, at least 150 mph, less than 30 seconds of warning, at least 75 feet by 500 feet, almost 30 million gallons; rushing inland several miles at 20 mph, the 5,000-foot cliff sparing those hundreds of yards back while the 20-mile lowland fears as much as the coast; the direct-path victim dies. The section cuts mid-sentence at the page bottom - the death-rule continuation rides with R487.",
+ "banner": {
+  "title": "R486: the WSG NATURAL HAZARDS opener slice, printed pp. 76-79 - opening the natural hazards chapter in one content-density round: the volcano frame with the one-type rule, the lava general rules with the 250-yd/hr flow and the 2d3-week heat retention, the 1d4 lava bands (fluid 2d6 days with the 50-degree taper, thick 2d4 days with the 30-degree taper, pyroclastic with the 1-percent base and the 5-and-1d6-per-100-yards escalation), the ash cloud and fertilizer rules with the Mount St. Helens account, the 1d6 ash bands (light 1d4+2 weeks with the 1d3-burn and breath-weapon choke chain, heavy 1d6+5 hours with the 4000-yard danger zone, six with the 3-8-day pyroclastic spell), the explosive cloudkill bands with the 1d3-day warning, the light, moderate and severe quake classes with the doubling rule, and the tidal wave approach rules through the direct-path death - the section cut mid-sentence at the p. 79 bottom rides with R487.",
+  "provenance": "THE SETTLE: two-way clean on the first pass - the tesseract full-text reads, the pdfy layout read and the tsv coordinate reads agree on every number of all four pages (the 250-yd/hr flow, the 2d3 weeks, the 50/30-degree rises with the 10-degree taper, the 500/2000/4000-yard danger radii, the 2000-3000 foot ash cloud, the 9,677 to 8,364 foot St. Helens peak, all the 1d4+2 and 1d10+15 style dice, the d6+9 and 1d6+3-tens quake durations, and the 150 mph, 75-foot, 500-foot, 30-second wave). The garbles all settled without contest: the tesseract 17/ and the pdfy 1V2 both read 1.5 miles, the /s and V4 mile reads are the one-quarter-mile reference distance, the tesseract underatreehasa1in 8 is under a tree has a 1 in 8, the book's own crevasse spelling stands, and the (1d6 +3) beside 40-90 seconds is tens-of-seconds die notation. Printed p. 79 ends mid-sentence at and he will - the tidal wave death-rule continuation rides with R487, and the tidal waves gap box stays open until then.",
+  "sentinel": "Bounds held: the 1d4 lava and 1d6 ash bands tile their dice exactly, the danger radii ascend 500 to 2000 to 4000 yards, both temperature rises are exact multiples of the quarter-mile taper closing at 1.5 and 1 mile, the severe quake exactly doubles the moderate penalties, the cloudkill hit-die bands abut at 8+1 and 10+1, the ash accumulations ascend 2 to 6 to 9 inches, and the 150-mph wave sighted at half a mile fits inside the 30-second warning bound."
+ },
+ "consts": [
+  {
+   "name": "whzVolcanoEruptionTypes",
+   "value": 3,
+   "comment": "three types of volcanic eruption for game purposes: lava, ash, explosive"
+  },
+  {
+   "name": "whzLavaHeatWeeksMin",
+   "value": 2,
+   "comment": "even after it stops flowing and looks cooled, the lava retains serious-burn heat for 2d3 weeks: minimum 2"
+  },
+  {
+   "name": "whzLavaHeatWeeksMax",
+   "value": 6,
+   "comment": "the 2d3-week heat retention maximum"
+  },
+  {
+   "name": "whzLavaFlowYardsPerHour",
+   "value": 250,
+   "comment": "a speed of 250 yards per hour is about average for a lava flow, and it does not usually gush forth in massive quantities at one time"
+  },
+  {
+   "name": "whzFluidLavaDaysMin",
+   "value": 2,
+   "comment": "1d4 result 1-2, fluid magma: the eruption spews for 2d6 days, minimum 2"
+  },
+  {
+   "name": "whzFluidLavaDaysMax",
+   "value": 12,
+   "comment": "the 2d6-day fluid eruption maximum"
+  },
+  {
+   "name": "whzFluidLavaHeatDmgDie",
+   "value": 6,
+   "comment": "fluid magma: a character closer than 500 yards to a significant source takes at least 1d6 points of damage per turn from radiant heat, possibly much more when considerably closer"
+  },
+  {
+   "name": "whzFluidTempRiseDeg",
+   "value": 50,
+   "comment": "fluid magma: the effective air temperature one-quarter mile from the site increases by 50 degrees for as long as the eruption continues, much more in close proximity"
+  },
+  {
+   "name": "whzLavaHeatRangeYards",
+   "value": 500,
+   "comment": "the radiant-heat damage range for both the fluid and the thick bands: closer than 500 yards to a significant source or sizable quantity"
+  },
+  {
+   "name": "whzLavaTempTaperDeg",
+   "value": 10,
+   "comment": "the fluid and thick temperature increases taper off by 10 degrees per additional quarter mile of distance from the site"
+  },
+  {
+   "name": "whzFluidNoHeatQmi",
+   "value": 6,
+   "comment": "fluid magma: no heat difference is detectable from 1.5 miles away - six quarter-miles from the site"
+  },
+  {
+   "name": "whzThickLavaDaysMin",
+   "value": 2,
+   "comment": "1d4 result 3, thick magma: sprays into the air and flows out around the crater mouth for 2d4 days, minimum 2"
+  },
+  {
+   "name": "whzThickLavaDaysMax",
+   "value": 8,
+   "comment": "the 2d4-day thick eruption maximum"
+  },
+  {
+   "name": "whzThickLavaHeatDmgDie",
+   "value": 4,
+   "comment": "thick magma: a character closer than 500 yards to a sizable quantity suffers at least 1d4 points of damage per turn"
+  },
+  {
+   "name": "whzThickTempRiseDeg",
+   "value": 30,
+   "comment": "thick magma: the effective air temperature one-quarter mile from the site increases by 30 degrees"
+  },
+  {
+   "name": "whzThickNoHeatQmi",
+   "value": 4,
+   "comment": "thick magma: no heat difference is felt from 1 mile away - four quarter-miles"
+  },
+  {
+   "name": "whzPyroclasticRangeYards",
+   "value": 1000,
+   "comment": "1d4 result 4, thick magma plus pyroclastic material: a character within 1,000 yards of the site is subject to the falling bombs and blocks"
+  },
+  {
+   "name": "whzPyroclasticHitChancePct",
+   "value": 1,
+   "comment": "a 1 percent chance per hour of being hit by one or more chunks of pyroclastic material"
+  },
+  {
+   "name": "whzPyroclasticDmgMin",
+   "value": 2,
+   "comment": "a pyroclastic hit costs 2d6 hit points from burn and impact damage, minimum 2"
+  },
+  {
+   "name": "whzPyroclasticDmgMax",
+   "value": 12,
+   "comment": "the 2d6-point pyroclastic hit maximum"
+  },
+  {
+   "name": "whzPyroclasticStepYards",
+   "value": 100,
+   "comment": "for every 100 yards of distance less than 1,000 yards from the site"
+  },
+  {
+   "name": "whzPyroclasticChanceStepPct",
+   "value": 5,
+   "comment": "each 100 yards closer increases the hourly hit chance by 5 percent"
+  },
+  {
+   "name": "whzPyroclasticDmgStepDie",
+   "value": 6,
+   "comment": "each 100 yards closer increases the damage from a hit by 1d6"
+  },
+  {
+   "name": "whzAshCloudHeightMinFt",
+   "value": 2000,
+   "comment": "the original ash cloud can easily be 2,000 or 3,000 feet high directly above the mouth of the volcano"
+  },
+  {
+   "name": "whzAshCloudHeightMaxFt",
+   "value": 3000,
+   "comment": "the original cloud height upper figure"
+  },
+  {
+   "name": "whzAshFarAccumInchesMin",
+   "value": 3,
+   "comment": "even dozens of miles out, the accumulation on solid surfaces can be as great as three or four inches over an average-length eruption of moderate intensity"
+  },
+  {
+   "name": "whzAshFarAccumInchesMax",
+   "value": 4,
+   "comment": "the far accumulation upper figure"
+  },
+  {
+   "name": "whzStHelensYear",
+   "value": 1980,
+   "comment": "the Mount St. Helens eruption occurred during 1980 and 1981"
+  },
+  {
+   "name": "whzStHelensIncidents",
+   "value": 6,
+   "comment": "actually six separate incidents over a 10-month period"
+  },
+  {
+   "name": "whzStHelensMonths",
+   "value": 10,
+   "comment": "the six incidents spanned 10 months"
+  },
+  {
+   "name": "whzStHelensMudslideAcres",
+   "value": 100000,
+   "comment": "the mudslides covered more than 100,000 acres of land in the vicinity"
+  },
+  {
+   "name": "whzStHelensBlastMegatons",
+   "value": 10,
+   "comment": "the initial blast on May 18, 1980 had a force equal to a 10-megaton hydrogen bomb"
+  },
+  {
+   "name": "whzStHelensTreesMiles",
+   "value": 4,
+   "comment": "the concussive force knocked over trees as far as 4 miles away"
+  },
+  {
+   "name": "whzStHelensBeforeFt",
+   "value": 9677,
+   "comment": "the peak of Mount St. Helens was 9,677 feet above sea level before the eruption"
+  },
+  {
+   "name": "whzStHelensAfterFt",
+   "value": 8364,
+   "comment": "and only 8,364 feet when the last expulsion of ash subsided"
+  },
+  {
+   "name": "whzAshLightDailyHours",
+   "value": 12,
+   "comment": "1d6 result 1-3, light to moderate but extended: ash is expelled for at least 12 hours each day"
+  },
+  {
+   "name": "whzAshLightWeeksMin",
+   "value": 3,
+   "comment": "for a period of 1d4+2 weeks, minimum 3"
+  },
+  {
+   "name": "whzAshLightWeeksMax",
+   "value": 6,
+   "comment": "the 1d4+2-week duration maximum"
+  },
+  {
+   "name": "whzAshLightFarAccumInches",
+   "value": 2,
+   "comment": "a significant amount of ash, at least 2 inches of total accumulation, is carried downwind"
+  },
+  {
+   "name": "whzAshLightFarMilesMin",
+   "value": 16,
+   "comment": "the significant ash settles 1d10+15 miles from the site in the direction of the prevailing winds, minimum 16"
+  },
+  {
+   "name": "whzAshLightFarMilesMax",
+   "value": 25,
+   "comment": "the 1d10+15-mile downwind maximum"
+  },
+  {
+   "name": "whzAshLightNearAccumInches",
+   "value": 6,
+   "comment": "heavier amounts of ash, 6 inches or more, settle everywhere within the near radius"
+  },
+  {
+   "name": "whzAshLightNearMilesMin",
+   "value": 5,
+   "comment": "the heavy accumulation falls within a radius of 1d6+4 miles of the site, minimum 5"
+  },
+  {
+   "name": "whzAshLightNearMilesMax",
+   "value": 10,
+   "comment": "the 1d6+4-mile near radius maximum"
+  },
+  {
+   "name": "whzAshLightDangerYards",
+   "value": 2000,
+   "comment": "a character within 2,000 yards of the eruption site suffers the burn damage"
+  },
+  {
+   "name": "whzAshBurnDmgDie",
+   "value": 3,
+   "comment": "1d3 points of burn damage per turn from the hot particles that settle on his body"
+  },
+  {
+   "name": "whzChokeAtkPenalty",
+   "value": 4,
+   "comment": "in a choking fit: -4 on attack rolls"
+  },
+  {
+   "name": "whzChokeBeHitBonus",
+   "value": 4,
+   "comment": "in a choking fit: +4 to be hit"
+  },
+  {
+   "name": "whzAsphyxDmgDie",
+   "value": 4,
+   "comment": "the asphyxiating character takes 1d4 points of damage per round"
+  },
+  {
+   "name": "whzAshHeavyHoursMin",
+   "value": 6,
+   "comment": "1d6 result 4-5, heavy but relatively short: ash is expelled 1d6+5 hours each day, minimum 6"
+  },
+  {
+   "name": "whzAshHeavyHoursMax",
+   "value": 11,
+   "comment": "the 1d6+5 daily-hours maximum"
+  },
+  {
+   "name": "whzAshHeavyWeeksMin",
+   "value": 1,
+   "comment": "for a period of 1d3 weeks, minimum 1"
+  },
+  {
+   "name": "whzAshHeavyWeeksMax",
+   "value": 3,
+   "comment": "the 1d3-week duration maximum"
+  },
+  {
+   "name": "whzAshHeavyFarMilesMin",
+   "value": 10,
+   "comment": "a significant amount of ash accumulates 1d6+9 miles away from the site in the direction of the wind, minimum 10"
+  },
+  {
+   "name": "whzAshHeavyFarMilesMax",
+   "value": 15,
+   "comment": "the 1d6+9-mile downwind maximum"
+  },
+  {
+   "name": "whzAshHeavyNearAccumInches",
+   "value": 9,
+   "comment": "a heavy accumulation of 9 inches or more comes down everywhere within the near radius"
+  },
+  {
+   "name": "whzAshHeavyNearMilesMin",
+   "value": 3,
+   "comment": "the heavy accumulation falls within a radius of 1d6+2 miles of the site, minimum 3"
+  },
+  {
+   "name": "whzAshHeavyNearMilesMax",
+   "value": 8,
+   "comment": "the 1d6+2-mile near radius maximum"
+  },
+  {
+   "name": "whzAshHeavyDangerYards",
+   "value": 4000,
+   "comment": "the heavy-band danger zone for characters is 4,000 yards"
+  },
+  {
+   "name": "whzAshSixPyrDaysMin",
+   "value": 3,
+   "comment": "1d6 result 6, the first 3-8 days of the heavy eruption are marked by the expulsion of pyroclastic material, minimum 3"
+  },
+  {
+   "name": "whzAshSixPyrDaysMax",
+   "value": 8,
+   "comment": "the pyroclastic spell of band 6 lasts at most 8 days"
+  },
+  {
+   "name": "whzGlowingAvalancheMilesMin",
+   "value": 3,
+   "comment": "a glowing avalanche of thick lava and heavy ash flows from the newly enlarged mouth, threatening to incinerate and then inundate anything within a radius of 3-5 miles, minimum 3"
+  },
+  {
+   "name": "whzGlowingAvalancheMilesMax",
+   "value": 5,
+   "comment": "the glowing-avalanche radius maximum"
+  },
+  {
+   "name": "whzCloudkillStrength",
+   "value": 2,
+   "comment": "the ash cloud or the avalanche, or both, exude superheated air and noxious gases with the effect of a double-strength cloudkill spell"
+  },
+  {
+   "name": "whzCloudkillSlaysBelowHd",
+   "value": 9,
+   "comment": "the cloudkill slays fewer than 8+1 hit dice - 9 hit dice and below"
+  },
+  {
+   "name": "whzCloudkillMidSavePenalty",
+   "value": 4,
+   "comment": "those with 8+1 to 10+1 hit dice must save versus poison at -4"
+  },
+  {
+   "name": "whzCloudkillMidMaxHd",
+   "value": 11,
+   "comment": "those with more than 10+1 hit dice - 11 and above - must save versus poison normally to avoid death"
+  },
+  {
+   "name": "whzExplosiveWarningDaysMax",
+   "value": 3,
+   "comment": "the warning signs continue for 1d3 days before the eruption begins with full force - anyone who remains despite them gets what he deserves"
+  },
+  {
+   "name": "whzQuakeClasses",
+   "value": 3,
+   "comment": "for game purposes earthquakes are classified as light, moderate, or severe"
+  },
+  {
+   "name": "whzLightQuakeThiefFailPct",
+   "value": 50,
+   "comment": "the jostled thief has a 50 percent chance to fail even if an earlier dice roll indicated he would succeed"
+  },
+  {
+   "name": "whzModQuakeSecMin",
+   "value": 10,
+   "comment": "a moderate quake normally lasts d6+9 seconds, minimum 10"
+  },
+  {
+   "name": "whzModQuakeSecMax",
+   "value": 15,
+   "comment": "the d6+9-second moderate duration maximum"
+  },
+  {
+   "name": "whzModQuakeLessPct",
+   "value": 20,
+   "comment": "occasionally (20 percent) a moderate quake lasts less than the normal duration"
+  },
+  {
+   "name": "whzModQuakeMorePct",
+   "value": 30,
+   "comment": "sometimes (30 percent) more, up to 25 or 30 seconds"
+  },
+  {
+   "name": "whzModQuakeMoreSecMax",
+   "value": 30,
+   "comment": "the occasional long moderate quake tops out at 30 seconds"
+  },
+  {
+   "name": "whzModQuakeClimbPenaltyPct",
+   "value": 50,
+   "comment": "someone climbing a severe or moderate slope must make a Climbing Check at a -50 percent penalty to his Climbing Rating to avoid losing his footing and tumbling down the slope"
+  },
+  {
+   "name": "whzModQuakeSpecMissilePenalty",
+   "value": 2,
+   "comment": "a character specialized in a missile weapon takes a -2 penalty to hit if he gets a shot off during a moderate quake"
+  },
+  {
+   "name": "whzModQuakeNonSpecShort",
+   "value": 3,
+   "comment": "a non-specialist with a missile weapon takes -3 to hit at short range"
+  },
+  {
+   "name": "whzModQuakeNonSpecMed",
+   "value": 5,
+   "comment": "a -5 penalty at medium range"
+  },
+  {
+   "name": "whzModQuakeNonSpecLong",
+   "value": 7,
+   "comment": "and a -7 penalty at long range"
+  },
+  {
+   "name": "whzModQuakeMeleePenalty",
+   "value": 3,
+   "comment": "any character in melee combat takes a -3 penalty on all attack rolls"
+  },
+  {
+   "name": "whzModQuakeTreeFallChance",
+   "value": 8,
+   "comment": "a character standing under a tree has a 1-in-8 chance of being hit if the tree is uprooted and falls"
+  },
+  {
+   "name": "whzSevQuakeClimbPenaltyPct",
+   "value": 100,
+   "comment": "the Climbing Rating penalty is -100 percent instead of -50"
+  },
+  {
+   "name": "whzSevQuakeMeleePenalty",
+   "value": 6,
+   "comment": "the melee attack-roll penalty is -6 instead of -3"
+  },
+  {
+   "name": "whzSevQuakeSecMin",
+   "value": 40,
+   "comment": "a severe quake lasts 1d6+3 tens of seconds - 40 to 90 seconds, minimum 40"
+  },
+  {
+   "name": "whzSevQuakeSecMax",
+   "value": 90,
+   "comment": "the severe duration maximum"
+  },
+  {
+   "name": "whzTidalSightHalfMiles",
+   "value": 1,
+   "comment": "a character within sight of the shore and looking out to sea will notice the oncoming wall of water when it is one-half mile away from the shore"
+  },
+  {
+   "name": "whzTidalMinMph",
+   "value": 150,
+   "comment": "the velocity of the wave will be at least 150 miles per hour"
+  },
+  {
+   "name": "whzTidalMaxWarnSec",
+   "value": 30,
+   "comment": "even in the best case less than 30 seconds pass from the time it is sighted until it hits the shore"
+  },
+  {
+   "name": "whzTidalMinHeightFt",
+   "value": 75,
+   "comment": "the wave will be at least 75 feet tall"
+  },
+  {
+   "name": "whzTidalLengthFt",
+   "value": 500,
+   "comment": "and 500 feet long when it hits"
+  },
+  {
+   "name": "whzTidalVolumeMillionGal",
+   "value": 30,
+   "comment": "which translates to a volume of almost 30 million gallons for the smallest tidal wave possible"
+  },
+  {
+   "name": "whzTidalInlandMph",
+   "value": 20,
+   "comment": "the diminished inland velocity of the several million gallons still moving"
+  },
+  {
+   "name": "whzTidalCliffFt",
+   "value": 5000,
+   "comment": "if an ocean ends at the base of a cliff rising 5,000 feet above the water"
+  },
+  {
+   "name": "whzTidalLowlandMiles",
+   "value": 20,
+   "comment": "but if the terrain 20 miles inland is still only a few feet above sea level"
+  }
+ ],
+ "bools": [
+  {
+   "name": "whzOneTypePerVolcano",
+   "value": true,
+   "comment": "any single volcano always erupts in only one of the three types - it will not spout a lava eruption one time and an ash eruption the next"
+  },
+  {
+   "name": "whzDormantAwakensFast",
+   "value": true,
+   "comment": "a volcano can lie dormant so long it is forgotten even in local legends, then in the space of days or even hours come alive and unleash all its fury"
+  },
+  {
+   "name": "whzPerpetuallyActive",
+   "value": true,
+   "comment": "other volcanoes are almost perpetually active, spitting out a bit of ash and smoke every few weeks as a reminder"
+  },
+  {
+   "name": "whzMagmaInsideLavaOut",
+   "value": true,
+   "comment": "the molten rock is properly called magma when inside the volcano and lava after it is expelled"
+  },
+  {
+   "name": "whzLavaSpraysWhenThick",
+   "value": true,
+   "comment": "the red-hot liquid can spray out of the center of the crater if forced out by fairly high pressure from beneath and if the molten rock is relatively thick"
+  },
+  {
+   "name": "whzFluidMagmaLessViolent",
+   "value": true,
+   "comment": "the more fluid the magma beneath the surface, the less violent the explosion when it is propelled up to the surface"
+  },
+  {
+   "name": "whzLavaSideFissures",
+   "value": true,
+   "comment": "some lava finds its way out through fissures in the sides, which dissipates the force of the eruption out of the crater mouth but does not eliminate the possibility of a crater flow"
+  },
+  {
+   "name": "whzLavaTopAndSides",
+   "value": true,
+   "comment": "lava can come out of the top and the sides of a volcano at the same time"
+  },
+  {
+   "name": "whzLavaIncinerates",
+   "value": true,
+   "comment": "lava incinerates any combustible object it comes into contact with, even after it has cooled so much that it is barely still flowing"
+  },
+  {
+   "name": "whzLavaAvoidable",
+   "value": true,
+   "comment": "a character capable of movement and in control of his faculties can almost certainly avoid flowing lava even a short distance from the source"
+  },
+  {
+   "name": "whzPyroclasticBombsBlocks",
+   "value": true,
+   "comment": "the greater danger near a lava eruption is the expulsion of pyroclastic material - bombs and blocks, blobs of semi-hardened magma and chunks of rock carried along in the upward flow, thrown high and far by the force of the eruption"
+  },
+  {
+   "name": "whzAshEruptionsExpelLava",
+   "value": true,
+   "comment": "volcanoes with ash eruptions can and often do expel some lava at the same time, but the molten rock is overshadowed by huge clouds of thick hot ash"
+  },
+  {
+   "name": "whzAshSeldomViolent",
+   "value": true,
+   "comment": "aside from the initial blast that begins the eruption, ash volcanoes are seldom violent - the danger comes from the enormous amount of ash, dust and minuscule lava particles, not explosive force or heat"
+  },
+  {
+   "name": "whzAshCloudOpaque",
+   "value": true,
+   "comment": "the original cloud is so thick that one cannot see into it, much less through it"
+  },
+  {
+   "name": "whzAshLighterCarriedFar",
+   "value": true,
+   "comment": "the lighter particles can be carried by the wind for dozens of miles before settling to the ground"
+  },
+  {
+   "name": "whzAshKillsPlants",
+   "value": true,
+   "comment": "the ash chokes and kills any green plant life that receives even a moderate dusting"
+  },
+  {
+   "name": "whzAshFertilizer",
+   "value": true,
+   "comment": "the chemical composition of volcanic ash makes it one of nature's best fertilizers - within a few months the slopes are again covered with plants thriving on the rich soil that killed their predecessors"
+  },
+  {
+   "name": "whzStHelensWasAshEruption",
+   "value": true,
+   "comment": "the eruption of Mount St. Helens in the northwestern United States was an ash eruption"
+  },
+  {
+   "name": "whzStHelensSnowmeltMudslides",
+   "value": true,
+   "comment": "the superheated gas expelled from the summit melted the surrounding snow cover, leading to mudslides"
+  },
+  {
+   "name": "whzStHelensPeakPulverized",
+   "value": true,
+   "comment": "the entire time the volcano remained active the summit was pulverized"
+  },
+  {
+   "name": "whzAshShelterProtects",
+   "value": true,
+   "comment": "unless the character is in a shelter or otherwise protected"
+  },
+  {
+   "name": "whzChokeSaveBreathWeapon",
+   "value": true,
+   "comment": "such a character must make a saving throw versus breath weapon once per turn to avoid going into a choking fit"
+  },
+  {
+   "name": "whzChokeTwoFailsAsphyxiate",
+   "value": true,
+   "comment": "a character who fails two saving throws in succession is in danger of being asphyxiated or suffocated"
+  },
+  {
+   "name": "whzAsphyxAidWithinTurn",
+   "value": true,
+   "comment": "and will die unless he can receive aid within one turn"
+  },
+  {
+   "name": "whzAshHeavyUnprotectedEffects",
+   "value": true,
+   "comment": "with the light-band effects upon those who are unprotected and within the heavy danger zone"
+  },
+  {
+   "name": "whzExplosiveBlowsTop",
+   "value": true,
+   "comment": "an explosive eruption cannot be characterized in general terms, but the opening salvo can be strong enough to literally blow the top off the volcano"
+  },
+  {
+   "name": "whzExplosivePeakCollapses",
+   "value": true,
+   "comment": "a volume of several million cubic feet of rock around the crater mouth cracks and crumbles, and the peak collapses into the chamber of magma or ash (or both) beneath the surface"
+  },
+  {
+   "name": "whzExplosiveSightRangeDanger",
+   "value": true,
+   "comment": "any characters or creatures within sight range of an explosive eruption are in mortal danger from a variety of sources: a huge cloud of ash and pyroclastic material raining down on the countryside"
+  },
+  {
+   "name": "whzExplosiveCloudkillBreath",
+   "value": true,
+   "comment": "breathing the air for as little as one-half round slays anything with fewer than 8+1 hit dice"
+  },
+  {
+   "name": "whzExplosiveWarnsFirst",
+   "value": true,
+   "comment": "an explosive eruption gives sufficient warning first: the volcano puffs out small ash clouds, leaks small amounts of lava, and perhaps sends moderate tremors through the ground"
+  },
+  {
+   "name": "whzQuakeOnlyAvoidedByAir",
+   "value": true,
+   "comment": "when the earth moves nothing can stand its ground - the only way to avoid an earthquake is to take to the air at just the right time"
+  },
+  {
+   "name": "whzQuakeMostlyHarmless",
+   "value": true,
+   "comment": "earthquakes do not occur very often, those that do are generally confined to small areas, and the vast majority strong enough to be noticeable are not strong enough to do any harm"
+  },
+  {
+   "name": "whzQuakeWildernessScope",
+   "value": true,
+   "comment": "this discussion is limited to quakes in wilderness areas with no stable human or humanoid populations, since the book's scope does not include cities and villages"
+  },
+  {
+   "name": "whzQuakeFaultLines",
+   "value": true,
+   "comment": "most earthquakes occur along fault lines, where two sections of bedrock come together and exert pressure against each other - the DM places the fault lines, the characters find them for themselves"
+  },
+  {
+   "name": "whzQuakeShockWavesDoMoreDamage",
+   "value": true,
+   "comment": "when the pressure exceeds the strength of the rocks, one or both rock masses shifts along the fault line, and the shock waves - extending over a much larger area - do much more actual damage than the fault-line shift that started the quake"
+  },
+  {
+   "name": "whzQuakeTriggersQuake",
+   "value": true,
+   "comment": "one earthquake can cause another if the tremors from the first set off activity along a second nearby fault line"
+  },
+  {
+   "name": "whzQuakeAftershocksDays",
+   "value": true,
+   "comment": "a quake hardly ever ends with just one tremor - aftershocks occur sporadically for several days as mountain-sized slabs continue to settle"
+  },
+  {
+   "name": "whzLightQuakeFewSeconds",
+   "value": true,
+   "comment": "a light quake is a shivering or vibrating force through the ground and everything in contact with it, lasting a few seconds or even less, with no directly hazardous effects"
+  },
+  {
+   "name": "whzLightQuakeRuinsSpell",
+   "value": true,
+   "comment": "a light quake striking a magic-user preparing a spell disrupts his concentration and ruins the spell"
+  },
+  {
+   "name": "whzLightQuakeThiefJostled",
+   "value": true,
+   "comment": "a thief defusing or avoiding a trap is jostled"
+  },
+  {
+   "name": "whzLightQuakeTightropeHalved",
+   "value": true,
+   "comment": "a tightrope walker has his chance of success cut in half and falls unless he grabs the rope with a successful Dexterity Check; the DM judges when other concentration or balance tasks are likewise affected"
+  },
+  {
+   "name": "whzModQuakeHasLightEffects",
+   "value": true,
+   "comment": "a moderate quake has all the effects of a light quake"
+  },
+  {
+   "name": "whzModQuakeDislodges",
+   "value": true,
+   "comment": "a moderate quake can dislodge a character from a precarious position even if the position is not particularly unstable"
+  },
+  {
+   "name": "whzModQuakeToppleNeedsDexStr",
+   "value": true,
+   "comment": "a character straddling a limb or branch is toppled from his perch unless he makes both a Dexterity Check (reacting in time) and a Strength Check (grabbing the limb and holding on until the quake subsides)"
+  },
+  {
+   "name": "whzModQuakeSpecPointBlankOk",
+   "value": true,
+   "comment": "the specialist's -2 penalty does not apply at point blank range"
+  },
+  {
+   "name": "whzModQuakeNonSpecRangeStacks",
+   "value": true,
+   "comment": "the non-specialist penalties are in addition to the usual penalties for medium and long range"
+  },
+  {
+   "name": "whzModQuakeMissSlipFall",
+   "value": true,
+   "comment": "and if he misses he will slip and fall as if he was attacking while standing on a slippery horizontal surface"
+  },
+  {
+   "name": "whzModQuakeRockfallMudslide",
+   "value": true,
+   "comment": "a character at the base of a cliff or severe slope may be set upon by a rockfall or a mudslide depending on the terrain makeup"
+  },
+  {
+   "name": "whzModQuakeClimberAlsoAtRisk",
+   "value": true,
+   "comment": "of course, anyone climbing either of those surfaces is also subject to these perils"
+  },
+  {
+   "name": "whzModQuakeFissureOpens",
+   "value": true,
+   "comment": "it is rare but possible for a moderate quake to open a fissure in the ground"
+  },
+  {
+   "name": "whzModQuakeFissureFallingDmg",
+   "value": true,
+   "comment": "an unfortunate character standing in that exact spot takes falling damage, and possibly abrasion damage as well if he bounces off the sides of the crevasse"
+  },
+  {
+   "name": "whzModQuakeFissureCrush",
+   "value": true,
+   "comment": "a very unfortunate character, if not killed by the fall, is suffocated or crushed if the two sides of the fissure move toward each other after separating"
+  },
+  {
+   "name": "whzSevQuakeDoublesAll",
+   "value": true,
+   "comment": "a severe quake has all the effects of a moderate quake, with all penalties and all chances of unfortunate occurrences multiplied by two"
+  },
+  {
+   "name": "whzSevQuakeRockfallDoubled",
+   "value": true,
+   "comment": "the chance of a rockfall occurring adjacent to a cliff face is twice as great, and so forth"
+  },
+  {
+   "name": "whzSevQuakeHitTheGround",
+   "value": true,
+   "comment": "during a severe quake the only sensible course of action is to hit the ground (but not from 50 feet in the air), cover your head, and pray to the deity of your choice"
+  },
+  {
+   "name": "whzTidalCreatedOnOceanFloor",
+   "value": true,
+   "comment": "a tidal wave is created by some cataclysmic occurrence on the ocean floor, such as an earthquake or the eruption of an undersea volcano"
+  },
+  {
+   "name": "whzTidalShockAbsorbed",
+   "value": true,
+   "comment": "unlike a shock wave in solid matter, the ocean water in the immediate vicinity absorbs the force and passes it on to the surrounding water with relatively little decrease in intensity"
+  },
+  {
+   "name": "whzTidalTravelsFar",
+   "value": true,
+   "comment": "unless and until something gets in its way, a tidal wave can travel for thousands of miles and still possess enormous force when it hits land"
+  },
+  {
+   "name": "whzTidalPrecautionWindow",
+   "value": true,
+   "comment": "this much warning may provide time for some precaution - aerial movement, magical protection - but time is at a premium"
+  },
+  {
+   "name": "whzTidalRushesInland",
+   "value": true,
+   "comment": "a tidal wave may rush inland for several miles before its force is spent"
+  },
+  {
+   "name": "whzTidalInlandDiminishes",
+   "value": true,
+   "comment": "its velocity diminishes rapidly after it hits land, but several million gallons of water at only 20 miles per hour can still wreak a lot of havoc"
+  },
+  {
+   "name": "whzTidalTerrainGoverns",
+   "value": true,
+   "comment": "how far inland the wave moves and how rapidly it dissipates depend upon the terrain along the coastline"
+  },
+  {
+   "name": "whzTidalCliffSpares",
+   "value": true,
+   "comment": "people standing a few hundred yards from the edge of such a cliff might not even get wet"
+  },
+  {
+   "name": "whzTidalLowlandFears",
+   "value": true,
+   "comment": "people standing there have almost as much to fear as those who live on the coast itself"
+  },
+  {
+   "name": "whzTidalPathKills",
+   "value": true,
+   "comment": "a character directly in the path of a tidal wave will die - if he survives the buffeting he will at least be knocked unconscious (the section continues onto p. 80 and rides with R487)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the lava dice spans: 2d6 days fluid, 2d4 days thick, 2d3 weeks of heat retention, 2d6 points of pyroclastic hit damage",
+   "expr": "m['whzFluidLavaDaysMin']() + 10 != m['whzFluidLavaDaysMax']() or m['whzThickLavaDaysMin']() + 6 != m['whzThickLavaDaysMax']() or m['whzLavaHeatWeeksMin']() + 4 != m['whzLavaHeatWeeksMax']() or m['whzPyroclasticDmgMin']() + 10 != m['whzPyroclasticDmgMax']()"
+  },
+  {
+   "note": "the 50-degree fluid and 30-degree thick temperature rises are exact multiples of the 10-degree-per-quarter-mile taper",
+   "expr": "m['whzFluidTempRiseDeg']() != m['whzLavaTempTaperDeg']() * 5 or m['whzThickTempRiseDeg']() != m['whzLavaTempTaperDeg']() * 3"
+  },
+  {
+   "note": "the fluid band's 1.5-mile no-heat distance is the thick band's 1 mile plus two more quarter-mile tapers",
+   "expr": "m['whzFluidNoHeatQmi']() != m['whzThickNoHeatQmi']() + 2"
+  },
+  {
+   "note": "the danger radii strictly ascend with intensity: 500 yards of lava heat, 2,000 light ash, 4,000 heavy ash",
+   "expr": "m['whzAshHeavyDangerYards']() <= m['whzAshLightDangerYards']() or m['whzAshLightDangerYards']() <= m['whzLavaHeatRangeYards']()"
+  },
+  {
+   "note": "the light-band dice: 1d4+2 weeks, 1d10+15 downwind miles, 1d6+4 near miles, and the 3-8-day pyroclastic spell of band 6",
+   "expr": "m['whzAshLightWeeksMin']() + 3 != m['whzAshLightWeeksMax']() or m['whzAshLightFarMilesMin']() + 9 != m['whzAshLightFarMilesMax']() or m['whzAshLightNearMilesMin']() + 5 != m['whzAshLightNearMilesMax']() or m['whzAshSixPyrDaysMin']() + 5 != m['whzAshSixPyrDaysMax']()"
+  },
+  {
+   "note": "the heavy-band dice: 1d6+5 daily hours, 1d3 weeks, 1d6+9 downwind miles, 1d6+2 near miles",
+   "expr": "m['whzAshHeavyHoursMin']() + 5 != m['whzAshHeavyHoursMax']() or m['whzAshHeavyWeeksMin']() + 2 != m['whzAshHeavyWeeksMax']() or m['whzAshHeavyFarMilesMin']() + 5 != m['whzAshHeavyFarMilesMax']() or m['whzAshHeavyNearMilesMin']() + 5 != m['whzAshHeavyNearMilesMax']()"
+  },
+  {
+   "note": "the ash accumulations strictly ascend with proximity and intensity: 2 inches downwind, 6 near, 9 under a heavy band",
+   "expr": "m['whzAshLightFarAccumInches']() >= m['whzAshLightNearAccumInches']() or m['whzAshLightNearAccumInches']() >= m['whzAshHeavyNearAccumInches']()"
+  },
+  {
+   "note": "the cloudkill hit-die bands abut: fewer than 8+1 slain, 8+1 through 10+1 saving at -4, 11 and above saving normally",
+   "expr": "m['whzCloudkillMidMaxHd']() != m['whzCloudkillSlaysBelowHd']() + 2"
+  },
+  {
+   "note": "the quake durations: d6+9 gives 10-15 seconds, and 1d6+3 tens gives the severe 40-90 seconds",
+   "expr": "m['whzModQuakeSecMin']() + 5 != m['whzModQuakeSecMax']() or m['whzSevQuakeSecMin']() + 50 != m['whzSevQuakeSecMax']()"
+  },
+  {
+   "note": "the severe quake exactly doubles the moderate penalties: 50 to 100 percent climbing, 3 to 6 melee",
+   "expr": "m['whzSevQuakeClimbPenaltyPct']() != m['whzModQuakeClimbPenaltyPct']() * 2 or m['whzSevQuakeMeleePenalty']() != m['whzModQuakeMeleePenalty']() * 2"
+  },
+  {
+   "note": "the non-specialist missile penalties escalate -3 -5 -7 and the specialist takes a flat -2",
+   "expr": "m['whzModQuakeNonSpecShort']() + 2 != m['whzModQuakeNonSpecMed']() or m['whzModQuakeNonSpecMed']() + 2 != m['whzModQuakeNonSpecLong']() or m['whzModQuakeSpecMissilePenalty']() != 2"
+  },
+  {
+   "note": "the smallest wave is 75 by 500 feet, the 20-mph inland speed is well under the 150-mph open-water minimum, and the warning window is bounded by 30 seconds",
+   "expr": "m['whzTidalMinHeightFt']() * m['whzTidalLengthFt']() != 37500 or m['whzTidalInlandMph']() >= m['whzTidalMinMph']() or m['whzTidalMaxWarnSec']() != 30"
+  },
+  {
+   "note": "the pulverized peak lost height - 9,677 feet before, 8,364 after - and the six incidents fit inside the 10-month period",
+   "expr": "m['whzStHelensBeforeFt']() <= m['whzStHelensAfterFt']() or m['whzStHelensIncidents']() > m['whzStHelensMonths']()"
+  },
+  {
+   "note": "the chapter's two triads: three volcano eruption types, three quake classes",
+   "expr": "m['whzVolcanoEruptionTypes']() != 3 or m['whzQuakeClasses']() != 3"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "The volcano frame": [
+   {
+    "kind": "const",
+    "name": "whzVolcanoEruptionTypes"
+   },
+   {
+    "kind": "bool",
+    "name": "whzOneTypePerVolcano"
+   },
+   {
+    "kind": "bool",
+    "name": "whzDormantAwakensFast"
+   },
+   {
+    "kind": "bool",
+    "name": "whzPerpetuallyActive"
+   }
+  ],
+  "Lava eruptions": [
+   {
+    "kind": "bool",
+    "name": "whzMagmaInsideLavaOut"
+   },
+   {
+    "kind": "bool",
+    "name": "whzLavaSpraysWhenThick"
+   },
+   {
+    "kind": "bool",
+    "name": "whzFluidMagmaLessViolent"
+   },
+   {
+    "kind": "bool",
+    "name": "whzLavaSideFissures"
+   },
+   {
+    "kind": "bool",
+    "name": "whzLavaTopAndSides"
+   },
+   {
+    "kind": "bool",
+    "name": "whzLavaIncinerates"
+   },
+   {
+    "kind": "const",
+    "name": "whzLavaHeatWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzLavaHeatWeeksMax"
+   },
+   {
+    "kind": "bool",
+    "name": "whzLavaAvoidable"
+   },
+   {
+    "kind": "const",
+    "name": "whzLavaFlowYardsPerHour"
+   },
+   {
+    "kind": "bool",
+    "name": "whzPyroclasticBombsBlocks"
+   }
+  ],
+  "The lava eruption 1d4 bands": [
+   {
+    "kind": "const",
+    "name": "whzFluidLavaDaysMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzFluidLavaDaysMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzFluidLavaHeatDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "whzFluidTempRiseDeg"
+   },
+   {
+    "kind": "const",
+    "name": "whzLavaHeatRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "whzLavaTempTaperDeg"
+   },
+   {
+    "kind": "const",
+    "name": "whzFluidNoHeatQmi"
+   },
+   {
+    "kind": "const",
+    "name": "whzThickLavaDaysMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzThickLavaDaysMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzThickLavaHeatDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "whzThickTempRiseDeg"
+   },
+   {
+    "kind": "const",
+    "name": "whzThickNoHeatQmi"
+   },
+   {
+    "kind": "const",
+    "name": "whzPyroclasticRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "whzPyroclasticHitChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "whzPyroclasticDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzPyroclasticDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzPyroclasticStepYards"
+   },
+   {
+    "kind": "const",
+    "name": "whzPyroclasticChanceStepPct"
+   },
+   {
+    "kind": "const",
+    "name": "whzPyroclasticDmgStepDie"
+   }
+  ],
+  "Ash eruptions": [
+   {
+    "kind": "bool",
+    "name": "whzAshEruptionsExpelLava"
+   },
+   {
+    "kind": "bool",
+    "name": "whzAshSeldomViolent"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshCloudHeightMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshCloudHeightMaxFt"
+   },
+   {
+    "kind": "bool",
+    "name": "whzAshCloudOpaque"
+   },
+   {
+    "kind": "bool",
+    "name": "whzAshLighterCarriedFar"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshFarAccumInchesMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshFarAccumInchesMax"
+   },
+   {
+    "kind": "bool",
+    "name": "whzAshKillsPlants"
+   },
+   {
+    "kind": "bool",
+    "name": "whzAshFertilizer"
+   },
+   {
+    "kind": "bool",
+    "name": "whzStHelensWasAshEruption"
+   },
+   {
+    "kind": "const",
+    "name": "whzStHelensYear"
+   },
+   {
+    "kind": "const",
+    "name": "whzStHelensIncidents"
+   },
+   {
+    "kind": "const",
+    "name": "whzStHelensMonths"
+   },
+   {
+    "kind": "bool",
+    "name": "whzStHelensSnowmeltMudslides"
+   },
+   {
+    "kind": "const",
+    "name": "whzStHelensMudslideAcres"
+   },
+   {
+    "kind": "const",
+    "name": "whzStHelensBlastMegatons"
+   },
+   {
+    "kind": "const",
+    "name": "whzStHelensTreesMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "whzStHelensPeakPulverized"
+   },
+   {
+    "kind": "const",
+    "name": "whzStHelensBeforeFt"
+   },
+   {
+    "kind": "const",
+    "name": "whzStHelensAfterFt"
+   }
+  ],
+  "The ash eruption 1d6 bands": [
+   {
+    "kind": "const",
+    "name": "whzAshLightDailyHours"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshLightWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshLightWeeksMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshLightFarAccumInches"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshLightFarMilesMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshLightFarMilesMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshLightNearAccumInches"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshLightNearMilesMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshLightNearMilesMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshLightDangerYards"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshBurnDmgDie"
+   },
+   {
+    "kind": "bool",
+    "name": "whzAshShelterProtects"
+   },
+   {
+    "kind": "bool",
+    "name": "whzChokeSaveBreathWeapon"
+   },
+   {
+    "kind": "const",
+    "name": "whzChokeAtkPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "whzChokeBeHitBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "whzChokeTwoFailsAsphyxiate"
+   },
+   {
+    "kind": "const",
+    "name": "whzAsphyxDmgDie"
+   },
+   {
+    "kind": "bool",
+    "name": "whzAsphyxAidWithinTurn"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshHeavyHoursMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshHeavyHoursMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshHeavyWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshHeavyWeeksMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshHeavyFarMilesMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshHeavyFarMilesMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshHeavyNearAccumInches"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshHeavyNearMilesMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshHeavyNearMilesMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshHeavyDangerYards"
+   },
+   {
+    "kind": "bool",
+    "name": "whzAshHeavyUnprotectedEffects"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshSixPyrDaysMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzAshSixPyrDaysMax"
+   }
+  ],
+  "Explosive eruptions": [
+   {
+    "kind": "bool",
+    "name": "whzExplosiveBlowsTop"
+   },
+   {
+    "kind": "bool",
+    "name": "whzExplosivePeakCollapses"
+   },
+   {
+    "kind": "bool",
+    "name": "whzExplosiveSightRangeDanger"
+   },
+   {
+    "kind": "const",
+    "name": "whzGlowingAvalancheMilesMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzGlowingAvalancheMilesMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzCloudkillStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "whzExplosiveCloudkillBreath"
+   },
+   {
+    "kind": "const",
+    "name": "whzCloudkillSlaysBelowHd"
+   },
+   {
+    "kind": "const",
+    "name": "whzCloudkillMidSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "whzCloudkillMidMaxHd"
+   },
+   {
+    "kind": "bool",
+    "name": "whzExplosiveWarnsFirst"
+   },
+   {
+    "kind": "const",
+    "name": "whzExplosiveWarningDaysMax"
+   }
+  ],
+  "Earthquakes": [
+   {
+    "kind": "bool",
+    "name": "whzQuakeOnlyAvoidedByAir"
+   },
+   {
+    "kind": "bool",
+    "name": "whzQuakeMostlyHarmless"
+   },
+   {
+    "kind": "bool",
+    "name": "whzQuakeWildernessScope"
+   },
+   {
+    "kind": "bool",
+    "name": "whzQuakeFaultLines"
+   },
+   {
+    "kind": "bool",
+    "name": "whzQuakeShockWavesDoMoreDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "whzQuakeTriggersQuake"
+   },
+   {
+    "kind": "bool",
+    "name": "whzQuakeAftershocksDays"
+   },
+   {
+    "kind": "const",
+    "name": "whzQuakeClasses"
+   },
+   {
+    "kind": "bool",
+    "name": "whzLightQuakeFewSeconds"
+   },
+   {
+    "kind": "bool",
+    "name": "whzLightQuakeRuinsSpell"
+   },
+   {
+    "kind": "bool",
+    "name": "whzLightQuakeThiefJostled"
+   },
+   {
+    "kind": "const",
+    "name": "whzLightQuakeThiefFailPct"
+   },
+   {
+    "kind": "bool",
+    "name": "whzLightQuakeTightropeHalved"
+   }
+  ],
+  "The moderate and severe quake": [
+   {
+    "kind": "bool",
+    "name": "whzModQuakeHasLightEffects"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeSecMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeSecMax"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeLessPct"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeMorePct"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeMoreSecMax"
+   },
+   {
+    "kind": "bool",
+    "name": "whzModQuakeDislodges"
+   },
+   {
+    "kind": "bool",
+    "name": "whzModQuakeToppleNeedsDexStr"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeClimbPenaltyPct"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeSpecMissilePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "whzModQuakeSpecPointBlankOk"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeNonSpecShort"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeNonSpecMed"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeNonSpecLong"
+   },
+   {
+    "kind": "bool",
+    "name": "whzModQuakeNonSpecRangeStacks"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeMeleePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "whzModQuakeMissSlipFall"
+   },
+   {
+    "kind": "bool",
+    "name": "whzModQuakeRockfallMudslide"
+   },
+   {
+    "kind": "bool",
+    "name": "whzModQuakeClimberAlsoAtRisk"
+   },
+   {
+    "kind": "const",
+    "name": "whzModQuakeTreeFallChance"
+   },
+   {
+    "kind": "bool",
+    "name": "whzModQuakeFissureOpens"
+   },
+   {
+    "kind": "bool",
+    "name": "whzModQuakeFissureFallingDmg"
+   },
+   {
+    "kind": "bool",
+    "name": "whzModQuakeFissureCrush"
+   },
+   {
+    "kind": "bool",
+    "name": "whzSevQuakeDoublesAll"
+   },
+   {
+    "kind": "const",
+    "name": "whzSevQuakeClimbPenaltyPct"
+   },
+   {
+    "kind": "const",
+    "name": "whzSevQuakeMeleePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "whzSevQuakeRockfallDoubled"
+   },
+   {
+    "kind": "const",
+    "name": "whzSevQuakeSecMin"
+   },
+   {
+    "kind": "const",
+    "name": "whzSevQuakeSecMax"
+   },
+   {
+    "kind": "bool",
+    "name": "whzSevQuakeHitTheGround"
+   }
+  ],
+  "Tidal waves": [
+   {
+    "kind": "bool",
+    "name": "whzTidalCreatedOnOceanFloor"
+   },
+   {
+    "kind": "bool",
+    "name": "whzTidalShockAbsorbed"
+   },
+   {
+    "kind": "bool",
+    "name": "whzTidalTravelsFar"
+   },
+   {
+    "kind": "const",
+    "name": "whzTidalSightHalfMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "whzTidalPrecautionWindow"
+   },
+   {
+    "kind": "const",
+    "name": "whzTidalMinMph"
+   },
+   {
+    "kind": "const",
+    "name": "whzTidalMaxWarnSec"
+   },
+   {
+    "kind": "const",
+    "name": "whzTidalMinHeightFt"
+   },
+   {
+    "kind": "const",
+    "name": "whzTidalLengthFt"
+   },
+   {
+    "kind": "const",
+    "name": "whzTidalVolumeMillionGal"
+   },
+   {
+    "kind": "bool",
+    "name": "whzTidalRushesInland"
+   },
+   {
+    "kind": "bool",
+    "name": "whzTidalInlandDiminishes"
+   },
+   {
+    "kind": "const",
+    "name": "whzTidalInlandMph"
+   },
+   {
+    "kind": "bool",
+    "name": "whzTidalTerrainGoverns"
+   },
+   {
+    "kind": "const",
+    "name": "whzTidalCliffFt"
+   },
+   {
+    "kind": "bool",
+    "name": "whzTidalCliffSpares"
+   },
+   {
+    "kind": "const",
+    "name": "whzTidalLowlandMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "whzTidalLowlandFears"
+   },
+   {
+    "kind": "bool",
+    "name": "whzTidalPathKills"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the volcanoes box",
+   "from": "  - [ ] Volcanoes (p. 76)",
+   "to": "  - [x] Volcanoes (p. 76) - R486: the three eruption types with the one-type-per-volcano rule pin as rules/wsghazd.h"
+  },
+  {
+   "note": "the lava eruptions box",
+   "from": "  - [ ] Lava eruptions (p. 76)",
+   "to": "  - [x] Lava eruptions (p. 76) - R486: the 250-yards-per-hour flow and 2d3-week heat retention with the 1d4 fluid, thick and pyroclastic bands pin as rules/wsghazd.h"
+  },
+  {
+   "note": "the ash eruptions box",
+   "from": "  - [ ] Ash eruptions (p. 76)",
+   "to": "  - [x] Ash eruptions (p. 76) - R486: the cloud, accumulation and fertilizer rules with the Mount St. Helens account and the 1d6 light, heavy and pyroclastic bands pin as rules/wsghazd.h"
+  },
+  {
+   "note": "the explosive eruptions box",
+   "from": "  - [ ] Explosive eruptions (p. 78)",
+   "to": "  - [x] Explosive eruptions (p. 78) - R486: the blow-the-top opening with the 3-5-mile glowing avalanche, the double-strength cloudkill and the 1d3-day warning pin as rules/wsghazd.h"
+  },
+  {
+   "note": "the earthquakes box",
+   "from": "  - [ ] Earthquakes (p. 78)",
+   "to": "  - [x] Earthquakes (p. 78) - R486: the fault-line frame with the light, moderate and severe quake classes and their penalties pin as rules/wsghazd.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R485: 113 closed, 73 open (the R485 round CLOSES the vision and visibility chapter - the artificial illumination rules pin as rules/wsglight.h; the next round opens the natural hazards chapter - volcanoes (p. 76)).",
+   "to": "Post-state at R486: 118 closed, 68 open (the R486 round opens the natural hazards chapter - the volcano, earthquake and tidal wave approach rules through printed p. 79 pin as rules/wsghazd.h; the next round finishes the tidal wave death rules and continues - floods and flash floods (p. 80))."
+  }
+ ],
+ "gap_census": {
+  "closed": 118,
+  "open": 68
+ },
+ "include_after": "#include \"rules/wsglight.h\"  // R485: the WSG artificial illumination light-source rules",
+ "include_comment": "the WSG volcano, earthquake and tidal wave hazard rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R485 LANDED 2026-10-15: commit e9d27ae (census 410, pushed",
+ "prev_record": [
+  "- R485 LANDED 2026-10-15: commit e9d27ae (census 410, pushed",
+  "  b800d4a..e9d27ae), the WSG ARTIFICIAL ILLUMINATION slice,",
+  "  printed pp. 74-75 - the fourth and final vision round,",
+  "  CLOSING the vision and visibility chapter (R482-R485), a",
+  "  pure prose round with NO table: pinned as rules/wsglight.h",
+  "  with the include after wsgultra.h at line 190 (prefix wli,",
+  "  free on the first probe; wai/wal/wil/art all collided). The",
+  "  twilight frame: the section supplements the PHB p. 102",
+  "  statistics; an artificial light source in moonlight or",
+  "  darkness lets the illuminated see with normal vision as if",
+  "  the natural light was twilight (daylight for a continual",
+  "  light spell), but the light source's specified radius takes",
+  "  precedence over the Range of Normal Vision Table - the",
+  "  torch holder on a clear night sees only his 40-foot radius,",
+  "  though real twilight under a clear sky would show 300",
+  "  yards unaided. The torch wind bands: below 10 mph the PHB",
+  "  figures apply; 11-25 mph the flame struggles and flickers,",
+  "  reliable illumination only to 30 feet instead of 40 and a",
+  "  burn of 4 turns instead of 6; 26-40 mph the radius holds but",
+  "  the flame lasts only 2 turns, with a 25% chance checked",
+  "  every five rounds of wind-extinguishing and reignition;",
+  "  above 40 mph a torch cannot be kept burning more than 1",
+  "  round. Lighting takes 1 round plus 1 per 10 mph of wind,",
+  "  halved with fire building proficiency; a lighted torch is",
+  "  seen from 200 yards. The lantern and bullseye: protected",
+  "  flame, no flicker, constant radius; regular lantern light",
+  "  seen from 100 yards, the bullseye beam 200 yards looking",
+  "  back toward the source or 100 yards across the beam path.",
+  "  Magic weapons: smaller area than torch or lantern, no",
+  "  fuel, no wind effect, the glow seen from ten times the",
+  "  radius - dagger 100, short sword 150, long sword 200 feet.",
+  "  Campfires: small 80-foot radius, medium 120 feet on all",
+  "  sides, large at least 150 feet. The group visibility rules:",
+  "  any artificial light limits long-range visibility for",
+  "  everyone within the area - the lantern holder cannot make",
+  "  out details beyond his 30-foot radius, but someone at the",
+  "  fringe still sees normally into the darkness ahead, and the",
+  "  DM tracks who carries light and where the others stand.",
+  "  THE SETTLE: two-way clean on the first pass - tesseract,",
+  "  pdfy and tsv agree on every number (the wind bands, the",
+  "  30/40 feet, the 4/6/2 turns, the 25% and five rounds, the",
+  "  200/100/200/100 yards, the 100/150/200 glows, the 80/120/150",
+  "  campfire radii, the 30-foot lantern); the tesseract /arge",
+  "  is an italic-L scan artifact, pdfy reading large cleanly;",
+  "  the section's p. 74 tail opening (cut mid-word in il-) is",
+  "  pinned with this round. The spec md5 pair: authored",
+  "  601bdcdb475a1e7ccfc91d4cbcadcd67, as-built",
+  "  abf5b1854f6f17dcefc8d50e380c74b5 (the Termux md5 hit the",
+  "  +nl pair value exactly). rverify at b800d4a: 51 mutants,",
+  "  0 missed (32 consts + 19 bools); inline_count 51; census",
+  "  409 -> 410; the gap flips 112/74 -> 113/73 (the artificial",
+  "  illumination box), CLOSING the vision chapter, the R484",
+  "  seed record in place.",
+  "  Next: R486 - volcanoes (p. 76), opening the natural",
+  "  hazards chapter (pp. 76-83)"
+ ]
+}

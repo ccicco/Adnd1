@@ -112,11 +112,11 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Ultravision (p. 74) - R484: the infravision effectiveness rules with the color scale and the ultravision definition with its range modifiers pin as rules/wsgultra.h
   - [x] Artificial illumination (p. 74) - R485: the torch wind bands with the lantern, magic weapon and campfire illumination rules pin as rules/wsglight.h
 - [ ] **Natural hazards in the wilderness** (pp. 76-83)
-  - [ ] Volcanoes (p. 76)
-  - [ ] Lava eruptions (p. 76)
-  - [ ] Ash eruptions (p. 76)
-  - [ ] Explosive eruptions (p. 78)
-  - [ ] Earthquakes (p. 78)
+  - [x] Volcanoes (p. 76) - R486: the three eruption types with the one-type-per-volcano rule pin as rules/wsghazd.h
+  - [x] Lava eruptions (p. 76) - R486: the 250-yards-per-hour flow and 2d3-week heat retention with the 1d4 fluid, thick and pyroclastic bands pin as rules/wsghazd.h
+  - [x] Ash eruptions (p. 76) - R486: the cloud, accumulation and fertilizer rules with the Mount St. Helens account and the 1d6 light, heavy and pyroclastic bands pin as rules/wsghazd.h
+  - [x] Explosive eruptions (p. 78) - R486: the blow-the-top opening with the 3-5-mile glowing avalanche, the double-strength cloudkill and the 1d3-day warning pin as rules/wsghazd.h
+  - [x] Earthquakes (p. 78) - R486: the fault-line frame with the light, moderate and severe quake classes and their penalties pin as rules/wsghazd.h
   - [ ] Tidal waves (p. 79)
   - [ ] Floods and flash floods (p. 80)
   - [ ] Avalanches, rockfalls, and mudslides (p. 80)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 41: outdoor range of normal vision** (p. 73) - R483: the six-condition light-level grid pins as rules/wsginfra.h
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R485: 113 closed, 73 open (the R485 round CLOSES the vision and visibility chapter - the artificial illumination rules pin as rules/wsglight.h; the next round opens the natural hazards chapter - volcanoes (p. 76)).
+Post-state at R486: 118 closed, 68 open (the R486 round opens the natural hazards chapter - the volcano, earthquake and tidal wave approach rules through printed p. 79 pin as rules/wsghazd.h; the next round finishes the tidal wave death rules and continues - floods and flash floods (p. 80)).

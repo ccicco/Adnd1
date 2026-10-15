@@ -5243,6 +5243,61 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   box), the R483 seed record in place.
   Next: R485 - artificial illumination (p. 74, continuing
   onto printed p. 75)
+- R485 LANDED 2026-10-15: commit e9d27ae (census 410, pushed
+  b800d4a..e9d27ae), the WSG ARTIFICIAL ILLUMINATION slice,
+  printed pp. 74-75 - the fourth and final vision round,
+  CLOSING the vision and visibility chapter (R482-R485), a
+  pure prose round with NO table: pinned as rules/wsglight.h
+  with the include after wsgultra.h at line 190 (prefix wli,
+  free on the first probe; wai/wal/wil/art all collided). The
+  twilight frame: the section supplements the PHB p. 102
+  statistics; an artificial light source in moonlight or
+  darkness lets the illuminated see with normal vision as if
+  the natural light was twilight (daylight for a continual
+  light spell), but the light source's specified radius takes
+  precedence over the Range of Normal Vision Table - the
+  torch holder on a clear night sees only his 40-foot radius,
+  though real twilight under a clear sky would show 300
+  yards unaided. The torch wind bands: below 10 mph the PHB
+  figures apply; 11-25 mph the flame struggles and flickers,
+  reliable illumination only to 30 feet instead of 40 and a
+  burn of 4 turns instead of 6; 26-40 mph the radius holds but
+  the flame lasts only 2 turns, with a 25% chance checked
+  every five rounds of wind-extinguishing and reignition;
+  above 40 mph a torch cannot be kept burning more than 1
+  round. Lighting takes 1 round plus 1 per 10 mph of wind,
+  halved with fire building proficiency; a lighted torch is
+  seen from 200 yards. The lantern and bullseye: protected
+  flame, no flicker, constant radius; regular lantern light
+  seen from 100 yards, the bullseye beam 200 yards looking
+  back toward the source or 100 yards across the beam path.
+  Magic weapons: smaller area than torch or lantern, no
+  fuel, no wind effect, the glow seen from ten times the
+  radius - dagger 100, short sword 150, long sword 200 feet.
+  Campfires: small 80-foot radius, medium 120 feet on all
+  sides, large at least 150 feet. The group visibility rules:
+  any artificial light limits long-range visibility for
+  everyone within the area - the lantern holder cannot make
+  out details beyond his 30-foot radius, but someone at the
+  fringe still sees normally into the darkness ahead, and the
+  DM tracks who carries light and where the others stand.
+  THE SETTLE: two-way clean on the first pass - tesseract,
+  pdfy and tsv agree on every number (the wind bands, the
+  30/40 feet, the 4/6/2 turns, the 25% and five rounds, the
+  200/100/200/100 yards, the 100/150/200 glows, the 80/120/150
+  campfire radii, the 30-foot lantern); the tesseract /arge
+  is an italic-L scan artifact, pdfy reading large cleanly;
+  the section's p. 74 tail opening (cut mid-word in il-) is
+  pinned with this round. The spec md5 pair: authored
+  601bdcdb475a1e7ccfc91d4cbcadcd67, as-built
+  abf5b1854f6f17dcefc8d50e380c74b5 (the Termux md5 hit the
+  +nl pair value exactly). rverify at b800d4a: 51 mutants,
+  0 missed (32 consts + 19 bools); inline_count 51; census
+  409 -> 410; the gap flips 112/74 -> 113/73 (the artificial
+  illumination box), CLOSING the vision chapter, the R484
+  seed record in place.
+  Next: R486 - volcanoes (p. 76), opening the natural
+  hazards chapter (pp. 76-83)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
