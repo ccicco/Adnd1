@@ -1,0 +1,1055 @@
+{
+ "round": 475,
+ "title": "the WSG precautions and perils slice with Table 39 - the Table 38 column semantics seam (start, refuel, wind resistance, capacity, visibility and the warmth wind rules), the fuel availability grids and the fire safety rules, printed p. 66",
+ "prefix": "wfl",
+ "header_file": "rules/wsgfuel.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 399,
+ "inline_count": 81,
+ "audit_label": "R475 WSG fuel and fire safety pin audit",
+ "audit_comment": "The Table 39 grids (the five terrains by four temperate seasons and the six terrains by four climate modifiers), the Table 38 column semantics (the start discipline with the tools and wind gates, the refuel shrink rule, the wind resistance semantics, the capacity doubling and clustering reductions, the visibility reductions and line-of-sight rulings, the warmth safe-distance and wind-modifier rules with the book own worked example) and the fire safety prose are audit examples.",
+ "banner": {
+  "title": "R475: the WSG PRECAUTIONS AND PERILS slice with TABLE 39, printed p. 66 - the fifth camping-arc round and the fifth TABLE ROUND of the arc, riding the Table 38 column semantics seam unpinned by R474 (whose boxes covered only the p. 65 grids): the start discipline (2d20 rounds for a character without the fire-building proficiency assuming tools, dry fuel and a breeze of no more than 15 mph; wind over 15 mph or wet fuel means 3d20; no start without tools for the unproficient; no start in wind over 30 mph without magic), the refuel semantics (a fire not refueled in time shrinks to the next lower size; a small fire never goes out within three turns but provides no warmth), the wind resistance semantics (unprotected fires only; falter and flicker with no warmth over the rated velocity; the spread chance to an uncontrollable fire), the capacity semantics (six men at 10 feet from a small fire, doubling per additional 10 feet to 12 men at 20; clustering diminishes by one-third at five feet, one-half at three feet and two-thirds at one foot: 4, 3 and 2 characters), the visibility semantics (yards in moonlight or darkness, one-third off in twilight and one-half off in daylight; the 540-yard large-fire flame; the glow through moderately dense forest; the steep-hill blockage; the smoke reveal), the warmth semantics (the 80-degree minimum safe distance, five segments to move away, three feet from a medium fire and five from a large, the 10-mph calm assumption, windward warmth minus 5 degrees per 10 mph or fraction, leeward safe distance plus 10 feet or one increment whichever is less, and the book own 30-mph medium-fire example: 20 degrees at 20 feet on the windward side instead of 30, 10 feet on the leeward side instead of 3), Table 39 in TWO grids (availability of fuel by terrain and season for a temperate climate: desert 20/20/20/20, forest 70/100/100/100, hills 40/70/70/60, plains 50/70/80/70, swamp 40/30/30/40; and the climate modifiers: desert -20/-10/-10/-20, forest -100/-30/+30/+30, hills -30/-20/+10/+20, mountains -40/-30/+20/+30, plains -60/-40/+20/+20, swamp -40/-20/+10/+20), the every-two-turns further checks, and the start of precautions and perils (no safe fire, the untended conflagration, the cardinal rules, the first rule: no fire on combustibles, 1-3 turns to clear, sparks 100 feet in a strong wind), printed p. 66.",
+  "provenance": "Ground truth two-way on the prose and the uncontested Table 39 cells, no physical-page reads: the user-run Termux tesseract text of printed p. 66 (p66_full.txt, p66_tsv.tsv) vs the pdf embedded text layer (pdftotext -layout, pdf page 67, p66_pdfy.txt). The two readers AGREE on all prose numbers: the 15-mph start breeze and the 3d20-instead-of-2d20 escalation, the 30-mph magical bar, the three-turn small-fire refuel grace, the 10-foot capacity base with the doubling to 12 men and the one-third, one-half and two-thirds clustering cuts with the 4/3/2 example, the 540-yard large-fire visibility with the one-third twilight and one-half daylight reductions, the 80-degree safe distance with the five segments and the 3-foot medium and 5-foot large burns, the 10-mph warmth assumption with the 5-degrees-per-10-mph windward cut and the 10-feet-or-one-increment leeward add, the full 30-mph worked example (20 degrees at 20 feet windward instead of 30, 10 feet leeward instead of 3), the temperate fuel grid for desert, forest, plains and swamp, the climate modifier grid for desert, forest, mountains, plains and swamp, the every-two-turns recheck and the 1-3 turn clearing time with 100-foot spark carry. CONTESTED: the HILLS rows of BOTH Table 39 grids - the pdf text layer DROPPED the hills rows from both grids entirely, and tesseract garbles them (the temperate autumn cell as a wide low-confidence blob, the four modifier cells as near-zero-confidence noise). The standing vision-on-png settler was applied TWICE with independent prompts, and BOTH reads AGREE EXACTLY: temperate hills 40/70/70/60 and climate modifiers -30/-20/+10/+20 - the R471/R473 two-vision-read precedent, with the second read calibrated against the neighboring rows. A web search for an independent online copy of the table found none. The settled rows are also plausible against their neighbors: the hills arctic -30 sits between forest -100 and mountains -40, and the hills modifiers match swamp on the three warmer columns.",
+  "sentinel": "All 44 Table 39 cells pinned (the 20 temperate cells and the 24 climate-modifier cells, both hills rows vision-settled); the Table 38 column semantics, the worked wind example and the fire safety prose are audit examples."
+ },
+ "consts": [
+  {
+   "name": "wflStartBreezeMax",
+   "value": 15,
+   "comment": "the start discipline assumes the fire is exposed to a breeze of no more than 15 mph"
+  },
+  {
+   "name": "wflStartDie",
+   "value": 20,
+   "comment": "the start roll die: d20"
+  },
+  {
+   "name": "wflStartDice",
+   "value": 2,
+   "comment": "a character without the fire-building proficiency starts a fire in 2d20 rounds"
+  },
+  {
+   "name": "wflHardStartDice",
+   "value": 3,
+   "comment": "in wind over 15 mph or with wet fuel the time needed to start the fire is 3d20 instead"
+  },
+  {
+   "name": "wflNoStartWindMax",
+   "value": 30,
+   "comment": "no character can start a fire in a wind of more than 30 mph without magical assistance"
+  },
+  {
+   "name": "wflSmallRefuelGrace",
+   "value": 3,
+   "comment": "a small fire will not go out if it is not refueled within three turns"
+  },
+  {
+   "name": "wflCapBaseFeet",
+   "value": 10,
+   "comment": "capacity is measured for characters bedded down at 10 feet from the fire"
+  },
+  {
+   "name": "wflSmallCapAt10",
+   "value": 6,
+   "comment": "six men can bed down in a rough circle 10 feet away from a small fire"
+  },
+  {
+   "name": "wflSmallCapAt20",
+   "value": 12,
+   "comment": "the same small fire will warm 12 men equally at 20 feet"
+  },
+  {
+   "name": "wflCapStepFeet",
+   "value": 10,
+   "comment": "a fire capacity doubles for each additional 10 feet of distance"
+  },
+  {
+   "name": "wflDimFiveNum",
+   "value": 1,
+   "comment": "clustering at five feet diminishes capacity by one-third: numerator"
+  },
+  {
+   "name": "wflDimFiveDen",
+   "value": 3,
+   "comment": "clustering at five feet diminishes capacity by one-third: denominator"
+  },
+  {
+   "name": "wflDimThreeNum",
+   "value": 1,
+   "comment": "clustering at three feet diminishes capacity by one-half: numerator"
+  },
+  {
+   "name": "wflDimThreeDen",
+   "value": 2,
+   "comment": "clustering at three feet diminishes capacity by one-half: denominator"
+  },
+  {
+   "name": "wflDimOneNum",
+   "value": 2,
+   "comment": "clustering at one foot diminishes capacity by two-thirds: numerator"
+  },
+  {
+   "name": "wflDimOneDen",
+   "value": 3,
+   "comment": "clustering at one foot diminishes capacity by two-thirds: denominator"
+  },
+  {
+   "name": "wflClusterFiveMax",
+   "value": 4,
+   "comment": "four characters can bed down within five feet of a small fire"
+  },
+  {
+   "name": "wflClusterThreeMax",
+   "value": 3,
+   "comment": "three characters can cluster within three feet of the fire"
+  },
+  {
+   "name": "wflClusterOneMax",
+   "value": 2,
+   "comment": "two characters can be within one foot of a small fire at the same time"
+  },
+  {
+   "name": "wflLargeVisYards",
+   "value": 540,
+   "comment": "the flame of a large fire is easily visible at night from 540 yards away on a flat, featureless plain"
+  },
+  {
+   "name": "wflTwilightNum",
+   "value": 1,
+   "comment": "in twilight conditions the visibility figure is reduced by one-third: numerator"
+  },
+  {
+   "name": "wflTwilightDen",
+   "value": 3,
+   "comment": "the twilight visibility reduction: denominator"
+  },
+  {
+   "name": "wflDaylightNum",
+   "value": 1,
+   "comment": "in daylight the visibility figure is reduced by one-half: numerator"
+  },
+  {
+   "name": "wflDaylightDen",
+   "value": 2,
+   "comment": "the daylight visibility reduction: denominator"
+  },
+  {
+   "name": "wflSafeWarmthDegrees",
+   "value": 80,
+   "comment": "the minimum safe distance is the distance at which the air temperature is raised by 80 degrees"
+  },
+  {
+   "name": "wflMoveAwaySegments",
+   "value": 5,
+   "comment": "a character closer than the safe distance must move away promptly, within five segments, or may suffer damage"
+  },
+  {
+   "name": "wflMediumSafeFt",
+   "value": 3,
+   "comment": "an unprotected character cannot remain closer than three feet from a medium fire without being burned"
+  },
+  {
+   "name": "wflLargeSafeFt",
+   "value": 5,
+   "comment": "an unprotected character cannot remain closer than five feet from a large fire without being burned"
+  },
+  {
+   "name": "wflWarmCalmWindMax",
+   "value": 10,
+   "comment": "the warming capabilities assume the fire is not exposed to wind of more than 10 mph"
+  },
+  {
+   "name": "wflWindwardDegStep",
+   "value": 5,
+   "comment": "on the side facing the wind the warmth is reduced by 5 degrees per step"
+  },
+  {
+   "name": "wflWindwardMphStep",
+   "value": 10,
+   "comment": "the windward warmth reduction applies for every 10 mph or fraction thereof of additional velocity"
+  },
+  {
+   "name": "wflLeewardFeetStep",
+   "value": 10,
+   "comment": "on the side facing away from the wind the safe distance is increased by 10 feet or one table increment, whichever is less"
+  },
+  {
+   "name": "wflExWindMph",
+   "value": 30,
+   "comment": "the worked example: a medium fire blazing away in a 30-mph north wind"
+  },
+  {
+   "name": "wflExWindwardDeg",
+   "value": 20,
+   "comment": "the windward-side sleeper 20 feet away benefits from only a 20-degree increase"
+  },
+  {
+   "name": "wflExCalmDeg",
+   "value": 30,
+   "comment": "the calm-wind warmth of the medium fire at 20 feet is 30 degrees"
+  },
+  {
+   "name": "wflExLeewardFt",
+   "value": 10,
+   "comment": "the leeward-side sleeper must be at least 10 feet away in the example"
+  },
+  {
+   "name": "wflExCalmSafeFt",
+   "value": 3,
+   "comment": "the calm-wind safe distance for a medium fire is 3 feet"
+  },
+  {
+   "name": "wflClearMinTurns",
+   "value": 1,
+   "comment": "it takes from 1 turn for a single character to clear an area"
+  },
+  {
+   "name": "wflClearMaxTurns",
+   "value": 3,
+   "comment": "up to 3 turns, at the Dungeon Master discretion, to clear an area before building a fire"
+  },
+  {
+   "name": "wflSparkCarryFeet",
+   "value": 100,
+   "comment": "in a reasonably strong wind sparks and ash from a fire can be carried as far as 100 feet away"
+  },
+  {
+   "name": "wflRecheckTurns",
+   "value": 2,
+   "comment": "when moving in hopes of a better camp spot, the DM allows further fuel checks every two turns"
+  },
+  {
+   "name": "wflTerrainCount",
+   "value": 5,
+   "comment": "the temperate Table 39 grid covers five terrains: desert, forest, hills, plains and swamp"
+  },
+  {
+   "name": "wflClimateTerrainCount",
+   "value": 6,
+   "comment": "the climate modifier grid covers six terrains: desert, forest, hills, mountains, plains and swamp"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wflStartAssumesTools",
+   "value": true,
+   "comment": "the start discipline assumes the character has the tools for fire-starting (flint and steel, and a tinderbox) and the fuel is dry and easy to ignite"
+  },
+  {
+   "name": "wflHardStartOnWindOrWet",
+   "value": true,
+   "comment": "if the wind velocity is greater than 15 mph or the fuel is wet, the time needed to start the fire is 3d20 instead of 2d20, plus the extra time for a medium or large fire"
+  },
+  {
+   "name": "wflUnskilledNeedsTools",
+   "value": true,
+   "comment": "a character without proficiency in fire-building cannot start a fire without the aid of tools"
+  },
+  {
+   "name": "wflRefuelKeepsSize",
+   "value": true,
+   "comment": "refuel, expressed in turns, is how often a fire fuel must be replenished for it to remain at a certain size"
+  },
+  {
+   "name": "wflUnrefueledShrinks",
+   "value": true,
+   "comment": "a fire not refueled at least this often will shrink to a fire of the next lower size"
+  },
+  {
+   "name": "wflSmallFireLingersCold",
+   "value": true,
+   "comment": "a small fire will not go out within three turns, but it will get so small that it provides no warmth"
+  },
+  {
+   "name": "wflWindResUnprotectedOnly",
+   "value": true,
+   "comment": "wind resistance pertains only to unprotected fires or those built in front of shelters that do not keep out all the wind"
+  },
+  {
+   "name": "wflOverRatedWindFalters",
+   "value": true,
+   "comment": "in a wind greater than the indicated velocity the fire will falter and flicker, providing no warmth"
+  },
+  {
+   "name": "wflWindMaySpreadFire",
+   "value": true,
+   "comment": "there is a chance the wind will spread the fire to nearby combustible materials and may start a larger, uncontrollable fire"
+  },
+  {
+   "name": "wflCapDoublesPerStep",
+   "value": true,
+   "comment": "a fire capacity doubles for each additional 10 feet of distance"
+  },
+  {
+   "name": "wflCapClustersDiminish",
+   "value": true,
+   "comment": "if characters cluster around a fire at less than 10 feet, the fire capacity diminishes by one-third at five feet, one-half at three feet and two-thirds at one foot"
+  },
+  {
+   "name": "wflVisMoonlightOrDarkness",
+   "value": true,
+   "comment": "visibility gives the distance in yards at which a fire of the given size is visible in moonlight or darkness"
+  },
+  {
+   "name": "wflVisTwilightReduction",
+   "value": true,
+   "comment": "in twilight conditions the visibility figure is reduced by one-third"
+  },
+  {
+   "name": "wflVisDaylightReduction",
+   "value": true,
+   "comment": "in daylight the visibility figure is reduced by one-half"
+  },
+  {
+   "name": "wflVisNeedsClearLine",
+   "value": true,
+   "comment": "in all cases the viewer line of sight must be relatively unobstructed"
+  },
+  {
+   "name": "wflGlowThroughDenseForest",
+   "value": true,
+   "comment": "the glow of the fire will be seen from an equal distance even if viewed through a moderately dense forest"
+  },
+  {
+   "name": "wflHillBlocksLongSight",
+   "value": true,
+   "comment": "the fire will not be visible from a very long distance away if the viewer and the fire are on opposite sides of a steep hill"
+  },
+  {
+   "name": "wflSmokeRevealsInDaylight",
+   "value": true,
+   "comment": "in twilight or daylight the flame may not be visible from the indicated distance, but the smoke will reveal its presence nonetheless"
+  },
+  {
+   "name": "wflSafeDistanceIs80Degrees",
+   "value": true,
+   "comment": "the minimum safe distance for a certain fire is the distance at which the air temperature is raised by 80 degrees"
+  },
+  {
+   "name": "wflDashMeansBurned",
+   "value": true,
+   "comment": "an entry of a dash on the table indicates the unsafe case: an unprotected character cannot remain closer without being burned"
+  },
+  {
+   "name": "wflWarmthAssumesCalm",
+   "value": true,
+   "comment": "the warming capabilities assume the fire is not exposed to wind of more than 10 mph"
+  },
+  {
+   "name": "wflWindwardWarmthCut",
+   "value": true,
+   "comment": "if the wind on the fire is greater than 10 mph, the warmth on the side facing the wind is reduced by 5 degrees for every 10 mph or fraction thereof of additional velocity"
+  },
+  {
+   "name": "wflLeewardSafeAdd",
+   "value": true,
+   "comment": "on the side facing away from the wind the safe distance is increased by 10 feet or one increment on the table, whichever is less, for every 10 mph or fraction thereof over 10 mph"
+  },
+  {
+   "name": "wflNoSafeFire",
+   "value": true,
+   "comment": "in the outdoors there is no such thing as a safe fire"
+  },
+  {
+   "name": "wflUntendedFireSpreads",
+   "value": true,
+   "comment": "a campfire left untended for more than a few minutes or not properly extinguished can spread with amazing speed into a conflagration that may be impossible to bring back under control"
+  },
+  {
+   "name": "wflCardinalRulesRealWorld",
+   "value": true,
+   "comment": "the cardinal rules of fire safety are the same in the game universe as they are in the real world"
+  },
+  {
+   "name": "wflNoFireOnCombustibles",
+   "value": true,
+   "comment": "the first cardinal rule: do not build a fire on top of combustible material - find a large patch of bare ground, or clear the area of all living and dead vegetation, before building"
+  },
+  {
+   "name": "wflFuelIsWood",
+   "value": true,
+   "comment": "the Table 39 grids give the percentage chance that characters will be able to gather fuel (wood) for a fire from their immediate surroundings"
+  },
+  {
+   "name": "wflTemperateAssumed",
+   "value": true,
+   "comment": "the temperate grid assumes the given terrain is in a temperate climate, with the second grid supplying the modifiers for other climates"
+  },
+  {
+   "name": "wflMovingAllowsRechecks",
+   "value": true,
+   "comment": "if a fuel check indicates none can be scavenged and characters keep moving in hopes of a better spot, the DM should allow further checks every two turns"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "wflFuelTemperate",
+   "tag": "39",
+   "count": "wflTerrainCount",
+   "cols": [
+    "wflFuelWinter",
+    "wflFuelSpring",
+    "wflFuelSummer",
+    "wflFuelAutumn"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 39 temperate winter fuel availability percent",
+    "the Table 39 temperate spring fuel availability percent",
+    "the Table 39 temperate summer fuel availability percent",
+    "the Table 39 temperate autumn fuel availability percent"
+   ],
+   "row_comments": [
+    "the desert row",
+    "the forest row",
+    "the hills row",
+    "the plains row",
+    "the swamp row"
+   ],
+   "data": [
+    [
+     20,
+     20,
+     20,
+     20
+    ],
+    [
+     70,
+     100,
+     100,
+     100
+    ],
+    [
+     40,
+     70,
+     70,
+     60
+    ],
+    [
+     50,
+     70,
+     80,
+     70
+    ],
+    [
+     40,
+     30,
+     30,
+     40
+    ]
+   ],
+   "audit_comment": "Table 39: availability of fuel, the five terrains by four seasons in a temperate climate, printed p. 66",
+   "sentinel": 999,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "wflFuelClimate",
+   "tag": "39c",
+   "count": "wflClimateTerrainCount",
+   "cols": [
+    "wflArcticMod",
+    "wflSubarcticMod",
+    "wflSubtropicalMod",
+    "wflTropicalMod"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 39 arctic climate modifier",
+    "the Table 39 subarctic climate modifier",
+    "the Table 39 subtropical climate modifier",
+    "the Table 39 tropical climate modifier"
+   ],
+   "row_comments": [
+    "the desert row",
+    "the forest row",
+    "the hills row",
+    "the mountains row",
+    "the plains row",
+    "the swamp row"
+   ],
+   "data": [
+    [
+     -20,
+     -10,
+     -10,
+     -20
+    ],
+    [
+     -100,
+     -30,
+     30,
+     30
+    ],
+    [
+     -30,
+     -20,
+     10,
+     20
+    ],
+    [
+     -40,
+     -30,
+     20,
+     30
+    ],
+    [
+     -60,
+     -40,
+     20,
+     20
+    ],
+    [
+     -40,
+     -20,
+     10,
+     20
+    ]
+   ],
+   "audit_comment": "Table 39: the climate modifiers, the six terrains by arctic, subarctic, subtropical and tropical, printed p. 66",
+   "sentinel": 999,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the start discipline: 2d20 rounds for the unskilled, 3d20 in wind over 15 mph or with wet fuel, and the 30-mph magical bar",
+   "expr": "m['wflStartDie']() != 20 or m['wflStartDice']() != 2 or m['wflHardStartDice']() != 3 or m['wflStartBreezeMax']() != 15 or m['wflNoStartWindMax']() != 30"
+  },
+  {
+   "note": "the small-fire refuel grace: three turns before it stops providing warmth",
+   "expr": "m['wflSmallRefuelGrace']() != 3"
+  },
+  {
+   "note": "the capacity example: six men at 10 feet, twelve at 20, doubling per 10-foot step",
+   "expr": "m['wflSmallCapAt10']() != 6 or m['wflSmallCapAt20']() != 12 or m['wflCapBaseFeet']() != 10 or m['wflCapStepFeet']() != 10 or m['wflSmallCapAt20']() != 2 * m['wflSmallCapAt10']()"
+  },
+  {
+   "note": "the clustering cuts: one-third at five feet, one-half at three, two-thirds at one, with the 4/3/2 example",
+   "expr": "m['wflDimFiveNum']() != 1 or m['wflDimFiveDen']() != 3 or m['wflDimThreeNum']() != 1 or m['wflDimThreeDen']() != 2 or m['wflDimOneNum']() != 2 or m['wflDimOneDen']() != 3 or m['wflClusterFiveMax']() != 4 or m['wflClusterThreeMax']() != 3 or m['wflClusterOneMax']() != 2"
+  },
+  {
+   "note": "the clustering maxima step down: 4 at five feet, 3 at three, 2 at one",
+   "expr": "m['wflClusterFiveMax']() <= m['wflClusterThreeMax']() or m['wflClusterThreeMax']() <= m['wflClusterOneMax']()"
+  },
+  {
+   "note": "the visibility example: 540 yards for a large fire, one-third off in twilight, one-half off in daylight",
+   "expr": "m['wflLargeVisYards']() != 540 or m['wflTwilightNum']() != 1 or m['wflTwilightDen']() != 3 or m['wflDaylightNum']() != 1 or m['wflDaylightDen']() != 2"
+  },
+  {
+   "note": "the safe distances: 80 degrees of warmth, five segments to move, 3 feet from a medium fire and 5 from a large",
+   "expr": "m['wflSafeWarmthDegrees']() != 80 or m['wflMoveAwaySegments']() != 5 or m['wflMediumSafeFt']() != 3 or m['wflLargeSafeFt']() != 5"
+  },
+  {
+   "note": "the warmth wind rules: calm below 10 mph, windward minus 5 degrees per 10 mph, leeward plus 10 feet or one increment",
+   "expr": "m['wflWarmCalmWindMax']() != 10 or m['wflWindwardDegStep']() != 5 or m['wflWindwardMphStep']() != 10 or m['wflLeewardFeetStep']() != 10"
+  },
+  {
+   "note": "the book worked example: a 30-mph wind, 20 degrees windward at 20 feet instead of 30, 10 feet leeward instead of 3",
+   "expr": "m['wflExWindMph']() != 30 or m['wflExWindwardDeg']() != 20 or m['wflExCalmDeg']() != 30 or m['wflExLeewardFt']() != 10 or m['wflExCalmSafeFt']() != 3"
+  },
+  {
+   "note": "the example windward loss is exactly two 5-degree steps of the 30-mph over-10 excess, and the leeward increase takes the whichever-is-less path: positive but under the 10-foot step",
+   "expr": "m['wflExCalmDeg']() - m['wflExWindwardDeg']() != 2 * m['wflWindwardDegStep']() or (m['wflExLeewardFt']() - m['wflExCalmSafeFt']()) >= m['wflLeewardFeetStep']() or m['wflExLeewardFt']() <= m['wflExCalmSafeFt']()"
+  },
+  {
+   "note": "the fire safety small numbers: 1-3 turns to clear, sparks 100 feet, rechecks every two turns",
+   "expr": "m['wflClearMinTurns']() != 1 or m['wflClearMaxTurns']() != 3 or m['wflSparkCarryFeet']() != 100 or m['wflRecheckTurns']() != 2 or m['wflClearMinTurns']() >= m['wflClearMaxTurns']()"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the desert row: fuel equally scarce all year",
+   "expr": "m['wflFuelWinter'](0) != 20 or m['wflFuelSpring'](0) != 20 or m['wflFuelSummer'](0) != 20 or m['wflFuelAutumn'](0) != 20"
+  },
+  {
+   "note": "the forest row: plentiful outside winter",
+   "expr": "m['wflFuelWinter'](1) != 70 or m['wflFuelSpring'](1) != 100 or m['wflFuelSummer'](1) != 100 or m['wflFuelAutumn'](1) != 100"
+  },
+  {
+   "note": "the hills row (vision-settled): 40 in winter, 70 in spring and summer, 60 in autumn",
+   "expr": "m['wflFuelWinter'](2) != 40 or m['wflFuelSpring'](2) != 70 or m['wflFuelSummer'](2) != 70 or m['wflFuelAutumn'](2) != 60"
+  },
+  {
+   "note": "the plains row: best in summer",
+   "expr": "m['wflFuelWinter'](3) != 50 or m['wflFuelSpring'](3) != 70 or m['wflFuelSummer'](3) != 80 or m['wflFuelAutumn'](3) != 70"
+  },
+  {
+   "note": "the swamp row: worst in spring and summer",
+   "expr": "m['wflFuelWinter'](4) != 40 or m['wflFuelSpring'](4) != 30 or m['wflFuelSummer'](4) != 30 or m['wflFuelAutumn'](4) != 40"
+  },
+  {
+   "note": "every temperate cell is a percentage between 20 and 100",
+   "expr": "m['wflFuelWinter'](0) < 20 or m['wflFuelSpring'](1) < 20 or m['wflFuelAutumn'](2) < 20 or m['wflFuelSummer'](3) > 100 or m['wflFuelWinter'](4) > 100"
+  },
+  {
+   "note": "the desert climate modifiers",
+   "expr": "m['wflArcticMod'](0) != -20 or m['wflSubarcticMod'](0) != -10 or m['wflSubtropicalMod'](0) != -10 or m['wflTropicalMod'](0) != -20"
+  },
+  {
+   "note": "the forest climate modifiers: the arctic -100 wipeout",
+   "expr": "m['wflArcticMod'](1) != -100 or m['wflSubarcticMod'](1) != -30 or m['wflSubtropicalMod'](1) != 30 or m['wflTropicalMod'](1) != 30"
+  },
+  {
+   "note": "the hills climate modifiers (vision-settled)",
+   "expr": "m['wflArcticMod'](2) != -30 or m['wflSubarcticMod'](2) != -20 or m['wflSubtropicalMod'](2) != 10 or m['wflTropicalMod'](2) != 20"
+  },
+  {
+   "note": "the mountains climate modifiers",
+   "expr": "m['wflArcticMod'](3) != -40 or m['wflSubarcticMod'](3) != -30 or m['wflSubtropicalMod'](3) != 20 or m['wflTropicalMod'](3) != 30"
+  },
+  {
+   "note": "the plains climate modifiers: the arctic -60 is the harshest on the grid",
+   "expr": "m['wflArcticMod'](4) != -60 or m['wflSubarcticMod'](4) != -40 or m['wflSubtropicalMod'](4) != 20 or m['wflTropicalMod'](4) != 20"
+  },
+  {
+   "note": "the swamp climate modifiers",
+   "expr": "m['wflArcticMod'](5) != -40 or m['wflSubarcticMod'](5) != -20 or m['wflSubtropicalMod'](5) != 10 or m['wflTropicalMod'](5) != 20"
+  },
+  {
+   "note": "outside the desert, the cold climates penalize and the warm climates bonus",
+   "expr": "m['wflArcticMod'](1) >= 0 or m['wflSubarcticMod'](2) >= 0 or m['wflSubtropicalMod'](3) <= 0 or m['wflTropicalMod'](4) <= 0 or m['wflArcticMod'](5) >= 0 or m['wflSubtropicalMod'](5) <= 0"
+  }
+ ],
+ "header_sections": {
+  "The start discipline": [
+   {
+    "kind": "const",
+    "name": "wflStartBreezeMax"
+   },
+   {
+    "kind": "const",
+    "name": "wflStartDie"
+   },
+   {
+    "kind": "const",
+    "name": "wflStartDice"
+   },
+   {
+    "kind": "const",
+    "name": "wflHardStartDice"
+   },
+   {
+    "kind": "const",
+    "name": "wflNoStartWindMax"
+   },
+   {
+    "kind": "bool",
+    "name": "wflStartAssumesTools"
+   },
+   {
+    "kind": "bool",
+    "name": "wflHardStartOnWindOrWet"
+   },
+   {
+    "kind": "bool",
+    "name": "wflUnskilledNeedsTools"
+   }
+  ],
+  "The refuel and wind resistance": [
+   {
+    "kind": "const",
+    "name": "wflSmallRefuelGrace"
+   },
+   {
+    "kind": "bool",
+    "name": "wflRefuelKeepsSize"
+   },
+   {
+    "kind": "bool",
+    "name": "wflUnrefueledShrinks"
+   },
+   {
+    "kind": "bool",
+    "name": "wflSmallFireLingersCold"
+   },
+   {
+    "kind": "bool",
+    "name": "wflWindResUnprotectedOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wflOverRatedWindFalters"
+   },
+   {
+    "kind": "bool",
+    "name": "wflWindMaySpreadFire"
+   }
+  ],
+  "The capacity semantics": [
+   {
+    "kind": "const",
+    "name": "wflCapBaseFeet"
+   },
+   {
+    "kind": "const",
+    "name": "wflSmallCapAt10"
+   },
+   {
+    "kind": "const",
+    "name": "wflSmallCapAt20"
+   },
+   {
+    "kind": "const",
+    "name": "wflCapStepFeet"
+   },
+   {
+    "kind": "const",
+    "name": "wflDimFiveNum"
+   },
+   {
+    "kind": "const",
+    "name": "wflDimFiveDen"
+   },
+   {
+    "kind": "const",
+    "name": "wflDimThreeNum"
+   },
+   {
+    "kind": "const",
+    "name": "wflDimThreeDen"
+   },
+   {
+    "kind": "const",
+    "name": "wflDimOneNum"
+   },
+   {
+    "kind": "const",
+    "name": "wflDimOneDen"
+   },
+   {
+    "kind": "const",
+    "name": "wflClusterFiveMax"
+   },
+   {
+    "kind": "const",
+    "name": "wflClusterThreeMax"
+   },
+   {
+    "kind": "const",
+    "name": "wflClusterOneMax"
+   },
+   {
+    "kind": "bool",
+    "name": "wflCapDoublesPerStep"
+   },
+   {
+    "kind": "bool",
+    "name": "wflCapClustersDiminish"
+   }
+  ],
+  "The visibility semantics": [
+   {
+    "kind": "const",
+    "name": "wflLargeVisYards"
+   },
+   {
+    "kind": "const",
+    "name": "wflTwilightNum"
+   },
+   {
+    "kind": "const",
+    "name": "wflTwilightDen"
+   },
+   {
+    "kind": "const",
+    "name": "wflDaylightNum"
+   },
+   {
+    "kind": "const",
+    "name": "wflDaylightDen"
+   },
+   {
+    "kind": "bool",
+    "name": "wflVisMoonlightOrDarkness"
+   },
+   {
+    "kind": "bool",
+    "name": "wflVisTwilightReduction"
+   },
+   {
+    "kind": "bool",
+    "name": "wflVisDaylightReduction"
+   },
+   {
+    "kind": "bool",
+    "name": "wflVisNeedsClearLine"
+   },
+   {
+    "kind": "bool",
+    "name": "wflGlowThroughDenseForest"
+   },
+   {
+    "kind": "bool",
+    "name": "wflHillBlocksLongSight"
+   },
+   {
+    "kind": "bool",
+    "name": "wflSmokeRevealsInDaylight"
+   }
+  ],
+  "The warmth and wind semantics": [
+   {
+    "kind": "const",
+    "name": "wflSafeWarmthDegrees"
+   },
+   {
+    "kind": "const",
+    "name": "wflMoveAwaySegments"
+   },
+   {
+    "kind": "const",
+    "name": "wflMediumSafeFt"
+   },
+   {
+    "kind": "const",
+    "name": "wflLargeSafeFt"
+   },
+   {
+    "kind": "const",
+    "name": "wflWarmCalmWindMax"
+   },
+   {
+    "kind": "const",
+    "name": "wflWindwardDegStep"
+   },
+   {
+    "kind": "const",
+    "name": "wflWindwardMphStep"
+   },
+   {
+    "kind": "const",
+    "name": "wflLeewardFeetStep"
+   },
+   {
+    "kind": "const",
+    "name": "wflExWindMph"
+   },
+   {
+    "kind": "const",
+    "name": "wflExWindwardDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wflExCalmDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wflExLeewardFt"
+   },
+   {
+    "kind": "const",
+    "name": "wflExCalmSafeFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wflSafeDistanceIs80Degrees"
+   },
+   {
+    "kind": "bool",
+    "name": "wflDashMeansBurned"
+   },
+   {
+    "kind": "bool",
+    "name": "wflWarmthAssumesCalm"
+   },
+   {
+    "kind": "bool",
+    "name": "wflWindwardWarmthCut"
+   },
+   {
+    "kind": "bool",
+    "name": "wflLeewardSafeAdd"
+   }
+  ],
+  "Table 39: the availability of fuel": [
+   {
+    "kind": "const",
+    "name": "wflTerrainCount"
+   },
+   {
+    "kind": "const",
+    "name": "wflClimateTerrainCount"
+   },
+   {
+    "kind": "const",
+    "name": "wflRecheckTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "wflFuelIsWood"
+   },
+   {
+    "kind": "bool",
+    "name": "wflTemperateAssumed"
+   },
+   {
+    "kind": "bool",
+    "name": "wflMovingAllowsRechecks"
+   },
+   {
+    "kind": "table",
+    "name": "wflFuelTemperate"
+   },
+   {
+    "kind": "table",
+    "name": "wflFuelClimate"
+   }
+  ],
+  "Precautions and perils": [
+   {
+    "kind": "const",
+    "name": "wflClearMinTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wflClearMaxTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wflSparkCarryFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "wflNoSafeFire"
+   },
+   {
+    "kind": "bool",
+    "name": "wflUntendedFireSpreads"
+   },
+   {
+    "kind": "bool",
+    "name": "wflCardinalRulesRealWorld"
+   },
+   {
+    "kind": "bool",
+    "name": "wflNoFireOnCombustibles"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "precautions and perils",
+   "from": "  - [ ] Precautions and perils (p. 66)",
+   "to": "  - [x] Precautions and perils (p. 66) - R475: the no-safe-fire warning with the untended conflagration and the first cardinal rule (no fire on combustibles, the 1-3-turn clearing, the 100-foot spark carry) pin as rules/wsgfuel.h"
+  },
+  {
+   "note": "the Table 39 box",
+   "from": "- [ ] **Table 39: availability of fuel** (p. 66)",
+   "to": "- [x] **Table 39: availability of fuel** (p. 66) - R475: the temperate grid and the climate modifier grid with the every-two-turns recheck pin inside rules/wsgfuel.h (census 399)"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R474: 99 closed, 87 open (the R474 round continues the camping arc - the rest-quality penalties and armor timing with the campfire Table 38 grids pin as rules/wsgfire.h; the next round continues - precautions and perils (p. 66) with Table 39).",
+   "to": "Post-state at R475: 101 closed, 85 open (the R475 round continues the camping arc - the precautions and perils rules with the Table 39 fuel availability grids pin as rules/wsgfuel.h; the next round continues - uncontrollable fires (p. 67))."
+  }
+ ],
+ "gap_census": {
+  "closed": 101,
+  "open": 85
+ },
+ "include_comment": "the WSG fuel availability and fire safety, and Table 39",
+ "include_after": "#include \"rules/wsgfire.h\"  // R474: the WSG rest quality, armor timing and campfires, and Table 38",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R474 LANDED 2026-10-15: commit e73bea2 (census 399, pushed",
+ "prev_record": [
+  "- R474 LANDED 2026-10-15: commit e73bea2 (census 399, pushed",
+  "  82ca9d9..e73bea2), the WSG GOOD SLEEP VS BAD SLEEP and FIRE",
+  "  slice with TABLE 38, printed p. 65 - the fourth",
+  "  camping-arc round and the fourth TABLE ROUND of the arc:",
+  "  the rest-quality penalty ladder (not prone or relaxed -1;",
+  "  bare ground -1, wind of 20 mph+ -2 and light or moderate",
+  "  precipitation -3 with no shelter, all three waived for a",
+  "  plate wearer; personal temperature below 0 at -1 and",
+  "  above 90 at -2; any metal armor except plate -3; any plate",
+  "  -4) with the DM-summed reduction and the no-rest threshold",
+  "  (a total penalty exceeding the time spent trying to sleep",
+  "  means no refreshment at all), the extreme-weather bar",
+  "  (no sleep in a lightning storm, a hailstorm or a sandstorm",
+  "  unless inside a shelter, the commotion caveat, the",
+  "  DM-may-expand note), the longer-sleep compensation (a",
+  "  plate wearer's 5-hour night buys 1 hour of good rest, 9",
+  "  hours refresh like 5), the sleep-in-armor prudence with",
+  "  the one-night-in-two rule, the armor donning discipline",
+  "  (9 minus AC rounds, +2 for any plate, +5 more unaided for",
+  "  field or full plate: leather 1 round at AC 8, banded 5 at",
+  "  AC 4, full plate 11 helped or 16 solo at AC 0, doffing in",
+  "  half the time with 8 rounds to shed full plate alone);",
+  "  then the fire slice: the campfire function (not integral,",
+  "  cooking incidental and some plants poisonous raw, warmth",
+  "  primary and life-or-death) and Table 38 in TWO grids: the",
+  "  specs (fuel 6/12/18 turns for an 8-hour burn, start 2d20",
+  "  +0/+5/+10, refuel 3/6/9, wind resistance 20/30/40,",
+  "  capacity 6/10/15, visibility 240/360/540) and the",
+  "  warmth-at-distance ladder by nine distances (Small",
+  "  80/60/40/30/20/10/0/0/0; Medium dash then",
+  "  80/60/40/30/20/10/0/0; Large dash, dash, then",
+  "  80/60/40/30/20/10/0 - the three printed dashes pinned as",
+  "  the 999 no-warmth sentinel, the R472 wsgtents moisture",
+  "  precedent). rules/wsgfire.h NEW (65 inlines: 25 consts +",
+  "  23 bools + the 17 grid columns across the two tables,",
+  "  prefix wgf - checked free in regtest.cpp and the game",
+  "  sources). GROUND TRUTH two-way on the prose and the",
+  "  Table 38 top grid (the Termux tesseract p65_full/p65_tsv",
+  "  vs the pdfy text layer, pdf page 66; tesseract garbled",
+  "  only four penalty minus-signs, never a digit). FOUR",
+  "  contested warmth-grid cells (Small at 50 and 60 reading",
+  "  00 and 10, Large at 20 reading 4, Large at 60 reading O):",
+  "  pdfy read them 0/0/40/0 and the TSV WORD-BOX GEOMETRY",
+  "  settled them (the R467 workflow): the Small-at-60 box is",
+  "  20px wide like every single-digit cell (a true 10 is",
+  "  39px), the Large-at-20 box is 40px wide exactly like every",
+  "  two-digit 40 cell (a lone 4 is 19px); monotone decay per",
+  "  row and the larger-fire-warms-at-least-as-much",
+  "  cross-check confirm. NEW LESSON: the standing",
+  "  vision-on-png contested-cell settler FAILED on this page",
+  "  (two vision reads, each contradicting the two agreeing",
+  "  text layers on uncontested cells - reading the refuel",
+  "  column as the start dice and inventing dashes mid-row),",
+  "  so the TSV geometry plus monotonicity is the settler of",
+  "  record; the vision read is not reliable on dense small",
+  "  grids and should not override two agreeing text readers.",
+  "  Gap 96/90 -> 99/87 (THREE box flips + the post-state",
+  "  line: good sleep vs bad sleep, fire: friend and foe, the",
+  "  Table 38 box); census 398 -> 399. rverify FULL GREEN",
+  "  pre-landing at base 82ca9d9 (double-run 8/0 then 0/8, 99",
+  "  mutants, 0 missed) - NO spec bugs caught, the R473",
+  "  inverted-monotonicity lesson honored on the first write",
+  "  (the penalty check allows equal neighbors and fails only",
+  "  on shrink; the warmth check fails only on increase). Spec",
+  "  md5s: 242193bf authored / 4d95944d +nl - the Termux read",
+  "  the +nl value exactly. LANDED CLEAN on the first ritual",
+  "  run: preflight GREEN first try (the two pre-existing",
+  "  warnings plus the untracked-note for wsgfire.h and the",
+  "  spec - the user committed only the 5 repo files), R474",
+  "  audit bad 0, AUDIT CENSUS: 399 exactly once, 5 files /",
+  "  1706 insertions. VERIFIED at the raw sha e73bea2: the",
+  "  include after wsgsleep.h at line 179, the R474 audit",
+  "  label with ZERO True tokens, the C38 [3][8] and C38w",
+  "  [3][9] grids verbatim with the dash sentinels, the gap",
+  "  99/87 with all three boxes flipped and the post-state",
+  "  line, the spec md5 4d95944d, the R473 seed record in",
+  "  place (61 lines, directly before the maintenance anchor).",
+  "  Next: R475 - precautions and perils (p. 66) with Table 39",
+  "  (availability of fuel), continuing the camping arc."
+ ]
+}

@@ -4773,6 +4773,85 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   record in place. Next: R474 - good sleep vs bad sleep
   (p. 65) with Table 38 (campfire characteristics),
   continuing the camping arc.
+- R474 LANDED 2026-10-15: commit e73bea2 (census 399, pushed
+  82ca9d9..e73bea2), the WSG GOOD SLEEP VS BAD SLEEP and FIRE
+  slice with TABLE 38, printed p. 65 - the fourth
+  camping-arc round and the fourth TABLE ROUND of the arc:
+  the rest-quality penalty ladder (not prone or relaxed -1;
+  bare ground -1, wind of 20 mph+ -2 and light or moderate
+  precipitation -3 with no shelter, all three waived for a
+  plate wearer; personal temperature below 0 at -1 and
+  above 90 at -2; any metal armor except plate -3; any plate
+  -4) with the DM-summed reduction and the no-rest threshold
+  (a total penalty exceeding the time spent trying to sleep
+  means no refreshment at all), the extreme-weather bar
+  (no sleep in a lightning storm, a hailstorm or a sandstorm
+  unless inside a shelter, the commotion caveat, the
+  DM-may-expand note), the longer-sleep compensation (a
+  plate wearer's 5-hour night buys 1 hour of good rest, 9
+  hours refresh like 5), the sleep-in-armor prudence with
+  the one-night-in-two rule, the armor donning discipline
+  (9 minus AC rounds, +2 for any plate, +5 more unaided for
+  field or full plate: leather 1 round at AC 8, banded 5 at
+  AC 4, full plate 11 helped or 16 solo at AC 0, doffing in
+  half the time with 8 rounds to shed full plate alone);
+  then the fire slice: the campfire function (not integral,
+  cooking incidental and some plants poisonous raw, warmth
+  primary and life-or-death) and Table 38 in TWO grids: the
+  specs (fuel 6/12/18 turns for an 8-hour burn, start 2d20
+  +0/+5/+10, refuel 3/6/9, wind resistance 20/30/40,
+  capacity 6/10/15, visibility 240/360/540) and the
+  warmth-at-distance ladder by nine distances (Small
+  80/60/40/30/20/10/0/0/0; Medium dash then
+  80/60/40/30/20/10/0/0; Large dash, dash, then
+  80/60/40/30/20/10/0 - the three printed dashes pinned as
+  the 999 no-warmth sentinel, the R472 wsgtents moisture
+  precedent). rules/wsgfire.h NEW (65 inlines: 25 consts +
+  23 bools + the 17 grid columns across the two tables,
+  prefix wgf - checked free in regtest.cpp and the game
+  sources). GROUND TRUTH two-way on the prose and the
+  Table 38 top grid (the Termux tesseract p65_full/p65_tsv
+  vs the pdfy text layer, pdf page 66; tesseract garbled
+  only four penalty minus-signs, never a digit). FOUR
+  contested warmth-grid cells (Small at 50 and 60 reading
+  00 and 10, Large at 20 reading 4, Large at 60 reading O):
+  pdfy read them 0/0/40/0 and the TSV WORD-BOX GEOMETRY
+  settled them (the R467 workflow): the Small-at-60 box is
+  20px wide like every single-digit cell (a true 10 is
+  39px), the Large-at-20 box is 40px wide exactly like every
+  two-digit 40 cell (a lone 4 is 19px); monotone decay per
+  row and the larger-fire-warms-at-least-as-much
+  cross-check confirm. NEW LESSON: the standing
+  vision-on-png contested-cell settler FAILED on this page
+  (two vision reads, each contradicting the two agreeing
+  text layers on uncontested cells - reading the refuel
+  column as the start dice and inventing dashes mid-row),
+  so the TSV geometry plus monotonicity is the settler of
+  record; the vision read is not reliable on dense small
+  grids and should not override two agreeing text readers.
+  Gap 96/90 -> 99/87 (THREE box flips + the post-state
+  line: good sleep vs bad sleep, fire: friend and foe, the
+  Table 38 box); census 398 -> 399. rverify FULL GREEN
+  pre-landing at base 82ca9d9 (double-run 8/0 then 0/8, 99
+  mutants, 0 missed) - NO spec bugs caught, the R473
+  inverted-monotonicity lesson honored on the first write
+  (the penalty check allows equal neighbors and fails only
+  on shrink; the warmth check fails only on increase). Spec
+  md5s: 242193bf authored / 4d95944d +nl - the Termux read
+  the +nl value exactly. LANDED CLEAN on the first ritual
+  run: preflight GREEN first try (the two pre-existing
+  warnings plus the untracked-note for wsgfire.h and the
+  spec - the user committed only the 5 repo files), R474
+  audit bad 0, AUDIT CENSUS: 399 exactly once, 5 files /
+  1706 insertions. VERIFIED at the raw sha e73bea2: the
+  include after wsgsleep.h at line 179, the R474 audit
+  label with ZERO True tokens, the C38 [3][8] and C38w
+  [3][9] grids verbatim with the dash sentinels, the gap
+  99/87 with all three boxes flipped and the post-state
+  line, the spec md5 4d95944d, the R473 seed record in
+  place (61 lines, directly before the maintenance anchor).
+  Next: R475 - precautions and perils (p. 66) with Table 39
+  (availability of fuel), continuing the camping arc.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
