@@ -4448,6 +4448,116 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   and 18-hour severe minimum durations) and the
   bad-water/skeletal-remains
   waterhole warning.
+- R470 LANDED 2026-10-15: commit 31f9a0f (census 395, pushed
+  13ebab2..31f9a0f), the WSG PURIFYING WATER slice with the
+  TAINTED-WATER
+  EFFECTS, printed p. 60 - PURE PROSE round, no
+  table, and the round that
+  CLOSES THE WATER CHAPTER ARC
+  (R467 finding water through Table 34, R468
+  where water is
+  found, R469 the desert and permafrost, R470 purifying and
+  the taint effects): the purification trigger (characters
+  suspecting
+  scavenged water is tainted - a possibility
+  that almost always exists - can
+  greatly reduce the chance
+  of harm by purifying before drinking), the boil
+  rule
+  (assuming no magical means, boiling the best way to remove
+  impurities: a sufficiently long boil leaves only a 10%
+  chance of remaining
+  tainted, the required time 2-5
+  rounds - 1d4+1 - at an elevation close to
+  sea level plus
+  an extra 1d2 minutes for every 1,000 feet of elevation
+  above sea level, taking the water off the fire before
+  the required time
+  expires doing no good), the evaporation
+  cost (at relatively low elevation
+  - 5,000 feet or less -
+  5% of the water volume lost per minute boiled, at
+  higher
+  elevation only 3% per minute, the quantity-over-quality
+  tradeoff), the tainted-water effects (the same as eating
+  tainted or
+  spoiled food: mildly tainted water a 6-hour
+  minimum duration instead of
+  12, severely tainted water an
+  18-hour minimum instead of 24), the severity
+  ruling (the
+  DM decides mild or severe; severe taint relatively more
+  likely in areas of low elevation such as swamps and in
+  perennially warm or
+  hot climates where bacteria prosper -
+  extreme heat kills bacteria, extreme
+  cold does not
+  necessarily, subarctic melt ice almost as likely to carry
+  organic impurities as temperate lake water) and the
+  bad-water warnings
+  (taste and appearance not reliable
+  purity indicators - the murky brown
+  water may be less
+  harmful than the fresh clear liquid; some wilderness
+  water carries illness-producing bacteria beyond the taint
+  effects and some
+  is naturally poisonous, both DM matters;
+  a waterhole devoid of vegetation
+  and especially one ringed
+  with skeletal remains a dead giveaway to find a
+  different
+  source; even without detect poison, caution and common
+  sense
+  go a long way). rules/wsgpurify.h NEW (23 inlines:
+  11 consts -
+  wpuBoilTaintRemainPct 10, wpuBoilRoundsMin 2,
+  wpuBoilRoundsMax 5,
+  wpuElevStepFt 1000, wpuEvapBreakFt
+  5000, wpuEvapLowPctPerMin 5,
+  wpuEvapHighPctPerMin 3,
+  wpuMildMinHours 6, wpuMildFoodBaseHours 12,
+  wpuSevereMinHours 18, wpuSevereFoodBaseHours 24 - plus 12
+  bools, prefix
+  wpu, checked free). GROUND TRUTH two-way,
+  no contested cells, no
+  physical-page reads: the user-run
+  Termux tesseract text of printed p. 60
+  (the --psm 4 run
+  from the R469 extraction) vs the pdf embedded text layer
+  (pdftotext -layout, pdf page 61; the djvu item still
+  dark, the pdf layer
+  the standing second reader); the two
+  readers agreed on every mechanic and
+  every number, the
+  pdfy garbles resolving cleanly against tesseract (ld4+
+  1
+  = 1d4+1, detectpoison = detect poison, Punfymg Water =
+  Purifying
+  Water). Gap 88/98 -> 89/97 (one box flip + the
+  post-state line); census
+  394 -> 395. rverify FULL GREEN
+  pre-landing at base 13ebab2 (double-run 6/0
+  then 0/6, 23
+  mutants, 0 missed). Spec md5s: 3cffcf2e authored /
+  0b7373de
+  +nl - the Termux read the +nl value exactly.
+  LANDED CLEAN on the first
+  ritual run: preflight GREEN
+  first try (only the two pre-existing
+  warnings), R470
+  audit bad 0, AUDIT CENSUS: 395 exactly once, 5 files /
+  741 insertions. VERIFIED at the raw sha 31f9a0f: the
+  include after
+  wsgdesert.h at line 175, the R470 audit
+  label twice with ZERO True tokens
+  in the emitted block
+  (the R468 lesson holding), the gap 89/97 with the
+  purifying-water box flipped and its post-state line, the
+  spec md5
+  0b7373de, the R469 seed record in place. Next:
+  R471 opens the CAMPING AND
+  CAMPFIRES arc (pp. 61-68) -
+  natural shelters (p. 61) first.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

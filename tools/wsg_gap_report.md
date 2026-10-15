@@ -92,7 +92,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Water in the desert (p. 60) - R469: the 40/60 desert dig split with the 5-15 foot depth band, the desert survival proficiency boost to 80%, the two-tries limit and the permafrost definition and harvest technique pin as rules/wsgdesert.h
   - [x] Purifying water (p. 60) - R470: the boil rule with the elevation time and evaporation ladders, the mild and severe taint durations, the taint-severity geography and the bad-water warnings pin as rules/wsgpurify.h
 - [ ] **Camping and campfires** (pp. 61-68)
-  - [ ] Natural shelters (p. 61)
+  - [x] Natural shelters (p. 61) - R471: the find chance by terrain and season, the check discipline, the forest construction times with the helper and rope-use reductions and the terrain-by-terrain notes pin as rules/wsgshelter.h
   - [ ] Portable shelters (p. 62)
   - [ ] Rest and comfort (p. 64)
   - [ ] How much sleep? (p. 64)
@@ -190,7 +190,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 32: fishing success** (p. 57) - R465: the spot-quality by time-of-day dice grid, all 18 cells pixel-verified with the Good-Night cell proven by the book own A/B/C example, pin as rules/wsgfish.h
 - [x] **Table 33: chance of food spoilage** (p. 58) - R466: the food-type by temperature-band days/pct grid, all 40 cells text-layer verified, pin as rules/wsgcarry.h
 - [x] **Table 34: chance of finding water** (p. 59) - R467: the climate x terrain x season grid with the find%/taint% pairs, all 224 values rebuilt from the tesseract bounding-box geometry, pin as rules/wsgwater.h
-- [ ] **Table 35: chance of finding natural shelter** (p. 61)
+- [x] **Table 35: chance of finding natural shelter** (p. 61) - R471: the 24-cell grid pins inside rules/wsgshelter.h (census 395)
 - [ ] **Table 36: portable shelter characteristics** (p. 62)
 - [ ] **Table 37: effects of lack of sleep** (p. 64)
 - [ ] **Table 38: campfire characteristics** (p. 65)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R470: 89 closed, 97 open (the R470 round closes the water chapter arc - purifying water with the tainted-water effects pins as rules/wsgpurify.h; the next round opens the camping and campfires arc - natural shelters (p. 61), pp. 61-68).
+Post-state at R471: 91 closed, 95 open (the R471 round opens the camping arc - natural shelters with Table 35 pin as rules/wsgshelter.h; the next round continues - portable shelters (p. 62) with Table 36).
