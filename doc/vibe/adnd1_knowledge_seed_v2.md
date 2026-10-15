@@ -4187,6 +4187,62 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   the finding-water boxes NOT flipped, the R465 seed record in place. Next:
   R467 - finding water (p. 58) and its Table 34; then where water is found (p.
   59) and water in the desert (p. 60).
+- R467 LANDED 2026-10-15: commit efd8d78 (census 392, pushed
+  e04918e..efd8d78), the WSG FINDING WATER slice, printed p. 58 with the
+  mechanics and the grid on p. 59 - the water-finding checks (two per day for
+  a lone character or a traveling group, extra searches automatically fail,
+  the table not used where water is obviously and readily available: nearby
+  fresh water still checks the taint, the snow-and-ice exception with the
+  figures assuming no cover, ice at 30 degrees or lower carrying the taint
+  chance of its source water, freshly fallen snow the purest water in nature
+  with the mere-dusting note, sea water dehydrating via the salt, the seacoast
+  dig at 100% above the high tide line and no more than two feet deep with the
+  deeper-the-saltier gradient), the water-quality guidelines (river purer
+  upstream, lake purer at the inflow, fast-flowing beats standing, ground
+  water beats surface) and Table 34: chance of finding water (the 28-row x
+  8-col grid: five climate bands - arctic D/H/M/P constant across seasons,
+  subarctic/temperate/subtropical/tropical D/F/H/M/P/Sw - each cell the
+  find%/taint% pair by season; the swamp rows top the find chances, the desert
+  rows bottom them, the tropical swamp spring 90/75 the only taint value in
+  the table not ending in 0). rules/wsgwater.h NEW (27 inlines: 5 consts + 14
+  bools + 8 table columns, prefix wfw - wsw taken by R450; checked free in all
+  three TUs). GROUND TRUTH - the NEW WORKFLOW, user decision this round, a
+  proven success: the user ran tesseract ON TERMUX (pkg install poppler
+  tesseract; pdfimages -png -f 59 -l 60 wsg.pdf; tesseract --psm 4 and the TSV
+  output) and the grid was REBUILT FROM GEOMETRY - the TSV word bounding boxes
+  place the terrain-code column at x 130-165, the season cells at x
+  190/285/385/480, one row per 20px of y - no reading-order trust at all. All
+  224 values three-way confirmed (tesseract TSV + pdfy embedded OCR + djvu);
+  the tesseract slash-loss cells (570, 5170, 60740, 30730, 70170) resolve by
+  the other readers; the two low-confidence terrain labels (subarctic E,
+  temperate =%) resolve to F (forest - the missing terrain in both bands); the
+  ONE contested value, tropical swamp spring, read 90/75 in BOTH text layers
+  but 90/80 in two vision reads, and the USER READ THE PHYSICAL PAGE and
+  settled it: 90/75, pinned as printed. THE TERMUX-TESSERACT WORKFLOW IS NOW
+  THE PREFERRED READER for table rounds: it beats the pdfy layer (which
+  garbles slashes), beats djvu (which scrambles grid order), is immune to the
+  double-image ghost that killed R466 pixel work, and the TSV geometry enables
+  structural cross-checks the prose readers cannot offer. Where water is found
+  (p. 59) stays open - the DM standing-water reduction and the water-table
+  definition were read this round but are NOT flipped. Gap 84/102 -> 86/100
+  (TWO box flips + the post-state line); census 391 -> 392. rverify FULL GREEN
+  pre-landing at base e04918e (double-run 7/0 then 0/7, 243 mutants, 0 missed
+  - note the engine audit parser wants SINGLE-quoted model keys in
+  table_checks; a first cut with double quotes aborted and was rebuilt). Spec
+  md5s: bd27b835 authored / e1936b6a +nl - the Termux read the +nl value
+  exactly. LANDED CLEAN on the first ritual run (double-run 7/0 then 0/7,
+  preflight GREEN first try, R467 audit bad 0, AUDIT CENSUS: 392, 5 files /
+  2173 insertions; the user ran bn separately by choice, it stays out of the
+  ritual per R372). VERIFIED at the raw sha efd8d78: the commit message and
+  file list (regtest +737, the header 667, the spec 708, the gap 3/3, the seed
+  +58), the include after wsgcarry.h at line 177, wsgwater.h 27 inlines with
+  the full 224-value grid including the case-27 90/75 cell, the two flips with
+  the R467 text, the post-state 86/100, the where-water-is-found,
+  water-in-the-desert and purifying-water boxes NOT flipped, the R466 seed
+  record in place. Next: R468 - where water is found (p. 59: the
+  standing-water reduction by terrain, the water table definition and
+  depth-by-terrain rules) and the bad-water/vegetation-and-skeletons warning,
+  then water in the desert (p. 60) and purifying water (p. 60).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

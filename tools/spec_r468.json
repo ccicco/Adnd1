@@ -1,0 +1,315 @@
+{
+ "round": 468,
+ "title": "the WSG where water is found slice - the standing-water basis, the rain-drought DM reduction, the water table and digging for underground water, printed p. 59 with the water-table depths on p. 60",
+ "prefix": "wwf",
+ "header_file": "rules/wsgwhere.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 392,
+ "inline_count": 18,
+ "audit_label": "R468 WSG where water pin audit",
+ "audit_comment": "The standing-water basis and the drought reduction (the flat plain dried out, the swamp always stocked), the water-table depth rules (the foot-or-two low elevation, the swamp table above the terrain, the dozens to hundreds of feet in high elevation), the non-absorbent exception, the dig-for-water chance and the vegetation source (the water-storing plants, the cactus, the DM quantity ruling) - every const and bool verified against the model.",
+ "banner": {
+  "title": "R468: the WSG WHERE WATER IS FOUND slice - the standing-water basis (the table chance models a sizable quantity of standing water, not large enough for a lake or pond: an uncharted pool, a small depression or basin holding rainstorm water not yet evaporated or absorbed), the drought reduction (no rain for several days lets the DM cut the find chance: a flat plain completely dried out, a swamp keeping standing water practically all the time), the water table (the level beneath the ground at which water lies after soaking into the terrain: a foot or two in low elevation, possibly higher than the terrain in a swamp near sea level, dozens or hundreds of feet in high elevation without a large fresh-water body, greatly varying in a desert), the non-absorbent exception (rocky mountains, frozen ground), the dig-for-water chance (DM-determined by terrain and elevation, the desert exception) and vegetation as a water source (the subtropical and tropical water-storing plants, the cactus, the drought plains and hills, the DM availability and quantity ruling), printed p. 59 with the water-table material on p. 60.",
+  "provenance": "Ground truth two-way, pure prose: the user-run tesseract text of printed p. 59 (the --psm 4 run from the R467 extraction) vs the djvu word layer (Guide_0059 tail and Guide_0060). The two readers agree on every mechanic and every number. The section heading sits at the bottom of the printed p. 59 right column; the prose continues onto printed p. 60, ending at the WATER IN THE DESERT heading. The permafrost discussion (printed p. 60, referenced by the frozen-ground exception in the water-table paragraph) is deferred to the next round with the desert material. The bad-water warning (the vegetation-free waterhole with skeletal remains) belongs to the tainted-water text and stays unpinned this round.",
+  "sentinel": "No printed grid in this slice - the standing-water basis, the drought reduction, the water-table depth rules and the vegetation source pin as consts and bools, every one audit-verified against the model."
+ },
+ "consts": [
+  {
+   "name": "wwfLowElevMinFt",
+   "value": 1,
+   "comment": "in an area of low elevation the water table may be only a foot or two beneath the ground: the minimum depth in feet"
+  },
+  {
+   "name": "wwfLowElevMaxFt",
+   "value": 2,
+   "comment": "the low-elevation water-table depth: the maximum in feet (a foot or two)"
+  },
+  {
+   "name": "wwfHighElevMinFt",
+   "value": 24,
+   "comment": "in high elevation with no large body of fresh water the water table may be dozens of feet beneath the surface: the dozens floor (2d12, 24 feet, the model floor)"
+  },
+  {
+   "name": "wwfHighElevMaxFt",
+   "value": 100,
+   "comment": "the high-elevation water table may be dozens or even hundreds of feet beneath the surface: the hundreds floor (100 feet)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wwfStandingWaterBasis",
+   "value": true,
+   "comment": "the Table 34 chance models a sizable quantity of standing water - not large enough to qualify as a lake or pond: an uncharted pool, or a small depression or basin holding rainstorm water not yet evaporated or absorbed"
+  },
+  {
+   "name": "wwfDroughtDMReduction",
+   "value": true,
+   "comment": "if no rain has fallen for several days, the DM may reduce the chance of finding standing water in certain terrains"
+  },
+  {
+   "name": "wwfFlatPlainDriesOut",
+   "value": true,
+   "comment": "a flat plain may be completely dried out after a few days without precipitation"
+  },
+  {
+   "name": "wwfSwampAlwaysStanding",
+   "value": true,
+   "comment": "a swampy area will have standing water practically all the time regardless of how long since the last rain"
+  },
+  {
+   "name": "wwfTableIsUndergroundLevel",
+   "value": true,
+   "comment": "the water table is the level beneath the ground at which water lies after soaking into the terrain - not the Chance of Finding Water Table"
+  },
+  {
+   "name": "wwfSwampTableAboveTerrain",
+   "value": true,
+   "comment": "in a swamp, where elevation is close to sea level, the water table may actually be higher than the terrain"
+  },
+  {
+   "name": "wwfDesertTableVaries",
+   "value": true,
+   "comment": "in the almost moisture-free desert environment the location of the water table varies greatly (the desert exception, detailed in its own section)"
+  },
+  {
+   "name": "wwfTableNonexistentNonabsorbent",
+   "value": true,
+   "comment": "the water table is nonexistent where the terrain is not absorbent: a rocky mountain range with little or no loose soil, or frozen ground"
+  },
+  {
+   "name": "wwfDigChanceAfterSurfaceFail",
+   "value": true,
+   "comment": "characters who fail to locate surface water on terrain where underground water may exist can be allowed a chance to find water by digging down a certain distance"
+  },
+  {
+   "name": "wwfDigDepthDMRuling",
+   "value": true,
+   "comment": "whether underground water exists and how far down it lies are DM determinations based on the terrain and elevation; deserts are the exception with their own rules"
+  },
+  {
+   "name": "wwfVegetationWaterSource",
+   "value": true,
+   "comment": "vegetation is another natural source of water, particularly in hot climates where many plants store fresh water inside their stems or branches as a safeguard against a dry spell"
+  },
+  {
+   "name": "wwfCactusStoresWater",
+   "value": true,
+   "comment": "the cactus plant ability to store water inside itself has kept many desert travelers from dying of thirst"
+  },
+  {
+   "name": "wwfDroughtPlantsOnPlainsHills",
+   "value": true,
+   "comment": "other water-storing plants not necessarily found in the desert may keep adventurers fortified on plains or in hilly areas during a drought"
+  },
+  {
+   "name": "wwfPlantQuantityDMRuling",
+   "value": true,
+   "comment": "the DM decides whether water-bearing plants are readily available and how much water they provide"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the low-elevation water table: a foot or two beneath the ground",
+   "expr": "m['wwfLowElevMinFt']() != 1 or m['wwfLowElevMaxFt']() != 2 or m['wwfLowElevMinFt']() >= m['wwfLowElevMaxFt']()"
+  },
+  {
+   "note": "the high-elevation water table: dozens or even hundreds of feet beneath the surface",
+   "expr": "m['wwfHighElevMinFt']() != 24 or m['wwfHighElevMaxFt']() != 100 or m['wwfHighElevMinFt']() >= m['wwfHighElevMaxFt']()"
+  },
+  {
+   "note": "the depth ladder climbs from the low-elevation band to the high-elevation band",
+   "expr": "m['wwfLowElevMaxFt']() >= m['wwfHighElevMinFt']()"
+  },
+  {
+   "note": "the standing-water basis: not a lake or pond, an uncharted pool or a rain-caught depression",
+   "expr": "m['wwfStandingWaterBasis']() != 1"
+  },
+  {
+   "note": "the drought contrast: the flat plain dries out, the swamp never does",
+   "expr": "m['wwfFlatPlainDriesOut']() != 1 or m['wwfSwampAlwaysStanding']() != 1 or m['wwfDroughtDMReduction']() != 1"
+  },
+  {
+   "note": "the non-absorbent exception and the dig-for-water chance",
+   "expr": "m['wwfTableNonexistentNonabsorbent']() != 1 or m['wwfDigChanceAfterSurfaceFail']() != 1 or m['wwfDigDepthDMRuling']() != 1"
+  },
+  {
+   "note": "the vegetation source: the water-storing plants, the cactus and the DM quantity ruling",
+   "expr": "m['wwfVegetationWaterSource']() != 1 or m['wwfCactusStoresWater']() != 1 or m['wwfDroughtPlantsOnPlainsHills']() != 1 or m['wwfPlantQuantityDMRuling']() != 1"
+  },
+  {
+   "note": "the swamp anomaly: the water table above the terrain, near sea level",
+   "expr": "m['wwfSwampTableAboveTerrain']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "The standing-water basis": [
+   {
+    "kind": "bool",
+    "name": "wwfStandingWaterBasis"
+   },
+   {
+    "kind": "bool",
+    "name": "wwfDroughtDMReduction"
+   },
+   {
+    "kind": "bool",
+    "name": "wwfFlatPlainDriesOut"
+   },
+   {
+    "kind": "bool",
+    "name": "wwfSwampAlwaysStanding"
+   }
+  ],
+  "The water table": [
+   {
+    "kind": "bool",
+    "name": "wwfTableIsUndergroundLevel"
+   },
+   {
+    "kind": "const",
+    "name": "wwfLowElevMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "wwfLowElevMaxFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wwfSwampTableAboveTerrain"
+   },
+   {
+    "kind": "const",
+    "name": "wwfHighElevMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "wwfHighElevMaxFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wwfDesertTableVaries"
+   },
+   {
+    "kind": "bool",
+    "name": "wwfTableNonexistentNonabsorbent"
+   }
+  ],
+  "Digging for underground water": [
+   {
+    "kind": "bool",
+    "name": "wwfDigChanceAfterSurfaceFail"
+   },
+   {
+    "kind": "bool",
+    "name": "wwfDigDepthDMRuling"
+   }
+  ],
+  "Vegetation as a water source": [
+   {
+    "kind": "bool",
+    "name": "wwfVegetationWaterSource"
+   },
+   {
+    "kind": "bool",
+    "name": "wwfCactusStoresWater"
+   },
+   {
+    "kind": "bool",
+    "name": "wwfDroughtPlantsOnPlainsHills"
+   },
+   {
+    "kind": "bool",
+    "name": "wwfPlantQuantityDMRuling"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "where water is found",
+   "from": "  - [ ] Where water is found (p. 59)",
+   "to": "  - [x] Where water is found (p. 59) - R468: the standing-water basis, the drought DM reduction, the water-table depth rules by elevation and terrain, the dig-for-water chance and the vegetation source pin as rules/wsgwhere.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R467: 86 closed, 100 open (the R467 round continues the chapter - finding water and Table 34 pin as rules/wsgwater.h; the next round continues - where water is found (p. 59) and the water table mechanics, then water in the desert (p. 60) and purifying water (p. 60)).",
+   "to": "Post-state at R468: 87 closed, 99 open (the R468 round continues the chapter - where water is found pins as rules/wsgwhere.h; the next round continues - water in the desert (p. 60) with the permafrost discussion, then purifying water (p. 60) with the tainted-water effects)."
+  }
+ ],
+ "gap_census": {
+  "closed": 87,
+  "open": 99
+ },
+ "include_comment": "the WSG where water is found",
+ "include_after": "#include \"rules/wsgwater.h\"  // R467: the WSG finding water and Table 34",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R467 LANDED 2026-10-15: commit efd8d78 (census 392, pushed",
+ "prev_record": [
+  "- R467 LANDED 2026-10-15: commit efd8d78 (census 392, pushed",
+  "  e04918e..efd8d78), the WSG FINDING WATER slice, printed p. 58 with the",
+  "  mechanics and the grid on p. 59 - the water-finding checks (two per day for",
+  "  a lone character or a traveling group, extra searches automatically fail,",
+  "  the table not used where water is obviously and readily available: nearby",
+  "  fresh water still checks the taint, the snow-and-ice exception with the",
+  "  figures assuming no cover, ice at 30 degrees or lower carrying the taint",
+  "  chance of its source water, freshly fallen snow the purest water in nature",
+  "  with the mere-dusting note, sea water dehydrating via the salt, the seacoast",
+  "  dig at 100% above the high tide line and no more than two feet deep with the",
+  "  deeper-the-saltier gradient), the water-quality guidelines (river purer",
+  "  upstream, lake purer at the inflow, fast-flowing beats standing, ground",
+  "  water beats surface) and Table 34: chance of finding water (the 28-row x",
+  "  8-col grid: five climate bands - arctic D/H/M/P constant across seasons,",
+  "  subarctic/temperate/subtropical/tropical D/F/H/M/P/Sw - each cell the",
+  "  find%/taint% pair by season; the swamp rows top the find chances, the desert",
+  "  rows bottom them, the tropical swamp spring 90/75 the only taint value in",
+  "  the table not ending in 0). rules/wsgwater.h NEW (27 inlines: 5 consts + 14",
+  "  bools + 8 table columns, prefix wfw - wsw taken by R450; checked free in all",
+  "  three TUs). GROUND TRUTH - the NEW WORKFLOW, user decision this round, a",
+  "  proven success: the user ran tesseract ON TERMUX (pkg install poppler",
+  "  tesseract; pdfimages -png -f 59 -l 60 wsg.pdf; tesseract --psm 4 and the TSV",
+  "  output) and the grid was REBUILT FROM GEOMETRY - the TSV word bounding boxes",
+  "  place the terrain-code column at x 130-165, the season cells at x",
+  "  190/285/385/480, one row per 20px of y - no reading-order trust at all. All",
+  "  224 values three-way confirmed (tesseract TSV + pdfy embedded OCR + djvu);",
+  "  the tesseract slash-loss cells (570, 5170, 60740, 30730, 70170) resolve by",
+  "  the other readers; the two low-confidence terrain labels (subarctic E,",
+  "  temperate =%) resolve to F (forest - the missing terrain in both bands); the",
+  "  ONE contested value, tropical swamp spring, read 90/75 in BOTH text layers",
+  "  but 90/80 in two vision reads, and the USER READ THE PHYSICAL PAGE and",
+  "  settled it: 90/75, pinned as printed. THE TERMUX-TESSERACT WORKFLOW IS NOW",
+  "  THE PREFERRED READER for table rounds: it beats the pdfy layer (which",
+  "  garbles slashes), beats djvu (which scrambles grid order), is immune to the",
+  "  double-image ghost that killed R466 pixel work, and the TSV geometry enables",
+  "  structural cross-checks the prose readers cannot offer. Where water is found",
+  "  (p. 59) stays open - the DM standing-water reduction and the water-table",
+  "  definition were read this round but are NOT flipped. Gap 84/102 -> 86/100",
+  "  (TWO box flips + the post-state line); census 391 -> 392. rverify FULL GREEN",
+  "  pre-landing at base e04918e (double-run 7/0 then 0/7, 243 mutants, 0 missed",
+  "  - note the engine audit parser wants SINGLE-quoted model keys in",
+  "  table_checks; a first cut with double quotes aborted and was rebuilt). Spec",
+  "  md5s: bd27b835 authored / e1936b6a +nl - the Termux read the +nl value",
+  "  exactly. LANDED CLEAN on the first ritual run (double-run 7/0 then 0/7,",
+  "  preflight GREEN first try, R467 audit bad 0, AUDIT CENSUS: 392, 5 files /",
+  "  2173 insertions; the user ran bn separately by choice, it stays out of the",
+  "  ritual per R372). VERIFIED at the raw sha efd8d78: the commit message and",
+  "  file list (regtest +737, the header 667, the spec 708, the gap 3/3, the seed",
+  "  +58), the include after wsgcarry.h at line 177, wsgwater.h 27 inlines with",
+  "  the full 224-value grid including the case-27 90/75 cell, the two flips with",
+  "  the R467 text, the post-state 86/100, the where-water-is-found,",
+  "  water-in-the-desert and purifying-water boxes NOT flipped, the R466 seed",
+  "  record in place. Next: R468 - where water is found (p. 59: the",
+  "  standing-water reduction by terrain, the water table definition and",
+  "  depth-by-terrain rules) and the bad-water/vegetation-and-skeletons warning,",
+  "  then water in the desert (p. 60) and purifying water (p. 60)."
+ ]
+}
