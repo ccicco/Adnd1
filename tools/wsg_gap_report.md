@@ -96,8 +96,8 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Portable shelters (p. 62) - R472: the pole-and-cloth simple shelter with the pitch rules, the occupancy limits, the hauling rules and the Table 36 quality-by-size grid pin as rules/wsgtents.h
   - [x] Rest and comfort (p. 64) - R473: the 16-hour active day with the 3-hour camp chores, the 5-hour sleep requirement and the p. 63 shelter-mechanics seam pin as rules/wsgsleep.h
   - [x] How much sleep? (p. 64) - R473: the two-day trigger with the sunrise onset, the day-by-day average rest calculation, the one-night negation and the check and movement semantics pin as rules/wsgsleep.h
-  - [ ] Good sleep vs bad sleep (p. 65)
-  - [ ] Fire: friend and foe (p. 65)
+  - [x] Good sleep vs bad sleep (p. 65) - R474: the eight rest-quality penalties with the plate-armor waivers, the no-rest threshold, the extreme-weather bar, the longer-sleep compensation and the armor donning and doffing discipline pin as rules/wsgfire.h
+  - [x] Fire: friend and foe (p. 65) - R474: the campfire function prose and the three fire sizes with the Table 38 grids (fuel, start, refuel, wind resistance, capacity, visibility and the warmth-at-distance ladder) pin as rules/wsgfire.h
   - [ ] Precautions and perils (p. 66)
   - [ ] Uncontrollable fires (p. 67)
   - [ ] Damage from fire (p. 68)
@@ -193,10 +193,10 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 35: chance of finding natural shelter** (p. 61) - R471: the 24-cell grid pins inside rules/wsgshelter.h (census 395)
 - [x] **Table 36: portable shelter characteristics** (p. 62) - R472: the 72-cell grid pins inside rules/wsgtents.h (census 396)
 - [x] **Table 37: effects of lack of sleep** (p. 64) - R473: the five-band grid pins inside rules/wsgsleep.h (census 397)
-- [ ] **Table 38: campfire characteristics** (p. 65)
+- [x] **Table 38: campfire characteristics** (p. 65) - R474: the three-size grid and the warmth-at-distance ladder pin inside rules/wsgfire.h (census 398)
 - [ ] **Table 39: availability of fuel** (p. 66)
 - [ ] **Table 40: availability of medicinal plants** (p. 69)
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R473: 96 closed, 90 open (the R473 round continues the camping arc - the portable shelter mechanics seam with the rest and comfort sleep rules and Table 37 pin as rules/wsgsleep.h; the next round continues - good sleep vs bad sleep (p. 65) with Table 38).
+Post-state at R474: 99 closed, 87 open (the R474 round continues the camping arc - the rest-quality penalties and armor timing with the campfire Table 38 grids pin as rules/wsgfire.h; the next round continues - precautions and perils (p. 66) with Table 39).

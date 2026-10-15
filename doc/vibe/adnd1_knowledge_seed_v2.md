@@ -4712,6 +4712,67 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   record in place. Next: R473 - rest and comfort (p. 64)
   with Table 37 (effects of lack of sleep), continuing the
   camping arc.
+- R473 LANDED 2026-10-15: commit 82ca9d9 (census 398, pushed
+  663e014..82ca9d9), the WSG SHELTER MECHANICS AND REST AND
+  COMFORT slice with TABLE 37, printed pp. 63-64 - the third
+  camping-arc round and the third TABLE ROUND of the arc: the
+  p. 62-63 seam (the shelter kit mechanics unpinned by R472,
+  whose box covered only p. 62 - ridden along rather than
+  orphaning the book numbers): the poor/adequate/good/superior
+  kit setup rules (1/2/3-turn setup minimums, one-turn-less
+  takedown at 5 rounds/1 turn/2 turns, the 1-turn helper
+  saving), the Table 36 column semantics (the moisture and
+  wind life-span point economy - the 10-mph/5-mph wind leak
+  step, the twice-threshold 25 pct damage chance, the
+  1/3-use and 1/2/4 point rates, the poor 40-to-20
+  collapse), the 2/4/6 pole minimums and occupancy counts;
+  then the p. 64 slice: rest and comfort (the 16-hour
+  active day, the 3-hour camp chores, the 5-hour sleep
+  requirement) and how much sleep (the two-day trigger with
+  sunrise onset, the day-by-day average rest, the one-night
+  negation, the 12-to-6 movement example) plus the Table 37
+  five-band grid (less-than-5/4/3/2/1 hours by eight effect
+  columns: Dex 1/2/3/4/5, Str 0/1/2/3/4, Wis 0/0/1/2/3,
+  Con 0/0/0/1/2, to-hit 0/-1/-1/-2/-3, climb
+  0/0/-10/-20/-30, move 0/0/-25/-33/-50, weight multiple
+  0/0/0/50/100). rules/wsgsleep.h NEW (77 inlines: 41
+  consts + 28 bools + the eight Table 37 column switches,
+  prefix wrs - checked free in regtest.cpp and the game
+  sources; wsl was TAKEN, the R369 wsgslip.h lesson).
+  GROUND TRUTH: two-way on the prose (the Termux tesseract
+  p63_full/p64_full vs the pdfy text layer, all prose
+  numbers in agreement), THREE-WAY on the contested grid
+  cells: tesseract garbled the LESS-THAN-2 DEXTERITY (+4)
+  and STRENGTH (+3) cells into conf-49 noise; the pdf layer
+  and a VISION READ of pg-001-2.png second-confirmed the
+  full grid (the R471 vision-on-png contested-cell
+  settler). Gap 93/93 -> 96/90 (THREE box flips + the
+  post-state line: rest and comfort, how much sleep, the
+  Table 37 grid box); census 397 -> 398. rverify FULL GREEN
+  pre-landing at base 663e014 (double-run 8/0 then 0/8, 109
+  mutants, 0 missed) - it caught ONE spec bug: my
+  penalties-deepen-monotonically table_check had an
+  INVERTED comparison direction (penalties are negative;
+  the bad case is next > current, not current > next) -
+  fixed and re-verified; also renamed
+  wrsSuperiorKitTrueStructure -> wrsSuperiorKitStructure so
+  the audit block carries no True substring. Spec md5s:
+  ff9f7149 authored / 7415450d +nl - the Termux read the
+  +nl value exactly. LANDED CLEAN on the first ritual run:
+  preflight GREEN first try (the two pre-existing warnings
+  plus the untracked-note for the p63/p64 extraction files,
+  wsgsleep.h and the spec - the user committed only the 5
+  repo files), R473 audit bad 0, AUDIT CENSUS: 398 exactly
+  once, 5 files / 2051 insertions. VERIFIED at the raw sha
+  82ca9d9: the include after wsgtents.h at line 178, the
+  R473 audit label with ZERO True tokens, the C37 grid
+  exact (all five rows across the eight column switches,
+  col_default 0 with the 999 sentinel default discipline),
+  the gap 96/90 with all three boxes flipped and the
+  post-state line, the spec md5 7415450d, the R472 seed
+  record in place. Next: R474 - good sleep vs bad sleep
+  (p. 65) with Table 38 (campfire characteristics),
+  continuing the camping arc.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

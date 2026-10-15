@@ -1,0 +1,796 @@
+{
+ "round": 474,
+ "title": "the WSG good sleep vs bad sleep and fire slice with Table 38 - the rest-quality penalty ladder and the longer-sleep compensation, the armor donning and doffing discipline, the campfire sizes and the warmth-at-distance grid, printed p. 65",
+ "prefix": "wgf",
+ "header_file": "rules/wsgfire.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 398,
+ "inline_count": 65,
+ "audit_label": "R474 WSG rest quality and fire pin audit",
+ "audit_comment": "The Table 38 grids (the three fire sizes by fuel, start dice, refuel, wind resistance, capacity and visibility, plus the warmth-at-distance ladder with the dash-as-no-warmth sentinel), the eight rest-quality penalties with the plate-armor waivers, the no-rest threshold, the extreme-weather bar, the longer-sleep compensation, the armor donning and doffing discipline and the fire-function prose are audit examples.",
+ "banner": {
+  "title": "R474: the WSG GOOD SLEEP VS BAD SLEEP and FIRE slice with TABLE 38 - the rest-quality penalty ladder (not prone or relaxed 1; bare ground 1, waived for a plate wearer; personal temperature below 0 one hour and above 90 two hours; wind of 20 mph or greater with no shelter 2, likewise waived; light or moderate precipitation with no shelter 3, likewise waived; any metal armor except plate 3; any plate armor 4) with the DM-summed reduction, the no-rest threshold when the total penalty exceeds the time spent trying to sleep, the extreme-weather bar (no sleep in a lightning storm, a hailstorm or a sandstorm unless inside a shelter, and even then the commotion may keep him awake), the longer-sleep compensation (a plate wearer five-hour night buys one hour of good rest, nine hours refresh like five), the sleep-in-armor prudence with the one-night-in-two rule, the armor donning discipline (9 minus AC rounds, plus 2 for any plate, plus 5 more unaided for field or full plate: leather 1, banded 5, full plate 11 helped or 16 solo, doffing in half the time with 8 rounds to shed full plate alone) and the fire function (cooking incidental, warmth primary, three sizes) with Table 38 (fuel 6/12/18 turns for an eight-hour burn, start 2d20 plus 0/5/10, refuel 3/6/9, wind resistance 20/30/40, capacity 6/10/15, visibility 240/360/540, and the warmth-at-distance ladder by size and range), printed p. 65.",
+  "provenance": "Ground truth two-way on the prose and the Table 38 top grid, no physical-page reads: the user-run Termux tesseract text of printed p. 65 (p65_full.txt, p65_tsv.tsv) vs the pdf embedded text layer (pdftotext -layout, pdf page 66, p65_pdfy.txt). The two readers AGREE on all prose numbers: the eight penalty values (tesseract garbles only the minus signs on four of the eight lines, never the digits), the DM-summed reduction and the no-rest threshold, the three storm types, the 5/1 and 9/5 plate-sleep figures, the one-night-in-two rule, the 9-minus-AC donning base with the 2 and 5 round adds, the 1/5/11/16 donning figures with the half-time doffing at 8 rounds, the cooking-incidental and warmth-primary prose, and the Table 38 top grid (fuel 6/12/18, start 2d20 +0/+5/+10, refuel 3/6/9, res 20/30/40, cap 6/10/15, vis 240/360/540). For the WARMTH-AT-DISTANCE grid tesseract garbles four cells into low-confidence noise: the Small row at 50 and 60 yards (reading 00 and 10) and the Large row at 20 and 60 yards (reading 4 and O). The pdf layer reads them as 0, 0, 40 and 0, and the TSV WORD-BOX GEOMETRY (the R467 workflow) settles them: the Small at-60 box is 20 pixels wide like every single-digit cell (a true 10 is 39 wide), the Large at-20 box is 40 pixels wide exactly like every two-digit 40 cell (a lone 4 is 19 wide), and the Large at-60 box is a single glyph. The grid is also internally consistent: every row decays monotonically with distance, and at every shared distance a larger fire warms at least as much as a smaller one. NOTE: the standing vision-on-png contested-cell settler was tried twice on this page and failed both times - each vision read contradicted the two agreeing text layers on uncontested cells (reading the refuel column as the start dice and inventing dashes mid-row), so the TSV geometry plus monotonicity is the settler of record this round.",
+  "sentinel": "All 27 warmth-grid cells pinned (the three sizes by nine distances, with 999 marking the three printed dashes as no warmth at that distance: a medium fire provides none at 1, a large fire none at 1 or 3); the 24 top-grid cells, the eight penalties, the armor timing figures and the book own plate-sleep and donning examples are audit examples."
+ },
+ "consts": [
+  {
+   "name": "wgfPenNotProne",
+   "value": 1,
+   "comment": "the rest-quality penalty for a character not prone or in a relaxed position: 1 hour of good rest lost"
+  },
+  {
+   "name": "wgfPenBareGround",
+   "value": 1,
+   "comment": "the penalty for lying on bare ground with no bedding or padding: 1 hour lost (waived for a plate-armor wearer)"
+  },
+  {
+   "name": "wgfPenTempBelow0",
+   "value": 1,
+   "comment": "the penalty for personal temperature below 0 degrees: 1 hour lost"
+  },
+  {
+   "name": "wgfPenTempAbove90",
+   "value": 2,
+   "comment": "the penalty for personal temperature above 90 degrees: 2 hours lost"
+  },
+  {
+   "name": "wgfPenWindNoShelter",
+   "value": 2,
+   "comment": "the penalty for wind of 20 mph or greater with no shelter: 2 hours lost (waived for a plate-armor wearer)"
+  },
+  {
+   "name": "wgfPenPrecipNoShelter",
+   "value": 3,
+   "comment": "the penalty for light or moderate precipitation with no shelter: 3 hours lost (waived for a plate-armor wearer)"
+  },
+  {
+   "name": "wgfPenMetalArmor",
+   "value": 3,
+   "comment": "the penalty for wearing any metal armor except plate: 3 hours lost"
+  },
+  {
+   "name": "wgfPenPlateArmor",
+   "value": 4,
+   "comment": "the penalty for wearing any kind of plate armor: 4 hours lost"
+  },
+  {
+   "name": "wgfPlateTypicalNight",
+   "value": 5,
+   "comment": "the plate-armor sleeper bedding down for a typical night of five hours"
+  },
+  {
+   "name": "wgfPlateNightGoodRest",
+   "value": 1,
+   "comment": "a five-hour night in plate armor yields the equivalent of one hour of actual rest"
+  },
+  {
+   "name": "wgfPlateLongSleep",
+   "value": 9,
+   "comment": "sleeping nine hours in plate armor instead"
+  },
+  {
+   "name": "wgfPlateLongRefresh",
+   "value": 5,
+   "comment": "nine hours in plate refreshes like five hours with the armor off"
+  },
+  {
+   "name": "wgfDonBase",
+   "value": 9,
+   "comment": "the armor donning base: subtract the armor class from 9 to get the rounds to put it on"
+  },
+  {
+   "name": "wgfPlateAddRounds",
+   "value": 2,
+   "comment": "any plate armor (bronze plate mail, plate mail, field plate or full plate) adds 2 rounds to the calculated figure"
+  },
+  {
+   "name": "wgfUnaidedAddRounds",
+   "value": 5,
+   "comment": "field plate or full plate donned without help adds an extra 5 rounds"
+  },
+  {
+   "name": "wgfLeatherAC",
+   "value": 8,
+   "comment": "leather armor is AC 8"
+  },
+  {
+   "name": "wgfLeatherDonRounds",
+   "value": 1,
+   "comment": "leather armor (AC 8) can be donned in one round"
+  },
+  {
+   "name": "wgfBandedAC",
+   "value": 4,
+   "comment": "banded mail is AC 4"
+  },
+  {
+   "name": "wgfBandedDonRounds",
+   "value": 5,
+   "comment": "banded mail (AC 4) requires five rounds"
+  },
+  {
+   "name": "wgfFullPlateAC",
+   "value": 0,
+   "comment": "full plate armor is AC 0"
+  },
+  {
+   "name": "wgfFullPlateHelpedRounds",
+   "value": 11,
+   "comment": "full plate armor (AC 0) needs 11 rounds with the help of a comrade"
+  },
+  {
+   "name": "wgfFullPlateSoloRounds",
+   "value": 16,
+   "comment": "full plate armor needs 16 rounds singlehandedly"
+  },
+  {
+   "name": "wgfFullPlateSoloDoffRounds",
+   "value": 8,
+   "comment": "taking off a suit of full plate armor without help takes 8 rounds (half of 16)"
+  },
+  {
+   "name": "wgfFireSizes",
+   "value": 3,
+   "comment": "a campfire can be built in one of three sizes"
+  },
+  {
+   "name": "wgfBurnHours",
+   "value": 8,
+   "comment": "the fuel values gather enough material to keep a fire of that size burning for eight hours"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wgfQualityNotNight",
+   "value": true,
+   "comment": "a good night rest speaks to the quality of the rest, not the night"
+  },
+  {
+   "name": "wgfComfortRequired",
+   "value": true,
+   "comment": "to fully benefit from his sleeping time a character must be able to rest in comfort, which is not always easy in the wilderness"
+  },
+  {
+   "name": "wgfPenaltiesSummed",
+   "value": true,
+   "comment": "the Dungeon Master adds up all of the penalties that apply and reduces the hours of sleep by the indicated amount"
+  },
+  {
+   "name": "wgfNoRestWhenExceeded",
+   "value": true,
+   "comment": "if the total penalty exceeds the time the character spends trying to sleep, the resting did him no good at all"
+  },
+  {
+   "name": "wgfStarPenaltiesSkipPlate",
+   "value": true,
+   "comment": "the starred penalties (bare ground, wind and precipitation) do not apply to a character wearing plate armor"
+  },
+  {
+   "name": "wgfExtremeWeatherNoSleep",
+   "value": true,
+   "comment": "it is impossible to sleep in extreme weather such as a lightning storm, a hailstorm or a sandstorm unless the character is inside a shelter"
+  },
+  {
+   "name": "wgfStormCommotionCaveat",
+   "value": true,
+   "comment": "even inside a shelter the commotion caused by the storm may keep him awake"
+  },
+  {
+   "name": "wgfDmMayExpandPenalties",
+   "value": true,
+   "comment": "the Dungeon Master may expand the penalty list to account for other circumstances where good-quality rest is difficult or impossible"
+  },
+  {
+   "name": "wgfLongerSleepCompensates",
+   "value": true,
+   "comment": "one way to compensate for bad rest is to spend a longer time sleeping"
+  },
+  {
+   "name": "wgfArmorSleepPrudent",
+   "value": true,
+   "comment": "if characters might be set upon during the night, sleeping in full armor is probably more prudent than taking it off"
+  },
+  {
+   "name": "wgfOneNightInTwoSuffices",
+   "value": true,
+   "comment": "because the lack-of-sleep penalties do not go into effect until after the second night of deprivation, enough sleep on one night out of every two is sufficient"
+  },
+  {
+   "name": "wgfDonIsNineMinusAC",
+   "value": true,
+   "comment": "the donning time in rounds is 9 minus the armor class of the armor being worn"
+  },
+  {
+   "name": "wgfPlateAddTwoRounds",
+   "value": true,
+   "comment": "any plate armor adds 2 rounds to the calculated donning figure"
+  },
+  {
+   "name": "wgfUnaidedAddFiveRounds",
+   "value": true,
+   "comment": "field plate or full plate donned without help takes an extra 5 rounds"
+  },
+  {
+   "name": "wgfDoffHalfTime",
+   "value": true,
+   "comment": "taking off armor can be done in half the time required to put it on"
+  },
+  {
+   "name": "wgfLeatherDoffHalfRound",
+   "value": true,
+   "comment": "a character gets out of his leather gear in one half of one round"
+  },
+  {
+   "name": "wgfFireNotIntegral",
+   "value": true,
+   "comment": "a campfire is not an integral part of a campsite, though characters usually want a small fire when they stop for the night"
+  },
+  {
+   "name": "wgfCookingIncidental",
+   "value": true,
+   "comment": "the cooking function of a fire is incidental for these rules: food from hunting or foraging is just as edible raw"
+  },
+  {
+   "name": "wgfPlantsPoisonousRaw",
+   "value": true,
+   "comment": "some plants are poisonous unless they are cooked, so characters who do not habitually cook may regret their indiscretion"
+  },
+  {
+   "name": "wgfWarmthPrimary",
+   "value": true,
+   "comment": "the primary function of a campfire is to provide warmth"
+  },
+  {
+   "name": "wgfWarmthLifeOrDeath",
+   "value": true,
+   "comment": "the warmth of a campfire can sometimes make the difference between life and death"
+  },
+  {
+   "name": "wgfFuelGatherTurns",
+   "value": true,
+   "comment": "the fuel value is how many turns a single character needs to gather enough wood or other combustible material for an eight-hour burn"
+  },
+  {
+   "name": "wgfAssumesFirewood",
+   "value": true,
+   "comment": "the fuel values assume that firewood is available in the environment"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "wgfCampfireSpecs",
+   "tag": "38",
+   "count": "wgfFireSizes",
+   "cols": [
+    "wgfFuel",
+    "wgfStartDie",
+    "wgfStartCount",
+    "wgfStartMod",
+    "wgfRefuel",
+    "wgfWindRes",
+    "wgfCapacity",
+    "wgfVisibility"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 38 fuel: turns for one character to gather material for an eight-hour burn",
+    "the Table 38 start die",
+    "the Table 38 start die count",
+    "the Table 38 start modifier",
+    "the Table 38 refuel interval",
+    "the Table 38 wind resistance value",
+    "the Table 38 capacity value",
+    "the Table 38 visibility value"
+   ],
+   "row_comments": [
+    "the small-fire row",
+    "the medium-fire row",
+    "the large-fire row"
+   ],
+   "data": [
+    [
+     6,
+     20,
+     2,
+     0,
+     3,
+     20,
+     6,
+     240
+    ],
+    [
+     12,
+     20,
+     2,
+     5,
+     6,
+     30,
+     10,
+     360
+    ],
+    [
+     18,
+     20,
+     2,
+     10,
+     9,
+     40,
+     15,
+     540
+    ]
+   ],
+   "audit_comment": "Table 38: campfire characteristics, the three fire sizes by fuel, start dice, refuel, wind resistance, capacity and visibility, printed p. 65",
+   "sentinel": 999,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "wgfWarmth",
+   "tag": "38w",
+   "count": "wgfFireSizes",
+   "cols": [
+    "wgfWarmAt1",
+    "wgfWarmAt3",
+    "wgfWarmAt5",
+    "wgfWarmAt10",
+    "wgfWarmAt20",
+    "wgfWarmAt30",
+    "wgfWarmAt40",
+    "wgfWarmAt50",
+    "wgfWarmAt60"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 38 warmth at distance 1 (999 = the printed dash: no warmth at this distance)",
+    "the Table 38 warmth at distance 3 (999 = the printed dash: no warmth at this distance)",
+    "the Table 38 warmth at distance 5",
+    "the Table 38 warmth at distance 10",
+    "the Table 38 warmth at distance 20",
+    "the Table 38 warmth at distance 30",
+    "the Table 38 warmth at distance 40",
+    "the Table 38 warmth at distance 50",
+    "the Table 38 warmth at distance 60"
+   ],
+   "row_comments": [
+    "the small-fire row",
+    "the medium-fire row",
+    "the large-fire row"
+   ],
+   "data": [
+    [
+     80,
+     60,
+     40,
+     30,
+     20,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     999,
+     80,
+     60,
+     40,
+     30,
+     20,
+     10,
+     0,
+     0
+    ],
+    [
+     999,
+     999,
+     80,
+     60,
+     40,
+     30,
+     20,
+     10,
+     0
+    ]
+   ],
+   "audit_comment": "Table 38: warmth provided at given distance, the three fire sizes by nine distances with the dash cells as the 999 no-warmth sentinel, printed p. 65",
+   "sentinel": 999,
+   "sentinel_census": [
+    2,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the rest-quality penalty ladder: 1/1/1/2/2/3/3/4 hours by the eight conditions",
+   "expr": "m['wgfPenNotProne']() != 1 or m['wgfPenBareGround']() != 1 or m['wgfPenTempBelow0']() != 1 or m['wgfPenTempAbove90']() != 2 or m['wgfPenWindNoShelter']() != 2 or m['wgfPenPrecipNoShelter']() != 3 or m['wgfPenMetalArmor']() != 3 or m['wgfPenPlateArmor']() != 4"
+  },
+  {
+   "note": "the penalties never grow smaller down the list and plate armor is the worst of them",
+   "expr": "m['wgfPenNotProne']() > m['wgfPenBareGround']() or m['wgfPenBareGround']() > m['wgfPenTempBelow0']() or m['wgfPenTempBelow0']() > m['wgfPenTempAbove90']() or m['wgfPenTempAbove90']() > m['wgfPenWindNoShelter']() or m['wgfPenWindNoShelter']() > m['wgfPenPrecipNoShelter']() or m['wgfPenPrecipNoShelter']() > m['wgfPenMetalArmor']() or m['wgfPenMetalArmor']() > m['wgfPenPlateArmor']()"
+  },
+  {
+   "note": "the plate-armor sleeper: a five-hour night buys one hour of good rest, nine hours refresh like five",
+   "expr": "m['wgfPlateTypicalNight']() != 5 or m['wgfPlateNightGoodRest']() != 1 or m['wgfPlateLongSleep']() != 9 or m['wgfPlateLongRefresh']() != 5"
+  },
+  {
+   "note": "the donning ladder: leather in 1 round, banded in 5, full plate in 11 helped or 16 solo, 8 to shed solo",
+   "expr": "m['wgfLeatherAC']() != 8 or m['wgfLeatherDonRounds']() != 1 or m['wgfBandedAC']() != 4 or m['wgfBandedDonRounds']() != 5 or m['wgfFullPlateAC']() != 0 or m['wgfFullPlateHelpedRounds']() != 11 or m['wgfFullPlateSoloRounds']() != 16 or m['wgfFullPlateSoloDoffRounds']() != 8"
+  },
+  {
+   "note": "the helped full plate figure sits between the calculated base and the solo figure, and solo is the worst",
+   "expr": "m['wgfFullPlateHelpedRounds']() >= m['wgfFullPlateSoloRounds']() or m['wgfFullPlateSoloDoffRounds']() >= m['wgfFullPlateSoloRounds']()"
+  },
+  {
+   "note": "the fuel ladder: 6/12/18 turns, each size strictly more than the last",
+   "expr": "m['wgfFuel'](0) != 6 or m['wgfFuel'](1) != 12 or m['wgfFuel'](2) != 18 or m['wgfFuel'](0) >= m['wgfFuel'](1) or m['wgfFuel'](1) >= m['wgfFuel'](2)"
+  },
+  {
+   "note": "every fire starts on 2d20 with the size adding 0/5/10 to the roll",
+   "expr": "m['wgfStartDie'](0) != 20 or m['wgfStartDie'](1) != 20 or m['wgfStartDie'](2) != 20 or m['wgfStartCount'](0) != 2 or m['wgfStartCount'](1) != 2 or m['wgfStartCount'](2) != 2 or m['wgfStartMod'](0) != 0 or m['wgfStartMod'](1) != 5 or m['wgfStartMod'](2) != 10"
+  },
+  {
+   "note": "the refuel, wind resistance, capacity and visibility all step strictly up with size",
+   "expr": "m['wgfRefuel'](0) >= m['wgfRefuel'](1) or m['wgfRefuel'](1) >= m['wgfRefuel'](2) or m['wgfWindRes'](0) >= m['wgfWindRes'](1) or m['wgfWindRes'](1) >= m['wgfWindRes'](2) or m['wgfCapacity'](0) >= m['wgfCapacity'](1) or m['wgfCapacity'](1) >= m['wgfCapacity'](2) or m['wgfVisibility'](0) >= m['wgfVisibility'](1) or m['wgfVisibility'](1) >= m['wgfVisibility'](2)"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the small fire: 80/60/40/30/20/10 and nothing past 30",
+   "expr": "m['wgfWarmAt1'](0) != 80 or m['wgfWarmAt3'](0) != 60 or m['wgfWarmAt5'](0) != 40 or m['wgfWarmAt10'](0) != 30 or m['wgfWarmAt20'](0) != 20 or m['wgfWarmAt30'](0) != 10 or m['wgfWarmAt40'](0) != 0 or m['wgfWarmAt50'](0) != 0 or m['wgfWarmAt60'](0) != 0"
+  },
+  {
+   "note": "the medium fire: no warmth at 1, 80 at 3, decaying to zero past 50",
+   "expr": "m['wgfWarmAt1'](1) != 999 or m['wgfWarmAt3'](1) != 80 or m['wgfWarmAt5'](1) != 60 or m['wgfWarmAt10'](1) != 40 or m['wgfWarmAt20'](1) != 30 or m['wgfWarmAt30'](1) != 20 or m['wgfWarmAt40'](1) != 10 or m['wgfWarmAt50'](1) != 0 or m['wgfWarmAt60'](1) != 0"
+  },
+  {
+   "note": "the large fire: no warmth at 1 or 3, 80 at 5, decaying to zero at 60",
+   "expr": "m['wgfWarmAt1'](2) != 999 or m['wgfWarmAt3'](2) != 999 or m['wgfWarmAt5'](2) != 80 or m['wgfWarmAt10'](2) != 60 or m['wgfWarmAt20'](2) != 40 or m['wgfWarmAt30'](2) != 30 or m['wgfWarmAt40'](2) != 20 or m['wgfWarmAt50'](2) != 10 or m['wgfWarmAt60'](2) != 0"
+  },
+  {
+   "note": "the small fire warmth never increases with distance",
+   "expr": "m['wgfWarmAt1'](0) < m['wgfWarmAt3'](0) or m['wgfWarmAt3'](0) < m['wgfWarmAt5'](0) or m['wgfWarmAt5'](0) < m['wgfWarmAt10'](0) or m['wgfWarmAt10'](0) < m['wgfWarmAt20'](0) or m['wgfWarmAt20'](0) < m['wgfWarmAt30'](0) or m['wgfWarmAt30'](0) < m['wgfWarmAt40'](0) or m['wgfWarmAt40'](0) < m['wgfWarmAt50'](0) or m['wgfWarmAt50'](0) < m['wgfWarmAt60'](0)"
+  },
+  {
+   "note": "the medium fire warmth never increases with distance",
+   "expr": "m['wgfWarmAt1'](1) < m['wgfWarmAt3'](1) or m['wgfWarmAt3'](1) < m['wgfWarmAt5'](1) or m['wgfWarmAt5'](1) < m['wgfWarmAt10'](1) or m['wgfWarmAt10'](1) < m['wgfWarmAt20'](1) or m['wgfWarmAt20'](1) < m['wgfWarmAt30'](1) or m['wgfWarmAt30'](1) < m['wgfWarmAt40'](1) or m['wgfWarmAt40'](1) < m['wgfWarmAt50'](1) or m['wgfWarmAt50'](1) < m['wgfWarmAt60'](1)"
+  },
+  {
+   "note": "the large fire warmth never increases with distance",
+   "expr": "m['wgfWarmAt1'](2) < m['wgfWarmAt3'](2) or m['wgfWarmAt3'](2) < m['wgfWarmAt5'](2) or m['wgfWarmAt5'](2) < m['wgfWarmAt10'](2) or m['wgfWarmAt10'](2) < m['wgfWarmAt20'](2) or m['wgfWarmAt20'](2) < m['wgfWarmAt30'](2) or m['wgfWarmAt30'](2) < m['wgfWarmAt40'](2) or m['wgfWarmAt40'](2) < m['wgfWarmAt50'](2) or m['wgfWarmAt50'](2) < m['wgfWarmAt60'](2)"
+  },
+  {
+   "note": "at every distance all three sizes share, a larger fire warms at least as much as a smaller one",
+   "expr": "m['wgfWarmAt5'](2) < m['wgfWarmAt5'](1) or m['wgfWarmAt5'](1) < m['wgfWarmAt5'](0) or m['wgfWarmAt10'](2) < m['wgfWarmAt10'](1) or m['wgfWarmAt10'](1) < m['wgfWarmAt10'](0) or m['wgfWarmAt20'](2) < m['wgfWarmAt20'](1) or m['wgfWarmAt20'](1) < m['wgfWarmAt20'](0) or m['wgfWarmAt30'](2) < m['wgfWarmAt30'](1) or m['wgfWarmAt30'](1) < m['wgfWarmAt30'](0) or m['wgfWarmAt40'](2) < m['wgfWarmAt40'](1) or m['wgfWarmAt40'](1) < m['wgfWarmAt40'](0) or m['wgfWarmAt50'](2) < m['wgfWarmAt50'](1) or m['wgfWarmAt50'](1) < m['wgfWarmAt50'](0) or m['wgfWarmAt60'](2) < m['wgfWarmAt60'](1) or m['wgfWarmAt60'](1) < m['wgfWarmAt60'](0)"
+  }
+ ],
+ "header_sections": {
+  "Good sleep vs bad sleep": [
+   {
+    "kind": "const",
+    "name": "wgfPenNotProne"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPenBareGround"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPenTempBelow0"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPenTempAbove90"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPenWindNoShelter"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPenPrecipNoShelter"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPenMetalArmor"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPenPlateArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfQualityNotNight"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfComfortRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfPenaltiesSummed"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfNoRestWhenExceeded"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfStarPenaltiesSkipPlate"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfExtremeWeatherNoSleep"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfStormCommotionCaveat"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfDmMayExpandPenalties"
+   }
+  ],
+  "The longer-sleep compensation": [
+   {
+    "kind": "const",
+    "name": "wgfPlateTypicalNight"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPlateNightGoodRest"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPlateLongSleep"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPlateLongRefresh"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfLongerSleepCompensates"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfArmorSleepPrudent"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfOneNightInTwoSuffices"
+   }
+  ],
+  "The armor donning and doffing": [
+   {
+    "kind": "const",
+    "name": "wgfDonBase"
+   },
+   {
+    "kind": "const",
+    "name": "wgfPlateAddRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wgfUnaidedAddRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wgfLeatherAC"
+   },
+   {
+    "kind": "const",
+    "name": "wgfLeatherDonRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wgfBandedAC"
+   },
+   {
+    "kind": "const",
+    "name": "wgfBandedDonRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wgfFullPlateAC"
+   },
+   {
+    "kind": "const",
+    "name": "wgfFullPlateHelpedRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wgfFullPlateSoloRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wgfFullPlateSoloDoffRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfDonIsNineMinusAC"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfPlateAddTwoRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfUnaidedAddFiveRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfDoffHalfTime"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfLeatherDoffHalfRound"
+   }
+  ],
+  "Table 38: the campfire characteristics": [
+   {
+    "kind": "const",
+    "name": "wgfFireSizes"
+   },
+   {
+    "kind": "const",
+    "name": "wgfBurnHours"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfFireNotIntegral"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfCookingIncidental"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfPlantsPoisonousRaw"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfWarmthPrimary"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfWarmthLifeOrDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfFuelGatherTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "wgfAssumesFirewood"
+   },
+   {
+    "kind": "table",
+    "name": "wgfCampfireSpecs"
+   }
+  ],
+  "The warmth-at-distance grid": [
+   {
+    "kind": "table",
+    "name": "wgfWarmth"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "good sleep vs bad sleep",
+   "from": "  - [ ] Good sleep vs bad sleep (p. 65)",
+   "to": "  - [x] Good sleep vs bad sleep (p. 65) - R474: the eight rest-quality penalties with the plate-armor waivers, the no-rest threshold, the extreme-weather bar, the longer-sleep compensation and the armor donning and doffing discipline pin as rules/wsgfire.h"
+  },
+  {
+   "note": "fire: friend and foe",
+   "from": "  - [ ] Fire: friend and foe (p. 65)",
+   "to": "  - [x] Fire: friend and foe (p. 65) - R474: the campfire function prose and the three fire sizes with the Table 38 grids (fuel, start, refuel, wind resistance, capacity, visibility and the warmth-at-distance ladder) pin as rules/wsgfire.h"
+  },
+  {
+   "note": "the Table 38 box",
+   "from": "- [ ] **Table 38: campfire characteristics** (p. 65)",
+   "to": "- [x] **Table 38: campfire characteristics** (p. 65) - R474: the three-size grid and the warmth-at-distance ladder pin inside rules/wsgfire.h (census 398)"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R473: 96 closed, 90 open (the R473 round continues the camping arc - the portable shelter mechanics seam with the rest and comfort sleep rules and Table 37 pin as rules/wsgsleep.h; the next round continues - good sleep vs bad sleep (p. 65) with Table 38).",
+   "to": "Post-state at R474: 99 closed, 87 open (the R474 round continues the camping arc - the rest-quality penalties and armor timing with the campfire Table 38 grids pin as rules/wsgfire.h; the next round continues - precautions and perils (p. 66) with Table 39)."
+  }
+ ],
+ "gap_census": {
+  "closed": 99,
+  "open": 87
+ },
+ "include_comment": "the WSG rest quality, armor timing and campfires, and Table 38",
+ "include_after": "#include \"rules/wsgsleep.h\"  // R473: the WSG shelter mechanics, rest and sleep, and Table 37",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R473 LANDED 2026-10-15: commit 82ca9d9 (census 398, pushed",
+ "prev_record": [
+  "- R473 LANDED 2026-10-15: commit 82ca9d9 (census 398, pushed",
+  "  663e014..82ca9d9), the WSG SHELTER MECHANICS AND REST AND",
+  "  COMFORT slice with TABLE 37, printed pp. 63-64 - the third",
+  "  camping-arc round and the third TABLE ROUND of the arc: the",
+  "  p. 62-63 seam (the shelter kit mechanics unpinned by R472,",
+  "  whose box covered only p. 62 - ridden along rather than",
+  "  orphaning the book numbers): the poor/adequate/good/superior",
+  "  kit setup rules (1/2/3-turn setup minimums, one-turn-less",
+  "  takedown at 5 rounds/1 turn/2 turns, the 1-turn helper",
+  "  saving), the Table 36 column semantics (the moisture and",
+  "  wind life-span point economy - the 10-mph/5-mph wind leak",
+  "  step, the twice-threshold 25 pct damage chance, the",
+  "  1/3-use and 1/2/4 point rates, the poor 40-to-20",
+  "  collapse), the 2/4/6 pole minimums and occupancy counts;",
+  "  then the p. 64 slice: rest and comfort (the 16-hour",
+  "  active day, the 3-hour camp chores, the 5-hour sleep",
+  "  requirement) and how much sleep (the two-day trigger with",
+  "  sunrise onset, the day-by-day average rest, the one-night",
+  "  negation, the 12-to-6 movement example) plus the Table 37",
+  "  five-band grid (less-than-5/4/3/2/1 hours by eight effect",
+  "  columns: Dex 1/2/3/4/5, Str 0/1/2/3/4, Wis 0/0/1/2/3,",
+  "  Con 0/0/0/1/2, to-hit 0/-1/-1/-2/-3, climb",
+  "  0/0/-10/-20/-30, move 0/0/-25/-33/-50, weight multiple",
+  "  0/0/0/50/100). rules/wsgsleep.h NEW (77 inlines: 41",
+  "  consts + 28 bools + the eight Table 37 column switches,",
+  "  prefix wrs - checked free in regtest.cpp and the game",
+  "  sources; wsl was TAKEN, the R369 wsgslip.h lesson).",
+  "  GROUND TRUTH: two-way on the prose (the Termux tesseract",
+  "  p63_full/p64_full vs the pdfy text layer, all prose",
+  "  numbers in agreement), THREE-WAY on the contested grid",
+  "  cells: tesseract garbled the LESS-THAN-2 DEXTERITY (+4)",
+  "  and STRENGTH (+3) cells into conf-49 noise; the pdf layer",
+  "  and a VISION READ of pg-001-2.png second-confirmed the",
+  "  full grid (the R471 vision-on-png contested-cell",
+  "  settler). Gap 93/93 -> 96/90 (THREE box flips + the",
+  "  post-state line: rest and comfort, how much sleep, the",
+  "  Table 37 grid box); census 397 -> 398. rverify FULL GREEN",
+  "  pre-landing at base 663e014 (double-run 8/0 then 0/8, 109",
+  "  mutants, 0 missed) - it caught ONE spec bug: my",
+  "  penalties-deepen-monotonically table_check had an",
+  "  INVERTED comparison direction (penalties are negative;",
+  "  the bad case is next > current, not current > next) -",
+  "  fixed and re-verified; also renamed",
+  "  wrsSuperiorKitTrueStructure -> wrsSuperiorKitStructure so",
+  "  the audit block carries no True substring. Spec md5s:",
+  "  ff9f7149 authored / 7415450d +nl - the Termux read the",
+  "  +nl value exactly. LANDED CLEAN on the first ritual run:",
+  "  preflight GREEN first try (the two pre-existing warnings",
+  "  plus the untracked-note for the p63/p64 extraction files,",
+  "  wsgsleep.h and the spec - the user committed only the 5",
+  "  repo files), R473 audit bad 0, AUDIT CENSUS: 398 exactly",
+  "  once, 5 files / 2051 insertions. VERIFIED at the raw sha",
+  "  82ca9d9: the include after wsgtents.h at line 178, the",
+  "  R473 audit label with ZERO True tokens, the C37 grid",
+  "  exact (all five rows across the eight column switches,",
+  "  col_default 0 with the 999 sentinel default discipline),",
+  "  the gap 96/90 with all three boxes flipped and the",
+  "  post-state line, the spec md5 7415450d, the R472 seed",
+  "  record in place. Next: R474 - good sleep vs bad sleep",
+  "  (p. 65) with Table 38 (campfire characteristics),",
+  "  continuing the camping arc."
+ ]
+}
