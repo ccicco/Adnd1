@@ -1,0 +1,357 @@
+{
+ "round": 470,
+ "title": "the WSG purifying water slice with the tainted-water effects - the boil rule with the elevation time and evaporation ladders, the mild and severe taint durations, the taint-severity geography and the bad-water warnings, printed p. 60",
+ "prefix": "wpu",
+ "header_file": "rules/wsgpurify.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 394,
+ "inline_count": 23,
+ "audit_label": "R470 WSG purifying water pin audit",
+ "audit_comment": "The purification baseline (the 10% taint remainder after a sufficient boil, the 2-5 round boil at sea level plus the elevation time adder, the early-removal nullification, the evaporation cost ladder at the 5,000-foot break), the tainted-water effects (the mild 6-hour and severe 18-hour minimum durations vs the food 12/24), the taint-severity geography (low elevation and warm climates) and the bad-water warnings (the taste-and-appearance deception, the bacteria and poison layer, the skeletal-remains waterhole) - every const and bool verified against the model.",
+ "banner": {
+  "title": "R470: the WSG PURIFYING WATER slice with the TAINTED-WATER EFFECTS - the purification trigger (characters suspecting scavenged water is tainted, a possibility that almost always exists, can greatly reduce the chance of harm by purifying before drinking), the boil rule (assuming no magical purification, boiling the best way to remove impurities: a sufficiently long boil leaves only a 10% chance of remaining tainted, the required time 2-5 rounds - 1d4+1 - at an elevation close to sea level plus an extra 1d2 minutes for every 1,000 feet of elevation above sea level, taking the water off the fire before the required time expires doing no good), the evaporation cost (boiling reduces the volume to be drunk: at relatively low elevation - 5,000 feet or less - 5% of the water's volume lost per minute boiled, at higher elevation only 3% per minute, characters facing a shortage often going for quantity over quality), the tainted-water effects (the same as eating tainted or spoiled food: mildly tainted water hits as tainted food but with a 6-hour minimum duration instead of 12, severely tainted water as spoiled food with an 18-hour minimum instead of 24), the severity ruling (the DM decides mild or severe; severely tainted water relatively more likely in areas of low elevation such as swamps and in perennially warm or hot climates where bacteria prosper - extreme heat kills bacteria, extreme cold does not necessarily, subarctic melt ice almost as likely to carry organic impurities as temperate lake water) and the bad-water warnings (taste and appearance not reliable purity indicators - the murky brown water may be less harmful than the fresh clear liquid; some wilderness water carries illness-producing bacteria above and beyond the taint effects and some is naturally poisonous, both DM matters; a waterhole devoid of vegetation and especially one ringed with skeletal remains a dead giveaway to find a different source; even without magical aids such as detect poison, caution and common sense go a long way), printed p. 60.",
+  "provenance": "Ground truth two-way, pure prose: the user-run tesseract text of printed p. 60 (the --psm 4 run from the R469 extraction) vs the pdf embedded text layer (pdftotext -layout, pdf page 61; the archive.org djvu item still dark, the pdf layer the standing second reader). The two readers agree on every mechanic and every number: the 10% remainder, the 2-5 round boil, the 1d4+1 dice, the 1d2-minute adder per 1,000 feet, the 5,000-foot break, the 5%/3% evaporation ladder, the 6/18-hour minimum durations against the 12/24 food bases, and the skeletal-remains waterhole warning. The pdfy garbles resolve cleanly against the tesseract reads: ld4+ 1 = 1d4+1, detectpoison = detect poison, Punfymg Water = Purifying Water. No contested cells - no physical-page reads needed.",
+  "sentinel": "No printed grid in this slice - the boil rule, the elevation ladders, the taint durations and the bad-water warnings pin as consts and bools, every one audit-verified against the model."
+ },
+ "consts": [
+  {
+   "name": "wpuBoilTaintRemainPct",
+   "value": 10,
+   "comment": "if the water is boiled sufficiently long there is only a 10% chance that it will remain tainted"
+  },
+  {
+   "name": "wpuBoilRoundsMin",
+   "value": 2,
+   "comment": "the required boil time at an elevation close to sea level: 2-5 rounds (1d4+1), the dice floor"
+  },
+  {
+   "name": "wpuBoilRoundsMax",
+   "value": 5,
+   "comment": "the required boil time at sea level: the dice ceiling (4+1)"
+  },
+  {
+   "name": "wpuElevStepFt",
+   "value": 1000,
+   "comment": "an extra 1d2 minutes of boiling for every 1,000 feet of elevation above sea level: the step in feet"
+  },
+  {
+   "name": "wpuEvapBreakFt",
+   "value": 5000,
+   "comment": "the evaporation-ladder break: relatively low elevation means 5,000 feet or less"
+  },
+  {
+   "name": "wpuEvapLowPctPerMin",
+   "value": 5,
+   "comment": "at relatively low elevation (5,000 feet or less) 5% of the water volume is lost to evaporation for every minute boiled"
+  },
+  {
+   "name": "wpuEvapHighPctPerMin",
+   "value": 3,
+   "comment": "at higher elevation the evaporation loss is only 3% per minute"
+  },
+  {
+   "name": "wpuMildMinHours",
+   "value": 6,
+   "comment": "mildly tainted water hits like tainted food but with a minimum duration of 6 hours instead of 12"
+  },
+  {
+   "name": "wpuMildFoodBaseHours",
+   "value": 12,
+   "comment": "the tainted-food minimum duration baseline that the mild water taint replaces: 12 hours"
+  },
+  {
+   "name": "wpuSevereMinHours",
+   "value": 18,
+   "comment": "severely tainted water hits like spoiled food but with a minimum duration of 18 hours instead of 24"
+  },
+  {
+   "name": "wpuSevereFoodBaseHours",
+   "value": 24,
+   "comment": "the spoiled-food minimum duration baseline that the severe water taint replaces: 24 hours"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wpuSuspectTaintAlmostAlways",
+   "value": true,
+   "comment": "characters having reason to suspect scavenged water is tainted - a possibility that almost always exists - can greatly reduce the chance of harm by purifying before drinking"
+  },
+  {
+   "name": "wpuBoilBestNonmagical",
+   "value": true,
+   "comment": "assuming no magical means of purification is available, the best way to remove impurities from water is by boiling it"
+  },
+  {
+   "name": "wpuEarlyRemovalNoGood",
+   "value": true,
+   "comment": "if the water is taken off the fire before the required time has expired, the boiling will have done no good"
+  },
+  {
+   "name": "wpuQuantityOverQuality",
+   "value": true,
+   "comment": "faced with a choice between not having enough water and risking the ill effects of unpurified water, characters may often decide to go for quantity over quality - the evaporation cost is why one would stop boiling early"
+  },
+  {
+   "name": "wpuEffectsMatchTaintedFood",
+   "value": true,
+   "comment": "in essence the effects of drinking tainted water are the same as the effects of eating tainted or spoiled food (see the Food Gathering text); only the minimum durations differ"
+  },
+  {
+   "name": "wpuSeverityDMRuling",
+   "value": true,
+   "comment": "the Dungeon Master must decide whether a certain supply of bad water is mildly or severely tainted"
+  },
+  {
+   "name": "wpuSevereLikelyLowWarm",
+   "value": true,
+   "comment": "severely tainted water is relatively more likely in areas of low elevation (such as swamps) and in perennially warm or hot climates where bacteria prosper because of the temperature"
+  },
+  {
+   "name": "wpuColdDoesNotKill",
+   "value": true,
+   "comment": "extreme heat (boiling) kills bacteria, but extreme cold does not necessarily have the same effect: water melted from subarctic ice is almost as likely to contain organic impurities as water dipped from a temperate lake"
+  },
+  {
+   "name": "wpuTasteNotIndicator",
+   "value": true,
+   "comment": "the taste and appearance of water are not always indicators of its purity: characters should not necessarily refrain from murky or strangely colored water - the brown water may actually be less harmful than the fresh, clear liquid saved for a special occasion"
+  },
+  {
+   "name": "wpuBacteriaAndPoisonLayer",
+   "value": true,
+   "comment": "some wilderness water may carry bacteria producing illness above and beyond the taint effects, and some naturally occurring water may actually be poisonous - whether these occur and their effects are DM matters"
+  },
+  {
+   "name": "wpuWaterholeDeadGiveaway",
+   "value": true,
+   "comment": "if the area surrounding a waterhole is devoid of vegetation, and especially if it contains skeletal remains, characters should consider those signs strong evidence for finding a different water source - a dead giveaway"
+  },
+  {
+   "name": "wpuCautionCommonSense",
+   "value": true,
+   "comment": "even in the absence of magical aids (such as detect poison), caution and common sense can go a long way toward steering clear of very bad water"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the boil time at sea level: 2-5 rounds (1d4+1)",
+   "expr": "m['wpuBoilRoundsMin']() != 2 or m['wpuBoilRoundsMax']() != 5 or m['wpuBoilRoundsMin']() >= m['wpuBoilRoundsMax']()"
+  },
+  {
+   "note": "the taint remainder after a sufficient boil: only 10%",
+   "expr": "m['wpuBoilTaintRemainPct']() != 10"
+  },
+  {
+   "note": "the evaporation ladder: the 5,000-foot break with 5% below and 3% above",
+   "expr": "m['wpuEvapBreakFt']() != 5000 or m['wpuEvapLowPctPerMin']() != 5 or m['wpuEvapHighPctPerMin']() != 3 or m['wpuEvapLowPctPerMin']() <= m['wpuEvapHighPctPerMin']()"
+  },
+  {
+   "note": "the elevation adder: an extra 1d2 minutes per 1,000 feet",
+   "expr": "m['wpuElevStepFt']() != 1000"
+  },
+  {
+   "note": "the mild taint: a 6-hour minimum against the 12-hour food baseline",
+   "expr": "m['wpuMildMinHours']() != 6 or m['wpuMildFoodBaseHours']() != 12 or m['wpuMildMinHours']() >= m['wpuMildFoodBaseHours']()"
+  },
+  {
+   "note": "the severe taint: an 18-hour minimum against the 24-hour food baseline",
+   "expr": "m['wpuSevereMinHours']() != 18 or m['wpuSevereFoodBaseHours']() != 24 or m['wpuSevereMinHours']() >= m['wpuSevereFoodBaseHours']()"
+  },
+  {
+   "note": "the severe ladder climbs above the mild ladder",
+   "expr": "m['wpuSevereMinHours']() <= m['wpuMildMinHours']()"
+  },
+  {
+   "note": "the boil mechanics: the best nonmagical purification, the early-removal nullification and the quantity-over-quality tradeoff",
+   "expr": "m['wpuBoilBestNonmagical']() != 1 or m['wpuEarlyRemovalNoGood']() != 1 or m['wpuQuantityOverQuality']() != 1"
+  },
+  {
+   "note": "the taint-severity geography: the low-warm likelihood and the cold-does-not-kill exception",
+   "expr": "m['wpuSevereLikelyLowWarm']() != 1 or m['wpuColdDoesNotKill']() != 1 or m['wpuSeverityDMRuling']() != 1"
+  },
+  {
+   "note": "the bad-water warnings: the taste deception, the bacteria-and-poison layer, the skeletal-remains waterhole and the caution-and-common-sense close",
+   "expr": "m['wpuTasteNotIndicator']() != 1 or m['wpuBacteriaAndPoisonLayer']() != 1 or m['wpuWaterholeDeadGiveaway']() != 1 or m['wpuCautionCommonSense']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "Purifying water": [
+   {
+    "kind": "bool",
+    "name": "wpuSuspectTaintAlmostAlways"
+   },
+   {
+    "kind": "bool",
+    "name": "wpuBoilBestNonmagical"
+   },
+   {
+    "kind": "const",
+    "name": "wpuBoilTaintRemainPct"
+   },
+   {
+    "kind": "const",
+    "name": "wpuBoilRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wpuBoilRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wpuElevStepFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wpuEarlyRemovalNoGood"
+   },
+   {
+    "kind": "const",
+    "name": "wpuEvapBreakFt"
+   },
+   {
+    "kind": "const",
+    "name": "wpuEvapLowPctPerMin"
+   },
+   {
+    "kind": "const",
+    "name": "wpuEvapHighPctPerMin"
+   },
+   {
+    "kind": "bool",
+    "name": "wpuQuantityOverQuality"
+   }
+  ],
+  "The tainted-water effects": [
+   {
+    "kind": "bool",
+    "name": "wpuEffectsMatchTaintedFood"
+   },
+   {
+    "kind": "const",
+    "name": "wpuMildMinHours"
+   },
+   {
+    "kind": "const",
+    "name": "wpuMildFoodBaseHours"
+   },
+   {
+    "kind": "const",
+    "name": "wpuSevereMinHours"
+   },
+   {
+    "kind": "const",
+    "name": "wpuSevereFoodBaseHours"
+   },
+   {
+    "kind": "bool",
+    "name": "wpuSeverityDMRuling"
+   },
+   {
+    "kind": "bool",
+    "name": "wpuSevereLikelyLowWarm"
+   },
+   {
+    "kind": "bool",
+    "name": "wpuColdDoesNotKill"
+   }
+  ],
+  "The bad-water warnings": [
+   {
+    "kind": "bool",
+    "name": "wpuTasteNotIndicator"
+   },
+   {
+    "kind": "bool",
+    "name": "wpuBacteriaAndPoisonLayer"
+   },
+   {
+    "kind": "bool",
+    "name": "wpuWaterholeDeadGiveaway"
+   },
+   {
+    "kind": "bool",
+    "name": "wpuCautionCommonSense"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "purifying water",
+   "from": "  - [ ] Purifying water (p. 60)",
+   "to": "  - [x] Purifying water (p. 60) - R470: the boil rule with the elevation time and evaporation ladders, the mild and severe taint durations, the taint-severity geography and the bad-water warnings pin as rules/wsgpurify.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R469: 88 closed, 98 open (the R469 round continues the chapter - water in the desert with the permafrost discussion pins as rules/wsgdesert.h; the next round continues - purifying water (p. 60) with the tainted-water effects).",
+   "to": "Post-state at R470: 89 closed, 97 open (the R470 round closes the water chapter arc - purifying water with the tainted-water effects pins as rules/wsgpurify.h; the next round opens the camping and campfires arc - natural shelters (p. 61), pp. 61-68)."
+  }
+ ],
+ "gap_census": {
+  "closed": 89,
+  "open": 97
+ },
+ "include_comment": "the WSG purifying water and tainted water",
+ "include_after": "#include \"rules/wsgdesert.h\"  // R469: the WSG water in the desert and permafrost",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R469 LANDED 2026-10-15: commit 13ebab2 (census 394, pushed",
+ "prev_record": [
+  "- R469 LANDED 2026-10-15: commit 13ebab2 (census 394, pushed",
+  "  7ff85f9..13ebab2), the WSG WATER IN THE DESERT slice with the\n  PERMAFROST",
+  "  discussion, printed p. 60 - PURE PROSE round, no\n  table: the desert water",
+  "  economy (deserts the most arid\n  terrain, pitifully little rainfall quickly",
+  "  lost to\n  evaporation in hot climates or to absorption in sandy or",
+  "  loose-soil ground, but some of the water that gets into the\n  ground stays",
+  "  there and can be recovered with effort,\n  perhaps some skill and more than a",
+  "  little bit of luck), the\n  dig chance (at any given desert location a 40%",
+  "  chance that\n  water lies 5-15 feet - 2d6+3 - beneath the surface and a\n  60%",
+  "  chance of finding no water no matter how deep the\n  party digs), the desert",
+  "  survival proficiency boost (a\n  proficient character finds water at 80%",
+  "  instead of 40%)\n  and the two-tries limit (as with any other attempt at",
+  "  finding water, only two tries in any 24-hour period), plus\n  the permafrost",
+  "  mechanics (the subarctic warm-season\n  condition with the temperature",
+  "  generally above freezing at\n  least during daylight hours, the soil thawing",
+  "  to a depth of\n  several inches with small vegetation taking root on the",
+  "  released water, the thin layer of arable soil over\n  permanently frozen",
+  "  subsoil, permafrost a dependable source\n  of water with the harvest",
+  "  technique: remove the upper\n  layer of soil, chop out the iced-up soil",
+  "  beneath it and\n  expose it to heat, the soil and sediment settling to the",
+  "  bottom when the ice melts and the water poured off - the\n  harvest sentence",
+  "  seaming from the p. 59 right-column tail\n  onto the p. 60 top right).",
+  "  rules/wsgdesert.h NEW (15\n  inlines: 5 consts - wdsDigFindPct 40,",
+  "  wdsNoWaterPct 60,\n  wdsProfFindPct 80, wdsDepthMinFt 5, wdsDepthMaxFt 15 -",
+  "  plus 10 bools, prefix wds, checked free). GROUND TRUTH\n  two-way, no",
+  "  contested cells, no physical-page reads: the\n  user-run Termux tesseract",
+  "  text of printed p. 60 (the\n  --psm 4 run) vs the pdf embedded text layer",
+  "  (pdftotext -layout, pdf page 61) - the archive.org djvu\n  item went DARK",
+  "  this round (an error page on every fetch),\n  so the pdf text layer stood in",
+  "  as the second reader and\n  performed cleanly; the two readers agreed on",
+  "  every\n  mechanic and every number. Gap 87/99 -> 88/98 (one box\n  flip + the",
+  "  post-state line); census 393 -> 394. rverify\n  FULL GREEN pre-landing at",
+  "  base 7ff85f9 (double-run 6/0\n  then 0/6, 15 mutants, 0 missed). Spec md5s:",
+  "  939f0f9b\n  authored / f4893ddb +nl - the Termux read the +nl value",
+  "  exactly. LANDED CLEAN on the first ritual run: preflight\n  GREEN first try",
+  "  (only the two pre-existing warnings), R469\n  audit bad 0, AUDIT CENSUS: 394",
+  "  exactly once, 5 files /\n  595 insertions. VERIFIED at the raw sha 13ebab2:",
+  "  the\n  include after wsgwhere.h at line 174, the R469 audit\n  label twice",
+  "  with ZERO True tokens in the emitted block\n  (the R468 lesson applied -",
+  "  bools compare != 1, C-clean as\n  emitted), the gap 88/98 with the",
+  "  water-in-the-desert box\n  flipped and its post-state line, the spec md5",
+  "  f4893ddb,\n  the R468 seed record in place. Next: R470 - purifying\n  water",
+  "  (p. 60) with the tainted-water effects (the 10%\n  boil-taint remainder, the",
+  "  2-5 round boil at sea level plus\n  1d2 minutes per 1,000 feet of elevation,",
+  "  the 5%/3%\n  evaporation ladder at the 5,000-foot break, the 6-hour\n  mild",
+  "  and 18-hour severe minimum durations) and the\n  bad-water/skeletal-remains",
+  "  waterhole warning."
+ ]
+}

@@ -4351,6 +4351,103 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   discussion (p. 60), then purifying water (p. 60) with the
   tainted-water
   effects.
+- R469 LANDED 2026-10-15: commit 13ebab2 (census 394, pushed
+  7ff85f9..13ebab2), the WSG WATER IN THE DESERT slice with the
+  PERMAFROST
+  discussion, printed p. 60 - PURE PROSE round, no
+  table: the desert water
+  economy (deserts the most arid
+  terrain, pitifully little rainfall quickly
+  lost to
+  evaporation in hot climates or to absorption in sandy or
+  loose-soil ground, but some of the water that gets into the
+  ground stays
+  there and can be recovered with effort,
+  perhaps some skill and more than a
+  little bit of luck), the
+  dig chance (at any given desert location a 40%
+  chance that
+  water lies 5-15 feet - 2d6+3 - beneath the surface and a
+  60%
+  chance of finding no water no matter how deep the
+  party digs), the desert
+  survival proficiency boost (a
+  proficient character finds water at 80%
+  instead of 40%)
+  and the two-tries limit (as with any other attempt at
+  finding water, only two tries in any 24-hour period), plus
+  the permafrost
+  mechanics (the subarctic warm-season
+  condition with the temperature
+  generally above freezing at
+  least during daylight hours, the soil thawing
+  to a depth of
+  several inches with small vegetation taking root on the
+  released water, the thin layer of arable soil over
+  permanently frozen
+  subsoil, permafrost a dependable source
+  of water with the harvest
+  technique: remove the upper
+  layer of soil, chop out the iced-up soil
+  beneath it and
+  expose it to heat, the soil and sediment settling to the
+  bottom when the ice melts and the water poured off - the
+  harvest sentence
+  seaming from the p. 59 right-column tail
+  onto the p. 60 top right).
+  rules/wsgdesert.h NEW (15
+  inlines: 5 consts - wdsDigFindPct 40,
+  wdsNoWaterPct 60,
+  wdsProfFindPct 80, wdsDepthMinFt 5, wdsDepthMaxFt 15 -
+  plus 10 bools, prefix wds, checked free). GROUND TRUTH
+  two-way, no
+  contested cells, no physical-page reads: the
+  user-run Termux tesseract
+  text of printed p. 60 (the
+  --psm 4 run) vs the pdf embedded text layer
+  (pdftotext -layout, pdf page 61) - the archive.org djvu
+  item went DARK
+  this round (an error page on every fetch),
+  so the pdf text layer stood in
+  as the second reader and
+  performed cleanly; the two readers agreed on
+  every
+  mechanic and every number. Gap 87/99 -> 88/98 (one box
+  flip + the
+  post-state line); census 393 -> 394. rverify
+  FULL GREEN pre-landing at
+  base 7ff85f9 (double-run 6/0
+  then 0/6, 15 mutants, 0 missed). Spec md5s:
+  939f0f9b
+  authored / f4893ddb +nl - the Termux read the +nl value
+  exactly. LANDED CLEAN on the first ritual run: preflight
+  GREEN first try
+  (only the two pre-existing warnings), R469
+  audit bad 0, AUDIT CENSUS: 394
+  exactly once, 5 files /
+  595 insertions. VERIFIED at the raw sha 13ebab2:
+  the
+  include after wsgwhere.h at line 174, the R469 audit
+  label twice
+  with ZERO True tokens in the emitted block
+  (the R468 lesson applied -
+  bools compare != 1, C-clean as
+  emitted), the gap 88/98 with the
+  water-in-the-desert box
+  flipped and its post-state line, the spec md5
+  f4893ddb,
+  the R468 seed record in place. Next: R470 - purifying
+  water
+  (p. 60) with the tainted-water effects (the 10%
+  boil-taint remainder, the
+  2-5 round boil at sea level plus
+  1d2 minutes per 1,000 feet of elevation,
+  the 5%/3%
+  evaporation ladder at the 5,000-foot break, the 6-hour
+  mild
+  and 18-hour severe minimum durations) and the
+  bad-water/skeletal-remains
+  waterhole warning.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

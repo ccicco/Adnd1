@@ -90,7 +90,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Finding water (p. 58) - R467: the two-checks-per-day rule with the auto-fail gate, the snow-and-ice exception with the ice taint rule, the seacoast dig mechanics and the water-quality guidelines pin as rules/wsgwater.h
   - [x] Where water is found (p. 59) - R468: the standing-water basis, the drought DM reduction, the water-table depth rules by elevation and terrain, the dig-for-water chance and the vegetation source pin as rules/wsgwhere.h
   - [x] Water in the desert (p. 60) - R469: the 40/60 desert dig split with the 5-15 foot depth band, the desert survival proficiency boost to 80%, the two-tries limit and the permafrost definition and harvest technique pin as rules/wsgdesert.h
-  - [ ] Purifying water (p. 60)
+  - [x] Purifying water (p. 60) - R470: the boil rule with the elevation time and evaporation ladders, the mild and severe taint durations, the taint-severity geography and the bad-water warnings pin as rules/wsgpurify.h
 - [ ] **Camping and campfires** (pp. 61-68)
   - [ ] Natural shelters (p. 61)
   - [ ] Portable shelters (p. 62)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R469: 88 closed, 98 open (the R469 round continues the chapter - water in the desert with the permafrost discussion pins as rules/wsgdesert.h; the next round continues - purifying water (p. 60) with the tainted-water effects).
+Post-state at R470: 89 closed, 97 open (the R470 round closes the water chapter arc - purifying water with the tainted-water effects pins as rules/wsgpurify.h; the next round opens the camping and campfires arc - natural shelters (p. 61), pp. 61-68).
