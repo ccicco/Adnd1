@@ -5157,6 +5157,43 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   406 -> 407; the gap flips 108/78 -> 109/77, opening the
   vision chapter.
   Next: R483 - infravision (p. 73) with Table 41
+- R483 LANDED 2026-10-15: commit 19d5d92 (census 408, pushed
+  c221b26..19d5d92), the WSG INFRAVISION and TABLE 41 slice,
+  printed p. 73 - the second vision-and-visibility round,
+  a TABLE round: the heat-vision definition (infravision sees
+  the shapes of objects by sensing radiation in the infrared
+  spectrum; all nonhuman player characters have it, most out
+  to 60 yards outdoor scale, halflings other than pure-
+  blooded Stouts 30, drow duergar and deep gnomes 120) and
+  Table 41, the outdoor range of normal vision in yards for
+  six conditions across four light levels - clear 500/300/
+  50/25, overcast 400/250/50/25, moderate fog 150/100/25/15,
+  heavy fog rain or snow 50/30/15/10, heavy snow with wind
+  35/25/10/5, blowing sand or dust 20/20/10/5 - plus the
+  size semantics (the range spots a size M object that
+  stands out, double for size L, halve for size S), the
+  long-range concentration and no-concealment assumption,
+  the prone orc and three-foot-grass hiding rules, the
+  daylight dual-scan gaze discipline (long and short range
+  at once, full speed, gaze shifting every few seconds) and
+  the moonlight/darkness footing discipline (scan degrades,
+  a lone traveler watches his footing, a group splits
+  lookout duty, stop-and-peer is safest but no guard
+  against a nearby silent moving hazard). THE SETTLE:
+  two-way clean on the first pass - the tesseract, pdfy
+  and tsv reads agree on every number of the page (all 24
+  grid cells, the two-line rows confirmed cell by cell);
+  the infravision paragraph cuts mid-word at the page
+  bottom, its continuation riding with p. 74. The spec
+  md5 pair: authored 78259c1a4bebd3277a7c3b0fb8ea9eb7,
+  as-built 211f29db9d605adff4e6a5672077f63d (the Termux
+  md5 hit the +nl pair value exactly). rverify at c221b26:
+  51 mutants, 0 missed (24 grid cells + 7 consts + 20
+  bools); inline_count 31; the include lands after
+  wsgnvis.h at line 188; census 407 -> 408; the gap flips
+  109/77 -> 111/75 (both the infravision prose box AND the
+  Table 41 box), the R482 seed record in place.
+  Next: R484 - ultravision (p. 74)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

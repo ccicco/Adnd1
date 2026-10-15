@@ -109,7 +109,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Vision and visibility** (pp. 72-75)
   - [x] Normal vision (p. 72) - R482: the visible-spectrum definition with the 500-yard effective range, the size-based sighting distances and the obstruction and elevation semantics pin as rules/wsgnvis.h
   - [x] Infravision (p. 73) - R483: the heat-vision definition with the 60/30/120 infravisual ranges pin as rules/wsginfra.h
-  - [ ] Ultravision (p. 74)
+  - [x] Ultravision (p. 74) - R484: the infravision effectiveness rules with the color scale and the ultravision definition with its range modifiers pin as rules/wsgultra.h
   - [ ] Artificial illumination (p. 74)
 - [ ] **Natural hazards in the wilderness** (pp. 76-83)
   - [ ] Volcanoes (p. 76)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 41: outdoor range of normal vision** (p. 73) - R483: the six-condition light-level grid pins as rules/wsginfra.h
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R483: 111 closed, 75 open (the R483 round continues the vision and visibility chapter - the infravision definition with the Table 41 outdoor range grid pins as rules/wsginfra.h; the next round continues - ultravision (p. 74)).
+Post-state at R484: 112 closed, 74 open (the R484 round continues the vision and visibility chapter - the infravision effectiveness rules with the ultravision definition and range modifiers pin as rules/wsgultra.h; the next round continues - artificial illumination (p. 74)).

@@ -1,0 +1,769 @@
+{
+ "round": 484,
+ "title": "the WSG ultravision and infravision effectiveness slice - the heat-as-light color scale with the temperature bands, the surface-temperature perception rules, heat blindness and the cold-blooded bar, and the ultravision definition with its five range modifiers, printed p. 74",
+ "prefix": "wuv",
+ "header_file": "rules/wsgultra.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 408,
+ "inline_count": 71,
+ "audit_label": "R484 WSG ultravision pin audit",
+ "audit_comment": "The ultravision and infravision effectiveness rules: infravision is useless in daylight or under artificial illumination stronger than moonlight, the normally visible light overriding the heat radiation. A character using infravision sees heat as light - very cold objects very dark, hot objects very bright, temperatures between the two as varying shades of gray - with the color of objects classified on a scale from 1 (pitch black, below -50) to 10 (excruciatingly bright, above 130), the interior bands -50 to -11, -10 to 15, 16 to 32, 33 to 50, 51 to 70, 71 to 90, 91 to 110 and 111 to 130 each contiguous with its neighbors. The air temperature dictates the overall brightness; a surface temperature warmer or colder than the air shows as a brighter or darker image. A human (body temperature approximately 98 degrees) in normal clothing appears brighter than his surroundings when the air is 90 or lower, as do demi-humans and most size M humanoids; a human bundled in heavy clothing matches the air and is undetectable, save small uncovered spots of brightness - or darkness in very hot air. Obstruction blocks detection as with normal vision, but a great source of heat or cold may be indirectly detectable through the air it warms: a campfire behind a large rock shows the rock's near side as a dark shape against a lighter background. Extreme heat or cold with everything at one temperature renders infravision useless - below -50 all pitch black, above 130 a blanket of almost blinding brightness - and sudden close proximity to great heat (a wall of fire) inflicts heat blindness, burning the power out until cure blindness, or temporarily blinding to infrared rays for 5-10 turns (1d6+4). Cold-blooded creatures (reptiles, insects, most nonmammalians) are undetectable at air temperature, but magic that abruptly changes the air temperature reveals them briefly. Ultravision, or night vision, sees into the ultraviolet range, distinguishing colors, shapes and relative positions even in darkness; only the deep gnome has it inborn, night vision to 30 yards as if by normal vision in daylight; others gain it temporarily by magic (lens of ultravision, the magic-user or illusionist ultravision spell), capabilities varying by means. It is useless under any light brighter than moonlight - daylight or artificial illumination yields nothing but blackness - and works best on a moonless night under a clear sky: partly cloudy x 2/3, overcast x 1/2, moonlight partly cloudy x 1/3, moonlight overcast x 1/4, viewer under thick cover x 1/4, the last cumulative - a thick forest on a moonlit overcast night leaves only 1/16 of the ideal range.",
+ "banner": {
+  "title": "R484: the WSG ULTRAVISION and infravision effectiveness slice, printed p. 74 - the third vision-and-visibility round, a prose round with a pin-table interior (no printed grid): the infravision daylight bar, the heat-as-light color scale with its ten temperature bands, the surface-temperature perception examples, the obstruction and campfire rules, the extreme-climate and heat-blindness rules with the 1d6+4 recovery, the cold-blooded bar, and the ultravision definition with the deep gnome 30-yard range, the brighter-than-moonlight bar, and the five sky-condition range modifiers.",
+  "provenance": "The settle: the ten temperature bands, the 98/90 human example, the 5-10 turn (1d6+4) recovery, the deep gnome 30 yards and the 1/16 forest example read two-way clean (tesseract, pdfy and tsv agree on every number). The five sky-condition fractions were CONTESTED - both text readers garbled the fraction slashes (tesseract X 2/5, X 2, X s, X /s, X s; pdfy X 2/3, x 112, x 113, X 114, X 114) - and took six vision reads to settle: the tiny stacked numerals repeatedly pattern-completed to 1/2 on line one, but the first full-list read, the pdfy text layer (X 2/3 with a real slash) and an independent published transcription of the WSG list all agree on the descending ladder 2/3, 1/2, 1/3, 1/4, 1/4, and the book's own worked example (moonlit overcast x thick cover = 1/16) independently confirms both 1/4 entries. The artificial illumination section opens at the page bottom and is cut mid-word - it stays out of scope for the R485 round.",
+  "sentinel": "Bounds held: the ten color bands tile the scale with no gaps (each interior low is exactly one above the previous high), the recovery dice 1d6+4 spans exactly 5-10, and the five modifiers descend 2/3, 1/2, 1/3, 1/4 with thick cover cumulative into the 1/16 forest floor."
+ },
+ "consts": [
+  {
+   "name": "wuvColorScaleMin",
+   "value": 1,
+   "comment": "the infravisual color scale runs from 1"
+  },
+  {
+   "name": "wuvColorScaleMax",
+   "value": 10,
+   "comment": "to 10"
+  },
+  {
+   "name": "wuvBand2Low",
+   "value": -50,
+   "comment": "color 2: -50 to -11 (the very-cold floor is below -50)"
+  },
+  {
+   "name": "wuvBand2High",
+   "value": -11,
+   "comment": "color 2 upper bound"
+  },
+  {
+   "name": "wuvBand3Low",
+   "value": -10,
+   "comment": "color 3: -10 to 15"
+  },
+  {
+   "name": "wuvBand3High",
+   "value": 15,
+   "comment": "color 3 upper bound"
+  },
+  {
+   "name": "wuvBand4Low",
+   "value": 16,
+   "comment": "color 4: 16 to 32"
+  },
+  {
+   "name": "wuvBand4High",
+   "value": 32,
+   "comment": "color 4 upper bound"
+  },
+  {
+   "name": "wuvBand5Low",
+   "value": 33,
+   "comment": "color 5: 33 to 50"
+  },
+  {
+   "name": "wuvBand5High",
+   "value": 50,
+   "comment": "color 5 upper bound"
+  },
+  {
+   "name": "wuvBand6Low",
+   "value": 51,
+   "comment": "color 6: 51 to 70"
+  },
+  {
+   "name": "wuvBand6High",
+   "value": 70,
+   "comment": "color 6 upper bound"
+  },
+  {
+   "name": "wuvBand7Low",
+   "value": 71,
+   "comment": "color 7: 71 to 90"
+  },
+  {
+   "name": "wuvBand7High",
+   "value": 90,
+   "comment": "color 7 upper bound"
+  },
+  {
+   "name": "wuvBand8Low",
+   "value": 91,
+   "comment": "color 8: 91 to 110"
+  },
+  {
+   "name": "wuvBand8High",
+   "value": 110,
+   "comment": "color 8 upper bound"
+  },
+  {
+   "name": "wuvBand9Low",
+   "value": 111,
+   "comment": "color 9: 111 to 130"
+  },
+  {
+   "name": "wuvBand9High",
+   "value": 130,
+   "comment": "color 9 upper bound (above 130 is color 10)"
+  },
+  {
+   "name": "wuvHumanBodyTempF",
+   "value": 98,
+   "comment": "human body temperature approximately 98 degrees"
+  },
+  {
+   "name": "wuvBrightBelowAirF",
+   "value": 90,
+   "comment": "a normally clothed human appears brighter than his surroundings when the air temperature is 90 or lower"
+  },
+  {
+   "name": "wuvTempBlindMinTurns",
+   "value": 5,
+   "comment": "temporary infrared blindness lasts at least 5 turns"
+  },
+  {
+   "name": "wuvTempBlindMaxTurns",
+   "value": 10,
+   "comment": "and at most 10 turns"
+  },
+  {
+   "name": "wuvTempBlindDice",
+   "value": 6,
+   "comment": "the recovery period is 1d6"
+  },
+  {
+   "name": "wuvTempBlindPlus",
+   "value": 4,
+   "comment": "plus 4 turns"
+  },
+  {
+   "name": "wuvDeepGnomeRangeYards",
+   "value": 30,
+   "comment": "the deep gnome has inborn night vision to a range of 30 yards"
+  },
+  {
+   "name": "wuvMoonlessCloudyNum",
+   "value": 2,
+   "comment": "moonless night partly cloudy: x 2/3, numerator"
+  },
+  {
+   "name": "wuvMoonlessCloudyDen",
+   "value": 3,
+   "comment": "x 2/3, denominator"
+  },
+  {
+   "name": "wuvMoonlessOvercastNum",
+   "value": 1,
+   "comment": "moonless night overcast: x 1/2, numerator"
+  },
+  {
+   "name": "wuvMoonlessOvercastDen",
+   "value": 2,
+   "comment": "x 1/2, denominator"
+  },
+  {
+   "name": "wuvMoonlightCloudyNum",
+   "value": 1,
+   "comment": "moonlight partly cloudy: x 1/3, numerator"
+  },
+  {
+   "name": "wuvMoonlightCloudyDen",
+   "value": 3,
+   "comment": "x 1/3, denominator"
+  },
+  {
+   "name": "wuvMoonlightOvercastNum",
+   "value": 1,
+   "comment": "moonlight overcast: x 1/4, numerator"
+  },
+  {
+   "name": "wuvMoonlightOvercastDen",
+   "value": 4,
+   "comment": "x 1/4, denominator"
+  },
+  {
+   "name": "wuvThickCoverNum",
+   "value": 1,
+   "comment": "viewer standing under thick cover: x 1/4, numerator"
+  },
+  {
+   "name": "wuvThickCoverDen",
+   "value": 4,
+   "comment": "x 1/4, denominator"
+  },
+  {
+   "name": "wuvForestExampleNum",
+   "value": 1,
+   "comment": "the worked example: thick forest on a moonlit overcast night = 1/16 of ideal range"
+  },
+  {
+   "name": "wuvForestExampleDen",
+   "value": 16,
+   "comment": "1/16, the cumulative product"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wuvUselessInDaylight",
+   "value": true,
+   "comment": "infravision is useless in daylight or when the viewer or the target is bathed in artificial illumination stronger than moonlight"
+  },
+  {
+   "name": "wuvVisibleLightOverrides",
+   "value": true,
+   "comment": "in such cases the normally visible light overrides the heat radiation, and the former is all that can be sensed"
+  },
+  {
+   "name": "wuvSeesHeatAsLight",
+   "value": true,
+   "comment": "a character using infravision sees heat as light"
+  },
+  {
+   "name": "wuvColdDarkHotBright",
+   "value": true,
+   "comment": "very cold objects are very dark, hot objects are very bright, and temperatures between the extremes are varying shades of gray"
+  },
+  {
+   "name": "wuvScale1PitchBlack",
+   "value": true,
+   "comment": "color 1 on the scale is pitch black"
+  },
+  {
+   "name": "wuvScale10Excruciating",
+   "value": true,
+   "comment": "color 10 on the scale is excruciatingly bright"
+  },
+  {
+   "name": "wuvAirTempDictates",
+   "value": true,
+   "comment": "the first thing to consider is the temperature of the air, which dictates the overall level of brightness perceived"
+  },
+  {
+   "name": "wuvWarmerColderShows",
+   "value": true,
+   "comment": "an object or creature with a surface temperature warmer or colder than the air appears as a brighter or darker image against the backdrop of the atmosphere"
+  },
+  {
+   "name": "wuvHumanBrightAt90OrBelow",
+   "value": true,
+   "comment": "a human in nothing thicker than normal clothing appears brighter than his surroundings when the air temperature is 90 or lower"
+  },
+  {
+   "name": "wuvDemiHumanSameRule",
+   "value": true,
+   "comment": "the same holds true for demi-humans and most size M humanoids with roughly human body temperatures"
+  },
+  {
+   "name": "wuvBundledUndetectable",
+   "value": true,
+   "comment": "a human completely bundled in heavy clothing has the same surface temperature as the surrounding air and is not detectable by infravision"
+  },
+  {
+   "name": "wuvUncoveredSpotsShow",
+   "value": true,
+   "comment": "if just a small part of the body (such as the face or hands) is uncovered, those areas appear as small spots of brightness"
+  },
+  {
+   "name": "wuvUncoveredDarkIfHot",
+   "value": true,
+   "comment": "or of darkness, if the air temperature is very high"
+  },
+  {
+   "name": "wuvObstructionBlocks",
+   "value": true,
+   "comment": "in most cases infravision will not detect an object or creature when the line of sight is obstructed - a man crouched behind a large rock is invisible, just as to normal vision"
+  },
+  {
+   "name": "wuvStrongHeatIndirect",
+   "value": true,
+   "comment": "an object or creature giving off a great amount of heat or cold might be indirectly detectable because its presence changes the temperature of the surrounding air"
+  },
+  {
+   "name": "wuvCampfireRockExample",
+   "value": true,
+   "comment": "a campfire built behind a large rock warms the air, and the side of the rock facing the viewer appears as a dark shape outlined against a lighter background"
+  },
+  {
+   "name": "wuvExtremeSameTempUseless",
+   "value": true,
+   "comment": "extreme heat or extreme cold renders infravision useless when everything in the range of vision is effectively at the same temperature"
+  },
+  {
+   "name": "wuvVeryColdPitchBlack",
+   "value": true,
+   "comment": "in a very cold climate, temperature lower than -50 degrees, everything appears pitch black"
+  },
+  {
+   "name": "wuvVeryHotBlinding",
+   "value": true,
+   "comment": "in a very hot climate, temperature higher than 130, infravision detects nothing but a blanket of almost blinding brightness"
+  },
+  {
+   "name": "wuvHeatBlindnessRisk",
+   "value": true,
+   "comment": "a character using infravision can be afflicted by heat blindness if he suddenly finds himself in close proximity to a large fire or a source of great heat"
+  },
+  {
+   "name": "wuvWallOfFireBurnout",
+   "value": true,
+   "comment": "a wall of fire springing up in front of an infraviewer burns out his infravision and renders the power useless until cure blindness or similar healing magic is applied"
+  },
+  {
+   "name": "wuvTempBlindRecover",
+   "value": true,
+   "comment": "in a less extreme case the viewer is only temporarily blinded to infrared rays while his eyes recover from the shock"
+  },
+  {
+   "name": "wuvColdBloodedUndetected",
+   "value": true,
+   "comment": "infravision will not detect cold-blooded creatures (reptiles, insects, and most other nonmammalian creatures) because their temperature is the same as that of the surrounding air"
+  },
+  {
+   "name": "wuvMagicTempReveals",
+   "value": true,
+   "comment": "if magic abruptly changes the temperature of the surrounding air, a cold-blooded creature stands out against the background for a short time because its body temperature does not change that quickly"
+  },
+  {
+   "name": "wuvNightVisionDefinition",
+   "value": true,
+   "comment": "ultravision, or night vision, is the ability to see into the ultraviolet range of the spectrum and thereby distinguish objects from their surroundings even in darkness"
+  },
+  {
+   "name": "wuvDarknessRedefined",
+   "value": true,
+   "comment": "for an ultraviewer the word darkness takes on a different meaning: he can distinguish colors, shapes, and the relative position of objects even in the absence of light in the normal visible spectrum"
+  },
+  {
+   "name": "wuvDeepGnomeOnly",
+   "value": true,
+   "comment": "only one character race, the deep gnome, has inborn ultravisual capabilities"
+  },
+  {
+   "name": "wuvDeepGnomeDaylightQuality",
+   "value": true,
+   "comment": "objects within the deep gnome's night vision range are visible to him just as if he was using normal vision during daylight"
+  },
+  {
+   "name": "wuvMagicalAcquisition",
+   "value": true,
+   "comment": "other characters can acquire ultravision temporarily through magical means, such as a lens of ultravision and the ultravision spell, cast by a magic-user or an illusionist"
+  },
+  {
+   "name": "wuvMagicalCapabilitiesVary",
+   "value": true,
+   "comment": "the exact capabilities bestowed by magical ultravision (range and amount of illumination perceived) vary depending on the means employed"
+  },
+  {
+   "name": "wuvUltraUselessInLight",
+   "value": true,
+   "comment": "as with infravision, ultravision is useless when the viewer or the target is illuminated by any light source brighter than moonlight"
+  },
+  {
+   "name": "wuvUltraDaylightBlackness",
+   "value": true,
+   "comment": "a character trying to use ultravision in daylight or in an area affected by artificial illumination sees nothing but blackness"
+  },
+  {
+   "name": "wuvBestMoonlessClear",
+   "value": true,
+   "comment": "ultravision works best during a moonless night under a clear sky"
+  },
+  {
+   "name": "wuvThickCoverCumulative",
+   "value": true,
+   "comment": "the thick-cover modifier is cumulative with any other modifier that applies"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the interior color bands are contiguous: each band's low is one above the previous band's high",
+   "expr": "m['wuvBand3Low']() != m['wuvBand2High']() + 1 or m['wuvBand4Low']() != m['wuvBand3High']() + 1 or m['wuvBand5Low']() != m['wuvBand4High']() + 1 or m['wuvBand6Low']() != m['wuvBand5High']() + 1 or m['wuvBand7Low']() != m['wuvBand6High']() + 1 or m['wuvBand8Low']() != m['wuvBand7High']() + 1 or m['wuvBand9Low']() != m['wuvBand8High']() + 1"
+  },
+  {
+   "note": "the 5-10 turn recovery is 1d6+4: min is one on the die plus the plus, max is sides plus the plus",
+   "expr": "m['wuvTempBlindMinTurns']() != 1 + m['wuvTempBlindPlus']() or m['wuvTempBlindMaxTurns']() != m['wuvTempBlindDice']() + m['wuvTempBlindPlus']()"
+  },
+  {
+   "note": "the worked human example: body 98, brighter than surroundings at air 90 or lower",
+   "expr": "m['wuvHumanBodyTempF']() != 98 or m['wuvBrightBelowAirF']() != 90"
+  },
+  {
+   "note": "the thick forest on a moonlit overcast night: 1/4 times 1/4 = 1/16 of ideal range",
+   "expr": "m['wuvForestExampleNum']() != m['wuvThickCoverNum']() * m['wuvMoonlightOvercastNum']() or m['wuvForestExampleDen']() != m['wuvThickCoverDen']() * m['wuvMoonlightOvercastDen']()"
+  },
+  {
+   "note": "the modifier ladder descends: 2/3 over 1/2 over 1/3 (cross-multiplied, strict)",
+   "expr": "m['wuvMoonlessCloudyNum']() * m['wuvMoonlessOvercastDen']() <= m['wuvMoonlessCloudyDen']() * m['wuvMoonlessOvercastNum']() or m['wuvMoonlessOvercastNum']() * m['wuvMoonlightCloudyDen']() <= m['wuvMoonlessOvercastDen']() * m['wuvMoonlightCloudyNum']() or m['wuvMoonlightCloudyNum']() * m['wuvMoonlightOvercastDen']() <= m['wuvMoonlightCloudyDen']() * m['wuvMoonlightOvercastNum']()"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "The infravision daylight bar": [
+   {
+    "kind": "bool",
+    "name": "wuvUselessInDaylight"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvVisibleLightOverrides"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvSeesHeatAsLight"
+   }
+  ],
+  "The heat-as-light color scale": [
+   {
+    "kind": "const",
+    "name": "wuvColorScaleMin"
+   },
+   {
+    "kind": "const",
+    "name": "wuvColorScaleMax"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvColdDarkHotBright"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvScale1PitchBlack"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvScale10Excruciating"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand2Low"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand2High"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand3Low"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand3High"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand4Low"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand4High"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand5Low"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand5High"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand6Low"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand6High"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand7Low"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand7High"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand8Low"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand8High"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand9Low"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBand9High"
+   }
+  ],
+  "The surface temperature examples": [
+   {
+    "kind": "bool",
+    "name": "wuvAirTempDictates"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvWarmerColderShows"
+   },
+   {
+    "kind": "const",
+    "name": "wuvHumanBodyTempF"
+   },
+   {
+    "kind": "const",
+    "name": "wuvBrightBelowAirF"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvHumanBrightAt90OrBelow"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvDemiHumanSameRule"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvBundledUndetectable"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvUncoveredSpotsShow"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvUncoveredDarkIfHot"
+   }
+  ],
+  "The obstruction and campfire rules": [
+   {
+    "kind": "bool",
+    "name": "wuvObstructionBlocks"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvStrongHeatIndirect"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvCampfireRockExample"
+   }
+  ],
+  "The extremes and heat blindness": [
+   {
+    "kind": "bool",
+    "name": "wuvExtremeSameTempUseless"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvVeryColdPitchBlack"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvVeryHotBlinding"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvHeatBlindnessRisk"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvWallOfFireBurnout"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvTempBlindRecover"
+   },
+   {
+    "kind": "const",
+    "name": "wuvTempBlindMinTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wuvTempBlindMaxTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wuvTempBlindDice"
+   },
+   {
+    "kind": "const",
+    "name": "wuvTempBlindPlus"
+   }
+  ],
+  "The cold-blooded bar": [
+   {
+    "kind": "bool",
+    "name": "wuvColdBloodedUndetected"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvMagicTempReveals"
+   }
+  ],
+  "The ultravision definition and ranges": [
+   {
+    "kind": "bool",
+    "name": "wuvNightVisionDefinition"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvDarknessRedefined"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvDeepGnomeOnly"
+   },
+   {
+    "kind": "const",
+    "name": "wuvDeepGnomeRangeYards"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvDeepGnomeDaylightQuality"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvMagicalAcquisition"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvMagicalCapabilitiesVary"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvUltraUselessInLight"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvUltraDaylightBlackness"
+   }
+  ],
+  "The sky-condition range modifiers": [
+   {
+    "kind": "bool",
+    "name": "wuvBestMoonlessClear"
+   },
+   {
+    "kind": "const",
+    "name": "wuvMoonlessCloudyNum"
+   },
+   {
+    "kind": "const",
+    "name": "wuvMoonlessCloudyDen"
+   },
+   {
+    "kind": "const",
+    "name": "wuvMoonlessOvercastNum"
+   },
+   {
+    "kind": "const",
+    "name": "wuvMoonlessOvercastDen"
+   },
+   {
+    "kind": "const",
+    "name": "wuvMoonlightCloudyNum"
+   },
+   {
+    "kind": "const",
+    "name": "wuvMoonlightCloudyDen"
+   },
+   {
+    "kind": "const",
+    "name": "wuvMoonlightOvercastNum"
+   },
+   {
+    "kind": "const",
+    "name": "wuvMoonlightOvercastDen"
+   },
+   {
+    "kind": "const",
+    "name": "wuvThickCoverNum"
+   },
+   {
+    "kind": "const",
+    "name": "wuvThickCoverDen"
+   },
+   {
+    "kind": "bool",
+    "name": "wuvThickCoverCumulative"
+   },
+   {
+    "kind": "const",
+    "name": "wuvForestExampleNum"
+   },
+   {
+    "kind": "const",
+    "name": "wuvForestExampleDen"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the ultravision box",
+   "from": "  - [ ] Ultravision (p. 74)",
+   "to": "  - [x] Ultravision (p. 74) - R484: the infravision effectiveness rules with the color scale and the ultravision definition with its range modifiers pin as rules/wsgultra.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R483: 111 closed, 75 open (the R483 round continues the vision and visibility chapter - the infravision definition with the Table 41 outdoor range grid pins as rules/wsginfra.h; the next round continues - ultravision (p. 74)).",
+   "to": "Post-state at R484: 112 closed, 74 open (the R484 round continues the vision and visibility chapter - the infravision effectiveness rules with the ultravision definition and range modifiers pin as rules/wsgultra.h; the next round continues - artificial illumination (p. 74))."
+  }
+ ],
+ "gap_census": {
+  "closed": 112,
+  "open": 74
+ },
+ "include_comment": "the WSG ultravision and infravision effectiveness rules",
+ "include_after": "#include \"rules/wsginfra.h\"  // R483: the WSG infravision and Table 41 range rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R483 LANDED 2026-10-15: commit 19d5d92 (census 408, pushed",
+ "prev_record": [
+  "- R483 LANDED 2026-10-15: commit 19d5d92 (census 408, pushed",
+  "  c221b26..19d5d92), the WSG INFRAVISION and TABLE 41 slice,",
+  "  printed p. 73 - the second vision-and-visibility round,",
+  "  a TABLE round: the heat-vision definition (infravision sees",
+  "  the shapes of objects by sensing radiation in the infrared",
+  "  spectrum; all nonhuman player characters have it, most out",
+  "  to 60 yards outdoor scale, halflings other than pure-",
+  "  blooded Stouts 30, drow duergar and deep gnomes 120) and",
+  "  Table 41, the outdoor range of normal vision in yards for",
+  "  six conditions across four light levels - clear 500/300/",
+  "  50/25, overcast 400/250/50/25, moderate fog 150/100/25/15,",
+  "  heavy fog rain or snow 50/30/15/10, heavy snow with wind",
+  "  35/25/10/5, blowing sand or dust 20/20/10/5 - plus the",
+  "  size semantics (the range spots a size M object that",
+  "  stands out, double for size L, halve for size S), the",
+  "  long-range concentration and no-concealment assumption,",
+  "  the prone orc and three-foot-grass hiding rules, the",
+  "  daylight dual-scan gaze discipline (long and short range",
+  "  at once, full speed, gaze shifting every few seconds) and",
+  "  the moonlight/darkness footing discipline (scan degrades,",
+  "  a lone traveler watches his footing, a group splits",
+  "  lookout duty, stop-and-peer is safest but no guard",
+  "  against a nearby silent moving hazard). THE SETTLE:",
+  "  two-way clean on the first pass - the tesseract, pdfy",
+  "  and tsv reads agree on every number of the page (all 24",
+  "  grid cells, the two-line rows confirmed cell by cell);",
+  "  the infravision paragraph cuts mid-word at the page",
+  "  bottom, its continuation riding with p. 74. The spec",
+  "  md5 pair: authored 78259c1a4bebd3277a7c3b0fb8ea9eb7,",
+  "  as-built 211f29db9d605adff4e6a5672077f63d (the Termux",
+  "  md5 hit the +nl pair value exactly). rverify at c221b26:",
+  "  51 mutants, 0 missed (24 grid cells + 7 consts + 20",
+  "  bools); inline_count 31; the include lands after",
+  "  wsgnvis.h at line 188; census 407 -> 408; the gap flips",
+  "  109/77 -> 111/75 (both the infravision prose box AND the",
+  "  Table 41 box), the R482 seed record in place.",
+  "  Next: R484 - ultravision (p. 74)"
+ ]
+}
