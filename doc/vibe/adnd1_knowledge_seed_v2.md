@@ -4938,6 +4938,42 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   build this round - applying the R475 whichever/minimum
   lesson at design time (all ladder and equality checks
   checked against the book semantics before building) pays.
+- R477 LANDED 2026-10-15: commit 15093c4 (census 402, pushed
+  21d9e59..15093c4), the WSG DAMAGE FROM FIRE slice, printed
+  p. 68 - the seventh camping-arc round, closing the FIRE
+  chapter, a pure prose round with NO table: the advance and
+  firebreak prose (an uncontrollable fire advances at
+  one-half of the wind velocity or 5 mph in any case; a trot
+  stays ahead in calm air or light breeze; the firebreak of
+  churned, cleared ground with dig and move earth and the
+  18-strength spade of colossal excavation; the cut-in-half
+  ruling; the cleared-area refuge with its too-close peril),
+  the engulfment rule (10-15 points per round as 1d6+9, cut
+  in half rounded up on a successful Constitution Check with
+  a +4 modifier to the die roll, burn damage equal to
+  one-third of full normal hit points rendering the victim
+  unconscious and ending his Constitution Checks), the
+  brief-contact rule (1d8 for leaping through a wall of fire,
+  saves versus normal fire for every major item, 1d3 per
+  burning item per round until extinguished or discarded,
+  the Wisdom Check calm-hit-roll escape against the panic
+  run at top speed in a random direction taking 1d4 per
+  round until caught), and the extreme-heat rule (closer
+  than 5 feet to a large fire or 3 feet to a medium fire
+  counts as 120 degrees or higher per the Temperature Damage
+  to Characters Table, with the activity-level adjustments
+  waived). 38 inlines (17 consts, 21 bools) pin as
+  rules/wsgdmg.h with prefix wdm (wdf collided in
+  regtest.cpp); census 401 -> 402; gap 102/84 -> 103/83
+  (damage from fire p. 68 box; next: medicine and first aid
+  pp. 69-71, starting with availability of medicinal plants
+  p. 69 which carries Table 40 - expect a TABLE ROUND).
+  md5 pair: authored no-nl 6b33e7c698cca9cfe9266c2847290c1e,
+  as-built 36b2ac593182c3468cb8fd4ac7923a7f; verified at raw
+  sha on GitHub. GROUND TRUTH: two-way clean on every number,
+  no contested cells, no vision reads needed. ENGINE: the
+  audit mirror passed on the FIRST build again - design-time
+  cross-const semantics checking is now the standing habit.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

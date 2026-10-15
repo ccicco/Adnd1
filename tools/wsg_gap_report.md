@@ -102,7 +102,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Uncontrollable fires (p. 67) - R476: the four fire-discipline rules with the spark carry and catch chance, the wild-fire growth ladder with the six-turn uncontrollable bar, the extinguishing times with the water and combustible semantics, and the spread prose pin as rules/wsgblaze.h
   - [x] Damage from fire (p. 68) - R477: the firebreak and advance prose with the engulfment rule, the brief-contact and panic rules and the extreme-heat rule pin as rules/wsgdmg.h
 - [ ] **Medicine and first aid** (pp. 69-71)
-  - [ ] Availability of medicinal plants (p. 69)
+  - [x] Availability of medicinal plants (p. 69) - R478: the vegetation and locate chances with the identify-half rule and the search discipline pin as rules/wsgmed.h
   - [ ] Proficiency in plant lore (p. 70)
   - [ ] Injuries and treatment (p. 70)
   - [ ] First aid equipment (p. 71)
@@ -195,8 +195,8 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 37: effects of lack of sleep** (p. 64) - R473: the five-band grid pins inside rules/wsgsleep.h (census 397)
 - [x] **Table 38: campfire characteristics** (p. 65) - R474: the three-size grid and the warmth-at-distance ladder pin inside rules/wsgfire.h (census 398)
 - [x] **Table 39: availability of fuel** (p. 66) - R475: the temperate grid and the climate modifier grid with the every-two-turns recheck pin inside rules/wsgfuel.h (census 399)
-- [ ] **Table 40: availability of medicinal plants** (p. 69)
+- [x] **Table 40: availability of medicinal plants** (p. 69) - R478: the 34-row terrain-climate vegetation and locate grids pin as rules/wsgmed.h
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R477: 103 closed, 83 open (the R477 round closes the camping arc FIRE chapter - the damage from fire rules with the firebreak and extinguishing semantics pin as rules/wsgdmg.h; the next round continues - medicine and first aid (pp. 69-71)).
+Post-state at R478: 105 closed, 81 open (the R478 round continues the camping arc medicine chapter - the availability of medicinal plants with the Table 40 terrain-climate grids pin as rules/wsgmed.h; the next round continues - proficiency in plant lore (p. 70)).
