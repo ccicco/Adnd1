@@ -108,7 +108,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] First aid equipment (p. 71) - R481: the bandage, splint, stretcher and litter gear rules with the carry and terrain semantics pin as rules/wsgfae.h
 - [ ] **Vision and visibility** (pp. 72-75)
   - [x] Normal vision (p. 72) - R482: the visible-spectrum definition with the 500-yard effective range, the size-based sighting distances and the obstruction and elevation semantics pin as rules/wsgnvis.h
-  - [ ] Infravision (p. 73)
+  - [x] Infravision (p. 73) - R483: the heat-vision definition with the 60/30/120 infravisual ranges pin as rules/wsginfra.h
   - [ ] Ultravision (p. 74)
   - [ ] Artificial illumination (p. 74)
 - [ ] **Natural hazards in the wilderness** (pp. 76-83)
@@ -196,7 +196,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 38: campfire characteristics** (p. 65) - R474: the three-size grid and the warmth-at-distance ladder pin inside rules/wsgfire.h (census 398)
 - [x] **Table 39: availability of fuel** (p. 66) - R475: the temperate grid and the climate modifier grid with the every-two-turns recheck pin inside rules/wsgfuel.h (census 399)
 - [x] **Table 40: availability of medicinal plants** (p. 69) - R478: the 34-row terrain-climate vegetation and locate grids pin as rules/wsgmed.h
-- [ ] **Table 41: outdoor range of normal vision** (p. 73)
+- [x] **Table 41: outdoor range of normal vision** (p. 73) - R483: the six-condition light-level grid pins as rules/wsginfra.h
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R482: 109 closed, 77 open (the R482 round opens the vision and visibility chapter - the normal vision definition and range rules pin as rules/wsgnvis.h; the next round continues - infravision (p. 73)).
+Post-state at R483: 111 closed, 75 open (the R483 round continues the vision and visibility chapter - the infravision definition with the Table 41 outdoor range grid pins as rules/wsginfra.h; the next round continues - ultravision (p. 74)).

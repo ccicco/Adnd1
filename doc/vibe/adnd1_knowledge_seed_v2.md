@@ -5119,6 +5119,44 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   bools); census 405 -> 406; the gap flips 107/79 ->
   108/78, and the medicine chapter (R478-R481) is closed.
   Next: R482 - normal vision (p. 72)
+- R482 LANDED 2026-10-15: commit c221b26 (census 407, pushed
+  5fe385c..c221b26), the WSG NORMAL VISION slice, printed
+  p. 72 - the first vision-and-visibility round, a pure
+  prose round with NO table (Table 41 waits at p. 73):
+  pinned as rules/wsgnvis.h with the include after wsgfae.h
+  at line 187 (prefix wnv, free; nvi and vis both collided).
+  The chapter frame: as many as three visual senses -
+  normal vision, infravision, ultravision - each with
+  advantages in some situations. The definition: normal
+  vision is what humans and most creatures use most of the
+  time, seeing images and colors within the visible
+  spectrum between infrared and ultraviolet. The ranges:
+  in clear air during daylight the effective range is 500
+  yards (size M recognized by basic form), size S visible
+  from 250, size L from at least 1000 - or much greater
+  for a dragon or a tall building. The obstruction and
+  elevation semantics: anything in the line of sight
+  obstructs, ideal conditions are rare at shared ground
+  elevation; the worked example - a six-foot orc on a
+  flat plain visible at 500 yards drops to 250 (as if
+  size S) under three-foot grass because only half its
+  body shows; a lone mountain peak sees for miles but
+  the range is unchanged - still within 500 yards of a
+  size M to identify it; the converse: the man on the
+  peak is himself recognizable within 500 - long-range
+  visibility a blessing and a curse at once. THE SETTLE:
+  two-way clean on the first pass - both readers agree on
+  every number (the 500/250/1000, the three senses, the
+  six-foot orc, the three-foot grass); the pdfy header
+  line reads VIS1, a running-head artifact, not content.
+  The spec md5 pair: authored
+  c5f36505a7a8429003079ce4c25c243d, as-built
+  80569c22828cb5d5aa0c78bbde0f8d6c (the Termux md5 hit the
+  +nl pair value exactly). rverify at 5fe385c: 20 mutants,
+  0 missed; inline_count 20 (8 consts + 12 bools); census
+  406 -> 407; the gap flips 108/78 -> 109/77, opening the
+  vision chapter.
+  Next: R483 - infravision (p. 73) with Table 41
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

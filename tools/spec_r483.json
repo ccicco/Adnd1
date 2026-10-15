@@ -1,0 +1,439 @@
+{
+ "round": 483,
+ "title": "the WSG infravision and Table 41 slice - the heat-vision definition with the 60/30/120 infravisual ranges and the outdoor range of normal vision grid, printed p. 73",
+ "prefix": "wiv",
+ "header_file": "rules/wsginfra.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 407,
+ "inline_count": 31,
+ "audit_label": "R483 WSG infravision pin audit",
+ "audit_comment": "The infravision and Table 41 rules: infravision, or heat vision, is the ability to see the shapes of objects by sensing radiation in the infrared spectrum; all nonhuman player characters have it, most out to 60 yards (outdoor scale); halflings other than pure-blooded Stouts see 30 yards; drow, duergar and deep gnomes see 120. Table 41 gives the outdoor range of normal vision in yards for six conditions across four light levels: clear 500/300/50/25; overcast 400/250/50/25; moderate fog 150/100/25/15; heavy fog, rain or snow 50/30/15/10; heavy snow with wind 35/25/10/5; blowing sand or dust 20/20/10/5. The given range is the distance at which a viewer discerns a size M object that stands out from the terrain; double it for size L, halve it for size S. The range assumes long-range concentration and a target that is not concealed: the orc lying down on the plain is greatly harder to spot, and prone in three-foot grass it is effectively invisible until the viewer is very close. In daylight or twilight a character can scan long and short range at once by shifting his gaze every few seconds, even at full speed; in moonlight or darkness that fails - a moving character may step into a crevasse he just looked at, so a lone traveler watches his footing, a group splits lookout duty, and stopping to peer is safest but still no guard against a nearby silent moving hazard.",
+ "banner": {
+  "title": "R483: the WSG INFRAVISION and TABLE 41 slice, printed p. 73 - the second vision-and-visibility round, a TABLE round: the heat-vision definition with the 60/30/120 infravisual ranges, and the six-condition four-light-level outdoor range of normal vision grid with its size M/L/S doubling and halving semantics, the long-range concentration assumption, the prone-target and three-foot-grass hiding rules, the daylight dual-scan gaze discipline and the moonlight/darkness footing discipline.",
+  "provenance": "The settle: two-way clean on the first pass - the tesseract full-text read, the pdfy layout read and the tsv coordinate read agree on every number of the page (all 24 grid cells, the 60/30/120 infravision ranges, the double/halve factors), with the tsv confirming the two-line heavy-snow and heavy-fog rows cell by cell; the infravision paragraph is cut mid-word at the page bottom (In-), its continuation belonging to p. 74 with the ultravision round. No contested cells, no vision reads needed.",
+  "sentinel": "Bounds held: moonlight never reads below darkness in any condition, blowing sand is the one condition whose daylight equals twilight, and the deep-race range is exactly double the standard range which is exactly double the halfling range."
+ },
+ "consts": [
+  {
+   "name": "wivConditionCount",
+   "value": 6,
+   "comment": "six weather and obstruction conditions in Table 41"
+  },
+  {
+   "name": "wivLightLevelCount",
+   "value": 4,
+   "comment": "four light levels: daylight, twilight, moonlight, darkness"
+  },
+  {
+   "name": "wivSizeLDoubleFactor",
+   "value": 2,
+   "comment": "double the size M range for a size L object"
+  },
+  {
+   "name": "wivSizeSHalfFactor",
+   "value": 2,
+   "comment": "halve the size M range for a size S object"
+  },
+  {
+   "name": "wivInfravisionRangeYards",
+   "value": 60,
+   "comment": "most nonhuman player characters see this far (outdoor scale)"
+  },
+  {
+   "name": "wivHalflingRangeYards",
+   "value": 30,
+   "comment": "halflings other than pure-blooded Stouts: 30 yards"
+  },
+  {
+   "name": "wivDeepRangeYards",
+   "value": 120,
+   "comment": "drow, duergar and deep gnomes: 120 yards"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wivYardsUnits",
+   "value": true,
+   "comment": "the Table 41 entries are expressed in yards"
+  },
+  {
+   "name": "wivSizeMStandsOut",
+   "value": true,
+   "comment": "the given range is the distance at which a viewer discerns a size M object that stands out from the terrain and its surroundings"
+  },
+  {
+   "name": "wivAssumesLongRangeFocus",
+   "value": true,
+   "comment": "seeing at the given range assumes the viewer is concentrating on long-range vision"
+  },
+  {
+   "name": "wivTargetNotConcealed",
+   "value": true,
+   "comment": "the target, if one exists, is not concealed or trying to keep from being seen"
+  },
+  {
+   "name": "wivLyingDownReduces",
+   "value": true,
+   "comment": "a target lying down on a flat featureless plain is greatly harder to spot from long distance"
+  },
+  {
+   "name": "wivGrassHidesUntilClose",
+   "value": true,
+   "comment": "in three-foot-high grass a prone target is effectively invisible until the viewer is very close"
+  },
+  {
+   "name": "wivDaylightDualScan",
+   "value": true,
+   "comment": "in daylight or twilight a character can employ long-range and short-range normal vision at the same time"
+  },
+  {
+   "name": "wivGazeShiftEveryFewSeconds",
+   "value": true,
+   "comment": "the dual scan works by shifting his gaze every few seconds"
+  },
+  {
+   "name": "wivFullSpeedDualScan",
+   "value": true,
+   "comment": "in sufficient illumination a character can move at full normal speed and stay aware of features at both ranges while keeping his gaze shifting"
+  },
+  {
+   "name": "wivDarkScanDegrades",
+   "value": true,
+   "comment": "in moonlight or darkness it is much harder to keep moving and stay cognizant of short-range and long-range objects at once"
+  },
+  {
+   "name": "wivDarkFootingFirst",
+   "value": true,
+   "comment": "a lone character on the move in moonlight or darkness is usually better off watching what he is walking on"
+  },
+  {
+   "name": "wivLookoutDutySplit",
+   "value": true,
+   "comment": "two or more travelers best divide lookout duty: one peers far ahead, another watches the ground a few paces ahead"
+  },
+  {
+   "name": "wivStopAndPeerSafest",
+   "value": true,
+   "comment": "the safest way to scan the distance in poor illumination is to first come to a stop and then peer ahead"
+  },
+  {
+   "name": "wivMovingHazardUnseen",
+   "value": true,
+   "comment": "even stopped and peering, a nearby hazard moving toward him silent and unseen is not ruled out"
+  },
+  {
+   "name": "wivHeatVisionDefinition",
+   "value": true,
+   "comment": "infravision, or heat vision, is the ability to see the shapes of objects by sensing radiation in the infrared spectrum"
+  },
+  {
+   "name": "wivAllNonhumanHaveInfravision",
+   "value": true,
+   "comment": "all nonhuman player characters have infravision"
+  },
+  {
+   "name": "wivMostOutTo60Yards",
+   "value": true,
+   "comment": "most of them have it out to a range of 60 yards (outdoor scale)"
+  },
+  {
+   "name": "wivHalfling30UnlessStout",
+   "value": true,
+   "comment": "halflings other than pure-blooded Stouts have an infravisual range of 30 yards"
+  },
+  {
+   "name": "wivDeepRaces120",
+   "value": true,
+   "comment": "drow, duergar and deep gnomes have infravision out to 120 yards"
+  },
+  {
+   "name": "wivOutdoorScaleNote",
+   "value": true,
+   "comment": "the infravision ranges are outdoor scale, like the Table 41 ranges"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "wivRangeGrid",
+   "tag": "41",
+   "count": "wivConditionCount",
+   "cols": [
+    "wivDaylightYards",
+    "wivTwilightYards",
+    "wivMoonlightYards",
+    "wivDarknessYards"
+   ],
+   "col_comments": [
+    "Table 41 outdoor range in yards: daylight",
+    "Table 41 outdoor range in yards: twilight",
+    "Table 41 outdoor range in yards: moonlight",
+    "Table 41 outdoor range in yards: darkness"
+   ],
+   "col_default": 0,
+   "data": [
+    [
+     500,
+     300,
+     50,
+     25
+    ],
+    [
+     400,
+     250,
+     50,
+     25
+    ],
+    [
+     150,
+     100,
+     25,
+     15
+    ],
+    [
+     50,
+     30,
+     15,
+     10
+    ],
+    [
+     35,
+     25,
+     10,
+     5
+    ],
+    [
+     20,
+     20,
+     10,
+     5
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "clear daylight is 500 yards, the R482 effective range; doubled for size L it is the 1000 floor",
+   "expr": "m['wivDaylightYards'](0) != 500 or m['wivDaylightYards'](0) * m['wivSizeLDoubleFactor']() != 1000"
+  },
+  {
+   "note": "clear daylight halved for size S is the 250 size S distance",
+   "expr": "m['wivDaylightYards'](0) / m['wivSizeSHalfFactor']() != 250"
+  },
+  {
+   "note": "moonlight never below darkness, and blowing sand twilight EQUALS daylight (no strict drop)",
+   "expr": "m['wivMoonlightYards'](0) < m['wivDarknessYards'](0) or m['wivTwilightYards'](5) < m['wivDaylightYards'](5)"
+  },
+  {
+   "note": "the deep-race range doubles the standard range, which doubles the halfling range",
+   "expr": "m['wivDeepRangeYards']() != 2 * m['wivInfravisionRangeYards']() or m['wivInfravisionRangeYards']() != 2 * m['wivHalflingRangeYards']()"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "overcast drops clear by exactly 100 in daylight and 50 in twilight",
+   "expr": "m['wivDaylightYards'](0) - m['wivDaylightYards'](1) != 100 or m['wivTwilightYards'](0) - m['wivTwilightYards'](1) != 50"
+  },
+  {
+   "note": "the darkness column: clear and overcast tie at 25, and the two worst conditions bottom out at 5",
+   "expr": "m['wivDarknessYards'](0) != m['wivDarknessYards'](1) or m['wivDarknessYards'](4) != 5 or m['wivDarknessYards'](5) != 5"
+  }
+ ],
+ "header_sections": {
+  "Table 41: the outdoor range grid": [
+   {
+    "kind": "const",
+    "name": "wivConditionCount"
+   },
+   {
+    "kind": "const",
+    "name": "wivLightLevelCount"
+   },
+   {
+    "kind": "table",
+    "name": "wivRangeGrid"
+   }
+  ],
+  "The yard and size semantics": [
+   {
+    "kind": "bool",
+    "name": "wivYardsUnits"
+   },
+   {
+    "kind": "bool",
+    "name": "wivSizeMStandsOut"
+   },
+   {
+    "kind": "const",
+    "name": "wivSizeLDoubleFactor"
+   },
+   {
+    "kind": "const",
+    "name": "wivSizeSHalfFactor"
+   }
+  ],
+  "The gaze discipline in good light": [
+   {
+    "kind": "bool",
+    "name": "wivAssumesLongRangeFocus"
+   },
+   {
+    "kind": "bool",
+    "name": "wivTargetNotConcealed"
+   },
+   {
+    "kind": "bool",
+    "name": "wivLyingDownReduces"
+   },
+   {
+    "kind": "bool",
+    "name": "wivGrassHidesUntilClose"
+   },
+   {
+    "kind": "bool",
+    "name": "wivDaylightDualScan"
+   },
+   {
+    "kind": "bool",
+    "name": "wivGazeShiftEveryFewSeconds"
+   },
+   {
+    "kind": "bool",
+    "name": "wivFullSpeedDualScan"
+   }
+  ],
+  "The dark-terrain discipline": [
+   {
+    "kind": "bool",
+    "name": "wivDarkScanDegrades"
+   },
+   {
+    "kind": "bool",
+    "name": "wivDarkFootingFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "wivLookoutDutySplit"
+   },
+   {
+    "kind": "bool",
+    "name": "wivStopAndPeerSafest"
+   },
+   {
+    "kind": "bool",
+    "name": "wivMovingHazardUnseen"
+   }
+  ],
+  "The infravision definition and ranges": [
+   {
+    "kind": "bool",
+    "name": "wivHeatVisionDefinition"
+   },
+   {
+    "kind": "bool",
+    "name": "wivAllNonhumanHaveInfravision"
+   },
+   {
+    "kind": "const",
+    "name": "wivInfravisionRangeYards"
+   },
+   {
+    "kind": "bool",
+    "name": "wivMostOutTo60Yards"
+   },
+   {
+    "kind": "const",
+    "name": "wivHalflingRangeYards"
+   },
+   {
+    "kind": "bool",
+    "name": "wivHalfling30UnlessStout"
+   },
+   {
+    "kind": "const",
+    "name": "wivDeepRangeYards"
+   },
+   {
+    "kind": "bool",
+    "name": "wivDeepRaces120"
+   },
+   {
+    "kind": "bool",
+    "name": "wivOutdoorScaleNote"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the infravision box",
+   "from": "  - [ ] Infravision (p. 73)",
+   "to": "  - [x] Infravision (p. 73) - R483: the heat-vision definition with the 60/30/120 infravisual ranges pin as rules/wsginfra.h"
+  },
+  {
+   "note": "the Table 41 box",
+   "from": "- [ ] **Table 41: outdoor range of normal vision** (p. 73)",
+   "to": "- [x] **Table 41: outdoor range of normal vision** (p. 73) - R483: the six-condition light-level grid pins as rules/wsginfra.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R482: 109 closed, 77 open (the R482 round opens the vision and visibility chapter - the normal vision definition and range rules pin as rules/wsgnvis.h; the next round continues - infravision (p. 73)).",
+   "to": "Post-state at R483: 111 closed, 75 open (the R483 round continues the vision and visibility chapter - the infravision definition with the Table 41 outdoor range grid pins as rules/wsginfra.h; the next round continues - ultravision (p. 74))."
+  }
+ ],
+ "gap_census": {
+  "closed": 111,
+  "open": 75
+ },
+ "include_comment": "the WSG infravision and Table 41 range rules",
+ "include_after": "#include \"rules/wsgnvis.h\"  // R482: the WSG normal vision definition and range rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R482 LANDED 2026-10-15: commit c221b26 (census 407, pushed",
+ "prev_record": [
+  "- R482 LANDED 2026-10-15: commit c221b26 (census 407, pushed",
+  "  5fe385c..c221b26), the WSG NORMAL VISION slice, printed",
+  "  p. 72 - the first vision-and-visibility round, a pure",
+  "  prose round with NO table (Table 41 waits at p. 73):",
+  "  pinned as rules/wsgnvis.h with the include after wsgfae.h",
+  "  at line 187 (prefix wnv, free; nvi and vis both collided).",
+  "  The chapter frame: as many as three visual senses -",
+  "  normal vision, infravision, ultravision - each with",
+  "  advantages in some situations. The definition: normal",
+  "  vision is what humans and most creatures use most of the",
+  "  time, seeing images and colors within the visible",
+  "  spectrum between infrared and ultraviolet. The ranges:",
+  "  in clear air during daylight the effective range is 500",
+  "  yards (size M recognized by basic form), size S visible",
+  "  from 250, size L from at least 1000 - or much greater",
+  "  for a dragon or a tall building. The obstruction and",
+  "  elevation semantics: anything in the line of sight",
+  "  obstructs, ideal conditions are rare at shared ground",
+  "  elevation; the worked example - a six-foot orc on a",
+  "  flat plain visible at 500 yards drops to 250 (as if",
+  "  size S) under three-foot grass because only half its",
+  "  body shows; a lone mountain peak sees for miles but",
+  "  the range is unchanged - still within 500 yards of a",
+  "  size M to identify it; the converse: the man on the",
+  "  peak is himself recognizable within 500 - long-range",
+  "  visibility a blessing and a curse at once. THE SETTLE:",
+  "  two-way clean on the first pass - both readers agree on",
+  "  every number (the 500/250/1000, the three senses, the",
+  "  six-foot orc, the three-foot grass); the pdfy header",
+  "  line reads VIS1, a running-head artifact, not content.",
+  "  The spec md5 pair: authored",
+  "  c5f36505a7a8429003079ce4c25c243d, as-built",
+  "  80569c22828cb5d5aa0c78bbde0f8d6c (the Termux md5 hit the",
+  "  +nl pair value exactly). rverify at 5fe385c: 20 mutants,",
+  "  0 missed; inline_count 20 (8 consts + 12 bools); census",
+  "  406 -> 407; the gap flips 108/78 -> 109/77, opening the",
+  "  vision chapter.",
+  "  Next: R483 - infravision (p. 73) with Table 41"
+ ]
+}
