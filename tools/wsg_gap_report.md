@@ -74,11 +74,11 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] To fall or not to fall (p. 48) - R461: the fall-chance system (the 0% base, the strap/saddle/stirrup/proficiency reductions, the hands-free/overload/faster/unwilling/weather/level increases, the ability-point and wind-velocity ladders, the every-three-turns cadence with the landing restart and the per-round exception) pin as rules/wsgfallair.h
   - [x] Proficiency in airborne riding (p. 49) - R461: the per-category slots (the dragon-and-griffon two-slot example), the -50% fall modifier negating the +50% hands-free, the no-control rule, the ideal-conditions feats and the nonproficient automatic failure pin as rules/wsgfallair.h
 - [ ] **Food and water** (pp. 50-60)
-  - [ ] Going without food (p. 50)
-  - [ ] Going without water (p. 52)
-  - [ ] Effects on animals (p. 52)
-  - [ ] Minimum daily requirement of food (p. 52)
-  - [ ] Minimum daily requirement of water (p. 53)
+  - [x] Going without food (p. 50) - R462: the Table 28 tolerance ladder, the 12-hour Str/Con checks with the cumulative +1 then +2 modifiers, the weakened/distressed/incapacitated progression with the -1-per-day penalty and the eating recovery pin as rules/wsgfood.h
+  - [x] Going without water (p. 52) - R462: the 3-day base with the +2/+1/+1/+1 and -1/-1/-1 modifier set, the one-day floor, the high-water-content food definitions and the total-deprivation rule pin as rules/wsgfood.h
+  - [x] Effects on animals (p. 52) - R462: the halved movement and carrying capacity, the 3-turn hard-work incapacitation, the 1.5-times-tolerance multiple, the death rules and the 13-24-hour 1d12+12 recovery pin as rules/wsgfood.h
+  - [x] Minimum daily requirement of food (p. 52) - R462: the 1-2 pound human ration with the 3/4 elf and 1/2 small-race fractions, the ration pack arithmetic, the meat-vs-vegetables ratio, the two-meal cadence and the half-ration cheat pin as rules/wsgfood.h
+  - [x] Minimum daily requirement of water (p. 53) - R462: the Table 29 pint grid with the racial reductions and the activity hour thresholds, the create-water arithmetic and the water encumbrance pin as rules/wsgfood.h
   - [ ] Food gathering (p. 53)
   - [ ] Foraging (p. 53)
   - [ ] Inedible plants (p. 54)
@@ -183,8 +183,8 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 25: waterborne vehicle characteristics** (p. 44)
 - [ ] **Table 26: chance of capsizing** (p. 45)
 - [ ] **Table 27: characteristics of flying mounts** (p. 47)
-- [ ] **Table 28: tolerance levels for lack of food** (p. 50)
-- [ ] **Table 29: water requirements for characters** (p. 53)
+- [x] **Table 28: tolerance levels for lack of food** (p. 50) - R462: the 4/5/6/7/8/10-day ladder pins as rules/wsgfood.h
+- [x] **Table 29: water requirements for characters** (p. 53) - R462: the 4x4 pint grid pins as rules/wsgfood.h
 - [ ] **Table 30: foraging success** (p. 53)
 - [ ] **Table 31: hunting success** (p. 55)
 - [ ] **Table 32: fishing success** (p. 57)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R461: 65 closed, 121 open (the R461 round closes Chapter 5 - the fall-chance system and the airborne riding proficiency pin as rules/wsgfallair.h; the next rounds open the food and water chapter - going without food, Table 28 and the water requirements).
+Post-state at R462: 72 closed, 114 open (the R462 round opens the food and water chapter - going without food and Table 28, going without water, the effects on animals, the minimum daily requirements of food and water and Table 29 pin as rules/wsgfood.h; the next round continues the chapter - food gathering, foraging and Table 30).

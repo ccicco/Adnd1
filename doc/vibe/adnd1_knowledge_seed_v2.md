@@ -3947,6 +3947,18 @@ R172 were already dropped at the R171b/R172 era cut; git
   rules/wsgflymounts.h NEW (60 inlines, prefix wfm, checked free in all three
   TUs). Gap 62/124 -> 63/123; census 384 -> 385. The next round closes Chapter
   5: the fall chance and the airborne riding proficiency on printed pp. 48-49.
+- R461 landed 2026-10-14: commit 1745169 (census 386, pushed
+  cf8c4a5..1745169, preflight GREEN first run), the WSG CHAPTER 5 CLOSER - the
+  airborne fall chance (printed p. 48) and the proficiency in airborne riding
+  (printed p. 49) in one round, rules/wsgfallair.h NEW (31 inlines: 20 consts
+  + 11 bools, prefix wfa, checked free in all three TUs), both gap items
+  flipped in one commit (gap 63/123 -> 65/121). Ground truth clean two-way
+  (the 8d6a65a0 OCR pages 49-50 vs the second OCR copy, the sign convention
+  pinned by the p. 49 text: the -50% proficiency negates the +50% hands-free).
+  rverify GREEN: 31 mutants, 0 missed; the double-run 7/0 then 0/7 on Termux
+  with the md5 pair hit exactly. The next rounds open the food and water
+  chapter: going without food, Table 28 and the water requirements (printed
+  pp. 50-53).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
