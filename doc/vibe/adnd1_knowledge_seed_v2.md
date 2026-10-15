@@ -5194,6 +5194,55 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   109/77 -> 111/75 (both the infravision prose box AND the
   Table 41 box), the R482 seed record in place.
   Next: R484 - ultravision (p. 74)
+- R484 LANDED 2026-10-15: commit b800d4a (census 409, pushed
+  19d5d92..b800d4a), the WSG ULTRAVISION and infravision
+  effectiveness slice, printed p. 74 - the third vision round,
+  a prose round with a pin-table interior (no printed grid):
+  pinned as rules/wsgultra.h with the include after wsginfra.h
+  at line 189 (prefix wuv, free on the first probe). The daylight
+  bar: infravision is useless in daylight or artificial
+  illumination stronger than moonlight, the visible light
+  overriding the heat radiation. The heat-as-light color scale:
+  1 pitch black (below -50) through 10 excruciatingly bright
+  (above 130), all ten temperature bands pinned with their
+  contiguity checked at audit time. The surface-temperature
+  examples: the 98-degree human brighter than his surroundings
+  at air 90 or lower, demi-humans the same, the bundled man
+  matching the air and undetectable save small uncovered
+  spots; obstruction blocks as with normal vision but a great
+  heat source is indirectly detectable - the campfire behind
+  the rock shows as a dark shape on a lighter background. The
+  extremes: below -50 all pitch black, above 130 blinding, and
+  sudden close heat (a wall of fire) inflicts heat blindness -
+  burned out until cure blindness, or temporarily blinded for
+  5-10 turns (1d6+4). The cold-blooded bar: reptiles, insects
+  and most nonmammalians undetectable at air temperature, but
+  magic that abruptly changes the air reveals them briefly.
+  Ultravision: the ultraviolet night vision - only the deep
+  gnome has it inborn, to 30 yards as if by daylight normal
+  vision; others gain it by magic (lens or spell, MU or
+  illusionist); useless under any light brighter than
+  moonlight - daylight shows nothing but blackness; best on a
+  moonless clear night, the five sky modifiers 2/3, 1/2, 1/3,
+  1/4 and thick cover 1/4 cumulative - the thick forest on a
+  moonlit overcast night leaving 1/16 of ideal range. THE
+  SETTLE: the five fractions were the contested cells - both
+  text readers garbled the stacked fraction slashes and the
+  vision reads repeatedly pattern-completed line one to 1/2;
+  settled by the first full-list read, the pdfy text layer
+  (X 2/3 with a real slash), an independent published
+  transcription of the WSG list, and the book's own 1/16
+  worked example confirming both 1/4 entries. The artificial
+  illumination section opens at the page bottom, cut
+  mid-word - out of scope, waiting for R485. The spec md5
+  pair: authored d8dc6d703b991b21f8b43e4a43888eaa, as-built
+  e9b3c6d614569d4ac507f5913e7ee2bf (the Termux md5 hit the
+  +nl pair value exactly). rverify at 19d5d92: 71 mutants,
+  0 missed (37 consts + 34 bools); inline_count 71; census
+  408 -> 409; the gap flips 111/75 -> 112/74 (the ultravision
+  box), the R483 seed record in place.
+  Next: R485 - artificial illumination (p. 74, continuing
+  onto printed p. 75)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

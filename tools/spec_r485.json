@@ -1,0 +1,609 @@
+{
+ "round": 485,
+ "title": "the WSG artificial illumination slice - the torch wind bands with the lantern and bullseye sighting rules, the magic weapon glows, the campfire radii and the group visibility rules, printed pp. 74-75",
+ "prefix": "wli",
+ "header_file": "rules/wsglight.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 409,
+ "inline_count": 51,
+ "audit_label": "R485 WSG artificial illumination pin audit",
+ "audit_comment": "The artificial illumination rules: this section supplements the Players Handbook page 102 statistics with facts relevant to the outdoors. The use of an artificial light source in moonlight or darkness lets characters within the illuminated area see with normal vision as if the natural light was twilight (or perhaps daylight, as with a continual light spell), but the light source's specified radius of illumination takes precedence over the Range of Normal Vision Table figures - a torch holder on a clear night sees only his 40-foot radius, even though in actual twilight under a clear sky he would see 300 yards unaided. Torch: both the radius and the burning time are affected by wind velocity - below 10 mph the PHB figures apply; 11-25 mph the flame struggles and flickers, reliable illumination only out to 30 feet instead of 40 and a burn of 4 turns instead of 6; 26-40 mph the radius is not further reduced but the flame lasts only 2 turns at most, with a 25% chance checked every five rounds of being extinguished and needing reignition; above 40 mph it is impossible to keep a torch burning more than 1 round. Lighting a torch takes 1 round plus 1 per 10 mph of wind, halved with fire building proficiency. In moonlight or darkness a lighted torch can be seen from 200 yards. Lantern: much more reliable in the wilderness - the flame protected, no flicker or wind extinguishing, constant radius; regular lantern light is seen from 100 yards, a bullseye lanthorn beam from 200 yards if the viewer looks directly back toward the source, or 100 yards if his gaze crosses the beam path. Magic weapons: a smaller illuminated area than torch or lantern, but no fuel and no wind effect; the glow is seen from ten times the radius - 100 feet for a magic dagger, 150 for a magic short sword, 200 for a magic long sword. Campfires: small 80-foot radius, medium 120 feet on all sides, large at least 150 feet (perhaps more if especially large). Any artificial light (including magical) in moonlight or darkness limits long-range visibility for everyone within the illuminated area: the lantern holder cannot make out details beyond his 30-foot radius, but someone at the fringe still sees normally into the darkness ahead, and the DM should track who carries light and where the others stand.",
+ "banner": {
+  "title": "R485: the WSG ARTIFICIAL ILLUMINATION slice, printed pp. 74-75 - the fourth and final vision-and-visibility round, a pure prose round with NO table, CLOSING the vision chapter: the twilight-as-light frame with the radius-precedence rule and the 40-foot torch vs 300-yard twilight comparison, the four torch wind bands (calm, 11-25, 26-40, above 40) with their radius and burn-time degradation, the 25%-every-five-rounds extinguish risk, the torch-lighting time rule with the fire-building proficiency halving, the lantern and bullseye sighting geometry, the magic weapon glow rule with the dagger/short sword/long sword figures, the three campfire radii, and the group visibility rules with the lantern-holder blind spot and the fringe-sees-normally rule.",
+  "provenance": "The settle: two-way clean on the first pass - the tesseract full-text read, the pdfy layout read and the tsv coordinate read agree on every number of the page (the wind bands 11-25 and 26-40 mph, the 30/40 feet, the 4/6/2 turns, the 25% and five rounds, the 200/100/200/100 sighting yards, the 100/150/200 magic glows, the 80/120/150 campfire radii, the 30-foot lantern radius); the tesseract /arge for large is an italic-L scan artifact, pdfy reading it cleanly. The section began at the bottom of printed p. 74 (the PHB p. 102 pointer, the twilight frame and the 40-foot torch example, cut mid-word in il-) and its opening prose is pinned with this round. No contested cells, no vision reads needed.",
+  "sentinel": "Bounds held: the wind bands tile 10-25-40-41 with no gaps, the torch radius and burn time degrade monotonically (40 to 30 feet, 6 to 4 to 2 turns), every magic weapon glow is exactly ten times its radius, and the campfire radii strictly ascend 80 under 120 under the 150 floor."
+ },
+ "consts": [
+  {
+   "name": "wliTorchRadiusFt",
+   "value": 40,
+   "comment": "the torch radius of illumination on a clear night (the PHB figure)"
+  },
+  {
+   "name": "wliTwilightNoLightYards",
+   "value": 300,
+   "comment": "in actual twilight under a clear sky he would see 300 yards without a light source"
+  },
+  {
+   "name": "wliWind1MaxMph",
+   "value": 10,
+   "comment": "wind below 10 mph: the Players Handbook figures apply"
+  },
+  {
+   "name": "wliWind2MinMph",
+   "value": 11,
+   "comment": "the windy band starts at 11 mph"
+  },
+  {
+   "name": "wliWind2MaxMph",
+   "value": 25,
+   "comment": "and ends at 25 mph"
+  },
+  {
+   "name": "wliTorchWindyRadiusFt",
+   "value": 30,
+   "comment": "11-25 mph: reliable illumination only out to 30 feet instead of 40"
+  },
+  {
+   "name": "wliTorchBurnTurns",
+   "value": 6,
+   "comment": "the PHB burning time: 6 turns"
+  },
+  {
+   "name": "wliTorchWindyBurnTurns",
+   "value": 4,
+   "comment": "11-25 mph: the torch burns out in 4 turns instead of 6"
+  },
+  {
+   "name": "wliWind3MinMph",
+   "value": 26,
+   "comment": "the gale band starts at 26 mph"
+  },
+  {
+   "name": "wliWind3MaxMph",
+   "value": 40,
+   "comment": "and ends at 40 mph"
+  },
+  {
+   "name": "wliTorchGaleBurnTurns",
+   "value": 2,
+   "comment": "26-40 mph: the flame lasts only 2 turns at most"
+  },
+  {
+   "name": "wliExtinguishPct",
+   "value": 25,
+   "comment": "26-40 mph: a 25% chance of the torch being extinguished by the wind"
+  },
+  {
+   "name": "wliExtinguishCheckRounds",
+   "value": 5,
+   "comment": "the extinguish chance is checked every five rounds"
+  },
+  {
+   "name": "wliWind4MinMph",
+   "value": 41,
+   "comment": "above 40 mph: more than 40"
+  },
+  {
+   "name": "wliTorchStormMaxRounds",
+   "value": 1,
+   "comment": "in wind of more than 40 mph a torch cannot be kept burning for more than 1 round"
+  },
+  {
+   "name": "wliLightBaseRounds",
+   "value": 1,
+   "comment": "it takes 1 round to light a torch"
+  },
+  {
+   "name": "wliLightWindStepMph",
+   "value": 10,
+   "comment": "plus 1 round for every 10 mph of wind velocity"
+  },
+  {
+   "name": "wliTorchSeenYards",
+   "value": 200,
+   "comment": "in moonlight or darkness a lighted torch can be seen from 200 yards"
+  },
+  {
+   "name": "wliLanternSeenYards",
+   "value": 100,
+   "comment": "regular lantern light can be seen from 100 yards away"
+  },
+  {
+   "name": "wliBullseyeBackYards",
+   "value": 200,
+   "comment": "a bullseye lanthorn beam is seen from 200 yards if the viewer looks directly back toward the source"
+  },
+  {
+   "name": "wliBullseyeAcrossYards",
+   "value": 100,
+   "comment": "or from 100 yards if the viewer's gaze is directed across the path of the beam"
+  },
+  {
+   "name": "wliMagicGlowFactor",
+   "value": 10,
+   "comment": "the glow of a magic weapon can be seen from ten times its radius of illumination"
+  },
+  {
+   "name": "wliDaggerRadiusFt",
+   "value": 10,
+   "comment": "magic dagger radius of illumination"
+  },
+  {
+   "name": "wliDaggerGlowFt",
+   "value": 100,
+   "comment": "magic dagger glow seen from 100 feet"
+  },
+  {
+   "name": "wliShortSwordRadiusFt",
+   "value": 15,
+   "comment": "magic short sword radius of illumination"
+  },
+  {
+   "name": "wliShortSwordGlowFt",
+   "value": 150,
+   "comment": "magic short sword glow seen from 150 feet"
+  },
+  {
+   "name": "wliLongSwordRadiusFt",
+   "value": 20,
+   "comment": "magic long sword radius of illumination"
+  },
+  {
+   "name": "wliLongSwordGlowFt",
+   "value": 200,
+   "comment": "magic long sword glow seen from 200 feet"
+  },
+  {
+   "name": "wliCampSmallRadiusFt",
+   "value": 80,
+   "comment": "a small campfire illuminates an 80-foot radius"
+  },
+  {
+   "name": "wliCampMediumRadiusFt",
+   "value": 120,
+   "comment": "a medium campfire lights up 120 feet on all sides"
+  },
+  {
+   "name": "wliCampLargeMinRadiusFt",
+   "value": 150,
+   "comment": "a large campfire has a radius of at least 150 feet"
+  },
+  {
+   "name": "wliLanternRadiusFt",
+   "value": 30,
+   "comment": "the lantern of the worked example illuminates a 30-foot radius"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wliSupplementsPHB",
+   "value": true,
+   "comment": "the section supplements the Players Handbook page 102 statistics with facts relevant to the outdoor environment"
+  },
+  {
+   "name": "wliLightAsTwilight",
+   "value": true,
+   "comment": "an artificial light source in moonlight or darkness lets characters within the illuminated area see with normal vision as if the natural light was twilight"
+  },
+  {
+   "name": "wliContinualLightAsDaylight",
+   "value": true,
+   "comment": "or perhaps daylight, as in the case of a continual light spell"
+  },
+  {
+   "name": "wliRadiusTakesPrecedence",
+   "value": true,
+   "comment": "the specified radius of illumination of the light source takes precedence over the figures on the Range of Normal Vision Table"
+  },
+  {
+   "name": "wliTorchWindAffects",
+   "value": true,
+   "comment": "both the radius of illumination and the burning time of a torch can be affected by wind velocity"
+  },
+  {
+   "name": "wliWindyFlicker",
+   "value": true,
+   "comment": "in wind of 11-25 mph the flame of the torch struggles and flickers"
+  },
+  {
+   "name": "wliGaleRadiusHeld",
+   "value": true,
+   "comment": "in wind of 26-40 mph the radius of illumination is not further reduced"
+  },
+  {
+   "name": "wliGaleExtinguishRisk",
+   "value": true,
+   "comment": "in 26-40 mph wind there is a chance the torch is extinguished by the wind and must be reignited"
+  },
+  {
+   "name": "wliStormImpossible",
+   "value": true,
+   "comment": "in a wind of more than 40 mph it is impossible to keep a torch burning for more than 1 round"
+  },
+  {
+   "name": "wliLightProfHalved",
+   "value": true,
+   "comment": "the torch-lighting time is cut in half for a character with proficiency in fire building"
+  },
+  {
+   "name": "wliLanternReliable",
+   "value": true,
+   "comment": "a lantern or bullseye lanthorn is much more reliable in the wilderness: the flame is protected, will not flicker or be extinguished by the wind, and the radius of illumination generally remains constant"
+  },
+  {
+   "name": "wliMagicWeaponSmallerArea",
+   "value": true,
+   "comment": "a magic weapon illuminates a smaller area than a torch or a lantern"
+  },
+  {
+   "name": "wliMagicNoFuelNoWind",
+   "value": true,
+   "comment": "a magic weapon needs no fuel and is not affected by the wind"
+  },
+  {
+   "name": "wliCampLargeAtLeast",
+   "value": true,
+   "comment": "a large campfire's radius of illumination is at least 150 feet, perhaps more if the fire is especially large"
+  },
+  {
+   "name": "wliCampfireSeeCamping",
+   "value": true,
+   "comment": "for other information on fires, see the section on Camping and Campfires"
+  },
+  {
+   "name": "wliLightLimitsLongRange",
+   "value": true,
+   "comment": "the use of any artificial light source, including magical light, in moonlight or darkness limits long-range visibility to varying degrees for all characters within the illuminated area"
+  },
+  {
+   "name": "wliHolderBlindBeyond",
+   "value": true,
+   "comment": "a character holding a lantern cannot make out any details in the darkness immediately beyond the radius the lantern illuminates"
+  },
+  {
+   "name": "wliFringeSeesNormally",
+   "value": true,
+   "comment": "someone standing at the fringe of the illuminated area can still see normally into the darkness ahead of him"
+  },
+  {
+   "name": "wliDMTracksPositions",
+   "value": true,
+   "comment": "for a group traveling at night with artificial light the Dungeon Master should note which characters carry light sources and where the others stand with respect to the light-holder"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the three wind bands are contiguous and ascend from the calm band",
+   "expr": "m['wliWind2MinMph']() != m['wliWind1MaxMph']() + 1 or m['wliWind3MinMph']() != m['wliWind2MaxMph']() + 1 or m['wliWind4MinMph']() != m['wliWind3MaxMph']() + 1"
+  },
+  {
+   "note": "the torch radius and burning time degrade band by band: 40 to 30 feet, 6 to 4 to 2 turns",
+   "expr": "m['wliTorchWindyRadiusFt']() >= m['wliTorchRadiusFt']() or m['wliTorchWindyBurnTurns']() >= m['wliTorchBurnTurns']() or m['wliTorchGaleBurnTurns']() >= m['wliTorchWindyBurnTurns']()"
+  },
+  {
+   "note": "the gale holds the radius but halves the windy burn time, and the storm allows only 1 round",
+   "expr": "m['wliTorchGaleBurnTurns']() != 2 * m['wliTorchStormMaxRounds']() or m['wliTorchStormMaxRounds']() >= m['wliTorchGaleBurnTurns']()"
+  },
+  {
+   "note": "lighting takes 1 round plus 1 per 10 mph of wind",
+   "expr": "m['wliLightBaseRounds']() != 1 or m['wliLightWindStepMph']() != 10"
+  },
+  {
+   "note": "every magic weapon glow is exactly ten times its radius: 100/10, 150/15, 200/20 feet",
+   "expr": "m['wliDaggerGlowFt']() != m['wliMagicGlowFactor']() * m['wliDaggerRadiusFt']() or m['wliShortSwordGlowFt']() != m['wliMagicGlowFactor']() * m['wliShortSwordRadiusFt']() or m['wliLongSwordGlowFt']() != m['wliMagicGlowFactor']() * m['wliLongSwordRadiusFt']()"
+  },
+  {
+   "note": "the campfire radii strictly ascend: 80 under 120 under the 150 floor",
+   "expr": "m['wliCampSmallRadiusFt']() >= m['wliCampMediumRadiusFt']() or m['wliCampMediumRadiusFt']() >= m['wliCampLargeMinRadiusFt']()"
+  },
+  {
+   "note": "sighting: the lantern (100) never outsees the torch (200), and the bullseye back-toward (200) doubles the across-beam (100)",
+   "expr": "m['wliLanternSeenYards']() >= m['wliTorchSeenYards']() or m['wliBullseyeBackYards']() != 2 * m['wliBullseyeAcrossYards']()"
+  },
+  {
+   "note": "the clear-night torch radius (40 feet) is the PHB figure the windy band cuts to 30, and real twilight sees 300 yards",
+   "expr": "m['wliTorchRadiusFt']() != 40 or m['wliTwilightNoLightYards']() != 300"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "The twilight frame and precedence": [
+   {
+    "kind": "bool",
+    "name": "wliSupplementsPHB"
+   },
+   {
+    "kind": "bool",
+    "name": "wliLightAsTwilight"
+   },
+   {
+    "kind": "bool",
+    "name": "wliContinualLightAsDaylight"
+   },
+   {
+    "kind": "bool",
+    "name": "wliRadiusTakesPrecedence"
+   },
+   {
+    "kind": "const",
+    "name": "wliTorchRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "wliTwilightNoLightYards"
+   }
+  ],
+  "The torch wind bands": [
+   {
+    "kind": "bool",
+    "name": "wliTorchWindAffects"
+   },
+   {
+    "kind": "const",
+    "name": "wliWind1MaxMph"
+   },
+   {
+    "kind": "const",
+    "name": "wliWind2MinMph"
+   },
+   {
+    "kind": "const",
+    "name": "wliWind2MaxMph"
+   },
+   {
+    "kind": "bool",
+    "name": "wliWindyFlicker"
+   },
+   {
+    "kind": "const",
+    "name": "wliTorchWindyRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "wliTorchBurnTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wliTorchWindyBurnTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wliWind3MinMph"
+   },
+   {
+    "kind": "const",
+    "name": "wliWind3MaxMph"
+   },
+   {
+    "kind": "bool",
+    "name": "wliGaleRadiusHeld"
+   },
+   {
+    "kind": "const",
+    "name": "wliTorchGaleBurnTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wliExtinguishPct"
+   },
+   {
+    "kind": "const",
+    "name": "wliExtinguishCheckRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "wliGaleExtinguishRisk"
+   },
+   {
+    "kind": "const",
+    "name": "wliWind4MinMph"
+   },
+   {
+    "kind": "const",
+    "name": "wliTorchStormMaxRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "wliStormImpossible"
+   },
+   {
+    "kind": "const",
+    "name": "wliLightBaseRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wliLightWindStepMph"
+   },
+   {
+    "kind": "bool",
+    "name": "wliLightProfHalved"
+   },
+   {
+    "kind": "const",
+    "name": "wliTorchSeenYards"
+   }
+  ],
+  "The lantern and bullseye": [
+   {
+    "kind": "bool",
+    "name": "wliLanternReliable"
+   },
+   {
+    "kind": "const",
+    "name": "wliLanternSeenYards"
+   },
+   {
+    "kind": "const",
+    "name": "wliBullseyeBackYards"
+   },
+   {
+    "kind": "const",
+    "name": "wliBullseyeAcrossYards"
+   }
+  ],
+  "Magic weapons": [
+   {
+    "kind": "bool",
+    "name": "wliMagicWeaponSmallerArea"
+   },
+   {
+    "kind": "bool",
+    "name": "wliMagicNoFuelNoWind"
+   },
+   {
+    "kind": "const",
+    "name": "wliMagicGlowFactor"
+   },
+   {
+    "kind": "const",
+    "name": "wliDaggerRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "wliDaggerGlowFt"
+   },
+   {
+    "kind": "const",
+    "name": "wliShortSwordRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "wliShortSwordGlowFt"
+   },
+   {
+    "kind": "const",
+    "name": "wliLongSwordRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "wliLongSwordGlowFt"
+   }
+  ],
+  "Campfires": [
+   {
+    "kind": "const",
+    "name": "wliCampSmallRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "wliCampMediumRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "wliCampLargeMinRadiusFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wliCampLargeAtLeast"
+   },
+   {
+    "kind": "bool",
+    "name": "wliCampfireSeeCamping"
+   }
+  ],
+  "The group visibility rules": [
+   {
+    "kind": "bool",
+    "name": "wliLightLimitsLongRange"
+   },
+   {
+    "kind": "const",
+    "name": "wliLanternRadiusFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wliHolderBlindBeyond"
+   },
+   {
+    "kind": "bool",
+    "name": "wliFringeSeesNormally"
+   },
+   {
+    "kind": "bool",
+    "name": "wliDMTracksPositions"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the artificial illumination box",
+   "from": "  - [ ] Artificial illumination (p. 74)",
+   "to": "  - [x] Artificial illumination (p. 74) - R485: the torch wind bands with the lantern, magic weapon and campfire illumination rules pin as rules/wsglight.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R484: 112 closed, 74 open (the R484 round continues the vision and visibility chapter - the infravision effectiveness rules with the ultravision definition and range modifiers pin as rules/wsgultra.h; the next round continues - artificial illumination (p. 74)).",
+   "to": "Post-state at R485: 113 closed, 73 open (the R485 round CLOSES the vision and visibility chapter - the artificial illumination rules pin as rules/wsglight.h; the next round opens the natural hazards chapter - volcanoes (p. 76))."
+  }
+ ],
+ "gap_census": {
+  "closed": 113,
+  "open": 73
+ },
+ "include_comment": "the WSG artificial illumination light-source rules",
+ "include_after": "#include \"rules/wsgultra.h\"  // R484: the WSG ultravision and infravision effectiveness rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R484 LANDED 2026-10-15: commit b800d4a (census 409, pushed",
+ "prev_record": [
+  "- R484 LANDED 2026-10-15: commit b800d4a (census 409, pushed",
+  "  19d5d92..b800d4a), the WSG ULTRAVISION and infravision",
+  "  effectiveness slice, printed p. 74 - the third vision round,",
+  "  a prose round with a pin-table interior (no printed grid):",
+  "  pinned as rules/wsgultra.h with the include after wsginfra.h",
+  "  at line 189 (prefix wuv, free on the first probe). The daylight",
+  "  bar: infravision is useless in daylight or artificial",
+  "  illumination stronger than moonlight, the visible light",
+  "  overriding the heat radiation. The heat-as-light color scale:",
+  "  1 pitch black (below -50) through 10 excruciatingly bright",
+  "  (above 130), all ten temperature bands pinned with their",
+  "  contiguity checked at audit time. The surface-temperature",
+  "  examples: the 98-degree human brighter than his surroundings",
+  "  at air 90 or lower, demi-humans the same, the bundled man",
+  "  matching the air and undetectable save small uncovered",
+  "  spots; obstruction blocks as with normal vision but a great",
+  "  heat source is indirectly detectable - the campfire behind",
+  "  the rock shows as a dark shape on a lighter background. The",
+  "  extremes: below -50 all pitch black, above 130 blinding, and",
+  "  sudden close heat (a wall of fire) inflicts heat blindness -",
+  "  burned out until cure blindness, or temporarily blinded for",
+  "  5-10 turns (1d6+4). The cold-blooded bar: reptiles, insects",
+  "  and most nonmammalians undetectable at air temperature, but",
+  "  magic that abruptly changes the air reveals them briefly.",
+  "  Ultravision: the ultraviolet night vision - only the deep",
+  "  gnome has it inborn, to 30 yards as if by daylight normal",
+  "  vision; others gain it by magic (lens or spell, MU or",
+  "  illusionist); useless under any light brighter than",
+  "  moonlight - daylight shows nothing but blackness; best on a",
+  "  moonless clear night, the five sky modifiers 2/3, 1/2, 1/3,",
+  "  1/4 and thick cover 1/4 cumulative - the thick forest on a",
+  "  moonlit overcast night leaving 1/16 of ideal range. THE",
+  "  SETTLE: the five fractions were the contested cells - both",
+  "  text readers garbled the stacked fraction slashes and the",
+  "  vision reads repeatedly pattern-completed line one to 1/2;",
+  "  settled by the first full-list read, the pdfy text layer",
+  "  (X 2/3 with a real slash), an independent published",
+  "  transcription of the WSG list, and the book's own 1/16",
+  "  worked example confirming both 1/4 entries. The artificial",
+  "  illumination section opens at the page bottom, cut",
+  "  mid-word - out of scope, waiting for R485. The spec md5",
+  "  pair: authored d8dc6d703b991b21f8b43e4a43888eaa, as-built",
+  "  e9b3c6d614569d4ac507f5913e7ee2bf (the Termux md5 hit the",
+  "  +nl pair value exactly). rverify at 19d5d92: 71 mutants,",
+  "  0 missed (37 consts + 34 bools); inline_count 71; census",
+  "  408 -> 409; the gap flips 111/75 -> 112/74 (the ultravision",
+  "  box), the R483 seed record in place.",
+  "  Next: R485 - artificial illumination (p. 74, continuing",
+  "  onto printed p. 75)"
+ ]
+}
