@@ -4078,6 +4078,57 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   (p. 57) and the food-carrying items; the vision
   quota (20 analyze_image calls) may reset per
   response - budget the crops per turn.
+- R465 LANDED 2026-10-15: commit 27481c0 (census 390, pushed
+  91fad93..27481c0), the WSG HUNTING PROFICIENCY AND FISHING slice, printed p.
+  57 with the spot-guideline tail on p. 58 - the hunting proficiency (the
+  one-hit size M kill, the two-hit size L kill, the 50% one-attempt distance
+  kill of a wounded size M, the single-hit wounded size L with multiple
+  attempts, the successful Proficiency Check BEFORE the 1d6 roll, the
+  missile-weapon requirement, no boost to the encounter chance or the prey
+  size, the repeatable expeditions), fishing (the one-hour baited
+  hook-and-line base, the net +50%, the zero-or-lower no-fish gate, the
+  proficiency +2 in fair or good spots only, the cumulative -1 per extra group
+  member, the cumulative -2 per hour beyond the first in the same spot, the
+  fished-out rule with the one-day recovery, the spot-quality guidelines: boat
+  mid-water beats shore, swamp/bog and stagnant shallow creek poor, shaded
+  spots fair or good) and Table 32 (the 3x3 spot-by-time dice grid: Poor
+  1d4-2/1d4/1d4+2, Fair 1d6-2/1d6-1/1d6+2, Good 1d8-2/1d6+2/1d8+2).
+  rules/wsgfish.h NEW (29 inlines: 8 consts + 14 bools + 1 switch + 6 table
+  columns, prefix wfs, checked free in all three TUs). GROUND TRUTH - the
+  hardest pixel fight since R463: the OCR DROPPED the Fair-Day cell and
+  garbled four Good cells; the native decode of the printed p. 57 image (a
+  from-scratch pure-Python JPEG decoder, obj 548, 1179x1516, djvu-to-image
+  calibration x=djvu*0.48, y=djvu*0.48+1) settled them. Fair-Day 1d6-2 (glyph
+  holes=1, canonical-6 template 0.947, vision agrees). Good-Day 1d8-2 (the
+  digit shows the 8 stacked-loop waist vs the reference 6 open top sweep;
+  vision twice read a two-loop 8). Good-Night 1d6+2 EXAMPLE-PROVEN (the book
+  A/B/C example: proficient A at a good spot at night rolls 1d6+4 = 1d6+2 +2,
+  B 1d6+1, C 1d6). Good-Dawn 1d8+2 (same 8 waist; the plus sign vertical
+  stroke survives as faint 158-238 grayscale traces through a minus-strength
+  bar while the true minus on the same page shows pure 255 background around
+  its bar - the decisive minus-vs-plus discriminator). Row labels Fair/Good
+  pixel+vision confirmed. The p. 57 tail completes on p. 58: "...shaded by
+  trees or overhanging terrain; such a spot will be fair or good, while an
+  unshaded spot nearby on the same body of water will be a poor one" -
+  included in provenance, the p. 58 box NOT flipped. The proficiency-check
+  modifier ladder (+1/+3/+6/+10/+15) stays in the pp. 13-17 gap - out of scope
+  this round. NOTE: the handoff said the post-state was 82/105 but the derived
+  census computed 82/104 (the handoff was off by one); the computed value
+  shipped and verifies at the raw sha. Gap 79/107 -> 82/104 (THREE box flips +
+  the post-state line); census 389 -> 390. rverify FULL GREEN pre-landing at
+  base 91fad93 (double-run 8/0 then 0/8, 40 mutants, 0 missed). Spec md5s:
+  49d2e645 authored / a620f22e +nl - the Termux read the +nl value exactly.
+  LANDED CLEAN on the first ritual run (double-run 8/0 then 0/8, preflight
+  GREEN first try, R465 audit bad 0, AUDIT CENSUS: 390, 5 files / 956
+  insertions; the user ran bn separately by choice, it stays out of the ritual
+  per R372). VERIFIED at the raw sha 27481c0: the commit message and file list
+  (regtest +167, the header 254, the spec 472, the gap 4/4, the seed +59), the
+  include after wsghunt.h at line 170, wsgfish.h 29 inlines with the correct
+  grid, the three flips with the R465 text, the post-state 82/104, the R464
+  seed record in place. Next: R466 - consuming and carrying food (p. 58: the
+  fish half ration, size S a full ration, size M feeds three, size L six
+  rations, the druid disapproval, the encumbrance and spoilage factors) and
+  Table 33: chance of food spoilage; then finding water.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -86,7 +86,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Stalking a wounded animal (p. 55) - R464: the enraged size L charge (the 50% 1d8 predamage, the closest-character charge) and the panicked size M flight (the 18-inch rate, the 1d4 direction, the 20-foot kill range) pin as rules/wsghunt.h
   - [x] The hunting proficiency (p. 57) - R465: the one-hit size M kill, the two-hit size L kill, the 50% distance kill of a wounded size M, the single-hit wounded size L, the Proficiency Check before the 1d6 roll and the missile-weapon requirement pin as rules/wsgfish.h
   - [x] Fishing (p. 57) - R465: the one-hour hook-and-line base, the net +50%, the zero-or-lower gate, the proficiency +2 in fair or good spots, the cumulative group and hour penalties, the fished-out rule and the spot-quality guidelines pin as rules/wsgfish.h
-  - [ ] Consuming and carrying food (p. 58)
+  - [x] Consuming and carrying food (p. 58) - R466: the ration ladder (one fish half a ration, size S a full ration, size M feeds three, size L six rations, twenty rations for a full day of butchering), the druid disapproval, the carry rule and the taint and spoil mechanics pin as rules/wsgcarry.h
   - [ ] Finding water (p. 58)
   - [ ] Where water is found (p. 59)
   - [ ] Water in the desert (p. 60)
@@ -188,7 +188,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 30: foraging success** (p. 53) - R463: the five climate-region grids (Arctic five terrains, the others seven), the chance/inedible pair per season, all 132 cells pixel-verified pin as rules/wsgforage.h
 - [x] **Table 31: hunting success** (p. 55) - R464: the 33-row terrain-by-season grid over the five climate regions, all 132 cells pixel-verified, with the p. 56 game-encounter list pin as rules/wsghunt.h
 - [x] **Table 32: fishing success** (p. 57) - R465: the spot-quality by time-of-day dice grid, all 18 cells pixel-verified with the Good-Night cell proven by the book own A/B/C example, pin as rules/wsgfish.h
-- [ ] **Table 33: chance of food spoilage** (p. 58)
+- [x] **Table 33: chance of food spoilage** (p. 58) - R466: the food-type by temperature-band days/pct grid, all 40 cells text-layer verified, pin as rules/wsgcarry.h
 - [ ] **Table 34: chance of finding water** (p. 59)
 - [ ] **Table 35: chance of finding natural shelter** (p. 61)
 - [ ] **Table 36: portable shelter characteristics** (p. 62)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R465: 82 closed, 104 open (the R465 round continues the chapter - the hunting proficiency, fishing and Table 32 pin as rules/wsgfish.h; the next round continues - consuming and carrying food (p. 58) and Table 33: chance of food spoilage).
+Post-state at R466: 84 closed, 102 open (the R466 round continues the chapter - consuming and carrying food and Table 33 pin as rules/wsgcarry.h; the next round continues - finding water (p. 58) and its Table 34).
