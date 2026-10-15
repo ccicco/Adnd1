@@ -107,7 +107,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Injuries and treatment (p. 70) - R480: the broken bone, burn, major wound and minor wound rules with the first-aid treatment semantics pin as rules/wsginj.h
   - [x] First aid equipment (p. 71) - R481: the bandage, splint, stretcher and litter gear rules with the carry and terrain semantics pin as rules/wsgfae.h
 - [ ] **Vision and visibility** (pp. 72-75)
-  - [ ] Normal vision (p. 72)
+  - [x] Normal vision (p. 72) - R482: the visible-spectrum definition with the 500-yard effective range, the size-based sighting distances and the obstruction and elevation semantics pin as rules/wsgnvis.h
   - [ ] Infravision (p. 73)
   - [ ] Ultravision (p. 74)
   - [ ] Artificial illumination (p. 74)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R481: 108 closed, 78 open (the R481 round CLOSES the camping arc medicine chapter - the first aid equipment gear rules pin as rules/wsgfae.h; the next round opens the vision and visibility chapter - normal vision (p. 72)).
+Post-state at R482: 109 closed, 77 open (the R482 round opens the vision and visibility chapter - the normal vision definition and range rules pin as rules/wsgnvis.h; the next round continues - infravision (p. 73)).

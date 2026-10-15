@@ -1,0 +1,293 @@
+{
+ "round": 482,
+ "title": "the WSG normal vision slice - the visible-spectrum definition with the 500-yard effective range, the size-based sighting distances and the obstruction and elevation semantics, printed p. 72",
+ "prefix": "wnv",
+ "header_file": "rules/wsgnvis.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 406,
+ "inline_count": 20,
+ "audit_label": "R482 WSG normal vision pin audit",
+ "audit_comment": "The normal vision rules: normal vision is what humans and most other creatures and character races use most of the time - the ability to see images, colors and other visual phenomena within the visible spectrum, between the infrared and ultraviolet ranges. In clear air during daylight the effective range is 500 yards: a character with an unobstructed view recognizes the basic form of a size M creature or object at that distance; a size S creature is visible from 250 yards; a size L creature from at least 1000 yards - or much greater for exceptionally large creatures or objects such as a dragon or a tall building. Practically anything in the line of sight can be an obstruction, and ideal viewing conditions are rare when viewer and target share the ground and elevation: a six-foot-tall orc on a flat featureless plain is visible at 500 yards, but under a three-foot height of grass and foliage only half its body shows, so it is only viewed from 250 yards - as if it were size S. Drastically different elevations often give an unobstructed view: a character on a lone mountain peak sees for miles, but his effective range is unchanged - he must still be within 500 yards of a size M object to distinguish its basic form. The converse holds too: the man on the peak is himself visible and recognizable to any viewer within 500 yards - long-range visibility is a blessing and a curse at once.",
+ "banner": {
+  "title": "R482: the WSG NORMAL VISION slice, printed p. 72 - the first vision-and-visibility round, a pure prose round with NO table (Table 41 waits at p. 73): the chapter frame (as many as three visual senses - normal vision, infravision and ultravision, each with advantages in some situations), the visible-spectrum definition, the 500-yard effective range in clear daylight air, the size M/S/L sighting distances (500/250/at least 1000), the obstruction and elevation semantics, and the worked orc example.",
+  "provenance": "The settle: two-way clean on the first pass - the tesseract full-text read and the pdfy layout read agree on every number of the page (the three senses, the 500/250/1000 yards, the six-foot orc, the three-foot grass, the half body), and the tsv confirms the geometry cell by cell; the pdfy header line reads VIS1 (a running head artifact, not content). No contested cells, no vision reads needed.",
+  "sentinel": "Bounds held: the size S distance is exactly half the size M range, the size L floor is exactly double it, and the grass-hidden orc drops to the size S distance because half its body shows."
+ },
+ "consts": [
+  {
+   "name": "wnvVisualSenseCount",
+   "value": 3,
+   "comment": "three types of visual senses: normal vision, infravision and ultravision"
+  },
+  {
+   "name": "wnvRangeYards",
+   "value": 500,
+   "comment": "the effective range of normal vision in clear air during daylight"
+  },
+  {
+   "name": "wnvSizeSYards",
+   "value": 250,
+   "comment": "a size S creature or object is visible from 250 yards"
+  },
+  {
+   "name": "wnvSizeLYards",
+   "value": 1000,
+   "comment": "a size L creature is visible from a distance of at least 1000 yards"
+  },
+  {
+   "name": "wnvExOrcHeightFeet",
+   "value": 6,
+   "comment": "the worked example: a six-foot-tall orc"
+  },
+  {
+   "name": "wnvExGrassHeightFeet",
+   "value": 3,
+   "comment": "the field covered with a three-foot height of grass and foliage"
+  },
+  {
+   "name": "wnvHalfNum",
+   "value": 1,
+   "comment": "half of the orc body shows above the grass"
+  },
+  {
+   "name": "wnvHalfDen",
+   "value": 2,
+   "comment": "the half-body fraction of the grass-hidden example"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wnvNormalVisionMostCommon",
+   "value": true,
+   "comment": "normal vision is what humans and most other creatures and character races use most of the time"
+  },
+  {
+   "name": "wnvVisibleSpectrumBetween",
+   "value": true,
+   "comment": "normal vision sees images, colors and visual phenomena within the visible spectrum, between the infrared and ultraviolet ranges"
+  },
+  {
+   "name": "wnvSightMeansFastOrSlow",
+   "value": true,
+   "comment": "seeing a great distance and knowing what you see decides moving fast or slow, surprising or being surprised, and sometimes life or death"
+  },
+  {
+   "name": "wnvEachSenseHasTradeoffs",
+   "value": true,
+   "comment": "each visual sense has advantages in some situations and disadvantages at other times"
+  },
+  {
+   "name": "wnvSizeMRecognizedAtRange",
+   "value": true,
+   "comment": "with an unobstructed view a character recognizes the basic form of a size M creature at the effective range"
+  },
+  {
+   "name": "wnvSizeLMayExceed",
+   "value": true,
+   "comment": "exceptionally large creatures or objects - a dragon, a tall building - may be visible at much greater distances"
+  },
+  {
+   "name": "wnvAnythingObstructs",
+   "value": true,
+   "comment": "practically anything in the line of sight can be an obstruction; ideal conditions are rare when viewer and target share ground and elevation"
+  },
+  {
+   "name": "wnvGrassHalvesToSizeS",
+   "value": true,
+   "comment": "under the grass only half the orc body shows, so it is viewed from the size S distance - as if it were a size S creature"
+  },
+  {
+   "name": "wnvElevationUnobstructs",
+   "value": true,
+   "comment": "drastically different elevations often give an unobstructed view - a lone mountain peak sees for miles in any direction"
+  },
+  {
+   "name": "wnvRangeUnchangedOnPeak",
+   "value": true,
+   "comment": "the effective range is unchanged by elevation: the peak character must still be within the range of a size M object to distinguish and possibly identify it"
+  },
+  {
+   "name": "wnvConverseViewerVisible",
+   "value": true,
+   "comment": "the converse holds: the character on the peak is himself visible and recognizable to any other viewers within the effective range"
+  },
+  {
+   "name": "wnvBlessingAndCurse",
+   "value": true,
+   "comment": "long-range visibility can be a blessing and a curse at the same time, depending on one point of view"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the three senses, and the size S distance is half the effective range while the size L floor is double it",
+   "expr": "m['wnvVisualSenseCount']() != 3 or 2 * m['wnvSizeSYards']() != m['wnvRangeYards']() or m['wnvSizeLYards']() != 2 * m['wnvRangeYards']()"
+  },
+  {
+   "note": "the worked example: a six-foot orc over three-foot grass shows half its body and drops to the size S distance",
+   "expr": "m['wnvExOrcHeightFeet']() != 6 or m['wnvExGrassHeightFeet']() != 3 or m['wnvHalfDen']() != 2 * m['wnvHalfNum']() or m['wnvRangeYards']() != 500"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "The chapter frame": [
+   {
+    "kind": "bool",
+    "name": "wnvSightMeansFastOrSlow"
+   },
+   {
+    "kind": "const",
+    "name": "wnvVisualSenseCount"
+   },
+   {
+    "kind": "bool",
+    "name": "wnvEachSenseHasTradeoffs"
+   }
+  ],
+  "The definition and the range": [
+   {
+    "kind": "bool",
+    "name": "wnvNormalVisionMostCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "wnvVisibleSpectrumBetween"
+   },
+   {
+    "kind": "const",
+    "name": "wnvRangeYards"
+   },
+   {
+    "kind": "bool",
+    "name": "wnvSizeMRecognizedAtRange"
+   }
+  ],
+  "The size-based sighting distances": [
+   {
+    "kind": "const",
+    "name": "wnvSizeSYards"
+   },
+   {
+    "kind": "const",
+    "name": "wnvSizeLYards"
+   },
+   {
+    "kind": "bool",
+    "name": "wnvSizeLMayExceed"
+   }
+  ],
+  "The obstruction and elevation semantics": [
+   {
+    "kind": "bool",
+    "name": "wnvAnythingObstructs"
+   },
+   {
+    "kind": "const",
+    "name": "wnvExOrcHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "wnvExGrassHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "wnvHalfNum"
+   },
+   {
+    "kind": "const",
+    "name": "wnvHalfDen"
+   },
+   {
+    "kind": "bool",
+    "name": "wnvGrassHalvesToSizeS"
+   },
+   {
+    "kind": "bool",
+    "name": "wnvElevationUnobstructs"
+   },
+   {
+    "kind": "bool",
+    "name": "wnvRangeUnchangedOnPeak"
+   },
+   {
+    "kind": "bool",
+    "name": "wnvConverseViewerVisible"
+   },
+   {
+    "kind": "bool",
+    "name": "wnvBlessingAndCurse"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the normal vision box",
+   "from": "  - [ ] Normal vision (p. 72)",
+   "to": "  - [x] Normal vision (p. 72) - R482: the visible-spectrum definition with the 500-yard effective range, the size-based sighting distances and the obstruction and elevation semantics pin as rules/wsgnvis.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R481: 108 closed, 78 open (the R481 round CLOSES the camping arc medicine chapter - the first aid equipment gear rules pin as rules/wsgfae.h; the next round opens the vision and visibility chapter - normal vision (p. 72)).",
+   "to": "Post-state at R482: 109 closed, 77 open (the R482 round opens the vision and visibility chapter - the normal vision definition and range rules pin as rules/wsgnvis.h; the next round continues - infravision (p. 73))."
+  }
+ ],
+ "gap_census": {
+  "closed": 109,
+  "open": 77
+ },
+ "include_comment": "the WSG normal vision definition and range rules",
+ "include_after": "#include \"rules/wsgfae.h\"  // R481: the WSG first aid equipment gear rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R481 LANDED 2026-10-15: commit 5fe385c (census 406, pushed",
+ "prev_record": [
+  "- R481 LANDED 2026-10-15: commit 5fe385c (census 406, pushed",
+  "  414dbb3..5fe385c), the WSG FIRST AID EQUIPMENT slice,",
+  "  printed p. 71 - the eleventh camping-arc round, CLOSING",
+  "  the medicine chapter, a pure prose round with NO table:",
+  "  the four essentials pinned as rules/wsgfae.h with the",
+  "  include after wsginj.h at line 186 (prefix wfe - free,",
+  "  but the FIRST FOUR candidates fae/wfa/fad/aeq ALL",
+  "  collided, needing fourteen probes). Bandages: several",
+  "  clean-fabric swatches for wounds and burns; clothing",
+  "  strips in a pinch but adventurer clothing is usually",
+  "  not clean, leaving infection possible even bandaged.",
+  "  Splints: unneeded through a wooded area, wise for a",
+  "  mountain or desert crossing - a couple of straight,",
+  "  short 2-3-foot rigid pieces bound along a broken limb",
+  "  to keep the bones aligned, or a large thick leather or",
+  "  untanned hide if large and rigid enough to immobilize",
+  "  the limb and both-side joints like a plaster cast.",
+  "  Stretcher: parts carried separately and assembled when",
+  "  needed - two poles at least as long as the victim",
+  "  height, sturdy cloth or leather to recline on, rope",
+  "  or cord to bind the poles to the edges; two comrades",
+  "  carry, each supporting half the weight unencumbered.",
+  "  Litter: a stretcher plus extra rope binding the victim",
+  "  to the frame; ONE carrier (or one mount or beast of",
+  "  burden) suffices at half the weight; unwise over rugged",
+  "  or very rugged terrain - one end always drags and the",
+  "  victim is jostled; the DM may rule further damage from",
+  "  the rough handling. THE SETTLE: two-way clean on the",
+  "  first pass - both readers agree on every number (the",
+  "  2-3 feet, the two poles, the half-weight bars); the",
+  "  skin-ailments and other-injuries prose at the top of",
+  "  the page belongs to the R480 injuries chapter and",
+  "  stayed out of scope. The spec md5 pair: authored",
+  "  54d42cfda2a8a2538442c3f461ee9f0b, as-built",
+  "  d7741c58547bad556b62349fcce20c6d (the Termux md5 hit",
+  "  the +nl pair value exactly). rverify at 414dbb3: 24",
+  "  mutants, 0 missed; inline_count 24 (8 consts + 16",
+  "  bools); census 405 -> 406; the gap flips 107/79 ->",
+  "  108/78, and the medicine chapter (R478-R481) is closed.",
+  "  Next: R482 - normal vision (p. 72)"
+ ]
+}

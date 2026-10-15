@@ -5079,6 +5079,46 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   bools); census 404 -> 405; the gap flips 106/80 ->
   107/79.
   Next: R481 - first aid equipment (p. 71)
+- R481 LANDED 2026-10-15: commit 5fe385c (census 406, pushed
+  414dbb3..5fe385c), the WSG FIRST AID EQUIPMENT slice,
+  printed p. 71 - the eleventh camping-arc round, CLOSING
+  the medicine chapter, a pure prose round with NO table:
+  the four essentials pinned as rules/wsgfae.h with the
+  include after wsginj.h at line 186 (prefix wfe - free,
+  but the FIRST FOUR candidates fae/wfa/fad/aeq ALL
+  collided, needing fourteen probes). Bandages: several
+  clean-fabric swatches for wounds and burns; clothing
+  strips in a pinch but adventurer clothing is usually
+  not clean, leaving infection possible even bandaged.
+  Splints: unneeded through a wooded area, wise for a
+  mountain or desert crossing - a couple of straight,
+  short 2-3-foot rigid pieces bound along a broken limb
+  to keep the bones aligned, or a large thick leather or
+  untanned hide if large and rigid enough to immobilize
+  the limb and both-side joints like a plaster cast.
+  Stretcher: parts carried separately and assembled when
+  needed - two poles at least as long as the victim
+  height, sturdy cloth or leather to recline on, rope
+  or cord to bind the poles to the edges; two comrades
+  carry, each supporting half the weight unencumbered.
+  Litter: a stretcher plus extra rope binding the victim
+  to the frame; ONE carrier (or one mount or beast of
+  burden) suffices at half the weight; unwise over rugged
+  or very rugged terrain - one end always drags and the
+  victim is jostled; the DM may rule further damage from
+  the rough handling. THE SETTLE: two-way clean on the
+  first pass - both readers agree on every number (the
+  2-3 feet, the two poles, the half-weight bars); the
+  skin-ailments and other-injuries prose at the top of
+  the page belongs to the R480 injuries chapter and
+  stayed out of scope. The spec md5 pair: authored
+  54d42cfda2a8a2538442c3f461ee9f0b, as-built
+  d7741c58547bad556b62349fcce20c6d (the Termux md5 hit
+  the +nl pair value exactly). rverify at 414dbb3: 24
+  mutants, 0 missed; inline_count 24 (8 consts + 16
+  bools); census 405 -> 406; the gap flips 107/79 ->
+  108/78, and the medicine chapter (R478-R481) is closed.
+  Next: R482 - normal vision (p. 72)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
