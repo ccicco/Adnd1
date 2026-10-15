@@ -5038,6 +5038,47 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   header write failed (the R420 gate caught it); always
   mkdir rules in a fresh snapshot before the first run.
   Next: R480 - injuries and treatment (p. 70)
+- R480 LANDED 2026-10-15: commit 414dbb3 (census 405, pushed
+  8089f20..414dbb3), the WSG INJURIES AND TREATMENT slice,
+  printed p. 70 - the tenth camping-arc round, a pure
+  prose round with NO table: the five specific injuries
+  and treatments pinned as rules/wsginj.h with the include
+  after wsglore.h at line 185 (prefix wtr, free in all four
+  files). The frame: first-aid skills are common knowledge,
+  useful only when the DM rules with proper reason that a
+  specific injury was suffered. The broken bone: the splint
+  aligns the ends, no hp regained until splinted, use of
+  the injured extremity costs an immediate 1d6 and
+  neutralizes healing to date, the bone heals last. The
+  minor burn: two turns of immersion or a tight clean
+  cloth for normal 1-per-day healing, else the -1 pain
+  penalty and half-speed healing. The major burn: more
+  than half the body, rest until half the lost hp,
+  voluntary activity forfeits all regained points plus 1d4
+  per round, the -3 pain penalty (exactly three times the
+  minor one), the victim can still be carried. The major
+  wound: an edged melee weapon with an unmodified damage
+  roll of 6 or higher, DM discretion or the 25% artery
+  chance, 2-4 (1d3+1) hp per round of bleeding, direct
+  pressure for 2-7 (1d6+1) rounds at 1 hp lost per round,
+  wrapping halts but a healing-proficiency character is
+  needed for recovery, early release negates. The minor
+  wound: assumed bandaged at first opportunity. THE
+  SETTLE: the injuries section lives on the same settled
+  printed p. 70 as R479 - both readers agree on every
+  number, the tsv confirming the dice formulas cell by
+  cell; no vision reads needed. The design-time check
+  caught the dice-minimum semantics BEFORE the build: min
+  = dice + plus (the R478-style first-try error of
+  dice*sides+plus never reached the engine), all six
+  example bands False on healthy data. The spec md5 pair:
+  authored 0332daff4a0b0af138efcf3a380bb423, as-built
+  f7dc3597786308753fc0e4f4beb16368 (the Termux md5 hit
+  the +nl pair value exactly). rverify at 8089f20: 43
+  mutants, 0 missed; inline_count 43 (24 consts + 19
+  bools); census 404 -> 405; the gap flips 106/80 ->
+  107/79.
+  Next: R481 - first aid equipment (p. 71)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

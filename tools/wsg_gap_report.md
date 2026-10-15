@@ -105,7 +105,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Availability of medicinal plants (p. 69) - R478: the vegetation and locate chances with the identify-half rule and the search discipline pin as rules/wsgmed.h
   - [x] Proficiency in plant lore (p. 70) - R479: the party survival benefit with the no-vegetation bar and the greater-chance-in-greenery rule pin as rules/wsglore.h
   - [x] Injuries and treatment (p. 70) - R480: the broken bone, burn, major wound and minor wound rules with the first-aid treatment semantics pin as rules/wsginj.h
-  - [ ] First aid equipment (p. 71)
+  - [x] First aid equipment (p. 71) - R481: the bandage, splint, stretcher and litter gear rules with the carry and terrain semantics pin as rules/wsgfae.h
 - [ ] **Vision and visibility** (pp. 72-75)
   - [ ] Normal vision (p. 72)
   - [ ] Infravision (p. 73)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R480: 107 closed, 79 open (the R480 round continues the camping arc medicine chapter - the injuries and treatment rules pin as rules/wsginj.h; the next round continues - first aid equipment (p. 71)).
+Post-state at R481: 108 closed, 78 open (the R481 round CLOSES the camping arc medicine chapter - the first aid equipment gear rules pin as rules/wsgfae.h; the next round opens the vision and visibility chapter - normal vision (p. 72)).
