@@ -1,0 +1,996 @@
+{
+ "round": 473,
+ "title": "the WSG portable shelter mechanics and rest and comfort slice with Table 37 - the shelter kits and the Table 36 column semantics, the sleep requirements and the five-band lack-of-sleep effects, printed pp. 63-64",
+ "prefix": "wrs",
+ "header_file": "rules/wsgsleep.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 397,
+ "inline_count": 77,
+ "audit_label": "R473 WSG sleep and shelter pin audit",
+ "audit_comment": "The Table 37 grid (the five average-rest bands by eight effect columns: the Dexterity, Strength, Wisdom and Constitution check ladders, the to-hit penalties, the Climbing and Movement reductions, the Weight Allowance multiples), the shelter kit descriptions, the occupancy rulings, the setup and takedown discipline, the moisture and wind resistance semantics, the life span point economy with the category degradation, the 16-hour active day with the 5-hour sleep requirement, the two-day trigger with the one-night negation and the movement rate semantics - every const, bool and table cell verified against the model.",
+ "banner": {
+  "title": "R473: the WSG PORTABLE SHELTER MECHANICS and REST AND COMFORT slice with TABLE 37 - the shelter kits (the poor covering loosely stitched of several pieces with wind through the seams and no anchoring gear or rope provided, what an unskilled maker ends up with; the adequate kit of at least two poles - a backbone ridgepole and a cross-brace - with tighter stitching and stakes driven through the covering edges; the good kit of at least four poles with the covering pieces stitched tightly and overlapped like shingles so no seams are exposed and reinforced edge holes for damage-free anchoring; the superior kit of at least six poles making a strong frame, a tailored covering of as few pieces as possible with reinforced seams - a true structure, the next best thing to a miner's shack), the occupancy (a small shelter one human-sized or two smaller characters plus all their gear, twice as many in close quarters; a medium two human-sized, twice as many close; a large four by design, five or six sleeping with gear stored outside, seven or eight in close quarters and no more than eight), the setup and takedown discipline (a second character reducing setup by 1 turn; a rope use proficient character halving the setup time rounded up with or without help; the 1/2/3-turn setup minimums by size; the takedown in 1 turn less than setup regardless of helpers, halved by rope use proficiency, with the 5-round/1-turn/2-turn minimums; the poor and adequate kits assuming the characters bring their own rope), the moisture rule (precip heavier than the value gets through as a storm one step lighter; a superior shelter protecting from even a downpour unless the wind is too strong or the storm separates it from its moorings), the wind rules (the greatest velocity withstood without leaking; every 10 mph above the number a 5 mph wind felt inside; above twice the number a 25% chance per 10 mph each hour of wind damage leaving the shelter useless until repaired; the book example of the 20-mph poor shelter feeling 5/10/15/20 mph at 30/40/50/60 with 25% then 50% damage per hour), the life span (the shelter's hit points: 1 point per three times put up, 1 per non-damaging over-wind exposure, 2 per equal-intensity precip, 4 per greater; a superior, good or adequate shelter dropping to the next category's maximum treated as that category; a poor shelter useless at half its points, 40 down to 20; the hailstorm and cracked-pole mishaps aging a shelter before its time), the rest and comfort rules (no more than 16 hours per day in active adventuring, fatigue stops not counting as rest; camp chores in three hours at most; five hours of sleep every 24 hours to avoid the risk of ill effects that may not show up right away) and TABLE 37 EFFECTS OF LACK OF SLEEP (the five bands less than 5/4/3/2/1 hours average rest per day: Dexterity Checks at +1/+2/+3/+4/+5; Strength at +1/+2/+3/+4 from the second band; Wisdom at +1/+2/+3 from the third; Constitution at +1/+2 in the bottom two; to-hit -1/-1/-2/-3; Climbing Rating -10/-20/-30 percent; Movement Rate -25/-33/-50 percent; Weight Allowance -50 and -100 x Strength), printed pp. 63-64.",
+  "provenance": "Ground truth two-way on the prose, three-way on the contested grid cells, no physical-page reads: the user-run Termux tesseract text of printed pp. 63-64 (p63_full.txt, p64_full.txt) vs the pdf embedded text layer (pdftotext -layout, pdf pages 64-65, p63_64_pdfy.txt). The two readers AGREE on all prose numbers: the 2/4/6 pole minimums, the occupancy counts, the 1-turn helper saving, the 1/2/3-turn setup minimums, the one-turn-less takedown with the 5-round/1-turn/2-turn minimums, the 10-mph/5-mph wind leak step, the twice-threshold 25% damage chance, the 1/3-use and 1/2/4 life span point rates, the poor 40-to-20 collapse, the 16/3/5-hour rules, the two-day trigger, the one-night negation and the 12-to-6 movement example. For the TABLE 37 GRID the tesseract TSV geometry and full text carry every cell EXCEPT the LESS-THAN-2 DEXTERITY AND STRENGTH cells, which tesseract garbles into low-confidence noise: the pdf layer reads them as Dexterity Checks at +4 and Strength Checks at +3, and a VISION READ of the uploaded page image (pg-001-2.png) SECOND-CONFIRMS the full grid including those two contested cells - the R471 vision-on-png combo as the standing contested-cell settler. The grid is also internally consistent: each ability ladder steps exactly one per band, and the less-than-5 band carries the Dexterity entry alone.",
+  "sentinel": "All 40 Table 37 cells pinned (the five bands by eight effect columns); the shelter kit mechanics, the setup and takedown discipline, the wind and moisture semantics, the life span economy, the rest and sleep rules and the book's own worked wind and movement examples are audit examples."
+ },
+ "consts": [
+  {
+   "name": "wrsAdequateMinPoles",
+   "value": 2,
+   "comment": "the adequate shelter kit includes at least two poles: one for a backbone (ridgepole) and one for a cross-brace"
+  },
+  {
+   "name": "wrsGoodMinPoles",
+   "value": 4,
+   "comment": "the good kit: at least four poles - a ridgepole, a cross-brace and two side poles for added strength and stability"
+  },
+  {
+   "name": "wrsSuperiorMinPoles",
+   "value": 6,
+   "comment": "the superior kit: at least six poles, enough to actually make a simple but strong frame for the cover"
+  },
+  {
+   "name": "wrsSmallComfort",
+   "value": 1,
+   "comment": "a small shelter comfortably holds one human-sized character (or two smaller ones) plus all their personal gear"
+  },
+  {
+   "name": "wrsMediumComfort",
+   "value": 2,
+   "comment": "a medium shelter easily accommodates two human-sized characters, or the equivalent in smaller characters"
+  },
+  {
+   "name": "wrsLargeDesign",
+   "value": 4,
+   "comment": "a large shelter is designed to hold four human-sized characters"
+  },
+  {
+   "name": "wrsLargeSleepMax",
+   "value": 6,
+   "comment": "a large shelter can sleep five or six men if the group stores some of its gear outside"
+  },
+  {
+   "name": "wrsLargeCloseMax",
+   "value": 8,
+   "comment": "a large shelter holds seven or eight men in close quarters, and no more than eight can sleep inside it"
+  },
+  {
+   "name": "wrsSetupHelperSaving",
+   "value": 1,
+   "comment": "a second character assisting with the setup reduces the time by 1 turn"
+  },
+  {
+   "name": "wrsSetupMinSmallTurns",
+   "value": 1,
+   "comment": "it takes at least 1 turn to set up a small shelter"
+  },
+  {
+   "name": "wrsSetupMinMediumTurns",
+   "value": 2,
+   "comment": "a medium shelter takes at least 2 turns to set up"
+  },
+  {
+   "name": "wrsSetupMinLargeTurns",
+   "value": 3,
+   "comment": "a large shelter takes at least 3 turns to set up"
+  },
+  {
+   "name": "wrsTakedownSavingTurns",
+   "value": 1,
+   "comment": "taking down the shelter and re-packing it takes 1 turn less than it took to put up"
+  },
+  {
+   "name": "wrsTakedownMinSmallRounds",
+   "value": 5,
+   "comment": "at least five rounds to dismantle and pack a small shelter"
+  },
+  {
+   "name": "wrsTakedownMinMediumTurns",
+   "value": 1,
+   "comment": "at least 1 turn to dismantle and pack a medium shelter"
+  },
+  {
+   "name": "wrsTakedownMinLargeTurns",
+   "value": 2,
+   "comment": "at least 2 turns to dismantle and pack a large shelter"
+  },
+  {
+   "name": "wrsWindStepMph",
+   "value": 10,
+   "comment": "for every 10 mph of actual wind velocity greater than the indicated number"
+  },
+  {
+   "name": "wrsWindLeakMph",
+   "value": 5,
+   "comment": "those inside the tent feel a wind of 5 mph for each 10 mph step above the rating"
+  },
+  {
+   "name": "wrsWindDamageThresholdMult",
+   "value": 2,
+   "comment": "the wind damage chance applies if the velocity exceeds twice the indicated number"
+  },
+  {
+   "name": "wrsWindDamagePctPerStep",
+   "value": 25,
+   "comment": "a 25% chance for each 10 mph of additional velocity, checked each hour, that the wind damages the shelter"
+  },
+  {
+   "name": "wrsWindExPoorRes",
+   "value": 20,
+   "comment": "the book wind example: a poor shelter provides complete protection up to 20 mph"
+  },
+  {
+   "name": "wrsWindEx30Leak",
+   "value": 5,
+   "comment": "the book example: at 30 mph those inside feel a breeze of 5 mph"
+  },
+  {
+   "name": "wrsWindEx40Leak",
+   "value": 10,
+   "comment": "the book example: at 40 mph the breeze inside is 10 mph"
+  },
+  {
+   "name": "wrsWindEx50Leak",
+   "value": 15,
+   "comment": "the book example: at 50 mph the breeze inside is 15 mph"
+  },
+  {
+   "name": "wrsWindEx60Leak",
+   "value": 20,
+   "comment": "the book example: at 60 mph the breeze inside has reached a hefty 20 mph"
+  },
+  {
+   "name": "wrsWindEx50DamagePct",
+   "value": 25,
+   "comment": "the book example: at 50 mph a 25% chance per hour of wind damage"
+  },
+  {
+   "name": "wrsWindEx60DamagePct",
+   "value": 50,
+   "comment": "the book example: at 60 mph a 50% chance per hour of wind damage"
+  },
+  {
+   "name": "wrsLifespanSetupsPerPoint",
+   "value": 3,
+   "comment": "1 life span point deducted for each three times the shelter is put up"
+  },
+  {
+   "name": "wrsLifespanWindPoints",
+   "value": 1,
+   "comment": "1 point for each exposure to wind speeds above its wind resistance that does no actual damage"
+  },
+  {
+   "name": "wrsLifespanEqualPrecipPoints",
+   "value": 2,
+   "comment": "2 points for each exposure to precipitation equal in intensity to its moisture resistance value"
+  },
+  {
+   "name": "wrsLifespanGreaterPrecipPoints",
+   "value": 4,
+   "comment": "4 points for each exposure to precipitation greater in intensity than its moisture resistance value"
+  },
+  {
+   "name": "wrsPoorLifespanMax",
+   "value": 40,
+   "comment": "a poor shelter starts with 40 life span points"
+  },
+  {
+   "name": "wrsPoorUselessAt",
+   "value": 20,
+   "comment": "a poor shelter losing half its maximum points (from 40 to 20) is useless until repaired"
+  },
+  {
+   "name": "wrsMaxActiveHours",
+   "value": 16,
+   "comment": "a character should spend no more than 16 hours per day in active adventuring pursuits"
+  },
+  {
+   "name": "wrsCampChoreHours",
+   "value": 3,
+   "comment": "setting up a shelter, hunting and foraging, and cooking the nighttime meal should all be done in three hours at most"
+  },
+  {
+   "name": "wrsSleepHoursNeeded",
+   "value": 5,
+   "comment": "a character needs five hours of sleep every 24 hours to avoid the risk of ill effects from lack of rest"
+  },
+  {
+   "name": "wrsTriggerDays",
+   "value": 2,
+   "comment": "the lack-of-sleep effects do not set in until a character has gone two days without at least five hours of sleep during one of them"
+  },
+  {
+   "name": "wrsExMoveRate",
+   "value": 12,
+   "comment": "the book movement example: a character with a normal movement rate of 12"
+  },
+  {
+   "name": "wrsExHalfDayMiles",
+   "value": 6,
+   "comment": "the book movement example: operating with less than 1 hour of sleep he can travel only 6 miles per half-day on foot"
+  },
+  {
+   "name": "wrsSleepBands",
+   "value": 5,
+   "comment": "the Table 37 average-rest bands: less than 5, 4, 3, 2 and 1 hours"
+  },
+  {
+   "name": "wrsRowCount",
+   "value": 5,
+   "comment": "the Table 37 row count"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wrsPoorKitLooseStitching",
+   "value": true,
+   "comment": "the poor shelter \"single piece\" covering is actually several pieces loosely stitched with rawhide or cord neither particularly strong nor durable: wind easily finds its way in through the seams, and the covering does not completely keep out rain or snow because of its loose construction"
+  },
+  {
+   "name": "wrsPoorKitBringYourOwn",
+   "value": true,
+   "comment": "the poor kit provides no special anchoring equipment and no rope: the edges must be anchored with rocks or other weights at hand or handmade stakes whittled from branches, the characters provide their own rope, and an unskilled character manufacturing a portable shelter ends up with this quality"
+  },
+  {
+   "name": "wrsAdequateKitTighter",
+   "value": true,
+   "comment": "the adequate covering is made of multiple sections just as a poor one, but the edges are more closely matched and the stitching tighter and stronger: it does not let in wind or precipitation as easily, and its wooden or metal stakes are driven through the edges into the ground"
+  },
+  {
+   "name": "wrsGoodKitShingled",
+   "value": true,
+   "comment": "the good covering pieces are not only stitched tightly together but overlapped like shingles so no seams are directly exposed on the outer surface, and the edges contain reinforced holes through which a stake can be driven or a rope strung to anchor without damaging the material"
+  },
+  {
+   "name": "wrsSuperiorKitStructure",
+   "value": true,
+   "comment": "the superior covering is extremely well waterproofed, made of as few separate pieces as possible with joined seams reinforced by another thickness of material: a true structure keeping out all but the strongest wind and heaviest precipitation, the next best thing to finding a miner's shack"
+  },
+  {
+   "name": "wrsSmallCloseQuarters",
+   "value": true,
+   "comment": "the small shelter can be used to shelter up to twice as many occupants in close quarters"
+  },
+  {
+   "name": "wrsMediumCloseQuarters",
+   "value": true,
+   "comment": "the medium shelter holds up to twice as many in close quarters"
+  },
+  {
+   "name": "wrsLargeCloseQuartersOnly8",
+   "value": true,
+   "comment": "no more than eight can sleep inside a large shelter without some of the occupants being literally on top of others"
+  },
+  {
+   "name": "wrsSetupAssumesRope",
+   "value": true,
+   "comment": "the poor and adequate setup times assume the characters have rope and, for a poor shelter, some objects with which to anchor the cover"
+  },
+  {
+   "name": "wrsRopeUseHalvesSetup",
+   "value": true,
+   "comment": "a character with proficiency in rope use sets up the shelter, with or without help, in half the time (rounded up) indicated by the die roll"
+  },
+  {
+   "name": "wrsTakedownNoHelperBonus",
+   "value": true,
+   "comment": "the takedown time is 1 turn less than the setup time regardless of how many characters assist"
+  },
+  {
+   "name": "wrsRopeUseHalvesTakedown",
+   "value": true,
+   "comment": "a character with proficiency in rope use can dismantle and properly pack a shelter in half the time it takes a nonproficient character"
+  },
+  {
+   "name": "wrsMoistureOneStepLighter",
+   "value": true,
+   "comment": "precipitation heavier than the moisture resistance value gets through the shelter and falls on the occupants as though they were in a storm one step lighter in intensity (a poor shelter douses its occupants in a moderate storm as if they were in the open during a light one)"
+  },
+  {
+   "name": "wrsSuperiorDownpourCaveat",
+   "value": true,
+   "comment": "a superior shelter protects those inside from even a downpour, as long as the wind is not too strong and the force of the storm does not separate the shelter from its moorings"
+  },
+  {
+   "name": "wrsWindLeakRule",
+   "value": true,
+   "comment": "the wind resistance number is the greatest wind velocity the shelter withstands without leaking, and the effective temperature inside changes with the leaked breeze"
+  },
+  {
+   "name": "wrsWindDamageUseless",
+   "value": true,
+   "comment": "a wind-damaged shelter is useless until it is repaired"
+  },
+  {
+   "name": "wrsLifespanAsHitPoints",
+   "value": true,
+   "comment": "life span may be thought of as the shelter's hit points: a new or freshly repaired shelter has the indicated number of life span points"
+  },
+  {
+   "name": "wrsCategoryDegradation",
+   "value": true,
+   "comment": "when a superior, good or adequate shelter loses enough points to bring it down to the maximum value of the next lower category, it is treated as a shelter of that category until it deteriorates completely or is repaired"
+  },
+  {
+   "name": "wrsPoorHalfUseless",
+   "value": true,
+   "comment": "repair costs and availability are in the province of the DM, but hauling a dilapidated poor shelter into town to be fixed would cost more effort and time than it is worth: cut up the cover and make it into sacks or saddle blankets"
+  },
+  {
+   "name": "wrsLifespanHazards",
+   "value": true,
+   "comment": "the life span does not account for mishaps that age a shelter early: a hailstorm may at the DM discretion punch holes or weaken the seams, a tent pole cracked flailing on a wild bear will not hold the cover in a stiff wind, but barring such occurrences most shelters serve well for an adventure or two or longer"
+  },
+  {
+   "name": "wrsActiveTimeCap",
+   "value": true,
+   "comment": "the 16-hour active time includes rest stops taken to avoid fatigue, which do not count as actual rest for these rules; the remainder of the day is set aside for making camp, eating and sleeping"
+  },
+  {
+   "name": "wrsSleepRiskHidden",
+   "value": true,
+   "comment": "an improperly rested character's ill effects may not show up right away, might not manifest themselves at all if he is lucky, or might come back to haunt him at a very inopportune time"
+  },
+  {
+   "name": "wrsTwoDayTrigger",
+   "value": true,
+   "comment": "a character can stay up all night and function normally throughout the next day, but if he does not get at least five hours of sleep on the following night then the effects begin at sunrise or when he awakens"
+  },
+  {
+   "name": "wrsDayByDayCalc",
+   "value": true,
+   "comment": "average rest per day is calculated on a day-by-day basis whenever a character goes two or more consecutive days without getting at least five hours of sleep during one of those days"
+  },
+  {
+   "name": "wrsOneNightNegation",
+   "value": true,
+   "comment": "as soon as he gets five hours of sleep in a single day, any and all effects are negated: the character is replenished by one good night's sleep even after several deprived days in a row"
+  },
+  {
+   "name": "wrsCheckModifierOnRoll",
+   "value": true,
+   "comment": "the table modifiers are applied to the die roll whenever an Ability Check or a Proficiency Check related to the indicated ability is called for"
+  },
+  {
+   "name": "wrsMoveReductionAfterAdjustments",
+   "value": true,
+   "comment": "the movement rate entries reduce the character's normal large-scale movement rate, taken after all other adjustments for terrain and encumbrance are accounted for"
+  },
+  {
+   "name": "wrsCombatMoveExempt",
+   "value": true,
+   "comment": "the movement penalty does not apply in combat situations or other feet-per-round movement: ambushed while travelling 6 miles per half-day, the character still moves at his full rate while the combat episode is resolved"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "wrsSleepEffects",
+   "tag": "37",
+   "count": "wrsRowCount",
+   "cols": [
+    "wrsDexCheck",
+    "wrsStrCheck",
+    "wrsWisCheck",
+    "wrsConCheck",
+    "wrsToHit",
+    "wrsClimbPct",
+    "wrsMovePct",
+    "wrsWtMult"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 37 Dexterity Check modifier on the die roll",
+    "the Table 37 Strength Check modifier on the die roll",
+    "the Table 37 Wisdom Check modifier on the die roll",
+    "the Table 37 Constitution Check modifier on the die roll",
+    "the Table 37 to-hit penalty",
+    "the Table 37 Climbing Rating reduction percent",
+    "the Table 37 Movement Rate reduction percent",
+    "the Table 37 Weight Allowance penalty, a multiple of the character's Strength"
+   ],
+   "row_comments": [
+    "the less-than-5-hours row",
+    "the less-than-4-hours row",
+    "the less-than-3-hours row",
+    "the less-than-2-hours row",
+    "the less-than-1-hour row"
+   ],
+   "data": [
+    [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     1,
+     0,
+     0,
+     -1,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     2,
+     1,
+     0,
+     -1,
+     -10,
+     -25,
+     0
+    ],
+    [
+     4,
+     3,
+     2,
+     1,
+     -2,
+     -20,
+     -33,
+     50
+    ],
+    [
+     5,
+     4,
+     3,
+     2,
+     -3,
+     -30,
+     -50,
+     100
+    ]
+   ],
+   "audit_comment": "Table 37: effects of lack of sleep, the five average-rest bands by eight effect columns (the ability check ladders, the to-hit penalties, the climbing and movement reductions, the weight allowance multiples), printed p. 64",
+   "sentinel": 999,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the pole kits: 2 adequate, 4 good, 6 superior, each strictly more than the last",
+   "expr": "m['wrsAdequateMinPoles']() != 2 or m['wrsGoodMinPoles']() != 4 or m['wrsSuperiorMinPoles']() != 6 or m['wrsAdequateMinPoles']() >= m['wrsGoodMinPoles']() or m['wrsGoodMinPoles']() >= m['wrsSuperiorMinPoles']()"
+  },
+  {
+   "note": "the occupancy ladder: 1 small, 2 medium, 4 large by design with the 6 sleep and 8 close-quarters caps",
+   "expr": "m['wrsSmallComfort']() != 1 or m['wrsMediumComfort']() != 2 or m['wrsLargeDesign']() != 4 or m['wrsLargeSleepMax']() != 6 or m['wrsLargeCloseMax']() != 8 or m['wrsLargeDesign']() >= m['wrsLargeSleepMax']() or m['wrsLargeSleepMax']() >= m['wrsLargeCloseMax']()"
+  },
+  {
+   "note": "the setup minimums: 1/2/3 turns by size and the 1-turn helper saving",
+   "expr": "m['wrsSetupMinSmallTurns']() != 1 or m['wrsSetupMinMediumTurns']() != 2 or m['wrsSetupMinLargeTurns']() != 3 or m['wrsSetupHelperSaving']() != 1 or m['wrsSetupMinSmallTurns']() >= m['wrsSetupMinMediumTurns']() or m['wrsSetupMinMediumTurns']() >= m['wrsSetupMinLargeTurns']()"
+  },
+  {
+   "note": "the takedown: 1 turn less than setup with the 5-round small and 1/2-turn medium/large minimums",
+   "expr": "m['wrsTakedownSavingTurns']() != 1 or m['wrsTakedownMinSmallRounds']() != 5 or m['wrsTakedownMinMediumTurns']() != 1 or m['wrsTakedownMinLargeTurns']() != 2 or m['wrsTakedownMinMediumTurns']() >= m['wrsTakedownMinLargeTurns']()"
+  },
+  {
+   "note": "the wind machinery: the 10-mph step, the 5-mph leak, the twice-threshold and the 25% damage chance",
+   "expr": "m['wrsWindStepMph']() != 10 or m['wrsWindLeakMph']() != 5 or m['wrsWindDamageThresholdMult']() != 2 or m['wrsWindDamagePctPerStep']() != 25"
+  },
+  {
+   "note": "the book wind example: the 20-mph poor shelter leaks 5/10/15/20 mph at 30/40/50/60 mph, damage 25% then 50%",
+   "expr": "m['wrsWindExPoorRes']() != 20 or m['wrsWindEx30Leak']() != 5 or m['wrsWindEx40Leak']() != 10 or m['wrsWindEx50Leak']() != 15 or m['wrsWindEx60Leak']() != 20 or m['wrsWindEx50DamagePct']() != 25 or m['wrsWindEx60DamagePct']() != 50 or m['wrsWindEx30Leak']() >= m['wrsWindEx40Leak']() or m['wrsWindEx40Leak']() >= m['wrsWindEx50Leak']() or m['wrsWindEx50Leak']() >= m['wrsWindEx60Leak']() or m['wrsWindEx50DamagePct']() >= m['wrsWindEx60DamagePct']()"
+  },
+  {
+   "note": "the life span point rates: 1 per 3 setups, 1 per non-damaging over-wind, 2 equal precip, 4 greater",
+   "expr": "m['wrsLifespanSetupsPerPoint']() != 3 or m['wrsLifespanWindPoints']() != 1 or m['wrsLifespanEqualPrecipPoints']() != 2 or m['wrsLifespanGreaterPrecipPoints']() != 4 or m['wrsLifespanWindPoints']() >= m['wrsLifespanEqualPrecipPoints']() or m['wrsLifespanEqualPrecipPoints']() >= m['wrsLifespanGreaterPrecipPoints']()"
+  },
+  {
+   "note": "the poor shelter collapse: half of 40 is 20",
+   "expr": "m['wrsPoorLifespanMax']() != 40 or m['wrsPoorUselessAt']() != 20 or m['wrsPoorUselessAt']() >= m['wrsPoorLifespanMax']()"
+  },
+  {
+   "note": "the rest day: 16 hours active, 3 hours of chores, 5 hours of sleep",
+   "expr": "m['wrsMaxActiveHours']() != 16 or m['wrsCampChoreHours']() != 3 or m['wrsSleepHoursNeeded']() != 5"
+  },
+  {
+   "note": "the two-day trigger",
+   "expr": "m['wrsTriggerDays']() != 2"
+  },
+  {
+   "note": "the book movement example: 12 down to 6 miles per half-day",
+   "expr": "m['wrsExMoveRate']() != 12 or m['wrsExHalfDayMiles']() != 6 or m['wrsExHalfDayMiles']() >= m['wrsExMoveRate']()"
+  },
+  {
+   "note": "the kit mechanics: the poor loose kit, the adequate tight one, the good shingles, the superior true structure",
+   "expr": "m['wrsPoorKitLooseStitching']() != 1 or m['wrsPoorKitBringYourOwn']() != 1 or m['wrsAdequateKitTighter']() != 1 or m['wrsGoodKitShingled']() != 1 or m['wrsSuperiorKitStructure']() != 1"
+  },
+  {
+   "note": "the occupancy rulings: small and medium close quarters, the large eight cap",
+   "expr": "m['wrsSmallCloseQuarters']() != 1 or m['wrsMediumCloseQuarters']() != 1 or m['wrsLargeCloseQuartersOnly8']() != 1"
+  },
+  {
+   "note": "the setup and takedown rope rules",
+   "expr": "m['wrsSetupAssumesRope']() != 1 or m['wrsRopeUseHalvesSetup']() != 1 or m['wrsTakedownNoHelperBonus']() != 1 or m['wrsRopeUseHalvesTakedown']() != 1"
+  },
+  {
+   "note": "the moisture and wind rulings",
+   "expr": "m['wrsMoistureOneStepLighter']() != 1 or m['wrsSuperiorDownpourCaveat']() != 1 or m['wrsWindLeakRule']() != 1 or m['wrsWindDamageUseless']() != 1"
+  },
+  {
+   "note": "the life span rulings: hit points, degradation, the poor collapse, the mishap caveats",
+   "expr": "m['wrsLifespanAsHitPoints']() != 1 or m['wrsCategoryDegradation']() != 1 or m['wrsPoorHalfUseless']() != 1 or m['wrsLifespanHazards']() != 1"
+  },
+  {
+   "note": "the rest and sleep discipline: the active-time definition, the hidden risk, the day-by-day calc and the negation",
+   "expr": "m['wrsActiveTimeCap']() != 1 or m['wrsSleepRiskHidden']() != 1 or m['wrsDayByDayCalc']() != 1 or m['wrsOneNightNegation']() != 1"
+  },
+  {
+   "note": "the check and movement semantics with the combat exemption",
+   "expr": "m['wrsCheckModifierOnRoll']() != 1 or m['wrsMoveReductionAfterAdjustments']() != 1 or m['wrsCombatMoveExempt']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the Dexterity ladder: +1 through +5, the only entry in the less-than-5 band",
+   "expr": "m['wrsDexCheck'](0) != 1 or m['wrsDexCheck'](1) != 2 or m['wrsDexCheck'](2) != 3 or m['wrsDexCheck'](3) != 4 or m['wrsDexCheck'](4) != 5"
+  },
+  {
+   "note": "the Strength ladder: nothing in the top band, +1 through +4 below it",
+   "expr": "m['wrsStrCheck'](0) != 0 or m['wrsStrCheck'](1) != 1 or m['wrsStrCheck'](2) != 2 or m['wrsStrCheck'](3) != 3 or m['wrsStrCheck'](4) != 4"
+  },
+  {
+   "note": "the Wisdom ladder: entering at less-than-3 with +1, +2, +3",
+   "expr": "m['wrsWisCheck'](0) != 0 or m['wrsWisCheck'](1) != 0 or m['wrsWisCheck'](2) != 1 or m['wrsWisCheck'](3) != 2 or m['wrsWisCheck'](4) != 3"
+  },
+  {
+   "note": "the Constitution ladder: only the bottom two bands, +1 and +2",
+   "expr": "m['wrsConCheck'](0) != 0 or m['wrsConCheck'](1) != 0 or m['wrsConCheck'](2) != 0 or m['wrsConCheck'](3) != 1 or m['wrsConCheck'](4) != 2"
+  },
+  {
+   "note": "the to-hit ladder: none, -1, -1, -2, -3",
+   "expr": "m['wrsToHit'](0) != 0 or m['wrsToHit'](1) != -1 or m['wrsToHit'](2) != -1 or m['wrsToHit'](3) != -2 or m['wrsToHit'](4) != -3"
+  },
+  {
+   "note": "the Climbing Rating reductions: -10/-20/-30 percent in the bottom three bands",
+   "expr": "m['wrsClimbPct'](0) != 0 or m['wrsClimbPct'](1) != 0 or m['wrsClimbPct'](2) != -10 or m['wrsClimbPct'](3) != -20 or m['wrsClimbPct'](4) != -30"
+  },
+  {
+   "note": "the Movement Rate reductions: -25/-33/-50 percent in the bottom three bands",
+   "expr": "m['wrsMovePct'](0) != 0 or m['wrsMovePct'](1) != 0 or m['wrsMovePct'](2) != -25 or m['wrsMovePct'](3) != -33 or m['wrsMovePct'](4) != -50"
+  },
+  {
+   "note": "the Weight Allowance penalty multiples of Strength: 50 and 100 in the bottom two bands",
+   "expr": "m['wrsWtMult'](0) != 0 or m['wrsWtMult'](1) != 0 or m['wrsWtMult'](2) != 0 or m['wrsWtMult'](3) != 50 or m['wrsWtMult'](4) != 100"
+  },
+  {
+   "note": "the ladders rise with each band: Dexterity and Strength strictly increase, Wisdom and Constitution never decrease",
+   "expr": "m['wrsDexCheck'](0) >= m['wrsDexCheck'](1) or m['wrsDexCheck'](1) >= m['wrsDexCheck'](2) or m['wrsDexCheck'](2) >= m['wrsDexCheck'](3) or m['wrsDexCheck'](3) >= m['wrsDexCheck'](4) or m['wrsStrCheck'](0) >= m['wrsStrCheck'](1) or m['wrsStrCheck'](1) >= m['wrsStrCheck'](2) or m['wrsStrCheck'](2) >= m['wrsStrCheck'](3) or m['wrsStrCheck'](3) >= m['wrsStrCheck'](4) or m['wrsWisCheck'](1) > m['wrsWisCheck'](2) or m['wrsWisCheck'](2) > m['wrsWisCheck'](3) or m['wrsConCheck'](2) > m['wrsConCheck'](3)"
+  },
+  {
+   "note": "the penalties deepen with each band: to-hit, Climbing and Movement all worsen monotonically (never lighten going down the bands)",
+   "expr": "m['wrsToHit'](2) > m['wrsToHit'](1) or m['wrsToHit'](3) > m['wrsToHit'](2) or m['wrsToHit'](4) > m['wrsToHit'](3) or m['wrsClimbPct'](3) > m['wrsClimbPct'](2) or m['wrsClimbPct'](4) > m['wrsClimbPct'](3) or m['wrsMovePct'](3) > m['wrsMovePct'](2) or m['wrsMovePct'](4) > m['wrsMovePct'](3)"
+  },
+  {
+   "note": "the less-than-5 band is Dexterity-only: every other column is zero",
+   "expr": "m['wrsStrCheck'](0) != 0 or m['wrsWisCheck'](0) != 0 or m['wrsConCheck'](0) != 0 or m['wrsToHit'](0) != 0 or m['wrsClimbPct'](0) != 0 or m['wrsMovePct'](0) != 0 or m['wrsWtMult'](0) != 0"
+  },
+  {
+   "note": "the Constitution and Weight Allowance entries appear only in the bottom two bands",
+   "expr": "m['wrsConCheck'](2) != 0 or m['wrsWtMult'](2) != 0 or m['wrsWtMult'](3) != 50 or m['wrsWtMult'](4) != 100"
+  }
+ ],
+ "header_sections": {
+  "The shelter kits": [
+   {
+    "kind": "bool",
+    "name": "wrsPoorKitLooseStitching"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsPoorKitBringYourOwn"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsAdequateKitTighter"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsGoodKitShingled"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsSuperiorKitStructure"
+   },
+   {
+    "kind": "const",
+    "name": "wrsAdequateMinPoles"
+   },
+   {
+    "kind": "const",
+    "name": "wrsGoodMinPoles"
+   },
+   {
+    "kind": "const",
+    "name": "wrsSuperiorMinPoles"
+   }
+  ],
+  "The occupancy": [
+   {
+    "kind": "const",
+    "name": "wrsSmallComfort"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsSmallCloseQuarters"
+   },
+   {
+    "kind": "const",
+    "name": "wrsMediumComfort"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsMediumCloseQuarters"
+   },
+   {
+    "kind": "const",
+    "name": "wrsLargeDesign"
+   },
+   {
+    "kind": "const",
+    "name": "wrsLargeSleepMax"
+   },
+   {
+    "kind": "const",
+    "name": "wrsLargeCloseMax"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsLargeCloseQuartersOnly8"
+   }
+  ],
+  "The setup and takedown": [
+   {
+    "kind": "bool",
+    "name": "wrsSetupAssumesRope"
+   },
+   {
+    "kind": "const",
+    "name": "wrsSetupHelperSaving"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsRopeUseHalvesSetup"
+   },
+   {
+    "kind": "const",
+    "name": "wrsSetupMinSmallTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wrsSetupMinMediumTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wrsSetupMinLargeTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wrsTakedownSavingTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsTakedownNoHelperBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsRopeUseHalvesTakedown"
+   },
+   {
+    "kind": "const",
+    "name": "wrsTakedownMinSmallRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wrsTakedownMinMediumTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wrsTakedownMinLargeTurns"
+   }
+  ],
+  "The moisture and wind rules": [
+   {
+    "kind": "bool",
+    "name": "wrsMoistureOneStepLighter"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsSuperiorDownpourCaveat"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsWindLeakRule"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindStepMph"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindLeakMph"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindDamageThresholdMult"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindDamagePctPerStep"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsWindDamageUseless"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindExPoorRes"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindEx30Leak"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindEx40Leak"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindEx50Leak"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindEx60Leak"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindEx50DamagePct"
+   },
+   {
+    "kind": "const",
+    "name": "wrsWindEx60DamagePct"
+   }
+  ],
+  "The life span": [
+   {
+    "kind": "bool",
+    "name": "wrsLifespanAsHitPoints"
+   },
+   {
+    "kind": "const",
+    "name": "wrsLifespanSetupsPerPoint"
+   },
+   {
+    "kind": "const",
+    "name": "wrsLifespanWindPoints"
+   },
+   {
+    "kind": "const",
+    "name": "wrsLifespanEqualPrecipPoints"
+   },
+   {
+    "kind": "const",
+    "name": "wrsLifespanGreaterPrecipPoints"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsCategoryDegradation"
+   },
+   {
+    "kind": "const",
+    "name": "wrsPoorLifespanMax"
+   },
+   {
+    "kind": "const",
+    "name": "wrsPoorUselessAt"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsPoorHalfUseless"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsLifespanHazards"
+   }
+  ],
+  "Rest and comfort": [
+   {
+    "kind": "const",
+    "name": "wrsMaxActiveHours"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsActiveTimeCap"
+   },
+   {
+    "kind": "const",
+    "name": "wrsCampChoreHours"
+   },
+   {
+    "kind": "const",
+    "name": "wrsSleepHoursNeeded"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsSleepRiskHidden"
+   }
+  ],
+  "Table 37: the effects of lack of sleep": [
+   {
+    "kind": "const",
+    "name": "wrsSleepBands"
+   },
+   {
+    "kind": "const",
+    "name": "wrsRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "wrsSleepEffects"
+   }
+  ],
+  "The lack-of-sleep discipline": [
+   {
+    "kind": "const",
+    "name": "wrsTriggerDays"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsTwoDayTrigger"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsDayByDayCalc"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsOneNightNegation"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsCheckModifierOnRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsMoveReductionAfterAdjustments"
+   },
+   {
+    "kind": "const",
+    "name": "wrsExMoveRate"
+   },
+   {
+    "kind": "const",
+    "name": "wrsExHalfDayMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "wrsCombatMoveExempt"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "rest and comfort",
+   "from": "  - [ ] Rest and comfort (p. 64)",
+   "to": "  - [x] Rest and comfort (p. 64) - R473: the 16-hour active day with the 3-hour camp chores, the 5-hour sleep requirement and the p. 63 shelter-mechanics seam pin as rules/wsgsleep.h"
+  },
+  {
+   "note": "how much sleep",
+   "from": "  - [ ] How much sleep? (p. 64)",
+   "to": "  - [x] How much sleep? (p. 64) - R473: the two-day trigger with the sunrise onset, the day-by-day average rest calculation, the one-night negation and the check and movement semantics pin as rules/wsgsleep.h"
+  },
+  {
+   "note": "the Table 37 box",
+   "from": "- [ ] **Table 37: effects of lack of sleep** (p. 64)",
+   "to": "- [x] **Table 37: effects of lack of sleep** (p. 64) - R473: the five-band grid pins inside rules/wsgsleep.h (census 397)"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R472: 93 closed, 93 open (the R472 round continues the camping arc - portable shelters with Table 36 pin as rules/wsgtents.h; the next round continues - rest and comfort (p. 64) with Table 37).",
+   "to": "Post-state at R473: 96 closed, 90 open (the R473 round continues the camping arc - the portable shelter mechanics seam with the rest and comfort sleep rules and Table 37 pin as rules/wsgsleep.h; the next round continues - good sleep vs bad sleep (p. 65) with Table 38)."
+  }
+ ],
+ "gap_census": {
+  "closed": 96,
+  "open": 90
+ },
+ "include_comment": "the WSG shelter mechanics, rest and sleep, and Table 37",
+ "include_after": "#include \"rules/wsgtents.h\"  // R472: the WSG portable shelters and Table 36",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R472 LANDED 2026-10-15: commit 663e014 (census 397, pushed",
+ "prev_record": [
+  "- R472 LANDED 2026-10-15: commit 663e014 (census 397, pushed",
+  "  2eec600..663e014), the WSG PORTABLE SHELTERS slice with",
+  "  TABLE 36, printed p. 62 - the second camping-arc round",
+  "  and the second TABLE ROUND of the arc: the p. 61 seam tail",
+  "  (a cave in the face of a mountain slope is a superior",
+  "  shelter in all respects, assuming the opening faces away",
+  "  from the wind; the DM judgment prevailing in any",
+  "  circumstances not covered by the guidelines), the hauling",
+  "  rules (a single mount or size M pack animal easily",
+  "  transporting all the gear for many shelter types with",
+  "  plenty of carrying capacity left over; in the absence of",
+  "  an animal a single average-strength character hauling on",
+  "  his back enough for himself and a small group at their",
+  "  rest stops), the simplest form (a single wooden pole of",
+  "  6-10 feet plus a fairly large expanse of heavy waterproofed",
+  "  cloth or similarly pliable material; the DM may allow a",
+  "  two- or three-piece pole apparatus held by lashings or",
+  "  pegs, easier to transport), the pitch rules (the pole",
+  "  anchored at 30 to 45 degrees, the covering draped over",
+  "  it, the edges tied down with ropes and stakes, the",
+  "  opening facing opposite the wind), the occupancy (one",
+  "  human or a pair of smaller characters, and in a pinch",
+  "  two men with no appreciable loss of protection or",
+  "  comfort), the escalation (more elaborate shelters for",
+  "  vicious weather or a decent-sized group huddling in one",
+  "  tent) and the Table 36 grid (the four quality bands",
+  "  poor/adequate/good/superior by small/medium/large:",
+  "  encumbrance 350/450/600, 500/600/750, 600/800/1000,",
+  "  750/1000/1500; cost 10/20/30, 30/50/75, 75/120/180,",
+  "  200/300/400 gp; setup 1d2+1/1d2+2/1d2+3, 1d3+1/1d3+2/",
+  "  1d3+3, 1d3+1/1d3+2/1d4+2, 1d4+1/1d4+2/1d4+3 turns - the",
+  "  GOOD LARGE 1d4+2 OUTLIER breaking the 1d3+ pattern of",
+  "  its band, verified in all three readers; moisture light/",
+  "  moderate/heavy/downpour; wind 20/30/40/50 pct; life span",
+  "  40/80/120/180 days). rules/wsgtents.h NEW (27 inlines: 8",
+  "  consts - the 6/10 pole band, the 30/45 pitch band, the",
+  "  3-piece pole cap, the 4-band x 3-size x 12-row geometry -",
+  "  plus 12 bools plus the seven Table 36 column switches -",
+  "  the setup dice split into a die and a modifier column,",
+  "  the moisture resistance as a 4-step tier, prefix wps,",
+  "  checked free). GROUND TRUTH two-way, no contested cells,",
+  "  no physical-page reads: the R467 TSV-GEOMETRY WORKFLOW",
+  "  (the uploaded p62_tsv.tsv word boxes) vs the user-run",
+  "  Termux tesseract text of printed p. 62; the two readers",
+  "  agree on ALL 72 GRID CELLS; the pdf text layer third",
+  "  reader garbles dice as ld (the known pattern) but agrees",
+  "  on every value and all prose numbers. Gap 91/95 -> 93/93",
+  "  (TWO box flips - portable shelters + the Table 36 grid",
+  "  box, the R467/R471 precedent - plus the post-state line);",
+  "  census 396 -> 397. rverify FULL GREEN pre-landing at base",
+  "  2eec600 (double-run 7/0 then 0/7, 104 mutants, 0 missed) -",
+  "  NO spec bugs this time: all three standing lessons (the",
+  "  count const in header_sections, explicit cell chains, no",
+  "  arithmetic inside condition operands) honored on the",
+  "  first write. Spec md5s: 2a1ae28a authored / f74ca64b +nl",
+  "  - the Termux read the +nl value exactly. LANDED CLEAN on",
+  "  the first ritual run: preflight GREEN first try (only the",
+  "  two pre-existing warnings), R472 audit bad 0, AUDIT",
+  "  CENSUS: 397 exactly once, 7 files / 1364 insertions (the",
+  "  p62 extraction files riding along in the commit).",
+  "  VERIFIED at the raw sha 663e014: the include after",
+  "  wsgshelter.h at line 177, the R472 audit label with ZERO",
+  "  True tokens, the C36 grid verbatim ({350,10,2,1,0,20,40}",
+  "  up through {1500,400,4,3,3,50,180}, the array declared",
+  "  [12][7]), the gap 93/93 with both boxes flipped and the",
+  "  post-state line, the spec md5 f74ca64b, the R471 seed",
+  "  record in place. Next: R473 - rest and comfort (p. 64)",
+  "  with Table 37 (effects of lack of sleep), continuing the",
+  "  camping arc."
+ ]
+}

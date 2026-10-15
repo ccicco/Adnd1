@@ -94,8 +94,8 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Camping and campfires** (pp. 61-68)
   - [x] Natural shelters (p. 61) - R471: the find chance by terrain and season, the check discipline, the forest construction times with the helper and rope-use reductions and the terrain-by-terrain notes pin as rules/wsgshelter.h
   - [x] Portable shelters (p. 62) - R472: the pole-and-cloth simple shelter with the pitch rules, the occupancy limits, the hauling rules and the Table 36 quality-by-size grid pin as rules/wsgtents.h
-  - [ ] Rest and comfort (p. 64)
-  - [ ] How much sleep? (p. 64)
+  - [x] Rest and comfort (p. 64) - R473: the 16-hour active day with the 3-hour camp chores, the 5-hour sleep requirement and the p. 63 shelter-mechanics seam pin as rules/wsgsleep.h
+  - [x] How much sleep? (p. 64) - R473: the two-day trigger with the sunrise onset, the day-by-day average rest calculation, the one-night negation and the check and movement semantics pin as rules/wsgsleep.h
   - [ ] Good sleep vs bad sleep (p. 65)
   - [ ] Fire: friend and foe (p. 65)
   - [ ] Precautions and perils (p. 66)
@@ -192,11 +192,11 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 34: chance of finding water** (p. 59) - R467: the climate x terrain x season grid with the find%/taint% pairs, all 224 values rebuilt from the tesseract bounding-box geometry, pin as rules/wsgwater.h
 - [x] **Table 35: chance of finding natural shelter** (p. 61) - R471: the 24-cell grid pins inside rules/wsgshelter.h (census 395)
 - [x] **Table 36: portable shelter characteristics** (p. 62) - R472: the 72-cell grid pins inside rules/wsgtents.h (census 396)
-- [ ] **Table 37: effects of lack of sleep** (p. 64)
+- [x] **Table 37: effects of lack of sleep** (p. 64) - R473: the five-band grid pins inside rules/wsgsleep.h (census 397)
 - [ ] **Table 38: campfire characteristics** (p. 65)
 - [ ] **Table 39: availability of fuel** (p. 66)
 - [ ] **Table 40: availability of medicinal plants** (p. 69)
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R472: 93 closed, 93 open (the R472 round continues the camping arc - portable shelters with Table 36 pin as rules/wsgtents.h; the next round continues - rest and comfort (p. 64) with Table 37).
+Post-state at R473: 96 closed, 90 open (the R473 round continues the camping arc - the portable shelter mechanics seam with the rest and comfort sleep rules and Table 37 pin as rules/wsgsleep.h; the next round continues - good sleep vs bad sleep (p. 65) with Table 38).

@@ -4643,6 +4643,75 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   seed record in place. Next: R472 - portable shelters
   (p. 62) with Table 36 (portable shelter characteristics),
   the p. 61 cave-sentence seam riding along.
+- R472 LANDED 2026-10-15: commit 663e014 (census 397, pushed
+  2eec600..663e014), the WSG PORTABLE SHELTERS slice with
+  TABLE 36, printed p. 62 - the second camping-arc round
+  and the second TABLE ROUND of the arc: the p. 61 seam tail
+  (a cave in the face of a mountain slope is a superior
+  shelter in all respects, assuming the opening faces away
+  from the wind; the DM judgment prevailing in any
+  circumstances not covered by the guidelines), the hauling
+  rules (a single mount or size M pack animal easily
+  transporting all the gear for many shelter types with
+  plenty of carrying capacity left over; in the absence of
+  an animal a single average-strength character hauling on
+  his back enough for himself and a small group at their
+  rest stops), the simplest form (a single wooden pole of
+  6-10 feet plus a fairly large expanse of heavy waterproofed
+  cloth or similarly pliable material; the DM may allow a
+  two- or three-piece pole apparatus held by lashings or
+  pegs, easier to transport), the pitch rules (the pole
+  anchored at 30 to 45 degrees, the covering draped over
+  it, the edges tied down with ropes and stakes, the
+  opening facing opposite the wind), the occupancy (one
+  human or a pair of smaller characters, and in a pinch
+  two men with no appreciable loss of protection or
+  comfort), the escalation (more elaborate shelters for
+  vicious weather or a decent-sized group huddling in one
+  tent) and the Table 36 grid (the four quality bands
+  poor/adequate/good/superior by small/medium/large:
+  encumbrance 350/450/600, 500/600/750, 600/800/1000,
+  750/1000/1500; cost 10/20/30, 30/50/75, 75/120/180,
+  200/300/400 gp; setup 1d2+1/1d2+2/1d2+3, 1d3+1/1d3+2/
+  1d3+3, 1d3+1/1d3+2/1d4+2, 1d4+1/1d4+2/1d4+3 turns - the
+  GOOD LARGE 1d4+2 OUTLIER breaking the 1d3+ pattern of
+  its band, verified in all three readers; moisture light/
+  moderate/heavy/downpour; wind 20/30/40/50 pct; life span
+  40/80/120/180 days). rules/wsgtents.h NEW (27 inlines: 8
+  consts - the 6/10 pole band, the 30/45 pitch band, the
+  3-piece pole cap, the 4-band x 3-size x 12-row geometry -
+  plus 12 bools plus the seven Table 36 column switches -
+  the setup dice split into a die and a modifier column,
+  the moisture resistance as a 4-step tier, prefix wps,
+  checked free). GROUND TRUTH two-way, no contested cells,
+  no physical-page reads: the R467 TSV-GEOMETRY WORKFLOW
+  (the uploaded p62_tsv.tsv word boxes) vs the user-run
+  Termux tesseract text of printed p. 62; the two readers
+  agree on ALL 72 GRID CELLS; the pdf text layer third
+  reader garbles dice as ld (the known pattern) but agrees
+  on every value and all prose numbers. Gap 91/95 -> 93/93
+  (TWO box flips - portable shelters + the Table 36 grid
+  box, the R467/R471 precedent - plus the post-state line);
+  census 396 -> 397. rverify FULL GREEN pre-landing at base
+  2eec600 (double-run 7/0 then 0/7, 104 mutants, 0 missed) -
+  NO spec bugs this time: all three standing lessons (the
+  count const in header_sections, explicit cell chains, no
+  arithmetic inside condition operands) honored on the
+  first write. Spec md5s: 2a1ae28a authored / f74ca64b +nl
+  - the Termux read the +nl value exactly. LANDED CLEAN on
+  the first ritual run: preflight GREEN first try (only the
+  two pre-existing warnings), R472 audit bad 0, AUDIT
+  CENSUS: 397 exactly once, 7 files / 1364 insertions (the
+  p62 extraction files riding along in the commit).
+  VERIFIED at the raw sha 663e014: the include after
+  wsgshelter.h at line 177, the R472 audit label with ZERO
+  True tokens, the C36 grid verbatim ({350,10,2,1,0,20,40}
+  up through {1500,400,4,3,3,50,180}, the array declared
+  [12][7]), the gap 93/93 with both boxes flipped and the
+  post-state line, the spec md5 f74ca64b, the R471 seed
+  record in place. Next: R473 - rest and comfort (p. 64)
+  with Table 37 (effects of lack of sleep), continuing the
+  camping arc.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
