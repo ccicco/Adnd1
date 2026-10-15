@@ -5011,6 +5011,33 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   healthy data - the mirror caught it before any patch
   landed; the floor is locate/2 + 1.
   Next: R479 - proficiency in plant lore (p. 70)
+- R479 LANDED 2026-10-15: commit 8089f20 (census 404, pushed
+  ac25aa5..8089f20), the WSG PLANT LORE PROFICIENCY slice,
+  printed p. 70 - the ninth camping-arc round, a pure
+  prose round with NO table, the short bridge section after
+  the Table 40 pin: five qualification bools (the party
+  survival benefit when no healing and curing magic is at
+  hand, the safeguard against losing that aid along the
+  way, the no-vegetation bar, the greater-chance-in-greenery
+  rule, and the pointer to the Wilderness Proficiencies
+  section for the benefits), prefix plr, pinned as
+  rules/wsglore.h with the include after wsgmed.h at line
+  184. THE SETTLE: two-way clean on the FIRST pass - the
+  tesseract full-text and the pdfy layout read agree word
+  for word, no contested cells, no vision reads needed; the
+  section carries no numbers at all, so nothing could
+  garble. The spec md5 pair: authored
+  383346f39ad344d667b6894cc9eb4476, as-built
+  f76ba76cb11e8b6243bacb0ba87a730f (the Termux md5 hit
+  the +nl pair value exactly). rverify
+  at ac25aa5: 5 mutants, 0 missed; inline_count 5; census
+  403 -> 404; the gap flips 105/81 -> 106/80. One mid-build
+  lesson: the first engine run hit a mixed applied/already
+  state because the rules/ dir was missing in the fresh
+  snapshot - the seed patch had already applied before the
+  header write failed (the R420 gate caught it); always
+  mkdir rules in a fresh snapshot before the first run.
+  Next: R480 - injuries and treatment (p. 70)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
