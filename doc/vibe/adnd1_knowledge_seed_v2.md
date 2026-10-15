@@ -4558,6 +4558,91 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   R471 opens the CAMPING AND
   CAMPFIRES arc (pp. 61-68) -
   natural shelters (p. 61) first.
+- R471 LANDED 2026-10-15: commit 2eec600 (census 396, pushed
+  31f9a0f..2eec600), the WSG NATURAL SHELTERS slice with
+  TABLE 35, printed p. 61 - the CAMPING AND CAMPFIRES arc
+  opener (pp. 61-68) and the FIRST TABLE ROUND since R467:
+  the Table 35 grid (the chance of finding natural shelter
+  or easily obtainable construction materials, the
+  six-terrain by four-season percentage grid: Desert
+  constant 20, Forest 90/100/100/100, Hills 40/60/70/60,
+  Mountains constant 40, Plains 30/40/40/30, Swamp
+  40/50/50/40), the check discipline (the DM checks
+  whenever characters indicate they are looking; a failed
+  check with the party still moving allows rechecks at
+  three-turn intervals until shelter is found or they stop
+  and camp unsheltered), the forest construction rules
+  (boughs or branches cut and laid across a grid of poles
+  for a roof and, properly positioned, wind-and-precip
+  protection; pack animals needing a negotiable path into
+  closely packed vegetation; 3-8 turns - 1d6+2 - of
+  material time for a single character, minus 2 turns per
+  additional helper down to a minimum of 3, then another 6
+  turns to lash the poles and bind the shingles, minus 1
+  turn per helper to a maximum of two helpers, the whole
+  construction time halved with a rope use proficiency
+  character among the workers), the terrain notes (the
+  desert surface irregularities - large rocks, small
+  crevasses, a steeply sloping sand dune - sheltering at
+  least one side; the hills windbreak with spring-through-
+  autumn greenery; the mountains read as rough rocky areas
+  whose table entries model natural features - a cave,
+  alcove or chimney between rock faces - where the wind
+  cannot get inside; the plains gully two or three feet
+  deep but the worst shelter in heavy rain, the non-lush
+  material time 7-12 turns vs the 3-8 forest; the swamp
+  debris pile or fallen tree as shelter or foundation) and
+  the shelter-quality guidelines (many small vegetation
+  pieces: poor, at best adequate; few large sturdy pieces:
+  adequate or perhaps good; the lee side of a large rock:
+  good wind but only adequate-or-poor precip protection -
+  the prose seams mid-sentence onto p. 62 at the cave
+  sentence). rules/wsgshelter.h NEW (31 inlines: 11 consts
+  - wnsTerrainCount 6, the 3/8 forest band, the 2/1 helper
+  reductions with the 3-turn floor and the 2-helper lash
+  cap, the 6-turn lashing, the 7/12 plains band, the
+  3-turn recheck - plus 16 bools plus the four Table 35
+  season columns, prefix wns, checked free). GROUND TRUTH
+  two-way, no contested cells, no physical-page reads: the
+  user-run Termux tesseract text of printed p. 61 (the
+  --psm 4 run) vs a VISION READ of the uploaded page image
+  (pg61-000.png) - THE NEW READER COMBO: with the djvu item
+  still dark, VISION-ON-PNG IS THE STANDING GRID SECOND
+  READER (the R467 TSV-geometry workflow remains preferred
+  when the TSV is captured; here the TSV was not run). The
+  tesseract and vision reads AGREED ON ALL 24 CELLS. The
+  pdf text layer garbles the grid badly (dropping the
+  Forest, Hills and Mountains rows entirely and reading 4c
+  for the Plains autumn 40) and served as the prose-only
+  third reader; the prose numbers (the 1d6+2 dice, the
+  helper reductions, the rope-use halving, the 7-12 plains
+  ladder, the three-turn recheck) agreed across tesseract
+  and pdfy. Gap 89/97 -> 91/95 (TWO box flips - Natural
+  shelters + the Table 35 grid box, the R467 precedent -
+  plus the post-state line); census 395 -> 396. rverify
+  FULL GREEN pre-landing at base 31f9a0f (double-run 7/0
+  then 0/7, 51 mutants, 0 missed) - after THREE spec bugs
+  caught by the gates before any ritual run: (1) the table
+  count const must ALSO appear in header_sections or the
+  emitted header is one inline short; (2) the engine's
+  condition syntax gate rejects Python any()-generators -
+  table_checks must be explicit cell chains; (3) the plains
+  7-12 band OVERLAPS the forest 3-8 band, so a
+  plains-min-above-forest-max check was wrong (the correct
+  form compares both ends separately). Spec md5s:
+  76c5622d authored / e9ad609d +nl - the Termux read the
+  +nl value exactly. LANDED CLEAN on the first ritual run:
+  preflight GREEN first try (only the two pre-existing
+  warnings), R471 audit bad 0, AUDIT CENSUS: 396 exactly
+  once, 5 files / 1149 insertions. VERIFIED at the raw sha
+  2eec600: the include after wsgpurify.h at line 176, the
+  R471 audit label twice with ZERO True tokens, the full
+  C35 grid verbatim ({20,20,20,20} up through
+  {40,50,50,40}), the gap 91/95 with both boxes flipped and
+  the post-state line, the spec md5 e9ad609d, the R470
+  seed record in place. Next: R472 - portable shelters
+  (p. 62) with Table 36 (portable shelter characteristics),
+  the p. 61 cave-sentence seam riding along.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
