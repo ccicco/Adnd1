@@ -1,0 +1,141 @@
+{
+ "round": 479,
+ "title": "the WSG proficiency in plant lore slice - the party survival benefit, the no-vegetation bar and the greater-chance-in-greenery rule, printed p. 70",
+ "prefix": "plr",
+ "header_file": "rules/wsglore.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 403,
+ "inline_count": 5,
+ "audit_label": "R479 WSG plant lore pin audit",
+ "audit_comment": "The proficiency in plant lore prose: a party venturing into the wilderness without ready access to healing and curing magic, or safeguarding against losing that aid along the way, has increased chances of survival if it contains someone with the proficiency; such a character cannot locate vegetation where it does not exist; but if there is greenery to search through, a proficient character has a greater chance of finding the type of plant desired - with the benefits detailed in the Wilderness Proficiencies section.",
+ "banner": {
+  "title": "R479: the WSG PLANT LORE PROFICIENCY slice, printed p. 70 - the ninth camping-arc round, a pure prose round with NO table, the short bridge section between the Table 40 availability pin (R478) and the injuries and treatment chapter: the party survival benefit, the no-vegetation bar, the greater-chance-in-greenery rule and the pointer to the Wilderness Proficiencies section.",
+  "provenance": "The settle: two-way clean on the first pass - the tesseract full-text read and the pdfy layout read agree on every word of the section, and the tsv confirms the heading geometry; no contested cells, no vision reads needed. The section carries no numbers at all - only qualifications, pinned as bools.",
+  "sentinel": "This is a qualification-only round: five bools, no consts, no grids - the audit proves each qualification pinned exactly once."
+ },
+ "consts": [],
+ "bools": [
+  {
+   "name": "plrAidsPartySurvival",
+   "value": true,
+   "comment": "a party without ready access to healing and curing magic has increased chances of survival if it contains someone with proficiency in plant lore"
+  },
+  {
+   "name": "plrSafeguardsLostAid",
+   "value": true,
+   "comment": "the proficiency is also sought to safeguard against losing healing and curing aid along the way"
+  },
+  {
+   "name": "plrNoVegetationNoFind",
+   "value": true,
+   "comment": "such a character cannot locate vegetation where it does not exist"
+  },
+  {
+   "name": "plrGreaterChanceInGreenery",
+   "value": true,
+   "comment": "if there is greenery to search through, a proficient character has a greater chance of finding the type of plant desired"
+  },
+  {
+   "name": "plrBenefitsInWildernessProficiencies",
+   "value": true,
+   "comment": "the benefits such a character brings to the party are detailed in the section on Wilderness Proficiencies"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [],
+ "table_checks": [],
+ "header_sections": {
+  "The party survival benefit": [
+   {
+    "kind": "bool",
+    "name": "plrAidsPartySurvival"
+   },
+   {
+    "kind": "bool",
+    "name": "plrSafeguardsLostAid"
+   }
+  ],
+  "The location rules": [
+   {
+    "kind": "bool",
+    "name": "plrNoVegetationNoFind"
+   },
+   {
+    "kind": "bool",
+    "name": "plrGreaterChanceInGreenery"
+   },
+   {
+    "kind": "bool",
+    "name": "plrBenefitsInWildernessProficiencies"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the proficiency in plant lore box",
+   "from": "  - [ ] Proficiency in plant lore (p. 70)",
+   "to": "  - [x] Proficiency in plant lore (p. 70) - R479: the party survival benefit with the no-vegetation bar and the greater-chance-in-greenery rule pin as rules/wsglore.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R478: 105 closed, 81 open (the R478 round continues the camping arc medicine chapter - the availability of medicinal plants with the Table 40 terrain-climate grids pin as rules/wsgmed.h; the next round continues - proficiency in plant lore (p. 70)).",
+   "to": "Post-state at R479: 106 closed, 80 open (the R479 round continues the camping arc medicine chapter - the proficiency in plant lore prose pins as rules/wsglore.h; the next round continues - injuries and treatment (p. 70))."
+  }
+ ],
+ "gap_census": {
+  "closed": 106,
+  "open": 80
+ },
+ "include_comment": "the WSG plant lore proficiency prose",
+ "include_after": "#include \"rules/wsgmed.h\"  // R478: the WSG medicinal plants, and the Table 40 grids",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R478 LANDED 2026-10-15: commit ac25aa5 (census 403, pushed",
+ "prev_record": [
+  "- R478 LANDED 2026-10-15: commit ac25aa5 (census 403, pushed",
+  "  15093c4..ac25aa5), the WSG MEDICINAL PLANTS slice with",
+  "  Table 40, printed p. 69 - the eighth camping-arc round,",
+  "  a TABLE round: the 34-row terrain-climate frame (D F H M P",
+  "  Se Sw; Arctic with NO swamp row, six terrains) pinned as",
+  "  two [34][4] grids - wmpVegChance (the left slash number,",
+  "  the vegetation chance) and wmpLocateChance (the right, the",
+  "  locate chance), four seasons apiece - plus the slash entry",
+  "  semantics (identify on a second roll at one-half or less,",
+  "  the upper half a wrong type believed right, plant lore",
+  "  always correct), the search discipline (one search per",
+  "  turn by function, keep moving, repeated searches of one",
+  "  area auto-fail, movement slowed, DM penalties and abuse",
+  "  guards), the worked example (tropical hills winter 90/30:",
+  "  15 right type, 16-30 wrong, 31-up nothing) and Appendix J",
+  "  at DMG pp. 220-221. THE SETTLE: the pdf layer DROPPED the",
+  "  entire leftmost terrain-code column AND all five seacoast",
+  "  rows - both text readers lost the Se rows entirely - and",
+  "  tesseract garbled many slash cells (10110, 5110, 1510,",
+  "  4010, 75140, 2010) while the Se rows sat in a consistent",
+  "  80px gap it showed; the settler needed SEVEN vision reads",
+  "  with two agreeing independent reads per contested cell,",
+  "  and the book's own worked example (tropical hills winter",
+  "  90/30) independently confirms the settled row 29. The",
+  "  spec md5 pair: authored cf3795c6810fe7a7c9921df5efb288d9,",
+  "  as-built 321a9a00146a3ef90a3cd118f5179b94 (the Termux",
+  "  md5 hit the +nl pair value exactly). rverify at 15093c4:",
+  "  298 mutants, 0 missed (272 grid cells + 15 consts + 11",
+  "  bools); inline_count 34; the include lands after wsgdmg.h",
+  "  at line 183; census 402 -> 403; the gap flips 103/83 ->",
+  "  105/81 (both the prose box and the Table 40 box), the",
+  "  R477 seed record in place (35 lines, directly before the",
+  "  maintenance anchor). One mid-build lesson: an example",
+  "  band check (wrong-min = den*roll+1) evaluated TRUE on",
+  "  healthy data - the mirror caught it before any patch",
+  "  landed; the floor is locate/2 + 1.",
+  "  Next: R479 - proficiency in plant lore (p. 70)"
+ ]
+}

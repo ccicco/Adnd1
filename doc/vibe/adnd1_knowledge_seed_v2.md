@@ -4974,6 +4974,43 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   no contested cells, no vision reads needed. ENGINE: the
   audit mirror passed on the FIRST build again - design-time
   cross-const semantics checking is now the standing habit.
+- R478 LANDED 2026-10-15: commit ac25aa5 (census 403, pushed
+  15093c4..ac25aa5), the WSG MEDICINAL PLANTS slice with
+  Table 40, printed p. 69 - the eighth camping-arc round,
+  a TABLE round: the 34-row terrain-climate frame (D F H M P
+  Se Sw; Arctic with NO swamp row, six terrains) pinned as
+  two [34][4] grids - wmpVegChance (the left slash number,
+  the vegetation chance) and wmpLocateChance (the right, the
+  locate chance), four seasons apiece - plus the slash entry
+  semantics (identify on a second roll at one-half or less,
+  the upper half a wrong type believed right, plant lore
+  always correct), the search discipline (one search per
+  turn by function, keep moving, repeated searches of one
+  area auto-fail, movement slowed, DM penalties and abuse
+  guards), the worked example (tropical hills winter 90/30:
+  15 right type, 16-30 wrong, 31-up nothing) and Appendix J
+  at DMG pp. 220-221. THE SETTLE: the pdf layer DROPPED the
+  entire leftmost terrain-code column AND all five seacoast
+  rows - both text readers lost the Se rows entirely - and
+  tesseract garbled many slash cells (10110, 5110, 1510,
+  4010, 75140, 2010) while the Se rows sat in a consistent
+  80px gap it showed; the settler needed SEVEN vision reads
+  with two agreeing independent reads per contested cell,
+  and the book's own worked example (tropical hills winter
+  90/30) independently confirms the settled row 29. The
+  spec md5 pair: authored cf3795c6810fe7a7c9921df5efb288d9,
+  as-built 321a9a00146a3ef90a3cd118f5179b94 (the Termux
+  md5 hit the +nl pair value exactly). rverify at 15093c4:
+  298 mutants, 0 missed (272 grid cells + 15 consts + 11
+  bools); inline_count 34; the include lands after wsgdmg.h
+  at line 183; census 402 -> 403; the gap flips 103/83 ->
+  105/81 (both the prose box and the Table 40 box), the
+  R477 seed record in place (35 lines, directly before the
+  maintenance anchor). One mid-build lesson: an example
+  band check (wrong-min = den*roll+1) evaluated TRUE on
+  healthy data - the mirror caught it before any patch
+  landed; the floor is locate/2 + 1.
+  Next: R479 - proficiency in plant lore (p. 70)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

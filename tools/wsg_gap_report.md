@@ -103,7 +103,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Damage from fire (p. 68) - R477: the firebreak and advance prose with the engulfment rule, the brief-contact and panic rules and the extreme-heat rule pin as rules/wsgdmg.h
 - [ ] **Medicine and first aid** (pp. 69-71)
   - [x] Availability of medicinal plants (p. 69) - R478: the vegetation and locate chances with the identify-half rule and the search discipline pin as rules/wsgmed.h
-  - [ ] Proficiency in plant lore (p. 70)
+  - [x] Proficiency in plant lore (p. 70) - R479: the party survival benefit with the no-vegetation bar and the greater-chance-in-greenery rule pin as rules/wsglore.h
   - [ ] Injuries and treatment (p. 70)
   - [ ] First aid equipment (p. 71)
 - [ ] **Vision and visibility** (pp. 72-75)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R478: 105 closed, 81 open (the R478 round continues the camping arc medicine chapter - the availability of medicinal plants with the Table 40 terrain-climate grids pin as rules/wsgmed.h; the next round continues - proficiency in plant lore (p. 70)).
+Post-state at R479: 106 closed, 80 open (the R479 round continues the camping arc medicine chapter - the proficiency in plant lore prose pins as rules/wsglore.h; the next round continues - injuries and treatment (p. 70)).
