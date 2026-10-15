@@ -4019,6 +4019,65 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   wsgforage.h 83 inlines, the four flips with the R463 text, the post-state
   76/110, the R462 seed record in place. Next: R464 - hunting, stalking a
   wounded animal and Table 31 (printed p. 55).
+- R464 LANDED 2026-10-15: commit 91fad93 (census
+  389, pushed 86421cd..91fad93), the WSG HUNTING AND
+  STALKING slice, printed pp. 55-56 - hunting (the
+  four-turn check, the -5% cumulative per party
+  member beyond the first, the -10% mid-morning to
+  mid-evening shift, the night gate on infravision/
+  ultravision, the missile weapon averaging 3+ vs
+  size L, melee only to finish, the 1d6
+  game-encounter list with the 1d10
+  greater-than-the-count hit procedure, 1/2/4 hits
+  to kill S/M/L, one animal at a time, the 4-turn
+  re-hunt after a negated encounter), stalking a
+  wounded animal (the 20-foot missile-or-melee
+  finish, the enraged size L charge at the closest
+  character with the 50% 1d8 predamage and the AC 5
+  stalk, the panicked size M 18-inch flight with the
+  1d4 direction band and the 20-foot kill range, the
+  first-miss escape) and Table 31 (all 132 cells:
+  the 33-row terrain-by-season grid, Arctic 5 rows,
+  the others 7). rules/wsghunt.h NEW (30 inlines:
+  14 consts + 5 bools + 1 chain + 1 switch + 9 table
+  columns, prefix whn, checked free in all three
+  TUs). GROUND TRUTH: the vision sheets made two
+  errors the pixels overturned (temperate mountains
+  winter 25 not 15 - the glyphs show 2+5; arctic
+  desert spring 5 not 30) and the text layers
+  garbled the tropical mountains summer/autumn cells
+  (40, not 10); the 1d6 list row 6 settled by
+  glyph-segmentation of the native decode: size L,
+  1d3 at 60-80 yards (the djvu 50-60 is a garble).
+  BOOK DISCREPANCY NOTED, NOT FIXED: the p. 56
+  example prints a 35% chance for three hunters in
+  a tropical forest but Table 31 prints 50 and the
+  party rule takes it to 40; the rule is pinned as
+  printed, only the internally consistent examples
+  are pinned (2 hunters 45, 3 hunters 40), and the
+  discrepancy is recorded in the header banner.
+  Gap 76/110 -> 79/107 (THREE box flips + the
+  post-state line); census 388 -> 389. rverify FULL
+  GREEN pre-landing: restore at 86421cd, double-run
+  8/0 then 0/8, 183 mutants, 0 missed. Spec md5s:
+  90b590fb authored / 17e91cd0 +nl - the Termux read
+  the +nl value exactly (the deterministic nano
+  gate). LANDED CLEAN on the first ritual run
+  (double-run 8/0 then 0/8, preflight GREEN first
+  try, R464 audit bad 0, census 389, 5 files / 1516
+  insertions). VERIFIED at the raw sha 91fad93: the
+  commit message and file list (regtest +215, the
+  header 553, the spec 708, the gap 4/4, the seed
+  +36), the include after wsgforage.h at line 169,
+  wsghunt.h 30 inlines, the three flips with the
+  R464 text, the post-state 79/107, the R463 seed
+  record in place. NOTE: the bn launcher stays OUT
+  of the ritual per the R372 standing decision (the
+  user ran it separately by choice). Next: R465 -
+  the hunting proficiency (p. 57), then fishing
+  (p. 57) and the food-carrying items; the vision
+  quota (20 analyze_image calls) may reset per
+  response - budget the crops per turn.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

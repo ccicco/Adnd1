@@ -1,0 +1,472 @@
+{
+ "round": 465,
+ "title": "the WSG hunting proficiency and fishing slice - the hunting proficiency, fishing and Table 32, printed p. 57 with the spot-guideline tail on p. 58",
+ "prefix": "wfs",
+ "header_file": "rules/wsgfish.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 389,
+ "inline_count": 29,
+ "audit_label": "R465 WSG fishing pin audit",
+ "audit_comment": "The Table 32 dice grid cell by cell (the die and the modifier per spot quality per time of day), the hunting proficiency kill rules (the one-hit size M kill, the two-hit size L kill, the distance kill of a wounded size M, the single-hit wounded size L, the Proficiency Check before the 1d6 roll) and the fishing mechanics (the net bonus, the zero gate, the proficiency bonus, the group and hour penalties, the fished-out rule) - every cell, const, bool and switch verified against the model.",
+ "banner": {
+  "title": "R465: the WSG HUNTING PROFICIENCY AND FISHING slice - the hunting proficiency (the one-hit size M kill, the two-hit size L kill, the 50% distance kill of a wounded size M with a single attempt, the single-hit wounded size L with multiple attempts, the successful Proficiency Check before the 1d6 roll, the missile-weapon requirement, no boost to the encounter chance or the prey size, the repeatable expeditions), fishing (the one-hour baited hook-and-line base, the net +50%, the zero-or-lower no-fish gate, the proficiency +2 in fair or good spots only, the cumulative -1 per extra group member, the cumulative -2 per hour beyond the first in the same spot, the fished-out rule, the spot-quality guidelines) and Table 32 (the spot-by-time dice grid), printed p. 57 with the spot-guideline tail on p. 58.",
+  "provenance": "Ground truth three-way: the archive djvu word layer vs the pixel reads of the native decode of the printed p. 57 image (a pure-Python JPEG decoder, 1179x1516) vs vision reads of contrast-stretched cell crops. The text layer drops the Fair-Day cell and garbles four Good cells; the pixels settled them: Fair-Day 1d6-2 (glyph holes=1, the canonical 6 template at 0.947), Good-Day 1d8-2 (the digit shows the stacked-loop waist of an 8, template 0.775 vs 0.738 for the 6), Good-Night 1d6+2 (proven by the book own A/B/C example: 1d6+4 for the proficient A = 1d6+2 + 2), Good-Dawn 1d8+2 (the same 8 waist; the plus vertical stroke survives as faint 158-238 grayscale traces through the bar while the true minus on the same page shows pure background around its bar). The Fair and Good row labels are pixel-and-vision confirmed. The p. 58 tail completes the p. 57 sentence: fish congregate where they can be shaded by trees or overhanging terrain; such a spot is fair or good while an unshaded spot nearby on the same body of water is a poor one.",
+  "sentinel": "All 18 Table 32 cells pinned (the die and the modifier per row per time band); the hunting proficiency and fishing mechanics are audit examples, including the book own A/B/C three-fisherman hour-by-hour example."
+ },
+ "consts": [
+  {
+   "name": "wfsRowCount",
+   "value": 3,
+   "comment": "the Table 32 row count: the poor, fair and good spot-quality rows"
+  },
+  {
+   "name": "wfsNetBonusPct",
+   "value": 50,
+   "comment": "a net increases the take to 50% more than the modified die roll"
+  },
+  {
+   "name": "wfsProfBonus",
+   "value": 2,
+   "comment": "a character with fishing proficiency gets a +2 modifier in any fair or good area"
+  },
+  {
+   "name": "wfsGroupPenalty",
+   "value": 1,
+   "comment": "each extra member of the fishing group takes a cumulative -1: -1 for the second character, -2 for the third, and so on"
+  },
+  {
+   "name": "wfsSpotHourPenalty",
+   "value": 2,
+   "comment": "each hour beyond the first spent in the same spot takes a further cumulative -2 per hour"
+  },
+  {
+   "name": "wfsFishedOutDays",
+   "value": 1,
+   "comment": "a fished-out spot will not yield any more fish for at least one day"
+  },
+  {
+   "name": "wfsProfWoundedMDistancePct",
+   "value": 50,
+   "comment": "a proficient hunter has a 50% chance of killing a wounded size M creature from a distance instead of closing with it"
+  },
+  {
+   "name": "wfsProfWoundedLHits",
+   "value": 1,
+   "comment": "a proficient hunter kills a wounded size L creature with a single hit instead of the two or three a group might need"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wfsProfCheckBeforeRoll",
+   "value": true,
+   "comment": "the hunting proficiency feats require a successful Proficiency Check when game is encountered, before the 1d6 size-and-number roll"
+  },
+  {
+   "name": "wfsProfNeedsMissile",
+   "value": true,
+   "comment": "the proficiency feats require a missile weapon of the appropriate sort"
+  },
+  {
+   "name": "wfsProfNoEncounterBoost",
+   "value": true,
+   "comment": "a proficient hunter does not increase the chance of encountering game, nor affect the size of the prey encountered"
+  },
+  {
+   "name": "wfsProfRepeatable",
+   "value": true,
+   "comment": "hunting expeditions may be undertaken as often as desired - animals are not rooted, and the same area can be searched again"
+  },
+  {
+   "name": "wfsProfWoundedMOneAttempt",
+   "value": true,
+   "comment": "only one distance-kill attempt on a wounded size M creature; if it fails, the creature has escaped"
+  },
+  {
+   "name": "wfsProfWoundedLMultipleAttempts",
+   "value": true,
+   "comment": "multiple attempts are permitted on a wounded size L creature if it is not dispatched on the first attempt"
+  },
+  {
+   "name": "wfsZeroNoFish",
+   "value": true,
+   "comment": "a die-roll result of zero or lower catches no fish regardless of the gear used"
+  },
+  {
+   "name": "wfsProfBonusFairGoodOnly",
+   "value": true,
+   "comment": "the fishing proficiency bonus applies only in fair or good areas - prowess does not help in a poor spot"
+  },
+  {
+   "name": "wfsFishedOutAllZero",
+   "value": true,
+   "comment": "a spot is fished out as soon as every fisherman gets a result of zero or lower in the same hour"
+  },
+  {
+   "name": "wfsBoatBetterThanShore",
+   "value": true,
+   "comment": "fishing from a boat moored in the middle of a body of water is better than fishing from shore"
+  },
+  {
+   "name": "wfsShadedSpotFairGood",
+   "value": true,
+   "comment": "in hot or sunny weather fish congregate where they can be shaded by trees or overhanging terrain, or in rain; such a spot is fair or good"
+  },
+  {
+   "name": "wfsUnshadedSpotPoor",
+   "value": true,
+   "comment": "an unshaded spot nearby on the same body of water will be a poor one"
+  },
+  {
+   "name": "wfsSwampBogPoor",
+   "value": true,
+   "comment": "a swamp or bog is generally a poor place for fishing"
+  },
+  {
+   "name": "wfsStagnantCreekPoor",
+   "value": true,
+   "comment": "a stagnant, shallow creek is a poor place for fishing"
+  }
+ ],
+ "chains": [],
+ "switches": [
+  {
+   "name": "wfsProfHitsToKill",
+   "values": [
+    1,
+    1,
+    2
+   ],
+   "comment": "hits to kill with hunting proficiency by size band: one for size S, one for size M (instead of two), two for size L (instead of four)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "wfsFishSuccess",
+   "tag": "32",
+   "count": "wfsRowCount",
+   "cols": [
+    "wfsDayDie",
+    "wfsDayMod",
+    "wfsNightDie",
+    "wfsNightMod",
+    "wfsDawnDie",
+    "wfsDawnMod"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 32 daytime die",
+    "the Table 32 daytime modifier",
+    "the Table 32 night die",
+    "the Table 32 night modifier",
+    "the Table 32 dawn/dusk die",
+    "the Table 32 dawn/dusk modifier"
+   ],
+   "row_comments": [
+    "the poor spot row",
+    "the fair spot row",
+    "the good spot row"
+   ],
+   "data": [
+    [
+     4,
+     -2,
+     4,
+     0,
+     4,
+     2
+    ],
+    [
+     6,
+     -2,
+     6,
+     -1,
+     6,
+     2
+    ],
+    [
+     8,
+     -2,
+     6,
+     2,
+     8,
+     2
+    ]
+   ],
+   "audit_comment": "the Table 32 fishing success grid (the die and the modifier per spot quality per time of day)"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the poor spot: 1d4-2 by day, 1d4 at night, 1d4+2 at dawn or dusk",
+   "expr": "m['wfsDayDie'](0) != 4 or m['wfsDayMod'](0) != -2 or m['wfsNightDie'](0) != 4 or m['wfsNightMod'](0) != 0 or m['wfsDawnDie'](0) != 4 or m['wfsDawnMod'](0) != 2"
+  },
+  {
+   "note": "the fair spot: 1d6-2 by day, 1d6-1 at night, 1d6+2 at dawn or dusk (the OCR-dropped day cell, pixel-confirmed)",
+   "expr": "m['wfsDayDie'](1) != 6 or m['wfsDayMod'](1) != -2 or m['wfsNightDie'](1) != 6 or m['wfsNightMod'](1) != -1 or m['wfsDawnDie'](1) != 6 or m['wfsDawnMod'](1) != 2"
+  },
+  {
+   "note": "the good spot: 1d8-2 by day, 1d6+2 at night (the book example cell), 1d8+2 at dawn or dusk",
+   "expr": "m['wfsDayDie'](2) != 8 or m['wfsDayMod'](2) != -2 or m['wfsNightDie'](2) != 6 or m['wfsNightMod'](2) != 2 or m['wfsDawnDie'](2) != 8 or m['wfsDawnMod'](2) != 2"
+  },
+  {
+   "note": "the book hour-1 example A: the proficient lone fisherman at a good spot at night rolls 1d6+4",
+   "expr": "m['wfsNightMod'](2) + m['wfsProfBonus']() != 4"
+  },
+  {
+   "note": "the book hour-1 example B: the first extra group member rolls 1d6+1",
+   "expr": "m['wfsNightMod'](2) - m['wfsGroupPenalty']() != 1"
+  },
+  {
+   "note": "the book hour-1 example C: the second extra group member rolls 1d6",
+   "expr": "m['wfsNightMod'](2) - 2 * m['wfsGroupPenalty']() != 0"
+  },
+  {
+   "note": "the book hour-2 example A: 1d6+2 (the night modifier less the hour penalty plus the proficiency bonus)",
+   "expr": "m['wfsNightMod'](2) - m['wfsSpotHourPenalty']() + m['wfsProfBonus']() != 2"
+  },
+  {
+   "note": "the book hour-2 example B: 1d6-1",
+   "expr": "m['wfsNightMod'](2) - m['wfsSpotHourPenalty']() - m['wfsGroupPenalty']() != -1"
+  },
+  {
+   "note": "the book hour-3 example B: 1d6-3 (the cumulative hour penalty twice plus the group penalty)",
+   "expr": "m['wfsNightMod'](2) - 2 * m['wfsSpotHourPenalty']() - m['wfsGroupPenalty']() != -3"
+  },
+  {
+   "note": "the book hour-3 example C: 1d6-4, and in hour 4 all three can reach zero or lower - the fished-out hour",
+   "expr": "m['wfsNightMod'](2) - 2 * m['wfsSpotHourPenalty']() - 2 * m['wfsGroupPenalty']() != -4"
+  },
+  {
+   "note": "the net: a take of 4 fish rises to 6 (50% more, cross-multiplied)",
+   "expr": "2 * 100 != 4 * m['wfsNetBonusPct']()"
+  },
+  {
+   "note": "the fished-out spot yields nothing for at least one day",
+   "expr": "m['wfsFishedOutDays']() != 1"
+  },
+  {
+   "note": "the hunting proficiency kill ladder: one hit for size S and M, two for size L",
+   "expr": "m['wfsProfHitsToKill'](0) != 1 or m['wfsProfHitsToKill'](1) != 1 or m['wfsProfHitsToKill'](2) != 2"
+  },
+  {
+   "note": "the distance kill of a wounded size M creature: a 50% chance, one attempt only",
+   "expr": "m['wfsProfWoundedMDistancePct']() != 50"
+  },
+  {
+   "note": "the wounded size L creature drops to a single hit for a proficient hunter",
+   "expr": "m['wfsProfWoundedLHits']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the dawn-or-dusk modifier is the daytime modifier plus 4 in every row",
+   "expr": "m['wfsDawnMod'](0) - m['wfsDayMod'](0) != 4 or m['wfsDawnMod'](1) - m['wfsDayMod'](1) != 4 or m['wfsDawnMod'](2) - m['wfsDayMod'](2) != 4"
+  },
+  {
+   "note": "the daytime die ladder climbs 4, 6, 8 across the poor, fair and good rows, and so does the dawn-or-dusk die",
+   "expr": "m['wfsDayDie'](0) != 4 or m['wfsDayDie'](1) != 6 or m['wfsDayDie'](2) != 8 or m['wfsDawnDie'](0) != 4 or m['wfsDawnDie'](1) != 6 or m['wfsDawnDie'](2) != 8"
+  }
+ ],
+ "header_sections": {
+  "The hunting proficiency": [
+   {
+    "kind": "switch",
+    "name": "wfsProfHitsToKill"
+   },
+   {
+    "kind": "const",
+    "name": "wfsProfWoundedMDistancePct"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsProfWoundedMOneAttempt"
+   },
+   {
+    "kind": "const",
+    "name": "wfsProfWoundedLHits"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsProfWoundedLMultipleAttempts"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsProfCheckBeforeRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsProfNeedsMissile"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsProfNoEncounterBoost"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsProfRepeatable"
+   }
+  ],
+  "Table 32: the fishing success grid": [
+   {
+    "kind": "const",
+    "name": "wfsRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "wfsFishSuccess"
+   }
+  ],
+  "The fishing rules": [
+   {
+    "kind": "const",
+    "name": "wfsNetBonusPct"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsZeroNoFish"
+   },
+   {
+    "kind": "const",
+    "name": "wfsProfBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsProfBonusFairGoodOnly"
+   },
+   {
+    "kind": "const",
+    "name": "wfsGroupPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfsSpotHourPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsFishedOutAllZero"
+   },
+   {
+    "kind": "const",
+    "name": "wfsFishedOutDays"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsBoatBetterThanShore"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsShadedSpotFairGood"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsUnshadedSpotPoor"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsSwampBogPoor"
+   },
+   {
+    "kind": "bool",
+    "name": "wfsStagnantCreekPoor"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the hunting proficiency",
+   "from": "  - [ ] The hunting proficiency (p. 57)",
+   "to": "  - [x] The hunting proficiency (p. 57) - R465: the one-hit size M kill, the two-hit size L kill, the 50% distance kill of a wounded size M, the single-hit wounded size L, the Proficiency Check before the 1d6 roll and the missile-weapon requirement pin as rules/wsgfish.h"
+  },
+  {
+   "note": "fishing",
+   "from": "  - [ ] Fishing (p. 57)",
+   "to": "  - [x] Fishing (p. 57) - R465: the one-hour hook-and-line base, the net +50%, the zero-or-lower gate, the proficiency +2 in fair or good spots, the cumulative group and hour penalties, the fished-out rule and the spot-quality guidelines pin as rules/wsgfish.h"
+  },
+  {
+   "note": "Table 32",
+   "from": "- [ ] **Table 32: fishing success** (p. 57)",
+   "to": "- [x] **Table 32: fishing success** (p. 57) - R465: the spot-quality by time-of-day dice grid, all 18 cells pixel-verified with the Good-Night cell proven by the book own A/B/C example, pin as rules/wsgfish.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R464: 79 closed, 107 open (the R464 round continues the chapter - hunting, stalking a wounded animal and Table 31 pin as rules/wsghunt.h; the next round continues - the hunting proficiency, and then Table 32 and the food gathering of the water chapter close).",
+   "to": "Post-state at R465: 82 closed, 104 open (the R465 round continues the chapter - the hunting proficiency, fishing and Table 32 pin as rules/wsgfish.h; the next round continues - consuming and carrying food (p. 58) and Table 33: chance of food spoilage)."
+  }
+ ],
+ "gap_census": {
+  "closed": 82,
+  "open": 104
+ },
+ "include_comment": "the WSG hunting proficiency, fishing and Table 32",
+ "include_after": "#include \"rules/wsghunt.h\"  // R464: the WSG hunting, stalking and Table 31",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R464 LANDED 2026-10-15: commit 91fad93 (census",
+ "prev_record": [
+  "- R464 LANDED 2026-10-15: commit 91fad93 (census",
+  "  389, pushed 86421cd..91fad93), the WSG HUNTING AND",
+  "  STALKING slice, printed pp. 55-56 - hunting (the",
+  "  four-turn check, the -5% cumulative per party",
+  "  member beyond the first, the -10% mid-morning to",
+  "  mid-evening shift, the night gate on infravision/",
+  "  ultravision, the missile weapon averaging 3+ vs",
+  "  size L, melee only to finish, the 1d6",
+  "  game-encounter list with the 1d10",
+  "  greater-than-the-count hit procedure, 1/2/4 hits",
+  "  to kill S/M/L, one animal at a time, the 4-turn",
+  "  re-hunt after a negated encounter), stalking a",
+  "  wounded animal (the 20-foot missile-or-melee",
+  "  finish, the enraged size L charge at the closest",
+  "  character with the 50% 1d8 predamage and the AC 5",
+  "  stalk, the panicked size M 18-inch flight with the",
+  "  1d4 direction band and the 20-foot kill range, the",
+  "  first-miss escape) and Table 31 (all 132 cells:",
+  "  the 33-row terrain-by-season grid, Arctic 5 rows,",
+  "  the others 7). rules/wsghunt.h NEW (30 inlines:",
+  "  14 consts + 5 bools + 1 chain + 1 switch + 9 table",
+  "  columns, prefix whn, checked free in all three",
+  "  TUs). GROUND TRUTH: the vision sheets made two",
+  "  errors the pixels overturned (temperate mountains",
+  "  winter 25 not 15 - the glyphs show 2+5; arctic",
+  "  desert spring 5 not 30) and the text layers",
+  "  garbled the tropical mountains summer/autumn cells",
+  "  (40, not 10); the 1d6 list row 6 settled by",
+  "  glyph-segmentation of the native decode: size L,",
+  "  1d3 at 60-80 yards (the djvu 50-60 is a garble).",
+  "  BOOK DISCREPANCY NOTED, NOT FIXED: the p. 56",
+  "  example prints a 35% chance for three hunters in",
+  "  a tropical forest but Table 31 prints 50 and the",
+  "  party rule takes it to 40; the rule is pinned as",
+  "  printed, only the internally consistent examples",
+  "  are pinned (2 hunters 45, 3 hunters 40), and the",
+  "  discrepancy is recorded in the header banner.",
+  "  Gap 76/110 -> 79/107 (THREE box flips + the",
+  "  post-state line); census 388 -> 389. rverify FULL",
+  "  GREEN pre-landing: restore at 86421cd, double-run",
+  "  8/0 then 0/8, 183 mutants, 0 missed. Spec md5s:",
+  "  90b590fb authored / 17e91cd0 +nl - the Termux read",
+  "  the +nl value exactly (the deterministic nano",
+  "  gate). LANDED CLEAN on the first ritual run",
+  "  (double-run 8/0 then 0/8, preflight GREEN first",
+  "  try, R464 audit bad 0, census 389, 5 files / 1516",
+  "  insertions). VERIFIED at the raw sha 91fad93: the",
+  "  commit message and file list (regtest +215, the",
+  "  header 553, the spec 708, the gap 4/4, the seed",
+  "  +36), the include after wsgforage.h at line 169,",
+  "  wsghunt.h 30 inlines, the three flips with the",
+  "  R464 text, the post-state 79/107, the R463 seed",
+  "  record in place. NOTE: the bn launcher stays OUT",
+  "  of the ritual per the R372 standing decision (the",
+  "  user ran it separately by choice). Next: R465 -",
+  "  the hunting proficiency (p. 57), then fishing",
+  "  (p. 57) and the food-carrying items; the vision",
+  "  quota (20 analyze_image calls) may reset per",
+  "  response - budget the crops per turn."
+ ]
+}
