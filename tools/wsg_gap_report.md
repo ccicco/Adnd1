@@ -82,8 +82,8 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Food gathering (p. 53) - R463: the two-turn plant-foraging check with the Table 30 terrain-climate lookup pin as rules/wsgforage.h
   - [x] Foraging (p. 53) - R463: the proficiency advantage (two rations in two turns or one per turn, the inedible chance 20% lower), the four-turn search limit and the one-mile move-on pin as rules/wsgforage.h
   - [x] Inedible plants (p. 54) - R463: the 1d8 dispatch (1 poisonous with the 1d10-round onset, 2d10-turn cramps and 1d4 hp/turn, 2-4 tainted half-strength, 5-8 no food value) pin as rules/wsgforage.h
-  - [ ] Hunting (p. 55)
-  - [ ] Stalking a wounded animal (p. 55)
+  - [x] Hunting (p. 55) - R464: the four-turn check with the party and midday modifiers, the missile-weapon requirement and the 1d10 hit procedure pin as rules/wsghunt.h
+  - [x] Stalking a wounded animal (p. 55) - R464: the enraged size L charge (the 50% 1d8 predamage, the closest-character charge) and the panicked size M flight (the 18-inch rate, the 1d4 direction, the 20-foot kill range) pin as rules/wsghunt.h
   - [ ] The hunting proficiency (p. 57)
   - [ ] Fishing (p. 57)
   - [ ] Consuming and carrying food (p. 58)
@@ -186,7 +186,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 28: tolerance levels for lack of food** (p. 50) - R462: the 4/5/6/7/8/10-day ladder pins as rules/wsgfood.h
 - [x] **Table 29: water requirements for characters** (p. 53) - R462: the 4x4 pint grid pins as rules/wsgfood.h
 - [x] **Table 30: foraging success** (p. 53) - R463: the five climate-region grids (Arctic five terrains, the others seven), the chance/inedible pair per season, all 132 cells pixel-verified pin as rules/wsgforage.h
-- [ ] **Table 31: hunting success** (p. 55)
+- [x] **Table 31: hunting success** (p. 55) - R464: the 33-row terrain-by-season grid over the five climate regions, all 132 cells pixel-verified, with the p. 56 game-encounter list pin as rules/wsghunt.h
 - [ ] **Table 32: fishing success** (p. 57)
 - [ ] **Table 33: chance of food spoilage** (p. 58)
 - [ ] **Table 34: chance of finding water** (p. 59)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R463: 76 closed, 110 open (the R463 round continues the chapter - food gathering, foraging, the inedible plants and Table 30 pin as rules/wsgforage.h; the next round continues - hunting, stalking a wounded animal and Table 31).
+Post-state at R464: 79 closed, 107 open (the R464 round continues the chapter - hunting, stalking a wounded animal and Table 31 pin as rules/wsghunt.h; the next round continues - the hunting proficiency, and then Table 32 and the food gathering of the water chapter close).

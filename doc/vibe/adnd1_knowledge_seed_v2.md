@@ -3983,6 +3983,42 @@ by the book example). Gap 65/121 -> 72/114; census 386 -> 387. rverify GREEN:
 124 mutants, 0 missed; the Termux md5 hit the +nl pair value exactly. Next:
 R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
 53-54).
+- R463 LANDED 2026-10-15: commit 86421cd (census 388, pushed
+  56ac395..86421cd), the WSG FOOD GATHERING AND FORAGING slice, printed pp.
+  53-54 - foraging (the two-turn check, the 2-lb ration, the proficient 2-in-2
+  or 1-in-1, the -20 inedible shift, the four-turn search limit with the
+  2-normal/4-proficient checks, the one-mile move-on), Table 30 (all 132
+  cells: the five climate-region grids, Arctic five terrains, the others
+  seven, the chance/inedible pair per season) and the inedible plants (the 1d8
+  dispatch: 1 poisonous with the 1d10-round onset, 2d10-turn cramps, 1d4
+  hp/turn, the 1d4/hour rest-plus-water regain, the save halves, slow poison
+  stacks to one-fourth, neutralize halts but no prior damage; 2-4 tainted
+  half-strength 1d10 rounds/turns 1d2 hp/turn; 5-8 no food value). The
+  when-not-to-use-the-table judgment pins as bools. rules/wsgforage.h NEW (83
+  inlines: 28 consts + 14 bools + 1 chain + 40 table columns, prefix wfg,
+  checked free in all three TUs). GROUND TRUTH: the biggest OCR fight of the
+  arc - the two text layers (djvu vs pdfy) disagree or drop the Tem-F winter,
+  St-P/Se/Sw winter, Tro-M winter and Tro-Se spring cells and both garble the
+  Arctic P/Se rows; the pixels settled everything: a full native decode of
+  leaf 0053 (a pure-Python JPEG decoder, 2432x3194), then vision reads of
+  contrast-stretched cell crops (which exposed a band-map off-by-one-group -
+  the blank slots were region label lines), then a glyph-level NCC classifier
+  over same-page font templates (LOO 62/62, the disputed digits at 0.83-0.94):
+  Tem-F W 80/40, St-P W 80/30, St-Se W 80/40, St-Sw W 40/60, Tro-M W 85/30,
+  Tro-Se Sp/Au 95/50 (djvu 96 wrong), Arc-P 5/50-5/50-10/50-5/50, Arc-Se
+  10/75-10/50-15/50-10/75, St-H 80/30-90/30-100/25-95/25. FIRST PREFLIGHT RED
+  - no commit: all five Table 30 grids shared tag 30 and the engine derives
+  the audit array name from the tag, so it emitted five int C30[][] in one
+  scope; fixed by distinct tags 30A-30E. STANDING AUTHORING RULE: a
+  multi-table round MUST use distinct per-table tags. NOTE: the user git add
+  -A swept the previously untracked spec JSONs (spec_r429 through spec_r463)
+  and the bn launcher INTO the commit (40 files) - the specs are now tracked
+  in the repo; the R429 untracked-specs convention is superseded by user
+  action. Gap 72/114 -> 76/110 (FOUR box flips + the post-state line); census
+  387 -> 388. Verified at the raw sha 86421cd: the include after wsgfood.h,
+  wsgforage.h 83 inlines, the four flips with the R463 text, the post-state
+  76/110, the R462 seed record in place. Next: R464 - hunting, stalking a
+  wounded animal and Table 31 (printed p. 55).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
