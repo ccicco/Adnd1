@@ -1,0 +1,309 @@
+{
+ "round": 449,
+ "title": "the WSG overland movement in reduced visibility",
+ "prefix": "wsv",
+ "header_file": "rules/wsgvis.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 373,
+ "inline_count": 21,
+ "audit_label": "R449 WSG reduced visibility pin audit",
+ "audit_comment": "The reduced visibility slice pins the daylight assumption behind the previously described rates, the other-factors-first multiplication by the Table 23 entry (the 1/1 clear-daylight cell means no further reduction), the on-foot daylight hazard avoidance (no trees, no roots) with the night exception (a pit or cliff unless the surface is tested or probed), the infravision heat-only detection (a warm-blooded ambush yes, a cliff edge usually no), the Dexterity Check above the maximum safe speed with the blunder/stop-short consequences (saddle, wagon seat, chariot front) and the twice-the-figure cap, and Table 23 (the three light rows x the five visibility conditions, the fractions from 1/1 down to 1/8) (rules/wsgvis.h, prefix wsv); census 373 -> 374.",
+ "banner": {
+  "title": "The WSG OVERLAND MOVEMENT IN REDUCED VISIBILITY, R449: the visibility prose and TABLE 23 MOVEMENT IN REDUCED VISIBILITY - all movement rates previously described assume daylight under conditions that do not impair visibility. Table 23 gives the maximum safe speed, as a fraction of the character's or animal's current normal movement rate, for a character on foot or riding or driving an animal in less than ideal visibility: three light rows (daylight, moonlight, darkness) x five conditions (clear, moderate fog, heavy fog or snow, heavy snow with wind, blowing sand or dust), from 1/1 down to 1/8. All other factors (encumbrance, terrain, climbing, etc.) are applied FIRST to determine the current normal rate, and then that number is multiplied by the table entry; the 1/1 at daylight/clear means no further reduction. On foot at the maximum safe speed in daylight, short-range vision extends far enough to avoid easily visible hazards - he will not walk into a tree or stumble over an exposed root; at night the safe speed does NOT keep him safe from hazards (a pit or cliff edge unless he tests the surface or probes ahead with a pole). Infravision detects heat-detectable hazards in moonlight or darkness (a warm-blooded creature in ambush - yes; a cliff edge - usually no). Exceeding the maximum safe speed demands a Dexterity Check per obstacle - failure means he or the animal blundered into it or stopped short, possibly throwing him from the saddle, off the wagon seat or over the chariot front; and in no event can the speed exceed twice the table figure or the full normal movement rate, whichever is less. Census 373 -> 374.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 40-41; the user own copy OCR (pages 41-42) cross-checked against the archive djvu word layer (Guide_0040.djvu with the Guide_0041.djvu head) - the prose reads CLEAN two-way, every number (the 2x cap and the 1/8 sandstorm-in-darkness example) matched exactly; the Table 23 grid is GARBLED in the djvu word layer, so every cell was confirmed by TWO independent IIIF eye-reads of leaf 40 - the OCR and both eye-reads agree on all 15 fractions.",
+  "sentinel": "Multiply the current normal rate by the Table 23 fraction to get the maximum safe speed - 1/1 in clear daylight, down to 1/8 in blowing sand or dust at night - and never push past twice that figure without a Dexterity check at every obstacle."
+ },
+ "consts": [
+  {
+   "name": "wsvLightCount",
+   "value": 3,
+   "comment": "Table 23 has three light rows: daylight, moonlight and darkness."
+  },
+  {
+   "name": "wsvCondCount",
+   "value": 5,
+   "comment": "Table 23 has five visibility conditions: clear, moderate fog, heavy fog or snow, heavy snow with wind, and blowing sand or dust."
+  },
+  {
+   "name": "wsvSpeedCapMult",
+   "value": 2,
+   "comment": "A character or an animal under his control cannot exceed the maximum safe speed by more than twice the figure given, or move faster than the full normal movement rate, whichever is less."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wsvRatesAssumeDaylight",
+   "value": true,
+   "comment": "All movement rates previously described assume that the character is traveling in daylight, under conditions that do not impair visibility."
+  },
+  {
+   "name": "wsvOtherFactorsFirst",
+   "value": true,
+   "comment": "All other factors affecting movement (encumbrance, terrain, climbing, etc.) are applied to determine the current normal movement rate, and then that number is multiplied by the appropriate entry from Table 23."
+  },
+  {
+   "name": "wsvDaylightClearNoCut",
+   "value": true,
+   "comment": "The entry of 1/1 for Daylight/Clear means that movement is not further reduced under these conditions."
+  },
+  {
+   "name": "wsvDaylightFootHazardSafe",
+   "value": true,
+   "comment": "On foot and moving at the maximum safe speed during daylight, his short-range vision extends far enough to avoid hazards easily visible under clear daylight - he will not walk into a tree or stumble over an exposed root."
+  },
+  {
+   "name": "wsvNightHazardsRemain",
+   "value": true,
+   "comment": "Moving at the maximum safe speed will not necessarily keep him safe from hazards at night, in moonlight or darkness - he can fall into a pit or stroll off a cliff unless he tests the surface or probes the ground ahead with a pole."
+  },
+  {
+   "name": "wsvInfravisionHeatOnly",
+   "value": true,
+   "comment": "Infravision can detect certain hazards under moonlight or darkness provided they are heat-detectable - a warm-blooded creature lying in wait usually yes, a cliff edge usually no."
+  },
+  {
+   "name": "wsvFasterNeedsDexCheck",
+   "value": true,
+   "comment": "If a character attempts to move, or force an animal to move, faster than the maximum safe speed in any conditions of limited visibility, he must make a successful Dexterity Check whenever he or the animal encounters an obstacle."
+  },
+  {
+   "name": "wsvBlunderConsequences",
+   "value": true,
+   "comment": "Failure on the check indicates that he or the animal has blundered into the obstacle, or that the animal has stopped short - quite possibly throwing the character from the saddle, dislodging him from his wagon seat, or throwing him forward into or over the front of a chariot."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "Table 23: MOVEMENT IN REDUCED VISIBILITY",
+   "tag": "23",
+   "count": "wsvLightCount",
+   "col_default": 1,
+   "cols": [
+    "wsvNumClear",
+    "wsvDenClear",
+    "wsvNumModFog",
+    "wsvDenModFog",
+    "wsvNumHeavyFog",
+    "wsvDenHeavyFog",
+    "wsvNumHeavySnow",
+    "wsvDenHeavySnow",
+    "wsvNumBlowing",
+    "wsvDenBlowing"
+   ],
+   "col_comments": [
+    "The numerator of the maximum safe speed fraction under Clear conditions, by light row.",
+    "The denominator under Clear conditions: 1/1 in daylight, 2/3 in moonlight, 1/2 in darkness.",
+    "The numerator under Moderate Fog.",
+    "The denominator under Moderate Fog: 5/6, 1/2, 1/3.",
+    "The numerator under Heavy Fog or Snow.",
+    "The denominator under Heavy Fog or Snow: 3/4, 1/3, 1/4.",
+    "The numerator under Heavy Snow with Wind.",
+    "The denominator under Heavy Snow with Wind: 2/3, 1/4, 1/6.",
+    "The numerator under Blowing Sand or Dust.",
+    "The denominator under Blowing Sand or Dust: 1/2, 1/6, 1/8 - the worst cell in the table."
+   ],
+   "audit_comment": "the Table 23 grid: the three light rows (daylight, moonlight, darkness) x the five visibility conditions (clear, moderate fog, heavy fog or snow, heavy snow with wind, blowing sand or dust), each cell split into the numerator and denominator of the maximum safe speed fraction - from 1/1 down to 1/8",
+   "data": [
+    [
+     1,
+     1,
+     5,
+     6,
+     3,
+     4,
+     2,
+     3,
+     1,
+     2
+    ],
+    [
+     2,
+     3,
+     1,
+     2,
+     1,
+     3,
+     1,
+     4,
+     1,
+     6
+    ],
+    [
+     1,
+     2,
+     1,
+     3,
+     1,
+     4,
+     1,
+     6,
+     1,
+     8
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['wsvNumClear'](0) != 1 or m['wsvDenClear'](0) != 1 or m['wsvNumBlowing'](2) != 1 or m['wsvDenBlowing'](2) != 8",
+   "note": "the two extremes: 1/1 in clear daylight (no further reduction) and 1/8 in blowing sand or dust at night (the sandstorm-in-darkness example)"
+  },
+  {
+   "expr": "m['wsvNumModFog'](0) != 5 or m['wsvDenModFog'](0) != 6 or m['wsvNumHeavySnow'](1) != 1 or m['wsvDenHeavySnow'](1) != 4",
+   "note": "the mid-grid printed pair: 5/6 in daylight moderate fog, 1/4 in moonlight heavy snow with wind"
+  },
+  {
+   "expr": "m['wsvSpeedCapMult']() != 2 or m['wsvLightCount']() != 3 or m['wsvCondCount']() != 5",
+   "note": "the printed prose numbers: the twice-the-figure speed cap, over the three light rows and the five conditions"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['wsvNumClear'](0) * m['wsvDenModFog'](0) <= m['wsvNumModFog'](0) * m['wsvDenClear'](0) or m['wsvNumModFog'](0) * m['wsvDenHeavyFog'](0) <= m['wsvNumHeavyFog'](0) * m['wsvDenModFog'](0) or m['wsvNumHeavyFog'](0) * m['wsvDenHeavySnow'](0) <= m['wsvNumHeavySnow'](0) * m['wsvDenHeavyFog'](0) or m['wsvNumHeavySnow'](0) * m['wsvDenBlowing'](0) <= m['wsvNumBlowing'](0) * m['wsvDenHeavySnow'](0)",
+   "note": "the daylight row degrades strictly left to right: 1/1 > 5/6 > 3/4 > 2/3 > 1/2, each fraction smaller than the one before it (cross-multiplied)"
+  },
+  {
+   "expr": "m['wsvNumClear'](1) * m['wsvDenModFog'](1) <= m['wsvNumModFog'](1) * m['wsvDenClear'](1) or m['wsvNumModFog'](1) * m['wsvDenHeavyFog'](1) <= m['wsvNumHeavyFog'](1) * m['wsvDenModFog'](1) or m['wsvNumHeavyFog'](1) * m['wsvDenHeavySnow'](1) <= m['wsvNumHeavySnow'](1) * m['wsvDenHeavyFog'](1) or m['wsvNumHeavySnow'](1) * m['wsvDenBlowing'](1) <= m['wsvNumBlowing'](1) * m['wsvDenHeavySnow'](1)",
+   "note": "the moonlight row degrades strictly left to right: 2/3 > 1/2 > 1/3 > 1/4 > 1/6"
+  },
+  {
+   "expr": "m['wsvNumClear'](2) * m['wsvDenModFog'](2) <= m['wsvNumModFog'](2) * m['wsvDenClear'](2) or m['wsvNumModFog'](2) * m['wsvDenHeavyFog'](2) <= m['wsvNumHeavyFog'](2) * m['wsvDenModFog'](2) or m['wsvNumHeavyFog'](2) * m['wsvDenHeavySnow'](2) <= m['wsvNumHeavySnow'](2) * m['wsvDenHeavyFog'](2) or m['wsvNumHeavySnow'](2) * m['wsvDenBlowing'](2) <= m['wsvNumBlowing'](2) * m['wsvDenHeavySnow'](2)",
+   "note": "the darkness row degrades strictly left to right: 1/2 > 1/3 > 1/4 > 1/6 > 1/8"
+  },
+  {
+   "expr": "m['wsvNumClear'](2) * m['wsvDenClear'](1) >= m['wsvNumClear'](1) * m['wsvDenClear'](2) or m['wsvNumClear'](1) * m['wsvDenClear'](0) >= m['wsvNumClear'](0) * m['wsvDenClear'](1) or m['wsvNumBlowing'](2) * m['wsvDenBlowing'](1) >= m['wsvNumBlowing'](1) * m['wsvDenBlowing'](2) or m['wsvNumBlowing'](1) * m['wsvDenBlowing'](0) >= m['wsvNumBlowing'](0) * m['wsvDenBlowing'](1)",
+   "note": "darker is always slower: darkness cuts deeper than moonlight, and moonlight deeper than daylight, in the clear column and in the blowing column (cross-multiplied)"
+  }
+ ],
+ "header_sections": {
+  "the reduced visibility prose rules": [
+   {
+    "kind": "bool",
+    "name": "wsvRatesAssumeDaylight"
+   },
+   {
+    "kind": "bool",
+    "name": "wsvOtherFactorsFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "wsvDaylightClearNoCut"
+   },
+   {
+    "kind": "bool",
+    "name": "wsvDaylightFootHazardSafe"
+   },
+   {
+    "kind": "bool",
+    "name": "wsvNightHazardsRemain"
+   },
+   {
+    "kind": "bool",
+    "name": "wsvInfravisionHeatOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wsvFasterNeedsDexCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "wsvBlunderConsequences"
+   },
+   {
+    "kind": "const",
+    "name": "wsvSpeedCapMult"
+   }
+  ],
+  "the Table 23 visibility grid": [
+   {
+    "kind": "const",
+    "name": "wsvLightCount"
+   },
+   {
+    "kind": "const",
+    "name": "wsvCondCount"
+   },
+   {
+    "kind": "table",
+    "name": "Table 23: MOVEMENT IN REDUCED VISIBILITY"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] Overland movement in reduced visibility (p. 40)",
+   "to": "  - [x] Overland movement in reduced visibility (p. 40) - R449: the daylight assumption, the other-factors-first multiplication, the 1/1 clear-daylight cell, the daylight hazard-avoidance with the night exception, the infravision heat-only detection, the Dex check above the safe speed with the 2x cap and Table 23 (the three light rows x the five conditions, 1/1 to 1/8) pin as rules/wsgvis.h",
+   "note": "reduced visibility"
+  },
+  {
+   "from": "Post-state at R448: 51 closed, 135 open (the R448 round pins the jumping rules - the four-foot running advantage with the 20-foot straight run, the half-height high jump, the thin-barrier Dex check with the 1d3 heap damage, Table 22 with its seven level bands and the cumulative encumbrance/demihuman modifiers with the 2/1 floors; the next rounds continue the chapter - the overland movement in reduced visibility with Table 23).",
+   "to": "Post-state at R449: 52 closed, 134 open (the R449 round pins the overland movement in reduced visibility - the other-factors-first multiplication with the 1/1 clear-daylight cell, the daylight hazard-avoidance with the night exception, the infravision heat-only detection, the Dex check above the safe speed with the 2x cap, and Table 23 with its three light rows x the five conditions from 1/1 to 1/8; the next rounds continue the chapter - the swimming rules with Table 24).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 52,
+  "open": 134
+ },
+ "include_comment": "the WSG movement in reduced visibility",
+ "include_after": "#include \"rules/wsgjump.h\"  // R448: the WSG jumping rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R448 landed 2026-10-14: commit 55284c8",
+ "prev_record": [
+  "- R448 landed 2026-10-14: commit 55284c8",
+  "  (full 55284c825feb42295cddc2dd6c913f364a",
+  "  fb3d6b, census 373, pushed 8a6f5c9..",
+  "  55284c8, preflight GREEN on the FIRST run,",
+  "  the splice double-run clean: applied 6 /",
+  "  already 6), the WSG JUMPING, printed pp.",
+  "  39-40 - the jumping prose and TABLE 22 CHARACTERS' JUMPING ABILITY plus the",
+  "  p. 40 modifiers: the any-character rule (thief-acrobats and barbarians",
+  "  particularly skilled, but anyone can jump); the four-foot running advantage",
+  "  with its 20-foot straight run (no space or time - standing is the best); the",
+  "  half-height high jump; the flat-higher-surface roll landing; the",
+  "  thin-barrier high jump + Dex check with the 1d3 heap damage at five feet or",
+  "  higher and the next-round stand-up; the per-jump die roll (the 4th-level",
+  "  1d3=3 example); Table 22 (the seven bands 1-6 through 23+ - standing 1d4+1",
+  "  to 1d6+6, running 1d4+5 to 1d6+15, high 1d3 to 1d6+1, each cell split into",
+  "  die and plus); the cumulative modifiers (moderate -1, heavy -2 and cannot",
+  "  high jump, severe cannot jump at all, halfling -1 broad only, gnome/dwarf -2",
+  "  broad and -1 high) with the 2-foot broad and 1-foot high floors.",
+  "  rules/wsgjump.h NEW (28 inlines, prefix wjp - checked free in all three",
+  "  TUs). Ground truth: the prose CLEAN two-way (the user copy OCR vs the djvu",
+  "  word layer Guide_0039/Guide_0040); the Table 22 grid GARBLED in the djvu",
+  "  word layer, so every cell was confirmed by TWO independent IIIF eye-reads of",
+  "  leaf 39 - the OCR and both eye-reads agree on all 21 cells. Gap 50/136 ->",
+  "  51/135; census 372 -> 373. rverify GREEN on the FIRST build: 64 mutants, 0",
+  "  missed. Spec md5s: 8369062f authored /",
+  "  9edc42c4 +nl - the user-side file hashed",
+  "  576de88c / a0bc8674 +nl, the SAME",
+  "  delivery-side newline variance as R447",
+  "  (second round running; the engine applied",
+  "  the same 6 patches with a clean audit",
+  "  mirror, so it is cosmetic - but if it",
+  "  repeats, diff the bn-fetched spec against",
+  "  the canvas before the splice). GITHUB",
+  "  VERIFIED at the pinned full sha",
+  "  55284c825feb42295cddc2dd6c913f364a",
+  "  fb3d6b: census 373, the R448 audit with",
+  "  the bad-0 printf at line 49242, the",
+  "  include at line 153, wsgjump.h 28",
+  "  inlines, the gap 51 closed / 135 open",
+  "  flipped with the Post-state at R448, the",
+  "  R447 seed record in place, no wjp hits in",
+  "  the caller TUs (canvas r448-splice).",
+  "  Next after landing: the overland movement",
+  "  in reduced visibility with Table 23 (p.",
+  "  40)."
+ ]
+}
+

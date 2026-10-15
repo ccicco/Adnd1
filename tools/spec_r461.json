@@ -1,0 +1,383 @@
+{
+ "round": 461,
+ "title": "the WSG airborne fall chance and riding proficiency",
+ "prefix": "wfa",
+ "header_file": "rules/wsgfallair.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 385,
+ "inline_count": 31,
+ "audit_label": "R461 WSG airborne fall chance pin audit",
+ "audit_comment": "The Chapter 5 closer: the fall-chance system (printed p. 48) and the airborne riding proficiency (printed p. 49) pin as rules/wsgfallair.h (NEW, prefix wfa): the 0% base with the seven reduction modifiers (the full-body strap -200, the lower-body strap -150, the proficiency -50, the saddle -10, the stirrups -10, the -2 per ability point above 12 with the strength cap 18) and the seven increase modifiers (the hands-free +50, the overload +20, the faster-than-normal +20, the unwilling mount +20, the inclement weather +20, the not-level +10, the +2 per ability point below 12 and the +1 per wind mph above the 30-mph threshold), the every-three-turns check cadence restarting on each landing with the bad-conditions once-per-round exception, and the proficiency pins (the per-category slots with the dragon-and-griffon two-slot example, the -50/+50 hands-free negation, no mount control, the feats under ideal conditions only, the nonproficient automatic feat failure).",
+ "banner": {
+  "title": "The WSG AIRBORNE FALL CHANCE AND RIDING PROFICIENCY pins, R461: the Chapter 5 closer - the to-fall-or-not-to-fall system (the 0% base on smooth level flight at the full normal rate; the reduction ladder: the full-body strap, the lower-body strap, the proficiency, the saddle, the stirrups, the per-point ability rule over the 12 threshold with the 18 strength cap; the increase ladder: the free hands, the overload, the faster-than-normal flight, the unwilling mount, the inclement weather, the not-level flight, the below-12 per-point rule, the wind ladder over the 30-mph threshold; the every-three-turns check with the landing restart and the once-per-round exception) and the airborne riding proficiency (the per-category slots, the hands-free negation, the no-control rule, the ideal-conditions feats, the nonproficient auto-fail).",
+  "provenance": "The read: the OCR session 8d6a65a0, pdf pages 49-50 = printed 48-49, cross-checked against the second OCR copy - the two read word-for-word identical. The sign convention is pinned by the p. 49 text: the proficiency enjoys a -50% modifier that effectively negates the +50% for riding without holding on, so the first six table rows are reductions and the last seven are increases over the 0% base."
+ },
+ "consts": [
+  {
+   "name": "wfaBaseFallChancePct",
+   "value": 0,
+   "comment": "The base chance of falling: 0 percent - the mount giving a smooth and level flight at its full normal movement rate."
+  },
+  {
+   "name": "wfaStrapFullBodyPct",
+   "value": -200,
+   "comment": "Reduction: the rider's entire body (upper and lower) securely strapped onto the mount."
+  },
+  {
+   "name": "wfaStrapLowerBodyPct",
+   "value": -150,
+   "comment": "Reduction: the rider's lower body only securely strapped onto the mount."
+  },
+  {
+   "name": "wfaAirborneProfPct",
+   "value": -50,
+   "comment": "Reduction: the rider has proficiency in airborne riding in the appropriate category."
+  },
+  {
+   "name": "wfaSaddlePct",
+   "value": -10,
+   "comment": "Reduction: the rider is using a saddle."
+  },
+  {
+   "name": "wfaStirrupsPct",
+   "value": -10,
+   "comment": "Reduction: the saddle is equipped with stirrups."
+  },
+  {
+   "name": "wfaPerAbilityAbove12Pct",
+   "value": -2,
+   "comment": "Reduction per point of rider's dexterity above 12 and rider's strength above 12."
+  },
+  {
+   "name": "wfaAbilityModThreshold",
+   "value": 12,
+   "comment": "The ability-score threshold the per-point fall modifiers key on."
+  },
+  {
+   "name": "wfaStrengthCap",
+   "value": 18,
+   "comment": "Strength reads as 18 at most for the per-point fall modifier."
+  },
+  {
+   "name": "wfaPerAbilityBelow12Pct",
+   "value": 2,
+   "comment": "Increase per point of rider's dexterity below 12 and rider's strength below 12."
+  },
+  {
+   "name": "wfaFreeHandsPct",
+   "value": 50,
+   "comment": "Increase: the rider is not strapped onto the mount and not holding on - hands free or carrying something."
+  },
+  {
+   "name": "wfaOverloadPct",
+   "value": 20,
+   "comment": "Increase: the mount is carrying more than its normal load limit."
+  },
+  {
+   "name": "wfaFasterThanNormalPct",
+   "value": 20,
+   "comment": "Increase: the mount is moving faster than its full normal movement rate - diving, dodging, performing combat maneuvers."
+  },
+  {
+   "name": "wfaUnwillingMountPct",
+   "value": 20,
+   "comment": "Increase: the mount's demeanor is unwilling or rebellious and the creature is not charmed, subdued or similarly influenced."
+  },
+  {
+   "name": "wfaInclementWeatherPct",
+   "value": 20,
+   "comment": "Increase: inclement weather - sandstorm, heavy precipitation, or worse."
+  },
+  {
+   "name": "wfaNotFlyingLevelPct",
+   "value": 10,
+   "comment": "Increase: the mount is not flying level - sharp turns, loops, and the like."
+  },
+  {
+   "name": "wfaWindThresholdMph",
+   "value": 30,
+   "comment": "The wind-velocity threshold the per-mph fall modifier keys on."
+  },
+  {
+   "name": "wfaPerWindMphAbove30Pct",
+   "value": 1,
+   "comment": "Increase per mph of wind velocity greater than the threshold."
+  },
+  {
+   "name": "wfaFallCheckEveryTurns",
+   "value": 3,
+   "comment": "The fall chance is checked at least once every three turns while airborne - assuming smooth and normal flight."
+  },
+  {
+   "name": "wfaBadConditionsPerRounds",
+   "value": 1,
+   "comment": "Under bad weather, an uncooperative mount or abrupt changes of direction and speed, a check may be called for as often as once per round."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wfaChanceUnlessFastened",
+   "value": true,
+   "comment": "A character always has a chance of falling from the back of an airborne mount unless he is securely fastened to the creature."
+  },
+  {
+   "name": "wfaSaddleNoAttachmentWorse",
+   "value": true,
+   "comment": "Sitting in a saddle (or some other kind of seat) without being actually attached to the creature increases the chance."
+  },
+  {
+   "name": "wfaNoSaddleWorseStill",
+   "value": true,
+   "comment": "Riding without a saddle or some means of retaining the hold on the mount increases the chance further."
+  },
+  {
+   "name": "wfaCheckRestartsOnLanding",
+   "value": true,
+   "comment": "The three-turn check count begins anew each time the mount lands and takes off."
+  },
+  {
+   "name": "wfaBadConditionsMayCheckPerRound",
+   "value": true,
+   "comment": "While the unusual conditions persist the DM may call for a check as often as once per round."
+  },
+  {
+   "name": "wfaNonproficientAutoFails",
+   "value": true,
+   "comment": "A nonproficient character attempting any of the special airborne feats automatically fails and suffers the appropriate consequences."
+  },
+  {
+   "name": "wfaProficiencyPerCategory",
+   "value": true,
+   "comment": "Choosing proficiency in airborne riding requires specifying the category of mount to which the skill pertains."
+  },
+  {
+   "name": "wfaTwoCategoriesTwoSlots",
+   "value": true,
+   "comment": "A character cannot be proficient in riding both a dragon and a griffon without using two proficiency slots."
+  },
+  {
+   "name": "wfaProfNegatesFreeHands",
+   "value": true,
+   "comment": "The -50% proficiency modifier effectively negates the +50% for riding without holding on, so a proficient character rides safely with both hands free under normal conditions."
+  },
+  {
+   "name": "wfaProfImpartsNoControl",
+   "value": true,
+   "comment": "The proficiency imparts no special ability to control or cajole an unwilling or uncooperative mount."
+  },
+  {
+   "name": "wfaFeatsIdealConditionsOnly",
+   "value": true,
+   "comment": "The special feats are performable under ideal (not perilous) conditions only - the ability is safety from falling plus the feats."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['wfaAirborneProfPct']() + m['wfaFreeHandsPct']() != 0",
+   "note": "the book example: the proficiency -50% negates the +50% hands-free under normal conditions"
+  },
+  {
+   "expr": "m['wfaStrapFullBodyPct']() >= m['wfaStrapLowerBodyPct']()",
+   "note": "the full-body strap is strictly more protective than the lower-body-only strap"
+  },
+  {
+   "expr": "m['wfaSaddlePct']() + m['wfaStirrupsPct']() != -20",
+   "note": "the saddle and stirrups reductions sum to -20"
+  },
+  {
+   "expr": "4 * m['wfaPerAbilityAbove12Pct']() + 4 * m['wfaPerAbilityBelow12Pct']() != 0",
+   "note": "the symmetric per-point ladder: four points above 12 (-8%) mirrors four below (+8%)"
+  },
+  {
+   "expr": "40 - m['wfaWindThresholdMph']() != 10 * m['wfaPerWindMphAbove30Pct']()",
+   "note": "a 40-mph wind: 10 mph over the threshold at +1% per mph gives +10%"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the fall chance base": [
+   {
+    "kind": "const",
+    "name": "wfaBaseFallChancePct"
+   },
+   {
+    "kind": "bool",
+    "name": "wfaChanceUnlessFastened"
+   },
+   {
+    "kind": "bool",
+    "name": "wfaSaddleNoAttachmentWorse"
+   },
+   {
+    "kind": "bool",
+    "name": "wfaNoSaddleWorseStill"
+   }
+  ],
+  "the fall chance reductions": [
+   {
+    "kind": "const",
+    "name": "wfaStrapFullBodyPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaStrapLowerBodyPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaAirborneProfPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaSaddlePct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaStirrupsPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaPerAbilityAbove12Pct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaAbilityModThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "wfaStrengthCap"
+   }
+  ],
+  "the fall chance increases": [
+   {
+    "kind": "const",
+    "name": "wfaPerAbilityBelow12Pct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaFreeHandsPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaOverloadPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaFasterThanNormalPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaUnwillingMountPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaInclementWeatherPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaNotFlyingLevelPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfaWindThresholdMph"
+   },
+   {
+    "kind": "const",
+    "name": "wfaPerWindMphAbove30Pct"
+   }
+  ],
+  "the fall check cadence": [
+   {
+    "kind": "const",
+    "name": "wfaFallCheckEveryTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wfaBadConditionsPerRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "wfaCheckRestartsOnLanding"
+   },
+   {
+    "kind": "bool",
+    "name": "wfaBadConditionsMayCheckPerRound"
+   }
+  ],
+  "the airborne riding proficiency": [
+   {
+    "kind": "bool",
+    "name": "wfaNonproficientAutoFails"
+   },
+   {
+    "kind": "bool",
+    "name": "wfaProficiencyPerCategory"
+   },
+   {
+    "kind": "bool",
+    "name": "wfaTwoCategoriesTwoSlots"
+   },
+   {
+    "kind": "bool",
+    "name": "wfaProfNegatesFreeHands"
+   },
+   {
+    "kind": "bool",
+    "name": "wfaProfImpartsNoControl"
+   },
+   {
+    "kind": "bool",
+    "name": "wfaFeatsIdealConditionsOnly"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] To fall or not to fall (p. 48)",
+   "to": "  - [x] To fall or not to fall (p. 48) - R461: the fall-chance system (the 0% base, the strap/saddle/stirrup/proficiency reductions, the hands-free/overload/faster/unwilling/weather/level increases, the ability-point and wind-velocity ladders, the every-three-turns cadence with the landing restart and the per-round exception) pin as rules/wsgfallair.h",
+   "note": "the to-fall-or-not-to-fall item"
+  },
+  {
+   "from": "  - [ ] Proficiency in airborne riding (p. 49)",
+   "to": "  - [x] Proficiency in airborne riding (p. 49) - R461: the per-category slots (the dragon-and-griffon two-slot example), the -50% fall modifier negating the +50% hands-free, the no-control rule, the ideal-conditions feats and the nonproficient automatic failure pin as rules/wsgfallair.h",
+   "note": "the airborne riding proficiency item"
+  },
+  {
+   "from": "Post-state at R460: 63 closed, 123 open (the R460 round pins the flying mounts - Table 27 with its four category grids and the column definitions, the listing criteria, the willingness and feeding and load rules; the next rounds continue the chapter - the to fall or not to fall and the proficiency in airborne riding).",
+   "to": "Post-state at R461: 65 closed, 121 open (the R461 round closes Chapter 5 - the fall-chance system and the airborne riding proficiency pin as rules/wsgfallair.h; the next rounds open the food and water chapter - going without food, Table 28 and the water requirements).",
+   "note": "the post-state line"
+  }
+ ],
+ "gap_census": {
+  "closed": 65,
+  "open": 121
+ },
+ "include_comment": "the WSG airborne fall chance",
+ "include_after": "#include \"rules/wsgflymounts.h\"  // R460: the WSG flying mounts",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R460 landed 2026-10-14: commit 10c968e (full",
+ "prev_record": [
+  "- R460 landed 2026-10-14: commit 10c968e (full",
+  "  10c968e20a8decdae84d73d14f584d8fd4104f51, census 385, pushed",
+  "  5018a21..10c968e), the WSG FLYING MOUNTS, printed p. 47 - Table 27 in four",
+  "  category grids (41 creatures x 7 columns: the normal and maximum loads with",
+  "  the dash as max = normal, the full and reduced move rates, the MC on the",
+  "  A=1..E=5 scale, the safe-turns/rest stamina pair), the column definitions",
+  "  (the plummet rule, the single-rate 0 marker, the MC drop when ridden with E",
+  "  unreducible, the over-load stamina cut), the solid-form footnote, the",
+  "  listing criteria, the training and willingness rules, the triple-to-fifty",
+  "  rations feeding and the even-distribution encumbrance with the 2:1 doubling.",
+  "  rules/wsgflymounts.h NEW (60 inlines, prefix wfm, checked free in all three",
+  "  TUs). Gap 62/124 -> 63/123; census 384 -> 385. The next round closes Chapter",
+  "  5: the fall chance and the airborne riding proficiency on printed pp. 48-49."
+ ]
+}

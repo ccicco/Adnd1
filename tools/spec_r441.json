@@ -1,0 +1,217 @@
+{
+ "round": 441,
+ "title": "the WSG rope - roping together",
+ "prefix": "wrp",
+ "header_file": "rules/wsgtog.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 365,
+ "inline_count": 11,
+ "audit_label": "R441 WSG roping-together pin audit",
+ "audit_comment": "The roping-together slice pins the adjacent-recheck rule (even after a successful check earlier in the same round), the end/middle faller rules, the -10%-per-extra-faller cascade penalty ladder (0/10/20/30/40), the last-pair extra check and the 50-feet-per-character tie capacity (rules/wsgtog.h, prefix wrp); census 365 -> 366.",
+ "banner": {
+  "title": "The WSG ROPING TOGETHER, R441: the cascade prose (no table this round) - if two or more characters are roped together on a climb and one fails a Climbing Check, the character or characters adjacent to the one who fell must make additional successful Climbing Checks (even if they had just made a successful check earlier in the same round) to keep from being pulled off the slope or cliff face and also falling; a fallen end character forces a check only on his one neighbor, a fallen middle character forces checks on both sides; for each character who fails beyond the first the adjacent checks take a -10% penalty to their Climbing Ratings per extra fallen character, until characters on either side succeed or the entire group has fallen; if the last two characters both check at the same time and only one succeeds, that character makes one more check to keep the entire group from falling. The example: five characters on a 200-foot rope (a 50-foot rope ties two together, one more per additional 50 feet) - the cascade reaches -10, -20 and -30 percent. Census 365 -> 366.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 37; the user own copy OCR cross-checked against the archive djvu word layer (Guide_0037.djvu) - the section reads CLEAN in the djvu, every number (the 50-foot tie capacity, the 200-foot rope, the five characters, the -10/-20/-30 cascade) matched exactly; no eye-reads were needed. Scope note: the tie-capacity rule sits in the USING ROPE: BELAYING intro but is the roping-together enabler, so it lands here; the climbing-rope stats and the knot rules stay for the belaying round.",
+  "sentinel": "A 50-foot rope will suffice to tie two characters together, and another character can be added to the string for every additional 50 feet of rope. For each character who fails his Climbing Check beyond the first, the adjacent characters check at a -10% penalty per extra fallen character - the five-character example on a 200-foot rope cascades through -10, -20 and -30 percent."
+ },
+ "consts": [
+  {
+   "name": "wrpTieTwoCharFt",
+   "value": 50,
+   "comment": "A 50-foot rope will suffice to tie two characters together."
+  },
+  {
+   "name": "wrpExtraCharPerFt",
+   "value": 50,
+   "comment": "Another character can be added to the string for every additional 50 feet of rope in the coil."
+  },
+  {
+   "name": "wrpCascadeStepPct",
+   "value": 10,
+   "comment": "For each character who fails his Climbing Check beyond the first, the adjacent character(s) must make Climbing Checks with a -10% penalty to their Climbing Ratings."
+  },
+  {
+   "name": "wrpExamplePartySize",
+   "value": 5,
+   "comment": "Five characters are strung together on the example rope, attempting to scale a cliff face."
+  },
+  {
+   "name": "wrpExampleRopeFt",
+   "value": 200,
+   "comment": "The example rope is 200 feet long - exactly what five roped characters need: 50 feet for two, plus 50 more for each additional character."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wrpAdjacentMustRecheck",
+   "value": true,
+   "comment": "The characters adjacent to the one who fell must make additional successful Climbing Checks even if they had just made a successful check earlier in the same round."
+  },
+  {
+   "name": "wrpEndFallerOneAdjacent",
+   "value": true,
+   "comment": "If a character on either end of the rope falls, only the character adjacent to him needs to make a Climbing Check."
+  },
+  {
+   "name": "wrpMiddleFallerBothSides",
+   "value": true,
+   "comment": "If a character in the middle of the group falls, the climbers on both sides must make successful checks to halt his fall."
+  },
+  {
+   "name": "wrpCascadeUntilHaltOrAll",
+   "value": true,
+   "comment": "The process continues until characters on either side make successful Climbing Checks, or until everyone in the group fails a Climbing Check - which means the entire group has fallen."
+  },
+  {
+   "name": "wrpLastPairSingleSuccessExtra",
+   "value": true,
+   "comment": "If the last two characters in a group are both required to make checks at the same time and only one of them succeeds, the successful character must make one more check to keep the entire group from falling."
+  }
+ ],
+ "chains": [],
+ "switches": [
+  {
+   "name": "wrpCascadePenaltyPct",
+   "values": [
+    0,
+    10,
+    20,
+    30,
+    40
+   ],
+   "default": 40,
+   "comment": "The penalty to the adjacent climbers Climbing Ratings, by the number of fallen characters BEYOND the first: 0 with only one fallen, and -10% more for each extra fallen character - -10% with two fallen, -20% with three, -30% with four, -40% beyond five."
+  }
+ ],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['wrpTieTwoCharFt']() != 50 or m['wrpExtraCharPerFt']() != 50",
+   "note": "the tie capacity: a 50-foot rope ties two characters, one more per additional 50 feet"
+  },
+  {
+   "expr": "(m['wrpExamplePartySize']() - 1) * m['wrpExtraCharPerFt']() != m['wrpExampleRopeFt']()",
+   "note": "the example party: five roped characters need (5-1) x 50 = 200 feet of rope - the 200-foot rope of the example"
+  },
+  {
+   "expr": "m['wrpCascadePenaltyPct'](0) != 0 or m['wrpCascadePenaltyPct'](1) != 10 or m['wrpCascadePenaltyPct'](2) != 20 or m['wrpCascadePenaltyPct'](3) != 30 or m['wrpCascadePenaltyPct'](4) != 40",
+   "note": "the cascade ladder: one fallen 0, two fallen -10%, three -20%, four -30%, five -40%"
+  },
+  {
+   "expr": "m['wrpCascadePenaltyPct'](1) != m['wrpCascadeStepPct']()",
+   "note": "the example first step: with two fallen (one beyond the first) the third character checks at the -10% step"
+  },
+  {
+   "expr": "m['wrpCascadePenaltyPct'](2) != 2 * m['wrpCascadeStepPct']() or m['wrpCascadePenaltyPct'](3) != 3 * m['wrpCascadeStepPct']()",
+   "note": "the example deep cells: three fallen - the -20% checks of the first and fifth characters; four fallen - the -30% final check"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['wrpCascadePenaltyPct'](0) >= m['wrpCascadePenaltyPct'](1) or m['wrpCascadePenaltyPct'](1) >= m['wrpCascadePenaltyPct'](2) or m['wrpCascadePenaltyPct'](2) >= m['wrpCascadePenaltyPct'](3) or m['wrpCascadePenaltyPct'](3) >= m['wrpCascadePenaltyPct'](4)",
+   "note": "the cascade penalty is strictly increasing, one step per fallen character"
+  },
+  {
+   "expr": "m['wrpCascadePenaltyPct'](2) - m['wrpCascadePenaltyPct'](1) != m['wrpCascadePenaltyPct'](1) - m['wrpCascadePenaltyPct'](0) or m['wrpCascadePenaltyPct'](3) - m['wrpCascadePenaltyPct'](2) != m['wrpCascadeStepPct']()",
+   "note": "the cascade steps are constant: every extra fallen character adds exactly one -10% step"
+  }
+ ],
+ "header_sections": {
+  "the roping-together rules": [
+   {
+    "kind": "bool",
+    "name": "wrpAdjacentMustRecheck"
+   },
+   {
+    "kind": "bool",
+    "name": "wrpEndFallerOneAdjacent"
+   },
+   {
+    "kind": "bool",
+    "name": "wrpMiddleFallerBothSides"
+   },
+   {
+    "kind": "const",
+    "name": "wrpCascadeStepPct"
+   },
+   {
+    "kind": "switch",
+    "name": "wrpCascadePenaltyPct"
+   },
+   {
+    "kind": "bool",
+    "name": "wrpCascadeUntilHaltOrAll"
+   },
+   {
+    "kind": "bool",
+    "name": "wrpLastPairSingleSuccessExtra"
+   },
+   {
+    "kind": "const",
+    "name": "wrpTieTwoCharFt"
+   },
+   {
+    "kind": "const",
+    "name": "wrpExtraCharPerFt"
+   },
+   {
+    "kind": "const",
+    "name": "wrpExamplePartySize"
+   },
+   {
+    "kind": "const",
+    "name": "wrpExampleRopeFt"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] Roping together (p. 37)",
+   "to": "  - [x] Roping together (p. 37) - R441: the adjacent-recheck rule, the end/middle faller rules, the cascade penalty ladder, the last-pair extra check and the tie capacity pin as rules/wsgtog.h",
+   "note": "roping together"
+  },
+  {
+   "from": "Post-state at R440: 43 closed, 143 open (the R440 round pins the rope use - the standard 50-foot coil with the 1500-pound support limit, the overload break chance, the cumulative weakening ladder and the weakened-rope break chance; the next rounds continue the section - the roping together, the rappelling, the belaying and the grappling hooks).",
+   "to": "Post-state at R441: 44 closed, 142 open (the R441 round pins the roping together - the adjacent rechecks with the -10% cascade penalty per fallen character beyond the first, the end and middle faller rules, the last-pair extra check and the 50-feet-per-character tie capacity; the next rounds continue the section - the rappelling, the belaying and the grappling hooks).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 44,
+  "open": 142
+ },
+ "include_comment": "the WSG roping together",
+ "include_after": "#include \"rules/wsgrope.h\"  // R440: the WSG rope use",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R440 landed 2026-10-14: commit 4bf7254 (census 365, pushed",
+ "prev_record": [
+  "- R440 landed 2026-10-14: commit 4bf7254 (census 365, pushed",
+  "  a6536db..4bf7254, preflight GREEN on the FIRST run - the tenth clean",
+  "  first-try land in a row), the WSG USING ROPE FOR MOVEMENT AND CLIMBING,",
+  "  printed p. 36 - the rope prose (no table this round): the single most",
+  "  important climbing equipment is a coil of rope; the standard 50-foot coil",
+  "  (somewhat smaller than half an inch in diameter) supports up to 1500 pounds",
+  "  without fraying or breaking; past the limit a 20 percent per-turn",
+  "  non-cumulative break chance while the strain remains; the weakening chance",
+  "  is cumulative - 10 percent after one turn of strain, 30 after two, 60 after",
+  "  three, 100 after four (the wsrWeakenPct switch ladder); a weakened rope",
+  "  breaks the next time it supports more than its limit at 40 percent per turn",
+  "  non-cumulative. rules/wsgrope.h NEW (12 inlines, prefix wsr - wro was NOT",
+  "  free; wsr checked free in all three TUs). Ground truth CLEAN two-way (the",
+  "  user copy OCR vs the djvu word layer - the section reads clean in the djvu,",
+  "  every number matched, no eye-reads needed). Gap 42/144 -> 43/143; census 364",
+  "  -> 365. rverify GREEN on the FIRST build: 11 mutants, 0 missed. Spec md5s:",
+  "  a88b0f6e authored / 44822213 +nl. GITHUB VERIFIED at the pinned full sha",
+  "  4bf7254a845854d6b6cb811ba606ba6ba327b691: census 365, the R440 audit present",
+  "  once with the bad 0 printf, wsgrope.h 12 inlines, the weakening ladder",
+  "  landed (0/10/30/60/100), the gap 43 closed / 143 open, the R439 seed record",
+  "  in place, no wsr hits in the caller TUs. Next after landing: the roping",
+  "  together (p. 37)."
+ ]
+}

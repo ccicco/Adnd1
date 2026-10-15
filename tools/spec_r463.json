@@ -1,0 +1,1077 @@
+{
+ "round": 463,
+ "title": "the WSG food gathering, foraging and Table 30",
+ "prefix": "wfg",
+ "header_file": "rules/wsgforage.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 387,
+ "inline_count": 83,
+ "audit_label": "R463 WSG foraging pin audit",
+ "audit_comment": "The Table 30 grid cell by cell (five climate regions, the chance and inedible percent per terrain per season), the two-turn foraging check with the proficiency advantage and the four-turn search limit, the 1d8 inedible dispatch with the poison and tainted cramp and dice rules - every cell, const, bool and chain limit verified against the model.",
+ "banner": {
+  "title": "R463: the WSG FOOD GATHERING AND FORAGING slice - the foraging check with the proficiency advantage, Table 30 (the 33-row terrain-by-season foraging success grid over the five climate regions) and the inedible plants dispatch, printed pp. 53-54.",
+  "provenance": "Ground truth three-way: the archive djvu word layer vs the pdfy PDF text layer vs the pixel reads of the Table 30 scan (leaf 0053 of the pdfy item, full native 2432x3194 decode). The two text layers disagree or drop the Tem-F winter, St-P/Se/Sw winter, Tro-M winter and Tro-Se spring cells and both garble the Arctic P and Se rows - the pixels settled every one: a glyph-level NCC classifier over same-page font templates (leave-one-out 62/62) plus vision reads of the contrast-stretched cell crops, every disputed digit at 0.83-0.94 correlation with the runner-up 0.2-0.3 behind.",
+  "sentinel": "All 132 grid cells pinned; the foraging mechanics (the two-turn check, the proficient 2-in-2 or 1-in-1, the -20 inedible shift, the four-turn search limit, the one-mile move-on, the 1d8 inedible bands) are audit examples."
+ },
+ "consts": [
+  {
+   "name": "wfgCheckTurnsNormal",
+   "value": 2,
+   "comment": "a normal character forages two turns per check: the chance to find one full day's ration"
+  },
+  {
+   "name": "wfgRationPounds",
+   "value": 2,
+   "comment": "one full day's ration of plant life is two pounds of fruit, vegetables and/or greenery"
+  },
+  {
+   "name": "wfgProfRationsPerCheck",
+   "value": 2,
+   "comment": "with the foraging proficiency: two full rations located in the same two turns of foraging"
+  },
+  {
+   "name": "wfgProfTurnsPerRation",
+   "value": 1,
+   "comment": "with the proficiency: one full ration located in one turn of foraging"
+  },
+  {
+   "name": "wfgProfInedibleReduction",
+   "value": 20,
+   "comment": "with the proficiency: the chance of the take being inedible is 20% lower than a normal character's"
+  },
+  {
+   "name": "wfgSearchTurnsMax",
+   "value": 4,
+   "comment": "fruitless to spend more than four turns attempting to find food - no further searching produces better results"
+  },
+  {
+   "name": "wfgChecksMaxNormal",
+   "value": 2,
+   "comment": "the four-turn limit is two foraging checks for a normal character"
+  },
+  {
+   "name": "wfgChecksMaxProf",
+   "value": 4,
+   "comment": "the four-turn limit is four foraging checks for one with the proficiency"
+  },
+  {
+   "name": "wfgMilesBeforeReforage",
+   "value": 1,
+   "comment": "after a fruitless search the group must travel at least one mile before foraging again"
+  },
+  {
+   "name": "wfgArcRowCount",
+   "value": 5,
+   "comment": "the Table 30 Arctic grid rows: desert, hills, mountains, plains and scrublands - no forest or swamp row"
+  },
+  {
+   "name": "wfgSubRowCount",
+   "value": 7,
+   "comment": "the Table 30 Subarctic grid rows (the standard seven terrains)"
+  },
+  {
+   "name": "wfgTemRowCount",
+   "value": 7,
+   "comment": "the Table 30 Temperate grid rows (the standard seven terrains)"
+  },
+  {
+   "name": "wfgStiRowCount",
+   "value": 7,
+   "comment": "the Table 30 Subtropical grid rows (the standard seven terrains)"
+  },
+  {
+   "name": "wfgTroRowCount",
+   "value": 7,
+   "comment": "the Table 30 Tropical grid rows (the standard seven terrains)"
+  },
+  {
+   "name": "wfgInedRollMax",
+   "value": 8,
+   "comment": "the inedible-plants dispatch roll is 1d8"
+  },
+  {
+   "name": "wfgPoisonCrampOnsetDie",
+   "value": 10,
+   "comment": "poisonous plants: cramps begin 1d10 rounds after eating"
+  },
+  {
+   "name": "wfgPoisonCrampTurnsDice",
+   "value": 2,
+   "comment": "poisonous plants: the cramps last 2d10 turns"
+  },
+  {
+   "name": "wfgPoisonCrampTurnsDie",
+   "value": 10,
+   "comment": "poisonous plants: the cramp duration die is d10"
+  },
+  {
+   "name": "wfgPoisonHpPerTurnDie",
+   "value": 4,
+   "comment": "poisonous plants: 1d4 hit points lost per turn while the cramps persist"
+  },
+  {
+   "name": "wfgPoisonRegainPerHourDie",
+   "value": 4,
+   "comment": "poisonous plants: hit points regained at 1d4 per hour with rest"
+  },
+  {
+   "name": "wfgPoisonRestWaterPintsPerHour",
+   "value": 1,
+   "comment": "the poison recovery requires at least one pint of water per hour while resting"
+  },
+  {
+   "name": "wfgSlowPoisonSaveStackNum",
+   "value": 1,
+   "comment": "slow poison on a character who made his save: one-fourth duration and damage"
+  },
+  {
+   "name": "wfgSlowPoisonSaveStackDen",
+   "value": 4,
+   "comment": "slow poison on a character who made his save: the one-fourth denominator"
+  },
+  {
+   "name": "wfgTaintCrampOnsetDie",
+   "value": 10,
+   "comment": "tainted plants: cramps begin within 1d10 rounds"
+  },
+  {
+   "name": "wfgTaintCrampTurnsDie",
+   "value": 10,
+   "comment": "tainted plants: the cramps last 1d10 turns"
+  },
+  {
+   "name": "wfgTaintHpPerTurnDie",
+   "value": 2,
+   "comment": "tainted plants: 1d2 hit points lost per turn while the cramps persist"
+  },
+  {
+   "name": "wfgTaintHalfNum",
+   "value": 1,
+   "comment": "tainted plants affect the consumer as half-strength poison"
+  },
+  {
+   "name": "wfgTaintHalfDen",
+   "value": 2,
+   "comment": "the tainted half-strength denominator"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wfgProfFindChanceNormal",
+   "value": true,
+   "comment": "the proficient character's chance of locating potentially edible plants is no greater than any other character's"
+  },
+  {
+   "name": "wfgPoisonHalfRationTriggers",
+   "value": true,
+   "comment": "poisonous plants hit anyone who eats a half-ration or more"
+  },
+  {
+   "name": "wfgPoisonSaveHalves",
+   "value": true,
+   "comment": "a saving throw versus poison halves both the cramp duration and the damage"
+  },
+  {
+   "name": "wfgSlowPoisonActsAsSave",
+   "value": true,
+   "comment": "a slow poison spell acts the same as a successful saving throw"
+  },
+  {
+   "name": "wfgNeutralizeHaltsCramps",
+   "value": true,
+   "comment": "a neutralize poison spell halts the cramps and negates any damage that would be suffered subsequently"
+  },
+  {
+   "name": "wfgNeutralizeNoPriorDamage",
+   "value": true,
+   "comment": "neutralize poison does not negate damage taken before the spell was applied"
+  },
+  {
+   "name": "wfgTaintSaveHalves",
+   "value": true,
+   "comment": "tainted plants: a saving throw versus poison reduces duration and damage by half"
+  },
+  {
+   "name": "wfgTaintCureDiseaseHalts",
+   "value": true,
+   "comment": "tainted plants: a neutralize poison or cure disease spell halts duration and damage as soon as it is cast"
+  },
+  {
+   "name": "wfgNoValueWaterOnly",
+   "value": true,
+   "comment": "the 5-8 no-value plants provide no food value aside from the water they might contain"
+  },
+  {
+   "name": "wfgNoValueFullNoNourish",
+   "value": true,
+   "comment": "no-value plants fill the stomach but affect the system as though no food was eaten"
+  },
+  {
+   "name": "wfgOrchardGuaranteed",
+   "value": true,
+   "comment": "camp in an apple grove or a cornfield edge: a 100% chance of coming back with food, whatever the table says"
+  },
+  {
+   "name": "wfgRipePickedInedibleNearZero",
+   "value": true,
+   "comment": "gathering all the ripe fruit from the trees instead of picking some up off the ground: little or no chance the food is inedible"
+  },
+  {
+   "name": "wfgTableNotUnerring",
+   "value": true,
+   "comment": "the table must not unswervingly dictate what happens - common sense and reasonable judgment prevail"
+  },
+  {
+   "name": "wfgGroupMustMoveOn",
+   "value": true,
+   "comment": "if every character searches the limit and no food is found, the group must move on before foraging again"
+  }
+ ],
+ "chains": [
+  {
+   "name": "wfgInedBandFor",
+   "arg": "r",
+   "limits": [
+    1,
+    4
+   ],
+   "tail": 2,
+   "comment": "the inedible-plants band on 1d8: 1 poisonous band 0, 2-4 tainted band 1, 5-8 no food value band 2"
+  }
+ ],
+ "switches": [],
+ "tables": [
+  {
+   "name": "wfgArcForage",
+   "tag": "30A",
+   "count": "wfgArcRowCount",
+   "cols": [
+    "wfgArcWinChn",
+    "wfgArcWinInd",
+    "wfgArcSprChn",
+    "wfgArcSprInd",
+    "wfgArcSumChn",
+    "wfgArcSumInd",
+    "wfgArcAutChn",
+    "wfgArcAutInd"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 30 Win foraging chance (percent, two turns)",
+    "the Table 30 Win inedible chance (percent of the take)",
+    "the Table 30 Spr foraging chance (percent, two turns)",
+    "the Table 30 Spr inedible chance (percent of the take)",
+    "the Table 30 Sum foraging chance (percent, two turns)",
+    "the Table 30 Sum inedible chance (percent of the take)",
+    "the Table 30 Aut foraging chance (percent, two turns)",
+    "the Table 30 Aut inedible chance (percent of the take)"
+   ],
+   "row_comments": [
+    "the desert row",
+    "the hills row",
+    "the mountains row",
+    "the plains row",
+    "the scrublands row"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     5,
+     75,
+     10,
+     75,
+     0,
+     0
+    ],
+    [
+     5,
+     75,
+     10,
+     60,
+     10,
+     60,
+     5,
+     50
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     5,
+     50,
+     0,
+     0
+    ],
+    [
+     5,
+     50,
+     5,
+     50,
+     10,
+     50,
+     5,
+     50
+    ],
+    [
+     10,
+     75,
+     10,
+     50,
+     15,
+     50,
+     10,
+     75
+    ]
+   ],
+   "audit_comment": "the Table 30 Arctic terrain grid (chance/inedible per season)"
+  },
+  {
+   "name": "wfgSubForage",
+   "tag": "30B",
+   "count": "wfgSubRowCount",
+   "cols": [
+    "wfgSubWinChn",
+    "wfgSubWinInd",
+    "wfgSubSprChn",
+    "wfgSubSprInd",
+    "wfgSubSumChn",
+    "wfgSubSumInd",
+    "wfgSubAutChn",
+    "wfgSubAutInd"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 30 Win foraging chance (percent, two turns)",
+    "the Table 30 Win inedible chance (percent of the take)",
+    "the Table 30 Spr foraging chance (percent, two turns)",
+    "the Table 30 Spr inedible chance (percent of the take)",
+    "the Table 30 Sum foraging chance (percent, two turns)",
+    "the Table 30 Sum inedible chance (percent of the take)",
+    "the Table 30 Aut foraging chance (percent, two turns)",
+    "the Table 30 Aut inedible chance (percent of the take)"
+   ],
+   "row_comments": [
+    "the desert row",
+    "the forest row",
+    "the hills row",
+    "the mountains row",
+    "the plains row",
+    "the scrublands row",
+    "the swamp row"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     5,
+     50,
+     15,
+     50,
+     5,
+     75
+    ],
+    [
+     70,
+     40,
+     85,
+     40,
+     100,
+     50,
+     75,
+     40
+    ],
+    [
+     20,
+     50,
+     30,
+     50,
+     40,
+     40,
+     25,
+     50
+    ],
+    [
+     10,
+     50,
+     15,
+     50,
+     20,
+     40,
+     15,
+     50
+    ],
+    [
+     20,
+     40,
+     30,
+     40,
+     50,
+     40,
+     30,
+     50
+    ],
+    [
+     25,
+     60,
+     35,
+     50,
+     50,
+     40,
+     35,
+     50
+    ],
+    [
+     15,
+     60,
+     20,
+     60,
+     30,
+     60,
+     20,
+     50
+    ]
+   ],
+   "audit_comment": "the Table 30 Subarctic terrain grid (chance/inedible per season)"
+  },
+  {
+   "name": "wfgTemForage",
+   "tag": "30C",
+   "count": "wfgTemRowCount",
+   "cols": [
+    "wfgTemWinChn",
+    "wfgTemWinInd",
+    "wfgTemSprChn",
+    "wfgTemSprInd",
+    "wfgTemSumChn",
+    "wfgTemSumInd",
+    "wfgTemAutChn",
+    "wfgTemAutInd"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 30 Win foraging chance (percent, two turns)",
+    "the Table 30 Win inedible chance (percent of the take)",
+    "the Table 30 Spr foraging chance (percent, two turns)",
+    "the Table 30 Spr inedible chance (percent of the take)",
+    "the Table 30 Sum foraging chance (percent, two turns)",
+    "the Table 30 Sum inedible chance (percent of the take)",
+    "the Table 30 Aut foraging chance (percent, two turns)",
+    "the Table 30 Aut inedible chance (percent of the take)"
+   ],
+   "row_comments": [
+    "the desert row",
+    "the forest row",
+    "the hills row",
+    "the mountains row",
+    "the plains row",
+    "the scrublands row",
+    "the swamp row"
+   ],
+   "data": [
+    [
+     10,
+     70,
+     5,
+     50,
+     5,
+     70,
+     5,
+     50
+    ],
+    [
+     80,
+     40,
+     90,
+     40,
+     100,
+     40,
+     90,
+     40
+    ],
+    [
+     65,
+     50,
+     75,
+     40,
+     90,
+     35,
+     80,
+     50
+    ],
+    [
+     20,
+     40,
+     30,
+     40,
+     40,
+     40,
+     30,
+     50
+    ],
+    [
+     50,
+     40,
+     60,
+     40,
+     75,
+     30,
+     60,
+     50
+    ],
+    [
+     50,
+     50,
+     65,
+     40,
+     80,
+     40,
+     65,
+     50
+    ],
+    [
+     30,
+     60,
+     35,
+     50,
+     40,
+     50,
+     35,
+     60
+    ]
+   ],
+   "audit_comment": "the Table 30 Temperate terrain grid (chance/inedible per season)"
+  },
+  {
+   "name": "wfgStiForage",
+   "tag": "30D",
+   "count": "wfgStiRowCount",
+   "cols": [
+    "wfgStiWinChn",
+    "wfgStiWinInd",
+    "wfgStiSprChn",
+    "wfgStiSprInd",
+    "wfgStiSumChn",
+    "wfgStiSumInd",
+    "wfgStiAutChn",
+    "wfgStiAutInd"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 30 Win foraging chance (percent, two turns)",
+    "the Table 30 Win inedible chance (percent of the take)",
+    "the Table 30 Spr foraging chance (percent, two turns)",
+    "the Table 30 Spr inedible chance (percent of the take)",
+    "the Table 30 Sum foraging chance (percent, two turns)",
+    "the Table 30 Sum inedible chance (percent of the take)",
+    "the Table 30 Aut foraging chance (percent, two turns)",
+    "the Table 30 Aut inedible chance (percent of the take)"
+   ],
+   "row_comments": [
+    "the desert row",
+    "the forest row",
+    "the hills row",
+    "the mountains row",
+    "the plains row",
+    "the scrublands row",
+    "the swamp row"
+   ],
+   "data": [
+    [
+     5,
+     75,
+     5,
+     80,
+     0,
+     0,
+     5,
+     75
+    ],
+    [
+     90,
+     30,
+     100,
+     30,
+     100,
+     30,
+     100,
+     30
+    ],
+    [
+     80,
+     30,
+     90,
+     30,
+     100,
+     25,
+     95,
+     25
+    ],
+    [
+     40,
+     40,
+     55,
+     30,
+     75,
+     30,
+     60,
+     40
+    ],
+    [
+     80,
+     30,
+     90,
+     30,
+     100,
+     30,
+     100,
+     35
+    ],
+    [
+     80,
+     40,
+     90,
+     40,
+     100,
+     40,
+     95,
+     40
+    ],
+    [
+     40,
+     60,
+     50,
+     50,
+     50,
+     50,
+     50,
+     60
+    ]
+   ],
+   "audit_comment": "the Table 30 Subtropical terrain grid (chance/inedible per season)"
+  },
+  {
+   "name": "wfgTroForage",
+   "tag": "30E",
+   "count": "wfgTroRowCount",
+   "cols": [
+    "wfgTroWinChn",
+    "wfgTroWinInd",
+    "wfgTroSprChn",
+    "wfgTroSprInd",
+    "wfgTroSumChn",
+    "wfgTroSumInd",
+    "wfgTroAutChn",
+    "wfgTroAutInd"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 30 Win foraging chance (percent, two turns)",
+    "the Table 30 Win inedible chance (percent of the take)",
+    "the Table 30 Spr foraging chance (percent, two turns)",
+    "the Table 30 Spr inedible chance (percent of the take)",
+    "the Table 30 Sum foraging chance (percent, two turns)",
+    "the Table 30 Sum inedible chance (percent of the take)",
+    "the Table 30 Aut foraging chance (percent, two turns)",
+    "the Table 30 Aut inedible chance (percent of the take)"
+   ],
+   "row_comments": [
+    "the desert row",
+    "the forest row",
+    "the hills row",
+    "the mountains row",
+    "the plains row",
+    "the scrublands row",
+    "the swamp row"
+   ],
+   "data": [
+    [
+     5,
+     75,
+     5,
+     80,
+     0,
+     0,
+     5,
+     75
+    ],
+    [
+     100,
+     30,
+     100,
+     30,
+     100,
+     40,
+     100,
+     30
+    ],
+    [
+     90,
+     30,
+     100,
+     40,
+     100,
+     40,
+     95,
+     35
+    ],
+    [
+     85,
+     30,
+     90,
+     30,
+     90,
+     40,
+     90,
+     35
+    ],
+    [
+     100,
+     30,
+     100,
+     45,
+     100,
+     50,
+     100,
+     40
+    ],
+    [
+     90,
+     40,
+     95,
+     50,
+     100,
+     50,
+     95,
+     50
+    ],
+    [
+     50,
+     60,
+     60,
+     60,
+     70,
+     50,
+     60,
+     60
+    ]
+   ],
+   "audit_comment": "the Table 30 Tropical terrain grid (chance/inedible per season)"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the subarctic forest winter forage: 70% find chance, 40% inedible",
+   "expr": "m['wfgSubWinChn'](1) != 70 or m['wfgSubWinInd'](1) != 40"
+  },
+  {
+   "note": "the proficient take: two rations per two-turn check or one per turn",
+   "expr": "m['wfgProfRationsPerCheck']() != 2 or m['wfgProfTurnsPerRation']() != 1"
+  },
+  {
+   "note": "the proficient inedible shift on the temperate forest spring cell: 40 - 20 = 20",
+   "expr": "m['wfgTemSprInd'](1) - m['wfgProfInedibleReduction']() != 20"
+  },
+  {
+   "note": "the search limit: four turns is two normal checks, four proficient checks",
+   "expr": "m['wfgSearchTurnsMax']() != m['wfgChecksMaxNormal']() * m['wfgCheckTurnsNormal']() or m['wfgSearchTurnsMax']() != m['wfgChecksMaxProf']() * m['wfgProfTurnsPerRation']()"
+  },
+  {
+   "note": "the ration weight: one day's ration is two pounds",
+   "expr": "m['wfgRationPounds']() != 2"
+  },
+  {
+   "note": "the arctic desert winter: nothing to find",
+   "expr": "m['wfgArcWinChn'](0) != 0 or m['wfgArcWinInd'](0) != 0"
+  },
+  {
+   "note": "the move-on rule: at least one mile before foraging again",
+   "expr": "m['wfgMilesBeforeReforage']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the inedible roll 1 is the poison band, 4 tainted, 5 no value",
+   "expr": "m['wfgInedBandFor'](1) != 0 or m['wfgInedBandFor'](4) != 1 or m['wfgInedBandFor'](5) != 2 or m['wfgInedBandFor'](8) != 2"
+  },
+  {
+   "note": "the tropical swamp summer cell: 70% find, 50% inedible",
+   "expr": "m['wfgTroSumChn'](6) != 70 or m['wfgTroSumInd'](6) != 50"
+  },
+  {
+   "note": "the subtropical hills autumn cell: 95% find, 25% inedible",
+   "expr": "m['wfgStiAutChn'](2) != 95 or m['wfgStiAutInd'](2) != 25"
+  }
+ ],
+ "header_sections": {
+  "Table 30: the foraging success grid": [
+   {
+    "kind": "const",
+    "name": "wfgArcRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "wfgArcForage"
+   },
+   {
+    "kind": "const",
+    "name": "wfgSubRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "wfgSubForage"
+   },
+   {
+    "kind": "const",
+    "name": "wfgTemRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "wfgTemForage"
+   },
+   {
+    "kind": "const",
+    "name": "wfgStiRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "wfgStiForage"
+   },
+   {
+    "kind": "const",
+    "name": "wfgTroRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "wfgTroForage"
+   }
+  ],
+  "The foraging check": [
+   {
+    "kind": "const",
+    "name": "wfgCheckTurnsNormal"
+   },
+   {
+    "kind": "const",
+    "name": "wfgRationPounds"
+   },
+   {
+    "kind": "const",
+    "name": "wfgProfRationsPerCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wfgProfTurnsPerRation"
+   },
+   {
+    "kind": "const",
+    "name": "wfgProfInedibleReduction"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgProfFindChanceNormal"
+   },
+   {
+    "kind": "const",
+    "name": "wfgSearchTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wfgChecksMaxNormal"
+   },
+   {
+    "kind": "const",
+    "name": "wfgChecksMaxProf"
+   },
+   {
+    "kind": "const",
+    "name": "wfgMilesBeforeReforage"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgGroupMustMoveOn"
+   }
+  ],
+  "Inedible plants: the 1d8 dispatch": [
+   {
+    "kind": "chain",
+    "name": "wfgInedBandFor"
+   },
+   {
+    "kind": "const",
+    "name": "wfgInedRollMax"
+   },
+   {
+    "kind": "const",
+    "name": "wfgPoisonCrampOnsetDie"
+   },
+   {
+    "kind": "const",
+    "name": "wfgPoisonCrampTurnsDice"
+   },
+   {
+    "kind": "const",
+    "name": "wfgPoisonCrampTurnsDie"
+   },
+   {
+    "kind": "const",
+    "name": "wfgPoisonHpPerTurnDie"
+   },
+   {
+    "kind": "const",
+    "name": "wfgPoisonRegainPerHourDie"
+   },
+   {
+    "kind": "const",
+    "name": "wfgPoisonRestWaterPintsPerHour"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgPoisonHalfRationTriggers"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgPoisonSaveHalves"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgSlowPoisonActsAsSave"
+   },
+   {
+    "kind": "const",
+    "name": "wfgSlowPoisonSaveStackNum"
+   },
+   {
+    "kind": "const",
+    "name": "wfgSlowPoisonSaveStackDen"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgNeutralizeHaltsCramps"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgNeutralizeNoPriorDamage"
+   },
+   {
+    "kind": "const",
+    "name": "wfgTaintCrampOnsetDie"
+   },
+   {
+    "kind": "const",
+    "name": "wfgTaintCrampTurnsDie"
+   },
+   {
+    "kind": "const",
+    "name": "wfgTaintHpPerTurnDie"
+   },
+   {
+    "kind": "const",
+    "name": "wfgTaintHalfNum"
+   },
+   {
+    "kind": "const",
+    "name": "wfgTaintHalfDen"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgTaintSaveHalves"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgTaintCureDiseaseHalts"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgNoValueWaterOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgNoValueFullNoNourish"
+   }
+  ],
+  "When not to use the table": [
+   {
+    "kind": "bool",
+    "name": "wfgOrchardGuaranteed"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgRipePickedInedibleNearZero"
+   },
+   {
+    "kind": "bool",
+    "name": "wfgTableNotUnerring"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "food gathering",
+   "from": "  - [ ] Food gathering (p. 53)",
+   "to": "  - [x] Food gathering (p. 53) - R463: the two-turn plant-foraging check with the Table 30 terrain-climate lookup pin as rules/wsgforage.h"
+  },
+  {
+   "note": "foraging",
+   "from": "  - [ ] Foraging (p. 53)",
+   "to": "  - [x] Foraging (p. 53) - R463: the proficiency advantage (two rations in two turns or one per turn, the inedible chance 20% lower), the four-turn search limit and the one-mile move-on pin as rules/wsgforage.h"
+  },
+  {
+   "note": "inedible plants",
+   "from": "  - [ ] Inedible plants (p. 54)",
+   "to": "  - [x] Inedible plants (p. 54) - R463: the 1d8 dispatch (1 poisonous with the 1d10-round onset, 2d10-turn cramps and 1d4 hp/turn, 2-4 tainted half-strength, 5-8 no food value) pin as rules/wsgforage.h"
+  },
+  {
+   "note": "Table 30",
+   "from": "- [ ] **Table 30: foraging success** (p. 53)",
+   "to": "- [x] **Table 30: foraging success** (p. 53) - R463: the five climate-region grids (Arctic five terrains, the others seven), the chance/inedible pair per season, all 132 cells pixel-verified pin as rules/wsgforage.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R462: 72 closed, 114 open (the R462 round opens the food and water chapter - going without food and Table 28, going without water, the effects on animals, the minimum daily requirements of food and water and Table 29 pin as rules/wsgfood.h; the next round continues the chapter - food gathering, foraging and Table 30).",
+   "to": "Post-state at R463: 76 closed, 110 open (the R463 round continues the chapter - food gathering, foraging, the inedible plants and Table 30 pin as rules/wsgforage.h; the next round continues - hunting, stalking a wounded animal and Table 31)."
+  }
+ ],
+ "gap_census": {
+  "closed": 76,
+  "open": 110
+ },
+ "include_comment": "the WSG food gathering, foraging and Table 30",
+ "include_after": "#include \"rules/wsgfood.h\"  // R462: the WSG going without food and water",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R462 landed 2026-10-15: commit 56ac395 (census 387, pushed 1745169..56ac395,",
+ "prev_record": [
+  "- R462 landed 2026-10-15: commit 56ac395 (census 387, pushed 1745169..56ac395,",
+  "preflight GREEN first run, the double-run 12/0 then 0/12), the WSG FOOD AND",
+  "WATER chapter opener, printed pp. 50-53 - going without food (the Table 28",
+  "4/5/6/7/8/10-day ladder, the 12-hour checks with the cumulative +1 then the +2",
+  "weakened shift, the weakened/distressed/incapacitated ladder with the",
+  "-1-per-day worsening, the two-step eating recovery, the -4 floor, the two-day",
+  "two-meal incapacitation recovery), going without water (the 3-day base, the",
+  "cumulative modifier set with the one-day floor, the total-deprivation",
+  "immediate incapacitation), the effects on animals (halved move and carry, the",
+  "3-turn hard-work incap, the 1.5x tolerance multiple, the 1-turn and 1-day",
+  "death rules, the 13-24-hour 1d12+12 recovery), the minimum daily requirement",
+  "of food (the 1-2 lb human ration with the 3/4 elf and 1/2 small-race",
+  "fractions, the pack arithmetic, the 1:2 meat-vegetable ratio, the two-meal",
+  "cadence, the half-ration cheat) and of water (the Table 29 4x4 pint grid, the",
+  "1/4 elf and 1/3 demihuman reductions, the 1/4-1/3 high-water-food credit, the",
+  "1/2/4-hour activity thresholds, the 7-gallon cubic foot, the waterskin and",
+  "encumbrance arithmetic). rules/wsgfood.h NEW (101 inlines: 76 consts + 17",
+  "bools + 2 chains + 6 table columns, prefix wnf, checked free in all three",
+  "TUs). Ground truth three-way (the Drive PDF OCR vs djvu vs the IIIF eye-reads;",
+  "both text layers garble Table 28 - the eye-read settled the ladder, confirmed",
+  "by the book example). Gap 65/121 -> 72/114; census 386 -> 387. rverify GREEN:",
+  "124 mutants, 0 missed; the Termux md5 hit the +nl pair value exactly. Next:",
+  "R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.",
+  "53-54)."
+ ]
+}

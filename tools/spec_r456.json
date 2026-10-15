@@ -1,0 +1,505 @@
+{
+ "round": 456,
+ "title": "the WSG capsizing and damage to craft",
+ "prefix": "wcp",
+ "header_file": "rules/wsgcapsizing.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 380,
+ "inline_count": 32,
+ "audit_label": "R456 WSG capsizing pin audit",
+ "audit_comment": "The capsizing slice pins Table 26 (the chance of capsizing for the eight vessels under the four wind/water conditions - the kayak 25/40/60/80 down to the large barge 0/0/5/10), the check triggers (entering or leaving the boat, abrupt movement, DM discretion), the under-sail +20% wherever the base chance is greater than zero, the condition bands (mild at 15 mph and 3 inches or less, moderate 16-30 and up to 6, dangerous 31-50 and up to 9, severe beyond 50 and from 9), the boating-proficiency assumption, and the mast damage rules (the 40 mph threshold, the percentage chance equal to the wind velocity, the 30% furled-sail reduction, the upward adjustment for poor rigging and the hourly check) (rules/wsgcapsizing.h, prefix wcp); census 380 -> 381.",
+ "banner": {
+  "title": "The WSG CAPSIZING AND DAMAGE TO CRAFT, R456: waterborne vehicles and their passengers are to some degree at the mercy of the elements - most vessels have a chance of capsizing (turning over, and perhaps sinking) if the wind is strong or the water is rough, and violent weather can damage masts and sails on a rigged vessel. Table 26, the CHANCE OF CAPSIZING: kayak 25/40/60/80, small canoe 20/35/50/75, small rowboat 5/15/30/50, coracle 10/20/30/50, large canoe 10/20/30/40, large rowboat 0/10/25/40, small barge 0/5/10/20, and large barge 0/0/5/10, across the four wind/water conditions - MILD, MODERATE, DANGEROUS and SEVERE. The check is made whenever a character enters or leaves a boat, when someone moves abruptly from one spot to another in or on the craft, and at any other time the Dungeon Master deems appropriate. The table rates are for vessels with no sails, or with the sails furled (rolled up and tied to the mast); under sail the chance of capsizing is 20% greater in all cases where the base chance is greater than 0%. The condition bands: MILD - wind light at 15 miles per hour or less and the water calm or moving only slightly (current of 3 inches or less); MODERATE - wind 16 to 30 miles per hour, or the water running fairly fast (current faster than 3 inches, up to 6); DANGEROUS - wind 31 to 50 miles per hour, or the water running very fast (current faster than 6 inches, up to 9); SEVERE - wind more than 50 miles per hour, or a current of 9 inches or greater. As with the movement figures, all of these assume at least one character aboard with proficiency in boating/sailing. The mast damage rules: strong winds can damage sails, rigging or the mast (assuming the mast is raised) whenever the wind velocity is 40 miles per hour or greater, on a percentage chance equal to the velocity of the wind, modified downward by 30% if the mast is raised but the sail is furled - and upward if the mast is not securely rigged or is made of weak material, at the Dungeon Master discretion. The check is made once per hour or as often as the DM deems appropriate, conceivably more frequently for a poorly rigged or substandard mast. Census 380 -> 381.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 45; the user own copy OCR (page 46) cross-checked against the archive djvu word layer (Guide_0045) - the prose reads clean two-way, but the djvu TRUNCATES the Table 26 large barge row (the severe cell cut off at the page break), so the grid was settled by TWO independent IIIF eye-reads of leaf $45, which agree with the OCR exactly on all eight rows and all four columns, the large barge severe cell reading 10%.",
+  "sentinel": "Watch the weather or swim: the kayak flips one time in four in mild water and four times in five in a gale, the barges barely at all. Step in, step out, or lurch across the deck and roll. Under sail add twenty, if there was anything to add. Mild is a lazy breeze under fifteen and a drift under four; moderate to thirty and six; dangerous to fifty and nine; severe beyond both. And from forty miles per hour the wind itself snaps the mast on a roll of the velocity - thirty less if the sail is furled, once an hour, more if the rigging is bad."
+ },
+ "consts": [
+  {
+   "name": "wcpVesselCount",
+   "value": 8,
+   "comment": "Table 26 lists the same eight vessels as Table 25: kayak, small canoe, small rowboat, coracle, large canoe, large rowboat, small barge and large barge."
+  },
+  {
+   "name": "wcpConditionCount",
+   "value": 4,
+   "comment": "The four wind/water conditions: mild, moderate, dangerous and severe."
+  },
+  {
+   "name": "wcpSailModifier",
+   "value": 20,
+   "comment": "If the vessel is being operated under sail, the chance of capsizing is 20% greater in all cases where the base chance is greater than 0%."
+  },
+  {
+   "name": "wcpMildWindMax",
+   "value": 15,
+   "comment": "Mild conditions prevail when the wind velocity is light - 15 miles per hour or less."
+  },
+  {
+   "name": "wcpMildCurrentMax",
+   "value": 3,
+   "comment": "Mild: the surface of the water is calm or moving only slightly - a current of 3 inches or less."
+  },
+  {
+   "name": "wcpModWindMin",
+   "value": 16,
+   "comment": "Moderate conditions exist when the wind is blowing at 16 to 30 miles per hour."
+  },
+  {
+   "name": "wcpModWindMax",
+   "value": 30,
+   "comment": "The top of the moderate wind band: 16 to 30 miles per hour."
+  },
+  {
+   "name": "wcpModCurrentMax",
+   "value": 6,
+   "comment": "Moderate: the water is running fairly fast - a current faster than 3 inches, up to 6."
+  },
+  {
+   "name": "wcpDangerWindMin",
+   "value": 31,
+   "comment": "Dangerous conditions occur when the wind is blowing at 31 to 50 miles per hour."
+  },
+  {
+   "name": "wcpDangerWindMax",
+   "value": 50,
+   "comment": "The top of the dangerous wind band: 31 to 50 miles per hour."
+  },
+  {
+   "name": "wcpDangerCurrentMax",
+   "value": 9,
+   "comment": "Dangerous: the water is running very fast - a current faster than 6 inches, up to 9."
+  },
+  {
+   "name": "wcpSevereWindMin",
+   "value": 50,
+   "comment": "Severe conditions exist when the wind is blowing at more than 50 miles per hour."
+  },
+  {
+   "name": "wcpSevereCurrentMin",
+   "value": 9,
+   "comment": "Severe: a current of 9 inches or greater."
+  },
+  {
+   "name": "wcpMastDamageWindMin",
+   "value": 40,
+   "comment": "Strong winds can damage sails, rigging or the mast whenever the wind velocity is 40 miles per hour or greater."
+  },
+  {
+   "name": "wcpFurledReduction",
+   "value": 30,
+   "comment": "The mast damage chance is modified downward by 30% if the mast is raised but the sail is furled (not in use)."
+  },
+  {
+   "name": "wcpMastCheckPeriodHours",
+   "value": 1,
+   "comment": "The mast damage check is made once per hour, or as often as the Dungeon Master deems appropriate."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wcpCapsizeMeansTurnOver",
+   "value": true,
+   "comment": "Capsizing is turning over, and perhaps sinking."
+  },
+  {
+   "name": "wcpCheckOnEnterLeave",
+   "value": true,
+   "comment": "The chance of capsizing is checked whenever a character enters or leaves a boat."
+  },
+  {
+   "name": "wcpCheckOnAbruptMove",
+   "value": true,
+   "comment": "The chance of capsizing is checked when someone moves abruptly from one spot to another in or on the craft."
+  },
+  {
+   "name": "wcpCheckOnDmCall",
+   "value": true,
+   "comment": "The check is also made at any other time the Dungeon Master deems appropriate."
+  },
+  {
+   "name": "wcpTableAssumesNoSail",
+   "value": true,
+   "comment": "The table rates are for vessels with no sails, or those on which the sails are furled (rolled up and tied to the mast)."
+  },
+  {
+   "name": "wcpUnderSailIncreased",
+   "value": true,
+   "comment": "If the vessel is being operated under sail, the chance of capsizing is 20% greater in all cases where the base chance is greater than 0%."
+  },
+  {
+   "name": "wcpProficiencyAssumed",
+   "value": true,
+   "comment": "As with the movement figures, all of these figures assume the presence on board of at least one character with proficiency in boating/sailing."
+  },
+  {
+   "name": "wcpMastDamageByWind",
+   "value": true,
+   "comment": "Strong winds can damage sails, rigging or the mast on a vessel so equipped, assuming the mast is raised and has not been taken down."
+  },
+  {
+   "name": "wcpDamageChanceEqualsVelocity",
+   "value": true,
+   "comment": "The mast damage occurs on a percentage chance equal to the velocity of the wind."
+  },
+  {
+   "name": "wcpFurledSailReduced",
+   "value": true,
+   "comment": "The mast damage chance is modified downward by 30% if the mast is raised but the sail is furled."
+  },
+  {
+   "name": "wcpPoorRiggingIncreased",
+   "value": true,
+   "comment": "If the mast is not securely rigged, or is made of relatively weak material, the Dungeon Master adjusts the chance of damage upward."
+  },
+  {
+   "name": "wcpMastCheckHourly",
+   "value": true,
+   "comment": "The mast damage check is made once per hour or as often as the DM deems appropriate - more frequently for a poorly rigged or substandard mast."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "Table 26: CHANCE OF CAPSIZING",
+   "tag": "26",
+   "count": "wcpVesselCount",
+   "col_default": 0,
+   "cols": [
+    "wcpMildPct",
+    "wcpModeratePct",
+    "wcpDangerPct",
+    "wcpSeverePct"
+   ],
+   "col_comments": [
+    "The chance of capsizing in MILD conditions (wind 15 mph or less, current 3 inches or less): 25, 20, 5, 10, 10, 0, 0, 0.",
+    "The chance of capsizing in MODERATE conditions (wind 16-30 mph, current 3 to 6 inches): 40, 35, 15, 20, 20, 10, 5, 0.",
+    "The chance of capsizing in DANGEROUS conditions (wind 31-50 mph, current 6 to 9 inches): 60, 50, 30, 30, 30, 25, 10, 5.",
+    "The chance of capsizing in SEVERE conditions (wind over 50 mph, current 9 inches or more): 80, 75, 50, 50, 40, 40, 20, 10."
+   ],
+   "audit_comment": "the Table 26 grid: the chance of capsizing for the eight vessels (kayak, small canoe, small rowboat, coracle, large canoe, large rowboat, small barge, large barge) under the four wind/water conditions (mild, moderate, dangerous, severe)",
+   "data": [
+    [
+     25,
+     40,
+     60,
+     80
+    ],
+    [
+     20,
+     35,
+     50,
+     75
+    ],
+    [
+     5,
+     15,
+     30,
+     50
+    ],
+    [
+     10,
+     20,
+     30,
+     50
+    ],
+    [
+     10,
+     20,
+     30,
+     40
+    ],
+    [
+     0,
+     10,
+     25,
+     40
+    ],
+    [
+     0,
+     5,
+     10,
+     20
+    ],
+    [
+     0,
+     0,
+     5,
+     10
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['wcpMildWindMax']() != 15 or m['wcpModWindMin']() != 16 or m['wcpModWindMax']() != 30 or m['wcpDangerWindMin']() != 31 or m['wcpDangerWindMax']() != 50 or m['wcpSevereWindMin']() != 50",
+   "note": "the wind bands: mild to 15, moderate 16 to 30, dangerous 31 to 50, severe beyond 50 miles per hour"
+  },
+  {
+   "expr": "m['wcpMildCurrentMax']() != 3 or m['wcpModCurrentMax']() != 6 or m['wcpDangerCurrentMax']() != 9 or m['wcpSevereCurrentMin']() != 9 or m['wcpModCurrentMax']() != 2 * m['wcpMildCurrentMax']() or m['wcpDangerCurrentMax']() != 3 * m['wcpMildCurrentMax']()",
+   "note": "the current bands: mild to 3 inches, moderate to 6, dangerous to 9, severe from 9 - the moderate is twice and the dangerous three times the mild maximum"
+  },
+  {
+   "expr": "m['wcpSailModifier']() != 20 or m['wcpMastDamageWindMin']() != 40 or m['wcpFurledReduction']() != 30 or m['wcpMastCheckPeriodHours']() != 1",
+   "note": "the modifiers: the +20 under sail, the 40 mph mast damage threshold, the 30% furled reduction, the hourly check"
+  },
+  {
+   "expr": "m['wcpDangerWindMax']() != 50 or m['wcpSevereWindMin']() != m['wcpDangerWindMax']() or m['wcpDangerCurrentMax']() != m['wcpSevereCurrentMin']()",
+   "note": "the band seams: severe starts where dangerous tops out, in both wind and current"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['wcpMildPct'](0) != 25 or m['wcpModeratePct'](0) != 40 or m['wcpDangerPct'](0) != 60 or m['wcpSeverePct'](0) != 80",
+   "note": "the kayak ladder: 25, 40, 60, 80 across the four conditions"
+  },
+  {
+   "expr": "m['wcpMildPct'](7) != 0 or m['wcpModeratePct'](7) != 0 or m['wcpDangerPct'](7) != 5 or m['wcpSeverePct'](7) != 10",
+   "note": "the large barge ladder: 0, 0, 5, 10 - the sturdiest vessel never capsizes below dangerous conditions"
+  },
+  {
+   "expr": "m['wcpSeverePct'](0) != 80 or m['wcpSeverePct'](1) != 75 or m['wcpSeverePct'](2) != 50 or m['wcpSeverePct'](6) != 20",
+   "note": "the severe column spot checks: kayak 80, small canoe 75, small rowboat 50, small barge 20"
+  },
+  {
+   "expr": "m['wcpModeratePct'](0) <= m['wcpMildPct'](0) or m['wcpDangerPct'](0) <= m['wcpModeratePct'](0) or m['wcpSeverePct'](0) <= m['wcpDangerPct'](0) or m['wcpModeratePct'](7) < m['wcpMildPct'](7) or m['wcpDangerPct'](7) < m['wcpModeratePct'](7) or m['wcpSeverePct'](7) < m['wcpDangerPct'](7)",
+   "note": "the capsize chances climb with the conditions - the kayak strictly steps up 25/40/60/80, and the large barge never steps down through its 0/0/5/10"
+  },
+  {
+   "expr": "m['wcpSeverePct'](0) != 80 or m['wcpSeverePct'](7) != 10 or m['wcpSeverePct'](7) * 8 != m['wcpSeverePct'](0)",
+   "note": "the severe poles: the kayak severe is eight times the large barge severe"
+  },
+  {
+   "expr": "m['wcpMildPct'](5) != 0 or m['wcpMildPct'](6) != 0 or m['wcpMildPct'](7) != 0",
+   "note": "the mild zero row: the large rowboat and both barges never capsize in mild conditions (the under-sail +20 never applies to a zero base)"
+  }
+ ],
+ "header_sections": {
+  "the capsize grid": [
+   {
+    "kind": "const",
+    "name": "wcpVesselCount"
+   },
+   {
+    "kind": "const",
+    "name": "wcpConditionCount"
+   },
+   {
+    "kind": "bool",
+    "name": "wcpCapsizeMeansTurnOver"
+   },
+   {
+    "kind": "table",
+    "name": "Table 26: CHANCE OF CAPSIZING"
+   }
+  ],
+  "the check triggers": [
+   {
+    "kind": "bool",
+    "name": "wcpCheckOnEnterLeave"
+   },
+   {
+    "kind": "bool",
+    "name": "wcpCheckOnAbruptMove"
+   },
+   {
+    "kind": "bool",
+    "name": "wcpCheckOnDmCall"
+   },
+   {
+    "kind": "bool",
+    "name": "wcpTableAssumesNoSail"
+   },
+   {
+    "kind": "bool",
+    "name": "wcpUnderSailIncreased"
+   },
+   {
+    "kind": "const",
+    "name": "wcpSailModifier"
+   },
+   {
+    "kind": "bool",
+    "name": "wcpProficiencyAssumed"
+   }
+  ],
+  "the condition bands": [
+   {
+    "kind": "const",
+    "name": "wcpMildWindMax"
+   },
+   {
+    "kind": "const",
+    "name": "wcpMildCurrentMax"
+   },
+   {
+    "kind": "const",
+    "name": "wcpModWindMin"
+   },
+   {
+    "kind": "const",
+    "name": "wcpModWindMax"
+   },
+   {
+    "kind": "const",
+    "name": "wcpModCurrentMax"
+   },
+   {
+    "kind": "const",
+    "name": "wcpDangerWindMin"
+   },
+   {
+    "kind": "const",
+    "name": "wcpDangerWindMax"
+   },
+   {
+    "kind": "const",
+    "name": "wcpDangerCurrentMax"
+   },
+   {
+    "kind": "const",
+    "name": "wcpSevereWindMin"
+   },
+   {
+    "kind": "const",
+    "name": "wcpSevereCurrentMin"
+   }
+  ],
+  "the mast damage rules": [
+   {
+    "kind": "bool",
+    "name": "wcpMastDamageByWind"
+   },
+   {
+    "kind": "const",
+    "name": "wcpMastDamageWindMin"
+   },
+   {
+    "kind": "bool",
+    "name": "wcpDamageChanceEqualsVelocity"
+   },
+   {
+    "kind": "bool",
+    "name": "wcpFurledSailReduced"
+   },
+   {
+    "kind": "const",
+    "name": "wcpFurledReduction"
+   },
+   {
+    "kind": "bool",
+    "name": "wcpPoorRiggingIncreased"
+   },
+   {
+    "kind": "bool",
+    "name": "wcpMastCheckHourly"
+   },
+   {
+    "kind": "const",
+    "name": "wcpMastCheckPeriodHours"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] Capsizing and damage to craft (p. 45)",
+   "to": "  - [x] Capsizing and damage to craft (p. 45) - R456: Table 26 (the chance of capsizing, the eight vessels x the four wind/water conditions, 25/40/60/80 for the kayak down to 0/0/5/10 for the large barge), the check triggers (entering/leaving, abrupt moves, DM calls), the under-sail +20 where the base exceeds zero, the condition bands (mild 15 mph/3 inches, moderate 16-30/3-6, dangerous 31-50/6-9, severe beyond 50/9-plus) and the mast/sail damage rules (the 40 mph threshold, the velocity-equal chance, the 30% furled reduction, the hourly check) pin as rules/wsgcapsizing.h",
+   "note": "capsizing and damage to craft"
+  },
+  {
+   "from": "Post-state at R455: 58 closed, 128 open (the R455 round pins the movement in waterborne vehicles - Table 25 with the eight inland vessels and their ten characteristics, the current and wind modifiers with the no-sail floor and the into-wind reduction, the max-oar exertion ladder and the shorthanded proportional rowing; the next rounds continue the chapter - the capsizing and damage to craft, the boating proficiency and the portaging).",
+   "to": "Post-state at R456: 59 closed, 127 open (the R456 round pins the capsizing and damage to craft - Table 26 with the capsize grid, the check triggers and the under-sail increase, the condition bands and the mast damage rules; the next rounds continue the chapter - the boating proficiency and the portaging).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 59,
+  "open": 127
+ },
+ "include_comment": "the WSG capsizing and damage to craft",
+ "include_after": "#include \"rules/wsgvessels.h\"  // R455: the WSG movement in waterborne vehicles",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R455 landed 2026-10-14: commit eef7ebb",
+ "prev_record": [
+  "- R455 landed 2026-10-14: commit eef7ebb",
+  "  (full eef7ebb219e862a96bed251965f65",
+  "  15c7015550d, census 380, pushed e0a5480..",
+  "  eef7ebb, preflight GREEN on the FIRST run,",
+  "  the splice double-run clean: applied 6 /",
+  "  already 6), the WSG MOVEMENT IN",
+  "  WATERBORNE VEHICLES, printed p. 44 (with the",
+  "  movement-modification prose continuing onto",
+  "  p. 45) - Table 25, the eight inland vessels",
+  "  (kayak, small canoe, small rowboat, coracle,",
+  "  large canoe, large rowboat, small barge,",
+  "  large barge) across length, width, the",
+  "  passenger+gold capacity, the four large-scale",
+  "  miles-per-half-day and four small-scale",
+  "  feet-per-round rates (sail/oar, normal/max),",
+  "  the encumbrance ranges (the large barge open",
+  "  10000+ encoded as a 0-max sentinel), the",
+  "  startup and hull ranges and the draughts;",
+  "  plus the modifications (the current",
+  "  drift/add/subtract, the 20-30 mph wind band",
+  "  with -1/+2 per 10 mph, the 5 mph no-sail",
+  "  floor, the right-angle max sail, the",
+  "  into-wind 3-inch reduction to the 1-inch",
+  "  minimum, the max-oar exertion ladder - two",
+  "  turns on, one off, fatigued half speed,",
+  "  forced one-turn exhaustion - and the",
+  "  shorthanded proportional rowing with the",
+  "  3-rowers large-rowboat example: 6 of 8",
+  "  miles, 45 of 60 feet). rules/wsgvessels.h NEW",
+  "  (55 inlines: 17 consts + 16 bools + the",
+  "  22-column grid split into Table 25a the",
+  "  characteristics / 25b the rates, prefix wvb -",
+  "  checked free in all three TUs). Ground",
+  "  truth CLEAN three-way: the prose matched the",
+  "  user copy OCR (pages 45-46) vs the djvu word",
+  "  layer (Guide_0044/0045), but the djvu",
+  "  TRUNCATES Table 25 (six of eight rows, the",
+  "  draught column garbled), so the grid was",
+  "  settled by TWO independent IIIF eye-reads of",
+  "  leaf $44 (1600px PNG - the 2400 scale is",
+  "  capped for this leaf), which agree with the",
+  "  OCR exactly on all eight rows and every cell.",
+  "  Gap 57/129 -> 58/128; census 379 -> 380.",
+  "  rverify GREEN: 209 mutants, 0 missed (the",
+  "  biggest battery yet) - three build",
+  "  iterations: the 22-column row literal broke",
+  "  the 78-col audit bound (split into 25a/25b",
+  "  with distinct C-array tags), then a bogus",
+  "  draught cross-multiplication (a third is NOT",
+  "  a half) and a broken replacement clause were",
+  "  fixed. Spec md5s: 2d325067 authored /",
+  "  b05c0189 +nl - the user-side file hashed",
+  "  36230c3e / 766d0d9b +nl, the delivery-side",
+  "  newline variance NINE rounds running",
+  "  (R447-R455; cosmetic every time - the same 6",
+  "  patches, clean mirror; diagnose the bn fetch",
+  "  at the next mismatch).",
+  "  GITHUB VERIFIED at the pinned full sha",
+  "  eef7ebb219e862a96bed251965f65",
+  "  15c7015550d: census 380, the R455 audit",
+  "  with the bad-0 printf at line 50105, the",
+  "  include at line 160, wsgvessels.h 55",
+  "  inlines with both the C25a/C25b grids",
+  "  landed, the gap 58 closed / 128 open",
+  "  flipped with the Post-state at R455, the",
+  "  R454 seed record in place, no wvb hits in",
+  "  the caller TUs, and the engine re-run on",
+  "  the landed tree reads applied 0 /",
+  "  already 6 (canvas r455-splice).",
+  "  Next after landing: the capsizing and damage",
+  "  to craft (Table 26, p. 45), then the boating",
+  "  proficiency and the portaging."
+ ]
+}
+

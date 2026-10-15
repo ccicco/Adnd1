@@ -1,0 +1,214 @@
+{
+ "round": 446,
+ "title": "the WSG mountaineering proficiency",
+ "prefix": "wmt",
+ "header_file": "rules/wsgmntnr.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 370,
+ "inline_count": 12,
+ "audit_label": "R446 WSG mountaineering pin audit",
+ "audit_comment": "The mountaineering slice pins the essential tools and skills (pitons - metal spikes pounded into cracks for a line anchor, never handholds or footholds; the special hammer, a weapon hammer will not do; the placement knowledge only a mountaineer has), the mountaineer-led roped ascent (one mountaineer enables the whole group on a surface they could not climb, if all are roped together and he leads), the piton-as-anchor uses (a belayer backup, a rappel anchor, a chasm-crossing tie point), and the piton loosen rules (a 10% come-loose chance, checked the first time it supports 100 pounds or more; a passed check stays lodged until a mountaineer dislodges it; a 10% chance a secured piton cannot be dislodged and must be left behind) (rules/wsgmntnr.h, prefix wmt); census 370 -> 371.",
+ "banner": {
+  "title": "The WSG THE MOUNTAINEERING PROFICIENCY, R446: the mountaineer prose (no table this round) - a proficient character is only slightly more accomplished than any other non-thief on most non-horizontal surfaces where his special equipment offers no advantage, but when a difficult surface must be ascended or descended his presence can mean the difference between life and death. The essential tools and skills: PITONS, specially crafted metal spikes pounded into small cracks and fissures in a rock face to provide an anchor for a line - they are NOT used as handholds or footholds (uncomfortable at best, dangerous at worst, the surface area of a secured piton is not very large); a SPECIAL HAMMER to pound them in (a weapon hammer is the wrong material and too unwieldy to swing perched on a cliff); and the KNOWLEDGE of where to place them so they hold and give the greatest support - anyone can drive a piton into a crack, but only a mountaineer can tell which cracks will not widen or crumble. One mountaineer enables everyone else in the group to ascend or descend a surface they could not climb without him, as long as all the characters are roped together and the mountaineer is in the lead. Pitons also serve as a backup for a belayer, an anchor for someone rappelling, and a place to tie a rope before crossing a chasm. No matter the use or the strain, a piton has only a 10% chance of coming loose, checked the FIRST time it supports 100 pounds or more (simply pulling the rope does not count); a piton that passes stays lodged until a mountaineer dislodges it with his hammer - and there is a 10% chance any secured piton cannot be dislodged and must be left behind. Census 370 -> 371.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 39; the user own copy OCR cross-checked against the archive djvu word layer (Guide_0039.djvu) - the section reads CLEAN, every number (the two 10 percent chances and the 100-pound first-check threshold) matched exactly; no eye-reads were needed.",
+  "sentinel": "A piton has a 10% chance of coming loose, checked the first time it supports 100 pounds or more; a passed check stays lodged until a mountaineer dislodges it - and a secured piton has a 10% chance of refusing to come out at all and being left behind."
+ },
+ "consts": [
+  {
+   "name": "wmtLoosenPct",
+   "value": 10,
+   "comment": "No matter what a piton is used for or how much strain is put on it, there is only a 10% chance that it will come loose."
+  },
+  {
+   "name": "wmtFirstCheckLbs",
+   "value": 100,
+   "comment": "The loosen chance is checked the first time the piton is called upon to support a weight of 100 pounds or more; simply pulling on the rope will not dislodge a piton or indicate whether it has a chance of coming loose."
+  },
+  {
+   "name": "wmtStuckPct",
+   "value": 10,
+   "comment": "There is a 10% chance that any secured piton will not be able to be dislodged and must be left behind."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wmtSlightlyBetterWithoutGear",
+   "value": true,
+   "comment": "A character with proficiency in mountaineering is only slightly more accomplished than any other non-thief at climbing or traversing most non-horizontal surfaces where his special equipment is not needed or offers no advantage."
+  },
+  {
+   "name": "wmtLifeAndDeathOnDifficult",
+   "value": true,
+   "comment": "When a difficult surface must be ascended or descended by members of an adventuring party, the presence of a mountaineer can mean the difference between life and death."
+  },
+  {
+   "name": "wmtPitonsAreAnchorsNotHolds",
+   "value": true,
+   "comment": "Pitons are specially crafted metal spikes pounded into small cracks and fissures in a rock face to provide an anchor for a line - contrary to popular conception, they are NOT used as handholds or footholds: uncomfortable at best, dangerous at worst, since the surface area of a secured piton is not very large."
+  },
+  {
+   "name": "wmtSpecialHammerRequired",
+   "value": true,
+   "comment": "A special hammer is used to pound the pitons into the rock face; a hammer that serves as a weapon will not do - wrong material, and far too unwieldy to swing while perched on the side of a cliff."
+  },
+  {
+   "name": "wmtPlacementKnowledge",
+   "value": true,
+   "comment": "The third essential skill is the knowledge of where to place the pitons so they hold and give the greatest support - anyone, conceivably, can drive a piton into a crack, but only a mountaineer can tell which cracks will not widen or crumble so the piton has only a small chance of coming loose."
+  },
+  {
+   "name": "wmtLeadsRopedGroup",
+   "value": true,
+   "comment": "One mountaineer in a group can enable everyone else to ascend or descend a surface they could not climb without him, as long as all the characters are roped together and the mountaineer is in the lead."
+  },
+  {
+   "name": "wmtPitonBackupForBelayer",
+   "value": true,
+   "comment": "A piton will serve as a backup for a belayer, provide an anchor for someone rappelling, or serve as a place to tie a rope before crossing a chasm."
+  },
+  {
+   "name": "wmtPassedCheckStaysLodged",
+   "value": true,
+   "comment": "If the piton passes the first loosen check, it will remain lodged until a mountaineer dislodges it with his hammer."
+  },
+  {
+   "name": "wmtStuckMustBeLeftBehind",
+   "value": true,
+   "comment": "There is a 10% chance that any secured piton will not be able to be dislodged and must be left behind."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['wmtLoosenPct']() != 10 or m['wmtStuckPct']() != 10",
+   "note": "the two piton chances: a 10% come-loose chance on the first load, and a 10% cannot-be-dislodged chance on removal"
+  },
+  {
+   "expr": "m['wmtFirstCheckLbs']() != 100",
+   "note": "the first-check threshold: the loosen chance is checked the first time the piton supports 100 pounds or more"
+  },
+  {
+   "expr": "m['wmtLoosenPct']() != m['wmtStuckPct']() or m['wmtFirstCheckLbs']() != 10 * m['wmtLoosenPct']()",
+   "note": "the piton arithmetic anchor: the two chances are equal at 10, and the 100-pound threshold is ten times the loosen percentage"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['wmtLoosenPct']() <= 0 or m['wmtStuckPct']() <= 0 or m['wmtFirstCheckLbs']() <= 0",
+   "note": "all three piton numbers are positive: a real chance, a real chance, a real threshold"
+  },
+  {
+   "expr": "m['wmtLoosenPct']() != 10 or m['wmtFirstCheckLbs']() != 100",
+   "note": "the printed pair: the 10% chance at the 100-pound check - both digits exactly as the book prints them"
+  }
+ ],
+ "header_sections": {
+  "the mountaineering rules": [
+   {
+    "kind": "bool",
+    "name": "wmtSlightlyBetterWithoutGear"
+   },
+   {
+    "kind": "bool",
+    "name": "wmtLifeAndDeathOnDifficult"
+   },
+   {
+    "kind": "bool",
+    "name": "wmtPitonsAreAnchorsNotHolds"
+   },
+   {
+    "kind": "bool",
+    "name": "wmtSpecialHammerRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "wmtPlacementKnowledge"
+   },
+   {
+    "kind": "bool",
+    "name": "wmtLeadsRopedGroup"
+   },
+   {
+    "kind": "bool",
+    "name": "wmtPitonBackupForBelayer"
+   },
+   {
+    "kind": "const",
+    "name": "wmtLoosenPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmtFirstCheckLbs"
+   },
+   {
+    "kind": "bool",
+    "name": "wmtPassedCheckStaysLodged"
+   },
+   {
+    "kind": "const",
+    "name": "wmtStuckPct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmtStuckMustBeLeftBehind"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] The mountaineering proficiency (p. 39)",
+   "to": "  - [x] The mountaineering proficiency (p. 39) - R446: the pitons-anchors-not-holds rule, the special hammer, the placement knowledge, the mountaineer-led roped ascent, the piton backup uses and the 10%/100-pound/10% loosen rules pin as rules/wsgmntnr.h",
+   "note": "mountaineering proficiency"
+  },
+  {
+   "from": "Post-state at R445: 48 closed, 138 open (the R445 round pins the chasm crossing - the two anchor factors, the thief-or-rope-use thrown loop with Table 21, the 20% hit formula with the halving conditions, the both-ends-anchored rule and the 30-feet-per-round hand-over-hand crossing rate; the next rounds continue the section - the mountaineering proficiency, the slippery horizontal surfaces and the jumping rules).",
+   "to": "Post-state at R446: 49 closed, 137 open (the R446 round pins the mountaineering proficiency - the pitons as line anchors with the special hammer and the placement knowledge, the mountaineer-led roped group ascent, the piton backup uses and the 10% loosen chance at the 100-pound first check with the 10% cannot-be-dislodged rule; the next rounds continue the section - the slippery horizontal surfaces and the jumping rules with Table 22).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 49,
+  "open": 137
+ },
+ "include_comment": "the WSG mountaineering proficiency",
+ "include_after": "#include \"rules/wsgchasm.h\"  // R445: the WSG chasm crossing",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R445 landed 2026-10-14: commit a624caf (census 370, pushed",
+ "prev_record": [
+  "- R445 landed 2026-10-14: commit a624caf (census 370, pushed",
+  "  5e98ed9..a624caf, preflight GREEN on the FIRST run), the WSG CROSSING A",
+  "  CHASM ON A ROPE, printed pp. 38-39 - the chasm prose and TABLE 21 THROWN",
+  "  LOOP RANGES: the two anchor factors (a protrusion, a hold - the grappling",
+  "  hook answers both via Table 20); the thrown loop (thief or rope-use",
+  "  proficient only, target directly across or slightly above/below, never on a",
+  "  vertical climb); Table 21 (the five level bands 40/50/60/75/90 feet, default",
+  "  90 continuing the 17+ band); the 10-foot whirl-radius assumption with the",
+  "  halved range otherwise; the 20% base hit with the +1%-per-foot closeness",
+  "  bonus (the fog example 17th level at 50 feet = 30%, cross-multiplied); the",
+  "  halving conditions (precip, wind over 20 mph, hampered visibility); the",
+  "  both-ends-anchored rule with the near-side protrusion; the 30-feet-per-round",
+  "  hand-over-hand crossing rate with the +2 Dex check for multiple hangers.",
+  "  rules/wsgchasm.h NEW (18 inlines, prefix wcx - checked free in all three",
+  "  TUs). Ground truth CLEAN two-way (the user copy OCR vs the djvu word layer",
+  "  Guide_0038 with the Guide_0039 head - every number matched, no eye-reads).",
+  "  Gap 47/139 -> 48/138; census 369 -> 370. rverify GREEN after one",
+  "  authoring-side RED fix before delivery (a table_check with a wrong",
+  "  arithmetic anchor - caught by the audit mirror, rebuilt GREEN): 22 mutants,",
+  "  0 missed; the DELIVERED spec ran first-try clean on the user side. Spec",
+  "  md5s: d8b1f7ca authored / 229d4126 +nl. GITHUB VERIFIED at the pinned full",
+  "  sha a624cafc9dba8401f7a2dae80c543e0d9e51583c: census 370, the R445 audit",
+  "  present once, wsgchasm.h 18 inlines, the Table 21 ladder landed",
+  "  (40/50/60/75/90 with default 90 at case 4), the gap 48 closed / 138 open,",
+  "  the R444 seed record in place, no wcx hits in the caller TUs. Next after",
+  "  landing: the mountaineering proficiency (p. 39)."
+ ]
+}

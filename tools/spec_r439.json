@@ -1,0 +1,300 @@
+{
+ "round": 439,
+ "title": "the WSG stopping a fall - Table 19 (the chance of stopping a fall or tumble)",
+ "prefix": "wsf",
+ "header_file": "rules/wsgstop.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 363,
+ "inline_count": 20,
+ "audit_label": "R439 WSG stopping a fall pin audit",
+ "audit_comment": "The stopping-a-fall slice pins Table 19 (the four surface rows x the three condition stop fractions, the cliff slippery dash as the 0/0 no-chance sentinel) with the fraction-of-rating reading, the one-attempt-only rule, the 50/75/100-foot attempt windows, the protrusion requirement on cliff and severe, the slope-self-halt rule on moderate and gentle, the damage-still-applies rule and the halt-before-damage possibility (rules/wsgstop.h, prefix wsf); census 363 -> 364.",
+ "banner": {
+  "title": "The WSG STOPPING A FALL, R439: Table 19 (the chance of stopping a fall or tumble - the four surface rows x the non-slippery, slightly slippery and slippery conditions, each entry a fraction of the Climbing Rating: gentle 7/8, 3/4, 2/3; moderate 3/4, 2/3, 1/2; severe 2/3, 1/2, 1/4; cliff face 1/2, 1/4 and the slippery dash - no chance at all) with the prose rules: a character can attempt to halt his descent and reduce the damage, the chances much greater tumbling down a gentle slope than in free fall; the DM either requires the attempt announced before it becomes impossible or allows an automatic attempt right after the fall begins (holding a sword and shield means no attempt unless dropped); only one attempt may be made, within the first 50 feet from a cliff or severe slope, 75 feet down a moderate slope or 100 feet down a gentle slope - past the window the velocity is too great; the cliff and severe attempt only succeeds if a protrusion exists to grab, while a moderate or gentle tumble presses arms and legs against the slope itself; a stopped fall still takes impact and/or abrasion damage for the distance fallen, but an immediate successful hands-free attempt can halt a moderate or gentle tumble before any damage - the round continues the movement-across-special-terrain section. Census 363 -> 364.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 36; the user own copy OCR cross-checked against the archive djvu word layer (the djvu table zone is heavily garbled - only the cliff slightly-slippery 1/4 cell legible there) and the IIIF full-resolution eye-reads (two independent reads of the full table; every value matched the user copy exactly). The fraction-of-rating worked example (3/4 of 60) is written cross-multiplied, division-free.",
+  "sentinel": "Each Table 19 entry is the chance of stopping a fall or tumble as a fraction of the Climbing Rating, by the surface fallen from and the condition of the surface. The cliff face slippery cell is the printed dash - no chance at all. Only one attempt may be made, within the 50/75/100-foot windows."
+ },
+ "consts": [
+  {
+   "name": "wsfSurfaceCount",
+   "value": 4,
+   "comment": "The Table 19 row count (the gentle, moderate and severe slopes and the cliff face)."
+  },
+  {
+   "name": "wsfAttemptCliffSevereFt",
+   "value": 50,
+   "comment": "The stop attempt must be made within the first 50 feet of a fall from a cliff face or down a severe slope."
+  },
+  {
+   "name": "wsfAttemptModerateFt",
+   "value": 75,
+   "comment": "The stop attempt must be made within the first 75 feet of a fall down a moderate slope."
+  },
+  {
+   "name": "wsfAttemptGentleFt",
+   "value": 100,
+   "comment": "The stop attempt must be made within the first 100 feet of a fall down a gentle slope."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wsfChanceIsFractionOfRating",
+   "value": true,
+   "comment": "The Table 19 entries are the chance of stopping a fall or tumble, expressed as a fraction of the character Climbing Rating."
+  },
+  {
+   "name": "wsfOneAttemptOnly",
+   "value": true,
+   "comment": "Only one attempt to stop the fall may be made."
+  },
+  {
+   "name": "wsfProtrusionRequired",
+   "value": true,
+   "comment": "In a fall from a cliff or a severe slope, the attempt can only succeed if some protrusion exists for the character to grab onto."
+  },
+  {
+   "name": "wsfSlopeSelfHalt",
+   "value": true,
+   "comment": "Tumbling down a moderate or gentle slope, the character can use the slope itself to halt his fall by pressing down against it with his arms and legs."
+  },
+  {
+   "name": "wsfTooLateAfterWindow",
+   "value": true,
+   "comment": "If the attempt is not made before the fall or tumble exceeds the indicated distance, it cannot be made at all - the character velocity is too great to make the attempt worthwhile."
+  },
+  {
+   "name": "wsfStopStillTakesDamage",
+   "value": true,
+   "comment": "A character who stops his fall still takes impact and/or abrasion damage for the distance fallen, if such damage applies."
+  },
+  {
+   "name": "wsfCanHaltBeforeDamage",
+   "value": true,
+   "comment": "It is entirely possible to halt a tumble down a moderate or gentle slope before suffering any damage, if the hands are free and the attempt is made successfully immediately after the tumble starts."
+  },
+  {
+   "name": "wsfAnnounceOrAutomatic",
+   "value": true,
+   "comment": "The DM can either require the player to announce the attempt before it becomes impossible, or simply allow any character an automatic attempt right after the fall begins, as long as the character is able to make it."
+  },
+  {
+   "name": "wsfHandsMustBeFree",
+   "value": true,
+   "comment": "Someone who begins to tumble down a gentle slope and insists on holding his sword and shield cannot try to stop his fall unless he drops what he is holding."
+  },
+  {
+   "name": "wsfGentleEasierThanFreeFall",
+   "value": true,
+   "comment": "The chances of success are much greater for a character tumbling down a gentle slope than for a character in free fall."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "Table 19: the chance of stopping a fall or tumble",
+   "tag": "19",
+   "count": "wsfSurfaceCount",
+   "col_default": 0,
+   "cols": [
+    "wsfNumN",
+    "wsfNumS",
+    "wsfNumV",
+    "wsfDenN",
+    "wsfDenS",
+    "wsfDenV"
+   ],
+   "col_comments": [
+    "The numerator of the non-slippery stop fraction, by surface row (the gentle, moderate and severe slopes and the cliff face; the fraction is of the Climbing Rating).",
+    "The numerator of the slightly slippery stop fraction.",
+    "The numerator of the slippery stop fraction (0 for the cliff face - the printed dash, no chance).",
+    "The denominator of the non-slippery stop fraction.",
+    "The denominator of the slightly slippery stop fraction.",
+    "The denominator of the slippery stop fraction (0 for the cliff face - the printed dash, no chance)."
+   ],
+   "audit_comment": "the Table 19 grid: the four surface rows (the gentle, moderate and severe slopes and the cliff face) x the three condition stop fractions, each encoded as its numerator and denominator (the cliff slippery dash = 0/0, no chance at all)",
+   "data": [
+    [
+     7,
+     3,
+     2,
+     8,
+     4,
+     3
+    ],
+    [
+     3,
+     2,
+     1,
+     4,
+     3,
+     2
+    ],
+    [
+     2,
+     1,
+     1,
+     3,
+     2,
+     4
+    ],
+    [
+     1,
+     1,
+     0,
+     2,
+     4,
+     0
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['wsfNumN'](0) != 7 or m['wsfDenN'](0) != 8 or m['wsfNumN'](3) != 1 or m['wsfDenN'](3) != 2",
+   "note": "the range of Table 19: the gentle non-slippery 7/8 chance at the top, the cliff non-slippery 1/2 at the bottom"
+  },
+  {
+   "expr": "m['wsfNumV'](3) != 0 or m['wsfDenV'](3) != 0",
+   "note": "the cliff face slippery cell is the printed dash - no chance of stopping at all, encoded as the 0/0 sentinel"
+  },
+  {
+   "expr": "m['wsfAttemptCliffSevereFt']() != 50 or m['wsfAttemptModerateFt']() - m['wsfAttemptCliffSevereFt']() != 25 or m['wsfAttemptGentleFt']() - m['wsfAttemptModerateFt']() != 25",
+   "note": "the attempt windows: within the first 50 feet from a cliff or severe slope, 75 feet down a moderate slope, 100 feet down a gentle slope (the two steps are 25 feet each)"
+  },
+  {
+   "expr": "m['wsfNumN'](1) * 60 != 45 * m['wsfDenN'](1)",
+   "note": "the fraction-of-rating reading, written cross-multiplied: a 60 percent Climbing Rating on a moderate non-slippery slope stops 3/4 of 60 = 45 percent of the time"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['wsfNumN'](0) * m['wsfDenS'](0) < m['wsfNumS'](0) * m['wsfDenN'](0) or m['wsfNumS'](0) * m['wsfDenV'](0) < m['wsfNumV'](0) * m['wsfDenS'](0) or m['wsfNumN'](1) * m['wsfDenS'](1) < m['wsfNumS'](1) * m['wsfDenN'](1) or m['wsfNumS'](1) * m['wsfDenV'](1) < m['wsfNumV'](1) * m['wsfDenS'](1) or m['wsfNumN'](2) * m['wsfDenS'](2) < m['wsfNumS'](2) * m['wsfDenN'](2) or m['wsfNumS'](2) * m['wsfDenV'](2) < m['wsfNumV'](2) * m['wsfDenS'](2) or m['wsfNumN'](3) * m['wsfDenS'](3) < m['wsfNumS'](3) * m['wsfDenN'](3) or m['wsfNumS'](3) * m['wsfDenV'](3) < m['wsfNumV'](3) * m['wsfDenS'](3)",
+   "note": "every Table 19 row: the stop chance shrinks with slipperiness (written as cross-multiplied comparisons, division-free)"
+  },
+  {
+   "expr": "m['wsfNumN'](0) * m['wsfDenN'](1) < m['wsfNumN'](1) * m['wsfDenN'](0) or m['wsfNumS'](0) * m['wsfDenS'](1) < m['wsfNumS'](1) * m['wsfDenS'](0) or m['wsfNumN'](1) * m['wsfDenN'](2) < m['wsfNumN'](2) * m['wsfDenN'](1) or m['wsfNumS'](1) * m['wsfDenS'](2) < m['wsfNumS'](2) * m['wsfDenS'](1) or m['wsfNumN'](2) * m['wsfDenN'](3) < m['wsfNumN'](3) * m['wsfDenN'](2) or m['wsfNumS'](2) * m['wsfDenS'](3) < m['wsfNumS'](3) * m['wsfDenS'](2)",
+   "note": "the four Table 19 rows: the stop chance shrinks from the gentle slope down to the cliff face in every condition (cross-multiplied, division-free)"
+  }
+ ],
+ "header_sections": {
+  "the stopping prose rules": [
+   {
+    "kind": "const",
+    "name": "wsfSurfaceCount"
+   },
+   {
+    "kind": "bool",
+    "name": "wsfChanceIsFractionOfRating"
+   },
+   {
+    "kind": "bool",
+    "name": "wsfGentleEasierThanFreeFall"
+   },
+   {
+    "kind": "bool",
+    "name": "wsfAnnounceOrAutomatic"
+   },
+   {
+    "kind": "bool",
+    "name": "wsfHandsMustBeFree"
+   },
+   {
+    "kind": "bool",
+    "name": "wsfOneAttemptOnly"
+   },
+   {
+    "kind": "const",
+    "name": "wsfAttemptCliffSevereFt"
+   },
+   {
+    "kind": "const",
+    "name": "wsfAttemptModerateFt"
+   },
+   {
+    "kind": "const",
+    "name": "wsfAttemptGentleFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wsfTooLateAfterWindow"
+   },
+   {
+    "kind": "bool",
+    "name": "wsfProtrusionRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "wsfSlopeSelfHalt"
+   },
+   {
+    "kind": "bool",
+    "name": "wsfStopStillTakesDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "wsfCanHaltBeforeDamage"
+   }
+  ],
+  "Table 19: the stop fractions": [
+   {
+    "kind": "table",
+    "name": "Table 19: the chance of stopping a fall or tumble"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] Stopping a fall (p. 36)",
+   "to": "  - [x] Stopping a fall (p. 36) - R439: the Table 19 stop fractions, the one-attempt rule, the 50/75/100-foot windows, the protrusion requirement and the slope-self-halt rule pin as rules/wsgstop.h",
+   "note": "stopping a fall"
+  },
+  {
+   "from": "- [ ] **Table 19: chance of stopping a fall or tumble** (p. 36)",
+   "to": "- [x] **Table 19: chance of stopping a fall or tumble** (p. 36) - R439",
+   "note": "Table 19"
+  },
+  {
+   "from": "Post-state at R438: 40 closed, 146 open (the R438 round pins the tumbling damage - Table 18 (the six slope rows x the three condition cells of abrasion-free feet, die and impact distance) with the entry format and the tumble rates; the next rounds continue the section - the stopping of a fall Table 19, the rope rules).",
+   "to": "Post-state at R439: 42 closed, 144 open (the R439 round pins the stopping of a fall - Table 19 (the four surface rows x the three condition stop fractions) with the one-attempt rule, the attempt windows, the protrusion requirement and the slope-self-halt rule; the next rounds continue the section - the rope rules, the rappelling and belaying).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 42,
+  "open": 144
+ },
+ "include_comment": "the WSG stopping a fall",
+ "include_after": "#include \"rules/wsgtumble.h\"  // R438: the WSG tumbling damage",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R438 landed 2026-10-14: commit e0bc5a3 (census 363, pushed",
+ "prev_record": [
+  "- R438 landed 2026-10-14: commit e0bc5a3 (census 363, pushed",
+  "  90e0813..e0bc5a3, preflight GREEN on the FIRST run - the eighth clean",
+  "  first-try land in a row), the WSG TUMBLING DAMAGE, printed p. 36 - Table 18",
+  "  (the six moderate-or-gentle slope rows x the three condition cells, each",
+  "  entry split into the abrasion-free feet, the abrasion die and the impact",
+  "  distance) encoded as a 9-column table with the entry-format prose, the",
+  "  worst-case and gradual-stop impact rules, the flat-terrain extra abrasion",
+  "  and the tumble rates; the book own worked example (the smooth moderate",
+  "  slightly-slippery 40/3/20 cell) pinned as two division-free examples.",
+  "  rules/wsgtumble.h NEW (26 inlines, prefix wdt, checked free). Ground truth",
+  "  three-way verified (the two normal-row slippery cells settled by two IIIF",
+  "  eye-reads, matching the user copy). NOTE: the first build had a row-index",
+  "  slip in the worked example - the sim caught the two TRUE-on-healthy",
+  "  examples. NOTE: the GitHub API was rate-limited at verify time - the full",
+  "  sha came from the commit .patch page. Gap 39/147 -> 40/146; census 362 ->",
+  "  363. rverify GREEN: 71 mutants, 0 missed. Spec md5s: eb40665c authored /",
+  "  dc3c6146 +nl. GITHUB VERIFIED at the pinned full sha",
+  "  e0bc5a3852dd4d49197fb62f5ae04f9aac1d8c43: census 363, the R438 audit present",
+  "  once, wsgtumble.h 26 inlines, the eye-read cells landed, the gap 40 closed /",
+  "  146 open, the R437 seed record in place. Next after landing: the stopping of",
+  "  a fall - Table 19 (p. 36)."
+ ]
+}

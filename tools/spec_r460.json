@@ -1,0 +1,1027 @@
+{
+ "round": 460,
+ "title": "the WSG flying mounts",
+ "prefix": "wfm",
+ "header_file": "rules/wsgflymounts.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 384,
+ "inline_count": 60,
+ "audit_label": "R460 WSG flying mounts pin audit",
+ "audit_comment": "The flying-mounts slice pins Table 27, the characteristics of flying mounts: the four category grids (A the 20 dragons and dragonlike, B the 6 birds, C the 7 winged mammals, D the 8 other fantastic creatures - 41 mounts x 7 columns: normal and maximum load with the dash as max = normal, the full and reduced move rates, the maneuverability class on the A=1..E=5 scale, and the safe-turns/rest stamina pair), the column definitions (the plummet rule over maximum, the single-rate 0 marker, the MC one-class drop when ridden with E unreducible, the over-load stamina cut of one turn or one-third whichever greater, inapplicable to the dash creatures), the solid-form footnote for the cloud and mist dragons, the listing criteria (Prime Material, wilderness, size M or L air-carrier), the trained-mount scarcity and the untrained at-mercy rule, the coerced-mount refusals, the triple-to-fifty rations feeding, and the saddle/container even-distribution encumbrance rules with the 2:1 doubling (rules/wsgflymounts.h, prefix wfm); census 384 -> 385.",
+ "banner": {
+  "title": "The WSG FLYING MOUNTS, R460: using a flying mount changes the way a character looks at things - terrain becomes scenery and long distance takes on a new meaning, but there is no place to hide from arrows, hailstones or lightning, and falling out of a saddle several hundred feet up is more than momentary discomfort. Table 27, the CHARACTERISTICS OF FLYING MOUNTS, in four categories: A, dragons and dragonlike creatures - black dragon 9000/18000 at 24/12 with stamina 24/6, blue and bronze 15000/30000 with 27/6, brass as the black, celestial 5000/10000 at 48/24 with 12/6, cloud dragon 18000/36000 at 39/18 with 30/6 (ridden only in solid form, as the mist dragon 18000/36000 at 33/15 with the same stamina), coiled 3000/4500 at 12/6, copper 12000/24000, dracolisk 3000/5000 at 15/6 with 2/1, dragonne 1500 at a single 9 rate with 2/1, dragonnel 6000/10000 at 18/9 MC D with 12/3, earth 2000/3000, gold 21000/42000 at 30/15 with 30/6, green 12000/18000, red and silver 18000/36000 with 30/6, spirit 4000/6500 at 12/6, white 6000/12000 at 30/15 with 18/6, and wyvern 10000/20000 at 24/12 with 18/6; B, birds and birdlike - boobrie 1000/1500 at 15/9 with the unusual 3/3 stamina, giant eagle 1000/1500 at 48/18 with 9/3, pteranodon 1500 at a single 15 rate MC D with 2/1, giant pterosaur 2000 at a single 12 rate with 3/1, roc 50000/100000 at 30/15 with 30/6, and giant vulture 1000/1500 at 24/12 with 3/2; C, winged mammals - chimera 4500 at a single 18 rate with 12/3, griffon 5500/8000 at 30/15 MC D with 18/6, gorgimera 5000 at a single 15 rate, hippogriff 4000/6000 at 36/18 MC D with 15/3, manticore 3000 at a single 18 rate with 6/3, opinicus 1000/1500 at 30/15 MC C with 3/1, and pegasus 4000/6500 at 48/24 MC D with 12/3; D, other fantastic - aarakocra 1500 at a single 36 rate MC D with 3/2, androsphinx 7500/9500 with 18/6, criosphinx 7000/9000 with 15/6, dragon horse 3000/5000 at 48/24 MC C with 12/3, gynosphinx 5000/8000 with 15/6, hieracosphinx 7000/8500 at 36/18 with 18/6, giant mantis 2000/3000 at 12/6 with 6/3, and yeth hound 2000/3000 at 27/12 MC C with 9/3. The columns: normal load is the encumbrance carried at the full rate; maximum load is the greatest load while aloft (a dash means normal is also maximum; anything more and the mount is unable or unwilling to leave the ground, or plummets to the nearest landing spot); the move rate is full/reduced in miles per half-day (a 0 right of the slash means one rate always); the MC when ridden is always one class lower than natural, except E which cannot be reduced; and the stamina is safe turns aloft / turns of rest, with the over-normal-load flying time cut by one turn or one-third of normal, whichever is greater (inapplicable to dash creatures, which cannot fly at all over their normal load). The listed mounts come from the Monster Manual, the Fiend Folio, and Monster Manual II: native to the Prime Material, normally found in a wilderness, and size M or L able to carry through the air; the DM assigns stats for unlisted creatures using the table as a guide. Trained mounts are not easy to find and not cheap; an untrained uncooperative beast can be ridden but the rider is at its mercy. A coerced mount may refuse loads, fly slowly, or insist on rest - full benefit requires willingness. Feeding: most need at least triple rations daily, up to fifty rations for one of the biggest dragon types, and the specialized appetites (the manticore preferring human flesh) may force hunting with the mount. Loads need saddle and containers, ideally distributed evenly on both sides; a load twice as heavy on one side doubles its entire encumbrance value.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 47-48; the user own copy OCR (pages 48-49) cross-checked against the archive djvu word layer (Guide_0047/0048) - the djvu GARBLES the Table 27 word layer (rows misaligned, labels and values dropped), so the grid was settled by TWO independent IIIF eye-reads of leaf $47 which agree with the OCR exactly on all 41 rows and all 7 columns - with the cloud dragon move rate resolved at high resolution (native 2411px crop) as 39/18, the bulk 1600px reads misresolving the 9 as a 3, as both text layers read 39."
+ },
+ "consts": [
+  {
+   "name": "wfmCatACount",
+   "value": 20,
+   "comment": "Category A, the dragons and dragonlike creatures: black, blue, brass, bronze, celestial, cloud, coiled, copper, dracolisk, dragonne, dragonnel, earth, gold, green, mist, red, silver, spirit, white and wyvern."
+  },
+  {
+   "name": "wfmCatBCount",
+   "value": 6,
+   "comment": "Category B, the birds and birdlike creatures: boobrie, giant eagle, pteranodon, giant pterosaur, roc and giant vulture."
+  },
+  {
+   "name": "wfmCatCCount",
+   "value": 7,
+   "comment": "Category C, the winged mammalian creatures: chimera, griffon, gorgimera, hippogriff, manticore, opinicus and pegasus."
+  },
+  {
+   "name": "wfmCatDCount",
+   "value": 8,
+   "comment": "Category D, the other fantastic creatures: aarakocra, androsphinx, criosphinx, dragon horse, gynosphinx, hieracosphinx, giant mantis and yeth hound."
+  },
+  {
+   "name": "wfmTotalCreatures",
+   "value": 41,
+   "comment": "The four categories total 41 flying mounts, drawn from the Monster Manual, the Fiend Folio and Monster Manual II."
+  },
+  {
+   "name": "wfmMcRiddenDrop",
+   "value": 1,
+   "comment": "The MC when carrying a rider or equipment is always one class lower than the natural class."
+  },
+  {
+   "name": "wfmMcFloor",
+   "value": 5,
+   "comment": "A natural maneuverability class of E (5 on the A=1..E=5 scale) cannot be reduced any further."
+  },
+  {
+   "name": "wfmOverloadStaCutTurns",
+   "value": 1,
+   "comment": "Carrying more than a normal load cuts the safe flying time by one turn..."
+  },
+  {
+   "name": "wfmOverloadStaThird",
+   "value": 3,
+   "comment": "...or by one-third of the normal stamina rating, whichever is greater."
+  },
+  {
+   "name": "wfmRationsMultiple",
+   "value": 3,
+   "comment": "Most flying mounts need at least triple rations of food and water each day compared to a human."
+  },
+  {
+   "name": "wfmBigDragonRations",
+   "value": 50,
+   "comment": "One of the biggest dragon types may need as much as fifty rations per day."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wfmTrainedScarceAndDear",
+   "value": true,
+   "comment": "Creatures trained for use as mounts may not be easy to locate, and they will not come cheap."
+  },
+  {
+   "name": "wfmUntrainedAtMercy",
+   "value": true,
+   "comment": "An untrained uncooperative creature can still be ridden, but without magical assistance the rider is completely at the mercy of the beast, which goes where it wants and will not voluntarily keep the rider aboard."
+  },
+  {
+   "name": "wfmOverMaxNeverLifts",
+   "value": true,
+   "comment": "A mount asked to carry more than its maximum load will be unable or unwilling to leave the ground."
+  },
+  {
+   "name": "wfmOverMaxPlummets",
+   "value": true,
+   "comment": "A mount already aloft when overloaded will immediately plummet toward the nearest landing spot."
+  },
+  {
+   "name": "wfmDashMaxEqualsNormal",
+   "value": true,
+   "comment": "A printed dash for maximum load means the normal load is also the maximum load."
+  },
+  {
+   "name": "wfmDashCannotFlyOverNormal",
+   "value": true,
+   "comment": "A creature with no maximum-load rating cannot fly at all if its normal load amount is exceeded."
+  },
+  {
+   "name": "wfmReducedRateWhenOverloaded",
+   "value": true,
+   "comment": "The right-of-slash reduced move rate goes into effect whenever the mount is burdened above a normal load."
+  },
+  {
+   "name": "wfmZeroRateMeansSingleRate",
+   "value": true,
+   "comment": "A 0 right of the slash means the creature has only one movement rate, which always applies as long as it is able and willing to fly."
+  },
+  {
+   "name": "wfmMcDropsWhenRidden",
+   "value": true,
+   "comment": "The MC when ridden is one class lower than natural (B to C, C to D, and so on)."
+  },
+  {
+   "name": "wfmMcEStaysE",
+   "value": true,
+   "comment": "Beasts with a natural MC of E keep class E when ridden - it cannot be reduced any further."
+  },
+  {
+   "name": "wfmStaCutIsGreaterOf",
+   "value": true,
+   "comment": "The over-normal-load safe-time cut is the greater of one turn and one-third of the normal stamina rating."
+  },
+  {
+   "name": "wfmStaRestBetweenFlights",
+   "value": true,
+   "comment": "The right stamina figure is the turns of rest needed between flights to retain full strength and carrying capacity."
+  },
+  {
+   "name": "wfmCloudMistSolidFormOnly",
+   "value": true,
+   "comment": "The cloud dragon and the mist dragon can only be ridden when in solid form."
+  },
+  {
+   "name": "wfmListedIfPrimeMaterial",
+   "value": true,
+   "comment": "Listing criterion: the creature is native to, or normally found on, the Prime Material Plane."
+  },
+  {
+   "name": "wfmListedIfWildernessNative",
+   "value": true,
+   "comment": "Listing criterion: the creature is normally found in a wilderness, not a subterranean, environment."
+  },
+  {
+   "name": "wfmListedIfSizeMOrL",
+   "value": true,
+   "comment": "Listing criterion: the creature is size M or L with a physical form able to carry passengers or objects through the air."
+  },
+  {
+   "name": "wfmDmAssignsUnlistedStats",
+   "value": true,
+   "comment": "For an unlisted creature serving as aerial transport, the DM assigns statistics using its game description and the table as guidelines."
+  },
+  {
+   "name": "wfmCoercedMaySkimp",
+   "value": true,
+   "comment": "A beast forced to serve against its will may refuse to carry more than its coercer, may fly more slowly, or may insist on more frequent rest."
+  },
+  {
+   "name": "wfmFullBenefitNeedsWillingness",
+   "value": true,
+   "comment": "Full benefit in carrying capacity, movement, maneuverability and stamina requires a willing mount, even if the willingness is temporary and artificially induced."
+  },
+  {
+   "name": "wfmLoadsNeedContainers",
+   "value": true,
+   "comment": "A flying mount will rarely carry equipment or cargo that is not contained - a bare treasure chest brings at least a movement reduction."
+  },
+  {
+   "name": "wfmUnevenLoadRaisesEnc",
+   "value": true,
+   "comment": "The encumbrance value of the load rises with the side imbalance: doubled when one side carries twice the other, and so forth."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "Table 27A: category A flying mounts",
+   "tag": "27A",
+   "count": "wfmCatACount",
+   "col_default": 0,
+   "audit_comment": "the Table 27A grid: the category A flying mounts (black dragon, blue dragon, brass dragon, bronze dragon, celestial dragon, cloud dragon, coiled dragon, copper dragon, dracolisk, dragonne, dragonnel, earth dragon, gold dragon, green dragon, mist dragon, red dragon, silver dragon, spirit dragon, white dragon, wyvern) with the normal load, the maximum load (the dash encoded as max = normal), the full and reduced move rates in miles per half-day, the maneuver-ability class (3 = C, 4 = D, 5 = E) and the two stamina figures - safe turns aloft and turns of rest",
+   "cols": [
+    "wfmANorm",
+    "wfmAMax",
+    "wfmAMove",
+    "wfmAMoveRed",
+    "wfmAMc",
+    "wfmASta",
+    "wfmARest"
+   ],
+   "col_comments": [
+    "the normal load in gold pieces - the encumbrance the creature carries and still flies at its full rate",
+    "the maximum load - the greatest encumbrance it can carry aloft; the printed dash means normal = maximum (encoded directly)",
+    "the full normal flying move rate in miles per half-day",
+    "the reduced move rate when burdened above a normal load; 0 means a single rate creature",
+    "the maneuverability class when carrying a rider or equipment, on the A=1..E=5 scale",
+    "the consecutive turns the creature can safely remain aloft with a normal load",
+    "the turns of rest needed between flights to retain full strength and capacity"
+   ],
+   "data": [
+    [
+     9000,
+     18000,
+     24,
+     12,
+     5,
+     24,
+     6
+    ],
+    [
+     15000,
+     30000,
+     24,
+     12,
+     5,
+     27,
+     6
+    ],
+    [
+     9000,
+     18000,
+     24,
+     12,
+     5,
+     24,
+     6
+    ],
+    [
+     15000,
+     30000,
+     24,
+     12,
+     5,
+     27,
+     6
+    ],
+    [
+     5000,
+     10000,
+     48,
+     24,
+     5,
+     12,
+     6
+    ],
+    [
+     18000,
+     36000,
+     39,
+     18,
+     5,
+     30,
+     6
+    ],
+    [
+     3000,
+     4500,
+     12,
+     6,
+     5,
+     9,
+     3
+    ],
+    [
+     12000,
+     24000,
+     24,
+     12,
+     5,
+     24,
+     6
+    ],
+    [
+     3000,
+     5000,
+     15,
+     6,
+     5,
+     2,
+     1
+    ],
+    [
+     1500,
+     1500,
+     9,
+     0,
+     5,
+     2,
+     1
+    ],
+    [
+     6000,
+     10000,
+     18,
+     9,
+     4,
+     12,
+     3
+    ],
+    [
+     2000,
+     3000,
+     24,
+     12,
+     5,
+     9,
+     3
+    ],
+    [
+     21000,
+     42000,
+     30,
+     15,
+     5,
+     30,
+     6
+    ],
+    [
+     12000,
+     18000,
+     24,
+     12,
+     5,
+     24,
+     6
+    ],
+    [
+     18000,
+     36000,
+     33,
+     15,
+     5,
+     30,
+     6
+    ],
+    [
+     18000,
+     36000,
+     24,
+     12,
+     5,
+     30,
+     6
+    ],
+    [
+     18000,
+     36000,
+     24,
+     12,
+     5,
+     30,
+     6
+    ],
+    [
+     4000,
+     6500,
+     12,
+     6,
+     5,
+     9,
+     3
+    ],
+    [
+     6000,
+     12000,
+     30,
+     15,
+     5,
+     18,
+     6
+    ],
+    [
+     10000,
+     20000,
+     24,
+     12,
+     5,
+     18,
+     6
+    ]
+   ],
+   "row_labels": [
+    "black dragon",
+    "blue dragon",
+    "brass dragon",
+    "bronze dragon",
+    "celestial dragon",
+    "cloud dragon",
+    "coiled dragon",
+    "copper dragon",
+    "dracolisk",
+    "dragonne",
+    "dragonnel",
+    "earth dragon",
+    "gold dragon",
+    "green dragon",
+    "mist dragon",
+    "red dragon",
+    "silver dragon",
+    "spirit dragon",
+    "white dragon",
+    "wyvern"
+   ]
+  },
+  {
+   "name": "Table 27B: category B flying mounts",
+   "tag": "27B",
+   "count": "wfmCatBCount",
+   "col_default": 0,
+   "audit_comment": "the Table 27B grid: the category B flying mounts (boobrie, giant eagle, pteranodon, giant pterosaur, roc, giant vulture) with the normal load, the maximum load (the dash encoded as max = normal), the full and reduced move rates in miles per half-day, the maneuver-ability class (3 = C, 4 = D, 5 = E) and the two stamina figures - safe turns aloft and turns of rest",
+   "cols": [
+    "wfmBNorm",
+    "wfmBMax",
+    "wfmBMove",
+    "wfmBMoveRed",
+    "wfmBMc",
+    "wfmBSta",
+    "wfmBRest"
+   ],
+   "col_comments": [
+    "the normal load in gold pieces - the encumbrance the creature carries and still flies at its full rate",
+    "the maximum load - the greatest encumbrance it can carry aloft; the printed dash means normal = maximum (encoded directly)",
+    "the full normal flying move rate in miles per half-day",
+    "the reduced move rate when burdened above a normal load; 0 means a single rate creature",
+    "the maneuverability class when carrying a rider or equipment, on the A=1..E=5 scale",
+    "the consecutive turns the creature can safely remain aloft with a normal load",
+    "the turns of rest needed between flights to retain full strength and capacity"
+   ],
+   "data": [
+    [
+     1000,
+     1500,
+     15,
+     9,
+     5,
+     3,
+     3
+    ],
+    [
+     1000,
+     1500,
+     48,
+     18,
+     5,
+     9,
+     3
+    ],
+    [
+     1500,
+     1500,
+     15,
+     0,
+     4,
+     2,
+     1
+    ],
+    [
+     2000,
+     2000,
+     12,
+     0,
+     5,
+     3,
+     1
+    ],
+    [
+     50000,
+     100000,
+     30,
+     15,
+     5,
+     30,
+     6
+    ],
+    [
+     1000,
+     1500,
+     24,
+     12,
+     5,
+     3,
+     2
+    ]
+   ],
+   "row_labels": [
+    "boobrie",
+    "giant eagle",
+    "pteranodon",
+    "giant pterosaur",
+    "roc",
+    "giant vulture"
+   ]
+  },
+  {
+   "name": "Table 27C: category C flying mounts",
+   "tag": "27C",
+   "count": "wfmCatCCount",
+   "col_default": 0,
+   "audit_comment": "the Table 27C grid: the category C flying mounts (chimera, griffon, gorgimera, hippogriff, manticore, opinicus, pegasus) with the normal load, the maximum load (the dash encoded as max = normal), the full and reduced move rates in miles per half-day, the maneuver-ability class (3 = C, 4 = D, 5 = E) and the two stamina figures - safe turns aloft and turns of rest",
+   "cols": [
+    "wfmCNorm",
+    "wfmCMax",
+    "wfmCMove",
+    "wfmCMoveRed",
+    "wfmCMc",
+    "wfmCSta",
+    "wfmCRest"
+   ],
+   "col_comments": [
+    "the normal load in gold pieces - the encumbrance the creature carries and still flies at its full rate",
+    "the maximum load - the greatest encumbrance it can carry aloft; the printed dash means normal = maximum (encoded directly)",
+    "the full normal flying move rate in miles per half-day",
+    "the reduced move rate when burdened above a normal load; 0 means a single rate creature",
+    "the maneuverability class when carrying a rider or equipment, on the A=1..E=5 scale",
+    "the consecutive turns the creature can safely remain aloft with a normal load",
+    "the turns of rest needed between flights to retain full strength and capacity"
+   ],
+   "data": [
+    [
+     4500,
+     4500,
+     18,
+     0,
+     5,
+     12,
+     3
+    ],
+    [
+     5500,
+     8000,
+     30,
+     15,
+     4,
+     18,
+     6
+    ],
+    [
+     5000,
+     5000,
+     15,
+     0,
+     5,
+     9,
+     3
+    ],
+    [
+     4000,
+     6000,
+     36,
+     18,
+     4,
+     15,
+     3
+    ],
+    [
+     3000,
+     3000,
+     18,
+     0,
+     5,
+     6,
+     3
+    ],
+    [
+     1000,
+     1500,
+     30,
+     15,
+     3,
+     3,
+     1
+    ],
+    [
+     4000,
+     6500,
+     48,
+     24,
+     4,
+     12,
+     3
+    ]
+   ],
+   "row_labels": [
+    "chimera",
+    "griffon",
+    "gorgimera",
+    "hippogriff",
+    "manticore",
+    "opinicus",
+    "pegasus"
+   ]
+  },
+  {
+   "name": "Table 27D: category D flying mounts",
+   "tag": "27D",
+   "count": "wfmCatDCount",
+   "col_default": 0,
+   "audit_comment": "the Table 27D grid: the category D flying mounts (aarakocra, androsphinx, criosphinx, dragon horse, gynosphinx, hieracosphinx, giant mantis, yeth hound) with the normal load, the maximum load (the dash encoded as max = normal), the full and reduced move rates in miles per half-day, the maneuver-ability class (3 = C, 4 = D, 5 = E) and the two stamina figures - safe turns aloft and turns of rest",
+   "cols": [
+    "wfmDNorm",
+    "wfmDMax",
+    "wfmDMove",
+    "wfmDMoveRed",
+    "wfmDMc",
+    "wfmDSta",
+    "wfmDRest"
+   ],
+   "col_comments": [
+    "the normal load in gold pieces - the encumbrance the creature carries and still flies at its full rate",
+    "the maximum load - the greatest encumbrance it can carry aloft; the printed dash means normal = maximum (encoded directly)",
+    "the full normal flying move rate in miles per half-day",
+    "the reduced move rate when burdened above a normal load; 0 means a single rate creature",
+    "the maneuverability class when carrying a rider or equipment, on the A=1..E=5 scale",
+    "the consecutive turns the creature can safely remain aloft with a normal load",
+    "the turns of rest needed between flights to retain full strength and capacity"
+   ],
+   "data": [
+    [
+     1500,
+     1500,
+     36,
+     0,
+     4,
+     3,
+     2
+    ],
+    [
+     7500,
+     9500,
+     30,
+     15,
+     5,
+     18,
+     6
+    ],
+    [
+     7000,
+     9000,
+     24,
+     12,
+     5,
+     15,
+     6
+    ],
+    [
+     3000,
+     5000,
+     48,
+     24,
+     3,
+     12,
+     3
+    ],
+    [
+     5000,
+     8000,
+     24,
+     12,
+     5,
+     15,
+     6
+    ],
+    [
+     7000,
+     8500,
+     36,
+     18,
+     5,
+     18,
+     6
+    ],
+    [
+     2000,
+     3000,
+     12,
+     6,
+     5,
+     6,
+     3
+    ],
+    [
+     2000,
+     3000,
+     27,
+     12,
+     3,
+     9,
+     3
+    ]
+   ],
+   "row_labels": [
+    "aarakocra",
+    "androsphinx",
+    "criosphinx",
+    "dragon horse",
+    "gynosphinx",
+    "hieracosphinx",
+    "giant mantis",
+    "yeth hound"
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['wfmCatACount']() + m['wfmCatBCount']() + m['wfmCatCCount']() + m['wfmCatDCount']() != 41 or m['wfmTotalCreatures']() != 41",
+   "note": "the four categories total 41 mounts: 20 dragons, 6 birds, 7 winged mammals and 8 other fantastic creatures"
+  },
+  {
+   "expr": "m['wfmANorm'](12) != 21000 or m['wfmAMax'](12) != 42000 or m['wfmAMax'](12) != 2 * m['wfmANorm'](12)",
+   "note": "the gold dragon, the strongest category A mount: 21000 normal, 42000 maximum - double the normal"
+  },
+  {
+   "expr": "m['wfmAMove'](5) != 39 or m['wfmAMoveRed'](5) != 18 or m['wfmAMove'](14) != 33 or m['wfmAMoveRed'](14) != 15",
+   "note": "the footnote pair: the cloud dragon flies 39/18 and the mist dragon 33/15 - both ridden only in solid form (the 39 settled at high resolution, both text layers agreeing)"
+  },
+  {
+   "expr": "m['wfmBNorm'](4) != 50000 or m['wfmBMax'](4) != 100000 or m['wfmBMax'](4) != 2 * m['wfmBNorm'](4) or m['wfmBSta'](4) != 30 or m['wfmBRest'](4) != 6",
+   "note": "the roc, the greatest carrier in the table: 50000 normal, 100000 maximum, with the top stamina pattern 30 turns up and 6 resting"
+  },
+  {
+   "expr": "m['wfmAMax'](9) != 1500 or m['wfmAMax'](9) != m['wfmANorm'](9) or m['wfmBMax'](2) != m['wfmBNorm'](2) or m['wfmCMax'](0) != m['wfmCNorm'](0) or m['wfmDMax'](0) != m['wfmDNorm'](0)",
+   "note": "the dash rule, one creature per category: the dragonne, the pteranodon, the chimera and the aarakocra each have normal load = maximum load"
+  },
+  {
+   "expr": "m['wfmAMoveRed'](9) != 0 or m['wfmBMoveRed'](2) != 0 or m['wfmCMoveRed'](0) != 0 or m['wfmDMoveRed'](0) != 0 or m['wfmAMove'](9) != 9 or m['wfmCMove'](0) != 18",
+   "note": "the single-rate creatures: the dragonne 9, the pteranodon 15, the chimera 18 and the aarakocra 36 each have one move rate always"
+  },
+  {
+   "expr": "m['wfmAMc'](0) != 5 or m['wfmAMc'](19) != 5 or m['wfmAMc'](10) != 4 or m['wfmCMc'](5) != 3 or m['wfmDMc'](3) != 3 or m['wfmMcFloor']() != 5",
+   "note": "the maneuverability classes: most mounts are E (5), the dragonnel D (4), the opinicus and the dragon horse C (3) - E is the unreducible floor"
+  },
+  {
+   "expr": "m['wfmASta'](1) != 27 or m['wfmARest'](1) != 6 or m['wfmBSta'](0) != 3 or m['wfmBRest'](0) != 3 or m['wfmASta'](8) != 2 or m['wfmARest'](8) != 1",
+   "note": "the stamina spread: the blue and bronze dragons 27 up / 6 rest, the boobrie the unusual 3/3, and the dracolisk the brief 2/1"
+  },
+  {
+   "expr": "m['wfmOverloadStaCutTurns']() != 1 or m['wfmOverloadStaThird']() != 3 or m['wfmASta'](0) != 24",
+   "note": "the over-load stamina cut: one turn or one-third of normal, whichever greater - the black dragon 24 becomes 16 (a third beats a single turn)"
+  },
+  {
+   "expr": "m['wfmRationsMultiple']() != 3 or m['wfmBigDragonRations']() != 50",
+   "note": "the feeding rules: at least triple rations for most mounts, up to fifty rations a day for one of the biggest dragon types"
+  },
+  {
+   "expr": "m['wfmCMove'](6) != 48 or m['wfmCMoveRed'](6) != 24 or m['wfmCNorm'](6) != 4000 or m['wfmCMax'](6) != 6500",
+   "note": "the pegasus, the fastest winged mammal: 48/24 carrying 4000 normal and 6500 maximum"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the category A grid": [
+   {
+    "kind": "const",
+    "name": "wfmCatACount"
+   },
+   {
+    "kind": "table",
+    "name": "Table 27A: category A flying mounts"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmCloudMistSolidFormOnly"
+   }
+  ],
+  "the category B grid": [
+   {
+    "kind": "const",
+    "name": "wfmCatBCount"
+   },
+   {
+    "kind": "table",
+    "name": "Table 27B: category B flying mounts"
+   }
+  ],
+  "the category C grid": [
+   {
+    "kind": "const",
+    "name": "wfmCatCCount"
+   },
+   {
+    "kind": "table",
+    "name": "Table 27C: category C flying mounts"
+   }
+  ],
+  "the category D grid": [
+   {
+    "kind": "const",
+    "name": "wfmCatDCount"
+   },
+   {
+    "kind": "const",
+    "name": "wfmTotalCreatures"
+   },
+   {
+    "kind": "table",
+    "name": "Table 27D: category D flying mounts"
+   }
+  ],
+  "the column definitions": [
+   {
+    "kind": "bool",
+    "name": "wfmOverMaxNeverLifts"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmOverMaxPlummets"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmDashMaxEqualsNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmDashCannotFlyOverNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmReducedRateWhenOverloaded"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmZeroRateMeansSingleRate"
+   }
+  ],
+  "the maneuverability and stamina rules": [
+   {
+    "kind": "const",
+    "name": "wfmMcRiddenDrop"
+   },
+   {
+    "kind": "const",
+    "name": "wfmMcFloor"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmMcDropsWhenRidden"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmMcEStaysE"
+   },
+   {
+    "kind": "const",
+    "name": "wfmOverloadStaCutTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wfmOverloadStaThird"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmStaCutIsGreaterOf"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmStaRestBetweenFlights"
+   }
+  ],
+  "the listing criteria": [
+   {
+    "kind": "bool",
+    "name": "wfmListedIfPrimeMaterial"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmListedIfWildernessNative"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmListedIfSizeMOrL"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmDmAssignsUnlistedStats"
+   }
+  ],
+  "the training and willingness rules": [
+   {
+    "kind": "bool",
+    "name": "wfmTrainedScarceAndDear"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmUntrainedAtMercy"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmCoercedMaySkimp"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmFullBenefitNeedsWillingness"
+   }
+  ],
+  "the feeding and load rules": [
+   {
+    "kind": "const",
+    "name": "wfmRationsMultiple"
+   },
+   {
+    "kind": "const",
+    "name": "wfmBigDragonRations"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmLoadsNeedContainers"
+   },
+   {
+    "kind": "bool",
+    "name": "wfmUnevenLoadRaisesEnc"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] Flying mounts (p. 47)",
+   "to": "  - [x] Flying mounts (p. 47) - R460: Table 27 (the characteristics of flying mounts - the four category grids, 41 creatures x 7 columns: the normal and maximum loads with the dash as max = normal, the full and reduced move rates, the MC on the A=1..E=5 scale and the safe-turns/rest stamina pair), the column definitions (the plummet rule, the single-rate 0 marker, the MC drop when ridden with E unreducible, the over-load stamina cut), the solid-form footnote, the listing criteria, the training/willingness rules, the triple-to-fifty rations feeding and the even-distribution encumbrance rules with the 2:1 doubling) pin as rules/wsgflymounts.h",
+   "note": "flying mounts"
+  },
+  {
+   "from": "Post-state at R459: 62 closed, 124 open (the R459 round pins the use of a capsized vessel - the buoyancy with its preconditions and the twice-capacity flotation with the sink rules; the next rounds continue the book - the flying mounts and the fall rules).",
+   "to": "Post-state at R460: 63 closed, 123 open (the R460 round pins the flying mounts - Table 27 with its four category grids and the column definitions, the listing criteria, the willingness and feeding and load rules; the next rounds continue the chapter - the to fall or not to fall and the proficiency in airborne riding).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 63,
+  "open": 123
+ },
+ "include_comment": "the WSG flying mounts",
+ "include_after": "#include \"rules/wsgcapsized.h\"  // R459: the WSG use of a capsized vessel",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R459 landed 2026-10-14: commit 5018a21",
+ "prev_record": [
+  "- R459 landed 2026-10-14: commit 5018a21",
+  "  (full 5018a21a1136fa30a8349a0f4",
+  "  4370746fdd6f366, census 384, pushed",
+  "  24b84d5..5018a21, preflight GREEN on",
+  "  the clean-run THIRD attempt, the splice",
+  "  double-run clean: applied 6 /",
+  "  already 6), the WSG USE OF A",
+  "  CAPSIZED VESSEL, printed p. 46 - a",
+  "  pure-prose round (no printed grid):",
+  "  the natural buoyancy (most vessels",
+  "  remain afloat just beneath the surface",
+  "  after capsizing or hull damage); the",
+  "  flotation preconditions (carrying no",
+  "  passengers and not more than 10% of",
+  "  the listed maximum cargo capacity,",
+  "  with the small-rowboat example - toss",
+  "  all but 200 gp worth and the foundering",
+  "  craft sinks to slightly beneath the",
+  "  surface and remains); the cling-to-the-",
+  "  sides flotation (usable as long as the",
+  "  weight is evenly distributed); the",
+  "  twice-capacity support figure (eight",
+  "  characters around a large rowboat of",
+  "  normal capacity four); and the sink",
+  "  rules (exceeding the weight limit or",
+  "  uneven distribution sinks the craft",
+  "  too far below to be usable).",
+  "  rules/wsgcapsized.h NEW (13 inlines:",
+  "  5 consts + 8 bools, prefix wcv,",
+  "  checked free in all three TUs). Ground",
+  "  truth CLEAN two-way: the user copy OCR",
+  "  (page 47) vs the djvu word layer",
+  "  (Guide_0046) - NO eye-reads needed.",
+  "  The numbers cross-check against the",
+  "  R455 Table 25 pin: the small rowboat",
+  "  2000 gp cargo maximum gives the 10%",
+  "  = 200 gp example, and the large",
+  "  rowboat capacity 4 gives the twice-",
+  "  capacity 8. Gap 61/125 -> 62/124;",
+  "  census 383 -> 384. rverify GREEN:",
+  "  13 mutants, 0 missed. REPAIRED before",
+  "  landing: the first spec carried",
+  "  Python-style '!= True' in two example",
+  "  exprs - clean in the Python audit",
+  "  mirror (True is valid Python) but",
+  "  invalid C++ (5 undeclared-identifier",
+  "  errors), caught by the user preflight",
+  "  RED, nothing committed; fixed to",
+  "  '!= 1' (valid both sides), tree",
+  "  reverted, double-run and rverify",
+  "  re-run clean. Lesson: NEVER use",
+  "  Python True/False in example exprs -",
+  "  use != 1 / == 0. Spec md5s:",
+  "  f9b1a666c5c7fd2900d9777d8b2549f4",
+  "  user-side / 840ec2eefee2a1a5b9909c13",
+  "  7c961d77 +nl, vs 98403989 authored /",
+  "  f9b1a666 +nl (canvas r459-splice) -",
+  "  the delivery-side newline variance",
+  "  again, THIRTEEN rounds running",
+  "  (R447-R459), cosmetic every time (as",
+  "  in R457/R458, the user-side FILE hash",
+  "  matches the authored +nl hash exactly,",
+  "  the +nl variant drifts). Base sha",
+  "  24b84d5b61a1159579f63619af834b932",
+  "  3c49a29. GITHUB VERIFIED at 5018a21a",
+  "  1136fa30a8349a0f44370746fdd6f366:",
+  "  census 384, the R459 audit line",
+  "  present, the wsgcapsized.h include at",
+  "  line 164, 13 wcv inlines, the gap box",
+  "  [x] flipped, Post-state at R459 once,",
+  "  the R458 seed record in place, NO True",
+  "  tokens in the landed wcv audit block,",
+  "  no wcv hits in the caller TUs, and the",
+  "  engine re-run on the landed tree reads",
+  "  applied 0 / already 6 (canvas",
+  "  r459-splice). Next after landing: the",
+  "  flying mounts (p. 47), then the to",
+  "  fall or not to fall (p. 48)."
+ ]
+}

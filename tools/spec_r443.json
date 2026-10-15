@@ -1,0 +1,314 @@
+{
+ "round": 443,
+ "title": "the WSG rope - belaying",
+ "prefix": "wbl",
+ "header_file": "rules/wsgbelay.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 367,
+ "inline_count": 23,
+ "audit_label": "R443 WSG belaying pin audit",
+ "audit_comment": "The belaying slice pins the climbing-rope intro (150 or 200 feet long, 2000-pound weight limit, subject to the weakening and breaking rules), the knot rules (only a rope-use proficient character ties a full-strength knot; anyone else loses 500 pounds; different diameters take the smaller limit minus 500), the belayer Climbing Check (failure = the full fall, success bounded by the rope length), the precarious-position second check on the jolt (failure = both fall) with the secure-position exemption, and the paired-belay sequence (the last cannot belay, the leader cannot be belayed, one belay at a time, no climbing while belaying, the middle faller drags no one below, the failed belayer can be saved by the character above, the first faller is unhelpable) (rules/wsgbelay.h, prefix wbl); census 367 -> 368.",
+ "banner": {
+  "title": "The WSG BELAYING, R443: the belay prose (no table this round) - a climbing rope is 150 or 200 feet long and half an inch in diameter, with a weight limit of 2000 pounds, subject to the weakening and breaking rules; a rope can tie a group together so a fall can be arrested, and only a rope-use proficient character can knot two ropes at full strength - anyone else reduces the held weight by 500 pounds, and two different diameters take the smaller limit minus 500. Belaying itself: the belayed character has a rope end tied securely around his body, the belayer pays out the rope with just a small amount of slack (reversed, pulling in, for an ascent); if the climber falls, the belayer halts the fall with a successful Climbing Check - failure means the climber falls the full distance, success means no farther than the length of the rope. A precarious belayer (handholds and footholds only) who halts the fall must make a SECOND check against the jolt of the rope going taut - failure drops both; a secure belayer (a plateau or wide ledge) needs no second check. A string of pairs can belay in sequence - the last character cannot belay, the leader cannot be belayed, only one belay at a time, no climbing while belaying - slow but safer; a middle faller drags no one below, a failed belayer can be saved by the character above belaying him, but nothing can help the first character who fell, since only two characters are connected to the same rope. Census 367 -> 368.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 37; the user own copy OCR cross-checked against the archive djvu word layer (Guide_0037.djvu, with the paired-belay continuation at the head of Guide_0038.djvu) - the section reads CLEAN, every number (the 150/200 feet, the half inch, the 2000 pounds, the 500-pound knot penalty, the two checks) matched exactly; no eye-reads were needed.",
+  "sentinel": "The belayer halts a fall with a successful Climbing Check: failure drops the climber the full distance, success bounds the fall by the rope length. A precarious belayer who halts the fall makes a second check against the jolt - failure drops both; a secure belayer skips it. Only two characters share a rope: the first faller cannot be helped, and the climbing rope holds 2000 pounds minus 500 for an amateur knot."
+ },
+ "consts": [
+  {
+   "name": "wblClimbRopeMinFt",
+   "value": 150,
+   "comment": "A climbing rope is 150 or 200 feet long and half an inch in diameter."
+  },
+  {
+   "name": "wblClimbRopeMaxFt",
+   "value": 200,
+   "comment": "A climbing rope is 150 or 200 feet long - the 200-foot rope strings the five-character roping example."
+  },
+  {
+   "name": "wblClimbRopeLimitLbs",
+   "value": 2000,
+   "comment": "A climbing rope has a weight limit of 2000 pounds, and is subject to weakening or breaking as described for the standard coil."
+  },
+  {
+   "name": "wblKnotPenaltyLbs",
+   "value": 500,
+   "comment": "A knot made by anyone other than a rope-use proficient character reduces the weight the rope will hold without weakening or breaking by 500 pounds."
+  },
+  {
+   "name": "wblChecksPrecarious",
+   "value": 2,
+   "comment": "A precarious belayer who halts his companion fall makes TWO successful Climbing Checks: the first to halt the fall, the second to keep from being pulled down by the jolt of the rope going taut."
+  },
+  {
+   "name": "wblChecksSecure",
+   "value": 1,
+   "comment": "A secure belayer (a plateau or a wide ledge, where he does not need to hold himself onto the slope or cliff) needs only the ONE check - the second check is not necessary."
+  },
+  {
+   "name": "wblFallersOnJoltFailure",
+   "value": 2,
+   "comment": "If the precarious belayer fails his second check, both the belayer and his companion will fall."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wblRopeEndTiedAroundBody",
+   "value": true,
+   "comment": "The character to be belayed must have one end of a rope tied securely around his body."
+  },
+  {
+   "name": "wblPayOutSmallSlack",
+   "value": true,
+   "comment": "The belayer holds the rope and pays it out as the character moves farther down or away, always keeping just a small amount of slack in the line; for an ascent the process is reversed - he pulls the rope in."
+  },
+  {
+   "name": "wblFailMeansFullFall",
+   "value": true,
+   "comment": "Failure on the belayer Climbing Check indicates he has lost his hold on the rope, and the climber will fall the full distance possible."
+  },
+  {
+   "name": "wblSuccessBoundedByRopeLen",
+   "value": true,
+   "comment": "Success means the belayer has hung onto the rope, and at worst the climber will fall no farther than the length of the rope."
+  },
+  {
+   "name": "wblPrecariousNeedsSecondCheck",
+   "value": true,
+   "comment": "A belayer in a precarious position (relying on handholds and footholds) who succeeds in halting the fall must make a second successful check against the jolt of the rope going taut."
+  },
+  {
+   "name": "wblSecureSkipsSecondCheck",
+   "value": true,
+   "comment": "A belayer in a secure position (the top of a plateau or a wide ledge) does not need the second check."
+  },
+  {
+   "name": "wblPairsBelayInSequence",
+   "value": true,
+   "comment": "A string of characters connected in pairs with different ropes can belay one another in sequence."
+  },
+  {
+   "name": "wblLastCannotBelay",
+   "value": true,
+   "comment": "The last character in line cannot belay anyone."
+  },
+  {
+   "name": "wblLeaderCannotBeBelayed",
+   "value": true,
+   "comment": "The leader cannot be belayed."
+  },
+  {
+   "name": "wblOneBelayAtATime",
+   "value": true,
+   "comment": "Only one belay can be performed at any time."
+  },
+  {
+   "name": "wblNoClimbWhileBelaying",
+   "value": true,
+   "comment": "A character cannot climb while he is belaying someone else - the method is relatively slow but safer for the group as a whole."
+  },
+  {
+   "name": "wblMiddleFallerDragsNoneBelow",
+   "value": true,
+   "comment": "A character in the middle of a string of belayers who begins to fall will not drag down anyone beneath him, as would be the case if all characters were roped together."
+  },
+  {
+   "name": "wblFailedBelayerSavedAbove",
+   "value": true,
+   "comment": "If the belayer of a falling character fails to arrest the fall, that belayer has a chance of being saved by the character above who is belaying him."
+  },
+  {
+   "name": "wblFirstFallerUnhelpable",
+   "value": true,
+   "comment": "Nothing can help the first character who fell, since only two characters are connected to the same rope."
+  },
+  {
+   "name": "wblProfKnotFullStrength",
+   "value": true,
+   "comment": "Only a character with proficiency in rope use can make a knot that will hold the same amount of weight as the ropes on either side."
+  },
+  {
+   "name": "wblMixedDiaSmallerMinus500",
+   "value": true,
+   "comment": "If two ropes of different diameters are tied together, the weight limit of the smaller rope (minus 500 pounds, for the knot) applies to the combined line."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['wblClimbRopeMinFt']() != 150 or m['wblClimbRopeMaxFt']() != 200 or m['wblClimbRopeLimitLbs']() != 2000",
+   "note": "the climbing rope: 150 or 200 feet of half-inch rope with a 2000-pound weight limit"
+  },
+  {
+   "expr": "m['wblKnotPenaltyLbs']() != 500 or m['wblClimbRopeLimitLbs']() != 4 * m['wblKnotPenaltyLbs']()",
+   "note": "the amateur knot: 500 pounds off the held weight; the climbing rope limit is exactly four knot penalties (2000 = 4 x 500)"
+  },
+  {
+   "expr": "m['wblChecksPrecarious']() != 2 or m['wblChecksSecure']() != 1",
+   "note": "the two belay postures: the precarious belayer checks twice (the halt, then the jolt), the secure belayer only once"
+  },
+  {
+   "expr": "m['wblChecksPrecarious']() != m['wblChecksSecure']() + 1",
+   "note": "the jolt check is exactly one extra check on top of the halt"
+  },
+  {
+   "expr": "m['wblFallersOnJoltFailure']() != 2 or m['wblFallersOnJoltFailure']() != m['wblChecksPrecarious']()",
+   "note": "the failed jolt check drops both the belayer and his companion - two fallers, two checks"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['wblChecksSecure']() >= m['wblChecksPrecarious']()",
+   "note": "the secure belayer never checks more than the precarious belayer - one check against two"
+  },
+  {
+   "expr": "m['wblClimbRopeMinFt']() >= m['wblClimbRopeMaxFt']()",
+   "note": "the climbing rope length range is a real range: 150 up to 200 feet"
+  }
+ ],
+ "header_sections": {
+  "the belaying rules": [
+   {
+    "kind": "const",
+    "name": "wblClimbRopeMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "wblClimbRopeMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "wblClimbRopeLimitLbs"
+   },
+   {
+    "kind": "bool",
+    "name": "wblProfKnotFullStrength"
+   },
+   {
+    "kind": "const",
+    "name": "wblKnotPenaltyLbs"
+   },
+   {
+    "kind": "bool",
+    "name": "wblMixedDiaSmallerMinus500"
+   },
+   {
+    "kind": "bool",
+    "name": "wblRopeEndTiedAroundBody"
+   },
+   {
+    "kind": "bool",
+    "name": "wblPayOutSmallSlack"
+   },
+   {
+    "kind": "bool",
+    "name": "wblFailMeansFullFall"
+   },
+   {
+    "kind": "bool",
+    "name": "wblSuccessBoundedByRopeLen"
+   },
+   {
+    "kind": "bool",
+    "name": "wblPrecariousNeedsSecondCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wblChecksPrecarious"
+   },
+   {
+    "kind": "const",
+    "name": "wblFallersOnJoltFailure"
+   },
+   {
+    "kind": "bool",
+    "name": "wblSecureSkipsSecondCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wblChecksSecure"
+   },
+   {
+    "kind": "bool",
+    "name": "wblPairsBelayInSequence"
+   },
+   {
+    "kind": "bool",
+    "name": "wblLastCannotBelay"
+   },
+   {
+    "kind": "bool",
+    "name": "wblLeaderCannotBeBelayed"
+   },
+   {
+    "kind": "bool",
+    "name": "wblOneBelayAtATime"
+   },
+   {
+    "kind": "bool",
+    "name": "wblNoClimbWhileBelaying"
+   },
+   {
+    "kind": "bool",
+    "name": "wblMiddleFallerDragsNoneBelow"
+   },
+   {
+    "kind": "bool",
+    "name": "wblFailedBelayerSavedAbove"
+   },
+   {
+    "kind": "bool",
+    "name": "wblFirstFallerUnhelpable"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] Belaying (p. 37)",
+   "to": "  - [x] Belaying (p. 37) - R443: the climbing-rope stats, the knot rules, the belayer check with the rope-length bound, the jolt second check with the secure exemption and the paired-belay sequence pin as rules/wsgbelay.h",
+   "note": "belaying"
+  },
+  {
+   "from": "Post-state at R442: 45 closed, 141 open (the R442 round pins the rappelling - the 120-feet-per-round controlled descent with the +50% per-round Climbing Check, the lost-grip failure state and the free-hanging-rope variant at +30% with the +2 Dexterity modifier; the next rounds continue the section - the belaying, the grappling hooks and the chasm crossing).",
+   "to": "Post-state at R443: 46 closed, 140 open (the R443 round pins the belaying - the climbing-rope stats with the knot rules, the belayer Climbing Check with the rope-length fall bound, the jolt second check with the secure-position exemption and the paired-belay sequence; the next rounds continue the section - the grappling hooks and the chasm crossing).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 46,
+  "open": 140
+ },
+ "include_comment": "the WSG belaying",
+ "include_after": "#include \"rules/wsgrapp.h\"  // R442: the WSG rappelling",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R442 landed 2026-10-14: commit e176cf3 (census 367, pushed",
+ "prev_record": [
+  "- R442 landed 2026-10-14: commit e176cf3 (census 367, pushed",
+  "  1aa49f0..e176cf3, preflight GREEN on the FIRST run), the WSG RAPPELLING,",
+  "  printed p. 37 - the descent prose (no table): a rope-secured descent of a",
+  "  non-horizontal surface at a base speed of 120 feet per round (encumbrance",
+  "  and other penalties apply as for an ascent); a Climbing Check at +50% to the",
+  "  Climbing Rating for every round or part of a round; a failed check means the",
+  "  grip is lost - the character hangs upside down, spinning, until rescued or a",
+  "  successful Dexterity Check (once per round); the free-hanging variant (no",
+  "  surface to brace against) at +30% instead of +50%, with a +2 Dexterity",
+  "  modifier on a failed check. rules/wsgrapp.h NEW (9 inlines, prefix wrl -",
+  "  checked free in all three TUs). Ground truth CLEAN two-way (the user copy",
+  "  OCR vs the djvu word layer Guide_0037 - every number matched, no eye-reads).",
+  "  Gap 44/142 -> 45/141; census 366 -> 367. rverify GREEN on the FIRST build: 9",
+  "  mutants, 0 missed. Spec md5s: feddcf09 authored / 58ec04c2 +nl. GITHUB",
+  "  VERIFIED at the pinned full sha e176cf32b615d09a142b3eccf07b8f493f61617f:",
+  "  census 367, the R442 audit present once, wsgrapp.h 9 inlines, the rappel",
+  "  modifiers landed (+50/+30, Dex +2), the gap 45 closed / 141 open, the R441",
+  "  seed record in place, no wrl hits in the caller TUs. Next after landing: the",
+  "  belaying (p. 37)."
+ ]
+}

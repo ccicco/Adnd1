@@ -79,9 +79,9 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Effects on animals (p. 52) - R462: the halved movement and carrying capacity, the 3-turn hard-work incapacitation, the 1.5-times-tolerance multiple, the death rules and the 13-24-hour 1d12+12 recovery pin as rules/wsgfood.h
   - [x] Minimum daily requirement of food (p. 52) - R462: the 1-2 pound human ration with the 3/4 elf and 1/2 small-race fractions, the ration pack arithmetic, the meat-vs-vegetables ratio, the two-meal cadence and the half-ration cheat pin as rules/wsgfood.h
   - [x] Minimum daily requirement of water (p. 53) - R462: the Table 29 pint grid with the racial reductions and the activity hour thresholds, the create-water arithmetic and the water encumbrance pin as rules/wsgfood.h
-  - [ ] Food gathering (p. 53)
-  - [ ] Foraging (p. 53)
-  - [ ] Inedible plants (p. 54)
+  - [x] Food gathering (p. 53) - R463: the two-turn plant-foraging check with the Table 30 terrain-climate lookup pin as rules/wsgforage.h
+  - [x] Foraging (p. 53) - R463: the proficiency advantage (two rations in two turns or one per turn, the inedible chance 20% lower), the four-turn search limit and the one-mile move-on pin as rules/wsgforage.h
+  - [x] Inedible plants (p. 54) - R463: the 1d8 dispatch (1 poisonous with the 1d10-round onset, 2d10-turn cramps and 1d4 hp/turn, 2-4 tainted half-strength, 5-8 no food value) pin as rules/wsgforage.h
   - [ ] Hunting (p. 55)
   - [ ] Stalking a wounded animal (p. 55)
   - [ ] The hunting proficiency (p. 57)
@@ -185,7 +185,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 27: characteristics of flying mounts** (p. 47)
 - [x] **Table 28: tolerance levels for lack of food** (p. 50) - R462: the 4/5/6/7/8/10-day ladder pins as rules/wsgfood.h
 - [x] **Table 29: water requirements for characters** (p. 53) - R462: the 4x4 pint grid pins as rules/wsgfood.h
-- [ ] **Table 30: foraging success** (p. 53)
+- [x] **Table 30: foraging success** (p. 53) - R463: the five climate-region grids (Arctic five terrains, the others seven), the chance/inedible pair per season, all 132 cells pixel-verified pin as rules/wsgforage.h
 - [ ] **Table 31: hunting success** (p. 55)
 - [ ] **Table 32: fishing success** (p. 57)
 - [ ] **Table 33: chance of food spoilage** (p. 58)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R462: 72 closed, 114 open (the R462 round opens the food and water chapter - going without food and Table 28, going without water, the effects on animals, the minimum daily requirements of food and water and Table 29 pin as rules/wsgfood.h; the next round continues the chapter - food gathering, foraging and Table 30).
+Post-state at R463: 76 closed, 110 open (the R463 round continues the chapter - food gathering, foraging, the inedible plants and Table 30 pin as rules/wsgforage.h; the next round continues - hunting, stalking a wounded animal and Table 31).

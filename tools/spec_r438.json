@@ -1,0 +1,367 @@
+{
+ "round": 438,
+ "title": "the WSG tumbling damage - Table 18 (the damage from tumbling down a moderate or gentle slope)",
+ "prefix": "wdt",
+ "header_file": "rules/wsgtumble.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 362,
+ "inline_count": 26,
+ "audit_label": "R438 WSG tumbling damage pin audit",
+ "audit_comment": "The tumbling-damage slice pins Table 18 (the six moderate-or-gentle slope rows x the three condition cells, each split into the abrasion-free feet, the abrasion die and the impact distance) with the entry format rules, the worst-case and gradual-stop impact rules, the flat-terrain extra-abrasion rule and the tumble rates (rules/wsgtumble.h, prefix wdt); census 362 -> 363.",
+ "banner": {
+  "title": "The WSG TUMBLING DAMAGE, R438: Table 18 (the damage from tumbling down a moderate or gentle slope - the six rows x the non-slippery, slightly slippery and slippery conditions, each entry the abrasion-free feet / the abrasion die / the impact distance, from the rough gentle 20/3/50 to the smooth moderate 50/3/20) with the prose rules: tumbling is what happens to a character who slips and leaves his feet, or releases his handholds and footholds, and tumbles down a moderate or gentle slope; the first number is the feet tumbled free of abrasion damage, the second is the die rolled (6 = 1d6, 3 = 1d3) per 10 feet past that, the third is the minimum distance for impact damage (1d6 per full or partial increment of that distance at the stop); the impact figures are the worst-case abrupt stop (a gradual stop decreases the damage, perhaps eliminating it; a long flat-terrain tumble can add abrasion); and an unimpeded tumble covers 100-300 feet per round down a gentle slope and 300-500 feet per round down a moderate slope, slowest when nonslippery - the round continues the movement-across-special-terrain section. Census 362 -> 363.",
+  "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 36; the user own copy OCR cross-checked against the archive djvu word layer (16 of 18 cells clean; the normal gentle and normal moderate slippery cells are garbled or absent from the djvu) and the IIIF full-resolution eye-reads (two independent reads of the two disputed rows; every value matched the user copy exactly: 50/3/30 and 40/6/20). The smooth moderate die is genuinely 3 - the djvu word layer confirms the 1d3 there.",
+  "sentinel": "Each Table 18 entry is three numbers: the feet tumbled before abrasion damage begins, the abrasion die rolled per 10 feet beyond that, and the minimum distance for the 1d6-per-increment impact damage of the stop."
+ },
+ "consts": [
+  {
+   "name": "wdtRowCount",
+   "value": 6,
+   "comment": "The Table 18 row count (the rough, normal and smooth surfaces at the gentle and moderate tilts)."
+  },
+  {
+   "name": "wdtGentleRowBase",
+   "value": 0,
+   "comment": "The gentle-slope rows begin at index 0 (the rough, normal and smooth gentle rows)."
+  },
+  {
+   "name": "wdtModerateRowBase",
+   "value": 3,
+   "comment": "The moderate-slope rows begin at index 3 (the rough, normal and smooth moderate rows)."
+  },
+  {
+   "name": "wdtAbrasionPerFt",
+   "value": 10,
+   "comment": "Abrasion damage is rolled for every 10 feet of distance greater than the first number of the entry."
+  },
+  {
+   "name": "wdtGentleRateMin",
+   "value": 100,
+   "comment": "An unimpeded tumble down a gentle slope covers at least 100 feet in one round."
+  },
+  {
+   "name": "wdtGentleRateMax",
+   "value": 300,
+   "comment": "An unimpeded tumble down a gentle slope covers at most 300 feet in one round."
+  },
+  {
+   "name": "wdtModerateRateMin",
+   "value": 300,
+   "comment": "An unimpeded tumble down a moderate slope covers at least 300 feet per round."
+  },
+  {
+   "name": "wdtModerateRateMax",
+   "value": 500,
+   "comment": "An unimpeded tumble down a moderate slope covers at most 500 feet per round."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wdtFirstNumberFreeFeet",
+   "value": true,
+   "comment": "The first number of a Table 18 entry is the distance in feet a character can tumble down the slope before taking damage from abrasion."
+  },
+  {
+   "name": "wdtSecondNumberDie",
+   "value": true,
+   "comment": "The second number of an entry is the die that is rolled (6 = 1d6, 3 = 1d3) to determine abrasion damage for every 10 feet of distance greater than the first number."
+  },
+  {
+   "name": "wdtThirdNumberImpactDist",
+   "value": true,
+   "comment": "The third number of an entry is the minimum distance the character must travel in order to take damage from the impact of the stop at the end of his tumble."
+  },
+  {
+   "name": "wdtImpactPerIncrement",
+   "value": true,
+   "comment": "Impact damage is 1d6 for a tumble of the indicated distance, and an additional 1d6 for each full or partial increment of that distance."
+  },
+  {
+   "name": "wdtImpactWorstCase",
+   "value": true,
+   "comment": "The impact figures represent a worst-case situation - when the character comes to an abrupt stop at the bottom of the slope."
+  },
+  {
+   "name": "wdtGradualStopDecrease",
+   "value": true,
+   "comment": "If the topography lets the character come to a gradual stop (such as tumbling onto a large expanse of flat, featureless terrain), the DM should decrease impact damage accordingly - perhaps eliminating it altogether."
+  },
+  {
+   "name": "wdtFlatTumbleExtraAbrasion",
+   "value": true,
+   "comment": "If the character tumbles across flat terrain for some length of time before gradually stopping, the DM could assess some additional abrasion damage to account for the extra distance of the fall."
+  },
+  {
+   "name": "wdtTumbleIsSlipOrRelease",
+   "value": true,
+   "comment": "Tumbling is what happens to a character who slips and leaves his feet, or releases handholds and footholds, and tumbles down a moderate or gentle slope."
+  },
+  {
+   "name": "wdtRatesSlowestNonslippery",
+   "value": true,
+   "comment": "The tumble rates depend on the slipperiness of the surface - the slowest rate applies to a nonslippery surface."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "Table 18: the damage from tumbling down a moderate or gentle slope",
+   "tag": "18",
+   "count": "wdtRowCount",
+   "col_default": 0,
+   "cols": [
+    "wdtAbrN",
+    "wdtAbrS",
+    "wdtAbrV",
+    "wdtDieN",
+    "wdtDieS",
+    "wdtDieV",
+    "wdtImpN",
+    "wdtImpS",
+    "wdtImpV"
+   ],
+   "col_comments": [
+    "The abrasion-free distance in feet for the non-slippery condition, by surface row (the rough, normal and smooth surfaces at the gentle and moderate tilts).",
+    "The abrasion-free distance in feet for the slightly slippery condition.",
+    "The abrasion-free distance in feet for the slippery condition.",
+    "The abrasion die for the non-slippery condition (6 = 1d6, 3 = 1d3, rolled per 10 feet past the free distance).",
+    "The abrasion die for the slightly slippery condition.",
+    "The abrasion die for the slippery condition.",
+    "The minimum impact distance in feet for the non-slippery condition (1d6 impact damage per full or partial increment).",
+    "The minimum impact distance in feet for the slightly slippery condition.",
+    "The minimum impact distance in feet for the slippery condition."
+   ],
+   "audit_comment": "the Table 18 grid: the six slope rows (the rough, normal and smooth surfaces at the gentle and moderate tilts) x the three conditions, each cell split into the abrasion-free feet, the abrasion die and the impact distance",
+   "data": [
+    [
+     20,
+     30,
+     40,
+     3,
+     3,
+     3,
+     50,
+     40,
+     30
+    ],
+    [
+     10,
+     20,
+     30,
+     6,
+     6,
+     6,
+     40,
+     30,
+     20
+    ],
+    [
+     30,
+     40,
+     50,
+     3,
+     3,
+     3,
+     50,
+     40,
+     30
+    ],
+    [
+     20,
+     30,
+     40,
+     6,
+     6,
+     6,
+     40,
+     30,
+     20
+    ],
+    [
+     40,
+     50,
+     60,
+     3,
+     3,
+     3,
+     40,
+     30,
+     30
+    ],
+    [
+     30,
+     40,
+     50,
+     3,
+     3,
+     3,
+     30,
+     20,
+     20
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['wdtAbrN'](0) != 20 or m['wdtDieN'](0) != 3 or m['wdtImpN'](0) != 50",
+   "note": "the rough gentle non-slippery cell: 20 feet free of abrasion, a 1d3 die, a 50-foot impact threshold"
+  },
+  {
+   "expr": "(100 - m['wdtAbrS'](5)) != m['wdtAbrasionPerFt']() * 6 or m['wdtDieS'](5) != 3",
+   "note": "the book's own worked example: the smooth moderate slightly-slippery 40/3/20 cell - a 100-foot tumble suffers 6d3 abrasion over the last 60 feet (written division-free - 100 minus 40 equals six 10-foot increments)"
+  },
+  {
+   "expr": "m['wdtImpS'](5) * 5 != 100 or m['wdtImpS'](5) != 20",
+   "note": "the same example, the impact half: five 20-foot increments in 100 feet means 5d6 impact damage at the bottom (written division-free)"
+  },
+  {
+   "expr": "m['wdtGentleRateMin']() != 100 or m['wdtModerateRateMax']() != 500",
+   "note": "the unimpeded tumble rates: 100-300 feet per round down a gentle slope, 300-500 feet per round down a moderate slope"
+  },
+  {
+   "expr": "m['wdtDieN'](1) != 6 or m['wdtDieN'](5) != 3",
+   "note": "the die split: the rough moderate row rolls 1d6 abrasion, the smooth moderate row rolls 1d3 (the book itself uses the 3 there)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['wdtAbrS'](0) < m['wdtAbrN'](0) or m['wdtAbrV'](0) < m['wdtAbrS'](0) or m['wdtAbrS'](1) < m['wdtAbrN'](1) or m['wdtAbrV'](1) < m['wdtAbrS'](1) or m['wdtAbrS'](2) < m['wdtAbrN'](2) or m['wdtAbrV'](2) < m['wdtAbrS'](2) or m['wdtAbrS'](3) < m['wdtAbrN'](3) or m['wdtAbrV'](3) < m['wdtAbrS'](3) or m['wdtAbrS'](4) < m['wdtAbrN'](4) or m['wdtAbrV'](4) < m['wdtAbrS'](4) or m['wdtAbrS'](5) < m['wdtAbrN'](5) or m['wdtAbrV'](5) < m['wdtAbrS'](5)",
+   "note": "every Table 18 row: the abrasion-free distance grows with slipperiness (non-slippery <= slightly slippery <= slippery)"
+  },
+  {
+   "expr": "m['wdtImpS'](0) > m['wdtImpN'](0) or m['wdtImpV'](0) > m['wdtImpS'](0) or m['wdtImpS'](1) > m['wdtImpN'](1) or m['wdtImpV'](1) > m['wdtImpS'](1) or m['wdtImpS'](2) > m['wdtImpN'](2) or m['wdtImpV'](2) > m['wdtImpS'](2) or m['wdtImpS'](3) > m['wdtImpN'](3) or m['wdtImpV'](3) > m['wdtImpS'](3) or m['wdtImpS'](4) > m['wdtImpN'](4) or m['wdtImpV'](4) > m['wdtImpS'](4) or m['wdtImpS'](5) > m['wdtImpN'](5) or m['wdtImpV'](5) > m['wdtImpS'](5)",
+   "note": "every Table 18 row: the impact threshold shrinks with slipperiness (non-slippery >= slightly slippery >= slippery)"
+  }
+ ],
+ "header_sections": {
+  "the tumbling prose rules": [
+   {
+    "kind": "const",
+    "name": "wdtRowCount"
+   },
+   {
+    "kind": "const",
+    "name": "wdtAbrasionPerFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wdtTumbleIsSlipOrRelease"
+   },
+   {
+    "kind": "bool",
+    "name": "wdtFirstNumberFreeFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "wdtSecondNumberDie"
+   },
+   {
+    "kind": "bool",
+    "name": "wdtThirdNumberImpactDist"
+   },
+   {
+    "kind": "bool",
+    "name": "wdtImpactPerIncrement"
+   },
+   {
+    "kind": "bool",
+    "name": "wdtImpactWorstCase"
+   },
+   {
+    "kind": "bool",
+    "name": "wdtGradualStopDecrease"
+   },
+   {
+    "kind": "bool",
+    "name": "wdtFlatTumbleExtraAbrasion"
+   }
+  ],
+  "Table 18: the tumbling damage cells": [
+   {
+    "kind": "const",
+    "name": "wdtGentleRowBase"
+   },
+   {
+    "kind": "const",
+    "name": "wdtModerateRowBase"
+   },
+   {
+    "kind": "table",
+    "name": "Table 18: the damage from tumbling down a moderate or gentle slope"
+   }
+  ],
+  "the tumble rates": [
+   {
+    "kind": "const",
+    "name": "wdtGentleRateMin"
+   },
+   {
+    "kind": "const",
+    "name": "wdtGentleRateMax"
+   },
+   {
+    "kind": "const",
+    "name": "wdtModerateRateMin"
+   },
+   {
+    "kind": "const",
+    "name": "wdtModerateRateMax"
+   },
+   {
+    "kind": "bool",
+    "name": "wdtRatesSlowestNonslippery"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **Table 18: damage from tumbling down moderate or gentle slope** (p. 36)",
+   "to": "- [x] **Table 18: damage from tumbling down moderate or gentle slope** (p. 36) - R438",
+   "note": "Table 18"
+  },
+  {
+   "from": "Post-state at R437: 39 closed, 147 open (the R437 round pins the damage from falling - Table 17 (the six fall-distance bands x the cumulative damage dice) with the falling-vs-tumbling distinction and the fall rates; the next rounds continue the section - the tumbling damage Table 18, the stopping of a fall Table 19).",
+   "to": "Post-state at R438: 40 closed, 146 open (the R438 round pins the tumbling damage - Table 18 (the six slope rows x the three condition cells of abrasion-free feet, die and impact distance) with the entry format and the tumble rates; the next rounds continue the section - the stopping of a fall Table 19, the rope rules).",
+   "note": "post-state"
+  }
+ ],
+ "gap_census": {
+  "closed": 40,
+  "open": 146
+ },
+ "include_comment": "the WSG tumbling damage",
+ "include_after": "#include \"rules/wsgfall.h\"  // R437: the WSG damage from falling",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R437 landed 2026-10-14: commit 90e0813 (census 362, pushed",
+ "prev_record": [
+  "- R437 landed 2026-10-14: commit 90e0813 (census 362, pushed",
+  "  9d34030..90e0813, preflight GREEN on the FIRST run - the seventh clean",
+  "  first-try land in a row), the WSG DAMAGE FROM FALLING, printed pp. 35-36 -",
+  "  Table 17 (the six fall-distance bands x the band-minimum distances and the",
+  "  cumulative damage dice: 10 feet 1d6, 11-20 3d6, 21-30 6d6, 31-40 10d6, 41-50",
+  "  15d6, 51-or-more 20d6 the maximum) with the falling-vs-tumbling prose",
+  "  (falling = a vertical drop, much more liable to cause serious injury or",
+  "  death; tumbling down a moderate or gentle slope is Table 18, the next",
+  "  round), the 1d6-cumulative-per-10-feet basis, the figures applying to free",
+  "  fall AND tumbling down a severe slope, the smooth/slippery abrasion note and",
+  "  the unimpeded rates (1000 feet per round free fall, 600-800 feet per round",
+  "  down a severe slope). rules/wsgfall.h NEW (14 inlines, prefix wdf, checked",
+  "  free). Ground truth three-way verified (the 11-20 feet dice cell MISSING",
+  "  from the djvu; two eye-reads settled 3d6, matching the user copy). Gap",
+  "  37/149 -> 39/147; census 361 -> 362. rverify GREEN on the FIRST build: 24",
+  "  mutants, 0 missed. Spec md5s: 0961b993 authored / 8f86aadb +nl. GITHUB",
+  "  VERIFIED at the pinned full sha 90e0813cad2980016f7ffc306c08fc986516e18c:",
+  "  census 362, the R437 audit present once, wsgfall.h 14 inlines, the eye-read",
+  "  cell landed, the gap 39 closed / 147 open, the R436 seed record in place.",
+  "  Next after landing: the tumbling damage - Table 18 (p. 36)."
+ ]
+}

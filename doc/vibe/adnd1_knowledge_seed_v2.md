@@ -3959,6 +3959,30 @@ R172 were already dropped at the R171b/R172 era cut; git
   with the md5 pair hit exactly. The next rounds open the food and water
   chapter: going without food, Table 28 and the water requirements (printed
   pp. 50-53).
+- R462 landed 2026-10-15: commit 56ac395 (census 387, pushed 1745169..56ac395,
+preflight GREEN first run, the double-run 12/0 then 0/12), the WSG FOOD AND
+WATER chapter opener, printed pp. 50-53 - going without food (the Table 28
+4/5/6/7/8/10-day ladder, the 12-hour checks with the cumulative +1 then the +2
+weakened shift, the weakened/distressed/incapacitated ladder with the
+-1-per-day worsening, the two-step eating recovery, the -4 floor, the two-day
+two-meal incapacitation recovery), going without water (the 3-day base, the
+cumulative modifier set with the one-day floor, the total-deprivation
+immediate incapacitation), the effects on animals (halved move and carry, the
+3-turn hard-work incap, the 1.5x tolerance multiple, the 1-turn and 1-day
+death rules, the 13-24-hour 1d12+12 recovery), the minimum daily requirement
+of food (the 1-2 lb human ration with the 3/4 elf and 1/2 small-race
+fractions, the pack arithmetic, the 1:2 meat-vegetable ratio, the two-meal
+cadence, the half-ration cheat) and of water (the Table 29 4x4 pint grid, the
+1/4 elf and 1/3 demihuman reductions, the 1/4-1/3 high-water-food credit, the
+1/2/4-hour activity thresholds, the 7-gallon cubic foot, the waterskin and
+encumbrance arithmetic). rules/wsgfood.h NEW (101 inlines: 76 consts + 17
+bools + 2 chains + 6 table columns, prefix wnf, checked free in all three
+TUs). Ground truth three-way (the Drive PDF OCR vs djvu vs the IIIF eye-reads;
+both text layers garble Table 28 - the eye-read settled the ladder, confirmed
+by the book example). Gap 65/121 -> 72/114; census 386 -> 387. rverify GREEN:
+124 mutants, 0 missed; the Termux md5 hit the +nl pair value exactly. Next:
+R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
+53-54).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
