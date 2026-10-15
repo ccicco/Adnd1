@@ -1,0 +1,143 @@
+FLOODS AND FLASH FLOODS
+
+drown shortly thereafter. If a character is hit by the wave after it
+has traveled some distance inland and lost a lot of its height and
+velocity, he can probably survive by ‘‘going with the flow"’ as long
+as he has proficiency in swimming. A character who cannot
+swim, or who cannot stay afloat, is in mortal danger even if he is
+hit by the wave at the very end of its inland incursion. The particu-
+lar circumstances will dictate what happens in any situation, and
+it is up to the Dungeon Master to exercise his judgment when
+such judgment is called for.
+
+FLOODS AND FLASH FLOODS
+
+A flood is the result of the two most basic properties of water (or
+any other liquid): It flows from a place of higher elevation to a
+place of lower elevation, and it spreads out to cover the bottom
+and sides of whatever it is contained in. When a volume of water
+is too large to be held within a container, the overflow does just
+that — it flows over and upon the area adjacent to the container.
+
+A flood can occur after a period of heavy rain in a low-lying area
+or an area that is lower in elevation than the land around it. In tem-
+perate or colder climates during late winter and early spring, a
+flood can also resuit when the temperature is unusually high for
+several days in a row. The heat wave causes the snow cover to
+melt rapidly, producing water at a rate faster than the ground’s
+ability to absorb it. Floods of this sort can produce enormous
+amounts of overflowing water, as the accumulated solid precipi-
+tation of the winter months is abruptly converted to liquid — and
+the flood is intensified if the ground under the snow cover is fro-
+zen or partially frozen, since this further reduces its ability to soak
+up the water.
+
+Usually, flooding will only occur in an area adjacent to a river or
+a lake that is fed by rivers. The excess rainfall or melted snow
+flows from higher elevation to lower elevation, eventually finding
+its way into a river or lake (which is as low as it can go). But that
+container isn’t large enough to hold the extra volume, so the wa-
+ter ends up spilling out over the river bank or lake shore and inun-
+dating an area of land that is not normally underwater.
+
+A flash flood occurs for the same reasons that a regular flood
+does, but its nature and its effects are quite different. A flash flood
+is a fleeting (and fleet) phenomenon; a mass of water in a flash
+flood may pass through an area in minutes, in contrast to a regu-
+lar flood that builds slowly and usually inundates an area for sev-
+eral days before beginning to recede.
+
+Flash floods occur most often in mountainous or hilly terrain af-
+ter a heavy rain, in locations where a natural body of water (a river
+or a lake) is not present. The rainfall runs down slopes and accu-
+mulates in low spots, then continues to seek even lower eleva-
+tion. As the water moves lower and lower on its journey down a
+mountain or hillside, it increases volume and picks up speed. A
+flash flood that began as a trickle at an elevation of 10,000 feet
+can be a rushing torrent by the time it descends to 5,000 feet —
+thousands of gallons of water moving forward and down at a
+speed of 30 to 50 miles per hour. When a tidal wave (see the pre-
+ceding section) rushes inland, it produces effects very similar to
+those of a flash flood.
+
+The only way to avoid a flood is to move away from the affected
+area before it becomes inundated. It's not difficult to avoid a nor-
+mal flood, since the water level in the flooded area doesn't in-
+crease abruptly. But it's a bad idea to travel through or make
+camp in a mountain pass or a gully if a storm is brewing or if it has
+rained within the last two or three hours; a flash flood can come
+rushing through such an area with very little warning to charac-
+ters or creatures in its path.
+
+Common sense and circumstances will dictate what happens
+to a character caught in a flash flood. If he has proficiency in
+swimming, he can probably avoid drowning, but he may still suf-
+
+fer damage from being slammed against rocks, trees, etc., by the
+onrushing water. A character without proficiency in swimming
+can survive by treading water or holding his breath, but will need
+to find a place of refuge before he tires. If the path of the water
+carries a character past outcroppings and other protrusions, he
+may be able to grab something and hold on until the flood moves
+past that location. If such protrusions are available, a successful
+Strength Check indicates that the character has managed to
+latch on to something. Failure on this check indicates that the
+character has been battered against the protrusion he was trying
+to grab, and he will suffer 1d3 to 1d6 points of damage (depend-
+ing on the velocity of the water and the nature of the protrusion). If
+this initial Strength Check succeeds, the character must make
+another Strength Check every two rounds for as long as the water
+continues to rush past; failure indicates that the force of the water
+has pulled his grasp loose, and he will again be carried down-
+stream until the velocity of the flood abates or until he is able to
+grab another protrusion. With reference to any particular point
+along its path, a flash flood will last for 10-15 rounds (d6 +9). After
+the flood passes, any level area it has moved through will still be
+covered to some depth by gently flowing water for the next 3d8
+hours.
+
+AVALANCHES, ROCKFALLS,
+AND MUDSLIDES
+
+Whenever a mass of solid matter falls or moves down a slope,
+the phenomenon is described by one of these three terms. Tech-
+nically, an avalanche can contain any solid material, or a mixture
+of several types (snow, ice, rocks, earth); however, in these rules,
+the term refers specifically to a mass of snow or ice that cascades
+down a mountainside or over a precipice. A rockfall occurs when
+a mass of earth or rocks, or both, is in motion down a slope or
+over a cliff. In a mudslide, the moving material is a mixture of
+earth and water that flows down a slope at a relatively slow
+speed.
+
+An avalanche can occur on a moderate or severe slope in any
+mountainous region where the terrain has a heavy snow cover
+(12 inches or more). The most favorable conditions are present
+during the daytime when the sun is shining and the temperature
+is abnormally warm or at least higher than average. The heat par-
+tially melts the snow, which becomes heavier because of its
+greater water content. |f some areas of bare rock are present in
+the vicinity of a large accumulation of snow, the chance of an ava-
+lanche is even greater because the heat of the sun and the air
+warms the rock. This heat radiates through the rock beneath the
+snow as well, giving it a higher temperature than the snow on top
+of it and further weakening the bond that keeps the snow at-
+tached to the surface it is covering. When the heat differential
+and the weight of the snow both reach sufficient proportions, the
+mass of snow will come loose from the slope and begin its trip
+down the mountainside.
+
+An avalanche increases in volume and speed as it falls, be-
+cause more snow is pulled loose by the weight and friction of the
+mass that is already falling. There is no good place to be in the
+path of an avalanche, but a character's chance of survival is con-
+siderably smaller if he is standing at the base of a slope than if he
+is located some distance up the slope — assuming that he is able
+to avoid being carried down the slope by the force of the falling
+snow.
+
+A character caught in an avalanche will take anywhere from
+2d10 to 3d20 points of damage from impact with the falling snow
+and debris that is carried along with it. The damage dice are de-
+termined by the Dungeon Master, depending on the size of the
+avalanche and the character’s location when he is hit by it. This
