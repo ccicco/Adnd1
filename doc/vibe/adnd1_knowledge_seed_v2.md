@@ -4852,6 +4852,58 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   place (61 lines, directly before the maintenance anchor).
   Next: R475 - precautions and perils (p. 66) with Table 39
   (availability of fuel), continuing the camping arc.
+- R475 LANDED 2026-10-15: commit 86ebdd8 (census 400, pushed
+  e73bea2..86ebdd8), the WSG PRECAUTIONS AND PERILS slice with
+  TABLE 39, printed p. 66 - the fifth camping-arc round and
+  the fifth TABLE ROUND of the arc, riding the Table 38 column
+  semantics seam unpinned by R474: the start discipline
+  (2d20 rounds unproficient with tools, dry fuel and breeze of
+  no more than 15 mph; 3d20 in wind over 15 mph or wet fuel; no
+  start without tools unproficient; no start in wind over
+  30 mph without magic), the refuel semantics (a fire not
+  refueled in time shrinks to the next lower size; a small
+  fire never goes out within three turns but provides no
+  warmth), the wind resistance semantics (unprotected fires
+  only; falter and flicker with no warmth over the rated
+  velocity), the capacity semantics (six men at 10 feet,
+  doubling to 12 at 20; clustering diminishes by one-third,
+  one-half and two-thirds at five, three and one feet: 4/3/2
+  characters), the visibility semantics (yards in moonlight,
+  one-third off in twilight, one-half off in daylight; the
+  540-yard large-fire flame), the warmth semantics (the
+  80-degree safe distance, five segments to move, 3 feet from
+  a medium fire and 5 from a large, the 10-mph calm
+  assumption, windward minus 5 degrees per 10 mph, leeward
+  plus 10 feet or one increment whichever is less, and the
+  book 30-mph example: 20 degrees at 20 feet windward instead
+  of 30, 10 feet leeward instead of 3), Table 39 in two grids
+  (temperate by season: desert 20/20/20/20, forest
+  70/100/100/100, hills 40/70/70/60, plains 50/70/80/70,
+  swamp 40/30/30/40; climate modifiers: desert
+  -20/-10/-10/-20, forest -100/-30/+30/+30, hills
+  -30/-20/+10/+20, mountains -40/-30/+20/+30, plains
+  -60/-40/+20/+20, swamp -40/-20/+10/+20), and the start of
+  precautions and perils (no safe fire, no fire on
+  combustibles, 1-3 turns to clear, sparks 100 feet in a
+  strong wind). 81 inlines (43 consts, 30 bools, 8 grid
+  columns) pin as rules/wsgfuel.h; census 399 -> 400; gap
+  99/87 -> 101/85 (precautions and perils p. 66 + Table 39
+  p. 66 boxes; next: uncontrollable fires p. 67). md5 pair:
+  authored no-nl f4470756732fb40eacc929649e1d0fcb, as-built
+  bd3e3f41d625b0cbb465bbf3e1efcba3; verified at raw sha on
+  GitHub. GROUND-TRUTH LESSON: the hills rows of BOTH Table 39
+  grids failed both text readers (the pdf text layer DROPPED
+  them; tesseract garbled them) and were settled by TWO
+  independent vision reads of the png that AGREED EXACTLY -
+  this REFINES the R474 lesson: a single vision read is
+  unreliable, but two independent agreeing vision reads
+  settle a contested cell, especially when plausible against
+  neighboring rows. ENGINE LESSON: the one-bad audit-mirror
+  failure was a sense-inverted cross-const check - the
+  leeward example increase is 7 feet (3 -> 10, the
+  whichever-is-less one-increment path), not the full 10-foot
+  step; cross-const arithmetic checks must respect
+  whichever/minimum semantics before pinning equality.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

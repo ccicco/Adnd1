@@ -99,7 +99,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Good sleep vs bad sleep (p. 65) - R474: the eight rest-quality penalties with the plate-armor waivers, the no-rest threshold, the extreme-weather bar, the longer-sleep compensation and the armor donning and doffing discipline pin as rules/wsgfire.h
   - [x] Fire: friend and foe (p. 65) - R474: the campfire function prose and the three fire sizes with the Table 38 grids (fuel, start, refuel, wind resistance, capacity, visibility and the warmth-at-distance ladder) pin as rules/wsgfire.h
   - [x] Precautions and perils (p. 66) - R475: the no-safe-fire warning with the untended conflagration and the first cardinal rule (no fire on combustibles, the 1-3-turn clearing, the 100-foot spark carry) pin as rules/wsgfuel.h
-  - [ ] Uncontrollable fires (p. 67)
+  - [x] Uncontrollable fires (p. 67) - R476: the four fire-discipline rules with the spark carry and catch chance, the wild-fire growth ladder with the six-turn uncontrollable bar, the extinguishing times with the water and combustible semantics, and the spread prose pin as rules/wsgblaze.h
   - [ ] Damage from fire (p. 68)
 - [ ] **Medicine and first aid** (pp. 69-71)
   - [ ] Availability of medicinal plants (p. 69)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R475: 101 closed, 85 open (the R475 round continues the camping arc - the precautions and perils rules with the Table 39 fuel availability grids pin as rules/wsgfuel.h; the next round continues - uncontrollable fires (p. 67)).
+Post-state at R476: 102 closed, 84 open (the R476 round continues the camping arc - the uncontrollable fires rules with the fire discipline and extinguishing semantics pin as rules/wsgblaze.h; the next round continues - damage from fire (p. 68)).
