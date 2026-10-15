@@ -87,7 +87,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] The hunting proficiency (p. 57) - R465: the one-hit size M kill, the two-hit size L kill, the 50% distance kill of a wounded size M, the single-hit wounded size L, the Proficiency Check before the 1d6 roll and the missile-weapon requirement pin as rules/wsgfish.h
   - [x] Fishing (p. 57) - R465: the one-hour hook-and-line base, the net +50%, the zero-or-lower gate, the proficiency +2 in fair or good spots, the cumulative group and hour penalties, the fished-out rule and the spot-quality guidelines pin as rules/wsgfish.h
   - [x] Consuming and carrying food (p. 58) - R466: the ration ladder (one fish half a ration, size S a full ration, size M feeds three, size L six rations, twenty rations for a full day of butchering), the druid disapproval, the carry rule and the taint and spoil mechanics pin as rules/wsgcarry.h
-  - [ ] Finding water (p. 58)
+  - [x] Finding water (p. 58) - R467: the two-checks-per-day rule with the auto-fail gate, the snow-and-ice exception with the ice taint rule, the seacoast dig mechanics and the water-quality guidelines pin as rules/wsgwater.h
   - [ ] Where water is found (p. 59)
   - [ ] Water in the desert (p. 60)
   - [ ] Purifying water (p. 60)
@@ -189,7 +189,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 31: hunting success** (p. 55) - R464: the 33-row terrain-by-season grid over the five climate regions, all 132 cells pixel-verified, with the p. 56 game-encounter list pin as rules/wsghunt.h
 - [x] **Table 32: fishing success** (p. 57) - R465: the spot-quality by time-of-day dice grid, all 18 cells pixel-verified with the Good-Night cell proven by the book own A/B/C example, pin as rules/wsgfish.h
 - [x] **Table 33: chance of food spoilage** (p. 58) - R466: the food-type by temperature-band days/pct grid, all 40 cells text-layer verified, pin as rules/wsgcarry.h
-- [ ] **Table 34: chance of finding water** (p. 59)
+- [x] **Table 34: chance of finding water** (p. 59) - R467: the climate x terrain x season grid with the find%/taint% pairs, all 224 values rebuilt from the tesseract bounding-box geometry, pin as rules/wsgwater.h
 - [ ] **Table 35: chance of finding natural shelter** (p. 61)
 - [ ] **Table 36: portable shelter characteristics** (p. 62)
 - [ ] **Table 37: effects of lack of sleep** (p. 64)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R466: 84 closed, 102 open (the R466 round continues the chapter - consuming and carrying food and Table 33 pin as rules/wsgcarry.h; the next round continues - finding water (p. 58) and its Table 34).
+Post-state at R467: 86 closed, 100 open (the R467 round continues the chapter - finding water and Table 34 pin as rules/wsgwater.h; the next round continues - where water is found (p. 59) and the water table mechanics, then water in the desert (p. 60) and purifying water (p. 60)).

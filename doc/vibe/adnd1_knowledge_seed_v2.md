@@ -4129,6 +4129,64 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   fish half ration, size S a full ration, size M feeds three, size L six
   rations, the druid disapproval, the encumbrance and spoilage factors) and
   Table 33: chance of food spoilage; then finding water.
+- R466 LANDED 2026-10-15: commit e04918e (census 391, pushed
+  27481c0..e04918e), the WSG CONSUMING AND CARRYING FOOD slice, printed p. 58
+  - the ration ladder (one fish half a ration, one size S animal a full
+  ration, one size M animal feeding three characters for a day, one size L
+  animal six rations, at least twenty full rations from a size L carcass with
+  a full day of expert butchering), the druid strong disapproval of
+  intentional overkill with the feed-three excuse, the carry rule (excess need
+  not be left behind; encumbrance is a DM ruling, spoilage the other factor),
+  the gluttony/indigestion not-modeled note and Table 33: chance of food
+  spoilage (the 4x10 grid: max days before the first check then the pct chance
+  per subsequent day, per food type per effective-temperature band - green
+  plants dash/6-20/4-30/2-40/1-50, fruits or vegetables
+  dash/5-30/3-40/2-50/1-60, cooked meat dash/3-20/2-50/1-60/1-80, raw meat
+  dash/2-50/1-70/1-80/1-90), with the mechanics: the warmest category applying
+  at least one hour is the effective temperature, a category once used
+  ratchets to the same or warmer for all later checks, continually frozen food
+  keeps indefinitely, thawed food spoils from the thaw day (counted as day 1)
+  even if promptly re-frozen; one failed check taints (secret Wisdom Check to
+  notice, eatable anyway, CON check +4 to avoid nausea and cramps within
+  1d10+10 minutes - the 11-20 onset window, -1 on attacks and
+  dodging/maneuvering saves for 12 hours, then an unmodified CON check per
+  hour to recover, tainted food still a full ration); a second failed check
+  obviously spoils (CON check +10, penalties at least 24 hours if stricken,
+  else a 50% chance of the full or half ration value, otherwise no nourishment
+  at all). rules/wsgcarry.h NEW (47 inlines: 20 consts + 17 bools + 10 table
+  columns, prefix wcc - wfs was taken by R465; checked free in all three TUs).
+  GROUND TRUTH - the table rounds hit a new reader: the printed p. 58 image
+  shows scanner DOUBLE-IMAGING (a ghost copy about 12 pixels below the true
+  print), which is why the ASCII/pixel reads were ambiguous and the vision
+  calls garbage; the pdfy EMBEDDED OCR TEXT LAYER (decompress the FlateDecode
+  content stream of the page object and regex the Tm/Td/Tj tokens) is a
+  high-quality positioned text source that settles the table WITHOUT pixels -
+  use it (with the djvu word layer as the second reader and the arithmetic
+  ladders as the tiebreaker) before fighting double-imaged pixels again. Both
+  layers agree on every Table 33 value cell EXCEPT green-plants 31-50 (pdfy
+  6/20 vs a djvu garble; 6/20 fits the days ladder 6,4,2,1 and the pct ladder
+  20,30,40,50). The below-30 column is a dash in every row (both layers garble
+  the dash glyph; the book explanation sentence - spoilage will not occur as
+  long as the effective temperature remains within this range - confirms it);
+  the dash is encoded as days=0/pct=0 with the wccDashNoSpoilage bool carrying
+  the semantics. Note: the byte-level open_url fetch TRUNCATES around 24-32KB,
+  so raw-sha verification of late-file items needs github_app
+  get_file_contents (the resource blob) instead - regtest.cpp is still too big
+  for it, but the gap report and the seed fit. Gap 82/104 -> 84/102 (TWO box
+  flips + the post-state line - the handoff-derived numbers matched the
+  computed census exactly this time); census 390 -> 391. rverify FULL GREEN
+  pre-landing at base 27481c0 (double-run 7/0 then 0/7, 77 mutants, 0 missed).
+  Spec md5s: 07dadcaf authored / 9857410b +nl - the Termux read the +nl value
+  exactly. LANDED CLEAN on the first ritual run (double-run 7/0 then 0/7,
+  preflight GREEN first try, R466 audit bad 0, AUDIT CENSUS: 391, 5 files /
+  1326 insertions; the user ran bn separately by choice, it stays out of the
+  ritual per R372). VERIFIED at the raw sha e04918e: the commit message and
+  file list (regtest +253, the header 400, the spec 619, the gap 3/3, the seed
+  +51), the include after wsgfish.h at line 176, wsgcarry.h 47 inlines with
+  the correct grid, the two flips with the R466 text, the post-state 84/102,
+  the finding-water boxes NOT flipped, the R465 seed record in place. Next:
+  R467 - finding water (p. 58) and its Table 34; then where water is found (p.
+  59) and water in the desert (p. 60).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

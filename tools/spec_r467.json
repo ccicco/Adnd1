@@ -1,0 +1,708 @@
+{
+ "round": 467,
+ "title": "the WSG finding water and Table 34 slice - the water-finding checks and Table 34: chance of finding water, printed p. 58 with the mechanics and the grid on p. 59",
+ "prefix": "wfw",
+ "header_file": "rules/wsgwater.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 391,
+ "inline_count": 27,
+ "audit_label": "R467 WSG finding water pin audit",
+ "audit_comment": "The Table 34 grid value by value (the find% and the taint% per climate band per terrain per season, including the constant arctic rows and the human-verified tropical swamp spring cell), the two-checks-per-day rule with the auto-fail gate, the obvious-water exceptions (the snow and ice rules, the seacoast dig with its tide-line and depth gates) and the water-quality guidelines - every cell, const and bool verified against the model.",
+ "banner": {
+  "title": "R467: the WSG FINDING WATER slice - the water-finding checks (two per day, extra searches automatically fail, the table not used where water is obviously and readily available), the snow-and-ice exception (water for the taking if the party can melt it, the figures assume no snow or ice cover, ice at 30 degrees or lower with the taint read from the table, freshly fallen snow the purest water in nature), the nearby-fresh-water and seacoast notes (the dig-to-the-water-table 100% above the high tide line and no more than two feet deep, the deeper the saltier) and Table 34: the chance of finding water grid by climate, terrain and season, printed p. 58 with the grid on p. 59.",
+  "provenance": "Ground truth four-way, a NEW WORKFLOW (the user decision this round): the user ran tesseract ON TERMUX over the pdfimages-extracted scan of printed p. 59 (poppler pdfimages -f 60, TSV output with word bounding boxes), and the grid was REBUILT FROM GEOMETRY - the terrain-code column at x 130-165, the season cells at x 190/285/385/480, one row per 20 pixels of y - instead of trusting any reader reading order. The tesseract reads cross-check against the pdfy embedded OCR layer and the djvu word layer: all three agree on every one of the 224 values. The slash-loss cells (tesseract 570, 5170, 60740, 30730, 70170) all resolve to the obvious xx/yy splits confirmed by the other two readers. The low-confidence terrain labels (subarctic E, temperate =%) resolve to F (forest) - vision confirmed, and forest is the missing terrain in both bands. The ONE contested value: Tropical swamp Spring reads 90/75 in BOTH text layers (tesseract conf 40, djvu 90/75, pdfy 90/75) but 90/80 in two vision reads; the USER READ THE PHYSICAL PAGE and settled it: 90/75 - the only taint value in the whole table not ending in 0, pinned as printed. The arctic rows are constant across all four seasons; the swamp rows carry the highest find chances; the desert rows the lowest. The seacoast and snow mechanics come from the same tesseract pass (the p59_full --psm 4 text) and the printed p. 58 intro from the pdfy layer, cross-checked against the user p58 tesseract run. The where-water-is-found section (the DM standing-water reduction and the water-table definition) stays in the p. 59 gap - NOT flipped this round.",
+  "sentinel": "All 224 Table 34 values pinned (the find% and the taint% per climate per terrain per season); the water-finding mechanics are audit examples, including the human-verified Tropical swamp 90/75 cell and the arctic constant rows."
+ },
+ "consts": [
+  {
+   "name": "wfwRowCount",
+   "value": 28,
+   "comment": "the Table 34 row count: five climate bands x the terrain rows (arctic has no forest row; the other four climates run D/F/H/M/P/Sw)"
+  },
+  {
+   "name": "wfwChecksPerDay",
+   "value": 2,
+   "comment": "a single character or a group traveling together can make two water-finding checks per day"
+  },
+  {
+   "name": "wfwSeacoastDigPct",
+   "value": 100,
+   "comment": "in any seacoast area the chance of finding drinkable water by digging down to the water table is 100%"
+  },
+  {
+   "name": "wfwSeacoastDigMaxFt",
+   "value": 2,
+   "comment": "the seacoast dig hole must be no more than two feet deep for the 100% chance to hold"
+  },
+  {
+   "name": "wfwIceTempGate",
+   "value": 30,
+   "comment": "if the actual temperature is 30 degrees or lower, any water found in an area with no snow or ice cover will be in the form of ice"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wfwExtraSearchAutoFail",
+   "value": true,
+   "comment": "searches conducted more often than two per day automatically fail"
+  },
+  {
+   "name": "wfwNotUsedWhenObvious",
+   "value": true,
+   "comment": "the table should not be used in any circumstances where water is obviously and readily available"
+  },
+  {
+   "name": "wfwNearbyFreshWaterTaintCheck",
+   "value": true,
+   "comment": "characters on the bank or shore of fresh water still use the table for the taint chance unless the water is known pure and drinkable"
+  },
+  {
+   "name": "wfwSeaWaterDehydrates",
+   "value": true,
+   "comment": "drinking sea water actually dehydrates the character: the salt increases the body need for water, in large quantities or over a long period"
+  },
+  {
+   "name": "wfwSeacoastDigAboveTide",
+   "value": true,
+   "comment": "the seacoast dig hole must be dug above the high tide line for the 100% chance to hold"
+  },
+  {
+   "name": "wfwDigDeeperSaltier",
+   "value": true,
+   "comment": "the deeper one digs toward the seacoast water table, the saltier the water; digging too deep in one hole recovers water as undrinkable as the sea, though the loose soil filters out most of the salt near the surface"
+  },
+  {
+   "name": "wfwRiverPurerUpstream",
+   "value": true,
+   "comment": "river water is more likely pure closer to the source than downstream"
+  },
+  {
+   "name": "wfwLakePurerAtInflow",
+   "value": true,
+   "comment": "lake water is more likely pure where a river flows in than along the opposite shoreline where the water stagnates"
+  },
+  {
+   "name": "wfwFastFlowPurer",
+   "value": true,
+   "comment": "fast-flowing water is generally more pure than standing water"
+  },
+  {
+   "name": "wfwGroundWaterPurer",
+   "value": true,
+   "comment": "ground water, found by digging beneath the surface, is usually more pure than water found above the ground"
+  },
+  {
+   "name": "wfwSnowIceCoverFreeWater",
+   "value": true,
+   "comment": "with snow or ice cover the water is there for the taking as long as characters are willing and able to melt the snow or ice"
+  },
+  {
+   "name": "wfwTableAssumesNoSnowIce",
+   "value": true,
+   "comment": "the Table 34 figures assume that no snow or ice cover exists"
+  },
+  {
+   "name": "wfwIceTaintPerTable",
+   "value": true,
+   "comment": "ice is no more free of foreign substances than the water it formed from: the percentage chance of tainted ice is taken from the table as if water had been found"
+  },
+  {
+   "name": "wfwFreshSnowPurest",
+   "value": true,
+   "comment": "freshly fallen snow is the purest form of water available in nature; melted snow satisfies the water need as long as enough snow is available - a mere dusting provides little liquid"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "wfwFindWater",
+   "tag": "34",
+   "count": "wfwRowCount",
+   "cols": [
+    "wfwWinFind",
+    "wfwWinTaint",
+    "wfwSprFind",
+    "wfwSprTaint",
+    "wfwSumFind",
+    "wfwSumTaint",
+    "wfwAutFind",
+    "wfwAutTaint"
+   ],
+   "col_default": 0,
+   "col_comments": [
+    "the Table 34 winter find% (left of the slash)",
+    "the Table 34 winter taint% (right of the slash)",
+    "the Table 34 spring find%",
+    "the Table 34 spring taint%",
+    "the Table 34 summer find%",
+    "the Table 34 summer taint%",
+    "the Table 34 autumn find%",
+    "the Table 34 autumn taint%"
+   ],
+   "row_comments": [
+    "the arctic desert row",
+    "the arctic hills row",
+    "the arctic mountains row",
+    "the arctic plains row",
+    "the subarctic desert row",
+    "the subarctic forest row",
+    "the subarctic hills row",
+    "the subarctic mountains row",
+    "the subarctic plains row",
+    "the subarctic swamp row",
+    "the temperate desert row",
+    "the temperate forest row",
+    "the temperate hills row",
+    "the temperate mountains row",
+    "the temperate plains row",
+    "the temperate swamp row",
+    "the subtropical desert row",
+    "the subtropical forest row",
+    "the subtropical hills row",
+    "the subtropical mountains row",
+    "the subtropical plains row",
+    "the subtropical swamp row",
+    "the tropical desert row",
+    "the tropical forest row",
+    "the tropical hills row",
+    "the tropical mountains row",
+    "the tropical plains row",
+    "the tropical swamp row"
+   ],
+   "data": [
+    [
+     5,
+     50,
+     5,
+     50,
+     5,
+     50,
+     5,
+     50
+    ],
+    [
+     10,
+     50,
+     10,
+     50,
+     10,
+     50,
+     10,
+     50
+    ],
+    [
+     5,
+     30,
+     5,
+     30,
+     5,
+     30,
+     5,
+     30
+    ],
+    [
+     10,
+     50,
+     10,
+     50,
+     10,
+     50,
+     10,
+     50
+    ],
+    [
+     5,
+     60,
+     10,
+     60,
+     10,
+     60,
+     5,
+     60
+    ],
+    [
+     10,
+     40,
+     20,
+     40,
+     20,
+     50,
+     10,
+     40
+    ],
+    [
+     5,
+     40,
+     10,
+     40,
+     15,
+     50,
+     10,
+     40
+    ],
+    [
+     5,
+     30,
+     20,
+     30,
+     15,
+     30,
+     10,
+     30
+    ],
+    [
+     10,
+     50,
+     20,
+     50,
+     20,
+     50,
+     15,
+     50
+    ],
+    [
+     40,
+     60,
+     60,
+     60,
+     50,
+     60,
+     50,
+     60
+    ],
+    [
+     5,
+     70,
+     5,
+     70,
+     5,
+     70,
+     5,
+     80
+    ],
+    [
+     30,
+     30,
+     40,
+     30,
+     30,
+     30,
+     30,
+     30
+    ],
+    [
+     30,
+     40,
+     40,
+     40,
+     40,
+     50,
+     30,
+     40
+    ],
+    [
+     20,
+     30,
+     20,
+     30,
+     15,
+     30,
+     20,
+     30
+    ],
+    [
+     20,
+     50,
+     40,
+     50,
+     40,
+     50,
+     30,
+     50
+    ],
+    [
+     60,
+     70,
+     70,
+     70,
+     80,
+     80,
+     60,
+     70
+    ],
+    [
+     5,
+     70,
+     5,
+     70,
+     5,
+     80,
+     5,
+     80
+    ],
+    [
+     60,
+     40,
+     70,
+     50,
+     70,
+     60,
+     60,
+     50
+    ],
+    [
+     30,
+     40,
+     50,
+     40,
+     50,
+     40,
+     40,
+     40
+    ],
+    [
+     40,
+     30,
+     60,
+     40,
+     50,
+     50,
+     40,
+     40
+    ],
+    [
+     20,
+     50,
+     40,
+     40,
+     30,
+     40,
+     20,
+     50
+    ],
+    [
+     70,
+     70,
+     80,
+     70,
+     90,
+     80,
+     70,
+     80
+    ],
+    [
+     5,
+     70,
+     10,
+     70,
+     5,
+     80,
+     5,
+     80
+    ],
+    [
+     80,
+     50,
+     80,
+     60,
+     80,
+     70,
+     80,
+     60
+    ],
+    [
+     15,
+     40,
+     20,
+     40,
+     30,
+     50,
+     15,
+     40
+    ],
+    [
+     40,
+     30,
+     70,
+     30,
+     60,
+     40,
+     70,
+     40
+    ],
+    [
+     20,
+     50,
+     50,
+     50,
+     60,
+     60,
+     50,
+     50
+    ],
+    [
+     70,
+     70,
+     90,
+     75,
+     90,
+     80,
+     80,
+     80
+    ]
+   ],
+   "audit_comment": "the Table 34 chance-of-finding-water grid (the find% and the taint% per climate band per terrain per season; arctic desert/hills/mountains/plains, subarctic through tropical desert/forest/hills/mountains/plains/swamp)"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the arctic desert row: 5/50 in all four seasons (the constant arctic rows)",
+   "expr": "m['wfwWinFind'](0) != 5 or m['wfwWinTaint'](0) != 50 or m['wfwSprFind'](0) != 5 or m['wfwSprTaint'](0) != 50 or m['wfwSumFind'](0) != 5 or m['wfwSumTaint'](0) != 50 or m['wfwAutFind'](0) != 5 or m['wfwAutTaint'](0) != 50"
+  },
+  {
+   "note": "the arctic hills and plains rows: 10/50 constant; the arctic mountains row: 5/30 constant",
+   "expr": "m['wfwWinFind'](1) != 10 or m['wfwSprTaint'](1) != 50 or m['wfwSumFind'](1) != 10 or m['wfwAutTaint'](1) != 50 or m['wfwWinFind'](3) != 10 or m['wfwAutFind'](3) != 10 or m['wfwWinFind'](2) != 5 or m['wfwWinTaint'](2) != 30 or m['wfwAutTaint'](2) != 30"
+  },
+  {
+   "note": "the subarctic swamp row: 40/60, 60/60, 50/60, 50/60",
+   "expr": "m['wfwWinFind'](9) != 40 or m['wfwWinTaint'](9) != 60 or m['wfwSprFind'](9) != 60 or m['wfwSprTaint'](9) != 60 or m['wfwSumFind'](9) != 50 or m['wfwSumTaint'](9) != 60 or m['wfwAutFind'](9) != 50 or m['wfwAutTaint'](9) != 60"
+  },
+  {
+   "note": "the temperate swamp row: 60/70, 70/70, 80/80, 60/70",
+   "expr": "m['wfwWinFind'](15) != 60 or m['wfwWinTaint'](15) != 70 or m['wfwSprFind'](15) != 70 or m['wfwSprTaint'](15) != 70 or m['wfwSumFind'](15) != 80 or m['wfwSumTaint'](15) != 80 or m['wfwAutFind'](15) != 60 or m['wfwAutTaint'](15) != 70"
+  },
+  {
+   "note": "the subtropical swamp row: 70/70, 80/70, 90/80, 70/80",
+   "expr": "m['wfwWinFind'](21) != 70 or m['wfwWinTaint'](21) != 70 or m['wfwSprFind'](21) != 80 or m['wfwSprTaint'](21) != 70 or m['wfwSumFind'](21) != 90 or m['wfwSumTaint'](21) != 80 or m['wfwAutFind'](21) != 70 or m['wfwAutTaint'](21) != 80"
+  },
+  {
+   "note": "the tropical swamp row: 70/70, 90/75 (the human-verified odd cell), 90/80, 80/80",
+   "expr": "m['wfwWinFind'](27) != 70 or m['wfwWinTaint'](27) != 70 or m['wfwSprFind'](27) != 90 or m['wfwSprTaint'](27) != 75 or m['wfwSumFind'](27) != 90 or m['wfwSumTaint'](27) != 80 or m['wfwAutFind'](27) != 80 or m['wfwAutTaint'](27) != 80"
+  },
+  {
+   "note": "the tropical forest row: 80/50, 80/60, 80/70, 80/60",
+   "expr": "m['wfwWinFind'](23) != 80 or m['wfwWinTaint'](23) != 50 or m['wfwSprFind'](23) != 80 or m['wfwSprTaint'](23) != 60 or m['wfwSumFind'](23) != 80 or m['wfwSumTaint'](23) != 70 or m['wfwAutFind'](23) != 80 or m['wfwAutTaint'](23) != 60"
+  },
+  {
+   "note": "the temperate desert row: 5/70 x3 then the autumn 5/80; the subtropical and tropical desert rows",
+   "expr": "m['wfwWinFind'](10) != 5 or m['wfwWinTaint'](10) != 70 or m['wfwSprFind'](10) != 5 or m['wfwSprTaint'](10) != 70 or m['wfwSumFind'](10) != 5 or m['wfwSumTaint'](10) != 70 or m['wfwAutFind'](10) != 5 or m['wfwAutTaint'](10) != 80 or m['wfwWinFind'](16) != 5 or m['wfwWinTaint'](16) != 70 or m['wfwSprFind'](16) != 5 or m['wfwSprTaint'](16) != 70 or m['wfwSumFind'](16) != 5 or m['wfwSumTaint'](16) != 80 or m['wfwAutFind'](16) != 5 or m['wfwAutTaint'](16) != 80 or m['wfwWinFind'](22) != 5 or m['wfwWinTaint'](22) != 70 or m['wfwSprFind'](22) != 10 or m['wfwSprTaint'](22) != 70 or m['wfwSumFind'](22) != 5 or m['wfwSumTaint'](22) != 80 or m['wfwAutFind'](22) != 5 or m['wfwAutTaint'](22) != 80"
+  },
+  {
+   "note": "the subarctic desert row: 5/60, 10/60, 10/60, 5/60",
+   "expr": "m['wfwWinFind'](4) != 5 or m['wfwWinTaint'](4) != 60 or m['wfwSprFind'](4) != 10 or m['wfwSprTaint'](4) != 60 or m['wfwSumFind'](4) != 10 or m['wfwSumTaint'](4) != 60 or m['wfwAutFind'](4) != 5 or m['wfwAutTaint'](4) != 60"
+  },
+  {
+   "note": "the two-checks-per-day rule and the auto-fail gate",
+   "expr": "m['wfwChecksPerDay']() != 2"
+  },
+  {
+   "note": "the seacoast dig: 100% if above the high tide line and no more than two feet deep",
+   "expr": "m['wfwSeacoastDigPct']() != 100 or m['wfwSeacoastDigMaxFt']() != 2"
+  },
+  {
+   "note": "the ice temperature gate: 30 degrees or lower",
+   "expr": "m['wfwIceTempGate']() != 30"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the arctic band is constant across all four seasons in every row (the printed grid repeats the same cell)",
+   "expr": "m['wfwWinFind'](0) != m['wfwSprFind'](0) or m['wfwSprFind'](0) != m['wfwSumFind'](0) or m['wfwSumFind'](0) != m['wfwAutFind'](0) or m['wfwWinTaint'](0) != m['wfwAutTaint'](0) or m['wfwWinFind'](1) != m['wfwSprFind'](1) or m['wfwSprFind'](1) != m['wfwSumFind'](1) or m['wfwSumFind'](1) != m['wfwAutFind'](1) or m['wfwWinTaint'](1) != m['wfwAutTaint'](1) or m['wfwWinFind'](2) != m['wfwSprFind'](2) or m['wfwSprFind'](2) != m['wfwSumFind'](2) or m['wfwSumFind'](2) != m['wfwAutFind'](2) or m['wfwWinTaint'](2) != m['wfwAutTaint'](2) or m['wfwWinFind'](3) != m['wfwSprFind'](3) or m['wfwSprFind'](3) != m['wfwSumFind'](3) or m['wfwSumFind'](3) != m['wfwAutFind'](3) or m['wfwWinTaint'](3) != m['wfwAutTaint'](3)"
+  },
+  {
+   "note": "the desert find chance never exceeds 10 in any climate in any season",
+   "expr": "m['wfwWinFind'](0) > 10 or m['wfwSprFind'](0) > 10 or m['wfwSumFind'](0) > 10 or m['wfwAutFind'](0) > 10 or m['wfwWinFind'](4) > 10 or m['wfwSprFind'](4) > 10 or m['wfwSumFind'](4) > 10 or m['wfwAutFind'](4) > 10 or m['wfwWinFind'](10) > 10 or m['wfwSprFind'](10) > 10 or m['wfwSumFind'](10) > 10 or m['wfwAutFind'](10) > 10 or m['wfwWinFind'](16) > 10 or m['wfwSprFind'](16) > 10 or m['wfwSumFind'](16) > 10 or m['wfwAutFind'](16) > 10 or m['wfwWinFind'](22) > 10 or m['wfwSprFind'](22) > 10 or m['wfwSumFind'](22) > 10 or m['wfwAutFind'](22) > 10"
+  },
+  {
+   "note": "the swamp find chance beats the desert find chance in every non-arctic climate in every season",
+   "expr": "m['wfwWinFind'](9) <= m['wfwWinFind'](4) or m['wfwSprFind'](9) <= m['wfwSprFind'](4) or m['wfwSumFind'](9) <= m['wfwSumFind'](4) or m['wfwAutFind'](9) <= m['wfwAutFind'](4) or m['wfwWinFind'](15) <= m['wfwWinFind'](10) or m['wfwSprFind'](15) <= m['wfwSprFind'](10) or m['wfwSumFind'](15) <= m['wfwSumFind'](10) or m['wfwAutFind'](15) <= m['wfwAutFind'](10) or m['wfwWinFind'](21) <= m['wfwWinFind'](16) or m['wfwSprFind'](21) <= m['wfwSprFind'](16) or m['wfwSumFind'](21) <= m['wfwSumFind'](16) or m['wfwAutFind'](21) <= m['wfwAutFind'](16) or m['wfwWinFind'](27) <= m['wfwWinFind'](22) or m['wfwSprFind'](27) <= m['wfwSprFind'](22) or m['wfwSumFind'](27) <= m['wfwSumFind'](22) or m['wfwAutFind'](27) <= m['wfwAutFind'](22)"
+  },
+  {
+   "note": "every find chance and every taint chance stays within 0 to 100",
+   "expr": "m['wfwWinFind'](0) < 0 or m['wfwWinFind'](0) > 100 or m['wfwWinTaint'](0) < 0 or m['wfwWinTaint'](0) > 100 or m['wfwSprFind'](0) < 0 or m['wfwSprFind'](0) > 100 or m['wfwSprTaint'](0) < 0 or m['wfwSprTaint'](0) > 100 or m['wfwSumFind'](0) < 0 or m['wfwSumFind'](0) > 100 or m['wfwSumTaint'](0) < 0 or m['wfwSumTaint'](0) > 100 or m['wfwAutFind'](0) < 0 or m['wfwAutFind'](0) > 100 or m['wfwAutTaint'](0) < 0 or m['wfwAutTaint'](0) > 100 or m['wfwWinFind'](1) < 0 or m['wfwWinFind'](1) > 100 or m['wfwWinTaint'](1) < 0 or m['wfwWinTaint'](1) > 100 or m['wfwSprFind'](1) < 0 or m['wfwSprFind'](1) > 100 or m['wfwSprTaint'](1) < 0 or m['wfwSprTaint'](1) > 100 or m['wfwSumFind'](1) < 0 or m['wfwSumFind'](1) > 100 or m['wfwSumTaint'](1) < 0 or m['wfwSumTaint'](1) > 100 or m['wfwAutFind'](1) < 0 or m['wfwAutFind'](1) > 100 or m['wfwAutTaint'](1) < 0 or m['wfwAutTaint'](1) > 100 or m['wfwWinFind'](2) < 0 or m['wfwWinFind'](2) > 100 or m['wfwWinTaint'](2) < 0 or m['wfwWinTaint'](2) > 100 or m['wfwSprFind'](2) < 0 or m['wfwSprFind'](2) > 100 or m['wfwSprTaint'](2) < 0 or m['wfwSprTaint'](2) > 100 or m['wfwSumFind'](2) < 0 or m['wfwSumFind'](2) > 100 or m['wfwSumTaint'](2) < 0 or m['wfwSumTaint'](2) > 100 or m['wfwAutFind'](2) < 0 or m['wfwAutFind'](2) > 100 or m['wfwAutTaint'](2) < 0 or m['wfwAutTaint'](2) > 100 or m['wfwWinFind'](3) < 0 or m['wfwWinFind'](3) > 100 or m['wfwWinTaint'](3) < 0 or m['wfwWinTaint'](3) > 100 or m['wfwSprFind'](3) < 0 or m['wfwSprFind'](3) > 100 or m['wfwSprTaint'](3) < 0 or m['wfwSprTaint'](3) > 100 or m['wfwSumFind'](3) < 0 or m['wfwSumFind'](3) > 100 or m['wfwSumTaint'](3) < 0 or m['wfwSumTaint'](3) > 100 or m['wfwAutFind'](3) < 0 or m['wfwAutFind'](3) > 100 or m['wfwAutTaint'](3) < 0 or m['wfwAutTaint'](3) > 100 or m['wfwWinFind'](4) < 0 or m['wfwWinFind'](4) > 100 or m['wfwWinTaint'](4) < 0 or m['wfwWinTaint'](4) > 100 or m['wfwSprFind'](4) < 0 or m['wfwSprFind'](4) > 100 or m['wfwSprTaint'](4) < 0 or m['wfwSprTaint'](4) > 100 or m['wfwSumFind'](4) < 0 or m['wfwSumFind'](4) > 100 or m['wfwSumTaint'](4) < 0 or m['wfwSumTaint'](4) > 100 or m['wfwAutFind'](4) < 0 or m['wfwAutFind'](4) > 100 or m['wfwAutTaint'](4) < 0 or m['wfwAutTaint'](4) > 100 or m['wfwWinFind'](5) < 0 or m['wfwWinFind'](5) > 100 or m['wfwWinTaint'](5) < 0 or m['wfwWinTaint'](5) > 100 or m['wfwSprFind'](5) < 0 or m['wfwSprFind'](5) > 100 or m['wfwSprTaint'](5) < 0 or m['wfwSprTaint'](5) > 100 or m['wfwSumFind'](5) < 0 or m['wfwSumFind'](5) > 100 or m['wfwSumTaint'](5) < 0 or m['wfwSumTaint'](5) > 100 or m['wfwAutFind'](5) < 0 or m['wfwAutFind'](5) > 100 or m['wfwAutTaint'](5) < 0 or m['wfwAutTaint'](5) > 100 or m['wfwWinFind'](6) < 0 or m['wfwWinFind'](6) > 100 or m['wfwWinTaint'](6) < 0 or m['wfwWinTaint'](6) > 100 or m['wfwSprFind'](6) < 0 or m['wfwSprFind'](6) > 100 or m['wfwSprTaint'](6) < 0 or m['wfwSprTaint'](6) > 100 or m['wfwSumFind'](6) < 0 or m['wfwSumFind'](6) > 100 or m['wfwSumTaint'](6) < 0 or m['wfwSumTaint'](6) > 100 or m['wfwAutFind'](6) < 0 or m['wfwAutFind'](6) > 100 or m['wfwAutTaint'](6) < 0 or m['wfwAutTaint'](6) > 100 or m['wfwWinFind'](7) < 0 or m['wfwWinFind'](7) > 100 or m['wfwWinTaint'](7) < 0 or m['wfwWinTaint'](7) > 100 or m['wfwSprFind'](7) < 0 or m['wfwSprFind'](7) > 100 or m['wfwSprTaint'](7) < 0 or m['wfwSprTaint'](7) > 100 or m['wfwSumFind'](7) < 0 or m['wfwSumFind'](7) > 100 or m['wfwSumTaint'](7) < 0 or m['wfwSumTaint'](7) > 100 or m['wfwAutFind'](7) < 0 or m['wfwAutFind'](7) > 100 or m['wfwAutTaint'](7) < 0 or m['wfwAutTaint'](7) > 100 or m['wfwWinFind'](8) < 0 or m['wfwWinFind'](8) > 100 or m['wfwWinTaint'](8) < 0 or m['wfwWinTaint'](8) > 100 or m['wfwSprFind'](8) < 0 or m['wfwSprFind'](8) > 100 or m['wfwSprTaint'](8) < 0 or m['wfwSprTaint'](8) > 100 or m['wfwSumFind'](8) < 0 or m['wfwSumFind'](8) > 100 or m['wfwSumTaint'](8) < 0 or m['wfwSumTaint'](8) > 100 or m['wfwAutFind'](8) < 0 or m['wfwAutFind'](8) > 100 or m['wfwAutTaint'](8) < 0 or m['wfwAutTaint'](8) > 100 or m['wfwWinFind'](9) < 0 or m['wfwWinFind'](9) > 100 or m['wfwWinTaint'](9) < 0 or m['wfwWinTaint'](9) > 100 or m['wfwSprFind'](9) < 0 or m['wfwSprFind'](9) > 100 or m['wfwSprTaint'](9) < 0 or m['wfwSprTaint'](9) > 100 or m['wfwSumFind'](9) < 0 or m['wfwSumFind'](9) > 100 or m['wfwSumTaint'](9) < 0 or m['wfwSumTaint'](9) > 100 or m['wfwAutFind'](9) < 0 or m['wfwAutFind'](9) > 100 or m['wfwAutTaint'](9) < 0 or m['wfwAutTaint'](9) > 100 or m['wfwWinFind'](10) < 0 or m['wfwWinFind'](10) > 100 or m['wfwWinTaint'](10) < 0 or m['wfwWinTaint'](10) > 100 or m['wfwSprFind'](10) < 0 or m['wfwSprFind'](10) > 100 or m['wfwSprTaint'](10) < 0 or m['wfwSprTaint'](10) > 100 or m['wfwSumFind'](10) < 0 or m['wfwSumFind'](10) > 100 or m['wfwSumTaint'](10) < 0 or m['wfwSumTaint'](10) > 100 or m['wfwAutFind'](10) < 0 or m['wfwAutFind'](10) > 100 or m['wfwAutTaint'](10) < 0 or m['wfwAutTaint'](10) > 100 or m['wfwWinFind'](11) < 0 or m['wfwWinFind'](11) > 100 or m['wfwWinTaint'](11) < 0 or m['wfwWinTaint'](11) > 100 or m['wfwSprFind'](11) < 0 or m['wfwSprFind'](11) > 100 or m['wfwSprTaint'](11) < 0 or m['wfwSprTaint'](11) > 100 or m['wfwSumFind'](11) < 0 or m['wfwSumFind'](11) > 100 or m['wfwSumTaint'](11) < 0 or m['wfwSumTaint'](11) > 100 or m['wfwAutFind'](11) < 0 or m['wfwAutFind'](11) > 100 or m['wfwAutTaint'](11) < 0 or m['wfwAutTaint'](11) > 100 or m['wfwWinFind'](12) < 0 or m['wfwWinFind'](12) > 100 or m['wfwWinTaint'](12) < 0 or m['wfwWinTaint'](12) > 100 or m['wfwSprFind'](12) < 0 or m['wfwSprFind'](12) > 100 or m['wfwSprTaint'](12) < 0 or m['wfwSprTaint'](12) > 100 or m['wfwSumFind'](12) < 0 or m['wfwSumFind'](12) > 100 or m['wfwSumTaint'](12) < 0 or m['wfwSumTaint'](12) > 100 or m['wfwAutFind'](12) < 0 or m['wfwAutFind'](12) > 100 or m['wfwAutTaint'](12) < 0 or m['wfwAutTaint'](12) > 100 or m['wfwWinFind'](13) < 0 or m['wfwWinFind'](13) > 100 or m['wfwWinTaint'](13) < 0 or m['wfwWinTaint'](13) > 100 or m['wfwSprFind'](13) < 0 or m['wfwSprFind'](13) > 100 or m['wfwSprTaint'](13) < 0 or m['wfwSprTaint'](13) > 100 or m['wfwSumFind'](13) < 0 or m['wfwSumFind'](13) > 100 or m['wfwSumTaint'](13) < 0 or m['wfwSumTaint'](13) > 100 or m['wfwAutFind'](13) < 0 or m['wfwAutFind'](13) > 100 or m['wfwAutTaint'](13) < 0 or m['wfwAutTaint'](13) > 100 or m['wfwWinFind'](14) < 0 or m['wfwWinFind'](14) > 100 or m['wfwWinTaint'](14) < 0 or m['wfwWinTaint'](14) > 100 or m['wfwSprFind'](14) < 0 or m['wfwSprFind'](14) > 100 or m['wfwSprTaint'](14) < 0 or m['wfwSprTaint'](14) > 100 or m['wfwSumFind'](14) < 0 or m['wfwSumFind'](14) > 100 or m['wfwSumTaint'](14) < 0 or m['wfwSumTaint'](14) > 100 or m['wfwAutFind'](14) < 0 or m['wfwAutFind'](14) > 100 or m['wfwAutTaint'](14) < 0 or m['wfwAutTaint'](14) > 100 or m['wfwWinFind'](15) < 0 or m['wfwWinFind'](15) > 100 or m['wfwWinTaint'](15) < 0 or m['wfwWinTaint'](15) > 100 or m['wfwSprFind'](15) < 0 or m['wfwSprFind'](15) > 100 or m['wfwSprTaint'](15) < 0 or m['wfwSprTaint'](15) > 100 or m['wfwSumFind'](15) < 0 or m['wfwSumFind'](15) > 100 or m['wfwSumTaint'](15) < 0 or m['wfwSumTaint'](15) > 100 or m['wfwAutFind'](15) < 0 or m['wfwAutFind'](15) > 100 or m['wfwAutTaint'](15) < 0 or m['wfwAutTaint'](15) > 100 or m['wfwWinFind'](16) < 0 or m['wfwWinFind'](16) > 100 or m['wfwWinTaint'](16) < 0 or m['wfwWinTaint'](16) > 100 or m['wfwSprFind'](16) < 0 or m['wfwSprFind'](16) > 100 or m['wfwSprTaint'](16) < 0 or m['wfwSprTaint'](16) > 100 or m['wfwSumFind'](16) < 0 or m['wfwSumFind'](16) > 100 or m['wfwSumTaint'](16) < 0 or m['wfwSumTaint'](16) > 100 or m['wfwAutFind'](16) < 0 or m['wfwAutFind'](16) > 100 or m['wfwAutTaint'](16) < 0 or m['wfwAutTaint'](16) > 100 or m['wfwWinFind'](17) < 0 or m['wfwWinFind'](17) > 100 or m['wfwWinTaint'](17) < 0 or m['wfwWinTaint'](17) > 100 or m['wfwSprFind'](17) < 0 or m['wfwSprFind'](17) > 100 or m['wfwSprTaint'](17) < 0 or m['wfwSprTaint'](17) > 100 or m['wfwSumFind'](17) < 0 or m['wfwSumFind'](17) > 100 or m['wfwSumTaint'](17) < 0 or m['wfwSumTaint'](17) > 100 or m['wfwAutFind'](17) < 0 or m['wfwAutFind'](17) > 100 or m['wfwAutTaint'](17) < 0 or m['wfwAutTaint'](17) > 100 or m['wfwWinFind'](18) < 0 or m['wfwWinFind'](18) > 100 or m['wfwWinTaint'](18) < 0 or m['wfwWinTaint'](18) > 100 or m['wfwSprFind'](18) < 0 or m['wfwSprFind'](18) > 100 or m['wfwSprTaint'](18) < 0 or m['wfwSprTaint'](18) > 100 or m['wfwSumFind'](18) < 0 or m['wfwSumFind'](18) > 100 or m['wfwSumTaint'](18) < 0 or m['wfwSumTaint'](18) > 100 or m['wfwAutFind'](18) < 0 or m['wfwAutFind'](18) > 100 or m['wfwAutTaint'](18) < 0 or m['wfwAutTaint'](18) > 100 or m['wfwWinFind'](19) < 0 or m['wfwWinFind'](19) > 100 or m['wfwWinTaint'](19) < 0 or m['wfwWinTaint'](19) > 100 or m['wfwSprFind'](19) < 0 or m['wfwSprFind'](19) > 100 or m['wfwSprTaint'](19) < 0 or m['wfwSprTaint'](19) > 100 or m['wfwSumFind'](19) < 0 or m['wfwSumFind'](19) > 100 or m['wfwSumTaint'](19) < 0 or m['wfwSumTaint'](19) > 100 or m['wfwAutFind'](19) < 0 or m['wfwAutFind'](19) > 100 or m['wfwAutTaint'](19) < 0 or m['wfwAutTaint'](19) > 100 or m['wfwWinFind'](20) < 0 or m['wfwWinFind'](20) > 100 or m['wfwWinTaint'](20) < 0 or m['wfwWinTaint'](20) > 100 or m['wfwSprFind'](20) < 0 or m['wfwSprFind'](20) > 100 or m['wfwSprTaint'](20) < 0 or m['wfwSprTaint'](20) > 100 or m['wfwSumFind'](20) < 0 or m['wfwSumFind'](20) > 100 or m['wfwSumTaint'](20) < 0 or m['wfwSumTaint'](20) > 100 or m['wfwAutFind'](20) < 0 or m['wfwAutFind'](20) > 100 or m['wfwAutTaint'](20) < 0 or m['wfwAutTaint'](20) > 100 or m['wfwWinFind'](21) < 0 or m['wfwWinFind'](21) > 100 or m['wfwWinTaint'](21) < 0 or m['wfwWinTaint'](21) > 100 or m['wfwSprFind'](21) < 0 or m['wfwSprFind'](21) > 100 or m['wfwSprTaint'](21) < 0 or m['wfwSprTaint'](21) > 100 or m['wfwSumFind'](21) < 0 or m['wfwSumFind'](21) > 100 or m['wfwSumTaint'](21) < 0 or m['wfwSumTaint'](21) > 100 or m['wfwAutFind'](21) < 0 or m['wfwAutFind'](21) > 100 or m['wfwAutTaint'](21) < 0 or m['wfwAutTaint'](21) > 100 or m['wfwWinFind'](22) < 0 or m['wfwWinFind'](22) > 100 or m['wfwWinTaint'](22) < 0 or m['wfwWinTaint'](22) > 100 or m['wfwSprFind'](22) < 0 or m['wfwSprFind'](22) > 100 or m['wfwSprTaint'](22) < 0 or m['wfwSprTaint'](22) > 100 or m['wfwSumFind'](22) < 0 or m['wfwSumFind'](22) > 100 or m['wfwSumTaint'](22) < 0 or m['wfwSumTaint'](22) > 100 or m['wfwAutFind'](22) < 0 or m['wfwAutFind'](22) > 100 or m['wfwAutTaint'](22) < 0 or m['wfwAutTaint'](22) > 100 or m['wfwWinFind'](23) < 0 or m['wfwWinFind'](23) > 100 or m['wfwWinTaint'](23) < 0 or m['wfwWinTaint'](23) > 100 or m['wfwSprFind'](23) < 0 or m['wfwSprFind'](23) > 100 or m['wfwSprTaint'](23) < 0 or m['wfwSprTaint'](23) > 100 or m['wfwSumFind'](23) < 0 or m['wfwSumFind'](23) > 100 or m['wfwSumTaint'](23) < 0 or m['wfwSumTaint'](23) > 100 or m['wfwAutFind'](23) < 0 or m['wfwAutFind'](23) > 100 or m['wfwAutTaint'](23) < 0 or m['wfwAutTaint'](23) > 100 or m['wfwWinFind'](24) < 0 or m['wfwWinFind'](24) > 100 or m['wfwWinTaint'](24) < 0 or m['wfwWinTaint'](24) > 100 or m['wfwSprFind'](24) < 0 or m['wfwSprFind'](24) > 100 or m['wfwSprTaint'](24) < 0 or m['wfwSprTaint'](24) > 100 or m['wfwSumFind'](24) < 0 or m['wfwSumFind'](24) > 100 or m['wfwSumTaint'](24) < 0 or m['wfwSumTaint'](24) > 100 or m['wfwAutFind'](24) < 0 or m['wfwAutFind'](24) > 100 or m['wfwAutTaint'](24) < 0 or m['wfwAutTaint'](24) > 100 or m['wfwWinFind'](25) < 0 or m['wfwWinFind'](25) > 100 or m['wfwWinTaint'](25) < 0 or m['wfwWinTaint'](25) > 100 or m['wfwSprFind'](25) < 0 or m['wfwSprFind'](25) > 100 or m['wfwSprTaint'](25) < 0 or m['wfwSprTaint'](25) > 100 or m['wfwSumFind'](25) < 0 or m['wfwSumFind'](25) > 100 or m['wfwSumTaint'](25) < 0 or m['wfwSumTaint'](25) > 100 or m['wfwAutFind'](25) < 0 or m['wfwAutFind'](25) > 100 or m['wfwAutTaint'](25) < 0 or m['wfwAutTaint'](25) > 100 or m['wfwWinFind'](26) < 0 or m['wfwWinFind'](26) > 100 or m['wfwWinTaint'](26) < 0 or m['wfwWinTaint'](26) > 100 or m['wfwSprFind'](26) < 0 or m['wfwSprFind'](26) > 100 or m['wfwSprTaint'](26) < 0 or m['wfwSprTaint'](26) > 100 or m['wfwSumFind'](26) < 0 or m['wfwSumFind'](26) > 100 or m['wfwSumTaint'](26) < 0 or m['wfwSumTaint'](26) > 100 or m['wfwAutFind'](26) < 0 or m['wfwAutFind'](26) > 100 or m['wfwAutTaint'](26) < 0 or m['wfwAutTaint'](26) > 100 or m['wfwWinFind'](27) < 0 or m['wfwWinFind'](27) > 100 or m['wfwWinTaint'](27) < 0 or m['wfwWinTaint'](27) > 100 or m['wfwSprFind'](27) < 0 or m['wfwSprFind'](27) > 100 or m['wfwSprTaint'](27) < 0 or m['wfwSprTaint'](27) > 100 or m['wfwSumFind'](27) < 0 or m['wfwSumFind'](27) > 100 or m['wfwSumTaint'](27) < 0 or m['wfwSumTaint'](27) > 100 or m['wfwAutFind'](27) < 0 or m['wfwAutFind'](27) > 100 or m['wfwAutTaint'](27) < 0 or m['wfwAutTaint'](27) > 100"
+  }
+ ],
+ "header_sections": {
+  "The water-finding checks": [
+   {
+    "kind": "const",
+    "name": "wfwChecksPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwExtraSearchAutoFail"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwNotUsedWhenObvious"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwNearbyFreshWaterTaintCheck"
+   }
+  ],
+  "Table 34: the chance of finding water grid": [
+   {
+    "kind": "const",
+    "name": "wfwRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "wfwFindWater"
+   }
+  ],
+  "The obvious-water exceptions": [
+   {
+    "kind": "bool",
+    "name": "wfwSnowIceCoverFreeWater"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwTableAssumesNoSnowIce"
+   },
+   {
+    "kind": "const",
+    "name": "wfwIceTempGate"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwIceTaintPerTable"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwFreshSnowPurest"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwSeaWaterDehydrates"
+   },
+   {
+    "kind": "const",
+    "name": "wfwSeacoastDigPct"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwSeacoastDigAboveTide"
+   },
+   {
+    "kind": "const",
+    "name": "wfwSeacoastDigMaxFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwDigDeeperSaltier"
+   }
+  ],
+  "The water-quality guidelines": [
+   {
+    "kind": "bool",
+    "name": "wfwRiverPurerUpstream"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwLakePurerAtInflow"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwFastFlowPurer"
+   },
+   {
+    "kind": "bool",
+    "name": "wfwGroundWaterPurer"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "finding water",
+   "from": "  - [ ] Finding water (p. 58)",
+   "to": "  - [x] Finding water (p. 58) - R467: the two-checks-per-day rule with the auto-fail gate, the snow-and-ice exception with the ice taint rule, the seacoast dig mechanics and the water-quality guidelines pin as rules/wsgwater.h"
+  },
+  {
+   "note": "Table 34",
+   "from": "- [ ] **Table 34: chance of finding water** (p. 59)",
+   "to": "- [x] **Table 34: chance of finding water** (p. 59) - R467: the climate x terrain x season grid with the find%/taint% pairs, all 224 values rebuilt from the tesseract bounding-box geometry, pin as rules/wsgwater.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R466: 84 closed, 102 open (the R466 round continues the chapter - consuming and carrying food and Table 33 pin as rules/wsgcarry.h; the next round continues - finding water (p. 58) and its Table 34).",
+   "to": "Post-state at R467: 86 closed, 100 open (the R467 round continues the chapter - finding water and Table 34 pin as rules/wsgwater.h; the next round continues - where water is found (p. 59) and the water table mechanics, then water in the desert (p. 60) and purifying water (p. 60))."
+  }
+ ],
+ "gap_census": {
+  "closed": 86,
+  "open": 100
+ },
+ "include_comment": "the WSG finding water and Table 34",
+ "include_after": "#include \"rules/wsgcarry.h\"  // R466: the WSG consuming and carrying food and Table 33",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R466 LANDED 2026-10-15: commit e04918e (census 391, pushed",
+ "prev_record": [
+  "- R466 LANDED 2026-10-15: commit e04918e (census 391, pushed",
+  "  27481c0..e04918e), the WSG CONSUMING AND CARRYING FOOD slice, printed p. 58",
+  "  - the ration ladder (one fish half a ration, one size S animal a full",
+  "  ration, one size M animal feeding three characters for a day, one size L",
+  "  animal six rations, at least twenty full rations from a size L carcass with",
+  "  a full day of expert butchering), the druid strong disapproval of",
+  "  intentional overkill with the feed-three excuse, the carry rule (excess need",
+  "  not be left behind; encumbrance is a DM ruling, spoilage the other factor),",
+  "  the gluttony/indigestion not-modeled note and Table 33: chance of food",
+  "  spoilage (the 4x10 grid: max days before the first check then the pct chance",
+  "  per subsequent day, per food type per effective-temperature band - green",
+  "  plants dash/6-20/4-30/2-40/1-50, fruits or vegetables",
+  "  dash/5-30/3-40/2-50/1-60, cooked meat dash/3-20/2-50/1-60/1-80, raw meat",
+  "  dash/2-50/1-70/1-80/1-90), with the mechanics: the warmest category applying",
+  "  at least one hour is the effective temperature, a category once used",
+  "  ratchets to the same or warmer for all later checks, continually frozen food",
+  "  keeps indefinitely, thawed food spoils from the thaw day (counted as day 1)",
+  "  even if promptly re-frozen; one failed check taints (secret Wisdom Check to",
+  "  notice, eatable anyway, CON check +4 to avoid nausea and cramps within",
+  "  1d10+10 minutes - the 11-20 onset window, -1 on attacks and",
+  "  dodging/maneuvering saves for 12 hours, then an unmodified CON check per",
+  "  hour to recover, tainted food still a full ration); a second failed check",
+  "  obviously spoils (CON check +10, penalties at least 24 hours if stricken,",
+  "  else a 50% chance of the full or half ration value, otherwise no nourishment",
+  "  at all). rules/wsgcarry.h NEW (47 inlines: 20 consts + 17 bools + 10 table",
+  "  columns, prefix wcc - wfs was taken by R465; checked free in all three TUs).",
+  "  GROUND TRUTH - the table rounds hit a new reader: the printed p. 58 image",
+  "  shows scanner DOUBLE-IMAGING (a ghost copy about 12 pixels below the true",
+  "  print), which is why the ASCII/pixel reads were ambiguous and the vision",
+  "  calls garbage; the pdfy EMBEDDED OCR TEXT LAYER (decompress the FlateDecode",
+  "  content stream of the page object and regex the Tm/Td/Tj tokens) is a",
+  "  high-quality positioned text source that settles the table WITHOUT pixels -",
+  "  use it (with the djvu word layer as the second reader and the arithmetic",
+  "  ladders as the tiebreaker) before fighting double-imaged pixels again. Both",
+  "  layers agree on every Table 33 value cell EXCEPT green-plants 31-50 (pdfy",
+  "  6/20 vs a djvu garble; 6/20 fits the days ladder 6,4,2,1 and the pct ladder",
+  "  20,30,40,50). The below-30 column is a dash in every row (both layers garble",
+  "  the dash glyph; the book explanation sentence - spoilage will not occur as",
+  "  long as the effective temperature remains within this range - confirms it);",
+  "  the dash is encoded as days=0/pct=0 with the wccDashNoSpoilage bool carrying",
+  "  the semantics. Note: the byte-level open_url fetch TRUNCATES around 24-32KB,",
+  "  so raw-sha verification of late-file items needs github_app",
+  "  get_file_contents (the resource blob) instead - regtest.cpp is still too big",
+  "  for it, but the gap report and the seed fit. Gap 82/104 -> 84/102 (TWO box",
+  "  flips + the post-state line - the handoff-derived numbers matched the",
+  "  computed census exactly this time); census 390 -> 391. rverify FULL GREEN",
+  "  pre-landing at base 27481c0 (double-run 7/0 then 0/7, 77 mutants, 0 missed).",
+  "  Spec md5s: 07dadcaf authored / 9857410b +nl - the Termux read the +nl value",
+  "  exactly. LANDED CLEAN on the first ritual run (double-run 7/0 then 0/7,",
+  "  preflight GREEN first try, R466 audit bad 0, AUDIT CENSUS: 391, 5 files /",
+  "  1326 insertions; the user ran bn separately by choice, it stays out of the",
+  "  ritual per R372). VERIFIED at the raw sha e04918e: the commit message and",
+  "  file list (regtest +253, the header 400, the spec 619, the gap 3/3, the seed",
+  "  +51), the include after wsgfish.h at line 176, wsgcarry.h 47 inlines with",
+  "  the correct grid, the two flips with the R466 text, the post-state 84/102,",
+  "  the finding-water boxes NOT flipped, the R465 seed record in place. Next:",
+  "  R467 - finding water (p. 58) and its Table 34; then where water is found (p.",
+  "  59) and water in the desert (p. 60)."
+ ]
+}
