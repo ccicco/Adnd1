@@ -89,7 +89,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Consuming and carrying food (p. 58) - R466: the ration ladder (one fish half a ration, size S a full ration, size M feeds three, size L six rations, twenty rations for a full day of butchering), the druid disapproval, the carry rule and the taint and spoil mechanics pin as rules/wsgcarry.h
   - [x] Finding water (p. 58) - R467: the two-checks-per-day rule with the auto-fail gate, the snow-and-ice exception with the ice taint rule, the seacoast dig mechanics and the water-quality guidelines pin as rules/wsgwater.h
   - [x] Where water is found (p. 59) - R468: the standing-water basis, the drought DM reduction, the water-table depth rules by elevation and terrain, the dig-for-water chance and the vegetation source pin as rules/wsgwhere.h
-  - [ ] Water in the desert (p. 60)
+  - [x] Water in the desert (p. 60) - R469: the 40/60 desert dig split with the 5-15 foot depth band, the desert survival proficiency boost to 80%, the two-tries limit and the permafrost definition and harvest technique pin as rules/wsgdesert.h
   - [ ] Purifying water (p. 60)
 - [ ] **Camping and campfires** (pp. 61-68)
   - [ ] Natural shelters (p. 61)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [ ] **Table 41: outdoor range of normal vision** (p. 73)
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R468: 87 closed, 99 open (the R468 round continues the chapter - where water is found pins as rules/wsgwhere.h; the next round continues - water in the desert (p. 60) with the permafrost discussion, then purifying water (p. 60) with the tainted-water effects).
+Post-state at R469: 88 closed, 98 open (the R469 round continues the chapter - water in the desert with the permafrost discussion pins as rules/wsgdesert.h; the next round continues - purifying water (p. 60) with the tainted-water effects).

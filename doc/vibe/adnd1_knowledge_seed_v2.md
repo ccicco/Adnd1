@@ -4243,6 +4243,114 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   standing-water reduction by terrain, the water table definition and
   depth-by-terrain rules) and the bad-water/vegetation-and-skeletons warning,
   then water in the desert (p. 60) and purifying water (p. 60).
+- R468 LANDED 2026-10-15: commit 7ff85f9 (census 393, pushed
+  efd8d78..7ff85f9), the WSG WHERE WATER IS FOUND slice, printed p. 59
+  with
+  the water-table depths on p. 60 - PURE PROSE round, no table: the
+  standing-water basis (the Table 34 chance models a sizable quantity of
+  standing water, not large enough for a lake or pond: an uncharted pool or
+  a small depression holding rainstorm water not yet evaporated or
+  absorbed), the drought DM reduction (no rain for several days lets the
+  DM
+  cut the find chance in certain terrains; a flat plain completely
+  dried
+  out, a swamp keeping standing water practically all the time), the
+  water
+  table (the level beneath the ground at which water lies after
+  soaking into
+  the terrain: a foot or two in low elevation, possibly
+  higher than the
+  terrain in a swamp near sea level, dozens or even
+  hundreds of feet in high
+  elevation without a large fresh-water body,
+  greatly varying in the
+  desert), the non-absorbent exception (a rocky
+  mountain range with little
+  loose soil, frozen ground - the water table
+  nonexistent), the
+  dig-for-water chance (after a surface-water fail on
+  terrain where
+  underground water may exist, whether it exists and how
+  far down both DM
+  determinations by terrain and elevation, the desert
+  the exception with its
+  own section) and vegetation as a water source
+  (the subtropical and
+  tropical plants storing fresh water against a dry
+  spell, the cactus
+  keeping many desert travelers from dying of thirst,
+  the drought plains and
+  hills plants, the DM availability-and-quantity
+  ruling). rules/wsgwhere.h
+  NEW (18 inlines: 4 consts - wwfLowElevMinFt
+  1, wwfLowElevMaxFt 2,
+  wwfHighElevMinFt 24, wwfHighElevMaxFt 100 - plus
+  14 bools, prefix wwf,
+  checked free). GROUND TRUTH two-way, no contested
+  cells: the user-run
+  Termux tesseract text of printed p. 59 (the --psm 4
+  run from the R467
+  extraction) vs the djvu word layer (Guide_0059 tail
+  and Guide_0060), the
+  two readers agreeing on every mechanic and every
+  number; the section
+  heading sits at the bottom of the p. 59 right
+  column with the prose
+  continuing onto p. 60, ending at the WATER IN
+  THE DESERT heading. DEFERRED
+  to R469: the permafrost discussion
+  (p. 60, referenced by the frozen-ground
+  exception) plus water in the
+  desert (p. 60); then purifying water (p. 60)
+  with the tainted-water
+  effects (the bad-water/skeletal-remains warning
+  belongs to the
+  tainted-water text and stayed unpinned). Gap 86/100 ->
+  87/99 (one box
+  flip + the post-state line); census 392 -> 393. rverify
+  FULL GREEN
+  pre-landing at base efd8d78 (double-run 6/0 then 0/6, 18
+  mutants, 0
+  missed). Spec md5s: 7b21e348 authored / 293bfaba +nl - the
+  Termux read
+  the +nl value exactly. THE R468 LESSON, twice over: (1)
+  example
+  exprs must be C-clean as EMITTED - a first cut used != True, fine
+  for
+  the Python audit mirror (rverify stayed GREEN and missed it) but
+  undeclared in regtest.cpp; preflight caught it at the C compile with
+  12
+  errors and the census block cascading to 390 FAILs; bools compare
+  != 1,
+  both-mirror valid. (2) a spec re-save after a failed run does
+  NOT
+  re-splice: the tree still carried the old applied edits, the
+  engine read
+  applied 0/already 6 and the broken True code stayed in
+  regtest.cpp; the
+  fix is git restore of the six touched files plus rm
+  of the new header
+  BEFORE re-running, then the first run must say
+  applied 6. LANDED after the
+  reset-and-resplice: preflight GREEN (only
+  the two pre-existing warnings),
+  R468 audit bad 0, AUDIT CENSUS: 393
+  exactly once, 5 files / 597
+  insertions. VERIFIED at the raw sha
+  7ff85f9: the commit stats (regtest
+  +84, the header 140, the spec 315,
+  the gap 2/2, the seed +56), the include
+  after wsgwater.h at line 173,
+  the R468 audit label twice with zero True
+  tokens in the emitted
+  block, the gap 87/99 with the where-water box
+  flipped and its
+  post-state line, the spec md5 293bfaba, the R467 seed
+  record in
+  place. Next: R469 - water in the desert plus the permafrost
+  discussion (p. 60), then purifying water (p. 60) with the
+  tainted-water
+  effects.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
