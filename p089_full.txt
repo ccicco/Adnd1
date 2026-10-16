@@ -1,0 +1,132 @@
+FATIGUE
+AND EXHAUSTION
+
+Even the strongest and hardiest characters and creatures cannot
+exert themselves indefinitely without becoming tired and needing
+to rest. If characters on a long journey through the wilderness
+press themselves (or their mounts) too hard for too long, the jour-
+ney itself may exhaust them long before they reach their destina-
+tion. It is not difficult, and usually not inconvenient, for characters
+to take measures to avoid the threats of fatigue and exhaustion.
+
+Characters
+
+A character runs the risk of becoming fatigued whenever he
+engages in strenuous activity for more than four turns in succes-
+sion. A character moving at greater than his full normal move-
+ment rate is engaged in strenuous activity; so is one involved in
+melee combat. Continuous climbing, swimming against a strong
+current, and moving while severely encumbered are other exam-
+ples of strenuous activity.
+
+To avoid the risk of fatigue, a character must rest for two con-
+secutive turns after four turns of strenuous activity. If the charac-
+ter chooses not to rest, he must make a Constitution Check after
+exerting himself for six consecutive turns. Failure on this check
+indicates that he is fatigued; success indicates that he can re-
+main active for at least five more turns. At the end of those five
+turns, the character must make another successful Constutition
+Check to keep going. Every time a check is successful, the time
+until the next required check is reduced by one turn (to a mini-
+mum of one turn). A character with an extremely high constitution
+may be able to keep performing a strenuous activity for several
+hours, but the odds will eventually catch up with him.
+
+If a character becomes fatigued, he is immediately beset by
+several disadvantages that will remain in effect until he rests for
+two conscutive hours. All of the ability scores of a fatigued char-
+acter except for comeliness are lowered by 2, and most incidental
+benefits bestowed by the higher scores are also lost as long as
+the character remains fatigued.
+
+Examples: A character with 18 strength who becomes fatigued
+loses his +1 bonus on *‘to hit"" rolls and has his damage bonus
+reduced from +2to +1, among other penalties.
+
+A fighter with 18 constitution who becomes fatigued immedi-
+ately loses 2 hit points for each hit die he has, to reflect the fact
+that his actual (temporary) constitution score is only 16.
+
+A cleric with 14 wisdom who becomes fatigued loses both of his
+bonus 1st-level spells. If he has spells currently in his memory,
+two of his 1st-level spells selected at random are lost. If he has
+fewer than two 1st-level spells in his memory, higher-level spells
+are lost instead. He cannot regain the bonus spells, and must ac-
+cept a chance of spell failure on any spell he casts (because his
+effective wisdom is now 12), until he is no longer fatigued.
+
+Any Proficiency Check or Ability Check required of a fatigued
+character has a smaller chance of being successful, because the
+die roll is compared to the character's current ability score in-
+stead of his normal score.
+
+In addition to all the penalties brought upon a fatigued charac-
+ter by the lowering of his ability scores, he also suffers a —2 pen-
+alty on all attack rolls (“‘to hit"' and damage) and saving throws.
+
+A fatigued character can continue to perform strenuous activ-
+
+88
+
+ity, but if he does so he must make a Constitution Check once per
+turn (using his fatigue-reduced constitution score). If a fatigued
+character fails a Constitution Check, he becomes exhausted.
+An exhausted character takes an additional —2 penalty on all
+of his ability scores, attack rolls, and saving throws. He can at-
+tempt to defend himself or perform some other physical action
+
+. when failure to move would mean risking death, but otherwise an
+
+exhausted character is not capable of any voluntary physical ac-
+tivity: He cannot move under his own power, put on or take off ar-
+mor, build a fire, or do anything else requiring minimal strength
+and muscle control.
+
+If an exhausted character rests for one hour without interrup-
+tion, he can recover from exhaustion by making a successful
+Constitution Check (using the character's temporarily reduced
+constitution score). If the check succeeds, the character is only
+fatigued instead of exhausted, and he can then recover from fa-
+tigue by resting for another two hours. If the check fails, the char-
+acter remains exhausted and must rest for another hour before
+again trying to recover from the condition.
+
+A fatigued or exhausted character can rest while being carried,
+as long as he does not have to use any strength or balance to re-
+main in the carried position and as long as he is not being
+bounced or jostled while he is being carried. A robust fighter can
+pick up a frail magic-user and drape the exhausted spell-caster
+across his shoulders so that both of them can keep moving, but
+the magic-user will not get his needed rest if the fighter is moving
+in a choppy or zig-zagging path across rugged or very rugged ter-
+rain. An exhausted character can rest while he is securely tied to
+the back of a horse or some other mount, but only if the mount is
+moving easily (no faster than normal movement rate) over terrain
+that is not difficult for the animal to negotiate.
+
+Land-based Mounts and Pack Animals
+
+The process for determining the stamina of a land-based
+mount or pack animal is described in the section on Encum-
+brance and Movement. Other information about what certain
+types of animals need to remain at full strength is contained in the
+section on Mounts and Beasts of Burden. The following rules on
+the general effects of fatigue and exhaustion apply in all cases
+not specifically accounted for in other sections of this text.
+
+An animal will become fatigued if it is forced to go for two con-
+secutive days without any food and water, or if it is forced to sub-
+sist on less than its full normal daily ration for more than three
+consecutive days. To recover from fatigue due to lack of nourish-
+ment, an animal must be given a full normal ration of food and wa-
+ter and allowed to rest for eight hours afterward. If it does not
+receive both the full ration and the full amount of rest, it will re-
+main fatigued.
+
+To recover from fatigue due to overexertion (as described in
+the section on Encumbrance and Movement), an animal must be
+allowed to rest for 12 hours plus two hours for every hour that it
+was overworked. For instance, a horse that becomes fatigued be-
+cause it was pushed for three hours beyond the normal limit of its
+stamina will remain fatigued until it is allowed to rest for at least
+18 hours without interruption.

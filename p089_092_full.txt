@@ -1,0 +1,264 @@
+                                                                                            STI
+  Even the strongest and hardiest characters and creatures cannot                ity, but if he does so he must make a ConstitutionCheck once per
+  exert themselves indefinitely without becoming tired and needing               turn (using his fatigue-reduced constitution score). If a fatigued
+  to rest. If characters on a long journey through the wilderness                character fails a Constitution Check, he becomes exhausted.
+  press themselves (or their mounts) too hard for too long, the jour-               An exhausted character takes an additional -2 penalty on all
+  ney itself may exhaust them long before they reach their destina-              of his ability scores, attack rolls, and saving throws. He can at-
+  tion. It is not difficult, and usually not inconvenient, for characters        tempt to defend himself or perform some other physical action
+  to take measures to avoid the threats of fatigue and exhaustion.               when failure to move would mean risking death, but otherwise an
+                                                                                 exhausted character is not capable of any voluntary physical ac-
+                                                                                 tivity: He cannot move under his own power, put on or take off ar-
+  Characters                                                                     mor, build a fire, or do anything else requiring minimal strength
+                                                                                 and muscle control.
+       A character runs the risk of becoming fatigued whenever he                   If an exhausted character rests for one hour without interrup-
+    engages in strenuous activity for more than four turns in succes-            tion, he can recover from exhaustion by making a successful
+    sion. A character moving at greater than his full normal move-               Constitution Check (using the character’s temporarily reduced
+    ment rate is engaged in strenuous activity; so is one involved in            constitution score). If the check succeeds, the character is only
+    melee combat. Continuous climbing, swimming against a strong                 fatigued instead of exhausted, and he can then recover from fa-
+    current, and moving while severely encumbered are other exam-                tigue by resting for another two hours. If the check fails, the char-
+    ples of strenuous activity.                                                  acter remains exhausted and must rest for another hour before
+       To avoid the risk of fatigue, a character must rest for two con-          again trying to recover from the condition.
+    secutive turns after four turns of strenuous activity. If the charac-           A fatigued or exhausted character can rest while being carried,
+    ter chooses not to rest, he must make a Constitution Check after             as long as he does not have to use any strength or balance to re-
+    exerting himself for six consecutive turns. Failure on this check            main in the carried position and as long as he is not being
+    indicates that he is fatigued; success indicates that he can re-             bounced or jostled while he is being carried. A robust fighter can
+    main active for at least five more turns. At the end of those five           pick up a frail magic-user and drape the exhausted spell-caster
+    turns, the character must make another successful Constutition               across his shoulders so that both of them can keep moving, but
+    Check to keep going. Every time a check is successful, the time              the magic-userwill not get his needed rest if the fighter is moving
+    until the next required check is reduced by one turn (to a mini-             in a choppy or zig-zagging path across rugged or very rugged ter-
+    mum of one turn). A character with an extremely high constitution            rain. An exhausted character can rest while he is securely tied to
+    may be able to keep performing a strenuous activity for several              the back of a horse or some other mount, but only if the mount is
+    hours, but the odds will eventually catch up with him.                       moving easily (no faster than normal movement rate) over terrain
+       If a character becomes fatigued, he is immediately beset by               that is not difficult for the animal to negotiate.
+    several disadvantages that will remain in effect until he rests for
+    two conscutive hours. All of the ability scores of a fatigued char-
+    acter except for comeliness are lowered by 2, and most incidental            Land-based Mounts and Pack Animals
+    benefits bestowed by the higher scores are also lost as long as
+    the character remains fatigued.                                                 The process for determining the stamina of a land-based
+       Examples: A character with 18 strength who becomes fatigued               mount or pack animal is described in the section on Encum-
+    loses his + 1 bonus on “to hit” rolls and has his damage bonus               brance and Movement. Other information about what certain
+    reduced from + 2 to + 1, among other penalties.                              types of animals need to remain at full strength is contained in the
+       A fighter with 18 constitution who becomes fatigued immedi-               section on Mounts and Beasts of Burden. The following rules on
+    ately loses 2 hit points for each hit die he has, to reflect the fact        the general effects of fatigue and exhaustion apply in all cases
+    that his actual (temporary) constitution score is only 16.                   not specifically accounted for in other sections of this text.
+       A cleric with 14 wisdom who becomesfatigued loses both of his                An animal will become fatigued if it is forced to go for two con-
+    bonus 1st-level spells. If he has spells currently in his memory,            secutive days without any food and water, or if it is forced to sub-
+’two      of his 1st-level spells selected at random are lost. If he has         sist on less than its full normal daily ration for more than three
+    fewer than two 1st-levelspells in his memory, higher-level spells            consecutive days. To recover from fatigue due to lack of nourish-
+    are lost instead. He cannot regain the bonus spells, and must ac-            ment, an animal must be given a full normal ration of food and wa-
+    cept a chance of spell failure on any spell he casts (because his            ter and allowed to rest for eight hours afterward. If it does not
+    effective wisdom is now 12), until he is no longer fatigued.                 receive both the full ration and the full amount of rest, it will re-
+       Any Proficiency Check or Ability Check required of a fatigued             main fatigued.
+    character has a smaller chance of being successful, because the                 To recover from fatigue due to overexertion (as described in
+    die roll is compared to the character’s current ability score in-            the section on Encumbranceand Movement), an animal must be
+    stead of his normal score.                                                   allowed to rest for 12 hours plus two hours for every hour that it
+       In addition to all the penalties brought upon a fatigued charac-          was overworked. For instance, a horse that becomesfatigued be-
+    ter by the lowering of his ability scores, he also suffers a -2 pen-         cause it was pushed for three hours beyond the normal limit of its
+    alty on all attack rolls (“to hit” and damage) and saving throws.            stamina will remain fatigued until it is allowed to rest for at least
+       A fatigued character can continue to perform strenuous activ-             18 hours without interruption.
+
+                                                                            88                                 /
+                                                                                                                FATIGUE AND EXHAUSTION
+
+   A fatigued animal moves at one-half of its normal movement                   means that the animal can be ridden through the air for 24 con-
+rate, but is capable of occasional bursts of speed that enable it to           secutive turns (four hours) without a risk of fatigue, but at that
+move at its full normal rate for one round per turn. It is not able to          point it must be allowed to land and rest (not fly) for 6 turns (1
+negotiate any terrain in which its full normal movement rate is 3”;             hour) in order to regain its stamina. If it is not allowed to land and
+a fatigued horse cannot move in very rugged terrain if it is carry-             rest by the end of the 24th turn, it will become fatigued on any turn
+ing more than a normal load, and a fatigued camel cannot move                  thereafter when the Dungeon Master rolls 1-4 on 1dlO.
+in very rugged terrain under any circumstances. The armor class                    Flying time and rest time need not be taken in full blocks in or-
+of a fatigued animal is two places worse than its normal armor                  der to avoid fatigue. For instance, a black dragon can be flown for
+class (from 7 to 9, for instance), accounting for the animal’s                  12 turns, rested for 3 turns, flown for 6, rested for 2, flown for 6,
+slower reflexes. If a fatigued animal becomes excited, only a                   and rested for 1. Thus, over a period of 30 turns the dragon has
+character with proficiency in animal handling can get it to calm                been aloft for 24 turns and has rested for 6, which is within the
+down -and that character’s chance of being able to do so is only               safe limit; it can take off after the last 1-turn rest period and fly for
+as great as the normal chance for a nonproficient character.                    as long as 24 more turns before it has a chance of becoming fa-
+    If a fatigued animal is forced to keep working or moving, there            .tigued. But if the last flying period was 7 turns long instead of 6,
+is a 20% chance per hour, cumulative, that it will become ex-                  the dragon could have become fatigued on the 7th turn because
+hausted. If it is worked briefly, does not become exhausted, and                its would have been aloft for a total of 25 turns without getting at
+is then allowed to rest for at least an hour the animal will recover            least 6 turns of rest.
+somewhat; the chance of exhaustion begins again at 20% after                       Whenever a creature exceeds its safe flying time (becomes
+any rest period of at least one hour.                                           susceptible to fatigue, but not necessarily fatigued) and is then
+    By working the animal intermittently as described above (and                brought to a safe landing, it must be allowed to have a full rest
+being lucky), a character can keep his mount or pack animal mov-                period or else it will be subject to fatigue as soon as it takes to the
+ing for quite some time even after it becomes fatigued. But if ex-              air again. In the last version of the above example, the dragon’s
+haustion does set in, he may wish he hadn’t been so impatient.                  last flying period was 7 turns long and with that 7th turn it ex-
+An exhausted animal is not just tired - it is near death, and in the           ceeded its safe flying time. If it does not become fatigued during
+absence of magical assistance or some other aid the survival of                that 7th turn and is brought to a safe landing, it must be allowed to
+an exhausted animal depends entirely on chance.                                 rest for a full 6 turns before taking off again. If it is taken aloft be-
+   An exhausted animal will stop in its tracks, incapable of moving            fore the 6 turns have expired, it has a chance of becoming fa-
+or working any more. It may collapse (25% chance if unbur-                     tigued on every turn that it remains in the air. Obviously, it is
+dened, 50% if carrying a rider or a normal load, 75% if carrying                important for a character to keep careful track of how much his
+more than a normal load), and for as long as it remains incapaci-               mount has flown and how much it has rested; exceeding the safe
+tated the beast will be oblivious to anything that goes on around              flying time by even a small amount can cause an extended delay
+it. An exhausted animal will not become excited or panicked,                    on a long-distance journey, even if the animal does not actually
+even if threatened by fire; on the other hand, neither will it make             become fatigued.
+any attempt to protect itself from attack or injury.                               And what if it does become fatigued? Well, the character(s) rid-
+   There is a flat 50% chance that an animal driven to exhaustion               ing the animal will immediately notice some changes. On the turn
+will die within 1d4 hours. This chance is checked by the Dungeon               that fatigue sets in, the animal’s movement rate will drop to two-
+Master as soon as the animal collapses. If the beast does not die              thirds of its full normal amount and it will begin to gradually lose
+outright, it may still succumb if it does not have enough strength              altitude at the rate of 10 yards per round. If the creature is not fly-
+to fight off the trauma to its system. Once per hour for eight con-             ing more than 100 yards above the ground and is not somehow
+secutive hours, the Dungeon Master should roll l d 6 and subtract               forced to remain aloft, it will be able to descend and make a safe
+3 from the result. This yields a number in the range 0-3, which                 landing in the same turn that it becomes fatigued.
+represents the number of hit points the animal has lost during                     But if the creature is flying at an altitude of more than 100 yards
+that hour. If the animal’s hit-point total reaches 0, it is dead. If it        when fatigue sets in, it will still be in the air when its second turn of
+survives the eight-hour “critical period,” the animal will regain its          fatigue begins - and that’s when the real trouble starts for any-
+lost hit points at the rate of 2 per hour and will be recovered from            one or anything it is carrying. The animal will stop moving slowly
+exhaustion when its hit-point total reaches its original (pre-                  and descending gradually, and will instead go into a steep dive,
+exhaustion) level. At this point the animal is no longer exhausted,             plummeting toward a place where it can rest. Its rider(s) will have
+but is still fatigued.                                                          an increased chance of falling while it is performing this maneu-
+                                                                               ver, and even if a rider does not fall he must beware of the sudden
+                                                                                stop at the end of the flight. For every 10 yards of distance the ani-
+Flying Mounts                                                                   mal dives before reaching the ground, a rider will suffer l d 2 hit
+                                                                                points of damage at the end of the flight from the buffeting he re-
+   For a character using a flying mount, the good news is that the              ceives when the animal crashes, or bounces, or skids, to a stop.
+creature can never become exhausted. The bad news is that if it                This damage is halved for a character with proficiency in airborne
+becomes fatigued, the rider stands to suffer at least as much as                riding or for a character who is securely strapped (upper and
+the animal - and perhaps a whole lot more.                                      lower body) to the back of the mount. A rider who does not have at
+   The table on Characteristicsof Flying Mounts, in the section on              least his lower body strapped tothe mount will not suffer buffeting
+Movement and Encumbrance, gives stamina values for each                         damage; instead, he will be thrown from the mount when it lands,
+creature. As described in the text accompanying the table, the                  suffering 11-40 hit points of damage (3d10+10) from the abra-
+first number represents the creature’s safe flying time (which                  sion and impact of his tumble.
+may be reduced if it is heavily loaded down). If a flying mount is                 When a flying mount becomesfatigued and lands, it will refuse
+forced to remain in the air for a number of consecutive turns                   to take to the air again for at least three times as long as its nor-
+equal to its safe flying time, the Dungeon Master should begin                  mal rest period (18 turns for a black dragon), unless self-
+rolling l d l O on a turn-by-turn basis thereafter to see if the animal         preservation dictates that it become airborne. If it takes off again
+becomes fatigued. The chance of fatigue is equal to 10 minus the                for any reason before this full post-fatigue rest period has ex-
+second number of the creature’s stamina value.                                  pired, it has a chance of becoming fatigued again on every turn
+   Example: A black dragon has stamina values of 24/6. This                    that it remains aloft.
+
+                                                                          89
+                                                                NTS
+                                                                           F                              D
+A large variety of land-based animals can be used by characters                 The dromedary becomes weak and lethargic if it is forced to be
+as mounts and beasts of burden. Nearly every type has a distinc-                exposed to temperatures lower than 50 degrees for more than
+tive “personality,” with traits that set it apart from the others and           two days in a row.
+which may make the animal relatively more or less useful in cer-                   The double-humpedcamel (bactrian) has smaller feet than the
+tain circumstances.                                                             dromedary and is able to negotiate rocky or mountainousterrain.
+   The movement rates and encumbrance capacities of the most                    It can also be used in the desert, but like its one-humped cousin it
+often employed mounts and pack animals are described in the                     will balk at being taken into a forest or a swamp.
+section on Encumbrance and Movement. In this section are pro-                      All camels are legendary for their ability to subsist without food
+vided various pieces of information concerning those animals’                   or water. A camel (of either sort) can go for up to two weeks with-
+behavior, proper care and feeding, and some of the special fac-                 out eating or drinking; in the meantime, it lives off the water and
+tors that characters may have to contend with when employing a                  nutrients stored in its hump@).However, during the second week
+certain animal.                                                                 of such deprivation, a camel’s carrying capacity is reduced to
+                                                                                one-half of normal. The animal must be fed and watered at least
+   Ape, gorilla: Among the animals considered here, the gorilla                 once every two weeks, or at the end of that period its condition
+has the highest intelligence rating. If a gorilla can be befriended             will rapidly deteriorate. An “empty” camel needs ten times as
+(naturally or magically), it can be trained to follow simple instruc-           much food (plants) and twenty times as much water as the daily
+tions as well as transport equipment. A gorilla might be made to                ration for one man; reduce these amounts proportionately if it has
+serve as the “point man” on an expedition (which avoids putting                 been less than two weeks since the camel’s last meal.
+a character in jeopardy by requiring him to serve in that capacity).
+However, a gorilla is not capable of moving with any great degree                  Dog: The animals that pull a sled and its contents over snowy
+of stealth; a group containing one or more of these animals has a               or smooth terrain are hardy and dependable. However, the sled
+smaller-than-normal chance of being able to surprise another                    dog is physiologically suited to cold weather; the vehicle and the
+character or creature. The reduction should be at least 1 in 6, per-            animals that pull it are only usable when the temperature is lower
+haps greater in certain circumstances.                                          than 40 degrees and the ground has at least a significant amount
+   Although gorillas are only encountered naturally in tropical and             (2-3 inches) of snow cover.
+subtropical forests, they can be “persuaded” to serve as pack                      A sled dog must be fed at least as much as a man’s ration of
+animals in any forest, hills, or plains area where the effective tem-           food and water every day to maintain full strength. Water is free
+perature does not drop below 50 degrees. If it is forced to remain              for the taking in the form of snow, so that is no problem. But if sled
+in a colder area or if it is forced to move on any “prohibited” ter-            dogs are forced to go for more than two days without solid food,
+rain, a gorilla will either become lethargic or aggressive (50%                 there is a 50% chance on each day thereafter that the stronger
+chance of either) and will desert the group at its first opportunity            members of a group will kill and eat one or two of the weaker
+to head for a warmer climate or more tolerable terrain - perhaps                ones. (Explorers have been known to avoid this grisly occurrence
+taking along anything it was carrying at the time (certainly so if              by killing one of the dogs before the others get around to it, but
+the equipment is strapped to its body).                                         this is obviously a tactic that should be used only in the direst of
+   A gorilla requires ten times as much food (plants will suffice,              circumstances.)
+since gorillas are primarily herbivorous) and eight times as much                  For every dog less than the optimum number of seven that is
+water as a man does on a daily basis to maintain full strength and              pulling a sled, the encumbrance limits for the team are reduced
+vitality. If it is allowed to hunt and forage for itself, there is a 25%        by 200 gp (normal load) and 300 gp (maximum load). For every
+chance every time it goes out that it will not return.                          three dogs less than seven, all movement rates are reduced by
+                                                                                3”. A four-dog sled moves at 9” with a normal load and 6” with a
+   Bear, brown: This animal cannot reliably be used to carry any-               full load on normal terrain, or 3” with a normal load over rugged
+one or anything unless it is magically befriendedand trained. It is             terrain. A sled pulled by a single dog cannot move over rugged
+possible to domesticate and train a bear by non-magical means,                  terrain at all, and has rates of 6” and 3” on normal terrain.
+but there is a 30% chance per month thereafter that the animal
+will revert to its natural temperament and head back for the wild.                Donkey: The abilities and characteristics of a donkey are gen-
+  A bear used as a mount or a pack animal will traverse any kind                erally the same as those of a mule (see below), except for differ-
+of terrain except for swamp and desert. Its nonretractable claws                ences noted in this section and in the section on Movement and
+make it sure-footed on most terrain, but prevent it from negotiat-              Encumbrance.
+ing smooth slopes that are severely or moderately inclined.
+  A bear is omnivorous; it can and will eat anything that a man                   Elephant: A trained elephant (the only kind anyone should at-
+can eat. It needs eight times as much food and six times as much                tempt to ride or use) will generally respond only to particular ver-
+water as a man does to maintain full strength.                                  bal commands taught to it by the trainer; don’t buy an elephant
+                                                                                unless the command words are included in the price.
+   Camel: For game purposes, the single-humped camel (drome-                      An elephant can only be used in a climate where the tempera-
+dary) is the variety that is exclusively suited for hot desert re-              ture does not drop below 50 degrees, and it will not travel up or
+gions. It cannot move in mountains, forests, or swamps at all, and              down a mountain or any severe slope. (Elephants can negotiate
+it cannot negotiate a severe slope of any sort in any other terrain.            mountainous terrain, but only if a relatively level pass exists be-
+
+                                                                           90
+                                                                                                       MOUNTS A N D BEASTS OF BURDEN
+
+tween the peaks.) If the beast is used in an environment where it                     Ram, giant: Either a giant ram (the male) or a giant ewe (the fe-
+can forage for itself along the way, it will eat its fill of food (plants)         male) can be used as a mount or a pack animal, but rams are gen-
+while traveling - but it will move 3” slower when doing so. If food                erally preferred because they can be trained to charge an
+and water are not readily available, an elephant must be fed the                   opponent on command. These animals are only found naturally
+equivalent of fifty food rations and thirty water rations each day to              in hills or mountains in a temperate or subarctic climate, and they
+maintain full strength. There is a 50% chance every six hours that                 will not willingly stay in any area where the temperature regularly
+an elephant forced to travel for more than two days without get-                   goes higher than 70 degrees. However, they can (as part of their
+ting its full rations will bolt and head in the direction where it be-             domestication and training) be persuadedto travel on flat, dry ter-
+lieves the nearest food and water sources to be.                                   rain (except for deserts). They will not willingly enter forests or
+                                                                                   swamps.
+   Horse: Perhaps the most numerous, and certainly one of the                         A giant ram (or giant ewe) needs six rations of food and four ra-
+most fragile, beasts of burden available to the adventuring char-                  tions of water per day. In an area where the daily high tempera-
+acter. The horse is an exception to the general rules on stamina                   ture exceeds 50 degrees, the animal needs six rations of water
+given in the section on Encumbrance and Movement: in addition                      instead of only four.
+to requiring rest after traveling for a number of hours, any horse
+that is carrying more than its normal load must be rested for at                      Sheep: Even though they are not normally thought of as pack
+least one turn after six turns of travel. To provide the most benefit              animals, sheep can be useful for this purpose. Each animal in a
+to the horse, this rest stop should also include a bit of food and                 group can carry a small load, with the result that a small herd of
+water (a “bit,” to a horse, is one-half of a man’s daily ration) and               two dozen has a greater carrying capacity than many larger ani-
+most or all of the animal’s load should be taken off its back, even                mals have. The animals’ herding instinct, plus some effort on the
+if only for a few minutes.                                                         part of the characters accompanying them, will keep them in a
+   All mounts and pack animals can go lame or otherwise become                     cohesive group and headed in the desired direction.
+unable to travel through injury (with the chance of such an occur-                    No special ability or proficiency is needed to “shepherd” a
+rence usually left to the Dungeon Master), but a horse is particu-                 group of sheep, but as a rule one character (mounted or afoot)
+larly susceptible to this problem. There is a 2% chance (a roll of                 can only control six sheep on the move; for every additional six
+01 or 02 on percentile dice) for every eight hours of travel through               sheep (or fraction thereof) in the flock, another character (or a
+rugged or very rugged terrain that a horse will pull up lame, or                   dog trained in sheepherding) is needed to help keep them in line.
+stumble over an obstacle and become injured. The chance is                         If one or more characters attempt to move a flock while it is not
+only 1O/o (roll of 01) for a draft horse. If the dice roll is 01, the horse        properly supervised,there is a 50% chance per hour of travel that
+is injured and cannot immediately move farther, but it will recover                the entire flock will develop a mind of its own and head in a ran-
+after 12 hours of rest. If the dice roll is 02, the horse is perma-                dom direction - which may be, but probably won’t be, the direc-
+nently injured and can no longer be used to carry a burden.                        tion they were supposed to go.
+   A horse needs four rations of food (plants or grain) and at least                  Sheep will travel in temperate or colder climates, or in any area
+four rations of water every day to remain at full strength.                        where the temperature does not exceed 70 degrees. They will not
+                                                                                   willingly enter, or stay in, forests, deserts, or swamps.
+   Mule: Although it is a much hardier and stronger animal than a                     A sheep needs two rations of food (plants) and two rations of
+horse, the mule’s advantage in this regard is offset by its slower                 water to remain at full strength. If a sheep is being used to carry
+movement rate over normal terrain. But it travels over rugged and                  nondurable supplies (things that are used up along the way, such
+very rugged terrain at least as well as a horse, and because its                   as food for characters, arrows, crossbow bolts, etc.), then the ani-
+carrying capacity is greater that that of most horses it is often the              mal itself can be used for food when its usefulness as a carrier is
+best animal to take on a journey through potentially treacherous                   over.
+terrain.
+   Every animal has a personality all its own (see below), but                        Yak: This animal is similar in most respects to a giant ram, ex-
+mules are particularly noted for their capriciousness - which                      cept that its range of terrain and temperature is even smaller. A
+usually manifests itself in stubbornness. A character may be frus-                 yak can only be used in mountainous terrain, and only in arctic or
+trated, but should not be surprised, if his mule decides to remain                 subarctic climates where the temperature does not climb above
+rooted to one spot for half an hour or longer. A character can get a               30 degrees. Note that it is possible for normal terrain to occur in a
+stubborn mule to move (without causing injury to the animal) by                    mountainous area, and such terrain might be flat or sloping at
+making a Strength Check. But the mule, if it still feels stubborn,                 only a very gentle incline. Such terrain does not preclude the use
+will only take a few steps before pulling up short again - and                     of a yak, since the animal is still being kept inside a mountainous
+making a long succession of Strength Checks can get very tedi-                     area.
+ous for everyone involved; it is usually better simply to wait until                  A yak needs six rations of food and four rations of water per day
+the mule decides to move again.                                                    to remain at full strength.
+   A mule normally needs the same amount of food (plants or
+grain) and water as a horse does, but it can be kept on three-
+fourths normal rations for as many as three consecutive days be-                   ANIMALS A S INDIVIDUALS
+fore suffering any adverse effects.
+                                                                                     The animals that accompany a party of characters on a trek
+   Pony: Most of the general statements about horses (see above)                   through the wilderness can be “bit players” in the adventure, if
+apply to ponies as well. Ponies can be specially bred for traveling                the Dungeon Master and the players choose to regard them in
+in mountainous terrain, and in such a case the Dungeon Master                      that way. They are more or less taken for granted; as long as you
+may allow them to move through such areas at a faster rate than                    keep them fed, don’t work them too hard, and don’t try to take
+what is given in the section on Encumbrance and Movement. A                        them where they can’t go, they will serve capably and uncom-
+pony’s chance of going lame is 2% for every eight hours spent                      plainingly from the start of an adventure to the end.
+traversing rugged or very rugged terrain, and it must have three                      But, taking things one small step further, it is not difficult and
+rations of food or water per day.                                                  can be very interestingto treat each mount and pack animal as a
+                                                                                   unique sort of non-player character. When animals are consid-
+
+                                                                              91
+

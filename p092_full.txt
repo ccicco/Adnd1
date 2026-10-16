@@ -1,0 +1,147 @@
+tween the peaks.) If the beast is used in an environment where it
+can forage for itself along the way, it will eat its fill of food (plants)
+while traveling — but it will move 3” slower when doing so. If food
+and water are not readily available, an elephant must be fed the
+equivalent of fifty food rations and thirty water rations each day to
+maintain full strength. There is a 50% chance every six hours that
+an elephant forced to travel for more than two days without get-
+ting its full rations will bolt and head in the direction where it be-
+lieves the nearest food and water sources to be.
+
+Horse: Perhaps the most numerous, and certainly one of the
+most fragile, beasts of burden available to the adventuring char-
+acter. The horse is an exception to the general rules on stamina
+given in the section on Encumbrance and Movement: in addition
+to requiring rest after traveling for a number of hours, any horse
+that is carrying more than its normal load must be rested for at
+least one turn after six turns of travel. To provide the most benefit
+to the horse, this rest stop should also include a bit of food and
+water (a “‘bit,"”" to a horse, is one-half of a man’s daily ration) and
+most or all of the animal’s load should be taken off its back, even
+if only for a few minutes.
+
+All mounts and pack animals can go lame or otherwise become
+unable to travel through injury (with the chance of such an occur-
+rence usually left to the Dungeon Master), but a horse is particu-
+larly susceptible to this problem. There is a 2% chance (a roll of
+01 or 02 on percentile dice) for every eight hours of travel through
+rugged or very rugged terrain that a horse will pull up lame, or
+stumble over an obstacle and become injured. The chance is
+only 1% (roll of 01) for a draft horse. If the dice roll is 01, the horse
+is injured and cannot immediately move farther, but it will recover
+after 12 hours of rest. If the dice roll is 02, the horse is perma-
+nently injured and can no longer be used to carry a burden.
+
+A horse needs four rations of food (plants or grain) and at least
+four rations of water every day to remain at full strength.
+
+Mule: Although it is a much hardier and stronger animal than a
+horse, the mule’s advantage in this regard is offset by its slower
+movement rate over normal terrain. But it travels over rugged and
+very rugged terrain at least as well as a horse, and because its
+carrying capacity is greater that that of most horses it is often the
+best animal to take on a journey through potentially treacherous
+terrain.
+
+Every animal has a personality all its own (see below), but
+mules are particularly noted for their capriciousness — which
+usually manifests itself in stubbornness. A character may be frus-
+trated, but should not be surprised, if his mule decides to remain
+rooted to one spot for half an hour or longer. A character can geta
+stubborn mule to move (without causing injury to the animal) by
+making a Strength Check. But the mule, if it still feels stubborn,
+will only take a few steps before pulling up short again — and
+making a long succession of Strength Checks can get very tedi-
+ous for everyone involved; it is usually better simply to wait until
+the mule decides to move again.
+
+A mule normally needs the same amount of food (plants or
+grain) and water as a horse does, but it can be kept on three-
+fourths normal rations for as many as three consecutive days be-
+fore suffering any adverse effects.
+
+Pony: Most of the general statements about horses (see above)
+apply to ponies as well. Ponies can be specially bred for traveling
+in mountainous terrain, and in such a case the Dungeon Master
+may allow them to move through such areas at a faster rate than
+what is given in the section on Encumbrance and Movement. A
+pony's chance of going lame is 2% for every eight hours spent
+traversing rugged or very rugged terrain, and it must have three
+rations of food or water per day.
+
+91
+
+MOUNTS AND BEASTS OF BURDEN
+
+Ram, giant: Either a giant ram (the male) or a giant ewe (the fe-
+male) can be used as a mount or a pack animal, but rams are gen-
+erally preferred because they can be trained to charge an
+opponent on command. These animals are only found naturally
+in hills or mountains in a temperate or subarctic climate, and they
+will not willingly stay in any area where the temperature regularly
+goes higher than 70 degrees. However, they can (as part of their
+domestication and training) be persuaded to travel on flat, dry ter-
+rain (except for deserts). They will not willingly enter forests or
+swamps.
+
+A giant ram (or giant ewe) needs six rations of food and four ra-
+tions of water per day. In an area where the daily high tempera-
+ture exceeds 50 degrees, the animal needs six rations of water
+instead of only four.
+
+Sheep: Even though they are not normally thought of as pack
+animals, sheep can be useful for this purpose. Each animal in a
+group can carry a small load, with the result that a small herd of
+two dozen has a greater carrying capacity than many larger ani-
+mals have. The animals’ herding instinct, plus some effort on the
+part of the characters accompanying them, will keep them in a
+cohesive group and headed in the desired direction.
+
+No special ability or proficiency is needed to ‘‘shepherd” a
+group of sheep, but as a rule one character (mounted or afoot)
+can only control six sheep on the move; for every additional six
+sheep (or fraction thereof) in the flock, another character (or a
+dog trained in sheepherding) is needed to help keep them in line.
+If one or more characters attempt to move a flock while it is not
+properly supervised, there is a 50% chance per hour of travel that
+the entire flock will develop a mind of its own and head in a ran-
+dom direction — which may be, but probably won't be, the direc-
+tion they were supposed to go.
+
+Sheep will travel in temperate or colder climates, or in any area
+where the temperature does not exceed 70 degrees. They will not
+willingly enter, or stay in, forests, deserts, or swamps.
+
+A sheep needs two rations of food (plants) and two rations of
+water to remain at full strength. If a sheep is being used to carry
+nondurable supplies (things that are used up along the way, such
+as food for characters, arrows, crossbow bolts, etc.), then the ani-
+mal itself can be used for food when its usefulness as a carrier is
+over.
+
+Yak: This animal is similar in most respects to a giant ram, ex-
+cept that its range of terrain and temperature is even smaller. A
+yak can only be used in mountainous terrain, and only in arctic or
+subarctic climates where the temperature does not climb above
+30 degrees. Note that it is possible for normal terrain to occurin a
+mountainous area, and such terrain might be flat or sloping at
+only a very gentle incline. Such terrain does not preclude the use
+of a yak, since the animal is still being kept inside a mountainous
+area.
+
+A yak needs six rations of food and four rations of water per day
+to remain at full strength.
+
+ANIMALS AS INDIVIDUALS
+
+The animals that accompany a party of characters on a trek
+through the wilderness can be ‘'bit players™ in the adventure, if
+the Dungeon Master and the players choose to regard them in
+that way. They are more or less taken for granted; as long as you
+keep them fed, don't work them too hard, and don't try to take
+them where they can’t go, they will serve capably and uncom-
+plainingly from the start of an adventure to the end.
+
+But, taking things one small step further, it is not difficult and
+can be very interesting to treat each mount and pack animal as a
+unique sort of non-player character. When animals are consid-

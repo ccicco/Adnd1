@@ -1,0 +1,130 @@
+MOUNTS AND
+BEASTS OF BURDEN
+
+A large variety of land-based animals can be used by characters
+as mounts and beasts of burden. Nearly every type has a distinc-
+tive "‘personality,” with traits that set it apart from the others and
+which may make the animal relatively more or less useful in cer-
+tain circumstances.
+
+The movement rates and encumbrance capacities of the most
+often employed mounts and pack animals are described in the
+section on Encumbrance and Movement. In this section are pro-
+vided various pieces of information concerning those animals’
+behavior, proper care and feeding, and some of the special fac-
+tors that characters may have to contend with when employing a
+certain animal.
+
+Ape, gorilla: Among the animals considered here, the gorilla
+has the highest intelligence rating. If a gorilla can be befriended
+(naturally or magically), it can be trained to follow simple instruc-
+tions as well as transport equipment. A gorilla might be made to
+serve as the “‘point man™ on an expedition (which avoids putting
+a character in jeopardy by requiring him to serve in that capacity).
+However, a gorilla is not capable of moving with any great degree
+of stealth; a group containing one or more of these animals has a
+smaller-than-normal chance of being able to surprise another
+character or creature. The reduction should be at least 1in 6, per-
+haps greater in certain circumstances.
+
+Although gorillas are only encountered naturally in tropical and
+subtropical forests, they can be “‘persuaded” to serve as pack
+animals in any forest, hills, or plains area where the effective tem-
+perature does not drop below 50 degrees. If it is forced to remain
+in a colder area or if it is forced to move on any “prohibited’’ ter-
+rain, a gorilla will either become lethargic or aggressive (50%
+chance of either) and will desert the group at its first opportunity
+to head for a warmer climate or more tolerable terrain — perhaps
+taking along anything it was carrying at the time (certainly so if
+the equipment is strapped to its body).
+
+A gorilla requires ten times as much food (plants will suffice,
+since gorillas are primarily herbivorous) and eight times as much
+water as a man does on a daily basis to maintain full strength and
+vitality. If it is allowed to hunt and forage for itself, there is a 25%
+chance every time it goes out that it will not return.
+
+Bear, brown: This animal cannot reliably be used to carry any-
+one or anything unless it is magically befriended and trained. It is
+possible to domesticate and train a bear by non-magical means,
+but there is a 30% chance per month thereafter that the animal
+will revert to its natural temperament and head back for the wild.
+
+A bear used as a mount or a pack animal will traverse any kind
+of terrain except for swamp and desert. Its nonretractable claws
+make it sure-footed on most terrain, but prevent it from negotiat-
+ing smooth slopes that are severely or moderately inclined.
+
+A bear is omnivorous; it can and will eat anything that a man
+can eal. It needs eight times as much food and six times as much
+water as a man does to maintain full strength.
+
+Camel: For game purposes, the single-humped camel (drome-
+dary) is the variety that is exclusively suited for hot desert re-
+gions. It cannot move in mountains, forests, or swamps at all, and
+it cannot negotiate a severe slope of any sort in any other terrain.
+
+90
+
+The dromedary becomes weak and lethargic if it is forced to be
+exposed to temperatures lower than 50 degrees for more than
+two days in a row.
+
+The double-humped camel (bactrian) has smaller feet than the
+dromedary and is able to negotiate rocky or mountainous terrain.
+It can also be used in the desert, but like its one-humped cousin it
+will balk at being taken into a forest or a swamp.
+
+All camels are legendary for their ability to subsist without food
+or water. A camel (of either sort) can go for up to two weeks with-
+out eating or drinking; in the meantime, it lives off the water and
+nutrients stored in its hump(s). However, during the second week
+of such deprivation, a camel's carrying capacity is reduced to
+one-half of normal. The animal must be fed and watered at least
+once every two weeks, or at the end of that period its condition
+will rapidly deteriorate. An “‘empty’’ camel needs ten times as
+much food (plants) and twenty times as much water as the daily
+ration for one man; reduce these amounts proportionately if it has
+been less than two weeks since the camel’s last meal.
+
+Dog: The animals that pull a sled and its contents over snowy
+or smooth terrain are hardy and dependable. However, the sled
+dog is physiologically suited to cold weather; the vehicle and the
+animals that pull it are only usable when the temperature is lower
+than 40 degrees and the ground has at least a significant amount
+(2-3 inches) of snow cover.
+
+A sled dog must be fed at least as much as a man’s ration of
+food and water every day to maintain full strength. Water is free
+for the taking in the form of snow, so that is no problem. But if sled
+dogs are forced to go for more than two days without solid food,
+there is a 50% chance on each day thereafter that the stronger
+members of a group will kill and eat one or two of the weaker
+ones. (Explorers have been known to avoid this grisly occurrence
+by killing one of the dogs before the others get around to it, but
+this is obviously a tactic that should be used only in the direst of
+circumstances.)
+
+For every dog less than the optimum number of seven that is
+pulling a sled, the encumbrance limits for the team are reduced
+by 200 gp (normal load) and 300 gp (maximum load). For every
+three dogs less than seven, all movement rates are reduced by
+3". A four-dog sled moves at 9” with a normal load and 6" with a
+full load on normal terrain, or 3" with a normal load over rugged
+terrain. A sled pulled by a single dog cannot move over rugged
+terrain at all, and has rates of 6” and 3" on normal terrain.
+
+Donkey: The abilities and characteristics of a donkey are gen-
+erally the same as those of a mule (see below), except for differ-
+ences noted in this section and in the section on Movement and
+Encumbrance.
+
+Elephant: A trained elephant (the only kind anyone should at-
+tempt to ride or use) will generally respond only to particular ver-
+bal commands taught to it by the trainer; don’t buy an elephant
+unless the command words are included in the price.
+
+An elephant can only be used in a climate where the tempera-
+ture does not drop below 50 degrees, and it will not travel up or
+down a mountain or any severe slope. (Elephants can negotiate
+mountainous terrain, but only if a relatively level pass exists be-

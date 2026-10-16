@@ -1,0 +1,149 @@
+A fatigued animal moves at one-half of its normal movement
+rate, but is capable of occasional bursts of speed that enable it to
+move at its full normal rate for one round per turn. It is not able to
+negotiate any terrain in which its full normal movement rate is 3";
+a fatigued horse cannot move in very rugged terrain if it is carry-
+ing more than a normal load, and a fatigued camel cannot move
+in very rugged terrain under any circumstances. The armor class
+of a fatigued animal is two places worse than its normal armor
+class (from 7 to 9, for instance), accounting for the animal’s
+slower reflexes. If a fatigued animal becomes excited, only a
+character with proficiency in animal handling can get it to calm
+down — and that character’s chance of being able to do so is only
+as great as the normal chance for a nonproficient character.
+
+If a fatigued animal is forced to keep working or moving, there
+is a 20% chance per hour, cumulative, that it will become ex-
+hausted. If it is worked briefly, does not become exhausted, and
+is then allowed to rest for at least an hour the animal will recover
+somewhat; the chance of exhaustion begins again at 20% after
+any rest period of at least one hour.
+
+By working the animal intermittently as described above (and
+being lucky), a character can keep his mount or pack animal mov-
+ing for quite some time even after it becomes fatigued. But if ex-
+haustion does set in, he may wish he hadn’t been so impatient.
+An exhausted animal is not just tired — it is near death, and in the
+absence of magical assistance or some other aid the survival of
+an exhausted animal depends entirely on chance.
+
+An exhausted animal will stop in its tracks, incapable of moving
+or working any more. It may collapse (25% chance if unbur-
+dened, 50% if carrying a rider or a normal load, 75% if carrying
+more than a normal load), and for as long as it remains incapaci-
+tated the beast will be oblivious to anything that goes on around
+it. An exhausted animal will not become excited or panicked,
+even if threatened by fire; on the other hand, neither will it make
+any attempt to protect itself from attack or injury.
+
+There is a flat 50% chance that an animal driven to exhaustion
+will die within 1d4 hours. This chance is checked by the Dungeon
+Master as soon as the animal collapses. If the beast does not die
+outright, it may still succumb if it does not have enough strength
+to fight off the trauma to its system. Once per hour for eight con-
+secutive hours, the Dungeon Master should roll 1d6 and subtract
+3 from the result. This yields a number in the range 0-3, which
+represents the number of hit points the animal has lost during
+that hour. If the animal’s hit-point total reaches 0, it is dead. If it
+survives the eight-hour *‘critical period,’ the animal will regain its
+lost hit points at the rate of 2 per hour and will be recovered from
+exhaustion when its hit-point total reaches its original (pre-
+exhaustion) level. At this point the animal is no longer exhausted,
+but is still fatigued.
+
+Flying Mounts
+
+For a character using a flying mount, the good news is that the
+creature can never become exhausted. The bad news is that if it
+becomes fatigued, the rider stands to suffer at least as much as
+the animal — and perhaps a whole lot more.
+
+The table on Characteristics of Flying Mounts, in the section on
+Movement and Encumbrance, gives stamina values for each
+creature. As described in the text accompanying the table, the
+first number represents the creature’'s safe flying time (which
+may be reduced if it is heavily loaded down). If a flying mount is
+forced to remain in the air for a number of consecutive turns
+equal to its safe flying time, the Dungeon Master should begin
+rolling 1d10 on a turn-by-turn basis thereafter to see if the animal
+becomes fatigued. The chance of fatigue is equal to 10 minus the
+second number of the creature’s stamina value.
+
+Example: A black dragon has stamina values of 24/6. This
+
+89
+
+FATIGUE AND EXHAUSTION
+
+means that the animal can be ridden through the air for 24 con-
+secutive turns (four hours) without a risk of fatigue, but at that
+point it must be allowed to land and rest (not fly) for 6 turns (1
+hour) in order to regain its stamina. If it is not allowed to land and
+rest by the end of the 24th turn, it will become fatigued on any turn
+thereafter when the Dungeon Master rolls 1-4 on 1d10.
+
+Flying time and rest time need not be taken in full blocks in or-
+der to avoid fatigue. For instance, a black dragon can be flown for
+12 turns, rested for 3 turns, flown for 6, rested for 2, flown for 6,
+and rested for 1. Thus, over a period of 30 turns the dragon has
+been aloft for 24 turns and has rested for 6, which is within the
+safe limit; it can take off after the last 1-turn rest period and fly for
+as long as 24 more turns before it has a chance of becoming fa-
+tigued. But if the last flying period was 7 turns long instead of 6,
+the dragon could have become fatigued on the 7th turn because
+its would have been aloft for a total of 25 turns without getting at
+least 6 turns of rest.
+
+Whenever a creature exceeds its safe flying time (becomes
+susceptible to fatigue, but not necessarily fatigued) and is then
+brought to a safe landing, it must be allowed to have a full rest
+period or else it will be subject to fatigue as soon as it takes to the
+air again. In the last version of the above example, the dragon’s
+last flying period was 7 turns long and with that 7th turn it ex-
+ceeded its safe flying time. If it does not become fatigued during
+that 7th turn and is brought to a safe landing, it must be allowed to
+rest for a full 6 turns before taking off again. If it is taken aloft be-
+fore the 6 turns have expired, it has a chance of becoming fa-
+tigued on every turn that it remains in the air. Obviously, it is
+important for a character to keep careful track of how much his
+mount has flown and how much it has rested; exceeding the safe
+flying time by even a small amount can cause an extended delay
+on a long-distance journey, even if the animal does not actually
+become fatigued.
+
+And what if it does become fatigued? Well, the character(s) rid-
+ing the animal willimmediately notice some changes. On the turn
+that fatigue sets in, the animal’s movement rate will drop to two-
+thirds of its full normal amount and it will begin to gradually lose
+altitude at the rate of 10 yards per round. If the creature is not fly-
+ing more than 100 yards above the ground and is not somehow
+forced to remain aloft, it will be able to descend and make a safe
+landing in the same turn that it becomes fatigued.
+
+But if the creature is flying at an altitude of more than 100 yards
+when fatigue sets in, it will still be in the air when its second turn of
+fatigue begins — and that's when the real trouble starts for any-
+one or anything it is carrying. The animal will stop moving slowly
+and descending gradually, and will instead go into a steep dive,
+plummeting toward a place where it can rest. Its rider(s) will have
+an increased chance of falling while it is performing this maneu-
+ver, and even if a rider does not fall he must beware of the sudden
+stop at the end of the flight. For every 10 yards of distance the ani-
+mal dives before reaching the ground, a rider will suffer 1d2 hit
+points of damage at the end of the flight from the buffeting he re-
+ceives when the animal crashes, or bounces, or skids, to a stop.
+This damage is halved for a character with proficiency in airborne
+riding or for a character who is securely strapped (upper and
+lower body) to the back of the mount. A rider who does not have at
+least his lower body strapped to the mount will not suffer buffeting
+damage; instead, he will be thrown from the mount when it lands,
+suffering 11-40 hit points of damage (3d10 + 10) from the abra-
+sion and impact of his tumble.
+
+When a flying mount becomes fatigued and lands, it will refuse
+to take to the air again for at least three times as long as its nor-
+mal rest period (18 turns for a black dragon), unless self-
+preservation dictates that it become airborne. If it takes off again
+for any reason before this full post-fatigue rest period has ex-
+pired, it has a chance of becoming fatigued again on every turn
+that it remains aloft.
