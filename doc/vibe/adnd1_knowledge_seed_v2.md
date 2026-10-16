@@ -5469,6 +5469,86 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   R486 seed record in place. Next: R488 - fighting while
   climbing (printed p. 84), OPENING the wilderness
   combat chapter - the last WSG chapter (pdf pages 85-88
+- R488 LANDED 2026-10-16: commit 1ac64e0 (census 413,
+  pushed 5fa9bdf..1ac64e0), the WSG WILDERNESS COMBAT
+  opener slice, printed pp. 84-87 - OPENING the wilderness
+  combat chapter, the last WSG chapter. Pinned as
+  rules/wsgfight.h with the include after wsghazd2.h at
+  line 193 (prefix wfc - free on the first probe), 145
+  inlines: 68 consts + 77 bools in nine sections - the
+  chapter opener with the DSG pp. 30-34 cross-reference,
+  fighting while climbing, precariously balanced, in
+  water, in poor visibility, the inclement weather note,
+  melee from a mount, missile from a mount and the
+  dismount section through the p. 87 cut. Climbing: no
+  dex AC bonus (the low-dex penalty stays), one hand on
+  the surface, rear-attack vulnerability except from an
+  adjacent climber, the strapped shield one step small
+  and two large, -2 on a cliff face and -1 on a severe
+  slope, +2/-2 elevation on the cliff and +1/-1 on the
+  slope, combat damage forcing a Climbing Check (+10
+  percent on the severe slope) and a half-total-hit-point
+  hit forcing one at -10. Balanced: a melee miss forces
+  a Dex Check, -4 knee-deep in mud and -2 on a wide
+  ledge, unconsciousness or a 10-percent-of-hit-points
+  hit at height forcing a Dex Check at -2 per foot from
+  the edge, none needed 10 feet back, the nine-foot -18
+  with 19-20 failing anyway, the sleep-spelled
+  knee-deep victim and the face-down loose-soil victim
+  both facing Con Checks, the knockdown recovery five
+  segments or a full round at +4 on a slippery surface.
+  Water: -1 waist, -2 chest, -4 over, damage floor 1,
+  the attacker shares the penalty, aquatic natives
+  exempt, the swimming-proficient halve the deep
+  penalties. Poor visibility: -1 moonlight, -3 natural
+  darkness, -4 total, vision bonuses cut a quarter and a
+  half and negated, the total-darkness wild swing at 0
+  or less modified hitting within twice weapon length
+  (50 percent in natural darkness), the climbing cut 5
+  and 10 percent and the precarious modifier +1 and +2.
+  Mounts: +1 same size, -1 smaller, the footman -1 with
+  the exact-number hit striking the mount, the airborne
+  +1 (+2 swooping), the braced 3-foot weapon +4 forfeit-
+  ing the dex bonus, riding proficiency and both hands
+  for missiles, no longbow or heavy crossbow, one
+  rate-of-fire step down the 6/1-to-1/1 scale (the
+  javelin 5/2 to 2/1) never below 1/1, -1/-3/-5 by mount
+  speed, the 45-degree and complex-maneuver bars, DMG
+  p. 53 short-as-medium and medium-as-long unless
+  hovering. Dismount through the cut: the land mount
+  death dropping the rider (the proficient check or the
+  1d3 tumble and a two-round recovery), the flying mount
+  below half hit points checked every round, the natural
+  20 unseat with a 3-foot weapon against the proficiency
+  check, the ground 5-to-9-foot weapon at 20 and the
+  10-foot at 16-20, the pull-down grapple at -4 unmounted
+  with both falling 1d6, the cling to-hits each round and
+  the rider's -2 attack on the grappler - the p. 87 cut
+  is mid-sentence in the flying-mount-death text and the
+  close-to-the-ground tail rides to R489 exactly as the
+  tidal tail rode to R487. THE SETTLE: two-way clean on
+  the first pass; the garbles settled without contest
+  (the layout rate-of-fire scale 611 511 411 311 512 211
+  312 111 is 6/1 5/1 4/1 3/1 5/2 2/1 3/2 1/1 with the
+  slash rendered as a one - tesseract confirms with 6/1
+  and the javelin 5-every-2 reduced to 2-per-round
+  anchors the scale; the tesseract em-dash class matches
+  the layout minus; + I is +1). One build lesson: the
+  double-run first hit the R420 mixed-state abort
+  because the prev_seed_key spanned a line break in the
+  R487 record (pushed fell to line 2) - the seed key
+  MUST be the record's exact first line, ending at the
+  column-78 wrap, never mid-phrase across the wrap;
+  fixed and re-verified GREEN. The spec md5 pair:
+  authored dce33ce108505b1f4182857927a39e4e, as-built
+  fd6f30ec24e43a651e9cc79ec891f172 (the Termux md5 hit
+  the as-built exactly). rverify at 5fa9bdf: 145
+  mutants, 0 missed; census 412 -> 413; the gap flips
+  122/64 -> 128/58 (six boxes; the dismount box held
+  open for its tail). Next: R489 - the forcing-
+  opponents-to-dismount tail plus the rest of the
+  combat chapter through its end, likely CLOSING the
+  chapter (pdf pages 89-92 for printed pp. 88-91)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

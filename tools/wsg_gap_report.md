@@ -128,11 +128,11 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Fighting in poor visibility (p. 86) - R488: the moonlight, natural-darkness and total-darkness penalties with the wild-swing rules and the darkness climbing and precarious adjustments pin as rules/wsgfight.h
   - [x] Melee combat from a mount (p. 86) - R488: the size bonuses and penalties with the airborne and swooping adjustments and the braced-defense rules pin as rules/wsgfight.h
   - [x] Missile combat from a mount (p. 86) - R488: the riding-proficiency requirement with the rate-of-fire scale reduction and the mount-speed penalties pin as rules/wsgfight.h
-  - [ ] Forcing opponents to dismount (p. 87)
+  - [x] Forcing opponents to dismount (p. 87) - R489: the close-to-the-ground death tail with the proficient leap pin as rules/wsgfatig.h
 - [ ] **Fatigue and exhaustion** (pp. 88-89)
-  - [ ] Characters (p. 88)
-  - [ ] Land-based mounts and pack animals (p. 88)
-  - [ ] Flying mounts (p. 89)
+  - [x] Characters (p. 88) - R489: the strenuous rhythm with the fatigue and exhaustion penalties and the recovery and carried-rest rules pin as rules/wsgfatig.h
+  - [x] Land-based mounts and pack animals (p. 88) - R489: the nourishment and overwork rules with the fatigued movement, armor class and collapse rules and the trauma drain pin as rules/wsgfatig.h
+  - [x] Flying mounts (p. 89) - R489: the stamina table rules with the 1d10 fatigue check and the dive buffet and thrown-rider damage pin as rules/wsgfatig.h
 - [ ] **Mounts and beasts of burden** (pp. 90-94)
   - [ ] Animals as individuals (p. 91)
   - [ ] Calming an excited animal (p. 94)
