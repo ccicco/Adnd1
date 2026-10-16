@@ -6090,6 +6090,41 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   full WSG gap closure - the overview (pp. 7-10) and
   the proficiencies prose (pp. 11-17, includes the
   Table 1/2-adjacent nonweapon list and descriptions).
+- R497 LANDED 2026-10-16: commit 6276205 (census 422,
+  pushed bd58585..6276205), the WSG OVERVIEW OF THE
+  WILDERNESS, printed pp. 7-10 (pdf 8-11) - the terrain
+  types, the hierarchy, the bodies of water and the
+  climate zones. Pinned as rules/wsgoverview.h (prefix
+  wov, 85 inlines: 27 consts + 58 bools, no grids).
+  Load-bearing pins: the desert under-10-inches rainfall
+  definition with the 70-foot dune cap (draa beyond),
+  the hills 2,000/4,000-foot guideline bands, the
+  mountain 4,000-foot minimum with the Earth tree line
+  (10,000) and snow line (12,000), the 1-7 terrain
+  hierarchy (seacoast highest) with the two exceptions,
+  the five climate zones. Gap report 171/15 -> 182/4;
+  only the proficiencies prose (pp. 11-17) remains.
+  Preflight GREEN (R497 WSG overview audit: bad 0),
+  rverify GREEN (85 mutants, 0 missed, double-run
+  clean). The extraction lesson (NEW CLASS): the first
+  extraction push 2644f42 was 22 files with 0
+  insertions - pdftoppm could NOT write to /tmp in
+  Termux, tesseract read a nonexistent glob, and empty
+  output files committed silently; ALWAYS make the
+  temp dir under $HOME (~/wsgx/tmp), and eyeball the
+  commit insertions count (0 insertions = abort).
+  Fixed by the forced-update retry 0d5f109 (13,653
+  insertions). User-side spec md5
+  8bed35c5d021d228acfd3e2444e5c5b8 differed from both
+  authored variants (850ec75b... no-nl, 1ac5d3ef...
+  +nl) - cosmetic, same class as R495/R496 (gates
+  validated the content end-to-end). Spec published as
+  the new canvas r497-splice. NEXT - R498: the
+  wilderness proficiencies prose (printed pp. 11-17,
+  pdf 12-18, already extracted at r497-extraction
+  0d5f109): the nonweapon list, the choosing-skills
+  rules and the proficiency descriptions - the LAST
+  four open boxes; closure at 186/0.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

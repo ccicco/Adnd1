@@ -17,13 +17,13 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Hierarchy of terrain (p. 9) - R497: the 1-through-7 ranking (seacoast highest, mountains lowest) with the highest-wins rule and the two common-sense exceptions pin as rules/wsgoverview.h
   - [x] Bodies of water (p. 9) - R497: the water-source-and-challenge frame, the boat and swim travel rules and the preparation advice pin as rules/wsgoverview.h
   - [x] Climate (p. 10) - R497: the five climate zones (arctic, subarctic, temperate, subtropical, tropical) with their characterizations pin as rules/wsgoverview.h
-- [ ] **Wilderness proficiencies** (pp. 11-17)
-  - [ ] Nonweapon proficiencies (p. 11)
-  - [ ] Choosing skills (p. 11)
+- [x] **Wilderness proficiencies** (pp. 11-17) - R498: the chapter prose pins as rules/wsgprofd.h - the system frame, the choosing-skills rules and the twenty-five descriptions, with the R425 grids and check system as seams; THE WSG GAP REPORT IS CLOSED
+  - [x] Nonweapon proficiencies (p. 11) - R498: the DSG-equivalence system frame, the dual-environment ruling and the underground-only contrast pin as rules/wsgprofd.h
+  - [x] Choosing skills (p. 11) - R498: the player-chooses rule, the background-logic recommendation, the delay-and-adventure bar and the DM approval rule pin as rules/wsgprofd.h
   - [x] Success and failure - the Proficiency Check system (p. 11) - R425: the check system and the improving/expanding rules pin as rules/wsgprof.h
   - [x] Improving proficiencies (p. 11) - R425: the check system and the improving/expanding rules pin as rules/wsgprof.h
   - [x] Expanding proficiency slots (optional rule) (p. 12) - R425: the check system and the improving/expanding rules pin as rules/wsgprof.h
-  - [ ] Proficiency descriptions (pp. 13-17)
+  - [x] Proficiency descriptions (pp. 13-17) - R498: all twenty-five descriptions pin as rules/wsgprofd.h - alertness through weather sense with the healing, riding and running mechanics
 - [x] **Dressing for the weather** (pp. 18-20) - R426: the whole chapter pins as rules/wsgdress.h
   - [x] Personal temperature (p. 18) - R426: the Fahrenheit effective/personal temperature system pins as rules/wsgdress.h
   - [x] Clothing (p. 18) - R426: the four categories (the ranges, the encumbrance equivalents, the costs) pin as rules/wsgdress.h
