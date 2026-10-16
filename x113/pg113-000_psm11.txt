@@ -1,0 +1,201 @@
+SPECIAL WEATHER
+
+the result given on the Precipitation Variation Table for a roll of
+
+How to Use the Special Weather Table
+
+doubles. For example, it is summer in a temperate forest area.
+
+The roll for the current day was double 4’s, indicating a day on
+
+Consider the earlier roll on the Day-to-Day Change Table (ei-
+
+which a moderate amount of rain falls. The roll for the next day is
+
+double 3's, and a subsequent roll of a six-sided die results ina 3,
+
+thera2ora 12) as Roll 1, and then roll 2d6 again, referring to this
+
+result as Roll 2. Cross-index the appropriate terrain/climate com-
+
+indicating a day of heavy rainfall (one step greater than moder-
+
+bination with the current season of the year on the Special
+
+ate). If the d6 roll is 4 or higher, the precipitation remans moder-
+
+Weather Table to obtain the four-letter code that indicates what
+
+ate for the coming day.
+
+kinds of special weather are possible. Then check the table be-
+
+If doubles are rolled more than twice in succession, the precipi-
+
+low to determine what special weather (if any) occurs:
+
+tation amount does not continue to increase, but remains at the
+
+3
+
+“'one step greater” level; a downpour will never occur during
+
+Roll2......
+
+summer in a temperate forest, regardless of how many times in a
+
+Roll 1
+
+2.4
+
+5-6
+
+if
+
+8
+
+row the dice come up doubles. Thus, the 1-in-3 chance does not
+
+2
+
+1st
+
+2nd
+
+2nd
+
+Y
+
+have to be checked if doubles are rolled more than twice in a row.
+
+12
+
+=
+
+P
+
+3rd
+
+3rd
+
+ath
+
+In no case can extraordinary precipitation exceed the level of a
+
+downpour.
+
+The notations "“1st, 2nd, 3rd, 4th"' refer to a single letter of the
+
+four-letter code. For example, if Roll 1 was a 2 and Roll 2 is a 6,
+
+Table A4: SPECIAL WEATHER
+
+Winter
+
+Summer
+
+Autumn
+
+Spring
+
+Arctic
+
+Desert
+
+Hills
+
+Mountains
+
+Plains
+
+Seacoast
+
+Subarctic
+
+Desert
+
+Forest
+
+Hills
+
+Mountains
+
+Plains
+
+Seacoast
+
+Swamp
+
+Temperate
+
+Desert
+
+Forest
+
+Hills
+
+Mountains
+
+Plains
+
+Seacoast
+
+Swamp
+
+Desert
+
+Subtropical
+
+Forest
+
+Hills
+
+Mountains
+
+Plains
+
+Seacoast
+
+Swamp
+
+Tropical
+
+Desert
+
+Forest
+
+Hills
+
+Mountains
+
+Plains
+
+Seacoast
+
+Swamp
+
+Special Weather Letter Codes
+
+A = Cold Wave
+
+S = Sandstorm/Dust Storm/Blowing Snow
+
+C = Cyclone/Hurricane/Typhoon
+
+T = Tornado
+
+D
+
+= Drought
+
+X = Extreme Precipitation
+
+G
+
+= Gale
+
+Z = Heat Wave
+
+M = Mist or Fog
+
+112

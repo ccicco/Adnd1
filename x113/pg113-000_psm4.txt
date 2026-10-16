@@ -1,0 +1,75 @@
+SPECIAL WEATHER
+
+the result given on the Precipitation Variation Table for a roll of How to Use the Special Weather Table
+
+doubles. For example, it is summer in a temperate forest area.
+
+The roll for the current day was double 4’s, indicating a day on Consider the earlier roll on the Day-to-Day Change Table (ei-
+which a moderate amount of rain falls. The roll for the next day is thera2ora 12) as Roll 1, and then roll 2d6 again, referring to this
+double 3's, and a subsequent roll of a six-sided die resultsina 3, result as Roll 2. Cross-index the appropriate terrain/climate com-
+indicating a day of heavy rainfall (one step greater than moder- bination with the current season of the year on the Special
+ate). If the d6 roll is 4 or higher, the precipitation remans moder- Weather Table to obtain the four-letter code that indicates what
+ate for the coming day. kinds of special weather are possible. Then check the table be-
+
+If doubles are rolled more than twice in succession, the precipi- low to determine what special weather (if any) occurs:
+
+tation amount does not continue to increase, but remains at the
+
+“one step greater” level; a downpour will never occur during ~ Lii.iiieeieaaa..nd Roll2......
+
+summer in a temperate forest, regardless of how many times in a Roll 1 2-4 5-6 if 8
+
+row the dice come up doubles. Thus, the 1-in-3 chance does not 2 1st 2nd 2nd — —
+have to be checked if doubles are rolled more than twice in a row. 12 = = 3rd 3rd 4th
+
+In no case can extraordinary precipitation exceed the level of a
+
+downpour. The notations "“1st, 2nd, 3rd, 4th"' refer to a single letter of the
+
+four-letter code. For example, if Roll 1 was a 2 and Roll 2 is a 6,
+
+Table A4: SPECIAL WEATHER
+
+Winter Spring Summer Autumn
+Arctic Desert G A D D G A DD G A D D G A DD
+Hills G A D D G A DM GEATRDINZ) G A D D
+Mountains G A D D G A DM G A M Z G A DM
+Plains BEWAL DD A G DM XD G A D Z
+Seacoast G ADOD AGM Z G A M Z G A M Z
+Subarctic  Desert G A DD G A D D A S DD G A DD
+Forest CENANSDYRZ: A X D Z X A Z D A X M D
+Hills G AMD A G D Z A OXTZ D G A M D
+Mountains G A DM A X M Z AXi Z D G A M D
+Plains G A M D A X D Z Zmwpe 2. (B, G ADRZ
+Seacoast G A M Z G A M Z X A Z M A G M Z
+Swamp A X M Z A X M Z X A zZ M A X M Z
+Temperate Desert A 8 D Z GHISTDIZ @ & D Z s oy |z
+Forest A X M Z G X M Z G X M Z A X M Z
+Hills A X M Z A X Z T A X D Z RLX DD
+Mountains A X M D A X M Z A X D Z X A D Z
+Plains A G D Z A X o Z X6 Do Z X A D Z
+Seacoast A X M Z C X M z cC X M Z A X M Z
+Swamp A X M Z G X M zZ G X M Z A X M Z
+Subtropical Desert ArGloDReZ G S, G SDNZ: G SEDEZ
+Forest X A M Z X G z M X X z M A X M Z
+Hills A X D Z A X D T X G D Z A X Z M
+Mountains A X D Z A X Z M X G Z D X A Z M
+Plains A X D Z X G zZ T X @ DHZ G A'D .Z
+Seacoast A X DIZ C XM Z C X M z CUXSDRE
+Swamp A X D Z C XM z C X M z Cil X DI Z
+Tropical Desert A S-D Z G 8 D2 QSHDRZ QS D
+Forest X X M z X X zM™ X X zZ M X X M z
+Hills A G D Z G X DZ G X D GG [ ZeD)
+Mountains A X M Z A X M Z X G zZ M Al G2
+Plains G X uDmEZ, G X D zZ 3im X1 WZ D). Qi X1 Zie D;
+Seacoast XA D Z A X M Z cC X M z X A zZ M
+Swamp ANz D G X zZ M X G M z X A M Z
+Special Weather Letter Codes
+A = Cold Wave S = Sandstorm/Dust Storm/Blowing Snow
+C = Cyclone/Hurricane/Typhoon T = Tornado
+D = Drought X = Extreme Precipitation
+G = Gale Z = Heat Wave
+
+M = Mist or Fog
+
+112
