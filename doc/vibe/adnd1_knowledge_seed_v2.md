@@ -5646,6 +5646,93 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   extraction batch), opening with the ape/gorilla,
   bear, camel and dog entries and the animals-as-
   individuals section
+- R490 LANDED 2026-10-16: commit 86a2308 (census 415,
+  pushed c11cbe1..86a2308), the WSG MOUNTS AND BEASTS
+  OF BURDEN chapter slice, printed pp. 90-94 - CLOSING
+  the chapter. Pinned as rules/wsgmount.h with the
+  include after wsgfatig.h at line 195 (prefix wmb -
+  free on the first probe), 185 inlines: 80 consts +
+  90 bools + the 15 Table 42 switch columns in
+  seventeen sections - the opener, the twelve-animal
+  catalog (ape/gorilla, brown bear, camel, sled dog,
+  donkey, elephant, horse, mule, pony, giant ram,
+  sheep, yak), animals as individuals, Table 42, the
+  reaction bands, calming, understanding. The catalog:
+  the gorilla (highest intelligence, point man, the
+  1-in-6 surprise cut, the 50-degree floor, the 50-50
+  lethargic-or-aggressive desertion, 10x food / 8x
+  water, the 25% foraging no-return), the bear (magic
+  to carry, 30% monthly reversion, no swamp or desert,
+  8x / 6x), the camel (dromedary hot-desert, no severe
+  slope, weak below 50 degrees after two days, the
+  bactrian, the two-week fast with the half capacity
+  in week two and the 10x / 20x empty refueling), the
+  sled dog (the 40-degree ceiling, 2-3 inches of snow,
+  the 50% cannibalism after two days, the seven-dog
+  optimum with 200/300 gp losses per dog short and 3"
+  per three dogs, the four-dog 9/6/3 and single-dog
+  6/3), the elephant (command words, the 50-degree
+  floor, the 3" forage slowdown, 50/30 rations, the
+  50%-per-six-hours bolt after two unfed days), the
+  horse (the overloaded one-turn rest per six turns,
+  the half-ration bit, the 2% lame per eight rugged
+  hours - draft 1% - with 01 at 12 hours and 02
+  permanent, 4/4 rations), the mule (the half-hour
+  stubborn root with the Strength Check, the
+  three-fourths rations for three days), the pony
+  (2% lame, 3 rations), the ram (70-degree ceiling,
+  6/4 rations rising to 6 water above the 50-degree
+  high), the sheep (six per handler, the 50%-per-hour
+  unsupervised bolt, 70-degree ceiling, 2/2), and
+  the yak (30 degrees, 6/4). Table 42: the 14-animal
+  1d12 reaction grid across fire, weather, noise,
+  odor and other - noticed / agitated / panicked, the
+  bare trailing slash pinned as sentinel 13 (an
+  impossible roll = no panic); the census 1/3/3/2/0.
+  The bands: the two-round calm window, the 2d3-turn
+  panicked flight, the fire commentary (lava and
+  magical heat yes, faerie fire no; the quarter-mile
+  bonfire and one-mile conflagration sensing), the
+  weather sense, the noise habituation, the odor
+  pungency bar, the other-quirk menagerie. Calming:
+  the proficient every round, the nonproficient 20%
+  with two attempts, movement only, the 50-50 motion
+  split, the +2 agitated / +4 panicked proficient-
+  only modifiers, the re-excitement. Understanding:
+  the animal-lore guess vs the sensory guesswork vs
+  the certainty. THE SETTLE - the hardest table yet:
+  the Mule row defeated tesseract outright (conf 0.0
+  on two cells; the row prints in lighter ink) and
+  pdftotext dropped the horse-other, mule and pony
+  rows entirely. Settled by a TEMPLATE-GLYPH OCR pass
+  written from scratch on the 300-dpi png: digits and
+  slashes harvested from the same table's confidently-
+  read cells, classified by Hamming distance at the
+  light-ink thresholds (120/140, not 170) - giving
+  mule fire 6/11, weather 6/12, noise 6/11, odor
+  7/12, other 6/10/12, agreeing with every tesseract
+  fragment it did manage. The elephant noise cell
+  first misread 8/17 from row-rule contamination and
+  re-settled to 8/12 on the proper band; the camel
+  and donkey "other" first glyphs (& and copyright)
+  are both 6; the two-number cells end in a bare
+  trailing slash pixel-identical to the interior
+  slash - settled by ASCII-art rendering of the
+  glyph. Layout garbles: 8110112 = 8/10/12 with the
+  slash as a one; book typos "greater that that",
+  "geta", "eal", "occurin", "1in 6". The md5 pair
+  hit EXACTLY this round: Termux md5sum 8d6e2057a3b
+  844eefdace037ff8b6331 = the pushed spec bytes; the
+  authored canvas body dfc05e1cbdb3acc6618061d062cc
+  6dbf compares semantically identical. rverify at
+  c11cbe1: 380 mutants, 0 missed (the biggest battery
+  yet - the 210 grid cells); census 414 -> 415; the
+  gap flips 132/54 -> 135/51 (three boxes; the magic
+  chapter boxes stay open). Next: R491 - MAGIC IN
+  THE WILDERNESS, printed pp. 95-102 (pdf pages
+  96-103), the last WSG chapter: spells, magic items
+  and magic under wilderness conditions; extraction
+  pass needed (8 pdf pages)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

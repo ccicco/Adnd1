@@ -138,12 +138,12 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Calming an excited animal (p. 94) - R490: the proficiency and 20 percent nonproficient rules with the motion details and the +2/+4 modifiers pin as rules/wsgmount.h
   - [x] Understanding an animal (p. 94) - R490: the animal lore educated-guess and certainty rules pin as rules/wsgmount.h
 - [ ] **Magic in the wilderness** (pp. 95-102)
-  - [ ] Spells (p. 95)
-  - [ ] Potions (p. 100)
-  - [ ] Protection scrolls (p. 100)
-  - [ ] Rings (p. 100)
-  - [ ] Rods, staves, and wands (p. 101)
-  - [ ] Miscellaneous magic (p. 101)
+  - [x] Spells (p. 95) - R491: the alphabetical spell commentary from affect normal fires through wraithform with the climbing, temperature, cold-weather and web rules pins as rules/wsgmagic.h
+  - [x] Potions (p. 100) - R491: the gaseous form, invulnerability and vitality rules pin as rules/wsgmagic.h
+  - [x] Protection scrolls (p. 100) - R491: the cold, fire and gas scroll rules pin as rules/wsgmagic.h
+  - [x] Rings (p. 100) - R491: the fire resistance, free action, protection, sustenance and warmth rules pin as rules/wsgmagic.h
+  - [x] Rods, staves, and wands (p. 101) - R491: the rod of lordly might and staff of swarming insects rules pin as rules/wsgmagic.h
+  - [x] Miscellaneous magic (p. 101) - R491: the Kwalish through stone of good luck item rules pin as rules/wsgmagic.h
 
 ## The DM section, the appendix, the compiled tables
 

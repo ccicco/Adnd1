@@ -1,0 +1,2432 @@
+{
+ "round": 491,
+ "title": "the WSG magic in the wilderness chapter slice - the alphabetical spell commentary from affect normal fires through wraithform with the climbing and falling interplay of bind, bee, bug, fumble, haste, jump, knot, sink, snare and web, the web thickness chain with the 10-20-40-60 ladder and the 2x 4x 8x slope multipliers, the temperature magics of armor, cone of cold, control weather, heat metal and the protection scrolls, the cold-weather reductions of insect plague, summon insects and the staff of swarming insects, and the potion, protection scroll, ring, rod and miscellaneous item rules from gaseous form through the stone of good luck, printed pp. 95-101, CLOSING the magic in the wilderness chapter",
+ "prefix": "wmg",
+ "header_file": "rules/wsgmagic.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 415,
+ "inline_count": 241,
+ "audit_label": "R491 WSG magic in the wilderness pin audit",
+ "audit_comment": "The magic in the wilderness chapter, CLOSING it. The opener: the starting-point rule, the exclusion points and the alphabetical arrangement. The spells: affect normal fires quick campfire; air walk safe perch; airy water swimming rate; alarm out of the sentry sight; animal summoning animal lore advance knowledge; animate object and rock; armor 10 degrees toward tolerable; augury edibility; barkskin half abrasion; bee Climbing Check; bind 100 feet of half-inch rope; bluelight twice safe speed; bug +10 percent; call lightning always hits at least half damage, indistinguishable, multiple-strike suspicion, natural coexistence; call woodland beings no lore boost; commune one fact per level without concentration; cone of cold six constitution points, one per turn for one hour; control temperature gradual warming; control weather 30 to 40 degrees, the druidic two steps, the extremes one-direction rule and the resumption; control winds negation, fog and sandstorm, no resumption, no large scale; cough and giggle no concentration break; create food and water; create water container and drop; cure blindness sandstorm; cure disease not trauma; darkness half safe rate; detect snares and pits moving area; dig; dispel exhaustion no fatigue help; dry kindling and second application; earthquake 1 mile, 50 percent, 1d6 turns; fear obstacle avoidance; feign death half exposure; find familiar desolate and plausible; find traps magical or mechanical only; firewater one pint; flame strike 10-foot diameter; forcecage 5 percent per level, 20-foot fall; fumble minus 20 percent or plus 4, motionless, unaware, deliberate motion; gather needs lore; haste minus 10 percent and plus 2; heal constitution restoration; heat metal chill seven rounds as one hour; hold person no mid-air, grip, willing; insect plague 40 degrees, one-tenth duration, three-quarters area, the 9-inch 1.5-inch cleric and 8-inch 1-inch druid clouds; irritation grip; item portable fire; jump 50 percent on smooth; knot 1d4 minimum 1; locate animals and plants; lower water toward, ford, spill; massmorph hazards, weapon only, no nourishment; mending one rope; misdirection reversal; protection from normal missiles hail and sandstorm, limited visibility, tornado carry, abrasion not impact, no lightning, lava not radiant heat; rainbow the cleric chain and the once, half, 6-inch and 6th-level reductions; resist cold and fire further harm only; run the 1-turn exhaustion, mental activity, endurance exception, runners exempt; shield two-thirds; sink 4 segments and 4 turns; snare 100 and 50 percent; stone tell mountains; stoneskin no abrasion, tumble dispels, hail one sequence; summon insects 40 degrees half duration; symbol every turn, hopelessness and pain; transmute rock to mud; trip normal gait; water walk two man-sized, terrain grades, current; weather summoning season and resumption; web the anchors, the 5-per-10 thickness ladder, the 10-20-40-60 distances, the 2x 4x 8x multipliers, the 60-foot maximum, abrasion not impact; wraithform no fall damage, weight, no mid-air cast. The potions: gaseous form 3-30 and hurricane death; invulnerability 40 and 80 halved; vitality seven days. The protection scrolls: cold 40 degrees whichever higher; fire mirror; gas the 1-inch no-wind radius. The rings: fire resistance scroll; free action encumbrance limits; protection plus per die; sustenance minus 5, six turns, the 20; warmth scroll. The rods and staves: lordly might 20 feet out of charges; swarming insects 30 plus 5 versus 60 plus 10. The miscellaneous: Kwalish surfaces; arrow of direction; cloak; cube face five; Daern fortress windproof not climate-controlled; the gauntlets plus and minus 10; the mantle comfort, precipitation and limits; the periapt abrasion only; the rope of climbing 100 and 50; the Fharlanghn shoes 100 and 80; the stone of good luck plus 5 percent and minus 1.",
+ "banner": {
+  "title": "R491: the WSG MAGIC IN THE WILDERNESS chapter slice, printed pp. 95-101 - the round CLOSING the chapter: the alphabetical spell commentary from affect normal fires through wraithform, the climbing and falling interplay with the web thickness chain and slope multipliers, the temperature magics, the cold-weather reductions, and the potion, scroll, ring, rod and miscellaneous item rules - the DM section rides to R492.",
+  "provenance": "THE SETTLE: the magic pages two-way clean - the pdftotext layout reads and the tesseract tsv reconstructions agree on every number (the bind 100 feet of half-inch rope; the armor 10 degrees; the bug +10 percent; the bluelight twice safe speed; the commune one fact per level; the cone of cold six points, one per turn, one hour; the control weather 30 to 40 and the druidic two steps; the earthquake 1 mile, 50 percent, 1d6 turns; the feign death half; the firewater one pint; the flame strike 10-foot diameter; the forcecage 5 percent per level and the 20-foot fall; the fumble minus 20 percent and plus 4; the haste minus 10 percent and plus 2; the chill metal 7 rounds as one hour; the insect plague 40 degrees, one-tenth duration, three-quarters area, the 9-inch diameter 1.5-inch high cleric cloud and 8-inch 1-inch druid cloud, where tesseract low-confidence 3 and 12 (conf 51 and 8) lose to the text layer against the three-quarters math; the jump 50 percent on smooth; the knot 1d4 minimum 1; the rainbow once per round, half weight, 6 inches, 6th level; the sink 4 segments and 4 turns; the snare 100 and 50 percent; the summon insects half; the water walk two man-sized; the web 5 feet per 10 feet, 10-20-40-60, 2x 4x 8x, with the printed examples being the 10-foot and 20-foot thick webs - both reads dropped the 0 into 1-inch and 2-inch, and the doubled 40 and quadrupled 160 settle it; the gaseous form 3-30; the invulnerability 40 and 80; the vitality seven days; the scroll cold 40 degrees and the gas 1 inch; the sustenance minus 5, six turns and the unmodified 20; the lordly might 20 feet; the swarming insects 30 plus 5 versus 60 plus 10; the Fharlanghn 100 and 80 percent; the stone of good luck plus 5 percent and minus 1) - md5 2f437a1aa0262a999f410c533be81815 on p096_103_full.txt - printed p. 102 is ornament-only and the chapter ends at printed 101.",
+  "sentinel": "The chain lesson: the web thickness band and every const feed the audit mirror, and the mutant battery perturbs each one against it."
+ },
+ "consts": [
+  {
+   "name": "wmgArmorTempDeg",
+   "value": 10,
+   "comment": "the armor spell alters the personal temperature of the recipient by 10 degrees toward the tolerable range - warmer if the environment is cold, or vice versa"
+  },
+  {
+   "name": "wmgBindRopeMinFt",
+   "value": 100,
+   "comment": "the bind spell affects at least 100 feet of half-inch-diameter climbing rope, or an even greater length of smaller rope such as might be used to pitch a tent"
+  },
+  {
+   "name": "wmgBluelightSpeedMult",
+   "value": 2,
+   "comment": "bluelight sheds enough light to enable a character to move at twice his maximum safe speed in darkness or moonlight without Dexterity Checks, provided he pays attention to the terrain in front of him"
+  },
+  {
+   "name": "wmgBugClimbBonusPct",
+   "value": 10,
+   "comment": "the bug cantrip bite is usually not as severe as a bee sting, so the victim gets a +10% bonus to his Climbing Rating for the Climbing Check"
+  },
+  {
+   "name": "wmgCommuneFactsPerLevel",
+   "value": 1,
+   "comment": "commune with nature lasts until the caster has requested and found out one fact for each level of experience"
+  },
+  {
+   "name": "wmgConeConMax",
+   "value": 6,
+   "comment": "the cone of cold heatstroke treatment will not restore lost hit points but will restore lost constitution points up to a maximum of six"
+  },
+  {
+   "name": "wmgConeConPerTurn",
+   "value": 1,
+   "comment": "one constitution point per turn is restored by the cone of cold cooling treatment"
+  },
+  {
+   "name": "wmgConeHour",
+   "value": 1,
+   "comment": "the cone of cold cooling power remains in effect for one hour of treatment"
+  },
+  {
+   "name": "wmgCtrlWeatherLoDeg",
+   "value": 30,
+   "comment": "control weather will not radically change the temperature through 100 degrees or more; a maximum range of 30 degrees in one direction or the other is recommended"
+  },
+  {
+   "name": "wmgCtrlWeatherHiDeg",
+   "value": 40,
+   "comment": "the upper bound of the recommended control weather temperature change: a maximum range of 30 or 40 degrees in one direction or the other"
+  },
+  {
+   "name": "wmgDruidicSteps",
+   "value": 2,
+   "comment": "the druidic version of control weather can move weather conditions two steps instead of just one"
+  },
+  {
+   "name": "wmgDarknessRateDen",
+   "value": 2,
+   "comment": "the maximum safe movement rate in the magical darkness of darkness 15 radius is one-half of the figure given for natural darkness"
+  },
+  {
+   "name": "wmgQuakeFaultMiles",
+   "value": 1,
+   "comment": "if the earthquake spell is cast within one mile of a natural fault line there is a chance of triggering a natural earthquake at that location"
+  },
+  {
+   "name": "wmgQuakeChancePct",
+   "value": 50,
+   "comment": "casting the earthquake spell within one mile of a natural fault line gives a 50 percent chance that a natural earthquake will occur there"
+  },
+  {
+   "name": "wmgQuakeDelayDie",
+   "value": 6,
+   "comment": "the natural earthquake triggered by the spell occurs 1d6 turns after the magical earthquake has subsided"
+  },
+  {
+   "name": "wmgFeignExposureDen",
+   "value": 2,
+   "comment": "under feign death the effects of exposure such as frostbite and heatstroke accumulate only half as quickly as under normal circumstances"
+  },
+  {
+   "name": "wmgFirewaterPints",
+   "value": 1,
+   "comment": "as little as one pint of firewater, sprinkled evenly over the fuel and ignited before it evaporates, will make branches and logs catch fire wherever the substance is present"
+  },
+  {
+   "name": "wmgFlameStrikeDiamFt",
+   "value": 10,
+   "comment": "flame strike momentarily ignites everything in a 10-foot-diameter area, charring easily flammable materials there when the duration expires"
+  },
+  {
+   "name": "wmgForcecagePctPerLevel",
+   "value": 5,
+   "comment": "there is a chance equal to 5% per level of the caster that forcecage could be used to halt a falling character or creature in mid-air, assuming the target is within range when the spell is discharged"
+  },
+  {
+   "name": "wmgForcecageFallDmgFt",
+   "value": 20,
+   "comment": "a target successfully halted by a mid-air forcecage is prevented from falling any farther and takes damage only as for a 20-foot fall - the length of one side of the cage"
+  },
+  {
+   "name": "wmgFumbleClimbPct",
+   "value": 20,
+   "comment": "a fumbled character or creature in a precarious position that fails its saving throw stumbles and falls unless it makes a successful Climbing Check at a -20% modifier to its Climbing Rating"
+  },
+  {
+   "name": "wmgFumbleDexMod",
+   "value": 4,
+   "comment": "the fumble fall-avoidance Dexterity Check is made with a +4 modifier to the die roll, whichever check applies"
+  },
+  {
+   "name": "wmgHasteClimbPct",
+   "value": 10,
+   "comment": "a hasted character on a slope or cliff face can move twice as fast as normal, but all Climbing Checks for hasted characters and creatures are made at a -10% penalty to their Climbing Ratings"
+  },
+  {
+   "name": "wmgHasteDexMod",
+   "value": 2,
+   "comment": "if a hasted character exceeds his maximum safe speed in conditions of reduced visibility he must make all Dexterity Checks called for at a +2 modifier to the die roll"
+  },
+  {
+   "name": "wmgChillRounds",
+   "value": 7,
+   "comment": "the seven rounds of heat metal spell duration, when the reverse chill metal is used on the armor of a heatstroke victim, will benefit him the same as normal treatment"
+  },
+  {
+   "name": "wmgChillAsHour",
+   "value": 1,
+   "comment": "the chill metal heatstroke treatment benefits the victim the same as if he had received normal treatment for a full hour; he suffers no damage or disability from the spell"
+  },
+  {
+   "name": "wmgPlagueColdDeg",
+   "value": 40,
+   "comment": "if insect plague is cast when the actual temperature is 40 degrees or lower the duration and area of effect are both reduced"
+  },
+  {
+   "name": "wmgPlagueDurationPct",
+   "value": 10,
+   "comment": "under the 40-degree threshold the insect plague duration is reduced to one-tenth of normal: 1 round per level"
+  },
+  {
+   "name": "wmgPlagueRoundsPerLevel",
+   "value": 1,
+   "comment": "the cold-weather insect plague lasts 1 round per level of the caster"
+  },
+  {
+   "name": "wmgPlagueAreaPct",
+   "value": 75,
+   "comment": "under the 40-degree threshold the insect plague area of effect is cut to three-quarters of normal"
+  },
+  {
+   "name": "wmgPlagueClericDiamIn",
+   "value": 9,
+   "comment": "the cold-weather cleric insect plague cloud is 9 inches in diameter (tesseract read a low-confidence 3 here, conf 51; the text layer wins)"
+  },
+  {
+   "name": "wmgPlagueClericHighHalfIn",
+   "value": 3,
+   "comment": "the cold-weather cleric insect plague cloud is 1.5 inches high - 3 half-inches (tesseract read a low-confidence 12-inch height, conf 8; the text layer wins)"
+  },
+  {
+   "name": "wmgPlagueDruidDiamIn",
+   "value": 8,
+   "comment": "the cold-weather druid insect plague cloud is 8 inches in diameter"
+  },
+  {
+   "name": "wmgPlagueDruidHighHalfIn",
+   "value": 2,
+   "comment": "the cold-weather druid insect plague cloud is 1 inch high - 2 half-inches"
+  },
+  {
+   "name": "wmgJumpSmoothPct",
+   "value": 50,
+   "comment": "on a smooth slope or smooth cliff face the chance of a safe landing or grasping spot for a jump spell is 50 percent"
+  },
+  {
+   "name": "wmgKnotDie",
+   "value": 4,
+   "comment": "a character with rope use proficiency can loosen the bind knot in 1d4 rounds"
+  },
+  {
+   "name": "wmgKnotMin",
+   "value": 1,
+   "comment": "the knot-loosening time is reduced by the dexterity reaction bonus but is a minimum of 1 round in any case"
+  },
+  {
+   "name": "wmgRainbowBowPerRound",
+   "value": 1,
+   "comment": "the rainbow spell wrought through the cantrip chain fires the bow only once per round"
+  },
+  {
+   "name": "wmgRainbowBowNormal",
+   "value": 2,
+   "comment": "a normal rainbow spell fires the bow twice per round"
+  },
+  {
+   "name": "wmgRainbowBridgePct",
+   "value": 50,
+   "comment": "the chain-wrought rainbow bridge weight limit is half normal - 50 percent"
+  },
+  {
+   "name": "wmgRainbowElevatorIn",
+   "value": 6,
+   "comment": "the chain-wrought rainbow elevator moves at 6 inches per round"
+  },
+  {
+   "name": "wmgRainbowElevatorNormal",
+   "value": 12,
+   "comment": "the normal rainbow elevator moves at 12 inches per round"
+  },
+  {
+   "name": "wmgRainbowLevel",
+   "value": 6,
+   "comment": "the chain-wrought rainbow flagon draughts act as if cast by a cleric of 6th level"
+  },
+  {
+   "name": "wmgRainbowLevelNormal",
+   "value": 12,
+   "comment": "a normal rainbow flagon acts as if cast by a cleric of 12th level"
+  },
+  {
+   "name": "wmgRunExhaustTurns",
+   "value": 1,
+   "comment": "if individuals affected by a run spell do not rest and refresh themselves immediately after the spell duration expires, they become exhausted after as little as 1 turn of activity other than eating, drinking and resting"
+  },
+  {
+   "name": "wmgShieldAbrasionNum",
+   "value": 2,
+   "comment": "a shielded magic-user takes two-thirds of the abrasion and impact damage he would otherwise suffer from a tumble or fall - the numerator 2"
+  },
+  {
+   "name": "wmgShieldAbrasionDen",
+   "value": 3,
+   "comment": "the shield tumble-and-fall damage divisor: two-thirds, denominator 3"
+  },
+  {
+   "name": "wmgSinkSegments",
+   "value": 4,
+   "comment": "if the sink caster stops chanting after 4 segments the subject becomes fastened to the surface he is touching"
+  },
+  {
+   "name": "wmgSinkTurns",
+   "value": 4,
+   "comment": "after a sink spell fastens a falling character, the rest of the group has 4 turns to devise a way to keep him from falling when he returns to normal form"
+  },
+  {
+   "name": "wmgSnareNonmagicPct",
+   "value": 100,
+   "comment": "a snare prepared without magical assistance, when enhanced by the snare spell, is 100 percent undetectable without magical means"
+  },
+  {
+   "name": "wmgSnareMagicPct",
+   "value": 50,
+   "comment": "the snare-spell snare can be noticed only on a 50 percent chance even if some form of magical detection is employed on the area in which it is located"
+  },
+  {
+   "name": "wmgInsectsColdDeg",
+   "value": 40,
+   "comment": "if summon insects is cast when the actual temperature is 40 degrees or lower the spell duration is reduced"
+  },
+  {
+   "name": "wmgInsectsDurDen",
+   "value": 2,
+   "comment": "under the 40-degree threshold the summon insects duration is one-half of normal, rounded down - the denominator 2"
+  },
+  {
+   "name": "wmgSymbolEveryTurn",
+   "value": 1,
+   "comment": "the symbol-of-hopelessness viewer who fails his saving throw must make a successful Wisdom Check every turn as long as the magic remains in effect"
+  },
+  {
+   "name": "wmgWaterWalkEncumberedCount",
+   "value": 2,
+   "comment": "for determining how many individuals water walk can affect, a heavily or severely encumbered character counts as two man-sized creatures instead of just one"
+  },
+  {
+   "name": "wmgWebPerThickFt",
+   "value": 5,
+   "comment": "for every five feet of thickness, a web can protect a character from a fall of 10 feet"
+  },
+  {
+   "name": "wmgWebBand0FallFt",
+   "value": 10,
+   "comment": "a web up to 5 feet thick stops a fall of up to 10 feet"
+  },
+  {
+   "name": "wmgWebBand1FallFt",
+   "value": 20,
+   "comment": "a web up to 10 feet thick stops a fall of up to 20 feet"
+  },
+  {
+   "name": "wmgWebBand2FallFt",
+   "value": 40,
+   "comment": "a web up to 20 feet thick stops a fall of up to 40 feet"
+  },
+  {
+   "name": "wmgWebMaxFallFt",
+   "value": 60,
+   "comment": "a web of 30 feet of thickness or more stops a fall of up to 60 feet, the maximum"
+  },
+  {
+   "name": "wmgWebSevereMult",
+   "value": 2,
+   "comment": "when a web halts a tumble down a severe slope the fall distance figures are doubled"
+  },
+  {
+   "name": "wmgWebModerateMult",
+   "value": 4,
+   "comment": "when a web halts a tumble down a moderate slope the fall distance figures are quadrupled"
+  },
+  {
+   "name": "wmgWebGentleMult",
+   "value": 8,
+   "comment": "when a web halts a tumble down a gentle slope the fall distance figures are multiplied by eight"
+  },
+  {
+   "name": "wmgWebSevereExThickFt",
+   "value": 10,
+   "comment": "the tumble example: a 10-foot-thick web (both reads dropped the 0, printing a 1-inch web that cannot reconcile with the 5-feet-per-10-feet rule) halts a character after a tumble of 40 feet or less down a severe slope"
+  },
+  {
+   "name": "wmgWebSevereExTumbleFt",
+   "value": 40,
+   "comment": "the severe-slope web example halts a tumble of 40 feet or less"
+  },
+  {
+   "name": "wmgWebModerateExThickFt",
+   "value": 20,
+   "comment": "a 20-foot-thick web (the 2-inch misread, same dropped-0 class) brings a character safely to a halt after a fall of 160 feet or less down a moderate slope"
+  },
+  {
+   "name": "wmgWebModerateExTumbleFt",
+   "value": 160,
+   "comment": "the moderate-slope web example halts a tumble of 160 feet or less"
+  },
+  {
+   "name": "wmgGaseousGaleLo",
+   "value": 3,
+   "comment": "an individual in gaseous form takes 3-30 points of damage if exposed to gale-force winds - the low end"
+  },
+  {
+   "name": "wmgGaseousGaleHi",
+   "value": 30,
+   "comment": "the gaseous-form gale-force damage high end: 3-30 points"
+  },
+  {
+   "name": "wmgInvulnFallFt",
+   "value": 40,
+   "comment": "a fighter who has drunk potion of invulnerability takes no damage from a fall of 40 feet or less and no abrasion damage from a tumble"
+  },
+  {
+   "name": "wmgInvulnTumbleFt",
+   "value": 80,
+   "comment": "the invulnerability potion prevents no impact damage from a tumble of 80 feet or less; farther than the given distances, impact damage is halved"
+  },
+  {
+   "name": "wmgVitalityDays",
+   "value": 7,
+   "comment": "the vitality potion negates the need to rest and take nourishment after a run spell and makes the imbiber immune to fatigue and exhaustion for up to seven days"
+  },
+  {
+   "name": "wmgScrollColdDeg",
+   "value": 40,
+   "comment": "the protection from cold scroll effective temperature is at least high enough to prevent adverse cold effects, or 40 degrees warmer than the current effective temperature, whichever is higher"
+  },
+  {
+   "name": "wmgScrollGasRadiusIn",
+   "value": 1,
+   "comment": "characters within 1 inch of the gas scroll reader are in an area of no wind"
+  },
+  {
+   "name": "wmgRingSustMod",
+   "value": 5,
+   "comment": "all Constitution Checks for fatigue and exhaustion are made with a -5 modifier to the die roll for the ring of sustenance wearer"
+  },
+  {
+   "name": "wmgRingSustEveryTurns",
+   "value": 6,
+   "comment": "with the ring of sustenance, Constitution Checks for fatigue need not be made more often than once every six turns regardless of how long the character engages in strenuous activity"
+  },
+  {
+   "name": "wmgRingSustAutoFail",
+   "value": 20,
+   "comment": "even with the ring of sustenance fatigue modifier, an unmodified Constitution Check roll of 20 is still failure in any case"
+  },
+  {
+   "name": "wmgLordlyPoleFt",
+   "value": 20,
+   "comment": "a severely encumbered character must make a successful Dexterity Check to safely negotiate the rod of lordly might climbing pole whenever it is extended to 20 feet or more"
+  },
+  {
+   "name": "wmgSwarmColdDeg",
+   "value": 40,
+   "comment": "if the staff of swarming insects is employed when the effective temperature is 40 degrees or lower it produces only half as many insects as normal"
+  },
+  {
+   "name": "wmgSwarmBase",
+   "value": 30,
+   "comment": "under the 40-degree threshold the staff of swarming insects produces 30 insects plus 5 per level of the user"
+  },
+  {
+   "name": "wmgSwarmPerLevel",
+   "value": 5,
+   "comment": "the cold-weather staff of swarming insects per-level insect increment"
+  },
+  {
+   "name": "wmgSwarmNormalBase",
+   "value": 60,
+   "comment": "the staff of swarming insects normally produces 60 insects plus 10 per level of the user"
+  },
+  {
+   "name": "wmgSwarmNormalPerLevel",
+   "value": 10,
+   "comment": "the normal staff of swarming insects per-level insect increment"
+  },
+  {
+   "name": "wmgCubeFaceFive",
+   "value": 5,
+   "comment": "the cube of force face five - keeps out all things"
+  },
+  {
+   "name": "wmgGauntDexBonusPct",
+   "value": 10,
+   "comment": "gauntlets of dexterity give a +10% modifier to the Climbing Rating whenever both hands and feet are used to traverse a surface"
+  },
+  {
+   "name": "wmgGauntFumblePct",
+   "value": 10,
+   "comment": "gauntlets of fumbling give a -10% modifier to the Climbing Rating whenever both hands and feet are used to traverse a surface"
+  },
+  {
+   "name": "wmgFharlanghnGentlePct",
+   "value": 100,
+   "comment": "a neutral or neutral good shoes of Fharlanghn wearer has a base Climbing Rating of 100 percent when negotiating a gentle or moderate slope"
+  },
+  {
+   "name": "wmgFharlanghnSeverePct",
+   "value": 80,
+   "comment": "the shoes of Fharlanghn severe-slope or cliff-face-with-ledges base Climbing Rating is 80 percent"
+  },
+  {
+   "name": "wmgLuckyStoneClimbPct",
+   "value": 5,
+   "comment": "the stone of good luck affords its possessor a +5% modifier to his Climbing Rating"
+  },
+  {
+   "name": "wmgLuckyStoneDie",
+   "value": 1,
+   "comment": "the stone of good luck gives a -1 modifier to the die roll on any Dexterity Check or any Proficiency Check when dexterity is the appropriate related ability"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wmgMagicIntro",
+   "value": true,
+   "comment": "many sections of this book describe facets of the outdoor environment without considering that characters in the wilderness may have access to spells or magic items; the magic commentary gathered here is a starting point, not exhaustive, and some of it may seem obvious"
+  },
+  {
+   "name": "wmgGeneralPoints",
+   "value": true,
+   "comment": "magic that specifically affects animals or plants is obvious and excluded unless noteworthy; fire magic enters only when the observation is noteworthy; nourishment-creating magic is excluded; items with no general outdoor application are excluded; practically any magic may have a specific application in a particular circumstance"
+  },
+  {
+   "name": "wmgArrangement",
+   "value": true,
+   "comment": "the spell section (including cantrips) is alphabetical without regard to class; the magic item section is alphabetical, and items that duplicate listed spell effects are not repeated"
+  },
+  {
+   "name": "wmgAffectFiresCampfire",
+   "value": true,
+   "comment": "an easy way to blaze a campfire or cookfire quickly without fire-building proficiency: the magic expires soon but by then the larger fuel is ignited and the fire burns on its own"
+  },
+  {
+   "name": "wmgAirWalkAerialUse",
+   "value": true,
+   "comment": "useful for ascending or descending a steep incline or moving directly up or down near a cliff face; the air walker must reach a safe perch before the spell duration expires"
+  },
+  {
+   "name": "wmgAiryWaterMoveRate",
+   "value": true,
+   "comment": "in the area of effect the movement rate equals the swimming rate, and other characters in the sphere or hemisphere cannot move faster than the spell-caster if they intend to remain within the affected area"
+  },
+  {
+   "name": "wmgAlarmOutOfSight",
+   "value": true,
+   "comment": "the alarm guards an area that is not in the sentry line of sight, giving an added assist for a short time"
+  },
+  {
+   "name": "wmgAlarmNotCampsite",
+   "value": true,
+   "comment": "unless the caster is of very high level it is not prudent to cast it on the campsite itself since it cannot cover enough area; a better tactic is a spot a short distance away, perhaps on a path toward or parallel to the campsite"
+  },
+  {
+   "name": "wmgAnimalSummonLore",
+   "value": true,
+   "comment": "if the caster party contains a character with animal lore proficiency the Dungeon Master may let the caster know in advance at least one animal type available within range; the caster will certainly receive animals of that sort if that is what he desires"
+  },
+  {
+   "name": "wmgAnimateObjectRocks",
+   "value": true,
+   "comment": "animating the rock at the bottom of a pile near a plateau edge and sending it over makes the others follow - no more orc archers"
+  },
+  {
+   "name": "wmgAnimateRockIdea",
+   "value": true,
+   "comment": "animate rock: see animate object above for the same idea"
+  },
+  {
+   "name": "wmgAuguryEdible",
+   "value": true,
+   "comment": "handy for determining if gathered greenery is edible in the absence of plant lore proficiency or as a safeguard against an incorrect estimation; the augury itself does not always produce accurate results"
+  },
+  {
+   "name": "wmgBarkskinHalfAbrasion",
+   "value": true,
+   "comment": "the recipient suffers half damage from abrasion when tumbling down a slope; a druid acting quickly might cast it on a character as he tumbles past, minimizing abrasion for the remainder of the distance but not offsetting damage already suffered before the spell takes effect"
+  },
+  {
+   "name": "wmgBeeClimbingCheck",
+   "value": true,
+   "comment": "a character victimized by the bee cantrip in a precarious position on a moderate or severe slope or a cliff face must make a Climbing Check to avoid falling; a creature stung in a similar situation must also check to keep from falling"
+  },
+  {
+   "name": "wmgBindTentTeardown",
+   "value": true,
+   "comment": "frivolous for setting up camp but handy for taking down a tent quickly if the party lacks rope use proficiency; it also has obvious utility in climbing situations"
+  },
+  {
+   "name": "wmgBindReachProtrusion",
+   "value": true,
+   "comment": "if a protrusion is only a few inches out of reach the character extends the rope end as far as possible and has his magic-using companion bind the rope to the protrusion"
+  },
+  {
+   "name": "wmgCallLtnAlwaysHit",
+   "value": true,
+   "comment": "a bolt of magical lightning will always hit a target within range of the area where it strikes, whereas the chance of being hit by natural lightning is usually quite small"
+  },
+  {
+   "name": "wmgCallLtnHalfDmgMin",
+   "value": true,
+   "comment": "the magical lightning is generally less lethal than natural lightning but will always do at least half damage"
+  },
+  {
+   "name": "wmgCallLtnIndistinguishable",
+   "value": true,
+   "comment": "to an outside observer magical lightning is indistinguishable in appearance from natural lightning, so a witness or victim will not automatically know an external force was involved"
+  },
+  {
+   "name": "wmgCallLtnMultipleSuspect",
+   "value": true,
+   "comment": "if more than one strike hits a target or targets within a relatively short time, witnesses may logically suspect that nature is not entirely to blame"
+  },
+  {
+   "name": "wmgCallLtnNaturalCoexists",
+   "value": true,
+   "comment": "natural lightning can also occur during the spell duration as long as conditions permit - the storm must be actually occurring, not simply about to happen under hot and cloudy conditions"
+  },
+  {
+   "name": "wmgCallWoodNoLore",
+   "value": true,
+   "comment": "the presence of a character with animal lore proficiency will NOT enhance the chances of call woodland beings, since that proficiency imparts no special knowledge about the sorts of fantastic creatures that can be called"
+  },
+  {
+   "name": "wmgCommuneNoConcentration",
+   "value": true,
+   "comment": "the caster need not maintain total concentration: he can move normally, eat, converse with companions and so forth"
+  },
+  {
+   "name": "wmgCommuneExpiresOn",
+   "value": true,
+   "comment": "the spell expires prematurely if the caster performs any strenuous physical or mental activity, is struck by a physical or magical attack, or loses consciousness"
+  },
+  {
+   "name": "wmgConeHeatstrokeUse",
+   "value": true,
+   "comment": "at the Dungeon Master discretion cone of cold could be used in a non-damaging manifestation to let a character recover from heatstroke: kept cooled for an hour without suffering damage from the spell and thereby saved from further harm"
+  },
+  {
+   "name": "wmgCtrlTempRecoveryUse",
+   "value": true,
+   "comment": "control temperature is useful for protecting and aiding the recovery of someone suffering hypothermia, frostbite, heatstroke or another temperature-related malady"
+  },
+  {
+   "name": "wmgCtrlTempGradual",
+   "value": true,
+   "comment": "extreme heat is not necessarily good for a cold victim - a frostbite victim might be harmed as much as helped by a sudden 100-degree rise, so gradual warming is more conducive to full recovery; a heatstroke victim benefits most from prompt exposure to freezing or near-freezing conditions to bring body temperature down rapidly"
+  },
+  {
+   "name": "wmgCtrlTempDM",
+   "value": true,
+   "comment": "at the Dungeon Master discretion the caster may manipulate the temperature during the duration or may be forced to pick a target temperature and stick with it as long as the spell persists"
+  },
+  {
+   "name": "wmgCtrlWeatherExtreme",
+   "value": true,
+   "comment": "sweltering heat cannot be made hotter and arctic cold cannot be made colder; at an extreme the temperature can only be moved in one direction, true even of the druidic version"
+  },
+  {
+   "name": "wmgCtrlWeatherResumes",
+   "value": true,
+   "comment": "when control weather expires the prior weather resumes as if the intervening time had not occurred; it will not prevent characters on the seacoast from being in the path of an oncoming hurricane, though moving inland during the spell may let them avoid the brunt of the storm"
+  },
+  {
+   "name": "wmgCtrlWindsNegates",
+   "value": true,
+   "comment": "control winds cast to counter a control weather or control temperature spell completely negates the previous spell, reinstates the natural conditions that were in effect beforehand, and then creates a wind of the desired velocity"
+  },
+  {
+   "name": "wmgCtrlWindsAffects",
+   "value": true,
+   "comment": "the created wind can affect other naturally existing conditions if strong enough: it will dissipate moderate or heavy fog and neutralize a sandstorm within the area of effect"
+  },
+  {
+   "name": "wmgCtrlWindsNoResume",
+   "value": true,
+   "comment": "unlike control weather, the natural weather will not necessarily resume when control winds expires: if a sandstorm would have abated by then, it will not resume"
+  },
+  {
+   "name": "wmgCtrlWindsNoLargeScale",
+   "value": true,
+   "comment": "control winds cannot change large-scale weather conditions such as moving storm clouds rapidly, because the area of effect is not nearly large enough to affect the upper atmosphere where those clouds are located"
+  },
+  {
+   "name": "wmgCoughNoBreak",
+   "value": true,
+   "comment": "the interruption caused by the cough cantrip is not severe or long-lasting enough to cause a character to lose his concentration on a spell he is trying to maintain"
+  },
+  {
+   "name": "wmgCreateFoodWater",
+   "value": true,
+   "comment": "create food and water is better than create water in dire straits because it provides both solid and liquid nourishment if the caster specifies and requires no material component"
+  },
+  {
+   "name": "wmgCreateWaterLifesaver",
+   "value": true,
+   "comment": "create water is a life-saver when the party runs out of water in the desert or any other waterless environment"
+  },
+  {
+   "name": "wmgCreateWaterContainer",
+   "value": true,
+   "comment": "you cannot take it with you unless you have something to carry the created water in"
+  },
+  {
+   "name": "wmgCreateWaterDrop",
+   "value": true,
+   "comment": "you cannot make water unless you have at least a drop of water to begin with; whether saliva or perspiration qualifies as the material component is a matter for the Dungeon Master"
+  },
+  {
+   "name": "wmgCureBlindSandstorm",
+   "value": true,
+   "comment": "cure blindness negates the eye injuries and blindness caused by a sandstorm without requiring the victim to keep his eyes covered during a recovery period"
+  },
+  {
+   "name": "wmgCureDiseaseNotTrauma",
+   "value": true,
+   "comment": "physical traumas such as dehydration, hypothermia and heatstroke are not considered diseases for determining what cure disease can affect"
+  },
+  {
+   "name": "wmgDarknessBlacker",
+   "value": true,
+   "comment": "the magical darkness is much blacker than the darkness that normally prevails in the wilderness at night, even under a moonless or overcast sky"
+  },
+  {
+   "name": "wmgDetectSnaresMoves",
+   "value": true,
+   "comment": "the detect snares and pits area of effect moves as the caster moves as long as he concentrates, does not have his concentration abruptly interrupted by combat or the preparation of a different spell, and does not attempt to move faster than his full normal movement rate"
+  },
+  {
+   "name": "wmgDetectSnaresActivity",
+   "value": true,
+   "comment": "the caster can converse normally with other party members and perform any non-strenuous physical activity without interrupting the detect spell"
+  },
+  {
+   "name": "wmgDigDesertWater",
+   "value": true,
+   "comment": "dig is a quick way to search for water beneath the desert surface; it does not increase the chance of finding water at a certain location but the party will not spend a lot of time and effort in a fruitless endeavor"
+  },
+  {
+   "name": "wmgDispelExhaustionNoHelp",
+   "value": true,
+   "comment": "despite its name dispel exhaustion does only what the Players Handbook says: it cannot alleviate or offset the effects of fatigue or exhaustion as described in this text"
+  },
+  {
+   "name": "wmgDistractSeeCough",
+   "value": true,
+   "comment": "distract: see cough above - the interruption is not severe enough to break spell concentration"
+  },
+  {
+   "name": "wmgDryKindling",
+   "value": true,
+   "comment": "the dry cantrip makes wet kindling flammable so a small campfire can be started more quickly thereafter"
+  },
+  {
+   "name": "wmgDrySecondApp",
+   "value": true,
+   "comment": "larger pieces of wood not wet all the way through can keep the fire going if broken up so the dry interior is exposed, or a second application of the cantrip can dry the surface of a pile of larger pieces so the fuel ignites without needing to be broken up"
+  },
+  {
+   "name": "wmgQuakeMagical",
+   "value": true,
+   "comment": "the earthquake spell effect is magical, not natural, and thus does not cause the same results as a natural earthquake"
+  },
+  {
+   "name": "wmgFearSmartFleeing",
+   "value": true,
+   "comment": "creatures with higher than animal intelligence affected by fear will not run into the side of a cliff, over a cliff or into a fire while fleeing; they will alter their path and proceed along the edge or perimeter of the obstacle, still trying to put as much distance as possible between themselves and the caster"
+  },
+  {
+   "name": "wmgFeignProtect",
+   "value": true,
+   "comment": "a character who knows help is on the way may help save his life or the life of another by using feign death to partially protect the victim from exposure"
+  },
+  {
+   "name": "wmgFamiliarDesolate",
+   "value": true,
+   "comment": "casting find familiar in a desolate area such as a scorching desert or arctic wastes may, at the Dungeon Master discretion, automatically fail to attract any of the listed creatures"
+  },
+  {
+   "name": "wmgFamiliarPlausible",
+   "value": true,
+   "comment": "the possibilities for normal familiars should be restricted to creatures that could conceivably exist within the spell range - a black cat will not be found in a desert or at a mountain summit and a toad will not be found in the middle of a grassy plain; contradictory die-roll results may be re-rolled or treated as no familiar available"
+  },
+  {
+   "name": "wmgFindTrapsMove",
+   "value": true,
+   "comment": "find traps, like detect snares and pits, can remain in effect while the caster turns or moves at a normal speed"
+  },
+  {
+   "name": "wmgFindTrapsOnlyMagMech",
+   "value": true,
+   "comment": "find traps is only useful to discover traps of a magical or mechanical nature: it will not reveal a covered pit, nor a trip wire unless the wire is connected to a snare or a missile-firing device or some other accessory that constitutes a mechanical trap"
+  },
+  {
+   "name": "wmgFirewaterSpread",
+   "value": true,
+   "comment": "the flame produced by firewater spreads to the rest of the fuel and produces a blaze usable for cooking or warmth or both, with no kindling or other preparation needed"
+  },
+  {
+   "name": "wmgFlameStrikeFireRisk",
+   "value": true,
+   "comment": "using flame strike to start a campfire is as sensible as lighting a pipe with a blowtorch: if the area also contains combustible materials the spell could start an uncontrollable fire - see the Camping and Campfires section"
+  },
+  {
+   "name": "wmgForcecageNeedNotAnchor",
+   "value": true,
+   "comment": "the spell description does not require the cage to be anchored to a solid surface, so it can stop a fall in mid-air; failure on the chance means the cage forms around thin air and the target was missed"
+  },
+  {
+   "name": "wmgForcecageRescue",
+   "value": true,
+   "comment": "there must be a way to rescue the halted character before the forcecage duration expires or his fall resumes from that point: for instance a rope can be passed through the bars, tied around his waist, and he can be hauled to safety when the magic ends or is dispelled"
+  },
+  {
+   "name": "wmgFumbleMotionless",
+   "value": true,
+   "comment": "the fumble effect can be averted if the target remains motionless until the spell duration expires"
+  },
+  {
+   "name": "wmgFumbleUnaware",
+   "value": true,
+   "comment": "in most cases a target that fails its fumble saving throw will not know it has been affected, so the decision to remain motionless must be made independent of any knowledge of the peril movement would cause"
+  },
+  {
+   "name": "wmgFumbleDeliberate",
+   "value": true,
+   "comment": "a motionless fumble target who attempts to find a new handhold or foothold, grab for a rope, or perform any other deliberate motion must make the modified Climbing Check or Dexterity Check or slip and fall"
+  },
+  {
+   "name": "wmgGatherNeedsLore",
+   "value": true,
+   "comment": "the gather cantrip cannot cull inedible or poisonous plants from freshly picked greenery unless the caster has prior knowledge, by plant lore proficiency for instance, of which plants are good to eat"
+  },
+  {
+   "name": "wmgGiggleSeeCough",
+   "value": true,
+   "comment": "giggle: see cough above - the interruption is not severe enough to break spell concentration"
+  },
+  {
+   "name": "wmgHealConRestore",
+   "value": true,
+   "comment": "the Dungeon Master should interpret heal liberally against injuries or disabilities caused directly or indirectly by the environment: it will restore all constitution points lost from heatstroke, not just those regained by normal recovery"
+  },
+  {
+   "name": "wmgHoldNotMidair",
+   "value": true,
+   "comment": "hold person and similar magics will not suspend a character or creature in mid-air to save it from falling: it only freezes victims so as to prevent them from moving under their own power"
+  },
+  {
+   "name": "wmgHoldGrip",
+   "value": true,
+   "comment": "someone about to lose his grip on a mountainside can be held in place as long as he is still gripping handholds and footholds when the spell takes effect; if he has already lost his grip the spell will not necessarily hold him unless his feet are securely placed on a ledge"
+  },
+  {
+   "name": "wmgHoldWilling",
+   "value": true,
+   "comment": "for a willing or needy recipient of hold person the saving throw should be disregarded or considered to be automatically failed"
+  },
+  {
+   "name": "wmgIrritationGrip",
+   "value": true,
+   "comment": "the itching application of irritation will cause a target in a precarious position to lose his grip and tumble or fall unless he is otherwise prevented from doing so"
+  },
+  {
+   "name": "wmgItemPortableFire",
+   "value": true,
+   "comment": "item is a handy way to make a campfire portable, but whoever carries the fire between stops had better be sure the spell-caster will not inadvertently speak the command word while it is in his backpack"
+  },
+  {
+   "name": "wmgJumpAscentOnly",
+   "value": true,
+   "comment": "jump is a possible but risky means of ascending - not descending - a slope or cliff face, since the spell does not insure any safety in landing or grasping at the end of the leap"
+  },
+  {
+   "name": "wmgJumpDexCheck",
+   "value": true,
+   "comment": "if a place exists for the jumper to land upon or grab onto he must make a successful Dexterity Check at the end of the jump to land safely; if no such place exists or he fails the check, he will fall"
+  },
+  {
+   "name": "wmgJumpGrappling",
+   "value": true,
+   "comment": "for the chance of a protrusion the Dungeon Master can use the Grappling Success Table, or rule that a safe landing or grabbing spot always exists except on a smooth slope or smooth cliff face - fingers and toes can find purchase where a grappling hook would not usually catch"
+  },
+  {
+   "name": "wmgKnotDexBonus",
+   "value": true,
+   "comment": "the knot round count is reduced by the character dexterity bonus for reaction, with the 1-round minimum"
+  },
+  {
+   "name": "wmgLocateAnimalsRef",
+   "value": true,
+   "comment": "locate animals: see animal summoning above for the proficiency interaction"
+  },
+  {
+   "name": "wmgLocatePlantsRef",
+   "value": true,
+   "comment": "locate plants: see animal summoning above, except that the text applies to plants in this case"
+  },
+  {
+   "name": "wmgLowerWaterToward",
+   "value": true,
+   "comment": "the reverse of lower water will bring subsurface desert water toward the surface but not necessarily all the way to ground level, so characters might still have to excavate to find it"
+  },
+  {
+   "name": "wmgLowerWaterFord",
+   "value": true,
+   "comment": "the unreversed lower water can enable characters to ford a deep river or cross a narrow lake on foot, assuming the water is lowered enough and the travelers can cover the distance before the spell duration expires"
+  },
+  {
+   "name": "wmgLowerWaterSpill",
+   "value": true,
+   "comment": "not all the river or lake water will be within the area of effect, but water that spills into the area as a result of the lowering is immediately lowered itself"
+  },
+  {
+   "name": "wmgMassmorphHazards",
+   "value": true,
+   "comment": "massmorph makes the party safe from any number of natural hazards - sandstorm, hailstorm, extreme temperature and the like - by turning them into trees until the hazard has ceased to exist"
+  },
+  {
+   "name": "wmgMassmorphWeaponOnly",
+   "value": true,
+   "comment": "only a blow from a weapon (not a bare fist) or the impact of a harmful magic effect such as magic missile or death spell will damage massmorphed characters; they are still subject to effects that can harm trees - fire, lightning, extremely strong wind, acid and so forth"
+  },
+  {
+   "name": "wmgMassmorphNoNourish",
+   "value": true,
+   "comment": "the illusionary trees cannot eat and cannot soak up water from the ground, so characters kept in this form for an extended period may be in dire need of food and water when the magic is dispelled and may even die from lack of nourishment; the rest of the party is in big trouble if the spell-caster is chopped down before dispelling"
+  },
+  {
+   "name": "wmgMendOneRope",
+   "value": true,
+   "comment": "mending will repair a rope that has broken or frayed but cannot be used to join two different ropes into one single longer rope"
+  },
+  {
+   "name": "wmgMisdirectReversal",
+   "value": true,
+   "comment": "misdirection cast on a character with a knowledge-based proficiency such as animal lore or direction sense, on a failed saving throw, reverses the interpretation or assumption made - a correct assessment becomes incorrect or vice versa, and the spell-caster will not usually know ahead of time which it was"
+  },
+  {
+   "name": "wmgPfnmMissiles",
+   "value": true,
+   "comment": "protection from normal missiles prevents harm from hailstones, sandstorms and any other missile-like natural phenomenon"
+  },
+  {
+   "name": "wmgPfnmLimitedVis",
+   "value": true,
+   "comment": "the protection from normal missiles recipient cannot be blinded by a sandstorm and no sand will actually touch him, but he is still limited in visibility as much as an unprotected character"
+  },
+  {
+   "name": "wmgPfnmWindNotNegated",
+   "value": true,
+   "comment": "the spell does not negate very strong wind such as a tornado: the character can still be picked up and carried along by the funnel cloud, but he will not take damage from collision with debris that is also being carried along"
+  },
+  {
+   "name": "wmgPfnmAbrasionNotImpact",
+   "value": true,
+   "comment": "the protection field prevents abrasion damage during a tumble but does not keep the character safe from impact damage at the end of a fall or tumble"
+  },
+  {
+   "name": "wmgPfnmNoLightning",
+   "value": true,
+   "comment": "the protection from normal missiles field will not keep out natural lightning"
+  },
+  {
+   "name": "wmgPfnmLava",
+   "value": true,
+   "comment": "the field will keep a character safe from being burned by lava during a volcanic eruption but will not protect him from radiant heat that can also cause damage at such a time"
+  },
+  {
+   "name": "wmgRainbowClericChain",
+   "value": true,
+   "comment": "if an illusionist casts a rainbow cantrip and a cleric who sees it fails his saving throw, the cleric can successfully cast a rainbow spell if the casting begins before the cantrip magic expires and the material components are readily available - it is not easy but it is possible; the resulting spell is reduced in efficacy"
+  },
+  {
+   "name": "wmgResistColdFurther",
+   "value": true,
+   "comment": "a resist cold recipient suffering hypothermia, frostbite or another cold-related malady is protected from further harm for the spell duration, but the magic will not negate adverse effects already suffered"
+  },
+  {
+   "name": "wmgResistFireSame",
+   "value": true,
+   "comment": "resist fire is handled the same way as resist cold, except that it pertains to heat-related instead of cold-related effects"
+  },
+  {
+   "name": "wmgRunMustRest",
+   "value": true,
+   "comment": "the run spell stricture requires rest and refreshment immediately after the spell effect expires"
+  },
+  {
+   "name": "wmgRunMentalOk",
+   "value": true,
+   "comment": "the run stricture does not prohibit mental activity such as studying a spell book or praying for spells"
+  },
+  {
+   "name": "wmgRunEnduranceException",
+   "value": true,
+   "comment": "the lone exception is a character with endurance proficiency, who can continue nonstrenuous physical activity immediately after the run spell expires; for a period equal to the spell duration he cannot make use of his proficiency and is subject to fatigue and exhaustion as a normal character would be"
+  },
+  {
+   "name": "wmgRunRunnersExempt",
+   "value": true,
+   "comment": "the run spell will not affect a character with long-distance running proficiency, just as it does not affect a barbarian with the special running ability of that class"
+  },
+  {
+   "name": "wmgSinkWilling",
+   "value": true,
+   "comment": "as with hold person, the sink saving throw can be waived or considered automatically failed if the spell is intentionally cast upon a willing or needy recipient"
+  },
+  {
+   "name": "wmgStoneTellMountains",
+   "value": true,
+   "comment": "stone tell will function if cast upon something such as a mountainside or a cliff face - after all, essentially a conglomeration of stones - as well as upon individual rocks or boulders"
+  },
+  {
+   "name": "wmgStoneskinNoAbrasion",
+   "value": true,
+   "comment": "a character who takes a tumble while stoneskinned suffers no abrasion damage from the episode"
+  },
+  {
+   "name": "wmgStoneskinTumbleDispels",
+   "value": true,
+   "comment": "the act of tumbling will dispel the stoneskin, whether or not the recipient would otherwise have suffered damage"
+  },
+  {
+   "name": "wmgStoneskinHail",
+   "value": true,
+   "comment": "stoneskin keeps a character safe from injury in a hailstorm, the entire storm being considered as one attack sequence, but it will be dispelled when the hailstorm stops"
+  },
+  {
+   "name": "wmgInsectsHalfDur",
+   "value": true,
+   "comment": "under the 40-degree threshold the summon insects duration is only one-half of normal, rounded down"
+  },
+  {
+   "name": "wmgSymbolHopeless",
+   "value": true,
+   "comment": "a symbol of hopelessness viewed from a precarious position on a severe slope or cliff face holds the gaze of a character who fails his saving throw; if any Wisdom Check fails he falls unless he makes a successful Climbing Check or Dexterity Check immediately after"
+  },
+  {
+   "name": "wmgSymbolPainCon",
+   "value": true,
+   "comment": "if a symbol of pain is viewed in the same circumstances, the Dungeon Master should substitute a Constitution Check for the Wisdom Check and handle the incident otherwise the same way"
+  },
+  {
+   "name": "wmgTransmuteDrinkable",
+   "value": true,
+   "comment": "transmute rock to mud used in combination with the reverse of lower water can produce drinkable liquid from solid rock"
+  },
+  {
+   "name": "wmgTripNormalGait",
+   "value": true,
+   "comment": "trip will have no effect upon characters who are not walking or running in a normal fashion, such as those crawling along level terrain or using both hands and feet to negotiate a slope or cliff face"
+  },
+  {
+   "name": "wmgWaterWalkLandRate",
+   "value": true,
+   "comment": "a creature empowered to walk on water does so at his normal land-based movement rate, taking into account encumbrance, the condition of the water and any other pertinent factors"
+  },
+  {
+   "name": "wmgWaterWalkTerrain",
+   "value": true,
+   "comment": "calm water is equivalent to normal terrain, actively flowing water might be considered rugged terrain, and white-water rapids would be very rugged terrain"
+  },
+  {
+   "name": "wmgWaterWalkCurrent",
+   "value": true,
+   "comment": "in order to move against the current, the water walker must be able to maintain a movement rate faster than the current"
+  },
+  {
+   "name": "wmgWeatherSummonNature",
+   "value": true,
+   "comment": "the duration and area of effect of the magically created weather under weather summoning are dictated by the nature of the conditions called for by the caster"
+  },
+  {
+   "name": "wmgWeatherSummonSeason",
+   "value": true,
+   "comment": "the caster should not attempt to summon any weather condition that could not conceivably occur during the current time of year; if he does, the Dungeon Master is entitled to disallow the request and consider the spell ruined"
+  },
+  {
+   "name": "wmgWeatherSummonResumes",
+   "value": true,
+   "comment": "weather conditions that prevailed before weather summoning was cast will resume when the duration expires, and the trend of the weather to come will be apparent to any character who observes the changing conditions, not just one with weather sense proficiency"
+  },
+  {
+   "name": "wmgWebNetAnchors",
+   "value": true,
+   "comment": "web can form a net beneath a falling character or object as long as two diametrically opposed vertical surfaces - two cliff faces close together, for instance - are available to serve as anchors for the web"
+  },
+  {
+   "name": "wmgWebOverMax",
+   "value": true,
+   "comment": "if a character falls more than 60 feet a web will be of no use: his body will have built up so much velocity that it will keep falling as though the web was not there"
+  },
+  {
+   "name": "wmgWebAbrasionNotImpact",
+   "value": true,
+   "comment": "the web does not negate abrasion damage from a tumble, but it does prevent the character from suffering impact damage"
+  },
+  {
+   "name": "wmgWraithformNoFallDmg",
+   "value": true,
+   "comment": "an illusionist who casts wraithform upon himself just before leaping or falling takes no damage from the impact of the fall, assuming he hits ground before the duration expires"
+  },
+  {
+   "name": "wmgWraithformWeight",
+   "value": true,
+   "comment": "the magic does not alter the weight or mass of the illusionist, only his physical nature and appearance"
+  },
+  {
+   "name": "wmgWraithformNoMidairCast",
+   "value": true,
+   "comment": "wraithform cannot be cast while the illusionist is falling, unlike feather fall which can be effected in mid-air, because one material component is a wisp of smoke; casting might be possible if the fall carries him through a cloud of smoke with the other component ready in hand, provided he can finish the casting before hitting the ground"
+  },
+  {
+   "name": "wmgGaseousHurricaneDeath",
+   "value": true,
+   "comment": "an individual in gaseous form is killed outright if hit by hurricane-force winds or a tornado"
+  },
+  {
+   "name": "wmgInvulnHalved",
+   "value": true,
+   "comment": "beyond the 40-foot fall and 80-foot tumble impact limits, the invulnerability potion halves the impact damage"
+  },
+  {
+   "name": "wmgVitalityRunAndFatigue",
+   "value": true,
+   "comment": "among other things the vitality potion covers the run spell aftermath and the fatigue and exhaustion effects described in this text"
+  },
+  {
+   "name": "wmgScrollColdRule",
+   "value": true,
+   "comment": "the cold scroll rule is a whichever-is-higher test between the no-adverse-effects temperature and the current-plus-40-degrees figure"
+  },
+  {
+   "name": "wmgScrollFireMirror",
+   "value": true,
+   "comment": "the protection from fire scroll works similarly to the cold scroll except that the effective temperature is lowered instead of raised"
+  },
+  {
+   "name": "wmgScrollGasNoWind",
+   "value": true,
+   "comment": "the gas scroll area of no wind means characters cannot be swept up by a tornado or blown across the countryside by a hurricane"
+  },
+  {
+   "name": "wmgScrollGasSandstorm",
+   "value": true,
+   "comment": "a sandstorm is neutralized in the gas scroll area: when airborne grains of sand come into contact with the calm air they simply fall to the ground"
+  },
+  {
+   "name": "wmgScrollGasTemp",
+   "value": true,
+   "comment": "the effective temperature within the gas scroll protected area is altered to account for the absence of wind"
+  },
+  {
+   "name": "wmgRingFireResScroll",
+   "value": true,
+   "comment": "the ring of fire resistance makes the wearer immune to the effects of normal heat just as a protection from fire scroll does"
+  },
+  {
+   "name": "wmgRingFreeActionEncumbrance",
+   "value": true,
+   "comment": "the ring of free action wearer moves and operates as if not encumbered unless actually severely encumbered, in which case he operates as if moderately encumbered"
+  },
+  {
+   "name": "wmgRingFreeActionLimits",
+   "value": true,
+   "comment": "the ring of free action does not enable carrying more encumbrance than normal: attempting it negates the ring power until the excess baggage is rid of; the ring does not change the actual encumbrance value, so a mounted wearer has his normal effect on the animal carrying capacity"
+  },
+  {
+   "name": "wmgRingProtPlusPerDie",
+   "value": true,
+   "comment": "the ring of protection plus is subtracted from each die of fall or tumble damage, to a minimum of 1 point of damage per die, applying to both abrasion and impact damage; the power is related to the armor class improvement and will not function if the character is wearing magical armor"
+  },
+  {
+   "name": "wmgRingSustFatigue",
+   "value": true,
+   "comment": "a ring of sustenance wearer is much less likely to be affected by fatigue or exhaustion"
+  },
+  {
+   "name": "wmgRingWarmthScroll",
+   "value": true,
+   "comment": "the ring of warmth provides the same benefits as a protection from cold scroll does"
+  },
+  {
+   "name": "wmgLordlyOutOfCharges",
+   "value": true,
+   "comment": "even out of charges, the rod of lordly might can still be used as - among other things - a climbing pole, a direction-finder and an altimeter"
+  },
+  {
+   "name": "wmgLordlyEncumbered",
+   "value": true,
+   "comment": "all characters other than the severely encumbered can move along the rod of lordly might rungs with no chance of slipping and falling under normal circumstances"
+  },
+  {
+   "name": "wmgSwarmHalved",
+   "value": true,
+   "comment": "the staff of swarming insects cold-weather insect count is half of normal on both the base and the per-level increments"
+  },
+  {
+   "name": "wmgKwalishSurfaces",
+   "value": true,
+   "comment": "the apparatus of Kwalish can negotiate any solid or semi-solid surface except for a cliff face"
+  },
+  {
+   "name": "wmgArrowOutdoor",
+   "value": true,
+   "comment": "at the Dungeon Master discretion the arrow of direction may be usable as a direction-finder in outdoor settings as well as subterranean environments"
+  },
+  {
+   "name": "wmgCloakSeeRing",
+   "value": true,
+   "comment": "cloak of protection: see ring of protection above"
+  },
+  {
+   "name": "wmgCubeFaceFiveImmune",
+   "value": true,
+   "comment": "when cube of force face five is activated, anything inside the cube is immune to damage from a fall or a tumble"
+  },
+  {
+   "name": "wmgDaernWindproof",
+   "value": true,
+   "comment": "the Daern instant fortress is impervious to a hurricane or a tornado or obviously any wind of less strength, but it is not climate-controlled: the effective temperature inside will be the same as the actual temperature outside, not considering the effect of any wind that might be blowing"
+  },
+  {
+   "name": "wmgMantleComfort",
+   "value": true,
+   "comment": "the mantle of Celestian personal temperature for the wearer is always comfortable"
+  },
+  {
+   "name": "wmgMantlePrecipitation",
+   "value": true,
+   "comment": "the mantle of Celestian wearer is entirely protected from practically any form of precipitation including a sandstorm and need never worry about dying from thirst or starvation"
+  },
+  {
+   "name": "wmgMantleLimits",
+   "value": true,
+   "comment": "the mantle of Celestian will not protect its wearer from impact damage from a fall, tumble, hailstones and the like, and it will not keep him safe from the adverse effects of high winds - he can still be swept away by a tornado"
+  },
+  {
+   "name": "wmgPeriaptAbrasionOnly",
+   "value": true,
+   "comment": "the periapt of wound closure possessor is immune to abrasion damage from a tumble but still takes impact damage from a tumble or a fall as normal"
+  },
+  {
+   "name": "wmgRopeGrappling",
+   "value": true,
+   "comment": "a protrusion must be available within range for the rope of climbing to fasten itself; use the Grappling Success Table to determine if a protrusion exists, or alternatively allow a 100 percent chance on any non-smooth surface and a 50 percent chance on a smooth surface"
+  },
+  {
+   "name": "wmgFharlanghnTerrain",
+   "value": true,
+   "comment": "shoes of Fharlanghn let the wearer travel on foot over any terrain as though it were normal instead of rugged or very rugged, with his movement rate increased accordingly"
+  },
+  {
+   "name": "wmgFharlanghnAlignment",
+   "value": true,
+   "comment": "the shoes of Fharlanghn Climbing Ratings apply if the wearer is of neutral or neutral good alignment"
+  },
+  {
+   "name": "wmgLuckyStoneDexChecks",
+   "value": true,
+   "comment": "the stone of good luck modifiers apply to Dexterity Checks and dexterity-related Proficiency Checks"
+  }
+ ],
+ "chains": [
+  {
+   "name": "wmgWebThickBand",
+   "comment": "the web thickness band: 0 for up to 5 feet, 1 for up to 10 feet, 2 for up to 20 feet, tail 3 for 30 feet or more (the band index the audit mirrors against the 10-20-40-60 fall distances)",
+   "limits": [
+    5,
+    10,
+    20
+   ],
+   "tail": 3
+  }
+ ],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the web thickness ladder: each 5-foot step of thickness doubles the fall distance, and the 30-plus tail equals the 60-foot maximum",
+   "expr": "m['wmgWebBand0FallFt']() != 2 * m['wmgWebPerThickFt']() or m['wmgWebBand1FallFt']() != 2 * m['wmgWebBand0FallFt']() or m['wmgWebBand2FallFt']() != 2 * m['wmgWebBand1FallFt']() or m['wmgWebMaxFallFt']() != m['wmgWebBand2FallFt']() + m['wmgWebBand1FallFt']()"
+  },
+  {
+   "note": "the web band chain: up to 5 feet is band 0, up to 10 is band 1, up to 20 is band 2, and the 20-foot example web sits in band 2 while the 10-foot one sits in band 1",
+   "expr": "m['wmgWebThickBand'](4) != 0 or m['wmgWebThickBand'](5) != 0 or m['wmgWebThickBand'](10) != 1 or m['wmgWebThickBand'](20) != 2 or m['wmgWebThickBand'](21) != 3"
+  },
+  {
+   "note": "the web slope multipliers double from severe to moderate and from moderate to gentle, and the printed examples follow the rule: 10 feet thick doubled for severe gives the 40-foot tumble, 20 feet thick quadrupled for moderate gives the 160-foot tumble",
+   "expr": "m['wmgWebModerateMult']() != 2 * m['wmgWebSevereMult']() or m['wmgWebGentleMult']() != 2 * m['wmgWebModerateMult']() or m['wmgWebBand1FallFt']() * m['wmgWebSevereMult']() != m['wmgWebSevereExTumbleFt']() or m['wmgWebBand2FallFt']() * m['wmgWebModerateMult']() != m['wmgWebModerateExTumbleFt']()"
+  },
+  {
+   "note": "the cold-weather thresholds agree at 40 degrees across insect plague, summon insects and the staff of swarming insects",
+   "expr": "m['wmgPlagueColdDeg']() != m['wmgInsectsColdDeg']() or m['wmgInsectsColdDeg']() != m['wmgSwarmColdDeg']()"
+  },
+  {
+   "note": "the insect plague area cut is three-quarters and the duration cut one-tenth, and the 9-inch cleric cloud is three-quarters of a 12-inch cloud while the 1.5-inch height is three-quarters of a 2-inch height",
+   "expr": "m['wmgPlagueAreaPct']() * m['wmgPlagueDurationPct']() != 750 or 4 * m['wmgPlagueClericDiamIn']() != 3 * 12 or 4 * m['wmgPlagueClericHighHalfIn']() != 3 * 4 or m['wmgPlagueClericHighHalfIn']() != 3 * m['wmgPlagueDruidHighHalfIn']() - 3"
+  },
+  {
+   "note": "the rainbow chain halves everything: the bow fires once per round instead of twice, the bridge weight is half, the elevator moves 6 instead of 12 inches and the draughts act at 6th instead of 12th level",
+   "expr": "m['wmgRainbowBowPerRound']() * 2 != m['wmgRainbowBowNormal']() or m['wmgRainbowBridgePct']() * 2 != 100 or m['wmgRainbowElevatorIn']() * 2 != m['wmgRainbowElevatorNormal']() or m['wmgRainbowLevel']() * 2 != m['wmgRainbowLevelNormal']()"
+  },
+  {
+   "note": "the staff of swarming insects halves both the base and the per-level insect counts under the cold threshold",
+   "expr": "m['wmgSwarmBase']() * 2 != m['wmgSwarmNormalBase']() or m['wmgSwarmPerLevel']() * 2 != m['wmgSwarmNormalPerLevel']()"
+  },
+  {
+   "note": "the reduced-rate denominators agree: magical darkness halves the safe rate, feign death halves the exposure rate and summon insects halves the duration",
+   "expr": "m['wmgDarknessRateDen']() != m['wmgFeignExposureDen']() or m['wmgFeignExposureDen']() != m['wmgInsectsDurDen']()"
+  },
+  {
+   "note": "the shield spell takes two-thirds damage: 2 over 3",
+   "expr": "m['wmgShieldAbrasionNum']() * 3 != m['wmgShieldAbrasionDen']() * 2"
+  },
+  {
+   "note": "the control weather recommended range is 30 to 40 degrees, strictly ordered",
+   "expr": "m['wmgCtrlWeatherLoDeg']() >= m['wmgCtrlWeatherHiDeg']()"
+  },
+  {
+   "note": "the snare spell is 100 percent undetectable without magic and only 50 percent noticeable even with magical detection",
+   "expr": "m['wmgSnareNonmagicPct']() != 2 * m['wmgSnareMagicPct']()"
+  },
+  {
+   "note": "the sink spell chants 4 segments and grants 4 turns of grace",
+   "expr": "m['wmgSinkSegments']() != m['wmgSinkTurns']()"
+  },
+  {
+   "note": "the potion of invulnerability tumble impact limit is twice the fall limit",
+   "expr": "m['wmgInvulnTumbleFt']() != 2 * m['wmgInvulnFallFt']()"
+  },
+  {
+   "note": "the gaseous form gale damage is the 3-30 die range",
+   "expr": "m['wmgGaseousGaleLo']() != 3 or m['wmgGaseousGaleHi']() != 30"
+  },
+  {
+   "note": "the fumble spell penalizes Climbing Ratings by 20 percent while the haste spell penalizes by 10 and the bug cantrip and the gauntlets of dexterity bonus by 10 percent, mirrored by the gauntlets of fumbling penalty",
+   "expr": "m['wmgFumbleClimbPct']() != 2 * m['wmgHasteClimbPct']() or m['wmgBugClimbBonusPct']() != m['wmgHasteClimbPct']() or m['wmgGauntDexBonusPct']() != m['wmgGauntFumblePct']()"
+  },
+  {
+   "note": "the Fharlanghn shoes rate the gentle-or-moderate ground no worse than the severe ground",
+   "expr": "m['wmgFharlanghnGentlePct']() <= m['wmgFharlanghnSeverePct']()"
+  },
+  {
+   "note": "the heat metal reverse: the seven rounds of chill metal duration benefit equal one full hour of normal heatstroke treatment",
+   "expr": "m['wmgChillRounds']() != 7 or m['wmgChillAsHour']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "The chapter opener": [
+   {
+    "kind": "bool",
+    "name": "wmgMagicIntro"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgGeneralPoints"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgArrangement"
+   }
+  ],
+  "Spells A through B": [
+   {
+    "kind": "bool",
+    "name": "wmgAffectFiresCampfire"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgAirWalkAerialUse"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgAiryWaterMoveRate"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgAlarmOutOfSight"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgAlarmNotCampsite"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgAnimalSummonLore"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgAnimateObjectRocks"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgAnimateRockIdea"
+   },
+   {
+    "kind": "const",
+    "name": "wmgArmorTempDeg"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgAuguryEdible"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgBarkskinHalfAbrasion"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgBeeClimbingCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wmgBindRopeMinFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgBindTentTeardown"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgBindReachProtrusion"
+   },
+   {
+    "kind": "const",
+    "name": "wmgBluelightSpeedMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmgBugClimbBonusPct"
+   }
+  ],
+  "Spells C": [
+   {
+    "kind": "bool",
+    "name": "wmgCallLtnAlwaysHit"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCallLtnHalfDmgMin"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCallLtnIndistinguishable"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCallLtnMultipleSuspect"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCallLtnNaturalCoexists"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCallWoodNoLore"
+   },
+   {
+    "kind": "const",
+    "name": "wmgCommuneFactsPerLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCommuneNoConcentration"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCommuneExpiresOn"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgConeHeatstrokeUse"
+   },
+   {
+    "kind": "const",
+    "name": "wmgConeConMax"
+   },
+   {
+    "kind": "const",
+    "name": "wmgConeConPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "wmgConeHour"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCtrlTempRecoveryUse"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCtrlTempGradual"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCtrlTempDM"
+   },
+   {
+    "kind": "const",
+    "name": "wmgCtrlWeatherLoDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wmgCtrlWeatherHiDeg"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCtrlWeatherExtreme"
+   },
+   {
+    "kind": "const",
+    "name": "wmgDruidicSteps"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCtrlWeatherResumes"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCtrlWindsNegates"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCtrlWindsAffects"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCtrlWindsNoResume"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCtrlWindsNoLargeScale"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCoughNoBreak"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCreateFoodWater"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCreateWaterLifesaver"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCreateWaterContainer"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCreateWaterDrop"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCureBlindSandstorm"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCureDiseaseNotTrauma"
+   }
+  ],
+  "Spells D through F": [
+   {
+    "kind": "const",
+    "name": "wmgDarknessRateDen"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgDarknessBlacker"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgDetectSnaresMoves"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgDetectSnaresActivity"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgDigDesertWater"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgDispelExhaustionNoHelp"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgDistractSeeCough"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgDryKindling"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgDrySecondApp"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgQuakeMagical"
+   },
+   {
+    "kind": "const",
+    "name": "wmgQuakeFaultMiles"
+   },
+   {
+    "kind": "const",
+    "name": "wmgQuakeChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgQuakeDelayDie"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFearSmartFleeing"
+   },
+   {
+    "kind": "const",
+    "name": "wmgFeignExposureDen"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFeignProtect"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFamiliarDesolate"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFamiliarPlausible"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFindTrapsMove"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFindTrapsOnlyMagMech"
+   },
+   {
+    "kind": "const",
+    "name": "wmgFirewaterPints"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFirewaterSpread"
+   },
+   {
+    "kind": "const",
+    "name": "wmgFlameStrikeDiamFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFlameStrikeFireRisk"
+   },
+   {
+    "kind": "const",
+    "name": "wmgForcecagePctPerLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgForcecageNeedNotAnchor"
+   },
+   {
+    "kind": "const",
+    "name": "wmgForcecageFallDmgFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgForcecageRescue"
+   },
+   {
+    "kind": "const",
+    "name": "wmgFumbleClimbPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgFumbleDexMod"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFumbleMotionless"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFumbleUnaware"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFumbleDeliberate"
+   }
+  ],
+  "Spells G through L": [
+   {
+    "kind": "bool",
+    "name": "wmgGatherNeedsLore"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgGiggleSeeCough"
+   },
+   {
+    "kind": "const",
+    "name": "wmgHasteClimbPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgHasteDexMod"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgHealConRestore"
+   },
+   {
+    "kind": "const",
+    "name": "wmgChillRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wmgChillAsHour"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgHoldNotMidair"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgHoldGrip"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgHoldWilling"
+   },
+   {
+    "kind": "const",
+    "name": "wmgPlagueColdDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wmgPlagueDurationPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgPlagueRoundsPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "wmgPlagueAreaPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgPlagueClericDiamIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmgPlagueClericHighHalfIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmgPlagueDruidDiamIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmgPlagueDruidHighHalfIn"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgIrritationGrip"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgItemPortableFire"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgJumpAscentOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgJumpDexCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgJumpGrappling"
+   },
+   {
+    "kind": "const",
+    "name": "wmgJumpSmoothPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgKnotDie"
+   },
+   {
+    "kind": "const",
+    "name": "wmgKnotMin"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgKnotDexBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgLocateAnimalsRef"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgLocatePlantsRef"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgLowerWaterToward"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgLowerWaterFord"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgLowerWaterSpill"
+   }
+  ],
+  "Spells M through S": [
+   {
+    "kind": "bool",
+    "name": "wmgMassmorphHazards"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgMassmorphWeaponOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgMassmorphNoNourish"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgMendOneRope"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgMisdirectReversal"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgPfnmMissiles"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgPfnmLimitedVis"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgPfnmWindNotNegated"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgPfnmAbrasionNotImpact"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgPfnmNoLightning"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgPfnmLava"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRainbowClericChain"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRainbowBowPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRainbowBowNormal"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRainbowBridgePct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRainbowElevatorIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRainbowElevatorNormal"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRainbowLevel"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRainbowLevelNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgResistColdFurther"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgResistFireSame"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRunExhaustTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRunMustRest"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRunMentalOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRunEnduranceException"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRunRunnersExempt"
+   },
+   {
+    "kind": "const",
+    "name": "wmgShieldAbrasionNum"
+   },
+   {
+    "kind": "const",
+    "name": "wmgShieldAbrasionDen"
+   },
+   {
+    "kind": "const",
+    "name": "wmgSinkSegments"
+   },
+   {
+    "kind": "const",
+    "name": "wmgSinkTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgSinkWilling"
+   },
+   {
+    "kind": "const",
+    "name": "wmgSnareNonmagicPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgSnareMagicPct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgStoneTellMountains"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgStoneskinNoAbrasion"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgStoneskinTumbleDispels"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgStoneskinHail"
+   },
+   {
+    "kind": "const",
+    "name": "wmgInsectsColdDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wmgInsectsDurDen"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgInsectsHalfDur"
+   },
+   {
+    "kind": "const",
+    "name": "wmgSymbolEveryTurn"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgSymbolHopeless"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgSymbolPainCon"
+   }
+  ],
+  "Spells T through W": [
+   {
+    "kind": "bool",
+    "name": "wmgTransmuteDrinkable"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgTripNormalGait"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWaterWalkEncumberedCount"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWaterWalkLandRate"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWaterWalkTerrain"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWaterWalkCurrent"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWeatherSummonNature"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWeatherSummonSeason"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWeatherSummonResumes"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWebNetAnchors"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebPerThickFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebBand0FallFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebBand1FallFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebBand2FallFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebMaxFallFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebSevereMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebModerateMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebGentleMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebSevereExThickFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebSevereExTumbleFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebModerateExThickFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmgWebModerateExTumbleFt"
+   },
+   {
+    "kind": "chain",
+    "name": "wmgWebThickBand"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWebOverMax"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWebAbrasionNotImpact"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWraithformNoFallDmg"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWraithformWeight"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgWraithformNoMidairCast"
+   }
+  ],
+  "Potions": [
+   {
+    "kind": "const",
+    "name": "wmgGaseousGaleLo"
+   },
+   {
+    "kind": "const",
+    "name": "wmgGaseousGaleHi"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgGaseousHurricaneDeath"
+   },
+   {
+    "kind": "const",
+    "name": "wmgInvulnFallFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmgInvulnTumbleFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgInvulnHalved"
+   },
+   {
+    "kind": "const",
+    "name": "wmgVitalityDays"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgVitalityRunAndFatigue"
+   }
+  ],
+  "Protection scrolls": [
+   {
+    "kind": "const",
+    "name": "wmgScrollColdDeg"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgScrollColdRule"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgScrollFireMirror"
+   },
+   {
+    "kind": "const",
+    "name": "wmgScrollGasRadiusIn"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgScrollGasNoWind"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgScrollGasSandstorm"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgScrollGasTemp"
+   }
+  ],
+  "Rings": [
+   {
+    "kind": "bool",
+    "name": "wmgRingFireResScroll"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRingFreeActionEncumbrance"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRingFreeActionLimits"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRingProtPlusPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRingSustMod"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRingSustEveryTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wmgRingSustAutoFail"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRingSustFatigue"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRingWarmthScroll"
+   }
+  ],
+  "Rods, staves, and wands": [
+   {
+    "kind": "bool",
+    "name": "wmgLordlyOutOfCharges"
+   },
+   {
+    "kind": "const",
+    "name": "wmgLordlyPoleFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgLordlyEncumbered"
+   },
+   {
+    "kind": "const",
+    "name": "wmgSwarmColdDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wmgSwarmBase"
+   },
+   {
+    "kind": "const",
+    "name": "wmgSwarmPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "wmgSwarmNormalBase"
+   },
+   {
+    "kind": "const",
+    "name": "wmgSwarmNormalPerLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgSwarmHalved"
+   }
+  ],
+  "Miscellaneous magic": [
+   {
+    "kind": "bool",
+    "name": "wmgKwalishSurfaces"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgArrowOutdoor"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCloakSeeRing"
+   },
+   {
+    "kind": "const",
+    "name": "wmgCubeFaceFive"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgCubeFaceFiveImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgDaernWindproof"
+   },
+   {
+    "kind": "const",
+    "name": "wmgGauntDexBonusPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgGauntFumblePct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgMantleComfort"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgMantlePrecipitation"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgMantleLimits"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgPeriaptAbrasionOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgRopeGrappling"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFharlanghnTerrain"
+   },
+   {
+    "kind": "const",
+    "name": "wmgFharlanghnGentlePct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgFharlanghnSeverePct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgFharlanghnAlignment"
+   },
+   {
+    "kind": "const",
+    "name": "wmgLuckyStoneClimbPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmgLuckyStoneDie"
+   },
+   {
+    "kind": "bool",
+    "name": "wmgLuckyStoneDexChecks"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the spells box",
+   "from": "  - [ ] Spells (p. 95)",
+   "to": "  - [x] Spells (p. 95) - R491: the alphabetical spell commentary from affect normal fires through wraithform with the climbing, temperature, cold-weather and web rules pins as rules/wsgmagic.h"
+  },
+  {
+   "note": "the potions box",
+   "from": "  - [ ] Potions (p. 100)",
+   "to": "  - [x] Potions (p. 100) - R491: the gaseous form, invulnerability and vitality rules pin as rules/wsgmagic.h"
+  },
+  {
+   "note": "the protection scrolls box",
+   "from": "  - [ ] Protection scrolls (p. 100)",
+   "to": "  - [x] Protection scrolls (p. 100) - R491: the cold, fire and gas scroll rules pin as rules/wsgmagic.h"
+  },
+  {
+   "note": "the rings box",
+   "from": "  - [ ] Rings (p. 100)",
+   "to": "  - [x] Rings (p. 100) - R491: the fire resistance, free action, protection, sustenance and warmth rules pin as rules/wsgmagic.h"
+  },
+  {
+   "note": "the rods staves and wands box",
+   "from": "  - [ ] Rods, staves, and wands (p. 101)",
+   "to": "  - [x] Rods, staves, and wands (p. 101) - R491: the rod of lordly might and staff of swarming insects rules pin as rules/wsgmagic.h"
+  },
+  {
+   "note": "the miscellaneous magic box",
+   "from": "  - [ ] Miscellaneous magic (p. 101)",
+   "to": "  - [x] Miscellaneous magic (p. 101) - R491: the Kwalish through stone of good luck item rules pin as rules/wsgmagic.h"
+  }
+ ],
+ "gap_census": {
+  "closed": 141,
+  "open": 45
+ },
+ "include_after": "#include \"rules/wsgmount.h\"  // R490: the WSG mounts and beasts of burden rules",
+ "include_comment": "the WSG magic in the wilderness rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R490 LANDED 2026-10-16: commit 86a2308 (census 415,",
+ "prev_record": [
+  "- R490 LANDED 2026-10-16: commit 86a2308 (census 415,",
+  "  pushed c11cbe1..86a2308), the WSG MOUNTS AND BEASTS",
+  "  OF BURDEN chapter slice, printed pp. 90-94 - CLOSING",
+  "  the chapter. Pinned as rules/wsgmount.h with the",
+  "  include after wsgfatig.h at line 195 (prefix wmb -",
+  "  free on the first probe), 185 inlines: 80 consts +",
+  "  90 bools + the 15 Table 42 switch columns in",
+  "  seventeen sections - the opener, the twelve-animal",
+  "  catalog (ape/gorilla, brown bear, camel, sled dog,",
+  "  donkey, elephant, horse, mule, pony, giant ram,",
+  "  sheep, yak), animals as individuals, Table 42, the",
+  "  reaction bands, calming, understanding. The catalog:",
+  "  the gorilla (highest intelligence, point man, the",
+  "  1-in-6 surprise cut, the 50-degree floor, the 50-50",
+  "  lethargic-or-aggressive desertion, 10x food / 8x",
+  "  water, the 25% foraging no-return), the bear (magic",
+  "  to carry, 30% monthly reversion, no swamp or desert,",
+  "  8x / 6x), the camel (dromedary hot-desert, no severe",
+  "  slope, weak below 50 degrees after two days, the",
+  "  bactrian, the two-week fast with the half capacity",
+  "  in week two and the 10x / 20x empty refueling), the",
+  "  sled dog (the 40-degree ceiling, 2-3 inches of snow,",
+  "  the 50% cannibalism after two days, the seven-dog",
+  "  optimum with 200/300 gp losses per dog short and 3\"",
+  "  per three dogs, the four-dog 9/6/3 and single-dog",
+  "  6/3), the elephant (command words, the 50-degree",
+  "  floor, the 3\" forage slowdown, 50/30 rations, the",
+  "  50%-per-six-hours bolt after two unfed days), the",
+  "  horse (the overloaded one-turn rest per six turns,",
+  "  the half-ration bit, the 2% lame per eight rugged",
+  "  hours - draft 1% - with 01 at 12 hours and 02",
+  "  permanent, 4/4 rations), the mule (the half-hour",
+  "  stubborn root with the Strength Check, the",
+  "  three-fourths rations for three days), the pony",
+  "  (2% lame, 3 rations), the ram (70-degree ceiling,",
+  "  6/4 rations rising to 6 water above the 50-degree",
+  "  high), the sheep (six per handler, the 50%-per-hour",
+  "  unsupervised bolt, 70-degree ceiling, 2/2), and",
+  "  the yak (30 degrees, 6/4). Table 42: the 14-animal",
+  "  1d12 reaction grid across fire, weather, noise,",
+  "  odor and other - noticed / agitated / panicked, the",
+  "  bare trailing slash pinned as sentinel 13 (an",
+  "  impossible roll = no panic); the census 1/3/3/2/0.",
+  "  The bands: the two-round calm window, the 2d3-turn",
+  "  panicked flight, the fire commentary (lava and",
+  "  magical heat yes, faerie fire no; the quarter-mile",
+  "  bonfire and one-mile conflagration sensing), the",
+  "  weather sense, the noise habituation, the odor",
+  "  pungency bar, the other-quirk menagerie. Calming:",
+  "  the proficient every round, the nonproficient 20%",
+  "  with two attempts, movement only, the 50-50 motion",
+  "  split, the +2 agitated / +4 panicked proficient-",
+  "  only modifiers, the re-excitement. Understanding:",
+  "  the animal-lore guess vs the sensory guesswork vs",
+  "  the certainty. THE SETTLE - the hardest table yet:",
+  "  the Mule row defeated tesseract outright (conf 0.0",
+  "  on two cells; the row prints in lighter ink) and",
+  "  pdftotext dropped the horse-other, mule and pony",
+  "  rows entirely. Settled by a TEMPLATE-GLYPH OCR pass",
+  "  written from scratch on the 300-dpi png: digits and",
+  "  slashes harvested from the same table's confidently-",
+  "  read cells, classified by Hamming distance at the",
+  "  light-ink thresholds (120/140, not 170) - giving",
+  "  mule fire 6/11, weather 6/12, noise 6/11, odor",
+  "  7/12, other 6/10/12, agreeing with every tesseract",
+  "  fragment it did manage. The elephant noise cell",
+  "  first misread 8/17 from row-rule contamination and",
+  "  re-settled to 8/12 on the proper band; the camel",
+  "  and donkey \"other\" first glyphs (& and copyright)",
+  "  are both 6; the two-number cells end in a bare",
+  "  trailing slash pixel-identical to the interior",
+  "  slash - settled by ASCII-art rendering of the",
+  "  glyph. Layout garbles: 8110112 = 8/10/12 with the",
+  "  slash as a one; book typos \"greater that that\",",
+  "  \"geta\", \"eal\", \"occurin\", \"1in 6\". The md5 pair",
+  "  hit EXACTLY this round: Termux md5sum 8d6e2057a3b",
+  "  844eefdace037ff8b6331 = the pushed spec bytes; the",
+  "  authored canvas body dfc05e1cbdb3acc6618061d062cc",
+  "  6dbf compares semantically identical. rverify at",
+  "  c11cbe1: 380 mutants, 0 missed (the biggest battery",
+  "  yet - the 210 grid cells); census 414 -> 415; the",
+  "  gap flips 132/54 -> 135/51 (three boxes; the magic",
+  "  chapter boxes stay open). Next: R491 - MAGIC IN",
+  "  THE WILDERNESS, printed pp. 95-102 (pdf pages",
+  "  96-103), the last WSG chapter: spells, magic items",
+  "  and magic under wilderness conditions; extraction",
+  "  pass needed (8 pdf pages)"
+ ]
+}
+
