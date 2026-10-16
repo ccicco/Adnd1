@@ -6015,6 +6015,49 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   Su low-conf, tropical swamp Wi inferred) and the
   s0py cross-checks for A5/A6/A7/A8; the
   1eonline.info transcription is BLOCKED (403).
+- R495 LANDED 2026-10-16: commit 88c0739 (census 420,
+  pushed 7dd2f3f..88c0739), the WSG COMPILED TABLES round -
+  the play-session reprint section, printed pp. 120-123
+  (pdf 121-124), THE ARC-COMPLETION ROUND: every section of
+  the Wilderness Survival Guide is now pinned. Pinned as
+  rules/wsgtables.h with the include after wsgweathx.h
+  (prefix wct), a manifest round: 56 consts + 40 bools, no
+  new grids (96 inlines) - the table data lives in the
+  original headers; this round pins the compilation itself.
+  Thirty of the forty-two book tables reprinted (12 omitted
+  for space), each pinned with its from-page (T3:19 through
+  T42:92). Reconciled cell-for-cell against the landed
+  originals (R425-R494): TWENTY-NINE match; the one genuine
+  print discrepancy is compiled Table 32 (fishing success)
+  - Fair daytime 1d6-3 vs the original 1d6-2 and Good
+  daytime 1d6-2 vs the original 1d8-2 - pinned
+  compiled-side as the errata record (rules/wsgfish.h keeps
+  the original readings); Night and Dawn-Dusk unchanged.
+  Table 4's OCR-shredded attack cells (90-99 = -1,
+  100-109 = -2) confirmed by user eyeball and match the
+  pin; the R494 out-of-bounds table class could not recur
+  (no tables in the spec). Flips the compiled-tables box:
+  147 closed / 39 open - THE WSG ARC IS COMPLETE. Preflight
+  GREEN (R495 WSG compiled tables audit: bad 0), rverify
+  GREEN (96 mutants, 0 missed, double-run clean). ENGINE
+  SYNTAX LESSON: example exprs must use C-style operators
+  only - Python 'not'/'True'/'False' abort with "an
+  operator expected in a audit condition" (the engine
+  gate_cond_syntax whitelists + - * / % == != <= >= < > &&
+  ||, with ' or ' translated to ' || '); bools must be
+  compared as ints: "m['wctT3Matches']() != 1" (True == 1
+  in the Python mirror, and valid C++ against the inline
+  bool accessor). User-side spec md5
+  fc81d915674066597eaa3dbea54633f1 differed from BOTH
+  authored newline variants (0dcc7272... no-nl,
+  d10cbe70... +nl) - cosmetic only: the engine, preflight,
+  and rverify each parsed and validated the content
+  end-to-end, so any material difference would have failed
+  a gate. The spec was published as the NEW canvas
+  r495-splice (never overwrite an existing canvas - the
+  R494 delivery lesson). The ritual block stays pure shell
+  (the user's standing rule); the bn launcher is
+  user-side only.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

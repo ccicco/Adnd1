@@ -30,23 +30,23 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Protected and unprotected characters (p. 19) - R426: the five unprotected rules pin as rules/wsgdress.h
   - [x] Clothing that functions as armor (p. 19) - R426: the AC 8/9 option and the miscast risk pin as rules/wsgdress.h
   - [x] Effects of exertion (p. 20) - R426: the three regimes pin as rules/wsgdress.h
-- [ ] **Effects of the environment** (pp. 21-29)
+- [x] **Effects of the environment** (pp. 21-29) - R496: the parent flips - every child closed by R427-R431 (wsgenvfx.h, wsgsplwx.h, wsgheat.h, wsgequip.h)
   - [x] Temperature and wind (p. 21) - R427: Tables 4 and 5 with the how-to-use rules pin as rules/wsgenvfx.h
   - [x] Precipitation (p. 22) - R427: the moderate/heavy wind-line shifts pin as rules/wsgenvfx.h
   - [x] Special weather (p. 23) - R429: Tables 6-8 with the hurricane, gale, tornado, sandstorm and hailstorm pins as rules/wsgsplwx.h
   - [x] Damage from heat and cold (p. 25) - R430: Table 9 with the adjustment, hypothermia, frostbite and heatstroke pins as rules/wsgheat.h
   - [x] Effects on equipment (p. 28) - R431: the water, rust, leather, sand and dust rules pin as rules/wsgequip.h
-- [ ] **Encumbrance and movement** (pp. 30-49)
+- [x] **Encumbrance and movement** (pp. 30-49) - R496: the parent flips - every child closed by R432-R450 (the chapter headers through wsgswim.h)
   - [x] Encumbrance of characters (p. 30) - R432: the gp-per-pound conversion, the bulk rule-of-thumb and Table 11 pin as rules/wsgencum.h
   - [x] Terrain definitions for movement (p. 30) - R432: the normal, rugged and very-rugged classes with the snow-depth and stream-crossing thresholds
   - [x] Large-scale overland movement (p. 31) - R432: the inch-per-half-day scale, the 8-hour half-day, the 3/4 and 1/3 reductions and Table 12
   - [x] Encumbrance and movement for land-based animals (p. 32) - R433: the normal/maximum load rules, the forced-move stamina rules and Table 13 pin as rules/wsganimal.h
   - [x] Movement of land-based vehicles (p. 33) - R434: the cart, chariot and wagon rates and loads, the no-very-rugged rule and the pathless one-category-worse rule pin as rules/wsgvehicle.h
-  - [ ] Movement across special terrain (p. 33)
+  - [x] Movement across special terrain (p. 33) - R496: the no-very-rugged, pathless one-category-worse and snow-depth rules pin with R434/R432 (wsgvehicle.h, wsgencum.h)
   - [x] Climbing (p. 34) - R435: the Table 15 rates and restrictions, the encumbrance modifications, the surface types and conditions and the chance-of-falling rating pin as rules/wsgclimb.h
-  - [ ] Surface types (p. 34)
-  - [ ] Surface conditions (p. 34)
-  - [ ] Chance of falling (p. 34)
+  - [x] Surface types (p. 34) - R496: the gentle, moderate and severe degree bands pin with R435 (wsgclimb.h)
+  - [x] Surface conditions (p. 34) - R496: the non-slippery, slightly slippery and slippery conditions pin with R435 (wsgclimb.h)
+  - [x] Chance of falling (p. 34) - R496: the 100-minus-Climbing-Rating chance pins with R435 (wsgclimb.h)
   - [x] Climbing checks (p. 35) - R436: the Table 16 modifiers, the other modifiers (the encumbrance, race, armor, strength and hands rules), the thief modifiers and the initial, intermediate and final check rules pin as rules/wsgcheck.h
   - [x] Damage from falling (p. 35) - R437: the Table 17 damage bands, the falling-vs-tumbling distinction, the 1d6-cumulative basis and the fall rates pin as rules/wsgfall.h
   - [x] Stopping a fall (p. 36) - R439: the Table 19 stop fractions, the one-attempt rule, the 50/75/100-foot windows, the protrusion requirement and the slope-self-halt rule pin as rules/wsgstop.h
@@ -73,7 +73,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Flying mounts (p. 47) - R460: Table 27 (the characteristics of flying mounts - the four category grids, 41 creatures x 7 columns: the normal and maximum loads with the dash as max = normal, the full and reduced move rates, the MC on the A=1..E=5 scale and the safe-turns/rest stamina pair), the column definitions (the plummet rule, the single-rate 0 marker, the MC drop when ridden with E unreducible, the over-load stamina cut), the solid-form footnote, the listing criteria, the training/willingness rules, the triple-to-fifty rations feeding and the even-distribution encumbrance rules with the 2:1 doubling) pin as rules/wsgflymounts.h
   - [x] To fall or not to fall (p. 48) - R461: the fall-chance system (the 0% base, the strap/saddle/stirrup/proficiency reductions, the hands-free/overload/faster/unwilling/weather/level increases, the ability-point and wind-velocity ladders, the every-three-turns cadence with the landing restart and the per-round exception) pin as rules/wsgfallair.h
   - [x] Proficiency in airborne riding (p. 49) - R461: the per-category slots (the dragon-and-griffon two-slot example), the -50% fall modifier negating the +50% hands-free, the no-control rule, the ideal-conditions feats and the nonproficient automatic failure pin as rules/wsgfallair.h
-- [ ] **Food and water** (pp. 50-60)
+- [x] **Food and water** (pp. 50-60) - R496: the parent flips - every child closed by R462-R470 (wsgfood.h through wsgpurify.h)
   - [x] Going without food (p. 50) - R462: the Table 28 tolerance ladder, the 12-hour Str/Con checks with the cumulative +1 then +2 modifiers, the weakened/distressed/incapacitated progression with the -1-per-day penalty and the eating recovery pin as rules/wsgfood.h
   - [x] Going without water (p. 52) - R462: the 3-day base with the +2/+1/+1/+1 and -1/-1/-1 modifier set, the one-day floor, the high-water-content food definitions and the total-deprivation rule pin as rules/wsgfood.h
   - [x] Effects on animals (p. 52) - R462: the halved movement and carrying capacity, the 3-turn hard-work incapacitation, the 1.5-times-tolerance multiple, the death rules and the 13-24-hour 1d12+12 recovery pin as rules/wsgfood.h
@@ -91,7 +91,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Where water is found (p. 59) - R468: the standing-water basis, the drought DM reduction, the water-table depth rules by elevation and terrain, the dig-for-water chance and the vegetation source pin as rules/wsgwhere.h
   - [x] Water in the desert (p. 60) - R469: the 40/60 desert dig split with the 5-15 foot depth band, the desert survival proficiency boost to 80%, the two-tries limit and the permafrost definition and harvest technique pin as rules/wsgdesert.h
   - [x] Purifying water (p. 60) - R470: the boil rule with the elevation time and evaporation ladders, the mild and severe taint durations, the taint-severity geography and the bad-water warnings pin as rules/wsgpurify.h
-- [ ] **Camping and campfires** (pp. 61-68)
+- [x] **Camping and campfires** (pp. 61-68) - R496: the parent flips - every child closed by R471-R477 (wsgshelter.h through wsgdmg.h)
   - [x] Natural shelters (p. 61) - R471: the find chance by terrain and season, the check discipline, the forest construction times with the helper and rope-use reductions and the terrain-by-terrain notes pin as rules/wsgshelter.h
   - [x] Portable shelters (p. 62) - R472: the pole-and-cloth simple shelter with the pitch rules, the occupancy limits, the hauling rules and the Table 36 quality-by-size grid pin as rules/wsgtents.h
   - [x] Rest and comfort (p. 64) - R473: the 16-hour active day with the 3-hour camp chores, the 5-hour sleep requirement and the p. 63 shelter-mechanics seam pin as rules/wsgsleep.h
@@ -101,17 +101,17 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Precautions and perils (p. 66) - R475: the no-safe-fire warning with the untended conflagration and the first cardinal rule (no fire on combustibles, the 1-3-turn clearing, the 100-foot spark carry) pin as rules/wsgfuel.h
   - [x] Uncontrollable fires (p. 67) - R476: the four fire-discipline rules with the spark carry and catch chance, the wild-fire growth ladder with the six-turn uncontrollable bar, the extinguishing times with the water and combustible semantics, and the spread prose pin as rules/wsgblaze.h
   - [x] Damage from fire (p. 68) - R477: the firebreak and advance prose with the engulfment rule, the brief-contact and panic rules and the extreme-heat rule pin as rules/wsgdmg.h
-- [ ] **Medicine and first aid** (pp. 69-71)
+- [x] **Medicine and first aid** (pp. 69-71) - R496: the parent flips - every child closed by R478-R481 (wsgmed.h through wsgfae.h)
   - [x] Availability of medicinal plants (p. 69) - R478: the vegetation and locate chances with the identify-half rule and the search discipline pin as rules/wsgmed.h
   - [x] Proficiency in plant lore (p. 70) - R479: the party survival benefit with the no-vegetation bar and the greater-chance-in-greenery rule pin as rules/wsglore.h
   - [x] Injuries and treatment (p. 70) - R480: the broken bone, burn, major wound and minor wound rules with the first-aid treatment semantics pin as rules/wsginj.h
   - [x] First aid equipment (p. 71) - R481: the bandage, splint, stretcher and litter gear rules with the carry and terrain semantics pin as rules/wsgfae.h
-- [ ] **Vision and visibility** (pp. 72-75)
+- [x] **Vision and visibility** (pp. 72-75) - R496: the parent flips - every child closed by R482-R485 (wsgnvis.h through wsglight.h)
   - [x] Normal vision (p. 72) - R482: the visible-spectrum definition with the 500-yard effective range, the size-based sighting distances and the obstruction and elevation semantics pin as rules/wsgnvis.h
   - [x] Infravision (p. 73) - R483: the heat-vision definition with the 60/30/120 infravisual ranges pin as rules/wsginfra.h
   - [x] Ultravision (p. 74) - R484: the infravision effectiveness rules with the color scale and the ultravision definition with its range modifiers pin as rules/wsgultra.h
   - [x] Artificial illumination (p. 74) - R485: the torch wind bands with the lantern, magic weapon and campfire illumination rules pin as rules/wsglight.h
-- [ ] **Natural hazards in the wilderness** (pp. 76-83)
+- [x] **Natural hazards in the wilderness** (pp. 76-83) - R496: the parent flips - every child closed by R486-R487 (wsghazd.h, wsghazd2.h)
   - [x] Volcanoes (p. 76) - R486: the three eruption types with the one-type-per-volcano rule pin as rules/wsghazd.h
   - [x] Lava eruptions (p. 76) - R486: the 250-yards-per-hour flow and 2d3-week heat retention with the 1d4 fluid, thick and pyroclastic bands pin as rules/wsghazd.h
   - [x] Ash eruptions (p. 76) - R486: the cloud, accumulation and fertilizer rules with the Mount St. Helens account and the 1d6 light, heavy and pyroclastic bands pin as rules/wsghazd.h
@@ -121,7 +121,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Floods and flash floods (p. 80) - R487: the flood and flash flood causes with the d6+9-round duration and the strength-check protrusion chain pin as rules/wsghazd2.h
   - [x] Avalanches, rockfalls, and mudslides (p. 80) - R487: the avalanche burial and digging rules, the slope, cliff-face and base rockfall bands and the mudslide sinking rules pin as rules/wsghazd2.h
   - [x] Quicksand (p. 83) - R487: the no-suction rule with the treading self-rescue and the pole and swimmer rescues pin as rules/wsghazd2.h
-- [ ] **Combat rules for wilderness play** (pp. 84-87)
+- [x] **Combat rules for wilderness play** (pp. 84-87) - R496: the parent flips - every child closed by R488-R489 (wsgfight.h, wsgfatig.h)
   - [x] Fighting while climbing (p. 84) - R488: the cliff-face and severe-slope penalties with the elevation adjustments and the damage-triggered Climbing Checks pin as rules/wsgfight.h
   - [x] Fighting while precariously balanced (p. 84) - R488: the miss Dex Check with the -1 to -4 circumstance modifiers and the edge-distance and suffocation rules pin as rules/wsgfight.h
   - [x] Fighting in water (p. 85) - R488: the -1 to -4 depth penalties with the attacker-share rule and the swimming-proficiency relief pin as rules/wsgfight.h
@@ -129,15 +129,15 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Melee combat from a mount (p. 86) - R488: the size bonuses and penalties with the airborne and swooping adjustments and the braced-defense rules pin as rules/wsgfight.h
   - [x] Missile combat from a mount (p. 86) - R488: the riding-proficiency requirement with the rate-of-fire scale reduction and the mount-speed penalties pin as rules/wsgfight.h
   - [x] Forcing opponents to dismount (p. 87) - R489: the close-to-the-ground death tail with the proficient leap pin as rules/wsgfatig.h
-- [ ] **Fatigue and exhaustion** (pp. 88-89)
+- [x] **Fatigue and exhaustion** (pp. 88-89) - R496: the parent flips - every child closed by R489 (wsgfatig.h)
   - [x] Characters (p. 88) - R489: the strenuous rhythm with the fatigue and exhaustion penalties and the recovery and carried-rest rules pin as rules/wsgfatig.h
   - [x] Land-based mounts and pack animals (p. 88) - R489: the nourishment and overwork rules with the fatigued movement, armor class and collapse rules and the trauma drain pin as rules/wsgfatig.h
   - [x] Flying mounts (p. 89) - R489: the stamina table rules with the 1d10 fatigue check and the dive buffet and thrown-rider damage pin as rules/wsgfatig.h
-- [ ] **Mounts and beasts of burden** (pp. 90-94)
+- [x] **Mounts and beasts of burden** (pp. 90-94) - R496: the parent flips - every child closed by R490 (wsgmount.h)
   - [x] Animals as individuals (p. 91) - R490: the former-owner and trial-and-error personality rules with the Table 42 reaction grid and the fire, weather, noise, odor and other band rules pin as rules/wsgmount.h
   - [x] Calming an excited animal (p. 94) - R490: the proficiency and 20 percent nonproficient rules with the motion details and the +2/+4 modifiers pin as rules/wsgmount.h
   - [x] Understanding an animal (p. 94) - R490: the animal lore educated-guess and certainty rules pin as rules/wsgmount.h
-- [ ] **Magic in the wilderness** (pp. 95-102)
+- [x] **Magic in the wilderness** (pp. 95-102) - R496: the parent flips - every child closed by R491 (wsgmagic.h)
   - [x] Spells (p. 95) - R491: the alphabetical spell commentary from affect normal fires through wraithform with the climbing, temperature, cold-weather and web rules pins as rules/wsgmagic.h
   - [x] Potions (p. 100) - R491: the gaseous form, invulnerability and vitality rules pin as rules/wsgmagic.h
   - [x] Protection scrolls (p. 100) - R491: the cold, fire and gas scroll rules pin as rules/wsgmagic.h
@@ -175,14 +175,14 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 17: damage from free fall or severe slope** (p. 35) - R437
 - [x] **Table 18: damage from tumbling down moderate or gentle slope** (p. 36) - R438
 - [x] **Table 19: chance of stopping a fall or tumble** (p. 36) - R439
-- [ ] **Table 20: grapple success** (p. 38)
-- [ ] **Table 21: thrown loop ranges** (p. 38)
-- [ ] **Table 22: characters' jumping ability** (p. 39)
-- [ ] **Table 23: movement in reduced visibility** (p. 40)
-- [ ] **Table 24: effects of encumbrance on swimming** (p. 41)
-- [ ] **Table 25: waterborne vehicle characteristics** (p. 44)
-- [ ] **Table 26: chance of capsizing** (p. 45)
-- [ ] **Table 27: characteristics of flying mounts** (p. 47)
+- [x] **Table 20: grapple success** (p. 38) - R496: the manifest line flips to match the R444 pin (wsggrap.h)
+- [x] **Table 21: thrown loop ranges** (p. 38) - R496: the manifest line flips to match the R445 pin (wsgchasm.h)
+- [x] **Table 22: characters' jumping ability** (p. 39) - R496: the manifest line flips to match the R448 pin (wsgjump.h)
+- [x] **Table 23: movement in reduced visibility** (p. 40) - R496: the manifest line flips to match the R449 pin (wsgvis.h)
+- [x] **Table 24: effects of encumbrance on swimming** (p. 41) - R496: the manifest line flips to match the R450 pin (wsgswim.h)
+- [x] **Table 25: waterborne vehicle characteristics** (p. 44) - R496: the manifest line flips to match the R455 pin (wsgvessels.h)
+- [x] **Table 26: chance of capsizing** (p. 45) - R496: the manifest line flips to match the R456 pin (wsgcapsizing.h)
+- [x] **Table 27: characteristics of flying mounts** (p. 47) - R496: the manifest line flips to match the R460 pin (wsgflymounts.h)
 - [x] **Table 28: tolerance levels for lack of food** (p. 50) - R462: the 4/5/6/7/8/10-day ladder pins as rules/wsgfood.h
 - [x] **Table 29: water requirements for characters** (p. 53) - R462: the 4x4 pint grid pins as rules/wsgfood.h
 - [x] **Table 30: foraging success** (p. 53) - R463: the five climate-region grids (Arctic five terrains, the others seven), the chance/inedible pair per season, all 132 cells pixel-verified pin as rules/wsgforage.h
@@ -197,6 +197,6 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 39: availability of fuel** (p. 66) - R475: the temperate grid and the climate modifier grid with the every-two-turns recheck pin inside rules/wsgfuel.h (census 399)
 - [x] **Table 40: availability of medicinal plants** (p. 69) - R478: the 34-row terrain-climate vegetation and locate grids pin as rules/wsgmed.h
 - [x] **Table 41: outdoor range of normal vision** (p. 73) - R483: the six-condition light-level grid pins as rules/wsginfra.h
-- [ ] **Table 42: reactions of animals** (p. 92)
+- [x] **Table 42: reactions of animals** (p. 92) - R496: the manifest line flips to match the R490 pin (wsgmount.h)
 
 Post-state at R488: 128 closed, 58 open (the R488 round OPENS the wilderness combat chapter - the fighting while climbing, precariously balanced, in water and in poor visibility rules, the inclement weather note and the melee and missile combat from a mount rules pin as rules/wsgfight.h; the forcing opponents to dismount box stays open - the section tail rides from the p. 87 cut; the next round lands the dismount tail and closes the combat chapter (p. 88)).

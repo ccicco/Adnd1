@@ -1,0 +1,684 @@
+{
+ "round": 496,
+ "title": "the WSG gap reconciliation - the bookkeeping round flipping the twenty-four already-pinned boxes",
+ "prefix": "wgr",
+ "header_file": "rules/wsgrecon.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 420,
+ "inline_count": 37,
+ "audit_label": "R496 WSG gap reconciliation audit",
+ "audit_comment": "The WSG gap reconciliation: twenty-four boxes that were already pinned by earlier rounds flip in this same commit. The eleven chapter parents (effects of the environment R427-R431, encumbrance and movement R432-R450, food and water R462-R470, camping R471-R477, medicine R478-R481, vision R482-R485, hazards R486-R487, combat R488-R489, fatigue R489, mounts R490, magic R491). The nine manifest lines (Tables 20-27 and 42, pinned R444-R490). The four movement items (the surface types, the surface conditions and the chance of falling inside wsgclimb.h R435; the movement across special terrain inside wsgvehicle.h and wsgencum.h R434/R432). The report now reads 171 closed and 15 open; the fifteen are the overview prose (pp. 7-10) and the proficiency descriptions (pp. 11-17).",
+ "banner": {
+  "title": "The WSG GAP RECONCILIATION, R496: the bookkeeping round that closes the distance between the gap report and the landed pins. The WSG arc rounds R425-R495 pinned every section of the book, but twenty-four boxes were never ticked: eleven chapter parents whose children all closed, nine manifest table lines whose grids landed with their chapter rounds, and the four movement items that pin inside the R435/R434/R432 headers.",
+  "provenance": "This round pins no new book material: every flipped box is verified against its landed original (rules/wsgenvfx.h, wsgencum.h, wsgvehicle.h, wsgclimb.h, wsggrap.h, wsgchasm.h, wsgjump.h, wsgvis.h, wsgswim.h, wsgvessels.h, wsgcapsizing.h, wsgflymounts.h, wsgmount.h and the chapter headers). What remains open after this round: the overview chapter (pp. 7-10, eleven boxes - the seven terrain descriptions, the hierarchy of terrain, the bodies of water, the climate) and the wilderness proficiencies prose (pp. 11-17, four boxes - the nonweapon list, the choosing-skills rules, the proficiency descriptions).",
+  "sentinel": "THE SETTLE: the gap report lands at 171 closed / 15 open, every open box a genuinely un-pinned prose stretch; census 420 -> 421."
+ },
+ "consts": [
+  {
+   "name": "wgrClosedBefore",
+   "value": 147,
+   "comment": "the gap report at the R495 landing reads 147 closed boxes."
+  },
+  {
+   "name": "wgrOpenBefore",
+   "value": 39,
+   "comment": "the gap report at the R495 landing reads 39 open boxes."
+  },
+  {
+   "name": "wgrFlippedCount",
+   "value": 24,
+   "comment": "this round flips twenty-four boxes that were already pinned by earlier rounds but never ticked."
+  },
+  {
+   "name": "wgrClosedAfter",
+   "value": 171,
+   "comment": "after this round the report reads 171 closed boxes."
+  },
+  {
+   "name": "wgrOpenAfter",
+   "value": 15,
+   "comment": "after this round the report reads 15 open boxes - every one a genuinely un-pinned prose stretch."
+  },
+  {
+   "name": "wgrCensusBefore",
+   "value": 420,
+   "comment": "the audit census at the R495 landing."
+  },
+  {
+   "name": "wgrCensusAfter",
+   "value": 421,
+   "comment": "the audit census after this round."
+  },
+  {
+   "name": "wgrChapterParents",
+   "value": 11,
+   "comment": "eleven chapter parents flip - each with every child already closed by a landed round."
+  },
+  {
+   "name": "wgrManifestLines",
+   "value": 9,
+   "comment": "nine manifest table lines flip - Tables 20-27 and 42, each pinned with its chapter round."
+  },
+  {
+   "name": "wgrClimbItems",
+   "value": 3,
+   "comment": "three climbing items flip - the surface types, the surface conditions and the chance of falling."
+  },
+  {
+   "name": "wgrSpecialTerrainItems",
+   "value": 1,
+   "comment": "the movement across special terrain item flips - the vehicle and snow rules of R434/R432."
+  },
+  {
+   "name": "wgrOverviewOpen",
+   "value": 11,
+   "comment": "the overview chapter keeps eleven open boxes - the parent and its ten children (pp. 7-10)."
+  },
+  {
+   "name": "wgrProficienciesOpen",
+   "value": 4,
+   "comment": "the wilderness proficiencies chapter keeps four open boxes - the parent, the nonweapon list, the choosing rules and the descriptions (pp. 11-17)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wgrEnvFxParentOk",
+   "value": true,
+   "comment": "effects of the environment: every child closed by R427, R429, R430 and R431."
+  },
+  {
+   "name": "wgrEncumMoveParentOk",
+   "value": true,
+   "comment": "encumbrance and movement: every child closed by R432 through R450 (and the four R496 flips below)."
+  },
+  {
+   "name": "wgrFoodWaterParentOk",
+   "value": true,
+   "comment": "food and water: every child closed by R462 through R470."
+  },
+  {
+   "name": "wgrCampParentOk",
+   "value": true,
+   "comment": "camping and campfires: every child closed by R471 through R477."
+  },
+  {
+   "name": "wgrMedicineParentOk",
+   "value": true,
+   "comment": "medicine and first aid: every child closed by R478 through R481."
+  },
+  {
+   "name": "wgrVisionParentOk",
+   "value": true,
+   "comment": "vision and visibility: every child closed by R482 through R485."
+  },
+  {
+   "name": "wgrHazardsParentOk",
+   "value": true,
+   "comment": "natural hazards: every child closed by R486 and R487."
+  },
+  {
+   "name": "wgrCombatParentOk",
+   "value": true,
+   "comment": "wilderness combat: every child closed by R488 and R489."
+  },
+  {
+   "name": "wgrFatigueParentOk",
+   "value": true,
+   "comment": "fatigue and exhaustion: every child closed by R489."
+  },
+  {
+   "name": "wgrMountsParentOk",
+   "value": true,
+   "comment": "mounts and beasts of burden: every child closed by R490."
+  },
+  {
+   "name": "wgrMagicParentOk",
+   "value": true,
+   "comment": "magic in the wilderness: every child closed by R491."
+  },
+  {
+   "name": "wgrT20Pinned",
+   "value": true,
+   "comment": "Table 20 pins with the grappling-hook round R444 (rules/wsggrap.h - the ten terrain rows with the catch chances)."
+  },
+  {
+   "name": "wgrT21Pinned",
+   "value": true,
+   "comment": "Table 21 pins with the chasm-crossing round R445 (rules/wsgchasm.h - the five level-band ranges)."
+  },
+  {
+   "name": "wgrT22Pinned",
+   "value": true,
+   "comment": "Table 22 pins with the jumping round R448 (rules/wsgjump.h - the seven distance bands)."
+  },
+  {
+   "name": "wgrT23Pinned",
+   "value": true,
+   "comment": "Table 23 pins with the reduced-visibility round R449 (rules/wsgvis.h - the three light rows by the five conditions)."
+  },
+  {
+   "name": "wgrT24Pinned",
+   "value": true,
+   "comment": "Table 24 pins with the swimming round R450 (rules/wsgswim.h - the five encumbrance rows by the four functions)."
+  },
+  {
+   "name": "wgrT25Pinned",
+   "value": true,
+   "comment": "Table 25 pins with the waterborne-vehicles round R455 (rules/wsgvessels.h - the eight vessels by the ten characteristics)."
+  },
+  {
+   "name": "wgrT26Pinned",
+   "value": true,
+   "comment": "Table 26 pins with the capsizing round R456 (rules/wsgcapsizing.h - the eight vessels by the four conditions)."
+  },
+  {
+   "name": "wgrT27Pinned",
+   "value": true,
+   "comment": "Table 27 pins with the flying-mounts round R460 (rules/wsgflymounts.h - the 41 creatures by the seven columns)."
+  },
+  {
+   "name": "wgrT42Pinned",
+   "value": true,
+   "comment": "Table 42 pins with the mounts round R490 (rules/wsgmount.h - the reaction grid)."
+  },
+  {
+   "name": "wgrSurfaceTypesPinned",
+   "value": true,
+   "comment": "the surface types pin with R435: the gentle (15-30 degrees), moderate (31-50), severe (51-70) and cliff (71-plus) bands with the rise rates."
+  },
+  {
+   "name": "wgrSurfaceConditionsPinned",
+   "value": true,
+   "comment": "the surface conditions pin with R435: the non-slippery, slightly slippery and slippery rate columns of the climbing grid."
+  },
+  {
+   "name": "wgrFallChancePinned",
+   "value": true,
+   "comment": "the chance of falling pins with R435: 100 minus the Climbing Rating, the non-thief base rating 40 and the mountaineering 80 with tools on a restricted surface."
+  },
+  {
+   "name": "wgrSpecialTerrainPinned",
+   "value": true,
+   "comment": "the movement across special terrain pins with R434 and R432: the no-very-rugged vehicle bar, the pathless one-category-worse rule and the snow-depth thresholds."
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the round counts",
+   "expr": "m['wgrClosedBefore']() != 147 or m['wgrOpenBefore']() != 39 or m['wgrFlippedCount']() != 24 or m['wgrClosedAfter']() != 171 or m['wgrOpenAfter']() != 15"
+  },
+  {
+   "note": "the census moves by exactly one",
+   "expr": "m['wgrCensusBefore']() != 420 or m['wgrCensusAfter']() != 421"
+  },
+  {
+   "note": "the flipped classes sum to the flip count",
+   "expr": "m['wgrChapterParents']() + m['wgrManifestLines']() + m['wgrClimbItems']() + m['wgrSpecialTerrainItems']() != m['wgrFlippedCount']()"
+  },
+  {
+   "note": "the open boxes conserve: 39 open minus 24 flipped is 15",
+   "expr": "m['wgrOpenBefore']() - m['wgrFlippedCount']() != m['wgrOpenAfter']()"
+  },
+  {
+   "note": "the closed boxes conserve: 147 plus 24 flipped is 171",
+   "expr": "m['wgrClosedBefore']() + m['wgrFlippedCount']() != m['wgrClosedAfter']()"
+  },
+  {
+   "note": "the open remainder sums to 15",
+   "expr": "m['wgrOverviewOpen']() + m['wgrProficienciesOpen']() != m['wgrOpenAfter']()"
+  },
+  {
+   "note": "eleven chapter parents and nine manifest lines flip",
+   "expr": "m['wgrChapterParents']() != 11 or m['wgrManifestLines']() != 9"
+  },
+  {
+   "note": "three climbing items and one special-terrain item flip",
+   "expr": "m['wgrClimbItems']() != 3 or m['wgrSpecialTerrainItems']() != 1"
+  },
+  {
+   "note": "wgrEnvFxParentOk - every child closed before the parent flips",
+   "expr": "m['wgrEnvFxParentOk']() != 1"
+  },
+  {
+   "note": "wgrEncumMoveParentOk - every child closed before the parent flips",
+   "expr": "m['wgrEncumMoveParentOk']() != 1"
+  },
+  {
+   "note": "wgrFoodWaterParentOk - every child closed before the parent flips",
+   "expr": "m['wgrFoodWaterParentOk']() != 1"
+  },
+  {
+   "note": "wgrCampParentOk - every child closed before the parent flips",
+   "expr": "m['wgrCampParentOk']() != 1"
+  },
+  {
+   "note": "wgrMedicineParentOk - every child closed before the parent flips",
+   "expr": "m['wgrMedicineParentOk']() != 1"
+  },
+  {
+   "note": "wgrVisionParentOk - every child closed before the parent flips",
+   "expr": "m['wgrVisionParentOk']() != 1"
+  },
+  {
+   "note": "wgrHazardsParentOk - every child closed before the parent flips",
+   "expr": "m['wgrHazardsParentOk']() != 1"
+  },
+  {
+   "note": "wgrCombatParentOk - every child closed before the parent flips",
+   "expr": "m['wgrCombatParentOk']() != 1"
+  },
+  {
+   "note": "wgrFatigueParentOk - every child closed before the parent flips",
+   "expr": "m['wgrFatigueParentOk']() != 1"
+  },
+  {
+   "note": "wgrMountsParentOk - every child closed before the parent flips",
+   "expr": "m['wgrMountsParentOk']() != 1"
+  },
+  {
+   "note": "wgrMagicParentOk - every child closed before the parent flips",
+   "expr": "m['wgrMagicParentOk']() != 1"
+  },
+  {
+   "note": "wgrT20Pinned - the manifest line matches its landed pin",
+   "expr": "m['wgrT20Pinned']() != 1"
+  },
+  {
+   "note": "wgrT21Pinned - the manifest line matches its landed pin",
+   "expr": "m['wgrT21Pinned']() != 1"
+  },
+  {
+   "note": "wgrT22Pinned - the manifest line matches its landed pin",
+   "expr": "m['wgrT22Pinned']() != 1"
+  },
+  {
+   "note": "wgrT23Pinned - the manifest line matches its landed pin",
+   "expr": "m['wgrT23Pinned']() != 1"
+  },
+  {
+   "note": "wgrT24Pinned - the manifest line matches its landed pin",
+   "expr": "m['wgrT24Pinned']() != 1"
+  },
+  {
+   "note": "wgrT25Pinned - the manifest line matches its landed pin",
+   "expr": "m['wgrT25Pinned']() != 1"
+  },
+  {
+   "note": "wgrT26Pinned - the manifest line matches its landed pin",
+   "expr": "m['wgrT26Pinned']() != 1"
+  },
+  {
+   "note": "wgrT27Pinned - the manifest line matches its landed pin",
+   "expr": "m['wgrT27Pinned']() != 1"
+  },
+  {
+   "note": "wgrT42Pinned - the manifest line matches its landed pin",
+   "expr": "m['wgrT42Pinned']() != 1"
+  },
+  {
+   "note": "wgrSurfaceTypesPinned - the item is pinned in an earlier header",
+   "expr": "m['wgrSurfaceTypesPinned']() != 1"
+  },
+  {
+   "note": "wgrSurfaceConditionsPinned - the item is pinned in an earlier header",
+   "expr": "m['wgrSurfaceConditionsPinned']() != 1"
+  },
+  {
+   "note": "wgrFallChancePinned - the item is pinned in an earlier header",
+   "expr": "m['wgrFallChancePinned']() != 1"
+  },
+  {
+   "note": "wgrSpecialTerrainPinned - the item is pinned in an earlier header",
+   "expr": "m['wgrSpecialTerrainPinned']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the reconciliation opener": [
+   {
+    "kind": "const",
+    "name": "wgrClosedBefore"
+   },
+   {
+    "kind": "const",
+    "name": "wgrOpenBefore"
+   },
+   {
+    "kind": "const",
+    "name": "wgrFlippedCount"
+   },
+   {
+    "kind": "const",
+    "name": "wgrClosedAfter"
+   },
+   {
+    "kind": "const",
+    "name": "wgrOpenAfter"
+   },
+   {
+    "kind": "const",
+    "name": "wgrCensusBefore"
+   },
+   {
+    "kind": "const",
+    "name": "wgrCensusAfter"
+   }
+  ],
+  "the flipped classes": [
+   {
+    "kind": "const",
+    "name": "wgrChapterParents"
+   },
+   {
+    "kind": "const",
+    "name": "wgrManifestLines"
+   },
+   {
+    "kind": "const",
+    "name": "wgrClimbItems"
+   },
+   {
+    "kind": "const",
+    "name": "wgrSpecialTerrainItems"
+   }
+  ],
+  "the open remainder": [
+   {
+    "kind": "const",
+    "name": "wgrOverviewOpen"
+   },
+   {
+    "kind": "const",
+    "name": "wgrProficienciesOpen"
+   }
+  ],
+  "the flipped chapter parents": [
+   {
+    "kind": "bool",
+    "name": "wgrEnvFxParentOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrEncumMoveParentOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrFoodWaterParentOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrCampParentOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrMedicineParentOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrVisionParentOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrHazardsParentOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrCombatParentOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrFatigueParentOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrMountsParentOk"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrMagicParentOk"
+   }
+  ],
+  "the flipped manifest lines": [
+   {
+    "kind": "bool",
+    "name": "wgrT20Pinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrT21Pinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrT22Pinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrT23Pinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrT24Pinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrT25Pinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrT26Pinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrT27Pinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrT42Pinned"
+   }
+  ],
+  "the flipped movement items": [
+   {
+    "kind": "bool",
+    "name": "wgrSurfaceTypesPinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrSurfaceConditionsPinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrFallChancePinned"
+   },
+   {
+    "kind": "bool",
+    "name": "wgrSpecialTerrainPinned"
+   }
+  ]
+ },
+ "include_after": "#include \"rules/wsgtables.h\"  // R495: R495: the WSG compiled tables manifest",
+ "include_comment": "the WSG gap reconciliation bookkeeping",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R495 LANDED 2026-10-16: commit 88c0739 (census 420,",
+ "prev_record": [
+  "- R495 LANDED 2026-10-16: commit 88c0739 (census 420,",
+  "  pushed 7dd2f3f..88c0739), the WSG COMPILED TABLES round -",
+  "  the play-session reprint section, printed pp. 120-123",
+  "  (pdf 121-124), THE ARC-COMPLETION ROUND: every section of",
+  "  the Wilderness Survival Guide is now pinned. Pinned as",
+  "  rules/wsgtables.h with the include after wsgweathx.h",
+  "  (prefix wct), a manifest round: 56 consts + 40 bools, no",
+  "  new grids (96 inlines) - the table data lives in the",
+  "  original headers; this round pins the compilation itself.",
+  "  Thirty of the forty-two book tables reprinted (12 omitted",
+  "  for space), each pinned with its from-page (T3:19 through",
+  "  T42:92). Reconciled cell-for-cell against the landed",
+  "  originals (R425-R494): TWENTY-NINE match; the one genuine",
+  "  print discrepancy is compiled Table 32 (fishing success)",
+  "  - Fair daytime 1d6-3 vs the original 1d6-2 and Good",
+  "  daytime 1d6-2 vs the original 1d8-2 - pinned",
+  "  compiled-side as the errata record (rules/wsgfish.h keeps",
+  "  the original readings); Night and Dawn-Dusk unchanged.",
+  "  Table 4's OCR-shredded attack cells (90-99 = -1,",
+  "  100-109 = -2) confirmed by user eyeball and match the",
+  "  pin; the R494 out-of-bounds table class could not recur",
+  "  (no tables in the spec). Flips the compiled-tables box:",
+  "  147 closed / 39 open - THE WSG ARC IS COMPLETE. Preflight",
+  "  GREEN (R495 WSG compiled tables audit: bad 0), rverify",
+  "  GREEN (96 mutants, 0 missed, double-run clean). ENGINE",
+  "  SYNTAX LESSON: example exprs must use C-style operators",
+  "  only - Python 'not'/'True'/'False' abort with \"an",
+  "  operator expected in a audit condition\" (the engine",
+  "  gate_cond_syntax whitelists + - * / % == != <= >= < > &&",
+  "  ||, with ' or ' translated to ' || '); bools must be",
+  "  compared as ints: \"m['wctT3Matches']() != 1\" (True == 1",
+  "  in the Python mirror, and valid C++ against the inline",
+  "  bool accessor). User-side spec md5",
+  "  fc81d915674066597eaa3dbea54633f1 differed from BOTH",
+  "  authored newline variants (0dcc7272... no-nl,",
+  "  d10cbe70... +nl) - cosmetic only: the engine, preflight,",
+  "  and rverify each parsed and validated the content",
+  "  end-to-end, so any material difference would have failed",
+  "  a gate. The spec was published as the NEW canvas",
+  "  r495-splice (never overwrite an existing canvas - the",
+  "  R494 delivery lesson). The ritual block stays pure shell",
+  "  (the user's standing rule); the bn launcher is",
+  "  user-side only."
+ ],
+ "gap_flips": [
+  {
+   "note": "parent: Effects of the environment",
+   "from": "- [ ] **Effects of the environment** (pp. 21-29)",
+   "to": "- [x] **Effects of the environment** (pp. 21-29) - R496: the parent flips - every child closed by R427-R431 (wsgenvfx.h, wsgsplwx.h, wsgheat.h, wsgequip.h)"
+  },
+  {
+   "note": "parent: Encumbrance and movement",
+   "from": "- [ ] **Encumbrance and movement** (pp. 30-49)",
+   "to": "- [x] **Encumbrance and movement** (pp. 30-49) - R496: the parent flips - every child closed by R432-R450 (the chapter headers through wsgswim.h)"
+  },
+  {
+   "note": "parent: Food and water",
+   "from": "- [ ] **Food and water** (pp. 50-60)",
+   "to": "- [x] **Food and water** (pp. 50-60) - R496: the parent flips - every child closed by R462-R470 (wsgfood.h through wsgpurify.h)"
+  },
+  {
+   "note": "parent: Camping and campfires",
+   "from": "- [ ] **Camping and campfires** (pp. 61-68)",
+   "to": "- [x] **Camping and campfires** (pp. 61-68) - R496: the parent flips - every child closed by R471-R477 (wsgshelter.h through wsgdmg.h)"
+  },
+  {
+   "note": "parent: Medicine and first aid",
+   "from": "- [ ] **Medicine and first aid** (pp. 69-71)",
+   "to": "- [x] **Medicine and first aid** (pp. 69-71) - R496: the parent flips - every child closed by R478-R481 (wsgmed.h through wsgfae.h)"
+  },
+  {
+   "note": "parent: Vision and visibility",
+   "from": "- [ ] **Vision and visibility** (pp. 72-75)",
+   "to": "- [x] **Vision and visibility** (pp. 72-75) - R496: the parent flips - every child closed by R482-R485 (wsgnvis.h through wsglight.h)"
+  },
+  {
+   "note": "parent: Natural hazards in the wilderness",
+   "from": "- [ ] **Natural hazards in the wilderness** (pp. 76-83)",
+   "to": "- [x] **Natural hazards in the wilderness** (pp. 76-83) - R496: the parent flips - every child closed by R486-R487 (wsghazd.h, wsghazd2.h)"
+  },
+  {
+   "note": "parent: Combat rules for wilderness play",
+   "from": "- [ ] **Combat rules for wilderness play** (pp. 84-87)",
+   "to": "- [x] **Combat rules for wilderness play** (pp. 84-87) - R496: the parent flips - every child closed by R488-R489 (wsgfight.h, wsgfatig.h)"
+  },
+  {
+   "note": "parent: Fatigue and exhaustion",
+   "from": "- [ ] **Fatigue and exhaustion** (pp. 88-89)",
+   "to": "- [x] **Fatigue and exhaustion** (pp. 88-89) - R496: the parent flips - every child closed by R489 (wsgfatig.h)"
+  },
+  {
+   "note": "parent: Mounts and beasts of burden",
+   "from": "- [ ] **Mounts and beasts of burden** (pp. 90-94)",
+   "to": "- [x] **Mounts and beasts of burden** (pp. 90-94) - R496: the parent flips - every child closed by R490 (wsgmount.h)"
+  },
+  {
+   "note": "parent: Magic in the wilderness",
+   "from": "- [ ] **Magic in the wilderness** (pp. 95-102)",
+   "to": "- [x] **Magic in the wilderness** (pp. 95-102) - R496: the parent flips - every child closed by R491 (wsgmagic.h)"
+  },
+  {
+   "note": "movement: Movement across special terrain (p. 33)",
+   "from": "  - [ ] Movement across special terrain (p. 33)",
+   "to": "  - [x] Movement across special terrain (p. 33) - R496: the no-very-rugged, pathless one-category-worse and snow-depth rules pin with R434/R432 (wsgvehicle.h, wsgencum.h)"
+  },
+  {
+   "note": "movement: Surface types (p. 34)",
+   "from": "  - [ ] Surface types (p. 34)",
+   "to": "  - [x] Surface types (p. 34) - R496: the gentle, moderate and severe degree bands pin with R435 (wsgclimb.h)"
+  },
+  {
+   "note": "movement: Surface conditions (p. 34)",
+   "from": "  - [ ] Surface conditions (p. 34)",
+   "to": "  - [x] Surface conditions (p. 34) - R496: the non-slippery, slightly slippery and slippery conditions pin with R435 (wsgclimb.h)"
+  },
+  {
+   "note": "movement: Chance of falling (p. 34)",
+   "from": "  - [ ] Chance of falling (p. 34)",
+   "to": "  - [x] Chance of falling (p. 34) - R496: the 100-minus-Climbing-Rating chance pins with R435 (wsgclimb.h)"
+  },
+  {
+   "note": "manifest: Table 20: grapple success",
+   "from": "- [ ] **Table 20: grapple success** (p. 38)",
+   "to": "- [x] **Table 20: grapple success** (p. 38) - R496: the manifest line flips to match the R444 pin (wsggrap.h)"
+  },
+  {
+   "note": "manifest: Table 21: thrown loop ranges",
+   "from": "- [ ] **Table 21: thrown loop ranges** (p. 38)",
+   "to": "- [x] **Table 21: thrown loop ranges** (p. 38) - R496: the manifest line flips to match the R445 pin (wsgchasm.h)"
+  },
+  {
+   "note": "manifest: Table 22: characters' jumping ability",
+   "from": "- [ ] **Table 22: characters' jumping ability** (p. 39)",
+   "to": "- [x] **Table 22: characters' jumping ability** (p. 39) - R496: the manifest line flips to match the R448 pin (wsgjump.h)"
+  },
+  {
+   "note": "manifest: Table 23: movement in reduced visibility",
+   "from": "- [ ] **Table 23: movement in reduced visibility** (p. 40)",
+   "to": "- [x] **Table 23: movement in reduced visibility** (p. 40) - R496: the manifest line flips to match the R449 pin (wsgvis.h)"
+  },
+  {
+   "note": "manifest: Table 24: effects of encumbrance on swimming",
+   "from": "- [ ] **Table 24: effects of encumbrance on swimming** (p. 41)",
+   "to": "- [x] **Table 24: effects of encumbrance on swimming** (p. 41) - R496: the manifest line flips to match the R450 pin (wsgswim.h)"
+  },
+  {
+   "note": "manifest: Table 25: waterborne vehicle characteristics",
+   "from": "- [ ] **Table 25: waterborne vehicle characteristics** (p. 44)",
+   "to": "- [x] **Table 25: waterborne vehicle characteristics** (p. 44) - R496: the manifest line flips to match the R455 pin (wsgvessels.h)"
+  },
+  {
+   "note": "manifest: Table 26: chance of capsizing",
+   "from": "- [ ] **Table 26: chance of capsizing** (p. 45)",
+   "to": "- [x] **Table 26: chance of capsizing** (p. 45) - R496: the manifest line flips to match the R456 pin (wsgcapsizing.h)"
+  },
+  {
+   "note": "manifest: Table 27: characteristics of flying mounts",
+   "from": "- [ ] **Table 27: characteristics of flying mounts** (p. 47)",
+   "to": "- [x] **Table 27: characteristics of flying mounts** (p. 47) - R496: the manifest line flips to match the R460 pin (wsgflymounts.h)"
+  },
+  {
+   "note": "manifest: Table 42: reactions of animals",
+   "from": "- [ ] **Table 42: reactions of animals** (p. 92)",
+   "to": "- [x] **Table 42: reactions of animals** (p. 92) - R496: the manifest line flips to match the R490 pin (wsgmount.h)"
+  }
+ ],
+ "gap_census": {
+  "closed": 171,
+  "open": 15
+ }
+}
+
+
