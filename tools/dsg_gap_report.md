@@ -46,10 +46,10 @@ re-grained then, before any DM pin round.
   - [ ] The Denizens of the Underdark (p. 6)
   - [ ] The Underground Campaign (p. 6)
   - [ ] Using This Information (p. 6)
-- [ ] **Overview of the Underdark** (pp. 7-11) - the natural locales (the three cave types, the living/dead cave split, the formations), the unnatural locales and the hazards of the underearth
-  - [ ] Natural underground locales (pp. 7-9) - limestone caves (the sinkhole entrances, stalactites/stalagmites, draperies, flowstone, gypsum flowers, the living-cave mud), sea caves, lava tubes, the living vs dead cave split
-  - [ ] Unnatural underground locales (p. 9) - the carved/dug/built formations and the made-by-creatures taxonomy
-  - [ ] Hazards of the underearth (p. 11) - the hazard survey the later chapters detail
+- [x] **Overview of the Underdark** (pp. 7-11) - R503: the three natural cave types (limestone, sea, lava) with the living/dead cave split, the geothermal side, the unnatural locale taxonomy (dungeons, mines, burrows, realms) and the five hazard families (cave-ins, floods, fires, poisonous gases, volcanoes)
+  - [x] Natural underground locales (pp. 7-9) - R503: the limestone cave (acid erosion, the water-table drain, the inlet and sinkhole entrances, the drip formations, the living-cave glisten/mud vs the dead-cave brittle dust/rubble, the smooth water-filled passages), the smaller smooth sea caves with their relic likelihood, the dry hidden lava caves, the quake and fault chambers, the geothermal ladder (lava 1,800 F, crust, steam, hot water, warm air)
+  - [x] Unnatural underground locales (pp. 9-11) - R503: the purpose-built dungeons (soft-rock excavation, 10-foot dirt shoring, the jail/treasure/lair/defense purposes, the stronger-than-castles note), the mine networks (active guarded, inactive laired), the creator-sized burrows with the umber-hulk stone exception, and the realms deeper than a mile (nation-scale caverns, seas with islands, wilderness-to-cities)
+  - [x] Hazards of the underearth (p. 11) - R503: the survey - cave-ins (the shoring split between dungeons, caverns and realms), floods (no room to disperse), fires (the combustibles-and-oxygen double threat, the wood scarcity), poisonous gases (the confinement multiplier) and volcanoes (lava, steam, closed passages)
 - [ ] **Movement rules for underground play** (pp. 12-22) - the swimming/holding-breath/moving-water rules, the climbing rates and tools for non-thieves, jumping, the rope system (chasm, swing, belay, roping together), bridges, the expanded falling rules, spelunking, excavation, fatigue/exhaustion, darkness movement and slippery surfaces
   - [ ] Ability and proficiency checks (p. 12) - the check frame the chapter's rules ride on
   - [ ] Swimming (p. 12) - the rate rules with Table 1, the cross-book seam against rules/wsgswim.h
@@ -148,13 +148,17 @@ re-grained then, before any DM pin round.
   - [ ] Creative underground spell use (p. 61)
   - [ ] Languages of the underdark (p. 62)
   - [ ] Mapping techniques (p. 62)
-- [ ] **Dungeon Master's section** (pp. 64-120) - the DM half: the underground campaign craft, the 3-D mapping system, the cultures of the underdark (the drow, kuo-toa, duergar, mind flayers, aboleth, derro, cloakers), the location and encounter generators and the Lands of Deepearth sample campaign; boxes re-grained at the extraction round from the DM table of contents on printed p. 64
-  - [ ] The DM's table of contents (p. 64) - the re-graining source for this section's boxes
-  - [ ] The cultures of the underdark (pp. 66+): values and objectives, drow, kuo-toa, duergar, mind flayers, aboleth, derro, cloakers
-  - [ ] The underground campaign craft: adventure design, storytelling, stocking, 3-D mapping
-  - [ ] The random location and encounter generators
-  - [ ] Lands of Deepearth: connecting passages, area details, the map, the individual area keys (the Great Lake, the surface lands, the upper caverns, the cathedral caverns and the rest)
+- [ ] **Dungeon Master's section** (pp. 64-120) - the DM half, re-grained at R503 from the DM table of contents on printed p. 64: the underground environment chapter, the cultures, the Deepearth campaign lands, the adventure-design craft and the mapping system
+  - [x] The DM's table of contents (p. 64) - R503: pulled at the extraction round (pdf 65, the reads ride the r503-extraction branch); the DM boxes re-grained from it
+  - [ ] The underground environment, DM chapter (pp. 65-72) - features of the underground game (p. 65), the nature of the underground environment and its denizens (p. 66), a brief history of underground cultures (p. 68)
+  - [ ] Underground geography: domains in three dimensions (p. 69) - surface terrain (p. 69), temperature, humidity, size, origin, access and egress (p. 70)
+  - [ ] Theories on the nature of the underground (pp. 70-71) - the hollow earth, Swiss cheese, isolated pockets and partial connection theories
+  - [ ] The cultures of the underdark (pp. 73-74) - values and objectives (p. 73), drow (p. 73), kuo-toa (p. 73), duergar (p. 73), mind flayers (p. 74), aboleth (p. 74), derro (p. 74), cloakers (p. 74)
+  - [ ] Lands of Deepearth (pp. 75-98) - connecting passages (p. 75), area details (p. 75), the map (pp. 76-77), the individual area key (pp. 78-98): all 31 areas from the Great Lake through the fungus forest, the illithid outpost, the drow realm and the dark realms to darksea
+  - [ ] Underground adventures: campaign considerations (pp. 99-113) - challenges for the DM (p. 100), the fine art of juggling (p. 100), designing the adventure and the world (p. 100), plot and counterplot (pp. 103-106), techniques of story and campaign design (pp. 109-110), running the game (pp. 111-113)
+  - [ ] Mapping your settings (pp. 114-117) - basic mapping considerations (p. 114), perspective mapping (p. 114), selecting a grid (p. 114), selecting a starting point (p. 115), drawing the map (p. 115), mapping symbols (p. 115), splitting the grid (p. 115), horizon lines (p. 117), geomorphic mapping and using geomorphs (p. 117)
 - [ ] **Compiled tables** (p. 121) - the book's own table reprint pages
+- [ ] **Perspective maps** (pp. 124-127) - the 3-D map plates, a DM-TOC section the player's contents page missed
 - [ ] **Index** (p. 128)
 
 ## The tables manifest (the book's own Tables index - every named table gets its own line)

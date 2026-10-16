@@ -6296,6 +6296,39 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   R502: the camp chain fold (fire/shelter/sleep -
   wsgshelter/wsgsleep/wsgfire/wsgfuel), or the DSG as
   the next book.
+- R502 LANDED 2026-10-16: commit 4681d11 (census 427, pushed
+77d39de..4681d11), the WSG CAMP-CHAIN FOLD - the fourth seam round, the R499
+fold pattern applied to the camp chapter: one campsite flows through six
+landed headers - the rest quality and Table 38 fire (rules/wsgfire.h R474),
+the fire starting and fuel rules (rules/wsgfuel.h R475), the wildfire rules
+(rules/wsgblaze.h R476), the tent quality system (rules/wsgsleep.h R473), the
+natural shelters (rules/wsgshelter.h R471) and the R499 temperature chain
+re-read for the seam. Pinned as rules/wsgcampfold.h (prefix wmc, 63 inlines:
+53 consts + 10 bools, no grids, NO gap flips - the report stays 186/0).
+FINDINGS: the wildfire hour (the 6-turn uncontrollable bar equals the 6 turns
+per hour - a fire left alone for exactly one hour becomes uncontrollable); the
+two-header refuel identity (the Table 38 small-fire refuel interval and the
+fuel-header grace period are the same 3 turns); the twenty-mph triple
+agreement (the small fire wind resistance, the rest wind-penalty threshold and
+the poor-shelter full-protection example - three headers, one number); the
+no-start paradox (no fire starts in wind over 30 mph - exactly the wind a
+medium fire would have withstood); the arithmetic-vs-geometric split (the fuel
++6, refuel +3, wind-res +10 and spark +10 ladders are all arithmetic; the
+growth ladder 1, 2, 4 is the chain's only doubling); THE R499 TEMPERATURE SEAM
+ON BOTH SIDES (the rest cold threshold is the same 0 that opens the dress
+below-0 column; the rest hot threshold of 90 opens one degree past the
+protected no-damage top of 89, at heat band 18); the flat plate loss (5 hours
+in plate rest like 1, 9 rest like 5 - a flat 4-hour loss either way); the tent
+leak halves the wind step it cannot stop (5 per 10). Preflight GREEN (R502 WSG
+camp chain fold audit: bad 0), rverify GREEN (63 mutants, 0 missed, double-run
+clean). Local gates: 50/50 mechanical cross-checks against the six headers.
+User-side spec md5 d08adacc36cd2e802aafa0f8b3991d89 differed from both
+authored variants (533a6a35... +nl, ea20b948... no-nl) - cosmetic, the
+standing class. Spec published as the new canvas r502-splice. THE FOLD ARC
+COMPLETE: R499- R502, four clean lands (temperature, swimmer motion,
+movement/fall, camp), 198 mutants all caught. The WSG mechanical seams are
+exhausted; the natural next move is the DSG (Dungeoneer's Survival Guide) as
+the next book, opening a fresh pin arc with its own gap report.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

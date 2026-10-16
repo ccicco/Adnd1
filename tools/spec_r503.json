@@ -1,0 +1,867 @@
+{
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The DSG OVERVIEW OF THE UNDERDARK, printed pp. 7-11 (pdf 8-12) - the first DSG content round, the R497 pattern applied to the dungeoneering book: the three natural cave types (limestone, sea, lava), the living/dead cave split, the drip formations, the geothermal ladder with the 1,800-degree lava, the unnatural locale taxonomy (dungeons, mines, burrows, realms) and the five hazard families of the underearth. The load-bearing pins: the pdf = printed + 1 offset (proved by the chapter opener on pdf 7 for printed 6); the three-cave taxonomy; the molten lava temperature of approximately 1,800 F that kills non-fire-resistant creatures on contact; the 10-foot dirt-shoring interval; the realms-deeper-than-a-mile rule; and the living/dead cave mechanics (glisten, sturdy, mud pools vs brittle, dust, rubble, standing-but-not-stagnant water). The DM-section boxes of tools/dsg_gap_report.md are re-grained in the same splice from the DM table of contents pulled at pdf 65, and the perspective-maps section (pp. 124-127) the player TOC missed is opened. Provenance: the tesseract reads (d8-d12 full/tsv/png) on the r503-extraction branch; pdf 9 is the cave-formations illustration plate (labels only).",
+ "audit_label": "R503 DSG overview audit",
+ "banner": {
+  "provenance": "The DSG Overview of the Underdark, printed pp. 7-11 (pdf 8-12), read from the tesseract extraction on the r503-extraction branch (d8_full through d12_full with the tsv confidence tables and the 300-dpi page images; pdf 9 is the cave-formations illustration plate). The pdf-page offset is printed + 1, the same as the WSG. Values pinned: the three-cave taxonomy, the living/dead cave split, the formations list, the 1,800 F lava, the 10-foot shoring interval, the realms depth rule and the five hazard families.",
+  "sentinel": "THE SETTLE: census 427 -> 428; the gap report 0/151 -> 5 closed / 150 open (the overview parent, its natural/unnatural/hazards children and the DM TOC close; the DM section re-grained; the perspective-maps box opened).",
+  "title": "The DSG OVERVIEW OF THE UNDERDARK, R503: the arc's first content round - the three natural cave types with the living/dead split, the geothermal ladder, the unnatural locale taxonomy and the hazards of the underearth; the DM-section boxes re-grained from the DM's own table of contents."
+ },
+ "bools": [
+  {
+   "comment": "limestone caves are by far the most common type, found mostly where the bedrock is a great shelf of limestone.",
+   "name": "dovLimestoneMostCommon",
+   "value": true
+  },
+  {
+   "comment": "dolomite and marble terrain can also serve as an environment for the creation of a limestone cave.",
+   "name": "dovLimestoneCarbonateBedrock",
+   "value": true
+  },
+  {
+   "comment": "a limestone cave is created by the erosive and corrosive action of water seeping through rock; rainwater, a dilute carbonic acid from absorbed carbon dioxide, quickly eats away limestone.",
+   "name": "dovLimestoneAcidErosion",
+   "value": true
+  },
+  {
+   "comment": "a drop in the water table leaves formerly underwater passages dry and full of air; droughts, floods or terrain movement can shift the flow.",
+   "name": "dovWaterTableDrainsCave",
+   "value": true
+  },
+  {
+   "comment": "the inlets or outlets of the water that once flowed through a cave, often tortuously narrow or steep, are the most common entrances to limestone caves.",
+   "name": "dovLimestoneWaterInletEntrances",
+   "value": true
+  },
+  {
+   "comment": "a cave grown too large may collapse its ceiling into a sinkhole dropping precipitously from the surface to the cave floor, usable as an entrance for characters willing to do a little rope work.",
+   "name": "dovSinkholeEntrance",
+   "value": true
+  },
+  {
+   "comment": "stalactites hang from the ceiling and stalagmites grow upward from the floor, created by slow dripping water that evaporates and leaves mineral deposits; the color ranges from muddy brown to red to a rare pure crystalline white.",
+   "name": "dovDripFormations",
+   "value": true
+  },
+  {
+   "comment": "the other cave features are draperies (ruffled-curtain stone sheets), flowstone (falling in tiers like flowing sludge) and rare, delicate gypsum flowers.",
+   "name": "dovOtherFormations",
+   "value": true
+  },
+  {
+   "comment": "a cave subject to continuing water seepage is a living cave: its features grow, glisten and shine in light, and are very sturdy; the cave is generally clean and almost dust-free before creatures enter.",
+   "name": "dovLivingCaveSeepage",
+   "value": true
+  },
+  {
+   "comment": "in a living cave all low areas not regularly swept by flowing water contain pools of sticky mud, which can be quite deep depending on drainage and shape.",
+   "name": "dovLivingCaveMud",
+   "value": true
+  },
+  {
+   "comment": "in a dead cave the water no longer flows: the features do not glisten, grow very weak without constant humidity, become brittle and eventually crumble into dust.",
+   "name": "dovDeadCaveBrittle",
+   "value": true
+  },
+  {
+   "comment": "a dead cave is much more likely to be choked with rubble than its living counterpart, and a layer of dust often covers everything.",
+   "name": "dovDeadCaveRubble",
+   "value": true
+  },
+  {
+   "comment": "water found in a dead cave has generally been standing for centuries but is very rarely stagnant - the cold temperatures and lack of sunlight see to that.",
+   "name": "dovDeadCaveWaterNotStagnant",
+   "value": true
+  },
+  {
+   "comment": "completely water-filled limestone caves generally have smooth, rubble-free passages, though very narrow or tightly winding ones may be difficult or impossible to travel.",
+   "name": "dovWaterFilledSmooth",
+   "value": true
+  },
+  {
+   "comment": "sea caves are formed along current or former coastlines where the erosive action of pounding surf gradually wears an entrance into the bedrock.",
+   "name": "dovSeaCaveSurfCarved",
+   "value": true
+  },
+  {
+   "comment": "sea caves are generally much smaller than limestone caves, since the waves disperse their energy quickly as they work inward.",
+   "name": "dovSeaCaveSmaller",
+   "value": true
+  },
+  {
+   "comment": "sea caves are often partially water-filled; a changing water level can leave one completely submerged with a hidden mouth, or stranded in a cliff far above the surf or many miles inland.",
+   "name": "dovSeaCaveWaterLevels",
+   "value": true
+  },
+  {
+   "comment": "sea caves have smooth floors, walls and ceilings with none of the spectacular limestone features, but their relatively easy access makes relics of long-past inhabitants more likely.",
+   "name": "dovSeaCaveSmoothNoFeatures",
+   "value": true
+  },
+  {
+   "comment": "a river-bend abrasion cavern, eroded where water pounds the outer bank, resembles a sea cave in most respects.",
+   "name": "dovRiverbendLikeSeaCave",
+   "value": true
+  },
+  {
+   "comment": "a lava cave is created when the crust of a flowing lava surface hardens while the molten lava beneath continues to flow away, leaving an air-filled space that may reach considerable size.",
+   "name": "dovLavaCrustOrigin",
+   "value": true
+  },
+  {
+   "comment": "lava caves are commonly found in areas of volcanic activity and do not contain the features typical of limestone caves.",
+   "name": "dovLavaCaveVolcanic",
+   "value": true
+  },
+  {
+   "comment": "unless in a region of heavy rainfall or at a very low elevation, lava caves may well be completely dry.",
+   "name": "dovLavaCaveDry",
+   "value": true
+  },
+  {
+   "comment": "a great many lava caves have no exits to the outside world; their existence can only be discovered by chance excavation or by breaking through a thin crust.",
+   "name": "dovLavaCaveHiddenExits",
+   "value": true
+  },
+  {
+   "comment": "earthquake and rockslide chambers, tenuously supported by accumulated rubble, resemble caves but are not true caves; they make good overnight shelters and lairs for hostile animals or monsters.",
+   "name": "dovQuakeChamberNotTrueCave",
+   "value": true
+  },
+  {
+   "comment": "geological faulting creates cavities when a large shelf of rock moves and the neighboring rock stays stationary; such caverns are often completely enclosed but may be very large.",
+   "name": "dovFaultCavityEnclosed",
+   "value": true
+  },
+  {
+   "comment": "geothermal heat can be encountered in deep caves of any kind but is particularly likely in a lava cave, since lava itself is a carrier of geothermal heat.",
+   "name": "dovGeothermalInDeepCaves",
+   "value": true
+  },
+  {
+   "comment": "the glowing crimson flow of molten lava carries heat from the deepest reaches and quickly kills any non-fire-resistant creature forced into contact with it.",
+   "name": "dovLavaKillsOnContact",
+   "value": true
+  },
+  {
+   "comment": "even where lava has cooled to a solid crust it is still blisteringly hot, and a character venturing onto it risks breaking through into the infernal heat below.",
+   "name": "dovLavaCrustBreakRisk",
+   "value": true
+  },
+  {
+   "comment": "steam can scald or even kill a creature caught in its intense blast; sudden vaporization in high-geothermal areas creates high pressures, and blasts can erupt far from the actual heat source.",
+   "name": "dovSteamScalds",
+   "value": true
+  },
+  {
+   "comment": "warm or hot water, a more tolerable form of geothermal heat, ranges from lukewarm to boiling depending on the proximity and intensity of the heat source.",
+   "name": "dovHotWaterRange",
+   "value": true
+  },
+  {
+   "comment": "warm or hot air rising through subterranean passages is often an explorer's first warning of approaching geothermal heat.",
+   "name": "dovWarmAirFirstWarning",
+   "value": true
+  },
+  {
+   "comment": "dungeons are built by intelligent creatures, each to serve a particular purpose; some are constructed entirely from caves, others use caves as entrances or emergency exits only.",
+   "name": "dovDungeonPurposeBuilt",
+   "value": true
+  },
+  {
+   "comment": "dungeon passages generally run within a few hundred feet of the surface; the deeper the dungeon, the harder the task of moving the excavated material out of the way.",
+   "name": "dovDungeonShallowish",
+   "value": true
+  },
+  {
+   "comment": "dungeons are generally excavated from a soft rock such as sandstone or limestone - not as hard to excavate as granite, yet still a solid and sturdy support.",
+   "name": "dovDungeonSoftRock",
+   "value": true
+  },
+  {
+   "comment": "some dungeons begin as buildings whose ruins are later buried by new buildings until the original layer seems well underground; encountered dungeons may be collapsing, newly excavated, or still under construction.",
+   "name": "dovRuinsBecomeDungeons",
+   "value": true
+  },
+  {
+   "comment": "the most common dungeon purposes are jails, hiding places for treasures, lairs for bands of underground creatures, and positions of defense.",
+   "name": "dovDungeonPurposes",
+   "value": true
+  },
+  {
+   "comment": "in a world where flying creatures are ever-present, dungeons can prove to be stronger fortresses than castles.",
+   "name": "dovDungeonStrongerThanCastles",
+   "value": true
+  },
+  {
+   "comment": "fantasy-world mines are almost always tunnels or shafts; mines developed over centuries by diligent excavators such as dwarves or gnomes can become complicated three-dimensional networks stretching for dozens of miles.",
+   "name": "dovMineTunnelNetworks",
+   "value": true
+  },
+  {
+   "comment": "active mines are usually well-guarded; inactive mines - closed for a depleted vein, a disaster or a conflict - often become the lairs of subterranean monsters.",
+   "name": "dovMineActiveGuarded",
+   "value": true
+  },
+  {
+   "comment": "burrows are long tunnels generally no bigger in diameter than the creature that created them, often with a widened chamber at the deepest end; usually dug from dirt, but certain creatures such as umber hulks can burrow in solid stone.",
+   "name": "dovBurrowCreatorSized",
+   "value": true
+  },
+  {
+   "comment": "realms are vast underground reaches of caverns, dungeons and lofty passages deep beneath the earth, regions of mystery to surface dwellers; the drow, deep gnomes, duergar, kuo-toa and derro live in reaches that never see the light of day.",
+   "name": "dovRealmsDeepMystery",
+   "value": true
+  },
+  {
+   "comment": "realms contain cavern networks that might rival an entire nation in size and underground bodies of water as big as any outerworld sea, with islands just as surface seas have.",
+   "name": "dovRealmNationScale",
+   "value": true
+  },
+  {
+   "comment": "certain vast realms are best described as wilderness where no cultures flourish, while other areas boast cities and fortresses worthy of the most advanced civilizations; horrific beasts rumored never to venture up to dungeon level are said to live there.",
+   "name": "dovRealmWildernessToCities",
+   "value": true
+  },
+  {
+   "comment": "cave-ins, a constant problem under tons of earth and rock, are triggered by erosion or by sudden shocks such as earthquakes or explosions; those underneath suffer falling damage and are often pinned or trapped with little air.",
+   "name": "dovCaveinTriggers",
+   "value": true
+  },
+  {
+   "comment": "dungeons are protected against cave-ins by shoring passages with timbers or stone arches, caverns lack such engineered protection, and realms are too vast for it - and so rarely subject to cave-ins, though a realm cave-in rivals the worst hurricane or tidal wave.",
+   "name": "dovCaveinProtectionSplit",
+   "value": true
+  },
+  {
+   "comment": "underground flood water has little chance to spread out and disperse; corridors may fill with water, making drowning a virtual certainty for any air-breathing creature caught there.",
+   "name": "dovFloodNoDispersion",
+   "value": true
+  },
+  {
+   "comment": "fires threaten underground dwellings in a double sense: they consume combustible objects in their path and also use up the precious oxygen, which exists in finite supply.",
+   "name": "dovFireDoubleThreat",
+   "value": true
+  },
+  {
+   "comment": "wood is not a common building material underground - the difficulty of transporting it in and its tendency to rot in damp conditions discourage its use - though shoring up a corridor is much easier with wood than with stone.",
+   "name": "dovWoodUncommonUnderground",
+   "value": true
+  },
+  {
+   "comment": "poisonous gases, whether natural (like the sulfur dioxide of volcanic areas), magical or manufactured, menace all oxygen-breathers, and their use as a weapon of war is greatly enhanced in the constricted underearth.",
+   "name": "dovPoisonGasConfined",
+   "value": true
+  },
+  {
+   "comment": "volcanoes are a major cause of subterranean fires and poison-gas emissions; often occurring with earthquakes, a volcanic burst can fill inhabited corridors with lava or steam and close off escape passages or popular transportation routes.",
+   "name": "dovVolcanoDamage",
+   "value": true
+  }
+ ],
+ "caller_files": [],
+ "census_before": 427,
+ "chains": [],
+ "consts": [
+  {
+   "comment": "the overview chapter starts at printed p. 7.",
+   "name": "dovPrintedLo",
+   "value": 7
+  },
+  {
+   "comment": "the overview chapter ends at printed p. 11.",
+   "name": "dovPrintedHi",
+   "value": 11
+  },
+  {
+   "comment": "the overview chapter starts at pdf page 8 (the offset: pdf = printed + 1).",
+   "name": "dovPdfLo",
+   "value": 8
+  },
+  {
+   "comment": "the overview chapter ends at pdf page 12.",
+   "name": "dovPdfHi",
+   "value": 12
+  },
+  {
+   "comment": "three types of natural caves are commonly encountered: limestone, sea and lava.",
+   "name": "dovCaveTypeCount",
+   "value": 3
+  },
+  {
+   "comment": "molten lava has a temperature of approximately 1,800 degrees Fahrenheit and quickly kills any non-fire-resistant creature forced into contact with it.",
+   "name": "dovLavaTempF",
+   "value": 1800
+  },
+  {
+   "comment": "a dungeon excavated from dirt requires constant shoring up, at least at 10-foot intervals, to prevent cave-ins.",
+   "name": "dovDirtShoringIntervalFt",
+   "value": 10
+  },
+  {
+   "comment": "realms are rarely found within a mile of the surface and often extend far deeper.",
+   "name": "dovRealmShallowMi",
+   "value": 1
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['dovPrintedLo']() != 7 or m['dovPrintedHi']() != 11 or m['dovPdfLo']() != 8 or m['dovPdfHi']() != 12",
+   "note": "the chapter spans printed 7-11 and pdf 8-12"
+  },
+  {
+   "expr": "m['dovPdfLo']() - m['dovPrintedLo']() != 1 or m['dovPdfHi']() - m['dovPrintedHi']() != 1",
+   "note": "the pdf offset is printed + 1 on both ends of the chapter"
+  },
+  {
+   "expr": "m['dovCaveTypeCount']() != 3",
+   "note": "three natural cave types"
+  },
+  {
+   "expr": "m['dovLavaTempF']() != 1800 or m['dovLavaTempF']() < 1000",
+   "note": "molten lava runs at approximately 1,800 degrees Fahrenheit"
+  },
+  {
+   "expr": "m['dovDirtShoringIntervalFt']() != 10 or m['dovDirtShoringIntervalFt']() <= 0",
+   "note": "dirt dungeons get shored at 10-foot intervals"
+  },
+  {
+   "expr": "m['dovRealmShallowMi']() != 1",
+   "note": "realms live deeper than a mile"
+  },
+  {
+   "expr": "m['dovLimestoneMostCommon']() != 1",
+   "note": "dovLimestoneMostCommon"
+  },
+  {
+   "expr": "m['dovLimestoneCarbonateBedrock']() != 1",
+   "note": "dovLimestoneCarbonateBedrock"
+  },
+  {
+   "expr": "m['dovLimestoneAcidErosion']() != 1",
+   "note": "dovLimestoneAcidErosion"
+  },
+  {
+   "expr": "m['dovWaterTableDrainsCave']() != 1",
+   "note": "dovWaterTableDrainsCave"
+  },
+  {
+   "expr": "m['dovLimestoneWaterInletEntrances']() != 1",
+   "note": "dovLimestoneWaterInletEntrances"
+  },
+  {
+   "expr": "m['dovSinkholeEntrance']() != 1",
+   "note": "dovSinkholeEntrance"
+  },
+  {
+   "expr": "m['dovDripFormations']() != 1",
+   "note": "dovDripFormations"
+  },
+  {
+   "expr": "m['dovOtherFormations']() != 1",
+   "note": "dovOtherFormations"
+  },
+  {
+   "expr": "m['dovLivingCaveSeepage']() != 1",
+   "note": "dovLivingCaveSeepage"
+  },
+  {
+   "expr": "m['dovLivingCaveMud']() != 1",
+   "note": "dovLivingCaveMud"
+  },
+  {
+   "expr": "m['dovDeadCaveBrittle']() != 1",
+   "note": "dovDeadCaveBrittle"
+  },
+  {
+   "expr": "m['dovDeadCaveRubble']() != 1",
+   "note": "dovDeadCaveRubble"
+  },
+  {
+   "expr": "m['dovDeadCaveWaterNotStagnant']() != 1",
+   "note": "dovDeadCaveWaterNotStagnant"
+  },
+  {
+   "expr": "m['dovWaterFilledSmooth']() != 1",
+   "note": "dovWaterFilledSmooth"
+  },
+  {
+   "expr": "m['dovSeaCaveSurfCarved']() != 1",
+   "note": "dovSeaCaveSurfCarved"
+  },
+  {
+   "expr": "m['dovSeaCaveSmaller']() != 1",
+   "note": "dovSeaCaveSmaller"
+  },
+  {
+   "expr": "m['dovSeaCaveWaterLevels']() != 1",
+   "note": "dovSeaCaveWaterLevels"
+  },
+  {
+   "expr": "m['dovSeaCaveSmoothNoFeatures']() != 1",
+   "note": "dovSeaCaveSmoothNoFeatures"
+  },
+  {
+   "expr": "m['dovRiverbendLikeSeaCave']() != 1",
+   "note": "dovRiverbendLikeSeaCave"
+  },
+  {
+   "expr": "m['dovLavaCrustOrigin']() != 1",
+   "note": "dovLavaCrustOrigin"
+  },
+  {
+   "expr": "m['dovLavaCaveVolcanic']() != 1",
+   "note": "dovLavaCaveVolcanic"
+  },
+  {
+   "expr": "m['dovLavaCaveDry']() != 1",
+   "note": "dovLavaCaveDry"
+  },
+  {
+   "expr": "m['dovLavaCaveHiddenExits']() != 1",
+   "note": "dovLavaCaveHiddenExits"
+  },
+  {
+   "expr": "m['dovQuakeChamberNotTrueCave']() != 1",
+   "note": "dovQuakeChamberNotTrueCave"
+  },
+  {
+   "expr": "m['dovFaultCavityEnclosed']() != 1",
+   "note": "dovFaultCavityEnclosed"
+  },
+  {
+   "expr": "m['dovGeothermalInDeepCaves']() != 1",
+   "note": "dovGeothermalInDeepCaves"
+  },
+  {
+   "expr": "m['dovLavaKillsOnContact']() != 1",
+   "note": "dovLavaKillsOnContact"
+  },
+  {
+   "expr": "m['dovLavaCrustBreakRisk']() != 1",
+   "note": "dovLavaCrustBreakRisk"
+  },
+  {
+   "expr": "m['dovSteamScalds']() != 1",
+   "note": "dovSteamScalds"
+  },
+  {
+   "expr": "m['dovHotWaterRange']() != 1",
+   "note": "dovHotWaterRange"
+  },
+  {
+   "expr": "m['dovWarmAirFirstWarning']() != 1",
+   "note": "dovWarmAirFirstWarning"
+  },
+  {
+   "expr": "m['dovDungeonPurposeBuilt']() != 1",
+   "note": "dovDungeonPurposeBuilt"
+  },
+  {
+   "expr": "m['dovDungeonShallowish']() != 1",
+   "note": "dovDungeonShallowish"
+  },
+  {
+   "expr": "m['dovDungeonSoftRock']() != 1",
+   "note": "dovDungeonSoftRock"
+  },
+  {
+   "expr": "m['dovRuinsBecomeDungeons']() != 1",
+   "note": "dovRuinsBecomeDungeons"
+  },
+  {
+   "expr": "m['dovDungeonPurposes']() != 1",
+   "note": "dovDungeonPurposes"
+  },
+  {
+   "expr": "m['dovDungeonStrongerThanCastles']() != 1",
+   "note": "dovDungeonStrongerThanCastles"
+  },
+  {
+   "expr": "m['dovMineTunnelNetworks']() != 1",
+   "note": "dovMineTunnelNetworks"
+  },
+  {
+   "expr": "m['dovMineActiveGuarded']() != 1",
+   "note": "dovMineActiveGuarded"
+  },
+  {
+   "expr": "m['dovBurrowCreatorSized']() != 1",
+   "note": "dovBurrowCreatorSized"
+  },
+  {
+   "expr": "m['dovRealmsDeepMystery']() != 1",
+   "note": "dovRealmsDeepMystery"
+  },
+  {
+   "expr": "m['dovRealmNationScale']() != 1",
+   "note": "dovRealmNationScale"
+  },
+  {
+   "expr": "m['dovRealmWildernessToCities']() != 1",
+   "note": "dovRealmWildernessToCities"
+  },
+  {
+   "expr": "m['dovCaveinTriggers']() != 1",
+   "note": "dovCaveinTriggers"
+  },
+  {
+   "expr": "m['dovCaveinProtectionSplit']() != 1",
+   "note": "dovCaveinProtectionSplit"
+  },
+  {
+   "expr": "m['dovFloodNoDispersion']() != 1",
+   "note": "dovFloodNoDispersion"
+  },
+  {
+   "expr": "m['dovFireDoubleThreat']() != 1",
+   "note": "dovFireDoubleThreat"
+  },
+  {
+   "expr": "m['dovWoodUncommonUnderground']() != 1",
+   "note": "dovWoodUncommonUnderground"
+  },
+  {
+   "expr": "m['dovPoisonGasConfined']() != 1",
+   "note": "dovPoisonGasConfined"
+  },
+  {
+   "expr": "m['dovVolcanoDamage']() != 1",
+   "note": "dovVolcanoDamage"
+  }
+ ],
+ "gap_census": {
+  "closed": 5,
+  "open": 150
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **Overview of the Underdark** (pp. 7-11) - the natural locales (the three cave types, the living/dead cave split, the formations), the unnatural locales and the hazards of the underearth",
+   "note": "the overview parent box",
+   "to": "- [x] **Overview of the Underdark** (pp. 7-11) - R503: the three natural cave types (limestone, sea, lava) with the living/dead cave split, the geothermal side, the unnatural locale taxonomy (dungeons, mines, burrows, realms) and the five hazard families (cave-ins, floods, fires, poisonous gases, volcanoes)"
+  },
+  {
+   "from": "  - [ ] Natural underground locales (pp. 7-9) - limestone caves (the sinkhole entrances, stalactites/stalagmites, draperies, flowstone, gypsum flowers, the living-cave mud), sea caves, lava tubes, the living vs dead cave split",
+   "note": "natural locales",
+   "to": "  - [x] Natural underground locales (pp. 7-9) - R503: the limestone cave (acid erosion, the water-table drain, the inlet and sinkhole entrances, the drip formations, the living-cave glisten/mud vs the dead-cave brittle dust/rubble, the smooth water-filled passages), the smaller smooth sea caves with their relic likelihood, the dry hidden lava caves, the quake and fault chambers, the geothermal ladder (lava 1,800 F, crust, steam, hot water, warm air)"
+  },
+  {
+   "from": "  - [ ] Unnatural underground locales (p. 9) - the carved/dug/built formations and the made-by-creatures taxonomy",
+   "note": "unnatural locales",
+   "to": "  - [x] Unnatural underground locales (pp. 9-11) - R503: the purpose-built dungeons (soft-rock excavation, 10-foot dirt shoring, the jail/treasure/lair/defense purposes, the stronger-than-castles note), the mine networks (active guarded, inactive laired), the creator-sized burrows with the umber-hulk stone exception, and the realms deeper than a mile (nation-scale caverns, seas with islands, wilderness-to-cities)"
+  },
+  {
+   "from": "  - [ ] Hazards of the underearth (p. 11) - the hazard survey the later chapters detail",
+   "note": "hazards",
+   "to": "  - [x] Hazards of the underearth (p. 11) - R503: the survey - cave-ins (the shoring split between dungeons, caverns and realms), floods (no room to disperse), fires (the combustibles-and-oxygen double threat, the wood scarcity), poisonous gases (the confinement multiplier) and volcanoes (lava, steam, closed passages)"
+  },
+  {
+   "from": "- [ ] **Dungeon Master's section** (pp. 64-120) - the DM half: the underground campaign craft, the 3-D mapping system, the cultures of the underdark (the drow, kuo-toa, duergar, mind flayers, aboleth, derro, cloakers), the location and encounter generators and the Lands of Deepearth sample campaign; boxes re-grained at the extraction round from the DM table of contents on printed p. 64\n  - [ ] The DM's table of contents (p. 64) - the re-graining source for this section's boxes\n  - [ ] The cultures of the underdark (pp. 66+): values and objectives, drow, kuo-toa, duergar, mind flayers, aboleth, derro, cloakers\n  - [ ] The underground campaign craft: adventure design, storytelling, stocking, 3-D mapping\n  - [ ] The random location and encounter generators\n  - [ ] Lands of Deepearth: connecting passages, area details, the map, the individual area keys (the Great Lake, the surface lands, the upper caverns, the cathedral caverns and the rest)",
+   "note": "the DM-section re-grain from the DM table of contents",
+   "to": "- [ ] **Dungeon Master's section** (pp. 64-120) - the DM half, re-grained at R503 from the DM table of contents on printed p. 64: the underground environment chapter, the cultures, the Deepearth campaign lands, the adventure-design craft and the mapping system\n  - [x] The DM's table of contents (p. 64) - R503: pulled at the extraction round (pdf 65, the reads ride the r503-extraction branch); the DM boxes re-grained from it\n  - [ ] The underground environment, DM chapter (pp. 65-72) - features of the underground game (p. 65), the nature of the underground environment and its denizens (p. 66), a brief history of underground cultures (p. 68)\n  - [ ] Underground geography: domains in three dimensions (p. 69) - surface terrain (p. 69), temperature, humidity, size, origin, access and egress (p. 70)\n  - [ ] Theories on the nature of the underground (pp. 70-71) - the hollow earth, Swiss cheese, isolated pockets and partial connection theories\n  - [ ] The cultures of the underdark (pp. 73-74) - values and objectives (p. 73), drow (p. 73), kuo-toa (p. 73), duergar (p. 73), mind flayers (p. 74), aboleth (p. 74), derro (p. 74), cloakers (p. 74)\n  - [ ] Lands of Deepearth (pp. 75-98) - connecting passages (p. 75), area details (p. 75), the map (pp. 76-77), the individual area key (pp. 78-98): all 31 areas from the Great Lake through the fungus forest, the illithid outpost, the drow realm and the dark realms to darksea\n  - [ ] Underground adventures: campaign considerations (pp. 99-113) - challenges for the DM (p. 100), the fine art of juggling (p. 100), designing the adventure and the world (p. 100), plot and counterplot (pp. 103-106), techniques of story and campaign design (pp. 109-110), running the game (pp. 111-113)\n  - [ ] Mapping your settings (pp. 114-117) - basic mapping considerations (p. 114), perspective mapping (p. 114), selecting a grid (p. 114), selecting a starting point (p. 115), drawing the map (p. 115), mapping symbols (p. 115), splitting the grid (p. 115), horizon lines (p. 117), geomorphic mapping and using geomorphs (p. 117)"
+  },
+  {
+   "from": "- [ ] **Index** (p. 128)",
+   "note": "the perspective-maps box the player TOC missed",
+   "to": "- [ ] **Perspective maps** (pp. 124-127) - the 3-D map plates, a DM-TOC section the player's contents page missed\n- [ ] **Index** (p. 128)"
+  }
+ ],
+ "gap_report": "tools/dsg_gap_report.md",
+ "header_file": "rules/dsgoverview.h",
+ "header_sections": {
+  "the chapter opener": [
+   {
+    "kind": "const",
+    "name": "dovPrintedLo"
+   },
+   {
+    "kind": "const",
+    "name": "dovPrintedHi"
+   },
+   {
+    "kind": "const",
+    "name": "dovPdfLo"
+   },
+   {
+    "kind": "const",
+    "name": "dovPdfHi"
+   },
+   {
+    "kind": "const",
+    "name": "dovCaveTypeCount"
+   }
+  ],
+  "the geothermal side": [
+   {
+    "kind": "const",
+    "name": "dovLavaTempF"
+   },
+   {
+    "kind": "bool",
+    "name": "dovGeothermalInDeepCaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dovLavaKillsOnContact"
+   },
+   {
+    "kind": "bool",
+    "name": "dovLavaCrustBreakRisk"
+   },
+   {
+    "kind": "bool",
+    "name": "dovSteamScalds"
+   },
+   {
+    "kind": "bool",
+    "name": "dovHotWaterRange"
+   },
+   {
+    "kind": "bool",
+    "name": "dovWarmAirFirstWarning"
+   }
+  ],
+  "the hazards of the underearth": [
+   {
+    "kind": "bool",
+    "name": "dovCaveinTriggers"
+   },
+   {
+    "kind": "bool",
+    "name": "dovCaveinProtectionSplit"
+   },
+   {
+    "kind": "bool",
+    "name": "dovFloodNoDispersion"
+   },
+   {
+    "kind": "bool",
+    "name": "dovFireDoubleThreat"
+   },
+   {
+    "kind": "bool",
+    "name": "dovWoodUncommonUnderground"
+   },
+   {
+    "kind": "bool",
+    "name": "dovPoisonGasConfined"
+   },
+   {
+    "kind": "bool",
+    "name": "dovVolcanoDamage"
+   }
+  ],
+  "the lava caves and the quakes and faults": [
+   {
+    "kind": "bool",
+    "name": "dovLavaCrustOrigin"
+   },
+   {
+    "kind": "bool",
+    "name": "dovLavaCaveVolcanic"
+   },
+   {
+    "kind": "bool",
+    "name": "dovLavaCaveDry"
+   },
+   {
+    "kind": "bool",
+    "name": "dovLavaCaveHiddenExits"
+   },
+   {
+    "kind": "bool",
+    "name": "dovQuakeChamberNotTrueCave"
+   },
+   {
+    "kind": "bool",
+    "name": "dovFaultCavityEnclosed"
+   }
+  ],
+  "the limestone cave": [
+   {
+    "kind": "bool",
+    "name": "dovLimestoneMostCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "dovLimestoneCarbonateBedrock"
+   },
+   {
+    "kind": "bool",
+    "name": "dovLimestoneAcidErosion"
+   },
+   {
+    "kind": "bool",
+    "name": "dovWaterTableDrainsCave"
+   },
+   {
+    "kind": "bool",
+    "name": "dovLimestoneWaterInletEntrances"
+   },
+   {
+    "kind": "bool",
+    "name": "dovSinkholeEntrance"
+   },
+   {
+    "kind": "bool",
+    "name": "dovDripFormations"
+   },
+   {
+    "kind": "bool",
+    "name": "dovOtherFormations"
+   },
+   {
+    "kind": "bool",
+    "name": "dovLivingCaveSeepage"
+   },
+   {
+    "kind": "bool",
+    "name": "dovLivingCaveMud"
+   },
+   {
+    "kind": "bool",
+    "name": "dovDeadCaveBrittle"
+   },
+   {
+    "kind": "bool",
+    "name": "dovDeadCaveRubble"
+   },
+   {
+    "kind": "bool",
+    "name": "dovDeadCaveWaterNotStagnant"
+   },
+   {
+    "kind": "bool",
+    "name": "dovWaterFilledSmooth"
+   }
+  ],
+  "the sea and river caves": [
+   {
+    "kind": "bool",
+    "name": "dovSeaCaveSurfCarved"
+   },
+   {
+    "kind": "bool",
+    "name": "dovSeaCaveSmaller"
+   },
+   {
+    "kind": "bool",
+    "name": "dovSeaCaveWaterLevels"
+   },
+   {
+    "kind": "bool",
+    "name": "dovSeaCaveSmoothNoFeatures"
+   },
+   {
+    "kind": "bool",
+    "name": "dovRiverbendLikeSeaCave"
+   }
+  ],
+  "the unnatural locales": [
+   {
+    "kind": "const",
+    "name": "dovDirtShoringIntervalFt"
+   },
+   {
+    "kind": "const",
+    "name": "dovRealmShallowMi"
+   },
+   {
+    "kind": "bool",
+    "name": "dovDungeonPurposeBuilt"
+   },
+   {
+    "kind": "bool",
+    "name": "dovDungeonShallowish"
+   },
+   {
+    "kind": "bool",
+    "name": "dovDungeonSoftRock"
+   },
+   {
+    "kind": "bool",
+    "name": "dovRuinsBecomeDungeons"
+   },
+   {
+    "kind": "bool",
+    "name": "dovDungeonPurposes"
+   },
+   {
+    "kind": "bool",
+    "name": "dovDungeonStrongerThanCastles"
+   },
+   {
+    "kind": "bool",
+    "name": "dovMineTunnelNetworks"
+   },
+   {
+    "kind": "bool",
+    "name": "dovMineActiveGuarded"
+   },
+   {
+    "kind": "bool",
+    "name": "dovBurrowCreatorSized"
+   },
+   {
+    "kind": "bool",
+    "name": "dovRealmsDeepMystery"
+   },
+   {
+    "kind": "bool",
+    "name": "dovRealmNationScale"
+   },
+   {
+    "kind": "bool",
+    "name": "dovRealmWildernessToCities"
+   }
+  ]
+ },
+ "include_after": "#include \"rules/wsgcampfold.h\"  // R502: the WSG camp-chain fold pins",
+ "include_comment": "the DSG overview pins",
+ "inline_count": 58,
+ "prefix": "dov",
+ "prev_record": [
+  "- R502 LANDED 2026-10-16: commit 4681d11 (census 427, pushed",
+  "77d39de..4681d11), the WSG CAMP-CHAIN FOLD - the fourth seam round, the R499",
+  "fold pattern applied to the camp chapter: one campsite flows through six",
+  "landed headers - the rest quality and Table 38 fire (rules/wsgfire.h R474),",
+  "the fire starting and fuel rules (rules/wsgfuel.h R475), the wildfire rules",
+  "(rules/wsgblaze.h R476), the tent quality system (rules/wsgsleep.h R473), the",
+  "natural shelters (rules/wsgshelter.h R471) and the R499 temperature chain",
+  "re-read for the seam. Pinned as rules/wsgcampfold.h (prefix wmc, 63 inlines:",
+  "53 consts + 10 bools, no grids, NO gap flips - the report stays 186/0).",
+  "FINDINGS: the wildfire hour (the 6-turn uncontrollable bar equals the 6 turns",
+  "per hour - a fire left alone for exactly one hour becomes uncontrollable); the",
+  "two-header refuel identity (the Table 38 small-fire refuel interval and the",
+  "fuel-header grace period are the same 3 turns); the twenty-mph triple",
+  "agreement (the small fire wind resistance, the rest wind-penalty threshold and",
+  "the poor-shelter full-protection example - three headers, one number); the",
+  "no-start paradox (no fire starts in wind over 30 mph - exactly the wind a",
+  "medium fire would have withstood); the arithmetic-vs-geometric split (the fuel",
+  "+6, refuel +3, wind-res +10 and spark +10 ladders are all arithmetic; the",
+  "growth ladder 1, 2, 4 is the chain's only doubling); THE R499 TEMPERATURE SEAM",
+  "ON BOTH SIDES (the rest cold threshold is the same 0 that opens the dress",
+  "below-0 column; the rest hot threshold of 90 opens one degree past the",
+  "protected no-damage top of 89, at heat band 18); the flat plate loss (5 hours",
+  "in plate rest like 1, 9 rest like 5 - a flat 4-hour loss either way); the tent",
+  "leak halves the wind step it cannot stop (5 per 10). Preflight GREEN (R502 WSG",
+  "camp chain fold audit: bad 0), rverify GREEN (63 mutants, 0 missed, double-run",
+  "clean). Local gates: 50/50 mechanical cross-checks against the six headers.",
+  "User-side spec md5 d08adacc36cd2e802aafa0f8b3991d89 differed from both",
+  "authored variants (533a6a35... +nl, ea20b948... no-nl) - cosmetic, the",
+  "standing class. Spec published as the new canvas r502-splice. THE FOLD ARC",
+  "COMPLETE: R499- R502, four clean lands (temperature, swimmer motion,",
+  "movement/fall, camp), 198 mutants all caught. The WSG mechanical seams are",
+  "exhausted; the natural next move is the DSG (Dungeoneer's Survival Guide) as",
+  "the next book, opening a fresh pin arc with its own gap report."
+ ],
+ "prev_seed_key": "- R502 LANDED 2026-10-16: commit 4681d11 (census 427,",
+ "regtest": "regtest.cpp",
+ "round": 503,
+ "seed_anchor": "## Knowledge maintenance",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "table_checks": [],
+ "tables": [],
+ "title": "the DSG overview of the underdark - the three cave types, the living/dead cave split, the formations, the geothermal ladder, the unnatural locales and the hazards of the underearth"
+}
+
