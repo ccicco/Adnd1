@@ -5549,6 +5549,103 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   opponents-to-dismount tail plus the rest of the
   combat chapter through its end, likely CLOSING the
   chapter (pdf pages 89-92 for printed pp. 88-91)
+- R489 LANDED 2026-10-16: commit c11cbe1 (census 414,
+  pushed 1ac64e0..c11cbe1), the WSG FATIGUE CHAPTER
+  slice, printed pp. 87-89 - CLOSING the wilderness
+  combat chapter with its dismount tail and LANDING
+  the full fatigue and exhaustion chapter. Pinned as
+  rules/wsgfatig.h with the include after
+  wsgfight.h at line 194 (prefix wft - free on the
+  first probe), 120 inlines: 65 consts + 55 bools in
+  five sections - the chapter opener, the p. 87
+  dismount tail, Characters, Land-based mounts and
+  pack animals, Flying mounts. The R488 "cut"
+  settled as a column wrap WITHIN p. 87, not a page
+  cut: the right column carries "Dungeon Master may
+  allow a character with proficiency in riding the
+  mount to leap from its back and land safely on
+  the ground" - the dismount section was complete
+  and only the connective pin rode to this round,
+  CLOSING the combat chapter. Characters: the
+  4-turn strenuous risk (over-full movement, melee,
+  climbing, swimming against a current, severe
+  encumbrance), the 2-turn rest to avoid it, the
+  6-turn first Constitution Check, 5 more turns on
+  success with the interval shrinking 1 turn per
+  success to a minimum of 1, fatigue dropping every
+  ability score except comeliness by 2 until 2
+  consecutive hours of rest (the Str 18 / Con 18 /
+  Wis 14 examples: +1 to-hit lost and +2 damage to
+  +1, 2 hp per hit die at a temporary 16, both
+  bonus 1st-level spells lost with a spell-failure
+  chance at an effective 12), checks reading the
+  current score, a further -2 on attacks and saves,
+  the per-turn Con Check while continuing with
+  failure meaning exhaustion (another -2 and no
+  voluntary action except when failure to move
+  risks death), the 1-hour rest plus a check to
+  leave only fatigue then 2 more hours, and the
+  rest-while-carried and rest-tied-to-mount rules.
+  Land-based mounts: 2 days without food and water
+  or 3 days short rations fatigues, full ration plus
+  8 hours rest recovers, overwork recovery 12 hours
+  plus 2 per hour overworked (the 3-hour horse
+  resting 18), fatigued half movement with
+  1-round-per-turn bursts, the 3-inch terrain bar
+  (the loaded horse and the camel in very rugged
+  ground), 2 armor class places worse (7 to 9),
+  only the animal-handling proficient calming the
+  excited fatigued animal and only at the
+  nonproficient chance, the cumulative 20% per hour
+  exhaustion chance with the 1-hour reset, the
+  collapse ladder 25/50/75, the oblivious exhausted
+  animal that neither panics nor defends itself,
+  the flat 50% death chance within 1d4 hours, and
+  the 1d6-3 trauma drain through the 8-hour
+  critical period with the 2-per-hour regain.
+  Flying mounts: never exhausted; the stamina first
+  number is the safe flying time (reduced when
+  heavily loaded), past it a 1d10 per turn with the
+  fatigue chance 10 minus the rest number (the
+  black dragon 24/6 fatiguing on 1-4), flying and
+  rest not in full blocks (the 30-turn window with
+  24 aloft and 6 rest; the 7-turn last flight
+  risking fatigue), exceeding then landing demanding
+  a full rest, fatigue dropping the rate to
+  two-thirds with 10 yards of altitude lost per
+  round, the same-turn safe landing within 100
+  yards, past that the second-turn steep dive with
+  1d2 buffet damage per 10 yards dived halved for
+  airborne-riding proficiency or secure strapping,
+  the unstrapped rider thrown for 11-40 (3d10+10),
+  and the 3-times post-fatigue rest refusal (18
+  turns for the dragon) unless self-preservation
+  dictates. THE SETTLE: two-way clean on the first
+  pass (the layout l d 4 / l d 6 / l d l O / l d 2
+  classes are 1d4 1d6 1d10 1d2; Constutition and
+  conscutive are book typos; tesseract confirms 24/6,
+  1-4 on 1d10, 1d2, 11-40, 18 turns, the 25/50/75
+  ladder, 0-3, 2 per hour and 20%/hour). One
+  delivery note: the Termux md5 hit the as-built
+  exactly (964ca60dc49164730d224fe09a19ff8c); the
+  authored canvas body md5 was
+  edb1f9beec90f191c13c3902988147d3 and the two
+  differ by bytes only - the pushed spec json
+  compares semantically identical to the canvas
+  body (the user's save path re-serialized it), the
+  engine and rverify validated the content, so the
+  pair rule stands: authored = the canvas body,
+  as-built = what Termux saves. rverify at 1ac64e0:
+  120 mutants, 0 missed; census 413 -> 414; the gap
+  flips 128/58 -> 132/54 (four boxes: the dismount
+  box plus all three fatigue boxes; the mounts and
+  beasts catalog boxes stay open). Next: R490 -
+  the MOUNTS AND BEASTS OF BURDEN catalog, printed
+  pp. 90-94 (pdf pages 91-95; the reads for printed
+  pp. 90-91 are already in hand from the R489
+  extraction batch), opening with the ape/gorilla,
+  bear, camel and dog entries and the animals-as-
+  individuals section
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

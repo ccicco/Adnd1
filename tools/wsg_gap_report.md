@@ -134,9 +134,9 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Land-based mounts and pack animals (p. 88) - R489: the nourishment and overwork rules with the fatigued movement, armor class and collapse rules and the trauma drain pin as rules/wsgfatig.h
   - [x] Flying mounts (p. 89) - R489: the stamina table rules with the 1d10 fatigue check and the dive buffet and thrown-rider damage pin as rules/wsgfatig.h
 - [ ] **Mounts and beasts of burden** (pp. 90-94)
-  - [ ] Animals as individuals (p. 91)
-  - [ ] Calming an excited animal (p. 94)
-  - [ ] Understanding an animal (p. 94)
+  - [x] Animals as individuals (p. 91) - R490: the former-owner and trial-and-error personality rules with the Table 42 reaction grid and the fire, weather, noise, odor and other band rules pin as rules/wsgmount.h
+  - [x] Calming an excited animal (p. 94) - R490: the proficiency and 20 percent nonproficient rules with the motion details and the +2/+4 modifiers pin as rules/wsgmount.h
+  - [x] Understanding an animal (p. 94) - R490: the animal lore educated-guess and certainty rules pin as rules/wsgmount.h
 - [ ] **Magic in the wilderness** (pp. 95-102)
   - [ ] Spells (p. 95)
   - [ ] Potions (p. 100)

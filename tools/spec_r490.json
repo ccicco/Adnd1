@@ -1,0 +1,2098 @@
+{
+ "round": 490,
+ "title": "the WSG mounts and beasts of burden chapter slice - the full catalog of land-based animals as mounts and pack animals with the animals-as-individuals rules, the Table 42 reaction grid and the calming and understanding rules, printed pp. 90-94, CLOSING the mounts and beasts of burden chapter",
+ "prefix": "wmb",
+ "header_file": "rules/wsgmount.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 414,
+ "inline_count": 185,
+ "audit_label": "R490 WSG mounts and beasts pin audit",
+ "audit_comment": "The mounts and beasts of burden chapter, CLOSING it. The catalog: the gorilla - highest intelligence, befriended and trained for instructions and transport, the point man, no stealth with the at-least-1-in-6 surprise cut, the 50-degree floor, the 50-50 lethargic-or-aggressive desertion on prohibited terrain, 10x food (plants) and 8x water with the 25 percent foraging no-return; the brown bear - magic to carry reliably, the 30 percent monthly nonmagical reversion, any terrain but swamp and desert, claw sure-footedness against smooth inclined slopes, omnivorous, 8x food and 6x water; the camel - the dromedary hot-desert exclusive with no mountains, forests or swamps and no severe slope, weak below 50 degrees for over two days, the bactrian smaller feet on rocky ground, the two-week fast off the humps with the second-week half capacity and the two-week feeding deadline, the empty camel at 10x food and 20x water reduced proportionately after a shorter fast; the sled dog - the 40-degree ceiling with 2-3 inches of snow, a man's ration daily, the two-day cannibalism bar at 50 percent with the preemptive cull, the seven-dog optimum with the 200 and 300 gold piece losses per dog short and the 3-inch rate cut per three dogs short, the four-dog 9/6/3 rates and the single-dog 6/3 with the rugged ban; the donkey as the mule; the elephant - trained only on command words, the 50-degree floor, no severe slope without a level pass, the 3-inch forage slowdown, fifty food and thirty water rations, the 50-percent-every-six-hours bolt after two unfed days; the horse - the fragile overloaded exception with the one-turn rest per six turns, the half-ration bit with the unloaded back, the 2 percent lame chance per eight rugged hours (1 for the draft) with the 01 temporary at 12 hours of rest and the 02 permanent, four food and four water rations; the mule - hardier but slower, the half-hour stubborn root with the Strength Check and the three-fourths rations for three days; the pony - the horse statements, the mountain breeding, the 2 percent lame per eight hours, three rations; the giant ram - the trained charge, the 70-degree ceiling, the flat dry persuasion but no forests or swamps, 6 food and 4 water rising to 6 water above the 50-degree daily high; the sheep - the two-dozen capacity, no proficiency to shepherd, six per handler with another per additional six, the 50-percent-per-hour unsupervised bolt, the 70-degree ceiling, 2 food and 2 water, the nondurable-supplies food value; the yak - the ram-like mountainous arctic exclusive at the 30-degree ceiling, 6 food and 4 water. Animals as individuals: bit players or unique non-player characters, the reputable former-owner information, the sure-footed hates-wet-feet example, the wild-captured trial and error, the controlled exposure, calmness and stability, the instinctive fire fear with the innate weather sense, the acute smell and hearing with the not-capricious note. Table 42: the 14-animal reaction grid on 1d12 across fire, weather, noise, odor and other - leftmost noticed, second agitated, third panicked, the bare trailing slash pinned as the sentinel 13 meaning no panic. The bands: the two-round calm window, the trust-the-instinct advice, the panicked irrational flight uncontrollable for 2d3 turns or until far enough away, the fire commentary with the lava and magical-heat extension and the faerie fire exception, the campfire association, the never-comfortable-near-large-blaze rule, the quarter-mile large-blaze and one-mile conflagration sensing, the weather sense with the drastic-and-imminent panic bar, the noise habituation with the simulated combat training, the sharp hearing that never panics at the inaudible, the odor pungency bar with the faint-odor exception, and the other-quirk menagerie. Calming: anyone may try, the proficient with above-average wisdom every round, the nonproficient straight 20 percent with two attempts, movement only while calming, the motion-state persistence with the 50-50 split, the soothe-a-mover requirement, the agitated and panicked proficient-only with the +2 and +4 modifiers, and the re-excitement under an evident condition. Understanding: the animal lore educated guess, the nonproficient sensory guesswork, and the proficient certainty that rules out the rest.",
+ "banner": {
+  "title": "R490: the WSG MOUNTS AND BEASTS OF BURDEN chapter slice, printed pp. 90-94 - the round CLOSING the chapter: the twelve-animal catalog from the ape and the bear through the yak with every terrain bar, temperature floor and ration multiplier, the animals-as-individuals personality rules, the Table 42 1d12 reaction grid across fire, weather, noise, odor and other with the noticed-agitated-panicked bands and the two-round windows, the fire and weather and noise and odor commentary, and the calming and understanding rules - the magic in the wilderness chapter rides to R491.",
+  "provenance": "THE SETTLE: the catalog pages two-way clean - the pdftotext layout reads and the tesseract tsv reconstructions agree on every number (the ape 1-in-6 and 50 degrees and 50 percent and 10x and 8x and 25, the bear 30 and 8x and 6x, the camel 50 degrees and two days and two weeks and the half capacity and 10x and 20x, the dog 40 degrees and 2-3 inches and two days and 50 percent and seven and 200 and 300 and the 3-inch step and the four-dog 9/6/3 and the single-dog 6/3, the elephant 50 degrees and the 3-inch slowdown and fifty and thirty and two days and 50 percent every six hours, the horse one turn per six and the half-ration bit and the 2 percent per eight hours and the draft 1 percent and 01 at 12 hours and 02 permanent and the four and four rations, the mule half an hour and the three-fourths for three days, the pony 2 percent and three rations, the ram 70 degrees and 6 and 4 rising to 6 above the 50-degree high, the sheep two dozen and six per handler and 50 percent per hour and 70 degrees and the 2 and 2, and the yak 30 degrees and 6 and 4). The Table 42 garbles settled: the layout 8110112 class is 8/10/12 with the slash rendered as a one, the ampersand and copyright glyphs in the camel and donkey other cells are both 6, and the two-number cells print a bare trailing slash after the agitated number - pixel-identical to the interior slash - meaning no third number and no panic, pinned as the sentinel 13. The MULE ROW defeated tesseract outright (confidence 0.0 on two cells, the row prints in lighter ink) and pdftotext dropped the horse-other, mule and pony rows entirely: settled by a template glyph pass on the 300-dpi png - digits and slashes harvested from the same table's confidently-read cells, matched at the light-ink thresholds - giving fire 6/11, weather 6/12, noise 6/11, odor 7/12 and other 6/10/12, agreeing with every tesseract fragment it did manage. The elephant noise cell initially misread from its row-rule contamination and re-settled to 8/12 on the proper band. Book typos: greater that that, geta, eal, occurin, 1in 6. The reaction, calming and understanding prose two-way clean (1d12, two rounds, 2d3 turns, one-quarter and one mile, 20 percent and two attempts, the 50-50 motion split, +2 and +4).",
+  "sentinel": "Bounds held: every Table 42 cell ascends noticed to agitated to panicked, the sentinel 13 appears only in panic columns (one in fire, three in weather, three in noise, two in odor, none in other), the donkey row is uniform 4 or 6 over 10 over 12, the mule carries four sentinels with its full other band, the panic modifier doubles the agitated modifier, the bear reverts at 30 percent while the ape splits 50-50, the dog team loses 200 and 300 gold pieces per dog short with the 3-inch rate cut per three dogs, the horse lame 01 recovers at 12 hours while 02 is permanent, the ram water rises from 4 to 6 above the 50-degree daily high, the sheep handler step matches the control count at six, and the yak is the coldest at 30 degrees."
+ },
+ "consts": [
+  {
+   "name": "wmbApeSurpriseMin",
+   "value": 1,
+   "comment": "the surprise reduction should be at least 1 in 6, perhaps greater in certain circumstances"
+  },
+  {
+   "name": "wmbApeMinTempF",
+   "value": 50,
+   "comment": "gorillas can be persuaded to serve as pack animals in any forest, hills or plains area where the effective temperature does not drop below 50 degrees"
+  },
+  {
+   "name": "wmbApeDesertChancePct",
+   "value": 50,
+   "comment": "the lethargic-or-aggressive split on prohibited terrain: a 50 percent chance of either"
+  },
+  {
+   "name": "wmbApeFoodMult",
+   "value": 10,
+   "comment": "a gorilla requires ten times as much food as a man does on a daily basis to maintain full strength and vitality - plants will suffice, since gorillas are primarily herbivorous"
+  },
+  {
+   "name": "wmbApeWaterMult",
+   "value": 8,
+   "comment": "a gorilla requires eight times as much water as a man does on a daily basis"
+  },
+  {
+   "name": "wmbApeForageFailPct",
+   "value": 25,
+   "comment": "if allowed to hunt and forage for itself, there is a 25 percent chance every time it goes out that it will not return"
+  },
+  {
+   "name": "wmbBearRevertPct",
+   "value": 30,
+   "comment": "the non-magical bear reversion chance: 30 percent per month"
+  },
+  {
+   "name": "wmbBearFoodMult",
+   "value": 8,
+   "comment": "a bear needs eight times as much food as a man does to maintain full strength"
+  },
+  {
+   "name": "wmbBearWaterMult",
+   "value": 6,
+   "comment": "a bear needs six times as much water as a man does to maintain full strength"
+  },
+  {
+   "name": "wmbCamelMinTempF",
+   "value": 50,
+   "comment": "the dromedary becomes weak and lethargic if forced to be exposed to temperatures lower than 50 degrees"
+  },
+  {
+   "name": "wmbCamelWeakDays",
+   "value": 2,
+   "comment": "the dromedary weakens when exposed below its temperature floor for more than two days in a row"
+  },
+  {
+   "name": "wmbCamelMaxDepriveWeeks",
+   "value": 2,
+   "comment": "a camel of either sort can go for up to two weeks without eating or drinking, living off the water and nutrients stored in its hump or humps"
+  },
+  {
+   "name": "wmbCamelDeprivedCapPct",
+   "value": 50,
+   "comment": "the second-week carrying capacity: one-half of normal"
+  },
+  {
+   "name": "wmbCamelFeedWeeks",
+   "value": 2,
+   "comment": "the animal must be fed and watered at least once every two weeks, or at the end of that period its condition will rapidly deteriorate"
+  },
+  {
+   "name": "wmbCamelEmptyFoodMult",
+   "value": 10,
+   "comment": "an empty camel needs ten times as much food (plants) as the daily ration for one man"
+  },
+  {
+   "name": "wmbCamelEmptyWaterMult",
+   "value": 20,
+   "comment": "an empty camel needs twenty times as much water as the daily ration for one man"
+  },
+  {
+   "name": "wmbDogMaxTempF",
+   "value": 40,
+   "comment": "the sled and its dogs are only usable when the temperature is lower than 40 degrees"
+  },
+  {
+   "name": "wmbDogSnowMinIn",
+   "value": 2,
+   "comment": "the ground must have at least a significant amount of snow cover - the minimum: 2 inches"
+  },
+  {
+   "name": "wmbDogSnowMaxIn",
+   "value": 3,
+   "comment": "the significant snow cover range: 2-3 inches"
+  },
+  {
+   "name": "wmbDogStarveDays",
+   "value": 2,
+   "comment": "if sled dogs are forced to go for more than two days without solid food, the cannibalism risk begins"
+  },
+  {
+   "name": "wmbDogCannibalPct",
+   "value": 50,
+   "comment": "there is a 50 percent chance on each day after the starvation threshold that the stronger members of the group will kill and eat one or two of the weaker ones"
+  },
+  {
+   "name": "wmbDogTeamFull",
+   "value": 7,
+   "comment": "the optimum number of dogs pulling a sled is seven"
+  },
+  {
+   "name": "wmbDogNormalLossGp",
+   "value": 200,
+   "comment": "for every dog less than the optimum number, the normal-load encumbrance limit for the team is reduced by 200 gold pieces"
+  },
+  {
+   "name": "wmbDogMaxLossGp",
+   "value": 300,
+   "comment": "for every dog less than the optimum number, the maximum-load encumbrance limit is reduced by 300 gold pieces"
+  },
+  {
+   "name": "wmbDogRateStepDogs",
+   "value": 3,
+   "comment": "for every three dogs less than the optimum, all movement rates are reduced"
+  },
+  {
+   "name": "wmbDogRateLossIn",
+   "value": 3,
+   "comment": "the movement rate loss per three dogs short: 3 inches"
+  },
+  {
+   "name": "wmbDogFourNormalIn",
+   "value": 9,
+   "comment": "the four-dog sled normal-load rate on normal terrain: 9 inches"
+  },
+  {
+   "name": "wmbDogFourFullIn",
+   "value": 6,
+   "comment": "the four-dog sled full-load rate on normal terrain: 6 inches"
+  },
+  {
+   "name": "wmbDogFourRuggedIn",
+   "value": 3,
+   "comment": "the four-dog sled normal-load rate over rugged terrain: 3 inches"
+  },
+  {
+   "name": "wmbDogOneNormalIn",
+   "value": 6,
+   "comment": "the single-dog sled normal-load rate on normal terrain: 6 inches"
+  },
+  {
+   "name": "wmbDogOneFullIn",
+   "value": 3,
+   "comment": "the single-dog sled full-load rate on normal terrain: 3 inches"
+  },
+  {
+   "name": "wmbEleMinTempF",
+   "value": 50,
+   "comment": "an elephant can only be used in a climate where the temperature does not drop below 50 degrees"
+  },
+  {
+   "name": "wmbEleForageSlowIn",
+   "value": 3,
+   "comment": "the foraging elephant moves 3 inches slower"
+  },
+  {
+   "name": "wmbEleFoodRations",
+   "value": 50,
+   "comment": "if food and water are not readily available, an elephant must be fed the equivalent of fifty food rations each day to maintain full strength"
+  },
+  {
+   "name": "wmbEleWaterRations",
+   "value": 30,
+   "comment": "the daily water requirement for a non-foraging elephant: thirty water rations"
+  },
+  {
+   "name": "wmbEleBoltDays",
+   "value": 2,
+   "comment": "an elephant forced to travel for more than two days without getting its full rations risks bolting"
+  },
+  {
+   "name": "wmbEleBoltCheckHours",
+   "value": 6,
+   "comment": "the bolt check: every six hours"
+  },
+  {
+   "name": "wmbEleBoltPct",
+   "value": 50,
+   "comment": "there is a 50 percent chance on each bolt check that the elephant will bolt and head in the direction where it believes the nearest food and water sources to be"
+  },
+  {
+   "name": "wmbHorseLoadRestTurns",
+   "value": 1,
+   "comment": "an overloaded horse must be rested for at least one turn"
+  },
+  {
+   "name": "wmbHorseLoadTravelTurns",
+   "value": 6,
+   "comment": "the overloaded-horse rest interval: after six turns of travel"
+  },
+  {
+   "name": "wmbHorseBitPct",
+   "value": 50,
+   "comment": "the bit of food or water is one-half of a man's daily ration"
+  },
+  {
+   "name": "wmbHorseLamePct",
+   "value": 2,
+   "comment": "there is a 2 percent chance (a roll of 01 or 02 on percentile dice) for every eight hours of travel through rugged or very rugged terrain that a horse will pull up lame, or stumble over an obstacle and become injured"
+  },
+  {
+   "name": "wmbHorseLameHours",
+   "value": 8,
+   "comment": "the lame-or-injured check interval: every eight hours of rugged or very rugged travel"
+  },
+  {
+   "name": "wmbDraftLamePct",
+   "value": 1,
+   "comment": "the chance is only 1 percent (roll of 01) for a draft horse"
+  },
+  {
+   "name": "wmbHorseRecoverHours",
+   "value": 12,
+   "comment": "the 01-injury recovery: after 12 hours of rest"
+  },
+  {
+   "name": "wmbHorseFoodRations",
+   "value": 4,
+   "comment": "a horse needs four rations of food (plants or grain) every day to remain at full strength"
+  },
+  {
+   "name": "wmbHorseWaterRations",
+   "value": 4,
+   "comment": "a horse needs at least four rations of water every day to remain at full strength"
+  },
+  {
+   "name": "wmbMuleStubbornMin",
+   "value": 30,
+   "comment": "the stubborn mule can stay rooted to one spot for half an hour or longer"
+  },
+  {
+   "name": "wmbMuleShortRationPct",
+   "value": 75,
+   "comment": "a mule can be kept on three-fourths normal rations before suffering any adverse effects"
+  },
+  {
+   "name": "wmbMuleShortRationDays",
+   "value": 3,
+   "comment": "the mule tolerates its reduced rations for as many as three consecutive days"
+  },
+  {
+   "name": "wmbPonyLamePct",
+   "value": 2,
+   "comment": "a pony's chance of going lame is 2 percent for every eight hours spent traversing rugged or very rugged terrain"
+  },
+  {
+   "name": "wmbPonyLameHours",
+   "value": 8,
+   "comment": "the pony lame check interval: every eight hours"
+  },
+  {
+   "name": "wmbPonyRations",
+   "value": 3,
+   "comment": "a pony must have three rations of food or water per day"
+  },
+  {
+   "name": "wmbRamMaxTempF",
+   "value": 70,
+   "comment": "they will not willingly stay in any area where the temperature regularly goes higher than 70 degrees"
+  },
+  {
+   "name": "wmbRamFoodRations",
+   "value": 6,
+   "comment": "a giant ram or giant ewe needs six rations of food per day"
+  },
+  {
+   "name": "wmbRamWaterRations",
+   "value": 4,
+   "comment": "a giant ram or giant ewe needs four rations of water per day"
+  },
+  {
+   "name": "wmbRamHotWaterRations",
+   "value": 6,
+   "comment": "in an area where the daily high temperature exceeds 50 degrees, the animal needs six rations of water instead of only four"
+  },
+  {
+   "name": "wmbRamHotTempF",
+   "value": 50,
+   "comment": "the daily-high threshold that raises the giant ram's water requirement: 50 degrees"
+  },
+  {
+   "name": "wmbSheepPerHandler",
+   "value": 6,
+   "comment": "as a rule one character (mounted or afoot) can only control six sheep on the move"
+  },
+  {
+   "name": "wmbSheepStepPerHandler",
+   "value": 6,
+   "comment": "the additional-handler step: every six sheep or fraction thereof"
+  },
+  {
+   "name": "wmbSheepUnsupervisedPct",
+   "value": 50,
+   "comment": "if a flock is moved while not properly supervised, there is a 50 percent chance per hour of travel that the entire flock will develop a mind of its own and head in a random direction - which may be, but probably will not be, the direction they were supposed to go"
+  },
+  {
+   "name": "wmbSheepMaxTempF",
+   "value": 70,
+   "comment": "the sheep temperature ceiling: 70 degrees"
+  },
+  {
+   "name": "wmbSheepFoodRations",
+   "value": 2,
+   "comment": "a sheep needs two rations of food (plants) to remain at full strength"
+  },
+  {
+   "name": "wmbSheepWaterRations",
+   "value": 2,
+   "comment": "a sheep needs two rations of water to remain at full strength"
+  },
+  {
+   "name": "wmbYakMaxTempF",
+   "value": 30,
+   "comment": "a yak can only be used in arctic or subarctic climates where the temperature does not climb above 30 degrees"
+  },
+  {
+   "name": "wmbYakFoodRations",
+   "value": 6,
+   "comment": "a yak needs six rations of food per day to remain at full strength"
+  },
+  {
+   "name": "wmbYakWaterRations",
+   "value": 4,
+   "comment": "a yak needs four rations of water per day to remain at full strength"
+  },
+  {
+   "name": "wmbT42AnimalCount",
+   "value": 14,
+   "comment": "the Table 42 row count: ape-gorilla, bear-brown, camel-any, dog-sled, donkey, elephant-any, horse-draft, horse-wild, horse-other, mule, pony, ram-giant, sheep, yak - in that order"
+  },
+  {
+   "name": "wmbReactDie",
+   "value": 12,
+   "comment": "when an animal is exposed to one of the Table 42 conditions, the Dungeon Master rolls 1d12 to ascertain the animal's reaction"
+  },
+  {
+   "name": "wmbReactCalmRounds",
+   "value": 2,
+   "comment": "the window to calm or control an excited animal before its behavior worsens: within two rounds"
+  },
+  {
+   "name": "wmbReactPanicDice",
+   "value": 2,
+   "comment": "the panicked animal is utterly uncontrollable by normal nonmagical means: 2d3 turns - the dice count"
+  },
+  {
+   "name": "wmbReactPanicDie",
+   "value": 3,
+   "comment": "the panicked-uncontrollable duration die: 2d3 turns"
+  },
+  {
+   "name": "wmbFireBonfireMiNum",
+   "value": 1,
+   "comment": "the large-blaze sensing distance: one-quarter mile - the numerator"
+  },
+  {
+   "name": "wmbFireBonfireMiDen",
+   "value": 4,
+   "comment": "the large-blaze sensing distance: one-quarter mile - the denominator"
+  },
+  {
+   "name": "wmbFireConflagrationMi",
+   "value": 1,
+   "comment": "the forest-fire-scale conflagration sensing distance: one mile"
+  },
+  {
+   "name": "wmbCalmNonprofPct",
+   "value": 20,
+   "comment": "a character without proficiency in animal handling has a straight 20 percent chance of bringing an excited animal under control"
+  },
+  {
+   "name": "wmbCalmNonprofAttempts",
+   "value": 2,
+   "comment": "a nonproficient character can only make two such attempts on the same animal, in successive rounds if desired"
+  },
+  {
+   "name": "wmbCalmMovePct",
+   "value": 50,
+   "comment": "the stationary excited animal splits evenly: a 50 percent chance of each of remaining still or beginning to move"
+  },
+  {
+   "name": "wmbCalmAgitatedMod",
+   "value": 2,
+   "comment": "the calming Proficiency Check is made with a +2 modifier to the die roll if the animal is agitated"
+  },
+  {
+   "name": "wmbCalmPanickedMod",
+   "value": 4,
+   "comment": "the calming Proficiency Check is made with a +4 modifier to the die roll if the animal is panicked"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wmbCatalogIntro",
+   "value": true,
+   "comment": "a large variety of land-based animals can be used by characters as mounts and beasts of burden; nearly every type has a distinctive personality with traits that set it apart, making the animal relatively more or less useful in certain circumstances"
+  },
+  {
+   "name": "wmbCatalogCrossRefs",
+   "value": true,
+   "comment": "the movement rates and encumbrance capacities of the most often employed mounts and pack animals are described in the section on Encumbrance and Movement; this section gives their behavior, proper care and feeding, and the special factors characters may have to contend with when employing a certain animal"
+  },
+  {
+   "name": "wmbApeHighestInt",
+   "value": true,
+   "comment": "among the animals considered here the gorilla has the highest intelligence rating"
+  },
+  {
+   "name": "wmbApeBefriendTrain",
+   "value": true,
+   "comment": "a gorilla that can be befriended (naturally or magically) can be trained to follow simple instructions as well as transport equipment"
+  },
+  {
+   "name": "wmbApePointMan",
+   "value": true,
+   "comment": "a gorilla might be made to serve as the point man on an expedition, avoiding putting a character in jeopardy by requiring him to serve in that capacity"
+  },
+  {
+   "name": "wmbApeNotStealthy",
+   "value": true,
+   "comment": "a gorilla is not capable of moving with any great degree of stealth; a group containing one or more of these animals has a smaller-than-normal chance of being able to surprise another character or creature"
+  },
+  {
+   "name": "wmbApeProhibitedDeserts",
+   "value": true,
+   "comment": "forced to remain in a colder area or to move on any prohibited terrain, a gorilla becomes lethargic or aggressive and deserts the group at its first opportunity - perhaps taking along anything it was carrying (certainly so if the equipment is strapped to its body)"
+  },
+  {
+   "name": "wmbBearNeedsMagic",
+   "value": true,
+   "comment": "this animal cannot reliably be used to carry anyone or anything unless it is magically befriended and trained"
+  },
+  {
+   "name": "wmbBearNonmagicRevert",
+   "value": true,
+   "comment": "a bear can be domesticated and trained by non-magical means, but there is a chance per month thereafter that it will revert to its natural temperament and head back for the wild"
+  },
+  {
+   "name": "wmbBearTerrain",
+   "value": true,
+   "comment": "a bear used as a mount or pack animal will traverse any kind of terrain except for swamp and desert"
+  },
+  {
+   "name": "wmbBearClaws",
+   "value": true,
+   "comment": "its nonretractable claws make it sure-footed on most terrain but prevent it from negotiating smooth slopes that are severely or moderately inclined"
+  },
+  {
+   "name": "wmbBearOmnivorous",
+   "value": true,
+   "comment": "a bear is omnivorous; it can and will eat anything that a man can eat"
+  },
+  {
+   "name": "wmbCamelDromedaryDesert",
+   "value": true,
+   "comment": "for game purposes the single-humped camel (the dromedary) is the variety exclusively suited for hot desert regions"
+  },
+  {
+   "name": "wmbCamelNoMove",
+   "value": true,
+   "comment": "the dromedary cannot move in mountains, forests or swamps at all"
+  },
+  {
+   "name": "wmbCamelNoSevereSlope",
+   "value": true,
+   "comment": "the dromedary cannot negotiate a severe slope of any sort in any other terrain"
+  },
+  {
+   "name": "wmbCamelBactrian",
+   "value": true,
+   "comment": "the double-humped camel (the bactrian) has smaller feet than the dromedary and is able to negotiate rocky or mountainous terrain; it can also be used in the desert, but like its one-humped cousin it will balk at being taken into a forest or a swamp"
+  },
+  {
+   "name": "wmbCamelSecondWeekHalf",
+   "value": true,
+   "comment": "during the second week of such deprivation a camel's carrying capacity is reduced to one-half of normal"
+  },
+  {
+   "name": "wmbCamelProportionate",
+   "value": true,
+   "comment": "reduce these amounts proportionately if it has been less than two weeks since the camel's last meal"
+  },
+  {
+   "name": "wmbDogColdAdapted",
+   "value": true,
+   "comment": "the animals that pull a sled and its contents over snowy or smooth terrain are hardy and dependable, but the sled dog is physiologically suited to cold weather"
+  },
+  {
+   "name": "wmbDogRation",
+   "value": true,
+   "comment": "a sled dog must be fed at least as much as a man's ration of food and water every day to maintain full strength; water is free for the taking in the form of snow"
+  },
+  {
+   "name": "wmbDogCannibalDetail",
+   "value": true,
+   "comment": "explorers have avoided this grisly occurrence by killing one of the dogs before the others get around to it - a tactic for only the direst circumstances"
+  },
+  {
+   "name": "wmbDogFourDogRates",
+   "value": true,
+   "comment": "a four-dog sled moves at 9 inches with a normal load and 6 inches with a full load on normal terrain, or 3 inches with a normal load over rugged terrain"
+  },
+  {
+   "name": "wmbDogSingleDog",
+   "value": true,
+   "comment": "a sled pulled by a single dog cannot move over rugged terrain at all, and has rates of 6 and 3 inches on normal terrain"
+  },
+  {
+   "name": "wmbDonkeySameAsMule",
+   "value": true,
+   "comment": "the abilities and characteristics of a donkey are generally the same as those of a mule, except for differences noted in this section and in the section on Movement and Encumbrance"
+  },
+  {
+   "name": "wmbEleTrainedOnly",
+   "value": true,
+   "comment": "a trained elephant is the only kind anyone should attempt to ride or use, and it will generally respond only to particular verbal commands taught to it by the trainer - do not buy an elephant unless the command words are included in the price"
+  },
+  {
+   "name": "wmbEleNoSlope",
+   "value": true,
+   "comment": "an elephant will not travel up or down a mountain or any severe slope; elephants can negotiate mountainous terrain only if a relatively level pass exists between the peaks"
+  },
+  {
+   "name": "wmbEleForageSlower",
+   "value": true,
+   "comment": "in an environment where it can forage for itself along the way, an elephant will eat its fill of food (plants) while traveling - but it will move slower when doing so"
+  },
+  {
+   "name": "wmbHorseFragile",
+   "value": true,
+   "comment": "perhaps the most numerous, and certainly one of the most fragile, beasts of burden available to the adventuring character"
+  },
+  {
+   "name": "wmbHorseStaminaException",
+   "value": true,
+   "comment": "the horse is an exception to the general stamina rules of the Encumbrance and Movement section: in addition to requiring rest after traveling for a number of hours, any horse carrying more than its normal load must be rested after its turns of travel"
+  },
+  {
+   "name": "wmbHorseRestBit",
+   "value": true,
+   "comment": "to provide the most benefit, the rest stop should include a bit of food and water - a bit to a horse is one-half of a man's daily ration - and most or all of the animal's load should be taken off its back, even if only for a few minutes"
+  },
+  {
+   "name": "wmbHorseLameSusceptible",
+   "value": true,
+   "comment": "all mounts and pack animals can go lame or become unable to travel through injury, but a horse is particularly susceptible to this problem"
+  },
+  {
+   "name": "wmbHorseLameTemporary",
+   "value": true,
+   "comment": "if the dice roll is 01, the horse is injured and cannot immediately move farther, but it will recover after its hours of rest"
+  },
+  {
+   "name": "wmbHorseLamePermanent",
+   "value": true,
+   "comment": "if the dice roll is 02, the horse is permanently injured and can no longer be used to carry a burden"
+  },
+  {
+   "name": "wmbMuleHardier",
+   "value": true,
+   "comment": "a mule is a much hardier and stronger animal than a horse, but its advantage is offset by its slower movement rate over normal terrain; it travels over rugged and very rugged terrain at least as well as a horse, and because its carrying capacity is greater than that of most horses it is often the best animal to take on a journey through potentially treacherous terrain"
+  },
+  {
+   "name": "wmbMuleStubborn",
+   "value": true,
+   "comment": "mules are particularly noted for their capriciousness, which usually manifests itself in stubbornness: a mule may remain rooted to one spot for half an hour or longer"
+  },
+  {
+   "name": "wmbMuleStrengthCheck",
+   "value": true,
+   "comment": "a character can get a stubborn mule to move without causing injury to the animal by making a Strength Check, but the mule will only take a few steps before pulling up short again - a long succession of Strength Checks gets very tedious, and it is usually better simply to wait until the mule decides to move again"
+  },
+  {
+   "name": "wmbMuleSameAsHorse",
+   "value": true,
+   "comment": "a mule normally needs the same amount of food (plants or grain) and water as a horse does, except for its reduced-ration tolerance"
+  },
+  {
+   "name": "wmbPonyLikeHorse",
+   "value": true,
+   "comment": "most of the general statements about horses apply to ponies as well"
+  },
+  {
+   "name": "wmbPonyMountainBred",
+   "value": true,
+   "comment": "ponies can be specially bred for traveling in mountainous terrain, and in such a case the Dungeon Master may allow them to move through such areas at a faster rate than what is given in the section on Encumbrance and Movement"
+  },
+  {
+   "name": "wmbRamChargeTrained",
+   "value": true,
+   "comment": "either a giant ram (the male) or a giant ewe (the female) can be used as a mount or pack animal, but rams are generally preferred because they can be trained to charge an opponent on command"
+  },
+  {
+   "name": "wmbRamHabitat",
+   "value": true,
+   "comment": "these animals are only found naturally in hills or mountains in a temperate or subarctic climate"
+  },
+  {
+   "name": "wmbRamPersuadedTerrain",
+   "value": true,
+   "comment": "as part of their domestication and training they can be persuaded to travel on flat, dry terrain except for deserts"
+  },
+  {
+   "name": "wmbRamNoForestSwamp",
+   "value": true,
+   "comment": "giant rams and ewes will not willingly enter forests or swamps"
+  },
+  {
+   "name": "wmbSheepPackUse",
+   "value": true,
+   "comment": "even though they are not normally thought of as pack animals, sheep can be useful for this purpose: each animal can carry a small load, and a small herd of two dozen has a greater carrying capacity than many larger animals have"
+  },
+  {
+   "name": "wmbSheepHerding",
+   "value": true,
+   "comment": "the animals' herding instinct, plus some effort on the part of the accompanying characters, will keep them in a cohesive group and headed in the desired direction"
+  },
+  {
+   "name": "wmbSheepNoProfNeeded",
+   "value": true,
+   "comment": "no special ability or proficiency is needed to shepherd a group of sheep"
+  },
+  {
+   "name": "wmbSheepExtraHandlers",
+   "value": true,
+   "comment": "for every additional six sheep (or fraction thereof) in the flock, another character (or a dog trained in sheepherding) is needed to help keep them in line"
+  },
+  {
+   "name": "wmbSheepClimate",
+   "value": true,
+   "comment": "sheep will travel in temperate or colder climates, or in any area where the temperature does not exceed 70 degrees; they will not willingly enter, or stay in, forests, deserts or swamps"
+  },
+  {
+   "name": "wmbSheepNondurable",
+   "value": true,
+   "comment": "a sheep being used to carry nondurable supplies (things that are used up along the way, such as food for characters, arrows, crossbow bolts) can itself be used for food when its usefulness as a carrier is over"
+  },
+  {
+   "name": "wmbYakLikeRam",
+   "value": true,
+   "comment": "the yak is similar in most respects to a giant ram, except that its range of terrain and temperature is even smaller"
+  },
+  {
+   "name": "wmbYakMountainous",
+   "value": true,
+   "comment": "a yak can only be used in mountainous terrain"
+  },
+  {
+   "name": "wmbYakNormalTerrainNote",
+   "value": true,
+   "comment": "normal terrain occurring inside a mountainous area - flat, or sloping at only a very gentle incline - does not preclude the use of a yak, since the animal is still being kept inside a mountainous area"
+  },
+  {
+   "name": "wmbIndivBitPlayers",
+   "value": true,
+   "comment": "the animals that accompany a party can be bit players in the adventure: taken for granted, they will serve capably and uncomplainingly as long as you keep them fed, do not work them too hard, and do not try to take them where they cannot go"
+  },
+  {
+   "name": "wmbIndivNpcTreatment",
+   "value": true,
+   "comment": "taking things one small step further, it is not difficult and can be very interesting to treat each mount and pack animal as a unique sort of non-player character"
+  },
+  {
+   "name": "wmbIndivFormerOwner",
+   "value": true,
+   "comment": "a character can sometimes gain valuable information about an animal from its former owner (assuming the seller is reputable and honest); the Dungeon Master can use this to modify the general characteristics of the animal, taking into account its individuality"
+  },
+  {
+   "name": "wmbIndivSurefootedExample",
+   "value": true,
+   "comment": "the sure-footed example: a horse known to be very sure-footed but hating to get his feet wet is less susceptible to going lame and might move slightly faster in rugged or very rugged terrain than a normal horse - but it will not willingly enter a swamp or ford a river, and if forced it will either travel slower than normal, or might balk or even panic"
+  },
+  {
+   "name": "wmbIndivWildTrial",
+   "value": true,
+   "comment": "if an animal is captured in the wild, trial and error is the only way for a character to find out what its personality is like, short of magical means such as a speak with animals spell"
+  },
+  {
+   "name": "wmbIndivControlledExposure",
+   "value": true,
+   "comment": "if unsure how an animal will react in a certain situation, expose the creature to the situation under controlled circumstances - lead it into a stream just before breaking camp when it is calm and well rested, not while being chased by hobgoblins across a ford"
+  },
+  {
+   "name": "wmbIndivCalmStability",
+   "value": true,
+   "comment": "animals appreciate calmness and stability; they do not like being exposed to unpleasant or potentially harmful conditions, do not like being startled or upset by something they did not expect, and may behave irrationally when something out of the ordinary happens"
+  },
+  {
+   "name": "wmbIndivFireFear",
+   "value": true,
+   "comment": "all normal (non-fantastic) animals have an instinctive fear of fire"
+  },
+  {
+   "name": "wmbIndivWeatherSense",
+   "value": true,
+   "comment": "to varying degrees, animals have an innate ability to sense when a drastic change in the weather is about to occur"
+  },
+  {
+   "name": "wmbIndivStartleNoiseSmell",
+   "value": true,
+   "comment": "all of them can be startled by a loud noise, or bothered by an unpleasant smell"
+  },
+  {
+   "name": "wmbIndivAcuteSenses",
+   "value": true,
+   "comment": "as a general rule an animal's sense of smell and sense of hearing are more acute than those of a human or demihuman: when an animal appears nervous or excited, it may be because it has perceived something that the character riding or leading it has not yet noticed"
+  },
+  {
+   "name": "wmbIndivNotCapricious",
+   "value": true,
+   "comment": "most animals are not intelligent enough to be capricious; when they seem to be bothered, it is a good bet that they are not acting that way just because they feel like it"
+  },
+  {
+   "name": "wmbReactNoticed",
+   "value": true,
+   "comment": "a result equal to or greater than the leftmost number means the animal has noticed the condition, sometimes before any characters have perceived it: noticeably nervous or excited, pacing or prancing skittishly and making vocal sounds for no apparent reason"
+  },
+  {
+   "name": "wmbReactAgitated",
+   "value": true,
+   "comment": "a result equal to or greater than the second number means the animal may become agitated: unless a character takes steps to calm or control it within two rounds, the abnormal behavior becomes more pronounced - it will refuse to move, or proceed very cautiously, if forced to travel toward the threat it perceives"
+  },
+  {
+   "name": "wmbReactTrustInstinct",
+   "value": true,
+   "comment": "if the character has not figured out what is bothering the animal by the time it becomes agitated, it is a good idea to trust the animal's instinct: do not force it to move in a direction it does not want to go, or better yet allow it to move in a direction of its choosing"
+  },
+  {
+   "name": "wmbReactPanicked",
+   "value": true,
+   "comment": "a result equal to or greater than the third number, if one is given, means the animal may become panicked: unless calmed and brought under control within two rounds of when it became excited, it will behave in a manner that seems utterly irrational but is motivated by self-preservation, doing everything in its power to move away from the perceived threat"
+  },
+  {
+   "name": "wmbReactPanicDuration",
+   "value": true,
+   "comment": "the panicked animal remains uncontrollable for the 2d3 turns or until it has moved sufficiently far away from the threat, whichever amount of time is greater"
+  },
+  {
+   "name": "wmbReactNoThirdNoPanic",
+   "value": true,
+   "comment": "if no third number is given in the Table 42 entry, the animal will not become panicked from that condition"
+  },
+  {
+   "name": "wmbFireGreatest",
+   "value": true,
+   "comment": "fire frightens an animal more than any other force or source of energy found in nature; even an animal that has never seen a fire knows instinctively that flames are to be avoided - this also applies to non-flaming natural heat sources such as flowing lava, and to magical fire that produces heat, but not to a flamelike phenomenon that does not give off heat, such as a faerie fire spell"
+  },
+  {
+   "name": "wmbFireCampfireHabit",
+   "value": true,
+   "comment": "an animal can become accustomed to the nearby presence of a small fire if it learns to associate the fire with something good - tie the horse, build the campfire, then feed it or let it graze; after a few days of the sequence it may actually look forward to the evening fire"
+  },
+  {
+   "name": "wmbFireNeverComfortableLarge",
+   "value": true,
+   "comment": "no animal will ever be comfortable in the vicinity of any blaze larger than a normal campfire, regardless of how many times it is exposed to a large fire without being harmed"
+  },
+  {
+   "name": "wmbFireSensing",
+   "value": true,
+   "comment": "an animal may sense the presence of a bonfire or similarly large blaze - a burning building, a wall of fire spell - from as far away as one-quarter mile, and an even larger conflagration such as a forest fire or grass fire covering a large area from one mile, usually long before a character is aware the fire is nearby"
+  },
+  {
+   "name": "wmbWeatherSenseDetail",
+   "value": true,
+   "comment": "weather changes are noticeable to animals before the signs come within sight range of characters; an animal becomes excited when it senses any upcoming significant change, such as an approaching moderate rainstorm, but becomes agitated or panicked only if the change is very drastic and very imminent, such as an approaching lightning storm or tornado - extremely unusual behavior with no other obvious cause may mean hazardous weather is on the way"
+  },
+  {
+   "name": "wmbNoiseDetail",
+   "value": true,
+   "comment": "noise in this context is a sound loud enough and sharp enough to startle a nearby animal - a shout, a crack of thunder, the clang of a sword on a metal shield; an animal can become accustomed to a particular noise through frequent exposure, such as simulated combat complete with whoops, growls and clangs during training to prevent panic in melee"
+  },
+  {
+   "name": "wmbSharpHearing",
+   "value": true,
+   "comment": "an animal with exceptionally sensitive hearing will not become agitated or panicked when it detects a sound inaudible to its rider or owner, though it may become excited - a character with proficiency in animal lore might ascertain the nature of what the animal is reacting to"
+  },
+  {
+   "name": "wmbOdorDetail",
+   "value": true,
+   "comment": "odor will only produce an extreme reaction when the scent is strong and pungent, which usually means it can be smelled by a character as well; an animal with an exceptionally sensitive nose will not become agitated or panicked by an odor too faint for a character to perceive, unless the animal associates the odor with something harmful or unpleasant"
+  },
+  {
+   "name": "wmbOtherQuirks",
+   "value": true,
+   "comment": "the other column covers a wide range of stimuli - some little thing that goes unnoticed by characters and most animals but excites, agitates or panics a certain animal: a quirk that personalizes it, like the donkey that plods through a mosquito-infested swamp oblivious to bugs on its snout but flies into a bucking frenzy when one gets inside its ear, the elephant that refuses a shallow stream unless relieved of its entire burden, the lead sled dog that refuses light snow crust and thereby saves the party on thin ice, and the bear-scarred horse that will not tolerate a bear as a pack animal but sounds the alarm long before a wild bear approaches the campsite"
+  },
+  {
+   "name": "wmbCalmAnyoneTries",
+   "value": true,
+   "comment": "any character can try to soothe an animal that has become excited"
+  },
+  {
+   "name": "wmbCalmProfChance",
+   "value": true,
+   "comment": "someone with proficiency in animal handling has a reasonably good chance of calming the beast, assuming he has an above-average wisdom score"
+  },
+  {
+   "name": "wmbCalmProfEveryRound",
+   "value": true,
+   "comment": "a proficient character can make a new attempt every round if his previous attempt failed, or if more than one animal is excited"
+  },
+  {
+   "name": "wmbCalmOnlyMove",
+   "value": true,
+   "comment": "any character who attempts to calm an animal can take no other action in the same round except for movement, if necessary"
+  },
+  {
+   "name": "wmbCalmMotionState",
+   "value": true,
+   "comment": "if an animal is in motion when it becomes excited, it will remain in motion; if it is stationary, it will either remain still or begin moving, with an even chance of each occurrence"
+  },
+  {
+   "name": "wmbCalmSootheMoving",
+   "value": true,
+   "comment": "a character attempting to soothe a moving animal must either be riding it or be able to keep up with it as it moves along"
+  },
+  {
+   "name": "wmbCalmAgitatedProfOnly",
+   "value": true,
+   "comment": "if an animal becomes agitated or panicked, only a character with proficiency in animal handling has any chance of calming the beast"
+  },
+  {
+   "name": "wmbCalmReexcite",
+   "value": true,
+   "comment": "even if an animal is calmed, there is no guarantee it will not become excited again in the following round: if the condition that upset it is still evident to the animal, it may become excited all over again and require the constant attention of an animal handler to prevent it from doing something drastic"
+  },
+  {
+   "name": "wmbUnderstandProf",
+   "value": true,
+   "comment": "a character with proficiency in animal lore has the ability - partially innate, partially learned - to make at least an educated guess about why an animal is acting a certain way, even if the reason for its behavior is not obvious to the character"
+  },
+  {
+   "name": "wmbUnderstandNonprof",
+   "value": true,
+   "comment": "a character without the proficiency may still draw logical conclusions from what his physical senses tell him - thunder and a skittish horse - but he can guess and cannot always know what is bothering his mount"
+  },
+  {
+   "name": "wmbUnderstandCertainty",
+   "value": true,
+   "comment": "in contrast, the proficient character can usually determine the cause with certainty, which also has the effect of ruling out any other possibilities"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "wmbT42",
+   "tag": "T42",
+   "count": "wmbT42AnimalCount",
+   "cols": [
+    "wmbT42FireN",
+    "wmbT42FireA",
+    "wmbT42FireP",
+    "wmbT42WeatherN",
+    "wmbT42WeatherA",
+    "wmbT42WeatherP",
+    "wmbT42NoiseN",
+    "wmbT42NoiseA",
+    "wmbT42NoiseP",
+    "wmbT42OdorN",
+    "wmbT42OdorA",
+    "wmbT42OdorP",
+    "wmbT42OtherN",
+    "wmbT42OtherA",
+    "wmbT42OtherP"
+   ],
+   "data": [
+    [
+     8,
+     10,
+     12,
+     6,
+     12,
+     13,
+     8,
+     12,
+     13,
+     9,
+     11,
+     12,
+     8,
+     10,
+     12
+    ],
+    [
+     4,
+     8,
+     10,
+     6,
+     11,
+     12,
+     6,
+     11,
+     12,
+     5,
+     9,
+     11,
+     5,
+     8,
+     11
+    ],
+    [
+     6,
+     9,
+     11,
+     6,
+     10,
+     12,
+     6,
+     11,
+     12,
+     4,
+     10,
+     12,
+     6,
+     10,
+     12
+    ],
+    [
+     4,
+     9,
+     11,
+     6,
+     10,
+     12,
+     4,
+     10,
+     12,
+     4,
+     10,
+     12,
+     5,
+     10,
+     12
+    ],
+    [
+     4,
+     10,
+     12,
+     6,
+     10,
+     12,
+     6,
+     10,
+     12,
+     6,
+     10,
+     12,
+     6,
+     10,
+     12
+    ],
+    [
+     4,
+     9,
+     11,
+     7,
+     12,
+     13,
+     8,
+     12,
+     13,
+     8,
+     11,
+     12,
+     8,
+     11,
+     12
+    ],
+    [
+     5,
+     11,
+     12,
+     8,
+     10,
+     12,
+     4,
+     10,
+     12,
+     7,
+     10,
+     12,
+     6,
+     10,
+     12
+    ],
+    [
+     4,
+     10,
+     12,
+     5,
+     11,
+     12,
+     6,
+     10,
+     12,
+     7,
+     10,
+     12,
+     5,
+     9,
+     12
+    ],
+    [
+     4,
+     9,
+     11,
+     5,
+     10,
+     12,
+     4,
+     10,
+     12,
+     6,
+     10,
+     12,
+     6,
+     10,
+     12
+    ],
+    [
+     6,
+     11,
+     13,
+     6,
+     12,
+     13,
+     6,
+     11,
+     13,
+     7,
+     12,
+     13,
+     6,
+     10,
+     12
+    ],
+    [
+     4,
+     9,
+     11,
+     5,
+     10,
+     12,
+     4,
+     10,
+     12,
+     6,
+     10,
+     12,
+     6,
+     10,
+     12
+    ],
+    [
+     6,
+     10,
+     12,
+     8,
+     11,
+     12,
+     8,
+     11,
+     12,
+     6,
+     12,
+     13,
+     6,
+     10,
+     12
+    ],
+    [
+     4,
+     10,
+     12,
+     7,
+     10,
+     12,
+     8,
+     10,
+     12,
+     8,
+     10,
+     12,
+     6,
+     10,
+     12
+    ],
+    [
+     7,
+     10,
+     12,
+     7,
+     10,
+     12,
+     8,
+     11,
+     12,
+     6,
+     10,
+     12,
+     7,
+     10,
+     12
+    ]
+   ],
+   "sentinel": 13,
+   "col_default": 13,
+   "sentinel_census": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    3,
+    0,
+    0,
+    3,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0
+   ],
+   "col_comments": [
+    "fire: the noticed threshold, equal to or greater than on 1d12",
+    "fire: the agitated threshold",
+    "fire: the panicked threshold - 13 is the sentinel, an impossible 1d12 result standing for the bare trailing slash, meaning no third number given so the animal will not become panicked",
+    "weather: the noticed threshold",
+    "weather: the agitated threshold",
+    "weather: the panicked threshold or the sentinel",
+    "noise: the noticed threshold",
+    "noise: the agitated threshold",
+    "noise: the panicked threshold or the sentinel",
+    "odor: the noticed threshold",
+    "odor: the agitated threshold",
+    "odor: the panicked threshold or the sentinel",
+    "other: the noticed threshold",
+    "other: the agitated threshold",
+    "other: the panicked threshold or the sentinel"
+   ],
+   "audit_comment": "the Table 42 reactions grid: each entry is two or three numbers, each a possible result on a roll of 1d12 when the animal is exposed to the condition - the leftmost is noticed, the second agitated, the third panicked; the sentinel 13 marks the cells whose printed entry ends in a bare trailing slash with no third number, meaning the animal will not become panicked from that condition"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the Table 42 band order: noticed strictly below agitated and agitated strictly below panicked for the ape, bear, camel, dog and donkey rows across all five conditions",
+   "expr": "m['wmbT42FireN'](0) >= m['wmbT42FireA'](0) or m['wmbT42WeatherA'](0) >= m['wmbT42WeatherP'](0) or m['wmbT42NoiseN'](1) >= m['wmbT42NoiseA'](1) or m['wmbT42OdorA'](2) >= m['wmbT42OdorP'](2) or m['wmbT42OtherN'](3) >= m['wmbT42OtherA'](3) or m['wmbT42FireA'](4) >= m['wmbT42FireP'](4)"
+  },
+  {
+   "note": "the sentinel placement: the mule row carries the bare-trailing-slash sentinel in exactly its fire, weather, noise and odor panic cells, and the ram odor cell, never in a noticed or agitated cell",
+   "expr": "m['wmbT42FireP'](9) != 13 or m['wmbT42WeatherP'](9) != 13 or m['wmbT42NoiseP'](9) != 13 or m['wmbT42OdorP'](9) != 13 or m['wmbT42OtherP'](9) != 12 or m['wmbT42OdorP'](11) != 13 or m['wmbT42FireN'](9) == 13 or m['wmbT42FireA'](11) == 13"
+  },
+  {
+   "note": "the ape and elephant no-panic cells: weather and noise end in the sentinel with their exact threshold values",
+   "expr": "m['wmbT42WeatherN'](0) != 6 or m['wmbT42WeatherP'](0) != 13 or m['wmbT42NoiseN'](0) != 8 or m['wmbT42NoiseP'](0) != 13 or m['wmbT42WeatherN'](5) != 7 or m['wmbT42NoiseN'](5) != 8 or m['wmbT42WeatherP'](5) != 13 or m['wmbT42NoiseP'](5) != 13"
+  },
+  {
+   "note": "the donkey uniform row: every condition shares agitated 10 and panicked 12 with noticed 4 or 6",
+   "expr": "m['wmbT42FireN'](4) != 4 or m['wmbT42WeatherN'](4) != 6 or m['wmbT42FireA'](4) != 10 or m['wmbT42WeatherA'](4) != 10 or m['wmbT42NoiseA'](4) != 10 or m['wmbT42OdorA'](4) != 10 or m['wmbT42OtherA'](4) != 10 or m['wmbT42OtherP'](4) != 12"
+  },
+  {
+   "note": "the boundary rows: the bear fire band 4/8/10, the horse-wild other band 5/9/12, and the yak fire band 7/10/12",
+   "expr": "m['wmbT42FireN'](1) != 4 or m['wmbT42FireA'](1) != 8 or m['wmbT42FireP'](1) != 10 or m['wmbT42OtherN'](7) != 5 or m['wmbT42OtherA'](7) != 9 or m['wmbT42OtherP'](7) != 12 or m['wmbT42FireN'](13) != 7 or m['wmbT42FireA'](13) != 10"
+  },
+  {
+   "note": "the animal count and the die: fourteen animals in the grid, the reaction roll on 1d12, with the calm window of two rounds and the panic duration of 2d3 turns",
+   "expr": "m['wmbT42AnimalCount']() != 14 or m['wmbReactDie']() != 12 or m['wmbReactCalmRounds']() != 2 or m['wmbReactPanicDice']() != 2 or m['wmbReactPanicDie']() != 3"
+  },
+  {
+   "note": "the fire sensing distances: the large blaze at one-quarter mile and the conflagration at one mile",
+   "expr": "m['wmbFireBonfireMiNum']() != 1 or m['wmbFireBonfireMiDen']() != 4 or m['wmbFireConflagrationMi']() != 1"
+  },
+  {
+   "note": "the ape needs and risks: the 1-in-6 surprise cut, the 50-degree floor, the 50 percent lethargic-or-aggressive split, the 10x food and 8x water multipliers, and the 25 percent foraging failure chance",
+   "expr": "m['wmbApeSurpriseMin']() != 1 or m['wmbApeMinTempF']() != 50 or m['wmbApeDesertChancePct']() != 50 or m['wmbApeFoodMult']() != 10 or m['wmbApeWaterMult']() != 8 or m['wmbApeForageFailPct']() != 25"
+  },
+  {
+   "note": "the bear and camel needs: the bear 30 percent reversion with 8x food and 6x water, the camel 50-degree floor with two-day weakness and the two-week fast halving capacity at the 10x and 20x empty refueling",
+   "expr": "m['wmbBearRevertPct']() != 30 or m['wmbBearFoodMult']() != 8 or m['wmbBearWaterMult']() != 6 or m['wmbCamelMinTempF']() != 50 or m['wmbCamelWeakDays']() != 2 or m['wmbCamelDeprivedCapPct']() != 50 or m['wmbCamelEmptyFoodMult']() != 10 or m['wmbCamelEmptyWaterMult']() != 20"
+  },
+  {
+   "note": "the sled dog team: the 40-degree ceiling with 2-3 inches of snow, the two-day cannibalism bar at 50 percent, the seven-dog optimum with the 200 and 300 gold piece losses and the 3-inch rate cut per three dogs short",
+   "expr": "m['wmbDogMaxTempF']() != 40 or m['wmbDogSnowMinIn']() != 2 or m['wmbDogSnowMaxIn']() != 3 or m['wmbDogStarveDays']() != 2 or m['wmbDogCannibalPct']() != 50 or m['wmbDogTeamFull']() != 7 or m['wmbDogNormalLossGp']() != 200 or m['wmbDogMaxLossGp']() != 300 or m['wmbDogRateStepDogs']() != 3 or m['wmbDogRateLossIn']() != 3"
+  },
+  {
+   "note": "the sled rates: the four-dog 9/6/3 and the single-dog 6/3 with the rugged ban",
+   "expr": "m['wmbDogFourNormalIn']() != 9 or m['wmbDogFourFullIn']() != 6 or m['wmbDogFourRuggedIn']() != 3 or m['wmbDogOneNormalIn']() != 6 or m['wmbDogOneFullIn']() != 3"
+  },
+  {
+   "note": "the elephant needs: the 50-degree floor, the 3-inch forage slowdown, the fifty and thirty rations, and the bolt check at 50 percent every six hours after two unfed days",
+   "expr": "m['wmbEleMinTempF']() != 50 or m['wmbEleForageSlowIn']() != 3 or m['wmbEleFoodRations']() != 50 or m['wmbEleWaterRations']() != 30 or m['wmbEleBoltDays']() != 2 or m['wmbEleBoltCheckHours']() != 6 or m['wmbEleBoltPct']() != 50"
+  },
+  {
+   "note": "the horse rules: the overloaded one-turn rest per six turns, the bit at half a man's daily ration, the 2 percent lame chance per eight rugged hours (1 percent for the draft), the 12-hour recovery, and the four food and four water rations",
+   "expr": "m['wmbHorseLoadRestTurns']() != 1 or m['wmbHorseLoadTravelTurns']() != 6 or m['wmbHorseBitPct']() != 50 or m['wmbHorseLamePct']() != 2 or m['wmbHorseLameHours']() != 8 or m['wmbDraftLamePct']() != 1 or m['wmbHorseRecoverHours']() != 12 or m['wmbHorseFoodRations']() != 4 or m['wmbHorseWaterRations']() != 4"
+  },
+  {
+   "note": "the mule and pony: the half-hour stubborn root with the three-fourths rations for three days, and the pony 2 percent lame per eight hours with three rations daily",
+   "expr": "m['wmbMuleStubbornMin']() != 30 or m['wmbMuleShortRationPct']() != 75 or m['wmbMuleShortRationDays']() != 3 or m['wmbPonyLamePct']() != 2 or m['wmbPonyLameHours']() != 8 or m['wmbPonyRations']() != 3"
+  },
+  {
+   "note": "the ram, sheep and yak: the ram 70-degree ceiling with 6 food and 4 water rising to 6 above the 50-degree daily high, the sheep six per handler with the 50 percent per hour unsupervised bolt and the 70-degree ceiling, and the yak 30-degree ceiling",
+   "expr": "m['wmbRamMaxTempF']() != 70 or m['wmbRamFoodRations']() != 6 or m['wmbRamWaterRations']() != 4 or m['wmbRamHotWaterRations']() != 6 or m['wmbRamHotTempF']() != 50 or m['wmbSheepPerHandler']() != 6 or m['wmbSheepUnsupervisedPct']() != 50 or m['wmbSheepMaxTempF']() != 70 or m['wmbYakMaxTempF']() != 30 or m['wmbYakFoodRations']() != 6 or m['wmbYakWaterRations']() != 4"
+  },
+  {
+   "note": "the calming rules: the straight 20 percent nonproficient chance with two attempts, the 50-50 motion split, and the +2 agitated and +4 panicked proficiency modifiers",
+   "expr": "m['wmbCalmNonprofPct']() != 20 or m['wmbCalmNonprofAttempts']() != 2 or m['wmbCalmMovePct']() != 50 or m['wmbCalmAgitatedMod']() != 2 or m['wmbCalmPanickedMod']() != 4"
+  },
+  {
+   "note": "the calming modifiers scale with the condition: the panicked modifier double the agitated modifier",
+   "expr": "m['wmbCalmPanickedMod']() != 2 * m['wmbCalmAgitatedMod']()"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "The chapter opener": [
+   {
+    "kind": "bool",
+    "name": "wmbCatalogIntro"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCatalogCrossRefs"
+   }
+  ],
+  "Ape, gorilla": [
+   {
+    "kind": "bool",
+    "name": "wmbApeHighestInt"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbApeBefriendTrain"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbApePointMan"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbApeNotStealthy"
+   },
+   {
+    "kind": "const",
+    "name": "wmbApeSurpriseMin"
+   },
+   {
+    "kind": "const",
+    "name": "wmbApeMinTempF"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbApeProhibitedDeserts"
+   },
+   {
+    "kind": "const",
+    "name": "wmbApeDesertChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "wmbApeFoodMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmbApeWaterMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmbApeForageFailPct"
+   }
+  ],
+  "Bear, brown": [
+   {
+    "kind": "bool",
+    "name": "wmbBearNeedsMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbBearNonmagicRevert"
+   },
+   {
+    "kind": "const",
+    "name": "wmbBearRevertPct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbBearTerrain"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbBearClaws"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbBearOmnivorous"
+   },
+   {
+    "kind": "const",
+    "name": "wmbBearFoodMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmbBearWaterMult"
+   }
+  ],
+  "Camel": [
+   {
+    "kind": "bool",
+    "name": "wmbCamelDromedaryDesert"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCamelNoMove"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCamelNoSevereSlope"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCamelMinTempF"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCamelWeakDays"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCamelBactrian"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCamelMaxDepriveWeeks"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCamelSecondWeekHalf"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCamelDeprivedCapPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCamelFeedWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCamelEmptyFoodMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCamelEmptyWaterMult"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCamelProportionate"
+   }
+  ],
+  "Dog, sled": [
+   {
+    "kind": "bool",
+    "name": "wmbDogColdAdapted"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogMaxTempF"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogSnowMinIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogSnowMaxIn"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbDogRation"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogStarveDays"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogCannibalPct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbDogCannibalDetail"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogTeamFull"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogNormalLossGp"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogMaxLossGp"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogRateStepDogs"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogRateLossIn"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbDogFourDogRates"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogFourNormalIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogFourFullIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogFourRuggedIn"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbDogSingleDog"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogOneNormalIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDogOneFullIn"
+   }
+  ],
+  "Donkey": [
+   {
+    "kind": "bool",
+    "name": "wmbDonkeySameAsMule"
+   }
+  ],
+  "Elephant": [
+   {
+    "kind": "bool",
+    "name": "wmbEleTrainedOnly"
+   },
+   {
+    "kind": "const",
+    "name": "wmbEleMinTempF"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbEleNoSlope"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbEleForageSlower"
+   },
+   {
+    "kind": "const",
+    "name": "wmbEleForageSlowIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmbEleFoodRations"
+   },
+   {
+    "kind": "const",
+    "name": "wmbEleWaterRations"
+   },
+   {
+    "kind": "const",
+    "name": "wmbEleBoltDays"
+   },
+   {
+    "kind": "const",
+    "name": "wmbEleBoltCheckHours"
+   },
+   {
+    "kind": "const",
+    "name": "wmbEleBoltPct"
+   }
+  ],
+  "Horse": [
+   {
+    "kind": "bool",
+    "name": "wmbHorseFragile"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbHorseStaminaException"
+   },
+   {
+    "kind": "const",
+    "name": "wmbHorseLoadRestTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wmbHorseLoadTravelTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbHorseRestBit"
+   },
+   {
+    "kind": "const",
+    "name": "wmbHorseBitPct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbHorseLameSusceptible"
+   },
+   {
+    "kind": "const",
+    "name": "wmbHorseLamePct"
+   },
+   {
+    "kind": "const",
+    "name": "wmbHorseLameHours"
+   },
+   {
+    "kind": "const",
+    "name": "wmbDraftLamePct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbHorseLameTemporary"
+   },
+   {
+    "kind": "const",
+    "name": "wmbHorseRecoverHours"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbHorseLamePermanent"
+   },
+   {
+    "kind": "const",
+    "name": "wmbHorseFoodRations"
+   },
+   {
+    "kind": "const",
+    "name": "wmbHorseWaterRations"
+   }
+  ],
+  "Mule": [
+   {
+    "kind": "bool",
+    "name": "wmbMuleHardier"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbMuleStubborn"
+   },
+   {
+    "kind": "const",
+    "name": "wmbMuleStubbornMin"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbMuleStrengthCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbMuleSameAsHorse"
+   },
+   {
+    "kind": "const",
+    "name": "wmbMuleShortRationPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmbMuleShortRationDays"
+   }
+  ],
+  "Pony": [
+   {
+    "kind": "bool",
+    "name": "wmbPonyLikeHorse"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbPonyMountainBred"
+   },
+   {
+    "kind": "const",
+    "name": "wmbPonyLamePct"
+   },
+   {
+    "kind": "const",
+    "name": "wmbPonyLameHours"
+   },
+   {
+    "kind": "const",
+    "name": "wmbPonyRations"
+   }
+  ],
+  "Ram, giant": [
+   {
+    "kind": "bool",
+    "name": "wmbRamChargeTrained"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbRamHabitat"
+   },
+   {
+    "kind": "const",
+    "name": "wmbRamMaxTempF"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbRamPersuadedTerrain"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbRamNoForestSwamp"
+   },
+   {
+    "kind": "const",
+    "name": "wmbRamFoodRations"
+   },
+   {
+    "kind": "const",
+    "name": "wmbRamWaterRations"
+   },
+   {
+    "kind": "const",
+    "name": "wmbRamHotWaterRations"
+   },
+   {
+    "kind": "const",
+    "name": "wmbRamHotTempF"
+   }
+  ],
+  "Sheep": [
+   {
+    "kind": "bool",
+    "name": "wmbSheepPackUse"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbSheepHerding"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbSheepNoProfNeeded"
+   },
+   {
+    "kind": "const",
+    "name": "wmbSheepPerHandler"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbSheepExtraHandlers"
+   },
+   {
+    "kind": "const",
+    "name": "wmbSheepStepPerHandler"
+   },
+   {
+    "kind": "const",
+    "name": "wmbSheepUnsupervisedPct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbSheepClimate"
+   },
+   {
+    "kind": "const",
+    "name": "wmbSheepMaxTempF"
+   },
+   {
+    "kind": "const",
+    "name": "wmbSheepFoodRations"
+   },
+   {
+    "kind": "const",
+    "name": "wmbSheepWaterRations"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbSheepNondurable"
+   }
+  ],
+  "Yak": [
+   {
+    "kind": "bool",
+    "name": "wmbYakLikeRam"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbYakMountainous"
+   },
+   {
+    "kind": "const",
+    "name": "wmbYakMaxTempF"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbYakNormalTerrainNote"
+   },
+   {
+    "kind": "const",
+    "name": "wmbYakFoodRations"
+   },
+   {
+    "kind": "const",
+    "name": "wmbYakWaterRations"
+   }
+  ],
+  "Animals as individuals": [
+   {
+    "kind": "bool",
+    "name": "wmbIndivBitPlayers"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivNpcTreatment"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivFormerOwner"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivSurefootedExample"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivWildTrial"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivControlledExposure"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivCalmStability"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivFireFear"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivWeatherSense"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivStartleNoiseSmell"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivAcuteSenses"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbIndivNotCapricious"
+   }
+  ],
+  "Table 42: reactions of animals": [
+   {
+    "kind": "const",
+    "name": "wmbT42AnimalCount"
+   },
+   {
+    "kind": "table",
+    "name": "wmbT42"
+   }
+  ],
+  "The reaction bands": [
+   {
+    "kind": "const",
+    "name": "wmbReactDie"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbReactNoticed"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbReactAgitated"
+   },
+   {
+    "kind": "const",
+    "name": "wmbReactCalmRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbReactTrustInstinct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbReactPanicked"
+   },
+   {
+    "kind": "const",
+    "name": "wmbReactPanicDice"
+   },
+   {
+    "kind": "const",
+    "name": "wmbReactPanicDie"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbReactPanicDuration"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbReactNoThirdNoPanic"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbFireGreatest"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbFireCampfireHabit"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbFireNeverComfortableLarge"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbFireSensing"
+   },
+   {
+    "kind": "const",
+    "name": "wmbFireBonfireMiNum"
+   },
+   {
+    "kind": "const",
+    "name": "wmbFireBonfireMiDen"
+   },
+   {
+    "kind": "const",
+    "name": "wmbFireConflagrationMi"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbWeatherSenseDetail"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbNoiseDetail"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbSharpHearing"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbOdorDetail"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbOtherQuirks"
+   }
+  ],
+  "Calming an excited animal": [
+   {
+    "kind": "bool",
+    "name": "wmbCalmAnyoneTries"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCalmProfChance"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCalmProfEveryRound"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCalmNonprofPct"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCalmNonprofAttempts"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCalmOnlyMove"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCalmMotionState"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCalmMovePct"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCalmSootheMoving"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCalmAgitatedProfOnly"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCalmAgitatedMod"
+   },
+   {
+    "kind": "const",
+    "name": "wmbCalmPanickedMod"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbCalmReexcite"
+   }
+  ],
+  "Understanding an animal": [
+   {
+    "kind": "bool",
+    "name": "wmbUnderstandProf"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbUnderstandNonprof"
+   },
+   {
+    "kind": "bool",
+    "name": "wmbUnderstandCertainty"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the animals-as-individuals box",
+   "from": "  - [ ] Animals as individuals (p. 91)",
+   "to": "  - [x] Animals as individuals (p. 91) - R490: the former-owner and trial-and-error personality rules with the Table 42 reaction grid and the fire, weather, noise, odor and other band rules pin as rules/wsgmount.h"
+  },
+  {
+   "note": "the calming-an-excited-animal box",
+   "from": "  - [ ] Calming an excited animal (p. 94)",
+   "to": "  - [x] Calming an excited animal (p. 94) - R490: the proficiency and 20 percent nonproficient rules with the motion details and the +2/+4 modifiers pin as rules/wsgmount.h"
+  },
+  {
+   "note": "the understanding-an-animal box",
+   "from": "  - [ ] Understanding an animal (p. 94)",
+   "to": "  - [x] Understanding an animal (p. 94) - R490: the animal lore educated-guess and certainty rules pin as rules/wsgmount.h"
+  }
+ ],
+ "gap_census": {
+  "closed": 135,
+  "open": 51
+ },
+ "include_after": "#include \"rules/wsgfatig.h\"  // R489: the WSG fatigue and exhaustion rules",
+ "include_comment": "the WSG mounts and beasts of burden rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R489 LANDED 2026-10-16: commit c11cbe1 (census 414,",
+ "prev_record": [
+  "- R489 LANDED 2026-10-16: commit c11cbe1 (census 414,",
+  "  pushed 1ac64e0..c11cbe1), the WSG FATIGUE CHAPTER",
+  "  slice, printed pp. 87-89 - CLOSING the wilderness",
+  "  combat chapter with its dismount tail and LANDING",
+  "  the full fatigue and exhaustion chapter. Pinned as",
+  "  rules/wsgfatig.h with the include after",
+  "  wsgfight.h at line 194 (prefix wft - free on the",
+  "  first probe), 120 inlines: 65 consts + 55 bools in",
+  "  five sections - the chapter opener, the p. 87",
+  "  dismount tail, Characters, Land-based mounts and",
+  "  pack animals, Flying mounts. The R488 \"cut\"",
+  "  settled as a column wrap WITHIN p. 87, not a page",
+  "  cut: the right column carries \"Dungeon Master may",
+  "  allow a character with proficiency in riding the",
+  "  mount to leap from its back and land safely on",
+  "  the ground\" - the dismount section was complete",
+  "  and only the connective pin rode to this round,",
+  "  CLOSING the combat chapter. Characters: the",
+  "  4-turn strenuous risk (over-full movement, melee,",
+  "  climbing, swimming against a current, severe",
+  "  encumbrance), the 2-turn rest to avoid it, the",
+  "  6-turn first Constitution Check, 5 more turns on",
+  "  success with the interval shrinking 1 turn per",
+  "  success to a minimum of 1, fatigue dropping every",
+  "  ability score except comeliness by 2 until 2",
+  "  consecutive hours of rest (the Str 18 / Con 18 /",
+  "  Wis 14 examples: +1 to-hit lost and +2 damage to",
+  "  +1, 2 hp per hit die at a temporary 16, both",
+  "  bonus 1st-level spells lost with a spell-failure",
+  "  chance at an effective 12), checks reading the",
+  "  current score, a further -2 on attacks and saves,",
+  "  the per-turn Con Check while continuing with",
+  "  failure meaning exhaustion (another -2 and no",
+  "  voluntary action except when failure to move",
+  "  risks death), the 1-hour rest plus a check to",
+  "  leave only fatigue then 2 more hours, and the",
+  "  rest-while-carried and rest-tied-to-mount rules.",
+  "  Land-based mounts: 2 days without food and water",
+  "  or 3 days short rations fatigues, full ration plus",
+  "  8 hours rest recovers, overwork recovery 12 hours",
+  "  plus 2 per hour overworked (the 3-hour horse",
+  "  resting 18), fatigued half movement with",
+  "  1-round-per-turn bursts, the 3-inch terrain bar",
+  "  (the loaded horse and the camel in very rugged",
+  "  ground), 2 armor class places worse (7 to 9),",
+  "  only the animal-handling proficient calming the",
+  "  excited fatigued animal and only at the",
+  "  nonproficient chance, the cumulative 20% per hour",
+  "  exhaustion chance with the 1-hour reset, the",
+  "  collapse ladder 25/50/75, the oblivious exhausted",
+  "  animal that neither panics nor defends itself,",
+  "  the flat 50% death chance within 1d4 hours, and",
+  "  the 1d6-3 trauma drain through the 8-hour",
+  "  critical period with the 2-per-hour regain.",
+  "  Flying mounts: never exhausted; the stamina first",
+  "  number is the safe flying time (reduced when",
+  "  heavily loaded), past it a 1d10 per turn with the",
+  "  fatigue chance 10 minus the rest number (the",
+  "  black dragon 24/6 fatiguing on 1-4), flying and",
+  "  rest not in full blocks (the 30-turn window with",
+  "  24 aloft and 6 rest; the 7-turn last flight",
+  "  risking fatigue), exceeding then landing demanding",
+  "  a full rest, fatigue dropping the rate to",
+  "  two-thirds with 10 yards of altitude lost per",
+  "  round, the same-turn safe landing within 100",
+  "  yards, past that the second-turn steep dive with",
+  "  1d2 buffet damage per 10 yards dived halved for",
+  "  airborne-riding proficiency or secure strapping,",
+  "  the unstrapped rider thrown for 11-40 (3d10+10),",
+  "  and the 3-times post-fatigue rest refusal (18",
+  "  turns for the dragon) unless self-preservation",
+  "  dictates. THE SETTLE: two-way clean on the first",
+  "  pass (the layout l d 4 / l d 6 / l d l O / l d 2",
+  "  classes are 1d4 1d6 1d10 1d2; Constutition and",
+  "  conscutive are book typos; tesseract confirms 24/6,",
+  "  1-4 on 1d10, 1d2, 11-40, 18 turns, the 25/50/75",
+  "  ladder, 0-3, 2 per hour and 20%/hour). One",
+  "  delivery note: the Termux md5 hit the as-built",
+  "  exactly (964ca60dc49164730d224fe09a19ff8c); the",
+  "  authored canvas body md5 was",
+  "  edb1f9beec90f191c13c3902988147d3 and the two",
+  "  differ by bytes only - the pushed spec json",
+  "  compares semantically identical to the canvas",
+  "  body (the user's save path re-serialized it), the",
+  "  engine and rverify validated the content, so the",
+  "  pair rule stands: authored = the canvas body,",
+  "  as-built = what Termux saves. rverify at 1ac64e0:",
+  "  120 mutants, 0 missed; census 413 -> 414; the gap",
+  "  flips 128/58 -> 132/54 (four boxes: the dismount",
+  "  box plus all three fatigue boxes; the mounts and",
+  "  beasts catalog boxes stay open). Next: R490 -",
+  "  the MOUNTS AND BEASTS OF BURDEN catalog, printed",
+  "  pp. 90-94 (pdf pages 91-95; the reads for printed",
+  "  pp. 90-91 are already in hand from the R489",
+  "  extraction batch), opening with the ape/gorilla,",
+  "  bear, camel and dog entries and the animals-as-",
+  "  individuals section"
+ ]
+}
+
