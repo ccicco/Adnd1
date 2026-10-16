@@ -152,7 +152,7 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Appendix: the world of weather** (pp. 107-119) - R494: both children closed - the R493 generation system (rules/wsgweather.h) and the R494 special weather, effects and optional rules (rules/wsgweathx.h)
   - [x] The weather system (generation, the tables) - R493: the Table A1 temperature-variation grid with the letter-code scale, Table A2 day-to-day change, Table A3 precipitation variation and the generation prose pin as rules/wsgweather.h (part 1 of 2 - the special weather and optional rules ride with R494)
   - [x] The weather effects on play - R494: the Table A4 special-weather grid with the Roll 1 / Roll 2 cross-index, the per-code definitions (the no-special days, cold wave, cyclone, drought, gale, mist/fog, sandstorm, tornado, the extreme-precipitation dispatch with hail, ice, lightning and severe snow, heat wave) and the optional rules A5-A8 with twilight, local winds, tides and the DM responsibility pin as rules/wsgweathx.h
-- [ ] **Compiled tables** (pp. 120-126)
+- [x] **Compiled tables** (pp. 120-126) - R495: the play-session reprint manifest pinned as rules/wsgtables.h - thirty of the forty-two book tables with their from-pages, twenty-nine reconciling cell-for-cell with their landed originals and the one Table 32 errata (Fair daytime 1d6-3, Good daytime 1d6-2) pinned compiled-side; THE WSG ARC IS COMPLETE
 
 ## The tables (the book own Tables index - the manifest)
 

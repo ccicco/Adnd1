@@ -5950,6 +5950,71 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   mutants, 0 missed; preflight census 418, R493
   audit bad 0. Next: R494.
 
+- R494 LANDED 2026-10-16: commit 7dd2f3f (census 419,
+  pushed ceaff98..7dd2f3f), the WSG WORLD OF WEATHER
+  appendix part 2 of 2 - the weather EFFECTS system
+  and the optional rules, printed pp. 112-119. Pinned
+  as rules/wsgweathx.h with the include after
+  wsgweather.h (prefixes wwy for the pins and wwt for
+  the table switch columns), 340 inlines: 220 consts +
+  63 bools + 1 chain (wwyCycloneDriftFor, limits 6/7,
+  tail 2) + 56 table columns in 25 sections. Nine
+  tables: the Roll 2 cross-index (2 rows x 5 bands -
+  see the lesson below), Table A4 the 33x4
+  special-weather grid (packed base-10 four-letter
+  codes A1/C2/D3/G4/M5/S6/T7/X8/Z9), the X dispatch
+  (7 temp bands x 12 d6 cols), Table A5 humidity
+  (33x4), the day-1/day-2 before and after adjustment
+  grids (3x3 each), Table A6 effective temperature
+  (25x5), Table A7 wind chill (17x8), Table A8 hours
+  of daylight (15 latitude rows x 12 months in
+  half-hours). Flips the weather-effects child box
+  and the parent appendix box: 146 closed / 40 open -
+  THE APPENDIX IS CLOSED; only the compiled tables
+  pp. 120-126 remain in the WSG arc. Preflight GREEN
+  (R494 WSG weather effects audit: bad 0), rverify
+  GREEN (1102 mutants, 0 missed, double-run clean).
+  THE R2 DEFECT CLASS (first C++-only catch since the
+  battery went compiled): the Roll 2 cross-index was
+  first encoded 1 data row x 10 cols with the count
+  const wwyRoll2Rows = 2; speclib only walks actual
+  data rows so the Python mirror read bad 0, but the
+  emitted audit declares CR2[1][10] and loops
+  b < wwyRoll2Rows() - row 1 reads out of bounds, all
+  10 columns hit the -1 defaults, compiled bad
+  EXACTLY 10. Preflight caught it (the audit return 1
+  also truncated every audit physically after the
+  R494 block, so the census flooded with phantom
+  failures - fallout, not defects). The engine has NO
+  count-vs-rows gate: a table whose count const
+  exceeds its data rows is the R494 class; authors
+  MUST check every table's count == len(data) before
+  publishing. Fixed by reshaping R2 to the honest 2x5
+  (cols wwtR2B24/B56/B7/B89/B1012, data
+  [[1,2,2,0,0],[0,0,3,3,4]], inline_count 345->340).
+  LESSON (delivery): overwriting an EXISTING canvas
+  with a corrected spec body did NOT re-render the
+  panel - the user kept copying the stale broken
+  version; publishing under a NEW canvas name
+  (r494-splice-fix) fixed the copy. When a spec is
+  corrected mid-round, publish the fix as a new
+  canvas, never an in-place overwrite. The ritual
+  block stays pure shell (the user's standing rule);
+  the bn launcher is user-side only. User-side spec
+  md5 b258419d806323abca35fd5e7a20325d (authored
+  865849524c765e9937b16f8fe51c1da1, +nl
+  4f1dbaaa49d529e25b14145ac8ed069a - the
+  delivery-side newline variance again, cosmetic; a
+  c2bf4240... variant of the first (broken) spec also
+  appeared - content-identical per the canonical
+  sort-keys hash). The A4 grid transcription sources:
+  the psm tesseract pass on pdf 113 (commit 52dd5fc,
+  branch r493-extraction) with the settled overturns
+  (C temperate seacoast, CXMZ subtropical seacoast
+  Su, CXMZ subtropical swamp, CXMZ tropical seacoast
+  Su low-conf, tropical swamp Wi inferred) and the
+  s0py cross-checks for A5/A6/A7/A8; the
+  1eonline.info transcription is BLOCKED (403).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
