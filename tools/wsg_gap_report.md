@@ -6,17 +6,17 @@ Conventions as the UA report: [x] verified against the book text (with the round
 
 ## The chapters (the book own Table of Contents hierarchy)
 
-- [ ] **Overview of the wilderness** (pp. 7-10)
-  - [ ] Terrain: desert (p. 7)
-  - [ ] Terrain: forest (p. 7)
-  - [ ] Terrain: hills (p. 8)
-  - [ ] Terrain: mountains (p. 8)
-  - [ ] Terrain: plains (p. 9)
-  - [ ] Terrain: seacoast (p. 9)
-  - [ ] Terrain: swamp (p. 9)
-  - [ ] Hierarchy of terrain (p. 9)
-  - [ ] Bodies of water (p. 9)
-  - [ ] Climate (p. 10)
+- [x] **Overview of the wilderness** (pp. 7-10) - R497: the whole chapter pins as rules/wsgoverview.h - the terrain types, the hierarchy ranking, the bodies of water and the climate zones
+  - [x] Terrain: desert (p. 7) - R497: the under-10-inches rainfall definition, the dune/draa technical split at 70 feet and the polar-wastes-are-desert rule pin as rules/wsgoverview.h
+  - [x] Terrain: forest (p. 7) - R497: the any-climate-but-polar rule, the cactus-stand exception, the taiga and the 160-foot temperate maximum pin as rules/wsgoverview.h
+  - [x] Terrain: hills (p. 8) - R497: the four classification guidelines with the 2,000/4,000-foot bands pin as rules/wsgoverview.h
+  - [x] Terrain: mountains (p. 8) - R497: the 4,000-foot minimum, the begins-where-trees-end rule, the Earth tree line (10,000) and snow line (12,000) pin as rules/wsgoverview.h
+  - [x] Terrain: plains (p. 9) - R497: the flat-vegetated definition, the not-enough-trees rule, the easy food and water, the scarce shelter material and the seen-from-far-away warning pin as rules/wsgoverview.h
+  - [x] Terrain: seacoast (p. 9) - R497: the near-ocean definition and the encounter-table reclassification rule pin as rules/wsgoverview.h
+  - [x] Terrain: swamp (p. 9) - R497: the standing-water definition, the low-elevation rule, the fertile soil and the mounts warning pin as rules/wsgoverview.h
+  - [x] Hierarchy of terrain (p. 9) - R497: the 1-through-7 ranking (seacoast highest, mountains lowest) with the highest-wins rule and the two common-sense exceptions pin as rules/wsgoverview.h
+  - [x] Bodies of water (p. 9) - R497: the water-source-and-challenge frame, the boat and swim travel rules and the preparation advice pin as rules/wsgoverview.h
+  - [x] Climate (p. 10) - R497: the five climate zones (arctic, subarctic, temperate, subtropical, tropical) with their characterizations pin as rules/wsgoverview.h
 - [ ] **Wilderness proficiencies** (pp. 11-17)
   - [ ] Nonweapon proficiencies (p. 11)
   - [ ] Choosing skills (p. 11)

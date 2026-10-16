@@ -6058,6 +6058,38 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   R494 delivery lesson). The ritual block stays pure shell
   (the user's standing rule); the bn launcher is
   user-side only.
+- R496 LANDED 2026-10-16: commit bd58585 (census 421,
+  pushed 88c0739..bd58585), the WSG GAP RECONCILIATION -
+  the bookkeeping round: twenty-four boxes that were
+  already pinned by earlier rounds flip in one commit.
+  NO new book material; pinned as rules/wsgrecon.h
+  (prefix wgr, 37 inlines: 13 consts + 24 bools). Eleven
+  chapter parents flip, every child closed by R427-R491
+  (env effects, encumbrance/movement, food/water,
+  camping, medicine, vision, hazards, combat, fatigue,
+  mounts, magic). Nine manifest lines flip (Tables 20-27
+  and 42, pinned R444-R490). Four movement items flip:
+  surface types, surface conditions, chance of falling
+  (all inside wsgclimb.h R435) and movement across
+  special terrain (wsgvehicle.h/wsgencum.h R434/R432 -
+  verified in-header before flipping). Gap report: 147/39
+  -> 171 closed / 15 open; the fifteen are the genuinely
+  un-pinned prose: the overview chapter (pp. 7-10, 11
+  boxes) and the proficiencies prose (pp. 11-17, 4
+  boxes). Preflight GREEN (R496 WSG gap reconciliation
+  audit: bad 0), rverify GREEN (37 mutants, 0 missed,
+  double-run clean). Flip-count arithmetic pinned as
+  consts and examples (147+24=171, 39-24=15, 11+9+3+1=24)
+  so the reconciliation is itself audited. User-side
+  spec md5 433b2e56cc637bb839b7d64504047273 differed
+  from both authored variants (5ba8feee... no-nl,
+  962b3dda... +nl) - cosmetic, same class as R495
+  (every gate parsed and validated the content
+  end-to-end). Spec published as the new canvas
+  r496-splice. NEXT: only two prose rounds remain for
+  full WSG gap closure - the overview (pp. 7-10) and
+  the proficiencies prose (pp. 11-17, includes the
+  Table 1/2-adjacent nonweapon list and descriptions).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

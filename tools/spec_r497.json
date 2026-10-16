@@ -1,0 +1,1198 @@
+{
+ "round": 497,
+ "title": "the WSG overview of the wilderness - the terrain types, the hierarchy, the bodies of water and the climate zones",
+ "prefix": "wov",
+ "header_file": "rules/wsgoverview.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 421,
+ "inline_count": 85,
+ "audit_label": "R497 WSG overview audit",
+ "audit_comment": "The overview of the wilderness, printed pp. 7-10 (pdf 8-11): the seven terrain descriptions (the desert with its 10-inch definition and the 70-foot dune cap, the forest with the cactus-stand exception and the 160-foot temperate maximum, the hills with the 2,000/4,000-foot guideline bands, the mountains with the 4,000-foot minimum and the 10,000/12,000-foot Earth lines, the plains, the seacoast with the encounter-table reclass and the swamp), the 1-through-7 hierarchy of terrain with the highest-wins rule and its two exceptions, the bodies of water and the five climate zones.",
+ "banner": {
+  "title": "The WSG OVERVIEW OF THE WILDERNESS, R497: the opening chapter of the book, printed pp. 7-10 (pdf 8-11) - the seven terrain types, the hierarchy of terrain, the bodies of water and the five climate zones. Prose mechanics: no grids, no dice - the load-bearing numbers are the desert rainfall definition, the dune cap, the hills guideline bands, the mountain thresholds and the hierarchy ranking.",
+  "provenance": "WSG printed pp. 7-10, pdf 8-11, extracted at r497-extraction sha 0d5f109 (tesseract full-text and tsv, x8-x11, 300 dpi, the /tmp-write retry after the empty-shell push 2644f42). The extraction also covers the R498 proficiencies ground: pdf 12-18.",
+  "sentinel": "THE SETTLE: the eleven overview boxes flip in the same commit; 182 closed / 4 open - only the proficiencies prose (pp. 11-17) remains in the WSG gap report; census 421 -> 422."
+ },
+ "consts": [
+  {
+   "name": "wovPrintedLo",
+   "value": 7,
+   "comment": "the overview chapter starts at printed p. 7."
+  },
+  {
+   "name": "wovPrintedHi",
+   "value": 10,
+   "comment": "the overview chapter ends at printed p. 10."
+  },
+  {
+   "name": "wovPdfLo",
+   "value": 8,
+   "comment": "the overview chapter starts at pdf page 8."
+  },
+  {
+   "name": "wovPdfHi",
+   "value": 11,
+   "comment": "the overview chapter ends at pdf page 11."
+  },
+  {
+   "name": "wovTerrainTypeCount",
+   "value": 7,
+   "comment": "seven terrain types: desert, forest, hills, mountains, plains, seacoast and swamp."
+  },
+  {
+   "name": "wovClimateZoneCount",
+   "value": 5,
+   "comment": "five climate zones: arctic, subarctic, temperate, subtropical and tropical."
+  },
+  {
+   "name": "wovHierarchyRankCount",
+   "value": 7,
+   "comment": "the terrain hierarchy has seven ranks, 1 the highest and 7 the lowest."
+  },
+  {
+   "name": "wovDesertRainMaxIn",
+   "value": 10,
+   "comment": "the technical definition of a desert: any area receiving less than 10 inches of rain per year."
+  },
+  {
+   "name": "wovDesertTypicalRainIn",
+   "value": 5,
+   "comment": "most deserts receive half the technical maximum or even less."
+  },
+  {
+   "name": "wovDuneTechnicalMaxFt",
+   "value": 70,
+   "comment": "a dune is a wind-formed sand accumulation no more than 70 feet high."
+  },
+  {
+   "name": "wovDuneGiantFt",
+   "value": 500,
+   "comment": "where sand is abundant and the wind very strong, dunes can grow to more than 500 feet high."
+  },
+  {
+   "name": "wovTemperateTreeMaxFt",
+   "value": 160,
+   "comment": "the largest temperate trees (oak, maple and ash) can reach 160 feet tall."
+  },
+  {
+   "name": "wovHillsLowBandFt",
+   "value": 2000,
+   "comment": "the low hills band: elevation under 2,000 feet with sharply sloping mounds."
+  },
+  {
+   "name": "wovHillsPeaksMayExceedFt",
+   "value": 2000,
+   "comment": "low-band hill peaks may rise above 2,000 feet."
+  },
+  {
+   "name": "wovHillsUpperBandLoFt",
+   "value": 2000,
+   "comment": "the upper hills band starts at 2,000 feet."
+  },
+  {
+   "name": "wovHillsUpperBandHiFt",
+   "value": 4000,
+   "comment": "the upper hills band runs through 4,000 feet."
+  },
+  {
+   "name": "wovMountainMinFt",
+   "value": 4000,
+   "comment": "mountainous terrain usually occurs at 4,000 feet or above."
+  },
+  {
+   "name": "wovEarthTreeLineFt",
+   "value": 10000,
+   "comment": "on Earth the tree line sits at about 10,000 feet above sea level."
+  },
+  {
+   "name": "wovEarthSnowLineFt",
+   "value": 12000,
+   "comment": "beyond the snow line at 12,000 feet trees cannot prosper."
+  },
+  {
+   "name": "wovRankSeacoast",
+   "value": 1,
+   "comment": "the hierarchy rank of seacoast."
+  },
+  {
+   "name": "wovRankSwamp",
+   "value": 2,
+   "comment": "the hierarchy rank of swamp."
+  },
+  {
+   "name": "wovRankForest",
+   "value": 3,
+   "comment": "the hierarchy rank of forest."
+  },
+  {
+   "name": "wovRankPlains",
+   "value": 4,
+   "comment": "the hierarchy rank of plains."
+  },
+  {
+   "name": "wovRankDesert",
+   "value": 5,
+   "comment": "the hierarchy rank of desert."
+  },
+  {
+   "name": "wovRankHills",
+   "value": 6,
+   "comment": "the hierarchy rank of hills."
+  },
+  {
+   "name": "wovRankMountains",
+   "value": 7,
+   "comment": "the hierarchy rank of mountains."
+  },
+  {
+   "name": "wovHillsGuidelineCount",
+   "value": 4,
+   "comment": "four classification guidelines govern hilly terrain."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wovPolarWastesAreDesert",
+   "value": true,
+   "comment": "the icy polar wastes qualify as desert: moisture is abundant as ice but precipitation is very little."
+  },
+  {
+   "name": "wovDesertGravelCommon",
+   "value": true,
+   "comment": "most deserts are dry, hard-packed earth beneath a layer of gravel, occasionally broken by large boulders."
+  },
+  {
+   "name": "wovGravelDesertWaterRunsOff",
+   "value": true,
+   "comment": "in gravel deserts the rainfall tends to run off the surface instead of soaking in, making water hard to find."
+  },
+  {
+   "name": "wovSandSoaksWater",
+   "value": true,
+   "comment": "sand permits water to soak into the terrain, from where it can be recovered later."
+  },
+  {
+   "name": "wovDuneLargerIsDraa",
+   "value": true,
+   "comment": "a wind-formed sand accumulation larger than a dune is properly called a sand mountain, or draa."
+  },
+  {
+   "name": "wovDuneWindwardGradual",
+   "value": true,
+   "comment": "a dune ascends gradually on the windward side and slopes down sharply on the side opposite the wind."
+  },
+  {
+   "name": "wovDesertBurialRisk",
+   "value": true,
+   "comment": "an object remaining in one spot in heavy sand cover may end up buried under tons of sand."
+  },
+  {
+   "name": "wovForestAnyClimateButPolar",
+   "value": true,
+   "comment": "forests can be found in any climate except the polar regions."
+  },
+  {
+   "name": "wovCactusStandIsDesert",
+   "value": true,
+   "comment": "a large stand of cactus in a desert does not qualify as forest: the area stays desert for weather, food and water determination."
+  },
+  {
+   "name": "wovConifersSubarctic",
+   "value": true,
+   "comment": "subarctic forests are evergreens, or conifers."
+  },
+  {
+   "name": "wovDeciduousTemperate",
+   "value": true,
+   "comment": "temperate forests are primarily deciduous, leaf-bearing trees."
+  },
+  {
+   "name": "wovRainforestTropical",
+   "value": true,
+   "comment": "rainforest is the name for forests in subtropical and tropical climates."
+  },
+  {
+   "name": "wovConiferShedsSnow",
+   "value": true,
+   "comment": "the conifer cone shape sheds snow easily; conifer branches are a good source of impromptu shelter material."
+  },
+  {
+   "name": "wovRainforestLayered",
+   "value": true,
+   "comment": "the distinctive feature of a rainforest is its layered composition: several tree heights coexisting with low shrubs and ferns."
+  },
+  {
+   "name": "wovRainforestGreenYearRound",
+   "value": true,
+   "comment": "rainforest trees are green all year round: new leaves appear before the old ones drop."
+  },
+  {
+   "name": "wovHillsTopographyNotEcology",
+   "value": true,
+   "comment": "hills are about topography, not ecology: a forest or a desert can also be hilly."
+  },
+  {
+   "name": "wovHillsDenseTreesAreForest",
+   "value": true,
+   "comment": "any irregular terrain with dense or moderate tree cover is forest."
+  },
+  {
+   "name": "wovHillsRollingUnder2000NotHills",
+   "value": true,
+   "comment": "gently rolling terrain under 2,000 feet with few or no trees is NOT hills: use desert, plains, swamp or seacoast as appropriate."
+  },
+  {
+   "name": "wovHillsSharpMoundsAreHills",
+   "value": true,
+   "comment": "terrain under 2,000 feet with few or no trees and sharply sloping mounds (peaks possibly above 2,000 feet) is hills."
+  },
+  {
+   "name": "wovHillsUpperBandIrregular",
+   "value": true,
+   "comment": "terrain between 2,000 and 4,000 feet with irregular ground and few or no trees is hills."
+  },
+  {
+   "name": "wovMountainDevoidOfTrees",
+   "value": true,
+   "comment": "mountainous terrain is devoid of large vegetation."
+  },
+  {
+   "name": "wovMountainLowerSlopeTreesAreForest",
+   "value": true,
+   "comment": "a heavily wooded area on the lower slopes of a mountain is forest, even above 4,000 feet."
+  },
+  {
+   "name": "wovMountainBeginsWhereTreesEnd",
+   "value": true,
+   "comment": "a mountainous region for movement, encounters and food availability begins where the trees end."
+  },
+  {
+   "name": "wovLowRockySlopeCanBeMountain",
+   "value": true,
+   "comment": "a barren, rocky slope rising high above the surrounding area can be mountainous even from a base under 4,000 feet."
+  },
+  {
+   "name": "wovAboveSnowLineSnowIce",
+   "value": true,
+   "comment": "above the snow line some of the rocky surface is covered with snow or ice, making travel more hazardous."
+  },
+  {
+   "name": "wovExposedRockWarmAir",
+   "value": true,
+   "comment": "exposed rock surfaces at high altitude can become much warmer than the air temperature because they absorb the sun heat all day."
+  },
+  {
+   "name": "wovPlainsFlatVegetated",
+   "value": true,
+   "comment": "plains are mostly flat, with moderately dense low vegetation except in an arctic climate."
+  },
+  {
+   "name": "wovPlainsTreesNotForest",
+   "value": true,
+   "comment": "an occasional tree or small grove on a plain is not enough to qualify as forest."
+  },
+  {
+   "name": "wovPlainsFoodWaterEasy",
+   "value": true,
+   "comment": "food and water are generally easy to find on a plain."
+  },
+  {
+   "name": "wovPlainsShelterMaterialScarce",
+   "value": true,
+   "comment": "the materials for an impromptu shelter are not easily come by on a plain."
+  },
+  {
+   "name": "wovPlainsSeenFromFarAway",
+   "value": true,
+   "comment": "on flat, featureless terrain, characters who can see for a long distance can in turn be seen from far away."
+  },
+  {
+   "name": "wovSeacoastNearOcean",
+   "value": true,
+   "comment": "practically any place a short distance from an ocean is seacoast terrain."
+  },
+  {
+   "name": "wovSeacoastDrivesThreeLookups",
+   "value": true,
+   "comment": "the seacoast distinction matters for weather conditions, animal availability for food and plant availability for food and medicine."
+  },
+  {
+   "name": "wovSeacoastEncounterReclass",
+   "value": true,
+   "comment": "for DMG or Monster Manual II encounter tables, a seacoast area should be treated as the other terrain type that conforms to the table classifications."
+  },
+  {
+   "name": "wovSwampStandingWater",
+   "value": true,
+   "comment": "a swamp is any place where a character feet hit standing water shortly before hitting the ground."
+  },
+  {
+   "name": "wovSwampLowElevation",
+   "value": true,
+   "comment": "swamps are always located at low elevation or on flat or slightly depressed land at the edge of a river or lake."
+  },
+  {
+   "name": "wovSwampFertileSoil",
+   "value": true,
+   "comment": "swamp soil is extremely fertile because it contains a great quantity of decomposed vegetable matter."
+  },
+  {
+   "name": "wovSwampDepthVariesFast",
+   "value": true,
+   "comment": "swamp water depth varies from practically zero to several feet, and can go from shallow to deep in a few steps."
+  },
+  {
+   "name": "wovSwampBadForMounts",
+   "value": true,
+   "comment": "a swamp is not a good place to take mounts or pack animals."
+  },
+  {
+   "name": "wovHierarchyHighestWins",
+   "value": true,
+   "comment": "an area with properties of two or more categories counts as the highest-ranking terrain category."
+  },
+  {
+   "name": "wovBeachIsSeacoast",
+   "value": true,
+   "comment": "a sandy beach bordering the ocean is seacoast, not desert."
+  },
+  {
+   "name": "wovWetTreelandIsSwamp",
+   "value": true,
+   "comment": "a low-lying area with standing water and a lot of large trees is swamp, not forest."
+  },
+  {
+   "name": "wovOceanRockBaseIsMountains",
+   "value": true,
+   "comment": "where ocean waves crash against the base of a jagged rocky slope, the area is mountains, not seacoast."
+  },
+  {
+   "name": "wovMarshValleyIsHills",
+   "value": true,
+   "comment": "a marshy area in a deep valley between two hills is hills, not swamp."
+  },
+  {
+   "name": "wovHierarchyLastResort",
+   "value": true,
+   "comment": "the ranking is used only when common sense and reasonability do not settle the classification."
+  },
+  {
+   "name": "wovWaterSourceAndChallenge",
+   "value": true,
+   "comment": "rivers and lakes provide a ready source of water and require a party to be more versatile: a body of water is both an opportunity and a challenge."
+  },
+  {
+   "name": "wovBoatTravelFasterSafer",
+   "value": true,
+   "comment": "travel on a lake or river surface is often faster, easier and safer than the surrounding terrain on foot - but only with a craft and someone skilled to handle it."
+  },
+  {
+   "name": "wovSwimCrossSavesTime",
+   "value": true,
+   "comment": "swimming across a deep wide river instead of fording can save hours or even days - but only for characters who can swim."
+  },
+  {
+   "name": "wovPrepareForWater",
+   "value": true,
+   "comment": "a party fully prepared for the wilderness carries equipment and skills for coping with bodies of water as well as for moving on land."
+  },
+  {
+   "name": "wovTemperateGreatestExtremes",
+   "value": true,
+   "comment": "the greatest extremes of weather from one season to another are found in the temperate zones."
+  },
+  {
+   "name": "wovTemperateEquidistant",
+   "value": true,
+   "comment": "the temperate zones lie roughly equidistant from the poles and the equator."
+  },
+  {
+   "name": "wovSubarcticColderDrier",
+   "value": true,
+   "comment": "the weather in subarctic regions is usually colder and drier than temperate."
+  },
+  {
+   "name": "wovArcticFrigid",
+   "value": true,
+   "comment": "the weather in the arctic zones around each pole is almost always frigid."
+  },
+  {
+   "name": "wovSubtropicalHotter",
+   "value": true,
+   "comment": "the subtropical regions have a higher average temperature than the temperate zones."
+  },
+  {
+   "name": "wovSubtropicalPrecipExtremes",
+   "value": true,
+   "comment": "subtropical regions show great extremes of precipitation in certain areas from one time of year to the other."
+  },
+  {
+   "name": "wovTropicalWarmExceptHigh",
+   "value": true,
+   "comment": "in the tropical zone on either side of the equator the temperature is almost always warm, except at high elevation."
+  },
+  {
+   "name": "wovTropicalHeavyRain",
+   "value": true,
+   "comment": "in the tropical zone, precipitation can be extremely heavy in the areas where rain does fall."
+  },
+  {
+   "name": "wovNoBlizzardInTropics",
+   "value": true,
+   "comment": "characters will not contend with a raging blizzard in the tropics or a blistering heat wave in the far north, but the weather within a region still travels a wide range."
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the chapter spans",
+   "expr": "m['wovPrintedLo']() != 7 or m['wovPrintedHi']() != 10 or m['wovPdfLo']() != 8 or m['wovPdfHi']() != 11"
+  },
+  {
+   "note": "the counts: seven terrains, five zones, seven ranks",
+   "expr": "m['wovTerrainTypeCount']() != 7 or m['wovClimateZoneCount']() != 5 or m['wovHierarchyRankCount']() != 7"
+  },
+  {
+   "note": "the desert rainfall: half the technical maximum is typical",
+   "expr": "m['wovDesertRainMaxIn']() != 10 or m['wovDesertTypicalRainIn']() != 5 or m['wovDesertTypicalRainIn']() * 2 != m['wovDesertRainMaxIn']()"
+  },
+  {
+   "note": "the dune split: 70-foot technical cap, 500-foot giants",
+   "expr": "m['wovDuneTechnicalMaxFt']() != 70 or m['wovDuneGiantFt']() != 500 or m['wovDuneGiantFt']() <= m['wovDuneTechnicalMaxFt']()"
+  },
+  {
+   "note": "the hills bands are contiguous: the upper band starts at the low band boundary",
+   "expr": "m['wovHillsUpperBandLoFt']() != m['wovHillsLowBandFt']() or m['wovHillsUpperBandHiFt']() != 4000"
+  },
+  {
+   "note": "the mountain minimum sits at the top of the upper hills band",
+   "expr": "m['wovMountainMinFt']() != m['wovHillsUpperBandHiFt']()"
+  },
+  {
+   "note": "the Earth tree line is below the snow line",
+   "expr": "m['wovEarthTreeLineFt']() != 10000 or m['wovEarthSnowLineFt']() != 12000 or m['wovEarthSnowLineFt']() <= m['wovEarthTreeLineFt']()"
+  },
+  {
+   "note": "the hierarchy ranks run 1 through 7 with seacoast highest and mountains lowest",
+   "expr": "m['wovRankSeacoast']() != 1 or m['wovRankSwamp']() != 2 or m['wovRankForest']() != 3 or m['wovRankPlains']() != 4 or m['wovRankDesert']() != 5 or m['wovRankHills']() != 6 or m['wovRankMountains']() != 7"
+  },
+  {
+   "note": "the rank ladder sums to 28 and spans six steps",
+   "expr": "m['wovRankSeacoast']() + m['wovRankSwamp']() + m['wovRankForest']() + m['wovRankPlains']() + m['wovRankDesert']() + m['wovRankHills']() + m['wovRankMountains']() != 28 or m['wovRankMountains']() - m['wovRankSeacoast']() != 6"
+  },
+  {
+   "note": "the temperate maximum tree height",
+   "expr": "m['wovTemperateTreeMaxFt']() != 160"
+  },
+  {
+   "note": "the four hills guidelines",
+   "expr": "m['wovHillsGuidelineCount']() != 4"
+  },
+  {
+   "note": "wovPolarWastesAreDesert",
+   "expr": "m['wovPolarWastesAreDesert']() != 1"
+  },
+  {
+   "note": "wovDesertGravelCommon",
+   "expr": "m['wovDesertGravelCommon']() != 1"
+  },
+  {
+   "note": "wovGravelDesertWaterRunsOff",
+   "expr": "m['wovGravelDesertWaterRunsOff']() != 1"
+  },
+  {
+   "note": "wovSandSoaksWater",
+   "expr": "m['wovSandSoaksWater']() != 1"
+  },
+  {
+   "note": "wovDuneLargerIsDraa",
+   "expr": "m['wovDuneLargerIsDraa']() != 1"
+  },
+  {
+   "note": "wovDuneWindwardGradual",
+   "expr": "m['wovDuneWindwardGradual']() != 1"
+  },
+  {
+   "note": "wovDesertBurialRisk",
+   "expr": "m['wovDesertBurialRisk']() != 1"
+  },
+  {
+   "note": "wovForestAnyClimateButPolar",
+   "expr": "m['wovForestAnyClimateButPolar']() != 1"
+  },
+  {
+   "note": "wovCactusStandIsDesert",
+   "expr": "m['wovCactusStandIsDesert']() != 1"
+  },
+  {
+   "note": "wovConifersSubarctic",
+   "expr": "m['wovConifersSubarctic']() != 1"
+  },
+  {
+   "note": "wovDeciduousTemperate",
+   "expr": "m['wovDeciduousTemperate']() != 1"
+  },
+  {
+   "note": "wovRainforestTropical",
+   "expr": "m['wovRainforestTropical']() != 1"
+  },
+  {
+   "note": "wovConiferShedsSnow",
+   "expr": "m['wovConiferShedsSnow']() != 1"
+  },
+  {
+   "note": "wovRainforestLayered",
+   "expr": "m['wovRainforestLayered']() != 1"
+  },
+  {
+   "note": "wovRainforestGreenYearRound",
+   "expr": "m['wovRainforestGreenYearRound']() != 1"
+  },
+  {
+   "note": "wovHillsTopographyNotEcology",
+   "expr": "m['wovHillsTopographyNotEcology']() != 1"
+  },
+  {
+   "note": "wovHillsDenseTreesAreForest",
+   "expr": "m['wovHillsDenseTreesAreForest']() != 1"
+  },
+  {
+   "note": "wovHillsRollingUnder2000NotHills",
+   "expr": "m['wovHillsRollingUnder2000NotHills']() != 1"
+  },
+  {
+   "note": "wovHillsSharpMoundsAreHills",
+   "expr": "m['wovHillsSharpMoundsAreHills']() != 1"
+  },
+  {
+   "note": "wovHillsUpperBandIrregular",
+   "expr": "m['wovHillsUpperBandIrregular']() != 1"
+  },
+  {
+   "note": "wovMountainDevoidOfTrees",
+   "expr": "m['wovMountainDevoidOfTrees']() != 1"
+  },
+  {
+   "note": "wovMountainLowerSlopeTreesAreForest",
+   "expr": "m['wovMountainLowerSlopeTreesAreForest']() != 1"
+  },
+  {
+   "note": "wovMountainBeginsWhereTreesEnd",
+   "expr": "m['wovMountainBeginsWhereTreesEnd']() != 1"
+  },
+  {
+   "note": "wovLowRockySlopeCanBeMountain",
+   "expr": "m['wovLowRockySlopeCanBeMountain']() != 1"
+  },
+  {
+   "note": "wovAboveSnowLineSnowIce",
+   "expr": "m['wovAboveSnowLineSnowIce']() != 1"
+  },
+  {
+   "note": "wovExposedRockWarmAir",
+   "expr": "m['wovExposedRockWarmAir']() != 1"
+  },
+  {
+   "note": "wovPlainsFlatVegetated",
+   "expr": "m['wovPlainsFlatVegetated']() != 1"
+  },
+  {
+   "note": "wovPlainsTreesNotForest",
+   "expr": "m['wovPlainsTreesNotForest']() != 1"
+  },
+  {
+   "note": "wovPlainsFoodWaterEasy",
+   "expr": "m['wovPlainsFoodWaterEasy']() != 1"
+  },
+  {
+   "note": "wovPlainsShelterMaterialScarce",
+   "expr": "m['wovPlainsShelterMaterialScarce']() != 1"
+  },
+  {
+   "note": "wovPlainsSeenFromFarAway",
+   "expr": "m['wovPlainsSeenFromFarAway']() != 1"
+  },
+  {
+   "note": "wovSeacoastNearOcean",
+   "expr": "m['wovSeacoastNearOcean']() != 1"
+  },
+  {
+   "note": "wovSeacoastDrivesThreeLookups",
+   "expr": "m['wovSeacoastDrivesThreeLookups']() != 1"
+  },
+  {
+   "note": "wovSeacoastEncounterReclass",
+   "expr": "m['wovSeacoastEncounterReclass']() != 1"
+  },
+  {
+   "note": "wovSwampStandingWater",
+   "expr": "m['wovSwampStandingWater']() != 1"
+  },
+  {
+   "note": "wovSwampLowElevation",
+   "expr": "m['wovSwampLowElevation']() != 1"
+  },
+  {
+   "note": "wovSwampFertileSoil",
+   "expr": "m['wovSwampFertileSoil']() != 1"
+  },
+  {
+   "note": "wovSwampDepthVariesFast",
+   "expr": "m['wovSwampDepthVariesFast']() != 1"
+  },
+  {
+   "note": "wovSwampBadForMounts",
+   "expr": "m['wovSwampBadForMounts']() != 1"
+  },
+  {
+   "note": "wovHierarchyHighestWins",
+   "expr": "m['wovHierarchyHighestWins']() != 1"
+  },
+  {
+   "note": "wovBeachIsSeacoast",
+   "expr": "m['wovBeachIsSeacoast']() != 1"
+  },
+  {
+   "note": "wovWetTreelandIsSwamp",
+   "expr": "m['wovWetTreelandIsSwamp']() != 1"
+  },
+  {
+   "note": "wovOceanRockBaseIsMountains",
+   "expr": "m['wovOceanRockBaseIsMountains']() != 1"
+  },
+  {
+   "note": "wovMarshValleyIsHills",
+   "expr": "m['wovMarshValleyIsHills']() != 1"
+  },
+  {
+   "note": "wovHierarchyLastResort",
+   "expr": "m['wovHierarchyLastResort']() != 1"
+  },
+  {
+   "note": "wovWaterSourceAndChallenge",
+   "expr": "m['wovWaterSourceAndChallenge']() != 1"
+  },
+  {
+   "note": "wovBoatTravelFasterSafer",
+   "expr": "m['wovBoatTravelFasterSafer']() != 1"
+  },
+  {
+   "note": "wovSwimCrossSavesTime",
+   "expr": "m['wovSwimCrossSavesTime']() != 1"
+  },
+  {
+   "note": "wovPrepareForWater",
+   "expr": "m['wovPrepareForWater']() != 1"
+  },
+  {
+   "note": "wovTemperateGreatestExtremes",
+   "expr": "m['wovTemperateGreatestExtremes']() != 1"
+  },
+  {
+   "note": "wovTemperateEquidistant",
+   "expr": "m['wovTemperateEquidistant']() != 1"
+  },
+  {
+   "note": "wovSubarcticColderDrier",
+   "expr": "m['wovSubarcticColderDrier']() != 1"
+  },
+  {
+   "note": "wovArcticFrigid",
+   "expr": "m['wovArcticFrigid']() != 1"
+  },
+  {
+   "note": "wovSubtropicalHotter",
+   "expr": "m['wovSubtropicalHotter']() != 1"
+  },
+  {
+   "note": "wovSubtropicalPrecipExtremes",
+   "expr": "m['wovSubtropicalPrecipExtremes']() != 1"
+  },
+  {
+   "note": "wovTropicalWarmExceptHigh",
+   "expr": "m['wovTropicalWarmExceptHigh']() != 1"
+  },
+  {
+   "note": "wovTropicalHeavyRain",
+   "expr": "m['wovTropicalHeavyRain']() != 1"
+  },
+  {
+   "note": "wovNoBlizzardInTropics",
+   "expr": "m['wovNoBlizzardInTropics']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the chapter opener": [
+   {
+    "kind": "const",
+    "name": "wovPrintedLo"
+   },
+   {
+    "kind": "const",
+    "name": "wovPrintedHi"
+   },
+   {
+    "kind": "const",
+    "name": "wovPdfLo"
+   },
+   {
+    "kind": "const",
+    "name": "wovPdfHi"
+   },
+   {
+    "kind": "const",
+    "name": "wovTerrainTypeCount"
+   }
+  ],
+  "the desert": [
+   {
+    "kind": "const",
+    "name": "wovDesertRainMaxIn"
+   },
+   {
+    "kind": "const",
+    "name": "wovDesertTypicalRainIn"
+   },
+   {
+    "kind": "const",
+    "name": "wovDuneTechnicalMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "wovDuneGiantFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wovPolarWastesAreDesert"
+   },
+   {
+    "kind": "bool",
+    "name": "wovDesertGravelCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "wovGravelDesertWaterRunsOff"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSandSoaksWater"
+   },
+   {
+    "kind": "bool",
+    "name": "wovDuneLargerIsDraa"
+   },
+   {
+    "kind": "bool",
+    "name": "wovDuneWindwardGradual"
+   },
+   {
+    "kind": "bool",
+    "name": "wovDesertBurialRisk"
+   }
+  ],
+  "the forest": [
+   {
+    "kind": "const",
+    "name": "wovTemperateTreeMaxFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wovForestAnyClimateButPolar"
+   },
+   {
+    "kind": "bool",
+    "name": "wovCactusStandIsDesert"
+   },
+   {
+    "kind": "bool",
+    "name": "wovConifersSubarctic"
+   },
+   {
+    "kind": "bool",
+    "name": "wovDeciduousTemperate"
+   },
+   {
+    "kind": "bool",
+    "name": "wovRainforestTropical"
+   },
+   {
+    "kind": "bool",
+    "name": "wovConiferShedsSnow"
+   },
+   {
+    "kind": "bool",
+    "name": "wovRainforestLayered"
+   },
+   {
+    "kind": "bool",
+    "name": "wovRainforestGreenYearRound"
+   }
+  ],
+  "the hills": [
+   {
+    "kind": "const",
+    "name": "wovHillsLowBandFt"
+   },
+   {
+    "kind": "const",
+    "name": "wovHillsPeaksMayExceedFt"
+   },
+   {
+    "kind": "const",
+    "name": "wovHillsUpperBandLoFt"
+   },
+   {
+    "kind": "const",
+    "name": "wovHillsUpperBandHiFt"
+   },
+   {
+    "kind": "const",
+    "name": "wovHillsGuidelineCount"
+   },
+   {
+    "kind": "bool",
+    "name": "wovHillsTopographyNotEcology"
+   },
+   {
+    "kind": "bool",
+    "name": "wovHillsDenseTreesAreForest"
+   },
+   {
+    "kind": "bool",
+    "name": "wovHillsRollingUnder2000NotHills"
+   },
+   {
+    "kind": "bool",
+    "name": "wovHillsSharpMoundsAreHills"
+   },
+   {
+    "kind": "bool",
+    "name": "wovHillsUpperBandIrregular"
+   }
+  ],
+  "the mountains": [
+   {
+    "kind": "const",
+    "name": "wovMountainMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "wovEarthTreeLineFt"
+   },
+   {
+    "kind": "const",
+    "name": "wovEarthSnowLineFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wovMountainDevoidOfTrees"
+   },
+   {
+    "kind": "bool",
+    "name": "wovMountainLowerSlopeTreesAreForest"
+   },
+   {
+    "kind": "bool",
+    "name": "wovMountainBeginsWhereTreesEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "wovLowRockySlopeCanBeMountain"
+   },
+   {
+    "kind": "bool",
+    "name": "wovAboveSnowLineSnowIce"
+   },
+   {
+    "kind": "bool",
+    "name": "wovExposedRockWarmAir"
+   }
+  ],
+  "the plains": [
+   {
+    "kind": "bool",
+    "name": "wovPlainsFlatVegetated"
+   },
+   {
+    "kind": "bool",
+    "name": "wovPlainsTreesNotForest"
+   },
+   {
+    "kind": "bool",
+    "name": "wovPlainsFoodWaterEasy"
+   },
+   {
+    "kind": "bool",
+    "name": "wovPlainsShelterMaterialScarce"
+   },
+   {
+    "kind": "bool",
+    "name": "wovPlainsSeenFromFarAway"
+   }
+  ],
+  "the seacoast": [
+   {
+    "kind": "bool",
+    "name": "wovSeacoastNearOcean"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSeacoastDrivesThreeLookups"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSeacoastEncounterReclass"
+   }
+  ],
+  "the swamp": [
+   {
+    "kind": "bool",
+    "name": "wovSwampStandingWater"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSwampLowElevation"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSwampFertileSoil"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSwampDepthVariesFast"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSwampBadForMounts"
+   }
+  ],
+  "the hierarchy of terrain": [
+   {
+    "kind": "const",
+    "name": "wovHierarchyRankCount"
+   },
+   {
+    "kind": "const",
+    "name": "wovRankSeacoast"
+   },
+   {
+    "kind": "const",
+    "name": "wovRankSwamp"
+   },
+   {
+    "kind": "const",
+    "name": "wovRankForest"
+   },
+   {
+    "kind": "const",
+    "name": "wovRankPlains"
+   },
+   {
+    "kind": "const",
+    "name": "wovRankDesert"
+   },
+   {
+    "kind": "const",
+    "name": "wovRankHills"
+   },
+   {
+    "kind": "const",
+    "name": "wovRankMountains"
+   },
+   {
+    "kind": "bool",
+    "name": "wovHierarchyHighestWins"
+   },
+   {
+    "kind": "bool",
+    "name": "wovBeachIsSeacoast"
+   },
+   {
+    "kind": "bool",
+    "name": "wovWetTreelandIsSwamp"
+   },
+   {
+    "kind": "bool",
+    "name": "wovOceanRockBaseIsMountains"
+   },
+   {
+    "kind": "bool",
+    "name": "wovMarshValleyIsHills"
+   },
+   {
+    "kind": "bool",
+    "name": "wovHierarchyLastResort"
+   }
+  ],
+  "the bodies of water": [
+   {
+    "kind": "bool",
+    "name": "wovWaterSourceAndChallenge"
+   },
+   {
+    "kind": "bool",
+    "name": "wovBoatTravelFasterSafer"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSwimCrossSavesTime"
+   },
+   {
+    "kind": "bool",
+    "name": "wovPrepareForWater"
+   }
+  ],
+  "the climate": [
+   {
+    "kind": "const",
+    "name": "wovClimateZoneCount"
+   },
+   {
+    "kind": "bool",
+    "name": "wovTemperateGreatestExtremes"
+   },
+   {
+    "kind": "bool",
+    "name": "wovTemperateEquidistant"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSubarcticColderDrier"
+   },
+   {
+    "kind": "bool",
+    "name": "wovArcticFrigid"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSubtropicalHotter"
+   },
+   {
+    "kind": "bool",
+    "name": "wovSubtropicalPrecipExtremes"
+   },
+   {
+    "kind": "bool",
+    "name": "wovTropicalWarmExceptHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "wovTropicalHeavyRain"
+   },
+   {
+    "kind": "bool",
+    "name": "wovNoBlizzardInTropics"
+   }
+  ]
+ },
+ "include_after": "#include \"rules/wsgrecon.h\"  // R496: the WSG gap reconciliation bookkeeping",
+ "include_comment": "the WSG overview chapter pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R496 LANDED 2026-10-16: commit bd58585 (census 421,",
+ "prev_record": [
+  "- R496 LANDED 2026-10-16: commit bd58585 (census 421,",
+  "  pushed 88c0739..bd58585), the WSG GAP RECONCILIATION -",
+  "  the bookkeeping round: twenty-four boxes that were",
+  "  already pinned by earlier rounds flip in one commit.",
+  "  NO new book material; pinned as rules/wsgrecon.h",
+  "  (prefix wgr, 37 inlines: 13 consts + 24 bools). Eleven",
+  "  chapter parents flip, every child closed by R427-R491",
+  "  (env effects, encumbrance/movement, food/water,",
+  "  camping, medicine, vision, hazards, combat, fatigue,",
+  "  mounts, magic). Nine manifest lines flip (Tables 20-27",
+  "  and 42, pinned R444-R490). Four movement items flip:",
+  "  surface types, surface conditions, chance of falling",
+  "  (all inside wsgclimb.h R435) and movement across",
+  "  special terrain (wsgvehicle.h/wsgencum.h R434/R432 -",
+  "  verified in-header before flipping). Gap report: 147/39",
+  "  -> 171 closed / 15 open; the fifteen are the genuinely",
+  "  un-pinned prose: the overview chapter (pp. 7-10, 11",
+  "  boxes) and the proficiencies prose (pp. 11-17, 4",
+  "  boxes). Preflight GREEN (R496 WSG gap reconciliation",
+  "  audit: bad 0), rverify GREEN (37 mutants, 0 missed,",
+  "  double-run clean). Flip-count arithmetic pinned as",
+  "  consts and examples (147+24=171, 39-24=15, 11+9+3+1=24)",
+  "  so the reconciliation is itself audited. User-side",
+  "  spec md5 433b2e56cc637bb839b7d64504047273 differed",
+  "  from both authored variants (5ba8feee... no-nl,",
+  "  962b3dda... +nl) - cosmetic, same class as R495",
+  "  (every gate parsed and validated the content",
+  "  end-to-end). Spec published as the new canvas",
+  "  r496-splice. NEXT: only two prose rounds remain for",
+  "  full WSG gap closure - the overview (pp. 7-10) and",
+  "  the proficiencies prose (pp. 11-17, includes the",
+  "  Table 1/2-adjacent nonweapon list and descriptions)."
+ ],
+ "gap_flips": [
+  {
+   "note": "the overview parent box",
+   "from": "- [ ] **Overview of the wilderness** (pp. 7-10)",
+   "to": "- [x] **Overview of the wilderness** (pp. 7-10) - R497: the whole chapter pins as rules/wsgoverview.h - the terrain types, the hierarchy ranking, the bodies of water and the climate zones"
+  },
+  {
+   "note": "desert",
+   "from": "  - [ ] Terrain: desert (p. 7)",
+   "to": "  - [x] Terrain: desert (p. 7) - R497: the under-10-inches rainfall definition, the dune/draa technical split at 70 feet and the polar-wastes-are-desert rule pin as rules/wsgoverview.h"
+  },
+  {
+   "note": "forest",
+   "from": "  - [ ] Terrain: forest (p. 7)",
+   "to": "  - [x] Terrain: forest (p. 7) - R497: the any-climate-but-polar rule, the cactus-stand exception, the taiga and the 160-foot temperate maximum pin as rules/wsgoverview.h"
+  },
+  {
+   "note": "hills",
+   "from": "  - [ ] Terrain: hills (p. 8)",
+   "to": "  - [x] Terrain: hills (p. 8) - R497: the four classification guidelines with the 2,000/4,000-foot bands pin as rules/wsgoverview.h"
+  },
+  {
+   "note": "mountains",
+   "from": "  - [ ] Terrain: mountains (p. 8)",
+   "to": "  - [x] Terrain: mountains (p. 8) - R497: the 4,000-foot minimum, the begins-where-trees-end rule, the Earth tree line (10,000) and snow line (12,000) pin as rules/wsgoverview.h"
+  },
+  {
+   "note": "plains",
+   "from": "  - [ ] Terrain: plains (p. 9)",
+   "to": "  - [x] Terrain: plains (p. 9) - R497: the flat-vegetated definition, the not-enough-trees rule, the easy food and water, the scarce shelter material and the seen-from-far-away warning pin as rules/wsgoverview.h"
+  },
+  {
+   "note": "seacoast",
+   "from": "  - [ ] Terrain: seacoast (p. 9)",
+   "to": "  - [x] Terrain: seacoast (p. 9) - R497: the near-ocean definition and the encounter-table reclassification rule pin as rules/wsgoverview.h"
+  },
+  {
+   "note": "swamp",
+   "from": "  - [ ] Terrain: swamp (p. 9)",
+   "to": "  - [x] Terrain: swamp (p. 9) - R497: the standing-water definition, the low-elevation rule, the fertile soil and the mounts warning pin as rules/wsgoverview.h"
+  },
+  {
+   "note": "hierarchy of terrain",
+   "from": "  - [ ] Hierarchy of terrain (p. 9)",
+   "to": "  - [x] Hierarchy of terrain (p. 9) - R497: the 1-through-7 ranking (seacoast highest, mountains lowest) with the highest-wins rule and the two common-sense exceptions pin as rules/wsgoverview.h"
+  },
+  {
+   "note": "bodies of water",
+   "from": "  - [ ] Bodies of water (p. 9)",
+   "to": "  - [x] Bodies of water (p. 9) - R497: the water-source-and-challenge frame, the boat and swim travel rules and the preparation advice pin as rules/wsgoverview.h"
+  },
+  {
+   "note": "climate",
+   "from": "  - [ ] Climate (p. 10)",
+   "to": "  - [x] Climate (p. 10) - R497: the five climate zones (arctic, subarctic, temperate, subtropical, tropical) with their characterizations pin as rules/wsgoverview.h"
+  }
+ ],
+ "gap_census": {
+  "closed": 182,
+  "open": 4
+ }
+}
+
+
