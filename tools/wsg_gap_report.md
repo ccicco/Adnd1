@@ -147,8 +147,8 @@ Conventions as the UA report: [x] verified against the book text (with the round
 
 ## The DM section, the appendix, the compiled tables
 
-- [ ] **Dungeon Master section** (pp. 103-106)
-  - [ ] Starting from scratch (pp. 103-106)
+- [x] **Dungeon Master section** (pp. 103-106) - R492: the full DM section pins as rules/wsgdm.h
+  - [x] Starting from scratch (pp. 103-106) - R492: the realism-vs-fantasy and ten-step world map rules with the political guidelines, clustering scale-down and winging-it rules pin as rules/wsgdm.h
 - [ ] **Appendix: the world of weather** (pp. 107-119)
   - [ ] The weather system (generation, the tables)
   - [ ] The weather effects on play

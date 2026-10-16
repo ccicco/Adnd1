@@ -5733,6 +5733,97 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   96-103), the last WSG chapter: spells, magic items
   and magic under wilderness conditions; extraction
   pass needed (8 pdf pages)
+- R491 LANDED 2026-10-16: commit 4e07d5d (census 416,
+  pushed 86a2308..4e07d5d), the WSG MAGIC IN THE
+  WILDERNESS chapter slice, printed pp. 95-101 - CLOSING
+  the chapter. Pinned as rules/wsgmagic.h with the
+  include after wsgmount.h at line 196 (prefix wmg - free
+  on the first probe), 241 inlines: 90 consts + 150
+  bools + the wmgWebThickBand chain in twelve sections -
+  the opener, spells A-B, spells C, spells D-F, spells
+  G-L, spells M-S, spells T-W, potions, protection
+  scrolls, rings, rods/staves/wands, miscellaneous
+  magic. The spells: affect normal fires, air walk, airy
+  water, alarm, animal summoning, animate object/rock,
+  armor (10 degrees), augury, barkskin (half abrasion),
+  bee, bind (100 ft of half-inch rope), bluelight
+  (2x safe speed), bug (+10%), call lightning (always
+  hits, at least half damage), call woodland beings,
+  commune (1 fact/level), cone of cold (6 Con max, 1 per
+  turn for 1 hour), control temperature, control
+  weather (30-40 degrees, druidic 2 steps), control
+  winds, cough/giggle/distract, create food & water,
+  create water, cure blindness, cure disease, darkness
+  (half safe rate), detect snares & pits, dig, dispel
+  exhaustion, dry, earthquake (1 mile fault line, 50%,
+  1d6 turns), fear, feign death (half exposure), find
+  familiar, find traps, firewater (1 pint), flame
+  strike (10 ft diameter), forcecage (5%/level, 20-ft
+  fall), fumble (-20% or +4), gather, haste (-10%,
+  +2), heal, heat metal (chill 7 rounds = 1 hour),
+  hold person, insect plague, irritation, item, jump
+  (50% on smooth), knot (1d4 min 1), locate animals/
+  plants, lower water, massmorph, mending,
+  misdirection, PFNM (hail/sandstorm immunity, still
+  limited visibility, no lightning, lava not radiant
+  heat), rainbow (cantrip chain: 1/round bow, half
+  weight bridge, 6-in elevator, 6th-level draughts),
+  resist cold/fire, run (1-turn exhaustion, endurance
+  exception, runners exempt), shield (2/3 damage), sink
+  (4 segments + 4 turns), snare (100% / 50%), stone
+  tell, stoneskin (no abrasion, tumble dispels, hail
+  one sequence), summon insects (40 degrees = half
+  duration), symbol (Wisdom/Constitution Check every
+  turn), transmute rock to mud, trip, water walk (2
+  man-sized encumbered), weather summoning, web
+  (5 ft thickness per 10 ft fall, 10-20-40-60 ladder,
+  60 ft max, slope multipliers 2x severe / 4x moderate
+  / 8x gentle, abrasion not impact), wraithform (no
+  fall damage, cannot cast while falling - smoke
+  component). Items: gaseous form (3-30 gale, death
+  hurricane), invulnerability (40 ft fall / 80 ft
+  tumble, halved beyond), vitality (7 days); scroll
+  cold (+40 degrees or tolerable, whichever higher),
+  fire mirror, gas (1-in no-wind radius); rings fire
+  resistance, free action, protection (plus per die,
+  min 1), sustenance (-5, once per 6 turns, natural 20
+  still fails), warmth; rod of lordly might (20-ft
+  pole Dex Check when severely encumbered, works out
+  of charges), staff of swarming insects (40 degrees =
+  30+5/level vs 60+10); apparatus of Kwalish, arrow of
+  direction, cloak, cube of force (face 5), Daern's
+  fortress (windproof, not climate-controlled),
+  gauntlets of dexterity/fumbling (+/-10% climbing),
+  mantle of Celestian (comfort, precipitation, no
+  impact/wind protection), periapt (abrasion only),
+  rope of climbing (Grappling Success Table 100%/50%),
+  shoes of Fharlanghn (100% gentle/moderate, 80%
+  severe/cliff), stone of good luck (+5% climbing,
+  -1 die). THE SETTLE: two reads agree everywhere
+  except insect plague (tesseract low-confidence 3
+  and 12, conf 51/8, lose to the text layer's 9-in
+  1.5-in cleric cloud - the 3/4-area math settles it)
+  and the web examples (both reads dropped the 0 into
+  1-in and 2-in webs; the doubled-40 and quadrupled-
+  160 arithmetic proves the 10-ft and 20-ft thick
+  webs). Printed p. 102 is ornament-only - the
+  chapter ends at printed 101, and the gap-flip plan
+  (six boxes) held. The chain lesson: the web
+  thickness band (5/10/20 limits, tail 3) and every
+  const feed the audit mirror; 243 mutants, 0
+  missed. rverify double-run GREEN at 86a2308,
+  idempotent at 4e07d5d (applied 0, already 10);
+  preflight GREEN (census 416, R491 line 57839).
+  md5 pair: authored canvas body 8fd2ae890f71b4a9711
+  c60698fd0c3c, as-built Termux-saved bytes a5c9afd4
+  0cce5e88132bcae2d9206df6 = authored + one trailing
+  newline from the editor (same JSON before it; the
+  splice and rverify both parsed the as-built file
+  clean). Gap census 135/51 -> 141/45. Next: R492 -
+  the WSG DM section, printed pp. 103-106 (pdf pages
+  104-107), then the world-of-weather appendix (pp.
+  107-119) and the compiled tables (pp. 120-126);
+  extraction pass needed (4 pdf pages).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
