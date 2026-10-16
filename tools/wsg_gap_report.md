@@ -149,9 +149,9 @@ Conventions as the UA report: [x] verified against the book text (with the round
 
 - [x] **Dungeon Master section** (pp. 103-106) - R492: the full DM section pins as rules/wsgdm.h
   - [x] Starting from scratch (pp. 103-106) - R492: the realism-vs-fantasy and ten-step world map rules with the political guidelines, clustering scale-down and winging-it rules pin as rules/wsgdm.h
-- [ ] **Appendix: the world of weather** (pp. 107-119)
+- [x] **Appendix: the world of weather** (pp. 107-119) - R494: both children closed - the R493 generation system (rules/wsgweather.h) and the R494 special weather, effects and optional rules (rules/wsgweathx.h)
   - [x] The weather system (generation, the tables) - R493: the Table A1 temperature-variation grid with the letter-code scale, Table A2 day-to-day change, Table A3 precipitation variation and the generation prose pin as rules/wsgweather.h (part 1 of 2 - the special weather and optional rules ride with R494)
-  - [ ] The weather effects on play
+  - [x] The weather effects on play - R494: the Table A4 special-weather grid with the Roll 1 / Roll 2 cross-index, the per-code definitions (the no-special days, cold wave, cyclone, drought, gale, mist/fog, sandstorm, tornado, the extreme-precipitation dispatch with hail, ice, lightning and severe snow, heat wave) and the optional rules A5-A8 with twilight, local winds, tides and the DM responsibility pin as rules/wsgweathx.h
 - [ ] **Compiled tables** (pp. 120-126)
 
 ## The tables (the book own Tables index - the manifest)

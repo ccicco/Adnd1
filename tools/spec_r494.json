@@ -1,0 +1,4188 @@
+{
+ "round": 494,
+ "title": "the WSG World of Weather appendix, part 2 - special weather, the effects on play and the optional rules",
+ "prefix": "wwy",
+ "header_file": "rules/wsgweathx.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 418,
+ "inline_count": 340,
+ "audit_label": "R494 WSG weather effects audit",
+ "audit_comment": "The Appendix: The World of Weather, part 2 of 2 - the special weather system and the effects on play, printed pp. 112-119. Table A4 with the Roll 1 / Roll 2 cross-index (the 2-or-12 carry-over, the fresh 2d6, the five bands and the 1st-2nd-3rd-4th letter selection, the running-episode suppression), the 33-row x 4-season special weather grid (one packed four-letter code per cell: cold wave, cyclone, drought, gale, mist/fog, sandstorm, tornado, extreme precipitation, heat wave). The per-code definitions: the no-special 2 and 12 days (the 45 mph very strong wind with the sharp drop, the 5 mph very slight wind with the sharp rise, the B-column precipitation), the cold wave and its heat wave mirror (2d6+2 days, 4 steps per day, the floor and ceiling one step beyond the normal extreme, the 10-degree beyond-extreme cap for 3 days, the automatic recovery with the 7-or-higher bonus rise), the cyclone (the 1d6x20+60 mph wind, the seacoast lightning herald, the 10-mile inland reach and 50-mile perimeter, the away-from-equator and coast-following movement, the double downpour, the 3-mile tidal wave, the 6-hour eye with its half-hour-to-hour dead calm, the second-half rainstorm, the 10-mph eye wind, the 3-day no-change-table window with the two-day 2d6 drift, the once-per-month 200-mile frequency cap with the extreme-precipitation fallback, the 5-degree equator exclusion), the drought (2d6+2 days, the day-1 shutoff, the once-per-5-days trace, the heavy-to-light-to-trace-to-none ladder), the gale (1d6x5+40 mph for 1d6+1 hours, the never-below-30 rule, the previous-20 boost, the desert and snow severe-sandstorm readings), the mist/fog (the sunrise/sunset 1-4/5-6 split, the 1d6 hours, the seacoast heavy reading, the suspended precipitation, the 50-percent adjacent spread), the sandstorm (the loose-material requirement, the no-precipitation day, the 1d4+1 and severe 1d6+1 durations), the tornado (the suitable-conditions and two-steps-above gates, the 1d3-hour front, the abrupt stop, the half-mile calm, the 3d6-minute delay, the 15-degrees-or-3-steps drop over 30 minutes, the quarter-by-15-mile path at 40 mph, the 200-300 mph vortex, the low-pressure explosion), the extreme precipitation dispatch (7 temperature bands x 2 climatic columns x the 1d6 sub-roll, the 25-degree ice footnote) and its four payloads: the hailstorm (the first-10-minutes-of-lightning rule, the 1-on-1d6 standalone, the 1d6+4 minutes, the quarter-inch stones to 2-3 inches, the 40-degree melt), the ice storm (the half-to-three-quarter-inch coating, the 20-minute heavy and 2-hour trace formation), the lightning storm (25 minutes, three-quarters-to-1 inch of rain, the dawn/dusk window, the disregarded standalone under moderate or light, the downpour start) and the severe snowstorm (the 1d6+4 and 1d6+6 inch falls at 1 inch per hour, the 1-2-hour calm then the 15-20 mph wind). The optional rules: the Table A5 humidity variation grid with the letter codes and their percentage bands, the day 1 / day 2 adjustment with the before and after slash pairs, the three-level fluctuation range with the dry and saturated edges and the two-level DM drop, the Table A6 humidity and effective temperature grid (25 rows x 5 wind columns, applied at 60 degrees and above), the Table A7 wind chill grid (17 x 8) with the below-minus-45 extrapolation and the 40-mph wind column cap, the Table A8 hours of daylight grid (15 latitude rows x 12 months, stored in half-hours) with the simplified middle-row option and the midnight/noon midpoint convention, the twilight spans (30 minutes at 30-40 degrees, 20 at the equator, 40 at 50-60, the 5-10-minute terrain cut, the all-day twilight where the daylight reads zero), the local winds (the sea breeze by day and the land breeze by night, the 5-10-mile inland reach, the clear-sky favor, the coastal chill, the cliff-face trap), the tides (the twice-daily alternation, the 12-hour highs and 6-hour lows, the 25-hour lunar day with the hour-a-day advance, the 28-day cycle, the spring and neap windows, the 5-7 and 15-18 foot ranges, the Fundy 60, the gentle/moderate/severe slope encroachment multiples with both worked examples) and the Dungeon Master responsibility (the 2-3-day determinations, the free timeframe switching, the multi-day predetermination).",
+ "banner": {
+  "title": "The WSG WORLD OF WEATHER, R494: the appendix part 2 - special weather, the effects on play and the optional rules, printed pp. 112-119 (pdf pages 113-120): Table A4 (the special weather grid) with the Roll 1 / Roll 2 cross-index, the per-code definitions from cold wave through heat wave, the extreme-precipitation dispatch, the humidity rules (Tables A5 and A6), wind chill (A7), the hours of daylight (A8), twilight, local winds, tides and the Dungeon Master responsibility. This closes the appendix: both the weather-effects child and the parent appendix box flip, and only the compiled tables (pp. 120-126) remain in the WSG arc.",
+  "provenance": "WSG printed pp. 112-119, pdf pages 113-120, extracted two-way at r493-extraction sha 5525680 (pdftotext layout + tesseract tsv, p0113-p0120) plus the psm-6 / psm-4 / psm-11 third reads of pdf page 113 at 52dd5fc; settled three-way with two external corroborators - the s0py python port (its season rotation verified via the A5 humidity cross-check) and the pdfy djvu read for the grid. Base ceaff98, census 418 -> 419.",
+  "sentinel": "THE SETTLE: Table A4 is the psm-6 read win - default tesseract, pdftotext and the djvu reads all garble the grid, and the 400-dpi psm-6 pass decodes it letter-for-letter with the TSV confidences checked per cell; the port agrees cell-for-cell on 28 of 33 rows and the djvu corroborates the arctic, temperate and subtropical interior blocks. Cyclone is confirmed on the coasts: the temperate seacoast spring/summer cells read CXMZ in three independent sources against the port uniform AXMZ, and the same coastal warm-season pattern carries the subtropical seacoast and swamp spring/summer cells and the tropical seacoast summer cell (flagged - that C is a low-confidence read). The swamp rows are psm-6 only (the port has no swamp biome and the djvu drops them), and the tropical swamp winter cell is the single inferred cell of the grid (the ANz D glyph read, decoded by the all-Z fourth-letter pattern of the tropical winter column). The A5 humidity grid rides the same 33-row model as A4 (the printed arctic-all-terrains line expanded to its five terrain rows); the transcription wins the two subarctic cells where the port rotation disagrees, the A3 precedent. A6 and A7 are transcription-port exact; A8 is 15 latitude rows (the earlier 16-row note was a miscount), cross-checked against the pdf layout read; the prose pages read clean throughout."
+ },
+ "consts": [
+  {
+   "name": "wwyA4Roll1Two",
+   "value": 2,
+   "comment": "how to use the Special Weather Table: consider the earlier roll on the Day-to-Day Change Table (either a 2 or a 12) as Roll 1."
+  },
+  {
+   "name": "wwyA4Roll1Twelve",
+   "value": 12,
+   "comment": "the other Roll 1 trigger."
+  },
+  {
+   "name": "wwyRoll2Bands",
+   "value": 5,
+   "comment": "then roll 2d6 again, referring to the result as Roll 2, read across five bands: 2-4, 5-6, 7, 8-9, 10-12."
+  },
+  {
+   "name": "wwyRoll2Rows",
+   "value": 2,
+   "comment": "the Roll 2 index grid: one row for Roll 1 = 2 and one for Roll 1 = 12, five bands each."
+  },
+  {
+   "name": "wwyLetterPosNone",
+   "value": 0,
+   "comment": "the notations 1st, 2nd, 3rd, 4th refer to a single letter of the four-letter code; 0 marks that no letter is selected (no special weather possible from this position)."
+  },
+  {
+   "name": "wwyLetterPos1st",
+   "value": 1,
+   "comment": "the first letter of the cell code."
+  },
+  {
+   "name": "wwyLetterPos2nd",
+   "value": 2,
+   "comment": "the second letter of the cell code."
+  },
+  {
+   "name": "wwyLetterPos3rd",
+   "value": 3,
+   "comment": "the third letter of the cell code."
+  },
+  {
+   "name": "wwyLetterPos4th",
+   "value": 4,
+   "comment": "the fourth letter of the cell code."
+  },
+  {
+   "name": "wwyA4Count",
+   "value": 33,
+   "comment": "the Table A4 grid: 5 climatic regions; the arctic block carries desert/hills/mountains/plains/seacoast (no forest, no swamp), every other climate all seven terrains - 33 rows x 4 seasons."
+  },
+  {
+   "name": "wwyA4PackBase",
+   "value": 10,
+   "comment": "each cell of the grid is a four-letter code packed one letter per decimal digit: A=1, C=2, D=3, G=4, M=5, S=6, T=7, X=8, Z=9; the k-th letter of the code is (code / 10 to the 4-k) mod 10."
+  },
+  {
+   "name": "wwyCodeColdWave",
+   "value": 1,
+   "comment": "the letter A: cold wave."
+  },
+  {
+   "name": "wwyCodeCyclone",
+   "value": 2,
+   "comment": "the letter C: cyclone, hurricane or typhoon."
+  },
+  {
+   "name": "wwyCodeDrought",
+   "value": 3,
+   "comment": "the letter D: drought."
+  },
+  {
+   "name": "wwyCodeGale",
+   "value": 4,
+   "comment": "the letter G: gale."
+  },
+  {
+   "name": "wwyCodeMistFog",
+   "value": 5,
+   "comment": "the letter M: mist or fog."
+  },
+  {
+   "name": "wwyCodeSandstorm",
+   "value": 6,
+   "comment": "the letter S: sandstorm, dust storm or blowing snow."
+  },
+  {
+   "name": "wwyCodeTornado",
+   "value": 7,
+   "comment": "the letter T: tornado."
+  },
+  {
+   "name": "wwyCodeExtremePrecip",
+   "value": 8,
+   "comment": "the letter X: extreme precipitation."
+  },
+  {
+   "name": "wwyCodeHeatWave",
+   "value": 9,
+   "comment": "the letter Z: heat wave."
+  },
+  {
+   "name": "wwyNoSpecRoll2WindMph",
+   "value": 45,
+   "comment": "a roll of 2 when no special weather occurs: a very strong wind, 45 mph."
+  },
+  {
+   "name": "wwyNoSpecRoll12WindMph",
+   "value": 5,
+   "comment": "a roll of 12 when no special weather occurs: a very slight wind, 5 mph."
+  },
+  {
+   "name": "wwyColdWaveDice",
+   "value": 2,
+   "comment": "a cold wave lasts 2d6+2 days."
+  },
+  {
+   "name": "wwyColdWaveDiePlus",
+   "value": 2,
+   "comment": "the +2 on the 2d6 duration roll."
+  },
+  {
+   "name": "wwyColdWaveStepsPerDay",
+   "value": 4,
+   "comment": "through the wave the temperature drops 4 letter-scale steps per day."
+  },
+  {
+   "name": "wwyColdWaveAMinDropF",
+   "value": 10,
+   "comment": "if the A-minimum temperature is reached, the temperature continues to drop to as much as 10 degrees below the normal minimum."
+  },
+  {
+   "name": "wwyColdWaveAMinDays",
+   "value": 3,
+   "comment": "the below-normal-minimum extreme can persist for a maximum of 3 days."
+  },
+  {
+   "name": "wwyColdWaveRecoveryRollLo",
+   "value": 7,
+   "comment": "when the wave ends the temperature automatically rises to the normal minimum; a roll of 7 or higher on 2d6 raises it 1-3 steps more, any lower roll just reaches the minimum."
+  },
+  {
+   "name": "wwyHeatWaveDice",
+   "value": 2,
+   "comment": "a heat wave is the mirror of a cold wave and lasts 2d6+2 days."
+  },
+  {
+   "name": "wwyHeatWaveDiePlus",
+   "value": 2,
+   "comment": "the +2 on the 2d6 duration roll."
+  },
+  {
+   "name": "wwyHeatWaveStepsPerDay",
+   "value": 4,
+   "comment": "through the wave the temperature rises 4 letter-scale steps per day."
+  },
+  {
+   "name": "wwyHeatWaveZMaxRiseF",
+   "value": 10,
+   "comment": "if the Z-maximum temperature is reached, the temperature continues to rise to as much as 10 degrees above the normal maximum."
+  },
+  {
+   "name": "wwyHeatWaveZMaxDays",
+   "value": 3,
+   "comment": "the above-normal-maximum extreme can persist for a maximum of 3 days."
+  },
+  {
+   "name": "wwyHeatWaveRecoveryRollLo",
+   "value": 7,
+   "comment": "when the wave ends the temperature automatically falls to the normal maximum; a roll of 7 or higher on 2d6 falls 1-3 steps more, any lower roll just reaches the maximum."
+  },
+  {
+   "name": "wwyCycloneWindDice",
+   "value": 1,
+   "comment": "the cyclone wind velocity: 1d6 x 20 + 60 mph."
+  },
+  {
+   "name": "wwyCycloneWindMult",
+   "value": 20,
+   "comment": "the per-die 20 mph."
+  },
+  {
+   "name": "wwyCycloneWindBase",
+   "value": 60,
+   "comment": "the +60 mph base."
+  },
+  {
+   "name": "wwyCycloneWindMinMph",
+   "value": 80,
+   "comment": "the cyclone wind floor: 80 mph."
+  },
+  {
+   "name": "wwyCycloneWindMaxMph",
+   "value": 180,
+   "comment": "the cyclone wind ceiling: 180 mph."
+  },
+  {
+   "name": "wwyCycloneInlandMaxMi",
+   "value": 10,
+   "comment": "a cyclone affects an area at most 10 miles inland; further inland only the perimeter conditions apply."
+  },
+  {
+   "name": "wwyCyclonePerimeterMi",
+   "value": 50,
+   "comment": "the gale-and-heavy-rain perimeter around the storm center extends about 50 miles."
+  },
+  {
+   "name": "wwyCycloneFollowsCoastDaysLo",
+   "value": 1,
+   "comment": "a cyclone at sea follows the coastline for 1-2 days before heading back out to sea."
+  },
+  {
+   "name": "wwyCycloneFollowsCoastDaysHi",
+   "value": 2,
+   "comment": "the high bound of the follow."
+  },
+  {
+   "name": "wwyCycloneTidalWaveMi",
+   "value": 3,
+   "comment": "where a cyclone strikes the coast it can generate a tidal wave (a wall of water 30-100 feet high) that encroaches up to 3 miles inland."
+  },
+  {
+   "name": "wwyCycloneEyeHours",
+   "value": 6,
+   "comment": "the eye of the cyclone lasts about 6 hours."
+  },
+  {
+   "name": "wwyCycloneEyeCalmMinLo",
+   "value": 30,
+   "comment": "the first half hour to hour of the eye is virtually rainless and windless (dead calm)."
+  },
+  {
+   "name": "wwyCycloneEyeCalmMinHi",
+   "value": 60,
+   "comment": "the high bound of the dead-calm window."
+  },
+  {
+   "name": "wwyCycloneEyeWindMaxMph",
+   "value": 10,
+   "comment": "winds through the eye stay at 10 mph or below."
+  },
+  {
+   "name": "wwyCycloneNoChangeDays",
+   "value": 3,
+   "comment": "for 3 days after a cyclone the Day-to-Day Change Table is not used; the weather is dominated by the storm system."
+  },
+  {
+   "name": "wwyCycloneRadiusMi",
+   "value": 200,
+   "comment": "the frequency cap radius: an area within 200 miles of a cyclone path can be struck by at most one cyclone per month."
+  },
+  {
+   "name": "wwyCycloneEquatorExclDeg",
+   "value": 5,
+   "comment": "cyclones do not occur within 5 degrees of the equator."
+  },
+  {
+   "name": "wwyDroughtDice",
+   "value": 2,
+   "comment": "a drought lasts 2d6+2 days."
+  },
+  {
+   "name": "wwyDroughtDiePlus",
+   "value": 2,
+   "comment": "the +2 on the 2d6 duration roll."
+  },
+  {
+   "name": "wwyDroughtTraceGapDays",
+   "value": 5,
+   "comment": "through a drought at most a trace of precipitation can fall, and at most once every 5 days."
+  },
+  {
+   "name": "wwyGaleDieSides",
+   "value": 6,
+   "comment": "the gale wind velocity: 1d6 x 5 + 40 mph."
+  },
+  {
+   "name": "wwyGaleMultMph",
+   "value": 5,
+   "comment": "the per-die 5 mph."
+  },
+  {
+   "name": "wwyGaleBaseMph",
+   "value": 40,
+   "comment": "the +40 mph base."
+  },
+  {
+   "name": "wwyGaleMinMph",
+   "value": 45,
+   "comment": "the gale wind floor: 45 mph."
+  },
+  {
+   "name": "wwyGaleMaxMph",
+   "value": 70,
+   "comment": "the gale wind ceiling: 70 mph."
+  },
+  {
+   "name": "wwyGaleDurDiePlus",
+   "value": 1,
+   "comment": "a gale lasts 1d6+1 hours."
+  },
+  {
+   "name": "wwyGaleDurMinHrs",
+   "value": 2,
+   "comment": "the gale duration floor: 2 hours."
+  },
+  {
+   "name": "wwyGaleDurMaxHrs",
+   "value": 7,
+   "comment": "the gale duration ceiling: 7 hours."
+  },
+  {
+   "name": "wwyMistSunriseRollMax",
+   "value": 4,
+   "comment": "mist or fog forms at sunrise on a roll of 1-4 on 1d6, at sunset on a roll of 5-6."
+  },
+  {
+   "name": "wwyMistHoursDie",
+   "value": 6,
+   "comment": "the mist or fog lasts 1d6 hours."
+  },
+  {
+   "name": "wwySandstormDieSides",
+   "value": 4,
+   "comment": "a normal sandstorm lasts 1d4+1 hours."
+  },
+  {
+   "name": "wwySandstormDiePlus",
+   "value": 1,
+   "comment": "the +1 on the 1d4 duration roll."
+  },
+  {
+   "name": "wwySandstormMinHrs",
+   "value": 2,
+   "comment": "the normal sandstorm duration floor: 2 hours."
+  },
+  {
+   "name": "wwySandstormMaxHrs",
+   "value": 5,
+   "comment": "the normal sandstorm duration ceiling: 5 hours."
+  },
+  {
+   "name": "wwySandstormSevDieSides",
+   "value": 6,
+   "comment": "a severe sandstorm (gale-driven) lasts 1d6+1 hours."
+  },
+  {
+   "name": "wwySandstormSevDiePlus",
+   "value": 1,
+   "comment": "the +1 on the 1d6 duration roll."
+  },
+  {
+   "name": "wwySandstormSevMinHrs",
+   "value": 2,
+   "comment": "the severe sandstorm duration floor: 2 hours."
+  },
+  {
+   "name": "wwySandstormSevMaxHrs",
+   "value": 7,
+   "comment": "the severe sandstorm duration ceiling: 7 hours."
+  },
+  {
+   "name": "wwyTornadoPrecipDieSides",
+   "value": 3,
+   "comment": "the tornado is preceded by 1d3 hours of strong wind and heavy precipitation."
+  },
+  {
+   "name": "wwyTornadoCalmDice",
+   "value": 3,
+   "comment": "after the rain stops, 3d6 minutes pass before the tornado arrives."
+  },
+  {
+   "name": "wwyTornadoCalmDieSides",
+   "value": 6,
+   "comment": "the d6 of the 3d6 calm delay."
+  },
+  {
+   "name": "wwyTornadoDropDegreesF",
+   "value": 15,
+   "comment": "during the tornado the temperature drops 15 degrees Fahrenheit or 3 letter-scale steps, whichever is the greater."
+  },
+  {
+   "name": "wwyTornadoDropSteps",
+   "value": 3,
+   "comment": "the step-alternative of the temperature drop (the greater of the two applies)."
+  },
+  {
+   "name": "wwyTornadoDropMinutes",
+   "value": 30,
+   "comment": "the temperature drop takes place over 30 minutes and holds for the following half hour."
+  },
+  {
+   "name": "wwyTornadoPathWidthQMi",
+   "value": 1,
+   "comment": "the tornado path averages one-quarter mile in width."
+  },
+  {
+   "name": "wwyTornadoPathLengthMi",
+   "value": 15,
+   "comment": "the tornado path averages 15 miles long."
+  },
+  {
+   "name": "wwyTornadoTravelMph",
+   "value": 40,
+   "comment": "the tornado travels along its path at about 40 mph."
+  },
+  {
+   "name": "wwyTornadoVortexMinMph",
+   "value": 200,
+   "comment": "the winds inside the vortex are 200-300 mph."
+  },
+  {
+   "name": "wwyTornadoVortexMaxMph",
+   "value": 300,
+   "comment": "the vortex wind ceiling."
+  },
+  {
+   "name": "wwyXDisBands",
+   "value": 7,
+   "comment": "the extreme-precipitation dispatch: 7 temperature bands x 2 climatic columns x the 1d6 sub-roll."
+  },
+  {
+   "name": "wwyXSubNone",
+   "value": 0,
+   "comment": "a dispatch result of none: no precipitation beyond the ordinary."
+  },
+  {
+   "name": "wwyXSubHail",
+   "value": 1,
+   "comment": "the dispatch letter H: hailstorm."
+  },
+  {
+   "name": "wwyXSubIceSleet",
+   "value": 2,
+   "comment": "the dispatch letter I: ice storm or sleet."
+  },
+  {
+   "name": "wwyXSubLightning",
+   "value": 3,
+   "comment": "the dispatch letter L: lightning storm."
+  },
+  {
+   "name": "wwyXSubSevereSnow",
+   "value": 4,
+   "comment": "the dispatch letter S: severe snowstorm."
+  },
+  {
+   "name": "wwyXDisIceMinTempF",
+   "value": 25,
+   "comment": "in the 10-29 degree band, ice or sleet results only if the temperature is 25 degrees or higher; below that the sub-roll indicates no precipitation."
+  },
+  {
+   "name": "wwyXDisBand0HiF",
+   "value": -1,
+   "comment": "the dispatch temperature band 0: -1 degree or lower."
+  },
+  {
+   "name": "wwyXDisBand1LoF",
+   "value": 0,
+   "comment": "band 1: 0 degrees."
+  },
+  {
+   "name": "wwyXDisBand1HiF",
+   "value": 9,
+   "comment": "band 1: through 9 degrees."
+  },
+  {
+   "name": "wwyXDisBand2LoF",
+   "value": 10,
+   "comment": "band 2: 10 degrees."
+  },
+  {
+   "name": "wwyXDisBand2HiF",
+   "value": 29,
+   "comment": "band 2: through 29 degrees."
+  },
+  {
+   "name": "wwyXDisBand3LoF",
+   "value": 30,
+   "comment": "band 3: 30 degrees."
+  },
+  {
+   "name": "wwyXDisBand3HiF",
+   "value": 35,
+   "comment": "band 3: through 35 degrees."
+  },
+  {
+   "name": "wwyXDisBand4LoF",
+   "value": 36,
+   "comment": "band 4: 36 degrees."
+  },
+  {
+   "name": "wwyXDisBand4HiF",
+   "value": 49,
+   "comment": "band 4: through 49 degrees."
+  },
+  {
+   "name": "wwyXDisBand5LoF",
+   "value": 50,
+   "comment": "band 5: 50 degrees."
+  },
+  {
+   "name": "wwyXDisBand5HiF",
+   "value": 74,
+   "comment": "band 5: through 74 degrees."
+  },
+  {
+   "name": "wwyXDisBand6LoF",
+   "value": 75,
+   "comment": "band 6: 75 degrees and above."
+  },
+  {
+   "name": "wwyHailLightningFirstMin",
+   "value": 10,
+   "comment": "hail falls during the first 10 minutes of a lightning storm when the dispatch indicates hail."
+  },
+  {
+   "name": "wwyHailStandaloneD6",
+   "value": 1,
+   "comment": "a standalone hailstorm (unconnected to a lightning storm) occurs on a roll of 1 on 1d6 during an extreme-precipitation determination."
+  },
+  {
+   "name": "wwyHailDieSides",
+   "value": 6,
+   "comment": "a hailstorm lasts 1d6+4 minutes."
+  },
+  {
+   "name": "wwyHailDiePlus",
+   "value": 4,
+   "comment": "the +4 on the 1d6 duration roll."
+  },
+  {
+   "name": "wwyHailMinMin",
+   "value": 5,
+   "comment": "the hailstorm duration floor: 5 minutes."
+  },
+  {
+   "name": "wwyHailMaxMin",
+   "value": 10,
+   "comment": "the hailstorm duration ceiling: 10 minutes."
+  },
+  {
+   "name": "wwyHailTypicalQtrIn",
+   "value": 1,
+   "comment": "hailstones are typically one-quarter inch in diameter."
+  },
+  {
+   "name": "wwyHailMaxLoIn",
+   "value": 2,
+   "comment": "hailstones can grow to 2-3 inches in diameter."
+  },
+  {
+   "name": "wwyHailMaxHiIn",
+   "value": 3,
+   "comment": "the hailstone size ceiling."
+  },
+  {
+   "name": "wwyHailMeltMinF",
+   "value": 40,
+   "comment": "hail melts when the temperature is 40 degrees or above."
+  },
+  {
+   "name": "wwyIceCoatLoEighthIn",
+   "value": 4,
+   "comment": "an ice storm coats the ground and surfaces with one-half to three-quarters of an inch of ice (pinned in eighths: 4 to 6)."
+  },
+  {
+   "name": "wwyIceCoatHiEighthIn",
+   "value": 6,
+   "comment": "the high bound of the ice coating, in eighths."
+  },
+  {
+   "name": "wwyIceFromHeavyMin",
+   "value": 20,
+   "comment": "a full coating forms after 20 minutes of heavy icing conditions."
+  },
+  {
+   "name": "wwyIceTraceMaxHrs",
+   "value": 2,
+   "comment": "under trace icing the coating can take as long as 2 hours to form."
+  },
+  {
+   "name": "wwyLightningDurationMin",
+   "value": 25,
+   "comment": "a lightning storm lasts about 25 minutes."
+  },
+  {
+   "name": "wwyLightningRainLoEighthIn",
+   "value": 6,
+   "comment": "the lightning storm drops three-quarters to 1 inch of rain (pinned in eighths: 6 to 8)."
+  },
+  {
+   "name": "wwyLightningRainHiIn",
+   "value": 1,
+   "comment": "the high bound of the lightning-storm rainfall, in inches."
+  },
+  {
+   "name": "wwyLightningTwilightHrs",
+   "value": 2,
+   "comment": "half of all lightning storms occur within two hours of sunrise or sunset."
+  },
+  {
+   "name": "wwySevereSnowModDieSides",
+   "value": 6,
+   "comment": "a severe snowstorm on a day of moderate-maximum precipitation drops 1d6+4 inches of snow."
+  },
+  {
+   "name": "wwySevereSnowModDiePlus",
+   "value": 4,
+   "comment": "the +4 on the 1d6 snowfall roll."
+  },
+  {
+   "name": "wwySevereSnowModInLo",
+   "value": 5,
+   "comment": "the moderate-max snowfall floor: 5 inches."
+  },
+  {
+   "name": "wwySevereSnowModInHi",
+   "value": 10,
+   "comment": "the moderate-max snowfall ceiling: 10 inches."
+  },
+  {
+   "name": "wwySevereSnowHeavyDieSides",
+   "value": 6,
+   "comment": "on a heavy-maximum day the severe snowstorm drops 1d6+6 inches."
+  },
+  {
+   "name": "wwySevereSnowHeavyDiePlus",
+   "value": 6,
+   "comment": "the +6 on the 1d6 snowfall roll."
+  },
+  {
+   "name": "wwySevereSnowHeavyInLo",
+   "value": 7,
+   "comment": "the heavy-max snowfall floor: 7 inches."
+  },
+  {
+   "name": "wwySevereSnowHeavyInHi",
+   "value": 12,
+   "comment": "the heavy-max snowfall ceiling: 12 inches."
+  },
+  {
+   "name": "wwySevereSnowRateInPerHr",
+   "value": 1,
+   "comment": "the snow of a severe snowstorm falls at about 1 inch per hour."
+  },
+  {
+   "name": "wwySevereSnowWindLoMph",
+   "value": 15,
+   "comment": "after 1-2 hours the wind picks up to very strong: 15-20 mph."
+  },
+  {
+   "name": "wwySevereSnowWindHiMph",
+   "value": 20,
+   "comment": "the wind ceiling of the follow-on blow."
+  },
+  {
+   "name": "wwySevereSnowWindHrsLo",
+   "value": 1,
+   "comment": "the wind picks up after 1-2 hours of snowfall."
+  },
+  {
+   "name": "wwySevereSnowWindHrsHi",
+   "value": 2,
+   "comment": "the high bound of the calm window."
+  },
+  {
+   "name": "wwyA5Count",
+   "value": 33,
+   "comment": "the Table A5 humidity grid: the same 33-row climate/terrain model as Table A4, x 4 seasons; the arctic block (all five terrains) is uniformly low."
+  },
+  {
+   "name": "wwyHumLevelLow",
+   "value": 1,
+   "comment": "the humidity letter codes: L (low) = 1."
+  },
+  {
+   "name": "wwyHumLevelMed",
+   "value": 2,
+   "comment": "M (medium) = 2."
+  },
+  {
+   "name": "wwyHumLevelHigh",
+   "value": 3,
+   "comment": "H (high) = 3."
+  },
+  {
+   "name": "wwyHumDryMaxPct",
+   "value": 20,
+   "comment": "below low is dry: 0-20 percent relative humidity."
+  },
+  {
+   "name": "wwyHumLowLoPct",
+   "value": 21,
+   "comment": "low: 21-40 percent."
+  },
+  {
+   "name": "wwyHumLowHiPct",
+   "value": 40,
+   "comment": "the low band ceiling."
+  },
+  {
+   "name": "wwyHumMedLoPct",
+   "value": 41,
+   "comment": "medium: 41-70 percent."
+  },
+  {
+   "name": "wwyHumMedHiPct",
+   "value": 70,
+   "comment": "the medium band ceiling."
+  },
+  {
+   "name": "wwyHumHiLoPct",
+   "value": 71,
+   "comment": "high: 71-90 percent."
+  },
+  {
+   "name": "wwyHumHiHiPct",
+   "value": 90,
+   "comment": "the high band ceiling."
+  },
+  {
+   "name": "wwyHumSatLoPct",
+   "value": 91,
+   "comment": "above high is saturated: 91-100 percent."
+  },
+  {
+   "name": "wwyHumSatHiPct",
+   "value": 100,
+   "comment": "the saturated band ceiling."
+  },
+  {
+   "name": "wwyHumAdjRows",
+   "value": 3,
+   "comment": "the day 1 / day 2 humidity adjustment: 3 x 3, the day 1 precipitation (none / light or trace / medium or more) against the day 2."
+  },
+  {
+   "name": "wwyA6Count",
+   "value": 25,
+   "comment": "the Table A6 humidity / effective temperature grid: 5 temperature bands x 5 humidity levels x 5 wind columns, 25 rows."
+  },
+  {
+   "name": "wwyEffTempApplyMinF",
+   "value": 60,
+   "comment": "the humidity adjustment to effective temperature applies when the actual temperature is 60 degrees or above."
+  },
+  {
+   "name": "wwyA6Band1LoF",
+   "value": 60,
+   "comment": "the A6 temperature band 1: 60-64 degrees."
+  },
+  {
+   "name": "wwyA6Band1HiF",
+   "value": 64,
+   "comment": "the band 1 ceiling."
+  },
+  {
+   "name": "wwyA6Band2LoF",
+   "value": 65,
+   "comment": "the A6 temperature band 2: 65-74 degrees."
+  },
+  {
+   "name": "wwyA6Band2HiF",
+   "value": 74,
+   "comment": "the band 2 ceiling."
+  },
+  {
+   "name": "wwyA6Band3LoF",
+   "value": 75,
+   "comment": "the A6 temperature band 3: 75-84 degrees."
+  },
+  {
+   "name": "wwyA6Band3HiF",
+   "value": 84,
+   "comment": "the band 3 ceiling."
+  },
+  {
+   "name": "wwyA6Band4LoF",
+   "value": 85,
+   "comment": "the A6 temperature band 4: 85-94 degrees."
+  },
+  {
+   "name": "wwyA6Band4HiF",
+   "value": 94,
+   "comment": "the band 4 ceiling."
+  },
+  {
+   "name": "wwyA6Band5LoF",
+   "value": 95,
+   "comment": "the A6 temperature band 5: 95 degrees and above."
+  },
+  {
+   "name": "wwyWindCol0HiMph",
+   "value": 10,
+   "comment": "the A6 wind columns: 0-10 mph, 11-20, 21-30, 31-45, and 45+ (the high bound of the first column)."
+  },
+  {
+   "name": "wwyWindCol1LoMph",
+   "value": 11,
+   "comment": "the second wind column low bound."
+  },
+  {
+   "name": "wwyWindCol1HiMph",
+   "value": 20,
+   "comment": "the second wind column high bound."
+  },
+  {
+   "name": "wwyWindCol2LoMph",
+   "value": 21,
+   "comment": "the third wind column low bound."
+  },
+  {
+   "name": "wwyWindCol2HiMph",
+   "value": 30,
+   "comment": "the third wind column high bound."
+  },
+  {
+   "name": "wwyWindCol3LoMph",
+   "value": 31,
+   "comment": "the fourth wind column low bound."
+  },
+  {
+   "name": "wwyWindCol3HiMph",
+   "value": 45,
+   "comment": "the fourth wind column high bound."
+  },
+  {
+   "name": "wwyWindCol4LoMph",
+   "value": 45,
+   "comment": "the fifth wind column: 45 mph and above."
+  },
+  {
+   "name": "wwyA7Count",
+   "value": 17,
+   "comment": "the Table A7 wind chill grid: 17 temperature rows x 8 wind columns."
+  },
+  {
+   "name": "wwyChillMaxTempF",
+   "value": 35,
+   "comment": "the wind chill table runs from an actual temperature of 35 degrees."
+  },
+  {
+   "name": "wwyChillMinTempF",
+   "value": -45,
+   "comment": "the wind chill table runs down to an actual temperature of -45 degrees."
+  },
+  {
+   "name": "wwyChillStepF",
+   "value": 5,
+   "comment": "the temperature rows step by 5 degrees from 35 down to -45."
+  },
+  {
+   "name": "wwyChillWindCol0Mph",
+   "value": 5,
+   "comment": "the wind columns run from 5 mph."
+  },
+  {
+   "name": "wwyChillWindColStepMph",
+   "value": 5,
+   "comment": "the wind columns step by 5 mph to 40 mph."
+  },
+  {
+   "name": "wwyA8Count",
+   "value": 15,
+   "comment": "the Table A8 hours of daylight grid: 15 latitude rows x 12 months."
+  },
+  {
+   "name": "wwyA8Months",
+   "value": 12,
+   "comment": "one column per month, 12 months to the year."
+  },
+  {
+   "name": "wwyA8HalfHourUnits",
+   "value": 2,
+   "comment": "the daylight hours are stored in half-hour units to keep the grid integral (24 hours = 48)."
+  },
+  {
+   "name": "wwyA8Lat0",
+   "value": 90,
+   "comment": "the A8 latitude ladder, row 0: 90 degrees (the pole); rows 1-2 are 80 and 70 (the arctic block)."
+  },
+  {
+   "name": "wwyA8Lat3",
+   "value": 65,
+   "comment": "row 3: 65 degrees; rows 4-5 are 60 and 55 (the subarctic block)."
+  },
+  {
+   "name": "wwyA8Lat6",
+   "value": 50,
+   "comment": "row 6: 50 degrees; rows 7-8 are 40 and 35 (the temperate block)."
+  },
+  {
+   "name": "wwyA8Lat9",
+   "value": 30,
+   "comment": "row 9: 30 degrees; rows 10-11 are 25 and 20 (the subtropical block)."
+  },
+  {
+   "name": "wwyA8Lat12",
+   "value": 15,
+   "comment": "row 12: 15 degrees; rows 13-14 are 10 and 0 (the tropical block)."
+  },
+  {
+   "name": "wwyA8Lat14",
+   "value": 0,
+   "comment": "row 14: the equator, 12 hours of daylight every day of the year."
+  },
+  {
+   "name": "wwyTwilightMidLatMin",
+   "value": 30,
+   "comment": "each of the two daily twilight periods lasts about 30 minutes at the middle latitudes."
+  },
+  {
+   "name": "wwyTwilightMidLatLoDeg",
+   "value": 30,
+   "comment": "the middle-latitude band: 30-40 degrees."
+  },
+  {
+   "name": "wwyTwilightMidLatHiDeg",
+   "value": 40,
+   "comment": "the middle-latitude band ceiling."
+  },
+  {
+   "name": "wwyTwilightEquatorMin",
+   "value": 20,
+   "comment": "twilight decreases to a minimum of 20 minutes at the equator."
+  },
+  {
+   "name": "wwyTwilightHighLatMin",
+   "value": 40,
+   "comment": "twilight increases to 40 minutes at relatively high latitudes."
+  },
+  {
+   "name": "wwyTwilightHighLatLoDeg",
+   "value": 50,
+   "comment": "the high-latitude band: 50-60 degrees."
+  },
+  {
+   "name": "wwyTwilightHighLatHiDeg",
+   "value": 60,
+   "comment": "the high-latitude band ceiling."
+  },
+  {
+   "name": "wwyTwilightTerrainMinLo",
+   "value": 5,
+   "comment": "local terrain can cut twilight to 5-10 minutes (a dense forest, the shaded side of a mountain)."
+  },
+  {
+   "name": "wwyTwilightTerrainMinHi",
+   "value": 10,
+   "comment": "the terrain-cut twilight ceiling."
+  },
+  {
+   "name": "wwySeaBreezeInlandMinMi",
+   "value": 5,
+   "comment": "a sea breeze reaches 5-10 miles inland."
+  },
+  {
+   "name": "wwySeaBreezeInlandMaxMi",
+   "value": 10,
+   "comment": "the sea-breeze inland reach ceiling."
+  },
+  {
+   "name": "wwyTideHoursBetweenHighs",
+   "value": 12,
+   "comment": "there are two high tides and two low tides daily, alternating; about 12 hours pass between one high tide and the next."
+  },
+  {
+   "name": "wwyTideLowAfterHighHrs",
+   "value": 6,
+   "comment": "low tide comes about 6 hours after high tide."
+  },
+  {
+   "name": "wwyLunarDayRoughHrs",
+   "value": 25,
+   "comment": "the lunar day runs about 25 hours, so the whole tidal cycle advances about an hour later each day."
+  },
+  {
+   "name": "wwyTideAdvanceMinPerDay",
+   "value": 60,
+   "comment": "the daily tidal advance, pinned in minutes."
+  },
+  {
+   "name": "wwyTideCycleDays",
+   "value": 28,
+   "comment": "the full tidal cycle repeats with the 28-day lunar cycle."
+  },
+  {
+   "name": "wwySpringWindowDays",
+   "value": 7,
+   "comment": "spring tides occur in roughly 7-day windows around the full and new moon; the rest of the cycle is neap tides."
+  },
+  {
+   "name": "wwyNeapRangeFtLo",
+   "value": 5,
+   "comment": "an average neap tide runs 5-7 feet from high to low."
+  },
+  {
+   "name": "wwyNeapRangeFtHi",
+   "value": 7,
+   "comment": "the neap range ceiling."
+  },
+  {
+   "name": "wwySpringRangeFtLo",
+   "value": 15,
+   "comment": "an average spring tide runs 15-18 feet from high to low."
+  },
+  {
+   "name": "wwySpringRangeFtHi",
+   "value": 18,
+   "comment": "the spring range ceiling."
+  },
+  {
+   "name": "wwyFundyMaxFt",
+   "value": 60,
+   "comment": "extreme coastal configurations can multiply the range (the Bay of Fundy reaches 60 feet)."
+  },
+  {
+   "name": "wwyGentleSlopeMaxDeg",
+   "value": 30,
+   "comment": "tidal encroachment on a gently sloped shore (30 degrees or less): the water encroaches 4-5 times the tide height."
+  },
+  {
+   "name": "wwyGentleEncroachLoX",
+   "value": 4,
+   "comment": "the gentle-slope encroachment low multiple."
+  },
+  {
+   "name": "wwyGentleEncroachHiX",
+   "value": 5,
+   "comment": "the gentle-slope encroachment high multiple."
+  },
+  {
+   "name": "wwyModerateSlopeLoDeg",
+   "value": 31,
+   "comment": "a moderately sloped shore runs 31-50 degrees."
+  },
+  {
+   "name": "wwyModerateSlopeHiDeg",
+   "value": 50,
+   "comment": "the moderate-slope ceiling."
+  },
+  {
+   "name": "wwyModerateEncroachLoX",
+   "value": 2,
+   "comment": "the moderate-slope encroachment: 2-3 times the tide height."
+  },
+  {
+   "name": "wwyModerateEncroachHiX",
+   "value": 3,
+   "comment": "the moderate-slope high multiple."
+  },
+  {
+   "name": "wwySevereSlopeLoDeg",
+   "value": 51,
+   "comment": "a severely sloped shore runs 51-70 degrees."
+  },
+  {
+   "name": "wwySevereSlopeHiDeg",
+   "value": 70,
+   "comment": "the severe-slope ceiling."
+  },
+  {
+   "name": "wwySevereEncroachLoX",
+   "value": 1,
+   "comment": "the severe-slope encroachment: 1-2 times the tide height."
+  },
+  {
+   "name": "wwySevereEncroachHiX",
+   "value": 2,
+   "comment": "the severe-slope high multiple."
+  },
+  {
+   "name": "wwyTideExampleGentleFt",
+   "value": 15,
+   "comment": "the worked gentle-slope example: a 15-foot spring high tide."
+  },
+  {
+   "name": "wwyTideExampleGentleEncroachLoFt",
+   "value": 60,
+   "comment": "the example encroaches 60-75 feet (4 x 15 to 5 x 15)."
+  },
+  {
+   "name": "wwyTideExampleGentleEncroachHiFt",
+   "value": 75,
+   "comment": "the example ceiling."
+  },
+  {
+   "name": "wwyTideExampleModerateFt",
+   "value": 5,
+   "comment": "the worked moderate-slope example: a 5-foot tide."
+  },
+  {
+   "name": "wwyTideExampleModerateEncroachLoFt",
+   "value": 10,
+   "comment": "the example encroaches 10-15 feet (2 x 5 to 3 x 5)."
+  },
+  {
+   "name": "wwyTideExampleModerateEncroachHiFt",
+   "value": 15,
+   "comment": "the example ceiling."
+  }
+ ],
+ "bools": [
+  {
+   "name": "wwyRunningEpisodeNoSpecial",
+   "value": true,
+   "comment": "if any special weather episode is already in progress, a roll of 2 or 12 on the Day-to-Day Change Table indicates no special weather for that day."
+  },
+  {
+   "name": "wwyNoSpecRoll2SharpDrop",
+   "value": true,
+   "comment": "the no-special 2: the temperature takes a sharp drop."
+  },
+  {
+   "name": "wwyNoSpecRoll2PrecipB",
+   "value": true,
+   "comment": "the no-special 2: precipitation is possible, as given on the Precipitation Variation Table for a roll of doubles (the B column)."
+  },
+  {
+   "name": "wwyNoSpecRoll2WindSource50",
+   "value": true,
+   "comment": "the no-special 2: the wind comes from the arctic or from the prevailing direction, 50 percent either way."
+  },
+  {
+   "name": "wwyNoSpecRoll12SharpRise",
+   "value": true,
+   "comment": "the no-special 12: the temperature takes a sharp rise."
+  },
+  {
+   "name": "wwyNoSpecRoll12PrecipB",
+   "value": true,
+   "comment": "the no-special 12: precipitation is possible, as given on the Precipitation Variation Table for a roll of doubles (the B column)."
+  },
+  {
+   "name": "wwyColdWaveFloorBelowMin",
+   "value": true,
+   "comment": "the daily drop stops one step below the normal minimum temperature for the date (the wave floor)."
+  },
+  {
+   "name": "wwyColdWaveRecoveryAutoRise",
+   "value": true,
+   "comment": "the recovery from a cold wave is automatic: the temperature rises to the normal minimum with no roll."
+  },
+  {
+   "name": "wwyHeatWaveCeilingAboveMax",
+   "value": true,
+   "comment": "the daily rise stops one step above the normal maximum temperature for the date (the wave ceiling)."
+  },
+  {
+   "name": "wwyHeatWaveRecoveryAutoFall",
+   "value": true,
+   "comment": "the recovery from a heat wave is automatic: the temperature falls to the normal maximum with no roll."
+  },
+  {
+   "name": "wwyCycloneSeacoastLightningDayBefore",
+   "value": true,
+   "comment": "at a seacoast, a cyclone is heralded a day in advance by a lightning storm."
+  },
+  {
+   "name": "wwyCycloneMovesAwayFromEquator",
+   "value": true,
+   "comment": "a cyclone moves away from the equator (toward the nearest pole)."
+  },
+  {
+   "name": "wwyCycloneFollowsCoast",
+   "value": true,
+   "comment": "at sea a cyclone follows the coastline rather than striking inland directly."
+  },
+  {
+   "name": "wwyCycloneRainDoubleDownpour",
+   "value": true,
+   "comment": "within the cyclone the rain is at least twice that of a downpour."
+  },
+  {
+   "name": "wwyCycloneEyeSecondHalfRainstorm",
+   "value": true,
+   "comment": "the second half of the eye brings a heavy rainstorm for its 6 hours."
+  },
+  {
+   "name": "wwyCycloneMaxOncePerMonth",
+   "value": true,
+   "comment": "an area can be struck by at most one cyclone in a given month."
+  },
+  {
+   "name": "wwyCycloneSecondBecomesExtreme",
+   "value": true,
+   "comment": "a second cyclone indicated within the 200-mile radius in the same month indicates extreme precipitation instead."
+  },
+  {
+   "name": "wwyCycloneNotNearEquator",
+   "value": true,
+   "comment": "cyclones are not generated within 5 degrees of the equator."
+  },
+  {
+   "name": "wwyDroughtDay1NoPrecip",
+   "value": true,
+   "comment": "no precipitation falls on the first day of a drought."
+  },
+  {
+   "name": "wwyDroughtLightToTrace",
+   "value": true,
+   "comment": "precipitation indicated at light or moderate maximum falls as at most a trace during a drought."
+  },
+  {
+   "name": "wwyDroughtHeavyLadder",
+   "value": true,
+   "comment": "heavy-maximum precipitation steps down each day of the drought: heavy to light, moderate to trace, light to none."
+  },
+  {
+   "name": "wwyGaleNeverBelow30",
+   "value": true,
+   "comment": "wind velocity during a gale never drops below 30 mph and is mostly 50 mph or greater."
+  },
+  {
+   "name": "wwyGalePrev20Boost",
+   "value": true,
+   "comment": "if the previous day wind was 20 mph or greater, the gale reads 50-70 mph."
+  },
+  {
+   "name": "wwyGaleDesertSandstorm",
+   "value": true,
+   "comment": "in a desert a gale produces no precipitation and whips up a severe sandstorm instead."
+  },
+  {
+   "name": "wwyGaleSnowSevereSandstorm",
+   "value": true,
+   "comment": "in an arctic or subarctic climate (or anywhere with snow on the ground) a gale whips the snow into a severe blizzard, the blowing-snow analogue of a severe sandstorm."
+  },
+  {
+   "name": "wwyMistHeavyNearWater",
+   "value": true,
+   "comment": "in a seacoast area or an area adjacent to a large body of water the fog is heavy; elsewhere it is moderate."
+  },
+  {
+   "name": "wwyMistSuspendsPrecip",
+   "value": true,
+   "comment": "precipitation is suspended while the mist or fog lasts."
+  },
+  {
+   "name": "wwyMistAdjacent50",
+   "value": true,
+   "comment": "there is a 50 percent chance of mist or fog the day before and the day after in an area adjacent to the fog."
+  },
+  {
+   "name": "wwySandstormNeedsLooseMaterial",
+   "value": true,
+   "comment": "a sandstorm requires an area of loose soil, sand or snow (fine dirt also qualifies)."
+  },
+  {
+   "name": "wwySandstormNoPrecipThatDay",
+   "value": true,
+   "comment": "no precipitation falls on the day of a sandstorm."
+  },
+  {
+   "name": "wwyTornadoConditionsSuitable",
+   "value": true,
+   "comment": "a tornado occurs only when conditions are suitable: only in areas where tornados are known to occur, and only during special weather determinations."
+  },
+  {
+   "name": "wwyTornadoTempTwoStepsAbove",
+   "value": true,
+   "comment": "a tornado requires the temperature to be at least 2 steps above normal for the day."
+  },
+  {
+   "name": "wwyTornadoRainStopsAbruptly",
+   "value": true,
+   "comment": "the heavy rain of the tornado front stops abruptly as the tornado approaches."
+  },
+  {
+   "name": "wwyTornadoCalmNearPath",
+   "value": true,
+   "comment": "within one-half mile of the tornado path the air is calm."
+  },
+  {
+   "name": "wwyTornadoDropGreater",
+   "value": true,
+   "comment": "the 15-degree or 3-step temperature drop takes the greater of the two measures."
+  },
+  {
+   "name": "wwyTornadoCalmRestOfDay",
+   "value": true,
+   "comment": "after the tornado passes the calm lasts the rest of the day."
+  },
+  {
+   "name": "wwyTornadoLowPressureExplosion",
+   "value": true,
+   "comment": "the extremely low air pressure inside the vortex can cause sealed structures to explode."
+  },
+  {
+   "name": "wwyExtremePrecipSubroll",
+   "value": true,
+   "comment": "when the code letter X is selected, cross-index the temperature with the climatic column and roll 1d6 on the dispatch table to determine the type of extreme precipitation."
+  },
+  {
+   "name": "wwyXDisIceNeeds25F",
+   "value": true,
+   "comment": "in the 10-29 band the ice/sleet result of the dispatch carries the 25-degree minimum-temperature requirement."
+  },
+  {
+   "name": "wwyLightningHalfAtTwilight",
+   "value": true,
+   "comment": "lightning storms favor the dawn and dusk windows: about half fall within two hours either side of sunrise or sunset."
+  },
+  {
+   "name": "wwyLightningStandaloneDisregarded",
+   "value": true,
+   "comment": "a lightning result on the dispatch under moderate or light precipitation maximums is disregarded (it rides the stronger storm types)."
+  },
+  {
+   "name": "wwyLightningAtDownpourStart",
+   "value": true,
+   "comment": "in a downpour the lightning storm occurs at the start of the precipitation."
+  },
+  {
+   "name": "wwySevereSnowWindAfter",
+   "value": true,
+   "comment": "a severe snowstorm starts calm and turns windy: after 1-2 hours of snow the wind rises to very strong, 15-20 mph."
+  },
+  {
+   "name": "wwyHumFluctuatesOneLevel",
+   "value": true,
+   "comment": "humidity fluctuates one level to either side of the Table A5 level as weather changes (a three-level range)."
+  },
+  {
+   "name": "wwyHumLowEdgeDry",
+   "value": true,
+   "comment": "a fluctuation below low reads dry (0-20 percent)."
+  },
+  {
+   "name": "wwyHumHighEdgeSaturated",
+   "value": true,
+   "comment": "a fluctuation above high reads saturated (91-100 percent)."
+  },
+  {
+   "name": "wwyHumDMTwoLevelDrop",
+   "value": true,
+   "comment": "the Dungeon Master may allow a two-level drop in exceptional conditions (a cold front after a rainstorm)."
+  },
+  {
+   "name": "wwyChillExtrapBelow",
+   "value": true,
+   "comment": "for temperatures lower than -45, extrapolate downward following the pattern of the decrease from -40 to -45."
+  },
+  {
+   "name": "wwyChillExtrapAbove40Mph",
+   "value": true,
+   "comment": "for wind speeds greater than 40 mph, use the 40-mph column; greater wind speeds have little if any additional chilling effect."
+  },
+  {
+   "name": "wwyA8SimplifiedRowsOnly",
+   "value": true,
+   "comment": "the shorter simplified version uses only the middle row of each climatic block: the 80 line for arctic, 60 for subarctic, 40 for temperate, 25 for subtropical, 10 for tropical - no latitude bookkeeping, only the climatic region."
+  },
+  {
+   "name": "wwyA8MidnightNightMidpoint",
+   "value": true,
+   "comment": "the table gives lengths, not clock times: sunrise and sunset are derived with midnight as the midpoint of the nighttime period and noon as the midpoint of the daytime period, or stipulated by the Dungeon Master."
+  },
+  {
+   "name": "wwyTwilightAllDayWhereNoDaylight",
+   "value": true,
+   "comment": "where the daylight table reads zero, the day is not black: the period is one of twilight, not true darkness (the arctic winter)."
+  },
+  {
+   "name": "wwySeaBreezeDayWaterToLand",
+   "value": true,
+   "comment": "during the day the land heats faster than the water: a sea breeze blows from the water toward the land."
+  },
+  {
+   "name": "wwyLandBreezeNight",
+   "value": true,
+   "comment": "at night the land cools faster: a land breeze blows from the land toward the water."
+  },
+  {
+   "name": "wwySeaBreezeStronger",
+   "value": true,
+   "comment": "the daytime sea breeze is stronger than the nighttime land breeze."
+  },
+  {
+   "name": "wwyClearSkiesFavorBreezes",
+   "value": true,
+   "comment": "clear skies favor both breezes (maximum heating and cooling differential); cloud cover reduces them."
+  },
+  {
+   "name": "wwySeaBreezeCanChillCoast",
+   "value": true,
+   "comment": "a sea breeze can lower the coastal temperature by as much as 20 degrees on a hot day (the Lake Michigan breeze)."
+  },
+  {
+   "name": "wwyCliffFacesTrapSwirlCalm",
+   "value": true,
+   "comment": "in the lee of a cliff face the wind swirls, is trapped, or dies to a calm - local terrain dominates over the regional wind."
+  },
+  {
+   "name": "wwyTidesTwiceDailyAlternating",
+   "value": true,
+   "comment": "the two daily tides alternate high and low, in equal numbers of high and low waters."
+  },
+  {
+   "name": "wwySpringTidesAroundFullNew",
+   "value": true,
+   "comment": "spring tides (the stronger tides) fall in the windows around the full and the new moon; neap tides fill the rest of the cycle."
+  },
+  {
+   "name": "wwyDMDetermine2to3Days",
+   "value": true,
+   "comment": "the Dungeon Master determines the weather 2-3 days in advance of the play session, keeping the determination hidden until it comes into play."
+  },
+  {
+   "name": "wwyDMSwitchTimeframesFreely",
+   "value": true,
+   "comment": "the DM switches freely between determining weather one day at a time, several days at once, or whole weeks - whatever the pace of play demands."
+  },
+  {
+   "name": "wwyDMPredetermineMultiDay",
+   "value": true,
+   "comment": "for multi-day outings (long journeys, expeditions) the DM predetermines the weather for the entire span before play begins."
+  }
+ ],
+ "chains": [
+  {
+   "name": "wwyCycloneDriftFor",
+   "limits": [
+    6,
+    7
+   ],
+   "tail": 2,
+   "arg": "roll",
+   "comment": "the two-day drift after a cyclone: each day roll 2d6 - 6 or less drops the temperature 1 step (band 0), 7 holds it (band 1), 8 or higher raises it 1 step (band 2)."
+  }
+ ],
+ "tables": [
+  {
+   "tag": "R2",
+   "name": "wwyRoll2Index",
+   "count": "wwyRoll2Rows",
+   "cols": [
+    "wwtR2B24",
+    "wwtR2B56",
+    "wwtR2B7",
+    "wwtR2B89",
+    "wwtR2B1012"
+   ],
+   "col_comments": [
+    "the selected letter for the Roll 2 band 2-4 (row 0: Roll 1 = 2 picks the 1st letter; row 1: Roll 1 = 12 picks none)",
+    "the selected letter for the Roll 2 band 5-6 (row 0: Roll 1 = 2 picks the 2nd letter; row 1: Roll 1 = 12 picks none)",
+    "the selected letter for the Roll 2 band 7 (row 0: Roll 1 = 2 picks the 2nd letter; row 1: Roll 1 = 12 picks the 3rd)",
+    "the selected letter for the Roll 2 band 8-9 (row 0: Roll 1 = 2 picks none; row 1: Roll 1 = 12 picks the 3rd)",
+    "the selected letter for the Roll 2 band 10-12 (row 0: Roll 1 = 2 picks none; row 1: Roll 1 = 12 picks the 4th)"
+   ],
+   "data": [
+    [
+     1,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     3,
+     3,
+     4
+    ]
+   ],
+   "sentinel": -1,
+   "audit_comment": "the Roll 2 cross-index rows: Roll 1 = 2 and Roll 1 = 12"
+  },
+  {
+   "tag": "A4",
+   "name": "wwyA4Special",
+   "count": "wwyA4Count",
+   "cols": [
+    "wwtA4Wi",
+    "wwtA4Sp",
+    "wwtA4Su",
+    "wwtA4Au"
+   ],
+   "col_comments": [
+    "the four-letter code for Winter (the packed digits, one letter per digit: A=1 cold wave, C=2 cyclone, D=3 drought, G=4 gale, M=5 mist/fog, S=6 sandstorm, T=7 tornado, X=8 extreme precipitation, Z=9 heat wave)",
+    "the four-letter code for Spring",
+    "the four-letter code for Summer",
+    "the four-letter code for Autumn"
+   ],
+   "data": [
+    [
+     4133,
+     4133,
+     4133,
+     4133
+    ],
+    [
+     4133,
+     4135,
+     4159,
+     4135
+    ],
+    [
+     4133,
+     4135,
+     4159,
+     4135
+    ],
+    [
+     4133,
+     1435,
+     8139,
+     4139
+    ],
+    [
+     4133,
+     1459,
+     4159,
+     4159
+    ],
+    [
+     4133,
+     4133,
+     1633,
+     4133
+    ],
+    [
+     4139,
+     1839,
+     8193,
+     1853
+    ],
+    [
+     4153,
+     1439,
+     1893,
+     4153
+    ],
+    [
+     4135,
+     1859,
+     1893,
+     4153
+    ],
+    [
+     4153,
+     1839,
+     9193,
+     4139
+    ],
+    [
+     4159,
+     4159,
+     8195,
+     1459
+    ],
+    [
+     1859,
+     1859,
+     8195,
+     1859
+    ],
+    [
+     1639,
+     4639,
+     4639,
+     6439
+    ],
+    [
+     1859,
+     4859,
+     4859,
+     1859
+    ],
+    [
+     1859,
+     1897,
+     1839,
+     1839
+    ],
+    [
+     1853,
+     1859,
+     1839,
+     8139
+    ],
+    [
+     1439,
+     1879,
+     8439,
+     8139
+    ],
+    [
+     1859,
+     2859,
+     2859,
+     1859
+    ],
+    [
+     1859,
+     4859,
+     4859,
+     1859
+    ],
+    [
+     1639,
+     4639,
+     4639,
+     4639
+    ],
+    [
+     8159,
+     8495,
+     8895,
+     1859
+    ],
+    [
+     1839,
+     1837,
+     8439,
+     1895
+    ],
+    [
+     1839,
+     1895,
+     8493,
+     8195
+    ],
+    [
+     1839,
+     8479,
+     8439,
+     4139
+    ],
+    [
+     1839,
+     2859,
+     2859,
+     1839
+    ],
+    [
+     1839,
+     2859,
+     2859,
+     1839
+    ],
+    [
+     1639,
+     4639,
+     4639,
+     4639
+    ],
+    [
+     8859,
+     8895,
+     8895,
+     8859
+    ],
+    [
+     1439,
+     4839,
+     4839,
+     4493
+    ],
+    [
+     1859,
+     1859,
+     8495,
+     1459
+    ],
+    [
+     4839,
+     4839,
+     6893,
+     4893
+    ],
+    [
+     8139,
+     1859,
+     2859,
+     8195
+    ],
+    [
+     1859,
+     4859,
+     8459,
+     8159
+    ]
+   ],
+   "sentinel": -1,
+   "audit_comment": "the Table A4 grid: 33 climate/terrain rows x the four seasonal codes, each cell a packed four-letter code (arctic rows 0-4, subarctic 5-11, temperate 12-18, subtropical 19-25, tropical 26-32; desert, forest, hills, mountains, plains, seacoast, swamp within each block)"
+  },
+  {
+   "tag": "XD",
+   "name": "wwyXDispatch",
+   "count": "wwyXDisBands",
+   "cols": [
+    "wwtXDisTr1",
+    "wwtXDisTr2",
+    "wwtXDisTr3",
+    "wwtXDisTr4",
+    "wwtXDisTr5",
+    "wwtXDisTr6",
+    "wwtXDisTa1",
+    "wwtXDisTa2",
+    "wwtXDisTa3",
+    "wwtXDisTa4",
+    "wwtXDisTa5",
+    "wwtXDisTa6"
+   ],
+   "col_comments": [
+    "the tropical/subtropical column, sub-roll 1 on 1d6",
+    "the tropical/subtropical column, sub-roll 2",
+    "the tropical/subtropical column, sub-roll 3",
+    "the tropical/subtropical column, sub-roll 4",
+    "the tropical/subtropical column, sub-roll 5",
+    "the tropical/subtropical column, sub-roll 6",
+    "the temperate/subarctic/arctic column, sub-roll 1 on 1d6",
+    "the temperate/subarctic/arctic column, sub-roll 2",
+    "the temperate/subarctic/arctic column, sub-roll 3",
+    "the temperate/subarctic/arctic column, sub-roll 4",
+    "the temperate/subarctic/arctic column, sub-roll 5",
+    "the temperate/subarctic/arctic column, sub-roll 6"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     4,
+     4,
+     4,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     4,
+     4,
+     4,
+     4,
+     4,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     4,
+     4,
+     4,
+     4,
+     4,
+     2
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     4,
+     4,
+     4,
+     4,
+     1,
+     2
+    ],
+    [
+     3,
+     3,
+     3,
+     3,
+     3,
+     1,
+     3,
+     3,
+     3,
+     3,
+     1,
+     1
+    ],
+    [
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     1
+    ],
+    [
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ]
+   ],
+   "sentinel": -1,
+   "audit_comment": "the X dispatch: 7 temperature bands x the 1-6 sub-rolls for the two climatic columns (values 1 hail, 2 ice/sleet, 3 lightning, 4 severe snowstorm, 0 none; the 10-29 band ice cell carries the 25-degree footnote)"
+  },
+  {
+   "tag": "A5",
+   "name": "wwyA5Humidity",
+   "count": "wwyA5Count",
+   "cols": [
+    "wwtA5Wi",
+    "wwtA5Sp",
+    "wwtA5Su",
+    "wwtA5Au"
+   ],
+   "col_comments": [
+    "the humidity level for Winter (1 = low, 2 = medium, 3 = high)",
+    "the humidity level for Spring",
+    "the humidity level for Summer",
+    "the humidity level for Autumn"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     2,
+     2
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     2,
+     1
+    ],
+    [
+     1,
+     2,
+     2,
+     1
+    ],
+    [
+     1,
+     2,
+     2,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     3,
+     2,
+     2
+    ],
+    [
+     2,
+     3,
+     3,
+     2
+    ],
+    [
+     1,
+     2,
+     1,
+     2
+    ],
+    [
+     2,
+     3,
+     3,
+     2
+    ],
+    [
+     3,
+     2,
+     2,
+     3
+    ],
+    [
+     2,
+     3,
+     3,
+     2
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     3,
+     3,
+     3,
+     3
+    ],
+    [
+     2,
+     3,
+     3,
+     3
+    ],
+    [
+     2,
+     3,
+     3,
+     3
+    ],
+    [
+     2,
+     3,
+     2,
+     1
+    ],
+    [
+     2,
+     3,
+     3,
+     2
+    ],
+    [
+     2,
+     3,
+     3,
+     2
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     3,
+     3,
+     3,
+     3
+    ],
+    [
+     2,
+     2,
+     3,
+     2
+    ],
+    [
+     2,
+     3,
+     3,
+     3
+    ],
+    [
+     2,
+     3,
+     3,
+     3
+    ],
+    [
+     2,
+     3,
+     3,
+     2
+    ],
+    [
+     2,
+     3,
+     3,
+     3
+    ]
+   ],
+   "sentinel": -1,
+   "audit_comment": "the Table A5 humidity grid: 33 climate/terrain rows x the four seasonal levels (the arctic block uniformly low, printed order Winter/Spring/Summer/Autumn)"
+  },
+  {
+   "tag": "HB",
+   "name": "wwyHumAdjBefore",
+   "count": "wwyHumAdjRows",
+   "cols": [
+    "wwtHumAdjBefore0",
+    "wwtHumAdjBefore1",
+    "wwtHumAdjBefore2"
+   ],
+   "col_comments": [
+    "the humidity step adjustment taken BEFORE the day 2 precipitation, day 2 column none",
+    "the day 2 column light or trace",
+    "the day 2 column medium or more"
+   ],
+   "data": [
+    [
+     -1,
+     0,
+     1
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ]
+   ],
+   "sentinel": -1,
+   "audit_comment": "the day 1 / day 2 humidity adjustment, the BEFORE halves of the printed slash pairs"
+  },
+  {
+   "tag": "HA",
+   "name": "wwyHumAdjAfter",
+   "count": "wwyHumAdjRows",
+   "cols": [
+    "wwtHumAdjAfter0",
+    "wwtHumAdjAfter1",
+    "wwtHumAdjAfter2"
+   ],
+   "col_comments": [
+    "the humidity step adjustment taken AFTER the day 2 precipitation, day 2 column none",
+    "the day 2 column light or trace",
+    "the day 2 column medium or more"
+   ],
+   "data": [
+    [
+     -1,
+     0,
+     1
+    ],
+    [
+     -1,
+     0,
+     1
+    ],
+    [
+     -1,
+     -1,
+     2
+    ]
+   ],
+   "sentinel": -1,
+   "audit_comment": "the day 1 / day 2 humidity adjustment, the AFTER halves of the printed slash pairs"
+  },
+  {
+   "tag": "A6",
+   "name": "wwyA6EffectiveTemp",
+   "count": "wwyA6Count",
+   "cols": [
+    "wwtA6W0",
+    "wwtA6W1",
+    "wwtA6W2",
+    "wwtA6W3",
+    "wwtA6W4"
+   ],
+   "col_comments": [
+    "the effective-temperature adjustment at wind 0-10 mph",
+    "the adjustment at wind 11-20 mph",
+    "the adjustment at wind 21-30 mph",
+    "the adjustment at wind 31-45 mph",
+    "the adjustment at wind 45+ mph"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     15,
+     10,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     15,
+     10,
+     5,
+     5,
+     0
+    ],
+    [
+     20,
+     15,
+     10,
+     5,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     10,
+     5,
+     5,
+     0
+    ],
+    [
+     20,
+     15,
+     10,
+     5,
+     5
+    ],
+    [
+     25,
+     20,
+     15,
+     10,
+     5
+    ]
+   ],
+   "sentinel": -1,
+   "audit_comment": "the Table A6 grid: rows are the 5 temperature bands x the 5 humidity levels in the order dry, low, medium, high, saturated; the values are the degrees added to the actual temperature for effective temperature"
+  },
+  {
+   "tag": "A7",
+   "name": "wwyA7WindChill",
+   "count": "wwyA7Count",
+   "cols": [
+    "wwtA7C0",
+    "wwtA7C1",
+    "wwtA7C2",
+    "wwtA7C3",
+    "wwtA7C4",
+    "wwtA7C5",
+    "wwtA7C6",
+    "wwtA7C7"
+   ],
+   "col_comments": [
+    "the effective temperature at 5 mph wind",
+    "the effective temperature at 10 mph",
+    "the effective temperature at 15 mph",
+    "the effective temperature at 20 mph",
+    "the effective temperature at 25 mph",
+    "the effective temperature at 30 mph",
+    "the effective temperature at 35 mph",
+    "the effective temperature at 40 mph"
+   ],
+   "data": [
+    [
+     35,
+     20,
+     15,
+     10,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     25,
+     15,
+     10,
+     5,
+     0,
+     0,
+     -5,
+     -5
+    ],
+    [
+     20,
+     10,
+     0,
+     -5,
+     -5,
+     -10,
+     -15,
+     -15
+    ],
+    [
+     15,
+     0,
+     -5,
+     -10,
+     -15,
+     -20,
+     -20,
+     -25
+    ],
+    [
+     10,
+     -5,
+     -10,
+     -15,
+     -20,
+     -25,
+     -30,
+     -30
+    ],
+    [
+     5,
+     -10,
+     -20,
+     -25,
+     -30,
+     -35,
+     -35,
+     -40
+    ],
+    [
+     0,
+     -15,
+     -25,
+     -30,
+     -35,
+     -40,
+     -45,
+     -45
+    ],
+    [
+     -5,
+     -20,
+     -35,
+     -40,
+     -45,
+     -50,
+     -50,
+     -55
+    ],
+    [
+     -10,
+     -25,
+     -40,
+     -45,
+     -50,
+     -55,
+     -60,
+     -65
+    ],
+    [
+     -15,
+     -30,
+     -45,
+     -50,
+     -60,
+     -60,
+     -65,
+     -70
+    ],
+    [
+     -20,
+     -40,
+     -50,
+     -60,
+     -70,
+     -75,
+     -80,
+     -80
+    ],
+    [
+     -25,
+     -45,
+     -60,
+     -70,
+     -75,
+     -80,
+     -85,
+     -90
+    ],
+    [
+     -30,
+     -50,
+     -65,
+     -75,
+     -85,
+     -90,
+     -90,
+     -95
+    ],
+    [
+     -35,
+     -60,
+     -70,
+     -80,
+     -90,
+     -95,
+     -100,
+     -100
+    ],
+    [
+     -40,
+     -65,
+     -80,
+     -90,
+     -95,
+     -100,
+     -105,
+     -110
+    ],
+    [
+     -45,
+     -70,
+     -85,
+     -95,
+     -105,
+     -110,
+     -115,
+     -115
+    ],
+    [
+     -50,
+     -75,
+     -90,
+     -100,
+     -110,
+     -115,
+     -120,
+     -120
+    ]
+   ],
+   "sentinel": -1,
+   "audit_comment": "the Table A7 wind chill grid: 17 temperature rows (35 down to -45 by 5) x 8 wind columns (5 to 40 by 5)"
+  },
+  {
+   "tag": "A8",
+   "name": "wwyA8Daylight",
+   "count": "wwyA8Count",
+   "cols": [
+    "wwtA8M0",
+    "wwtA8M1",
+    "wwtA8M2",
+    "wwtA8M3",
+    "wwtA8M4",
+    "wwtA8M5",
+    "wwtA8M6",
+    "wwtA8M7",
+    "wwtA8M8",
+    "wwtA8M9",
+    "wwtA8M10",
+    "wwtA8M11"
+   ],
+   "col_comments": [
+    "the hours of daylight in month 1 (in half-hours: 48 = 24 hours)",
+    "the hours of daylight in month 2",
+    "the hours of daylight in month 3",
+    "the hours of daylight in month 4",
+    "the hours of daylight in month 5",
+    "the hours of daylight in month 6",
+    "the hours of daylight in month 7",
+    "the hours of daylight in month 8",
+    "the hours of daylight in month 9",
+    "the hours of daylight in month 10",
+    "the hours of daylight in month 11",
+    "the hours of daylight in month 12"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     0,
+     48,
+     48,
+     48,
+     48,
+     48,
+     48,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     22,
+     48,
+     48,
+     48,
+     48,
+     48,
+     31,
+     10,
+     0,
+     0
+    ],
+    [
+     0,
+     15,
+     23,
+     32,
+     44,
+     48,
+     48,
+     37,
+     27,
+     18,
+     6,
+     0
+    ],
+    [
+     6,
+     17,
+     23,
+     30,
+     39,
+     43,
+     40,
+     34,
+     27,
+     19,
+     10,
+     6
+    ],
+    [
+     13,
+     18,
+     23,
+     29,
+     34,
+     38,
+     35,
+     32,
+     26,
+     20,
+     15,
+     12
+    ],
+    [
+     15,
+     19,
+     23,
+     28,
+     32,
+     35,
+     33,
+     30,
+     26,
+     21,
+     17,
+     14
+    ],
+    [
+     17,
+     20,
+     24,
+     27,
+     31,
+     33,
+     31,
+     29,
+     25,
+     22,
+     18,
+     16
+    ],
+    [
+     19,
+     21,
+     24,
+     26,
+     29,
+     30,
+     29,
+     28,
+     25,
+     22,
+     20,
+     19
+    ],
+    [
+     20,
+     22,
+     24,
+     26,
+     28,
+     29,
+     28,
+     27,
+     25,
+     23,
+     20,
+     20
+    ],
+    [
+     21,
+     22,
+     24,
+     26,
+     27,
+     28,
+     28,
+     26,
+     25,
+     23,
+     21,
+     20
+    ],
+    [
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     27,
+     26,
+     24,
+     23,
+     22,
+     21
+    ],
+    [
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     26,
+     26,
+     24,
+     23,
+     22,
+     22
+    ],
+    [
+     23,
+     24,
+     24,
+     25,
+     25,
+     26,
+     26,
+     25,
+     24,
+     24,
+     23,
+     23
+    ],
+    [
+     23,
+     24,
+     24,
+     25,
+     25,
+     26,
+     26,
+     25,
+     24,
+     24,
+     23,
+     23
+    ],
+    [
+     24,
+     24,
+     24,
+     24,
+     24,
+     24,
+     24,
+     24,
+     24,
+     24,
+     24,
+     24
+    ]
+   ],
+   "sentinel": -1,
+   "audit_comment": "the Table A8 daylight grid: 15 latitude rows (90/80/70 arctic, 65/60/55 subarctic, 50/40/35 temperate, 30/25/20 subtropical, 15/10/0 tropical) x 12 months, the hours of daylight stored in half-hour units"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the book worked example: if Roll 1 was a 2 and Roll 2 is a 6, the SECOND letter of the cell code is indicated",
+   "expr": "m['wwtR2B56'](0) != 2"
+  },
+  {
+   "note": "the book example: summer in a temperate forest - the cell code is GXMZ (the 6th row of the temperate block)",
+   "expr": "m['wwtA4Su'](13) != 4859"
+  },
+  {
+   "note": "the settle: the temperate seacoast spring and summer cells carry the cyclone (three independent reads against the port uniform AXMZ)",
+   "expr": "m['wwtA4Sp'](17) != 2859 or m['wwtA4Su'](17) != 2859"
+  },
+  {
+   "note": "the settle: the psm-6 swamp rows - subtropical swamp mirrors the subtropical seacoast (AXDZ CXMZ CXMZ AXDZ)",
+   "expr": "m['wwtA4Wi'](25) != 1839 or m['wwtA4Sp'](25) != 2859 or m['wwtA4Au'](25) != 1839"
+  },
+  {
+   "note": "the settle: the inferred tropical swamp winter cell (the A-N-z-D glyph read decoded by the all-Z tropical winter fourth-letter pattern)",
+   "expr": "m['wwtA4Wi'](32) != 1859"
+  },
+  {
+   "note": "the arctic desert is uniform GADD across all four seasons",
+   "expr": "m['wwtA4Wi'](0) != 4133 or m['wwtA4Sp'](0) != 4133 or m['wwtA4Su'](0) != 4133 or m['wwtA4Au'](0) != 4133"
+  },
+  {
+   "note": "the Roll 1 = 12 / Roll 2 = 7 example: the third letter",
+   "expr": "m['wwtR2B7'](1) != 3"
+  },
+  {
+   "note": "the X dispatch at 75+ degrees in the tropics: lightning on any sub-roll",
+   "expr": "m['wwtXDisTr1'](6) != 3 or m['wwtXDisTr6'](6) != 3"
+  },
+  {
+   "note": "the X dispatch below zero in the temperate column: snow on 1-3, none on 4-6",
+   "expr": "m['wwtXDisTa1'](0) != 4 or m['wwtXDisTa4'](0) != 0"
+  },
+  {
+   "note": "the Table A6 peak: 95+ degrees, saturated air, calm air (0-10 mph) - 25 degrees added to the actual temperature",
+   "expr": "m['wwtA6W0'](24) != 25"
+  },
+  {
+   "note": "the wind chill anchors: 35 degrees at 5 mph is 35 effective; -45 at 40 mph is -120",
+   "expr": "m['wwtA7C0'](0) != 35 or m['wwtA7C7'](16) != -120"
+  },
+  {
+   "note": "the equator daylight: 12 hours (24 half-hours) every month of the year",
+   "expr": "m['wwtA8M0'](14) != 24 or m['wwtA8M3'](14) != 24 or m['wwtA8M6'](14) != 24 or m['wwtA8M11'](14) != 24"
+  },
+  {
+   "note": "the arctic pole: total darkness in month 1, total daylight in month 6",
+   "expr": "m['wwtA8M0'](0) != 0 or m['wwtA8M6'](0) != 48"
+  },
+  {
+   "note": "the temperate seacoast humidity: HMMH in every season",
+   "expr": "m['wwtA5Wi'](17) != 3 or m['wwtA5Sp'](17) != 2 or m['wwtA5Su'](17) != 2 or m['wwtA5Au'](17) != 3"
+  },
+  {
+   "note": "the humidity adjustment peak: medium-or-more precipitation both days raises the after-reading 2 steps",
+   "expr": "m['wwtHumAdjAfter2'](2) != 2"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "every A4 cell is a valid packed four-letter code",
+   "expr": "m['wwtA4Wi'](0) < 1111 or m['wwtA4Wi'](0) > 9999 or m['wwtA4Wi'](1) < 1111 or m['wwtA4Wi'](1) > 9999 or m['wwtA4Wi'](2) < 1111 or m['wwtA4Wi'](2) > 9999 or m['wwtA4Wi'](3) < 1111 or m['wwtA4Wi'](3) > 9999 or m['wwtA4Wi'](4) < 1111 or m['wwtA4Wi'](4) > 9999 or m['wwtA4Wi'](5) < 1111 or m['wwtA4Wi'](5) > 9999 or m['wwtA4Wi'](6) < 1111 or m['wwtA4Wi'](6) > 9999 or m['wwtA4Wi'](7) < 1111 or m['wwtA4Wi'](7) > 9999 or m['wwtA4Wi'](8) < 1111 or m['wwtA4Wi'](8) > 9999 or m['wwtA4Wi'](9) < 1111 or m['wwtA4Wi'](9) > 9999 or m['wwtA4Wi'](10) < 1111 or m['wwtA4Wi'](10) > 9999 or m['wwtA4Wi'](11) < 1111 or m['wwtA4Wi'](11) > 9999 or m['wwtA4Wi'](12) < 1111 or m['wwtA4Wi'](12) > 9999 or m['wwtA4Wi'](13) < 1111 or m['wwtA4Wi'](13) > 9999 or m['wwtA4Wi'](14) < 1111 or m['wwtA4Wi'](14) > 9999 or m['wwtA4Wi'](15) < 1111 or m['wwtA4Wi'](15) > 9999 or m['wwtA4Wi'](16) < 1111 or m['wwtA4Wi'](16) > 9999 or m['wwtA4Wi'](17) < 1111 or m['wwtA4Wi'](17) > 9999 or m['wwtA4Wi'](18) < 1111 or m['wwtA4Wi'](18) > 9999 or m['wwtA4Wi'](19) < 1111 or m['wwtA4Wi'](19) > 9999 or m['wwtA4Wi'](20) < 1111 or m['wwtA4Wi'](20) > 9999 or m['wwtA4Wi'](21) < 1111 or m['wwtA4Wi'](21) > 9999 or m['wwtA4Wi'](22) < 1111 or m['wwtA4Wi'](22) > 9999 or m['wwtA4Wi'](23) < 1111 or m['wwtA4Wi'](23) > 9999 or m['wwtA4Wi'](24) < 1111 or m['wwtA4Wi'](24) > 9999 or m['wwtA4Wi'](25) < 1111 or m['wwtA4Wi'](25) > 9999 or m['wwtA4Wi'](26) < 1111 or m['wwtA4Wi'](26) > 9999 or m['wwtA4Wi'](27) < 1111 or m['wwtA4Wi'](27) > 9999 or m['wwtA4Wi'](28) < 1111 or m['wwtA4Wi'](28) > 9999 or m['wwtA4Wi'](29) < 1111 or m['wwtA4Wi'](29) > 9999 or m['wwtA4Wi'](30) < 1111 or m['wwtA4Wi'](30) > 9999 or m['wwtA4Wi'](31) < 1111 or m['wwtA4Wi'](31) > 9999 or m['wwtA4Wi'](32) < 1111 or m['wwtA4Wi'](32) > 9999 or m['wwtA4Sp'](0) < 1111 or m['wwtA4Sp'](0) > 9999 or m['wwtA4Sp'](1) < 1111 or m['wwtA4Sp'](1) > 9999 or m['wwtA4Sp'](2) < 1111 or m['wwtA4Sp'](2) > 9999 or m['wwtA4Sp'](3) < 1111 or m['wwtA4Sp'](3) > 9999 or m['wwtA4Sp'](4) < 1111 or m['wwtA4Sp'](4) > 9999 or m['wwtA4Sp'](5) < 1111 or m['wwtA4Sp'](5) > 9999 or m['wwtA4Sp'](6) < 1111 or m['wwtA4Sp'](6) > 9999 or m['wwtA4Sp'](7) < 1111 or m['wwtA4Sp'](7) > 9999 or m['wwtA4Sp'](8) < 1111 or m['wwtA4Sp'](8) > 9999 or m['wwtA4Sp'](9) < 1111 or m['wwtA4Sp'](9) > 9999 or m['wwtA4Sp'](10) < 1111 or m['wwtA4Sp'](10) > 9999 or m['wwtA4Sp'](11) < 1111 or m['wwtA4Sp'](11) > 9999 or m['wwtA4Sp'](12) < 1111 or m['wwtA4Sp'](12) > 9999 or m['wwtA4Sp'](13) < 1111 or m['wwtA4Sp'](13) > 9999 or m['wwtA4Sp'](14) < 1111 or m['wwtA4Sp'](14) > 9999 or m['wwtA4Sp'](15) < 1111 or m['wwtA4Sp'](15) > 9999 or m['wwtA4Sp'](16) < 1111 or m['wwtA4Sp'](16) > 9999 or m['wwtA4Sp'](17) < 1111 or m['wwtA4Sp'](17) > 9999 or m['wwtA4Sp'](18) < 1111 or m['wwtA4Sp'](18) > 9999 or m['wwtA4Sp'](19) < 1111 or m['wwtA4Sp'](19) > 9999 or m['wwtA4Sp'](20) < 1111 or m['wwtA4Sp'](20) > 9999 or m['wwtA4Sp'](21) < 1111 or m['wwtA4Sp'](21) > 9999 or m['wwtA4Sp'](22) < 1111 or m['wwtA4Sp'](22) > 9999 or m['wwtA4Sp'](23) < 1111 or m['wwtA4Sp'](23) > 9999 or m['wwtA4Sp'](24) < 1111 or m['wwtA4Sp'](24) > 9999 or m['wwtA4Sp'](25) < 1111 or m['wwtA4Sp'](25) > 9999 or m['wwtA4Sp'](26) < 1111 or m['wwtA4Sp'](26) > 9999 or m['wwtA4Sp'](27) < 1111 or m['wwtA4Sp'](27) > 9999 or m['wwtA4Sp'](28) < 1111 or m['wwtA4Sp'](28) > 9999 or m['wwtA4Sp'](29) < 1111 or m['wwtA4Sp'](29) > 9999 or m['wwtA4Sp'](30) < 1111 or m['wwtA4Sp'](30) > 9999 or m['wwtA4Sp'](31) < 1111 or m['wwtA4Sp'](31) > 9999 or m['wwtA4Sp'](32) < 1111 or m['wwtA4Sp'](32) > 9999 or m['wwtA4Su'](0) < 1111 or m['wwtA4Su'](0) > 9999 or m['wwtA4Su'](1) < 1111 or m['wwtA4Su'](1) > 9999 or m['wwtA4Su'](2) < 1111 or m['wwtA4Su'](2) > 9999 or m['wwtA4Su'](3) < 1111 or m['wwtA4Su'](3) > 9999 or m['wwtA4Su'](4) < 1111 or m['wwtA4Su'](4) > 9999 or m['wwtA4Su'](5) < 1111 or m['wwtA4Su'](5) > 9999 or m['wwtA4Su'](6) < 1111 or m['wwtA4Su'](6) > 9999 or m['wwtA4Su'](7) < 1111 or m['wwtA4Su'](7) > 9999 or m['wwtA4Su'](8) < 1111 or m['wwtA4Su'](8) > 9999 or m['wwtA4Su'](9) < 1111 or m['wwtA4Su'](9) > 9999 or m['wwtA4Su'](10) < 1111 or m['wwtA4Su'](10) > 9999 or m['wwtA4Su'](11) < 1111 or m['wwtA4Su'](11) > 9999 or m['wwtA4Su'](12) < 1111 or m['wwtA4Su'](12) > 9999 or m['wwtA4Su'](13) < 1111 or m['wwtA4Su'](13) > 9999 or m['wwtA4Su'](14) < 1111 or m['wwtA4Su'](14) > 9999 or m['wwtA4Su'](15) < 1111 or m['wwtA4Su'](15) > 9999 or m['wwtA4Su'](16) < 1111 or m['wwtA4Su'](16) > 9999 or m['wwtA4Su'](17) < 1111 or m['wwtA4Su'](17) > 9999 or m['wwtA4Su'](18) < 1111 or m['wwtA4Su'](18) > 9999 or m['wwtA4Su'](19) < 1111 or m['wwtA4Su'](19) > 9999 or m['wwtA4Su'](20) < 1111 or m['wwtA4Su'](20) > 9999 or m['wwtA4Su'](21) < 1111 or m['wwtA4Su'](21) > 9999 or m['wwtA4Su'](22) < 1111 or m['wwtA4Su'](22) > 9999 or m['wwtA4Su'](23) < 1111 or m['wwtA4Su'](23) > 9999 or m['wwtA4Su'](24) < 1111 or m['wwtA4Su'](24) > 9999 or m['wwtA4Su'](25) < 1111 or m['wwtA4Su'](25) > 9999 or m['wwtA4Su'](26) < 1111 or m['wwtA4Su'](26) > 9999 or m['wwtA4Su'](27) < 1111 or m['wwtA4Su'](27) > 9999 or m['wwtA4Su'](28) < 1111 or m['wwtA4Su'](28) > 9999 or m['wwtA4Su'](29) < 1111 or m['wwtA4Su'](29) > 9999 or m['wwtA4Su'](30) < 1111 or m['wwtA4Su'](30) > 9999 or m['wwtA4Su'](31) < 1111 or m['wwtA4Su'](31) > 9999 or m['wwtA4Su'](32) < 1111 or m['wwtA4Su'](32) > 9999 or m['wwtA4Au'](0) < 1111 or m['wwtA4Au'](0) > 9999 or m['wwtA4Au'](1) < 1111 or m['wwtA4Au'](1) > 9999 or m['wwtA4Au'](2) < 1111 or m['wwtA4Au'](2) > 9999 or m['wwtA4Au'](3) < 1111 or m['wwtA4Au'](3) > 9999 or m['wwtA4Au'](4) < 1111 or m['wwtA4Au'](4) > 9999 or m['wwtA4Au'](5) < 1111 or m['wwtA4Au'](5) > 9999 or m['wwtA4Au'](6) < 1111 or m['wwtA4Au'](6) > 9999 or m['wwtA4Au'](7) < 1111 or m['wwtA4Au'](7) > 9999 or m['wwtA4Au'](8) < 1111 or m['wwtA4Au'](8) > 9999 or m['wwtA4Au'](9) < 1111 or m['wwtA4Au'](9) > 9999 or m['wwtA4Au'](10) < 1111 or m['wwtA4Au'](10) > 9999 or m['wwtA4Au'](11) < 1111 or m['wwtA4Au'](11) > 9999 or m['wwtA4Au'](12) < 1111 or m['wwtA4Au'](12) > 9999 or m['wwtA4Au'](13) < 1111 or m['wwtA4Au'](13) > 9999 or m['wwtA4Au'](14) < 1111 or m['wwtA4Au'](14) > 9999 or m['wwtA4Au'](15) < 1111 or m['wwtA4Au'](15) > 9999 or m['wwtA4Au'](16) < 1111 or m['wwtA4Au'](16) > 9999 or m['wwtA4Au'](17) < 1111 or m['wwtA4Au'](17) > 9999 or m['wwtA4Au'](18) < 1111 or m['wwtA4Au'](18) > 9999 or m['wwtA4Au'](19) < 1111 or m['wwtA4Au'](19) > 9999 or m['wwtA4Au'](20) < 1111 or m['wwtA4Au'](20) > 9999 or m['wwtA4Au'](21) < 1111 or m['wwtA4Au'](21) > 9999 or m['wwtA4Au'](22) < 1111 or m['wwtA4Au'](22) > 9999 or m['wwtA4Au'](23) < 1111 or m['wwtA4Au'](23) > 9999 or m['wwtA4Au'](24) < 1111 or m['wwtA4Au'](24) > 9999 or m['wwtA4Au'](25) < 1111 or m['wwtA4Au'](25) > 9999 or m['wwtA4Au'](26) < 1111 or m['wwtA4Au'](26) > 9999 or m['wwtA4Au'](27) < 1111 or m['wwtA4Au'](27) > 9999 or m['wwtA4Au'](28) < 1111 or m['wwtA4Au'](28) > 9999 or m['wwtA4Au'](29) < 1111 or m['wwtA4Au'](29) > 9999 or m['wwtA4Au'](30) < 1111 or m['wwtA4Au'](30) > 9999 or m['wwtA4Au'](31) < 1111 or m['wwtA4Au'](31) > 9999 or m['wwtA4Au'](32) < 1111 or m['wwtA4Au'](32) > 9999"
+  },
+  {
+   "note": "every A5 humidity level is low, medium or high",
+   "expr": "(m['wwtA5Wi'](0) < 1 or m['wwtA5Wi'](0) > 3) or (m['wwtA5Wi'](1) < 1 or m['wwtA5Wi'](1) > 3) or (m['wwtA5Wi'](2) < 1 or m['wwtA5Wi'](2) > 3) or (m['wwtA5Wi'](3) < 1 or m['wwtA5Wi'](3) > 3) or (m['wwtA5Wi'](4) < 1 or m['wwtA5Wi'](4) > 3) or (m['wwtA5Wi'](5) < 1 or m['wwtA5Wi'](5) > 3) or (m['wwtA5Wi'](6) < 1 or m['wwtA5Wi'](6) > 3) or (m['wwtA5Wi'](7) < 1 or m['wwtA5Wi'](7) > 3) or (m['wwtA5Wi'](8) < 1 or m['wwtA5Wi'](8) > 3) or (m['wwtA5Wi'](9) < 1 or m['wwtA5Wi'](9) > 3) or (m['wwtA5Wi'](10) < 1 or m['wwtA5Wi'](10) > 3) or (m['wwtA5Wi'](11) < 1 or m['wwtA5Wi'](11) > 3) or (m['wwtA5Wi'](12) < 1 or m['wwtA5Wi'](12) > 3) or (m['wwtA5Wi'](13) < 1 or m['wwtA5Wi'](13) > 3) or (m['wwtA5Wi'](14) < 1 or m['wwtA5Wi'](14) > 3) or (m['wwtA5Wi'](15) < 1 or m['wwtA5Wi'](15) > 3) or (m['wwtA5Wi'](16) < 1 or m['wwtA5Wi'](16) > 3) or (m['wwtA5Wi'](17) < 1 or m['wwtA5Wi'](17) > 3) or (m['wwtA5Wi'](18) < 1 or m['wwtA5Wi'](18) > 3) or (m['wwtA5Wi'](19) < 1 or m['wwtA5Wi'](19) > 3) or (m['wwtA5Wi'](20) < 1 or m['wwtA5Wi'](20) > 3) or (m['wwtA5Wi'](21) < 1 or m['wwtA5Wi'](21) > 3) or (m['wwtA5Wi'](22) < 1 or m['wwtA5Wi'](22) > 3) or (m['wwtA5Wi'](23) < 1 or m['wwtA5Wi'](23) > 3) or (m['wwtA5Wi'](24) < 1 or m['wwtA5Wi'](24) > 3) or (m['wwtA5Wi'](25) < 1 or m['wwtA5Wi'](25) > 3) or (m['wwtA5Wi'](26) < 1 or m['wwtA5Wi'](26) > 3) or (m['wwtA5Wi'](27) < 1 or m['wwtA5Wi'](27) > 3) or (m['wwtA5Wi'](28) < 1 or m['wwtA5Wi'](28) > 3) or (m['wwtA5Wi'](29) < 1 or m['wwtA5Wi'](29) > 3) or (m['wwtA5Wi'](30) < 1 or m['wwtA5Wi'](30) > 3) or (m['wwtA5Wi'](31) < 1 or m['wwtA5Wi'](31) > 3) or (m['wwtA5Wi'](32) < 1 or m['wwtA5Wi'](32) > 3) or (m['wwtA5Sp'](0) < 1 or m['wwtA5Sp'](0) > 3) or (m['wwtA5Sp'](1) < 1 or m['wwtA5Sp'](1) > 3) or (m['wwtA5Sp'](2) < 1 or m['wwtA5Sp'](2) > 3) or (m['wwtA5Sp'](3) < 1 or m['wwtA5Sp'](3) > 3) or (m['wwtA5Sp'](4) < 1 or m['wwtA5Sp'](4) > 3) or (m['wwtA5Sp'](5) < 1 or m['wwtA5Sp'](5) > 3) or (m['wwtA5Sp'](6) < 1 or m['wwtA5Sp'](6) > 3) or (m['wwtA5Sp'](7) < 1 or m['wwtA5Sp'](7) > 3) or (m['wwtA5Sp'](8) < 1 or m['wwtA5Sp'](8) > 3) or (m['wwtA5Sp'](9) < 1 or m['wwtA5Sp'](9) > 3) or (m['wwtA5Sp'](10) < 1 or m['wwtA5Sp'](10) > 3) or (m['wwtA5Sp'](11) < 1 or m['wwtA5Sp'](11) > 3) or (m['wwtA5Sp'](12) < 1 or m['wwtA5Sp'](12) > 3) or (m['wwtA5Sp'](13) < 1 or m['wwtA5Sp'](13) > 3) or (m['wwtA5Sp'](14) < 1 or m['wwtA5Sp'](14) > 3) or (m['wwtA5Sp'](15) < 1 or m['wwtA5Sp'](15) > 3) or (m['wwtA5Sp'](16) < 1 or m['wwtA5Sp'](16) > 3) or (m['wwtA5Sp'](17) < 1 or m['wwtA5Sp'](17) > 3) or (m['wwtA5Sp'](18) < 1 or m['wwtA5Sp'](18) > 3) or (m['wwtA5Sp'](19) < 1 or m['wwtA5Sp'](19) > 3) or (m['wwtA5Sp'](20) < 1 or m['wwtA5Sp'](20) > 3) or (m['wwtA5Sp'](21) < 1 or m['wwtA5Sp'](21) > 3) or (m['wwtA5Sp'](22) < 1 or m['wwtA5Sp'](22) > 3) or (m['wwtA5Sp'](23) < 1 or m['wwtA5Sp'](23) > 3) or (m['wwtA5Sp'](24) < 1 or m['wwtA5Sp'](24) > 3) or (m['wwtA5Sp'](25) < 1 or m['wwtA5Sp'](25) > 3) or (m['wwtA5Sp'](26) < 1 or m['wwtA5Sp'](26) > 3) or (m['wwtA5Sp'](27) < 1 or m['wwtA5Sp'](27) > 3) or (m['wwtA5Sp'](28) < 1 or m['wwtA5Sp'](28) > 3) or (m['wwtA5Sp'](29) < 1 or m['wwtA5Sp'](29) > 3) or (m['wwtA5Sp'](30) < 1 or m['wwtA5Sp'](30) > 3) or (m['wwtA5Sp'](31) < 1 or m['wwtA5Sp'](31) > 3) or (m['wwtA5Sp'](32) < 1 or m['wwtA5Sp'](32) > 3) or (m['wwtA5Su'](0) < 1 or m['wwtA5Su'](0) > 3) or (m['wwtA5Su'](1) < 1 or m['wwtA5Su'](1) > 3) or (m['wwtA5Su'](2) < 1 or m['wwtA5Su'](2) > 3) or (m['wwtA5Su'](3) < 1 or m['wwtA5Su'](3) > 3) or (m['wwtA5Su'](4) < 1 or m['wwtA5Su'](4) > 3) or (m['wwtA5Su'](5) < 1 or m['wwtA5Su'](5) > 3) or (m['wwtA5Su'](6) < 1 or m['wwtA5Su'](6) > 3) or (m['wwtA5Su'](7) < 1 or m['wwtA5Su'](7) > 3) or (m['wwtA5Su'](8) < 1 or m['wwtA5Su'](8) > 3) or (m['wwtA5Su'](9) < 1 or m['wwtA5Su'](9) > 3) or (m['wwtA5Su'](10) < 1 or m['wwtA5Su'](10) > 3) or (m['wwtA5Su'](11) < 1 or m['wwtA5Su'](11) > 3) or (m['wwtA5Su'](12) < 1 or m['wwtA5Su'](12) > 3) or (m['wwtA5Su'](13) < 1 or m['wwtA5Su'](13) > 3) or (m['wwtA5Su'](14) < 1 or m['wwtA5Su'](14) > 3) or (m['wwtA5Su'](15) < 1 or m['wwtA5Su'](15) > 3) or (m['wwtA5Su'](16) < 1 or m['wwtA5Su'](16) > 3) or (m['wwtA5Su'](17) < 1 or m['wwtA5Su'](17) > 3) or (m['wwtA5Su'](18) < 1 or m['wwtA5Su'](18) > 3) or (m['wwtA5Su'](19) < 1 or m['wwtA5Su'](19) > 3) or (m['wwtA5Su'](20) < 1 or m['wwtA5Su'](20) > 3) or (m['wwtA5Su'](21) < 1 or m['wwtA5Su'](21) > 3) or (m['wwtA5Su'](22) < 1 or m['wwtA5Su'](22) > 3) or (m['wwtA5Su'](23) < 1 or m['wwtA5Su'](23) > 3) or (m['wwtA5Su'](24) < 1 or m['wwtA5Su'](24) > 3) or (m['wwtA5Su'](25) < 1 or m['wwtA5Su'](25) > 3) or (m['wwtA5Su'](26) < 1 or m['wwtA5Su'](26) > 3) or (m['wwtA5Su'](27) < 1 or m['wwtA5Su'](27) > 3) or (m['wwtA5Su'](28) < 1 or m['wwtA5Su'](28) > 3) or (m['wwtA5Su'](29) < 1 or m['wwtA5Su'](29) > 3) or (m['wwtA5Su'](30) < 1 or m['wwtA5Su'](30) > 3) or (m['wwtA5Su'](31) < 1 or m['wwtA5Su'](31) > 3) or (m['wwtA5Su'](32) < 1 or m['wwtA5Su'](32) > 3) or (m['wwtA5Au'](0) < 1 or m['wwtA5Au'](0) > 3) or (m['wwtA5Au'](1) < 1 or m['wwtA5Au'](1) > 3) or (m['wwtA5Au'](2) < 1 or m['wwtA5Au'](2) > 3) or (m['wwtA5Au'](3) < 1 or m['wwtA5Au'](3) > 3) or (m['wwtA5Au'](4) < 1 or m['wwtA5Au'](4) > 3) or (m['wwtA5Au'](5) < 1 or m['wwtA5Au'](5) > 3) or (m['wwtA5Au'](6) < 1 or m['wwtA5Au'](6) > 3) or (m['wwtA5Au'](7) < 1 or m['wwtA5Au'](7) > 3) or (m['wwtA5Au'](8) < 1 or m['wwtA5Au'](8) > 3) or (m['wwtA5Au'](9) < 1 or m['wwtA5Au'](9) > 3) or (m['wwtA5Au'](10) < 1 or m['wwtA5Au'](10) > 3) or (m['wwtA5Au'](11) < 1 or m['wwtA5Au'](11) > 3) or (m['wwtA5Au'](12) < 1 or m['wwtA5Au'](12) > 3) or (m['wwtA5Au'](13) < 1 or m['wwtA5Au'](13) > 3) or (m['wwtA5Au'](14) < 1 or m['wwtA5Au'](14) > 3) or (m['wwtA5Au'](15) < 1 or m['wwtA5Au'](15) > 3) or (m['wwtA5Au'](16) < 1 or m['wwtA5Au'](16) > 3) or (m['wwtA5Au'](17) < 1 or m['wwtA5Au'](17) > 3) or (m['wwtA5Au'](18) < 1 or m['wwtA5Au'](18) > 3) or (m['wwtA5Au'](19) < 1 or m['wwtA5Au'](19) > 3) or (m['wwtA5Au'](20) < 1 or m['wwtA5Au'](20) > 3) or (m['wwtA5Au'](21) < 1 or m['wwtA5Au'](21) > 3) or (m['wwtA5Au'](22) < 1 or m['wwtA5Au'](22) > 3) or (m['wwtA5Au'](23) < 1 or m['wwtA5Au'](23) > 3) or (m['wwtA5Au'](24) < 1 or m['wwtA5Au'](24) > 3) or (m['wwtA5Au'](25) < 1 or m['wwtA5Au'](25) > 3) or (m['wwtA5Au'](26) < 1 or m['wwtA5Au'](26) > 3) or (m['wwtA5Au'](27) < 1 or m['wwtA5Au'](27) > 3) or (m['wwtA5Au'](28) < 1 or m['wwtA5Au'](28) > 3) or (m['wwtA5Au'](29) < 1 or m['wwtA5Au'](29) > 3) or (m['wwtA5Au'](30) < 1 or m['wwtA5Au'](30) > 3) or (m['wwtA5Au'](31) < 1 or m['wwtA5Au'](31) > 3) or (m['wwtA5Au'](32) < 1 or m['wwtA5Au'](32) > 3)"
+  },
+  {
+   "note": "the arctic humidity block is uniformly low across all five terrains and four seasons",
+   "expr": "m['wwtA5Wi'](0) != 1 or m['wwtA5Wi'](1) != 1 or m['wwtA5Wi'](2) != 1 or m['wwtA5Wi'](3) != 1 or m['wwtA5Wi'](4) != 1 or m['wwtA5Sp'](0) != 1 or m['wwtA5Sp'](1) != 1 or m['wwtA5Sp'](2) != 1 or m['wwtA5Sp'](3) != 1 or m['wwtA5Sp'](4) != 1 or m['wwtA5Su'](0) != 1 or m['wwtA5Su'](1) != 1 or m['wwtA5Su'](2) != 1 or m['wwtA5Su'](3) != 1 or m['wwtA5Su'](4) != 1 or m['wwtA5Au'](0) != 1 or m['wwtA5Au'](1) != 1 or m['wwtA5Au'](2) != 1 or m['wwtA5Au'](3) != 1 or m['wwtA5Au'](4) != 1"
+  },
+  {
+   "note": "the wind chill never rises as the wind strengthens, in every temperature row",
+   "expr": "m['wwtA7C0'](0) < m['wwtA7C1'](0) or m['wwtA7C1'](0) < m['wwtA7C2'](0) or m['wwtA7C2'](0) < m['wwtA7C3'](0) or m['wwtA7C3'](0) < m['wwtA7C4'](0) or m['wwtA7C4'](0) < m['wwtA7C5'](0) or m['wwtA7C5'](0) < m['wwtA7C6'](0) or m['wwtA7C6'](0) < m['wwtA7C7'](0) or m['wwtA7C0'](1) < m['wwtA7C1'](1) or m['wwtA7C1'](1) < m['wwtA7C2'](1) or m['wwtA7C2'](1) < m['wwtA7C3'](1) or m['wwtA7C3'](1) < m['wwtA7C4'](1) or m['wwtA7C4'](1) < m['wwtA7C5'](1) or m['wwtA7C5'](1) < m['wwtA7C6'](1) or m['wwtA7C6'](1) < m['wwtA7C7'](1) or m['wwtA7C0'](2) < m['wwtA7C1'](2) or m['wwtA7C1'](2) < m['wwtA7C2'](2) or m['wwtA7C2'](2) < m['wwtA7C3'](2) or m['wwtA7C3'](2) < m['wwtA7C4'](2) or m['wwtA7C4'](2) < m['wwtA7C5'](2) or m['wwtA7C5'](2) < m['wwtA7C6'](2) or m['wwtA7C6'](2) < m['wwtA7C7'](2) or m['wwtA7C0'](3) < m['wwtA7C1'](3) or m['wwtA7C1'](3) < m['wwtA7C2'](3) or m['wwtA7C2'](3) < m['wwtA7C3'](3) or m['wwtA7C3'](3) < m['wwtA7C4'](3) or m['wwtA7C4'](3) < m['wwtA7C5'](3) or m['wwtA7C5'](3) < m['wwtA7C6'](3) or m['wwtA7C6'](3) < m['wwtA7C7'](3) or m['wwtA7C0'](4) < m['wwtA7C1'](4) or m['wwtA7C1'](4) < m['wwtA7C2'](4) or m['wwtA7C2'](4) < m['wwtA7C3'](4) or m['wwtA7C3'](4) < m['wwtA7C4'](4) or m['wwtA7C4'](4) < m['wwtA7C5'](4) or m['wwtA7C5'](4) < m['wwtA7C6'](4) or m['wwtA7C6'](4) < m['wwtA7C7'](4) or m['wwtA7C0'](5) < m['wwtA7C1'](5) or m['wwtA7C1'](5) < m['wwtA7C2'](5) or m['wwtA7C2'](5) < m['wwtA7C3'](5) or m['wwtA7C3'](5) < m['wwtA7C4'](5) or m['wwtA7C4'](5) < m['wwtA7C5'](5) or m['wwtA7C5'](5) < m['wwtA7C6'](5) or m['wwtA7C6'](5) < m['wwtA7C7'](5) or m['wwtA7C0'](6) < m['wwtA7C1'](6) or m['wwtA7C1'](6) < m['wwtA7C2'](6) or m['wwtA7C2'](6) < m['wwtA7C3'](6) or m['wwtA7C3'](6) < m['wwtA7C4'](6) or m['wwtA7C4'](6) < m['wwtA7C5'](6) or m['wwtA7C5'](6) < m['wwtA7C6'](6) or m['wwtA7C6'](6) < m['wwtA7C7'](6) or m['wwtA7C0'](7) < m['wwtA7C1'](7) or m['wwtA7C1'](7) < m['wwtA7C2'](7) or m['wwtA7C2'](7) < m['wwtA7C3'](7) or m['wwtA7C3'](7) < m['wwtA7C4'](7) or m['wwtA7C4'](7) < m['wwtA7C5'](7) or m['wwtA7C5'](7) < m['wwtA7C6'](7) or m['wwtA7C6'](7) < m['wwtA7C7'](7) or m['wwtA7C0'](8) < m['wwtA7C1'](8) or m['wwtA7C1'](8) < m['wwtA7C2'](8) or m['wwtA7C2'](8) < m['wwtA7C3'](8) or m['wwtA7C3'](8) < m['wwtA7C4'](8) or m['wwtA7C4'](8) < m['wwtA7C5'](8) or m['wwtA7C5'](8) < m['wwtA7C6'](8) or m['wwtA7C6'](8) < m['wwtA7C7'](8) or m['wwtA7C0'](9) < m['wwtA7C1'](9) or m['wwtA7C1'](9) < m['wwtA7C2'](9) or m['wwtA7C2'](9) < m['wwtA7C3'](9) or m['wwtA7C3'](9) < m['wwtA7C4'](9) or m['wwtA7C4'](9) < m['wwtA7C5'](9) or m['wwtA7C5'](9) < m['wwtA7C6'](9) or m['wwtA7C6'](9) < m['wwtA7C7'](9) or m['wwtA7C0'](10) < m['wwtA7C1'](10) or m['wwtA7C1'](10) < m['wwtA7C2'](10) or m['wwtA7C2'](10) < m['wwtA7C3'](10) or m['wwtA7C3'](10) < m['wwtA7C4'](10) or m['wwtA7C4'](10) < m['wwtA7C5'](10) or m['wwtA7C5'](10) < m['wwtA7C6'](10) or m['wwtA7C6'](10) < m['wwtA7C7'](10) or m['wwtA7C0'](11) < m['wwtA7C1'](11) or m['wwtA7C1'](11) < m['wwtA7C2'](11) or m['wwtA7C2'](11) < m['wwtA7C3'](11) or m['wwtA7C3'](11) < m['wwtA7C4'](11) or m['wwtA7C4'](11) < m['wwtA7C5'](11) or m['wwtA7C5'](11) < m['wwtA7C6'](11) or m['wwtA7C6'](11) < m['wwtA7C7'](11) or m['wwtA7C0'](12) < m['wwtA7C1'](12) or m['wwtA7C1'](12) < m['wwtA7C2'](12) or m['wwtA7C2'](12) < m['wwtA7C3'](12) or m['wwtA7C3'](12) < m['wwtA7C4'](12) or m['wwtA7C4'](12) < m['wwtA7C5'](12) or m['wwtA7C5'](12) < m['wwtA7C6'](12) or m['wwtA7C6'](12) < m['wwtA7C7'](12) or m['wwtA7C0'](13) < m['wwtA7C1'](13) or m['wwtA7C1'](13) < m['wwtA7C2'](13) or m['wwtA7C2'](13) < m['wwtA7C3'](13) or m['wwtA7C3'](13) < m['wwtA7C4'](13) or m['wwtA7C4'](13) < m['wwtA7C5'](13) or m['wwtA7C5'](13) < m['wwtA7C6'](13) or m['wwtA7C6'](13) < m['wwtA7C7'](13) or m['wwtA7C0'](14) < m['wwtA7C1'](14) or m['wwtA7C1'](14) < m['wwtA7C2'](14) or m['wwtA7C2'](14) < m['wwtA7C3'](14) or m['wwtA7C3'](14) < m['wwtA7C4'](14) or m['wwtA7C4'](14) < m['wwtA7C5'](14) or m['wwtA7C5'](14) < m['wwtA7C6'](14) or m['wwtA7C6'](14) < m['wwtA7C7'](14) or m['wwtA7C0'](15) < m['wwtA7C1'](15) or m['wwtA7C1'](15) < m['wwtA7C2'](15) or m['wwtA7C2'](15) < m['wwtA7C3'](15) or m['wwtA7C3'](15) < m['wwtA7C4'](15) or m['wwtA7C4'](15) < m['wwtA7C5'](15) or m['wwtA7C5'](15) < m['wwtA7C6'](15) or m['wwtA7C6'](15) < m['wwtA7C7'](15) or m['wwtA7C0'](16) < m['wwtA7C1'](16) or m['wwtA7C1'](16) < m['wwtA7C2'](16) or m['wwtA7C2'](16) < m['wwtA7C3'](16) or m['wwtA7C3'](16) < m['wwtA7C4'](16) or m['wwtA7C4'](16) < m['wwtA7C5'](16) or m['wwtA7C5'](16) < m['wwtA7C6'](16) or m['wwtA7C6'](16) < m['wwtA7C7'](16)"
+  },
+  {
+   "note": "the wind chill never rises as the temperature drops, in every wind column",
+   "expr": "m['wwtA7C0'](0) < m['wwtA7C0'](1) or m['wwtA7C0'](1) < m['wwtA7C0'](2) or m['wwtA7C0'](2) < m['wwtA7C0'](3) or m['wwtA7C0'](3) < m['wwtA7C0'](4) or m['wwtA7C0'](4) < m['wwtA7C0'](5) or m['wwtA7C0'](5) < m['wwtA7C0'](6) or m['wwtA7C0'](6) < m['wwtA7C0'](7) or m['wwtA7C0'](7) < m['wwtA7C0'](8) or m['wwtA7C0'](8) < m['wwtA7C0'](9) or m['wwtA7C0'](9) < m['wwtA7C0'](10) or m['wwtA7C0'](10) < m['wwtA7C0'](11) or m['wwtA7C0'](11) < m['wwtA7C0'](12) or m['wwtA7C0'](12) < m['wwtA7C0'](13) or m['wwtA7C0'](13) < m['wwtA7C0'](14) or m['wwtA7C0'](14) < m['wwtA7C0'](15) or m['wwtA7C0'](15) < m['wwtA7C0'](16) or m['wwtA7C1'](0) < m['wwtA7C1'](1) or m['wwtA7C1'](1) < m['wwtA7C1'](2) or m['wwtA7C1'](2) < m['wwtA7C1'](3) or m['wwtA7C1'](3) < m['wwtA7C1'](4) or m['wwtA7C1'](4) < m['wwtA7C1'](5) or m['wwtA7C1'](5) < m['wwtA7C1'](6) or m['wwtA7C1'](6) < m['wwtA7C1'](7) or m['wwtA7C1'](7) < m['wwtA7C1'](8) or m['wwtA7C1'](8) < m['wwtA7C1'](9) or m['wwtA7C1'](9) < m['wwtA7C1'](10) or m['wwtA7C1'](10) < m['wwtA7C1'](11) or m['wwtA7C1'](11) < m['wwtA7C1'](12) or m['wwtA7C1'](12) < m['wwtA7C1'](13) or m['wwtA7C1'](13) < m['wwtA7C1'](14) or m['wwtA7C1'](14) < m['wwtA7C1'](15) or m['wwtA7C1'](15) < m['wwtA7C1'](16) or m['wwtA7C2'](0) < m['wwtA7C2'](1) or m['wwtA7C2'](1) < m['wwtA7C2'](2) or m['wwtA7C2'](2) < m['wwtA7C2'](3) or m['wwtA7C2'](3) < m['wwtA7C2'](4) or m['wwtA7C2'](4) < m['wwtA7C2'](5) or m['wwtA7C2'](5) < m['wwtA7C2'](6) or m['wwtA7C2'](6) < m['wwtA7C2'](7) or m['wwtA7C2'](7) < m['wwtA7C2'](8) or m['wwtA7C2'](8) < m['wwtA7C2'](9) or m['wwtA7C2'](9) < m['wwtA7C2'](10) or m['wwtA7C2'](10) < m['wwtA7C2'](11) or m['wwtA7C2'](11) < m['wwtA7C2'](12) or m['wwtA7C2'](12) < m['wwtA7C2'](13) or m['wwtA7C2'](13) < m['wwtA7C2'](14) or m['wwtA7C2'](14) < m['wwtA7C2'](15) or m['wwtA7C2'](15) < m['wwtA7C2'](16) or m['wwtA7C3'](0) < m['wwtA7C3'](1) or m['wwtA7C3'](1) < m['wwtA7C3'](2) or m['wwtA7C3'](2) < m['wwtA7C3'](3) or m['wwtA7C3'](3) < m['wwtA7C3'](4) or m['wwtA7C3'](4) < m['wwtA7C3'](5) or m['wwtA7C3'](5) < m['wwtA7C3'](6) or m['wwtA7C3'](6) < m['wwtA7C3'](7) or m['wwtA7C3'](7) < m['wwtA7C3'](8) or m['wwtA7C3'](8) < m['wwtA7C3'](9) or m['wwtA7C3'](9) < m['wwtA7C3'](10) or m['wwtA7C3'](10) < m['wwtA7C3'](11) or m['wwtA7C3'](11) < m['wwtA7C3'](12) or m['wwtA7C3'](12) < m['wwtA7C3'](13) or m['wwtA7C3'](13) < m['wwtA7C3'](14) or m['wwtA7C3'](14) < m['wwtA7C3'](15) or m['wwtA7C3'](15) < m['wwtA7C3'](16) or m['wwtA7C4'](0) < m['wwtA7C4'](1) or m['wwtA7C4'](1) < m['wwtA7C4'](2) or m['wwtA7C4'](2) < m['wwtA7C4'](3) or m['wwtA7C4'](3) < m['wwtA7C4'](4) or m['wwtA7C4'](4) < m['wwtA7C4'](5) or m['wwtA7C4'](5) < m['wwtA7C4'](6) or m['wwtA7C4'](6) < m['wwtA7C4'](7) or m['wwtA7C4'](7) < m['wwtA7C4'](8) or m['wwtA7C4'](8) < m['wwtA7C4'](9) or m['wwtA7C4'](9) < m['wwtA7C4'](10) or m['wwtA7C4'](10) < m['wwtA7C4'](11) or m['wwtA7C4'](11) < m['wwtA7C4'](12) or m['wwtA7C4'](12) < m['wwtA7C4'](13) or m['wwtA7C4'](13) < m['wwtA7C4'](14) or m['wwtA7C4'](14) < m['wwtA7C4'](15) or m['wwtA7C4'](15) < m['wwtA7C4'](16) or m['wwtA7C5'](0) < m['wwtA7C5'](1) or m['wwtA7C5'](1) < m['wwtA7C5'](2) or m['wwtA7C5'](2) < m['wwtA7C5'](3) or m['wwtA7C5'](3) < m['wwtA7C5'](4) or m['wwtA7C5'](4) < m['wwtA7C5'](5) or m['wwtA7C5'](5) < m['wwtA7C5'](6) or m['wwtA7C5'](6) < m['wwtA7C5'](7) or m['wwtA7C5'](7) < m['wwtA7C5'](8) or m['wwtA7C5'](8) < m['wwtA7C5'](9) or m['wwtA7C5'](9) < m['wwtA7C5'](10) or m['wwtA7C5'](10) < m['wwtA7C5'](11) or m['wwtA7C5'](11) < m['wwtA7C5'](12) or m['wwtA7C5'](12) < m['wwtA7C5'](13) or m['wwtA7C5'](13) < m['wwtA7C5'](14) or m['wwtA7C5'](14) < m['wwtA7C5'](15) or m['wwtA7C5'](15) < m['wwtA7C5'](16) or m['wwtA7C6'](0) < m['wwtA7C6'](1) or m['wwtA7C6'](1) < m['wwtA7C6'](2) or m['wwtA7C6'](2) < m['wwtA7C6'](3) or m['wwtA7C6'](3) < m['wwtA7C6'](4) or m['wwtA7C6'](4) < m['wwtA7C6'](5) or m['wwtA7C6'](5) < m['wwtA7C6'](6) or m['wwtA7C6'](6) < m['wwtA7C6'](7) or m['wwtA7C6'](7) < m['wwtA7C6'](8) or m['wwtA7C6'](8) < m['wwtA7C6'](9) or m['wwtA7C6'](9) < m['wwtA7C6'](10) or m['wwtA7C6'](10) < m['wwtA7C6'](11) or m['wwtA7C6'](11) < m['wwtA7C6'](12) or m['wwtA7C6'](12) < m['wwtA7C6'](13) or m['wwtA7C6'](13) < m['wwtA7C6'](14) or m['wwtA7C6'](14) < m['wwtA7C6'](15) or m['wwtA7C6'](15) < m['wwtA7C6'](16) or m['wwtA7C7'](0) < m['wwtA7C7'](1) or m['wwtA7C7'](1) < m['wwtA7C7'](2) or m['wwtA7C7'](2) < m['wwtA7C7'](3) or m['wwtA7C7'](3) < m['wwtA7C7'](4) or m['wwtA7C7'](4) < m['wwtA7C7'](5) or m['wwtA7C7'](5) < m['wwtA7C7'](6) or m['wwtA7C7'](6) < m['wwtA7C7'](7) or m['wwtA7C7'](7) < m['wwtA7C7'](8) or m['wwtA7C7'](8) < m['wwtA7C7'](9) or m['wwtA7C7'](9) < m['wwtA7C7'](10) or m['wwtA7C7'](10) < m['wwtA7C7'](11) or m['wwtA7C7'](11) < m['wwtA7C7'](12) or m['wwtA7C7'](12) < m['wwtA7C7'](13) or m['wwtA7C7'](13) < m['wwtA7C7'](14) or m['wwtA7C7'](14) < m['wwtA7C7'](15) or m['wwtA7C7'](15) < m['wwtA7C7'](16)"
+  },
+  {
+   "note": "every A8 daylight value is a valid half-hour count (0 through 48)",
+   "expr": "(m['wwtA8M0'](0) < 0 or m['wwtA8M0'](0) > 48) or (m['wwtA8M0'](1) < 0 or m['wwtA8M0'](1) > 48) or (m['wwtA8M0'](2) < 0 or m['wwtA8M0'](2) > 48) or (m['wwtA8M0'](3) < 0 or m['wwtA8M0'](3) > 48) or (m['wwtA8M0'](4) < 0 or m['wwtA8M0'](4) > 48) or (m['wwtA8M0'](5) < 0 or m['wwtA8M0'](5) > 48) or (m['wwtA8M0'](6) < 0 or m['wwtA8M0'](6) > 48) or (m['wwtA8M0'](7) < 0 or m['wwtA8M0'](7) > 48) or (m['wwtA8M0'](8) < 0 or m['wwtA8M0'](8) > 48) or (m['wwtA8M0'](9) < 0 or m['wwtA8M0'](9) > 48) or (m['wwtA8M0'](10) < 0 or m['wwtA8M0'](10) > 48) or (m['wwtA8M0'](11) < 0 or m['wwtA8M0'](11) > 48) or (m['wwtA8M0'](12) < 0 or m['wwtA8M0'](12) > 48) or (m['wwtA8M0'](13) < 0 or m['wwtA8M0'](13) > 48) or (m['wwtA8M0'](14) < 0 or m['wwtA8M0'](14) > 48) or (m['wwtA8M1'](0) < 0 or m['wwtA8M1'](0) > 48) or (m['wwtA8M1'](1) < 0 or m['wwtA8M1'](1) > 48) or (m['wwtA8M1'](2) < 0 or m['wwtA8M1'](2) > 48) or (m['wwtA8M1'](3) < 0 or m['wwtA8M1'](3) > 48) or (m['wwtA8M1'](4) < 0 or m['wwtA8M1'](4) > 48) or (m['wwtA8M1'](5) < 0 or m['wwtA8M1'](5) > 48) or (m['wwtA8M1'](6) < 0 or m['wwtA8M1'](6) > 48) or (m['wwtA8M1'](7) < 0 or m['wwtA8M1'](7) > 48) or (m['wwtA8M1'](8) < 0 or m['wwtA8M1'](8) > 48) or (m['wwtA8M1'](9) < 0 or m['wwtA8M1'](9) > 48) or (m['wwtA8M1'](10) < 0 or m['wwtA8M1'](10) > 48) or (m['wwtA8M1'](11) < 0 or m['wwtA8M1'](11) > 48) or (m['wwtA8M1'](12) < 0 or m['wwtA8M1'](12) > 48) or (m['wwtA8M1'](13) < 0 or m['wwtA8M1'](13) > 48) or (m['wwtA8M1'](14) < 0 or m['wwtA8M1'](14) > 48) or (m['wwtA8M2'](0) < 0 or m['wwtA8M2'](0) > 48) or (m['wwtA8M2'](1) < 0 or m['wwtA8M2'](1) > 48) or (m['wwtA8M2'](2) < 0 or m['wwtA8M2'](2) > 48) or (m['wwtA8M2'](3) < 0 or m['wwtA8M2'](3) > 48) or (m['wwtA8M2'](4) < 0 or m['wwtA8M2'](4) > 48) or (m['wwtA8M2'](5) < 0 or m['wwtA8M2'](5) > 48) or (m['wwtA8M2'](6) < 0 or m['wwtA8M2'](6) > 48) or (m['wwtA8M2'](7) < 0 or m['wwtA8M2'](7) > 48) or (m['wwtA8M2'](8) < 0 or m['wwtA8M2'](8) > 48) or (m['wwtA8M2'](9) < 0 or m['wwtA8M2'](9) > 48) or (m['wwtA8M2'](10) < 0 or m['wwtA8M2'](10) > 48) or (m['wwtA8M2'](11) < 0 or m['wwtA8M2'](11) > 48) or (m['wwtA8M2'](12) < 0 or m['wwtA8M2'](12) > 48) or (m['wwtA8M2'](13) < 0 or m['wwtA8M2'](13) > 48) or (m['wwtA8M2'](14) < 0 or m['wwtA8M2'](14) > 48) or (m['wwtA8M3'](0) < 0 or m['wwtA8M3'](0) > 48) or (m['wwtA8M3'](1) < 0 or m['wwtA8M3'](1) > 48) or (m['wwtA8M3'](2) < 0 or m['wwtA8M3'](2) > 48) or (m['wwtA8M3'](3) < 0 or m['wwtA8M3'](3) > 48) or (m['wwtA8M3'](4) < 0 or m['wwtA8M3'](4) > 48) or (m['wwtA8M3'](5) < 0 or m['wwtA8M3'](5) > 48) or (m['wwtA8M3'](6) < 0 or m['wwtA8M3'](6) > 48) or (m['wwtA8M3'](7) < 0 or m['wwtA8M3'](7) > 48) or (m['wwtA8M3'](8) < 0 or m['wwtA8M3'](8) > 48) or (m['wwtA8M3'](9) < 0 or m['wwtA8M3'](9) > 48) or (m['wwtA8M3'](10) < 0 or m['wwtA8M3'](10) > 48) or (m['wwtA8M3'](11) < 0 or m['wwtA8M3'](11) > 48) or (m['wwtA8M3'](12) < 0 or m['wwtA8M3'](12) > 48) or (m['wwtA8M3'](13) < 0 or m['wwtA8M3'](13) > 48) or (m['wwtA8M3'](14) < 0 or m['wwtA8M3'](14) > 48) or (m['wwtA8M4'](0) < 0 or m['wwtA8M4'](0) > 48) or (m['wwtA8M4'](1) < 0 or m['wwtA8M4'](1) > 48) or (m['wwtA8M4'](2) < 0 or m['wwtA8M4'](2) > 48) or (m['wwtA8M4'](3) < 0 or m['wwtA8M4'](3) > 48) or (m['wwtA8M4'](4) < 0 or m['wwtA8M4'](4) > 48) or (m['wwtA8M4'](5) < 0 or m['wwtA8M4'](5) > 48) or (m['wwtA8M4'](6) < 0 or m['wwtA8M4'](6) > 48) or (m['wwtA8M4'](7) < 0 or m['wwtA8M4'](7) > 48) or (m['wwtA8M4'](8) < 0 or m['wwtA8M4'](8) > 48) or (m['wwtA8M4'](9) < 0 or m['wwtA8M4'](9) > 48) or (m['wwtA8M4'](10) < 0 or m['wwtA8M4'](10) > 48) or (m['wwtA8M4'](11) < 0 or m['wwtA8M4'](11) > 48) or (m['wwtA8M4'](12) < 0 or m['wwtA8M4'](12) > 48) or (m['wwtA8M4'](13) < 0 or m['wwtA8M4'](13) > 48) or (m['wwtA8M4'](14) < 0 or m['wwtA8M4'](14) > 48) or (m['wwtA8M5'](0) < 0 or m['wwtA8M5'](0) > 48) or (m['wwtA8M5'](1) < 0 or m['wwtA8M5'](1) > 48) or (m['wwtA8M5'](2) < 0 or m['wwtA8M5'](2) > 48) or (m['wwtA8M5'](3) < 0 or m['wwtA8M5'](3) > 48) or (m['wwtA8M5'](4) < 0 or m['wwtA8M5'](4) > 48) or (m['wwtA8M5'](5) < 0 or m['wwtA8M5'](5) > 48) or (m['wwtA8M5'](6) < 0 or m['wwtA8M5'](6) > 48) or (m['wwtA8M5'](7) < 0 or m['wwtA8M5'](7) > 48) or (m['wwtA8M5'](8) < 0 or m['wwtA8M5'](8) > 48) or (m['wwtA8M5'](9) < 0 or m['wwtA8M5'](9) > 48) or (m['wwtA8M5'](10) < 0 or m['wwtA8M5'](10) > 48) or (m['wwtA8M5'](11) < 0 or m['wwtA8M5'](11) > 48) or (m['wwtA8M5'](12) < 0 or m['wwtA8M5'](12) > 48) or (m['wwtA8M5'](13) < 0 or m['wwtA8M5'](13) > 48) or (m['wwtA8M5'](14) < 0 or m['wwtA8M5'](14) > 48) or (m['wwtA8M6'](0) < 0 or m['wwtA8M6'](0) > 48) or (m['wwtA8M6'](1) < 0 or m['wwtA8M6'](1) > 48) or (m['wwtA8M6'](2) < 0 or m['wwtA8M6'](2) > 48) or (m['wwtA8M6'](3) < 0 or m['wwtA8M6'](3) > 48) or (m['wwtA8M6'](4) < 0 or m['wwtA8M6'](4) > 48) or (m['wwtA8M6'](5) < 0 or m['wwtA8M6'](5) > 48) or (m['wwtA8M6'](6) < 0 or m['wwtA8M6'](6) > 48) or (m['wwtA8M6'](7) < 0 or m['wwtA8M6'](7) > 48) or (m['wwtA8M6'](8) < 0 or m['wwtA8M6'](8) > 48) or (m['wwtA8M6'](9) < 0 or m['wwtA8M6'](9) > 48) or (m['wwtA8M6'](10) < 0 or m['wwtA8M6'](10) > 48) or (m['wwtA8M6'](11) < 0 or m['wwtA8M6'](11) > 48) or (m['wwtA8M6'](12) < 0 or m['wwtA8M6'](12) > 48) or (m['wwtA8M6'](13) < 0 or m['wwtA8M6'](13) > 48) or (m['wwtA8M6'](14) < 0 or m['wwtA8M6'](14) > 48) or (m['wwtA8M7'](0) < 0 or m['wwtA8M7'](0) > 48) or (m['wwtA8M7'](1) < 0 or m['wwtA8M7'](1) > 48) or (m['wwtA8M7'](2) < 0 or m['wwtA8M7'](2) > 48) or (m['wwtA8M7'](3) < 0 or m['wwtA8M7'](3) > 48) or (m['wwtA8M7'](4) < 0 or m['wwtA8M7'](4) > 48) or (m['wwtA8M7'](5) < 0 or m['wwtA8M7'](5) > 48) or (m['wwtA8M7'](6) < 0 or m['wwtA8M7'](6) > 48) or (m['wwtA8M7'](7) < 0 or m['wwtA8M7'](7) > 48) or (m['wwtA8M7'](8) < 0 or m['wwtA8M7'](8) > 48) or (m['wwtA8M7'](9) < 0 or m['wwtA8M7'](9) > 48) or (m['wwtA8M7'](10) < 0 or m['wwtA8M7'](10) > 48) or (m['wwtA8M7'](11) < 0 or m['wwtA8M7'](11) > 48) or (m['wwtA8M7'](12) < 0 or m['wwtA8M7'](12) > 48) or (m['wwtA8M7'](13) < 0 or m['wwtA8M7'](13) > 48) or (m['wwtA8M7'](14) < 0 or m['wwtA8M7'](14) > 48) or (m['wwtA8M8'](0) < 0 or m['wwtA8M8'](0) > 48) or (m['wwtA8M8'](1) < 0 or m['wwtA8M8'](1) > 48) or (m['wwtA8M8'](2) < 0 or m['wwtA8M8'](2) > 48) or (m['wwtA8M8'](3) < 0 or m['wwtA8M8'](3) > 48) or (m['wwtA8M8'](4) < 0 or m['wwtA8M8'](4) > 48) or (m['wwtA8M8'](5) < 0 or m['wwtA8M8'](5) > 48) or (m['wwtA8M8'](6) < 0 or m['wwtA8M8'](6) > 48) or (m['wwtA8M8'](7) < 0 or m['wwtA8M8'](7) > 48) or (m['wwtA8M8'](8) < 0 or m['wwtA8M8'](8) > 48) or (m['wwtA8M8'](9) < 0 or m['wwtA8M8'](9) > 48) or (m['wwtA8M8'](10) < 0 or m['wwtA8M8'](10) > 48) or (m['wwtA8M8'](11) < 0 or m['wwtA8M8'](11) > 48) or (m['wwtA8M8'](12) < 0 or m['wwtA8M8'](12) > 48) or (m['wwtA8M8'](13) < 0 or m['wwtA8M8'](13) > 48) or (m['wwtA8M8'](14) < 0 or m['wwtA8M8'](14) > 48) or (m['wwtA8M9'](0) < 0 or m['wwtA8M9'](0) > 48) or (m['wwtA8M9'](1) < 0 or m['wwtA8M9'](1) > 48) or (m['wwtA8M9'](2) < 0 or m['wwtA8M9'](2) > 48) or (m['wwtA8M9'](3) < 0 or m['wwtA8M9'](3) > 48) or (m['wwtA8M9'](4) < 0 or m['wwtA8M9'](4) > 48) or (m['wwtA8M9'](5) < 0 or m['wwtA8M9'](5) > 48) or (m['wwtA8M9'](6) < 0 or m['wwtA8M9'](6) > 48) or (m['wwtA8M9'](7) < 0 or m['wwtA8M9'](7) > 48) or (m['wwtA8M9'](8) < 0 or m['wwtA8M9'](8) > 48) or (m['wwtA8M9'](9) < 0 or m['wwtA8M9'](9) > 48) or (m['wwtA8M9'](10) < 0 or m['wwtA8M9'](10) > 48) or (m['wwtA8M9'](11) < 0 or m['wwtA8M9'](11) > 48) or (m['wwtA8M9'](12) < 0 or m['wwtA8M9'](12) > 48) or (m['wwtA8M9'](13) < 0 or m['wwtA8M9'](13) > 48) or (m['wwtA8M9'](14) < 0 or m['wwtA8M9'](14) > 48) or (m['wwtA8M10'](0) < 0 or m['wwtA8M10'](0) > 48) or (m['wwtA8M10'](1) < 0 or m['wwtA8M10'](1) > 48) or (m['wwtA8M10'](2) < 0 or m['wwtA8M10'](2) > 48) or (m['wwtA8M10'](3) < 0 or m['wwtA8M10'](3) > 48) or (m['wwtA8M10'](4) < 0 or m['wwtA8M10'](4) > 48) or (m['wwtA8M10'](5) < 0 or m['wwtA8M10'](5) > 48) or (m['wwtA8M10'](6) < 0 or m['wwtA8M10'](6) > 48) or (m['wwtA8M10'](7) < 0 or m['wwtA8M10'](7) > 48) or (m['wwtA8M10'](8) < 0 or m['wwtA8M10'](8) > 48) or (m['wwtA8M10'](9) < 0 or m['wwtA8M10'](9) > 48) or (m['wwtA8M10'](10) < 0 or m['wwtA8M10'](10) > 48) or (m['wwtA8M10'](11) < 0 or m['wwtA8M10'](11) > 48) or (m['wwtA8M10'](12) < 0 or m['wwtA8M10'](12) > 48) or (m['wwtA8M10'](13) < 0 or m['wwtA8M10'](13) > 48) or (m['wwtA8M10'](14) < 0 or m['wwtA8M10'](14) > 48) or (m['wwtA8M11'](0) < 0 or m['wwtA8M11'](0) > 48) or (m['wwtA8M11'](1) < 0 or m['wwtA8M11'](1) > 48) or (m['wwtA8M11'](2) < 0 or m['wwtA8M11'](2) > 48) or (m['wwtA8M11'](3) < 0 or m['wwtA8M11'](3) > 48) or (m['wwtA8M11'](4) < 0 or m['wwtA8M11'](4) > 48) or (m['wwtA8M11'](5) < 0 or m['wwtA8M11'](5) > 48) or (m['wwtA8M11'](6) < 0 or m['wwtA8M11'](6) > 48) or (m['wwtA8M11'](7) < 0 or m['wwtA8M11'](7) > 48) or (m['wwtA8M11'](8) < 0 or m['wwtA8M11'](8) > 48) or (m['wwtA8M11'](9) < 0 or m['wwtA8M11'](9) > 48) or (m['wwtA8M11'](10) < 0 or m['wwtA8M11'](10) > 48) or (m['wwtA8M11'](11) < 0 or m['wwtA8M11'](11) > 48) or (m['wwtA8M11'](12) < 0 or m['wwtA8M11'](12) > 48) or (m['wwtA8M11'](13) < 0 or m['wwtA8M11'](13) > 48) or (m['wwtA8M11'](14) < 0 or m['wwtA8M11'](14) > 48)"
+  },
+  {
+   "note": "the month-6 daylight is at least the month-3 and month-12 daylight in every latitude row (the seasonal peak)",
+   "expr": "m['wwtA8M5'](0) < m['wwtA8M2'](0) or m['wwtA8M5'](0) < m['wwtA8M11'](0) or m['wwtA8M5'](1) < m['wwtA8M2'](1) or m['wwtA8M5'](1) < m['wwtA8M11'](1) or m['wwtA8M5'](2) < m['wwtA8M2'](2) or m['wwtA8M5'](2) < m['wwtA8M11'](2) or m['wwtA8M5'](3) < m['wwtA8M2'](3) or m['wwtA8M5'](3) < m['wwtA8M11'](3) or m['wwtA8M5'](4) < m['wwtA8M2'](4) or m['wwtA8M5'](4) < m['wwtA8M11'](4) or m['wwtA8M5'](5) < m['wwtA8M2'](5) or m['wwtA8M5'](5) < m['wwtA8M11'](5) or m['wwtA8M5'](6) < m['wwtA8M2'](6) or m['wwtA8M5'](6) < m['wwtA8M11'](6) or m['wwtA8M5'](7) < m['wwtA8M2'](7) or m['wwtA8M5'](7) < m['wwtA8M11'](7) or m['wwtA8M5'](8) < m['wwtA8M2'](8) or m['wwtA8M5'](8) < m['wwtA8M11'](8) or m['wwtA8M5'](9) < m['wwtA8M2'](9) or m['wwtA8M5'](9) < m['wwtA8M11'](9) or m['wwtA8M5'](10) < m['wwtA8M2'](10) or m['wwtA8M5'](10) < m['wwtA8M11'](10) or m['wwtA8M5'](11) < m['wwtA8M2'](11) or m['wwtA8M5'](11) < m['wwtA8M11'](11) or m['wwtA8M5'](12) < m['wwtA8M2'](12) or m['wwtA8M5'](12) < m['wwtA8M11'](12) or m['wwtA8M5'](13) < m['wwtA8M2'](13) or m['wwtA8M5'](13) < m['wwtA8M11'](13) or m['wwtA8M5'](14) < m['wwtA8M2'](14) or m['wwtA8M5'](14) < m['wwtA8M11'](14)"
+  },
+  {
+   "note": "every A6 effective-temperature adjustment is 0 through 25 degrees",
+   "expr": "(m['wwtA6W0'](0) < 0 or m['wwtA6W0'](0) > 25) or (m['wwtA6W0'](1) < 0 or m['wwtA6W0'](1) > 25) or (m['wwtA6W0'](2) < 0 or m['wwtA6W0'](2) > 25) or (m['wwtA6W0'](3) < 0 or m['wwtA6W0'](3) > 25) or (m['wwtA6W0'](4) < 0 or m['wwtA6W0'](4) > 25) or (m['wwtA6W0'](5) < 0 or m['wwtA6W0'](5) > 25) or (m['wwtA6W0'](6) < 0 or m['wwtA6W0'](6) > 25) or (m['wwtA6W0'](7) < 0 or m['wwtA6W0'](7) > 25) or (m['wwtA6W0'](8) < 0 or m['wwtA6W0'](8) > 25) or (m['wwtA6W0'](9) < 0 or m['wwtA6W0'](9) > 25) or (m['wwtA6W0'](10) < 0 or m['wwtA6W0'](10) > 25) or (m['wwtA6W0'](11) < 0 or m['wwtA6W0'](11) > 25) or (m['wwtA6W0'](12) < 0 or m['wwtA6W0'](12) > 25) or (m['wwtA6W0'](13) < 0 or m['wwtA6W0'](13) > 25) or (m['wwtA6W0'](14) < 0 or m['wwtA6W0'](14) > 25) or (m['wwtA6W0'](15) < 0 or m['wwtA6W0'](15) > 25) or (m['wwtA6W0'](16) < 0 or m['wwtA6W0'](16) > 25) or (m['wwtA6W0'](17) < 0 or m['wwtA6W0'](17) > 25) or (m['wwtA6W0'](18) < 0 or m['wwtA6W0'](18) > 25) or (m['wwtA6W0'](19) < 0 or m['wwtA6W0'](19) > 25) or (m['wwtA6W0'](20) < 0 or m['wwtA6W0'](20) > 25) or (m['wwtA6W0'](21) < 0 or m['wwtA6W0'](21) > 25) or (m['wwtA6W0'](22) < 0 or m['wwtA6W0'](22) > 25) or (m['wwtA6W0'](23) < 0 or m['wwtA6W0'](23) > 25) or (m['wwtA6W0'](24) < 0 or m['wwtA6W0'](24) > 25) or (m['wwtA6W1'](0) < 0 or m['wwtA6W1'](0) > 25) or (m['wwtA6W1'](1) < 0 or m['wwtA6W1'](1) > 25) or (m['wwtA6W1'](2) < 0 or m['wwtA6W1'](2) > 25) or (m['wwtA6W1'](3) < 0 or m['wwtA6W1'](3) > 25) or (m['wwtA6W1'](4) < 0 or m['wwtA6W1'](4) > 25) or (m['wwtA6W1'](5) < 0 or m['wwtA6W1'](5) > 25) or (m['wwtA6W1'](6) < 0 or m['wwtA6W1'](6) > 25) or (m['wwtA6W1'](7) < 0 or m['wwtA6W1'](7) > 25) or (m['wwtA6W1'](8) < 0 or m['wwtA6W1'](8) > 25) or (m['wwtA6W1'](9) < 0 or m['wwtA6W1'](9) > 25) or (m['wwtA6W1'](10) < 0 or m['wwtA6W1'](10) > 25) or (m['wwtA6W1'](11) < 0 or m['wwtA6W1'](11) > 25) or (m['wwtA6W1'](12) < 0 or m['wwtA6W1'](12) > 25) or (m['wwtA6W1'](13) < 0 or m['wwtA6W1'](13) > 25) or (m['wwtA6W1'](14) < 0 or m['wwtA6W1'](14) > 25) or (m['wwtA6W1'](15) < 0 or m['wwtA6W1'](15) > 25) or (m['wwtA6W1'](16) < 0 or m['wwtA6W1'](16) > 25) or (m['wwtA6W1'](17) < 0 or m['wwtA6W1'](17) > 25) or (m['wwtA6W1'](18) < 0 or m['wwtA6W1'](18) > 25) or (m['wwtA6W1'](19) < 0 or m['wwtA6W1'](19) > 25) or (m['wwtA6W1'](20) < 0 or m['wwtA6W1'](20) > 25) or (m['wwtA6W1'](21) < 0 or m['wwtA6W1'](21) > 25) or (m['wwtA6W1'](22) < 0 or m['wwtA6W1'](22) > 25) or (m['wwtA6W1'](23) < 0 or m['wwtA6W1'](23) > 25) or (m['wwtA6W1'](24) < 0 or m['wwtA6W1'](24) > 25) or (m['wwtA6W2'](0) < 0 or m['wwtA6W2'](0) > 25) or (m['wwtA6W2'](1) < 0 or m['wwtA6W2'](1) > 25) or (m['wwtA6W2'](2) < 0 or m['wwtA6W2'](2) > 25) or (m['wwtA6W2'](3) < 0 or m['wwtA6W2'](3) > 25) or (m['wwtA6W2'](4) < 0 or m['wwtA6W2'](4) > 25) or (m['wwtA6W2'](5) < 0 or m['wwtA6W2'](5) > 25) or (m['wwtA6W2'](6) < 0 or m['wwtA6W2'](6) > 25) or (m['wwtA6W2'](7) < 0 or m['wwtA6W2'](7) > 25) or (m['wwtA6W2'](8) < 0 or m['wwtA6W2'](8) > 25) or (m['wwtA6W2'](9) < 0 or m['wwtA6W2'](9) > 25) or (m['wwtA6W2'](10) < 0 or m['wwtA6W2'](10) > 25) or (m['wwtA6W2'](11) < 0 or m['wwtA6W2'](11) > 25) or (m['wwtA6W2'](12) < 0 or m['wwtA6W2'](12) > 25) or (m['wwtA6W2'](13) < 0 or m['wwtA6W2'](13) > 25) or (m['wwtA6W2'](14) < 0 or m['wwtA6W2'](14) > 25) or (m['wwtA6W2'](15) < 0 or m['wwtA6W2'](15) > 25) or (m['wwtA6W2'](16) < 0 or m['wwtA6W2'](16) > 25) or (m['wwtA6W2'](17) < 0 or m['wwtA6W2'](17) > 25) or (m['wwtA6W2'](18) < 0 or m['wwtA6W2'](18) > 25) or (m['wwtA6W2'](19) < 0 or m['wwtA6W2'](19) > 25) or (m['wwtA6W2'](20) < 0 or m['wwtA6W2'](20) > 25) or (m['wwtA6W2'](21) < 0 or m['wwtA6W2'](21) > 25) or (m['wwtA6W2'](22) < 0 or m['wwtA6W2'](22) > 25) or (m['wwtA6W2'](23) < 0 or m['wwtA6W2'](23) > 25) or (m['wwtA6W2'](24) < 0 or m['wwtA6W2'](24) > 25) or (m['wwtA6W3'](0) < 0 or m['wwtA6W3'](0) > 25) or (m['wwtA6W3'](1) < 0 or m['wwtA6W3'](1) > 25) or (m['wwtA6W3'](2) < 0 or m['wwtA6W3'](2) > 25) or (m['wwtA6W3'](3) < 0 or m['wwtA6W3'](3) > 25) or (m['wwtA6W3'](4) < 0 or m['wwtA6W3'](4) > 25) or (m['wwtA6W3'](5) < 0 or m['wwtA6W3'](5) > 25) or (m['wwtA6W3'](6) < 0 or m['wwtA6W3'](6) > 25) or (m['wwtA6W3'](7) < 0 or m['wwtA6W3'](7) > 25) or (m['wwtA6W3'](8) < 0 or m['wwtA6W3'](8) > 25) or (m['wwtA6W3'](9) < 0 or m['wwtA6W3'](9) > 25) or (m['wwtA6W3'](10) < 0 or m['wwtA6W3'](10) > 25) or (m['wwtA6W3'](11) < 0 or m['wwtA6W3'](11) > 25) or (m['wwtA6W3'](12) < 0 or m['wwtA6W3'](12) > 25) or (m['wwtA6W3'](13) < 0 or m['wwtA6W3'](13) > 25) or (m['wwtA6W3'](14) < 0 or m['wwtA6W3'](14) > 25) or (m['wwtA6W3'](15) < 0 or m['wwtA6W3'](15) > 25) or (m['wwtA6W3'](16) < 0 or m['wwtA6W3'](16) > 25) or (m['wwtA6W3'](17) < 0 or m['wwtA6W3'](17) > 25) or (m['wwtA6W3'](18) < 0 or m['wwtA6W3'](18) > 25) or (m['wwtA6W3'](19) < 0 or m['wwtA6W3'](19) > 25) or (m['wwtA6W3'](20) < 0 or m['wwtA6W3'](20) > 25) or (m['wwtA6W3'](21) < 0 or m['wwtA6W3'](21) > 25) or (m['wwtA6W3'](22) < 0 or m['wwtA6W3'](22) > 25) or (m['wwtA6W3'](23) < 0 or m['wwtA6W3'](23) > 25) or (m['wwtA6W3'](24) < 0 or m['wwtA6W3'](24) > 25) or (m['wwtA6W4'](0) < 0 or m['wwtA6W4'](0) > 25) or (m['wwtA6W4'](1) < 0 or m['wwtA6W4'](1) > 25) or (m['wwtA6W4'](2) < 0 or m['wwtA6W4'](2) > 25) or (m['wwtA6W4'](3) < 0 or m['wwtA6W4'](3) > 25) or (m['wwtA6W4'](4) < 0 or m['wwtA6W4'](4) > 25) or (m['wwtA6W4'](5) < 0 or m['wwtA6W4'](5) > 25) or (m['wwtA6W4'](6) < 0 or m['wwtA6W4'](6) > 25) or (m['wwtA6W4'](7) < 0 or m['wwtA6W4'](7) > 25) or (m['wwtA6W4'](8) < 0 or m['wwtA6W4'](8) > 25) or (m['wwtA6W4'](9) < 0 or m['wwtA6W4'](9) > 25) or (m['wwtA6W4'](10) < 0 or m['wwtA6W4'](10) > 25) or (m['wwtA6W4'](11) < 0 or m['wwtA6W4'](11) > 25) or (m['wwtA6W4'](12) < 0 or m['wwtA6W4'](12) > 25) or (m['wwtA6W4'](13) < 0 or m['wwtA6W4'](13) > 25) or (m['wwtA6W4'](14) < 0 or m['wwtA6W4'](14) > 25) or (m['wwtA6W4'](15) < 0 or m['wwtA6W4'](15) > 25) or (m['wwtA6W4'](16) < 0 or m['wwtA6W4'](16) > 25) or (m['wwtA6W4'](17) < 0 or m['wwtA6W4'](17) > 25) or (m['wwtA6W4'](18) < 0 or m['wwtA6W4'](18) > 25) or (m['wwtA6W4'](19) < 0 or m['wwtA6W4'](19) > 25) or (m['wwtA6W4'](20) < 0 or m['wwtA6W4'](20) > 25) or (m['wwtA6W4'](21) < 0 or m['wwtA6W4'](21) > 25) or (m['wwtA6W4'](22) < 0 or m['wwtA6W4'](22) > 25) or (m['wwtA6W4'](23) < 0 or m['wwtA6W4'](23) > 25) or (m['wwtA6W4'](24) < 0 or m['wwtA6W4'](24) > 25)"
+  },
+  {
+   "note": "the tropical dispatch column reads no precipitation in the three bands below 30 degrees",
+   "expr": "m['wwtXDisTr1'](0) != 0 or m['wwtXDisTr2'](0) != 0 or m['wwtXDisTr3'](0) != 0 or m['wwtXDisTr4'](0) != 0 or m['wwtXDisTr5'](0) != 0 or m['wwtXDisTr6'](0) != 0 or m['wwtXDisTr1'](1) != 0 or m['wwtXDisTr2'](1) != 0 or m['wwtXDisTr3'](1) != 0 or m['wwtXDisTr4'](1) != 0 or m['wwtXDisTr5'](1) != 0 or m['wwtXDisTr6'](1) != 0 or m['wwtXDisTr1'](2) != 0 or m['wwtXDisTr2'](2) != 0 or m['wwtXDisTr3'](2) != 0 or m['wwtXDisTr4'](2) != 0 or m['wwtXDisTr5'](2) != 0 or m['wwtXDisTr6'](2) != 0"
+  },
+  {
+   "note": "every Roll 2 index entry is a letter position 0-4 (0 = none)",
+   "expr": "(m['wwtR2B24'](0) < 0 or m['wwtR2B24'](0) > 4) or (m['wwtR2B24'](1) < 0 or m['wwtR2B24'](1) > 4) or (m['wwtR2B56'](0) < 0 or m['wwtR2B56'](0) > 4) or (m['wwtR2B56'](1) < 0 or m['wwtR2B56'](1) > 4) or (m['wwtR2B7'](0) < 0 or m['wwtR2B7'](0) > 4) or (m['wwtR2B7'](1) < 0 or m['wwtR2B7'](1) > 4) or (m['wwtR2B89'](0) < 0 or m['wwtR2B89'](0) > 4) or (m['wwtR2B89'](1) < 0 or m['wwtR2B89'](1) > 4) or (m['wwtR2B1012'](0) < 0 or m['wwtR2B1012'](0) > 4) or (m['wwtR2B1012'](1) < 0 or m['wwtR2B1012'](1) > 4)"
+  },
+  {
+   "note": "every humidity adjustment step is -1 through +2",
+   "expr": "(m['wwtHumAdjBefore0'](0) < -1 or m['wwtHumAdjBefore0'](0) > 2) or (m['wwtHumAdjBefore0'](1) < -1 or m['wwtHumAdjBefore0'](1) > 2) or (m['wwtHumAdjBefore0'](2) < -1 or m['wwtHumAdjBefore0'](2) > 2) or (m['wwtHumAdjBefore1'](0) < -1 or m['wwtHumAdjBefore1'](0) > 2) or (m['wwtHumAdjBefore1'](1) < -1 or m['wwtHumAdjBefore1'](1) > 2) or (m['wwtHumAdjBefore1'](2) < -1 or m['wwtHumAdjBefore1'](2) > 2) or (m['wwtHumAdjBefore2'](0) < -1 or m['wwtHumAdjBefore2'](0) > 2) or (m['wwtHumAdjBefore2'](1) < -1 or m['wwtHumAdjBefore2'](1) > 2) or (m['wwtHumAdjBefore2'](2) < -1 or m['wwtHumAdjBefore2'](2) > 2) or (m['wwtHumAdjAfter0'](0) < -1 or m['wwtHumAdjAfter0'](0) > 2) or (m['wwtHumAdjAfter0'](1) < -1 or m['wwtHumAdjAfter0'](1) > 2) or (m['wwtHumAdjAfter0'](2) < -1 or m['wwtHumAdjAfter0'](2) > 2) or (m['wwtHumAdjAfter1'](0) < -1 or m['wwtHumAdjAfter1'](0) > 2) or (m['wwtHumAdjAfter1'](1) < -1 or m['wwtHumAdjAfter1'](1) > 2) or (m['wwtHumAdjAfter1'](2) < -1 or m['wwtHumAdjAfter1'](2) > 2) or (m['wwtHumAdjAfter2'](0) < -1 or m['wwtHumAdjAfter2'](0) > 2) or (m['wwtHumAdjAfter2'](1) < -1 or m['wwtHumAdjAfter2'](1) > 2) or (m['wwtHumAdjAfter2'](2) < -1 or m['wwtHumAdjAfter2'](2) > 2)"
+  }
+ ],
+ "header_sections": {
+  "How to use Table A4: the Roll 1 / Roll 2 cross-index": [
+   {
+    "kind": "const",
+    "name": "wwyA4Roll1Two"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA4Roll1Twelve"
+   },
+   {
+    "kind": "const",
+    "name": "wwyRoll2Bands"
+   },
+   {
+    "kind": "const",
+    "name": "wwyRoll2Rows"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyRunningEpisodeNoSpecial"
+   },
+   {
+    "kind": "const",
+    "name": "wwyLetterPosNone"
+   },
+   {
+    "kind": "const",
+    "name": "wwyLetterPos1st"
+   },
+   {
+    "kind": "const",
+    "name": "wwyLetterPos2nd"
+   },
+   {
+    "kind": "const",
+    "name": "wwyLetterPos3rd"
+   },
+   {
+    "kind": "const",
+    "name": "wwyLetterPos4th"
+   },
+   {
+    "kind": "table",
+    "name": "wwyRoll2Index"
+   }
+  ],
+  "Table A4: the special weather grid": [
+   {
+    "kind": "const",
+    "name": "wwyA4Count"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA4PackBase"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCodeColdWave"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCodeCyclone"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCodeDrought"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCodeGale"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCodeMistFog"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCodeSandstorm"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCodeTornado"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCodeExtremePrecip"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCodeHeatWave"
+   },
+   {
+    "kind": "table",
+    "name": "wwyA4Special"
+   }
+  ],
+  "The no-special day": [
+   {
+    "kind": "const",
+    "name": "wwyNoSpecRoll2WindMph"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyNoSpecRoll2SharpDrop"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyNoSpecRoll2PrecipB"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyNoSpecRoll2WindSource50"
+   },
+   {
+    "kind": "const",
+    "name": "wwyNoSpecRoll12WindMph"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyNoSpecRoll12SharpRise"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyNoSpecRoll12PrecipB"
+   }
+  ],
+  "Cold wave": [
+   {
+    "kind": "const",
+    "name": "wwyColdWaveDice"
+   },
+   {
+    "kind": "const",
+    "name": "wwyColdWaveDiePlus"
+   },
+   {
+    "kind": "const",
+    "name": "wwyColdWaveStepsPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyColdWaveFloorBelowMin"
+   },
+   {
+    "kind": "const",
+    "name": "wwyColdWaveAMinDropF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyColdWaveAMinDays"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyColdWaveRecoveryAutoRise"
+   },
+   {
+    "kind": "const",
+    "name": "wwyColdWaveRecoveryRollLo"
+   }
+  ],
+  "Heat wave": [
+   {
+    "kind": "const",
+    "name": "wwyHeatWaveDice"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHeatWaveDiePlus"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHeatWaveStepsPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyHeatWaveCeilingAboveMax"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHeatWaveZMaxRiseF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHeatWaveZMaxDays"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyHeatWaveRecoveryAutoFall"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHeatWaveRecoveryRollLo"
+   }
+  ],
+  "Cyclone": [
+   {
+    "kind": "const",
+    "name": "wwyCycloneWindDice"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneWindMult"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneWindBase"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneWindMinMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneWindMaxMph"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyCycloneSeacoastLightningDayBefore"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneInlandMaxMi"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCyclonePerimeterMi"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyCycloneMovesAwayFromEquator"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyCycloneFollowsCoast"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneFollowsCoastDaysLo"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneFollowsCoastDaysHi"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyCycloneRainDoubleDownpour"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneTidalWaveMi"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneEyeHours"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneEyeCalmMinLo"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneEyeCalmMinHi"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyCycloneEyeSecondHalfRainstorm"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneEyeWindMaxMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneNoChangeDays"
+   },
+   {
+    "kind": "chain",
+    "name": "wwyCycloneDriftFor"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneRadiusMi"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyCycloneMaxOncePerMonth"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyCycloneSecondBecomesExtreme"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyCycloneNotNearEquator"
+   },
+   {
+    "kind": "const",
+    "name": "wwyCycloneEquatorExclDeg"
+   }
+  ],
+  "Drought": [
+   {
+    "kind": "const",
+    "name": "wwyDroughtDice"
+   },
+   {
+    "kind": "const",
+    "name": "wwyDroughtDiePlus"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyDroughtDay1NoPrecip"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyDroughtLightToTrace"
+   },
+   {
+    "kind": "const",
+    "name": "wwyDroughtTraceGapDays"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyDroughtHeavyLadder"
+   }
+  ],
+  "Gale": [
+   {
+    "kind": "const",
+    "name": "wwyGaleDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "wwyGaleMultMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyGaleBaseMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyGaleMinMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyGaleMaxMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyGaleDurDiePlus"
+   },
+   {
+    "kind": "const",
+    "name": "wwyGaleDurMinHrs"
+   },
+   {
+    "kind": "const",
+    "name": "wwyGaleDurMaxHrs"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyGaleNeverBelow30"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyGalePrev20Boost"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyGaleDesertSandstorm"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyGaleSnowSevereSandstorm"
+   }
+  ],
+  "Mist or fog": [
+   {
+    "kind": "const",
+    "name": "wwyMistSunriseRollMax"
+   },
+   {
+    "kind": "const",
+    "name": "wwyMistHoursDie"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyMistHeavyNearWater"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyMistSuspendsPrecip"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyMistAdjacent50"
+   }
+  ],
+  "Sandstorm": [
+   {
+    "kind": "bool",
+    "name": "wwySandstormNeedsLooseMaterial"
+   },
+   {
+    "kind": "bool",
+    "name": "wwySandstormNoPrecipThatDay"
+   },
+   {
+    "kind": "const",
+    "name": "wwySandstormDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "wwySandstormDiePlus"
+   },
+   {
+    "kind": "const",
+    "name": "wwySandstormMinHrs"
+   },
+   {
+    "kind": "const",
+    "name": "wwySandstormMaxHrs"
+   },
+   {
+    "kind": "const",
+    "name": "wwySandstormSevDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "wwySandstormSevDiePlus"
+   },
+   {
+    "kind": "const",
+    "name": "wwySandstormSevMinHrs"
+   },
+   {
+    "kind": "const",
+    "name": "wwySandstormSevMaxHrs"
+   }
+  ],
+  "Tornado": [
+   {
+    "kind": "bool",
+    "name": "wwyTornadoConditionsSuitable"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyTornadoTempTwoStepsAbove"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoPrecipDieSides"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyTornadoRainStopsAbruptly"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyTornadoCalmNearPath"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoCalmDice"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoCalmDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoDropDegreesF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoDropSteps"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyTornadoDropGreater"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoDropMinutes"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyTornadoCalmRestOfDay"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoPathWidthQMi"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoPathLengthMi"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoTravelMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoVortexMinMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTornadoVortexMaxMph"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyTornadoLowPressureExplosion"
+   }
+  ],
+  "Extreme precipitation and the dispatch table": [
+   {
+    "kind": "bool",
+    "name": "wwyExtremePrecipSubroll"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBands"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXSubNone"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXSubHail"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXSubIceSleet"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXSubLightning"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXSubSevereSnow"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyXDisIceNeeds25F"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisIceMinTempF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand0HiF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand1LoF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand1HiF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand2LoF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand2HiF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand3LoF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand3HiF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand4LoF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand4HiF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand5LoF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand5HiF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyXDisBand6LoF"
+   },
+   {
+    "kind": "table",
+    "name": "wwyXDispatch"
+   }
+  ],
+  "Hailstorm": [
+   {
+    "kind": "const",
+    "name": "wwyHailLightningFirstMin"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHailStandaloneD6"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHailDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHailDiePlus"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHailMinMin"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHailMaxMin"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHailTypicalQtrIn"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHailMaxLoIn"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHailMaxHiIn"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHailMeltMinF"
+   }
+  ],
+  "Ice storm and sleet": [
+   {
+    "kind": "const",
+    "name": "wwyIceCoatLoEighthIn"
+   },
+   {
+    "kind": "const",
+    "name": "wwyIceCoatHiEighthIn"
+   },
+   {
+    "kind": "const",
+    "name": "wwyIceFromHeavyMin"
+   },
+   {
+    "kind": "const",
+    "name": "wwyIceTraceMaxHrs"
+   }
+  ],
+  "Lightning": [
+   {
+    "kind": "const",
+    "name": "wwyLightningDurationMin"
+   },
+   {
+    "kind": "const",
+    "name": "wwyLightningRainLoEighthIn"
+   },
+   {
+    "kind": "const",
+    "name": "wwyLightningRainHiIn"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyLightningHalfAtTwilight"
+   },
+   {
+    "kind": "const",
+    "name": "wwyLightningTwilightHrs"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyLightningStandaloneDisregarded"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyLightningAtDownpourStart"
+   }
+  ],
+  "Severe snowstorm": [
+   {
+    "kind": "const",
+    "name": "wwySevereSnowModDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowModDiePlus"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowModInLo"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowModInHi"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowHeavyDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowHeavyDiePlus"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowHeavyInLo"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowHeavyInHi"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowRateInPerHr"
+   },
+   {
+    "kind": "bool",
+    "name": "wwySevereSnowWindAfter"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowWindLoMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowWindHiMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowWindHrsLo"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSnowWindHrsHi"
+   }
+  ],
+  "Humidity: the Table A5 variation grid": [
+   {
+    "kind": "const",
+    "name": "wwyA5Count"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumLevelLow"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumLevelMed"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumLevelHigh"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumDryMaxPct"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumLowLoPct"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumLowHiPct"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumMedLoPct"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumMedHiPct"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumHiLoPct"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumHiHiPct"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumSatLoPct"
+   },
+   {
+    "kind": "const",
+    "name": "wwyHumSatHiPct"
+   },
+   {
+    "kind": "table",
+    "name": "wwyA5Humidity"
+   }
+  ],
+  "Humidity: the day 1 / day 2 adjustment": [
+   {
+    "kind": "const",
+    "name": "wwyHumAdjRows"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyHumFluctuatesOneLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyHumLowEdgeDry"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyHumHighEdgeSaturated"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyHumDMTwoLevelDrop"
+   },
+   {
+    "kind": "table",
+    "name": "wwyHumAdjBefore"
+   },
+   {
+    "kind": "table",
+    "name": "wwyHumAdjAfter"
+   }
+  ],
+  "Humidity and effective temperature: Table A6": [
+   {
+    "kind": "const",
+    "name": "wwyA6Count"
+   },
+   {
+    "kind": "const",
+    "name": "wwyEffTempApplyMinF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA6Band1LoF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA6Band1HiF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA6Band2LoF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA6Band2HiF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA6Band3LoF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA6Band3HiF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA6Band4LoF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA6Band4HiF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA6Band5LoF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyWindCol0HiMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyWindCol1LoMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyWindCol1HiMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyWindCol2LoMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyWindCol2HiMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyWindCol3LoMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyWindCol3HiMph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyWindCol4LoMph"
+   },
+   {
+    "kind": "table",
+    "name": "wwyA6EffectiveTemp"
+   }
+  ],
+  "Wind chill: Table A7": [
+   {
+    "kind": "const",
+    "name": "wwyA7Count"
+   },
+   {
+    "kind": "const",
+    "name": "wwyChillMaxTempF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyChillMinTempF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyChillStepF"
+   },
+   {
+    "kind": "const",
+    "name": "wwyChillWindCol0Mph"
+   },
+   {
+    "kind": "const",
+    "name": "wwyChillWindColStepMph"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyChillExtrapBelow"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyChillExtrapAbove40Mph"
+   },
+   {
+    "kind": "table",
+    "name": "wwyA7WindChill"
+   }
+  ],
+  "Hours of daylight: Table A8": [
+   {
+    "kind": "const",
+    "name": "wwyA8Count"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA8Months"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA8HalfHourUnits"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA8Lat0"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA8Lat3"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA8Lat6"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA8Lat9"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA8Lat12"
+   },
+   {
+    "kind": "const",
+    "name": "wwyA8Lat14"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyA8SimplifiedRowsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyA8MidnightNightMidpoint"
+   },
+   {
+    "kind": "table",
+    "name": "wwyA8Daylight"
+   }
+  ],
+  "Twilight": [
+   {
+    "kind": "const",
+    "name": "wwyTwilightMidLatMin"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTwilightMidLatLoDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTwilightMidLatHiDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTwilightEquatorMin"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTwilightHighLatMin"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTwilightHighLatLoDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTwilightHighLatHiDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTwilightTerrainMinLo"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTwilightTerrainMinHi"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyTwilightAllDayWhereNoDaylight"
+   }
+  ],
+  "Local winds": [
+   {
+    "kind": "bool",
+    "name": "wwySeaBreezeDayWaterToLand"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyLandBreezeNight"
+   },
+   {
+    "kind": "bool",
+    "name": "wwySeaBreezeStronger"
+   },
+   {
+    "kind": "const",
+    "name": "wwySeaBreezeInlandMinMi"
+   },
+   {
+    "kind": "const",
+    "name": "wwySeaBreezeInlandMaxMi"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyClearSkiesFavorBreezes"
+   },
+   {
+    "kind": "bool",
+    "name": "wwySeaBreezeCanChillCoast"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyCliffFacesTrapSwirlCalm"
+   }
+  ],
+  "Tides": [
+   {
+    "kind": "bool",
+    "name": "wwyTidesTwiceDailyAlternating"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTideHoursBetweenHighs"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTideLowAfterHighHrs"
+   },
+   {
+    "kind": "const",
+    "name": "wwyLunarDayRoughHrs"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTideAdvanceMinPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTideCycleDays"
+   },
+   {
+    "kind": "bool",
+    "name": "wwySpringTidesAroundFullNew"
+   },
+   {
+    "kind": "const",
+    "name": "wwySpringWindowDays"
+   },
+   {
+    "kind": "const",
+    "name": "wwyNeapRangeFtLo"
+   },
+   {
+    "kind": "const",
+    "name": "wwyNeapRangeFtHi"
+   },
+   {
+    "kind": "const",
+    "name": "wwySpringRangeFtLo"
+   },
+   {
+    "kind": "const",
+    "name": "wwySpringRangeFtHi"
+   },
+   {
+    "kind": "const",
+    "name": "wwyFundyMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "wwyGentleSlopeMaxDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wwyGentleEncroachLoX"
+   },
+   {
+    "kind": "const",
+    "name": "wwyGentleEncroachHiX"
+   },
+   {
+    "kind": "const",
+    "name": "wwyModerateSlopeLoDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wwyModerateSlopeHiDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wwyModerateEncroachLoX"
+   },
+   {
+    "kind": "const",
+    "name": "wwyModerateEncroachHiX"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSlopeLoDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereSlopeHiDeg"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereEncroachLoX"
+   },
+   {
+    "kind": "const",
+    "name": "wwySevereEncroachHiX"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTideExampleGentleFt"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTideExampleGentleEncroachLoFt"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTideExampleGentleEncroachHiFt"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTideExampleModerateFt"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTideExampleModerateEncroachLoFt"
+   },
+   {
+    "kind": "const",
+    "name": "wwyTideExampleModerateEncroachHiFt"
+   }
+  ],
+  "The Dungeon Master responsibility": [
+   {
+    "kind": "bool",
+    "name": "wwyDMDetermine2to3Days"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyDMSwitchTimeframesFreely"
+   },
+   {
+    "kind": "bool",
+    "name": "wwyDMPredetermineMultiDay"
+   }
+  ]
+ },
+ "include_after": "#include \"rules/wsgweather.h\"  // R493: the WSG World of Weather generation rules",
+ "include_comment": "the WSG World of Weather special weather and optional rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R493 LANDED 2026-10-16: commit ceaff98 (census 418,",
+ "prev_record": [
+  "- R493 LANDED 2026-10-16: commit ceaff98 (census 418,",
+  "  pushed e84e00a..ceaff98), the WSG WORLD OF WEATHER",
+  "  appendix part 1 of 2, printed pp. 107-111 plus the",
+  "  extraordinary-precipitation tail from the top-left",
+  "  of printed p. 112 - the weather GENERATION system.",
+  "  Pinned as rules/wsgweather.h with the include after",
+  "  wsgdm.h at regtest.cpp line 198 (prefixes wwx for",
+  "  the pins and wws for the table switch columns -",
+  "  both free on the first probe), 170 inlines: 61",
+  "  consts + 54 bools + 1 chain + 54 table columns in",
+  "  13 sections - the opener and basic assumptions,",
+  "  climatic regions, the temperature letter codes,",
+  "  Table A1, how to use A1, Table A2, how to use A2,",
+  "  Table A3, rain sleet or snow, collecting",
+  "  precipitation, the intensity guidelines,",
+  "  extraordinary precipitation. Six tables: the",
+  "  letter-code scale (26x2), the A1 grid split Lo/",
+  "  Mean/Hi (30 rows x 12 months each, -1 sentinel for",
+  "  the blank arctic forest row), Table A2 (11 rows",
+  "  x 4: steps, precip, wind delta with the -99",
+  "  roll-2/roll-12 consult-Special sentinels, wind",
+  "  from), Table A3 (33 rows x 12: arctic carries",
+  "  desert/hills/mountains/plains/seacoast only, no",
+  "  forest or swamp; values 0-5 none through downpour;",
+  "  -99 out-of-range default). SETTLE: Table A3 is the",
+  "  transcription win - our pdf layout and psm6",
+  "  reads are heavily garbled there (psm6 pins only",
+  "  temperate hills and tropical mountains",
+  "  cell-for-cell); the s0py port disagrees in 19",
+  "  cells but all trace to his season-index rotation",
+  "  plus his two known errata (subarctic hills summer",
+  "  C and arctic plains summer C - transcription",
+  "  wins both). The A2 roll-2/roll-12 wind rows rest",
+  "  on the transcription alone (header bools",
+  "  wwxRoll2WindVeryStrong/wwxRoll12WindVerySlight,",
+  "  sentinel -99/dir 0). Two build-authoring bugs",
+  "  found and fixed during the round: the draft A3",
+  "  dict had garbled row lengths (12-15 chars mixing",
+  "  separator dashes with value dashes) - rebuilt",
+  "  from the wsgx.htm table parse - and one",
+  "  table-check used the wrong A1 row indices (the",
+  "  blank forest row instead of hills/mountains).",
+  "  Gap flip: ONLY the weather-system child box",
+  "  closed this round, 143/43 -> 144/42; the parent",
+  "  appendix box and the weather-effects-on-play",
+  "  child stay open for R494 (printed 112-119: Table",
+  "  A4 special weather, optional rules A5-A8, the",
+  "  effects section - R494 flips both and closes the",
+  "  appendix). Spec md5s: eedbd6d634d6a5397b2dbb40bb",
+  "  5397ab authored / 651390f2777a7daeb6e65083d2e40fd",
+  "  8 +nl; the committed spec matched +nl. rverify at",
+  "  ceaff98: restore clean, double-run GREEN, 1689",
+  "  mutants, 0 missed; preflight census 418, R493",
+  "  audit bad 0. Next: R494.",
+  ""
+ ],
+ "gap_flips": [
+  {
+   "note": "the weather-effects child box",
+   "from": "  - [ ] The weather effects on play",
+   "to": "  - [x] The weather effects on play - R494: the Table A4 special-weather grid with the Roll 1 / Roll 2 cross-index, the per-code definitions (the no-special days, cold wave, cyclone, drought, gale, mist/fog, sandstorm, tornado, the extreme-precipitation dispatch with hail, ice, lightning and severe snow, heat wave) and the optional rules A5-A8 with twilight, local winds, tides and the DM responsibility pin as rules/wsgweathx.h"
+  },
+  {
+   "note": "the parent appendix box",
+   "from": "- [ ] **Appendix: the world of weather** (pp. 107-119)",
+   "to": "- [x] **Appendix: the world of weather** (pp. 107-119) - R494: both children closed - the R493 generation system (rules/wsgweather.h) and the R494 special weather, effects and optional rules (rules/wsgweathx.h)"
+  }
+ ],
+ "gap_census": {
+  "closed": 146,
+  "open": 40
+ }
+}
+

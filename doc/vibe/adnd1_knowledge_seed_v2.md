@@ -5895,6 +5895,61 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   tables (pp. 120-126). Extraction pass needed (13
   pdf pages).
 
+- R493 LANDED 2026-10-16: commit ceaff98 (census 418,
+  pushed e84e00a..ceaff98), the WSG WORLD OF WEATHER
+  appendix part 1 of 2, printed pp. 107-111 plus the
+  extraordinary-precipitation tail from the top-left
+  of printed p. 112 - the weather GENERATION system.
+  Pinned as rules/wsgweather.h with the include after
+  wsgdm.h at regtest.cpp line 198 (prefixes wwx for
+  the pins and wws for the table switch columns -
+  both free on the first probe), 170 inlines: 61
+  consts + 54 bools + 1 chain + 54 table columns in
+  13 sections - the opener and basic assumptions,
+  climatic regions, the temperature letter codes,
+  Table A1, how to use A1, Table A2, how to use A2,
+  Table A3, rain sleet or snow, collecting
+  precipitation, the intensity guidelines,
+  extraordinary precipitation. Six tables: the
+  letter-code scale (26x2), the A1 grid split Lo/
+  Mean/Hi (30 rows x 12 months each, -1 sentinel for
+  the blank arctic forest row), Table A2 (11 rows
+  x 4: steps, precip, wind delta with the -99
+  roll-2/roll-12 consult-Special sentinels, wind
+  from), Table A3 (33 rows x 12: arctic carries
+  desert/hills/mountains/plains/seacoast only, no
+  forest or swamp; values 0-5 none through downpour;
+  -99 out-of-range default). SETTLE: Table A3 is the
+  transcription win - our pdf layout and psm6
+  reads are heavily garbled there (psm6 pins only
+  temperate hills and tropical mountains
+  cell-for-cell); the s0py port disagrees in 19
+  cells but all trace to his season-index rotation
+  plus his two known errata (subarctic hills summer
+  C and arctic plains summer C - transcription
+  wins both). The A2 roll-2/roll-12 wind rows rest
+  on the transcription alone (header bools
+  wwxRoll2WindVeryStrong/wwxRoll12WindVerySlight,
+  sentinel -99/dir 0). Two build-authoring bugs
+  found and fixed during the round: the draft A3
+  dict had garbled row lengths (12-15 chars mixing
+  separator dashes with value dashes) - rebuilt
+  from the wsgx.htm table parse - and one
+  table-check used the wrong A1 row indices (the
+  blank forest row instead of hills/mountains).
+  Gap flip: ONLY the weather-system child box
+  closed this round, 143/43 -> 144/42; the parent
+  appendix box and the weather-effects-on-play
+  child stay open for R494 (printed 112-119: Table
+  A4 special weather, optional rules A5-A8, the
+  effects section - R494 flips both and closes the
+  appendix). Spec md5s: eedbd6d634d6a5397b2dbb40bb
+  5397ab authored / 651390f2777a7daeb6e65083d2e40fd
+  8 +nl; the committed spec matched +nl. rverify at
+  ceaff98: restore clean, double-run GREEN, 1689
+  mutants, 0 missed; preflight census 418, R493
+  audit bad 0. Next: R494.
+
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
