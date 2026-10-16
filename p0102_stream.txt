@@ -1,0 +1,83 @@
+Rods, Staves, and Wands
+
+Rod of Lordly Might: Note that even when the rod is out of
+charges, it can still be used as (among other things) a climbing
+pole, a direction-finder, and an altimeter. A severely encumbered
+character must make a successful Dexterity Check to safely ne-
+gotiate the climbing pole whenever it is extended to 20 feet or
+more; all other characters can move along the rungs of the pole
+with no chance of slipping and falling under normal circum-
+stances.
+
+Staff of Swarming Insects: If this item is employed when the ef-
+fective temperature is 40 degrees or lower, it will produce only
+half as many insects as normal — 30 plus 5 per level of the user
+instead of 60 plus 10.
+
+Miscellaneous Magic
+
+Apparatus of Kwalish: The device can negotiate any solid or
+semi-solid surface except for a cliff face.
+
+Arrow of Direction: At the Dungeon Master's discretion, this
+item may be usable as a direction-finder in outdoor settings as
+well as subterranean environments.
+
+Cloak of Protection: See ring of protection.
+
+Cube of Force: If cube face five (‘'keeps out all things"') is acti-
+vated, anything inside the cube is immune to damage from a fall
+or a tumble.
+
+Daern’s Instant Fortress: This structure is impervious to a hurri-
+cane or a tornado (or, obviously, any wind of less strength) — but
+it is not climate-controlled, so that the effective temperature in-
+side will be the same as the actual temperature outside, not con-
+sidering the effect of any wind that might be blowing.
+
+Gauntlets of Dexterity: A character wearing a pair of these
+gloves receives a +10% modifier to his Climbing Rating when-
+
+MAGIC IN THE WILDERNESS
+
+ever he uses both his hands and feet to traverse a surface.
+
+Gauntlets of Fumbling: A character wearing these gloves re-
+ceives a —10% modifier to his Climbing Rating whenever he
+uses both his hands and feet to traverse a surface.
+
+Mantle of Celestian: If every character who went on an outdoor
+adventure had one of these garments, the Wilderness Survival
+Guide would be a very short book. The personal temperature for a
+character wearing the mantle is always comfortable; he is entirely
+protected from practically any form of precipitation (including a
+sandstorm); and he need never worry about dying from thirst or
+starvation. However, the mantle will not protect its wearer from
+impact damage (from a fall, tumble, hailstones, etc.), and it will
+not keep him safe from the adverse effects of high winds; he can
+still be swept away by a tornado, for instance.
+
+Periapt of Wound Closure: The possessor of this stone is im-
+mune to abrasion damage from a tumble, but still takes impact
+damage from a tumble or a fall as normal.
+
+Rope of Climbing: A protrusion must be available within range
+in order for the rope to fasten itself and be useful as a climbing
+aid. Use the Grappling Success Table (see the section on Using
+Rope for Movement and Climbing) to determine if a protrusion ex-
+ists; alternatively, allow a 100% chance on any non-smooth sur-
+face and a 50% chance on a smooth surface.
+
+Shoes of Fharlanghn: A character wearing these shoes can tra-
+vel on foot over any terrain as though it were normal (instead of
+rugged or very rugged), with his movement rate increased ac-
+cordingly. If the wearer is of neutral or neutral good alignment, he
+has a base Climbing Rating of 100% when negotiating a gentle or
+moderate slope, or 80% when moving on a severe slope or a cliff
+face with ledges.
+
+Stone of Good Luck: This object affords its possessor a +5%
+modifier to his Climbing Rating and a —1 modifier to the die roll
+on any Dexterity Check or any Proficiency Check when dexterity
+is the appropriate ability related to the proficiency.
+

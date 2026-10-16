@@ -1,0 +1,418 @@
+Many of the sections of this book describe various facets of the                 other characters in the sphere or hemisphere cannot move faster
+outdoor environment without taking into account the possibility                  than the spell-caster if they intend to remain within the area af-
+- and it is a very distinct possibility indeed - that characters in              fected by the spell.
+the wilderness will have access to spells or magic items that can                    Alarm: Nothing can take the place of an alert sentry on duty at a
+make their lives easier. Insteadof being split up and parceled out               campsite, but this spell can give an added assist for a short time
+among all the topics to which the use of magic might pertain, a lot              by guarding an area that is not in the sentry’s line of sight. Unless
+of general and specific information about magic is presented in                  the caster is of very high level, it is not usually prudent to cast this
+this section.                                                                    spell on the campsite itself, since it cannot protect a large enough
+   Of course, no discussion of the uses of magic in the wilderness               area to give characters adequate warning of an approaching in-
+can hope to be exhaustive. The information in this section is noth-              truder. A better tactic is to cast it on a spot a short distance from
+ing more than a starting point; some of it may seem obvious or                   the campsite, perhaps on a path that runs toward or parallel to
+self-evident, but it is hoped that some of the rest of it will consist of        the campsite.
+ideas that might not have occurred to players and Dungeon Mas-                       Animal Summoning: If the spell-caster’s party contains a char-
+ters.                                                                            acter with proficiency in animal lore, the Dungeon Master may al-
+   The section on spells (including cantrips) is arranged alphabet-              low the spell-caster to know in advance at least one type of
+ically, without regard to which class(es) can use a certain spell.               animal that is available within the spell range. The caster does
+The section on magic items is also arranged alphabetically, but                  not have to request an animal type that is mentioned, but he will
+magic items that simulate or duplicate the effects of spells men-                certainly receive animals of that sort if that is what he desires.
+tioned in the preceding text are not included.                                       Animate Object: You’ve been set upon by a band of orc archers
+   Before getting down to particulars, here are some general                     while climbing a slope, and have managed to reach a plateau
+points:                                                                          with your skin intact - but now you have no cover, and nowhere
+   Any magic that specifically affects animals or plants has an ob-              else to flee to right away. See that pile of rocks close to the edge
+vious application, and is not listed here unless some particular                 of the plateau? If you animate the one at the bottom and send it
+aspect is considered worth mentioning (see animal summoning                      over the edge, the others will follow it down. Presto - no more
+for an example of this).                                                         orcs!
+   Several types of magic can cause, affect, or extinguish fires,                    Animate Rock: See animate object, above, for one idea.
+and many of these have obvious applications in camping situa-                        Armor: In addition to its other benefits, the protection afforded
+tions. Only when an observation is considered noteworthy (see                    by this spell will alter the personal temperature for the recipient
+affect normal fires) is such a spell included in this list.                       by 10 degrees in the direction toward the tolerable range -
+   Also excluded from this list are magical effects that can create              warmer if the environment is cold, or vice versa.
+ nourishment, since the spell descriptions usually provide all the                   Augury: Comes in handy for determining if the greenery you’ve
+ necessary information.                                                          gathered for supper is edible, in the absence of a character with
+   Other spells and magic items not mentioned are those that are                  proficiency in plant lore or as a safeguard against the possibility
+ deemed to have no general application for enabling characters to                of the character’s estimation being incorrect. Of course, the au-
+ more easily contend with or manipulate the effects of the outdoor               gury itself does not always produce accurate results. . . .
+ environment. Of course, practically any form of magic can be                        Barkskin: A recipient of this spell will suffer half damage from
+ used in the wilderness, and may have a specific application in a                 abrasion if he happens to tumble down a slope. A druid who plans
+ particular circumstance that makes it beneficial or even neces-                  ahead (keeping the material components at hand) and acts
+ sary for a character to possess.                                                 quickly might be able to discharge the spell on a character as he
+                                                                                  tumbles past the caster, so that abrasion damage would be mini-
+                                                                                  mized for the remainder of the distance tumbled. It will not, how-
+Spells                                                                            ever, offset any abrasion damage already suffered before the
+                                                                                  spell goes into effect.
+   Affect Normal Fires: If the group does not contain a character                     Bee: If a character is victimized by this cantrip while in a precar-
+with fire-building proficiency, or if characters are impatient and a              ious position on a moderate or severe slope or a cliff face, he
+magic-user has this spell to burn, it’s an easy way to get a camp-                must make a Climbing Check to avoid falling. If a creature in a
+fire or a cookfire blazing quickly after the first few pieces of kin-             similar situation (presumably an opponent of the spell-caster) is
+dling have been ignited. The effect of the spell won’t last long, but             stung, it should also be required to make a check to keep from
+by the time the magic expires the larger pieces of fuel will have                 falling.
+been ignited and the fire will burn well on its own from then on.                     Bind: The spell will affect at least 100 feet of ’h-inch-diameter
+   Air Walk: Very useful, as are other spells allowing aerial move-               climbing rope, or an even greater length of a smaller rope (such
+ment, for ascending or descending a steep incline, or even mov-                   as might be used to pitch a tent). Using it to help set up camp is
+ing directly up or down in close proximityto a cliff face. Of course,             rather frivolous, but it may be handy for taking down a tent quickly
+when moving directly up or down, the air walker must be sure that                 if the party does not include a character with proficiency in rope
+he can reach a safe perch before the spell duration expires.                      use. The spell also has obvious utility in climbing situations. If a
+   Airy Wafer: The movement rate of any character in the area of                  protrusion is only a few inches out of a character’s reach, he can
+effect is the same as his swimming rate - and, of course, any                     extend the end of the rope as far as possible and then call upon
+
+                                                                            95
+MAGIC IN THE WILDERNESS
+
+his magic-using companion to bind the rope to the protrusion.                  storm must be actually occurring and not simply about to happen,
+   Bluelight: A reliable, if not especially bright, source of illumina-        as might be the case under “hot and cloudy conditions”).
+tion for improving close-range vision in the absence of a torch,                  Call Woodland Beings: The presence of a character with profi-
+lantern, or any other similar but more powerful source of magical              ciency in animal lore will not enhance the chances of this spell
+light. The effect sheds enough light to enable a character to move             succeeding, as with animal summoning (see above), since this
+at twice his maximum safe speed in darkness or moonlight with-                 proficiency does not imparl any special knowledge about the
+out needing to make Dexterity Checks, providing that he is pay-                sorts of fantastic creatures that can be called by this spell.
+ing attention to the terrain in front of him.                                     Commune With Nature: The spell lasts until the caster has re-
+   Bug: Similar in effect to a bee cantrip, except that the bite is            quested and found out one fact for each level of experience. The
+usually not as severe as a bee’s sting, so a victim gets a + 10%               caster need not maintain total concentration on the spell for it to
+bonus to his Climbing Rating for the purpose of this Climbing                  remain in effect; he can move normally, eat, converse with com-
+Check.                                                                         panions, and so forth. But the spell will expire prematurely if the
+   CallLightning: The magical lightning brought into existence by              caster performs any strenuous physical or mental activity, if he is
+this spell is generally less lethal than natural lightning - but the           struck by a physical or magical attack, or if he loses conscious-
+chance of a character being hit by natural lightning is usually                ness.
+quite small, whereas a bolt of magical lightning will always hit a                Cone of Cold: At the Dungeon Master’s discretion, this spell
+target within range of the area where it strikes, and will always do           could be used in a non-damagingmanifestation to enable a char-
+at least half damage. To an outside observer, magical lightning is             acter to recover from the effects of heatstroke. Instead of being
+indistinguishable from natural lightning in appearance; thus, a                instantaneously cooled and struck for damage, the target of the
+character or creature who witnesses it or is struck by it will not au-         spell could be kept cooled for an hour without suffering damage
+tomatically know that the lightning was caused by an external                  from the spell and thereby saved from further harm due to heat-
+force - but if more than one strike hits a target or targets within a          stroke. This treatment will not restore lost hit points but will re-
+relatively short time, witnesses may logically suspect that nature             store lost constitution points, up to a maximum of six (one per
+is not entirely to blame. Natural lightning can also occur during              turn for the hour that the cooling power remains in effect).
+the duration of this spell, as long as conditions permit (Le., a                  Control Temperature: Useful for protecting and aiding the re-
+
+
+
+
+                                                                          96
+                                                                                                           MAGlC IN THE WILDERNESS
+
+covery of someone suffering from hypothermia, frostbite, heat-              keep his eyes covered during a recovery period.
+stroke, or some other temperature-relatedmalady. But the caster                Cure Disease: Physical traumas such as dehydration, hypo-
+must take care not to alter the temperature too drastically in cer-         thermia, heatstroke, etc., are not considered diseases for the
+tain circumstances. Extreme heat is not necessarily good for                purpose of determining what maladies this spell can affect.
+someone suffering from the effects of cold, so that a frostbite vic-           Darkness, 15’Radius: The magical darkness created by this
+tim might be harmed as much as helped if the temperature                    spell (or any other similar magical effect) is much blacker than the
+around him was suddenly raised by 100 degrees or more; a grad-              darkness that normally prevails in the wilderness at night, even
+ual warming is much more conducive to full recovery. On the                 under a moonless or overcast sky. The maximum safe movement
+other hand, a heatstrokevictim is benefittedthe most if he can be           rate under this lightless condition is one-half of the figure given
+promptly exposed to freezing or near-freezing conditions, to                for natural darkness.
+bring his body temperature down as rapidly as possible. At the                 Detect Snares & Pits: As indicated in the spell description, this
+Dungeon Master’s discretion, the caster may be able to manipu-              magic is much more versatile in the outdoors than in an under-
+late the temperature during the duration of the spell, or he may be         ground environment. The area of effect of the spell will move as
+forced to pick a “target temperature” and stick with it for as long         the caster moves, as long as he concentrates on maintaining the
+as the spell persists.                                                      detection, does not have his concentration abruptly interrupted
+   Control Weather: The Dungeon Master must interpret this spell            (by combat or the preparation of a different spell, for instance),
+description quite literally and somewhat conservatively, not al-            and does not attempt to move faster than his full normal move-
+lowing a character to get away with something that should not be            ment rate. The caster can converse normally with other party
+possible. As noted in the Players Handbook, the spell “will not             members and perform any non-strenuous physical activity with-
+radically change the temperature” through a range of (for in-               out interrupting the detect spell.
+stance) 100 degrees or more - instead, a maximum range of 30                   Dig: A quick way to search for water beneath the surface of the
+or 40 degrees in one direction or the other is recommended.Also,            desert. Use of the spell does not increase the chance of finding
+note that sweltering heat cannot be made hotter, and arctic cold            water at a certain location, but at least the party won’t spend a lot
+cannot be made colder; when the actual current temperature is at            of time and effort in a fruitless endeavor.
+one of these extremes, it can only be moved in one direction. This             Dispel Exhaustion: Despite its name, this spell does only what
+is true even of the druidicversion of this spell, which can be used         the Players Handbook says it does. It cannot alleviate or offset the
+to move weather conditions two steps instead of just one. When              effects of fatigue or exhaustion as described in this text.
+the spell duration expires, the weather conditions that existed be-            Distract: See cough.
+fore it was cast will be resumed, just as if the interveningtime had           Dry: Wet kindling can be made flammable by an application of
+not occurred. For instance, the use of this spell will not prevent          this cantrip, so that it would be possiblethereafter to start a small
+characters on the seacoast from being in the path of an oncoming            campfire more quickly. Larger pieces of wood that are not wet all
+hurricane - but if they can move inland during the time that the            the way through can be used to keep the fire going if they are bro-
+control weather spell is in effect, they may be able to avoid the           ken up so that the dry interior is exposed to the flames. Or, a sec-
+brunt of the storm.                                                         ond application of the cantrip could be used to dry out the surface
+   Control Winds: When cast for the purpose of countering a con-            of a pile of larger pieces of wood, so that the fuel can be ignited
+trol weather or control temperature spell, this magic completely            without needing to be broken up.
+negates the previously cast spell, reinstates the natural weather              Earthquake: The effect brought about by this spell is magical,
+or temperature conditions that were in effect beforehand, and               not natural, and thus does not cause the same results as a natu-
+then creates a wind of the desired velocity. This wind does have            ral earthquake. If it is cast within one mile of a natural fault line,
+the power to affect other naturally existing conditions, if it is           there is a 50% chance that a natural earthquake will occur at that
+strong enough (it will dissipate moderate or heavy fog, neutralize          location within l d 6 turns after the magical earthquake has sub-
+a sandstorm within the area of effect, and so forth) - and, unlike          sided.
+control weather, the natural weather will not necessarily resume               Fear: Creatures with higher than animal intelligencethat are af-
+when the spell duration expires: if a sandstorm, for instance,              fected by this spell will not run into the side of a cliff, over a cliff,
+would have abated by the time this spell ends, then it will not re-         into a fire, etc., in the process of fleeing away from the caster. If
+sume. The spell does not have the power to change large-scale               they encounter such an obstacle, they will alter their path and
+weather conditions; for instance, it cannot cause storm clouds to           proceed along the edge or perimeter of the obstacle, still attempt-
+move rapidly away or come closer, because the area of effect is             ing to put as much distance as possible between themselves and
+not nearly large enough to affect the upper atmosphere where                the caster.
+these clouds are located.                                                      Feign Death: For a character or creature subjected to this spell,
+   Cough: The interruption caused by use of this cantrip is not se-         the effects of exposure (frostbite, heatstroke, etc.) accumulate
+vere enough or long-lasting enough to cause a character to lose             only half as quickly as under normal circumstances. Thus, if a
+his concentration on a spell he is trying to maintain (see detect           character knows that help is on the way and will arrive fairly soon,
+snares & pits for an example).                                              he may help to save his life or the life of another being by using
+   Create Food & Water: Better than create wafer (see below)                feign death to partially protect the victim.
+when the party is in dire straits, because it provides both solid              FindFamiliar: Any attempt to cast this spell in a desolate area (a
+and liquid nourishment (if the caster so specifies) and it requires         scorching desert or arctic wastes) may, at the discretion of the
+ no material component.                                                      Dungeon Master, automatically fail to attract any of the listed
+   Create Water: Obviously, a life-saver when the party runs out of         creatures. In any event, the possibilities for normal familiars
+water in the desert or any other waterless environment. But re-             should be restricted to creatures that could conceivably exist
+member two important points: You can’t take it with you unless              within the spell range; a black cat almost certainly will not be
+you have something to carry it in, and you can’t make water un-             found in a desert or at the summit of a mountain range, and a toad
+less you have at least a drop of water to begin with. (Whether sa-           probably will not be found in the middle of a grassy plain miles
+liva or perspiration qualifies as a material component in this case         from any source of ground water. Die-roll results that indicate
+is a matter for the Dungeon Master to decide.)                              such a contradiction may either be re-rolled or treated as “no fa-
+   Cure Blindness: This spell will negate the eye injuries and               miliar available,” depending on the judgment of the Dungeon
+blindness caused by a sandstorm, without requiring the victim to             Master.
+
+                                                                       97
+MAGIC IN THE WILDERNESS
+
+   Find Traps: Similar to detect snares & pits (see above), this              Climbing Ratings. If a hasted character exceeds his maximum
+spell can remain in effect while the caster turns or moves at a nor-          safe speed in conditions of reduced visibility, he must make all
+mal speed. However, note that it is only useful to discover the ex-           Dexterity Checks called for at a +2 modifier to the die roll.
+istence of traps “of a magical or mechanical nature” - it will not               Heal: The Dungeon Master should interpret the power of this
+reveal the presence of a covered pit, for instance, or a trip wire            spell liberally when it is used to counter injuries or disabilities
+(unless the wire is connected to a snare or a missile-firingdevice,           caused directly or indirectly by the environment. For instance, a
+or some other accessory that constitutes a trap “of mechanical                heal spell will restore all constitution points lost from heatstroke,
+nature”).                                                                     not just those that would have been regained by normal recovery.
+   Firewater: If the group has water to spare, this spell is an effec-           Heat Metal: The reverse of this spell can be used to treat a heat-
+tive way to start a campfire without kindling or any other prepara-           stroke victim by at least partially dressing him in metal armor and
+tion other than a moderate-sized pile of branches. If as little as            then dischargingthe chillmetalspell on the armor. He will not suf-
+one pint of firewater is prepared, sprinkled evenly over the fuel,            fer damage or disability such as the spell would normally cause
+and ignited before it evaporates, it will cause branches, logs, etc.,         (see cone of cold for another example of this), and the seven
+to catch fire wherever the substance is present. The flame thus               rounds of spell duration will benefit him the same as if he had re-
+produced will spread to the rest of the fuel and produce a blaze              ceived normal treatment for a full hour.
+that can be used for cooking or warmth, or both.                                 Hold Person: This spell and similar magics will not suspend a
+   Flame Strike: Using a high-powered fire spell such as this to              character or creature in mid-air, so that it can thereby be saved
+start a campfire is about as sensible as lighting a pipe with a blow-         from falling. It will only “freeze” victims so as to prevent them
+torch. The flame strike will momentarily ignite everything in a 10-           from moving under their own power. Someone who is about to
+foot diameter area, and when the duration expires any easily                  lose his grip on a mountainside can be held in place by means of
+flammable materials within that area will be charred to a crisp. If           this spell as long as he is still gripping handholds and footholds
+the immediate area also contains combustible materials, the use               when the spell takes effect, but if he has already lost his grip and
+of this spell (and most other sorts of fire magic) could start an un-         is not “attached” to the surface then the spell will not necessarily
+controllable fire; see the section on Camping and Campfires for               hold him in place unless his feet are securely placed on a ledge
+details.                                                                      (in which case he probably didn’t need to be held to begin with).
+   Forcecage: The spell description does not specify that the                 For a willing or needy recipient of the spell in a case such as de-
+cage must be anchored to a solid surface. There is a chance                   scribed here, the saving throw should be disregarded or consid-
+equal to 5% per level of the caster that the spell could be used to           ered to be automatically failed.
+halt a falling character or creature in mid-air (assuming, of                     lnsect Plague: If this spell is cast when the actual temperature
+course, that the target is within range when the spell is dis-                is 40 degrees or lower, the duration is reduced to VIOof normal (1
+charged). Failure on this chance indicates that the intended tar-             round/level) and the area of effect is cut to ’k of normal (9” diam-
+get was missed and the forcecage is formed around thin air.                   eter, 1V2“ high cloud for the cleric version, or 8” diameter, 1“
+Success indicates that the target is prevented from falling any               high cloud for the druid spell).
+farther, and he only takes damage as for a 20-foot fall (the length               Irritation: The itching application of this spell will cause a target
+of one side of the cage). There must be a way to rescue the char-             in a precarious position to lose his grip and tumble or fall unless
+acter by other means before the duration expires, or his fall will            he is otherwise prevented from doing so.
+resume from that point when the cage disappears. It is possible,                  Item: As alluded to in the last line of the spell description, this is
+for instance, to pass a rope through the bars of the cage; the                a handy way to make a campfire portable - but whoever carries
+character can tie it around his waist and then be hauled to safety            the “fire” between stops had better be sure that the spell-caster
+when the duration expires or the magic is dispelled.                          won’t inadvertently speak the command word while it’s in his
+   Fumble: If this spell is cast upon a character or creature in a            backpack.
+precarious position and the target fails its saving throw, it will               Jump: A possible, but risky, means of ascending (but not de-
+stumble and fall from that position unless it makes a successful              scending) a slope or a cliff face - since the spell “does not in-
+Climbing Check at a -20% modifier to its Climbing Rating, or a                sure any safety in landing or grasping at the end of the leap.” If a
+successful Dexterity Check with a + 4 modifier to the die roll                place exists for the jumper to land upon or grab onto, he must
+(whichever applies). The effect of the spell can be averted if the            make a successful Dexterity Check at the end of the jump to land
+target remains motionless until the spell duration expires. In most           safely. If no such place exists, or if he fails the check, he will fall.
+cases, a target that fails its saving throw will not know that it has         To determine the chance of a protrusion, the Dungeon Master
+been affected by the spell, so the decision to remain motionless              can use the Grappling Success Table (see the section on Using
+must be made independent of any knowledge of the peril that                    Rope for Movement and Climbing) or simply rule that a safe
+such movement would cause. For example, if a character is                     landinglgrabbingspot always exists, except on a smooth slope or
+perched on a cliff ledge and intends to remain in that spot for sev-          smooth cliff face, where the chance is 50%. (Fingers and toes
+eral minutes until a companion ascends or descends to the same                can find purchase on places where a grappling hook would not
+location, a fumble spell will not cause him to lose his grip and fall.        usually catch.)
+But if he attempts to find a new handhold or foothold, grab for a                 Knot: A character with proficiency in rope use can loosen the
+rope, or perform any other deliberate motion, he must make a                  knot in l d 4 rounds, minus his dexterity bonus for reaction (but a
+successful Climbing Check (with the modifier given above) or slip              minimum of 1 round in any case).
+and fall.                                                                         Locate Animals: See animal summoning.
+   Gather: This cantrip cannot be used on a pile of freshly picked                Locate Plants: See animal summoning, except that the text ap-
+greenery to cull out inedible or poisonous plants unless the                   plies to plants in this case.
+caster has prior knowledge (by means of proficiency in plant lore,                Lower Water: If water exists below the surface of the desert in
+for instance) of which plants are good to eat and which are not.              the area where the reverse of this spell is discharged, the magic
+   Giggle: See cough.                                                         will bring it toward the surface but not necessarily all the way to
+   Haste: If this spell is cast upon a character or creature attempt-         ground level, so that characters might still have to excavate to
+ ing to negotiate a slope or a cliff face, the target can indeed move         find it. The unreversed application of the magic can be used to
+twice as fast as normal - but all Climbing Checks for hasted                  enable characters to ford a deep river or perhaps cross a narrow
+characters and creatures are made at a - 10% penalty to their                  lake on foot, assuming that the water is lowered enough to allow
+
+                                                                         98
+                                                                                                              MAGIC IN THE WILDERNESS
+
+such passage and that the travelers can cover the distance from                selves beginning immediately after the spell duration expires,
+one shore to the other before the spell duration expires. Even                 they will become exhausted after as little as 1 turn of activity other
+though not all the water in the river or lake will be within the area          than eating, drinking, and resting. This stricture does not prohibit
+of effect, the water that does spill into the area of effect as the re-        mental activity (such as studying a spell book or praying for
+sult of the lowering will be immediately lowered itself.                       spells). The lone exception to this is a character with proficiency
+   Massmorph: The characters and creatures of an adventuring                   in endurance, who can continue to engage in nonstrenuous
+party can be made safe from any number of natural hazards                      physical activity immediately after the spell effect expires; how-
+(sandstorm, hailstorm, extreme temperature, etc.) by turning                   ever, for a period of time equal to the duration of the spell, such a
+them into trees until the hazard has ceased to exist. Only a blow              character cannot make use of his proficiency,and he is subject to
+from a weapon (not simply a bare fist) or the impact of some                   the effects of fatigue and exhaustion as a normal character would
+harmful magic effect (magic missile, death spell, etc.) will cause             be. This spell will not affect a character with proficiency in long-
+damage to characters and creatures while they are mass-                        distance running, just as it does not affect a barbarian who has
+morphed. Of course, they are still subject to effects that can harm            the special running ability of that class.
+trees (fire, lightning, extremely strong wind, acid, etc.). And,                  Shield: A magic-user benefitting from this spell takes only two-
+spending time in the form of a tree does not alleviate the need for            thirds of the abrasion and impact damage he would otherwise
+nourishment; these illusionary “trees” cannot eat, and cannot                  suffer from a tumble or a fall.
+soak up water from the ground, so that any characters or crea-                    Sink: Can be a lifesaver if cast upon someone who is about to
+tures that remain in this altered state for an extended period of              fall from a precarious position (Le., a character who has failed a
+time may be in dire need of food and water when the magic is dis-              Climbing Check earlier in the same round). If the caster stops
+pelled, and they may even die from lack of nourishment if kept in              chanting after 4 segments, the subject will become fastened to
+this form for too long. Needless to say, the rest of the party is in           the surface he is touching; as with hold person (see above), the
+big trouble if the spell-caster is “chopped down” before he has a              saving throw can be waived or considered automatically failed if
+chance to dispel the magic.                                                    the spell is intentionally cast upon a willing or needy recipient.
+   Mending: The spell will repair a rope that has broken or frayed,            Thereafter, the rest of the group has 4 turns to devise a way to
+but cannot be used to join two different ropes to make one single,             keep the spell recipient from falling when he returns to normal
+longer rope.                                                                   form.
+   Misdirection: If this spell is cast upon a character with some                 Snare: If the spell is cast upon a snare that has been prepared
+knowledge-based proficiency (animal lore, direction sense, etc.)               without magical assistance, the chance of the snare being unde-
+and the target fails a saving throw, the interpretation or assump-             tectable without magical means is loo%, and furthermore the
+tion made by the proficient character will be reversed, so that a              snare can only be noticed on a 50% chance even if some form of
+correct assessment becomes incorrect or vice versa. Of course,                 magical detection is employed on the area in which it is located.
+the spell-caster will not usually know ahead of time whether the                  Stone Tell: This spell will function if cast upon something such
+character was making a correct assessment or not.                              as a mountainside or a cliff face (which, after all, is essentially a
+   Protection From Normal Missiles: A character or creature who                conglomeration of “stones”) as well as if it is cast upon individual
+receives the benefit of this spell is prevented from being harmed              rocks or boulders.
+by hailstones, a sandstorm, or any other missile-like natural phe-                Sfoneskin: A character who takes a tumble while this spell is in
+nomenon. Although the recipient cannot be blinded by a sand-                   effect upon him will suffer no abrasion damage as a result of the
+storm, and in fact no sand will actually touch him, he is still limited        episode, but the act of tumbling will dispel the magic, whether or
+in visibility as much as an unprotected character is. The spell                not the recipient would otherwise have suffered damage. The
+does not negate any effects of very strong wind, such as a tor-                magic will also keep a character safe from injury in a hailstorm
+nado; a character can still be picked up and carried along by the              (the entire storm being considered as an “attack sequence’), but
+funnel cloud, but he will not take damage from collision with de-              it will be dispelled when the hailstorm stops.
+bris that is also being carried along. The spell prevents a charac-               Summon Insects: If this spell is cast when the actual tempera-
+ter from suffering abrasion damage during a tumble, but does not               ture is 40 degrees or lower, the duration of the spell is only one-
+keep him safe from impact damage at the end of a fall or a tum-                half of normal (rounded down).
+ble. The protection field will not keep out natural lightning. It will            Symbol: If a symbol of hopelessness is placed upon a location
+keep a character safe from being burned by lava during a vol-                  where it can only be viewed by a character or creature in a precar-
+canic eruption, but will not protect him from radiant heat that can            ious position (on the surface of a severe slope or a cliff face, for in-
+also cause damage at such a time.                                              stance) and the viewer fails his saving throw, he will be unable to
+   Rainbow: If an illusionist casts a rainbow cantrip and a cleric             tear his gaze from the symbol and must make a successful Wis-
+who sees it fails his saving throw, the cleric can successfully cast           dom Check every turn as long as the magic remains in effect. If
+a rainbow spell as long as the casting of the spell begins before              anyone of these checks fails, he will fall from his precarious posi-
+the magic of the cantrip expires, and the cleric has the material              tion unless he makes a successful Climbing Check or Dexterity
+components readily available. (It isn’t easy to do, but it’s possi-            Check (whichever applies) immediately after the Wisdom Check
+ble.) However, a rainbow spell brought about by these means will               was failed. If a symbol of pain is viewed in the same circum-
+be reduced in efficacy as follows: the bow will fire only once per             stances, the Dungeon Master should substitute a Constitution
+round, not twice; the weight limit of the bridge is half normal; the           Check for the Wisdom Check and otherwise handle the incident
+elevator moves at 6” instead of 12“; and the effects of draughts               in the same way as described above.
+from the flagon will be as if the appropriate spell had been cast by              Trip: The spell will have no effect upon characters who are not
+a cleric of 6th level instead of 12th.                                         walking or running in a normal fashion, such as those who are
+   Resist Cold: A recipient of this spell who is suffering from hypo-          crawling along level terrain or using both hands and feet to nego-
+thermia, frostbite, or some other malady related to cold will be               tiate a slope or a cliff face.
+protected from further harm for the spell duration, but the magic                 Transmute Rock to Mud: This spell, used in combination with
+will not negate adverse effects already suffered.                              the reverse of lower water, can produce drinkable liquid from
+   Resist Fire: Handled the same way as resist cold, except that it            solid rock.
+pertains to heat-related instead of cold-related effects.                         Water Walk: For the purpose of determining how many individ-
+   Run: If any affected individuals do not rest and refresh them-              uals can be affected by this spell, treat a character who is heavily
+
+                                                                          99
+MAGIC IN THE WILDERNESS
+
+or severely encumbered as equivalent to two man-sized crea-                         Oil of Fumbling: This substance will not increase a character’s
+tures instead of just one. Of course, any creature empowered to                  chance of falling or tumbling from a precarious position unless
+walk on water does so at his normal land-based movement rate,                    the user comes “under stress in a melee combat situation.” In
+taking into account encumbrance, the condition of the water, and                 addition to causing the principal effect of the oil to manifest itself,
+any other pertinent factors. Calm water is equivalent to normal                  being in such a situation will require a character to make a suc-
+terrain, actively flowing water might be considered rugged ter-                  cessful Climbing Check or Dexterity Check (whichever applies) in
+rain, and white-water rapids would be very rugged terrain. The                   any round during which he fumbles or drops a held object. If this
+current of the water also has an effect on water walking; in order               check is failed, the character falls or tumbles.
+to be able to move against the current, the water walker must be                    Vitality: Among other things, this potion negates the need for a
+able to maintain a movement rate faster than the current.                        character to rest and take nourishment after a run spell, and it
+    Weather Summoning: As indicated by the spell description, the                makes the imbiber immune to the effects of fatigue and exhaus-
+duration and area of effect of the magically created weather are                 tion for up to seven days.
+dictated by the nature of the conditions called for by the caster.
+Based on general knowledge and the information in the spell de-
+scription, the caster should not attempt to summon any weather                   Protection Scrolls
+condition that could not conceivably occur during the current
+time of year; if he does, the Dungeon Master is entitled to disallow               Cold: The effective temperature for all characters in the pro-
+the request and consider the spell ruined. Weather conditions                    tected area is at least high enough to prevent them from suffering
+that prevailed before the spell was cast will resume when the du-                any adverse effects due to cold, or 40 degrees warmer than the
+ration expires. The “trend of the weather to come” will be appar-                current effective temperature, whichever is higher.
+ent to any character who observes the changing conditions, not                     Fire: Works similarly to a protection from cold scroll (see
+just to a character with proficiency in weather sense.                           above), except that the effective temperature is lowered instead
+    Web: Can be used to form a “net” beneath a character or an                   of raised.
+object in danger of falling, as long as two diametrically opposed                   Gas: Characters within 1” of the reader are in an area of no
+vertical surfaces (two cliff faces close together, for instance) are             wind, so that they cannot be swept up by a tornado or blown
+available to serve as anchors for the web. For every five feet of                across the countryside by a hurricane. A sandstorm is neutral-
+thickness of the web, it can protect a character from a fall of 10               ized in the area; when airborne grains of sand come into contact
+feet; a IO-foot-thickweb will stop a fall of 20 feet, one of 20 feet in          with the calm air, they simplyfall to the ground. The effective tem-
+thickness will cushion a character who falls 40 feet, and one of 30              perature within the protectedarea is altered to account for the ab-
+feet in thickness or more will stop a fall of 60 feet. If a character            sence of wind.
+falls more than 60 feet, a web will be of no use; his body will have
+built up so much velocity that it will keep falling as though the web
+wasn’t there. If a web is used to halt a tumble down a slope, the                Rings
+distance figures given above are doubled for a severe slope,
+quadrupled for a moderate slope, and multiplied by eight for a                      Fire Resistance: Makes the wearer immune to the effects of
+gentle slope. For example, a 1“-thick web will halt a character af-              normal heat just as a protection from fire scroll does.
+ter a tumble of 40 feet (or less) down a severe slope; a 2”-thick                   Free Action: The wearer of this ring can move and otherwise
+web will bring a character safely to a halt after a fall of 160 feet (or         operate as if he was not encumbered, unless he is actually se-
+less) down a moderateslope. Of course, the web does not negate                   verely encumbered, in which case he can operate as if moder-
+abrasion damage from a tumble, but it does prevent the charac-                   ately encumbered. Wearing this ring does not enable a character
+ter from suffering impact damage.                                                to carry more encumbrance than he can normally; if such an at-
+    Wraithform: An illusionist who casts this spell upon himself just            tempt is made, the power of the ring is negated until the wearer
+before leaping or falling will take no damage from the impact of                 rids himself of the excess baggage. The ring does not change the
+the fall (assuming he hits ground before the duration expires).                  character’s actual encumbrance value, so that if he is astride a
+The magic does not alter the weight or mass of the illusionist, only             mount, his presence has its normal effect on the animal’s ability
+ his physical nature and appearance. The spell cannot be cast                    to carry encumbrance.
+while the illusionist is falling (unlike a feather fall spell, which can            Protection: The ring enables its wearer to take less damage
+ be effected in mid-air), because one of the material components                 from a fall or a tumble; use the “plus” of the ring as a subtraction
+ is a wisp of smoke. However, casting might be possible if the fall              from each die of damage called for, to a minimum of 1 point of
+carries the illusionist through a cloud of smoke and he has the                  damage per die. This applies both to abrasion damage and im-
+other material component ready in hand, providing that he can                    pact damage. This power of the ring is related to its ability to im-
+finish the casting before hitting the ground - a body can fall a                 prove armor class, so that this power also will not function if the
+long distance in one segment, especially if it has already been ac-              character is wearing magical armor.
+celerating for some time.                                                           Sustenance: A character wearing this ring is much less likely to
+                                                                                 be affected by fatigue or exhaustion. All Constitution Checks for
+                                                                                 fatigue and exhaustion are made with a -5 modifier to the die roll
+Pot ions                                                                         (but an unmodified roll of 20 is still failure in any case). In addition,
+                                                                                 Constitution Checks for fatigue need not be made more often
+  Gaseous Form: An individual under the effect of this potion will               than once every six turns, regardless of how long the character
+take 3-30 points of damage if he is exposed to a gale-forcewinds,                engages in strenuous activity.
+or will be killed outright if he is hit by hurricane-force winds or a               Warmth: This ring provides the same benefits as a protection
+tornado.                                                                         from cold scroll does.
+  Invulnerability: A fighter who has drunk this potion will take no
+damage from a fall of 40 feet or less, no abrasion damage from a
+tumble, and no impact damage from a tumble of 80 feet or less. If
+he falls or tumbles farther than the given distances, impact dam-
+age is halved.
+
+                                                                           100
+                                                                                                           MAGIC IN THE WILDERNESS
+
+Rods, Staves, and Wands                                                       ever he uses both his hands and feet to traverse a surface.
+                                                                                 Gauntlets of Fumbling: A character wearing these gloves re-
+  Rod of Lordly Might: Note that even when the rod is out of                  ceives a -10% modifier to his Climbing Rating whenever he
+charges, it can still be used as (among other things) a climbing              uses both his hands and feet to traverse a surface.
+pole, a direction-finder, and an altimeter. A severely encumbered                Mantle of Celestian: Ifevery character who went on an outdoor
+character must make a successful Dexterity Check to safely ne-                adventure had one of these garments, the Wilderness Survival
+gotiate the climbing pole whenever it is extended to 20 feet or               Guide would be a very short book. The personal temperaturefor a
+more; all other characters can move along the rungs of the pole               character wearing the mantle is always comfortable; he is entirely
+with no chance of slipping and falling under normal circum-                   protected from practically any form of precipitation (including a
+stances.                                                                      sandstorm); and he need never worry about dying from thirst or
+  Staff ofswarming Insects: If this item is employed when the ef-             starvation. However, the mantle will not protect its wearer from
+fective temperature is 40 degrees or lower, it will produce only              impact damage (from a fall, tumble, hailstones, etc.), and it will
+half as many insects as normal - 30 plus 5 per level of the user              not keep him safe from the adverse effects of high winds; he can
+instead of 60 plus 10.                                                        still be swept away by a tornado, for instance.
+                                                                                 Periapt of Wound Closure: The possessor of this stone is im-
+                                                                              mune to abrasion damage from a tumble, but still takes impact
+Miscellaneous Magic                                                           damage from a tumble or a fall as normal.
+                                                                                 Rope of Climbing: A protrusion must be available within range
+   Apparatus of Kwalish: The device can negotiate any solid or                in order for the rope to fasten itself and be useful as a climbing
+semi-solid surface except for a cliff face.                                   aid. Use the Grappling Success Table (see the section on Using
+   Arrow of Direction: At the Dungeon Master’s discretion, this               Rope for Movement and Climbing) to determine if a protrusion ex-
+item may be usable as a direction-finder in outdoor settings as               ists; alternatively, allow a 100% chance on any non-smooth sur-
+well as subterranean environments.                                            face and a 50% chance on a smooth surface.
+   Cloak of Protection: See ring of protection.                                  Shoes of Fharlanghn: A character wearing these shoes can tra-
+   Cube of Force: If cube face five (“keeps out all things”) is acti-         vel on foot over any terrain as though it were normal (instead of
+vated, anything inside the cube is immune to damage from a fall               rugged or very rugged), with his movement rate increased ac-
+or a tumble.                                                                  cordingly. If the wearer is of neutral or neutral good alignment, he
+   Daern’s Instant Fortress: This structure is impervious to a hurri-         has a base Climbing Rating of 100% when negotiating a gentle or
+cane or a tornado (or, obviously, any wind of less strength) - but            moderate slope, or 80% when moving on a severe slope or a cliff
+it is not climate-controlled, so that the effective temperature in-           face with ledges.
+side will be the same as the actual temperature outside, not con-                Stone of Good Luck: This object affords its possessor a +5%
+sidering the effect of any wind that might be blowing.                        modifier to his Climbing Rating and a - 1 modifier to the die roll
+   Gauntlets of Dexterity: A character wearing a pair of these                on any Dexterity Check or any Proficiency Check when dexterity
+gloves receives a + 10% modifier to his Climbing Rating when-                 is the appropriate ability related to the proficiency.
+
+
+
+
+                                                                        101
+102
+

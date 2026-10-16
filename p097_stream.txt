@@ -1,0 +1,61 @@
+MAGIC IN THE WILDERNESS
+
+his magic-using companion to bind the rope to the protrusion.
+
+Bluelight: A reliable, if not especially bright, source of illumina-
+tion for improving close-range vision in the absence of a torch,
+lantern, or any other similar but more powerful source of magical
+light. The effect sheds enough light to enable a character to move
+at twice his maximum safe speed in darkness or moonlight with-
+out needing to make Dexterity Checks, providing that he is pay-
+ing attention to the terrain in front of him.
+
+Bug: Similar in effect to a bee cantrip, except that the bite is
+usually not as severe as a bee’s sting, so a victim gets a +10%
+bonus to his Climbing Rating for the purpose of this Climbing
+Check.
+
+Call Lightning: The magical lightning brought into existence by
+this spell is generally less lethal than natural lightning — but the
+chance of a character being hit by natural lightning is usually
+quite small, whereas a bolt of magical lightning will always hit a
+target within range of the area where it strikes, and will always do
+at least half damage. To an outside observer, magical lightning is
+indistinguishable from natural lightning in appearance; thus, a
+character or creature who witnesses it or is struck by it will not au-
+tomatically know that the lightning was caused by an external
+force — but if more than one strike hits a target or targets within a
+relatively short time, witnesses may logically suspect that nature
+is not entirely to blame. Natural lightning can also occur during
+the duration of this spell, as long as conditions permit (i.e., a
+
+storm must be actually occurring and not simply about to happen,
+as might be the case under ‘‘hot and cloudy conditions”’).
+
+Call Woodland Beings: The presence of a character with profi-
+ciency in animal lore will not enhance the chances of this spell
+succeeding, as with animal summoning (see above), since this
+proficiency does not impart any special knowledge about the
+sorts of fantastic creatures that can be called by this spell.
+
+Commune With Nature: The spell lasts until the caster has re-
+quested and found out one fact for each level of experience. The
+caster need not maintain total concentration on the spell for it to
+remain in effect; he can move normally, eat, converse with com-
+panions, and so forth. But the spell will expire prematurely if the
+caster performs any strenuous physical or mental activity, if he is
+struck by a physical or magical attack, or if he loses conscious-
+ness.
+
+Cone of Cold: At the Dungeon Master’s discretion, this spell
+could be used in a non-damaging manifestation to enable a char-
+acter to recover from the effects of heatstroke. Instead of being
+instantaneously cooled and struck for damage, the target of the
+spell could be kept cooled for an hour without suffering damage
+from the spell and thereby saved from further harm due to heat-
+stroke. This treatment will not restore lost hit points but will re-
+store lost constitution points, up to a maximum of six (one per
+turn for the hour that the cooling power remains in effect).
+
+Control Temperature: Useful for protecting and aiding the re-
+

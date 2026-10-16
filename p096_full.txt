@@ -1,0 +1,60 @@
+Many of the sections of this book describe various facets of the                 other characters in the sphere or hemisphere cannot move faster
+outdoor environment without taking into account the possibility                  than the spell-caster if they intend to remain within the area af-
+- and it is a very distinct possibility indeed - that characters in              fected by the spell.
+the wilderness will have access to spells or magic items that can                    Alarm: Nothing can take the place of an alert sentry on duty at a
+make their lives easier. Insteadof being split up and parceled out               campsite, but this spell can give an added assist for a short time
+among all the topics to which the use of magic might pertain, a lot              by guarding an area that is not in the sentry’s line of sight. Unless
+of general and specific information about magic is presented in                  the caster is of very high level, it is not usually prudent to cast this
+this section.                                                                    spell on the campsite itself, since it cannot protect a large enough
+   Of course, no discussion of the uses of magic in the wilderness               area to give characters adequate warning of an approaching in-
+can hope to be exhaustive. The information in this section is noth-              truder. A better tactic is to cast it on a spot a short distance from
+ing more than a starting point; some of it may seem obvious or                   the campsite, perhaps on a path that runs toward or parallel to
+self-evident, but it is hoped that some of the rest of it will consist of        the campsite.
+ideas that might not have occurred to players and Dungeon Mas-                       Animal Summoning: If the spell-caster’s party contains a char-
+ters.                                                                            acter with proficiency in animal lore, the Dungeon Master may al-
+   The section on spells (including cantrips) is arranged alphabet-              low the spell-caster to know in advance at least one type of
+ically, without regard to which class(es) can use a certain spell.               animal that is available within the spell range. The caster does
+The section on magic items is also arranged alphabetically, but                  not have to request an animal type that is mentioned, but he will
+magic items that simulate or duplicate the effects of spells men-                certainly receive animals of that sort if that is what he desires.
+tioned in the preceding text are not included.                                       Animate Object: You’ve been set upon by a band of orc archers
+   Before getting down to particulars, here are some general                     while climbing a slope, and have managed to reach a plateau
+points:                                                                          with your skin intact - but now you have no cover, and nowhere
+   Any magic that specifically affects animals or plants has an ob-              else to flee to right away. See that pile of rocks close to the edge
+vious application, and is not listed here unless some particular                 of the plateau? If you animate the one at the bottom and send it
+aspect is considered worth mentioning (see animal summoning                      over the edge, the others will follow it down. Presto - no more
+for an example of this).                                                         orcs!
+   Several types of magic can cause, affect, or extinguish fires,                    Animate Rock: See animate object, above, for one idea.
+and many of these have obvious applications in camping situa-                        Armor: In addition to its other benefits, the protection afforded
+tions. Only when an observation is considered noteworthy (see                    by this spell will alter the personal temperature for the recipient
+affect normal fires) is such a spell included in this list.                       by 10 degrees in the direction toward the tolerable range -
+   Also excluded from this list are magical effects that can create              warmer if the environment is cold, or vice versa.
+ nourishment, since the spell descriptions usually provide all the                   Augury: Comes in handy for determining if the greenery you’ve
+ necessary information.                                                          gathered for supper is edible, in the absence of a character with
+   Other spells and magic items not mentioned are those that are                  proficiency in plant lore or as a safeguard against the possibility
+ deemed to have no general application for enabling characters to                of the character’s estimation being incorrect. Of course, the au-
+ more easily contend with or manipulate the effects of the outdoor               gury itself does not always produce accurate results. . . .
+ environment. Of course, practically any form of magic can be                        Barkskin: A recipient of this spell will suffer half damage from
+ used in the wilderness, and may have a specific application in a                 abrasion if he happens to tumble down a slope. A druid who plans
+ particular circumstance that makes it beneficial or even neces-                  ahead (keeping the material components at hand) and acts
+ sary for a character to possess.                                                 quickly might be able to discharge the spell on a character as he
+                                                                                  tumbles past the caster, so that abrasion damage would be mini-
+                                                                                  mized for the remainder of the distance tumbled. It will not, how-
+Spells                                                                            ever, offset any abrasion damage already suffered before the
+                                                                                  spell goes into effect.
+   Affect Normal Fires: If the group does not contain a character                     Bee: If a character is victimized by this cantrip while in a precar-
+with fire-building proficiency, or if characters are impatient and a              ious position on a moderate or severe slope or a cliff face, he
+magic-user has this spell to burn, it’s an easy way to get a camp-                must make a Climbing Check to avoid falling. If a creature in a
+fire or a cookfire blazing quickly after the first few pieces of kin-             similar situation (presumably an opponent of the spell-caster) is
+dling have been ignited. The effect of the spell won’t last long, but             stung, it should also be required to make a check to keep from
+by the time the magic expires the larger pieces of fuel will have                 falling.
+been ignited and the fire will burn well on its own from then on.                     Bind: The spell will affect at least 100 feet of ’h-inch-diameter
+   Air Walk: Very useful, as are other spells allowing aerial move-               climbing rope, or an even greater length of a smaller rope (such
+ment, for ascending or descending a steep incline, or even mov-                   as might be used to pitch a tent). Using it to help set up camp is
+ing directly up or down in close proximityto a cliff face. Of course,             rather frivolous, but it may be handy for taking down a tent quickly
+when moving directly up or down, the air walker must be sure that                 if the party does not include a character with proficiency in rope
+he can reach a safe perch before the spell duration expires.                      use. The spell also has obvious utility in climbing situations. If a
+   Airy Wafer: The movement rate of any character in the area of                  protrusion is only a few inches out of a character’s reach, he can
+effect is the same as his swimming rate - and, of course, any                     extend the end of the rope as far as possible and then call upon
+
+                                                                            95
+

@@ -1,0 +1,142 @@
+MAGIC IN THE WILDERNESS
+
+or severely encumbered as equivalent to two man-sized crea-
+tures instead of just one. Of course, any creature empowered to
+walk on water does so at his normal land-based movement rate,
+taking into account encumbrance, the condition of the water, and
+any other pertinent factors. Calm water is equivalent to normal
+terrain, actively flowing water might be considered rugged ter-
+rain, and white-water rapids would be very rugged terrain. The
+current of the water also has an effect on water walking; in order
+to be able to move against the current, the water walker must be
+able to maintain a movement rate faster than the current.
+
+Weather Summoning: As indicated by the spell description, the
+duration and area of effect of the magically created weather are
+dictated by the nature of the conditions called for by the caster.
+Based on general knowledge and the information in the spell de-
+scription, the caster should not attempt to summon any weather
+condition that could not conceivably occur during the current
+time of year; if he does, the Dungeon Master is entitled to disallow
+the request and consider the spell ruined. Weather conditions
+that prevailed before the spell was cast will resume when the du-
+ration expires. The “‘trend of the weather to come”’ will be appar-
+ent to any character who observes the changing conditions, not
+just to a character with proficiency in weather sense.
+
+Web: Can be used to form a "‘net’’ beneath a character or an
+object in danger of falling, as long as two diametrically opposed
+vertical surfaces (two cliff faces close together, for instance) are
+available to serve as anchors for the web. For every five feet of
+thickness of the web, it can protect a character from a fall of 10
+feet; a 10-foot-thick web will stop a fall of 20 feet, one of 20 feet in
+thickness will cushion a character who falls 40 feet, and one of 30
+feet in thickness or more will stop a fall of 60 feet. If a character
+falls more than 60 feet, a web will be of no use; his body will have
+built up so much velocity that it will keep falling as though the web
+wasn't there. If a web is used to halt a tumble down a slope, the
+distance figures given above are doubled for a severe slope,
+quadrupled for a moderate slope, and multiplied by eight for a
+gentle slope. For example, a 1”-thick web will halt a character af-
+ter a tumble of 40 feet (or less) down a severe slope; a 2" -thick
+web will bring a character safely to a halt after a fall of 160 feet (or
+less) down a moderate slope. Of course, the web does not negate
+abrasion damage from a tumble, but it does prevent the charac-
+ter from suffering impact damage.
+
+Wraithform: An illusionist who casts this spell upon himself just
+before leaping or falling will take no damage from the impact of
+the fall (assuming he hits ground before the duration expires).
+The magic does not alter the weight or mass of the illusionist, only
+his physical nature and appearance. The spell cannot be cast
+while the illusionist is falling (unlike a feather fall spell, which can
+be effected in mid-air), because one of the material components
+is a wisp of smoke. However, casting might be possible if the fall
+carries the illusionist through a cloud of smoke and he has the
+other material component ready in hand, providing that he can
+finish the casting before hitting the ground — a body can fall a
+long distance in one segment, especially if it has already been ac-
+celerating for some time.
+
+Potions
+
+Gaseous Form: An individual under the effect of this potion will
+take 3-30 points of damage if he is exposed to a gale-force winds,
+or will be killed outright if he is hit by hurricane-force winds or a
+tornado.
+
+Invuinerability: A fighter who has drunk this potion will take no
+damage from a fall of 40 feet or less, no abrasion damage from a
+tumble, and no impact damage from a tumble of 80 feet or less. If
+he falls or tumbles farther than the given distances, impact dam-
+age is halved.
+
+100
+
+Oil of Fumbling: This substance will not increase a character’s
+chance of falling or tumbling from a precarious position unless
+the user comes ‘“‘under stress in a melee combat situation.” In
+addition to causing the principal effect of the oil to manifest itself,
+being in such a situation will require a character to make a suc-
+cessful Climbing Check or Dexterity Check (whichever applies) in
+any round during which he fumbles or drops a held object. If this
+check is failed, the character falls or tumbles.
+
+Vitality: Among other things, this potion negates the need for a
+character to rest and take nourishment after a run spell, and it
+makes the imbiber immune to the effects of fatigue and exhaus-
+tion for up to seven days.
+
+Protection Scrolls
+
+Cold: The effective temperature for all characters in the pro-
+tected area is at least high enough to prevent them from suffering
+any adverse effects due to cold, or 40 degrees warmer than the
+current effective temperature, whichever is higher.
+
+Fire: Works similarly to a protection from cold scroll (see
+above), except that the effective temperature is lowered instead
+of raised.
+
+Gas: Characters within 1” of the reader are in an area of no
+wind, so that they cannot be swept up by a tornado or blown
+across the countryside by a hurricane. A sandstorm is neutral-
+ized in the area; when airborne grains of sand come into contact
+with the calm air, they simply fall to the ground. The effective tem-
+perature within the protected area is altered to account for the ab-
+sence of wind.
+
+Rings
+
+Fire Resistance: Makes the wearer immune to the effects of
+normal heat just as a protection from fire scroll does.
+
+Free Action: The wearer of this ring can move and otherwise
+operate as if he was not encumbered, unless he is actually se-
+verely encumbered, in which case he can operate as if moder-
+ately encumbered. Wearing this ring does not enable a character
+to carry more encumbrance than he can normally; if such an at-
+tempt is made, the power of the ring is negated until the wearer
+rids himself of the excess baggage. The ring does not change the
+character's actual encumbrance value, so that if he is astride a
+mount, his presence has its normal effect on the animal’s ability
+to carry encumbrance.
+
+Protection: The ring enables its wearer to take less damage
+from a fall or a tumble; use the “‘plus” of the ring as a subtraction
+from each die of damage called for, to a minimum of 1 point of
+damage per die. This applies both to abrasion damage and im-
+pact damage. This power of the ring is related to its ability to im-
+prove armor class, so that this power also will not function if the
+character is wearing magical armor.
+
+Sustenance: A character wearing this ring is much less likely to
+be affected by fatigue or exhaustion. All Constitution Checks for
+fatigue and exhaustion are made with a —5 modifier to the die roll
+(but an unmodified roll of 20 is still failure in any case). In addition,
+Constitution Checks for fatigue need not be made more often
+than once every six turns, regardless of how long the character
+engages in strenuous activity.
+
+Warmth: This ring provides the same benefits as a protection
+from cold scroll does.

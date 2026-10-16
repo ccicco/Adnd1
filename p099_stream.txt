@@ -1,0 +1,157 @@
+MAGIC IN THE WILDERNESS
+
+Find Traps: Similar to detect snares & pits (see above), this
+spell can remain in effect while the caster turns or moves at a nor-
+mal speed. However, note that it is only useful to discover the ex-
+istence of traps “‘of a magical or mechanical nature’ — it will not
+reveal the presence of a covered pit, for instance, or a trip wire
+(unless the wire is connected to a snare or a missile-firing device,
+or some other accessory that constitutes a trap '‘of mechanical
+nature”’).
+
+Firewater: If the group has water to spare, this spell is an effec-
+tive way to start a campfire without kindling or any other prepara-
+tion other than a moderate-sized pile of branches. If as little as
+one pint of firewater is prepared, sprinkled evenly over the fuel,
+and ignited before it evaporates, it will cause branches, logs, etc.,
+to catch fire wherever the substance is present. The flame thus
+produced will spread to the rest of the fuel and produce a blaze
+that can be used for cooking or warmth, or both.
+
+Flame Strike: Using a high-powered fire spell such as this to
+start a campfire is about as sensible as lighting a pipe with a blow-
+torch. The flame strike will momentarily ignite everything in a 10-
+foot diameter area, and when the duration expires any easily
+flammable materials within that area will be charred to a crisp. If
+the immediate area also contains combustible materials, the use
+of this spell (and most other sorts of fire magic) could start an un-
+controllable fire; see the section on Camping and Campfires for
+details.
+
+Forcecage: The spell description does not specify that the
+cage must be anchored to a solid surface. There is a chance
+equal to 5% per level of the caster that the spell could be used to
+halt a falling character or creature in mid-air (assuming, of
+course, that the target is within range when the spell is dis-
+charged). Failure on this chance indicates that the intended tar-
+get was missed and the forcecage is formed around thin air.
+Success indicates that the target is prevented from falling any
+farther, and he only takes damage as for a 20-foot fall (the length
+of one side of the cage). There must be a way to rescue the char-
+acter by other means before the duration expires, or his fall will
+resume from that point when the cage disappears. It is possible,
+for instance, to pass a rope through the bars of the cage; the
+character can tie it around his waist and then be hauled to safety
+when the duration expires or the magic is dispelled.
+
+Fumble: If this spell is cast upon a character or creature in a
+precarious position and the target fails its saving throw, it will
+stumble and fall from that position unless it makes a successful
+Climbing Check at a —20% modifier to its Climbing Rating, or a
+successful Dexterity Check with a +4 modifier to the die roll
+(whichever applies). The effect of the spell can be averted if the
+target remains motionless until the spell duration expires. In most
+cases, a target that fails its saving throw will not know that it has
+been affected by the spell, so the decision to remain motionless
+must be made independent of any knowledge of the peril that
+such movement would cause. For example, if a character is
+perched on a cliff ledge and intends to remain in that spot for sev-
+eral minutes until a companion ascends or descends to the same
+location, a fumble spell will not cause him to lose his grip and fall.
+But if he attempts to find a new handhold or foothold, grab for a
+rope, or perform any other deliberate motion, he must make a
+successful Climbing Check (with the modifier given above) or slip
+and fall.
+
+Gather: This cantrip cannot be used on a pile of freshly picked
+greenery to cull out inedible or poisonous plants unless the
+caster has prior knowledge (by means of proficiency in plant lore,
+for instance) of which plants are good to eat and which are not.
+
+Giggle: See cough.
+
+Haste: If this spell is cast upon a character or creature attempt-
+ing to negotiate a slope or a cliff face, the target can indeed move
+twice as fast as normal — but all Climbing Checks for hasted
+characters and creatures are made at a —10% penalty to their
+
+98
+
+Climbing Ratings. If a hasted character exceeds his maximum
+safe speed in conditions of reduced visibility, he must make all
+Dexterity Checks called for at a +2 modifier to the die roll.
+
+Heal: The Dungeon Master should interpret the power of this
+spell liberally when it is used to counter injuries or disabilities
+caused directly or indirectly by the environment. For instance, a
+heal spell will restore all constitution points lost from heatstroke,
+not just those that would have been regained by normal recovery.
+
+Heat Metal: The reverse of this spell can be used to treat a heat-
+stroke victim by at least partially dressing him in metal armor and
+then discharging the chill metal spell on the armor. He will not suf-
+fer damage or disability such as the spell would normally cause
+(see cone of cold for another example of this), and the seven
+rounds of spell duration will benefit him the same as if he had re-
+ceived normal treatment for a full hour.
+
+Hold Person: This spell and similar magics will not suspend a
+character or creature in mid-air, so that it can thereby be saved
+from falling. It will only “‘freeze’’ victims so as to prevent them
+from moving under their own power, Someone who is about to
+lose his grip on a mountainside can be held in place by means of
+this spell as long as he is still gripping handholds and footholds
+when the spell takes effect, but if he has already lost his grip and
+is not “‘attached’’ to the surface then the spell will not necessarily
+hold him in place unless his feet are securely placed on a ledge
+(in which case he probably didn't need to be held to begin with).
+For a willing or needy recipient of the spell in a case such as de-
+scribed here, the saving throw should be disregarded or consid-
+ered to be automatically failed.
+
+Insect Plague: If this spell is cast when the actual temperature
+is 40 degrees or lower, the duration is reduced to '/10 of normal (1
+round/level) and the area of effect is cut to /4 of normal (3" diam-
+eter, 12" high cloud for the cleric version, or 8" diameter, 1"
+high cloud for the druid spell).
+
+Irritation: The itching application of this spell will cause a target
+in a precarious position to lose his grip and tumble or fall unless
+he is otherwise prevented from doing so.
+
+Item: As alluded to in the last line of the spell description, this is
+a handy way to make a campfire portable — but whoever carries
+the "fire’" between stops had better be sure that the spell-caster
+won't inadvertently speak the command word while it's in his
+backpack.
+
+Jump: A possible, but risky, means of ascending (but not de-
+scending) a slope or a cliff face — since the spell *“does not in-
+sure any safety in landing or grasping at the end of the leap.” If a
+place exists for the jumper to land upon or grab onto, he must
+make a successful Dexterity Check at the end of the jump to land
+safely. If no such place exists, or if he fails the check, he will fall.
+To determine the chance of a protrusion, the Dungeon Master
+can use the Grappling Success Table (see the section on Using
+Rope for Movement and Climbing) or simply rule that a safe
+landing/grabbing spot always exists, except on a smooth slope or
+smooth cliff face, where the chance is 50%. (Fingers and toes
+can find purchase on places where a grappling hook would not
+usually catch.)
+
+Knot: A character with proficiency in rope use can loosen the
+knot in 1d4 rounds, minus his dexterity bonus for reaction (but a
+minimum of 1 round in any case).
+
+Locate Animals: See animal summoning.
+
+Locate Plants: See animal summoning, except that the text ap-
+plies to plants in this case.
+
+Lower Water: If water exists below the surface of the desert in
+the area where the reverse of this spell is discharged, the magic
+will bring it toward the surface but not necessarily all the way to
+ground level, so that characters might still have to excavate to
+find it. The unreversed application of the magic can be used to
+enable characters to ford a deep river or perhaps cross a narrow
+lake on foot, assuming that the water is lowered enough to allow

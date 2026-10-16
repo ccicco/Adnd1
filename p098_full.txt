@@ -1,0 +1,72 @@
+                                                                                                           MAGlC IN THE WILDERNESS
+
+covery of someone suffering from hypothermia, frostbite, heat-              keep his eyes covered during a recovery period.
+stroke, or some other temperature-relatedmalady. But the caster                Cure Disease: Physical traumas such as dehydration, hypo-
+must take care not to alter the temperature too drastically in cer-         thermia, heatstroke, etc., are not considered diseases for the
+tain circumstances. Extreme heat is not necessarily good for                purpose of determining what maladies this spell can affect.
+someone suffering from the effects of cold, so that a frostbite vic-           Darkness, 15’Radius: The magical darkness created by this
+tim might be harmed as much as helped if the temperature                    spell (or any other similar magical effect) is much blacker than the
+around him was suddenly raised by 100 degrees or more; a grad-              darkness that normally prevails in the wilderness at night, even
+ual warming is much more conducive to full recovery. On the                 under a moonless or overcast sky. The maximum safe movement
+other hand, a heatstrokevictim is benefittedthe most if he can be           rate under this lightless condition is one-half of the figure given
+promptly exposed to freezing or near-freezing conditions, to                for natural darkness.
+bring his body temperature down as rapidly as possible. At the                 Detect Snares & Pits: As indicated in the spell description, this
+Dungeon Master’s discretion, the caster may be able to manipu-              magic is much more versatile in the outdoors than in an under-
+late the temperature during the duration of the spell, or he may be         ground environment. The area of effect of the spell will move as
+forced to pick a “target temperature” and stick with it for as long         the caster moves, as long as he concentrates on maintaining the
+as the spell persists.                                                      detection, does not have his concentration abruptly interrupted
+   Control Weather: The Dungeon Master must interpret this spell            (by combat or the preparation of a different spell, for instance),
+description quite literally and somewhat conservatively, not al-            and does not attempt to move faster than his full normal move-
+lowing a character to get away with something that should not be            ment rate. The caster can converse normally with other party
+possible. As noted in the Players Handbook, the spell “will not             members and perform any non-strenuous physical activity with-
+radically change the temperature” through a range of (for in-               out interrupting the detect spell.
+stance) 100 degrees or more - instead, a maximum range of 30                   Dig: A quick way to search for water beneath the surface of the
+or 40 degrees in one direction or the other is recommended.Also,            desert. Use of the spell does not increase the chance of finding
+note that sweltering heat cannot be made hotter, and arctic cold            water at a certain location, but at least the party won’t spend a lot
+cannot be made colder; when the actual current temperature is at            of time and effort in a fruitless endeavor.
+one of these extremes, it can only be moved in one direction. This             Dispel Exhaustion: Despite its name, this spell does only what
+is true even of the druidicversion of this spell, which can be used         the Players Handbook says it does. It cannot alleviate or offset the
+to move weather conditions two steps instead of just one. When              effects of fatigue or exhaustion as described in this text.
+the spell duration expires, the weather conditions that existed be-            Distract: See cough.
+fore it was cast will be resumed, just as if the interveningtime had           Dry: Wet kindling can be made flammable by an application of
+not occurred. For instance, the use of this spell will not prevent          this cantrip, so that it would be possiblethereafter to start a small
+characters on the seacoast from being in the path of an oncoming            campfire more quickly. Larger pieces of wood that are not wet all
+hurricane - but if they can move inland during the time that the            the way through can be used to keep the fire going if they are bro-
+control weather spell is in effect, they may be able to avoid the           ken up so that the dry interior is exposed to the flames. Or, a sec-
+brunt of the storm.                                                         ond application of the cantrip could be used to dry out the surface
+   Control Winds: When cast for the purpose of countering a con-            of a pile of larger pieces of wood, so that the fuel can be ignited
+trol weather or control temperature spell, this magic completely            without needing to be broken up.
+negates the previously cast spell, reinstates the natural weather              Earthquake: The effect brought about by this spell is magical,
+or temperature conditions that were in effect beforehand, and               not natural, and thus does not cause the same results as a natu-
+then creates a wind of the desired velocity. This wind does have            ral earthquake. If it is cast within one mile of a natural fault line,
+the power to affect other naturally existing conditions, if it is           there is a 50% chance that a natural earthquake will occur at that
+strong enough (it will dissipate moderate or heavy fog, neutralize          location within l d 6 turns after the magical earthquake has sub-
+a sandstorm within the area of effect, and so forth) - and, unlike          sided.
+control weather, the natural weather will not necessarily resume               Fear: Creatures with higher than animal intelligencethat are af-
+when the spell duration expires: if a sandstorm, for instance,              fected by this spell will not run into the side of a cliff, over a cliff,
+would have abated by the time this spell ends, then it will not re-         into a fire, etc., in the process of fleeing away from the caster. If
+sume. The spell does not have the power to change large-scale               they encounter such an obstacle, they will alter their path and
+weather conditions; for instance, it cannot cause storm clouds to           proceed along the edge or perimeter of the obstacle, still attempt-
+move rapidly away or come closer, because the area of effect is             ing to put as much distance as possible between themselves and
+not nearly large enough to affect the upper atmosphere where                the caster.
+these clouds are located.                                                      Feign Death: For a character or creature subjected to this spell,
+   Cough: The interruption caused by use of this cantrip is not se-         the effects of exposure (frostbite, heatstroke, etc.) accumulate
+vere enough or long-lasting enough to cause a character to lose             only half as quickly as under normal circumstances. Thus, if a
+his concentration on a spell he is trying to maintain (see detect           character knows that help is on the way and will arrive fairly soon,
+snares & pits for an example).                                              he may help to save his life or the life of another being by using
+   Create Food & Water: Better than create wafer (see below)                feign death to partially protect the victim.
+when the party is in dire straits, because it provides both solid              FindFamiliar: Any attempt to cast this spell in a desolate area (a
+and liquid nourishment (if the caster so specifies) and it requires         scorching desert or arctic wastes) may, at the discretion of the
+ no material component.                                                      Dungeon Master, automatically fail to attract any of the listed
+   Create Water: Obviously, a life-saver when the party runs out of         creatures. In any event, the possibilities for normal familiars
+water in the desert or any other waterless environment. But re-             should be restricted to creatures that could conceivably exist
+member two important points: You can’t take it with you unless              within the spell range; a black cat almost certainly will not be
+you have something to carry it in, and you can’t make water un-             found in a desert or at the summit of a mountain range, and a toad
+less you have at least a drop of water to begin with. (Whether sa-           probably will not be found in the middle of a grassy plain miles
+liva or perspiration qualifies as a material component in this case         from any source of ground water. Die-roll results that indicate
+is a matter for the Dungeon Master to decide.)                              such a contradiction may either be re-rolled or treated as “no fa-
+   Cure Blindness: This spell will negate the eye injuries and               miliar available,” depending on the judgment of the Dungeon
+blindness caused by a sandstorm, without requiring the victim to             Master.
+
+                                                                       97
+

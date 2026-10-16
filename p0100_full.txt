@@ -1,0 +1,72 @@
+                                                                                                              MAGIC IN THE WILDERNESS
+
+such passage and that the travelers can cover the distance from                selves beginning immediately after the spell duration expires,
+one shore to the other before the spell duration expires. Even                 they will become exhausted after as little as 1 turn of activity other
+though not all the water in the river or lake will be within the area          than eating, drinking, and resting. This stricture does not prohibit
+of effect, the water that does spill into the area of effect as the re-        mental activity (such as studying a spell book or praying for
+sult of the lowering will be immediately lowered itself.                       spells). The lone exception to this is a character with proficiency
+   Massmorph: The characters and creatures of an adventuring                   in endurance, who can continue to engage in nonstrenuous
+party can be made safe from any number of natural hazards                      physical activity immediately after the spell effect expires; how-
+(sandstorm, hailstorm, extreme temperature, etc.) by turning                   ever, for a period of time equal to the duration of the spell, such a
+them into trees until the hazard has ceased to exist. Only a blow              character cannot make use of his proficiency,and he is subject to
+from a weapon (not simply a bare fist) or the impact of some                   the effects of fatigue and exhaustion as a normal character would
+harmful magic effect (magic missile, death spell, etc.) will cause             be. This spell will not affect a character with proficiency in long-
+damage to characters and creatures while they are mass-                        distance running, just as it does not affect a barbarian who has
+morphed. Of course, they are still subject to effects that can harm            the special running ability of that class.
+trees (fire, lightning, extremely strong wind, acid, etc.). And,                  Shield: A magic-user benefitting from this spell takes only two-
+spending time in the form of a tree does not alleviate the need for            thirds of the abrasion and impact damage he would otherwise
+nourishment; these illusionary “trees” cannot eat, and cannot                  suffer from a tumble or a fall.
+soak up water from the ground, so that any characters or crea-                    Sink: Can be a lifesaver if cast upon someone who is about to
+tures that remain in this altered state for an extended period of              fall from a precarious position (Le., a character who has failed a
+time may be in dire need of food and water when the magic is dis-              Climbing Check earlier in the same round). If the caster stops
+pelled, and they may even die from lack of nourishment if kept in              chanting after 4 segments, the subject will become fastened to
+this form for too long. Needless to say, the rest of the party is in           the surface he is touching; as with hold person (see above), the
+big trouble if the spell-caster is “chopped down” before he has a              saving throw can be waived or considered automatically failed if
+chance to dispel the magic.                                                    the spell is intentionally cast upon a willing or needy recipient.
+   Mending: The spell will repair a rope that has broken or frayed,            Thereafter, the rest of the group has 4 turns to devise a way to
+but cannot be used to join two different ropes to make one single,             keep the spell recipient from falling when he returns to normal
+longer rope.                                                                   form.
+   Misdirection: If this spell is cast upon a character with some                 Snare: If the spell is cast upon a snare that has been prepared
+knowledge-based proficiency (animal lore, direction sense, etc.)               without magical assistance, the chance of the snare being unde-
+and the target fails a saving throw, the interpretation or assump-             tectable without magical means is loo%, and furthermore the
+tion made by the proficient character will be reversed, so that a              snare can only be noticed on a 50% chance even if some form of
+correct assessment becomes incorrect or vice versa. Of course,                 magical detection is employed on the area in which it is located.
+the spell-caster will not usually know ahead of time whether the                  Stone Tell: This spell will function if cast upon something such
+character was making a correct assessment or not.                              as a mountainside or a cliff face (which, after all, is essentially a
+   Protection From Normal Missiles: A character or creature who                conglomeration of “stones”) as well as if it is cast upon individual
+receives the benefit of this spell is prevented from being harmed              rocks or boulders.
+by hailstones, a sandstorm, or any other missile-like natural phe-                Sfoneskin: A character who takes a tumble while this spell is in
+nomenon. Although the recipient cannot be blinded by a sand-                   effect upon him will suffer no abrasion damage as a result of the
+storm, and in fact no sand will actually touch him, he is still limited        episode, but the act of tumbling will dispel the magic, whether or
+in visibility as much as an unprotected character is. The spell                not the recipient would otherwise have suffered damage. The
+does not negate any effects of very strong wind, such as a tor-                magic will also keep a character safe from injury in a hailstorm
+nado; a character can still be picked up and carried along by the              (the entire storm being considered as an “attack sequence’), but
+funnel cloud, but he will not take damage from collision with de-              it will be dispelled when the hailstorm stops.
+bris that is also being carried along. The spell prevents a charac-               Summon Insects: If this spell is cast when the actual tempera-
+ter from suffering abrasion damage during a tumble, but does not               ture is 40 degrees or lower, the duration of the spell is only one-
+keep him safe from impact damage at the end of a fall or a tum-                half of normal (rounded down).
+ble. The protection field will not keep out natural lightning. It will            Symbol: If a symbol of hopelessness is placed upon a location
+keep a character safe from being burned by lava during a vol-                  where it can only be viewed by a character or creature in a precar-
+canic eruption, but will not protect him from radiant heat that can            ious position (on the surface of a severe slope or a cliff face, for in-
+also cause damage at such a time.                                              stance) and the viewer fails his saving throw, he will be unable to
+   Rainbow: If an illusionist casts a rainbow cantrip and a cleric             tear his gaze from the symbol and must make a successful Wis-
+who sees it fails his saving throw, the cleric can successfully cast           dom Check every turn as long as the magic remains in effect. If
+a rainbow spell as long as the casting of the spell begins before              anyone of these checks fails, he will fall from his precarious posi-
+the magic of the cantrip expires, and the cleric has the material              tion unless he makes a successful Climbing Check or Dexterity
+components readily available. (It isn’t easy to do, but it’s possi-            Check (whichever applies) immediately after the Wisdom Check
+ble.) However, a rainbow spell brought about by these means will               was failed. If a symbol of pain is viewed in the same circum-
+be reduced in efficacy as follows: the bow will fire only once per             stances, the Dungeon Master should substitute a Constitution
+round, not twice; the weight limit of the bridge is half normal; the           Check for the Wisdom Check and otherwise handle the incident
+elevator moves at 6” instead of 12“; and the effects of draughts               in the same way as described above.
+from the flagon will be as if the appropriate spell had been cast by              Trip: The spell will have no effect upon characters who are not
+a cleric of 6th level instead of 12th.                                         walking or running in a normal fashion, such as those who are
+   Resist Cold: A recipient of this spell who is suffering from hypo-          crawling along level terrain or using both hands and feet to nego-
+thermia, frostbite, or some other malady related to cold will be               tiate a slope or a cliff face.
+protected from further harm for the spell duration, but the magic                 Transmute Rock to Mud: This spell, used in combination with
+will not negate adverse effects already suffered.                              the reverse of lower water, can produce drinkable liquid from
+   Resist Fire: Handled the same way as resist cold, except that it            solid rock.
+pertains to heat-related instead of cold-related effects.                         Water Walk: For the purpose of determining how many individ-
+   Run: If any affected individuals do not rest and refresh them-              uals can be affected by this spell, treat a character who is heavily
+
+                                                                          99
+
