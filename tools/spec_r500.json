@@ -1,0 +1,608 @@
+{
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The WSG swimmer's motion-chain fold, the second seam round after gap closure: no new book pages, the R499 pattern applied to the water chapter. One swimmer state flows through five landed headers: the swimming rates (rules/wsgswim.h R450: 40 feet base, the 2/3 subsurface cut, the 2x high speed with the 1/10 endurance cut, the 3-per-turn rest regain, the 1-3/4-6 inch current ranges), the dive leg (rules/wsgdive.h R452: the 2 inch or 20 foot base, doubled moderate and tripled heavy), the surfacing leg (rules/wsgbreath.h R454: the same 2 inch base, the 5 foot inert buoyancy rise), the moving-water hazards (rules/wsgmwater.h R451: the 1-10 stream rating, the two-round hold cadence, the 40/100 foot waterfall thresholds, the half and tenth damage divisors) and the treading economy (rules/wsgtread.h R453: 2 turns per endurance point, 1 round per strength point, the +1 check ladder). The findings: the vertical rates equal each other and are half the horizontal base; the Table 24 dive column matches the dive prose exactly; the encumbrance paradox (the same weight that halves speed doubles the sink rate); the forty-foot agreement between the dive falling-damage threshold and the waterfall save threshold; and the two different cumulative check ladders (+2 breath, +1 treading).",
+ "audit_label": "R500 WSG swimmer motion fold audit",
+ "banner": {
+  "provenance": "No new book pages: every value is the landed original re-read from its header (wsmHumanSwimRateFt, wsmSubsurfaceNum, wsmHighSpeedMult, wsmRestRegainPerTurn, wdvBaseDownRateIn, wdvModEncMult, wdvHeavyEncMult, whbBaseSurfRateIn, whbInertRiseFt, wmwFallSaveMinFt, wmwHoldCheckPeriod, wtwProfTurnsPerEndPt, wtwCumCheckStep and kin) and re-pinned on the fold side so the boundary identities compile and ride the mutant battery. The findings: the vertical rates equal each other (both 2 inches) and are half the horizontal base (20 vs 40 feet); the Table 24 dive column matches the dive prose (x2 moderate, x3 heavy and severe); the encumbrance paradox (the moderate speed denominator 2 equals the moderate dive multiplier 2 - opposite meanings); the forty-foot agreement (the dive falling-damage threshold equals the waterfall save threshold); the mercy drift cap equals the light-current range; and the breath Con Checks step +2 while the treading Str Checks step +1.",
+  "sentinel": "THE SETTLE: census 424 -> 425; the gap report stays 186 closed / 0 open (closed - no flips this round); the swimmer's chain has no gaps.",
+  "title": "The WSG SWIMMER'S MOTION-CHAIN FOLD, R500: the second seam round after gap closure. The swimming rates (rules/wsgswim.h), the dive leg (rules/wsgdive.h), the surfacing and breath rules (rules/wsgbreath.h), the moving-water hazards (rules/wsgmwater.h) and the treading economy (rules/wsgtread.h) reconciled as one system: one swimmer, one chain, every rate and threshold cross-checked between its headers."
+ },
+ "bools": [
+  {
+   "comment": "the base downward rate and the base surfacing rate are the same 2 inches - the breath header says it in prose: like the diving rate.",
+   "name": "wmfVerticalRatesEqual",
+   "value": true
+  },
+  {
+   "comment": "the vertical base (20 feet) is exactly half the horizontal base (40 feet) - down and up are half as fast as across.",
+   "name": "wmfVerticalHalfHorizontal",
+   "value": true
+  },
+  {
+   "comment": "the Table 24 dive column (x1, x1, x2, x3, x3) matches the dive prose: doubled at moderate, tripled at heavy and severe.",
+   "name": "wmfDiveGridMatchesProse",
+   "value": true
+  },
+  {
+   "comment": "the same encumbrance that halves horizontal speed doubles the sink rate - the dive grid is the inverse of the speed grid.",
+   "name": "wmfEncumbranceParadox",
+   "value": true
+  },
+  {
+   "comment": "the dive falling-damage threshold and the waterfall save threshold are the same 40 feet - the two headers cross-reference each other.",
+   "name": "wmfFortyFootAgreement",
+   "value": true
+  },
+  {
+   "comment": "the mercy drift cap (1 to 3 inches) equals the light-current range - the carried swimmer moves at light-current speed.",
+   "name": "wmfMercyMatchesLightCur",
+   "value": true
+  },
+  {
+   "comment": "the breath Con Checks step +2 while the treading Str Checks step +1 - both cumulative, different ladders.",
+   "name": "wmfCheckStepsDiffer",
+   "value": true
+  },
+  {
+   "comment": "three endurance economies in one chain: rest regains 3 per turn, high speed spends at 1/10, and treading spends 1 point per 2 turns.",
+   "name": "wmfEconomiesDiffer",
+   "value": true
+  },
+  {
+   "comment": "the subsurface cut (2/3) applies and high speed is barred beneath the surface - the two rules meet at the waterline.",
+   "name": "wmfSubsurfaceBeforeHighSpeed",
+   "value": true
+  },
+  {
+   "comment": "the inert buoyancy rise (5 feet) is one quarter of the deliberate surfacing rate (20 feet).",
+   "name": "wmfInertQuarterOfDeliberate",
+   "value": true
+  }
+ ],
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 424,
+ "chains": [],
+ "consts": [
+  {
+   "comment": "the base human swimming rate, 4 inches or 40 feet per round (wsmHumanSwimRateFt).",
+   "name": "wmfSwimRateFt",
+   "value": 40
+  },
+  {
+   "comment": "the base rate for other PC races and land-based humanoids, 3 inches or 30 feet (wsmOtherSwimRateFt).",
+   "name": "wmfOtherRateFt",
+   "value": 30
+  },
+  {
+   "comment": "the subsurface cut numerator: 2/3 of the surface rate (wsmSubsurfaceNum).",
+   "name": "wmfSubsurfNum",
+   "value": 2
+  },
+  {
+   "comment": "the subsurface cut denominator: 2/3, rounded up.",
+   "name": "wmfSubsurfDen",
+   "value": 3
+  },
+  {
+   "comment": "high speed doubles the normal movement rate (wsmHighSpeedMult).",
+   "name": "wmfHighSpeedMult",
+   "value": 2
+  },
+  {
+   "comment": "high speed cuts endurance to 1/10, rounded up (wsmHighSpeedEndDiv).",
+   "name": "wmfHighSpeedEndDiv",
+   "value": 10
+  },
+  {
+   "comment": "a resting swimmer regains three turns of endurance per turn of rest (wsmRestRegainPerTurn).",
+   "name": "wmfRestRegainPerTurn",
+   "value": 3
+  },
+  {
+   "comment": "a light current modifies the rate by 1 to 3 inches (wsmLightCurMaxIn).",
+   "name": "wmfLightCurMaxIn",
+   "value": 3
+  },
+  {
+   "comment": "a strong current modifies the rate by 4 to 6 inches (wsmStrongCurMinIn).",
+   "name": "wmfStrongCurMinIn",
+   "value": 4
+  },
+  {
+   "comment": "the top of the strong-current range: 4 to 6 inches.",
+   "name": "wmfStrongCurMaxIn",
+   "value": 6
+  },
+  {
+   "comment": "a negative-rate swimmer is carried opposite at 1 to 3 inches (wsmMercyDriftMaxIn).",
+   "name": "wmfMercyDriftMaxIn",
+   "value": 3
+  },
+  {
+   "comment": "the base downward rate, 2 inches or 20 feet per round (wdvBaseDownRateIn).",
+   "name": "wmfDownRateIn",
+   "value": 2
+  },
+  {
+   "comment": "the base downward rate in feet per round (wdvBaseDownRateFt).",
+   "name": "wmfDownRateFt",
+   "value": 20
+  },
+  {
+   "comment": "the downward rate doubles for moderately encumbered characters (wdvModEncMult).",
+   "name": "wmfDiveEncModMult",
+   "value": 2
+  },
+  {
+   "comment": "the downward rate triples for heavily or severely encumbered characters (wdvHeavyEncMult).",
+   "name": "wmfDiveEncHeavyMult",
+   "value": 3
+  },
+  {
+   "comment": "the base surfacing rate, like the diving rate 2 inches (whbBaseSurfRateIn).",
+   "name": "wmfSurfRateIn",
+   "value": 2
+  },
+  {
+   "comment": "an inert character rises by natural buoyancy at 5 feet per round (whbInertRiseFt).",
+   "name": "wmfInertRiseFt",
+   "value": 5
+  },
+  {
+   "comment": "the first-round leap bonus caps at 5 inches beyond 40 feet of height (wdvLeapCapIn).",
+   "name": "wmfLeapCapIn",
+   "value": 5
+  },
+  {
+   "comment": "the stream hazard rating runs 1 to 10, 1 the most hazardous (wmwStreamRateMin).",
+   "name": "wmfStreamRateMin",
+   "value": 1
+  },
+  {
+   "comment": "the top of the stream hazard rating range (wmwStreamRateMax).",
+   "name": "wmfStreamRateMax",
+   "value": 10
+  },
+  {
+   "comment": "a grabbed protrusion is held on a Strength Check once every two rounds (wmwHoldCheckPeriod).",
+   "name": "wmfHoldCheckPeriod",
+   "value": 2
+  },
+  {
+   "comment": "the waterfall half-damage rule and the save apply at 40 feet or more (wmwFallSaveMinFt).",
+   "name": "wmfWaterfallMinFt",
+   "value": 40
+  },
+  {
+   "comment": "a successful save over 40 but not more than 100 feet means no damage (wmwFallSaveMaxFt).",
+   "name": "wmfWaterfallMaxFt",
+   "value": 100
+  },
+  {
+   "comment": "a dive from 40 feet or more may suffer the waterfall falling damage (wdvHighDiveMinFt).",
+   "name": "wmfHighDiveMinFt",
+   "value": 40
+  },
+  {
+   "comment": "waterfall damage is one-half of the free-fall amount (wmwFallDamageDiv).",
+   "name": "wmfFallDmgDiv",
+   "value": 2
+  },
+  {
+   "comment": "a saved fall beyond 100 feet costs one-tenth damage, rounded up (wmwLongFallDiv).",
+   "name": "wmfLongFallDiv",
+   "value": 10
+  },
+  {
+   "comment": "the base breath time is Con/3 rounds, rounded up (whbBreathConDiv).",
+   "name": "wmfBreathConDiv",
+   "value": 3
+  },
+  {
+   "comment": "any character holds breath at least one round (whbMinBreathRounds).",
+   "name": "wmfMinBreathRounds",
+   "value": 1
+  },
+  {
+   "comment": "unprepared or strenuous cuts the time in half (whbPenaltyDiv).",
+   "name": "wmfPenaltyDiv",
+   "value": 2
+  },
+  {
+   "comment": "both penalties together leave one-fourth (whbBothPenaltyDiv).",
+   "name": "wmfBothPenaltyDiv",
+   "value": 4
+  },
+  {
+   "comment": "each Con Check after the first carries a cumulative +2 (whbConCheckStep).",
+   "name": "wmfConCheckStep",
+   "value": 2
+  },
+  {
+   "comment": "the printed example: Con 12 holds 4 rounds (whbExampleRounds).",
+   "name": "wmfBreathExampleRounds",
+   "value": 4
+  },
+  {
+   "comment": "the proficient treader spends one endurance point per two turns (wtwProfTurnsPerEndPt).",
+   "name": "wmfTreadTurnsPerEndPt",
+   "value": 2
+  },
+  {
+   "comment": "the nonproficient treader gets one round per strength point (wtwNonprofRoundsPerStrPt).",
+   "name": "wmfTreadRoundsPerStrPt",
+   "value": 1
+  },
+  {
+   "comment": "each treading Str Check after the first carries a cumulative +1 (wtwCumCheckStep).",
+   "name": "wmfTreadCheckStep",
+   "value": 1
+  },
+  {
+   "comment": "the printed example: strength 6 unencumbered treads 12 rounds (wtwExampleRounds).",
+   "name": "wmfTreadExampleRounds",
+   "value": 12
+  },
+  {
+   "comment": "the Table 24 endurance multiplier for the unencumbered row: doubled (wsmEndNum row 0 over wsmEndDen row 0).",
+   "name": "wmfEncMultUnenc",
+   "value": 2
+  },
+  {
+   "comment": "the Table 24 speed denominator at moderate encumbrance: half speed (wsmSpdDen row 2).",
+   "name": "wmfSpdDenMod",
+   "value": 2
+  },
+  {
+   "comment": "the Table 24 speed denominator at heavy encumbrance: quarter speed (wsmSpdDen row 3).",
+   "name": "wmfSpdDenHeavy",
+   "value": 4
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['wmfSwimRateFt']() != 40 or m['wmfOtherRateFt']() != 30 or m['wmfHighSpeedMult']() != 2 or m['wmfHighSpeedEndDiv']() != 10 or m['wmfRestRegainPerTurn']() != 3",
+   "note": "the horizontal base rates"
+  },
+  {
+   "expr": "m['wmfDownRateIn']() != m['wmfSurfRateIn']()",
+   "note": "the vertical rates are equal - the first true alignment"
+  },
+  {
+   "expr": "m['wmfSwimRateFt']() / m['wmfDownRateFt']() != 2",
+   "note": "the vertical base is half the horizontal base"
+  },
+  {
+   "expr": "m['wmfDiveEncModMult']() != 2 or m['wmfDiveEncHeavyMult']() != 3",
+   "note": "the Table 24 dive column matches the dive prose - doubled at moderate, tripled at heavy and severe"
+  },
+  {
+   "expr": "m['wmfSpdDenMod']() != m['wmfDiveEncModMult']()",
+   "note": "the encumbrance paradox: the moderate speed denominator equals the moderate dive multiplier"
+  },
+  {
+   "expr": "m['wmfSpdDenHeavy']() == m['wmfDiveEncHeavyMult']()",
+   "note": "at heavy the grids diverge: quarter speed, triple sink"
+  },
+  {
+   "expr": "m['wmfHighDiveMinFt']() != m['wmfWaterfallMinFt']()",
+   "note": "the forty-foot agreement - the dive and waterfall thresholds are the same value"
+  },
+  {
+   "expr": "m['wmfWaterfallMaxFt']() - m['wmfWaterfallMinFt']() != 60",
+   "note": "the save window spans sixty feet"
+  },
+  {
+   "expr": "m['wmfMercyDriftMaxIn']() != m['wmfLightCurMaxIn']()",
+   "note": "the mercy drift cap equals the light-current range"
+  },
+  {
+   "expr": "m['wmfBreathConDiv']() * m['wmfBreathExampleRounds']() != 12 or m['wmfBothPenaltyDiv']() != m['wmfPenaltyDiv']() * 2 or m['wmfMinBreathRounds']() != 1",
+   "note": "the breath formula and penalties"
+  },
+  {
+   "expr": "m['wmfConCheckStep']() - m['wmfTreadCheckStep']() != 1",
+   "note": "the check steps differ by one - the treading ladder is gentler than the breath ladder"
+  },
+  {
+   "expr": "m['wmfTreadExampleRounds']() != 6 * m['wmfEncMultUnenc']()",
+   "note": "the treading example: strength 6 doubled by the unencumbered endurance modifier"
+  },
+  {
+   "expr": "m['wmfStreamRateMax']() - m['wmfStreamRateMin']() != 9 or m['wmfHoldCheckPeriod']() != 2",
+   "note": "the stream rating and the hold cadence"
+  },
+  {
+   "expr": "m['wmfDownRateFt']() / m['wmfInertRiseFt']() != 4",
+   "note": "the inert rise is one quarter of the deliberate rate"
+  },
+  {
+   "expr": "m['wmfSubsurfDen']() * 2 != m['wmfSubsurfNum']() * 3",
+   "note": "the subsurface cut is two thirds"
+  },
+  {
+   "expr": "m['wmfLeapCapIn']() != m['wmfDownRateIn']() + 3",
+   "note": "the leap cap matches the vertical base in inches"
+  }
+ ],
+ "gap_census": {
+  "closed": 186,
+  "open": 0
+ },
+ "gap_flips": [],
+ "gap_report": "tools/wsg_gap_report.md",
+ "header_file": "rules/wsgswimfold.h",
+ "header_sections": {
+  "the breath side": [
+   {
+    "kind": "const",
+    "name": "wmfBreathConDiv"
+   },
+   {
+    "kind": "const",
+    "name": "wmfMinBreathRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wmfPenaltyDiv"
+   },
+   {
+    "kind": "const",
+    "name": "wmfBothPenaltyDiv"
+   },
+   {
+    "kind": "const",
+    "name": "wmfConCheckStep"
+   },
+   {
+    "kind": "const",
+    "name": "wmfBreathExampleRounds"
+   }
+  ],
+  "the fold findings": [
+   {
+    "kind": "bool",
+    "name": "wmfVerticalRatesEqual"
+   },
+   {
+    "kind": "bool",
+    "name": "wmfVerticalHalfHorizontal"
+   },
+   {
+    "kind": "bool",
+    "name": "wmfDiveGridMatchesProse"
+   },
+   {
+    "kind": "bool",
+    "name": "wmfEncumbranceParadox"
+   },
+   {
+    "kind": "bool",
+    "name": "wmfFortyFootAgreement"
+   },
+   {
+    "kind": "bool",
+    "name": "wmfMercyMatchesLightCur"
+   },
+   {
+    "kind": "bool",
+    "name": "wmfCheckStepsDiffer"
+   },
+   {
+    "kind": "bool",
+    "name": "wmfEconomiesDiffer"
+   },
+   {
+    "kind": "bool",
+    "name": "wmfSubsurfaceBeforeHighSpeed"
+   },
+   {
+    "kind": "bool",
+    "name": "wmfInertQuarterOfDeliberate"
+   }
+  ],
+  "the horizontal side": [
+   {
+    "kind": "const",
+    "name": "wmfSwimRateFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmfOtherRateFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmfSubsurfNum"
+   },
+   {
+    "kind": "const",
+    "name": "wmfSubsurfDen"
+   },
+   {
+    "kind": "const",
+    "name": "wmfHighSpeedMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmfHighSpeedEndDiv"
+   },
+   {
+    "kind": "const",
+    "name": "wmfRestRegainPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "wmfLightCurMaxIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmfStrongCurMinIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmfStrongCurMaxIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmfMercyDriftMaxIn"
+   }
+  ],
+  "the moving-water side": [
+   {
+    "kind": "const",
+    "name": "wmfStreamRateMin"
+   },
+   {
+    "kind": "const",
+    "name": "wmfStreamRateMax"
+   },
+   {
+    "kind": "const",
+    "name": "wmfHoldCheckPeriod"
+   },
+   {
+    "kind": "const",
+    "name": "wmfWaterfallMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmfWaterfallMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmfHighDiveMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmfFallDmgDiv"
+   },
+   {
+    "kind": "const",
+    "name": "wmfLongFallDiv"
+   }
+  ],
+  "the treading side": [
+   {
+    "kind": "const",
+    "name": "wmfTreadTurnsPerEndPt"
+   },
+   {
+    "kind": "const",
+    "name": "wmfTreadRoundsPerStrPt"
+   },
+   {
+    "kind": "const",
+    "name": "wmfTreadCheckStep"
+   },
+   {
+    "kind": "const",
+    "name": "wmfTreadExampleRounds"
+   },
+   {
+    "kind": "const",
+    "name": "wmfEncMultUnenc"
+   },
+   {
+    "kind": "const",
+    "name": "wmfSpdDenMod"
+   },
+   {
+    "kind": "const",
+    "name": "wmfSpdDenHeavy"
+   }
+  ],
+  "the vertical side": [
+   {
+    "kind": "const",
+    "name": "wmfDownRateIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmfDownRateFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmfDiveEncModMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmfDiveEncHeavyMult"
+   },
+   {
+    "kind": "const",
+    "name": "wmfSurfRateIn"
+   },
+   {
+    "kind": "const",
+    "name": "wmfInertRiseFt"
+   },
+   {
+    "kind": "const",
+    "name": "wmfLeapCapIn"
+   }
+  ]
+ },
+ "include_after": "#include \"rules/wsgtempfold.h\"  // R499: the WSG temperature-chain fold pins",
+ "include_comment": "the WSG swimmer's motion-chain fold pins",
+ "inline_count": 49,
+ "prefix": "wmf",
+ "prev_record": [
+  "- R499 LANDED 2026-10-16: commit bcaa323 (census 424,",
+  "  pushed d4f30ee..bcaa323), the WSG TEMPERATURE-CHAIN FOLD -",
+  "  THE FIRST SEAM ROUND after the gap report closed at 186/0:",
+  "  no new book pages. The dressing columns (rules/wsgdress.h",
+  "  wsdColForTemp), the Table 9 heat bands and frostbite",
+  "  threshold (rules/wsgheat.h wshHeatBandFor), the weather",
+  "  letter codes (rules/wsgweather.h wwsTempCodeHi) and the R498",
+  "  survival shifts (rules/wsgprofd.h) reconciled as one",
+  "  system. Pinned as rules/wsgtempfold.h (prefix wtf, 37",
+  "  inlines: 27 consts + 10 bools, no grids, NO gap flips - the",
+  "  report stays 186/0). THE FOLD PATTERN (NEW, load-bearing):",
+  "  R317/R401 predate the spec engine - no reusable fold spec",
+  "  existed, so R499 established the pattern: every seam value",
+  "  is re-read from its landed header and re-pinned as the",
+  "  fold's own consts, then the cross-header identities are",
+  "  proven const-to-const inside the spec's model (examples",
+  "  like wtfDressModLo() != wtfNoDmgLo()); the Python mirror",
+  "  cannot call other headers, so cross-header calls must be",
+  "  expressed as this-round consts - the redundant-but-audited",
+  "  pattern, and every identity rides the mutant battery.",
+  "  FINDINGS: three true boundary alignments (the moderate",
+  "  column and no-damage band 16 open at the same 31; band 15",
+  "  and the cold column top at the same 30; the frostbite",
+  "  threshold 0 equals the below-0 dress boundary value); one",
+  "  deliberate non-alignment (the hot column opens at 76, eight",
+  "  degrees INSIDE the 31-84 no-damage band - attire adjusts",
+  "  before Table 9 damage resumes at 85); the finer dress grid",
+  "  (moderate tops 75, no-damage runs to 84); the protected",
+  "  widening (no-damage 6 through 89 vs bare 31 through 84 -",
+  "  dash censuses 2 unprotected / 14 protected); the survival",
+  "  shifts land inside both (cold 30+20=50, heat 80-20=60).",
+  "  Preflight GREEN (R499 WSG temperature fold audit: bad 0),",
+  "  rverify GREEN (37 mutants, 0 missed, double-run clean).",
+  "  Engine tolerance confirmed: gap_flips:[] passes with the",
+  "  census gate on the closed report. User-side spec md5",
+  "  ebc706e5556d1a5e3df1845c4715012d differed from both",
+  "  authored variants (cf3cad50... +nl, f26b9324... no-nl) -",
+  "  cosmetic, the standing class. Spec published as the new",
+  "  canvas r499-splice; the user-side bn launcher ran outside",
+  "  the ritual block (the R372 rule held - bn was struck from",
+  "  the delivered block after a first draft carried it).",
+  "  NEXT - R500: another fold (candidates: the water chain -",
+  "  swimming/holding-breath/waterborne, or the movement chain -",
+  "  climbing/jumping/encumbrance), or the DSG as the next",
+  "  book."
+ ],
+ "prev_seed_key": "- R499 LANDED 2026-10-16: commit bcaa323 (census 424,",
+ "regtest": "regtest.cpp",
+ "round": 500,
+ "seed_anchor": "## Knowledge maintenance",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "table_checks": [],
+ "tables": [],
+ "title": "the WSG swimmer's motion-chain fold - the swimming rates, the dive and surface legs, the moving-water hazards, the breath economy and the treading economy reconciled as one system"
+}
+

@@ -6165,6 +6165,51 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   wilderness-adjacent pin target; the repo also has
   dmg_gap_report.md and phb_gap_report.md if any
   boxes remain open there.
+- R499 LANDED 2026-10-16: commit bcaa323 (census 424,
+  pushed d4f30ee..bcaa323), the WSG TEMPERATURE-CHAIN FOLD -
+  THE FIRST SEAM ROUND after the gap report closed at 186/0:
+  no new book pages. The dressing columns (rules/wsgdress.h
+  wsdColForTemp), the Table 9 heat bands and frostbite
+  threshold (rules/wsgheat.h wshHeatBandFor), the weather
+  letter codes (rules/wsgweather.h wwsTempCodeHi) and the R498
+  survival shifts (rules/wsgprofd.h) reconciled as one
+  system. Pinned as rules/wsgtempfold.h (prefix wtf, 37
+  inlines: 27 consts + 10 bools, no grids, NO gap flips - the
+  report stays 186/0). THE FOLD PATTERN (NEW, load-bearing):
+  R317/R401 predate the spec engine - no reusable fold spec
+  existed, so R499 established the pattern: every seam value
+  is re-read from its landed header and re-pinned as the
+  fold's own consts, then the cross-header identities are
+  proven const-to-const inside the spec's model (examples
+  like wtfDressModLo() != wtfNoDmgLo()); the Python mirror
+  cannot call other headers, so cross-header calls must be
+  expressed as this-round consts - the redundant-but-audited
+  pattern, and every identity rides the mutant battery.
+  FINDINGS: three true boundary alignments (the moderate
+  column and no-damage band 16 open at the same 31; band 15
+  and the cold column top at the same 30; the frostbite
+  threshold 0 equals the below-0 dress boundary value); one
+  deliberate non-alignment (the hot column opens at 76, eight
+  degrees INSIDE the 31-84 no-damage band - attire adjusts
+  before Table 9 damage resumes at 85); the finer dress grid
+  (moderate tops 75, no-damage runs to 84); the protected
+  widening (no-damage 6 through 89 vs bare 31 through 84 -
+  dash censuses 2 unprotected / 14 protected); the survival
+  shifts land inside both (cold 30+20=50, heat 80-20=60).
+  Preflight GREEN (R499 WSG temperature fold audit: bad 0),
+  rverify GREEN (37 mutants, 0 missed, double-run clean).
+  Engine tolerance confirmed: gap_flips:[] passes with the
+  census gate on the closed report. User-side spec md5
+  ebc706e5556d1a5e3df1845c4715012d differed from both
+  authored variants (cf3cad50... +nl, f26b9324... no-nl) -
+  cosmetic, the standing class. Spec published as the new
+  canvas r499-splice; the user-side bn launcher ran outside
+  the ritual block (the R372 rule held - bn was struck from
+  the delivered block after a first draft carried it).
+  NEXT - R500: another fold (candidates: the water chain -
+  swimming/holding-breath/waterborne, or the movement chain -
+  climbing/jumping/encumbrance), or the DSG as the next
+  book.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
