@@ -1,0 +1,80 @@
+ANIMALS AS INDIVIDUALS
+
+ered in this light, each one has a distinct personality and will react
+differently from other animals in the same situation. The sooner a
+character gets to know the quirks and traits of his animals, the
+better off he and they will be.
+
+Sometimes a character can gain valuable information about a
+mount or a pack animal from its former owner, assuming the
+seller is reputable and honest in his dealings with the purchaser.
+This information can be used by the Dungeon Master to modify
+the general characteristics of an animal, taking into account the
+individuality of the creature. For instance, if a horse is known to
+be ‘“‘very sure-footed, but hates to get his feet wet,"" the animal is
+less susceptible to going lame and might be able to move at a
+slightly faster rate in rugged or very rugged terrain than a normal
+horse — but he will not willingly enter a swamp or ford a river, and
+if he is forced to move in such conditions he will either travel at a
+slower rate than normal, or he might balk or even panic.
+
+If an animal is captured in the wild, trial and error is the only
+way for a character to find out what its personality is like (short of
+magical means such as a speak with animals spell). If you aren’t
+sure how an animal will react in a certain situation, it is best to ex-
+pose the creature to the situation under controlled circum-
+stances. For instance, to find out how an animal feels about
+getting its feet wet, lead it into a stream just before breaking
+camp in the morning when the animal is calm and well rested;
+don’t wait until you're being chased by a gang of hobgoblins and
+you must ford a shallow river in order to get away from them.
+
+General Tendencies
+
+Just as characters do, animals appreciate calmness and stabil-
+ity (even though they might not realize it). They don't like to be ex-
+posed to conditions that are unpleasant or potentially harmful;
+they don’t like being startled or upset by something they didn’t
+expect; and they may behave irrationally when something out of
+the ordinary happens.
+
+All normal (non-fantastic) animals have an instinctive fear of
+fire. To varying degrees, they have an innate ability to sense
+when a drastic change in the weather is about to occur. All of
+them can be startled by a loud noise, or bothered by an unpleas-
+ant smell. As a general rule, an animal’s sense of smell and
+sense of hearing are more acute than those of a human or a demi-
+human: When an animal appears to be nervous or excited, it may
+be because the creature has perceived something that the char-
+acter riding it or leading it has not yet noticed. Most animals are
+not intelligent enough to be capricious; when they seem to be
+bothered, it's a good bet that they aren’t acting that way just be-
+cause they feel like it.
+
+Table 42: REACTIONS OF ANIMALS
+
+Fire Weather Noise Odor  Other
+
+Ape, gorilla 8/10/12 6/12/ 8/12/ 9/11/12 8/10/12
+Bear, brown 4/ 8/10 6/11/12 6/11/12 5/ 9/11 5/ 8/11
+Camel, any 6/ 9/11 6/10/12 6/11/12 4/10/12 &/10/12
+Dog, sled 4/ 9/11 6/10/12 4/10/12 4/10/12 5/10/12
+Donkey 4/1012 6/10/12 6/10/12 6/10/12 ©/10/12
+
+Elephant, any 4/ 9/11 7/12/ 8/12/ 8/11/12 81112
+
+Horse, draft 5/11/12 8/10/12 4/10112 7/10112 6/10/12
+Horse, wild 4/10/12 5/11/12 6/10/12 7/10/12 5/ 9/12
+Horse, other 4/ 9/11 5/10/12 4/10/12 6/10/12 6/10/12
+Mule 6M1  en2r  eni1 7121 6M10/12
+Pony 4/ 911 5/10/12 4/10112 6/10/12 6/10112
+Ram, giant 6/10/12 8/11/12 8/11/12 6/12/ 6/10/12
+Sheep 4/10112 7/10/12 8/10/12 8/10/12 6/10/12
+Yak 711012 7/10/12 8/11/12 6/10/12 7/10/12
+
+Each entry on the above table consists of two or three num-
+bers, each of which represents a possible result on a roll of 1d12.
+When an animal is exposed to one of the given conditions, the
+Dungeon Master should roll 1d12 and ascertain the animal’s re-
+action as follows:
+

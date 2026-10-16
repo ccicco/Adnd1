@@ -1,0 +1,34 @@
+Calming an Excited Animal                                                        Understanding an Animal
+   Any character can try to soothe an animal that has become ex-                    A character with proficiency in animal lore (see the section on
+cited. Someone with proficiency in animal handling (see the sec-                 Wilderness Proficiencies) has the ability - partially innate, parti-
+tion on Wilderness Proficiencies) has a reasonably good chance                   ally learned -to make at least an educated guess about why an
+of doing so, assuming that he has an above-average wisdom                        animal is acting a certain way, even if the reason for its behavior
+score. A proficient character can make a new attempt every                       is not obvious to the character.
+round if his previous attempt failed, or if more than one animal is                 A character without this proficiency may still be able to draw
+excited. A character without proficiency in animal handling has a                logical conclusions based on what his physical senses tell him. If
+straight 20% chance of bringing an excited animal under control,                 he hears the rumble of thunder from an approaching storm and
+and can only make two such attempts (in successive rounds, if                    his horse seems unusually skittish, he may justifiably assume
+desired) on the same animal. Any character who attempts to calm                  that the thunder is the cause of his mount’s uneasiness. But it’s
+an animal can take no other action in the same round except for                  also possible that the horse is upset by something that his master
+movement, if necessary. If an animal is in motion when it be-                    hasn’t yet noticed: A nonproficient character can guess, but he
+comes excited, it will remain in motion; if it is stationary, it will ei-        can’t always know, what’s bothering his mount. In contrast, a
+ther remain still or begin moving (50% chance of each                            proficient character can usually determine the cause with cer-
+occurrence). A character attempting to soothe a moving animal                    tainty - which, of course, also has the effect of ruling out any
+must either be riding it or be able to keep up with it as it moves               other possibilities.
+along.
+   If an animal becomes agitated or panicked, only a character
+with proficiency in animal handling has any chance of calming
+the beast. His Proficiency Check is made with a +2 modifier to
+the die roll if the animal is agitated, or + 4 if it is panicked.
+   Even if an animal is calmed, there is no guarantee that it will not
+become excited again in the following round. If the condition that
+caused it to become upset is still evident (to the animal, not nec-
+essarily to the character), then the animal may become excited
+all over again and require the constant attention of an animal
+handler to prevent it from doing something drastic.
+
+
+
+
+                                                                            94
+

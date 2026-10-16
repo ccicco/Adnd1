@@ -1,0 +1,72 @@
+                                                                                                                ANIMALS A S INDIVIDUALS
+
+   A result equal to or greater than the leftmost number indicates                 Sometimes an animal can perceive drastic changes in tht?
+that the animal has noticed the condition, sometimes before any                 weather even before any visual evidence is apparent. A fast-
+characters have perceived it. The animal will be noticeably ner-                moving storm may be still beyond the horizon, but an animal can
+vous or excited; it will pace or prance skittishly and will make vo-            sense the drop in air pressure that precedes the disturbance. An
+cal sounds (whinnying, braying, trumpeting, snorting, etc.) for no              animal will become excited when it senses any upcoming signifi-
+apparent reason.                                                                cant change in the weather (the approach of a moderate rain-
+   A result equal to or greater than the second number indicates                storm, for instance), but it will only become agitated or panicked if
+that the animal may become agitated. Unless a character takes                   the change is very drastic and very imminent, such as an ap-
+steps to calm or control the animal within two rounds of when it                proaching lightning storm or tornado. If an animal exhibits ex-
+becomes excited, the creature’s abnormal behavior will become                   tremely unusual behavior and no other cause is obvious, a
+more pronounced. It will refuse to move, or will proceed very cau-              character might logically assume that potentially hazardous
+tiously, if it is being forced to travel toward the threat that it per-         weather is on the way.
+ceives. If a character has not figured out what is bothering his
+animal by the time it becomes agitated, it is nevertheless a good                  Noise in this context refers to a sound that is loud enough and
+idea to trust the animal’s instinct: Don’t force it to move in a direc-         sharp enough to startle a nearby animal - a shout, a crack of
+tion it doesn’t want to go, or, better yet, allow it to move in a direc-        thunder, the clang of a sword striking a metal shield. An animal
+tion of its choosing.                                                           can become accustomed to a particular noise if it is exposed to
+   A result equal to or greater than the third number (if one is                the sound frequently; to make a horse less likely to panic during
+given) indicates that the animal may become panicked. Unless                    the commotion of melee combat, expose it to simulated combat
+the animal is calmed and brought under control within two rounds                (complete with whoops, growls, and clangs) while it is being
+of when it becomes excited, it will begin to behave in a manner                 trained.
+that seems utterly irrational (but is in fact motivated by the ani-                An animal with exceptionally sensitive hearing (compared to
+mal’s instinct for self-preservation). It will do everything in its             that of a character) will not become agitated or panicked when it
+power to move away from the threat it perceives and will be ut-                 detects a sound that is inaudible to its rider or owner. It may be-
+terly uncontrollable by normal (nonmagical) means for the next                  come excited, however, and a character with proficiency in ani-
+2d3 turns or until it has moved sufficiently far away from the                  mal lore might be able to ascertain the nature of what the animal
+threat, whichever amount of time is greater. If no third number is              is reacting to.
+given, this indicates that the animal will not become panicked.
+                                                                                    Odor will only produce an extreme reaction from an animal
+  Fire frightens an animal more than any other force or source of               when the scent is strong and pungent, which usually means that
+energy found in nature. Even an animal that has never seen a fire               it can be smelled by a character as well. An animal with an excep-
+or felt the heat of one will know instinctively that flames are to be           tionally sensitive sense of smell will not become agitated or pan-
+avoided. (This also applies to non-flaming natural heat sources                 icked by an odor so faint that a character cannot perceive it,
+such as flowing lava, and to magical fire that produces heat, but               unless the animal associates the odor with something harmful or
+not to a flamelike phenomenon that does not give off heat, such                 unpleasant.
+as a faerie fire spell.) An animal can become accustomed to the
+nearby presence of a small fire, such as a campfire, if it learns to               Other covers a wide range of stimuli - some “little thing” that
+associate the fire with something good: Tie your horse to a tree at             may go unnoticed by characters and most animals, but causes a
+the campsite, build your campfire, and then feed the animal or al-              certain animal to become excited, agitated, or panicked. Here is
+low it to graze. It will quickly realize that the start of a campfire           an opportunity to “personalize” an animal by giving it a quirk that
+means that feeding time is soon to follow, and after a few days’                its owner might not find out about until an inopportunemoment. A
+repetition of this sequence it may actually look forward to the time            donkey may plod along through a mosquito-infested swamp ob-
+when a pile of wood is ignited at the end of the day’s labors.                  livious to bugs that light on its snout or its flanks - but it will fly
+   However, no animal will ever be comfortable in the vicinity of               into a bucking, braying frenzy if one of the critters gets inside its
+any blaze larger than a normal campfire, regardless of how many                 ear. An elephant may be a hard worker, able to carry an enor-
+times the creature is exposed to a large fire without being harmed              mous load on its back - but it will absolutely refuse to walk
+by it. An animal may be able to sense the presence of a bonfire or              through a shallow stream unless it is relieved of the entire bur-
+some similarly large blaze (a burning building, a wallof fire spell,            den.
+etc.) from as far away as one-quarter mile. It can sense the exist-                A quirk can be beneficial in some circumstances: A lead sled
+ence of an even larger conflagration (a forest fire, or a grass fire            dog that refuses to run across snow with a light crust, because it
+covering a large area) from as far away as one mile - usually                   doesn’t like “falling through,” might be difficult to deal with most
+long before a character is aware that the fire is nearby.                       of the time. But the same dog could be a lifesaver if it reacts the
+                                                                                same way when asked to travel across a patch of thin ice over a
+   Weather changes are noticeable to animals in many cases be-                  body of water. A horse that has had a bad experience with a bear
+fore the signs of change come within sight range of characters. In              won’t tolerate one being used as a pack animal in the same party
+some instances, an animal can instinctively “know” that severe                  - but if any wild bears try to approach the group’s campsite at
+weather is on the way, even when the only thing a character sees                night, that same horse will sound an alarm long before the bear
+is a mass of approaching storm clouds. A character has no way of                comes within view of a character on guard duty.
+being sure whether those clouds are carrying just a moderate
+amount of rain, a roaring thunderstorm, or even a tornado - but                   Another way to individualize animals is simply to modify the
+an animal can tell the difference between an impending storm                    general characteristics described in this section and the section
+that will simply soak an area with water and a storm that has the               on Encumbrance and Movement. Not all humans are equally
+potential to cause damage to characters or structures.                          strong or equally fast; the same goes for horses, camels, and ele-
+                                                                                phants. As characters get to know the animals they have chosen
+                                                                                to accompany them on their adventures, they will discover they
+                                                                                they have strengths and weaknesses and idiosyncrasies - not at
+                                                                                all unlike the characters themselves.
+
+                                                                           93
+

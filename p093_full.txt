@@ -1,0 +1,44 @@
+ANIMALS A S INDIVIDUALS
+
+ered in this light, each one has a distinct personality and will react            All normal (non-fantastic) animals have an instinctive fear of
+differently from other animals in the same situation. The sooner a             fire. To varying degrees, they have an innate ability to sense
+character gets to know the quirks and traits of his animals, the               when a drastic change in the weather is about to occur. All of
+better off he and they will be.                                                them can be startled by a loud noise, or bothered by an unpleas-
+   Sometimes a character can gain valuable information about a                 ant smell. As a general rule, an animal’s sense of smell and
+mount or a pack animal from its former owner, assuming the                     sense of hearing are more acute than those of a human or a demi-
+seller is reputable and honest in his dealings with the purchaser.             human: When an animal appears to be nervous or excited, it may
+This information can be used by the Dungeon Master to modify                   be because the creature has perceived something that the char-
+the general characteristics of an animal, taking into account the              acter riding it or leading it has not yet noticed. Most animals are
+individuality of the creature. For instance, if a horse is known to            not intelligent enough to be capricious; when they seem to be
+be “very sure-footed, but hates to get his feet wet,” the animal is            bothered, it’s a good bet that they aren’t acting that way just be-
+less susceptible to going lame and might be able to move at a                  cause they feel like it.
+slightly faster rate in rugged or very rugged terrain than a normal
+horse - but he will not willingly enter a swamp or ford a river, and           Table 42: REACTIONS OF ANIMALS
+if he is forced to move in such conditions he will either travel at a
+slower rate than normal, or he might balk or even panic.                                          Fire   Weather Noise         Odor      Other
+   If an animal is captured in the wild, trial and error is the only           Ape, gorilla     8110112 61121     81121    9/11/12 8110112
+way for a character to find out what its personality is like (short of         Bear,brown       41 8110 611 1/12 611 1/12 51 911 1 51 811 1
+magical means such as a speak with animals spell). If you aren’t               Camel, any       61 9/11 6110172 6/11/12 4110112 6110112
+sure how an animal will react in a certain situation, it is best to ex-        Dog, sled        41 9/11 6110112 4110112 4110112 5110112
+pose the creature to the situation under controlled circum-                    Donkey           411 0112 611011 2 611011 2 6110112 611011 2
+stances. For instance, to find out how an animal feels about                   Elephant, any    41 911 1 71121    81121    811 111 2 811 1/12
+getting its feet wet, lead it into a stream just before breaking               Horse, draft     5/11/12 8110112 4110112 7110112 6110112
+camp in the morning when the animal is calm and well rested;                   Horse, wild      4110112 5/11/12 6110112 7110112 51 9/12
+don’t wait until you’re being chased by a gang of hobgoblins and
+you must ford a shallow river in order to get away from them.
+
+                                                                               Ram, giant       6110112 811 1 I1 2 811 1 I1 2 61121 6110112
+General Tendencies                                                             Sheep            411011 2 711 011 2 8110112 8110112 6110112
+                                                                               Yak              711 011 2 7110112 811 111 2 6110112 7110112
+   Just as characters do, animals appreciatecalmness and stabil-
+ity (even though they might not realize it). They don’t like to be ex-           Each entry on the above table consists of two or three num-
+posed to conditions that are unpleasant or potentially harmful;                bers, each of which represents a possible result on a roll of ld12.
+they don’t like being startled or upset by something they didn’t               When an animal is exposed to one of the given conditions, the
+expect; and they may behave irrationally when something out of                 Dungeon Master should roll ld12 and ascertain the animal’s re-
+the ordinary happens.                                                          action as follows:
+
+
+
+
+                                                                          92
+
