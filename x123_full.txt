@@ -1,0 +1,139 @@
+COMPILED TABLES
+
+Table 19: CHANCE OF STOPPING A FALL OR TUMBLE
+
+(From page 36)
+....... Condition of Surface .......
+Non- Slightly
+Surface Fallen From slippery Slippery Slippery
+Gentle slope Is 3a %
+Moderate slope s %3 2
+Severe slope % 2 a
+Cliff face 2 a -
+Table 20: GRAPPLING SUCCESS
+(From page 38)
+Condition of Terrain
+Chance of Non- Slightly
+Target terrain Protrusion sllppery Slippery Slippery
+Moderate slope, rough  30/50
+Moderate slope, normal  50/70 60 72 84
+Mod. slope. smooth 70/85 64 76 86
+ere 0 72 84 90
+Cliff, rough, with ledges 20/40 80 92 94
+Cliff, rough, no ledges 40/60 84 96 96
+Cliff, smooth, w/ledges  60/80 88 98 98
+Cliff, smooth, no ledges  80/90 92 99 99
+
+Table 21: THROWN LOOP RANGES
+(From page 38)
+Maximum Range
+
+Character Level (in feet)
+1-4 40
+5-8 50
+9-12 60
+13-16 75
+17+ 90
+
+Table 22: CHARACTERS' JUMPING ABILITY
+
+(From page 39)
+
+Level of Standing Running High
+
+Character Broad Jump Broad Jump Jump
+1-6 1d4 +1 1d4+5 1d3
+7-9 1d4 +2 1d4+6 1d4
+
+10-12 1d6+2 1d6+5 1d3+1
+
+13-15 1d6+3 1d6+6 1d4 +1
+16-18 1d6+4 1d6+9 1d5
+
+19-22 1d6+5 1d6+12 1d5 +1
+
+23+ 1d6+6 1d6+15 1d6 +1
+
+Table 25: WATERBORNE VEHICLE CHARACTERISTICS
+
+Vehicle Length Width Capacity Large Move
+Kayak 8-12 2-3 1+ 1000 18/24/12/14
+Small canoe 10-15 2-3 2 + 2500 20/30/10/12
+‘Small rowboat 812 2-4 2 +2000 16/24/12/14
+Coracle 10-15 35 2+2000 12/18/ 6/8
+Large canoe 15-20 2-3 2 + 4000 20/30/10/12
+Large rowboat 15-20 3-4 4 + 4000 16/24/ 8/10
+
+Smallbarge =~ 1520  8-12 4 + 6000 16/24/ 8/ 9
+Large barge 2545 1220 6+ 7500 B/16/ 4/ 5
+
+Table 23: MOVEMENT IN REDUCED VISIBILITY
+
+(From page 40)
+Heavy Blowing
+Snow Sand or
+
+Heavy
+Moderate Fog or
+
+Clear Fog Snow w/Wind Dust
+Daylight 2 Sle ¥Ya 23 2
+Moonlight 2fa 2 /3 Ya s
+Darkness 2 a a e s
+
+Table 24: EFFECTS OF ENCUMBRANCE ON SWIMMING
+(From page 41)
+
+Enc. Endurance  Speed Diving Surfacing
+None x2 X2 x1 x2
+Light x1 X1 x1 X1
+Moderate X 1z X 12 X2 X2
+Heavy X a X s x3 X s
+Severe — — X3 —
+
+Table 26: CHANCE OF CAPSIZING
+(From page 45)
+
+......... Wind/Water Conditions .........
+Mild Moderate Dangerous Severe
+Kayak 25% 40% 60% 80%
+Small canoe 20% 35% 50% 75%
+Large canoe 10% 20% 30% 40%
+Large rowboat 0% 10% 25% 40%
+Small barge 0% 5% 10% 20%
+
+Table 28: TOLERANCE LEVELS FOR LACK OF FOOD
+
+(From page 50)
+Combined Strength
+and Constitution Tolerance Level
+
+15 or less 4 days
+
+16to 19 5 days
+20t024 6 days
+
+2510 30 7 days
+311035 8 days
+
+36 or more 10 days
+
+Table 29: WATER REQUIREMENTS FOR CHARACTERS
+
+(From page 53)
+......... Effective Temperature .........
+Activity Below 50 50-70 71-90  Above 90
+Inactive 5 6 7 8
+Light 6 7 8 10
+Moderate 8 9 10 12
+Heavy 9 10 12 16
+(From page 44)
+Hull
+Small Move Enc. Value Startup Value Draught
+160/200/120/180 600-800 1-2 1-2 Ya
+160/200/120/180 700-900 1-2 1-2 a
+120/180/ 90/120 700-1000 1-3. 1-3 2
+45/ 60/ 30/ 45 900-1200 1-3 12 2
+120/180/ 90/120  1000-1200 1-3 23 a
+45/ 90/ 45/ 60  1200-1600 2-5 2-4 Ia
+30/ 80/ 20/ 30 10000 + 5-10 28 o

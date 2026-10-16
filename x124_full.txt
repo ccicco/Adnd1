@@ -1,0 +1,135 @@
+Table 33: CHANCE OF FOOD SPOILAGE
+
+(From page 58)
+
+.......... Effective Temperature..........
+
+Type of Food Below 30 31-50 51-70 71-90 Above 90
+Green plants —/— 6/20 4/30 2/40 1/50
+
+Fruits or
+
+vegetables —/— 5/30 3/40 2/50 1/60
+Cooked meat —i— 3/20 2/50 1/60 1/80
+Raw meat o 2/50 1/70 1/80 1/90
+
+Table 36: PORTABLE SHELTER CHARACTERISTICS
+
+(From page 62)
+Enc. Setup Moisture Wind Life
+Value Cost Time Res. Res. Span
+Poor
+Small 350 10 1d2+1 Light 20 40
+Medium 450 20 1d2+2 Light 20 40
+Large 600 30 1d2+3 Light 20 40
+Adequate
+Small 500 30 1d3+1 Moderate 30 80
+Medium 600 50 1d3+2 Moderate 30 80
+Large 750 75 1d3+3 Moderate 30 80
+Small 600 75 1d3+1 Heavy 40 120
+Medium 800 120 1d3+2 Heavy 40 120
+Large 1000 180 1d4+2 Heavy 40 120
+Superior
+Small 750 200 1d4+1 Downpour 50 180
+Medium 1000 300 1d4+2 Downpour 50 180
+Large 1500 400 1d4+3 Downpour 50 180
+Table 37: EFFECTS OF LACK OF SLEEP
+(From page 64)
+Average Rest
+Per Day Effects
+Lessthan5..... Dexterity Checks at +1
+Lessthan4..... Dexterity Checks at +2
+Strength Checks at +1
+=1 “to hit”
+Lessthan3..... Dexterity Checks at +3
+Strength Checks at +2
+Wisdom Checks at +1
+=1 "to hit"
+Climbing Rating —10%
+Movement Rate —25%
+Lessthan2..... Dexterity Checks at +4
+Strength Checks at +3
+Wisdom Checks at +2
+Constitution Checks at +1
+-2 "to hit"
+Climbing Rating —20%
+Movement Rate —33%
+Weight Allowance —50 % Strength
+Lessthan1..... Dexterity Checks at +5
+
+Strength Checks at +4
+
+Wisdom Checks at +3
+
+Constitution Checks at +2
+
+-3 "'to hit"
+
+Climbing Rating —30%
+
+Movement Rate —50%
+
+Weight Allowance —100 X Strength
+
+123
+
+COMPILED TABLES
+
+Table 32: FISHING SUCCESS
+
+(From page 57)
+............ TimeofDay ............
+Type of Area Daytime Night Dawn/Dusk
+Poor 1d4-2 1d4 1d4+2
+Fair 1d6 -3 1d6 -1 1d6+2
+Good 1d6 -2 1d6+2 1d8 +2
+Table 38: CAMPFIRE CHARACTERISTICS
+(From page 65)
+Wind
+Size Fuel Start Refuel Res. Cap. Vis.
+Small 6 2d20 3 20 6 240
+Medium 12 2d20+5 6 30 10 360
+Large 18 2d20+10 9 40 15 540
+...... Warmth Provided at Given Distance ......
+1 3 5 10 20 30 40 50 60
+Small 80 60 40 30 20 10 0 0 .0
+Medium — 80 60 40 30 20 10 0 +0
+Large — — 80 60 40 30 20 10 O
+Table 39: AVAILABILITY OF FUEL
+(From page 66)
+Winter Spring Summer Autumn
+Desert 20 20 20 20
+Forest* 70 100 100 100
+Hills 40 70 ‘@ T A
+Plains 50 70 80 70
+Swamp 40 30 30 40
+
+Table 41: OUTDOOR RANGE OF NORMAL VISION
+(From page 73)
+Daylight Twilight Moonlight Darkness
+
+Clear 500 300 50 25
+Overcast 400 250 25
+odtriia g5/ NG RIS asm S a
+
+or snow 50 30 ;ls‘-. 6 |
+Heavy snow
+
+with wind 35 25 10 5
+Blowing sand/dust 20 20 10 5
+Table 42: REACTIONS OF ANIMALS
+
+(From page 92)
+Fire Weather Noise Odor Other
+
+Ape, gorilla  8/10/12 6/12/  8/12/  9/11/12 8/10/12
+Bear, brown 4/ 8/10 6/11/12_6/11/12 5/ 911 5/ 8/11
+W iamﬁo-w, 112 RCI
+
+Elephant, any 4/ 9/11 7/12/ 3/12/ 811/12 8/11/12
+Horse, draft 51112 8/10/12 4/10/12 7/10/12 6/10/12
+Horse, wild _ 4/10/12 5/11/12 snonz 7/10/12 5/ 9/12
+Pew uom 5/10112 4/10/12 | 'z
+Ram, giant 6110112 81112 amnz 6/12/ 6/10/12
+Sheep 4/10/12 7/10/12 8/10/12 8/10/12 6/10/12
+Yak 7/10/12 7/10112 8/11/12 6/10/12 7/10/12
