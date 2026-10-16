@@ -1,0 +1,143 @@
+average-sized characters; individuals of exceptional girth or slen-
+derness should have the limits modified appropriately.
+
+Table 7: MINIMUM PASSAGEWAY SIZES
+
+Character Race Tunnel Width Tunnel Height
+Human 2ft 11t
+Half-orc 2ft 1 ft
+Dwarf 2ft 11t
+Gnome 1/ ft I ft
+
+Elf 1% ft ¥a ft
+Halfling 1ft s ft
+
+These sizes assume that the character is not wearing any kind
+of bulky armor or backpack. Usually a character drags his pack
+behind him, thus enabling negotiation of tighter passages.
+
+If a character is wearing armor, the minimum size of the tunnel
+he can pass through must be increased, based on the type of
+armor worn. The following table lists the increases in tunnel size
+needed to accomodate armor of various types.
+
+Table 8: ARMOR EFFECTS ON CHARACTER WIDTH
+
+Armor Type Increase in Diameter
+Leather armor none
+Padded armor Yo ft
+Studded leather e ft
+Scale mail Ya ft
+Ring mail s ft
+Chain mail a ft
+Splint mail Ya ft
+Banded mail e fi
+Plate mail 2 ft
+Field plate 5/s ft
+Full plate armor 1ft
+
+Note that, particularly in the case of plate armor, the increase in
+the character’s width reflects not just the thickness or bulkiness
+of the armor, but the decreased maneuverability that the charac-
+ter possesses in tight confines.
+
+EXCAVATION
+
+The types of barriers that characters may have to dig out of the
+way include those that they can move with their bare hands, such
+as piles of stone, earth, and other debris, as well as those that
+require tools to move, such as solid walls of dirt and rocks.
+
+Rubble
+
+Loose rocks are a common enough obstacle in caves and
+dungeons, especially older ones. The natural erosion that occurs
+gradually causes material to fall from the ceiling to the fioor. Also,
+previous inhabitants may have pushed rubble into an area pur-
+posely, using it as a dump.
+
+If the rubble is loosely packed—i.e., there are individual
+chunks of small rocks rather than one or two huge slabs, charac-
+ters should be able to clear their way through. Of course, there is
+often no way to tell how much of the corridor may be blocked by
+such debris.
+
+In one turn of excavation, a character can clear 1d4 feet of
+passageway to a width equal to the minimum passageway size
+listed in Table 7. If the passage is only partially blocked, the dis-
+tance that can be cleared in a turn is increased to 2d4 feet.
+
+21
+
+EXCAVATION
+Solid Barriers
+
+Characters excavate solid barriers at the rates listed in Table
+27: Mining Rates (on page 49). These rates assume that the
+characters are using pickaxes to aid in the excavation. If other
+metal tools, such as shovels or swords, are substituted, the rate
+of excavation is only 1/4 of the rate listed.
+
+FATIGUE AND EXHAUSTION
+
+The long periods of time required for an expedition to penetrate
+far underground, and the large amount of equipment that the
+members of such an expedition must carry along with them,
+mean that character fatigue and exhaustion must be considered
+in the context of the deep underground adventure.
+
+Fatigue, as noted on page 69 of the DMG, is influenced by a
+wide variety of factors. The intensity of a character’s activity, his
+personal stamina, and the conditions under which the exertion
+occurs all determine the extent to which a character becomes
+fatigued. These fatigue rules are intended as an abstract repre-
+sentation of how a character can be affected by fatigue and
+exhaustion.
+
+These effects only occur if a character spends time engaged in
+unusually strenuous activities. Merely marching along, even over
+difficult terrain, is not considered such an activity for purposes of
+this rule. Unusually strenuous activities include fighting, running,
+climbing continuously, chopping wood, swimming in rough or
+swiftly moving water, or moving while encumbered.
+
+Even in such cases, a character can avoid the effects of fatigue
+by resting for two turns after exerting himself for four turns. As
+long as this pattern of rest is maintained, the character is not sus-
+ceptible to the effects of fatigue.
+
+If a character spends six turns performing an unusually strenu-
+ous activity (without two turns of rest), the player must make a
+Constitution Check. If the check fails, the character becomes
+fatigued. If the check is successful, the character can continue to
+function normally. If, however, he performs five more turns of
+unusually strenuous activity, the player must make another Con-
+stitution Check, with the same effects as described above. If this
+second check is successful, but the character continues to labor,
+the next check is made after four turns of strenuous activity, and
+so on until the character must check every turn. After the first or
+any later Constitution Check, if they have all been successful, the
+character can fully recover his strength himself by spending an
+hour (six turns) resting.
+
+Effects of Fatigue
+
+If a character becomes fatigued, the following effects occur
+immediately, and last until the character has an opportunity to
+rest for two hours (12 turns).
+
+All of the character's attribute scores are lowered by 2, with all
+attendant (temporary) losses of hit points, spells, and combat
+bonuses. Henchmen, however, will not desert because of tempo-
+rary lowering of Charisma.
+
+In addition, the character must apply a -2 penalty to all of his
+attack rolls, damage rolls, and saves.
+
+A fatigued character can continue to perform the strenuous
+activity that caused him to become fatigued, but he runs the risk
+of becoming exhausted. The fatigued character must make a
+Constitution Check every turn that he performs the strenuous
+activity, rolling against his revised Constitution. If a fatigued char-
+acter fails one of these Constitution checks, he becomes
+exhausted.

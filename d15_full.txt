@@ -1,0 +1,119 @@
+CLIMBING
+
+Effects of Moving Water
+
+Itis important to remember that a character’s swimming speed
+is relative to the water he occupies. A stream flowing 40 feet per
+round, for example, will carry swimming characters along at that
+speed, plus or minus characters' swimming speeds.
+
+By swimming upstream at normal human swimming speed of
+4”[round, a character could manage to stay in the same position,
+relative to the banks of the stream. Dwarves and halflings with
+normal swimming speeds of 3"/round will be washed down-
+stream 10 feet in the sample stream above, even if they spend the
+entire round swimming upstream.
+
+Extremely rapid streams can move characters with enough
+momentum to do them considerable harm. Of course, until the
+character hits something, the water might prove to be a fast and
+direct form of transportation. Obviously, submerged rocks and
+subterranean waterfalls can change this impression quickly.
+
+A character carried over a waterfall receives half the normal
+amount of damage for the distance of the fall, except that a sav-
+ing throw vs. breath weapon is allowed. If the save is successful,
+the character manages to avoid the most damaging obstacles as
+follows: If the fall is 100 feet or less, the character receives no
+damage from the plunge. If the drop is greater than 100 feet, the
+character only receives 1/10 the normal damage for such a fall.
+
+Rapid streams full of submerged rocks pose a special threat to
+characters in the water. The DM should rate the danger of such a
+stream with a number from one to 10, one being the most danger-
+ous. The stream’s danger rating tells how often a character must
+make a swimming Proficiency Check. The time between saving
+throws (in rounds) equals the stream’s danger rating. Thus, a
+stream with a rating of one requires a saving throw every round,
+whereas one rated four only requires the check every four
+rounds. Whenever a character fails such a check, the pounding
+against the rocks causes 1d6 points of damage.
+
+The danger rating of a stream should be based on factors such
+as the speed of the water, its depth (shallower being more dan-
+gerous), the number of obstacles in the stream bed, and the
+amount of light available to see the obstacles. In a stream rated
+five or less, characters must swim at high speed.
+
+CLIMBING
+
+Characters who spend much time exploring the unknown
+reaches below the earth’s surface are sure to encounter many sit-
+uations requiring climbing skills. Natural caves and caverns are
+commonly filled with many passages blocked by cliffs or sheer
+drop-offs. While other characters cannot approach the efficiency
+of thieves at climbing, members of all character classes have a
+limited ability to move up and down steep slopes, provided hand
+and footholds are available. Only thieves have the capability to
+ascend sheer walls, cliffs, and the like. Other characters may try
+to climb very rough stone surfaces, as well as trees, poles, ropes,
+and other simple routes. The mountaineering proficiency can
+increase these abilities for both thieves and non-thieves.
+
+Climbing Surfaces
+
+Four types of wall surfaces are listed on page 19 of the DMG. In
+addition to these categories (very smooth, smooth with cracks,
+rough, and rough with ledges), the following types of surfaces
+can be climbed:
+
+Sloping wall (40-55 degree slant)
+Straight tree/pole/rope
+
+Tree with branches
+
+Rope and wall
+
+Ice wall
+
+14
+
+Walls that are very smooth, smooth with cracks, or rough can
+only be climbed by thieves, unless characters are using ropes,
+spikes, or other tools. Ice walls can only be climbed by characters
+(including thieves) using tools.
+
+Rates of Climbing
+
+The rate of a character’s movement when climbing on a
+slanted surface depends on the type of surface, the condition of
+the surface, the character’s class, and the character’s level of
+encumbrance.
+
+The following table shows the rates (in feet/round) at which
+characters can move up, down, or across various surfaces. Note
+that the condition of the surface being climbed greatly influences
+the speed of movement.
+
+Table 2: RATES OF CLIMBING
+
+Condition of Surface
+
+Surface Climbed Nonslippery Slightly slippery Slippery
+Very smooth * 6 ftir 3 fr 0 ft/r
+Smooth, cracked * 12 fr 6 ftr 3 ftir
+Rough * 18 ft/r 9 fifr 6 ft/r
+Rough, ledges 24 ftir 12 ftir 9 ftir
+Ice wall — — 6 ft/r
+Pole 36 ft/r 24 ftir 12 fiir
+Tree 60 ft/r 40 ft/r 20 fur
+Sloping Wall 60 ft/r 30 ftir 15 ftir
+Rope and Wall 40 ftir 30 ftir 20 ft/r
+
+* These surfaces can be climbed only by thieves.
+
+In all instances, the rates given are for thieves only. All other
+characters move at 1/2 the thief rates. All characters can add
+their Dexterity Reaction/Attacking adjustments to their rate of
+climbing.
+

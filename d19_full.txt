@@ -1,0 +1,110 @@
+SWINGING ACROSS
+
+Swinging Across
+
+Perhaps a character cannot find a means of anchoring the rope
+on his side of a chasm. Or perhaps he now holds the unenviable
+position of last man on the line. Sometimes hostile creatures
+remove one end of an unguarded rope, causing characters sup-
+ported by that rope to swing into a wall or other unforgiving sur-
+face.
+
+If this should happen, all is not necessarily lost. Of course, if
+the character happens to be crossing directly over a pit of bub-
+bling lava, he could be in real trouble if the loose rope swings to
+the floor. In crossing a cavern or other open area, however, the
+following procedures apply.
+
+A rope supported at one end swings to a point where it is hang-
+ing straight down. If a weight (such as a character) is attached to
+the rope, momentum will carry the rope past the straight down
+point, creating a pendulum motion. It is this momentum that gives
+characters problems when they ram into a solid object during
+their swing.
+
+If a character is holding a rope that swings into an obstacle, he
+must make an immediate Climbing Check to see if he can hold
+on. This check is modified by a -5% per 10 feet of rope between
+the character and the point at which the rope is fastened. A suc-
+cessful check means that the character has held on; an unsuc-
+cessful check means that he has been knocked off the rope and
+has fallen.
+
+A character thus smashed also takes 1d6 points of damage per
+20-foot section of rope between the character and the attached
+rope end. Drop all fractions, so a character on a 15-foot rope
+receives no damage, and a character 35 feet down a rope suffers
+only 1d6 points of damage.
+
+Belays
+
+Any character can attempt to protect another character against
+a fall with a belay. The only tool required is a rope, although
+spikes can add to the security of a belay.
+
+The character to be protected must have a rope tied securely
+around him. The character performing the belay holds the other
+
+Example of a Party Roped Together: This party of adventurers
+is trying to cross a broken region of chasms and stalactites. They
+are roped together to decrease the chance of a dangerous fall. If
+character #1 falls, then player #2 rolls a Climbing Check to see if
+his character stops the fall. Failure means that character #2 also
+falls and player #3 must roll to see if his character stops his falling
+comrades. This continues until either one player successfully
+
+end of the rope, but does not tie it to himself. Instead, he pays out
+the rope slowly as the other character moves farther away from
+him. If the protected character should fall, the character perform-
+ing the belay grabs the rope tightly and braces himself to try to
+catch the shock of the other character's weight.
+
+The character performing the belay must roll a Climbing Check
+in order to arrest the fall. If the check is successful, the rope is
+held and the other character can fall no farther than the length of
+the rope. If the check is unsuccessful, the rope runs through the
+hands of the belayer too quickly, and the fall proceeds normally.
+
+If a character successfully holds the rope during a belay, but
+that character occupies a dangerous or narrow spot, the charac-
+ter must make a second Climbing Check. If the second check is
+successful, the character maintains his hold on whatever surface
+he is clinging to. If the second check is unsuccessful, however,
+the belayer joins his companion in a fall.
+
+This second check is required of all belayers who are on a
+sheer surface of any kind, and also to characters who are on a
+level spot, but are within three feet of the edge of the sheer sur-
+face, assuming that the fall pulls them in the direction of the drop-
+off.
+
+Any number of belayers can be strung together, in case the first
+one fails to stop the fall. Each additional falling character on the
+rope subtracts 10 from the Climbing Success chance of the char-
+acter attempting to belay.
+
+A character performing a belay from a dangerous spot can use
+a spike to anchor himself. If he is thus anchored, he performs the
+belay normally. If he successfully arrests a fall with a Climbing
+Check, but then fails his second Climbing Check so that he is
+also pulled into the fall, the spike should then catch both falling
+characters. As when a spike is used to protect a climber, however,
+it has a 10% chance per character supported of pulling loose.
+
+A belay can also be used to hold one end of a rope that a char-
+acter will be using for support, as in a chasm crossing. If a grap-
+pling hook is used to fasten the far side of a rope, one character
+may establish a belay on the near side of the crossing. Charac-
+ters can then make the crossing as if the rope were attached at
+both ends. This type of belay does not require the character hold-
+ing the rope to make any checks.
+
+rolls a Climbing Check or all the characters fall.
+
+As another example, if character #4 falls, the players of charac-
+ters #3 and #5 must roll Climbing Checks. Both must succeed to
+halt the fall. If either fails, that character joins #4 in the fall and the
+character next to him must try to halt the fall. This continues until
+one character on each side of the fall holds fast, or all the charac-
+ters on one side (or both sides) fall.
+

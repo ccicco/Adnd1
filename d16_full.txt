@@ -1,0 +1,119 @@
+Types of Surfaces
+
+Very Smooth surfaces include faces of smooth, uncracked
+rock, wooden walls with no accessible cross beams or other
+handholds, and metal walls where individual plates of metal have
+been bolted together. Completely smooth walls, such as a single
+sheet of metal, cannot be climbed without tools.
+
+Smooth but Cracked surfaces include most types of masonry,
+a typical cavern or dungeon wall, or a cliff that is not subject to a
+great deal of weather erosion. Castle walls, towers, and city walls
+that receive regular maintenance fall into this category.
+
+Rough surfaces include most natural cliff faces, constructed
+walls that have not been maintained regularly, and most wooden
+walls or stockades. Any kind of masonry using natural stone
+instead of bricks or blocks will form a rough surface.
+
+Rough with Ledges surfaces include hand- and footholds of
+three-inch width or larger, or provide some other kind of usable
+route. A cliff that has been steadily eroded by frost, or a chimney
+(a crack that a climber can follow up a slope, pushing off against
+each side with his hands and feet) will provide a rough surface
+with ledges. Also, stone buildings that are approaching a state of
+ruin often create this sort of climbing surface.
+
+Ice Wall surfaces are sheer surfaces made mostly or entirely of
+ice.They are treacherous, and even thieves cannot climb ice
+without tools.
+
+Pole surfaces include poles made of any materials, tall slender
+trees with few branches, and free-hanging ropes. A pole’s diame-
+ter cannot be greater than 1/4 the height of the character attempt-
+ing to climb it, unless the character uses a rope (see Climbing
+Tools). Any pole with tree bark still attached is considered a non-
+slippery surface. A rope only falls into this category if the charac-
+ter cannot brace his feet against a wall or some other surface to
+aid the climb.
+
+Tree surfaces include any trees where branches are plentiful
+enough to provide handholds, or any constructed object of
+girders or a similar grid, such as scaffolding.
+
+Rope and Wall surfaces include any situations where a char-
+acter can climb up a rope and brace his feet against a wall or
+some other vertical surface as he climbs.
+
+Sloping Wall surfaces represent areas that do not quite qualify
+as vertical, yet are too sloped to allow normal walking. Like all
+types of climbing, a character’s chance of success assumes that
+he has both hands free. If a character falls while on a sloping wall
+surface, he can make a saving throw vs. petrification,; if the save
+is successful, he takes no damage from the fall. Even if the save
+is unsuccessful, the fall only inflicts half of the normal damage.
+
+Condition of Surface
+
+Surface wall conditions refer to the degree of slipperiness that
+the wall presents to the climber.
+
+Nonslippery surfaces are dry and solid. They do not crumble
+when touched, and a character’s chance of falling is calculated at
+the normal rate.
+
+Slightly Slippery surfaces are wet or crumbly. The chance of a
+character falling from a slippery surface is twice normal. For
+example, a 3d-level thief would make a normal climb walls roll at
+87% (a 13% chance of failure). On a slippery surface, the thief
+has a 26% chance of failure, and needs a roll of 74 or less for suc-
+cess.
+
+Slippery surfaces can be places where water runs regularly, or
+surfaces covered by slime or algae, or those coated by a thin
+layer of frost, ice, or grease. A thief character’s chance of falling
+on a slippery surface is ten times his normal chance. Thus the 3d-
+level thief above cannot even attempt the climb; and a thief of
+10th level only succeeds on a 90 or less instead of a 99.
+
+15
+
+CLIMBING
+
+Encumbrance
+
+Encumbrance also plays a major role in the success of a char-
+acter’s climb.
+
+Encumbered characters cannot climb sheer surfaces without
+the aid of tools.
+
+Characters with heavy gear or very heavy gear move at 1/2
+the movement rates listed for climbing characters. This halving is
+cumulative with all other effects.
+
+Characters with no gear or normal gear can utilize the full
+climbing movement rates.
+
+Climbing Success Rates
+for Non-Thieves
+
+As might be expected, characters who have not trained for the
+task are not nearly as effective at scaling walls as are the dexter-
+ous members of the thief class. Non-thief characters have a base
+Climbing Rating of 40% and use the same procedure as thieves,
+but they have a lesser chance of success.
+
+When a non-thief character begins a climb, he must make a
+successful Climbing Check roll on 1d100. This check is made
+against the character’s Climbing Rating (with modifiers); a result
+greater than the modified Climbing Rating indicates failure, while
+a result less than or equal to the modified rating means success.
+(Thieves roll against their climb walls percentage for Climbing
+Checks.) The modifiers that affect a climber’s chance of success
+are listed in the following section. These modifiers apply to all
+characters, including thieves.
+
+If a Climbing Check fails, the character can never climb that
+wall. Even a failed attempt requires one round of game time.
+

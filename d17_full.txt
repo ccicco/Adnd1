@@ -1,0 +1,152 @@
+CLIMBING
+
+Climbing Modifiers
+
+Naturally, certain aspects of a character and his possessions can
+affect the success of a climb. Possible modifiers are listed here:
+
+Armor: Characters cannot climb in any type of plate mail
+armor, nor can a shield be held by a climbing character. Charac-
+ters in chain, splint, scale, or banded armor can climb, but suffer
+a -15% penalty to their chance for success. Characters in stud-
+ded leather or padded armor suffer a -5% to their chances.
+Leather armor does not penalize a climber. A character can sling
+a shield over his shoulder to carry it along while climbing; he can-
+not receive any defensive benefit for a shield thus carried.
+
+Character Race: Certain character races receive modifiers to
+their climbing chances, as follows:
+
+Character Race Climbing Modifier
+Dwarf - 5%
+Gnome -10%
+Halfling - 5%
+Half-orc + 5%
+
+Climbing Surfaces: Climbing surface modifiers apply to char-
+acters of all classes, including thieves. Characters receive
+bonuses to their chance to climb the following types of surfaces:
+
+Climbing Surface Climbing Modifier
+Tree with Branches +40%
+Sloping Wall +25%
+
+Pole +20%
+
+Rope and Wall +40%
+Climbing Tools
+
+Certain tools can be used to aid characters making a climb.
+Tools serve both to increase the chance of a climb’s success and
+to decrease the chance of a character getting hurt in a fall. The
+disadvantage of tools is that they considerably lengthen the time
+needed to make a climb, and often make enough noise to attract
+unwanted attention. This noise is the main reason that tools are
+not commonly used by thieves in the pursuit of their usual mis-
+sions.
+
+Two types of tools, the grappling hook and the spike, or piton,
+can be used to aid a climb. Both must be used with a rope to have
+any effect.
+
+Spikes can be hammered into a wall surface and used to
+anchor a rope that subsequently protects a climbing character
+against falls. The character must have a hammer, and must
+spend 1d4 rounds pounding in a spike. The clanging of such
+activity can be heard up to a mile away in windless conditions.
+
+The usual function of a spike is to shorten the distance that a
+character falls, should such an accident occur. If, for example, a
+character hammers in a spike 200 feet up the face of an under-
+ground cliff, and then connects a rope between himself and the
+spike, he has protected himself somewhat. If, 50 feet farther up,
+he loses his grip, he will only fall 100 feet (50 feet down to the
+spike, and another 50 feet to use up the slack in his rope).
+
+Increasing the protection is the fact that any character whose
+fall is broken by a rope suffers only 1/2 the damage a fall of that
+distance would normally inflict.
+
+Whenever a spike is called upon to arrest a fall, as in the above
+example, there is a 10% chance per character supported that it
+will give way. For example, if two characters are roped together
+and relying upon a spike to arrest their fall, the spike has a 20%
+chance of popping free. If the spike comes free, the characters
+fall the full distance to the ground (or twice the distance to the
+next spike). Characters can help prevent such accidents by using
+more than one spike.
+
+16
+
+Climbing an ice wall is a dangerous act that absolutely requires
+the use of spikes. In fact, a spike must be driven into the ice wall
+before a character can climb. This process must be repeated
+each round, and since it takes a round to drive a spike, the pro-
+cess is doubly slow.
+
+In addition, spikes placed in ice have a 15% chance of pulling
+free per character whose weight suddenly pulls against it.
+
+Ropes are discussed as climbing tools in combination with
+spikes and grappling hooks, but there is one situation where rope
+alone can serve a character as an effective climbing tool. This
+happens when a character wishes to climb a pole that is of too
+great a diameter for him to ascend unaided. In this case, the char-
+acter can wrap the rope around the pole and pull against it as he
+climbs.
+
+This technique can be used to climb a pole whose diameter
+equals the character’s height. Any pole wider than this should be
+treated as a wall.
+
+Grappling Hooks are relatively heavy iron tools with at least
+two, and usually three or four, separate hooks branching from the
+end. The hook is designed to be thrown, and to catch on protru-
+sions and thus support a rope and climber.
+
+A character can throw a grappling hook upward a distance
+equal to 1/3 of his Strength score (rounded up) times 10. A char-
+acter with a Strength of 15, for example, could throw the hook up
+to a height of 50 feet. The horizontal distance that a grappling
+hook can be thrown equals the vertical distance, unless the char-
+acter has enough room to swing the hook in a circle several times
+before the cast. In this case, if a character has a radius of 10 feet
+from his body cleared of obstacles, he can throw the hook twice
+as far horizontally as he could otherwise.
+
+A character can throw a grappling hook once per round. If the
+cast is unsuccessful, it takes another 1d4 rounds to coil the rope
+and prepare the hook for another throw. If a character is directly
+underneath his target, and the dice roll on the throw is 01-05, the
+thrower is struck by the hook as it falls and suffers 1d6 of dam-
+age.
+
+The chance of a grappling hook catching on its intended target
+depends upon the target at which it is thrown. For each throw, the
+DM rolls d100 and consults the following table:
+
+Table 3: GRAPPLING SUCCESS
+
+Grapple Target Miss Catch and Slip Catch
+StoneWall Top 0183 8489 90-00
+Tree Branches 0166 6770 71-00
+Rocky Ledge 01-88 89-93 94-00
+Wooden Wall 01-70 71-74 75-00
+
+A catch and slip result means that the grapple seems to have
+caught solidly, as far as a character pulling on the rope can tell. In
+reality, the grapple will slip free after 1d6 rounds of supporting a
+load. Characters who pull on the rope for that many rounds are
+able to dislodge the hook, if they take the time to check.
+
+A thrown grappling hook does not make as much noise as a
+hammered spike, but is not silent. A successful throw is audible
+for 100-400 yards in ideal conditions; an unsuccessful throw will
+raise a clang audible 200-800 yards away.
+
+Rappelling
+
+Rappelling is a means of hastily descending a sheer surface by
+means of a rope attached at the top. The character lets the rope
+wind around his body and uses the friction of the rope to slow his
+descent.

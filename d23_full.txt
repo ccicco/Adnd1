@@ -1,0 +1,145 @@
+Effects of Exhaustion
+
+An exhausted character cannot perform any voluntary physical
+labor. Instead, he must rest until he has fully recovered. If forced
+to act because of a life or death situation (a monster attack, for
+example), the character functions with the following penalties.
+
+An exhausted character suffers a -4 penalty to all attribute and
+combat scores affected by fatigue. This penalty is instead of, not
+in addition to, the effects of fatigue.
+
+A character can attempt to recover from exhaustion after one
+hour of uninterrupted rest. After this rest, the player rolls a Consti-
+tution Check, using the character’s revised Constitution. If this
+check is successful, the character becomes merely fatigued. If
+the check is unsuccessful, the character must rest for a full hour
+before trying again, and so on until the character becomes
+fatigued instead of exhausted. Recovery from fatigue occurs as
+described above.
+
+MOVEMENT EFFECTS
+OF DARKNESS
+
+Although characters without the ability to see in the dark nor-
+mally make every effort to provide themselves with a source of
+light underground, sometimes unforeseen situations can plunge
+a party into total darkness. Even characters with infravision have
+difficulty seeing objects that are the same temperature as the sur-
+roundings of the underearth.
+
+This can be a very unsettling experience for a group of adven-
+turers. The following effects can help recreate this situation for
+gaming.
+
+If characters try to move at their normal movement rates in
+complete darkness, even probing the floor and walls ahead of
+them does not guarantee that the party avoids hazards. If a char-
+acter encounters an obstacle while moving in darkness, he must
+make a Dexterity Check. Failure means that the character does
+not detect the obstacle in time to react, and his momentum car-
+ries him into it.
+
+Characters in the dark can safely move at 1/3 their normal
+movement rates. This pace is slow enough to keep the lead char-
+acters from blundering into any gaping holes in the floor, or walk-
+ing off the edge of a cliff. This also assumes that the characters
+are steadily probing the ground in front of them as they plod
+along.
+
+Unless a character has some means of determining direction,
+such as trailing a hand along a corridor wall, it is virtually impos-
+sible to walk in a straight line in complete darkness. This is not
+usually an issue in narrow dungeon passages. On the wide-open
+but pitch-dark plains of some realms of the underearth, however,
+it is truly a formidable task for a character to keep his bearings
+about him.
+
+The DM should make a secret roll on 1d12 to determine the
+unknown changes of course that might occur if characters walk in
+complete darkness. Consult the following table to find the resulit:
+
+Table 9: COURSE CHANGES IN DARKNESS
+
+D12 Roll Character’s Course Change
+1-3 None, continue straight ahead
+6-7 45 degrees left
+
+8 60 degrees right
+
+9 60 degrees left
+
+10 90 degrees right
+
+11 90 degrees left
+
+12 135 degrees (1-3 right, 4-6 left)
+
+22
+
+MOVEMENT EFFECTS OF DARKNESS
+
+This roll should be made after every three turns that characters
+spend walking in darkness. The roll should be made at the end of
+the character’s uncharted movement, even if such movement
+has lasted less than three turns. For each turn less than three,
+however, allow a -1 modifier to the d12 roll.
+
+If characters travel over rough or uneven floors in darkness, or
+stand a chance of tripping over small rocks or other rubble, the
+DM can require as many Dexterity Checks as he deems appropri-
+ate. Each failed Dexterity Check means that the character sus-
+tains 1 point of damage in a rough fall.
+
+Characters traveling over these surfaces can prevent any such
+accidents by slowing their movement to 1/6 their normal rate.
+
+MOVEMENT ON SLIPPERY
+HORIZONTAL SURFACES
+
+The problems inherent in moving on slippery surfaces involve
+the risk of falling and a decreased ability to suddenly change
+direction or speed of movement. Ice is probably the most com-
+mon slippery surface, but oily patches of smooth rock, or even
+the secretions of monsters such as the boggle, can create slip-
+pery conditions.
+
+Characters who cautiously tread on slippery surfaces can
+avoid the risk of falling down. Individuals moving thus can travel
+at their normal movement rate as long as they move in a straight
+line. If the character attempts to turn, stop suddenly, or break into
+a run, the player must make a Dexterity Check or the character
+will fall down. Characters who fall down do not suffer damage, but
+must spend a full round climbing to their feet.
+
+If a character wants to be exceptionally cautious, he can move
+at 1/2 of his normal movement rate. In this case, he can turn with-
+out making a Dexterity Check. Or the character can spend a
+round slowing down from normal speed to 1/2 speed, and then
+can turn without making the check.
+
+Characters engaging in melee combat on such surfaces must
+make a Dexterity Check before every attack. If the check fails, the
+character does not make the attack, falls down, and suffersa +4
+penalty to his Armor Class for the round. The character must
+spend the next round getting to his feet, during which the AC pen-
+alty remains in effect; the character cannot make an attack dur-
+ing this round.
+
+If the character elecis to fight from the ground rather than
+regain his feet, the +4 AC penalty remains in effect. In addition,
+the character incurs a -4 penalty on all of his attack rolls.
+
+Crampons are spiked plates of metal that a character can lash
+to the soles of his shoes or boots. In some cases, boots are made
+with spikes attached. Crampons greatly increase the reliability of
+acharacter's footing on ice or other slippery surfaces. Characters
+wearing crampons always retain their footing on slick surfaces—
+they need not make any Dexterity Checks while turning or fight-
+ing.
+
+A pair of crampons requires one turn to attach and half that
+long to remove. If a character attempts to walk on a nonslippery
+surface in crampons, he will make twice as much noise as he oth-
+erwise would, and will wear out the crampons in 1d6 miles of
+such abuse.

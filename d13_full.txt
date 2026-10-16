@@ -1,0 +1,128 @@
+MOVEMENT RULES
+FOR UNDERGROUND PLAY
+
+New movement rules in this section address several types of situ-
+ations common to underground adventuring. Although these sit-
+uations are not necessarily exclusive to underground
+adventures, they are all commonly encountered here, and these
+rules emphasize treating them in an underground environment.
+In the absence of other rules or exceptions, these rules can be
+applied to any similar situation encountered in an AD&D® game
+campaign at the discretion of the DM.
+
+Ability Checks
+
+On many occasions throughout these rules, characters will be
+called upon to roll Ability Checks against one or another of their
+seven attributes: Strength, Intelligence, Wisdom, Dexterity, Con-
+stitution, Charisma, and Comeliness. The check will be termed a
+Dexterity Check, Constitution Check, etc., as appropriate to the
+case at hand.
+
+An Ability Check is rolled on 1d20. The check is successful if
+the roll is equal to or less than the ability in question.
+
+For example, a character with a Strength of 12 is called upon to
+make a Strength Check. He rolls a 14 on the d20, so the check is
+unsuccessful and the attempted feat of Strength is a failure.
+
+Occasionally an Ability Check calls for a certain number or
+combination of dice, as in a 4d6 Dexterity Check. In this case,
+substitute the listed dice for the d20. The purpose is still to roll the
+attribute score or less. Modifiers to the ability score might apply in
+some instances.
+
+Proficiency Checks
+
+In the tradition of the AD&D Oriental Adventures rules, the
+Dungeoneer’s Survival Guide presents rules for nonweapon pro-
+ficiencies. These proficiencies include areas of skill such as
+weapon-making, carpentry, and mining, that can augment the
+PC's adventuring skills. Proficiencies are also presented for such
+skills as climbing, fighting in the dark, and fire building. The latter
+categories can actually help a character to survive in the midst of
+an adventure.
+
+In the cases of these adventuring proficiencies, players are
+often called upon to make Proficiency Checks. Such checks are
+made by rolling 1d20 and comparing the result to the character’s
+rating in the given proficiency (rolls less than the rating are suc-
+cessful). Although the exact nature of each proficiency is
+described later, the following rules contain references to Profi-
+ciency Checks. Consult the section on proficiencies to determine
+the exact details in each case.
+
+SWIMMING
+
+Waves, underground lakes, and flooded dungeons all present
+serious problems to air-breathing creatures. Movement through
+these areas is covered by the following swimming rules.
+
+Swimming rules cover two different skills: the length of time a
+character can hold his breath, and the character’s ability to move
+through the water.
+
+12
+
+All of these rules assume that the character is using no magical
+assistance in the form of potions of water breathing or other such
+amenities. The effects of such devices, when they are used,
+always take precedence over a character's innate swimming abil-
+ities.
+
+Holding One’s Breath
+
+If a character has a chance to take a large breath of air, and
+does not perform strenuous exercise while holding his breath, he
+can hold his breath for a number of rounds equal to 1/3 his Con-
+stitution Score, rounded up. Nonstrenuous exercise includes
+such activities as normal movement, searching for secret doors,
+trying to pick a lock, or other such activities. A character cannot
+be fully encumbered while performing any of these functions.
+
+If the character is performing strenuous exercise, the number
+of rounds he can remain underwater is cut in half (rounded up).
+Strenuous exercise includes fighting, attempting to subdue or
+move an uncooperative character or creature, trying to lift or
+move a heavy weight, or moving at high speed. Fully encum-
+bered characters underwater are always considered to be per-
+forming strenuous exercise.
+
+If a character does not have a chance to take a deep breath
+before submerging, the amount of time he can remain underwa-
+ter is halved (rounded up). This halving is cumulative with that for
+strenuous exercise. Note that a character is always able to hold
+his breath for at least one round.
+
+A character does not immediately die when his breath runs out.
+Each round after his breath runs out, the character makes a Con-
+stitution Check to stay alive. The first check has no modifiers, but
+there is a -2 cumulative modifier each round thereafter. This con-
+tinues until the character leaves the water or the player fails a
+check and the character dies.
+
+Example: A character with a 16 Constitution can hold his
+breath underwater for six rounds. On the 7th round the player
+makes an unmodified Constitution Check; the 8th-round check is
+at -2, the Sth-round check is at -4, the 10th-round check is at -6,
+etc.
+
+For players using samurai characters as defined in the Oriental
+Adventures rulebook, this system for holding breath can be used
+to augment the samurai’s ki power. A samurai can elect to hold
+his breath according to the rules explained in Oriental Adven-
+tures, or he can use this procedure and add one round to the
+duration determined.
+
+Holding Breath in Nonswimming Situations
+
+In certain situations, characters might wish to hold their breath
+to avoid breathing the surrounding air. In order to calculate the
+duration of such an attempt, use the formula explained for swim-
+ming, but add one round.
+
+Characters cannot use this ability to avoid the effects of a gas
+unless they suspect that a gas is about to be released. For exam-
+ple, if party members must make a saving throw, and some char-
+acters become paralyzed as a result, the other characters may
+decide to hold their breath to avoid breathing the threatening gas.
