@@ -1,0 +1,73 @@
+                                                                                                MOVEMENT EFFECTS OF DARKNESS
+                                                                                 This roll should be made after every three turns that characters
+Effects of Exhaustion                                                          spend walking in darkness. The roll should be made at the end of
+  An exhausted character cannot perform any voluntary physical                 the character’s uncharted movement, even if such movement
+labor. Instead, he must rest until he has fully recovered. If forced           has lasted less than three turns. For each turn less than three,
+to act because of a life or death situation (a monster attack, for             however, allow a -1 modifier to the d12 roll.
+example), the character functions with the following penalties.                   If characters travel over rough or uneven floors in darkness, or
+  An exhausted character suffers a -4 penalty to all attribute and             stand a chance of tripping over small rocks or other rubble, the
+combat scores affected by fatigue. This penalty is instead of, not             DM can require as many Dexterity Checks as he deems appropri-
+in addition to, the effects of fatigue.                                        ate. Each failed Dexterity Check means that the character sus-
+   A character can attempt to recover from exhaustion after one                tains 1 point of damage in a rough fall.
+hour of uninterrupted rest. After this rest, the player rolls a Consti-           Characters traveling over these surfaces can prevent any such
+tution Check, using the character’s revised Constitution. If this              accidents by slowing their movement to 116 their normal rate.
+check is successful, the character becomes merely fatigued. If
+the check is unsuccessful, the character must rest for a full hour
+before trying again, and so on until the character becomes                     MOVEMENT ON SLIPPERY
+fatigued instead of exhausted. Recovery from fatigue occurs as
+described above.
+                                                                               HORIZONTAL SURFACES
+                                                                                  The problems inherent in moving on slippery surfaces involve
+                                                                               the risk of falling and a decreased ability to suddenly change
+MOVEMENT EFFECTS                                                               direction or speed of movement. Ice is probably the most com-
+                                                                               mon slippery surface, but oily patches of smooth rock, or even
+OF DARKNESS                                                                    the secretions of monsters such as the boggle, can create slip-
+   Although characters without the ability to see in the dark nor-             pery conditions.
+mally make every effort to provide themselves with a source of                    Characters who cautiously tread on slippery surfaces can
+light underground, sometimes unforeseen situations can plunge                  avoid the risk of falling down. Individuals moving thus can travel
+a party into total darkness. Even characters with infravision have             at their normal movement rate as long as they move in a straight
+difficulty seeing objects that are the same temperature as the sur-            line. If the character attempts to turn, stop suddenly, or break into
+roundings of the underearth.                                                   a run, the player must make a Dexterity Check or the character
+   This can be a very unsettling experience for a group of adven-              will fall down. Characters who fall down do not suffer damage, but
+turers. The following effects can help recreate this situation for             must spend a full round climbing to their feet.
+gaming.                                                                           If a character wants to be exceptionally cautious, he can move
+   If characters try to move at their normal movement rates in                 at 1/2 of his normal movement rate. In this case, he can turn with-
+complete darkness, even probing the floor and walls ahead of                   out making a Dexterity Check. Or the character can spend a
+them does not guarantee that the party avoids hazards. If a char-              round slowing down from normal speed to 1/2 speed, and then
+acter encounters an obstacle while moving in darkness, he must                 can turn without making the check.
+make a Dexterity Check. Failure means that the character does                     Characters engaging in melee combat on such surfaces must
+not detect the obstacle in time to react, and his momentum car-                make a Dexterity Check before every attack. If the checkfails, the
+ries him into it.                                                              character does not make the attack, falls down, and suffers a + 4
+   Characters in the dark can safely move at 1/3 their normal                  penalty to his Armor Class for the round. The character must
+movement rates. This pace is slow enough to keep the lead char-                spend the next round getting to his feet, during which the AC pen-
+acters from blundering into any gaping holes in the floor, or walk-            alty remains in effect; the character cannot make an attack dur-
+ing off the edge of a cliff. This also assumes that the characters             ing this round.
+are steadily probing the ground in front of them as they plod                     If the character elects to fight from the ground rather than
+along.                                                                         regain his feet, the + 4 AC penalty remains in effect. In addition,
+    Unless a character has some means of determining direction,                the character incurs a -4 penalty on all of his attack rolls.
+such as trailing a hand along a corridor wall, it is virtually impos-             Crampons are spiked plates of metal that a character can lash
+sible to walk in a straight line in complete darkness. This is not             to the soles of his shoes or boots. In some cases, boots are made
+usually an issue in narrow dungeon passages. On the wide-open                  with spikes attached. Crampons greatly increase the reliability of
+but pitch-dark plains of some realms of the underearth, however,               a character’s footing on ice or other slippery surfaces. Characters
+it is truly a formidable task for a character to keep his bearings             wearing crampons always retain their footing on slick surfaces-
+about him.                                                                     they need not make any Dexterity Checks while turning or fight-
+   The DM should make a secret roll on ld12 to determine the                    ing.
+unknown changes of course that might occur if characters walk in                  A pair of crampons requires one turn to attach and half Mat
+complete darkness. Consult the following table to find the result:              long to remove. If a character attempts to walk on a nonslippery
+                                                                               surface in crampons, he will make twice as much noise as he oth-
+Table 9: COURSE CHANGES IN DARKNESS                                            erwise would, and will wear out the crampons in l d 6 miles of
+                                                                               such abuse.
+D12 Roll              Character’s Course Change
+
+                                                                                                                                                       \
+
+
+    8                 60 degrees right
+    9                 60 degrees left
+    10                90 degrees right
+    11                90 deg
+    12                135 de
+
+                                                                                                                                                       \
+                                                                          22
+
