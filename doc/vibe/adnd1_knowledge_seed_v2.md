@@ -5824,6 +5824,77 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   104-107), then the world-of-weather appendix (pp.
   107-119) and the compiled tables (pp. 120-126);
   extraction pass needed (4 pdf pages).
+- R492 LANDED 2026-10-16: commit e84e00a (census 417,
+  pushed 4e07d5d..e84e00a), the WSG DUNGEON MASTER
+  SECTION slice, printed pp. 103-106 - CLOSING the
+  section. Pinned as rules/wsgdm.h with the include
+  after wsgmagic.h at line 197 (prefix wmd - free on
+  the first probe; wdm is taken), 91 inlines: 27
+  consts + 64 bools in ten sections - the opener,
+  realism vs. fantasy, steps 1-2, steps 3-4, steps
+  5-8, steps 9-10, the semi-finished product, scaling
+  down, smaller scale more detail, winging it. The
+  opener: the faded-world veteran and the first-time
+  DM at the crossroads, no going back once the paper
+  looks like a map. Realism vs. fantasy: the Earthlike
+  assumption (water downhill, no swamp-to-desert
+  without a pass), the familiar-features advantage
+  (wooden mountains strain disbelief), homo sapiens
+  dominant (no methane worlds), the world as
+  inobtrusive backdrop, deviations on a small scale
+  only (the boiling river, the frost-pulling forest).
+  The ten steps: 20-40 miles per hex per the DMG p. 47,
+  the 8.5x11 hex sheet covering 1600 x 1250 miles of
+  two million square miles at 40 mph, the 50-or-60
+  larger scale, the pp. 124-126 hex sheets; the
+  coastline outline and sea level; the 10,000-foot and
+  5,000-foot elevation lines at 5,000-foot increments;
+  planet placement, five climatic regions, prevailing
+  winds; rivers high-to-sea with the Mississippi/
+  Amazon once-or-twice rarity and the subarctic
+  networks, swamps in low wet country; the subtropical
+  and downwind deserts (the global wind explanation,
+  the rain-shadow explanation); forests near water
+  below the tree line; the leftovers as hills or
+  plains. Steps 9-10: oases, passes, the river through
+  the desert with non-desert banks; the Grand Canyon/
+  Death Valley/ Yellowstone features; the fault lines
+  at abrupt elevation, seacoasts and mountain axes
+  (San Andreas), the 20-to-40-mile hot spots where
+  magma lies close, not every line quakes and not
+  every hot spot erupts. The semi-finished product:
+  the five political guidelines (cities by water with
+  sea outlets, resource cities with roads, isolation
+  independence with the Switzerland example, rivers
+  as boundaries, elven/dwarven enclaves) and the
+  Country A/B/C/D iron-ore example. Scaling down: the
+  seven-league-boot caveat, the eight-hex cluster
+  three wide at one-third (36-12-4-1-and-a-third-
+  half-mile ladder), cluster maps on demand. The
+  20-to-30-foot small cliff. Winging it: think on
+  your feet, the oak-and-clearing example, the cannot-
+  uncreate law, hex-paper sketching, between-session
+  updates, the framework closing. THE SETTLE: all
+  four pages agree two-way - tesseract 87/2 X 11 is
+  8.5 x 11, and the 1V3 miles garble is 1-and-a-third
+  in the cluster ladder. The extraction lesson:
+  pdftoppm -gray writes .pgm, and globbing .png
+  yielded four pages of empty tesseract reads that
+  the visible-error page-104 retry closed (branch
+  b4daf47, thirteen files). rverify double-run GREEN
+  at 4e07d5d, idempotent at e84e00a (applied 0,
+  already 6); preflight GREEN (census 417); 91
+  mutants, 0 missed. md5 pair: authored canvas body
+  13b58e2a714d5e969bffbeddb100f1a1, as-built
+  26c0d9cbace624d0d775cfc8e704e82c = authored + one
+  trailing editor newline (same JSON before it).
+  Gap census 141/45 -> 143/43. Next: R493 - the
+  APPENDIX: THE WORLD OF WEATHER, printed pp. 107-119
+  (pdf pages 108-120), 13 pages, table-heavy (the
+  weather generation system); then the compiled
+  tables (pp. 120-126). Extraction pass needed (13
+  pdf pages).
+
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
