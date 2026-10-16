@@ -122,12 +122,12 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Avalanches, rockfalls, and mudslides (p. 80) - R487: the avalanche burial and digging rules, the slope, cliff-face and base rockfall bands and the mudslide sinking rules pin as rules/wsghazd2.h
   - [x] Quicksand (p. 83) - R487: the no-suction rule with the treading self-rescue and the pole and swimmer rescues pin as rules/wsghazd2.h
 - [ ] **Combat rules for wilderness play** (pp. 84-87)
-  - [ ] Fighting while climbing (p. 84)
-  - [ ] Fighting while precariously balanced (p. 84)
-  - [ ] Fighting in water (p. 85)
-  - [ ] Fighting in poor visibility (p. 86)
-  - [ ] Melee combat from a mount (p. 86)
-  - [ ] Missile combat from a mount (p. 86)
+  - [x] Fighting while climbing (p. 84) - R488: the cliff-face and severe-slope penalties with the elevation adjustments and the damage-triggered Climbing Checks pin as rules/wsgfight.h
+  - [x] Fighting while precariously balanced (p. 84) - R488: the miss Dex Check with the -1 to -4 circumstance modifiers and the edge-distance and suffocation rules pin as rules/wsgfight.h
+  - [x] Fighting in water (p. 85) - R488: the -1 to -4 depth penalties with the attacker-share rule and the swimming-proficiency relief pin as rules/wsgfight.h
+  - [x] Fighting in poor visibility (p. 86) - R488: the moonlight, natural-darkness and total-darkness penalties with the wild-swing rules and the darkness climbing and precarious adjustments pin as rules/wsgfight.h
+  - [x] Melee combat from a mount (p. 86) - R488: the size bonuses and penalties with the airborne and swooping adjustments and the braced-defense rules pin as rules/wsgfight.h
+  - [x] Missile combat from a mount (p. 86) - R488: the riding-proficiency requirement with the rate-of-fire scale reduction and the mount-speed penalties pin as rules/wsgfight.h
   - [ ] Forcing opponents to dismount (p. 87)
 - [ ] **Fatigue and exhaustion** (pp. 88-89)
   - [ ] Characters (p. 88)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 41: outdoor range of normal vision** (p. 73) - R483: the six-condition light-level grid pins as rules/wsginfra.h
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R487: 122 closed, 64 open (the R487 round CLOSES the natural hazards chapter - the tidal wave death rules, floods and flash floods, avalanches, rockfalls and mudslides, and quicksand pin as rules/wsghazd2.h; the next round opens the wilderness combat chapter - fighting while climbing (p. 84)).
+Post-state at R488: 128 closed, 58 open (the R488 round OPENS the wilderness combat chapter - the fighting while climbing, precariously balanced, in water and in poor visibility rules, the inclement weather note and the melee and missile combat from a mount rules pin as rules/wsgfight.h; the forcing opponents to dismount box stays open - the section tail rides from the p. 87 cut; the next round lands the dismount tail and closes the combat chapter (p. 88)).

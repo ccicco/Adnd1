@@ -1,0 +1,1554 @@
+{
+ "round": 488,
+ "title": "the WSG wilderness combat opener slice - the combat rules for wilderness play with the fighting while climbing, precariously balanced, in water and in poor visibility rules, the inclement weather note, the melee and missile combat from a mount rules and the forcing-opponents-to-dismount rules through the p. 87 cut, printed pp. 84-87, OPENING the wilderness combat chapter",
+ "prefix": "wfc",
+ "header_file": "rules/wsgfight.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 412,
+ "inline_count": 145,
+ "audit_label": "R488 WSG wilderness combat opener pin audit",
+ "audit_comment": "The wilderness combat opener: the chapter introduction - characters fight in far-from-best positions outdoors, the DSG pp. 30-34 summarized, nonstandard outdoor situations detailed. Climbing: no dexterity armor class bonus on a severe slope or cliff face (the low-dexterity penalty stays), one hand on the surface so no two weapons or weapon-and-shield, rear attacks tell except from an adjacent climber, a strapped shield buys one step for a buckler or small shield and two for a larger; -2 on the cliff face and -1 on the severe slope for attacks and dodge saves; the half-height elevation split gives +2/-2 on the cliff and +1/-1 on the slope, cumulative; combat damage forces a Climbing Check, +10 percent on the severe slope, and a single hit of half total hit points forces one at -10 on both faces; moderate slopes usually safe with optional elevation or tumble rulings and the voluntary-tumble escape. Balanced: no hand needed and no need to face the surface - ledges, rock or tree bridges, boats and barges, knee-deep water mud or loose soil and snow, and slippery ground; a melee miss forces a Dexterity Check to stay up, -4 knee-deep in mud, -2 on a wide ledge, nothing on a slippery surface; unconsciousness or a hit of 10 percent of total hit points at height forces a Dexterity Check, -2 per foot from the edge and none needed 10 feet back, the nine-foot -18 with 19 and 20 failing anyway and the far-faller staggering first; the lowland counterpart knocks down and the sleep-spelled knee-deep victim and the face-down loose-soil victim both face Constitution Checks; the knockdown check regains feet in five segments or a full round, +4 on a slippery surface. Water: no dexterity bonus knee-deep, -1 to the waist, -2 to the chest, -4 over, damage never below 1, the attacker shares the penalty, aquatic natives exempt and the swimming-proficient halve the deep penalties. Poor visibility: -1 moonlight, -3 natural darkness, -4 total darkness on attacks and dodge saves, vision bonuses cut by a quarter and a half and negated; the total-darkness wild swing at 0 or less modified hits an unintended target within twice weapon length - 50 percent in natural darkness - objects saving versus crushing blow; the climbing cut 5 and 10 percent and the precarious modifier +1 and +2, moonlight-level light and infravision and ultravision exempt. Weather cumulative with all else. Melee from a mount: +1 same size, nothing larger, -1 smaller, the footman -1 with the exact-number hit striking the mount; the airborne +1 over ground and +2 at the swoop, both-airborne skipping elevation, the braced 3-foot weapon +4 at the cost of the dexterity bonus with the pull-up standoff, and hovering needed for multiple attacks given the poor maneuverability. Missile from a mount: riding proficiency and both hands, no longbow or heavy crossbow, one rate-of-fire step down the 6/1-to-1/1 scale never below 1/1 - the javelin 5/2 to 2/1 - with -1, -3 and -5 by mount speed, the 45-degree and complex-maneuver bars, the DMG p. 53 short-as- medium and medium-as-long unless hovering. Dismount: the land mount death drops the rider - the proficient check lands him on his feet or the 1d3 tumble and a two-round recovery; the flying mount below half hit points checked every round; the natural 20 with a 3-foot weapon unseats unless the proficiency check holds, the ground 5-to-9-foot weapon at 20 and the 10-foot at 16-20, the pull-down grapple at -4 unmounted with both falling 1d6 on the failed check, the cling needing to-hits each round and the rider attacking the grappler at -2 (the flying-mount-death tail rides to R489).",
+ "banner": {
+  "title": "R488: the WSG WILDERNESS COMBAT opener slice, printed pp. 84-87 - the round OPENING the wilderness combat chapter, the last WSG chapter: the chapter introduction with the DSG summary cross-reference, the fighting while climbing penalties and Climbing Checks, the precariously balanced rules with the edge-distance and suffocation chains, the water depth penalties, the poor visibility penalties with the wild-swing rules, the inclement weather cumulative note, the melee and missile combat from a mount rules with the rate-of-fire scale, and the forcing- opponents-to-dismount rules through the p. 87 cut - the dismount tail rides to the next round.",
+  "provenance": "THE SETTLE: two-way clean on the first pass - the tesseract full-text reads, the pdftotext layout read and the tsv coordinate reads agree on every number (the -2 cliff and -1 severe penalties, the +2/-2 and +1/-1 elevation adjustments, the +10 and -10 Climbing Rating adjustments, the -4 mud and -2 ledge balance modifiers with -2 per foot of edge distance and -18 at nine feet, the 19-20 auto-fails, the five-segment recovery, the +4 slippery check, the -1 -2 -4 water penalties, the -1 -3 -4 visibility penalties with the quarter and half bonus cuts, the 50 percent wild swing, the 5 and 10 percent climbing cuts, the +1 and +2 precarious modifiers, the +1 and +2 mount bonuses, the +4 brace with the 3-foot weapon, the 6/1-to-1/1 rate scale with the 5/2-to-2/1 javelin step, the -1 -3 -5 speed penalties, the 45-degree limit, the natural 20 and 16-20 unseating rolls with the 5-9 and 10-foot weapon ranges, and the 1d3 and 1d6 fall dice). The garbles all settled without contest: the tesseract em-dash class (a leading -2) matches the layout minus, the layout rate-of-fire scale 611 511 411 311 512 211 312 111 is 6/1 5/1 4/1 3/1 5/2 2/1 3/2 1/1 with the slash rendered as a one (tesseract confirms with 6/1), the javelin example 5 every 2 rounds reduced to 2 per round anchors the scale, + I is +1, l d 3 and l d 6 are 1d3 and 1d6, and the DMG page 53 cross-reference stands. The p. 87 cut is mid-sentence in the flying-mount-death text - the close-to-the-ground tail rides to R489 exactly as the tidal tail rode to R487.",
+  "sentinel": "Bounds held: the cliff penalty is twice the severe-slope penalty, the elevation adjustments halve from the cliff to the slope, the water penalties strictly ascend 1 2 and 4, the visibility penalties strictly ascend 1 3 and 4 with the bonus cut doubling from quarter to half, the darkness climbing and precarious adjustments double from natural to total, the mount-speed penalties strictly ascend 1 3 and 5, the rate-of-fire scale floors at 1/1 with the javelin 5/2 stepping down to 2/1, and the unseat rolls run natural 20 for the 3-foot weapon and 16-20 for the 10-foot pole-arm."
+ },
+ "consts": [
+  {
+   "name": "wfcDsgRefStartPage",
+   "value": 30,
+   "comment": "some combat rules for unusual situations are covered in the Dungeoneer's Survival Guide on pages 30-34, summarized here - the start page"
+  },
+  {
+   "name": "wfcDsgRefEndPage",
+   "value": 34,
+   "comment": "the summarized DSG reference end page"
+  },
+  {
+   "name": "wfcShieldBackSmallSteps",
+   "value": 1,
+   "comment": "a character climbing with his shield strapped to his back receives an armor class benefit of one step (from 6 to 5, for instance) for a buckler or a small shield"
+  },
+  {
+   "name": "wfcShieldBackLargeSteps",
+   "value": 2,
+   "comment": "and a benefit of two steps for any larger shield"
+  },
+  {
+   "name": "wfcCliffAtkPenalty",
+   "value": 2,
+   "comment": "a character climbing a cliff face suffers a -2 penalty to all of his attack rolls - to hit and damage - in melee or missile combat"
+  },
+  {
+   "name": "wfcCliffSavePenalty",
+   "value": 2,
+   "comment": "the cliff-face climber also suffers a -2 penalty on all saving throws related to an attempt to dodge or evade"
+  },
+  {
+   "name": "wfcSevereSlopeAtkPenalty",
+   "value": 1,
+   "comment": "if the fighting is taking place on a severe slope, these attack penalties are -1 instead of -2"
+  },
+  {
+   "name": "wfcElevHighBonusCliff",
+   "value": 2,
+   "comment": "the character in the higher position on a cliff face receives a +2 bonus to hit"
+  },
+  {
+   "name": "wfcElevLowPenaltyCliff",
+   "value": 2,
+   "comment": "and the character in the lower position suffers a -2 penalty to hit"
+  },
+  {
+   "name": "wfcElevHighBonusSevere",
+   "value": 1,
+   "comment": "on a severe slope the elevation adjustments are +1 and -1"
+  },
+  {
+   "name": "wfcElevLowPenaltySevere",
+   "value": 1,
+   "comment": "the severe-slope lower-position penalty"
+  },
+  {
+   "name": "wfcDamageCheckSevereBonus",
+   "value": 10,
+   "comment": "on a severe slope the damage-triggered Climbing Check is made with a +10 percent bonus to the character's Climbing Rating"
+  },
+  {
+   "name": "wfcBigDamageCheckPenalty",
+   "value": 10,
+   "comment": "the big-damage Climbing Check is made with a -10 percent penalty to the Climbing Rating, applying both on a cliff face and on a severe slope"
+  },
+  {
+   "name": "wfcDexModMud",
+   "value": 4,
+   "comment": "the Dungeon Master may allow a modifier of -1 to -4 on the balance Dexterity Check where overbalancing is less likely to result in a fall: -4 for a character knee-deep in mud, which helps hold him upright"
+  },
+  {
+   "name": "wfcDexModWideLedge",
+   "value": 2,
+   "comment": "-2 for a character standing on a fairly wide ledge that offers room to take a step on his follow-through and keep himself from toppling"
+  },
+  {
+   "name": "wfcBigHitHpPct",
+   "value": 10,
+   "comment": "the big-hit threshold at a high elevation: damage equal to or greater than 10 percent of the victim's total hit points"
+  },
+  {
+   "name": "wfcEdgePerFootMod",
+   "value": 2,
+   "comment": "if the victim is not standing right at the edge of a dropoff, he receives a -2 modifier to the Dexterity Check die roll for every foot of distance between him and the edge"
+  },
+  {
+   "name": "wfcNotPrecariousFt",
+   "value": 10,
+   "comment": "a character 10 feet or more from the edge of a dropoff is not considered to be in a precarious position, and does not need to make the Dexterity Check"
+  },
+  {
+   "name": "wfcNineFtEdgeMod",
+   "value": 18,
+   "comment": "someone balanced on a ledge barely wide enough for his feet receives no modifier; someone nine feet away from the edge of a dropoff receives a -18 modifier and is virtually assured of not falling"
+  },
+  {
+   "name": "wfcAutoFailRollLow",
+   "value": 19,
+   "comment": "as with any ability check, an unmodified roll of 19 or 20 indicates failure - the low auto-fail roll"
+  },
+  {
+   "name": "wfcAutoFailRollHigh",
+   "value": 20,
+   "comment": "the high auto-fail roll"
+  },
+  {
+   "name": "wfcLooseSoilDexMod",
+   "value": 2,
+   "comment": "the loose-soil face-down Dexterity Check modifier"
+  },
+  {
+   "name": "wfcRegainFeetSegments",
+   "value": 5,
+   "comment": "a successful check means he is able to regain his feet in five segments"
+  },
+  {
+   "name": "wfcSlipperyDexMod",
+   "value": 4,
+   "comment": "on a slippery surface, the knockdown Dexterity Check is made with a +4 modifier to the die roll"
+  },
+  {
+   "name": "wfcWaterKneePenalty",
+   "value": 1,
+   "comment": "the knee-to-waist water fighter takes a -1 penalty on all attack rolls - to hit and damage - in addition to any other penalties"
+  },
+  {
+   "name": "wfcWaterChestPenalty",
+   "value": 2,
+   "comment": "if the water is more than waist-high but not higher than the chest, the penalty is -2"
+  },
+  {
+   "name": "wfcWaterOverChestPenalty",
+   "value": 4,
+   "comment": "if the water is even higher than the chest, the penalty is -4"
+  },
+  {
+   "name": "wfcWaterDmgMin",
+   "value": 1,
+   "comment": "in no case can the damage from a successful hit be reduced to less than 1 point"
+  },
+  {
+   "name": "wfcMoonlightPenalty",
+   "value": 1,
+   "comment": "in moonlight, a character suffers a -1 penalty on all attack rolls and all saving throws related to dodging or evasion"
+  },
+  {
+   "name": "wfcNaturalDarkPenalty",
+   "value": 3,
+   "comment": "in natural darkness with no moonlight the penalty is -3"
+  },
+  {
+   "name": "wfcTotalDarkPenalty",
+   "value": 4,
+   "comment": "in total darkness - such as that caused by magical means, or the darkness deep inside a cave - the penalty is -4"
+  },
+  {
+   "name": "wfcMoonlightBonusCutNum",
+   "value": 4,
+   "comment": "any attack bonus related to the ability to see the target is reduced by one-quarter in moonlight (pinned as 1 out of 4)"
+  },
+  {
+   "name": "wfcNaturalDarkBonusCutNum",
+   "value": 2,
+   "comment": "the vision-based attack bonus is reduced by one-half in natural darkness (pinned as 1 out of 2)"
+  },
+  {
+   "name": "wfcWildSwingRadiusMult",
+   "value": 2,
+   "comment": "the wild-swing radius is twice the attacker's weapon length"
+  },
+  {
+   "name": "wfcNaturalDarkWildPct",
+   "value": 50,
+   "comment": "in natural darkness there is a 50 percent chance that a wild swing results in damage to an unintended target"
+  },
+  {
+   "name": "wfcDarkClimbCut",
+   "value": 5,
+   "comment": "a character fighting in natural darkness while climbing has his Climbing Rating reduced by 5 percent for any combat-triggered Climbing Check"
+  },
+  {
+   "name": "wfcDarkPrecariousDexMod",
+   "value": 1,
+   "comment": "a character fighting in natural darkness while in a precarious position makes any required Dexterity Check with a +1 modifier to the die roll"
+  },
+  {
+   "name": "wfcTotalDarkClimbCut",
+   "value": 10,
+   "comment": "in total darkness the Climbing Rating reduction is 10 percent"
+  },
+  {
+   "name": "wfcTotalDarkPrecariousDexMod",
+   "value": 2,
+   "comment": "in total darkness the precarious-position Dexterity Check modifier is +2"
+  },
+  {
+   "name": "wfcMountSameSizeBonus",
+   "value": 1,
+   "comment": "a character on a land-based mount in melee with an opponent standing on the ground has an advantage of +1 to hit if the foe is the same size as the attacker"
+  },
+  {
+   "name": "wfcMountSmallerPenalty",
+   "value": 1,
+   "comment": "a mounted attacker must take a -1 penalty to hit against an unmounted opponent of smaller size - it is tougher for a man on horseback to hit a goblin assaulting him from below"
+  },
+  {
+   "name": "wfcFootVsMountedPenalty",
+   "value": 1,
+   "comment": "a character on foot and fighting a mounted opponent has a -1 penalty to hit regardless of the opponent's size"
+  },
+  {
+   "name": "wfcAirborneVsGroundBonus",
+   "value": 1,
+   "comment": "a character who is airborne is +1 to hit against an opponent on the ground"
+  },
+  {
+   "name": "wfcSwoopChargeBonus",
+   "value": 2,
+   "comment": "the airborne character is +2 to hit if the attack is made at the end of a swooping charge"
+  },
+  {
+   "name": "wfcBraceWeaponMinFt",
+   "value": 3,
+   "comment": "the braced defense requires wielding a weapon of at least 3 feet in length"
+  },
+  {
+   "name": "wfcBraceBonus",
+   "value": 4,
+   "comment": "the braced defender receives a +4 bonus on his to-hit roll"
+  },
+  {
+   "name": "wfcRofBestPerRound",
+   "value": 6,
+   "comment": "the head of the rate-of-fire scale: 6 attacks per round, descending through 5/1, 4/1, 3/1, 5/2, 2/1 and 3/2"
+  },
+  {
+   "name": "wfcRofFloorNum",
+   "value": 1,
+   "comment": "in no case can a character's rate of fire be reduced below 1 attack per round because of the mounted penalty - the numerator floor"
+  },
+  {
+   "name": "wfcRofFloorDen",
+   "value": 1,
+   "comment": "the rate-of-fire floor denominator: 1/1"
+  },
+  {
+   "name": "wfcJavelinNormalNum",
+   "value": 5,
+   "comment": "a 13th-level fighter specialized in hurling the javelin can ordinarily make 5 attacks every 2 rounds - the numerator"
+  },
+  {
+   "name": "wfcJavelinNormalDen",
+   "value": 2,
+   "comment": "the ordinary javelin rate denominator"
+  },
+  {
+   "name": "wfcJavelinMountedNum",
+   "value": 2,
+   "comment": "fighting from the back of a moving mount, his rate of fire is reduced to 2 attacks per round - the numerator"
+  },
+  {
+   "name": "wfcJavelinMountedDen",
+   "value": 1,
+   "comment": "the mounted javelin rate denominator: 2/1, one step down the scale"
+  },
+  {
+   "name": "wfcMountSlowPenalty",
+   "value": 1,
+   "comment": "the mounted missile attacker suffers a -1 penalty to hit if the mount is moving at less than half of its full normal rate"
+  },
+  {
+   "name": "wfcMountMidPenalty",
+   "value": 3,
+   "comment": "the penalty is -3 for a speed of one-half or more but less than three-quarters of normal"
+  },
+  {
+   "name": "wfcMountFastPenalty",
+   "value": 5,
+   "comment": "the penalty is -5 for a speed of three-quarters normal or greater"
+  },
+  {
+   "name": "wfcTurnLimitDeg",
+   "value": 45,
+   "comment": "it is not possible to use a missile weapon with success if the mount is turned at an angle of more than 45 degrees during the round in which firing is attempted"
+  },
+  {
+   "name": "wfcDmgMountRefPage",
+   "value": 53,
+   "comment": "the Dungeon Master's Guide page carrying the flying-mount missile range penalties"
+  },
+  {
+   "name": "wfcTumbleDmgDie",
+   "value": 3,
+   "comment": "a rider without proficiency, or whose check fails, takes a tumble suffering 1d3 points of damage"
+  },
+  {
+   "name": "wfcUnseatNaturalDie",
+   "value": 20,
+   "comment": "a mounted character using a melee weapon of at least 3 feet in length may be able to unseat a mounted opponent by getting a natural 20 on his to-hit roll"
+  },
+  {
+   "name": "wfcUnseatWeaponMinFt",
+   "value": 3,
+   "comment": "the minimum weapon length for the natural-20 unseat attempt from the saddle"
+  },
+  {
+   "name": "wfcGroundUnseatShortMinFt",
+   "value": 5,
+   "comment": "a character standing on the ground can unseat a mounted opponent with a natural 20 on the die roll if using a weapon with a length of 5 to 9 feet - the short-range minimum"
+  },
+  {
+   "name": "wfcGroundUnseatShortMaxFt",
+   "value": 9,
+   "comment": "the short-range unseating weapon length maximum"
+  },
+  {
+   "name": "wfcGroundUnseatLongMinFt",
+   "value": 10,
+   "comment": "an attacker on the ground armed with a weapon of at least 10 feet in length can unseat a mounted opponent with a natural roll of 16-20 on the to-hit die"
+  },
+  {
+   "name": "wfcGroundUnseatLongMinDie",
+   "value": 16,
+   "comment": "the long-weapon unseat roll minimum"
+  },
+  {
+   "name": "wfcGroundUnseatLongMaxDie",
+   "value": 20,
+   "comment": "the long-weapon unseat roll maximum"
+  },
+  {
+   "name": "wfcGrappleUnmountedPenalty",
+   "value": 4,
+   "comment": "if the pull-down attacker is not mounted, the to-hit roll is made at a -4 penalty"
+  },
+  {
+   "name": "wfcGrappleFallDmgDie",
+   "value": 6,
+   "comment": "if the victim's check fails, both combatants fall to the ground and each suffers 1d6 points of damage"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wfcWildernessPositions",
+   "value": true,
+   "comment": "characters prefer to engage in the best position for attack and defense, but the wilderness and its creatures are not usually accommodating - characters will often have to attack or defend in far-from-best positions, sometimes enjoying the advantage when the tables are turned"
+  },
+  {
+   "name": "wfcOutdoorNonstandardDetail",
+   "value": true,
+   "comment": "some of the DSG rules are summarized here for those without the volume, and the section goes into detail about other nonstandard combat situations peculiar to the outdoors"
+  },
+  {
+   "name": "wfcClimberNoDexBonus",
+   "value": true,
+   "comment": "a character negotiating a severe slope or a cliff face who must attack or defend does not benefit from any armor class bonus due to dexterity, because his attention and effort are at least partially focused on climbing"
+  },
+  {
+   "name": "wfcClimberLowDexPenaltyStays",
+   "value": true,
+   "comment": "an armor class penalty for low dexterity is not negated while climbing"
+  },
+  {
+   "name": "wfcOneHandToClimb",
+   "value": true,
+   "comment": "assuming the climber needs one hand to hold onto a rope or the surface, he cannot use two weapons, or a weapon and a shield, at the same time"
+  },
+  {
+   "name": "wfcRearAttackVulnerable",
+   "value": true,
+   "comment": "since he is facing the surface he is climbing, the climber is vulnerable to attacks from behind - with all appropriate penalties - from any opponent except one that is adjacent to him on the surface"
+  },
+  {
+   "name": "wfcElevNeedsHalfHeight",
+   "value": true,
+   "comment": "if opponents engage from different elevations on a cliff face - one combatant above the other by at least half of the higher combatant's height - the elevation adjustments apply"
+  },
+  {
+   "name": "wfcElevAdjustmentsCumulative",
+   "value": true,
+   "comment": "the elevation adjustments are cumulative with any other modifiers that may apply"
+  },
+  {
+   "name": "wfcDamageClimbingCheck",
+   "value": true,
+   "comment": "if a character climbing a cliff face suffers damage from an attack in missile or melee combat - including damage from a spell effect - he must make a Climbing Check immediately: success and he remains in place, failure and he falls"
+  },
+  {
+   "name": "wfcBigDamageHalfHpCheck",
+   "value": true,
+   "comment": "if a character takes damage from a single attack equal to or greater than one-half of his total hit points, rounded up, a Climbing Check to avoid falling must be made"
+  },
+  {
+   "name": "wfcModerateSlopeNoDisadvantage",
+   "value": true,
+   "comment": "climbing a gentle or even a moderate slope does not usually put a character at a disadvantage in combat - such terrain is usually not so steep that the climber cannot stand up with the full use of both hands and reasonable mobility"
+  },
+  {
+   "name": "wfcModerateElevOption",
+   "value": true,
+   "comment": "at the Dungeon Master's discretion, the to-hit adjustments for relative elevation (+1 and -1) may apply on a moderate slope, especially one just short of qualifying for the severe category"
+  },
+  {
+   "name": "wfcModerateDamageTumbleOption",
+   "value": true,
+   "comment": "the Dungeon Master may rule that a character on a moderate or gentle slope who takes a significant amount of damage in a single attack will be knocked off his feet and tumble down the slope"
+  },
+  {
+   "name": "wfcVoluntaryTumbleEscape",
+   "value": true,
+   "comment": "if a character is extremely outmanned and prefers not to stand and fight, voluntarily tumbling down a slope to get away from his enemies might be a viable strategy"
+  },
+  {
+   "name": "wfcBalancedDefinition",
+   "value": true,
+   "comment": "a precariously balanced character is perched on a surface where he does not need to use at least one hand to hold on, and does not necessarily have to face the surface his body is next to"
+  },
+  {
+   "name": "wfcBalancedExamples",
+   "value": true,
+   "comment": "a character is precariously balanced when standing on a ledge jutting from a cliff face or severe slope; on a narrow bridge of rock or a fallen tree spanning a canyon; standing up in a boat or on the edge of a barge; standing in knee-deep water or mud, or upon loose soil or snow in which the feet sink beneath the surface; and standing upon a level but slippery surface"
+  },
+  {
+   "name": "wfcMissDexCheck",
+   "value": true,
+   "comment": "whenever a character engaged in melee combat misses an attack, he must make a successful Dexterity Check to avoid losing his balance and falling down - perhaps falling a long distance"
+  },
+  {
+   "name": "wfcSlipperyNoDexMod",
+   "value": true,
+   "comment": "no modifier for a character standing on a slippery surface, where his ability to keep his balance depends entirely on how dextrous he is and not on some advantage of his location"
+  },
+  {
+   "name": "wfcBigHitDexCheck",
+   "value": true,
+   "comment": "if a character in a precarious position at a high elevation is hit by an attack that causes loss of consciousness or inflicts damage equal to or greater than a threshold fraction of his total hit points, he must make a successful Dexterity Check to avoid falling from his position"
+  },
+  {
+   "name": "wfcStaggerBeforeFall",
+   "value": true,
+   "comment": "a character who falls despite being a fair distance from the edge of his perch is assumed to have staggered a short distance toward the edge before dropping over"
+  },
+  {
+   "name": "wfcLowPrecariousKnockdown",
+   "value": true,
+   "comment": "the rule also applies to a precariously balanced character not at a high elevation: he is in danger of being knocked off his feet by a large amount of damage, and will certainly fall down - as would anyone in a more stable position - if rendered unconscious"
+  },
+  {
+   "name": "wfcWaterSleepSuffocation",
+   "value": true,
+   "comment": "a character who is knee-deep in water and gets hit by a sleep spell will keel over; beginning the following round he must make Constitution Checks as though holding his breath underwater and out of air, and dies if he does not regain consciousness or is not rescued before failing one"
+  },
+  {
+   "name": "wfcLooseSoilFaceDownCheck",
+   "value": true,
+   "comment": "a character who falls unconscious in loose soil - including sand - or snow must make a Dexterity Check with a -2 modifier to the die roll; failure indicates he has landed face down and must then begin Constitution Checks, dying of suffocation if not revived or at least rolled over before failing one"
+  },
+  {
+   "name": "wfcKnockdownDexCheck",
+   "value": true,
+   "comment": "whenever a character is knocked off his feet and does not lose consciousness, he must make a Dexterity Check"
+  },
+  {
+   "name": "wfcKnockdownFullRoundFail",
+   "value": true,
+   "comment": "a failed check means he must take a full round to stand and resume a fighting posture"
+  },
+  {
+   "name": "wfcRegainHalfRoundAction",
+   "value": true,
+   "comment": "a character who gets to his feet quickly may be able to make an attack or cast a spell during the last half of the round, if other conditions permit"
+  },
+  {
+   "name": "wfcWaterKneeNoDexBonus",
+   "value": true,
+   "comment": "a character in combat while standing in water at least up to his knees but not higher than his waist does not enjoy any armor class benefit due to dexterity"
+  },
+  {
+   "name": "wfcAttackerSamePenalty",
+   "value": true,
+   "comment": "any opponent attempting to hit a character who is immersed or partially immersed in water does so at the same penalty to its attack rolls - even if the opponent is not immersed - reflecting that a smaller portion of the character's body is vulnerable to a weapon blow"
+  },
+  {
+   "name": "wfcAquaticNativeExempt",
+   "value": true,
+   "comment": "these penalties do not apply to a creature native to an aquatic environment, assuming it can strike freely above the water or below the surface"
+  },
+  {
+   "name": "wfcSwimProficiencyRelief",
+   "value": true,
+   "comment": "for a character with proficiency in swimming, the chest and over-chest penalties are reduced by one-half - to -1 and -2 respectively - and the waist-deep penalty does not apply"
+  },
+  {
+   "name": "wfcTotalDarkBonusNegated",
+   "value": true,
+   "comment": "the vision-based attack bonus is fully negated in total darkness"
+  },
+  {
+   "name": "wfcBonusCutExamples",
+   "value": true,
+   "comment": "the vision-based bonus category includes a thief's backstabbing skill, a ranger's special prowess against giant-class creatures, or the special severing property of a sword of sharpness commanded not to shed any light"
+  },
+  {
+   "name": "wfcTotalDarkWildSwing",
+   "value": true,
+   "comment": "when meleeing in total darkness, if the attacker's modified to-hit roll is 0 or less he has accidentally struck another object or creature, if some other target exists within the wild-swing radius"
+  },
+  {
+   "name": "wfcWildSwingRandomTarget",
+   "value": true,
+   "comment": "if more than one unintended target is in range, the Dungeon Master randomly determines which object, creature or character has been hit - including other members of the attacker's party"
+  },
+  {
+   "name": "wfcWildSwingObjectSave",
+   "value": true,
+   "comment": "an object hit by a wild swing must save versus crushing blow to avoid being broken or destroyed; a creature or character takes the appropriate damage after the poor-visibility damage penalty is taken into account"
+  },
+  {
+   "name": "wfcNaturalDarkWildElseMiss",
+   "value": true,
+   "comment": "if the natural-darkness wild-swing roll fails, the attack hits nothing within range"
+  },
+  {
+   "name": "wfcMoonlightIlluminationExempt",
+   "value": true,
+   "comment": "if the illumination is at least equivalent to moonlight, neither the climbing nor the precarious-position darkness penalty applies"
+  },
+  {
+   "name": "wfcSpecialVisionExempt",
+   "value": true,
+   "comment": "a character using infravision or ultravision, and able to benefit from the ability, is not subject to any of the poor-visibility penalties"
+  },
+  {
+   "name": "wfcIlluminationRangeExempt",
+   "value": true,
+   "comment": "any character within the range of natural or magical illumination is not penalized"
+  },
+  {
+   "name": "wfcWeatherCumulative",
+   "value": true,
+   "comment": "all adjustments for inclement weather - high wind and precipitation - are cumulative with any other modifiers that apply; even the most accomplished fighter will have a tough time hitting anything in the dark of night during a howling rainstorm"
+  },
+  {
+   "name": "wfcMountLargerNoBonus",
+   "value": true,
+   "comment": "the mounted character receives no bonus if the opponent is larger"
+  },
+  {
+   "name": "wfcExactHitStrikesMount",
+   "value": true,
+   "comment": "if the foot character's to-hit roll - including all other modifiers - is exactly the number he would have needed to hit his foe, the attack hits the mount instead of the rider"
+  },
+  {
+   "name": "wfcChooseStrikeMount",
+   "value": true,
+   "comment": "a character on foot can choose to strike against the mount instead of the rider, which can often be a good tactic"
+  },
+  {
+   "name": "wfcFlyingMountLowEngagement",
+   "value": true,
+   "comment": "a character on a flying mount can engage in melee with a nearby airborne opponent, or with a foe on the ground if the mount is flying low enough to make it possible"
+  },
+  {
+   "name": "wfcAirborneNoElevationAdjustment",
+   "value": true,
+   "comment": "if two antagonists are both airborne, the combat adjustments for relative elevation usually do not apply - the combatants are assumed to be constantly jockeying for position, neither voluntarily remaining in a vulnerable position"
+  },
+  {
+   "name": "wfcBracedDefense",
+   "value": true,
+   "comment": "a character on the ground may defend against an attack from above by remaining in one spot and bracing himself for the onslaught"
+  },
+  {
+   "name": "wfcBraceForfeitsDexBonus",
+   "value": true,
+   "comment": "the braced defender forfeits any armor class bonus due to dexterity"
+  },
+  {
+   "name": "wfcPullUpBreaksOff",
+   "value": true,
+   "comment": "an airborne opponent, noticing the braced tactic, can choose to pull up and break off the attack, in which case neither combatant will score a hit"
+  },
+  {
+   "name": "wfcHoverNeededForMulti",
+   "value": true,
+   "comment": "a character on a flying mount must be able to hover in close proximity to a land-based opponent to benefit from multiple attacks per round"
+  },
+  {
+   "name": "wfcVeerPreventsFollowups",
+   "value": true,
+   "comment": "an attacker who closes to take one swing and then veers away to avoid being hit in return will not be able to change course in time to get a second or third attack"
+  },
+  {
+   "name": "wfcFlyingMountPoorManeuver",
+   "value": true,
+   "comment": "most flying creatures have very poor maneuverability when used as mounts, and are not capable of repeated abrupt changes of direction or other precise maneuvers"
+  },
+  {
+   "name": "wfcMissileNeedsRidingProf",
+   "value": true,
+   "comment": "only a character with proficiency in riding his mount can successfully use a missile weapon from the back of a moving mount, whether airborne or land-based"
+  },
+  {
+   "name": "wfcMissileNeedsBothHands",
+   "value": true,
+   "comment": "even if the weapon does not actually require two hands, the character must be able to ride with both hands free - one of the abilities included in the land-based and airborne riding proficiencies"
+  },
+  {
+   "name": "wfcMissileLongbowExcluded",
+   "value": true,
+   "comment": "any missile weapon except a longbow can be used from the back of a moving mount"
+  },
+  {
+   "name": "wfcMissileHeavyCrossbowExcluded",
+   "value": true,
+   "comment": "a heavy crossbow also cannot be used from the back of a moving mount"
+  },
+  {
+   "name": "wfcRofOneStepReduction",
+   "value": true,
+   "comment": "the mounted missile attacker must take a one-step reduction in his normal rate of fire on the standard scale"
+  },
+  {
+   "name": "wfcSpeedPenaltiesCumulative",
+   "value": true,
+   "comment": "the mount-speed penalties are in addition to all others - range, visibility, etc. - that may apply"
+  },
+  {
+   "name": "wfcComplexManeuversBlock",
+   "value": true,
+   "comment": "missile fire is impossible while the mount is performing complex maneuvers"
+  },
+  {
+   "name": "wfcTerrainMayBlock",
+   "value": true,
+   "comment": "at the Dungeon Master's discretion, missile combat from the back of a moving land-based mount may be impossible in terrain conditions where the rider is forced to use at least one hand to hold onto his mount"
+  },
+  {
+   "name": "wfcFlyingShortAsMedium",
+   "value": true,
+   "comment": "as noted in the Dungeon Master's Guide on page 53, on a flying mount short range is treated as medium range for to-hit modifiers unless the mount is hovering"
+  },
+  {
+   "name": "wfcFlyingMediumAsLong",
+   "value": true,
+   "comment": "medium range from a flying mount is considered long range for to-hit modifiers unless hovering"
+  },
+  {
+   "name": "wfcHoverNoExtraToHit",
+   "value": true,
+   "comment": "a hovering rider suffers no additional to-hit penalties but still must abide by the reduction in rate of fire"
+  },
+  {
+   "name": "wfcDismountBothDirections",
+   "value": true,
+   "comment": "a mounted character should always anticipate the possibility that his opponent may attack his mount or otherwise cause him to fall, and should be alert for the opportunity to separate a mounted opponent from its steed; an unseated opponent is at worst on equal terms with a character on the ground, at best disadvantaged if the character is still in the saddle"
+  },
+  {
+   "name": "wfcLandMountDeathFall",
+   "value": true,
+   "comment": "if a land-based mount is killed while a character is riding it, the character instantly falls to the ground"
+  },
+  {
+   "name": "wfcRidingCheckLandsOnFeet",
+   "value": true,
+   "comment": "a character with proficiency in riding the mount will land on his feet if he makes a successful Proficiency Check, and will be able to perform normally during the remainder of the round in which he falls"
+  },
+  {
+   "name": "wfcTumbleRecoveryTwoRounds",
+   "value": true,
+   "comment": "the tumbling rider must spend the remainder of the current round and all of the following round getting back to his feet and regaining his bearings"
+  },
+  {
+   "name": "wfcFlyingMountHalfHpChecks",
+   "value": true,
+   "comment": "if a flying mount takes damage that brings it to less than half of its total hit points, the rider must immediately make a check to see if he falls, with further checks required in every round until the mount is brought to a landing or regains enough hit points to put it out of danger"
+  },
+  {
+   "name": "wfcClericCanKeepMountFlying",
+   "value": true,
+   "comment": "a cleric equipped with several cure wounds spells could keep his mount flying for quite a while, as long as the creature is among those that can be affected by such magic"
+  },
+  {
+   "name": "wfcFlyingMountDeathPlummet",
+   "value": true,
+   "comment": "if a flying mount is killed while a character is aboard, the creature will plummet to the ground and most likely also carry the rider to his death, especially if the rider is securely strapped onto the mount (the close-to-the-ground tail rides to the next round)"
+  },
+  {
+   "name": "wfcLeapFromMount",
+   "value": true,
+   "comment": "the Dungeon Master may allow a character with proficiency in riding the mount to leap from its back and land safely on the ground - usually only when the mount is hovering, though the DM could grant the chance under other conditions with a die-roll modifier on the Proficiency Check"
+  },
+  {
+   "name": "wfcUnseatProfCheckRetains",
+   "value": true,
+   "comment": "if the unseat victim has riding proficiency and makes a successful Proficiency Check, he retains his seat; otherwise - if the check fails or the rider is not proficient - he falls to the ground and takes 1d3 points of damage"
+  },
+  {
+   "name": "wfcPullDownGrapple",
+   "value": true,
+   "comment": "a character - mounted or on foot - can attempt to unseat a mounted opponent by pulling him down: moving adjacent, diving toward his foe, and making a successful to-hit roll as if attacking with his bare hands to grapple"
+  },
+  {
+   "name": "wfcGrappleVictimProfCheck",
+   "value": true,
+   "comment": "the grappled mounted opponent is allowed a Proficiency Check, if applicable, to see if he remains on the mount; success means he has not been unseated and the attacker is clinging to him or the mount"
+  },
+  {
+   "name": "wfcGrappleFailAttackerFalls",
+   "value": true,
+   "comment": "if the original grapple attempt fails, the attacker falls to the ground and suffers 1d6 points of damage"
+  },
+  {
+   "name": "wfcClingToHitEachRound",
+   "value": true,
+   "comment": "an attacker remaining clinging to a mounted opponent must make successful to-hit rolls in each subsequent round to remain in that position; failure on any roll means he has fallen with the usual effects"
+  },
+  {
+   "name": "wfcRiderCheckOrBothFall",
+   "value": true,
+   "comment": "if the clinging attacker's to-hit roll in any round succeeds, the rider must make a Proficiency Check to prevent falling - and taking the attacker along with him"
+  },
+  {
+   "name": "wfcRiderMayAttackGrappler",
+   "value": true,
+   "comment": "at the Dungeon Master's discretion a rider may be able to use his weapon to attack a grappling opponent, but if such an attack is possible it is made with a -2 penalty to hit"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the climbing penalties: the cliff face costs -2 while the severe slope costs -1, with the elevation adjustments +2/-2 on the cliff and +1/-1 on the slope",
+   "expr": "m['wfcCliffAtkPenalty']() != m['wfcCliffSavePenalty']() or m['wfcSevereSlopeAtkPenalty']() >= m['wfcCliffAtkPenalty']() or m['wfcElevHighBonusCliff']() != m['wfcElevLowPenaltyCliff']() or m['wfcElevHighBonusSevere']() != m['wfcElevLowPenaltySevere']() or m['wfcElevHighBonusSevere']() >= m['wfcElevHighBonusCliff']()"
+  },
+  {
+   "note": "the shield strapped to the back gives one step for a buckler or small shield and two for a larger shield, and the moderate-slope elevation option uses the severe +1/-1 pair",
+   "expr": "m['wfcShieldBackSmallSteps']() + 1 != m['wfcShieldBackLargeSteps']() or m['wfcElevHighBonusSevere']() != 1"
+  },
+  {
+   "note": "the damage checks: the severe-slope damage check gains +10 percent while the big-damage check loses 10 percent, both from the Climbing Rating",
+   "expr": "m['wfcDamageCheckSevereBonus']() != m['wfcBigDamageCheckPenalty']() or m['wfcBigDamageCheckPenalty']() != 10"
+  },
+  {
+   "note": "the balance modifiers: mud -4, wide ledge -2, the nine-foot edge -18 built from -2 per foot, with 19 and 20 the auto-fail rolls",
+   "expr": "m['wfcDexModMud']() != 2 * m['wfcDexModWideLedge']() or m['wfcNineFtEdgeMod']() != 9 * m['wfcEdgePerFootMod']() or m['wfcAutoFailRollLow']() + 1 != m['wfcAutoFailRollHigh']() or m['wfcNotPrecariousFt']() != 10"
+  },
+  {
+   "note": "the knockdown rules: five segments to regain feet on a success, the loose-soil check at -2 and the slippery check at +4",
+   "expr": "m['wfcRegainFeetSegments']() != 5 or m['wfcSlipperyDexMod']() != 4 or m['wfcLooseSoilDexMod']() != 2"
+  },
+  {
+   "note": "the water penalties ascend 1, 2 and 4 by depth with the damage floor at 1 point",
+   "expr": "m['wfcWaterKneePenalty']() >= m['wfcWaterChestPenalty']() or m['wfcWaterChestPenalty']() >= m['wfcWaterOverChestPenalty']() or m['wfcWaterDmgMin']() != 1"
+  },
+  {
+   "note": "the visibility penalties ascend 1, 3 and 4 from moonlight to total darkness, with the bonus cut one-quarter in moonlight and one-half in natural darkness",
+   "expr": "m['wfcMoonlightPenalty']() >= m['wfcNaturalDarkPenalty']() or m['wfcNaturalDarkPenalty']() >= m['wfcTotalDarkPenalty']() or m['wfcNaturalDarkBonusCutNum']() * 2 != m['wfcMoonlightBonusCutNum']()"
+  },
+  {
+   "note": "the darkness adjustments double from natural to total: the climbing cut 5 to 10 percent and the precarious modifier +1 to +2, with the wild-swing radius at twice weapon length and the natural-dark wild swing at 50 percent",
+   "expr": "m['wfcDarkClimbCut']() * 2 != m['wfcTotalDarkClimbCut']() or m['wfcDarkPrecariousDexMod']() * 2 != m['wfcTotalDarkPrecariousDexMod']() or m['wfcWildSwingRadiusMult']() != 2 or m['wfcNaturalDarkWildPct']() != 50"
+  },
+  {
+   "note": "the mount melee numbers: +1 same size, -1 smaller, -1 on foot, airborne +1 and swooping +2, the brace +4 with a 3-foot weapon",
+   "expr": "m['wfcMountSameSizeBonus']() != m['wfcMountSmallerPenalty']() or m['wfcFootVsMountedPenalty']() != 1 or m['wfcSwoopChargeBonus']() != 2 * m['wfcAirborneVsGroundBonus']() or m['wfcBraceBonus']() != 4 or m['wfcBraceWeaponMinFt']() != 3"
+  },
+  {
+   "note": "the rate-of-fire scale runs from 6/1 down to the 1/1 floor, and the javelin specialist drops one step from 5/2 to 2/1",
+   "expr": "m['wfcRofBestPerRound']() != 6 or m['wfcRofFloorNum']() != 1 or m['wfcRofFloorDen']() != 1 or m['wfcJavelinNormalNum']() != 5 or m['wfcJavelinNormalDen']() != 2 or m['wfcJavelinMountedNum']() != 2 or m['wfcJavelinMountedDen']() != 1"
+  },
+  {
+   "note": "the mount-speed missile penalties ascend 1, 3 and 5 with the 45-degree turn limit",
+   "expr": "m['wfcMountSlowPenalty']() >= m['wfcMountMidPenalty']() or m['wfcMountMidPenalty']() >= m['wfcMountFastPenalty']() or m['wfcTurnLimitDeg']() != 45"
+  },
+  {
+   "note": "the dismount numbers: the natural 20 with a 3-foot weapon, the ground short range 5-9 feet and the long range 10 feet at 16-20, the tumble 1d3 and the grapple falls 1d6",
+   "expr": "m['wfcUnseatNaturalDie']() != 20 or m['wfcGroundUnseatShortMinFt']() != 5 or m['wfcGroundUnseatShortMaxFt']() != 9 or m['wfcGroundUnseatLongMinFt']() != 10 or m['wfcGroundUnseatLongMinDie']() != 16 or m['wfcGroundUnseatLongMaxDie']() != 20 or m['wfcTumbleDmgDie']() != 3 or m['wfcGrappleFallDmgDie']() != 6"
+  },
+  {
+   "note": "the grapple penalties: the unmounted attacker at -4 with the rider attacking the grappler at -2, and the big-hit threshold at 10 percent of total hit points",
+   "expr": "m['wfcGrappleUnmountedPenalty']() != 4 or m['wfcBigHitHpPct']() != 10"
+  },
+  {
+   "note": "the cross-references: the DSG summary pages 30-34 and the DMG flying-mount page 53",
+   "expr": "m['wfcDsgRefStartPage']() != 30 or m['wfcDsgRefEndPage']() != 34 or m['wfcDmgMountRefPage']() != 53"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "The chapter opener": [
+   {
+    "kind": "bool",
+    "name": "wfcWildernessPositions"
+   },
+   {
+    "kind": "const",
+    "name": "wfcDsgRefStartPage"
+   },
+   {
+    "kind": "const",
+    "name": "wfcDsgRefEndPage"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcOutdoorNonstandardDetail"
+   }
+  ],
+  "Fighting while climbing": [
+   {
+    "kind": "bool",
+    "name": "wfcClimberNoDexBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcClimberLowDexPenaltyStays"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcOneHandToClimb"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcRearAttackVulnerable"
+   },
+   {
+    "kind": "const",
+    "name": "wfcShieldBackSmallSteps"
+   },
+   {
+    "kind": "const",
+    "name": "wfcShieldBackLargeSteps"
+   },
+   {
+    "kind": "const",
+    "name": "wfcCliffAtkPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcCliffSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcSevereSlopeAtkPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcElevNeedsHalfHeight"
+   },
+   {
+    "kind": "const",
+    "name": "wfcElevHighBonusCliff"
+   },
+   {
+    "kind": "const",
+    "name": "wfcElevLowPenaltyCliff"
+   },
+   {
+    "kind": "const",
+    "name": "wfcElevHighBonusSevere"
+   },
+   {
+    "kind": "const",
+    "name": "wfcElevLowPenaltySevere"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcElevAdjustmentsCumulative"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcDamageClimbingCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wfcDamageCheckSevereBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcBigDamageHalfHpCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wfcBigDamageCheckPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcModerateSlopeNoDisadvantage"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcModerateElevOption"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcModerateDamageTumbleOption"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcVoluntaryTumbleEscape"
+   }
+  ],
+  "Fighting precariously balanced": [
+   {
+    "kind": "bool",
+    "name": "wfcBalancedDefinition"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcBalancedExamples"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcMissDexCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wfcDexModMud"
+   },
+   {
+    "kind": "const",
+    "name": "wfcDexModWideLedge"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcSlipperyNoDexMod"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcBigHitDexCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wfcBigHitHpPct"
+   },
+   {
+    "kind": "const",
+    "name": "wfcEdgePerFootMod"
+   },
+   {
+    "kind": "const",
+    "name": "wfcNotPrecariousFt"
+   },
+   {
+    "kind": "const",
+    "name": "wfcNineFtEdgeMod"
+   },
+   {
+    "kind": "const",
+    "name": "wfcAutoFailRollLow"
+   },
+   {
+    "kind": "const",
+    "name": "wfcAutoFailRollHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcStaggerBeforeFall"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcLowPrecariousKnockdown"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcWaterSleepSuffocation"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcLooseSoilFaceDownCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wfcLooseSoilDexMod"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcKnockdownDexCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wfcRegainFeetSegments"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcKnockdownFullRoundFail"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcRegainHalfRoundAction"
+   },
+   {
+    "kind": "const",
+    "name": "wfcSlipperyDexMod"
+   }
+  ],
+  "Fighting in water": [
+   {
+    "kind": "bool",
+    "name": "wfcWaterKneeNoDexBonus"
+   },
+   {
+    "kind": "const",
+    "name": "wfcWaterKneePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcWaterChestPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcWaterOverChestPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcWaterDmgMin"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcAttackerSamePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcAquaticNativeExempt"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcSwimProficiencyRelief"
+   }
+  ],
+  "Fighting in poor visibility": [
+   {
+    "kind": "const",
+    "name": "wfcMoonlightPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcNaturalDarkPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcTotalDarkPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcMoonlightBonusCutNum"
+   },
+   {
+    "kind": "const",
+    "name": "wfcNaturalDarkBonusCutNum"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcTotalDarkBonusNegated"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcBonusCutExamples"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcTotalDarkWildSwing"
+   },
+   {
+    "kind": "const",
+    "name": "wfcWildSwingRadiusMult"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcWildSwingRandomTarget"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcWildSwingObjectSave"
+   },
+   {
+    "kind": "const",
+    "name": "wfcNaturalDarkWildPct"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcNaturalDarkWildElseMiss"
+   },
+   {
+    "kind": "const",
+    "name": "wfcDarkClimbCut"
+   },
+   {
+    "kind": "const",
+    "name": "wfcDarkPrecariousDexMod"
+   },
+   {
+    "kind": "const",
+    "name": "wfcTotalDarkClimbCut"
+   },
+   {
+    "kind": "const",
+    "name": "wfcTotalDarkPrecariousDexMod"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcMoonlightIlluminationExempt"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcSpecialVisionExempt"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcIlluminationRangeExempt"
+   }
+  ],
+  "Fighting in inclement weather": [
+   {
+    "kind": "bool",
+    "name": "wfcWeatherCumulative"
+   }
+  ],
+  "Melee combat from a mount": [
+   {
+    "kind": "const",
+    "name": "wfcMountSameSizeBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcMountLargerNoBonus"
+   },
+   {
+    "kind": "const",
+    "name": "wfcMountSmallerPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcFootVsMountedPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcExactHitStrikesMount"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcChooseStrikeMount"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcFlyingMountLowEngagement"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcAirborneNoElevationAdjustment"
+   },
+   {
+    "kind": "const",
+    "name": "wfcAirborneVsGroundBonus"
+   },
+   {
+    "kind": "const",
+    "name": "wfcSwoopChargeBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcBracedDefense"
+   },
+   {
+    "kind": "const",
+    "name": "wfcBraceWeaponMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "wfcBraceBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcBraceForfeitsDexBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcPullUpBreaksOff"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcHoverNeededForMulti"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcVeerPreventsFollowups"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcFlyingMountPoorManeuver"
+   }
+  ],
+  "Missile combat from a mount": [
+   {
+    "kind": "bool",
+    "name": "wfcMissileNeedsRidingProf"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcMissileNeedsBothHands"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcMissileLongbowExcluded"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcMissileHeavyCrossbowExcluded"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcRofOneStepReduction"
+   },
+   {
+    "kind": "const",
+    "name": "wfcRofBestPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "wfcRofFloorNum"
+   },
+   {
+    "kind": "const",
+    "name": "wfcRofFloorDen"
+   },
+   {
+    "kind": "const",
+    "name": "wfcJavelinNormalNum"
+   },
+   {
+    "kind": "const",
+    "name": "wfcJavelinNormalDen"
+   },
+   {
+    "kind": "const",
+    "name": "wfcJavelinMountedNum"
+   },
+   {
+    "kind": "const",
+    "name": "wfcJavelinMountedDen"
+   },
+   {
+    "kind": "const",
+    "name": "wfcMountSlowPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcMountMidPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wfcMountFastPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcSpeedPenaltiesCumulative"
+   },
+   {
+    "kind": "const",
+    "name": "wfcTurnLimitDeg"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcComplexManeuversBlock"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcTerrainMayBlock"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcFlyingShortAsMedium"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcFlyingMediumAsLong"
+   },
+   {
+    "kind": "const",
+    "name": "wfcDmgMountRefPage"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcHoverNoExtraToHit"
+   }
+  ],
+  "Forcing opponents to dismount": [
+   {
+    "kind": "bool",
+    "name": "wfcDismountBothDirections"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcLandMountDeathFall"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcRidingCheckLandsOnFeet"
+   },
+   {
+    "kind": "const",
+    "name": "wfcTumbleDmgDie"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcTumbleRecoveryTwoRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcFlyingMountHalfHpChecks"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcClericCanKeepMountFlying"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcFlyingMountDeathPlummet"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcLeapFromMount"
+   },
+   {
+    "kind": "const",
+    "name": "wfcUnseatNaturalDie"
+   },
+   {
+    "kind": "const",
+    "name": "wfcUnseatWeaponMinFt"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcUnseatProfCheckRetains"
+   },
+   {
+    "kind": "const",
+    "name": "wfcGroundUnseatShortMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "wfcGroundUnseatShortMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "wfcGroundUnseatLongMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "wfcGroundUnseatLongMinDie"
+   },
+   {
+    "kind": "const",
+    "name": "wfcGroundUnseatLongMaxDie"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcPullDownGrapple"
+   },
+   {
+    "kind": "const",
+    "name": "wfcGrappleUnmountedPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcGrappleVictimProfCheck"
+   },
+   {
+    "kind": "const",
+    "name": "wfcGrappleFallDmgDie"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcGrappleFailAttackerFalls"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcClingToHitEachRound"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcRiderCheckOrBothFall"
+   },
+   {
+    "kind": "bool",
+    "name": "wfcRiderMayAttackGrappler"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the fighting while climbing box",
+   "from": "  - [ ] Fighting while climbing (p. 84)",
+   "to": "  - [x] Fighting while climbing (p. 84) - R488: the cliff-face and severe-slope penalties with the elevation adjustments and the damage-triggered Climbing Checks pin as rules/wsgfight.h"
+  },
+  {
+   "note": "the fighting precariously balanced box",
+   "from": "  - [ ] Fighting while precariously balanced (p. 84)",
+   "to": "  - [x] Fighting while precariously balanced (p. 84) - R488: the miss Dex Check with the -1 to -4 circumstance modifiers and the edge-distance and suffocation rules pin as rules/wsgfight.h"
+  },
+  {
+   "note": "the fighting in water box",
+   "from": "  - [ ] Fighting in water (p. 85)",
+   "to": "  - [x] Fighting in water (p. 85) - R488: the -1 to -4 depth penalties with the attacker-share rule and the swimming-proficiency relief pin as rules/wsgfight.h"
+  },
+  {
+   "note": "the fighting in poor visibility box",
+   "from": "  - [ ] Fighting in poor visibility (p. 86)",
+   "to": "  - [x] Fighting in poor visibility (p. 86) - R488: the moonlight, natural-darkness and total-darkness penalties with the wild-swing rules and the darkness climbing and precarious adjustments pin as rules/wsgfight.h"
+  },
+  {
+   "note": "the melee combat from a mount box",
+   "from": "  - [ ] Melee combat from a mount (p. 86)",
+   "to": "  - [x] Melee combat from a mount (p. 86) - R488: the size bonuses and penalties with the airborne and swooping adjustments and the braced-defense rules pin as rules/wsgfight.h"
+  },
+  {
+   "note": "the missile combat from a mount box",
+   "from": "  - [ ] Missile combat from a mount (p. 86)",
+   "to": "  - [x] Missile combat from a mount (p. 86) - R488: the riding-proficiency requirement with the rate-of-fire scale reduction and the mount-speed penalties pin as rules/wsgfight.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R487: 122 closed, 64 open (the R487 round CLOSES the natural hazards chapter - the tidal wave death rules, floods and flash floods, avalanches, rockfalls and mudslides, and quicksand pin as rules/wsghazd2.h; the next round opens the wilderness combat chapter - fighting while climbing (p. 84)).",
+   "to": "Post-state at R488: 128 closed, 58 open (the R488 round OPENS the wilderness combat chapter - the fighting while climbing, precariously balanced, in water and in poor visibility rules, the inclement weather note and the melee and missile combat from a mount rules pin as rules/wsgfight.h; the forcing opponents to dismount box stays open - the section tail rides from the p. 87 cut; the next round lands the dismount tail and closes the combat chapter (p. 88))."
+  }
+ ],
+ "gap_census": {
+  "closed": 128,
+  "open": 58
+ },
+ "include_after": "#include \"rules/wsghazd2.h\"  // R487: the WSG flood, avalanche, mudslide and quicksand hazard rules",
+ "include_comment": "the WSG wilderness combat rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R487 LANDED 2026-10-16: commit 5fa9bdf (census 412,",
+ "prev_record": [
+  "- R487 LANDED 2026-10-16: commit 5fa9bdf (census 412,",
+  "  pushed 908b31b..5fa9bdf), the WSG NATURAL HAZARDS CLOSER",
+  "  slice, printed pp. 80-83 - the chapter CLOSED in two",
+  "  content-density rounds. Pinned as rules/wsghazd2.h with",
+  "  the include after wsghazd.h at line 192 (prefix whz2 -",
+  "  free on the first probe; the natural first choice wfl",
+  "  collided with the R475 fire-fuel round, so the wsghazd2",
+  "  pairing carries the round), 111 inlines: 52 consts + 59",
+  "  bools in seven sections - the tidal death tail, floods,",
+  "  the flash-flood survival chain, avalanches, rockfalls,",
+  "  mudslides and quicksand. The tidal wave death tail",
+  "  landing from the R486 cut: the direct-path victim",
+  "  drowns shortly after being knocked unconscious, the",
+  "  late inland hit survivable by going with the flow for",
+  "  the swimming-proficient, the non-swimmer doomed even at",
+  "  the very end, the DM judging the circumstances. Floods:",
+  "  water flows downhill and spreads beyond its container,",
+  "  from heavy rain or a snowmelt heat wave, worse over",
+  "  frozen ground, usually beside a river or lake; the flash",
+  "  flood is fleeting - minutes, not days - mountainous",
+  "  terrain without a water body, a trickle at 10,000 feet",
+  "  a 30-50 mph torrent at 5,000; avoid a pass or gully",
+  "  within 2-3 hours of rain. Caught: the swimmer avoids",
+  "  drowning but not the battering, the non-swimmer treads",
+  "  toward refuge, the protrusion grab a Strength Check",
+  "  with 1d3-to-1d6 batter damage on failure and a",
+  "  re-check every 2 rounds while holding; d6+9 rounds at",
+  "  any point, 3d8 hours of afterflow. Avalanches: snow or",
+  "  ice needing a 12-inch cover, warm sun and bare rock",
+  "  favoring; growing as it falls, worst at the slope base;",
+  "  2d10-to-3d20 damage halved by curling, bend bars to",
+  "  avoid being swept while standing, a 50 percent hold",
+  "  while huddled; 2d3 feet of burial, 4d3 at the bottom;",
+  "  a Con Check for consciousness; 1 foot per round of",
+  "  self-dig with a secret Wis Check for direction unless",
+  "  huddled and oriented; the 10 percent find chance plus 1",
+  "  per intelligence and 25 for a digging victim, checked",
+  "  per searcher per victim; 2 and 3 feet per round of",
+  "  rescue digging, three diggers plus 1 foot each; 1d6+4",
+  "  rounds of trapped air then breath-holding and Con",
+  "  Checks. Rockfalls: freeze-thaw cracks in valley-walled",
+  "  peaks, crumbling faces every 2 months, loose rock the",
+  "  tell; the slope attack 4 per round for 1d4+1 rounds at",
+  "  5 HD for 1d4 each, Dex halving but never below 1, more",
+  "  than 20 points sweeping the victim down; the shield",
+  "  overhead intercepts 75 percent given both hands and a",
+  "  round from the back or a half from the belt; the cliff",
+  "  face 1-2 rounds at 7 HD and 1d6, the count from 1d4-1",
+  "  if warned or 1d6-3 if not, a Climbing Check on any roll",
+  "  of 3 or more and unconsciousness on two 5-or-6 head",
+  "  hits; the base 10 HD and 1d8 with the same head rule",
+  "  and no chance of falling. Mudslides: thick loose",
+  "  topsoil drenched on a moderate or severe slope,",
+  "  half-water mud on the moderate slope and less on the",
+  "  severe; grab rooted vegetation or ride down unhurt",
+  "  unless the valley collects a sinking depth; the",
+  "  swimmer rides on top at 1 inch per round, the",
+  "  non-swimmer treads for half his afloat time then",
+  "  Strength Checks per round and breath and Con Checks",
+  "  below. Quicksand: saturated swamp ground, sandy faster",
+  "  than muddy, no suction - tread and swim to safety, the",
+  "  pole rescue for a non-swimmer, only a",
+  "  swimming-proficient rescuer may enter. THE SETTLE:",
+  "  two-way clean on the first pass; the garbles settled",
+  "  without contest (lo% is 10 percent - the italic-L",
+  "  artifact seen at R484 and R485; l d 3 and ld4/ld6/ld8",
+  "  are the 1d classes; bend bars the book's own term; 1\"",
+  "  the 1-inch move rate; lenghtens the book's own",
+  "  spelling). Pdf page 82 (printed p. 81) is the",
+  "  full-page avalanche illustration plate - empty in both",
+  "  readers by nature, so the empty page-82 tesseract reads",
+  "  were a puzzle solved, not a failure; the three text",
+  "  pages carry the full two-way evidence. The delivery",
+  "  detour: the daily upload limit was hit, so the",
+  "  extraction reads traveled by the git route - a scratch",
+  "  repo in ~/wsgx pushed to the r487-extraction branch",
+  "  (still on the remote - delete it when convenient),",
+  "  fetched raw and settled from there; the Termux ritual",
+  "  then committed the reads into the main tree as",
+  "  p08x_full.txt/p08x_tsv.tsv pairs (the first time",
+  "  extraction evidence rode inside a round's commit -",
+  "  acceptable since the reads back the spec's provenance,",
+  "  and the preflight [4/5] note confirmed them). The spec",
+  "  md5 pair: authored 9ed54e4e18c5e1e3803ea71c39c252e5,",
+  "  as-built 5b3fefed08c5cac6d5a78b07c783e029 (the Termux",
+  "  md5 hit the +nl pair value exactly). rverify at",
+  "  908b31b: 111 mutants, 0 missed (52 consts + 59",
+  "  bools); inline_count 111; census 411 -> 412; the gap",
+  "  flips 118/68 -> 122/64 (tidal waves, floods, the",
+  "  avalanches-rockfalls-mudslides box and quicksand), the",
+  "  R486 seed record in place. Next: R488 - fighting while",
+  "  climbing (printed p. 84), OPENING the wilderness",
+  "  combat chapter - the last WSG chapter (pdf pages 85-88"
+ ]
+}

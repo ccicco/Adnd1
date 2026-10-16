@@ -5376,6 +5376,99 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   tidal box held open), the R485 seed record in place.
   Next: R487 - the tidal wave death-rule tail plus floods
   and flash floods (p. 80), continuing the natural hazards
+- R487 LANDED 2026-10-16: commit 5fa9bdf (census 412,
+  pushed 908b31b..5fa9bdf), the WSG NATURAL HAZARDS CLOSER
+  slice, printed pp. 80-83 - the chapter CLOSED in two
+  content-density rounds. Pinned as rules/wsghazd2.h with
+  the include after wsghazd.h at line 192 (prefix whz2 -
+  free on the first probe; the natural first choice wfl
+  collided with the R475 fire-fuel round, so the wsghazd2
+  pairing carries the round), 111 inlines: 52 consts + 59
+  bools in seven sections - the tidal death tail, floods,
+  the flash-flood survival chain, avalanches, rockfalls,
+  mudslides and quicksand. The tidal wave death tail
+  landing from the R486 cut: the direct-path victim
+  drowns shortly after being knocked unconscious, the
+  late inland hit survivable by going with the flow for
+  the swimming-proficient, the non-swimmer doomed even at
+  the very end, the DM judging the circumstances. Floods:
+  water flows downhill and spreads beyond its container,
+  from heavy rain or a snowmelt heat wave, worse over
+  frozen ground, usually beside a river or lake; the flash
+  flood is fleeting - minutes, not days - mountainous
+  terrain without a water body, a trickle at 10,000 feet
+  a 30-50 mph torrent at 5,000; avoid a pass or gully
+  within 2-3 hours of rain. Caught: the swimmer avoids
+  drowning but not the battering, the non-swimmer treads
+  toward refuge, the protrusion grab a Strength Check
+  with 1d3-to-1d6 batter damage on failure and a
+  re-check every 2 rounds while holding; d6+9 rounds at
+  any point, 3d8 hours of afterflow. Avalanches: snow or
+  ice needing a 12-inch cover, warm sun and bare rock
+  favoring; growing as it falls, worst at the slope base;
+  2d10-to-3d20 damage halved by curling, bend bars to
+  avoid being swept while standing, a 50 percent hold
+  while huddled; 2d3 feet of burial, 4d3 at the bottom;
+  a Con Check for consciousness; 1 foot per round of
+  self-dig with a secret Wis Check for direction unless
+  huddled and oriented; the 10 percent find chance plus 1
+  per intelligence and 25 for a digging victim, checked
+  per searcher per victim; 2 and 3 feet per round of
+  rescue digging, three diggers plus 1 foot each; 1d6+4
+  rounds of trapped air then breath-holding and Con
+  Checks. Rockfalls: freeze-thaw cracks in valley-walled
+  peaks, crumbling faces every 2 months, loose rock the
+  tell; the slope attack 4 per round for 1d4+1 rounds at
+  5 HD for 1d4 each, Dex halving but never below 1, more
+  than 20 points sweeping the victim down; the shield
+  overhead intercepts 75 percent given both hands and a
+  round from the back or a half from the belt; the cliff
+  face 1-2 rounds at 7 HD and 1d6, the count from 1d4-1
+  if warned or 1d6-3 if not, a Climbing Check on any roll
+  of 3 or more and unconsciousness on two 5-or-6 head
+  hits; the base 10 HD and 1d8 with the same head rule
+  and no chance of falling. Mudslides: thick loose
+  topsoil drenched on a moderate or severe slope,
+  half-water mud on the moderate slope and less on the
+  severe; grab rooted vegetation or ride down unhurt
+  unless the valley collects a sinking depth; the
+  swimmer rides on top at 1 inch per round, the
+  non-swimmer treads for half his afloat time then
+  Strength Checks per round and breath and Con Checks
+  below. Quicksand: saturated swamp ground, sandy faster
+  than muddy, no suction - tread and swim to safety, the
+  pole rescue for a non-swimmer, only a
+  swimming-proficient rescuer may enter. THE SETTLE:
+  two-way clean on the first pass; the garbles settled
+  without contest (lo% is 10 percent - the italic-L
+  artifact seen at R484 and R485; l d 3 and ld4/ld6/ld8
+  are the 1d classes; bend bars the book's own term; 1"
+  the 1-inch move rate; lenghtens the book's own
+  spelling). Pdf page 82 (printed p. 81) is the
+  full-page avalanche illustration plate - empty in both
+  readers by nature, so the empty page-82 tesseract reads
+  were a puzzle solved, not a failure; the three text
+  pages carry the full two-way evidence. The delivery
+  detour: the daily upload limit was hit, so the
+  extraction reads traveled by the git route - a scratch
+  repo in ~/wsgx pushed to the r487-extraction branch
+  (still on the remote - delete it when convenient),
+  fetched raw and settled from there; the Termux ritual
+  then committed the reads into the main tree as
+  p08x_full.txt/p08x_tsv.tsv pairs (the first time
+  extraction evidence rode inside a round's commit -
+  acceptable since the reads back the spec's provenance,
+  and the preflight [4/5] note confirmed them). The spec
+  md5 pair: authored 9ed54e4e18c5e1e3803ea71c39c252e5,
+  as-built 5b3fefed08c5cac6d5a78b07c783e029 (the Termux
+  md5 hit the +nl pair value exactly). rverify at
+  908b31b: 111 mutants, 0 missed (52 consts + 59
+  bools); inline_count 111; census 411 -> 412; the gap
+  flips 118/68 -> 122/64 (tidal waves, floods, the
+  avalanches-rockfalls-mudslides box and quicksand), the
+  R486 seed record in place. Next: R488 - fighting while
+  climbing (printed p. 84), OPENING the wilderness
+  combat chapter - the last WSG chapter (pdf pages 85-88
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
