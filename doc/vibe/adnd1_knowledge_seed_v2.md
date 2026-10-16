@@ -6125,6 +6125,46 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   0d5f109): the nonweapon list, the choosing-skills
   rules and the proficiency descriptions - the LAST
   four open boxes; closure at 186/0.
+- R498 LANDED 2026-10-16: commit d4f30ee (census 423,
+  pushed 6276205..d4f30ee), the WSG PROFICIENCIES
+  PROSE, printed pp. 11-17 (pdf 12-18) - THE WSG GAP
+  CLOSURE ROUND: the gap report lands at 186 closed /
+  0 open; THE ENTIRE WILDERNESS SURVIVAL GUIDE IS
+  PINNED, cover to cover. Pinned as rules/wsgprofd.h
+  (prefix wpd, 157 inlines: 85 consts + 72 bools, no
+  grids). The R425 check/improving/expanding system and
+  the Table 1/2 grids stay as seams; this round pins
+  the DSG-system frame, the choosing-skills rules and
+  all twenty-five descriptions: the healing package
+  (1d3 emergency within 1 round, 1/2 hp per day travel/
+  rest, the +2 poison save with the 1-turn rest and
+  5-rounds aid, the disease step-down with the
+  2-consecutive/3-total revert), the hunting party
+  ladder 1/3/6/10/15 auto-fail at 6+, blind-fighting
+  halved penalties (-2/-4 total, -1/-3 natural),
+  direction sense (+4/+2 darkness, 90-degree error,
+  natural 20 opposite), both riding feat lists
+  (airborne and land-based), rope use (+3/+6 escape,
+  +2 lasso, +10 percent climbing), running (the 2x/5
+  rounds or 3/2/1 turn sprint, the +3-per-round
+  extension, the distance packages), the survival
+  shifts (20 degrees, bands 30/80), tracking (5 per
+  level plus 5, cap 55 - half a ranger), weather sense
+  (6 hours, +2 repeats, 12-hour lockout). Preflight
+  GREEN (R498 WSG proficiencies prose audit: bad 0),
+  rverify GREEN (157 mutants, 0 missed, double-run
+  clean). User-side spec md5 1a348b91f6a013f5b21622b4
+  7363019f differed from both authored variants
+  (b68975ba... no-nl, 7f4168b2... +nl) - cosmetic,
+  the standing class. Spec published as the new canvas
+  r498-splice. THE WSG ARC: R425-R498, 74 rounds,
+  every chapter, the DM section, the weather appendix,
+  the compiled tables, and now the full gap report at
+  zero open boxes. Next book candidates: the DSG
+  (Dungeoneer's Survival Guide) is the natural next
+  wilderness-adjacent pin target; the repo also has
+  dmg_gap_report.md and phb_gap_report.md if any
+  boxes remain open there.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
