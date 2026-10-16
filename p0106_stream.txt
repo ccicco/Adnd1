@@ -1,0 +1,151 @@
+of an area that is flat and featureless, just for a little variety. After
+that, as the next-to-last step in this process of creation and elimi-
+nation, anything else is plains.
+
+9. Large-scale details. Up to now, we've been dealing in fea-
+tures of immense scale — the aspects of a world that would be
+apparent to someone from a vantage point several dozen miles
+above the surface. Now it's time to narrow the scope just a bit and
+toss in a few details. Does that huge desert have an oasis, or
+more than one? Is there a pass that runs through that awesome
+mountain range? Mark these features now, and you won't have to
+worry about putting them in when characters decide to look for
+them. This is also the time to make any large-scale additions or
+alterations to the terrain features. If you want to run a thin strip of
+forest land on either side of the big river that slices through a vast
+plain, do it now. If you want to send a river coursing through a
+desert, that's okay, but be sure to border the river with a couple of
+strips of something other than desert. Make any large-scale fin-
+ishing touches to the terrain that you think are appropriate, until
+you're satisfied with the lay of the land.
+
+10. Points of interest. While you're still looking at things from an
+ultra-large-scale viewpoint, you should pinpoint the locations of
+special isolated features. If your world has features resembling
+the Grand Canyon, Death Valley, or the Yellowstone area, locate
+them now. This is also the time to determine if your world has
+earthquakes or volcanoes and, if so, where you ought to place
+the fault lines and the hot spots.
+
+An earthquake can occur almost anywhere, but the most fre-
+quent and most severe quakes take place along major fault lines.
+These lines are often located where the land rises abruptly in ele-
+vation, and especially near the seacoast. (The San Andreas Fault
+in California is an example of this.) A major fault line can also oc-
+cur in the middle of a mountain range, running along the long axis
+of the chain of mountains. If your world has features that might be
+the location of major fault lines, sketch in those lines now.
+
+Individual volcanoes do not need to be placed on a map of very
+large scale; this would be as difficult as locating every individual
+mountain peak. However, you should know where the ‘“hot
+spots'’ are, because these are the areas where volcanoes will be
+found. Each hot spot is an area of 20 to 40 miles in diameter, usu-
+ally located in the lower regions of a mountain range or along a
+major fault line that cuts through a mountain range, representing
+a place where magma lies close to the surface.
+
+Not every major fault line produces frequent earthquakes, and
+not every hot spot contains active volcanoes within its area, so
+don't be stingy about locating these special features. If you don’t
+want to make all of them active right away, no one else (in other
+words, the characters) will have any way of knowing that they ex-
+ist. But if you decide that a long-dormant volcano is suddenly go-
+ing to spring into life, you can cause the eruption by design rather
+than on a whim. The more decisions you make in the creation
+stage, the fewer times you'll find yourself caught short later.
+
+The Semi-Finished Product
+
+You now have a one-of-a-kind creation — a map that looks like
+no other map ever made. But it's still not ready to use as the loca-
+tion for adventures until you bring it alive. Divide the terrain into
+countries, sketch out political boundaries, and decide where the
+major population centers are located. This is a much more com-
+plex and difficult process than that single sentence would indi-
+cate. Unless you have reasons for doing things differently, use
+these general guidelines to rough out the political and cultural
+makeup of your world.
+
+1. The largest population centers are usually located adjacent
+
+105
+
+STARTING FROM SCRATCH
+
+to large bodies of water, especially along the seacoast or on the
+shores of bodies of water with an outlet to the sea. The health of a
+city depends on commerce, and the most efficient way to move
+trade goods from one place to another is by boat or ship.
+
+2. Other large cities may be located in areas with an abun-
+dance of a useful natural resource. A city can spring up in the
+foothills of a mountain range several days' travel from the nearest
+large river, as long as a road exists (or can be built) from that city
+to another city that lies on the river. The first city is a place where
+miners can bring their take to be assayed and refined, after which
+itis sold to a merchant caravan operation that transports it to the
+manufacturing and shipping center that lies on the river.
+
+3. Areas that are physically isolated tend to be politically inde-
+pendent, at least at the beginning of a world’s political history (be-
+fore an aggressive neighbor decides to try expanding its
+boundaries). An area that is ringed by high mountains, or com-
+posed entirely of mountains, will have a different government
+than the areas around it. (Switzerland is a good modern-day ex-
+ample.) The areas on either side of a vast desert will usually not
+belong to the same country, since it is very difficult for a single
+central government to successfully exercise its power across a
+large expanse of impassable terrain.
+
+4. In the absence of other factors, rivers often serve as political
+boundaries. This is to your advantage and the advantage of the
+people who live in the adjacent countries, since there can be no
+doubt about where one country ends and another one begins.
+
+5. Enclaves of humanoids and demi-humans will usually occur
+in terrain that is suited to them, according to the descriptions of
+those creatures given elsewhere in the rules. Elves tend to be
+more numerous in forests, dwarves in mountains, and so forth.
+
+Flesh out your world, still working in large scale, by spotting at
+least the larger cities and the places where a certain type of crea-
+ture forms the predominant part of the resident population. Out-
+line the countries, perhaps leaving some of the political
+boundaries indefinite (that's how wars get started). Then use a
+combination of common sense and imagination to make some
+general assumptions about the state of the world, such as:
+
+Country A doesn't like Country B because B insists on sending
+all of its refined iron ore eastward into Country C. It doesn’t seem
+to matter that A and B are separated by a mountain range that
+makes overland traffic between the countries almost impossible.
+
+Country B, being no dummy, sells the ore in return for weapons
+that it sends to the troops stationed along the mountain passes
+near its border with A.
+
+Country D, watching the interplay between A and B from its
+vantage point to the south, is carefully playing a waiting game but
+building up its military strength in the meantime to keep itself safe
+from invasion by either A or B, in case one of those countries
+starts looking for a way to make an end run around the mountains
+and attack the other.
+
+In three short paragraphs we have described a fairly simple sit-
+uation that could produce a wide range of consequences and
+which offers several opportunities for adventurers to either de-
+fuse or aggravate the tension. The party might hire itself out to
+any one of the four principal countries, charged with the responsi-
+bility of furthering that country’s interests — and no matter which
+government they work for, the characters are going to spend a lot
+of time in the wide open spaces and must know how to survive on
+the way to accomplishing what they are being paid to do.
+
+Scaling Down
+
+Unless every character and creature in your campaign is wear-
+ing seven-league boots, your world map isn’t going to be very
+useful in day-to-day adventuring. Even at the smallest recom-
+mended scale (20 miles across the middle of a hex), there will be
+
