@@ -117,10 +117,10 @@ Conventions as the UA report: [x] verified against the book text (with the round
   - [x] Ash eruptions (p. 76) - R486: the cloud, accumulation and fertilizer rules with the Mount St. Helens account and the 1d6 light, heavy and pyroclastic bands pin as rules/wsghazd.h
   - [x] Explosive eruptions (p. 78) - R486: the blow-the-top opening with the 3-5-mile glowing avalanche, the double-strength cloudkill and the 1d3-day warning pin as rules/wsghazd.h
   - [x] Earthquakes (p. 78) - R486: the fault-line frame with the light, moderate and severe quake classes and their penalties pin as rules/wsghazd.h
-  - [ ] Tidal waves (p. 79)
-  - [ ] Floods and flash floods (p. 80)
-  - [ ] Avalanches, rockfalls, and mudslides (p. 80)
-  - [ ] Quicksand (p. 83)
+  - [x] Tidal waves (p. 79) - R487: the sighting, approach and death rules for the wave, the tail landing with R486 and the drowning and go-with-the-flow rules pin as rules/wsghazd2.h
+  - [x] Floods and flash floods (p. 80) - R487: the flood and flash flood causes with the d6+9-round duration and the strength-check protrusion chain pin as rules/wsghazd2.h
+  - [x] Avalanches, rockfalls, and mudslides (p. 80) - R487: the avalanche burial and digging rules, the slope, cliff-face and base rockfall bands and the mudslide sinking rules pin as rules/wsghazd2.h
+  - [x] Quicksand (p. 83) - R487: the no-suction rule with the treading self-rescue and the pole and swimmer rescues pin as rules/wsghazd2.h
 - [ ] **Combat rules for wilderness play** (pp. 84-87)
   - [ ] Fighting while climbing (p. 84)
   - [ ] Fighting while precariously balanced (p. 84)
@@ -199,4 +199,4 @@ Conventions as the UA report: [x] verified against the book text (with the round
 - [x] **Table 41: outdoor range of normal vision** (p. 73) - R483: the six-condition light-level grid pins as rules/wsginfra.h
 - [ ] **Table 42: reactions of animals** (p. 92)
 
-Post-state at R486: 118 closed, 68 open (the R486 round opens the natural hazards chapter - the volcano, earthquake and tidal wave approach rules through printed p. 79 pin as rules/wsghazd.h; the next round finishes the tidal wave death rules and continues - floods and flash floods (p. 80)).
+Post-state at R487: 122 closed, 64 open (the R487 round CLOSES the natural hazards chapter - the tidal wave death rules, floods and flash floods, avalanches, rockfalls and mudslides, and quicksand pin as rules/wsghazd2.h; the next round opens the wilderness combat chapter - fighting while climbing (p. 84)).

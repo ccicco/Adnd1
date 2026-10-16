@@ -1,0 +1,1207 @@
+{
+ "round": 487,
+ "title": "the WSG natural hazards closer slice - the tidal wave death rules with the floods and flash floods, the avalanche burial and digging rules, the slope, cliff-face and base rockfall bands, the mudslide sinking rules and quicksand, printed pp. 80-83, CLOSING the natural hazards chapter",
+ "prefix": "whz2",
+ "header_file": "rules/wsghazd2.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/wsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 411,
+ "inline_count": 111,
+ "audit_label": "R487 WSG hazards closer pin audit",
+ "audit_comment": "The natural hazards closer: the tidal wave death tail - the direct-path victim drowns shortly after being knocked unconscious, the late inland hit survivable by going with the flow for a swimming-proficient character, the non-swimmer doomed even at the very end. Floods: water flows downhill and spreads beyond its container, born of heavy rain or a snowmelt heat wave, worse over frozen ground, usually beside a river or lake; the flash flood is fleeting - minutes, not days - most often in mountainous terrain without a water body, a trickle at 10,000 feet a 30-50 mph torrent at 5,000; avoid a pass or gully within 2-3 hours of rain. Caught: the swimmer avoids drowning but not the battering against rocks and trees, the non-swimmer treads toward refuge, the protrusion grab is a Strength Check with 1d3-to-1d6 batter damage on failure and a re-check every 2 rounds while holding; d6+9 rounds of flood at any point, 3d8 hours of afterflow. Avalanches: snow or ice down a mountainside needing a 12-inch cover, favored by warm sun and bare rock; growing as it falls, worst at the slope base; 2d10-to-3d20 damage halved by curling, a bend bars roll to avoid being swept while standing, a 50 percent hold while huddled; 2d3 feet of burial, 4d3 at the bottom; a Constitution Check for consciousness; 1 foot per round of self-dig with a secret Wisdom Check for direction unless huddled and oriented; the 10 percent find chance plus 1 per intelligence and 25 for a digging victim, checked per searcher per victim; 2 and 3 feet per round of rescue digging, three diggers plus 1 foot each; 1d6+4 rounds of trapped air, then breath-holding and Constitution Checks. Rockfalls: freeze-thaw cracks in valley-walled peaks, crumbling faces every two months, loose rock the tell; the slope attack is 4 per round for 1d4+1 rounds at 5 hit dice for 1d4 each, Dex halving but never below 1, more than 20 points sweeping the victim down the slope; the shield overhead intercepts 75 percent given both hands and a round from the back or a half from the belt; the cliff face runs 1-2 rounds at 7 hit dice and 1d6, the count from 1d4-1 if warned or 1d6-3 if not, a Climbing Check on any roll of 3 or more and unconsciousness on two 5-or-6 head hits; the base is 10 hit dice and 1d8 with the same head rule and no chance of falling. Mudslides: thick loose topsoil drenched on a moderate or severe slope, half-water mud on the moderate slope and less on the severe; grab rooted vegetation or ride down unhurt unless the valley collects a sinking depth; the swimmer rides on top at 1 inch per round, the non-swimmer treads for half his afloat time then Strength Checks per round and breath and Constitution Checks below. Quicksand: saturated swamp ground, sandy faster than muddy, no suction - tread and swim to safety, the pole rescue for a non-swimmer, and only a swimming-proficient rescuer may enter.",
+ "banner": {
+  "title": "R487: the WSG NATURAL HAZARDS closer slice, printed pp. 80-83 (pdf page 82 is the full-page avalanche illustration plate) - the second and final content-density round of the chapter, CLOSING the natural hazards chapter: the tidal wave death-rule tail from the R486 cut, the flood and flash flood causes with the d6+9-round duration and the afterflow, the flash-flood strength-check protrusion chain, the avalanche damage and burial dice with the digging and rescue-search rules, the slope, cliff-face and base rockfall bands with the shield intercept, the mudslide sinking rules, and the quicksand no-suction rules with the pole and swimmer rescues.",
+  "provenance": "THE SETTLE: two-way clean on the first pass - the tesseract full-text reads, the pdftotext layout read and the tsv coordinate reads agree on every number (the 10-15 rounds and 3d8 hours, the 1d3-to-1d6 battering, the 10,000 to 5,000 foot flash flood at 30-50 mph, the 2d10-to-3d20 avalanche damage with the 50 percent huddle and the 2d3 and 4d3 burials, the 1-foot self-dig and the 2 and 3-foot rescue digs, the 10 percent find base with the +1 intelligence and +25 modifiers, the 1d6+4 trapped-air rounds, the 4-attacks, 5-HD, 1d4 slope rockfall over 1d4+1 rounds, the 75 percent shield intercept, the 1-2 round 7-HD 1d6 cliff face with the 1d4-1 and 1d6-3 count rolls and the 3-plus and 5-or-6 threshold dice, and the 10-HD 1d8 cliff base). The garbles all settled without contest: lo% in both readers is 10 percent (the italic-L artifact seen at R484 and R485), l d 3 and l d 6 are 1d3 and 1d6, ld4 ld6 and ld8 are 1d4 1d6 and 1d8 (a pdfy ligature class), bend bars is the book's own term, 1\u201c per round is the 1-inch movement rate, and the book's lenghtens spelling stands. Printed pdf page 82 is a full-page avalanche illustration plate - empty in both readers by nature, not a failed read - so the text pages of the chapter remainder carry the full two-way evidence.",
+  "sentinel": "Bounds held: the flash flood runs d6+9 rounds over 30-50 mph from 10,000 down to 5,000 feet, the avalanche damage spans 2d10 to 3d20 with the burial doubling 2d3 to 4d3 at the slope bottom, the dig rates ascend 1, 2 and 3 feet per round with three diggers maximum, the rockfall monster hit dice strictly ascend 5, 7 and 10 with damage dice 1d4, 1d6 and 1d8, the warned and unwarned cliff count rolls agree in range, and the climb-check threshold sits strictly below the head-hit threshold on both dice."
+ },
+ "consts": [
+  {
+   "name": "whz2FlashStartElevFt",
+   "value": 10000,
+   "comment": "a flash flood that began as a trickle at an elevation of 10,000 feet"
+  },
+  {
+   "name": "whz2FlashLowerElevFt",
+   "value": 5000,
+   "comment": "can be a rushing torrent by the time it descends to 5,000 feet"
+  },
+  {
+   "name": "whz2FlashMinMph",
+   "value": 30,
+   "comment": "thousands of gallons moving forward and down at a speed of 30 to 50 miles per hour - minimum"
+  },
+  {
+   "name": "whz2FlashMaxMph",
+   "value": 50,
+   "comment": "the flash flood speed maximum"
+  },
+  {
+   "name": "whz2PassRainWindowHrs",
+   "value": 3,
+   "comment": "the rain window for the pass-or-gully danger: within the last two or three hours"
+  },
+  {
+   "name": "whz2GrabFailDmgMin",
+   "value": 3,
+   "comment": "failure on the grab check means he has been battered against the protrusion and suffers 1d3 to 1d6 points of damage, depending on the velocity of the water and the nature of the protrusion - the low die"
+  },
+  {
+   "name": "whz2GrabFailDmgMax",
+   "value": 6,
+   "comment": "the battered-against-protrusion damage high die"
+  },
+  {
+   "name": "whz2FlashRoundsMin",
+   "value": 10,
+   "comment": "with reference to any particular point along its path, a flash flood lasts 10-15 rounds (d6+9) - minimum"
+  },
+  {
+   "name": "whz2FlashRoundsMax",
+   "value": 15,
+   "comment": "the d6+9 flash flood duration maximum"
+  },
+  {
+   "name": "whz2AfterflowHoursMin",
+   "value": 3,
+   "comment": "after the flood passes, any level area it moved through is still covered to some depth by gently flowing water for the next 3d8 hours - minimum"
+  },
+  {
+   "name": "whz2AfterflowHoursMax",
+   "value": 24,
+   "comment": "the 3d8-hour afterflow maximum"
+  },
+  {
+   "name": "whz2AvalancheSnowInches",
+   "value": 12,
+   "comment": "an avalanche can occur on a moderate or severe slope in any mountainous region where the terrain has a heavy snow cover - 12 inches or more"
+  },
+  {
+   "name": "whz2AvalancheDmgMin",
+   "value": 2,
+   "comment": "a character caught in an avalanche takes anywhere from 2d10 to 3d20 points of damage from impact with the falling snow and debris - the 2d10 minimum"
+  },
+  {
+   "name": "whz2AvalancheDmgMax",
+   "value": 60,
+   "comment": "the 3d20 damage maximum; the Dungeon Master sets the dice by the size of the avalanche and the character's location when hit"
+  },
+  {
+   "name": "whz2HuddledHoldPct",
+   "value": 50,
+   "comment": "a character huddled in a protective position has a 50 percent chance of maintaining his position and not being swept away by the snow"
+  },
+  {
+   "name": "whz2BuriedFtMin",
+   "value": 2,
+   "comment": "whether swept along or not, a character finds himself buried under 2d3 feet of snow when the avalanche subsides - minimum"
+  },
+  {
+   "name": "whz2BuriedFtMax",
+   "value": 6,
+   "comment": "the 2d3-foot burial maximum"
+  },
+  {
+   "name": "whz2BuriedBottomMin",
+   "value": 4,
+   "comment": "or 4d3 feet if he is at the bottom of the slope - minimum"
+  },
+  {
+   "name": "whz2BuriedBottomMax",
+   "value": 12,
+   "comment": "the 4d3-foot bottom-of-slope burial maximum"
+  },
+  {
+   "name": "whz2DigSelfFtPerRound",
+   "value": 1,
+   "comment": "a conscious character can dig through the snow at 1 foot per round and thereby free himself"
+  },
+  {
+   "name": "whz2FindBasePct",
+   "value": 10,
+   "comment": "the base chance of finding the right spot to dig in one round of searching is 10 percent"
+  },
+  {
+   "name": "whz2FindPerIntPct",
+   "value": 1,
+   "comment": "modified upward by 1 percent per point of intelligence of the searcher"
+  },
+  {
+   "name": "whz2FindVictimDiggingBonusPct",
+   "value": 25,
+   "comment": "and further modified by +25 percent if the buried character is trying to dig himself out, since the surface snow is disturbed by his actions"
+  },
+  {
+   "name": "whz2DigHandsFtPerRound",
+   "value": 2,
+   "comment": "a character digging down to a trapped comrade moves snow at 2 feet per round with his hands"
+  },
+  {
+   "name": "whz2DigToolFtPerRound",
+   "value": 3,
+   "comment": "or 3 feet per round using an implement such as a weapon or pole to loosen the snow"
+  },
+  {
+   "name": "whz2MaxDiggers",
+   "value": 3,
+   "comment": "up to three characters can dig for the same victim at the same time"
+  },
+  {
+   "name": "whz2ExtraDiggerFtPerRound",
+   "value": 1,
+   "comment": "for each extra digger beyond the first, an extra 1 foot of snow can be moved per round"
+  },
+  {
+   "name": "whz2AirRoundsMin",
+   "value": 5,
+   "comment": "the trapped air supply lasts only 5-10 rounds (1d6+4) - minimum"
+  },
+  {
+   "name": "whz2AirRoundsMax",
+   "value": 10,
+   "comment": "the 1d6+4-round air supply maximum"
+  },
+  {
+   "name": "whz2ProneRockfallMonths",
+   "value": 2,
+   "comment": "a crumbling-rock area can produce a significant rockfall as often as once every two months"
+  },
+  {
+   "name": "whz2RockAtkPerRound",
+   "value": 4,
+   "comment": "a character caught in a rockfall on the slope of a mountain is attacked 4 times per round by rocks of sufficient size to do him harm"
+  },
+  {
+   "name": "whz2RockDurationMin",
+   "value": 2,
+   "comment": "the slope rockfall attacks continue for a duration of 2-5 rounds (1d4+1) - minimum"
+  },
+  {
+   "name": "whz2RockDurationMax",
+   "value": 5,
+   "comment": "the 1d4+1-round rockfall duration maximum"
+  },
+  {
+   "name": "whz2RockMonsterHd",
+   "value": 5,
+   "comment": "each rock has the same chance to hit as a monster of 5 hit dice"
+  },
+  {
+   "name": "whz2RockDmgDie",
+   "value": 4,
+   "comment": "each rock that hits causes 1d4 points of damage"
+  },
+  {
+   "name": "whz2RockSweepDmgThreshold",
+   "value": 20,
+   "comment": "a character who takes more than 20 points of damage from the rolling rocks is knocked off his feet and swept down the slope, suffering abrasion damage and impact damage from the tumble"
+  },
+  {
+   "name": "whz2ShieldInterceptPct",
+   "value": 75,
+   "comment": "there is a 75 percent chance that any rock that would otherwise have hit the character hits the shield instead"
+  },
+  {
+   "name": "whz2ShieldUnstrapBackRounds",
+   "value": 1,
+   "comment": "it takes one round to unstrap a shield from one's back"
+  },
+  {
+   "name": "whz2ShieldUnstrapBeltHalfRounds",
+   "value": 1,
+   "comment": "or one-half round to unfasten a shield carried on the belt (pinned as 1 half-round)"
+  },
+  {
+   "name": "whz2CliffRockRoundsMin",
+   "value": 1,
+   "comment": "a rockfall coming down a vertical or near-vertical cliff face lasts 1-2 rounds - minimum"
+  },
+  {
+   "name": "whz2CliffRockRoundsMax",
+   "value": 2,
+   "comment": "the cliff-face rockfall duration maximum"
+  },
+  {
+   "name": "whz2CliffRocksMaxPerRound",
+   "value": 3,
+   "comment": "during the cliff-face rockfall each character in its path is attacked by 0-3 rocks per round"
+  },
+  {
+   "name": "whz2CliffRockMonsterHd",
+   "value": 7,
+   "comment": "each rock on the cliff-face rockfall strikes as a monster of 7 hit dice"
+  },
+  {
+   "name": "whz2CliffNoticedDieMax",
+   "value": 4,
+   "comment": "if the characters had a chance to notice rocks at the base of the cliff and climbed it anyway, roll 1d4 and subtract 1 to get the number of rocks in the appropriate range"
+  },
+  {
+   "name": "whz2CliffUnnoticedDieMax",
+   "value": 6,
+   "comment": "if they had no reason or opportunity to anticipate the rockfall before climbing, roll 1d6 and subtract 3"
+  },
+  {
+   "name": "whz2CliffRockDmgDie",
+   "value": 6,
+   "comment": "each rock that hits during the cliff-face rockfall does 1d6 points of damage"
+  },
+  {
+   "name": "whz2ClimbCheckDmgRoll",
+   "value": 3,
+   "comment": "after any cliff-face rockfall damage roll of 3 or more, the victim must make a Climbing Check to avoid being knocked from his perch"
+  },
+  {
+   "name": "whz2HeadHitDmgRoll",
+   "value": 5,
+   "comment": "a cliff-face damage roll of 5 or 6 indicates the character's head has been hit"
+  },
+  {
+   "name": "whz2BaseRockMonsterHd",
+   "value": 10,
+   "comment": "a character standing at the base of a cliff during a rockfall faces the same dangers as a climber, except he has no chance of falling and each rock strikes as a monster of 10 hit dice"
+  },
+  {
+   "name": "whz2BaseRockDmgDie",
+   "value": 8,
+   "comment": "the damage from each rock that hits a character at the cliff base is 1d8 instead of 1d6"
+  },
+  {
+   "name": "whz2BaseHeadHitDmgRoll",
+   "value": 5,
+   "comment": "a base-of-cliff damage roll of 5 or more indicates a hit on the head, and two such blows knock him to the ground unconscious, making him more likely to be hit by rocks that have yet to come down"
+  },
+  {
+   "name": "whz2MudSwimMoveInches",
+   "value": 1,
+   "comment": "the proficient swimmer moves along the surface of the mud at 1 inch per round in an attempt to reach safety (pinned as 1, the book's 1-inch movement rate)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "whz2TidalDirectPathDrowns",
+   "value": true,
+   "comment": "a character directly in the path of a tidal wave dies - if he survives the buffeting he will at least be knocked unconscious, and he will drown shortly thereafter"
+  },
+  {
+   "name": "whz2TidalLateSurvivable",
+   "value": true,
+   "comment": "a character hit by the wave after it has traveled some distance inland and lost a lot of its height and velocity can probably survive by going with the flow, as long as he has proficiency in swimming"
+  },
+  {
+   "name": "whz2TidalNonSwimmerDoomed",
+   "value": true,
+   "comment": "a character who cannot swim or cannot stay afloat is in mortal danger even if he is hit at the very end of the inland incursion"
+  },
+  {
+   "name": "whz2TidalDMJudgment",
+   "value": true,
+   "comment": "the particular circumstances dictate what happens in any situation, and it is up to the Dungeon Master to exercise his judgment when such judgment is called for"
+  },
+  {
+   "name": "whz2WaterFlowsDownhill",
+   "value": true,
+   "comment": "a flood results from the two most basic properties of water: it flows from higher elevation to lower, and it spreads out to cover the bottom and sides of whatever contains it"
+  },
+  {
+   "name": "whz2OverflowBeyondContainer",
+   "value": true,
+   "comment": "when a volume of water is too large to be held within a container, the overflow flows over and upon the area adjacent to the container"
+  },
+  {
+   "name": "whz2FloodFromHeavyRain",
+   "value": true,
+   "comment": "a flood can occur after a period of heavy rain in a low-lying area or an area lower in elevation than the land around it"
+  },
+  {
+   "name": "whz2FloodFromSnowmelt",
+   "value": true,
+   "comment": "in temperate or colder climates during late winter and early spring, a flood can result when the temperature is unusually high for several days in a row - the heat wave melts the snow cover faster than the ground can absorb it"
+  },
+  {
+   "name": "whz2FrozenGroundIntensifies",
+   "value": true,
+   "comment": "the snowmelt flood is intensified if the ground under the snow cover is frozen or partially frozen, further reducing its ability to soak up the water"
+  },
+  {
+   "name": "whz2FloodNearRiverLake",
+   "value": true,
+   "comment": "flooding usually occurs only in an area adjacent to a river or a lake fed by rivers - the excess water flows to the lowest point, spills over the bank or shore, and inundates land not normally underwater"
+  },
+  {
+   "name": "whz2FlashFleeting",
+   "value": true,
+   "comment": "a flash flood is a fleeting (and fleet) phenomenon: a mass of water may pass through an area in minutes, in contrast to a regular flood that builds slowly and inundates for several days before receding"
+  },
+  {
+   "name": "whz2FlashMountainous",
+   "value": true,
+   "comment": "flash floods occur most often in mountainous or hilly terrain after a heavy rain, in locations where a natural body of water is not present - the rainfall runs down slopes, accumulates in low spots, and seeks even lower elevations"
+  },
+  {
+   "name": "whz2TidalLikeFlashFlood",
+   "value": true,
+   "comment": "when a tidal wave rushes inland it produces effects very similar to those of a flash flood"
+  },
+  {
+   "name": "whz2AvoidByMovingAway",
+   "value": true,
+   "comment": "the only way to avoid a flood is to move away before the area becomes inundated - not difficult for a normal flood, since the water level does not increase abruptly"
+  },
+  {
+   "name": "whz2PassGullyWarning",
+   "value": true,
+   "comment": "it is a bad idea to travel through or make camp in a mountain pass or a gully if a storm is brewing or if it has rained within the last two or three hours - a flash flood can come rushing through with very little warning"
+  },
+  {
+   "name": "whz2SwimmerAvoidsDrowning",
+   "value": true,
+   "comment": "a character caught in a flash flood with proficiency in swimming can probably avoid drowning, but may still suffer damage from being slammed against rocks, trees, etc. by the onrushing water"
+  },
+  {
+   "name": "whz2NonSwimmerTreads",
+   "value": true,
+   "comment": "a character without swimming proficiency can survive by treading water or holding his breath, but will need to find a place of refuge before he tires"
+  },
+  {
+   "name": "whz2GrabProtrusion",
+   "value": true,
+   "comment": "if the water carries a character past outcroppings and protrusions, he may be able to grab something and hold on until the flood moves past - a successful Strength Check means he has latched on"
+  },
+  {
+   "name": "whz2HoldEvery2Rounds",
+   "value": true,
+   "comment": "after the initial Strength Check succeeds, another Strength Check every two rounds for as long as the water continues to rush past; failure means the grasp is pulled loose and he is carried downstream until the velocity abates or he grabs another protrusion"
+  },
+  {
+   "name": "whz2AvalancheSnowIce",
+   "value": true,
+   "comment": "technically an avalanche can contain any solid material or mixture, but in these rules the term refers specifically to a mass of snow or ice that cascades down a mountainside or over a precipice"
+  },
+  {
+   "name": "whz2RockfallEarthRock",
+   "value": true,
+   "comment": "a rockfall occurs when a mass of earth or rocks, or both, is in motion down a slope or over a cliff"
+  },
+  {
+   "name": "whz2MudslideEarthWater",
+   "value": true,
+   "comment": "in a mudslide the moving material is a mixture of earth and water that flows down a slope at a relatively slow speed"
+  },
+  {
+   "name": "whz2AvalancheWarmDay",
+   "value": true,
+   "comment": "the most favorable conditions are present during the daytime when the sun is shining and the temperature is abnormally warm or at least higher than average - the heat partially melts the snow, which becomes heavier because of its greater water content"
+  },
+  {
+   "name": "whz2BareRockIncreases",
+   "value": true,
+   "comment": "if areas of bare rock are present near a large snow accumulation the avalanche chance is even greater: the sun and air warm the rock, the heat radiates through the rock beneath the snow, and the bond keeping the snow attached is further weakened"
+  },
+  {
+   "name": "whz2AvalancheGrowsAsFalls",
+   "value": true,
+   "comment": "an avalanche increases in volume and speed as it falls, because more snow is pulled loose by the weight and friction of the mass already falling"
+  },
+  {
+   "name": "whz2BaseWorseThanUpslope",
+   "value": true,
+   "comment": "there is no good place to be in the path of an avalanche, but a character's chance of survival is considerably smaller at the base of a slope than some distance up the slope - assuming he avoids being carried down"
+  },
+  {
+   "name": "whz2CurlHalvesDamage",
+   "value": true,
+   "comment": "the avalanche damage is halved for a character who, knowing he is going to be hit, falls to the ground and curls into a ball to offer as much protection as possible"
+  },
+  {
+   "name": "whz2StandingBendBars",
+   "value": true,
+   "comment": "a character standing or moving when an avalanche hits must make a successful bend bars roll to avoid becoming part of the avalanche"
+  },
+  {
+   "name": "whz2BuriedConCheck",
+   "value": true,
+   "comment": "if still alive, the buried character must make a Constitution Check: success means he is conscious and may be able to dig himself out; failure means he is unconscious and must be rescued by others"
+  },
+  {
+   "name": "whz2HuddledOriented",
+   "value": true,
+   "comment": "a character who was huddled on the ground and not swept away when the avalanche passed over him is properly oriented and always digs in the right direction"
+  },
+  {
+   "name": "whz2OthersWisdomCheck",
+   "value": true,
+   "comment": "all other characters must make a successful Wisdom Check, rolled in secret by the Dungeon Master, before they know the right direction to dig - once per round of digging until a check succeeds; failures mean the effort is spent digging parallel to the surface instead of toward it"
+  },
+  {
+   "name": "whz2FindPerSearcherPerVictim",
+   "value": true,
+   "comment": "the find chance is checked separately for each searcher and each buried character - three searchers with four buried comrades means twelve checks in the first round - and can be re-checked round by round as the search continues"
+  },
+  {
+   "name": "whz2SnowNotAirtight",
+   "value": true,
+   "comment": "the snow cover over a victim is not airtight and may contain trapped pockets of air, so he need not worry immediately about breathing"
+  },
+  {
+   "name": "whz2BreathThenConChecks",
+   "value": true,
+   "comment": "after the trapped air expires the character is treated as holding his breath without a chance to take a deep breath first (see the Swimming section); when the hold-breath time limit expires he makes Constitution Checks, and a failed check means he has suffocated"
+  },
+  {
+   "name": "whz2RockfallValleyPeaks",
+   "value": true,
+   "comment": "rockfalls occur in mountainous areas, especially where a deep valley separates two sharply rising peaks"
+  },
+  {
+   "name": "whz2RockfallCrackFreezeThaw",
+   "value": true,
+   "comment": "rockfalls are most likely where rock faces contain many cracks and outcroppings, during the time of year when the temperature fluctuates between freezing at night and well above freezing during the day - water accumulates in the cracks, expands as it freezes, and drives the rock masses apart until one breaks away and falls"
+  },
+  {
+   "name": "whz2CrumblingRockProne",
+   "value": true,
+   "comment": "some areas are more prone to rockfalls because of the composition of the rocks: a cliff or mountainside of crumbling or easily fractured rock can produce a significant rockfall"
+  },
+  {
+   "name": "whz2LooseRockSign",
+   "value": true,
+   "comment": "chunks of loose rock strewn at the base of a cliff or mountainside are a sure indication of an area where rockfalls are common"
+  },
+  {
+   "name": "whz2DexHalvesRockDmg",
+   "value": true,
+   "comment": "a successful Dexterity Check means the character takes only half damage from each rock that hits him, reflecting his ability to move and take the blows on less vital areas - but any rock that hits does at least 1 point"
+  },
+  {
+   "name": "whz2ShieldOverHead",
+   "value": true,
+   "comment": "a character climbing a cliff when a rockfall occurs can protect himself quite well by holding a shield over his head with both hands"
+  },
+  {
+   "name": "whz2ShieldConditions",
+   "value": true,
+   "comment": "the shield tactic only works if the character has the free use of both hands, is carrying a shield, and has time to get it into position before he is hit"
+  },
+  {
+   "name": "whz2UnconsciousFalls",
+   "value": true,
+   "comment": "two hits on the head knock a character unconscious, which will certainly cause him to fall unless he is in a very stable position such as a wide ledge, or fastened to the cliff face"
+  },
+  {
+   "name": "whz2MudslideConditions",
+   "value": true,
+   "comment": "mudslides occur in a specific set of conditions: a moderate or severe slope with a fairly thick covering of loose topsoil, usually devoid of vegetation or only sparsely covered, that has been drenched with rain along with adjacent higher-elevation ground - the earth may absorb so much water that it loses its adherence to the subsoil and becomes a giant puddle of thick mud"
+  },
+  {
+   "name": "whz2MudslideModerateMix",
+   "value": true,
+   "comment": "if the mixture gets to the point where it contains as much water as earth, the layer of mud slides down a moderate slope and settles in a flat spot at lower elevation; on a severe slope the mixture slides when it contains substantially less water"
+  },
+  {
+   "name": "whz2MudslideGrabVegetation",
+   "value": true,
+   "comment": "a character on the slope when a mudslide begins is unable to avoid being carried down unless the area contains some solidly rooted vegetation - a tree or a large shrub - that he is able to grab"
+  },
+  {
+   "name": "whz2MudslideRideSafe",
+   "value": true,
+   "comment": "the trip down is dirty but not, under normal circumstances, dangerous: a character takes no abrasion damage from the muddy tumble and no impact damage at the end of the ride"
+  },
+  {
+   "name": "whz2MudslideValleySink",
+   "value": true,
+   "comment": "but if the mudslide ends in a deep valley where a significant depth of mud can collect, a character may sink into the mire and suffocate"
+  },
+  {
+   "name": "whz2MudSwimmerStaysOnTop",
+   "value": true,
+   "comment": "a character with swimming proficiency can stay on top of the mud indefinitely, as long as his encumbrance enables him to swim"
+  },
+  {
+   "name": "whz2MudNonSwimmerHalfAfloat",
+   "value": true,
+   "comment": "a character without swimming proficiency can tread water on top of the mud for half as long as he is able to stay afloat in water"
+  },
+  {
+   "name": "whz2MudStrengthCheckPerRound",
+   "value": true,
+   "comment": "after the non-swimmer's treading time expires, a Strength Check once per round: failure indicates he has sunk beneath the surface"
+  },
+  {
+   "name": "whz2MudBreathThenCon",
+   "value": true,
+   "comment": "a character sunk into the mud can survive for at least as long as he can hold his breath; when that time limit expires he must make Constitution Checks as described in Holding One's Breath, and a failed check indicates he has suffocated"
+  },
+  {
+   "name": "whz2QuicksandInWetLowland",
+   "value": true,
+   "comment": "in any swamp or wet, low-lying area characters may stumble upon a patch of quicksand - an area where water has saturated the ground to such an extent and depth that the terrain is thick and mushy"
+  },
+  {
+   "name": "whz2QuicksandCanBeMud",
+   "value": true,
+   "comment": "despite its name, quicksand can be composed of earth as well as sand; in such a case it is nothing more than a mudhole, dealt with in the same manner as a mudslide"
+  },
+  {
+   "name": "whz2SandyQuicksandWorse",
+   "value": true,
+   "comment": "quicksand actually composed of sand is somewhat more treacherous than muddy quicksand, because the water-and-sand mixture is generally not as thick as a mudhole, so someone who walks or falls into it sinks more quickly"
+  },
+  {
+   "name": "whz2QuicksandNoSuction",
+   "value": true,
+   "comment": "contrary to the popular impression, quicksand does not suck a victim beneath the surface"
+  },
+  {
+   "name": "whz2QuicksandSelfRescue",
+   "value": true,
+   "comment": "someone who keeps his wits about him and his head above the surface can save himself by treading water and, with swimming proficiency, making his way along the surface to a place of safety"
+  },
+  {
+   "name": "whz2QuicksandSameAsMudslide",
+   "value": true,
+   "comment": "a character who falls into quicksand is in the same situation as someone caught in a mudslide"
+  },
+  {
+   "name": "whz2PoleRescue",
+   "value": true,
+   "comment": "a nearby companion may be able to help a non-swimmer by extending a pole or branch that the victim can grab to help pull himself out"
+  },
+  {
+   "name": "whz2RescuerMustSwim",
+   "value": true,
+   "comment": "a rescuer who enters the quicksand to help a companion must have proficiency in swimming or he will find himself in the same situation; a swimmer can enter and pull a victim to safety without jeopardizing himself"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the flood dice: a flash flood runs d6+9 rounds and leaves 3d8 hours of afterflow, and the battering damage spans 1d3 to 1d6",
+   "expr": "m['whz2FlashRoundsMin']() + 5 != m['whz2FlashRoundsMax']() or m['whz2AfterflowHoursMin']() + 21 != m['whz2AfterflowHoursMax']() or m['whz2GrabFailDmgMin']() + 3 != m['whz2GrabFailDmgMax']()"
+  },
+  {
+   "note": "the flash flood speeds 30 to 50 mph downhill from a 10,000-foot trickle to a 5,000-foot torrent",
+   "expr": "m['whz2FlashMinMph']() + 20 != m['whz2FlashMaxMph']() or m['whz2FlashLowerElevFt']() * 2 != m['whz2FlashStartElevFt']()"
+  },
+  {
+   "note": "the avalanche dice: 2d10 to 3d20 damage, 2d3 feet of burial or 4d3 at the bottom, 1d6+4 rounds of trapped air",
+   "expr": "m['whz2AvalancheDmgMin']() + 58 != m['whz2AvalancheDmgMax']() or m['whz2BuriedFtMin']() + 4 != m['whz2BuriedFtMax']() or m['whz2BuriedBottomMin']() + 8 != m['whz2BuriedBottomMax']() or m['whz2AirRoundsMin']() + 5 != m['whz2AirRoundsMax']()"
+  },
+  {
+   "note": "the dig rates: 1 foot per round digging out alone, 2 with hands or 3 with a tool for a comrade, plus 1 per extra digger up to 3",
+   "expr": "m['whz2DigHandsFtPerRound']() + 1 != m['whz2DigToolFtPerRound']() or m['whz2DigSelfFtPerRound']() != 1 or m['whz2ExtraDiggerFtPerRound']() != 1 or m['whz2MaxDiggers']() != 3"
+  },
+  {
+   "note": "the find chance builds from the 10 percent base: +1 per intelligence point and +25 if the victim digs, for 35 before intelligence",
+   "expr": "m['whz2FindBasePct']() + m['whz2FindVictimDiggingBonusPct']() != 35 or m['whz2FindPerIntPct']() != 1"
+  },
+  {
+   "note": "the rockfall monster hit dice and damage dice strictly ascend by position: 5 HD 1d4 on the slope, 7 HD 1d6 on the cliff face, 10 HD 1d8 at the base",
+   "expr": "m['whz2RockMonsterHd']() >= m['whz2CliffRockMonsterHd']() or m['whz2CliffRockMonsterHd']() >= m['whz2BaseRockMonsterHd']() or m['whz2RockDmgDie']() >= m['whz2CliffRockDmgDie']() or m['whz2CliffRockDmgDie']() >= m['whz2BaseRockDmgDie']()"
+  },
+  {
+   "note": "the slope rockfall: 4 attacks per round for 1d4+1 rounds",
+   "expr": "m['whz2RockAtkPerRound']() != 4 or m['whz2RockDurationMin']() + 3 != m['whz2RockDurationMax']()"
+  },
+  {
+   "note": "the two cliff-face count formulas agree in range - 1d4-1 for the warned climbers and 1d6-3 for the unwarned, both topping out at 3 rocks per round",
+   "expr": "m['whz2CliffNoticedDieMax']() + 2 != m['whz2CliffUnnoticedDieMax']() or m['whz2CliffRocksMaxPerRound']() != 3"
+  },
+  {
+   "note": "the cliff-face threshold dice: any roll of 3 or more forces a Climbing Check and a 5 or 6 is a head hit, on both the 1d6 cliff face and the 1d8 base",
+   "expr": "m['whz2ClimbCheckDmgRoll']() >= m['whz2HeadHitDmgRoll']() or m['whz2BaseHeadHitDmgRoll']() != m['whz2HeadHitDmgRoll']()"
+  },
+  {
+   "note": "the shield intercepts 75 percent, the huddled character holds 50 percent of the time, and the prone area sheds a significant rockfall every 2 months",
+   "expr": "m['whz2ShieldInterceptPct']() != 75 or m['whz2HuddledHoldPct']() != 50 or m['whz2ProneRockfallMonths']() != 2"
+  },
+  {
+   "note": "the cliff-face rockfall lasts 1-2 rounds, the mud swimmer creeps at the 1-inch rate, and the pass danger window is 3 hours",
+   "expr": "m['whz2CliffRockRoundsMin']() + 1 != m['whz2CliffRockRoundsMax']() or m['whz2MudSwimMoveInches']() != 1 or m['whz2PassRainWindowHrs']() != 3"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "The tidal wave death-rule tail": [
+   {
+    "kind": "bool",
+    "name": "whz2TidalDirectPathDrowns"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2TidalLateSurvivable"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2TidalNonSwimmerDoomed"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2TidalDMJudgment"
+   }
+  ],
+  "Floods": [
+   {
+    "kind": "bool",
+    "name": "whz2WaterFlowsDownhill"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2OverflowBeyondContainer"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2FloodFromHeavyRain"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2FloodFromSnowmelt"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2FrozenGroundIntensifies"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2FloodNearRiverLake"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2FlashFleeting"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2FlashMountainous"
+   },
+   {
+    "kind": "const",
+    "name": "whz2FlashStartElevFt"
+   },
+   {
+    "kind": "const",
+    "name": "whz2FlashLowerElevFt"
+   },
+   {
+    "kind": "const",
+    "name": "whz2FlashMinMph"
+   },
+   {
+    "kind": "const",
+    "name": "whz2FlashMaxMph"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2TidalLikeFlashFlood"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2AvoidByMovingAway"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2PassGullyWarning"
+   },
+   {
+    "kind": "const",
+    "name": "whz2PassRainWindowHrs"
+   }
+  ],
+  "Caught in a flash flood": [
+   {
+    "kind": "bool",
+    "name": "whz2SwimmerAvoidsDrowning"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2NonSwimmerTreads"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2GrabProtrusion"
+   },
+   {
+    "kind": "const",
+    "name": "whz2GrabFailDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "whz2GrabFailDmgMax"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2HoldEvery2Rounds"
+   },
+   {
+    "kind": "const",
+    "name": "whz2FlashRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "whz2FlashRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "whz2AfterflowHoursMin"
+   },
+   {
+    "kind": "const",
+    "name": "whz2AfterflowHoursMax"
+   }
+  ],
+  "Avalanches": [
+   {
+    "kind": "bool",
+    "name": "whz2AvalancheSnowIce"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2RockfallEarthRock"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2MudslideEarthWater"
+   },
+   {
+    "kind": "const",
+    "name": "whz2AvalancheSnowInches"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2AvalancheWarmDay"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2BareRockIncreases"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2AvalancheGrowsAsFalls"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2BaseWorseThanUpslope"
+   },
+   {
+    "kind": "const",
+    "name": "whz2AvalancheDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "whz2AvalancheDmgMax"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2CurlHalvesDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2StandingBendBars"
+   },
+   {
+    "kind": "const",
+    "name": "whz2HuddledHoldPct"
+   },
+   {
+    "kind": "const",
+    "name": "whz2BuriedFtMin"
+   },
+   {
+    "kind": "const",
+    "name": "whz2BuriedFtMax"
+   },
+   {
+    "kind": "const",
+    "name": "whz2BuriedBottomMin"
+   },
+   {
+    "kind": "const",
+    "name": "whz2BuriedBottomMax"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2BuriedConCheck"
+   },
+   {
+    "kind": "const",
+    "name": "whz2DigSelfFtPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2HuddledOriented"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2OthersWisdomCheck"
+   },
+   {
+    "kind": "const",
+    "name": "whz2FindBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "whz2FindPerIntPct"
+   },
+   {
+    "kind": "const",
+    "name": "whz2FindVictimDiggingBonusPct"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2FindPerSearcherPerVictim"
+   },
+   {
+    "kind": "const",
+    "name": "whz2DigHandsFtPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "whz2DigToolFtPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "whz2MaxDiggers"
+   },
+   {
+    "kind": "const",
+    "name": "whz2ExtraDiggerFtPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2SnowNotAirtight"
+   },
+   {
+    "kind": "const",
+    "name": "whz2AirRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "whz2AirRoundsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2BreathThenConChecks"
+   }
+  ],
+  "Rockfalls": [
+   {
+    "kind": "bool",
+    "name": "whz2RockfallValleyPeaks"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2RockfallCrackFreezeThaw"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2CrumblingRockProne"
+   },
+   {
+    "kind": "const",
+    "name": "whz2ProneRockfallMonths"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2LooseRockSign"
+   },
+   {
+    "kind": "const",
+    "name": "whz2RockAtkPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "whz2RockDurationMin"
+   },
+   {
+    "kind": "const",
+    "name": "whz2RockDurationMax"
+   },
+   {
+    "kind": "const",
+    "name": "whz2RockMonsterHd"
+   },
+   {
+    "kind": "const",
+    "name": "whz2RockDmgDie"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2DexHalvesRockDmg"
+   },
+   {
+    "kind": "const",
+    "name": "whz2RockSweepDmgThreshold"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2ShieldOverHead"
+   },
+   {
+    "kind": "const",
+    "name": "whz2ShieldInterceptPct"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2ShieldConditions"
+   },
+   {
+    "kind": "const",
+    "name": "whz2ShieldUnstrapBackRounds"
+   },
+   {
+    "kind": "const",
+    "name": "whz2ShieldUnstrapBeltHalfRounds"
+   },
+   {
+    "kind": "const",
+    "name": "whz2CliffRockRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "whz2CliffRockRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "whz2CliffRocksMaxPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "whz2CliffRockMonsterHd"
+   },
+   {
+    "kind": "const",
+    "name": "whz2CliffNoticedDieMax"
+   },
+   {
+    "kind": "const",
+    "name": "whz2CliffUnnoticedDieMax"
+   },
+   {
+    "kind": "const",
+    "name": "whz2CliffRockDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "whz2ClimbCheckDmgRoll"
+   },
+   {
+    "kind": "const",
+    "name": "whz2HeadHitDmgRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2UnconsciousFalls"
+   },
+   {
+    "kind": "const",
+    "name": "whz2BaseRockMonsterHd"
+   },
+   {
+    "kind": "const",
+    "name": "whz2BaseRockDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "whz2BaseHeadHitDmgRoll"
+   }
+  ],
+  "Mudslides": [
+   {
+    "kind": "bool",
+    "name": "whz2MudslideConditions"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2MudslideModerateMix"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2MudslideGrabVegetation"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2MudslideRideSafe"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2MudslideValleySink"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2MudSwimmerStaysOnTop"
+   },
+   {
+    "kind": "const",
+    "name": "whz2MudSwimMoveInches"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2MudNonSwimmerHalfAfloat"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2MudStrengthCheckPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2MudBreathThenCon"
+   }
+  ],
+  "Quicksand": [
+   {
+    "kind": "bool",
+    "name": "whz2QuicksandInWetLowland"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2QuicksandCanBeMud"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2SandyQuicksandWorse"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2QuicksandNoSuction"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2QuicksandSelfRescue"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2QuicksandSameAsMudslide"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2PoleRescue"
+   },
+   {
+    "kind": "bool",
+    "name": "whz2RescuerMustSwim"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the tidal waves box",
+   "from": "  - [ ] Tidal waves (p. 79)",
+   "to": "  - [x] Tidal waves (p. 79) - R487: the sighting, approach and death rules for the wave, the tail landing with R486 and the drowning and go-with-the-flow rules pin as rules/wsghazd2.h"
+  },
+  {
+   "note": "the floods and flash floods box",
+   "from": "  - [ ] Floods and flash floods (p. 80)",
+   "to": "  - [x] Floods and flash floods (p. 80) - R487: the flood and flash flood causes with the d6+9-round duration and the strength-check protrusion chain pin as rules/wsghazd2.h"
+  },
+  {
+   "note": "the avalanches, rockfalls and mudslides box",
+   "from": "  - [ ] Avalanches, rockfalls, and mudslides (p. 80)",
+   "to": "  - [x] Avalanches, rockfalls, and mudslides (p. 80) - R487: the avalanche burial and digging rules, the slope, cliff-face and base rockfall bands and the mudslide sinking rules pin as rules/wsghazd2.h"
+  },
+  {
+   "note": "the quicksand box",
+   "from": "  - [ ] Quicksand (p. 83)",
+   "to": "  - [x] Quicksand (p. 83) - R487: the no-suction rule with the treading self-rescue and the pole and swimmer rescues pin as rules/wsghazd2.h"
+  },
+  {
+   "note": "the post-state line",
+   "from": "Post-state at R486: 118 closed, 68 open (the R486 round opens the natural hazards chapter - the volcano, earthquake and tidal wave approach rules through printed p. 79 pin as rules/wsghazd.h; the next round finishes the tidal wave death rules and continues - floods and flash floods (p. 80)).",
+   "to": "Post-state at R487: 122 closed, 64 open (the R487 round CLOSES the natural hazards chapter - the tidal wave death rules, floods and flash floods, avalanches, rockfalls and mudslides, and quicksand pin as rules/wsghazd2.h; the next round opens the wilderness combat chapter - fighting while climbing (p. 84))."
+  }
+ ],
+ "gap_census": {
+  "closed": 122,
+  "open": 64
+ },
+ "include_after": "#include \"rules/wsghazd.h\"  // R486: the WSG volcano, earthquake and tidal wave hazard rules",
+ "include_comment": "the WSG flood, avalanche, mudslide and quicksand hazard rules",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R486 LANDED 2026-10-15: commit 908b31b (census 411, pushed",
+ "prev_record": [
+  "- R486 LANDED 2026-10-15: commit 908b31b (census 411, pushed",
+  "  e9d27ae..908b31b), the WSG NATURAL HAZARDS opener slice,",
+  "  printed pp. 76-79 - the FIRST content-density round (the",
+  "  post-R485 scope decision): four pages in one round, pinned",
+  "  as rules/wsghazd.h with the include after wsglight.h at",
+  "  line 191 (prefix whz, free on the first probe across all",
+  "  277 rules headers, regtest, both caller TUs, the seed and",
+  "  the gap report). The volcano frame: three eruption types -",
+  "  lava, ash, explosive - each volcano locked to one type,",
+  "  dormant volcanoes awakening in days or hours, the",
+  "  perpetually active ones spitting reminders every few",
+  "  weeks. Lava: magma inside, lava expelled; fluid magma",
+  "  sprays less violently; side fissures dissipate but never",
+  "  eliminate the crater flow; incinerates even barely flowing",
+  "  and retains serious-burn heat 2d3 weeks after stopping; a",
+  "  mobile character almost certainly avoids the 250-yd/hr",
+  "  flow, but pyroclastic bombs and blocks are the greater",
+  "  danger. The 1d4 lava bands: 1-2 fluid 2d6 days, 1d6/turn",
+  "  within 500 yd, +50 deg at 1/4 mi tapering 10 deg per",
+  "  1/4 mi to nothing at 1.5 mi; 3 thick 2d4 days, 1d4/turn,",
+  "  +30 deg dying at 1 mi; 4 thick plus pyroclastics, 1%/hr",
+  "  within 1000 yd hit for 2d6, +5%/hr and +1d6 per 100 yd",
+  "  closer. Ash: overshadowed lava, seldom violent past the",
+  "  opening blast; 2000-3000 ft opaque cloud, lighter ash",
+  "  dozens of miles settling 3-4 in; kills green plants yet",
+  "  is a supreme fertilizer; St. Helens 1980-81, six",
+  "  incidents over 10 months, mudslides over 100,000 acres,",
+  "  the 10-megaton May 18 blast flattening trees 4 mi out, the",
+  "  peak 9,677 to 8,364 ft. The 1d6 ash bands: 1-3 light",
+  "  12+ hr/day for 1d4+2 weeks, 2 in at 1d10+15 mi, 6 in",
+  "  within 1d6+4 mi, 1d3/turn within 2000 yd, save vs breath",
+  "  weapon/turn against a choking fit (-4 atk, +4 to be hit),",
+  "  two straight fails 1d4/round dying without aid in one",
+  "  turn; 4-5 heavy 1d6+5 hr/day for 1d3 weeks, 1d6+9 mi,",
+  "  9 in within 1d6+2 mi, danger zone 4000 yd; 6 heavy plus",
+  "  pyroclastics the first 3-8 days. Explosive: the salvo",
+  "  blows the top off; sight range mortal - the cloud and the",
+  "  3-5-mi glowing avalanche exude double-strength cloudkill,",
+  "  half a round of breath slaying below 8+1 HD, 8+1 to 10+1",
+  "  saving at -4, above saving normally; 1d3 days of warning",
+  "  first. Earthquakes: fault-line pressure, shock waves",
+  "  outdamaging the shift, quakes triggering quakes,",
+  "  aftershocks for days. Light: seconds of shiver, no direct",
+  "  harm, but spells ruined, the jostled trap-working thief",
+  "  failing 50%, the tightrope walker halved and falling",
+  "  without a Dex Check. Moderate: 10-15 sec (d6+9), 20%",
+  "  shorter, 30% longer to 30; both Dex+Str to straddle a",
+  "  limb, Climbing -50%, specialist missile -2 save point",
+  "  blank, non-specialist -3/-5/-7, melee -3 with slip-and-",
+  "  fall on a miss, rockfall/mudslide, 1-in-8 uprooted tree,",
+  "  the fissure with falling/abrasion/crush. Severe: all",
+  "  doubled, Climbing -100%, melee -6, 40-90 sec (1d6+3",
+  "  tens), hit the ground. Tidal waves: undersea cataclysm,",
+  "  the ocean passing the force on for thousands of miles;",
+  "  sighted 1/2 mi out, >=150 mph, <30 sec warning, >=75 ft",
+  "  by 500 ft, ~30 million gallons; several miles inland at",
+  "  20 mph, the 5,000-ft cliff sparing those hundreds of",
+  "  yards back while the 20-mi lowland fears as much as the",
+  "  coast; the direct-path victim dies. THE SETTLE: two-way",
+  "  clean on the first pass - the tesseract, pdfy and tsv",
+  "  reads agree on every number of all four pages; the",
+  "  garbles settled without contest (17/ and 1V2 both 1.5",
+  "  miles, /s and V4 the 1/4-mi reference distance,",
+  "  underatreehasa1in 8 is under a tree has a 1 in 8, the",
+  "  book's own crevasse spelling stands, (1d6 +3) beside",
+  "  40-90 seconds is tens-of-seconds notation). Printed p. 79",
+  "  ends mid-sentence at and he will - the tidal wave",
+  "  death-rule continuation rides with R487, and the tidal",
+  "  waves box stays open. The spec md5 pair: authored",
+  "  0c00efe722f1bccb4b6964cb2fde1c8e, as-built",
+  "  2e016efec5fbb629d3d4daa70068c506 (the Termux md5 hit the",
+  "  +nl pair value exactly). rverify at e9d27ae: 160",
+  "  mutants, 0 missed (95 consts + 65 bools); inline_count",
+  "  160; census 410 -> 411; the gap flips 113/73 -> 118/68",
+  "  (volcanoes, lava, ash, explosive, earthquakes - the",
+  "  tidal box held open), the R485 seed record in place.",
+  "  Next: R487 - the tidal wave death-rule tail plus floods",
+  "  and flash floods (p. 80), continuing the natural hazards"
+ ]
+}

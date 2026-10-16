@@ -5298,6 +5298,84 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   seed record in place.
   Next: R486 - volcanoes (p. 76), opening the natural
   hazards chapter (pp. 76-83)
+- R486 LANDED 2026-10-15: commit 908b31b (census 411, pushed
+  e9d27ae..908b31b), the WSG NATURAL HAZARDS opener slice,
+  printed pp. 76-79 - the FIRST content-density round (the
+  post-R485 scope decision): four pages in one round, pinned
+  as rules/wsghazd.h with the include after wsglight.h at
+  line 191 (prefix whz, free on the first probe across all
+  277 rules headers, regtest, both caller TUs, the seed and
+  the gap report). The volcano frame: three eruption types -
+  lava, ash, explosive - each volcano locked to one type,
+  dormant volcanoes awakening in days or hours, the
+  perpetually active ones spitting reminders every few
+  weeks. Lava: magma inside, lava expelled; fluid magma
+  sprays less violently; side fissures dissipate but never
+  eliminate the crater flow; incinerates even barely flowing
+  and retains serious-burn heat 2d3 weeks after stopping; a
+  mobile character almost certainly avoids the 250-yd/hr
+  flow, but pyroclastic bombs and blocks are the greater
+  danger. The 1d4 lava bands: 1-2 fluid 2d6 days, 1d6/turn
+  within 500 yd, +50 deg at 1/4 mi tapering 10 deg per
+  1/4 mi to nothing at 1.5 mi; 3 thick 2d4 days, 1d4/turn,
+  +30 deg dying at 1 mi; 4 thick plus pyroclastics, 1%/hr
+  within 1000 yd hit for 2d6, +5%/hr and +1d6 per 100 yd
+  closer. Ash: overshadowed lava, seldom violent past the
+  opening blast; 2000-3000 ft opaque cloud, lighter ash
+  dozens of miles settling 3-4 in; kills green plants yet
+  is a supreme fertilizer; St. Helens 1980-81, six
+  incidents over 10 months, mudslides over 100,000 acres,
+  the 10-megaton May 18 blast flattening trees 4 mi out, the
+  peak 9,677 to 8,364 ft. The 1d6 ash bands: 1-3 light
+  12+ hr/day for 1d4+2 weeks, 2 in at 1d10+15 mi, 6 in
+  within 1d6+4 mi, 1d3/turn within 2000 yd, save vs breath
+  weapon/turn against a choking fit (-4 atk, +4 to be hit),
+  two straight fails 1d4/round dying without aid in one
+  turn; 4-5 heavy 1d6+5 hr/day for 1d3 weeks, 1d6+9 mi,
+  9 in within 1d6+2 mi, danger zone 4000 yd; 6 heavy plus
+  pyroclastics the first 3-8 days. Explosive: the salvo
+  blows the top off; sight range mortal - the cloud and the
+  3-5-mi glowing avalanche exude double-strength cloudkill,
+  half a round of breath slaying below 8+1 HD, 8+1 to 10+1
+  saving at -4, above saving normally; 1d3 days of warning
+  first. Earthquakes: fault-line pressure, shock waves
+  outdamaging the shift, quakes triggering quakes,
+  aftershocks for days. Light: seconds of shiver, no direct
+  harm, but spells ruined, the jostled trap-working thief
+  failing 50%, the tightrope walker halved and falling
+  without a Dex Check. Moderate: 10-15 sec (d6+9), 20%
+  shorter, 30% longer to 30; both Dex+Str to straddle a
+  limb, Climbing -50%, specialist missile -2 save point
+  blank, non-specialist -3/-5/-7, melee -3 with slip-and-
+  fall on a miss, rockfall/mudslide, 1-in-8 uprooted tree,
+  the fissure with falling/abrasion/crush. Severe: all
+  doubled, Climbing -100%, melee -6, 40-90 sec (1d6+3
+  tens), hit the ground. Tidal waves: undersea cataclysm,
+  the ocean passing the force on for thousands of miles;
+  sighted 1/2 mi out, >=150 mph, <30 sec warning, >=75 ft
+  by 500 ft, ~30 million gallons; several miles inland at
+  20 mph, the 5,000-ft cliff sparing those hundreds of
+  yards back while the 20-mi lowland fears as much as the
+  coast; the direct-path victim dies. THE SETTLE: two-way
+  clean on the first pass - the tesseract, pdfy and tsv
+  reads agree on every number of all four pages; the
+  garbles settled without contest (17/ and 1V2 both 1.5
+  miles, /s and V4 the 1/4-mi reference distance,
+  underatreehasa1in 8 is under a tree has a 1 in 8, the
+  book's own crevasse spelling stands, (1d6 +3) beside
+  40-90 seconds is tens-of-seconds notation). Printed p. 79
+  ends mid-sentence at and he will - the tidal wave
+  death-rule continuation rides with R487, and the tidal
+  waves box stays open. The spec md5 pair: authored
+  0c00efe722f1bccb4b6964cb2fde1c8e, as-built
+  2e016efec5fbb629d3d4daa70068c506 (the Termux md5 hit the
+  +nl pair value exactly). rverify at e9d27ae: 160
+  mutants, 0 missed (95 consts + 65 bools); inline_count
+  160; census 410 -> 411; the gap flips 113/73 -> 118/68
+  (volcanoes, lava, ash, explosive, earthquakes - the
+  tidal box held open), the R485 seed record in place.
+  Next: R487 - the tidal wave death-rule tail plus floods
+  and flash floods (p. 80), continuing the natural hazards
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
