@@ -1,0 +1,122 @@
+COMBAT RULES
+FOR WILDERNESS PLAY
+
+Characters naturally prefer to engage in combat when they are
+in a position that affords them the greatest possible opportunity
+for attack and the best possible defensive posture. Unfortu-
+nately, the wilderness environment and the creatures that popu-
+late it are not usually so accommodating. More often than they
+would like, characters will be required to attack or defend in a po-
+sition that is far from the best possible. At other times, they may
+enjoy an advantage when the tables are turned and the oppo-
+nents are the ones in the weaker position.
+
+Some combat rules that account for unusual situations are cov-
+ered in Dungeoneer’s Survival Guide on pages 30-34. For the
+benefit of player and Dungeon Masters who do not have access
+to that volume, some of those rules are summarized in this sec-
+tion. Additionally, this section goes into detail about some other
+nonstandard combat situations that are peculiar to the outdoors.
+
+Fighting While Climbing
+
+In most circumstances, a character negotiating a severe slope
+or a cliff face is at a disadvantage if he is required to attack or de-
+fend himself. Because his attention and effort must be at least
+partially focused at all times on climbing, he does not benefit from
+any armor class bonus due to dexterity that would otherwise ap-
+ply. (However, an armor class penalty for low dexterity is not ne-
+gated.) Assuming that the climber needs one hand to hold onto a
+rope or the surface he is climbing, he cannot use two weapons, or
+a weapon and a shield, at the same time. Since he is facing the
+surface he is climbing, he is vulnerable to attacks from behind
+(with all appropriate penalties) from any opponent except one
+that is adjacent to him on the surface. If a character is climbing
+with his shield strapped to his back, he receives an armor class
+benefit of one step (from 6 to 5, for instance) for a buckler or a
+small shield and a benefit of two steps for any larger shield.
+
+A character climbing a cliff face suffers a —2 penalty to all of
+his attack rolls (*‘to hit"' and damage) in melee or missile combat,
+and a —2 penalty on all saving throws related to an attempt to
+dodge or evade. If fighting is taking place on a severe slope,
+these penalties are —1 instead of —2.
+
+If opponents are engaging one another from different eleva-
+tions on a cliff face (one combatant is above the other by a dis-
+tance of at least half of the higher combatant’s height), the
+character in the higher position receives a +2 bonus "'to hit" and
+the character in the lower position suffers a —2 penalty “‘to hit.”
+These adjustments are cumulative with any other modifiers that
+may apply. On a severe slope, the adjustments are +1 and —1.
+
+If a character climbing a cliff face suffers damage from an at-
+tack in missile or melee combat (including damage from a spell
+effect), he must make a Climbing Check immediately. If the
+check succeeds, the character remains in place; if it fails, the
+character falls. On a severe slope, this Climbing Check is made
+with a +10% bonus to the character’s Climbing Rating.
+
+If a character takes damage from a single attack equal to or
+greater than one-half of the character’s total hit points (rounded
+up), a Climbing Check to avoid falling must be made with a
+—10% penalty to the character's Climbing Rating. This penalty
+applies both on a cliff face and on a severe slope.
+
+Climbing a gentle slope or even a moderate slope does not
+usually put a character at a disadvantage if he is forced to engage
+in combat in the middle of the climb. Such terrain is usually not so
+steep that the climber cannot stand up and have the full use of
+both hands plus a reasonable amount of mobility. At the Dungeon
+Master's discretion, the "‘to hit"’ adjustments for relative eleva-
+tion of the combatants (+1 and —1) may apply on a moderate
+slope, especially one that is just short of qualifying for the severe
+category. Likewise, the Dungeon Master may rule that a charac-
+ter who takes a significant amount of damage in a single attack
+will be knocked off his feet and will tumble down a moderate or
+gentle slope. (If a character is extremely outmanned and prefers
+not to stand and fight, voluntarily tumbling down a slope to get
+away from his enemies might be a viable strategy.)
+
+Fighting While
+Precariously Balanced
+
+This category is somewhat different from fighting while climb-
+ing, in that a precariously balanced character is considered to be
+perched on a surface where he does not need to use at least one
+hand to hold on, and does not necessarily have to face the sur-
+face (if any) that his body is next to. A character is precariously
+balanced in conditions such as these: standing on a ledge that
+juts out from a cliff face or a severe slope; standing on a narrow
+bridge of rock or a fallen tree that is spanning a canyon; standing
+up in a boat or on the edge of a barge; standing in knee-deep wa-
+ter or mud, or upon loose soil or snow in which one’s feet sink be-
+neath the surface of the terrain; and standing upon a level but
+slippery surface.
+
+In situations such as these, a character must be careful not to
+get overbalanced, or his lack of secure footing (or lack of a suffi-
+ciently large area to move upon) may cause him distress during
+combat. Whenever a character engaged in melee combat misses
+an attack, he must make a successful Dexterity Check to avoid
+losing his balance and falling down — perhaps falling down a
+long distance. The Dungeon Master may allow a modifier to the
+Dexterity Check die roll of —1 to —4, reflecting circumstances
+where overbalancing is less likely to result in a fall: —4 for a char-
+acter knee-deep in mud, which helps to hold him upright despite
+a lack of really secure footing; —2 for a character standing on a
+fairly wide ledge that offers him room to take a step on his follow-
+through and thus keep himself from toppling; or no modifier for a
+character standing on a slippery surface, where his ability to keep
+his balance depends entirely on how dextrous he is and not on
+some advantage afforded by where he is located.
+
+If a character in a precarious position at a high elevation is hit
+by an attack that causes loss of consciousness or inflicts damage
+equal to or greater than 10% of the victim’s total hit points, he
+must make a successful Dexterity Check to avoid falling from his
+position. If the victim is not standing right at the edge of a dropoff,
+he receives a —2 modifier to the Dexterity Check die roll for every
+foot of distance between him and the edge. If he is 10 feet or more
+from the edge of a dropoff, he is not considered to be in a precari-
+ous position, and does not need to make this Dexterity Check.

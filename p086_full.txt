@@ -1,0 +1,70 @@
+Someone balanced on a ledge barely wide enough for his feet re-
+ceives no modifier; someone who is nine feet away from the edge
+of a dropoff has a — 18 modifier and is virtually assured of not fall-
+ing — although, as with any ability check, an unmodified roll of 19
+or 20 indicates failure. In the case of a character who falls despite
+the fact that he was a fair distance from the edge of his perch, as-
+sume that he did not fall to the ground right away, but instead
+staggered for a short distance toward the edge before dropping
+over.
+
+The above general rule also applies to a character who is pre-
+cariously balanced but not at a high elevation: he is in danger of
+being knocked off his feet if he takes a large amount of damage,
+and he will certainly fall down (as would anyone in a more stable
+position) if he is rendered unconscious. Depending on what the
+victim is standing on (or in), he may be vulnerable to drowning or
+suffocation. For instance, a character who is knee-deep in water
+and gets hit by a sleep spell will keel over. Beginning on the fol-
+lowing round, he must make successful Constitution Checks as
+though he was holding his breath underwater and had run out of
+air (see the section on Swimming). If he does not regain con-
+sciousness or is not rescued before failing a Constitution Check,
+he will die. A character who falls unconscious in loose soil (includ-
+ing sand) or snow must make a Dexterity Check with a —2 modi-
+fier to the die roll. Failure indicates that he has landed face down,
+and must then begin making Constitution Checks as described
+above. If the victim is not revived or at least rolled over on his
+back before failing a Constitution Check, he will die of suffoca-
+tion.
+
+Whenever a character is knocked off his feet and does not lose
+consciousness, he must make a Dexterity Check. A successful
+check indicates that he is able to regain his feet in five segments;
+a failed check means that he must take a full round to stand and
+resume a fighting posture. A character who gets to his feet
+
+85
+
+FIGHTING IN WATER
+
+quickly may be able to make an attack or cast a spell during the
+last half of the round, if other conditions permit such an action.
+On a slippery surface, the Dexterity Check is made with a +4
+modifier to the die roll.
+
+Fighting in Water
+
+If a character engages in combat while standing in water that is
+at least up to his knees but not higher than his waist, he does not
+enjoy any benefit to armor class due to dexterity that he would
+normally have, and he must take a —1 penalty on all attack rolls
+(““to hit"" and damage) in addition to any other penaities that may
+apply. If the water is more than waist-high but not higher than the
+character’s chest, the penalty is —2. If the water is even higher,
+the penalty is —4. In no case, however, can the damage from a
+successful hit be reduced to less than 1 point.
+
+At the same time, any opponent attempting to hit a character
+who is immersed or partially immersed in water does so at the
+same penalty to its attack rolls (even if the opponent is not im-
+mersed), reflecting the fact that a smaller portion of the charac-
+ter's body is vulnerable to a weapon blow.
+
+Of course, these penalties do not apply to a creature that is na-
+tive to an aquatic environment, assuming that the creature can
+strike freely either above the water or below the surface. For a
+character with proficiency in swimming, the latter two penalties
+are reduced by one-half (to —1 and —2 respectively) and the first
+penalty (for water up to waist-deep) does not apply.
+
