@@ -1,0 +1,68 @@
+DAY-TO-DAY CHANGE
+temperatures during the warm part of the year may reach or ex- How to Use the Temperature Variation Table
+ceed 80 degrees. Winds are somewhat more active here than in
+the arctic. In the winter, winds usually blow from the arctic oron a Each terrain/climate type is represented by a set of twelve
+westerly angle from the arctic (northwest in the northern hemi- three-letter codes that describe the general temperature condi-
+sphere, southwest in the southern hemisphere), while in the sum- tions of that area during each month of the year. The first letter
+mer a prevailing westerly or tropical west wind (southwest in the identifies the lowest temperatures that will normally occur, the
+northern hemisphere, northwest in the southern hemisphere) is third letter identifies the highest temperatures that will normally
+more often the case. occur, and the second letter represents the mean, or average,
+high and low temperatures for that area. For example, the code
+Temperate climate extends from 50 degrees latitude to 31 de- for a subtropical plains area in the seventh month of the year
+grees (in the northern hemisphere, the line that roughly de- (early summer) is TW Z. The T indicates that the lowest tempera-
+scribes the border between the United States and Mexico). It is ture during that month will almost never be lower than 70; the Z
+the Earth's area of climatic compromise, and paradoxically also indicates that the temperature can rise as high as 115 on the hot-
+the area where the greatest extremes of temperature are re- test days; and the W indicates that on most days, the high tem-
+corded. As anyone who lives in the American Midwest can attest perature will be 95 and the low temperature 75.
+to, a temperate winter can be a real bone-chiller — and on the At the beginning of an adventure or an episode (such as when
+hottest days of a temperate summer, going into a steam bath to player characters find themselves abruptly transported to a dif-
+cool off can seem like a good idea. Winds can blow from the ferent area), use the second letter to ascertain the current tem-
+north, south, or west, but almost never from the east (except perature conditions. From this starting point, the temperature will
+along eastern seacoasts and in localized areas, such as the move up or down on a daily basis according to the results of the
+breeze that sometimes blows from Lake Michigan across the Day-to-Day Change Table (below).
+Wisconsin and lllinois shoreline; see the discussion of Local As a general rule, the lowest temperature of the day will occur
+Winds in the Optional Rules section). Wind velocity in the temper- just before sunrise, and the reading will gradually rise until the
+ate zone is as variable as the temperature. high temperature for the day is reached in early afternoon. After
+possibly remaining at the high point for a few hours (DM's discre-
+Subtropical climate predominates from 30 degrees latitude to tion), the reading will decrease gradually through the evening
+16 degrees (a line running along the southern edge of Mexico). and night until the next low point is reached just before sunrise on
+This area, like the temperate zone, is one of climatic extremes, the following day. Of course, this general rule should be modified
+but here they are more closely related to terrain. The subtropical or disregarded in special weather conditions or when the
+area of Earth's northern hemisphere includes the vast deserts of Dungeon Master judges that different times for high and low tem-
+Africa and Arabia, where rain hardly ever falls, and also the for- peratures should prevail.
+ests and jungles of India and Southeast Asia, where during the
+summer it rains almost constantly. The warm months can be very
+warm — as hot as the tropics — and in the cooler months, night- How to Use the Day-to-Day Change Table
+time low temperatures can actually be rather brisk. Winds in this
+area are highly variable in velocity, and they generally blow from Roll 2d6 for each day beyond the present one, either day by
+the east or from the east and toward the equator — the ‘‘trade day as needed or for a number of days in succession if desired.
+winds"' that explorers from Europe took advantage of on their Use two dice that are different in color or size, so that they can be
+journeys to the New World. designated as "‘die 1"" and "‘die 2."" This distinction is important
+whenever there is a chance of precipitation, as explained below.
+Tropical climate, in the area from 15 degrees latitude to 0 de- Follow the instructions below for how to interpret each cate-
+grees (the equator) is as consistently hot as the arctic is consist- gory on the Day-to-Day Change Table.
+ently cold. The temperature almost never drops below 70
+degrees, except during the winter months at high elevation when Temperature Change: Move up or down the letter scale as re-
+a “‘cold snap” of 65 or 60 degrees might occur. The summer is quired to ascertain what the next day’s high and low tempera-
+blisteringly hot, especially in flat areas (desert and plains) at low tures will be. If the present temperature is within the allowable
+elevation, and even being along the seacoast offers little relief. range (as indicated by the first and third letters of the Tempera-
+Winds are generally docile (except during storms, of course), and ture Code) but a move dictated by this table would take the result
+they most often blow in the same direction as the subtropical beyond that range, then stop when the extreme result is reached.
+trade winds. Example: The current temperature in a subarctic forest in the first
+Table A2: DAY-TO-DAY CHANGE
+Dice Temp. Chance of
+Roll Change Precipitation Wind Conditions
+ol : g %\MMBM £
+
+4 —2 steps yes From arctic, +10 mph*
+
+5 -1 step no Prevailing direction, +15 mph* * — Wind velocity in arctic and tropical cli-
+6 -1step = yes  Prevailing direction, aﬁw ‘mph* matic regions does not exceed 20 mph ex-
+_.l_T %’ﬂ , ;jf:'g(w;j,";?:'s". \_-"l',_g;&%fly_: 1= %ﬁl - .' cept in special conditions; in subarctic
+8 +1step = yes  Prevailing direction, =10 mph climate, 25-30 mph is the normal maximum.
+
+9 +1 step no Prevailing direction, —15 mph
+
+10 +2 steps yes From tropics, —10 mph ** — Consult Special Weather Table.
+iz lames e Vewsgno
+109
