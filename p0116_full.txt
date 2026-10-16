@@ -1,0 +1,72 @@
+                                                                                                                        RELATIVE HUMIDITY
+
+       /ce/S/eet Storm (I): Sleet is frozen or nearly frozen rain,            day after the heat wave, the temperature will automatically fall
+   formed when snow falls from a high altitude and passes                     one step, to Q. If a 7 or less is rolled on the Day-to-Day Change
+   through a layer of warmer air on its way to the ground. The                Table for that day, the temperature will fall an additional 1,2, or 3
+   warmer air melts the snow crystals back into droplets of wa-               steps. If an 8 or greater is rolled, the temperature remains at level
+   ter, and the water freezes during the remainder of its de-                 Q, since this is the highest the temperature can be under normal
+   scent. When the sleet hits the ground, it will coat anything it            circumstances.
+   touches; by the time the storm passes, stationary and in-
+   aminate objects may carry a coating of ice up to V2 or 3/4
+   inch thick.                                                                OPTIONAL R U L E S
+       Depending on its intensity, an ice storm will last from 20
+   minutes (if it occurs as heavy precipitation) up to two hours
+   (if it occurs as trace precipitation).Of course, the longer the            Relative Humidity
+   storm, the heavier the coating of ice that will result.
+                                                                                 This figure, expressed as a percentage, describes the amount
+      Lightning Storm (L): A lightning storm, or thunderstorm,                of water vapor in the air at a given temperature compared to the
+   can occur as a separate phenomenon in and of itself or as                  maximum amount of water vapor the air could hold at that tem-
+   the beginning stage of a longer rainstorm. If a lightning                  perature. The warmer the temperature, the more water vapor the
+   storm is indicated for a day on which moderate or light pre-               air can hold: air with a relative humidity of 100 percent is consid-
+   cipitation is supposed to fall, then the storm will occur by it-           erably “wetter” at a temperature of 80 degrees than it is at a tem-
+   self (and the moderate or light result is disregarded). If a               perature of 50 degrees.
+   lightning storm is indicated for a day on which heavy or                      Humidity can have a significant effect on the ability of charac-
+   downpour precipitation is supposed to fall, then the storm                 ters and creatures to cope with the weather when temperature
+   will occur at the beginning of the period of precipitation. A              and humidity are both high, and particularly so when the wind is
+   typical lightning storm lasts for 25 minutes, during which 3/4             slight or nonexistent.
+   to 1 inch of rain is dropped and the sky is lit up at frequent
+   intervals by bright flashes of lightning. Roughly half of all              Table A5: HUMIDITY VARIATION
+   thunderstorms occur within two hours either way of sunrise
+   or sunset.                                                                                        Winter      Spring    Summer Autumn
+
+      Severe Snowstorm (S): If the normal maximum precipita-                  Arctic                    L           L          L           L
+   tion for the day in question is moderate, this storm will                    (all terrain)
+   dump 5-10 inches (d6 +4) of snow; if the normal maximum
+   precipitation is heavy, a severe snowstorm will cause 7-12                 Subarctic         D       L          L           L           L
+   inches (1d6 +6) of accumulation. The snow will come down                                     F       L          M           M           L
+   at the rate of 1 inch per hour until the indicated accumula-                                 H       L          L           L           L
+   tion is reached. Wind velocity will be very strong at the start                              M       L          M           L           L
+   of the storm, but will taper off after 1 or 2 hours to a moder-                              P       L          M           M           L
+   ate breeze (15-20 mph) at best as the storm center be-                                       Se      L          M           M           L
+   comes stalled over the area receiving the precipitation.                                     sw      L          M           M           L
+
+   Heat Wave (Z):For the next 3-8 days (ld6 +2), starting with the            Temperate         D       L          L           L           L
+day in question, the temperature will rise at the rate of 4 steps per                           F       M          H           M           M
+day until it reaches a high point one step above the normal maxi-                               H       M          H           H           M
+mum temperature. Roll on the Day-to-Day Change Table as usual                                   M       L          M           L           M
+each day, but disregard the Temperature Change column for the                                   P       M          H           H           M
+duration of the heat wave. When the temperature rises to one                                    Se      H          M           M           H
+step above the normal maximum, it will remain at that level for the                             sw      M          H           H           M
+duration of the heat wave. If the normal maximum temperature
+level is “Z”(high of 115, low of 85), the highest possible tempera-           Subtropical D             L           L          L           L
+tures during the heat wave will be 10 degrees hotter (high of 125,                        F             H           H          H           H
+low of 95), and the heat wave will only last for at most three days                       H             M           H          H           H
+after the temperature rises to this level (counting the day on                            M             M           H          H           H
+which the extra-high temperatures first occur). When the heat                             P             M           H          M           L
+wave ends, the temperature will automatically fall to the normal                          Se            M           H          H           M
+maximum on the first day thereafter, and will fall even lower if the                      sw            M           H          H           M
+Day-to-DayChange Table roll is 7 or less.
+   For example: It is the first month of spring in a temperate moun-          Tropical          D       L          L           L           L
+tain region, and the temperature for the current day is K (high of                              F       H          H           H           H
+50, low of 30). The tables indicate that a heat wave will begin on                              H       M          M           H           M
+the following day, and a roll of 3 on d6 determines that the heat                               M       M          H           H           H
+wave will last for 5 days. On the following day the temperature will                            P       M          H           H           H
+rise by 4 steps, to 0 (high of 70, low of 55). On the second day of                             Se      M          H           H           M
+the heat wave, the temperature will rise only 3 more steps, to R                                sw      M          H           H           H
+(high of 80, low of 65) because this is one step higher than the
+normal maximum temperature at this time of year for this terrain/             Humidity Letter Codes
+climate combination. The temperature will remain at level R for                  L = LOW (21-40%)                H = High (71-90%)
+two more days thereafter until the heat wave breaks. On the first                M = Medium (41-70%)
+
+                                                                        115
+

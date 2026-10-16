@@ -1,0 +1,894 @@
+                PENDIX:
+        THE WORLD OF WEATHER
+Introduction                                                                     The planet contains five climatic regions, each described in de-
+                                                                              tail below. The system considers seven distinct types of terrain,
+   A system for determining the weather at any time and place in              which are defined in the first part of this book. Although these
+the campaign world is a necessary part of a set of rules that de-             terrainlclimate designations do not directly correspond with the
+fines and describes that world. Yet weather, by its very nature, is           terrain and climate categories given in the encounter tables in the
+anything but systematic. Modern-day meteorologists, armed with                Dungeon Masters Guide and Monster Manual 11, translation is not
+all the equipment and knowledge that man has devised and ac-                  difficult. If you use the DMG terrain categories, consider scrub
+cumulated, still can’t always predict with certainty what the                 and rough areas to be the same (for weather determination) as
+weather will be from one day to the next -so how can a game de-               plain or forest, depending on which of those latter areas the ter-
+signer hope to accomplish what they cannot?                                   rain most closely resembles. Swamp areas, whenever this cate-
+   The resolution of this paradox lies in the judicious use of one of         gory is not specifically mentioned (such as on the Temperature
+the designer’s most valuable tactics: simplicity. The tables and              Variation Table), are considered as either plain, forest, or sea-
+text on these pages may not look simple at first glance, but they             coast, depending on which of those three latter types most obvi-
+are simple indeed compared to what would have been needed to                  ously applies. (A swamp devoid of large vegetation is a plain; a
+account for all the combinations of terrain, climate, elevation, and          swamp containing trees or other large vegetation is a forest; and
+location that exist on Earth. The system given here will enable a             a swamp adjacent to the ocean is seacoast.) Monster Manual II
+Dungeon Master to predetermine the important weather condi-                   considers only three climatic categories: cold, temperate, and
+tions that will prevail on any day (and for days or weeks in ad-              tropical. To mesh that system with this one, simplydivide the sub-
+vance, if desired) at any location on the world.                              arctic and subtropical areas in half, so that monsters encoun-
+   The system has been constructed so that parts of it, such as               tered in a cold climate will be found in the arctic and in the part of
+the sections on wind chill and humidity, can be disregarded if the            the subarctic adjacent thereto. Those encountered in a tropical
+Dungeon Master prefers even more simplicity than the designer                 climate are found in the tropics and in the adjacent half of the
+built in. The basic structure requires the DM to consult only two             subtropical area. And, monsters that occur in a temperate cli-
+tables, and make a single dice roll, to determine the temperature,            mate will be found in any area betweenthe two extremes, encom-
+wind speed and direction, and precipitation (if any) for any day              passing the temperate area (as described herein) plus the
+except one on which a special weather phenomenontakes place.                  adjacent half of the subarctic and the adjacent half of the subtrop-
+   Note that this system describes how to determine weather con-              ical area.
+ditions, but does not explicitly describe the effects, in game
+terms, that the weather will have upon characters, creatures, or
+other elements present in the environment. Informationon the ef-              Climatic Regions
+fects of weather is presented in the first section of this book, for
+both players and DMs. The difference, of course, is that the                     Arctic climate prevails in latitudes from 90 degrees (the north or
+Dungeon Master will know exactly what the weather conditions                  south pole) to 66 degrees (the approximate location of the Arctic
+are or will be, while player characters (and their players) in most           Circle). In this text, “arctic” refers to the polar regions in both the
+cases only will be able to make general inferences and observa-               northern and southern hemispheres (and the same general rule
+tions based on the information the DM imparts to them - and                   applies to subarctic, temperate, and subtropical regions, de-
+they, unlike the DM, usually will not know what the weather has in            scribed below). The arctic is, in a word, c-c-cold. The temperature
+store for them during the hours and days to come.                             sometimes rises to tolerable levels in the height of summer, but
+                                                                              for most of the year the arctic region is so frigid that it is essen-
+                                                                              tially uninhabitable, except by characters who are outfitted for
+Basic Assumptions                                                             survival in the deep freeze (and, of course, by creatures and mon-
+                                                                              sters that are adapted to -and might even thrive in -this kind of
+   The system is designed for a world that is similar, if not identi-         climate). The winds in this area generally blow from east to west
+cal, to our Earth, on the assumption that most campaign worlds                and seldom reach greater than moderate velocity (15-20 mph) ex-
+are Earthlike at least in terms of their fundamental natures. A day           cept during storms. However, even a light breeze can make a
+is 24 hours in duration; a year is 365 days in length, or there-              drastic difference in effective temperature when it is bitterly cold
+abouts. (Many Dungeon Masters prefer to develop their own cal-                to begin with; see the section below on wind chill and its effects.
+endars, and a good number of those convenientlydivide the year                   In every other climatic area, the amount of precipitation a cer-
+into twelve identical months of 30 days each, making each year                tain locale receives depends on the time of year, the type of ter-
+360 days long.) Each year is divided into four seasons, and each              rain in the locale, or both. But in the arctic, time of year makes no
+of the seasons is further divided into three months. The planet ro-           appreciable difference and terrain distinctions are for the most
+tates in a counterclockwise direction, as viewed from a point                 part irrelevant since everything is covered with ice. (On the Tem-
+above the north pole. Temperatures are expressed in degrees                   perature Variation Table below, the entries are identical for arctic
+Fahrenheit, elevation in feet above sea level, and wind velocity in           hills and arctic mountains, and also for arctic desert and arctic
+miles per hour. Wind direction is given as the direction the wind is          plains; temperatures for an arctic forest area are not given, since
+coming from; a north wind blows from north to south, not the                  vegetation of the normal sort cannot survive in this climate.) Pre-
+other way around.                                                             cipitation in the arctic is usually very light if it exists at all.
+
+                                                                        107
+CLIMATIC REGIONS
+
+    A phenomenon unique to the arctic is the “midnight sun,”                    where day and night are of virtually identical length), but only in
+which occurs during spring and summer. Because the Earth ro-                    the arctic are the extremes of all-night days and all-day nights re-
+tates around an axis that is tilted with respect to the sun, there is a         alized. (See the Hours of Daylight Table in the Optional Rules
+period of time each year when the arctic region is in continual                 section for more information.)
+daylight; at any time during the planet’s rotation, the arctic is
+tilted toward the sun. The converse of this is the long arctic winter             Subarctic climate is typical of areas from 65 degrees latitude to
+night (the “noon moon”?), when for an equal length of time in au-               51 degrees. (In the northern hemisphere, the southern boundary
+tumn and winter the region is tilted away from the sun and is in                of this area roughly describes the border between the United
+constant twilight. This difference in the amount of daylight each               States and Canada.) Winters are long and cold, but there is also a
+day occurs at all latitudes, of course (except right at the equator,            season that can legitimately be described as summer; daytime
+
+
+Table A l : TEMPERATURE VARIATION
+
+                                        Winter                        Spring                         Summer                      Autumn
+                                  1       2          3         4        5            6         7       8         9        10       11        12
+
+Arctic        Desert           ABG       ABH       ACH      AEH       CGK          FJL      JKN       JKM      FHK       DGJ      ADH      ABH
+              Forest             -         -         -        -           -          -        -        -         -        -         -        -
+              Hills            ABE       ABD       ACF      ADG       BE1          CFI      DGL       DGK      CFJ      CEH       BEH      ACE
+              Mountains        ABE       ABD       ACF      ADG       BE1          CFI      DGL       DGK      CFJ      CEH       BEH      ACE
+              Plains           ABG       ABH       ACH      AEH       CGK          FJL      JKN       JKM      FHK      DGJ       ADH      ABH
+              Seacoast         ACH       ABH       ACH      AEJ       CGK          FJN      JKP       JKN      EIL      CGJ       AEI      ACI
+
+Subarctic     Desert           AD1       ADJ       BEJ       CGJ      FKM          JLN      KMQ      JMQ       GKQ      FHM       CEL      ACI
+              Forest           AEJ       AEI       BGK       DJL      HKN          JLP      KMR      JMR       IKP      EJL       BHK      AFJ
+              Hills            AD1       AD1       BFJ       CGJ      FKN          JLN      JMP      IMP       GKM      DJL       BGK      ADJ
+              Mountains        ACI       AD1       AFJ       BHL      EJM          IKM      JLN      IMO       GKM      DJL       BFK      ADJ
+              Plains           AD1       ADJ       BEJ       CGJ      FKM          JLN      KMQ      JMQ       GKQ      FHM       CEL      ACI
+              Seacoast         BFK       BGK       CHK       DJM      HKN          JLR      KMR      KMR       JLP      EKM       CHL      AFK
+
+Temperate Desert               KMS       KMT       LMT      MNW       MPX          PPZ      UYZ      UYZ QWY            NSX       LRX      KMR
+          Forest               CFL       BFK       EKP      HLP       KNU          MPV      MSX      MSX LPV            JNR       FJL      DJL
+          Hills                BIL       CJM       EKP      ILR       JOT          JQX      LTY      LTY KQW            JNT       FKP      CJM
+          Mountains            AIL       BIM       CJN      EKQ       FLS          KOV      LQX      KQW I N U          ELS       CKR      BJL
+          Plains               BHM       CHN       DKQ      GLS       KNU          LPX      MSY      MSY KPW            GLS       EKQ      CJM
+          Seacoast             EJM       FKN       IKQ      KLS       KMT          LOW      MPX      MPW LOW            KLT       GKP      EKM
+
+Subtropical Desert             LPT       LPU       MSW      NTX       OTX          RVY      TXZ      TXZ       RUY       PUY      NSX      MPW
+            Forest             LTU       LTV       MTV      NTW       NTX          PUX      PUX      PUX      ouw NUW             MSV      LSV
+            Hills              KNQ       KOR       LQU      MSV       NTW          oux      PUX      PUY       NSX      MQV       LPS      KNR
+            Mountains          KMP       KMQ       LPS      LPT       MQU         NQU       NPT      NOR       LOR      LNQ       LNQ      KMP
+            Plains             LNR       KOS       MRU      NSX       RVX         SWY       TWZ      TWZ       SVY      QVY       MRU      LPS
+            Seacoast           LMU       KMV       KOW      LPX       MQX         MSY       NSY      NSY       MRX      LQW       KOU      KMU
+
+Tropical      Desert           PRU PST             PTW       PUX      QVY         TWZ       VYZ      VYZ       UXY      UVX       RUW      QSV
+              Forest           MUW LUW             MUW      oux oux               QUX       QUX      QUX       QUX      PUX      ouw MUW
+              Hills            MPR NPT             NRT      PRU       PTX         QUY       swz swz            SVY      QTW       ORU      NQT
+              Mountains        MPR NPS             NQT      OQT       OQU         OQU       NPT      NPT       NPT      NPS       MPS      MPS
+              Plains           MPR NQT             NRU      PRU       RWY         TWY       TWZ      TWZ       TWY      RVY       PSW      NRU
+              Seacoast         PSU PSV             OTW      QTX       QTX         RTY       RTX      RTX       RTW      QSV       QSV      PRV
+
+  The temperature figures for desert assume an elevation of sea                 ature figures for every increase of 1000feet (or add 3 degrees for
+level; for plains and forest, 500 feet; for hills, 2000 feet; and for           every decrease of 1000 feet) if a more accurate temperature de-
+mountains, 4000 feet. If these terrain types exist at different ele-            termination is desired.
+vations than the ones given, subtract 3 degrees from the temper-
+
+Temperature Letter Codes
+
+   Letter      High      Low             Letter-     High      Low                Letter      High      Low            Letter     High      Low
+                                           *.
+     A         -20       -40                                                         0         70        55
+     B         -15       -30                                                         P         75        55
+     C          -5       -20                                                         Q         80        60
+     D           0       -10                                                         R         80        65
+     E           10        0                                                         S         85        65
+     F          18        10                                                         T         85        70
+     G          25        10
+
+                                                                          108
+                                                                                                                     DAY-TO-DAY CHANGE
+
+temperatures during the warm part of the year may reach or ex-                How to Use the Temperature Variation Table
+ceed 80 degrees. Winds are somewhat more active here than in
+the arctic. In the winter, winds usually blow from the arctic or on a            Each terrainklimate type is represented by a set of twelve
+westerly angle from the arctic (northwest in the northern hemi-               three-letter codes that describe the general temperature condi-
+sphere, southwest in the southern hemisphere),while in the sum-               tions of that area during each month of the year. The first letter
+mer a prevailing westerly or tropical west wind (southwest in the             identifies the lowest temperatures that will normally occur, the
+northern hemisphere, northwest in the southern hemisphere) is                 third letter identifies the highest temperatures that will normally
+more often the case.                                                          occur, and the second letter represents the mean, or average,
+                                                                              high and low temperatures for that area. For example, the code
+   Temperate climate extends from 50 degrees latitude to 31 de-               for a subtropical plains area in the seventh month of the year
+grees (in the northern hemisphere, the line that roughly de-                  (early summer) is T W Z. The T indicatesthat the lowest tempera-
+scribes the border between the United States and Mexico). It is               ture during that month will almost never be lower than 70; the Z
+the Earth’s area of climatic compromise, and paradoxically also               indicates that the temperature can rise as high as 115 on the hot-
+the area where the greatest extremes of temperature are re-                   test days; and the W indicates that on most days, the high tem-
+corded. As anyone who lives in the American Midwest can attest                perature will be 95 and the low temperature 75.
+to, a temperate winter can be a real bone-chiller - and on the                   At the beginning of an adventure or an episode (such as when
+hottest days of a temperate summer, going into a steam bath to                player characters find themselves abruptly transported to a dif-
+cool off can seem like a good idea. Winds can blow from the                   ferent area), use the second letter to ascertain the current tem-
+north, south, or west, but almost never from the east (except                 perature conditions. From this starting point, the temperature will
+along eastern seacoasts and in localized areas, such as the                   move up or down on a daily basis according to the results of the
+breeze that sometimes blows from Lake Michigan across the                     Day-to-Day Change Table (below).
+Wisconsin and Illinois shoreline; see the discussion of Local                    As a general rule, the lowest temperature of the day will occur
+Winds in the Optional Rules section). Wind velocity in the temper-            just before sunrise, and the reading will gradually rise until the
+ate zone is as variable as the temperature.                                   high temperature for the day is reached in early afternoon. After
+                                                                              possibly remaining at the high point for a few hours (DM’s discre-
+   Subtropical climate predominates from 30 degrees latitude to               tion), the reading will decrease gradually through the evening
+16 degrees (a line running along the southern edge of Mexico).                and night until the next low point is reachedjust before sunrise on
+This area, like the temperate zone, is one of climatic extremes,              the following day. Of course, this general rule should be modified
+but here they are more closely related to terrain. The subtropical            or disregarded in special weather conditions or when the
+area of Earth’s northern hemisphere includes the vast deserts of              Dungeon Master judges that different times for high and low tem-
+Africa and Arabia, where rain hardly ever falls, and also the for-            peratures should prevail.
+ests and jungles of India and Southeast Asia, where during the
+summer it rains almost constantly. The warm months can be very
+warm - as hot as the tropics - and in the cooler months, night-               How to Use the Day-to-Day Change Table
+time low temperatures can actually be rather brisk. Winds in this
+area are highly variable in velocity, and they generally blow from              Roll 2d6 for each day beyond the present one, either day by
+the east or from the east and toward the equator - the “trade                 day as needed or for a number of days in succession if desired.
+winds” that explorers from Europe took advantage of on their                  Use two dice that are different in color or size, so that they can be
+journeys to the New World.                                                    designated as “die 1” and “die 2.” This distinction is important
+                                                                              whenever there is a chance of precipitation, as explained below.
+   Tropical climate, in the area from 15 degrees latitude to 0 de-              Follow the instructions below for how to interpret each cate-
+grees (the equator) is as consistently hot as the arctic is consist-          gory on the Day-to-Day Change Table.
+ently cold. The temperature almost never drops below 70
+degrees, except during the winter months at high elevation when                  Temperature Change: Move up or down the letter scale as re-
+a “cold snap” of 65 or 60 degrees might occur. The summer is                  quired to ascertain what the next day’s high and low tempera-
+blisteringly hot, especially in flat areas (desert and plains) at low         tures will be. If the present temperature is within the allowable
+elevation, and even being along the seacoast offers little relief.            range (as indicated by the first and third letters of the Tempera-
+Winds are generally docile (except during storms, of course), and             ture Code) but a move dictated by this table would take the result
+they most often blow in the same direction as the subtropical                 beyond that range, then stop when the extreme result is reached.
+trade winds.                                                                  Example:The current temperature in a subarctic forest in the first
+
+
+Table A2: DAY-TO-DAY CHANGE
+
+    Dice        Temp.           Chance of
+    Roll        Change         Precipitation Wind Conditions
+
+
+
+                                                                                                     * -Wind velocity in arctic and tropical cli-
+                                                                                                  matic regions does not exceed 20 mph ex-
+                                                                                                  cept in special conditions; in subarctic
+                                                                                                  climate, 25-30 mph is the normal maximum.
+
+                                                                                                        - Consult Special Weather Table.
+
+
+                                                                        109
+PRECIPITATION VARIATION
+
+month of winter is H, and the 2d6 roll yields a 12. Insteadof going            a wind from the arctic will be a north wind in the northern hemi-
+up three steps (to K, which is beyond the upper limit), increase               sphere and a south wind in the southern hemisphere; the reverse
+the temperature to J for the following day.                                    is true for a wind from the tropics. The “prevailing direction” is as
+   If the current temperature is already at the upper limit, treat any         described above in the text for the various climatic regions. The
+“plus” result as “no change” and treat a roll of 7 the same as a               velocity increment (+15 mph, +10 mph, etc.) is added to the
+roll of 6 -that is, the temperature drops by 1 step and precipita-             wind velocity for the previous day. Obviously, wind velocity can-
+tion is possible. If the temperature remains at the upper limit for            not fall below zero, and except in special circumstances it will not
+two consecutive days, treat a roll of 7 or 8 as a roll of 6, and con-          increase beyond 45 mph. Exceptions to this rule for arctic, tropi-
+tinue this pattern until the streak of hot weather ends. (For a                cal, and subarctic climates are noted beside the Day-to-Day
+streak of cold weather, perform the same process with the other                Change Table.
+end of the table.)                                                                Wind velocity represents the highest speed the wind will reach
+                                                                               on the day in question, during gusts that can last anywhere from
+   Chance of Precipitation: If the dice roll indicates a “yes” result          a few seconds to a few minutes. For the rest of the day, the wind
+in this column, note the numbers that came up on die 1 and die 2               speed will be no more than half of the indicated maximum veloc-
+and consult the Precipitation Variation Table below.                           ity. For example, the maximum wind velocity for the present day
+                                                                               has been determined as 15 mph. A roll of 3 on the Day-to-Day
+  Wind Conditions: On a dice roll of 3 through 11, this column is              Change Table indicatesthat the maximum velocity for the follow-
+used to determine the direction and velocity of the wind. Note that            ing day will be 30 mph. This means that gusts of up to 30 mph will
+
+
+             Table A3: PRECIPITATION VARIATION
+
+                                                     Winter                  Spring                 Summer                Autumn
+                                                 A     B    C            A     B    C          A      B    C         A       B   C
+
+                                                 -     T                 -     T                -     T     -               T
+                                                                                                      -     T
+                                         [ins               T                   -     T               -     T
+
+
+
+
+                           Hills                 -     T    T            -     L      T        T      L     L         -     L     T
+                           Mountains             -     T    T            T     M      L        T      L     T         -     L     T
+
+
+
+            -          .    -    .
+                                                 -    T     -            -     T     -         -      T     -
+                                                 T    M     L            L     H     M         L      M     M        L      M     M
+                                                 T    M     L            L     H     M         L      H     M        T      M     L
+                                             S   -    M     L            -     M     L         -      L     T        -      M     L
+
+
+
+
+                           Mountains             T    M     L            L     H     M         L      M     M
+
+
+
+
+                           Forest
+                           Hills                 -     I     -           -     L      I         I     M     L
+                           MountainS             T    M     L            M     H     H         T      M    L
+                           Plains    ~   ~       -    T     -            L     H     M         M      H    M
+                           Seacoasf
+                           Swamp
+
+             Precipitation Letter Codes
+               - = No precipitation                                          M = Moderate (up to W’ rain or 2“ snow)
+               T = Trace (less than Van rain or %‘‘ snow)                    H = Heavy (up to 1Vz” rain or 4” snow)
+               L = Light (up to V2” rain or 1” snow)                         D = Downpour (more than 1%‘’ rain)
+
+                                                                         110
+                                                                                                       EXTRAORDINARY PRECIPITATION
+
+occur (at times determined by the DM), but in general the wind                  rainfall, the box will contain 6 X 4 X 1, or 24, cubic inches of water.
+speed on the following day will average about 15 mph.                           This amounts to roughly 13 fluid ounces, which is somewhat less
+   If precipitation occurs on a given day, the maximum wind                     than a pint.
+speed for that day will usually occur immediately before and dur-                  Melted snow converts to water at a rate of 10 to 1; that is, 1 inch
+ing the precipitation. The current wind speed can serve as an in-               of fresh snow, if it is collected and melted, will yield the same
+dicator of how long the precipitation lasts: On a very windy day,               amount of liquid as a rainfall of 1/10 inch. However, this fact is not
+the precipitation will usually occur over a short duration; the                 especially relevant to the subject of collecting liquid for drinking.
+clouds containing the rain or snow will be moving rapidly through               In most cases when a snowfall occurs, the precipitation will stay
+the upper atmosphere. On a relatively calm day, the rain clouds                 on the ground, from where it can be easily gathered and put into a
+move more slowly, and precipitation that occurs in a certain loca-              container. And more often than not, there will already be snow
+tion will usually be less intense and more prolonged.                           cover on the ground that can be scavenged whenever drinking
+   If the dice roll on the Day-to-DayChange Table is 2 or 12, follow            water is needed. For obvious reasons, it is not difficult for charac-
+the normal procedure for determining temperature change,                        ters to obtain needed drinking water during the snowy season in
+chance of precipitation, and wind conditions, and then refer to                 any climate that has one.
+the Special Weather Table (page 112) to see if some extraordi-                     Following are some general descriptions of the intensities of
+nary weather occurs on the day in question.                                     precipitationto use as guidelines for certain seasons and terrain/
+                                                                                climate types. In this section of text, “rain” refers to precipitation
+                                                                                in general, not just the liquid form, unless otherwise specified.
+How to Use the Precipitation Variation Table
+                                                                                    Trace precipitation accumulates to a measurable amount only
+   If the roll of 2d6 on the Day-to-Day Change Table is an even                 if the rain falls continuously for at least half an hour. In a desert,
+number, you must refer to the PrecipitationVariation Table to de-               only one out of every ten trace rainfalls will last more than a few
+termine whether precipitation occurs and, if so, how much rain or               minutes, and any liquid precipitation that does fall will quickly
+snow will fall during the next 24 hours.                                        soak through the sandy or rocky soil - or evaporate (in hot tem-
+   Cross-index the appropriate climate/terrain combination with                 perature) almost as quickly. Collecting the water from a trace
+the current season. Take the result for column A under the sea-                 rainfall is fruitless except in cases of dire need: the heaviest pos-
+son if die lis greater than die 2; use the result under column B if             sible trace accumulation, just short of ’/e inch of rain, even if col-
+the dice are equal; and use the result under column C if die 2 is               lected in something as large as a cooking pan 1 foot in diameter,
+greater than die 1.                                                             will yield less than eight fluid ounces of liquid.
+   A result from this table indicates the amount of precipitation
+that will fall during the entire day to come. Exactly when the pre-               Light precipitation should be interpreted very conservatively in
+cipitation occurs and how long it lasts are matters ultimately left             terraidclimate areas where it represents the greatest amount of
+to the judgment of the Dungeon Master. For instance, a heavy ac-                rain or snow that normally falls in a day. Most of the light rainfalls
+cumulation of rain could be the result of a day-long sprinkle or it             or snowfalls in such an area will be scarcely greater than trace
+could all fall in less than half an hour during a storm. (For some              precipitation. The converse does not apply in an area where light
+guidelines on the duration and intensity of precipitation related to            representsthe least precipitation possible; in such a case, the ac-
+wind velocity, see the text above on Wind Conditions.)                          cumulation can range through the entire span of possibilities.
+
+                                                                                   Moderate precipitation does not always fall under moderate
+Rain, Sleet, or Snow                                                            conditions. The amount may be the result of continuous drizzle
+                                                                                for most or all of a day, or it may all come down in a storm of only a
+   To determine in what form the precipitation falls, use this gen-             few minutes’ duration. In a climate/terrain area where moderate
+eral guideline: If the current temperature is 36 degrees or higher,             representsthe greatest amount of precipitationthat can normally
+rain will fall. If the temperature is between 30 and 35 degrees in-             fall, the accumulation will usually not be much greater than light,
+clusive, sleet will result half of the time (1-3 on d6, or DM’s discre-         and most of the time it will fall as gentle, prolonged rain instead of
+tion) and snow the other half. At a temperature lower than 30                   coming down quickly in a brief storm.
+degrees, the precipitation will be a snowfall.
+                                                                                  Heavyprecipitationalmost always falls in a relatively short time
+                                                                                as the result of storm conditions, and in most cases those storm
+Collecting Precipitation                                                        conditions will occur at dawn or dusk - within two hours either
+                                                                                way of sunrise or sunset. This is in contrast with the lighter
+   Of course, it is possible for charactersto attempt to collect pre-           amounts of accumulation, which can occur at any time of the day
+cipitation in containers and use it for drinking water. When this               or night.
+occurs, it is fairly simple for the Dungeon Master to calculate how
+much water can be obtained as long as the dimensions of the                       Downpour precipitation occurs in certain terrain in subtropical
+container are known. For liquid collected in a circular container,              and tropical climates. Typically there is a period of intense rain,
+the volume of the cylinder of water so obtained ispix P X h, where              during which as much as an inch of water may fall in a half-hour or
+pi is a constant (roughly equal to 3.14), r is the radius of the con-           less (at any time of the day or night), sandwiched between two
+tainer and h is the depth of the water collected. Thus, one inch of             periods of lighter, more prolonged precipitation.
+rain collected in a 6-inch-radiuscontainer yields about 113 cubic
+inches of water. Since an ounce of water occupies about 1.8 cu-
+bic inches of volume, the container holds about 63 ounces of wa-                Extraordinary Precipitation
+ter, or roughly one-half gallon.
+   If water is collected in a square or rectangular container, the                Whenever two successive rolls on the Day-to-DayChange Ta-
+volume of the liquid is simply the product of the measurementsof                ble are doubles, and no special weather occurs on either day,
+all three dimensions. If a metal box measuring 6 inches long by 4               then there is a 50% chance (1-3 on d6, or DM’s discretion) that
+inches wide by at least 1 inch deep is left open during a 1-inch                the precipitation for the second day will be one step greater than
+
+                                                                          111
+SPECIAL WEATHER
+
+the result given on the Precipitation Variation Table for a roll of          How to Use the Special Weather Table
+doubles. For example, it is summer in a temperate forest area.
+The roll for the current day was double 4’s, indicating a day on               Consider the earlier roll on the Day-to-Day Change Table (ei-
+which a moderate amount of rain falls. The roll for the next day is          ther a 2 or a 12) as Roll 1, and then roll 2d6 again, referring to this
+double 3’s, and a subsequent roll of a six-sided die results in a 3,         result as Roll 2. Cross-indexthe appropriate terrainlclimate com-
+indicating a day of heavy rainfall (one step greater than moder-             bination with the current season of the year on the Special
+ate). If the d6 roll is 4 or higher, the precipitation remans moder-         Weather Table to obtain the four-letter code that indicates what
+ate for the coming day.                                                      kinds of special weather are possible. Then check the table be-
+   If doubles are rolled more than twice in succession, the precipi-         low to determine what special weather (if any) occurs:
+tation amount does not continue to increase, but remains at the
+“one step greater” level; a downpour will never occur during                              ..................Roll2 ..................
+summer in a temperate forest, regardlessof how many times in a                  Roll 1      2-4     5-6       7       8-9    10-12
+row the dice come up doubles. Thus, the 1-in-3 chance does not                    2         1st     2nd      2nd      -       -
+have to be checked if doubles are rolled more than twice in a row.               12           -            -         3rd           3rd        4th
+In no case can extraordinary precipitation exceed the level of a
+downpour.                                                                      The notations “lst, 2nd, 3rd, 4th” refer to a single letter of the
+                                                                             four-letter code. For example, if Roll 1 was a 2 and Roll 2 is a 6,
+
+
+            Table A4: SPECIAL WEATHER
+
+                                                 Winter                  Spring                  Summer                 Autumn
+
+
+
+
+                                                                                                  X    Z   D        G      A   M    D
+                                                           D       A     X      D    Z       Z    A    Z   D        G      A   D    Z
+
+
+
+
+                                                                                                  X    D   Z        X      A   D    Z
+                                             A    G    D   Z       A     X      T    Z       X    G    D   Z        X      A   D    Z
+
+
+                                                                                                                                          I
+
+
+
+
+                                                                                                       Z   D        X      A   Z    M
+                                             A    X    D   Z       X     G      Z    T       X    G    D   Z        G      A   D    Z
+
+
+
+
+                                                                                                       Z   M        A      G   M    Z
+                                             G    X    D   Z       G     X      D    Z       S    X    Z   D        G      X   Z    D
+
+
+
+            Special Weather Letter Codes
+               A = Cold Wave                                                 S = SandstormlDust StormlBlowing Snow
+               C = CycIonelHurricanelTyphoon                                 T = Tornado
+               D = Drought                                                   X = Extreme Precipitation
+               G = Gale                                                      Z = Heat Wave
+               M = Mist or Fog
+
+                                                                       112
+                                                                                                      SPECIAL WEATHER DEFINITIONS
+
+the second letter of the four-letter code indicateswhat sort of spe-          thal of all weather phenomena. The wind velocity in a hurricane
+cial weather will occur. A result of “-” on the above table indi-             can be from 80 to 180 mph (1d6 X 20 + 60), strong enough to dam-
+cates that no special weather occurs. To determine what                       age even stone structures. Any characters or creatures not in
+conditions prevail on the day in question, refer to the following             places of secure shelter when the storm hit are in danger of liter-
+section of text. Many episodes of special weather span more than              ally being blown away.
+a single day; while such an episode is still running its course,                 One day before a hurricane actually reaches land in a seacoast
+treat any roll of 2 or 12 on the Day-to-Day Change Table as No                area, the area will be drenched by a lightning storm (see the sec-
+Special Weather.                                                              tion below on Extreme Precipitation for the description of this
+                                                                              storm). If characters sense that things are going to get worse be-
+                                                                              fore they get better, and if they are able to move far enough in-
+Special Weather Definitions                                                   land during this first day, they may be able to avoid the full fury of
+                                                                              the hurricane but they probably won’t be able to move out of the
+   No Special Weather (-): If the roll on the Day-to-Day Change               path of the storm altogether. A hurricane will not move farther
+Table was a 2 but no special weather occurs, then the prevailing              than 10 miles inland, but the storm around its perimeter will ex-
+condition for the day in question is very strong wind (as given on            tend at least another 50 miles inland.
+the Day-to-DayChange Table). This is a wind that gusts up to 45                  A hurricane moves in a general direction away from the equa-
+mph, accompanied by a sharp decrease in temperature and a                     tor. After it hits land, it will follow the coastline for l or 2 days be-
+chance of precipitation (check the ‘‘6”column for the appropri-               fore veering back out to sea. The storm is accompanied by
+ate season on the Precipitation Variation Table). The wind will               torrential rain, up to twice as heavy as downpour precipitation. In
+come either from the arctic or from the prevailing direction (50%             addition, the wind of the hurricane drives sea water ahead of it,
+chance of each, or DM’s choice).                                              forming a tidal wave that can flood low-lying areas as far as 3
+   If the roll on the Day-to-DayChange Table was a 12 but no spe-             miles inland.
+cial weather occurs, then the day’s weather is marked by a very                  Hurricane winds revolve around a central calm area, known as
+slight wind plus a sharp increase in temperature and a chance of              the “eye.” After spewing forth winds and rain in a certain area for
+precipitation (check the “B” column on the Precipitation Varia-               six hours, the storm will abruptly subside as the eye passes over
+tion Table). A very slight wind is one that occasionally gusts up to          the location that only minutes earlier was being ravaged and
+5 mph, but for virtually all of the day in question the wind is calm,         drenched. The sky will clear partially or entirely and wind velocity
+or so slight that it has no effect on the surroundings.                       will drop to practically zero. Then, after 30 to 60 minutes, the
+                                                                              storm will mount to its full fury again as the second half of the dis-
+   Cold Wave(A): For the next 3-8 days (ld6+2), starting with the             turbance passes over the area. Six hours later, the hurricane will
+day in question, the temperature will drop at the rate of 4 steps             have passed, and “only” a vigorous rainstorm will remain for the
+per day until it reaches a low point one step below the normal                next few hours until the storm center moves entirely out of the
+minimum temperature. Roll on the Day-to-DayChange Table as                    area.
+usual each day, but disregard the Temperature Change column                      For three days in a row beginning with the day the hurricane
+for the duration of the cold wave. When the temperature drops to              hits, the Day-to-Day Change Table is not used. On the day of the
+one step below the normal minimum, it will remain at that level for           hurricane, the temperature will remain constant, and precipita-
+the duration of the cold wave. If the normal minimumtemperature               tion and wind speed will be as described above. For two days af-
+level is “A” (high of -20, low of -40), the lowest possible tem-              ter the hurricane, the temperature will not vary by more than one
+peratures during the cold wave will be 10 degrees colder (high of             step either way from the temperature on the day of the storm.
+ -30, low of -50),and the cold wave will only last for at most                (Roll 2d6: 6 or less = 1 step down; 7 = no change; 8 or more = 1
+three days after the temperature falls to this level (counting the            step up.) During those two days there will be no precipitation, and
+day on which the extra-low temperatures first occur), regardless              wind velocity will not be greater than 10 mph (from the prevailing
+of the result of the roll for duration. When the cold wave ends, the          direction).
+temperature will automatically rise to the normal minimum on the                 A hurricane will not occur in the same general area (within a
+first day thereafter, and will rise even higher if the Day-to-Day             200-mile radius) more often than once a month. If the tables indi-
+Change Table roll is 7 or greater.                                            cate the occurrence of a second hurricane in the same area be-
+   For example: It is the first month of spring in a temperate moun-          fore one month has elapsed, treat it instead as an occurrence of
+tain region, and the temperature for the current day is K (high of            extreme precipitation(see below). Also, a hurricanewill not occur
+50, low of 30). The tables indicate that a cold wave will begin on            in the tropics within 5 degrees of latitude north or south of the
+the following day, and a roll of 3 on l d 6 determines that the cold          equator;‘ disregard any “C” result obtained on the Special
+wave will last for 5 days. On the following day the temperature will          Weather fable if it pertains to a location within this area.
+drop by 4 steps, to G (high of 25, low of 10). On the second day of
+the cold wave, the temperature will fall only 3 more steps, to D                 Drought (&: For a period of 4-14 days (2d6 +2),the usual prin-
+(high of 0, low of - 10) because this is one step lower than the              ciples governing frequency and amount of precipitation do not
+normal minimum temperature at this time of year for this terrain/             apply. On the first day of a drought no precipitation will fall, re-
+climate combination. The temperature will remain at level D for               gardless of what the Day-to-Day Change Table has indicated. At
+two more days thereafter until the cold wave breaks. On the first             any time when trac&recipitation is indicated, no rainfall or snow-
+day after the cold wave, the temperature will automatically climb             fall will occur. In an area‘where light or moderate precipitation is
+one step, to E. If a 7 or higher is rolled on the Day-to-DayChange            the normal maximum, no precipitation greater than a trace
+Table for that day, the temperature will go up an additional 1,2, or          amount will fall, and this will occur no more than once in every
+3 steps. If a 6 or lower is rolled, the temperature remains at level          span of five full days. In addition, any trace result is disregarded.
+E, since this is the lowest the temperature can be under normal               In an area where heavy precipitation is the normal maximum,
+circumstances.                                                                treat any precipitation result as two steps lower than actual, so
+                                                                              that H becomes L, M becomes T, and L becomes no precipita-
+  Cyclone/Hurricane/Typhoon(C): This ferocious storm is known                 tion. Use the Day-to-Day Change Table normally for temperature
+by different names in different areas of our world - but no matter            and wind, but amend any precipitation results as described here.
+what it is called, it is one of the most fearsome and potentially le-            Example 1: It is winter in an area of subtropical hills, and theta-
+
+                                                                        113
+SPECIAL WEATHER DEFINITIONS
+
+bles indicate that a drought will occur beginning on the following               did not increase it to this at least this level already), and for l d 3
+day. A roll of 2d6 yields a result of 9, so the drought will persist for         hours before tornadoes pass through the area the winds will be
+11 days. No rain will fall on the first day. When light precipitation            very strong and heavy precipitation will occur. Then the rain will
+is indicated on the second day, a trace of rain falls instead. Since             stop abruptly, tapering to nothing or a trace amount within min-
+precipitation can only occur once in a five-day period, it will not              utes, and in the area immediately around a tornado’s path (one-
+rain again until day 6 of the drought at the earliest.                           half mile on either side) the wind will drop off to slight or very
+   Example 2: The season is spring instead of winter, which                      slight velocity. The tornado will come through the area 3d6 min-
+means that the precipitation amount in subtropical hills normally                utes after the start of this cessation of activity. During this time
+ranges from light to heavy. During a springtime drought, any                     and for about 30 minutes after the tornado passes, the tempera-
+heavy precipitation result is treated as light rain, and in any other            ture will drop abruptly by 15 degrees or three steps, whichever is
+instance only trace precipitation will occur if it rains at all.                 greater. After this “cooling-off period,” the temperature will be-
+                                                                                 gin to rise again until it reaches an appropriate level according to
+   Gale (G): This is an extremely strong wind, usually ranging                   what was predeterminedfor the day. For the rest of the day after a
+from 45 to 70 mph (ld6x5 +40), which is almost always accompa-                   tornado comes through an area, the weather will be calm and
+nied by precipitation. When rain or snow does occur along with                   non-threatening - a strange (and usually welcome) contrast to
+gale-force winds, the result can be almost as perilous as a hurri-               what has just happened.
+cane. For a period of 2-7 hours (ld6 + l), gale-force winds will                    The path of a tornado when it touches the ground is typically
+never drop below 30 mph and will almost always be 50 mph or                      one-quarter mile wide and about 15 miles long, and most torna-
+greater. If the wind velocity was 20 mph or greater on the pre-                  does travel along the ground at about 40 mph. The whirling vor-
+vious day, then the gale-forcewinds on the current day will range                tex of air is distinguishable from the surrounding sky, especially
+from 50 to 70 mph. If a gale occurs in a desert area, no precipita-              near the ground where the cloud contains dirt and debris that it
+tion will fall on the same day; instead, the wind will bring about a             has picked up in its rampage across the countryside. Within and
+severe sandstorm. Also, in an arctic or subarctic environment                    around the whirlwind, the velocity of the spiraling air ranges from
+when snow is on the ground, gale-force winds will whip the snow                  200 to 300 mph. Because of centrifugal force pushing the air out-
+up and around, causing conditions similar to those of a severe                   ward from the center, the air pressure in the center of the vortex is
+sandstorm. See the description for Sandstorm/Dust Storm/                         considerably lower than in the surrounding vicinity. Structures
+Blowing Snow below for more information on this phenomenon.                      that are able to stand up to the high-velocity winds may still be de-
+                                                                                 stroyed - virtually exploded - when this area of extremely low
+   Mist or f o g (M): The “calmest” form of special weather, mist or             pressure passes over their location.
+fog is nevertheless not to be taken lightly. It will occur beginning
+either at sunrise (1-4 on ld6) or sunset (5-6 on ld6) and will last                 Extreme Precipitation (X): This category encompasses several
+for a number of hours equal to the result of this die roll. Fog will be          phenomena. The particular type of storm that occurs depends on
+heavy whenever it occurs in a seacoast area or in an inland loca-                climatic region, temperature, and a die roll. Cross-index the ap-
+tion adjacent to a body of water; in all other locations, it will be of          propriate conditions on the table below and roll d6 to determine
+moderate intensity. If precipitation occurs on the same day, the                 what kind of extreme precipitation occurs:
+rain or snow will not fall while the fog condition persists, but it is
+likely (50% chance, or DM’s choice) that a period of precipitation                                . ...... . .....Climatic region . ... . . . ... .. .
+will immediately follow or precede the fog (the former case for a                                       Tropical/            TemperateEubarctic/
+daytime fog, the latter for a nighttime fog).                                    Temperature           Subtropical                   Arctic
+   The effects of fog on movement are covered in the section on                   -1 or lower                -                S (1-3) or none (4-6)
+Encumbrance and Movement; the effects of fog on visibility are
+covered in the section on Vision and Visibility.
+                                                                                     30-35                 H (1-6)            S (1-4) or H (5) or I (6)
+   Sandstorm/Dust Storm/Blowing Snow (S): This phenomenon                            36-49            L f1-51.or H .16),        ‘L (1-4) or H’(5-6)‘
+occurs in a desert environmentwhere the top layer of soil is loose                   50-74                 L (1-6)                L(1-5) or H’(6)’
+or sandy in consistency, or in a cold environment where the                       75 or higher             IL (1-6)                   L (1-6)
+ground is covered by a thick layer of loose snow. Regardless of
+what the result on the Precipitation Table indicates, no precipita-              Extreme Precipitation Letter Codes
+tion will fall on the day that a sandstorm occurs; instead, the very                 H = Hailstorm
+strong winds will pick up the loose soil (or snow), and for a period                 I = Ice/Sleet Storm
+of 2 to 5 hours (ld4+1) the rapidly moving air will be filled with                   L = Lightning Storm
+particles that inhibit movement and reduce visibility, and may                       S = Severe Snowstorm
+even cause damage to unprotected characters or creatures. A
+severe sandstorm occurs whenever gale-force winds are indi-                         -An IcelSleet Storm will only occur if the temperature is 25
+cated for a desert environment, or an arctic or subarctic environ-               degrees or higher; otherwise, treat a roll of 6 as “none.”
+ment where snow is on the ground. This condition will last for 2-7
+hours (ld6 + l ) , and only the very hardy or the very foolish will at-                Hailstorm (H): This kind of activity usually occurs during
+tempt to do anything other than seek shelter and wait out the                       the first ten minutes of a lightning storm (see below), but on
+storm.                                                                              rare occasions (roll of 1 on ld6) can be a storm in and of it-
+                                                                                    self lasting from 5-10 (ld6+4) minutes. Hail consists of
+   Tornado (T): In terms of the area it directly affects, a tornado is              lumps of ice, typically no larger than V4 inch in diameter but
+the most dangerous and destructive of all natural weather phe-                      possibly as large as 2 or 3 inches across. When a hailstorm
+nomena. When a “T” result is indicated on the Special Weather                       occurs at a temperature of 40 degrees or higher, the hail
+Table, this means that conditions suitable for the development of                   will melt within minutes of hitting the ground. If the hail ac-
+tornadoes will arise during the day in question. The temperature                    tivity is followed by a lightning storm, the pellets will have
+will rise to at least two steps above the normaltemperature for the                 melted by the time the lightning storm ends.
+area in question (if the roll of 12 on the Day-to-Day Change Table
+
+                                                                           114
+                                                                                                                        RELATIVE HUMIDITY
+
+       /ce/S/eet Storm (I): Sleet is frozen or nearly frozen rain,            day after the heat wave, the temperature will automatically fall
+   formed when snow falls from a high altitude and passes                     one step, to Q. If a 7 or less is rolled on the Day-to-Day Change
+   through a layer of warmer air on its way to the ground. The                Table for that day, the temperature will fall an additional 1,2, or 3
+   warmer air melts the snow crystals back into droplets of wa-               steps. If an 8 or greater is rolled, the temperature remains at level
+   ter, and the water freezes during the remainder of its de-                 Q, since this is the highest the temperature can be under normal
+   scent. When the sleet hits the ground, it will coat anything it            circumstances.
+   touches; by the time the storm passes, stationary and in-
+   aminate objects may carry a coating of ice up to V2 or 3/4
+   inch thick.                                                                OPTIONAL R U L E S
+       Depending on its intensity, an ice storm will last from 20
+   minutes (if it occurs as heavy precipitation) up to two hours
+   (if it occurs as trace precipitation).Of course, the longer the            Relative Humidity
+   storm, the heavier the coating of ice that will result.
+                                                                                 This figure, expressed as a percentage, describes the amount
+      Lightning Storm (L): A lightning storm, or thunderstorm,                of water vapor in the air at a given temperature compared to the
+   can occur as a separate phenomenon in and of itself or as                  maximum amount of water vapor the air could hold at that tem-
+   the beginning stage of a longer rainstorm. If a lightning                  perature. The warmer the temperature, the more water vapor the
+   storm is indicated for a day on which moderate or light pre-               air can hold: air with a relative humidity of 100 percent is consid-
+   cipitation is supposed to fall, then the storm will occur by it-           erably “wetter” at a temperature of 80 degrees than it is at a tem-
+   self (and the moderate or light result is disregarded). If a               perature of 50 degrees.
+   lightning storm is indicated for a day on which heavy or                      Humidity can have a significant effect on the ability of charac-
+   downpour precipitation is supposed to fall, then the storm                 ters and creatures to cope with the weather when temperature
+   will occur at the beginning of the period of precipitation. A              and humidity are both high, and particularly so when the wind is
+   typical lightning storm lasts for 25 minutes, during which 3/4             slight or nonexistent.
+   to 1 inch of rain is dropped and the sky is lit up at frequent
+   intervals by bright flashes of lightning. Roughly half of all              Table A5: HUMIDITY VARIATION
+   thunderstorms occur within two hours either way of sunrise
+   or sunset.                                                                                        Winter      Spring    Summer Autumn
+
+      Severe Snowstorm (S): If the normal maximum precipita-                  Arctic                    L           L          L           L
+   tion for the day in question is moderate, this storm will                    (all terrain)
+   dump 5-10 inches (d6 +4) of snow; if the normal maximum
+   precipitation is heavy, a severe snowstorm will cause 7-12                 Subarctic         D       L          L           L           L
+   inches (1d6 +6) of accumulation. The snow will come down                                     F       L          M           M           L
+   at the rate of 1 inch per hour until the indicated accumula-                                 H       L          L           L           L
+   tion is reached. Wind velocity will be very strong at the start                              M       L          M           L           L
+   of the storm, but will taper off after 1 or 2 hours to a moder-                              P       L          M           M           L
+   ate breeze (15-20 mph) at best as the storm center be-                                       Se      L          M           M           L
+   comes stalled over the area receiving the precipitation.                                     sw      L          M           M           L
+
+   Heat Wave (Z):For the next 3-8 days (ld6 +2), starting with the            Temperate         D       L          L           L           L
+day in question, the temperature will rise at the rate of 4 steps per                           F       M          H           M           M
+day until it reaches a high point one step above the normal maxi-                               H       M          H           H           M
+mum temperature. Roll on the Day-to-Day Change Table as usual                                   M       L          M           L           M
+each day, but disregard the Temperature Change column for the                                   P       M          H           H           M
+duration of the heat wave. When the temperature rises to one                                    Se      H          M           M           H
+step above the normal maximum, it will remain at that level for the                             sw      M          H           H           M
+duration of the heat wave. If the normal maximum temperature
+level is “Z”(high of 115, low of 85), the highest possible tempera-           Subtropical D             L           L          L           L
+tures during the heat wave will be 10 degrees hotter (high of 125,                        F             H           H          H           H
+low of 95), and the heat wave will only last for at most three days                       H             M           H          H           H
+after the temperature rises to this level (counting the day on                            M             M           H          H           H
+which the extra-high temperatures first occur). When the heat                             P             M           H          M           L
+wave ends, the temperature will automatically fall to the normal                          Se            M           H          H           M
+maximum on the first day thereafter, and will fall even lower if the                      sw            M           H          H           M
+Day-to-DayChange Table roll is 7 or less.
+   For example: It is the first month of spring in a temperate moun-          Tropical          D       L          L           L           L
+tain region, and the temperature for the current day is K (high of                              F       H          H           H           H
+50, low of 30). The tables indicate that a heat wave will begin on                              H       M          M           H           M
+the following day, and a roll of 3 on d6 determines that the heat                               M       M          H           H           H
+wave will last for 5 days. On the following day the temperature will                            P       M          H           H           H
+rise by 4 steps, to 0 (high of 70, low of 55). On the second day of                             Se      M          H           H           M
+the heat wave, the temperature will rise only 3 more steps, to R                                sw      M          H           H           H
+(high of 80, low of 65) because this is one step higher than the
+normal maximum temperature at this time of year for this terrain/             Humidity Letter Codes
+climate combination. The temperature will remain at level R for                  L = LOW (21-40%)                H = High (71-90%)
+two more days thereafter until the heat wave breaks. On the first                M = Medium (41-70%)
+
+                                                                        115
+RELATIVE HUMIDITY
+
+How to Use the Humidity Variation Table                                         Table A6: HUMIDITY AND EFFECTIVE TEMPERATURE
+
+   The letter codes show the prevalent levels of humidity for the               Temp.      ...............Wind velocitv ...............
+various terrainlclimate combinations during the different sea-                  & Hum.      0-10        11-20
+sons of the year. The humidity in a given area will fluctuate                   60-64
+through a range of three levels (one lower, the given level, and                  Dry         -          -
+one higher), depending upon the precipitation for the day in ques-                Low         -          -
+tion (Day 1) and the precipitation for the following day (Day 2).                 Med.       +5          -
+Thus, before the proper humidity for Day 1 can be known, the                      High       +10         +5
+general conditions for Day 2 must have been determined. Con-                      Sat.       +10         +5
+sult the following table and assign the humidity for Day 1 accord-              65-74
+ing to the conditions that apply:                                                             -          -
+                                                                                  Dry
+                                                                                  Low         -          -
+                                                                                                         -
+Day 1               ......... .Day 2 precipitation ..........                     Med.       +5
+precip.                 None             LorT           M or more                 High       +10         +5
+None                     -1                0                +1                    Sat.       + 10        +5
+L or T                  01-1               0               01+ 1                75-84
+M or more               01-1             01-1             +11+2                   Dry         -          -
+                                                                                  Low        +5          -
+     - 1 = Humidity falls one level                                               Med.       +5          +5
+      0 = Humidity level unchanged                                                High       +10         +5
+     + 1 = Humidity rises one level                                               Sat.       +15         +10
+                                                                                85-94
+   Where two values are given, the one before the slash indicates                 Dry         -          -
+the humidity on Day 1 beforethat day’s precipitationoccurs, and                   Low        +5          +5
+the one after the slash indicates the humidity after that day’s pre-              Med.       +10         +5
+cipitation - in both cases using the humidity level at the end of                 High       +15         + 10
+the previous day as the base for this adjustment.                                 Sat.       + 20        +15
+   Note again that in no case can humidity rise or fall beyond the              95 +
+three-level range for a given area. If low humidity falls one level,              Dry         -          -
+the result is dry humidity (0-20%). If high humidity rises one level,             Low        +10         +5
+the result is saturated humidity (91-1000/0).                                     Med.       + 15        +10
+   Example 1: The humidity at the end of the previous day was                     High       + 20        +15
+medium. The weather for Day 1 includes an episode of moderate                     Sat.       + 25        + 20
+precipitation,and a check for Day 2 indicates that heavy precipi-
+tation will fall on that day. Thus, the humidity on Day 1 is high be-
+fore that day’s precipitationfalls, and it rises to saturated after the         How to Use the Humidity and Effective Temperature Table
+precipitation has ended.
+   Example 2: The humidity at the end of the previous day was                      Whenever the temperature is 60 degrees or higher, find the en-
+saturated. The weather for Day 1 includes an episode of light pre-              try in the left-hand column that corresponds to the current tem-
+cipitation, and a check for Day 2 indicates that no precipitation               perature and humidity. Read across to the column corresponding
+will fall on that day. Thus, the humidity on Day 1 is saturated be-             to the wind speed for the day in question. If a number is given in
+fore that day’s precipitationfalls, and it falls to high after the pre-         the place where the appropriate row and column intersect, add
+cipitation has ended.                                                           that number to the actual temperature to obtain the current effec-
+   The preceding example points out a shortcoming of this sys-                  tive temperature and then determine the effects of temperature
+tem: It does not accommodate the possibility that the humidity                  on characters and creatures using this value instead of the actual
+will drop off drastically after reaching the high or saturated level            temperature.
+on a day when significant precipitation(moderate or heavier) oc-
+curs. When this possibility exists, common sense and the DM’s
+discretion must prevail. If a one-day drop of two humidity levels               Wind Chill
+(from saturated to medium, high to low, or medium to dry) seems
+warranted, then the DM is fully entitled to make this ruling.                      Anyone who has lived in an area where the temperature drops
+                                                                                to 35 degrees or lower has first-hand experience with the phe-
+                                                                                nomenon known as wind chill. As the temperature falls and wind
+Humidity and Effective Temperature                                              speed increases, the effective temperature can drop off drasti-
+                                                                                cally. Certain temperatures that are tolerable or even enjoyable
+  At temperatures of 60 degrees and higher, humidity and wind                   in calm wind conditions can become dangerous or even poten-
+speed can combine to alter the effective temperature. In short,                 tially fatal when combined with a brisk or strong wind. It is wind
+the combination of relatively high humidity and relatively low                  chill, more than temperature alone, that makes a cold climate
+wind speed can make it seem hotter than it actually is, and the ef-             dangerous to characters and creatures who find themselves ex-
+fects on characters and creatures operating in this effective tem-              posed to the elements. If only one set of optional weather rules is
+perature are modified accordingly. If these rules for humidity are              used in the campaign, it is strongly recommended that the Wind
+used in the campaign, the DM should check the following table to                Chill Table (on the next page) be the one.
+determine the effectivetemperature and use this figure instead of
+the actual temperature to ascertain the effects on characters and
+creatures (as outlined in the first section of this book).
+
+
+                                                                          116
+                                                                                                                                HOURS OF DAYLIGHT
+
+Table A7: WIND CHILL                                                                   How to Use the Hours of Daylight Table
+            . . . .. ... .. .. ...Wind velocity . ..... ....... ..
+ Temp.       5      10       15   20          25      30         35     40                Read down the left-hand column to the latitude designation
+                                                                                       that most closely corresponds to the location in question, and
+                                                                                       read across to the appropriate month of the year. The number
+                                                                                       given at the intersection of the row and column represents the
+                                                                                       number of hours of daylight on each day during the month in
+    15       10     -5     -10    -15       -20       -25    -30       -30             question. For this purpose, “hours of daylight” is defined as the
+                                                                                       length of time between sunrise and sunset on a given day.
+                                                                                          A shorter, simpler version of this table can be obtained by us-
+                                                                                       ing only the middle row of figures for each climatic region (the
+                                                                                       “80” line for arctic, “60” for subarctic, “40” for temperate, “25”
+                                                                                       for subtropical, and “10” for tropical). This avoids the need for
+                                                                                       the Dungeon Master to keep track of latitude, instead being con-
+                                                                                       cerned only with the climatic region for which the hours of day-
+   -25      -30    -50     -65    -75       -85       -90    -90       -95             light are being determined.
+                                                                                          Note that this table does not indicate the precise times of day at
+                                                                                       which sunrise and sunset occur; if these determinations are im-
+                                                                                       portant, they can be arrived at logically (using midnight as the
+                                                                                       midpoint of the nighttime period and noon as the midpoint of the
+                                                                                       daytime period), or they can be stipulated by the DM based on ei-
+How to Use the Wind Chill Table                                                        ther real-world experience or the particular characteristics of the
+                                                                                       campaign world.
+   Simply cross-index the actual temperature with the maximum
+wind speed for the day in question to find the effective tempera-
+ture with wind chill taken into consideration. Then use this effec-                    Twilight
+tive temperature instead of the actual temperature to determine
+effects on characters and creatures in the environment. For tem-                          As noted above, a figure for “hours of daylight” does not nec-
+peratures lower than -45, extrapolate downward following the                           essarily indicate the span of time in a day during which activities
+pattern given for the decrease in effective temperature from -40                       can be conducted without the need for artificial illumination. Each
+to -45. For wind speeds greater than 40 mph, use the column for                        day also has two periods of twilight, immediately preceding sun-
+40 mph; greater wind speeds have little, if any, effect on chilling.                   rise and immediately following sunset, during which the sun still
+                                                                                       casts a significant amount of light across the sky. As noted in the
+                                                                                       first section of this book (see Vision and Visibility), twilight condi-
+Hours of Daylight                                                                      tions have an effect on how far characters can see.
+                                                                                          Each twilight period lasts about 30 minutes at the middle lati-
+  As noted at the start of these rules under the description of the                    tudes (30-40degrees), decreasing to a minimum of 20 minutes at
+arctic climatic region, the number of hours of daylight and dark-                      the equator (0 degrees) and increasingto 40 minutes at relatively
+ness on a given day at a given location depend on the latitude of                      high latitudes (50-60 degrees). Local terrain conditions may af-
+the location and the time of year. Use the following table, or an                      fect this time span; for instance, twilight in a dense forest or on
+adapted version of it, to incorporate this phenomenon into the                         the side of a mountain opposite the sun may only last for 5-10
+campaign.
+
+            Table A8: HOURS OF DAYLIGHT
+
+                                               Winter                         Spring                    Summer                  Autumn
+                                        1        2           3         4        5         6        7      8    9          10      11       12
+                    Arctic
+                     90                                               24       24         24      24      24      24       0       0       0
+                      80                                              24       24         24      24      24     15%       5       0       0
+                      70                                              16       22         24      24     18%     13%       9       3       0
+                   Subarctic
+                      65                3          8Il2     1l1/2 15           19%      211h       20     17     13%     glk       5       3
+                      60               6112         9       11112 14%           17       19       171h    16      13      10      7l/2     6
+                      55               7%          9%       111/2 14            16      17%       16%     15      13     10V2     8Il2     7
+                  Temperate
+                      50               8112         10      12
+                      40               9%          101/2    12
+                      35                10          11      12
+                  Subtropical
+                      30            10112           11      12                                     14     13     12V2    11V2 loll2       10
+                      25             11            11112    12                                    13%     13      12     111/2 11        10’12
+                      20             11            11v2     12                                     13     13      12      12   11         11
+                   Tropical
+                      15            11112           12      12        12112    12112      13      13     12’12    12      12     111/2 l l V 2
+                      10            11112           12      12        12V2     12V2       13      13     12712    12      12     Ill12 l l V 2
+                       0             12             12      12         12       12        12      12      12      12      12      12     12
+
+                                                                                117
+LOCAL WINDS
+minutes. At extremely high latitudes for which the “hours of day-        Tides
+light’’ figure is zero, a twilight condition exists for 24 hours every
+day. If the sky is clear, the sun will provide enough light from its        The movement of ocean water caused by the gravitational pull
+position just below the horizon to make normal activities possible       of Earth’s moon and the sun have no direct effect on weather or
+without a constant need for an artificial light source.                  on the conditions of the physical environment - except, of
+                                                                         course, on land areas bordering the ocean. A simplified descrip-
+                                                                         tion of tides that simulates real-world conditions is presented
+Local Winds                                                              here for the Dungeon Master’s use when desired and appropri-
+                                                                         ate.
+   The “prevailing direction” described for winds in the basic              High tide and low tide occur twice each day on an alternating
+weather system is just that: the direction from which wind activity      sequence; each high tide is separated from the next high tide by
+will usually originate under non-extraordinary conditions. How-          12 hours, and low tide occurs 6 hours after each high tide. Be-
+ever, it is certainly not impossible to have (for instance) easterly     cause the moon orbits the Earth approximately once every 25
+winds in a temperate location, particularly on land adjacent to a        hours, the times of high and low tides advance by about an hour
+large body of water or over a small area of unusual terrain.             each day. This distinction is not usually important, but may be
+   Along the coastline of an ocean or a large lake, the land may be      significant if the player characters spend more than one day in
+swept by a “sea breeze” that moves from the water to the land. If        the same seacoast location. (If they don’t know any better, they
+the water is east of the land, then an east wind will result even if     may expect the next day’s high tides to occur at the same time as
+the prevailing wind comes from the opposite direction. A sea             the current day’s - and in certain circumstances, this could turn
+breeze occurs during daylight hours because the land gains heat          out to be an important miscalculation.)
+more rapidly than the adjacent water. As the warm air over the              The moon goes through its full cycle of phases once every 28
+land rises, it is replaced by cooler air that moves in from its pre-     days, or roughlyonce per month. The difference between the wa-
+vious location over the water. At night, the phenomenon is re-           ter level at high tide and the water level at low tide is greatest dur-
+versed because the land also loses heat more rapidly than the            ing the seven-day periods surroundingthe full moon and the new
+water does. The air over the water remains warm for a longer             moon; these are called the spring tides. The difference in water
+time, and when the two air masses are significantly different in         levels is much less pronounced when the moon is waxing (mov-
+temperature the colder air over the land moves out and replaces          ing from new to full) or waning (moving from full to new); these are
+the warmer air over the water. This reverse phenomenon is                the periods of neap tides.
+called, logically enough, a “land breeze.” It can also result in            On the average, the difference in water level between high and
+wind that moves contrary to the prevailing direction - for in-           low tide ranges from 5-7 feet (during neap tides) to 15-18 feet
+stance, where the prevailing direction is west but a body of water       (during spring tides). The variation in depth is less than this along
+is located to the west of a land mass.                                   a coastline borderinga very large body of water, and may be sub-
+   A sea breeze is usually stronger than a land breeze produced          stantially greater than the average along a coastline bordering a
+in the same location, but neither type of wind current normally          smaller body of water partially enclosed by land. For example,
+moves very far inland (five or ten miles at the most). Both types of     the variation in tide depth along the coast of North and South
+breezes are more likely to occur when the sky is clear, because          America bordering the Pacific Ocean is relatively small, because
+cloudy skies tend to inhibit the transfer of heat through the air. At    the ocean water has a lot of room to move. In contrast, the varia-
+times, the temperature along a seacoast may be markedly lower            tion between high and low tide in the Bay of Fundy (between New
+than the temperature only a few miles inland; when a sea breeze          Brunswick and Nova Scotia in eastern Canada) is often as much
+occurs, this is almost always the case, although other factors           as 60 feet, because the water in the bay has much less freedom
+(such as cold ocean currents) may also contribute to this disparity      of movement. Imagine a gallon of water poured into a bathtub
+in temperature.                                                          and set in motion so that it splashes from side to side lengthwise
+   Unusual terrain features can also bring about unusual wind            in the tub; the difference between “high tide” and “low tide”
+patterns. For instance, if the eastern edge of a flat plain ends         along the sides of the tub will not be very great. Pour the same
+abruptly in a cliff face that rises thousands of feet above the level    gallon of water into the kitchen sink and set it in motion with the
+of the plain, then a prevailing westerly wind will be “trapped”          same amount of force, and it might move against the sides of the
+when it reaches the cliff face. The result may be a swirling wind        sink so vigorously that it actually splashes out of the container.
+that can come from different directions in locations only a few             If it is important to determine the area of seacoast covered by
+hundred yards apart (and might be conducive to the formation of          high tide (and uncovered at low tide), the Dungeon Master can
+a storm or a tornado if other conditions are right for such an oc-       use these guidelines: Ifthe land slopes gently toward the sea (not
+currence). If the westerly wind is relatively light, it may simply       more than 30 degrees of slant), high tide will come in a distance
+double back on itself and produce an area of calm air in the imme-       of 4 to 5 times the height of the tide. If the slope of the seacoast is
+diate vicinity of the cliff as the westerly and easterly flows effec-    moderate (31 to 50 degrees), high tide will come in 2 to 3 times
+tively cancel each other out.                                            the height of the tide. Ifthe slope of the seacoast is severe (51 to
+   As with other aspects of this weather system, the DM is encour-       70 degrees), high tide will come in 1 to 2 times the height of the
+aged to modify, extrapolate from, or even ignore certain “facts”         tide. Examples: If the difference in height between high tide and
+about wind direction and velocity for the sake of variety, or to ac-     low tide is 15 feet and the seacoast is a gentle slope, the sea wa-
+count for out-of-the-ordinarycombinations of terrain and climate         ter at high tide will encroach on the land 60 to 75 feet farther in-
+that may have no correlation to features found in our real world.        land than it does at low tide. If the difference in height between
+                                                                         high tide and low tide is 5 feet and the seacoast is a moderate
+                                                                         slope, the sea water at high tide will encroach on the land 10 to 15
+                                                                         feet farther inland than it does at low tide.
+                                                                                                              THE DM’S RESPONSIBILITY
+
+The DM’s Responsibility                                                        temperature in the hills should also be high, perhaps even higher
+                                                                               than “P” (the normal maximum) for the first day or part of a day
+   As brought out in the introduction to the appendix, this                    that the party spends in the hills. Only after the player characters
+weather-determinationsystem does not attempt to account for all                move well away from the desert will they be entirely “insulated”
+of the possible combinationsof terrain, climate, and weather phe-              from the conditions that existed when they left that terrain. If your
+nomenathat can occur in our real world. Of course, it also cannot              day-to-daydice rolls indicate that the temperature will drop, then
+consider the fantastic properties that an imaginative Dungeon                  let it drop. (Presumably, it’s also getting cooler in the desert.) But
+Master might incorporate into the world in which his campaign                  if the temperature remains high, keep it there -don’t drop it (or
+takes place. However, it is hoped that what is given here will                 raise it) to the average temperature given for the area if move-
+serve as a flexible framework that the DM can modify.                          ment into’ that area has been accomplished through normal
+   For instance, day-by-day weather determination may be seen                  means and in gradual fashion.
+as too cumbersome and time-consuming. In that case, you may                        At times, player characters will find themselves voluntarily or
+decide to make each determination apply for two or three days in               accidentally transported across great distances in a short time.
+succession instead of just one. This tactic may be particularly                This may occur through some means of teleportation or magical
+useful when a party of player characters is simply moving from                 transport, or perhaps through the use of aerial mounts that can
+one place to another on an extended journey through the wilder-                travel at relatively high speed (compared to land-based move-
+ness, and you want to compress game time to get the mundane                    ment). In these cases, you are entirely in control of what sort of
+period of traveling out of the way. Of course, you can switch be-              weather conditions await them in their new locale. They may be
+tween various time frames as desired or appropriate: determine                 teleported from an area in a heat wave to another area hundreds
+the weather for a single day, then let the next set of dice rolls dic-         of miles away that is in a cold wave - if you decide that this
+tate conditions for a two- or three-day period, and then drop back             should be so. If you have no particular reason for dictating a cer-
+to a one-day determination for a certain purpose.                              tain set of weather conditions in the destination area, use the sec-
+   If a playing session is to extend over several days of game                 ond letter from the appropriate entry on the Temperature Table
+time, it is possible (and recommended)for the Dungeon Master to                (that’s what it’s for) and take things from there.
+predetermine the weather conditions for the entire several-day                     The one part of this system that virtually cries out for alteration
+period before the playing session begins. By doing this, you can               on a campaign-by-campaignbasis is the Special Weather Table.
+avoid disrupting the flow and continuity of the player characters’             The format of this part of the system is such that only four (at
+activities and thereby maintain the desired flavor of the role-                most) different types of special weather are possible in any
+playing adventure. (It may prove difficult for players to remain “in           terrainlclimate combination. But you can build in as much varia-
+character” if you call a five-minute halt to play at midnight of each          bility as desired, without changing the structure of the system.
+new game-day in order to roll some dice and consult a few tables                   For instance, if you decide that it is possiblefor a tornado to oc-
+to find out what the coming day will be like.)                                 cur in a temperate forest during summer, simply replace the “M”
+    Predetermining the weather for several days in advance is an               or “Z” in this part of the table with a “T.” Or, if you want to have
+especially good idea if you expect the party to be relatively sta-             all three special results possible, then modify the subtable (in the
+tionary over that span of time, or at least if you anticipate that the          “How to Use” text following the table) to take this into account.
+player characters won’t be moving from one type of terrain or one                  Last but not least, there is the matter of how to incorporate
+climatic region to another. However, on many occasions the                     fantastic weather phenomena into this system. It would have
+player characters will not be sauntering along in an area of con-               been practically impossible (and, at best, terribly complicated) to
+sistent terrain and climate. Perhaps they are on a mission that re-            design a system to account for every type of “unearthly” weather
+quires them to move speedily and in a direction that necessarily               that a Dungeon Master could devise in the process of creating a
+carries them from one terrain/climate area to another. Or, per-                campaign world. However, by drawing upon the system given
+haps the physical characteristics of your world are such that,                  here an experienced andlor energetic DM should be able to work
+even at a leisurely pace, the player characters cannot help mov-                in any kind of “natural” phenomenon that he can think up. The
+ ing from one terrain/climate area to another within a short span of           following list is far from exhaustive, but might present some ideas
+time. If you can anticipate when such a changeover will occur                  for fantastic weather that could be useful:
+(“After one day of travel, they’ll be entering the mountains”),                    - “Acid rain” that causes a certain amount of damage to ex-
+then you still may be able to predetermine what the weather will                posed flesh, depending on the intensity of precipitation and the
+be like in the newly entered area. But, as any DM knows, trying to              length of time a character or creature is exposed to it.
+predict the future actions of player characters is often a fruitless               - “Good lightning” that heals damage or has some other ben-
+exercise at best. Thus, there will be times when you simply must               eficial effect upon a character or creature hit by it.
+hold up play to make some new determinations - or, if you can                      - An “everlasting breeze” that keeps characters and crea-
+do the dice-rolling and table-consulting while the players are oc-             tures from being adversely affected by high temperature and hu-
+cupied with something else, so much the better.                                 midity.
+    The question still remains of how to make a smooth transition                  - “Frozen air” that occurs in extremely cold conditions and
+from one terrainlclimate area to another. Obviously, if one terrain            can be fatal to anyone or anything not equipped with the means
+area is in the grip of a heat wave as the party moves out of that              to offset it.
+ area and into an adjacent area, this does not mean that the heat                  - “Teleporting tornado” that seeks out characters, lifts them
+wave instantly ends. In virtually every case, the weather for the               into the air, and deposits them (with or without doing damage) in
+ immediate future in a new area will be essentially the same as the            a random location miles or hundreds of miles away. (“I don’t
+ conditions were in the area just vacated. It is up to the DM to use           think we’re in Kansas any more . . .”)
+the rules and tables of this system in a way that will ensure a                    The number of variations on these themes is, of course, limited
+ smooth and realistic transition.                                               only by the imagination of the Dungeon Master. Design your
+    For example, consider this scenario: It is the third month of win-         weather the way you want it to be, try to make it consistent within
+ter, and the party is moving from a temperate desert to an adja-               the framework of the world you have created, and always remem-
+cent region of hilly country. The current temperature in the desert             ber that you are in control. A modern-dayweather forecaster may
+ is “T” - the highest it can normally get. Therefore, the current               be able to predict what he thinks is going to happen, but a
+                                                                                Dungeon Master knows - and he isn’t telling!
+
+                                                                         119
+

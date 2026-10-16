@@ -1,0 +1,60 @@
+PRECIPITATION VARIATION
+
+month of winter is H, and the 2d6 roll yields a 12. Instead of going
+up three steps (to K, which is beyond the upper limit), increase
+the temperature to J for the following day.
+
+Ifthe current temperature is already at the upper limit, treat any
+“plus” result as "'no change' and treat a roll of 7 the same as a
+roll of 6 — that is, the temperature drops by 1 step and precipita-
+tion is possible. If the temperature remains at the upper limit for
+two consecutive days, treat a roll of 7 or 8 as a roll of 6, and con-
+tinue this pattern until the streak of hot weather ends. (For a
+streak of cold weather, perform the same process with the other
+end of the table.)
+
+Chance of Precipitation: If the dice roll indicates a ''yes"’ result
+in this column, note the numbers that came up on die 1 and die 2
+and consult the Precipitation Variation Table below.
+
+Wind Conditions: On a dice roll of 3 through 11, this column is
+used to determine the direction and velocity of the wind. Note that
+
+Table A3: PRECIPITATION VARIATION
+
+Winter
+
+Hills
+Mountains
+B ' s
+
+Precipitation Letter Codes
+- = No precipitation
+T = Trace (less than '/s” rain or '2” snow)
+L = Light (up to 2" rain or 1" snow)
+
+a wind from the arctic will be a north wind in the northern hemi-
+sphere and a south wind in the southern hemisphere; the reverse
+is true for a wind from the tropics. The "'prevailing direction” is as
+described above in the text for the various climatic regions. The
+velocity increment (+15 mph, +10 mph, etc.) is added to the
+wind velocity for the previous day. Obviously, wind velocity can-
+not fall below zero, and except in special circumstances it will not
+increase beyond 45 mph. Exceptions to this rule for arctic, tropi-
+cal, and subarctic climates are noted beside the Day-to-Day
+Change Table.
+
+Wind velocity represents the highest speed the wind will reach
+on the day in question, during gusts that can last anywhere from
+a few seconds to a few minutes. For the rest of the day, the wind
+speed will be no more than half of the indicated maximum veloc-
+ity. For example, the maximum wind velocity for the present day
+has been determined as 15 mph. A roll of 3 on the Day-to-Day
+Change Table indicates that the maximum velocity for the follow-
+ing day will be 30 mph. This means that gusts of up to 30 mph will
+
+M = Moderate (up to 4" rain or 2" snow)
+H = Heavy (up to 122" rain or 4" snow)
+D = Downpour (more than 12" rain)
+
+110

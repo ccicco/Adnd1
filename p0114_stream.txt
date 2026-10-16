@@ -1,0 +1,147 @@
+the second letter of the four-letter code indicates what sort of spe-
+cial weather will occur. A result of ““—"' on the above table indi-
+cates that no special weather occurs. To determine what
+conditions prevail on the day in question, refer to the following
+section of text. Many episodes of special weather span more than
+a single day; while such an episode is still running its course,
+treat any roll of 2 or 12 on the Day-to-Day Change Table as No
+Special Weather.
+
+Special Weather Definitions
+
+No Special Weather (—): If the roll on the Day-to-Day Change
+Table was a 2 but no special weather occurs, then the prevailing
+condition for the day in question is very strong wind (as given on
+the Day-to-Day Change Table). This is a wind that gusts up to 45
+mph, accompanied by a sharp decrease in temperature and a
+chance of precipitation (check the *‘B"’ column for the appropri-
+ate season on the Precipitation Variation Table). The wind will
+come either from the arctic or from the prevailing direction (50%
+chance of each, or DM’s choice).
+
+If the roll on the Day-to-Day Change Table was a 12 but no spe-
+cial weather occurs, then the day's weather is marked by a very
+slight wind plus a sharp increase in temperature and a chance of
+precipitation (check the *'‘B’' column on the Precipitation Varia-
+tion Table). A very slight wind is one that occasionally gusts up to
+5 mph, but for virtually all of the day in question the wind is calm,
+or so slight that it has no effect on the surroundings.
+
+Cold Wave (A): For the next 3-8 days (1d6 +2), starting with the
+day in question, the temperature will drop at the rate of 4 steps
+per day until it reaches a low point one step below the normal
+minimum temperature. Roll on the Day-to-Day Change Table as
+usual each day, but disregard the Temperature Change column
+for the duration of the cold wave. When the temperature drops to
+one step below the normal minimum, it will remain at that level for
+the duration of the cold wave. If the normal minimum temperature
+level is "'A" (high of —20, low of —40), the lowest possible tem-
+peratures during the cold wave will be 10 degrees colder (high of
+—-30, low of —50), and the cold wave will only last for at most
+three days after the temperature falls to this level (counting the
+day on which the extra-low temperatures first occur), regardless
+of the result of the roll for duration. When the cold wave ends, the
+temperature will automatically rise to the normal minimum on the
+first day thereafter, and will rise even higher if the Day-to-Day
+Change Table roll is 7 or greater.
+
+For example: Itis the first month of spring in a temperate moun-
+tain region, and the temperature for the current day is K (high of
+50, low of 30). The tables indicate that a cold wave will begin on
+the following day, and a roll of 3 on 1d6 determines that the cold
+wave will last for § days. On the following day the temperature will
+drop by 4 steps, to G (high of 25, low of 10). On the second day of
+the cold wave, the temperature will fall only 3 more steps, to D
+(high of 0, low of —10) because this is one step lower than the
+normal minimum temperature at this time of year for this terrain/
+climate combination. The temperature will remain at level D for
+two more days thereafter until the cold wave breaks. On the first
+day after the cold wave, the temperature will automatically climb
+one step, to E. If a 7 or higher is rolled on the Day-to-Day Change
+Table for that day, the temperature will go up an additional 1, 2, or
+3 steps. If a 6 or lower is rolled, the temperature remains at level
+E, since this is the lowest the temperature can be under normal
+circumstances.
+
+Cyclone/Hurricane/Typhoon (C): This ferocious storm is known
+by different names in different areas of our world — but no matter
+what it is called, it is one of the most fearsome and potentially le-
+
+113
+
+SPECIAL WEATHER DEFINITIONS
+
+thal of all weather phenomena. The wind velocity in a hurricane
+can be from 80 to 180 mph (1d6 % 20 +60), strong enough to dam-
+age even stone structures. Any characters or creatures not in
+places of secure shelter when the storm hit are in danger of liter-
+ally being blown away.
+
+One day before a hurricane actually reaches land in a seacoast
+area, the area will be drenched by a lightning storm (see the sec-
+tion below on Extreme Precipitation for the description of this
+storm). If characters sense that things are going to get worse be-
+fore they get better, and if they are able to move far enough in-
+land during this first day, they may be able to avoid the full fury of
+the hurricane but they probably won’t be able to move out of the
+path of the storm altogether. A hurricane will not move farther
+than 10 miles inland, but the storm around its perimeter will ex-
+tend at least another 50 miles inland.
+
+A hurricane moves in a general direction away from the equa-
+tor. After it hits land, it will follow the coastline for 1 or 2 days be-
+fore veering back out to sea. The storm is accompanied by
+torrential rain, up to twice as heavy as downpour precipitation. In
+addition, the wind of the hurricane drives sea water ahead of it,
+forming a tidal wave that can flood low-lying areas as far as 3
+miles inland.
+
+Hurricane winds revolve around a central calm area, known as
+the “‘eye."" After spewing forth winds and rain in a certain area for
+six hours, the storm will abruptly subside as the eye passes over
+the location that only minutes earlier was being ravaged and
+drenched. The sky will clear partially or entirely and wind velocity
+will drop to practically zero. Then, after 30 to 60 minutes, the
+storm will mount to its full fury again as the second half of the dis-
+turbance passes over the area. Six hours later, the hurricane will
+have passed, and ‘‘only"’ a vigorous rainstorm will remain for the
+next few hours until the storm center moves entirely out of the
+area.
+
+For three days in a row beginning with the day the hurricane
+hits, the Day-to-Day Change Table is not used. On the day of the
+hurricane, the temperature will remain constant, and precipita-
+tion and wind speed will be as described above. For two days af-
+ter the hurricane, the temperature will not vary by more than one
+step either way from the temperature on the day of the storm.
+(Roll 2d6: 6 or less = 1 step down; 7 = no change; 8 or more = 1
+step up.) During those two days there will be no precipitation, and
+wind velocity will not be greater than 10 mph (from the prevailing
+direction).
+
+A hurricane will not occur in the same general area (within a
+200-mile radius) more often than once a month. If the tables indi-
+cate the occurrence of a second hurricane in the same area be-
+fore one month has elapsed, treat it instead as an occurrence of
+extreme precipitation (see below). Also, a hurricane will not occur
+in the tropics within 5 degrees of latitude north or south of the
+equator; disregard any ““C' result obtained on the Special
+Weather Table if it pertains to a location within this area.
+
+Drought (D): For a period of 4-14 days (2d6 +2), the usual prin-
+ciples governing frequency and amount of precipitation do not
+apply. On the first day of a drought no precipitation will fall, re-
+gardless of what the Day-to-Day Change Table has indicated. At
+any time when trace precipitation is indicated, no rainfall or snow-
+fall will occur. In an area where light or moderate precipitation is
+the normal maximum, no precipitation greater than a trace
+amount will fall, and this will occur no more than once in every
+span of five full days. In addition, any trace result is disregarded.
+In an area where heavy precipitation is the normal maximum,
+treat any precipitation result as two steps lower than actual, so
+that H becomes L, M becomes T, and L becomes no precipita-
+tion. Use the Day-to-Day Change Table normally for temperature
+and wind, but amend any precipitation results as described here.
+
+Example 1: It is winter in an area of subtropical hills, and the ta-
+

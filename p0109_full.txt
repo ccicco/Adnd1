@@ -1,0 +1,73 @@
+CLIMATIC REGIONS
+
+    A phenomenon unique to the arctic is the “midnight sun,”                    where day and night are of virtually identical length), but only in
+which occurs during spring and summer. Because the Earth ro-                    the arctic are the extremes of all-night days and all-day nights re-
+tates around an axis that is tilted with respect to the sun, there is a         alized. (See the Hours of Daylight Table in the Optional Rules
+period of time each year when the arctic region is in continual                 section for more information.)
+daylight; at any time during the planet’s rotation, the arctic is
+tilted toward the sun. The converse of this is the long arctic winter             Subarctic climate is typical of areas from 65 degrees latitude to
+night (the “noon moon”?), when for an equal length of time in au-               51 degrees. (In the northern hemisphere, the southern boundary
+tumn and winter the region is tilted away from the sun and is in                of this area roughly describes the border between the United
+constant twilight. This difference in the amount of daylight each               States and Canada.) Winters are long and cold, but there is also a
+day occurs at all latitudes, of course (except right at the equator,            season that can legitimately be described as summer; daytime
+
+
+Table A l : TEMPERATURE VARIATION
+
+                                        Winter                        Spring                         Summer                      Autumn
+                                  1       2          3         4        5            6         7       8         9        10       11        12
+
+Arctic        Desert           ABG       ABH       ACH      AEH       CGK          FJL      JKN       JKM      FHK       DGJ      ADH      ABH
+              Forest             -         -         -        -           -          -        -        -         -        -         -        -
+              Hills            ABE       ABD       ACF      ADG       BE1          CFI      DGL       DGK      CFJ      CEH       BEH      ACE
+              Mountains        ABE       ABD       ACF      ADG       BE1          CFI      DGL       DGK      CFJ      CEH       BEH      ACE
+              Plains           ABG       ABH       ACH      AEH       CGK          FJL      JKN       JKM      FHK      DGJ       ADH      ABH
+              Seacoast         ACH       ABH       ACH      AEJ       CGK          FJN      JKP       JKN      EIL      CGJ       AEI      ACI
+
+Subarctic     Desert           AD1       ADJ       BEJ       CGJ      FKM          JLN      KMQ      JMQ       GKQ      FHM       CEL      ACI
+              Forest           AEJ       AEI       BGK       DJL      HKN          JLP      KMR      JMR       IKP      EJL       BHK      AFJ
+              Hills            AD1       AD1       BFJ       CGJ      FKN          JLN      JMP      IMP       GKM      DJL       BGK      ADJ
+              Mountains        ACI       AD1       AFJ       BHL      EJM          IKM      JLN      IMO       GKM      DJL       BFK      ADJ
+              Plains           AD1       ADJ       BEJ       CGJ      FKM          JLN      KMQ      JMQ       GKQ      FHM       CEL      ACI
+              Seacoast         BFK       BGK       CHK       DJM      HKN          JLR      KMR      KMR       JLP      EKM       CHL      AFK
+
+Temperate Desert               KMS       KMT       LMT      MNW       MPX          PPZ      UYZ      UYZ QWY            NSX       LRX      KMR
+          Forest               CFL       BFK       EKP      HLP       KNU          MPV      MSX      MSX LPV            JNR       FJL      DJL
+          Hills                BIL       CJM       EKP      ILR       JOT          JQX      LTY      LTY KQW            JNT       FKP      CJM
+          Mountains            AIL       BIM       CJN      EKQ       FLS          KOV      LQX      KQW I N U          ELS       CKR      BJL
+          Plains               BHM       CHN       DKQ      GLS       KNU          LPX      MSY      MSY KPW            GLS       EKQ      CJM
+          Seacoast             EJM       FKN       IKQ      KLS       KMT          LOW      MPX      MPW LOW            KLT       GKP      EKM
+
+Subtropical Desert             LPT       LPU       MSW      NTX       OTX          RVY      TXZ      TXZ       RUY       PUY      NSX      MPW
+            Forest             LTU       LTV       MTV      NTW       NTX          PUX      PUX      PUX      ouw NUW             MSV      LSV
+            Hills              KNQ       KOR       LQU      MSV       NTW          oux      PUX      PUY       NSX      MQV       LPS      KNR
+            Mountains          KMP       KMQ       LPS      LPT       MQU         NQU       NPT      NOR       LOR      LNQ       LNQ      KMP
+            Plains             LNR       KOS       MRU      NSX       RVX         SWY       TWZ      TWZ       SVY      QVY       MRU      LPS
+            Seacoast           LMU       KMV       KOW      LPX       MQX         MSY       NSY      NSY       MRX      LQW       KOU      KMU
+
+Tropical      Desert           PRU PST             PTW       PUX      QVY         TWZ       VYZ      VYZ       UXY      UVX       RUW      QSV
+              Forest           MUW LUW             MUW      oux oux               QUX       QUX      QUX       QUX      PUX      ouw MUW
+              Hills            MPR NPT             NRT      PRU       PTX         QUY       swz swz            SVY      QTW       ORU      NQT
+              Mountains        MPR NPS             NQT      OQT       OQU         OQU       NPT      NPT       NPT      NPS       MPS      MPS
+              Plains           MPR NQT             NRU      PRU       RWY         TWY       TWZ      TWZ       TWY      RVY       PSW      NRU
+              Seacoast         PSU PSV             OTW      QTX       QTX         RTY       RTX      RTX       RTW      QSV       QSV      PRV
+
+  The temperature figures for desert assume an elevation of sea                 ature figures for every increase of 1000feet (or add 3 degrees for
+level; for plains and forest, 500 feet; for hills, 2000 feet; and for           every decrease of 1000 feet) if a more accurate temperature de-
+mountains, 4000 feet. If these terrain types exist at different ele-            termination is desired.
+vations than the ones given, subtract 3 degrees from the temper-
+
+Temperature Letter Codes
+
+   Letter      High      Low             Letter-     High      Low                Letter      High      Low            Letter     High      Low
+                                           *.
+     A         -20       -40                                                         0         70        55
+     B         -15       -30                                                         P         75        55
+     C          -5       -20                                                         Q         80        60
+     D           0       -10                                                         R         80        65
+     E           10        0                                                         S         85        65
+     F          18        10                                                         T         85        70
+     G          25        10
+
+                                                                          108
+

@@ -1,0 +1,142 @@
+SPECIAL WEATHER DEFINITIONS
+
+bles indicate that a drought will occur beginning on the following
+day. A roll of 2d6 yields a result of 9, so the drought will persist for
+11 days. No rain will fall on the first day. When light precipitation
+is indicated on the second day, a trace of rain falls instead. Since
+precipitation can only occur once in a five-day period, it will not
+rain again until day 6 of the drought at the earliest.
+
+Example 2: The season is spring instead of winter, which
+means that the precipitation amount in subtropical hills normally
+ranges from light to heavy. During a springtime drought, any
+heavy precipitation result is treated as light rain, and in any other
+instance only trace precipitation will occur if it rains at all.
+
+Gale (G): This is an extremely strong wind, usually ranging
+from 45 to 70 mph (1d6x5 +40), which is aimost always accompa-
+nied by precipitation. When rain or snow does occur along with
+gale-force winds, the result can be almost as perilous as a hurri-
+cane. For a period of 2-7 hours (1d6 + 1), gale-force winds will
+never drop below 30 mph and will almost always be 50 mph or
+greater. If the wind velocity was 20 mph or greater on the pre-
+vious day, then the gale-force winds on the current day will range
+from 50 to 70 mph. If a gale occurs in a desert area, no precipita-
+tion will fall on the same day; instead, the wind will bring about a
+severe sandstorm. Also, in an arctic or subarctic environment
+when snow is on the ground, gale-force winds will whip the snow
+up and around, causing conditions similar to those of a severe
+sandstorm. See the description for Sandstorm/Dust Storm/
+Blowing Snow below for more information on this phenomenon.
+
+Mist or Fog (M): The “‘calmest’’ form of special weather, mist or
+fog is nevertheless not to be taken lightly. It will occur beginning
+either at sunrise (1-4 on 1d6) or sunset (5-6 on 1d6) and will last
+for a number of hours equal to the result of this die roll. Fog will be
+heavy whenever it occurs in a seacoast area or in an inland loca-
+tion adjacent to a body of water; in all other locations, it will be of
+moderate intensity. If precipitation occurs on the same day, the
+rain or snow will not fall while the fog condition persists, but it is
+likely (50% chance, or DM's choice) that a period of precipitation
+will immediately follow or precede the fog (the former case for a
+daytime fog, the latter for a nighttime fog).
+
+The effects of fog on movement are covered in the section on
+Encumbrance and Movement; the effects of fog on visibility are
+covered in the section on Vision and Visibility.
+
+Sandstorm/Dust Storm/Blowing Snow (S): This phenomenon
+occurs in a desert environment where the top layer of soil is loose
+or sandy in consistency, or in a cold environment where the
+ground is covered by a thick layer of loose snow. Regardless of
+what the result on the Precipitation Table indicates, no precipita-
+tion will fall on the day that a sandstorm occurs; instead, the very
+strong winds will pick up the loose soil (or snow), and for a period
+of 2 to 5 hours (1d4 + 1) the rapidly moving air will be filled with
+particles that inhibit movement and reduce visibility, and may
+even cause damage to unprotected characters or creatures. A
+severe sandstorm occurs whenever gale-force winds are indi-
+cated for a desert environment, or an arctic or subarctic environ-
+ment where snow is on the ground. This condition will last for 2-7
+hours (1d6 + 1), and only the very hardy or the very foolish will at-
+tempt to do anything other than seek shelter and wait out the
+storm.
+
+Tornado (T): In terms of the area it directly affects, a tornado is
+the most dangerous and destructive of all natural weather phe-
+nomena. When a "‘T" result is indicated on the Special Weather
+Table, this means that conditions suitable for the development of
+tornadoes will arise during the day in question. The temperature
+will rise to at least two steps above the normal temperature for the
+area in question (if the roll of 12 on the Day-to-Day Change Table
+
+114
+
+did not increase it to this at least this level already), and for 1d3
+hours before tornadoes pass through the area the winds will be
+very strong and heavy precipitation will occur. Then the rain will
+stop abruptly, tapering to nothing or a trace amount within min-
+utes, and in the area immediately around a tornado's path (one-
+half mile on either side) the wind will drop off to slight or very
+slight velocity. The tornado will come through the area 3d6é min-
+utes after the start of this cessation of activity. During this time
+and for about 30 minutes after the tornado passes, the tempera-
+ture will drop abruptly by 15 degrees or three steps, whichever is
+greater. After this ‘‘cooling-off period,”” the temperature will be-
+gin to rise again until it reaches an appropriate level according to
+what was predetermined for the day. For the rest of the day after a
+tornado comes through an area, the weather will be calm and
+non-threatening — a strange (and usually welcome) contrast to
+what has just happened.
+
+The path of a tornado when it touches the ground is typically
+one-quarter mile wide and about 15 miles long, and most torna-
+does travel along the ground at about 40 mph. The whirling vor-
+tex of air is distinguishable from the surrounding sky, especially
+near the ground where the cloud contains dirt and debris that it
+has picked up in its rampage across the countryside. Within and
+around the whirlwind, the velocity of the spiraling air ranges from
+200 to 300 mph. Because of centrifugal force pushing the air out-
+ward from the center, the air pressure in the center of the vortex is
+considerably lower than in the surrounding vicinity. Structures
+that are able to stand up to the high-velocity winds may still be de-
+stroyed — virtually exploded — when this area of extremely low
+pressure passes over their location.
+
+Extreme Precipitation (X): This category encompasses several
+phenomena. The particular type of storm that occurs depends on
+climatic region, temperature, and a die roll. Cross-index the ap-
+propriate conditions on the table below and roll d6é to determine
+what kind of extreme precipitation occurs:
+
+............. Climaticregion.............
+Tropical/ Temperate/Subarctic/
+Temperature Subtropical Arctic
+-1 or lower — S (1-3) or none (4-6)
+1029 - o s o B{1HE) ol B
+30-35 (1-6) S (1-4) or H (5) or | (6)
+36-49 L (1-5) or H (6) L (1-4) or H (5-6)
+5074 L(1-6) - L(@HorHE)
+75 or higher Lgﬂﬂ BRI M 2
+
+Extreme Precipitation Letter Codes
+H = Hailstorm
+| = Ice/Sleet Storm
+
+L = Lightning Storm
+
+S = Severe Snowstorm
+
+* — An Ice/Sleet Storm will only occur if the temperature is 25
+degrees or higher; otherwise, treat a roll of 6 as ‘‘none."
+
+Hailstorm (H): This kind of activity usually occurs during
+the first ten minutes of a lightning storm (see below), but on
+rare occasions (roll of 1 on 1d6) can be a storm in and of it-
+self lasting from 5-10 (1d6+4) minutes. Hail consists of
+lumps of ice, typically no larger than s inch in diameter but
+possibly as large as 2 or 3 inches across. When a hailstorm
+occurs at a temperature of 40 degrees or higher, the hail
+will melt within minutes of hitting the ground. If the hail ac-
+tivity is followed by a lightning storm, the pellets will have
+melted by the time the lightning storm ends.

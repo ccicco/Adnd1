@@ -1,0 +1,122 @@
+APPENDIX:
+THE WORLD OF WEATHER
+
+Introduction
+
+A system for determining the weather at any time and place in
+the campaign world is a necessary part of a set of rules that de-
+fines and describes that world. Yet weather, by its very nature, is
+anything but systematic. Modern-day meteorologists, armed with
+all the equipment and knowledge that man has devised and ac-
+cumulated, still can’t always predict with certainty what the
+weather will be from one day to the next — so how can a game de-
+signer hope to accomplish what they cannot?
+
+The resolution of this paradox lies in the judicious use of one of
+the designer's most valuable tactics: simplicity. The tables and
+text on these pages may not look simple at first glance, but they
+are simple indeed compared to what would have been needed to
+account for all the combinations of terrain, climate, elevation, and
+location that exist on Earth. The system given here will enable a
+Dungeon Master to predetermine the important weather condi-
+tions that will prevail on any day (and for days or weeks in ad-
+vance, if desired) at any location on the world.
+
+The system has been constructed so that parts of it, such as
+the sections on wind chill and humidity, can be disregarded if the
+Dungeon Master prefers even more simplicity than the designer
+built in. The basic structure requires the DM to consult only two
+tables, and make a single dice roll, to determine the temperature,
+wind speed and direction, and precipitation (if any) for any day
+except one on which a special weather phenomenon takes place.
+
+Note that this system describes how to determine weather con-
+ditions, but does not explicitly describe the effects, in game
+terms, that the weather will have upon characters, creatures, or
+other elements present in the environment. Information on the ef-
+fects of weather is presented in the first section of this book, for
+both players and DMs. The difference, of course, is that the
+Dungeon Master will know exactly what the weather conditions
+are or will be, while player characters (and their players) in most
+cases only will be able to make general inferences and observa-
+tions based on the information the DM imparts to them — and
+they, unlike the DM, usually will not know what the weather has in
+store for them during the hours and days to come.
+
+Basic Assumptions
+
+The system is designed for a world that is similar, if not identi-
+cal, to our Earth, on the assumption that most campaign worlds
+are Earthlike at least in terms of their fundamental natures. A day
+is 24 hours in duration; a year is 365 days in length, or there-
+abouts. (Many Dungeon Masters prefer to develop their own cal-
+endars, and a good number of those conveniently divide the year
+into twelve identical months of 30 days each, making each year
+360 days long.) Each year is divided into four seasons, and each
+of the seasons is further divided into three months. The planet ro-
+tates in a counterclockwise direction, as viewed from a point
+above the north pole. Temperatures are expressed in degrees
+Fahrenheit, elevation in feet above sea level, and wind velocity in
+miles per hour. Wind direction is given as the direction the wind is
+coming from; a north wind blows from north to south, not the
+other way around.
+
+107
+
+The planet contains five climatic regions, each described in de-
+tail below. The system considers seven distinct types of terrain,
+which are defined in the first part of this book. Although these
+terrain/climate designations do not directly correspond with the
+terrain and climate categories given in the encounter tables in the
+Dungeon Masters Guide and Monster Manual I, translation is not
+difficult. If you use the DMG terrain categories, consider scrub
+and rough areas to be the same (for weather determination) as
+plain or forest, depending on which of those latter areas the ter-
+rain most closely resembles. Swamp areas, whenever this cate-
+gory is not specifically mentioned (such as on the Temperature
+Variation Table), are considered as either plain, forest, or sea-
+coast, depending on which of those three latter types most obvi-
+ously applies. (A swamp devoid of large vegetation is a plain; a
+swamp containing trees or other large vegetation is a forest; and
+a swamp adjacent to the ocean is seacoast.) Monster Manual Il
+considers only three climatic categories: cold, temperate, and
+tropical. To mesh that system with this one, simply divide the sub-
+arctic and subtropical areas in half, so that monsters encoun-
+tered in a cold climate will be found in the arctic and in the part of
+the subarctic adjacent thereto. Those encountered in a tropical
+climate are found in the tropics and in the adjacent half of the
+subtropical area. And, monsters that occur in a temperate cli-
+mate will be found in any area between the two extremes, encom-
+passing the temperate area (as described herein) plus the
+adjacent half of the subarctic and the adjacent half of the subtrop-
+ical area.
+
+Climatic Regions
+
+Arctic climate prevails in latitudes from 90 degrees (the north or
+south pole) to 66 degrees (the approximate location of the Arctic
+Circle). In this text, "“arctic'' refers to the polar regions in both the
+northern and southern hemispheres (and the same general rule
+applies to subarctic, temperate, and subtropical regions, de-
+scribed below). The arctic is, in a word, ¢-c-cold. The temperature
+sometimes rises to tolerable levels in the height of summer, but
+for most of the year the arctic region is so frigid that it is essen-
+tially uninhabitable, except by characters who are outfitted for
+survival in the deep freeze (and, of course, by creatures and mon-
+sters that are adapted to — and might even thrive in — this kind of
+climate). The winds in this area generally blow from east to west
+and seldom reach greater than moderate velocity (15-20 mph) ex-
+cept during storms. However, even a light breeze can make a
+drastic difference in effective temperature when it is bitterly cold
+to begin with; see the section below on wind chill and its effects.
+
+In every other climatic area, the amount of precipitation a cer-
+tain locale receives depends on the time of year, the type of ter-
+rain in the locale, or both. But in the arctic, time of year makes no
+appreciable difference and terrain distinctions are for the most
+part irrelevant since everything is covered with ice. (On the Tem-
+perature Variation Table below, the entries are identical for arctic
+hills and arctic mountains, and also for arctic desert and arctic
+plains; temperatures for an arctic forest area are not given, since
+vegetation of the normal sort cannot survive in this climate.) Pre-
+cipitation in the arctic is usually very light if it exists at all.

@@ -1,0 +1,72 @@
+                                                                                                                                HOURS OF DAYLIGHT
+
+Table A7: WIND CHILL                                                                   How to Use the Hours of Daylight Table
+            . . . .. ... .. .. ...Wind velocity . ..... ....... ..
+ Temp.       5      10       15   20          25      30         35     40                Read down the left-hand column to the latitude designation
+                                                                                       that most closely corresponds to the location in question, and
+                                                                                       read across to the appropriate month of the year. The number
+                                                                                       given at the intersection of the row and column represents the
+                                                                                       number of hours of daylight on each day during the month in
+    15       10     -5     -10    -15       -20       -25    -30       -30             question. For this purpose, “hours of daylight” is defined as the
+                                                                                       length of time between sunrise and sunset on a given day.
+                                                                                          A shorter, simpler version of this table can be obtained by us-
+                                                                                       ing only the middle row of figures for each climatic region (the
+                                                                                       “80” line for arctic, “60” for subarctic, “40” for temperate, “25”
+                                                                                       for subtropical, and “10” for tropical). This avoids the need for
+                                                                                       the Dungeon Master to keep track of latitude, instead being con-
+                                                                                       cerned only with the climatic region for which the hours of day-
+   -25      -30    -50     -65    -75       -85       -90    -90       -95             light are being determined.
+                                                                                          Note that this table does not indicate the precise times of day at
+                                                                                       which sunrise and sunset occur; if these determinations are im-
+                                                                                       portant, they can be arrived at logically (using midnight as the
+                                                                                       midpoint of the nighttime period and noon as the midpoint of the
+                                                                                       daytime period), or they can be stipulated by the DM based on ei-
+How to Use the Wind Chill Table                                                        ther real-world experience or the particular characteristics of the
+                                                                                       campaign world.
+   Simply cross-index the actual temperature with the maximum
+wind speed for the day in question to find the effective tempera-
+ture with wind chill taken into consideration. Then use this effec-                    Twilight
+tive temperature instead of the actual temperature to determine
+effects on characters and creatures in the environment. For tem-                          As noted above, a figure for “hours of daylight” does not nec-
+peratures lower than -45, extrapolate downward following the                           essarily indicate the span of time in a day during which activities
+pattern given for the decrease in effective temperature from -40                       can be conducted without the need for artificial illumination. Each
+to -45. For wind speeds greater than 40 mph, use the column for                        day also has two periods of twilight, immediately preceding sun-
+40 mph; greater wind speeds have little, if any, effect on chilling.                   rise and immediately following sunset, during which the sun still
+                                                                                       casts a significant amount of light across the sky. As noted in the
+                                                                                       first section of this book (see Vision and Visibility), twilight condi-
+Hours of Daylight                                                                      tions have an effect on how far characters can see.
+                                                                                          Each twilight period lasts about 30 minutes at the middle lati-
+  As noted at the start of these rules under the description of the                    tudes (30-40degrees), decreasing to a minimum of 20 minutes at
+arctic climatic region, the number of hours of daylight and dark-                      the equator (0 degrees) and increasingto 40 minutes at relatively
+ness on a given day at a given location depend on the latitude of                      high latitudes (50-60 degrees). Local terrain conditions may af-
+the location and the time of year. Use the following table, or an                      fect this time span; for instance, twilight in a dense forest or on
+adapted version of it, to incorporate this phenomenon into the                         the side of a mountain opposite the sun may only last for 5-10
+campaign.
+
+            Table A8: HOURS OF DAYLIGHT
+
+                                               Winter                         Spring                    Summer                  Autumn
+                                        1        2           3         4        5         6        7      8    9          10      11       12
+                    Arctic
+                     90                                               24       24         24      24      24      24       0       0       0
+                      80                                              24       24         24      24      24     15%       5       0       0
+                      70                                              16       22         24      24     18%     13%       9       3       0
+                   Subarctic
+                      65                3          8Il2     1l1/2 15           19%      211h       20     17     13%     glk       5       3
+                      60               6112         9       11112 14%           17       19       171h    16      13      10      7l/2     6
+                      55               7%          9%       111/2 14            16      17%       16%     15      13     10V2     8Il2     7
+                  Temperate
+                      50               8112         10      12
+                      40               9%          101/2    12
+                      35                10          11      12
+                  Subtropical
+                      30            10112           11      12                                     14     13     12V2    11V2 loll2       10
+                      25             11            11112    12                                    13%     13      12     111/2 11        10’12
+                      20             11            11v2     12                                     13     13      12      12   11         11
+                   Tropical
+                      15            11112           12      12        12112    12112      13      13     12’12    12      12     111/2 l l V 2
+                      10            11112           12      12        12V2     12V2       13      13     12712    12      12     Ill12 l l V 2
+                       0             12             12      12         12       12        12      12      12      12      12      12     12
+
+                                                                                117
+

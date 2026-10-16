@@ -1,0 +1,67 @@
+PRECIPITATION VARIATION
+
+month of winter is H, and the 2d6 roll yields a 12. Insteadof going            a wind from the arctic will be a north wind in the northern hemi-
+up three steps (to K, which is beyond the upper limit), increase               sphere and a south wind in the southern hemisphere; the reverse
+the temperature to J for the following day.                                    is true for a wind from the tropics. The “prevailing direction” is as
+   If the current temperature is already at the upper limit, treat any         described above in the text for the various climatic regions. The
+“plus” result as “no change” and treat a roll of 7 the same as a               velocity increment (+15 mph, +10 mph, etc.) is added to the
+roll of 6 -that is, the temperature drops by 1 step and precipita-             wind velocity for the previous day. Obviously, wind velocity can-
+tion is possible. If the temperature remains at the upper limit for            not fall below zero, and except in special circumstances it will not
+two consecutive days, treat a roll of 7 or 8 as a roll of 6, and con-          increase beyond 45 mph. Exceptions to this rule for arctic, tropi-
+tinue this pattern until the streak of hot weather ends. (For a                cal, and subarctic climates are noted beside the Day-to-Day
+streak of cold weather, perform the same process with the other                Change Table.
+end of the table.)                                                                Wind velocity represents the highest speed the wind will reach
+                                                                               on the day in question, during gusts that can last anywhere from
+   Chance of Precipitation: If the dice roll indicates a “yes” result          a few seconds to a few minutes. For the rest of the day, the wind
+in this column, note the numbers that came up on die 1 and die 2               speed will be no more than half of the indicated maximum veloc-
+and consult the Precipitation Variation Table below.                           ity. For example, the maximum wind velocity for the present day
+                                                                               has been determined as 15 mph. A roll of 3 on the Day-to-Day
+  Wind Conditions: On a dice roll of 3 through 11, this column is              Change Table indicatesthat the maximum velocity for the follow-
+used to determine the direction and velocity of the wind. Note that            ing day will be 30 mph. This means that gusts of up to 30 mph will
+
+
+             Table A3: PRECIPITATION VARIATION
+
+                                                     Winter                  Spring                 Summer                Autumn
+                                                 A     B    C            A     B    C          A      B    C         A       B   C
+
+                                                 -     T                 -     T                -     T     -               T
+                                                                                                      -     T
+                                         [ins               T                   -     T               -     T
+
+
+
+
+                           Hills                 -     T    T            -     L      T        T      L     L         -     L     T
+                           Mountains             -     T    T            T     M      L        T      L     T         -     L     T
+
+
+
+            -          .    -    .
+                                                 -    T     -            -     T     -         -      T     -
+                                                 T    M     L            L     H     M         L      M     M        L      M     M
+                                                 T    M     L            L     H     M         L      H     M        T      M     L
+                                             S   -    M     L            -     M     L         -      L     T        -      M     L
+
+
+
+
+                           Mountains             T    M     L            L     H     M         L      M     M
+
+
+
+
+                           Forest
+                           Hills                 -     I     -           -     L      I         I     M     L
+                           MountainS             T    M     L            M     H     H         T      M    L
+                           Plains    ~   ~       -    T     -            L     H     M         M      H    M
+                           Seacoasf
+                           Swamp
+
+             Precipitation Letter Codes
+               - = No precipitation                                          M = Moderate (up to W’ rain or 2“ snow)
+               T = Trace (less than Van rain or %‘‘ snow)                    H = Heavy (up to 1Vz” rain or 4” snow)
+               L = Light (up to V2” rain or 1” snow)                         D = Downpour (more than 1%‘’ rain)
+
+                                                                         110
+

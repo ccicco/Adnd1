@@ -1,0 +1,63 @@
+SPECIAL WEATHER
+
+the result given on the Precipitation Variation Table for a roll of          How to Use the Special Weather Table
+doubles. For example, it is summer in a temperate forest area.
+The roll for the current day was double 4’s, indicating a day on               Consider the earlier roll on the Day-to-Day Change Table (ei-
+which a moderate amount of rain falls. The roll for the next day is          ther a 2 or a 12) as Roll 1, and then roll 2d6 again, referring to this
+double 3’s, and a subsequent roll of a six-sided die results in a 3,         result as Roll 2. Cross-indexthe appropriate terrainlclimate com-
+indicating a day of heavy rainfall (one step greater than moder-             bination with the current season of the year on the Special
+ate). If the d6 roll is 4 or higher, the precipitation remans moder-         Weather Table to obtain the four-letter code that indicates what
+ate for the coming day.                                                      kinds of special weather are possible. Then check the table be-
+   If doubles are rolled more than twice in succession, the precipi-         low to determine what special weather (if any) occurs:
+tation amount does not continue to increase, but remains at the
+“one step greater” level; a downpour will never occur during                              ..................Roll2 ..................
+summer in a temperate forest, regardlessof how many times in a                  Roll 1      2-4     5-6       7       8-9    10-12
+row the dice come up doubles. Thus, the 1-in-3 chance does not                    2         1st     2nd      2nd      -       -
+have to be checked if doubles are rolled more than twice in a row.               12           -            -         3rd           3rd        4th
+In no case can extraordinary precipitation exceed the level of a
+downpour.                                                                      The notations “lst, 2nd, 3rd, 4th” refer to a single letter of the
+                                                                             four-letter code. For example, if Roll 1 was a 2 and Roll 2 is a 6,
+
+
+            Table A4: SPECIAL WEATHER
+
+                                                 Winter                  Spring                  Summer                 Autumn
+
+
+
+
+                                                                                                  X    Z   D        G      A   M    D
+                                                           D       A     X      D    Z       Z    A    Z   D        G      A   D    Z
+
+
+
+
+                                                                                                  X    D   Z        X      A   D    Z
+                                             A    G    D   Z       A     X      T    Z       X    G    D   Z        X      A   D    Z
+
+
+                                                                                                                                          I
+
+
+
+
+                                                                                                       Z   D        X      A   Z    M
+                                             A    X    D   Z       X     G      Z    T       X    G    D   Z        G      A   D    Z
+
+
+
+
+                                                                                                       Z   M        A      G   M    Z
+                                             G    X    D   Z       G     X      D    Z       S    X    Z   D        G      X   Z    D
+
+
+
+            Special Weather Letter Codes
+               A = Cold Wave                                                 S = SandstormlDust StormlBlowing Snow
+               C = CycIonelHurricanelTyphoon                                 T = Tornado
+               D = Drought                                                   X = Extreme Precipitation
+               G = Gale                                                      Z = Heat Wave
+               M = Mist or Fog
+
+                                                                       112
+

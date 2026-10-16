@@ -1,0 +1,136 @@
+RELATIVE HUMIDITY
+
+How to Use the Humidity Variation Table
+
+The letter codes show the prevalent levels of humidity for the
+various terrain/climate combinations during the different sea-
+sons of the year. The humidity in a given area will fluctuate
+through a range of three levels (one lower, the given level, and
+one higher), depending upon the precipitation for the day in ques-
+tion (Day 1) and the precipitation for the following day (Day 2).
+Thus, before the proper humidity for Day 1 can be known, the
+general conditions for Day 2 must have been determined. Con-
+sult the following table and assign the humidity for Day 1 accord-
+ing to the conditions that apply:
+
+DAY « o h IS s Sae st Day 2 precipitation ..........
+precip. None LorT M or more
+None -1 0 i
+LorT 0/-1 0 0/+1
+
+M or more 0/-1 0/—1 +1/+2
+
+=1 = Humidity falls one level
+0 = Humidity level unchanged
++1 = Humidity rises one level
+
+Where two values are given, the one before the slash indicates
+the humidity on Day 1 before that day's precipitation occurs, and
+the one after the slash indicates the humidity after that day's pre-
+cipitation — in both cases using the humidity level at the end of
+the previous day as the base for this adjustment.
+
+Note again that in no case can humidity rise or fall beyond the
+three-level range for a given area. If low humidity falls one level,
+the result is dry humidity (0-20%). If high humidity rises one level,
+the result is saturated humidity (91-100%).
+
+Example 1: The humidity at the end of the previous day was
+medium. The weather for Day 1 includes an episode of moderate
+precipitation, and a check for Day 2 indicates that heavy precipi-
+tation will fall on that day. Thus, the humidity on Day 1 is high be-
+fore that day's precipitation falls, and it rises to saturated after the
+precipitation has ended.
+
+Example 2: The humidity at the end of the previous day was
+saturated. The weather for Day 1 includes an episode of light pre-
+cipitation, and a check for Day 2 indicates that no precipitation
+will fall on that day. Thus, the humidity on Day 1 is saturated be-
+fore that day’s precipitation falls, and it falls to high after the pre-
+cipitation has ended.
+
+The preceding example points out a shortcoming of this sys-
+tem: It does not accommodate the possibility that the humidity
+will drop off drastically after reaching the high or saturated level
+on a day when significant precipitation (moderate or heavier) oc-
+curs. When this possibility exists, common sense and the DM's
+discretion must prevail. If a one-day drop of two humidity levels
+(from saturated to medium, high to low, or medium to dry) seems
+warranted, then the DM is fully entitled to make this ruling.
+
+Humidity and Effective Temperature
+
+At temperatures of 60 degrees and higher, humidity and wind
+speed can combine to alter the effective temperature. In short,
+the combination of relatively high humidity and relatively low
+wind speed can make it seem hotter than it actually is, and the ef-
+fects on characters and creatures operating in this effective tem-
+perature are modified accordingly. If these rules for humidity are
+used in the campaign, the DM should check the following table to
+determine the effective temperature and use this figure instead of
+the actual temperature to ascertain the effects on characters and
+creatures (as outlined in the first section of this book).
+
+116
+
+Table A6: HUMIDITY AND EFFECTIVE TEMPERATURE
+
+TOMPL Lot wdie v tidy WANA VIOCIY: & o ool oo Fiaiaiosn/iia-e
+& Hum. 0-10 11-20 21-30 31-45 45+
+60-64
+Dry — — — — —
+Low — — — — —
+Med. +5 — — - —
+High +10 +5 — - -
+Sat. +10 +5 — — —_
+65-74
+Dry — — —_ — —
+Low — - — — —
+Med. +5 - — — —
+High +10 +5 — — —
+Sat. +10 +5 +5 — —
+75-84
+Dry — — — — —
+Low +5 — - - —
+Med. +5 +5 — — —
+High +10 +5 +5 - —
+Sat. +15 +10 +5 — —
+85-94
+Dry — - — — —
+Low +5 +5 — — —
+Med. +10 +5 +5 — —
+High +15 +10 +5 +5 —
+Sat. +20 +15 +10 +5 —
+95+
+Dry — — — — —_
+Low +10 +5 — — -
+Med. +15 +10 +5 +5 —
+High +20 +15 +10 +5 +5
+Sat. +25 +20 +15 +10 +5
+
+How to Use the Humidity and Effective Temperature Table
+
+Whenever the temperature is 60 degrees or higher, find the en-
+try in the left-hand column that corresponds to the current tem-
+perature and humidity. Read across to the column corresponding
+to the wind speed for the day in question. If a number is given in
+the place where the appropriate row and column intersect, add
+that number to the actual temperature to obtain the current effec-
+tive temperature and then determine the effects of temperature
+on characters and creatures using this value instead of the actual
+temperature.
+
+Wind Chill
+
+Anyone who has lived in an area where the temperature drops
+to 35 degrees or lower has first-hand experience with the phe-
+nomenon known as wind chill. As the temperature falls and wind
+speed increases, the effective temperature can drop off drasti-
+cally. Certain temperatures that are tolerable or even enjoyable
+in calm wind conditions can become dangerous or even poten-
+tially fatal when combined with a brisk or strong wind. It is wind
+chill, more than temperature alone, that makes a cold climate
+dangerous to characters and creatures who find themselves ex-
+posed to the elements. If only one set of optional weather rules is
+used in the campaign, it is strongly recommended that the Wind
+Chill Table (on the next page) be the one.

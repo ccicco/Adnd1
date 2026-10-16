@@ -1,0 +1,133 @@
+LOCAL WINDS
+
+minutes. At extremely high latitudes for which the *‘hours of day-
+light" figure is zero, a twilight condition exists for 24 hours every
+day. If the sky is clear, the sun will provide enough light from its
+position just below the horizon to make normal activities possible
+without a constant need for an artificial light source.
+
+Local Winds
+
+The “prevailing direction’”” described for winds in the basic
+weather system is just that: the direction from which wind activity
+will usually originate under non-extraordinary conditions. How-
+ever, it is certainly not impossible to have (for instance) easterly
+winds in a temperate location, particularly on land adjacent to a
+large body of water or over a small area of unusual terrain.
+
+Along the coastline of an ocean or a large lake, the land may be
+swept by a “‘sea breeze'’ that moves from the water to the land. If
+the water is east of the land, then an east wind will result even if
+the prevailing wind comes from the opposite direction. A sea
+breeze occurs during daylight hours because the land gains heat
+more rapidly than the adjacent water. As the warm air over the
+land rises, it is replaced by cooler air that moves in from its pre-
+vious location over the water. At night, the phenomenon is re-
+versed because the land also loses heat more rapidly than the
+water does. The air over the water remains warm for a longer
+time, and when the two air masses are significantly different in
+temperature the colder air over the land moves out and replaces
+the warmer air over the water. This reverse phenomenon is
+called, logically enough, a ““land breeze.” It can also result in
+wind that moves contrary to the prevailing direction — for in-
+stance, where the prevailing direction is west but a body of water
+is located to the west of a land mass.
+
+A sea breeze is usually stronger than a land breeze produced
+in the same location, but neither type of wind current normally
+moves very far inland (five or ten miles at the most). Both types of
+breezes are more likely to occur when the sky is clear, because
+cloudy skies tend to inhibit the transfer of heat through the air. At
+times, the temperature along a seacoast may be markedly lower
+than the temperature only a few miles inland; when a sea breeze
+occurs, this is almost always the case, although other factors
+(such as cold ocean currents) may also contribute to this disparity
+in temperature.
+
+Unusual terrain features can also bring about unusual wind
+patterns. For instance, if the eastern edge of a flat plain ends
+abruptly in a cliff face that rises thousands of feet above the level
+of the plain, then a prevailing westerly wind will be “‘trapped”
+when it reaches the cliff face. The result may be a swirling wind
+that can come from different directions in locations only a few
+hundred yards apart (and might be conducive to the formation of
+a storm or a tornado if other conditions are right for such an oc-
+currence). If the westerly wind is relatively light, it may simply
+double back on itself and produce an area of calm air in the imme-
+diate vicinity of the cliff as the westerly and easterly flows effec-
+tively cancel each other out.
+
+As with other aspects of this weather system, the DM is encour-
+aged to modify, extrapolate from, or even ignore certain *‘facts”™
+about wind direction and velocity for the sake of variety, or to ac-
+count for out-of-the-ordinary combinations of terrain and climate
+that may have no correlation to features found in our real world.
+
+118
+
+Tides
+
+The movement of ocean water caused by the gravitational pull
+of Earth’s moon and the sun have no direct effect on weather or
+on the conditions of the physical environment — except, of
+course, on land areas bordering the ocean. A simplified descrip-
+tion of tides that simulates real-world conditions is presented
+here for the Dungeon Master’s use when desired and appropri-
+ate.
+
+High tide and low tide occur twice each day on an alternating
+sequence; each high tide is separated from the next high tide by
+12 hours, and low tide occurs 6 hours after each high tide. Be-
+cause the moon orbits the Earth approximately once every 25
+hours, the times of high and low tides advance by about an hour
+each day. This distinction is not usually important, but may be
+significant if the player characters spend more than one day in
+the same seacoast location. (If they don’t know any better, they
+may expect the next day's high tides to occur at the same time as
+the current day's — and in certain circumstances, this could turn
+out to be an important miscalculation.)
+
+The moon goes through its full cycle of phases once every 28
+days, or roughly once per month. The difference between the wa-
+ter level at high tide and the water level at low tide is greatest dur-
+ing the seven-day periods surrounding the full moon and the new
+moon,; these are called the spring tides. The difference in water
+levels is much less pronounced when the moon is waxing (mov-
+ing from new to full) or waning (moving from full to new); these are
+the periods of neap tides.
+
+On the average, the difference in water level between high and
+low tide ranges from 5-7 feet (during neap tides) to 15-18 feet
+(during spring tides). The variation in depth is less than this along
+a coastline bordering a very large body of water, and may be sub-
+stantially greater than the average along a coastline bordering a
+smaller body of water partially enclosed by land. For example,
+the variation in tide depth along the coast of North and South
+America bordering the Pacific Ocean is relatively small, because
+the ocean water has a lot of room to move. In contrast, the varia-
+tion between high and low tide in the Bay of Fundy (between New
+Brunswick and Nova Scotia in eastern Canada) is often as much
+as 60 feet, because the water in the bay has much less freedom
+of movement. Imagine a gallon of water poured into a bathtub
+and set in motion so that it splashes from side to side lengthwise
+in the tub; the difference between “high tide’' and ‘“low tide"
+along the sides of the tub will not be very great. Pour the same
+gallon of water into the kitchen sink and set it in motion with the
+same amount of force, and it might move against the sides of the
+sink so vigorously that it actually splashes out of the container.
+
+If it is important to determine the area of seacoast covered by
+high tide (and uncovered at low tide), the Dungeon Master can
+use these guidelines: If the land slopes gently toward the sea (not
+more than 30 degrees of slant), high tide will come in a distance
+of 4 to 5 times the height of the tide. If the slope of the seacoast is
+moderate (31 to 50 degrees), high tide will come in 2 to 3 times
+the height of the tide. If the slope of the seacoast is severe (51 to
+70 degrees), high tide will come in 1 to 2 times the height of the
+tide. Examples: If the difference in height between high tide and
+low tide is 15 feet and the seacoast is a gentle slope, the sea wa-
+ter at high tide will encroach on the land 60 to 75 feet farther in-
+land than it does at low tide. If the difference in height between
+high tide and low tide is 5 feet and the seacoast is a moderate
+slope, the sea water at high tide will encroach on the land 10 to 15
+feet farther inland than it does at low tide.

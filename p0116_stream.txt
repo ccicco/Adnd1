@@ -1,0 +1,137 @@
+Ice/Sleet Storm (I): Sleet is frozen or nearly frozen rain,
+formed when snow falls from a high altitude and passes
+through a layer of warmer air on its way to the ground. The
+warmer air melts the snow crystals back into droplets of wa-
+ter, and the water freezes during the remainder of its de-
+scent. When the sleet hits the ground, it will coat anything it
+touches; by the time the storm passes, stationary and in-
+aminate objects may carry a coating of ice up to 2 or ¥s
+inch thick.
+
+Depending on its intensity, an ice storm will last from 20
+minutes (if it occurs as heavy precipitation) up to two hours
+(if it occurs as trace precipitation). Of course, the longer the
+storm, the heavier the coating of ice that will result.
+
+Lightning Storm (L): A lightning storm, or thunderstorm,
+can occur as a separate phenomenon in and of itself or as
+the beginning stage of a longer rainstorm. If a lightning
+storm is indicated for a day on which moderate or light pre-
+cipitation is supposed to fall, then the storm will occur by it-
+self (and the moderate or light result is disregarded). If a
+lightning storm is indicated for a day on which heavy or
+downpour precipitation is supposed to fall, then the storm
+will occur at the beginning of the period of precipitation. A
+typical lightning storm lasts for 25 minutes, during which ¥
+to 1 inch of rain is dropped and the sky is lit up at frequent
+intervals by bright flashes of lightning. Roughly half of all
+thunderstorms occur within two hours either way of sunrise
+or sunset.
+
+Severe Snowstorm (S): If the normal maximum precipita-
+tion for the day in question is moderate, this storm will
+dump 5-10 inches (d6 +4) of snow; if the normal maximum
+precipitation is heavy, a severe snowstorm will cause 7-12
+inches (1d6 + 6) of accumulation. The snow will come down
+at the rate of 1 inch per hour until the indicated accumula-
+tion is reached. Wind velocity will be very strong at the start
+of the storm, but will taper off after 1 or 2 hours to a moder-
+ate breeze (15-20 mph) at best as the storm center be-
+comes stalled over the area receiving the precipitation.
+
+Heat Wave (Z): For the next 3-8 days (1d6 + 2), starting with the
+day in question, the temperature will rise at the rate of 4 steps per
+day until it reaches a high point one step above the normal maxi-
+mum temperature. Roll on the Day-to-Day Change Table as usual
+each day, but disregard the Temperature Change column for the
+duration of the heat wave. When the temperature rises to one
+step above the normal maximum, it will remain at that level for the
+duration of the heat wave. If the normal maximum temperature
+level is "'Z" (high of 115, low of 85), the highest possible tempera-
+tures during the heat wave will be 10 degrees hotter (high of 125,
+low of 95), and the heat wave will only last for at most three days
+after the temperature rises to this level (counting the day on
+which the extra-high temperatures first occur). When the heat
+wave ends, the temperature will automatically fall to the normal
+maximum on the first day thereafter, and will fall even lower if the
+Day-to-Day Change Table roll is 7 or less.
+
+For example: It is the first month of spring in a temperate moun-
+tain region, and the temperature for the current day is K (high of
+50, low of 30). The tables indicate that a heat wave will begin on
+the following day, and a roll of 3 on d6é determines that the heat
+wave will last for 5 days. On the following day the temperature will
+rise by 4 steps, to O (high of 70, low of 55). On the second day of
+the heat wave, the temperature will rise only 3 more steps, to R
+(high of 80, low of 65) because this is one step higher than the
+normal maximum temperature at this time of year for this terrain/
+climate combination. The temperature will remain at level R for
+two more days thereafter until the heat wave breaks. On the first
+
+115
+
+RELATIVE HUMIDITY
+
+day after the heat wave, the temperature will automatically fall
+one step, to Q. If a 7 or less is rolled on the Day-to-Day Change
+Table for that day, the temperature will fall an additional 1, 2, or 3
+steps. If an 8 or greater is rolled, the temperature remains at level
+Q, since this is the highest the temperature can be under normal
+circumstances.
+
+OPTIONAL RULES
+
+Relative Humidity
+
+This figure, expressed as a percentage, describes the amount
+of water vapor in the air at a given temperature compared to the
+maximum amount of water vapor the air could hold at that tem-
+perature. The warmer the temperature, the more water vapor the
+air can hold: air with a relative humidity of 100 percent is consid-
+erably “‘wetter’’ at a temperature of 80 degrees than it is at a tem-
+perature of 50 degrees.
+
+Humidity can have a significant effect on the ability of charac-
+ters and creatures to cope with the weather when temperature
+and humidity are both high, and particularly so when the wind is
+slight or nonexistent.
+
+Table A5: HUMIDITY VARIATION
+
+Winter Spring Summer Autumn
+Arctic L L L L
+(all terrain)
+Subarctic D L L L L
+F L M M L
+H L L I L
+M L M L L
+P - M M L
+Se L M M L
+Sw L M M L
+Temperate D L L L L
+E M H M M
+H M H H M
+M L M L M
+P M H H M
+Se H M M H
+Sw M H H M
+Subtropical D L L L L
+F H H H H
+H M H H H
+M M H H H
+P M H M L
+Se M H H M
+Sw M H H M
+Tropical D L L L =
+F H H H H
+H M M H M
+M M H H H
+P M H H H
+Se M H H M
+Sw M H H H
+Humidity Letter Codes
+
+L = Low (21-40%)
+M = Medium (41-70%)
+
+H = High (71-90%)

@@ -1,0 +1,59 @@
+SPECIAL WEATHER
+
+the result given on the Precipitation Variation Table for a roll of
+doubles. For example, it is summer in a temperate forest area.
+The roll for the current day was double 4’s, indicating a day on
+which a moderate amount of rain falls. The roll for the next day is
+double 3's, and a subsequent roll of a six-sided die resultsina 3,
+indicating a day of heavy rainfall (one step greater than moder-
+ate). If the d6 roll is 4 or higher, the precipitation remans moder-
+ate for the coming day.
+
+If doubles are rolled more than twice in succession, the precipi-
+tation amount does not continue to increase, but remains at the
+"one step greater” level; a downpour will never occur during
+summer in a temperate forest, regardless of how many times in a
+row the dice come up doubles. Thus, the 1-in-3 chance does not
+have to be checked if doubles are rolled more than twice in a row.
+In no case can extraordinary precipitation exceed the level of a
+downpour.
+
+Table A4: SPECIAL WEATHER
+
+ills
+Mountains
+Plains
+
+Special Weather Letter Codes
+A = Cold Wave
+C = Cyclone/Hurricane/Typhoon
+D = Drought
+G = Gale
+M = Mist or Fog
+
+112
+
+How to Use the Special Weather Table
+
+Consider the earlier roll on the Day-to-Day Change Table (ei-
+thera 2 ora 12) as Roll 1, and then roll 2d6 again, referring to this
+result as Roll 2. Cross-index the appropriate terrain/climate com-
+bination with the current season of the year on the Special
+Weather Table to obtain the four-letter code that indicates what
+kinds of special weather are possible. Then check the table be-
+low to determine what special weather (if any) occurs:
+
+.................. ROI2:codmnasaineniraes
+Roll 1 2-4 5-6 7 8-9 10-12
+2 1st 2nd 2nd - -
+12 - — 3rd 3rd 4th
+
+The notations *‘1st, 2nd, 3rd, 4th"' refer to a single letter of the
+four-letter code. For example, if Roll 1 was a 2 and Roll 2 is a 6,
+
+S = Sandstorm/Dust Storm/Blowing Snow
+T = Tornado
+
+X = Extreme Precipitation
+
+Z = Heat Wave

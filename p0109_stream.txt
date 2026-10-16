@@ -1,0 +1,109 @@
+CLIMATIC REGIONS
+
+A phenomenon unique to the arctic is the ‘‘midnight sun,”
+which occurs during spring and summer. Because the Earth ro-
+tates around an axis that is tilted with respect to the sun, there is a
+period of time each year when the arctic region is in continual
+daylight; at any time during the planet’s rotation, the arctic is
+tiited toward the sun. The converse of this is the long arctic winter
+night (the '‘noon moon''?), when for an equal length of time in au-
+tumn and winter the region is tilted away from the sun and is in
+constant twilight. This difference in the amount of daylight each
+day occurs at all latitudes, of course (except right at the equator,
+
+Table A1: TEMPERATURE VARIATION
+
+where day and night are of virtually identical length), but only in
+the arctic are the extremes of all-night days and all-day nights re-
+alized. (See the Hours of Daylight Table in the Optional Rules
+section for more information.)
+
+Subarctic climate is typical of areas from 65 degrees latitude to
+51 degrees. (In the northern hemisphere, the southern boundary
+of this area roughly describes the border between the United
+States and Canada.) Winters are long and cold, but thereis also a
+season that can legitimately be described as summer; daytime
+
+Winter Spring Summer Autumn
+
+1 2 3 4 5 6 7 8 9 10 1 12
+
+Arctic Desert ABG ABH ACH AEH CGK FJL JKN JKM FHK DGJ ADH ABH
+Forest — — — — — o — — — — - —
+
+Hills ABE ABD ACF ADG BEl! CFlI DGL DGK CFJ CEH BEH ACE
+
+Mountains ABE ABD ACF ADG BEI CFI DGL DGK CFJ CEH BEH ACE
+
+Plains ABG ABH ACH AEH CGK FJL JKN JKM FHK DGJ ADH ABH
+
+Seacoast ACH ABH ACH AEJ CGK FJN JKP JKN EIL CGJ AEIl ACI
+
+Subarctic  Desert ADlI ADJ BEJ CGJ FKM JLN KMQ JMQ GKQ FHM CEL ACI
+Forest AEJ AElI BGK DJL HKN JLP KMR JMR IKP EJL BHK AFJ
+
+Hills ADI ADI BFJ CGJ FKN JLN JMP IMP GKM DJL BGK ADJ
+
+Mountains AClI ADI AFJ BHL EJM IKM JLN IMO GKM DJL BFK ADJ
+
+Plains ADlI ADJ BEJ CGJ FKM JLN KMQ JMQ GKQ FHM CEL ACI
+
+Seacoast BFK BGK CHK DJM HKN JLR KMR KMR JLP EKM CHL AFK
+Temperate Desert KMS KMT LMT MNW MPX PPZ UYZ UYZ QWY NSX LRX KMR
+Forest CFL BFK EKP HLP KNU MPV MSX MSX LPV JNR FJL DJL
+
+Hills BiL CJM EKP ILR: JOT JQX LTY LTY KQW JUNT FKP CJM
+
+Mountains AlIL BIM CJN EKQ FLS KOV LQX KQW INU ELS CKR BJL
+
+Plains BHM CHN DKQ GLS KNU LPX MSY MSY KPW GLS EKQ CJM
+
+Seacoast EJM FKN I1KQ KLS KMT LOW MPX MPW LOW KLT GKP EKM
+Subtropical Desert LPT LPU MSW NTX OTX RVY TXZ TXZ RUY PUY NSX MPW
+Forest LTU LTV MTV NTW NTX PUX PUX PUX OUW NUW MSV LSV
+
+Hills KNQ KOR LQU MSV NTW OUX PUX PUY NSX MQV LPS KNR
+
+Mountains KMP KMQ LPS LPT MQU NQU NPT NOR LOR LNQ LNQ KMP
+
+Plains LNR KOS MRU NSX RVX SWY TwWZ TWZ SVY QVY MRU LPS
+
+Seacoast LMU KMV KOW LPX MQX MSY NSY NSY MRX LQW KOU KMU
+
+Tropical Desert PRU PST PTW PUX QVY TWZ VYZ VYZ UXY UVX RUW QSV
+Forest MUW LUW MUW OUX OUX QUX QUX QUX QUX PUX OUW MUW
+
+Hills MPR NPT NRT PRU PTX QUY SWZ SWZ SVY QTW ORU NQT
+
+Mountains MPR NPS NQT OQT OQU OQU NPT NPT NPT NPS MPS MPS
+
+Plains MPR NQT NRU PRU RWY TWY TWZ TWZ TWY RVY PSW NRU
+
+Seacoast PSU PSV OTW QTX QTX RTY RTX RTX RTW QSV QSV PRV
+
+The temperature figures for desert assume an elevation of sea
+level; for plains and forest, 500 feet; for hills, 2000 feet; and for
+mountains, 4000 feet. If these terrain types exist at different ele-
+vations than the ones given, subtract 3 degrees from the temper-
+
+Temperature Letter Codes
+
+Letter High Low Letter High Low
+A -20 -40 Lh 3 seen 30 -5
+B =15 =30 T des g 85 15
+D 0 -10 o Qi v 80 0 80
+E 10 0 = AT 80 44D
+F 18 10 Mte 8B o 46
+G 25 10 NS O L R B0
+
+108
+
+ature figures for every increase of 1000 feet (or add 3 degrees for
+every decrease of 1000 feet) if a more accurate temperature de-
+termination is desired.
+
+Letter High Low Letter High Low
+P 75 55 uly 1 Wi S il " pefS
+R 80 65 X 100 80
+S 85 65 4 Yook b ,-u;q%;'.ﬁ%; .
+T 85 70 & #rua i P n

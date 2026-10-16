@@ -1,0 +1,153 @@
+The DM’s Responsibility
+
+As brought out in the introduction to the appendix, this
+weather-determination system does not attempt to account for all
+of the possible combinations of terrain, climate, and weather phe-
+nomena that can occur in our real world. Of course, it also cannot
+consider the fantastic properties that an imaginative Dungeon
+Master might incorporate into the world in which his campaign
+takes place. However, it is hoped that what is given here will
+serve as a flexible framework that the DM can modify.
+
+For instance, day-by-day weather determination may be seen
+as too cumbersome and time-consuming. In that case, you may
+decide to make each determination apply for two or three days in
+succession instead of just one. This tactic may be particularly
+useful when a party of player characters is simply moving from
+one place to another on an extended journey through the wilder-
+ness, and you want to compress game time to get the mundane
+period of traveling out of the way. Of course, you can switch be-
+tween various time frames as desired or appropriate: determine
+the weather for a single day, then let the next set of dice rolls dic-
+tate conditions for a two- or three-day period, and then drop back
+to a one-day determination for a certain purpose.
+
+If a playing session is to extend over several days of game
+time, itis possible (and recommended) for the Dungeon Master to
+predetermine the weather conditions for the entire several-day
+period before the playing session begins. By doing this, you can
+avoid disrupting the flow and continuity of the player characters'
+activities and thereby maintain the desired flavor of the role-
+playing adventure. (It may prove difficult for players to remain ‘‘in
+character” if you call a five-minute halt to play at midnight of each
+new game-day in order to roll some dice and consult a few tables
+to find out what the coming day will be like.)
+
+Predetermining the weather for several days in advance is an
+especially good idea if you expect the party to be relatively sta-
+tionary over that span of time, or at least if you anticipate that the
+player characters won't be moving from one type of terrain or one
+climatic region to another. However, on many occasions the
+player characters will not be sauntering along in an area of con-
+sistent terrain and climate. Perhaps they are on a mission that re-
+quires them to move speedily and in a direction that necessarily
+carries them from one terrain/climate area to another. Or, per-
+haps the physical characteristics of your world are such that,
+even at a leisurely pace, the player characters cannot help mov-
+ing from one terrain/climate area to another within a short span of
+time. If you can anticipate when such a changeover will occur
+(“"After one day of travel, they'll be entering the mountains”’),
+then you still may be able to predetermine what the weather will
+be like in the newly entered area. But, as any DM knows, trying to
+predict the future actions of player characters is often a fruitless
+exercise at best. Thus, there will be times when you simply must
+hold up play to make some new determinations — or, if you can
+do the dice-rolling and table-consulting while the players are oc-
+cupied with something else, so much the better.
+
+The question still remains of how to make a smooth transition
+from one terrain/climate area to another. Obviously, if one terrain
+area is in the grip of a heat wave as the party moves out of that
+area and into an adjacent area, this does not mean that the heat
+wave instantly ends. In virtually every case, the weather for the
+immediate future in a new area will be essentially the same as the
+conditions were in the area just vacated. It is up to the DM to use
+the rules and tables of this system in a way that will ensure a
+smooth and realistic transition.
+
+For example, consider this scenario: It is the third month of win-
+ter, and the party is moving from a temperate desert to an adja-
+cent region of hilly country. The current temperature in the desert
+is "T"" — the highest it can normally get. Therefore, the current
+
+119
+
+THE DM’S RESPONSIBILITY
+
+temperature in the hills should also be high, perhaps even higher
+than “'P"' (the normal maximum) for the first day or part of a day
+that the party spends in the hills. Only after the player characters
+move well away from the desert will they be entirely *‘insulated’’
+from the conditions that existed when they left that terrain. If your
+day-to-day dice rolls indicate that the temperature will drop, then
+let it drop. (Presumably, it's also getting cooler in the desert.) But
+if the temperature remains high, keep it there — don't drop it (or
+raise it) to the average temperature given for the area if move-
+ment into that area has been accomplished through normal
+means and in gradual fashion.
+
+At times, player characters will find themselves voluntarily or
+accidentally transported across great distances in a short time.
+This may occur through some means of teleportation or magical
+transport, or perhaps through the use of aerial mounts that can
+travel at relatively high speed (compared to land-based move-
+ment). In these cases, you are entirely in control of what sort of
+weather conditions await them in their new locale. They may be
+teleported from an area in a heat wave to another area hundreds
+of miles away that is in a cold wave — if you decide that this
+should be so. If you have no particular reason for dictating a cer-
+tain set of weather conditions in the destination area, use the sec-
+ond letter from the appropriate entry on the Temperature Table
+(that's what it's for) and take things from there.
+
+The one part of this system that virtually cries out for alteration
+on a campaign-by-campaign basis is the Special Weather Table.
+The format of this part of the system is such that only four (at
+most) different types of special weather are possible in any
+terrain/climate combination. But you can build in as much varia-
+bility as desired, without changing the structure of the system.
+
+For instance, if you decide that it is possible for a tornado to oc-
+cur in a temperate forest during summer, simply replace the “‘M"’
+or “'Z" in this part of the table with a “T." Or, if you want to have
+all three special results possible, then modify the subtable (in the
+""How to Use’" text following the table) to take this into account.
+
+Last but not least, there is the matter of how to incorporate
+fantastic weather phenomena into this system. It would have
+been practically impossible (and, at best, terribly complicated) to
+design a system to account for every type of 'unearthly’’ weather
+that a Dungeon Master could devise in the process of creating a
+campaign world. However, by drawing upon the system given
+here an experienced and/or energetic DM should be able to work
+in any kind of ““natural” phenomenon that he can think up. The
+following list is far from exhaustive, but might present some ideas
+for fantastic weather that could be useful:
+
+— ""Acid rain”’ that causes a certain amount of damage to ex-
+posed flesh, depending on the intensity of precipitation and the
+length of time a character or creature is exposed to it.
+
+— "'Good lightning'’ that heals damage or has some other ben-
+eficial effect upon a character or creature hit by it.
+
+— An "‘everlasting breeze'’ that keeps characters and crea-
+tures from being adversely affected by high temperature and hu-
+midity.
+
+— “Frozen air'' that occurs in extremely cold conditions and
+can be fatal to anyone or anything not equipped with the means
+to offset it.
+
+— "Teleporting tornado’’ that seeks out characters, lifts them
+into the air, and deposits them (with or without doing damage) in
+a random location miles or hundreds of miles away. (‘| don't
+think we're in Kansas any more . . .")
+
+The number of variations on these themes is, of course, limited
+only by the imagination of the Dungeon Master. Design your
+weather the way you want it to be, try to make it consistent within
+the framework of the world you have created, and always remem-
+ber that you are in control. A modern-day weather forecaster may
+be able to predict what he thinks is going to happen, but a
+Dungeon Master knows — and he isn't telling!
