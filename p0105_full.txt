@@ -1,0 +1,72 @@
+STARTING FROM SCRATCH
+
+time; stick to something the size of a continent or part of a conti-           determine the direction of the prevailing winds in each climatic
+nent. The Dungeon Masters Guide, on page 47, recommendsthat                    area of the world; see the weather-generation system in the ap-
+the scale of a world map should be from 20 to 40 miles per hexa-               pendix for general rules to aid you in these decisions.
+gon. At 40 miles per hex (measured across the middle), a stan-
+dard 8% x 11-inch piece of small-hexagon mapping paper covers                     5.Justaddwafer. Now that you’ve placed the areas of high and
+an area of roughly two million square miles - 1600 miles in the                low elevation and you know what the climate is in any spot on the
+long dimension and 1250 miles in the short dimension. If this isn’t            map, you can draw in rivers and lakes. Rivers begin at high eleva-
+a large enough area for what you want to create, simply fasten to-             tion and run toward the ocean (or some other place at or near
+gether two or more sheets of hex paper and work in an even                     zero elevation). A large river usually has several tributaries that
+larger scale (50or 60 miles to the hex) if you want to. Everything             flow into it, and extremely large river systems (such as the Missis-
+will be scaled down later when you need to detail a certain sec-               sippi or the Amazon, and all the tributaries that feed them) are
+tion of the world; for now, all we’re concerned with is describing             rarely found more than once or twice in a continent-sized area.
+the size and shape of the world and locating its most prominent                Large inland bodies of water (wide-ranging river systems and
+physical features.                                                             huge lakes) are somewhat less frequent in subarctic climates
+   The outline of your world, and any other features you draw on               than in warmer areas, but a subarctic region may be laced with a
+the map, need not follow the boundaries between hexagons; in                   dense and intricate network of smaller rivers and lakes; look at a
+fact, it’s much better if you don’t restrict yourself in this fashion.         map of Canada for an example of such a network (as well as
+The hexes are there only for the purpose of regulating size and                some areas, such as Great Bear Lake and Great Slave Lake, that
+distance. As you fill in the features on your map, try to pretend the          contradict the above statement about frequency of large bodies
+hexes aren’t even there - or, better yet, draw the map out in                  of water). Don’t be bashful about laying in rivers and lakes, but
+rough form on blank paper and transfer it to hex paper later.                  don’t run a stream through every hex unless you’re designing a
+   Sheets of hex paper, with hexagons of a different size on each              world with no deserts.
+one, are provided in the back of this book (pages 124-126). The                   This is also the time to decide where you want your swamps.
+owner of the book is hereby granted permission to make photo-                  Put them in areas of low elevation, usually near or on the sea-
+copies of the sheets for his personal use only.                                coast and usually in an area that has a lot of rivers or lakes.
+
+   2. Start at the bottom. Decide whether your creation is going to               6. What’s for desert? Now that you know where water is and
+be the size of a continent or just part of one, and then pencil in an          isn’t located, you can plan your desert areas. Have an eraser
+outline that describes the coastline. Now’s the time to plan for               handy for this stage (if you haven’t used one already), because
+major islands, long peninsulas, and other ultra-large-scale geo-               you may want to dry up a few rivers and lakes along the way.
+graphic features. If you’re creating an entire continent, you must                On Earth, most deserts are located in subtropical climate and
+know whether the continent is an island in itself or if it connects            the part of the temperate zone closer to the subtropical area (the
+above water with another large land mass. Unless you have a                    southern half of the zone in the northern hemisphere, the north-
+reason for creating a continent surrounded by water, extend the                ern half in the southern hemisphere). This is because of global
+land mass off the edge of your map paper in at least one direc-                wind patterns; the prevailing winds blow generally east to west
+tion. This keeps your options open: If you want to connect an-                 around the equator, and usually in the opposite direction in the
+other land mass to this one later, you can do it without redrawing             temperate regions. When they meet each other in the upper at-
+anything you’ve already done. If you want to turn the continent                mosphereover the area in between, the cool upper air descends.
+into an island, all you have to do is make a small extension of your           As the air gets lower, it gets warmer, and its ability to retain mois-
+original map containing the previously uncharted seacoast.                     ture increases; thus, the water vapor in the air remains sus-
+   At this point, your map shows all the places where the land                 pended and is not released as precipitation.
+meets the sea, at least as far as the major land masses are con-                  Farther away from the tropics, deserts are often located on the
+cerned. By definition, these lines also show the location of zero              downwind side of high mountain ranges. When the wind hits the
+elevation, or sea level.                                                       slope of a mountain, the air rises and becomes cooler. Since cool
+                                                                               air cannot retain moisture as easily as warm air, the water in the
+   3. Now fake i t to the fop. Decide where to place the mountain              air is released as precipitation on the slope facing the wind direc-
+ranges, and determine how high the tallest peaks will rise. Don’t              tion, and by the time the air crosses over the mountains all or
+make them too frequent or too high; characters shouldn’t have to               most of its moisture has been depleted.
+scale something the size of Mount Everest once every few days                     With these two facts in mind, place your deserts, and be pre-
+during a cross-country trek. But don’t make them too low, or they              pared to obliterate a river (or at least change its course) if your
+won’t provide a good challenge and change of pace. Locate the                  map shows water flowing through an area that would make a
+tallest peaks individually and decide how high they stand. If any              good desert.
+peaks are higher than 10,000 feet, draw shapes around those
+points indicating the line of 10,000-foot elevation. Then do the                 7. May the forestbe with you. You’ve already established lots of
+same for a line of 5,000-foot elevation.                                       places (high mountains, deserts, arctic regions) where forests
+   Now your map is a rough topographical map, showing the high-                can’t grow; now is the time to decide where they do appear. Mark
+est points of elevation on the continent and the area’s lines of ele-          off the forest areas on your world, remembering that they are
+vation at 5,000-foot increments. The rough shape of the world, in              more likely to be located along or near large bodies of water.
+all three dimensions, has been determined.                                     Don’t go above the tree line (where arctic climate begins) and
+                                                                               don’t put a forest right next to a desert, unless you have a specific
+  4. Place if on the planet. Decide where your world is located                reason for creating a region of “unearthly” terrain in that area.
+with respect to the poles and the equator of the planet it is a part
+of, and then note some rough boundaries where climatic zones                      8. None of the above. Any terrain that you haven’t designated
+change. The world you start with need not run the gamut from                   as seacoast, mountains, swamp, desert, or forest must be either
+arctic to tropical climate; on the other hand, it doesn’t need to be           hills or plains. If it has no other distinguishing characteristics,the
+the size of the Earth’s northern or southern hemisphere in order               area adjacent to a mountainous region should be considered as
+to contain all five climatic regions. At this time, you should also            hills. You may also want to spot some hilly regions in the middle
+
+                                                                         104
+

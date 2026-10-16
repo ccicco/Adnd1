@@ -1,0 +1,72 @@
+STARTING FROM SCRATCH
+
+times when characters traveling overland won’t cover the span of               hex maps, and the variety in terrain and special features they
+a single hex in a single day.                                                  contain, should increase. If a river cuts through the hex that
+   But it’s not the function of a world map to mark location and               you’re scaling down, draw in some streams coming off the main
+movement on a day-to-day basis. To know precisely where char-                  branch and trailing through some of the smaller-scale hexes. If
+acters are and exactly what the environment is like in their vicin-            the large-scale hex takes in part of a lake, sketch in some
+ity, you need to draw up smaller-scale maps of the areas they                  swampy ground along the lakeshore when you go to the next
+move through as they go along.                                                 smaller scale -a swamp that doesn’t show up on the large-scale
+   A good way to scale down your world map is by “clustering.”                 map but is there nevertheless.
+Start with a single large-scale hex and break it up into a cluster of
+eight smaller hexes (see the accompanying diagram). On this
+eight-hex cluster, make a more detailed map of the area the large              Winging It
+hex covers. Since the cluster is three hexes wide, the scale of
+each smaller hex is one-third of the scale of your world map. If                    A Dungeon Master must be able to think on his feet. No matter
+each large-scalehex is 36 miles across, then each hex in the first             how much planning you do, your players will occasionally have
+cluster you create is roughly 12 miles wide. (The scale change is              their characters do something, or go somewhere, you didn’t an-
+not an exact 3:l ratio, since the hexes in a cluster are always ori-           ticipate. Sometimes this can be a problem, but more often than
+ented differently from the larger hex, but it’s close enough for our           not the problem is just an opportunity in disguise -the opportu-
+purposes.)                                                                     nity to do some creation and decision-making on the spot, during
+                                                                               the game instead of taking the time to do it later.
+                                                                                    When characters move into an area that you haven’t yet
+                                                                               mapped in detail, you can do a lot more than simply say, “There’s
+                   Here’s how a large hex is                                   forest around you as far as you can see.” Of course, that may in-
+                   broken into a cluster of                                    deed be the case - but it doesn’t have to be. Remember, you’re
+                   smaller hexes.                                              in control; you can improvise and invent (within reason) any spe-
+                                                                               cial features that you think will make this segment of the adven-
+                                                                               ture more interesting, or at least give your players some things to
+                                                                               think about. Instead of the simple sentence given above, you can
+   Of course, each hex in a cluster can be broken down farther;                say something like this: “You’re in a lightly wooded area, with
+each time you step down in scale, reduce the distance across a                 most of the trees the same height except for one big oak a short
+single hex to one-third of the next larger value. If a 12-mile hex is          distance away to the east that towers over the trees around it.
+broken down, each hex in the cluster is 4 miles across. If you                 Looking north from where you are, you can see an area where a
+need to work in an even smaller scale, just keep going: from 4                 lot of sunlight reaches the ground; this may be a clearing. The
+miles to l V 3 miles, from 1V3 miles to about V2 mile, and so on.              land slopes upward gradually to the west, and you can see that
+   You don’t have to make small-scale maps for every hex on the                the peak of this slope has very few trees.”
+world map - at least, you don’t have to make them all at one                        By improvising like this, you accomplish two good things. You
+time. Concentrate on the area the characters are in and the area               impress your players (whether they realize it or not) with your or-
+they’re heading toward. Before you sit down to begin or continue               ganization and attention to detail; never mind that the detail was
+an adventure, be prepared with “cluster” maps of the territory                 created on the spur of the moment. And, perhaps more impor-
+that you expect the party to travel through, drawn up in as much               tant, you create possibilitiesfor excitement and intrigue. If some-
+detail (as small a scale) as you think will be necessary. If the char-         one climbs the big oak, maybe he’ll be able to see something
+acters head in a direction you didn’t expect, you can either call a            important in the distance from this vantage point. If characters
+brief halt to the activities and generate some rough small-scale               move to the clearing, maybe they’ll find a path leading away from
+maps, or you can simply improvisewithout interrupting the flow of               it that makes it easier for them to move through the rest of the for-
+play. (See the text below on the subject of “Winging It.”)                     est. If they climb the slope, maybe they’ll discover that there’s a
+                                                                               sharp dropoff with a small pool at the bottom. By improvising fur-
+                                                                               ther on what you’ve just invented, you can make things easier or
+Smaller Scale, More Detail                                                     tougher - or, in any event, more interesting - for your players
+                                                                               and their characters.
+   Your large-scaleworld map is a collection of generalities. That                  The only rule to remember when you improvise in this fashion
+big green spot is a forest, hundreds or perhaps thousands of                    is that you can’t un-create something later. Keep track of what
+square miles in area - but it’s not all forest. Next to it is a large          you tell your players, either by making brief notes as you go or
+grassy plain, extending hundreds of miles in every direction -                 (preferably) by sketching the features you’ve just described on a
+but it’s not just flat terrain. Remember, your large-scale map is a             handy sheet of hex paper. If the characters visit this spot more
+picture of the world as it would appear to someone viewing it from             than once, they will obviously expect to see the same details that
+hundreds of miles overhead. From that distance, small-scale var-               you described when they first arrived on the scene. Between
+iations in terrain arn’t visible - but that doesn’t mean they’re not            playing sessions, take a few minutes to update your collection of
+there.                                                                          small-scale maps, incorporatingthe features you devised during
+   As you break each hex of your world map into a cluster of                   the game. Then you won’t be caught short in case the characters
+smaller-scalehexes, keep in mind that in most cases terrain does                decide to backtrack or just happen to stumble upon the same lo-
+not remain the same on a mile-by-milebasis. Very often, the mo-                 cation later.
+notony of a flat grassland is broken by a grove of trees several
+hundred yards wide, or even a small forest a mile or two in diame-                As has been said many times within the AD&D@game books,
+ter. If the elevation of the land in the middle of a forest takes a            all the rules we can create still provide nothing more than a
+slight dip, the result might be an area of swampy ground among                 framework upon which your world and your adventures are built.
+the trees. A small cliff, perhaps only twenty or thirty feet high, can         In effect, we’ve given you the pieces to a puzzle that has an infi-
+show up almost anywhere on otherwise flat terrain.                             nite number of different solutions. Now it’s up to you to put those
+   With each step you take to a smaller scale, the detail of your              pieces together.
+
+                                                                         106
+
