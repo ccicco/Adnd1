@@ -1,0 +1,109 @@
+Proficiency Descriptions
+
+Alertness: A character with this proficiency is able to instinc-
+tively notice and recognize signs of a disturbance in the immedi-
+ate vicinity, reducing by 1 in 6 the character’s chance of being
+surprised whenever he makes a successful Proficiency Check.
+Assuming that he is able to communicate his information to oth-
+ers in the party, their chance of being surprised is also reduced
+by that amount.
+
+Animal Handling: Proficiency in this area enables a character
+to exercise a greater-than-normal degree of control over pack an-
+imals and beasts of burden. A successful Proficiency Check indi-
+cates that the character has succeeded in calming an excited or
+agitated animal; in contrast, a character without this proficiency
+has only a 20% chance of succeeding in the attempt (see the sec-
+tion on Mounts and Beasts of Burden).
+
+Animal Lore: This proficiency represents the ability to interpret
+the sounds and behavior of animals and thereby anticipate some
+impending threat or danger. This threat or danger may take many
+forms: a storm that is brewing, the approach of some large preda-
+tor (perhaps the approach of the party itself, from the viewpoint of
+the animals), a forest fire, a volcano about to erupt, an earth-
+quake about to occur, and so forth. A successful Proficiency
+Check indicates correct interpretation of the impending threat. If
+the modified die roll indicates a Proficiency Check that is failed by
+4 or less, no information will be gained. If the Proficiency Check is
+failed by 5 or more, some sort of incorrect information will be ob-
+tained, either involving a mistake in the direction from which the
+threat is approaching or a mistake in identifying the nature of the
+danger.
+
+Blind-fighting: A character with this proficiency is less ham-
+pered by the absence of daylight than are characters who do not
+possess this skill. His penalty on attack and damage rolls in total
+darkness is only —2 instead of —4; in natural darkness, his pen-
+alty is only — 1 instead of —3; and in any conditions of brighter il-
+lumination he suffers no penalties. (See the text on “‘Fighting in
+Poor Visibility”' in the section on Combat Rules for Wilderness
+Play.) A character with proficiency in blind-fighting suffers no
+penalty to armor class because of lack of illumination (he is just
+as hard to hit as he would be in daylight), and he retains special
+abilities and other proficiencies that would otherwise be lost in
+darkness. For instance, a character with blind-fighting profi-
+ciency and proficiency in direction sense would still be able to
+find his way around during a long journey in the dark (assuming
+that the Proficiency Check for direction sense is successful); a
+character with proficiency in tracking and in blind-fighting would
+still be able to follow a trail in total or natural darkness.
+
+This proficiency also reduces the character's chance of stum-
+bling or falling over an obstacle in his path during total or natural
+darkness, the chance of tumbling into a pit or over a cliff, and the
+chance of slipping and falling while climbing. In all such cases,
+the chance of an adverse occurrence is half that of a character
+without this proficiency.
+
+Exceptions: Proficiency in blind-fighting does not impart the
+ability to see across long distances in the dark; the improved vis-
+ual acuity granted by this skill only pertains to short-range uses of
+vision such as for tracking, in melee combat, and in the use of the
+fire-building proficiency. It does not enable the character to see
+out to the maximum range of visibility that would otherwise apply
+in daylight conditions, or to perform any skill or function that nec-
+essarily involves long-range vision.
+
+Boating: If a character with this proficiency is piloting a boat,
+canoe, or other waterborne vessel, it can be moved at its fastest
+
+13
+
+PROFICIENCY DESCRIPTIONS
+
+possible rate. Also, the presence of such a character reduces the
+chance of the craft capsizing in rough water or when it is on a
+body of water during high winds. For details on how the boating
+proficiency applies, see the text on ‘‘Movement in Waterborne
+Vehicles" in the section on Encumbrance and Movement.
+
+Charioteering: A character with proficiency in this skill is able to
+safely guide a chariot over any type of terrain that can normally
+be negotiated at a rate one-third faster than the normal move-
+ment rate for a character without this proficiency. For the move-
+ment rates of chariots being drawn by animals, see the text on
+“Movement of Land-based Vehicles’ in the section on Encum-
+brance and Movement. Note that this proficiency does not impart
+the ability to move a chariot over terrain that it cannot traverse;
+even the best charioteer in the world cannot take such a vehicle
+into the mountains.
+
+Direction Sense: Any group containing at least one character
+with proficiency in direction sense has a reduced chance of be-
+coming lost or disoriented in any type of terrain. A Proficiency
+Check is required whenever the Dungeon Master determines
+that the group has a chance of becoming lost or disoriented, and
+this die roll is always made by the Dungeon Master in secret. The
+check is made with a die roll modifier of +4 if the group is in total
+darkness, or +2 in conditions of partial darkness. Success indi-
+cates that the group has no chance of straying from its intended
+path or losing its sense of direction. If the check is unsuccessful
+but less than 20, the character has incorrectly sensed direction
+by an error of 90 degrees to the left or right (DM's decision). If the
+Proficiency Check is a 20, the character determines a direction
+that is exactly the opposite of the intended path.
+
+If a group includes more than one character with this profi-
+ciency, the Dungeon Master should make a Proficiency Check
+

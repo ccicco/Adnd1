@@ -1,0 +1,149 @@
+PROFICIENCY DESCRIPTIONS
+
+ciency Check with a +4 modifier to the die roll. Failing this check
+indicates that the character lands in a heap, suffers 1d3 points of
+damage, and has a —4 penalty to armor class for any melee at-
+tacks directed against him in the current round.
+
+Riding, land-based: This proficiency is essentially the same as
+the riding proficiency described on page 28 of Dungeoneer’s Sur-
+vival Guide. A player choosing this proficiency for his character
+must specify the type of mount to which it applies. More than one
+proficiency in land-based riding may be taken if the player de-
+sires his character to be skilled in handling and riding more than
+one type of mount.
+
+A character with land-based riding proficiency can perform all
+of the following feats, some of them automatically and others re-
+quiring a Proficiency Check for success.
+
+1) The character can vault into a saddle or onto the back of a
+mount whenever the mount is standing still, even if the character
+is wearing armor. A successful Proficiency Check is required if
+the character vaults into the saddle and then tries to get the
+mount moving during the same segment in which he landed on
+its back. The character can vault onto a moving mount by making
+a successful Proficiency Check. Failure indicates that the char-
+acter falls to the ground, but he does not suffer any damage as a
+result.
+
+2) The character can urge his mount to jump tall obstacles or
+leap across gaps. No check is required if the obstacle is less than
+three feet tall, or the gap is less than 12 feet wide. If the character
+makes a Proficiency Check, the mount can be urged to leap ob-
+stacles up to seven feet high, or clear gaps of as much as 30 feet
+in width. Success means that the mount makes the leap. Failure
+indicates that the mount balks (stops suddenly just in front of the
+obstacle), and another Proficiency Check is required to deter-
+mine whether the character keeps his seat or falls to the ground.
+
+3) The character can spur his mount on to great speeds, add-
+ing 1” per round to the animal's maximum movement rate for up
+to four turns. A Proficiency Check is required at the beginning of
+each turn in order to accomplish this feat. If the initial check fails,
+no further attempt of this sort can be made until at least three
+turns have passed, but the mount can still move at its maximum
+rate. If the second or a later check fails, the mount immediately
+slows to a walk, and the character must dismount and lead the
+animal for a turn. In any event, after four turns of racing the steed
+must be walked by its dismounted rider for a turn.
+
+4) The character can guide his mount with his knees, allowing
+him to use equipment and weapons that require both hands to
+wield. This feat does not require a Proficiency Check unless the
+character takes damage while riding in this fashion. In this case,
+a check is required; failure means that the character falls to the
+ground and takes an additional 1d6 points of damage.
+
+5) The character can drop down and hang alongside the
+mount, using it as a shield against attack. No Proficiency Check
+is required to accomplish this feat, and it can be performed while
+the mount is moving at full speed. However, the character cannot
+be wearing any armor heavier than leather, and he cannot make
+any attacks while in the shielded position. The character receives
+a bonus of 6 steps to his armor class (10 becomes 4, 8 becomes
+2, etc.) while in the shielded position against attacks coming from
+the direction he is shielded from. However, any attacks directed
+against the mount and rider that would have struck the charac-
+ter's armor class under normal circumstances are considered to
+have struck the mount instead of the rider.
+
+6) The character can leap from the back of his mount to the
+ground and make a melee attack, in the same round, against any
+character or creature within 10 feet of where he landed. However,
+this is a risky maneuver; the character must make a successful
+Proficiency Check with a +4 modifier to the die roll. Failure indi-
+cates that the character lands in a heap, suffers 1d3 points of
+
+16
+
+damage, and must take 1-3 segments to get to his feet. If he is at-
+tacked before regaining an upright position, the opponent’s at-
+tack is made at +2 to hit because of the character’s vulnerable
+position.
+
+Rope Use: A character with this proficiency has extraordinary
+knowledge in the use of rope, pertaining especially to the tying
+and releasing of knots. If the construction of a temporary shelter
+involves the use of rope (which is almost always the case), a char-
+acter with proficiency in rope use can erect or take down the shel-
+ter in half the length of time that a normal character would
+require. Such a shelter erected by a character with this profi-
+ciency is half as likely to be adversely affected by inclement
+weather (high winds, heavy rain or snow) as a shelter erected by
+a normal character. See the section on Camping and Campfires
+for details on the effects of weather conditions upon a temporary
+shelter.
+
+If a proficient character has his hands bound and tied with a
+rope or a cord, he can escape the bonds by making a successful
+Proficiency Check. This check is made with a +3 modifier to the
+die roll if the character's hands are tied in front of his body, or with
+a +6 modifier if the character’'s hands are tied behind his back.
+
+A character with proficiency in rope use gains +2 to hit on all
+attacks made with a lasso. He also receives a 10% bonus on all
+Climbing Checks made while he is using a rope, including at-
+tempts to belay companions. See the section on Climbing for de-
+tails on how to determine the success of a climbing attempt.
+
+Running: This proficiency takes two forms: sprinting and dis-
+tance running. Either skill can be employed separately, but both
+cannot be used at the same time. Proficiency in running is most
+often found in characters who were raised or have spent a con-
+siderable amount of time in a high-altitude environment, although
+other characters are capable of training themselves to acquire
+these skills.
+
+Sprinting is the ability to move at high speed on foot for a
+relatively short period of time. A proficient character who is
+not encumbered and is not wearing armor heavier than
+leather can run at twice his normal maximum movement
+rate for five rounds, or one and one-half times as fast as
+normal (round up to the nearest whole number) for one
+turn, whichever is chosen by the character. Extended
+sprinting is possible if the character makes a series of Profi-
+ciency Checks, one per round beginning when the above-
+mentioned time limit expires. Each Proficiency Check after
+the first one is made with a cumulative modifier of +3to the
+die roll (+3 on round two, +6 on round three, etc.). Each
+successful Proficiency Check indicates that the character
+can keep sprinting for another round. One failed Profi-
+ciency Check indicates that the character has become fa-
+tigued. He can continue to sprint, but he runs the risk of
+becoming exhausted if he fails another Proficiency Check.
+
+A character can choose to stop sprinting at any time. If
+he is fatigued when he stops, he will remain fatigued and is
+still subject to becoming exhausted if he performs any
+other strenuous activity. If he becomes exhausted, he must
+stop sprinting immediately and will remain exhausted until
+he has recovered. If a character stops sprinting before be-
+coming fatigued, he can continue to move at his normal
+maximum rate for two turns and then begin sprinting again.
+If he slows to one-half his normal maximum rate, he can be-
+gin sprinting again in one turn.
+
+Distance running is the ability to move at normal running
+speed for longer than a normal character can, without risk-
+ing adverse effects. For the purpose of the rules governing

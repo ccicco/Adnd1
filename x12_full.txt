@@ -1,0 +1,125 @@
+WILDERNESS
+PROFICIENCIES
+
+The potential rewards of adventuring in and through the wilder-
+ness are great — and equally great are the potential problems
+and hazards that will be encountered and must be avoided or
+overcome if a group of characters is to survive and benefit from a
+sojourn in the wild.
+
+Of course, the best way to avoid or overcome problems and
+hazards is to be prepared to deal with them — and that’s where
+wilderness proficiencies come into play. Described in this section
+is a system for handling the concept of wilderness proficiencies,
+followed by definitions of what these various skills allow a charac-
+ter to accomplish.
+
+The system is essentially the same as that described in Dun-
+geoneer’s Survival Guide for handling nonweapon proficiencies.
+A character is entitled to possess a certain number of proficien-
+cies, depending on his class and level. Some of these are
+weapon proficiencies — '‘slots"’ that can be filled by skill with a
+certain weapon. The others are nonweapon proficiencies — slots
+that can be filled with the skills described in Dungeoneer’s Sur-
+vival Guide, or the skills described herein, or any combination of
+skills from both sources.
+
+Readers who are familiar with DSG will notice that some of the
+proficiencies described here have the same names as some of
+the adventuring proficiencies outlined in that other book, and in
+many of these cases (such as fire-building and land-based riding)
+the definitions given here are essentially the same as those given
+in DSG. In such cases, the Dungeon Master is advised to rule that
+the particular nonweapon proficiency can be used to advantage
+by a character whether he is in a subterranean or an above-
+ground environment. For example, a character who is proficient
+in riding a horse should be able to accomplish the feats given for
+that proficiency no matter where he is located.
+
+In other cases, a proficiency by its nature will only apply in ei-
+ther an underground or an aboveground locale. For instance, the
+proficiency of plant lore will probably only be useful in the wilder-
+ness, while fungus identification (see page 28, DSG) is a skill
+whose practice is limited to the underground environment.
+
+NONWEAPON PROFICIENCIES
+
+Choosing skills
+
+The selection of nonweapon proficiencies for a character is
+basically up to the player of that character. However, in the inter-
+est of faithful and accurate role-playing it is recommended that
+players take into account the background of their characters and
+not select initial nonweapon proficiencies for them that seem il-
+logical in light of those facts. For instance, a character who did
+not grow up in a desert environment or who has not spent a siz-
+able amount of time in the desert should not be able to possess
+proficiency in desert survival at first level just because the player
+thinks this would be a handy skill to have. Conversely, a charac-
+ter who did grow up in the desert and thus has spent little or no
+time in and around the water would not logically have special skill
+in swimming.
+
+As an outgrowth of this reasoning, players also should not be
+
+11
+
+frivolous about selecting proficiencies as their characters ad-
+vance in experience levels and become eligible to possess more
+skills. Until and unless a character has spent a sizable amount of
+time in the desert (presumably during an adventure), he should
+not be able to acquire proficiency in desert survival.
+
+In contrast, some of these wilderness proficiencies are not diffi-
+cult to justify for practically any character at any time. For in-
+stance, direction sense is something that any first-level character
+might be presumed to possess (indicating an inborn knack for
+such atalent), or that any character of higher level might conceiv-
+ably pick up when he becomes eligible to add a new skill (indica-
+ting that part of his between-levels training involved instruction in
+this skill).
+
+Ultimately, all selections of proficiencies are subject to the ap-
+proval of the Dungeon Master. If the arbiter of a campaign feels
+that a player's selection is illogical, then he is entitled — even
+obliged — to disallow that selection.
+
+Success and Failure
+
+Unlike a weapon proficiency, the possession of a nonweapon
+proficiency does not always mean that the character can realize
+the benefits of having a certain skill. On some occasions, de-
+pending upon the particular proficiency or the circumstances sur-
+rounding the use of the proficiency, it is necessary for a character
+to make a successful Proficiency Check in order to be able to use
+the skill.
+
+A Proficiency Check is accomplished in the same way as an
+Ability Check. The player rolls 1d20, applies modifiers (if any) to
+the result, and compares that number to the character's score in
+the Appropriate Ability for the proficiency being used. If the modi-
+fied die-roll result is less than or equal to the score of the Appro-
+priate Ability, the Proficiency Check is successful. (In certain
+circumstances, the Dungeon Master will make a Proficiency
+Check die roll instead of the player, and he may or may not reveal
+to the player the result of the attempt. See the description of the
+direction sense proficiency for an example of this exception; the
+Dungeon Master may declare other exceptions of this sort when
+he deems it appropriate.)
+
+Any unmodified die roll of 19 or 20 on a Proficiency Check indi-
+cates automatic failure, regardless of modifiers that would other-
+wise bring the result down into the range needed for success.
+Also, for the purpose of a Proficiency Check, any ability score
+greater than 18 is treated as a score of 18. This means that a
+character with an Appropriate Ability score of 18 or greater must
+always make a successful Proficiency Check without the aid of
+any beneficial modifiers, and that even a character with an Ap-
+propriate Ability score of 18 or greater has at least a 10% chance
+(2 in 20) of failing any Proficiency Check he attempts.
+
+Improving Proficiencies
+
+When a character becomes eligible to fill an additional non-
+weapon proficiency slot gained at 3rd level or higher, the player
+may elect to improve the character’s ability in an existing profi-

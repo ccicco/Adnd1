@@ -1,0 +1,148 @@
+the bonus to the saving throw can only be retained if the victim re-
+mains at complete rest for one turn thereafter, and if the healing
+character continues to aid the victim for at least five rounds fol-
+lowing the round in which the poisoning took place. If either of
+these time requirements is not met, the victim must make another
+saving throw versus poison, with no bonus, and abide by the re-
+sult of that roll. Note that unless someone in the party has profi-
+ciency in animal handling, it may be fruitless to try to aid (for
+instance) a horse that has been poisoned, since it is unlikely that
+anyone will be able to keep the animal calm and resting for one
+turn.
+
+A character with healing proficiency can also attempt to help a
+character who has been taken ill, either by a disease occurring
+because of the condition of the character or the environment or
+by a disease resulting from parasitic infestation (see pages 13-
+14, Dungeon Masters Guide, for a discussion of both types of dis-
+ease). If the healing character begins tending to the victim within
+three turns of the onset of symptoms, and if that character makes
+a successful Proficiency Check, then the severity of the disease
+will be one step lower than indicated by the die roll (terminal be-
+comes severe, or severe becomes mild). If the severity of the dis-
+ease was already determined to be mild, then the disease will run
+its course in half the time that would have been required other-
+wise. These benefits will only continue to apply to the diseased
+character as long as he receives aid from the healing character at
+least twice per day, at regular intervals, until the disease runs its
+course. If two of these ‘‘medicine sessions’’ are missed consecu-
+tively, or if a total of three of them are missed during the duration
+of the disease, then the illness reverts to the level of severity that
+was originally indicated.
+
+Note that in order for a character to be able to exercise his pro-
+ficiency in healing, he must possess or have immediate access to
+any necessary materials or substances. See the section on First
+Aid and Medicine for details on the availability of medical equip-
+ment and medicinal substances.
+
+Hunting: Similar in effect to the proficiencies of fishing and for-
+aging (see above), the hunting proficiency enables a character to
+locate and kill wild game for food more easily than a normal char-
+acter can.
+
+The best chance for success at hunting is afforded when the
+hunter goes out by himself. For every additional character in the
+hunting party, the hunter's Proficiency Check die roll is modified
+upward cumulatively according to the number of characters ac-
+companying him: + 1 for one additional character, +3 for two ad-
+ditional, +6 for three, +10 for four, and + 15 for five. Obviously, a
+hunting Proficiency Check will automatically fail (and thus need
+not be made) whenever a hunting party contains six or more
+members in addition to the hunter. This cumulative penalty ap-
+plies even when other characters with hunting proficiency are in
+the hunting party.
+
+See the section on Food and Water for details on how to deter-
+mine the success of a hunting attempt.
+
+Mountaineering: This proficiency allows a character to ascend
+steep, rocky terrain by using spikes that he drives into cracks in
+the rock face, thereby being able to negotiate a surface that is not
+normally able to be climbed. A character with this proficiency also
+gains other benefits as described in the text on Climbing in the
+section on Encumbrance and Movement.
+
+Plant Lore: A character with proficiency in this skill is able to
+more easily locate and positively identify plant life that is useful
+for some purpose other than its food value, such as plants.that
+have medicinal use. If some medicinal plant is found and a Profi-
+ciency Check succeeds, then the plant will certainly be the cor-
+rect sort (no chance of misidentification). See the section on
+
+15
+
+PROFICIENCY DESCRIPTIONS
+
+Medicine and First Aid for details on how to determine the suc-
+cess of a search for a certain medicinal plant.
+
+Riding, airborne: A character with this proficiency is especially
+skilled in the riding and handling of a flying mount. When this pro-
+ficiency is selected, the player must indicate what type of mount it
+pertains to, according to the categories of flying mounts given in
+the section on Encumbrance and Movement. The player may se-
+lect this proficiency more than once if he desires his character to
+have skill in handling more than one type of aerial mount.
+
+A character with proficiency in airborne riding can perform all
+of the following feats, some of them automatically and others re-
+quiring a Proficiency Check to determine success.
+
+1) The character can leap onto the back or neck of his mount
+whenever the creature is at rest on the ground, or can drop onto
+his mount from a distance of no more than 10 feet above the
+mount without causing damage either to himself or to the mount.
+The former maneuver can be performed even if the character is
+wearing armor. However, the second maneuver cannot succeed
+if the character is wearing armor heavier than leather; in such a
+case, the character will suffer falling damage and his mount will
+panic (and perhaps also suffer incidental damage from the im-
+pact). Accomplishing either of these feats does not require a Pro-
+ficiency Check, but the character must make a successful
+Proficiency Check if he intends to get the mount airborne during
+the same segment in which he landed. A successful Proficiency
+Check is also required if the character attempts to drop from
+above and land on the neck or back of a mount that is hovering a
+short distance off the ground. Failure on this check indicates ei-
+ther that the mount was driven to the ground by the impact (possi-
+bly causing it to suffer damage), or that the character’s leap was
+ill-timed and he ended up on the ground.
+
+2) The character can spur his mount on to greater speeds, add-
+ing 1" to the mount'’s flying movement rate for as many as four
+consecutive turns. A successful Proficiency Check is required at
+the beginning of each turn in which this extra speed is desired. If
+the initial check fails, no more attempts can be made until at least
+three turns have passed, but the mount can still be made to move
+at its normal maximum movement rate. If the second or a later
+check fails, the mount has become fatigued from overexertion. It
+will immediately slow to 2/3 of its normal maximum movement
+rate and will perform as if it were one Maneuverability Class
+worse than it actually is. These conditions will persist until the
+mount is allowed to land and is given at least two turns to regain
+its strength. If the mount is successfully pushed to greater
+speeds for four consecutive turns, it will slow and become less
+maneuverable as described above and must be landed and
+rested before its normal levels of ability can be regained.
+
+3) The character can guide his mount with his knees or feet,
+leaving his hands free for the use of weapons or equipment that
+requires two hands. A Proficiency Check is not necessary to ac-
+complish this feat unless the rider takes damage; in such a case,
+acheck must be made. Failure indicates either that the character
+drops what he was holding and clutches his mount to keep from
+falling off (if the damage is slight), or that he is knocked off the
+mount and falls (if the damage is more than slight). Note that with
+some mounts of exceptionally large size, it may be prudent or
+necessary for a rider to use some sort of harness or series of
+straps to keep himself securely positioned on the mount. When a
+harness is being used, this aspect of the riding proficiency does
+not apply — but it may prove perilous to be strapped to a mount
+that has taken damage and is plummeting toward the ground.
+
+4) If his mount is hovering, the character can leap from the
+back of his mount to the ground from a height of 10 feet or less
+and, in the same round, make a melee attack against any charac-
+ter or creature within 10 feet of where he landed. This is a risky
+maneuver, requiring the character to make a successful Profi-

@@ -1,0 +1,113 @@
+fatigue and exhaustion, running is not considered a partic-
+ularly strenuous activity for a character with this profi-
+ciency. All the time limits given for the fatigue rules in the
+section on Fatigue and Exhaustion are either doubled or
+halved (in favor of the character) for a character with run-
+ning proficiency who is engaging in a long-distance run.
+For instance: A character with running proficiency can
+avoid the effects of fatigue by resting for one turn after ex-
+erting himself for eight turns. If a character spends twelve
+turns in long-distance running (without one turn of rest), the
+player must make a Constitution Check. If that check is
+successful and he continues to run for ten more turns, an-
+other check is required, and so on.
+
+This alteration of the time requirements does not apply if
+the character becomes fatigued or exhausted. Also, the
+benefits of this aspect of the running proficiency are ne-
+gated if the character stops in the middle of a long-distance
+run to engage in any other type of strenuous activity (such
+as fighting or climbing). In such a case, the character must
+immediately begin to abide by the standard rules govern-
+ing fatigue and exhaustion, as if he had just begun to per-
+form strenuous activity.
+
+Survival, cold: A character with this proficiency is more resist-
+ant to the adverse effects of a cold climate. For this character, the
+effective temperature is considered to be 20 degrees warmer
+than it is for a character without this proficiency. This proficiency
+only applies when the effective temperature is 30 degrees or
+lower.
+
+Survival, desert: A character with this proficiency is more easily
+able to anticipate or avoid the hazards of a desert environment.
+His chance of locating a water hole on any given day is twice as
+great as that of a normal character — perhaps the single most im-
+portant aspect of this skill. This proficiency also includes foraging
+skill; the character can locate a certain quantity of edible plants in
+half the time it takes for a normal character to obtain the same
+quantity. At the Dungeon Master's discretion, other advantages
+may be afforded to a character with desert survival skills and to
+the other members of his party. For instance, a proficient charac-
+ter may be able to better endure a long stretch of time when no
+fresh water is available — not because he can go without water
+for longer than anyone else, but because he knows how to con-
+serve his supply.
+
+Survival, heat: A character with this proficiency is more resist-
+ant to the adverse effects of a hot climate. For this character, the
+effective temperature is considered to be 20 degrees cooler than
+it is for a character without this proficiency. This proficiency only
+applies when the effective temperature is 80 degrees or higher.
+
+Swimming: This is something of a special case among the so-
+
+17
+
+PROFICIENCY DESCRIPTIONS
+
+called “‘normal” proficiencies (as opposed to something such as
+a survival skill, which might be called a *‘special’ proficiency). A
+character without hunting proficiency still has a chance of being
+able to bring down some wild game for dinner; one without forag-
+ing proficiency is still able to gather plants that he believes to be
+edible. But a character without swimming proficiency cannot
+swim at all. He can hold his breath under water, and under the
+right circumstances he can float at the top of a body of water, but
+he cannot move through the water under his own power. Rules
+governing the swimming proficiency are given in the section on
+Encumbrance and Movement.
+
+Tracking: A character with this proficiency is able to follow the
+trail of a character or creature in the same fashion that a ranger
+can track (see Unearthed Arcana, page 21) — except that the
+base chance for success is half that of a ranger: 5% per level of
+the character, plus an additional 5%, up to a maximum of 55%. A
+character without proficiency in tracking has a base chance of
+0% on any attempt to follow a trail, but may still be able to engage
+in tracking if the total of all applicable modifiers is a positive num-
+ber.
+
+Weather sense: This proficiency enables a character to deter-
+mine something about what the weather conditions will be in the
+place he is currently occupying during the coming six hours. A
+successful Proficiency Check indicates that the character cor-
+rectly ascertains at least one general fact about the upcoming
+conditions: rain is on the way, rain is not on the way, it will get
+warmer, it will get cooler, conditions will remain basically the
+same, and so forth. The Dungeon Master always rolls Proficiency
+Checks for weather sense, and is not obliged to reveal the result
+of the attempt. The information gained from a successful check is
+whatever the Dungeon Master deems it appropriate for the char-
+acter to know (and, of course, the information must be at least
+generally true). A failed check indicates that no definite informa-
+tion is gained, or (at the Dungeon Master’s discretion) some in-
+correct information is obtained.
+
+This proficiency can only be used without penalty once in every
+24-hour period. For every attempt beyond the first one on a given
+day, the Dungeon Master will attach a cumulative +2 modifier to
+the die roll (decreasing the chance that multiple Proficiency
+Checks during a single day will all succeed). Also, when a
+weather sense Proficiency Check is failed, any subsequent
+check in the next 12 hours will automatically fail.
+
+Sometimes, impending weather is so obvious that even a char-
+acter without this proficiency will be able to tell what is going to
+happen. In such cases, the Dungeon Master should not require,
+or even acknowledge, an attempt for a Proficiency Check and
+should instead simply describe the conditions, which would be
+apparent to anyone who can see. For instance, anyone ought to
+know that ‘‘a mass of dark clouds on the horizon, moving toward
+you'' is a pretty clear sign that a rainstorm is on the way.
+

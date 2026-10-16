@@ -1,0 +1,73 @@
+PROFICIENCY DESCRIPTIONS
+
+for each such character. If each character determines that a dif-
+ferent direction is the one desired, then the party will have to de-
+cide among themselves which character's sense is to be trusted.
+If more than one character makes the same determination, it is
+likely that both of their Proficiency Checks have succeeded —
+but it is also possible that they have both made the same error.
+
+Endurance: A character with endurance proficiency is able to
+perform continual strenuous physical activity for twice as long as
+a normal character can before becoming subject to the effects of
+fatigue and exhaustion. Note that this proficiency does not en-
+able a character to extend the length of time that he can remain
+unaffected by a lack of food and/or water.
+
+Fire-building: If a character with this skill makes a successful
+Proficiency Check, he can start a fire without the use of flint and
+steel or a tinderbox. If such a character does have the abovemen-
+tioned equipment, the time needed to start a fire is half as long as
+it would be for a character without this proficiency. For more infor-
+mation on building and maintaining fires, see the section on
+Camping and Campfires.
+
+Fishing: A character with proficiency in this skill is generally
+more successful at netting or hooking a substantial catch. See
+the text on *'Fishing’" in the section on Food and Water for details
+on how to determine the success of a fishing attempt.
+
+Foraging: Similar to the fishing proficiency, this skill enables a
+character to locate and obtain edible plants more easily than a
+normal character can. A successful Proficiency Check indicates
+that twice as much food is obtained than a normal character
+would be able to obtain in the same length of time, or that the time
+needed to obtain a certain amount of food is half as long as a nor-
+
+mal character would need to get the same results. See the sec-
+tion on Food and Water for details on how to determine the suc-
+cess of a foraging attempt.
+
+Healing: A character with this proficiency knows how to use
+substances found in the wilderness to aid a wounded or ill char-
+acter or creature, and also has some knowledge of ‘‘doctoring”
+techniques that can accelerate the healing of wounds.
+
+If a character with healing proficiency tends to a wounded char-
+acter within one round after a wound has been inflicted, and
+makes a successful Proficiency Check, his ministrations will
+cause the immediate restoration of a maximum of 1d3 hit points
+to the victim. No more hit points can be restored than were lost in
+the round preceding the application of treatment; if a wound
+caused only 1 or 2 hit points of damage, then only 1 or 2 hit points
+can be restored regardless of the result of the die roll.
+
+If a wounded character remains under the care of someone
+with healing proficiency, he can recover lost hit points at the rate
+of 1 point per day even while traveling or engaging in non-
+strenuous activity. If the wounded character rests while he is be-
+ing cared for, he can recover two hit points per day instead of the
+one point that is normally allowed. This “‘continuous care’’ as-
+pect of the healing proficiency does not require a Proficiency
+Check, and is assumed to be benefitting the wounded character
+as long as the patient and the healer remain in the same group.
+However, this skill cannot be used on more than one character
+during the same day.
+
+A character with healing proficiency can attempt to aid a char-
+acter or creature who has been poisoned by venom entering his
+body through a wound. If the victim can be ministered to immedi-
+ately (beginning in the same round that the poisoning occurs),
+then his saving throw versus poison is taken at a +2 bonus. No
+Proficiency Check is required to exercise this ability. However,
+

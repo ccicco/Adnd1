@@ -1,0 +1,123 @@
+OVERVIEW
+OF THE WILDERNESS
+
+To achieve a degree of precision and detail that is necessary in a
+set of game rules on the subject, the wilderness environment
+must be described in terms of its component parts — the different
+types of terrain and climate that can be found in a typical (Earth-
+like) world.
+
+Necessary though this approach is, it is also unfortunate that
+no better alternative exists, because a wilderness environment
+taken as a whole must be greater than the sum of its parts in order
+for the campaign setting to be as challenging and exciting as it
+can be. In the dungeon, awall is a wall and a corridor is a corridor;
+a chamber has certain dimensions, and one is either inside the
+chamber or not inside it. In the outdoors, hard and fast characteri-
+zations of this sort do not apply: When a character moves across
+the border from one climatic area to another, the temperature
+does not abruptly rise or fall. In most cases, terrain does not
+change from one category to another within the distance a char-
+acter can cover in a single round (or even a single day). The
+Dungeon Master's campaign map may indicate that an area of
+hills is bordered by a large, flat desert, but this does not mean
+that a traveler descends to the base of a hill and suddenly steps
+onto a sand dune. With obvious exceptions (such as a cliff face
+that rises majestically above a plain), terrain features in the wil-
+derness change gradually. This means that any attempt at cate-
+gorization cannot fully describe all the physical features that
+characters may encounter, and Dungeon Masters and players
+alike should keep this in mind.
+
+With the above disclaimer out of the way, here are brief de-
+scriptions of the basic types of terrain and climate that comprise a
+wilderness environment.
+
+TERRAIN
+
+Desert
+
+Not all deserts are covered with sand, and not all of them are in
+hot climates, but every desert has one thing in common with all
+the others: They are very, very dry. The technical definition of a
+desert is any area that receives less than 10 inches of rain per
+year, in actuality, the yearly rainfall in most deserts might be half
+of that amount or even less.
+
+The lack of moisture in a desert does not render the area totally
+barren or uninhabitable. Many plants and animals are naturally
+able to cope with a severe shortage of water; the cactus and the
+camel are perhaps the best-known examples. However, charac-
+ters are not so fortunate; they need water frequently and in fairly
+large amounts, and the best way to satisfy this need during a trek
+across the desert is to carry a supply of drinking water (or the
+means to produce water magically). Although it is possible to find
+water in the desert, either by stumbling across an oasis or by dig-
+ging for ground water, neither of these methods is especially reli-
+able.
+
+Most deserts are composed of dry, hard-packed earth beneath
+a layer of gravel, with the terrain occasionally broken by a clump
+of large boulders. Water can be particularly difficult to find in this
+kind of desert terrain, because the rainfall tends to run off the sur-
+
+face (flowing toward a place of lower elevation) instead of soaking
+into the ground. Relatively few deserts are covered with sand,
+which does permit water to soak into the terrain from where it can
+be recovered later.
+
+The icy wastes of the polar regions can also be considered des-
+erts. In a desolate place such as the arctic north, vegetation and
+animal life are even more scarce than in a desert located in a hot
+climate. Although moisture is abundant on the ground (in the
+form of ice), the terrain still qualifies as desert because it receives
+very little precipitation.
+
+On a sandy desert, dunes are formed by the action of the wind;
+their shape and size depend upon the amount of sand and the ve-
+locity of the wind that moves it around. Where sand is abundant
+and the wind is at least occasionally very strong, dunes can grow
+to be more than 500 feet high. The slope gradually ascends in the
+direction of the wind. From the peak of the dune, the sand slopes
+down sharply on the side opposite the wind direction. In a very ac-
+tive wind, the peak of a dune can move several hundred feet in
+only a day or two; as windblown sand cascades down the slope
+away from the wind, that side of the dune becomes able to sup-
+port more and more sand, and eventually the dune peaks at a
+point farther downwind. Where the supply of sand is smaller and
+the wind is less intense, dunes are correspondingly smaller and
+shorter. In fact, the technical definition of *‘dune’’ is an accumula-
+tion of sand, formed by wind action, that is no more than 70 feet
+high. Anything larger is properly called a sand mountain, or
+“draa."
+
+An object (or a character) that remains in one spot for any great
+length of time in a desert with heavy sand cover may end up bur-
+ied under tons of sand. On the other hand, the action of the shift-
+ing sands may uncover the entrance to the hidden temple that
+you've been searching for. . . .
+
+Forest
+
+The term “forest’’ covers a lot of ground, literally and figura-
+tively. In the typical campaign world, unspoiled by industrial revo-
+lutions and large-scale lumbering operations, expanses of
+densely packed trees can be found in any climate except the po-
+lar regions, where the eternal cold makes it impossible for trees
+and other large plants to survive.
+
+Forests in different climatic areas contain different kinds of
+trees: evergreens, or conifers, in the subarctic; deciduous, or
+leaf-bearing, in temperate regions; and “‘evergreens’’ of an en-
+tirely different sort in subtropical and tropical areas. Characters
+may discover a large stand of tall cactus in the middle of a desert,
+but this feature does not qualify as a forest in game terms; the
+area is still considered as desert for purposes of weather determi-
+nation, availability of food and water, and so forth.
+
+Taiga (a Russian word) is the name often used to refer to the
+band of forest that exists on Earth, forming a rough circle just
+south of the Arctic Circle. The northern edge of the taiga is the
+“tree line,"" north of which the climate will not support large plant
+life. The conifers get their name from their distinctive shape — a
+tall, thin cone that enables them to shed snow easily. Their

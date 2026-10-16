@@ -1,0 +1,143 @@
+fied as something other than mountainous.
+
+At any elevation higher than the snow line, some of the rocky
+surface of a mountain will be covered with snow or ice, making
+travel even more hazardous. In contrast, exposed rock surfaces
+at high altitudes can become much warmer than the air tempera-
+ture because they absorb heat from the sun throughout the day
+— and on a mountain, there is no such thing as shade excepton a
+slope opposite the sun or in the area beneath an overhang.
+
+A mountain is a study in contrasts — warm in some places,
+cold in others; practically impossible to climb in some spots, fairly
+easy to negotiate in others; a place of safety or a place of danger,
+depending on your point of view and how well equipped you are
+to deal with the terrain. Not all mountainous areas are inherently
+treacherous, but adventurers who ascend into the peaks without
+proper planning and preparation are either very desperate or
+very foolish.
+
+Plains
+
+The name itself implies something unexciting, even boring.
+But, in the words of the original bard, What's in a name? The
+plains of Africa and South America, known as savannas, support
+perhaps the greatest diversity of wildlife of any place on Earth.
+The great plain of central North America, before it was '‘domesti-
+cated,”’ was also teeming with wildlife — and, of course, with the
+vegetation that the wildlife needed to survive.
+
+This terrain designation takes in many types of flat areas, most
+of which (except in an arctic climate) have at least a moderately
+dense cover of low-lying vegetation — grasses and small shrubs
+that have remarkable regenerative powers even after they are
+eaten almost down to ground level by hungry animals. An occa-
+sional tree or small grove of trees also dots the landscape — not
+enough trees to qualify as a forest, but enough to provide protec-
+tion from a herd of stampeding elephants. The monotony of the
+level terrain may be periodically broken by rolling hills or bluffs,
+but again these features are not frequent enough or predominant
+enough to cause a change in classification.
+
+Food and water are generally easy to find on a plain, but the
+materials for an impromptu shelter (tree branches, logs, etc.) are
+not so easily come by. Because the terrain is usually flat and fea-
+tureless, adventurers should be especially careful to keep their
+eyes and ears open: Whenever they can see for a long distance,
+they should realize that they, in turn, can be seen from far away.
+
+Seacoast
+
+Simply put, practically any place that is a short distance from
+an ocean is seacoast terrain. In these rules, the distinction is im-
+portant for determining weather conditions, the availability of ani-
+mals (for food) and the availability of plant life (for both food and
+medicinal purposes). If the Dungeon Master uses encounter ta-
+bles such as those in the Dungeon Masters Guide or Monster
+Manual Il for determining possible confrontations with wildlife or
+other residents of the area, the seacoast area should be consid-
+ered as some other type of terrain that conforms to the classifica-
+tions in the encounter tables.
+
+Swamp
+
+In game terms, a swamp is any place where a character's feet
+hit standing water shortly before hitting the ground. Swamps are
+always located at low elevation or on fiat or slightly depressed
+land at the edge of a river or lake. The vegetation may resemble
+that of a grassy plain, or it may be forestlike, but no matter what
+
+OVERVIEW: BODIES OF WATER
+
+shape and size it comes in, there is always a lot of it; the soil in
+swampy areas is extremely fertile because it contains a great
+quantity of decomposed vegetable matter — and, of course, no
+plant in a swamp ever has to go very far for water.
+
+The depth of the standing water in a swamp can vary from prac-
+tically zero (where the ground is merely spongy) to several feet,
+and sometimes goes from shallow to deep in the space of just a
+few steps if the underlying terrain is irregular. Movement through
+a swamp can be very difficult, if not actually dangerous, and a
+swamp is not a good place to take mounts or pack animals. If the
+shortest distance between two points would take characters on a
+path through a swamp, they would be well advised to circumvent
+the soggy area and spend a few more steps to get where they're
+going. But if their destination is inside the swamp . . . well, even if
+the adventure isn’t wild, it will certainly be wet.
+
+Hierarchy of Terrain
+
+The preceding text gives some advice on how to deal with ter-
+rain that seems to belong in two categories at once. Even with
+that advice in mind, occasions may arise when there is some
+question in the Dungeon Master's mind about how an area of ter-
+rain should be classified. If that happens, the following ranking
+may be of use:
+
+. Seacoast
+. Swamp
+
+. Forest
+
+. Plains
+
+. Desert
+
+. Hills
+
+. Mountains
+
+NOOSEWN =
+
+If an area has properties that are particular to two or more ter-
+rain categories, consider it as terrain of the highest-ranking cate-
+gory (1 being the highest rank, 7 being lowest). For instance, a
+sandy beach that borders the ocean is considered seacoast, not
+desert. A low-lying area with standing water and a lot of large
+trees is swamp, not forest.
+
+Obviously, certain circumstances will not fit this ranking sys-
+tem. If the waves of an ocean crash against the base of a jagged,
+rocky slope, the area next to the sea is mountains, not seacoast.
+If a deep valley between two hills happens to contain a marshy
+area, the predominant terrain in the area is hills, not swamp. The
+listing above should only be used when common sense and rea-
+sonability do not help the Dungeon Master reach a decision.
+
+Bodies of Water
+
+In a typical campaign world, rivers and lakes serve at least two
+important purposes: They provide a ready source of water, and
+their presence requires a party of adventurers to be more versa-
+tile. A body of water is both an opportunity and a challenge. Tra-
+vel on the surface of a lake or river is often faster, easier, and
+safer than negotiating the surrounding terrain on foot — but only
+if characters have access to a boat or a barge and someone in the
+group has the skill to handle the craft expertly. Swimming across
+a deep, wide river, instead of following the shoreline and looking
+for a place to ford, can save hours or even days of travel time —
+but only if characters have the ability to swim in the first place. To
+be fully prepared for a trek through the wilderness, a party of ad-
+venturers should have equipment and skills for coping with
+bodies of water as well as for moving on land.
