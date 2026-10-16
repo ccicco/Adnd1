@@ -6210,6 +6210,49 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   swimming/holding-breath/waterborne, or the movement chain -
   climbing/jumping/encumbrance), or the DSG as the next
   book.
+- R500 LANDED 2026-10-16: commit 3e269ca (census 425,
+  pushed bcaa323..3e269ca), the WSG SWIMMER'S MOTION-CHAIN
+  FOLD - the second seam round, the R499 fold pattern
+  applied to the water chapter: one swimmer state flows
+  through five landed headers - the swimming rates
+  (rules/wsgswim.h R450), the moving-water hazards
+  (rules/wsgmwater.h R451), the dive leg (rules/wsgdive.h
+  R452), the treading economy (rules/wsgtread.h R453) and
+  the surfacing/breath rules (rules/wsgbreath.h R454).
+  Pinned as rules/wsgswimfold.h (prefix wmf, 49 inlines:
+  39 consts + 10 bools, no grids, NO gap flips - the
+  report stays 186/0). FINDINGS: the vertical rates equal
+  each other (dive base and surface base both 2 inches) and
+  are exactly half the horizontal base (20 vs 40 feet); the
+  Table 24 dive column matches the dive prose exactly (x2
+  moderate, x3 heavy/severe); the encumbrance paradox (the
+  moderate speed denominator 2 numerically equals the
+  moderate dive multiplier 2 - the same weight that
+  halves speed doubles the sink rate); the forty-foot
+  agreement (the dive falling-damage threshold equals the
+  waterfall save threshold - the headers cross-reference
+  each other); the mercy drift cap equals the
+  light-current range; the check ladders differ (breath
+  Con Checks step +2, treading Str Checks step +1); three
+  distinct endurance economies (rest 3/turn, high speed
+  1/10, treading 1 point per 2 turns). Honesty fix during
+  authoring: the treading example (str 6 -> 12 rounds) is
+  doubled by the Table 24 UNENCUMBERED endurance modifier,
+  not by the 2-turns-per-point constant - the 2s coincide
+  but the semantics differ; pinned as wmfEncMultUnenc.
+  Preflight GREEN (R500 WSG swimmer motion fold audit: bad
+  0), rverify GREEN (49 mutants, 0 missed, double-run
+  clean). Local gates: 42/42 mechanical cross-checks
+  against the five headers; the mid-round mixed-state
+  engine abort (old spec patches in the tree) resolved by
+  refetching fresh bcaa323 - the R420 lesson holds.
+  User-side spec md5 5a3d1cb8df82cab5a2b7e45433896a72
+  differed from both authored variants (cd038256... +nl,
+  35a1e056... no-nl) - cosmetic, the standing class.
+  Spec published as the new canvas r500-splice. NEXT -
+  R501: the third fold (candidates: the movement chain -
+  climbing/jumping/encumbrance/falling, or the camp chain
+  - fire/shelter/sleep), or the DSG as the next book.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
