@@ -1,0 +1,752 @@
+{
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The WSG camp-chain fold, the fourth seam round after gap closure: no new book pages, the R499 pattern applied to the camp chapter. One campsite flows through six landed headers: the rest quality and Table 38 fire (rules/wsgfire.h R474: the three fire sizes, the fuel ladder 6, 12, 18 turns for an eight-hour burn, the refuel ladder 3, 6, 9, the wind resistance 20, 30, 40, the rest penalties 1, 1, 2, 2, 3, 3, 4 hours, the plate economy 5-to-1 and 9-to-5), the fire starting and fuel rules (rules/wsgfuel.h R475: the 15 mph breeze bar, the 30 mph no-start maximum, the 2d20/3d20 start dice, the 3-turn small-fire grace, the capacity doubling 6 at 10 feet to 12 at 20), the wildfire rules (rules/wsgblaze.h R476: the spark carry 10, 20, 30 feet plus one foot per mph of wind, the growth ladder 1, 2, 4 turns, the 6-turn uncontrollable bar, the halving divisor), the tent quality system (rules/wsgsleep.h R473: the pole ladder 2, 4, 6, the 10 mph leak step with the 5 mph leak, the 25 percent damage chance), the natural shelters (rules/wsgshelter.h R471: the 3-turn material floor, the 6-turn lash) and the R499 temperature chain re-read for the seam. The findings: the uncontrollable bar of 6 turns is exactly one hour; the small-fire refuel interval and the grace period are the same 3 turns in two headers; the 20 mph wind value appears in three headers; the no-start maximum equals the medium fire wind resistance; the growth ladder is the only geometric ladder; the rest cold threshold is the R499 below-0 boundary and the rest hot threshold of 90 opens one degree past the protected no-damage top of 89; and the plate economy loses a flat 4 hours either way.",
+ "audit_label": "R502 WSG camp chain fold audit",
+ "banner": {
+  "provenance": "No new book pages: every value is the landed original re-read from its header (wgfFireSizes, wgfFuel, wgfRefuel, wgfWindRes, wgfPenTempBelow0, wgfPlateTypicalNight, wflSmallRefuelGrace, wflNoStartWindMax, wcfUncontrollableTurns, wcfSparkCarrySmallFt, wcfGrowthSmallTurns, wrsAdequateMinPoles, wrsWindStepMph, wnsLashBaseTurns and kin) and re-pinned on the fold side so the ladder identities compile and ride the mutant battery. The findings: the one-hour uncontrollable bar; the two-header refuel grace identity; the twenty-mph triple agreement across fire, rest and shelter; the no-start-equals-medium identity; the arithmetic-versus-geometric ladder split; the R499 temperature seam on both the cold side (the same 0) and the hot side (90 opens one past the 89 protected top); and the flat 4-hour plate loss.",
+  "sentinel": "THE SETTLE: census 426 -> 427; the gap report stays 186 closed / 0 open (closed - no flips this round); the camp chain has no gaps.",
+  "title": "The WSG CAMP-CHAIN FOLD, R502: the fourth seam round after gap closure. The fire-size ladders (rules/wsgfire.h), the fire-start and fuel rules (rules/wsgfuel.h), the wildfire rules (rules/wsgblaze.h), the tent quality system (rules/wsgsleep.h) and the natural shelters (rules/wsgshelter.h) reconciled as one system: one campsite, one chain, every ladder and threshold cross-checked between its headers - and the rest-quality thresholds plugged into the R499 temperature chain."
+ },
+ "bools": [
+  {
+   "comment": "the uncontrollable bar of 6 turns equals the 6 turns per hour - a fire left alone for exactly one hour becomes uncontrollable.",
+   "name": "wmcBarIsOneHour",
+   "value": true
+  },
+  {
+   "comment": "the Table 38 small-fire refuel interval and the fuel-header grace period are the same 3 turns - two headers, one number.",
+   "name": "wmcRefuelGraceIdentity",
+   "value": true
+  },
+  {
+   "comment": "the 20 mph value appears in three headers: the small fire wind resistance, the rest wind-penalty threshold, and the poor-shelter full-protection example.",
+   "name": "wmcWindTwentyTriple",
+   "value": true
+  },
+  {
+   "comment": "the no-start wind maximum of 30 mph equals the medium fire wind resistance - the fire that cannot be started in such wind is the one that would have withstood it.",
+   "name": "wmcNoStartMatchesMedium",
+   "value": true
+  },
+  {
+   "comment": "the growth ladder 1, 2, 4 doubles while the fuel, refuel, wind-resistance and spark ladders are all arithmetic - the only geometric ladder in the camp chain.",
+   "name": "wmcGrowthOnlyGeometric",
+   "value": true
+  },
+  {
+   "comment": "the rest cold threshold is the R499 dress below-0 boundary value - the camp chain plugs into the temperature chain at the same 0.",
+   "name": "wmcRestColdSeamR499",
+   "value": true
+  },
+  {
+   "comment": "the rest hot threshold of 90 opens one degree past the R499 protected no-damage top of 89, at heat band 18 - the camp chain plugs into the temperature chain on the hot side too.",
+   "name": "wmcRestHotSeamR499",
+   "value": true
+  },
+  {
+   "comment": "the plate economy loses a flat 4 hours either way: 5 hours in plate rest like 1, and 9 rest like 5.",
+   "name": "wmcPlateFlatLoss",
+   "value": true
+  },
+  {
+   "comment": "the inside leak of 5 mph per step is half the 10 mph step - the tent halves the wind it cannot stop.",
+   "name": "wmcLeakHalfStep",
+   "value": true
+  },
+  {
+   "comment": "the pole ladder 2, 4, 6 is arithmetic: two more poles per quality tier.",
+   "name": "wmcPolesLinear",
+   "value": true
+  }
+ ],
+ "caller_files": [
+  "dm/treasure.cpp",
+  "game/state_combat.cpp"
+ ],
+ "census_before": 426,
+ "chains": [],
+ "consts": [
+  {
+   "comment": "a campfire can be built in one of three sizes: small, medium and large (wgfFireSizes).",
+   "name": "wmcFireSizes",
+   "value": 3
+  },
+  {
+   "comment": "the fuel values gather enough material for an eight-hour burn (wgfBurnHours).",
+   "name": "wmcBurnHours",
+   "value": 8
+  },
+  {
+   "comment": "the Table 38 fuel: 6 turns of gathering for a small fire (wgfFuel(0)).",
+   "name": "wmcFuelSmall",
+   "value": 6
+  },
+  {
+   "comment": "the Table 38 fuel: 12 turns for a medium fire (wgfFuel(1)).",
+   "name": "wmcFuelMedium",
+   "value": 12
+  },
+  {
+   "comment": "the Table 38 fuel: 18 turns for a large fire (wgfFuel(2)).",
+   "name": "wmcFuelLarge",
+   "value": 18
+  },
+  {
+   "comment": "the Table 38 refuel: every 3 turns for a small fire (wgfRefuel(0)).",
+   "name": "wmcRefuelSmall",
+   "value": 3
+  },
+  {
+   "comment": "the Table 38 refuel: every 6 turns for a medium fire (wgfRefuel(1)).",
+   "name": "wmcRefuelMedium",
+   "value": 6
+  },
+  {
+   "comment": "the Table 38 refuel: every 9 turns for a large fire (wgfRefuel(2)).",
+   "name": "wmcRefuelLarge",
+   "value": 9
+  },
+  {
+   "comment": "the small fire withstands wind up to 20 mph (wgfWindRes(0)).",
+   "name": "wmcWindResSmall",
+   "value": 20
+  },
+  {
+   "comment": "the medium fire withstands wind up to 30 mph (wgfWindRes(1)).",
+   "name": "wmcWindResMedium",
+   "value": 30
+  },
+  {
+   "comment": "the large fire withstands wind up to 40 mph (wgfWindRes(2)).",
+   "name": "wmcWindResLarge",
+   "value": 40
+  },
+  {
+   "comment": "sparks from a small fire are carried 10 feet (wcfSparkCarrySmallFt).",
+   "name": "wmcSparkSmall",
+   "value": 10
+  },
+  {
+   "comment": "sparks from a medium fire are carried 20 feet (wcfSparkCarryMediumFt).",
+   "name": "wmcSparkMedium",
+   "value": 20
+  },
+  {
+   "comment": "sparks from a large fire are carried 30 feet (wcfSparkCarryLargeFt).",
+   "name": "wmcSparkLarge",
+   "value": 30
+  },
+  {
+   "comment": "a tiny flame grows into a small fire in 1 turn (wcfGrowthSmallTurns).",
+   "name": "wmcGrowthSmall",
+   "value": 1
+  },
+  {
+   "comment": "the small fire grows into a medium fire in 2 turns (wcfGrowthMediumTurns).",
+   "name": "wmcGrowthMedium",
+   "value": 2
+  },
+  {
+   "comment": "the medium fire grows into a large fire in 4 turns (wcfGrowthLargeTurns).",
+   "name": "wmcGrowthLarge",
+   "value": 4
+  },
+  {
+   "comment": "a fire not extinguished within 6 turns grows to uncontrollable size (wcfUncontrollableTurns).",
+   "name": "wmcUncontrollableTurns",
+   "value": 6
+  },
+  {
+   "comment": "six turns per hour (wcfTurnsPerHour).",
+   "name": "wmcTurnsPerHour",
+   "value": 6
+  },
+  {
+   "comment": "ten rounds per turn (wcfRoundsPerTurn).",
+   "name": "wmcRoundsPerTurn",
+   "value": 10
+  },
+  {
+   "comment": "the spark carry distance gains one foot per 1 mph of wind (wcfSparkWindFtPerMph).",
+   "name": "wmcSparkWindFtPerMph",
+   "value": 1
+  },
+  {
+   "comment": "extinguishing time is halved with a helper or water (wcfHalveDivisor).",
+   "name": "wmcHalveDivisor",
+   "value": 2
+  },
+  {
+   "comment": "a fire starts normally in a breeze up to 15 mph (wflStartBreezeMax).",
+   "name": "wmcStartBreezeMax",
+   "value": 15
+  },
+  {
+   "comment": "no fire can be started in wind over 30 mph without magic (wflNoStartWindMax).",
+   "name": "wmcNoStartWindMax",
+   "value": 30
+  },
+  {
+   "comment": "the unskilled start time: 2d20 rounds (wflStartDice).",
+   "name": "wmcStartDice",
+   "value": 2
+  },
+  {
+   "comment": "wind over 15 mph or wet fuel: 3d20 rounds (wflHardStartDice).",
+   "name": "wmcHardStartDice",
+   "value": 3
+  },
+  {
+   "comment": "a small fire will not go out within three turns unrefueled (wflSmallRefuelGrace).",
+   "name": "wmcSmallRefuelGrace",
+   "value": 3
+  },
+  {
+   "comment": "six men bed down in a rough circle 10 feet from a small fire (wflCapBaseFeet).",
+   "name": "wmcCapBaseFeet",
+   "value": 10
+  },
+  {
+   "comment": "the small fire warms 6 men at 10 feet (wflSmallCapAt10).",
+   "name": "wmcCapSmallAt10",
+   "value": 6
+  },
+  {
+   "comment": "the same fire warms 12 men equally at 20 feet (wflSmallCapAt20).",
+   "name": "wmcCapSmallAt20",
+   "value": 12
+  },
+  {
+   "comment": "personal temperature below 0: 1 hour of rest lost (wgfPenTempBelow0).",
+   "name": "wmcPenTempBelow0",
+   "value": 1
+  },
+  {
+   "comment": "personal temperature above 90: 2 hours lost (wgfPenTempAbove90).",
+   "name": "wmcPenTempAbove90",
+   "value": 2
+  },
+  {
+   "comment": "wind of 20 mph or greater with no shelter: 2 hours lost (wgfPenWindNoShelter).",
+   "name": "wmcPenWind",
+   "value": 2
+  },
+  {
+   "comment": "light or moderate precipitation with no shelter: 3 hours lost (wgfPenPrecipNoShelter).",
+   "name": "wmcPenPrecip",
+   "value": 3
+  },
+  {
+   "comment": "wearing any metal armor except plate: 3 hours lost (wgfPenMetalArmor).",
+   "name": "wmcPenMetal",
+   "value": 3
+  },
+  {
+   "comment": "wearing any kind of plate armor: 4 hours lost (wgfPenPlateArmor).",
+   "name": "wmcPenPlate",
+   "value": 4
+  },
+  {
+   "comment": "the rest cold threshold: below 0 degrees - the same boundary value that opens the R499 dress below-0 column.",
+   "name": "wmcRestColdBound",
+   "value": 0
+  },
+  {
+   "comment": "the rest hot threshold: above 90 degrees.",
+   "name": "wmcRestHotBound",
+   "value": 90
+  },
+  {
+   "comment": "the R499 fold re-read: the protected heat no-damage span tops at 89 - the rest hot threshold opens one degree past it, at heat band 18.",
+   "name": "wmcR499ProtTop",
+   "value": 89
+  },
+  {
+   "comment": "a typical five-hour night in plate armor (wgfPlateTypicalNight).",
+   "name": "wmcPlateNight",
+   "value": 5
+  },
+  {
+   "comment": "the five-hour plate night yields one hour of actual rest (wgfPlateNightGoodRest).",
+   "name": "wmcPlateGoodRest",
+   "value": 1
+  },
+  {
+   "comment": "sleeping nine hours in plate armor instead (wgfPlateLongSleep).",
+   "name": "wmcPlateLongSleep",
+   "value": 9
+  },
+  {
+   "comment": "nine hours in plate refreshes like five hours with the armor off (wgfPlateLongRefresh).",
+   "name": "wmcPlateLongRefresh",
+   "value": 5
+  },
+  {
+   "comment": "the adequate kit: at least 2 poles (wrsAdequateMinPoles).",
+   "name": "wmcPolesAdequate",
+   "value": 2
+  },
+  {
+   "comment": "the good kit: at least 4 poles (wrsGoodMinPoles).",
+   "name": "wmcPolesGood",
+   "value": 4
+  },
+  {
+   "comment": "the superior kit: at least 6 poles (wrsSuperiorMinPoles).",
+   "name": "wmcPolesSuperior",
+   "value": 6
+  },
+  {
+   "comment": "tent leak steps: every 10 mph above the rating (wrsWindStepMph).",
+   "name": "wmcWindStepMph",
+   "value": 10
+  },
+  {
+   "comment": "those inside feel 5 mph for each 10 mph step above the rating (wrsWindLeakMph).",
+   "name": "wmcWindLeakMph",
+   "value": 5
+  },
+  {
+   "comment": "a 25 percent chance per 10 mph step that wind damages the shelter (wrsWindDamagePctPerStep).",
+   "name": "wmcWindDamagePct",
+   "value": 25
+  },
+  {
+   "comment": "the book example: a poor shelter protects completely up to 20 mph (wrsWindExPoorRes).",
+   "name": "wmcPoorShelterRes",
+   "value": 20
+  },
+  {
+   "comment": "one tent life-span point deducted per three setups (wrsLifespanSetupsPerPoint).",
+   "name": "wmcLifeSetupsPerPoint",
+   "value": 3
+  },
+  {
+   "comment": "forest shelter materials: 3 turns minimum (wnsForestMatsMinTurns).",
+   "name": "wmcForestMatsMin",
+   "value": 3
+  },
+  {
+   "comment": "lashing the poles and binding the shingles: 6 turns (wnsLashBaseTurns).",
+   "name": "wmcLashBaseTurns",
+   "value": 6
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['wmcFireSizes']() != 3 or m['wmcBurnHours']() != 8",
+   "note": "the fire sizes and the burn hours"
+  },
+  {
+   "expr": "m['wmcFuelMedium']() - m['wmcFuelSmall']() != 6 or m['wmcFuelLarge']() - m['wmcFuelMedium']() != 6 or m['wmcFuelSmall']() != 6",
+   "note": "the fuel ladder is arithmetic: 6, 12, 18"
+  },
+  {
+   "expr": "m['wmcRefuelSmall']() != 3 or m['wmcRefuelMedium']() != 6 or m['wmcRefuelLarge']() != 9 or m['wmcRefuelMedium']() - m['wmcRefuelSmall']() != m['wmcRefuelLarge']() - m['wmcRefuelMedium']()",
+   "note": "the refuel ladder is arithmetic: 3, 6, 9"
+  },
+  {
+   "expr": "m['wmcWindResSmall']() != 20 or m['wmcWindResMedium']() != 30 or m['wmcWindResLarge']() != 40",
+   "note": "the wind-resistance ladder: 20, 30, 40"
+  },
+  {
+   "expr": "m['wmcSparkSmall']() != 10 or m['wmcSparkMedium']() != 20 or m['wmcSparkLarge']() != 30",
+   "note": "the spark ladder: 10, 20, 30"
+  },
+  {
+   "expr": "m['wmcGrowthSmall']() != 1 or m['wmcGrowthMedium']() != 2 * m['wmcGrowthSmall']() or m['wmcGrowthLarge']() != 2 * m['wmcGrowthMedium']()",
+   "note": "the growth ladder doubles: 1, 2, 4"
+  },
+  {
+   "expr": "m['wmcUncontrollableTurns']() != m['wmcTurnsPerHour']() or m['wmcRoundsPerTurn']() != 10",
+   "note": "the uncontrollable bar is exactly one hour"
+  },
+  {
+   "expr": "m['wmcRefuelSmall']() != m['wmcSmallRefuelGrace']()",
+   "note": "the refuel grace identity - two headers, one number"
+  },
+  {
+   "expr": "m['wmcWindResSmall']() != 20 or m['wmcPoorShelterRes']() != 20 or m['wmcWindResSmall']() != m['wmcPoorShelterRes']()",
+   "note": "the twenty-mph triple agreement"
+  },
+  {
+   "expr": "m['wmcNoStartWindMax']() != m['wmcWindResMedium']() or m['wmcStartBreezeMax']() != 15",
+   "note": "the no-start maximum equals the medium wind resistance"
+  },
+  {
+   "expr": "m['wmcHardStartDice']() - m['wmcStartDice']() != 1",
+   "note": "the hard start costs one more die"
+  },
+  {
+   "expr": "m['wmcSparkWindFtPerMph']() != 1 or m['wmcHalveDivisor']() != 2",
+   "note": "the spark carry gains one foot per mph of wind"
+  },
+  {
+   "expr": "m['wmcRestColdBound']() != 0 or m['wmcPenTempBelow0']() != 1",
+   "note": "the rest cold seam to the R499 fold: the same 0"
+  },
+  {
+   "expr": "m['wmcRestHotBound']() != m['wmcR499ProtTop']() + 1 or m['wmcPenTempAbove90']() != 2",
+   "note": "the rest hot seam: one degree past the protected no-damage top"
+  },
+  {
+   "expr": "m['wmcPenPrecip']() != 3 or m['wmcPenMetal']() != 3 or m['wmcPenPlate']() != 4 or m['wmcPenWind']() != 2",
+   "note": "the rest penalty sum: precip and metal tie at 3, plate tops at 4"
+  },
+  {
+   "expr": "m['wmcPlateNight']() - m['wmcPlateGoodRest']() != 4 or m['wmcPlateLongSleep']() - m['wmcPlateLongRefresh']() != 4",
+   "note": "the plate economy loses a flat 4 hours either way"
+  },
+  {
+   "expr": "m['wmcCapSmallAt20']() != 2 * m['wmcCapSmallAt10']() or m['wmcCapBaseFeet']() != 10 or m['wmcCapSmallAt10']() != 6",
+   "note": "the fire capacity doubles per step of distance"
+  },
+  {
+   "expr": "m['wmcWindLeakMph']() * 2 != m['wmcWindStepMph']() or m['wmcWindDamagePct']() != 25",
+   "note": "the tent leak is half the wind step"
+  },
+  {
+   "expr": "m['wmcPolesGood']() - m['wmcPolesAdequate']() != 2 or m['wmcPolesSuperior']() - m['wmcPolesGood']() != 2",
+   "note": "the pole ladder is arithmetic: 2, 4, 6"
+  },
+  {
+   "expr": "m['wmcForestMatsMin']() != 3 or m['wmcLashBaseTurns']() != 6 or m['wmcLifeSetupsPerPoint']() != 3",
+   "note": "the shelter construction times"
+  }
+ ],
+ "gap_census": {
+  "closed": 186,
+  "open": 0
+ },
+ "gap_flips": [],
+ "gap_report": "tools/wsg_gap_report.md",
+ "header_file": "rules/wsgcampfold.h",
+ "header_sections": {
+  "the fire capacity": [
+   {
+    "kind": "const",
+    "name": "wmcCapBaseFeet"
+   },
+   {
+    "kind": "const",
+    "name": "wmcCapSmallAt10"
+   },
+   {
+    "kind": "const",
+    "name": "wmcCapSmallAt20"
+   }
+  ],
+  "the fire-size spine": [
+   {
+    "kind": "const",
+    "name": "wmcFireSizes"
+   },
+   {
+    "kind": "const",
+    "name": "wmcBurnHours"
+   },
+   {
+    "kind": "const",
+    "name": "wmcFuelSmall"
+   },
+   {
+    "kind": "const",
+    "name": "wmcFuelMedium"
+   },
+   {
+    "kind": "const",
+    "name": "wmcFuelLarge"
+   },
+   {
+    "kind": "const",
+    "name": "wmcRefuelSmall"
+   },
+   {
+    "kind": "const",
+    "name": "wmcRefuelMedium"
+   },
+   {
+    "kind": "const",
+    "name": "wmcRefuelLarge"
+   },
+   {
+    "kind": "const",
+    "name": "wmcWindResSmall"
+   },
+   {
+    "kind": "const",
+    "name": "wmcWindResMedium"
+   },
+   {
+    "kind": "const",
+    "name": "wmcWindResLarge"
+   },
+   {
+    "kind": "const",
+    "name": "wmcSparkSmall"
+   },
+   {
+    "kind": "const",
+    "name": "wmcSparkMedium"
+   },
+   {
+    "kind": "const",
+    "name": "wmcSparkLarge"
+   },
+   {
+    "kind": "const",
+    "name": "wmcGrowthSmall"
+   },
+   {
+    "kind": "const",
+    "name": "wmcGrowthMedium"
+   },
+   {
+    "kind": "const",
+    "name": "wmcGrowthLarge"
+   }
+  ],
+  "the fire-start rules": [
+   {
+    "kind": "const",
+    "name": "wmcStartBreezeMax"
+   },
+   {
+    "kind": "const",
+    "name": "wmcNoStartWindMax"
+   },
+   {
+    "kind": "const",
+    "name": "wmcStartDice"
+   },
+   {
+    "kind": "const",
+    "name": "wmcHardStartDice"
+   },
+   {
+    "kind": "const",
+    "name": "wmcSmallRefuelGrace"
+   }
+  ],
+  "the fold findings": [
+   {
+    "kind": "bool",
+    "name": "wmcBarIsOneHour"
+   },
+   {
+    "kind": "bool",
+    "name": "wmcRefuelGraceIdentity"
+   },
+   {
+    "kind": "bool",
+    "name": "wmcWindTwentyTriple"
+   },
+   {
+    "kind": "bool",
+    "name": "wmcNoStartMatchesMedium"
+   },
+   {
+    "kind": "bool",
+    "name": "wmcGrowthOnlyGeometric"
+   },
+   {
+    "kind": "bool",
+    "name": "wmcRestColdSeamR499"
+   },
+   {
+    "kind": "bool",
+    "name": "wmcRestHotSeamR499"
+   },
+   {
+    "kind": "bool",
+    "name": "wmcPlateFlatLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "wmcLeakHalfStep"
+   },
+   {
+    "kind": "bool",
+    "name": "wmcPolesLinear"
+   }
+  ],
+  "the plate economy": [
+   {
+    "kind": "const",
+    "name": "wmcPlateNight"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPlateGoodRest"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPlateLongSleep"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPlateLongRefresh"
+   }
+  ],
+  "the rest-quality penalties": [
+   {
+    "kind": "const",
+    "name": "wmcPenTempBelow0"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPenTempAbove90"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPenWind"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPenPrecip"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPenMetal"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPenPlate"
+   },
+   {
+    "kind": "const",
+    "name": "wmcRestColdBound"
+   },
+   {
+    "kind": "const",
+    "name": "wmcRestHotBound"
+   },
+   {
+    "kind": "const",
+    "name": "wmcR499ProtTop"
+   }
+  ],
+  "the shelter and tent side": [
+   {
+    "kind": "const",
+    "name": "wmcPolesAdequate"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPolesGood"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPolesSuperior"
+   },
+   {
+    "kind": "const",
+    "name": "wmcWindStepMph"
+   },
+   {
+    "kind": "const",
+    "name": "wmcWindLeakMph"
+   },
+   {
+    "kind": "const",
+    "name": "wmcWindDamagePct"
+   },
+   {
+    "kind": "const",
+    "name": "wmcPoorShelterRes"
+   },
+   {
+    "kind": "const",
+    "name": "wmcLifeSetupsPerPoint"
+   },
+   {
+    "kind": "const",
+    "name": "wmcForestMatsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wmcLashBaseTurns"
+   }
+  ],
+  "the wildfire economy": [
+   {
+    "kind": "const",
+    "name": "wmcUncontrollableTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wmcTurnsPerHour"
+   },
+   {
+    "kind": "const",
+    "name": "wmcRoundsPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "wmcSparkWindFtPerMph"
+   },
+   {
+    "kind": "const",
+    "name": "wmcHalveDivisor"
+   }
+  ]
+ },
+ "include_after": "#include \"rules/wsgmovefold.h\"  // R501: the WSG movement/fall-chain fold pins",
+ "include_comment": "the WSG camp-chain fold pins",
+ "inline_count": 63,
+ "prefix": "wmc",
+ "prev_record": [
+  "- R501 LANDED 2026-10-16: commit 77d39de (census 426,",
+  "  pushed 3e269ca..77d39de), the WSG MOVEMENT/FALL-CHAIN",
+  "  FOLD - the third seam round, the R499 fold pattern",
+  "  applied to the climbing-and-falling chapter: one",
+  "  falling character flows through seven landed headers -",
+  "  the climbing ratings (rules/wsgclimb.h R435), the Table",
+  "  17 fall ladder (rules/wsgfall.h R437), the tumble rates",
+  "  (rules/wsgtumble.h R438), the stop windows",
+  "  (rules/wsgstop.h R439), the slippery-surface cadence",
+  "  (rules/wsgslip.h R447), the jump floors",
+  "  (rules/wsgjump.h R448) and the airborne fall chance",
+  "  (rules/wsgfallair.h R461). Pinned as rules/wsgmovefold.h",
+  "  (prefix wmv, 49 inlines: 39 consts + 10 bools, no grids,",
+  "  NO gap flips - the report stays 186/0). FINDINGS: the",
+  "  Table 17 dice are the TRIANGULAR numbers 1, 3, 6, 10,",
+  "  15, 20 (increments 2, 3, 4, 5 - each band adds one more",
+  "  die than the previous band added) and the 51-or-more",
+  "  band caps at 20d6 ONE DIE SHORT of the pure sequence",
+  "  value 21 - the printed maximum breaks the ladder it",
+  "  completes; the prose-vs-table tension (the linear",
+  "  1d6-per-10-feet understates the printed table at every",
+  "  band past the first - 3d6 at 20 feet, not 2d6; the",
+  "  table is the authority); the cliff/severe stop window",
+  "  of 50 feet is exactly the top of the 41-50 damage",
+  "  band; the gentle stop window of 100 feet equals the",
+  "  gentle tumble rate minimum; the rate ladder is",
+  "  contiguous and strictly ascending (100-300 gentle",
+  "  tumble, 300-500 moderate, 600-800 severe, 1000 free",
+  "  fall); the slip-to-tumble seam (the horizontal slip",
+  "  deals no direct damage, the inclined tumble abrasion",
+  "  kills). Preflight GREEN (R501 WSG movement fall fold",
+  "  audit: bad 0), rverify GREEN (49 mutants, 0 missed,",
+  "  double-run clean). Local gates: 43/43 mechanical",
+  "  cross-checks against the seven headers. User-side spec",
+  "  md5 923ea3d3181cd30519938565cb664e59 differed from",
+  "  both authored variants (36e0114b... +nl, a9dc57fe...",
+  "  no-nl) - cosmetic, the standing class. Spec published",
+  "  as the new canvas r501-splice. THE FOLD ARC: R499-R501,",
+  "  three clean lands (temperature, swimmer motion,",
+  "  movement/fall), the R499 pattern fully seasoned. NEXT -",
+  "  R502: the camp chain fold (fire/shelter/sleep -",
+  "  wsgshelter/wsgsleep/wsgfire/wsgfuel), or the DSG as",
+  "  the next book."
+ ],
+ "prev_seed_key": "- R501 LANDED 2026-10-16: commit 77d39de (census 426,",
+ "regtest": "regtest.cpp",
+ "round": 502,
+ "seed_anchor": "## Knowledge maintenance",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "table_checks": [],
+ "tables": [],
+ "title": "the WSG camp-chain fold - the fire-size ladders, the wildfire hour, the fire-start winds, the rest-quality penalties, the plate economy and the tent wind system reconciled as one system"
+}
+

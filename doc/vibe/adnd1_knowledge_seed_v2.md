@@ -6253,6 +6253,49 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   R501: the third fold (candidates: the movement chain -
   climbing/jumping/encumbrance/falling, or the camp chain
   - fire/shelter/sleep), or the DSG as the next book.
+- R501 LANDED 2026-10-16: commit 77d39de (census 426,
+  pushed 3e269ca..77d39de), the WSG MOVEMENT/FALL-CHAIN
+  FOLD - the third seam round, the R499 fold pattern
+  applied to the climbing-and-falling chapter: one
+  falling character flows through seven landed headers -
+  the climbing ratings (rules/wsgclimb.h R435), the Table
+  17 fall ladder (rules/wsgfall.h R437), the tumble rates
+  (rules/wsgtumble.h R438), the stop windows
+  (rules/wsgstop.h R439), the slippery-surface cadence
+  (rules/wsgslip.h R447), the jump floors
+  (rules/wsgjump.h R448) and the airborne fall chance
+  (rules/wsgfallair.h R461). Pinned as rules/wsgmovefold.h
+  (prefix wmv, 49 inlines: 39 consts + 10 bools, no grids,
+  NO gap flips - the report stays 186/0). FINDINGS: the
+  Table 17 dice are the TRIANGULAR numbers 1, 3, 6, 10,
+  15, 20 (increments 2, 3, 4, 5 - each band adds one more
+  die than the previous band added) and the 51-or-more
+  band caps at 20d6 ONE DIE SHORT of the pure sequence
+  value 21 - the printed maximum breaks the ladder it
+  completes; the prose-vs-table tension (the linear
+  1d6-per-10-feet understates the printed table at every
+  band past the first - 3d6 at 20 feet, not 2d6; the
+  table is the authority); the cliff/severe stop window
+  of 50 feet is exactly the top of the 41-50 damage
+  band; the gentle stop window of 100 feet equals the
+  gentle tumble rate minimum; the rate ladder is
+  contiguous and strictly ascending (100-300 gentle
+  tumble, 300-500 moderate, 600-800 severe, 1000 free
+  fall); the slip-to-tumble seam (the horizontal slip
+  deals no direct damage, the inclined tumble abrasion
+  kills). Preflight GREEN (R501 WSG movement fall fold
+  audit: bad 0), rverify GREEN (49 mutants, 0 missed,
+  double-run clean). Local gates: 43/43 mechanical
+  cross-checks against the seven headers. User-side spec
+  md5 923ea3d3181cd30519938565cb664e59 differed from
+  both authored variants (36e0114b... +nl, a9dc57fe...
+  no-nl) - cosmetic, the standing class. Spec published
+  as the new canvas r501-splice. THE FOLD ARC: R499-R501,
+  three clean lands (temperature, swimmer motion,
+  movement/fall), the R499 pattern fully seasoned. NEXT -
+  R502: the camp chain fold (fire/shelter/sleep -
+  wsgshelter/wsgsleep/wsgfire/wsgfuel), or the DSG as
+  the next book.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
