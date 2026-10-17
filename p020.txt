@@ -1,0 +1,73 @@
+                                                                                                                                      BRIDGES
+                                                                              past year, it stands a 5% chance (per year) of sustaining rot. Rot
+Roping Together                                                               will first affect the planks and railings of a wooden bridge; the
+   Characters can attempt to insure greater group security by rop-            actual supporting beams of the bridge last for ld20+20 years
+ing together-tying the characters to a rope with 20 or 30 feet of             before beginning to rot.
+slack between them. A party that is roped together insures that                 If characters attempt to cross a rotted bridge, each character
+no single member will suffer a damaging fall; however, the group              stands a 50% chance of stepping onto a rotten portion. If this
+takes the risk of all members falling together.                               occurs, the character must make Climbing Checks to determine
+   Characters who are roped together must move at the rate of                 whether or not he falls, as described for suspension bridges.
+the slowest member. The order of characters on the rope (first,                 Stone bridges are the most solid of all. They are virtually
+second, third, etc.) should be noted on paper or displayed with               impervious to the effects of sabotage and age. Of course, occur-
+miniatures. If one character falls, the characters on each side of            rences such as earthquakes and floods can weaken stone
+him must make Climbing Checks. If both checks are successful,                 bridges, but even when weakened, a stone bridge will rarely col-
+the fall is stopped immediately. If one character arrests the fall,           lapse because of the added weight of a character.
+but the other fails, the successful character must check again to               However, stone bridges depend upon some kind of support in
+arrest the fall of two characters (-10 modifier). In addition, the            order to maintain their massive weight. This support might be an
+character next to the second character to fall must make a Climb-             arch attached at both ends of the bridge. A stone bridge may also
+ing Check to catch two characters.                                            be supported by foundations, each of which is crucial to the
+   Each time the weight of a new character is added to those who              bridge’s survival.
+have fallen, the characters who have not fallen but are adjacent                 In these cases, magical sabotage-particularly the transmute
+to those falling must make Climbing Checks. This process is con-              rockto mudspell-can cause drastic damage to a stone bridge. If
+tinued until a successful Climbing Check is made to each side of              the center of an arch is destroyed, the entire bridge will collapse
+the falling characters, or until the entire party falls.                      in l d 4 rounds. If a foundation is destroyed, the bridge will
+   If a character or characters on the end of the rope fall, only the         instantly collapse in both directions from the ruined foundation
+single character next to the falling character must make a check.             until it reaches the next foundation, or the end of the bridge.
+Thus, it is more advantageous to have either the first or the last
+character fall, especially if the character next to the first or the
+last one is a skilled climber.
+                                                                              Impromptu Bridges
+                                                                                 Courageous characters can create and cross the following
+                                                                              types of bridges, with varying degrees of risk.
+BRIDGES                                                                          Rope bridges require two ropes, one for a character’s feet and
+   In networks of subterranean passages that have been in use                 one for his hands. A character crossing a rope bridge must make
+for centuries or millennia, it is not uncommon to discover a bridge           a Climbing Check with a +50% modifier. Note, however, that
+over a crossing. Regardless of the type, if a bridge has been                 modifiers for armor and race affect this roll normally.
+maintained periodically, and has not been sabotaged, characters                  Rope bridges can be quickly sabotaged by chopping through
+can cross without making any checks.                                          one of the ropes. A character on the bridge when this occurs must
+   If the bridge has fallen into disrepair, or someone has taken              make an unmodified Climbing Check or fall. If the character is
+steps to weaken or destroy it, the crossing becomes a risky                   clinging to the sabotaged rope with his hands, the check must be
+proposition. The following types of bridges are commonly found                made with a -20% modifier; alternately, the character can elect to
+in the underearth, each with its own characteristics and risks.               hold onto the rope and swing down with it as explained earlier
+                                                                              under “Swinging Across.”
+                                                                                 Log bridges include narrow stone arches and other solid but
+Permanent Bridges                                                             Plender crossing platforms. A log bridge’s diameter must be 1/4
+   Suspension bridges are among the easiest to build. They are                or less of the character’s height to require a check; wider log
+generally anchored in at least two locations on each side, and                bridges can be crossed automatically.
+often in three or four. Suspension bridges swing and sway with                   If a character is crossing a log bridge, he must make a Climb-
+the weight of a character’s crossing, but usually a rope or two is            ing Check with a +40% modifier or fall. If the log bridge slopes
+provided at waist level for handholds.                                        upward or downward, the modifier drops to +20%. Armor and
+   The problems with suspension bridges generally relate to the               racial modifiers also apply to log bridge crossings. If the charac-
+rotting of the wood and rope elements of the bridge, although                 ter crawls or has both hands free, the modifier is +8O%.
+occasional loosening of the anchors can also present problems.                   Because of the greater weight of a log bridge, it is much harder
+An old suspension bridge has a 25% chance per character cross-                to sabotage than a rope bridge. Assuming a log 1 112feet in diam-
+ing it of giving way at some crucial point. If this occurs, the char-         eter, a normal human can move a log of 10 feet or shorter length.
+acter must make a successful Climbing Check or fall.                          A human with 17 or 18 Strength or a creature like an ogre can
+   If the character fails the first Climbing Check, this means that           move a 20-foot log. A hill giant, or a fairly young dragon, can
+he has fallen through the bridge or off to one side. He is entitled to        move a log of 30-foot length. A large giant or dragon is able to
+one more Climbing Check to determine if he can catch a piece of               move a 40- or 50-foot log.
+the bridge and arrest his fall. If the character has only one hand
+free, this check is made with a -25% modifier. The character can
+drop whatever he is holding in order to free both hands.
+                                                                              FALLING (EXPANDED RULES)
+   Sabotaging an anchor point of a suspension bridge takes l d 8                The damage sustained by a falling character is l d 6 for the first
+rounds, and such sabotage can only be detected by a thief’s find              10 feet fallen, 2d6 for the second 10 feet, 3d6 for the third 10 feet,
+traps roll. Sawing through a rope support of a suspension bridge              and so on. A 30-foot fall, for example, inflicts a total of 6d6 points
+can be done in one round, but such damage is readily visible to               of damage to a character.
+any character who examines the bridge.                                          The maximum damage that any fall can inflict is 20d6, regard-
+   Wooden bridges are relatively uncommon in dungeons, since                  less of the height from which the character falls. The maximum
+the constant humidity makes them very susceptible to rot. Unless              damage that a character can sustain by falling over a waterfall is
+a bridge has been inspected and repaired at least once in the                 1Od6.
+
+                                                                         19
+

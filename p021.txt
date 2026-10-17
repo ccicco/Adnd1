@@ -1,0 +1,71 @@
+SPELUNKING
+  For purposes of game balance, assume that a character falls
+1,000 feet in one round unless the fall is interrupted.                        Sliding Down Slopes
+                                                                                  A character sliding down a sloping surface does not receive as
+                                                                               much damage as someone falling through open space. On the
+Stopping a Fall                                                                sloping surface, however, the character suffers abrasions all the
+   If a character falls (for any reason) and is next to a wall or other        way down, unless the slope is very slippery, such as smooth wet
+climbing surface, he can attempt to slow his fall by catching onto             rock or ice.
+the surface. Such an attempt can only be made in the first 50 feet                A character sliding down a sloping surface suffers no damage
+of a fall, since after that the character’s momentum is too great to           in the first 20 feet, but suffers l d 6 points of damage for each 10
+allow him to catch anything.                                                   feet of the slide thereafter. In addition, the damage caused by
+   A character can attempt to grab a nearby surface by rolling                 landing is l d 6 for each 40 feet of the slide. If the slope is smooth
+dlOO and getting a result that is less than or equal to 112 of the             and relatively slippery, the character sustains no damage while
+character’s Climbing Rating (or thief’s climb walls ability), if the           sliding, but takes double the normal damage upon landing.
+climbing surface is nonslippery. A slightly slippery climbing sur-
+face can be caught on a number equal to or less than 1/4 of the
+character’s Climbing Rating-i.e., the character has only half the              SPELUNKING
+chance of stopping the fall that he would have with a nonslippery                The techniques of spelunking, or cave exploration, can be use-
+surface.                                                                       ful to any characters who have to crawl around in narrow spaces
+   A slippery climbing surface cannot be used to stop a fall.                  underground. Many aspects of spelunking are subsumed under
+                                                                               other movement rules, particularly climbing, swimming, and
+Landing                                                                        jumping. Mapmaking is another dungeoneering skill that has
+                                                                               obvious benefits for cave exploration.
+    The normal damage caused by falling is based on the premise                   Often a cave presents extremely constricted areas of move-
+that the character lands on a smooth, but hard, surface. Obvi-                 ment to a character, and this section details the effects of such
+ously, different surfaces cause differing amounts of damage.                   tight passageways. Also, many cave sections are choked with
+    Rough landings deposit the unfortunate character on a sur-                 rubble or require excavation, so information on clearing these
+face of broken rocks or other debris, or a slanted surface that                passages is presented as well.
+sends the character ricocheting off to the side. Landings on a
+rough surface inflict double the normal damage from the fall.
+    Spikes or other weapon-like features of a landing area inflict             The Tight Squeeze
+damage beyond that caused by the fall. Such damage is deter-                      Tunnel ceilings that are lower than the height of the characters
+mined by how closely packed the deadly obstacles are: usually                  walking through them can penalize a party’s movement and com-
+each spike causes an extra d6 of damage. When spikes or other                  bat capabilities. However, since the heights of individuals within a
+obstacles are placed in an area, the DM should choose a number                 party may vary widely, the effects of the following conditions will
+of dice to reflect how closely the spikes are packed. A l d 6 group            also vary from one party member to the next.
+of spikes means that a character will impale himself on 1-6 of the                If the ceiling is lower than a character’s height, but at least 213
+spikes when he falls, while a 3d6 grouping indicates spikes that               of his height, he can walk upright at 2/3 of his normal movement
+are much more densely packed. A character striking them will                   rate. The character suffers no adverse combat effects.
+suffer from 3-18 d6 of damage in addition to that inflicted by the                Characters must travel on hands and knees through any tunnel
+fall.                                                                          that is less than 2/3 their height. Of course, this means that occa-
+    Soft landings include yielding surfaces such as sand, mud,                 sionally humans will be grunting painfully along on all fours while
+soft loam, pine branches, or flesh. A character fortunate enough               their halfling, and perhaps dwarven, companions trot along with
+to make a soft landing takes only half the damage that the fall                no more precautions than an occasional ducking of their heads.
+would normally inflict.                                                           In a tunnel whose diameter is 1/4 or less of the character’s
+    Very Soft landings generally result from some sort of prepared             height, the character must actually slither along in a prone posi-
+cushion of feathers or straw, etc. Occasionally a character might              tion. See the limits below for the minimum heights and widths of
+be fortunate enough to fall into a very soft landing without plan-             tunnel that can accomodate characters of different races.
+ning for it, but this is very unusual. A character making a very soft             A character traveling on hands and knees moves at 1/2 his nor-
+landing can make a saving throw vs. paralyzation. If the save is               mal movement rate. If he should be so unfortunate as to engage
+successful, the character sustains nodamageat all; if it is unsuc-             in combat while in this awkward position, he suffers a -5 penalty
+cessful, he takes half the normal amount of damage for the fall.               to all of his attack rolls. He also loses all Dexterity and shield
+    Water landings can be virtually painless if a character lands              bonuses to AC. Additionally, weapons such as longbows, broad-
+correctly, but can be every bit as damaging as a fall onto hard                swords, and battleaxes cannot be employed in these close quar-
+stone if the character does a belly-flop or lands on his back. When            ters. Note the “Space Required” listing on the Weapons Tables
+ a character falls, he can attempt to make a Dexterity Check if he             for AD&D@rules; this gives a clear indication of what weapons
+ suspects or knows that he will be landing in water. If the check is           can and cannot be employed in a narrow tunnel.
+ successful, the character takes I d 6 of damage for every 100 feet               A character who is prone because of a low ceiling suffers even
+ of the fall, rounded up. For example, if a character is falling 250            more serious penalties to his chance in combat. Of course, the
+feet into water, but has made a successful Dexterity Check, he                 space required limits his choice of weapons even further. In addi-
+ suffers only 3d6 of damage. (This indicatesthat the character has             tion, the character suffers a -8 modifier to all of his attack rolls,
+ positioned himself to enter the water cleanly, either head or feet            and can gain no Armor Class benefits from a shield or a Dexterity
+ first.) If the check is unsuccessful, however, the character sus-              bonus. When moving, the character is limited to 1/4 of his normal
+ tains the normal damage from the fall.                                         rate of movement.
+    A character cannot attempt to stop a fall by catching onto a                  The minimum tunnel widths that can accomodate different
+ climbing surface and make a Dexterity Check to land in water                   characters are listed below. This chart is designed to reflect
+ during the same round. If the fall lasts more than one round, he
+ can attempt a Dexterity Check on the second round.
+
+                                                                          20
+

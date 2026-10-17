@@ -1,0 +1,73 @@
+                                                                                                    JUMPING FOR NON-ACROBATS
+   In order to rappel successfully, the character must make a suc-           If a random determinationis needed, there is a base chance of
+cessful Climbing Check with a +50% modifier. Failure means a               50% that a given crossing has some sort of protrusion for a
+fall from the top to the bottom of whatever distance is involved. A        tossed grappling hook to catch on. As in climbing with a grapple,
+rappel can be made down a free-hanging rope, where the charac-             the DM should roll dlOO and compare the number to the appropri-
+ter has no wall to brace against, but in this case the modifier is         ate result:
+only +30%.
+   A character can rappel up to 120 feet per round. All normal             Table 5: CROSSING WITH A GRAPPLE
+climbing restrictions apply (encumbrance, armor,etc.).
+                                                                           Grapple Target              Miss      Catch and Slip       Catch
+                                                                           Bare Stone WallslFloor      01-82         83-89            90-00
+JUMPING FOR NON-ACROBATS                                                   Cave Formations             01-75         76-80            81-00
+  Underground obstacles such as chasms and pits are also fre-              Ruined Foundation           01-66         67-71            72-00
+quently encountered by subterranean explorers. Occasionally, a
+repugnant monster such as a black pudding can be avoided if a                 Other ways of attaching the rope include a player flying to the
+character simply jumps over it.                                            far side and attaching a rope for his companions, making a loop
+  Characters of all classes have a limited ability to jump across          and attemptingto lasso a protruding stalactite or post, or the pop-
+obstacles that get in the way. The procedure for all characters is         ular but impractical rope-tied-to-the-arrow-which-is-embedded-
+the same as that given for acrobats on page 24 of Unearthed                in-somethingtrick. While dashing and romantic, an arrow trailing
+Arcana; to wit, a running broad jump requires a 20-foot head               a rope and fired into some wooden material is simply not strong
+start, and all jumps require only one segment of time.                     enough to support even the lightest of characters.
+  Unlike acrobats, however, other characters cannot attempt to                A thrown loop has better possibilities, but is a tricky maneuver
+jump backward or leap in an extended position.                             that can only be attempted by thieves or other characters with a
+  Use the following table and jumping modifiersto determine the            long and intimate familiarity with ropes (characters who were
+distance a character can jump.                                             raised on farms, or who served as sailors, for example). Before
+                                                                           such a throw can be attempted, a suitable target must be located.
+Table 4: BROAD JUMPING                                                     This is uncommon in a dungeon, but in a cave there is a base
+                                                                           20% chance that an appropriate stalagmite is located in a con-
+Level of Jumping         Standing Broad      Running Broad                 venient position. The maximum range of a thrown loop is given
+   Character
+          -    Y   r y
+                             Jump               Jump                       in the following table and assumes the character has a clear
+                                                 4+                        radius of 10 feet around him to prepare the throw. The range is
+                                                   4 +                     halved if this is not the case.
+                                                   6 +
+       13-15               ld6 + 3ft             ld6 + 6ft                 Table 6: THROWN LOOP RANGES
+       16-18               ld6 + 4ft             ld6 + 9ft
+                                                  d6                                                       Maximum Range
+                                                I d 6 + 15ft               Character Level                     (in feet)
+                                                                                                                    0
+                                                                                                                    0
+Jumping Modifiers                                                                                                   0
+   The following factors reduce the distance that a character can                13-16                             75
+jump. In no case can modifiers shorten a jump to less than two                   17+                               90
+feet.
+   Encumbrance: Unencumbered characters and characters                        The basic chance to hit is 20% at maximum range. This
+carrying normal gear have no penalties to their jumping abilities.         chance is modified by + 1% for each foot under maximum range.
+Characters carrying heavy gear subtract one foot from the dis-             For example, a 7th-level character attempting to throw a loop
+tance of their jumps; characters with very heavy gear subtract             over a stalagmite some 30 feet distant has a 40% chance of mak-
+two feet from their jumping distance, and encumbered charac-               ing a successful toss. (20 + [50-30  =I20 = 40%)
+ters subtract four feet.                                                      This attempt takes one round. If it is unsuccessful, the coiling
+   Race: Humans, elves, and half-orcssuffer no racial penalty on           of the rope for a second attempt takes I d 6 rounds. Characters
+a jump. Halflings must subtract one foot from their total distance,        may make as many attempts as they wish. This method carries
+and dwarves and gnomes must subtract two feet.                             the additional advantage of being virtually soundless.
+                                                                              Of course, catching the grapple or loop on the opposite side
+                                                                           simply means that one end of the rope is anchored. The other end
+USING ROPE                                                                 can be tied off to a handy protrusion(50% chance of finding one),
+Crossing a Chasm on a Rope                                                 tied to a spike hammered into the stone, or held by a character
+                                                                           (see Belays).
+  Although a rope is a valuable tool for crossing obstacles in a              A character crossing on such a line is in a precarious position
+party’s path, a perennial problem always seems to arise: How to            indeed, and must make a Climbing Check each round that he is
+attach the rope to the far side?                                           thus suspended. The character is allowed a +30% modifier to
+  A grappling hook is one means, as long as there are solid irreg-         his Climbing Rating, but modifiers for armor and encumbrance
+ularities in the far surface that provide some purchase for the            still apply. A rope is always considered a nonslippery surface.
+hook. Such irregularities are not common in a dungeon setting,                The rate of climb listed for “Rope and Wall” applies to charac-
+but they are found more often in natural caves and caverns. If the         ters making a crossing on a rope.
+crossing was once bridged, there will invariably be some wreck-
+age of the bridge’s foundation that can be caught with a grappling
+hook.
+
+
+                                                                      17
+
