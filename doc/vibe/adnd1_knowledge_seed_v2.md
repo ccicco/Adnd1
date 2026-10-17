@@ -9679,6 +9679,36 @@ when both halves land.
   51-54) - Smoke, Magma, Ooze, Ice in one
   round; then the energy planes and the two
   quasi-groups close the inner half.
+- R572 LANDED 2026-10-17: commit 1f15d1b4c70e50d2631
+  445691bea4cbd791900d (census 495 -> 496,
+  pushed 289841a..1f15d1b), THE MotP PARA-
+  ELEMENTAL PLANES, printed pp. 51-54 - the
+  four planes (Smoke, Magma, Ooze, Ice) in one
+  round: the minor-plane doctrine, the
+  per-plane survival (asphyxiation,
+  heat-as-Fire, drowning-as-Water, the
+  1d6-per-round ice cold reduced to per turn
+  when protected), the vision ladder (30
+  yards / touch / 10-20), the 1-in-20-per-
+  eight-TRUE-hours check, the 50/50 pocket
+  rule, the native immunity doctrine, the
+  movement/combat/magic mappings onto the
+  majors, the d8+d12 chart, and the features
+  (the guide-bribe doubling, the archoments
+  as Demi-Powers with no Greater Powers -
+  Cryonax, Ehkahk, Chlimbia, Bwimb). 7
+  consts + 6 bools, prefix dda, header rules/
+  motppara.h. TWO flips: gap census 32/58
+  -> 34/56. Spec 10,925 bytes, md5
+  0592048d0b0c0d90f3b0756eb640b504 matched
+  exactly first try, 13 inlines. NEXT - R573:
+  the Energy Planes (p. 54) - Positive and
+  Negative in one round (the 2d6 gain-and-
+  explode, the 2d6-plus-level drain, the
+  protection-spell paradox, the weakened
+  Border Ethereal, no random encounters);
+  then the two quasi-groups close the inner
+  half.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

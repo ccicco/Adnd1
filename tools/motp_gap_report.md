@@ -71,7 +71,7 @@ sample entries verified against the canonical PHB levels).
   - [x] The Plane of Elemental Earth (pp. 41-46) - survival, movement, encounters, combat, magic, features - R570: the least-hospitable doctrine, the survival, the Strength movement ladder, the phenomena, the pockets, the native passwall doctrine, the magic and the features (Ogremoch, Grumbar, the dao and the Great Dismal Delve)
   - [x] The Plane of Elemental Water (pp. 46-51) - survival, movement, encounters, combat, magic, features - R571: the ocean doctrine, the survival, the phenomena, the pockets, the encounter chart, the native fire vulnerability, the magic and the features (Istishia, the marids)
   - [x] The Para-Elemental Planes (pp. 51-54) - smoke, magma, ooze, ice: survival, encounters, movement, combat, magic, features - R572: the four-plane doctrine, the per-plane survival, the pockets, the native immunities, the movement/combat/magic mappings, and the features (the archoments, Cryonax)
-  - [ ] The Energy Planes (p. 54) - Positive and Negative Energy
+  - [x] The Energy Planes (p. 54) - Positive and Negative Energy - R573: the Plane-of-Life/Plane-of-Death doctrine, the gain-and-explode and drain rules, the protection paradox, the weakened Border Ethereal, the magic max/min rule, and the features (xeg-ya, xeg-yi, trillochs)
   - [ ] The Positive Quasi-Planes (pp. 55-57) - lightning, radiance, mineral, steam: survival, movement, encounters, combat, magic, features
   - [ ] The Negative Quasi-Planes (pp. 57-59) - ash, dust, salt, vacuum: survival, movement, encounters, combat, magic, features
   - [x] The inner-planes native-frequency table and one-rank decay rule (pp. 26-27) - the air-elemental worked example (common on Air, unique on Earth) - R567: the dcv decay pin (one rank per plane removed)
@@ -83,7 +83,7 @@ sample entries verified against the canonical PHB levels).
   - [x] The Water encounter table (p. 46) - the 1-in-10 every four hours check and the type roll - R571: the dcz encounter pins (the 1-in-10 every four hours, the 1-10/11-25/26-00 split, the d8+d12 chart)
   - [x] The Water phenomena table (p. 46) - the elemental phenomena type roll - R571: the dcz phenomena pins (the steam current, the whirlpool, the ice floe, the tidal bore, the silt flow, the airy water pocket, the vortex)
   - [x] The para-planes encounter table (p. 51) - the 1-in-20 checked every eight true hours - R572: the dda check pin (1 in 20 every eight true hours, the pocket/creature split)
-  - [ ] The energy-planes encounter frequency (p. 54) - the 1-in-10 every eight hours
+  - [x] The energy-planes encounter frequency (p. 54) - the 1-in-10 every eight hours - R573: the ddb no-random-encounters pin (the destructive plane destroys pockets; natives undetermined)
   - [ ] The positive quasi-planes encounter table (p. 56) - the 1-in-10 per 12 hours
   - [ ] The Minerals petrification rule (p. 57) - the save-vs-spell per true turn, the 80/20 stone/crystal split, the 99% crumble rule
   - [ ] The negative quasi-planes encounter frequency (p. 58) - the 1-in-20 every 12 hours

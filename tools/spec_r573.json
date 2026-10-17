@@ -1,0 +1,229 @@
+{
+  "round": 573,
+  "prefix": "ddb",
+  "header_file": "rules/motpenergy.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 496,
+  "title": "the MotP Energy Planes",
+  "audit_label": "R573 MotP energy planes audit",
+  "audit_comment": "the Energy Planes, printed p. 54, Positive and Negative in one round: the Plane-of-Life/Plane-of-Death doctrine, the 2d6-per-round hit-point gain exploding at twice the original total (extra points fading in 1d20 true turns), the 2d6-plus-one-level drain, the protection-spell paradox (the only protections cannot be cast in the planes), the no-breathing-energy rule, the 10-yard vision, the 10%-per-turn weakened Border Ethereal, the no-random-encounters doctrine, the magic max/min rule with created matter destroyed in one round, and the features (the xeg-ya and xeg-yi with their 2d6-8 guide roll, the trilloch, the undead Negative link).",
+  "include_comment": "the MotP energy planes pins",
+  "include_after": "#include \"rules/motppara.h\"  // R572: the MotP para-planes pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R572 LANDED 2026-10-17: commit 1f15d1b4c70e50d2631",
+  "prev_record": [
+    "- R572 LANDED 2026-10-17: commit 1f15d1b4c70e50d2631",
+    "  445691bea4cbd791900d (census 495 -> 496,",
+    "  pushed 289841a..1f15d1b), THE MotP PARA-",
+    "  ELEMENTAL PLANES, printed pp. 51-54 - the",
+    "  four planes (Smoke, Magma, Ooze, Ice) in one",
+    "  round: the minor-plane doctrine, the",
+    "  per-plane survival (asphyxiation,",
+    "  heat-as-Fire, drowning-as-Water, the",
+    "  1d6-per-round ice cold reduced to per turn",
+    "  when protected), the vision ladder (30",
+    "  yards / touch / 10-20), the 1-in-20-per-",
+    "  eight-TRUE-hours check, the 50/50 pocket",
+    "  rule, the native immunity doctrine, the",
+    "  movement/combat/magic mappings onto the",
+    "  majors, the d8+d12 chart, and the features",
+    "  (the guide-bribe doubling, the archoments",
+    "  as Demi-Powers with no Greater Powers -",
+    "  Cryonax, Ehkahk, Chlimbia, Bwimb). 7",
+    "  consts + 6 bools, prefix dda, header rules/",
+    "  motppara.h. TWO flips: gap census 32/58",
+    "  -> 34/56. Spec 10,925 bytes, md5",
+    "  0592048d0b0c0d90f3b0756eb640b504 matched",
+    "  exactly first try, 13 inlines. NEXT - R573:",
+    "  the Energy Planes (p. 54) - Positive and",
+    "  Negative in one round (the 2d6 gain-and-",
+    "  explode, the 2d6-plus-level drain, the",
+    "  protection-spell paradox, the weakened",
+    "  Border Ethereal, no random encounters);",
+    "  then the two quasi-groups close the inner",
+    "  half."
+  ],
+  "banner": {
+    "title": "THE MotP ENERGY PLANES - printed p. 54, Positive and Negative in one round: the gain-and-explode rule, the drain rule, the protection paradox, the weakened Border Ethereal, and the features (the xeg-ya and xeg-yi, the trilloch, the undead link).",
+    "provenance": "verified against printed p. 54 of the uploaded motp.pdf OCR; the energy planes pin their own text exclusively - the R567 inner-planes doctrine frame supplies the general rules, this round the particulars.",
+    "sentinel": "the gap census after this round: 36 closed, 54 open - two boxes fall (the energy planes, the encounter frequency); the positive quasi-planes are next."
+  },
+  "consts": [
+    {
+      "name": "ddbPositiveGainDieSides",
+      "value": 6,
+      "comment": "the Positive Material plane, the Plane of Life: every round an unprotected character gains 2d6 hit points - at greater than twice his original total he EXPLODES; escape first and the extra points fade in 1d20 true turns (damage taken from them first)."
+    },
+    {
+      "name": "ddbNegativeDrainDieSides",
+      "value": 6,
+      "comment": "the Negative Material plane, the Plane of Death: the unprotected traveler loses 2d6 hit points AND one level or hit die per round; at zero hit points or levels he shrivels and dies."
+    },
+    {
+      "name": "ddbEnergyVisionYards",
+      "value": 10,
+      "comment": "vision and detection are limited to 10 yards - the light of the Positive and the darkness of the Negative are each too intense to see farther."
+    },
+    {
+      "name": "ddbBorderCollapsePct",
+      "value": 10,
+      "comment": "the Border Ethereal is WEAKENED by the energy planes: each turn spent in it carries a 10% chance the Border pulls back and strands the traveler in the adjoining energy plane."
+    },
+    {
+      "name": "ddbXegGuideRoll",
+      "value": 8,
+      "comment": "the xeg-ya and xeg-yi, the two known inhabitants: mindless but possibly persuadable as guides, on a roll of 8 or better on 2d6 - and no inducement changes the creature's mind if the roll fails."
+    }
+  ],
+  "bools": [
+    {
+      "name": "ddbEnergyHostile",
+      "value": true,
+      "comment": "the energy planes are thoroughly hostile to outside life, worse than the four majors put together - no Greater, Lesser or Demi-Powers inhabit them."
+    },
+    {
+      "name": "ddbProtectionParadox",
+      "value": true,
+      "comment": "the only protections are negative/positive plane protection - but they CANNOT be cast in the energy planes (they draw on the opposite plane); elemental protections cannot be modified to cover energy effects."
+    },
+    {
+      "name": "ddbNoBreathingEnergy",
+      "value": true,
+      "comment": "you cannot breathe energy, nor transform it into a breathable mixture (airy element fails): only breath-negating devices (an ibo stone) or spells permit more than breath-holding time."
+    },
+    {
+      "name": "ddbNoRandomEncounters",
+      "value": true,
+      "comment": "there are NO random encounters in the energy planes: the destructive nature of the plane quickly destroys elemental pockets, and the native creature types remain undetermined."
+    },
+    {
+      "name": "ddbMagicMaxMinRule",
+      "value": true,
+      "comment": "the magic rule: created matter is destroyed one round after creation (exploding in harmless motes in the Positive, collapsing to dust in the Negative); variable spells deal MAXIMUM damage in the Positive, MINIMUM in the Negative; multi-round damage spells last one round; summoned creatures of average-plus intelligence may simply decline to appear."
+    },
+    {
+      "name": "ddbUndeadNegativeLink",
+      "value": true,
+      "comment": "many undead draw their animating force from the Negative Material - the source of their level and ability drains - yet no undead are recorded IN either energy plane, only in the quasi-planes; the trilloch, the energy vulture, thrives in the Negative after its demi-plane was consumed."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the PositiveGainDieSides pin",
+      "expr": "m['ddbPositiveGainDieSides']() != 6"
+    },
+    {
+      "note": "the NegativeDrainDieSides pin",
+      "expr": "m['ddbNegativeDrainDieSides']() != 6"
+    },
+    {
+      "note": "the EnergyVisionYards pin",
+      "expr": "m['ddbEnergyVisionYards']() != 10"
+    },
+    {
+      "note": "the BorderCollapsePct pin",
+      "expr": "m['ddbBorderCollapsePct']() != 10"
+    },
+    {
+      "note": "the XegGuideRoll pin",
+      "expr": "m['ddbXegGuideRoll']() != 8"
+    },
+    {
+      "note": "the EnergyHostile pin",
+      "expr": "m['ddbEnergyHostile']() != 1"
+    },
+    {
+      "note": "the ProtectionParadox pin",
+      "expr": "m['ddbProtectionParadox']() != 1"
+    },
+    {
+      "note": "the NoBreathingEnergy pin",
+      "expr": "m['ddbNoBreathingEnergy']() != 1"
+    },
+    {
+      "note": "the NoRandomEncounters pin",
+      "expr": "m['ddbNoRandomEncounters']() != 1"
+    },
+    {
+      "note": "the MagicMaxMinRule pin",
+      "expr": "m['ddbMagicMaxMinRule']() != 1"
+    },
+    {
+      "note": "the UndeadNegativeLink pin",
+      "expr": "m['ddbUndeadNegativeLink']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the energy planes pins": [
+      {
+        "kind": "const",
+        "name": "ddbPositiveGainDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "ddbNegativeDrainDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "ddbEnergyVisionYards"
+      },
+      {
+        "kind": "const",
+        "name": "ddbBorderCollapsePct"
+      },
+      {
+        "kind": "const",
+        "name": "ddbXegGuideRoll"
+      },
+      {
+        "kind": "bool",
+        "name": "ddbEnergyHostile"
+      },
+      {
+        "kind": "bool",
+        "name": "ddbProtectionParadox"
+      },
+      {
+        "kind": "bool",
+        "name": "ddbNoBreathingEnergy"
+      },
+      {
+        "kind": "bool",
+        "name": "ddbNoRandomEncounters"
+      },
+      {
+        "kind": "bool",
+        "name": "ddbMagicMaxMinRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddbUndeadNegativeLink"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the energy-planes child closes",
+      "from": "  - [ ] The Energy Planes (p. 54) - Positive and Negative Energy",
+      "to": "  - [x] The Energy Planes (p. 54) - Positive and Negative Energy - R573: the Plane-of-Life/Plane-of-Death doctrine, the gain-and-explode and drain rules, the protection paradox, the weakened Border Ethereal, the magic max/min rule, and the features (xeg-ya, xeg-yi, trillochs)"
+    },
+    {
+      "note": "the energy-planes encounter frequency closes",
+      "from": "  - [ ] The energy-planes encounter frequency (p. 54) - the 1-in-10 every eight hours",
+      "to": "  - [x] The energy-planes encounter frequency (p. 54) - the 1-in-10 every eight hours - R573: the ddb no-random-encounters pin (the destructive plane destroys pockets; natives undetermined)"
+    }
+  ],
+  "gap_census": {
+    "closed": 36,
+    "open": 54
+  },
+  "caller_files": [],
+  "inline_count": 11
+}
