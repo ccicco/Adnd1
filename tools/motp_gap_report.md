@@ -127,7 +127,7 @@ sample entries verified against the canonical PHB levels).
   - [x] The Nine Hells (pp. 109-113) - R587: the nine layers and the arch-devils (Avernus through Nessus, the reddish-hoop portals, the home-layer immunity, the three factions, Asmodeus the overlord, and the Powers from Set and Sekolah to Kurtulmak and No Cha)
   - [x] Acheron (pp. 113-114) - R588: the iron-shod battle plains (the four block layers, the spherical portals by sound, the spirit legions reborn in 24 hours, Lei Kung on his cloud, Maglubiyet and Gruumsh on the contested block)
   - [x] The Concordant Opposition (pp. 114-116) - R589: the odd plane (the ever-changing homeland face, the minimum-damage rule, the ring of white disks at 1,000 miles, the center no god may touch, the full Powers census from Dagda and Tir na Og to Yen-Wang-Yeh and Vergadain)
-  - [ ] Beyond the outer planes (p. 116)
+  - [x] Beyond the outer planes (p. 116) - R590: the closing essay (the summary-not-final-word doctrine, the undiscovered layers, the growing model with the quasi/para additions, the new Astral forms, the finite demi-planes, the alternate Primes and the imagination limit)
 - [ ] **Appendix I: The Prime Material Planes** (pp. 117-119) - the Alternate Primes doctrine
   - [ ] The Prime physical-factor table (p. 117) - the 1d10 factor and the odd/even sign roll
   - [ ] The Alternate Primes encounter rules (p. 119) - the modified-stats doctrine

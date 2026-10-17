@@ -1,0 +1,198 @@
+{
+ "round": 590,
+ "prefix": "ddt",
+ "header_file": "rules/beyondouterplanes.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 513,
+ "title": "Beyond the outer planes",
+ "audit_label": "R590 Beyond audit",
+ "audit_comment": "BEYOND THE OUTER PLANES, printed p. 116, the closing essay of the Manual of the Planes: the preceding pages a summary of the known realms, layers and planes - by no means the final word, for the nature of these infinite realms defies any all-encompassing treatise. There can be any number of realms in a layer, so a third or fourth major pantheon can exist in Olympus/Arvandor, or a DM-created evil power can dominate a section of the Nine Hells where no arch-devils rule. Further layers may lie beyond those discovered: an eighth heaven, a third paradise unreachable by known spells and abilities, and Gladsheim perhaps with as many layers as the Abyss but without the Abyssal method of reaching them. The conception of the planes has grown with the AD&D game - the original inner planes with no mention of the quasi- and para-elemental planes, the early outer-plane discussions leaving out Concordant Opposition - and more such planes may exist beyond the scope of the model. There may also be a different form of Astral space between the outer planes and planes farther out, or within the center of Concordant Opposition. Even without new planes, the wild unexplored known lands suffice for years: the Ethereal's floating demi-planes may be world-sized, finite where the others are infinite, and the alternate Prime Material planes run Earth-like or not-so-Earth-like, familiar, hostile, and strange - the only limitation to planar adventures the imagination of those involved, the tome's purpose to fire the imaginations of DMs and players toward the myriad planes of the AD&D system.",
+ "include_comment": "the Beyond the outer planes pins",
+ "include_after": "#include \"rules/concordantopposition.h\"  // R589: the Concordant Opposition pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R589 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R589 LANDED 2026-10-17: commit",
+  "  2e271f48d15f57f5ec775baf3a8f2d16",
+  "  8a450183 (census 512 -> 513, pushed",
+  "  cda2afa..2e271f4), CONCORDANT",
+  "  OPPOSITION, printed pp. 114-116, the",
+  "  exception plane at the wheel's hub:",
+  "  the ever-changing homeland face (a",
+  "  different presentation each visit yet",
+  "  the special locations constant, the",
+  "  first visit a much-larger version of",
+  "  the traveler's homeland), the",
+  "  minimum-damage rule (the short sword 1,",
+  "  the two-handed broadsword 3, cure",
+  "  light wounds 1, heal all but 1,",
+  "  poisons and bonuses unaffected), the",
+  "  unclimbable center with the 100-mile",
+  "  spell ladder (9th at 1,000 miles down",
+  "  to 1st at 200, clerics starting at",
+  "  800; the specials - illusions as gems",
+  "  of seeing at 700, astral portals and",
+  "  artificial poisons at 600, natural",
+  "  poisons and the conduit reach at 500,",
+  "  no conjuration and no demi-gods at",
+  "  400, no lesser gods at 300, no greater",
+  "  gods at 200, chemical reactions dead",
+  "  at 100 where neither man nor god may",
+  "  come), the 200-mile meeting ground of",
+  "  the differing-alignment Greater",
+  "  Powers, the ring of white disks at the",
+  "  1,000-mile mark (destination by",
+  "  concentration, majority rules, the",
+  "  color pools beyond 600), the",
+  "  chaotic-destination roll (1-80",
+  "  intended, 81-90 one plane off, 91-00",
+  "  the opposite of the wheel), no native",
+  "  races with every outer-plane",
+  "  intelligence at home frequencies, and",
+  "  the Powers (Dagda's Tir na Og with Mag",
+  "  Mell and the Celtic swath, Manannan",
+  "  mac Lir's Tir fo Thuiran, Goibhniu's",
+  "  Land-of-Youth-only weapons, Ogma's",
+  "  negation prison, Thoth and Bes,",
+  "  Untamo's Sleeping Lands beside",
+  "  Tvashtri's clattering inventions, the",
+  "  Modrons' well of souls at the edge of",
+  "  the center, Yen-Wang-Yeh the sorter of",
+  "  the dead with his one week of misplaced",
+  "  spirits, Semuanya, Eadro, Sheela",
+  "  Peryroyal, Dumathoin, and Vergadain",
+  "  the Bes-similar luck-god). 6 consts +",
+  "  6 bools, prefix dds, header",
+  "  rules/concordantopposition.h. THREE",
+  "  flips: gap census 78/12 -> 81/9 (the",
+  "  plane, the center table, the",
+  "  chaotic-destination table) - THE",
+  "  PLANE-BY-PLANE CENSUS OF THE MANUAL OF",
+  "  THE PLANES IS CLOSED, every plane and",
+  "  every MotP table box pinned. Spec",
+  "  20,894 bytes, md5 cd8038cdf75ee545b40",
+  "  1022820068cbb matched exactly first",
+  "  try, 12 inlines. TWENTY-FOUR straight",
+  "  first-tries (R566-R589). NEXT - R590:",
+  "  Beyond the outer planes (p. 116, the",
+  "  closing essay - the unexplored realms,",
+  "  the possible eighth heaven and third",
+  "  paradise, Gladsheim's unreached",
+  "  layers, the quasi/para-elemental",
+  "  additions, the demi-planes and",
+  "  alternate Primes; the last MotP gap",
+  "  box, source page-117 already read)."
+ ],
+ "banner": {
+  "title": "BEYOND THE OUTER PLANES - printed p. 116, the closing essay of the Manual of the Planes: the summary that is not the final word, the undiscovered layers and unreached paradises, the growing model, the new Astral forms, the finite demi-planes of the Ethereal, and the alternate Primes - the only limitation the imagination.",
+  "provenance": "verified against printed p. 116 of the uploaded motp.pdf OCR; the essay's six doctrines are pinned exactly as printed; this round closes the Manual of the Planes chapter of the gap report - every plane, every table, and the closing essay now pinned.",
+  "sentinel": "the gap census after this round: 82 closed, 8 open - ONE box falls (Beyond the outer planes), and THE MANUAL OF THE PLANES IS FULLY CLOSED; the nine remaining boxes belong to later chapters."
+ },
+ "consts": [],
+ "bools": [
+  {
+   "name": "ddtBeyondDoctrine",
+   "value": true,
+   "comment": "the closing doctrine: the preceding pages are a summary of the realms, layers and planes that make up the known planes of existence - by no means the final word, for the nature of these infinite realms defies any all-encompassing treatise; there can be any number of realms in a layer, so that a third or fourth major pantheon can exist in Olympus/Arvandor, or an evil power created by the DM can dominate a section of the Nine Hells where no arch-devils rule."
+  },
+  {
+   "name": "ddtUndiscoveredLayers",
+   "value": true,
+   "comment": "the undiscovered layers: it is also possible there are further layers beyond those discovered and reported - there may be an eighth heaven, or a third paradise, undiscovered or unreachable by the spells and abilities known to researchers; and Gladsheim may have as many layers as the Abyss, but lacks the Abyssal method of reaching them."
+  },
+  {
+   "name": "ddtGrowingModel",
+   "value": true,
+   "comment": "the growing model: our conception of the planes has grown with the AD&D game - the original presentations of the inner planes make no mention of the quasi- and para-elemental planes, and the early discussions of the outer planes leave out Concordant Opposition; there may be more such planes beyond the scope of the model presented here."
+  },
+  {
+   "name": "ddtNewAstralForms",
+   "value": true,
+   "comment": "the new Astral forms: there may be a different form of Astral space between the outer planes and planes farther out, or within the center of Concordant Opposition - the map not being the territory, and the void between the wheels its own country."
+  },
+  {
+   "name": "ddtDemiPlaneRule",
+   "value": true,
+   "comment": "the demi-plane rule: even without new planes, the wild and unexplored known lands can occupy the extraplanar traveler for years - the demi-planes that float in the Ethereal may be the size of worlds, their only limitation that they are finite where the other planes are infinite."
+  },
+  {
+   "name": "ddtAlternatePrimeRule",
+   "value": true,
+   "comment": "the alternate Prime rule: alternate Prime Material planes enable travelers to visit worlds that are Earth-like or not-so-Earth-like, familiar, hostile, and strange - the only limitation to planar adventures being the imagination of those involved; the purpose of the tome is to fire the imaginations of DMs and players so that they explore the myriad planes of the AD&D system."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the BeyondDoctrine pin",
+   "expr": "m['ddtBeyondDoctrine']() != 1"
+  },
+  {
+   "note": "the UndiscoveredLayers pin",
+   "expr": "m['ddtUndiscoveredLayers']() != 1"
+  },
+  {
+   "note": "the GrowingModel pin",
+   "expr": "m['ddtGrowingModel']() != 1"
+  },
+  {
+   "note": "the NewAstralForms pin",
+   "expr": "m['ddtNewAstralForms']() != 1"
+  },
+  {
+   "note": "the DemiPlaneRule pin",
+   "expr": "m['ddtDemiPlaneRule']() != 1"
+  },
+  {
+   "note": "the AlternatePrimeRule pin",
+   "expr": "m['ddtAlternatePrimeRule']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the beyond the outer planes pins": [
+   {
+    "kind": "bool",
+    "name": "ddtBeyondDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "ddtUndiscoveredLayers"
+   },
+   {
+    "kind": "bool",
+    "name": "ddtGrowingModel"
+   },
+   {
+    "kind": "bool",
+    "name": "ddtNewAstralForms"
+   },
+   {
+    "kind": "bool",
+    "name": "ddtDemiPlaneRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddtAlternatePrimeRule"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "beyond the outer planes",
+   "from": "  - [ ] Beyond the outer planes (p. 116)",
+   "to": "  - [x] Beyond the outer planes (p. 116) - R590: the closing essay (the summary-not-final-word doctrine, the undiscovered layers, the growing model with the quasi/para additions, the new Astral forms, the finite demi-planes, the alternate Primes and the imagination limit)"
+  }
+ ],
+ "gap_census": {
+  "closed": 82,
+  "open": 8
+ },
+ "caller_files": [],
+ "inline_count": 6
+}

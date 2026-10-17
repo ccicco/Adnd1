@@ -10439,6 +10439,76 @@ when both halves land.
   page-115 already read, page-116.md
   still to read for the center mechanics
   and the destination roll).
+- R589 LANDED 2026-10-17: commit
+  2e271f48d15f57f5ec775baf3a8f2d16
+  8a450183 (census 512 -> 513, pushed
+  cda2afa..2e271f4), CONCORDANT
+  OPPOSITION, printed pp. 114-116, the
+  exception plane at the wheel's hub:
+  the ever-changing homeland face (a
+  different presentation each visit yet
+  the special locations constant, the
+  first visit a much-larger version of
+  the traveler's homeland), the
+  minimum-damage rule (the short sword 1,
+  the two-handed broadsword 3, cure
+  light wounds 1, heal all but 1,
+  poisons and bonuses unaffected), the
+  unclimbable center with the 100-mile
+  spell ladder (9th at 1,000 miles down
+  to 1st at 200, clerics starting at
+  800; the specials - illusions as gems
+  of seeing at 700, astral portals and
+  artificial poisons at 600, natural
+  poisons and the conduit reach at 500,
+  no conjuration and no demi-gods at
+  400, no lesser gods at 300, no greater
+  gods at 200, chemical reactions dead
+  at 100 where neither man nor god may
+  come), the 200-mile meeting ground of
+  the differing-alignment Greater
+  Powers, the ring of white disks at the
+  1,000-mile mark (destination by
+  concentration, majority rules, the
+  color pools beyond 600), the
+  chaotic-destination roll (1-80
+  intended, 81-90 one plane off, 91-00
+  the opposite of the wheel), no native
+  races with every outer-plane
+  intelligence at home frequencies, and
+  the Powers (Dagda's Tir na Og with Mag
+  Mell and the Celtic swath, Manannan
+  mac Lir's Tir fo Thuiran, Goibhniu's
+  Land-of-Youth-only weapons, Ogma's
+  negation prison, Thoth and Bes,
+  Untamo's Sleeping Lands beside
+  Tvashtri's clattering inventions, the
+  Modrons' well of souls at the edge of
+  the center, Yen-Wang-Yeh the sorter of
+  the dead with his one week of misplaced
+  spirits, Semuanya, Eadro, Sheela
+  Peryroyal, Dumathoin, and Vergadain
+  the Bes-similar luck-god). 6 consts +
+  6 bools, prefix dds, header
+  rules/concordantopposition.h. THREE
+  flips: gap census 78/12 -> 81/9 (the
+  plane, the center table, the
+  chaotic-destination table) - THE
+  PLANE-BY-PLANE CENSUS OF THE MANUAL OF
+  THE PLANES IS CLOSED, every plane and
+  every MotP table box pinned. Spec
+  20,894 bytes, md5 cd8038cdf75ee545b40
+  1022820068cbb matched exactly first
+  try, 12 inlines. TWENTY-FOUR straight
+  first-tries (R566-R589). NEXT - R590:
+  Beyond the outer planes (p. 116, the
+  closing essay - the unexplored realms,
+  the possible eighth heaven and third
+  paradise, Gladsheim's unreached
+  layers, the quasi/para-elemental
+  additions, the demi-planes and
+  alternate Primes; the last MotP gap
+  box, source page-117 already read).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
