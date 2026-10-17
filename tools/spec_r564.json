@@ -1,0 +1,199 @@
+{
+  "round": 564,
+  "prefix": "dcs",
+  "header_file": "rules/motpintro.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 487,
+  "title": "the MotP arc opener, the introduction",
+  "audit_label": "R564 MotP intro audit",
+  "audit_comment": "the MotP ARC OPENER (the R503 pattern): the introduction pinned - the five groupings (Prime, Ethereal, inner, Astral, outer), the organization pattern every plane chapter follows, the true/subjective time doctrine with its ratios (Prime/outer 1:1, Deep Ethereal 10:1, inner 1:2, Astral 365000:1), the natives-unaffected rule, the Astral spell exemption, and the combined-spell both-limits rule. The pdf offset pinned: printed page + 1 = pdf page for this scan. The spell-summary tables (pp. 8-9, GARBLED OCR) stay open for a reconstruction round.",
+  "include_comment": "the MotP introduction opener pins",
+  "include_after": "#include \"rules/dsgfin.h\"  // R563: the DSG arc final census closure",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R563 LANDED 2026-10-17: commit 9f636b8fd240e75d1587",
+  "prev_record": [
+    "- R563 LANDED 2026-10-17: commit 9f636b8fd240e75d1587",
+    "  3b078325d722556c0669 (census 486 -> 487, pushed",
+    "  3edae89..9f636b8), THE DSG ARC FINAL CENSUS -",
+    "  the ARC-CLOSING round: the triple-flip closure",
+    "  with zero pins (the R549/R556/R559/R561 pattern",
+    "  applied to all three remaining parents at",
+    "  once): the underground environment pp. 36-55,",
+    "  the new equipment pp. 56-58 and the improving",
+    "  play pp. 59-63, all already-landed containers",
+    "  flipping against their children. THE GAP",
+    "  REPORT CLOSES 155/0 - the whole 128-page",
+    "  Dungeoneer's Survival Guide pinned cover to",
+    "  index, the arc R503 opened ending here. Spec",
+    "  6,403 bytes, md5",
+    "  821a635256c0a34dce2b79f5b7b36e17 matched",
+    "  exactly first try, 0 inlines, header",
+    "  rules/dsgfin.h, prefix dcr; the gap report",
+    "  WAS in the git add (5 files). Landed via rn",
+    "  (the second live run, flawless). No authoring",
+    "  catches. NEXT - R564: the first round AFTER",
+    "  the DSG arc - the engine and gap-report",
+    "  tooling are round-agnostic, but the next book",
+    "  or source must be chosen before any further",
+    "  spec is authored."
+  ],
+  "banner": {
+    "title": "THE MotP ARC OPENER - the introduction, printed pp. 5-10: the five groupings of the planes, the organization pattern, the true-vs-subjective time doctrine with its per-plane ratios, and the spell school definitions - the arc the DSG arc handed off to opens here, on the R503 extraction-round pattern.",
+    "provenance": "from the Manual of the Plans (1987, Jeff Grubb), printed pp. 3-10, the uploaded motp.pdf OCR (60 clean pages of prose; the pp. 8-9 spell-summary tables are the one garbled spread, flagged in the gap report); the offset pinned at printed + 1.",
+    "sentinel": "the opener mirrors the book's own skeleton: the gap report tools/motp_gap_report.md lands with this round and every box in it closes on the MotP's own text - nothing auto-credited across the seams."
+  },
+  "consts": [
+    {
+      "name": "dcsPlaneGroupCount",
+      "value": 5,
+      "comment": "the five groupings of the planes: the Prime Material, the Ethereal, the inner (elemental), the Astral, and the outer (the planes of power)."
+    },
+    {
+      "name": "dcsEtherealTimeRatio",
+      "value": 10,
+      "comment": "the Deep Ethereal: 10 true rounds pass for every one subjective round - a 10-round Prime potion lasts 100 rounds; 10 days without food fasts for one day."
+    },
+    {
+      "name": "dcsInnerTimeDivisor",
+      "value": 2,
+      "comment": "the inner planes: one true round passes for every two subjective rounds - subjective effects last half as long; poison takes effect twice as quickly."
+    },
+    {
+      "name": "dcsAstralTrueRounds",
+      "value": 365000,
+      "comment": "the Astral: 365,000 true rounds (about 170 true days) pass per subjective round - a thousand true years equal one subjective day."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dcsTrueTimeConstant",
+      "value": true,
+      "comment": "time is a constant in the known planes: it cannot be expanded, contracted, created, or destroyed - 20 rounds in the Ethereal are 20 rounds on the Prime."
+    },
+    {
+      "name": "dcsNativesUnaffected",
+      "value": true,
+      "comment": "natives of a plane are unaffected by its subjective effects: an Ethereal-native caster regains spells in a standard day, a visiting Prime mage in ten times that."
+    },
+    {
+      "name": "dcsAstralSpellsExempt",
+      "value": true,
+      "comment": "spell casting on the Astral is exempt from the time differential: a sleep SPELL keeps its five-rounds-per-level duration, while a sleep POTION would last 170 true days."
+    },
+    {
+      "name": "dcsCombinedSpellsBothLimited",
+      "value": true,
+      "comment": "spells combining types (alteration-evocations and the like) are constrained by the limitations on BOTH types - the intro's combined-spell rule."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the five planar groupings",
+      "expr": "m['dcsPlaneGroupCount']() != 5"
+    },
+    {
+      "note": "the Deep Ethereal 10:1 ratio",
+      "expr": "m['dcsEtherealTimeRatio']() != 10"
+    },
+    {
+      "note": "the inner planes half-duration rule",
+      "expr": "m['dcsInnerTimeDivisor']() != 2"
+    },
+    {
+      "note": "the Astral 365,000-true-rounds ratio",
+      "expr": "m['dcsAstralTrueRounds']() != 365000"
+    },
+    {
+      "note": "true time is constant across planes",
+      "expr": "m['dcsTrueTimeConstant']() != 1"
+    },
+    {
+      "note": "natives unaffected by their plane",
+      "expr": "m['dcsNativesUnaffected']() != 1"
+    },
+    {
+      "note": "Astral spell casting exempt from the differential",
+      "expr": "m['dcsAstralSpellsExempt']() != 1"
+    },
+    {
+      "note": "combined spells limited by both types",
+      "expr": "m['dcsCombinedSpellsBothLimited']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the intro opener pins": [
+      {
+        "kind": "const",
+        "name": "dcsPlaneGroupCount"
+      },
+      {
+        "kind": "const",
+        "name": "dcsEtherealTimeRatio"
+      },
+      {
+        "kind": "const",
+        "name": "dcsInnerTimeDivisor"
+      },
+      {
+        "kind": "const",
+        "name": "dcsAstralTrueRounds"
+      },
+      {
+        "kind": "bool",
+        "name": "dcsTrueTimeConstant"
+      },
+      {
+        "kind": "bool",
+        "name": "dcsNativesUnaffected"
+      },
+      {
+        "kind": "bool",
+        "name": "dcsAstralSpellsExempt"
+      },
+      {
+        "kind": "bool",
+        "name": "dcsCombinedSpellsBothLimited"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the Introduction parent closes",
+      "from": "- [ ] **An Introduction to the Planes** (pp. 5-10) - the frame chapter: the five groupings, the organization of the book's four sections, the true/subjective time doctrine with its per-plane ratios, the spell school definitions, and the spell-summary tables",
+      "to": "- [x] **An Introduction to the Planes** (pp. 5-10) - the frame chapter: the five groupings, the organization of the book's four sections, the true/subjective time doctrine with its per-plane ratios, the spell school definitions, and the spell-summary tables - pinned R564 except the spell-summary tables (garbled OCR, open below)"
+    },
+    {
+      "note": "the five-groupings child closes",
+      "from": "  - [ ] The five groupings of the planes (p. 5) - the Prime Material, the Ethereal, the inner, the Astral, the outer",
+      "to": "  - [x] The five groupings of the planes (p. 5) - the Prime Material, the Ethereal, the inner, the Astral, the outer - R564: the dcs grouping pin"
+    },
+    {
+      "note": "the Organization child closes",
+      "from": "  - [ ] Organization (p. 5) - the overview/traveling/survival/time/encounters section pattern of every plane chapter",
+      "to": "  - [x] Organization (p. 5) - the overview/traveling/survival/time/encounters section pattern of every plane chapter - R564: the organization pattern in the audit comment"
+    },
+    {
+      "note": "the time child closes",
+      "from": "  - [ ] True vs. subjective time (pp. 5-7) - the time-is-constant doctrine, the true/subjective split, the ratio table (Prime/outer 1:1, Ethereal 10:1, inner 1:2, Astral 365000:1), the natives-unaffected rule, the Astral spell-casting exemption, and the demi-plane exception note",
+      "to": "  - [x] True vs. subjective time (pp. 5-7) - the time-is-constant doctrine, the true/subjective split, the ratio table (Prime/outer 1:1, Ethereal 10:1, inner 1:2, Astral 365000:1), the natives-unaffected rule, the Astral spell-casting exemption, and the demi-plane exception note - R564: the dcs time pins"
+    },
+    {
+      "note": "the school-definitions child closes",
+      "from": "  - [ ] The spell school definitions (p. 10) - the eight schools and the combined-spell both-limits rule",
+      "to": "  - [x] The spell school definitions (p. 10) - the eight schools and the combined-spell both-limits rule - R564: the dcs combined-spell pin"
+    }
+  ],
+  "gap_census": {
+    "closed": 5,
+    "open": 55
+  },
+  "caller_files": [],
+  "inline_count": 8
+}

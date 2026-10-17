@@ -9408,6 +9408,30 @@ when both halves land.
   pins, the R549/R556/R559/R561 pattern) closing
   the DSG gap report to 155/0 and ending the arc
   R503 opened.
+- R563 LANDED 2026-10-17: commit 9f636b8fd240e75d1587
+  3b078325d722556c0669 (census 486 -> 487, pushed
+  3edae89..9f636b8), THE DSG ARC FINAL CENSUS -
+  the ARC-CLOSING round: the triple-flip closure
+  with zero pins (the R549/R556/R559/R561 pattern
+  applied to all three remaining parents at
+  once): the underground environment pp. 36-55,
+  the new equipment pp. 56-58 and the improving
+  play pp. 59-63, all already-landed containers
+  flipping against their children. THE GAP
+  REPORT CLOSES 155/0 - the whole 128-page
+  Dungeoneer's Survival Guide pinned cover to
+  index, the arc R503 opened ending here. Spec
+  6,403 bytes, md5
+  821a635256c0a34dce2b79f5b7b36e17 matched
+  exactly first try, 0 inlines, header
+  rules/dsgfin.h, prefix dcr; the gap report
+  WAS in the git add (5 files). Landed via rn
+  (the second live run, flawless). No authoring
+  catches. NEXT - R564: the first round AFTER
+  the DSG arc - the engine and gap-report
+  tooling are round-agnostic, but the next book
+  or source must be chosen before any further
+  spec is authored.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
