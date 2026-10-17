@@ -7324,6 +7324,81 @@ when both halves land.
   the reed "15р 1рс", the small-basket cost dropped) - plan
   for screenshot reads of printed p. 56 before authoring;
   gap children 136-140 plus the Table 35 manifest line.
+- R525 LANDED 2026-10-17: commit 9cf5b25 (census 448 -> 449,
+  pushed 7c7074c..9cf5b25), THE DSG EQUIPMENT COSTS AND
+  WEIGHTS, printed pp. 56-57 (pdf 57-58) - the chapter frame
+  (the equipment primarily for underground exploration but
+  usable in any AD&D campaign, listed with average cost and
+  typical encumbrance, the specific uses tied to the
+  climbing, mining and water-travel rules) and the Table 35
+  cost/weight grid: twenty general rows (air bladder 15 gp
+  and 20 gp, basket large 5 sp and 80 gp, basket small 2 sp
+  and 40 gp, beacon 40 gp and 200 gp, birdcage 5 sp and
+  50 gp, box small gold 100 gp and 20 gp, box small lead
+  20 gp and 20 gp, crampons 40 gp and 50 gp, crowbar 3 gp
+  and 75 gp, drill iron 5 gp and 50 gp, grappling hook
+  75 gp and 75 gp, lantern waterproof 50 gp and 50 gp, lard
+  pint 5 cp and 20 gp, oil waterproofing 1 gp and 20 gp,
+  pickaxe 20 gp and 200 gp, powder chalk 2 sp and 20 gp,
+  pulley 25 gp and 60 gp, reed hollow 1 sp and 1 pc, shovel
+  10 gp and 180 gp, whistle 1 sp and 1 pc) plus four
+  transportation rows (boat collapsible 500 gp and 600 gp,
+  canoe small 100 gp and 800 gp, canoe large 300 gp and
+  1,600 gp, kayak 250 gp and 500 gp); and the proficiency
+  equipment: the fourteen initial costs and minimum spaces
+  (animal trainer 100 gp and 1-20 acres, armorer 1,250 gp
+  and 20 x 20, blacksmith 1,000 gp and 30 x 30, boatwright
+  1,000 gp and 50 x 120, bowyer/fletcher 250 gp and 20 x
+  20, carpenter 400 gp and varies, gem cutter 2,225 gp and
+  15 x 15, leatherworker 300 gp and 15 x 15, miner 750 gp
+  and varies, potter 600 gp and 20 x 30, smelter 2,000 gp
+  and 50 x 50, stonemason 250 gp and varies, weaponsmith
+  1,500 gp and 40 x 30, weaver 500 gp and 30 x 30), the
+  space-required rule (undersized space = only partially
+  effective), and the raw-materials exclusion (the 11-20% -
+  1d10 + 10 - of finished work value, the armorer or
+  blacksmith needing iron and forge fuel). THE THIRD
+  OCR-FAILURE ROUND OF THE STRETCH: both machine reads
+  failed the same cells with genuine conflicts between them
+  (the djvu garbling every sp as the Cyrillic ар and
+  dropping the basket-small cost, the Capture layer
+  dropping the lard/reed/whistle cells), and the vision
+  passes wobbled the currency units - settled by Curtiss
+  reading the physical printed p. 56 (air bladder 15 gp -
+  the direct read that broke the unsafe sp-pattern
+  assumption - baskets, crowbar, pulley, reed and whistle).
+  The reed/whistle weight prints 1 pc - pinned as printed
+  per the never-repair rule. LESSONS: (1) the authoring
+  audit mirror caught a wrong-row lard index in a table
+  check before anything landed - the mirror evaluates, not
+  just counts; (2) the first user-side landing hit a NEW
+  failure class - ./bn delivered the spec with two stray
+  bytes appended after the closing brace (23257 vs 23255,
+  JSON 'Extra data'), diagnosed via wc -c + tail and fixed
+  with truncate -s 23255 - the md5-vs-authored check caught
+  it before the engine ran. Pinned as rules/dsgequip.h
+  (prefix dnta, verified free; 17 inlines - 5 consts, 8
+  bools, 4 table cols; Table 35 as a 24x2 grid normalized to
+  copper-piece costs and gp coin weights, the proficiencies
+  as a 14x2 grid with the -99 sentinel holding the acres and
+  Varies rows). Spec 23,255 bytes, md5
+  7afc57d1e1cf5d0e6345980787b306cc. Engine applied 7 then
+  0/7. Gap 121/34 -> 124/31 (3 flips: children 137, 140 and
+  the Table 35 manifest line 200). NEXT - R526: the new
+  equipment descriptions and transportation equipment
+  (printed pp. 56-57, pdf 57-58; children 138-139) - the
+  item prose (air bladder, baskets, beacon, birdcage, boxes,
+  crampons, drill, grappling hooks, waterproof lantern, lard,
+  waterproofing oil, pickaxe, chalk powder, pulleys, reed,
+  shovel, whistle) with their numbers (the beacon 240-ft
+  cone, the drill noise at 120 ft, the lantern 10-ft
+  underwater radius and secret d6 burn, the lard 80%
+  passage, the chalk 20-ft square, the pickaxe 1d10/1d20
+  damage, the whistle 1,000 ft), then the collapsible boat,
+  canoes and kayak, plus the animal-trainer proficiency
+  opener; djvu ~lines 7255-7420 already extracted and CLEAN
+  in both reads - a fast round expected. The descriptions
+  prose is extracted; verify children 138-139 exact wording.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
