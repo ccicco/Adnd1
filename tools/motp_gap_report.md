@@ -106,7 +106,7 @@ sample entries verified against the canonical PHB levels).
   - [x] The unique-powers encounter doctrine (p. 77) - the only-on-a-2-or-20 rule for demon lords, solars and the Powers - R577: the ddf unique roll pin (a 2 or a 20 only)
   - [x] The human-travelers doctrine (p. 77) - the uncommon-first-layer/rare-deeper-layers rule - R577: the ddf human pins (uncommon first layer, rare deeper, the small-group level bonus)
   - [x] The Olympus spell-casting-creatures table (p. 92) - the 10%-can-cast roll - R580: AMENDED - the table is the Beastlands beasts table (10% of very-intelligent beasts cast, the d100 spell ladder, the doubled hit dice), not Olympus
-  - [ ] The Limbo random-entry table (p. 97) - the baked/frozen/drowning/sliding-earth entry roll
+  - [x] The Limbo random-entry table (p. 97) - the baked/frozen/drowning/sliding-earth entry roll - R582: the ddk entry pins (the 20/20/20/20/9/9/2 d100 split, the drowning-compression-fire-cold effects)
   - [ ] The Abyssal-layers terrain table (p. 101) - the general-description roll
   - [ ] The Concordant Opposition center table (p. 115) - the powers-neutralized-by-distance roll
   - [ ] The Concordant Opposition chaotic-destination table (p. 116) - the wrong-plane roll for chaotic travelers
@@ -118,8 +118,8 @@ sample entries verified against the canonical PHB levels).
   - [x] The Happy Hunting Grounds (pp. 91-92) - R580: the three Beastlands layers (Krigala, Brux, Karasuthra), the sentient spell-casting beasts, the mortals, the Beast Lords
   - [x] Olympus (pp. 92-94) - R581: the Greek and elvish pantheons (the three layers, the creature modifications, the crimson-disk portals, Evergold, the Seldarine)
   - [x] Gladsheim (pp. 94-97) - R581: the Norse plane (the earthbergs, the wells at 80%, the Bifrost, the necromantic ban, the giants, the Asgard realm census)
-  - [ ] Limbo (pp. 97-99)
-  - [ ] Pandemonium (pp. 99-101)
+  - [x] Limbo (pp. 97-99) - R582: chaos supreme (the random entry, the safe-zone radius ladder, the 1d10-hour matter, the slaadi, the githzerai, the floating realms)
+  - [x] Pandemonium (pp. 99-101) - R582: the howling tunnels (the four layers, the 10-foot noise rule, the wind lifts, Loki's Hidden Realm, Tuonela and the Manala)
   - [ ] The Abyss (pp. 101-103)
   - [ ] Tarterus (pp. 103-105)
   - [ ] Hades (pp. 105-107)

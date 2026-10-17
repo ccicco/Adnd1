@@ -1,0 +1,289 @@
+{
+  "round": 582,
+  "prefix": "ddk",
+  "header_file": "rules/limbopandemonium.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 505,
+  "title": "Limbo and Pandemonium",
+  "audit_label": "R582 Limbo-Pandemonium audit",
+  "audit_comment": "LIMBO AND PANDEMONIUM, printed pp. 97-101, the first two Chaos planes in one round: Limbo, chaos supreme at Nirvana's antipode (the quicksilver mish-mash of primal forces, the contact-only gravity, the random-entry table - safe pocket through the sentient's area, the drowning liquid at 10% magma, the collapsing pocket, the suffocation, the 1d10-d6 fire and 1d6-d8 cold sources - the safe-zone radius ladder by Intelligence at 10 feet/10 yards/100 yards/1 mile per point with companion increments, the concentration rule with no spellcasting while holding, the emotion-collapse onto the entry table, the 1d10-hour semi-permanent created matter, the five weakly-barriered layers Gith and Slaad through the Lost Gods, the 33% three-way portals, the slaadi with Ssendam's golden castle and Ygort's whirling spheres, the githzerai with the Citadel of Gith and the 16/23 wizard-king Zaarith, the cord-severing maroon tactic, the chaos elementals at 6d6, and the floating realms - Indra's milk-vault Swarga, Agni's roaming flame, Susanowo's salt-water sphere, Huan-Ti's unconsuming bamboo palace with the 3d6-per-gallon steam); and Pandemonium, chaos tinged by evil, the underground opposite of Gladsheim (the wind-carved tunnels with center-outward gravity, the 10-foot noise rule with the deafness ladder, the wind that lifts 100 lbs for 1d6 miles at 4d6 damage, the four layers - Pandeemos, the shrill tool-carved Cocytus with its 10d10-turn insanity, the light-halved Phlegethon, and bubble-deep Agathion with its 400-lb storms and 50/50 stale-or-vacuum prisons - the flat-square portals at 20% misroute, the immigrant life, and the Powers - Loki's white-crystal Hidden Realm with its Jotenheim shortcut, Tuonela ringed by the desire-draining Manala, retired Anshar's dead-tongued city, and Hruggek's bugbear fortress).",
+  "include_comment": "the Limbo and Pandemonium pins",
+  "include_after": "#include \"rules/olympusgladsheim.h\"  // R581: the Olympus and Gladsheim pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R581 LANDED 2026-10-17: commit f8974bd35e8a378224b37",
+  "prev_record": [
+    "- R581 LANDED 2026-10-17: commit f8974bd35e8a378224b37",
+    "  d7bb32b375ccea94ef2 (census 504 -> 505,",
+    "  pushed e2bceb9..f8974bd), OLYMPUS AND",
+    "  GLADSHEIM, printed pp. 92-97, the last two",
+    "  Upper Planes in one round - THE UPPER",
+    "  PLANES ARE CLOSED: Olympus (the three",
+    "  layers, the crimson-disk portals, the",
+    "  creature modifications - size up, AC 2",
+    "  better, claws +2, doubled hit dice, the",
+    "  1-in-20 casters; the Greek pantheon from",
+    "  Zeus's citadel, twice a common front; the",
+    "  elvish Seldarine - Corellon, Evergold",
+    "  shared with Aphrodite, the Leaflord, the",
+    "  Chosen, Nephthys's lone desert) and",
+    "  Gladsheim (the earthberg rivers with their",
+    "  radiant undersides, Asgard/Muspelheim/",
+    "  Nidavellir, the wells at 80%, the 10-yard",
+    "  magic-stripping Bifrost, the 100-day",
+    "  unclimbed Yggdrasil, the necromantic",
+    "  cowardice ban in Asgard and Vanaheim, the",
+    "  giant casters at 1-in-4/1-in-10/1-in-20,",
+    "  and the full Asgard realm census). 5",
+    "  consts + 7 bools, prefix ddj, header",
+    "  rules/olympusgladsheim.h. TWO flips: gap",
+    "  census 66/24 -> 68/22. Spec 15,347 bytes,",
+    "  md5 891c83e48d7256cdaedcb5c92ea1fabd",
+    "  matched exactly first try, 12 inlines.",
+    "  SIXTEEN straight first-tries (R566-R581).",
+    "  NEXT - R582: the Chaos side opens - Limbo",
+    "  (pp. 97-99, the five layers, the random",
+    "  entry table, the githzerai and the slaadi)",
+    "  and likely Pandemonium (pp. 99-101) as the",
+    "  pair."
+  ],
+  "banner": {
+    "title": "LIMBO AND PANDEMONIUM - printed pp. 97-101, the first two Chaos planes in one round: the quicksilver chaos of the slaadi, the githzerai and the floating god-realms, and the howling dark tunnels of the four layers with Loki's crystal Hidden Realm and the desire-draining Manala.",
+    "provenance": "verified against printed pp. 97-101 of the uploaded motp.pdf OCR; the two planes ride together as the pure-chaos and evil-chaos pair (the R578 pattern), each carrying its tables, structure, portals and Powers exactly as printed; the Abyssal-layers terrain table (printed p. 101-102) is left for the Abyss round that owns it.",
+    "sentinel": "the gap census after this round: 71 closed, 19 open - THREE boxes fall (Limbo, Pandemonium, the Limbo random-entry table); the Abyss opens the deep evil next."
+  },
+  "consts": [
+    {
+      "name": "ddkLimboLayerCount",
+      "value": 5,
+      "comment": "the Limbo layers: five reported, all the same swirling disarray - the barriers weaker than any other plane's, the realms of the Powers floating between layers at will; the ancient names: Gith and Slaad (first), Susanowo (second), Agni (third), Indra (fourth), the fifth the layer of the Lost Gods - though the named Powers are found on other layers, the distinctions breaking down in chaos supreme."
+    },
+    {
+      "name": "ddkEntrySafePct",
+      "value": 20,
+      "comment": "the Limbo random-entry table (the report's box): 1-20 a safe breathable pocket, 21-40 liquid (drowning, 10% magma or acid), 41-60 a collapsing pocket (an earthquake spell), 61-80 solid matter (suffocation as elemental Earth), 81-89 heat source (1d10 d6s per round, save halves), 90-98 cold source (1d6 d8s per round plus suffocation as para-elemental Ice), 99-00 beside a sentient's safe area (a githzerai, slaad or Creator Power to deal with)."
+    },
+    {
+      "name": "ddkSafeZoneYardsPerInt",
+      "value": 100,
+      "comment": "the safe-zone radius by Intelligence: 0 none; 1-4 ten FEET per point; 5-10 ten YARDS per point; 11-18 100 YARDS per point; 19+ one MILE per point - companions of at least one category lower Intelligence add one increment each (an 18-Int individual: 1,800 feet plus 100 per Intelligence-5-plus companion); no new matter, no reshaping - only coalescing chaos into usable form."
+    },
+    {
+      "name": "ddkChaosMatterHours",
+      "value": 10,
+      "comment": "the Limbo created-matter rule: matter conjured outside a safe area is semi-permanent regardless of the spell's duration - 1d10 (10) hours before the chaos wears it away (a fireball burns 1d10 hours at full damage per round, a wall of stone crumbles); inside safe areas normal durations hold, but the clock starts when the area moves on."
+    },
+    {
+      "name": "ddkPandemoniumShoutFeet",
+      "value": 10,
+      "comment": "the Pandemonium noise: every word caught by the wind and flung through all four layers - conversation only by shouting, ineffective beyond 10 feet; holy word, the power words and shout fail beyond 10 feet; unprotected ears: deaf one round's exposure temporary, one turn's exposure PERMANENT; ear plugs negate, but the noise still mind-shatters."
+    },
+    {
+      "name": "ddkWindLiftPounds",
+      "value": 100,
+      "comment": "the Pandemonium wind: from a strong breeze to (10% chance per 10 turns) a gale lifting up to 100 lbs and carrying it 1d6 miles (4d6 landing damage, terrain-modified); natives immune; Cocytus's shriller layer forces a save vs. spell after one turn or 10d10 turns of insanity; Phlegethon halves all light radii and kills infravision; Agathion's bubble storms fling 400-lb creatures for 1d6 per round."
+    }
+  ],
+  "bools": [
+    {
+      "name": "ddkLimboDoctrine",
+      "value": true,
+      "comment": "the Limbo doctrine: chaos supreme at Nirvana's antipode - a quicksilver mish-mash of the primal forces (boulders, trees, whole landscapes in torrents of murky liquid, winds, fire-balls and glacier-remnants); gravity only on contact with solids (walk up walls; thrown objects fly until they strike; momentumless items hang in space); sentience settles the chaos - all beings except Powers must CONCENTRATE to hold safe zones (no spellcasting while holding), and emotion attacks (charm person, fear) collapse the borders onto the Random Entry table; those who control chaos well are the anarchs."
+    },
+    {
+      "name": "ddkLimboPortals",
+      "value": true,
+      "comment": "the Limbo portals: pools, wells, doors, bottomless openings and archways on the first layer, calm centers in the circling storms - each sends travelers to Gladsheim, Concordant Opposition or Pandemonium at 33% apiece."
+    },
+    {
+      "name": "ddkSlaadRule",
+      "value": true,
+      "comment": "the slaadi: natives evolved from the primal soup, messengers, warriors and servants of the Powers (their chaos often derailing missions); immune to the plane's chaos but NOT to spells (a slaad lounges in a hanging pocket of flame unharmed, but a fireball hurts it); bullied by the slaad lords Ssendam and Ygort (Lesser Powers) - Ssendam's golden castle at chaos's edge, Ygort's whirling interlaced spheres through all five layers, Ygort in the innermost."
+    },
+    {
+      "name": "ddkGithzeraiRule",
+      "value": true,
+      "comment": "the githzerai: later arrivals, relative-peace with the slaadi, genocidal foes of the githyanki; citadels in the void, silver swords used to SEVER the cords of astral arrivals and maroon them; not above slaving; cities of 100-600, the greatest the Floating City (Citadel of Gith) sighted in all five layers with 10,000-plus souls under Zaarith Menyar-Ag-Gith, an immortal wizard-king (16th-level fighter, 23rd-level magic-user, a demi-god in Limbo); they mind bar against githyanki silver swords when astrally raiding."
+    },
+    {
+      "name": "ddkChaosElementalRule",
+      "value": true,
+      "comment": "the Limbo spirit rule: arriving spirits are swept into the plane's matter (no manes, lanterns or einheriar), occasionally coalescing into CHAOS ELEMENTALS - 6d6 hit dice, abominable man-like piles with tentacles, horns or trunks, 1 damage per hit die once per round; not true elementals (outer-planar natives, beyond the control spells); invisible in native chaos, identifiable in controlled pockets."
+    },
+    {
+      "name": "ddkLimboPowers",
+      "value": true,
+      "comment": "the Limbo Powers: Indra's Swarga (a spherical vault half-filled with enchanted milk, the island-or-tortoise abode, served by a hundred hundredfold chaotic faithful, moving between layers at will); Agni's sphere of purest flame fed by the infinite matter (intruders immolated unless the fire god protects them, ever-moving to avoid choking on its own smoke); Susanowo's salt-water vault (a thousand miles wide, storming at the god's will); Huan-Ti's smoke-realm with the unconsuming bamboo palace flames (water poured on them: 3d6 damage per GALLON of steam)."
+    },
+    {
+      "name": "ddkPandemoniumStructure",
+      "value": true,
+      "comment": "the Pandemonium structure: the underground opposite of Gladsheim - a great mass pierced by innumerable wind-carved tunnels; gravity away from the cavern center (walls, floors and ceilings all walkable); rivers along the floors or straight down the middle through the air; no constant light (fires quickly extinguished, a lasting light seen for miles and attracting the dark-seers; infravision works but the underworld spirits radiate no heat); four layers - Pandeemos the habitable top (the Styx's tunnels, the cities and citadels), Cocytus the lamentation layer (shriller, tool-carved by unknown hands), Phlegethon the light-swallowing wet blackness, and Agathion the solid-rock deep dotted with spherical bubbles (the windstorms, the stale air or vacuum at 50/50, the prisons of what the Powers will not wake); barriers found by dead-end passages with strong wind, which carries loose items between layers."
+    },
+    {
+      "name": "ddkPandemoniumPortals",
+      "value": true,
+      "comment": "the Pandemonium portals: flat squares in the cavern walls - yellow to Limbo, red to the Abyss, black to Concordant Opposition, but 20% misroute the traveler to one of the other two (50/50); no native life - immigrants, exiles and the marooned, the nameless demons, exiled demon lords, quasits and shadow demons in abundance."
+    },
+    {
+      "name": "ddkPandemoniumPowers",
+      "value": true,
+      "comment": "the Pandemonium Powers: Loki's Hidden Realm (a glittering white-crystal palace lighting a thousand miles, his evil unrestrained far from the pantheon, served by evil einheriar, a portal at its heart skipping Limbo entirely to Jotenheim); Tuonela of Tuonetar and Tuoni (ringed by the crimson river Manala flowing to the Styx - drink or touch it and desire drains away, wasting to death without a save or a remove curse; the daughters include Kipu-tytto of Tarterus and Loviatar of Gehenna); Anshar the retired Babylonian supreme (a walled city with a citadel reaching the cavern center, served by spirits in archaic dress speaking dead tongues); and Hruggek of the bugbears (a fortress at the junction of wind tunnels, grisly trophies, merciless bugbear spirit-servants immune to enchantment and charm)."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the LimboLayerCount pin",
+      "expr": "m['ddkLimboLayerCount']() != 5"
+    },
+    {
+      "note": "the EntrySafePct pin",
+      "expr": "m['ddkEntrySafePct']() != 20"
+    },
+    {
+      "note": "the SafeZoneYardsPerInt pin",
+      "expr": "m['ddkSafeZoneYardsPerInt']() != 100"
+    },
+    {
+      "note": "the ChaosMatterHours pin",
+      "expr": "m['ddkChaosMatterHours']() != 10"
+    },
+    {
+      "note": "the PandemoniumShoutFeet pin",
+      "expr": "m['ddkPandemoniumShoutFeet']() != 10"
+    },
+    {
+      "note": "the WindLiftPounds pin",
+      "expr": "m['ddkWindLiftPounds']() != 100"
+    },
+    {
+      "note": "the LimboDoctrine pin",
+      "expr": "m['ddkLimboDoctrine']() != 1"
+    },
+    {
+      "note": "the LimboPortals pin",
+      "expr": "m['ddkLimboPortals']() != 1"
+    },
+    {
+      "note": "the SlaadRule pin",
+      "expr": "m['ddkSlaadRule']() != 1"
+    },
+    {
+      "note": "the GithzeraiRule pin",
+      "expr": "m['ddkGithzeraiRule']() != 1"
+    },
+    {
+      "note": "the ChaosElementalRule pin",
+      "expr": "m['ddkChaosElementalRule']() != 1"
+    },
+    {
+      "note": "the LimboPowers pin",
+      "expr": "m['ddkLimboPowers']() != 1"
+    },
+    {
+      "note": "the PandemoniumStructure pin",
+      "expr": "m['ddkPandemoniumStructure']() != 1"
+    },
+    {
+      "note": "the PandemoniumPortals pin",
+      "expr": "m['ddkPandemoniumPortals']() != 1"
+    },
+    {
+      "note": "the PandemoniumPowers pin",
+      "expr": "m['ddkPandemoniumPowers']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the limbo and pandemonium pins": [
+      {
+        "kind": "const",
+        "name": "ddkLimboLayerCount"
+      },
+      {
+        "kind": "const",
+        "name": "ddkEntrySafePct"
+      },
+      {
+        "kind": "const",
+        "name": "ddkSafeZoneYardsPerInt"
+      },
+      {
+        "kind": "const",
+        "name": "ddkChaosMatterHours"
+      },
+      {
+        "kind": "const",
+        "name": "ddkPandemoniumShoutFeet"
+      },
+      {
+        "kind": "const",
+        "name": "ddkWindLiftPounds"
+      },
+      {
+        "kind": "bool",
+        "name": "ddkLimboDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddkLimboPortals"
+      },
+      {
+        "kind": "bool",
+        "name": "ddkSlaadRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddkGithzeraiRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddkChaosElementalRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddkLimboPowers"
+      },
+      {
+        "kind": "bool",
+        "name": "ddkPandemoniumStructure"
+      },
+      {
+        "kind": "bool",
+        "name": "ddkPandemoniumPortals"
+      },
+      {
+        "kind": "bool",
+        "name": "ddkPandemoniumPowers"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "chaos supreme",
+      "from": "  - [ ] Limbo (pp. 97-99)",
+      "to": "  - [x] Limbo (pp. 97-99) - R582: chaos supreme (the random entry, the safe-zone radius ladder, the 1d10-hour matter, the slaadi, the githzerai, the floating realms)"
+    },
+    {
+      "note": "the howling tunnels",
+      "from": "  - [ ] Pandemonium (pp. 99-101)",
+      "to": "  - [x] Pandemonium (pp. 99-101) - R582: the howling tunnels (the four layers, the 10-foot noise rule, the wind lifts, Loki's Hidden Realm, Tuonela and the Manala)"
+    },
+    {
+      "note": "the ddk entry pins",
+      "from": "  - [ ] The Limbo random-entry table (p. 97) - the baked/frozen/drowning/sliding-earth entry roll",
+      "to": "  - [x] The Limbo random-entry table (p. 97) - the baked/frozen/drowning/sliding-earth entry roll - R582: the ddk entry pins (the 20/20/20/20/9/9/2 d100 split, the drowning-compression-fire-cold effects)"
+    }
+  ],
+  "gap_census": {
+    "closed": 71,
+    "open": 19
+  },
+  "caller_files": [],
+  "inline_count": 15
+}

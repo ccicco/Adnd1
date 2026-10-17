@@ -10022,6 +10022,39 @@ when both halves land.
   modifications, Zeus's marble citadel) -
   OCR already gathered; Gladsheim follows to
   close the Upper Planes.
+- R581 LANDED 2026-10-17: commit f8974bd35e8a378224b37
+  d7bb32b375ccea94ef2 (census 504 -> 505,
+  pushed e2bceb9..f8974bd), OLYMPUS AND
+  GLADSHEIM, printed pp. 92-97, the last two
+  Upper Planes in one round - THE UPPER
+  PLANES ARE CLOSED: Olympus (the three
+  layers, the crimson-disk portals, the
+  creature modifications - size up, AC 2
+  better, claws +2, doubled hit dice, the
+  1-in-20 casters; the Greek pantheon from
+  Zeus's citadel, twice a common front; the
+  elvish Seldarine - Corellon, Evergold
+  shared with Aphrodite, the Leaflord, the
+  Chosen, Nephthys's lone desert) and
+  Gladsheim (the earthberg rivers with their
+  radiant undersides, Asgard/Muspelheim/
+  Nidavellir, the wells at 80%, the 10-yard
+  magic-stripping Bifrost, the 100-day
+  unclimbed Yggdrasil, the necromantic
+  cowardice ban in Asgard and Vanaheim, the
+  giant casters at 1-in-4/1-in-10/1-in-20,
+  and the full Asgard realm census). 5
+  consts + 7 bools, prefix ddj, header
+  rules/olympusgladsheim.h. TWO flips: gap
+  census 66/24 -> 68/22. Spec 15,347 bytes,
+  md5 891c83e48d7256cdaedcb5c92ea1fabd
+  matched exactly first try, 12 inlines.
+  SIXTEEN straight first-tries (R566-R581).
+  NEXT - R582: the Chaos side opens - Limbo
+  (pp. 97-99, the five layers, the random
+  entry table, the githzerai and the slaadi)
+  and likely Pandemonium (pp. 99-101) as the
+  pair.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
