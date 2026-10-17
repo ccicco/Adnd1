@@ -1,0 +1,642 @@
+{
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The plot and counterplot pins printed pp. 103-106: the chapter head (the story as important as the world setting, the DM as bard), the story structure (exposition, development, climax, denouement), the exposition techniques (the information cards, the combat opener, the advance information), the development craft (the minion encounters, the noncombat prods, the random-encounter balance, the semi-climax), the climax doctrine (game balance, the deadly potential, the adversary tactics, the emergency escape route, the staging), the denouement (the loose ends, the next-adventure lead), Multiple Story Lines (the epic form, the 3-4-session major objectives, the rare cliffhanger), and the Story Elements head with the Villains (the hierarchy, the familiarization, the surviving villain) and the Foreshadowing opener.",
+ "audit_label": "R552 DSG plot and counterplot audit",
+ "banner": {
+  "provenance": "djvu lines 13327-13752 with the Capture-layer pdf 104-107 cross-read (the pure-python extractor, parser page = printed page). The two reads agree across the round; no OCR-failure cells. The two-column Capture pages interleave in extraction but every load-bearing claim matched sentence-for-sentence against the djvu. The Foreshadowing section begins on p. 106 and its discussion crosses onto p. 107 (the capture page break and the djvu page marker disagree by a few lines there) - the section pins whole with the boundary noted. A CLEAN-READ ROUND. A ZERO-FLIP ROUND: the pp. 99-113 Campaign Considerations child stays open.",
+  "sentinel": "The campaign chapter: R550 the opener, R551 the worlds tail, R552 plot and counterplot; next the rest of the Story Elements pp. 107-108, the techniques pp. 109-112, help from the players p. 113, then the child flip.",
+  "title": "THE DSG PLOT AND COUNTERPLOT, R552: printed pp. 103-106 (pdf 104-107) - the storytelling doctrine: the chapter head (the story just as important as the world setting, perhaps the most important campaign element; the DM as bard or storyteller creating heroic fantasy with a few imaginative players, many DMs leaving room for improvement); The Story Structure (unchanged since writing developed, the ancient hearth storytellers exploiting it; the exposition introducing location and circumstances with main-conflict hints, arousing curiosity and motivating participation; the development with its gradual plot learning and rising tension, long stories carrying several climaxes; the climax resolving the major conflicts, the showdown with the evil source, satisfactory only after lesser challenges lead closer; the denouement as short retrospection - victors spoils, vanquished losses, PCs asking questions, basking in glory; all elements present with the timing to the storyteller); Exposition (the long-NPC-speech mistake boring the players into a bad start; the acted-out encounter with questions; the maps, characters and documents handouts; involvement beating passive reception; the information cards read aloud with the format fit - the parliament speaker roles - kept as references; the immediate combat opener especially for Adventurer-types, forcing teamwork, the attackers revealing vague clues during the attack or through prisoner confessions; combat before the speech, players more willing to listen; the between-session advance information a few days ahead for ahead-of-time plans); Development (occupying more game time than all other elements combined, ideally multiple techniques; the minion encounters teaching the opposition - creature types, enthusiasm, training and equipment, motivation to serve the master; the noncombat prods - sages, seers, beggars, puzzling notes, cipher-concealed maps; not all development encounters advancing the plot, the random encounters as sudden challenge and combat, feedback deciding when combat is needed; combat eventually pointing to the climax, a semi-climactic encounter for the final combat of the evening making each session a short story); Climax (careful planning with game balance the primary requirement, no fiddling, the intelligently-run PCs holding a reasonable chance with escape possibilities on failure; more than a straight melee - mental with the physical, facing the adversary who controlled the evil forces, typically in its lair but not necessarily; the possibility of claiming character lives even in victory, no character needing to perish but sufficient challenge requiring deadly potential; the adversary tactics tailored to leader intelligence, the fight as important to them, the special aid against well-equipped PCs, the emergency escape route - neither villains nor heroes necessarily dying, the always-escaping-villain campaigns; several potential solutions, creative responses allowed, more than one route to success; the staging with dramatic visual effects, perilous terrain, portentous occasion - the evil temple or the fiery-chasm bridge against the random corridor; make it dramatic - threatened and exhilarated, tense with the outcome in doubt to the end, failure still significant unless through poor play or lack of cooperation, the key goal that everybody has fun); Denouement (tying up loose ends; perusing the foe's area, the choice magic item or two, the clues answering questions, the rescued grateful prisoners; the time of safety, the minor encounter anticlimactic, the arrogant PCs surprised as a reminder, nothing cast in stone; the next-adventure lead, the related adversary, avoiding the inn-and-mysterious- stranger opening); Multiple Story Lines (more than one story at a time, tailored to the player types, the long-running framework with per-session stories, lines dropped and resumed; the sequential series sharing a grand purpose - the heroic epic, a single story with many episodes, the fine noble broad purpose: saving a world or nation, defending a god or religion, exploring a vast uncharted realm; the good-aligned main characters and the good-sanctioned cause, the participants changed usually for the better, the purpose gained at some cost; the years-spanning conflict, the isolated challenges as sessions, the level advancement, the small victories as rewards beyond gold and magic; the momentum demand - the session-ending plot climax, the major objective every 3-4 sessions; the cliffhanger with its remarkably low player tolerance, used rarely and only after a successful session climax; the periodic changes - the new epic every year or so, the occasional unrelated side encounter with a meaningful reward, the periodic clues that the epic goal grows closer); and the Story Elements head with The Villains (the antagonist as any blocking force including weather, most often a living being, possibly several; the unintelligent foes worthy of single-session stories, the minimal-intelligence foes more rewarding with more tactical options and epic length; the villain hierarchy with its minor antagonists and the chief's identity as an early objective, all levels attended; the unique villain NPCs beyond the biggest orc; the familiarization without confrontation - hirelings naming him, the discovered messages, the victims' tales; the personal confrontation relished as culmination; the bumbling buffoon as the low-ranking exception; the main antagonist equal to the party together or protected by bodyguards, traps, fortifications, disguises; the surviving villain - the last-minute escape, the return promise, the rising-from-the-dead, the future structure and built-in motivation, the returning villain's power increased to maintain game balance) and the Foreshadowing opener (the vague hints, portents, dreams and clues that something is going to happen; the suspense and mystery; the warning use with the deadly trap foreshadowed - the black-hole message scrawled in blood, the exact nature unrevealed, the PCs on guard; the Problem-Solver affinity, the variety discipline, the augury invitation - the section crossing the pp. 106-107 boundary and completing next round)."
+ },
+ "bools": [
+  {
+   "comment": "the story designed for the players is just as important as the world setting; the story line may be the most important element in the campaign",
+   "name": "dceStoryEqualWorld",
+   "value": true
+  },
+  {
+   "comment": "the DM's function may be viewed as a bard or storyteller creating heroic fantasy with a few imaginative players; many DMs leave room for improvement, and the suggestions improve the skill and the fun",
+   "name": "dceDMAsBard",
+   "value": true
+  },
+  {
+   "comment": "standard story structure has changed little since writing developed; the ancient hearth storytellers understood and exploited it; the wise DM uses the time-honored technique",
+   "name": "dceStructureAncient",
+   "value": true
+  },
+  {
+   "comment": "the exposition introduces location and circumstances, often hints the story's main conflict, arouses the players' curiosity and motivates them to take part",
+   "name": "dceExpositionDefines",
+   "value": true
+  },
+  {
+   "comment": "development lets the players gradually learn the plot with rising tension as the stakes or danger become clear; a long story should have several climaxes along the way",
+   "name": "dceDevelopmentTension",
+   "value": true
+  },
+  {
+   "comment": "the climax resolves one or more major conflicts - the showdown between the PCs and the evil source they faced; satisfactory only after the characters overcame lesser challenges leading closer",
+   "name": "dceClimaxDefines",
+   "value": true
+  },
+  {
+   "comment": "the denouement is a short retrospection: victors enjoy spoils and review accomplishments, the vanquished count losses; the PCs ask questions, basking in glory before the next challenge",
+   "name": "dceDenouementDefines",
+   "value": true
+  },
+  {
+   "comment": "all the structural elements should be present in a DM's story; the exact timing and placement is left to the storyteller's judgment",
+   "name": "dceAllElementsPresent",
+   "value": true
+  },
+  {
+   "comment": "the common mistake: a long detailed NPC speech the PCs must sit through and obey - players almost always find it boring and the DM is off to a bad start",
+   "name": "dceSpeechMistake",
+   "value": true
+  },
+  {
+   "comment": "instead of reading an introduction, act out an encounter with an important NPC, giving players the opportunity to ask questions",
+   "name": "dceActOutEncounter",
+   "value": true
+  },
+  {
+   "comment": "distribute maps, characters, documents, or other handouts to the players",
+   "name": "dceHandouts",
+   "value": true
+  },
+  {
+   "comment": "PCs involved in the exposition enjoy it much more than passively receiving the same information",
+   "name": "dceInvolvementBeatsPassive",
+   "value": true
+  },
+  {
+   "comment": "the information cards read aloud at the game's start, the players introducing each other to the story; the format fit - each player assuming a speaker's role at a parliament or town council; the cards kept as handy references",
+   "name": "dceInformationCards",
+   "value": true
+  },
+  {
+   "comment": "engage the PCs in a combat encounter immediately - especially effective with Adventurer-types; it forces teamwork and immediate involvement; the attackers reveal vague clues during the attack or through prisoner confessions",
+   "name": "dceCombatOpener",
+   "value": true
+  },
+  {
+   "comment": "after a combat encounter the DM can spend more time on exposition; precede the long speech with combat - players more willing to listen",
+   "name": "dceCombatBeforeSpeech",
+   "value": true
+  },
+  {
+   "comment": "when players and DM can communicate between sessions, provide expository information a few days ahead; the players make plans ahead of time",
+   "name": "dceAdvanceInformation",
+   "value": true
+  },
+  {
+   "comment": "development occupies more game time than all other structural elements put together; ideally the DM employs more than one technique",
+   "name": "dceDevelopmentLongest",
+   "value": true
+  },
+  {
+   "comment": "encounters bearing a relationship to the primary villain develop the story - battling the foe's minions teaches the opposition: creature types, enthusiasm, training and equipment, motivation to serve the master",
+   "name": "dceMinionsTeach",
+   "value": true
+  },
+  {
+   "comment": "sages, seers, beggars and other NPCs serve as gentle prods toward the right direction; puzzling notes and cipher-concealed maps provide clues",
+   "name": "dceNoncombatProds",
+   "value": true
+  },
+  {
+   "comment": "not all developmental encounters need advance the plot; random encounters create sudden challenge and combat; feedback decides when a combat encounter is necessary",
+   "name": "dceRandomBalance",
+   "value": true
+  },
+  {
+   "comment": "combat eventually points the characters toward the climax; arrange a semi-climactic encounter for the final combat of the evening, making each gaming session a short story in its own right",
+   "name": "dceSemimax",
+   "value": true
+  },
+  {
+   "comment": "the climactic encounter carefully planned with game balance the primary requirement - no fiddling necessary; balanced so intelligently-run PCs have a reasonable chance of overcoming, with possibilities for escape if they fail",
+   "name": "dceBalancePrimary",
+   "value": true
+  },
+  {
+   "comment": "the climax should involve more than a straight sword-swinging spell-casting melee - mental as well as physical challenges, facing the adversary who controlled the evil forces, typically in its lair but not necessarily",
+   "name": "dceMentalPhysical",
+   "value": true
+  },
+  {
+   "comment": "a climactic encounter should include the possibility of claiming one or more characters' lives even if the party wins; no character need perish, but sufficient challenge requires a foe with deadly potential",
+   "name": "dceDeadlyPotential",
+   "value": true
+  },
+  {
+   "comment": "tailor the adversary tactics to the leaders' intelligence; the fight as important to them as to the PCs; allow special aid against well-equipped PCs; the emergency escape route - neither villains nor heroes must necessarily die",
+   "name": "dceAdversaryTactics",
+   "value": true
+  },
+  {
+   "comment": "some of the most enjoyable long-running campaigns center on PCs trying to finish off a powerful villain who always seems to escape at the last minute",
+   "name": "dceEscapingVillain",
+   "value": true
+  },
+  {
+   "comment": "the climactic encounter should allow several potential solutions; be flexible with creative responses; a given encounter should have more than one route to success",
+   "name": "dceMultipleSolutions",
+   "value": true
+  },
+  {
+   "comment": "consider the staging - dramatic visual effects, perilous terrain, portentous occasion; the evil temple or the bridge swaying over a fiery chasm beats a randomly generated corridor",
+   "name": "dceStagingDrama",
+   "value": true
+  },
+  {
+   "comment": "make it dramatic: the PCs threatened and exhilarated, the outcome in doubt to the very end; even failure significant unless through poor play or lack of cooperation; the setting adds to the drama; the key goal is that everybody has fun",
+   "name": "dceDramatic",
+   "value": true
+  },
+  {
+   "comment": "the denouement ties up loose ends: perusing the foe's area, perhaps a choice magical item or two, clues answering questions, the newly rescued grateful prisoners as sources",
+   "name": "dceLooseEnds",
+   "value": true
+  },
+  {
+   "comment": "a time of safety - the major foe overthrown, a minor encounter anticlimactic; not cast in stone: overly arrogant PCs can receive a sudden surprise attack as a reminder of their limitations",
+   "name": "dceSafety",
+   "value": true
+  },
+  {
+   "comment": "the denouement often provides information leading to the next adventure - the related adversary keeping the plot moving, avoiding the same old gathered-at-the-inn mysterious-stranger opening",
+   "name": "dceNextAdventure",
+   "value": true
+  },
+  {
+   "comment": "a good campaign usually relies on more than one story at a time, tailored to the player types; a long-running story frameworks the campaign while each session tells a story within itself; lines dropped and resumed",
+   "name": "dceMultipleLines",
+   "value": true
+  },
+  {
+   "comment": "sequential stories sharing one grand purpose emulate the heroic epic: a single story with many episodes, each interrelated adventure bringing the fine noble purpose closer - broad scope like saving a world or nation, defending a god or religion, exploring a vast uncharted realm",
+   "name": "dceEpicForm",
+   "value": true
+  },
+  {
+   "comment": "epic main characters are traditionally good-aligned; the grand purpose good-sanctioned; participants often changed for the better; the purpose, if achieved, gained at some cost to the heroes",
+   "name": "dceEpicGood",
+   "value": true
+  },
+  {
+   "comment": "an epic provides an overriding conflict lasting years of play; the isolated challenges make ideal one-or-several-session adventures; PCs advance in level; the small victories become rewards beyond gold and magical items",
+   "name": "dceEpicYears",
+   "value": true
+  },
+  {
+   "comment": "an epic must move along or the goal seems unattainable; the objectives challenging and dramatic; each session ideally ends with some sort of plot climax",
+   "name": "dceEpicMomentum",
+   "value": true
+  },
+  {
+   "comment": "the cliffhanger alternative places the PCs in an unresolved predicament; players have remarkably low tolerance, so use it rarely and only after a successful session climax",
+   "name": "dceCliffhangerRare",
+   "value": true
+  },
+  {
+   "comment": "keep the game exciting: a new epic every year or so; the occasional side encounter unrelated to the epic but carrying a meaningful reward; periodic clues showing the epic goal gradually growing closer",
+   "name": "dcePeriodicChanges",
+   "value": true
+  },
+  {
+   "comment": "the antagonist is any force blocking the PCs' goals - weather or natural phenomena included - most often a living being, possibly represented by more than one creature",
+   "name": "dceAntagonistAnyForce",
+   "value": true
+  },
+  {
+   "comment": "unintelligent foes - a marauding band of cave bears - make worthy opponents for short, single-session stories",
+   "name": "dceUnintelligentFoes",
+   "value": true
+  },
+  {
+   "comment": "a foe of at least minimal intelligence is more interesting and rewarding, presenting many more tactical options and supporting stories of considerable, even epic, length",
+   "name": "dceMinimalIntelligence",
+   "value": true
+  },
+  {
+   "comment": "long stories and epics need a villain hierarchy: early adventures against minor antagonists, learning the chief bad guy's identity a rewarding early objective; attend to all levels, not just the top",
+   "name": "dceVillainHierarchy",
+   "value": true
+  },
+  {
+   "comment": "make villains unique NPCs - the orc chieftain developed beyond 'the biggest orc in the dungeon', with unique appearance and personality characteristics",
+   "name": "dceUniqueVillains",
+   "value": true
+  },
+  {
+   "comment": "familiarize the PCs with the villain without confrontation: hirelings naming him in combat or captivity, discovered messages revealing his nature, victims' tales of terror and woe",
+   "name": "dceFamiliarization",
+   "value": true
+  },
+  {
+   "comment": "familiarization adds the personal touch making the final confrontation very exciting - an individual sought over time and relished as culmination, not miscellaneous monsters",
+   "name": "dcePersonalConfrontation",
+   "value": true
+  },
+  {
+   "comment": "not all villains need be menacing foci of evil power - a bumbling buffoon can occasionally serve as an effective low-ranking villain",
+   "name": "dceBuffoon",
+   "value": true
+  },
+  {
+   "comment": "the main antagonist should be equal in power to the party of PCs taken together, or protected by an extensive series of bodyguards, traps, fortifications, or disguises; vanquishing him a challenging and dangerous encounter",
+   "name": "dceMainVillainPower",
+   "value": true
+  },
+  {
+   "comment": "the villain need not be slain to be vanquished: the last-minute escape leaving henchmen and holdings in shambles with a promise to return, or even returning from the dead; a ready-made future structure and built-in motivation; the returning villain's power increased to maintain the established game balance",
+   "name": "dceVillainSurvives",
+   "value": true
+  },
+  {
+   "comment": "foreshadowing means vague hints, portents, dreams, or other clues that something is going to happen; it builds suspense and increases mystery while familiarizing players with the obstacles in their path",
+   "name": "dceForeshadowDefines",
+   "value": true
+  },
+  {
+   "comment": "foreshadowing as warning: a very deadly trap's existence and some means of recognizing it foreshadowed - the 'Beware the chamber of the black hole' message scrawled in blood, the exact nature unrevealed, the PCs on guard",
+   "name": "dceForeshadowWarning",
+   "value": true
+  },
+  {
+   "comment": "foreshadowing is particularly effective for Problem-Solver players - many opportunities for challenging puzzles and riddles; vary the type (corridor after corridor of bloody writing loses its impact); players themselves invite it - an augury spell is an invitation to foreshadow",
+   "name": "dceForeshadowPuzzlers",
+   "value": true
+  }
+ ],
+ "caller_files": [],
+ "census_before": 475,
+ "chains": [],
+ "consts": [
+  {
+   "comment": "a major objective accomplished every 3-4 sessions, the minimum",
+   "name": "dceObjectiveSessionsMin",
+   "value": 3
+  },
+  {
+   "comment": "a major objective accomplished every 3-4 sessions, the maximum",
+   "name": "dceObjectiveSessionsMax",
+   "value": 4
+  },
+  {
+   "comment": "keep the game exciting with periodic changes: create a new epic every year or so",
+   "name": "dceEpicRefreshYears",
+   "value": 1
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['dceObjectiveSessionsMin']() != 3 or m['dceObjectiveSessionsMax']() != 4",
+   "note": "the epic cadence: a major objective accomplished every 3-4 sessions."
+  },
+  {
+   "expr": "m['dceEpicRefreshYears']() != 1",
+   "note": "the periodic changes: a new epic every year or so."
+  },
+  {
+   "expr": "m['dceExpositionDefines']() != 1 or m['dceClimaxDefines']() != 1 or m['dceDenouementDefines']() != 1",
+   "note": "the structure: exposition, climax, denouement defined."
+  },
+  {
+   "expr": "m['dceSpeechMistake']() != 1 or m['dceCombatOpener']() != 1 or m['dceInformationCards']() != 1",
+   "note": "the exposition craft: the speech mistake, the combat opener, the cards."
+  },
+  {
+   "expr": "m['dceBalancePrimary']() != 1 or m['dceDeadlyPotential']() != 1 or m['dceMultipleSolutions']() != 1",
+   "note": "the climax doctrine: balance, deadly potential, multiple solutions."
+  },
+  {
+   "expr": "m['dceEscapingVillain']() != 1 or m['dceVillainSurvives']() != 1",
+   "note": "the surviving villain: the escape route and the returning foe."
+  },
+  {
+   "expr": "m['dceEpicForm']() != 1 or m['dceCliffhangerRare']() != 1",
+   "note": "the epic: the form, the rare cliffhanger."
+  },
+  {
+   "expr": "m['dceVillainHierarchy']() != 1 or m['dceForeshadowWarning']() != 1",
+   "note": "the story elements: the villain hierarchy, the warning foreshadow."
+  }
+ ],
+ "gap_census": {
+  "closed": 140,
+  "open": 15
+ },
+ "gap_flips": [],
+ "gap_report": "tools/dsg_gap_report.md",
+ "header_file": "rules/dsgcamp3.h",
+ "header_sections": {
+  "the climax section": [
+   {
+    "kind": "bool",
+    "name": "dceBalancePrimary"
+   },
+   {
+    "kind": "bool",
+    "name": "dceMentalPhysical"
+   },
+   {
+    "kind": "bool",
+    "name": "dceDeadlyPotential"
+   },
+   {
+    "kind": "bool",
+    "name": "dceAdversaryTactics"
+   },
+   {
+    "kind": "bool",
+    "name": "dceEscapingVillain"
+   },
+   {
+    "kind": "bool",
+    "name": "dceMultipleSolutions"
+   },
+   {
+    "kind": "bool",
+    "name": "dceStagingDrama"
+   },
+   {
+    "kind": "bool",
+    "name": "dceDramatic"
+   }
+  ],
+  "the denouement section": [
+   {
+    "kind": "bool",
+    "name": "dceLooseEnds"
+   },
+   {
+    "kind": "bool",
+    "name": "dceSafety"
+   },
+   {
+    "kind": "bool",
+    "name": "dceNextAdventure"
+   }
+  ],
+  "the development section": [
+   {
+    "kind": "bool",
+    "name": "dceDevelopmentLongest"
+   },
+   {
+    "kind": "bool",
+    "name": "dceMinionsTeach"
+   },
+   {
+    "kind": "bool",
+    "name": "dceNoncombatProds"
+   },
+   {
+    "kind": "bool",
+    "name": "dceRandomBalance"
+   },
+   {
+    "kind": "bool",
+    "name": "dceSemimax"
+   }
+  ],
+  "the exposition section": [
+   {
+    "kind": "bool",
+    "name": "dceSpeechMistake"
+   },
+   {
+    "kind": "bool",
+    "name": "dceActOutEncounter"
+   },
+   {
+    "kind": "bool",
+    "name": "dceHandouts"
+   },
+   {
+    "kind": "bool",
+    "name": "dceInvolvementBeatsPassive"
+   },
+   {
+    "kind": "bool",
+    "name": "dceInformationCards"
+   },
+   {
+    "kind": "bool",
+    "name": "dceCombatOpener"
+   },
+   {
+    "kind": "bool",
+    "name": "dceCombatBeforeSpeech"
+   },
+   {
+    "kind": "bool",
+    "name": "dceAdvanceInformation"
+   }
+  ],
+  "the foreshadowing section": [
+   {
+    "kind": "bool",
+    "name": "dceForeshadowDefines"
+   },
+   {
+    "kind": "bool",
+    "name": "dceForeshadowWarning"
+   },
+   {
+    "kind": "bool",
+    "name": "dceForeshadowPuzzlers"
+   }
+  ],
+  "the multiple story lines section": [
+   {
+    "kind": "bool",
+    "name": "dceMultipleLines"
+   },
+   {
+    "kind": "bool",
+    "name": "dceEpicForm"
+   },
+   {
+    "kind": "bool",
+    "name": "dceEpicGood"
+   },
+   {
+    "kind": "bool",
+    "name": "dceEpicYears"
+   },
+   {
+    "kind": "bool",
+    "name": "dceEpicMomentum"
+   },
+   {
+    "kind": "const",
+    "name": "dceObjectiveSessionsMin"
+   },
+   {
+    "kind": "const",
+    "name": "dceObjectiveSessionsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dceCliffhangerRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dcePeriodicChanges"
+   },
+   {
+    "kind": "const",
+    "name": "dceEpicRefreshYears"
+   }
+  ],
+  "the story structure section": [
+   {
+    "kind": "bool",
+    "name": "dceStoryEqualWorld"
+   },
+   {
+    "kind": "bool",
+    "name": "dceDMAsBard"
+   },
+   {
+    "kind": "bool",
+    "name": "dceStructureAncient"
+   },
+   {
+    "kind": "bool",
+    "name": "dceExpositionDefines"
+   },
+   {
+    "kind": "bool",
+    "name": "dceDevelopmentTension"
+   },
+   {
+    "kind": "bool",
+    "name": "dceClimaxDefines"
+   },
+   {
+    "kind": "bool",
+    "name": "dceDenouementDefines"
+   },
+   {
+    "kind": "bool",
+    "name": "dceAllElementsPresent"
+   }
+  ],
+  "the villains section": [
+   {
+    "kind": "bool",
+    "name": "dceAntagonistAnyForce"
+   },
+   {
+    "kind": "bool",
+    "name": "dceUnintelligentFoes"
+   },
+   {
+    "kind": "bool",
+    "name": "dceMinimalIntelligence"
+   },
+   {
+    "kind": "bool",
+    "name": "dceVillainHierarchy"
+   },
+   {
+    "kind": "bool",
+    "name": "dceUniqueVillains"
+   },
+   {
+    "kind": "bool",
+    "name": "dceFamiliarization"
+   },
+   {
+    "kind": "bool",
+    "name": "dcePersonalConfrontation"
+   },
+   {
+    "kind": "bool",
+    "name": "dceBuffoon"
+   },
+   {
+    "kind": "bool",
+    "name": "dceMainVillainPower"
+   },
+   {
+    "kind": "bool",
+    "name": "dceVillainSurvives"
+   }
+  ]
+ },
+ "include_after": "#include \"rules/dsgcamp2.h\"  // R551: the DSG worlds of adventure pins",
+ "include_comment": "the DSG plot and counterplot pins",
+ "inline_count": 55,
+ "prefix": "dce",
+ "prev_record": [
+  "- R551 LANDED 2026-10-17: commit 739d8fbc051f0cadb4b109",
+  "  cd69112972e939a078 (census 474 -> 475, pushed",
+  "  033b439..739d8fb), THE REST OF WORLDS OF",
+  "  ADVENTURE, printed pp. 101-103 (pdf 102-104) -",
+  "  the second half of the setting-design doctrine:",
+  "  the location-type variety (the underworld's",
+  "  missing climate criterion, the natural/",
+  "  artificial source, the unique area features, the",
+  "  inhabitant variety, the individualistic monsters",
+  "  - the fashion-judge orc chieftain, the",
+  "  story-starved captor chieftain - the",
+  "  stale-campaign surprise cure), the dangerous/",
+  "  safe mix (the friendly NPC encounters, the",
+  "  shoot-first consequences, the tranquil havens,",
+  "  the no-regular-haven-violations rule),",
+  "  Consistency (the underlying-idea rule, the",
+  "  familiarity-over-realism doctrine with the",
+  "  dragon example, the source and historical",
+  "  familiarity, the stable world rules, the nature",
+  "  laws - seasons, snowy mountaintops, tides - the",
+  "  growing familiarity, the law consequences with",
+  "  the treasury-thief example), the Intelligent",
+  "  Races questionnaire (foresight, the",
+  "  original-vs-known split, appearance, livelihood,",
+  "  the civilization hallmarks - literacy,",
+  "  metalworking, beyond-borders knowledge - the",
+  "  settlement scale, the customs with the",
+  "  empty-palm/handshake show-no-weapon example, the",
+  "  limitations, the preferences, the glocks, the",
+  "  first impressions), and Uniqueness (the DM's",
+  "  style, the unusual names, the new architecture",
+  "  and plant forms, the faithful-recreation",
+  "  exception). PURE-PROSE ROUND: 0 consts + 37",
+  "  bools, prefix dcd, header rules/dsgcamp2.h,",
+  "  spec 22,397 bytes, md5 7f95ce1627720d18ed4aab",
+  "  b6b61387ed2 matched exactly first try, 37",
+  "  inlines; djvu lines 13013-13326 with the Capture",
+  "  pdf 102-104 cross-read (clean; the one garble",
+  "  capture determinatibn->determination by djvu;",
+  "  the glocks passage identical in both reads).",
+  "  AUTHORING STUMBLES CAUGHT IN STAGING: the",
+  "  inline_count said 38 for 37 pins, and the first",
+  "  engine run hit the mixed applied/already state",
+  "  because prev_seed_key pointed at R549 while the",
+  "  seed at HEAD already held the R550 record - the",
+  "  R551 spec must insert the R550 record",
+  "  (prev_seed_key = R550's opening line). Both",
+  "  fixed before publish. A ZERO-FLIP ROUND: gap",
+  "  census stays 140/15. NEXT - R551: Plot and",
+  "  Counterplot: The Importance of Story, printed",
+  "  pp. 103-106 (the story structure - exposition,",
+  "  climax, denouement - the exposition techniques",
+  "  against the long NPC speech, the buildup",
+  "  techniques; djvu from ~line 13327), then the",
+  "  story techniques pp. 109-112, help from the",
+  "  players p. 113, then the child flip."
+ ],
+ "prev_seed_key": "- R551 LANDED 2026-10-17: commit 739d8fbc051f0cadb4b109",
+ "regtest": "regtest.cpp",
+ "round": 552,
+ "seed_anchor": "## Knowledge maintenance",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "switches": [],
+ "table_checks": [],
+ "tables": [],
+ "title": "the DSG plot and counterplot"
+}

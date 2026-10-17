@@ -8814,6 +8814,62 @@ when both halves land.
   103-106), the techniques + matrix campaign (pp.
   109-112), help from the players (p. 113), then
   the child flip.
+- R551 LANDED 2026-10-17: commit 739d8fbc051f0cadb4b109
+  cd69112972e939a078 (census 474 -> 475, pushed
+  033b439..739d8fb), THE REST OF WORLDS OF
+  ADVENTURE, printed pp. 101-103 (pdf 102-104) -
+  the second half of the setting-design doctrine:
+  the location-type variety (the underworld's
+  missing climate criterion, the natural/
+  artificial source, the unique area features, the
+  inhabitant variety, the individualistic monsters
+  - the fashion-judge orc chieftain, the
+  story-starved captor chieftain - the
+  stale-campaign surprise cure), the dangerous/
+  safe mix (the friendly NPC encounters, the
+  shoot-first consequences, the tranquil havens,
+  the no-regular-haven-violations rule),
+  Consistency (the underlying-idea rule, the
+  familiarity-over-realism doctrine with the
+  dragon example, the source and historical
+  familiarity, the stable world rules, the nature
+  laws - seasons, snowy mountaintops, tides - the
+  growing familiarity, the law consequences with
+  the treasury-thief example), the Intelligent
+  Races questionnaire (foresight, the
+  original-vs-known split, appearance, livelihood,
+  the civilization hallmarks - literacy,
+  metalworking, beyond-borders knowledge - the
+  settlement scale, the customs with the
+  empty-palm/handshake show-no-weapon example, the
+  limitations, the preferences, the glocks, the
+  first impressions), and Uniqueness (the DM's
+  style, the unusual names, the new architecture
+  and plant forms, the faithful-recreation
+  exception). PURE-PROSE ROUND: 0 consts + 37
+  bools, prefix dcd, header rules/dsgcamp2.h,
+  spec 22,397 bytes, md5 7f95ce1627720d18ed4aab
+  b6b61387ed2 matched exactly first try, 37
+  inlines; djvu lines 13013-13326 with the Capture
+  pdf 102-104 cross-read (clean; the one garble
+  capture determinatibn->determination by djvu;
+  the glocks passage identical in both reads).
+  AUTHORING STUMBLES CAUGHT IN STAGING: the
+  inline_count said 38 for 37 pins, and the first
+  engine run hit the mixed applied/already state
+  because prev_seed_key pointed at R549 while the
+  seed at HEAD already held the R550 record - the
+  R551 spec must insert the R550 record
+  (prev_seed_key = R550's opening line). Both
+  fixed before publish. A ZERO-FLIP ROUND: gap
+  census stays 140/15. NEXT - R551: Plot and
+  Counterplot: The Importance of Story, printed
+  pp. 103-106 (the story structure - exposition,
+  climax, denouement - the exposition techniques
+  against the long NPC speech, the buildup
+  techniques; djvu from ~line 13327), then the
+  story techniques pp. 109-112, help from the
+  players p. 113, then the child flip.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
