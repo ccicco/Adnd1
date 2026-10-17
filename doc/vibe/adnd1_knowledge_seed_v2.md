@@ -8278,6 +8278,55 @@ when both halves land.
   bowlers, trappers, xorn, piercers, rock reptiles, scum
   creepers, mud men; the same copper-iron veins continuing
   - djvu head read, capture warm.
+- R541 LANDED 2026-10-17: commit d346677f94e4a3f66c8541fad5b3d
+  76597fa8cc1 (census 464 -> 465, pushed 00a983f..d346677), THE
+  DSG DEEPEARTH AREAS 16-17, printed pp. 88-89 (pdf 89-90) -
+  Area 16 the Mid-Level Caverns (the 1,000-ft spiral stairway
+  with 10-ft width, 1-ft-deep stairs, 8-inch drops, hollow
+  10-ft shaft, no guardrail; the living caves; the drapery
+  central cave ringed by 12+ smaller caves; the steep west
+  descent - 20-ft-wide cavern, 1d6x10-ft cliffs, two 3-ft
+  pinches; the clear pools, largest 50 ft, commonly 20-30 ft
+  deep; wilderness status with pech/jermalaine/derro/drow
+  passing through; the monster caves - greater basilisk +
+  mimics central, bowlers, trappers, xorn, piercers, rock
+  reptiles, scum creepers, mud men in the flanks; fresh
+  water/stuffy air/fungi; the Area 14 copper-iron veins
+  streaking the draperies green/red; and the mud men's
+  enchanted stream - potion of healing from its niche, magic
+  lost to any container), and Area 17 the Lower Lake (the
+  12x13-mile cavern, 600 ft high, bottom 500 ft water; the
+  ceiling spout from the Upper Lake drain; the inaccessible
+  shoreline, tunnel mouth 50 ft above the surface; the
+  northern river 100 ft wide, 1d10+10 deep, ceiling 20-50
+  ft; the silt floor; six underwater caves 100+ ft down; the
+  aboleth-kuo-toa war; the kuo-toan southern domed city and
+  inter-lake path; ~300 aboleth in the northern floating city
+  with river-mouth guards; the fresh-water kraken - 40-ft
+  entrance tunnel, 50 mixed-race slaves with a truce,
+  tailing-stone pile; the >100,000-gp gold dust at 500 ft
+  under the spout; the drain plunge - 2d6 rounds submerged,
+  100-ft fall, 6d6 non-native halved on breath save, 3d6
+  native negated on save; the aboleth city - 1,000-ft mucous
+  disk, six slim towers, drain-holed wall, 20-30-ft lairs
+  with 1 entrance, ~100-ft clan halls/nurseries/prisons with
+  6 3-ft entrance holes, half water/half air with perch
+  ledges, slave races held apart, Three Clans halls, 40-ft
+  buoyancy disk). A CLEAN-READ ROUND: both machine reads
+  agree on every number (djvu ~lines 11260-11493, capture
+  idx 400-412; the capture '1dlO + 10' settled by the djvu
+  as 1d10 + 10). 60 inlines (44 consts + 16 bools), header
+  rules/dsgarea8.h, prefix dnaj, no table. DELIVERY clean
+  md5-exact on the first try (the bn-free ritual): authored
+  md5 6b5948ecc46381e012c183769e582bc4 matched exactly
+  (spec 30,365 bytes), engine applied 4 then 0/4, preflight
+  GREEN with AUDIT CENSUS: 465. A ZERO-FLIP ROUND: gap
+  census stays 139/16, the pp. 75-98 Deepearth child open.
+  NEXT - R542: Area 18 the Steam-Heated Caverns (printed
+  pp. 90-91, pdf 91-92, djvu ~line 11485+) - volcanic
+  fissures, the hot-water chute joining the meandering river
+  five miles south, six large steamy caves, boiling-to-cool
+  pools, mildew-slick rock - likely paired with Area 19.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

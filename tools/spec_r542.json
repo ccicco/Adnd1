@@ -1,0 +1,793 @@
+{
+ "round": 542,
+ "prefix": "dnak",
+ "header_file": "rules/dsgarea9.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 465,
+ "title": "the DSG Deepearth areas 18-19",
+ "audit_label": "R542 DSG Deepearth areas 18-19 audit",
+ "audit_comment": "The DSG Deepearth areas 18-19 pin Area 18 (the Steam-Heated Caverns with their hot-stream chute, the six caves, the superheated north tunnel, the fire giant clan and the geysers) and Area 19 (the Chambers of Fire with their fissure eruptions, the mephits, fire bats and magmen, and the remote cavern of toil).",
+ "include_comment": "the DSG Deepearth areas 18-19 pins",
+ "include_after": "#include \"rules/dsgarea8.h\"  // R541: the DSG Deepearth areas 16-17 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R541 LANDED 2026-10-17: commit d346677f94e4a3f66c8541fad5b3d",
+ "prev_record": [
+  "- R541 LANDED 2026-10-17: commit d346677f94e4a3f66c8541fad5b3d",
+  "  76597fa8cc1 (census 464 -> 465, pushed 00a983f..d346677), THE",
+  "  DSG DEEPEARTH AREAS 16-17, printed pp. 88-89 (pdf 89-90) -",
+  "  Area 16 the Mid-Level Caverns (the 1,000-ft spiral stairway",
+  "  with 10-ft width, 1-ft-deep stairs, 8-inch drops, hollow",
+  "  10-ft shaft, no guardrail; the living caves; the drapery",
+  "  central cave ringed by 12+ smaller caves; the steep west",
+  "  descent - 20-ft-wide cavern, 1d6x10-ft cliffs, two 3-ft",
+  "  pinches; the clear pools, largest 50 ft, commonly 20-30 ft",
+  "  deep; wilderness status with pech/jermalaine/derro/drow",
+  "  passing through; the monster caves - greater basilisk +",
+  "  mimics central, bowlers, trappers, xorn, piercers, rock",
+  "  reptiles, scum creepers, mud men in the flanks; fresh",
+  "  water/stuffy air/fungi; the Area 14 copper-iron veins",
+  "  streaking the draperies green/red; and the mud men's",
+  "  enchanted stream - potion of healing from its niche, magic",
+  "  lost to any container), and Area 17 the Lower Lake (the",
+  "  12x13-mile cavern, 600 ft high, bottom 500 ft water; the",
+  "  ceiling spout from the Upper Lake drain; the inaccessible",
+  "  shoreline, tunnel mouth 50 ft above the surface; the",
+  "  northern river 100 ft wide, 1d10+10 deep, ceiling 20-50",
+  "  ft; the silt floor; six underwater caves 100+ ft down; the",
+  "  aboleth-kuo-toa war; the kuo-toan southern domed city and",
+  "  inter-lake path; ~300 aboleth in the northern floating city",
+  "  with river-mouth guards; the fresh-water kraken - 40-ft",
+  "  entrance tunnel, 50 mixed-race slaves with a truce,",
+  "  tailing-stone pile; the >100,000-gp gold dust at 500 ft",
+  "  under the spout; the drain plunge - 2d6 rounds submerged,",
+  "  100-ft fall, 6d6 non-native halved on breath save, 3d6",
+  "  native negated on save; the aboleth city - 1,000-ft mucous",
+  "  disk, six slim towers, drain-holed wall, 20-30-ft lairs",
+  "  with 1 entrance, ~100-ft clan halls/nurseries/prisons with",
+  "  6 3-ft entrance holes, half water/half air with perch",
+  "  ledges, slave races held apart, Three Clans halls, 40-ft",
+  "  buoyancy disk). A CLEAN-READ ROUND: both machine reads",
+  "  agree on every number (djvu ~lines 11260-11493, capture",
+  "  idx 400-412; the capture '1dlO + 10' settled by the djvu",
+  "  as 1d10 + 10). 60 inlines (44 consts + 16 bools), header",
+  "  rules/dsgarea8.h, prefix dnaj, no table. DELIVERY clean",
+  "  md5-exact on the first try (the bn-free ritual): authored",
+  "  md5 6b5948ecc46381e012c183769e582bc4 matched exactly",
+  "  (spec 30,365 bytes), engine applied 4 then 0/4, preflight",
+  "  GREEN with AUDIT CENSUS: 465. A ZERO-FLIP ROUND: gap",
+  "  census stays 139/16, the pp. 75-98 Deepearth child open.",
+  "  NEXT - R542: Area 18 the Steam-Heated Caverns (printed",
+  "  pp. 90-91, pdf 91-92, djvu ~line 11485+) - volcanic",
+  "  fissures, the hot-water chute joining the meandering river",
+  "  five miles south, six large steamy caves, boiling-to-cool",
+  "  pools, mildew-slick rock - likely paired with Area 19."
+ ],
+ "banner": {
+  "title": "THE DSG DEEPEARTH AREAS 18-19, R542: printed pp. 90-91 (pdf 91-92) - the individual area key crosses the volcanic belt: Area 18 the Steam-Heated Caverns (the water-eroded cavern region altered by volcanic upheavals, its sharp fissures tapped into the caves; the meandering river from the Lower Lake reaching a connecting cavern five miles south, the source of a rapid hot stream that joins the river as the riverbed descends; the wide fine-sand shoreline landing for boats; the artificially expanded, straightened chute tunnel racing hot water into the river; the six large caves joined by narrow passages, steamy air, coated rock, boiling-to-cool pools and the slippery mildew; the north tunnel to Area 21 with its once-an-hour superheated blasts, 2% per round cumulative, 4d6 halved on a breath save; the east-tunnel stream inflicting 4d6 per round; the Plane of Fire spillover - efreet, fire elementals, salamanders, fire bats; the hell hounds, rats, green slime, crawlers and megalo centipedes; the fire giants holding sway, their nomadic clan numbering over 50; the half-usual fatigue in the muggy air; and the geysers - a 20% pool susceptibility, 6d6 halved on a save), and Area 19 the Chambers of Fire (the caves baked by the geothermal sources; the swept-clean approach tunnel at 1d6 per turn, dousing to avoid; the roughly circular caverns split by thousands-of-feet floor fissures belching smoke, poison gas, steam and fire once per hour at 25% per type for 1d6 rounds; the dangerous cave heat at 1d6 per round, halved by dousing; the eruption volley - 6d6 per round from steam or fire halved on a breath save, poison gas save-or-die, 1d4 turns of smoke at the page 36 effects; the slender stone arches at 50% over the 3d6-foot fissures; the four mephit forms at 50% after the matching eruption; the common fire bats; the diving magmen; the breathable but smoky air and the mildew; and the remote cavern where the toiling mephits widen the 20-foot fissure with their fireproof pickaxes, 21-40 of them entering per eruption, throwing intruders in as offerings to bring through a monstrously evil creature of the dark lower planes).",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~11485-11685) with the pdf Acrobat-Capture layer as the second read (idx 206 and 208 = the printed pp. 90-91 windows); the compiled-tables appendix has no reprint of this prose. A CLEAN-READ ROUND: both machine reads agree on every load-bearing number - the five-mile junction, the six caves, the 2%-cumulative blast with its 4d6, the 4d6 stream, the 50-giant clan, the 20%/6d6 geysers, the 1d6-per-turn tunnel, the 25% eruption types lasting 1d6 rounds, the 1d6-per-round caves, the 6d6 steam-or-fire, the 1d4-turn smoke, the 50% arches over the 3d6-foot fissures, the four mephit forms at 50%, and the 21-40 (1d20+20) toiling mephits widening the 20-foot fissure; the only garbles settled cross-read (the djvu 296 and 346-foot garbles for the capture 2% and 3d6, the capture ld6/ld4/ld20+20 for the djvu 1d6 and 1d4 and 1d20+20). SEAMS: the R518 water travel (the river junction and the chute), the Monster Manual denizens (the efreet, salamanders, hell hounds, fire giants, mephits, magmen and lava children to come in Area 20), the PHB fire resistance and breath saves, and the page 36 smoke rules. A ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains open until the setting lands in full (the R527/R533-R541 precedent - the gap report is NOT in the git add). Nothing auto-credits.",
+  "sentinel": "A procedural-plus-prose round: no tables pin. The numbers pin as consts per the R508 convention - the junction miles, the cave count, the blast base and step percentages, the dice of the blast, stream and geyser damage, the giant clan size, the fatigue divisor, the geyser pool percentage, the tunnel and cave damage dice, the eruption type percentage and rounds, the eruption damage dice, the smoke turns, the arch percentage, the fissure width dice, the mephit forms and follow percentage, and the toiling-mephit count with its sides and base and the 20-foot fissure width, with the 4d6, 6d6, 1d6, 1d4, 3d6 and 1d20+20 dice pinned as count-sides(-multiplier/base) const pairs or triples. The geography, denizens, resources and unique-features prose pins as bools for both areas. The water-travel/MM/PHB seams are noted; the Deepearth child stays open; nothing auto-credits."
+ },
+ "consts": [
+  {
+   "name": "dnakRiverMeetMiles",
+   "value": 5,
+   "comment": "the meandering river from the Lower Lake reaches a connecting cavern about five miles south of the main chambers of this area."
+  },
+  {
+   "name": "dnakCaveCount",
+   "value": 6,
+   "comment": "the main area of caverns contains six large caves."
+  },
+  {
+   "name": "dnakBlastPctBase",
+   "value": 2,
+   "comment": "the north tunnel to Area 21 is subject to blasts of superheated air about once an hour: a 2% chance per round after a blast (the base chance)."
+  },
+  {
+   "name": "dnakBlastPctStep",
+   "value": 2,
+   "comment": "the superheated-air chance is cumulative - 2% the first round after a blast, 4% the next round, 6% after that, etc. (the step)."
+  },
+  {
+   "name": "dnakBlastDmgDice",
+   "value": 4,
+   "comment": "characters in the north tunnel at the time of a blast sustain 4d6 points of damage (the die count)."
+  },
+  {
+   "name": "dnakBlastDmgSides",
+   "value": 6,
+   "comment": "the superheated-air blast deals 4d6 damage to characters in the tunnel (the die sides)."
+  },
+  {
+   "name": "dnakStreamDmgDice",
+   "value": 4,
+   "comment": "the east-tunnel water inflicts 4d6 points of damage per round (the die count)."
+  },
+  {
+   "name": "dnakStreamDmgSides",
+   "value": 6,
+   "comment": "the east-tunnel water inflicts 4d6 damage per round (the die sides)."
+  },
+  {
+   "name": "dnakGiantClanOver",
+   "value": 50,
+   "comment": "when assembled, the clan of fire giants numbers over 50 individuals."
+  },
+  {
+   "name": "dnakFatigueDiv",
+   "value": 2,
+   "comment": "the fatigue time divisor: unused characters become fatigued in half the usual time."
+  },
+  {
+   "name": "dnakGeyserPoolPct",
+   "value": 20,
+   "comment": "a pool of water in this area is 20% likely to be susceptible to geyser activity."
+  },
+  {
+   "name": "dnakGeyserDmgDice",
+   "value": 6,
+   "comment": "characters caught in the force of one of these geothermal eruptions sustain 6d6 points of damage (the die count)."
+  },
+  {
+   "name": "dnakGeyserDmgSides",
+   "value": 6,
+   "comment": "the geothermal eruption deals 6d6 damage (the die sides)."
+  },
+  {
+   "name": "dnakTunnelDmgDice",
+   "value": 1,
+   "comment": "the approach tunnel is so hot that creatures not resistant to fire sustain 1d6 points of damage per turn (the die count)."
+  },
+  {
+   "name": "dnakTunnelDmgSides",
+   "value": 6,
+   "comment": "the approach tunnel deals 1d6 damage per turn to non-resistant creatures (the die sides)."
+  },
+  {
+   "name": "dnakEruptTypePct",
+   "value": 25,
+   "comment": "an eruption of one of these substances occurs with a 25% chance for any given type."
+  },
+  {
+   "name": "dnakEruptRoundsDice",
+   "value": 1,
+   "comment": "the eruption lasts for 1d6 rounds (the die count)."
+  },
+  {
+   "name": "dnakEruptRoundsSides",
+   "value": 6,
+   "comment": "the eruption lasts for 1d6 rounds (the die sides)."
+  },
+  {
+   "name": "dnakCaveDmgDice",
+   "value": 1,
+   "comment": "the average temperature in each cave is dangerously hot: creatures not resistant to fire suffer 1d6 points of damage per round (the die count)."
+  },
+  {
+   "name": "dnakCaveDmgSides",
+   "value": 6,
+   "comment": "the cave heat deals 1d6 damage per round to non-resistant creatures (the die sides)."
+  },
+  {
+   "name": "dnakEruptDmgDice",
+   "value": 6,
+   "comment": "the steam or fire eruption deals 6d6 damage per round (the die count)."
+  },
+  {
+   "name": "dnakEruptDmgSides",
+   "value": 6,
+   "comment": "the steam or fire eruption deals 6d6 damage per round (the die sides)."
+  },
+  {
+   "name": "dnakSmokeTurnsDice",
+   "value": 1,
+   "comment": "the smoke eruption fills the cave for 1d4 turns (the die count)."
+  },
+  {
+   "name": "dnakSmokeTurnsSides",
+   "value": 4,
+   "comment": "the smoke eruption fills the cave for 1d4 turns (the die sides)."
+  },
+  {
+   "name": "dnakArchPct",
+   "value": 50,
+   "comment": "there is a 50% chance that a given fissure is bridged in at least one spot by a slender stone arch."
+  },
+  {
+   "name": "dnakFissureWideDice",
+   "value": 3,
+   "comment": "a given fissure is 3d6 feet wide (the die count)."
+  },
+  {
+   "name": "dnakFissureWideSides",
+   "value": 6,
+   "comment": "a given fissure is 3d6 feet wide (the die sides)."
+  },
+  {
+   "name": "dnakMephitForms",
+   "value": 4,
+   "comment": "mephits, the most common denizens, are represented in all four of their forms: fire, lava, smoke and steam."
+  },
+  {
+   "name": "dnakMephitFollowPct",
+   "value": 50,
+   "comment": "mephits are 50% likely to be encountered immediately following an eruption of the appropriate type."
+  },
+  {
+   "name": "dnakToilMephitDice",
+   "value": 1,
+   "comment": "eruptions from the largest fissure bring 21-40 mephits (1d20 + 20) of the appropriate type with the first shock (the die count)."
+  },
+  {
+   "name": "dnakToilMephitSides",
+   "value": 20,
+   "comment": "the toiling mephits number 1d20 + 20 (the die sides)."
+  },
+  {
+   "name": "dnakToilMephitBase",
+   "value": 20,
+   "comment": "the toiling mephits number 1d20 + 20 (the base)."
+  },
+  {
+   "name": "dnakFissureWideFt",
+   "value": 20,
+   "comment": "the mephits aggressively toil to widen the fissure from its current width of 20 feet."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnakVolcanicFissures",
+   "value": true,
+   "comment": "the region formed by water erosion has been altered by major subterranean upheavals: fiery volcanic action in nearby sections of Deepearth created sharp fissures throughout the rock, and some of these cracks in the world tapped into the caverns."
+  },
+  {
+   "name": "dnakHotStreamJoin",
+   "value": true,
+   "comment": "the connecting cavern is the source of a rapid stream of relatively hot water that joins the river."
+  },
+  {
+   "name": "dnakRiverDescends",
+   "value": true,
+   "comment": "the river at this point picks up speed as the riverbed starts to descend more steeply."
+  },
+  {
+   "name": "dnakSandLanding",
+   "value": true,
+   "comment": "a wide shoreline coated with a beach of fine sand provides an easy landing for boat traffic."
+  },
+  {
+   "name": "dnakChuteTunnel",
+   "value": true,
+   "comment": "the hot-stream tunnel, once a natural cavern, has been artificially expanded to handle an increased flow: its course straightened and its rate of descent increased, so that the hot water races down a veritable chute into the river."
+  },
+  {
+   "name": "dnakNarrowPassages",
+   "value": true,
+   "comment": "the six large caves are connected by several narrow passages."
+  },
+  {
+   "name": "dnakSteamyAir",
+   "value": true,
+   "comment": "the air is steamy and hot, and water coats all rock surfaces."
+  },
+  {
+   "name": "dnakPoolRange",
+   "value": true,
+   "comment": "large pools of water fill the low spots in many of the caverns, their temperatures ranging from boiling hot to relatively cool."
+  },
+  {
+   "name": "dnakMildewSlip",
+   "value": true,
+   "comment": "mildew on most of the rock surfaces makes everything extremely slippery."
+  },
+  {
+   "name": "dnakBlastSaveHalf",
+   "value": true,
+   "comment": "the blast damage can be saved vs. breath weapon for half, and normal fire resistance benefits might reduce it further."
+  },
+  {
+   "name": "dnakStreamPartial",
+   "value": true,
+   "comment": "the east tunnel is the source of the outflowing stream, and the water there inflicts 4d6 points of damage per round with saves as above; characters only partly immersed take the damage reduced accordingly."
+  },
+  {
+   "name": "dnakFireHaven",
+   "value": true,
+   "comment": "a favorite haven for creatures who love fire and heat."
+  },
+  {
+   "name": "dnakPlaneSpillover",
+   "value": true,
+   "comment": "the Area 21 connection to the Elemental Plane of Fire has enabled creatures from that infernal place to proliferate."
+  },
+  {
+   "name": "dnakPlaneRefugees",
+   "value": true,
+   "comment": "efreet, fire elementals, salamanders and fire bats from the Plane of Fire can be encountered here; hostile and aggressive, they are far enough from their escape routes that they will not hesitate to flee an encounter going badly."
+  },
+  {
+   "name": "dnakLesserLairs",
+   "value": true,
+   "comment": "hell hounds, giant rats, green slime, carrion crawlers and even megalo centipedes have made these caverns their lairs and fight with normal tenacity."
+  },
+  {
+   "name": "dnakFireGiantSway",
+   "value": true,
+   "comment": "the fire giants hold sway over all the other denizens: occasionally accompanied by packs of hell hounds, they restlessly roam bullying the lesser creatures and slaying any who resist; nomadic though they claim the largest cavern as their lair."
+  },
+  {
+   "name": "dnakSteamFatigue",
+   "value": true,
+   "comment": "the muggy, oppressive air fatigues characters unused to the environment in half the usual time."
+  },
+  {
+   "name": "dnakNoMinerals",
+   "value": true,
+   "comment": "water is plentiful and food in the form of fungi is abundant, but no mineral wealth has been located here."
+  },
+  {
+   "name": "dnakGeysers",
+   "value": true,
+   "comment": "several caverns contain geysers capable of spouting scalding water and steam every bit as lethal as a red dragon's breath, and a number of narrow cracks and niches in the rock can issue such deadly blasts."
+  },
+  {
+   "name": "dnakGeyserSaveHalf",
+   "value": true,
+   "comment": "a saving throw vs. breath weapon reduces geyser damage to half, and fire resistant benefits can reduce it further."
+  },
+  {
+   "name": "dnakFireBaked",
+   "value": true,
+   "comment": "these caves are very close to the fiery geothermal heat sources that constantly bake this portion of Deepearth: formed by water erosion, they now quickly evaporate the small amount of water that flows into them."
+  },
+  {
+   "name": "dnakDryTunnel",
+   "value": true,
+   "comment": "the approach tunnel, once a natural cave with a sizable stream, has been swept clean by frequent blasts of tremendous heat and is devoid of cave formations."
+  },
+  {
+   "name": "dnakDouseAvoids",
+   "value": true,
+   "comment": "protective measures in the approach tunnel, such as frequently dousing with water, avoid the damage entirely."
+  },
+  {
+   "name": "dnakCircularCaves",
+   "value": true,
+   "comment": "the caves formed as a number of large, roughly circular caverns connected by an assortment of artificial and natural tunnels."
+  },
+  {
+   "name": "dnakFloorFissures",
+   "value": true,
+   "comment": "each large cave is split by a few long, narrow fissures in the floor, thousands of feet deep."
+  },
+  {
+   "name": "dnakFissureBelch",
+   "value": true,
+   "comment": "the fissures often belch out blistering clouds of smoke, poisonous gas, steam and fire, an average of once per hour in each cavern."
+  },
+  {
+   "name": "dnakDouseHalves",
+   "value": true,
+   "comment": "protective measures such as water dousing reduce the per-round cave damage to half but do not eliminate it entirely."
+  },
+  {
+   "name": "dnakEruptNoAid",
+   "value": true,
+   "comment": "if an eruption occurs while characters are in the cave, mundane protective measures are of no avail."
+  },
+  {
+   "name": "dnakEruptSaveHalf",
+   "value": true,
+   "comment": "if steam or fire erupts, characters in the cavern sustain 6d6 points of damage per round, a save vs. breath weapon reducing this to half."
+  },
+  {
+   "name": "dnakPoisonDeath",
+   "value": true,
+   "comment": "if poison gas erupts, a saving throw vs. poison is necessary to avoid death."
+  },
+  {
+   "name": "dnakSmokeEffects",
+   "value": true,
+   "comment": "smoke eruptions fill the cave for 1d4 turns, with the effects described on page 36 of the DSG."
+  },
+  {
+   "name": "dnakUnearthlyOnly",
+   "value": true,
+   "comment": "most earthly creatures are unable to survive the fiery environment; three types of unearthly creatures reside in the area."
+  },
+  {
+   "name": "dnakLavaGasLink",
+   "value": true,
+   "comment": "lava mephits are associated with poisonous gas eruptions for this purpose."
+  },
+  {
+   "name": "dnakMephitPurpose",
+   "value": true,
+   "comment": "the mephits are generally sent to the Prime Plane to accomplish some fiendish or demonic purpose, but seem to frequent the area simply because they like it; they cheerfully attack earthly creatures, and only in the remote cavern do they pursue a goal."
+  },
+  {
+   "name": "dnakFireBatsCommon",
+   "value": true,
+   "comment": "fire bats are also common, flapping about and swooping adroitly into and out of the fissures; they extend their flights into the approaching caverns but do not remain away from their fiery heat sources for long."
+  },
+  {
+   "name": "dnakMagmenDive",
+   "value": true,
+   "comment": "groups of magmen climb the sheer walls of the fissures from the furnaces below to joyously leap back down, plummeting thousands of feet into the molten rock; they spend several days per climb, eagerly ignite creatures and objects to gratify their sense of fun, and would enjoy persuading others into the diving game - so far they have found no takers."
+  },
+  {
+   "name": "dnakBadAir",
+   "value": true,
+   "comment": "the air is smoky, smells bad and occasionally becomes poisonous, but a series of narrow ceiling fissures vents most of the foul air, so enough fresh air flows in to keep the atmosphere breathable."
+  },
+  {
+   "name": "dnakMildewOnly",
+   "value": true,
+   "comment": "mildew has formed in some of the cooler out-of-the-way places - the only form of plant life in the area."
+  },
+  {
+   "name": "dnakMephitOfferings",
+   "value": true,
+   "comment": "in the most remote cavern the mephits delight in attacking intruders, dragging them to the largest fissure and throwing them in as offerings; they toil to widen it enough for a monstrously evil creature from one of the dark lower planes, and will continue for many years until they achieve their goal or a major catastrophe seals the fissure."
+  },
+  {
+   "name": "dnakFireproofTools",
+   "value": true,
+   "comment": "the mephits chip away with an assortment of superhardened metal tools lying about the cavern - small pickaxes with stone handles and metal picks, completely impervious to fire."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['dnakRiverMeetMiles']() != 5 or m['dnakCaveCount']() != 6",
+   "note": "the junction and the main caves: five miles south, the six large caves."
+  },
+  {
+   "expr": "m['dnakBlastPctBase']() != 2 or m['dnakBlastPctStep']() != 2 or m['dnakBlastDmgDice']() != 4 or m['dnakBlastDmgSides']() != 6",
+   "note": "the north tunnel: 2% per round cumulative in 2% steps, the 4d6 blast."
+  },
+  {
+   "expr": "m['dnakStreamDmgDice']() != 4 or m['dnakStreamDmgSides']() != 6",
+   "note": "the east stream: 4d6 damage per round."
+  },
+  {
+   "expr": "m['dnakGiantClanOver']() != 50 or m['dnakFatigueDiv']() != 2",
+   "note": "the fire giant clan over 50; the half-usual fatigue time."
+  },
+  {
+   "expr": "m['dnakGeyserPoolPct']() != 20 or m['dnakGeyserDmgDice']() != 6 or m['dnakGeyserDmgSides']() != 6",
+   "note": "the geysers: a 20% pool susceptibility, the 6d6 eruption."
+  },
+  {
+   "expr": "m['dnakTunnelDmgDice']() != 1 or m['dnakTunnelDmgSides']() != 6 or m['dnakCaveDmgDice']() != 1 or m['dnakCaveDmgSides']() != 6",
+   "note": "the Chambers heat: 1d6 per turn in the tunnel, 1d6 per round in the caves."
+  },
+  {
+   "expr": "m['dnakEruptTypePct']() != 25 or m['dnakEruptRoundsDice']() != 1 or m['dnakEruptRoundsSides']() != 6 or m['dnakEruptDmgDice']() != 6 or m['dnakEruptDmgSides']() != 6 or m['dnakSmokeTurnsDice']() != 1 or m['dnakSmokeTurnsSides']() != 4",
+   "note": "the fissure eruptions: 25% per type, 1d6 rounds, the 6d6 steam-and-fire, the 1d4-turn smoke."
+  },
+  {
+   "expr": "m['dnakArchPct']() != 50 or m['dnakFissureWideDice']() != 3 or m['dnakFissureWideSides']() != 6",
+   "note": "the arch bridges: 50% over the 3d6-foot fissures."
+  },
+  {
+   "expr": "m['dnakMephitForms']() != 4 or m['dnakMephitFollowPct']() != 50",
+   "note": "the mephits: four forms, 50% after the appropriate eruption."
+  },
+  {
+   "expr": "m['dnakToilMephitDice']() != 1 or m['dnakToilMephitSides']() != 20 or m['dnakToilMephitBase']() != 20 or m['dnakFissureWideFt']() != 20",
+   "note": "the toiling mephits: 21-40 (1d20+20) widening the fissure from its current 20 feet."
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Area 18 Steam-Heated section": [
+   {
+    "kind": "const",
+    "name": "dnakRiverMeetMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakVolcanicFissures"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakHotStreamJoin"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakRiverDescends"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakSandLanding"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakChuteTunnel"
+   },
+   {
+    "kind": "const",
+    "name": "dnakCaveCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakNarrowPassages"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakSteamyAir"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakPoolRange"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakMildewSlip"
+   },
+   {
+    "kind": "const",
+    "name": "dnakBlastPctBase"
+   },
+   {
+    "kind": "const",
+    "name": "dnakBlastPctStep"
+   },
+   {
+    "kind": "const",
+    "name": "dnakBlastDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnakBlastDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakBlastSaveHalf"
+   },
+   {
+    "kind": "const",
+    "name": "dnakStreamDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnakStreamDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakStreamPartial"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakFireHaven"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakPlaneSpillover"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakPlaneRefugees"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakLesserLairs"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakFireGiantSway"
+   },
+   {
+    "kind": "const",
+    "name": "dnakGiantClanOver"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakSteamFatigue"
+   },
+   {
+    "kind": "const",
+    "name": "dnakFatigueDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakNoMinerals"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakGeysers"
+   },
+   {
+    "kind": "const",
+    "name": "dnakGeyserPoolPct"
+   },
+   {
+    "kind": "const",
+    "name": "dnakGeyserDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnakGeyserDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakGeyserSaveHalf"
+   }
+  ],
+  "the Area 19 Chambers of Fire section": [
+   {
+    "kind": "bool",
+    "name": "dnakFireBaked"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakDryTunnel"
+   },
+   {
+    "kind": "const",
+    "name": "dnakTunnelDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnakTunnelDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakDouseAvoids"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakCircularCaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakFloorFissures"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakFissureBelch"
+   },
+   {
+    "kind": "const",
+    "name": "dnakEruptTypePct"
+   },
+   {
+    "kind": "const",
+    "name": "dnakEruptRoundsDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnakEruptRoundsSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnakCaveDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnakCaveDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakDouseHalves"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakEruptNoAid"
+   },
+   {
+    "kind": "const",
+    "name": "dnakEruptDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnakEruptDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakEruptSaveHalf"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakPoisonDeath"
+   },
+   {
+    "kind": "const",
+    "name": "dnakSmokeTurnsDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnakSmokeTurnsSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakSmokeEffects"
+   },
+   {
+    "kind": "const",
+    "name": "dnakArchPct"
+   },
+   {
+    "kind": "const",
+    "name": "dnakFissureWideDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnakFissureWideSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakUnearthlyOnly"
+   },
+   {
+    "kind": "const",
+    "name": "dnakMephitForms"
+   },
+   {
+    "kind": "const",
+    "name": "dnakMephitFollowPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakLavaGasLink"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakMephitPurpose"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakFireBatsCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakMagmenDive"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakBadAir"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakMildewOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakMephitOfferings"
+   },
+   {
+    "kind": "const",
+    "name": "dnakToilMephitDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnakToilMephitSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnakToilMephitBase"
+   },
+   {
+    "kind": "const",
+    "name": "dnakFissureWideFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnakFireproofTools"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 139,
+  "open": 16
+ },
+ "caller_files": [],
+ "inline_count": 73
+}
