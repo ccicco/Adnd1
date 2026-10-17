@@ -7698,6 +7698,67 @@ when both halves land.
   temperature, humidity, size, origin, access and
   egress child), then the theories on the nature of
   the underground (pp. 70-71).
+- R531 LANDED 2026-10-17: commit f52a044 (census 454 -> 455,
+  pushed 716bde0..f52a044), THE DSG UNDERGROUND GEOGRAPHY
+  AND THEORIES, printed pp. 69-71 (pdf 70-72), two
+  children - the underground geography: domains in three
+  dimensions (the total accessible area equaling the
+  ground area of a large nation, the campaign-by-campaign
+  world building, the 1,000-mile sample region; the
+  surface terrain - the water-filled sea tunnels with
+  their permanent-magic rationale, the stale dead-end
+  air pockets, the water table, the higher-altitude
+  mountain domains with explorers resurfacing at the
+  mountain base, and the granite-versus-limestone
+  seabeds; the temperature - the geothermal plant
+  growth, the drow and duergar warm lairs making
+  intelligent encounters likelier near heat, and the slow
+  convection exploited by ventilation tunnels; the
+  humidity - the brittle dried formations, the steamy
+  scavenger-prized slippery rock, the dusty low-humidity
+  areas, and the ever-changing erosion with its cave-ins
+  and rock slides; the size - the creature-size limits
+  of the three-foot halfling tunnels, the avoided
+  unsupported caverns stretching a mile wide, the
+  drow-duergar-derro support columns and permanenced
+  spells, and the jermalaine-pech small-tunnel defense;
+  the origin - the irregular natural caverns, the
+  duergar-svirfneblin domed cities with their straight
+  miles-long tunnels and ornate stonework, the drow-kuo-
+  toa preference for conquering duergar lairs, and the
+  mind flayer-myconid natural caverns; and the access
+  and egress - the fresh air near surface connections,
+  the no-access air shafts of the arctic example, and
+  the easy-access raiders orcs, goblins and kobolds
+  versus the deep cultures shunning the outside world),
+  and the theories on the nature of the underground
+  (the DM-decides frame and the sage-knowledge role
+  playing; the hollow earth theory with its variants -
+  the inner world of flyers and levitators cloaked in
+  darkness with volcanic light, the lava-rain fire
+  world, the far-fetched inner shell, and the Plane of
+  Air connection; the Swiss cheese theory with the
+  goblin-hobgoblin-orc ubiquity argument, the failed
+  expeditions, and the unexploited connections; the
+  isolated pockets theory with its forced-migration
+  goblin-slave explanation; and the partial connection
+  theory with its fire and water blocks and the
+  later-sealed traversable pasts). A CLEAN-READ ROUND:
+  both machine reads agree on every number (djvu ~lines
+  8902-9268, Capture idx 163-168). SEAMS: R530
+  environment, R521-R524 mining, Monster Manual
+  cultures, DMG inner planes, the R503 re-grain. Pinned
+  as rules/dsggeo.h (prefix dngr, verified free; 42
+  inlines - 3 consts, 39 bools, no tables). Spec 29,092
+  bytes, md5 ebc40e269c3b9a8778f5e102cf4093b1 (user-side
+  identical). Engine applied 6 then 0/6, audit mirror
+  clean. Gap 136/19 -> 138/17 (2 flips). PREFLIGHT GREEN
+  with census 455 audit lines, each exactly once, all
+  bad 0; BUILD: 0 warnings. NEXT - R532: the cultures
+  of the underdark (printed pp. 73-74): the values and
+  objectives frame plus the eight race write-ups (drow,
+  kuo-toa, duergar, mind flayers, aboleth, derro,
+  cloakers).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
