@@ -7137,6 +7137,69 @@ when both halves land.
   weekly re-roll applying to all miners that week); djvu from
   ~line 6625, Capture idx 121-122; gap children 126-127,
   manifest Tables 33/34.
+- R522 LANDED 2026-10-17: commit fbdd59f (census 445 -> 446,
+  pushed a8503d2..fbdd59f), THE DSG MINE PRODUCT QUALITY,
+  printed pp. 50-51 (pdf 51-52) - the metals rules: the ore
+  quality equals the coins producible from the metal mined
+  by a single miner in a week (the ore heavily mixed with
+  rock, the smelter proficiency processing it to pure
+  state, the rare pure-nugget vein), the Table 33 d10
+  quality grid for five metals (copper 100/200/250/300/
+  350/400/500/750/1000/2000, iron 200/300/500/700/900/
+  1200/1600/2000/3000/4000, silver 25/50/100/200/300/400/
+  500/750/1000/2000, gold 10/25/50/100/200/300/400/500/750/
+  1000, platinum 5/10/20/40/75/100/250/400/800/1000), the
+  pure-vein rule (a 10 on the quality roll means roll again
+  - another 10 is a pure vein needing no smelting, 1-9
+  smelts normally), the unsmelted selling (no more than
+  25%, possibly 5%), and the iron equivalences (1000 coins
+  of iron = a full plate suit, 100 spear points, or 500
+  arrowheads); and the gemstones rules: the rough
+  unrecognized stones identified by miner or jeweler
+  proficiency after 1d6 turns of study, the Table 34
+  seventeen stone rows in stones-per-man-week and average
+  value (bloodstone 2d10 at 20 + 10d6 gp, amber 1d10 at
+  6d100 gp, onyx 3d10 at 10 + 10d6 gp, turquoise and agate
+  4d10 at 5d6 gp, aquamarine 1d10 at 10 x 5d6 gp, garnet
+  and alexandrite 1d10 at 100 x 1d4 gp, jade 2d10 at
+  10 x 5d6 gp, amethyst 1d10 at 100 x 1d6 gp, topaz 2d10 at
+  100 x 1d4 gp, jet 1d10 at 10 x 5d6 gp, opal 1d10/3 at
+  200 x 1d6 gp, ruby 1d10/3 at 200 x 1d8 gp, sapphire
+  1d10/4 at 200 x 1d8 gp, diamond 1d10/5 at 300 x 1d6 gp,
+  emerald 1d10/5 at 300 x 1d8 gp, the footnote rows rolling
+  1d10 divided by 3/4/5 and rounded up), the unfinished
+  selling (no greater than 25%, possibly 10%), and the
+  weekly value re-roll (the week's quality applying to all
+  miners that week, the miner count set before the rolls).
+  THE OCR-FAILURE LESSON: the garbles are text the OCR
+  layers simply failed - Table 33's copper and iron rows
+  were dropped by EVERY machine read (djvu, Capture, and
+  the appendix reprint alike), and Table 34's machine reads
+  lost the stone labels and shuffled the cells; both grids
+  were settled by Curtiss reading the physical pages via
+  screenshot (Android Power + Volume Down; scroll-capture
+  for tall grids), with the final contested cell - onyx
+  10 + 10d6 gp - settled by Curtiss's direct read after
+  vision passes wobbled the operator and die count. The
+  physical book outranks the scan (the R521 bloodstone
+  lesson, twice exercised). NOTE: amber appears in Table
+  34 but not in Table 32's gemstone list - pinned as
+  printed per the R517 never-repair lesson. Pinned as
+  rules/dsgmine4.h (prefix dnqt, verified free; 38 inlines
+  - 14 consts, 12 bools, 12 table cols; Table 33 as a 10x5
+  metal grid, Table 34 as a 17x7 numeric encoding of count
+  dice/sides/divisor and value add/mult/dice/sides).
+  Spec 27,196 bytes, md5 b8ad012ae7a3e32ee38c9a243173aecb
+  (user-side identical - no ./bn rewrite). Engine applied 7
+  then 0/7. Gap 109/46 -> 112/43 (3 flips: the Quality
+  child 126 and manifest lines Tables 33/34). NEXT - R523:
+  the mining tail (printed p. 53, pdf 54) - calculating the
+  value of a placer mine, smelting ore, finishing stones,
+  duration of a mining site, inherent hazards of mining,
+  and the claim; then p. 54 the hireling loyalty opener;
+  djvu from ~line 6700, Capture idx 122-123; gap children
+  128-133 (the placer value, smelting, duration, hazards
+  and claim children), no named tables (a prose round).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
