@@ -7588,6 +7588,47 @@ when both halves land.
   techniques (the 10-ft graphing, the 10-20-ft error
   agonizing, the line-drawing alternative); djvu ~lines
   7848-8160 already extracted and CLEAN in both reads.
+- R529 LANDED 2026-10-17: commit 39ce9b7 (census 452 -> 453,
+  pushed 5b48f3d..39ce9b7), THE DSG IMPROVING-PLAY TAIL:
+  FIGHTING EFFECTIVELY, DIVERSIONS, SPEEDING PLAY,
+  SPELL USE, LANGUAGES, MAPPING, printed pp. 60-63
+  (pdf 61-64) - the second half of the improving-play
+  chapter (children 145-150), closing parent 141:
+  the fighting effectively: the long-together
+  effectiveness, the low-AC-between rule (the weakest
+  front-line member positioned between the strong),
+  the rear-guard retreat plans, the mini-teams, and
+  the surprise with the ranger infravision note; the
+  creating diversions: the 1d4-round low-Int
+  distraction, the medium/high-Int save vs spell,
+  the genius needing clever, the PCs never saving;
+  the speeding play: the door-opening drills, the
+  standard marching orders, the caller rotation; the
+  creative spell use: the silence coin, the darkness
+  vs infravision, the telekinesis slime pots, the
+  shatter pots, the charm questioning, the toppling
+  walls, the ricochet bolt; the languages of the
+  underdark: the tapping language, the 10x slower,
+  the drum amplification, the underground-native PCs
+  knowing it; and the mapping techniques: the 10-ft
+  graphing, the 10-20-ft error agonizing, the
+  line-drawing alternative. A CLEAN-READ ROUND: both
+  machine reads agree on every number. SEAMS: R528
+  the improving-play opener (parent 141 now closed),
+  Monster Manual ranger infravision, R80 spell
+  silences/darkness/telekinesis/shatter/charm. Pinned
+  as rules/dsgplay2.h (prefix dnpm, verified free;
+  41 inlines - 7 consts, 34 bools, no tables). Spec
+  32,472 bytes, md5 c02b4014ca43344f088fcfcac54114a9
+  (user-side identical). Engine applied 10 then
+  0/10, audit mirror clean. Gap 129/26 -> 135/20
+  (6 flips: children 145-150). PREFLIGHT GREEN with
+  census 453 audit lines, each exactly once, all bad
+  0; BUILD: 0 warnings. NEXT - R530: the DM's section
+  begins (printed pp. 64-120, re-grained at R503 - the
+  gap report's DM's-section children list); the
+  chapter parent 141 (Improving play) closes at the
+  next census check once R529's children flip.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
