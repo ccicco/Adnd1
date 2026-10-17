@@ -9031,6 +9031,97 @@ when both halves land.
   then the pp. 99-113 Campaign Considerations
   child flip (zero pins, the gap report IN the
   git add).
+- R554 LANDED 2026-10-17: commit 2d8597471da5e6fa8d9
+  9a7e326107ea5a64f247c (census 477 -> 478,
+  pushed f1428cb..2d85974), THE DSG TECHNIQUES OF
+  STORY AND CAMPAIGN DESIGN, printed pp. 109-112 -
+  the story-design doctrine ending at the HELP
+  FROM THE PLAYERS head: the chapter head (the
+  story line chosen shapes the gaming
+  environment; three types of adventure design),
+  The Linear Adventure (the certain-order
+  encounters; the dungeon one-route maps with the
+  predetermined locations; the outdoor thorn-wall
+  and impassable-water obstacles; the
+  no-wasted-design-time advantage; the difficulty
+  as the PCs gain magical power; the tournament
+  fit; the railroad frustration - generally
+  undesirable for less structured play; the
+  directed play with the illusion of choice),
+  The Open Campaign (the de-emphasized story with
+  the PC choices determining the course; the
+  detailed countryside seeded with conflicts; the
+  Adventurer fun continuing indefinitely; the
+  greater Problem-Solver and Role-Player
+  workload - the mental diet, the unique NPCs,
+  the national-scope problems, the nomadic NPCs;
+  the entire world setting built over time; the
+  story-structure difficulty and the perverse
+  players; the Events technique - the dragon's
+  lair placed in the path with logic; the
+  ask-ahead shortcut; the background conflicts -
+  the wars with the met principals, the endless
+  winter and the man-eating plants), The Matrix
+  Campaign (the detailed story with the player
+  choice; the motivating goals - the linear-open
+  compromise fit for epics; the evil-cleric sect
+  exposition opening options; the guided options
+  north, east, and south with the western
+  headquarters bided; the prepared courses - the
+  raid, the sage interview, the prisoner rescue;
+  the expanding branches steering toward the
+  headquarters climax; the plot events; the soft
+  border of the hapless waifs and the stranger's
+  gems; the hard border of the cliff, sea,
+  desert, the escalating army, the quest and geas
+  as the last resort; the several approaches to
+  the final encounter - never doomed for a wrong
+  choice; the lost players shown the path gently
+  but firmly - the henchman speaking up, the
+  plain-language sage; the foreshadowed track),
+  the Running the Game head (the two at-table
+  functions - the story drawn in by the PCs' own
+  motivations, the mechanics refereed to move the
+  story along), Preparing For Play (the
+  random-generation lists - eight NPC names
+  rolled on 1d8, the personality traits, the
+  appearance characteristics; the coded notes -
+  AC, HD, hp, MV, damage, the own maps and
+  symbols; the THACO shorthand with the ogre
+  example - 15 to hit AC 0, 9 against AC 6, 19
+  against AC -4; the map symbols; the anticipated
+  surprises; the treasure decisions), and The
+  Dungeon Master as Master Storyteller (the role
+  most obvious during play; the pace - the
+  minutes per melee and the story rate, the
+  intensity-rest variety, the discarded slow
+  rules, the optional Weapons vs. AC and
+  spell-component systems, the preparation, the
+  pertinent-rules review; the voice - the tone of
+  the tragic ruin and the jolly inn, the volume
+  of the unexpected, the varied rate with the
+  occasional pause; the colorful word choice -
+  the door crashing inward in a blast of
+  splinters; the NPC voices from the old men to
+  the heroic leaders, augmented by the facial
+  expressions and gestures). 3 consts + 54
+  bools, prefix dcg, header rules/dsgcamp5.h,
+  spec 30,673 bytes, md5
+  edc1eafae5becf409320a0893bedcd41 matched
+  exactly first try, 57 inlines; djvu lines
+  14247-14725 with the Capture pdf 109-113
+  cross-read (clean). A ZERO-FLIP ROUND: gap
+  census stays 140/15. An authoring catch in
+  staging: the first audit label ran 54 cols
+  (the R389 class limit) - shortened to "R554 DSG
+  story design techniques audit" (keep audit
+  labels under the length gate). NEXT - R555:
+  help from the players pp. 113-114 (the
+  overburdened-DM doctrine, rolling up PCs,
+  adventure ideas, class responsibilities,
+  controlling henchmen and NPCs), then the pp.
+  99-113 Campaign Considerations child flip (zero
+  pins, the gap report IN the git add).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
