@@ -10255,6 +10255,56 @@ when both halves land.
   gravity, the heat damage, page-108
   already read; page-109.md still to read
   for the deeper layers and the Powers).
+- R586 LANDED 2026-10-17: commit
+  15ae1569315c0fa96926a5bf1d9b24433
+  9dea334 (census 509 -> 510, pushed
+  9973bab..15ae156), GEHENNA, printed
+  pp. 107-109, the fourfold furnaces of
+  the lawful-evil slope: the baseless
+  peakless mountains at 45 degrees with
+  the tumbling rule, the ground-heat at
+  1d8 per turn negated by elemental-Fire
+  means, the four layers (Khalas the
+  temperate top with the steam waterfalls
+  and the Styx cascades and the hidden
+  Hells devils, Chamada's lava cascades
+  and the blinding acrid cloud within 10
+  miles of the surface, Mungoth's ash and
+  burning snow with the wet-snow-and-
+  burning-rock avalanches, Krangath the
+  dead furnaces dark and heatless), the
+  black-chasm portals deep beneath the
+  surface, the dead-end barriers with the
+  5% volcanic-or-sealed-cavern hazard and
+  the pyramid supposition, the plane of
+  exile overrun by nightmares imps manes
+  daemons mephits lesser devils and
+  achalera, the barghests - the only true
+  natives, petty barons whose wars send
+  the young to the Prime - and the sparse
+  Powers (Chih-Chiang Fyu-Ya's teardrop
+  citadel with the giant-skull judgment
+  bell, Loviatar's spell-warded ice
+  fortress of cruelty on Mungoth, Shargaas
+  the Night Lord of the deep Night Land,
+  the only one who might know whether
+  Gehenna goes deeper). 5 consts + 6
+  bools, prefix ddo, header
+  rules/gehenna.h. ONE flip: gap census
+  75/15 -> 76/14. Spec 15,492 bytes, md5
+  f65eeddfdfd829397c9af318b1e6548b
+  matched exactly first try, 11 inlines.
+  TWENTY-ONE straight first-tries
+  (R566-R586). NEXT - R587: the Nine
+  Hells (pp. 109-113, all nine layers -
+  Avernus with Tiamat and the fireball
+  vapor at 1-in-6 per turn, Dis the Iron
+  City, Minauros the sinking city with
+  the 13% disease, Phlegethos, Stygia,
+  Malbolge, Maladomini, Caina, Nessus;
+  pages 110-112 already read, page-113.md
+  still to read for the Hells features,
+  the rulers and the Styx riddle).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
