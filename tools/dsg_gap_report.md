@@ -74,14 +74,14 @@ re-grained then, before any DM pin round.
   - [x] Fatigue and exhaustion (pp. 21-22) - R505: the 4-turns-work/2-rest cycle, the 6-turn Constitution Check with the +5 then the shrinking interval to every turn, the -2 attribute and attack/damage/save effects for 12 turns, the every-turn fatigued checks against the revised Constitution, the exhausted -4 instead of the fatigue -2 (a WSG divergence - the WSG frames it as an additional -2; both total -4), and the 6-turn recoveries (verified const-for-const against the WSG fatigue pins rules/wsgfatig.h)
   - [x] Movement effects of darkness (p. 22) - R505: the Dexterity Check on unseen obstacles, the 1/3 safe probing rate, the straight-line impossibility without a guide, the secret d12 course roll every 3 turns with the -1-per-short-turn, the rough-floor Dexterity Checks with the 1-point falls, the 1/6 cautious rate, and Table 9
   - [x] Movement on slippery horizontal surfaces (p. 22) - R505: the straight-line safety, the Dexterity Check on turns, stops and runs with the no-damage one-round fall, the 1/2-rate free turn and the one-round slowdown, the every-attack melee check with the +4 AC fall penalty and the -4 fight-from-ground attacks, and the crampons with the 2x noise and 1d6-mile wear (verified const-for-const against rules/wsgslip.h)
-- [ ] **Proficiencies** (pp. 23-29) - the expanded nonweapon proficiency system: the check system, the artisan/craftsman and adventuring lists, the optional bonuses, the NPC training rules and the XP-for-proficiencies option; the cross-book seam against R425 (rules/wsgprof.h) and R498 (rules/wsgprofd.h)
-  - [ ] Nonweapon proficiencies (p. 23) - the system frame and the success/failure rules with Table 10
-  - [ ] Costs and counts (p. 23) - the slot/counts economy
-  - [ ] Artisans, craftsmen and other NPCs (p. 24) - the NPC-training and NPC-craft rules
-  - [ ] Optional bonuses (p. 24) - the bonus-rule option
-  - [ ] Craftsman proficiencies (pp. 25-26) - the list with Table 11, weapon making with Table 12
-  - [ ] Adventuring proficiencies (pp. 26-29) - the list with Table 13
-  - [ ] Experience points for proficiencies (p. 29) - the XP option
+- [x] **Proficiencies** (pp. 23-29) - the expanded nonweapon proficiency system: the check system, the artisan/craftsman and adventuring lists, the optional bonuses, the NPC training rules and the XP-for-proficiencies option; the cross-book seam against R425 (rules/wsgprof.h) and R498 (rules/wsgprofd.h) - R506: the expanded nonweapon proficiency system - the check system with Table 10, the slot economy, the artisan/NPC training rules, the optional bonuses, the craftsman and adventuring lists with Tables 11-13, and the XP-for-proficiencies option (the wsgprof/wsgprofd seam verified const-for-const, nothing auto-credited)
+  - [x] Nonweapon proficiencies (p. 23) - the system frame and the success/failure rules with Table 10 - R506: the system frame - the check like an Ability Check with the listed die-roll modifier (a +3 makes 12 equal 15), the no-failure normal case, the improving +2 per additional slot, the quality ladder to the natural-20 flawless creation and the 110-200 percent pricing, with Table 10
+  - [x] Costs and counts (p. 23) - the slot/counts economy - R506: the slot economy - slots filled by weapon training or saved, the filled-slot immutability, the weapon-slot-buys-nonweapon one-way trade, and the one-slot-per-two Secondary Skills conversion
+  - [x] Artisans, craftsmen and other NPCs (p. 24) - the NPC-training and NPC-craft rules - R506: the artisan ladder - two nonweapon slots for the no-weapon NPC after apprenticeship, journeyman 1-4 years to master plus a slot, then a slot per four years
+  - [x] Optional bonuses (p. 24) - the bonus-rule option - R506: the DM options - the improved +1/+2 nonmagical armor from strong metal and the background-based automatic proficiency
+  - [x] Craftsman proficiencies (pp. 25-26) - the list with Table 11, weapon making with Table 12 - R506: the fourteen craftsman descriptions (the armorer times and flawed-armor breakage, the trainer months and animal counts, the boatwright week-per-foot, the bowyer break rules and fine-quality option, the carpenter crew rates, the gem cutter 1d10, the potter costs, the smelter miner/cost ladder, the stonemason wall day, the weaver yards, the weaponsmith option) with Tables 11 and 12
+  - [x] Adventuring proficiencies (pp. 26-29) - the list with Table 13 - R506: the fifteen adventuring descriptions (the animal noise detection ladder, the blind-fighting -2 frame, the boating capsizing aid, the direction-sense 90-degree error bands, the endurance doubling, the fire-building dice, the fishing count, the fungus 50 percent, the healing pins, the mountaineering +10 percent, the six riding feats, the rope use bonuses, the slow-respiration 10 percent, the sound analysis margins, the swimming pointer) with Table 13
+  - [x] Experience points for proficiencies (p. 29) - the XP option - R506: PCs never earn XP from proficiencies; business NPCs earn 1 XP per 2 gp on the fighter table at 1d4 hp per level, or the DM assigns levels
 - [ ] **Combat rules for underground play** (pp. 30-33) - the sheer-surface combat, bridge/ledge combat, grabbing an enemy, water combat, narrow-passage combat, darkness combat, spellcasting in darkness and mounted combat with Table 14
   - [ ] Fighting on walls and other sheer surfaces (p. 30)
   - [ ] Fighting on bridges and ledges (p. 30)
@@ -172,10 +172,10 @@ re-grained then, before any DM pin round.
 - [x] Table 7: Minimum Passageway Sizes (p. 21) - R505
 - [x] Table 8: Armor Effects on Character Width (p. 21) - R505
 - [x] Table 9: Course Changes in Darkness (p. 22) - R505
-- [ ] Table 10: Character Proficiencies (p. 23)
-- [ ] Table 11: Craftsman Proficiencies (p. 25)
-- [ ] Table 12: Weapon Making (p. 26)
-- [ ] Table 13: Adventuring Proficiencies (p. 26)
+- [x] Table 10: Character Proficiencies (p. 23) - R506
+- [x] Table 11: Craftsman Proficiencies (p. 25) - R506
+- [x] Table 12: Weapon Making (p. 26) - R506
+- [x] Table 13: Adventuring Proficiencies (p. 26) - R506
 - [ ] Table 14: Mounted Bow Fire (p. 32)
 - [ ] Table 15: Odor Detection (p. 38)
 - [ ] Table 16: Wind Effects on Odors (p. 38)

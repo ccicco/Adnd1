@@ -1,0 +1,2440 @@
+{
+ "round": 506,
+ "title": "the DSG nonweapon proficiencies chapter - the check system and Table 10, the slot economy, the artisans and NPC training, the optional bonuses, the craftsman and adventuring lists with Tables 11-13, and the XP option",
+ "census_before": 430,
+ "prefix": "dnp",
+ "header_file": "rules/dsgprof.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "inline_count": 208,
+ "banner": {
+  "title": "The DSG NONWEAPON PROFICIENCIES, R506: the printed pp. 23-29 (pdf 24-30) - the Proficiency Check system (the Ability Check frame with the listed die-roll modifiers, the improving +2 per additional slot, the quality ladder from success to the natural-20 flawless creation and the 110-200 percent pricing), the slot economy (the weapon-slot-buys-nonweapon one-way trade, the filled-slot immutability, the Secondary Skills conversion), the artisan ladder for NPCs, the optional DM bonuses, the fourteen craftsman descriptions, the fifteen adventuring descriptions and the XP-for-proficiencies option, with Table 10 (the 14 class rows), Table 11 (the 14 craftsman rows), Table 12 (the 11 weapon-making rows) and Table 13 (the 15 adventuring rows).",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the grids read from the IA djvu OCR at 300dpi coordinates with the pdf Acrobat-Capture layer as the second read; the Weaver and Weaponsmith cells and the trainer/armorer slot cells carry the grids-file image cautions and are pinned as printed (the R501 precedent); the cross-book seam verified const-for-const against rules/wsgprof.h (R425) and rules/wsgprofd.h (R498) - NOTHING auto-credited; Table 10 agrees cell-for-cell with the WSG Table 1 pins, the shared Table 13 rows are SUBSTANTIALLY rebalanced (10 of 11 diverge), the shared description numbers agree whole.",
+  "sentinel": "The DSG Table 10/11/13 sign convention is the die-roll convention (negative easier), matching the WSG tables; the p. 23 prose example (+3 makes 12 equal 15) is the ability-score framing of the same modifiers. NA cells: ability 0, modifier 99, the bard as-other-classes row -1, the arrowhead per-day row -1."
+ },
+ "include_after": "#include \"rules/dsgmove2.h\"  // R505: the DSG movement II pins",
+ "include_comment": "the DSG proficiencies pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The DSG nonweapon proficiencies pins the check system (the Ability Check frame, the +3-makes-12-equal-15 example, the improving +2 per slot, the natural-20 flawless creation, the 110-200 percent pricing), the slot economy (the one-way weapon-for-nonweapon trade, the Secondary Skills conversion), the artisan ladder (the 2-slot no-weapon NPC, journeyman 1-4 years, the master slot per 4 years), the craftsman numbers (the armorer 2-weeks-per-AC-point with the 19-20 flawed breakage, the trainer 3-month/6-animal cycles, the boatwright week-per-foot, the bowyer and weaponsmith fine-quality options, the carpenter crews, the smelter 4/20/100-miner ladder at 5/12/25 gp, the potter costs), the adventuring numbers (the blind-fighting -2, the direction-sense bands, the endurance doubling, the fire-building dice, the fishing count, the fungus 50 percent, the healing pins, the six riding feats, the rope bonuses, the slow respiration, the sound analysis margins) and the XP option, with the four grids (Tables 10-13).",
+ "audit_label": "R506 DSG proficiencies audit",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R505 LANDED 2026-10-17: commit 409150e (census 430,",
+ "prev_record": [
+  "- R505 LANDED 2026-10-17: commit 409150e (census 430,",
+  "  pushed e4f8c16..409150e), the DSG MOVEMENT CHAPTER",
+  "  PART II - printed pp. 19-22 (pdf 20-23): bridges,",
+  "  falling expanded, spelunking, excavation, fatigue,",
+  "  darkness and slippery surfaces. Pinned as",
+  "  rules/dsgmove2.h (prefix dmx, 130 inlines: 85 consts",
+  "  + 40 bools + 3 tables/5 cols; 22 examples, 8",
+  "  table_checks). Gap 27/128 -> 38/117: 11 flips - the",
+  "  movement PARENT box, 7 chapter boxes (Bridges,",
+  "  Falling expanded, Spelunking, Excavation, Fatigue,",
+  "  Darkness, Slippery) and manifest Tables 7/8/9.",
+  "  T7/T8 fractional feet pinned as inches (x12); T9 as",
+  "  degree+direction cols. Seams verified const-for-",
+  "  const against the landed WSG headers, nothing",
+  "  auto-credited: wsgfall (21-30=6d6, cap 20d6) and",
+  "  wsgstop (50ft) agree; wsgslip agrees whole;",
+  "  wsgmwater has no cap pin (the 10d6 waterfall cap is",
+  "  DSG-only); wsgfatig agrees with ONE framing",
+  "  divergence - WSG exhausted = additional -2 where",
+  "  DSG says -4 instead of -2 (both total -4), pinned",
+  "  as dmxExhaustedInsteadOfFatigue. The R504 record",
+  "  rode the prev_seed_key splice. Spec-driven round 2:",
+  "  the full pool-coverage validation held - double-run",
+  "  applied 15/already 0 then 0/15. Preflight GREEN",
+  "  (R505 DSG movement II audit: bad 0), census 430,",
+  "  gap 38/117. User-side spec md5 2e7af541 vs authored",
+  "  f4b55a00 - cosmetic, the standing class. NEXT -",
+  "  R506: the proficiencies chapter pp. 23-29, Tables",
+  "  10-13 (seam: the landed wsgprof/wsgprofd material)."
+ ],
+ "gap_census": {
+  "closed": 50,
+  "open": 105
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **Proficiencies** (pp. 23-29) - the expanded nonweapon proficiency system: the check system, the artisan/craftsman and adventuring lists, the optional bonuses, the NPC training rules and the XP-for-proficiencies option; the cross-book seam against R425 (rules/wsgprof.h) and R498 (rules/wsgprofd.h)",
+   "to": "- [x] **Proficiencies** (pp. 23-29) - the expanded nonweapon proficiency system: the check system, the artisan/craftsman and adventuring lists, the optional bonuses, the NPC training rules and the XP-for-proficiencies option; the cross-book seam against R425 (rules/wsgprof.h) and R498 (rules/wsgprofd.h) - R506: the expanded nonweapon proficiency system - the check system with Table 10, the slot economy, the artisan/NPC training rules, the optional bonuses, the craftsman and adventuring lists with Tables 11-13, and the XP-for-proficiencies option (the wsgprof/wsgprofd seam verified const-for-const, nothing auto-credited)",
+   "note": "the proficiencies parent"
+  },
+  {
+   "from": "  - [ ] Nonweapon proficiencies (p. 23) - the system frame and the success/failure rules with Table 10",
+   "to": "  - [x] Nonweapon proficiencies (p. 23) - the system frame and the success/failure rules with Table 10 - R506: the system frame - the check like an Ability Check with the listed die-roll modifier (a +3 makes 12 equal 15), the no-failure normal case, the improving +2 per additional slot, the quality ladder to the natural-20 flawless creation and the 110-200 percent pricing, with Table 10",
+   "note": "nonweapon proficiencies"
+  },
+  {
+   "from": "  - [ ] Costs and counts (p. 23) - the slot/counts economy",
+   "to": "  - [x] Costs and counts (p. 23) - the slot/counts economy - R506: the slot economy - slots filled by weapon training or saved, the filled-slot immutability, the weapon-slot-buys-nonweapon one-way trade, and the one-slot-per-two Secondary Skills conversion",
+   "note": "costs and counts"
+  },
+  {
+   "from": "  - [ ] Artisans, craftsmen and other NPCs (p. 24) - the NPC-training and NPC-craft rules",
+   "to": "  - [x] Artisans, craftsmen and other NPCs (p. 24) - the NPC-training and NPC-craft rules - R506: the artisan ladder - two nonweapon slots for the no-weapon NPC after apprenticeship, journeyman 1-4 years to master plus a slot, then a slot per four years",
+   "note": "artisans and NPCs"
+  },
+  {
+   "from": "  - [ ] Optional bonuses (p. 24) - the bonus-rule option",
+   "to": "  - [x] Optional bonuses (p. 24) - the bonus-rule option - R506: the DM options - the improved +1/+2 nonmagical armor from strong metal and the background-based automatic proficiency",
+   "note": "optional bonuses"
+  },
+  {
+   "from": "  - [ ] Craftsman proficiencies (pp. 25-26) - the list with Table 11, weapon making with Table 12",
+   "to": "  - [x] Craftsman proficiencies (pp. 25-26) - the list with Table 11, weapon making with Table 12 - R506: the fourteen craftsman descriptions (the armorer times and flawed-armor breakage, the trainer months and animal counts, the boatwright week-per-foot, the bowyer break rules and fine-quality option, the carpenter crew rates, the gem cutter 1d10, the potter costs, the smelter miner/cost ladder, the stonemason wall day, the weaver yards, the weaponsmith option) with Tables 11 and 12",
+   "note": "craftsman proficiencies"
+  },
+  {
+   "from": "  - [ ] Adventuring proficiencies (pp. 26-29) - the list with Table 13",
+   "to": "  - [x] Adventuring proficiencies (pp. 26-29) - the list with Table 13 - R506: the fifteen adventuring descriptions (the animal noise detection ladder, the blind-fighting -2 frame, the boating capsizing aid, the direction-sense 90-degree error bands, the endurance doubling, the fire-building dice, the fishing count, the fungus 50 percent, the healing pins, the mountaineering +10 percent, the six riding feats, the rope use bonuses, the slow-respiration 10 percent, the sound analysis margins, the swimming pointer) with Table 13",
+   "note": "adventuring proficiencies"
+  },
+  {
+   "from": "  - [ ] Experience points for proficiencies (p. 29) - the XP option",
+   "to": "  - [x] Experience points for proficiencies (p. 29) - the XP option - R506: PCs never earn XP from proficiencies; business NPCs earn 1 XP per 2 gp on the fighter table at 1d4 hp per level, or the DM assigns levels",
+   "note": "the XP option"
+  },
+  {
+   "from": "- [ ] Table 10: Character Proficiencies (p. 23)",
+   "to": "- [x] Table 10: Character Proficiencies (p. 23) - R506",
+   "note": "table 10 manifest"
+  },
+  {
+   "from": "- [ ] Table 11: Craftsman Proficiencies (p. 25)",
+   "to": "- [x] Table 11: Craftsman Proficiencies (p. 25) - R506",
+   "note": "table 11 manifest"
+  },
+  {
+   "from": "- [ ] Table 12: Weapon Making (p. 26)",
+   "to": "- [x] Table 12: Weapon Making (p. 26) - R506",
+   "note": "table 12 manifest"
+  },
+  {
+   "from": "- [ ] Table 13: Adventuring Proficiencies (p. 26)",
+   "to": "- [x] Table 13: Adventuring Proficiencies (p. 26) - R506",
+   "note": "table 13 manifest"
+  }
+ ],
+ "consts": [
+  {
+   "name": "dnpCheckDieSides",
+   "value": 20,
+   "comment": "the player rolls 1d20 and compares the result to the ability score."
+  },
+  {
+   "name": "dnpCheckModifierExampleMod",
+   "value": 3,
+   "comment": "a die-roll modifier example: a +3 modifier."
+  },
+  {
+   "name": "dnpCheckModifierExampleRoll",
+   "value": 12,
+   "comment": "a d20 roll of 12 with the +3 modifier."
+  },
+  {
+   "name": "dnpCheckModifierExampleEq",
+   "value": 15,
+   "comment": "the 12 roll with +3 is equal to a 15 for success."
+  },
+  {
+   "name": "dnpImprovedStepPlus",
+   "value": 2,
+   "comment": "improving a proficiency with an additional slot increases its modifier by 2."
+  },
+  {
+   "name": "dnpImprovedExampleFrom",
+   "value": -1,
+   "comment": "the improving example: a miner proficiency modifier of -1."
+  },
+  {
+   "name": "dnpImprovedExampleTo",
+   "value": 1,
+   "comment": "one additional slot raises the -1 miner modifier to +1."
+  },
+  {
+   "name": "dnpProductPriceLoPct",
+   "value": 110,
+   "comment": "quality products sell from 110 percent of the normal price."
+  },
+  {
+   "name": "dnpProductPriceHiPct",
+   "value": 200,
+   "comment": "quality products sell up to 200 percent of the normal price."
+  },
+  {
+   "name": "dnpSecondarySkillsPerSlotLo",
+   "value": 1,
+   "comment": "converting Secondary Skills takes one slot per one or two skills (low)."
+  },
+  {
+   "name": "dnpSecondarySkillsPerSlotHi",
+   "value": 2,
+   "comment": "converting Secondary Skills takes one slot per one or two skills (high)."
+  },
+  {
+   "name": "dnpNpcNoWeaponYieldsNonweapon",
+   "value": 2,
+   "comment": "an NPC who claims no weapon proficiency gets two nonweapon slots after apprenticeship training."
+  },
+  {
+   "name": "dnpJourneymanYearsLo",
+   "value": 1,
+   "comment": "after one year of journeyman practice (low)."
+  },
+  {
+   "name": "dnpJourneymanYearsHi",
+   "value": 4,
+   "comment": "after up to four years of journeyman practice the character advances to master."
+  },
+  {
+   "name": "dnpMasterArrivalSlot",
+   "value": 1,
+   "comment": "the new master is granted one additional proficiency slot."
+  },
+  {
+   "name": "dnpMasterYearsPerSlot",
+   "value": 4,
+   "comment": "every four years of work thereafter gains one additional slot."
+  },
+  {
+   "name": "dnpOptionalArmorPlusLo",
+   "value": 1,
+   "comment": "improved nonmagical armor from strong metal: +1 (low)."
+  },
+  {
+   "name": "dnpOptionalArmorPlusHi",
+   "value": 2,
+   "comment": "improved nonmagical armor from strong metal: +2 (high)."
+  },
+  {
+   "name": "dnpTrainerRoleMonths",
+   "value": 3,
+   "comment": "training an animal for a typical role requires three months."
+  },
+  {
+   "name": "dnpTrainerMaxAnimals",
+   "value": 6,
+   "comment": "an animal trainer can have up to six animals in training at a given time."
+  },
+  {
+   "name": "dnpTrainerEndMod",
+   "value": 10,
+   "comment": "typical training grants a +10 modifier to the trainer check at the end of the period."
+  },
+  {
+   "name": "dnpTrainerAdvancedMonths",
+   "value": 3,
+   "comment": "additional training to add functions requires another three months."
+  },
+  {
+   "name": "dnpTrainerAdvancedMax",
+   "value": 3,
+   "comment": "no more than three animals during additional training."
+  },
+  {
+   "name": "dnpArmorWeeksPerACPoint",
+   "value": 2,
+   "comment": "armor takes two weeks of work per level of AC below 10."
+  },
+  {
+   "name": "dnpArmorShieldWeeks",
+   "value": 2,
+   "comment": "a shield (one AC point below 10) requires two weeks."
+  },
+  {
+   "name": "dnpArmorFullPlateWeeks",
+   "value": 18,
+   "comment": "a suit of full plate (nine AC points below 10) requires 18 weeks."
+  },
+  {
+   "name": "dnpArmorFlawedWithin",
+   "value": 4,
+   "comment": "a failed check within four of the needed amount creates usable but flawed armor."
+  },
+  {
+   "name": "dnpArmorFlawedACWorse",
+   "value": 1,
+   "comment": "flawed armor functions as one Armor Class worse than usual."
+  },
+  {
+   "name": "dnpArmorBreaksOnLo",
+   "value": 19,
+   "comment": "flawed armor struck in melee breaks on a natural 19."
+  },
+  {
+   "name": "dnpArmorBreaksOnHi",
+   "value": 20,
+   "comment": "flawed armor struck in melee breaks on a natural 20."
+  },
+  {
+   "name": "dnpArmorBreakACDrop",
+   "value": 4,
+   "comment": "broken armor drops the AC immediately by four classes."
+  },
+  {
+   "name": "dnpArmorBreakACCap",
+   "value": 10,
+   "comment": "the broken-armor AC drop never takes the AC above 10."
+  },
+  {
+   "name": "dnpArmorRemoveRoundsDie",
+   "value": 4,
+   "comment": "removing broken armor requires 1d4 rounds."
+  },
+  {
+   "name": "dnpArmorBrokenMoveNum",
+   "value": 1,
+   "comment": "in broken armor the character moves at 1/2 rate (numerator)."
+  },
+  {
+   "name": "dnpArmorBrokenMoveDen",
+   "value": 2,
+   "comment": "in broken armor the character moves at 1/2 rate (denominator)."
+  },
+  {
+   "name": "dnpArmorBrokenAttackMod",
+   "value": -4,
+   "comment": "in broken armor the character suffers -4 on all attack rolls."
+  },
+  {
+   "name": "dnpBoatMaxLenFt",
+   "value": 60,
+   "comment": "the boatwright can build watercraft up to 60 feet long."
+  },
+  {
+   "name": "dnpBoatWeeksPerFoot",
+   "value": 1,
+   "comment": "a boat requires one week of construction time per foot of length."
+  },
+  {
+   "name": "dnpBoatCrewPerFtDen",
+   "value": 5,
+   "comment": "a maximum of one boatwright per five-foot length can work simultaneously."
+  },
+  {
+   "name": "dnpBoatFeatureWeeks",
+   "value": 1,
+   "comment": "a cabin or sealed hold adds about a week apiece."
+  },
+  {
+   "name": "dnpBoatUnskilledPerSkilled",
+   "value": 2,
+   "comment": "two unskilled helpers equal the time savings of one additional skilled boatwright."
+  },
+  {
+   "name": "dnpBowWeeks",
+   "value": 1,
+   "comment": "a long or short bow takes one week of construction."
+  },
+  {
+   "name": "dnpCompositeBowWeeks",
+   "value": 2,
+   "comment": "a composite bow takes two weeks."
+  },
+  {
+   "name": "dnpArrowsPerDayDie",
+   "value": 6,
+   "comment": "1d6 arrows can be made in one day."
+  },
+  {
+   "name": "dnpFineBowRangeBonusIn",
+   "value": 2,
+   "comment": "a natural 20 on the bow check increases the range by +2 inches for all range classes."
+  },
+  {
+   "name": "dnpBowBreaksOnAttack",
+   "value": 1,
+   "comment": "a failed bow breaks when the character using it rolls an unmodified 1 on a d20 attack."
+  },
+  {
+   "name": "dnpBowFineDamageBonus",
+   "value": 1,
+   "comment": "the fine-quality bow inflicts +1 damage on all successful attacks."
+  },
+  {
+   "name": "dnpBowFineNat20AttackBonus",
+   "value": 1,
+   "comment": "a natural 20 on the fine-quality check adds +1 to all attack rolls."
+  },
+  {
+   "name": "dnpCarpenterCubeFt",
+   "value": 10,
+   "comment": "a single carpenter builds a wooden object the size of a 10-foot cube."
+  },
+  {
+   "name": "dnpCarpenterWeeksPerCube",
+   "value": 1,
+   "comment": "the 10-foot cube takes one week."
+  },
+  {
+   "name": "dnpCarpenterCrewForDaily",
+   "value": 7,
+   "comment": "seven characters (only one a carpenter) build the 10-foot cube in a day."
+  },
+  {
+   "name": "dnpCarpenterPerWorkers",
+   "value": 9,
+   "comment": "one carpenter is needed for every nine non-carpenter workers."
+  },
+  {
+   "name": "dnpGemStonesPerDayDie",
+   "value": 10,
+   "comment": "a gem cutter finishes rough gems at 1d10 stones per day."
+  },
+  {
+   "name": "dnpPotterSmallMedPerDay",
+   "value": 2,
+   "comment": "a potter creates two small or medium items per day."
+  },
+  {
+   "name": "dnpPotterLargePerDay",
+   "value": 1,
+   "comment": "or one large item per day."
+  },
+  {
+   "name": "dnpPotterKilnDays",
+   "value": 1,
+   "comment": "the pottery must then fire in the kiln an additional day."
+  },
+  {
+   "name": "dnpPotterSmallCostCp",
+   "value": 3,
+   "comment": "raw materials cost 3 cp for a small item."
+  },
+  {
+   "name": "dnpPotterMediumCostCp",
+   "value": 5,
+   "comment": "raw materials cost 5 cp for a medium item."
+  },
+  {
+   "name": "dnpPotterLargeCostCp",
+   "value": 10,
+   "comment": "raw materials cost 1 sp (10 cp) for a large item."
+  },
+  {
+   "name": "dnpSmeltSmallMiners",
+   "value": 4,
+   "comment": "a small smelter processes ore as fast as four miners produce it."
+  },
+  {
+   "name": "dnpSmeltMediumMiners",
+   "value": 20,
+   "comment": "a medium smelter processes the ore of up to 20 miners."
+  },
+  {
+   "name": "dnpSmeltLargeMiners",
+   "value": 100,
+   "comment": "a large smelter processes the ore of up to 100 miners."
+  },
+  {
+   "name": "dnpSmeltSmallGpPerDay",
+   "value": 5,
+   "comment": "a small smelting operation costs 5 gp per day to run."
+  },
+  {
+   "name": "dnpSmeltMediumGpPerDay",
+   "value": 12,
+   "comment": "a medium smelting operation costs 12 gp per day."
+  },
+  {
+   "name": "dnpSmeltLargeGpPerDay",
+   "value": 25,
+   "comment": "a large smelting operation costs 25 gp a day."
+  },
+  {
+   "name": "dnpMasonWallThickFt",
+   "value": 1,
+   "comment": "a stonemason builds a wall section one foot thick."
+  },
+  {
+   "name": "dnpMasonWallLongFt",
+   "value": 10,
+   "comment": "the wall section is 10 feet long."
+  },
+  {
+   "name": "dnpMasonWallHighFt",
+   "value": 5,
+   "comment": "the wall section is five feet high, in a day."
+  },
+  {
+   "name": "dnpWeaveSqYardsPerDay",
+   "value": 2,
+   "comment": "a weaver creates two square yards of material per day."
+  },
+  {
+   "name": "dnpWeaponsmithFineDamageBonus",
+   "value": 1,
+   "comment": "the fine-quality weapon inflicts +1 damage on all successful attacks."
+  },
+  {
+   "name": "dnpWeaponsmithNat20AttackBonus",
+   "value": 1,
+   "comment": "a natural 20 on the fine-quality check adds +1 to all attack rolls."
+  },
+  {
+   "name": "dnpBlindAttackMod",
+   "value": -2,
+   "comment": "blind-fighting suffers only -2 on attack and damage rolls and saving throws."
+  },
+  {
+   "name": "dnpBlindStandardMod",
+   "value": -4,
+   "comment": "the standard darkness penalty blind-fighting replaces is -4."
+  },
+  {
+   "name": "dnpBlindDexReductionOnly",
+   "value": 1,
+   "comment": "the Dexterity reduction for a blind-fighting character is only 1."
+  },
+  {
+   "name": "dnpBlindClimbPenaltyOnly",
+   "value": -5,
+   "comment": "the Climbing Rating penalty for a blind-fighting character is only -5 percent."
+  },
+  {
+   "name": "dnpDirConcentrateRoundsDie",
+   "value": 6,
+   "comment": "direction sense requires concentrating 1d6 rounds before the determination."
+  },
+  {
+   "name": "dnpDirErrorDeg",
+   "value": 90,
+   "comment": "a failed-but-greater-than-1 roll is off by up to 90 degrees left or right."
+  },
+  {
+   "name": "dnpDirOppositeRoll",
+   "value": 1,
+   "comment": "a Proficiency Check of 1 determines a direction exactly opposite the true one."
+  },
+  {
+   "name": "dnpEnduranceTimeMult",
+   "value": 2,
+   "comment": "endurance doubles the time a character can exert himself before fatigue and exhaustion."
+  },
+  {
+   "name": "dnpFireDryMinutesDice",
+   "value": 2,
+   "comment": "fire-building starts a fire in 2d20 minutes with dry wood and tinder."
+  },
+  {
+   "name": "dnpFireAdverseMinutesDice",
+   "value": 3,
+   "comment": "wet wood or high winds increase the time to 3d20 minutes."
+  },
+  {
+   "name": "dnpFishChecksPerHour",
+   "value": 1,
+   "comment": "fishing allows one Proficiency Check per hour spent fishing."
+  },
+  {
+   "name": "dnpFishRationNum",
+   "value": 1,
+   "comment": "one fish provides 1/2 the daily rations for one character (numerator)."
+  },
+  {
+   "name": "dnpFishRationDen",
+   "value": 2,
+   "comment": "one fish provides 1/2 the daily rations for one character (denominator)."
+  },
+  {
+   "name": "dnpFungusDeadlyPct",
+   "value": 50,
+   "comment": "approximately 50 percent of all fungi discovered underground are deadly poisonous."
+  },
+  {
+   "name": "dnpFungusStudyTurns",
+   "value": 1,
+   "comment": "the no-check study period is one turn."
+  },
+  {
+   "name": "dnpHealEmergencyRounds",
+   "value": 1,
+   "comment": "emergency healing must occur within one round of the wound being inflicted."
+  },
+  {
+   "name": "dnpHealEmergencyDie",
+   "value": 3,
+   "comment": "successful emergency healing recovers 1d3 hit points."
+  },
+  {
+   "name": "dnpHealTravelHpPerDay",
+   "value": 1,
+   "comment": "regular healing attention recovers 1 hit point per day without complete rest."
+  },
+  {
+   "name": "dnpHealRestHpPerDay",
+   "value": 2,
+   "comment": "under a healer a character at complete rest recovers 2 hit points per day."
+  },
+  {
+   "name": "dnpHealPoisonSaveMod",
+   "value": 2,
+   "comment": "immediate healing aid gives +2 to the saving throw vs. injected poison."
+  },
+  {
+   "name": "dnpHealPoisonRestTurns",
+   "value": 1,
+   "comment": "the aided character must remain at complete rest one turn."
+  },
+  {
+   "name": "dnpHealPoisonAidRounds",
+   "value": 5,
+   "comment": "the healer is completely occupied ministering for five melee rounds."
+  },
+  {
+   "name": "dnpMountClimbBonusPctPerSlot",
+   "value": 10,
+   "comment": "mountaineering grants +10 percent to the Climbing Rating per slot spent."
+  },
+  {
+   "name": "dnpRideJumpFreeObstacleFt",
+   "value": 3,
+   "comment": "no jump check is needed for obstacles three feet tall or less."
+  },
+  {
+   "name": "dnpRideJumpFreeGapFt",
+   "value": 12,
+   "comment": "no jump check is needed for gaps less than 12 feet wide."
+  },
+  {
+   "name": "dnpRideJumpMaxObstacleFt",
+   "value": 7,
+   "comment": "a successful check urges the mount to leap obstacles up to seven feet high."
+  },
+  {
+   "name": "dnpRideJumpMaxGapFt",
+   "value": 30,
+   "comment": "a successful check urges the mount across gaps up to thirty feet."
+  },
+  {
+   "name": "dnpRideSpurFtPerRound",
+   "value": 6,
+   "comment": "spurring adds six feet per round to the mount movement rate."
+  },
+  {
+   "name": "dnpRideSpurMaxTurns",
+   "value": 4,
+   "comment": "spurring lasts up to four turns."
+  },
+  {
+   "name": "dnpRideSpurLeadTurns",
+   "value": 1,
+   "comment": "after racing the steed must be walked by its dismounted rider for a turn."
+  },
+  {
+   "name": "dnpRideShieldACBonus",
+   "value": 6,
+   "comment": "hanging alongside the steed as a shield grants +6 to Armor Class."
+  },
+  {
+   "name": "dnpRideDropMeleeFt",
+   "value": 10,
+   "comment": "the mounted leap allows a melee attack on any creature within 10 feet."
+  },
+  {
+   "name": "dnpRideDropMod",
+   "value": -4,
+   "comment": "the mounted leap requires a Proficiency Check with a -4 modifier."
+  },
+  {
+   "name": "dnpRideDropFailDie",
+   "value": 3,
+   "comment": "a failed mounted leap falls clumsily and suffers 1d3 points damage."
+  },
+  {
+   "name": "dnpRideKneesFailDie",
+   "value": 6,
+   "comment": "failing the knees-guidance check after damage means falling: an additional 1d6 damage."
+  },
+  {
+   "name": "dnpRopeLassoMod",
+   "value": 2,
+   "comment": "rope use grants +2 on all attacks made with a lasso."
+  },
+  {
+   "name": "dnpRopeClimbBonusPct",
+   "value": 10,
+   "comment": "rope use grants +10 percent on all Climbing Checks made while using a rope."
+  },
+  {
+   "name": "dnpRopeEscapeMod",
+   "value": -6,
+   "comment": "escaping bound hands takes a Proficiency Check with a -6 penalty."
+  },
+  {
+   "name": "dnpSlowAirPct",
+   "value": 10,
+   "comment": "slow respiration drops air use to 10 percent of the resting rate."
+  },
+  {
+   "name": "dnpSlowConcentrateTurns",
+   "value": 1,
+   "comment": "the trance requires one turn of concentration in a restful position."
+  },
+  {
+   "name": "dnpSoundMaxMiles",
+   "value": 1,
+   "comment": "sound analysis calculates distances of up to one mile."
+  },
+  {
+   "name": "dnpSoundLenPct",
+   "value": 30,
+   "comment": "the successful-analysis margin of error for length: + or -30 percent."
+  },
+  {
+   "name": "dnpSoundWidthPct",
+   "value": 25,
+   "comment": "the margin of error for width: + or -25 percent."
+  },
+  {
+   "name": "dnpSoundHeightPct",
+   "value": 25,
+   "comment": "the margin of error for height: + or -25 percent."
+  },
+  {
+   "name": "dnpSoundDetailRoll",
+   "value": 5,
+   "comment": "a check of 5 or less also reveals additional details of the area."
+  },
+  {
+   "name": "dnpXpPerGpNum",
+   "value": 1,
+   "comment": "a business NPC gains 1 experience point (numerator)."
+  },
+  {
+   "name": "dnpXpPerGpDen",
+   "value": 2,
+   "comment": "per 2 gp of income netted by his business (denominator)."
+  },
+  {
+   "name": "dnpXpNpcHpDie",
+   "value": 4,
+   "comment": "such characters gain 1d4 hit points per level."
+  },
+  {
+   "name": "dnpT10RowCount",
+   "value": 14,
+   "comment": "The Table 10 census: 14 class rows."
+  },
+  {
+   "name": "dnpT11RowCount",
+   "value": 14,
+   "comment": "The Table 11 census: 14 craftsman rows."
+  },
+  {
+   "name": "dnpT12RowCount",
+   "value": 11,
+   "comment": "The Table 12 census: 11 weapon rows."
+  },
+  {
+   "name": "dnpT13RowCount",
+   "value": 15,
+   "comment": "The Table 13 census: 15 adventuring rows."
+  },
+  {
+   "name": "dnpArrowheadsPerDayLo",
+   "value": 1,
+   "comment": "the arrowhead rate: 1-2 arrowheads per day (low)."
+  },
+  {
+   "name": "dnpArrowheadsPerDayHi",
+   "value": 2,
+   "comment": "the arrowhead rate: 1-2 arrowheads per day (high)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnpCheckLikeAbilityCheck",
+   "value": true,
+   "comment": "the Proficiency Check is made exactly like an Ability Check."
+  },
+  {
+   "name": "dnpSuccessDegreeQuality",
+   "value": true,
+   "comment": "the exact amount of success determines the degree of workmanship."
+  },
+  {
+   "name": "dnpNatural20Flawless",
+   "value": true,
+   "comment": "a 20 equals a nearly flawless creation."
+  },
+  {
+   "name": "dnpMostUsesNoFailure",
+   "value": true,
+   "comment": "under normal conditions there is no chance of failure for most proficiency uses."
+  },
+  {
+   "name": "dnpSlotsNeedNotBeFilled",
+   "value": true,
+   "comment": "characters are not required to fill all of their proficiency slots."
+  },
+  {
+   "name": "dnpUnfilledSlotSaved",
+   "value": true,
+   "comment": "unfilled slots are saved and can be used at a later time."
+  },
+  {
+   "name": "dnpFilledSlotCannotChange",
+   "value": true,
+   "comment": "once a slot is filled it cannot be changed for any reason."
+  },
+  {
+   "name": "dnpWeaponSlotHoldsNonweapon",
+   "value": true,
+   "comment": "a weapon slot can be used for a nonweapon proficiency instead."
+  },
+  {
+   "name": "dnpNonweaponSlotHoldsWeapon",
+   "value": false,
+   "comment": "the reverse is not allowed: a nonweapon slot cannot buy a weapon proficiency."
+  },
+  {
+   "name": "dnpTimeAssumesFullDay",
+   "value": true,
+   "comment": "the listed proficiency time assumes the character devotes his entire working day."
+  },
+  {
+   "name": "dnpDistractionIncreasesTime",
+   "value": true,
+   "comment": "time out to hunt, fight or yield to distractions increases the required time."
+  },
+  {
+   "name": "dnpOptionalBonusesAllowed",
+   "value": true,
+   "comment": "the DM may modify and expand the nonweapon proficiency rules."
+  },
+  {
+   "name": "dnpBackgroundAutoProficiency",
+   "value": true,
+   "comment": "the DM can rule a youth apprenticeship grants automatic proficiency in the skill."
+  },
+  {
+   "name": "dnpTrainerDeclaresSpecies",
+   "value": true,
+   "comment": "the trainer must declare the creature type when the proficiency is first gained."
+  },
+  {
+   "name": "dnpArmorFlawsArmorerDetects",
+   "value": true,
+   "comment": "only a character with armorer proficiency can detect the flaws, on careful inspection."
+  },
+  {
+   "name": "dnpArmorPlateFittingsWeekly",
+   "value": true,
+   "comment": "field or full plate requires the wearer present at least once a week for exact fittings."
+  },
+  {
+   "name": "dnpBlacksmithNeedsForge",
+   "value": true,
+   "comment": "blacksmithing requires a forge with a coal-fed fire and bellows, a hammer and an anvil."
+  },
+  {
+   "name": "dnpBlacksmithNoSharpWeapons",
+   "value": true,
+   "comment": "a blacksmith cannot make armor or sharp weapons, only hammers, maces and iron objects."
+  },
+  {
+   "name": "dnpBoatLargerNeedsShipwright",
+   "value": true,
+   "comment": "vessels larger than 60 feet require shipbuilding, outside underground exploration."
+  },
+  {
+   "name": "dnpBowFailArrowFirstShot",
+   "value": true,
+   "comment": "a failed arrow breaks on the first shot."
+  },
+  {
+   "name": "dnpBowFailBowBreaks",
+   "value": true,
+   "comment": "a failed bow has a limited lifespan and breaks on the unmodified 1."
+  },
+  {
+   "name": "dnpBowFineFailWorthless",
+   "value": true,
+   "comment": "the fine-quality option: any failure means the weapon is worthless."
+  },
+  {
+   "name": "dnpBowyerNeedsWeaponsmithHeads",
+   "value": true,
+   "comment": "a weaponsmith is required to fashion arrowheads; the bowyer does the rest."
+  },
+  {
+   "name": "dnpGemCutterNoAssist",
+   "value": true,
+   "comment": "a gem cutter derives no benefit from nonproficient assistance."
+  },
+  {
+   "name": "dnpGemCutterNeedsLightTools",
+   "value": true,
+   "comment": "the gem cutter needs a good light source, chisels, small hammers and hardened blades."
+  },
+  {
+   "name": "dnpLeatherMakesArmor",
+   "value": true,
+   "comment": "the leatherworker makes leather armor, clothing, backpacks, saddlebags, saddles and harnesses."
+  },
+  {
+   "name": "dnpMinerFindsAndSupervises",
+   "value": true,
+   "comment": "the miner proficiency is needed to find a mine site and supervise its operations."
+  },
+  {
+   "name": "dnpSmeltCostsOnlyOperating",
+   "value": true,
+   "comment": "the smelter only costs money when operating."
+  },
+  {
+   "name": "dnpSmeltStockpilePractice",
+   "value": true,
+   "comment": "ore is stockpiled and then smelted at maximum efficiency."
+  },
+  {
+   "name": "dnpMasonOftenMortared",
+   "value": true,
+   "comment": "the stones are often but not always mortared together."
+  },
+  {
+   "name": "dnpWeaverNeedsLoom",
+   "value": true,
+   "comment": "the weaver requires a spinning apparatus and a loom, working wool or cotton."
+  },
+  {
+   "name": "dnpWeaponsmithFineFailWorthless",
+   "value": true,
+   "comment": "the weaponsmith fine-quality option: any failure means the weapon is worthless."
+  },
+  {
+   "name": "dnpWeaponsmithEstimateByComparison",
+   "value": true,
+   "comment": "unlisted weapons are estimated by comparison to the listed ones."
+  },
+  {
+   "name": "dnpAnimalNoiseMagicOnly",
+   "value": true,
+   "comment": "a successful check: only magical means distinguish the noise from the real animal."
+  },
+  {
+   "name": "dnpAnimalNoiseFamiliarAuto",
+   "value": true,
+   "comment": "creatures very familiar with the real noise know a failed imitation automatically."
+  },
+  {
+   "name": "dnpAnimalNoiseOthersWisdomCheck",
+   "value": true,
+   "comment": "other listeners get Wisdom Checks to detect the failed fake."
+  },
+  {
+   "name": "dnpBlindNoACPenalty",
+   "value": true,
+   "comment": "blind-fighting characters suffer no penalties to Armor Class from darkness."
+  },
+  {
+   "name": "dnpBlindRetainsSpecials",
+   "value": true,
+   "comment": "special abilities are retained: a thief can backstab and a ranger keeps giant-class damage in the dark."
+  },
+  {
+   "name": "dnpBlindStumbleHalved",
+   "value": true,
+   "comment": "the chance of stumbling over a drop-off or falling from a sheer surface is halved."
+  },
+  {
+   "name": "dnpBoatingMaxSpeed",
+   "value": true,
+   "comment": "a boating-proficient character insures the boat is propelled at maximum speed."
+  },
+  {
+   "name": "dnpBoatingReducesCapsize",
+   "value": true,
+   "comment": "boating proficiency reduces the dangers of capsizing a canoe or kayak."
+  },
+  {
+   "name": "dnpDirSecretDMRoll",
+   "value": true,
+   "comment": "the DM always makes the Proficiency Check for direction sense."
+  },
+  {
+   "name": "dnpEnduranceNoFoodWaterExtension",
+   "value": true,
+   "comment": "endurance does not extend the time unaffected by lack of food or water."
+  },
+  {
+   "name": "dnpFireNoTinderbox",
+   "value": true,
+   "comment": "the fire-builder does not normally need a tinderbox; flint and steel not required."
+  },
+  {
+   "name": "dnpFireAdverseNeedsCheck",
+   "value": true,
+   "comment": "adverse conditions also require a successful Proficiency Check."
+  },
+  {
+   "name": "dnpFishCountWisdomMinusRoll",
+   "value": true,
+   "comment": "the number of fish caught is the Wisdom score minus the d20 roll."
+  },
+  {
+   "name": "dnpFungusStudyNoCheck",
+   "value": true,
+   "comment": "no check is needed with plentiful light and one turn of study."
+  },
+  {
+   "name": "dnpHealInterruptResaves",
+   "value": true,
+   "comment": "if the patient is moved or the aid interfered with, an unmodified re-save vs. poison is required."
+  },
+  {
+   "name": "dnpMountUsesSpikes",
+   "value": true,
+   "comment": "mountaineering allows climbing with the aid of spikes driven into rock."
+  },
+  {
+   "name": "dnpRideVaultStillFree",
+   "value": true,
+   "comment": "vaulting into the saddle of a standing mount needs no check, even in armor."
+  },
+  {
+   "name": "dnpRideVaultMovingCheck",
+   "value": true,
+   "comment": "vaulting a moving mount, or moving in the same segment, requires a check."
+  },
+  {
+   "name": "dnpRideKneesCheckOnlyWhenDamaged",
+   "value": true,
+   "comment": "guiding with the knees needs a check only if the character takes damage while riding."
+  },
+  {
+   "name": "dnpRideJumpBalkOnFail",
+   "value": true,
+   "comment": "a failed jump check means the mount balks and another check retains the seat or falls."
+  },
+  {
+   "name": "dnpRideSpurCheckEachTurn",
+   "value": true,
+   "comment": "spurring requires a Proficiency Check each turn."
+  },
+  {
+   "name": "dnpRideShieldNoArmorNoAttack",
+   "value": true,
+   "comment": "the steed-shield feat allows no attack and no armor; missed attacks strike the mount instead."
+  },
+  {
+   "name": "dnpRopeClimbBonusIncludesBelay",
+   "value": true,
+   "comment": "the +10 percent includes attempts to belay companions."
+  },
+  {
+   "name": "dnpSlowFullyAware",
+   "value": true,
+   "comment": "the trance character is fully aware of anything nearby and emerges at will."
+  },
+  {
+   "name": "dnpSoundSilenceRequired",
+   "value": true,
+   "comment": "sound analysis requires conditions of absolute silence."
+  },
+  {
+   "name": "dnpSoundStaccatoRequired",
+   "value": true,
+   "comment": "the sound must have a sharp staccato quality: a howl is ineffective, a click or loud hey works."
+  },
+  {
+   "name": "dnpSoundFailLocksArea",
+   "value": true,
+   "comment": "a failed check means no further attempts by that character on the same area."
+  },
+  {
+   "name": "dnpSoundAnnouncesParty",
+   "value": true,
+   "comment": "using sound analysis announces the presence of the party to listeners."
+  },
+  {
+   "name": "dnpSoundCombinesAnimalNoise",
+   "value": true,
+   "comment": "sound analysis can be used in conjunction with the animal noise proficiency."
+  },
+  {
+   "name": "dnpSwimRulesOnPageTwelve",
+   "value": true,
+   "comment": "the swimming proficiency is fully detailed under the swimming rules on page 12 (the R504 pins)."
+  },
+  {
+   "name": "dnpXpPcNeverEarns",
+   "value": true,
+   "comment": "player characters never earn experience points from proficiency use."
+  },
+  {
+   "name": "dnpXpUseFighterTable",
+   "value": true,
+   "comment": "NPCs advanced this way use the level-advancement table for fighters."
+  },
+  {
+   "name": "dnpXpDMMayAssignLevels",
+   "value": true,
+   "comment": "the DM may simply assign these characters additional levels without recording income."
+  },
+  {
+   "name": "dnpHorsemanHasOneNonweapon",
+   "value": true,
+   "comment": "0th-level horsemen and lancers have one nonweapon proficiency."
+  },
+  {
+   "name": "dnpBardAsOtherClasses",
+   "value": true,
+   "comment": "the bard Table 10 row reads as other classes (the -1 sentinel)."
+  }
+ ],
+ "chains": [],
+ "tables": [
+  {
+   "name": "Table 10: CHARACTER PROFICIENCIES",
+   "tag": "10",
+   "count": "dnpT10RowCount",
+   "sentinel": -1,
+   "col_default": -1,
+   "sentinel_census": [
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "cols": [
+    "dnpT10InitialWeapon",
+    "dnpT10InitialNonweapon",
+    "dnpT10AddWeapon",
+    "dnpT10AddNonweapon",
+    "dnpT10EveryLevels"
+   ],
+   "col_comments": [
+    "The initial weapon proficiencies by class row: cavalier 3, paladin 3, cleric 2, druid 2, fighter 4, barbarian 6, ranger 3, magic-user 1, illusionist 1, thief 2, acrobat 2, assassin 3, monk 1, bard as-other-classes (-1).",
+    "The initial nonweapon proficiencies: cavalier 2, paladin 2, cleric 3, druid 3, fighter 2, barbarian 3, ranger 2, magic-user 3, illusionist 3, thief 3, acrobat 3, assassin 2, monk 1, bard -1.",
+    "The weapon proficiency slots added per interval: 1 for every class.",
+    "The nonweapon slots added per interval: 1 for every class except magic-user and illusionist at 2.",
+    "The levels per added proficiency: cavalier 2, paladin 2, cleric 4, druid 5, fighter 3, barbarian 2, ranger 3, magic-user 6, illusionist 6, thief 4, acrobat 4, assassin 4, monk 2, bard 4."
+   ],
+   "audit_comment": "the Table 10 class grid",
+   "data": [
+    [
+     3,
+     2,
+     1,
+     1,
+     2
+    ],
+    [
+     3,
+     2,
+     1,
+     1,
+     2
+    ],
+    [
+     2,
+     3,
+     1,
+     1,
+     4
+    ],
+    [
+     2,
+     3,
+     1,
+     1,
+     5
+    ],
+    [
+     4,
+     2,
+     1,
+     1,
+     3
+    ],
+    [
+     6,
+     3,
+     1,
+     1,
+     2
+    ],
+    [
+     3,
+     2,
+     1,
+     1,
+     3
+    ],
+    [
+     1,
+     3,
+     1,
+     2,
+     6
+    ],
+    [
+     1,
+     3,
+     1,
+     2,
+     6
+    ],
+    [
+     2,
+     3,
+     1,
+     1,
+     4
+    ],
+    [
+     2,
+     3,
+     1,
+     1,
+     4
+    ],
+    [
+     3,
+     2,
+     1,
+     1,
+     4
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     2
+    ],
+    [
+     -1,
+     -1,
+     1,
+     1,
+     4
+    ]
+   ]
+  },
+  {
+   "name": "Table 11: CRAFTSMAN PROFICIENCIES",
+   "tag": "11",
+   "count": "dnpT11RowCount",
+   "col_default": 0,
+   "cols": [
+    "dnpT11Slots",
+    "dnpT11Ability",
+    "dnpT11Modifier",
+    "dnpT11EveryUse"
+   ],
+   "col_comments": [
+    "The slots required: trainer 1, armorer 1, blacksmith 1, boatwright 1, bowyer/fletcher 1, carpenter 1, gem cutter 2, leatherworker 1, miner 2, potter 1, smelter 1, stonemason 1, weaponsmith 3, weaver 4 (the weaver and weaponsmith cells carry the grids-file image cautions).",
+    "The appropriate ability codes: 1 Wisdom, 2 Intelligence, 3 Dexterity, 4 Strength.",
+    "The die-roll modifier: armorer +2, blacksmith 0, boatwright -2, bowyer/fletcher -1, carpenter 0, gem cutter +2, leatherworker 0, miner -3, potter -2, smelter -2, stonemason -2, trainer 0, weaponsmith +3, weaver +4 (caution class as the slots column).",
+    "The asterisk flag: rows requiring a d20 roll for success each time used: animal trainer, bowyer/fletcher, miner, weaponsmith."
+   ],
+   "audit_comment": "the Table 11 craftsman grid",
+   "data": [
+    [
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     2,
+     0
+    ],
+    [
+     1,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     -2,
+     0
+    ],
+    [
+     1,
+     3,
+     -1,
+     1
+    ],
+    [
+     1,
+     4,
+     0,
+     0
+    ],
+    [
+     2,
+     2,
+     2,
+     0
+    ],
+    [
+     1,
+     2,
+     0,
+     0
+    ],
+    [
+     2,
+     1,
+     -3,
+     1
+    ],
+    [
+     1,
+     3,
+     -2,
+     0
+    ],
+    [
+     1,
+     2,
+     -2,
+     0
+    ],
+    [
+     1,
+     4,
+     -2,
+     0
+    ],
+    [
+     3,
+     2,
+     3,
+     1
+    ],
+    [
+     4,
+     2,
+     4,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "Table 12: WEAPON MAKING",
+   "tag": "12",
+   "count": "dnpT12RowCount",
+   "sentinel": -1,
+   "col_default": -1,
+   "sentinel_census": [
+    1,
+    0
+   ],
+   "cols": [
+    "dnpT12Days",
+    "dnpT12CostCp"
+   ],
+   "col_comments": [
+    "The construction time in days: arrowhead is the -1 sentinel (1-2 per day, see the consts), battle axe 10, hand axe 5, dagger 5, heavy crossbow 20, light crossbow 15, fork/trident 20, spear/lance 4, shortsword 20, longsword 30, two-handed sword 45.",
+    "The material cost in copper pieces (the printed 10 sp = 100 cp, 2 gp = 200 cp): arrowhead 1, battle axe 100, hand axe 50, dagger 20, heavy crossbow 100, light crossbow 50, fork/trident 100, spear/lance 40, shortsword 50, longsword 100, two-handed sword 200."
+   ],
+   "audit_comment": "the Table 12 weapon-making grid",
+   "data": [
+    [
+     -1,
+     1
+    ],
+    [
+     10,
+     100
+    ],
+    [
+     5,
+     50
+    ],
+    [
+     5,
+     20
+    ],
+    [
+     20,
+     100
+    ],
+    [
+     15,
+     50
+    ],
+    [
+     20,
+     100
+    ],
+    [
+     4,
+     40
+    ],
+    [
+     20,
+     50
+    ],
+    [
+     30,
+     100
+    ],
+    [
+     45,
+     200
+    ]
+   ]
+  },
+  {
+   "name": "Table 13: ADVENTURING PROFICIENCIES",
+   "tag": "13",
+   "count": "dnpT13RowCount",
+   "sentinel": 99,
+   "col_default": 99,
+   "sentinel_census": [
+    0,
+    0,
+    4,
+    0
+   ],
+   "cols": [
+    "dnpT13Slots",
+    "dnpT13Ability",
+    "dnpT13Modifier",
+    "dnpT13EveryUse"
+   ],
+   "col_comments": [
+    "The slots required: animal noise 1, blind-fighting 1, boating 1, direction sense 1, endurance 2, fire-building 1, fishing 1, fungus identification 1, healing 2, mountaineering 1, riding 1, rope use 1, slow respiration 1, sound analysis 1, swimming 1.",
+    "The appropriate ability codes: 1 Wisdom, 2 Intelligence, 3 Dexterity, 5 Strength, 0 NA - blind-fighting, endurance, mountaineering and slow respiration are NA.",
+    "The die-roll modifier, 99 = NA: animal noise -1, blind-fighting NA, boating +1, direction sense +1, endurance NA, fire-building -1, fishing -1, fungus identification +6, healing +2, mountaineering NA, riding +3, rope use 0, slow respiration NA, sound analysis -1, swimming 0.",
+    "The asterisk flag: direction sense, fishing and healing require a d20 roll each time used."
+   ],
+   "audit_comment": "the Table 13 adventuring grid",
+   "data": [
+    [
+     1,
+     1,
+     -1,
+     0
+    ],
+    [
+     1,
+     0,
+     99,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     0,
+     99,
+     0
+    ],
+    [
+     1,
+     1,
+     -1,
+     0
+    ],
+    [
+     1,
+     1,
+     -1,
+     1
+    ],
+    [
+     1,
+     2,
+     6,
+     0
+    ],
+    [
+     2,
+     1,
+     2,
+     1
+    ],
+    [
+     1,
+     0,
+     99,
+     0
+    ],
+    [
+     1,
+     1,
+     3,
+     0
+    ],
+    [
+     1,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     99,
+     0
+    ],
+    [
+     1,
+     1,
+     -1,
+     0
+    ],
+    [
+     1,
+     5,
+     0,
+     0
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['dnpT10InitialWeapon'](0) != 3 or m['dnpT10InitialNonweapon'](0) != 2 or m['dnpT10AddWeapon'](0) != 1 or m['dnpT10AddNonweapon'](0) != 1 or m['dnpT10EveryLevels'](0) != 2",
+   "note": "the Table 10 cavalier row: 3/2 initial, 1/1 added, every 2 levels."
+  },
+  {
+   "expr": "m['dnpT10InitialWeapon'](7) != 1 or m['dnpT10InitialNonweapon'](7) != 3 or m['dnpT10AddNonweapon'](7) != 2 or m['dnpT10EveryLevels'](7) != 6",
+   "note": "the Table 10 magic-user row: 1/3 initial, 1/2 added, every 6 levels."
+  },
+  {
+   "expr": "m['dnpT10InitialWeapon'](13) != -1 or m['dnpT10InitialNonweapon'](13) != -1 or m['dnpT10EveryLevels'](13) != 4",
+   "note": "the Table 10 bard row reads as other classes (the -1 sentinel), every 4 levels."
+  },
+  {
+   "expr": "m['dnpCheckModifierExampleRoll']() + m['dnpCheckModifierExampleMod']() != m['dnpCheckModifierExampleEq']()",
+   "note": "the printed check example: a d20 roll of 12 with a +3 modifier equals a 15."
+  },
+  {
+   "expr": "m['dnpImprovedExampleFrom']() + m['dnpImprovedStepPlus']() != m['dnpImprovedExampleTo']()",
+   "note": "the printed improving example: the -1 miner modifier rises to +1 with one additional slot."
+  },
+  {
+   "expr": "m['dnpT11Slots'](6) != 2 or m['dnpT11Ability'](6) != 2 or m['dnpT11Modifier'](6) != 2",
+   "note": "the Table 11 gem cutter row: 2 slots, Intelligence, +2."
+  },
+  {
+   "expr": "m['dnpT11Slots'](8) != 2 or m['dnpT11Ability'](8) != 1 or m['dnpT11Modifier'](8) != -3 or m['dnpT11EveryUse'](8) != 1",
+   "note": "the Table 11 miner row: 2 slots (asterisked), Wisdom, -3."
+  },
+  {
+   "expr": "m['dnpT12Days'](9) != 30 or m['dnpT12CostCp'](9) != 100",
+   "note": "the Table 12 longsword row: 30 days, 10 sp (100 cp)."
+  },
+  {
+   "expr": "m['dnpT12Days'](10) != 45 or m['dnpT12CostCp'](10) != 200",
+   "note": "the Table 12 two-handed sword row: 45 days, 2 gp (200 cp)."
+  },
+  {
+   "expr": "m['dnpArmorWeeksPerACPoint']() * 1 != m['dnpArmorShieldWeeks']() or m['dnpArmorWeeksPerACPoint']() * 9 != m['dnpArmorFullPlateWeeks']()",
+   "note": "the armor times: a shield is 1 AC point below 10 (2 weeks), full plate 9 (18 weeks)."
+  },
+  {
+   "expr": "m['dnpSmeltMediumMiners']() != 20 or m['dnpSmeltMediumGpPerDay']() != 12",
+   "note": "the smelter economy: a medium smelter handles 20 miners ore at 12 gp per day."
+  },
+  {
+   "expr": "m['dnpRideSpurFtPerRound']() != 6 or m['dnpRideSpurMaxTurns']() != 4 or m['dnpRideSpurLeadTurns']() != 1",
+   "note": "the riding spur: +6 feet per round for up to four turns, then a led turn."
+  },
+  {
+   "expr": "m['dnpHealEmergencyDie']() != 3 or m['dnpHealRestHpPerDay']() != 2 or m['dnpHealPoisonSaveMod']() != 2 or m['dnpHealPoisonAidRounds']() != 5",
+   "note": "the healing pins: 1d3 emergency, 2 hp/day at rest, +2 poison save, 5 aid rounds."
+  },
+  {
+   "expr": "m['dnpFireDryMinutesDice']() != 2 or m['dnpFireAdverseMinutesDice']() != 3",
+   "note": "the fire-building times: 2d20 minutes dry, 3d20 adverse."
+  },
+  {
+   "expr": "m['dnpSoundLenPct']() != 30 or m['dnpSoundWidthPct']() != 25 or m['dnpSoundHeightPct']() != 25 or m['dnpSoundDetailRoll']() != 5 or m['dnpSoundMaxMiles']() != 1",
+   "note": "the sound analysis margins: length +/-30, width +/-25, height +/-25 percent; a 5-or-less reveals details, range up to one mile."
+  },
+  {
+   "expr": "m['dnpBlindAttackMod']() != -2 or m['dnpBlindStandardMod']() != -4",
+   "note": "the blind-fighting penalty is -2, replacing the standard -4."
+  },
+  {
+   "expr": "200 * m['dnpXpPerGpNum']() != 100 * m['dnpXpPerGpDen']()",
+   "note": "the XP option: 200 gp of business income nets 100 experience points (1 per 2 gp)."
+  },
+  {
+   "expr": "m['dnpRopeLassoMod']() != 2 or m['dnpRopeClimbBonusPct']() != 10 or m['dnpRopeEscapeMod']() != -6",
+   "note": "the rope use pins: +2 lasso, +10 percent climbing, -6 escape penalty."
+  },
+  {
+   "expr": "m['dnpT13Slots'](7) != 1 or m['dnpT13Ability'](7) != 2 or m['dnpT13Modifier'](7) != 6",
+   "note": "the Table 13 fungus identification row: 1 slot, Intelligence, +6."
+  },
+  {
+   "expr": "m['dnpT13Slots'](8) != 2 or m['dnpT13Ability'](8) != 1 or m['dnpT13Modifier'](8) != 2 or m['dnpT13EveryUse'](8) != 1",
+   "note": "the Table 13 healing row: 2 slots (asterisked), Wisdom, +2."
+  },
+  {
+   "expr": "m['dnpT13Slots'](1) != 1 or m['dnpT13Ability'](1) != 0 or m['dnpT13Modifier'](1) != 99",
+   "note": "the Table 13 blind-fighting row: 1 slot, NA ability, NA modifier."
+  },
+  {
+   "expr": "m['dnpNpcNoWeaponYieldsNonweapon']() != 2 or m['dnpJourneymanYearsLo']() != 1 or m['dnpJourneymanYearsHi']() != 4 or m['dnpMasterYearsPerSlot']() != 4",
+   "note": "the artisan ladder: no-weapon NPCs get 2 slots, journeyman 1-4 years, then one slot per 4 years."
+  },
+  {
+   "expr": "m['dnpTrainerRoleMonths']() != 3 or m['dnpTrainerMaxAnimals']() != 6 or m['dnpTrainerEndMod']() != 10 or m['dnpTrainerAdvancedMax']() != 3",
+   "note": "the animal trainer pins: 3 months, 6 animals, +10 at the end, 3 animals in additional training."
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['dnpT11Slots'](0) != 1 or m['dnpT11Ability'](0) != 1 or m['dnpT11Modifier'](0) != 0 or m['dnpT11EveryUse'](0) != 1",
+   "note": "the Table 11 animal trainer row: 1 slot (asterisked), Wisdom, 0."
+  },
+  {
+   "expr": "m['dnpT12Days'](0) != -1 or m['dnpT12CostCp'](0) != 1 or m['dnpArrowheadsPerDayLo']() != 1 or m['dnpArrowheadsPerDayHi']() != 2",
+   "note": "the Table 12 arrowhead row: the per-day sentinel, 1 cp, 1-2 per day."
+  },
+  {
+   "expr": "m['dnpT13Slots'](14) != 1 or m['dnpT13Ability'](14) != 5 or m['dnpT13Modifier'](14) != 0",
+   "note": "the Table 13 swimming row: 1 slot, Strength, 0."
+  },
+  {
+   "expr": "m['dnpT13Slots'](11) != 1 or m['dnpT13Ability'](11) != 3 or m['dnpT13Modifier'](11) != 0",
+   "note": "the Table 13 rope use row: 1 slot, Dexterity, 0."
+  },
+  {
+   "expr": "m['dnpT11Slots'](12) != 3 or m['dnpT11Modifier'](12) != 3",
+   "note": "the Table 11 weaponsmith row: 3 slots, +3 (the grids-file caution cells)."
+  },
+  {
+   "expr": "m['dnpT10AddWeapon'](4) != 1 or m['dnpT10AddWeapon'](13) != 1",
+   "note": "the Table 10 add-weapon column is 1 for fighter and bard alike."
+  },
+  {
+   "expr": "m['dnpT13EveryUse'](3) != 1 or m['dnpT13EveryUse'](6) != 1 or m['dnpT13EveryUse'](8) != 1",
+   "note": "the Table 13 asterisks: direction sense, fishing and healing roll each use."
+  }
+ ],
+ "header_sections": {
+  "the check system and the slot economy": [
+   {
+    "kind": "bool",
+    "name": "dnpCheckLikeAbilityCheck"
+   },
+   {
+    "kind": "const",
+    "name": "dnpCheckDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnpCheckModifierExampleMod"
+   },
+   {
+    "kind": "const",
+    "name": "dnpCheckModifierExampleRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dnpCheckModifierExampleEq"
+   },
+   {
+    "kind": "const",
+    "name": "dnpImprovedStepPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dnpImprovedExampleFrom"
+   },
+   {
+    "kind": "const",
+    "name": "dnpImprovedExampleTo"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSuccessDegreeQuality"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpNatural20Flawless"
+   },
+   {
+    "kind": "const",
+    "name": "dnpProductPriceLoPct"
+   },
+   {
+    "kind": "const",
+    "name": "dnpProductPriceHiPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpMostUsesNoFailure"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSlotsNeedNotBeFilled"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpUnfilledSlotSaved"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpFilledSlotCannotChange"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpWeaponSlotHoldsNonweapon"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpNonweaponSlotHoldsWeapon"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSecondarySkillsPerSlotLo"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSecondarySkillsPerSlotHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpTimeAssumesFullDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpDistractionIncreasesTime"
+   }
+  ],
+  "artisans craftsmen and other NPCs": [
+   {
+    "kind": "const",
+    "name": "dnpNpcNoWeaponYieldsNonweapon"
+   },
+   {
+    "kind": "const",
+    "name": "dnpJourneymanYearsLo"
+   },
+   {
+    "kind": "const",
+    "name": "dnpJourneymanYearsHi"
+   },
+   {
+    "kind": "const",
+    "name": "dnpMasterArrivalSlot"
+   },
+   {
+    "kind": "const",
+    "name": "dnpMasterYearsPerSlot"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpOptionalBonusesAllowed"
+   },
+   {
+    "kind": "const",
+    "name": "dnpOptionalArmorPlusLo"
+   },
+   {
+    "kind": "const",
+    "name": "dnpOptionalArmorPlusHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBackgroundAutoProficiency"
+   }
+  ],
+  "the Table 10 class grid": [
+   {
+    "kind": "const",
+    "name": "dnpT10RowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpHorsemanHasOneNonweapon"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBardAsOtherClasses"
+   },
+   {
+    "kind": "table",
+    "name": "Table 10: CHARACTER PROFICIENCIES"
+   }
+  ],
+  "the craftsman proficiencies": [
+   {
+    "kind": "const",
+    "name": "dnpT11RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dnpT12RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dnpT13RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "Table 11: CRAFTSMAN PROFICIENCIES"
+   },
+   {
+    "kind": "const",
+    "name": "dnpTrainerRoleMonths"
+   },
+   {
+    "kind": "const",
+    "name": "dnpTrainerMaxAnimals"
+   },
+   {
+    "kind": "const",
+    "name": "dnpTrainerEndMod"
+   },
+   {
+    "kind": "const",
+    "name": "dnpTrainerAdvancedMonths"
+   },
+   {
+    "kind": "const",
+    "name": "dnpTrainerAdvancedMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpTrainerDeclaresSpecies"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorWeeksPerACPoint"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorShieldWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorFullPlateWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorFlawedWithin"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorFlawedACWorse"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorBreaksOnLo"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorBreaksOnHi"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorBreakACDrop"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorBreakACCap"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorRemoveRoundsDie"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorBrokenMoveNum"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorBrokenMoveDen"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArmorBrokenAttackMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpArmorFlawsArmorerDetects"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpArmorPlateFittingsWeekly"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBlacksmithNeedsForge"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBlacksmithNoSharpWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBoatMaxLenFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBoatWeeksPerFoot"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBoatCrewPerFtDen"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBoatFeatureWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBoatUnskilledPerSkilled"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBoatLargerNeedsShipwright"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBowWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "dnpCompositeBowWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArrowsPerDayDie"
+   },
+   {
+    "kind": "const",
+    "name": "dnpFineBowRangeBonusIn"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBowBreaksOnAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBowFailArrowFirstShot"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBowFailBowBreaks"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBowFineFailWorthless"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBowFineDamageBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBowFineNat20AttackBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBowyerNeedsWeaponsmithHeads"
+   },
+   {
+    "kind": "const",
+    "name": "dnpCarpenterCubeFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnpCarpenterWeeksPerCube"
+   },
+   {
+    "kind": "const",
+    "name": "dnpCarpenterCrewForDaily"
+   },
+   {
+    "kind": "const",
+    "name": "dnpCarpenterPerWorkers"
+   },
+   {
+    "kind": "const",
+    "name": "dnpGemStonesPerDayDie"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpGemCutterNoAssist"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpGemCutterNeedsLightTools"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpLeatherMakesArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpMinerFindsAndSupervises"
+   },
+   {
+    "kind": "const",
+    "name": "dnpPotterSmallMedPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dnpPotterLargePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dnpPotterKilnDays"
+   },
+   {
+    "kind": "const",
+    "name": "dnpPotterSmallCostCp"
+   },
+   {
+    "kind": "const",
+    "name": "dnpPotterMediumCostCp"
+   },
+   {
+    "kind": "const",
+    "name": "dnpPotterLargeCostCp"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSmeltSmallMiners"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSmeltMediumMiners"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSmeltLargeMiners"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSmeltSmallGpPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSmeltMediumGpPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSmeltLargeGpPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSmeltCostsOnlyOperating"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSmeltStockpilePractice"
+   },
+   {
+    "kind": "const",
+    "name": "dnpMasonWallThickFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnpMasonWallLongFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnpMasonWallHighFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpMasonOftenMortared"
+   },
+   {
+    "kind": "const",
+    "name": "dnpWeaveSqYardsPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpWeaverNeedsLoom"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpWeaponsmithFineFailWorthless"
+   },
+   {
+    "kind": "const",
+    "name": "dnpWeaponsmithFineDamageBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dnpWeaponsmithNat20AttackBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpWeaponsmithEstimateByComparison"
+   }
+  ],
+  "the Table 12 weapon making": [
+   {
+    "kind": "const",
+    "name": "dnpArrowheadsPerDayLo"
+   },
+   {
+    "kind": "const",
+    "name": "dnpArrowheadsPerDayHi"
+   },
+   {
+    "kind": "table",
+    "name": "Table 12: WEAPON MAKING"
+   }
+  ],
+  "the adventuring proficiencies": [
+   {
+    "kind": "table",
+    "name": "Table 13: ADVENTURING PROFICIENCIES"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpAnimalNoiseMagicOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpAnimalNoiseFamiliarAuto"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpAnimalNoiseOthersWisdomCheck"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBlindAttackMod"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBlindStandardMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBlindNoACPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBlindRetainsSpecials"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBlindStumbleHalved"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBlindDexReductionOnly"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBlindClimbPenaltyOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBoatingMaxSpeed"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpBoatingReducesCapsize"
+   },
+   {
+    "kind": "const",
+    "name": "dnpDirConcentrateRoundsDie"
+   },
+   {
+    "kind": "const",
+    "name": "dnpDirErrorDeg"
+   },
+   {
+    "kind": "const",
+    "name": "dnpDirOppositeRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpDirSecretDMRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dnpEnduranceTimeMult"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpEnduranceNoFoodWaterExtension"
+   },
+   {
+    "kind": "const",
+    "name": "dnpFireDryMinutesDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnpFireAdverseMinutesDice"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpFireNoTinderbox"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpFireAdverseNeedsCheck"
+   },
+   {
+    "kind": "const",
+    "name": "dnpFishChecksPerHour"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpFishCountWisdomMinusRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dnpFishRationNum"
+   },
+   {
+    "kind": "const",
+    "name": "dnpFishRationDen"
+   },
+   {
+    "kind": "const",
+    "name": "dnpFungusDeadlyPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpFungusStudyNoCheck"
+   },
+   {
+    "kind": "const",
+    "name": "dnpFungusStudyTurns"
+   },
+   {
+    "kind": "const",
+    "name": "dnpHealEmergencyRounds"
+   },
+   {
+    "kind": "const",
+    "name": "dnpHealEmergencyDie"
+   },
+   {
+    "kind": "const",
+    "name": "dnpHealTravelHpPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dnpHealRestHpPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dnpHealPoisonSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "dnpHealPoisonRestTurns"
+   },
+   {
+    "kind": "const",
+    "name": "dnpHealPoisonAidRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpHealInterruptResaves"
+   },
+   {
+    "kind": "const",
+    "name": "dnpMountClimbBonusPctPerSlot"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpMountUsesSpikes"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideJumpFreeObstacleFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideJumpFreeGapFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideJumpMaxObstacleFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideJumpMaxGapFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideSpurFtPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideSpurMaxTurns"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideSpurLeadTurns"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideShieldACBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideDropMeleeFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideDropMod"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideDropFailDie"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRideKneesFailDie"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpRideVaultStillFree"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpRideVaultMovingCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpRideKneesCheckOnlyWhenDamaged"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpRideJumpBalkOnFail"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpRideSpurCheckEachTurn"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpRideShieldNoArmorNoAttack"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRopeLassoMod"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRopeClimbBonusPct"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRopeEscapeMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpRopeClimbBonusIncludesBelay"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSlowAirPct"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSlowConcentrateTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSlowFullyAware"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSoundMaxMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSoundLenPct"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSoundWidthPct"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSoundHeightPct"
+   },
+   {
+    "kind": "const",
+    "name": "dnpSoundDetailRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSoundSilenceRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSoundStaccatoRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSoundFailLocksArea"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSoundAnnouncesParty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSoundCombinesAnimalNoise"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpSwimRulesOnPageTwelve"
+   }
+  ],
+  "the XP option": [
+   {
+    "kind": "bool",
+    "name": "dnpXpPcNeverEarns"
+   },
+   {
+    "kind": "const",
+    "name": "dnpXpPerGpNum"
+   },
+   {
+    "kind": "const",
+    "name": "dnpXpPerGpDen"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpXpUseFighterTable"
+   },
+   {
+    "kind": "const",
+    "name": "dnpXpNpcHpDie"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpXpDMMayAssignLevels"
+   }
+  ]
+ },
+ "caller_files": []
+}
+

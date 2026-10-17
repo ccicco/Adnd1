@@ -6379,6 +6379,35 @@ GitHub verify at e4f8c16 clean: 234 inlines, zero dmv in caller TUs, gap
 bridges, the expanded falling rules, spelunking (T7), excavation (T8),
 fatigue, darkness (T9) and slippery surfaces; the movement PARENT box flips
 when both halves land.
+- R505 LANDED 2026-10-17: commit 409150e (census 430,
+  pushed e4f8c16..409150e), the DSG MOVEMENT CHAPTER
+  PART II - printed pp. 19-22 (pdf 20-23): bridges,
+  falling expanded, spelunking, excavation, fatigue,
+  darkness and slippery surfaces. Pinned as
+  rules/dsgmove2.h (prefix dmx, 130 inlines: 85 consts
+  + 40 bools + 3 tables/5 cols; 22 examples, 8
+  table_checks). Gap 27/128 -> 38/117: 11 flips - the
+  movement PARENT box, 7 chapter boxes (Bridges,
+  Falling expanded, Spelunking, Excavation, Fatigue,
+  Darkness, Slippery) and manifest Tables 7/8/9.
+  T7/T8 fractional feet pinned as inches (x12); T9 as
+  degree+direction cols. Seams verified const-for-
+  const against the landed WSG headers, nothing
+  auto-credited: wsgfall (21-30=6d6, cap 20d6) and
+  wsgstop (50ft) agree; wsgslip agrees whole;
+  wsgmwater has no cap pin (the 10d6 waterfall cap is
+  DSG-only); wsgfatig agrees with ONE framing
+  divergence - WSG exhausted = additional -2 where
+  DSG says -4 instead of -2 (both total -4), pinned
+  as dmxExhaustedInsteadOfFatigue. The R504 record
+  rode the prev_seed_key splice. Spec-driven round 2:
+  the full pool-coverage validation held - double-run
+  applied 15/already 0 then 0/15. Preflight GREEN
+  (R505 DSG movement II audit: bad 0), census 430,
+  gap 38/117. User-side spec md5 2e7af541 vs authored
+  f4b55a00 - cosmetic, the standing class. NEXT -
+  R506: the proficiencies chapter pp. 23-29, Tables
+  10-13 (seam: the landed wsgprof/wsgprofd material).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
