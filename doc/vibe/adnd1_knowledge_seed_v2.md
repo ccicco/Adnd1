@@ -9530,6 +9530,35 @@ when both halves land.
   one-rank decay rule, the school-effects
   matrix; then Air, Fire, Earth, Water in
   sequence.
+- R567 LANDED 2026-10-17: commit cd2cf1bc3ddb9c3dc2d0
+  7f9eeafee7345583d558 (census 490 -> 491,
+  pushed 351cd95..cd2cf1b), THE MotP INNER
+  PLANES IN GENERAL, printed pp. 22-31 - the
+  doctrine round for the inner half: the
+  18-plane sphere (6 major, 12 minor), the
+  inborn hostility, the natives-see-the-Border
+  rule, the 2d4 breathless rule, the 1:2
+  subjective-time reversal (time FASTER here,
+  the Ethereal's mirror), the local-gravity
+  doctrine with the 1000-ft/round falls, the
+  guide system with the 100-gp/hour
+  inducements, the lone-human-20th-level rule,
+  ultravision failing, the unguided
+  random-direction rule, and the elemental
+  home-immunity. 7 consts + 7 bools, prefix
+  dcv, header rules/motpinner.h. THREE flips:
+  gap census 18/72 -> 21/69. Authoring catch
+  (mine, caught by the engine in the mirror):
+  a const value as string ('4') - the engine
+  wants ints; fixed to the die-side pin.
+  Spec 12,369 bytes, md5
+  1b39f2420aa3cd914ecfc76fee05f679 matched
+  exactly first try, 14 inlines. NEXT - R568:
+  the Plane of Elemental Air (pp. 31-36) -
+  survival, the phenomena table, the
+  high-winds table, the elemental pockets,
+  encounters, combat, magic, features; then
+  Fire, Earth, Water.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

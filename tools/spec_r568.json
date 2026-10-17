@@ -1,0 +1,251 @@
+{
+  "round": 568,
+  "prefix": "dcw",
+  "header_file": "rules/motpair.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 491,
+  "title": "the MotP Plane of Elemental Air",
+  "audit_label": "R568 MotP Air plane audit",
+  "audit_comment": "the Plane of Elemental Air, printed pp. 31-36, the whole chapter: the hospitable-plane doctrine with the four border gradations (Smoke, Ice, Lightning, Vacuum), the 1,000-yard sighting, the 1-in-20-per-12-hours encounter check with its three-way split, the d12 phenomena table (cloud banks through the maelstrom and the Prime vortex), the WSG-adapted high-winds table with the 80-mph verbal cutoff and the 1d8-per-10-mph impact damage, the d20 pocket table with the sixteen pocket types, the d8+d12 encounter chart, the invisible natives, and the features (Yan-C-Bin, Akadi, Bahamut's citadel, the djinn landholds, the hooks and bubbles) - magic as the inner planes in general (p. 35).",
+  "include_comment": "the MotP Air plane pins",
+  "include_after": "#include \"rules/motpinner.h\"  // R567: the MotP inner planes doctrine pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R567 LANDED 2026-10-17: commit cd2cf1bc3ddb9c3dc2d0",
+  "prev_record": [
+    "- R567 LANDED 2026-10-17: commit cd2cf1bc3ddb9c3dc2d0",
+    "  7f9eeafee7345583d558 (census 490 -> 491,",
+    "  pushed 351cd95..cd2cf1b), THE MotP INNER",
+    "  PLANES IN GENERAL, printed pp. 22-31 - the",
+    "  doctrine round for the inner half: the",
+    "  18-plane sphere (6 major, 12 minor), the",
+    "  inborn hostility, the natives-see-the-Border",
+    "  rule, the 2d4 breathless rule, the 1:2",
+    "  subjective-time reversal (time FASTER here,",
+    "  the Ethereal's mirror), the local-gravity",
+    "  doctrine with the 1000-ft/round falls, the",
+    "  guide system with the 100-gp/hour",
+    "  inducements, the lone-human-20th-level rule,",
+    "  ultravision failing, the unguided",
+    "  random-direction rule, and the elemental",
+    "  home-immunity. 7 consts + 7 bools, prefix",
+    "  dcv, header rules/motpinner.h. THREE flips:",
+    "  gap census 18/72 -> 21/69. Authoring catch",
+    "  (mine, caught by the engine in the mirror):",
+    "  a const value as string ('4') - the engine",
+    "  wants ints; fixed to the die-side pin.",
+    "  Spec 12,369 bytes, md5",
+    "  1b39f2420aa3cd914ecfc76fee05f679 matched",
+    "  exactly first try, 14 inlines. NEXT - R568:",
+    "  the Plane of Elemental Air (pp. 31-36) -",
+    "  survival, the phenomena table, the",
+    "  high-winds table, the elemental pockets,",
+    "  encounters, combat, magic, features; then",
+    "  Fire, Earth, Water."
+  ],
+  "banner": {
+    "title": "THE MotP PLANE OF ELEMENTAL AIR - printed pp. 31-36, the whole chapter in one round: the hospitable plane, the phenomena, the winds, the pockets, the encounter chart, and the features (the archoment Yan-C-Bin, the queen Akadi, Bahamut's citadel, the djinn landholds, and the summoning hooks and bubbles).",
+    "provenance": "verified against printed pp. 31-36 of the uploaded motp.pdf OCR; the high-winds table is the WSG-adapted table - the cross-book seam, nothing auto-credited, the MotP pins carry the MotP text (the 80-mph cutoff, the 1d8 impact rule, the 1d10-hour duration).",
+    "sentinel": "the gap census after this round: 25 closed, 65 open - four boxes fall (the plane, the phenomena table, the high-winds table, the pockets table); Fire is next."
+  },
+  "consts": [
+    {
+      "name": "dcwAirSightingYards",
+      "value": 1000,
+      "comment": "the sighting distance in the plane of Air is 1,000 yards - about twice a clear Prime day; infravision fails (as in all inner planes), smell-tracking is foiled by the chaotic winds."
+    },
+    {
+      "name": "dcwAirEncounterDenom",
+      "value": 20,
+      "comment": "travelers in the plane of Air have a 1-in-20 chance of an encounter every 12 hours; roll: 1-20 elemental phenomena, 21-40 elemental pocket, 41-00 creature encounter."
+    },
+    {
+      "name": "dcwAirPhenomenaDieSides",
+      "value": 12,
+      "comment": "the d12 phenomena table: cloud banks, high winds, sirocco, rain storm, lightning storm, snow storm, maelstrom, dust storm, hail storm, and the vortex to a Prime Material plane."
+    },
+    {
+      "name": "dcwAirPocketTableDie",
+      "value": 20,
+      "comment": "the d20 elemental pocket table - all sixteen other inner-plane types drift as pockets in the passive plane of Air, from earth (1-2) through mineral (20)."
+    },
+    {
+      "name": "dcwAirChartDieSides",
+      "value": 12,
+      "comment": "the Air encounter chart is a d8+d12 roll (2-20): 2 type I demons, 10 air elementals, 11 djinni, 12 invisible stalkers, 20 monadic devas - the 2 and 20 unique-powers slots."
+    },
+    {
+      "name": "dcwAirWindCutoffMPH",
+      "value": 80,
+      "comment": "magical spells with verbal components cannot be cast when the wind rises above 80 mph; the high-wind impact damage is 1d8 per 10 mph of wind speed against a hard surface."
+    },
+    {
+      "name": "dcwAirMaelstromEscapeFt",
+      "value": 2000,
+      "comment": "the maelstrom (the tornado eating its own tail) cannot be escaped short of moving faster than 2,000 feet per turn, magical winds, outside rescue, or leaving the plane; high wind lasts 1d10 hours and prevents encounters during that time."
+    },
+    {
+      "name": "dcwAirVortexDenom",
+      "value": 50,
+      "comment": "the temporary vortices to a Prime Material plane: most last 2d10 subjective days, only one in 50 lasts longer; the Prime-side opening is severe weather, several miles above the ground."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dcwAirHospitable",
+      "value": true,
+      "comment": "the plane of Air is the most hospitable inner plane to Prime planar life: the medium can be breathed and is excellent for travel; its beings are the most easily summoned and controlled."
+    },
+    {
+      "name": "dcwAirBordersGrade",
+      "value": true,
+      "comment": "the border gradations: thicker and warmer toward Smoke, cooler with ice crystals toward Ice, rain clouds and ozone toward Lightning, thinning to the airless state toward Vacuum."
+    },
+    {
+      "name": "dcwAirNativesInvisible",
+      "value": true,
+      "comment": "most Air-native creatures are invisible (only a 10% chance of a dust-outlined silhouette); they keep invisibility even when attacking; they are immune to weather, wind, lightning and cloud/mist spells - but trapped in complete vacuum they save vs. spell or perish."
+    },
+    {
+      "name": "dcwAirDjinnLandhold",
+      "value": true,
+      "comment": "the djinn landhold: an earth pocket 1,000 yards to several miles across, about 1,000 djinn plus 1d10 jann and 1d10 elemental servants under a maximum-hit-point sheik; caliphs rule within two days' travel with six viziers; messenger-relay alert."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the AirSightingYards pin",
+      "expr": "m['dcwAirSightingYards']() != 1000"
+    },
+    {
+      "note": "the AirEncounterDenom pin",
+      "expr": "m['dcwAirEncounterDenom']() != 20"
+    },
+    {
+      "note": "the AirPhenomenaDieSides pin",
+      "expr": "m['dcwAirPhenomenaDieSides']() != 12"
+    },
+    {
+      "note": "the AirPocketTableDie pin",
+      "expr": "m['dcwAirPocketTableDie']() != 20"
+    },
+    {
+      "note": "the AirChartDieSides pin",
+      "expr": "m['dcwAirChartDieSides']() != 12"
+    },
+    {
+      "note": "the AirWindCutoffMPH pin",
+      "expr": "m['dcwAirWindCutoffMPH']() != 80"
+    },
+    {
+      "note": "the AirMaelstromEscapeFt pin",
+      "expr": "m['dcwAirMaelstromEscapeFt']() != 2000"
+    },
+    {
+      "note": "the AirVortexDenom pin",
+      "expr": "m['dcwAirVortexDenom']() != 50"
+    },
+    {
+      "note": "the AirHospitable pin",
+      "expr": "m['dcwAirHospitable']() != 1"
+    },
+    {
+      "note": "the AirBordersGrade pin",
+      "expr": "m['dcwAirBordersGrade']() != 1"
+    },
+    {
+      "note": "the AirNativesInvisible pin",
+      "expr": "m['dcwAirNativesInvisible']() != 1"
+    },
+    {
+      "note": "the AirDjinnLandhold pin",
+      "expr": "m['dcwAirDjinnLandhold']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the Air plane pins": [
+      {
+        "kind": "const",
+        "name": "dcwAirSightingYards"
+      },
+      {
+        "kind": "const",
+        "name": "dcwAirEncounterDenom"
+      },
+      {
+        "kind": "const",
+        "name": "dcwAirPhenomenaDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "dcwAirPocketTableDie"
+      },
+      {
+        "kind": "const",
+        "name": "dcwAirChartDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "dcwAirWindCutoffMPH"
+      },
+      {
+        "kind": "const",
+        "name": "dcwAirMaelstromEscapeFt"
+      },
+      {
+        "kind": "const",
+        "name": "dcwAirVortexDenom"
+      },
+      {
+        "kind": "bool",
+        "name": "dcwAirHospitable"
+      },
+      {
+        "kind": "bool",
+        "name": "dcwAirBordersGrade"
+      },
+      {
+        "kind": "bool",
+        "name": "dcwAirNativesInvisible"
+      },
+      {
+        "kind": "bool",
+        "name": "dcwAirDjinnLandhold"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the Air plane child closes",
+      "from": "  - [ ] The Plane of Elemental Air (pp. 31-36) - survival, encounters, movement, combat, magic, features",
+      "to": "  - [x] The Plane of Elemental Air (pp. 31-36) - survival, encounters, movement, combat, magic, features - R568: the hospitable-plane doctrine, the borders, the survival, the phenomena, the pockets, the encounter chart, the magic and the features"
+    },
+    {
+      "note": "the Air phenomena table closes",
+      "from": "  - [ ] The Air phenomena table (p. 32) - the roll-on table for the plane's varied, stunning, and deadly phenomena",
+      "to": "  - [x] The Air phenomena table (p. 32) - the roll-on table for the plane's varied, stunning, and deadly phenomena - R568: the dcw d12 phenomena pin with the maelstrom and vortex rules"
+    },
+    {
+      "note": "the Air high-winds table closes",
+      "from": "  - [ ] The Air high-winds table (p. 33) - the WSG-adapted wind effects",
+      "to": "  - [x] The Air high-winds table (p. 33) - the WSG-adapted wind effects - R568: the dcw winds pins (d100 rows, the 80-mph verbal barrier, the 1d8-per-10-mph impact damage)"
+    },
+    {
+      "note": "the Air elemental pockets table closes",
+      "from": "  - [ ] The Air elemental pockets table (p. 34) - the passive-plane pockets roll",
+      "to": "  - [x] The Air elemental pockets table (p. 34) - the passive-plane pockets roll - R568: the dcw pocket pins (the d20 table, the 16 pocket types, the lair chances)"
+    }
+  ],
+  "gap_census": {
+    "closed": 25,
+    "open": 65
+  },
+  "caller_files": [],
+  "inline_count": 12
+}
