@@ -1,0 +1,1043 @@
+{
+  "round": 518,
+  "title": "the DSG underground water travel",
+  "census_before": 441,
+  "prefix": "dnu",
+  "header_file": "rules/dsgboat.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "inline_count": 71,
+  "banner": {
+    "title": "The DSG UNDERGROUND WATER TRAVEL, R518: printed pp. 46-48 (pdf 47-49) - the water travel opener (the deepening riverbeds lifting old access tunnels a dozen or more feet above the water, the low ceiling making boat travel impossible, the absent weather against the winding passages, the folding boat and the weaker collapsible boats and the creature boats of inhabited regions, and the scale cut-out model for tight bends), the Table 21 movement rates grid (the eight boat types from the small rowboat 90/120 through the large barge 20/30 to the small canoe and kayak at 120/180, subject to water flow, with maximum speed counting as hard work), the Table 22 standstill grid (1/3 rounds for the small rowboat up to 5/10 for the large barge), the movement-relative-to-water-only rule with the 60-ft stream and 90-ft canoe netting 30 upstream and 150 downstream, the Table 23 draught and ceilings grid (from the 1/2-ft small rowboat under a 2-ft ceiling to the 1-ft large barge under 4 ft), the Table 24 nonproficiency penalties (the -30/-15/-15/-10/-5/-60/-30/-60 movement modifiers and the 5/10/0/0/0/20/10/25 capsize chances), the one-proficient-stops-capsize and half-proficient-stops-penalty exemptions, the collision rules (the lantern and beacon and infravision, the vision-range rule, the d100 blind-travel check), the Table 25 collision probability grid (narrow 1-5-20/10-20-40, average 0-2-10/5-10-20, wide 0-0-4/1-4-8 proficient/nonproficient), the 5%-per-30-ft damage math with the 15% example and the difference-reading hull damage, the Table 26 boat damage grid (the eight percent bands from the 01-05 slight leak through the 45-60 hull split to the 99-00 no damage), the drop-off rules (5% per foot for damage and capsize, the 99/00 miraculous survival, the Proficiency Check save), the bailing rules (strenuous exercise, one character canceling one small hole), and the capsizing rules (the loose objects, the 1d4-round refloat, the float-downstream rescue, and the boatwright repair seam)",
+    "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~5963-6300) with the pdf Acrobat-Capture layer as the second read (idx 63-65 = printed pp. 46-48) - every numeric cell dual-confirmed: the six tables reconstructed positionally from the Capture Tm coordinates where the djvu columns garble (Oar/Paddie, ftir, bargelraft, 1/28, 112ft, 114 ft, 113 ft, lft, 4%, dlOO, 4100 = d100, 2096 = 20%, 1096/1596 = 10%/15%). The Tables 21-24 share one boat key order (small rowboat, coracle, large rowboat, small barge/raft, large barge, small canoe, large canoe, kayak). The DMG page 54 movement seam and the DSG page 25 boatwright seam are noted. The Mining section (Where to Mine, p. 48) starts the NEXT round per the content-density rule.",
+    "sentinel": "Six tables pin in one round, the most since the cave-in arcs: Table 21 (8x2 speeds), Table 22 (8x2 standstill rounds), Table 23 (8x2 with the fractions pinned as whole units - draught in inches, ceiling in half-feet - so 1/3 ft pins as 4 inches and 1 1/2 ft as 3 half-feet), Table 24 (8x2 with the movement penalties as positive magnitudes, minus in the name and comment per the R514 convention), Table 25 (9 rows keyed width x 3 + flow, proficient and nonproficient percents), and Table 26 (8 lo/hi bands with 00 read as 100; the hull-split band pins as 45-60 exactly as printed, overlapping the 21-45 large-holes band at 45 - the R517 overlap lesson: pin as printed, never repair the book). Every effect die pins as dice + sides consts per the R508 convention (1d6 hours, 2d4+2 turns, 2d4, 1d6 rounds, 1d6 pieces, 1d4 refloat rounds). The DMG page 54 and DSG page 25 seams are noted; nothing auto-credits."
+  },
+  "include_after": "#include \"rules/dsgwater.h\"  // R517: the DSG underground waterways pins",
+  "include_comment": "the DSG underground water travel pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "audit_comment": "The DSG water travel pins the underground boating rules (the deepening riverbeds raising old access tunnels, the low-ceiling impossibility, the folding and collapsible and creature boats, the scale-model test for tight bends, the Table 21 eight-boat movement grid with the Table 22 standstill rounds, the movement-relative-to-water-only rule with the 30/150 upstream-downstream example, the Table 23 draught and ceiling minima pinned in inches and half-feet, the Table 24 nonproficiency movement penalties and capsize chances with the one-proficient and half-proficient exemptions and the medium-or-slower assumption, the collision rules with the lantern and infravision and vision-range readings, the Table 25 narrow/average/wide placid/medium/rapid collision grid, the 5%-per-30-ft damage math with the difference-reading hull damage, the Table 26 eight-band damage grid with its 1d6-hour, 2d4+2-turn, 2d4-turn, 1d6-round and 1d6-piece effects, the drop-off checks at 5% per foot with the 99/00 miraculous survival and the Proficiency Check capsize save, the bailing rules canceling one small hole per character, and the capsizing rules with the 1d4-round refloat and the boatwright repair seam).",
+  "audit_label": "R518 DSG water travel audit",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R517 LANDED 2026-10-17: commit 567d81f (census 440 -> 441,",
+  "prev_record": [
+    "- R517 LANDED 2026-10-17: commit 567d81f (census 440 -> 441,",
+    "  pushed 10723f2..567d81f), the DSG UNDERGROUND WATERWAYS,",
+    "  printed pp. 43-46 (pdf 44-47) - the standing water rules",
+    "  (the low ceiling blocking boat travel, no-wind sailing,",
+    "  the cave-in tsunami and confining-wall chop, the",
+    "  drinkable inflow, the bottom-cork reservoirs), the salt",
+    "  seas, the impassable/narrow/average/wide diameter ladder",
+    "  (3 / 20 / 20-60 / 60 ft, depths 3 / 4-8 / 8), the",
+    "  50/100% flow, the 0-40 rate with the x20 ft/round, the six",
+    "  flow bands (stagnant 0, placid 1-2, medium 2-6, rapids",
+    "  6-12, cascade 12-30, waterfall 30-40) with speeds,",
+    "  slopes, audibility and the drop-off dice (1d6/1d3 on 5-6,",
+    "  1d6 with 6 = none / 1d4 ft, 3d6 / 1d8 ft), the damming",
+    "  math (1000 cu ft per flow per turn, double wide / quarter",
+    "  narrow, 1d6 worker points vs flow destruction,",
+    "  50/150/250 completed CPVs per the DMG 109-110 seam, the",
+    "  half-flow leak), the temperature ladder (1d4-mile warmth,",
+    "  6d6 boiling no-save with -2/die min 1, 1d6 very hot,",
+    "  bath-warm immunity), and the access rules. The djvu",
+    "  garbles: 10096 = 100% flow, \"flow rate - 2-6\" = 2-6",
+    "  (Capture settled), plus a stray STRUCTGRAL DECAY heading",
+    "  interrupting the waterways opener in djvu (Capture",
+    "  clean). Pinned as rules/dsgwater.h (prefix dnt, verified",
+    "  free; 110 inlines: 70 consts + 40 bools - the biggest",
+    "  header since R509; every die as dice+sides consts per the",
+    "  R508 convention). STANDING DESIGN NOTE: the flow bands",
+    "  pin as BOUND CONSTS, NOT a chain - the printed bands",
+    "  overlap at their edges (placid 1-2 / medium 2-6 share the",
+    "  2, rapids 6-12 share the 6) and a chain would force",
+    "  non-overlap the book does not have. Gap 89/66 -> 90/65:",
+    "  the single waterways child flip, no manifest line (no",
+    "  tables in this section). DELIVERY: canvas r517-splice,",
+    "  authored md5 ca4ac09e (48472 bytes); user ran ./bn 517",
+    "  manually per the standing rule - user-side md5 ff355363,",
+    "  the rewrite class, engine ALL OK twice (applied 5/0 then",
+    "  0/5); preflight GREEN with the quiet display, BUILD:",
+    "  0 warnings, AUDIT CENSUS: 441.",
+    "  NEXT - R518: Underground water travel (pp. 46-48) -",
+    "  Tables 21-26 (boat movement rates, standstill movement,",
+    "  draught and ceilings, nonproficiency penalties, collision",
+    "  probability, boat damage) - a table-heavy round; djvu",
+    "  from line ~5963, Capture idx 63-64 hold the reprints."
+  ],
+  "gap_census": {
+    "closed": 97,
+    "open": 58
+  },
+  "gap_flips": [
+    {
+      "from": "  - [ ] Underground water travel (pp. 46-48) - Tables 21-26 (boat movement rates, standstill movement, draught and ceilings, nonproficiency penalties, collision probability, boat damage)",
+      "to": "  - [x] Underground water travel (pp. 46-48) - Tables 21-26 (boat movement rates, standstill movement, draught and ceilings, nonproficiency penalties, collision probability, boat damage) - R518: the six tables - T21 speeds (90/120 through 20/30 to 120/180), T22 standstill rounds, T23 draught/ceiling minima, T24 nonproficiency -30 to -60 and 5-25% capsize, T25 collision 1-20%/10-40% by width and flow, T26 the eight damage bands - plus the relative-movement 30/150 example, the 5%-per-30-ft damage math, the drop-off 5% per foot, the 99/00 survival, the bailing and 1d4-round refloat rules",
+      "note": "the Underground water travel child line"
+    },
+    {
+      "from": "- [ ] Table 21: Boat Movement Rates (p. 46)",
+      "to": "- [x] Table 21: Boat Movement Rates (p. 46) - R518: the eight-boat grid - small rowboat 90/120, coracle 30/45, large rowboat 45/60, small barge/raft 30/45, large barge 20/30, small canoe 120/180, large canoe 90/120, kayak 120/180 ft/round, subject to water flow, maximum speed counting as hard work",
+      "note": "the Table 21 manifest line"
+    },
+    {
+      "from": "- [ ] Table 22: Movement From a Standstill Position (p. 46)",
+      "to": "- [x] Table 22: Movement From a Standstill Position (p. 46) - R518: the rounds to normal and maximum speed - small rowboat 1/3, coracle 1/3, large rowboat 2/5, small barge/raft 2/6, large barge 5/10, small canoe 1/2, large canoe 1/3, kayak 1/2",
+      "note": "the Table 22 manifest line"
+    },
+    {
+      "from": "- [ ] Table 23: Boat Draught and Ceilings (p. 46)",
+      "to": "- [x] Table 23: Boat Draught and Ceilings (p. 46) - R518: the depth and ceiling minima - small rowboat 1/2 ft under 2 ft, coracle 1/2 under 3, large rowboat and small barge 3/4 under 3, large barge 1 ft under 4 ft, small canoe and kayak 1/4 under 1 1/2 ft, large canoe 1/3 under 2 ft (pinned in inches and half-feet)",
+      "note": "the Table 23 manifest line"
+    },
+    {
+      "from": "- [ ] Table 24: Nonproficiency Penalties for Boat-Use (p. 47)",
+      "to": "- [x] Table 24: Nonproficiency Penalties for Boat-Use (p. 47) - R518: the movement modifiers -30/-15/-15/-10/-5/-60/-30/-60 and the capsize chances 5/10/0/0/0/20/10/25%, with one proficient aboard stopping the capsize chance and half the rowers proficient stopping the movement penalties",
+      "note": "the Table 24 manifest line"
+    },
+    {
+      "from": "- [ ] Table 25: Collision Probability (p. 48)",
+      "to": "- [x] Table 25: Collision Probability (p. 48) - R518: the d100 grid - narrow 1/10, 5/20, 20/40, average 0/5, 2/10, 10/20, wide 0/1, 0/4, 4/8 (proficient/nonproficient) rolled each blind round",
+      "note": "the Table 25 manifest line"
+    },
+    {
+      "from": "- [ ] Table 26: Boat Damage (p. 48)",
+      "to": "- [x] Table 26: Boat Damage (p. 48) - R518: the percent bands 01-05 slight leak (founders in 1d6 hours), 06-10 small hole (2d4+2 turns), 11-20 many holes (2d4), 21-45 large holes (1d6 rounds), 45-60 hull splits (immediate), 61-80 breaks into 1d6 pieces, 81-98 splinters, 99-00 no damage",
+      "note": "the Table 26 manifest line"
+    }
+  ],
+  "consts": [
+    {
+      "name": "dnuT21RowCount",
+      "value": 8,
+      "comment": "the Table 21 boat movement rates grid carries eight boat types."
+    },
+    {
+      "name": "dnuT22RowCount",
+      "value": 8,
+      "comment": "the Table 22 standstill grid carries the same eight boat types."
+    },
+    {
+      "name": "dnuT23RowCount",
+      "value": 8,
+      "comment": "the Table 23 draught and ceilings grid carries the same eight boat types."
+    },
+    {
+      "name": "dnuT24RowCount",
+      "value": 8,
+      "comment": "the Table 24 nonproficiency grid carries the same eight boat types."
+    },
+    {
+      "name": "dnuT25RowCount",
+      "value": 9,
+      "comment": "the Table 25 collision probability grid carries nine cells: the three waterway widths against the placid, medium and rapid flow bands."
+    },
+    {
+      "name": "dnuT26RowCount",
+      "value": 8,
+      "comment": "the Table 26 boat damage grid carries eight percent-damage bands."
+    },
+    {
+      "name": "dnuExampleStreamFtPerRound",
+      "value": 60,
+      "comment": "the worked example: a stream flowing 60 feet per round."
+    },
+    {
+      "name": "dnuExampleCanoeFtPerRound",
+      "value": 90,
+      "comment": "a canoe traveling upstream at 90 feet per round in that stream."
+    },
+    {
+      "name": "dnuExampleUpstreamNetFt",
+      "value": 30,
+      "comment": "the upstream canoe is actually only moving 30 feet per round past the bank - boat movement is relative to the water only."
+    },
+    {
+      "name": "dnuExampleDownstreamFt",
+      "value": 150,
+      "comment": "the same canoe traveling downstream streaks along at 150 feet per round relative to the stream's bank."
+    },
+    {
+      "name": "dnuDamageBasePctPerSlice",
+      "value": 5,
+      "comment": "the base chance of suffering collision damage is 5% for each 30-feet-per-round slice of the boat's speed."
+    },
+    {
+      "name": "dnuDamageSpeedSliceFt",
+      "value": 30,
+      "comment": "the speed slice of the collision damage formula: 30 feet per round."
+    },
+    {
+      "name": "dnuExampleDamagePct",
+      "value": 15,
+      "comment": "the worked example: a boat traveling 90 feet per round has a damage probability of 15%."
+    },
+    {
+      "name": "dnuExampleHullDamagePct",
+      "value": 10,
+      "comment": "the worked example: a damage roll of 05 against the 15% probability is 10% less, so the boat's hull has suffered 10% damage - the hull damage is the difference between the die roll and the damage probability."
+    },
+    {
+      "name": "dnuDropoffDamagePctPerFoot",
+      "value": 5,
+      "comment": "a boat plunging over a drop-off checks for damage just as in a collision, but the chance is 5% per one foot of the drop-off, not based upon the boat's speed."
+    },
+    {
+      "name": "dnuDropoffCapsizePctPerFoot",
+      "value": 5,
+      "comment": "the chance of capsizing over a drop-off is also 5% per one foot of drop-off."
+    },
+    {
+      "name": "dnuRefloatRoundsDice",
+      "value": 1,
+      "comment": "it takes 1d4 rounds to refloat a capsized boat."
+    },
+    {
+      "name": "dnuRefloatRoundsSides",
+      "value": 4,
+      "comment": "the sides of the 1d4-round refloating roll, pinned as dice + sides consts per the R508 convention."
+    },
+    {
+      "name": "dnuT26SlightLeakHoursDice",
+      "value": 1,
+      "comment": "the 01-05 band: the boat leaks slightly and will founder after 1d6 hours."
+    },
+    {
+      "name": "dnuT26SlightLeakHoursSides",
+      "value": 6,
+      "comment": "the sides of the 1d6-hour slight-leak roll."
+    },
+    {
+      "name": "dnuT26SmallHoleTurnsDice",
+      "value": 2,
+      "comment": "the 06-10 band: water pours in from a small hole and the boat founders in 2d4 + 2 turns."
+    },
+    {
+      "name": "dnuT26SmallHoleTurnsSides",
+      "value": 4,
+      "comment": "the sides of the 2d4-turn small-hole roll."
+    },
+    {
+      "name": "dnuT26SmallHoleBonusTurns",
+      "value": 2,
+      "comment": "the +2 turns added to the small-hole 2d4 foundering roll."
+    },
+    {
+      "name": "dnuT26ManyHolesDice",
+      "value": 2,
+      "comment": "the 11-20 band: water pours in from 2d4 small holes and the boat founders in 2d4 turns - both rolls share the 2d4 shape."
+    },
+    {
+      "name": "dnuT26ManyHolesSides",
+      "value": 4,
+      "comment": "the sides of the 2d4 rolls for the many-holes band."
+    },
+    {
+      "name": "dnuT26LargeHoleRoundsDice",
+      "value": 1,
+      "comment": "the 21-45 band: large holes in the hull, the boat founders in 1d6 rounds."
+    },
+    {
+      "name": "dnuT26LargeHoleRoundsSides",
+      "value": 6,
+      "comment": "the sides of the 1d6-round large-hole roll."
+    },
+    {
+      "name": "dnuT26PiecesDice",
+      "value": 1,
+      "comment": "the 61-80 band: the boat breaks into 1d6 pieces."
+    },
+    {
+      "name": "dnuT26PiecesSides",
+      "value": 6,
+      "comment": "the sides of the 1d6-pieces roll."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dnuRiverbedDeepeningRaisesTunnels",
+      "value": true,
+      "comment": "the torrents of rushing water gouge their channels, so riverbeds grow deeper and access tunnels that once fed into a river below its surface may now end a dozen or more feet above the water."
+    },
+    {
+      "name": "dnuLowCeilingBlocksBoatTravel",
+      "value": true,
+      "comment": "the water might be deep enough for the heaviest of boats, but if the ceiling drops to within a few feet of the water, travel by boat is quite impossible."
+    },
+    {
+      "name": "dnuWeatherAbsentUnderground",
+      "value": true,
+      "comment": "the dangers presented by weather are generally absent from the underground; low ceilings and tortuously winding passages create the replacement problems."
+    },
+    {
+      "name": "dnuFoldingBoatIdeal",
+      "value": true,
+      "comment": "enchanted vessels such as the folding boat are ideal for dungeon adventuring, since they can easily be carried through narrow passages and down stairways."
+    },
+    {
+      "name": "dnuCollapsibleBoatsWeaker",
+      "value": true,
+      "comment": "collapsible boats, while expensive and weaker than normal boats, provide another means of traversing underground waters."
+    },
+    {
+      "name": "dnuCreatureBoatsAcquirable",
+      "value": true,
+      "comment": "in inhabited or heavily traveled regions characters might find boats used by underground creatures - borrowed, bought, or otherwise acquired."
+    },
+    {
+      "name": "dnuScaleModelForTightBends",
+      "value": true,
+      "comment": "when carrying a boat into a dungeon the DM must note the boat dimensions against the passage sizes; in tight series of turns a scale cut-out model of the boat over a detailed corridor map shows whether it fits."
+    },
+    {
+      "name": "dnuMovementRelativeToWaterOnly",
+      "value": true,
+      "comment": "boat movement is relative to the water only; the rate must be combined with (added to or subtracted from) the water movement to get the movement relative to land."
+    },
+    {
+      "name": "dnuMaxSpeedIsHardWork",
+      "value": true,
+      "comment": "a character propelling a boat at maximum speed is considered to be working hard for purposes of the fatigue and exhaustion rules."
+    },
+    {
+      "name": "dnuCoastingReverseOfAcceleration",
+      "value": true,
+      "comment": "the acceleration procedure applies in reverse to determine how long a boat continues coasting forward when its crew attempts to stop it."
+    },
+    {
+      "name": "dnuRatesAssumeProficientCrew",
+      "value": true,
+      "comment": "the listed movement rates assume at least one character helping to propel the boat has boating proficiency."
+    },
+    {
+      "name": "dnuMoveModifierEachRound",
+      "value": true,
+      "comment": "the nonproficiency movement modifier is applied to each round of operation at normal or maximum speed."
+    },
+    {
+      "name": "dnuCapsizeOnEntryExitAndRisky",
+      "value": true,
+      "comment": "the capsize chance is rolled each time a character enters or leaves the boat and on any other occasions the DM feels are risky - turning around in a mild current, retrieving something from the water, standing up."
+    },
+    {
+      "name": "dnuOneProficientStopsCapsize",
+      "value": true,
+      "comment": "if at least one person with boating proficiency is present in the boat, the capsize chance does not apply."
+    },
+    {
+      "name": "dnuHalfProficientStopsPenalty",
+      "value": true,
+      "comment": "if at least half of the characters paddling or rowing have boating proficiency, the movement penalties do not apply."
+    },
+    {
+      "name": "dnuPenaltiesAssumeMediumOrSlower",
+      "value": true,
+      "comment": "all of the nonproficiency penalties assume the boat moves through water of medium flow or slower; riding rapids or cascades is much more challenging."
+    },
+    {
+      "name": "dnuLanternAvoidsDarkCollisions",
+      "value": true,
+      "comment": "a boat that carries a lantern or beacon can light the water before it sufficiently to avoid collisions due to darkness; if the light is snuffed or the progress is especially fast, the danger of smashing into a rock becomes very real."
+    },
+    {
+      "name": "dnuVisionRuleAvoidsCollisions",
+      "value": true,
+      "comment": "obstacles can be avoided if the range of vision of the characters on board is greater than the distance the boat travels in one round."
+    },
+    {
+      "name": "dnuInfravisionCanNavigate",
+      "value": true,
+      "comment": "infravision is sufficiently sensitive to the differences between the water and its bed to navigate a boat."
+    },
+    {
+      "name": "dnuBlindTravelChecksEachRound",
+      "value": true,
+      "comment": "if vision does not extend far enough, the craft must check each round it travels blind, rolling d100 against the Table 25 collision percentage (the djvu garble 4100 = d100, settled by the Capture dlOO read)."
+    },
+    {
+      "name": "dnuDamageCheckIsD100",
+      "value": true,
+      "comment": "when a collision is indicated, roll d100 again and compare to the damage probability; a result equal to or less means the boat sustains damage."
+    },
+    {
+      "name": "dnuHullDamageIsDifference",
+      "value": true,
+      "comment": "the exact extent of collision damage is the difference between the die roll and the damage probability, expressed as a percent of the boat's hull strength."
+    },
+    {
+      "name": "dnuDropoffMiraculousSurvival",
+      "value": true,
+      "comment": "any time the drop-off damage roll is made and the result is 99 or 00, the boat miraculously survives the fall undamaged."
+    },
+    {
+      "name": "dnuCapsizeProficiencyCheckPrevents",
+      "value": true,
+      "comment": "if a drop-off capsize is indicated but a character with boating proficiency is aboard, any one such character can attempt a Proficiency Check; success means the capsize was prevented."
+    },
+    {
+      "name": "dnuBailingStrenuousUnlessSlight",
+      "value": true,
+      "comment": "characters not rowing or steering can bail water from a ruptured hull; bailing is strenuous exercise for the fatigue and exhaustion rules unless the boat is only leaking slightly."
+    },
+    {
+      "name": "dnuBailingCancelsOneSmallHole",
+      "value": true,
+      "comment": "a single character can bail enough water to cancel the effects of one small hole in the hull, given a suitable container and all of his time devoted to bailing."
+    },
+    {
+      "name": "dnuCapsizeDropsLooseObjects",
+      "value": true,
+      "comment": "a capsized boat tips over and fills with water; all loose objects fall free and must be recovered individually."
+    },
+    {
+      "name": "dnuRecoveryImpossibleInRapidWater",
+      "value": true,
+      "comment": "in rapidly moving water, recovery of scattered items is usually impossible."
+    },
+    {
+      "name": "dnuCapsizedBoatsDoNotSink",
+      "value": true,
+      "comment": "capsized boats do not sink, so characters unable to get their footing can hang onto the boat and float downstream until they can refloat it."
+    },
+    {
+      "name": "dnuDamageRequiresRepairBeforeRefloat",
+      "value": true,
+      "comment": "if the boat was damaged when it capsized, the holes must be repaired before refloating (see the boatwright proficiency on DSG page 25)."
+    }
+  ],
+  "chains": [],
+  "tables": [
+    {
+      "name": "Table 21: BOAT MOVEMENT RATES",
+      "tag": "21",
+      "count": "dnuT21RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnuT21NormalFt",
+        "dnuT21MaxFt"
+      ],
+      "col_comments": [
+        "the normal oar/paddle speed in feet per round, subject to the speed and direction of water flow: 0 small rowboat 90, 1 coracle 30, 2 large rowboat 45, 3 small barge/raft 30, 4 large barge 20, 5 small canoe 120, 6 large canoe 90, 7 kayak 120.",
+        "the maximum oar/paddle speed in feet per round: 0 small rowboat 120, 1 coracle 45, 2 large rowboat 60, 3 small barge/raft 45, 4 large barge 30, 5 small canoe 180, 6 large canoe 120, 7 kayak 180."
+      ],
+      "audit_comment": "the Table 21 boat movement rates grid (the djvu garble Oar/Paddie = Oar/Paddle)",
+      "data": [
+        [
+          90,
+          120
+        ],
+        [
+          30,
+          45
+        ],
+        [
+          45,
+          60
+        ],
+        [
+          30,
+          45
+        ],
+        [
+          20,
+          30
+        ],
+        [
+          120,
+          180
+        ],
+        [
+          90,
+          120
+        ],
+        [
+          120,
+          180
+        ]
+      ]
+    },
+    {
+      "name": "Table 22: MOVEMENT FROM A STANDSTILL POSITION",
+      "tag": "22",
+      "count": "dnuT22RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnuT22ToNormalRounds",
+        "dnuT22ToMaxRounds"
+      ],
+      "col_comments": [
+        "rounds to reach normal speed from a standstill: 0 small rowboat 1, 1 coracle 1, 2 large rowboat 2, 3 small barge/raft 2, 4 large barge 5, 5 small canoe 1, 6 large canoe 1, 7 kayak 1.",
+        "rounds to reach maximum speed from a standstill: 0 small rowboat 3, 1 coracle 3, 2 large rowboat 5, 3 small barge/raft 6, 4 large barge 10, 5 small canoe 2, 6 large canoe 3, 7 kayak 2."
+      ],
+      "audit_comment": "the Table 22 standstill grid",
+      "data": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "Table 23: BOAT DRAUGHT AND CEILINGS",
+      "tag": "23",
+      "count": "dnuT23RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnuT23DraughtInches",
+        "dnuT23CeilingHalfFeet"
+      ],
+      "col_comments": [
+        "the depth of water required below the surface, pinned in inches: 0 small rowboat 1/2 ft = 6, 1 coracle 1/2 ft = 6, 2 large rowboat 3/4 ft = 9, 3 small barge/raft 3/4 ft = 9, 4 large barge 1 ft = 12, 5 small canoe 1/4 ft = 3, 6 large canoe 1/3 ft = 4, 7 kayak 1/4 ft = 3.",
+        "the minimum ceiling needed to pass unimpeded, pinned in half-feet: 0 small rowboat 2 ft = 4, 1 coracle 3 ft = 6, 2 large rowboat 3 ft = 6, 3 small barge/raft 3 ft = 6, 4 large barge 4 ft = 8, 5 small canoe 1 1/2 ft = 3, 6 large canoe 2 ft = 4, 7 kayak 1 1/2 ft = 3."
+      ],
+      "audit_comment": "the Table 23 draught and ceilings grid (fractions pinned as whole units: draught in inches, ceiling in half-feet)",
+      "data": [
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Table 24: NONPROFICIENCY PENALTIES FOR BOAT USE",
+      "tag": "24",
+      "count": "dnuT24RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnuT24MovePenaltyFtPerRound",
+        "dnuT24CapsizePct"
+      ],
+      "col_comments": [
+        "the nonproficiency movement modifier pinned as a positive magnitude with the minus in this name and comment, applied each round at normal or maximum speed: 0 small rowboat -30, 1 coracle -15, 2 large rowboat -15, 3 small barge/raft -10, 4 large barge -5, 5 small canoe -60, 6 large canoe -30, 7 kayak -60.",
+        "the capsize chance percent, rolled on entering or leaving the boat and other risky occasions: 0 small rowboat 5%, 1 coracle 10%, 2 large rowboat 0, 3 small barge/raft 0, 4 large barge 0, 5 small canoe 20% (the djvu garble 2096 = 20%), 6 large canoe 10%, 7 kayak 25%."
+      ],
+      "audit_comment": "the Table 24 nonproficiency penalties grid",
+      "data": [
+        [
+          30,
+          5
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          60,
+          20
+        ],
+        [
+          30,
+          10
+        ],
+        [
+          60,
+          25
+        ]
+      ]
+    },
+    {
+      "name": "Table 25: COLLISION PROBABILITY",
+      "tag": "25",
+      "count": "dnuT25RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnuT25ProfPct",
+        "dnuT25NonprofPct"
+      ],
+      "col_comments": [
+        "the collision percent with boating proficiency (the number before the slash), rows 0-2 narrow / 3-5 average / 6-8 wide against placid, medium and rapid flow: narrow 1/5/20, average 0/2/10, wide 0/0/4.",
+        "the collision percent without boating proficiency (the number after the slash): narrow 10/20/40, average 5/10/20, wide 1/4/8."
+      ],
+      "audit_comment": "the Table 25 collision probability grid (row key = width x 3 + flow: 0 narrow placid through 8 wide rapid)",
+      "data": [
+        [
+          1,
+          10
+        ],
+        [
+          5,
+          20
+        ],
+        [
+          20,
+          40
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          10,
+          20
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          8
+        ]
+      ]
+    },
+    {
+      "name": "Table 26: BOAT DAMAGE",
+      "tag": "26",
+      "count": "dnuT26RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnuT26Lo",
+        "dnuT26Hi"
+      ],
+      "col_comments": [
+        "the low end of the percent-damage band: 0 leaks slightly at 01, 1 small hole at 06, 2 many holes at 11, 3 large holes at 21, 4 hull splits at 45, 5 breaks into 1d6 pieces at 61, 6 splinters at 81, 7 no damage at 99.",
+        "the high end of the percent-damage band with 00 read as 100: 05, 10, 20, 45, 60, 80, 98, 100."
+      ],
+      "audit_comment": "the Table 26 boat damage grid",
+      "data": [
+        [
+          1,
+          5
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          11,
+          20
+        ],
+        [
+          21,
+          45
+        ],
+        [
+          45,
+          60
+        ],
+        [
+          61,
+          80
+        ],
+        [
+          81,
+          98
+        ],
+        [
+          99,
+          100
+        ]
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "expr": "m['dnuExampleStreamFtPerRound']() != 60 or m['dnuExampleCanoeFtPerRound']() != 90 or m['dnuExampleUpstreamNetFt']() != 30 or m['dnuExampleDownstreamFt']() != 150",
+      "note": "the relative-movement example: the 90-ft canoe in the 60-ft stream nets 30 ft/round upstream and 150 downstream."
+    },
+    {
+      "expr": "m['dnuDamageBasePctPerSlice']() != 5 or m['dnuDamageSpeedSliceFt']() != 30 or m['dnuExampleDamagePct']() != 15 or m['dnuExampleHullDamagePct']() != 10",
+      "note": "the collision damage math: 5% per 30 ft/round of speed, the 90-ft boat at 15%, and the 05 roll meaning 10% hull damage."
+    },
+    {
+      "expr": "m['dnuDropoffDamagePctPerFoot']() != 5 or m['dnuDropoffCapsizePctPerFoot']() != 5 or m['dnuRefloatRoundsDice']() != 1 or m['dnuRefloatRoundsSides']() != 4",
+      "note": "the drop-off checks at 5% per foot for both damage and capsize, and the 1d4-round refloating of a capsized boat."
+    },
+    {
+      "expr": "m['dnuT26SlightLeakHoursDice']() != 1 or m['dnuT26SlightLeakHoursSides']() != 6 or m['dnuT26SmallHoleTurnsDice']() != 2 or m['dnuT26SmallHoleTurnsSides']() != 4 or m['dnuT26SmallHoleBonusTurns']() != 2 or m['dnuT26ManyHolesDice']() != 2 or m['dnuT26ManyHolesSides']() != 4 or m['dnuT26LargeHoleRoundsDice']() != 1 or m['dnuT26LargeHoleRoundsSides']() != 6 or m['dnuT26PiecesDice']() != 1 or m['dnuT26PiecesSides']() != 6",
+      "note": "the Table 26 effect dice: the slight-leak 1d6 hours, the small-hole 2d4+2 turns, the many-holes 2d4 holes and 2d4 turns, the large-hole 1d6 rounds, and the 1d6 pieces."
+    }
+  ],
+  "table_checks": [
+    {
+      "expr": "m['dnuT21NormalFt'](0) != 90 or m['dnuT21MaxFt'](0) != 120 or m['dnuT21NormalFt'](4) != 20 or m['dnuT21MaxFt'](4) != 30 or m['dnuT21NormalFt'](5) != 120 or m['dnuT21MaxFt'](5) != 180 or m['dnuT21NormalFt'](7) != 120 or m['dnuT21MaxFt'](7) != 180",
+      "note": "Table 21 anchor rows: the small rowboat 90/120, the large barge 20/30, the small canoe and kayak 120/180."
+    },
+    {
+      "expr": "m['dnuT22ToNormalRounds'](4) != 5 or m['dnuT22ToMaxRounds'](4) != 10 or m['dnuT22ToNormalRounds'](3) != 2 or m['dnuT22ToMaxRounds'](3) != 6",
+      "note": "Table 22 anchor rows: the large barge needs 5 rounds to normal and 10 to maximum, the small barge/raft 2 and 6."
+    },
+    {
+      "expr": "m['dnuT23DraughtInches'](0) != 6 or m['dnuT23CeilingHalfFeet'](0) != 4 or m['dnuT23DraughtInches'](4) != 12 or m['dnuT23CeilingHalfFeet'](4) != 8 or m['dnuT23DraughtInches'](6) != 4 or m['dnuT23DraughtInches'](7) != 3",
+      "note": "Table 23 anchor rows: the small rowboat 1/2 ft draught under a 2-ft ceiling, the large barge 1 ft under 4 ft, the large canoe 1/3 ft and the kayak 1/4 ft."
+    },
+    {
+      "expr": "m['dnuT24MovePenaltyFtPerRound'](0) != 30 or m['dnuT24CapsizePct'](0) != 5 or m['dnuT24MovePenaltyFtPerRound'](5) != 60 or m['dnuT24CapsizePct'](5) != 20 or m['dnuT24MovePenaltyFtPerRound'](7) != 60 or m['dnuT24CapsizePct'](7) != 25",
+      "note": "Table 24 anchor rows: the small rowboat -30 and 5%, the small canoe -60 and 20% (the djvu garble 2096 = 20%), the kayak -60 and 25%."
+    },
+    {
+      "expr": "m['dnuT25ProfPct'](2) != 20 or m['dnuT25NonprofPct'](2) != 40 or m['dnuT25ProfPct'](0) != 1 or m['dnuT25NonprofPct'](0) != 10 or m['dnuT25ProfPct'](8) != 4 or m['dnuT25NonprofPct'](8) != 8",
+      "note": "Table 25 anchor cells: the narrow rapid 20%/40%, the narrow placid 1%/10%, the wide rapid 4%/8%."
+    },
+    {
+      "expr": "m['dnuT26Lo'](4) != 45 or m['dnuT26Hi'](4) != 60 or m['dnuT26Lo'](7) != 99 or m['dnuT26Hi'](7) != 100",
+      "note": "Table 26 anchor rows: the hull-split band pins as 45-60 exactly as printed (the band overlaps the 21-45 large-holes band at 45), and the no-damage band 99-00 pins as 99-100."
+    }
+  ],
+  "header_sections": {
+    "the water travel opener": [
+      {
+        "kind": "bool",
+        "name": "dnuRiverbedDeepeningRaisesTunnels"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuLowCeilingBlocksBoatTravel"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuWeatherAbsentUnderground"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuFoldingBoatIdeal"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuCollapsibleBoatsWeaker"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuCreatureBoatsAcquirable"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuScaleModelForTightBends"
+      }
+    ],
+    "the Table 21 movement rates grid": [
+      {
+        "kind": "const",
+        "name": "dnuT21RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 21: BOAT MOVEMENT RATES"
+      }
+    ],
+    "the Table 22 standstill grid": [
+      {
+        "kind": "const",
+        "name": "dnuT22RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 22: MOVEMENT FROM A STANDSTILL POSITION"
+      }
+    ],
+    "the relative movement and proficiency rules": [
+      {
+        "kind": "bool",
+        "name": "dnuMovementRelativeToWaterOnly"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuMaxSpeedIsHardWork"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuCoastingReverseOfAcceleration"
+      },
+      {
+        "kind": "const",
+        "name": "dnuExampleStreamFtPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "dnuExampleCanoeFtPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "dnuExampleUpstreamNetFt"
+      },
+      {
+        "kind": "const",
+        "name": "dnuExampleDownstreamFt"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuRatesAssumeProficientCrew"
+      }
+    ],
+    "the Table 23 draught and ceilings grid": [
+      {
+        "kind": "const",
+        "name": "dnuT23RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 23: BOAT DRAUGHT AND CEILINGS"
+      }
+    ],
+    "the Table 24 nonproficiency grid and rules": [
+      {
+        "kind": "const",
+        "name": "dnuT24RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 24: NONPROFICIENCY PENALTIES FOR BOAT USE"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuMoveModifierEachRound"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuCapsizeOnEntryExitAndRisky"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuOneProficientStopsCapsize"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuHalfProficientStopsPenalty"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuPenaltiesAssumeMediumOrSlower"
+      }
+    ],
+    "the collision rules and the Table 25 grid": [
+      {
+        "kind": "bool",
+        "name": "dnuLanternAvoidsDarkCollisions"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuVisionRuleAvoidsCollisions"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuInfravisionCanNavigate"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuBlindTravelChecksEachRound"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT25RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 25: COLLISION PROBABILITY"
+      }
+    ],
+    "the collision damage math": [
+      {
+        "kind": "const",
+        "name": "dnuDamageBasePctPerSlice"
+      },
+      {
+        "kind": "const",
+        "name": "dnuDamageSpeedSliceFt"
+      },
+      {
+        "kind": "const",
+        "name": "dnuExampleDamagePct"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuDamageCheckIsD100"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuHullDamageIsDifference"
+      },
+      {
+        "kind": "const",
+        "name": "dnuExampleHullDamagePct"
+      }
+    ],
+    "the Table 26 damage grid and effects": [
+      {
+        "kind": "const",
+        "name": "dnuT26RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 26: BOAT DAMAGE"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26SlightLeakHoursDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26SlightLeakHoursSides"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26SmallHoleTurnsDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26SmallHoleTurnsSides"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26SmallHoleBonusTurns"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26ManyHolesDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26ManyHolesSides"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26LargeHoleRoundsDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26LargeHoleRoundsSides"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26PiecesDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnuT26PiecesSides"
+      }
+    ],
+    "the drop-off and capsize rules": [
+      {
+        "kind": "const",
+        "name": "dnuDropoffDamagePctPerFoot"
+      },
+      {
+        "kind": "const",
+        "name": "dnuDropoffCapsizePctPerFoot"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuDropoffMiraculousSurvival"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuCapsizeProficiencyCheckPrevents"
+      },
+      {
+        "kind": "const",
+        "name": "dnuRefloatRoundsDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnuRefloatRoundsSides"
+      }
+    ],
+    "the bailing and capsizing rules": [
+      {
+        "kind": "bool",
+        "name": "dnuBailingStrenuousUnlessSlight"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuBailingCancelsOneSmallHole"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuCapsizeDropsLooseObjects"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuRecoveryImpossibleInRapidWater"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuCapsizedBoatsDoNotSink"
+      },
+      {
+        "kind": "bool",
+        "name": "dnuDamageRequiresRepairBeforeRefloat"
+      }
+    ]
+  },
+  "caller_files": []
+}

@@ -6919,6 +6919,48 @@ when both halves land.
   NEXT - R517: Underground waterways (pp. 43-46) - standing
   water, flowing water, water temperature, access - then the
   water-travel Tables 21-26 section.
+- R517 LANDED 2026-10-17: commit 567d81f (census 440 -> 441,
+  pushed 10723f2..567d81f), the DSG UNDERGROUND WATERWAYS,
+  printed pp. 43-46 (pdf 44-47) - the standing water rules
+  (the low ceiling blocking boat travel, no-wind sailing,
+  the cave-in tsunami and confining-wall chop, the
+  drinkable inflow, the bottom-cork reservoirs), the salt
+  seas, the impassable/narrow/average/wide diameter ladder
+  (3 / 20 / 20-60 / 60 ft, depths 3 / 4-8 / 8), the
+  50/100% flow, the 0-40 rate with the x20 ft/round, the six
+  flow bands (stagnant 0, placid 1-2, medium 2-6, rapids
+  6-12, cascade 12-30, waterfall 30-40) with speeds,
+  slopes, audibility and the drop-off dice (1d6/1d3 on 5-6,
+  1d6 with 6 = none / 1d4 ft, 3d6 / 1d8 ft), the damming
+  math (1000 cu ft per flow per turn, double wide / quarter
+  narrow, 1d6 worker points vs flow destruction,
+  50/150/250 completed CPVs per the DMG 109-110 seam, the
+  half-flow leak), the temperature ladder (1d4-mile warmth,
+  6d6 boiling no-save with -2/die min 1, 1d6 very hot,
+  bath-warm immunity), and the access rules. The djvu
+  garbles: 10096 = 100% flow, "flow rate - 2-6" = 2-6
+  (Capture settled), plus a stray STRUCTGRAL DECAY heading
+  interrupting the waterways opener in djvu (Capture
+  clean). Pinned as rules/dsgwater.h (prefix dnt, verified
+  free; 110 inlines: 70 consts + 40 bools - the biggest
+  header since R509; every die as dice+sides consts per the
+  R508 convention). STANDING DESIGN NOTE: the flow bands
+  pin as BOUND CONSTS, NOT a chain - the printed bands
+  overlap at their edges (placid 1-2 / medium 2-6 share the
+  2, rapids 6-12 share the 6) and a chain would force
+  non-overlap the book does not have. Gap 89/66 -> 90/65:
+  the single waterways child flip, no manifest line (no
+  tables in this section). DELIVERY: canvas r517-splice,
+  authored md5 ca4ac09e (48472 bytes); user ran ./bn 517
+  manually per the standing rule - user-side md5 ff355363,
+  the rewrite class, engine ALL OK twice (applied 5/0 then
+  0/5); preflight GREEN with the quiet display, BUILD:
+  0 warnings, AUDIT CENSUS: 441.
+  NEXT - R518: Underground water travel (pp. 46-48) -
+  Tables 21-26 (boat movement rates, standstill movement,
+  draught and ceilings, nonproficiency penalties, collision
+  probability, boat damage) - a table-heavy round; djvu
+  from line ~5963, Capture idx 63-64 hold the reprints.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
