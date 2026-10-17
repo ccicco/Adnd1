@@ -8572,6 +8572,56 @@ when both halves land.
   the secret passages); both reads already
   fetched this round (idx 216 carried Area 26 in
   full and the Area 27 head).
+- R546 LANDED 2026-10-17: commit 550374b6d44fbefb3fc
+  7961c4c0c905e9593860 (census 469 -> 470, pushed
+  c719f88..550374b), THE DSG DEEPEARTH AREAS 26-27,
+  printed pp. 95-96 (pdf 96-97) - Area 26 the
+  Hallowed Grounds (the largest chambers in all
+  Deepearth - 1,000-ft ceilings, mile-wide dozen-
+  mile-long caverns, bridged gorges, city ruins; the
+  streams and deep lakes; the barren beaten look, the
+  collapsed bridges; the battle debris and thousands
+  of skeletons - drow, duergar, svirfneblin, derro,
+  plus the skeleton-less pech, cloakers, illithids;
+  the sacrosanct spirits - wights, wraiths,
+  spectres, ghosts, skeletons - each cavern under a
+  single lich; the plentiful air/water but no food;
+  the centuries-scavenged battlefields; and the
+  treasure houses - thousands of weapons, war
+  machines, coin/gem/jewelry fortunes and battle
+  magic beyond measure, each held by an undead army
+  under a lich of 18-27th level (17+1d10), 20% MU/
+  clerics and 80% magic-users), and Area 27 the
+  Melting Pot (the small-cavern maze with lustrous
+  formations; the racial niches of 1d12 caves -
+  drow, duergar, pech, derro, cloakers, myconids,
+  umber hulks, kuo-toa - each vigorously defended
+  with fortifications, traps and war training; the
+  rothe herds and fungus plots; the sacred
+  unpollutable water; the exhausted veins and wise
+  raw-material use; the secret passages and
+  concealed entrances of the crowded history). A
+  CLEAN-READ ROUND: both machine reads agree on every
+  number (djvu ~lines 12258-12360, capture idx 216;
+  the djvu '17 + 1410' and '8096' settled by the
+  capture as 17+1d10 and 80%, the capture 'ld12'
+  settled by the djvu as 1d12). 29 inlines (9 consts
+  + 20 bools), header rules/dsgarea13.h, prefix
+  dnao, no table. DELIVERY clean md5-exact on the
+  first try: authored md5 927d5aaaae30248de10f7240
+  671b45b8 matched exactly (spec 17,026 bytes);
+  engine applied 4 then 0/4, preflight GREEN with
+  AUDIT CENSUS: 470. A ZERO-FLIP ROUND: gap census
+  stays 139/16, the pp. 75-98 Deepearth child open.
+  NEXT - R547: Area 28 the Realm of the Drow
+  (printed p. 96, pdf 97, djvu ~line 12362+) - the
+  excavated realm of living caves, the mile-wide
+  1,000-ft-domed council chamber with its
+  levitation-only shaft, the built drow cities with
+  surface-style buildings, the placid waterways and
+  boat travel, likely paired with Area 29 the Dark
+  Realms (p. 97); the djvu head is already read,
+  capture window with the next fetch.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
