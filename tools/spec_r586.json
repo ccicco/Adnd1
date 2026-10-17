@@ -1,0 +1,247 @@
+{
+ "round": 586,
+ "prefix": "ddo",
+ "header_file": "rules/gehenna.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 509,
+ "title": "Gehenna",
+ "audit_label": "R586 Gehenna audit",
+ "audit_comment": "GEHENNA, printed pp. 107-109, the fourfold furnaces: smoky, burning realms where the ground gives both light (like Tarterus's orbs) and heat, hot enough to set unprotected flammables aflame. The mountains have neither bases nor peaks - all is built onto or carved into their sides, the gravity at 45 degrees to the ground so that a lost footing means miles of tumbling, a strike against a wall wounding as a fall from the height of the distance tumbled, and the terrain slippery to slightly slippery throughout. The heat rises from the ground itself - vents, fumaroles, mud pots, flank-running lava, eruptions and earthquakes - dealing 1d8 per turn to the unprotected, negated by the means that master elemental Fire. The layers: Khalas the temperate top, its steam-swathed waterfalls crowned by the Styx's cascades falling thousands of feet into the underground passages, devils of the Hells hiding in its crags; Chamada the violent second, lava cascades thousands of miles wide, volcano throats wide enough to swallow cities, and within 10 miles of the surface an acrid cloud that blinds unprotected eyes and chokes as a permanent stinking cloud - the burning-hair smell reaching even the clear depths below; Mungoth the cold third, ash and burning snow, wet-snow-and-burning-rock avalanches its greatest danger; and Krangath the dead furnaces, completely dark, without heat or light even underground. The ways in: the Styx through Khalas, the Astral's color pools, the adjacent Hells, Hades and Concordant Opposition - the interplanar portals always deep beneath the surface as black chasms in the floor, marked by whoever cares; the barriers beneath the furnaces in dead-end corridors, sages' pyramid supposition, and the 5% chance a deeper barrier opens into a volcanic region or a sealed cavern. The features: the plane of exile overrun by nightmares, imps, manes, daemons, mephits, lesser devils and achalera hiding from their betters, the disfavored arch-devils and daemon masters; the barghests, the only true natives, swarming the upper rifts, solitary enslavers of petty baronies whose continual wars send their young to be raised on the Prime; and the sparse Powers - Chih-Chiang Fyu-Ya's teardrop citadel with the giant-skull bell that tolls across the slopes when judgment is called, Loviatar's spell-warded ice fortress of cruelty and abuse on Mungoth, and Shargaas the Night Lord of the deep Night Land, seeing in the dark of the caverns beneath, the only one who might know whether Gehenna goes deeper.",
+ "include_comment": "the Gehenna pins",
+ "include_after": "#include \"rules/hades.h\"  // R585: the Hades pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R585 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R585 LANDED 2026-10-17: commit",
+  "  9973bab85253b1fd2b4f7c72c582e5b1a72",
+  "  2cd2d (census 508 -> 509, pushed",
+  "  402ab09..9973bab), HADES, printed",
+  "  pp. 105-107, the three grey Glooms of",
+  "  the evil-between: Oinos the diseased",
+  "  first layer (the 10% major disease for",
+  "  walkers and Styx-sailors, Anthraxus the",
+  "  Oinodaemon), Niflheim the mist-bound",
+  "  second at 100 feet (the Yggdrasil, Hel),",
+  "  Pluton the grove of Persephone (Olympus",
+  "  base, black willows and the single",
+  "  white laurel), the color-fade (muted at",
+  "  one week, grey at two) and the",
+  "  two-week larva trap (save vs. spell or",
+  "  fade over a month, rescuable by a pull",
+  "  or a wish), the spinning-coin portals",
+  "  (copper to Gehenna, silver to Concordant",
+  "  Opposition, gold to Tarterus, the",
+  "  arcanadaemon iron around them), the",
+  "  barriers (to the Yggdrasil roots before",
+  "  Hel's feast hall, to Persephone and",
+  "  Cerberus), the Khin-Oin (the 20-mile",
+  "  Wasting Tower, never stormed, the",
+  "  daemon masters unbeatable when united),",
+  "  the jailers-turned-prisoners doctrine",
+  "  (Law's guardians gone grey, only",
+  "  greater gods free to wander), the night",
+  "  hags and the larvae medium of exchange,",
+  "  and the Powers (Hades's bronze-dented",
+  "  gates and the wish-reviving Cerberus,",
+  "  Hel's grey einherjar, Nidhogg gnawing",
+  "  the World Ash with the brood reborn",
+  "  within the year, Nergal's seven-domed",
+  "  Nergaltos with the cumulative -2 gate",
+  "  saves at -14 by the seventh dome strong",
+  "  enough to trap Ishtar, the Indian",
+  "  demigoddess of night and thieves,",
+  "  Abbathor's Glitterhell with its rumored",
+  "  Niflheim barrier, and silent Yurtrus of",
+  "  the orcs). 6 consts + 6 bools, prefix",
+  "  ddn, header rules/hades.h. ONE flip:",
+  "  gap census 74/16 -> 75/15. Spec 16,397",
+  "  bytes, md5 f9072114d726c48bf15e36150",
+  "  d802e1e matched exactly first try, 12",
+  "  inlines. TWENTY straight first-tries",
+  "  (R566-R585). NEXT - R586: Gehenna",
+  "  (pp. 107-109, the fourfold furnaces -",
+  "  Khalas the temperate top with the hidden",
+  "  Nine Hells devils, the 45-degree",
+  "  gravity, the heat damage, page-108",
+  "  already read; page-109.md still to read",
+  "  for the deeper layers and the Powers)."
+ ],
+ "banner": {
+  "title": "GEHENNA - printed pp. 107-109, the fourfold furnaces of the lawful-evil slope: the baseless peakless mountains at 45 degrees, the Styx cascades of Khalas, Chamada's blinding cloud, the burning-snow avalanches of Mungoth, the dead furnaces of Krangath, the barghests of the exiles, and the sparse Powers - Chih-Chiang Fyu-Ya, Loviatar, and Shargaas the Night Lord.",
+  "provenance": "verified against printed pp. 107-109 of the uploaded motp.pdf OCR; the four layers, the gravity and heat rules, the portal and barrier conventions and the Powers are pinned exactly as printed (the heat damage rendered 1d8 per turn against the OCR slip); the Nine Hells (pp. 109-113) are left for the round that owns them.",
+  "sentinel": "the gap census after this round: 76 closed, 14 open - ONE box falls (Gehenna); the nine layers of the Hells open next."
+ },
+ "consts": [
+  {
+   "name": "ddoGehennaLayerCount",
+   "value": 4,
+   "comment": "the fourfold furnaces of Gehenna: Khalas the temperate top (nearest the Astral, where the Styx cascades), Chamada the violent volcanic second, Mungoth the cold third of ash and burning snow, and Krangath the dead furnaces, dark and heatless - four layers, each similar mountainous terrain."
+  },
+  {
+   "name": "ddoGravityDegrees",
+   "value": 45,
+   "comment": "the Gehenna gravity: the mountains have neither bases nor peaks, everything built onto or carved into their sides, and the gravity sits at 45 degrees to the level of the ground - a traveler who loses his footing tumbles for miles down the slope before stopping, and a tumbling traveler who strikes a solid object (a fortress wall) suffers damage as a normal fall from a height equal to the distance tumbled; the terrain varies from slippery to slightly slippery throughout the layers."
+  },
+  {
+   "name": "ddoHeatDamage",
+   "value": 8,
+   "comment": "the Gehenna heat: it comes from the ground itself - vents, fumaroles and mud pots common, lava flows often running down the flanks, eruptions and earthquakes frequently ripping the land asunder - and the unprotected suffer 1d8 points of damage per turn, though devices and spells that negate the plane of elemental Fire work against it."
+  },
+  {
+   "name": "ddoChamadaCloudMiles",
+   "value": 10,
+   "comment": "the Chamada cloud: the second layer's lava flows in cascades thousands of miles wide, its erupting volcanoes wide enough to swallow whole cities, and the air within 10 miles of the surface is filled with an acrid cloud that inflicts blindness on unprotected eyes and acts as a permanent stinking cloud - those who cannot escape may spend the rest of their lives choking and coughing; beneath the surface the cloud is absent, but the smell of burning hair and flesh permeates even those depths."
+  },
+  {
+   "name": "ddoBarrierHazardPct",
+   "value": 5,
+   "comment": "the barrier hazard: a 5% chance that any barrier leading to a deeper layer opens into a volcanic region (if into the second or third layer) or a sealed cavern without other escape (if in the fourth) - travelers should consider such occurrences when wandering Gehenna."
+  }
+ ],
+ "bools": [
+  {
+   "name": "ddoGehennaDoctrine",
+   "value": true,
+   "comment": "the Gehenna doctrine: smoky, burning realms where the ground provides light (like Tarterus's orbs) and heat, the ground often so hot that unprotected flammable items burst into flame; the mountains are without bases or peaks, everything built onto or carved into their sides, with the 45-degree gravity and the tumbling rule, and the terrain slippery throughout."
+  },
+  {
+   "name": "ddoKhalasRule",
+   "value": true,
+   "comment": "Khalas, the topmost layer: the most temperate, home to creatures and minor Powers including devils from the Nine Hells currently out of favor or in hiding; a region of waterfalls flowing down the slopes swathed in steam as the water evaporates from the ground's heat, the largest cascades those of the Styx, which follows a rough-hewn course down the mountainside, falling thousands of feet, twisting through rapids, then passing into the underground passages that lace Gehenna's interior; the sky reddish near the horizon, slowly fading to black toward the zenith."
+  },
+  {
+   "name": "ddoMungothKrangathRule",
+   "value": true,
+   "comment": "Mungoth and Krangath: the third layer is one of ash and burning snow, cold - its furnaces fewer and farther apart with ice and snow common on the volcanic edges, the greatest danger avalanches of wet snow mixed with burning rock, the sky darker for the lesser activity, the underground regions as comfortable as the layer gets; Krangath, the final layer, means the dead furnaces - whatever fires existed are long gone, sky and surface completely dark, no sources of heat or light even in the cavern complexes beneath the surface."
+  },
+  {
+   "name": "ddoGehennaPortals",
+   "value": true,
+   "comment": "the Gehenna portals and barriers: the Styx flows through Khalas on its long journey among the lower planes, and Khalas is reachable from the Astral (color pools and viewing points) and from the Nine Hells, Hades, and Concordant Opposition; the interplanar portals always lie deep beneath the surface, appearing as black chasms in the floor with no formal identification, intelligent creatures usually marking the walls with the destination; the barriers between layers are likewise found beneath the furnaces, usually (though not always) in dead-end corridors - an arrangement that leads some sages to picture Gehenna as a four-sided pyramid, each layer one face, though this is only supposition."
+  },
+  {
+   "name": "ddoBarghestRule",
+   "value": true,
+   "comment": "the barghests and the exiles: Gehenna is overrun with creatures from adjacent lower planes - nightmares, imps, manes, daemons, mephits, lesser devils, and achalera - sneaking into the rocks, crannies and caverns to hide from more powerful beings elsewhere; the arch-devils and daemon masters found here are always the less-powerful types in disfavor with the ruler of an adjacent plane, and with resources and manpower low the extraplanar rulers let it stand as a plane of exile; the only true natives are the barghests, swarming through great rifts in the uppermost layer (in lesser numbers below), living solitary lives yet enslaving weaker beings to forge small empires and attack rivals - and because these battles are continual, and because barghests dread the next generation taking over their petty baronies, the young are raised on the Prime Material plane."
+  },
+  {
+   "name": "ddoGehennaPowers",
+   "value": true,
+   "comment": "the Powers of Gehenna: few reside here - the organizers are recruited into the hierarchies of the Nine Hells, the lawless drift to the grey evil of Hades; Chih-Chiang Fyu-Ya, a Chinese demi-power, holds a large region of the first layer from a teardrop-shaped citadel that parts the lava to either side, the demi-god enthroned at its highest point watching and waiting to be called to judgment, a great temple bell carved from a giant's skull hanging behind the throne so that when he is called its tolling sounds throughout the slopes of Gehenna; Loviatar, the Finnish mistress of pain, makes her home in the third layer - a fortress of ice protected by the mighty spells of her parents Tuonetar and Tuoni against the realm's hot spots, served by faithful creatures she rewards with cruelty and abuse, not a nice place to visit; and Shargaas of the orcs, who inhabits the depths beneath the layers of Gehenna - his followers call it the Night Land and him the Night Lord, all the deep caverns his, only Shargaas and his spirit servants (the most evil of his people) able to see within his domain; if there are planar barriers and deeper layers to Gehenna, only Shargaas knows of them."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the GehennaLayerCount pin",
+   "expr": "m['ddoGehennaLayerCount']() != 4"
+  },
+  {
+   "note": "the GravityDegrees pin",
+   "expr": "m['ddoGravityDegrees']() != 45"
+  },
+  {
+   "note": "the HeatDamage pin",
+   "expr": "m['ddoHeatDamage']() != 8"
+  },
+  {
+   "note": "the ChamadaCloudMiles pin",
+   "expr": "m['ddoChamadaCloudMiles']() != 10"
+  },
+  {
+   "note": "the BarrierHazardPct pin",
+   "expr": "m['ddoBarrierHazardPct']() != 5"
+  },
+  {
+   "note": "the GehennaDoctrine pin",
+   "expr": "m['ddoGehennaDoctrine']() != 1"
+  },
+  {
+   "note": "the KhalasRule pin",
+   "expr": "m['ddoKhalasRule']() != 1"
+  },
+  {
+   "note": "the MungothKrangathRule pin",
+   "expr": "m['ddoMungothKrangathRule']() != 1"
+  },
+  {
+   "note": "the GehennaPortals pin",
+   "expr": "m['ddoGehennaPortals']() != 1"
+  },
+  {
+   "note": "the BarghestRule pin",
+   "expr": "m['ddoBarghestRule']() != 1"
+  },
+  {
+   "note": "the GehennaPowers pin",
+   "expr": "m['ddoGehennaPowers']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the gehenna pins": [
+   {
+    "kind": "const",
+    "name": "ddoGehennaLayerCount"
+   },
+   {
+    "kind": "const",
+    "name": "ddoGravityDegrees"
+   },
+   {
+    "kind": "const",
+    "name": "ddoHeatDamage"
+   },
+   {
+    "kind": "const",
+    "name": "ddoChamadaCloudMiles"
+   },
+   {
+    "kind": "const",
+    "name": "ddoBarrierHazardPct"
+   },
+   {
+    "kind": "bool",
+    "name": "ddoGehennaDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "ddoKhalasRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddoMungothKrangathRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddoGehennaPortals"
+   },
+   {
+    "kind": "bool",
+    "name": "ddoBarghestRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddoGehennaPowers"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "gehenna",
+   "from": "  - [ ] Gehenna (pp. 107-109)",
+   "to": "  - [x] Gehenna (pp. 107-109) - R586: the fourfold furnaces (the 45-degree gravity, the four layers, the black-chasm portals, the barghests, Chih-Chiang Fyu-Ya, Loviatar, Shargaas the Night Lord)"
+  }
+ ],
+ "gap_census": {
+  "closed": 76,
+  "open": 14
+ },
+ "caller_files": [],
+ "inline_count": 11
+}

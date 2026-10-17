@@ -10202,6 +10202,59 @@ when both halves land.
   gold coin portals; page-106 already
   read, page-107.md still to read for
   the Hades features and the Powers).
+- R585 LANDED 2026-10-17: commit
+  9973bab85253b1fd2b4f7c72c582e5b1a72
+  2cd2d (census 508 -> 509, pushed
+  402ab09..9973bab), HADES, printed
+  pp. 105-107, the three grey Glooms of
+  the evil-between: Oinos the diseased
+  first layer (the 10% major disease for
+  walkers and Styx-sailors, Anthraxus the
+  Oinodaemon), Niflheim the mist-bound
+  second at 100 feet (the Yggdrasil, Hel),
+  Pluton the grove of Persephone (Olympus
+  base, black willows and the single
+  white laurel), the color-fade (muted at
+  one week, grey at two) and the
+  two-week larva trap (save vs. spell or
+  fade over a month, rescuable by a pull
+  or a wish), the spinning-coin portals
+  (copper to Gehenna, silver to Concordant
+  Opposition, gold to Tarterus, the
+  arcanadaemon iron around them), the
+  barriers (to the Yggdrasil roots before
+  Hel's feast hall, to Persephone and
+  Cerberus), the Khin-Oin (the 20-mile
+  Wasting Tower, never stormed, the
+  daemon masters unbeatable when united),
+  the jailers-turned-prisoners doctrine
+  (Law's guardians gone grey, only
+  greater gods free to wander), the night
+  hags and the larvae medium of exchange,
+  and the Powers (Hades's bronze-dented
+  gates and the wish-reviving Cerberus,
+  Hel's grey einherjar, Nidhogg gnawing
+  the World Ash with the brood reborn
+  within the year, Nergal's seven-domed
+  Nergaltos with the cumulative -2 gate
+  saves at -14 by the seventh dome strong
+  enough to trap Ishtar, the Indian
+  demigoddess of night and thieves,
+  Abbathor's Glitterhell with its rumored
+  Niflheim barrier, and silent Yurtrus of
+  the orcs). 6 consts + 6 bools, prefix
+  ddn, header rules/hades.h. ONE flip:
+  gap census 74/16 -> 75/15. Spec 16,397
+  bytes, md5 f9072114d726c48bf15e36150
+  d802e1e matched exactly first try, 12
+  inlines. TWENTY straight first-tries
+  (R566-R585). NEXT - R586: Gehenna
+  (pp. 107-109, the fourfold furnaces -
+  Khalas the temperate top with the hidden
+  Nine Hells devils, the 45-degree
+  gravity, the heat damage, page-108
+  already read; page-109.md still to read
+  for the deeper layers and the Powers).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

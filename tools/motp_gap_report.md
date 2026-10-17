@@ -123,7 +123,7 @@ sample entries verified against the canonical PHB levels).
   - [x] The Abyss (pp. 101-103) - R583: the 666 layers (Pazunia the Plains of Infinite Portals, the conduits and the siege-worn iron fortresses, the reverse Styx waterfalls, the demon princes, the servant bonuses, the Powers)
   - [x] Tarterus (pp. 103-105) - R584: the six crimson pearls (the layer gaps and hazards, the obelisk portals, the demodands, the trapped titans of Kronos, Surma and Kiputyto, Grolantor)
   - [x] Hades (pp. 105-107) - R585: the three grey Glooms (the color fade and the larva trap, the coin portals, the Khin-Oin, the jailers-turned-prisoners, Nergal's seven domes, Hel and Nidhogg, Abbathor's Glitterhell, Yurtrus)
-  - [ ] Gehenna (pp. 107-109)
+  - [x] Gehenna (pp. 107-109) - R586: the fourfold furnaces (the 45-degree gravity, the four layers, the black-chasm portals, the barghests, Chih-Chiang Fyu-Ya, Loviatar, Shargaas the Night Lord)
   - [ ] The Nine Hells (pp. 109-113)
   - [ ] Acheron (pp. 113-114)
   - [ ] The Concordant Opposition (pp. 114-116)
