@@ -1,0 +1,74 @@
+{
+  "round": 561,
+  "prefix": "dcp",
+  "header_file": "rules/dsgdmsec.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 484,
+  "title": "the DSG DM section parent closure",
+  "audit_label": "R561 DSG DM section audit",
+  "audit_comment": "the FLIP-ONLY parent closure (the R549/R556/R559 pattern): the Dungeon Master's section pp. 64-120 is a container whose nine children all landed and closed already - the DM table of contents (R503), the underground environment DM chapter (R530), the geography domains (R531), the theories (R531), the cultures (R532), the Deepearth lands (R533-R549), the campaign considerations (R550-R556), the mapping chapter (R557) - nothing new to pin, the parent box flips and the audit advances the census alone.",
+  "include_comment": "the DSG DM section parent closure",
+  "include_after": "#include \"rules/dsgindex.h\"  // R560: the DSG index roster pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R560 LANDED 2026-10-17: commit 601f06b9d5719cb298ef8",
+  "prev_record": [
+    "- R560 LANDED 2026-10-17: commit 601f06b9d5719cb298ef8",
+    "  d5c36e8ab80eb2c1a05 (census 483 -> 484, pushed",
+    "  8060e22..601f06b), THE DSG INDEX, printed pp.",
+    "  127-128 - the roster round closing the book's",
+    "  back matter: the alphabetical topic list whose",
+    "  every page reference lands on a chapter this",
+    "  arc already pinned. 4 consts + 4 bools, prefix",
+    "  dcm, header rules/dsgindex.h: the Ability Check",
+    "  roster head p. 12, Mapping p. 114 (the R557",
+    "  chapter), the story-elements moral p. 109 (the",
+    "  R553 tail), the four underdark theories p. 71,",
+    "  plus see-cross-reference routing (Illithids/",
+    "  Smell), the player types p. 99 (R550), the",
+    "  equipment range pp. 56-58, and the back-cover",
+    "  blurb past the index. A FLIP round: the Index",
+    "  box closes, gap census 144/11 -> 145/10, the",
+    "  gap report WAS in the git add (5 files). Spec",
+    "  6,964 bytes, md5",
+    "  8768deba61764aeed748941f60cd2d2d matched",
+    "  exactly first try, 8 inlines; djvu lines",
+    "  15866-16247, the roster verified against the",
+    "  landed rounds page ranges (no reference outside",
+    "  pp. 6-128). No authoring catches. NEXT - R561:",
+    "  the DM-section parent box flip (pp. 64-120,",
+    "  flip-only against nine closed children, the",
+    "  R549/R556/R559 pattern), then the front-matter",
+    "  chapter p. 6, then the arc's final census."
+  ],
+  "banner": {
+    "title": "THE DSG DM SECTION PARENT CLOSURE - the printed pp. 64-120 container box flipping against its nine already-closed children: the DM table of contents, the underground environment DM chapter, the geography domains, the theories, the cultures, the Deepearth lands, the campaign considerations and the mapping chapter.",
+    "provenance": "the DM-section children all landed between R503 and R559; the parent is a re-grained R503 container (the DM table of contents on printed p. 64) with no content of its own to pin - the R549 Deepearth parent precedent, then the R556 campaign chapter, then the R559 plates.",
+    "sentinel": "the fourth and final flip-only round of the arc: zero pins, the audit block the only census movement, the box closing on verified children."
+  },
+  "consts": [],
+  "bools": [],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [],
+  "table_checks": [],
+  "header_sections": {
+    "the parent closure (no pins)": []
+  },
+  "gap_flips": [
+    {
+      "note": "the DM-section parent box closes",
+      "from": "- [ ] **Dungeon Master's section** (pp. 64-120) - the DM half, re-grained at R503 from the DM table of contents on printed p. 64: the underground environment chapter, the cultures, the Deepearth campaign lands, the adventure-design craft and the mapping system",
+      "to": "- [x] **Dungeon Master's section** (pp. 64-120) - the DM half, re-grained at R503 from the DM table of contents on printed p. 64: the underground environment chapter, the cultures, the Deepearth campaign lands, the adventure-design craft and the mapping system - all nine children closed R503-R559, the parent flipped R561 (the R549/R556/R559 flip-only pattern)"
+    }
+  ],
+  "gap_census": {
+    "closed": 146,
+    "open": 9
+  },
+  "caller_files": [],
+  "inline_count": 0
+}

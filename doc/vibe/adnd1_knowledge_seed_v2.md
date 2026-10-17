@@ -9320,6 +9320,33 @@ when both halves land.
   references), then the DM-section parent, the
   front-matter chapter p. 6, and the arc's
   final census.
+- R560 LANDED 2026-10-17: commit 601f06b9d5719cb298ef8
+  d5c36e8ab80eb2c1a05 (census 483 -> 484, pushed
+  8060e22..601f06b), THE DSG INDEX, printed pp.
+  127-128 - the roster round closing the book's
+  back matter: the alphabetical topic list whose
+  every page reference lands on a chapter this
+  arc already pinned. 4 consts + 4 bools, prefix
+  dcm, header rules/dsgindex.h: the Ability Check
+  roster head p. 12, Mapping p. 114 (the R557
+  chapter), the story-elements moral p. 109 (the
+  R553 tail), the four underdark theories p. 71,
+  plus see-cross-reference routing (Illithids/
+  Smell), the player types p. 99 (R550), the
+  equipment range pp. 56-58, and the back-cover
+  blurb past the index. A FLIP round: the Index
+  box closes, gap census 144/11 -> 145/10, the
+  gap report WAS in the git add (5 files). Spec
+  6,964 bytes, md5
+  8768deba61764aeed748941f60cd2d2d matched
+  exactly first try, 8 inlines; djvu lines
+  15866-16247, the roster verified against the
+  landed rounds page ranges (no reference outside
+  pp. 6-128). No authoring catches. NEXT - R561:
+  the DM-section parent box flip (pp. 64-120,
+  flip-only against nine closed children, the
+  R549/R556/R559 pattern), then the front-matter
+  chapter p. 6, then the arc's final census.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
