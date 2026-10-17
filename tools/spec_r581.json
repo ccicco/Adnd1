@@ -1,0 +1,249 @@
+{
+  "round": 581,
+  "prefix": "ddj",
+  "header_file": "rules/olympusgladsheim.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 504,
+  "title": "Olympus and Gladsheim",
+  "audit_label": "R581 Olympus-Gladsheim audit",
+  "audit_comment": "OLYMPUS AND GLADSHEIM, printed pp. 92-97, the last two Upper Planes in one round, closing the top of the wheel: Olympus, home of the Greek and elvish pantheons (the three layers - the convex Olympus/Arvandor of mountains and wilderlands, the shallow three-foot seas of Ossa/Aquallor holding the Oceanus outflow, the white-dust Pallon/Mithardir with its buried predecessor realms; the rare barriers opening into the water domains, the spinning crimson-disk portals walled and gated by the Powers, the creature modifications - size up, AC 2 better, claws +2, doubled hit dice, the 1-in-20 casters - all lost outside the plane; the Greek pantheon from Zeus's marble citadel through Aphrodite's quartz, Apollo's sunlight, the bone-and-iron of Ares and Athena, Dionysus's vines, Hermes's den and Poseidon's sea, twice a common front for the titans and the mountain conduit; the elvish Seldarine - Corellon Larethian, Erevan, Solonor, Labelas, Hanali's Evergold shared with yearly-pilgrim Aphrodite, Deep Bashelas, the Leaflord Rillifane, the wandering Aedrie Faenya with her 10d10 birds, Nephthys's lone desert, and the Chosen serving both); and Gladsheim, the Norse plane where reality breaks down (the earthberg rivers arching through space, the radiant-fire undersides and the reddish glow, the layers Asgard, Muspelheim with Surtur's reversed bergs, and the cavern-realmed Nidavellir; the wells at 80% accuracy, the Yggdrasil whose 100-day Prime climb has never been done, the 10-yard Bifrost that strips magic from all but Powers and artifacts, the necromantic cowardice ban in Asgard and Vanaheim, the giant casters at 1-in-4/1-in-10/1-in-20, and the realm census - Mount Joy, Hildskialf, Bilskirnir, Fensalir, Breidablik, Himinbjorg, Ydalir, Landvidi, Gilmir, Loki's bolt-holes, Idun's orchards with Bragi in far Elysium).",
+  "include_comment": "the Olympus and Gladsheim pins",
+  "include_after": "#include \"rules/elysiumbeasts.h\"  // R580: the Elysium and Beastlands pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R580 LANDED 2026-10-17: commit e2bceb93942a849a579",
+  "prev_record": [
+    "- R580 LANDED 2026-10-17: commit e2bceb93942a849a579",
+    "  60eaff95f441d0ac352f6 (census 503 -> 504,",
+    "  pushed de89310..e2bceb9), ELYSIUM AND THE",
+    "  HAPPY HUNTING GROUNDS, printed pp. 90-92,",
+    "  the next two Upper Planes in one round:",
+    "  Elysium (the four Oceanus layers - Amoria,",
+    "  Eronia, Bellerin, Thalasia with the Isles",
+    "  of the Blessed; the 1d10-day river",
+    "  transits; the MOVING realms - Isis with",
+    "  the moon-dog patrols, Seker's flying Ro",
+    "  Stau, Ishtar's half-mile fighting statue,",
+    "  Nanna-Sin's crescent moon-barque; the",
+    "  phoenix and the moon dogs) and the",
+    "  Beastlands (Krigala's zenith sun, Brux's",
+    "  two setting suns, Karasuthra's wandering",
+    "  unmoored stars, the hollow-tree portals,",
+    "  the sentient spell-casting beasts with the",
+    "  d100 ladder, the doubled hit dice and the",
+    "  5%-plus-5% magic resistance, the mortals,",
+    "  the Beast Lords, Skerrit the Forester).",
+    "  ONE AMENDMENT (the R575 class): the",
+    "  spell-casting-creatures table the report",
+    "  filed under Olympus is the Beastlands",
+    "  beasts table of printed p. 92. 5 consts +",
+    "  7 bools, prefix ddi, header rules/",
+    "  elysiumbeasts.h. THREE flips: gap census",
+    "  63/27 -> 66/24. Spec 15,168 bytes, md5",
+    "  3de1b2f8f7dfe2841fdcf2bb831abfc5 matched",
+    "  exactly first try, 14 inlines. FIFTEEN",
+    "  straight first-tries (R566-R580). NEXT -",
+    "  R581: Olympus (pp. 92-94, the Greek and",
+    "  elvish pantheons, the three layers -",
+    "  Olympus/Arvandor, Ossa/Aquallor,",
+    "  Pallon/Mithardir, the creature",
+    "  modifications, Zeus's marble citadel) -",
+    "  OCR already gathered; Gladsheim follows to",
+    "  close the Upper Planes."
+  ],
+  "banner": {
+    "title": "OLYMPUS AND GLADSHEIM - printed pp. 92-97, the last two Upper Planes in one round: the Greek and elvish pantheons of the mountain plane with the Evergold pool and the crimson-disk portals, and the Norse earthberg rivers with the Bifrost, the wells, and the Asgard realm census.",
+    "provenance": "verified against printed pp. 92-97 of the uploaded motp.pdf OCR; the two chaotic-good pantheon planes ride together as the final Upper pair (the R578 pattern), each carrying its layers, portals, creature rules and full Power census exactly as printed.",
+    "sentinel": "the gap census after this round: 68 closed, 22 open - TWO boxes fall (Olympus, Gladsheim) and the Upper Planes ARE CLOSED; Limbo opens the Chaos side of the wheel next."
+  },
+  "consts": [
+    {
+      "name": "ddjOlympusCreatureAcBonus",
+      "value": 2,
+      "comment": "the Olympus creature modifications (Olympus natives only, lost in other planes): creatures one size larger (small-to-medium, medium-to-large), AC 2 better, claw-strikers +2 to hit, hit dice doubled for hit points and combat effects, and 1 in 20 human-like creatures (medusae, harpies) cast as magic-users of 1d10 level."
+    },
+    {
+      "name": "ddjWellAccuracyPct",
+      "value": 80,
+      "comment": "the Gladsheim wells: portals from Olympus, Limbo and Concordant Opposition appear in Asgard as wells - arrivals rise out, departures pass down; runemarked wells deliver to the indicated plane only 80% of the time, the other 20% dumping the traveler at a random location in either of the other two planes."
+    },
+    {
+      "name": "ddjBifrostWidthYards",
+      "value": 10,
+      "comment": "the Bifrost: Odin or Heimdall directs the trembling rainbow bridge to any Prime Material plane (a rainbow rising to a cloud holding a conduit's earthy end); 10 yards wide (widenable at will), ALL magical abilities of beings and items are lost on the bridge except those of Powers and artifacts; the Gladsheim end is fixed between the plains of Ida and Vigrid under Himinbjorg and Heimdall."
+    },
+    {
+      "name": "ddjGladsheimTransitDays",
+      "value": 100,
+      "comment": "the Yggdrasil span: Gladsheim is the World Ash's topmost point (roots in Hades' second layer Niflheim, branches touching every Norse-worshiping Prime); physically climbing Prime-to-Asgard should take at least 100 days and has never been successfully attempted; the tree hosts giant stags, giant eagle nests, and the squirrel Ratatosk carrying threats between dragons and eagle."
+    },
+    {
+      "name": "ddjGiantIllusionistDiv",
+      "value": 4,
+      "comment": "the Gladsheim giants: smarter than their Prime brethren - 1 in 4 is an illusionist of up to 14th level, 1 in 10 a magic-user of up to 20th, 1 in 20 a cleric of up to 20th (Utgard-Loki both cleric and illusionist at 14th); giant-sized magical items equipped as an adventuring party of those levels; their illusions can affect the gods themselves, though never killing a Greater Power in his home plane."
+    }
+  ],
+  "bools": [
+    {
+      "name": "ddjOlympusStructure",
+      "value": true,
+      "comment": "the Olympus structure: three layers - Olympus/Arvandor the topmost (the Greek and elvish pantheons' realms separated by a few thousand miles of wilderlands, steep mountains, hillocks the size of Prime mountains, the layer slightly convex so neither citadel sees the other); Ossa/Aquallor the watery second (the Oceanus outflow from Thalasia, seas mostly three feet deep, chasms holding the other chaotic good sea gods); Pallon/Mithardir the dusty third (blowing white sand and snow over everything, buried realms and treasures of the departed powers); barriers rare, opening into the water domains; portals are spinning crimson disks, walled and gated by the Powers."
+    },
+    {
+      "name": "ddjGreekPantheon",
+      "value": true,
+      "comment": "the Greek pantheon: short-tempered, lusty, partying, as chaotic as any save the Norse - yet twice a common front (defeating and casting the titans into Tartarus, and forging-or-inheriting Mount Olympus as the permanent conduit); Zeus's marble-and-gold citadel at the highest spot with Hera; Aphrodite's mirror-quartz palace, Apollo's sunlit domain, Ares's bone battlement and Athena's iron palace flanking the Mount Olympus portal, Dionysus's vine-heavy halls, Hermes's gambling den, Poseidon's bordering sea; the lesser powers (Artemis, Demeter, Nike, Tyche, Prometheus) hold realms larger than human nations."
+    },
+    {
+      "name": "ddjElvishPantheon",
+      "value": true,
+      "comment": "the elvish pantheon (the Seldarine, less organized, more good and chaotic, competing for neither land nor followers with the Greeks): Corellon Larethian the sole Greater Power; Erevan illesere of mischief, Solonor Thelandira of forests and streams, Labelas Enoreth of longevity; Hanali Celanil's crystal palace holding the Evergold fountain (shared with Aphrodite, who pilgrimages yearly - the Greeks call the pool Canathas); Deep Bashelas's sea (through which the second-layer barrier is reached); Rillifane Rallathil the Leaflord, a tree whose roots reach the Primes through conduits; Aedrie Faenya wandering with 10d10 great birds; and Nephthys of the Egyptians in a lone dun-colored desert palace - all served by the Chosen, balanced male and female einheriar-like spirits."
+    },
+    {
+      "name": "ddjGladsheimStructure",
+      "value": true,
+      "comment": "the Gladsheim structure: reality breaks down at this end of the wheel - each layer is shifting rivers of earth, millions of miles wide, arching through empty space: earthbergs grinding and separating like ice blocks, chasms thousands of miles deep, undersides emitting radiant fire that bathes the realms in reddish glow (Powers modify light and weather into days and seasons - Asgard simulates gloomy northern Midgard); the three layers are Asgard (the great realm conglomeration around Yggdrasil, with Vanaheim, Alfheim and Jotenheim adjacent), Muspelheim (earthbergs reversed, flaming side up - Surtur's fire giants) and Nidavellir (densely packed rivers, luminous caverns opening and closing between trips)."
+    },
+    {
+      "name": "ddjGladsheimNecroBan",
+      "value": true,
+      "comment": "the Gladsheim magic rule: the standard outer-plane limits, plus the Norse bravery doctrine - beneficial necromantic spells are for cowards and DO NOT function in Asgard or Vanaheim (Jotenheim and Alfheim's Powers are more practical); lingering viewing portals near Loki or Odin risk being yanked into the plane by the irritated god."
+    },
+    {
+      "name": "ddjNorsePantheon",
+      "value": true,
+      "comment": "the Norse pantheon: might-makes-right tempered with beneficence, a wild lot despite the clerics' claims - the realm census: Gladsheim or Mount Joy (the levelled peak, the feast-hall of aesir and vanir where fealty is sworn), Valaskialf (Odinhome, the all-seeing throne Hildskialf), Thrudheim and the iron-shod Bilskirnir (Thor and Sif, the joyous thralls, sons Magni and Modi), Fensalir in Vingolf (Frigga), Breidablik (Balder's beauty), Himinbjorg (Heimdall's mirrored-steel redoubt manned by einheriar and valkyrie), Ydalir (Uller's yew groves), Landvidi (Vidar), Gilmir and Forseti's justice, Loki's bolt-holes in Jotenheim and Pandemonium, Idun's apple orchards (her husband Bragi dwelling in far Elysium), Tyr in Valhalla, and Aegir the giant-relative wanderer."
+    },
+    {
+      "name": "ddjGladsheimCreatures",
+      "value": true,
+      "comment": "the Gladsheim creatures: the standard upper-plane host avoids the plane - only the hollyphant and planetar are frequent - but Scandinavian and Germanic beasts and monsters abound (bears, wild boars, giants, stags) with the same modifications as Olympus (AC 2 better, claws +2, doubled hit dice, the 1-in-20 human-like casters); the giants carry the illusionist/magic-user/cleric chances of their own."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the OlympusCreatureAcBonus pin",
+      "expr": "m['ddjOlympusCreatureAcBonus']() != 2"
+    },
+    {
+      "note": "the WellAccuracyPct pin",
+      "expr": "m['ddjWellAccuracyPct']() != 80"
+    },
+    {
+      "note": "the BifrostWidthYards pin",
+      "expr": "m['ddjBifrostWidthYards']() != 10"
+    },
+    {
+      "note": "the GladsheimTransitDays pin",
+      "expr": "m['ddjGladsheimTransitDays']() != 100"
+    },
+    {
+      "note": "the GiantIllusionistDiv pin",
+      "expr": "m['ddjGiantIllusionistDiv']() != 4"
+    },
+    {
+      "note": "the OlympusStructure pin",
+      "expr": "m['ddjOlympusStructure']() != 1"
+    },
+    {
+      "note": "the GreekPantheon pin",
+      "expr": "m['ddjGreekPantheon']() != 1"
+    },
+    {
+      "note": "the ElvishPantheon pin",
+      "expr": "m['ddjElvishPantheon']() != 1"
+    },
+    {
+      "note": "the GladsheimStructure pin",
+      "expr": "m['ddjGladsheimStructure']() != 1"
+    },
+    {
+      "note": "the GladsheimNecroBan pin",
+      "expr": "m['ddjGladsheimNecroBan']() != 1"
+    },
+    {
+      "note": "the NorsePantheon pin",
+      "expr": "m['ddjNorsePantheon']() != 1"
+    },
+    {
+      "note": "the GladsheimCreatures pin",
+      "expr": "m['ddjGladsheimCreatures']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the olympus and gladsheim pins": [
+      {
+        "kind": "const",
+        "name": "ddjOlympusCreatureAcBonus"
+      },
+      {
+        "kind": "const",
+        "name": "ddjWellAccuracyPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddjBifrostWidthYards"
+      },
+      {
+        "kind": "const",
+        "name": "ddjGladsheimTransitDays"
+      },
+      {
+        "kind": "const",
+        "name": "ddjGiantIllusionistDiv"
+      },
+      {
+        "kind": "bool",
+        "name": "ddjOlympusStructure"
+      },
+      {
+        "kind": "bool",
+        "name": "ddjGreekPantheon"
+      },
+      {
+        "kind": "bool",
+        "name": "ddjElvishPantheon"
+      },
+      {
+        "kind": "bool",
+        "name": "ddjGladsheimStructure"
+      },
+      {
+        "kind": "bool",
+        "name": "ddjGladsheimNecroBan"
+      },
+      {
+        "kind": "bool",
+        "name": "ddjNorsePantheon"
+      },
+      {
+        "kind": "bool",
+        "name": "ddjGladsheimCreatures"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the Greek and elvish pantheons",
+      "from": "  - [ ] Olympus (pp. 92-94)",
+      "to": "  - [x] Olympus (pp. 92-94) - R581: the Greek and elvish pantheons (the three layers, the creature modifications, the crimson-disk portals, Evergold, the Seldarine)"
+    },
+    {
+      "note": "the Norse plane",
+      "from": "  - [ ] Gladsheim (pp. 94-97)",
+      "to": "  - [x] Gladsheim (pp. 94-97) - R581: the Norse plane (the earthbergs, the wells at 80%, the Bifrost, the necromantic ban, the giants, the Asgard realm census)"
+    }
+  ],
+  "gap_census": {
+    "closed": 68,
+    "open": 22
+  },
+  "caller_files": [],
+  "inline_count": 12
+}

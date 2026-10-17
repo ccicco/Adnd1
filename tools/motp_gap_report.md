@@ -116,8 +116,8 @@ sample entries verified against the canonical PHB levels).
   - [x] The Twin Paradises (pp. 89-90) - R579: the facing layers (the book with no spine, Dothion and Shurrock, the gnomish pantheon and Ukko)
   - [x] Elysium (pp. 90-91) - R580: the four Oceanus layers (Amoria, Eronia, Bellerin, Thalasia, the moving realms, Isis and Nanna-Sin's moon-barque)
   - [x] The Happy Hunting Grounds (pp. 91-92) - R580: the three Beastlands layers (Krigala, Brux, Karasuthra), the sentient spell-casting beasts, the mortals, the Beast Lords
-  - [ ] Olympus (pp. 92-94)
-  - [ ] Gladsheim (pp. 94-97)
+  - [x] Olympus (pp. 92-94) - R581: the Greek and elvish pantheons (the three layers, the creature modifications, the crimson-disk portals, Evergold, the Seldarine)
+  - [x] Gladsheim (pp. 94-97) - R581: the Norse plane (the earthbergs, the wells at 80%, the Bifrost, the necromantic ban, the giants, the Asgard realm census)
   - [ ] Limbo (pp. 97-99)
   - [ ] Pandemonium (pp. 99-101)
   - [ ] The Abyss (pp. 101-103)

@@ -9985,6 +9985,43 @@ when both halves land.
   and the moon dogs) - the OCR already
   gathered; then the Happy Hunting Grounds
   and Olympus close the Upper Planes.
+- R580 LANDED 2026-10-17: commit e2bceb93942a849a579
+  60eaff95f441d0ac352f6 (census 503 -> 504,
+  pushed de89310..e2bceb9), ELYSIUM AND THE
+  HAPPY HUNTING GROUNDS, printed pp. 90-92,
+  the next two Upper Planes in one round:
+  Elysium (the four Oceanus layers - Amoria,
+  Eronia, Bellerin, Thalasia with the Isles
+  of the Blessed; the 1d10-day river
+  transits; the MOVING realms - Isis with
+  the moon-dog patrols, Seker's flying Ro
+  Stau, Ishtar's half-mile fighting statue,
+  Nanna-Sin's crescent moon-barque; the
+  phoenix and the moon dogs) and the
+  Beastlands (Krigala's zenith sun, Brux's
+  two setting suns, Karasuthra's wandering
+  unmoored stars, the hollow-tree portals,
+  the sentient spell-casting beasts with the
+  d100 ladder, the doubled hit dice and the
+  5%-plus-5% magic resistance, the mortals,
+  the Beast Lords, Skerrit the Forester).
+  ONE AMENDMENT (the R575 class): the
+  spell-casting-creatures table the report
+  filed under Olympus is the Beastlands
+  beasts table of printed p. 92. 5 consts +
+  7 bools, prefix ddi, header rules/
+  elysiumbeasts.h. THREE flips: gap census
+  63/27 -> 66/24. Spec 15,168 bytes, md5
+  3de1b2f8f7dfe2841fdcf2bb831abfc5 matched
+  exactly first try, 14 inlines. FIFTEEN
+  straight first-tries (R566-R580). NEXT -
+  R581: Olympus (pp. 92-94, the Greek and
+  elvish pantheons, the three layers -
+  Olympus/Arvandor, Ossa/Aquallor,
+  Pallon/Mithardir, the creature
+  modifications, Zeus's marble citadel) -
+  OCR already gathered; Gladsheim follows to
+  close the Upper Planes.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
