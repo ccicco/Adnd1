@@ -6546,6 +6546,53 @@ when both halves land.
   pp. 36-37 (pdf 37-38): air supply duration, fire and
   smoke underground, poisonous and noxious gases; the
   big pp. 36-55 arc.
+- R509 LANDED 2026-10-17: commit ee310a8 (census 434,
+  pushed f617007..ee310a8), the DSG UNDERGROUND ENVIRONMENT
+  OPENER, printed pp. 36-37 (pdf 37-38) - the chapter opener
+  plus four boxes: air supply duration (10 cubic feet per
+  human per 24h rest, 12h moderate, 6h strenuous, 2x/4x
+  rates, the 3+4x5=23 example, dwarf/elf 2/3, halfling/dog
+  1/2, mule/ogre 2x, the post-exhaustion Con Check ladder -
+  each fail -1 ability and -1 hp vs the reduced Con,
+  unconscious at 0 abilities, dead at -10 hp, automatic at
+  Con 0, recovery 3/turn; AIR ONLY, never breath-holding -
+  the WSG R454 seam, nothing auto-credited), fire and oxygen
+  (small fire drains a 10-ft cube in 2h/12 turns, torch 8h,
+  4x fire 4x rate, oil 3 rounds counted as turns), smoke
+  (1-ft layer per turn per 10x10 stacking from the ceiling,
+  wet/green fuel + fabric + oil, Con Check per inhaled round,
+  1d6 damage, 1d6 recovery per fresh-air round, cumulative,
+  the 33-28-5 orc death example), gases (poisonous saves vs
+  poison; noxious Con Check per round, fail -3 abilities and
+  -3 attacks, helpless at 0 abilities but NO hp loss,
+  3/turn recovery; natural gas 20%/round with open flame,
+  1d6, +1d6 and +1 Wis per +10% potency, no Wis Check for
+  odorless gas, careful-entry check only; the small-bird
+  secret save one turn early as a 0th-level human, gradual
+  gas only) and the VENTILATION LADDER (well-ventilated:
+  no smoke accumulation, no oxygen exhaustion, gas spells
+  halved, gases 2 turns; subtle/torch-flicker: normal
+  spells, gases 1h, small smoke none, large/oil at 1/2;
+  connected: small smoke 1/2, large normal, breathing never
+  exhausts, gases 2-5h (1d4+1); none: full smoke rate,
+  gases 24h unless heavier than air; sealed: finite air,
+  smoke lingers 1d6h, gases until vented, spells normal).
+  Pinned as rules/dsgair.h (prefix dna, verified free;
+  98 inlines: 49 consts + 49 bools, no grids; 18 examples).
+  Gap 69/86 -> 73/82: 4 child flips - the Ventilation box
+  EXISTS as its own child (line 107; the earlier extraction
+  note doubted it) - the pp. 36-55 PARENT stays open. Dual
+  read done: djvu + the pdf Acrobat-Capture layer (pure-
+  Python zlib/Tj extractor, size-gated streams, idx 48 =
+  pdf 37 / idx 49 = pdf 38; Capture repeats each line up to
+  3x - dedup by collapsing repeated prefix word-blocks);
+  garble settled: djvu "213 as much oxygen" = 2/3 (Acrobat
+  "consumes 2/3 as much"). Double-run applied 8/already 0
+  then 0/8; preflight GREEN, census 434, gap 73/82. User-side
+  spec md5 5b534b94 vs authored 13a9b440 - cosmetic,
+  standing class. NEXT - R510: odor detection + Tables 15-16
+  (printed pp. 37-38, pdf 38-39; manifest lines 180-181),
+  then cave-ins (Table 17).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

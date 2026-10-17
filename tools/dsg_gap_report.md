@@ -105,7 +105,7 @@ re-grained then, before any DM pin round.
   - [x] Fire and smoke underground (p. 37) - the smoke buildup rules - R509: the oxygen rates (small fire a 10-foot cube in 2 hours/12 turns, torch 8 hours, 4x fire 4x rate, the oil 3 rounds counted as turns) and the smoke rules (the 1-foot layer per turn per 10x10, ceiling stacking, wet/green fuel and fabric and oil, the per-round Con Check with 1d6 damage and 1d6 recovery, cumulative, the 33-28-5 orc death example)
   - [x] Poisonous and noxious gases (p. 37) - the gas types and effects - R509: poisonous gases save vs. poison; noxious gases Con Check each round (fail -3 abilities and -3 attacks, helpless at 0 abilities but no hp loss, 3 per turn recovery); natural gas 20% per round with open flame, 1d6 damage plus 1d6 and +1 Wisdom per 10% potency step, no check for odorless gas; the small-bird secret save one turn early as a 0th-level human
   - [x] Ventilation (p. 37) - the airflow rules - R509: the five-rung ladder - well-ventilated (no smoke accumulation, no oxygen exhaustion, gas spells halved, gases 2 turns), subtle (normal spells, gases 1 hour, small-fire smoke no accumulation, large/oil at half rate), connected (small smoke half, large normal, breathing never exhausts, gases 2-5 hours), none (smoke full rate, gases 24 hours) and sealed (finite air, smoke lingers 1d6 hours, gases until vented)
-  - [ ] Odor detection (pp. 37-38) - Tables 15-16 (the detection and wind-effect grids)
+  - [x] Odor detection (pp. 37-38) - Tables 15-16 (the detection and wind-effect grids) - R510: the Wisdom Check at first encounter (secret, non-repeating, full Wis only for easily-noticed odors), the dog rules (Wis 16, doubled distance, trained reactions), the Table 15 grid (nine sources over the 1-120/121-360/361-1000/1000-5000 ft bands with the dash = no detection) and the Table 16 wind factors (strong/medium/light x upwind/crosswind/downwind)
   - [ ] Causes of cave-ins (p. 38) - the triggers
   - [ ] Random occurrences of cave-ins (pp. 38-39) - Table 17 (the location grid)
   - [ ] Cave-in chain reactions (pp. 39-40) - Table 18 (the chain grid)
@@ -177,8 +177,8 @@ re-grained then, before any DM pin round.
 - [x] Table 12: Weapon Making (p. 26) - R506
 - [x] Table 13: Adventuring Proficiencies (p. 26) - R506
 - [x] Table 14: Mounted Bow Fire (p. 32) - R507: the 3-band speed grid - less than 1/2 normal -1, 1/2 to less than 3/4 -3, 3/4 to maximum -5, cumulative with all other modifiers (agrees const-for-const with the WSG mount-speed penalties)
-- [ ] Table 15: Odor Detection (p. 38)
-- [ ] Table 16: Wind Effects on Odors (p. 38)
+- [x] Table 15: Odor Detection (p. 38) - R510: the nine-source grid - fires small 0/-4/-8/dash, large +2/0/-4/-8, oil +4/+2/0/-4, conflagration +8/+4/+2/0, odorous gas +4/+2/0/-4, strong-odor 0/-2/-6/-10, mild-odor -2/-6/-10/dash, no-odor -6/-10/dash/dash, cooking food +2/0/-2/-6 (the small row settled three-way: the chapter read, the compiled-tables appendix reprint and the design ladder)
+- [x] Table 16: Wind Effects on Odors (p. 38) - R510: strong Normal/1/2/no detection, medium Double/1/2/1-10, light Double/Normal/1-4, the factors applied to the Table 15 distances
 - [ ] Table 17: Cave-in Location (p. 39)
 - [ ] Table 18: Cave-in Chain Reaction (p. 40)
 - [ ] Table 19: Underground Structure Defensive Point Value (p. 42)
