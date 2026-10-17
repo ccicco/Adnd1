@@ -8174,6 +8174,54 @@ when both halves land.
   walks, the 10/20/100-ft barriers, the jermalaine-pech
   war at 10-to-1 odds, the 3x5-ft widened connections - djvu
   head read, capture warm.
+- R539 LANDED 2026-10-17: commit ca570ac (census 462 -> 463,
+  pushed 19ed143..ca570ac), THE DSG DEEPEARTH AREAS 12-13,
+  printed pp. 86-87 (pdf 87-88) - the battleground and the
+  empty quarter: Area 12 the Combat Zone (the three-by-
+  four-mile open cavern with little rock fill; the quake
+  landscape and the dozen mighty blocks hundreds of feet
+  across holding the sagging ceiling; the gorge-split floor
+  - no 100-ft same-elevation walks, 10/20-ft drops,
+  100-ft barriers; the jermalaine-widened 3x5-ft passages
+  to Areas 9 and 13; the decimated defeatist jermalaine vs
+  the disciplined pech - under 100, outnumbered 10-to-1,
+  stone wagons and wall-of-stone bridges; the rats, mobats,
+  chimera and basilisk nests; the column-side waterfalls
+  and porous-floor pools; the quake-gathered iron-lead-
+  gold veins with jade and onyx; the 20% hollow-shell
+  bridge sabotage collapsing over 50 lb/500 gp; and the 16
+  camouflaged troves - 2d6-x-1,000-gp gems, matching coins,
+  lead-iron ingots, 16-ft seals), and Area 13 the Empty
+  Caverns (the Area 12 tunnel and the Area 7 canyon crack;
+  the numerous small maze caverns pinching under 18 inches;
+  the dusty dead caves with brittle formations; the bat
+  thousands, preying basilisks and carnivorous beetles;
+  the two-end ventilation with no water or fungi; and the
+  abandoned dry lair tunnels). A CLEAN-READ ROUND: both
+  machine reads agree on every number (djvu ~lines
+  10892-11036, Capture idx 392-396; only spacing garbles -
+  'Adozen', 'zbne', 'wallofstone'). DELIVERY clean on the
+  first try: md5 72c320487d957b116d408b66c6ba4e11 matched
+  exactly (spec 19,844 bytes). A ZERO-FLIP ROUND: the
+  pp. 75-98 Deepearth child remains open (the
+  R527/R533-R538 precedent - the gap report NOT in the
+  git add). Pinned as rules/dsgarea6.h (prefix dnah,
+  verified free; 32 inlines - 20 consts, 12 bools, no
+  tables; 2d6x1,000 pinned as a count-sides-multiplier
+  triple). Engine applied 4 then 0/4, audit mirror clean.
+  Gap unchanged 139/16. PREFLIGHT GREEN with census 463
+  audit lines, each exactly once, all bad 0; BUILD: 0
+  warnings. NEXT - R540: Area 14 the Reclaimed Caverns
+  (printed pp. 86-87, pdf 87-88): the pech-diked former
+  lake bed; the two river routes - the Area 5 river's
+  500-ft waterfall and six-ft airspace, the eastern
+  river's sinkhole dive with its 10-ft airspace; the three
+  parallel caves; the 8x12-ft descending bridge cavern;
+  the 300-miner pech community with iron and copper; the
+  scrags, mounds, mouther, ropers, owl bear; the 20-25
+  kuo-toan war parties; and the water-wheel pump with the
+  smelting forge and its one-foot valley vent - djvu read,
+  capture warm.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
