@@ -3271,12 +3271,15 @@ lands before the items it gates.
       power, the order roll and the
       illusion cap stay pinned data
       (they gate on a fascinate site).
-- [ ] The code-level logging layer -
-      bug and missing-functionality
-      discovery at the code level.
-- [ ] The game-level logging layer -
-      playtest evidence; the closure
-      criterion instrument.
+- DEFERRED: the two logging layers (a
+      debugging-phase engine layer, not
+      UA book material - ruling
+      2026-10-17, R597; the code-level
+      layer for bug and missing-
+      functionality discovery, the
+      game-level layer as the playtest
+      evidence and the closure-criterion
+      instrument).
 
 Categories:
 - [x] = verified against the book text
