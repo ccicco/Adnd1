@@ -1,0 +1,288 @@
+{
+  "round": 578,
+  "prefix": "ddg",
+  "header_file": "rules/nirvanaarcadia.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 501,
+  "title": "Nirvana and Arcadia",
+  "audit_label": "R578 Nirvana-Arcadia audit",
+  "audit_comment": "NIRVANA and ARCADIA, printed pp. 84-87, the first two named planes of the Planes of Power in one round: Nirvana the clockwork plane of ultimate Law (the infinite interlocking disks at 500 miles plus, the per-disk gravity with the walk-over-the-edge rule, the air-filled void, the 1/100-turn realm pull, the light-green and deep-red portals cycling once per disk revolution at 20 days on Primus's plane, the always-open Concordant Opposition portal beneath Primus's disk, the no-illusion rule - phantasms as thin smoke fooling no one, Primus the One and Prime with the modrons and Anu's Way, and the pantheons - Anu, Shang-Ti with the peaches and the library of lost knowledge, Shan-Hai Ching, Varuna, Rudra and Yama, Horus, Utu and Enki); and Arcadia the orchard plane of law for the common good (the half-radiant half-black day sphere with its dawnless Prime-length day, the three layers, the metallic trees with double-strength potion fruit spoiling in 1-10 days, the pupilless-eyed watch beasts immune to Prime spells, the ivory and steel archway portals with the 1-in-10 mist and the 90/10 sides rule, the spirit-folk militias with their divination over the static, and the Powers - Marduk the Valiant with the kirdari, and Clanggedin Silverbeard the dwarven Father of Battle with his fortress mountain and his Acheron raids).",
+  "include_comment": "the Nirvana and Arcadia pins",
+  "include_after": "#include \"rules/outerplanes.h\"  // R577: the outer planes general pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R577 LANDED 2026-10-17: commit 0cbff953202c7fc848eee",
+  "prev_record": [
+    "- R577 LANDED 2026-10-17: commit 0cbff953202c7fc848eee",
+    "  45dfd21c8858f904f12 (census 500 -> 501,",
+    "  pushed 0c3bb03..0cbff95), THE OUTER PLANES",
+    "  IN GENERAL, printed pp. 73-84, the",
+    "  general-doctrine round opening the final",
+    "  arc: the Great Wheel (16 pieces plus the",
+    "  17th plane, the Upper/Lower/Law/Chaos",
+    "  groupings, the layer-count table with the",
+    "  Abyss' 666), the reaching (all travel",
+    "  through the Astral - the conduits, the",
+    "  plane shift with the arrival table, the",
+    "  gate rules, the color pools with new-body",
+    "  formation and the harmless cord snap), the",
+    "  survival (the like-the-Primes-only-more-so",
+    "  doctrine, the localized gravity, the",
+    "  per-realm directions, the two compasses),",
+    "  the movement (the realm borders, the",
+    "  Wisdom-check interlayer barriers at 70%",
+    "  one-way, the portal rules at 1-in-6 and",
+    "  50/50), the encounters (the unique-Powers",
+    "  2-or-20 rule, the human travelers, the",
+    "  native-body doctrine), the magic school by",
+    "  school (the home-court abjurations, the",
+    "  cantrip pop, the Chaos-plane alteration",
+    "  ladder at 20/40/60/80, the divination",
+    "  alignment-overwhelm, the true-sight",
+    "  freezes, the vacant-body rule at 1% per",
+    "  layer, the item-plus decay), the PC",
+    "  adjustments (the paladin lay-on-hands",
+    "  exception, the barbarian comfort), and the",
+    "  features (the spell-crystals, the river Styx",
+    "  with the 15th-level forget save, the 50%",
+    "  dragging, the Charon 1d100-turn transit,",
+    "  and the wholesome Oceanus). 13 consts + 10",
+    "  bools, prefix ddf, header rules/",
+    "  outerplanes.h. SIX flips: gap census",
+    "  53/37 -> 59/31. Spec 22,513 bytes, md5",
+    "  57f7a97ce714275a99f996f51924d2b4 matched",
+    "  exactly first try, 23 inlines. NOTE (the",
+    "  census_before class, caught locally",
+    "  pre-ritual): the first authoring set",
+    "  census_before 499 but the R576 tree",
+    "  carries 500 - the engine aborted and",
+    "  partially wrote (the R420/R576 write-order",
+    "  class); restored from the sha, fixed to",
+    "  500, re-ran clean. TWELVE straight",
+    "  first-tries (R566-R577). NEXT - R578: the",
+    "  named planes begin - Nirvana (pp. 84-86),",
+    "  the clockwork plane, then plane by plane",
+    "  through the seventeen."
+  ],
+  "banner": {
+    "title": "NIRVANA AND ARCADIA - printed pp. 84-87, the first two named planes in one round: the clockwork plane of ultimate Law with Primus and the modrons, and the orchard plane of law for the common good with its potion fruit, watch beasts and warrior Powers.",
+    "provenance": "verified against printed pp. 84-87 of the uploaded motp.pdf OCR; the two planes ride together as the Law pair at the top of the wheel (the R572 multi-plane pattern), each carrying its structure, portals, magic rules and Powers exactly as printed.",
+    "sentinel": "the gap census after this round: 61 closed, 29 open - TWO boxes fall (Nirvana, Arcadia); the Seven Heavens and the Twin Paradises continue the Upper Planes next."
+  },
+  "consts": [
+    {
+      "name": "ddgDiskRadiusMiles",
+      "value": 500,
+      "comment": "the Nirvana clockwork: a single infinite plane filled with huge interlocking wheels like the cogs of an ornately carved clock - great platters of matter each 500 miles or more in radius, interlocking at their edges so the entire plane spins in unison; the void between disks is air, so flying is possible."
+    },
+    {
+      "name": "ddgRealmPullTurns",
+      "value": 100,
+      "comment": "the Nirvana float rule: each disk has its own gravity (toward the disk center, so one walks over the edge onto the far side); beyond any disk's pull a traveler floats as in the Astral, but a subtle tug from nearby realms pulls him within 1/100 turns (as printed) - usually only one side of a disk is inhabited."
+    },
+    {
+      "name": "ddgPortalCycleDays",
+      "value": 20,
+      "comment": "the Nirvana portals: circles light-green to Arcadia, deep red to Acheron, appearing regularly once per revolution of each disk (on Primus's plane every 20 days) and remaining open for a day; Primus is strict, and few Acheron warbands or Arcadian huntsmen get through - the Concordant Opposition portal is open at all times, on the underside of Primus's disk."
+    },
+    {
+      "name": "ddgFruitSpoilDays",
+      "value": 10,
+      "comment": "the Arcadian trees: metallic bark (copper, gold, silver or iron), leaves that never fall, and fruit always available with magical powers - picked fruit lasts 1-10 days regardless of preservation and duplicates a DOUBLE-STRENGTH magical potion, the type rolled randomly (DMG or UA tables); each species grows only one type."
+    },
+    {
+      "name": "ddgArchMistDenom",
+      "value": 10,
+      "comment": "the Arcadian portals: few and permanent, marked by arched trellises of white ivory or black steel; passable normally, but 1 time in 10 the archway mists over into a color pool - white to the Seven Heavens, black to Concordant Opposition, silvery to Nirvana."
+    },
+    {
+      "name": "ddgArchBothSidesPct",
+      "value": 90,
+      "comment": "the archway sides rule: 90% of the time both sides of an Arcadian archway lead to the same portal on the other plane, but 10% of the time the two sides lead to different locations - and Prime portals sit at the center of a realm's topmost side, leading to planes where the realm's Powers are worshiped."
+    }
+  ],
+  "bools": [
+    {
+      "name": "ddgNirvanaNoIllusion",
+      "value": true,
+      "comment": "the Nirvana magic rule: all spells function normally EXCEPT illusions and phantasms - spells with illusionary or phantasmal components do not work in the plane of ultimate Law; at best they appear as thin wavy bits of smoke in the general shape of what was intended, fooling no one, least of all the natives."
+    },
+    {
+      "name": "ddgPrimusDoctrine",
+      "value": true,
+      "comment": "Primus the One and Prime: the greatest of the modrons, dwelling (it is said) in a pool of energy at the center of the plane; most Astral silver pools and conduits open into his realm; base modrons serve throughout Nirvana's realms; he can send a beseeching traveler to Arcadia or Acheron, to the plane most akin to his alignment; when Anu travels, the temporary conduit Anu's Way bridges Nirvana and the Prime, and Marduk is summoned from Arcadia to mind his realm."
+    },
+    {
+      "name": "ddgNirvanaPantheon",
+      "value": true,
+      "comment": "the Nirvana Powers: Anu the Babylonian judge (a 1,000-mile disk city, soldiers gilt in copper with pupilless yellow eyes, Anutu at his side); Shang-Ti the Jade Emperor (the Celestial Bureaucracy, Wang the transcendental doorkeeper, foo dogs and lions, ever-ripe peach trees - longevity as the potion, immortality for Powers - and the library of all lost Prime knowledge, collected by faceless grey-cloaked giants from doomed places); Shan-Hai Ching's watery wheel irrigating the peaches; the Indian trio Varuna, Rudra and Yama; Horus the Avenger with his hawk servants; and Utu the chaotic-good Sumerian sun god with Enki as his watcher, linked by a bridge of woven gold and crystal."
+    },
+    {
+      "name": "ddgArcadiaDaySphere",
+      "value": true,
+      "comment": "the Arcadian day: a great sphere set into the highest peak, half radiant and half black - Positive and Negative Material brought together without destruction or melding into shadow; its revolution matches a Prime day, but the Arcadian day is dawnless and duskless (light appears suddenly), split evenly between night and day."
+    },
+    {
+      "name": "ddgArcadiaLayers",
+      "value": true,
+      "comment": "the Arcadian structure: three layers, the lower reaches unexplored; the uppermost layer is many well-organized realms sharing a common gravity - gentle showers, rainbow flowers in well-ordered untended patches, cities in geometrically perfect shapes, mountains unblemished by erosion."
+    },
+    {
+      "name": "ddgArcadiaWatchBeasts",
+      "value": true,
+      "comment": "the Arcadian animals: golden foxes, coppery hares, silver-wooled sheep, and organized insects - peaceful, unaffected by Prime spells that touch their kind (as outer-planar natives), mute but with pupilless white eyes that pierce any illusion or phantasm - excellent watch beasts."
+    },
+    {
+      "name": "ddgArcadiaMilitia",
+      "value": true,
+      "comment": "the Arcadian militias: spirit-folk patrols (einheriar, Appendix III) hunting creatures that do not belong - good and lawful creatures are greeted and offered to ride along, neutrals are stiffly asked their business, evil and chaotic creatures are attacked; as natives the militias can use divination over the background static of the plane."
+    },
+    {
+      "name": "ddgArcadiaPowers",
+      "value": true,
+      "comment": "the Arcadian Powers: Marduk the Valiant (the Babylonian champion, city at the crossing of the rivers Kath and Laur, home of the kirdari warriors sent to aid his mythos, good regardless of Law-Chaos disposition, sole restriction against dragonkind); and Clanggedin Silverbeard (UA 110), the dwarven Father of Battle - a conical fortress mountain near the light-and-darkness sphere, his warriors forever practicing siegecraft against their own citadel, raids against the evil-dwarf and duergar hosts of Acheron, maximum damage at minimum risk, and good terms with Marduk; a barrier to Arcadia's second layer lies beneath his audience hall."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the DiskRadiusMiles pin",
+      "expr": "m['ddgDiskRadiusMiles']() != 500"
+    },
+    {
+      "note": "the RealmPullTurns pin",
+      "expr": "m['ddgRealmPullTurns']() != 100"
+    },
+    {
+      "note": "the PortalCycleDays pin",
+      "expr": "m['ddgPortalCycleDays']() != 20"
+    },
+    {
+      "note": "the FruitSpoilDays pin",
+      "expr": "m['ddgFruitSpoilDays']() != 10"
+    },
+    {
+      "note": "the ArchMistDenom pin",
+      "expr": "m['ddgArchMistDenom']() != 10"
+    },
+    {
+      "note": "the ArchBothSidesPct pin",
+      "expr": "m['ddgArchBothSidesPct']() != 90"
+    },
+    {
+      "note": "the NirvanaNoIllusion pin",
+      "expr": "m['ddgNirvanaNoIllusion']() != 1"
+    },
+    {
+      "note": "the PrimusDoctrine pin",
+      "expr": "m['ddgPrimusDoctrine']() != 1"
+    },
+    {
+      "note": "the NirvanaPantheon pin",
+      "expr": "m['ddgNirvanaPantheon']() != 1"
+    },
+    {
+      "note": "the ArcadiaDaySphere pin",
+      "expr": "m['ddgArcadiaDaySphere']() != 1"
+    },
+    {
+      "note": "the ArcadiaLayers pin",
+      "expr": "m['ddgArcadiaLayers']() != 1"
+    },
+    {
+      "note": "the ArcadiaWatchBeasts pin",
+      "expr": "m['ddgArcadiaWatchBeasts']() != 1"
+    },
+    {
+      "note": "the ArcadiaMilitia pin",
+      "expr": "m['ddgArcadiaMilitia']() != 1"
+    },
+    {
+      "note": "the ArcadiaPowers pin",
+      "expr": "m['ddgArcadiaPowers']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the nirvana and arcadia pins": [
+      {
+        "kind": "const",
+        "name": "ddgDiskRadiusMiles"
+      },
+      {
+        "kind": "const",
+        "name": "ddgRealmPullTurns"
+      },
+      {
+        "kind": "const",
+        "name": "ddgPortalCycleDays"
+      },
+      {
+        "kind": "const",
+        "name": "ddgFruitSpoilDays"
+      },
+      {
+        "kind": "const",
+        "name": "ddgArchMistDenom"
+      },
+      {
+        "kind": "const",
+        "name": "ddgArchBothSidesPct"
+      },
+      {
+        "kind": "bool",
+        "name": "ddgNirvanaNoIllusion"
+      },
+      {
+        "kind": "bool",
+        "name": "ddgPrimusDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddgNirvanaPantheon"
+      },
+      {
+        "kind": "bool",
+        "name": "ddgArcadiaDaySphere"
+      },
+      {
+        "kind": "bool",
+        "name": "ddgArcadiaLayers"
+      },
+      {
+        "kind": "bool",
+        "name": "ddgArcadiaWatchBeasts"
+      },
+      {
+        "kind": "bool",
+        "name": "ddgArcadiaMilitia"
+      },
+      {
+        "kind": "bool",
+        "name": "ddgArcadiaPowers"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the clockwork plane",
+      "from": "  - [ ] Nirvana (pp. 84-86)",
+      "to": "  - [x] Nirvana (pp. 84-86) - R578: the clockwork plane (the disks, the no-illusion rule, Primus, the pantheons)"
+    },
+    {
+      "note": "the orchard plane",
+      "from": "  - [ ] Arcadia (pp. 86-87)",
+      "to": "  - [x] Arcadia (pp. 86-87) - R578: the orchard plane (the day sphere, the potion fruit, the watch beasts, the militias, Marduk and Clanggedin)"
+    }
+  ],
+  "gap_census": {
+    "closed": 61,
+    "open": 29
+  },
+  "caller_files": [],
+  "inline_count": 14
+}

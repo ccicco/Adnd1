@@ -9854,6 +9854,56 @@ when both halves land.
   final arc opens) - the group doctrine, the
   alignment-based structure, the paths
   between planes, then plane-by-plane.
+- R577 LANDED 2026-10-17: commit 0cbff953202c7fc848eee
+  45dfd21c8858f904f12 (census 500 -> 501,
+  pushed 0c3bb03..0cbff95), THE OUTER PLANES
+  IN GENERAL, printed pp. 73-84, the
+  general-doctrine round opening the final
+  arc: the Great Wheel (16 pieces plus the
+  17th plane, the Upper/Lower/Law/Chaos
+  groupings, the layer-count table with the
+  Abyss' 666), the reaching (all travel
+  through the Astral - the conduits, the
+  plane shift with the arrival table, the
+  gate rules, the color pools with new-body
+  formation and the harmless cord snap), the
+  survival (the like-the-Primes-only-more-so
+  doctrine, the localized gravity, the
+  per-realm directions, the two compasses),
+  the movement (the realm borders, the
+  Wisdom-check interlayer barriers at 70%
+  one-way, the portal rules at 1-in-6 and
+  50/50), the encounters (the unique-Powers
+  2-or-20 rule, the human travelers, the
+  native-body doctrine), the magic school by
+  school (the home-court abjurations, the
+  cantrip pop, the Chaos-plane alteration
+  ladder at 20/40/60/80, the divination
+  alignment-overwhelm, the true-sight
+  freezes, the vacant-body rule at 1% per
+  layer, the item-plus decay), the PC
+  adjustments (the paladin lay-on-hands
+  exception, the barbarian comfort), and the
+  features (the spell-crystals, the river Styx
+  with the 15th-level forget save, the 50%
+  dragging, the Charon 1d100-turn transit,
+  and the wholesome Oceanus). 13 consts + 10
+  bools, prefix ddf, header rules/
+  outerplanes.h. SIX flips: gap census
+  53/37 -> 59/31. Spec 22,513 bytes, md5
+  57f7a97ce714275a99f996f51924d2b4 matched
+  exactly first try, 23 inlines. NOTE (the
+  census_before class, caught locally
+  pre-ritual): the first authoring set
+  census_before 499 but the R576 tree
+  carries 500 - the engine aborted and
+  partially wrote (the R420/R576 write-order
+  class); restored from the sha, fixed to
+  500, re-ran clean. TWELVE straight
+  first-tries (R566-R577). NEXT - R578: the
+  named planes begin - Nirvana (pp. 84-86),
+  the clockwork plane, then plane by plane
+  through the seventeen.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -110,8 +110,8 @@ sample entries verified against the canonical PHB levels).
   - [ ] The Abyssal-layers terrain table (p. 101) - the general-description roll
   - [ ] The Concordant Opposition center table (p. 115) - the powers-neutralized-by-distance roll
   - [ ] The Concordant Opposition chaotic-destination table (p. 116) - the wrong-plane roll for chaotic travelers
-  - [ ] Nirvana (pp. 84-86)
-  - [ ] Arcadia (pp. 86-87)
+  - [x] Nirvana (pp. 84-86) - R578: the clockwork plane (the disks, the no-illusion rule, Primus, the pantheons)
+  - [x] Arcadia (pp. 86-87) - R578: the orchard plane (the day sphere, the potion fruit, the watch beasts, the militias, Marduk and Clanggedin)
   - [ ] The Seven Heavens (pp. 87-89)
   - [ ] The Twin Paradises (pp. 89-90)
   - [ ] Elysium (pp. 90-91)
