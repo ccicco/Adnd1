@@ -8327,6 +8327,68 @@ when both halves land.
   fissures, the hot-water chute joining the meandering river
   five miles south, six large steamy caves, boiling-to-cool
   pools, mildew-slick rock - likely paired with Area 19.
+- R542 LANDED 2026-10-17: commit 6a0c3d917c618fb7b3d99
+  d4ec765a6b3d5f2df0a (census 465 -> 466, pushed
+  d346677..6a0c3d9), THE DSG DEEPEARTH AREAS 18-19,
+  printed pp. 90-91 (pdf 91-92) - Area 18 the
+  Steam-Heated Caverns (the water-eroded region altered
+  by volcanic upheavals, its sharp fissures tapped into
+  the caves; the Lower Lake river reaching the connecting
+  cavern five miles south, source of the rapid hot
+  stream joining the river as the riverbed descends;
+  the wide fine-sand shoreline landing; the expanded,
+  straightened chute tunnel; the six large caves joined
+  by narrow passages - steamy air, coated rock,
+  boiling-to-cool pools, slippery mildew; the north
+  tunnel to Area 21 with once-an-hour superheated
+  blasts, 2% per round cumulative in 2% steps, 4d6
+  halved on a breath save; the east stream inflicting
+  4d6 per round, part-immersion reduced; the Plane of
+  Fire spillover - efreet, fire elementals,
+  salamanders, fire bats; the hell hounds, giant
+  rats, green slime, crawlers, megalo centipedes; the
+  fire giants holding sway, the nomadic clan over 50;
+  the half-usual fatigue in the muggy air; water and
+  fungi abundant, no minerals; and the geysers - a
+  20% pool susceptibility, 6d6 halved on a save), and
+  Area 19 the Chambers of Fire (the baked caves; the
+  swept-clean approach tunnel at 1d6 per turn, dousing
+  to avoid; the roughly circular caverns split by
+  thousands-of-feet floor fissures belching smoke,
+  poison gas, steam and fire once per hour per cavern,
+  25% per type, lasting 1d6 rounds; the cave heat at
+  1d6 per round, halved by dousing; the eruption
+  volley - 6d6 per round from steam or fire halved on
+  a breath save, poison gas save-or-die, 1d4 turns of
+  smoke at the p. 36 effects; the 50% slender stone
+  arches over the 3d6-foot fissures; the four mephit
+  forms at 50% after the matching eruption, lava tied
+  to poison gas; the common fire bats; the diving
+  magmen; the smoky but breathable air, the mildew;
+  and the remote cavern - 21-40 (1d20+20) toiling
+  mephits widening the 20-foot fissure with fireproof
+  pickaxes, intruders thrown in as offerings for a
+  dark-lower-planes creature). A CLEAN-READ ROUND: both
+  machine reads agree on every number (djvu ~lines
+  11485-11685, capture idx 206/208; the djvu '296'
+  and '346 ft' settled by the capture as 2% and 3d6
+  ft, the capture 'ld6/ld4/ld20+20' settled by the
+  djvu). 73 inlines (33 consts + 40 bools), header
+  rules/dsgarea9.h, prefix dnak, no table. DELIVERY
+  clean md5-exact on the first try: authored md5
+  0ec642173140657e1f13d7fdc81388e2 matched exactly
+  (spec 29,735 bytes) - the paste carried a stray
+  './bn 542' line but no rewrite occurred; engine
+  applied 4 then 0/4, preflight GREEN with AUDIT
+  CENSUS: 466. A ZERO-FLIP ROUND: gap census stays
+  139/16, the pp. 75-98 Deepearth child open. NEXT -
+  R543: Area 20 the Lava Caves (printed p. 91, pdf
+  92, djvu ~line 11688+) - the balcony cavern over the
+  lava sea, the 400-ft cliff, the fire giant outpost
+  of ~20 with a dozen hell hounds, the 1,000-ft
+  ceiling, the once-a-decade invasions - likely
+  paired with Area 21 the Elemental Vortex of Fire
+  (p. 92); both reads already fetched this round.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
