@@ -10147,6 +10147,61 @@ when both halves land.
   spacings and hazards; page-104 already
   read, page-105.md to read for the
   Tarterus features and the exiled titans).
+- R584 LANDED 2026-10-17: commit
+  402ab098f0302359e71347907da4f535
+  c3e8599f (census 507 -> 508, pushed
+  833b093..402ab09), TARTERUS, printed
+  pp. 103-105, the six crimson-pearl
+  layers between Hades and the Abyss: the
+  world-sized glowing orbs with their
+  flyable air-gulfs and unspinning
+  weather, the six layers with their
+  gaps and hazards (Othrys at 100 miles
+  with the marsh and the Styx rivers,
+  Cathrys at 500 with the 1d10-round
+  metal-eating acid, Minethys at 5,000
+  with the cloudkill deserts and the
+  every-10-days tornado, Colothys at
+  half a million with the spiked peaks
+  and hell-chasms, Porphatys millions
+  apart with the 1d4-per-round acidic
+  black snow and the 1d6 feet of water,
+  coldest Agathys alone in the pitch
+  black), the nested-sphere barriers
+  (the fifth-to-sixth underwater,
+  anything beyond the sixth beneath
+  miles of ice), the obelisk portals
+  read by shape (tall to Hades, wide to
+  the Abyss, square to Concordant
+  Opposition), the demodands - the
+  ruling shators with kelubar and
+  farastu above the demon-daemon
+  insurgency, the shator-made
+  vargouilles that ate their master -
+  the trapped titans of Kronos on the
+  twin 50-mile peaks of Mount Othrys
+  with the shattered road of Olympus
+  and the wait-and-plan siege mindset,
+  and the exile Powers (Surma's open
+  graves of walking undead, Kiputyto's
+  winds of gout ulcers and plague,
+  Grolantor and his feared giant-spirit
+  armies). 6 consts + 6 bools, prefix
+  ddm, header rules/tarterus.h. ONE
+  flip: gap census 73/17 -> 74/16. Spec
+  16,076 bytes, md5
+  2fd82abe1e6a7758bf0164e177cc219e
+  matched exactly first try, 12 inlines.
+  NINETEEN straight first-tries
+  (R566-R584). NEXT - R585: Hades
+  (pp. 105-107, the three grey Glooms
+  Oinos/Niflheim/Pluton with the color
+  fade and the two-week larva trap, the
+  Styx midpoint and the Olympus and
+  Yggdrasil roots, the copper-silver-
+  gold coin portals; page-106 already
+  read, page-107.md still to read for
+  the Hades features and the Powers).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

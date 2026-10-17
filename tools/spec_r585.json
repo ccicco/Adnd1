@@ -1,0 +1,262 @@
+{
+ "round": 585,
+ "prefix": "ddn",
+ "header_file": "rules/hades.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 508,
+ "title": "Hades",
+ "audit_label": "R585 Hades audit",
+ "audit_comment": "HADES, printed pp. 105-107, the plane of evil balanced between Law and Chaos, the most accessible of the lower planes: the Styx midpoint with Mount Olympus and the Yggdrasil both rooting here into the lower layers. The three Glooms: Oinos, the sickly grey land of disease (10% major disease for walkers and Styx-sailors alike, named for Anthraxus the Oinodaemon); Niflheim, cooler and pine-cloaked but mist-bound at 100 feet, reached by the Yggdrasil; Pluton, the grove of Persephone with its black willows and single white laurel under Olympus's base. The plane's evil: colors muted after one week, grey by two, and past two weeks the save vs spell or the month-long fade into larvae - rescuable only by a pull or a wish. The spinning-coin portals (copper to Gehenna, silver to Concordant Opposition, gold to Tarterus, walled off by arcanadaemon iron) and the tight barriers (to the Yggdrasil roots before Hel's feast hall, to Persephone's grove and Cerberus). The daemons in theory under Anthraxus but outnumbered by diakk and hordlings, the sniping demodand war, and the Khin-Oin - the 20-mile Wasting Tower wracked by internal plots, its daemon masters an unbeatable common front when united, the fortress never stormed. The night hags gathering the human-headed larvae that pass for coin in the lower planes. The jailer doctrine - Law's guardians turned grey prisoners, only greater gods free to wander. And the Powers: Hades of Pluton with his bronze-dented gates and the wish-reviving Cerberus; Hel of Niflheim with her grey einherjar; Nidhogg gnawing the World Ash, a brood-member reborn within the year; Nergal's seven-domed Nergaltos with the cumulative -2 gate saves (-14 at the seventh, potent enough to trap Ishtar) holding Marduk's defeated forgotten Powers; the Indian demigoddess of night and thieves; Abbathor's Glitterhell of spark-lit gold with its rumored Niflheim barrier; and silent Yurtrus of the orcs, whose Oinos realm kills plants at its borders and makes even daemons cross carefully.",
+ "include_comment": "the Hades pins",
+ "include_after": "#include \"rules/tarterus.h\"  // R584: the Tarterus pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R584 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R584 LANDED 2026-10-17: commit",
+  "  402ab098f0302359e71347907da4f535",
+  "  c3e8599f (census 507 -> 508, pushed",
+  "  833b093..402ab09), TARTERUS, printed",
+  "  pp. 103-105, the six crimson-pearl",
+  "  layers between Hades and the Abyss: the",
+  "  world-sized glowing orbs with their",
+  "  flyable air-gulfs and unspinning",
+  "  weather, the six layers with their",
+  "  gaps and hazards (Othrys at 100 miles",
+  "  with the marsh and the Styx rivers,",
+  "  Cathrys at 500 with the 1d10-round",
+  "  metal-eating acid, Minethys at 5,000",
+  "  with the cloudkill deserts and the",
+  "  every-10-days tornado, Colothys at",
+  "  half a million with the spiked peaks",
+  "  and hell-chasms, Porphatys millions",
+  "  apart with the 1d4-per-round acidic",
+  "  black snow and the 1d6 feet of water,",
+  "  coldest Agathys alone in the pitch",
+  "  black), the nested-sphere barriers",
+  "  (the fifth-to-sixth underwater,",
+  "  anything beyond the sixth beneath",
+  "  miles of ice), the obelisk portals",
+  "  read by shape (tall to Hades, wide to",
+  "  the Abyss, square to Concordant",
+  "  Opposition), the demodands - the",
+  "  ruling shators with kelubar and",
+  "  farastu above the demon-daemon",
+  "  insurgency, the shator-made",
+  "  vargouilles that ate their master -",
+  "  the trapped titans of Kronos on the",
+  "  twin 50-mile peaks of Mount Othrys",
+  "  with the shattered road of Olympus",
+  "  and the wait-and-plan siege mindset,",
+  "  and the exile Powers (Surma's open",
+  "  graves of walking undead, Kiputyto's",
+  "  winds of gout ulcers and plague,",
+  "  Grolantor and his feared giant-spirit",
+  "  armies). 6 consts + 6 bools, prefix",
+  "  ddm, header rules/tarterus.h. ONE",
+  "  flip: gap census 73/17 -> 74/16. Spec",
+  "  16,076 bytes, md5",
+  "  2fd82abe1e6a7758bf0164e177cc219e",
+  "  matched exactly first try, 12 inlines.",
+  "  NINETEEN straight first-tries",
+  "  (R566-R584). NEXT - R585: Hades",
+  "  (pp. 105-107, the three grey Glooms",
+  "  Oinos/Niflheim/Pluton with the color",
+  "  fade and the two-week larva trap, the",
+  "  Styx midpoint and the Olympus and",
+  "  Yggdrasil roots, the copper-silver-",
+  "  gold coin portals; page-106 already",
+  "  read, page-107.md still to read for",
+  "  the Hades features and the Powers)."
+ ],
+ "banner": {
+  "title": "HADES - printed pp. 105-107, the three grey Glooms of the evil-between: Oinos the diseased, Niflheim the mist-bound, Pluton the grove of Persephone - with the color fade and the larva trap, the coin portals, Anthraxus's Khin-Oin, the jailers turned prisoners, and the Powers from Hel and Nidhogg to Nergal, Abbathor and Yurtrus.",
+  "provenance": "verified against printed pp. 105-107 of the uploaded motp.pdf OCR; the three layers, the fade-and-trap rules, the portal coins, the daemon politics and the realm census are pinned exactly as printed (the orc death-god rendered Yurtrus and the Norse as Niflheim against the OCR slips); Gehenna (pp. 107-109) is left for the round that owns it.",
+  "sentinel": "the gap census after this round: 75 closed, 15 open - ONE box falls (Hades); the fourfold furnaces of Gehenna open next."
+ },
+ "consts": [
+  {
+   "name": "ddnHadesLayerCount",
+   "value": 3,
+   "comment": "the three Glooms of Hades, named for their chief inhabitants: Oinos (the daemons' layer, taking its name from Anthraxus's title as lord of the middle planes, the Oinodaemon), Niflheim (the Norse layer reached by the Yggdrasil), and Pluton (also called Hades, the Greek underworld proper)."
+  },
+  {
+   "name": "ddnOinosDiseasePct",
+   "value": 10,
+   "comment": "the Oinos disease: the first layer is a sickly land of stunted withered plants, foliage and rocky terrain in muted greys stretching to the horizon - those who walk its surface, or sail the Styx as it passes through, have a 10% chance of contracting a major disease."
+  },
+  {
+   "name": "ddnNiflheimVisionFeet",
+   "value": 100,
+   "comment": "the Niflheim mists: the second layer is richer in vegetation and cooler than Oinos without the touch of sickness, its terrain rough and cloaked with pines - but vision beyond 100 feet is blocked by the mists and fogs that swirl through the plane."
+  },
+  {
+   "name": "ddnLarvaSaveWeeks",
+   "value": 2,
+   "comment": "the Hades trap: the evil of the plane infects the long-staying with defeatism and sadness - colors fade until the most vibrant blues and reds are muted after one week and reduced to shades of grey by the end of two; travelers who remain longer than two weeks must roll successful saving throws vs. spell or be permanently trapped, their existence fading over the next month until they become larvae (rescuable only by another traveler pulling them out, or by a wish or related spell)."
+  },
+  {
+   "name": "ddnKhinOinMiles",
+   "value": 20,
+   "comment": "the Khin-Oin, the Wasting Tower: Anthraxus's realm is a mighty fortress of grey stone battlements laced with crenellations and studded with towers and minor citadels, towering 20 miles in height with dungeons burrowing a similar distance below ground."
+  },
+  {
+   "name": "ddnNergalDomePenalty",
+   "value": 2,
+   "comment": "the Nergaltos dome saves: at each of the seven nested gates of Nergal's circular city the traveler must save vs. spell or suffer the trapped-in-Hades effect, each dome applying a cumulative -2 penalty to the save - by the seventh dome the penalty is -14, so potent that Powers such as Ishtar have been trapped in his domain."
+  }
+ ],
+ "bools": [
+  {
+   "name": "ddnHadesDoctrine",
+   "value": true,
+   "comment": "the Hades doctrine: the plane of evil balanced between Law and Chaos, one of the most accessible of the lower planes - the midpoint of the Styx linking the lower planes in a river of evil, the foundation of Mount Olympus reaching the Greek pantheon, and the base of the Yggdrasil reaching Gladsheim, both great trees touching the lower layers; the Glooms are realms without joy or emotion, without hope or peace, without good will - a grey land under a grey sky where only muted blacks and whites belong, with neither sun, moon, stars, nor passing seasons, merely a state of waiting with no end in sight; viewing pools from the Astral work normally on the upper layer (why Hades and Hel keep their realms below), leaving the top to a variety of Powers, one of them the Oinodaemon."
+  },
+  {
+   "name": "ddnHadesPortals",
+   "value": true,
+   "comment": "the Hades portals and barriers: the standard portals reach the top layer, appearing as great spinning coins - copper to Gehenna, silver to Concordant Opposition, gold to Tarterus - their brightness visible for miles, often enclosed by the red iron fortresses arcanadaemons build to control traffic; the barriers between the layers are tightly controlled, the main Oinos-to-Niflheim barrier leading to the roots of the Yggdrasil in full view of Hel's feast hall, and the major passable Niflheim-to-Pluton barrier leading to the grove of Persephone and the gates of Hades with its guardian Cerberus - other barriers may exist, unrevealed, for Hades and Hel keep their infinite realms as quiet and controlled as possible."
+  },
+  {
+   "name": "ddnDaemonRule",
+   "value": true,
+   "comment": "the daemons of Hades: ruled at least in theory by Anthraxus, though the bird-like diakk and the misshapen hordlings both outnumber the daemons, the deeper layers' Powers severely limiting these lesser creatures; the greater daemons' domains hold diakk and hordlings as servants, an occasional demodand likewise; the demodands and daemons wage a sniping war of small skirmishes and assassinations, avoiding the large-scale violence that might attract the Greater Powers - while at the Khin-Oin the diseased great daemons plot against Anthraxus in continual hall-battles, uniting into a restless common front only against an outside Power or invader, and unbeatable then: no other group has ever stormed or besieged the Wasting Tower successfully."
+  },
+  {
+   "name": "ddnLarvaRule",
+   "value": true,
+   "comment": "the larvae and the night hags: nightmares and mephits also haunt the layers alongside the hags, who live exclusive lives and meddle in local politics only when necessary; the hags are chiefly interested in Hades' larvae - the human-headed worm-spirits found throughout the layers - for the larvae are a medium of exchange in the lower planes, and the night hags gather as many as they can."
+  },
+  {
+   "name": "ddnJailerRule",
+   "value": true,
+   "comment": "the jailer doctrine: many of the Powers of Hades were once beings of Law and justice assigned to guard against the evil dead in this land - the millennial exposure to the plane has turned them to the grey evil as well, so they are both the jailers and the prisoners of Hades; only those of greater godly status can wander the Astral or visit other planes."
+  },
+  {
+   "name": "ddnHadesPowers",
+   "value": true,
+   "comment": "the Powers of the Glooms: Hades of Pluton, the most powerful of the plane yet touched by its grey sorrow - his realm walled around the grove of Persephone where Mount Olympus has its base and passes into the Astral, the grove filled with black willows and a single white laurel, the gates massive structures of beaten bronze dented by heroes who over the ages assaulted the underworld's lord; at the gates the kennel of the three-headed Cerberus, who keeps the unwanted out and the inhabitants in - he may be slain but returns to life by the wish of Hades - and the evil Olympian beasts within carrying ability modifications like those of Olympus; Hel of Niflheim, likewise assigned to guard the dead and fallen to the grey despair - her domain like Valhalla save for the omnipresent grey and the lack of valkyries, served by her own evil, grey-armored einherjar, wild creatures like Gladsheim's roaming the borders; at the Yggdrasil's base Nidhogg, a huge very ancient red dragon with 10 points per hit die and her innumerable brood, tasked to gnaw the roots of the World Ash and cut the link from Niflheim to Asgard - the ash sets down new roots even as she consumes them, and though slain, within a year one of her brood grows to her size and power and resumes the mantle; Nergal the Babylonian keeper of the dead on Oinos, ruling a wide but finite swath from Nergaltos, the circular city of seven nested arched domes, each dome pierced by a single gate, viewing portals unable to pass the gates without his permission, the city peopled by soldiers like Anu's warriors but evil, the centermost domes holding the forgotten Powers whom Marduk and his pantheon defeated and brought to him; the Indian demigoddess of night, thieves and robbers with no permanent abode, layer to layer, living off what she steals from the Greater Powers - an unwelcome guest in the courts of Hades and Hel, dominating the daemons and demodands she encounters; Abbathor of the evil greedy dwarves in the Glitterhell, a deep cavern complex said to hold a barrier into Niflheim at its deepest point - lined with gold that sparkles even in the grey, kept moving and immune to the plane's malaise by his own lust and greed, its true location unknown behind several false ones; and silent Yurtrus of the orcs, the orc god of death, whose realm on Oinos is dreary even by Hades's standards - all plants die before its borders, only Yurtrus and his equally silent ones exist there, and even the daemons cross that terrain carefully."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the HadesLayerCount pin",
+   "expr": "m['ddnHadesLayerCount']() != 3"
+  },
+  {
+   "note": "the OinosDiseasePct pin",
+   "expr": "m['ddnOinosDiseasePct']() != 10"
+  },
+  {
+   "note": "the NiflheimVisionFeet pin",
+   "expr": "m['ddnNiflheimVisionFeet']() != 100"
+  },
+  {
+   "note": "the LarvaSaveWeeks pin",
+   "expr": "m['ddnLarvaSaveWeeks']() != 2"
+  },
+  {
+   "note": "the KhinOinMiles pin",
+   "expr": "m['ddnKhinOinMiles']() != 20"
+  },
+  {
+   "note": "the NergalDomePenalty pin",
+   "expr": "m['ddnNergalDomePenalty']() != 2"
+  },
+  {
+   "note": "the HadesDoctrine pin",
+   "expr": "m['ddnHadesDoctrine']() != 1"
+  },
+  {
+   "note": "the HadesPortals pin",
+   "expr": "m['ddnHadesPortals']() != 1"
+  },
+  {
+   "note": "the DaemonRule pin",
+   "expr": "m['ddnDaemonRule']() != 1"
+  },
+  {
+   "note": "the LarvaRule pin",
+   "expr": "m['ddnLarvaRule']() != 1"
+  },
+  {
+   "note": "the JailerRule pin",
+   "expr": "m['ddnJailerRule']() != 1"
+  },
+  {
+   "note": "the HadesPowers pin",
+   "expr": "m['ddnHadesPowers']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the hades pins": [
+   {
+    "kind": "const",
+    "name": "ddnHadesLayerCount"
+   },
+   {
+    "kind": "const",
+    "name": "ddnOinosDiseasePct"
+   },
+   {
+    "kind": "const",
+    "name": "ddnNiflheimVisionFeet"
+   },
+   {
+    "kind": "const",
+    "name": "ddnLarvaSaveWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "ddnKhinOinMiles"
+   },
+   {
+    "kind": "const",
+    "name": "ddnNergalDomePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "ddnHadesDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "ddnHadesPortals"
+   },
+   {
+    "kind": "bool",
+    "name": "ddnDaemonRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddnLarvaRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddnJailerRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddnHadesPowers"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "hades",
+   "from": "  - [ ] Hades (pp. 105-107)",
+   "to": "  - [x] Hades (pp. 105-107) - R585: the three grey Glooms (the color fade and the larva trap, the coin portals, the Khin-Oin, the jailers-turned-prisoners, Nergal's seven domes, Hel and Nidhogg, Abbathor's Glitterhell, Yurtrus)"
+  }
+ ],
+ "gap_census": {
+  "closed": 75,
+  "open": 15
+ },
+ "caller_files": [],
+ "inline_count": 12
+}
