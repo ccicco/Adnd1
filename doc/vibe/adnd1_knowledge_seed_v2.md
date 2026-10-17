@@ -7629,6 +7629,75 @@ when both halves land.
   gap report's DM's-section children list); the
   chapter parent 141 (Improving play) closes at the
   next census check once R529's children flip.
+- R530 LANDED 2026-10-17: commit 716bde0 (census 453 -> 454,
+  pushed 39ce9b7..716bde0), THE DSG UNDERGROUND
+  ENVIRONMENT, the DM-section opener: printed pp. 65-68
+  (pdf 66-69), the first DM-section child - the
+  why-an-ecosystem justifications (defense: the dungeon
+  safer than a castle - impervious to aerial attack, the
+  earthquake target hard to identify at depth, held by a
+  smaller group since access is limited, no wall garrison
+  so a reserve against break-ins, the burrowers menacing
+  but rarely marshalled; the drow and duergar survival
+  through defensibility; mining: the dwarven and gnomish
+  economies, the mines converted to fortresses, prisons
+  and lairs, the burrowing-monster passageways, the
+  connected limestone caverns many over 100 miles long;
+  gravity: the centuries of creatures falling into holes
+  and adapting to the dark world), the features of the
+  underground game (the DM control over narrow options,
+  the essential encounter in a central room, the
+  plannable monster tactics with the rigged alarms and
+  ambushes undoable by creative play, the beginners
+  decision ease with the doorway and 10-foot-corridor
+  defense, the danger atmosphere, the common fears, the
+  alienness and wonder, the frontier below the feet with
+  its exploration, scouting, plunder and conquest
+  missions, and the back-to-basics variety), the nature
+  of the underground environment and its denizens (the
+  precarious balance of power upset by PC arrival, the
+  land more precious than on the surface, the evil
+  tendency with the drow and kuo-toa war banishment, the
+  lower-planes theory and the oldest mind flayers and
+  derro, the humorless philosophy with the functional
+  art and the punished waste, the timelessness and the
+  old-age-before-execution tale, the stubborn
+  conservatism, the depth-shaped resources with the
+  mile-floated wood and the raided food and slaves, the
+  depth-shaped alienness, the sunless food chain with
+  its fungi, rothe and cave pigs, the inedible
+  stone-eaters, the minor scavengers, the nocturnal
+  raiders, and the natural oxygen circulation through
+  arctic shafts and geothermal heat), and a brief
+  history of underground cultures (the five ancient
+  cultures - the jermalaine tunnels, the myconid
+  coexistence, the aboleth Darksea cities, the evicting
+  cloakers, the mind flayer dominion checked only by
+  low reproduction; the Alignment Wars with
+  alignment-chosen sides and the seaborne kuo-toa; the
+  evil halted at the sunlit tunnel mouths; the defeat,
+  the retreat of drow and duergar and kuo-toa and the
+  faded alliance; the immigrant niches; the interplanar
+  doors with the Plane of Earth strongest; the
+  gem-lusting svirfneblin, the stone-working pech and
+  the interbred derro; and the savage wars of today
+  with the isolated pockets between monster stretches).
+  A CLEAN-READ ROUND: both machine reads agree on every
+  number (djvu ~lines 8226-8860, Capture idx 149-162).
+  SEAMS: Monster Manual burrowers and underground
+  cultures, DMG inner planes, the R503 re-grain. Pinned
+  as rules/dsgenv.h (prefix dnug, verified free; 51
+  inlines - 4 consts, 47 bools, no tables). Spec 31,639
+  bytes, md5 cfcb3916edb3d7ca26cea790296e1c73
+  (user-side identical). Engine applied 5 then 0/5,
+  audit mirror clean. Gap 135/20 -> 136/19 (1 flip).
+  PREFLIGHT GREEN with census 454 audit lines, each
+  exactly once, all bad 0; BUILD: 0 warnings. NEXT -
+  R531: underground geography - domains in three
+  dimensions (printed p. 69+, the surface terrain,
+  temperature, humidity, size, origin, access and
+  egress child), then the theories on the nature of
+  the underground (pp. 70-71).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
