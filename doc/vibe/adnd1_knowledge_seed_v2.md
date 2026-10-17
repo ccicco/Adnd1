@@ -9471,6 +9471,29 @@ when both halves land.
   reconstruction (pp. 8-9, the garbled OCR -
   column-by-column against the school lists),
   then the Ethereal chapter (pp. 11-21).
+- R565 LANDED 2026-10-17: commit 5d0af5f2aaf659fd20db6a
+  4e0d947d405d1a756d (census 488 -> 489, pushed
+  c4f9c6b..5d0af5f), THE MotP SPELL-SUMMARY
+  RECONSTRUCTION, printed pp. 8-9 - the one
+  garbled spread of the scan closed on the
+  reconstruction the gap report demanded: the
+  eight school groups, the C/D/I/M class-code
+  legend, the parenthetical pair codes, and 35
+  sample entries verified legible in the OCR and
+  matching the canonical PHB levels. 3 consts +
+  2 bools, prefix dct (THE ENGINE CAUGHT THE
+  TAKEN dcs PREFIX - R564 used it; the mirror
+  aborted first try and the switch to dct was
+  the fix). A FLIP round, one flip: gap census
+  5/55 -> 6/54. Spec 7,107 bytes, md5
+  8422b07ffd8aca8dedb4adebff1cf3ff matched
+  exactly first try, 5 inlines, header
+  rules/motpspell.h. NEXT - R566: the Ethereal
+  chapter (pp. 11-21) - the proto-matter nature,
+  the Border Ethereal, survival, encounters,
+  combat, magic, the player characters and the
+  demi-planes; expect the R557 single-round
+  chapter pattern.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

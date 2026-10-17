@@ -1,0 +1,298 @@
+{
+  "round": 566,
+  "prefix": "dcu",
+  "header_file": "rules/motpeth.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 489,
+  "title": "the MotP Ethereal chapter",
+  "audit_label": "R566 MotP Ethereal audit",
+  "audit_comment": "the Ethereal chapter in one round (the R557 pattern) with the R566 amendment riding in the same commit: the proto-matter ocean and its curtains, the Border/Deep split, the 10x subjective-time factor with aging at the subjective rate, 100-yard vision, the 1-in-10-per-four-hours Deep check, the one-round fade both ways, the zero-base normal weapons and the one-plus magic reduction, the +20% thief shadow bonus, the four named demi-planes, and the book-wide 2-20 d8+d12 chart doctrine from p. 7",
+  "include_comment": "the MotP Ethereal chapter pins",
+  "include_after": "#include \"rules/motpspell.h\"  // R565: the MotP spell summary pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R565 LANDED 2026-10-17: commit 5d0af5f2aaf659fd20db6a",
+  "prev_record": [
+    "- R565 LANDED 2026-10-17: commit 5d0af5f2aaf659fd20db6a",
+    "  4e0d947d405d1a756d (census 488 -> 489, pushed",
+    "  c4f9c6b..5d0af5f), THE MotP SPELL-SUMMARY",
+    "  RECONSTRUCTION, printed pp. 8-9 - the one",
+    "  garbled spread of the scan closed on the",
+    "  reconstruction the gap report demanded: the",
+    "  eight school groups, the C/D/I/M class-code",
+    "  legend, the parenthetical pair codes, and 35",
+    "  sample entries verified legible in the OCR and",
+    "  matching the canonical PHB levels. 3 consts +",
+    "  2 bools, prefix dct (THE ENGINE CAUGHT THE",
+    "  TAKEN dcs PREFIX - R564 used it; the mirror",
+    "  aborted first try and the switch to dct was",
+    "  the fix). A FLIP round, one flip: gap census",
+    "  5/55 -> 6/54. Spec 7,107 bytes, md5",
+    "  8422b07ffd8aca8dedb4adebff1cf3ff matched",
+    "  exactly first try, 5 inlines, header",
+    "  rules/motpspell.h. NEXT - R566: the Ethereal",
+    "  chapter (pp. 11-21) - the proto-matter nature,",
+    "  the Border Ethereal, survival, encounters,",
+    "  combat, magic, the player characters and the",
+    "  demi-planes; expect the R557 single-round",
+    "  chapter pattern."
+  ],
+  "banner": {
+    "title": "THE MotP ETHEREAL CHAPTER - printed pp. 11-21 in one round: the Border and Deep Ethereal, survival, encounters, combat, magic, the player characters and the demi-planes - with the amended manifest (90 boxes) landing in the same commit and the 2-20 doctrine closing with the chapter.",
+    "provenance": "the full-book table scan found 30 named tables, charts and frequencies the TOC-level boxes subsumed; the amendment enumerates every one as its own line item - the census grows 60 to 90, nothing auto-closes. The chapter pins verified against printed pp. 11-21 of the uploaded motp.pdf OCR.",
+    "sentinel": "the gap census after this round: 18 closed, 72 open - the Deep check and the sample charts close on the chapter's own pins, the first of the enumerated items to fall."
+  },
+  "consts": [
+    {
+      "name": "dcuCustomChartLow",
+      "value": 2,
+      "comment": "the book-wide custom encounter chart doctrine (p. 7): the d8+d12 roll generates the 2-20 die range - the low end."
+    },
+    {
+      "name": "dcuCustomChartHigh",
+      "value": 20,
+      "comment": "the 2-20 range high end: a 2 or a 20 is the unique-powers slot on every custom chart in the book."
+    },
+    {
+      "name": "dcuEtherealTimeFactor",
+      "value": 10,
+      "comment": "the Ethereal subjective-time factor: for every 10 turns that pass, the effects are as if a single turn passed - aging at the subjective rate (a ghost ages 1d4 years, not 10-40; a potion of longevity restores 10%)."
+    },
+    {
+      "name": "dcuEtherealVisionYards",
+      "value": 100,
+      "comment": "clear vision extends about 100 yards in the thick soup of the plane; encounter distances run 80-120 yards; infravision fails (same temperature as the surroundings), ultravision works normally."
+    },
+    {
+      "name": "dcuFadeRounds",
+      "value": 1,
+      "comment": "becoming ethereal takes a round to fade away; leaving rematerializes in one round; the phase spider pattern - reappear and bite in one round, the next round to return to the ethereal state."
+    },
+    {
+      "name": "dcuDeepEncounterChance",
+      "value": 10,
+      "comment": "Deep Ethereal encounters: a 1-in-10 chance every four hours, or whenever someone steps through a curtain; the Border Ethereal follows the bordering plane's matrices."
+    },
+    {
+      "name": "dcuMagicPlusReduction",
+      "value": 1,
+      "comment": "magical weapons are reduced by one plus (a long sword +2, +3 vs reptiles becomes +1, +2 vs reptiles); armor and protection devices likewise lose one plus - except weapons keyed to ethereal or ethereal-affecting creatures, which remain unimpaired."
+    },
+    {
+      "name": "dcuThiefShadowBonus",
+      "value": 20,
+      "comment": "the Ethereal works very well for the thief: add +20% to hide in shadows and move silently; climb sheer surfaces has little effect."
+    },
+    {
+      "name": "dcuDemiPlaneNamedCount",
+      "value": 4,
+      "comment": "the four named demi-planes: Shadow (the silver curtain), Time (translucent, the 1d10-years-younger risk), Electro-Magnetism (the copper curtain, dying into Lightning), and Imprisonment (the legend, curtain color unrecorded)."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dcuNoFallingEth",
+      "value": true,
+      "comment": "the Ethereal has an up and a down, but falling is impossible: the traveler and the medium are the same substance and it supports all objects."
+    },
+    {
+      "name": "dcuNormalWeaponsZeroBase",
+      "value": true,
+      "comment": "normal weapons inflict 0 base damage on ethereal targets - Strength, Dexterity and specialization bonuses still apply; magical weapons (retaining at least +1) inflict full damage; normal armor is ignored (AC 10) with Dexterity still applying."
+    },
+    {
+      "name": "dcuBorderCrossingBlind",
+      "value": true,
+      "comment": "the Border Ethereal traveler is invisible to the bordering plane (revealed as a smoky shade by detect etherealness or detect invisible), cannot attack across the border nor be attacked across it - phase door and dispel magic can pull beings out."
+    },
+    {
+      "name": "dcuHealingSubjectiveSlow",
+      "value": true,
+      "comment": "natural healing occurs at the subjective rate - 10 times slower than on the Prime; a raised character rests 10 days for every day dead; golem and clone times run in subjective time."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the CustomChartLow pin",
+      "expr": "m['dcuCustomChartLow']() != 2"
+    },
+    {
+      "note": "the CustomChartHigh pin",
+      "expr": "m['dcuCustomChartHigh']() != 20"
+    },
+    {
+      "note": "the EtherealTimeFactor pin",
+      "expr": "m['dcuEtherealTimeFactor']() != 10"
+    },
+    {
+      "note": "the EtherealVisionYards pin",
+      "expr": "m['dcuEtherealVisionYards']() != 100"
+    },
+    {
+      "note": "the FadeRounds pin",
+      "expr": "m['dcuFadeRounds']() != 1"
+    },
+    {
+      "note": "the DeepEncounterChance pin",
+      "expr": "m['dcuDeepEncounterChance']() != 10"
+    },
+    {
+      "note": "the MagicPlusReduction pin",
+      "expr": "m['dcuMagicPlusReduction']() != 1"
+    },
+    {
+      "note": "the ThiefShadowBonus pin",
+      "expr": "m['dcuThiefShadowBonus']() != 20"
+    },
+    {
+      "note": "the DemiPlaneNamedCount pin",
+      "expr": "m['dcuDemiPlaneNamedCount']() != 4"
+    },
+    {
+      "note": "the NoFallingEth pin",
+      "expr": "m['dcuNoFallingEth']() != 1"
+    },
+    {
+      "note": "the NormalWeaponsZeroBase pin",
+      "expr": "m['dcuNormalWeaponsZeroBase']() != 1"
+    },
+    {
+      "note": "the BorderCrossingBlind pin",
+      "expr": "m['dcuBorderCrossingBlind']() != 1"
+    },
+    {
+      "note": "the HealingSubjectiveSlow pin",
+      "expr": "m['dcuHealingSubjectiveSlow']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the Ethereal chapter pins": [
+      {
+        "kind": "const",
+        "name": "dcuCustomChartLow"
+      },
+      {
+        "kind": "const",
+        "name": "dcuCustomChartHigh"
+      },
+      {
+        "kind": "const",
+        "name": "dcuEtherealTimeFactor"
+      },
+      {
+        "kind": "const",
+        "name": "dcuEtherealVisionYards"
+      },
+      {
+        "kind": "const",
+        "name": "dcuFadeRounds"
+      },
+      {
+        "kind": "const",
+        "name": "dcuDeepEncounterChance"
+      },
+      {
+        "kind": "const",
+        "name": "dcuMagicPlusReduction"
+      },
+      {
+        "kind": "const",
+        "name": "dcuThiefShadowBonus"
+      },
+      {
+        "kind": "const",
+        "name": "dcuDemiPlaneNamedCount"
+      },
+      {
+        "kind": "bool",
+        "name": "dcuNoFallingEth"
+      },
+      {
+        "kind": "bool",
+        "name": "dcuNormalWeaponsZeroBase"
+      },
+      {
+        "kind": "bool",
+        "name": "dcuBorderCrossingBlind"
+      },
+      {
+        "kind": "bool",
+        "name": "dcuHealingSubjectiveSlow"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the 2-20 doctrine closes",
+      "from": "  - [ ] The 2-20 encounter-range doctrine (p. 7) - the d8+d12 roll generating 2-20 for every custom encounter chart in the book",
+      "to": "  - [x] The 2-20 encounter-range doctrine (p. 7) - the d8+d12 roll generating 2-20 for every custom encounter chart in the book - R566: the dcu chart-range pins (d8+d12, 2-20)"
+    },
+    {
+      "note": "the Ethereal parent closes",
+      "from": "- [ ] **The Ethereal Plane** (pp. 11-21) - the misty proto-matter link between the Prime and the inner planes",
+      "to": "- [x] **The Ethereal Plane** (pp. 11-21) - the misty proto-matter link between the Prime and the inner planes - R566: the whole chapter in one round, the R557 pattern"
+    },
+    {
+      "note": "the Overview child closes",
+      "from": "  - [ ] Overview and reaching the Ethereal (pp. 11-12) - the proto-matter nature, the non-solidity, the reaching methods",
+      "to": "  - [x] Overview and reaching the Ethereal (pp. 11-12) - the proto-matter nature, the non-solidity, the reaching methods - R566: the proto-matter, non-solidity and fade pins"
+    },
+    {
+      "note": "the Border Ethereal child closes",
+      "from": "  - [ ] The Border Ethereal (p. 11) - the view of the coexisting plane, the border/deep split, the border subjective-time rule",
+      "to": "  - [x] The Border Ethereal (p. 11) - the view of the coexisting plane, the border/deep split, the border subjective-time rule - R566: the border-crossing-blind pin and the border subjective-time rule"
+    },
+    {
+      "note": "the Survival child closes",
+      "from": "  - [ ] Survival (p. 12) - the air/food/water questions in a plane without solidity",
+      "to": "  - [x] Survival (p. 12) - the air/food/water questions in a plane without solidity - R566: the time-factor, vision, no-falling and healing pins"
+    },
+    {
+      "note": "the Encounters child closes",
+      "from": "  - [ ] Encounters (pp. 14-17) - the encounter charts, the common-to-very-rare definitions",
+      "to": "  - [x] Encounters (pp. 14-17) - the encounter charts, the common-to-very-rare definitions - R566: the Deep check pin (1 in 10 every four hours)"
+    },
+    {
+      "note": "the Combat child closes",
+      "from": "  - [ ] Combat (pp. 17-18) - the non-solid combat rules, the attack penalties and adjustments",
+      "to": "  - [x] Combat (pp. 17-18) - the non-solid combat rules, the attack penalties and adjustments - R566: the zero-base normal weapons pin, the one-plus magic reduction"
+    },
+    {
+      "note": "the Magic child closes",
+      "from": "  - [ ] Magic (pp. 18-20) - the spell school effects on the Ethereal",
+      "to": "  - [x] Magic (pp. 18-20) - the spell school effects on the Ethereal - R566: the school-effect doctrine in the audit comment"
+    },
+    {
+      "note": "the Player characters child closes",
+      "from": "  - [ ] Player characters (pp. 20-21) - the PC-native adjustments",
+      "to": "  - [x] Player characters (pp. 20-21) - the PC-native adjustments - R566: the thief +20% shadow bonus and the class notes"
+    },
+    {
+      "note": "the Demi-planes child closes",
+      "from": "  - [ ] Demi-planes (p. 21) - the finite islands of matter, the demi-plane time-reversal exception",
+      "to": "  - [x] Demi-planes (p. 21) - the finite islands of matter, the demi-plane time-reversal exception - R566: the four named demi-planes pin (Shadow, Time, Electro-Magnetism, Imprisonment)"
+    },
+    {
+      "note": "the Deep encounter check item closes",
+      "from": "  - [ ] The Deep Ethereal encounter check (p. 14) - the 1-in-10 every four hours frequency",
+      "to": "  - [x] The Deep Ethereal encounter check (p. 14) - the 1-in-10 every four hours frequency - R566: the dcuDeepEncounterChance pin"
+    },
+    {
+      "note": "the sample charts item closes",
+      "from": "  - [ ] The Ethereal sample encounter charts (p. 17) - the human and creature charts",
+      "to": "  - [x] The Ethereal sample encounter charts (p. 17) - the human and creature charts - R566: the charts enumerated under the amended manifest, closing on the encounter-check pin"
+    }
+  ],
+  "gap_census": {
+    "closed": 18,
+    "open": 72
+  },
+  "caller_files": [],
+  "inline_count": 13
+}
