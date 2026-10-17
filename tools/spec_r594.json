@@ -1,0 +1,251 @@
+{
+ "round": 594,
+ "prefix": "ddz",
+ "header_file": "rules/appendixiiioutercreatures.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 517,
+ "title": "Appendix III: Creatures from the Outer Planes",
+ "audit_label": "R594 AppIII audit",
+ "audit_comment": "APPENDIX III: CREATURES FROM THE OUTER PLANES, printed pp. 122-123, the new-creature summary - by no means exhaustive, but the DM's starting point: the einheriar, the spirit legions of the neutral-to-good planes, 10d10 to the patrol, immune to fear, slain and returned within the day, the class die (fighters 1-40 through bards 99-00) and the level die (level 4 at 1-50 through levels 11-16 at 00), the 5%-per-level magical kit with no exceptional-function items, and the seven hosts - Anu's soldiers, the shape-changing Horusyr, Clanggedin's dwarvish host, the spirit folk of Arcadia and Elysium, the Hindari, Valhalla's einheriar, and Acheron's spirit legions; the maruts of Rudra, the polished-black-stone giants of Nirvana in gold armor, 15 HD with the 8d10 blow and the once-an-hour earthquake, 15-die lightning bolt or controlled winds; the mortal of the Happy Hunting Grounds, a huge cloud with a face at AC -5 and move 48, godlike, the legend lore at will and all air, wind, weather and cloud spells including cloudkill, glowing golden in Arcadia's depths; and the archons, the armies of good and Law with the four common powers (continual light, the visions, tongues, the errorless teleport): the lantern proto-archons, 1d3-foot glowing bubbles of half a hit die reforming within the day of their slaying; the hounds, the dog-headed 9-HD fighters shape changing to wolf and seeing the invisible, astral and ethereal; the bear-handed wardens of all divination; the winged cat-headed swords, 15th-level casters gating reinforcements each turn, four attacks from the one weapon; and the hawk-headed tomes, the 8-foot geniuses of divination, alteration and beneficial necromancy, the 2d10 radiant cone, the 20th-level cleric's grip on the undead.",
+ "include_comment": "the Appendix III outer creatures pins",
+ "include_after": "#include \"rules/appendixiiinnercreatures.h\"  // R593: the Appendix II inner creatures pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R593 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R593 LANDED 2026-10-17: commit",
+  "  94ac8ef6319a630b26a486bf0c06765495",
+  "  c1b8f6 (census 516 -> 517, pushed",
+  "  542cc2f..94ac8ef), APPENDIX II:",
+  "  CREATURES OF THE INNER PLANES, printed",
+  "  pp. 120-121, the elemental analogues:",
+  "  the no-analogue list (no Ethereal/",
+  "  Astral/outer natives, no elemental",
+  "  undead, none for the PC humanoids, no",
+  "  elemental wizards though some cast),",
+  "  the stat modifications (movement",
+  "  tripled for Air/Smoke/Steam, doubled",
+  "  for Water, the 10%-less native and",
+  "  10%-more pocket lair percentages), the",
+  "  general abilities (movement through",
+  "  the adjoining planes as Prime travelers",
+  "  in the Ethereal, the Border-Ethereal",
+  "  sight, no Prime crossing without",
+  "  outside help), the per-element",
+  "  immunity and vulnerability rungs for",
+  "  all sixteen planes with the",
+  "  retained-immunity fire giant of Ash,",
+  "  the appearance dies (the 90% invisible",
+  "  air creatures, the Fire solids through",
+  "  the orbiting 2d6 geometric swarms, the",
+  "  crystalline Earth forms that shatter",
+  "  into useless shards, the Water",
+  "  amoeboids serpents mer-creatures and",
+  "  fish, the para-elemental humanoids and",
+  "  counterparts, the eight quasi-forms",
+  "  from the bolt-legged lightning balls to",
+  "  the salt-encrusted duplicates), the",
+  "  four-family size-change table with the",
+  "  halving and doubling effects (the",
+  "  15-foot giant's 60-foot equivalent),",
+  "  and the treasure rules (Air's 10%",
+  "  coinage in perfume, Fire's 20% in",
+  "  melted blocks or protected burnables,",
+  "  Earth's metal-and-gems preference,",
+  "  Water's doubled potions, the 50/50",
+  "  para-rule, the seven-of-eight quasi-",
+  "  rule with Vacuum normal, the",
+  "  low-intelligence protection, the",
+  "  elemental-pocket equivalence). 5 consts",
+  "  + 7 bools, prefix ddy, header",
+  "  rules/appendixiiinnercreatures.h. ONE",
+  "  flip: gap census 86/4 -> 87/3. Spec",
+  "  18,793 bytes, md5 fcc089f865cbde82aff",
+  "  4858c316045b7 matched exactly first",
+  "  try, 12 inlines. TWENTY-EIGHT straight",
+  "  first-tries (R566-R593). NEXT - R594:",
+  "  Appendix III: Creatures from the Outer",
+  "  Planes (pp. 122-123, the",
+  "  modification-by-plane tables and the",
+  "  outer-planar creature adjustments;",
+  "  OCR source pages 123-124 not yet",
+  "  read)."
+ ],
+ "banner": {
+  "title": "APPENDIX III: CREATURES FROM THE OUTER PLANES - printed pp. 122-123, the new-creature summary: the einheriar spirit legions with their class and level dies and seven named hosts, Rudra's maruts, the mortal cloud of the Beastlands, and the five archons from the reforming lanterns to the radiance-handed tomes.",
+  "provenance": "verified against printed pp. 122-123 of the uploaded motp.pdf OCR; the stat blocks and special abilities are pinned exactly as printed (the infravision and bracers restored against the OCR slips, legend lore restored); Appendix IV: Abilities of the Powers is left for the round that owns it.",
+  "sentinel": "the gap census after this round: 88 closed, 2 open - ONE box falls (Appendix III); only the Abilities of the Powers and the indices remain."
+ },
+ "consts": [
+  {
+   "name": "ddzEinheriarPatrolDice",
+   "value": 10,
+   "comment": "the einheriar (spirit legions): common on the planes where they exist, 10d10 appearing (the general patrol figure, the numbers varying by plane), AC by type, move 12, HD varying, 0% in lair, no treasure, 2 attacks by weapon, 5% magic resistance, low-to-high intelligence, size M, alignment that of the plane encountered in - properly the glorious dead of Asgard, but the general name for humanoid spirits employed in the outer planes as servants, warriors, patrols or guards, primarily in the neutral-to-good planes and much less common in the lower."
+  },
+  {
+   "name": "ddzEinheriarMagicPctPerLevel",
+   "value": 5,
+   "comment": "the einheriar kit: a 5% chance per level of magical armor and weapons with no special functions - typically plate +1 or +2 and a +1 weapon for fighters, bracers of defense (AC 4) and a wand for magic-users; no items with exceptional functions (armor of etherealness, a flametongue sword); generally immune to fear, and if slain returning after a set time to their duties (usually a standard day), following the directives of their Power or its lieutenants without question or hesitation."
+  },
+  {
+   "name": "ddzMarutHourlyPowers",
+   "value": 1,
+   "comment": "the maruts: servants of Rudra usually found on his disk in Nirvana (uncommon in Rudra's Chasm, very rare elsewhere in Nirvana or the Primes), 1d10 appearing, AC 0, move 15/24, 15 HD, 10% in lair, treasure H, one attack for 8d10, 10% magic resistance, high intelligence, lawful with good tendencies, size L - appearing as great red-eyed unliving giants carved from polished black stone, dressed in gold armor with wide shoulder plates and armbands; once every hour a marut can cast an earthquake, hurl a 15-die lightning bolt, or control winds."
+  },
+  {
+   "name": "ddzArchonCommonPowers",
+   "value": 4,
+   "comment": "the archon common powers: the primary inhabitants of the Seven Heavens, the armies of good and Law - in addition to their listed abilities all archons have continual light, infravision and ultravision, tongues, and teleportation without error (the four common powers)."
+  },
+  {
+   "name": "ddzLanternReformDay",
+   "value": 1,
+   "comment": "the lantern archons: common on the native plane, 2d10 appearing, AC 10, move 12, HD 1/2, 0% in lair, two attacks for 1d3 each, low intelligence, lawful good, size S (about 1d3 feet diameter) - spherical bubbles radiating a soft glow, not true archons but proto-archons from whom the archons draw their recruits; unaffected by nonmagical weapons, and if slain reforming in a single day."
+  },
+  {
+   "name": "ddzSwordGateTurn",
+   "value": 6,
+   "comment": "the sword archons: rare, 1d4 appearing, AC -5, move 12/24, 12 HD, 15% in lair, treasure F, four attacks for 2d4 or by weapon, 70% magic resistance, exceptional intelligence, size L (7 and a half feet tall) - humanoids with feathered wings and cat heads, casting as 15th-level magic-users or clerics (50% each), able to gate in 1d6 hound archons or 1d3 warden archons each turn, carrying only one weapon yet attacking four times a round, and only hit by weapons of +2 or better."
+  }
+ ],
+ "bools": [
+  {
+   "name": "ddzEinheriarTables",
+   "value": true,
+   "comment": "the einheriar class and level dies: class - 1-40 fighter, 41-45 ranger or fighter, 46-50 cavalier or fighter, 51-65 barbarian or fighter, 66-85 cleric, 86-90 thief or fighter, 91-98 magic-user, 99-00 bard; level - 1-50 level 4, 51-75 level 5, 76-88 level 6, 89-94 level 7, 95-97 level 8, 98 level 9, 99 level 10, 00 levels 11-16; if the plane's alignment precludes certain classes, another roll is made - and they are armed and armored as best for their class, in the style of the Power they serve."
+  },
+  {
+   "name": "ddzEinheriarHosts",
+   "value": true,
+   "comment": "the einheriar hosts: the Soldiers of Anu in Arcadia, the Horusyr (with the additional ability to shape change into giant hawks), the dwarvish host of Clanggedin, the spirit folk of Arcadia and Elysium, the Hindari, the Einheriar of Valhalla, and the Spirit Legions of Acheron - particular einheriar under specific Powers granted additional abilities, the Horusyr shape change the printed example."
+  },
+  {
+   "name": "ddzMortalRule",
+   "value": true,
+   "comment": "the mortal: uncommon in the Happy Hunting Grounds, one appearing, AC -5, move 48, 20 HD, 100% in lair, no treasure, one attack for 10d6, 50% magic resistance, godlike intelligence, neutral good with chaotic tendencies, size L, psionic ability undetermined or none - appearing as huge clouds with the faces of humans, humanoids or other creatures, glowing with a pulsing golden light in the deepest levels of Arcadia and tending to ignore most ground activity; special abilities: legend lore at will without penalty or time requirements, and the use of all spells utilizing air, wind, weather or clouds (including cloudkill) at will."
+  },
+  {
+   "name": "ddzHoundWardenRule",
+   "value": true,
+   "comment": "the hound and warden archons: hounds common in the Seven Heavens, 1d6 appearing, AC 1, move 15, 9 HD, 10% in lair, treasure C, three attacks for 1d4/1d4/1d8 or by weapon, 40% magic resistance, average intelligence, size M - humans with dog-like heads and powerful fists striking twice with fists and biting in the same round; shape change into dog or wolf, detect invisible astral and ethereal creatures at will, only hit by +1 or better magical weapons. Wardens uncommon, 1d6 appearing, AC -1, move 12, 10 HD, 10% in lair, treasure B, three or two attacks for 1d8/1d8/2d6 or by weapon, 50% magic resistance, high intelligence, size L - bears with human hands and intelligent eyes; all divination spells, only hit by weapons of +2 or better."
+  },
+  {
+   "name": "ddzTomeRule",
+   "value": true,
+   "comment": "the tome archons: very rare, 1d3 appearing, AC -5, move 12/24, 10 HD, 0% in lair, no treasure, two attacks for 1d10 each, 75% magic resistance, genius intelligence, size L (8 feet tall) - hawk-headed winged humanoids; the special abilities: all divination, alteration and beneficial necromantic magic, one of each per day; a radiance from the hands inflicting 2d10 points of damage to all in its path (a 6-inch-long cone 3 inches wide at the base); affecting undead as a 20th-level cleric; and only hit by weapons of +2 or better."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the EinheriarPatrolDice pin",
+   "expr": "m['ddzEinheriarPatrolDice']() != 10"
+  },
+  {
+   "note": "the EinheriarMagicPctPerLevel pin",
+   "expr": "m['ddzEinheriarMagicPctPerLevel']() != 5"
+  },
+  {
+   "note": "the MarutHourlyPowers pin",
+   "expr": "m['ddzMarutHourlyPowers']() != 1"
+  },
+  {
+   "note": "the ArchonCommonPowers pin",
+   "expr": "m['ddzArchonCommonPowers']() != 4"
+  },
+  {
+   "note": "the LanternReformDay pin",
+   "expr": "m['ddzLanternReformDay']() != 1"
+  },
+  {
+   "note": "the SwordGateTurn pin",
+   "expr": "m['ddzSwordGateTurn']() != 6"
+  },
+  {
+   "note": "the EinheriarTables pin",
+   "expr": "m['ddzEinheriarTables']() != 1"
+  },
+  {
+   "note": "the EinheriarHosts pin",
+   "expr": "m['ddzEinheriarHosts']() != 1"
+  },
+  {
+   "note": "the MortalRule pin",
+   "expr": "m['ddzMortalRule']() != 1"
+  },
+  {
+   "note": "the HoundWardenRule pin",
+   "expr": "m['ddzHoundWardenRule']() != 1"
+  },
+  {
+   "note": "the TomeRule pin",
+   "expr": "m['ddzTomeRule']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the appendix iii outer creatures pins": [
+   {
+    "kind": "const",
+    "name": "ddzEinheriarPatrolDice"
+   },
+   {
+    "kind": "const",
+    "name": "ddzEinheriarMagicPctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "ddzMarutHourlyPowers"
+   },
+   {
+    "kind": "const",
+    "name": "ddzArchonCommonPowers"
+   },
+   {
+    "kind": "const",
+    "name": "ddzLanternReformDay"
+   },
+   {
+    "kind": "const",
+    "name": "ddzSwordGateTurn"
+   },
+   {
+    "kind": "bool",
+    "name": "ddzEinheriarTables"
+   },
+   {
+    "kind": "bool",
+    "name": "ddzEinheriarHosts"
+   },
+   {
+    "kind": "bool",
+    "name": "ddzMortalRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddzHoundWardenRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddzTomeRule"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "appendix iii",
+   "from": "- [ ] **Appendix III: Creatures from the Outer Planes** (pp. 122-123)",
+   "to": "- [x] **Appendix III: Creatures from the Outer Planes** (pp. 122-123) - R594: the new-creature summary (the einheriar with the class and level dies and the seven hosts, the maruts of Rudra, the mortal, and the five archons from the lantern proto-archons to the tome)"
+  }
+ ],
+ "gap_census": {
+  "closed": 88,
+  "open": 2
+ },
+ "caller_files": [],
+ "inline_count": 11
+}

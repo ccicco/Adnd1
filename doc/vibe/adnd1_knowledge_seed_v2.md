@@ -10642,6 +10642,63 @@ when both halves land.
   already read, page-122.md still to
   read for the treasure types and the
   rest).
+- R593 LANDED 2026-10-17: commit
+  94ac8ef6319a630b26a486bf0c06765495
+  c1b8f6 (census 516 -> 517, pushed
+  542cc2f..94ac8ef), APPENDIX II:
+  CREATURES OF THE INNER PLANES, printed
+  pp. 120-121, the elemental analogues:
+  the no-analogue list (no Ethereal/
+  Astral/outer natives, no elemental
+  undead, none for the PC humanoids, no
+  elemental wizards though some cast),
+  the stat modifications (movement
+  tripled for Air/Smoke/Steam, doubled
+  for Water, the 10%-less native and
+  10%-more pocket lair percentages), the
+  general abilities (movement through
+  the adjoining planes as Prime travelers
+  in the Ethereal, the Border-Ethereal
+  sight, no Prime crossing without
+  outside help), the per-element
+  immunity and vulnerability rungs for
+  all sixteen planes with the
+  retained-immunity fire giant of Ash,
+  the appearance dies (the 90% invisible
+  air creatures, the Fire solids through
+  the orbiting 2d6 geometric swarms, the
+  crystalline Earth forms that shatter
+  into useless shards, the Water
+  amoeboids serpents mer-creatures and
+  fish, the para-elemental humanoids and
+  counterparts, the eight quasi-forms
+  from the bolt-legged lightning balls to
+  the salt-encrusted duplicates), the
+  four-family size-change table with the
+  halving and doubling effects (the
+  15-foot giant's 60-foot equivalent),
+  and the treasure rules (Air's 10%
+  coinage in perfume, Fire's 20% in
+  melted blocks or protected burnables,
+  Earth's metal-and-gems preference,
+  Water's doubled potions, the 50/50
+  para-rule, the seven-of-eight quasi-
+  rule with Vacuum normal, the
+  low-intelligence protection, the
+  elemental-pocket equivalence). 5 consts
+  + 7 bools, prefix ddy, header
+  rules/appendixiiinnercreatures.h. ONE
+  flip: gap census 86/4 -> 87/3. Spec
+  18,793 bytes, md5 fcc089f865cbde82aff
+  4858c316045b7 matched exactly first
+  try, 12 inlines. TWENTY-EIGHT straight
+  first-tries (R566-R593). NEXT - R594:
+  Appendix III: Creatures from the Outer
+  Planes (pp. 122-123, the
+  modification-by-plane tables and the
+  outer-planar creature adjustments;
+  OCR source pages 123-124 not yet
+  read).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
