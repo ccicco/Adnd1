@@ -6329,6 +6329,29 @@ COMPLETE: R499- R502, four clean lands (temperature, swimmer motion,
 movement/fall, camp), 198 mutants all caught. The WSG mechanical seams are
 exhausted; the natural next move is the DSG (Dungeoneer's Survival Guide) as
 the next book, opening a fresh pin arc with its own gap report.
+- R503 LANDED 2026-10-16: commit c8ec2d1 (census 428, pushed
+0e8907a..c8ec2d1), the DSG OVERVIEW OF THE UNDERDARK, printed pp. 7-11 (pdf
+8-12) - the arc first content round, the R497 pattern. Pinned as
+rules/dsgoverview.h (prefix dov, 58 inlines: 8 consts + 50 bools, no grids).
+Load-bearing pins: the pdf = printed + 1 offset (opener on pdf 7 for printed
+6); the three-cave taxonomy; molten lava 1,800 F killing non-fire-resistant on
+contact; the 10-foot dirt shoring; the realms-deeper-than-a-mile rule; the
+living/dead cave mechanics (glisten/mud vs brittle/dust, standing water rarely
+stagnant); the five hazard families. Gap report 0/151 -> 5 closed / 150 open:
+the overview parent + natural/unnatural/hazards children + the DM TOC closed,
+and THE DM SECTION RE-GRAINED from the DM TOC (its own underground-environment
+chapter pp. 65-72, cultures 73-74, the 31-area Deepearth key 75-98, campaign
+considerations 99-113, mapping 114-117) with the PERSPECTIVE MAPS box (pp.
+124-127) the player TOC missed. LESSON: the engine gap_census.open counts
+post-flip open LINES, not a hand-subtracted census - the first run died at
+150-vs-147; simulate the flips and count. Preflight GREEN (R503 DSG overview
+audit: bad 0), rverify GREEN (58 mutants, 0 missed, double-run clean, restore
+at 0e8907a). User-side md5 8968bee3 = the authored +extra-blank-line variant,
+the standing cosmetic class. The extraction rode the r503-extraction branch
+(d8-d12 + d65 full/tsv/png, 18 files; pdf 9 is the cave-formations
+illustration plate, labels only - not a failed read). NEXT - the DSG movement
+chapter (printed pp. 12-22, pdf 13-23): the BIG cross-book seam
+(wsgclimb/wsgswim/wsgrope are its downstream), extraction first.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

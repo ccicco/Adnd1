@@ -1,0 +1,2636 @@
+{
+  "round": 504,
+  "title": "the DSG movement chapter part I - the check frames, swimming, breath, moving water, climbing, rappelling, jumping and the rope system",
+  "prefix": "dmv",
+  "header_file": "rules/dsgmove.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "caller_files": [],
+  "census_before": 428,
+  "inline_count": 234,
+  "audit_label": "R504 DSG movement I audit",
+  "audit_comment": "The DSG movement chapter part I pins the check frames (the 1d20 ability check equal-or-less with the dice substitution, the proficiency check strictly less), the swimming block (the proficiency gate with the 1/3 humanoid-monster chance, the three functions, Table 1 with the five encumbrance rows x the four functions in numerator/denominator cells, the levels+con endurance with the treading double and the 1/10 high-speed cut and the equal high-speed rest, the 4/3-inch base rates with the strength damage-bonus speed addendum capped at +3, the 20-foot dive with the 10-foot jump-in bonus and the 5-per-10 height ladder capped at the 40-foot jump, the 20-foot surfacing with the 5-foot passive-float slowdown and the armor-removal rounds), the breath economy (the 1/3 con base rounded up, the cumulative halvings, the one-round floor, the -2 cumulative con checks, the +1 nonswimming round), the moving-water effects (the relative-speed rule with the 40-foot stream example, the waterfall half damage with the breath save and the 100-foot/1-10 plunge split, the 1-10 danger rating as the check cadence with the 1d6 failed-check damage and the five-or-less high-speed forcing), the climbing block (the surface taxonomy, Table 2 with the nine rows and the thief-only rates halved for others with the dexterity adjustment, the 2x and 10x slippery fall multipliers, the 40 percent non-thief rating, the armor/race/surface modifier ladders, the tools with the 1d4 spike rounds and the 10 percent arrest failure and the 15 percent ice-slip, Table 3, the grapple throw at 1/3 strength x 10 with the noise ladder, the rappel at +50/+30 and 120 feet per round), the jumping block (the 20-foot head start, the one-segment jumps, Table 4 with the seven bands, the encumbrance and race modifiers with the 2-foot floor), and the rope system (the 50 percent protrusion chance, Table 5, the thrown loop with Table 6 and the 20 percent +1 percent ladder, the +30 crossing check each round, the swing with the -5 per 10 feet and the 1d6 per 20-foot section, the belay with the second check and the 3-foot edge rule and the -10 per faller, the roping-together cascade at -10) (rules/dsgmove.h, prefix dmv); census 428 -> 429.",
+  "banner": {
+    "title": "The DSG MOVEMENT CHAPTER PART I, R504: the printed pp. 12-19 (pdf 13-20) first half of the movement chapter - the ability/proficiency check frames, the swimming block with TABLE 1 SWIMMING EFFECTS OF ENCUMBRANCE, the breath economy, the moving-water effects, the climbing block with TABLE 2 RATES OF CLIMBING and TABLE 3 GRAPPLING SUCCESS and the rappel, the non-acrobat jumping with TABLE 4 BROAD JUMPING, and the rope system (the chasm crossing with TABLE 5 CROSSING WITH A GRAPPLE and TABLE 6 THROWN LOOP RANGES, the swing, the belay, the roping-together cascade). The movement chapter parent stays open: bridges, the expanded falling rules, spelunking, excavation, fatigue, darkness and slippery surfaces ride the next round.",
+    "provenance": "the DSG scan (the user own copy), printed pp. 12-19 = pdf 13-20, pulled per-page on the r504-extraction branch with the tsv confidence tables and the 300-dpi page images under extract/r504/ on main; the damaged grid cells (the Table 1 encumbered row, the Table 2 mid-column, the Table 4 top bands) confirmed by the table crops (t1-014 through t9-023). CAUTION carried from the extraction: the Table 2 slightly-slippery cells of the last four rows came from image reads where the tsv showed a misread 0; the 36/24, 60/40, 60/30, 40/30 pattern was confirmed twice by image. The printed dive example says heavy gear TRIPLES the dive rate where the Table 1 heavy row DOUBLES it: the table is the authority (the R501 precedent), the example pinned as printed with the tension noted.",
+    "sentinel": "THE SETTLE: census 428 -> 429; the gap report 5/150 -> 27 closed / 128 open (the sixteen movement-chapter boxes from the check frames through roping together, plus the six manifest tables 1-6; the movement parent box stays open for the next round). CROSS-BOOK SEAM: Table 1 verified const-for-const against rules/wsgswim.h, the breath against rules/wsgbreath.h, the moving water against rules/wsgmwater.h, the rappel against rules/wsgrapp.h, the loop against rules/wsgchasm.h, the belay against rules/wsgbelay.h, the cascade against rules/wsgtog.h and the jump floors against rules/wsgjump.h - two divergences pin under dmv: the strength speed bonus keyed on the DAMAGE bonus (the WSG keys on strength bands; both cap +3) and the encumbered -4 jump allowed (the WSG forbids severe jumps)."
+  },
+  "consts": [
+    {
+      "name": "dmvPart1Lo",
+      "value": 12,
+      "comment": "the movement chapter part I spans printed pp. 12-19: the swimming, breath, moving water, climbing, jumping and rope halves, through roping together."
+    },
+    {
+      "name": "dmvPart1Hi",
+      "value": 19,
+      "comment": "the part I chapter matter ends at printed p. 19; bridges, the expanded falling rules, spelunking, excavation, fatigue, darkness and slippery surfaces ride the next round."
+    },
+    {
+      "name": "dmvPart1PdfLo",
+      "value": 13,
+      "comment": "the part I pdf pages start at 13 (the offset: pdf = printed + 1, pinned at R503)."
+    },
+    {
+      "name": "dmvPart1PdfHi",
+      "value": 20,
+      "comment": "the part I pdf pages end at 20."
+    },
+    {
+      "name": "dmvCheckDie",
+      "value": 20,
+      "comment": "an ability check is rolled on 1d20."
+    },
+    {
+      "name": "dmvMonsterSwimNum",
+      "value": 1,
+      "comment": "for humanoid monsters, assume a 1/3 chance that the creatures are able to swim (the numerator)."
+    },
+    {
+      "name": "dmvMonsterSwimDen",
+      "value": 3,
+      "comment": "the denominator of the humanoid-monster swimming chance: 1/3."
+    },
+    {
+      "name": "dmvSwimFuncCount",
+      "value": 3,
+      "comment": "the swimming ability is divided into three functions: endurance (how long), speed (how fast) and diving (how deep in a single round)."
+    },
+    {
+      "name": "dmvUnderwaterRateNum",
+      "value": 2,
+      "comment": "a character swimming completely underwater has his speed reduced to 2/3 of the maximum (the numerator)."
+    },
+    {
+      "name": "dmvUnderwaterRateDen",
+      "value": 3,
+      "comment": "the denominator of the underwater speed cut: 2/3 of the maximum."
+    },
+    {
+      "name": "dmvT1RowCount",
+      "value": 5,
+      "comment": "Table 1 has five encumbrance rows: unencumbered, normal gear, heavy gear, very heavy gear and encumbered."
+    },
+    {
+      "name": "dmvEndurExampleTurns",
+      "value": 23,
+      "comment": "the printed example: a fighter/magic-user of levels 6/5 with a CON score of 12 could swim 23 turns when carrying normal gear."
+    },
+    {
+      "name": "dmvEndurExampleUnencTurns",
+      "value": 46,
+      "comment": "completely unencumbered the same character could swim for 46 turns - the Table 1 doubled endurance."
+    },
+    {
+      "name": "dmvHighSpeedEndDiv",
+      "value": 10,
+      "comment": "the endurance of a character swimming at high speed is reduced to 1/10 of its original value."
+    },
+    {
+      "name": "dmvHumanSwimIn",
+      "value": 4,
+      "comment": "the speed with which a character can swim begins at a base 4 inches per round for humans."
+    },
+    {
+      "name": "dmvDemiSwimIn",
+      "value": 3,
+      "comment": "the base swimming speed is 3 inches per round for demihumans and humanoids."
+    },
+    {
+      "name": "dmvStrSpeedBonusMaxIn",
+      "value": 3,
+      "comment": "the strength bonus added to swimming speed can never exceed +3 inches, even if the character damage bonus is greater."
+    },
+    {
+      "name": "dmvStrExBonusIn",
+      "value": 1,
+      "comment": "the printed example: a human character with a strength of 16 has a damage bonus of +1."
+    },
+    {
+      "name": "dmvStrExSpeedIn",
+      "value": 5,
+      "comment": "the strength-16 human could thus swim at 5 inches per round."
+    },
+    {
+      "name": "dmvDiveRateFt",
+      "value": 20,
+      "comment": "a character can normally swim downward 20 feet in a game round."
+    },
+    {
+      "name": "dmvJumpDiveBonusFt",
+      "value": 10,
+      "comment": "a character jumping or diving into the water from a place within a few feet of the surface can add 10 feet to the depth achieved on the first round."
+    },
+    {
+      "name": "dmvPerHeightFt",
+      "value": 10,
+      "comment": "for each 10 feet of height above the water surface, an additional depth can be added."
+    },
+    {
+      "name": "dmvHeightDepthBonusFt",
+      "value": 5,
+      "comment": "the additional depth per 10 feet of height: 5 feet."
+    },
+    {
+      "name": "dmvMaxJumpHeightFt",
+      "value": 40,
+      "comment": "the height additions run to a maximum of a 40-foot-high jump."
+    },
+    {
+      "name": "dmvExampleDiveNormalFt",
+      "value": 30,
+      "comment": "the printed dive example: the normal-gear character achieves a depth of 30 feet after the first round - the 20-foot rate plus the 10-foot jump-in bonus."
+    },
+    {
+      "name": "dmvExampleDiveHeavyFt",
+      "value": 70,
+      "comment": "the heavy-gear character sinks 60 additional feet after the jump, depth 70 after the first round - pinned as printed; NOTE the example text says his encumbrance TRIPLES the diving rate while the Table 1 heavy row DOUBLES it (the table is the authority, the R501 precedent; the very heavy row is the triple)."
+    },
+    {
+      "name": "dmvSurfaceRateFt",
+      "value": 20,
+      "comment": "the rate at which a character can surface from a dive is 20 feet per round with normal encumbrance."
+    },
+    {
+      "name": "dmvPassiveFloatSlowerFt",
+      "value": 5,
+      "comment": "a character who is simply floating upward (an unconscious character, for example) moves five feet per round slower."
+    },
+    {
+      "name": "dmvBackpackRemoveRounds",
+      "value": 1,
+      "comment": "it takes one round to remove a backpack under water."
+    },
+    {
+      "name": "dmvArmorRemoveBase",
+      "value": 10,
+      "comment": "subtract the armor class of the armor (not including magical bonuses or shield) from 10 to determine the rounds required to remove it under water."
+    },
+    {
+      "name": "dmvArmorExampleRounds",
+      "value": 5,
+      "comment": "the printed example: a sinking character in chain mail (AC 5) can remove the armor in five rounds."
+    },
+    {
+      "name": "dmvBreathConDiv",
+      "value": 3,
+      "comment": "a character who has taken a large breath of air and is not performing strenuous exercise can hold his breath for a number of rounds equal to 1/3 his constitution score, rounded up."
+    },
+    {
+      "name": "dmvMinBreathRounds",
+      "value": 1,
+      "comment": "a character is always able to hold his breath for at least one round."
+    },
+    {
+      "name": "dmvBreathCheckStep",
+      "value": 2,
+      "comment": "each round after his breath runs out the character makes a constitution check to stay alive: the first check has no modifiers, with a -2 cumulative modifier each round thereafter, until he leaves the water or fails a check and dies."
+    },
+    {
+      "name": "dmvBreathExampleRounds",
+      "value": 6,
+      "comment": "the printed example: a character with a 16 constitution can hold his breath underwater for six rounds; the 7th-round check is unmodified, the 8th at -2, the 9th at -4, the 10th at -6."
+    },
+    {
+      "name": "dmvExampleStreamFt",
+      "value": 40,
+      "comment": "the printed example: a stream flowing 40 feet per round will carry swimming characters along at that speed, plus or minus their swimming speeds."
+    },
+    {
+      "name": "dmvUpstreamHoldIn",
+      "value": 4,
+      "comment": "by swimming upstream at the normal human swimming speed of 4 inches per round, a character could manage to stay in the same position relative to the banks."
+    },
+    {
+      "name": "dmvExampleWashdownFt",
+      "value": 10,
+      "comment": "dwarves and halflings with normal swimming speeds of 3 inches per round will be washed downstream 10 feet in the sample stream, even spending the entire round swimming upstream."
+    },
+    {
+      "name": "dmvWaterfallDamageDiv",
+      "value": 2,
+      "comment": "a character carried over a waterfall receives half the normal amount of damage for the distance of the fall."
+    },
+    {
+      "name": "dmvShortPlungeMaxFt",
+      "value": 100,
+      "comment": "with a successful save vs. breath weapon: if the fall is 100 feet or less, the character receives no damage from the plunge."
+    },
+    {
+      "name": "dmvLongPlungeDiv",
+      "value": 10,
+      "comment": "if the drop is greater than 100 feet, the saved character only receives 1/10 the normal damage for such a fall."
+    },
+    {
+      "name": "dmvDangerRatingLo",
+      "value": 1,
+      "comment": "the DM rates the danger of a rapid, rock-filled stream with a number from one to 10, one being the most dangerous."
+    },
+    {
+      "name": "dmvDangerRatingHi",
+      "value": 10,
+      "comment": "the top of the danger rating range: 10."
+    },
+    {
+      "name": "dmvRockDmgDie",
+      "value": 6,
+      "comment": "whenever a character fails a swimming check in a dangerous stream, the pounding against the rocks causes 1d6 points of damage."
+    },
+    {
+      "name": "dmvPoleDiaDiv",
+      "value": 4,
+      "comment": "a pole diameter cannot be greater than 1/4 the height of the character attempting to climb it, unless the character uses a rope."
+    },
+    {
+      "name": "dmvSlopeFallDiv",
+      "value": 2,
+      "comment": "even if the save vs. petrification after a fall on a sloping wall is unsuccessful, the fall only inflicts half of the normal damage."
+    },
+    {
+      "name": "dmvSlightFallMult",
+      "value": 2,
+      "comment": "slightly slippery surfaces are wet or crumbly: the chance of a character falling from one is twice normal."
+    },
+    {
+      "name": "dmvSlipFallMult",
+      "value": 10,
+      "comment": "slippery surfaces (running water, slime or algae, frost, ice or grease): a thief character chance of falling on one is ten times his normal chance."
+    },
+    {
+      "name": "dmvExThiefRoll",
+      "value": 87,
+      "comment": "the printed example: a 3rd-level thief would make a normal climb walls roll at 87 percent."
+    },
+    {
+      "name": "dmvExFailurePct",
+      "value": 13,
+      "comment": "the 3rd-level thief normal chance of failure: 13 percent."
+    },
+    {
+      "name": "dmvExSlightFailPct",
+      "value": 26,
+      "comment": "on a slightly slippery surface the thief has a 26 percent chance of failure, needing a roll of 74 or less for success."
+    },
+    {
+      "name": "dmvExSlipRoll10",
+      "value": 90,
+      "comment": "on a slippery surface a thief of 10th level only succeeds on a 90 or less."
+    },
+    {
+      "name": "dmvExNormalRoll10",
+      "value": 99,
+      "comment": "the 10th-level thief normal success roll: 99 or less."
+    },
+    {
+      "name": "dmvHeavyClimbDiv",
+      "value": 2,
+      "comment": "characters with heavy gear or very heavy gear move at half the movement rates listed for climbing characters."
+    },
+    {
+      "name": "dmvNonThiefRatingPct",
+      "value": 40,
+      "comment": "non-thief characters have a base climbing rating of 40 percent and use the same procedure as thieves, but with a lesser chance of success."
+    },
+    {
+      "name": "dmvClimbRowCount",
+      "value": 9,
+      "comment": "Table 2 has nine surface rows: very smooth, smooth with cracks, rough, rough with ledges, ice wall, pole, tree with branches, sloping wall, and rope and wall."
+    },
+    {
+      "name": "dmvArmorMidPct",
+      "value": 15,
+      "comment": "characters in chain, splint, scale or banded armor can climb, but suffer a -15 percent penalty to their chance for success."
+    },
+    {
+      "name": "dmvArmorLightPct",
+      "value": 5,
+      "comment": "characters in studded leather or padded armor suffer a -5 percent to their chances."
+    },
+    {
+      "name": "dmvDwarfPct",
+      "value": 5,
+      "comment": "the race climbing modifier: dwarf -5 percent."
+    },
+    {
+      "name": "dmvGnomePct",
+      "value": 10,
+      "comment": "the race climbing modifier: gnome -10 percent."
+    },
+    {
+      "name": "dmvHalflingPct",
+      "value": 5,
+      "comment": "the race climbing modifier: halfling -5 percent."
+    },
+    {
+      "name": "dmvHalforcPct",
+      "value": 5,
+      "comment": "the race climbing modifier: half-orc +5 percent."
+    },
+    {
+      "name": "dmvTreeModPct",
+      "value": 40,
+      "comment": "the climbing surface bonus: tree with branches +40 percent."
+    },
+    {
+      "name": "dmvSlopeModPct",
+      "value": 25,
+      "comment": "the climbing surface bonus: sloping wall +25 percent."
+    },
+    {
+      "name": "dmvPoleModPct",
+      "value": 20,
+      "comment": "the climbing surface bonus: pole +20 percent."
+    },
+    {
+      "name": "dmvRopeWallModPct",
+      "value": 40,
+      "comment": "the climbing surface bonus: rope and wall +40 percent."
+    },
+    {
+      "name": "dmvSpikeRoundsDie",
+      "value": 4,
+      "comment": "a spike takes 1d4 rounds to hammer into a wall surface."
+    },
+    {
+      "name": "dmvSpikeNoiseMi",
+      "value": 1,
+      "comment": "the clanging of a hammered spike can be heard up to a mile away in windless conditions."
+    },
+    {
+      "name": "dmvSpikeFailPct",
+      "value": 10,
+      "comment": "whenever a spike is called upon to arrest a fall, there is a 10 percent chance per character supported that it will give way; if it comes free, the characters fall the full distance (or twice the distance to the next spike)."
+    },
+    {
+      "name": "dmvSpikeExamplePct",
+      "value": 20,
+      "comment": "the printed example: two characters roped together and relying upon one spike to arrest their fall give the spike a 20 percent chance of popping free."
+    },
+    {
+      "name": "dmvRopeFallDiv",
+      "value": 2,
+      "comment": "any character whose fall is broken by a rope suffers only half the damage a fall of that distance would normally inflict."
+    },
+    {
+      "name": "dmvIceSpikeFailPct",
+      "value": 15,
+      "comment": "spikes placed in ice have a 15 percent chance of pulling free per character whose weight suddenly pulls against them."
+    },
+    {
+      "name": "dmvGrappleStrDiv",
+      "value": 3,
+      "comment": "a character can throw a grappling hook upward a distance equal to 1/3 of his strength score, rounded up, times 10."
+    },
+    {
+      "name": "dmvGrappleMultFt",
+      "value": 10,
+      "comment": "the strength-to-feet multiplier of the grappling hook throw: 1/3 strength times 10 feet."
+    },
+    {
+      "name": "dmvGrappleExampleFt",
+      "value": 50,
+      "comment": "the printed example: a character with a strength of 15 could throw the hook up to a height of 50 feet."
+    },
+    {
+      "name": "dmvSwingThrowRadiusFt",
+      "value": 10,
+      "comment": "with a radius of 10 feet from his body cleared of obstacles for swinging the hook in a circle before the cast."
+    },
+    {
+      "name": "dmvSwingThrowMult",
+      "value": 2,
+      "comment": "the character can throw the hook twice as far horizontally as he could otherwise."
+    },
+    {
+      "name": "dmvRecoilDie",
+      "value": 4,
+      "comment": "if a grappling hook cast is unsuccessful, it takes another 1d4 rounds to coil the rope and prepare the hook for another throw."
+    },
+    {
+      "name": "dmvSelfHitLoPct",
+      "value": 1,
+      "comment": "if a character is directly underneath his target and the dice roll on the throw is 01-05."
+    },
+    {
+      "name": "dmvSelfHitHiPct",
+      "value": 5,
+      "comment": "the top of the self-hit throw range: 01-05."
+    },
+    {
+      "name": "dmvSelfHitDie",
+      "value": 6,
+      "comment": "the thrower is struck by the hook as it falls and suffers 1d6 of damage."
+    },
+    {
+      "name": "dmvHookNoiseLoYd",
+      "value": 100,
+      "comment": "a successful grappling hook throw is audible for 100-400 yards in ideal conditions."
+    },
+    {
+      "name": "dmvHookNoiseHiYd",
+      "value": 400,
+      "comment": "the top of the successful-throw noise range: 400 yards."
+    },
+    {
+      "name": "dmvHookFailNoiseLoYd",
+      "value": 200,
+      "comment": "an unsuccessful throw will raise a clang audible 200-800 yards away."
+    },
+    {
+      "name": "dmvHookFailNoiseHiYd",
+      "value": 800,
+      "comment": "the top of the failed-throw noise range: 800 yards."
+    },
+    {
+      "name": "dmvSlipFreeDie",
+      "value": 6,
+      "comment": "a catch-and-slip grapple will slip free after 1d6 rounds of supporting a load; characters who pull on the rope for that many rounds are able to dislodge the hook, if they take the time to check."
+    },
+    {
+      "name": "dmvGrappleTargetCount",
+      "value": 2,
+      "comment": "Table 3 has two grapple target rows: rocky ledge and wooden wall."
+    },
+    {
+      "name": "dmvRappelModPct",
+      "value": 50,
+      "comment": "to rappel successfully, the character must make a successful climbing check with a +50 percent modifier."
+    },
+    {
+      "name": "dmvFreeHangModPct",
+      "value": 30,
+      "comment": "a rappel can be made down a free-hanging rope, where the character has no wall to brace against, but in this case the modifier is only +30 percent."
+    },
+    {
+      "name": "dmvRappelRateFt",
+      "value": 120,
+      "comment": "a character can rappel up to 120 feet per round."
+    },
+    {
+      "name": "dmvRunHeadStartFt",
+      "value": 20,
+      "comment": "a running broad jump requires a 20-foot head start."
+    },
+    {
+      "name": "dmvJumpFloorFt",
+      "value": 2,
+      "comment": "in no case can jumping modifiers shorten a jump to less than two feet."
+    },
+    {
+      "name": "dmvHeavyJumpFt",
+      "value": 1,
+      "comment": "characters carrying heavy gear subtract one foot from the distance of their jumps."
+    },
+    {
+      "name": "dmvVeryHvyJumpFt",
+      "value": 2,
+      "comment": "characters with very heavy gear subtract two feet from their jumping distance."
+    },
+    {
+      "name": "dmvEncumbJumpFt",
+      "value": 4,
+      "comment": "encumbered characters subtract four feet - the DSG allows the encumbered jump at a penalty where the WSG forbids severe jumps outright (a pinned cross-book divergence)."
+    },
+    {
+      "name": "dmvHalflingJumpFt",
+      "value": 1,
+      "comment": "halflings must subtract one foot from their total jumping distance."
+    },
+    {
+      "name": "dmvDwarfJumpFt",
+      "value": 2,
+      "comment": "dwarves and gnomes must subtract two feet."
+    },
+    {
+      "name": "dmvJumpBandCount",
+      "value": 7,
+      "comment": "Table 4 has seven level bands: 1-6, 7-9, 10-12, 13-15, 16-18, 19-22 and 23+."
+    },
+    {
+      "name": "dmvProtrusionBasePct",
+      "value": 50,
+      "comment": "if a random determination is needed, there is a base chance of 50 percent that a given crossing has some sort of protrusion for a tossed grappling hook to catch on."
+    },
+    {
+      "name": "dmvTieoffProtrusionPct",
+      "value": 50,
+      "comment": "the other end of the crossing rope can be tied off to a handy protrusion (a 50 percent chance of finding one), tied to a spike hammered into the stone, or held by a character."
+    },
+    {
+      "name": "dmvRopeCrossModPct",
+      "value": 30,
+      "comment": "a character crossing on a rope line is allowed a +30 percent modifier to his climbing rating for the check each round he is suspended."
+    },
+    {
+      "name": "dmvCaveTargetPct",
+      "value": 20,
+      "comment": "a suitable thrown-loop target is uncommon in a dungeon, but in a cave there is a base 20 percent chance that an appropriate stalagmite is located in a convenient position."
+    },
+    {
+      "name": "dmvLoopPrepRadiusFt",
+      "value": 10,
+      "comment": "the maximum thrown-loop range assumes the character has a clear radius of 10 feet around him to prepare the throw."
+    },
+    {
+      "name": "dmvLoopBaseHitPct",
+      "value": 20,
+      "comment": "the basic chance to hit with a thrown loop is 20 percent at maximum range."
+    },
+    {
+      "name": "dmvLoopBonusPerFt",
+      "value": 1,
+      "comment": "the thrown-loop chance is modified by +1 percent for each foot under maximum range."
+    },
+    {
+      "name": "dmvLoopExampleMaxFt",
+      "value": 50,
+      "comment": "the printed example: the 7th-level character maximum range is 50 feet."
+    },
+    {
+      "name": "dmvLoopExamplePct",
+      "value": 40,
+      "comment": "throwing a loop over a stalagmite some 30 feet distant, the 7th-level character has a 40 percent chance of success (20 plus the 20 feet under maximum)."
+    },
+    {
+      "name": "dmvLoopCoilDie",
+      "value": 6,
+      "comment": "if a thrown loop is unsuccessful, the coiling of the rope for a second attempt takes 1d6 rounds."
+    },
+    {
+      "name": "dmvLoopBandCount",
+      "value": 5,
+      "comment": "Table 6 has five level bands: 1-4, 5-8, 9-12, 13-16 and 17+."
+    },
+    {
+      "name": "dmvSwingCheckStepPct",
+      "value": 5,
+      "comment": "the swing-into-obstacle climbing check is modified by a -5 percent per 10 feet of rope between the character and the point at which the rope is fastened."
+    },
+    {
+      "name": "dmvSwingCheckPerFt",
+      "value": 10,
+      "comment": "the rope-length step of the swing check: each 10 feet of rope costs 5 percent."
+    },
+    {
+      "name": "dmvSwingSectionFt",
+      "value": 20,
+      "comment": "a character smashed into an obstacle during a swing takes 1d6 points of damage per 20-foot section of rope between him and the attached rope end."
+    },
+    {
+      "name": "dmvSwingDmgDie",
+      "value": 6,
+      "comment": "the swing damage die: 1d6 per 20-foot section of rope."
+    },
+    {
+      "name": "dmvBelayEdgeFt",
+      "value": 3,
+      "comment": "the second belay check is required of belayers on a sheer surface of any kind, and also of characters on a level spot but within three feet of the edge of the sheer surface, when the fall pulls them in the direction of the drop-off."
+    },
+    {
+      "name": "dmvBelayPerFallerPct",
+      "value": 10,
+      "comment": "each additional falling character on the rope subtracts 10 from the climbing success chance of the character attempting to belay."
+    },
+    {
+      "name": "dmvRopeSlackLoFt",
+      "value": 20,
+      "comment": "roping together ties the characters to a rope with 20 or 30 feet of slack between them."
+    },
+    {
+      "name": "dmvRopeSlackHiFt",
+      "value": 30,
+      "comment": "the top of the roping slack range: 30 feet between characters."
+    },
+    {
+      "name": "dmvCascadePct",
+      "value": 10,
+      "comment": "when one character arrests the fall of two, the successful character must check again with a -10 modifier, and the character next to the second character to fall must make a climbing check to catch the two."
+    },
+    {
+      "name": "dmvCrossTargetCount",
+      "value": 3,
+      "comment": "Table 5 has three crossing target rows: bare stone walls or floor, cave formations, and ruined foundation."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dmvAbilityCheckEqualOrLess",
+      "value": true,
+      "comment": "the ability check is successful if the roll is equal to or less than the ability in question."
+    },
+    {
+      "name": "dmvSubstituteDiceOk",
+      "value": true,
+      "comment": "occasionally an ability check calls for a certain combination of dice, as in a 4d6 dexterity check; the listed dice are substituted for the d20, and the purpose is still to roll the attribute score or less."
+    },
+    {
+      "name": "dmvProfCheckStrictlyLess",
+      "value": true,
+      "comment": "a proficiency check is rolled on 1d20 and compared to the character rating in the given proficiency: rolls LESS than the rating are successful - the strict inequality that distinguishes the proficiency check from the equal-or-less ability check."
+    },
+    {
+      "name": "dmvNoMagicAssumed",
+      "value": true,
+      "comment": "all of these rules assume the character uses no magical assistance; the effects of such devices, when used, always take precedence over a character innate swimming abilities."
+    },
+    {
+      "name": "dmvSwimProfRequiredAfloat",
+      "value": true,
+      "comment": "characters without swimming proficiency are unable to remain afloat in water and drown in deep water unless they are aided."
+    },
+    {
+      "name": "dmvBreathHeldWithoutProf",
+      "value": true,
+      "comment": "a character does not need swimming proficiency to be able to hold his breath."
+    },
+    {
+      "name": "dmvAnimalsSwimIfForced",
+      "value": true,
+      "comment": "almost all animals can swim, if forced to; wolves and other canines willingly follow prey into water, while most felines swim only in desperation."
+    },
+    {
+      "name": "dmvFireStoneNeverEnter",
+      "value": true,
+      "comment": "certain creatures - fire- and stone-based monsters in particular - never enter the water."
+    },
+    {
+      "name": "dmvEnduranceNeedsBreath",
+      "value": true,
+      "comment": "endurance reflects how long a character can continue swimming without resting, and assumes that he can breathe while swimming, i.e. is not swimming through a completely water-filled passage."
+    },
+    {
+      "name": "dmvEncCategoriesMatchPhb",
+      "value": true,
+      "comment": "the encumbrance categories match those described in the players handbook, page 101."
+    },
+    {
+      "name": "dmvEncumberedSinks",
+      "value": true,
+      "comment": "an encumbered character cannot move through the water under his own power; if he enters the water, he will sink (the Table 1 footnote)."
+    },
+    {
+      "name": "dmvEnduranceLevelsPlusCon",
+      "value": true,
+      "comment": "a character swimming endurance is calculated by adding his total experience levels to his constitution score - the number of turns he can swim without rest."
+    },
+    {
+      "name": "dmvTreadingDoublesEndurance",
+      "value": true,
+      "comment": "a character who is only attempting to stay afloat by treading water doubles the number of turns of his swimming endurance."
+    },
+    {
+      "name": "dmvEndurOutMeansDrown",
+      "value": true,
+      "comment": "when a character runs out of endurance he will drown unless he can get out of deep water or find some means of staying afloat."
+    },
+    {
+      "name": "dmvHighSpeedDoublesRate",
+      "value": true,
+      "comment": "a character can elect to swim at high speed, doubling his rate of movement with the endurance penalty."
+    },
+    {
+      "name": "dmvHighSpeedRestEqual",
+      "value": true,
+      "comment": "immediately upon exiting the water, the high-speed swimmer must spend as much time resting as he spent swimming at high speed."
+    },
+    {
+      "name": "dmvStrBonusIsDamageBonus",
+      "value": true,
+      "comment": "the strength bonus added to swimming speed is the strength DAMAGE bonus (the strength-16 +1 example swims at 5 inches) - the DSG keys the speed bonus on the damage bonus where the WSG keyed it on strength bands; a pinned cross-book divergence, both cap at +3."
+    },
+    {
+      "name": "dmvDiveModifiedByEnc",
+      "value": true,
+      "comment": "the depth attainable on a diving round can be modified by encumbrance, as explained on Table 1."
+    },
+    {
+      "name": "dmvJumpBonusUnmodifiedByEnc",
+      "value": true,
+      "comment": "the additions for diving into water are not modified by encumbrance: a character jumping into the water can dive an extra 10 feet regardless of whether he is completely unencumbered or carrying heavy gear."
+    },
+    {
+      "name": "dmvSurfaceModifiedByEnc",
+      "value": true,
+      "comment": "the surfacing rate is modified by unusual encumbrance as shown on Table 1, and assumes the character is actively working to return to the surface."
+    },
+    {
+      "name": "dmvHeavyMustActivelySwim",
+      "value": true,
+      "comment": "a character encumbered with heavy gear or greater must actively swim for the surface, or he does not rise at all."
+    },
+    {
+      "name": "dmvIntentionalLoadingDmJudged",
+      "value": true,
+      "comment": "a character can intentionally load himself down (with rocks, etc.) to aid a dive and release the added weight when he wants to surface; the DM must decide how heavily the character must load himself to reach a certain encumbrance category."
+    },
+    {
+      "name": "dmvBreathRoundedUp",
+      "value": true,
+      "comment": "the breath durations and their halvings are all rounded up: the 1/3 constitution base, the strenuous halving and the no-breath halving."
+    },
+    {
+      "name": "dmvFullyEncumBreathBarred",
+      "value": true,
+      "comment": "a character cannot be fully encumbered while performing the nonstrenuous breath-holding functions (normal movement, searching for secret doors, picking a lock)."
+    },
+    {
+      "name": "dmvStrenuousHalvesBreath",
+      "value": true,
+      "comment": "strenuous exercise (fighting, subduing, lifting or moving a heavy weight, moving at high speed) cuts the underwater time in half, rounded up - cumulative with the no-breath halving."
+    },
+    {
+      "name": "dmvFullyEncumAlwaysStrenuous",
+      "value": true,
+      "comment": "fully encumbered characters underwater are always considered to be performing strenuous exercise."
+    },
+    {
+      "name": "dmvNoDeepBreathHalves",
+      "value": true,
+      "comment": "a character without a chance to take a deep breath before submerging has his underwater time halved (rounded up), cumulative with the strenuous halving."
+    },
+    {
+      "name": "dmvConCheckAfterBreath",
+      "value": true,
+      "comment": "a character does not immediately die when his breath runs out: each round after, he makes the constitution check to stay alive with the -2 cumulative step."
+    },
+    {
+      "name": "dmvNonswimBreathPlusOne",
+      "value": true,
+      "comment": "holding breath in nonswimming situations (to avoid breathing the surrounding air) uses the swimming formula but adds one round."
+    },
+    {
+      "name": "dmvCantAvoidUnsuspectedGas",
+      "value": true,
+      "comment": "characters cannot use breath-holding to avoid the effects of a gas unless they suspect that a gas is about to be released."
+    },
+    {
+      "name": "dmvSpeedRelativeToWater",
+      "value": true,
+      "comment": "a character swimming speed is relative to the water he occupies: the stream carries him along at its speed plus or minus his swimming speed."
+    },
+    {
+      "name": "dmvRapidTransportUntilImpact",
+      "value": true,
+      "comment": "extremely rapid streams can move characters with enough momentum to do them considerable harm; until the character hits something, the water might prove a fast and direct form of transportation - submerged rocks and subterranean waterfalls change that impression quickly."
+    },
+    {
+      "name": "dmvWaterfallSaveVsBreath",
+      "value": true,
+      "comment": "a character carried over a waterfall receives half the normal damage for the distance of the fall, except that a saving throw vs. breath weapon is allowed, with the avoid-the-obstacles results."
+    },
+    {
+      "name": "dmvDangerRatingIsCadence",
+      "value": true,
+      "comment": "the stream danger rating tells how often a character must make a swimming proficiency check: the time between checks in rounds equals the rating - a stream rated one requires a check every round, one rated four every four rounds."
+    },
+    {
+      "name": "dmvLowRatingForcesHighSpeed",
+      "value": true,
+      "comment": "in a stream rated five or less, characters must swim at high speed."
+    },
+    {
+      "name": "dmvAllClassesLimitedClimb",
+      "value": true,
+      "comment": "members of all character classes have a limited ability to move up and down steep slopes, provided hand and footholds are available."
+    },
+    {
+      "name": "dmvOnlyThievesSheer",
+      "value": true,
+      "comment": "only thieves have the capability to ascend sheer walls, cliffs and the like."
+    },
+    {
+      "name": "dmvNonThiefRoughRoutes",
+      "value": true,
+      "comment": "other characters may try to climb very rough stone surfaces, as well as trees, poles, ropes and other simple routes."
+    },
+    {
+      "name": "dmvMountaineerBoosts",
+      "value": true,
+      "comment": "the mountaineering proficiency can increase climbing abilities for both thieves and non-thieves."
+    },
+    {
+      "name": "dmvThiefOnlySmoothTypes",
+      "value": true,
+      "comment": "walls that are very smooth, smooth with cracks, or rough can only be climbed by thieves, unless characters are using ropes, spikes or other tools."
+    },
+    {
+      "name": "dmvIceNeedsTools",
+      "value": true,
+      "comment": "ice walls can only be climbed by characters (including thieves) using tools."
+    },
+    {
+      "name": "dmvThiefOnlyRates",
+      "value": true,
+      "comment": "in all instances the Table 2 rates are for thieves only; all other characters move at half the thief rates."
+    },
+    {
+      "name": "dmvDexAdjAddsToRate",
+      "value": true,
+      "comment": "all characters can add their dexterity reaction/attacking adjustments to their rate of climbing."
+    },
+    {
+      "name": "dmvBarkNonslippery",
+      "value": true,
+      "comment": "any pole with tree bark still attached is considered a nonslippery surface."
+    },
+    {
+      "name": "dmvRopeOnlyUnbracedCat",
+      "value": true,
+      "comment": "a rope only falls into the pole category if the character cannot brace his feet against a wall or some other surface to aid the climb."
+    },
+    {
+      "name": "dmvSlopeSaveVsPetr",
+      "value": true,
+      "comment": "if a character falls while on a sloping wall surface, he can make a saving throw vs. petrification; if the save is successful, he takes no damage from the fall."
+    },
+    {
+      "name": "dmvNonslipperyDrySolid",
+      "value": true,
+      "comment": "nonslippery surfaces are dry and solid; they do not crumble when touched, and a character chance of falling is calculated at the normal rate."
+    },
+    {
+      "name": "dmvEncumbNoSheerWithoutTools",
+      "value": true,
+      "comment": "encumbered characters cannot climb sheer surfaces without the aid of tools."
+    },
+    {
+      "name": "dmvHeavyGearHalfRate",
+      "value": true,
+      "comment": "the heavy-gear and very-heavy-gear climbing halving is cumulative with all other effects."
+    },
+    {
+      "name": "dmvNormalGearFullRate",
+      "value": true,
+      "comment": "characters with no gear or normal gear can utilize the full climbing movement rates."
+    },
+    {
+      "name": "dmvNonThiefCheckEqualOrLess",
+      "value": true,
+      "comment": "the non-thief climbing check is rolled on 1d100 against the modified climbing rating: a result greater than the rating indicates failure, a result less than or equal to the rating means success."
+    },
+    {
+      "name": "dmvFailMeansNeverClimb",
+      "value": true,
+      "comment": "if a climbing check fails, the character can never climb that wall."
+    },
+    {
+      "name": "dmvFailCostsOneRound",
+      "value": true,
+      "comment": "even a failed climbing attempt requires one round of game time."
+    },
+    {
+      "name": "dmvNoPlateNoShield",
+      "value": true,
+      "comment": "characters cannot climb in any type of plate mail armor, nor can a shield be held by a climbing character."
+    },
+    {
+      "name": "dmvLeatherNoPenalty",
+      "value": true,
+      "comment": "leather armor does not penalize a climber."
+    },
+    {
+      "name": "dmvShieldSlungNoBenefit",
+      "value": true,
+      "comment": "a character can sling a shield over his shoulder to carry it along while climbing, but cannot receive any defensive benefit for a shield thus carried."
+    },
+    {
+      "name": "dmvSpikeShortensFall",
+      "value": true,
+      "comment": "the usual function of a spike is to shorten the distance a character falls: a spike 200 feet up a cliff with 50 feet of slack in the rope turns a fall beginning 50 feet higher into a 100-foot fall (50 down to the spike, 50 more of slack)."
+    },
+    {
+      "name": "dmvUseMultipleSpikes",
+      "value": true,
+      "comment": "characters can help prevent spike-arrest accidents by using more than one spike."
+    },
+    {
+      "name": "dmvIceSpikeEachRound",
+      "value": true,
+      "comment": "climbing an ice wall absolutely requires spikes: a spike must be driven into the ice wall before a character can climb, the process must be repeated each round, and since it takes a round to drive a spike, the process is doubly slow."
+    },
+    {
+      "name": "dmvPoleWrapTechnique",
+      "value": true,
+      "comment": "a rope wrapped around a too-wide pole and pulled against as he climbs lets a character climb a pole whose diameter equals his own height; any pole wider than this should be treated as a wall."
+    },
+    {
+      "name": "dmvRappelFailFallsFull",
+      "value": true,
+      "comment": "a failed rappel climbing check means a fall from the top to the bottom of whatever distance is involved."
+    },
+    {
+      "name": "dmvRappelNormalRestrictions",
+      "value": true,
+      "comment": "all normal climbing restrictions (encumbrance, armor, etc.) apply to rappelling."
+    },
+    {
+      "name": "dmvAllClassesJump",
+      "value": true,
+      "comment": "characters of all classes have a limited ability to jump across obstacles, the same procedure as given for acrobats (unearthed arcana page 24)."
+    },
+    {
+      "name": "dmvJumpOneSegment",
+      "value": true,
+      "comment": "all jumps require only one segment of time."
+    },
+    {
+      "name": "dmvNoBackwardOrExtended",
+      "value": true,
+      "comment": "unlike acrobats, other characters cannot attempt to jump backward or leap in an extended position."
+    },
+    {
+      "name": "dmvJumpNoNormalPenalty",
+      "value": true,
+      "comment": "unencumbered characters and characters carrying normal gear have no penalties to their jumping abilities - the encumbrance ladder starts at heavy gear."
+    },
+    {
+      "name": "dmvJumpNoRacialHumans",
+      "value": true,
+      "comment": "humans, elves and half-orcs suffer no racial penalty on a jump."
+    },
+    {
+      "name": "dmvFarSideAnchorProblem",
+      "value": true,
+      "comment": "the perennial rope problem is how to attach the rope to the far side: grapple-catchable irregularities are uncommon in a dungeon setting, more common in natural caves, and a once-bridged crossing invariably has wreckage of the bridge foundation to catch with a grappling hook."
+    },
+    {
+      "name": "dmvArrowRopeImpractical",
+      "value": true,
+      "comment": "the rope-tied-to-the-arrow trick is dashing and romantic but impractical: an arrow trailing a rope and fired into wood is simply not strong enough to support even the lightest of characters."
+    },
+    {
+      "name": "dmvRopeCrossCheckEachRound",
+      "value": true,
+      "comment": "a character crossing on such a line is in a precarious position indeed, and must make a climbing check each round that he is suspended."
+    },
+    {
+      "name": "dmvRopeCrossModsApply",
+      "value": true,
+      "comment": "on a rope crossing the modifiers for armor and encumbrance still apply to the climbing check."
+    },
+    {
+      "name": "dmvRopeAlwaysNonslippery",
+      "value": true,
+      "comment": "a rope is always considered a nonslippery surface."
+    },
+    {
+      "name": "dmvRopeWallRateApplies",
+      "value": true,
+      "comment": "the rate of climb listed for rope and wall applies to characters making a crossing on a rope."
+    },
+    {
+      "name": "dmvLoopThiefOrFamiliar",
+      "value": true,
+      "comment": "a thrown loop is a tricky maneuver that can only be attempted by thieves or other characters with a long and intimate familiarity with ropes (characters raised on farms, or who served as sailors)."
+    },
+    {
+      "name": "dmvLoopRangeHalved",
+      "value": true,
+      "comment": "the thrown-loop range is halved if the character does not have the clear 10-foot radius around him to prepare the throw."
+    },
+    {
+      "name": "dmvLoopAttemptOneRound",
+      "value": true,
+      "comment": "a loop attempt takes one round; characters may make as many attempts as they wish, and the method carries the additional advantage of being virtually soundless."
+    },
+    {
+      "name": "dmvSwingPendulum",
+      "value": true,
+      "comment": "a rope supported at one end swings to a point where it is hanging straight down; a weight attached to the rope is carried past that point by momentum, creating the pendulum motion that gives characters problems when they ram into a solid object during their swing."
+    },
+    {
+      "name": "dmvSwingCheckToHold",
+      "value": true,
+      "comment": "if a character is holding a rope that swings into an obstacle, he must make an immediate climbing check to see if he can hold on; an unsuccessful check means he has been knocked off the rope and has fallen."
+    },
+    {
+      "name": "dmvSwingDropFractions",
+      "value": true,
+      "comment": "the swing damage drops all fractions: a character on a 15-foot rope receives no damage, and a character 35 feet down a rope suffers only 1d6 points of damage."
+    },
+    {
+      "name": "dmvAnyoneCanBelay",
+      "value": true,
+      "comment": "any character can attempt to protect another character against a fall with a belay; the only tool required is a rope, although spikes can add to the security of a belay."
+    },
+    {
+      "name": "dmvBelayRopeTied",
+      "value": true,
+      "comment": "the character to be protected must have a rope tied securely around him; the character performing the belay holds the other end of the rope, but does not tie it to himself."
+    },
+    {
+      "name": "dmvBelayPaysOutSlack",
+      "value": true,
+      "comment": "the belayer pays out the rope slowly as the protected character moves farther away from him; if the protected character should fall, the belayer grabs the rope tightly and braces himself to try to catch the shock of the weight."
+    },
+    {
+      "name": "dmvBelayCheckArrests",
+      "value": true,
+      "comment": "the belayer must roll a climbing check to arrest the fall: if successful, the rope is held and the other character can fall no farther than the length of the rope; if unsuccessful, the rope runs through the hands of the belayer too quickly and the fall proceeds normally."
+    },
+    {
+      "name": "dmvBelaySecondCheck",
+      "value": true,
+      "comment": "a belayer who successfully holds the rope but occupies a dangerous or narrow spot must make a second climbing check to maintain his hold on whatever surface he is clinging to; if the second check is unsuccessful, the belayer joins his companion in the fall."
+    },
+    {
+      "name": "dmvBelaySpikeAnchored",
+      "value": true,
+      "comment": "a belayer performing from a dangerous spot can use a spike to anchor himself: he performs the belay normally, and if he arrests the fall but fails his second check so that he is pulled into the fall, the spike should then catch both falling characters - with the standing 10 percent per supported character chance of pulling loose."
+    },
+    {
+      "name": "dmvBelayBothEndsNoChecks",
+      "value": true,
+      "comment": "a belay can hold one end of a rope used for support, as in a chasm crossing: with a grappling hook fastening the far side and a belay established on the near side, characters cross as if the rope were attached at both ends, and the character holding the rope makes no checks."
+    },
+    {
+      "name": "dmvRopedNoSingleFall",
+      "value": true,
+      "comment": "a party roped together insures that no single member will suffer a damaging fall; however, the group takes the risk of all members falling together."
+    },
+    {
+      "name": "dmvRopedSlowestRate",
+      "value": true,
+      "comment": "characters who are roped together must move at the rate of the slowest member, with the order of characters on the rope noted."
+    },
+    {
+      "name": "dmvRopedBothSidesCheck",
+      "value": true,
+      "comment": "if one roped character falls, the characters on each side of him must make climbing checks: if both checks are successful the fall is stopped immediately; if one character arrests the fall but the other fails, the -10 two-faller re-check follows."
+    },
+    {
+      "name": "dmvRopedCascadeRecheck",
+      "value": true,
+      "comment": "each time the weight of a new character is added to those who have fallen, the characters who have not fallen but are adjacent to those falling must make climbing checks; this continues until a successful climbing check is made on each side of the falling characters, or until the entire party falls."
+    },
+    {
+      "name": "dmvRopedEndSingleCheck",
+      "value": true,
+      "comment": "if a character or characters on the end of the rope fall, only the single character next to the falling character must make a check - it is more advantageous to have either the first or the last character fall, especially if the character next to him is a skilled climber."
+    }
+  ],
+  "chains": [
+    {
+      "name": "dmvJumpBand",
+      "limits": [
+        6,
+        9,
+        12,
+        15,
+        18,
+        22
+      ],
+      "tail": 6,
+      "arg": "lvl",
+      "comment": "the broad-jumping level band chain: levels 1-6 band 0, 7-9 band 1, 10-12 band 2, 13-15 band 3, 16-18 band 4, 19-22 band 5, and 23 or up band 6 (the tail) - the band indexes the Table 4 rows."
+    },
+    {
+      "name": "dmvLoopBand",
+      "limits": [
+        4,
+        8,
+        12,
+        16
+      ],
+      "tail": 4,
+      "arg": "lvl",
+      "comment": "the thrown-loop level band chain: levels 1-4 band 0, 5-8 band 1, 9-12 band 2, 13-16 band 3, and 17 or up band 4 (the tail) - the band indexes the Table 6 range rows."
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1: SWIMMING EFFECTS OF ENCUMBRANCE",
+      "tag": "1",
+      "count": "dmvT1RowCount",
+      "col_default": 1,
+      "sentinel": 0,
+      "sentinel_census": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "cols": [
+        "dmvT1EndNum",
+        "dmvT1EndDen",
+        "dmvT1SpdNum",
+        "dmvT1SpdDen",
+        "dmvT1DiveNum",
+        "dmvT1DiveDen",
+        "dmvT1SurfNum",
+        "dmvT1SurfDen"
+      ],
+      "col_comments": [
+        "The numerator of the endurance multiplier by encumbrance row (0 = the printed none, impossible).",
+        "The denominator of the endurance multiplier: doubled, normal, halved, quartered, none.",
+        "The numerator of the speed multiplier by encumbrance row (0 = the printed none).",
+        "The denominator of the speed multiplier: doubled, normal, halved, quartered, none.",
+        "The numerator of the diving multiplier - the one function that survives every encumbrance: normal, normal, doubled, tripled, tripled.",
+        "The denominator of the diving multiplier (always 1).",
+        "The numerator of the surfacing multiplier by encumbrance row (0 = the printed none).",
+        "The denominator of the surfacing multiplier: doubled, normal, halved, quartered, none."
+      ],
+      "audit_comment": "the Table 1 grid: the five encumbrance rows (unencumbered, normal gear, heavy gear, very heavy gear, encumbered) x the four functions (endurance, speed, diving, surfacing), each cell split into the numerator and denominator of the multiplier - a 0 numerator is the printed none (impossible)",
+      "data": [
+        [
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          4,
+          1,
+          4,
+          3,
+          1,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          3,
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "Table 2: RATES OF CLIMBING",
+      "tag": "2",
+      "count": "dmvClimbRowCount",
+      "col_default": 0,
+      "sentinel": 0,
+      "sentinel_census": [
+        1,
+        1,
+        1
+      ],
+      "cols": [
+        "dmvT2NonslipFt",
+        "dmvT2SlightFt",
+        "dmvT2SlipFt"
+      ],
+      "col_comments": [
+        "The nonslippery climbing rate in feet per round by surface row: 6, 12, 18, 24, dash, 36, 60, 60, 40 (0 = the printed dash, thieves with tools only for ice).",
+        "The slightly slippery rate in feet per round by surface row: 3, 6, 9, 12, dash, 24, 40, 30, 30 (0 = the printed dash).",
+        "The slippery rate in feet per round by surface row: 0, 3, 6, 9, 6, 12, 20, 15, 20 (0 = the printed dash)."
+      ],
+      "audit_comment": "the Table 2 grid: the nine surface rows (very smooth, smooth with cracks, rough, rough with ledges, ice wall, pole, tree with branches, sloping wall, rope and wall) x the three surface conditions (nonslippery, slightly slippery, slippery), in feet per round - a 0 cell is the printed dash (unclimbable: the very smooth slippery cell and both ice cells except slippery-with-tools)",
+      "data": [
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          12,
+          6,
+          3
+        ],
+        [
+          18,
+          9,
+          6
+        ],
+        [
+          24,
+          12,
+          9
+        ],
+        [
+          0,
+          0,
+          6
+        ],
+        [
+          36,
+          24,
+          12
+        ],
+        [
+          60,
+          40,
+          20
+        ],
+        [
+          60,
+          30,
+          15
+        ],
+        [
+          40,
+          30,
+          20
+        ]
+      ]
+    },
+    {
+      "name": "Table 3: GRAPPLING SUCCESS",
+      "tag": "3",
+      "count": "dmvGrappleTargetCount",
+      "col_default": 0,
+      "cols": [
+        "dmvT3Miss",
+        "dmvT3Slip",
+        "dmvT3Catch"
+      ],
+      "col_comments": [
+        "The miss maximum of the d100 grapple throw by target row: 01-88 miss on a rocky ledge, 01-70 on a wooden wall.",
+        "The catch-and-slip maximum by target row: 89-93 on a rocky ledge, 71-74 on a wooden wall.",
+        "The catch maximum by target row: 94-00 on a rocky ledge, 75-00 on a wooden wall."
+      ],
+      "audit_comment": "the Table 3 grid: the two grapple target rows (rocky ledge, wooden wall) x the three outcomes (miss, catch and slip, catch), each cell the d100 maximum of its range",
+      "data": [
+        [
+          88,
+          93,
+          100
+        ],
+        [
+          70,
+          74,
+          100
+        ]
+      ]
+    },
+    {
+      "name": "Table 4: BROAD JUMPING",
+      "tag": "4",
+      "count": "dmvJumpBandCount",
+      "col_default": 0,
+      "cols": [
+        "dmvT4StandDie",
+        "dmvT4StandAdd",
+        "dmvT4RunDie",
+        "dmvT4RunAdd"
+      ],
+      "col_comments": [
+        "The standing broad jump die by level band (4 = 1d4, 6 = 1d6): 1d4 for the 1-6 and 7-9 bands, 1d6 for the 10-12 through 23+ bands.",
+        "The standing broad jump plus feet by level band: 1, 2, 2, 3, 4, 5, 6 - the 1d4+1 through 1d6+6 ladder.",
+        "The running broad jump die by level band (4 = 1d4, 6 = 1d6).",
+        "The running broad jump plus feet by level band: 5, 6, 5, 6, 9, 12, 15 - the 1d4+5 through 1d6+15 ladder."
+      ],
+      "audit_comment": "the Table 4 grid: the seven level bands (1-6, 7-9, 10-12, 13-15, 16-18, 19-22, 23+) x the standing and running broad jumps, each cell split into the die and the plus feet (non-acrobats)",
+      "data": [
+        [
+          4,
+          1,
+          4,
+          5
+        ],
+        [
+          4,
+          2,
+          4,
+          6
+        ],
+        [
+          6,
+          2,
+          6,
+          5
+        ],
+        [
+          6,
+          3,
+          6,
+          6
+        ],
+        [
+          6,
+          4,
+          6,
+          9
+        ],
+        [
+          6,
+          5,
+          6,
+          12
+        ],
+        [
+          6,
+          6,
+          6,
+          15
+        ]
+      ]
+    },
+    {
+      "name": "Table 5: CROSSING WITH A GRAPPLE",
+      "tag": "5",
+      "count": "dmvCrossTargetCount",
+      "col_default": 0,
+      "cols": [
+        "dmvT5Miss",
+        "dmvT5Slip",
+        "dmvT5Catch"
+      ],
+      "col_comments": [
+        "The miss maximum of the d100 crossing throw by target row: 01-82 bare stone walls/floor, 01-75 cave formations, 01-66 ruined foundation.",
+        "The catch-and-slip maximum by target row: 83-89, 76-80, 67-71.",
+        "The catch maximum by target row: 90-00, 81-00, 72-00."
+      ],
+      "audit_comment": "the Table 5 grid: the three crossing target rows (bare stone walls/floor, cave formations, ruined foundation) x the three outcomes (miss, catch and slip, catch), each cell the d100 maximum of its range",
+      "data": [
+        [
+          82,
+          89,
+          100
+        ],
+        [
+          75,
+          80,
+          100
+        ],
+        [
+          66,
+          71,
+          100
+        ]
+      ]
+    },
+    {
+      "name": "Table 6: THROWN LOOP RANGES",
+      "tag": "6",
+      "count": "dmvLoopBandCount",
+      "col_default": 0,
+      "cols": [
+        "dmvLoopRangeFt"
+      ],
+      "col_comments": [
+        "The maximum thrown-loop range in feet by level band: 40, 50, 60, 75, 90 (non-acrobats)."
+      ],
+      "audit_comment": "the Table 6 grid: the five level bands (1-4, 5-8, 9-12, 13-16, 17+) x the maximum thrown-loop range in feet - the 40 through 90 ladder",
+      "data": [
+        [
+          40
+        ],
+        [
+          50
+        ],
+        [
+          60
+        ],
+        [
+          75
+        ],
+        [
+          90
+        ]
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "expr": "m['dmvT1EndNum'](0) != 2 or m['dmvT1EndDen'](0) != 1 or m['dmvT1DiveNum'](4) != 3 or m['dmvT1EndNum'](4) != 0",
+      "note": "the two Table 1 poles: the unencumbered endurance doubles, and the encumbered dive stays tripled while endurance dashes"
+    },
+    {
+      "expr": "m['dmvEndurExampleTurns']() != 23 or m['dmvEndurExampleUnencTurns']() != 46 or m['dmvEndurExampleUnencTurns']() != 2 * m['dmvEndurExampleTurns']()",
+      "note": "the printed endurance example: 23 turns normal gear, 46 unencumbered - the Table 1 doubled endurance"
+    },
+    {
+      "expr": "m['dmvHighSpeedEndDiv']() != 10 or m['dmvHighSpeedDoublesRate']() != 1 or m['dmvHighSpeedRestEqual']() != 1",
+      "note": "the high-speed economy: the doubled rate, the 1/10 endurance cut, the equal rest after exit"
+    },
+    {
+      "expr": "m['dmvHumanSwimIn']() != 4 or m['dmvDemiSwimIn']() != 3 or m['dmvStrSpeedBonusMaxIn']() != 3 or m['dmvStrExSpeedIn']() != 5 or m['dmvStrExBonusIn']() != 1",
+      "note": "the base rates and the strength-damage-bonus example: +1 for strength 16, swimming 5 inches"
+    },
+    {
+      "expr": "m['dmvDiveRateFt']() != 20 or m['dmvJumpDiveBonusFt']() != 10 or m['dmvPerHeightFt']() != 10 or m['dmvHeightDepthBonusFt']() != 5 or m['dmvMaxJumpHeightFt']() != 40",
+      "note": "the dive: 20 feet per round, the 10-foot jump-in bonus, +5 per 10 feet of height, capped at the 40-foot jump"
+    },
+    {
+      "expr": "m['dmvExampleDiveNormalFt']() != 30 or m['dmvExampleDiveHeavyFt']() != 70 or m['dmvExampleDiveHeavyFt']() - m['dmvExampleDiveNormalFt']() != 40",
+      "note": "the printed dive example: 30 feet normal gear, 70 heavy gear - pinned as printed with the triples-vs-doubles tension against the Table 1 heavy row noted"
+    },
+    {
+      "expr": "m['dmvSurfaceRateFt']() != 20 or m['dmvPassiveFloatSlowerFt']() != 5 or m['dmvBackpackRemoveRounds']() != 1 or m['dmvArmorExampleRounds']() != 5 or m['dmvArmorRemoveBase']() != 10",
+      "note": "surfacing at 20 feet, the passive float 5 slower, the 1-round backpack, the chain-mail 5-round armor removal"
+    },
+    {
+      "expr": "m['dmvBreathConDiv']() != 3 or m['dmvMinBreathRounds']() != 1 or m['dmvBreathCheckStep']() != 2 or m['dmvBreathExampleRounds']() != 6",
+      "note": "the breath economy: the 1/3 constitution base, the one-round floor, the -2 cumulative step, the 16-constitution six-round example"
+    },
+    {
+      "expr": "m['dmvStrenuousHalvesBreath']() != 1 or m['dmvNoDeepBreathHalves']() != 1 or m['dmvFullyEncumAlwaysStrenuous']() != 1 or m['dmvNonswimBreathPlusOne']() != 1",
+      "note": "the breath halvings and the nonswimming +1 round"
+    },
+    {
+      "expr": "m['dmvAbilityCheckEqualOrLess']() != 1 or m['dmvProfCheckStrictlyLess']() != 1 or m['dmvCheckDie']() != 20",
+      "note": "the check frames: ability checks equal-or-less, proficiency checks strictly less - the inequality distinction"
+    },
+    {
+      "expr": "m['dmvExampleStreamFt']() != 40 or m['dmvUpstreamHoldIn']() != 4 or m['dmvExampleWashdownFt']() != 10",
+      "note": "the 40-foot stream: the 4-inch human holds position, the 3-inch demi-humans wash 10 feet downstream"
+    },
+    {
+      "expr": "m['dmvWaterfallDamageDiv']() != 2 or m['dmvShortPlungeMaxFt']() != 100 or m['dmvLongPlungeDiv']() != 10 or m['dmvRockDmgDie']() != 6",
+      "note": "the waterfall: half damage, the saved 100-foot plunge free of damage, the 1/10 beyond, the 1d6 failed-check damage"
+    },
+    {
+      "expr": "m['dmvDangerRatingLo']() != 1 or m['dmvDangerRatingHi']() != 10 or m['dmvLowRatingForcesHighSpeed']() != 1 or m['dmvDangerRatingIsCadence']() != 1",
+      "note": "the 1-10 danger rating doubles as the check cadence, and five or less forces high speed"
+    },
+    {
+      "expr": "m['dmvNonThiefRatingPct']() != 40 or m['dmvThiefOnlyRates']() != 1 or m['dmvDexAdjAddsToRate']() != 1 or m['dmvHeavyClimbDiv']() != 2",
+      "note": "the 40 percent non-thief base, the thief-only rates halved for others, the dexterity adjustment, the heavy-gear halving"
+    },
+    {
+      "expr": "m['dmvSlightFallMult']() != 2 or m['dmvSlipFallMult']() != 10 or m['dmvExThiefRoll']() != 87 or m['dmvExFailurePct']() != 13 or m['dmvExSlightFailPct']() != 26 or m['dmvExSlipRoll10']() != 90 or m['dmvExNormalRoll10']() != 99",
+      "note": "the fall-chance multipliers: twice on slightly slippery, ten times on slippery, with the 3rd-level 87/13/26 and 10th-level 99/90 examples"
+    },
+    {
+      "expr": "m['dmvArmorMidPct']() != 15 or m['dmvArmorLightPct']() != 5 or m['dmvDwarfPct']() != 5 or m['dmvGnomePct']() != 10 or m['dmvHalflingPct']() != 5 or m['dmvHalforcPct']() != 5",
+      "note": "the armor and race climbing modifiers"
+    },
+    {
+      "expr": "m['dmvTreeModPct']() != 40 or m['dmvSlopeModPct']() != 25 or m['dmvPoleModPct']() != 20 or m['dmvRopeWallModPct']() != 40",
+      "note": "the climbing surface bonuses: tree +40, sloping wall +25, pole +20, rope and wall +40"
+    },
+    {
+      "expr": "m['dmvSpikeRoundsDie']() != 4 or m['dmvSpikeFailPct']() != 10 or m['dmvSpikeExamplePct']() != 20 or m['dmvRopeFallDiv']() != 2 or m['dmvIceSpikeFailPct']() != 15",
+      "note": "the spike rules: 1d4 rounds to hammer, the 10 percent per-character arrest failure (20 for two), the half-damage rope-broken fall, the 15 percent ice-spike slip"
+    },
+    {
+      "expr": "m['dmvGrappleExampleFt']() != 50 or m['dmvGrappleStrDiv']() != 3 or m['dmvGrappleMultFt']() != 10 or m['dmvSwingThrowRadiusFt']() != 10 or m['dmvSwingThrowMult']() != 2",
+      "note": "the grapple throw: 1/3 strength times 10 (strength 15 gives 50 feet), doubled horizontally with the 10-foot clear swing radius"
+    },
+    {
+      "expr": "m['dmvRecoilDie']() != 4 or m['dmvSelfHitLoPct']() != 1 or m['dmvSelfHitHiPct']() != 5 or m['dmvSelfHitDie']() != 6 or m['dmvHookNoiseLoYd']() != 100 or m['dmvHookNoiseHiYd']() != 400 or m['dmvHookFailNoiseLoYd']() != 200 or m['dmvHookFailNoiseHiYd']() != 800",
+      "note": "the 1d4 recoil, the 01-05 self-hit for 1d6, and the 100-400/200-800 yard noise ladder"
+    },
+    {
+      "expr": "m['dmvRappelModPct']() != 50 or m['dmvFreeHangModPct']() != 30 or m['dmvRappelRateFt']() != 120",
+      "note": "the rappel: +50 with a wall, +30 free-hanging, 120 feet per round"
+    },
+    {
+      "expr": "m['dmvRunHeadStartFt']() != 20 or m['dmvJumpFloorFt']() != 2 or m['dmvHeavyJumpFt']() != 1 or m['dmvVeryHvyJumpFt']() != 2 or m['dmvEncumbJumpFt']() != 4 or m['dmvHalflingJumpFt']() != 1 or m['dmvDwarfJumpFt']() != 2",
+      "note": "the 20-foot head start, the 2-foot floor, the encumbrance and race foot penalties"
+    },
+    {
+      "expr": "m['dmvJumpBand'](6) != 0 or m['dmvJumpBand'](7) != 1 or m['dmvJumpBand'](10) != 2 or m['dmvJumpBand'](16) != 4 or m['dmvJumpBand'](19) != 5 or m['dmvJumpBand'](22) != 5 or m['dmvJumpBand'](23) != 6",
+      "note": "the broad-jumping band chain boundaries: 6/9/12/15/18/22 with the 23+ tail"
+    },
+    {
+      "expr": "m['dmvLoopBand'](4) != 0 or m['dmvLoopBand'](5) != 1 or m['dmvLoopBand'](13) != 3 or m['dmvLoopBand'](17) != 4 or m['dmvLoopRangeFt'](0) != 40 or m['dmvLoopRangeFt'](3) != 75 or m['dmvLoopRangeFt'](4) != 90",
+      "note": "the loop band chain and the 40 through 90 range ladder"
+    },
+    {
+      "expr": "m['dmvLoopBaseHitPct']() != 20 or m['dmvLoopBonusPerFt']() != 1 or m['dmvLoopExampleMaxFt']() != 50 or m['dmvLoopExamplePct']() != 40 or m['dmvLoopCoilDie']() != 6 or m['dmvCaveTargetPct']() != 20 or m['dmvProtrusionBasePct']() != 50 or m['dmvTieoffProtrusionPct']() != 50",
+      "note": "the 20 percent loop base +1 per foot under max (the 50/30/40 example), the 1d6 coil, and the three 50/20/50 percent chances"
+    },
+    {
+      "expr": "m['dmvRopeCrossModPct']() != 30 or m['dmvRopeCrossCheckEachRound']() != 1 or m['dmvRopeAlwaysNonslippery']() != 1 or m['dmvRopeWallRateApplies']() != 1",
+      "note": "the rope crossing: the +30 check each round, the always-nonslippery rope, the rope-and-wall rate"
+    },
+    {
+      "expr": "m['dmvSwingCheckStepPct']() != 5 or m['dmvSwingCheckPerFt']() != 10 or m['dmvSwingSectionFt']() != 20 or m['dmvSwingDmgDie']() != 6 or m['dmvSwingDropFractions']() != 1",
+      "note": "the swing: -5 percent per 10 feet of rope on the check, 1d6 per 20-foot section, fractions dropped"
+    },
+    {
+      "expr": "m['dmvBelayEdgeFt']() != 3 or m['dmvBelayPerFallerPct']() != 10 or m['dmvBelaySecondCheck']() != 1 or m['dmvBelayBothEndsNoChecks']() != 1",
+      "note": "the belay: the 3-foot edge rule, the -10 per additional faller, the second check, the both-ends crossing"
+    },
+    {
+      "expr": "m['dmvRopeSlackLoFt']() != 20 or m['dmvRopeSlackHiFt']() != 30 or m['dmvCascadePct']() != 10 or m['dmvRopedBothSidesCheck']() != 1 or m['dmvRopedEndSingleCheck']() != 1",
+      "note": "the roping: 20-30 feet of slack, the -10 two-faller cascade re-check, the both-sides and end-character check rules"
+    }
+  ],
+  "table_checks": [
+    {
+      "expr": "m['dmvT1DiveNum'](2) != 2 or m['dmvT1DiveNum'](4) != 3 or m['dmvT1DiveNum'](0) > m['dmvT1DiveNum'](1) or m['dmvT1DiveNum'](3) < m['dmvT1DiveNum'](2) or m['dmvT1DiveNum'](4) < m['dmvT1DiveNum'](2)",
+      "note": "the dive column never dashes and only climbs: normal, normal, doubled, tripled, tripled"
+    },
+    {
+      "expr": "m['dmvT1EndNum'](4) != 0 or m['dmvT1SpdNum'](4) != 0 or m['dmvT1SurfNum'](4) != 0 or m['dmvT1EndDen'](2) != 2 or m['dmvT1EndDen'](3) != 4 or m['dmvT1DiveDen'](4) != 1",
+      "note": "the encumbered row dashes the surface functions, heavy halves and very heavy quarters, and the dive stays a whole-number triple"
+    },
+    {
+      "expr": "m['dmvT2SlightFt'](0) * 2 != m['dmvT2NonslipFt'](0) or m['dmvT2SlipFt'](1) * 2 != m['dmvT2SlightFt'](1) or m['dmvT2NonslipFt'](2) != 18 or m['dmvT2NonslipFt'](3) != 24",
+      "note": "the Table 2 ladder halves step by step: 6/3/0, 12/6/3, 18/9/6, 24/12/9"
+    },
+    {
+      "expr": "m['dmvT2NonslipFt'](5) != 36 or m['dmvT2NonslipFt'](6) != 60 or m['dmvT2NonslipFt'](7) != 60 or m['dmvT2NonslipFt'](8) != 40 or m['dmvT2SlipFt'](4) != 6",
+      "note": "the Table 2 second half: pole 36, tree 60, sloping wall 60, rope and wall 40 - and the ice wall climbable only slippery, at 6"
+    },
+    {
+      "expr": "m['dmvT3Catch'](0) != 100 or m['dmvT3Catch'](1) != 100 or m['dmvT5Catch'](0) != 100 or m['dmvT5Catch'](1) != 100 or m['dmvT5Catch'](2) != 100",
+      "note": "every catch column tops at 00 (100)"
+    },
+    {
+      "expr": "m['dmvT3Miss'](0) >= m['dmvT3Slip'](0) or m['dmvT3Miss'](1) >= m['dmvT3Slip'](1) or m['dmvT5Miss'](2) >= m['dmvT5Slip'](2)",
+      "note": "the miss range sits strictly under the catch-and-slip range in every grapple row"
+    },
+    {
+      "expr": "m['dmvT4RunAdd'](0) <= m['dmvT4StandAdd'](0) or m['dmvT4RunAdd'](3) <= m['dmvT4StandAdd'](3) or m['dmvT4RunAdd'](6) <= m['dmvT4StandAdd'](6) or m['dmvT4StandDie'](2) != 6",
+      "note": "running strictly exceeds standing in the sample bands, and the standing die steps up to 1d6 at the 10-12 band"
+    },
+    {
+      "expr": "m['dmvT4RunAdd'](4) != 9 or m['dmvT4RunAdd'](5) != 12 or m['dmvT4RunAdd'](6) != 15 or m['dmvT4StandAdd'](6) != 6",
+      "note": "the running ladder caps 9/12/15 in the three biggest bands, standing top 6"
+    }
+  ],
+  "header_sections": {
+    "the chapter opener and the check frames": [
+      {
+        "kind": "const",
+        "name": "dmvPart1Lo"
+      },
+      {
+        "kind": "const",
+        "name": "dmvPart1Hi"
+      },
+      {
+        "kind": "const",
+        "name": "dmvPart1PdfLo"
+      },
+      {
+        "kind": "const",
+        "name": "dmvPart1PdfHi"
+      },
+      {
+        "kind": "const",
+        "name": "dmvCheckDie"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvAbilityCheckEqualOrLess"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvSubstituteDiceOk"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvProfCheckStrictlyLess"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvNoMagicAssumed"
+      }
+    ],
+    "the swimming proficiency and the three functions": [
+      {
+        "kind": "const",
+        "name": "dmvMonsterSwimNum"
+      },
+      {
+        "kind": "const",
+        "name": "dmvMonsterSwimDen"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSwimFuncCount"
+      },
+      {
+        "kind": "const",
+        "name": "dmvUnderwaterRateNum"
+      },
+      {
+        "kind": "const",
+        "name": "dmvUnderwaterRateDen"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvSwimProfRequiredAfloat"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvBreathHeldWithoutProf"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvAnimalsSwimIfForced"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvFireStoneNeverEnter"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvEnduranceNeedsBreath"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvEncCategoriesMatchPhb"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvEncumberedSinks"
+      }
+    ],
+    "the swimming endurance and speed": [
+      {
+        "kind": "const",
+        "name": "dmvEndurExampleTurns"
+      },
+      {
+        "kind": "const",
+        "name": "dmvEndurExampleUnencTurns"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHighSpeedEndDiv"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHumanSwimIn"
+      },
+      {
+        "kind": "const",
+        "name": "dmvDemiSwimIn"
+      },
+      {
+        "kind": "const",
+        "name": "dmvStrSpeedBonusMaxIn"
+      },
+      {
+        "kind": "const",
+        "name": "dmvStrExBonusIn"
+      },
+      {
+        "kind": "const",
+        "name": "dmvStrExSpeedIn"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvEnduranceLevelsPlusCon"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvTreadingDoublesEndurance"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvEndurOutMeansDrown"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvHighSpeedDoublesRate"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvHighSpeedRestEqual"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvStrBonusIsDamageBonus"
+      }
+    ],
+    "the diving and surfacing rules": [
+      {
+        "kind": "const",
+        "name": "dmvDiveRateFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvJumpDiveBonusFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvPerHeightFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHeightDepthBonusFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvMaxJumpHeightFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvExampleDiveNormalFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvExampleDiveHeavyFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSurfaceRateFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvPassiveFloatSlowerFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvBackpackRemoveRounds"
+      },
+      {
+        "kind": "const",
+        "name": "dmvArmorRemoveBase"
+      },
+      {
+        "kind": "const",
+        "name": "dmvArmorExampleRounds"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvDiveModifiedByEnc"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvJumpBonusUnmodifiedByEnc"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvSurfaceModifiedByEnc"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvHeavyMustActivelySwim"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvIntentionalLoadingDmJudged"
+      }
+    ],
+    "Table 1: the swimming encumbrance grid": [
+      {
+        "kind": "const",
+        "name": "dmvT1RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 1: SWIMMING EFFECTS OF ENCUMBRANCE"
+      }
+    ],
+    "the breath economy": [
+      {
+        "kind": "const",
+        "name": "dmvBreathConDiv"
+      },
+      {
+        "kind": "const",
+        "name": "dmvMinBreathRounds"
+      },
+      {
+        "kind": "const",
+        "name": "dmvBreathCheckStep"
+      },
+      {
+        "kind": "const",
+        "name": "dmvBreathExampleRounds"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvBreathRoundedUp"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvFullyEncumBreathBarred"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvStrenuousHalvesBreath"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvFullyEncumAlwaysStrenuous"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvNoDeepBreathHalves"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvConCheckAfterBreath"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvNonswimBreathPlusOne"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvCantAvoidUnsuspectedGas"
+      }
+    ],
+    "the moving water effects": [
+      {
+        "kind": "const",
+        "name": "dmvExampleStreamFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvUpstreamHoldIn"
+      },
+      {
+        "kind": "const",
+        "name": "dmvExampleWashdownFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvWaterfallDamageDiv"
+      },
+      {
+        "kind": "const",
+        "name": "dmvShortPlungeMaxFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvLongPlungeDiv"
+      },
+      {
+        "kind": "const",
+        "name": "dmvDangerRatingLo"
+      },
+      {
+        "kind": "const",
+        "name": "dmvDangerRatingHi"
+      },
+      {
+        "kind": "const",
+        "name": "dmvRockDmgDie"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvSpeedRelativeToWater"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRapidTransportUntilImpact"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvWaterfallSaveVsBreath"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvDangerRatingIsCadence"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvLowRatingForcesHighSpeed"
+      }
+    ],
+    "the climbing surfaces and conditions": [
+      {
+        "kind": "const",
+        "name": "dmvPoleDiaDiv"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSlopeFallDiv"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSlightFallMult"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSlipFallMult"
+      },
+      {
+        "kind": "const",
+        "name": "dmvExThiefRoll"
+      },
+      {
+        "kind": "const",
+        "name": "dmvExFailurePct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvExSlightFailPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvExSlipRoll10"
+      },
+      {
+        "kind": "const",
+        "name": "dmvExNormalRoll10"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHeavyClimbDiv"
+      },
+      {
+        "kind": "const",
+        "name": "dmvNonThiefRatingPct"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvAllClassesLimitedClimb"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvOnlyThievesSheer"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvNonThiefRoughRoutes"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvMountaineerBoosts"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvThiefOnlySmoothTypes"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvIceNeedsTools"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvThiefOnlyRates"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvDexAdjAddsToRate"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvBarkNonslippery"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRopeOnlyUnbracedCat"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvSlopeSaveVsPetr"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvNonslipperyDrySolid"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvEncumbNoSheerWithoutTools"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvHeavyGearHalfRate"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvNormalGearFullRate"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvNonThiefCheckEqualOrLess"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvFailMeansNeverClimb"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvFailCostsOneRound"
+      }
+    ],
+    "Table 2: the rates of climbing grid": [
+      {
+        "kind": "const",
+        "name": "dmvClimbRowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 2: RATES OF CLIMBING"
+      }
+    ],
+    "the climbing modifiers": [
+      {
+        "kind": "const",
+        "name": "dmvArmorMidPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvArmorLightPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvDwarfPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvGnomePct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHalflingPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHalforcPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvTreeModPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSlopeModPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvPoleModPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvRopeWallModPct"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvNoPlateNoShield"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvLeatherNoPenalty"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvShieldSlungNoBenefit"
+      }
+    ],
+    "the climbing tools": [
+      {
+        "kind": "const",
+        "name": "dmvSpikeRoundsDie"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSpikeNoiseMi"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSpikeFailPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSpikeExamplePct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvRopeFallDiv"
+      },
+      {
+        "kind": "const",
+        "name": "dmvIceSpikeFailPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvGrappleStrDiv"
+      },
+      {
+        "kind": "const",
+        "name": "dmvGrappleMultFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvGrappleExampleFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSwingThrowRadiusFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSwingThrowMult"
+      },
+      {
+        "kind": "const",
+        "name": "dmvRecoilDie"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSelfHitLoPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSelfHitHiPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSelfHitDie"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHookNoiseLoYd"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHookNoiseHiYd"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHookFailNoiseLoYd"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHookFailNoiseHiYd"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSlipFreeDie"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvSpikeShortensFall"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvUseMultipleSpikes"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvIceSpikeEachRound"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvPoleWrapTechnique"
+      }
+    ],
+    "Table 3: the grappling success grid": [
+      {
+        "kind": "const",
+        "name": "dmvGrappleTargetCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 3: GRAPPLING SUCCESS"
+      }
+    ],
+    "the rappelling rules": [
+      {
+        "kind": "const",
+        "name": "dmvRappelModPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvFreeHangModPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvRappelRateFt"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRappelFailFallsFull"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRappelNormalRestrictions"
+      }
+    ],
+    "the jumping rules": [
+      {
+        "kind": "const",
+        "name": "dmvRunHeadStartFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvJumpFloorFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHeavyJumpFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvVeryHvyJumpFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvEncumbJumpFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvHalflingJumpFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvDwarfJumpFt"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvAllClassesJump"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvJumpOneSegment"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvNoBackwardOrExtended"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvJumpNoNormalPenalty"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvJumpNoRacialHumans"
+      }
+    ],
+    "Table 4: the broad jumping grid and band chain": [
+      {
+        "kind": "const",
+        "name": "dmvJumpBandCount"
+      },
+      {
+        "kind": "chain",
+        "name": "dmvJumpBand"
+      },
+      {
+        "kind": "table",
+        "name": "Table 4: BROAD JUMPING"
+      }
+    ],
+    "the chasm crossing on a rope": [
+      {
+        "kind": "const",
+        "name": "dmvProtrusionBasePct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvTieoffProtrusionPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvRopeCrossModPct"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvFarSideAnchorProblem"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvArrowRopeImpractical"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRopeCrossCheckEachRound"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRopeCrossModsApply"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRopeAlwaysNonslippery"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRopeWallRateApplies"
+      }
+    ],
+    "Table 5: the crossing with a grapple grid": [
+      {
+        "kind": "const",
+        "name": "dmvCrossTargetCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 5: CROSSING WITH A GRAPPLE"
+      }
+    ],
+    "the thrown loop": [
+      {
+        "kind": "const",
+        "name": "dmvCaveTargetPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvLoopPrepRadiusFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvLoopBaseHitPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvLoopBonusPerFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvLoopExampleMaxFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvLoopExamplePct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvLoopCoilDie"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvLoopThiefOrFamiliar"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvLoopRangeHalved"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvLoopAttemptOneRound"
+      }
+    ],
+    "Table 6: the thrown loop ranges and band chain": [
+      {
+        "kind": "const",
+        "name": "dmvLoopBandCount"
+      },
+      {
+        "kind": "chain",
+        "name": "dmvLoopBand"
+      },
+      {
+        "kind": "table",
+        "name": "Table 6: THROWN LOOP RANGES"
+      }
+    ],
+    "the swinging across rules": [
+      {
+        "kind": "const",
+        "name": "dmvSwingCheckStepPct"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSwingCheckPerFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSwingSectionFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvSwingDmgDie"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvSwingPendulum"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvSwingCheckToHold"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvSwingDropFractions"
+      }
+    ],
+    "the belaying rules": [
+      {
+        "kind": "const",
+        "name": "dmvBelayEdgeFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvBelayPerFallerPct"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvAnyoneCanBelay"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvBelayRopeTied"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvBelayPaysOutSlack"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvBelayCheckArrests"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvBelaySecondCheck"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvBelaySpikeAnchored"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvBelayBothEndsNoChecks"
+      }
+    ],
+    "the roping together rules": [
+      {
+        "kind": "const",
+        "name": "dmvRopeSlackLoFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvRopeSlackHiFt"
+      },
+      {
+        "kind": "const",
+        "name": "dmvCascadePct"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRopedNoSingleFall"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRopedSlowestRate"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRopedBothSidesCheck"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRopedCascadeRecheck"
+      },
+      {
+        "kind": "bool",
+        "name": "dmvRopedEndSingleCheck"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "from": "  - [ ] Ability and proficiency checks (p. 12) - the check frame the chapter's rules ride on",
+      "to": "  - [x] Ability and proficiency checks (p. 12) - R504: the 1d20 frames - ability checks succeed equal-or-less with the dice substitution rule, proficiency checks strictly less than the rating",
+      "note": "the check frames"
+    },
+    {
+      "from": "  - [ ] Swimming (p. 12) - the rate rules with Table 1, the cross-book seam against rules/wsgswim.h",
+      "to": "  - [x] Swimming (p. 12) - R504: the proficiency gate, the 1/3 monster chance, the three functions and Table 1 (verified const-for-const against rules/wsgswim.h), the endurance, speed and dive rules; the strength speed bonus pins on the DAMAGE bonus, a WSG divergence (both cap +3)",
+      "note": "swimming"
+    },
+    {
+      "from": "  - [ ] Holding one's breath (p. 12) - the breath economy, the cross-book seam against rules/wsgbreath.h",
+      "to": "  - [x] Holding one's breath (p. 12) - R504: the 1/3-con breath with the cumulative halvings and the one-round floor, the -2 cumulative con checks after, the +1 nonswimming round (verified against rules/wsgbreath.h)",
+      "note": "holding one's breath"
+    },
+    {
+      "from": "  - [ ] Moving in water (p. 13) - the underwater movement rules",
+      "to": "  - [x] Moving in water (p. 13) - R504: the proficiency/afloat rules, the 4/3-inch base speeds, the underwater 2/3 cut, the Table 1 effects and the dive/surfacing ladders with the printed dive-example tension noted",
+      "note": "moving in water"
+    },
+    {
+      "from": "  - [ ] Effects of moving water (p. 14) - the current/flow hazards, the cross-book seam against rules/wsgmwater.h",
+      "to": "  - [x] Effects of moving water (p. 14) - R504: the relative-speed rule with the 40-foot stream example, the waterfall half damage with the breath save and the 100-foot/1-10 plunge split, the 1-10 danger-rating cadence with the 1d6 failed-check damage (verified against rules/wsgmwater.h)",
+      "note": "effects of moving water"
+    },
+    {
+      "from": "  - [ ] Climbing (pp. 14-16) - the climbing success rates for non-thieves with Table 2, the encumbrance and armor effects, the surface ladder; the cross-book seam against rules/wsgclimb.h",
+      "to": "  - [x] Climbing (pp. 14-16) - R504: the surface taxonomy with Table 2 (nine rows, thieves at half for others), the surface and condition definitions with the 2x/10x fall multipliers, the encumbrance halving and the 40 percent non-thief rating with the equal-or-less check (verified against rules/wsgclimb.h)",
+      "note": "climbing"
+    },
+    {
+      "from": "  - [ ] Climbing modifiers (p. 16) - the condition/situation modifiers",
+      "to": "  - [x] Climbing modifiers (p. 16) - R504: the armor ladder (plate barred, -15 chain/splint/scale/banded, -5 studded/padded, leather free), the race modifiers (-5/-10/-5/+5) and the surface bonuses (+40/+25/+20/+40)",
+      "note": "climbing modifiers"
+    },
+    {
+      "from": "  - [ ] Climbing tools (p. 16) - the gear effects on rates and checks",
+      "to": "  - [x] Climbing tools (p. 16) - R504: the spikes (1d4 rounds, the 10 percent arrest failure, the 15 percent ice-slip), the grapple throw (1/3 strength x 10, the noise ladder, Table 3, the 1d6 catch-and-slip) and the rope-broken half-damage fall",
+      "note": "climbing tools"
+    },
+    {
+      "from": "  - [ ] Rappelling (p. 16) - the descent rules, the cross-book seam against rules/wsgrapp.h",
+      "to": "  - [x] Rappelling (p. 16) - R504: the +50 climbing check, the +30 free-hang modifier, the 120 feet-per-round rate and the full-distance failure fall (verified against rules/wsgrapp.h)",
+      "note": "rappelling"
+    },
+    {
+      "from": "  - [ ] Jumping for non-acrobats (p. 17) - the broad/high jump floors with Table 4, the running-start rules",
+      "to": "  - [x] Jumping for non-acrobats (p. 17) - R504: the 20-foot head start, the one-segment jumps, Table 4 (the seven bands) with the encumbrance and race modifiers and the 2-foot floor; the encumbered -4 jump allowed here where the WSG forbids severe jumps, a pinned divergence",
+      "note": "jumping for non-acrobats"
+    },
+    {
+      "from": "  - [ ] Jumping movement (p. 17) - the mid-air and landing rules",
+      "to": "  - [x] Jumping movement (p. 17) - R504: the one-segment movement rule and the no-backward, no-extended-position limits for non-acrobats",
+      "note": "jumping movement"
+    },
+    {
+      "from": "  - [ ] Using rope (pp. 17-19) - the rope-use proficiency system: crossing a chasm on a rope, swinging across, belaying, roping together",
+      "to": "  - [x] Using rope (pp. 17-19) - R504: the rope system pinned whole - the chasm crossing (Tables 5-6), the swing, the belay and the roping-together cascade (verified against rules/wsgchasm.h, rules/wsgbelay.h and rules/wsgtog.h)",
+      "note": "using rope"
+    },
+    {
+      "from": "  - [ ] Crossing a chasm on a rope (p. 17) - the anchor and loop rules with Tables 5-6, the cross-book seam against rules/wsgchasm.h",
+      "to": "  - [x] Crossing a chasm on a rope (p. 17) - R504: the anchor problem, the 50 percent protrusion chance, Table 5, the thrown loop (the 20 percent base, +1 percent per foot, Table 6, the halved range without the 10-foot radius) and the +30 crossing check each round (verified against rules/wsgchasm.h)",
+      "note": "crossing a chasm on a rope"
+    },
+    {
+      "from": "  - [ ] Swinging across (p. 18) - the pendulum crossing rules",
+      "to": "  - [x] Swinging across (p. 18) - R504: the pendulum, the -5-percent-per-10-feet hold check, and the 1d6 per 20-foot rope section with the dropped fractions",
+      "note": "swinging across"
+    },
+    {
+      "from": "  - [ ] Belaying (p. 18) - the belay sequence and checks, the cross-book seam against rules/wsgbelay.h",
+      "to": "  - [x] Belaying (p. 18) - R504: the belay check with the rope-length bound, the second check with the 3-foot edge rule, the -10 per additional faller, the spike anchor and the both-ends crossing (verified against rules/wsgbelay.h)",
+      "note": "belaying"
+    },
+    {
+      "from": "  - [ ] Roping together (p. 19) - the roped-party cascade rules, the cross-book seam against rules/wsgtog.h",
+      "to": "  - [x] Roping together (p. 19) - R504: the 20-30 feet of slack, the slowest-rate march, the both-sides checks with the -10 two-faller cascade and the end-character single check (verified against rules/wsgtog.h - the cascade step pins at -10)",
+      "note": "roping together"
+    },
+    {
+      "from": "- [ ] Table 1: Swimming Effects of Encumbrance (p. 13)",
+      "to": "- [x] Table 1: Swimming Effects of Encumbrance (p. 13) - R504",
+      "note": "Table 1"
+    },
+    {
+      "from": "- [ ] Table 2: Rates of Climbing (p. 14)",
+      "to": "- [x] Table 2: Rates of Climbing (p. 14) - R504",
+      "note": "Table 2"
+    },
+    {
+      "from": "- [ ] Table 3: Grappling Success (p. 15)",
+      "to": "- [x] Table 3: Grappling Success (p. 15) - R504",
+      "note": "Table 3"
+    },
+    {
+      "from": "- [ ] Table 4: Broad Jumping (p. 16)",
+      "to": "- [x] Table 4: Broad Jumping (p. 16) - R504",
+      "note": "Table 4"
+    },
+    {
+      "from": "- [ ] Table 5: Crossing With a Grapple (p. 17)",
+      "to": "- [x] Table 5: Crossing With a Grapple (p. 17) - R504",
+      "note": "Table 5"
+    },
+    {
+      "from": "- [ ] Table 6: Thrown Loop Ranges (p. 17)",
+      "to": "- [x] Table 6: Thrown Loop Ranges (p. 17) - R504",
+      "note": "Table 6"
+    }
+  ],
+  "gap_census": {
+    "closed": 27,
+    "open": 128
+  },
+  "include_comment": "the DSG movement I pins",
+  "include_after": "#include \"rules/dsgoverview.h\"  // R503: the DSG overview pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R503 LANDED 2026-10-16: commit c8ec2d1 (census 428,",
+  "prev_record": [
+    "- R503 LANDED 2026-10-16: commit c8ec2d1 (census 428, pushed",
+    "0e8907a..c8ec2d1), the DSG OVERVIEW OF THE UNDERDARK, printed pp. 7-11 (pdf",
+    "8-12) - the arc first content round, the R497 pattern. Pinned as",
+    "rules/dsgoverview.h (prefix dov, 58 inlines: 8 consts + 50 bools, no grids).",
+    "Load-bearing pins: the pdf = printed + 1 offset (opener on pdf 7 for printed",
+    "6); the three-cave taxonomy; molten lava 1,800 F killing non-fire-resistant on",
+    "contact; the 10-foot dirt shoring; the realms-deeper-than-a-mile rule; the",
+    "living/dead cave mechanics (glisten/mud vs brittle/dust, standing water rarely",
+    "stagnant); the five hazard families. Gap report 0/151 -> 5 closed / 150 open:",
+    "the overview parent + natural/unnatural/hazards children + the DM TOC closed,",
+    "and THE DM SECTION RE-GRAINED from the DM TOC (its own underground-environment",
+    "chapter pp. 65-72, cultures 73-74, the 31-area Deepearth key 75-98, campaign",
+    "considerations 99-113, mapping 114-117) with the PERSPECTIVE MAPS box (pp.",
+    "124-127) the player TOC missed. LESSON: the engine gap_census.open counts",
+    "post-flip open LINES, not a hand-subtracted census - the first run died at",
+    "150-vs-147; simulate the flips and count. Preflight GREEN (R503 DSG overview",
+    "audit: bad 0), rverify GREEN (58 mutants, 0 missed, double-run clean, restore",
+    "at 0e8907a). User-side md5 8968bee3 = the authored +extra-blank-line variant,",
+    "the standing cosmetic class. The extraction rode the r503-extraction branch",
+    "(d8-d12 + d65 full/tsv/png, 18 files; pdf 9 is the cave-formations",
+    "illustration plate, labels only - not a failed read). NEXT - the DSG movement",
+    "chapter (printed pp. 12-22, pdf 13-23): the BIG cross-book seam",
+    "(wsgclimb/wsgswim/wsgrope are its downstream), extraction first."
+  ]
+}
+

@@ -51,22 +51,22 @@ re-grained then, before any DM pin round.
   - [x] Unnatural underground locales (pp. 9-11) - R503: the purpose-built dungeons (soft-rock excavation, 10-foot dirt shoring, the jail/treasure/lair/defense purposes, the stronger-than-castles note), the mine networks (active guarded, inactive laired), the creator-sized burrows with the umber-hulk stone exception, and the realms deeper than a mile (nation-scale caverns, seas with islands, wilderness-to-cities)
   - [x] Hazards of the underearth (p. 11) - R503: the survey - cave-ins (the shoring split between dungeons, caverns and realms), floods (no room to disperse), fires (the combustibles-and-oxygen double threat, the wood scarcity), poisonous gases (the confinement multiplier) and volcanoes (lava, steam, closed passages)
 - [ ] **Movement rules for underground play** (pp. 12-22) - the swimming/holding-breath/moving-water rules, the climbing rates and tools for non-thieves, jumping, the rope system (chasm, swing, belay, roping together), bridges, the expanded falling rules, spelunking, excavation, fatigue/exhaustion, darkness movement and slippery surfaces
-  - [ ] Ability and proficiency checks (p. 12) - the check frame the chapter's rules ride on
-  - [ ] Swimming (p. 12) - the rate rules with Table 1, the cross-book seam against rules/wsgswim.h
-  - [ ] Holding one's breath (p. 12) - the breath economy, the cross-book seam against rules/wsgbreath.h
-  - [ ] Moving in water (p. 13) - the underwater movement rules
-  - [ ] Effects of moving water (p. 14) - the current/flow hazards, the cross-book seam against rules/wsgmwater.h
-  - [ ] Climbing (pp. 14-16) - the climbing success rates for non-thieves with Table 2, the encumbrance and armor effects, the surface ladder; the cross-book seam against rules/wsgclimb.h
-  - [ ] Climbing modifiers (p. 16) - the condition/situation modifiers
-  - [ ] Climbing tools (p. 16) - the gear effects on rates and checks
-  - [ ] Rappelling (p. 16) - the descent rules, the cross-book seam against rules/wsgrapp.h
-  - [ ] Jumping for non-acrobats (p. 17) - the broad/high jump floors with Table 4, the running-start rules
-  - [ ] Jumping movement (p. 17) - the mid-air and landing rules
-  - [ ] Using rope (pp. 17-19) - the rope-use proficiency system: crossing a chasm on a rope, swinging across, belaying, roping together
-  - [ ] Crossing a chasm on a rope (p. 17) - the anchor and loop rules with Tables 5-6, the cross-book seam against rules/wsgchasm.h
-  - [ ] Swinging across (p. 18) - the pendulum crossing rules
-  - [ ] Belaying (p. 18) - the belay sequence and checks, the cross-book seam against rules/wsgbelay.h
-  - [ ] Roping together (p. 19) - the roped-party cascade rules, the cross-book seam against rules/wsgtog.h
+  - [x] Ability and proficiency checks (p. 12) - R504: the 1d20 frames - ability checks succeed equal-or-less with the dice substitution rule, proficiency checks strictly less than the rating
+  - [x] Swimming (p. 12) - R504: the proficiency gate, the 1/3 monster chance, the three functions and Table 1 (verified const-for-const against rules/wsgswim.h), the endurance, speed and dive rules; the strength speed bonus pins on the DAMAGE bonus, a WSG divergence (both cap +3)
+  - [x] Holding one's breath (p. 12) - R504: the 1/3-con breath with the cumulative halvings and the one-round floor, the -2 cumulative con checks after, the +1 nonswimming round (verified against rules/wsgbreath.h)
+  - [x] Moving in water (p. 13) - R504: the proficiency/afloat rules, the 4/3-inch base speeds, the underwater 2/3 cut, the Table 1 effects and the dive/surfacing ladders with the printed dive-example tension noted
+  - [x] Effects of moving water (p. 14) - R504: the relative-speed rule with the 40-foot stream example, the waterfall half damage with the breath save and the 100-foot/1-10 plunge split, the 1-10 danger-rating cadence with the 1d6 failed-check damage (verified against rules/wsgmwater.h)
+  - [x] Climbing (pp. 14-16) - R504: the surface taxonomy with Table 2 (nine rows, thieves at half for others), the surface and condition definitions with the 2x/10x fall multipliers, the encumbrance halving and the 40 percent non-thief rating with the equal-or-less check (verified against rules/wsgclimb.h)
+  - [x] Climbing modifiers (p. 16) - R504: the armor ladder (plate barred, -15 chain/splint/scale/banded, -5 studded/padded, leather free), the race modifiers (-5/-10/-5/+5) and the surface bonuses (+40/+25/+20/+40)
+  - [x] Climbing tools (p. 16) - R504: the spikes (1d4 rounds, the 10 percent arrest failure, the 15 percent ice-slip), the grapple throw (1/3 strength x 10, the noise ladder, Table 3, the 1d6 catch-and-slip) and the rope-broken half-damage fall
+  - [x] Rappelling (p. 16) - R504: the +50 climbing check, the +30 free-hang modifier, the 120 feet-per-round rate and the full-distance failure fall (verified against rules/wsgrapp.h)
+  - [x] Jumping for non-acrobats (p. 17) - R504: the 20-foot head start, the one-segment jumps, Table 4 (the seven bands) with the encumbrance and race modifiers and the 2-foot floor; the encumbered -4 jump allowed here where the WSG forbids severe jumps, a pinned divergence
+  - [x] Jumping movement (p. 17) - R504: the one-segment movement rule and the no-backward, no-extended-position limits for non-acrobats
+  - [x] Using rope (pp. 17-19) - R504: the rope system pinned whole - the chasm crossing (Tables 5-6), the swing, the belay and the roping-together cascade (verified against rules/wsgchasm.h, rules/wsgbelay.h and rules/wsgtog.h)
+  - [x] Crossing a chasm on a rope (p. 17) - R504: the anchor problem, the 50 percent protrusion chance, Table 5, the thrown loop (the 20 percent base, +1 percent per foot, Table 6, the halved range without the 10-foot radius) and the +30 crossing check each round (verified against rules/wsgchasm.h)
+  - [x] Swinging across (p. 18) - R504: the pendulum, the -5-percent-per-10-feet hold check, and the 1d6 per 20-foot rope section with the dropped fractions
+  - [x] Belaying (p. 18) - R504: the belay check with the rope-length bound, the second check with the 3-foot edge rule, the -10 per additional faller, the spike anchor and the both-ends crossing (verified against rules/wsgbelay.h)
+  - [x] Roping together (p. 19) - R504: the 20-30 feet of slack, the slowest-rate march, the both-sides checks with the -10 two-faller cascade and the end-character single check (verified against rules/wsgtog.h - the cascade step pins at -10)
   - [ ] Bridges (p. 19) - the permanent and impromptu bridge rules
   - [ ] Falling (expanded rules) (pp. 19-20) - stopping a fall, landing, sliding down slopes; the cross-book seam against rules/wsgfall.h and rules/wsgstop.h
   - [ ] Spelunking (p. 20) - the tight-squeeze rules with Table 7
@@ -163,12 +163,12 @@ re-grained then, before any DM pin round.
 
 ## The tables manifest (the book's own Tables index - every named table gets its own line)
 
-- [ ] Table 1: Swimming Effects of Encumbrance (p. 13)
-- [ ] Table 2: Rates of Climbing (p. 14)
-- [ ] Table 3: Grappling Success (p. 15)
-- [ ] Table 4: Broad Jumping (p. 16)
-- [ ] Table 5: Crossing With a Grapple (p. 17)
-- [ ] Table 6: Thrown Loop Ranges (p. 17)
+- [x] Table 1: Swimming Effects of Encumbrance (p. 13) - R504
+- [x] Table 2: Rates of Climbing (p. 14) - R504
+- [x] Table 3: Grappling Success (p. 15) - R504
+- [x] Table 4: Broad Jumping (p. 16) - R504
+- [x] Table 5: Crossing With a Grapple (p. 17) - R504
+- [x] Table 6: Thrown Loop Ranges (p. 17) - R504
 - [ ] Table 7: Minimum Passageway Sizes (p. 21)
 - [ ] Table 8: Armor Effects on Character Width (p. 21)
 - [ ] Table 9: Course Changes in Darkness (p. 22)
