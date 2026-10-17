@@ -45,7 +45,7 @@ sample entries verified against the canonical PHB levels).
 
 ## The book, front to back
 
-- [ ] **Foreword** (p. 3) - the Fibber McGee closet frame, the what-has-been-written-is-true doctrine, the sense-of-wonder caveat, and the made-it-up admission
+- [x] **Foreword** (p. 3) - the Fibber McGee closet frame, the what-has-been-written-is-true doctrine, the sense-of-wonder caveat, and the made-it-up admission - R575: the dddForewordDoctrine pin
 - [x] **An Introduction to the Planes** (pp. 5-10) - the frame chapter: the five groupings, the organization of the book's four sections, the true/subjective time doctrine with its per-plane ratios, the spell school definitions, and the spell-summary tables - pinned R564 except the spell-summary tables (garbled OCR, closed R565)
   - [x] The five groupings of the planes (p. 5) - the Prime Material, the Ethereal, the inner, the Astral, the outer - R564: the dcs grouping pin
   - [x] Organization (p. 5) - the overview/traveling/survival/time/encounters section pattern of every plane chapter - R564: the organization pattern in the audit comment
@@ -73,7 +73,7 @@ sample entries verified against the canonical PHB levels).
   - [x] The Para-Elemental Planes (pp. 51-54) - smoke, magma, ooze, ice: survival, encounters, movement, combat, magic, features - R572: the four-plane doctrine, the per-plane survival, the pockets, the native immunities, the movement/combat/magic mappings, and the features (the archoments, Cryonax)
   - [x] The Energy Planes (p. 54) - Positive and Negative Energy - R573: the Plane-of-Life/Plane-of-Death doctrine, the gain-and-explode and drain rules, the protection paradox, the weakened Border Ethereal, the magic max/min rule, and the features (xeg-ya, xeg-yi, trillochs)
   - [x] The Positive Quasi-Planes (pp. 55-57) - lightning, radiance, mineral, steam: survival, movement, encounters, combat, magic, features - R574: the agitated-matter doctrine, the per-plane survival, the energy intrusions, the natives, the doubled guide prices, the towers, and the Minerals fossilization
-  - [ ] The Negative Quasi-Planes (pp. 57-59) - ash, dust, salt, vacuum: survival, movement, encounters, combat, magic, features
+  - [x] The Negative Quasi-Planes (pp. 57-59) - ash, dust, salt, vacuum: survival, movement, encounters, combat, magic, features - R575: the increasing-absence doctrine, the per-plane survival, the black wall, the level-drain touch, the native rules, and the Foreword doctrines
   - [x] The inner-planes native-frequency table and one-rank decay rule (pp. 26-27) - the air-elemental worked example (common on Air, unique on Earth) - R567: the dcv decay pin (one rank per plane removed)
   - [x] The Air phenomena table (p. 32) - the roll-on table for the plane's varied, stunning, and deadly phenomena - R568: the dcw d12 phenomena pin with the maelstrom and vortex rules
   - [x] The Air high-winds table (p. 33) - the WSG-adapted wind effects - R568: the dcw winds pins (d100 rows, the 80-mph verbal barrier, the 1d8-per-10-mph impact damage)
@@ -86,7 +86,7 @@ sample entries verified against the canonical PHB levels).
   - [x] The energy-planes encounter frequency (p. 54) - the 1-in-10 every eight hours - R573: the ddb no-random-encounters pin (the destructive plane destroys pockets; natives undetermined)
   - [x] The positive quasi-planes encounter table (p. 56) - the 1-in-10 per 12 hours - R574: the ddc check pin (1 in 10, the phenomenon/pocket/creature split)
   - [x] The Minerals petrification rule (p. 57) - the save-vs-spell per true turn, the 80/20 stone/crystal split, the 99% crumble rule - R574: the ddc fossilization pins (the save per true turn, the 80/20 split, the 99% crumble)
-  - [ ] The negative quasi-planes encounter frequency (p. 58) - the 1-in-20 every 12 hours
+  - [x] The negative quasi-planes encounter frequency (p. 58) - the 1-in-20 every 12 hours - R575: AMENDED against the source - 1 in 10 per 12 hours (the 1-20/21-00 phenomenon/creature split, no elemental pockets)
 - [ ] **The Astral Plane** (pp. 60-72) - the barren vault linking the Primes and the outer planes
   - [ ] Reaching and physical travel (pp. 60-62) - the astral spell, the physical travel rules, the silver cords
   - [ ] Color pools (pp. 62-63) - the gateways to the outer planes

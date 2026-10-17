@@ -1,0 +1,295 @@
+{
+  "round": 575,
+  "prefix": "ddd",
+  "header_file": "rules/motpquasineg.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 498,
+  "title": "the MotP Negative Quasi-Planes",
+  "audit_label": "R575 MotP negative quasi-planes audit",
+  "audit_comment": "the Negative Quasi-Planes, printed pp. 57-59, the four in one round: Vacuum, Ash, Dust and Salt - the increasing-absence doctrine (what is missing in the Positive is present here, thinning toward the Negative), the per-plane survival (the Vacuum hold-breath-only rule with the airy-element uselessness, the 1-HD-per-round elemental loss and the 1,000-yard doubled infravision; the Ash warmth depletion with the fire-creature drain and the cold-protection halving at 30 yards; the Dust crumbling with the gaseous-form protection and the 10d3 vision; the Salt per-TURN elemental drain), the tenuous movement (falling fastest, the borders discourage it), the 1-in-10-per-12-hours encounter check AMENDED against the report's 1-in-20 (the 1-20/21-00 phenomenon/creature split, no elemental pockets), the black wall intrusion at 3d6 per round for 2d10 turns, the 1-in-10 native life-level drain per touch, the native rules (the Ash flee-or-explode save vs. poison at 1d4 per hit die within 20 feet, the Dust 50% split with the earth-spell immunity, the Salt water-shatter with the 30-foot shard radius), the magic decay (the Vacuum same-round dissipation, the 1d4-round Dust and Salt rules), the doubled guide prices, no archoments, and the Foreword doctrines riding this round (the Fibber McGee closet, what-has-been-written-is-true, the made-it-up admission).",
+  "include_comment": "the MotP negative quasi-planes pins",
+  "include_after": "#include \"rules/motpquasipos.h\"  // R574: the MotP positive quasi-planes pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R574 LANDED 2026-10-17: commit 59139ceb2e2d7248c982",
+  "prev_record": [
+    "- R574 LANDED 2026-10-17: commit 59139ceb2e2d7248c982",
+    "  d46b9e8016130cebd1dc (census 497 -> 498,",
+    "  pushed 38d8c24..59139ce), THE MotP POSITIVE",
+    "  QUASI-PLANES, printed pp. 55-57, the four in",
+    "  one round: Lightning, Radiance, Minerals and",
+    "  Steam - the agitated-matter doctrine with the",
+    "  tidal Positive borders, the per-plane",
+    "  survival (the 5/10/20% per-round strikes at",
+    "  1d8-of-d10s, the thunder deafness with the",
+    "  wax-plug fix, the Radiance blind save, the",
+    "  1d4-plus-AC Minerals movement damage, the",
+    "  muggy Steam slow), the 1-in-10 encounter",
+    "  check, the wall of brilliance at 3d6 per",
+    "  round, the pocket conversion, the native",
+    "  immunities, the doubled guide prices, the",
+    "  tower ring, the gem economy with the 1-in-100",
+    "  survival, and the fossilization (the 80/20",
+    "  split, the 99% crumble). 9 consts + 5 bools,",
+    "  prefix ddc, header rules/motpquasipos.h.",
+    "  THREE flips: gap census 36/54 -> 39/51. Spec",
+    "  12,801 bytes, md5 c43582f4e09062cc7a28d72877b",
+    "  6eb02 matched exactly first try, 14 inlines.",
+    "  NEXT - R575: the Negative Quasi-Planes (pp.",
+    "  57-59) - Vacuum, Ash, Dust, Salt in one",
+    "  round, the increasing-absence doctrine; the",
+    "  inner half closes, then the Astral chapter."
+  ],
+  "banner": {
+    "title": "THE MotP NEGATIVE QUASI-PLANES - printed pp. 57-59, the four in one round: Vacuum, Ash, Dust and Salt - the increasing-absence doctrine, the per-plane survival ladder, the black wall, the level-drain natives, and the Foreword doctrines riding the round that closes the inner half.",
+    "provenance": "verified against printed pp. 57-59 of the uploaded motp.pdf OCR (and p. 3 for the Foreword); the quasi-planes pin by mapping onto the major-plane frame (Vacuum as Air, Ash as Fire, Dust as Earth, Salt as Water) with the MotP's own absence dangers carried explicitly; the encounter frequency AMENDED against the source (1 in 10 per 12 hours, not the report's 1-in-20).",
+    "sentinel": "the gap census after this round: 42 closed, 48 open - three boxes fall (the quasi-group, the encounter frequency, the Foreword); the inner half of the book closes here, and the Astral chapter (pp. 60-72) opens the second half next."
+  },
+  "consts": [
+    {
+      "name": "dddQuasiPlaneCount",
+      "value": 4,
+      "comment": "the four negative quasi-planes between the Negative Material and the majors: Vacuum (Air), Ash (Fire), Dust (Earth), Salt (Water) - the increasing-absence doctrine: what is missing in the Positive is present here, thinning toward the Negative itself."
+    },
+    {
+      "name": "dddVacuumHdLossPerRound",
+      "value": 1,
+      "comment": "the Vacuum survival: no breathable element exists there, airy element and the like are useless, only holding one's breath sustains life; elementals and airy creatures lose 1 HD per round."
+    },
+    {
+      "name": "dddVacuumVisionYards",
+      "value": 1000,
+      "comment": "the Vacuum vision: 1,000 yards, or double the normal infravision range - the plane is dark and empty but transparent."
+    },
+    {
+      "name": "dddAshVisionYards",
+      "value": 30,
+      "comment": "the Ash survival: warmth depletion, a bone-chilling cold; fire creatures lose 1 HD or level per round, warm creatures take 2d6 per round halved by cold protection; vision 30 yards."
+    },
+    {
+      "name": "dddQuasiVisionDieSides",
+      "value": 3,
+      "comment": "the Dust and Salt vision: 10d3 yards of grey half-light - the Dust blackness of crumbling matter, the Salt haze of the brine residue."
+    },
+    {
+      "name": "dddDepletionDamageDieSides",
+      "value": 6,
+      "comment": "the 2d6-per-round depletion: Ash warmth-loss in warm creatures (halved by cold protection), Dust crumbling in solids (death at 0 hp; gaseous form protects; Earth, Ooze and Magma elementals lose 1 HD per round), Salt dehydration in non-water creatures."
+    },
+    {
+      "name": "dddSaltElementalTurnLoss",
+      "value": 1,
+      "comment": "the Salt rule: water elementals - including Ice, Steam and Ooze but NOT Magma - lose 1 HD or level per TURN (not per round); salt is the residue of evaporation, and the natives thirst for water."
+    },
+    {
+      "name": "dddBlackWallAdvanceDieSides",
+      "value": 6,
+      "comment": "the Negative intrusion: a black wall of pure Negative Material advancing 3d6 inches per round for 2d10 turns; a traveler caught within loses sight of the border after 1d4 rounds - full Negative immersion effects."
+    },
+    {
+      "name": "dddEncounterDenom",
+      "value": 10,
+      "comment": "the encounter check: 1 in 10 per 12 hours (AMENDED against the source - the gap report said 1-in-20, the printed text says 1 in 10); roll 1-20 Negative Energy Phenomenon, 21-00 creature; there are NO elemental pockets in the negative quasi-planes."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dddNativeLevelDrain",
+      "value": true,
+      "comment": "1 in 10 creatures encountered are natives of the quasi-plane, and every native drains one life level per touch regardless of form."
+    },
+    {
+      "name": "dddAshNativeRule",
+      "value": true,
+      "comment": "the Ash natives: cold grey forms; bring anything warm (even room-temperature) within 20 feet and each must save vs. poison - flee the area or explode for 1d4 per hit die; their touch drains 1d6 of body heat; invisible-force Vacuum natives hibernate in pockets of air."
+    },
+    {
+      "name": "dddDustNativeRule",
+      "value": true,
+      "comment": "the Dust natives: 50% chance to split into two smaller forms when struck, immune to earth-affecting spells, pass through their plane's matter; stepping into their dust inflicts 2d6 per round."
+    },
+    {
+      "name": "dddSaltNativeRule",
+      "value": true,
+      "comment": "the Salt natives: water shatters them into shards; they attack in a 30-foot radius at their hit-die level, each shard dealing 1d4 damage."
+    },
+    {
+      "name": "dddMagicDecayRule",
+      "value": true,
+      "comment": "the magic decay: Vacuum dissipates cloud-type magic the same round it is cast; Ash extinguishes long-term flames in 1 round; Dust crumbles objects in 1d4 rounds; Salt absorbs watery magic and free water in 1d4 rounds."
+    },
+    {
+      "name": "dddGuidePriceDoubled",
+      "value": true,
+      "comment": "the negative quasi-features: slow, plodding natives; guides always cost at least double (mists and perfumes for Steam's cousins, burned valuables for Ash, ground powders for Dust; Vacuum guides unknown); no archoments rule these planes; the elemental-roped citadels reach here from the tower ring."
+    },
+    {
+      "name": "dddForewordDoctrine",
+      "value": true,
+      "comment": "the Foreword (p. 3) riding this round: the Fibber McGee closet frame - the planes as the stuff crammed into a closet; what-has-been-written-is-true is the ruling doctrine; the sense-of-wonder caveat; and the made-it-up admission (Jeff Grubb)."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the QuasiPlaneCount pin",
+      "expr": "m['dddQuasiPlaneCount']() != 4"
+    },
+    {
+      "note": "the VacuumHdLossPerRound pin",
+      "expr": "m['dddVacuumHdLossPerRound']() != 1"
+    },
+    {
+      "note": "the VacuumVisionYards pin",
+      "expr": "m['dddVacuumVisionYards']() != 1000"
+    },
+    {
+      "note": "the AshVisionYards pin",
+      "expr": "m['dddAshVisionYards']() != 30"
+    },
+    {
+      "note": "the QuasiVisionDieSides pin",
+      "expr": "m['dddQuasiVisionDieSides']() != 3"
+    },
+    {
+      "note": "the DepletionDamageDieSides pin",
+      "expr": "m['dddDepletionDamageDieSides']() != 6"
+    },
+    {
+      "note": "the SaltElementalTurnLoss pin",
+      "expr": "m['dddSaltElementalTurnLoss']() != 1"
+    },
+    {
+      "note": "the BlackWallAdvanceDieSides pin",
+      "expr": "m['dddBlackWallAdvanceDieSides']() != 6"
+    },
+    {
+      "note": "the EncounterDenom pin",
+      "expr": "m['dddEncounterDenom']() != 10"
+    },
+    {
+      "note": "the NativeLevelDrain pin",
+      "expr": "m['dddNativeLevelDrain']() != 1"
+    },
+    {
+      "note": "the AshNativeRule pin",
+      "expr": "m['dddAshNativeRule']() != 1"
+    },
+    {
+      "note": "the DustNativeRule pin",
+      "expr": "m['dddDustNativeRule']() != 1"
+    },
+    {
+      "note": "the SaltNativeRule pin",
+      "expr": "m['dddSaltNativeRule']() != 1"
+    },
+    {
+      "note": "the MagicDecayRule pin",
+      "expr": "m['dddMagicDecayRule']() != 1"
+    },
+    {
+      "note": "the GuidePriceDoubled pin",
+      "expr": "m['dddGuidePriceDoubled']() != 1"
+    },
+    {
+      "note": "the ForewordDoctrine pin",
+      "expr": "m['dddForewordDoctrine']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the negative quasi-planes pins": [
+      {
+        "kind": "const",
+        "name": "dddQuasiPlaneCount"
+      },
+      {
+        "kind": "const",
+        "name": "dddVacuumHdLossPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "dddVacuumVisionYards"
+      },
+      {
+        "kind": "const",
+        "name": "dddAshVisionYards"
+      },
+      {
+        "kind": "const",
+        "name": "dddQuasiVisionDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "dddDepletionDamageDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "dddSaltElementalTurnLoss"
+      },
+      {
+        "kind": "const",
+        "name": "dddBlackWallAdvanceDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "dddEncounterDenom"
+      },
+      {
+        "kind": "bool",
+        "name": "dddNativeLevelDrain"
+      },
+      {
+        "kind": "bool",
+        "name": "dddAshNativeRule"
+      },
+      {
+        "kind": "bool",
+        "name": "dddDustNativeRule"
+      },
+      {
+        "kind": "bool",
+        "name": "dddSaltNativeRule"
+      },
+      {
+        "kind": "bool",
+        "name": "dddMagicDecayRule"
+      },
+      {
+        "kind": "bool",
+        "name": "dddGuidePriceDoubled"
+      },
+      {
+        "kind": "bool",
+        "name": "dddForewordDoctrine"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the negative quasi-planes child closes",
+      "from": "  - [ ] The Negative Quasi-Planes (pp. 57-59) - ash, dust, salt, vacuum: survival, movement, encounters, combat, magic, features",
+      "to": "  - [x] The Negative Quasi-Planes (pp. 57-59) - ash, dust, salt, vacuum: survival, movement, encounters, combat, magic, features - R575: the increasing-absence doctrine, the per-plane survival, the black wall, the level-drain touch, the native rules, and the Foreword doctrines"
+    },
+    {
+      "note": "the negative quasi-planes encounter frequency closes, AMENDED against the source",
+      "from": "  - [ ] The negative quasi-planes encounter frequency (p. 58) - the 1-in-20 every 12 hours",
+      "to": "  - [x] The negative quasi-planes encounter frequency (p. 58) - the 1-in-20 every 12 hours - R575: AMENDED against the source - 1 in 10 per 12 hours (the 1-20/21-00 phenomenon/creature split, no elemental pockets)"
+    },
+    {
+      "note": "the Foreword closes",
+      "from": "- [ ] **Foreword** (p. 3) - the Fibber McGee closet frame, the what-has-been-written-is-true doctrine, the sense-of-wonder caveat, and the made-it-up admission",
+      "to": "- [x] **Foreword** (p. 3) - the Fibber McGee closet frame, the what-has-been-written-is-true doctrine, the sense-of-wonder caveat, and the made-it-up admission - R575: the dddForewordDoctrine pin"
+    }
+  ],
+  "gap_census": {
+    "closed": 42,
+    "open": 48
+  },
+  "caller_files": [],
+  "inline_count": 16
+}

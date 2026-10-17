@@ -9740,6 +9740,32 @@ when both halves land.
   petrification rule (the 80/20 split, the
   99% crumble); then the negative quasi-group
   closes the inner half.
+- R574 LANDED 2026-10-17: commit 59139ceb2e2d7248c982
+  d46b9e8016130cebd1dc (census 497 -> 498,
+  pushed 38d8c24..59139ce), THE MotP POSITIVE
+  QUASI-PLANES, printed pp. 55-57, the four in
+  one round: Lightning, Radiance, Minerals and
+  Steam - the agitated-matter doctrine with the
+  tidal Positive borders, the per-plane
+  survival (the 5/10/20% per-round strikes at
+  1d8-of-d10s, the thunder deafness with the
+  wax-plug fix, the Radiance blind save, the
+  1d4-plus-AC Minerals movement damage, the
+  muggy Steam slow), the 1-in-10 encounter
+  check, the wall of brilliance at 3d6 per
+  round, the pocket conversion, the native
+  immunities, the doubled guide prices, the
+  tower ring, the gem economy with the 1-in-100
+  survival, and the fossilization (the 80/20
+  split, the 99% crumble). 9 consts + 5 bools,
+  prefix ddc, header rules/motpquasipos.h.
+  THREE flips: gap census 36/54 -> 39/51. Spec
+  12,801 bytes, md5 c43582f4e09062cc7a28d72877b
+  6eb02 matched exactly first try, 14 inlines.
+  NEXT - R575: the Negative Quasi-Planes (pp.
+  57-59) - Vacuum, Ash, Dust, Salt in one
+  round, the increasing-absence doctrine; the
+  inner half closes, then the Astral chapter.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
