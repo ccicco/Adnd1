@@ -9122,6 +9122,67 @@ when both halves land.
   controlling henchmen and NPCs), then the pp.
   99-113 Campaign Considerations child flip (zero
   pins, the gap report IN the git add).
+- R555 LANDED 2026-10-17: commit ebf6dcbdd52165ccc6a
+  ca88ba76cf1319e1e7630 (census 478 -> 479,
+  pushed 2d85974..ebf6dcb), THE DSG HELP FROM THE
+  PLAYERS, printed p. 113 - the chapter's final
+  content round, ending at the MAPPING YOUR
+  SETTINGS head: the overburdened-DM doctrine
+  (the essential mystery of concealed rolls and
+  tracked statistics; the frustrated DM and
+  bored players; the tasks by desires, maturity,
+  and game type; the more-allowed rule - no DM
+  ever bored for lack of things to do; the
+  supervision spectrum - tournaments demanding
+  more, mature trustworthy PCs taking on
+  responsibilities), Rolling Up Player
+  Characters (the fun with the cooperative party
+  needing little DM involvement; the supervised
+  dice rolls and the understood procedure; the
+  time gained for setting details; the novices
+  briefed and taught by the other players),
+  Providing Ideas for Adventures (the think-
+  ahead tactic; the category ask between
+  adventures - the players suggesting the type,
+  the DM the details; the drow kingdom example -
+  the long underground expedition, the route to
+  the vast realms and wealth, the clues to the
+  dungeon entrance and the tortuous maze; the
+  advance ask aligning the story; the live
+  feedback adjusting to expectations), Character
+  Class Responsibilities (the obligations from
+  rules or campaign considerations; the cleric's
+  treasure donation and the thief's guild dues;
+  the player bookkeeping with the DM freed; the
+  guildmaster or high cleric investigation made
+  an interesting encounter; the spell components -
+  the deducted money, the noted gains, the
+  adjudicated purchases, the druid's quest for
+  greater mistletoe as a short adventure), and
+  Controlling Henchmen, Hirelings, and other
+  NPCs (the player control unless the NPCs are
+  taken advantage of; the takeover technique for
+  information and protection; the detailed
+  personas - the selfish whiny henchman
+  portrayed as such; the tracked locations -
+  Olaf of the Black Tooth at the Shaggy Mammoth
+  Inn remembered by the players; the player-
+  stocked campaign - the assumed blacksmith, the
+  probability by community size and
+  availability). 24 bools, prefix dch, header
+  rules/dsgcamp6.h, spec 19,562 bytes, md5
+  97f2392b1a2706da56f0a3ee896e881a matched
+  exactly first try, 24 inlines; djvu lines
+  14726-14879 with the Capture pdf 113-114
+  cross-read (clean - the section sits entirely
+  on p. 113, the mapping head opening p. 114).
+  A ZERO-FLIP ROUND: gap census stays 140/15.
+  No authoring catches. NEXT - R556: the pp.
+  99-113 Campaign Considerations child flip (zero
+  pins, the gap report IN the git add), then the
+  mapping chapter pp. 114-127 (orthographic vs.
+  perspective mapping, the grids, symbols and
+  map keys).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

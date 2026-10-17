@@ -257,6 +257,7 @@
 #include "rules/dsgcamp4.h"  // R553: the DSG story elements tail pins
 #include "rules/dsgcamp5.h"  // R554: the DSG techniques of story and campaign design pins
 #include "rules/dsgcamp6.h"  // R555: the DSG help from the players pins
+#include "rules/dsgcamp7.h"  // R556: the DSG campaign considerations closure
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -73719,6 +73720,25 @@ int main() {
         )
             ++bad;
         printf("R555 DSG help from the players audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R556 DSG campaign closed audit ----
+    // The second FLIP-ONLY round: zero consts, zero bools, zero tables - the
+    // census advances by the audit block alone. The pp. 99-113 Campaign
+    // Considerations child closes against work already landed and verified:
+    // R550 the campaign opener (rules/dsgcamp.h), R551 the worlds of
+    // adventure (rules/dsgcamp2.h), R552 the plot and counterplot
+    // (rules/dsgcamp3.h), R553 the story elements tail (rules/dsgcamp4.h),
+    // R554 the techniques of story and campaign design (rules/dsgcamp5.h) and
+    // R555 the help from the players (rules/dsgcamp6.h) - the whole chapter
+    // from the campaign frame through the storytelling doctrine, the story
+    // structure, the villains and foreshadowing, mystery, challenge and
+    // reward, the linear-open-matrix design trio, the master storyteller's
+    // pace and voice, and the delegation to the players.
+    {
+        using namespace rules;
+        int bad = 0;
+        printf("R556 DSG campaign closed audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----
