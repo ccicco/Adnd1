@@ -8389,6 +8389,64 @@ when both halves land.
   ceiling, the once-a-decade invasions - likely
   paired with Area 21 the Elemental Vortex of Fire
   (p. 92); both reads already fetched this round.
+- R543 LANDED 2026-10-17: commit 2765c345f27802ab0e9
+  0e69b43fb21acdaf8107 (census 466 -> 467, pushed
+  6a0c3d9..2765c34), THE DSG DEEPEARTH AREAS 20-21,
+  printed pp. 91-92 (pdf 92-93) - Area 20 the Lava
+  Caves (the balcony cavern overlooking the vast
+  amphitheatre of molten rock, its weekly eruptions,
+  the cataclysm-split cave half fallen away and baked
+  brittle; the 400-ft climbable cliff with crags and
+  support columns, the 1,000-ft ceiling losing chunks
+  daily and venting smoke, the ocean-like swells and
+  splashing; the fire giant outpost of ~20 with a
+  dozen hell hounds, one of each always at the tunnel;
+  the rock-island lairs of fire giants and lava
+  children at 50% per island; the porpoise-like
+  magmen, the ceiling-dwelling fire bats, the savage
+  magma para-elementals; the once-a-decade elemental
+  invasions repelled by the joined giants and lava
+  children; the granite lava boats 80-240 ft at 20%
+  width, twin-masted over 160 ft, an oar pair per 40
+  ft; the fire giant king's island castle with its
+  120-ft harbor mouth and dozen-per-flank towers), and
+  Area 21 the Elemental Vortex of Fire (the waterless
+  wind-sucked region, torch out 50%; the 1,000x300-ft
+  rotted cavern; the perfectly circular 100-ft
+  flame-ringed hole, hypnotic and bottomless, a
+  Wisdom Check after one round compelling the failed
+  jump; the vortex gate; the 1d6 guarding fire
+  elementals and the 50% chance of 1d6 efreeti/
+  salamanders/azer/fire bats/elemental grue
+  reinforcing on the first and every other round; the
+  hot dry sulphurous air; the 8d8-per-round passage
+  falling as if feather-fallen, escapable by
+  levitation or fly within five rounds, ten rounds to
+  the volcanic landscape; and the two Prime
+  connections - 50/50 Area 21 or the lava-sea
+  whirlpool drawing boats within 500 ft). A CLEAN-
+  READ ROUND: both machine reads agree on every
+  number (djvu ~lines 11688-11932, capture idx 210
+  with the p. 92 tail in idx 212; the djvu '848' and
+  '5096' settled by the capture as 8d8 and 50%, the
+  capture 'ld6' and 'ajarge' settled by the djvu). 63
+  inlines (31 consts + 32 bools), header
+  rules/dsgarea10.h, prefix dnal, no table. DELIVERY
+  clean md5-exact on the first try: authored md5
+  7032f70119bc39639f21e53aa2fd03b5 matched exactly
+  (spec 28,396 bytes); engine applied 4 then 0/4,
+  preflight GREEN with AUDIT CENSUS: 467. A ZERO-FLIP
+  ROUND: gap census stays 139/16, the pp. 75-98
+  Deepearth child open. NEXT - R544: Areas 22-23
+  (printed pp. 92-93, pdf 93-94, djvu ~line 11935+) -
+  Area 22 the Lands of the Deep Gnomes (the three-
+  level 20x10-ft caverns, the 60-ft clan chambers,
+  the 200-ft meeting hall, the ~5,000 svirfneblin with
+  100+ rothe per clan, the smelter and the 550-
+  Strength vault door on 500-sp silver bars) and Area
+  23 the Lower Grand Canyon (the 1,200-ft descent, the
+  1,000-ft width, the 20-ft bridge over the stone-
+  arch arena); both reads already fetched this round.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
