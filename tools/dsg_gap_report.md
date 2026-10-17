@@ -122,7 +122,7 @@ re-grained then, before any DM pin round.
   - [x] Mining: excavating a mine tunnel (p. 49) - Table 27 (the rates grid) - R520: the DMG p. 106 eight-race rates grid (75/50/25 through 90/70/35, 150/100/50, 250/150/75, 300/200/100, 500/350/175 cubic feet per miner per eight hours) and the per-race 10-ft-tunnel maxima 16/12/8/6/4
   - [x] Mining: mineral vein direction and path alterations (p. 49) - Tables 28-29 - R520: the 1d6 x 10-ft depth, the 1d4 direction faces (T28), the 20-ft sections with the secret 1d8 alterations (T29 - the D6-header djvu garble settled as d8 by the appendix reprint), the must-follow rule, the both-ends stop over the duration rules, the gorge pickup
   - [x] Mining: shoring a tunnel (p. 50) - the support rules - R520: the two side braces plus a ceiling brace per 10-ft section, the 30 ft of 1-ft-diameter bracing in the 10x10 tunnel, the four man-hours per set, the carpenter/stonemason/miner proficiencies, and the 18/50-strength solo-moving threshold
-  - [ ] Mining: products of a mine (p. 50) - Table 30 (the metals/gems grids, Tables 31-32)
+  - [x] Mining: products of a mine (p. 50) - Table 30 (the metals/gems grids, Tables 31-32) - R521: the 1d100 products roll (T30 - copper 01-30 through mithril 99 and gemstones 00), the mithril possibility (the elven-chain material, only deep in most solid bedrock, else reroll T30) with the 1d10 mithril check (T31 - silver/gold/platinum highest quality and mithril 10), and the gemstone grid (T32 - sixteen stones plus the unlimited 97+ extra-roll recursion, the Jade-x2 duplicate doubling, and the 01-08 bloodstone row settled by the physical book read after all three machine reads garbled it)
   - [ ] Mining: quality of mining products (pp. 50-51) - Tables 33-34 (the ore/gemstone quality grids)
   - [ ] Mining: calculating the value of a placer mine (p. 53)
   - [ ] Mining: smelting (p. 53)
@@ -192,9 +192,9 @@ re-grained then, before any DM pin round.
 - [x] Table 27: Mining Rates (p. 49) - R520: the 8x3 grid - gnoll/halfling/human 75/50/25, gnome/kobold 80/60/30, goblin/orc 85/65/30, dwarf/hobgoblin 90/70/35, ogre 150/100/50, hill giant 250/150/75, fire/frost giant 300/200/100, stone giant 500/350/175 cubic feet per miner per eight hours (reprint of DMG p. 106)
 - [x] Table 28: Mineral Vein Direction (p. 49) - R520: the d4 faces - 1 north-south, 2 east-west, 3 northeast-southwest, 4 northwest-southeast
 - [x] Table 29: Vein Path Alterations (p. 49) - R520: the secret d8 bands - 1 steep descent, 2 shallow descent, 3 curves right (10-60 degrees), 4 curves left (10-60 degrees), 5-6 continues straight, 7 shallow ascent, 8 steep ascent
-- [ ] Table 30: Mining Products (p. 50)
-- [ ] Table 31: Metals (p. 50)
-- [ ] Table 32: Gemstones (p. 50)
+- [x] Table 30: Mining Products (p. 50) - R521: the d100 bands - 01-30 copper, 31-40 tin, 41-66 lead, 67-84 iron, 85-92 silver, 93-97 gold, 98 platinum, 99 mithril (the Table 31 check in deep solid bedrock, else reroll), 00 gemstones (the Table 32 roll)
+- [x] Table 31: Metals (p. 50) - R521: the mithril-check d10 bands - 1-5 silver (highest quality), 6-8 gold (highest quality), 9 platinum (highest quality), 10 mithril
+- [x] Table 32: Gemstones (p. 50) - R521: the d100 bands - 01-08 bloodstone (physical read), 09-18 onyx, 19-24 turquoise, 25-30 agate, 31-36 aquamarine, 37-42 garnet, 43-48 jade, 49-54 alexandrite, 55-60 amethyst, 61-66 topaz, 67-72 jet, 73-77 opal, 78-82 ruby, 83-87 sapphire, 88-92 diamond, 93-96 emerald, 97-99 roll twice, 00 roll three times (97+ recurses without limit)
 - [ ] Table 33: Ore Quality (p. 50)
 - [ ] Table 34: Gemstone Quality (p. 51)
 - [ ] Table 35: Equipment Cost and Weight (p. 56)

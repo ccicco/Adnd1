@@ -7049,6 +7049,42 @@ when both halves land.
   the two side braces + ceiling brace, 30 ft of 1-ft-diameter
   bracing, 4 man-hours per set); djvu from line ~6465,
   Capture idx 67 holds T27-T29 clean.
+- R520 LANDED 2026-10-17: commit e0581a7 (census 443 -> 444,
+  pushed c4cd8f5..e0581a7), THE DSG MINING EXCAVATION VEINS
+  AND SHORING, printed pp. 49-50 (pdf 50-51) - the tunnel
+  excavation rules: Table 27 as the 8x3 rates grid (the
+  DMG p. 106 reprint - gnoll/halfling/human 75/50/25,
+  gnome/kobold 80/60/30, goblin/orc 85/65/30,
+  dwarf/hobgoblin 90/70/35, ogre 150/100/50, hill giant
+  250/150/75, fire/frost giant 300/200/100, stone giant
+  500/350/175 cubic feet per miner per eight hours) with the
+  per-race 10-ft-tunnel maxima 16/12/8/6/4 ft; the mineral
+  vein rules - depth 1d6 x 10 ft, Table 28 the 1d4 direction
+  faces, Table 29 the secret 1d8 path alterations (the
+  djvu "D6 Roll" header garble settled as d8 by the appendix
+  reprint; steep descent, shallow descent, curves right
+  10-60 degrees, curves left 10-60 degrees, 5-6 continues
+  straight as one band, shallow ascent, steep ascent) with
+  20-ft sections, the must-follow vein rule, the both-ends
+  stop over the duration rules, and the gorge pickup; and
+  the shoring rules - two side braces plus one ceiling
+  brace per 10-ft section, 30 ft of 1-ft-diameter bracing
+  in the 10x10 tunnel, four man-hours per set, the
+  carpenter/stonemason/miner proficiencies, and the
+  18/50-strength solo-moving threshold. Pinned as
+  rules/dsgmine2.h (prefix dnf, verified free; 43 inlines -
+  21 consts, 15 bools, 7 table cols; Tables 27/28/29). Spec
+  26,060 bytes, authored md5 e1b54aa9 (user-side identical -
+  no ./bn rewrite this round). Engine applied 10 then
+  0/10. Gap 99/56 -> 105/50 (6 flips: children 122/123/124
+  and manifest Tables 27/28/29). NOTE: the spec's
+  gap_census was first mis-set as 102/53 (closed before
+  flips) - the engine gate caught it on the first
+  staging run; corrected to 105/50 (post-flip), gen_r520.py
+  synced. NEXT - R521: products of a mine (p. 50, pdf 51) -
+  Table 30 plus the mithril/gemstone Tables 31-32 grids;
+  djvu from ~line 6588, Capture idx 67-68; gap children
+  125-126, manifest Tables 30/31/32.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

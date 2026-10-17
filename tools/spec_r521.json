@@ -1,0 +1,474 @@
+{
+  "round": 521,
+  "title": "the DSG mining products of a mine",
+  "census_before": 444,
+  "prefix": "dnpr",
+  "header_file": "rules/dsgmine3.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "inline_count": 23,
+  "banner": {
+    "title": "The DSG MINING PRODUCTS OF A MINE, R521: printed p. 50 (pdf 51) - the products rules: when a miner successfully locates minerals the player rolls 1d100 on Table 30 Mining Products (the nine bands - copper 01-30, tin 31-40, lead 41-66, iron 67-84, silver 85-92, gold 93-97, platinum 98, mithril 99, gemstones 00), the mithril possibility (the material needed for elven chain mail, a mithril mine only deep under the earth in the most solid of bedrock - if the locale qualifies the player rolls 1d10 on Table 31 Mithril Check, otherwise reroll on Table 30; Table 31 gives silver, gold and platinum at highest quality on 1-5/6-8/9 and mithril on 10), and the gemstone determination on Table 32 (sixteen stone types in d100 bands from bloodstone 01-08 and onyx 09-18 through emerald 93-96, with 97-99 rolling twice and 00 rolling three times - the 97-or-greater result grants its additional rolls immediately and any additional 97+ grants them again with no limit, a duplicated substance is noted as Jade x2 and yields twice the usual amount, and one quality level applies to all stones of a single type in a mine)",
+    "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~6588-6650) with the pdf Acrobat-Capture layer as the second read (idx 119-121 = printed pp. 49-51 window) and the compiled-tables appendix reprint as the third read. THE BLOODSTONE READ: the Table 32 01-08 row is the garble of the round - the djvu drops the row entirely (the table jumps from the header to 09-18 onyx), the Capture layer renders it as a \"-1/^^\" fragment, and the appendix reprint drops it too; all three machine reads fail the row, and it was settled as BLOODSTONE (01-08) by Curtiss reading the physical printed page 50 - the physical read outranks the scan. Everything else multi-confirms: the Table 30 nine bands (djvu clean, Capture corroborating iron 67-84 through gold 93-97, the appendix reprint corroborating the full ladder), the Table 31 four bands (djvu, Capture and appendix all agree on 1-5/6-8/9/10 with the highest-quality silver/gold/platinum), and the Table 32 bands from 09-18 onyx through 00 (djvu and Capture agree; the appendix adds the 55-60 amethyst row the chapter djvu dropped). The 1d10 mithril check pins as dice + sides consts per the R508 convention (the djvu \"1410\" and Capture \"ldlO\" garbles both read as 1d10). The 00 band pins as roll 100. The Tables 33-34 quality grids start the NEXT round per the content-density rule.",
+    "sentinel": "Three tables pin: Table 30 as a 9x2 d100 band grid (the 00 gemstones band pinned as roll 100), Table 31 as a 4x2 d10 band grid, and Table 32 as an 18x2 d100 band grid (sixteen stone types plus the roll-twice and roll-three-times bands, the 00 band as 100). The 1d100 products roll and the 1d10 mithril check pin as dice + sides consts per the R508 convention. The 97-or-greater extra-roll threshold pins as a const; the unlimited recursion, the duplicate doubling and the one-quality-per-type rules pin as prose bools. The 01-08 bloodstone row pins from the physical book read (the standing physical-outranks-scan lesson). The R518/R520 seams (DMG 106 rates, DSG 53 duration) are noted; nothing auto-credits."
+  },
+  "include_after": "#include \"rules/dsgmine2.h\"  // R520: the DSG mining excavation veins and shoring pins",
+  "include_comment": "the DSG mining products pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "audit_comment": "The DSG mining products pins the 1d100 products roll (the Table 30 nine bands from copper 01-30 through mithril 99 and gemstones 00, the 00 band pinned as 100), the mithril possibility (the elven-chain-mail material, a mine only deep under the earth in the most solid of bedrock, the 1d10 Table 31 check with the Table 30 reroll otherwise, silver/gold/platinum at highest quality on 1-5/6-8/9 and mithril on 10), and the gemstone determination (the Table 32 eighteen bands - bloodstone 01-08 from the physical book read, onyx through emerald, 97-99 twice, 00 three times, the 97+ immediate recursion without limit, the Jade-x2 duplicate doubling, and one quality level per stone type).",
+  "audit_label": "R521 DSG mining products audit",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R520 LANDED 2026-10-17: commit e0581a7 (census 443 -> 444,",
+  "prev_record": [
+    "- R520 LANDED 2026-10-17: commit e0581a7 (census 443 -> 444,",
+    "  pushed c4cd8f5..e0581a7), THE DSG MINING EXCAVATION VEINS",
+    "  AND SHORING, printed pp. 49-50 (pdf 50-51) - the tunnel",
+    "  excavation rules: Table 27 as the 8x3 rates grid (the",
+    "  DMG p. 106 reprint - gnoll/halfling/human 75/50/25,",
+    "  gnome/kobold 80/60/30, goblin/orc 85/65/30,",
+    "  dwarf/hobgoblin 90/70/35, ogre 150/100/50, hill giant",
+    "  250/150/75, fire/frost giant 300/200/100, stone giant",
+    "  500/350/175 cubic feet per miner per eight hours) with the",
+    "  per-race 10-ft-tunnel maxima 16/12/8/6/4 ft; the mineral",
+    "  vein rules - depth 1d6 x 10 ft, Table 28 the 1d4 direction",
+    "  faces, Table 29 the secret 1d8 path alterations (the",
+    "  djvu \"D6 Roll\" header garble settled as d8 by the appendix",
+    "  reprint; steep descent, shallow descent, curves right",
+    "  10-60 degrees, curves left 10-60 degrees, 5-6 continues",
+    "  straight as one band, shallow ascent, steep ascent) with",
+    "  20-ft sections, the must-follow vein rule, the both-ends",
+    "  stop over the duration rules, and the gorge pickup; and",
+    "  the shoring rules - two side braces plus one ceiling",
+    "  brace per 10-ft section, 30 ft of 1-ft-diameter bracing",
+    "  in the 10x10 tunnel, four man-hours per set, the",
+    "  carpenter/stonemason/miner proficiencies, and the",
+    "  18/50-strength solo-moving threshold. Pinned as",
+    "  rules/dsgmine2.h (prefix dnf, verified free; 43 inlines -",
+    "  21 consts, 15 bools, 7 table cols; Tables 27/28/29). Spec",
+    "  26,060 bytes, authored md5 e1b54aa9 (user-side identical -",
+    "  no ./bn rewrite this round). Engine applied 10 then",
+    "  0/10. Gap 99/56 -> 105/50 (6 flips: children 122/123/124",
+    "  and manifest Tables 27/28/29). NOTE: the spec's",
+    "  gap_census was first mis-set as 102/53 (closed before",
+    "  flips) - the engine gate caught it on the first",
+    "  staging run; corrected to 105/50 (post-flip), gen_r520.py",
+    "  synced. NEXT - R521: products of a mine (p. 50, pdf 51) -",
+    "  Table 30 plus the mithril/gemstone Tables 31-32 grids;",
+    "  djvu from ~line 6588, Capture idx 67-68; gap children",
+    "  125-126, manifest Tables 30/31/32."
+  ],
+  "gap_census": {
+    "closed": 109,
+    "open": 46
+  },
+  "gap_flips": [
+    {
+      "from": "  - [ ] Mining: products of a mine (p. 50) - Table 30 (the metals/gems grids, Tables 31-32)",
+      "to": "  - [x] Mining: products of a mine (p. 50) - Table 30 (the metals/gems grids, Tables 31-32) - R521: the 1d100 products roll (T30 - copper 01-30 through mithril 99 and gemstones 00), the mithril possibility (the elven-chain material, only deep in most solid bedrock, else reroll T30) with the 1d10 mithril check (T31 - silver/gold/platinum highest quality and mithril 10), and the gemstone grid (T32 - sixteen stones plus the unlimited 97+ extra-roll recursion, the Jade-x2 duplicate doubling, and the 01-08 bloodstone row settled by the physical book read after all three machine reads garbled it)",
+      "note": "the Products child line"
+    },
+    {
+      "from": "- [ ] Table 30: Mining Products (p. 50)",
+      "to": "- [x] Table 30: Mining Products (p. 50) - R521: the d100 bands - 01-30 copper, 31-40 tin, 41-66 lead, 67-84 iron, 85-92 silver, 93-97 gold, 98 platinum, 99 mithril (the Table 31 check in deep solid bedrock, else reroll), 00 gemstones (the Table 32 roll)",
+      "note": "the Table 30 manifest line"
+    },
+    {
+      "from": "- [ ] Table 31: Metals (p. 50)",
+      "to": "- [x] Table 31: Metals (p. 50) - R521: the mithril-check d10 bands - 1-5 silver (highest quality), 6-8 gold (highest quality), 9 platinum (highest quality), 10 mithril",
+      "note": "the Table 31 manifest line"
+    },
+    {
+      "from": "- [ ] Table 32: Gemstones (p. 50)",
+      "to": "- [x] Table 32: Gemstones (p. 50) - R521: the d100 bands - 01-08 bloodstone (physical read), 09-18 onyx, 19-24 turquoise, 25-30 agate, 31-36 aquamarine, 37-42 garnet, 43-48 jade, 49-54 alexandrite, 55-60 amethyst, 61-66 topaz, 67-72 jet, 73-77 opal, 78-82 ruby, 83-87 sapphire, 88-92 diamond, 93-96 emerald, 97-99 roll twice, 00 roll three times (97+ recurses without limit)",
+      "note": "the Table 32 manifest line"
+    }
+  ],
+  "consts": [
+    {
+      "name": "dnprT30RowCount",
+      "value": 9,
+      "comment": "the Table 30 mining products grid carries nine d100 bands (the 00 gemstones band pinned as roll 100)."
+    },
+    {
+      "name": "dnprT30Dice",
+      "value": 1,
+      "comment": "the products roll is one die."
+    },
+    {
+      "name": "dnprT30Sides",
+      "value": 100,
+      "comment": "the products roll is 1d100 when a miner successfully locates minerals."
+    },
+    {
+      "name": "dnprMithrilCheckDice",
+      "value": 1,
+      "comment": "the mithril check roll is one die."
+    },
+    {
+      "name": "dnprMithrilCheckSides",
+      "value": 10,
+      "comment": "the mithril check roll is 1d10 compared to Table 31 (the djvu \"1410\" and Capture \"ldlO\" garbles both read as 1d10)."
+    },
+    {
+      "name": "dnprT31RowCount",
+      "value": 4,
+      "comment": "the Table 31 mithril check grid carries the four d10 bands."
+    },
+    {
+      "name": "dnprT32RowCount",
+      "value": 18,
+      "comment": "the Table 32 gemstones grid carries eighteen d100 bands (sixteen stone types plus the roll-twice and roll-three-times bands)."
+    },
+    {
+      "name": "dnprT32ExtraRollThreshold",
+      "value": 97,
+      "comment": "a roll of 97 or greater on Table 32 immediately grants the additional rolls indicated."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dnprRollT30OnLocatingMinerals",
+      "value": true,
+      "comment": "when a miner successfully locates minerals, the player rolls 1d100 and finds the result on Table 30: Mining Products."
+    },
+    {
+      "name": "dnprMithrilForElvenChainMail",
+      "value": true,
+      "comment": "the Table 30 mithril entry is the possibility of mithril, the material needed to create elven chain mail."
+    },
+    {
+      "name": "dnprMithrilOnlyDeepSolidBedrock",
+      "value": true,
+      "comment": "a mithril mine can only exist deep under the earth in the most solid of bedrock."
+    },
+    {
+      "name": "dnprMithrilElseRerollT30",
+      "value": true,
+      "comment": "if the locale of the mine is in such an area, the player rolls 1d10 against Table 31: Mithril Check; otherwise, reroll on the Mining Products table."
+    },
+    {
+      "name": "dnprT31MetalsHighestQuality",
+      "value": true,
+      "comment": "the Table 31 silver, gold and platinum results are the highest quality of their metal."
+    },
+    {
+      "name": "dnprT32ExtraRollsImmediate",
+      "value": true,
+      "comment": "if a 97 or greater is rolled on Table 32, the player immediately makes the additional rolls indicated."
+    },
+    {
+      "name": "dnprT32ExtraRollsNoLimit",
+      "value": true,
+      "comment": "any additional roll that again yields 97 or better grants its additional rolls - there is no limit to the number of rolls possible."
+    },
+    {
+      "name": "dnprT32DuplicateDoublesYield",
+      "value": true,
+      "comment": "a result yielding the same substance twice is noted (e.g., Jade x2) - the mine yields twice the usual amount of that mineral."
+    },
+    {
+      "name": "dnprT32OneQualityPerType",
+      "value": true,
+      "comment": "the same level of quality applies to all of a single type of stone found in a mine."
+    }
+  ],
+  "chains": [],
+  "tables": [
+    {
+      "name": "Table 30: MINING PRODUCTS",
+      "tag": "30",
+      "count": "dnprT30RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnprT30Lo",
+        "dnprT30Hi"
+      ],
+      "col_comments": [
+        "the product band low roll: 0 copper 01-30, 1 tin 31-40, 2 lead 41-66, 3 iron 67-84, 4 silver 85-92, 5 gold 93-97, 6 platinum 98, 7 mithril 99 (the elven-chain material, check Table 31 in deep solid bedrock, else reroll here), 8 gemstones 00 (roll on Table 32).",
+        "the product band high roll: 30, 40, 66, 84, 92, 97, 98, 99, 100 (the 00 band pinned as 100)."
+      ],
+      "audit_comment": "the Table 30 mining products grid, the 1d100 products roll",
+      "data": [
+        [
+          1,
+          30
+        ],
+        [
+          31,
+          40
+        ],
+        [
+          41,
+          66
+        ],
+        [
+          67,
+          84
+        ],
+        [
+          85,
+          92
+        ],
+        [
+          93,
+          97
+        ],
+        [
+          98,
+          98
+        ],
+        [
+          99,
+          99
+        ],
+        [
+          100,
+          100
+        ]
+      ]
+    },
+    {
+      "name": "Table 31: MITHRIL CHECK",
+      "tag": "31",
+      "count": "dnprT31RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnprT31Lo",
+        "dnprT31Hi"
+      ],
+      "col_comments": [
+        "the mithril check band low roll: 0 silver (highest quality) 1-5, 1 gold (highest quality) 6-8, 2 platinum (highest quality) 9, 3 mithril 10.",
+        "the mithril check band high roll: 5, 8, 9, 10."
+      ],
+      "audit_comment": "the Table 31 mithril check grid, the 1d10 deep-bedrock locale check",
+      "data": [
+        [
+          1,
+          5
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ]
+      ]
+    },
+    {
+      "name": "Table 32: GEMSTONES",
+      "tag": "32",
+      "count": "dnprT32RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnprT32Lo",
+        "dnprT32Hi"
+      ],
+      "col_comments": [
+        "the gemstone band low roll: 0 bloodstone 01-08, 1 onyx 09-18, 2 turquoise 19-24, 3 agate 25-30, 4 aquamarine 31-36, 5 garnet 37-42, 6 jade 43-48, 7 alexandrite 49-54, 8 amethyst 55-60, 9 topaz 61-66, 10 jet 67-72, 11 opal 73-77, 12 ruby 78-82, 13 sapphire 83-87, 14 diamond 88-92, 15 emerald 93-96, 16 roll twice 97-99, 17 roll three times 00.",
+        "the gemstone band high roll: 8, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 77, 82, 87, 92, 96, 99, 100 (the 00 band pinned as 100)."
+      ],
+      "audit_comment": "the Table 32 gemstones grid, the products-roll gemstone lookup",
+      "data": [
+        [
+          1,
+          8
+        ],
+        [
+          9,
+          18
+        ],
+        [
+          19,
+          24
+        ],
+        [
+          25,
+          30
+        ],
+        [
+          31,
+          36
+        ],
+        [
+          37,
+          42
+        ],
+        [
+          43,
+          48
+        ],
+        [
+          49,
+          54
+        ],
+        [
+          55,
+          60
+        ],
+        [
+          61,
+          66
+        ],
+        [
+          67,
+          72
+        ],
+        [
+          73,
+          77
+        ],
+        [
+          78,
+          82
+        ],
+        [
+          83,
+          87
+        ],
+        [
+          88,
+          92
+        ],
+        [
+          93,
+          96
+        ],
+        [
+          97,
+          99
+        ],
+        [
+          100,
+          100
+        ]
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "expr": "m['dnprT30Dice']() != 1 or m['dnprT30Sides']() != 100 or m['dnprMithrilCheckDice']() != 1 or m['dnprMithrilCheckSides']() != 10 or m['dnprT32ExtraRollThreshold']() != 97",
+      "note": "the products rolls: 1d100 on Table 30 when minerals are located, the 1d10 mithril check, and the 97-or-greater gemstone threshold."
+    },
+    {
+      "expr": "m['dnprT30RowCount']() != 9 or m['dnprT31RowCount']() != 4 or m['dnprT32RowCount']() != 18",
+      "note": "the grid row counts: nine product bands, four mithril-check bands, eighteen gemstone bands."
+    },
+    {
+      "expr": "m['dnprRollT30OnLocatingMinerals']() != 1 or m['dnprMithrilOnlyDeepSolidBedrock']() != 1 or m['dnprMithrilElseRerollT30']() != 1 or m['dnprT32ExtraRollsNoLimit']() != 1 or m['dnprT32DuplicateDoublesYield']() != 1",
+      "note": "the products prose: the roll-on-locate rule, the deep-solid-bedrock mithril locale with the Table 30 reroll, the unlimited 97+ recursion, and the Jade-x2 duplicate doubling."
+    }
+  ],
+  "table_checks": [
+    {
+      "expr": "m['dnprT30Lo'](0) != 1 or m['dnprT30Hi'](0) != 30 or m['dnprT30Lo'](5) != 93 or m['dnprT30Hi'](5) != 97 or m['dnprT30Lo'](8) != 100 or m['dnprT30Hi'](8) != 100",
+      "note": "Table 30 anchor rows: the 01-30 copper, the 93-97 gold, and the 00 gemstones band pinned as 100."
+    },
+    {
+      "expr": "m['dnprT31Lo'](0) != 1 or m['dnprT31Hi'](0) != 5 or m['dnprT31Lo'](3) != 10 or m['dnprT31Hi'](3) != 10",
+      "note": "Table 31 anchor rows: the 1-5 silver (highest quality) and the 10 mithril."
+    },
+    {
+      "expr": "m['dnprT32Lo'](0) != 1 or m['dnprT32Hi'](0) != 8 or m['dnprT32Lo'](15) != 93 or m['dnprT32Hi'](15) != 96 or m['dnprT32Lo'](16) != 97 or m['dnprT32Hi'](16) != 99 or m['dnprT32Lo'](17) != 100 or m['dnprT32Hi'](17) != 100",
+      "note": "Table 32 anchor rows: the 01-08 bloodstone (the physical-book read), the 93-96 emerald, and the 97-99/00 extra-roll bands."
+    }
+  ],
+  "header_sections": {
+    "the Table 30 mining products": [
+      {
+        "kind": "bool",
+        "name": "dnprRollT30OnLocatingMinerals"
+      },
+      {
+        "kind": "const",
+        "name": "dnprT30Dice"
+      },
+      {
+        "kind": "const",
+        "name": "dnprT30Sides"
+      },
+      {
+        "kind": "const",
+        "name": "dnprT30RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 30: MINING PRODUCTS"
+      }
+    ],
+    "the mithril check": [
+      {
+        "kind": "bool",
+        "name": "dnprMithrilForElvenChainMail"
+      },
+      {
+        "kind": "bool",
+        "name": "dnprMithrilOnlyDeepSolidBedrock"
+      },
+      {
+        "kind": "bool",
+        "name": "dnprMithrilElseRerollT30"
+      },
+      {
+        "kind": "bool",
+        "name": "dnprT31MetalsHighestQuality"
+      },
+      {
+        "kind": "const",
+        "name": "dnprMithrilCheckDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnprMithrilCheckSides"
+      },
+      {
+        "kind": "const",
+        "name": "dnprT31RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 31: MITHRIL CHECK"
+      }
+    ],
+    "the Table 32 gemstones": [
+      {
+        "kind": "const",
+        "name": "dnprT32RowCount"
+      },
+      {
+        "kind": "const",
+        "name": "dnprT32ExtraRollThreshold"
+      },
+      {
+        "kind": "bool",
+        "name": "dnprT32ExtraRollsImmediate"
+      },
+      {
+        "kind": "bool",
+        "name": "dnprT32ExtraRollsNoLimit"
+      },
+      {
+        "kind": "bool",
+        "name": "dnprT32DuplicateDoublesYield"
+      },
+      {
+        "kind": "bool",
+        "name": "dnprT32OneQualityPerType"
+      },
+      {
+        "kind": "table",
+        "name": "Table 32: GEMSTONES"
+      }
+    ]
+  },
+  "caller_files": []
+}
