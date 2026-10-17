@@ -1,0 +1,71 @@
+CLIMBING
+                                                                               Climbing an ice wall is adangerous act that absolutely requires
+Climbing Modifiers                                                          the use of spikes. In fact, a spike must be driven into the ice wall
+   Naturally, certain aspects of a character and his possessions can        before a character can climb. This process must be repeated
+affect the success of a climb. Possible modifiers are listed here:          each round, and since it takes a round to drive a spike, the pro-
+   Armor: Characters cannot climb in any type of plate mail                 cess is doubly slow.
+armor, nor can a shield be held by a climbing character. Charac-               In addition, spikes placed in ice have a 15% chance of pulling
+ters in chain, splint, scale, or banded armor can climb, but suffer         free per character whose weight suddenly pulls against it.
+a -15% penalty to their chance for success. Characters in stud-                Ropes are discussed as climbing tools in combination with
+ded leather or padded armor suffer a -5% to their chances.                  spikes and grappling hooks, but there is one situation where rope
+Leather armor does not penalize a climber. A character can sling            alone can serve a character as an effective climbing tool. This
+a shield over his shoulder to carry it along while climbing; he can-        happens when a character wishes to climb a pole that is of too
+not receive any defensive benefit for a shield thus carried.                great adiameter for him to ascend unaided. In this case, the char-
+   Character Race: Certain character races receive modifiersto              acter can wrap the rope around the pole and pull against it as he
+their climbing chances, as follows:                                         climbs.
+                                                                               This technique can be used to climb a pole whose diameter
+Character Race                  Climbing Modifier                           equals the character’s height. Any pole wider than this should be
+Dwarf                                - 5%                                   treated as a wall.
+Gnome                                - 10%                                     Grappling Hooks are relatively heavy iron tools with at least
+Halfling                             - 5%                                   two, and usually three or four, separate hooks branching from the
+Half-orc                             + 5%                                   end. The hook is designed to be thrown, and to catch on protru-
+                                                                            sions and thus support a rope and climber.
+  Climbing Surfaces: Climbing surface modifiers apply to char-                 A character can throw a grappling hook upward a distance
+acters of all classes, including thieves. Characters receive                equal to 113 of his Strength score (rounded up) times 10. A char-
+bonuses to their chance to climb the following types of surfaces:           acter with a Strength of 15, for example, could throw the hook up
+                                                                            to a height of 50 feet. The horizontal distance that a grappling
+Climbing Surface                Climbing Modifier                           hook can be thrown equals the vertical distance, unless the char-
+Tree with Branches                   + 40%                                  acter has enough room to swing the hook in a circle several times
+Sloping Wall                           + 25%                                before the cast. In this case, if a character has a radius of 10 feet
+Pole                                   + 20%                                from his body cleared of obstacles, he can throw the hook twice
+Rope and Wall                          + 40%                                as far horizontally as he could otherwise.
+                                                                               A character can throw a grappling hook once per round. If the
+                                                                            cast is unsuccessful, it takes another l d 4 rounds to coil the rope
+Climbing Tools                                                              and prepare the hook for another throw. If a character is directly
+   Certain tools can be used to aid characters making a climb.              underneath his target, and the dice roll on the throw is 01-05, the
+Tools serve both to increase the chance of a climb’s success and            thrower is struck by the hook as it falls and suffers l d 6 of dam-
+to decrease the chance of a character getting hurt in a fall. The           age.
+disadvantage of tools is that they considerably lengthen the time              The chance of a grappling hook catching on its intended target
+needed to make a climb, and often make enough noise to attract              depends upon the target at which it is thrown. For each throw, the
+unwanted attention. This noise is the main reason that tools are            DM rolls dlOO and consults the following table:
+not commonly used by thieves in the pursuit of their usual mis-
+sions.                                                                      Table 3: GRAPPLING SUCCESS
+   Two types of tools, the grappling hook and the spike, or piton,
+can be used to aid a climb. Both must be used with a rope to have           Grapple Target        Miss        Catch and Slip        Catch
+any effect.
+   Spikes can be hammered into a wall surface and used to
+anchor a rope that subsequently protects a climbing character
+against falls. The character must have a hammer, and must                   Rocky Ledge           01-88            89-93            94-00
+spend l d 4 rounds pounding in a spike. The clanging of such                Wooden Wall           01-70            71-74            75-00
+activity can be heard up to a mile away in windless conditions.
+   The usual function of a spike is to shorten the distance that a            A catch and slip result means that the grapple seems to have
+character falls, should such an accident occur. If, for example, a          caught solidly, as far as a character pulling on the rope can tell. In
+character hammers in a spike 200 feet up the face of an under-              reality, the grapple will slip free after l d 6 rounds of supporting a
+ground cliff, and then connects a rope between himself and the              load. Characters who pull on the rope for that many rounds are
+spike, he has protected himself somewhat. If, 50 feet farther up,           able to dislodge the hook, if they take the time to check.
+he loses his grip, he will only fall 100 feet (50 feet down to the            A thrown grappling hook does not make as much noise as a
+spike, and another 50 feet to use up the slack in his rope).                hammered spike, but is not silent. A successful throw is audible
+   Increasing the protection is the fact that any character whose           for 100-400 yards in ideal conditions; an unsuccessful throw will
+fall is broken by a rope suffers only 112 the damage a fall of that         raise a clang audible 200-800 yards away.
+distance would normally inflict.
+   Whenever a spike is called upon to arrest a fall, as in the above
+example, there is a 10% chance per character supported that it              Rappelling
+will give way. For example, if two characters are roped together              Rappelling is a means of hastily descending a sheer surface by
+and relying upon a spike to arrest their fall, the spike has a 20%          means of a rope attached at the top. The character lets the rope
+chance of popping free. If the spike comes free, the characters             wind around his body and uses the friction of the rope to slow his
+fall the full distance to the ground (or twice the distance to the          descent.
+next spike). Characters can help prevent such accidents by using
+more than one spike.
+
+                                                                       16
+

@@ -1,0 +1,74 @@
+                                                                                                                                  EXCAVATION
+average-sizedcharacters; individuals of exceptional girth or slen-            Solid Barriers
+derness should have the limits modified appropriately.                          Characters excavate solid barriers at the rates listed in Table
+                                                                              27: Mining Rates (on page 49). These rates assume that the
+Table 7: MINIMUM PASSAGEWAY SIZES                                             characters are using pickaxes to aid in the excavation. If other
+                                                                              metal tools, such as shovels or swords, are substituted, the rate
+Character Race          Tunnel Width              Tunnel Height               of excavation is only 114 of the rate listed.
+
+
+                                                                              FATIGUE AND EXHAUSTION
+Gnome                        1112 ft                  314 ft                     The long periods of time requiredfor an expedition to penetrate
+Elf                          1112 ft                  314 ft                  far underground, and the large amount of equipment that the
+Halfling                      lft                     2hft                    members of such an expedition must carry along with them,
+                                                                              mean that character fatigue and exhaustion must be considered
+  These sizes assume that the character is not wearing any kind               in the context of the deep underground adventure.
+of bulky armor or backpack. Usually a character drags his pack                   Fatigue, as noted on page 69 of the DMG,is influenced by a
+behind him, thus enabling negotiation of tighter passages.                    wide variety of factors. The intensity of a character’s activity, his
+   If a character is wearing armor, the minimum size of the tunnel            personal stamina, and the conditions under which the exertion
+he can pass through must be increased, based on the type of                   occurs all determine the extent to which a character becomes
+armor worn. The following table lists the increases in tunnel size            fatigued. These fatigue rules are intended as an abstract repre-
+needed to accomodate armor of various types.                                  sentation of how a character can be affected by fatigue and
+                                                                              exhaustion.
+Table 8: ARMOR EFFECTS ON CHARACTER WIDTH                                        These effects only occur if a character spends time engaged in
+                                                                              unusually strenuous activities. Merely marching along, even over
+Armor Type                      Increase in Diameter                          difficult terrain, is not considered such an activity for purposes of
+Leather armor                          none                                   this rule. Unusually strenuous activities include fighting, running,
+Padded armor                            116 ft                                climbing continuously, chopping wood, swimming in rough or
+Studded leather                         116 ft                                swiftly moving water, or moving while encumbered.
+Scale mail                              114 ft                                   Even in such cases, a character can avoid the effects of fatigue
+Ring mail                               116 ft                                by resting for two turns after exerting himself for four turns. As
+Chain mail                              114 ft                                long as this pattern of rest is maintained, the character is not sus-
+Splint mail                                                                   ceptible to the effects of fatigue.
+Banded mail                                                                      If a character spends six turns performing an unusually strenu-
+Plate
+-
+      mail                                                                    ous activity (without two turns of rest), the player must make a
+Field plate                              316 tt
+                                                                              Constitution Check. If the check fails, the character becomes
+Full plate armor                          lft                                 fatigued. If the check is successful, the character can continue to
+                                                                              function normally. If, however, he performs five more turns of
+   Note that, particularly in the case of plate armor, the increase in         unusually strenuous activity, the player must make another Con-
+the character’s width reflects not just the thickness or bulkiness            stitution Check, with the same effects as described above. If this
+of the armor, but the decreased maneuverability that the charac-              second check is successful, but the character continues to labor,
+ter possesses in tight confines.                                              the next check is made after four turns of strenuous activity, and
+                                                                               so on until the character must check every turn. After the first or
+EXCAVATION                                                                     any later ConstitutionCheck, if they have all been successful, the
+                                                                               character can fully recover his strength himself by spending an
+  The types of barriers that characters may have to dig out of the             hour (six turns) resting.
+way include those that they can move with their bare hands, such
+as piles of stone, earth, and other debris, as well as those that
+require tools to move, such as solid walls of dirt and rocks.                 Effects of Fatigue
+                                                                                 If a character becomes fatigued, the following effects occur
+Rubble                                                                        immediately, and last until the character has an opportunity to
+                                                                              rest for two hours (12 turns).
+   Loose rocks are a common enough obstacle in caves and                        All of the character’s attribute scores are lowered by 2, with all
+dungeons, especially older ones. The natural erosion that occurs              attendant (temporary) losses of hit points, spells, and combat
+gradually causes material to fall from the ceiling to the floor. Also,        bonuses. Henchmen, however, will not desert because of tempo-
+previous inhabitants may have pushed rubble into an area pur-                 rary lowering of Charisma.
+posely, using it as a dump.                                                      In addition, the character must apply a -2 penalty to all of his
+   If the rubble is loosely packed-i.e., there are individual                 attack rolls, damage rolls, and saves.
+chunks of small rocks rather than one or two huge slabs, charac-                A fatigued character can continue to perform the strenuous
+ters should be able to clear their way through. Of course, there is           activity that caused him to become fatigued, but he runs the risk
+often no way to tell how much of the corridor may be blocked by               of becoming exhausted. The fatigued character must make a
+such debris.                                                                  Constitution Check every turn that he performs the strenuous
+   In one turn of excavation, a character can clear l d 4 feet of             activity, rolling against his revised Constitution. If a fatigued char-
+passageway to a width equal to the minimum passageway size                    acter fails one of these Constitution checks, he becomes
+listed in Table 7. If the passage is only partially blocked, the dis-         exhausted.
+tance that can be cleared in a turn is increased to 2d4 feet.
+
+
+
+
+                                                                         21
+
