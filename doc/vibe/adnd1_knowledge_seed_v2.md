@@ -9652,6 +9652,33 @@ when both halves land.
   (pp. 46-51), the last of the four majors;
   then the para-planes, the energy planes
   and the two quasi-groups.
+- R571 LANDED 2026-10-17: commit 289841a4445263bba656
+  318cf0dcd518f428f5e8 (census 494 -> 495,
+  pushed 8fdfa5f..289841a), THE MotP PLANE OF
+  ELEMENTAL WATER, printed pp. 46-51 - the
+  whole plane chapter in one round, CLOSING
+  THE FOUR MAJORS: the ocean-without-a-
+  surface doctrine with the four border
+  gradations (Ooze, Ice, Steam, Salt), the
+  1/3-Con breath rule, 60-foot vision, the
+  doubled swim rate, the 1-in-10-per-four-
+  hours check, the d12 phenomena, the d20
+  pocket table (fire/magma only in airy
+  water), the d8+d12 chart (Charonadaemon 2,
+  marids 10, tritons 11, eye of the deep
+  20), the native fire double-damage
+  vulnerability, the underwater combat
+  rules, the magic rule, and the features
+  (Istishia, the marid empire). 7 consts +
+  6 bools, prefix dcz, header rules/
+  motpwater.h. THREE flips: gap census
+  29/61 -> 32/58. Spec 11,243 bytes, md5
+  36abaaab578c0bcb4eb13bdf8430950a matched
+  exactly first try, 13 inlines. NEXT -
+  R572: the Para-Elemental Planes (pp.
+  51-54) - Smoke, Magma, Ooze, Ice in one
+  round; then the energy planes and the two
+  quasi-groups close the inner half.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

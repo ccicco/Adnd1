@@ -1,0 +1,252 @@
+{
+  "round": 572,
+  "prefix": "dda",
+  "header_file": "rules/motppara.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 495,
+  "title": "the MotP Para-Elemental Planes",
+  "audit_label": "R572 MotP para-planes audit",
+  "audit_comment": "the Para-Elemental Planes, printed pp. 51-54, the four in one round: Smoke, Magma, Ooze and Ice - the minor-plane doctrine, the per-plane survival (asphyxiation, heat-as-Fire, drowning-as-Water, the 1d6-per-round ice cold reduced to per turn when protected), the vision ladder (30 yards / touch / 10-20), the 1-in-20-per-eight-true-hours check, the 50/50 pocket rule with lair chances, the native immunity doctrine, the movement/combat/magic mappings to the majors, the d8+d12 encounter chart, and the features (the guide-bribe doubling, the Demi-Power archoments without Greater Powers - Cryonax, Ehkahk, Chlimbia, Bwimb - and no native genies).",
+  "include_comment": "the MotP para-planes pins",
+  "include_after": "#include \"rules/motpwater.h\"  // R571: the MotP Water plane pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R571 LANDED 2026-10-17: commit 289841a4445263bba656",
+  "prev_record": [
+    "- R571 LANDED 2026-10-17: commit 289841a4445263bba656",
+    "  318cf0dcd518f428f5e8 (census 494 -> 495,",
+    "  pushed 8fdfa5f..289841a), THE MotP PLANE OF",
+    "  ELEMENTAL WATER, printed pp. 46-51 - the",
+    "  whole plane chapter in one round, CLOSING",
+    "  THE FOUR MAJORS: the ocean-without-a-",
+    "  surface doctrine with the four border",
+    "  gradations (Ooze, Ice, Steam, Salt), the",
+    "  1/3-Con breath rule, 60-foot vision, the",
+    "  doubled swim rate, the 1-in-10-per-four-",
+    "  hours check, the d12 phenomena, the d20",
+    "  pocket table (fire/magma only in airy",
+    "  water), the d8+d12 chart (Charonadaemon 2,",
+    "  marids 10, tritons 11, eye of the deep",
+    "  20), the native fire double-damage",
+    "  vulnerability, the underwater combat",
+    "  rules, the magic rule, and the features",
+    "  (Istishia, the marid empire). 7 consts +",
+    "  6 bools, prefix dcz, header rules/",
+    "  motpwater.h. THREE flips: gap census",
+    "  29/61 -> 32/58. Spec 11,243 bytes, md5",
+    "  36abaaab578c0bcb4eb13bdf8430950a matched",
+    "  exactly first try, 13 inlines. NEXT -",
+    "  R572: the Para-Elemental Planes (pp.",
+    "  51-54) - Smoke, Magma, Ooze, Ice in one",
+    "  round; then the energy planes and the two",
+    "  quasi-groups close the inner half."
+  ],
+  "banner": {
+    "title": "THE MotP PARA-ELEMENTAL PLANES - printed pp. 51-54, the four planes in one round: Smoke, Magma, Ooze and Ice - the survival, the pockets, the encounter check, the mapping doctrines, and the features (the archoments and Cryonax of Ice).",
+    "provenance": "verified against printed pp. 51-54 of the uploaded motp.pdf OCR; the para-planes pin by mapping onto the R568-R571 major-plane pins (Smoke as Air, Magma and Ooze as Water and Fire, Ice as Earth) with the MotP's own differences carried explicitly.",
+    "sentinel": "the gap census after this round: 34 closed, 56 open - two boxes fall (the para-planes group, the encounter table); the energy planes are next."
+  },
+  "consts": [
+    {
+      "name": "ddaParaPlaneCount",
+      "value": 4,
+      "comment": "the four para-planes between the majors: Smoke where Air meets Fire, Magma where Fire meets Earth, Ooze where Earth meets Water, Ice where Water meets Air - minor because harder to reach, fewer powers, less varied, and transitional."
+    },
+    {
+      "name": "ddaParaEncounterDenom",
+      "value": 20,
+      "comment": "travelers in any of the four para-planes have a 1-in-20 chance of an encounter, checked every eight TRUE hours; roll: 1-20 elemental pocket, 21-00 creature encounter - no outstanding phenomena, only small local variations."
+    },
+    {
+      "name": "ddaParaSmokeVisionYards",
+      "value": 30,
+      "comment": "the vision ladder: Smoke the best at about 30 yards; Magma and Ooze limited to touch range without x-ray devices; Ice varies 10-20 yards with the translucency."
+    },
+    {
+      "name": "ddaParaIceColdDieSides",
+      "value": 6,
+      "comment": "the Ice survival: the unprotected suffer 1d6 cold damage per round, reduced to 1d6 per TURN when well-protected or wrapped in furs, negated by cold protection; the trapped are incredibly well preserved - no incarceration damage."
+    },
+    {
+      "name": "ddaParaPocketSplitPct",
+      "value": 50,
+      "comment": "each para-plane contains equal pockets from the two adjacent majors (50/50): Smoke takes air or fire, Magma fire or earth, Ooze water or earth, Ice water or air - with the lair chances per pocket type."
+    },
+    {
+      "name": "ddaParaChartDieSides",
+      "value": 12,
+      "comment": "the para-elemental encounter chart is a d8+d12 roll (2-20): 2 the para-element prince of evil, 9 the para-elementals, 14 the adjacent-major genie - the parenthetical suggestions per plane guide the DM."
+    },
+    {
+      "name": "ddaParaGuideFightPct",
+      "value": 50,
+      "comment": "the para-elemental guides: gruff, bribed as the majors, but plane-appealing gifts (smoke essence, an ice-carving) double the service duration with a 50% chance they fight with the party."
+    }
+  ],
+  "bools": [
+    {
+      "name": "ddaParaSurvivalSmoke",
+      "value": true,
+      "comment": "Smoke survival: asphyxiation is the danger, the particles and gases unbreathable - airy smoke and smoke breathing negate it; only breath-eliminating devices permit long adventures."
+    },
+    {
+      "name": "ddaParaSurvivalMagmaOoze",
+      "value": true,
+      "comment": "Magma treats the traveler to Fire's heat and flame with breathing as in a hot liquid - protection plus element-breathing needed; Ooze has Water's drowning - water breathing works without modification."
+    },
+    {
+      "name": "ddaParaNativeImmunity",
+      "value": true,
+      "comment": "para-elementals are immune to their home para-plane and its related major planes while in the inner planes (the magma troll immune to flame and magma, unrestricted in Earth); Ice natives move and fight in Ice, Water and Air, immune to cold and ice."
+    },
+    {
+      "name": "ddaParaMovementMap",
+      "value": true,
+      "comment": "the movement mapping: Magma and Ooze as Water (falling included), Smoke as Air, Ice as Earth save any Strength moves through the soft ice; combat maps identically (Smoke hardly restricted, Ice as Earth)."
+    },
+    {
+      "name": "ddaParaMagicMap",
+      "value": true,
+      "comment": "the magic mapping: Smoke unrestricted; Magma casts as through water if the caster can see, Fire's effects on created material; Ooze suffers the underwater strictures; Ice solid as Earth - created fires work but melt the ice which extinguishes them."
+    },
+    {
+      "name": "ddaParaArchomentRule",
+      "value": true,
+      "comment": "no single leader per plane, but ice lords, slime barons, magma generals and smoke dukes vie for control; the mightiest are Demi-Powers with NO Greater Powers above them - Cryonax of Ice the described one, with Ehkahk, Chlimbia and Bwimb named."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the ParaPlaneCount pin",
+      "expr": "m['ddaParaPlaneCount']() != 4"
+    },
+    {
+      "note": "the ParaEncounterDenom pin",
+      "expr": "m['ddaParaEncounterDenom']() != 20"
+    },
+    {
+      "note": "the ParaSmokeVisionYards pin",
+      "expr": "m['ddaParaSmokeVisionYards']() != 30"
+    },
+    {
+      "note": "the ParaIceColdDieSides pin",
+      "expr": "m['ddaParaIceColdDieSides']() != 6"
+    },
+    {
+      "note": "the ParaPocketSplitPct pin",
+      "expr": "m['ddaParaPocketSplitPct']() != 50"
+    },
+    {
+      "note": "the ParaChartDieSides pin",
+      "expr": "m['ddaParaChartDieSides']() != 12"
+    },
+    {
+      "note": "the ParaGuideFightPct pin",
+      "expr": "m['ddaParaGuideFightPct']() != 50"
+    },
+    {
+      "note": "the ParaSurvivalSmoke pin",
+      "expr": "m['ddaParaSurvivalSmoke']() != 1"
+    },
+    {
+      "note": "the ParaSurvivalMagmaOoze pin",
+      "expr": "m['ddaParaSurvivalMagmaOoze']() != 1"
+    },
+    {
+      "note": "the ParaNativeImmunity pin",
+      "expr": "m['ddaParaNativeImmunity']() != 1"
+    },
+    {
+      "note": "the ParaMovementMap pin",
+      "expr": "m['ddaParaMovementMap']() != 1"
+    },
+    {
+      "note": "the ParaMagicMap pin",
+      "expr": "m['ddaParaMagicMap']() != 1"
+    },
+    {
+      "note": "the ParaArchomentRule pin",
+      "expr": "m['ddaParaArchomentRule']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the para-planes pins": [
+      {
+        "kind": "const",
+        "name": "ddaParaPlaneCount"
+      },
+      {
+        "kind": "const",
+        "name": "ddaParaEncounterDenom"
+      },
+      {
+        "kind": "const",
+        "name": "ddaParaSmokeVisionYards"
+      },
+      {
+        "kind": "const",
+        "name": "ddaParaIceColdDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "ddaParaPocketSplitPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddaParaChartDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "ddaParaGuideFightPct"
+      },
+      {
+        "kind": "bool",
+        "name": "ddaParaSurvivalSmoke"
+      },
+      {
+        "kind": "bool",
+        "name": "ddaParaSurvivalMagmaOoze"
+      },
+      {
+        "kind": "bool",
+        "name": "ddaParaNativeImmunity"
+      },
+      {
+        "kind": "bool",
+        "name": "ddaParaMovementMap"
+      },
+      {
+        "kind": "bool",
+        "name": "ddaParaMagicMap"
+      },
+      {
+        "kind": "bool",
+        "name": "ddaParaArchomentRule"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the para-planes child closes",
+      "from": "  - [ ] The Para-Elemental Planes (pp. 51-54) - smoke, magma, ooze, ice: survival, encounters, movement, combat, magic, features",
+      "to": "  - [x] The Para-Elemental Planes (pp. 51-54) - smoke, magma, ooze, ice: survival, encounters, movement, combat, magic, features - R572: the four-plane doctrine, the per-plane survival, the pockets, the native immunities, the movement/combat/magic mappings, and the features (the archoments, Cryonax)"
+    },
+    {
+      "note": "the para-planes encounter table closes",
+      "from": "  - [ ] The para-planes encounter table (p. 51) - the 1-in-20 checked every eight true hours",
+      "to": "  - [x] The para-planes encounter table (p. 51) - the 1-in-20 checked every eight true hours - R572: the dda check pin (1 in 20 every eight true hours, the pocket/creature split)"
+    }
+  ],
+  "gap_census": {
+    "closed": 34,
+    "open": 56
+  },
+  "caller_files": [],
+  "inline_count": 13
+}
