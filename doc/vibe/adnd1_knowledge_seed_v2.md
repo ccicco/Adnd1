@@ -8447,6 +8447,67 @@ when both halves land.
   23 the Lower Grand Canyon (the 1,200-ft descent, the
   1,000-ft width, the 20-ft bridge over the stone-
   arch arena); both reads already fetched this round.
+- R544 LANDED 2026-10-17: commit 0523f0616f6e1f3bd677
+  ba379dbd5d425436c1f5 (census 467 -> 468, pushed
+  2765c34..0523f06), THE DSG DEEPEARTH AREAS 22-23,
+  printed pp. 92-93 (pdf 93-94) - Area 22 the Lands
+  of the Deep Gnomes (the long narrow north-south
+  caverns stacked in three levels, averaging 20x10
+  ft, pinching to 2-3 ft once per mile; the streams
+  never filling the passages, the upper walks and
+  gnome-built spiral stairways; the excavated homes
+  from tiny burrows to crawl-in residences; one clan
+  per cave with its 60x8-ft council chamber; the
+  central 200x10-ft meeting chamber; the ~5,000
+  svirfneblin with a third mobilizable; the
+  protected rothe herds - 100 per clan, eight or 10
+  times that; the trickling water and still pools;
+  the Grand Canyon air circulation; the edible
+  fungi; the iron-silver-copper-lead mines with
+  five-mile shafts; the smelter and smithy venting
+  to the lava sea; the traded and stockpiled
+  surplus; and the vault - thousands of 500-sp
+  silver bars behind the 550-Strength stone door
+  opened weekly by winch teams, hidden by
+  illusions), and Area 23 the Lower Grand Canyon
+  (the lower portion of Area 7 descending another
+  1,200 ft; the duergar and deep gnome domains
+  meeting at the canyon, their thousand-spectator
+  carved galleries facing across the 1,000-ft
+  width; the 20-ft stone bridge; and the arena
+  beneath - the three-dimensional web of stone
+  arches, girders, rope ladders and nets where
+  champion duels replace the wars, nonmissile
+  weapons only, the duergar-svirfneblin duels always
+  fatal, the girder spacing hampering the small
+  warriors). A CLEAN-READ ROUND with no cross-read
+  garbles at all: both machine reads agree on every
+  number (djvu ~lines 11935-12079, capture idx 212
+  = the p. 93 area-22 tail window, idx 214 head =
+  area 23). 45 inlines (21 consts + 24 bools),
+  header rules/dsgarea11.h, prefix dnam, no table,
+  no dice. DELIVERY clean md5-exact on the first
+  try: authored md5 022290ff9f29d2aae50abe8b916988
+  38 matched exactly (spec 21,657 bytes); engine
+  applied 4 then 0/4, preflight GREEN with AUDIT
+  CENSUS: 468. A ZERO-FLIP ROUND: gap census stays
+  139/16, the pp. 75-98 Deepearth child open.
+  NEXT - R545: Areas 24-25 (printed p. 94, pdf 95,
+  djvu ~line 12082+) - Area 24 the Domain of the
+  Duergar (the ~100 caves of the 8,000 gray
+  dwarves, the dammed water reservoirs, the 30-ft
+  navigable outflow stream, the derro tenants and
+  the 25%-escape slaves, the iron-copper-gold
+  slave-worked mines, the gold sculptors with
+  1d6x100-gp residences and 2d6x1,000-gp public
+  halls and 20,000-gp life-size statues worth
+  1d4+1 times intact, the fungus breweries and
+  inns) and Area 25 the Windpipe (the six 80-ft-
+  high living caves, the drow outpost of 4th+-
+  level fighters with 5th+ MU and cleric, the 50%
+  polluted pools, the ~20-ft smooth shaft); both
+  reads already fetched this round (idx 214
+  carried Area 24 in full and the Area 25 head).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
