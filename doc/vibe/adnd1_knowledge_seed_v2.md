@@ -8066,6 +8066,63 @@ when both halves land.
   feet across, the 50/60-ft ceilings, the 30-ft mushroom
   caps, the myconid circle of 20 with its animator-spore
   zombies - djvu text already extracted, capture warm.
+- R537 LANDED 2026-10-17: commit 7d0bc86 (census 460 -> 461,
+  pushed f4d090e..7d0bc86), THE DSG DEEPEARTH AREAS 8-9,
+  printed pp. 82-84 (pdf 83-85) - the tended garden and the
+  great crossroads: Area 8 the Fungus Forest (the maze-like
+  circle of chambers several hundred feet across and 50/60
+  ft high, ogre-passable throughout; the dozen carpeted
+  chambers - shriekers, violet fungus, edibles - over soft
+  loam; the cross-bred 30-ft caps with crushed-stone paths;
+  the myconid tenders of the one fungus-free central cavern;
+  the Area 9 irrigation relay with inverted mushroom caps;
+  the circle of 20 under the very old king; the animator-
+  spore zombies - humans, mobats, two derro, a host of
+  jermalaine; the musty circulating air, stone cistern,
+  unlimited guarded food; and the one-foot continual-light
+  levitating boulder), and Area 9 the Caverns of Doom (the
+  key crossroads; the western 1d3x10-ft city route, dead
+  cave, pits and chasms; the five natural branch caverns;
+  the six linked central caverns - hundreds-ft ceilings,
+  1,000-ft widths, 2d6-mile lengths, 20/10-ft connections;
+  the name from the surface tales; the jermalaine bands and
+  northern community, the drow-duergar-pech pockets at
+  odds, the city raiding parties; the monster menagerie -
+  toads, stirges, piercers, spiders, jellies, puddings,
+  molds, rust monsters, cockatrices, gargoyles, wraiths,
+  wights; the only decent water in the section - the
+  svirfneblin sub-2-ft pipelines from Area 4 to three
+  caverns, two monopolized, one shared; the cave-pig herds
+  and fungus gardens; the pech claims and their secret
+  wall-of-stone-screened diamond mine; the duergar
+  fortified spout pool with three blocked caves and acid
+  above; and the jermalaine honeycomb - 18-to-24-inch
+  passages, private streams, 20-ft-high exits with rope
+  ladders). A CLEAN-READ ROUND: both machine reads agree on
+  every number (djvu ~lines 10465-10692, Capture idx
+  376-384; the Capture 'ld3x 10' settled by the djvu).
+  DELIVERY HICCUP, RESOLVED: the first paste failed with
+  'No such file' - the spec had not reached the Termux
+  side; the user re-copied from the canvas, the md5
+  900089b201294c6832509690c0ccc600 matched exactly (spec
+  25,980 bytes, trailing-newline convention). CLEANUP
+  NOTE: the user's stray save left tools/spec_r538.json
+  untracked on the Termux side - it was NOT committed;
+  delete it before the R538 round (no R538 spec exists
+  yet). A ZERO-FLIP ROUND: the pp. 75-98 Deepearth child
+  remains open (the R527/R533-R536 precedent - the gap
+  report NOT in the git add). Pinned as rules/dsgarea4.h
+  (prefix dnaf, verified free; 44 inlines - 26 consts,
+  18 bools, no tables; 1d3x10 pinned as a count-sides-
+  multiplier triple). Engine applied 4 then 0/4, audit
+  mirror clean. Gap unchanged 139/16. PREFLIGHT GREEN
+  with census 461 audit lines, each exactly once, all
+  bad 0; BUILD: 0 warnings. NEXT - R538: Area 10 the
+  Sunken Swamp (printed pp. 84-85, pdf 85-86): the
+  quake-drowned forest, 1,000-to-4,000-ft chambers 3d6
+  miles long, the degenerated 50-100-strong cannibal
+  tribes, the reconciliation councils - djvu head read,
+  capture warm.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
