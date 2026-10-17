@@ -6494,6 +6494,58 @@ when both halves land.
   pp. 34-35 (pdf 35-36), no printed grid; EXTRACTION
   ROUND first (the small chapter may pin in one round);
   after that the underground-environment/DM section arc.
+- R508 LANDED 2026-10-17: commit f617007 (census 433,
+  pushed 7403fbf..f617007), the DSG BATTLESYSTEM OPTIONS
+  UNDERGROUND, printed pp. 34-35 (pdf 35-36) - the whole
+  chapter in one pure-prose round PLUS the R507 chapter
+  tail from the top of printed p. 34: the footman
+  pull-down (-2 at 6"/round or less, -4 at 7-12", -6
+  above 12", the free steed attacks on a fast miss, -1
+  per additional footman up to 4, the no-damage
+  multi-person cushion, the 8-man-sized/4-large surround)
+  and the stake defenses (two characters one hour per
+  10-foot square of 4-5 foot stakes, the horsemanship
+  check to enter, 1d4-1 stakes per 10-foot depth, chain
+  -1/plate -2 barding, 2d6 per stake). The tail CORRECTS
+  the R507 record's "WSG-only -4 pull-down" note: the
+  DSG pull-down is real but speed-band framed where the
+  WSG pins the flat -4 (wfcGrappleUnmountedPenalty).
+  Chapter pins: the opener, narrow frontages (1/2" and
+  3/4" bottleneck figures), the 10% wounded marker (vs
+  25% standard, the 1-9/10+ orc example), the column
+  formation (1"=10 yards, the twice-lengthwise shape
+  change to the back, the narrower-corridor doubled
+  spacing), the morale no-room auto-rout and the
+  blocked-routing chain reaction, ventilation (gas
+  durations doubled, the p. 36 smoke cross-ref, the
+  wind-carried spell gas at 1/2 area diameter lasting
+  2x), the flying ceiling bands (240 normal / 60-240
+  thirds / 30-60 medium+low / under-30 low only), the
+  line-of-sight set (+6 Attack Rating = the composite of
+  the R507 dnqDark -4 attacks and damage, -4 saves, +4 AC
+  vs melee, 1/3 movement, the automatic first-rank
+  obstacle hit, one light per figure with the 24-figure
+  example, +2 missiles vs illuminated units, the
+  skirmisher exemption) and the cave-ins (6d8 collapse
+  halved on a save, area plus 1" in all directions, the
+  60-dice orc example, 4d8 mud fall, 1% base + 4%
+  cumulative per sub-25 survived d100, the heavy-unit
+  13-to-26 doubling and the direct-hit/adjacent-collapse
+  doublings). Pinned as rules/dsgbatt.h (prefix dnr,
+  verified free; 145 inlines: 57 consts + 88 bools, no
+  grids; 22 examples). Gap 60/95 -> 69/86: 9 flips -
+  the PARENT + 8 children. Garbles settled dual-read:
+  djvu 648 = 6d8 (proven by the 60-dice example and the
+  4d8 mud read), 496 = +4%, 1396 = 13%. Double-run
+  applied 13/already 0 then 0/13; preflight GREEN, census
+  433, gap 69/86. One pre-publish R392-class fix: raw
+  inch-mark quotes in two comments reworded. User-side
+  spec md5 75bf127c vs authored 9e90cb2f - cosmetic,
+  standing class. NEXT - R509: EXTRACTION ROUND - the
+  underground environment chapter begins, printed
+  pp. 36-37 (pdf 37-38): air supply duration, fire and
+  smoke underground, poisonous and noxious gases; the
+  big pp. 36-55 arc.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
