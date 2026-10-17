@@ -1,0 +1,521 @@
+{
+  "round": 557,
+  "prefix": "dcj",
+  "header_file": "rules/dsgmap.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 480,
+  "title": "the DSG mapping your settings",
+  "audit_label": "R557 DSG mapping settings audit",
+  "audit_comment": "The mapping your settings pins printed pp. 114-117: the chapter head (the orthographic blueprint maps and their per-level split, the perspective alternative), Basic Mapping Considerations (the effective map, the tools), Perspective Mapping (the 3-D advantages, the occlusion and time costs, the photocopy and tracing techniques), Selecting a Grid (the shape match, the occluded-area design, the front-loaded detail), Selecting a Starting Point (the front start, the control square), Drawing the Map (the orthographic likeness, the outer-limit-first option), Mapping Symbols (the translated symbols, the 3-D styles), Splitting the Grid (the tracing and photocopy methods with the 10-foot-square, 20-foot-platform example), Horizon Lines (the orientation, the perpendicular verticals), Geomorphic Mapping (the problem, the definitions, the shapes, the standardized connections, the 60-foot section with its 1-2 connections against the square-mile 6-8, the 75% entry rule), and Using Geomorphs (the random generation, the placement rolls, the exploration and dead ends, the variety). The Mapping your settings child flips [x] in the same commit.",
+  "include_comment": "the DSG mapping your settings pins",
+  "include_after": "#include \"rules/dsgcamp7.h\"  // R556: the DSG campaign considerations closure",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R556 LANDED 2026-10-17: commit ec1acf314ebbbdc28a3c",
+  "prev_record": [
+    "- R556 LANDED 2026-10-17: commit ec1acf314ebbbdc28a3c",
+    "  c2eee7d61ade013a694f (census 479 -> 480, pushed",
+    "  ebf6dcb..ec1acf3), THE DSG CAMPAIGN",
+    "  CONSIDERATIONS CLOSED - the second FLIP-ONLY",
+    "  round of the arc (like R549): zero consts,",
+    "  zero bools, zero tables, the census advancing",
+    "  by the audit block alone. The pp. 99-113",
+    "  Campaign Considerations child flips [x]",
+    "  against the six landed rounds: R550 the",
+    "  campaign opener pp. 99-100 (rules/dsgcamp.h),",
+    "  R551 the worlds of adventure pp. 101-103",
+    "  (rules/dsgcamp2.h), R552 the plot and",
+    "  counterplot pp. 103-106 (rules/dsgcamp3.h),",
+    "  R553 the story elements tail pp. 107-108",
+    "  (rules/dsgcamp4.h), R554 the techniques of",
+    "  story and campaign design pp. 109-112",
+    "  (rules/dsgcamp5.h) and R555 the help from the",
+    "  players p. 113 (rules/dsgcamp6.h) - census",
+    "  473 -> 479 through the run, each round",
+    "  double-run and preflight GREEN. The gap",
+    "  census moves 140/15 -> 141/14; the gap",
+    "  report WAS in the git add (5 files). Spec",
+    "  7,723 bytes, md5",
+    "  3980db479aef06079847c605fdbb627d matched",
+    "  exactly first try, 0 inlines, header",
+    "  rules/dsgcamp7.h, prefix dci. No book text",
+    "  pinned; no authoring catches. NEXT - R557:",
+    "  the mapping your settings chapter pp. 114-117",
+    "  (basic mapping considerations, perspective",
+    "  mapping, selecting a grid), then the compiled",
+    "  tables and the arc tail."
+  ],
+  "banner": {
+    "title": "THE DSG MAPPING YOUR SETTINGS, R557: printed pp. 114-117 - the mapping doctrine, the chapter closing in a single round with the child flipped in the same commit: the head (the orthographic map as the architectural blueprint showing exact relative sizes for distance and direction; the separate map per elevation level with the stairways and well shafts hard to picture; the perspective alternative - detailed 3-D maps for multi-level settings, the book's grids photocopied); Basic Mapping Considerations (the effective map communicating the necessary information, often in a few minutes of pencil and scratch paper; the tools - the straightedge, compass, protractor, templates, the felt-tip and razor-point pens thicker than the grid); Perspective Mapping (the advantages - the 3-D nature, the clearer level positions, the visible inter-level connections; the costs - the raised staircases and platforms obscuring the areas behind, the cramped rear squares, the drawing time; the two starting techniques - the photocopy method with the personal-use permission and the enlarged copies, the tracing-paper method with the tape fastened to clear tape, never the page); Selecting a Grid (the overall-shape match - the square grids for castles and dungeons, the narrow for caverns; the occluded areas designed to need little detail - the empty room or solid rock behind the tall stairway; the important detail toward the front, the lower platforms front and the higher rear, the stage-set imagining); Selecting a Starting Point (the design started near the front with the large squares for the intricate areas, the entrance possibly far to the rear; the control square centered under the highest tower, lining up the levels - the photocopies held to the light, the pencil marks); Drawing the Map (the orthographic likeness with the not-true squares; the outer limit first, or the huge staircase or central atrium spanning levels); Mapping Symbols (the orthographic symbols translating directly - doors, trapdoors, curtains, furniture; the 3-D objects changed to portray vertically too; the printed symbols from simple to elaborate); Splitting the Grid (the altitude mimicry by cut and shifted pieces; the tracing method - the paper pulled down to the scaled height; the photocopy method - the cut-outs placed at the proper elevation, the 20-foot platform twice the 10-foot-square distance above the cut line); Horizon Lines (the horizontal orientation; the perpendicular verticals with the T-square or the 90-degree triangle); Geomorphic Mapping (the time problem and the unpredictable PCs; the same-shape sections with the standardized edge points abutting any neighbor - the tremendous combinations; the underground, city, and fortress suitability; the small-part sections with their several unused areas; the shapes - the easiest squares, the three-orientation triangles needing more, the many-position harder hexagons; the planned connections; the standardized symmetric locations - the exact center or the 1/3-in pairs; the 60 x 60-foot section with its one or two connections per side against the square-mile realm's six to eight; the 75% entry rule against the enclosing dead ends); and Using Geomorphs (the random generation of huge areas with the deliberate exceptions; the numbered geomorphs and the d3/d4/d6 placement rolls for which face is north; the placed section as normal setting - the matching edge connections proceeding unnoticed, the mismatches dead-ending; the variety and orientations hiding the revisited sections) - the round ending before the perspective grid plates, which are graphics and pin nothing.",
+    "provenance": "djvu lines 14880-15430 with the Capture-layer pdf 114-118 cross-read (the pure-python extractor). The two reads agree across the round; no OCR-failure cells (the djvu quirks - '44' and '46' for d4 and d6, the Cyrillic page headers - settle by the cross-read). The chapter ends after the using-geomorphs tail; the perspective grid plates pp. 118-120 are graphics and pin nothing, and the compiled tables open at p. 121. A CLEAN-READ ROUND. The mapping your settings child flips [x] in the same commit (the single-round chapter precedent, as R530-R532): the gap census moves 141/14 -> 142/13.",
+    "sentinel": "The DM section: R530 the environment, R531 the geography, R532 the cultures, R533-R548 the Deepearth key, R549 the Deepearth flip, R550-R555 the campaign chapter, R556 the campaign flip, R557 the mapping chapter closed; next the compiled tables p. 121, then the DM-section parent and the front-matter chapter p. 6, then the arc tail."
+  },
+  "consts": [
+    {
+      "comment": "the splitting example scale: each square on the grid equals 10 feet",
+      "name": "dcjGridSquareFeet",
+      "value": 10
+    },
+    {
+      "comment": "the splitting example: the platform raised 20 feet above the main floor",
+      "name": "dcjPlatformExampleFeet",
+      "value": 20
+    },
+    {
+      "comment": "the small geomorph section: a 60 x 60-foot square per map section",
+      "name": "dcjGeomorphSectionFeet",
+      "value": 60
+    },
+    {
+      "comment": "the small-section connections: perhaps only one potential connection per side - the minimum",
+      "name": "dcjGeomorphSmallConnsMin",
+      "value": 1
+    },
+    {
+      "comment": "the small-section connections: no more than two potential connections per side - the maximum",
+      "name": "dcjGeomorphSmallConnsMax",
+      "value": 2
+    },
+    {
+      "comment": "the square-mile realm section connections: as many as six per side - the minimum",
+      "name": "dcjGeomorphLargeConnsMin",
+      "value": 6
+    },
+    {
+      "comment": "the square-mile realm section connections: as many as eight per side - the maximum",
+      "name": "dcjGeomorphLargeConnsMax",
+      "value": 8
+    },
+    {
+      "comment": "at least 75% of the possible connections on each geomorph should provide a means of entry into another map section",
+      "name": "dcjGeomorphEntryPct",
+      "value": 75
+    }
+  ],
+  "bools": [
+    {
+      "comment": "the orthographic map - the typical top-view blueprint of corridors, rooms, and doorways showing exact relative sizes, useful for recording distance and direction",
+      "name": "dcjOrthoDefines",
+      "value": true
+    },
+    {
+      "comment": "a separate orthographic map must be drawn for each elevation level; stairways and well shafts running through levels are hard to picture across the assortment",
+      "name": "dcjOrthoLevelSplit",
+      "value": true
+    },
+    {
+      "comment": "the perspective alternative: 3-D maps for multi-level settings above or below ground, learning a few points and photocopying the book's grids",
+      "name": "dcjPerspectiveIntro",
+      "value": true
+    },
+    {
+      "comment": "an effective map communicates the necessary information; often accomplished in a few minutes with pencil and scratch paper",
+      "name": "dcjEffectiveMap",
+      "value": true
+    },
+    {
+      "comment": "the tools improve appearance and legibility: straightedge, compass, protractor, templates, and felt-tip or razor-point pens drawing slightly thicker than the grid",
+      "name": "dcjMappingTools",
+      "value": true
+    },
+    {
+      "comment": "the perspective advantages: the 3-D nature conveyed realistically, each level's position relative to the others clearer, the inter-level connections easier to see",
+      "name": "dcjPerspective3D",
+      "value": true
+    },
+    {
+      "comment": "the perspective costs: raised features (staircases, platforms, ramps) obscure the areas behind them, the rear squares cramp detail, and the map takes more time to draw",
+      "name": "dcjPerspectiveCosts",
+      "value": true
+    },
+    {
+      "comment": "the reward: maps communicating much more than room size or which wall holds the door",
+      "name": "dcjPerspectiveReward",
+      "value": true
+    },
+    {
+      "comment": "technique one: photocopies of the grid - one per floor with extras for careful work, enlarged copies helpful; the photocopying permission granted for personal use",
+      "name": "dcjStartPhotocopy",
+      "value": true
+    },
+    {
+      "comment": "technique two: the tracing-paper tablet - grid portions traced and details drawn in, held by hand or taped; the tape fastened to clear tape on the grid pages, never the book page itself",
+      "name": "dcjStartTracing",
+      "value": true
+    },
+    {
+      "comment": "select the grid matching the overall shape: the square grids for castles and dungeons, the longer narrower grids for caverns and walls",
+      "name": "dcjGridShapeMatch",
+      "value": true
+    },
+    {
+      "comment": "design the occluded areas to need little detail: the large empty room or the solid rock directly behind the tall stairway",
+      "name": "dcjGridObscureDesign",
+      "value": true
+    },
+    {
+      "comment": "the important detailed areas go toward the front of the grid; the lower platforms front and the higher rear - the stage-set imagining with the whole acting area visible",
+      "name": "dcjGridFrontDetail",
+      "value": true
+    },
+    {
+      "comment": "start the design as close to the front as possible - the large front squares for the most intricate areas, though the entrance itself may lie far to the rear",
+      "name": "dcjStartFront",
+      "value": true
+    },
+    {
+      "comment": "the control square: a single grid square roughly centered under the highest tower or the top level's midpoint, lining up the levels - photocopies held to the light, pencil marks on the traced copies",
+      "name": "dcjControlSquare",
+      "value": true
+    },
+    {
+      "comment": "with the grid established, drawing a perspective map is much like an orthographic one - the biggest difference being the not-true squares of the grid",
+      "name": "dcjDrawLikeOrtho",
+      "value": true
+    },
+    {
+      "comment": "draw the outer limit of the design first to visualize the structure and line up the levels - or start with the huge staircase or central atrium spanning several levels",
+      "name": "dcjDrawOuterFirst",
+      "value": true
+    },
+    {
+      "comment": "orthographic symbols translate directly - doors, trapdoors, curtains, furniture - while the 3-D objects change slightly, portrayed vertically as well as horizontally",
+      "name": "dcjSymbolsTranslated",
+      "value": true
+    },
+    {
+      "comment": "the 3-D symbols printed beside the grids - photocopy, trace, or cut and paste; styles from simple to elaborate, the familiarity developing quickly",
+      "name": "dcjSymbolStyles",
+      "value": true
+    },
+    {
+      "comment": "mimic minor altitude changes by cutting the grid into pieces shifted up or down - especially for uneven underground environments",
+      "name": "dcjSplitGrid",
+      "value": true
+    },
+    {
+      "comment": "the tracing method: the main floor grid drawn except the raised areas, the tracing paper pulled down until the area sits at the scaled height, the area drawn in its correct location; below-floor areas by moving the paper up",
+      "name": "dcjSplitTracing",
+      "value": true
+    },
+    {
+      "comment": "the photocopy method: the raised areas cut from a copy, the rest glued to another sheet, the cut-outs placed at the proper elevation - the 20-foot platform twice the 10-foot-square distance above the cut line",
+      "name": "dcjSplitPhotocopy",
+      "value": true
+    },
+    {
+      "comment": "each sample grid includes a horizon line; orient the grid so the horizon is horizontal to view it correctly",
+      "name": "dcjHorizonOrient",
+      "value": true
+    },
+    {
+      "comment": "verticals drawn perpendicular to the horizon line - pillars, staircases, and ladders not toppling - with a T-square or a 90-degree triangle",
+      "name": "dcjHorizonVertical",
+      "value": true
+    },
+    {
+      "comment": "the geomorphic problem: the DM lacks time to map every region the PCs may visit, and their actions are unpredictable - mapping only the immediate future is unreliable",
+      "name": "dcjGeomorphProblem",
+      "value": true
+    },
+    {
+      "comment": "geomorphic maps: same shape and size, with standardized entry and exit points around the edges; any edge abuts a neighbor, yielding a tremendous number of combinations",
+      "name": "dcjGeomorphDefines",
+      "value": true
+    },
+    {
+      "comment": "the geomorphic advantage: not mapping every square foot of a massive region - combinations of geomorphs create the needed areas; well-suited to underground settings, large cities, and sprawling fortresses",
+      "name": "dcjGeomorphSuitable",
+      "value": true
+    },
+    {
+      "comment": "a single geomorphic section portrays only a small part of the setting, assembled like puzzle pieces - and a block may contain several separate adventure areas, of which you need not use all",
+      "name": "dcjGeomorphSections",
+      "value": true
+    },
+    {
+      "comment": "the shapes: squares, equilateral triangles, or hexagons - squares easiest, triangles limited to three orientations (needing more geomorphs), hexagons with the most positions but harder to draw; the square combines the best features",
+      "name": "dcjGeomorphShapes",
+      "value": true
+    },
+    {
+      "comment": "plan the possible connections between sections - plenty of route options without every connection leading through",
+      "name": "dcjGeomorphPlanConnections",
+      "value": true
+    },
+    {
+      "comment": "the connections standardized and symmetric left-right: the exact center of each side or a pair each 1/3 of the distance in from the edge - measured carefully or the sections will not line up",
+      "name": "dcjGeomorphStandardized",
+      "value": true
+    },
+    {
+      "comment": "with a collection of geomorphs, randomly generate areas of huge proportions - though a fitting section may be placed deliberately; the overall map generated by a few die rolls and varied placement",
+      "name": "dcjGeomorphRandom",
+      "value": true
+    },
+    {
+      "comment": "the placement rolls: number the geomorphs and roll for the starting section; the positions equal the sides - the d3, d4, or d6 rolled to determine which face is north",
+      "name": "dcjGeomorphPositions",
+      "value": true
+    },
+    {
+      "comment": "a placed geomorph is treated as a normal part of the setting map; at a section edge, roll a new geomorph and its orientation - matching connections proceed unnoticed, mismatches wander into a dead end and another path",
+      "name": "dcjGeomorphExplore",
+      "value": true
+    },
+    {
+      "comment": "variety and many orientations create a huge region of well-mapped terrain - the players never knowing they pass through sections previously explored",
+      "name": "dcjGeomorphVariety",
+      "value": true
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "expr": "m['dcjGridSquareFeet']() != 10 or m['dcjPlatformExampleFeet']() != 20",
+      "note": "the splitting example: 10-foot squares, the 20-foot platform."
+    },
+    {
+      "expr": "m['dcjPlatformExampleFeet']() / m['dcjGridSquareFeet']() != 2",
+      "note": "the platform grid twice the square distance above the cut line."
+    },
+    {
+      "expr": "m['dcjGeomorphSectionFeet']() != 60",
+      "note": "the small geomorph: the 60 x 60-foot section."
+    },
+    {
+      "expr": "m['dcjGeomorphSmallConnsMin']() != 1 or m['dcjGeomorphSmallConnsMax']() != 2",
+      "note": "the small-section connections: one, perhaps two, per side."
+    },
+    {
+      "expr": "m['dcjGeomorphLargeConnsMin']() != 6 or m['dcjGeomorphLargeConnsMax']() != 8",
+      "note": "the square-mile realm: six to eight connections per side."
+    },
+    {
+      "expr": "m['dcjGeomorphEntryPct']() != 75",
+      "note": "the entry rule: at least 75% of connections providing entry."
+    },
+    {
+      "expr": "m['dcjGeomorphShapes']() != 1 or m['dcjGeomorphStandardized']() != 1",
+      "note": "the geomorphs: the shapes and the standardized connections."
+    },
+    {
+      "expr": "m['dcjHorizonVertical']() != 1 or m['dcjControlSquare']() != 1",
+      "note": "the craft: the perpendicular verticals and the control square."
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the head section": [
+      {
+        "kind": "bool",
+        "name": "dcjOrthoDefines"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjOrthoLevelSplit"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjPerspectiveIntro"
+      }
+    ],
+    "the basic considerations section": [
+      {
+        "kind": "bool",
+        "name": "dcjEffectiveMap"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjMappingTools"
+      }
+    ],
+    "the perspective mapping section": [
+      {
+        "kind": "bool",
+        "name": "dcjPerspective3D"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjPerspectiveCosts"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjPerspectiveReward"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjStartPhotocopy"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjStartTracing"
+      }
+    ],
+    "the selecting a grid section": [
+      {
+        "kind": "bool",
+        "name": "dcjGridShapeMatch"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGridObscureDesign"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGridFrontDetail"
+      }
+    ],
+    "the starting point section": [
+      {
+        "kind": "bool",
+        "name": "dcjStartFront"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjControlSquare"
+      }
+    ],
+    "the drawing section": [
+      {
+        "kind": "bool",
+        "name": "dcjDrawLikeOrtho"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjDrawOuterFirst"
+      }
+    ],
+    "the symbols section": [
+      {
+        "kind": "bool",
+        "name": "dcjSymbolsTranslated"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjSymbolStyles"
+      }
+    ],
+    "the splitting section": [
+      {
+        "kind": "const",
+        "name": "dcjGridSquareFeet"
+      },
+      {
+        "kind": "const",
+        "name": "dcjPlatformExampleFeet"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjSplitGrid"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjSplitTracing"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjSplitPhotocopy"
+      }
+    ],
+    "the horizon section": [
+      {
+        "kind": "bool",
+        "name": "dcjHorizonOrient"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjHorizonVertical"
+      }
+    ],
+    "the geomorphic mapping section": [
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphProblem"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphDefines"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphSuitable"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphSections"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphShapes"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphPlanConnections"
+      },
+      {
+        "kind": "const",
+        "name": "dcjGeomorphSectionFeet"
+      },
+      {
+        "kind": "const",
+        "name": "dcjGeomorphSmallConnsMin"
+      },
+      {
+        "kind": "const",
+        "name": "dcjGeomorphSmallConnsMax"
+      },
+      {
+        "kind": "const",
+        "name": "dcjGeomorphLargeConnsMin"
+      },
+      {
+        "kind": "const",
+        "name": "dcjGeomorphLargeConnsMax"
+      },
+      {
+        "kind": "const",
+        "name": "dcjGeomorphEntryPct"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphStandardized"
+      }
+    ],
+    "the using geomorphs section": [
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphRandom"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphPositions"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphExplore"
+      },
+      {
+        "kind": "bool",
+        "name": "dcjGeomorphVariety"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "from": "  - [ ] Mapping your settings (pp. 114-117) - basic mapping considerations (p. 114), perspective mapping (p. 114), selecting a grid (p. 114), selecting a starting point (p. 115), drawing the map (p. 115), mapping symbols (p. 115), splitting the grid (p. 115), horizon lines (p. 117), geomorphic mapping and using geomorphs (p. 117)",
+      "note": "the Mapping your settings child closes",
+      "to": "  - [x] Mapping your settings (pp. 114-117) - R557: the whole chapter in one round (rules/dsgmap.h) - the orthographic head with the perspective alternative, the basic considerations and tools, the perspective advantages and costs with the photocopy and tracing techniques, the grid selection, the starting point with the control square, the drawing, the symbols, the splitting methods with the 10-foot-square 20-foot-platform example, the horizon lines, and the geomorphic system - the shapes, the standardized connections, the 60-foot section 1-2 per side against the square-mile 6-8, the 75% entry rule, and the random placement and exploration"
+    }
+  ],
+  "gap_census": {
+    "closed": 142,
+    "open": 13
+  },
+  "caller_files": [],
+  "inline_count": 43
+}

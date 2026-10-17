@@ -9183,6 +9183,37 @@ when both halves land.
   mapping chapter pp. 114-127 (orthographic vs.
   perspective mapping, the grids, symbols and
   map keys).
+- R556 LANDED 2026-10-17: commit ec1acf314ebbbdc28a3c
+  c2eee7d61ade013a694f (census 479 -> 480, pushed
+  ebf6dcb..ec1acf3), THE DSG CAMPAIGN
+  CONSIDERATIONS CLOSED - the second FLIP-ONLY
+  round of the arc (like R549): zero consts,
+  zero bools, zero tables, the census advancing
+  by the audit block alone. The pp. 99-113
+  Campaign Considerations child flips [x]
+  against the six landed rounds: R550 the
+  campaign opener pp. 99-100 (rules/dsgcamp.h),
+  R551 the worlds of adventure pp. 101-103
+  (rules/dsgcamp2.h), R552 the plot and
+  counterplot pp. 103-106 (rules/dsgcamp3.h),
+  R553 the story elements tail pp. 107-108
+  (rules/dsgcamp4.h), R554 the techniques of
+  story and campaign design pp. 109-112
+  (rules/dsgcamp5.h) and R555 the help from the
+  players p. 113 (rules/dsgcamp6.h) - census
+  473 -> 479 through the run, each round
+  double-run and preflight GREEN. The gap
+  census moves 140/15 -> 141/14; the gap
+  report WAS in the git add (5 files). Spec
+  7,723 bytes, md5
+  3980db479aef06079847c605fdbb627d matched
+  exactly first try, 0 inlines, header
+  rules/dsgcamp7.h, prefix dci. No book text
+  pinned; no authoring catches. NEXT - R557:
+  the mapping your settings chapter pp. 114-117
+  (basic mapping considerations, perspective
+  mapping, selecting a grid), then the compiled
+  tables and the arc tail.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
