@@ -1,0 +1,678 @@
+{
+ "round": 541,
+ "title": "the DSG Deepearth areas 16-17",
+ "census_before": 464,
+ "prefix": "dnaj",
+ "header_file": "rules/dsgarea8.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "inline_count": 60,
+ "banner": {
+  "title": "THE DSG DEEPEARTH AREAS 16-17, R541: printed pp. 88-89 (pdf 89-90) - the individual area key descends the stairway and crosses the great lower water: Area 16 Mid-Level Caverns (the carefully engineered spiral stairway from the Area 14 tunnel - a full 1,000 feet down, each stair 10 feet wide, one-foot deep, dropping eight inches around the hollow 10-foot shaft with no guardrail; the living caves with their seeping streams and common formations; the dominant central cave with the most spectacular drapery formations in all Deepearth, ringed by more than a dozen smaller caves; the steep western descent - a 20-foot cavern half that in height, broken by 1d6x10-ft cliffs with ledged, climbable faces, pinching to three feet in two places; the clear deep pools - the largest 50 feet across, commonly 20 to 30 feet deep; the wilderness status despite the stairway, with pech, jermalaine, derro and drow only passing through; the monster caves - the greater basilisk and mimics of the center, the bowlers, trappers, xorn, piercers, rock reptiles, scum creepers and mud men of the flanks; the fresh water, the stuffy-but-breathable air, the poolside fungi; the continuing Area 14 copper and iron veins showing green and red through the draperies; and the mud men's mild-enchanted stream - a potion of healing if drunk from its niche, its magic lost to any container, radiating alongside the mud pool it feeds), and Area 17 the Lower Lake of Deepearth (the twelve-by-thirteen-mile open cavern, 600 feet high with the bottom 500 feet water-filled; the constant ceiling-spout column from the Upper Lake drain and its ring of turbulence over the otherwise placid waters; the inaccessible shoreline cliffs and the Area 16 tunnel mouth 50 feet above the surface; the broad northern river - 100 feet wide, 1d10+10 feet deep, its ceiling 20 to 50 feet over the water; the silt-coated smooth rock floor; the half-dozen underwater caves, their mouths at least 100 feet down; the ongoing aboleth-kuo-toa war of outposts and savage surface-and-depth battles; the kuo-toan southern domed city and its well-worn path between the lakes; the 300 aboleth of the northern floating city, its river-mouth guards; the fresh-water kraken of the largest side cavern, its 40-foot entrance tunnel, its 50 mixed-race slaves and their temporary truce, the tailing-stone pile betraying the excavation; the lake-floor gold dust under the spout - more than 100,000 gp at a 500-foot, kraken-and-aboleth-guarded depth; the drain plunge itself - 2d6 rounds submerged, the 100-foot fall, 6d6 to non-natives halved by a save vs. breath weapon, 3d6 to water-natives negated by their saves; the aboleth city - the 1,000-foot mucous disk with its six slim towers and drain-holed wall that strands victims high and dry; the sphere buildings - 20-to-30-foot lairs with one entrance, 100-foot nurseries, prisons and Three-Clan halls with six, every entrance a three-foot hole, interiors half water and half air with perch ledges, each slave race held apart; and the 40-foot buoyancy disk at the foundation, air-filled and rising on command)",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~11260-11493) with the pdf Acrobat-Capture layer as the second read (idx 400-412 = the printed pp. 88-90 windows); the compiled-tables appendix has no reprint of this prose. A CLEAN-READ ROUND: both machine reads agree on every load-bearing number - the 1,000-ft stairway with its 10-ft/1-ft/8-in stairs and 10-ft shaft, the 20-ft west cavern with 1d6x10-ft cliffs and two 3-ft pinches, the 50-ft and 20/30-ft pools, the 12x13-mile cavern, the 600-ft height and 500-ft water, the 50-ft tunnel mouth, the 100-ft river with 1d10+10 depth and 20/50-ft ceiling, the six 100-ft-down cave mouths, the 300 aboleth, the 100,000-gp gold, the 2d6/100-ft/6d6/3d6 drain plunge, the kraken's 40-ft tunnel and 50 slaves, and the city's 1,000-ft disk, six towers, 20/30/100-ft spheres with 3-ft holes and 40-ft buoyancy disk; the only garbles settled cross-read (the capture '1dlO + 10' for the djvu's 1d10 + 10). SEAMS: the R518 water travel (the river and the drain plunge), the Monster Manual denizens (the basilisk, mimics, bowlers, trappers, xorn, mud men, kuo-toa, aboleth, kraken and the rest), the PHB potion of healing and detect magic (the mud-pool stream), the R521-R522 mining (the ore veins and the gold dust), and the R503 re-grain. A ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains open until the setting lands in full (the R527/R533-R540 precedent - the gap report is NOT in the git add). Nothing auto-credits.",
+  "sentinel": "A procedural-plus-prose round: no tables pin. The numbers pin as consts per the R508 convention - the stairway feet, the west-cavern cliffs and pinches, the pool sizes, the lake's dimensions and depth, the river's width, dice and ceiling, the underwater cave count and depth, the aboleth count, the gold-dust value, the drain-plunge dice and damages, the kraken's tunnel and slaves, and the aboleth city's disk, towers, spheres and buoyancy thickness, with the 1d6x10, 1d10+10, 2d6, 6d6 and 3d6 dice pinned as count-sides(-multiplier/base) const triples or pairs. The geography, denizens, resources and unique-features prose pins as bools for both areas. The water-travel/MM/PHB/mining/R503 seams are noted; the Deepearth child stays open; nothing auto-credits."
+ },
+ "include_after": "#include \"rules/dsgarea7.h\"  // R540: the DSG Deepearth areas 14-15 pins",
+ "include_comment": "the DSG Deepearth areas 16-17 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The DSG Deepearth areas 16-17 pin Area 16 (the Mid-Level Caverns with their spiral stairway, drapery center, monster caves and the healing mud-pool stream) and Area 17 (the Lower Lake with its aboleth-kuo-toa war, the fresh-water kraken, the drain plunge and the floating aboleth city).",
+ "audit_label": "R541 DSG Deepearth areas 16-17 audit",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R540 LANDED 2026-10-17: commit 00a983f (census 463 -> 464,",
+ "prev_record": [
+  "- R540 LANDED 2026-10-17: commit 00a983f (census 463 -> 464,",
+  "  pushed ca570ac..00a983f), THE DSG DEEPEARTH AREAS 14-15,",
+  "  printed pp. 86-88 (pdf 87-89) - the reclaimed lakebed and",
+  "  the great water: Area 14 the Reclaimed Caverns (the pech-",
+  "  drained former lake with its two north inflows and south",
+  "  outflows; the Area 5 river's 500-ft waterfall and six-ft",
+  "  airspace; the eastern river's thousand-ft mountain",
+  "  waterfall dive through the sinkhole, 10-ft airspace,",
+  "  navigable; the three parallel caves with walls-of-stone",
+  "  dikes; the 8x12-ft descending bridge cavern; the",
+  "  water-polished smooth caves; the 300-miner community",
+  "  over the iron and copper; the scrags, mounds, mouther,",
+  "  crickets, leeches, ropers, owl bear, rust monsters,",
+  "  cockatrices; the Area 15 kuo-toan sabotage war - 20-25",
+  "  parties every few months, always defeated; the guarded",
+  "  ore stockpiles; and the water-wheel centrifugal pump",
+  "  with the smelting forge venting through the one-foot",
+  "  aperture, the stone town stacked three-four deep), and",
+  "  Area 15 the Upper Lake of Deepearth (the almost",
+  "  completely water-filled chamber, boat-traversable; the",
+  "  west shoreline shelf 10-to-400 ft wide with its piers and",
+  "  50% chance of 1d6 longboats; the cold still 10-to-100-ft",
+  "  depths; the center drain matched to the inflow and",
+  "  regulated by the kuo-toa boulders; the blind fish and the",
+  "  great kuo-toan domes with their air pockets; the giant",
+  "  catfish-pike-gar-lamprey and the nagas, otters, crabs,",
+  "  turtles, scrags, lacedons; the aboleth - the most purely",
+  "  evil denizens of Deepearth, slavers of all but the",
+  "  kuo-toa; the aquatic fungi and brown algae; and the domed",
+  "  city by the drain - six hexagonal 150/50-ft domes with",
+  "  20 ft of air and swim-through elevator holes). A",
+  "  CLEAN-READ ROUND: both machine reads agree on every",
+  "  number (djvu ~lines 11005-11253, Capture idx 396-400;",
+  "  the djvu '5096' and Capture 'ld6' settled cross-read;",
+  "  NOTE the idx396 page-block order anomaly - the p. 87",
+  "  area 14 body leads the p. 86 tail blocks, all text",
+  "  present). DELIVERY clean on the first try: md5",
+  "  820b1b83b714bee67b54a6c0220ef318 matched exactly (spec",
+  "  25,408 bytes). A ZERO-FLIP ROUND: the pp. 75-98",
+  "  Deepearth child remains open (the R527/R533-R539",
+  "  precedent - the gap report NOT in the git add). Pinned",
+  "  as rules/dsgarea7.h (prefix dnai, verified free; 43",
+  "  inlines - 22 consts, 21 bools, no tables; 1d6 pinned as",
+  "  a count-sides pair). Engine applied 4 then 0/4, audit",
+  "  mirror clean. Gap unchanged 139/16. PREFLIGHT GREEN",
+  "  with census 464 audit lines, each exactly once, all",
+  "  bad 0; BUILD: 0 warnings. NEXT - R541: Area 16 the",
+  "  Mid-Level Caverns (printed pp. 88-89, pdf 89-90): the",
+  "  1,000-ft spiral stairway - 10-ft-wide stairs, one-ft",
+  "  deep, eight-inch drops, the 10-ft shaft, no guardrail;",
+  "  the drapery-central living cave; the west descent's",
+  "  1d6x10-ft cliffs and two 3-ft pinches; the 50-ft,",
+  "  20-to-30-ft-deep pools; the greater basilisk, mimics,",
+  "  bowlers, trappers, xorn, piercers, rock reptiles, scum",
+  "  creepers, mud men; the same copper-iron veins continuing",
+  "  - djvu head read, capture warm."
+ ],
+ "gap_census": {
+  "closed": 139,
+  "open": 16
+ },
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "dnajStairDescendFt",
+   "value": 1000,
+   "comment": "the tunnel from Area 14 ends in a long, carefully engineered spiral stairway that descends a full 1,000 feet."
+  },
+  {
+   "name": "dnajStairWideFt",
+   "value": 10,
+   "comment": "each stair of the spiral stairway is 10 feet wide."
+  },
+  {
+   "name": "dnajStairDeepFt",
+   "value": 1,
+   "comment": "each stair is one-foot deep (the tread)."
+  },
+  {
+   "name": "dnajStairDropIn",
+   "value": 8,
+   "comment": "each stair drops eight inches."
+  },
+  {
+   "name": "dnajShaftDiaFt",
+   "value": 10,
+   "comment": "a hollow, 10-foot-diameter shaft plummets straight down the middle of the stairway - there is no guardrail."
+  },
+  {
+   "name": "dnajWestCavernWidFt",
+   "value": 20,
+   "comment": "the steeply descending western natural cavern averages about 20 feet in width and half that in height, with a small stream splashing through its length."
+  },
+  {
+   "name": "dnajCliffDice",
+   "value": 1,
+   "comment": "the western cavern is broken at many places by cliffs of 1d6 x 10 feet in height, their rough cracked faces ledged so climbing down is not difficult (the die count)."
+  },
+  {
+   "name": "dnajCliffSides",
+   "value": 6,
+   "comment": "the western cavern's cliffs are 1d6 x 10 feet high (the die sides)."
+  },
+  {
+   "name": "dnajCliffMultFt",
+   "value": 10,
+   "comment": "the western cavern's cliffs are 1d6 x 10 feet high (the multiplier)."
+  },
+  {
+   "name": "dnajPinchCount",
+   "value": 2,
+   "comment": "in two places the western cavern narrows to about three feet in diameter."
+  },
+  {
+   "name": "dnajPinchDiaFt",
+   "value": 3,
+   "comment": "the two western pinches narrow the cavern to about three feet in diameter."
+  },
+  {
+   "name": "dnajPoolMaxDiaFt",
+   "value": 50,
+   "comment": "several clear, deep pools fill the caves; the largest of these is only 50 feet in diameter."
+  },
+  {
+   "name": "dnajPoolDeepLowFt",
+   "value": 20,
+   "comment": "the pools are commonly 20 to 30 feet deep (the low bound)."
+  },
+  {
+   "name": "dnajPoolDeepHighFt",
+   "value": 30,
+   "comment": "the pools are commonly 20 to 30 feet deep (the high bound)."
+  },
+  {
+   "name": "dnajLakeLongMiles",
+   "value": 12,
+   "comment": "the Lower Lake occupies a large, open cavern about twelve miles long."
+  },
+  {
+   "name": "dnajLakeWideMiles",
+   "value": 13,
+   "comment": "the lake's cavern is thirteen miles wide at its broadest point."
+  },
+  {
+   "name": "dnajChamberHtFt",
+   "value": 600,
+   "comment": "the chamber is about 600 feet high."
+  },
+  {
+   "name": "dnajWaterDepthFt",
+   "value": 500,
+   "comment": "the bottom 500 feet of the chamber are filled with water."
+  },
+  {
+   "name": "dnajTunnelMouthFt",
+   "value": 50,
+   "comment": "the cavern leading here from Area 16 ends in a tunnel mouth 50 feet above the surface of the lake."
+  },
+  {
+   "name": "dnajRiverWideFt",
+   "value": 100,
+   "comment": "the broad, placid northern river flowing from the lake maintains a fairly constant width of about 100 feet."
+  },
+  {
+   "name": "dnajRiverDepthDice",
+   "value": 1,
+   "comment": "the northern river's depth is 1d10 + 10 feet (the die count)."
+  },
+  {
+   "name": "dnajRiverDepthSides",
+   "value": 10,
+   "comment": "the northern river's depth is 1d10 + 10 feet (the die sides)."
+  },
+  {
+   "name": "dnajRiverDepthBaseFt",
+   "value": 10,
+   "comment": "the northern river's depth is 1d10 + 10 feet (the base)."
+  },
+  {
+   "name": "dnajRiverCeilLowFt",
+   "value": 20,
+   "comment": "the river cavern's ceiling is always at least 20 feet above the water level, sometimes soaring as much as 50 feet from the surface (the low bound)."
+  },
+  {
+   "name": "dnajRiverCeilHighFt",
+   "value": 50,
+   "comment": "the river cavern's ceiling sometimes soars as much as 50 feet from the water's surface (the high bound)."
+  },
+  {
+   "name": "dnajUnderCaveCount",
+   "value": 6,
+   "comment": "a half-dozen underwater caves penetrate the cliffs bordering the lake, their mouths all at least 100 feet below the water's surface."
+  },
+  {
+   "name": "dnajUnderCaveMouthFt",
+   "value": 100,
+   "comment": "the mouths of the underwater caves are all at least 100 feet below the water's surface."
+  },
+  {
+   "name": "dnajAbolethCount",
+   "value": 300,
+   "comment": "about 300 aboleth occupy the lake dwellings, though nearly half of them may be swimming in other parts of the lake at any given time, with a small group always on guard at the mouth of the river."
+  },
+  {
+   "name": "dnajGoldDustGp",
+   "value": 100000,
+   "comment": "a vast amount of gold in the form of tiny flakes has settled on the lake floor directly under the waterspout, its total value exceeding 100,000 gp - but the 500-foot depth, the kraken, aboleth, and kuo-toa make mining here a very risky operation."
+  },
+  {
+   "name": "dnajDrainRoundsDice",
+   "value": 2,
+   "comment": "any character following the water through the Upper Lake's drain remains submerged for 2d6 rounds (the die count)."
+  },
+  {
+   "name": "dnajDrainRoundsSides",
+   "value": 6,
+   "comment": "the drain plunge submerges a follower for 2d6 rounds (the die sides)."
+  },
+  {
+   "name": "dnajFallFt",
+   "value": 100,
+   "comment": "the water bursts through the hole in the Lower Lake's ceiling and plummets 100 feet straight down."
+  },
+  {
+   "name": "dnajFallDmgDice",
+   "value": 6,
+   "comment": "characters and creatures not native to water sustain 6d6 of damage from this fall, reduced to half damage if a save vs. breath weapon is successful (the die count)."
+  },
+  {
+   "name": "dnajFallDmgSides",
+   "value": 6,
+   "comment": "the drain fall deals 6d6 damage to non-native creatures (the die sides)."
+  },
+  {
+   "name": "dnajFallNativeDmgDice",
+   "value": 3,
+   "comment": "creatures native to water, such as the kuo-toa and aboleth, sustain 3d6 of damage - and none if their saving throws are successful (the die count)."
+  },
+  {
+   "name": "dnajFallNativeDmgSides",
+   "value": 6,
+   "comment": "native creatures sustain 3d6 damage from the fall (the die sides)."
+  },
+  {
+   "name": "dnajKrakenTunnelDiaFt",
+   "value": 40,
+   "comment": "the entrance tunnel of the kraken's cavern - the largest of the caves branching off the lake - is 40 feet in diameter, leading into a vast complex of caverns, some completely water-filled, others partially filled with air."
+  },
+  {
+   "name": "dnajKrakenSlaves",
+   "value": 50,
+   "comment": "the kraken has no less than 50 slaves toiling to expand the caverns for the greater glory of their tyrannical master - an odd mix of human adventurers, drow, duergar, svirfneblin, and even a couple of kuo-toa, holding a temporary truce against the day they might strike out for freedom."
+  },
+  {
+   "name": "dnajCityDiaFt",
+   "value": 1000,
+   "comment": "the aboleth city is not attached to any surface: designed for neutral buoyancy, it floats at whatever depth the aboleth desire, a broad disk about 1,000 feet in diameter encased in cloudy mucous like the aboleth themselves."
+  },
+  {
+   "name": "dnajCityTowers",
+   "value": 6,
+   "comment": "six slim towers rise around the outside boundaries of the aboleth city, often the only portions extending above the surface of the water, connected by a fairly high wall whose base is pierced with drain holes - the aboleth come up under an enemy, the trapped water drains away, and the victims are left high and dry."
+  },
+  {
+   "name": "dnajSphereSmallLowFt",
+   "value": 20,
+   "comment": "the city's buildings are almost perfect spheres resting on narrow bases, the bottom 10% submerged; the smaller ones (20-30 feet in diameter) are individual lairs (the low bound)."
+  },
+  {
+   "name": "dnajSphereSmallHighFt",
+   "value": 30,
+   "comment": "the smaller sphere buildings run 20-30 feet in diameter with one entrance each (the high bound)."
+  },
+  {
+   "name": "dnajSphereLargeFt",
+   "value": 100,
+   "comment": "the largest sphere buildings are about 100 feet in diameter and have six entrances each."
+  },
+  {
+   "name": "dnajSphereEntranceDiaFt",
+   "value": 3,
+   "comment": "each sphere entrance is simply a three-foot-diameter hole near the base."
+  },
+  {
+   "name": "dnajBuoyDiskFt",
+   "value": 40,
+   "comment": "the buoyancy-controlling mechanism is located in the city's foundation disk, about 40 feet thick - seemingly solid but riddled with a maze of corridors and machinery rooms behind sturdy doors; most of this area is air-filled, providing the city's positive buoyancy when the controller wishes it to rise."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnajLivingCaves",
+   "value": true,
+   "comment": "the mid-level caverns are typical examples of living caves - several streams flow through them, fed by water seeping from narrow cracks in the walls and ceilings, and cave formations are common."
+  },
+  {
+   "name": "dnajDraperies",
+   "value": true,
+   "comment": "one large central cave dominates the area, surrounded by more than a dozen smaller caves; the central cave contains some of the most spectacular drapery formations in all of Deepearth."
+  },
+  {
+   "name": "dnajWildernessPass",
+   "value": true,
+   "comment": "despite the carefully constructed stairway providing access, the area should be classified as a wilderness - no organized groups of intelligent creatures live here, though pech, jermalaine, derro and drow may all be encountered passing through."
+  },
+  {
+   "name": "dnajMonsterCaves",
+   "value": true,
+   "comment": "a number of monsters have taken up residence and regard these caverns as their own territory: the large central cave contains a greater basilisk and a number of mimics, while the surrounding smaller caves hold bowlers, trappers, a xorn, piercers, rock reptiles, scum creepers and, in one location, mud men."
+  },
+  {
+   "name": "dnajMidResources",
+   "value": true,
+   "comment": "the water here is fresh and clean, the air circulated enough to remain breathable though rather stuffy; many varieties of fungi thrive here, especially near the pools."
+  },
+  {
+   "name": "dnajOreVeins",
+   "value": true,
+   "comment": "the same veins of copper and iron ore excavated by the pech in Area 14 provide access to those mineral ores here - visible in a number of places as streaks of greenish rock for copper or reddish rock for iron, their colors contributing to the elaborate drapery formations of the central chamber."
+  },
+  {
+   "name": "dnajMudPool",
+   "value": true,
+   "comment": "a small stream trickles from a crack in the side of the mud men's cavern, emptying into a wide pool of mud that completely fills the cave's bottom, so the only access to the stream is wading through the mud pool's fringes; the stream's water is of mild enchantment, radiating magic - as does the mud pool - and acts as a potion of healing if drunk from its niche in the wall, losing all magical properties if any container is used to carry it, even from the streambed to a character's mouth."
+  },
+  {
+   "name": "dnajSpoutTurbulence",
+   "value": true,
+   "comment": "near the center of the ceiling a constant column of water spills from the drain in the Upper Lake; the water around this column is quite turbulent, but the rest of the lake is rather placid - the lake's shoreline is inaccessible, rocky cliffs dropping far below the water line on all sides, though the cracked rough walls are not difficult to climb."
+  },
+  {
+   "name": "dnajLakeWar",
+   "value": true,
+   "comment": "the Lower Lake is the scene of an ongoing struggle between the aboleth and the kuo-toa - each race maintains outposts, and savage battles often rage both on the surface and in the depths."
+  },
+  {
+   "name": "dnajKuoSouthCity",
+   "value": true,
+   "comment": "the kuo-toa have built a domed city near the southern end of the lake, very similar to their Upper Lake community; the men-fish often travel between the two lakes on a well-worn path up to the tunnel mouth near their lair, though occasionally one follows the water down the drain despite the inherent risks of the plunge."
+  },
+  {
+   "name": "dnajAbolethNorthCity",
+   "value": true,
+   "comment": "the aboleth have erected their own floating city at the lake's northern end and attempt to exert strict control over creatures using the river to exit or enter the lake."
+  },
+  {
+   "name": "dnajKrakenLair",
+   "value": true,
+   "comment": "the only other lake denizen is given a wide berth by both the aboleth and the kuo-toa: a massive kraken that has somehow adapted itself to live in fresh water, dwelling in the largest of the side caverns, its excavations marked by a huge pile of tailing stone at the lake bottom beneath the cavern."
+  },
+  {
+   "name": "dnajLakeResources",
+   "value": true,
+   "comment": "a constant supply of fresh air finds its way into the cavern through several entrances, and the spout of water from the ceiling throws out enough turbulence to keep it circulating; the lake also hosts a number of waterborne fungi and numerous fish upon which other creatures survive."
+  },
+  {
+   "name": "dnajSphereInteriors",
+   "value": true,
+   "comment": "the aboleth city's buildings are all single-room spheres filled half with water and half with air, frequently with perch-like ledges halfway up their interior walls; the larger ones serve as nurseries for the aboleth young or prisons for their many human, drow, pech, derro, and duergar slaves, each race held in a different structure."
+  },
+  {
+   "name": "dnajClanHalls",
+   "value": true,
+   "comment": "the largest sphere buildings are the halls of government for the Three Clans, each clan with its own building - many ledges up and down the interior walls where the clan members perch when their sessions convene."
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['dnajStairDescendFt']() != 1000 or m['dnajStairWideFt']() != 10 or m['dnajStairDeepFt']() != 1 or m['dnajStairDropIn']() != 8 or m['dnajShaftDiaFt']() != 10",
+   "note": "the spiral stairway: the 1,000-ft descent, the 10-ft-wide one-foot-deep stairs dropping eight inches, the 10-ft shaft."
+  },
+  {
+   "expr": "m['dnajWestCavernWidFt']() != 20 or m['dnajCliffDice']() != 1 or m['dnajCliffSides']() != 6 or m['dnajCliffMultFt']() != 10 or m['dnajPinchCount']() != 2 or m['dnajPinchDiaFt']() != 3",
+   "note": "the west descent: the 20-ft cavern, its 1d6x10-ft cliffs, the two three-foot pinches."
+  },
+  {
+   "expr": "m['dnajPoolMaxDiaFt']() != 50 or m['dnajPoolDeepLowFt']() != 20 or m['dnajPoolDeepHighFt']() != 30",
+   "note": "the pools: the largest 50 feet across, commonly 20 to 30 feet deep."
+  },
+  {
+   "expr": "m['dnajLakeLongMiles']() != 12 or m['dnajLakeWideMiles']() != 13 or m['dnajChamberHtFt']() != 600 or m['dnajWaterDepthFt']() != 500 or m['dnajTunnelMouthFt']() != 50",
+   "note": "the Lower Lake cavern: twelve by thirteen miles, 600 feet high, 500 feet of water, the mouth 50 feet above the surface."
+  },
+  {
+   "expr": "m['dnajRiverWideFt']() != 100 or m['dnajRiverDepthDice']() != 1 or m['dnajRiverDepthSides']() != 10 or m['dnajRiverDepthBaseFt']() != 10 or m['dnajRiverCeilLowFt']() != 20 or m['dnajRiverCeilHighFt']() != 50",
+   "note": "the northern river: 100 feet wide, 1d10+10 deep, ceiling 20 to 50 feet above."
+  },
+  {
+   "expr": "m['dnajUnderCaveCount']() != 6 or m['dnajUnderCaveMouthFt']() != 100 or m['dnajAbolethCount']() != 300 or m['dnajGoldDustGp']() != 100000",
+   "note": "the lake depths: six underwater caves below the 100-ft line, the 300 aboleth, the 100,000-gp gold dust."
+  },
+  {
+   "expr": "m['dnajDrainRoundsDice']() != 2 or m['dnajDrainRoundsSides']() != 6 or m['dnajFallFt']() != 100 or m['dnajFallDmgDice']() != 6 or m['dnajFallDmgSides']() != 6 or m['dnajFallNativeDmgDice']() != 3 or m['dnajFallNativeDmgSides']() != 6",
+   "note": "the drain plunge: 2d6 rounds submerged, the 100-ft fall, 6d6 to non-natives, 3d6 to natives."
+  },
+  {
+   "expr": "m['dnajKrakenTunnelDiaFt']() != 40 or m['dnajKrakenSlaves']() != 50 or m['dnajCityDiaFt']() != 1000 or m['dnajCityTowers']() != 6 or m['dnajBuoyDiskFt']() != 40",
+   "note": "the kraken and the aboleth city: the 40-ft tunnel, the 50 slaves, the 1,000-ft disk on its six towers, the 40-ft buoyancy disk."
+  },
+  {
+   "expr": "m['dnajSphereSmallLowFt']() != 20 or m['dnajSphereSmallHighFt']() != 30 or m['dnajSphereLargeFt']() != 100 or m['dnajSphereEntranceDiaFt']() != 3",
+   "note": "the sphere buildings: 20-30-foot lairs with one entrance, 100-foot clan halls with six, all entered by three-foot holes."
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Area 16 Mid-Level section": [
+   {
+    "kind": "const",
+    "name": "dnajStairDescendFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajStairWideFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajStairDeepFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajStairDropIn"
+   },
+   {
+    "kind": "const",
+    "name": "dnajShaftDiaFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajLivingCaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajDraperies"
+   },
+   {
+    "kind": "const",
+    "name": "dnajWestCavernWidFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajCliffDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnajCliffSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnajCliffMultFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajPinchCount"
+   },
+   {
+    "kind": "const",
+    "name": "dnajPinchDiaFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajPoolMaxDiaFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajPoolDeepLowFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajPoolDeepHighFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajWildernessPass"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajMonsterCaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajMidResources"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajOreVeins"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajMudPool"
+   }
+  ],
+  "the Area 17 Lower Lake section": [
+   {
+    "kind": "const",
+    "name": "dnajLakeLongMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dnajLakeWideMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dnajChamberHtFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajWaterDepthFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajSpoutTurbulence"
+   },
+   {
+    "kind": "const",
+    "name": "dnajTunnelMouthFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajRiverWideFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajRiverDepthDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnajRiverDepthSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnajRiverDepthBaseFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajRiverCeilLowFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajRiverCeilHighFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajUnderCaveCount"
+   },
+   {
+    "kind": "const",
+    "name": "dnajUnderCaveMouthFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajLakeWar"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajKuoSouthCity"
+   },
+   {
+    "kind": "const",
+    "name": "dnajAbolethCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajAbolethNorthCity"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajKrakenLair"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajLakeResources"
+   },
+   {
+    "kind": "const",
+    "name": "dnajGoldDustGp"
+   },
+   {
+    "kind": "const",
+    "name": "dnajDrainRoundsDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnajDrainRoundsSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnajFallFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajFallDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnajFallDmgSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnajFallNativeDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnajFallNativeDmgSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnajKrakenTunnelDiaFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajKrakenSlaves"
+   },
+   {
+    "kind": "const",
+    "name": "dnajCityDiaFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajCityTowers"
+   },
+   {
+    "kind": "const",
+    "name": "dnajSphereSmallLowFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajSphereSmallHighFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajSphereLargeFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnajSphereEntranceDiaFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajSphereInteriors"
+   },
+   {
+    "kind": "bool",
+    "name": "dnajClanHalls"
+   },
+   {
+    "kind": "const",
+    "name": "dnajBuoyDiskFt"
+   }
+  ]
+ },
+ "caller_files": []
+}

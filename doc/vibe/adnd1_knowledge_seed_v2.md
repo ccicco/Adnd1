@@ -8222,6 +8222,62 @@ when both halves land.
   kuo-toan war parties; and the water-wheel pump with the
   smelting forge and its one-foot valley vent - djvu read,
   capture warm.
+- R540 LANDED 2026-10-17: commit 00a983f (census 463 -> 464,
+  pushed ca570ac..00a983f), THE DSG DEEPEARTH AREAS 14-15,
+  printed pp. 86-88 (pdf 87-89) - the reclaimed lakebed and
+  the great water: Area 14 the Reclaimed Caverns (the pech-
+  drained former lake with its two north inflows and south
+  outflows; the Area 5 river's 500-ft waterfall and six-ft
+  airspace; the eastern river's thousand-ft mountain
+  waterfall dive through the sinkhole, 10-ft airspace,
+  navigable; the three parallel caves with walls-of-stone
+  dikes; the 8x12-ft descending bridge cavern; the
+  water-polished smooth caves; the 300-miner community
+  over the iron and copper; the scrags, mounds, mouther,
+  crickets, leeches, ropers, owl bear, rust monsters,
+  cockatrices; the Area 15 kuo-toan sabotage war - 20-25
+  parties every few months, always defeated; the guarded
+  ore stockpiles; and the water-wheel centrifugal pump
+  with the smelting forge venting through the one-foot
+  aperture, the stone town stacked three-four deep), and
+  Area 15 the Upper Lake of Deepearth (the almost
+  completely water-filled chamber, boat-traversable; the
+  west shoreline shelf 10-to-400 ft wide with its piers and
+  50% chance of 1d6 longboats; the cold still 10-to-100-ft
+  depths; the center drain matched to the inflow and
+  regulated by the kuo-toa boulders; the blind fish and the
+  great kuo-toan domes with their air pockets; the giant
+  catfish-pike-gar-lamprey and the nagas, otters, crabs,
+  turtles, scrags, lacedons; the aboleth - the most purely
+  evil denizens of Deepearth, slavers of all but the
+  kuo-toa; the aquatic fungi and brown algae; and the domed
+  city by the drain - six hexagonal 150/50-ft domes with
+  20 ft of air and swim-through elevator holes). A
+  CLEAN-READ ROUND: both machine reads agree on every
+  number (djvu ~lines 11005-11253, Capture idx 396-400;
+  the djvu '5096' and Capture 'ld6' settled cross-read;
+  NOTE the idx396 page-block order anomaly - the p. 87
+  area 14 body leads the p. 86 tail blocks, all text
+  present). DELIVERY clean on the first try: md5
+  820b1b83b714bee67b54a6c0220ef318 matched exactly (spec
+  25,408 bytes). A ZERO-FLIP ROUND: the pp. 75-98
+  Deepearth child remains open (the R527/R533-R539
+  precedent - the gap report NOT in the git add). Pinned
+  as rules/dsgarea7.h (prefix dnai, verified free; 43
+  inlines - 22 consts, 21 bools, no tables; 1d6 pinned as
+  a count-sides pair). Engine applied 4 then 0/4, audit
+  mirror clean. Gap unchanged 139/16. PREFLIGHT GREEN
+  with census 464 audit lines, each exactly once, all
+  bad 0; BUILD: 0 warnings. NEXT - R541: Area 16 the
+  Mid-Level Caverns (printed pp. 88-89, pdf 89-90): the
+  1,000-ft spiral stairway - 10-ft-wide stairs, one-ft
+  deep, eight-inch drops, the 10-ft shaft, no guardrail;
+  the drapery-central living cave; the west descent's
+  1d6x10-ft cliffs and two 3-ft pinches; the 50-ft,
+  20-to-30-ft-deep pools; the greater basilisk, mimics,
+  bowlers, trappers, xorn, piercers, rock reptiles, scum
+  creepers, mud men; the same copper-iron veins continuing
+  - djvu head read, capture warm.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
