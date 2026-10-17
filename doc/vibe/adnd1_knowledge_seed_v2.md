@@ -7399,6 +7399,68 @@ when both halves land.
   opener; djvu ~lines 7255-7420 already extracted and CLEAN
   in both reads - a fast round expected. The descriptions
   prose is extracted; verify children 138-139 exact wording.
+- R526 LANDED 2026-10-17: commit 6e315f4 (census 449 -> 450,
+  pushed 9cf5b25..6e315f4), THE DSG EQUIPMENT
+  DESCRIPTIONS AND TRANSPORTATION, printed pp. 56-57 (pdf
+  57-58) - the item prose: the air bladder (flotation at a
+  1/3 kick rate with no exertion or swimming needed, a full
+  turn of rest air rising at the air-supply proportions when
+  exerting), the baskets (woven, lidded, not waterproof), the
+  beacon (a mounted 240-ft cone, 2 ft at the source
+  broadening to a 90-ft fan, a pint of oil per 10 turns,
+  tightly shutterable), the birdcage (three songbirds, 18 in
+  high, a foot across), the boxes (2 x 2 ft and 1 1/2 in
+  deep, lightproof and airtight), the crampons, the iron
+  drill (a 1-in x 9-in hole, wood at 1 in per turn and stone
+  in three, the 120-ft grinding noise), the grappling hooks,
+  the waterproof lantern (10-ft underwater radius vs 30, the
+  flame surviving water but not the missing air - a secret
+  d6 of remaining rounds), the lard (an 80% passage squeeze,
+  too stubborn to burn as a weapon but 2 hp per round of
+  fire damage for 1d6 rounds, and a hypothermia
+  insulator), the waterproofing oil (2 sq yd per pint of
+  leather or wool never cotton, 1d6 x 6 turns of pouring
+  water, 1d6 immersion, then wetter for 1d6 turns until
+  saturated), the pickaxe (the miner's essential, the rate
+  halved without it, a desperate weapon at -2 dealing 1d10
+  small/medium and 1d20 large), the chalk powder (a 400-sq-ft
+  or 8-character covering, the 10-ft dust cloud revealing
+  invisibles), the pulleys (1/2/3 rope loops, two single
+  doubling, two double quadrupling, two triple sextupling
+  the lift), the hollow reed (the periscope breath, 1/3
+  movement with a 10% per-round ripple, none floating), the
+  shovel (the daily excavation halved without it) and the
+  whistle (1,000 ft); and the transportation: the
+  collapsible boat (a backpack-sized package unfolding into
+  a small-rowboat equivalent in 1d3 turns, twice the listed
+  weight when wet), the canoe (swifter, more maneuverable,
+  easier to capsize - 3 normal or 2 heavy, the large 9 or
+  6), and the kayak (the one-character craft, the oilskin
+  layer keeping it dry even capsized). A CLEAN-READ ROUND:
+  both machine reads agree on every number; no screenshots
+  needed. WITH THIS ROUND THE NEW-EQUIPMENT PARENT (136) AND
+  THE WHOLE pp. 36-55 UNDERGROUND-ENVIRONMENT CHAPTER ARE
+  CLOSED. SEAMS: air supply p. 36, hypothermia p. 42, the
+  movement p. 21 passage width, R520 pickaxe/shovel rates,
+  the climbing crampons/hooks. Pinned as
+  rules/dsgequip2.h (prefix dnet, verified free; 80 inlines
+  - 54 consts, 26 bools, no tables). Spec 37,748 bytes, md5
+  fdf6297d5d25e2f005d0ff5d91abeac1 (user-side identical).
+  Engine applied 6 then 0/6. Gap 124/31 -> 126/29 (2 flips:
+  children 138-139; the New equipment parent closes at the
+  next census check). NEXT - R527: the proficiency
+  descriptions (printed p. 58, pdf 59) - the fourteen
+  prose paragraphs (animal trainer through weaver, the
+  armorer's forge and ventilation, the boatwright's
+  plus-10-ft space rule, the miner's pan-vs-tunnel
+  equipment, the smelter's furnace/bellows/buckets, the
+  weaver's spinning wheel and loom); djvu ~lines 7470-7575
+  already extracted and CLEAN in both reads; no gap child
+  of its own (the descriptions ride the Equipment for
+  proficiencies child 140, already flipped at R525) - so
+  R527 either pins the prose as a lossless catch-up round
+  or skips to Improving Play; check the gap report for any
+  p. 58 line before deciding.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

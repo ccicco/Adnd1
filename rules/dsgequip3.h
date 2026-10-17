@@ -1,0 +1,165 @@
+// =========================================================================================
+// Adnd1 - rules/dsgequip3.h
+// The DSG PROFICIENCY DESCRIPTIONS, R527: printed p. 58 (pdf 59) - the
+// fourteen brief introductions: the animal trainer (little equipment beyond
+// harnesses and leashes, but a great deal of outdoor room, with shelter and
+// food if boarding), the armorer (a small forge, several hammers, at least
+// one small anvil and metal files, with good ventilation and exhaust for the
+// especially hot fire the high-quality armor irons demand), the blacksmith
+// (the armorer's equipment in greater assortment and size, but a cruder grade
+// of iron needing lower-quality tools), the boatwright (a major investment in
+// tools or facilities at a carefully chosen location - boats launchable, so
+// near water, excepting kayaks, canoes and small rowboats; the space the boat
+// size plus 10 feet in all directions; the tools all carpentry plus pitch or
+// tar), the bowyer/fletcher (little beyond knives and vises), the carpenter
+// (hammers, spikes, axes, and chisels), the gem cutter (finely tooled
+// chisels, hammers and vises, good light, sturdy safes or strongboxes), the
+// leatherworker (punches, needles, knives, scissors, and treating oils), the
+// miner (varying with the operation - a shallow pan and container for stream
+// panning, but picks, shovels, shoring timbers, hammers, spikes and mining
+// carts for a tunnel, the need growing with the tunnel), the potter (a small
+// operation whose largest object, the kiln, limits the size of the wares),
+// the smelter (a large, sophisticated, expensive setup: the efficient
+// high-temperature furnace at the center, an individually operated bellows,
+// and the iron-buckets-on-rails or cauldron/stone-trough feeding system), the
+// stonemason (going where the work is, stone availability the limit, usually
+// with access to a sturdy wagon and oxen), the weaponsmith (a small
+// blacksmith's shop plus the fine finishing tools for edges and
+// ornamentation), and the weaver (a very small area, the tabled space needed
+// only for spinning, the initial costs a spinning wheel and loom)
+// census 450 -> 451.
+//
+// the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf
+// = printed + 1; the text read from the IA djvu OCR (djvu.txt lines
+// ~7470-7575) with the pdf Acrobat-Capture layer as the second read (idx 135
+// = the printed p. 58 window); the compiled-tables appendix has no reprint of
+// this prose. A CLEAN-READ ROUND: both machine reads agree on every
+// load-bearing word and number - the only garbles are the standing glyph
+// classes (the djvu "Тһе" leading the leatherworker paragraph, the blacksmith
+// comma artifacts). CATCH-UP LESSON: the fourteen paragraphs sit on printed
+// p. 58 with no gap child of their own - the Equipment-for-proficiencies
+// child (140) closed at R525 covering only the cost/space grid, and the
+// descriptions prose rides this round under that already-flipped child, the
+// R523 exceptional-stone precedent applied for the second time; zero gap
+// flips, the census unchanged. The paragraph set is the descriptions
+// companion to the R525 grid; the armorer/boatwright/miner/smelter paragraphs
+// carry the load-bearing craft detail (the ventilation, the 10-ft margin, the
+// pan-vs-tunnel equipment ladder, the furnace/bellows/feeding system). The
+// Improving Play chapter (pp. 59-63) starts the NEXT round; nothing
+// auto-credits.
+//
+// A pure prose catch-up round: no tables pin, and the only load-bearing
+// number is the boatwright's 10-foot margin, pinned as a const. The fourteen
+// paragraphs pin as prose bools - the trainer, armorer, blacksmith,
+// boatwright, bowyer, carpenter, gem cutter, leatherworker, miner, potter,
+// smelter, stonemason, weaponsmith and weaver. No gap flips: the descriptions
+// ride the already-flipped Equipment-for-proficiencies child per the R523
+// catch-up precedent, so the gap census is unchanged at 126/29. The R525 grid
+// is the numeric companion of this prose; the R520 mining shoring seam
+// underlies the miner paragraph; nothing auto-credits.
+//
+namespace rules {
+
+// ---- the equipment-for-proficiencies descriptions ----
+
+// the descriptions provide brief introductions to the various proficiencies -
+// interested players are encouraged to learn more by reading of these arts
+// during medieval times.
+inline bool dnepIntroFrame()
+    { return true; }
+
+// the animal trainer needs little specialized equipment - at most a few
+// harnesses or leashes - though most animal training requires a great deal of
+// room, generally outdoor space, with shelter and food also required if
+// raising or boarding animals.
+inline bool dnepAnimalTrainerLittle()
+    { return true; }
+
+// the armorer requires a small forge, several hammers, at least one small
+// anvil, and a collection of metal files - and since the high-quality iron
+// and steel of most armor need an especially hot fire, good ventilation and
+// exhaust must be provided.
+inline bool dnepArmorerForge()
+    { return true; }
+
+// the blacksmith's craft requires much the same equipment as the armorer's
+// but in a greater assortment and much greater size - though working a cruder
+// grade of iron, his tools need not be of such high quality.
+inline bool dnepBlacksmithSameButMore()
+    { return true; }
+
+// the boatwright must make a major investment in tools or facilities and
+// choose the location with care - excepting kayaks, canoes and small
+// rowboats, boats must be built close enough to water for easy launching; the
+// tools are all carpentry tools plus pitch or tar.
+inline bool dnepBoatwrightLocationCare()
+    { return true; }
+
+// the space a boatwright needs is roughly the size of the boat being built,
+// plus 10 feet in all directions.
+inline int dnepBoatwrightMarginFt()
+    { return 10; }
+
+// the bowyer/fletcher is another profession requiring little in the way of
+// tools beyond an assortment of knives and vises.
+inline bool dnepBowyerLittle()
+    { return true; }
+
+// the carpenter needs an assortment of woodworking tools including hammers,
+// spikes, axes, and chisels.
+inline bool dnepCarpenterTools()
+    { return true; }
+
+// the gem cutter needs a collection of finely tooled chisels, hammers, and
+// vises, with good light sources important and most keeping sturdy safes or
+// strongboxes to protect their valuable materials.
+inline bool dnepGemCutterTools()
+    { return true; }
+
+// the leatherworker's tools include punches, needles, knives, scissors, and
+// oils for treating the leather.
+inline bool dnepLeatherworkerTools()
+    { return true; }
+
+// the miner's equipment varies considerably with the type and size of the
+// operation - panning for gold needs little more than a shallow pan and a
+// container, while a tunnel mine involves picks and shovels to excavate,
+// timbers, hammers and spikes to shore, and a few mining carts on a long
+// tunnel, the need growing with the tunnel.
+inline bool dnepMinerVaries()
+    { return true; }
+
+// the potter's operation can be quite small, the largest object being the
+// kiln - and the kiln's size limits the size of the objects the potter can
+// make.
+inline bool dnepPotterKiln()
+    { return true; }
+
+// the smelter must set up a large, sophisticated, rather expensive operation:
+// an efficient furnace for extremely high temperatures at the center, a
+// bellows system usually operated by an individual to fan the fire, and a
+// feeding system - iron buckets sliding along a rail or track through the
+// furnace, or a huge cauldron or stone trough.
+inline bool dnepSmelterFurnace()
+    { return true; }
+
+// like a carpenter, the stonemason usually goes where there is work - the
+// most limiting factor is the availability of stone, often gathered in the
+// immediate area, and the mason usually maintains or has access to a sturdy
+// wagon and a few oxen for transport.
+inline bool dnepStonemasonGoesToWork()
+    { return true; }
+
+// the weaponsmith needs to maintain a small blacksmith's shop, with an
+// additional array of tools for finishing the fine detail work of putting
+// edges and ornamentation on weapons.
+inline bool dnepWeaponsmithShop()
+    { return true; }
+
+// the weaver can work in a very small area - if the wool or cotton must be
+// spun by the weaver, the tabled area is needed; the initial costs include a
+// spinning wheel and loom.
+inline bool dnepWeaverSmall()
+    { return true; }
+
+}   // namespace rules
