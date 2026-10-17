@@ -1,0 +1,388 @@
+{
+ "round": 546,
+ "prefix": "dnao",
+ "header_file": "rules/dsgarea13.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 469,
+ "title": "the DSG Deepearth areas 26-27",
+ "audit_label": "R546 DSG Deepearth areas 26-27 audit",
+ "audit_comment": "The DSG Deepearth areas 26-27 pin Area 26 (the Hallowed Grounds with their mile-wide dead caverns, the skeleton battlefields, the undead legions commanded per cavern by 18-27th-level liches and their treasure houses of battle magic) and Area 27 (the Melting Pot with its small-cavern maze, the 1d12-cave racial niches, the sacred waters and the secret routes).",
+ "include_comment": "the DSG Deepearth areas 26-27 pins",
+ "include_after": "#include \"rules/dsgarea12.h\"  // R545: the DSG Deepearth areas 24-25 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R545 LANDED 2026-10-17: commit c719f8828ff802cbd8e3",
+ "prev_record": [
+  "- R545 LANDED 2026-10-17: commit c719f8828ff802cbd8e3",
+  "  2208ecf2a51be83b96d2 (census 468 -> 469, pushed",
+  "  0523f06..c719f88), THE DSG DEEPEARTH AREAS 24-25,",
+  "  printed p. 94 (pdf 95) - Area 24 the Domain of the",
+  "  Duergar (the largest gray dwarf concentration in",
+  "  Deepearth, nearly a hundred widened natural caves;",
+  "  the living caves, the ledged water-filled chambers,",
+  "  the drought-proof dammed reservoirs; the central",
+  "  council cavern; the 30-ft navigable outflow stream",
+  "  with its dry walkway; the 8,000 duergar with their",
+  "  rothe herds; the second-class derro tenants; the",
+  "  hundreds of demoralized slaves - humans, goblins,",
+  "  svirfneblin, drow - at a 25% escape-join chance;",
+  "  the un-eradicable giant bats; the Grand Canyon",
+  "  air and the cut ducts; the southwestern slave-",
+  "  worked iron-copper-gold mines; the fine-art",
+  "  metal-working and the gold sculptors - 1d6x100 gp",
+  "  per residence, six times that in larger homes,",
+  "  2d6x1,000 gp in the public halls, life-size",
+  "  20,000-gp statues worth 1d4+1 times intact; and",
+  "  the red-fungus breweries with the well-attended",
+  "  inns), and Area 25 the Windpipe (the six living",
+  "  caves with 80-ft miles-long central chambers",
+  "  joining at the excavated chamber; the high-level",
+  "  drow outpost - 4th+ fighters, 5th+ MU and cleric;",
+  "  the doombats, piercers, oozes, jellies, slimes,",
+  "  lichens, basidironds, rats and crawlers; the 50%",
+  "  polluted pools with one or two pure sources per",
+  "  cave; and the shaft - 20 ft wide, 20 miles to the",
+  "  mountain crevasse, door-sized entry, alternating",
+  "  blasts: one turn per hour roaring upward, four",
+  "  inactive, one down, varying as much as 50%; the",
+  "  ride five rounds up to Area 28, eight down, the",
+  "  failed Intelligence Check costing 6d6 falling",
+  "  damage). A CLEAN-READ ROUND: both machine reads",
+  "  agree on every number (djvu ~lines 12082-12255,",
+  "  capture idx 214 = Area 24 in full + the Area 25",
+  "  head, idx 216 head = the windpipe body; the",
+  "  capture ld6/2d6/ld4+1/ld12 settled by the djvu,",
+  "  the djvu 'realms o!' settled by the capture). 52",
+  "  inlines (31 consts + 21 bools), header",
+  "  rules/dsgarea12.h, prefix dnan, no table.",
+  "  DELIVERY clean md5-exact on the first try:",
+  "  authored md5 3739256c26c405c05ba60d9cbf2d1df2",
+  "  matched exactly (spec 25,012 bytes); engine",
+  "  applied 4 then 0/4, preflight GREEN with AUDIT",
+  "  CENSUS: 469. A ZERO-FLIP ROUND: gap census stays",
+  "  139/16, the pp. 75-98 Deepearth child open.",
+  "  NEXT - R546: Areas 26-27 (printed pp. 95-96, pdf",
+  "  96-97, djvu ~line 12258+) - Area 26 the Hallowed",
+  "  Grounds (the mile-wide dozen-mile-long caverns",
+  "  with 1,000-ft ceilings and gorges, the battle",
+  "  debris and thousands of skeletons, the undead",
+  "  legions - wights, wraiths, spectres, ghosts,",
+  "  skeletons - each cavern commanded by a lich of",
+  "  18-27th level (17+1d10), 20% MU/clerics, the",
+  "  treasure houses with their battle magic) and Area",
+  "  27 the Melting Pot (the small-cavern maze, the",
+  "  1d12-cave racial niches - drow, duergar, pech,",
+  "  derro, cloakers, myconids, umber hulks, kuo-toa -",
+  "  the sacred water, the exhausted mineral veins,",
+  "  the secret passages); both reads already",
+  "  fetched this round (idx 216 carried Area 26 in",
+  "  full and the Area 27 head)."
+ ],
+ "banner": {
+  "title": "THE DSG DEEPEARTH AREAS 26-27, R546: printed pp. 95-96 (pdf 96-97) - the individual area key crosses the dead ground and the crowded maze: Area 26 the Hallowed Grounds (the multitude of natural caverns holding some of the largest chambers in all Deepearth - ceilings 1,000 feet or more, caverns over a mile wide and a dozen miles long, floors cut by bridged gorges, side tunnels, ruins and fortifications; the streams and small deep lakes; the barren beaten look with broken formations and collapsed bridges; the battle debris of broken weapons, shattered war machines and thousands upon thousands of skeletons - drow, duergar, svirfneblin, derro, plus the skeleton-less pech, cloakers and illithids who also fought and died; the sacrosanct spirits rising as wights, wraiths, spectres, ghosts and skeletons to marshall against trespassers, each huge cavern commanded by a single lich; the plentiful air and water but no food; the centuries-scavenged battlefields; and the treasure houses - city or fortification ruins holding thousands of weapons, mundane armor and war machines, fortunes in coins, gems and jewelry, and battle magic - weapons, armor, scrolls, rings, potions, wands, rods and miscellaneous items beyond measure - each guarded by an undead army commanded by a lich of 18-27th level (17 + 1d10), twenty percent of the liches magic user/clerics and the other 80% magic-users only), and Area 27 the Melting Pot (the contrast realm of many small caverns in an intricate maze of natural and artificial tunnels, amply watered with lustrous formations; the dwellings of most intelligent creatures known to Deepearth - drow, duergar, pech, derro, cloakers, myconids, umber hulks, even kuo-toa - each race in a 1d12-cave niche, vigorously defended with fortified construction, traps and war training; the rothe herds and edible fungus plots; the sacred unpollutable water sources; the nearly exhausted mineral veins and the wise use of raw materials; and the long-history secret passages and concealed entrances giving many possible routes between locations).",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~12258-12360) with the pdf Acrobat-Capture layer as the second read (capture idx 216 = the printed p. 95 window carrying Area 26 in full and the Area 27 head); the compiled-tables appendix has no reprint of this prose. A CLEAN-READ ROUND: both machine reads agree on every load-bearing number - the 1,000-ft ceilings, the mile-wide dozen-mile-long caverns, the 18-27th-level liches rolled as 17 + 1d10, the 20/80 lich caste split and the 1d12-cave niches; the only garbles settled cross-read (the djvu 1410 and 8096 for the capture 1d10 and 80%, the capture ld12 for the djvu 1d12). SEAMS: the Monster Manual undead (the wights, wraiths, spectres, ghosts, skeletons and liches) and denizens (the drow, duergar, pech, derro, cloakers, myconids, umber hulks, kuo-toa, rothe), the magic-item economy of the treasure houses (the R80 rounds), and the R521-R522 mining (the exhausted veins). A ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains open until the setting lands in full (the R527/R533-R545 precedent - the gap report is NOT in the git add). Nothing auto-credits.",
+  "sentinel": "A procedural-plus-prose round: no tables pin. The numbers pin as consts per the R508 convention - the ceiling minimum, the lich level bounds and the 17+1d10 dice-sides-base triple, the lich caste percentage, and the 1d12 niche dice-sides pair. The geography, denizens, resources and unique-features prose pins as bools for both areas. The undead/MM/magic-item/mining seams are noted; the Deepearth child stays open; nothing auto-credits."
+ },
+ "consts": [
+  {
+   "name": "dnaoCeilMinFt",
+   "value": 1000,
+   "comment": "soaring ceilings reach 1,000 feet or more above the floors."
+  },
+  {
+   "name": "dnaoLichLvlMin",
+   "value": 18,
+   "comment": "each treasure house army is commanded by a lich of 18-27th level (the low bound)."
+  },
+  {
+   "name": "dnaoLichLvlMax",
+   "value": 27,
+   "comment": "the commanding liches range up to 27th level (the high bound)."
+  },
+  {
+   "name": "dnaoLichLvlDice",
+   "value": 1,
+   "comment": "the lich level is 17 + 1d10 (the die count)."
+  },
+  {
+   "name": "dnaoLichLvlSides",
+   "value": 10,
+   "comment": "the lich level is 17 + 1d10 (the die sides)."
+  },
+  {
+   "name": "dnaoLichLvlBase",
+   "value": 17,
+   "comment": "the lich level is 17 + 1d10 (the base)."
+  },
+  {
+   "name": "dnaoLichDualPct",
+   "value": 20,
+   "comment": "twenty percent of the liches are magic user/clerics and the other 80% are only magic-users."
+  },
+  {
+   "name": "dnaoNicheDice",
+   "value": 1,
+   "comment": "each race has secured a small niche of 1d12 caves (the die count)."
+  },
+  {
+   "name": "dnaoNicheSides",
+   "value": 12,
+   "comment": "each racial niche is 1d12 caves (the die sides)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnaoVastCaverns",
+   "value": true,
+   "comment": "this multitude of natural caverns includes some of the largest chambers in all of Deepearth, with numerous excavated side tunnels and places showing fortifications and the ruins of large cities."
+  },
+  {
+   "name": "dnaoMileWideChambers",
+   "value": true,
+   "comment": "caverns over a mile wide and a dozen miles long are common."
+  },
+  {
+   "name": "dnaoGorgeBridges",
+   "value": true,
+   "comment": "many cavern floors are cut by deep, wide gorges, several of which have been bridged."
+  },
+  {
+   "name": "dnaoStreamsLakes",
+   "value": true,
+   "comment": "several streams provide the area's water supply and some caverns contain small, deep lakes."
+  },
+  {
+   "name": "dnaoBarrenBeaten",
+   "value": true,
+   "comment": "the caves once held many elegant formations but now have a barren and beaten look - stalactites and stalagmites broken, many bridges collapsed."
+  },
+  {
+   "name": "dnaoBattleDebris",
+   "value": true,
+   "comment": "the debris of battle lies everywhere: broken weapons, shattered war machines, and thousands upon thousands of skeletons."
+  },
+  {
+   "name": "dnaoNothingLives",
+   "value": true,
+   "comment": "nothing lives here anymore, though the caverns were once highly prized; the skeletons include drow, duergar, svirfneblin and derro, and the skeleton-less pech, cloakers and illithids also fought and died for control of these caverns."
+  },
+  {
+   "name": "dnaoSpiritLegions",
+   "value": true,
+   "comment": "the spirits of the fallen warriors wish their battlegrounds to remain sacrosanct and rise up against trespassers: wights, wraiths, spectres, ghosts and skeletons marshall their forces to attack."
+  },
+  {
+   "name": "dnaoLichPerCavern",
+   "value": true,
+   "comment": "each of the huge caverns contains a single lich that commands the many undead."
+  },
+  {
+   "name": "dnaoNoFood",
+   "value": true,
+   "comment": "air and water are plentiful, but food is unavailable unless characters carry it with them."
+  },
+  {
+   "name": "dnaoScavengedFields",
+   "value": true,
+   "comment": "each lich presides over a collection of valuables harvested from the battlefields by its undead minions over centuries; characters searching the battlefields find nothing but broken weapons, useless armor and other wreckage."
+  },
+  {
+   "name": "dnaoTreasureHouses",
+   "value": true,
+   "comment": "each lich has selected the ruin of a once-vast city or fortification as its lair and treasure house, each holding thousands of normal weapons, mundane armor pieces and even war machines, plus a small fortune in coins, gems and jewelry plucked from the dead."
+  },
+  {
+   "name": "dnaoBattleMagic",
+   "value": true,
+   "comment": "each treasure house contains a wide variety of magical items useful in battle - weapons, armor, scrolls, rings, potions, wands, rods and miscellaneous items beyond measure - guarded by a veritable army of undead."
+  },
+  {
+   "name": "dnaoSmallCavernMaze",
+   "value": true,
+   "comment": "in contrast to the neighboring area, this realm features many small caverns connected by an intricate maze of tunnels and caverns of both natural and artificial origin; the caves receive ample water and the many formations retain a great deal of lustre."
+  },
+  {
+   "name": "dnaoEveryRace",
+   "value": true,
+   "comment": "the caverns provide dwellings for most types of intelligent creatures known to Deepearth - populations of drow, duergar, pech, derro, cloakers, myconids, umber hulks and even kuo-toa."
+  },
+  {
+   "name": "dnaoVigorousDefense",
+   "value": true,
+   "comment": "necessity has insured that each group is prepared to vigorously pursue its own defense: most construction effort goes to strengthening defenses, constructing traps and training individuals for war."
+  },
+  {
+   "name": "dnaoRotheFungus",
+   "value": true,
+   "comment": "many of these races keep herds of rothe and raise large plots of edible fungus for sustenance."
+  },
+  {
+   "name": "dnaoSacredWater",
+   "value": true,
+   "comment": "all creatures of the area agree that water sources are sacred and cannot be polluted or poisoned in the cause of war."
+  },
+  {
+   "name": "dnaoExhaustedVeins",
+   "value": true,
+   "comment": "many mineral resources were once available throughout this realm, but nearly all such veins have been exhausted; the creatures have learned to use wisely what raw materials they can find."
+  },
+  {
+   "name": "dnaoSecretRoutes",
+   "value": true,
+   "comment": "the long crowded history has left its mark in secret passages and connecting tunnels: inhabitants tunnel around areas that get in their way, so there are many possible routes between locations, often masked behind secret or concealed entrances."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['dnaoCeilMinFt']() != 1000",
+   "note": "the hallowed grounds: ceilings 1,000 feet or more."
+  },
+  {
+   "expr": "m['dnaoLichLvlMin']() != 18 or m['dnaoLichLvlMax']() != 27 or m['dnaoLichLvlDice']() != 1 or m['dnaoLichLvlSides']() != 10 or m['dnaoLichLvlBase']() != 17",
+   "note": "the liches: 18-27th level, rolled as 17 + 1d10."
+  },
+  {
+   "expr": "m['dnaoLichDualPct']() != 20",
+   "note": "the lich castes: 20% magic user/clerics, 80% magic-users only."
+  },
+  {
+   "expr": "m['dnaoNicheDice']() != 1 or m['dnaoNicheSides']() != 12",
+   "note": "the melting pot: 1d12 caves per racial niche."
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Area 26 Hallowed Grounds section": [
+   {
+    "kind": "bool",
+    "name": "dnaoVastCaverns"
+   },
+   {
+    "kind": "const",
+    "name": "dnaoCeilMinFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoMileWideChambers"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoGorgeBridges"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoStreamsLakes"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoBarrenBeaten"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoBattleDebris"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoNothingLives"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoSpiritLegions"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoLichPerCavern"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoNoFood"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoScavengedFields"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoTreasureHouses"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoBattleMagic"
+   },
+   {
+    "kind": "const",
+    "name": "dnaoLichLvlMin"
+   },
+   {
+    "kind": "const",
+    "name": "dnaoLichLvlMax"
+   },
+   {
+    "kind": "const",
+    "name": "dnaoLichLvlDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnaoLichLvlSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnaoLichLvlBase"
+   },
+   {
+    "kind": "const",
+    "name": "dnaoLichDualPct"
+   }
+  ],
+  "the Area 27 Melting Pot section": [
+   {
+    "kind": "bool",
+    "name": "dnaoSmallCavernMaze"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoEveryRace"
+   },
+   {
+    "kind": "const",
+    "name": "dnaoNicheDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnaoNicheSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoVigorousDefense"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoRotheFungus"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoSacredWater"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoExhaustedVeins"
+   },
+   {
+    "kind": "bool",
+    "name": "dnaoSecretRoutes"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 139,
+  "open": 16
+ },
+ "caller_files": [],
+ "inline_count": 29
+}

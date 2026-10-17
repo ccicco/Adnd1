@@ -8508,6 +8508,70 @@ when both halves land.
   polluted pools, the ~20-ft smooth shaft); both
   reads already fetched this round (idx 214
   carried Area 24 in full and the Area 25 head).
+- R545 LANDED 2026-10-17: commit c719f8828ff802cbd8e3
+  2208ecf2a51be83b96d2 (census 468 -> 469, pushed
+  0523f06..c719f88), THE DSG DEEPEARTH AREAS 24-25,
+  printed p. 94 (pdf 95) - Area 24 the Domain of the
+  Duergar (the largest gray dwarf concentration in
+  Deepearth, nearly a hundred widened natural caves;
+  the living caves, the ledged water-filled chambers,
+  the drought-proof dammed reservoirs; the central
+  council cavern; the 30-ft navigable outflow stream
+  with its dry walkway; the 8,000 duergar with their
+  rothe herds; the second-class derro tenants; the
+  hundreds of demoralized slaves - humans, goblins,
+  svirfneblin, drow - at a 25% escape-join chance;
+  the un-eradicable giant bats; the Grand Canyon
+  air and the cut ducts; the southwestern slave-
+  worked iron-copper-gold mines; the fine-art
+  metal-working and the gold sculptors - 1d6x100 gp
+  per residence, six times that in larger homes,
+  2d6x1,000 gp in the public halls, life-size
+  20,000-gp statues worth 1d4+1 times intact; and
+  the red-fungus breweries with the well-attended
+  inns), and Area 25 the Windpipe (the six living
+  caves with 80-ft miles-long central chambers
+  joining at the excavated chamber; the high-level
+  drow outpost - 4th+ fighters, 5th+ MU and cleric;
+  the doombats, piercers, oozes, jellies, slimes,
+  lichens, basidironds, rats and crawlers; the 50%
+  polluted pools with one or two pure sources per
+  cave; and the shaft - 20 ft wide, 20 miles to the
+  mountain crevasse, door-sized entry, alternating
+  blasts: one turn per hour roaring upward, four
+  inactive, one down, varying as much as 50%; the
+  ride five rounds up to Area 28, eight down, the
+  failed Intelligence Check costing 6d6 falling
+  damage). A CLEAN-READ ROUND: both machine reads
+  agree on every number (djvu ~lines 12082-12255,
+  capture idx 214 = Area 24 in full + the Area 25
+  head, idx 216 head = the windpipe body; the
+  capture ld6/2d6/ld4+1/ld12 settled by the djvu,
+  the djvu 'realms o!' settled by the capture). 52
+  inlines (31 consts + 21 bools), header
+  rules/dsgarea12.h, prefix dnan, no table.
+  DELIVERY clean md5-exact on the first try:
+  authored md5 3739256c26c405c05ba60d9cbf2d1df2
+  matched exactly (spec 25,012 bytes); engine
+  applied 4 then 0/4, preflight GREEN with AUDIT
+  CENSUS: 469. A ZERO-FLIP ROUND: gap census stays
+  139/16, the pp. 75-98 Deepearth child open.
+  NEXT - R546: Areas 26-27 (printed pp. 95-96, pdf
+  96-97, djvu ~line 12258+) - Area 26 the Hallowed
+  Grounds (the mile-wide dozen-mile-long caverns
+  with 1,000-ft ceilings and gorges, the battle
+  debris and thousands of skeletons, the undead
+  legions - wights, wraiths, spectres, ghosts,
+  skeletons - each cavern commanded by a lich of
+  18-27th level (17+1d10), 20% MU/clerics, the
+  treasure houses with their battle magic) and Area
+  27 the Melting Pot (the small-cavern maze, the
+  1d12-cave racial niches - drow, duergar, pech,
+  derro, cloakers, myconids, umber hulks, kuo-toa -
+  the sacred water, the exhausted mineral veins,
+  the secret passages); both reads already
+  fetched this round (idx 216 carried Area 26 in
+  full and the Area 27 head).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
