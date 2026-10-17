@@ -9260,6 +9260,41 @@ when both halves land.
   verify-and-flip round), then the DM-section
   parent and the front-matter chapter p. 6,
   then the arc tail.
+- R558 LANDED 2026-10-17: commit 9816ec6ca79c1d5995ee9
+  f173c453d30f2e05b20 (census 481 -> 482, pushed
+  3abdb7d..9816ec6), THE DSG COMPILED TABLES,
+  printed pp. 121-123 - the verification-and-flip
+  round: the book's thirty-four-table reprint
+  spread, each table verified const-for-const
+  against the pins its chapter already landed -
+  Tables 1-9 the movement (R504/R505), 15-16 the
+  odor, 17-18 the cave-ins, 19 the DPV, 20 the
+  unsteady reactions, 21-26 the boats, 27-34 the
+  mining - plus the footnotes (the encumbered
+  sink, the thieves-only surfaces, the collision
+  slash split, the pure-vein reroll). ONE GENUINE
+  DELTA pinned: the compiled Table 3 carries five
+  grapple rows where the chapter original carried
+  two - the stone parapet (01-72/73-78/79-00),
+  the stone wall top (01-83/84-89/90-00), and
+  the tree branches (01-66/67-70/71-00) rows are
+  new pins. Tables 10-14 are not reprinted. 9
+  consts + 14 bools, prefix dck, header
+  rules/dsgtabs.h, spec 15,083 bytes, md5
+  a975c81c3b81f2be0903514d73dcd691 matched
+  exactly first try, 23 inlines; djvu lines
+  15340-15800 with the Capture pdf 121-123
+  cross-read (clean - the garbled djvu table OCR
+  settled against the capture and the landed
+  chapter pins). The Compiled tables child flips
+  [x] IN the same commit: gap census 142/13 ->
+  143/12, the gap report in the git add (5
+  files). No authoring catches. NEXT - R559: the
+  perspective map plates pp. 124-127 (graphics -
+  a verify-only flip round), then the index p.
+  128 (a roster round), then the DM-section
+  parent, the front-matter chapter p. 6, and the
+  arc's final census.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

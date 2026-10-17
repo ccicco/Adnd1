@@ -260,6 +260,7 @@
 #include "rules/dsgcamp7.h"  // R556: the DSG campaign considerations closure
 #include "rules/dsgmap.h"  // R557: the DSG mapping your settings pins
 #include "rules/dsgtabs.h"  // R558: the DSG compiled tables pins
+#include "rules/dsgplate.h"  // R559: the DSG perspective map plates closure
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -73925,6 +73926,24 @@ int main() {
         )
             ++bad;
         printf("R558 DSG compiled tables audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R559 DSG map plates closed audit ----
+    // The third FLIP-ONLY round: zero consts, zero bools, zero tables - the
+    // census advances by the audit block alone. The pp. 124-127 Perspective
+    // maps child closes against work already landed and verified: the R557
+    // mapping chapter (rules/dsgmap.h) pinned the whole doctrine the plates
+    // serve - the grid-selection craft, the photocopy and tracing techniques
+    // with the personal-use photocopying permission, the control square, the
+    // splitting methods, the horizon lines the plates carry, and the printed
+    // 3-D symbols described as printed beside the map grids. The plates
+    // themselves are graphics - perspective grids and symbol sheets - and pin
+    // nothing, the R549 map-plate precedent (the Deepearth map plates pp.
+    // 76-77) applied to the DM-section plates.
+    {
+        using namespace rules;
+        int bad = 0;
+        printf("R559 DSG map plates closed audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----
