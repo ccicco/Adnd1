@@ -7512,6 +7512,82 @@ when both halves land.
   there), Capture idx 137-141; check the gap report
   children list at authoring time. Mostly prose with
   possible small tables - check for any Table 36+.
+- R528 LANDED 2026-10-17: commit 5b48f3d (census 451 -> 452,
+  pushed 298d3e1..5b48f3d), THE DSG IMPROVING-PLAY OPENER:
+  EXPEDITION PLANNING, BEASTS OF BURDEN, WATERCRAFT,
+  printed pp. 59-60 (pdf 60-61) - the frame (the
+  three categories: expedition planning, speeding play,
+  effective fighting) and the expedition planning: the
+  success or failure often determined before leaving base
+  - more often the failure - so learn everything first
+  (NPC interviews, the approaches, magic for insight, even
+  rumors with a basis in fact - basilisk slithering means
+  mirrors); scout with light avoid-combat parties (one or
+  two thieves, invisibility, gaseous form) and keep
+  scouting during the adventure (the listening-at-doors
+  function, one character looking ahead, less ambush and
+  more tactical options); the preparation: objectives,
+  duration and areas, cliffs, water, light, extended food
+  with extra carried, the return; foot travel on rough
+  going, waterways the easy fast access but notoriously
+  dangerous (the placid stream turning cascade or
+  vanishing crack), beasts of burden where smooth; the
+  mules: 2,000 gp saddlebag weight unencumbered, 6,000 gp
+  max at 1/2 speed refusing over 8 hours a day, the 50%
+  six-foot-or-less chasm (never wider, never loaded over
+  2,000, no mind-changing), average-steepness stairs with
+  human footing (hands-required slopes too steep), the 50%
+  very-steep slope, the 90% willing swim with the six-foot
+  jump (refusing over 2,000 gp), the 3-inch-per-round swim,
+  the string following its leader (a refused leader
+  unhitched, never changing its mind), the strange-odor
+  jitters at 25% bolt/bray/freeze/normal (one group
+  check), and the 360-ft stone noise muffled to 90 ft
+  with daily-replaced boots; the dogs: the 100-lb war-dog
+  varieties (shepherds, malamutes, wolfhounds),
+  animal-trainer training required, 200 gp without
+  penalty, 500 gp max at half speed and -4, no swimming or
+  steep climbing over 200 gp, the 50%
+  attack-strangers tendency (restrained dogs barking),
+  the advanced-training discipline (hand signals needing
+  sight), and the -2-not--4 darkness penalties; and the
+  watercraft: the kayak nimblest and roughest-capable but
+  needing small-boat proficiency from ALL characters,
+  larger craft cargo-and-togetherness vs rough/narrow
+  limits, the collapsible boat flexible but bulky and
+  less sturdy, waterborne scouting the more vital (the
+  waterway ascertained ahead, the one-way current needing
+  a return plan). A CLEAN-READ ROUND: both machine reads
+  agree on every number (djvu "5096" = 50%, corroborated
+  by Capture). SEAMS: Monster Manual mule/war dog,
+  R506/R527 animal trainer, R518 small-boat proficiency,
+  R526 collapsible boat. THE CHAPTER SPLIT per the
+  content-density rule: children 142-144 this round, R529
+  takes 145-150 (fighting effectively, diversions,
+  speeding play, creative spell use, languages, mapping).
+  Pinned as rules/dsgplay.h (prefix dnip, verified free;
+  43 inlines - 19 consts, 24 bools, no tables). Spec
+  26,644 bytes, md5 06727a4b26c3fa0bb2391f12336267b5
+  (user-side identical). Engine applied 7 then 0/7. Gap
+  126/29 -> 129/26 (3 flips: children 142-144). NEXT -
+  R529: the improving-play tail (printed pp. 60-63, pdf
+  61-64; children 145-150): fighting effectively (the
+  long-together effectiveness, the low-AC-between rule,
+  the rear-guard retreat plans, the mini-teams, surprise
+  with the ranger infravision note), creating diversions
+  (the 1d4-round low-Int distraction, the medium/high-Int
+  save vs spell, genius needing clever, PCs never
+  saving), speeding play (the door-opening drills, the
+  standard marching orders, the caller rotation), creative
+  spell use (the silence coin, darkness vs infravision,
+  the telekinesis slime pots, the shatter pots, the
+  charm questioning, the toppling walls, the ricochet
+  bolt), the languages of the underdark (the tapping
+  language, 10x slower, drum amplification, the
+  underground-native PCs knowing it), and the mapping
+  techniques (the 10-ft graphing, the 10-20-ft error
+  agonizing, the line-drawing alternative); djvu ~lines
+  7848-8160 already extracted and CLEAN in both reads.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

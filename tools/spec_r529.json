@@ -1,0 +1,546 @@
+{
+  "round": 529,
+  "title": "the DSG improving-play tail",
+  "census_before": 452,
+  "prefix": "dnpm",
+  "header_file": "rules/dsgplay2.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "inline_count": 41,
+  "banner": {
+    "title": "The DSG IMPROVING-PLAY TAIL: FIGHTING, DIVERSIONS, SPEEDING PLAY, SPELL USE, LANGUAGES, MAPPING, R529: printed pp. 60-63 (pdf 61-64) - the fighting effectively: characters fight better together long (experience and trust, but cooperative techniques practicable from the start), the well-organized party defining roles (the low-AC fighters between the monsters and the rest), the retreat plans (the rear guard, the pursuit-discouraging magic-user spell, the safe-path scout), the mini-teams (the fighter bodyguarding the mage who casts for the group; the diversion fighter drawing attention while the thief sneaks behind), and surprise probably the single most important tactic (scouting to avoid it, silent no-light movement to cause it; rangers least susceptible and most likely to cause it, human rangers grievously disadvantaged underground by their lack of infravision, half-elven rangers very effective); the creating diversions: a distraction can substitute for concealment (fires demanding immediate attention, collapsing bridges/tunnels/dams, the rope-topped statue), monsters not automatically falling for it - the low-Intelligence reasoning monsters like orcs and ogres distracted 1d4 rounds, the medium-to-high Intelligence allowed a saving throw vs. spell, the genius-level fooled only by very clever diversions concealing the PCs' presence, and player characters never saving against monster diversions (purely role playing); the speeding play: pace as group taste but wasted time a bane to all (squabbling, non-cooperation, DM-arguing, indecision), fixed by standard procedures - the door-opening drill (a sketch with each character's role, declared as \"door opening drill #2\"), the standard marching orders (corridor widths, open areas, weapons carried, changes communicated), the caller re-examined for frustrated groups (delegating to one member, rotating every session), and the bossy player best handled by peer pressure; the creative underground spell use: the balanced selection across offensive, defensive, restorative, investigatigative and scouting spells with reverses considered, the sleep protections (magic mouth, glyphs of warding, fire traps, rope tricks), the underground-deadly cloudkill/stinking cloud/dig/transmute rock to mud/disintegrate with augury/divination/find the path useful, the raise-water flood from high terrain and lower water against enemy boaters, the enlarge/reduce/warp wood passage tricks, the silence coin carried for the party and thrown among enemy spellcasters, the darkness against infravision creatures (dramatic with blindfighting proficiency), the telekinesis-positioned slime pots dropped as missiles or left in the path and broken with shatter, the charm-aided questioning of captives, and the toppling walls of stone/ice/iron with the ricocheting lightning bolt; the languages of the underdark: the UA undercommon and sign language plus the tapping language of the subterranean races (clicking stones, drum beats, sharp-sound patterns), the underground reverberations amplifying drum communication over very long distances, the roughly 10-times-slower pace, and the underground-native PCs knowing it; and the mapping techniques: the detailed 10-foot-block graphing standard (accurate but slow in game and real time, the mapper's light source exposing the party, the 10-to-20-foot map errors agonized over against teleport-trap worries), the exit-purpose rule making elaborate maps overkill, and the line-drawing alternative (lines for corridors, door symbols, guesswork distances, the explored-versus-unexplored display, the 100-foot sketch with temporary light, sufficient everywhere except mazes and convoluted cavern networks)",
+    "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~7848-8160) with the pdf Acrobat-Capture layer as the second read (idx 139-143 = the printed pp. 60-63 windows); the compiled-tables appendix has no reprint of this prose. A CLEAN-READ ROUND: both machine reads agree on every load-bearing number - the 1d4-round diversion distraction, the 10x tapping-language slowness, the 10-ft graphing blocks, the 10-or-20-ft map error, and the 100-ft sketch window. The only garbles are the standing glyph classes (the UA-lead djvu noise, the \"5096\"-class absent here). SEAMS: the Unearthed Arcana undercommon and sign language (cross-book), the blindfighting proficiency (R506), the ranger infravision (PHB class), the R518 water travel, and the R511 surprise rules. WITH THIS ROUND THE IMPROVING-PLAY CHAPTER CLOSES (all children 142-150 flipped, the parent 141 closeable at the next census check) - and the player half of the book through printed p. 63 is fully pinned. The DM's section (pp. 64-120, re-grained at R503) starts the NEXT round. Nothing auto-credits.",
+    "sentinel": "A prose round: no tables pin. The numbers pin as consts per the R508 convention: the 1d4-round diversion distraction, the 10x tapping-language multiplier, and the mapping numbers (the 10-ft blocks, the 10/20-ft error pair, the 100-ft sketch). The rest pins as prose bools: the fighting rules (the togetherness, the low-AC placement, the retreat plans, the mini-teams, the surprise paramountcy with the ranger note), the diversion tiers (the fire/sabotage/remote-control set, the low-Int 1d4, the mid/high save, the genius standard, the PC no-save), the speeding-play procedures (the drills, the marching orders, the caller rotation, the peer pressure), the creative spell tactics (the balanced selection, the sleep protections, the deadly set, the water spells, the passage tricks, the silence coin, the darkness, the slime pots, the charm, the toppling walls), the tapping language (the drum amplification, the native-PC knowledge), and the mapping styles (the graphing weaknesses, the exit purpose, the line-drawing alternative and its limits). The UA/R506/R511/R518 seams are noted; nothing auto-credits."
+  },
+  "include_after": "#include \"rules/dsgplay.h\"  // R528: the DSG improving-play opener pins",
+  "include_comment": "the DSG improving-play tail pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "audit_comment": "The DSG improving-play tail pins the fighting rules (the low-AC placement, the mini-teams, the surprise paramountcy with the ranger infravision note), the diversion tiers (the 1d4-round low-Int distraction, the mid/high-Int save vs spell, the genius standard, the PC no-save), the speeding-play procedures (the door drills, the marching orders, the rotating caller), the creative spell tactics (the silence coin, the darkness with blindfighting, the telekinesis slime pots, the toppling walls), the tapping language (the 10x slowness, the drum amplification), and the mapping techniques (the 10-ft graphing and its 10-20-ft errors, the 100-ft-sketch line-drawing alternative).",
+  "audit_label": "R529 DSG improving-play tail audit",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R528 LANDED 2026-10-17: commit 5b48f3d (census 451 -> 452,",
+  "prev_record": [
+    "- R528 LANDED 2026-10-17: commit 5b48f3d (census 451 -> 452,",
+    "  pushed 298d3e1..5b48f3d), THE DSG IMPROVING-PLAY OPENER:",
+    "  EXPEDITION PLANNING, BEASTS OF BURDEN, WATERCRAFT,",
+    "  printed pp. 59-60 (pdf 60-61) - the frame (the",
+    "  three categories: expedition planning, speeding play,",
+    "  effective fighting) and the expedition planning: the",
+    "  success or failure often determined before leaving base",
+    "  - more often the failure - so learn everything first",
+    "  (NPC interviews, the approaches, magic for insight, even",
+    "  rumors with a basis in fact - basilisk slithering means",
+    "  mirrors); scout with light avoid-combat parties (one or",
+    "  two thieves, invisibility, gaseous form) and keep",
+    "  scouting during the adventure (the listening-at-doors",
+    "  function, one character looking ahead, less ambush and",
+    "  more tactical options); the preparation: objectives,",
+    "  duration and areas, cliffs, water, light, extended food",
+    "  with extra carried, the return; foot travel on rough",
+    "  going, waterways the easy fast access but notoriously",
+    "  dangerous (the placid stream turning cascade or",
+    "  vanishing crack), beasts of burden where smooth; the",
+    "  mules: 2,000 gp saddlebag weight unencumbered, 6,000 gp",
+    "  max at 1/2 speed refusing over 8 hours a day, the 50%",
+    "  six-foot-or-less chasm (never wider, never loaded over",
+    "  2,000, no mind-changing), average-steepness stairs with",
+    "  human footing (hands-required slopes too steep), the 50%",
+    "  very-steep slope, the 90% willing swim with the six-foot",
+    "  jump (refusing over 2,000 gp), the 3-inch-per-round swim,",
+    "  the string following its leader (a refused leader",
+    "  unhitched, never changing its mind), the strange-odor",
+    "  jitters at 25% bolt/bray/freeze/normal (one group",
+    "  check), and the 360-ft stone noise muffled to 90 ft",
+    "  with daily-replaced boots; the dogs: the 100-lb war-dog",
+    "  varieties (shepherds, malamutes, wolfhounds),",
+    "  animal-trainer training required, 200 gp without",
+    "  penalty, 500 gp max at half speed and -4, no swimming or",
+    "  steep climbing over 200 gp, the 50%",
+    "  attack-strangers tendency (restrained dogs barking),",
+    "  the advanced-training discipline (hand signals needing",
+    "  sight), and the -2-not--4 darkness penalties; and the",
+    "  watercraft: the kayak nimblest and roughest-capable but",
+    "  needing small-boat proficiency from ALL characters,",
+    "  larger craft cargo-and-togetherness vs rough/narrow",
+    "  limits, the collapsible boat flexible but bulky and",
+    "  less sturdy, waterborne scouting the more vital (the",
+    "  waterway ascertained ahead, the one-way current needing",
+    "  a return plan). A CLEAN-READ ROUND: both machine reads",
+    "  agree on every number (djvu \"5096\" = 50%, corroborated",
+    "  by Capture). SEAMS: Monster Manual mule/war dog,",
+    "  R506/R527 animal trainer, R518 small-boat proficiency,",
+    "  R526 collapsible boat. THE CHAPTER SPLIT per the",
+    "  content-density rule: children 142-144 this round, R529",
+    "  takes 145-150 (fighting effectively, diversions,",
+    "  speeding play, creative spell use, languages, mapping).",
+    "  Pinned as rules/dsgplay.h (prefix dnip, verified free;",
+    "  43 inlines - 19 consts, 24 bools, no tables). Spec",
+    "  26,644 bytes, md5 06727a4b26c3fa0bb2391f12336267b5",
+    "  (user-side identical). Engine applied 7 then 0/7. Gap",
+    "  126/29 -> 129/26 (3 flips: children 142-144). NEXT -",
+    "  R529: the improving-play tail (printed pp. 60-63, pdf",
+    "  61-64; children 145-150): fighting effectively (the",
+    "  long-together effectiveness, the low-AC-between rule,",
+    "  the rear-guard retreat plans, the mini-teams, surprise",
+    "  with the ranger infravision note), creating diversions",
+    "  (the 1d4-round low-Int distraction, the medium/high-Int",
+    "  save vs spell, genius needing clever, PCs never",
+    "  saving), speeding play (the door-opening drills, the",
+    "  standard marching orders, the caller rotation), creative",
+    "  spell use (the silence coin, darkness vs infravision,",
+    "  the telekinesis slime pots, the shatter pots, the",
+    "  charm questioning, the toppling walls, the ricochet",
+    "  bolt), the languages of the underdark (the tapping",
+    "  language, 10x slower, drum amplification, the",
+    "  underground-native PCs knowing it), and the mapping",
+    "  techniques (the 10-ft graphing, the 10-20-ft error",
+    "  agonizing, the line-drawing alternative); djvu ~lines",
+    "  7848-8160 already extracted and CLEAN in both reads."
+  ],
+  "gap_census": {
+    "closed": 135,
+    "open": 20
+  },
+  "gap_flips": [
+    {
+      "from": "  - [ ] Fighting effectively (p. 60)",
+      "to": "  - [x] Fighting effectively (p. 60) - R529: the long-together effectiveness with practice-from-the-start, the low-AC-fighters-between role rule, the retreat planning (the rear guard, the pursuit-discouraging spell, the safe-path scout), the mini-teams (the fighter bodyguard and the mage, the diversion fighter and the sneaking thief), and the surprise paramountcy (scouting to avoid it, silent no-light movement to cause it, rangers least susceptible and most likely but human rangers suffering underground without infravision, half-elven rangers very effective)",
+      "note": "the Fighting child line"
+    },
+    {
+      "from": "  - [ ] Creating diversions (p. 60)",
+      "to": "  - [x] Creating diversions (p. 60) - R529: the no-concealment-needed approach (the fire, the collapsed bridge/tunnel/dam sabotage, the rope-topped statue), the 1d4-round distraction of low-Intelligence reasoning monsters like orcs and ogres, the medium/high-Intelligence save vs spell, the genius-level monsters fooled only by very clever diversions, and the PCs never saving against monster diversions - purely role playing",
+      "note": "the Diversions child line"
+    },
+    {
+      "from": "  - [ ] Speeding play (p. 61)",
+      "to": "  - [x] Speeding play (p. 61) - R529: the pace-as-taste frame, the wasted-time bane (squabbling, non-cooperation, DM-arguing, indecision), the standardized door-opening drills (the sketch and the declared drill number), the standard marching orders (the corridor widths, the open areas, the carried weapons, the communicated changes), the caller re-examined and rotating every session, and the bossy-player peer-pressure fix",
+      "note": "the Speeding play child line"
+    },
+    {
+      "from": "  - [ ] Creative underground spell use (p. 61)",
+      "to": "  - [x] Creative underground spell use (p. 61) - R529: the balanced five-category selection with reverses considered, the sleep protections (magic mouth, glyphs of warding, fire traps, rope tricks), the underground-deadly set (cloudkill, stinking cloud, dig, transmute rock to mud, disintegrate) with augury/divination/find the path, the raise-water flood from high terrain and lower water vs boaters, the enlarge/reduce/warp wood passage tricks, the silence coin thrown among enemy spellcasters, the darkness vs infravision with the blindfighting synergy, the telekinesis slime pots (dropped as missiles or shattered in the path), the charm questioning, and the toppling walls of stone/ice/iron with the ricocheting lightning bolt",
+      "note": "the Spell use child line"
+    },
+    {
+      "from": "  - [ ] Languages of the underdark (p. 62)",
+      "to": "  - [x] Languages of the underdark (p. 62) - R529: the tapping language of the subterranean races (the UA undercommon and sign language plus the tapping patterns by clicking stones or drums), the reverberation amplification carrying drums very long distances, the approximately 10-times-slower communication, and the underground-native PCs knowing it",
+      "note": "the Languages child line"
+    },
+    {
+      "from": "  - [ ] Mapping techniques (p. 62)",
+      "to": "  - [x] Mapping techniques (p. 62) - R529: the detailed 10-ft-block graphing style and its weaknesses (the game and real time, the mapper's light source, the 10-20-ft map-error overlaps agonized over against teleport-trap worries), the exit-purpose rule making elaborate maps overkill, and the line-drawing alternative (the corridor lines, the door symbols, the guesswork distances, the explored-vs-unexplored display, the 100-ft sketch with temporary light, and the maze/convoluted-network exceptions)",
+      "note": "the Mapping child line"
+    }
+  ],
+  "consts": [
+    {
+      "name": "dnpmDivertDice",
+      "value": 1,
+      "comment": "the low-Intelligence distraction roll is one die."
+    },
+    {
+      "name": "dnpmDivertSides",
+      "value": 4,
+      "comment": "monsters with reasoning ability but generally low Intelligence, such as orcs and ogres, direct their attention toward a diversion for 1d4 rounds unless something else attracts them."
+    },
+    {
+      "name": "dnpmTapLangMult",
+      "value": 10,
+      "comment": "communication in the tapping language takes approximately 10 times as long as with any spoken language."
+    },
+    {
+      "name": "dnpmMapBlockFt",
+      "value": 10,
+      "comment": "the common mapping style is the detailed graphing of each 10-foot block of corridor explored or room entered."
+    },
+    {
+      "name": "dnpmMapErrLowFt",
+      "value": 10,
+      "comment": "when a room overlaps a mapped corridor, the most likely explanation is that the map is off by 10 or 20 feet - not teleport traps."
+    },
+    {
+      "name": "dnpmMapErrHighFt",
+      "value": 20,
+      "comment": "the upper end of the likely 10-to-20-foot map error."
+    },
+    {
+      "name": "dnpmSketchFt",
+      "value": 100,
+      "comment": "with a line-drawing map the light is shone temporarily while the mapper quickly sketches in the last 100 feet of corridor, then extinguished while the party advances."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dnpmFightTogetherLonger",
+      "value": true,
+      "comment": "characters fight more effectively if they have been together for a long time - a natural outgrowth of experience revealing strengths and weaknesses, and trust as companions learn to rely on each other; but cooperative techniques can be practiced from the very start."
+    },
+    {
+      "name": "dnpmLowAcInFront",
+      "value": true,
+      "comment": "a well-organized party defines combat roles suited to strengths - at the most basic level, keeping the fighters with low Armor Class between the monsters and the rest of the party."
+    },
+    {
+      "name": "dnpmRetreatPlans",
+      "value": true,
+      "comment": "sophisticated planning includes simple tactical plans: who takes the rear guard in a retreat, what magic-user spell confuses or discourages pursuit, who scouts the safe path of retreat."
+    },
+    {
+      "name": "dnpmMiniTeams",
+      "value": true,
+      "comment": "characters benefit from mini-teams within the party: a fighter bodyguarding the magic-user who then casts for the group's benefit, or a fighter creating a diversion at combat's start while a thief waits to sneak behind the foe."
+    },
+    {
+      "name": "dnpmSurpriseParamount",
+      "value": true,
+      "comment": "probably no single tactic is as important as surprise: effective scouting best avoids being surprised, and moving silently without light sources is the best way to surprise an opponent."
+    },
+    {
+      "name": "dnpmRangerInfravisionNote",
+      "value": true,
+      "comment": "ranger characters are the least susceptible to surprise and the most likely to cause it - but human rangers underground suffer grievous disadvantages from their lack of infravision, while half-elven rangers are very effective in this environment."
+    },
+    {
+      "name": "dnpmDiversionNoConceal",
+      "value": true,
+      "comment": "surprise depends on keeping presence secret, but a diversion created or taken advantage of can distract a foe so thoroughly that the PCs can approach with little regard for stealth - fires (needing immediate attention), sabotage like collapsing a bridge, tunnel, or dam, and remote-control tricks like the rope-tied statue yanked to topple."
+    },
+    {
+      "name": "dnpmIntelligentMonstersWary",
+      "value": true,
+      "comment": "monsters - particularly intelligent ones - do not automatically fall for diversions."
+    },
+    {
+      "name": "dnpmMidHighIntSave",
+      "value": true,
+      "comment": "monsters of medium to high Intelligence are allowed a saving throw vs. spell to see whether they are fooled by a diversion."
+    },
+    {
+      "name": "dnpmGeniusNeedsClever",
+      "value": true,
+      "comment": "monsters of genius-level Intelligence can only be fooled by very clever diversions in which the PCs' presence is not easily discerned."
+    },
+    {
+      "name": "dnpmPcNoSaveVsDiversion",
+      "value": true,
+      "comment": "player characters never get a saving throw if a monster uses a diversion against them - whether the PCs fall for it is purely a matter of role playing."
+    },
+    {
+      "name": "dnpmPaceGroupTaste",
+      "value": true,
+      "comment": "the pace of a gaming session is a matter of group taste - rapid plot-advancers and savor-every-decision players alike - a healthy diversity and a strength of role-playing gaming."
+    },
+    {
+      "name": "dnpmWastedTimeBane",
+      "value": true,
+      "comment": "wasted time is a bane to all campaigns: squabbling among players, failure to cooperate, incessant arguing with the DM, and failure to decide on a course of action."
+    },
+    {
+      "name": "dnpmDoorDrills",
+      "value": true,
+      "comment": "the rate of play increases with standard procedures: door-opening drills adopted and standardized, with a rough sketch of each PC's location and each character's role (guarding the rear, picking the lock, ready to shoot) defined for the DM - then a simple declaration (\"door opening drill #2\") suffices."
+    },
+    {
+      "name": "dnpmMarchingOrders",
+      "value": true,
+      "comment": "standard marching orders for common environments should be prepared and sketched: corridors of various widths, large open areas, and standard weapons carried while marching - changes simply communicated to the DM."
+    },
+    {
+      "name": "dnpmCallerRotation",
+      "value": true,
+      "comment": "the caller idea (the character declaring the whole group's actions) should be re-examined if players are frustrated with the pace - experienced players delegate easily, the caller keeps the party moving through decision lulls, and the task works best rotating through the group every game session."
+    },
+    {
+      "name": "dnpmBossyPeerPressure",
+      "value": true,
+      "comment": "if a player attempts to dominate play, peer pressure is probably the most effective method - the other players and the DM pointing out the effect of the bossy player's pronouncements."
+    },
+    {
+      "name": "dnpmBalancedSpellSelection",
+      "value": true,
+      "comment": "all spellcasters should briefly discuss selections so the party winds up balanced across offensive, defensive, restorative, investigatigative, and scouting spells, considering the applications of reverses of reversible spells."
+    },
+    {
+      "name": "dnpmSleepProtections",
+      "value": true,
+      "comment": "the protective benefits of magic mouth, glyphs of warding, fire traps, and rope tricks should not be overlooked when preparing to sleep."
+    },
+    {
+      "name": "dnpmDeadlyUndergroundSpells",
+      "value": true,
+      "comment": "in an underground environment cloudkill, stinking cloud, dig, transmute rock to mud, and disintegrate can all prove deadly to an enemy - and augury, divination, and find the path are very useful underground."
+    },
+    {
+      "name": "dnpmWaterSpells",
+      "value": true,
+      "comment": "from the high terrain a timely raise water spell can call down a sizable flood, and lower water can cause serious problems for enemy boaters."
+    },
+    {
+      "name": "dnpmEnlargeReduceWarp",
+      "value": true,
+      "comment": "enlarge spells often effectively block a passageway, reduce can remove a barrier, and warp wood has a similar effect on doors."
+    },
+    {
+      "name": "dnpmSilenceCoin",
+      "value": true,
+      "comment": "a silence spell cast upon a coin or small gem benefits the party when carried - and in an encounter the coin can be thrown among enemy spellcasters to silence their spell use."
+    },
+    {
+      "name": "dnpmDarknessVsInfravision",
+      "value": true,
+      "comment": "darkness is effective when humans without a light source encounter creatures with infravision - and if characters are proficient in blindfighting, the darkness spell (which blinds infravision as well) can be quite dramatic."
+    },
+    {
+      "name": "dnpmTelekinesisPots",
+      "value": true,
+      "comment": "green slimes and other deadly creatures sealed into clay or wax pots can be positioned with telekinesis over the enemy and dropped as missiles - or the pots left in the attacker's path and broken with shatter spells, or hurled without any spell."
+    },
+    {
+      "name": "dnpmCharmQuestioning",
+      "value": true,
+      "comment": "the use of charm spells can immeasurably aid the questioning of captured monsters and other enemies."
+    },
+    {
+      "name": "dnpmTopplingWallsRicochet",
+      "value": true,
+      "comment": "walls of stone, ice, and iron can be cast so they immediately topple and crush monsters within the area of effect, and ricocheting a lightning bolt can cause dramatic if somewhat unpredictable results."
+    },
+    {
+      "name": "dnpmTappingLanguage",
+      "value": true,
+      "comment": "in addition to the Unearthed Arcana undercommon and sign language, the subterranean races have evolved a language based on patterns of tapping - expressed by clicking stones together, beating on a drum, or any pattern of sharp sounds."
+    },
+    {
+      "name": "dnpmDrumAmplification",
+      "value": true,
+      "comment": "because underground passages create amplified reverberations, the tapping language enables communication over very long distances when drums are used - and player characters from the underground know this language."
+    },
+    {
+      "name": "dnpmGraphingWeaknesses",
+      "value": true,
+      "comment": "the detailed 10-foot-block graphing style, while usually providing a reasonable copy of the DM's map, requires a great deal of game and real time (carefully paced dimensions, accurate recording), and forces a light source for the mapper that makes the party easier to spot."
+    },
+    {
+      "name": "dnpmOverlapAgonizing",
+      "value": true,
+      "comment": "players tend to agonize over minor map errors - a room overlapping a mapped corridor provokes teleport-trap worries when the most likely explanation is a 10-or-20-foot map error."
+    },
+    {
+      "name": "dnpmMapPurposeExit",
+      "value": true,
+      "comment": "the main purpose of the map is showing the characters the way out of the dungeon after the adventure - elaborate illustration is overkill unless careful attention to dimensions is necessary for some reason."
+    },
+    {
+      "name": "dnpmLineDrawingMap",
+      "value": true,
+      "comment": "a line-drawing map works very well when exact dimensions do not matter: the mapper draws a line for the corridor path, standard symbols for doors, additional lines for branches, and educated guesswork for distances - serving admirably for retracing steps and displaying explored versus unexplored areas."
+    },
+    {
+      "name": "dnpmLineMapLimits",
+      "value": true,
+      "comment": "a line-drawing map provides insufficient information in an extremely complicated or confusing area such as a maze or a convoluted network of caverns - other than these cases, every bit as effective and a lot more convenient than the graph paper masterpiece."
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "examples": [
+    {
+      "expr": "m['dnpmDivertDice']() != 1 or m['dnpmDivertSides']() != 4 or m['dnpmTapLangMult']() != 10",
+      "note": "the tail dice and multipliers: the 1d4-round diversion distraction and the 10x-slower tapping language."
+    },
+    {
+      "expr": "m['dnpmMapBlockFt']() != 10 or m['dnpmMapErrLowFt']() != 10 or m['dnpmMapErrHighFt']() != 20 or m['dnpmSketchFt']() != 100",
+      "note": "the mapping numbers: the 10-ft graphing blocks, the 10-to-20-ft error explanation, and the 100-ft sketch window."
+    },
+    {
+      "expr": "m['dnpmLowAcInFront']() != 1 or m['dnpmSurpriseParamount']() != 1 or m['dnpmRangerInfravisionNote']() != 1 or m['dnpmPcNoSaveVsDiversion']() != 1 or m['dnpmGeniusNeedsClever']() != 1",
+      "note": "the fighting and diversion prose: the low-AC placement, the surprise paramountcy, the ranger infravision note, and the no-save and genius diversion rules."
+    },
+    {
+      "expr": "m['dnpmDoorDrills']() != 1 or m['dnpmMarchingOrders']() != 1 or m['dnpmCallerRotation']() != 1 or m['dnpmSilenceCoin']() != 1 or m['dnpmDarknessVsInfravision']() != 1 or m['dnpmTelekinesisPots']() != 1 or m['dnpmLineDrawingMap']() != 1",
+      "note": "the speeding-play and creative-spell prose: the drills, marching orders and caller, the silence coin, the darkness tactic, the slime pots, and the line-drawing alternative."
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the fighting effectively section": [
+      {
+        "kind": "bool",
+        "name": "dnpmFightTogetherLonger"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmLowAcInFront"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmRetreatPlans"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmMiniTeams"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmSurpriseParamount"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmRangerInfravisionNote"
+      }
+    ],
+    "the creating diversions section": [
+      {
+        "kind": "bool",
+        "name": "dnpmDiversionNoConceal"
+      },
+      {
+        "kind": "const",
+        "name": "dnpmDivertDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnpmDivertSides"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmIntelligentMonstersWary"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmMidHighIntSave"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmGeniusNeedsClever"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmPcNoSaveVsDiversion"
+      }
+    ],
+    "the speeding play section": [
+      {
+        "kind": "bool",
+        "name": "dnpmPaceGroupTaste"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmWastedTimeBane"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmDoorDrills"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmMarchingOrders"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmCallerRotation"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmBossyPeerPressure"
+      }
+    ],
+    "the creative underground spell use section": [
+      {
+        "kind": "bool",
+        "name": "dnpmBalancedSpellSelection"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmSleepProtections"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmDeadlyUndergroundSpells"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmWaterSpells"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmEnlargeReduceWarp"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmSilenceCoin"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmDarknessVsInfravision"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmTelekinesisPots"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmCharmQuestioning"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmTopplingWallsRicochet"
+      }
+    ],
+    "the languages of the underdark section": [
+      {
+        "kind": "bool",
+        "name": "dnpmTappingLanguage"
+      },
+      {
+        "kind": "const",
+        "name": "dnpmTapLangMult"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmDrumAmplification"
+      }
+    ],
+    "the mapping techniques section": [
+      {
+        "kind": "const",
+        "name": "dnpmMapBlockFt"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmGraphingWeaknesses"
+      },
+      {
+        "kind": "const",
+        "name": "dnpmMapErrLowFt"
+      },
+      {
+        "kind": "const",
+        "name": "dnpmMapErrHighFt"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmOverlapAgonizing"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmMapPurposeExit"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmLineDrawingMap"
+      },
+      {
+        "kind": "const",
+        "name": "dnpmSketchFt"
+      },
+      {
+        "kind": "bool",
+        "name": "dnpmLineMapLimits"
+      }
+    ]
+  },
+  "caller_files": []
+}
