@@ -1,0 +1,509 @@
+{
+ "round": 537,
+ "title": "the DSG Deepearth areas 8-9",
+ "census_before": 460,
+ "prefix": "dnaf",
+ "header_file": "rules/dsgarea4.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "inline_count": 44,
+ "banner": {
+  "title": "THE DSG DEEPEARTH AREAS 8-9, R537: printed pp. 82-84 (pdf 83-85) - the individual area key crosses the tended garden and the great crossroads: Area 8 Fungus Forest (the maze-like circle of large chambers several hundred feet across and 50 or 60 feet high, joined by broad high tunnels that nothing a large ogre could not pass; the floors smoothed of all formations, everything else natural erosion; the dozen or so chambers carpeted with thick fungi - shriekers, violet fungus and a host of edibles - over deep soft loam with its faint smell of decay; the cross-bred mushrooms towering as much as 30 feet over the floor with narrow crushed-stone paths winding beneath; the isolated band of myconids tending the garden from the one fungus-free central cavern, cleaning blight and clearing away predators; the irrigation relay to Area 9 with its huge inverted water-bearing mushroom caps; the full circle of 20 fungus men under their very old king, driving off intruders rather than inquiring; the king's animator-spore zombies - several humans, a number of mobats, a pair of derro and a host of jermalaine - holding the line until all are defeated; the circulating but musty air, the imported water, the stone cistern, and the virtually unlimited food supply guarded by its myconids; and the continual-light permanent-levitation boulder, a foot across, kicked aloft to illuminate the whole room as it sinks over several hours), and Area 9 Caverns of Doom (the key crossroads of Deepearth; the western 1d3x10-ft cavern to the city dungeon, blocked with pits, chasms and cliffs, its dead-cave formations gone brittle; the five natural branch caverns to the other areas; the six truly immense central caverns, each linked to the other five, ceilings towering hundreds of feet and widths approaching 1,000 feet, lengths of 2d6 miles, mule-passable routes around the chasms and rubble with connections at least 20 feet wide and 10 feet high; the name from the surface adventurers who assumed they had reached the utmost depths; the jermalaine bands roaming everywhere with their great northern community, the drow, duergar and pech pockets at odds, and the hobgoblin-goblin-troglodyte raiding parties from the city; the unintelligent menagerie - giant toads, stirges, piercers, large and huge spiders, jellies, puddings, molds, rust monsters, cockatrices, gargoyles, wraiths and wights; the edible fungi where water exists; the only decent water supply in this section of Deepearth, the ancient svirfneblin-built irrigation works with their sub-2-foot pipelines draining the Area 4 streams to three separate caverns - two monopolized, the third shared by all comers including the myconids; the duergar and drow cave-pig herds, the gray-dwarf fungus gardens and the nomadic drow harvests; the pech prospectors exhausting each claim; the secret pech diamond mine screened by their wall of stone collective spell, the low-oxygen weeks sealed inside; the duergar fortified pool with its ceiling spout, its three blocked approach caves and the acid supply above; and the jermalaine honeycomb around the water pipe - the 18-to-24-inch lair passages, the high-rankers' private streams, and the exits 20 feet up the cavern wall with their pull-up rope ladders)",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~10465-10692) with the pdf Acrobat-Capture layer as the second read (idx 376-384 = the printed pp. 82-85 windows); the compiled-tables appendix has no reprint of this prose. A CLEAN-READ ROUND: both machine reads agree on every load-bearing number - the 50/60-ft chamber heights, the 30-ft caps, the myconid circle of 20, the one-foot boulder, the 1d3x10-ft city route, the five branch and six central caverns, the 1,000-ft widths, the 2d6-mile lengths, the 20/10-ft connections, the sub-2-ft pipelines, the three water caverns, the 18-to-24-inch passages, the 20-ft exit height and the three duergar approach caves; the only garbles are non-load-bearing (the capture 'ld3x 10' for 1d3x10 settled by the djvu, the djvu '9,' header comma, and spacing noise like 'Likeall theother' and 'stonecollective'). SEAMS: the Monster Manual denizens (the myconids and their animator spores, the jermalaine, drow, duergar, pech, svirfneblin, derro and the full monster menagerie), the PHB continual light, levitation and wall of stone spells, the R521-R522 mining and the pech stonework, and the R503 re-grain. A ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains open until the setting lands in full (the R527/R533-R536 precedent - the gap report is NOT in the git add). Nothing auto-credits.",
+  "sentinel": "A procedural-plus-prose round: no tables pin. The numbers pin as consts per the R508 convention - the chamber heights, the cap and boulder sizes, the myconid circle, the city-route dice, the branch and central cavern counts, the great-cavern widths and lengths, the connection dimensions, the pipeline diameter, the water and approach-cave counts, and the jermalaine passage and exit sizes, with the 1d3x10 and 2d6 dice pinned as count-sides-and-multiplier const triples or pairs. The geography, denizens, resources and unique-features prose pins as bools for both areas. The MM/PHB/mining/R503 seams are noted; the Deepearth child stays open; nothing auto-credits."
+ },
+ "include_after": "#include \"rules/dsgarea3.h\"  // R536: the DSG Deepearth areas 6-7 pins",
+ "include_comment": "the DSG Deepearth areas 8-9 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The DSG Deepearth areas 8-9 pin Area 8 (the Fungus Forest with its myconid tenders, spore zombies and glowing levitating boulder) and Area 9 (the Caverns of Doom with its six immense caverns, the irrigation works, the pech diamond mine and the jermalaine honeycomb).",
+ "audit_label": "R537 DSG Deepearth areas 8-9 audit",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R536 LANDED 2026-10-17: commit f4d090e (census 459 -> 460,",
+ "prev_record": [
+  "- R536 LANDED 2026-10-17: commit f4d090e (census 459 -> 460,",
+  "  pushed d08481f..f4d090e), THE DSG DEEPEARTH AREAS 6-7,",
+  "  printed pp. 81-82 (pdf 82-83) - the individual area key",
+  "  reaches the dead heart and the great chasm: Area 6 the",
+  "  Caverns of the Ancients (the 30-ft-wide 10-ft-ceiling entry",
+  "  tunnel to the half-mile domed chamber; the bestial temple",
+  "  and its concentric two- and three-story stone rings with",
+  "  the cavern-wall barracks; the palace with its shut brass",
+  "  doors - the only closed doorways - and the 100-ft-high,",
+  "  300-ft-wide facade; the five 60-degree-interval tunnels",
+  "  gone to dusty farmland; the duergar exodus from the dried",
+  "  wells; the palace honor guard of hundreds of zombies,",
+  "  skeletons and mummified leaders pursuing only to the",
+  "  Area 6/7 juncture; the stale air - 2d6-round gasps,",
+  "  1d6-round recoveries; the stripped fragile furnishings;",
+  "  and the secret smithy trapdoor - the extinguished",
+  "  furnaces and the 25,000-gp forge-of-power anvil with its",
+  "  +1 enchantments, +2/+3 with a hammer of substance), and",
+  "  Area 7 the Grand Canyon of Deepearth (the ten-mile,",
+  "  mile-wide chasm with its 200-ft arching ceiling and the",
+  "  rubble gorge over a mile down; the dead water-erosion",
+  "  river; the stable cracked walls with no bridges; the",
+  "  hidden caverns 3,000 ft down and two miles south; the",
+  "  300-ft limestone cave mouths at 500-ft intervals; the",
+  "  1-to-3-ft sewer shafts; the mobats in 2d6 groups; the",
+  "  cave fishers, giant slugs, centipedes and carrion",
+  "  crawlers; the two dozen cloakers, 50% drawn to mobat",
+  "  fights; the stagnant pools with their 50% disease; and",
+  "  the sparse wall-niche fungi). A CLEAN-READ ROUND: both",
+  "  machine reads agree on every number (djvu ~lines",
+  "  10303-10463, Capture idx 372-376; the djvu \"5096\" and",
+  "  Capture \"ld6\" garbles settled by the other read).",
+  "  DELIVERY: the trailing-newline fix from R535 works - the",
+  "  user-side md5 5cadedf369df57c3e7aa880b001f454e matches",
+  "  the staging md5 exactly (spec 24,304 bytes). A ZERO-FLIP",
+  "  ROUND: the pp. 75-98 Deepearth child remains open (the",
+  "  R527/R533/R534/R535 precedent - the gap report NOT in",
+  "  the git add). Pinned as rules/dsgarea3.h (prefix dnae,",
+  "  verified free; 43 inlines - 30 consts, 13 bools, no",
+  "  tables). Engine applied 4 then 0/4, audit mirror clean.",
+  "  Gap unchanged 139/16. PREFLIGHT GREEN with census 460",
+  "  audit lines, each exactly once, all bad 0; BUILD: 0",
+  "  warnings. NEXT - R537: Area 8 the Fungus Forest (printed",
+  "  pp. 82-83, pdf 83-84): the dozen chambers several hundred",
+  "  feet across, the 50/60-ft ceilings, the 30-ft mushroom",
+  "  caps, the myconid circle of 20 with its animator-spore",
+  "  zombies - djvu text already extracted, capture warm."
+ ],
+ "gap_census": {
+  "closed": 139,
+  "open": 16
+ },
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "dnafChamberHtLowFt",
+   "value": 50,
+   "comment": "the large, relatively open caverns of the maze-like circle include chambers several hundred feet in diameter and 50 or 60 feet high (the low bound)."
+  },
+  {
+   "name": "dnafChamberHtHighFt",
+   "value": 60,
+   "comment": "many of the fungus-forest chambers are 50 or 60 feet high, with even the connecting tunnels relatively broad and high (the high bound)."
+  },
+  {
+   "name": "dnafCapMaxFt",
+   "value": 30,
+   "comment": "many of the fungi have been carefully tended and cross-bred to grow to extreme heights; the caps of the tallest mushrooms tower as much as 30 feet over the floor."
+  },
+  {
+   "name": "dnafMyconidCircle",
+   "value": 20,
+   "comment": "this branch of myconid society includes all levels of fungus men, representing a full circle of 20 individuals."
+  },
+  {
+   "name": "dnafGlowBoulderDiaFt",
+   "value": 1,
+   "comment": "a small boulder, about one foot in diameter, has been enchanted with continual light and permanent levitation, giving the stone a very slight negative buoyancy."
+  },
+  {
+   "name": "dnafRouteDice",
+   "value": 1,
+   "comment": "the long, gradually sloping western cavern to the vast dungeon below the surface city is generally 1d3 x 10 feet wide, and equally high (the die count)."
+  },
+  {
+   "name": "dnafRouteSides",
+   "value": 3,
+   "comment": "the dangerous city route is generally 1d3 x 10 feet wide (the die sides)."
+  },
+  {
+   "name": "dnafRouteMultFt",
+   "value": 10,
+   "comment": "the city route is generally 1d3 x 10 feet wide and equally high (the multiplier)."
+  },
+  {
+   "name": "dnafBranchCaverns",
+   "value": 5,
+   "comment": "five other natural caverns branch off the huge complex and lead to the other areas shown on the map - rough travel, but none blocked with the pitfalls that mar the route to the city."
+  },
+  {
+   "name": "dnafCentralCaverns",
+   "value": 6,
+   "comment": "six central caverns, each linked to the other five, make up the bulk of the area - a vast network of natural caves often linked by dungeons and excavated tunnels."
+  },
+  {
+   "name": "dnafCavernWidthFt",
+   "value": 1000,
+   "comment": "the central Caverns of Doom are truly immense, with ceilings towering hundreds of feet over the floor and widths approaching 1,000 feet."
+  },
+  {
+   "name": "dnafCavernLenDice",
+   "value": 2,
+   "comment": "the six central caverns range in length from 2d6 miles each (the die count)."
+  },
+  {
+   "name": "dnafCavernLenSides",
+   "value": 6,
+   "comment": "the six central caverns range in length from 2d6 miles each (the die sides)."
+  },
+  {
+   "name": "dnafConnectWideFt",
+   "value": 20,
+   "comment": "even the connecting routes between the caverns are at least 20 feet wide, so a carefully routed mule can make the passage despite the rough floors split by chasms, cliffs and rubble."
+  },
+  {
+   "name": "dnafConnectHighFt",
+   "value": 10,
+   "comment": "the connecting routes between the caverns are at least 10 feet high."
+  },
+  {
+   "name": "dnafPipelineDiaFt",
+   "value": 2,
+   "comment": "the ancient irrigation system relies on several tubes cut through the rock to Area 4; the pipelines are less than two feet in diameter, indicating that the deep gnomes were the most probable builders."
+  },
+  {
+   "name": "dnafWaterCaverns",
+   "value": 3,
+   "comment": "water is drained from several of the Area 4 streams and diverted through the pipelines to three separate caverns in Area 9."
+  },
+  {
+   "name": "dnafJermaineDiaLowIn",
+   "value": 18,
+   "comment": "the passages between the jermalaine lairs are only about 18 to 24 inches in diameter, so intrusion by larger creatures is difficult (the low bound)."
+  },
+  {
+   "name": "dnafJermaineDiaHighIn",
+   "value": 24,
+   "comment": "the jermalaine lair passages are only about 18 to 24 inches in diameter (the high bound)."
+  },
+  {
+   "name": "dnafJermaineExitHeightFt",
+   "value": 20,
+   "comment": "the outer exits of the jermalaine lairs have been dug into the wall of a large cavern about 20 feet off the floor, with rope ladders hanging from each entry tunnel to be quickly pulled up against attackers."
+  },
+  {
+   "name": "dnafDuergarCaves",
+   "value": 3,
+   "comment": "the duergar fortified water area - a large pool fed through a spout in the ceiling - is accessible through three narrow caves, each blocked so thoroughly that creatures larger than the gray dwarves have difficulty squeezing through."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnafMazeCircle",
+   "value": true,
+   "comment": "the area is connected to the canyon by one of the access tunnels and to Area 9 by a long natural cave; a number of large caverns join to form a maze-like circle of rooms, relatively devoid of formations apart from the occasional stalactite, the floors smoothed for walking - everything else the product of natural erosion, with no passage that would impede a large ogre or similar creature."
+  },
+  {
+   "name": "dnafFungiCarpet",
+   "value": true,
+   "comment": "each of the dozen or so chambers is literally carpeted with thick growths of fungi - every variety of mushroom including shriekers, violet fungus, and a host of edible fungi - with a deep layer of soft loam on each floor and a faint smell of decay in the air."
+  },
+  {
+   "name": "dnafCrushedPaths",
+   "value": true,
+   "comment": "narrow paths lined with crushed stone wind among the tended fungi; movement off the paths is virtually impossible without crushing some of them."
+  },
+  {
+   "name": "dnafMyconidTenders",
+   "value": true,
+   "comment": "the tenders of the vast underground plant garden are an isolated band of myconids living in the large central cavern - the only one not choked with growing fungi - who dutifully move among the other caverns, cleaning off any blight and clearing away creatures that threaten to eat the fungi."
+  },
+  {
+   "name": "dnafIrrigationRelay",
+   "value": true,
+   "comment": "the myconids' most important duty is irrigation: with no natural water supply in the area, they journey down the tunnel to Area 9 in a regular relay, returning with huge inverted mushroom caps filled with water, which is then allocated in precise amounts to the various caverns."
+  },
+  {
+   "name": "dnafMyconidKing",
+   "value": true,
+   "comment": "the myconid king is a very old fungus who takes his responsibilities quite seriously; the myconids are not hostile or warlike but guard their domain jealously, tending to drive off intruders rather than inquire as to their purpose."
+  },
+  {
+   "name": "dnafSporeZombies",
+   "value": true,
+   "comment": "the king has animated a number of zombies with his animator spores - several humans, a number of mobats, a pair of derro, and a host of jermalaine - serving as the initial guardians of the area; the myconids do not participate in combat unless all of the zombies have been defeated."
+  },
+  {
+   "name": "dnafAirCistern",
+   "value": true,
+   "comment": "the air circulates fairly well because of the Area 7 tunnel, but the dampness and mustiness of the loamy floor and spongy inhabitants makes it unpleasant to breathe; water must be imported, with the myconids maintaining a stone cistern for their own use and the rest keeping the soil moist."
+  },
+  {
+   "name": "dnafUnlimitedFood",
+   "value": true,
+   "comment": "the fungus forest could provide a virtually unlimited food supply to any hungry creature with access to it, but the guardian myconids make this access very difficult."
+  },
+  {
+   "name": "dnafGlowStone",
+   "value": true,
+   "comment": "one cavern contains fungus that thrives with limited light: when a myconid tends the room it kicks or hurls the enchanted glowing stone into the air, where over several hours it slowly sinks back to earth - shedding steady illumination over the entire room while airborne, and lighting only the area immediately around it when it falls."
+  },
+  {
+   "name": "dnafKeyHub",
+   "value": true,
+   "comment": "the Caverns of Doom are a key section of Deepearth, connecting routes to and from many different places - the western city route blocked with pits, chasms and cliffs that make it very dangerous to travel."
+  },
+  {
+   "name": "dnafDeadCave",
+   "value": true,
+   "comment": "like all the other areas adjacent to Area 9, the city-route cavern is a dead cave: the water that carved it has long since ceased to flow, and the cave formations have grown brittle and lost their shine."
+  },
+  {
+   "name": "dnafDoomName",
+   "value": true,
+   "comment": "the name is derived from the tales of adventurers who penetrated this region and returned to the surface to tell of its terrors - adventurers who generally assumed they had descended into the utmost depths of the earth."
+  },
+  {
+   "name": "dnafRacePockets",
+   "value": true,
+   "comment": "the most proliferate denizens are the jermalaine, with small bands roaming the entire area and a large community in the northernmost cavern; other caverns contain pockets of drow, duergar and pech, none of them on friendly terms with each other, with occasional violent flareups and only the duergar attempting fortifications."
+  },
+  {
+   "name": "dnafCityRaiders",
+   "value": true,
+   "comment": "small bands of hobgoblins, goblins and troglodytes live in the dungeon beneath the city and in the cavern leading from the city to Area 9; encountered here, they are usually a small raiding party attempting to pillage the possessions of the permanent denizens."
+  },
+  {
+   "name": "dnafMonsterMenagerie",
+   "value": true,
+   "comment": "many unintelligent denizens dwell among the tunnels: giant toads, stirges, piercers, large and huge spiders, jellies, puddings, molds, rust monsters, cockatrices, gargoyles, wraiths and wights all roam the area in small numbers."
+  },
+  {
+   "name": "dnafEdibleFungi",
+   "value": true,
+   "comment": "an assortment of fungi have sprouted in most parts of the caverns where water exists; shriekers or violet fungus are occasionally discovered, but most are of normal, and even edible, types."
+  },
+  {
+   "name": "dnafIrrigationWorks",
+   "value": true,
+   "comment": "the Caverns of Doom are the only portion of this section of Deepearth with a decent water supply, thanks to a complicated irrigation system developed centuries earlier, presumably by the duergar or svirfneblin; the duergar and jermalaine monopolize two sources, while the third is centrally located and shared by all other denizens as well as the myconids of the fungus forest."
+  },
+  {
+   "name": "dnafCavePigs",
+   "value": true,
+   "comment": "the duergar and drow each maintain large herds of cave pigs; the gray dwarves grow a flourishing collection of edible fungi, while the nomadic drow harvest the fungi where they find it."
+  },
+  {
+   "name": "dnafPechMining",
+   "value": true,
+   "comment": "the pech have located a wide variety of precious metals and stones throughout the Caverns of Doom; the persistent miners generally exhaust each claim before moving on, their past mining activities obvious in many places."
+  },
+  {
+   "name": "dnafPechDiamondMine",
+   "value": true,
+   "comment": "in one cavern the pech are engaged in one of their most ambitious excavations - a rich diamond mine the other denizens have not been able to locate; the pech furtively choose each work area and employ their wall of stone collective spell ability to screen it from all outside intrusion, their low oxygen requirements allowing them to remain sealed in a relatively small area for many weeks."
+  },
+  {
+   "name": "dnafDuergarFort",
+   "value": true,
+   "comment": "the duergar fortified area surrounds their water supply - a large pool fed through a spout in the ceiling - with access tunnels carved over each of the three blocked caves, holding small holes and a large supply of acid that can be cast onto intruders approaching through the caves below."
+  },
+  {
+   "name": "dnafJermaineHoneycomb",
+   "value": true,
+   "comment": "the jermalaine live in a honeycombed section of stone with dwellings carved from the area immediately surrounding the water pipe; many high-ranking jermalaine have small streams running through their lairs."
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['dnafChamberHtLowFt']() != 50 or m['dnafChamberHtHighFt']() != 60 or m['dnafCapMaxFt']() != 30 or m['dnafMyconidCircle']() != 20 or m['dnafGlowBoulderDiaFt']() != 1",
+   "note": "the Fungus Forest numbers: the 50/60-ft chamber heights, the 30-ft mushroom caps, the myconid circle of 20, the one-foot glowing boulder."
+  },
+  {
+   "expr": "m['dnafRouteDice']() != 1 or m['dnafRouteSides']() != 3 or m['dnafRouteMultFt']() != 10 or m['dnafBranchCaverns']() != 5 or m['dnafCentralCaverns']() != 6",
+   "note": "the Caverns of Doom layout: the 1d3x10-ft city route, the five branch caverns, the six linked central caverns."
+  },
+  {
+   "expr": "m['dnafCavernWidthFt']() != 1000 or m['dnafCavernLenDice']() != 2 or m['dnafCavernLenSides']() != 6 or m['dnafConnectWideFt']() != 20 or m['dnafConnectHighFt']() != 10",
+   "note": "the great caverns: widths approaching 1,000 feet, lengths of 2d6 miles, connections at least 20 ft wide and 10 ft high."
+  },
+  {
+   "expr": "m['dnafPipelineDiaFt']() != 2 or m['dnafWaterCaverns']() != 3 or m['dnafDuergarCaves']() != 3",
+   "note": "the water works: the sub-2-ft pipelines to Area 4, the three receiving caverns, the duergar pool's three blocked approach caves."
+  },
+  {
+   "expr": "m['dnafJermaineDiaLowIn']() != 18 or m['dnafJermaineDiaHighIn']() != 24 or m['dnafJermaineExitHeightFt']() != 20",
+   "note": "the jermalaine warren: the 18-to-24-inch lair passages, the exits dug 20 feet off the cavern floor."
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Area 8 Fungus Forest section": [
+   {
+    "kind": "bool",
+    "name": "dnafMazeCircle"
+   },
+   {
+    "kind": "const",
+    "name": "dnafChamberHtLowFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnafChamberHtHighFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafFungiCarpet"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafCrushedPaths"
+   },
+   {
+    "kind": "const",
+    "name": "dnafCapMaxFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafMyconidTenders"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafIrrigationRelay"
+   },
+   {
+    "kind": "const",
+    "name": "dnafMyconidCircle"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafMyconidKing"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafSporeZombies"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafAirCistern"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafUnlimitedFood"
+   },
+   {
+    "kind": "const",
+    "name": "dnafGlowBoulderDiaFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafGlowStone"
+   }
+  ],
+  "the Area 9 Caverns of Doom section": [
+   {
+    "kind": "bool",
+    "name": "dnafKeyHub"
+   },
+   {
+    "kind": "const",
+    "name": "dnafRouteDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnafRouteSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnafRouteMultFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafDeadCave"
+   },
+   {
+    "kind": "const",
+    "name": "dnafBranchCaverns"
+   },
+   {
+    "kind": "const",
+    "name": "dnafCentralCaverns"
+   },
+   {
+    "kind": "const",
+    "name": "dnafCavernWidthFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnafCavernLenDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnafCavernLenSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnafConnectWideFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnafConnectHighFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafDoomName"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafRacePockets"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafCityRaiders"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafMonsterMenagerie"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafEdibleFungi"
+   },
+   {
+    "kind": "const",
+    "name": "dnafPipelineDiaFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnafWaterCaverns"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafIrrigationWorks"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafCavePigs"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafPechMining"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafPechDiamondMine"
+   },
+   {
+    "kind": "const",
+    "name": "dnafDuergarCaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafDuergarFort"
+   },
+   {
+    "kind": "const",
+    "name": "dnafJermaineDiaLowIn"
+   },
+   {
+    "kind": "const",
+    "name": "dnafJermaineDiaHighIn"
+   },
+   {
+    "kind": "const",
+    "name": "dnafJermaineExitHeightFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnafJermaineHoneycomb"
+   }
+  ]
+ },
+ "caller_files": []
+}

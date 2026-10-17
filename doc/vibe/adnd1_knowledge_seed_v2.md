@@ -8019,6 +8019,53 @@ when both halves land.
   30-ft entry tunnel, the domed half-mile chamber, the
   bestial temple, the 100-ft palace facade - its capture
   text already read warm.
+- R536 LANDED 2026-10-17: commit f4d090e (census 459 -> 460,
+  pushed d08481f..f4d090e), THE DSG DEEPEARTH AREAS 6-7,
+  printed pp. 81-82 (pdf 82-83) - the individual area key
+  reaches the dead heart and the great chasm: Area 6 the
+  Caverns of the Ancients (the 30-ft-wide 10-ft-ceiling entry
+  tunnel to the half-mile domed chamber; the bestial temple
+  and its concentric two- and three-story stone rings with
+  the cavern-wall barracks; the palace with its shut brass
+  doors - the only closed doorways - and the 100-ft-high,
+  300-ft-wide facade; the five 60-degree-interval tunnels
+  gone to dusty farmland; the duergar exodus from the dried
+  wells; the palace honor guard of hundreds of zombies,
+  skeletons and mummified leaders pursuing only to the
+  Area 6/7 juncture; the stale air - 2d6-round gasps,
+  1d6-round recoveries; the stripped fragile furnishings;
+  and the secret smithy trapdoor - the extinguished
+  furnaces and the 25,000-gp forge-of-power anvil with its
+  +1 enchantments, +2/+3 with a hammer of substance), and
+  Area 7 the Grand Canyon of Deepearth (the ten-mile,
+  mile-wide chasm with its 200-ft arching ceiling and the
+  rubble gorge over a mile down; the dead water-erosion
+  river; the stable cracked walls with no bridges; the
+  hidden caverns 3,000 ft down and two miles south; the
+  300-ft limestone cave mouths at 500-ft intervals; the
+  1-to-3-ft sewer shafts; the mobats in 2d6 groups; the
+  cave fishers, giant slugs, centipedes and carrion
+  crawlers; the two dozen cloakers, 50% drawn to mobat
+  fights; the stagnant pools with their 50% disease; and
+  the sparse wall-niche fungi). A CLEAN-READ ROUND: both
+  machine reads agree on every number (djvu ~lines
+  10303-10463, Capture idx 372-376; the djvu "5096" and
+  Capture "ld6" garbles settled by the other read).
+  DELIVERY: the trailing-newline fix from R535 works - the
+  user-side md5 5cadedf369df57c3e7aa880b001f454e matches
+  the staging md5 exactly (spec 24,304 bytes). A ZERO-FLIP
+  ROUND: the pp. 75-98 Deepearth child remains open (the
+  R527/R533/R534/R535 precedent - the gap report NOT in
+  the git add). Pinned as rules/dsgarea3.h (prefix dnae,
+  verified free; 43 inlines - 30 consts, 13 bools, no
+  tables). Engine applied 4 then 0/4, audit mirror clean.
+  Gap unchanged 139/16. PREFLIGHT GREEN with census 460
+  audit lines, each exactly once, all bad 0; BUILD: 0
+  warnings. NEXT - R537: Area 8 the Fungus Forest (printed
+  pp. 82-83, pdf 83-84): the dozen chambers several hundred
+  feet across, the 50/60-ft ceilings, the 30-ft mushroom
+  caps, the myconid circle of 20 with its animator-spore
+  zombies - djvu text already extracted, capture warm.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
