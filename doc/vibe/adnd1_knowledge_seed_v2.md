@@ -7965,6 +7965,60 @@ when both halves land.
   Caverns (the 1d6-mile caverns with 100-ft ceilings,
   the ornate stalactite appearance), then onward through
   the area key per the R503 re-grain list.
+- R535 LANDED 2026-10-17: commit d08481f (census 458 -> 459,
+  pushed 24139af..d08481f), THE DSG DEEPEARTH AREAS 4-5,
+  printed pp. 79-81 (pdf 80-82) - the individual area key
+  continues: Area 4 the Cathedral Caverns (the four 1d6-mile
+  limestone caverns with 100-ft ceilings and 80/90-ft widths;
+  the stalactite-stalagmite-drapery cathedral appearance; the
+  west surface tunnel and the excavated link to the city
+  dungeon behind its secret door; the 400-ft bandit sinkhole
+  with the cave-in rubble; the 5-ft-wide 1-ft-deep streams;
+  the isolated drow pocket - 25 fighters, equal
+  noncombatants, poor and magicless; the piercer ceiling
+  with the drow rim trail; the jellies, oozes, wererats and
+  otyugh scavengers; the 12-HD sinkhole hydra starving in
+  the central cavern; the diamond vein settled by jewelry
+  proficiency; the 500-ft approach tunnel under 10 ft wide
+  with pit traps, 6d6 falling blocks, shriekers, the
+  illusionary dead end and the 100-ft oil-pot climb; and the
+  geothermal gold mud pool - 20 ft wide, 5 ft deep, 20 gp
+  per character, more than 10,000 gp), and Area 5 the
+  Enclosed Caverns (the air-filled, water-choked caves fed
+  by the subterranean river; the 3-to-4 meander and the
+  sandy beach; the one-mile rapids and the 80% cascade
+  sweep, two rounds to the quiet pool; eight sub-mile caves
+  behind 2-ft tunnels; the 50-ft water-filled chute and the
+  six low-clearance miles to the Area 14 waterfall; the 20
+  mad castaways with their green-glow fungi light; the 6d6
+  kuo-toa outpost guarding the chute with monthly sweeps;
+  the fish-rat-beaver-weasel-rabbit fauna and the scrag;
+  the nereid of the deep spring pool; the 1%-per-hour river
+  finds - plate mail +2, shield +2, shield +3, longsword +1,
+  spear +3; the surface net stopping short of the bottom;
+  and the outpost's three vertical levels, secret doors and
+  food-storage chamber). A CLEAN-READ ROUND: both machine
+  reads agree on every number (djvu ~lines 10084-10295,
+  Capture idx 368-372). DELIVERY NOTE: the user-side md5
+  c3b23233763d24f02f83aebf9465426a = the staging md5 plus
+  one trailing newline added by the copy path -
+  byte-stripped they are identical; benign and
+  engine-validated; from R536 the gen script emits the
+  trailing newline so the md5s match as-delivered. A
+  ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains
+  open (the R527/R533/R534 precedent - the gap report NOT
+  in the git add). Pinned as rules/dsgarea2.h (prefix dnac,
+  verified free; 58 inlines - 33 consts, 25 bools, no
+  tables). Spec 28,871 bytes landed (28,870 + newline),
+  user-side md5 c3b23233763d24f02f83aebf9465426a,
+  landed-GitHub identical. Engine applied 4 then 0/4,
+  audit mirror clean. Gap unchanged 139/16. PREFLIGHT
+  GREEN with census 459 audit lines, each exactly once,
+  all bad 0; BUILD: 0 warnings. NEXT - R536: Area 6 the
+  Caverns of the Ancients (printed p. 81, pdf 82): the
+  30-ft entry tunnel, the domed half-mile chamber, the
+  bestial temple, the 100-ft palace facade - its capture
+  text already read warm.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
