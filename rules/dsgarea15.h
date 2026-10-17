@@ -1,0 +1,280 @@
+// =========================================================================================
+// Adnd1 - rules/dsgarea15.h
+// THE DSG DEEPEARTH AREAS 30-31, R548: printed pp. 97-98 (pdf 98-99) - the
+// FINAL TWO AREAS of the individual area key: Area 30 the Interplanar
+// Whirlpool (the placid Area 17 river gathering speed to the shaft, its
+// 2,000-foot plunge down the 100-foot-diameter shaft into the deep lake; the
+// breakwater landing for hauling out boats, the wide trail becoming long
+// switchback stairs cut the full shaft length to the bottom landing; the lake
+// filling many adjoining caverns, some completely water-filled, most
+// ceilinged 20 feet or more above the surface; the placid southern outflow
+// river and the aggressive northern current to the whirlpool cavern; the
+// depths rarely shallower than 100 feet and in places 1,000 feet down; the
+// kuo-toa and aboleth watching for Plane of Water intruders without dwelling
+// here; the roaming aquatic carnivores - giant catfish, gar, scrags,
+// lampreys, merrow, sea snapping turtles, giant pike - infesting Area 31 by
+// the wide river; the waterfall-side nymphs guarding the water's purity; the
+// nereid watch over the whirlpool cavern with reinforcements three turns
+// after discovery - water elementals, water weirds, tritons, vardigg, and
+// marid, one or two types unless the incursion is major; the clean plentiful
+// water and the scant troll-and-ogre treasure; and the elemental vortex
+// itself - the Areas 29 and 21 analog, a water-breathing journey to the Plane
+// of Water past guardians defeated or persuaded, the good-leaning tritons),
+// and Area 31 Darksea (the displayed portion a small fraction of the unknown
+// whole, its waters reaching a hundred miles or more south and east; the mild
+// saltiness short of surface seawater; the ceilings rising 1,000 feet above
+// the water or dropping below it to block whole sections; the rare sloping
+// boat shores against the prevailing ceiling-plummeting cliffs; the
+// shallow-only-near-shore depths falling hundreds of feet to the 2,000-foot
+// bottom; the aboleth dominion - a dozen or more massive buoyant cities
+// adrift in the black waters, their parties ever eager for slaves and
+// sinister-ritual prey; the unique giants squid, water nagas, verme and
+// morkoth beside the subterranean sharks, barracudas, rays, dragon turtles
+// and sea snakes; the kuo-toa's losing war for control, their presence a
+// thing of the past within a few centuries; the sunless aquatic fungi -
+// mushroom-like floaters and depth-drifting mold clouds - feeding the fish,
+// the subterranean perch, trout and salmon among them, prey to the swarming
+// carnivores; and the capital city of aboleth culture, three times the size
+// of the others and encircled by 36 towers instead of the usual six,
+// grandiose in all ways).
+// census 471 -> 472.
+//
+// the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf
+// = printed + 1; the text read from the IA djvu OCR (djvu.txt lines
+// ~12557-12709) with the pdf Acrobat-Capture layer as the second read
+// (capture idx 229 = the printed p. 98 window carrying the Area 30 tail and
+// Area 31 in full, with the Area 30 head carried in the previous idx
+// windows); the compiled-tables appendix has no reprint of this prose. A
+// CLEAN-READ ROUND: both machine reads agree on every load-bearing number -
+// the 2,000-ft plunge, the 100-ft shaft, the 20-ft ceilings, the 100-ft
+// shallow bound and 1,000-ft lake bottoms, the three-turn reinforcements, the
+// hundred-mile reach, the 1,000-ft ceilings, the 2,000-ft deepest, the
+// dozen-plus cities, and the capital at three-times size with 36 towers
+// against the usual six; the only garbles settled cross-read (the djvu seerns
+// and var-dig for the capture seems and vardigg). SEAMS: the R518 water
+// travel (the river, the lake and the boat notes), the Monster Manual
+// denizens (the kuo-toa, aboleth, scrags, merrow, nereid, tritons, marid,
+// morkoth, naga, dragon turtle), the PHB water breathing, and the Area 21/29
+// vortex procedure. A ZERO-FLIP ROUND - the FINAL round of the pp. 75-98
+// individual area key (areas 1 through 31 all pinned, R527 through R548): the
+// Deepearth child gap-flip question REOPENS after this land (the
+// R527/R533-R547 precedent held it open until the setting landed in full -
+// the gap report is NOT in the git add). Nothing auto-credits.
+//
+// A procedural-plus-prose round: no tables pin. The numbers pin as consts per
+// the R508 convention - the plunge feet, the shaft diameter, the ceiling
+// minimum, the lake shallow and deep bounds, the reinforcement turns, the
+// reach miles, the ceiling high bound, the deepest feet, the capital size
+// multiplier, and the capital and usual tower counts. The geography,
+// denizens, resources and unique-features prose pins as bools for both areas;
+// no dice appear in this round. The water-travel/MM/PHB seams are noted; the
+// Deepearth child stays open this round; nothing auto-credits.
+//
+namespace rules {
+
+// ---- the Area 30 Whirlpool section ----
+
+// the placid river flowing from Area 17 gradually picks up speed until it
+// reaches the shaft, where it plunges straight down, finally splashing into
+// the deep subterranean lake that makes up Area 30.
+inline bool dnaqRiverPlunge()
+    { return true; }
+
+// the river plunges 2,000 feet straight down the shaft.
+inline int dnaqFallFt()
+    { return 2000; }
+
+// the shaft the water plunges down is 100 feet in diameter.
+inline int dnaqShaftDiaFt()
+    { return 100; }
+
+// just before the water plunges over the fall it passes a sturdy breakwater
+// and landing where travelers can remove boats from the water.
+inline bool dnaqBreakwaterLanding()
+    { return true; }
+
+// a wide trail follows the river into the shaft, becoming a long series of
+// wide stairs cut into the rock opposite the waterfall, switchbacking down
+// the entire length of the shaft to a bottom landing adjacent to the lake.
+inline bool dnaqSwitchbackStairs()
+    { return true; }
+
+// the lake itself fills many adjoining caverns; some are completely filled,
+// making boat travel impossible.
+inline bool dnaqAdjoiningCaverns()
+    { return true; }
+
+// in most areas the ceiling rises 20 feet or more from the surface of the
+// lake.
+inline int dnaqCeilMinFt()
+    { return 20; }
+
+// a wide, placid river slowly makes its way out of the lake to the south, and
+// a more aggressive current carries water into a large cavern to the north
+// where the whirlpool is located.
+inline bool dnaqTwoOutflows()
+    { return true; }
+
+// the lake's depth varies from cavern to cavern, but it is rarely shallower
+// than 100 feet.
+inline int dnaqLakeShallowFt()
+    { return 100; }
+
+// in some places the lake bottom is 1,000 feet below the surface.
+inline int dnaqLakeDeepFt()
+    { return 1000; }
+
+// both the kuo-toa and the aboleth wander these caves though neither race
+// maintains dwellings here; they are often on the watch for intruders from
+// the Plane of Water, who gain access to the Prime Plane through the
+// whirlpool.
+inline bool dnaqWatcherRaces()
+    { return true; }
+
+// aquatic carnivores roam the deep waters using the wide river to Area 31 as
+// a means of infesting that area: giant catfish, giant gar, scrags (marine
+// trolls), lampreys, merrow (aquatic ogres), giant sea snapping turtles, and
+// giant pike; the marine trolls and ogres lair in small side caverns while
+// the others roam in search of prey.
+inline bool dnaqAquaticCarnivores()
+    { return true; }
+
+// a small group of nymphs resides in these caverns, living in caves
+// half-filled with water very close to the waterfall; they jealously guard
+// against intrusion and strive constantly to keep the water pure.
+inline bool dnaqNymphGuardians()
+    { return true; }
+
+// the large cavern containing the interplanar whirlpool is claimed by a host
+// of creatures from the Elemental Plane of Water; an assortment of nereid
+// perpetually guards the approaches, some keeping intruders at bay while
+// others hasten to their own plane for reinforcements.
+inline bool dnaqNereidWatch()
+    { return true; }
+
+// the nereid reinforcements arrive three turns after the intrusion is
+// discovered.
+inline int dnaqReinforceTurns()
+    { return 3; }
+
+// the Plane of Water creatures who answer the nereids' calls include water
+// elementals, water weirds, tritons, vardigg, and marid; unless the incursion
+// is a major one, only one or two types respond at a given time.
+inline bool dnaqWaterRoster()
+    { return true; }
+
+// the water is clean and plentiful; the air does not circulate well, but few
+// of the creatures here breathe it, so characters have no shortage.
+inline bool dnaqCleanWater()
+    { return true; }
+
+// the caves of the ogres and trolls contain limited amounts of treasure, but
+// little else of value can be found here.
+inline bool dnaqScantTreasure()
+    { return true; }
+
+// the whirlpool cavern is an elemental vortex like the mud and lava vortices
+// in Areas 29 and 21; characters must be able to breathe water to survive a
+// journey to the Plane of Water, and the guardians must be defeated or
+// persuaded that the characters serve a cause they support - a few, such as
+// the tritons, lean towards good alignment.
+inline bool dnaqWaterVortex()
+    { return true; }
+
+// ---- the Area 31 Darksea section ----
+
+// the portion of the Darksea shown on the map represents only a small
+// fraction of the total area of this huge body of water; the exact extent is
+// unknown.
+inline bool dnaqVastUnknownSea()
+    { return true; }
+
+// it is safe to assume the Darksea's waters reach a hundred miles or more to
+// the south and east of the displayed area.
+inline int dnaqReachMiles()
+    { return 100; }
+
+// the waters of the Darksea are mildly salty, but not as salty as seawater on
+// the surface.
+inline bool dnaqMildlySalty()
+    { return true; }
+
+// in many places the chamber ceiling rises far above the water level,
+// occasionally by as much as 1,000 feet.
+inline int dnaqCeilHighFt()
+    { return 1000; }
+
+// in other places the ceiling drops to the water level or below, blocking off
+// huge sections of the sea to all but underwater travelers.
+inline bool dnaqBlockedSections()
+    { return true; }
+
+// small portions of the shoreline are smooth rock sloping gradually into the
+// water where boats can be pulled ashore; most of the shore is vertical stone
+// cliffs plummeting from the ceiling deep into the sea, escapable only by a
+// vertical climb.
+inline bool dnaqMixedShore()
+    { return true; }
+
+// the water is shallow only near the infrequent shorelines; elsewhere the
+// bottom falls hundreds of feet, and at its deepest the Darksea bottom is
+// 2,000 feet below the surface.
+inline int dnaqDeepFt()
+    { return 2000; }
+
+// the dominant denizens of the Darksea are the aboleth: a dozen or more of
+// their massive buoyant cities drift slowly around the black waters, and
+// aboleth parties commonly travel the sea, always eager for more slaves and
+// more prey for their sinister rituals.
+inline bool dnaqAbolethDominion()
+    { return true; }
+
+// the Area 30 travelers are encountered here, plus creatures unique to the
+// Darksea: giant squid, water nagas, verme, and the hideously evil morkoth.
+inline bool dnaqUniqueSeaLife()
+    { return true; }
+
+// other aquatic denizens include subterranean varieties of ocean predators:
+// sharks, barracudas, rays, and even dragon turtles and sea snakes.
+inline bool dnaqOceanPredators()
+    { return true; }
+
+// small groups of kuo-toa are occasionally encountered, but the men-fish are
+// engaged in a losing war with the aboleth for total control of the Darksea;
+// within a few centuries the kuo-toan presence will be a thing of the past.
+inline bool dnaqLosingKuoToanWar()
+    { return true; }
+
+// kelp and plankton cannot grow without sunlight, but many varieties of
+// aquatic fungi have developed: some float on the water looking much like
+// mushrooms, smaller varieties resemble clouds of molds floating at all
+// depths.
+inline bool dnaqAquaticFungi()
+    { return true; }
+
+// many fish thrive on the fungi - including some of the monsters - plus
+// subterranean varieties of perch, trout and salmon, all falling prey to the
+// thriving carnivores that swarm the Darksea.
+inline bool dnaqFisheries()
+    { return true; }
+
+// the aboleth cities float through the Darksea much like their city in the
+// Great Lake of Deepearth (Area 17); one city is the center of aboleth
+// culture, about three times the size of the others and in all ways more
+// grandiose.
+inline bool dnaqAbolethCapital()
+    { return true; }
+
+// the capital aboleth city is about three times the size of the others.
+inline int dnaqCapitalSizeMult()
+    { return 3; }
+
+// the capital city is encircled by 36 towers.
+inline int dnaqCapitalTowers()
+    { return 36; }
+
+// the usual aboleth city has six towers; the capital has 36 instead.
+inline int dnaqCityTowersUsual()
+    { return 6; }
+
+}   // namespace rules

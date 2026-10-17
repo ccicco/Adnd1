@@ -249,6 +249,7 @@
 #include "rules/dsgarea12.h"  // R545: the DSG Deepearth areas 24-25 pins
 #include "rules/dsgarea13.h"  // R546: the DSG Deepearth areas 26-27 pins
 #include "rules/dsgarea14.h"  // R547: the DSG Deepearth areas 28-29 pins
+#include "rules/dsgarea15.h"  // R548: the DSG Deepearth areas 30-31 pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -72910,6 +72911,87 @@ int main() {
         )
             ++bad;
         printf("R547 DSG Deepearth areas 28-29 audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R548 DSG Deepearth areas 30-31 audit ----
+    // The DSG Deepearth areas 30-31 pin Area 30 (the Interplanar Whirlpool
+    // with its 2,000-ft plunge down the 100-ft shaft, the switchback stairs,
+    // the nereid-guarded Plane of Water vortex) and Area 31 (Darksea with its
+    // hundred-mile salty expanse, the 2,000-ft depths, the dozen-plus aboleth
+    // cities and the 36-tower capital) - the FINAL round of the Deepearth
+    // individual area key.
+    {
+        using namespace rules;
+        int bad = 0;
+    if (dnaqFallFt() != 2000
+            || dnaqShaftDiaFt() != 100
+            || dnaqCeilMinFt() != 20
+            || dnaqLakeShallowFt() != 100
+            || dnaqLakeDeepFt() != 1000
+            || dnaqReinforceTurns() != 3
+            || dnaqReachMiles() != 100
+            || dnaqCeilHighFt() != 1000
+            || dnaqDeepFt() != 2000
+            || dnaqCapitalSizeMult() != 3
+            || dnaqCapitalTowers() != 36
+            || dnaqCityTowersUsual() != 6
+            || !dnaqRiverPlunge()
+            || !dnaqBreakwaterLanding()
+            || !dnaqSwitchbackStairs()
+            || !dnaqAdjoiningCaverns()
+            || !dnaqTwoOutflows()
+            || !dnaqWatcherRaces()
+            || !dnaqAquaticCarnivores()
+            || !dnaqNymphGuardians()
+            || !dnaqNereidWatch()
+            || !dnaqWaterRoster()
+            || !dnaqCleanWater()
+            || !dnaqScantTreasure()
+            || !dnaqWaterVortex()
+            || !dnaqVastUnknownSea()
+            || !dnaqMildlySalty()
+            || !dnaqBlockedSections()
+            || !dnaqMixedShore()
+            || !dnaqAbolethDominion()
+            || !dnaqUniqueSeaLife()
+            || !dnaqOceanPredators()
+            || !dnaqLosingKuoToanWar()
+            || !dnaqAquaticFungi()
+            || !dnaqFisheries()
+            || !dnaqAbolethCapital()
+        )
+            ++bad;
+        // the plunge: 2,000 feet down the 100-ft shaft.
+    if (dnaqFallFt() != 2000
+            || dnaqShaftDiaFt() != 100
+        )
+            ++bad;
+        // the lake: 20-ft minimum airspace, rarely shallower than 100 feet,
+        // bottoms 1,000 feet down.
+    if (dnaqCeilMinFt() != 20
+            || dnaqLakeShallowFt() != 100
+            || dnaqLakeDeepFt() != 1000
+        )
+            ++bad;
+        // the nereid: reinforcements three turns after discovery.
+    if (dnaqReinforceTurns() != 3
+        )
+            ++bad;
+        // the Darksea: a hundred miles or more, 1,000-ft airspace, the
+        // 2,000-ft depth.
+    if (dnaqReachMiles() != 100
+            || dnaqCeilHighFt() != 1000
+            || dnaqDeepFt() != 2000
+        )
+            ++bad;
+        // the capital: three times the size, 36 towers instead of the usual
+        // six.
+    if (dnaqCapitalSizeMult() != 3
+            || dnaqCapitalTowers() != 36
+            || dnaqCityTowersUsual() != 6
+        )
+            ++bad;
+        printf("R548 DSG Deepearth areas 30-31 audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

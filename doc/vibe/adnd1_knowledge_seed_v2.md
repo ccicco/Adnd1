@@ -8622,6 +8622,74 @@ when both halves land.
   boat travel, likely paired with Area 29 the Dark
   Realms (p. 97); the djvu head is already read,
   capture window with the next fetch.
+- R547 LANDED 2026-10-17: commit 627fcb27e3b6eb5ec35
+  b6bf43fc84a9c2810cf54 (census 470 -> 471, pushed
+  550374b..627fcb2), THE DSG DEEPEARTH AREAS 28-29,
+  printed pp. 96-97 (pdf 97-98) - Area 28 the Realm
+  of the Drow (the excavated caverns linking the
+  living caves, the high point of drow culture; the
+  perfectly circular council chamber over a mile in
+  diameter with its 1,000-ft dome on massive columns
+  and the flight-or-levitation shaft to the
+  matriarchs' hall; the built cities - buildings
+  erected in the caverns like surface communities;
+  the plentiful water, the huge reservoirs, the
+  placid waterways where boat travel rivals walking;
+  the sculpted passages and spiral stairways; the
+  miniature council refuges gated to 4th-level+ drow
+  where levitation is universal, rope ladders for
+  the rest in emergency; the 12,000+ drow with their
+  rothe and cave pigs; the windpipe air and the
+  sages' pressure theory; the clean water, the
+  fungus farms with their slight surplus, the strict
+  population control; the iron-copper-silver-gold-
+  adamantite-mithril mines; and the architecture -
+  columns, buttresses and domes lit by
+  phosphorescent fungi, gold and silver ornament
+  never structural), and Area 29 the Dark Realms
+  (the spiderweb of living caves descending to the
+  central chamber; the trickle that never floats a
+  kayak, the water met as thick cold mud; the
+  chamber with 12 mouth passages feeding the
+  monstrous reservoir - 300 ft deep, nearly a mile
+  across, its level constant for centuries; the
+  cloakers driven into a few dozen caverns, the
+  illithids' evil third, the well-defended derro;
+  the unclaimed domains of slimes, oozes, jellies,
+  animated fungi and scavengers; the hundred-plus
+  Plane of Earth denizens - elementals, xorn,
+  crysmal, galeb duhr, chaggrin, dao - clustered
+  near their vortex; the stale air, the nearly
+  unexploited gems and metals behind deadly hazards;
+  and the mud whirlpool - the slow-motion vortex to
+  the Plane of Earth, the Area 21 procedure without
+  heat damage, breath held in transit). A CLEAN-READ
+  ROUND: both machine reads agree on every number
+  (djvu ~lines 12362-12554, capture idx 216 tail +
+  idx 220 + idx 225 head; the djvu Cyrillic-The and
+  '/evitation' settled by the capture). 35 inlines
+  (6 consts + 29 bools), header rules/dsgarea14.h,
+  prefix dnap, no table, no dice. DELIVERY clean
+  md5-exact on the first try: authored md5
+  9cb59d911ef52b45a1f742b1363d1e0e matched exactly
+  (spec 19,327 bytes); engine applied 4 then 0/4,
+  preflight GREEN with AUDIT CENSUS: 471. A ZERO-
+  FLIP ROUND: gap census stays 139/16, the pp.
+  75-98 Deepearth child open. NEXT - R548: Areas
+  30-31, the FINAL TWO AREAS of the Deepearth key
+  (printed pp. 97-98, pdf 98-99, djvu ~line 12557+) -
+  Area 30 the Interplanar Whirlpool (the 2,000-ft
+  plunge of the Area 17 river down the 100-ft shaft,
+  the breakwater landing and switchback stairs, the
+  nereid guardians with three-turn reinforcements,
+  the water-vortex journey) and Area 31 Darksea (the
+  hundred-mile mildly salty sea, the 1,000-ft
+  ceilings and 2,000-ft depths, the aboleth capital
+  with its 36 towers, the losing kuo-toan war);
+  both reads already fetched this round (idx 229
+  carried Area 30's tail, the whirlpool cavern and
+  all of Area 31; after R548 lands the pp. 75-98
+  Deepearth child GAP-FLIP question reopens).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
