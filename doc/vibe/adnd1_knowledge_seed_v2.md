@@ -6880,6 +6880,45 @@ when both halves land.
   census_before 439, the next free dn-prefix (verify in
   regtest.cpp), header rules/dsgdecay.h, include_after =
   the R514 dsglode.h include line.
+- R516 LANDED 2026-10-17: commit 10723f2 (census 439 -> 440,
+  pushed b987ddb..10723f2), the DSG STRUCTURAL DECAY, printed
+  p. 43 (pdf 44) - the aging-of-worked-wood rules (the gap
+  report's child line says worked-stone; the section is wood):
+  the humid-air assumption of the typical location, the
+  almost-completely-dry areas at a mere 2 or 3% of the given
+  rate, the 1d6-year rot onset (djvu garble 146 = 1d6,
+  settled by Capture idx 62), the creosote-or-sealant
+  doubling, the 5% collapse chance per multiple of the onset
+  roll with the roll-1 20-year max (100%) and roll-6 120-year
+  examples, the check on unusual stress, and the d100 check
+  roll (djvu garble 4100 = d100). Pinned as
+  rules/dsgdecay.h (prefix dns, verified free; 14 inlines:
+  8 consts + 6 bools; the 1d6 onset as dice+sides consts per
+  the R508 convention; no table - gap 88/67 -> 89/66, the
+  child flip only). PREV_RECORD CARRIED TWO ENTRIES: R514 +
+  R515b - the tool rounds never seed-append, so the R516
+  spec's prev_record spliced both records before the
+  Knowledge-maintenance anchor; future post-tool-round
+  splices must do the same (each tool round defers its
+  record to the next book round). STANDING RITUAL RULE
+  (user-set, R516): NO ./bn and NO nano step may appear in
+  the ritual block - the user runs both manually by their
+  own means; the ritual contains only md5sum, the double
+  engine run, ./tools/preflight.sh, git add/commit/push,
+  git log. Expect the user-side md5 to be the ./bn
+  whitespace-rewrite class, NOT the authored md5 - treat a
+  differing md5 as benign when the engine reports ALL OK;
+  the authored md5 is only for authoring-side reference. DELIVERY: canvas
+  r516-splice, authored md5 c6322ddd (15035 bytes); user
+  ran ./bn 516 despite the ritual dropping it - user-side
+  md5 9c82198a, the whitespace-rewrite class, engine ALL OK
+  twice (applied 5/already 0 then 0/5); preflight GREEN
+  with the R515b quiet display and 0-warning gate, AUDIT
+  CENSUS: 440. Ritual now has NO ./bn line; the md5sum gate
+  expects the authored md5.
+  NEXT - R517: Underground waterways (pp. 43-46) - standing
+  water, flowing water, water temperature, access - then the
+  water-travel Tables 21-26 section.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

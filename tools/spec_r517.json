@@ -1,0 +1,1151 @@
+{
+  "round": 517,
+  "title": "the DSG underground waterways",
+  "census_before": 440,
+  "prefix": "dnt",
+  "header_file": "rules/dsgwater.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "inline_count": 110,
+  "banner": {
+    "title": "The DSG UNDERGROUND WATERWAYS, R517: printed pp. 43-46 (pdf 44-47) - the standing water rules (the pools, reservoirs, lakes and seas, the low ceiling blocking normal boat travel, the absence of wind making sailing virtually unheard-of, the practically nonexistent waves with the cave-in tsunami and the confining-wall chop, the fresh lakes and pools safe to drink when fed by a stream or spring, and the reservoir dams that may sit at the bottom like a cork), the deep salt seas with their geothermal steam, the flowing-water characteristics (the impassable, narrow, average and wide diameter ladder, the 50/100% flow percentages, and the 0-40 rate of flow with the 20-feet-per-round multiplier), the six flow bands from stagnant through placid and medium to rapids, cascades and waterfalls with their speeds, slopes, audibility and drop-off dice, the damming rules (the 1,000 cubic feet per flow point per turn, the double-wide/quarter-narrow adjustment, the 1d6 dam points per worker per turn, the flow-rate destruction, the 50/150/250 completed CPVs and the half-flow leak), the water temperature ladder (the almost universally cold water, the 1d4-mile warmth retention, the 6d6 near-boiling burn with no save and the -2 per die, the 1d6 very-hot damage, and the bath-warm immunity), and the access rules (the occasional direct surface embark, the usual dungeon route, the upstream-travel cost of an outlet, the cliff-not-sand lake shores with their creature docks, and the sandy stream banks)",
+    "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~5533-5962) with the pdf Acrobat-Capture layer as the second read (idx 61-62 = printed pp. 44-45, with the section opener on idx 60) - every numeric cell dual-confirmed: the 3/20/60 diameter ladder with the 3/4-8/8 depths, the 50/100% flow, the 0-40 scale with the x20 ft/round, the 1-2/2-6/6-12/12-30/30-40 bands with the 40/120, 120/240, 240/600 and 600 speeds and the 10-15/30/30-200/200-1000/>1000 slopes, the 1,000-ft rapids audibility and 1-mile cascade audibility, the 1d6/1d3, 1d6/1d4 and 3d6/1d8 drop-off dice, the 1,000 cu ft, 1d6 and 50/150/250 dam numbers, and the 1d4/6d6/-2/1/1d6 temperature ladder. The djvu garbles: 10096 = 100% flow (the Capture reads 1000/0), \"flow rate - 2-6\" = 2-6 (the Capture reads \"= 2-6\"), and a stray STRUCTGRAL DECAY heading interrupting the waterways opener (the Capture reads clean). The Underground Water Travel section (Tables 21-26) starts the NEXT round per the content-density rule.",
+    "sentinel": "No tables in this section - the pins are consts and bools only, the biggest header since R509. Every die pins as dice + sides consts per the R508 convention (the medium 1d6/1d3, the rapids 1d6/1d4, the cascade 3d6/1d8, the dam 1d6, the warmth 1d4, the boiling 6d6, the very-hot 1d6). The flow bands overlap at their edges exactly as printed (medium 2-6 shares 2 with placid 1-2, rapids 6-12 share 6 with medium, and so on) - they pin as bound consts, NOT a chain, because a chain would force non-overlap the book does not have. The DMG pages 109-110 Construction Point Value seam and the DSG page 114 three-dimensional-maps note are noted; nothing auto-credits."
+  },
+  "include_after": "#include \"rules/dsgdecay.h\"  // R516: the DSG structural decay pins",
+  "include_comment": "the DSG underground waterways pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "audit_comment": "The DSG underground waterways pins the standing water rules (the four forms of water underground, the low ceiling making normal boat travel impossible, the absence of wind making sailing virtually unheard-of except under ample ventilation, the practically nonexistent waves with the cave-in and earthquake tsunami class and the confining-wall chop lasting many turns, the fresh-water lakes and pools almost always safe to drink when fed by a stream or spring, and the reservoir whose dam may sit at the bottom like a cork in a leaky bucket), the deep mineral-heavy salt seas with their cold and geothermal-steam extremes, the flowing-water measurements (the impassable under 3 feet, narrow under 20 wide and 3 deep, average 20-60 wide and 4-8 deep, wide over 60 and deeper than 8, the canals and aqueducts and water wheels and locks, the 50% half-full and 100% unboatable flow percentages, and the 0-40 rate scale with the 20-feet-per-round multiplier), the six flow bands (stagnant 0, placid 1-2 at 40 feet or less per round with the 10-15-feet-per-mile drop, medium 2-6 at 40-120 feet per round with up to 30 feet per mile and the 1d6-per-mile roll triggering a 1d3-foot drop-off on a 5 or 6, rapids 6-12 at more than 120 up to 240 feet per round with the 30-200 slope and 1,000-foot audibility and the 1d6 roll where 6 means none and 1-5 counts 1d4-foot drop-offs, cascades 12-30 audible a mile away at 240-600 feet per round with the 200-1,000 slope and the 3d6-per-mile count of 1d8-foot drop-offs, and waterfalls 30-40 at at least 600 feet per round wherever the plunge exceeds 1,000 feet per mile, with boats uncontrollable and survival luck), the damming rules (the immediate backup flooding against three-dimensional maps, the 1,000-cubic-foot cube per flow point per turn doubled for wide and quartered for narrow waterways, the diversion down the path of least resistance, the 1d6 dam points per worker per turn against the flow-rate destruction, the 50/150/250 completed CPVs per the DMG pages 109-110 seam, and the half-flow leak destruction until washed away or repaired), the water temperature ladder (the almost universally cold water, the 1d4-mile warmth retention from surface sources, the geothermal warming, the 6d6 near-boiling burn per round with no save and the -2 per die minimum 1 under magical protection, the proportional partial-immersion damage, the 1d6 very-hot damage that spares the partially exposed and the magically protected, and the bath-warm immunity), and the access rules (the occasional direct surface embark, the usual dungeon-and-cavern route, the upstream-travel cost of a return-to-surface outlet, the sheer-cliff lake shores with their creature-built docks and wharves, and the smooth sandy banks of streams and rivers).",
+  "audit_label": "R517 DSG underground waterways audit",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R516 LANDED 2026-10-17: commit 10723f2 (census 439 -> 440,",
+  "prev_record": [
+    "- R516 LANDED 2026-10-17: commit 10723f2 (census 439 -> 440,",
+    "  pushed b987ddb..10723f2), the DSG STRUCTURAL DECAY, printed",
+    "  p. 43 (pdf 44) - the aging-of-worked-wood rules (the gap",
+    "  report's child line says worked-stone; the section is wood):",
+    "  the humid-air assumption of the typical location, the",
+    "  almost-completely-dry areas at a mere 2 or 3% of the given",
+    "  rate, the 1d6-year rot onset (djvu garble 146 = 1d6,",
+    "  settled by Capture idx 62), the creosote-or-sealant",
+    "  doubling, the 5% collapse chance per multiple of the onset",
+    "  roll with the roll-1 20-year max (100%) and roll-6 120-year",
+    "  examples, the check on unusual stress, and the d100 check",
+    "  roll (djvu garble 4100 = d100). Pinned as",
+    "  rules/dsgdecay.h (prefix dns, verified free; 14 inlines:",
+    "  8 consts + 6 bools; the 1d6 onset as dice+sides consts per",
+    "  the R508 convention; no table - gap 88/67 -> 89/66, the",
+    "  child flip only). PREV_RECORD CARRIED TWO ENTRIES: R514 +",
+    "  R515b - the tool rounds never seed-append, so the R516",
+    "  spec's prev_record spliced both records before the",
+    "  Knowledge-maintenance anchor; future post-tool-round",
+    "  splices must do the same (each tool round defers its",
+    "  record to the next book round). STANDING RITUAL RULE",
+    "  (user-set, R516): NO ./bn and NO nano step may appear in",
+    "  the ritual block - the user runs both manually by their",
+    "  own means; the ritual contains only md5sum, the double",
+    "  engine run, ./tools/preflight.sh, git add/commit/push,",
+    "  git log. Expect the user-side md5 to be the ./bn",
+    "  whitespace-rewrite class, NOT the authored md5 - treat a",
+    "  differing md5 as benign when the engine reports ALL OK;",
+    "  the authored md5 is only for authoring-side reference. DELIVERY: canvas",
+    "  r516-splice, authored md5 c6322ddd (15035 bytes); user",
+    "  ran ./bn 516 despite the ritual dropping it - user-side",
+    "  md5 9c82198a, the whitespace-rewrite class, engine ALL OK",
+    "  twice (applied 5/already 0 then 0/5); preflight GREEN",
+    "  with the R515b quiet display and 0-warning gate, AUDIT",
+    "  CENSUS: 440. Ritual now has NO ./bn line; the md5sum gate",
+    "  expects the authored md5.",
+    "  NEXT - R517: Underground waterways (pp. 43-46) - standing",
+    "  water, flowing water, water temperature, access - then the",
+    "  water-travel Tables 21-26 section."
+  ],
+  "gap_census": {
+    "closed": 90,
+    "open": 65
+  },
+  "gap_flips": [
+    {
+      "from": "  - [ ] Underground waterways (pp. 43-46) - standing water, flowing water, water temperature, access to underground waterways",
+      "to": "  - [x] Underground waterways (pp. 43-46) - standing water, flowing water, water temperature, access to underground waterways - R517: the standing-water forms with the low-ceiling and no-wind rules, the cave-in tsunami and confining-wall chop, the drinkable inflow, the bottom-cork reservoirs, the salt seas, the impassable/narrow/average/wide diameter ladder, the 50/100% flow, the 0-40 rate with the x20 ft/round, the six flow bands (stagnant, placid 1-2, medium 2-6, rapids 6-12, cascade 12-30, waterfall 30-40) with speeds, slopes and drop-off dice, the damming math (1000 cu ft per flow per turn, 1d6 worker points, 50/150/250 CPVs, half-flow leak), the temperature ladder (1d4-mile warmth, 6d6 boiling no-save -2/die, 1d6 very hot), and the access rules",
+      "note": "the Underground waterways child line"
+    }
+  ],
+  "consts": [
+    {
+      "name": "dntImpassableMaxDiaFt",
+      "value": 3,
+      "comment": "at least part of an impassable waterway must be less than three feet in diameter."
+    },
+    {
+      "name": "dntNarrowMaxWidthFt",
+      "value": 20,
+      "comment": "a narrow waterway follows a path less than 20 feet wide."
+    },
+    {
+      "name": "dntNarrowTypicalMaxDepthFt",
+      "value": 3,
+      "comment": "a narrow waterway is generally less than three feet deep."
+    },
+    {
+      "name": "dntAverageMinWidthFt",
+      "value": 20,
+      "comment": "average waterways include streams and small rivers from 20 to 60 feet wide."
+    },
+    {
+      "name": "dntAverageMaxWidthFt",
+      "value": 60,
+      "comment": "the wide end of the average waterway band: 20 to 60 feet wide."
+    },
+    {
+      "name": "dntAverageDepthLowFt",
+      "value": 4,
+      "comment": "average waterways are usually four to eight feet deep, though occasionally shallow enough to wade in."
+    },
+    {
+      "name": "dntAverageDepthHighFt",
+      "value": 8,
+      "comment": "the deep end of the average waterway band: usually four to eight feet deep."
+    },
+    {
+      "name": "dntWideMinWidthFt",
+      "value": 60,
+      "comment": "wide waterways include all areas of flowing water more than 60 feet wide."
+    },
+    {
+      "name": "dntWideMinDepthFt",
+      "value": 8,
+      "comment": "the depth of a wide waterway is generally greater than eight feet, at least in the center; the water near each bank is often considerably shallower."
+    },
+    {
+      "name": "dntHalfFlowPct",
+      "value": 50,
+      "comment": "a river passage with a 50% flow is half-full of water and half-full of air."
+    },
+    {
+      "name": "dntFullFlowPct",
+      "value": 100,
+      "comment": "a passage with 100% flow is completely filled with water and impossible to boat through (the djvu garble 10096 = 100%, settled by the Capture 1000/0 read)."
+    },
+    {
+      "name": "dntFlowRateMax",
+      "value": 40,
+      "comment": "rate of flow is quantified as a number ranging from 1-40: a current of 1 is barely moving, while those rated 40 tumble down as waterfalls."
+    },
+    {
+      "name": "dntStagnantFlowRate",
+      "value": 0,
+      "comment": "a completely stagnant body of water receives a 0 rating - the water collects in pools and low spots when there is no downhill flow."
+    },
+    {
+      "name": "dntFtPerRoundPerFlowPoint",
+      "value": 20,
+      "comment": "the actual movement rate of the current can be calculated by multiplying the flow rate by 20 feet per round."
+    },
+    {
+      "name": "dntPlacidMaxFlowRate",
+      "value": 2,
+      "comment": "placid water usually has a noticeable flow (flow rate = 1-2), often encountered near the mouths of streams or rivers or in lakes."
+    },
+    {
+      "name": "dntPlacidDropLowFtPerMile",
+      "value": 10,
+      "comment": "a placid waterway has a barely perceptible drop in altitude, often no more than 10 or 15 feet per mile."
+    },
+    {
+      "name": "dntPlacidDropHighFtPerMile",
+      "value": 15,
+      "comment": "the high end of the placid drop band: no more than 10 or 15 feet per mile."
+    },
+    {
+      "name": "dntPlacidMaxFtPerRound",
+      "value": 40,
+      "comment": "the rate of flow of a placid stream is 40 feet or less per round; any rocks or obstacles can be easily avoided."
+    },
+    {
+      "name": "dntMediumMaxFlowRate",
+      "value": 6,
+      "comment": "medium flowing water is the most pleasant for traveling downstream (flow rate = 2-6; the djvu garble \"flow rate - 2-6\" settled by the Capture \"= 2-6\" read)."
+    },
+    {
+      "name": "dntMediumFtPerRoundLow",
+      "value": 40,
+      "comment": "medium water flows along at between 40 and 120 feet per round, descending only slightly on its course."
+    },
+    {
+      "name": "dntMediumFtPerRoundHigh",
+      "value": 120,
+      "comment": "the fast end of the medium band: between 40 and 120 feet per round."
+    },
+    {
+      "name": "dntMediumDropFtPerMile",
+      "value": 30,
+      "comment": "a river with a medium flow may drop as much as 30 feet over the course of a mile."
+    },
+    {
+      "name": "dntMediumDropoffMileDice",
+      "value": 1,
+      "comment": "when PCs travel a medium river, the DM rolls 1d6 for each mile traveled."
+    },
+    {
+      "name": "dntMediumDropoffMileSides",
+      "value": 6,
+      "comment": "the sides of the medium-flow 1d6 per-mile drop-off roll, pinned as dice + sides consts per the R508 convention."
+    },
+    {
+      "name": "dntMediumDropoffTriggerLow",
+      "value": 5,
+      "comment": "on a 5 or 6 of the medium per-mile roll, a drop-off is encountered somewhere in that mile."
+    },
+    {
+      "name": "dntMediumDropoffTriggerHigh",
+      "value": 6,
+      "comment": "the high end of the medium drop-off trigger: on a 5 or 6."
+    },
+    {
+      "name": "dntMediumDropoffFtDice",
+      "value": 1,
+      "comment": "a medium-flow drop-off is 1d3 feet high."
+    },
+    {
+      "name": "dntMediumDropoffFtSides",
+      "value": 3,
+      "comment": "the sides of the medium drop-off 1d3-feet roll."
+    },
+    {
+      "name": "dntRapidMinFlowRate",
+      "value": 6,
+      "comment": "rapid flowing water is more commonly called rapids (flow rate = 6-12)."
+    },
+    {
+      "name": "dntRapidMaxFlowRate",
+      "value": 12,
+      "comment": "the top of the rapids band on the 0-40 flow rate scale: 6-12."
+    },
+    {
+      "name": "dntRapidFtPerRoundLow",
+      "value": 120,
+      "comment": "water flowing through rapids travels more than 120 feet per round."
+    },
+    {
+      "name": "dntRapidFtPerRoundHigh",
+      "value": 240,
+      "comment": "rapids sometimes move as much as 240 feet per round."
+    },
+    {
+      "name": "dntRapidDescentLowFtPerMile",
+      "value": 30,
+      "comment": "the descent of a rapid stream bed ranges from 30 feet to as much as 200 feet over the course of a mile."
+    },
+    {
+      "name": "dntRapidDescentHighFtPerMile",
+      "value": 200,
+      "comment": "the steep end of the rapids descent band: 30 to 200 feet per mile."
+    },
+    {
+      "name": "dntRapidsAudibleFt",
+      "value": 1000,
+      "comment": "the sound of rapids can be heard by characters and creatures within 1,000 feet."
+    },
+    {
+      "name": "dntRapidDropoffMileDice",
+      "value": 1,
+      "comment": "for each mile along a rapid stream the DM rolls 1d6."
+    },
+    {
+      "name": "dntRapidDropoffMileSides",
+      "value": 6,
+      "comment": "the sides of the rapids 1d6 per-mile roll."
+    },
+    {
+      "name": "dntRapidDropoffNoneRoll",
+      "value": 6,
+      "comment": "a result of 6 on the rapids per-mile roll means that no significant drop-offs occur during the mile; a result of 1-5 is the number of drop-offs encountered."
+    },
+    {
+      "name": "dntRapidDropoffFtDice",
+      "value": 1,
+      "comment": "each rapid drop-off falls 1d4 feet."
+    },
+    {
+      "name": "dntRapidDropoffFtSides",
+      "value": 4,
+      "comment": "the sides of the rapids drop-off 1d4-feet roll."
+    },
+    {
+      "name": "dntCascadeMinFlowRate",
+      "value": 12,
+      "comment": "cascades are steeply dropping portions of a river (flow rate = 12-30), much like a stairway with water running down it."
+    },
+    {
+      "name": "dntCascadeMaxFlowRate",
+      "value": 30,
+      "comment": "the top of the cascade band on the flow rate scale: 12-30."
+    },
+    {
+      "name": "dntCascadeFtPerRoundLow",
+      "value": 240,
+      "comment": "water spilling down a cascade travels at anywhere from 240 to 600 feet per round."
+    },
+    {
+      "name": "dntCascadeFtPerRoundHigh",
+      "value": 600,
+      "comment": "the fast end of the cascade band: 240 to 600 feet per round."
+    },
+    {
+      "name": "dntCascadeSlopeLowFtPerMile",
+      "value": 200,
+      "comment": "a cascade waterway descends at a slope of at least 200 feet, and perhaps as much as 1,000 feet, in a mile."
+    },
+    {
+      "name": "dntCascadeSlopeHighFtPerMile",
+      "value": 1000,
+      "comment": "the steep end of the cascade slope band: 200 to 1,000 feet per mile."
+    },
+    {
+      "name": "dntCascadeAudibleMiles",
+      "value": 1,
+      "comment": "the thundering roar of a cascade is usually audible at least a mile away from the river."
+    },
+    {
+      "name": "dntCascadeDropoffMileDice",
+      "value": 3,
+      "comment": "if PCs travel down a cascade, the DM rolls 3d6 for each mile traveled; the result is the number of drop-offs in that mile."
+    },
+    {
+      "name": "dntCascadeDropoffMileSides",
+      "value": 6,
+      "comment": "the sides of the cascade 3d6 per-mile roll."
+    },
+    {
+      "name": "dntCascadeDropoffFtDice",
+      "value": 1,
+      "comment": "each cascade drop-off is 1d8 feet high."
+    },
+    {
+      "name": "dntCascadeDropoffFtSides",
+      "value": 8,
+      "comment": "the sides of the cascade drop-off 1d8-feet roll."
+    },
+    {
+      "name": "dntWaterfallMinFlowRate",
+      "value": 30,
+      "comment": "waterfalls represent flowing water at its fastest and most powerful (flow rate = 30-40)."
+    },
+    {
+      "name": "dntWaterfallMaxFlowRate",
+      "value": 40,
+      "comment": "the top of the waterfall band: those rated 40 tumble down as waterfalls."
+    },
+    {
+      "name": "dntWaterfallMinFtPerRound",
+      "value": 600,
+      "comment": "the speed of water plummeting over a fall is at least 600 feet per round; the exact speed depends on the number of steps in the fall."
+    },
+    {
+      "name": "dntWaterfallSlopeFtPerMile",
+      "value": 1000,
+      "comment": "anywhere the water plunges at a slope of more than 1,000 feet per mile is considered a waterfall."
+    },
+    {
+      "name": "dntDamCuFtPerFlowPerTurn",
+      "value": 1000,
+      "comment": "in an average waterway, water held back by a dam fills a 10-foot cubic area (10 ft x 10 ft x 10 ft = 1,000 cubic feet) times the flow rate per turn."
+    },
+    {
+      "name": "dntDamCpvNarrow",
+      "value": 50,
+      "comment": "the Construction Point Value of a completed dam on a narrow waterway is 50 points (per the DMG pages 109-110 CPV seam)."
+    },
+    {
+      "name": "dntDamCpvAverage",
+      "value": 150,
+      "comment": "a completed dam on an average waterway equals 150 points."
+    },
+    {
+      "name": "dntDamCpvWide",
+      "value": 250,
+      "comment": "a completed dam on a wide waterway equals 250 points."
+    },
+    {
+      "name": "dntDamWorkerDice",
+      "value": 1,
+      "comment": "a single worker can construct 1d6 points of dam per turn."
+    },
+    {
+      "name": "dntDamWorkerSides",
+      "value": 6,
+      "comment": "the sides of the worker 1d6 dam-points-per-turn roll."
+    },
+    {
+      "name": "dntDamLeakDivisor",
+      "value": 2,
+      "comment": "once a dam begins to leak, water destroys a number of points equal to half the rate of flow per turn until the dam is washed away or repaired."
+    },
+    {
+      "name": "dntWarmthMilesDice",
+      "value": 1,
+      "comment": "water flowing directly from a warm above-ground source retains this warmth for 1d4 miles."
+    },
+    {
+      "name": "dntWarmthMilesSides",
+      "value": 4,
+      "comment": "the sides of the 1d4-miles warmth-retention roll."
+    },
+    {
+      "name": "dntBoilingBurnDice",
+      "value": 6,
+      "comment": "characters immersed in water at or near boiling temperature suffer 6d6 of burn damage per round spent in the water."
+    },
+    {
+      "name": "dntBoilingBurnSides",
+      "value": 6,
+      "comment": "the sides of the 6d6 near-boiling burn roll per round."
+    },
+    {
+      "name": "dntHeatProtectPerDie",
+      "value": 2,
+      "comment": "characters with magical protection against heat or fire gain a -2 per die of damage (pinned as a positive magnitude with the minus in the name and comment)."
+    },
+    {
+      "name": "dntHeatProtectMinPerDie",
+      "value": 1,
+      "comment": "the -2 per die carries a minimum of 1 point per die."
+    },
+    {
+      "name": "dntVeryHotBurnDice",
+      "value": 1,
+      "comment": "water that is very hot, but not near boiling temperature, inflicts 1d6 points of damage to characters immersed in it."
+    },
+    {
+      "name": "dntVeryHotBurnSides",
+      "value": 6,
+      "comment": "the sides of the very-hot 1d6 burn roll."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dntStandingWaterForms",
+      "value": true,
+      "comment": "water underground is found as flowing water (brooks, streams, and rivers) and standing water (pools, reservoirs, lakes, and seas)."
+    },
+    {
+      "name": "dntLowCeilingBlocksBoats",
+      "value": true,
+      "comment": "if the ceiling over an underground lake, pool, or sea touches the surface of the water or leaves only a few inches of clearance, normal boat travel is impossible."
+    },
+    {
+      "name": "dntNoWindSailingRare",
+      "value": true,
+      "comment": "the absence of wind means that sailing is virtually unheard-of underground, except in those rare instances where the ventilation is ample enough to create a wind capable of moving a boat."
+    },
+    {
+      "name": "dntWavesPracticallyNonexistent",
+      "value": true,
+      "comment": "waves are practically nonexistent underground; lake and sea shores are not eroded by wave action."
+    },
+    {
+      "name": "dntCaveInMakesTsunamiWave",
+      "value": true,
+      "comment": "a cave-in somewhere above or next to a lake often forces a powerful wave outward, much like a tsunami; earthquakes often produce similarly destructive waves in the Underdark."
+    },
+    {
+      "name": "dntChopAmplifiedByWalls",
+      "value": true,
+      "comment": "the action of waves is often amplified and confused by the confining walls: a large wave in a small body of water can last for many turns - the exact duration is left to the DM, depending on the force of the original wave and the size of the enclosing area."
+    },
+    {
+      "name": "dntWiseToFindWaveSource",
+      "value": true,
+      "comment": "other causes of waves include animal, monster, and humanoid activity, and streams flowing into a standing body; characters confronted with waves on otherwise still water are wise to determine the source of the disturbance."
+    },
+    {
+      "name": "dntLakesPoolsFreshWater",
+      "value": true,
+      "comment": "lakes and pools make up the majority of underground bodies of water; they differ in size (lakes are larger) but both contain fresh water, and can be found at nearly all depths of the Underdark."
+    },
+    {
+      "name": "dntInflowWaterSafeToDrink",
+      "value": true,
+      "comment": "if a lake or pool has a stream or spring flowing into it, the water is almost always safe to drink."
+    },
+    {
+      "name": "dntReservoirDamMayBeAtBottom",
+      "value": true,
+      "comment": "reservoirs are commonly created by intelligent denizens; the dam is not always built along the side - it may be located at the bottom, serving much the same function as a cork in the bottom of a leaky bucket."
+    },
+    {
+      "name": "dntSeasDeepSaltHuge",
+      "value": true,
+      "comment": "seas lie in the deepest depths of the Underdark: salty water heavy with minerals dissolved from the surrounding rock, and almost always huge in comparison to other underground bodies of water because of their age."
+    },
+    {
+      "name": "dntSeasGeothermalSteam",
+      "value": true,
+      "comment": "whole races inhabit the seas of the Underdark; some seas are cold, vast, and deep, while others lie so close to geothermal heat sources that their waters are warm and the surrounding air is heavy with steam."
+    },
+    {
+      "name": "dntFlowingMoreCommonThanStanding",
+      "value": true,
+      "comment": "flowing water is more commonly encountered underground than standing water - it is flowing water that has shaped much of the underground environment."
+    },
+    {
+      "name": "dntThreeMeasurements",
+      "value": true,
+      "comment": "the characteristics of a flowing body of water are determined by three significant measurements: the diameter of the waterway, the percentage of the passage that is filled with water, and the rate of flow."
+    },
+    {
+      "name": "dntArtificialCanalsAqueducts",
+      "value": true,
+      "comment": "artificially constructed underground waterways include canals for water transportation and aqueducts moving water from one location to another; the underground races also use flowing water to turn water wheels powering fans, pumps, and other machinery, and water-powered pumps even operate locks on underground canals."
+    },
+    {
+      "name": "dntFullFlowUnboatable",
+      "value": true,
+      "comment": "a passage with 100% flow is completely filled with water and impossible to boat through."
+    },
+    {
+      "name": "dntStagnantShallowBoatRisk",
+      "value": true,
+      "comment": "travel along stagnant water is not threatened by flow, but it may be difficult if the water is too shallow to support a boat."
+    },
+    {
+      "name": "dntPlacidFloatersShowFlow",
+      "value": true,
+      "comment": "placid water sometimes requires dropping bits of wood, dust, or other floating objects into the water to determine the direction of its flow."
+    },
+    {
+      "name": "dntMediumWatchForRocks",
+      "value": true,
+      "comment": "travel along a medium waterway is relatively safe, but characters must keep a lookout for rocks protruding from the water; the inattentive may be drawn into an unfortunate collision by the force of the flow."
+    },
+    {
+      "name": "dntRapidsUpstreamImpossible",
+      "value": true,
+      "comment": "traveling upstream along rapids is impossible unless powerful magic is employed; traveling downstream is dangerous, but possible."
+    },
+    {
+      "name": "dntRapidsNeedBoatingProficiency",
+      "value": true,
+      "comment": "certain boats such as kayaks are more suited to rapids than most standard boats; characters who boat down a rapid stream without boating proficiency will find themselves in great danger."
+    },
+    {
+      "name": "dntCascadeUpstreamImpossible",
+      "value": true,
+      "comment": "traveling upstream against the force of a cascade is impossible; traveling downstream might be possible for a lucky character with boating proficiency in a kayak."
+    },
+    {
+      "name": "dntWaterfallStretchesWithRapids",
+      "value": true,
+      "comment": "a long stretch of waterfalls, with rapids or cascades between them, is still considered a waterfall."
+    },
+    {
+      "name": "dntWaterfallBoatUncontrollable",
+      "value": true,
+      "comment": "the nature of a waterfall makes it impossible to control a boat traveling over the fall; survival is more a matter of luck than skill."
+    },
+    {
+      "name": "dntDamBacksUpFloods",
+      "value": true,
+      "comment": "a dammed underground waterway immediately begins to back up and flood behind the dam; the DM must rely on accurate three-dimensional maps (see DSG page 114), as the water may be diverted into other parts of the setting, filling rooms and making its way through corridors and down stairways."
+    },
+    {
+      "name": "dntDamDoubleWideQuarterNarrow",
+      "value": true,
+      "comment": "the backup figure is doubled for a wide waterway and quartered for a narrow one."
+    },
+    {
+      "name": "dntDamDivertsLeastResistance",
+      "value": true,
+      "comment": "as soon as the water level reaches a height that allows it to flow through another channel, it changes course to follow the path of least resistance."
+    },
+    {
+      "name": "dntDamCurrentDestroysFlow",
+      "value": true,
+      "comment": "the current destroys a number of dam points equal to the water rate of flow each turn, so several characters must work together to dam rapid streams."
+    },
+    {
+      "name": "dntDamCompletedStable",
+      "value": true,
+      "comment": "once a dam is completed, water will not destroy it unless something specifically weakens the dam or increases the water pressure."
+    },
+    {
+      "name": "dntUndergroundWaterUniversallyCold",
+      "value": true,
+      "comment": "unless some external source of heat contributes, underground water is almost universally cold; it rarely freezes underground, but its temperature is numbing to any characters who get soaked in it."
+    },
+    {
+      "name": "dntGeothermalWarming",
+      "value": true,
+      "comment": "underground water can occasionally be warmed by geothermal heat sources - the same energy that gives rise to geysers and volcanoes; depending on proximity the water might be only slightly warmer, or hot enough to scald a character to death very quickly."
+    },
+    {
+      "name": "dntBoilingNoSave",
+      "value": true,
+      "comment": "no saving throw is allowed against the near-boiling 6d6 burn damage per round, though magical protection against heat or fire gains a -2 per die (minimum 1 point per die)."
+    },
+    {
+      "name": "dntBoilingPartialProportional",
+      "value": true,
+      "comment": "characters only partially immersed in near-boiling water suffer partial damage: the DM establishes a proportional number of d6 based on what proportion of their bodies is exposed."
+    },
+    {
+      "name": "dntVeryHotProtectedUnaffected",
+      "value": true,
+      "comment": "against the very-hot (not near-boiling) 1d6 damage, characters only partially exposed or with any magical protection against fire and heat attacks are not affected."
+    },
+    {
+      "name": "dntBathWarmNoIllEffects",
+      "value": true,
+      "comment": "if the water is no warmer than very hot bath water, characters suffer no ill effects from the heat."
+    },
+    {
+      "name": "dntDirectSurfaceEmbarkOccasional",
+      "value": true,
+      "comment": "the streams and lakes of the Underdark can occasionally be embarked upon directly from the surface: a meandering stream may flow into a cave and disappear, or the far side of a mountain lake may include a cave high enough and deep enough for a boat to enter."
+    },
+    {
+      "name": "dntUsuallyEnterViaDungeon",
+      "value": true,
+      "comment": "more often, water drops from the surface in cascades and waterfalls, or trickles through a tunnel too narrow to follow; characters must enter the underearth through a dungeon or cavern and find a suitable place to join the river below."
+    },
+    {
+      "name": "dntOutletRequiresUpstream",
+      "value": true,
+      "comment": "in rare cases an underground river returns to the surface; if the water is suitably placid, such an outlet can provide access to an underground waterway, but entering at a water outlet necessarily entails the problems of traveling upstream along the water."
+    },
+    {
+      "name": "dntLakeShoresCliffsNotSand",
+      "value": true,
+      "comment": "underground lakes and seas are generally not surrounded by sandy beaches - without waves there is no force to grind the stone into sand; such bodies are more likely surrounded by sheer cliffs or jagged boulders, though inhabited portions may hold creature-built docks or wharves, possibly with a few boats lying around."
+    },
+    {
+      "name": "dntStreamShoresSandBeaches",
+      "value": true,
+      "comment": "streams and rivers are much more likely to be bordered by smooth sand beaches that allow easy access to the water."
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "examples": [
+    {
+      "expr": "m['dntImpassableMaxDiaFt']() != 3 or m['dntNarrowMaxWidthFt']() != 20 or m['dntNarrowTypicalMaxDepthFt']() != 3 or m['dntAverageMinWidthFt']() != 20 or m['dntAverageMaxWidthFt']() != 60 or m['dntAverageDepthLowFt']() != 4 or m['dntAverageDepthHighFt']() != 8 or m['dntWideMinWidthFt']() != 60 or m['dntWideMinDepthFt']() != 8",
+      "note": "the passage diameter ladder: impassable under 3 ft, narrow under 20 ft wide and 3 ft deep, average 20-60 ft wide and 4-8 ft deep, wide over 60 ft and deeper than 8 ft."
+    },
+    {
+      "expr": "m['dntHalfFlowPct']() != 50 or m['dntFullFlowPct']() != 100",
+      "note": "the percentage of flow: 50% half-full of water and air, 100% completely filled and unboatable (the djvu garble 10096 settled by the Capture read)."
+    },
+    {
+      "expr": "m['dntFlowRateMax']() != 40 or m['dntStagnantFlowRate']() != 0 or m['dntFtPerRoundPerFlowPoint']() != 20",
+      "note": "the rate of flow scale: 0 stagnant, 1-40 with 40 tumbling as waterfalls, and the current moving at 20 feet per round per flow point."
+    },
+    {
+      "expr": "m['dntPlacidMaxFlowRate']() != 2 or m['dntPlacidDropLowFtPerMile']() != 10 or m['dntPlacidDropHighFtPerMile']() != 15 or m['dntPlacidMaxFtPerRound']() != 40",
+      "note": "the placid band: flow 1-2, a drop of 10-15 feet per mile, and 40 feet or less per round."
+    },
+    {
+      "expr": "m['dntMediumMaxFlowRate']() != 6 or m['dntMediumFtPerRoundLow']() != 40 or m['dntMediumFtPerRoundHigh']() != 120 or m['dntMediumDropFtPerMile']() != 30",
+      "note": "the medium band: flow 2-6 (the djvu garble \"flow rate - 2-6\" settled by the Capture \"= 2-6\"), 40-120 feet per round, and up to 30 feet of drop per mile."
+    },
+    {
+      "expr": "m['dntMediumDropoffMileDice']() != 1 or m['dntMediumDropoffMileSides']() != 6 or m['dntMediumDropoffTriggerLow']() != 5 or m['dntMediumDropoffTriggerHigh']() != 6 or m['dntMediumDropoffFtDice']() != 1 or m['dntMediumDropoffFtSides']() != 3",
+      "note": "the medium drop-off roll: 1d6 per mile, on a 5 or 6 a drop-off of 1d3 feet somewhere in that mile."
+    },
+    {
+      "expr": "m['dntRapidMinFlowRate']() != 6 or m['dntRapidMaxFlowRate']() != 12 or m['dntRapidFtPerRoundLow']() != 120 or m['dntRapidFtPerRoundHigh']() != 240 or m['dntRapidDescentLowFtPerMile']() != 30 or m['dntRapidDescentHighFtPerMile']() != 200 or m['dntRapidsAudibleFt']() != 1000",
+      "note": "the rapids band: flow 6-12, more than 120 to 240 feet per round, a 30-200 feet-per-mile descent, and the sound audible within 1,000 feet."
+    },
+    {
+      "expr": "m['dntRapidDropoffMileDice']() != 1 or m['dntRapidDropoffMileSides']() != 6 or m['dntRapidDropoffNoneRoll']() != 6 or m['dntRapidDropoffFtDice']() != 1 or m['dntRapidDropoffFtSides']() != 4",
+      "note": "the rapids drop-off roll: 1d6 per mile with 6 = none and 1-5 the count, each drop-off falling 1d4 feet."
+    },
+    {
+      "expr": "m['dntCascadeMinFlowRate']() != 12 or m['dntCascadeMaxFlowRate']() != 30 or m['dntCascadeAudibleMiles']() != 1 or m['dntCascadeFtPerRoundLow']() != 240 or m['dntCascadeFtPerRoundHigh']() != 600 or m['dntCascadeSlopeLowFtPerMile']() != 200 or m['dntCascadeSlopeHighFtPerMile']() != 1000",
+      "note": "the cascade band: flow 12-30, audible at least a mile away, 240-600 feet per round, and a 200-1,000 feet-per-mile slope."
+    },
+    {
+      "expr": "m['dntCascadeDropoffMileDice']() != 3 or m['dntCascadeDropoffMileSides']() != 6 or m['dntCascadeDropoffFtDice']() != 1 or m['dntCascadeDropoffFtSides']() != 8",
+      "note": "the cascade drop-off roll: 3d6 drop-offs per mile, each 1d8 feet high."
+    },
+    {
+      "expr": "m['dntWaterfallMinFlowRate']() != 30 or m['dntWaterfallMaxFlowRate']() != 40 or m['dntWaterfallMinFtPerRound']() != 600 or m['dntWaterfallSlopeFtPerMile']() != 1000",
+      "note": "the waterfall band: flow 30-40, at least 600 feet per round, and any plunge over 1,000 feet per mile counted a waterfall."
+    },
+    {
+      "expr": "m['dntDamCuFtPerFlowPerTurn']() != 1000 or m['dntDamWorkerDice']() != 1 or m['dntDamWorkerSides']() != 6 or m['dntDamCpvNarrow']() != 50 or m['dntDamCpvAverage']() != 150 or m['dntDamCpvWide']() != 250 or m['dntDamLeakDivisor']() != 2",
+      "note": "the damming math: the 5-flow average waterway backs up five 10-foot cubes (5,000 cubic feet) per turn, a single worker builds 1d6 points per turn, completed dams run 50/150/250 points, and a leak destroys half the flow rate per turn."
+    },
+    {
+      "expr": "m['dntWarmthMilesDice']() != 1 or m['dntWarmthMilesSides']() != 4 or m['dntBoilingBurnDice']() != 6 or m['dntBoilingBurnSides']() != 6 or m['dntHeatProtectPerDie']() != 2 or m['dntHeatProtectMinPerDie']() != 1 or m['dntVeryHotBurnDice']() != 1 or m['dntVeryHotBurnSides']() != 6",
+      "note": "the temperature ladder: surface warmth retained 1d4 miles, near-boiling water at 6d6 per round with no save and -2 per die (minimum 1) under magical protection, and very-hot water at 1d6."
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the standing water rules": [
+      {
+        "kind": "bool",
+        "name": "dntStandingWaterForms"
+      },
+      {
+        "kind": "bool",
+        "name": "dntLowCeilingBlocksBoats"
+      },
+      {
+        "kind": "bool",
+        "name": "dntNoWindSailingRare"
+      },
+      {
+        "kind": "bool",
+        "name": "dntWavesPracticallyNonexistent"
+      },
+      {
+        "kind": "bool",
+        "name": "dntCaveInMakesTsunamiWave"
+      },
+      {
+        "kind": "bool",
+        "name": "dntChopAmplifiedByWalls"
+      },
+      {
+        "kind": "bool",
+        "name": "dntWiseToFindWaveSource"
+      },
+      {
+        "kind": "bool",
+        "name": "dntLakesPoolsFreshWater"
+      },
+      {
+        "kind": "bool",
+        "name": "dntInflowWaterSafeToDrink"
+      },
+      {
+        "kind": "bool",
+        "name": "dntReservoirDamMayBeAtBottom"
+      }
+    ],
+    "the seas of the Underdark": [
+      {
+        "kind": "bool",
+        "name": "dntSeasDeepSaltHuge"
+      },
+      {
+        "kind": "bool",
+        "name": "dntSeasGeothermalSteam"
+      }
+    ],
+    "the passage diameter ladder": [
+      {
+        "kind": "bool",
+        "name": "dntFlowingMoreCommonThanStanding"
+      },
+      {
+        "kind": "bool",
+        "name": "dntThreeMeasurements"
+      },
+      {
+        "kind": "const",
+        "name": "dntImpassableMaxDiaFt"
+      },
+      {
+        "kind": "const",
+        "name": "dntNarrowMaxWidthFt"
+      },
+      {
+        "kind": "const",
+        "name": "dntNarrowTypicalMaxDepthFt"
+      },
+      {
+        "kind": "const",
+        "name": "dntAverageMinWidthFt"
+      },
+      {
+        "kind": "const",
+        "name": "dntAverageMaxWidthFt"
+      },
+      {
+        "kind": "const",
+        "name": "dntAverageDepthLowFt"
+      },
+      {
+        "kind": "const",
+        "name": "dntAverageDepthHighFt"
+      },
+      {
+        "kind": "const",
+        "name": "dntWideMinWidthFt"
+      },
+      {
+        "kind": "const",
+        "name": "dntWideMinDepthFt"
+      },
+      {
+        "kind": "bool",
+        "name": "dntArtificialCanalsAqueducts"
+      }
+    ],
+    "the percentage of flow": [
+      {
+        "kind": "const",
+        "name": "dntHalfFlowPct"
+      },
+      {
+        "kind": "const",
+        "name": "dntFullFlowPct"
+      },
+      {
+        "kind": "bool",
+        "name": "dntFullFlowUnboatable"
+      }
+    ],
+    "the rate of flow scale": [
+      {
+        "kind": "const",
+        "name": "dntFlowRateMax"
+      },
+      {
+        "kind": "const",
+        "name": "dntStagnantFlowRate"
+      },
+      {
+        "kind": "const",
+        "name": "dntFtPerRoundPerFlowPoint"
+      },
+      {
+        "kind": "bool",
+        "name": "dntStagnantShallowBoatRisk"
+      }
+    ],
+    "the placid and medium bands": [
+      {
+        "kind": "const",
+        "name": "dntPlacidMaxFlowRate"
+      },
+      {
+        "kind": "bool",
+        "name": "dntPlacidFloatersShowFlow"
+      },
+      {
+        "kind": "const",
+        "name": "dntPlacidDropLowFtPerMile"
+      },
+      {
+        "kind": "const",
+        "name": "dntPlacidDropHighFtPerMile"
+      },
+      {
+        "kind": "const",
+        "name": "dntPlacidMaxFtPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "dntMediumMaxFlowRate"
+      },
+      {
+        "kind": "const",
+        "name": "dntMediumFtPerRoundLow"
+      },
+      {
+        "kind": "const",
+        "name": "dntMediumFtPerRoundHigh"
+      },
+      {
+        "kind": "const",
+        "name": "dntMediumDropFtPerMile"
+      },
+      {
+        "kind": "bool",
+        "name": "dntMediumWatchForRocks"
+      },
+      {
+        "kind": "const",
+        "name": "dntMediumDropoffMileDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntMediumDropoffMileSides"
+      },
+      {
+        "kind": "const",
+        "name": "dntMediumDropoffTriggerLow"
+      },
+      {
+        "kind": "const",
+        "name": "dntMediumDropoffTriggerHigh"
+      },
+      {
+        "kind": "const",
+        "name": "dntMediumDropoffFtDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntMediumDropoffFtSides"
+      }
+    ],
+    "the rapids band": [
+      {
+        "kind": "const",
+        "name": "dntRapidMinFlowRate"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidMaxFlowRate"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidFtPerRoundLow"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidFtPerRoundHigh"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidDescentLowFtPerMile"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidDescentHighFtPerMile"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidsAudibleFt"
+      },
+      {
+        "kind": "bool",
+        "name": "dntRapidsUpstreamImpossible"
+      },
+      {
+        "kind": "bool",
+        "name": "dntRapidsNeedBoatingProficiency"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidDropoffMileDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidDropoffMileSides"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidDropoffNoneRoll"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidDropoffFtDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntRapidDropoffFtSides"
+      }
+    ],
+    "the cascade and waterfall bands": [
+      {
+        "kind": "const",
+        "name": "dntCascadeMinFlowRate"
+      },
+      {
+        "kind": "const",
+        "name": "dntCascadeMaxFlowRate"
+      },
+      {
+        "kind": "const",
+        "name": "dntCascadeAudibleMiles"
+      },
+      {
+        "kind": "const",
+        "name": "dntCascadeFtPerRoundLow"
+      },
+      {
+        "kind": "const",
+        "name": "dntCascadeFtPerRoundHigh"
+      },
+      {
+        "kind": "const",
+        "name": "dntCascadeSlopeLowFtPerMile"
+      },
+      {
+        "kind": "const",
+        "name": "dntCascadeSlopeHighFtPerMile"
+      },
+      {
+        "kind": "bool",
+        "name": "dntCascadeUpstreamImpossible"
+      },
+      {
+        "kind": "const",
+        "name": "dntCascadeDropoffMileDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntCascadeDropoffMileSides"
+      },
+      {
+        "kind": "const",
+        "name": "dntCascadeDropoffFtDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntCascadeDropoffFtSides"
+      },
+      {
+        "kind": "const",
+        "name": "dntWaterfallMinFlowRate"
+      },
+      {
+        "kind": "const",
+        "name": "dntWaterfallMaxFlowRate"
+      },
+      {
+        "kind": "bool",
+        "name": "dntWaterfallStretchesWithRapids"
+      },
+      {
+        "kind": "const",
+        "name": "dntWaterfallMinFtPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "dntWaterfallSlopeFtPerMile"
+      },
+      {
+        "kind": "bool",
+        "name": "dntWaterfallBoatUncontrollable"
+      }
+    ],
+    "the damming rules": [
+      {
+        "kind": "bool",
+        "name": "dntDamBacksUpFloods"
+      },
+      {
+        "kind": "const",
+        "name": "dntDamCuFtPerFlowPerTurn"
+      },
+      {
+        "kind": "bool",
+        "name": "dntDamDoubleWideQuarterNarrow"
+      },
+      {
+        "kind": "bool",
+        "name": "dntDamDivertsLeastResistance"
+      },
+      {
+        "kind": "const",
+        "name": "dntDamWorkerDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntDamWorkerSides"
+      },
+      {
+        "kind": "bool",
+        "name": "dntDamCurrentDestroysFlow"
+      },
+      {
+        "kind": "const",
+        "name": "dntDamCpvNarrow"
+      },
+      {
+        "kind": "const",
+        "name": "dntDamCpvAverage"
+      },
+      {
+        "kind": "const",
+        "name": "dntDamCpvWide"
+      },
+      {
+        "kind": "bool",
+        "name": "dntDamCompletedStable"
+      },
+      {
+        "kind": "const",
+        "name": "dntDamLeakDivisor"
+      }
+    ],
+    "the water temperature rules": [
+      {
+        "kind": "bool",
+        "name": "dntUndergroundWaterUniversallyCold"
+      },
+      {
+        "kind": "const",
+        "name": "dntWarmthMilesDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntWarmthMilesSides"
+      },
+      {
+        "kind": "bool",
+        "name": "dntGeothermalWarming"
+      },
+      {
+        "kind": "const",
+        "name": "dntBoilingBurnDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntBoilingBurnSides"
+      },
+      {
+        "kind": "bool",
+        "name": "dntBoilingNoSave"
+      },
+      {
+        "kind": "const",
+        "name": "dntHeatProtectPerDie"
+      },
+      {
+        "kind": "const",
+        "name": "dntHeatProtectMinPerDie"
+      },
+      {
+        "kind": "bool",
+        "name": "dntBoilingPartialProportional"
+      },
+      {
+        "kind": "const",
+        "name": "dntVeryHotBurnDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntVeryHotBurnSides"
+      },
+      {
+        "kind": "bool",
+        "name": "dntVeryHotProtectedUnaffected"
+      },
+      {
+        "kind": "bool",
+        "name": "dntBathWarmNoIllEffects"
+      }
+    ],
+    "the access rules": [
+      {
+        "kind": "bool",
+        "name": "dntDirectSurfaceEmbarkOccasional"
+      },
+      {
+        "kind": "bool",
+        "name": "dntUsuallyEnterViaDungeon"
+      },
+      {
+        "kind": "bool",
+        "name": "dntOutletRequiresUpstream"
+      },
+      {
+        "kind": "bool",
+        "name": "dntLakeShoresCliffsNotSand"
+      },
+      {
+        "kind": "bool",
+        "name": "dntStreamShoresSandBeaches"
+      }
+    ]
+  },
+  "caller_files": []
+}
