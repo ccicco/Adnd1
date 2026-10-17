@@ -67,7 +67,7 @@ sample entries verified against the canonical PHB levels).
 - [x] **The Inner Planes** (pp. 22-59) - the elemental building blocks: the general doctrine and each plane - R567: the general doctrine pinned, the plane rounds follow
   - [x] The inner planes in general (pp. 22-31) - reaching, survival, movement, encounters, combat, magic, the player characters, and the indifference-to-alignment doctrine - R567: the sphere arrangement, the hostility, the reaching, the survival, the gravity, the guides and the decay rule
   - [x] The Plane of Elemental Air (pp. 31-36) - survival, encounters, movement, combat, magic, features - R568: the hospitable-plane doctrine, the borders, the survival, the phenomena, the pockets, the encounter chart, the magic and the features
-  - [ ] The Plane of Elemental Fire (pp. 36-41) - survival, movement, encounters, magic, features
+  - [x] The Plane of Elemental Fire (pp. 36-41) - survival, movement, encounters, magic, features - R569: the hellish doctrine, the borders, the survival, the phenomena, the pockets, the encounter chart, the magic and the features (Imix, Kossuth, the City of Brass, the azer, the spiraling flame)
   - [ ] The Plane of Elemental Earth (pp. 41-46) - survival, movement, encounters, combat, magic, features
   - [ ] The Plane of Elemental Water (pp. 46-51) - survival, movement, encounters, combat, magic, features
   - [ ] The Para-Elemental Planes (pp. 51-54) - smoke, magma, ooze, ice: survival, encounters, movement, combat, magic, features
@@ -78,8 +78,8 @@ sample entries verified against the canonical PHB levels).
   - [x] The Air phenomena table (p. 32) - the roll-on table for the plane's varied, stunning, and deadly phenomena - R568: the dcw d12 phenomena pin with the maelstrom and vortex rules
   - [x] The Air high-winds table (p. 33) - the WSG-adapted wind effects - R568: the dcw winds pins (d100 rows, the 80-mph verbal barrier, the 1d8-per-10-mph impact damage)
   - [x] The Air elemental pockets table (p. 34) - the passive-plane pockets roll - R568: the dcw pocket pins (the d20 table, the 16 pocket types, the lair chances)
-  - [ ] The Fire phenomena table (p. 37) - the heat, flame, and fire-byproducts roll
-  - [ ] The Fire pocket-material table (p. 38) - the DM-choose-or-roll pocket types
+  - [x] The Fire phenomena table (p. 37) - the heat, flame, and fire-byproducts roll - R569: the dcx d12 phenomena pin (hot spots, cold spots, the rain of ashes, the eruption, the explosion field)
+  - [x] The Fire pocket-material table (p. 38) - the DM-choose-or-roll pocket types - R569: the dcx pocket pins (the d20 table, the purest-plane doctrine, the cold-spot-survival rule)
   - [ ] The Water encounter table (p. 46) - the 1-in-10 every four hours check and the type roll
   - [ ] The Water phenomena table (p. 46) - the elemental phenomena type roll
   - [ ] The para-planes encounter table (p. 51) - the 1-in-20 checked every eight true hours

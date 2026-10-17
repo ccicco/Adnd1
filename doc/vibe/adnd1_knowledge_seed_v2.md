@@ -9559,6 +9559,34 @@ when both halves land.
   high-winds table, the elemental pockets,
   encounters, combat, magic, features; then
   Fire, Earth, Water.
+- R568 LANDED 2026-10-17: commit 2e16f6456e8558430cf7
+  492e07b60f4194f3f59 (census 491 -> 492, pushed
+  cd2cf1b..2e16f64), THE MotP PLANE OF
+  ELEMENTAL AIR, printed pp. 31-36 - the whole
+  plane chapter in one round: the hospitable
+  doctrine with the four border gradations
+  (Smoke, Ice, Lightning, Vacuum), the
+  1000-yard sighting, the 1-in-20-per-12-hours
+  check (phenomena/pocket/creature split), the
+  d12 phenomena table (the maelstrom 2000-ft/
+  turn escape, the 1-in-50 vortex), the
+  WSG-adapted high-winds table (the 80-mph
+  verbal cutoff, the 1d8-per-10-mph impact
+  damage - the cross-book seam honored, MotP
+  pins carry MotP text), the d20 pocket table
+  (16 pocket types), the d8+d12 encounter
+  chart, the invisible natives, the djinn
+  landholds, and the features (Yan-C-Bin,
+  Akadi, Bahamut's citadel, hooks and
+  bubbles). 8 consts + 4 bools, prefix dcw,
+  header rules/motpair.h. FOUR flips: gap
+  census 21/69 -> 25/65. Spec 11,054 bytes,
+  md5 d005297a5d545a7ca4e8a772330183d7
+  matched exactly first try, 12 inlines. NEXT -
+  R569: the Plane of Elemental Fire (pp.
+  36-41) - the City of Brass, the efreet, the
+  phenomena, the pockets, the survival; then
+  Earth and Water.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
