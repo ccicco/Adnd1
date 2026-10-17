@@ -9618,6 +9618,40 @@ when both halves land.
   movement through stone, the encounter
   context, the pockets, magic, the features;
   then Water closes the four majors.
+- R570 LANDED 2026-10-17: commit 8fdfa5f51c0ef08ef0520
+  29b1556db4ed4f51f6d (census 493 -> 494,
+  pushed 2c45a96..8fdfa5f), THE MotP PLANE OF
+  ELEMENTAL EARTH, printed pp. 41-46 - the
+  whole plane chapter in one round: the
+  least-hospitable doctrine (the solid wall -
+  air, water and fire part but earth does
+  not), the four border gradations, the
+  1d2-per-turn pressure, blind but 6-inch
+  hearing, the Strength 15/18/19/23
+  brute-force ladder at one foot per turn,
+  the 1-in-10-per-four-hours check, the d12
+  phenomena (the d10 quake tiers 4d6/6d6/
+  8d6, the fault lines, the 60/40 gas
+  pockets, the fossils), the d20 pockets
+  with the 80% air pockets, the native
+  passwall and AC-2-mimic rules, the magic
+  range rule, and the features (Ogremoch,
+  Grumbar, the dao and the Great Dismal
+  Delve, the silver doorways). 8 consts + 6
+  bools, prefix dcy, header rules/
+  motpearth.h. ONE flip: gap census 28/62
+  -> 29/61. AUTHORING CATCH (mine, caught by
+  the mirror's missing-key assert): keyed a
+  flip to an 'Earth encounter context' item
+  that does not exist in the manifest - the
+  R566 amendment never created it; corrected
+  to the single real box. Spec 11,594 bytes,
+  md5 f5e952f1bf5eca11b6e96a8362f85fea
+  matched exactly first try, 14 inlines.
+  NEXT - R571: the Plane of Elemental Water
+  (pp. 46-51), the last of the four majors;
+  then the para-planes, the energy planes
+  and the two quasi-groups.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1,0 +1,264 @@
+{
+  "round": 571,
+  "prefix": "dcz",
+  "header_file": "rules/motpwater.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 494,
+  "title": "the MotP Plane of Elemental Water",
+  "audit_label": "R571 MotP Water plane audit",
+  "audit_comment": "the Plane of Elemental Water, printed pp. 46-51, the whole chapter, closing the four majors: the ocean-without-a-surface doctrine with the four border gradations (Ooze, Ice, Steam, Salt), the 1/3-Con breath-holding rule, the 60-foot vision, the doubled swim rate, the 1-in-10-per-four-hours check, the d12 phenomena, the d20 pocket table with the mineral sub-table and the airy-water rule for the rare fire and magma pockets, the d8+d12 encounter chart, the native fire double-damage vulnerability, the underwater combat rules, the magic rule, and the features (Istishia the Greater Power, the marid empire).",
+  "include_comment": "the MotP Water plane pins",
+  "include_after": "#include \"rules/motpearth.h\"  // R570: the MotP Earth plane pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R570 LANDED 2026-10-17: commit 8fdfa5f51c0ef08ef0520",
+  "prev_record": [
+    "- R570 LANDED 2026-10-17: commit 8fdfa5f51c0ef08ef0520",
+    "  29b1556db4ed4f51f6d (census 493 -> 494,",
+    "  pushed 2c45a96..8fdfa5f), THE MotP PLANE OF",
+    "  ELEMENTAL EARTH, printed pp. 41-46 - the",
+    "  whole plane chapter in one round: the",
+    "  least-hospitable doctrine (the solid wall -",
+    "  air, water and fire part but earth does",
+    "  not), the four border gradations, the",
+    "  1d2-per-turn pressure, blind but 6-inch",
+    "  hearing, the Strength 15/18/19/23",
+    "  brute-force ladder at one foot per turn,",
+    "  the 1-in-10-per-four-hours check, the d12",
+    "  phenomena (the d10 quake tiers 4d6/6d6/",
+    "  8d6, the fault lines, the 60/40 gas",
+    "  pockets, the fossils), the d20 pockets",
+    "  with the 80% air pockets, the native",
+    "  passwall and AC-2-mimic rules, the magic",
+    "  range rule, and the features (Ogremoch,",
+    "  Grumbar, the dao and the Great Dismal",
+    "  Delve, the silver doorways). 8 consts + 6",
+    "  bools, prefix dcy, header rules/",
+    "  motpearth.h. ONE flip: gap census 28/62",
+    "  -> 29/61. AUTHORING CATCH (mine, caught by",
+    "  the mirror's missing-key assert): keyed a",
+    "  flip to an 'Earth encounter context' item",
+    "  that does not exist in the manifest - the",
+    "  R566 amendment never created it; corrected",
+    "  to the single real box. Spec 11,594 bytes,",
+    "  md5 f5e952f1bf5eca11b6e96a8362f85fea",
+    "  matched exactly first try, 14 inlines.",
+    "  NEXT - R571: the Plane of Elemental Water",
+    "  (pp. 46-51), the last of the four majors;",
+    "  then the para-planes, the energy planes",
+    "  and the two quasi-groups."
+  ],
+  "banner": {
+    "title": "THE MotP PLANE OF ELEMENTAL WATER - printed pp. 46-51, the whole chapter in one round: the ocean doctrine, the survival, the phenomena, the pockets, the encounter chart, and the features (Istishia, the marids) - the four majors close here.",
+    "provenance": "verified against printed pp. 46-51 of the uploaded motp.pdf OCR; the DMG/UA underwater-spell cross-references (pp. 56-57, 81) noted in the pins but not auto-credited - the MotP carries its own Water text.",
+    "sentinel": "the gap census after this round: 32 closed, 58 open - three boxes fall (the plane and its two tables); the para-planes are next."
+  },
+  "consts": [
+    {
+      "name": "dczWaterBreathDivisor",
+      "value": 3,
+      "comment": "the drowning hazard: an unprotected character holds his breath for 1/3 his Constitution score (rounded up) in rounds; potions and spells of water breathing, the ring without a time limit, or polymorph to a water-breather carry the traveler."
+    },
+    {
+      "name": "dczWaterVisionFeet",
+      "value": 60,
+      "comment": "the clearest water reduces sighting distance to 60 feet maximum; the varying temperature renders infravision no better than normal vision; sounds carry greater distances."
+    },
+    {
+      "name": "dczWaterEncounterDenom",
+      "value": 10,
+      "comment": "travelers have a 1-in-10 chance of an encounter every four hours; roll: 1-10 elemental phenomena, 11-25 elemental pocket, 26-00 creature encounter."
+    },
+    {
+      "name": "dczWaterPhenomenaDieSides",
+      "value": 12,
+      "comment": "the d12 phenomena: steam current (1-3), whirlpool (4-5), ice floe (6-8), tidal bore, silt flow, the airy water pocket, and the vortex to a Prime Material plane."
+    },
+    {
+      "name": "dczWaterPocketTableDie",
+      "value": 20,
+      "comment": "the d20 pocket table: air 1-3, earth 4-6, ice 7-9, ooze 10-12, salt 13-14, steam 15-16, and the rare hostile fire/magma only at 20 - the airy-water survival rule governs them."
+    },
+    {
+      "name": "dczWaterChartDieSides",
+      "value": 12,
+      "comment": "the Water encounter chart is a d8+d12 roll (2-20): 2 the Charonadaemon, 9 the water elementals, 10 the marids, 11 the tritons, 20 the eye of the deep - the 2 and 20 unique-powers slots."
+    },
+    {
+      "name": "dczWaterNativeFireDouble",
+      "value": 2,
+      "comment": "the native vulnerability: all fire attacks on water elemental creatures inflict double damage with a -4 saving throw penalty (within the plane's fire limitations); natives are less susceptible to cold, earth and air attacks than Prime creatures."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dczWaterOceanDoctrine",
+      "value": true,
+      "comment": "the ocean without a surface: pressure uniform in all directions like a few feet beneath a Prime ocean, soft glowing blues and greens radiating from the water itself - less harsh than Fire and Earth, less accessible than Air."
+    },
+    {
+      "name": "dczWaterBordersGrade",
+      "value": true,
+      "comment": "the border gradations: muck toward Ooze, chill ice fragments toward Ice, warm agitation toward Steam, evaporating brine toward Salt."
+    },
+    {
+      "name": "dczWaterSwimDouble",
+      "value": true,
+      "comment": "swimming creatures move at twice their normal rate in the plane of elemental Water."
+    },
+    {
+      "name": "dczWaterCombatRules",
+      "value": true,
+      "comment": "underwater combat per the DMG p. 56 limitations; nets entangle but cannot drag to a sea floor that does not exist; crossbows need magical bolts (normal bolts hang motionless once fired)."
+    },
+    {
+      "name": "dczWaterMagicRule",
+      "value": true,
+      "comment": "spells are affected as in Prime seas (DMG 57, UA 81) - a fireball is useless from the water itself but works in an air pocket; contact other plane makes silvery cabbage-sized balls; summonings make charmed golden-green spheres."
+    },
+    {
+      "name": "dczWaterMaridHousehold",
+      "value": true,
+      "comment": "the marids: the handsomest, most powerful, most chaotic geniekind - a loose empire under a padisha, households of 2d10 around pocket clusters; nearly unsummonable (more trouble than worth, hence no marid-controlling items)."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the WaterBreathDivisor pin",
+      "expr": "m['dczWaterBreathDivisor']() != 3"
+    },
+    {
+      "note": "the WaterVisionFeet pin",
+      "expr": "m['dczWaterVisionFeet']() != 60"
+    },
+    {
+      "note": "the WaterEncounterDenom pin",
+      "expr": "m['dczWaterEncounterDenom']() != 10"
+    },
+    {
+      "note": "the WaterPhenomenaDieSides pin",
+      "expr": "m['dczWaterPhenomenaDieSides']() != 12"
+    },
+    {
+      "note": "the WaterPocketTableDie pin",
+      "expr": "m['dczWaterPocketTableDie']() != 20"
+    },
+    {
+      "note": "the WaterChartDieSides pin",
+      "expr": "m['dczWaterChartDieSides']() != 12"
+    },
+    {
+      "note": "the WaterNativeFireDouble pin",
+      "expr": "m['dczWaterNativeFireDouble']() != 2"
+    },
+    {
+      "note": "the WaterOceanDoctrine pin",
+      "expr": "m['dczWaterOceanDoctrine']() != 1"
+    },
+    {
+      "note": "the WaterBordersGrade pin",
+      "expr": "m['dczWaterBordersGrade']() != 1"
+    },
+    {
+      "note": "the WaterSwimDouble pin",
+      "expr": "m['dczWaterSwimDouble']() != 1"
+    },
+    {
+      "note": "the WaterCombatRules pin",
+      "expr": "m['dczWaterCombatRules']() != 1"
+    },
+    {
+      "note": "the WaterMagicRule pin",
+      "expr": "m['dczWaterMagicRule']() != 1"
+    },
+    {
+      "note": "the WaterMaridHousehold pin",
+      "expr": "m['dczWaterMaridHousehold']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the Water plane pins": [
+      {
+        "kind": "const",
+        "name": "dczWaterBreathDivisor"
+      },
+      {
+        "kind": "const",
+        "name": "dczWaterVisionFeet"
+      },
+      {
+        "kind": "const",
+        "name": "dczWaterEncounterDenom"
+      },
+      {
+        "kind": "const",
+        "name": "dczWaterPhenomenaDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "dczWaterPocketTableDie"
+      },
+      {
+        "kind": "const",
+        "name": "dczWaterChartDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "dczWaterNativeFireDouble"
+      },
+      {
+        "kind": "bool",
+        "name": "dczWaterOceanDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "dczWaterBordersGrade"
+      },
+      {
+        "kind": "bool",
+        "name": "dczWaterSwimDouble"
+      },
+      {
+        "kind": "bool",
+        "name": "dczWaterCombatRules"
+      },
+      {
+        "kind": "bool",
+        "name": "dczWaterMagicRule"
+      },
+      {
+        "kind": "bool",
+        "name": "dczWaterMaridHousehold"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the Water plane child closes",
+      "from": "  - [ ] The Plane of Elemental Water (pp. 46-51) - survival, movement, encounters, combat, magic, features",
+      "to": "  - [x] The Plane of Elemental Water (pp. 46-51) - survival, movement, encounters, combat, magic, features - R571: the ocean doctrine, the survival, the phenomena, the pockets, the encounter chart, the native fire vulnerability, the magic and the features (Istishia, the marids)"
+    },
+    {
+      "note": "the Water encounter table closes",
+      "from": "  - [ ] The Water encounter table (p. 46) - the 1-in-10 every four hours check and the type roll",
+      "to": "  - [x] The Water encounter table (p. 46) - the 1-in-10 every four hours check and the type roll - R571: the dcz encounter pins (the 1-in-10 every four hours, the 1-10/11-25/26-00 split, the d8+d12 chart)"
+    },
+    {
+      "note": "the Water phenomena table closes",
+      "from": "  - [ ] The Water phenomena table (p. 46) - the elemental phenomena type roll",
+      "to": "  - [x] The Water phenomena table (p. 46) - the elemental phenomena type roll - R571: the dcz phenomena pins (the steam current, the whirlpool, the ice floe, the tidal bore, the silt flow, the airy water pocket, the vortex)"
+    }
+  ],
+  "gap_census": {
+    "closed": 32,
+    "open": 58
+  },
+  "caller_files": [],
+  "inline_count": 13
+}
