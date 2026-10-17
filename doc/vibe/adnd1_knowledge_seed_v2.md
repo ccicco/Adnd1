@@ -9803,6 +9803,57 @@ when both halves land.
   the no-gravity thought-movement, the
   encounter charts, combat, magic, and the
   features (githyanki, the dead gods).
+- R576 LANDED 2026-10-17: commit 0c3bb0391fa4f4725a9088
+  ca02d99f43e81422a7 (census 499 -> 500,
+  pushed 4d9beb2..0c3bb03), THE ASTRAL PLANE,
+  printed pp. 60-72, the whole chapter in one
+  round (the R557 pattern), opening the second
+  half of the book: the barren-vault doctrine
+  (the transit plane, the wormholes, Anubis
+  the sole resident Power), the reaching split
+  (projection with the silver cords vs.
+  physical travel), the cord rules (the
+  1d10-turn dissolution clock, the 1d4+1-day
+  coma, the 1% possession, the three severing
+  forces), the color pools (the blind side,
+  the d20 color table, the viewing altitude
+  and percentile location, the 15% two-way and
+  5% fixed portals), the survival (no breath,
+  no food, the 365,000-to-1 time, the potion
+  permanence, the dead infravision), the
+  10-yards-per-minute-per-Int mental movement,
+  the 1d10-every-four-hours check with the
+  75/10/10/5 type split, the psychic wind
+  1d20 table, the weightless combat (the AC 8
+  astral base, the Int/Wis modifier swap), the
+  magic school limits (the conjuration caps at
+  4th/3rd/5th, the sphere areas, the
+  extradimensional void, the Bigby-hand Int
+  contests, the astral-searcher chance at 5x
+  level), the PC adjustments (the thief noise
+  split, the monk AC 7), and the features (the
+  githyanki silver swords at AC 0 and 20%, the
+  lich-queen, the fixed portals, Yggdrasil and
+  Mount Olympus). 15 consts + 12 bools,
+  prefix dde, header rules/astralplane.h.
+  ELEVEN flips (the chapter parent + eight
+  children + the encounter check + the sample
+  charts): gap census 42/48 -> 53/37. Spec
+  26,058 bytes, md5 59c8c5107530fda34335da98
+  322d5ce matched exactly first try, 27
+  inlines. NOTE (engine write-order lesson,
+  caught locally pre-ritual): the first run
+  aborted writing rules/astralplane.h into a
+  missing rules/ dir AFTER the seed patch was
+  staged - restored seed and report from the
+  R575 sha and re-ran clean; the staging step
+  should mkdir rules first (or fetch one
+  header file) on fresh environments. ELEVEN
+  straight first-tries (R566-R576). NEXT -
+  R577: the outer planes in general (the
+  final arc opens) - the group doctrine, the
+  alignment-based structure, the paths
+  between planes, then plane-by-plane.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

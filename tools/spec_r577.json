@@ -1,0 +1,426 @@
+{
+  "round": 577,
+  "prefix": "ddf",
+  "header_file": "rules/outerplanes.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 500,
+  "title": "the Outer Planes in general",
+  "audit_label": "R577 outer planes general audit",
+  "audit_comment": "the Outer Planes in general, printed pp. 73-84, the general-doctrine round opening the final arc: the Great Wheel (16 pieces plus the 17th plane, the alignment arrangement, the Upper/Lower/Law/Chaos groupings, the layer-count table with the Abyss' 666), the reaching (all travel through the Astral - the conduits, the plane shift with its arrival table, the gate rules, the color pools with new-body formation and the harmless cord snap), the survival (the like-the-Primes-only-more-so doctrine, the localized gravity, the per-realm directions, the two compasses), the movement (the realm borders with their gravity shifts, the Wisdom-check interlayer barriers at 70% one-way, the portal rules at 1-in-6 and 50/50), the encounters (the unique-Powers 2-or-20 rule, the human travelers, the native-body doctrine), the magic school by school (the home-court abjurations, the cantrip pop, the Chaos-plane alteration ladder at 20/40/60/80 with the d100 follow-up, the divination alignment-overwhelm, the true-sight freezes, the vacant-body rule at 1% per layer, the item-plus decay), the PC adjustments (the cleric deity rule, the paladin lay-on-hands exception, the barbarian comfort), and the features (the spell-crystals, the river Styx with its forget save at 15th level, the 50% dragging, the Charon 1d100-turn transit, and the wholesome Oceanus).",
+  "include_comment": "the outer planes general pins",
+  "include_after": "#include \"rules/astralplane.h\"  // R576: the Astral Plane pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R576 LANDED 2026-10-17: commit 0c3bb0391fa4f4725a9088",
+  "prev_record": [
+    "- R576 LANDED 2026-10-17: commit 0c3bb0391fa4f4725a9088",
+    "  ca02d99f43e81422a7 (census 499 -> 500,",
+    "  pushed 4d9beb2..0c3bb03), THE ASTRAL PLANE,",
+    "  printed pp. 60-72, the whole chapter in one",
+    "  round (the R557 pattern), opening the second",
+    "  half of the book: the barren-vault doctrine",
+    "  (the transit plane, the wormholes, Anubis",
+    "  the sole resident Power), the reaching split",
+    "  (projection with the silver cords vs.",
+    "  physical travel), the cord rules (the",
+    "  1d10-turn dissolution clock, the 1d4+1-day",
+    "  coma, the 1% possession, the three severing",
+    "  forces), the color pools (the blind side,",
+    "  the d20 color table, the viewing altitude",
+    "  and percentile location, the 15% two-way and",
+    "  5% fixed portals), the survival (no breath,",
+    "  no food, the 365,000-to-1 time, the potion",
+    "  permanence, the dead infravision), the",
+    "  10-yards-per-minute-per-Int mental movement,",
+    "  the 1d10-every-four-hours check with the",
+    "  75/10/10/5 type split, the psychic wind",
+    "  1d20 table, the weightless combat (the AC 8",
+    "  astral base, the Int/Wis modifier swap), the",
+    "  magic school limits (the conjuration caps at",
+    "  4th/3rd/5th, the sphere areas, the",
+    "  extradimensional void, the Bigby-hand Int",
+    "  contests, the astral-searcher chance at 5x",
+    "  level), the PC adjustments (the thief noise",
+    "  split, the monk AC 7), and the features (the",
+    "  githyanki silver swords at AC 0 and 20%, the",
+    "  lich-queen, the fixed portals, Yggdrasil and",
+    "  Mount Olympus). 15 consts + 12 bools,",
+    "  prefix dde, header rules/astralplane.h.",
+    "  ELEVEN flips (the chapter parent + eight",
+    "  children + the encounter check + the sample",
+    "  charts): gap census 42/48 -> 53/37. Spec",
+    "  26,058 bytes, md5 59c8c5107530fda34335da98",
+    "  322d5ce matched exactly first try, 27",
+    "  inlines. NOTE (engine write-order lesson,",
+    "  caught locally pre-ritual): the first run",
+    "  aborted writing rules/astralplane.h into a",
+    "  missing rules/ dir AFTER the seed patch was",
+    "  staged - restored seed and report from the",
+    "  R575 sha and re-ran clean; the staging step",
+    "  should mkdir rules first (or fetch one",
+    "  header file) on fresh environments. ELEVEN",
+    "  straight first-tries (R566-R576). NEXT -",
+    "  R577: the outer planes in general (the",
+    "  final arc opens) - the group doctrine, the",
+    "  alignment-based structure, the paths",
+    "  between planes, then plane-by-plane."
+  ],
+  "banner": {
+    "title": "THE OUTER PLANES IN GENERAL - printed pp. 73-84, the general-doctrine round: the Great Wheel and the seventeen planes, the reaching through the Astral, the localized-gravity survival, the realm and layer borders, the encounter doctrines, the school-by-school magic limits, the item decay, and the Styx with Oceanus.",
+    "provenance": "verified against printed pp. 73-84 of the uploaded motp.pdf OCR; the general doctrine pins carry the wheel structure, the reaching methods, the border rules, and the cross-plane features exactly as printed, with the plane-by-plane descriptions left for the rounds that follow.",
+    "sentinel": "the gap census after this round: 59 closed, 31 open - SIX boxes fall (the general-doctrine parent, the arrival table, the alteration table, the turning modifiers, the unique-powers and human-traveler doctrines); the seventeen named planes begin next."
+  },
+  "consts": [
+    {
+      "name": "ddfOuterPlaneCount",
+      "value": 17,
+      "comment": "the Great Wheel: 16 pieces (each the upper layer of a plane, joined to its two neighbors) with the Prime/Ethereal/inner cluster at the hub - plus the 17th plane, Concordant Opposition, off the wheel below; the planes align good-vs-evil and Law-vs-Chaos, Arcadia-to-Gladsheim the Upper, Acheron-to-Pandemonium the Lower."
+    },
+    {
+      "name": "ddfAbyssLayerEstimate",
+      "value": 666,
+      "comment": "the layer counts: Nirvana 1, Arcadia 3, Seven Heavens 7, Twin Paradises 2, Elysium 4, Happy Hunting Grounds 3, Olympus 3, Gladsheim 3, Limbo 5, Pandemonium 4, Abyss 666 (the best estimate, an asterisk in the printed table), Tarterus 6, Hades 3, Gehenna 4, Nine Hells 9, Acheron 4, Concordant Opposition 1."
+    },
+    {
+      "name": "ddfPlaneShiftOnTargetPct",
+      "value": 20,
+      "comment": "the plane shift arrival table (the tuning-fork spell grants little control): 1-20 within 100 yards of the visualized spot, 21-60 within 10 miles, 61-90 within 100 miles, 91-00 within 1,000 miles and usually in another Power's realm; deeper layers by chord combinations."
+    },
+    {
+      "name": "ddfPortalFindDenom",
+      "value": 6,
+      "comment": "the interplanar portals (conduit-like, top-layer, varying appearance - apple-tree fog in Arcadia, foul caves below): a 1-in-6 chance of finding one per day of searching, unless the local Powers closed them."
+    },
+    {
+      "name": "ddfPortalOneWayPct",
+      "value": 50,
+      "comment": "the portal traffic rule: portals between outer planes are often (50%) one-way and often (50%) intermittent (hours to weeks, appearing days to years apart); crossing each new plane costs a magic item another plus (a sword +3 is +1 in the first outer plane and nonmagical one plane later - re-enter the Astral to restore it)."
+    },
+    {
+      "name": "ddfInterlayerOneWayPct",
+      "value": 70,
+      "comment": "the interlayer borders: overlapping Ethereal-style barriers, breached by a Wisdom ability check (same breach point = same arrival spot); 70% of barriers are one-way; the Hells' barriers open into mid-air a half mile up, the Heavens' onto mountain tops."
+    },
+    {
+      "name": "ddfChaosAlterMaxPct",
+      "value": 80,
+      "comment": "the Chaos-plane alteration risk (Happy Hunting Grounds-to-Tarterus inclusive): created- or shape-changed matter risks a random effect at 20% (HHG/Tarterus), 40% (Olympus/Abyss), 60% (Gladsheim/Pandemonium), 80% (Limbo); on the d100 follow-up, 1-10 nothing, 11-30 appearance only, 31-50 properties only, 51-70 nearby form/original abilities, 71-90 nearby form/abilities, 91-00 anything."
+    },
+    {
+      "name": "ddfUniquePowerRollLow",
+      "value": 2,
+      "comment": "the unique-Powers encounter doctrine: demon lords, solars, Demi- and Lesser and Greater Powers appear as random encounters only on a 2 or a 20 of a typical table; otherwise out on their own missions, ignoring those who pose no threat to their realms."
+    },
+    {
+      "name": "ddfBodyHabitPctPerLayer",
+      "value": 1,
+      "comment": "the vacant-body rule: raise dead, resurrect and magic jar leave a body open to native spirits at 1% per day per layer of depth (3rd-layer Hades = 3% per day, Abyss 100th layer = occupied within a day); the usurper is never unique and must be exorcised."
+    },
+    {
+      "name": "ddfTurnModMax",
+      "value": 4,
+      "comment": "the turning-undead modifiers (evil undead only): Elysium +4 levels, Twin Paradises/Happy Hunting Grounds +3, Seven Heavens/Olympus +2, Arcadia/Gladsheim +1, Nirvana/Concordant Opposition/Limbo same, Acheron/Pandemonium -1, Nine Hells/Abyss -2, Gehenna/Tarterus -3, Hades -4; reversed for evil clerics."
+    },
+    {
+      "name": "ddfStyxForgetCasterLevel",
+      "value": 15,
+      "comment": "the river Styx: touch, drink or immersion forgets the entire past life - save vs. spell acts as a forget cast by a 15th-level wizard (the last five minutes gone), protecting for ten minutes; the standard drowning chance applies to immersion."
+    },
+    {
+      "name": "ddfStyxDraggedPct",
+      "value": 50,
+      "comment": "the Styx crossing: a 50% chance of being dragged into another plane before reaching shore; boats add a 20% overturn chance (small) or 10% (large); crossing or boating draws 5d6 hydrodaemons or 3d4 styx devils at 40%."
+    },
+    {
+      "name": "ddfCharonTransitTurns",
+      "value": 100,
+      "comment": "the Styx boatmen: Charon ferries anywhere on the river plus the Astral/Ethereal/Prime in 1d100 turns (never stopping for others); the charonadaemons take 1d10 days with a 10% per-day chance of hostile fellow passengers; Charon interferes only if his boat is threatened."
+    }
+  ],
+  "bools": [
+    {
+      "name": "ddfReachingDoctrine",
+      "value": true,
+      "comment": "the reaching: ALL outer-plane travel passes through the Astral (no direct vortices) - by conduits (one Prime mooring, one realm terminus, one round, unnoticed, bodies carried), by spell (plane shift, gate under the Power-transport rules, teleport without error, succor), by device (amulet of the planes, well of many worlds), or by color pool - the projected traveler builds a new body of the destination plane's stuff (magma-bodies immune to fire, doubly hurt by water), keeps his silver cord (a snap in the outers does NOT kill - it only bars return), and failed magic items stay behind, eroding in 1d10 turns."
+    },
+    {
+      "name": "ddfSurvivalDoctrine",
+      "value": true,
+      "comment": "the survival: the outer planes are like the Primes only more so - breath-stale atmospheres, 1:1 true/subjective time, hunger and thirst at Prime rates; gravity is LOCALIZED (a general down for miles, then a new one - realm borders often mark gravity edges), magnetic directions differ per realm (the orcanthium planar compass spins near boundaries, the power compass gem flashes for manifested Powers); infravision works, ultravision does not."
+    },
+    {
+      "name": "ddfMagicDoctrine",
+      "value": true,
+      "comment": "the magic in general: extradimensional space works (rope trick), Astral access only in the topmost layer, inner-plane spells fail; cantrips pop harmlessly; abjurations suffer the home-court rule (no effect on natives of the current plane); conjurations summon only natives of adjacent planes, uncontrolled; divinations read the plane's alignment over individuals'; true sight freezes Law/Chaos viewers 1d10 turns (feeblemind save) and converts good/evil viewers (alignment save); enchantments: confusion at -4 saves in Chaos planes, +4 in Law planes; necromantics cannot touch natives in their home planes."
+    },
+    {
+      "name": "ddfItemDecayRule",
+      "value": true,
+      "comment": "the item decay: weapons and armor lose one plus per plane crossed (layers do not count), nonmagical items lose special abilities (save outer-plane-creature-specific weapons, which keep their powers everywhere); set-AC items unaffected; extradimensional items work, Astral items only topmost-layer, Ethereal/inner-tapping items dead; holy swords regain Astral-lost pluses; Prime poison cannot touch outer-planar natives at home."
+    },
+    {
+      "name": "ddfHumanTravelerDoctrine",
+      "value": true,
+      "comment": "the human travelers: uncommon on the first layer, rare at best deeper - many arrived against their will (wrong conduits, offended Powers), so the class mix is wide (fighter 5-20, MU 3-30, paladin 4-24 on the human subtable); groups run 1-400 strong, and groups of four or fewer are exceptional (add four to the level range)."
+    },
+    {
+      "name": "ddfNativeBodyRule",
+      "value": true,
+      "comment": "the native-body doctrine: only weaker nonnatives are physically present; stronger ones (greater daemons, hierarch modrons, powerful slaadi) leave their bodies behind and form new ones as in astral projection; unique creatures outside home are always in nonoriginal bodies; natives slain in their own planes die permanently."
+    },
+    {
+      "name": "ddfPcAdjustments",
+      "value": true,
+      "comment": "the PC adjustments: clerics regain spells only in their deity's home plane (else 1st-2nd only); druid abilities negated save shapechange (never fatal) and hierophant abilities (appearance-alter exempt from Chaos-plane effects); thieves and fighters unaffected; rangers keep tracking and giant-class bonuses; barbarians are LEAST threatened here (a familiar realm counts as well-known); paladins keep detect evil, cure disease and lay on hands even on natives - the exception to necromantic limits - and their mounts speak Lawful Good in the upper Law planes."
+    },
+    {
+      "name": "ddfSpellCrystalRule",
+      "value": true,
+      "comment": "the spell-crystals: one-inch to one-foot facets in nearly every layer, indistinguishable to travelers and natives below Intelligence 19 (who CAN identify the spell); touch triggers the stored divination or summoning - a summons to the traveler's home plane sends him safely there, to an alternate Prime makes him an extradimensional creature; astral projectors are bounced to a random plane."
+    },
+    {
+      "name": "ddfOceanusRule",
+      "value": true,
+      "comment": "the river Oceanus: the wholesome counterpart of the Styx - from Thalasia (Elysium's third layer) through Elysium's upper layers, across the Happy Hunting Grounds' topmost layer, to rest in Osea (Olympus' second layer); safe to drink, natural river dangers only, no supernatural boatmen."
+    },
+    {
+      "name": "ddfStyxCourseRule",
+      "value": true,
+      "comment": "the Styx course: a permanent conduit through the top layers of the seven lower planes (Acheron, Nine Hells - via Stygia on the fifth - Gehenna, Hades, Tarterus, the Abyss' deeper layers, Pandemonium), skipping between planes non-linearly (Acheron to the Abyss in hours); it does NOT reach the Astral, but portals on its banks let the boatmen cross."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the OuterPlaneCount pin",
+      "expr": "m['ddfOuterPlaneCount']() != 17"
+    },
+    {
+      "note": "the AbyssLayerEstimate pin",
+      "expr": "m['ddfAbyssLayerEstimate']() != 666"
+    },
+    {
+      "note": "the PlaneShiftOnTargetPct pin",
+      "expr": "m['ddfPlaneShiftOnTargetPct']() != 20"
+    },
+    {
+      "note": "the PortalFindDenom pin",
+      "expr": "m['ddfPortalFindDenom']() != 6"
+    },
+    {
+      "note": "the PortalOneWayPct pin",
+      "expr": "m['ddfPortalOneWayPct']() != 50"
+    },
+    {
+      "note": "the InterlayerOneWayPct pin",
+      "expr": "m['ddfInterlayerOneWayPct']() != 70"
+    },
+    {
+      "note": "the ChaosAlterMaxPct pin",
+      "expr": "m['ddfChaosAlterMaxPct']() != 80"
+    },
+    {
+      "note": "the UniquePowerRollLow pin",
+      "expr": "m['ddfUniquePowerRollLow']() != 2"
+    },
+    {
+      "note": "the BodyHabitPctPerLayer pin",
+      "expr": "m['ddfBodyHabitPctPerLayer']() != 1"
+    },
+    {
+      "note": "the TurnModMax pin",
+      "expr": "m['ddfTurnModMax']() != 4"
+    },
+    {
+      "note": "the StyxForgetCasterLevel pin",
+      "expr": "m['ddfStyxForgetCasterLevel']() != 15"
+    },
+    {
+      "note": "the StyxDraggedPct pin",
+      "expr": "m['ddfStyxDraggedPct']() != 50"
+    },
+    {
+      "note": "the CharonTransitTurns pin",
+      "expr": "m['ddfCharonTransitTurns']() != 100"
+    },
+    {
+      "note": "the ReachingDoctrine pin",
+      "expr": "m['ddfReachingDoctrine']() != 1"
+    },
+    {
+      "note": "the SurvivalDoctrine pin",
+      "expr": "m['ddfSurvivalDoctrine']() != 1"
+    },
+    {
+      "note": "the MagicDoctrine pin",
+      "expr": "m['ddfMagicDoctrine']() != 1"
+    },
+    {
+      "note": "the ItemDecayRule pin",
+      "expr": "m['ddfItemDecayRule']() != 1"
+    },
+    {
+      "note": "the HumanTravelerDoctrine pin",
+      "expr": "m['ddfHumanTravelerDoctrine']() != 1"
+    },
+    {
+      "note": "the NativeBodyRule pin",
+      "expr": "m['ddfNativeBodyRule']() != 1"
+    },
+    {
+      "note": "the PcAdjustments pin",
+      "expr": "m['ddfPcAdjustments']() != 1"
+    },
+    {
+      "note": "the SpellCrystalRule pin",
+      "expr": "m['ddfSpellCrystalRule']() != 1"
+    },
+    {
+      "note": "the OceanusRule pin",
+      "expr": "m['ddfOceanusRule']() != 1"
+    },
+    {
+      "note": "the StyxCourseRule pin",
+      "expr": "m['ddfStyxCourseRule']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the outer planes general pins": [
+      {
+        "kind": "const",
+        "name": "ddfOuterPlaneCount"
+      },
+      {
+        "kind": "const",
+        "name": "ddfAbyssLayerEstimate"
+      },
+      {
+        "kind": "const",
+        "name": "ddfPlaneShiftOnTargetPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddfPortalFindDenom"
+      },
+      {
+        "kind": "const",
+        "name": "ddfPortalOneWayPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddfInterlayerOneWayPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddfChaosAlterMaxPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddfUniquePowerRollLow"
+      },
+      {
+        "kind": "const",
+        "name": "ddfBodyHabitPctPerLayer"
+      },
+      {
+        "kind": "const",
+        "name": "ddfTurnModMax"
+      },
+      {
+        "kind": "const",
+        "name": "ddfStyxForgetCasterLevel"
+      },
+      {
+        "kind": "const",
+        "name": "ddfStyxDraggedPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddfCharonTransitTurns"
+      },
+      {
+        "kind": "bool",
+        "name": "ddfReachingDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddfSurvivalDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddfMagicDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddfItemDecayRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddfHumanTravelerDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddfNativeBodyRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddfPcAdjustments"
+      },
+      {
+        "kind": "bool",
+        "name": "ddfSpellCrystalRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddfOceanusRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddfStyxCourseRule"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the general doctrine",
+      "from": "  - [ ] The outer planes in general (pp. 73-84) - reaching, survival, movement, encounters, combat, magic, the player characters, the features, and the alignment-arrangement doctrine (the Great Wheel)",
+      "to": "  - [x] The outer planes in general (pp. 73-84) - reaching, survival, movement, encounters, combat, magic, the player characters, the features, and the alignment-arrangement doctrine (the Great Wheel) - R577: the general doctrine (the Great Wheel, the reaching, the survival, the borders, the encounters, the magic, the PCs, the Styx and Oceanus)"
+    },
+    {
+      "note": "the ddf arrival pins",
+      "from": "  - [ ] The plane-shift arrival table (p. 74) - the random-placement roll for outer-plane travel",
+      "to": "  - [x] The plane-shift arrival table (p. 74) - the random-placement roll for outer-plane travel - R577: the ddf arrival pins (the 20/40/30/10 percentile split)"
+    },
+    {
+      "note": "the ddf chaos pins",
+      "from": "  - [ ] The alteration-spells random-effect table (p. 78) - the not-function/sort-of-function roll",
+      "to": "  - [x] The alteration-spells random-effect table (p. 78) - the not-function/sort-of-function roll - R577: the ddf chaos pins (the 20/40/60/80 ladder, the d100 follow-up)"
+    },
+    {
+      "note": "the ddf turning pins",
+      "from": "  - [ ] The turning-undead alignment modifiers (p. 82) - the less-success-lower/success-upper turning rule",
+      "to": "  - [x] The turning-undead alignment modifiers (p. 82) - the less-success-lower/success-upper turning rule - R577: the ddf turning pins (the +4-to--4 ladder, evil undead only)"
+    },
+    {
+      "note": "the ddf unique roll pin",
+      "from": "  - [ ] The unique-powers encounter doctrine (p. 77) - the only-on-a-2-or-20 rule for demon lords, solars and the Powers",
+      "to": "  - [x] The unique-powers encounter doctrine (p. 77) - the only-on-a-2-or-20 rule for demon lords, solars and the Powers - R577: the ddf unique roll pin (a 2 or a 20 only)"
+    },
+    {
+      "note": "the ddf human pins",
+      "from": "  - [ ] The human-travelers doctrine (p. 77) - the uncommon-first-layer/rare-deeper-layers rule",
+      "to": "  - [x] The human-travelers doctrine (p. 77) - the uncommon-first-layer/rare-deeper-layers rule - R577: the ddf human pins (uncommon first layer, rare deeper, the small-group level bonus)"
+    }
+  ],
+  "gap_census": {
+    "closed": 59,
+    "open": 31
+  },
+  "caller_files": [],
+  "inline_count": 23
+}

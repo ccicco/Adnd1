@@ -99,12 +99,12 @@ sample entries verified against the canonical PHB levels).
   - [x] The Astral encounter check (p. 64) - the 1d10 roll on entrance and every four true hours, a 1 means an encounter - R576: the dde check pin (1d10 on entrance and every four true hours, a 1 means an encounter)
   - [x] The Human and Astral encounter charts (p. 66) - the two sample charts - R576: the human chart classes and the d8+d12 astral chart (2-20)
 - [ ] **The Outer Planes** (pp. 73-116) - the planes of power: the general doctrine and the seventeen named planes
-  - [ ] The outer planes in general (pp. 73-84) - reaching, survival, movement, encounters, combat, magic, the player characters, the features, and the alignment-arrangement doctrine (the Great Wheel)
-  - [ ] The plane-shift arrival table (p. 74) - the random-placement roll for outer-plane travel
-  - [ ] The alteration-spells random-effect table (p. 78) - the not-function/sort-of-function roll
-  - [ ] The turning-undead alignment modifiers (p. 82) - the less-success-lower/success-upper turning rule
-  - [ ] The unique-powers encounter doctrine (p. 77) - the only-on-a-2-or-20 rule for demon lords, solars and the Powers
-  - [ ] The human-travelers doctrine (p. 77) - the uncommon-first-layer/rare-deeper-layers rule
+  - [x] The outer planes in general (pp. 73-84) - reaching, survival, movement, encounters, combat, magic, the player characters, the features, and the alignment-arrangement doctrine (the Great Wheel) - R577: the general doctrine (the Great Wheel, the reaching, the survival, the borders, the encounters, the magic, the PCs, the Styx and Oceanus)
+  - [x] The plane-shift arrival table (p. 74) - the random-placement roll for outer-plane travel - R577: the ddf arrival pins (the 20/40/30/10 percentile split)
+  - [x] The alteration-spells random-effect table (p. 78) - the not-function/sort-of-function roll - R577: the ddf chaos pins (the 20/40/60/80 ladder, the d100 follow-up)
+  - [x] The turning-undead alignment modifiers (p. 82) - the less-success-lower/success-upper turning rule - R577: the ddf turning pins (the +4-to--4 ladder, evil undead only)
+  - [x] The unique-powers encounter doctrine (p. 77) - the only-on-a-2-or-20 rule for demon lords, solars and the Powers - R577: the ddf unique roll pin (a 2 or a 20 only)
+  - [x] The human-travelers doctrine (p. 77) - the uncommon-first-layer/rare-deeper-layers rule - R577: the ddf human pins (uncommon first layer, rare deeper, the small-group level bonus)
   - [ ] The Olympus spell-casting-creatures table (p. 92) - the 10%-can-cast roll
   - [ ] The Limbo random-entry table (p. 97) - the baked/frozen/drowning/sliding-earth entry roll
   - [ ] The Abyssal-layers terrain table (p. 101) - the general-description roll
