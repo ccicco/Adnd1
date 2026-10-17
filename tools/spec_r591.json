@@ -1,0 +1,133 @@
+{
+ "round": 591,
+ "prefix": "ddu",
+ "header_file": "rules/outerplanesseal.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 514,
+ "title": "the Outer Planes seal",
+ "audit_label": "R591 Outer seal audit",
+ "audit_comment": "THE OUTER PLANES CHAPTER SEAL, printed pp. 73-116: the parent box closes on the census of its children. The seventeen named planes in their wheel order - Nirvana, Arcadia, the Seven Heavens, the Twin Paradises, Elysium, the Happy Hunting Grounds, Olympus and Gladsheim on the lawful-good arc; Limbo and Pandemonium in chaos; the Abyss, Tarterus and Hades in the evil middle; Gehenna, the Nine Hells and Acheron on the lawful-evil slope; and the Concordant Opposition at the hub, the seventeenth touching all. The chapter's rounds: the general doctrine of R577 with the plane-shift arrival table, the alteration-spells chaos table, the turning-undead alignment modifiers, the unique-powers 2-or-20 rule and the human-travelers doctrine; the plane rounds R578 through R589 - Nirvana and Arcadia together, the Seven Heavens with the Twin Paradises, Elysium with the Happy Hunting Grounds, Olympus with Gladsheim closing the Upper Planes, Limbo with Pandemonium opening the Chaos side, the Abyss alone, Tarterus, Hades, Gehenna, the Nine Hells, Acheron, and the Concordant Opposition with its center and destination tables - the Beastlands casting table reattributed by amendment; and the closing essay of R590. Every child box flipped; the wheel sealed.",
+ "include_comment": "the Outer Planes chapter seal pins",
+ "include_after": "#include \"rules/beyondouterplanes.h\"  // R590: the Beyond the outer planes pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R590 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R590 LANDED 2026-10-17: commit",
+  "  1e2f20342d2ea92573cc655e16da37a09",
+  "  d0ca2be (census 513 -> 514, pushed",
+  "  2e271f4..1e2f203), BEYOND THE OUTER",
+  "  PLANES, printed p. 116, the closing",
+  "  essay of the Manual of the Planes: the",
+  "  summary-not-final-word doctrine (any",
+  "  number of realms in a layer, a third",
+  "  or fourth pantheon in Olympus/Arvandor,",
+  "  a DM's evil power in the Hells), the",
+  "  undiscovered layers (an eighth heaven,",
+  "  a third paradise unreachable by known",
+  "  spells, Gladsheim with as many layers",
+  "  as the Abyss but no Abyssal method of",
+  "  reaching them), the growing model (the",
+  "  quasi- and para-elemental planes and",
+  "  Concordant Opposition both late",
+  "  additions), the possible new Astral",
+  "  forms between the outer planes and",
+  "  farther out or within the Opposition's",
+  "  center, the finite world-sized",
+  "  demi-planes floating in the Ethereal,",
+  "  and the alternate Primes - Earth-like",
+  "  or not, familiar, hostile, and strange,",
+  "  the only limitation the imagination of",
+  "  those involved. 0 consts + 6 bools,",
+  "  prefix ddt, header",
+  "  rules/beyondouterplanes.h. ONE flip:",
+  "  gap census 81/9 -> 82/8 (Beyond the",
+  "  outer planes) - THE MANUAL OF THE",
+  "  PLANES IS FULLY CLOSED: every plane,",
+  "  every table, and the closing essay",
+  "  pinned, the whole MotP chapter taken",
+  "  R566-R590. Spec 10,173 bytes, md5",
+  "  b343081bad0430b34aca3d724a3e5121",
+  "  matched exactly first try, 6 inlines.",
+  "  TWENTY-FIVE straight first-tries",
+  "  (R566-R590). NEXT - R591: the gap",
+  "  report's eight remaining boxes belong",
+  "  to later chapters; consult",
+  "  tools/motp_gap_report.md (fetched at",
+  "  1e2f203) for the open list and pick",
+  "  the next chapter's first box."
+ ],
+ "banner": {
+  "title": "THE OUTER PLANES CHAPTER SEAL - printed pp. 73-116: the seventeen planes of the Great Wheel from Nirvana's clockwork to the Opposition's hub, the general doctrine and its five tables, the seventeen plane rounds, and the closing essay - the chapter census complete, the parent box sealed.",
+  "provenance": "verified against the chapter's own rounds R577-R590 and the MotP's wheel doctrine (printed pp. 73-84); the seal carries the book's seventeen-plane enumeration and alignment arrangement, closing the parent box in the same commit per the report's closure criterion.",
+  "sentinel": "the gap census after this round: 83 closed, 7 open - ONE box falls (the Outer Planes chapter umbrella); THE OUTER PLANES CHAPTER IS SEALED; the appendices and indices remain."
+ },
+ "consts": [
+  {
+   "name": "dduOuterPlaneCount",
+   "value": 17,
+   "comment": "the seventeen named planes of the outer planes: the planes of power circling the wheel - Nirvana and Arcadia on the lawful side, the Seven Heavens, the Twin Paradises, Elysium and the Happy Hunting Grounds of the good ascent, Olympus and Gladsheim of the neutrals, Limbo and Pandemonium of pure and evil chaos, the Abyss, Tarterus, Hades of the evil middle, Gehenna and the Nine Hells of lawful evil's slope, Acheron between the Hells and Nirvana - and Concordant Opposition at the hub, the seventeenth, touching all."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dduWheelOrder",
+   "value": true,
+   "comment": "the wheel arrangement (the book's own doctrine): the outer planes arranged by alignment around the Great Wheel, each plane the home of its alignment's Powers - the lawful-evil ascent from Gehenna's furnaces through the Nine Hells to Acheron's iron blocks and Nirvana's clockwork; the good arc from Arcadia's orchards up through the Seven Heavens, the Twin Paradises, Elysium and the Happy Hunting Grounds to Olympus and Gladsheim; the chaos descent from Limbo's quicksilver through Pandemonium's howls into the Abyss, Tarterus and the grey Glooms of Hades; and Concordant Opposition at the center, the exception plane connecting them all - the alignment-arrangement doctrine pinned in the general round and carried by every plane's own round."
+  },
+  {
+   "name": "dduChapterSeal",
+   "value": true,
+   "comment": "the chapter seal: the Outer Planes chapter of the Manual of the Planes is closed - the general doctrine of R577 (the reaching, the survival, the movement, the encounters, the combat, the magic, the player characters, the features, and the Great Wheel itself) with its tables (the plane-shift arrival, the alteration-spells chaos, the turning modifiers, the unique-powers and human-travelers doctrines), the seventeen plane rounds R578 through R589 from Nirvana to the Concordant Opposition with their five tables (the Limbo entry, the Abyss terrain, the center and destination tables of the Opposition, the Beastlands casting reattribution), and the closing essay of R590 - every child box flipped, the parent sealed by this round's census pin."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the OuterPlaneCount pin",
+   "expr": "m['dduOuterPlaneCount']() != 17"
+  },
+  {
+   "note": "the WheelOrder pin",
+   "expr": "m['dduWheelOrder']() != 1"
+  },
+  {
+   "note": "the ChapterSeal pin",
+   "expr": "m['dduChapterSeal']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the outer planes chapter seal pins": [
+   {
+    "kind": "const",
+    "name": "dduOuterPlaneCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dduWheelOrder"
+   },
+   {
+    "kind": "bool",
+    "name": "dduChapterSeal"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the outer planes chapter seal",
+   "from": "- [ ] **The Outer Planes** (pp. 73-116) - the planes of power: the general doctrine and the seventeen named planes",
+   "to": "- [x] **The Outer Planes** (pp. 73-116) - the planes of power: the general doctrine and the seventeen named planes - R591: the chapter seal (the seventeen planes in wheel order, the general doctrine and its tables of R577, the seventeen plane rounds R578-R590, the closing essay; the chapter is closed)"
+  }
+ ],
+ "gap_census": {
+  "closed": 83,
+  "open": 7
+ },
+ "caller_files": [],
+ "inline_count": 3
+}

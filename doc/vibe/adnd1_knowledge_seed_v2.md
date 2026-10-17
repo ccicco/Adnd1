@@ -10509,6 +10509,49 @@ when both halves land.
   additions, the demi-planes and
   alternate Primes; the last MotP gap
   box, source page-117 already read).
+- R590 LANDED 2026-10-17: commit
+  1e2f20342d2ea92573cc655e16da37a09
+  d0ca2be (census 513 -> 514, pushed
+  2e271f4..1e2f203), BEYOND THE OUTER
+  PLANES, printed p. 116, the closing
+  essay of the Manual of the Planes: the
+  summary-not-final-word doctrine (any
+  number of realms in a layer, a third
+  or fourth pantheon in Olympus/Arvandor,
+  a DM's evil power in the Hells), the
+  undiscovered layers (an eighth heaven,
+  a third paradise unreachable by known
+  spells, Gladsheim with as many layers
+  as the Abyss but no Abyssal method of
+  reaching them), the growing model (the
+  quasi- and para-elemental planes and
+  Concordant Opposition both late
+  additions), the possible new Astral
+  forms between the outer planes and
+  farther out or within the Opposition's
+  center, the finite world-sized
+  demi-planes floating in the Ethereal,
+  and the alternate Primes - Earth-like
+  or not, familiar, hostile, and strange,
+  the only limitation the imagination of
+  those involved. 0 consts + 6 bools,
+  prefix ddt, header
+  rules/beyondouterplanes.h. ONE flip:
+  gap census 81/9 -> 82/8 (Beyond the
+  outer planes) - THE MANUAL OF THE
+  PLANES IS FULLY CLOSED: every plane,
+  every table, and the closing essay
+  pinned, the whole MotP chapter taken
+  R566-R590. Spec 10,173 bytes, md5
+  b343081bad0430b34aca3d724a3e5121
+  matched exactly first try, 6 inlines.
+  TWENTY-FIVE straight first-tries
+  (R566-R590). NEXT - R591: the gap
+  report's eight remaining boxes belong
+  to later chapters; consult
+  tools/motp_gap_report.md (fetched at
+  1e2f203) for the open list and pick
+  the next chapter's first box.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
