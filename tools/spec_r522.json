@@ -1,0 +1,659 @@
+{
+  "round": 522,
+  "title": "the DSG mine product quality",
+  "census_before": 445,
+  "prefix": "dnqt",
+  "header_file": "rules/dsgmine4.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "inline_count": 38,
+  "banner": {
+    "title": "The DSG QUALITY OF MINE PRODUCTS, R522: printed pp. 50-51 (pdf 51-52) - the metals rules: the quality of the metal or ore equals the coins producible from the metal mined by a single miner in a week (the ore usually heavily mixed with rock, the smelter proficiency processing it to pure state, the rare pure-nugget vein), the Table 33 ore quality grid over the 1d10 roll for five metals (copper 100/200/250/300/350/400/500/750/1000/2000, iron 200/300/500/700/900/1200/1600/2000/3000/4000, silver 25/50/100/200/300/400/500/750/1000/2000, gold 10/25/50/100/200/300/400/500/750/1000, platinum 5/10/20/40/75/100/250/400/800/1000), the pure-vein rule (a 10 on the quality roll means roll again - another 10 is a pure vein requiring no smelting, 1-9 smelts normally), the unsmelted selling (no more than 25%, possibly 5%, by the buyer's transport and smelting difficulty), and the iron equivalences (1000 coins of iron = a full plate suit, 100 spear points, or 500 arrowheads); and the gemstones rules: the rough unrecognized stones identified by miner or jeweler proficiency after 1d6 turns of study, the quality as stones per man-week and average value of the finished stones (Table 34 - bloodstone 2d10 at 20 + 10d6 gp, amber 1d10 at 6d100 gp, onyx 3d10 at 10 + 10d6 gp, turquoise and agate 4d10 at 5d6 gp, aquamarine 1d10 at 10 x 5d6 gp, garnet and alexandrite 1d10 at 100 x 1d4 gp, jade 2d10 at 10 x 5d6 gp, amethyst 1d10 at 100 x 1d6 gp, topaz 2d10 at 100 x 1d4 gp, jet 1d10 at 10 x 5d6 gp, opal 1d10/3 at 200 x 1d6 gp, ruby 1d10/3 at 200 x 1d8 gp, sapphire 1d10/4 at 200 x 1d8 gp, diamond 1d10/5 at 300 x 1d6 gp, emerald 1d10/5 at 300 x 1d8 gp, the footnote rows rolling 1d10 divided by 3/4/5 and rounded up), the unfinished selling (no greater than 25%, possibly 10%), and the weekly value re-roll (the week's quality applying to all miners that week, the miner count set before the rolls)",
+    "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the machine reads are the IA djvu OCR (djvu.txt lines ~6625-6700), the pdf Acrobat-Capture layer (idx 121 = printed pp. 50-51 window, idx 122 = the Table 34 page) and the compiled-tables appendix reprint. THE OCR-FAILURE ROUND: both grids are the garble of the round, and the garbles are text the OCR layers simply failed - the Table 33 copper and iron rows are dropped by every machine read (the appendix keeps only a 2000/4000 tail glimpse), and the Table 34 machine reads lost the stone labels and shuffled the count/value cells into fragments. Both grids were settled by Curtiss reading the physical pages via screenshot: Table 33 from the printed p. 50 screenshot (two vision passes agreeing on all fifty cells; the iron row was read twice digit by digit), Table 34 from two printed p. 51 screenshots with the final contested cell - onyx 10 + 10d6 gp - settled by Curtiss's direct read after the vision passes wobbled the operator and die count. The machine reads corroborate the T33 silver/gold/platinum rows (djvu and Capture agree with the appendix on all three) and the T34 middle rows (the appendix fragments confirm agate 4d10, amethyst 100 x 1d6, topaz 100 x 1d4, emerald 1d10/5 at 300 x 1d8, diamond 1d10/5, the opal/ruby/sapphire 200-multiplier band, and the onyx 10d6 tail). The physical book outranks the scan (the R521 bloodstone lesson, now twice exercised). NOTE: amber appears in Table 34 but not in Table 32's gemstone list - pinned as printed per the R517 never-repair lesson. The quality grids pin as numeric engine tables (T33 five metal columns over ten rolls; T34 seven columns encoding count dice/sides/divisor and value add/mult/dice/sides). The placer-value, smelting and duration rules start the NEXT round per the content-density rule.",
+    "sentinel": "Two tables pin: Table 33 as a 10x5 quality grid (one column per metal, ten rows for the d10 rolls), and Table 34 as a 17x7 grid encoding each stone row as count dice, count sides, divide divisor, value addend, value multiplier, value dice and value sides - the dice expressions pinned as numbers per the R508 dice convention, with the divisor column carrying the /3 /4 /5 footnote rows. The 1d10 ore quality roll and the 1d6-turn identification pin as dice + sides consts. The pure-vein 10, the selling percentages (ore 25/5, stones 25/10) and the iron equivalences (1000/100/500) pin as consts. The smelter processing, the pure-vein rules, the weekly re-roll applying to all miners, and the round-up footnote pin as prose bools. The physical-read provenance is load-bearing for the T33 copper/iron rows and the T34 top rows; the R517 seam (amber absent from Table 32) is noted; nothing auto-credits."
+  },
+  "include_after": "#include \"rules/dsgmine3.h\"  // R521: the DSG mining products pins",
+  "include_comment": "the DSG mine product quality pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "audit_comment": "The DSG mine product quality pins the ore quality roll (the Table 33 five-metal d10 coins-per-man-week grid - copper 100 through 2000, iron 200 through 4000, silver 25 through 2000, gold 10 through 1000, platinum 5 through 1000), the pure-vein rule (the 10-again roll, another 10 needing no smelting, 1-9 smelting normally), the unsmelted ore selling at 25% to 5%, the iron equivalences (1000 coins a plate suit, 100 spear points, 500 arrowheads), and the gemstone quality (the Table 34 seventeen rows from bloodstone 2d10 at 20 + 10d6 gp through emerald 1d10/5 at 300 x 1d8 gp, the 1d6-turn identification, the unfinished selling at 25% to 10%, and the weekly re-roll applying to all miners that week).",
+  "audit_label": "R522 DSG mine product quality audit",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R521 LANDED 2026-10-17: commit a8503d2 (census 444 -> 445,",
+  "prev_record": [
+    "- R521 LANDED 2026-10-17: commit a8503d2 (census 444 -> 445,",
+    "  pushed e0581a7..a8503d2), THE DSG MINING PRODUCTS OF A MINE,",
+    "  printed p. 50 (pdf 51) - the products rules: the 1d100",
+    "  products roll on Table 30 when a miner successfully locates",
+    "  minerals (the nine bands - copper 01-30, tin 31-40, lead",
+    "  41-66, iron 67-84, silver 85-92, gold 93-97, platinum 98,",
+    "  mithril 99, gemstones 00), the mithril possibility (the",
+    "  elven-chain-mail material, a mithril mine only deep under",
+    "  the earth in the most solid of bedrock - if the locale",
+    "  qualifies the player rolls 1d10 on Table 31 Mithril Check,",
+    "  otherwise rerolls on Table 30; silver, gold and platinum at",
+    "  highest quality on 1-5/6-8/9, mithril on 10), and the",
+    "  gemstone determination on Table 32 (sixteen stone types -",
+    "  bloodstone 01-08, onyx 09-18, turquoise 19-24, agate 25-30,",
+    "  aquamarine 31-36, garnet 37-42, jade 43-48, alexandrite",
+    "  49-54, amethyst 55-60, topaz 61-66, jet 67-72, opal 73-77,",
+    "  ruby 78-82, sapphire 83-87, diamond 88-92, emerald 93-96,",
+    "  with 97-99 rolling twice and 00 rolling three times - the",
+    "  97-or-greater result grants its additional rolls",
+    "  immediately, any additional 97+ grants them again with no",
+    "  limit, a duplicated substance is noted as Jade x2 and",
+    "  yields twice the usual amount, and one quality level",
+    "  applies to all stones of a single type in a mine). THE",
+    "  BLOODSTONE LESSON: the Table 32 01-08 row is the garble of",
+    "  the round - the djvu drops the row entirely, the Capture",
+    "  layer renders a \"-1/^^\" fragment, and the appendix reprint",
+    "  drops it too; all three machine reads fail the row, and",
+    "  Curtiss's physical read of printed p. 50 settled it as",
+    "  01-08 BLOODSTONE - the physical book outranks the scan",
+    "  (standing rule, now exercised once). The 1d10 mithril",
+    "  check pins as dice + sides consts (the djvu \"1410\" and",
+    "  Capture \"ldlO\" garbles both read as 1d10); the 00 bands",
+    "  pin as roll 100. Pinned as rules/dsgmine3.h (prefix dnpr,",
+    "  4-char because every dn? 3-char slot is taken; 23",
+    "  inlines - 8 consts, 9 bools, 6 table cols; Tables 30/31/",
+    "  32). Spec 19,747 bytes, md5 fc81fc406623a27aa608873b0bc8a678",
+    "  (user-side identical - no ./bn rewrite). Engine applied 8",
+    "  then 0/8. Gap 105/50 -> 109/46 (4 flips: the Products child",
+    "  125 and manifest lines Tables 30/31/32). NEXT - R522:",
+    "  quality of mine products (printed pp. 50-51, pdf 51-52) -",
+    "  Table 33 Ore Quality (the d10 grid - copper 200/300/350/",
+    "  700/900/1100/1400/1600/1800/2000-4000, silver 25/50/100/",
+    "  200/300/400/500/750/1000/2000, gold 10/25/50/100/200/300/",
+    "  400/500/750/1000, platinum 5/10/20/40/75/100/250/400/800/",
+    "  1000 - the 10-then-10 pure-vein rule and the 25%-to-5%",
+    "  unsmelted ore selling) and Table 34 Gemstone Quality (the",
+    "  per-man-week counts and average values, Agate 4d10 10 x",
+    "  1d6 gp through Emerald 1d10/5 300 x 1d8 gp and Diamond",
+    "  1d10/5, with the unfinished-stones 25%-to-10% selling, the",
+    "  weekly re-roll applying to all miners that week); djvu from",
+    "  ~line 6625, Capture idx 121-122; gap children 126-127,",
+    "  manifest Tables 33/34."
+  ],
+  "gap_census": {
+    "closed": 112,
+    "open": 43
+  },
+  "gap_flips": [
+    {
+      "from": "  - [ ] Mining: quality of mining products (pp. 50-51) - Tables 33-34 (the ore/gemstone quality grids)",
+      "to": "  - [x] Mining: quality of mining products (pp. 50-51) - Tables 33-34 (the ore/gemstone quality grids) - R522: the 1d10 ore quality roll (T33 - five metals from copper 100..2000 and iron 200..4000 through platinum 5..1000 coins per man-week, the 10-again pure vein, the unsmelted 25%-to-5% selling, the 1000-coin iron equivalences), and the gemstone quality grid (T34 - seventeen stones in count and average value from bloodstone 2d10 at 20 + 10d6 gp through emerald 1d10/5 at 300 x 1d8 gp, the 1d6-turn identification, the unfinished 25%-to-10% selling, and the weekly re-roll applying to all miners that week; the iron row and both grids settled by the physical/screenshot reads after OCR failed them)",
+      "note": "the Quality child line"
+    },
+    {
+      "from": "- [ ] Table 33: Ore Quality (p. 50)",
+      "to": "- [x] Table 33: Ore Quality (p. 50) - R522: the d10 coins-per-man-week grid - copper 100/200/250/300/350/400/500/750/1000/2000, iron 200/300/500/700/900/1200/1600/2000/3000/4000, silver 25/50/100/200/300/400/500/750/1000/2000, gold 10/25/50/100/200/300/400/500/750/1000, platinum 5/10/20/40/75/100/250/400/800/1000 (the iron row settled by the physical read - every machine read dropped it)",
+      "note": "the Table 33 manifest line"
+    },
+    {
+      "from": "- [ ] Table 34: Gemstone Quality (p. 51)",
+      "to": "- [x] Table 34: Gemstone Quality (p. 51) - R522: the seventeen stone rows - bloodstone 2d10 at 20 + 10d6 gp, amber 1d10 at 6d100 gp, onyx 3d10 at 10 + 10d6 gp, turquoise/agate 4d10 at 5d6 gp, aquamarine 1d10 at 10 x 5d6 gp, garnet/alexandrite 1d10 at 100 x 1d4 gp, jade 2d10 at 10 x 5d6 gp, amethyst 1d10 at 100 x 1d6 gp, topaz 2d10 at 100 x 1d4 gp, jet 1d10 at 10 x 5d6 gp, opal 1d10/3 at 200 x 1d6 gp, ruby 1d10/3 at 200 x 1d8 gp, sapphire 1d10/4 at 200 x 1d8 gp, diamond 1d10/5 at 300 x 1d6 gp, emerald 1d10/5 at 300 x 1d8 gp (the footnote rows divide the 1d10 by 3/4/5 and round up)",
+      "note": "the Table 34 manifest line"
+    }
+  ],
+  "consts": [
+    {
+      "name": "dnqtT33RowCount",
+      "value": 10,
+      "comment": "the Table 33 ore quality grid carries the ten d10 quality rolls."
+    },
+    {
+      "name": "dnqtT34RowCount",
+      "value": 17,
+      "comment": "the Table 34 gemstone quality grid carries seventeen stone rows."
+    },
+    {
+      "name": "dnqtOreQualityDice",
+      "value": 1,
+      "comment": "the ore quality roll is one die."
+    },
+    {
+      "name": "dnqtOreQualitySides",
+      "value": 10,
+      "comment": "the ore quality roll is 1d10 compared on Table 33; the result is the coins of metal the mine yields in one man-week."
+    },
+    {
+      "name": "dnqtOrePureVeinRoll",
+      "value": 10,
+      "comment": "a 10 on the quality roll means roll 1d10 again; another 10 is a pure vein of metal."
+    },
+    {
+      "name": "dnqtUnsmeltedOreSellMaxPct",
+      "value": 25,
+      "comment": "ore sold without smelting brings no more than 25% of the pure metal value."
+    },
+    {
+      "name": "dnqtUnsmeltedOreSellMinPct",
+      "value": 5,
+      "comment": "unsmelted ore might bring as low as 5% of the pure metal worth."
+    },
+    {
+      "name": "dnqtIronCoinPlate",
+      "value": 1000,
+      "comment": "one thousand coins worth of iron equals a full suit of plate armor."
+    },
+    {
+      "name": "dnqtIronCoinSpearPoints",
+      "value": 100,
+      "comment": "one thousand coins worth of iron equals 100 spear points."
+    },
+    {
+      "name": "dnqtIronCoinArrowheads",
+      "value": 500,
+      "comment": "one thousand coins worth of iron equals 500 arrowheads."
+    },
+    {
+      "name": "dnqtStoneIdentifyDice",
+      "value": 1,
+      "comment": "the stone identification study is one die of turns (miner or jeweler proficiency)."
+    },
+    {
+      "name": "dnqtStoneIdentifySides",
+      "value": 6,
+      "comment": "a proficient character identifies a rough stone after 1d6 turns of study; others simply see another rock."
+    },
+    {
+      "name": "dnqtUnfinishedStonesSellMaxPct",
+      "value": 25,
+      "comment": "unfinished stones sell for no greater than 25% of the listed value."
+    },
+    {
+      "name": "dnqtUnfinishedStonesSellMinPct",
+      "value": 10,
+      "comment": "unfinished stones might sell for as low as 10% of the listed value."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dnqtOreMixedWithRock",
+      "value": true,
+      "comment": "a metal mine usually yields the metal in its ore form, heavily mixed with rock."
+    },
+    {
+      "name": "dnqtSmelterPurifies",
+      "value": true,
+      "comment": "generally a character with smelter proficiency must process the ore to its pure metallic state (a very pure nugget vein may occasionally be discovered)."
+    },
+    {
+      "name": "dnqtQualityCoinsPerMinerWeek",
+      "value": true,
+      "comment": "the quality of the metal or ore equals the number of coins producible from the metal mined by a single miner in a week."
+    },
+    {
+      "name": "dnqtPureVeinNeedsNoSmelting",
+      "value": true,
+      "comment": "a 10 followed by another 10 on the quality roll is a pure vein of metal requiring no smelting."
+    },
+    {
+      "name": "dnqtPureVeinSmeltOtherwise",
+      "value": true,
+      "comment": "if the second quality roll is 1-9, the metal must be smelted normally."
+    },
+    {
+      "name": "dnqtCoinageIndicatesMetalAmount",
+      "value": true,
+      "comment": "the coinage amount indicates how much metal is produced - it does not mean the metal must be used to make coins (particularly true of iron)."
+    },
+    {
+      "name": "dnqtStonesRoughUnrecognized",
+      "value": true,
+      "comment": "gemstones fresh from the mine are rough, often unrecognizable, and not nearly as valuable as after finishing."
+    },
+    {
+      "name": "dnqtMinerOrJewelerIdentifies",
+      "value": true,
+      "comment": "characters with miner or jeweler proficiency can correctly identify a stone after study; others simply see another rock."
+    },
+    {
+      "name": "dnqtStoneCountPerMinerWeek",
+      "value": true,
+      "comment": "the number of stones is the amount that one miner can excavate in a week; the value is the average for the finished stones."
+    },
+    {
+      "name": "dnqtStoneValueRolledEachWeek",
+      "value": true,
+      "comment": "the value of a gemstone find does not remain constant - it is rolled each week for that week's output."
+    },
+    {
+      "name": "dnqtQualityAppliesAllMinersWeek",
+      "value": true,
+      "comment": "the quality determined for the week applies to all miners working that entire week, and the number of miners is determined before the dice rolls."
+    },
+    {
+      "name": "dnqtDivideAndRoundUp",
+      "value": true,
+      "comment": "for the Table 34 division rows, roll 1d10, divide the result by 3, 4, or 5 as indicated, and round up."
+    }
+  ],
+  "chains": [],
+  "tables": [
+    {
+      "name": "Table 33: ORE QUALITY",
+      "tag": "33",
+      "count": "dnqtT33RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnqtT33Copper",
+        "dnqtT33Iron",
+        "dnqtT33Silver",
+        "dnqtT33Gold",
+        "dnqtT33Platinum"
+      ],
+      "col_comments": [
+        "the copper coins per man-week by d10 roll 1-10: 100, 200, 250, 300, 350, 400, 500, 750, 1000, 2000 (physical read; the machine reads lost the copper row).",
+        "the iron coins per man-week: 200, 300, 500, 700, 900, 1200, 1600, 2000, 3000, 4000 (physical read; the iron row is dropped by every machine read - the appendix keeps only the 2000/4000 tail glimpses).",
+        "the silver coins per man-week: 25, 50, 100, 200, 300, 400, 500, 750, 1000, 2000.",
+        "the gold coins per man-week: 10, 25, 50, 100, 200, 300, 400, 500, 750, 1000.",
+        "the platinum coins per man-week: 5, 10, 20, 40, 75, 100, 250, 400, 800, 1000."
+      ],
+      "audit_comment": "the Table 33 ore quality grid, the 1d10 coins-per-man-week rolls for five metals",
+      "data": [
+        [
+          100,
+          200,
+          25,
+          10,
+          5
+        ],
+        [
+          200,
+          300,
+          50,
+          25,
+          10
+        ],
+        [
+          250,
+          500,
+          100,
+          50,
+          20
+        ],
+        [
+          300,
+          700,
+          200,
+          100,
+          40
+        ],
+        [
+          350,
+          900,
+          300,
+          200,
+          75
+        ],
+        [
+          400,
+          1200,
+          400,
+          300,
+          100
+        ],
+        [
+          500,
+          1600,
+          500,
+          400,
+          250
+        ],
+        [
+          750,
+          2000,
+          750,
+          500,
+          400
+        ],
+        [
+          1000,
+          3000,
+          1000,
+          750,
+          800
+        ],
+        [
+          2000,
+          4000,
+          2000,
+          1000,
+          1000
+        ]
+      ]
+    },
+    {
+      "name": "Table 34: GEMSTONE QUALITY",
+      "tag": "34",
+      "count": "dnqtT34RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnqtT34CountDice",
+        "dnqtT34CountSides",
+        "dnqtT34CountDiv",
+        "dnqtT34ValAdd",
+        "dnqtT34ValMult",
+        "dnqtT34ValDice",
+        "dnqtT34ValSides"
+      ],
+      "col_comments": [
+        "the stones-per-man-week die count, in the printed row order bloodstone through emerald: 2, 1, 3, 4, 4, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1.",
+        "the stones-per-man-week die sides: d10 throughout.",
+        "the divide-and-round-up divisor (the footnote rows): 1 everywhere except opal 3, ruby 3, sapphire 4, diamond 5, emerald 5.",
+        "the additive base of the average value: bloodstone 20 (20 + 10d6 gp), onyx 10 (10 + 10d6 gp), all other rows 0.",
+        "the average-value multiplier: 1 except aquamarine 10, garnet 100, jade 10, alexandrite 100, amethyst 100, topaz 100, jet 10, opal 200, ruby 200, sapphire 200, diamond 300, emerald 300.",
+        "the average-value die count: bloodstone 10, amber 6, onyx 10, turquoise 5, agate 5, aquamarine 5, garnet 1, jade 5, alexandrite 1, amethyst 1, topaz 1, jet 5, opal 1, ruby 1, sapphire 1, diamond 1, emerald 1.",
+        "the average-value die sides: 6, 100, 6, 6, 6, 6, 4, 6, 4, 6, 4, 6, 6, 8, 8, 6, 8 (amber 6d100 gp; the printed order is as pinned)."
+      ],
+      "audit_comment": "the Table 34 gemstone quality grid, the seventeen stone rows in count and average value",
+      "data": [
+        [
+          2,
+          10,
+          1,
+          20,
+          1,
+          10,
+          6
+        ],
+        [
+          1,
+          10,
+          1,
+          0,
+          1,
+          6,
+          100
+        ],
+        [
+          3,
+          10,
+          1,
+          10,
+          1,
+          10,
+          6
+        ],
+        [
+          4,
+          10,
+          1,
+          0,
+          1,
+          5,
+          6
+        ],
+        [
+          4,
+          10,
+          1,
+          0,
+          1,
+          5,
+          6
+        ],
+        [
+          1,
+          10,
+          1,
+          0,
+          10,
+          5,
+          6
+        ],
+        [
+          1,
+          10,
+          1,
+          0,
+          100,
+          1,
+          4
+        ],
+        [
+          2,
+          10,
+          1,
+          0,
+          10,
+          5,
+          6
+        ],
+        [
+          1,
+          10,
+          1,
+          0,
+          100,
+          1,
+          4
+        ],
+        [
+          1,
+          10,
+          1,
+          0,
+          100,
+          1,
+          6
+        ],
+        [
+          2,
+          10,
+          1,
+          0,
+          100,
+          1,
+          4
+        ],
+        [
+          1,
+          10,
+          1,
+          0,
+          10,
+          5,
+          6
+        ],
+        [
+          1,
+          10,
+          3,
+          0,
+          200,
+          1,
+          6
+        ],
+        [
+          1,
+          10,
+          3,
+          0,
+          200,
+          1,
+          8
+        ],
+        [
+          1,
+          10,
+          4,
+          0,
+          200,
+          1,
+          8
+        ],
+        [
+          1,
+          10,
+          5,
+          0,
+          300,
+          1,
+          6
+        ],
+        [
+          1,
+          10,
+          5,
+          0,
+          300,
+          1,
+          8
+        ]
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "expr": "m['dnqtOreQualityDice']() != 1 or m['dnqtOreQualitySides']() != 10 or m['dnqtOrePureVeinRoll']() != 10 or m['dnqtStoneIdentifyDice']() != 1 or m['dnqtStoneIdentifySides']() != 6",
+      "note": "the rolls: the 1d10 ore quality roll with the roll-again pure vein 10, and the 1d6-turn stone identification study."
+    },
+    {
+      "expr": "m['dnqtUnsmeltedOreSellMaxPct']() != 25 or m['dnqtUnsmeltedOreSellMinPct']() != 5 or m['dnqtUnfinishedStonesSellMaxPct']() != 25 or m['dnqtUnfinishedStonesSellMinPct']() != 10 or m['dnqtIronCoinPlate']() != 1000 or m['dnqtIronCoinSpearPoints']() != 100 or m['dnqtIronCoinArrowheads']() != 500",
+      "note": "the selling and equivalence numbers: unsmelted ore 25%-5%, unfinished stones 25%-10%, and the 1000-coin iron equivalents (plate suit, 100 spear points, 500 arrowheads)."
+    },
+    {
+      "expr": "m['dnqtQualityCoinsPerMinerWeek']() != 1 or m['dnqtPureVeinNeedsNoSmelting']() != 1 or m['dnqtPureVeinSmeltOtherwise']() != 1 or m['dnqtStoneValueRolledEachWeek']() != 1 or m['dnqtQualityAppliesAllMinersWeek']() != 1 or m['dnqtDivideAndRoundUp']() != 1",
+      "note": "the quality prose: coins per single miner per week, the pure-vein 10-again rule, the weekly value re-roll applying to all miners that week, and the divide-and-round-up footnote."
+    }
+  ],
+  "table_checks": [
+    {
+      "expr": "m['dnqtT33Copper'](0) != 100 or m['dnqtT33Copper'](9) != 2000 or m['dnqtT33Iron'](0) != 200 or m['dnqtT33Iron'](9) != 4000 or m['dnqtT33Platinum'](0) != 5 or m['dnqtT33Platinum'](9) != 1000",
+      "note": "Table 33 anchor rows: copper 100/2000 at rolls 1/10, iron 200/4000 (the machine-reads-missing row), platinum 5/1000."
+    },
+    {
+      "expr": "m['dnqtT34ValAdd'](0) != 20 or m['dnqtT34ValDice'](0) != 10 or m['dnqtT34ValSides'](0) != 6 or m['dnqtT34ValAdd'](2) != 10 or m['dnqtT34ValDice'](2) != 10 or m['dnqtT34ValSides'](2) != 6 or m['dnqtT34ValSides'](1) != 100",
+      "note": "Table 34 anchor rows: bloodstone 20 + 10d6 gp, onyx 10 + 10d6 gp (both settled by the physical read), amber 6d100 gp."
+    },
+    {
+      "expr": "m['dnqtT34CountDiv'](12) != 3 or m['dnqtT34CountDiv'](14) != 4 or m['dnqtT34CountDiv'](15) != 5 or m['dnqtT34CountDiv'](16) != 5 or m['dnqtT34ValMult'](16) != 300 or m['dnqtT34ValSides'](16) != 8",
+      "note": "Table 34 footnote rows: opal /3, sapphire /4, diamond /5, emerald /5 with 300 x 1d8 gp."
+    }
+  ],
+  "header_sections": {
+    "the Table 33 ore quality grid": [
+      {
+        "kind": "bool",
+        "name": "dnqtOreMixedWithRock"
+      },
+      {
+        "kind": "bool",
+        "name": "dnqtSmelterPurifies"
+      },
+      {
+        "kind": "bool",
+        "name": "dnqtQualityCoinsPerMinerWeek"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtOreQualityDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtOreQualitySides"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtT33RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 33: ORE QUALITY"
+      }
+    ],
+    "the pure vein and the selling of ore": [
+      {
+        "kind": "bool",
+        "name": "dnqtPureVeinNeedsNoSmelting"
+      },
+      {
+        "kind": "bool",
+        "name": "dnqtPureVeinSmeltOtherwise"
+      },
+      {
+        "kind": "bool",
+        "name": "dnqtCoinageIndicatesMetalAmount"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtOrePureVeinRoll"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtUnsmeltedOreSellMaxPct"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtUnsmeltedOreSellMinPct"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtIronCoinPlate"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtIronCoinSpearPoints"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtIronCoinArrowheads"
+      }
+    ],
+    "the Table 34 gemstone quality grid": [
+      {
+        "kind": "bool",
+        "name": "dnqtStonesRoughUnrecognized"
+      },
+      {
+        "kind": "bool",
+        "name": "dnqtMinerOrJewelerIdentifies"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtStoneIdentifyDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtStoneIdentifySides"
+      },
+      {
+        "kind": "bool",
+        "name": "dnqtStoneCountPerMinerWeek"
+      },
+      {
+        "kind": "bool",
+        "name": "dnqtStoneValueRolledEachWeek"
+      },
+      {
+        "kind": "bool",
+        "name": "dnqtQualityAppliesAllMinersWeek"
+      },
+      {
+        "kind": "bool",
+        "name": "dnqtDivideAndRoundUp"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtUnfinishedStonesSellMaxPct"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtUnfinishedStonesSellMinPct"
+      },
+      {
+        "kind": "const",
+        "name": "dnqtT34RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 34: GEMSTONE QUALITY"
+      }
+    ]
+  },
+  "caller_files": []
+}

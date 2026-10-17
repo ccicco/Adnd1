@@ -7085,6 +7085,58 @@ when both halves land.
   Table 30 plus the mithril/gemstone Tables 31-32 grids;
   djvu from ~line 6588, Capture idx 67-68; gap children
   125-126, manifest Tables 30/31/32.
+- R521 LANDED 2026-10-17: commit a8503d2 (census 444 -> 445,
+  pushed e0581a7..a8503d2), THE DSG MINING PRODUCTS OF A MINE,
+  printed p. 50 (pdf 51) - the products rules: the 1d100
+  products roll on Table 30 when a miner successfully locates
+  minerals (the nine bands - copper 01-30, tin 31-40, lead
+  41-66, iron 67-84, silver 85-92, gold 93-97, platinum 98,
+  mithril 99, gemstones 00), the mithril possibility (the
+  elven-chain-mail material, a mithril mine only deep under
+  the earth in the most solid of bedrock - if the locale
+  qualifies the player rolls 1d10 on Table 31 Mithril Check,
+  otherwise rerolls on Table 30; silver, gold and platinum at
+  highest quality on 1-5/6-8/9, mithril on 10), and the
+  gemstone determination on Table 32 (sixteen stone types -
+  bloodstone 01-08, onyx 09-18, turquoise 19-24, agate 25-30,
+  aquamarine 31-36, garnet 37-42, jade 43-48, alexandrite
+  49-54, amethyst 55-60, topaz 61-66, jet 67-72, opal 73-77,
+  ruby 78-82, sapphire 83-87, diamond 88-92, emerald 93-96,
+  with 97-99 rolling twice and 00 rolling three times - the
+  97-or-greater result grants its additional rolls
+  immediately, any additional 97+ grants them again with no
+  limit, a duplicated substance is noted as Jade x2 and
+  yields twice the usual amount, and one quality level
+  applies to all stones of a single type in a mine). THE
+  BLOODSTONE LESSON: the Table 32 01-08 row is the garble of
+  the round - the djvu drops the row entirely, the Capture
+  layer renders a "-1/^^" fragment, and the appendix reprint
+  drops it too; all three machine reads fail the row, and
+  Curtiss's physical read of printed p. 50 settled it as
+  01-08 BLOODSTONE - the physical book outranks the scan
+  (standing rule, now exercised once). The 1d10 mithril
+  check pins as dice + sides consts (the djvu "1410" and
+  Capture "ldlO" garbles both read as 1d10); the 00 bands
+  pin as roll 100. Pinned as rules/dsgmine3.h (prefix dnpr,
+  4-char because every dn? 3-char slot is taken; 23
+  inlines - 8 consts, 9 bools, 6 table cols; Tables 30/31/
+  32). Spec 19,747 bytes, md5 fc81fc406623a27aa608873b0bc8a678
+  (user-side identical - no ./bn rewrite). Engine applied 8
+  then 0/8. Gap 105/50 -> 109/46 (4 flips: the Products child
+  125 and manifest lines Tables 30/31/32). NEXT - R522:
+  quality of mine products (printed pp. 50-51, pdf 51-52) -
+  Table 33 Ore Quality (the d10 grid - copper 200/300/350/
+  700/900/1100/1400/1600/1800/2000-4000, silver 25/50/100/
+  200/300/400/500/750/1000/2000, gold 10/25/50/100/200/300/
+  400/500/750/1000, platinum 5/10/20/40/75/100/250/400/800/
+  1000 - the 10-then-10 pure-vein rule and the 25%-to-5%
+  unsmelted ore selling) and Table 34 Gemstone Quality (the
+  per-man-week counts and average values, Agate 4d10 10 x
+  1d6 gp through Emerald 1d10/5 300 x 1d8 gp and Diamond
+  1d10/5, with the unfinished-stones 25%-to-10% selling, the
+  weekly re-roll applying to all miners that week); djvu from
+  ~line 6625, Capture idx 121-122; gap children 126-127,
+  manifest Tables 33/34.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
