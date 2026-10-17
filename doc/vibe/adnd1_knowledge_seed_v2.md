@@ -6961,6 +6961,54 @@ when both halves land.
   draught and ceilings, nonproficiency penalties, collision
   probability, boat damage) - a table-heavy round; djvu
   from line ~5963, Capture idx 63-64 hold the reprints.
+- R518 LANDED 2026-10-17: commit 5c2c04d (census 441 -> 442,
+  pushed 567d81f..5c2c04d), the DSG UNDERGROUND WATER
+  TRAVEL, printed pp. 46-48 (pdf 47-49) - SIX TABLES in one
+  round, the most since the cave-in arcs: T21 movement
+  rates (small rowboat 90/120 through large barge 20/30 to
+  small canoe and kayak 120/180), T22 standstill rounds
+  (1/3 to the large barge 5/10), T23 draught/ceilings (the
+  fractions pinned AS WHOLE UNITS - draught in inches,
+  ceiling in half-feet, so 1/3 ft = 4 in and 1 1/2 ft = 3
+  half-feet), T24 nonproficiency (movement -30 to -60 as
+  positive magnitudes per the R514 convention, capsize
+  5/10/0/0/0/20/10/25% - djvu garble 2096 = 20%), T25
+  collision probability (narrow 1/5/20 vs 10/20/40,
+  average, wide; keyed width x 3 + flow), T26 the eight
+  damage bands (01-05 through 99-00, hull-split 45-60
+  pinned AS PRINTED, overlapping 21-45 at 45 - the R517
+  pin-as-printed lesson). Prose pins: the 60-ft stream /
+  90-ft canoe netting 30 upstream and 150 downstream, the
+  5%-per-30-ft collision damage math (90 ft = 15%, the 05
+  roll = 10% hull damage), the drop-off 5%/foot damage and
+  capsize, the 99/00 miraculous survival, the Proficiency
+  Check capsize save, bailing canceling one small hole,
+  the 1d4-round refloat, the DMG p. 54 and DSG p. 25
+  boatwright seams. The djvu table columns garbled heavily
+  (ftir, bargelraft, 112ft/114/113 ft, dlOO, 4100); all
+  six grids RECONSTRUCTED POSITIONALLY from the Capture
+  Tm coordinates - the standard dual-read fallback when
+  both layers garble a column layout. Tables 21-24 share
+  one boat key order (noted in the sentinel). Pinned as
+  rules/dsgboat.h (prefix dnu, verified free; 71 inlines:
+  29 consts + 30 bools + 12 table cols; every effect die
+  as dice+sides consts per the R508 convention). Gap
+  90/65 -> 97/58: 7 flips - the water-travel child + all
+  six table manifest lines. STAGING LESSON: the engine
+  wrote the seed before dying on a missing rules/ dir
+  (mixed applied/already state, the R420 abort caught it);
+  always mkdir rules/ BEFORE the first engine run on a
+  fresh staging tree, and restore the seed from origin
+  before re-running. DELIVERY: canvas r518-splice,
+  authored md5 5e71453a (41613 bytes); user ran ./bn 518
+  manually per the standing rule - user-side md5
+  e1536074, the rewrite class, engine ALL OK twice
+  (applied 11/0 then 0/11); preflight GREEN with the
+  quiet display, BUILD: 0 warnings, AUDIT CENSUS: 442.
+  NEXT - R519: Mining begins - Where to Mine (p. 48, the
+  prospecting rules) + possibly Types of Mines (p. 49,
+  the vein/placer taxonomy); djvu from line ~6209, Capture
+  idx 65+ holds the mining chapter.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
