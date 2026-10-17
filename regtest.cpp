@@ -23621,9 +23621,11 @@ int main() {
                 if (spelleffects::statusName(
                         (spelleffects::StatusKind)k)
                     == nullptr) ++bad;
-            if (spelleffects::statusName(
-                    spelleffects::STATUS_WATERBREATHING)
-                != "Breathing") ++bad;
+            // R515: a strcmp, not a pointer compare against the literal
+            // (the old != "Breathing" checked identity, not content).
+            if (std::strcmp(spelleffects::statusName(
+                    spelleffects::STATUS_WATERBREATHING),
+                    "Breathing") != 0) ++bad;
         }
         printf("R320 breathing aids audit: bad %d\n", bad);
         if (bad) return 1;

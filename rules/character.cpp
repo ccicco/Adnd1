@@ -41,6 +41,7 @@ void AbilityScores::set(Ability a, uint8_t v) {
         case ABILITY_DEX: dex  = v; break;
         case ABILITY_CON: con  = v; break;
         case ABILITY_CHA: cha  = v; break;
+        default: break;  // R515: ABILITY_COUNT is never set (the getter has its default)
     }
 }
 

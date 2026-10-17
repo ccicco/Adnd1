@@ -72,7 +72,16 @@ echo "== [2/5] regtest build + battery (fresh binary) =="
 # R112c: tee keeps stdout byte-identical while the census gate
 # below reads the copy; PIPESTATUS keeps regtest's own exit
 # code authoritative (a failed battery still ends RED).
+# R515: the quiet battery display - green audit lines are
+# filtered from the TERMINAL VIEW ONLY; tee still writes the
+# complete output to $batfile, so the census gate below sees
+# every audit line exactly as before. A nonzero bad count does
+# not match the filter and stays visible. The build's stderr is
+# captured for the warning gate: the build is warning-clean as
+# of R515 (the character.cpp -Wswitch and regtest.cpp
+# -Wstring-compare fixes), so ANY warning now ends RED.
 batfile=$(mktemp)
+warnfile=$(mktemp)
 if g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
   rules/dice.cpp rules/character.cpp rules/classes.cpp rules/combat.cpp \
   rules/saves.cpp rules/turn.cpp rules/races.cpp \
@@ -84,11 +93,20 @@ if g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
   game/state_overland.cpp game/state_sea.cpp \
   monsters/MonsterXp.cpp \
   spelleffects/spelleffects.cpp regtest.cpp \
-  -o regtest -L"$PREFIX/lib" -llua5.4 && ./regtest | tee "$batfile"; then
+  -o regtest -L"$PREFIX/lib" -llua5.4 2>"$warnfile" \
+  && ./regtest | tee "$batfile" | grep -v 'audit: bad 0$'; then
   [ "${PIPESTATUS[0]}" = 0 ] || fail=1
 else
   fail=1
 fi
+if [ -s "$warnfile" ]; then
+  echo "WARN FAIL: the battery build emitted warnings (the R515 warning-clean rule):"
+  cat "$warnfile"
+  fail=1
+else
+  echo "BUILD: 0 warnings (the R515 warning gate)"
+fi
+rm -f "$warnfile"
 
 echo "== [3/5] battery audit census (R112c) =="
 # Every audit printf pattern is read FROM regtest.cpp itself,
