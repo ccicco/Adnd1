@@ -9587,6 +9587,37 @@ when both halves land.
   36-41) - the City of Brass, the efreet, the
   phenomena, the pockets, the survival; then
   Earth and Water.
+- R569 LANDED 2026-10-17: commit 2c45a96a7e2d488b46c8
+  0bd1d47305451643978d (census 492 -> 493,
+  pushed 2e16f64..2c45a96), THE MotP PLANE OF
+  ELEMENTAL FIRE, printed pp. 36-41 - the whole
+  plane chapter in one round: the hellish
+  doctrine with the four border gradations
+  (Smoke, Magma, Radiance, Ash), the survival
+  ladder (breath-save-or-die with 4d10/round
+  survivors, melting metal, boiling fluids,
+  the thin hot atmosphere), 120-foot vision,
+  the 1-in-10-per-eight-hours check, the d12
+  phenomena (hot spots with native healing,
+  cold spots, the 2000-yard eruption, the
+  explosion field), the d20 pocket table (the
+  purest plane), the d8+d12 encounter chart
+  (Imix on 2, efreeti on 11, salamanders on
+  13), the native cold/water vulnerabilities
+  (the 100-degree threshold, 1d6 per quart),
+  the magic rule, and the features (Imix,
+  Kossuth, the 40-mile City of Brass, the
+  azer towers of Amaimon, the spiraling-flame
+  artifact). 8 consts + 5 bools, prefix dcx,
+  header rules/motpfire.h. THREE flips: gap
+  census 25/65 -> 28/62. Spec 11,621 bytes,
+  md5 eb56ba89eb9c9a1a7f95c79d29409846
+  matched exactly first try, 13 inlines. NEXT -
+  R570: the Plane of Elemental Earth (pp.
+  41-46) - survival (breathing, the weight),
+  movement through stone, the encounter
+  context, the pockets, magic, the features;
+  then Water closes the four majors.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

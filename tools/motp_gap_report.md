@@ -68,7 +68,7 @@ sample entries verified against the canonical PHB levels).
   - [x] The inner planes in general (pp. 22-31) - reaching, survival, movement, encounters, combat, magic, the player characters, and the indifference-to-alignment doctrine - R567: the sphere arrangement, the hostility, the reaching, the survival, the gravity, the guides and the decay rule
   - [x] The Plane of Elemental Air (pp. 31-36) - survival, encounters, movement, combat, magic, features - R568: the hospitable-plane doctrine, the borders, the survival, the phenomena, the pockets, the encounter chart, the magic and the features
   - [x] The Plane of Elemental Fire (pp. 36-41) - survival, movement, encounters, magic, features - R569: the hellish doctrine, the borders, the survival, the phenomena, the pockets, the encounter chart, the magic and the features (Imix, Kossuth, the City of Brass, the azer, the spiraling flame)
-  - [ ] The Plane of Elemental Earth (pp. 41-46) - survival, movement, encounters, combat, magic, features
+  - [x] The Plane of Elemental Earth (pp. 41-46) - survival, movement, encounters, combat, magic, features - R570: the least-hospitable doctrine, the survival, the Strength movement ladder, the phenomena, the pockets, the native passwall doctrine, the magic and the features (Ogremoch, Grumbar, the dao and the Great Dismal Delve)
   - [ ] The Plane of Elemental Water (pp. 46-51) - survival, movement, encounters, combat, magic, features
   - [ ] The Para-Elemental Planes (pp. 51-54) - smoke, magma, ooze, ice: survival, encounters, movement, combat, magic, features
   - [ ] The Energy Planes (p. 54) - Positive and Negative Energy
