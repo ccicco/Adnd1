@@ -10590,6 +10590,58 @@ when both halves land.
   parent-plus-children one-round pattern;
   OCR source pages 118-120 already
   gathered).
+- R592 LANDED 2026-10-17: commit
+  542cc2f73a5e885c92440796a329c25cb
+  08f44f9 (census 515 -> 516, pushed
+  d1cd2af..542cc2f), APPENDIX I: THE
+  PRIME MATERIAL PLANES, printed pp.
+  117-119, the Alternate Primes doctrine
+  in one round: the Polyverse and the
+  three factors (physical magical
+  temporal, the home Prime at 0,0,0),
+  the reaching (the per-Prime Ethereals
+  with the inner-plane relay, the Astral
+  direct, the plane shift tuning fork,
+  the amulet of the planes and the well
+  of many worlds, the guarded gates, the
+  psionic probability travel), the
+  physical-factor roll (1d10 value, 1d4
+  odd-negative/even-positive sign) with
+  the +10-to--10 ladder and the comfort
+  range of 5 with home abilities retained,
+  the magical ladder (the +10 universal
+  casting dissolving into mage-ruled
+  demi-planes down to the -10 where
+  sentient life is impossible, the
+  wizard powerless at -6, the pooka
+  saving vs. death), the temporal ladder
+  (the differently colored suns at +10
+  to the millions-of-years -10) with the
+  time-travel digression, the class
+  rules (the lesser-of-two-factors
+  casters, the cleric deity cap at 1st
+  and 2nd, druids and rangers within 2,
+  barbarians within 1, the paladin's
+  sentient mount), the encounter combat
+  and magic adaptation, and the (5,-4,5)
+  20th-century example. 6 consts + 7
+  bools, prefix ddx, header
+  rules/appendixiprimes.h. THREE flips:
+  gap census 83/7 -> 86/4 (the appendix,
+  the physical-factor table, the
+  encounter rules). Spec 18,935 bytes,
+  md5 28c4edecb934390643126f5468dbc290
+  matched exactly first try, 13 inlines.
+  TWENTY-SEVEN straight first-tries
+  (R566-R592). NEXT - R593: Appendix II:
+  Creatures of the Inner Planes (pp.
+  120-121, the elemental analogues - the
+  modified stats, the no-analogue list,
+  the per-element abilities, the
+  appearance size-change table; page-121
+  already read, page-122.md still to
+  read for the treasure types and the
+  rest).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

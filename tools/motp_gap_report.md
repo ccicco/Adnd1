@@ -131,7 +131,7 @@ sample entries verified against the canonical PHB levels).
 - [x] **Appendix I: The Prime Material Planes** (pp. 117-119) - the Alternate Primes doctrine - R592: the whole appendix in one round (the Polyverse and the three factors, the reaching, the PF/MF/TF ladders, the survival and class rules, the encounters)
   - [x] The Prime physical-factor table (p. 117) - the 1d10 factor and the odd/even sign roll - R592: the ddx PF pins (the 1d10 value and the 1d4 odd-negative/even-positive sign, the +10-to--10 ladder, the comfort range of 5)
   - [x] The Alternate Primes encounter rules (p. 119) - the modified-stats doctrine - R592: the ddx encounter pins (adapt the standard tables to the plane factors, the combat and magic limits, the class abilities from the cleric deity rule to the barbarian range)
-- [ ] **Appendix II: Creatures of the Inner Planes** (pp. 120-121)
+- [x] **Appendix II: Creatures of the Inner Planes** (pp. 120-121) - R593: the elemental analogues (the no-analogue list, the stat modifications and the lair percentages, the per-element abilities, the size-change and appearance tables, the treasure rules by plane)
 - [ ] **Appendix III: Creatures from the Outer Planes** (pp. 122-123)
 - [ ] **Appendix IV: Abilities of the Powers** (pp. 124-126)
 - [ ] **Indices** (pp. 127-128) - the index roster
