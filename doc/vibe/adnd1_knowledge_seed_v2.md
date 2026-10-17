@@ -6352,6 +6352,33 @@ the standing cosmetic class. The extraction rode the r503-extraction branch
 illustration plate, labels only - not a failed read). NEXT - the DSG movement
 chapter (printed pp. 12-22, pdf 13-23): the BIG cross-book seam
 (wsgclimb/wsgswim/wsgrope are its downstream), extraction first.
+- R504 LANDED 2026-10-16: commit e4f8c16 (census 429, pushed
+a8c86de..e4f8c16), the DSG MOVEMENT CHAPTER PART I, printed pp. 12-19 (pdf
+13-20): the check frames, swimming, breath, moving water, climbing,
+rappelling, jumping and the rope system. Pinned as rules/dsgmove.h (prefix
+dmv, 234 inlines: 119 consts + 91 bools + 2 chains + 6 tables/22 cols; 29
+examples, 8 table_checks). Gap 5/150 -> 27/128: 16 chapter boxes (the check
+frames through roping together) + the manifest tables 1-6; the movement parent
+box stayed open for R505. First SPEC-DRIVEN round (the splice_engine.py +
+speclib.py build from tools/spec_rXXX.json). The spec validation had one real
+escape - dmvCrossTargetCount (the Table 5 row count) referenced by the header
+build but never defined; the engine died KeyError on the first ritual run with
+nothing patched (preflight RED, no commit). Fix: add the const, inline_count
+233 -> 234, and a full pool-coverage pass before publish (every name in
+header_sections, examples and table_checks resolves; every table count const
+equals its data row count). LESSON: spec validation must pull every name the
+engine will pull, not just lint shape. The two pinned cross-book divergences
+stand (DSG strength speed bonus = the strength DAMAGE bonus, both cap +3; the
+DSG encumbered jump -4 allowed where the WSG forbids severe jumps); the
+printed dive example vs the Table 1 heavy row pinned as printed with the table
+the authority (R501 precedent). Double-run applied 26/already 0 then 0/26;
+preflight GREEN (R504 DSG movement I audit: bad 0), census 429. User-side spec
+md5 46af790e differed from authored b83ba3a0 - cosmetic, the standing class.
+GitHub verify at e4f8c16 clean: 234 inlines, zero dmv in caller TUs, gap
+27/128, the R503 seed record in place. NEXT - R505: movement part II - the
+bridges, the expanded falling rules, spelunking (T7), excavation (T8),
+fatigue, darkness (T9) and slippery surfaces; the movement PARENT box flips
+when both halves land.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -50,7 +50,7 @@ re-grained then, before any DM pin round.
   - [x] Natural underground locales (pp. 7-9) - R503: the limestone cave (acid erosion, the water-table drain, the inlet and sinkhole entrances, the drip formations, the living-cave glisten/mud vs the dead-cave brittle dust/rubble, the smooth water-filled passages), the smaller smooth sea caves with their relic likelihood, the dry hidden lava caves, the quake and fault chambers, the geothermal ladder (lava 1,800 F, crust, steam, hot water, warm air)
   - [x] Unnatural underground locales (pp. 9-11) - R503: the purpose-built dungeons (soft-rock excavation, 10-foot dirt shoring, the jail/treasure/lair/defense purposes, the stronger-than-castles note), the mine networks (active guarded, inactive laired), the creator-sized burrows with the umber-hulk stone exception, and the realms deeper than a mile (nation-scale caverns, seas with islands, wilderness-to-cities)
   - [x] Hazards of the underearth (p. 11) - R503: the survey - cave-ins (the shoring split between dungeons, caverns and realms), floods (no room to disperse), fires (the combustibles-and-oxygen double threat, the wood scarcity), poisonous gases (the confinement multiplier) and volcanoes (lava, steam, closed passages)
-- [ ] **Movement rules for underground play** (pp. 12-22) - the swimming/holding-breath/moving-water rules, the climbing rates and tools for non-thieves, jumping, the rope system (chasm, swing, belay, roping together), bridges, the expanded falling rules, spelunking, excavation, fatigue/exhaustion, darkness movement and slippery surfaces
+- [x] **Movement rules for underground play** (pp. 12-22) - R505: the whole movement chapter now pinned in two rounds - R504 the check frames, swimming, breath, moving water, climbing, rappelling, jumping and the rope system; R505 the bridges, the expanded falling rules, spelunking, excavation, fatigue/exhaustion, darkness movement and slippery surfaces
   - [x] Ability and proficiency checks (p. 12) - R504: the 1d20 frames - ability checks succeed equal-or-less with the dice substitution rule, proficiency checks strictly less than the rating
   - [x] Swimming (p. 12) - R504: the proficiency gate, the 1/3 monster chance, the three functions and Table 1 (verified const-for-const against rules/wsgswim.h), the endurance, speed and dive rules; the strength speed bonus pins on the DAMAGE bonus, a WSG divergence (both cap +3)
   - [x] Holding one's breath (p. 12) - R504: the 1/3-con breath with the cumulative halvings and the one-round floor, the -2 cumulative con checks after, the +1 nonswimming round (verified against rules/wsgbreath.h)
@@ -67,13 +67,13 @@ re-grained then, before any DM pin round.
   - [x] Swinging across (p. 18) - R504: the pendulum, the -5-percent-per-10-feet hold check, and the 1d6 per 20-foot rope section with the dropped fractions
   - [x] Belaying (p. 18) - R504: the belay check with the rope-length bound, the second check with the 3-foot edge rule, the -10 per additional faller, the spike anchor and the both-ends crossing (verified against rules/wsgbelay.h)
   - [x] Roping together (p. 19) - R504: the 20-30 feet of slack, the slowest-rate march, the both-sides checks with the -10 two-faller cascade and the end-character single check (verified against rules/wsgtog.h - the cascade step pins at -10)
-  - [ ] Bridges (p. 19) - the permanent and impromptu bridge rules
-  - [ ] Falling (expanded rules) (pp. 19-20) - stopping a fall, landing, sliding down slopes; the cross-book seam against rules/wsgfall.h and rules/wsgstop.h
-  - [ ] Spelunking (p. 20) - the tight-squeeze rules with Table 7
-  - [ ] Excavation (p. 21) - the rubble clearance and solid-barrier digging rules with Table 8
-  - [ ] Fatigue and exhaustion (pp. 21-22) - the effects ladders, the cross-book seam against the WSG fatigue pins
-  - [ ] Movement effects of darkness (p. 22) - the blind movement rules with Table 9
-  - [ ] Movement on slippery horizontal surfaces (p. 22) - the slip/dex-check rules, the cross-book seam against rules/wsgslip.h
+  - [x] Bridges (p. 19) - R505: the maintained no-check rule, the suspension 25-percent-per-character give-way with the one-hand catch at -25, the anchor sabotage 1d8 rounds thief-only to detect, the sawed rope one round and visible, the wooden 5-percent-per-year rot with the 1d20+20-year beams and the 50-percent rotten step, the stone impervious with the transmute-rock-to-mud arch collapse 1d4 rounds and the instant foundation collapse, the rope bridge +50 with the -20 sabotaged cling, and the log bridge +40/+20 sloped/+80 crawling with the 10/20/30/40-50 move-log ladder
+  - [x] Falling (expanded rules) (pp. 19-20) - R505: the cumulative 1d6-per-10-feet dice (6d6 at 30 feet), the 20d6 cap, the 10d6 waterfall cap, the 1,000-feet-per-round rate, the 50-foot stop window with the 1/2 and 1/4 catch chances and the slippery bar, the landing ladder (rough x2, the 1d6 and 3d6 spike groupings, soft 1/2, the very-soft save, the water 1d6 per 100 feet rounded up with the no-catch-same-round rule), and the slope slide (20 feet free, 1d6 per 10 feet, the 1d6-per-40-feet landing, the slippery double landing) (verified const-for-const against rules/wsgfall.h and rules/wsgstop.h - the 6d6-at-30, the 20d6 cap and the 50-foot window agree)
+  - [x] Spelunking (p. 20) - R505: the 2/3-ceiling upright 2/3 rate, the hands-and-knees 1/2 rate with -5 attacks and no Dexterity/shield AC, the prone 1/4 rate with -8 attacks and the further weapon limits, the dragged pack, and Table 7
+  - [x] Excavation (p. 21) - R505: the 1d4-feet-per-turn rubble clearance to the Table 7 width, the 2d4 partial-block rate, and the solid barriers at the Table 27 rates with the 1/4 non-pick tool penalty
+  - [x] Fatigue and exhaustion (pp. 21-22) - R505: the 4-turns-work/2-rest cycle, the 6-turn Constitution Check with the +5 then the shrinking interval to every turn, the -2 attribute and attack/damage/save effects for 12 turns, the every-turn fatigued checks against the revised Constitution, the exhausted -4 instead of the fatigue -2 (a WSG divergence - the WSG frames it as an additional -2; both total -4), and the 6-turn recoveries (verified const-for-const against the WSG fatigue pins rules/wsgfatig.h)
+  - [x] Movement effects of darkness (p. 22) - R505: the Dexterity Check on unseen obstacles, the 1/3 safe probing rate, the straight-line impossibility without a guide, the secret d12 course roll every 3 turns with the -1-per-short-turn, the rough-floor Dexterity Checks with the 1-point falls, the 1/6 cautious rate, and Table 9
+  - [x] Movement on slippery horizontal surfaces (p. 22) - R505: the straight-line safety, the Dexterity Check on turns, stops and runs with the no-damage one-round fall, the 1/2-rate free turn and the one-round slowdown, the every-attack melee check with the +4 AC fall penalty and the -4 fight-from-ground attacks, and the crampons with the 2x noise and 1d6-mile wear (verified const-for-const against rules/wsgslip.h)
 - [ ] **Proficiencies** (pp. 23-29) - the expanded nonweapon proficiency system: the check system, the artisan/craftsman and adventuring lists, the optional bonuses, the NPC training rules and the XP-for-proficiencies option; the cross-book seam against R425 (rules/wsgprof.h) and R498 (rules/wsgprofd.h)
   - [ ] Nonweapon proficiencies (p. 23) - the system frame and the success/failure rules with Table 10
   - [ ] Costs and counts (p. 23) - the slot/counts economy
@@ -169,9 +169,9 @@ re-grained then, before any DM pin round.
 - [x] Table 4: Broad Jumping (p. 16) - R504
 - [x] Table 5: Crossing With a Grapple (p. 17) - R504
 - [x] Table 6: Thrown Loop Ranges (p. 17) - R504
-- [ ] Table 7: Minimum Passageway Sizes (p. 21)
-- [ ] Table 8: Armor Effects on Character Width (p. 21)
-- [ ] Table 9: Course Changes in Darkness (p. 22)
+- [x] Table 7: Minimum Passageway Sizes (p. 21) - R505
+- [x] Table 8: Armor Effects on Character Width (p. 21) - R505
+- [x] Table 9: Course Changes in Darkness (p. 22) - R505
 - [ ] Table 10: Character Proficiencies (p. 23)
 - [ ] Table 11: Craftsman Proficiencies (p. 25)
 - [ ] Table 12: Weapon Making (p. 26)
