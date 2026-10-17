@@ -1,0 +1,814 @@
+{
+ "round": 512,
+ "title": "the DSG cave-ins part II - the chain reactions and the effects",
+ "census_before": 436,
+ "prefix": "dnx",
+ "header_file": "rules/dsgcavein2.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "inline_count": 66,
+ "banner": {
+  "title": "The DSG CAVE-INS PART II, R512: the printed pp. 39-40 (pdf 40-41) - the chain reactions (even a small cave-in weakening supporting structures, the nearby ceilings and walls checked, the per-section d100 vs Table 18, the equal-or-less collapse at about the same area, the within-10% significant weakening, the forced adjacent checks with the tertiary chance half rounded up and each subsequent roll halved, the decayed exception keeping the original chance, the 9th-level druid transmute rock to mud example with the 31-vs-48 collapse, the 42-vs-24 hold, the side rolls 12/65/97/33, the secondary 1/2 and tertiary 1/4) and the effects (the falling distance and rough landing on top, the bridge along its unsupported length, the tunnel ceiling never wider than the tunnel, the random 20x20 roughly square base area, the chain checks per adjacent square radically increasing the size, the three-foot layer assumption with the two-foot example, the 4d8 per 10 feet of thickness with the save vs petrification for half, the 30-foot 12d8 example reduced to 6d8, the mud and silt at half with the save halving again, and the water at half with a save for 1/4, the first 10-foot thickness only, no weight damage, the drowning risk)",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR with the pdf Acrobat-Capture layer as the second read (idx 52 = printed p. 40) - every numeric cell dual-confirmed: the Table 18 grid confirmed THREE WAYS - the chapter djvu read (Ceiling 48%/32%, Wall 32%/12%, Ledge/bridge 5%/12%, Support Column 80%/4%), the compiled-tables appendix reprint (djvu.txt line 15559, the garble 4896 = 48%) and the Capture layer (the Support Column 80%/4% row and the example sequence) all agree; the djvu garble 648 = 6d8 settled by the Capture 6d8 read; the djvu garble 114damage = 1/4 damage settled by the Capture 1/4 read; the djvu 112 and 114 halves/quarters read as 1/2 and 1/4. The example side roll 33 exceeds the 32% wall chance, so exactly one side continues. The Defensive Point Values section starts the NEXT round per the content-density rule.",
+  "sentinel": "Table 18 pins as a 4x3 grid: the row key, the area-above percent and the area-next-to percent, each a d100 chance that collapses on an equal-or-less roll. The cascade divisors pin as exact integers (tertiary 2, subsequent 2, example secondary 2 and tertiary 4). The 4d8 damage pins as dice + sides consts per the R508 dsgbatt.h convention, with the 30-foot 12d8 example and its save-reduced 6d8. The R511 dsgcavein.h pins are the causes seam and nothing auto-credits."
+ },
+ "include_after": "#include \"rules/dsgcavein.h\"  // R511: the DSG cave-in causes pins",
+ "include_comment": "the DSG chain reaction pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The DSG chain reaction pins the opener (gravity constantly working destruction on underworld ceilings, a small cave-in weakening supporting structures for an immediate or near-future massive chain reaction, the nearby ceilings and walls checked, the per-section d100 vs Table 18 determining the extent), the chain reading (equal-or-less collapses the adjacent area at about the same area as the original, the miss within 10% of the chance significantly weakening the area that might collapse at any moment, the chain collapses forcing checks in all their adjacent areas, the tertiary chance half rounded up, each subsequent roll at 1/2 the forcing roll chance), the decayed exception (the DM may keep the original chance for all subsequent rolls in heavily eroded or ancient-ruin areas), the worked example (the 9th-level druid, the 100x80x10 ft transmuted ceiling, the 31-vs-48 collapse above, the 42-vs-24 hold of the second layer, the side rolls 12/65/97/33 with exactly one side continuing, the secondary checks at 1/2 and the tertiary at 1/4), the base area (the falling distance and rough landing on top, the bridge along its entire unsupported length, the tunnel ceiling never wider than the tunnel, the random 20x20 roughly square base area, the chain checks per adjacent square and above, radically increasing the total size), the falling layer (the three-foot assumption unless otherwise, the two-foot ceiling-and-floor example, the stone above a collapsed layer checked for a chain reaction), the falling damage (4d8 per 10 feet or less of thickness, the save vs petrification for half, the 30-foot 12d8 example reduced to 6d8), and the mud and water damage (mud, silt and sludgy substances at half rock damage with the save halving again, water at half with a save for 1/4, the damage for the first 10-foot thickness only, no additional damage from the weight of the pouring column, and the drowning risk).",
+ "audit_label": "R512 DSG chain reaction audit",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R511 LANDED 2026-10-17: commit 9b25d57 (census 436,",
+ "prev_record": [
+  "- R511 LANDED 2026-10-17: commit 9b25d57 (census 436,",
+  "  pushed 2148097..9b25d57), the DSG CAVE-INS PART I,",
+  "  printed pp. 38-39 (pdf 39-40) - the cave-in opener",
+  "(cave-ins unique to the underground environment,",
+  "  considered when excavating, using explosive magic or",
+  "  otherwise stressing the overhanging rock, the",
+  "  bridge/floor collapses, the trigger-as-attack ploy",
+  "  with its chain-reaction risk), the Causes (the",
+  "  natural-disaster causes with the spell-duplicates-",
+  "  disaster rule and the raise water example, the ripe",
+  "  areas noted on the maps, the accidental causes on",
+  "  the frailest locations - weight or sound, the",
+  "  DM-assigned percentage, the 5% ledge example, the",
+  "  run and melee doublings, the 1% sword-clash",
+  "  example, the excavation causes at double the",
+  "  accidental chance and 10% per turn with the mining",
+  "  and shoring seam, the sabotage sixths in the",
+  "  exact-integer encoding - no miner 2/2/2 and with",
+  "  miner 4/1/1 of 6) and the Random occurrences (the",
+  "  1% per day base, the 10% per 10 days long-",
+  "  expedition option, the near-the-PCs-not-on-top",
+  "  rule) with the Table 17 eight-band location grid",
+  "  (00=100, movement-relative directions, the higher-",
+  "  roll-farther-away rule, the may-go-undiscovered",
+  "  note, the decayed-stone double-or-triple). The",
+  "  djvu garbles 596/196/1096 (the % sign OCR)",
+  "  settled by the Acrobat-Capture layer; Table 17",
+  "  confirmed THREE-WAY (chapter djvu + the compiled-",
+  "  tables appendix reprint + Capture). Pinned as",
+  "  rules/dsgcavein.h (prefix dnw, verified free; 50",
+  "  inlines: 17 consts + 30 bools + 3 T17 cols). Gap",
+  "  76/79 -> 79/76: 3 flips - the Causes and Random",
+  "  occurrences children + the Table 17 manifest line.",
+  "  DELIVERY: canvas r511-splice, authored md5",
+  "  7fe5974c; user-side md5 5d10773b differed yet the",
+  "  engine ran ALL OK twice and every count landed -",
+  "  the ./bn scaffold evidently rewrote whitespace,",
+  "  cosmetic, standing class. Double-run applied",
+  "  7/already 0 then 0/7; preflight GREEN, census",
+  "  435 -> 436, gap 79/76. NEXT - R512: cave-ins",
+  "  part II - chain reactions (Table 18; child line",
+  "  111, manifest line 183) + Effects of cave-ins",
+  "  (child line 112), then the Defensive Point Values",
+  "  section."
+ ],
+ "gap_census": {
+  "closed": 82,
+  "open": 73
+ },
+ "gap_flips": [
+  {
+   "from": "  - [ ] Cave-in chain reactions (pp. 39-40) - Table 18 (the chain grid)",
+   "to": "  - [x] Cave-in chain reactions (pp. 39-40) - Table 18 (the chain grid) - R512: the per-section d100 chain checks (equal-or-less collapses at about the same area, a miss within 10% significantly weakens), the forced adjacent checks with the tertiary chance half rounded up and each subsequent roll halved, the decayed exception keeping the original chance, and the 9th-level druid transmute rock to mud example (31-vs-48 collapse, 42-vs-24 hold, sides 12/65/97/33, secondary 1/2, tertiary 1/4)",
+   "note": "the chain reactions child"
+  },
+  {
+   "from": "  - [ ] Effects of cave-ins (p. 40) - the damage/burial rules",
+   "to": "  - [x] Effects of cave-ins (p. 40) - the damage/burial rules - R512: the falling distance and rough landing on top, the bridge along its unsupported length, the tunnel ceiling never wider than the tunnel, the random 20x20 roughly square base area, the 3-ft layer assumption with the 2-ft example, the 4d8 per 10 ft thickness with a save vs petrification for half (the 30-ft 12d8 example reduced to 6d8), mud/silt at half with the save halving again, and water at half with a save for 1/4 (first 10 ft of thickness only, no weight damage, the drowning risk)",
+   "note": "the effects child"
+  },
+  {
+   "from": "- [ ] Table 18: Cave-in Chain Reaction (p. 40)",
+   "to": "- [x] Table 18: Cave-in Chain Reaction (p. 40) - R512: the d100 four-row grid - Ceiling 48%/32%, Wall 32%/12%, Ledge/bridge 5%/12%, Support Column 80%/4% (area above / area next to)",
+   "note": "the Table 18 manifest line"
+  }
+ ],
+ "consts": [
+  {
+   "name": "dnxWeakenedWithinPct",
+   "value": 10,
+   "comment": "if the die roll does not indicate a collapse but is within 10% of the chance listed, the area is significantly weakened and might collapse at any moment."
+  },
+  {
+   "name": "dnxTertiaryChanceDiv",
+   "value": 2,
+   "comment": "the percentage chance for a tertiary collapse is half the chance for the original chain reaction cave-in."
+  },
+  {
+   "name": "dnxSubsequentRollDiv",
+   "value": 2,
+   "comment": "the divisor applied to the forcing roll chance for each subsequent chain reaction roll."
+  },
+  {
+   "name": "dnxExampleDruidLevel",
+   "value": 9,
+   "comment": "the example caster is a 9th-level druid using transmute rock to mud on a stone ceiling."
+  },
+  {
+   "name": "dnxExampleSpellLengthFt",
+   "value": 100,
+   "comment": "the spell affects an area of rock 100 feet long."
+  },
+  {
+   "name": "dnxExampleSpellWidthFt",
+   "value": 80,
+   "comment": "the spell area is 80 feet wide."
+  },
+  {
+   "name": "dnxExampleSpellThickFt",
+   "value": 10,
+   "comment": "the spell area is 10 feet thick, and all the stone in it converts to mud and falls."
+  },
+  {
+   "name": "dnxExampleAboveRoll",
+   "value": 31,
+   "comment": "the d100 roll for the area immediately above the mud ceiling is a 31, indicating another layer of rock falls on top of the mud."
+  },
+  {
+   "name": "dnxExampleAboveSecondChance",
+   "value": 24,
+   "comment": "the triggered roll for the rock on top of the stone that just fell is made at 1/2 the original probability, or 24."
+  },
+  {
+   "name": "dnxExampleAboveSecondRoll",
+   "value": 42,
+   "comment": "the next roll is a 42, greater than the 24 needed, so the second layer above does not collapse."
+  },
+  {
+   "name": "dnxExampleSideRoll1",
+   "value": 12,
+   "comment": "the first of the four d100 rolls checking the sides of the spell area for a chain reaction."
+  },
+  {
+   "name": "dnxExampleSideRoll2",
+   "value": 65,
+   "comment": "the second side roll."
+  },
+  {
+   "name": "dnxExampleSideRoll3",
+   "value": 97,
+   "comment": "the third side roll."
+  },
+  {
+   "name": "dnxExampleSideRoll4",
+   "value": 33,
+   "comment": "the fourth side roll."
+  },
+  {
+   "name": "dnxExampleSecondaryDiv",
+   "value": 2,
+   "comment": "the secondary checks have only 1/2 the chance listed on the chain reaction table, since the cave-in triggering them was itself a chain reaction."
+  },
+  {
+   "name": "dnxExampleTertiaryDiv",
+   "value": 4,
+   "comment": "a collapse triggered by a secondary check causes tertiary checks with only 1/4 the chance listed."
+  },
+  {
+   "name": "dnxBaseAreaFtX",
+   "value": 20,
+   "comment": "where the size of the cave-in must be determined randomly, such as the ceiling of a vast chamber, assume the base cave-in occurs in an area of 20 feet by 20 feet."
+  },
+  {
+   "name": "dnxBaseAreaFtY",
+   "value": 20,
+   "comment": "the other side of the assumed base area: 20 feet."
+  },
+  {
+   "name": "dnxLayerThickFtDefault",
+   "value": 3,
+   "comment": "if a layer of rock falls from a ceiling or wall, assume that the layer is three feet thick unless other considerations apply."
+  },
+  {
+   "name": "dnxFloorLayerExampleFt",
+   "value": 2,
+   "comment": "the example thin layer: two feet of stone."
+  },
+  {
+   "name": "dnxFallingDamageDice",
+   "value": 4,
+   "comment": "characters beneath an area of rock that collapses take an average base damage of 4d8 per character per 10 feet (or less) of thickness of fallen rock."
+  },
+  {
+   "name": "dnxFallingDamageSides",
+   "value": 8,
+   "comment": "the falling rock damage die: d8."
+  },
+  {
+   "name": "dnxDamagePerThicknessFt",
+   "value": 10,
+   "comment": "the damage reckoning unit: 10 feet of thickness, or less, per 4d8 of damage."
+  },
+  {
+   "name": "dnxExampleThicknessFt",
+   "value": 30,
+   "comment": "the worked example: a 30-foot thickness of rock crashing down on characters in a cavern."
+  },
+  {
+   "name": "dnxExampleDamageDice",
+   "value": 12,
+   "comment": "the 30-foot example thickness inflicts 12d8 points of damage on each character."
+  },
+  {
+   "name": "dnxExampleSaveDice",
+   "value": 6,
+   "comment": "the example saving throw vs. petrification reduces the 12d8 to 6d8 (the djvu garble 648, settled by the Acrobat layer read of 6d8)."
+  },
+  {
+   "name": "dnxMudDamageDiv",
+   "value": 2,
+   "comment": "the mud/silt divisor: half of falling rock damage."
+  },
+  {
+   "name": "dnxWaterDamageDiv",
+   "value": 2,
+   "comment": "the falling water divisor: half of normal damage."
+  },
+  {
+   "name": "dnxWaterSaveDiv",
+   "value": 4,
+   "comment": "falling water allows a save for 1/4 damage (the djvu garble 114damage = 1/4, settled by the Acrobat layer)."
+  },
+  {
+   "name": "dnxWaterChargedThicknessFt",
+   "value": 10,
+   "comment": "in the case of water the damage is inflicted for the first 10-foot thickness of falling material only."
+  },
+  {
+   "name": "dnxT18RowCount",
+   "value": 4,
+   "comment": "the Table 18 carries four original-location rows: ceiling, wall, ledge or bridge, and support column."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnxSmallCaveInWeakensSupports",
+   "value": true,
+   "comment": "the force of gravity is constantly working destruction on underworld ceilings; even a small cave-in can so weaken supporting structures that a massive chain reaction of collapse begins immediately or threatens an area in the near future."
+  },
+  {
+   "name": "dnxAdjacentAreasMustBeChecked",
+   "value": true,
+   "comment": "when a cave-in occurs, the areas of nearby ceilings and walls must be checked to see if they weaken or collapse as a result of the original cave-in."
+  },
+  {
+   "name": "dnxDmRollsD100PerSection",
+   "value": true,
+   "comment": "the DM rolls d100 and compares the result to Table 18: Cave-in Chain Reaction, rolling for each section of adjacent material, to determine the extent of the cave-in."
+  },
+  {
+   "name": "dnxEqualOrLessCollapses",
+   "value": true,
+   "comment": "a d100 result that is equal to or less than the number listed indicates that the adjacent area has also collapsed."
+  },
+  {
+   "name": "dnxCollapseSameAreaAsOriginal",
+   "value": true,
+   "comment": "the area of a chain reaction collapse is about the same as that of the original cave-in."
+  },
+  {
+   "name": "dnxWeakenedMayCollapseAnyMoment",
+   "value": true,
+   "comment": "a significantly weakened area, missed by the chain reaction roll by less than the weakened band, might collapse at any moment."
+  },
+  {
+   "name": "dnxChainCollapseForcesMoreChecks",
+   "value": true,
+   "comment": "areas that collapse as a result of a chain reaction force checks for chain reaction collapses in all adjacent areas."
+  },
+  {
+   "name": "dnxTertiaryRoundedUp",
+   "value": true,
+   "comment": "the halved tertiary chance is rounded up."
+  },
+  {
+   "name": "dnxEachSubsequentRollHalved",
+   "value": true,
+   "comment": "if the chain reaction continues, each subsequent roll is made with 1/2 the chance of the chain reaction roll that forced it."
+  },
+  {
+   "name": "dnxDecayedIgnoresDecline",
+   "value": true,
+   "comment": "if an area is exceptionally weak and decayed, the DM may ignore the declining chance of a chain reaction cave-in and use the original cave-in chance for all subsequent rolls."
+  },
+  {
+   "name": "dnxDecayedErodedOrAncient",
+   "value": true,
+   "comment": "the decayed exception is common in areas heavily eroded by water or other natural forces, or constructed long ago and left to fall into ruin."
+  },
+  {
+   "name": "dnxExampleAboveCollapses",
+   "value": true,
+   "comment": "the example roll of 31 against the 48% ceiling chain reaction chance means the area above also collapses."
+  },
+  {
+   "name": "dnxExampleSecondLayerHolds",
+   "value": true,
+   "comment": "the example second layer above the original collapse does not collapse."
+  },
+  {
+   "name": "dnxExampleOneSideContinues",
+   "value": true,
+   "comment": "only one of the four sides of the spell area continues to collapse."
+  },
+  {
+   "name": "dnxExampleSecondaryChecksRequired",
+   "value": true,
+   "comment": "the secondary collapse forces additional checks for the area immediately above it and for the areas to the three sides that have not already collapsed."
+  },
+  {
+   "name": "dnxEffectDependsOnPositionAndRock",
+   "value": true,
+   "comment": "the effect of a cave-in upon characters and creatures in the area depends on where they are and the amount of rock that is falling."
+  },
+  {
+   "name": "dnxOnTopUseFallingRules",
+   "value": true,
+   "comment": "if characters are on top of something that collapses, consider the distance fallen and treat the landing surface as rough, per the expanded falling rules (page 19)."
+  },
+  {
+   "name": "dnxBaseAreaFromStructure",
+   "value": true,
+   "comment": "the base area of a cave-in can often be determined by the structure or surface that is collapsing."
+  },
+  {
+   "name": "dnxBridgeFallsUnsupportedLength",
+   "value": true,
+   "comment": "a bridge that collapses will collapse along its entire unsupported length."
+  },
+  {
+   "name": "dnxTunnelCeilingNeverWider",
+   "value": true,
+   "comment": "a tunnel ceiling collapse can never be wider than the tunnel itself."
+  },
+  {
+   "name": "dnxBaseAreaRoughlySquare",
+   "value": true,
+   "comment": "the randomly determined base cave-in area is roughly square in shape."
+  },
+  {
+   "name": "dnxChainCheckedPerAdjacentSquare",
+   "value": true,
+   "comment": "chain reactions must be checked for each adjacent square area, as well as in the ceiling directly above the rock that has caved in."
+  },
+  {
+   "name": "dnxChainRadicallyIncreasesSize",
+   "value": true,
+   "comment": "chain reactions radically increase the total size of a cave-in."
+  },
+  {
+   "name": "dnxLayerThickUnlessOtherwise",
+   "value": true,
+   "comment": "the three-foot layer assumption yields to other considerations when they apply."
+  },
+  {
+   "name": "dnxThinFloorLayerExample",
+   "value": true,
+   "comment": "a two-foot-thick layer of stone serving as a ceiling in one chamber and a floor in the one above is never more than two feet thick when it collapses."
+  },
+  {
+   "name": "dnxThreeFtLeavesStoneCheckChain",
+   "value": true,
+   "comment": "if a three-foot-thick section of collapsing rock leaves additional stone above it, that stone should be checked for a chain reaction cave-in."
+  },
+  {
+   "name": "dnxSavePetrificationHalf",
+   "value": true,
+   "comment": "characters beneath a collapse are allowed a saving throw vs. petrification for half damage."
+  },
+  {
+   "name": "dnxMudHalfRockDamage",
+   "value": true,
+   "comment": "if the falling material is mud, silt, or any other sludgy substance, the damage inflicted on characters below is only half that caused by falling rock."
+  },
+  {
+   "name": "dnxMudSaveHalvesAgain",
+   "value": true,
+   "comment": "characters beneath falling mud or silt are also entitled to a saving throw vs. petrification, which if successful halves this damage again."
+  },
+  {
+   "name": "dnxWaterHalfRockDamage",
+   "value": true,
+   "comment": "falling water inflicts 1/2 of the normal damage."
+  },
+  {
+   "name": "dnxWaterNoWeightDamage",
+   "value": true,
+   "comment": "even if the character remains under a column of pouring water, he does not sustain additional damage from the weight of the water."
+  },
+  {
+   "name": "dnxWaterColumnDrowningRisk",
+   "value": true,
+   "comment": "a character under a column of pouring water is quite possibly unable to breathe and needs to escape the water or drown."
+  }
+ ],
+ "chains": [],
+ "tables": [
+  {
+   "name": "Table 18: CAVE-IN CHAIN REACTION",
+   "tag": "18",
+   "count": "dnxT18RowCount",
+   "sentinel": -99,
+   "col_default": -99,
+   "cols": [
+    "dnxT18Loc",
+    "dnxT18Above",
+    "dnxT18Next"
+   ],
+   "col_comments": [
+    "the row key: 0 a ceiling, 1 a wall, 2 a ledge or bridge, 3 a support column.",
+    "the percent chance that the area above the original cave-in also collapses on a d100 roll equal to or less than this number.",
+    "the percent chance that the area next to the original cave-in also collapses on a d100 roll equal to or less than this number."
+   ],
+   "audit_comment": "the Table 18 cave-in chain reaction grid",
+   "data": [
+    [
+     0,
+     48,
+     32
+    ],
+    [
+     1,
+     32,
+     12
+    ],
+    [
+     2,
+     5,
+     12
+    ],
+    [
+     3,
+     80,
+     4
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['dnxT18Loc'](0) != 0 or m['dnxT18Above'](0) != 48 or m['dnxT18Next'](0) != 32 or m['dnxT18Loc'](3) != 3 or m['dnxT18Above'](3) != 80 or m['dnxT18Next'](3) != 4",
+   "note": "the Table 18 first and last rows: a ceiling chain 48% above and 32% next, a support column 80% above and 4% next."
+  },
+  {
+   "expr": "m['dnxT18Above'](1) != 32 or m['dnxT18Next'](1) != 12 or m['dnxT18Above'](2) != 5 or m['dnxT18Next'](2) != 12",
+   "note": "the Table 18 middle rows: a wall 32% above and 12% next, a ledge or bridge 5% above and 12% next."
+  },
+  {
+   "expr": "m['dnxWeakenedWithinPct']() != 10 or m['dnxEqualOrLessCollapses']() != 1 or m['dnxCollapseSameAreaAsOriginal']() != 1",
+   "note": "the chain reaction reading: equal-or-less collapses the adjacent area at about the same size, and a miss within 10% of the chance significantly weakens it."
+  },
+  {
+   "expr": "m['dnxTertiaryChanceDiv']() != 2 or m['dnxSubsequentRollDiv']() != 2 or m['dnxTertiaryRoundedUp']() != 1 or m['dnxChainCollapseForcesMoreChecks']() != 1 or m['dnxEachSubsequentRollHalved']() != 1",
+   "note": "the cascade: chain collapses force checks in all adjacent areas, the tertiary chance is half the original rounded up, and each subsequent roll halves the forcing roll chance."
+  },
+  {
+   "expr": "m['dnxDecayedIgnoresDecline']() != 1 or m['dnxDecayedErodedOrAncient']() != 1",
+   "note": "the decayed exception: the DM may keep the original chance for all subsequent rolls in water-eroded or ancient ruin areas."
+  },
+  {
+   "expr": "m['dnxExampleDruidLevel']() != 9 or m['dnxExampleSpellLengthFt']() != 100 or m['dnxExampleSpellWidthFt']() != 80 or m['dnxExampleSpellThickFt']() != 10",
+   "note": "the worked example opener: a 9th-level druid transmuting a 100x80x10 ft rock ceiling to mud."
+  },
+  {
+   "expr": "m['dnxExampleAboveRoll']() != 31 or m['dnxExampleAboveCollapses']() != 1 or m['dnxExampleAboveSecondChance']() != 24 or m['dnxExampleAboveSecondRoll']() != 42 or m['dnxExampleSecondLayerHolds']() != 1",
+   "note": "the example vertical chain: the 31 against 48 collapses the layer above, and the 42 against the halved 24 holds the second layer."
+  },
+  {
+   "expr": "m['dnxExampleSideRoll1']() != 12 or m['dnxExampleSideRoll2']() != 65 or m['dnxExampleSideRoll3']() != 97 or m['dnxExampleSideRoll4']() != 33 or m['dnxExampleOneSideContinues']() != 1 or m['dnxExampleSecondaryChecksRequired']() != 1 or m['dnxExampleSecondaryDiv']() != 2 or m['dnxExampleTertiaryDiv']() != 4",
+   "note": "the example side checks: rolls 12, 65, 97 and 33 leave one side collapsing, its secondary checks at 1/2 and any tertiary checks at 1/4."
+  },
+  {
+   "expr": "m['dnxOnTopUseFallingRules']() != 1 or m['dnxBridgeFallsUnsupportedLength']() != 1 or m['dnxTunnelCeilingNeverWider']() != 1 or m['dnxBaseAreaFromStructure']() != 1",
+   "note": "the base area: falling distance and rough landing on top, the bridge along its unsupported length, and the tunnel ceiling never wider than the tunnel."
+  },
+  {
+   "expr": "m['dnxBaseAreaFtX']() != 20 or m['dnxBaseAreaFtY']() != 20 or m['dnxBaseAreaRoughlySquare']() != 1 or m['dnxChainCheckedPerAdjacentSquare']() != 1 or m['dnxChainRadicallyIncreasesSize']() != 1",
+   "note": "the random base area: 20 by 20 feet and roughly square, with chain reactions checked per adjacent square, radically increasing the total size."
+  },
+  {
+   "expr": "m['dnxLayerThickFtDefault']() != 3 or m['dnxLayerThickUnlessOtherwise']() != 1 or m['dnxFloorLayerExampleFt']() != 2 or m['dnxThinFloorLayerExample']() != 1 or m['dnxThreeFtLeavesStoneCheckChain']() != 1",
+   "note": "the falling layer: three feet thick unless otherwise, the two-foot ceiling-and-floor example, and the stone above a collapsed layer checked for a chain reaction."
+  },
+  {
+   "expr": "m['dnxFallingDamageDice']() != 4 or m['dnxFallingDamageSides']() != 8 or m['dnxDamagePerThicknessFt']() != 10 or m['dnxSavePetrificationHalf']() != 1",
+   "note": "the falling damage: 4d8 per 10 feet or less of thickness, with a saving throw vs. petrification for half."
+  },
+  {
+   "expr": "m['dnxExampleThicknessFt']() != 30 or m['dnxExampleDamageDice']() != 12 or m['dnxExampleSaveDice']() != 6",
+   "note": "the worked damage example: a 30-foot thickness inflicts 12d8, reduced to 6d8 by the save (the djvu garble 648 settled by the Acrobat layer)."
+  },
+  {
+   "expr": "m['dnxMudDamageDiv']() != 2 or m['dnxMudHalfRockDamage']() != 1 or m['dnxMudSaveHalvesAgain']() != 1 or m['dnxWaterDamageDiv']() != 2 or m['dnxWaterSaveDiv']() != 4 or m['dnxWaterHalfRockDamage']() != 1",
+   "note": "the mud and water damage: mud and silt at half rock damage with a save halving again, and water at half with a save for 1/4."
+  },
+  {
+   "expr": "m['dnxWaterChargedThicknessFt']() != 10 or m['dnxWaterNoWeightDamage']() != 1 or m['dnxWaterColumnDrowningRisk']() != 1",
+   "note": "the water tail: damage for the first 10-foot thickness only, no weight damage under a pouring column, and the drowning risk."
+  },
+  {
+   "expr": "m['dnxSmallCaveInWeakensSupports']() != 1 or m['dnxAdjacentAreasMustBeChecked']() != 1 or m['dnxDmRollsD100PerSection']() != 1 or m['dnxWeakenedMayCollapseAnyMoment']() != 1",
+   "note": "the chain reaction opener: gravity working on the ceilings, adjacent areas checked, the per-section d100, and the weakened area ready to collapse at any moment."
+  },
+  {
+   "expr": "m['dnxEffectDependsOnPositionAndRock']() != 1 or m['dnxOnTopUseFallingRules']() != 1",
+   "note": "the effects opener: the effect depends on where the characters are and the amount of falling rock."
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['dnxT18RowCount']() != 4",
+   "note": "the Table 18 carries four original-location rows."
+  },
+  {
+   "expr": "m['dnxT18Loc'](0) != 0 or m['dnxT18Above'](0) != 48 or m['dnxT18Next'](0) != 32 or m['dnxT18Loc'](1) != 1 or m['dnxT18Above'](1) != 32 or m['dnxT18Next'](1) != 12",
+   "note": "the Table 18 grid cell-for-cell, rows 0-1: the ceiling and wall chain chances."
+  },
+  {
+   "expr": "m['dnxT18Loc'](2) != 2 or m['dnxT18Above'](2) != 5 or m['dnxT18Next'](2) != 12 or m['dnxT18Loc'](3) != 3 or m['dnxT18Above'](3) != 80 or m['dnxT18Next'](3) != 4",
+   "note": "the Table 18 grid cell-for-cell, rows 2-3: the ledge/bridge and support column chain chances."
+  }
+ ],
+ "header_sections": {
+  "the chain reaction opener": [
+   {
+    "kind": "bool",
+    "name": "dnxSmallCaveInWeakensSupports"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxAdjacentAreasMustBeChecked"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxDmRollsD100PerSection"
+   }
+  ],
+  "the chain reaction reading": [
+   {
+    "kind": "bool",
+    "name": "dnxEqualOrLessCollapses"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxCollapseSameAreaAsOriginal"
+   },
+   {
+    "kind": "const",
+    "name": "dnxWeakenedWithinPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxWeakenedMayCollapseAnyMoment"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxChainCollapseForcesMoreChecks"
+   },
+   {
+    "kind": "const",
+    "name": "dnxTertiaryChanceDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxTertiaryRoundedUp"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxEachSubsequentRollHalved"
+   },
+   {
+    "kind": "const",
+    "name": "dnxSubsequentRollDiv"
+   }
+  ],
+  "the decayed exception": [
+   {
+    "kind": "bool",
+    "name": "dnxDecayedIgnoresDecline"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxDecayedErodedOrAncient"
+   }
+  ],
+  "the chain reaction example": [
+   {
+    "kind": "const",
+    "name": "dnxExampleDruidLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleSpellLengthFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleSpellWidthFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleSpellThickFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleAboveRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxExampleAboveCollapses"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleAboveSecondChance"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleAboveSecondRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxExampleSecondLayerHolds"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleSideRoll1"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleSideRoll2"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleSideRoll3"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleSideRoll4"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxExampleOneSideContinues"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxExampleSecondaryChecksRequired"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleSecondaryDiv"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleTertiaryDiv"
+   }
+  ],
+  "the cave-in base area": [
+   {
+    "kind": "bool",
+    "name": "dnxEffectDependsOnPositionAndRock"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxOnTopUseFallingRules"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxBaseAreaFromStructure"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxBridgeFallsUnsupportedLength"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxTunnelCeilingNeverWider"
+   },
+   {
+    "kind": "const",
+    "name": "dnxBaseAreaFtX"
+   },
+   {
+    "kind": "const",
+    "name": "dnxBaseAreaFtY"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxBaseAreaRoughlySquare"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxChainCheckedPerAdjacentSquare"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxChainRadicallyIncreasesSize"
+   }
+  ],
+  "the falling layer": [
+   {
+    "kind": "const",
+    "name": "dnxLayerThickFtDefault"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxLayerThickUnlessOtherwise"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxThinFloorLayerExample"
+   },
+   {
+    "kind": "const",
+    "name": "dnxFloorLayerExampleFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxThreeFtLeavesStoneCheckChain"
+   }
+  ],
+  "the falling damage": [
+   {
+    "kind": "const",
+    "name": "dnxFallingDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnxFallingDamageSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnxDamagePerThicknessFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxSavePetrificationHalf"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleThicknessFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnxExampleSaveDice"
+   }
+  ],
+  "the mud and water damage": [
+   {
+    "kind": "bool",
+    "name": "dnxMudHalfRockDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dnxMudDamageDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxMudSaveHalvesAgain"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxWaterHalfRockDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dnxWaterDamageDiv"
+   },
+   {
+    "kind": "const",
+    "name": "dnxWaterSaveDiv"
+   },
+   {
+    "kind": "const",
+    "name": "dnxWaterChargedThicknessFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxWaterNoWeightDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "dnxWaterColumnDrowningRisk"
+   }
+  ],
+  "the Table 18 chain grid": [
+   {
+    "kind": "const",
+    "name": "dnxT18RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "Table 18: CAVE-IN CHAIN REACTION"
+   }
+  ]
+ },
+ "caller_files": []
+}
+

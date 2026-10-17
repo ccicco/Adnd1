@@ -6633,6 +6633,50 @@ when both halves land.
   occurrences and Table 17 (pp. 38-39; child line 110,
   manifest line 182), then chain reactions (Table 18)
   + the effects (R512).
+- R511 LANDED 2026-10-17: commit 9b25d57 (census 436,
+  pushed 2148097..9b25d57), the DSG CAVE-INS PART I,
+  printed pp. 38-39 (pdf 39-40) - the cave-in opener
+(cave-ins unique to the underground environment,
+  considered when excavating, using explosive magic or
+  otherwise stressing the overhanging rock, the
+  bridge/floor collapses, the trigger-as-attack ploy
+  with its chain-reaction risk), the Causes (the
+  natural-disaster causes with the spell-duplicates-
+  disaster rule and the raise water example, the ripe
+  areas noted on the maps, the accidental causes on
+  the frailest locations - weight or sound, the
+  DM-assigned percentage, the 5% ledge example, the
+  run and melee doublings, the 1% sword-clash
+  example, the excavation causes at double the
+  accidental chance and 10% per turn with the mining
+  and shoring seam, the sabotage sixths in the
+  exact-integer encoding - no miner 2/2/2 and with
+  miner 4/1/1 of 6) and the Random occurrences (the
+  1% per day base, the 10% per 10 days long-
+  expedition option, the near-the-PCs-not-on-top
+  rule) with the Table 17 eight-band location grid
+  (00=100, movement-relative directions, the higher-
+  roll-farther-away rule, the may-go-undiscovered
+  note, the decayed-stone double-or-triple). The
+  djvu garbles 596/196/1096 (the % sign OCR)
+  settled by the Acrobat-Capture layer; Table 17
+  confirmed THREE-WAY (chapter djvu + the compiled-
+  tables appendix reprint + Capture). Pinned as
+  rules/dsgcavein.h (prefix dnw, verified free; 50
+  inlines: 17 consts + 30 bools + 3 T17 cols). Gap
+  76/79 -> 79/76: 3 flips - the Causes and Random
+  occurrences children + the Table 17 manifest line.
+  DELIVERY: canvas r511-splice, authored md5
+  7fe5974c; user-side md5 5d10773b differed yet the
+  engine ran ALL OK twice and every count landed -
+  the ./bn scaffold evidently rewrote whitespace,
+  cosmetic, standing class. Double-run applied
+  7/already 0 then 0/7; preflight GREEN, census
+  435 -> 436, gap 79/76. NEXT - R512: cave-ins
+  part II - chain reactions (Table 18; child line
+  111, manifest line 183) + Effects of cave-ins
+  (child line 112), then the Defensive Point Values
+  section.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
