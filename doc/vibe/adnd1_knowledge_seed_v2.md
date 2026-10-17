@@ -9766,6 +9766,43 @@ when both halves land.
   57-59) - Vacuum, Ash, Dust, Salt in one
   round, the increasing-absence doctrine; the
   inner half closes, then the Astral chapter.
+- R575 LANDED 2026-10-17: commit 4d9beb2736621e2b4c01902
+  d943441dca69eca51 (census 498 -> 499,
+  pushed 59139ce..4d9beb2), THE MotP NEGATIVE
+  QUASI-PLANES, printed pp. 57-59, the four in
+  one round: Vacuum, Ash, Dust and Salt - the
+  increasing-absence doctrine, the per-plane
+  survival (the Vacuum hold-breath-only rule,
+  the 1-HD-per-round elemental loss, the
+  1,000-yard doubled infravision, the Ash
+  warmth depletion, the Dust crumbling, the
+  Salt per-TURN elemental drain), the black
+  wall at 3d6 per round, the 1-in-10
+  life-level drain touch, the native rules,
+  the magic decay, and the doubled guide
+  prices; the Foreword doctrines (p. 3) rode
+  as the third flip. ONE AMENDMENT: the
+  encounter frequency corrected against the
+  source - 1 in 10 per 12 hours, not the
+  report's 1-in-20. 9 consts + 7 bools,
+  prefix ddd, header rules/motpquasineg.h.
+  THREE flips: gap census 39/51 -> 42/48 -
+  THE INNER HALF IS CLOSED. Spec 13,798
+  bytes, md5 17dcea0954b0b6edf591dfdbc0164033
+  matched exactly first try, 16 inlines.
+  LESSON (handoff discipline, same-day
+  reaffirmation): the R575 handoff drifted
+  and showed ./bn and a pre-run preamble;
+  the delivered ritual block is ONE line
+  only - ./rn NNN '<msg>' - pinned above at
+  the R516/R541 rule. TEN straight
+  first-tries (R566-R575). NEXT - R576: the
+  Astral Plane chapter (pp. 60-72), the
+  R557 one-round chapter pattern - reaching
+  and the silver cords, the color pools,
+  the no-gravity thought-movement, the
+  encounter charts, combat, magic, and the
+  features (githyanki, the dead gods).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

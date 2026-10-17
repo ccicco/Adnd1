@@ -1,0 +1,489 @@
+{
+  "round": 576,
+  "prefix": "dde",
+  "header_file": "rules/astralplane.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 499,
+  "title": "the Astral Plane",
+  "audit_label": "R576 Astral Plane audit",
+  "audit_comment": "the Astral Plane, printed pp. 60-72, the whole chapter in one round: the barren-vault doctrine (the transit plane between Primes and outers, the wormholes, Anubis the sole resident Power), the reaching split (the astral-spell projection with the silver cords vs. the plane-shift physical travel), the cord rules (the 1d10-turn dissolution clock, the 1d4+1-day coma with the system-shock and half-hp restrictions, the 1% possession, the three severing forces), the color pools (the 10-60 foot disks, the blind side, the d20 color table, the 1d4x100-yard viewing altitude, the percentile location roll, the 10-times-Intelligence viewpoint, the 15% two-way and 5% fixed portals), the survival (no breath, no food, the 365,000-to-1 time, the potion permanence, the dead infravision), the movement (the 10-yards-per-minute-per-Int mental move, the push-off fallback, the encumbrance), the 1d10-every-four-hours encounter check with the 1-75/76-85/86-95/96-00 type split, the psychic wind (the 1d20 group roll with the wake, the 2d10-day stranding, the cross-current, the cord-snapping storm), the combat (the AC 8 astral base, the Intelligence and Wisdom modifier swap, the above/below rules, the doubled missile ranges, the suspended healing, the liquid films and suspended poison), the magic (the conjuration caps at 4th/3rd/5th, the sphere areas, the extradimensional void, the Bigby-hand Intelligence contests, the illusion and necromancy rules, the searcher chance at 5 times level), the PC adjustments (the thief noise split, the ranger tracking, the monk AC 7), and the features (the githyanki silver swords at AC 0 and 20%, the lich-queen, the astral searchers, the fixed portals, Yggdrasil and Mount Olympus).",
+  "include_comment": "the Astral Plane pins",
+  "include_after": "#include \"rules/motpquasineg.h\"  // R575: the MotP negative quasi-planes pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R575 LANDED 2026-10-17: commit 4d9beb2736621e2b4c01902",
+  "prev_record": [
+    "- R575 LANDED 2026-10-17: commit 4d9beb2736621e2b4c01902",
+    "  d943441dca69eca51 (census 498 -> 499,",
+    "  pushed 59139ce..4d9beb2), THE MotP NEGATIVE",
+    "  QUASI-PLANES, printed pp. 57-59, the four in",
+    "  one round: Vacuum, Ash, Dust and Salt - the",
+    "  increasing-absence doctrine, the per-plane",
+    "  survival (the Vacuum hold-breath-only rule,",
+    "  the 1-HD-per-round elemental loss, the",
+    "  1,000-yard doubled infravision, the Ash",
+    "  warmth depletion, the Dust crumbling, the",
+    "  Salt per-TURN elemental drain), the black",
+    "  wall at 3d6 per round, the 1-in-10",
+    "  life-level drain touch, the native rules,",
+    "  the magic decay, and the doubled guide",
+    "  prices; the Foreword doctrines (p. 3) rode",
+    "  as the third flip. ONE AMENDMENT: the",
+    "  encounter frequency corrected against the",
+    "  source - 1 in 10 per 12 hours, not the",
+    "  report's 1-in-20. 9 consts + 7 bools,",
+    "  prefix ddd, header rules/motpquasineg.h.",
+    "  THREE flips: gap census 39/51 -> 42/48 -",
+    "  THE INNER HALF IS CLOSED. Spec 13,798",
+    "  bytes, md5 17dcea0954b0b6edf591dfdbc0164033",
+    "  matched exactly first try, 16 inlines.",
+    "  LESSON (handoff discipline, same-day",
+    "  reaffirmation): the R575 handoff drifted",
+    "  and showed ./bn and a pre-run preamble;",
+    "  the delivered ritual block is ONE line",
+    "  only - ./rn NNN '<msg>' - pinned above at",
+    "  the R516/R541 rule. TEN straight",
+    "  first-tries (R566-R575). NEXT - R576: the",
+    "  Astral Plane chapter (pp. 60-72), the",
+    "  R557 one-round chapter pattern - reaching",
+    "  and the silver cords, the color pools,",
+    "  the no-gravity thought-movement, the",
+    "  encounter charts, combat, magic, and the",
+    "  features (githyanki, the dead gods)."
+  ],
+  "banner": {
+    "title": "THE ASTRAL PLANE - printed pp. 60-72, the whole chapter in one round: the barren vault between the Primes and the outer planes - the silver cords, the color pools, the thought-movement, the psychic wind, the weightless combat, the magic limits, and the githyanki with their silver swords.",
+    "provenance": "verified against printed pp. 60-72 of the uploaded motp.pdf OCR; the chapter pins carry the projection/physical travel split, the cord and pool mechanics, the encounter and wind tables, and the school-by-school magic limits exactly as printed.",
+    "sentinel": "the gap census after this round: 53 closed, 37 open - ELEVEN boxes fall (the chapter parent, the eight section children, the encounter check, the sample charts); the outer planes general doctrine opens the final arc next."
+  },
+  "consts": [
+    {
+      "name": "ddeTimeRatio",
+      "value": 365000,
+      "comment": "the Astral time ratio: the effects of time slow by 365,000 to 1 (170 true days to one subjective round) - the slowest subjective time of all the known major planes; spells run their normal duration in true time; aging attacks (ghosts, staff of withering) have no effect."
+    },
+    {
+      "name": "ddeCordDissolveTurns",
+      "value": 10,
+      "comment": "the silver cord snap: the astral form dissolves in 1d10 turns, the Prime body perishes irrecoverable save wishes, artifacts return intact - but reaching a color pool and forming a new body before the clock runs out averts death; the same 1d10-turn clock rules a slain physical body (the cord disappears, the character dies)."
+    },
+    {
+      "name": "ddeAstralComaDays",
+      "value": 5,
+      "comment": "the slain-astral-form coma: 1d4+1 (5) days, awakened only by a full wish or alter reality; then a system shock roll - failure is death, success wakes at 1 hit point, no spellcasting, half movement and -4 attacks until half hit points are regained WITHOUT magic (true time)."
+    },
+    {
+      "name": "ddePossessionPct",
+      "value": 1,
+      "comment": "the possession danger: a 1% chance per venture into the Astral that an extradimensional creature (magic jar class) possesses the abandoned physical body - the cord is NOT cut, visible to true seeing; the owner cannot re-enter until the intruder leaves or is exorcised."
+    },
+    {
+      "name": "ddeMentalMoveBase",
+      "value": 10,
+      "comment": "mental movement: 10 yards per minute (30 feet per melee round) per point of Intelligence, at will with free stops and turns; groups move at the lowest Intelligence; encumbrance costs 10 feet per round per 10 lbs (100 gp), magical items weigh nothing; physical push-off movement is the clumsy fallback (10 feet per round off a large object, Strength-based off small ones)."
+    },
+    {
+      "name": "ddeEncounterCheckHours",
+      "value": 4,
+      "comment": "the Astral encounter check: 1d10 rolled on entrance and every four true hours thereafter - a 1 means an encounter; type split 1-75 creature, 76-85 color pool, 86-95 astral item, 96-00 psychic wind; pool viewing adds a 5% chance per check that the portal opens beside an astral-affecting native."
+    },
+    {
+      "name": "ddeConduitBothEndsPct",
+      "value": 80,
+      "comment": "the astral conduits (wormholes): 80% have functioning gates at both ends (50% chance each way out, never to a plane holding the projector's body); the other 20% are one-way (being spun or sundered); unlike pools they reach the DEEPER layers - the only safe road into the lower Abyss."
+    },
+    {
+      "name": "ddeConduitPullYards",
+      "value": 120,
+      "comment": "the conduit attraction: within 1,000 yards a wormhole pulls travelers at 120 yards per round; those who cannot outpace it (Intelligence 11 or less) are dragged in and transported; cord-severed travelers sucked in do NOT die - they gain a new body where they land."
+    },
+    {
+      "name": "ddeWindDelayHours",
+      "value": 6,
+      "comment": "the psychic wind wake: 1d4+2 (6) hours added to travel (astral) or 1d4+2 hours unable to leave save by color pool (physical) - the 1-12 band of the 1d20 group roll; 13-16 lost for 2d10 true days, 17-19 cross-current (50% wrong pool or within 1,000 yards of a wormhole), 20 the storm - save vs. spell or the cord snaps."
+    },
+    {
+      "name": "ddePoolTwoWayPct",
+      "value": 15,
+      "comment": "the color pool traffic rule: only 15% of pools are two-way (movable, and so often eliminated or controlled); of those, 5% are FIXED portals - permanent, undisppellable, same spot, set exit, surface layers only; one-way pools vanish after passage (recreatable from the far side)."
+    },
+    {
+      "name": "ddeSearcherLevelMult",
+      "value": 5,
+      "comment": "the astral searcher danger: a failed restoration of spirit to a body (raise dead, magic jar) draws a searcher at 5 times the body's previously highest level on percentile dice (an 18th-level magic-user's failed raise dead = 90%); the searcher gains the body's hit points and physical abilities but not its class knowledge."
+    },
+    {
+      "name": "ddeTrueSightStunBase",
+      "value": 100,
+      "comment": "the panorama stun: true sight and gems of seeing reveal the infinite Astral - the stun chance is 100% minus 5% per level, immobilizing for the spell's duration (1d8 true turns via device); also detect magic: the whole plane radiates magic, normal enchantments discerned only 5% of the time."
+    },
+    {
+      "name": "ddeClericConjLevelCap",
+      "value": 4,
+      "comment": "the conjuration/summoning caps: clerical spells of 4th level or higher do not function; druidical 3rd or higher; magic-user and illusionist 5th or higher - save spells linked with abjuration (prismatic wall) or purely verbal (power word, death spell exception); Power-intervention spells work only for Astral-native powers (Anubis)."
+    },
+    {
+      "name": "ddeDruidConjLevelCap",
+      "value": 3,
+      "comment": "the druidical summoning cap: 3rd level or higher does not work (animal summoning fails, fire seeds works - conjuration only); summoning cantrips never operate; druidical spell recovery needs an Astral-resident deity or a faster-time haven, save the cleric's meditative true-time rest."
+    },
+    {
+      "name": "ddeMuConjLevelCap",
+      "value": 5,
+      "comment": "the magic-user/illusionist summoning cap: 5th level or higher fails unless abjuration-linked or verbal-only; combination spells take BOTH restrictions except abjuration-plus-conjuration/summoning (the conjuration limits ignored)."
+    }
+  ],
+  "bools": [
+    {
+      "name": "ddeSilverCordRule",
+      "value": true,
+      "comment": "the silver cord: visible 10 feet behind the astral form then invisible and intangible, stretched to any length; severed only by the psychic wind at its most powerful, githyanki silver swords, or the will of a Lesser/Greater Power; the astral form is a solid translucent white body - magical items and enchanted gear come along, the rest stays; voluntary return takes 1d100 melee rounds (delayable by psychic wind); group cords chain through the caster - his cord dooms all."
+    },
+    {
+      "name": "ddeColorPoolDoctrine",
+      "value": true,
+      "comment": "the color pools: 10-60 foot rippling disks, one-sided (a 1-in-10 per-encounter blind-side miss without detect invisible); the d20 color table (Concordant Opposition leather brown to Ethereal spiraling white) with silver ALWAYS the home Prime; viewing needs concentration within 30 feet - the point rides 1d4x100 yards above the surface, location by percentile (1-50 on target, 96-00 way off), fixed for one Prime day, moving at 10 times Intelligence in yards per round, forward only, slowed to 10 yards per turn in magic-rich areas."
+    },
+    {
+      "name": "ddePoolAttackRule",
+      "value": true,
+      "comment": "the pool battle: gaze creatures (basilisks, gorgons, cockatrices) perceive portals and strike through them - physical attackers strike the viewing point at AC 0, all viewers within 30 feet save vs. petrification or be affected (astral forms become astral stone); a dispel magic from the far side (50% plus the level difference) sucks viewers through; the pool viewer is otherwise immune to the viewed plane."
+    },
+    {
+      "name": "ddeSurvivalDoctrine",
+      "value": true,
+      "comment": "the survival: no breathing (respiratory attacks like cloudkill useless; gorgon breath and insinuative poison still work), no food or drink (hunger at ~300 subjective years), potions permanent while on the plane, vision 1,000-2,000 yards (infravision dead, ultravision doubled), no gravity or direction - motion continues till it hits something."
+    },
+    {
+      "name": "ddeWeightlessCombat",
+      "value": true,
+      "comment": "the combat: astral base AC 8 (nonmagical armor gives nothing, magical pluses reduced by 1), Intelligence gives the to-hit and damage mods (PH Strength table) and Wisdom the AC and bow mods (PH Dexterity table), Strength and Dexterity are irrelevant; attacks from above negate shields (helm saves), from below count as rear attacks (backstabs); missiles fly flat - doubled range, -2 for the first 2-5 shots; natural healing is suspended for non-natives."
+    },
+    {
+      "name": "ddeLiquidAndPoisonRule",
+      "value": true,
+      "comment": "the liquid and poison rules: weightless liquids film the whole body - double damage, and a filmed victim drowns in 1d4 melee rounds if he speaks (no verbal spells without water breathing); poison saves are rolled but effects suspend until the victim reaches a faster-time plane (insinuative poisons the worst); potions in vials take 1d4 rounds to drink with a 5% choke, wineskins drink in one round."
+    },
+    {
+      "name": "ddeExtradimensionalVoid",
+      "value": true,
+      "comment": "the void doctrine: the Astral has NO extradimensional space - rope trick, vanish, deep pockets fail; a portable hole either does not open (50%) or becomes a huge ordinary bag (50%); no egress to the Ethereal or inner planes save ether cyclones, so Ethereal-touching spells fail; flat spell areas become spheres of the lesser dimension, walls become hollow spheres of 10 feet plus 2.5 per level."
+    },
+    {
+      "name": "ddeIllusionNecromancyRule",
+      "value": true,
+      "comment": "the illusion and necromancy rules: phantasms without illusionary components fail (phantom wind, phantom speed); phantasmal forces work and read MORE believable; necromantics function normally - a failed raise dead draws an astral searcher; a clone grows at 1 day per 1,000 subjective years (useless); animate-object alterations give the object Intelligence 0 movement but it can strike."
+    },
+    {
+      "name": "ddeBigbyHandRule",
+      "value": true,
+      "comment": "the Bigby hands vs mental movers: interposing hand stops the less intelligent and halves the rest; forceful hand's push resolves by the Intelligence difference (equal = no movement); grasping hand interposes when the caster is dimmer, repels double-strength when brighter; clenched fist and crushing hand function normally - the hands carry the caster's own hit points and Armor Class."
+    },
+    {
+      "name": "ddeThiefAdjustments",
+      "value": true,
+      "comment": "the PC adjustments: thieves keep abilities - the plane self-lights so few shadows exist, hear noise +10%, move silently -10%, climb walls unpenalized on solids; rangers lose their surprise-protection but keep the 3-in-6 surprise, tracking only on solid islands; barbarian abilities fail (only 6th level or higher come willingly); monks hold AC 7 or better astrally and move at 18 Intelligence from 10th level; cavaliers and paladins ride ki-rin, dragon horses and nightmares."
+    },
+    {
+      "name": "ddeGithyankiSilverSwords",
+      "value": true,
+      "comment": "the githyanki: the silver swords (+3 two-handed) and special silver swords (+5, vocal) are the ONLY physical weapons that sever cords - hit the cord at AC 0, then a 20% sever chance (mind bar blocks silver, not special); their 96 movement and continual probability travel make their own color pools unusable to them; knights are evil cavaliers, cities reach 1,000 souls, and the lich-queen (24th-30th level) is a Demi-Power who cannot yet grant spells."
+    },
+    {
+      "name": "ddeYggdrasilOlympus",
+      "value": true,
+      "comment": "the permanent conduits: Yggdrasil the World Ash runs Gladsheim to Niflheim (the Glooms of Hades), Mount Olympus links the plane of Olympus to the Primes with exits into lower Gehenna, Hades and Tarterus - solid, permanent, weathering the fortunes of gods, ending in fixed-portal pools; Anubis is the only Power making his home in the Astral."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the TimeRatio pin",
+      "expr": "m['ddeTimeRatio']() != 365000"
+    },
+    {
+      "note": "the CordDissolveTurns pin",
+      "expr": "m['ddeCordDissolveTurns']() != 10"
+    },
+    {
+      "note": "the AstralComaDays pin",
+      "expr": "m['ddeAstralComaDays']() != 5"
+    },
+    {
+      "note": "the PossessionPct pin",
+      "expr": "m['ddePossessionPct']() != 1"
+    },
+    {
+      "note": "the MentalMoveBase pin",
+      "expr": "m['ddeMentalMoveBase']() != 10"
+    },
+    {
+      "note": "the EncounterCheckHours pin",
+      "expr": "m['ddeEncounterCheckHours']() != 4"
+    },
+    {
+      "note": "the ConduitBothEndsPct pin",
+      "expr": "m['ddeConduitBothEndsPct']() != 80"
+    },
+    {
+      "note": "the ConduitPullYards pin",
+      "expr": "m['ddeConduitPullYards']() != 120"
+    },
+    {
+      "note": "the WindDelayHours pin",
+      "expr": "m['ddeWindDelayHours']() != 6"
+    },
+    {
+      "note": "the PoolTwoWayPct pin",
+      "expr": "m['ddePoolTwoWayPct']() != 15"
+    },
+    {
+      "note": "the SearcherLevelMult pin",
+      "expr": "m['ddeSearcherLevelMult']() != 5"
+    },
+    {
+      "note": "the TrueSightStunBase pin",
+      "expr": "m['ddeTrueSightStunBase']() != 100"
+    },
+    {
+      "note": "the ClericConjLevelCap pin",
+      "expr": "m['ddeClericConjLevelCap']() != 4"
+    },
+    {
+      "note": "the DruidConjLevelCap pin",
+      "expr": "m['ddeDruidConjLevelCap']() != 3"
+    },
+    {
+      "note": "the MuConjLevelCap pin",
+      "expr": "m['ddeMuConjLevelCap']() != 5"
+    },
+    {
+      "note": "the SilverCordRule pin",
+      "expr": "m['ddeSilverCordRule']() != 1"
+    },
+    {
+      "note": "the ColorPoolDoctrine pin",
+      "expr": "m['ddeColorPoolDoctrine']() != 1"
+    },
+    {
+      "note": "the PoolAttackRule pin",
+      "expr": "m['ddePoolAttackRule']() != 1"
+    },
+    {
+      "note": "the SurvivalDoctrine pin",
+      "expr": "m['ddeSurvivalDoctrine']() != 1"
+    },
+    {
+      "note": "the WeightlessCombat pin",
+      "expr": "m['ddeWeightlessCombat']() != 1"
+    },
+    {
+      "note": "the LiquidAndPoisonRule pin",
+      "expr": "m['ddeLiquidAndPoisonRule']() != 1"
+    },
+    {
+      "note": "the ExtradimensionalVoid pin",
+      "expr": "m['ddeExtradimensionalVoid']() != 1"
+    },
+    {
+      "note": "the IllusionNecromancyRule pin",
+      "expr": "m['ddeIllusionNecromancyRule']() != 1"
+    },
+    {
+      "note": "the BigbyHandRule pin",
+      "expr": "m['ddeBigbyHandRule']() != 1"
+    },
+    {
+      "note": "the ThiefAdjustments pin",
+      "expr": "m['ddeThiefAdjustments']() != 1"
+    },
+    {
+      "note": "the GithyankiSilverSwords pin",
+      "expr": "m['ddeGithyankiSilverSwords']() != 1"
+    },
+    {
+      "note": "the YggdrasilOlympus pin",
+      "expr": "m['ddeYggdrasilOlympus']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the astral plane pins": [
+      {
+        "kind": "const",
+        "name": "ddeTimeRatio"
+      },
+      {
+        "kind": "const",
+        "name": "ddeCordDissolveTurns"
+      },
+      {
+        "kind": "const",
+        "name": "ddeAstralComaDays"
+      },
+      {
+        "kind": "const",
+        "name": "ddePossessionPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddeMentalMoveBase"
+      },
+      {
+        "kind": "const",
+        "name": "ddeEncounterCheckHours"
+      },
+      {
+        "kind": "const",
+        "name": "ddeConduitBothEndsPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddeConduitPullYards"
+      },
+      {
+        "kind": "const",
+        "name": "ddeWindDelayHours"
+      },
+      {
+        "kind": "const",
+        "name": "ddePoolTwoWayPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddeSearcherLevelMult"
+      },
+      {
+        "kind": "const",
+        "name": "ddeTrueSightStunBase"
+      },
+      {
+        "kind": "const",
+        "name": "ddeClericConjLevelCap"
+      },
+      {
+        "kind": "const",
+        "name": "ddeDruidConjLevelCap"
+      },
+      {
+        "kind": "const",
+        "name": "ddeMuConjLevelCap"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeSilverCordRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeColorPoolDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddePoolAttackRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeSurvivalDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeWeightlessCombat"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeLiquidAndPoisonRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeExtradimensionalVoid"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeIllusionNecromancyRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeBigbyHandRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeThiefAdjustments"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeGithyankiSilverSwords"
+      },
+      {
+        "kind": "bool",
+        "name": "ddeYggdrasilOlympus"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the whole chapter in one round, the R557 pattern",
+      "from": "- [ ] **The Astral Plane** (pp. 60-72) - the barren vault linking the Primes and the outer planes",
+      "to": "- [x] **The Astral Plane** (pp. 60-72) - the barren vault linking the Primes and the outer planes - R576: the whole chapter in one round, the R557 pattern"
+    },
+    {
+      "note": "the projection/physical split and the silver cord pins",
+      "from": "  - [ ] Reaching and physical travel (pp. 60-62) - the astral spell, the physical travel rules, the silver cords",
+      "to": "  - [x] Reaching and physical travel (pp. 60-62) - the astral spell, the physical travel rules, the silver cords - R576: the projection/physical split and the silver cord pins"
+    },
+    {
+      "note": "the dde pool pins",
+      "from": "  - [ ] Color pools (pp. 62-63) - the gateways to the outer planes",
+      "to": "  - [x] Color pools (pp. 62-63) - the gateways to the outer planes - R576: the dde pool pins (the blind side, the d20 colors, the viewing rules)"
+    },
+    {
+      "note": "the no-breath/no-food doctrine, the 365,000-to-1 time, the m",
+      "from": "  - [ ] Survival and movement (pp. 63-64) - the no-gravity thought-movement doctrine",
+      "to": "  - [x] Survival and movement (pp. 63-64) - the no-gravity thought-movement doctrine - R576: the no-breath/no-food doctrine, the 365,000-to-1 time, the mental movement"
+    },
+    {
+      "note": "the 1d10-every-four-hours check, the type split, the charts",
+      "from": "  - [ ] Encounters (pp. 64-67) - the encounter charts",
+      "to": "  - [x] Encounters (pp. 64-67) - the encounter charts - R576: the 1d10-every-four-hours check, the type split, the charts"
+    },
+    {
+      "note": "the weightless combat pins",
+      "from": "  - [ ] Combat (pp. 67-68) - the no-gravity combat rules, the initiative and weight modifiers",
+      "to": "  - [x] Combat (pp. 67-68) - the no-gravity combat rules, the initiative and weight modifiers - R576: the weightless combat pins (the AC 8 astral base, the Int/Wis mods)"
+    },
+    {
+      "note": "the school limits",
+      "from": "  - [ ] Magic (pp. 68-71) - the spell school effects, the 170-day potion duration class",
+      "to": "  - [x] Magic (pp. 68-71) - the spell school effects, the 170-day potion duration class - R576: the school limits (the conjuration caps, the sphere areas, the potion permanence)"
+    },
+    {
+      "note": "the class adjustments",
+      "from": "  - [ ] Player characters (pp. 71-72) - the PC-native adjustments",
+      "to": "  - [x] Player characters (pp. 71-72) - the PC-native adjustments - R576: the class adjustments (the thief noise split, the monk AC 7)"
+    },
+    {
+      "note": "the githyanki silver swords, the astral searchers, the fixed",
+      "from": "  - [ ] Features (pp. 72-73) - the astral dead, the psychic winds, the gods' remains",
+      "to": "  - [x] Features (pp. 72-73) - the astral dead, the psychic winds, the gods' remains - R576: the githyanki silver swords, the astral searchers, the fixed portals, Yggdrasil and Olympus"
+    },
+    {
+      "note": "the dde check pin",
+      "from": "  - [ ] The Astral encounter check (p. 64) - the 1d10 roll on entrance and every four true hours, a 1 means an encounter",
+      "to": "  - [x] The Astral encounter check (p. 64) - the 1d10 roll on entrance and every four true hours, a 1 means an encounter - R576: the dde check pin (1d10 on entrance and every four true hours, a 1 means an encounter)"
+    },
+    {
+      "note": "the human chart classes and the d8+d12 astral chart",
+      "from": "  - [ ] The Human and Astral encounter charts (p. 66) - the two sample charts",
+      "to": "  - [x] The Human and Astral encounter charts (p. 66) - the two sample charts - R576: the human chart classes and the d8+d12 astral chart (2-20)"
+    }
+  ],
+  "gap_census": {
+    "closed": 53,
+    "open": 37
+  },
+  "caller_files": [],
+  "inline_count": 27
+}

@@ -87,17 +87,17 @@ sample entries verified against the canonical PHB levels).
   - [x] The positive quasi-planes encounter table (p. 56) - the 1-in-10 per 12 hours - R574: the ddc check pin (1 in 10, the phenomenon/pocket/creature split)
   - [x] The Minerals petrification rule (p. 57) - the save-vs-spell per true turn, the 80/20 stone/crystal split, the 99% crumble rule - R574: the ddc fossilization pins (the save per true turn, the 80/20 split, the 99% crumble)
   - [x] The negative quasi-planes encounter frequency (p. 58) - the 1-in-20 every 12 hours - R575: AMENDED against the source - 1 in 10 per 12 hours (the 1-20/21-00 phenomenon/creature split, no elemental pockets)
-- [ ] **The Astral Plane** (pp. 60-72) - the barren vault linking the Primes and the outer planes
-  - [ ] Reaching and physical travel (pp. 60-62) - the astral spell, the physical travel rules, the silver cords
-  - [ ] Color pools (pp. 62-63) - the gateways to the outer planes
-  - [ ] Survival and movement (pp. 63-64) - the no-gravity thought-movement doctrine
-  - [ ] Encounters (pp. 64-67) - the encounter charts
-  - [ ] Combat (pp. 67-68) - the no-gravity combat rules, the initiative and weight modifiers
-  - [ ] Magic (pp. 68-71) - the spell school effects, the 170-day potion duration class
-  - [ ] Player characters (pp. 71-72) - the PC-native adjustments
-  - [ ] Features (pp. 72-73) - the astral dead, the psychic winds, the gods' remains
-  - [ ] The Astral encounter check (p. 64) - the 1d10 roll on entrance and every four true hours, a 1 means an encounter
-  - [ ] The Human and Astral encounter charts (p. 66) - the two sample charts
+- [x] **The Astral Plane** (pp. 60-72) - the barren vault linking the Primes and the outer planes - R576: the whole chapter in one round, the R557 pattern
+  - [x] Reaching and physical travel (pp. 60-62) - the astral spell, the physical travel rules, the silver cords - R576: the projection/physical split and the silver cord pins
+  - [x] Color pools (pp. 62-63) - the gateways to the outer planes - R576: the dde pool pins (the blind side, the d20 colors, the viewing rules)
+  - [x] Survival and movement (pp. 63-64) - the no-gravity thought-movement doctrine - R576: the no-breath/no-food doctrine, the 365,000-to-1 time, the mental movement
+  - [x] Encounters (pp. 64-67) - the encounter charts - R576: the 1d10-every-four-hours check, the type split, the charts
+  - [x] Combat (pp. 67-68) - the no-gravity combat rules, the initiative and weight modifiers - R576: the weightless combat pins (the AC 8 astral base, the Int/Wis mods)
+  - [x] Magic (pp. 68-71) - the spell school effects, the 170-day potion duration class - R576: the school limits (the conjuration caps, the sphere areas, the potion permanence)
+  - [x] Player characters (pp. 71-72) - the PC-native adjustments - R576: the class adjustments (the thief noise split, the monk AC 7)
+  - [x] Features (pp. 72-73) - the astral dead, the psychic winds, the gods' remains - R576: the githyanki silver swords, the astral searchers, the fixed portals, Yggdrasil and Olympus
+  - [x] The Astral encounter check (p. 64) - the 1d10 roll on entrance and every four true hours, a 1 means an encounter - R576: the dde check pin (1d10 on entrance and every four true hours, a 1 means an encounter)
+  - [x] The Human and Astral encounter charts (p. 66) - the two sample charts - R576: the human chart classes and the d8+d12 astral chart (2-20)
 - [ ] **The Outer Planes** (pp. 73-116) - the planes of power: the general doctrine and the seventeen named planes
   - [ ] The outer planes in general (pp. 73-84) - reaching, survival, movement, encounters, combat, magic, the player characters, the features, and the alignment-arrangement doctrine (the Great Wheel)
   - [ ] The plane-shift arrival table (p. 74) - the random-placement roll for outer-plane travel
