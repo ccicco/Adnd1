@@ -1,0 +1,639 @@
+{
+ "round": 533,
+ "title": "the DSG lands of Deepearth opener",
+ "census_before": 456,
+ "prefix": "dndl",
+ "header_file": "rules/dsgland.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "inline_count": 52,
+ "banner": {
+  "title": "THE DSG LANDS OF DEEPEARTH OPENER, R533: printed p. 75 (pdf 76) - the Deepearth setting frame and the connecting-passage generation: the frame (the lands presented in detail as a campaign setting, the party gaining many levels without exploring the entirety; the alternative example-of-the-ecosystem view, use-and-discard, expandable, the realms occupying no more area than a moderately small nation; the numbered-area rough detail with the mapping-in-more-detail requirement; the page-114 three-dimensional and geomorphic mapping referrals; and the hollow-earth-below note with the shafts from the lowest level), the connecting passages (all passable to human-sized characters, the vertical obstacles and water currents handled per area or generated randomly), the water passages (the rivers with their map-readable flow directions, the indicated waterfalls with map-scale drops, the rest navigable by boat with a skilled pilot and a little luck; the 1d6-x-10 width generation for the 10-60-foot spread, the width constant for one mile, the drift reroll - 2-5 the same, 1 shrinking 10 feet or 5 at the 10-foot floor, 6 growing 10 feet even beyond 60; the 1d6 temperature - 1-5 very cold, the 6 heat check with the second d6 - 1 cool-slightly-warmer, 6 boiling hot, 2-5 proportional; only the boiling water unsafe for unprotected characters), the tunnels (the human-passable diameters, mostly natural caverns, the 10-percent-per-10-miles carved chance, the carved uniform 10-foot diameter and height with no sudden obstacles; the 33-percent-per-mile obstacle chance with the 10d10 cliffs, the 20d10-deep 4d10-wide chasms, the cave-in remnants and the water-quicksand-oil-tar pools, never closing the passage; the 3d20 cavern widths from 3 to 60 feet, constant for 1d20-x-100 feet of 100-2,000, the 1/3 change chance with the 3d20 reroll; and the unintelligent dwellers - scavengers, fungi, molds and lichens - the intelligent denizens only passing through, the banished renegade bands the exception), and the area details (the framework-not-full-detail rule, the 300-foot-square as 30-by-30 graph squares, and the DMG page-169 Random Dungeon Generation referral)",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~9584-9712) with the pdf Acrobat-Capture layer as the second read (idx 176 = the printed p. 75 window); the compiled-tables appendix has no reprint of these procedures. A CLEAN-READ ROUND with one settled garble: the djvu cavern-width formula reads \"(3420)\" and the Capture layer reads \"(3d20)\" - settled as 3d20 by the Capture read, corroborated by the 3-60-foot range (the standing die-notation OCR class); every other load-bearing number agrees in both reads - the 1d6-x-10 widths, the drift bands, the temperature bands, the 10% carved chance, the 33% obstacle chance, the 10d10/20d10/4d10 obstacle dice, and the 1d20-x-100 constancy. The map pages (printed pp. 76-77) are graphics and pin nothing this round. SEAMS: the DMG Random Dungeon Generation (page 169), the R518 water travel (the navigable-by-boat rule), the R531 geography (the cavern-width generation), and the R503 re-grain. A ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains open until the setting lands in full (the R527 precedent - the gap report is NOT in the git add). Nothing auto-credits.",
+  "sentinel": "A procedural round: the numbers pin as consts per the R508 convention - the waterway width generation (1d6 x 10, the 10-60 spread, the drift bands with the 5-foot floor), the temperature bands (1-5 cold, the 6 heat, the second d6 with the boiling 6), the tunnel carving (10%, the uniform 10 feet), the obstacles (33% per mile, the 10d10 cliffs, the 20d10-deep 4d10-wide chasms), the cavern widths (3d20, the 3-60 range, the 1d20-x-100 constancy, the 1/3 change chance), and the area-details example (the 300-foot square, the 30 squares, the DMG page 169). The frame and dwelling prose pin as bools. The DMG/R518/R531 seams are noted; the Deepearth child stays open; nothing auto-credits."
+ },
+ "include_after": "#include \"rules/dsgcult.h\"  // R532: the DSG cultures of the underdark pins",
+ "include_comment": "the DSG lands of Deepearth opener pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The DSG lands of Deepearth opener pins the setting frame (the example-to-adapt rule, the hollow-below note), the water-passage generation (the 1d6-x-10 widths, the drift bands, the temperature bands), the tunnel generation (the 10% carved chance, the 33% obstacles, the 3d20 cavern widths with the 1d20-x-100 constancy), and the area-details example with the DMG page 169 referral.",
+ "audit_label": "R533 DSG Deepearth opener audit",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R532 LANDED 2026-10-17: commit 3c3fc98 (census 455 -> 456,",
+ "prev_record": [
+  "- R532 LANDED 2026-10-17: commit 3c3fc98 (census 455 -> 456,",
+  "  pushed f52a044..3c3fc98), THE DSG CULTURES OF THE",
+  "  UNDERDARK, printed pp. 73-74 (pdf 74-75), the third",
+  "  DM-section child - the values and objectives frame (the",
+  "  races relying less on trade and interaction than the",
+  "  surface races, the environment forcibly segregating",
+  "  them; trade governed more often by proximity than by",
+  "  alignment - an evil race more likely to trade with a",
+  "  nearby neutral race than a distant evil one; and the",
+  "  monster-encyclopedia referral), and the eight race",
+  "  write-ups: the drow (the strongly matriarchal society",
+  "  with females holding all power in government, military",
+  "  and home; the Lolth worship with the 6th-level-and-",
+  "  higher testing and the drider failures; the spider-like",
+  "  scorpions, pedipalp and solifugud; the web-pattern",
+  "  buildings with the traps channeling prey to the",
+  "  center; the aged-only cannibalism under population",
+  "  pressure; the treaty-breaking making alliances",
+  "  reluctant; and the long-term objective of ruling all",
+  "  subterranean races and controlling underworld access),",
+  "  the kuo-toa (the race past its prime struggling to",
+  "  retain its holdings, its inability to cooperate making",
+  "  it susceptible to conquest; the Sea Mother worship as",
+  "  the one unifying element with the holy-war dream; the",
+  "  5% insanity breeding the monitor class; and the",
+  "  slave-acquiring brute force, treachery or barter), the",
+  "  duergar (the disciplined and orderly evil allowing",
+  "  dominance; the mountain-and-hill-dwarf kinship in",
+  "  mining and metal-and-stone work; the fiendish",
+  "  imprisoning traps with slow painful deaths; the slave",
+  "  labor with complete disregard for welfare; the",
+  "  mercilessness and torture love; the extermination over",
+  "  driving off to eliminate reprisal; and the",
+  "  sculpture-and-metalworking craft trade for slaves and",
+  "  devices), the mind flayers (the aboleth the only",
+  "  non-hostile race with the sinister-connection legends;",
+  "  the brain hunger leaving bodies to the scavengers; the",
+  "  racial quest to douse the fires of the sun itself; the",
+  "  probability-travel escape from difficult odds; the",
+  "  rigidly psionic-ranked society with slave labor and",
+  "  slave food; the life-form experiments with their",
+  "  hostile hybrids; and the immunity-bought-with-slaves",
+  "  trade and the temporary aboleth pacts), the aboleth",
+  "  (the most alien culture from the human point of view,",
+  "  coldly ruthless with torture serving no rational",
+  "  purpose; the intended complete control of the",
+  "  underworld beginning with the underground waters - the",
+  "  main reason for the kuo-toan waning; the obscene mind",
+  "  flayer pacts with the illithid as a temporary tool; the",
+  "  godless reverence of the greater aboleth, one to six",
+  "  per city at four times the size and Hit Dice, the",
+  "  repositories of the alien knowledge; and the remote",
+  "  casually-guarded slave cities), the derro (the small",
+  "  savage bands never in large communities, raiding near",
+  "  the surface; the chaos and intraracial violence; the",
+  "  stealing over working and the short-lived duergar and",
+  "  drow pacts; and the 20-year savant war cycle ending in",
+  "  utter defeat but recovered by the high reproductive",
+  "  rate), and the cloakers (the true children of the",
+  "  earth with the Elemental Plane of Earth ties; the most",
+  "  intelligent of their type over the lurkers, miners,",
+  "  trappers and mantari servants; the violence answering",
+  "  all contact attempts; the toolless structureless",
+  "  culture with its instinctive community sense; and the",
+  "  guerrilla warfare and kin-sacrificing defense). A",
+  "  CLEAN-READ ROUND: both machine reads agree on every",
+  "  number (djvu ~lines 9268-9460, Capture idx 172-174;",
+  "  the FF/MM/MMII reference-title garbles settled by",
+  "  chapter context). SEAMS: Fiend Folio drow and kuo-toa,",
+  "  Monster Manual II duergar, aboleth, derro and cloakers,",
+  "  Monster Manual mind flayer, R530-R531 environment and",
+  "  geography, the R503 re-grain. Pinned as rules/dsgcult.h",
+  "  (prefix dncu, verified free; 42 inlines - 5 consts, 37",
+  "  bools, no tables). Spec 29,999 bytes, md5",
+  "  35e679031b2e4ff3d16bf4ce8e742d00 (user-side identical).",
+  "  Engine applied 5 then 0/5, audit mirror clean. Gap",
+  "  138/17 -> 139/16 (1 flip). PREFLIGHT GREEN with census",
+  "  456 audit lines, each exactly once, all bad 0; BUILD:",
+  "  0 warnings. NEXT - R533: the lands of Deepearth open",
+  "  (printed pp. 75+): the frame (the use-it-or-adapt-it",
+  "  setting, the moderately-small-nation area, the",
+  "  three-dimensional and geomorphic mapping referrals to",
+  "  p. 114, the hollow-earth note), the connecting",
+  "  passages (the human-sized passability, the water",
+  "  passages with the 1d6x10-ft width generation, the",
+  "  width-drift rolls, the 1d6 temperature bands with the",
+  "  boiling-hot danger, the tunnels with the 10% carved",
+  "  chance and the uniform 10-ft diameter) - the first",
+  "  procedurally-numbered DM-section round."
+ ],
+ "gap_census": {
+  "closed": 139,
+  "open": 16
+ },
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "dndlWaterWidthDice",
+   "value": 1,
+   "comment": "the waterway width roll: 1d6 multiplied by 10."
+  },
+  {
+   "name": "dndlWaterWidthSides",
+   "value": 6,
+   "comment": "the waterway width die is a d6."
+  },
+  {
+   "name": "dndlWaterWidthMultFt",
+   "value": 10,
+   "comment": "the 1d6 result is multiplied by 10 feet."
+  },
+  {
+   "name": "dndlWaterWidthMinFt",
+   "value": 10,
+   "comment": "the narrowest waterway section is 10 feet wide."
+  },
+  {
+   "name": "dndlWaterWidthMaxFt",
+   "value": 60,
+   "comment": "the widest standard waterway section is 60 feet."
+  },
+  {
+   "name": "dndlWidthSameLow",
+   "value": 2,
+   "comment": "the width-drift roll: on a 2-5 the river remains at approximately the same width for the next mile."
+  },
+  {
+   "name": "dndlWidthSameHigh",
+   "value": 5,
+   "comment": "the upper bound of the same-width drift band."
+  },
+  {
+   "name": "dndlWidthShrinkFt",
+   "value": 10,
+   "comment": "a drift roll of 1 decreases the river width by 10 feet."
+  },
+  {
+   "name": "dndlWidthFloorFt",
+   "value": 5,
+   "comment": "a river already only 10 feet wide decreases by 5 feet instead of 10 on a shrink roll."
+  },
+  {
+   "name": "dndlWidthGrowFt",
+   "value": 10,
+   "comment": "a drift roll of 6 expands the river width by 10 feet - even if this makes it wider than 60 feet."
+  },
+  {
+   "name": "dndlWaterColdHigh",
+   "value": 5,
+   "comment": "the temperature roll: on a 1-5 the river is very cold."
+  },
+  {
+   "name": "dndlWaterHeatRoll",
+   "value": 6,
+   "comment": "on a 6 some heat is reaching the water, and a second d6 determines how warm."
+  },
+  {
+   "name": "dndlWaterWarmLow",
+   "value": 1,
+   "comment": "the second roll: on a 1 the water is cool, but slightly warmer than normal."
+  },
+  {
+   "name": "dndlWaterBoilRoll",
+   "value": 6,
+   "comment": "on a 6 the water is boiling hot - the only temperature unsafe for unprotected characters to swim or fall into."
+  },
+  {
+   "name": "dndlCarvedChancePct",
+   "value": 10,
+   "comment": "about 1 out of every 10 miles of connecting tunnel has been carved by intelligent creatures."
+  },
+  {
+   "name": "dndlCarvedDiaFt",
+   "value": 10,
+   "comment": "an excavated tunnel is a uniform 10-foot diameter and height, with no sudden obstacles such as cliffs or chasms."
+  },
+  {
+   "name": "dndlObstaclePct",
+   "value": 33,
+   "comment": "a base 33% chance per mile that an obstacle lies in the path of the PCs exploring natural caverns."
+  },
+  {
+   "name": "dndlCliffDice",
+   "value": 10,
+   "comment": "the obstacle cliff height roll is 10d10 feet."
+  },
+  {
+   "name": "dndlCliffSides",
+   "value": 10,
+   "comment": "the cliff height die is a d10, ten of them."
+  },
+  {
+   "name": "dndlChasmDepthDice",
+   "value": 20,
+   "comment": "the obstacle chasm depth roll is 20d10 feet."
+  },
+  {
+   "name": "dndlChasmDepthSides",
+   "value": 10,
+   "comment": "the chasm depth die is a d10, twenty of them."
+  },
+  {
+   "name": "dndlChasmWidthDice",
+   "value": 4,
+   "comment": "the chasm width roll is 4d10 feet."
+  },
+  {
+   "name": "dndlChasmWidthSides",
+   "value": 10,
+   "comment": "the chasm width die is a d10, four of them."
+  },
+  {
+   "name": "dndlCavernDice",
+   "value": 3,
+   "comment": "the connecting-cavern width roll is 3d20 feet."
+  },
+  {
+   "name": "dndlCavernSides",
+   "value": 20,
+   "comment": "the cavern width die is a d20, three of them (the djvu 3420 garble settled by the Capture read)."
+  },
+  {
+   "name": "dndlCavernMinFt",
+   "value": 3,
+   "comment": "the narrowest connecting cavern is 3 feet wide."
+  },
+  {
+   "name": "dndlCavernMaxFt",
+   "value": 60,
+   "comment": "the widest connecting cavern is 60 feet."
+  },
+  {
+   "name": "dndlConstDice",
+   "value": 1,
+   "comment": "a cavern width remains constant for 1d20 x 100 feet."
+  },
+  {
+   "name": "dndlConstSides",
+   "value": 20,
+   "comment": "the constancy distance die is a d20."
+  },
+  {
+   "name": "dndlConstMultFt",
+   "value": 100,
+   "comment": "the constancy die is multiplied by 100 feet."
+  },
+  {
+   "name": "dndlConstMinFt",
+   "value": 100,
+   "comment": "the shortest constancy run is 100 feet."
+  },
+  {
+   "name": "dndlConstMaxFt",
+   "value": 2000,
+   "comment": "the longest constancy run is 2,000 feet."
+  },
+  {
+   "name": "dndlChangeChancePct",
+   "value": 33,
+   "comment": "after the constancy run the cavern stands a 1/3 chance of changing width - reroll the 3d20 if indicated."
+  },
+  {
+   "name": "dndlSquareFt",
+   "value": 300,
+   "comment": "the area-details example: a dungeon described as occupying a 300-foot-square area."
+  },
+  {
+   "name": "dndlSquaresPerSide",
+   "value": 30,
+   "comment": "the 300-foot square means a 30-by-30 square section of graph paper, not one huge room."
+  },
+  {
+   "name": "dndlDmgPage",
+   "value": 169,
+   "comment": "the Random Dungeon Generation system referral: DMG page 169."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dndlSettingForCampaign",
+   "value": true,
+   "comment": "the lands of Deepearth are presented in detail as a setting for the underground campaign: the known varieties of intelligent life each claim a portion, and a party can gain many levels and overcome towering obstacles without exploring Deepearth in its entirety."
+  },
+  {
+   "name": "dndlExampleToAdapt",
+   "value": true,
+   "comment": "alternatively regard the lands as an example of the underground ecosystem - utilize the aspects you like, disregard others, expand as you wish; as presented the realms occupy no more area than a moderately small nation, with potential for many such realms under the lands and seas."
+  },
+  {
+   "name": "dndlAreaKeyRoughDetail",
+   "value": true,
+   "comment": "each numbered map area is presented in rough detail - the overall geography, the major inhabitants and resources, and any unique features - and each area must be mapped in more detail to run a campaign there."
+  },
+  {
+   "name": "dndlThreeDimReferral",
+   "value": true,
+   "comment": "for three-dimensional mapping detail see page 114; geomorphic mapping is described there too and can be a great time-saver for PCs spending much time in the regions of Deepearth."
+  },
+  {
+   "name": "dndlHollowBelowNote",
+   "value": true,
+   "comment": "if employing one of the hollow earth theories, the hollow-earth region lies below the areas depicted on the Deepearth map - create shafts or tunnels leading down from the lowest level."
+  },
+  {
+   "name": "dndlPassagesHumanSized",
+   "value": true,
+   "comment": "all connecting passages are large enough to be passable to human-sized characters; other factors such as vertical obstacles or water currents are handled in the area description or generated randomly by the DM."
+  },
+  {
+   "name": "dndlRiversFlowMap",
+   "value": true,
+   "comment": "the map waterways are rivers flowing through the dark reaches; the flow direction is easy to determine from the map, the rivers proceeding at a rapid pace or slower, sometimes almost stagnant."
+  },
+  {
+   "name": "dndlWaterfallsIndicated",
+   "value": true,
+   "comment": "all vertical drops are indicated on the map - use the map scale to determine how far a waterfall drops; all other waterway sections are navigable by boat, assuming a skilled pilot and a little luck."
+  },
+  {
+   "name": "dndlWidthMileConst",
+   "value": true,
+   "comment": "a waterway width remains constant, with minor fluctuations, for one mile, after which the drift d6 is rolled again."
+  },
+  {
+   "name": "dndlWaterBoilOnlyDanger",
+   "value": true,
+   "comment": "the water in underground rivers is usually numbingly cold; only water that is boiling hot is unsafe for unprotected characters to swim or fall into, the 2-5 results meaning a degree of warmth proportional to the roll."
+  },
+  {
+   "name": "dndlTunnelsHumanPass",
+   "value": true,
+   "comment": "the tunnels connecting the larger realms are all of sufficient diameter to allow a human to pass, and often much wider; in most cases they are natural caverns."
+  },
+  {
+   "name": "dndlObstacleExamples",
+   "value": true,
+   "comment": "the obstacles: a cliff of 10d10 feet height, a chasm 20d10 feet deep and 4d10 feet wide, the remnants of a cave-in, or a large pool of water, quicksand, oil, or tar - the obstacle never completely closes off the passage."
+  },
+  {
+   "name": "dndlUnintelligentDwellers",
+   "value": true,
+   "comment": "unintelligent monsters including scavengers occasionally live in the passages, as do fungi, molds and lichens - but intelligent creatures do not dwell here; encountered drow and other denizens are passing through, though renegade bands banished from their homelands might eke out an existence in the tunnels."
+  },
+  {
+   "name": "dndlFrameworkNotFullDetail",
+   "value": true,
+   "comment": "the map shows much too large an area to be fully detailed in the volume - an overall framework is given and the DM is free to fill in the necessary details."
+  },
+  {
+   "name": "dndlSquareMeansGraph",
+   "value": true,
+   "comment": "general information indicates the overall parameters: a 300-foot-square dungeon maps as a 30-square by 30-square graph section, not as one huge room 300 feet on a side."
+  },
+  {
+   "name": "dndlDmgRandomDungeon",
+   "value": true,
+   "comment": "if there is no time to prepare a map, use the Random Dungeon Generation system in the DMG, page 169."
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['dndlWaterWidthDice']() != 1 or m['dndlWaterWidthSides']() != 6 or m['dndlWaterWidthMultFt']() != 10 or m['dndlWaterWidthMinFt']() != 10 or m['dndlWaterWidthMaxFt']() != 60",
+   "note": "the waterway width generation: 1d6 x 10 for the 10-to-60-foot spread."
+  },
+  {
+   "expr": "m['dndlWidthSameLow']() != 2 or m['dndlWidthSameHigh']() != 5 or m['dndlWidthShrinkFt']() != 10 or m['dndlWidthFloorFt']() != 5 or m['dndlWidthGrowFt']() != 10",
+   "note": "the width-drift bands: 2-5 the same, 1 shrinks 10 feet (5 at the floor), 6 grows 10 feet even beyond 60."
+  },
+  {
+   "expr": "m['dndlWaterColdHigh']() != 5 or m['dndlWaterHeatRoll']() != 6 or m['dndlWaterWarmLow']() != 1 or m['dndlWaterBoilRoll']() != 6",
+   "note": "the temperature bands: 1-5 very cold, the 6 heat check, the 1 cool-slightly-warmer, the 6 boiling."
+  },
+  {
+   "expr": "m['dndlCarvedChancePct']() != 10 or m['dndlCarvedDiaFt']() != 10 or m['dndlObstaclePct']() != 33",
+   "note": "the tunnel carving: the 10% carved chance, the uniform 10-foot diameter, the 33% per-mile obstacle chance."
+  },
+  {
+   "expr": "m['dndlCliffDice']() != 10 or m['dndlCliffSides']() != 10 or m['dndlChasmDepthDice']() != 20 or m['dndlChasmDepthSides']() != 10 or m['dndlChasmWidthDice']() != 4 or m['dndlChasmWidthSides']() != 10",
+   "note": "the obstacle dice: the 10d10 cliff, the 20d10 chasm depth, the 4d10 chasm width."
+  },
+  {
+   "expr": "m['dndlCavernDice']() != 3 or m['dndlCavernSides']() != 20 or m['dndlCavernMinFt']() != 3 or m['dndlCavernMaxFt']() != 60 or m['dndlConstDice']() != 1 or m['dndlConstSides']() != 20 or m['dndlConstMultFt']() != 100 or m['dndlConstMinFt']() != 100 or m['dndlConstMaxFt']() != 2000 or m['dndlChangeChancePct']() != 33",
+   "note": "the cavern widths: the 3d20 (the djvu 3420 settled by Capture), the 3-60-foot range, the 1d20 x 100 constancy runs of 100-2,000 feet, the 1/3 change chance."
+  },
+  {
+   "expr": "m['dndlSquareFt']() != 300 or m['dndlSquaresPerSide']() != 30 or m['dndlDmgPage']() != 169",
+   "note": "the area-details example and referral: the 300-foot square as 30-by-30 graph squares, the DMG page 169."
+  },
+  {
+   "expr": "m['dndlSettingForCampaign']() != 1 or m['dndlExampleToAdapt']() != 1 or m['dndlHollowBelowNote']() != 1 or m['dndlUnintelligentDwellers']() != 1",
+   "note": "the frame prose: the setting use, the example-to-adapt rule, the hollow-below note, the unintelligent dwellers."
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Deepearth frame section": [
+   {
+    "kind": "bool",
+    "name": "dndlSettingForCampaign"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlExampleToAdapt"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlAreaKeyRoughDetail"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlThreeDimReferral"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlHollowBelowNote"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlPassagesHumanSized"
+   }
+  ],
+  "the water passages section": [
+   {
+    "kind": "bool",
+    "name": "dndlRiversFlowMap"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlWaterfallsIndicated"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWaterWidthDice"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWaterWidthSides"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWaterWidthMultFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWaterWidthMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWaterWidthMaxFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlWidthMileConst"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWidthSameLow"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWidthSameHigh"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWidthShrinkFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWidthFloorFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWidthGrowFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWaterColdHigh"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWaterHeatRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWaterWarmLow"
+   },
+   {
+    "kind": "const",
+    "name": "dndlWaterBoilRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlWaterBoilOnlyDanger"
+   }
+  ],
+  "the tunnels section": [
+   {
+    "kind": "bool",
+    "name": "dndlTunnelsHumanPass"
+   },
+   {
+    "kind": "const",
+    "name": "dndlCarvedChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "dndlCarvedDiaFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlObstaclePct"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlObstacleExamples"
+   },
+   {
+    "kind": "const",
+    "name": "dndlCliffDice"
+   },
+   {
+    "kind": "const",
+    "name": "dndlCliffSides"
+   },
+   {
+    "kind": "const",
+    "name": "dndlChasmDepthDice"
+   },
+   {
+    "kind": "const",
+    "name": "dndlChasmDepthSides"
+   },
+   {
+    "kind": "const",
+    "name": "dndlChasmWidthDice"
+   },
+   {
+    "kind": "const",
+    "name": "dndlChasmWidthSides"
+   },
+   {
+    "kind": "const",
+    "name": "dndlCavernDice"
+   },
+   {
+    "kind": "const",
+    "name": "dndlCavernSides"
+   },
+   {
+    "kind": "const",
+    "name": "dndlCavernMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlCavernMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlConstDice"
+   },
+   {
+    "kind": "const",
+    "name": "dndlConstSides"
+   },
+   {
+    "kind": "const",
+    "name": "dndlConstMultFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlConstMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlConstMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlChangeChancePct"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlUnintelligentDwellers"
+   }
+  ],
+  "the area details section": [
+   {
+    "kind": "bool",
+    "name": "dndlFrameworkNotFullDetail"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlSquareMeansGraph"
+   },
+   {
+    "kind": "const",
+    "name": "dndlSquareFt"
+   },
+   {
+    "kind": "const",
+    "name": "dndlSquaresPerSide"
+   },
+   {
+    "kind": "bool",
+    "name": "dndlDmgRandomDungeon"
+   },
+   {
+    "kind": "const",
+    "name": "dndlDmgPage"
+   }
+  ]
+ },
+ "caller_files": []
+}

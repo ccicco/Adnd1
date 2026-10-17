@@ -7759,6 +7759,95 @@ when both halves land.
   objectives frame plus the eight race write-ups (drow,
   kuo-toa, duergar, mind flayers, aboleth, derro,
   cloakers).
+- R532 LANDED 2026-10-17: commit 3c3fc98 (census 455 -> 456,
+  pushed f52a044..3c3fc98), THE DSG CULTURES OF THE
+  UNDERDARK, printed pp. 73-74 (pdf 74-75), the third
+  DM-section child - the values and objectives frame (the
+  races relying less on trade and interaction than the
+  surface races, the environment forcibly segregating
+  them; trade governed more often by proximity than by
+  alignment - an evil race more likely to trade with a
+  nearby neutral race than a distant evil one; and the
+  monster-encyclopedia referral), and the eight race
+  write-ups: the drow (the strongly matriarchal society
+  with females holding all power in government, military
+  and home; the Lolth worship with the 6th-level-and-
+  higher testing and the drider failures; the spider-like
+  scorpions, pedipalp and solifugud; the web-pattern
+  buildings with the traps channeling prey to the
+  center; the aged-only cannibalism under population
+  pressure; the treaty-breaking making alliances
+  reluctant; and the long-term objective of ruling all
+  subterranean races and controlling underworld access),
+  the kuo-toa (the race past its prime struggling to
+  retain its holdings, its inability to cooperate making
+  it susceptible to conquest; the Sea Mother worship as
+  the one unifying element with the holy-war dream; the
+  5% insanity breeding the monitor class; and the
+  slave-acquiring brute force, treachery or barter), the
+  duergar (the disciplined and orderly evil allowing
+  dominance; the mountain-and-hill-dwarf kinship in
+  mining and metal-and-stone work; the fiendish
+  imprisoning traps with slow painful deaths; the slave
+  labor with complete disregard for welfare; the
+  mercilessness and torture love; the extermination over
+  driving off to eliminate reprisal; and the
+  sculpture-and-metalworking craft trade for slaves and
+  devices), the mind flayers (the aboleth the only
+  non-hostile race with the sinister-connection legends;
+  the brain hunger leaving bodies to the scavengers; the
+  racial quest to douse the fires of the sun itself; the
+  probability-travel escape from difficult odds; the
+  rigidly psionic-ranked society with slave labor and
+  slave food; the life-form experiments with their
+  hostile hybrids; and the immunity-bought-with-slaves
+  trade and the temporary aboleth pacts), the aboleth
+  (the most alien culture from the human point of view,
+  coldly ruthless with torture serving no rational
+  purpose; the intended complete control of the
+  underworld beginning with the underground waters - the
+  main reason for the kuo-toan waning; the obscene mind
+  flayer pacts with the illithid as a temporary tool; the
+  godless reverence of the greater aboleth, one to six
+  per city at four times the size and Hit Dice, the
+  repositories of the alien knowledge; and the remote
+  casually-guarded slave cities), the derro (the small
+  savage bands never in large communities, raiding near
+  the surface; the chaos and intraracial violence; the
+  stealing over working and the short-lived duergar and
+  drow pacts; and the 20-year savant war cycle ending in
+  utter defeat but recovered by the high reproductive
+  rate), and the cloakers (the true children of the
+  earth with the Elemental Plane of Earth ties; the most
+  intelligent of their type over the lurkers, miners,
+  trappers and mantari servants; the violence answering
+  all contact attempts; the toolless structureless
+  culture with its instinctive community sense; and the
+  guerrilla warfare and kin-sacrificing defense). A
+  CLEAN-READ ROUND: both machine reads agree on every
+  number (djvu ~lines 9268-9460, Capture idx 172-174;
+  the FF/MM/MMII reference-title garbles settled by
+  chapter context). SEAMS: Fiend Folio drow and kuo-toa,
+  Monster Manual II duergar, aboleth, derro and cloakers,
+  Monster Manual mind flayer, R530-R531 environment and
+  geography, the R503 re-grain. Pinned as rules/dsgcult.h
+  (prefix dncu, verified free; 42 inlines - 5 consts, 37
+  bools, no tables). Spec 29,999 bytes, md5
+  35e679031b2e4ff3d16bf4ce8e742d00 (user-side identical).
+  Engine applied 5 then 0/5, audit mirror clean. Gap
+  138/17 -> 139/16 (1 flip). PREFLIGHT GREEN with census
+  456 audit lines, each exactly once, all bad 0; BUILD:
+  0 warnings. NEXT - R533: the lands of Deepearth open
+  (printed pp. 75+): the frame (the use-it-or-adapt-it
+  setting, the moderately-small-nation area, the
+  three-dimensional and geomorphic mapping referrals to
+  p. 114, the hollow-earth note), the connecting
+  passages (the human-sized passability, the water
+  passages with the 1d6x10-ft width generation, the
+  width-drift rolls, the 1d6 temperature bands with the
+  boiling-hot danger, the tunnels with the 10% carved
+  chance and the uniform 10-ft diameter) - the first
+  procedurally-numbered DM-section round.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
