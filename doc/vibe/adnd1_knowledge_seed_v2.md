@@ -9946,6 +9946,45 @@ when both halves land.
   ascending layers, Lunia to Chronias, the
   archons, Yondalla and Moradin) - the
   Upper Planes continue.
+- R579 LANDED 2026-10-17: commit de89310391bc82540ed02
+  6b754ca0684d5ab3345 (census 502 -> 503,
+  pushed 8dffd14..de89310), THE SEVEN HEAVENS
+  AND THE TWIN PARADISES, printed pp. 87-90,
+  the next two Upper Planes in one round: the
+  Seven Heavens (the seven ascending layers
+  with the barrier-at-the-peak illusion,
+  Lunia's holy-water surf, Mercuria and
+  Bahamut's court, Venya and the Green
+  Fields, Solania and Moradin's Soul Forge,
+  Mertion's citadels, Jovar's ziggurat
+  council rumor, Chronias the Illuminated;
+  the five-type archon ladder - Lanterns,
+  Hounds, Wardens, Swords, Tomes; the
+  granite-color portals; and the Powers -
+  Yondalla, Brandobaris, Moradin and
+  Berronar, the four-layer Bahamut palace,
+  Chung Kuel, Kuan Yin, Vishnu and Surya,
+  Ebisu, Girru, the home-plane-benefits-
+  anywhere rule); and the Twin Paradises (the
+  book with no spine - Dothion and Shurrock
+  20 miles apart, upside down to each other,
+  the midair Wisdom-check barrier, the cavern
+  portal patterns, no additional
+  restrictions, and the Powers - the gnomish
+  pantheon with Whisperleaf, Ukko's
+  blizzards, the wandering titan
+  Epinetheus). 4 consts + 7 bools, prefix
+  ddh, header rules/heavenstwins.h. TWO
+  flips: gap census 61/29 -> 63/27. Spec
+  13,772 bytes, md5 2d41b06c644350cd6b43f89c
+  66c7f9f7 matched exactly first try, 11
+  inlines. FOURTEEN straight first-tries
+  (R566-R579). NEXT - R580: Elysium (pp.
+  90-91, the four Oceanus layers Amoria,
+  Eronia, Bellerin and Thalesis, the phoenix
+  and the moon dogs) - the OCR already
+  gathered; then the Happy Hunting Grounds
+  and Olympus close the Upper Planes.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

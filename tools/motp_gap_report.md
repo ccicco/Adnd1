@@ -105,7 +105,7 @@ sample entries verified against the canonical PHB levels).
   - [x] The turning-undead alignment modifiers (p. 82) - the less-success-lower/success-upper turning rule - R577: the ddf turning pins (the +4-to--4 ladder, evil undead only)
   - [x] The unique-powers encounter doctrine (p. 77) - the only-on-a-2-or-20 rule for demon lords, solars and the Powers - R577: the ddf unique roll pin (a 2 or a 20 only)
   - [x] The human-travelers doctrine (p. 77) - the uncommon-first-layer/rare-deeper-layers rule - R577: the ddf human pins (uncommon first layer, rare deeper, the small-group level bonus)
-  - [ ] The Olympus spell-casting-creatures table (p. 92) - the 10%-can-cast roll
+  - [x] The Olympus spell-casting-creatures table (p. 92) - the 10%-can-cast roll - R580: AMENDED - the table is the Beastlands beasts table (10% of very-intelligent beasts cast, the d100 spell ladder, the doubled hit dice), not Olympus
   - [ ] The Limbo random-entry table (p. 97) - the baked/frozen/drowning/sliding-earth entry roll
   - [ ] The Abyssal-layers terrain table (p. 101) - the general-description roll
   - [ ] The Concordant Opposition center table (p. 115) - the powers-neutralized-by-distance roll
@@ -114,8 +114,8 @@ sample entries verified against the canonical PHB levels).
   - [x] Arcadia (pp. 86-87) - R578: the orchard plane (the day sphere, the potion fruit, the watch beasts, the militias, Marduk and Clanggedin)
   - [x] The Seven Heavens (pp. 87-89) - R579: the seven ascending layers (Lunia to Chronias, the archon ladder, Yondalla and Moradin, Bahamut)
   - [x] The Twin Paradises (pp. 89-90) - R579: the facing layers (the book with no spine, Dothion and Shurrock, the gnomish pantheon and Ukko)
-  - [ ] Elysium (pp. 90-91)
-  - [ ] The Happy Hunting Grounds (pp. 91-92)
+  - [x] Elysium (pp. 90-91) - R580: the four Oceanus layers (Amoria, Eronia, Bellerin, Thalasia, the moving realms, Isis and Nanna-Sin's moon-barque)
+  - [x] The Happy Hunting Grounds (pp. 91-92) - R580: the three Beastlands layers (Krigala, Brux, Karasuthra), the sentient spell-casting beasts, the mortals, the Beast Lords
   - [ ] Olympus (pp. 92-94)
   - [ ] Gladsheim (pp. 94-97)
   - [ ] Limbo (pp. 97-99)

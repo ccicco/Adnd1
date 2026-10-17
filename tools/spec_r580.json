@@ -1,0 +1,256 @@
+{
+  "round": 580,
+  "prefix": "ddi",
+  "header_file": "rules/elysiumbeasts.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 503,
+  "title": "Elysium and the Happy Hunting Grounds",
+  "audit_label": "R580 Elysium-Beastlands audit",
+  "audit_comment": "ELYSIUM AND THE HAPPY HUNTING GROUNDS, printed pp. 90-92, the next two Upper Planes in one round: Elysium, ultimate good unsullied by hierarchy or anarchy (the spirits at final rest beyond summoning or control, the Powers answering only worthy or profitable callings, the River Oceanus dominating the four layers - Amoria the arrival banks, Eronia the mountains with doubled obstructions, Bellerin the flat marshes, Thalasia the great sea with the Isles of the Blessed - the 1d10-day transits with the 10% per-day snag chance, the dark Amoria caverns with their divination-only destinations, the Oceanus-swallowing caverns to the Beastlands, the indigo-to-robins-egg sky of the Powers' passing craft, the phoenix and the moon dogs, and the MOVING realms - Isis with her moon-dog patrols, Seker's flying sphere Ro Stau, Ishtar's half-mile fighting statue, Enlil and Nin-Hursag, the crescent moon-barque of Nanna-Sin, Ushas, Tsukiyomi and Bragi); and the Happy Hunting Grounds, the triple-layered Beastlands of good tending toward chaos (Krigala's zenith-fixed midday sun and realm-varying weather, Brux's two rising-or-setting suns, Karasuthra's wandering unmoored stars, the hollow-tree portals keyed by tree type, the identification and communication spells in all layers, the wind-control prevention by the aerial mortals - the faces in the clouds, the sentient speech-capable beasts with their 10% spell-casting chance on the d100 ladder, the doubled hit dice and the 5%-plus-5% magic resistance lost outside the outer and Astral planes, the Beast Lords with plane-wide command of their kinds, and Skerrit the Forester); ONE AMENDMENT: the spell-casting-creatures table the report filed under Olympus is the Beastlands beasts table of printed p. 92.",
+  "include_comment": "the Elysium and Beastlands pins",
+  "include_after": "#include \"rules/heavenstwins.h\"  // R579: the Seven Heavens and Twin Paradises pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R579 LANDED 2026-10-17: commit de89310391bc82540ed02",
+  "prev_record": [
+    "- R579 LANDED 2026-10-17: commit de89310391bc82540ed02",
+    "  6b754ca0684d5ab3345 (census 502 -> 503,",
+    "  pushed 8dffd14..de89310), THE SEVEN HEAVENS",
+    "  AND THE TWIN PARADISES, printed pp. 87-90,",
+    "  the next two Upper Planes in one round: the",
+    "  Seven Heavens (the seven ascending layers",
+    "  with the barrier-at-the-peak illusion,",
+    "  Lunia's holy-water surf, Mercuria and",
+    "  Bahamut's court, Venya and the Green",
+    "  Fields, Solania and Moradin's Soul Forge,",
+    "  Mertion's citadels, Jovar's ziggurat",
+    "  council rumor, Chronias the Illuminated;",
+    "  the five-type archon ladder - Lanterns,",
+    "  Hounds, Wardens, Swords, Tomes; the",
+    "  granite-color portals; and the Powers -",
+    "  Yondalla, Brandobaris, Moradin and",
+    "  Berronar, the four-layer Bahamut palace,",
+    "  Chung Kuel, Kuan Yin, Vishnu and Surya,",
+    "  Ebisu, Girru, the home-plane-benefits-",
+    "  anywhere rule); and the Twin Paradises (the",
+    "  book with no spine - Dothion and Shurrock",
+    "  20 miles apart, upside down to each other,",
+    "  the midair Wisdom-check barrier, the cavern",
+    "  portal patterns, no additional",
+    "  restrictions, and the Powers - the gnomish",
+    "  pantheon with Whisperleaf, Ukko's",
+    "  blizzards, the wandering titan",
+    "  Epinetheus). 4 consts + 7 bools, prefix",
+    "  ddh, header rules/heavenstwins.h. TWO",
+    "  flips: gap census 61/29 -> 63/27. Spec",
+    "  13,772 bytes, md5 2d41b06c644350cd6b43f89c",
+    "  66c7f9f7 matched exactly first try, 11",
+    "  inlines. FOURTEEN straight first-tries",
+    "  (R566-R579). NEXT - R580: Elysium (pp.",
+    "  90-91, the four Oceanus layers Amoria,",
+    "  Eronia, Bellerin and Thalesis, the phoenix",
+    "  and the moon dogs) - the OCR already",
+    "  gathered; then the Happy Hunting Grounds",
+    "  and Olympus close the Upper Planes."
+  ],
+  "banner": {
+    "title": "ELYSIUM AND THE HAPPY HUNTING GROUNDS - printed pp. 90-92, the next two Upper Planes in one round: the four Oceanus layers of the heroes' blessed rest with the moving realms and the moon-barque, and the triple Beastlands of the sentient spell-casting beasts with their wandering stars and the Masters of the Cults of the Beast.",
+    "provenance": "verified against printed pp. 90-92 of the uploaded motp.pdf OCR; the two planes ride together as the neutral-good pair (the R578 pattern); ONE AMENDMENT against the report: the spell-casting-creatures table (p. 92) belongs to the Beastlands beasts, not to Olympus - the printed table sits in the Happy Hunting Grounds chapter and keys on beast intelligence.",
+    "sentinel": "the gap census after this round: 66 closed, 24 open - THREE boxes fall (Elysium, the Beastlands, the spell-casting beasts table AMENDED out of Olympus's column); Olympus and Gladsheim continue the Upper Planes next."
+  },
+  "consts": [
+    {
+      "name": "ddiElysiumLayerCount",
+      "value": 4,
+      "comment": "the Elysium layers, innermost to outermost: Amoria (the arrival layer, the Oceanus banks at their best), Eronia (mountains, doubled obstruction chances on the river, Enlil's Sumerian realm), Bellerin (flat, ten-mile marshes before the trees, great island nations) and Thalasia (the great sea, the Isles of the Blessed - the final rest of those who died for good); the River Oceanus dominates all four, beginning in Thalasia and flowing down to Amoria."
+    },
+    {
+      "name": "ddiOceanusTransitDays",
+      "value": 10,
+      "comment": "the Oceanus travel: another layer or plane in 1d10 (10) days downstream or up (the flow doubles back), with a 10% per-day chance of blocking cascades, snags or fallen trees that may capsize or hole the craft; the Oceanus is a slow peaceful flow, navigable by mortals, with no Charon and no hydrodaemons."
+    },
+    {
+      "name": "ddiBeastlandLayerCount",
+      "value": 3,
+      "comment": "the Beastlands layers: Krigala the topmost (the Oceanus runs a relatively straight course to Olympus, portals in hollow trees - the same tree type always leads to the same plane, the silver-plated beeches to Olympus; a midday sun fixed at the zenith, the weather changing realm to realm); Brux the second (a reddish sky with two rising-or-setting suns); Karasuthra the farthest (a starlit night, the stars unmoored and wandering at random)."
+    },
+    {
+      "name": "ddiBeastCasterPct",
+      "value": 10,
+      "comment": "the Beastlands spell-casting beasts (the table the report attributed to Olympus, AMENDED: it is the Happy Hunting Grounds beasts table, printed p. 92): 10% of beasts with very-or-higher intelligence can cast - 1-20 one random magical spell per day, 21-40 one clerical, 41-60 1d10 magical, 61-80 1d10 clerical, 81-90 magic-user of 1d20 level without books, 91-99 cleric or druid of 2d8 level, 00 magic-user 1d10 AND cleric 1d8."
+    },
+    {
+      "name": "ddiBeastHdMult",
+      "value": 2,
+      "comment": "the Beastlands beast modifications: double hit dice (minimum 2), AC one better, magic resistance 5% base plus 5% per Intelligence point above 7 - all sentient (minimum low) and capable of speech; these abilities apply only in the outer and Astral planes, lost in any other plane; magical and enchanted creatures are excluded."
+    }
+  ],
+  "bools": [
+    {
+      "name": "ddiElysiumDoctrine",
+      "value": true,
+      "comment": "the Elysium doctrine: ultimate good unsullied by hierarchy or anarchy - the spirits at final rest cannot be summoned or controlled, and the Powers answer only callings they deem worthy or profitable; the sky varies from indigo to robins-egg blue by the passage of the dawn, light, night and moon Powers' craft; barriers open at matched elevations, so no illusion of ascending or descending; magic obeys the general rules with realm-imposed exceptions."
+    },
+    {
+      "name": "ddiElysiumCavernRule",
+      "value": true,
+      "comment": "the Amoria cavern portals: dark caverns with no clue to their destination (divination can sort the Twin Paradises, Concordant Opposition and the Happy Hunting Grounds apart), and any cavern that swallows the Oceanus flow leads to the Happy Hunting Grounds after an underground passage of 1d10 turns - navigability not guaranteed."
+    },
+    {
+      "name": "ddiElysiumPowers",
+      "value": true,
+      "comment": "the Elysium Powers (the realms MOVE between layers - get recent information): Isis on Amoria (lantern-lit paths, moon-dog patrols with piercing howls), Seker's movable sphere-realm Ro Stau (the Doors of the Corridors, shining as it flies, tending the Isles of the Blessed), Ishtar with her half-mile glowing fighting statue, Enlil and Nin-Hursag on Eronia (Enlil forms conduits like Anu), Nanna-Sin in his crescent moon-barque (unupsettable by falls, unblockable by trees or ice, radiance for the banks - but safe passage is bargained with the god himself), Ushas's reddish dome of dawn, Tsukiyomi's mirrored silver realm, and Bragi's yearly fealty-journey by longship to Odin."
+    },
+    {
+      "name": "ddiElysiumCreatures",
+      "value": true,
+      "comment": "the Elysium creatures: the standard upper-plane host - hollyphants, planetars, solars, foo creatures, agathia and baku - plus the phoenix at home in both sylvan and rocky reaches, and the moon dogs in great numbers as servants, watch beasts and vassals to the Powers."
+    },
+    {
+      "name": "ddiBeastlandDoctrine",
+      "value": true,
+      "comment": "the Beastlands doctrine: good tending toward chaos, densely forested in every layer (cycads to pines to sequoids to oaks to beeches to birches, hanging moss and giant fungi); the ANIMALS call the plane the Beastlands and think of all three layers as a single realm, treating humanoid Powers as temporary settlers or invaders; all Prime animals and their giant versions live here, with the special abilities - the first visitors who named it a happy hunting ground of easy pickings were wrong."
+    },
+    {
+      "name": "ddiBeastlandWindRule",
+      "value": true,
+      "comment": "the Beastlands magic: all spells and abilities function with the standard limits, and identification and communication with plants and animals (not their summoning or control) works in ALL layers - but any attempt to control winds, weather or air is prevented by the creatures of the aerial regions (the mortals, the faces in the clouds, who hold complete weather control and legend lore any subject, and whom even the bird-spirits obey)."
+    },
+    {
+      "name": "ddiBeastLordRule",
+      "value": true,
+      "comment": "the Beastlands Powers: Great Powers few and close-held (a few bow-shots around their citadels); the true masters are the Beast Lords, the Masters of the Cults of the Beast - lesser or demi-god status, the ultimate examples of their race, with command and summoning powers over their kind functioning on EVERY plane where suitable creatures exist (the Cat Lord, the Generals of the Animal Kingdoms); the sole Legends and Lore resident is Skerrit the Forester, the centaur god of interlocked meadows, served by satyr and centaur spirits - on the best of terms with the Beast Lords, who consider him a temporary visitor."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the ElysiumLayerCount pin",
+      "expr": "m['ddiElysiumLayerCount']() != 4"
+    },
+    {
+      "note": "the OceanusTransitDays pin",
+      "expr": "m['ddiOceanusTransitDays']() != 10"
+    },
+    {
+      "note": "the BeastlandLayerCount pin",
+      "expr": "m['ddiBeastlandLayerCount']() != 3"
+    },
+    {
+      "note": "the BeastCasterPct pin",
+      "expr": "m['ddiBeastCasterPct']() != 10"
+    },
+    {
+      "note": "the BeastHdMult pin",
+      "expr": "m['ddiBeastHdMult']() != 2"
+    },
+    {
+      "note": "the ElysiumDoctrine pin",
+      "expr": "m['ddiElysiumDoctrine']() != 1"
+    },
+    {
+      "note": "the ElysiumCavernRule pin",
+      "expr": "m['ddiElysiumCavernRule']() != 1"
+    },
+    {
+      "note": "the ElysiumPowers pin",
+      "expr": "m['ddiElysiumPowers']() != 1"
+    },
+    {
+      "note": "the ElysiumCreatures pin",
+      "expr": "m['ddiElysiumCreatures']() != 1"
+    },
+    {
+      "note": "the BeastlandDoctrine pin",
+      "expr": "m['ddiBeastlandDoctrine']() != 1"
+    },
+    {
+      "note": "the BeastlandWindRule pin",
+      "expr": "m['ddiBeastlandWindRule']() != 1"
+    },
+    {
+      "note": "the BeastLordRule pin",
+      "expr": "m['ddiBeastLordRule']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the elysium and beastlands pins": [
+      {
+        "kind": "const",
+        "name": "ddiElysiumLayerCount"
+      },
+      {
+        "kind": "const",
+        "name": "ddiOceanusTransitDays"
+      },
+      {
+        "kind": "const",
+        "name": "ddiBeastlandLayerCount"
+      },
+      {
+        "kind": "const",
+        "name": "ddiBeastCasterPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddiBeastHdMult"
+      },
+      {
+        "kind": "bool",
+        "name": "ddiElysiumDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddiElysiumCavernRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddiElysiumPowers"
+      },
+      {
+        "kind": "bool",
+        "name": "ddiElysiumCreatures"
+      },
+      {
+        "kind": "bool",
+        "name": "ddiBeastlandDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddiBeastlandWindRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddiBeastLordRule"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the four Oceanus layers",
+      "from": "  - [ ] Elysium (pp. 90-91)",
+      "to": "  - [x] Elysium (pp. 90-91) - R580: the four Oceanus layers (Amoria, Eronia, Bellerin, Thalasia, the moving realms, Isis and Nanna-Sin's moon-barque)"
+    },
+    {
+      "note": "the three Beastlands layers",
+      "from": "  - [ ] The Happy Hunting Grounds (pp. 91-92)",
+      "to": "  - [x] The Happy Hunting Grounds (pp. 91-92) - R580: the three Beastlands layers (Krigala, Brux, Karasuthra), the sentient spell-casting beasts, the mortals, the Beast Lords"
+    },
+    {
+      "note": "AMENDED - the table is the Beastlands beasts table",
+      "from": "  - [ ] The Olympus spell-casting-creatures table (p. 92) - the 10%-can-cast roll",
+      "to": "  - [x] The Olympus spell-casting-creatures table (p. 92) - the 10%-can-cast roll - R580: AMENDED - the table is the Beastlands beasts table (10% of very-intelligent beasts cast, the d100 spell ladder, the doubled hit dice), not Olympus"
+    }
+  ],
+  "gap_census": {
+    "closed": 66,
+    "open": 24
+  },
+  "caller_files": [],
+  "inline_count": 12
+}
