@@ -8936,6 +8936,101 @@ when both halves land.
   of Story and Campaign Design pp. 109-112 (the
   matrix campaign, the master storyteller), help
   from the players p. 113, then the child flip.
+- R553 LANDED 2026-10-17: commit f1428cb2d47935c465dfd9b
+  cb82a1eddff7796 (census 476 -> 477, pushed
+  3e9a750..f1428cb), THE DSG STORY ELEMENTS TAIL,
+  printed pp. 107-108 - the rest of Story
+  Elements ending at the TECHNIQUES OF STORY AND
+  CAMPAIGN DESIGN head: the foreshadowing tail
+  (the variety principle - corridor after
+  corridor of bloody writing loses impact; the
+  player-given invitations, the augury casting
+  an invitation for clues; dreams effective but
+  heavy-handed; the fortune-teller's dire
+  warning; the anonymous message; town rumors),
+  Mystery (the unknown as a great motivator with
+  the answers a major satisfying reward; the
+  neglected who-done-it used successfully; the
+  secret antagonist with the dropped-clue trail
+  - the vampire-lair example with bats and
+  wolves, the broken mirror and the pouchful of
+  garlic, the fresh corpse with the fang marks;
+  the campaign mysteries - unknown parentage,
+  the vanished community; the background
+  questions with only a general idea needed; the
+  dying messenger of Eric of Calrede; the
+  speak-with-dead caveat), Challenge (shaped to
+  the players' mental and physical interests -
+  combat for Adventurers with an occasional
+  mental problem, negotiation for Role-Players;
+  the player feedback; the encounter's
+  game-balance role - random and introductory
+  light, climactic and milestone to the utmost
+  limits; the Hit Dice and damage rough balance
+  against tactics, position, and luck; the
+  intelligent-play sufficiency; the changeable
+  devastating screen die roll), Reward (the
+  accomplishment basis, the tracked count, the
+  during-adventure handouts - key clues, small
+  treasures, needed equipment), Magical items
+  (the one-or-two permanent items per level lid;
+  generous with potions and scrolls; the
+  class-directed items - leather armor to the
+  thief, the mace +3 to the cleric; the
+  armed-to-the-teeth campaign killer; the
+  described and named swords with crest or
+  script; the Sathas Sundown and Black Tower
+  sage; the limitations on every permanent item;
+  the story-part doctrine), Wealth (the taxes,
+  thievery, tolls, and prices as drains; the XP
+  for lost wealth kept; the low-value bulks and
+  encumbrance; gemstones rare until a few
+  levels; the spending sprees with the
+  cleaned-out week), Discoveries (information as
+  reward; the pieced-together clues the key),
+  Gratitude (the high king's debt; the
+  case-by-case extent - the paid rescue owing
+  nothing; the explicit promises against
+  requests; the beggar and barmaid favors;
+  selfless motives binding more),
+  Accomplishment (the difficult objective as its
+  own reward for Role-Players; the good-deed
+  cleric; the DM's zero effort; the immediately
+  apparent success or failure), Experience
+  Points (the adjustable DMG amounts - the
+  troll-holding fighter; the landslide village
+  earning no XP and even a penalty; the tentative
+  design awards - 1,000 XP per burned pirate
+  ship, undisclosed until after; the restructured
+  system for non-treasure objectives; the
+  optional magic-item XP, never for found-and-
+  sold items), and Moral (the storyteller's
+  meaningful lesson, unnoticed if not
+  heavy-handed; the actions-with-consequences
+  doctrine; the cooperation example; the killer
+  consequences - jail, hanging, the fugitive
+  ire; the accomplishment-merits-reward moral;
+  the story-for-a-moral with its "It's not wise
+  to fool the king" exemplars). 3 consts + 60
+  bools, prefix dcf, header rules/dsgcamp4.h,
+  spec 33,231 bytes, md5
+  c98d9512e5416158760d59a26e9e7464 matched
+  exactly first try, 63 inlines; djvu lines
+  13752-14246 with the Capture pdf 108-109
+  cross-read (clean - the OCR quirks settled by
+  the cross-read). A ZERO-FLIP ROUND: gap census
+  stays 140/15. An authoring catch in staging:
+  the provenance draft leaked Cyrillic OCR
+  garbles into the emitted header - rewritten
+  pure-ASCII before publish (keep header lines
+  ASCII, not just <=78 cols). NEXT - R554: the
+  techniques of story and campaign design pp.
+  109-112 (the linear adventure, the open
+  campaign, the matrix, the DM as master
+  storyteller), help from the players p. 113,
+  then the pp. 99-113 Campaign Considerations
+  child flip (zero pins, the gap report IN the
+  git add).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

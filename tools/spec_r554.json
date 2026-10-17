@@ -1,0 +1,695 @@
+{
+  "round": 554,
+  "prefix": "dcg",
+  "header_file": "rules/dsgcamp5.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 477,
+  "title": "the DSG techniques of story and campaign design",
+  "audit_label": "R554 DSG story design techniques audit",
+  "audit_comment": "The techniques of story and campaign design pins printed pp. 109-112: the chapter head (the story line chosen shapes the gaming environment, three types of adventure design), The Linear Adventure (the certain-order encounters, the dungeon one-route maps, the outdoor thorn-wall obstacles, the no-wasted-design advantage, the high-level-magic difficulty, the tournament fit, the railroad frustration, the illusion of choice), The Open Campaign (the player-choice doctrine, the seeded countryside, the Adventurer fun, the Problem-Solver and Role-Player workload, the world built over time, the story-structure difficulty, the perverse players, the Events technique, the ask-ahead shortcut, the background conflicts), The Matrix Campaign (the goal-driven compromise, the evil-cleric exposition, the guided options, the prepared courses, the expanding branches, the plot events, the soft and hard borders, the multiple paths to the climax, the lost players, the foreshadowed track), the Running the Game head (the two at-table functions), Preparing For Play (the random-generation lists, the coded notes, the THACO shorthand, the map symbols, the anticipated surprises, the treasure decisions), and The Dungeon Master as Master Storyteller (the pace doctrine, the optional systems, the voice - tone, volume, rate - and the word choice and NPC voices).",
+  "include_comment": "the DSG techniques of story and campaign design pins",
+  "include_after": "#include \"rules/dsgcamp4.h\"  // R553: the DSG story elements tail pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R553 LANDED 2026-10-17: commit f1428cb2d47935c465dfd9b",
+  "prev_record": [
+    "- R553 LANDED 2026-10-17: commit f1428cb2d47935c465dfd9b",
+    "  cb82a1eddff7796 (census 476 -> 477, pushed",
+    "  3e9a750..f1428cb), THE DSG STORY ELEMENTS TAIL,",
+    "  printed pp. 107-108 - the rest of Story",
+    "  Elements ending at the TECHNIQUES OF STORY AND",
+    "  CAMPAIGN DESIGN head: the foreshadowing tail",
+    "  (the variety principle - corridor after",
+    "  corridor of bloody writing loses impact; the",
+    "  player-given invitations, the augury casting",
+    "  an invitation for clues; dreams effective but",
+    "  heavy-handed; the fortune-teller's dire",
+    "  warning; the anonymous message; town rumors),",
+    "  Mystery (the unknown as a great motivator with",
+    "  the answers a major satisfying reward; the",
+    "  neglected who-done-it used successfully; the",
+    "  secret antagonist with the dropped-clue trail",
+    "  - the vampire-lair example with bats and",
+    "  wolves, the broken mirror and the pouchful of",
+    "  garlic, the fresh corpse with the fang marks;",
+    "  the campaign mysteries - unknown parentage,",
+    "  the vanished community; the background",
+    "  questions with only a general idea needed; the",
+    "  dying messenger of Eric of Calrede; the",
+    "  speak-with-dead caveat), Challenge (shaped to",
+    "  the players' mental and physical interests -",
+    "  combat for Adventurers with an occasional",
+    "  mental problem, negotiation for Role-Players;",
+    "  the player feedback; the encounter's",
+    "  game-balance role - random and introductory",
+    "  light, climactic and milestone to the utmost",
+    "  limits; the Hit Dice and damage rough balance",
+    "  against tactics, position, and luck; the",
+    "  intelligent-play sufficiency; the changeable",
+    "  devastating screen die roll), Reward (the",
+    "  accomplishment basis, the tracked count, the",
+    "  during-adventure handouts - key clues, small",
+    "  treasures, needed equipment), Magical items",
+    "  (the one-or-two permanent items per level lid;",
+    "  generous with potions and scrolls; the",
+    "  class-directed items - leather armor to the",
+    "  thief, the mace +3 to the cleric; the",
+    "  armed-to-the-teeth campaign killer; the",
+    "  described and named swords with crest or",
+    "  script; the Sathas Sundown and Black Tower",
+    "  sage; the limitations on every permanent item;",
+    "  the story-part doctrine), Wealth (the taxes,",
+    "  thievery, tolls, and prices as drains; the XP",
+    "  for lost wealth kept; the low-value bulks and",
+    "  encumbrance; gemstones rare until a few",
+    "  levels; the spending sprees with the",
+    "  cleaned-out week), Discoveries (information as",
+    "  reward; the pieced-together clues the key),",
+    "  Gratitude (the high king's debt; the",
+    "  case-by-case extent - the paid rescue owing",
+    "  nothing; the explicit promises against",
+    "  requests; the beggar and barmaid favors;",
+    "  selfless motives binding more),",
+    "  Accomplishment (the difficult objective as its",
+    "  own reward for Role-Players; the good-deed",
+    "  cleric; the DM's zero effort; the immediately",
+    "  apparent success or failure), Experience",
+    "  Points (the adjustable DMG amounts - the",
+    "  troll-holding fighter; the landslide village",
+    "  earning no XP and even a penalty; the tentative",
+    "  design awards - 1,000 XP per burned pirate",
+    "  ship, undisclosed until after; the restructured",
+    "  system for non-treasure objectives; the",
+    "  optional magic-item XP, never for found-and-",
+    "  sold items), and Moral (the storyteller's",
+    "  meaningful lesson, unnoticed if not",
+    "  heavy-handed; the actions-with-consequences",
+    "  doctrine; the cooperation example; the killer",
+    "  consequences - jail, hanging, the fugitive",
+    "  ire; the accomplishment-merits-reward moral;",
+    "  the story-for-a-moral with its \"It's not wise",
+    "  to fool the king\" exemplars). 3 consts + 60",
+    "  bools, prefix dcf, header rules/dsgcamp4.h,",
+    "  spec 33,231 bytes, md5",
+    "  c98d9512e5416158760d59a26e9e7464 matched",
+    "  exactly first try, 63 inlines; djvu lines",
+    "  13752-14246 with the Capture pdf 108-109",
+    "  cross-read (clean - the OCR quirks settled by",
+    "  the cross-read). A ZERO-FLIP ROUND: gap census",
+    "  stays 140/15. An authoring catch in staging:",
+    "  the provenance draft leaked Cyrillic OCR",
+    "  garbles into the emitted header - rewritten",
+    "  pure-ASCII before publish (keep header lines",
+    "  ASCII, not just <=78 cols). NEXT - R554: the",
+    "  techniques of story and campaign design pp.",
+    "  109-112 (the linear adventure, the open",
+    "  campaign, the matrix, the DM as master",
+    "  storyteller), help from the players p. 113,",
+    "  then the pp. 99-113 Campaign Considerations",
+    "  child flip (zero pins, the gap report IN the",
+    "  git add)."
+  ],
+  "banner": {
+    "title": "THE DSG TECHNIQUES OF STORY AND CAMPAIGN DESIGN, R554: printed pp. 109-112 - the chapter head (the story line a DM chooses affects the gaming environment he creates; three types of adventure design, each related to plot development); The Linear Adventure (the encounters played in a certain order with little choice between them; the dungeon as the linear setting - the one-route map and the predetermined locations; the outdoor difficulty with the thorn walls and impassable water; the no-wasted-design-time advantage; the difficulty as the PCs gain magical power - the high-level spells defeating the corridors; the tournament fit; the general undesirability - the railroading frustration; the directed play with the illusion of choice); The Open Campaign (the de-emphasized story with the PC choices determining the course; the interesting world to explore; the preparation burden - the detailed countryside seeded with conflicts; the Adventurer fun continuing indefinitely - dungeons, wars, new worlds; the greater Problem-Solver and Role-Player workload - the mental diet, the unique NPCs, the national-scope problems, the nomadic NPCs; the entire world setting built over time; the story-structure difficulty - the players developing it themselves or taking perverse delight in the opposite; the Events technique - the dragon's lair placed in the path with logic; the ask-ahead shortcut; the background conflicts - the wars with the met principals, the endless winter and the man-eating plants as continuing threads); The Matrix Campaign (the detailed story with the player choice; the goal or goals motivating the PCs - the linear-open compromise, the epic and the string of stories; the short exposition opening options - the evil cleric sect with the arrested peasants and the raided temples; the guided options north, east, and south with the headquarters to the west bided; the prepared courses - the raid, the sage interview, the prisoner rescue; the expanding branches steering toward the headquarters climax - the prisoners led as an army, the quest for the item of power; the plot events - the significant NPCs, the visions and dreams, the social changes, the quick scenes; the soft border of the hapless waifs and the stranger's gems; the hard border of the cliff, the sea, the desert, the escalating army, the quest and geas as the last resort; the several approaches to the final encounter, never doomed for a wrong choice; the lost players shown the path gently but firmly - the henchman speaking up, the plain-language sage; the foreshadowed track with the ill omens); the Running the Game head (the second responsibility beginning at the table - the story presented so the PCs are drawn in by their own motivations, the mechanics refereed to move the story along); Preparing For Play (the lists - eight NPC names rolled on 1d8, the personality traits, the appearance characteristics; the coded notes - AC, HD, hp, MV, damage, the own maps and symbols, the fewer words the better; the THACO shorthand with the ogre example - 15 to hit AC 0, 9 against AC 6, 19 against AC -4; the map symbols; the anticipated surprises - steering back or expanding; the treasure decisions - the wealth, the balance impact, the matched challenge); and The Dungeon Master as Master Storyteller (the role most obvious during play; the pace - the minutes per melee and the story rate, the variety of intensity and rest, the discarded slow rules, the optional Weapons vs. AC and spell-component systems, the preparation, the pertinent-rules review; the voice - the tone of the tragic ruin and the jolly inn, the volume of the unexpected, the varied rate with the occasional pause; the colorful word choice - the door crashing inward in a blast of splinters; the NPC voices from the old men to the heroic leaders, augmented by the facial expressions and hand gestures) - the round ending at the HELP FROM THE PLAYERS head.",
+    "provenance": "djvu lines 14247-14725 with the Capture-layer pdf 109-113 cross-read (the pure-python extractor, parser page = printed page). The two reads agree across the round; no OCR-failure cells. The chapter tail and the HELP FROM THE PLAYERS head share the p. 112-113 boundary cleanly in the capture: the storyteller section closes p. 112 and Help from the Players opens p. 113. A CLEAN-READ ROUND. A ZERO-FLIP ROUND: the pp. 99-113 Campaign Considerations child stays open.",
+    "sentinel": "The campaign chapter: R550 the opener, R551 the worlds tail, R552 plot and counterplot, R553 the story elements tail, R554 the techniques; next help from the players pp. 113-114, then the child flip."
+  },
+  "consts": [
+    {
+      "comment": "the NPC-name list: eight names provide most of the new NPCs encountered in a gaming session",
+      "name": "dcgNPCNameTable",
+      "value": 8
+    },
+    {
+      "comment": "the NPC-name roll: roll 1d8 (or select) from the list when someone is met",
+      "name": "dcgNPCNameDie",
+      "value": 8
+    },
+    {
+      "comment": "the THACO example: an ogre with 4+1 Hit Dice strikes an AC 0 opponent on a roll of 15 or better",
+      "name": "dcgOgreTHACO",
+      "value": 15
+    }
+  ],
+  "bools": [
+    {
+      "comment": "a linear adventure advances through encounters that must be played in a certain order, the PCs given little or no choice between encounters",
+      "name": "dcgLinearDefines",
+      "value": true
+    },
+    {
+      "comment": "dungeons work well for linear designs - a map leaving one possible route, each encounter planned with the PCs' predetermined locations known",
+      "name": "dcgLinearDungeons",
+      "value": true
+    },
+    {
+      "comment": "outdoor linear adventures are harder to control, though thorn walls or impassable water occasionally limit PC choice",
+      "name": "dcgLinearOutdoor",
+      "value": true
+    },
+    {
+      "comment": "the linear advantage: design time is never wasted on areas the PCs do not use",
+      "name": "dcgLinearNoWaste",
+      "value": true
+    },
+    {
+      "comment": "linear design becomes harder as the PCs gain magical power - high-level mage and cleric spells defeat even dungeon corridors",
+      "name": "dcgLinearMagicPower",
+      "value": true
+    },
+    {
+      "comment": "linear adventures work well for tournament play, all players meeting the same challenges",
+      "name": "dcgLinearTournament",
+      "value": true
+    },
+    {
+      "comment": "for less structured play linear design is generally undesirable - players feel railroaded by the absence of choice",
+      "name": "dcgLinearUndesirable",
+      "value": true
+    },
+    {
+      "comment": "directed play with the illusion of choice can succeed while actually being linear - players feel they control their own destiny",
+      "name": "dcgLinearIllusion",
+      "value": true
+    },
+    {
+      "comment": "the open campaign de-emphasizes the DM's story, relying on PC choices; the DM's job is an interesting world to explore",
+      "name": "dcgOpenDefines",
+      "value": true
+    },
+    {
+      "comment": "open-campaign preparation: detail the countryside all around and seed the entire area with conflicts so challenges are found wherever the PCs go",
+      "name": "dcgOpenPrep",
+      "value": true
+    },
+    {
+      "comment": "open campaigns are fun especially for Adventurers - indefinite play plundering dungeons, stumbling into wars, discovering new worlds",
+      "name": "dcgOpenAdventurers",
+      "value": true
+    },
+    {
+      "comment": "Problem-Solvers and Role-Players demand even more work - steady mental challenges and new unique NPCs; national-scope problems put rumors everywhere; nomadic NPCs are re-encountered",
+      "name": "dcgOpenMentalDiet",
+      "value": true
+    },
+    {
+      "comment": "open campaigns demand great design time, but after enough adventures you have created and detailed an entire world setting",
+      "name": "dcgOpenWorldBuilding",
+      "value": true
+    },
+    {
+      "comment": "the open campaign makes a structured story hard (exposition, development, climax); players may develop the structure themselves if clues lead them",
+      "name": "dcgOpenStoryHard",
+      "value": true
+    },
+    {
+      "comment": "some players take perverse delight in the opposite of what you want; without reverse-psychology expertise a coherent story needs exceptional inventiveness",
+      "name": "dcgOpenPerverse",
+      "value": true
+    },
+    {
+      "comment": "Events: encounters as events occur wherever the PCs are - place the dragon's lair in their path when wanted, with logic",
+      "name": "dcgOpenEvents",
+      "value": true
+    },
+    {
+      "comment": "the time-management shortcut: ask players ahead what they feel like doing the next few sessions - general answers leave the details to you",
+      "name": "dcgOpenAskPlayers",
+      "value": true
+    },
+    {
+      "comment": "large-scale background conflicts anchor the open campaign: wars (meeting the principals on each side) and disasters - the endless winter, the plague of man-eating plants - as continuing threads",
+      "name": "dcgOpenBackgroundConflicts",
+      "value": true
+    },
+    {
+      "comment": "the matrix campaign allows a detailed story with developed plot while the players still choose where they go and how they deal with challenges",
+      "name": "dcgMatrixDefines",
+      "value": true
+    },
+    {
+      "comment": "the key is a goal or series of goals the PCs are motivated to accomplish; a compromise between linear and open, effective for epics or strings of connecting stories",
+      "name": "dcgMatrixGoals",
+      "value": true
+    },
+    {
+      "comment": "the matrix opening: a chosen location, a short exposition and clues opening options - the evil cleric sect with arrested peasants and raided temples",
+      "name": "dcgMatrixExposition",
+      "value": true
+    },
+    {
+      "comment": "the next move is up to the players with guidance: the temple to the north, the great temple of good to the east, the peasants enslaved to the south - the headquarters to the west bided",
+      "name": "dcgMatrixGuidance",
+      "value": true
+    },
+    {
+      "comment": "be prepared for a few courses of action: the temple raid, the sage interview, the prisoner rescue mission",
+      "name": "dcgMatrixPrepared",
+      "value": true
+    },
+    {
+      "comment": "expand the matrix or point the clues toward the heart: the rescued prisoners led as an army, the good temple sending a quest for the item of great power",
+      "name": "dcgMatrixExpand",
+      "value": true
+    },
+    {
+      "comment": "all the branches eventually steer the PCs toward the headquarters where the story's climax takes place",
+      "name": "dcgMatrixBranches",
+      "value": true
+    },
+    {
+      "comment": "to move the plot along, schedule events wherever the PCs are: significant NPCs, visions and dreams, social or political changes, quick scenes showing a pertinent fact",
+      "name": "dcgMatrixPlotEvents",
+      "value": true
+    },
+    {
+      "comment": "a matrix campaign must eventually meet a border beyond which the PCs are discouraged from passing - soft or hard",
+      "name": "dcgMatrixBorders",
+      "value": true
+    },
+    {
+      "comment": "the soft border turns the PCs back through their own motivations: the hapless waifs appealing to decency, the mysterious stranger's gems for evidence of the sect's destruction",
+      "name": "dcgMatrixSoftBorder",
+      "value": true
+    },
+    {
+      "comment": "the hard boundary for the unyielding: a cliff, stormy sea, or trackless desert, an army with escalating encounters; quest or geas spells only as a last resort",
+      "name": "dcgMatrixHardBorder",
+      "value": true
+    },
+    {
+      "comment": "the matrix should hold several approaches to the final encounter and several means of dealing with it - never doomed for a wrong choice",
+      "name": "dcgMatrixMultiplePaths",
+      "value": true
+    },
+    {
+      "comment": "prepare for players who have no idea what is going on: gently but firmly show the path - the henchman speaking up, the wise sage in plain language",
+      "name": "dcgMatrixLostPlayers",
+      "value": true
+    },
+    {
+      "comment": "foreshadowing shows whether the PCs are on the right track - ill omens do not discourage but can indicate the way",
+      "name": "dcgMatrixForeshadowTrack",
+      "value": true
+    },
+    {
+      "comment": "the DM's second responsibility begins at the table: presenting the story so the PCs are drawn in through their own motivations, and refereeing the mechanics so they move the story along rather than hinder it",
+      "name": "dcgRunningDefines",
+      "value": true
+    },
+    {
+      "comment": "the more preparation time, the smoother the game; streamlining with lists when time is short",
+      "name": "dcgPrepSmoother",
+      "value": true
+    },
+    {
+      "comment": "the random-generation lists: eight NPC names (roll 1d8), personality traits, and appearance characteristics - a ready-made expandable NPC generation system",
+      "name": "dcgPrepLists",
+      "value": true
+    },
+    {
+      "comment": "the coded notes: AC, HD, hp, MV, and damage for encounters; your own maps and symbols for areas - the fewer words the better",
+      "name": "dcgPrepCodedNotes",
+      "value": true
+    },
+    {
+      "comment": "THACO - To Hit Armor Class 0 - recorded per monster and NPC, frees you from consulting the combat tables during play; subtract the foe's AC from the THACO",
+      "name": "dcgPrepTHACO",
+      "value": true
+    },
+    {
+      "comment": "develop map symbols for new location types - the more information on the map, the better the descriptions (the mapping section, p. 114)",
+      "name": "dcgPrepMapSymbols",
+      "value": true
+    },
+    {
+      "comment": "anticipate unexpected PC actions: one or two surprises thought through can save the story line - steer the PCs back or expand the adventure in their direction",
+      "name": "dcgPrepSurprises",
+      "value": true
+    },
+    {
+      "comment": "treasure placement decisions are too important for the last minute: the wealth placed, the magic items' impact on balance, the challenge matched to the value",
+      "name": "dcgPrepTreasure",
+      "value": true
+    },
+    {
+      "comment": "the storyteller role is most obvious during play: describing settings, running the many NPCs, springing dramatic surprises - the listeners' involvement drives it home",
+      "name": "dcgStorytellerDefines",
+      "value": true
+    },
+    {
+      "comment": "storytelling improves by applying proven principles, incorporated with no advance preparation",
+      "name": "dcgStorytellerPrinciples",
+      "value": true
+    },
+    {
+      "comment": "pace affects both game mechanics and story development - the minutes per melee and the story rate are functions of pace, under the DM's great control",
+      "name": "dcgPaceDefines",
+      "value": true
+    },
+    {
+      "comment": "pace variety: moments of dramatic suspense and intensity broken by periods of rest and security for discussing options and making plans",
+      "name": "dcgPaceVariety",
+      "value": true
+    },
+    {
+      "comment": "discard rules that significantly slow the pace - streamlined versions or simple DM decree",
+      "name": "dcgPaceDiscardRules",
+      "value": true
+    },
+    {
+      "comment": "Weapons vs. Armor Class Modifications and detailed spell-component recording suit detail-lovers; role-playing-centered players may proceed smoothly without them",
+      "name": "dcgPaceOptionalSystems",
+      "value": true
+    },
+    {
+      "comment": "preparation gives pace control - detailed notes prevent wasted thought during the game and snap decisions that destroy the campaign's balance",
+      "name": "dcgPacePreparation",
+      "value": true
+    },
+    {
+      "comment": "review the pertinent rules before critical situations: a complicated new monster, or a watery environment's swimming and boating rules",
+      "name": "dcgPaceRulesReview",
+      "value": true
+    },
+    {
+      "comment": "voice is the DM's primary tool - information, mood, and the emotions of surprise, anger, triumph, and fear; tone, volume, rate, and word choice",
+      "name": "dcgVoicePrimary",
+      "value": true
+    },
+    {
+      "comment": "tone conveys many emotions best: the aura of sadness for the tragically abandoned ruin, the laughter and jolliness of the friendly inn",
+      "name": "dcgVoiceTone",
+      "value": true
+    },
+    {
+      "comment": "volume conveys the sudden and shocking, but beware overdoing it - a loud outburst is only effective if unexpected",
+      "name": "dcgVoiceVolume",
+      "value": true
+    },
+    {
+      "comment": "vary the rate of speech for intensity - the occasional pause lets listeners absorb an impact or ponder the unknown",
+      "name": "dcgVoiceRate",
+      "value": true
+    },
+    {
+      "comment": "colorful word choice through practice and reading - 'The door crashes inward in a blast of splinters!'; written passages read aloud before use",
+      "name": "dcgWordChoice",
+      "value": true
+    },
+    {
+      "comment": "develop a variety of NPC voices - old men, women, children, witches, pirates, greedy merchants, suspicious guards, gloating villains, heroic leaders - augmented by facial expressions and hand gestures",
+      "name": "dcgNPCVoices",
+      "value": true
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "expr": "m['dcgNPCNameTable']() != 8 or m['dcgNPCNameDie']() != 8",
+      "note": "the NPC list: eight names, rolled on 1d8."
+    },
+    {
+      "expr": "m['dcgOgreTHACO']() != 15",
+      "note": "the THACO example: the ogre hits AC 0 on a 15."
+    },
+    {
+      "expr": "m['dcgOgreTHACO']() - 6 != 9 or m['dcgOgreTHACO']() - -4 != 19",
+      "note": "the THACO arithmetic: AC 6 hit on 9, AC -4 hit on 19."
+    },
+    {
+      "expr": "m['dcgLinearTournament']() != 1 or m['dcgLinearIllusion']() != 1",
+      "note": "the linear design: the tournament fit and the illusion of choice."
+    },
+    {
+      "expr": "m['dcgOpenEvents']() != 1 or m['dcgOpenBackgroundConflicts']() != 1",
+      "note": "the open campaign: the events technique and the background conflicts."
+    },
+    {
+      "expr": "m['dcgMatrixSoftBorder']() != 1 or m['dcgMatrixHardBorder']() != 1",
+      "note": "the matrix: the soft and hard borders."
+    },
+    {
+      "expr": "m['dcgPrepSurprises']() != 1 or m['dcgPrepTreasure']() != 1",
+      "note": "the preparation: the anticipated surprises and the treasure decisions."
+    },
+    {
+      "expr": "m['dcgWordChoice']() != 1 or m['dcgNPCVoices']() != 1",
+      "note": "the storyteller craft: the colorful words and the NPC voices."
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the linear adventure section": [
+      {
+        "kind": "bool",
+        "name": "dcgLinearDefines"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgLinearDungeons"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgLinearOutdoor"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgLinearNoWaste"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgLinearMagicPower"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgLinearTournament"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgLinearUndesirable"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgLinearIllusion"
+      }
+    ],
+    "the open campaign section": [
+      {
+        "kind": "bool",
+        "name": "dcgOpenDefines"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgOpenPrep"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgOpenAdventurers"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgOpenMentalDiet"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgOpenWorldBuilding"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgOpenStoryHard"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgOpenPerverse"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgOpenEvents"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgOpenAskPlayers"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgOpenBackgroundConflicts"
+      }
+    ],
+    "the matrix campaign section": [
+      {
+        "kind": "bool",
+        "name": "dcgMatrixDefines"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixGoals"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixExposition"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixGuidance"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixPrepared"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixExpand"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixBranches"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixPlotEvents"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixBorders"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixSoftBorder"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixHardBorder"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixMultiplePaths"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixLostPlayers"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgMatrixForeshadowTrack"
+      }
+    ],
+    "the running the game head section": [
+      {
+        "kind": "bool",
+        "name": "dcgRunningDefines"
+      }
+    ],
+    "the preparing for play section": [
+      {
+        "kind": "const",
+        "name": "dcgNPCNameTable"
+      },
+      {
+        "kind": "const",
+        "name": "dcgNPCNameDie"
+      },
+      {
+        "kind": "const",
+        "name": "dcgOgreTHACO"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPrepSmoother"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPrepLists"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPrepCodedNotes"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPrepTHACO"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPrepMapSymbols"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPrepSurprises"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPrepTreasure"
+      }
+    ],
+    "the master storyteller section": [
+      {
+        "kind": "bool",
+        "name": "dcgStorytellerDefines"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgStorytellerPrinciples"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPaceDefines"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPaceVariety"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPaceDiscardRules"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPaceOptionalSystems"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPacePreparation"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgPaceRulesReview"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgVoicePrimary"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgVoiceTone"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgVoiceVolume"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgVoiceRate"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgWordChoice"
+      },
+      {
+        "kind": "bool",
+        "name": "dcgNPCVoices"
+      }
+    ]
+  },
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 140,
+    "open": 15
+  },
+  "caller_files": [],
+  "inline_count": 57
+}
