@@ -1,0 +1,95 @@
+{
+  "round": 563,
+  "prefix": "dcr",
+  "header_file": "rules/dsgfin.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 486,
+  "title": "the DSG arc final census, the last three parents",
+  "audit_label": "R563 DSG final census audit",
+  "audit_comment": "the ARC FINAL CENSUS - the triple-flip closure with zero pins (the R549/R556/R559/R561 pattern): the last three open boxes are all already-landed big-chapter parents whose children every one closed in earlier rounds - the underground environment pp. 36-55 (the movement, the hazards, the DPV, the waterways, the mining), the new equipment pp. 56-58 (the cost grid, the descriptions), and the improving play pp. 59-63 (the DM-craft chapter) - the parents flip, the gap report closes to 155/0, and the DSG arc R503 opened ends here, the whole 128-page book pinned cover to index.",
+  "include_comment": "the DSG arc final census closure",
+  "include_after": "#include \"rules/dsgintro.h\"  // R562: the DSG what-is-it front matter pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R562 LANDED 2026-10-17: commit 3edae896c212cfbf3a1a",
+  "prev_record": [
+    "- R562 LANDED 2026-10-17: commit 3edae896c212cfbf3a1a",
+    "  72daa90ba9f0d070e33a (census 485 -> 486, pushed",
+    "  5789fe4..3edae89), THE DSG WHAT-IS-IT FRONT",
+    "  MATTER, printed p. 6 - the chapter frame in ONE",
+    "  round with the parent and all five children",
+    "  flipped in the same commit (the R557",
+    "  single-round chapter precedent): the mystery",
+    "  (the sunless realms, the three lures), the new",
+    "  rules (the non-thief climbing, the OA",
+    "  proficiencies), the denizens (the four named",
+    "  cultures, the generators), the underground",
+    "  campaign (the DM half, the 3-D mapping, the",
+    "  story conflicts) and the using-this-information",
+    "  player/DM split (the Forbidden Territory). 4",
+    "  consts + 4 bools, prefix dcq, header",
+    "  rules/dsgintro.h. A FLIP round, six flips: gap",
+    "  census 146/9 -> 152/3; the gap report WAS in",
+    "  the git add (5 files). Spec 9,188 bytes, md5",
+    "  cec1797e10bf47169e2f6fbffb8f4171 matched",
+    "  exactly first try, 8 inlines; djvu lines",
+    "  466-585, each promise cross-checked against",
+    "  the chapter that later lands it. THIS ROUND",
+    "  LANDED VIA THE NEW rn SCRIPT (the two-argument",
+    "  landing ritual, landed at 5789fe4 between",
+    "  R561 and R562): ./rn 562 '<msg>' - the first",
+    "  live run, output exactly per the handoff",
+    "  checklist. One authoring catch in the mirror,",
+    "  caught by the record-extraction assert before",
+    "  emit: the R561 seed key was initially trimmed",
+    "  one char short. NEXT - R563: the arc's FINAL",
+    "  CENSUS - the last three open boxes are all",
+    "  already-landed big-chapter parents (the",
+    "  underground environment pp. 36-55, the new",
+    "  equipment pp. 56-58, the improving play pp.",
+    "  59-63); a triple-flip closure round (zero",
+    "  pins, the R549/R556/R559/R561 pattern) closing",
+    "  the DSG gap report to 155/0 and ending the arc",
+    "  R503 opened."
+  ],
+  "banner": {
+    "title": "THE DSG ARC FINAL CENSUS - the triple-flip closure: the underground environment pp. 36-55, the new equipment pp. 56-58 and the improving play pp. 59-63 parents closing against their already-landed children, the gap report closing to 155/0, and the 128-page Dungeoneer's Survival Guide pinned cover to index - the arc R503 opened ends here.",
+    "provenance": "every child of the three parents landed in the player-section rounds R504-R548 and verified against the compiled-tables mirror of R558; the parents are containers with no content of their own to pin - the R549 Deepearth parent precedent, then the R556 campaign chapter, the R559 plates, the R561 DM section parent, and now all three at once.",
+    "sentinel": "the final flip-only round of the arc: zero pins, the audit block the only census movement, the book closing on the 155/0 gap report."
+  },
+  "consts": [],
+  "bools": [],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [],
+  "table_checks": [],
+  "header_sections": {
+    "the final census closure (no pins)": []
+  },
+  "gap_flips": [
+    {
+      "note": "the underground environment parent closes",
+      "from": "- [ ] **The underground environment** (pp. 36-55) - the big chapter: air supply, cave-ins, defensive point values, hypothermia, the lodestone, long-adventure NPC reactions, structural decay, the underground waterways, water travel, the full mining system, and the natural/unnatural hazards",
+      "to": "- [x] **The underground environment** (pp. 36-55) - the big chapter: air supply, cave-ins, defensive point values, hypothermia, the lodestone, long-adventure NPC reactions, structural decay, the underground waterways, water travel, the full mining system, and the natural/unnatural hazards - all children landed in the player-section rounds, the parent flipped R563 (the arc final census)"
+    },
+    {
+      "note": "the new equipment parent closes",
+      "from": "- [ ] **New equipment** (pp. 56-58) - the cost/weight grid with Table 35, the new-item descriptions, the transportation equipment and the proficiency equipment",
+      "to": "- [x] **New equipment** (pp. 56-58) - the cost/weight grid with Table 35, the new-item descriptions, the transportation equipment and the proficiency equipment - all children landed, the parent flipped R563 (the arc final census)"
+    },
+    {
+      "note": "the improving play parent closes",
+      "from": "- [ ] **Improving play** (pp. 59-63) - the DM-craft chapter: expedition planning, beasts of burden, watercraft, fighting effectively, diversions, speeding play, creative spell use, the languages of the underdark and mapping techniques",
+      "to": "- [x] **Improving play** (pp. 59-63) - the DM-craft chapter: expedition planning, beasts of burden, watercraft, fighting effectively, diversions, speeding play, creative spell use, the languages of the underdark and mapping techniques - all children landed, the parent flipped R563 (the arc final census)"
+    }
+  ],
+  "gap_census": {
+    "closed": 155,
+    "open": 0
+  },
+  "caller_files": [],
+  "inline_count": 0
+}

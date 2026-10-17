@@ -9370,6 +9370,44 @@ when both halves land.
   sub-items - the mystery, the new rules, the
   denizens, the underground campaign, using this
   information), then the arc's final census.
+- R562 LANDED 2026-10-17: commit 3edae896c212cfbf3a1a
+  72daa90ba9f0d070e33a (census 485 -> 486, pushed
+  5789fe4..3edae89), THE DSG WHAT-IS-IT FRONT
+  MATTER, printed p. 6 - the chapter frame in ONE
+  round with the parent and all five children
+  flipped in the same commit (the R557
+  single-round chapter precedent): the mystery
+  (the sunless realms, the three lures), the new
+  rules (the non-thief climbing, the OA
+  proficiencies), the denizens (the four named
+  cultures, the generators), the underground
+  campaign (the DM half, the 3-D mapping, the
+  story conflicts) and the using-this-information
+  player/DM split (the Forbidden Territory). 4
+  consts + 4 bools, prefix dcq, header
+  rules/dsgintro.h. A FLIP round, six flips: gap
+  census 146/9 -> 152/3; the gap report WAS in
+  the git add (5 files). Spec 9,188 bytes, md5
+  cec1797e10bf47169e2f6fbffb8f4171 matched
+  exactly first try, 8 inlines; djvu lines
+  466-585, each promise cross-checked against
+  the chapter that later lands it. THIS ROUND
+  LANDED VIA THE NEW rn SCRIPT (the two-argument
+  landing ritual, landed at 5789fe4 between
+  R561 and R562): ./rn 562 '<msg>' - the first
+  live run, output exactly per the handoff
+  checklist. One authoring catch in the mirror,
+  caught by the record-extraction assert before
+  emit: the R561 seed key was initially trimmed
+  one char short. NEXT - R563: the arc's FINAL
+  CENSUS - the last three open boxes are all
+  already-landed big-chapter parents (the
+  underground environment pp. 36-55, the new
+  equipment pp. 56-58, the improving play pp.
+  59-63); a triple-flip closure round (zero
+  pins, the R549/R556/R559/R561 pattern) closing
+  the DSG gap report to 155/0 and ending the arc
+  R503 opened.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
