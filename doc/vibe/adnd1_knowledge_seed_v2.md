@@ -6677,6 +6677,58 @@ when both halves land.
   111, manifest line 183) + Effects of cave-ins
   (child line 112), then the Defensive Point Values
   section.
+- R512 LANDED 2026-10-17: commit 82af928 (census 437,
+  pushed 9b25d57..82af928), the DSG CAVE-INS PART II,
+  printed pp. 39-40 (pdf 40-41) - the chain reactions
+  (even a small cave-in weakening supporting
+  structures for a gravity-driven chain collapse, the
+  nearby ceilings and walls checked with a per-section
+  d100 vs Table 18, equal-or-less collapses the
+  adjacent area at about the same size, a miss within
+  10% significantly weakens it, chain collapses force
+  checks in all their adjacent areas with the
+  tertiary chance half rounded up and each subsequent
+  roll at 1/2 the forcing roll's chance, the decayed
+  exception keeping the original chance in
+  eroded/ancient-ruin areas, and the 9th-level druid
+  transmute rock to mud example: the 100x80x10 ft
+  ceiling, the 31-vs-48 collapse above, the 42-vs-24
+  hold of the second layer, the side rolls
+  12/65/97/33 with exactly one side continuing (33 >
+  the 32% wall chance), the secondary checks at 1/2
+  and the tertiary at 1/4) and the Effects (the
+  falling distance and rough landing on top, the
+  bridge along its entire unsupported length, the
+  tunnel ceiling never wider than the tunnel, the
+  random 20x20 roughly square base area with chain
+  checks per adjacent square, the 3-ft layer
+  assumption with the 2-ft ceiling-and-floor example,
+  the 4d8 per 10 ft or less of thickness with a save
+  vs petrification for half (dice+sides consts per
+  the R508 dsgbatt.h convention), the 30-ft -> 12d8
+  -> save-reduced 6d8 example, mud/silt at half rock
+  damage with the save halving again, and water at
+  half with a save for 1/4, the first 10-ft thickness
+  only, no weight damage under a pouring column, the
+  drowning risk). The Table 18 grid (Ceiling 48%/32%,
+  Wall 32%/12%, Ledge/bridge 5%/12%, Support Column
+  80%/4%) confirmed THREE-WAY: chapter djvu + the
+  compiled-tables appendix reprint (djvu.txt line
+  15559, garble 4896 = 48%) + Capture idx 52; the
+  djvu garbles 648 = 6d8 and 114damage = 1/4 settled
+  by the Capture layer. Pinned as
+  rules/dsgcavein2.h (prefix dnx, verified free;
+  66 inlines: 31 consts + 32 bools + 3 T18 cols).
+  Gap 79/76 -> 82/73: 3 flips - the chain reactions
+  and Effects children + the Table 18 manifest line.
+  DELIVERY: canvas r512-splice, authored md5
+  ce79d359; user-side md5 1ef1ded5 - the ./bn
+  whitespace-rewrite class again, engine ALL OK
+  twice, every count landed. Double-run applied
+  7/already 0 then 0/7; preflight GREEN, census
+  436 -> 437, gap 82/73. NEXT - R513: the Defensive
+  Point Values of underground formations section +
+  the Hypothermia optional rule.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
