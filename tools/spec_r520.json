@@ -1,0 +1,627 @@
+{
+  "round": 520,
+  "title": "the DSG mining excavation veins and shoring",
+  "census_before": 443,
+  "prefix": "dnf",
+  "header_file": "rules/dsgmine2.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "inline_count": 43,
+  "banner": {
+    "title": "The DSG MINING EXCAVATION, VEINS AND SHORING, R520: printed pp. 49-50 (pdf 50-51) - the excavation rules (the hard and slow necessity of tunneling, the Table 27 rates grid reprinted from DMG page 106 in cubic feet per miner per eight hours across very soft, soft and hard rock - the eight races from gnoll/halfling/human 75/50/25 through gnome/kobold 80/60/30, goblin/orc 85/65/30, dwarf/hobgoblin 90/70/35, ogre 150/100/50, hill giant 250/150/75 and fire/frost giant 300/200/100 to stone giant 500/350/175), the per-race 10-foot-tunnel miner maxima (the small races 16, man-sized 12, gnoll 8, ogre 6, giant 4), the vein rules (the 10x10 tunnel following the shifting vein, the 1d6 x 10-feet depth to intersect the vein, the 1d4 direction roll on Table 28 - north-south, east-west, northeast-southwest, northwest-southeast - the at-least-20-feet run, the secret 1d8 alteration roll per 20-foot section on Table 29 - steep descent, shallow descent, curves right and left at 10-60 degrees, the 5-6 continues straight, shallow ascent, steep ascent - the must-follow rule, the impossible-course run-out with the other-direction freedom, the both-ends stop taking priority over the Duration of A Mining Site rules, and the gorge pickup at DM discretion), and the shoring rules (the wooden or stone support pillars against the almost-certain cave-in, the carpenter, stonemason and miner proficiencies, the two side braces plus a ceiling brace per 10-foot section, the 30 feet of at-least-one-foot-diameter bracing in the standard 10x10 tunnel, the four man-hours per set, and the 18/50-strength solo-moving threshold with the manpower or animal alternative)",
+    "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~6465-6560) with the pdf Acrobat-Capture layer as the second read (idx 67 = printed p. 50) and the compiled-tables appendix reprint as the third read - every numeric cell multi-confirmed: the Table 27 grid (chapter djvu clean, the Capture window corroborating 90/70/35, 150/100/50 and 250/150/75, the appendix reprint corroborating 75/50, 80/60, 85/65, 90/70 and the ogre/hill giant rows; the fire/frost 300/200/100 and stone giant 500/350/175 rows read from the clean chapter djvu against the DMG page 106 reprint origin), the miner maxima 16/12/8/6/4 (chapter + Capture agree), the 1d6 x 10-feet vein depth, the 1d4 direction, the 20-foot sections, and the shoring numbers 2/1/30/1/4 man-hours with the 18/50 threshold. THE DJVU D6 GARBLE: the Table 29 header reads D6 Roll but lists eight results; both the chapter and the appendix reprint list the same eight rows and the secret roll is 1d8 - settled as a d8 table with the 5-6 band as one row. The DMG page 106 seam, the DSG page 53 duration seam and the R511 cave-in seam are noted. The Products of a Mine grids (Tables 30-32) start the NEXT round per the content-density rule.",
+    "sentinel": "Three tables pin: Table 27 as an 8x3 rates grid (very soft, soft, hard), Table 28 as a 4x2 d4 direction grid (each direction a single face, lo = hi), and Table 29 as a 7x2 d8 band grid (the 5-6 continues-straight band pinning as one row per the R518 pin-as-printed lesson). The vein depth pins as dice + sides consts with the 10-feet multiplier separate per the R508 convention; the 1d8 alteration roll pins the same way with the D6-header garble settled by the appendix reprint. The 18/50 strength threshold pins as a prose bool, not a computed comparison. The DMG 106, DSG 53 and R511 seams are noted; nothing auto-credits."
+  },
+  "include_after": "#include \"rules/dsgmine.h\"  // R519: the DSG mining where-to-mine and types pins",
+  "include_comment": "the DSG mining excavation veins and shoring pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "audit_comment": "The DSG mining excavation pins the tunneling rates (the Table 27 eight-race grid from 75/50/25 to 500/350/175 cubic feet per miner per eight hours reprinted from DMG page 106, the per-race 10-foot-tunnel maxima of 16, 12, 8, 6 and 4 miners), the vein rules (the 10x10 tunnel following the shifting vein, the 1d6-times-10-feet depth to intersect, the 1d4 direction faces, the at-least-20-foot runs, the secret 1d8 alterations - steep and shallow descent, the 10-60 degree curves right and left, the 5-6 straight, the shallow and steep ascent - the must-follow rule with the impossible-course run-out and other-direction freedom, the both-ends stop over the duration rules, and the gorge pickup), and the shoring rules (the wooden or stone pillars against the cave-in, the carpenter, stonemason and miner proficiencies, the two side braces and one ceiling brace per 10-foot section, the 30 feet of one-foot-diameter bracing, the four man-hours per set, and the 18/50-strength solo-moving threshold).",
+  "audit_label": "R520 DSG mining excavation audit",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R519 LANDED 2026-10-17: commit c4cd8f5 (census 442 -> 443,",
+  "prev_record": [
+    "- R519 LANDED 2026-10-17: commit c4cd8f5 (census 442 -> 443,",
+    "  pushed 5c2c04d..c4cd8f5), the DSG MINING OPENER, WHERE TO",
+    "  MINE AND TYPES OF MINES, printed pp. 48-49 (pdf 49-50) - the",
+    "  mining chapter begins. The opener (the mined stones and",
+    "  metals as the most valuable of underground resources, the",
+    "  miner-proficiency framework) and the prospecting rules: the",
+    "  Wisdom-score find chance plus the miner proficiency",
+    "  modifier, the no-yield regions of deep sand/dirt and",
+    "  hardened lava with the stream-traces exception, the",
+    "  post-search Proficiency Check over at least a week and four",
+    "  miles square, the good conditions, the deep-snow",
+    "  impossibility and thin-snow double/triple, the",
+    "  rainstorm/terrain/short-daylight interferences, the",
+    "  repeat-search ladder (-1/x2 second, -2/x3 third, automatic",
+    "  failure past a point - modifiers as positive magnitudes per",
+    "  the R514 convention), the success reading Table 30 (the",
+    "  R520 seam). The types-of-mines taxonomy: the placer/tunnel",
+    "  split, strip mining excluded (heavy equipment), the",
+    "  shallow-pan placer sifting of eroded streambed wealth",
+    "  without reaching a significant lode, the tunnel mine",
+    "  trading more work for much greater wealth, the rules",
+    "  dealing primarily with tunnel mining. Numbers dual-read on",
+    "  Capture idx 66 (clean both layers; no garbles this round).",
+    "  Pinned as rules/dsgmine.h (prefix dnm, verified free; 26",
+    "  inlines: 6 consts + 20 bools; no tables). Gap 97/58 ->",
+    "  99/56: 2 flips - the two mining child lines, no manifest",
+    "  lines. DELIVERY: canvas r519-splice, authored md5 7705e796",
+    "  (18292 bytes); user ran ./bn 519 manually per the standing",
+    "  rule - user-side md5 21bbf6fe, the rewrite class, engine",
+    "  ALL OK twice (applied 6/0 then 0/6); preflight GREEN with",
+    "  the quiet display, BUILD: 0 warnings, AUDIT CENSUS: 443.",
+    "  NEXT - R520: the mining chapter continues - Excavating a",
+    "  mine tunnel (p. 49, Table 27 the DMG p. 106 rates grid +",
+    "  the per-race 10-ft-tunnel miner maxima 16/12/8/6/4) +",
+    "  mineral vein direction and path alterations (Tables 28-29,",
+    "  the 1d6x10-ft depth, the 1d4 direction, the 20-ft sections",
+    "  with the secret 1d8 alterations) + possibly shoring (p. 50,",
+    "  the two side braces + ceiling brace, 30 ft of 1-ft-diameter",
+    "  bracing, 4 man-hours per set); djvu from line ~6465,",
+    "  Capture idx 67 holds T27-T29 clean."
+  ],
+  "gap_census": {
+    "closed": 105,
+    "open": 50
+  },
+  "gap_flips": [
+    {
+      "from": "  - [ ] Mining: excavating a mine tunnel (p. 49) - Table 27 (the rates grid)",
+      "to": "  - [x] Mining: excavating a mine tunnel (p. 49) - Table 27 (the rates grid) - R520: the DMG p. 106 eight-race rates grid (75/50/25 through 90/70/35, 150/100/50, 250/150/75, 300/200/100, 500/350/175 cubic feet per miner per eight hours) and the per-race 10-ft-tunnel maxima 16/12/8/6/4",
+      "note": "the Excavating child line"
+    },
+    {
+      "from": "  - [ ] Mining: mineral vein direction and path alterations (p. 49) - Tables 28-29",
+      "to": "  - [x] Mining: mineral vein direction and path alterations (p. 49) - Tables 28-29 - R520: the 1d6 x 10-ft depth, the 1d4 direction faces (T28), the 20-ft sections with the secret 1d8 alterations (T29 - the D6-header djvu garble settled as d8 by the appendix reprint), the must-follow rule, the both-ends stop over the duration rules, the gorge pickup",
+      "note": "the Vein direction child line"
+    },
+    {
+      "from": "  - [ ] Mining: shoring a tunnel (p. 50) - the support rules",
+      "to": "  - [x] Mining: shoring a tunnel (p. 50) - the support rules - R520: the two side braces plus a ceiling brace per 10-ft section, the 30 ft of 1-ft-diameter bracing in the 10x10 tunnel, the four man-hours per set, the carpenter/stonemason/miner proficiencies, and the 18/50-strength solo-moving threshold",
+      "note": "the Shoring child line"
+    },
+    {
+      "from": "- [ ] Table 27: Mining Rates (p. 49)",
+      "to": "- [x] Table 27: Mining Rates (p. 49) - R520: the 8x3 grid - gnoll/halfling/human 75/50/25, gnome/kobold 80/60/30, goblin/orc 85/65/30, dwarf/hobgoblin 90/70/35, ogre 150/100/50, hill giant 250/150/75, fire/frost giant 300/200/100, stone giant 500/350/175 cubic feet per miner per eight hours (reprint of DMG p. 106)",
+      "note": "the Table 27 manifest line"
+    },
+    {
+      "from": "- [ ] Table 28: Mineral Vein Direction (p. 49)",
+      "to": "- [x] Table 28: Mineral Vein Direction (p. 49) - R520: the d4 faces - 1 north-south, 2 east-west, 3 northeast-southwest, 4 northwest-southeast",
+      "note": "the Table 28 manifest line"
+    },
+    {
+      "from": "- [ ] Table 29: Vein Path Alterations (p. 49)",
+      "to": "- [x] Table 29: Vein Path Alterations (p. 49) - R520: the secret d8 bands - 1 steep descent, 2 shallow descent, 3 curves right (10-60 degrees), 4 curves left (10-60 degrees), 5-6 continues straight, 7 shallow ascent, 8 steep ascent",
+      "note": "the Table 29 manifest line"
+    }
+  ],
+  "consts": [
+    {
+      "name": "dnfT27RowCount",
+      "value": 8,
+      "comment": "the Table 27 mining rates grid carries eight races of miner."
+    },
+    {
+      "name": "dnfT28RowCount",
+      "value": 4,
+      "comment": "the Table 28 vein direction grid carries the four d4 directions."
+    },
+    {
+      "name": "dnfT29RowCount",
+      "value": 7,
+      "comment": "the Table 29 vein path alterations grid carries seven bands over the eight d8 results (the 5-6 continues-straight band is one row)."
+    },
+    {
+      "name": "dnfMaxMinersSmall",
+      "value": 16,
+      "comment": "the maximum number of miners that can work in a 10-foot-wide tunnel: dwarf, gnome, goblin, halfling and kobold 16."
+    },
+    {
+      "name": "dnfMaxMinersMan",
+      "value": 12,
+      "comment": "hobgoblin, human and orc 12."
+    },
+    {
+      "name": "dnfMaxMinersGnoll",
+      "value": 8,
+      "comment": "gnoll 8."
+    },
+    {
+      "name": "dnfMaxMinersOgre",
+      "value": 6,
+      "comment": "ogre 6."
+    },
+    {
+      "name": "dnfMaxMinersGiant",
+      "value": 4,
+      "comment": "giant (any) 4."
+    },
+    {
+      "name": "dnfTunnelWidthFt",
+      "value": 10,
+      "comment": "a mine tunnel path typically requires a 10-foot-wide tunnel."
+    },
+    {
+      "name": "dnfTunnelHeightFt",
+      "value": 10,
+      "comment": "the typical 10-foot-wide by 10-foot-high tunnel."
+    },
+    {
+      "name": "dnfVeinDepthDice",
+      "value": 1,
+      "comment": "when a miner first discovers a mineral vein, roll 1d6; the tunnel must be dug down to intersect the vein."
+    },
+    {
+      "name": "dnfVeinDepthSides",
+      "value": 6,
+      "comment": "the sides of the 1d6 vein-depth roll, pinned as dice + sides consts per the R508 convention."
+    },
+    {
+      "name": "dnfVeinDepthMultFt",
+      "value": 10,
+      "comment": "multiply the 1d6 result by 10; this is how far down (in feet) the tunnel must be dug to intersect the mineral vein."
+    },
+    {
+      "name": "dnfVeinSectionFt",
+      "value": 20,
+      "comment": "the vein always runs at least 20 feet in the direction indicated; after each 20-foot section of tunnel is excavated the DM secretly rolls 1d8 for the path."
+    },
+    {
+      "name": "dnfVeinAlterationDice",
+      "value": 1,
+      "comment": "the secret per-section vein alteration roll is 1d8, read on Table 29."
+    },
+    {
+      "name": "dnfVeinAlterationSides",
+      "value": 8,
+      "comment": "the sides of the 1d8 alteration roll (the djvu table header garbles D6; both the chapter and the appendix reprint list eight rows, settled as D8)."
+    },
+    {
+      "name": "dnfShoringSideBraces",
+      "value": 2,
+      "comment": "each 10-foot section of tunnel requires two side braces and a ceiling brace."
+    },
+    {
+      "name": "dnfShoringCeilingBraces",
+      "value": 1,
+      "comment": "the single ceiling brace of each shoring set."
+    },
+    {
+      "name": "dnfShoringBracingFt",
+      "value": 30,
+      "comment": "in the standard 10-wide by 10-high tunnel the shoring set takes 30 feet of bracing that is at least one foot in diameter."
+    },
+    {
+      "name": "dnfShoringDiameterFt",
+      "value": 1,
+      "comment": "the minimum one-foot diameter of the shoring braces."
+    },
+    {
+      "name": "dnfShoringManHours",
+      "value": 4,
+      "comment": "each set of shoring supports takes four man-hours to construct."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dnfRatesReprintedFromDmg106",
+      "value": true,
+      "comment": "the Table 27 excavation rates are reprinted from page 106 of the DMG (the cross-book seam)."
+    },
+    {
+      "name": "dnfRatesPerMinerPerEightHours",
+      "value": true,
+      "comment": "the excavation rates are given in cubic feet per miner per eight-hour period."
+    },
+    {
+      "name": "dnfExcavatingHardAndSlow",
+      "value": true,
+      "comment": "excavating a tunnel is hard and time-consuming, but is necessary to remove the mineral wealth of the underdark."
+    },
+    {
+      "name": "dnfMaxMinersDependsOnRace",
+      "value": true,
+      "comment": "the maximum number of miners that can work in a 10-foot-wide tunnel depends on race."
+    },
+    {
+      "name": "dnfTunnelFollowsShiftingVein",
+      "value": true,
+      "comment": "a mine tunnel must follow the shifting vein of a mineral through the earth."
+    },
+    {
+      "name": "dnfDirectionRollIsD4",
+      "value": true,
+      "comment": "once the vein is discovered, to determine the path of the vein roll 1d4, with the result indicating the direction on Table 28."
+    },
+    {
+      "name": "dnfVeinRunsAtLeastSection",
+      "value": true,
+      "comment": "the vein always runs at least 20 feet in the indicated direction before the next secret alteration roll."
+    },
+    {
+      "name": "dnfAlterationRollIsSecret",
+      "value": true,
+      "comment": "the 1d8 alteration roll is made secretly by the DM after each 20-foot section."
+    },
+    {
+      "name": "dnfMustFollowUnwantedDirection",
+      "value": true,
+      "comment": "miners who wish to continue working the mine must follow the vein, even if it goes in a direction they would rather not follow."
+    },
+    {
+      "name": "dnfImpossibleCourseRunsOut",
+      "value": true,
+      "comment": "if the vein path becomes impossible to follow, such as emerging into thin air through a sheer cliff face, that course of the mine has run out - though the miners are free to follow the vein in the other direction."
+    },
+    {
+      "name": "dnfBothEndsStopsMine",
+      "value": true,
+      "comment": "if both directions of a vein end, the mine provides no more minerals; this rule takes priority over the Duration of A Mining Site rules (the DSG page 53 seam)."
+    },
+    {
+      "name": "dnfGorgePickupAtDiscretion",
+      "value": true,
+      "comment": "in unusual circumstances, such as a vein ending in a cliff with a facing cliff across a narrow gorge, characters may attempt to pick up the vein again across the gorge; the success is left to the DM\u2019s discretion, generally a determined probability and a die roll."
+    },
+    {
+      "name": "dnfShoringOrCaveIn",
+      "value": true,
+      "comment": "a tunnel mine must be regularly protected with wooden or stone support pillars, called shoring, or else sections of the tunnel will almost certainly cave in (the R511 cave-in seam)."
+    },
+    {
+      "name": "dnfShoringProficiencies",
+      "value": true,
+      "comment": "shoring can be accomplished by characters with carpenter, stonemason, or miner proficiencies."
+    },
+    {
+      "name": "dnfStrongSoloMoving",
+      "value": true,
+      "comment": "unless the character doing the shoring is extremely strong (18/50 or greater strength), moving the braces into the mine requires additional manpower or animal help."
+    }
+  ],
+  "chains": [],
+  "tables": [
+    {
+      "name": "Table 27: MINING RATES",
+      "tag": "27",
+      "count": "dnfT27RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnfT27VerySoft",
+        "dnfT27Soft",
+        "dnfT27Hard"
+      ],
+      "col_comments": [
+        "the very soft rock rate in cubic feet per miner per eight hours: 0 gnoll/halfling/human 75, 1 gnome/kobold 80, 2 goblin/orc 85, 3 dwarf/hobgoblin 90, 4 ogre 150, 5 hill giant 250, 6 fire giant/frost giant 300, 7 stone giant 500.",
+        "the soft rock rate: 50, 60, 65, 70, 100, 150, 200, 350.",
+        "the hard rock rate: 25, 30, 30, 35, 50, 75, 100, 175."
+      ],
+      "audit_comment": "the Table 27 mining rates grid, reprinted from DMG page 106",
+      "data": [
+        [
+          75,
+          50,
+          25
+        ],
+        [
+          80,
+          60,
+          30
+        ],
+        [
+          85,
+          65,
+          30
+        ],
+        [
+          90,
+          70,
+          35
+        ],
+        [
+          150,
+          100,
+          50
+        ],
+        [
+          250,
+          150,
+          75
+        ],
+        [
+          300,
+          200,
+          100
+        ],
+        [
+          500,
+          350,
+          175
+        ]
+      ]
+    },
+    {
+      "name": "Table 28: MINERAL VEIN DIRECTION",
+      "tag": "28",
+      "count": "dnfT28RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnfT28Lo",
+        "dnfT28Hi"
+      ],
+      "col_comments": [
+        "the low end of the d4 direction roll: 0 north-south at 1, 1 east-west at 2, 2 northeast-southwest at 3, 3 northwest-southeast at 4.",
+        "the high end of the d4 direction roll (each direction is a single face)."
+      ],
+      "audit_comment": "the Table 28 vein direction grid",
+      "data": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Table 29: VEIN PATH ALTERATIONS",
+      "tag": "29",
+      "count": "dnfT29RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dnfT29Lo",
+        "dnfT29Hi"
+      ],
+      "col_comments": [
+        "the low end of the secret d8 alteration roll: 0 steep descent at 1, 1 shallow descent at 2, 2 curves right (10-60 degrees) at 3, 3 curves left (10-60 degrees) at 4, 4 continues straight at 5, 5 shallow ascent at 7, 6 steep ascent at 8.",
+        "the high end of the d8 band, the 5-6 continues-straight band pinning as one row."
+      ],
+      "audit_comment": "the Table 29 vein path alterations grid (a d8 table; the djvu D6 header is a garble settled by the appendix reprint)",
+      "data": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "expr": "m['dnfMaxMinersSmall']() != 16 or m['dnfMaxMinersMan']() != 12 or m['dnfMaxMinersGnoll']() != 8 or m['dnfMaxMinersOgre']() != 6 or m['dnfMaxMinersGiant']() != 4",
+      "note": "the 10-foot-tunnel miner maxima: 16 for the small races, 12 for man-sized, 8 gnoll, 6 ogre, 4 giant."
+    },
+    {
+      "expr": "m['dnfVeinDepthDice']() != 1 or m['dnfVeinDepthSides']() != 6 or m['dnfVeinDepthMultFt']() != 10 or m['dnfVeinSectionFt']() != 20 or m['dnfVeinAlterationDice']() != 1 or m['dnfVeinAlterationSides']() != 8",
+      "note": "the vein rolls: the 1d6 x 10-feet depth to intersect the vein, and the secret 1d8 alteration roll after each 20-foot section."
+    },
+    {
+      "expr": "m['dnfTunnelWidthFt']() != 10 or m['dnfTunnelHeightFt']() != 10 or m['dnfShoringSideBraces']() != 2 or m['dnfShoringCeilingBraces']() != 1 or m['dnfShoringBracingFt']() != 30 or m['dnfShoringDiameterFt']() != 1 or m['dnfShoringManHours']() != 4",
+      "note": "the tunnel and shoring: the 10x10 tunnel, two side braces plus a ceiling brace, 30 feet of one-foot-diameter bracing, four man-hours per set."
+    }
+  ],
+  "table_checks": [
+    {
+      "expr": "m['dnfT27VerySoft'](0) != 75 or m['dnfT27Soft'](0) != 50 or m['dnfT27Hard'](0) != 25 or m['dnfT27VerySoft'](3) != 90 or m['dnfT27Soft'](3) != 70 or m['dnfT27Hard'](3) != 35 or m['dnfT27VerySoft'](7) != 500 or m['dnfT27Soft'](7) != 350 or m['dnfT27Hard'](7) != 175",
+      "note": "Table 27 anchor rows: the gnoll/halfling/human 75/50/25, the dwarf/hobgoblin 90/70/35, and the stone giant 500/350/175."
+    },
+    {
+      "expr": "m['dnfT28Lo'](0) != 1 or m['dnfT28Hi'](0) != 1 or m['dnfT28Lo'](3) != 4 or m['dnfT28Hi'](3) != 4",
+      "note": "Table 28 anchors: the 1 north-south and the 4 northwest-southeast faces."
+    },
+    {
+      "expr": "m['dnfT29Lo'](4) != 5 or m['dnfT29Hi'](4) != 6 or m['dnfT29Lo'](6) != 8 or m['dnfT29Hi'](6) != 8",
+      "note": "Table 29 anchors: the 5-6 continues-straight band and the 8 steep ascent."
+    }
+  ],
+  "header_sections": {
+    "the Table 27 excavation grid": [
+      {
+        "kind": "bool",
+        "name": "dnfExcavatingHardAndSlow"
+      },
+      {
+        "kind": "bool",
+        "name": "dnfRatesReprintedFromDmg106"
+      },
+      {
+        "kind": "bool",
+        "name": "dnfRatesPerMinerPerEightHours"
+      },
+      {
+        "kind": "const",
+        "name": "dnfT27RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 27: MINING RATES"
+      }
+    ],
+    "the tunnel miner maxima": [
+      {
+        "kind": "bool",
+        "name": "dnfMaxMinersDependsOnRace"
+      },
+      {
+        "kind": "const",
+        "name": "dnfMaxMinersSmall"
+      },
+      {
+        "kind": "const",
+        "name": "dnfMaxMinersMan"
+      },
+      {
+        "kind": "const",
+        "name": "dnfMaxMinersGnoll"
+      },
+      {
+        "kind": "const",
+        "name": "dnfMaxMinersOgre"
+      },
+      {
+        "kind": "const",
+        "name": "dnfMaxMinersGiant"
+      }
+    ],
+    "the vein depth and direction": [
+      {
+        "kind": "bool",
+        "name": "dnfTunnelFollowsShiftingVein"
+      },
+      {
+        "kind": "const",
+        "name": "dnfTunnelWidthFt"
+      },
+      {
+        "kind": "const",
+        "name": "dnfTunnelHeightFt"
+      },
+      {
+        "kind": "const",
+        "name": "dnfVeinDepthDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnfVeinDepthSides"
+      },
+      {
+        "kind": "const",
+        "name": "dnfVeinDepthMultFt"
+      },
+      {
+        "kind": "bool",
+        "name": "dnfDirectionRollIsD4"
+      },
+      {
+        "kind": "const",
+        "name": "dnfT28RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 28: MINERAL VEIN DIRECTION"
+      }
+    ],
+    "the Table 29 path alterations": [
+      {
+        "kind": "bool",
+        "name": "dnfVeinRunsAtLeastSection"
+      },
+      {
+        "kind": "const",
+        "name": "dnfVeinSectionFt"
+      },
+      {
+        "kind": "bool",
+        "name": "dnfAlterationRollIsSecret"
+      },
+      {
+        "kind": "const",
+        "name": "dnfVeinAlterationDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnfVeinAlterationSides"
+      },
+      {
+        "kind": "const",
+        "name": "dnfT29RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 29: VEIN PATH ALTERATIONS"
+      }
+    ],
+    "the vein-following rules": [
+      {
+        "kind": "bool",
+        "name": "dnfMustFollowUnwantedDirection"
+      },
+      {
+        "kind": "bool",
+        "name": "dnfImpossibleCourseRunsOut"
+      },
+      {
+        "kind": "bool",
+        "name": "dnfBothEndsStopsMine"
+      },
+      {
+        "kind": "bool",
+        "name": "dnfGorgePickupAtDiscretion"
+      }
+    ],
+    "the shoring rules": [
+      {
+        "kind": "bool",
+        "name": "dnfShoringOrCaveIn"
+      },
+      {
+        "kind": "bool",
+        "name": "dnfShoringProficiencies"
+      },
+      {
+        "kind": "const",
+        "name": "dnfShoringSideBraces"
+      },
+      {
+        "kind": "const",
+        "name": "dnfShoringCeilingBraces"
+      },
+      {
+        "kind": "const",
+        "name": "dnfShoringBracingFt"
+      },
+      {
+        "kind": "const",
+        "name": "dnfShoringDiameterFt"
+      },
+      {
+        "kind": "const",
+        "name": "dnfShoringManHours"
+      },
+      {
+        "kind": "bool",
+        "name": "dnfStrongSoloMoving"
+      }
+    ]
+  },
+  "caller_files": []
+}

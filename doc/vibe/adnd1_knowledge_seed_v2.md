@@ -7009,6 +7009,46 @@ when both halves land.
   prospecting rules) + possibly Types of Mines (p. 49,
   the vein/placer taxonomy); djvu from line ~6209, Capture
   idx 65+ holds the mining chapter.
+- R519 LANDED 2026-10-17: commit c4cd8f5 (census 442 -> 443,
+  pushed 5c2c04d..c4cd8f5), the DSG MINING OPENER, WHERE TO
+  MINE AND TYPES OF MINES, printed pp. 48-49 (pdf 49-50) - the
+  mining chapter begins. The opener (the mined stones and
+  metals as the most valuable of underground resources, the
+  miner-proficiency framework) and the prospecting rules: the
+  Wisdom-score find chance plus the miner proficiency
+  modifier, the no-yield regions of deep sand/dirt and
+  hardened lava with the stream-traces exception, the
+  post-search Proficiency Check over at least a week and four
+  miles square, the good conditions, the deep-snow
+  impossibility and thin-snow double/triple, the
+  rainstorm/terrain/short-daylight interferences, the
+  repeat-search ladder (-1/x2 second, -2/x3 third, automatic
+  failure past a point - modifiers as positive magnitudes per
+  the R514 convention), the success reading Table 30 (the
+  R520 seam). The types-of-mines taxonomy: the placer/tunnel
+  split, strip mining excluded (heavy equipment), the
+  shallow-pan placer sifting of eroded streambed wealth
+  without reaching a significant lode, the tunnel mine
+  trading more work for much greater wealth, the rules
+  dealing primarily with tunnel mining. Numbers dual-read on
+  Capture idx 66 (clean both layers; no garbles this round).
+  Pinned as rules/dsgmine.h (prefix dnm, verified free; 26
+  inlines: 6 consts + 20 bools; no tables). Gap 97/58 ->
+  99/56: 2 flips - the two mining child lines, no manifest
+  lines. DELIVERY: canvas r519-splice, authored md5 7705e796
+  (18292 bytes); user ran ./bn 519 manually per the standing
+  rule - user-side md5 21bbf6fe, the rewrite class, engine
+  ALL OK twice (applied 6/0 then 0/6); preflight GREEN with
+  the quiet display, BUILD: 0 warnings, AUDIT CENSUS: 443.
+  NEXT - R520: the mining chapter continues - Excavating a
+  mine tunnel (p. 49, Table 27 the DMG p. 106 rates grid +
+  the per-race 10-ft-tunnel miner maxima 16/12/8/6/4) +
+  mineral vein direction and path alterations (Tables 28-29,
+  the 1d6x10-ft depth, the 1d4 direction, the 20-ft sections
+  with the secret 1d8 alterations) + possibly shoring (p. 50,
+  the two side braces + ceiling brace, 30 ft of 1-ft-diameter
+  bracing, 4 man-hours per set); djvu from line ~6465,
+  Capture idx 67 holds T27-T29 clean.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

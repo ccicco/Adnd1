@@ -119,9 +119,9 @@ re-grained then, before any DM pin round.
   - [x] Underground water travel (pp. 46-48) - Tables 21-26 (boat movement rates, standstill movement, draught and ceilings, nonproficiency penalties, collision probability, boat damage) - R518: the six tables - T21 speeds (90/120 through 20/30 to 120/180), T22 standstill rounds, T23 draught/ceiling minima, T24 nonproficiency -30 to -60 and 5-25% capsize, T25 collision 1-20%/10-40% by width and flow, T26 the eight damage bands - plus the relative-movement 30/150 example, the 5%-per-30-ft damage math, the drop-off 5% per foot, the 99/00 survival, the bailing and 1d4-round refloat rules
   - [x] Mining: where to mine (p. 48) - the prospecting rules - R519: the Wisdom-score find chance, the no-yield sand/dirt/lava regions, the week-long four-miles-square search, the snow and weather interferences, and the repeat-search ladder (-1/x2, -2/x3, automatic failure past a point), the success reading Table 30
   - [x] Mining: types of mines (p. 49) - the vein/placer taxonomy - R519: the placer and tunnel split, the excluded strip mining, the shallow-pan placer sifting collecting eroded streambed wealth without a significant lode, and the tunnel mine trading more work for much greater wealth, the rules dealing primarily with tunnel mining
-  - [ ] Mining: excavating a mine tunnel (p. 49) - Table 27 (the rates grid)
-  - [ ] Mining: mineral vein direction and path alterations (p. 49) - Tables 28-29
-  - [ ] Mining: shoring a tunnel (p. 50) - the support rules
+  - [x] Mining: excavating a mine tunnel (p. 49) - Table 27 (the rates grid) - R520: the DMG p. 106 eight-race rates grid (75/50/25 through 90/70/35, 150/100/50, 250/150/75, 300/200/100, 500/350/175 cubic feet per miner per eight hours) and the per-race 10-ft-tunnel maxima 16/12/8/6/4
+  - [x] Mining: mineral vein direction and path alterations (p. 49) - Tables 28-29 - R520: the 1d6 x 10-ft depth, the 1d4 direction faces (T28), the 20-ft sections with the secret 1d8 alterations (T29 - the D6-header djvu garble settled as d8 by the appendix reprint), the must-follow rule, the both-ends stop over the duration rules, the gorge pickup
+  - [x] Mining: shoring a tunnel (p. 50) - the support rules - R520: the two side braces plus a ceiling brace per 10-ft section, the 30 ft of 1-ft-diameter bracing in the 10x10 tunnel, the four man-hours per set, the carpenter/stonemason/miner proficiencies, and the 18/50-strength solo-moving threshold
   - [ ] Mining: products of a mine (p. 50) - Table 30 (the metals/gems grids, Tables 31-32)
   - [ ] Mining: quality of mining products (pp. 50-51) - Tables 33-34 (the ore/gemstone quality grids)
   - [ ] Mining: calculating the value of a placer mine (p. 53)
@@ -189,9 +189,9 @@ re-grained then, before any DM pin round.
 - [x] Table 24: Nonproficiency Penalties for Boat-Use (p. 47) - R518: the movement modifiers -30/-15/-15/-10/-5/-60/-30/-60 and the capsize chances 5/10/0/0/0/20/10/25%, with one proficient aboard stopping the capsize chance and half the rowers proficient stopping the movement penalties
 - [x] Table 25: Collision Probability (p. 48) - R518: the d100 grid - narrow 1/10, 5/20, 20/40, average 0/5, 2/10, 10/20, wide 0/1, 0/4, 4/8 (proficient/nonproficient) rolled each blind round
 - [x] Table 26: Boat Damage (p. 48) - R518: the percent bands 01-05 slight leak (founders in 1d6 hours), 06-10 small hole (2d4+2 turns), 11-20 many holes (2d4), 21-45 large holes (1d6 rounds), 45-60 hull splits (immediate), 61-80 breaks into 1d6 pieces, 81-98 splinters, 99-00 no damage
-- [ ] Table 27: Mining Rates (p. 49)
-- [ ] Table 28: Mineral Vein Direction (p. 49)
-- [ ] Table 29: Vein Path Alterations (p. 49)
+- [x] Table 27: Mining Rates (p. 49) - R520: the 8x3 grid - gnoll/halfling/human 75/50/25, gnome/kobold 80/60/30, goblin/orc 85/65/30, dwarf/hobgoblin 90/70/35, ogre 150/100/50, hill giant 250/150/75, fire/frost giant 300/200/100, stone giant 500/350/175 cubic feet per miner per eight hours (reprint of DMG p. 106)
+- [x] Table 28: Mineral Vein Direction (p. 49) - R520: the d4 faces - 1 north-south, 2 east-west, 3 northeast-southwest, 4 northwest-southeast
+- [x] Table 29: Vein Path Alterations (p. 49) - R520: the secret d8 bands - 1 steep descent, 2 shallow descent, 3 curves right (10-60 degrees), 4 curves left (10-60 degrees), 5-6 continues straight, 7 shallow ascent, 8 steep ascent
 - [ ] Table 30: Mining Products (p. 50)
 - [ ] Table 31: Metals (p. 50)
 - [ ] Table 32: Gemstones (p. 50)
