@@ -1,0 +1,2259 @@
+{
+ "round": 507,
+ "title": "the DSG combat rules for underground play - the fighting on walls and sheer surfaces, on bridges and ledges, the grabbing-an-enemy system, the fighting in water with the grappling modification, the fighting in narrow passages, the fighting and spellcasting in darkness, and the mounted combat with Table 14 and the dismount tactics",
+ "census_before": 431,
+ "prefix": "dnq",
+ "header_file": "rules/dsgfight.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "inline_count": 216,
+ "banner": {
+  "title": "The DSG COMBAT RULES FOR UNDERGROUND PLAY, R507: the printed pp. 30-33 (pdf 31-34; printed p. 31 = pdf 32 is the full-page combat illustration plate - the chapter text runs pp. 30 and 32-33 with the plummet-to/the-fate cut spanning the plate) - the fighting on walls and other sheer surfaces (the AC bonus loss, the flat -2, the elevation modifiers, the damage-forced Climbing Check, the dropped boulders), the fighting on bridges and ledges (the 5-foot rule, the hit-forced Dex Check, the push modifiers), the grabbing-an-enemy system (the 2-foot bar, the 1d20 vs AC 10, the -20% hanging checks, the rating assignments), the fighting in water (the depth ladder, the -4/-4, the exemptions) with the grappling-in-water modification, the fighting in narrow passages (the DMG frontage), the fighting in darkness (the -4/+4 set, the wild swing, the Dex/climbing cuts), the spellcasting in darkness (Table 9, the clue modifier), and the mounted combat (the species rules, the +1, the bow fire with Table 14 and the 45-degree limit) with the forcing-opponents-to-dismount tactics.",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR with the pdf Acrobat-Capture layer as the second read - every numeric cell dual-confirmed (Table 14 cell-for-cell: -1/-3/-5 both layers); the -10% climbing-check modifier is the % glyph OCR class (the 96 garble) and agrees const-for-const with the WSG half-hit-points pin; the clumsy-creature rating floor 0 carries the one residual caution (the % glyph unreadable, value 0 certain); the cross-book seam verified const-for-const against rules/wsgfight.h (R488) and the landed dmv/dmx/dnp DSG headers - NOTHING auto-credited; the seven flagged divergences (the bridge Dex-per-foot sign, the wall penalty frame, the elevation frame, the water depth ladder, the darkness penalty set, the mounted rate of fire, the bridge trigger) pinned as printed under the DSG prefix.",
+  "sentinel": "The Table 14 speed bands encode as 0 (less than 1/2 normal), 1 (1/2 to less than 3/4), 2 (3/4 to maximum); the modifiers are the die-roll convention (-1/-3/-5). The grid sentinel is -99 with no NA cells (census 0/0). The DSG-internal cross-references (Table 9 course changes, the p. 12 holding-breath rules, the p. 23 proficiency rules) pin as page-number consts."
+ },
+ "include_after": "#include \"rules/dsgprof.h\"  // R506: the DSG proficiencies pins",
+ "include_comment": "the DSG combat pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The DSG combat rules for underground play pins the wall fighting (the shield-and-Dex AC bonus loss, the flat -2 attack/damage/save penalty, the +2 higher / -2 lower elevation modifiers, the damage-forced Climbing Check with the -10% half-hit-points modifier, the 3-foot 2d8 boulder at AC 10 with the -8 cannot-hurl penalty), the bridge and ledge fighting (the 5-foot drop-off rule, the hit-forced Dex Check at +2 Dex per foot from the drop-off, the +2 back-to-wall / -2 back-to-drop-off push modifiers), the grabbing-an-enemy system (the under-2-foot-weapon bar, the 1d20 grab vs AC 10 with the weapon dropped, the Climbing/Dex Check to avoid joining the fall, the -20% hanging regain and hit checks, the separate-immediately fall, the 80-95/70/0 rating assignments), the water fighting (the none-below-waist / halved-to-chest / full-above-chest ladder, the -4 attack and -4 damage at floor 1, the native and swimming-proficiency exemptions) with the grappling-in-water modification (the UA pp. 106/108 references, the 1/3-height depth bar, the paralysis save for a breath, the p. 12 holding-breath rules), the narrow-passage bottleneck (the DMG pp. 69-70 frontage), the darkness fighting (the flat -4 attack/save/damage with +4 AC at floor 1, the forfeited sight bonuses, the infravision/magic/light exemptions, the twice-weapon-length wild swing at modified 0-or-less with the count-and-roll discipline, the Dex -2 and Climbing -10% drop-off cuts), the spellcasting in darkness (the Table 9 secret roll, the -1 to -3 clue modifier), the mounted combat (the trained-and-appropriate-species rules, the +1 mounted-vs-foot, the exact-hit-strikes-mount, the bow fire with the halved rate of fire and Table 14, the 45-degree firing-round limit, the DMG p. 53 flying penalties) and the dismount tactics (the slain-mount 1d3 fall with the proficiency check, the natural-20 3-foot unseat, the 5-9-foot and 10-foot foot soldiers at 16-20/25%, the dive grapple at 1d6, the -2 rider-vs-grappler).",
+ "audit_label": "R507 DSG combat audit",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R506 LANDED 2026-10-17: commit b9c1f90 (census 431,",
+ "prev_record": [
+  "- R506 LANDED 2026-10-17: commit b9c1f90 (census 431,",
+  "  pushed 409150e..b9c1f90), the DSG NONWEAPON",
+  "  PROFICIENCIES chapter, printed pp. 23-29 (pdf 24-30):",
+  "  the check system and Table 10, the slot economy, the",
+  "  artisans and NPC training, the optional bonuses, the",
+  "  craftsman and adventuring lists with Tables 11-13,",
+  "  and the XP option. Pinned as rules/dsgprof.h",
+  "  (prefix dnp, verified free; 208 inlines: 125 consts +",
+  "  68 bools + 4 tables/15 cols; 23 examples, 7",
+  "  table_checks). Gap 38/117 -> 50/105: 12 flips - the",
+  "  proficiencies PARENT box, 7 chapter boxes, manifest",
+  "  Tables 10-13. SEAMS verified const-for-const against",
+  "  the landed wsgprof/wsgprofd material, NOTHING",
+  "  auto-credited: Table 10 agrees cell-for-cell with the",
+  "  WSG Table 1 pins; 10 of 11 shared Table 13 rows",
+  "  DIVERGE (the DSG rebalanced them - Rope Use DEX 0 vs",
+  "  WSG WIS -3, Healing 2 slots WIS vs 1 slot INT, Riding",
+  "  +3 vs +2, Endurance 2-slot NA vs 1-slot WIS; only",
+  "  Blind-fighting agrees outright); the shared",
+  "  description numbers agree whole; the WSG check",
+  "  refinements (auto-fail 19/20, ability cap 18,",
+  "  2-in-20 floor) are WG-only, not printed in the DSG",
+  "  chapter - not auto-credited. Caution cells pinned AS",
+  "  PRINTED per the R501 precedent (Weaver 4/+4,",
+  "  Weaponsmith 3*/+3, trainer/armorer slots cells from",
+  "  prose, direction-sense roll-of-1 catastrophic digit).",
+  "  Spec-driven round 3: double-run applied 16/already 0",
+  "  then 0/16, no KeyError; preflight GREEN (R506 DSG",
+  "  proficiencies audit: bad 0), census 431, gap 50/105.",
+  "  User-side spec md5 62d2966a vs authored 258e56db -",
+  "  cosmetic, standing class. NEXT - R507: the DSG combat",
+  "  rules for underground play, printed pp. 30-33, Table",
+  "  14 (Mounted Bow Fire); EXTRACTION ROUND first, the",
+  "  cross-book seam candidate the WSG combat chapter",
+  "  (wsgfight.h R488) - nothing auto-credited."
+ ],
+ "gap_census": {
+  "closed": 60,
+  "open": 95
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **Combat rules for underground play** (pp. 30-33) - the sheer-surface combat, bridge/ledge combat, grabbing an enemy, water combat, narrow-passage combat, darkness combat, spellcasting in darkness and mounted combat with Table 14",
+   "to": "- [x] **Combat rules for underground play** (pp. 30-33) - the sheer-surface combat, bridge/ledge combat, grabbing an enemy, water combat, narrow-passage combat, darkness combat, spellcasting in darkness and mounted combat with Table 14 - R507: the combat chapter - the wall, bridge/ledge, grab, water, narrow-passage, darkness, spellcasting and mounted rules with Table 14 and the dismount tactics (printed p. 31 is the full-page combat illustration plate; the wsgfight seam verified const-for-const, nothing auto-credited)",
+   "note": "the combat parent"
+  },
+  {
+   "from": "  - [ ] Fighting on walls and other sheer surfaces (p. 30)",
+   "to": "  - [x] Fighting on walls and other sheer surfaces (p. 30) - R507: no shield or Dex AC bonus, the flat -2 attack/damage/save penalty, the +2 higher / -2 lower elevation modifiers, the damage-forced Climbing Check with the -10% half-hit-points modifier, and the dropped-boulder rules (3-foot boulder 2d8, AC 10 victims, -8 if it cannot be hurled)",
+   "note": "fighting on walls"
+  },
+  {
+   "from": "  - [ ] Fighting on bridges and ledges (p. 30)",
+   "to": "  - [x] Fighting on bridges and ledges (p. 30) - R507: the drop-off-within-5-feet rule, the hit-forced Dex Check with the +2 Dex per foot of distance from the drop-off (the sign diverges from the WSG edge rule, pinned as printed), and the +2 back-to-wall / -2 back-to-drop-off push modifiers",
+   "note": "fighting on bridges and ledges"
+  },
+  {
+   "from": "  - [ ] Grabbing an enemy (p. 30)",
+   "to": "  - [x] Grabbing an enemy (p. 30) - R507: the grab-as-you-fall system - the under-2-foot-weapon bar, the 1d20 attack vs AC 10, the Climbing/Dex Check to avoid joining the fall, the -20% hanging regain checks, the separate-immediately fall and the 80-95/70/0 climbing-rating assignments",
+   "note": "grabbing an enemy"
+  },
+  {
+   "from": "  - [ ] Fighting in water (p. 30)",
+   "to": "  - [x] Fighting in water (p. 30) - R507: the depth ladder (none below waist, halved waist-to-chest, full above chest or swimming), the -4 attack and -4 damage with the 1-point floor, the native and swimming-proficiency exemptions, and the grappling-in-water modification (UA pp. 106/108, the 1/3-height depth, the paralysis save for a breath, the p. 12 holding-breath rules)",
+   "note": "fighting in water"
+  },
+  {
+   "from": "  - [ ] Fighting in narrow passages (p. 31)",
+   "to": "  - [x] Fighting in narrow passages (p. 31) - R507: the bottleneck defense with the DMG pp. 69-70 frontage, the attacker limit, the monsters-and-NPCs-too rule, the defensive-or-aggressive use and the room-for-all requirement (the section prints on p. 32; p. 31 is the illustration plate)",
+   "note": "fighting in narrow passages"
+  },
+  {
+   "from": "  - [ ] Fighting in darkness (p. 31)",
+   "to": "  - [x] Fighting in darkness (p. 31) - R507: the flat -4 attack/save/damage penalty with the +4 AC penalty and the 1-point floor, the forfeited sight bonuses, the infravision/magic/light exemptions, the twice-weapon-length wild swing at modified 0-or-less with the count-and-roll discipline, and the Dex -2 / Climbing -10% drop-off modifiers (the section prints on p. 32; p. 31 is the illustration plate)",
+   "note": "fighting in darkness"
+  },
+  {
+   "from": "  - [ ] Spellcasting in darkness (p. 32)",
+   "to": "  - [x] Spellcasting in darkness (p. 32) - R507: the declared-target discipline, the DM secret roll on the R505 Table 9 course changes and the -1 to -3 clue modifier",
+   "note": "spellcasting in darkness"
+  },
+  {
+   "from": "  - [ ] Rules for mounted combat (p. 32) - mounted bow fire with Table 14",
+   "to": "  - [x] Rules for mounted combat (p. 32) - mounted bow fire with Table 14 - R507: the trained-and-appropriate-species rules (mules out, horses need light, the Underdark steeds list), the +1 mounted-vs-foot modifier with the exact-hit-strikes-mount rule, the mounted bow fire (the horsemanship-plus-bow bar, the shortbow/composite/light-crossbow list, the halved rate of fire, Table 14 and the 45-degree turn limit) and the dismount tactics (the slain-mount 1d3 fall, the natural-20 3-foot unseat, the 5-9-foot and 10-foot foot soldiers at 16-20, the dive grapple at 1d6 and the -2 rider-vs-grappler)",
+   "note": "rules for mounted combat"
+  },
+  {
+   "from": "- [ ] Table 14: Mounted Bow Fire (p. 32)",
+   "to": "- [x] Table 14: Mounted Bow Fire (p. 32) - R507: the 3-band speed grid - less than 1/2 normal -1, 1/2 to less than 3/4 -3, 3/4 to maximum -5, cumulative with all other modifiers (agrees const-for-const with the WSG mount-speed penalties)",
+   "note": "the Table 14 manifest line"
+  }
+ ],
+ "consts": [
+  {
+   "name": "dnqWallAtkDmgSavePenalty",
+   "value": 2,
+   "comment": "the flat -2 penalty assessed to all attack, damage, and save rolls on a sheer surface (the WSG splits cliff -2 attacks and saves / severe slope -1 attacks - the DSG adds damage rolls and drops the slope distinction, pinned as printed)."
+  },
+  {
+   "name": "dnqWallHigherAtkBonus",
+   "value": 2,
+   "comment": "the higher character gains a +2 to-hit modifier in addition to all others that apply."
+  },
+  {
+   "name": "dnqWallLowerAtkPenalty",
+   "value": 2,
+   "comment": "the lower character suffers a -2 modifier to his attack rolls."
+  },
+  {
+   "name": "dnqWallHalfHpCheckPenalty",
+   "value": 10,
+   "comment": "the -10% modifier to the Climbing Check on a half-or-more total-hit-points hit (the % glyph OCR class; agrees const-for-const with the WSG wfcBigDamageCheckPenalty)."
+  },
+  {
+   "name": "dnqBoulderDiameterFt",
+   "value": 3,
+   "comment": "the average-sized boulder is three feet in diameter."
+  },
+  {
+   "name": "dnqBoulderDamageDice",
+   "value": 2,
+   "comment": "the boulder inflicts 2d8 points of damage: two dice."
+  },
+  {
+   "name": "dnqBoulderDamageSides",
+   "value": 8,
+   "comment": "the boulder damage die: d8."
+  },
+  {
+   "name": "dnqBoulderCannotHurlPenalty",
+   "value": 8,
+   "comment": "if the creatures dropping the missile cannot pick it up and hurl it (as a giant could), they suffer a -8 modifier to their attack roll."
+  },
+  {
+   "name": "dnqBridgeDropoffWithinFt",
+   "value": 5,
+   "comment": "the rule applies if some sort of drop-off is located within five feet of the character."
+  },
+  {
+   "name": "dnqBridgeDexPerFoot",
+   "value": 2,
+   "comment": "the Dexterity for the check is increased by two for every foot of distance between the character's feet and the drop-off (OPPOSITE SIGN to the WSG edge rule, which reads -2 per foot - the round's true cross-book divergence, pinned as printed)."
+  },
+  {
+   "name": "dnqBridgeBackToWallDex",
+   "value": 2,
+   "comment": "in melee a character with his back to a wall receives a +2 modifier to his Dexterity."
+  },
+  {
+   "name": "dnqBridgeBackToDropoffDex",
+   "value": 2,
+   "comment": "a character with his back to a drop-off receives a -2 penalty."
+  },
+  {
+   "name": "dnqBridgePushMod",
+   "value": 2,
+   "comment": "the push modifier is a + or -2 to Dexterity, applied in addition to all other modifiers."
+  },
+  {
+   "name": "dnqGrabWeaponMaxFt",
+   "value": 2,
+   "comment": "the grab-eligible weapon length bar: less than two feet."
+  },
+  {
+   "name": "dnqGrabAttackDie",
+   "value": 20,
+   "comment": "the grab attempt is a normal attack roll on 1d20 that would hit the other character."
+  },
+  {
+   "name": "dnqGrabAcBase",
+   "value": 10,
+   "comment": "the target is AC 10 minus Dexterity bonuses."
+  },
+  {
+   "name": "dnqHangingRegainCheckPenalty",
+   "value": 20,
+   "comment": "the hanging character can make a Climbing Check with a -20% modifier to regain his hold on the wall or his footing on the ledge."
+  },
+  {
+   "name": "dnqClingHitCheckPenalty",
+   "value": 20,
+   "comment": "any successful hit on the clinging character requires another Climbing Check with a -20% modifier."
+  },
+  {
+   "name": "dnqNaturalClimberRatingLo",
+   "value": 80,
+   "comment": "the natural-climber band floor: monkeys, spiders and other natural climbers fall into the 80-95% range."
+  },
+  {
+   "name": "dnqNaturalClimberRatingHi",
+   "value": 95,
+   "comment": "the natural-climber band ceiling: 95%."
+  },
+  {
+   "name": "dnqGoatLlamaRating",
+   "value": 70,
+   "comment": "mountain goats and llamas might rate 70%."
+  },
+  {
+   "name": "dnqClumsyRatingFloor",
+   "value": 0,
+   "comment": "clumsier creatures could rate as low as 0 (the OCR caution cell: the % glyph unreadable, the value 0 certain)."
+  },
+  {
+   "name": "dnqWaterAttackPenalty",
+   "value": 4,
+   "comment": "attacks by creatures not at home in water suffer a -4 penalty on the 1d20 attack roll."
+  },
+  {
+   "name": "dnqWaterDamagePenalty",
+   "value": 4,
+   "comment": "a successful water attack suffers a -4 modifier to the damage it would normally inflict."
+  },
+  {
+   "name": "dnqWaterDamageFloor",
+   "value": 1,
+   "comment": "water-modified damage can be reduced to no less than 1 point."
+  },
+  {
+   "name": "dnqWaterGrappleUaPage",
+   "value": 106,
+   "comment": "the grappling-in-water modification is for use with the Weaponless Combat System listed on page 106 of Unearthed Arcana."
+  },
+  {
+   "name": "dnqWaterGrappleDepthNum",
+   "value": 1,
+   "comment": "the depth fraction numerator: 1/3 of the victim's height."
+  },
+  {
+   "name": "dnqWaterGrappleDepthDen",
+   "value": 3,
+   "comment": "the depth fraction denominator: 1/3."
+  },
+  {
+   "name": "dnqWaterGrappleHoldPage",
+   "value": 108,
+   "comment": "the hold-broken explanation sits on page 108 of Unearthed Arcana."
+  },
+  {
+   "name": "dnqWaterGrappleBreathRefPage",
+   "value": 12,
+   "comment": "the Holding Breath section on page 12 of the DSG gives the length of time a character can hold his breath."
+  },
+  {
+   "name": "dnqNarrowDmgFrontagePage",
+   "value": 69,
+   "comment": "page 69 of the DMG provides the combat-frontage description."
+  },
+  {
+   "name": "dnqNarrowDmgFrontagePage2",
+   "value": 70,
+   "comment": "page 70 of the DMG completes the combat-frontage description."
+  },
+  {
+   "name": "dnqDarkAttackPenalty",
+   "value": 4,
+   "comment": "the -4 penalty to all attack rolls for characters who cannot see (the WSG splits -3 natural / -4 total on attacks only - the DSG flat -4 agrees with the total-dark value, pinned as printed)."
+  },
+  {
+   "name": "dnqDarkSavePenalty",
+   "value": 4,
+   "comment": "the -4 penalty to all saving throws in darkness."
+  },
+  {
+   "name": "dnqDarkDamagePenalty",
+   "value": 4,
+   "comment": "the -4 penalty to all damage rolls in darkness."
+  },
+  {
+   "name": "dnqDarkAcPenalty",
+   "value": 4,
+   "comment": "the +4 penalty to Armor Class in darkness."
+  },
+  {
+   "name": "dnqDarkDamageFloor",
+   "value": 1,
+   "comment": "even with the penalties, a successful attack cannot cause less than 1 point of damage."
+  },
+  {
+   "name": "dnqDarkWildSwingThreshold",
+   "value": 0,
+   "comment": "if the attack roll misses with a modified result of 0 or less, the attack has unintentionally struck another object."
+  },
+  {
+   "name": "dnqDarkWildSwingRadiusMult",
+   "value": 2,
+   "comment": "any object closer to the character than twice his weapon's length may be hit."
+  },
+  {
+   "name": "dnqDarkDexCheckPenalty",
+   "value": 2,
+   "comment": "the Dexterity reduction near a drop-off or on a sheer surface in darkness: -2 (agrees with the WSG total-dark precarious modifier)."
+  },
+  {
+   "name": "dnqDarkClimbingCut",
+   "value": 10,
+   "comment": "the Climbing Rating reduction in darkness: -10% (agrees with the WSG total-dark climbing cut)."
+  },
+  {
+   "name": "dnqDarkSpellCourseTable",
+   "value": 9,
+   "comment": "the DSG course-changes table consulted for spells cast in darkness: Table 9 (landed R505 as the dmx darkness grid)."
+  },
+  {
+   "name": "dnqDarkSpellClueModLo",
+   "value": 1,
+   "comment": "the clue modifier floor: -1."
+  },
+  {
+   "name": "dnqDarkSpellClueModHi",
+   "value": 3,
+   "comment": "the clue modifier ceiling: -3."
+  },
+  {
+   "name": "dnqMountedVsFootBonus",
+   "value": 1,
+   "comment": "the +1 modifier on all attack rolls made by a mounted character against an opponent who is not mounted."
+  },
+  {
+   "name": "dnqMountedRofExampleFromNum",
+   "value": 2,
+   "comment": "the rate-of-fire example numerator: a character who normally attacks at 2/1."
+  },
+  {
+   "name": "dnqMountedRofExampleFromDen",
+   "value": 1,
+   "comment": "the rate-of-fire example denominator: 2/1."
+  },
+  {
+   "name": "dnqMountedRofExampleToNum",
+   "value": 1,
+   "comment": "the mounted rate for the 2/1 archer: 1/1 (the DSG halves the rate - the WSG one-step-down-the-scale rule reads 2/1 to 3/2; the divergence is pinned as printed)."
+  },
+  {
+   "name": "dnqMountedRofExampleToDen",
+   "value": 1,
+   "comment": "the mounted rate denominator for the 2/1 archer: 1/1."
+  },
+  {
+   "name": "dnqMountedRofSecondFromNum",
+   "value": 3,
+   "comment": "the second rate example: a rate of 3/1."
+  },
+  {
+   "name": "dnqMountedRofSecondToNum",
+   "value": 3,
+   "comment": "the mounted rate for the 3/1 archer: 3/2."
+  },
+  {
+   "name": "dnqMountedRofSecondToDen",
+   "value": 2,
+   "comment": "the mounted rate denominator for the 3/1 archer: 3/2, etc."
+  },
+  {
+   "name": "dnqFireRoundTurnLimitDeg",
+   "value": 45,
+   "comment": "the most the mount can turn during the firing round is 45 degrees to either side of its current direction."
+  },
+  {
+   "name": "dnqFlyingDmgRefPage",
+   "value": 53,
+   "comment": "the DMG page for the flying-steed missile penalties: 53."
+  },
+  {
+   "name": "dnqMountDeathFallDmgDice",
+   "value": 1,
+   "comment": "the failed-or-unproficient dismount fall damage: 1d3 - one die."
+  },
+  {
+   "name": "dnqMountDeathFallDmgSides",
+   "value": 3,
+   "comment": "the dismount fall damage die: d3."
+  },
+  {
+   "name": "dnqUnseatWeaponMinFt",
+   "value": 3,
+   "comment": "the unseat attempt requires a melee weapon of three feet or greater length wielded by another mounted character."
+  },
+  {
+   "name": "dnqUnseatNaturalDie",
+   "value": 20,
+   "comment": "the unseat attempt requires an attack roll of natural 20."
+  },
+  {
+   "name": "dnqUnseatNoProfExtraDmgSides",
+   "value": 3,
+   "comment": "the unproficient unseat victim suffers an additional 1d3 points of damage."
+  },
+  {
+   "name": "dnqFootUnseatShortMinFt",
+   "value": 5,
+   "comment": "fighters on foot armed with weapons of five to nine feet have the same chance of unhorsing riders as mounted attackers."
+  },
+  {
+   "name": "dnqFootUnseatShortMaxFt",
+   "value": 9,
+   "comment": "the foot-soldier short-weapon ceiling: nine feet."
+  },
+  {
+   "name": "dnqFootUnseatLongMinFt",
+   "value": 10,
+   "comment": "foot soldiers using weapons of 10 feet or greater lengths have a 25% chance of dismounting riders."
+  },
+  {
+   "name": "dnqFootUnseatLongPct",
+   "value": 25,
+   "comment": "the long-weapon dismount chance: 25%."
+  },
+  {
+   "name": "dnqFootUnseatLongDieLo",
+   "value": 16,
+   "comment": "the long-weapon dismount roll: 16-20 on the attack roll."
+  },
+  {
+   "name": "dnqFootUnseatLongDieHi",
+   "value": 20,
+   "comment": "the long-weapon dismount roll ceiling: 20."
+  },
+  {
+   "name": "dnqDiveMissFallDmgSides",
+   "value": 6,
+   "comment": "the missed-dive fall damage: 1d6."
+  },
+  {
+   "name": "dnqDiveBothFallDmgSides",
+   "value": 6,
+   "comment": "the both-fall damage: 1d6 each."
+  },
+  {
+   "name": "dnqRiderGrapplerAtkPenalty",
+   "value": 2,
+   "comment": "all rider attacks against a grappling opponent are made with a -2 modifier to hit (the WSG pins the permission but not the -2 - a DSG-only value)."
+  },
+  {
+   "name": "dnqT14RowCount",
+   "value": 3,
+   "comment": "the Table 14 Mounted Bow Fire grid: three speed bands."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnqOpenerUnusualTerrain",
+   "value": true,
+   "comment": "the rules cover melee and missile combat in unusual underground terrain."
+  },
+  {
+   "name": "dnqOpenerSheerWallExample",
+   "value": true,
+   "comment": "the suspended-midway-up-a-sheer-wall example."
+  },
+  {
+   "name": "dnqOpenerNarrowBridgeExample",
+   "value": true,
+   "comment": "the poised-atop-a-narrow-bridge example."
+  },
+  {
+   "name": "dnqOpenerSwimmingAttacked",
+   "value": true,
+   "comment": "the swimming-character-attacked example."
+  },
+  {
+   "name": "dnqOpenerDarknessClarification",
+   "value": true,
+   "comment": "additional clarification of the effects of darkness follows."
+  },
+  {
+   "name": "dnqOpenerBattlesystemTail",
+   "value": true,
+   "comment": "the section closes with instructions and modified rules for the AD&D Battlesystem Fantasy Combat Supplement in the constricted conditions of the underearth."
+  },
+  {
+   "name": "dnqWallNoShieldDexAcBonus",
+   "value": true,
+   "comment": "a climbing character loses all Armor Class bonuses from shield or Dexterity."
+  },
+  {
+   "name": "dnqWallFaceToSurfaceBackExposed",
+   "value": true,
+   "comment": "a character whose face is toward the surface presents his back to any attacker."
+  },
+  {
+   "name": "dnqWallBackExposedExceptAdjacent",
+   "value": true,
+   "comment": "except an attacker next to him on the wall."
+  },
+  {
+   "name": "dnqWallOneSideOrOther",
+   "value": true,
+   "comment": "such a character can only face a foe to one side or the other."
+  },
+  {
+   "name": "dnqWallOneHandHoldsOn",
+   "value": true,
+   "comment": "at least one hand is needed to hold on."
+  },
+  {
+   "name": "dnqWallNoMultipleWeapons",
+   "value": true,
+   "comment": "the character cannot use multiple weapons."
+  },
+  {
+   "name": "dnqWallAboveBelowModifiers",
+   "value": true,
+   "comment": "if combatants are above or below their opponents during a wall fight, specific modifiers apply."
+  },
+  {
+   "name": "dnqWallSecurePlaceMayCancel",
+   "value": true,
+   "comment": "a place of some security reached before combat may cancel some or all of the penalties (the DM's judgment)."
+  },
+  {
+   "name": "dnqWallArcherLedgeExample",
+   "value": true,
+   "comment": "the archer who carefully selects a ledge from which he can easily see his targets and draw his bow fires normally."
+  },
+  {
+   "name": "dnqWallBoulderSwordsmanExample",
+   "value": true,
+   "comment": "the swordsman firmly balanced on a large boulder has the advantage over opponents scrambling up to reach him."
+  },
+  {
+   "name": "dnqWallDamageClimbingCheck",
+   "value": true,
+   "comment": "a character on a sheer surface struck for any amount of damage must make an immediate Climbing Check."
+  },
+  {
+   "name": "dnqWallCheckFailFalls",
+   "value": true,
+   "comment": "the check succeeds: the character remains in place; it fails: the character falls."
+  },
+  {
+   "name": "dnqWallHalfHpTrigger",
+   "value": true,
+   "comment": "the damage-inflicted modifier applies when the damage is equal to or greater than 1/2 of the character's total hit points."
+  },
+  {
+   "name": "dnqWallHalfHpRoundedUp",
+   "value": true,
+   "comment": "the half-total-hit-points figure is rounded up."
+  },
+  {
+   "name": "dnqWallBoulderTactic",
+   "value": true,
+   "comment": "creatures defending a wall or cliff often roll or drop heavy objects onto attackers below."
+  },
+  {
+   "name": "dnqBoulderVictimAcTen",
+   "value": true,
+   "comment": "all victims are treated as AC 10 for purposes of these attacks."
+  },
+  {
+   "name": "dnqBoulderKnocksOffClimbers",
+   "value": true,
+   "comment": "victims climbing a sheer cliff could be knocked off by this attack, as given by the fall rules."
+  },
+  {
+   "name": "dnqBridgeStandWithoutHands",
+   "value": true,
+   "comment": "the bridges-and-ledges situations assume the character has room to stand somewhere without using his hands to hold on."
+  },
+  {
+   "name": "dnqBridgeHitPenaltiesOnly",
+   "value": true,
+   "comment": "all the difficulties relate to hits against the character; there are no penalties for attacking in this situation."
+  },
+  {
+   "name": "dnqBridgeHitForcesDexCheck",
+   "value": true,
+   "comment": "a character hit by any attack that causes a loss of hit points or consciousness (such as a sleep spell) must make a successful Dexterity Check to avoid falling over the nearby drop-off."
+  },
+  {
+   "name": "dnqBridgePushTowardAway",
+   "value": true,
+   "comment": "the Dexterity is also modified if the force of the blow pushes the character toward or away from the drop-off."
+  },
+  {
+   "name": "dnqBridgeMissilePathIndicator",
+   "value": true,
+   "comment": "during missile combat the path of the missile serves as a good indicator of whether a character is pushed toward or away from a drop-off."
+  },
+  {
+   "name": "dnqBridgeArrowExample",
+   "value": true,
+   "comment": "the character on a narrow bridge struck by an arrow from his left side is propelled toward the drop-off on his right."
+  },
+  {
+   "name": "dnqBridgeLedgeExample",
+   "value": true,
+   "comment": "the character on a ledge with his back to the wall and enemies before him is pushed back toward the wall by any blow."
+  },
+  {
+   "name": "dnqGrabCloseQuartersOnly",
+   "value": true,
+   "comment": "the grab rule is used when a character is fighting in extremely close quarters and falls from a sheer surface or a narrow ledge or bridge."
+  },
+  {
+   "name": "dnqGrabOrGrappling",
+   "value": true,
+   "comment": "the rule is only used when at least one character fights with a weapon of less than two feet, or when the characters are grappling."
+  },
+  {
+   "name": "dnqGrabOneAttempt",
+   "value": true,
+   "comment": "the falling character can make one attempt to grab his enemy as he falls."
+  },
+  {
+   "name": "dnqGrabNoArmorShieldBenefit",
+   "value": true,
+   "comment": "the target receives no benefit for armor or shield."
+  },
+  {
+   "name": "dnqGrabNoWeaponMagicBonus",
+   "value": true,
+   "comment": "no magical bonuses for weapons apply to the grab attack roll."
+  },
+  {
+   "name": "dnqGrabWeaponMustDrop",
+   "value": true,
+   "comment": "any weapon held must be dropped for the attempt to be made."
+  },
+  {
+   "name": "dnqGrabSuccessGrabsBody",
+   "value": true,
+   "comment": "on a successful roll the character has grabbed some part of his opponent's body."
+  },
+  {
+   "name": "dnqGrabbedWallClimbingCheck",
+   "value": true,
+   "comment": "the grabbed character rolls a Climbing Check if on a wall."
+  },
+  {
+   "name": "dnqGrabbedLedgeDexCheck",
+   "value": true,
+   "comment": "the grabbed character rolls a Dexterity Check on a ledge or bridge."
+  },
+  {
+   "name": "dnqGrabbedCheckFailBothFall",
+   "value": true,
+   "comment": "if the check fails, both characters plummet to the fate that awaits them below."
+  },
+  {
+   "name": "dnqGrabbedCheckSuccessRetains",
+   "value": true,
+   "comment": "if the check succeeds, the grabbed character retains his position, with his opponent clinging tenuously to his leg (or whatever)."
+  },
+  {
+   "name": "dnqHangingCannotAttack",
+   "value": true,
+   "comment": "the character hanging onto his opponent cannot make any attacks."
+  },
+  {
+   "name": "dnqHangingRegainSuccess",
+   "value": true,
+   "comment": "a successful regain check: the character has regained his place."
+  },
+  {
+   "name": "dnqHangingFailStaysClinging",
+   "value": true,
+   "comment": "an unsuccessful regain check: the character remains clinging desperately to his opponent."
+  },
+  {
+   "name": "dnqClingOpponentAttacksNormally",
+   "value": true,
+   "comment": "the opponent can attack the clinging character normally."
+  },
+  {
+   "name": "dnqClingCheckFailFalls",
+   "value": true,
+   "comment": "failure on the hit check means the clinging character falls and his opponent remains on the wall."
+  },
+  {
+   "name": "dnqClingOtherCauseBothFall",
+   "value": true,
+   "comment": "if anything else causes the character retaining his hold to fall, both characters fall."
+  },
+  {
+   "name": "dnqFallingGrappledSeparate",
+   "value": true,
+   "comment": "even if characters are grappled together when they fall, they separate immediately."
+  },
+  {
+   "name": "dnqFallingSpellPossible",
+   "value": true,
+   "comment": "a magic-user might be able to cast a spell before hitting the bottom while his less fortunate opponent plummets to a hard landing."
+  },
+  {
+   "name": "dnqAssignRatingToCreatures",
+   "value": true,
+   "comment": "when characters fight creatures without Climbing Ratings or Dexterity Scores, the DM assigns a Climbing Rating based on natural abilities or lack thereof."
+  },
+  {
+   "name": "dnqWaterBelowWaistNoPenalty",
+   "value": true,
+   "comment": "standing in water less than waist deep: none of the combat penalties apply."
+  },
+  {
+   "name": "dnqWaterWaistToChestHalved",
+   "value": true,
+   "comment": "water waist deep to chest deep: the penalties are halved."
+  },
+  {
+   "name": "dnqWaterAboveChestOrSwimFull",
+   "value": true,
+   "comment": "swimming or standing in water above the chest: the penalties are fully in effect."
+  },
+  {
+   "name": "dnqWaterInterferesWithFighting",
+   "value": true,
+   "comment": "water interferes with the fighting effectiveness of characters and creatures not bred for that environment."
+  },
+  {
+   "name": "dnqWaterNativeExempt",
+   "value": true,
+   "comment": "any creature that spends part of its life in the water is not penalized while fighting in it."
+  },
+  {
+   "name": "dnqWaterSwimProfExempt",
+   "value": true,
+   "comment": "a character with swimming proficiency is not penalized while fighting in the water."
+  },
+  {
+   "name": "dnqWaterGrapplePullUnder",
+   "value": true,
+   "comment": "using these rules, characters can attempt to pull their opponents underwater and hold them under until they drown."
+  },
+  {
+   "name": "dnqWaterGrappleDepthRule",
+   "value": true,
+   "comment": "a grappling-in-water attack can only be successful in water at least 1/3 of the victim's height."
+  },
+  {
+   "name": "dnqWaterGrappleNoWeaponPenalties",
+   "value": true,
+   "comment": "the grapple attempt can be made without the penalties that would apply to an attack with a weapon."
+  },
+  {
+   "name": "dnqWaterGrappleBothGoUnder",
+   "value": true,
+   "comment": "if the grapple is successful, both characters go under the surface of the water."
+  },
+  {
+   "name": "dnqWaterGrappleAttackerBreath",
+   "value": true,
+   "comment": "the grappling character is assumed to have taken a deep breath of air (as per the swimming rules) before going under."
+  },
+  {
+   "name": "dnqWaterGrappleVictimParalysisSave",
+   "value": true,
+   "comment": "the grappled character must make a saving throw vs. paralyzation to get such a breath of air."
+  },
+  {
+   "name": "dnqWaterGrappleNoBreathIfFailed",
+   "value": true,
+   "comment": "a failed save means the character is assumed to have been dragged under before he could take a breath."
+  },
+  {
+   "name": "dnqWaterGrappleUnderUntilHoldBroken",
+   "value": true,
+   "comment": "the characters remain underwater until the hold is broken."
+  },
+  {
+   "name": "dnqNarrowBottleneckTactic",
+   "value": true,
+   "comment": "a common defensive barrier in caves is the bottleneck passage where only one or two characters can hold off a mob of attackers."
+  },
+  {
+   "name": "dnqNarrowOneOrTwoHolders",
+   "value": true,
+   "comment": "only one or two characters hold off the mob at a bottleneck."
+  },
+  {
+   "name": "dnqNarrowLimitsAttackers",
+   "value": true,
+   "comment": "the bottleneck tactic limits the number of enemies that can attack at once."
+  },
+  {
+   "name": "dnqNarrowMonstersNpcsToo",
+   "value": true,
+   "comment": "the bonus is usable by monsters and NPCs as well."
+  },
+  {
+   "name": "dnqNarrowDefensiveOrAggressive",
+   "value": true,
+   "comment": "the location can be used defensively as protection from the enemy's attacks or aggressively as a means of striking the enemy at an advantage."
+  },
+  {
+   "name": "dnqNarrowRoomForAllRequired",
+   "value": true,
+   "comment": "the side claiming the bonus must have sufficient room for all fighting individuals to use their weapons without interfering with each other."
+  },
+  {
+   "name": "dnqDarkCannotSeeRisks",
+   "value": true,
+   "comment": "characters who cannot see in the dark run serious risks when participating in combat: greatly reduced success, the chance of wounding an ally or striking an obstacle, and treacherous terrain features such as cliffs, pits or pools."
+  },
+  {
+   "name": "dnqDarkForfeitsSightBonuses",
+   "value": true,
+   "comment": "all bonuses that require a character to see his victim are forfeited."
+  },
+  {
+   "name": "dnqDarkForfeitExamples",
+   "value": true,
+   "comment": "the forfeited-bonus examples: a ranger's bonuses against giants, a thief's backstab attack, and a vorpal sword's beheading function."
+  },
+  {
+   "name": "dnqDarkInfravisionExempt",
+   "value": true,
+   "comment": "the penalties do not apply to characters with infravision."
+  },
+  {
+   "name": "dnqDarkMagicWeaponExempt",
+   "value": true,
+   "comment": "the penalties do not apply to characters wielding magical weapons."
+  },
+  {
+   "name": "dnqDarkLightSourceExempt",
+   "value": true,
+   "comment": "the penalties do not apply to characters within range of any source of light."
+  },
+  {
+   "name": "dnqDarkWildSwingObjects",
+   "value": true,
+   "comment": "a cannot-see character within twice his weapon length of any ally, other opponents, walls, chairs or other obstacles stands a chance of striking one of these instead of his target."
+  },
+  {
+   "name": "dnqDarkWildSwingCountRoll",
+   "value": true,
+   "comment": "count up all the objects within the weapon's reach, then roll randomly to determine which is hit."
+  },
+  {
+   "name": "dnqDarkDropoffDexCheck",
+   "value": true,
+   "comment": "a cannot-see character fighting next to a drop-off or on a sheer surface has his Dexterity reduced for purposes of all Dexterity Checks to see if he falls over the drop-off."
+  },
+  {
+   "name": "dnqDarkClimbingCheckCut",
+   "value": true,
+   "comment": "the Climbing Rating is reduced for purposes of all Climbing Checks in darkness."
+  },
+  {
+   "name": "dnqDarkSpellOffTargetRisk",
+   "value": true,
+   "comment": "if a spellcaster cannot see the target of his spell, there is a chance the spell might affect something besides the intended target."
+  },
+  {
+   "name": "dnqDarkSpellPlayerIndicates",
+   "value": true,
+   "comment": "the player must indicate exactly where the spell is targeted."
+  },
+  {
+   "name": "dnqDarkSpellDmSecretRoll",
+   "value": true,
+   "comment": "the DM then makes a secret roll on Table 9: Course Changes in Darkness to determine where the spell really goes off."
+  },
+  {
+   "name": "dnqDarkSpellClueMods",
+   "value": true,
+   "comment": "if the spellcaster has a clue to the location of the target (noise or smell, for example), the DM may assign a modifier to the Table 9 roll."
+  },
+  {
+   "name": "dnqMountCavalryRareUnderground",
+   "value": true,
+   "comment": "the sweeping charges of vast ranks of cavalry are not as common in the realms of the Underdark as upon the surface."
+  },
+  {
+   "name": "dnqMountUnderdarkStables",
+   "value": true,
+   "comment": "many of the races living beneath the surface maintain a stable of appropriate mounts."
+  },
+  {
+   "name": "dnqMountTrainedRequired",
+   "value": true,
+   "comment": "a steed must have been trained for combat to function as a mount during it."
+  },
+  {
+   "name": "dnqMountSpeciesAppropriate",
+   "value": true,
+   "comment": "the steed must be of a species appropriate to such combat."
+  },
+  {
+   "name": "dnqMuleInappropriate",
+   "value": true,
+   "comment": "mules are inappropriate combat mounts."
+  },
+  {
+   "name": "dnqMuleLackSpeedManeuverFearless",
+   "value": true,
+   "comment": "the mule disqualifiers: lack of speed, maneuverability, and fearlessness."
+  },
+  {
+   "name": "dnqHorseTrainableUnderground",
+   "value": true,
+   "comment": "horses can be trained to fight in underground conditions."
+  },
+  {
+   "name": "dnqHorseReliesOnSight",
+   "value": true,
+   "comment": "horses rely heavily on the sense of sight."
+  },
+  {
+   "name": "dnqHorseUnusableTotalDark",
+   "value": true,
+   "comment": "horses are unusable in situations of total darkness."
+  },
+  {
+   "name": "dnqUnderdarkSteedList",
+   "value": true,
+   "comment": "steeds employed by the races of the Underdark include griffons, nightmares, dire wolves, giant striders, giant lizards, and rothe."
+  },
+  {
+   "name": "dnqHorseIlluminationPermits",
+   "value": true,
+   "comment": "horses are used if illumination permits."
+  },
+  {
+   "name": "dnqHorseNightRaids",
+   "value": true,
+   "comment": "horses are especially favored for raiding parties that venture onto the surface during the dark of night."
+  },
+  {
+   "name": "dnqMountedHeightAdvantage",
+   "value": true,
+   "comment": "the mounted character's height advantage serves to protect him from opponents' attacks and gives him an advantage when he attacks."
+  },
+  {
+   "name": "dnqExactHitStrikesMount",
+   "value": true,
+   "comment": "when the character standing on the ground attacks, any roll that exactly equals the number needed to hit strikes the mount instead of the mounted character."
+  },
+  {
+   "name": "dnqExactHitOnlyIfRiderTarget",
+   "value": true,
+   "comment": "the exact-hit procedure is only used if the rider is the intended victim."
+  },
+  {
+   "name": "dnqChooseMountTarget",
+   "value": true,
+   "comment": "a character can always choose to attack the mount instead of the rider."
+  },
+  {
+   "name": "dnqMountedBowFormidable",
+   "value": true,
+   "comment": "mounted bowmen create a formidable force, combining speed with the ability to attack from a distance."
+  },
+  {
+   "name": "dnqMountedBowRideShootRide",
+   "value": true,
+   "comment": "a mounted archer can often ride close to his enemy, shoot an arrow, and ride away again before the enemy can react."
+  },
+  {
+   "name": "dnqMountedBowStationaryNoPenalty",
+   "value": true,
+   "comment": "any character can fire a bow from a mount that is not moving, without negative modifiers."
+  },
+  {
+   "name": "dnqMountedBowMovingNeedsHorsemanship",
+   "value": true,
+   "comment": "to shoot from a moving steed the character must have horsemanship proficiency."
+  },
+  {
+   "name": "dnqMountedBowMovingNeedsBowProf",
+   "value": true,
+   "comment": "to shoot from a moving steed the character must also have a bow weapon proficiency."
+  },
+  {
+   "name": "dnqMountedBowBothHandsKnees",
+   "value": true,
+   "comment": "the character needs both hands to fire the bow and thus must guide his mount with his knees."
+  },
+  {
+   "name": "dnqMountedBowTerrainBar",
+   "value": true,
+   "comment": "the DM can rule that terrain because of steepness, slipperiness or very rough ground requires the character to hold the reins, preventing mounted bow fire."
+  },
+  {
+   "name": "dnqShortbowAllowed",
+   "value": true,
+   "comment": "shortbows can be fired by mounted characters."
+  },
+  {
+   "name": "dnqCompositeShortbowAllowed",
+   "value": true,
+   "comment": "composite shortbows can be fired by mounted characters."
+  },
+  {
+   "name": "dnqLightCrossbowAllowed",
+   "value": true,
+   "comment": "light crossbows can be fired by mounted characters."
+  },
+  {
+   "name": "dnqMountedRofLessThanUnmounted",
+   "value": true,
+   "comment": "the mounted rate of fire is less than when unmounted."
+  },
+  {
+   "name": "dnqMountedSpeedPenaltyTable",
+   "value": true,
+   "comment": "the character also suffers penalties to hit based on the speed of the mount at the time the attack is made, as shown on Table 14: Mounted Bow Fire."
+  },
+  {
+   "name": "dnqT14Cumulative",
+   "value": true,
+   "comment": "the Table 14 modifiers are cumulative with all others that apply."
+  },
+  {
+   "name": "dnqFireRoundNoManeuvers",
+   "value": true,
+   "comment": "during the round he fires, the rider cannot perform maneuvers with his mount, except for slight turning."
+  },
+  {
+   "name": "dnqSlightTurningOnly",
+   "value": true,
+   "comment": "only slight turning is permitted while firing."
+  },
+  {
+   "name": "dnqSharperTurnsRequireHold",
+   "value": true,
+   "comment": "sharper turns and complicated maneuvers require the character to hold on and prevent the use of a bow."
+  },
+  {
+   "name": "dnqMountedRulesAllMounts",
+   "value": true,
+   "comment": "these rules apply to riders on all types of mounts."
+  },
+  {
+   "name": "dnqFlyingAdditionalPenalties",
+   "value": true,
+   "comment": "if the steed is flying, additional penalties apply as listed in the DMG, page 53, under Aerial Missile Fire."
+  },
+  {
+   "name": "dnqDismountEvensOdds",
+   "value": true,
+   "comment": "special tactics evolved to allow opponents on the ground to even the odds with the mounted warrior."
+  },
+  {
+   "name": "dnqDismountRiderStunnedProne",
+   "value": true,
+   "comment": "knocking the rider off more than evens the odds: the rider is generally stunned, injured, or at the very least prone after falling from his mount."
+  },
+  {
+   "name": "dnqDismountMethodsHeroicOrGrim",
+   "value": true,
+   "comment": "there are several methods for dismounting an opponent, some heroic and others merely grim and efficient."
+  },
+  {
+   "name": "dnqSlayMountMostDirect",
+   "value": true,
+   "comment": "by far the most direct method is to slay the mount."
+  },
+  {
+   "name": "dnqSlayMountSteedLost",
+   "value": true,
+   "comment": "the disadvantage to slaying the mount: it is no longer useful to anyone."
+  },
+  {
+   "name": "dnqCaptureSteedBetter",
+   "value": true,
+   "comment": "in many cases it is more beneficial to try to remove the rider and capture the steed."
+  },
+  {
+   "name": "dnqMountDeathAutoFall",
+   "value": true,
+   "comment": "if a steed is killed while a character is mounted upon it, the character automatically falls to the ground."
+  },
+  {
+   "name": "dnqMountDeathProfCheckLandsFeet",
+   "value": true,
+   "comment": "a character with horsemanship proficiency (the proficiency rules, page 23) is entitled to a Proficiency Check to see if he lands on his feet."
+  },
+  {
+   "name": "dnqMountDeathContinueActing",
+   "value": true,
+   "comment": "on a successful check the character remains upright and can continue to act normally, even attacking that same round if he has not attacked yet."
+  },
+  {
+   "name": "dnqMountDeathNoFurtherFunctions",
+   "value": true,
+   "comment": "the fallen character can perform no further functions that round."
+  },
+  {
+   "name": "dnqMountDeathNextRoundToFeet",
+   "value": true,
+   "comment": "the fallen character must spend the entire next round climbing to his feet."
+  },
+  {
+   "name": "dnqUnseatKnockChance",
+   "value": true,
+   "comment": "when the natural-20 hit lands, there is a chance the victim is knocked from his mount."
+  },
+  {
+   "name": "dnqUnseatNoProfAutoFall",
+   "value": true,
+   "comment": "a rider without horsemanship proficiency is automatically knocked to the ground."
+  },
+  {
+   "name": "dnqUnseatProfCheckRetains",
+   "value": true,
+   "comment": "a rider with horsemanship proficiency is allowed a Proficiency Check; success retains his seat with no ill effects beyond the damage caused by the attack."
+  },
+  {
+   "name": "dnqUnseatCheckFailFalls",
+   "value": true,
+   "comment": "a failed unseat Proficiency Check drops the character with the effect previously noted."
+  },
+  {
+   "name": "dnqFootUnseatRidersSameBothWays",
+   "value": true,
+   "comment": "riders have the same chance of remaining in the saddle in both instances."
+  },
+  {
+   "name": "dnqFootUnseatLongCheckAllowed",
+   "value": true,
+   "comment": "riders with horsemanship proficiency are allowed a check to remain in the saddle against the long-weapon dismount."
+  },
+  {
+   "name": "dnqDiveByMounted",
+   "value": true,
+   "comment": "a mounted attacker can attempt to dive on another rider by moving adjacent to him and leaping from the saddle."
+  },
+  {
+   "name": "dnqDiveSuccessGrapples",
+   "value": true,
+   "comment": "a successful dive attack roll means the attacker has grappled the other rider."
+  },
+  {
+   "name": "dnqDiveMissAttackerFalls",
+   "value": true,
+   "comment": "a missed dive attack roll drops the attacker to the ground."
+  },
+  {
+   "name": "dnqDiveVictimProfCheck",
+   "value": true,
+   "comment": "the grappled rider may be allowed a check against his horsemanship proficiency."
+  },
+  {
+   "name": "dnqDiveCheckSuccessStays",
+   "value": true,
+   "comment": "a successful check means the grappled character remains in the saddle with the other character hanging from his side."
+  },
+  {
+   "name": "dnqDiveCheckFailBothFall",
+   "value": true,
+   "comment": "if the check is not allowed or fails, both characters fall to the ground."
+  },
+  {
+   "name": "dnqDiveRepeatSubsequentRounds",
+   "value": true,
+   "comment": "if the rider remains mounted with his attacker clinging to him, the procedure is repeated in subsequent rounds."
+  },
+  {
+   "name": "dnqClingNeedsToHit",
+   "value": true,
+   "comment": "to keep his place, the attacker must successfully roll to hit each round."
+  },
+  {
+   "name": "dnqClingRiderRechecks",
+   "value": true,
+   "comment": "on each cling hit the rider must make another Proficiency Check to remain in the saddle."
+  },
+  {
+   "name": "dnqRiderMayAttackGrappler",
+   "value": true,
+   "comment": "a rider can use a weapon to attack a grappling opponent."
+  }
+ ],
+ "chains": [],
+ "tables": [
+  {
+   "name": "Table 14: MOUNTED BOW FIRE",
+   "tag": "14",
+   "count": "dnqT14RowCount",
+   "sentinel": -99,
+   "col_default": -99,
+   "sentinel_census": [
+    0,
+    0
+   ],
+   "cols": [
+    "dnqT14Band",
+    "dnqT14Mod"
+   ],
+   "col_comments": [
+    "the mount-speed band: 0 = less than 1/2 normal, 1 = 1/2 to less than 3/4 normal, 2 = 3/4 to maximum speed.",
+    "the modifier to hit by band: -1, -3, -5 (agrees const-for-const with the WSG mount-speed penalties wfcMountSlow/Mid/FastPenalty)."
+   ],
+   "audit_comment": "the Table 14 mounted bow fire grid",
+   "data": [
+    [
+     0,
+     -1
+    ],
+    [
+     1,
+     -3
+    ],
+    [
+     2,
+     -5
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['dnqT14Band'](0) != 0 or m['dnqT14Mod'](0) != -1",
+   "note": "the Table 14 slow band: less than 1/2 normal speed, -1 to hit."
+  },
+  {
+   "expr": "m['dnqT14Band'](1) != 1 or m['dnqT14Mod'](1) != -3",
+   "note": "the Table 14 mid band: 1/2 to less than 3/4 normal speed, -3 to hit."
+  },
+  {
+   "expr": "m['dnqT14Band'](2) != 2 or m['dnqT14Mod'](2) != -5",
+   "note": "the Table 14 fast band: 3/4 to maximum speed, -5 to hit."
+  },
+  {
+   "expr": "m['dnqT14Band'](2) - m['dnqT14Band'](0) != 2",
+   "note": "the Table 14 bands run contiguously 0-1-2."
+  },
+  {
+   "expr": "m['dnqT14Mod'](0) - m['dnqT14Mod'](1) != 2 or m['dnqT14Mod'](1) - m['dnqT14Mod'](2) != 2",
+   "note": "the Table 14 penalty ladder steps by -2 each band: -1, -3, -5."
+  },
+  {
+   "expr": "m['dnqWallHalfHpCheckPenalty']() != 10",
+   "note": "the half-hit-points Climbing Check penalty is -10% (agrees with the WSG wfcBigDamageCheckPenalty)."
+  },
+  {
+   "expr": "m['dnqBoulderDiameterFt']() != 3 or m['dnqBoulderDamageDice']() != 2 or m['dnqBoulderDamageSides']() != 8 or m['dnqBoulderCannotHurlPenalty']() != 8",
+   "note": "the dropped boulder: three feet in diameter, 2d8 damage, -8 if it cannot be hurled."
+  },
+  {
+   "expr": "m['dnqBridgeDropoffWithinFt']() != 5 or m['dnqBridgeDexPerFoot']() != 2 or m['dnqBridgePushMod']() != 2",
+   "note": "the bridge rule: drop-off within 5 feet, +2 Dex per foot of distance, the push modifier plus-or-minus 2."
+  },
+  {
+   "expr": "m['dnqBridgeDexPerFoot']() != m['dnqBridgePushMod']()",
+   "note": "the bridge per-foot bonus equals the push modifier: both 2."
+  },
+  {
+   "expr": "m['dnqBridgeBackToWallDex']() != 2 or m['dnqBridgeBackToDropoffDex']() != 2",
+   "note": "the back-to-wall +2 and the back-to-drop-off -2 Dex modifiers."
+  },
+  {
+   "expr": "m['dnqGrabWeaponMaxFt']() != 2 or m['dnqGrabAttackDie']() != 20 or m['dnqGrabAcBase']() != 10",
+   "note": "the grab: under-2-foot weapon bar, the 1d20 attack, AC 10."
+  },
+  {
+   "expr": "m['dnqHangingRegainCheckPenalty']() != 20 or m['dnqClingHitCheckPenalty']() != 20",
+   "note": "the hanging -20% regain check and the hit-while-clinging -20% check."
+  },
+  {
+   "expr": "m['dnqHangingRegainCheckPenalty']() != m['dnqClingHitCheckPenalty']()",
+   "note": "the two -20% grab checks are the same number."
+  },
+  {
+   "expr": "m['dnqNaturalClimberRatingLo']() != 80 or m['dnqNaturalClimberRatingHi']() != 95 or m['dnqGoatLlamaRating']() != 70 or m['dnqClumsyRatingFloor']() != 0",
+   "note": "the assigned climbing ratings: natural climbers 80-95%, goats and llamas 70%, clumsy creatures as low as 0."
+  },
+  {
+   "expr": "m['dnqWaterAttackPenalty']() != 4 or m['dnqWaterDamagePenalty']() != 4 or m['dnqWaterDamageFloor']() != 1",
+   "note": "the water penalties: -4 attack, -4 damage, floor 1 point."
+  },
+  {
+   "expr": "m['dnqWaterAttackPenalty']() != m['dnqWaterDamagePenalty']()",
+   "note": "the water attack and damage penalties are the same 4."
+  },
+  {
+   "expr": "m['dnqWaterGrappleUaPage']() != 106 or m['dnqWaterGrappleHoldPage']() != 108 or m['dnqWaterGrappleBreathRefPage']() != 12",
+   "note": "the grappling-in-water references: UA pp. 106 and 108, the DSG Holding Breath p. 12."
+  },
+  {
+   "expr": "m['dnqWaterGrappleDepthNum']() != 1 or m['dnqWaterGrappleDepthDen']() != 3",
+   "note": "the grappling depth bar: 1/3 of the victim's height."
+  },
+  {
+   "expr": "m['dnqNarrowDmgFrontagePage']() != 69 or m['dnqNarrowDmgFrontagePage2']() != 70",
+   "note": "the narrow-passage frontage reference: DMG pp. 69 and 70."
+  },
+  {
+   "expr": "m['dnqDarkAttackPenalty']() != 4 or m['dnqDarkSavePenalty']() != 4 or m['dnqDarkDamagePenalty']() != 4 or m['dnqDarkAcPenalty']() != 4 or m['dnqDarkDamageFloor']() != 1",
+   "note": "the darkness penalties: -4 attack, save and damage, +4 AC, floor 1 point."
+  },
+  {
+   "expr": "m['dnqDarkAttackPenalty']() != m['dnqDarkSavePenalty']() or m['dnqDarkSavePenalty']() != m['dnqDarkDamagePenalty']() or m['dnqDarkDamagePenalty']() != m['dnqDarkAcPenalty']()",
+   "note": "all four darkness penalties are the same 4."
+  },
+  {
+   "expr": "m['dnqDarkWildSwingThreshold']() != 0 or m['dnqDarkWildSwingRadiusMult']() != 2 or m['dnqDarkDexCheckPenalty']() != 2 or m['dnqDarkClimbingCut']() != 10",
+   "note": "the darkness wild swing: modified 0-or-less within twice weapon length; the drop-off Dex -2 and Climbing -10%."
+  },
+  {
+   "expr": "m['dnqDarkSpellCourseTable']() != 9 or m['dnqDarkSpellClueModLo']() != 1 or m['dnqDarkSpellClueModHi']() != 3",
+   "note": "the spell-in-darkness roll: Table 9 course changes, the clue modifier -1 to -3."
+  },
+  {
+   "expr": "m['dnqMountedVsFootBonus']() != 1",
+   "note": "the mounted-vs-foot attack bonus: +1."
+  },
+  {
+   "expr": "m['dnqMountedRofExampleFromNum']() != 2 or m['dnqMountedRofExampleFromDen']() != 1 or m['dnqMountedRofExampleToNum']() != 1 or m['dnqMountedRofExampleToDen']() != 1 or m['dnqMountedRofSecondFromNum']() != 3 or m['dnqMountedRofSecondToNum']() != 3 or m['dnqMountedRofSecondToDen']() != 2",
+   "note": "the mounted rate of fire: 2/1 fires at 1/1, 3/1 becomes 3/2."
+  },
+  {
+   "expr": "m['dnqFireRoundTurnLimitDeg']() != 45 or m['dnqFlyingDmgRefPage']() != 53",
+   "note": "the firing-round turn limit 45 degrees; the flying-steed penalties at DMG p. 53."
+  },
+  {
+   "expr": "m['dnqMountDeathFallDmgDice']() != 1 or m['dnqMountDeathFallDmgSides']() != 3 or m['dnqUnseatNoProfExtraDmgSides']() != 3",
+   "note": "the slain-mount fall 1d3 and the unseat extra 1d3."
+  },
+  {
+   "expr": "m['dnqMountDeathFallDmgSides']() != m['dnqUnseatNoProfExtraDmgSides']()",
+   "note": "the slain-mount fall die equals the unseat extra die: both d3."
+  },
+  {
+   "expr": "m['dnqUnseatWeaponMinFt']() != 3 or m['dnqUnseatNaturalDie']() != 20",
+   "note": "the unseat attempt: 3-foot-or-greater weapon, natural 20."
+  },
+  {
+   "expr": "m['dnqFootUnseatShortMinFt']() != 5 or m['dnqFootUnseatShortMaxFt']() != 9 or m['dnqFootUnseatLongMinFt']() != 10 or m['dnqFootUnseatLongPct']() != 25 or m['dnqFootUnseatLongDieLo']() != 16 or m['dnqFootUnseatLongDieHi']() != 20",
+   "note": "the foot-soldier unseat weapons: 5-9 feet at the natural 20, 10 feet or more at 25% (16-20)."
+  },
+  {
+   "expr": "m['dnqDiveMissFallDmgSides']() != 6 or m['dnqDiveBothFallDmgSides']() != 6 or m['dnqRiderGrapplerAtkPenalty']() != 2",
+   "note": "the dive grapple: 1d6 falls both ways, the rider attacks the grappler at -2."
+  },
+  {
+   "expr": "m['dnqDiveMissFallDmgSides']() != m['dnqDiveBothFallDmgSides']()",
+   "note": "the dive miss-fall die equals the both-fall die: both d6."
+  },
+  {
+   "expr": "m['dnqWallAtkDmgSavePenalty']() != 2 or m['dnqWallHigherAtkBonus']() != 2 or m['dnqWallLowerAtkPenalty']() != 2",
+   "note": "the wall-fight modifiers: flat -2 to attack, damage and saves; +2 higher / -2 lower."
+  },
+  {
+   "expr": "m['dnqWallHigherAtkBonus']() != m['dnqWallLowerAtkPenalty']()",
+   "note": "the wall elevation bonus and penalty are the same 2."
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['dnqT14RowCount']() != 3",
+   "note": "the Table 14 carries three speed bands."
+  },
+  {
+   "expr": "m['dnqT14Band'](0) != 0 or m['dnqT14Mod'](0) != -1 or m['dnqT14Band'](1) != 1 or m['dnqT14Mod'](1) != -3 or m['dnqT14Band'](2) != 2 or m['dnqT14Mod'](2) != -5",
+   "note": "the Table 14 grid cell-for-cell: bands 0-1-2, modifiers -1/-3/-5."
+  }
+ ],
+ "header_sections": {
+  "the chapter opener": [
+   {
+    "kind": "bool",
+    "name": "dnqOpenerUnusualTerrain"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqOpenerSheerWallExample"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqOpenerNarrowBridgeExample"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqOpenerSwimmingAttacked"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqOpenerDarknessClarification"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqOpenerBattlesystemTail"
+   }
+  ],
+  "fighting on walls and other sheer surfaces": [
+   {
+    "kind": "bool",
+    "name": "dnqWallNoShieldDexAcBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallFaceToSurfaceBackExposed"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallBackExposedExceptAdjacent"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallOneSideOrOther"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallOneHandHoldsOn"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallNoMultipleWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWallAtkDmgSavePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallAboveBelowModifiers"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWallHigherAtkBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWallLowerAtkPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallSecurePlaceMayCancel"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallArcherLedgeExample"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallBoulderSwordsmanExample"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallDamageClimbingCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallCheckFailFalls"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallHalfHpTrigger"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallHalfHpRoundedUp"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWallHalfHpCheckPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWallBoulderTactic"
+   },
+   {
+    "kind": "const",
+    "name": "dnqBoulderDiameterFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnqBoulderDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnqBoulderDamageSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqBoulderVictimAcTen"
+   },
+   {
+    "kind": "const",
+    "name": "dnqBoulderCannotHurlPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqBoulderKnocksOffClimbers"
+   }
+  ],
+  "fighting on bridges and ledges": [
+   {
+    "kind": "bool",
+    "name": "dnqBridgeStandWithoutHands"
+   },
+   {
+    "kind": "const",
+    "name": "dnqBridgeDropoffWithinFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqBridgeHitPenaltiesOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqBridgeHitForcesDexCheck"
+   },
+   {
+    "kind": "const",
+    "name": "dnqBridgeDexPerFoot"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqBridgePushTowardAway"
+   },
+   {
+    "kind": "const",
+    "name": "dnqBridgeBackToWallDex"
+   },
+   {
+    "kind": "const",
+    "name": "dnqBridgeBackToDropoffDex"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqBridgeMissilePathIndicator"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqBridgeArrowExample"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqBridgeLedgeExample"
+   },
+   {
+    "kind": "const",
+    "name": "dnqBridgePushMod"
+   }
+  ],
+  "grabbing an enemy": [
+   {
+    "kind": "bool",
+    "name": "dnqGrabCloseQuartersOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqGrabOrGrappling"
+   },
+   {
+    "kind": "const",
+    "name": "dnqGrabWeaponMaxFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqGrabOneAttempt"
+   },
+   {
+    "kind": "const",
+    "name": "dnqGrabAttackDie"
+   },
+   {
+    "kind": "const",
+    "name": "dnqGrabAcBase"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqGrabNoArmorShieldBenefit"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqGrabNoWeaponMagicBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqGrabWeaponMustDrop"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqGrabSuccessGrabsBody"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqGrabbedWallClimbingCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqGrabbedLedgeDexCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqGrabbedCheckFailBothFall"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqGrabbedCheckSuccessRetains"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqHangingCannotAttack"
+   },
+   {
+    "kind": "const",
+    "name": "dnqHangingRegainCheckPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqHangingRegainSuccess"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqHangingFailStaysClinging"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqClingOpponentAttacksNormally"
+   },
+   {
+    "kind": "const",
+    "name": "dnqClingHitCheckPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqClingCheckFailFalls"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqClingOtherCauseBothFall"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqFallingGrappledSeparate"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqFallingSpellPossible"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqAssignRatingToCreatures"
+   },
+   {
+    "kind": "const",
+    "name": "dnqNaturalClimberRatingLo"
+   },
+   {
+    "kind": "const",
+    "name": "dnqNaturalClimberRatingHi"
+   },
+   {
+    "kind": "const",
+    "name": "dnqGoatLlamaRating"
+   },
+   {
+    "kind": "const",
+    "name": "dnqClumsyRatingFloor"
+   }
+  ],
+  "fighting in water": [
+   {
+    "kind": "bool",
+    "name": "dnqWaterInterferesWithFighting"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterBelowWaistNoPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterWaistToChestHalved"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterAboveChestOrSwimFull"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWaterAttackPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWaterDamagePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWaterDamageFloor"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterNativeExempt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterSwimProfExempt"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWaterGrappleUaPage"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterGrapplePullUnder"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterGrappleDepthRule"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWaterGrappleDepthNum"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWaterGrappleDepthDen"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterGrappleNoWeaponPenalties"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterGrappleBothGoUnder"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterGrappleAttackerBreath"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterGrappleVictimParalysisSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterGrappleNoBreathIfFailed"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqWaterGrappleUnderUntilHoldBroken"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWaterGrappleHoldPage"
+   },
+   {
+    "kind": "const",
+    "name": "dnqWaterGrappleBreathRefPage"
+   }
+  ],
+  "fighting in narrow passages": [
+   {
+    "kind": "bool",
+    "name": "dnqNarrowBottleneckTactic"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqNarrowOneOrTwoHolders"
+   },
+   {
+    "kind": "const",
+    "name": "dnqNarrowDmgFrontagePage"
+   },
+   {
+    "kind": "const",
+    "name": "dnqNarrowDmgFrontagePage2"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqNarrowLimitsAttackers"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqNarrowMonstersNpcsToo"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqNarrowDefensiveOrAggressive"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqNarrowRoomForAllRequired"
+   }
+  ],
+  "fighting in darkness": [
+   {
+    "kind": "bool",
+    "name": "dnqDarkCannotSeeRisks"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkAttackPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkDamagePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkAcPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkDamageFloor"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkForfeitsSightBonuses"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkForfeitExamples"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkInfravisionExempt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkMagicWeaponExempt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkLightSourceExempt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkWildSwingObjects"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkWildSwingThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkWildSwingRadiusMult"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkWildSwingCountRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkDropoffDexCheck"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkDexCheckPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkClimbingCheckCut"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkClimbingCut"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkSpellOffTargetRisk"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkSpellPlayerIndicates"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkSpellDmSecretRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkSpellCourseTable"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDarkSpellClueMods"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkSpellClueModLo"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDarkSpellClueModHi"
+   }
+  ],
+  "the mounted combat rules": [
+   {
+    "kind": "bool",
+    "name": "dnqMountCavalryRareUnderground"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountUnderdarkStables"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountTrainedRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountSpeciesAppropriate"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMuleInappropriate"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMuleLackSpeedManeuverFearless"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqHorseTrainableUnderground"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqHorseReliesOnSight"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqHorseUnusableTotalDark"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqUnderdarkSteedList"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqHorseIlluminationPermits"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqHorseNightRaids"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedHeightAdvantage"
+   },
+   {
+    "kind": "const",
+    "name": "dnqMountedVsFootBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqExactHitStrikesMount"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqExactHitOnlyIfRiderTarget"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqChooseMountTarget"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedBowFormidable"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedBowRideShootRide"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedBowStationaryNoPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedBowMovingNeedsHorsemanship"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedBowMovingNeedsBowProf"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedBowBothHandsKnees"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedBowTerrainBar"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqShortbowAllowed"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqCompositeShortbowAllowed"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqLightCrossbowAllowed"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedRofLessThanUnmounted"
+   },
+   {
+    "kind": "const",
+    "name": "dnqMountedRofExampleFromNum"
+   },
+   {
+    "kind": "const",
+    "name": "dnqMountedRofExampleFromDen"
+   },
+   {
+    "kind": "const",
+    "name": "dnqMountedRofExampleToNum"
+   },
+   {
+    "kind": "const",
+    "name": "dnqMountedRofExampleToDen"
+   },
+   {
+    "kind": "const",
+    "name": "dnqMountedRofSecondFromNum"
+   },
+   {
+    "kind": "const",
+    "name": "dnqMountedRofSecondToNum"
+   },
+   {
+    "kind": "const",
+    "name": "dnqMountedRofSecondToDen"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedSpeedPenaltyTable"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqT14Cumulative"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqFireRoundNoManeuvers"
+   },
+   {
+    "kind": "const",
+    "name": "dnqFireRoundTurnLimitDeg"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqSlightTurningOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqSharperTurnsRequireHold"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountedRulesAllMounts"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqFlyingAdditionalPenalties"
+   },
+   {
+    "kind": "const",
+    "name": "dnqFlyingDmgRefPage"
+   }
+  ],
+  "forcing opponents to dismount": [
+   {
+    "kind": "bool",
+    "name": "dnqDismountEvensOdds"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDismountRiderStunnedProne"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDismountMethodsHeroicOrGrim"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqSlayMountMostDirect"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqSlayMountSteedLost"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqCaptureSteedBetter"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountDeathAutoFall"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountDeathProfCheckLandsFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountDeathContinueActing"
+   },
+   {
+    "kind": "const",
+    "name": "dnqMountDeathFallDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnqMountDeathFallDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountDeathNoFurtherFunctions"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqMountDeathNextRoundToFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dnqUnseatWeaponMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnqUnseatNaturalDie"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqUnseatKnockChance"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqUnseatNoProfAutoFall"
+   },
+   {
+    "kind": "const",
+    "name": "dnqUnseatNoProfExtraDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqUnseatProfCheckRetains"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqUnseatCheckFailFalls"
+   },
+   {
+    "kind": "const",
+    "name": "dnqFootUnseatShortMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnqFootUnseatShortMaxFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqFootUnseatRidersSameBothWays"
+   },
+   {
+    "kind": "const",
+    "name": "dnqFootUnseatLongMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnqFootUnseatLongPct"
+   },
+   {
+    "kind": "const",
+    "name": "dnqFootUnseatLongDieLo"
+   },
+   {
+    "kind": "const",
+    "name": "dnqFootUnseatLongDieHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqFootUnseatLongCheckAllowed"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDiveByMounted"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDiveSuccessGrapples"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDiveMissAttackerFalls"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDiveMissFallDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDiveVictimProfCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDiveCheckSuccessStays"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDiveCheckFailBothFall"
+   },
+   {
+    "kind": "const",
+    "name": "dnqDiveBothFallDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqDiveRepeatSubsequentRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqClingNeedsToHit"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqClingRiderRechecks"
+   },
+   {
+    "kind": "bool",
+    "name": "dnqRiderMayAttackGrappler"
+   },
+   {
+    "kind": "const",
+    "name": "dnqRiderGrapplerAtkPenalty"
+   }
+  ],
+  "the Table 14 mounted bow fire grid": [
+   {
+    "kind": "const",
+    "name": "dnqT14RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "Table 14: MOUNTED BOW FIRE"
+   }
+  ]
+ },
+ "caller_files": []
+}
+

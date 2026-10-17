@@ -6408,6 +6408,41 @@ when both halves land.
   f4b55a00 - cosmetic, the standing class. NEXT -
   R506: the proficiencies chapter pp. 23-29, Tables
   10-13 (seam: the landed wsgprof/wsgprofd material).
+- R506 LANDED 2026-10-17: commit b9c1f90 (census 431,
+  pushed 409150e..b9c1f90), the DSG NONWEAPON
+  PROFICIENCIES chapter, printed pp. 23-29 (pdf 24-30):
+  the check system and Table 10, the slot economy, the
+  artisans and NPC training, the optional bonuses, the
+  craftsman and adventuring lists with Tables 11-13,
+  and the XP option. Pinned as rules/dsgprof.h
+  (prefix dnp, verified free; 208 inlines: 125 consts +
+  68 bools + 4 tables/15 cols; 23 examples, 7
+  table_checks). Gap 38/117 -> 50/105: 12 flips - the
+  proficiencies PARENT box, 7 chapter boxes, manifest
+  Tables 10-13. SEAMS verified const-for-const against
+  the landed wsgprof/wsgprofd material, NOTHING
+  auto-credited: Table 10 agrees cell-for-cell with the
+  WSG Table 1 pins; 10 of 11 shared Table 13 rows
+  DIVERGE (the DSG rebalanced them - Rope Use DEX 0 vs
+  WSG WIS -3, Healing 2 slots WIS vs 1 slot INT, Riding
+  +3 vs +2, Endurance 2-slot NA vs 1-slot WIS; only
+  Blind-fighting agrees outright); the shared
+  description numbers agree whole; the WSG check
+  refinements (auto-fail 19/20, ability cap 18,
+  2-in-20 floor) are WG-only, not printed in the DSG
+  chapter - not auto-credited. Caution cells pinned AS
+  PRINTED per the R501 precedent (Weaver 4/+4,
+  Weaponsmith 3*/+3, trainer/armorer slots cells from
+  prose, direction-sense roll-of-1 catastrophic digit).
+  Spec-driven round 3: double-run applied 16/already 0
+  then 0/16, no KeyError; preflight GREEN (R506 DSG
+  proficiencies audit: bad 0), census 431, gap 50/105.
+  User-side spec md5 62d2966a vs authored 258e56db -
+  cosmetic, standing class. NEXT - R507: the DSG combat
+  rules for underground play, printed pp. 30-33, Table
+  14 (Mounted Bow Fire); EXTRACTION ROUND first, the
+  cross-book seam candidate the WSG combat chapter
+  (wsgfight.h R488) - nothing auto-credited.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

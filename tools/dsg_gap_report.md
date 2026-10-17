@@ -82,15 +82,15 @@ re-grained then, before any DM pin round.
   - [x] Craftsman proficiencies (pp. 25-26) - the list with Table 11, weapon making with Table 12 - R506: the fourteen craftsman descriptions (the armorer times and flawed-armor breakage, the trainer months and animal counts, the boatwright week-per-foot, the bowyer break rules and fine-quality option, the carpenter crew rates, the gem cutter 1d10, the potter costs, the smelter miner/cost ladder, the stonemason wall day, the weaver yards, the weaponsmith option) with Tables 11 and 12
   - [x] Adventuring proficiencies (pp. 26-29) - the list with Table 13 - R506: the fifteen adventuring descriptions (the animal noise detection ladder, the blind-fighting -2 frame, the boating capsizing aid, the direction-sense 90-degree error bands, the endurance doubling, the fire-building dice, the fishing count, the fungus 50 percent, the healing pins, the mountaineering +10 percent, the six riding feats, the rope use bonuses, the slow-respiration 10 percent, the sound analysis margins, the swimming pointer) with Table 13
   - [x] Experience points for proficiencies (p. 29) - the XP option - R506: PCs never earn XP from proficiencies; business NPCs earn 1 XP per 2 gp on the fighter table at 1d4 hp per level, or the DM assigns levels
-- [ ] **Combat rules for underground play** (pp. 30-33) - the sheer-surface combat, bridge/ledge combat, grabbing an enemy, water combat, narrow-passage combat, darkness combat, spellcasting in darkness and mounted combat with Table 14
-  - [ ] Fighting on walls and other sheer surfaces (p. 30)
-  - [ ] Fighting on bridges and ledges (p. 30)
-  - [ ] Grabbing an enemy (p. 30)
-  - [ ] Fighting in water (p. 30)
-  - [ ] Fighting in narrow passages (p. 31)
-  - [ ] Fighting in darkness (p. 31)
-  - [ ] Spellcasting in darkness (p. 32)
-  - [ ] Rules for mounted combat (p. 32) - mounted bow fire with Table 14
+- [x] **Combat rules for underground play** (pp. 30-33) - the sheer-surface combat, bridge/ledge combat, grabbing an enemy, water combat, narrow-passage combat, darkness combat, spellcasting in darkness and mounted combat with Table 14 - R507: the combat chapter - the wall, bridge/ledge, grab, water, narrow-passage, darkness, spellcasting and mounted rules with Table 14 and the dismount tactics (printed p. 31 is the full-page combat illustration plate; the wsgfight seam verified const-for-const, nothing auto-credited)
+  - [x] Fighting on walls and other sheer surfaces (p. 30) - R507: no shield or Dex AC bonus, the flat -2 attack/damage/save penalty, the +2 higher / -2 lower elevation modifiers, the damage-forced Climbing Check with the -10% half-hit-points modifier, and the dropped-boulder rules (3-foot boulder 2d8, AC 10 victims, -8 if it cannot be hurled)
+  - [x] Fighting on bridges and ledges (p. 30) - R507: the drop-off-within-5-feet rule, the hit-forced Dex Check with the +2 Dex per foot of distance from the drop-off (the sign diverges from the WSG edge rule, pinned as printed), and the +2 back-to-wall / -2 back-to-drop-off push modifiers
+  - [x] Grabbing an enemy (p. 30) - R507: the grab-as-you-fall system - the under-2-foot-weapon bar, the 1d20 attack vs AC 10, the Climbing/Dex Check to avoid joining the fall, the -20% hanging regain checks, the separate-immediately fall and the 80-95/70/0 climbing-rating assignments
+  - [x] Fighting in water (p. 30) - R507: the depth ladder (none below waist, halved waist-to-chest, full above chest or swimming), the -4 attack and -4 damage with the 1-point floor, the native and swimming-proficiency exemptions, and the grappling-in-water modification (UA pp. 106/108, the 1/3-height depth, the paralysis save for a breath, the p. 12 holding-breath rules)
+  - [x] Fighting in narrow passages (p. 31) - R507: the bottleneck defense with the DMG pp. 69-70 frontage, the attacker limit, the monsters-and-NPCs-too rule, the defensive-or-aggressive use and the room-for-all requirement (the section prints on p. 32; p. 31 is the illustration plate)
+  - [x] Fighting in darkness (p. 31) - R507: the flat -4 attack/save/damage penalty with the +4 AC penalty and the 1-point floor, the forfeited sight bonuses, the infravision/magic/light exemptions, the twice-weapon-length wild swing at modified 0-or-less with the count-and-roll discipline, and the Dex -2 / Climbing -10% drop-off modifiers (the section prints on p. 32; p. 31 is the illustration plate)
+  - [x] Spellcasting in darkness (p. 32) - R507: the declared-target discipline, the DM secret roll on the R505 Table 9 course changes and the -1 to -3 clue modifier
+  - [x] Rules for mounted combat (p. 32) - mounted bow fire with Table 14 - R507: the trained-and-appropriate-species rules (mules out, horses need light, the Underdark steeds list), the +1 mounted-vs-foot modifier with the exact-hit-strikes-mount rule, the mounted bow fire (the horsemanship-plus-bow bar, the shortbow/composite/light-crossbow list, the halved rate of fire, Table 14 and the 45-degree turn limit) and the dismount tactics (the slain-mount 1d3 fall, the natural-20 3-foot unseat, the 5-9-foot and 10-foot foot soldiers at 16-20, the dive grapple at 1d6 and the -2 rider-vs-grappler)
 - [ ] **Battlesystem options underground** (pp. 34-35) - the mass-combat adaptation: narrow frontages, combat modifiers, formation modifiers, morale effects, ventilation effects, flying effects, line-of-sight effects and battlefield cave-ins
   - [ ] Extremely narrow frontages (p. 34)
   - [ ] Combat modifiers (p. 34)
@@ -176,7 +176,7 @@ re-grained then, before any DM pin round.
 - [x] Table 11: Craftsman Proficiencies (p. 25) - R506
 - [x] Table 12: Weapon Making (p. 26) - R506
 - [x] Table 13: Adventuring Proficiencies (p. 26) - R506
-- [ ] Table 14: Mounted Bow Fire (p. 32)
+- [x] Table 14: Mounted Bow Fire (p. 32) - R507: the 3-band speed grid - less than 1/2 normal -1, 1/2 to less than 3/4 -3, 3/4 to maximum -5, cumulative with all other modifiers (agrees const-for-const with the WSG mount-speed penalties)
 - [ ] Table 15: Odor Detection (p. 38)
 - [ ] Table 16: Wind Effects on Odors (p. 38)
 - [ ] Table 17: Cave-in Location (p. 39)
