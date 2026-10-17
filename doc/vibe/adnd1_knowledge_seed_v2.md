@@ -7461,6 +7461,57 @@ when both halves land.
   R527 either pins the prose as a lossless catch-up round
   or skips to Improving Play; check the gap report for any
   p. 58 line before deciding.
+- R527 LANDED 2026-10-17: commit 298d3e1 (census 450 -> 451,
+  pushed 6e315f4..298d3e1), THE DSG PROFICIENCY
+  DESCRIPTIONS, printed p. 58 (pdf 59) - the fourteen brief
+  introductions: the animal trainer (little beyond
+  harnesses and leashes, but a great deal of outdoor room,
+  with shelter and food if boarding), the armorer (a small
+  forge, several hammers, at least one small anvil and
+  metal files, with good ventilation and exhaust for the
+  especially hot fire the armor irons demand), the
+  blacksmith (the armorer's equipment in greater
+  assortment and size, but cruder iron needing
+  lower-quality tools), the boatwright (a major investment
+  at a carefully chosen launchable location - excepting
+  kayaks, canoes and small rowboats - with the space the
+  boat size plus 10 feet in all directions, the tools all
+  carpentry plus pitch or tar), the bowyer/fletcher
+  (little beyond knives and vises), the carpenter
+  (hammers, spikes, axes, and chisels), the gem cutter
+  (finely tooled chisels, hammers and vises, good light,
+  sturdy safes or strongboxes), the leatherworker
+  (punches, needles, knives, scissors, and treating oils),
+  the miner (a shallow pan and container for stream
+  panning, but picks, shovels, shoring timbers, hammers,
+  spikes and mining carts for a tunnel, the need growing
+  with the tunnel), the potter (the kiln limiting the wares),
+  the smelter (the efficient high-temperature furnace, the
+  individually operated bellows, and the iron-buckets-on-
+  rails or cauldron/stone-trough feeding system), the
+  stonemason (going where the work is, with a sturdy wagon
+  and oxen), the weaponsmith (a small blacksmith's shop
+  plus the fine finishing tools for edges and
+  ornamentation), and the weaver (a very small area, the
+  spinning wheel and loom). A CLEAN-READ ROUND. A LOSSLESS
+  CATCH-UP ROUND (the R523 precedent, second application):
+  no gap child of its own - the descriptions ride the
+  already-flipped Equipment-for-proficiencies child 140,
+  zero gap flips, the census unchanged at 126/29, and the
+  git add drops dsg_gap_report.md (untouched). Pinned as
+  rules/dsgequip3.h (prefix dnep, verified free; 16
+  inlines - 1 const, 15 bools, no tables). Spec 16,269
+  bytes, md5 d68d54037abe6e14a75dd0aa90edc32e (user-side
+  identical). Engine applied 4 then 0/4. NEXT - R528: the
+  Improving Play chapter (printed pp. 59-63, pdf 60-64,
+  gap children ~141-149): the frame (the three categories -
+  expedition planning, speeding play, effective fighting),
+  then expedition planning proper (the before-leaving
+  success/failure determination, the beasts of burden, the
+  watercraft); djvu from ~line 7575 ("IMPROVING PLAY" seen
+  there), Capture idx 137-141; check the gap report
+  children list at authoring time. Mostly prose with
+  possible small tables - check for any Table 36+.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
