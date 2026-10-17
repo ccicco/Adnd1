@@ -1,0 +1,338 @@
+{
+ "round": 595,
+ "prefix": "deb",
+ "header_file": "rules/appendixivabilitiespowers.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 518,
+ "title": "Appendix IV: Abilities of the Powers",
+ "audit_label": "R595 AppIV audit",
+ "audit_comment": "APPENDIX IV: ABILITIES OF THE POWERS, printed pp. 124-126, the divine ability ladder from the at-will standard set to the native-plane heights: the four ability types (specialized to a named Power like Zeus's roundly lightning bolt, standard at will to all, individual by rank, native only on the home plane); the sixteen standard divine abilities used at will (astral travel in physical or projected form, command with no save for followers or believers, continual light and darkness, the eight-part cure and twelve-part detect lists used one at a time with the reverse spells and the undetectable lie, ethereal travel with the Greater and Lesser crossing of living fields but no emerging into occupied space, enlarge to 300%, geas, levitate, polymorph self, protection from cantrips and from evil/good, the no-failure cross-planar sending, teleport without error, the four-spell understand languages, vocalize); the caster levels of magic use 30/20/15 by Greater/Lesser/Demi rank unless the Power has a defined level, the 4/3/2-round command durations, the 30/20/10-foot protection radii; the individual abilities by intensity in the campaign day - Greater: the at-will eight (atonement through regenerate), the six-a-day fourteen (anti-magic shell through summon), the three-a-day eleven (debth spell through holy/unholy word), no harmful side effects, resurrection without rest, the 2d6 same-alignment summon capped at 40 hit dice; Lesser: alter self at will, four a day, two a day, the vision servitude exception, the 1d6 summon of 30 hit dice; Demi: the three at-will, three a day, one a day, affected by malefic side effects, the 1d3 summon of 20 hit dice, the limited wish; the wish rules - Prime inhabitants only, no other Power in his home plane, no effect on the granting Power, violations void; and the native abilities - Greater: six-a-day to at will, three to six, doubled hit points, the 120% domain magic resistance, the always-on Astral and Border Ethereal senses, no conjuration summoning or necromantic harm, unslayable at home turning to sparkling vapor reforming in a tenth of a day, the hundred-year slayer-plane ban and ten-year own-plane confinement, sealed color pools and the forced pull, twenty spells of a hundred levels altered, the silver cord cut at AC -5, the Aspect built in a tenth of a year; Lesser: doubled hit points on the native layer, 100% resistance, the conscious look, permanently slayable at home and hundred-year banished abroad, twenty spells of eighty levels, the soul object of Orcus's wand; Demi: the 80% personal resistance, the observe-only senses, the reversible home-plane debth, the opaque pools, the attempted cord.",
+ "include_comment": "the Appendix IV Powers abilities pins",
+ "include_after": "#include \"rules/appendixiiioutercreatures.h\"  // R594: the Appendix III outer creatures pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R594 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R594 LANDED 2026-10-17: commit",
+  "  a1822b3f4c17902ad8e6a000e144bd3b0e",
+  "  0b84dd (census 517 -> 518, pushed",
+  "  94ac8ef..a1822b3), APPENDIX III:",
+  "  CREATURES FROM THE OUTER PLANES,",
+  "  printed pp. 122-123, the einheriar",
+  "  and their kin: the 10d10 einheriar",
+  "  patrol dice and 5% magic per level,",
+  "  the class/level d100 einheriar tables",
+  "  and the Anu-soldier hosts of Horusyr",
+  "  Clanggedin spirit folk Hindari",
+  "  Valhalla and the Acheron legions, the",
+  "  hourly marut powers, the common archon",
+  "  powers, the lantern reformation day",
+  "  and the sword gate turn, plus the",
+  "  mortal hound-warden and tome rule",
+  "  bools. Header rules/appendixiiiouter",
+  "  creatures.h, prefix ddz, 11 inlines",
+  "  (6 consts 5 bools), one gap flip",
+  "  (Appendix III) so 88/2. Spec",
+  "  tools/spec_r594.json 14455 bytes md5",
+  "  ad3e83f1d1712be754eff86d470e1f57.",
+  "  TWENTY-NINE straight first-tries",
+  "  (R566-R594). NEXT - R595: Appendix",
+  "  IV: Abilities of the Powers, printed",
+  "  pp. 124-126, one box, gap 89/1;",
+  "  OCR pages 125-127."
+ ],
+ "banner": {
+  "title": "APPENDIX IV: ABILITIES OF THE POWERS - printed pp. 124-126, the divine ladder: the four ability types and the sixteen at-will standard powers, the 30/20/15 magic levels and 4/3/2 command durations, the Greater six-and-three, Lesser four-and-two, Demi three-and-one daily groups, the wish limits, and the native heights from the vapor-reforming Greater to the soul-objected Lesser and the cord-cutting Demi.",
+  "provenance": "verified against printed pp. 124-126 of the uploaded motp.pdf OCR (OCR pages 125-127); the tables are pinned exactly as printed, with regenerate restored from the OCR 'Regenarate'; the Indices are left for the round that owns them.",
+  "sentinel": "the gap census after this round: 89 closed, 1 open - ONE box falls (Appendix IV); only the indices remain before the MotP report closes at 90/0."
+ },
+ "consts": [
+  {
+   "name": "debGreaterMagicLevel",
+   "value": 30,
+   "comment": "the level of magic use: a Greater Power casts as a 30th-level caster (Lesser 20th, Demi 15th) where caster level is involved, unless the Power already has a defined level of spell use for the type of spell - a Demi-Power given 20th-level magic-user abilities casts remove curse at 20th, not 15th."
+  },
+  {
+   "name": "debGreaterCommandRounds",
+   "value": 4,
+   "comment": "the command durations by rank: the spell lasts four rounds for Greater Powers, three for Lesser (debLesserCommandRounds), two for Demi (debDemiCommandRounds), with no saving throw for followers or believers of that Power."
+  },
+  {
+   "name": "debLesserCommandRounds",
+   "value": 3,
+   "comment": "command lasts three rounds for a Lesser Power - the middle rung of the 4/3/2 ladder, functioning as the spell of the same name with the no-save restriction for the faithful."
+  },
+  {
+   "name": "debDemiCommandRounds",
+   "value": 2,
+   "comment": "command lasts two rounds for a Demi-Power - the bottom rung of the 4/3/2 ladder, still unsaveable for followers and believers."
+  },
+  {
+   "name": "debProtectionRadiusGreater",
+   "value": 30,
+   "comment": "the protection radii: protection from evil/good and protection from cantrips extend 30 feet for Greater Powers, 20 for Lesser, 10 for Demi - the aura thinning with the rank."
+  },
+  {
+   "name": "debGreaterDailyLimit",
+   "value": 6,
+   "comment": "the Greater Power daily groups: any of the at-will eight (atonement, quest, fly, improved invisibility, improved phantasmal force, mirror image, mislead, regenerate); no more than six per day of the fourteen-item group (anti-magic shell through summon); no more than three per day of the eleven-item group (debth spell, gate, restoration, resurrection, symbol all, vision, wish, volley, time stop, holy/unholy word, heal)."
+  },
+  {
+   "name": "debLesserDailyLimit",
+   "value": 4,
+   "comment": "the Lesser Power daily groups: alter self, improved phantasmal force, improved invisibility and mirror image at will; no more than four per day of the nine-item group (anti-magic shield through true seeing); no more than two per day of the ten-item group."
+  },
+  {
+   "name": "debDemiDailyLimit",
+   "value": 3,
+   "comment": "the Demi-Power daily groups: alter self, invisibility and phantasmal force at will; no more than three per day of the four-item group (cure light wounds, dispel evil/good, dispel illusion, dispel magic); no more than one per day of the twelve-item group (anti-magic shell through holy/unholy word, including the limited wish)."
+  },
+  {
+   "name": "debGreaterSummonDice",
+   "value": 2,
+   "comment": "the Greater Power summon: 2d6 creatures of the same alignment as the Power, total hit dice not exceeding 40 (debGreaterSummonHD) - ten creatures called for means a maximum of four hit dice each."
+  },
+  {
+   "name": "debGreaterSummonHD",
+   "value": 40,
+   "comment": "the 40-hit-dice cap on the Greater Power's 2d6 summon - the alignment-matched reinforcements whose total may not exceed the cap however the dice divide."
+  },
+  {
+   "name": "debLesserSummonHD",
+   "value": 30,
+   "comment": "the Lesser Power summon: 1d6 creatures of no more than 30 total hit dice - half again short of the Greater standard."
+  },
+  {
+   "name": "debDemiSummonHD",
+   "value": 20,
+   "comment": "the Demi-Power summon: 1d3 creatures of no more than 20 total hit dice, of the same alignment as the Demi-Power - the humblest calling."
+  }
+ ],
+ "bools": [
+  {
+   "name": "debAbilityTypes",
+   "value": true,
+   "comment": "the four ability types: specialized abilities belonging to a particular Power and listed in that Power's description (Zeus's lightning bolt each round); standard divine abilities available to all Powers at will unless otherwise noted; individual divine abilities shared by all Powers of the same rank; native divine abilities - the individual set usable only on the Power's native plane."
+  },
+  {
+   "name": "debStandardAbilities",
+   "value": true,
+   "comment": "the sixteen standard divine abilities used at will: astral travel (physical or projected per the plane's limits), command, continual light/darkness, cure, detect, ethereal travel, enlarge up to 300%, geas, levitate, polymorph self, protection from cantrips, protection from evil/good, sending (no failure cross-planar to a follower or believer), teleport without error, understand languages (tongues plus comprehend, read languages and read magic, usable with other abilities), vocalize."
+  },
+  {
+   "name": "debCureDetectLists",
+   "value": true,
+   "comment": "the standard-list contents, one at a time at will: cure covers cure blindness, cure disease, cure insanity, remove fear, cure debfness, cure feeblemind, remove curse, remove paralysis; detect covers detect balance, detect evil/good, detect invisibility, detect life, detect poison, know alignment, detect charm, detect illusion, detect lie, detect magic, detect traps - and the Powers also use the reverses, in particular the undetectable lie, in their deblings with mortals."
+  },
+  {
+   "name": "debEtherealTravelRule",
+   "value": true,
+   "comment": "the ethereal travel rule: a Power enters the Ethereal plane if the present plane permits; Lesser and Greater Powers can travel through areas of the Border Ethereal occupied by the fields of living creatures but cannot leave the Border Ethereal into the same space as a living creature - and the teleport-without-error caveat, that Powers with other interplanar means avoid it for its inherent dangers."
+  },
+  {
+   "name": "debWishRules",
+   "value": true,
+   "comment": "the wish limits among the Powers: granted only to inhabitants of the Prime Material planes (one reason those planes are central to the wheeling and debling), unable to affect any other Power in his home plane, unable to affect the granting Power in any way - violations simply have no effect; Lesser Powers grant as Greater do, save that a failed vision can force them into servitude to a Greater Power; Demi-Powers grant limited wishes on the same terms and suffer every malefic side effect of what they use."
+  },
+  {
+   "name": "debGreaterNativePowers",
+   "value": true,
+   "comment": "the Greater Power in his home plane: the six-a-day group at will and the three-a-day group six times a day, hit points doubled, the Power and all nonliving objects of his domain 120% magic resistant (spells affect him only by his permission - tricking him is possible but very dangerous), senses always extended into the Astral and Border Ethereal, untouched by conjuration, summoning or necromantic spells unless he wishes, unslayable at home - reduced to 0 hit points he turns to sparkling vapor reforming in a tenth of a standard day, banned from the slayer's plane for 100 years (10 if slain by a native of his own plane, and 10 years if slain elsewhere), sealer of nonpermanent color pools and puller of Astral or Ethereal observers, the modifier of up to twenty spells of no more than 100 total levels within his domain, the severer of silver cords (AC -5, magic resistance roll, automatic in his domain), and the creator of Aspects - lesser gods generated in a tenth of a year, during which he cannot physically leave the domain."
+  },
+  {
+   "name": "debLesserNativePowers",
+   "value": true,
+   "comment": "the Lesser Power in his home plane: the four-a-day group at will and the two-a-day group four times a day, hit points doubled on the native layer alone, the Power and his domain 100% magic resistant, senses reaching the Ethereal and Astral only by conscious look, permanently slayable in his home plane (slain elsewhere he is merely banished for 100 years), sealer of nonpermanent color pools and puller of Astral observers, modifier of twenty spells of no more than 80 spell levels (usable to reinstate spells the plane forbids, though not all Lesser Powers bother), attempted severer of the silver cord, and creator of a soul object - the single artifact-status device, the wand of Orcus or a lord's talisman, that houses his spirit and makes him a Greater Power in his home plane for purposes of being slain; hence the jealous guard."
+  },
+  {
+   "name": "debDemiNativePowers",
+   "value": true,
+   "comment": "the Demi-Power in his home plane: the three-a-day group four times a day and the one-a-day group twice a day, the Power and his personal effects (not the domains) 80% magic resistant unless normally higher, the observer of the Ethereal and Astral who can take no other action while looking, slayable in his home plane - the debth permanent unless reversed by a greater authority, for a Demi-Power can be raised, the opaque-color-pool maker, and the attempted cord-cutter in the Greater fashion."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the GreaterMagicLevel pin",
+   "expr": "m['debGreaterMagicLevel']() != 30"
+  },
+  {
+   "note": "the GreaterCommandRounds pin",
+   "expr": "m['debGreaterCommandRounds']() != 4"
+  },
+  {
+   "note": "the LesserCommandRounds pin",
+   "expr": "m['debLesserCommandRounds']() != 3"
+  },
+  {
+   "note": "the DemiCommandRounds pin",
+   "expr": "m['debDemiCommandRounds']() != 2"
+  },
+  {
+   "note": "the ProtectionRadiusGreater pin",
+   "expr": "m['debProtectionRadiusGreater']() != 30"
+  },
+  {
+   "note": "the GreaterDailyLimit pin",
+   "expr": "m['debGreaterDailyLimit']() != 6"
+  },
+  {
+   "note": "the LesserDailyLimit pin",
+   "expr": "m['debLesserDailyLimit']() != 4"
+  },
+  {
+   "note": "the DemiDailyLimit pin",
+   "expr": "m['debDemiDailyLimit']() != 3"
+  },
+  {
+   "note": "the GreaterSummonDice pin",
+   "expr": "m['debGreaterSummonDice']() != 2"
+  },
+  {
+   "note": "the GreaterSummonHD pin",
+   "expr": "m['debGreaterSummonHD']() != 40"
+  },
+  {
+   "note": "the LesserSummonHD pin",
+   "expr": "m['debLesserSummonHD']() != 30"
+  },
+  {
+   "note": "the DemiSummonHD pin",
+   "expr": "m['debDemiSummonHD']() != 20"
+  },
+  {
+   "note": "the AbilityTypes pin",
+   "expr": "m['debAbilityTypes']() != 1"
+  },
+  {
+   "note": "the StandardAbilities pin",
+   "expr": "m['debStandardAbilities']() != 1"
+  },
+  {
+   "note": "the CureDetectLists pin",
+   "expr": "m['debCureDetectLists']() != 1"
+  },
+  {
+   "note": "the EtherealTravelRule pin",
+   "expr": "m['debEtherealTravelRule']() != 1"
+  },
+  {
+   "note": "the WishRules pin",
+   "expr": "m['debWishRules']() != 1"
+  },
+  {
+   "note": "the GreaterNativePowers pin",
+   "expr": "m['debGreaterNativePowers']() != 1"
+  },
+  {
+   "note": "the LesserNativePowers pin",
+   "expr": "m['debLesserNativePowers']() != 1"
+  },
+  {
+   "note": "the DemiNativePowers pin",
+   "expr": "m['debDemiNativePowers']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "appendix iv",
+   "from": "- [ ] **Appendix IV: Abilities of the Powers** (pp. 124-126)",
+   "to": "- [x] **Appendix IV: Abilities of the Powers** (pp. 124-126) - R595: the divine ladder (the four ability types, the sixteen standard powers with the 30/20/15 magic levels and 4/3/2 command durations, the Greater six-and-three, Lesser four-and-two, Demi three-and-one daily groups, the wish limits, and the native heights from the vapor-reforming Greater to the soul-objected Lesser and the cord-cutting Demi)"
+  }
+ ],
+ "gap_census": {
+  "closed": 89,
+  "open": 1
+ },
+ "caller_files": [],
+ "inline_count": 20,
+ "header_sections": {
+  "the appendix iv powers abilities pins": [
+   {
+    "kind": "const",
+    "name": "debGreaterMagicLevel"
+   },
+   {
+    "kind": "const",
+    "name": "debGreaterCommandRounds"
+   },
+   {
+    "kind": "const",
+    "name": "debLesserCommandRounds"
+   },
+   {
+    "kind": "const",
+    "name": "debDemiCommandRounds"
+   },
+   {
+    "kind": "const",
+    "name": "debProtectionRadiusGreater"
+   },
+   {
+    "kind": "const",
+    "name": "debGreaterDailyLimit"
+   },
+   {
+    "kind": "const",
+    "name": "debLesserDailyLimit"
+   },
+   {
+    "kind": "const",
+    "name": "debDemiDailyLimit"
+   },
+   {
+    "kind": "const",
+    "name": "debGreaterSummonDice"
+   },
+   {
+    "kind": "const",
+    "name": "debGreaterSummonHD"
+   },
+   {
+    "kind": "const",
+    "name": "debLesserSummonHD"
+   },
+   {
+    "kind": "const",
+    "name": "debDemiSummonHD"
+   },
+   {
+    "kind": "bool",
+    "name": "debAbilityTypes"
+   },
+   {
+    "kind": "bool",
+    "name": "debStandardAbilities"
+   },
+   {
+    "kind": "bool",
+    "name": "debCureDetectLists"
+   },
+   {
+    "kind": "bool",
+    "name": "debEtherealTravelRule"
+   },
+   {
+    "kind": "bool",
+    "name": "debWishRules"
+   },
+   {
+    "kind": "bool",
+    "name": "debGreaterNativePowers"
+   },
+   {
+    "kind": "bool",
+    "name": "debLesserNativePowers"
+   },
+   {
+    "kind": "bool",
+    "name": "debDemiNativePowers"
+   }
+  ]
+ }
+}

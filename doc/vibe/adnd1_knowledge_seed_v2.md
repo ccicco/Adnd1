@@ -10699,6 +10699,33 @@ when both halves land.
   outer-planar creature adjustments;
   OCR source pages 123-124 not yet
   read).
+- R594 LANDED 2026-10-17: commit
+  a1822b3f4c17902ad8e6a000e144bd3b0e
+  0b84dd (census 517 -> 518, pushed
+  94ac8ef..a1822b3), APPENDIX III:
+  CREATURES FROM THE OUTER PLANES,
+  printed pp. 122-123, the einheriar
+  and their kin: the 10d10 einheriar
+  patrol dice and 5% magic per level,
+  the class/level d100 einheriar tables
+  and the Anu-soldier hosts of Horusyr
+  Clanggedin spirit folk Hindari
+  Valhalla and the Acheron legions, the
+  hourly marut powers, the common archon
+  powers, the lantern reformation day
+  and the sword gate turn, plus the
+  mortal hound-warden and tome rule
+  bools. Header rules/appendixiiiouter
+  creatures.h, prefix ddz, 11 inlines
+  (6 consts 5 bools), one gap flip
+  (Appendix III) so 88/2. Spec
+  tools/spec_r594.json 14455 bytes md5
+  ad3e83f1d1712be754eff86d470e1f57.
+  TWENTY-NINE straight first-tries
+  (R566-R594). NEXT - R595: Appendix
+  IV: Abilities of the Powers, printed
+  pp. 124-126, one box, gap 89/1;
+  OCR pages 125-127.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
