@@ -107,7 +107,7 @@ sample entries verified against the canonical PHB levels).
   - [x] The human-travelers doctrine (p. 77) - the uncommon-first-layer/rare-deeper-layers rule - R577: the ddf human pins (uncommon first layer, rare deeper, the small-group level bonus)
   - [x] The Olympus spell-casting-creatures table (p. 92) - the 10%-can-cast roll - R580: AMENDED - the table is the Beastlands beasts table (10% of very-intelligent beasts cast, the d100 spell ladder, the doubled hit dice), not Olympus
   - [x] The Limbo random-entry table (p. 97) - the baked/frozen/drowning/sliding-earth entry roll - R582: the ddk entry pins (the 20/20/20/20/9/9/2 d100 split, the drowning-compression-fire-cold effects)
-  - [ ] The Abyssal-layers terrain table (p. 101) - the general-description roll
+  - [x] The Abyssal-layers terrain table (p. 101) - the general-description roll - R583: the ddl terrain pins (the eight even 10-point bands, the delusion and realm bands, the evil-incarnate tail with the bodak transformation)
   - [ ] The Concordant Opposition center table (p. 115) - the powers-neutralized-by-distance roll
   - [ ] The Concordant Opposition chaotic-destination table (p. 116) - the wrong-plane roll for chaotic travelers
   - [x] Nirvana (pp. 84-86) - R578: the clockwork plane (the disks, the no-illusion rule, Primus, the pantheons)
@@ -120,7 +120,7 @@ sample entries verified against the canonical PHB levels).
   - [x] Gladsheim (pp. 94-97) - R581: the Norse plane (the earthbergs, the wells at 80%, the Bifrost, the necromantic ban, the giants, the Asgard realm census)
   - [x] Limbo (pp. 97-99) - R582: chaos supreme (the random entry, the safe-zone radius ladder, the 1d10-hour matter, the slaadi, the githzerai, the floating realms)
   - [x] Pandemonium (pp. 99-101) - R582: the howling tunnels (the four layers, the 10-foot noise rule, the wind lifts, Loki's Hidden Realm, Tuonela and the Manala)
-  - [ ] The Abyss (pp. 101-103)
+  - [x] The Abyss (pp. 101-103) - R583: the 666 layers (Pazunia the Plains of Infinite Portals, the conduits and the siege-worn iron fortresses, the reverse Styx waterfalls, the demon princes, the servant bonuses, the Powers)
   - [ ] Tarterus (pp. 103-105)
   - [ ] Hades (pp. 105-107)
   - [ ] Gehenna (pp. 107-109)

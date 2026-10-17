@@ -10055,6 +10055,47 @@ when both halves land.
   entry table, the githzerai and the slaadi)
   and likely Pandemonium (pp. 99-101) as the
   pair.
+- R582 LANDED 2026-10-17: commit 5fd1663c4d8b49850745
+  5fca0542004384624fa0 (census 505 -> 506,
+  pushed f8974bd..5fd1663), LIMBO AND
+  PANDEMONIUM, printed pp. 97-101, the first
+  two Chaos planes in one round: Limbo
+  (chaos supreme - the random-entry d100,
+  the Intelligence safe-zone ladder at 10
+  feet/10 yards/100 yards/1 mile per point,
+  the concentration rule, the 1d10-hour
+  semi-permanent matter, the five
+  weakly-barriered layers, the 33% three-way
+  portals, the slaadi with Ssendam and
+  Ygort, the githzerai with the Citadel of
+  Gith and the 16/23 wizard-king Zaarith,
+  the 6d6 chaos elementals, and the
+  floating realms - Indra's Swarga, Agni's
+  flame, Susanowo's sea, Huan-Ti's
+  unconsuming palace with the 3d6-per-gallon
+  steam) and Pandemonium (the howling
+  tunnels - the four layers Pandeemos,
+  Cocytus with its 10d10-turn insanity,
+  the light-halved Phlegethon, bubble-deep
+  Agathion with the 50/50 stale-or-vacuum
+  prisons; the 10-foot noise rule, the
+  100-lb wind lifts, the 20% misrouting
+  square portals, and the Powers - Loki's
+  Hidden Realm with its Jotenheim
+  shortcut, Tuonela and the desire-draining
+  Manala, retired Anshar, Hruggek's
+  bugbears). 6 consts + 9 bools, prefix ddk,
+  header rules/limbopandemonium.h. THREE
+  flips: gap census 68/22 -> 71/19. Spec
+  17,325 bytes, md5 1262c19cf6d7e6870f3f7
+  bcc6cede55a matched exactly first try, 15
+  inlines. SEVENTEEN straight first-tries
+  (R566-R582). NEXT - R583: the Abyss (pp.
+  101-103, Pazunia the Plains of Infinite
+  Portals, the terrain d100 table - rows
+  already gathered through the Delusion
+  layer, the iron fortresses and the
+  sieges, the demon princes).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

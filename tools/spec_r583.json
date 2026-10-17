@@ -1,0 +1,266 @@
+{
+ "round": 583,
+ "prefix": "ddl",
+ "header_file": "rules/abyss.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 506,
+ "title": "the Abyss",
+ "audit_label": "R583 Abyss audit",
+ "audit_comment": "THE ABYSS, printed pp. 101-103, the deepest evil: 666 estimated layers (the most layers and potentially the most inhabitants of any outer plane, each Power claiming at least one, the count standing because definition is impossible in the plane that combines all that is evil with all that is chaotic - the birthing place of the demon races, Demonholme to Gladsheim, Jurgarten to Arvandor). The only well-known layer is the first - Pazunia, the Plains of Infinite Portals, the Palace of 1,001 Closets - a barren dusty place baking beneath a hell-red sun, broken by the three features: the holes (conduits to every layer, working like Astral conduits), the iron fortresses (housing the material bodies of astrally-traveling demon lords, guarded by servants who fight to the death - permanent here - amid common sieges, the fortresses immune to astral-viewing portals), and the winding Styx with its reverse waterfalls (use Charon or his servants); no known barriers on the first layer, the deeper layers' barriers jealously guarded, any terrain to any terrain. The terrain d100: eight even 10-point bands - desert (WSG dehydration), glacier (para-elemental Ice), spatial (airless gravity-free air-only), maelstrom (Limbo churn, a safe zone needing lesser-god power), rocky (lava and volcanoes), underground (conduits landing in temporary safety), water (a surfaced ocean), normal (Prime variety) - then the layer of delusion (a sentient layer seeking the invaders' destruction: poison flowers, attacking trees, friends-turned-assassins), the realm band (a prince's or Power's palace, visitors unwelcome), and the evil-incarnate tail (good mortals save vs spell or die; neutrals and the saved flung to a random layer; evil mortals become bodaks with no save). The races: the limitless demon hordes always turning on each other, the MM2 page-35 frequencies with the Abyss additions (bodaks uncommon, shadow demons rare, hordings rare), the rulers' vast standing forces, the lords unified only by hatred of good. The eleven rumored dwellings: Orcus's bone palace with its undead guards, Demogorgon's dinosaur jungles, Yeenoghu's slave-pulled rolling mansion, Juiblex's fungus-and-rot layer, Lolth's web amid the primal maelstrom, Baphomet's changing infinite maze of minotaurs, Fraz-Urb'Luu's deceptive beauty over rotting flesh, Graz'zt's palace-layer army against Orcus and Demogorgon, Kostchtchie's glacial hatred, Pazuzu ceded the air of every layer (the well-liked demon), Zuggtmoy's purplish fungoid realms; the lords are Lesser Powers in their home planes, dead if slain in the Abyss though a successor evolves to fill the gap. The servants: armor 1 better, +2 to hit below low Intelligence, 10% casting as evil clerics of level 1d10. And the Powers: few Greater Powers bother - Vaprak of the trolls and Laogzed of the troglodytes ruling parts of single layers, Urdlen's hate-carved tunnels, Tou Mu and Lu Yueh's Feng-Tu citadel up the How Nai-ho fork of the Styx through the Kuei-Men-Kuan gate of demons, and Kali's blood-red layer of scarlet-vined temples and rakshasa servants.",
+ "include_comment": "the Abyss pins",
+ "include_after": "#include \"rules/limbopandemonium.h\"  // R582: the Limbo and Pandemonium pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R582 LANDED 2026-10-17: commit 5fd1663c4d8b49850745",
+ "prev_record": [
+  "- R582 LANDED 2026-10-17: commit 5fd1663c4d8b49850745",
+  "  5fca0542004384624fa0 (census 505 -> 506,",
+  "  pushed f8974bd..5fd1663), LIMBO AND",
+  "  PANDEMONIUM, printed pp. 97-101, the first",
+  "  two Chaos planes in one round: Limbo",
+  "  (chaos supreme - the random-entry d100,",
+  "  the Intelligence safe-zone ladder at 10",
+  "  feet/10 yards/100 yards/1 mile per point,",
+  "  the concentration rule, the 1d10-hour",
+  "  semi-permanent matter, the five",
+  "  weakly-barriered layers, the 33% three-way",
+  "  portals, the slaadi with Ssendam and",
+  "  Ygort, the githzerai with the Citadel of",
+  "  Gith and the 16/23 wizard-king Zaarith,",
+  "  the 6d6 chaos elementals, and the",
+  "  floating realms - Indra's Swarga, Agni's",
+  "  flame, Susanowo's sea, Huan-Ti's",
+  "  unconsuming palace with the 3d6-per-gallon",
+  "  steam) and Pandemonium (the howling",
+  "  tunnels - the four layers Pandeemos,",
+  "  Cocytus with its 10d10-turn insanity,",
+  "  the light-halved Phlegethon, bubble-deep",
+  "  Agathion with the 50/50 stale-or-vacuum",
+  "  prisons; the 10-foot noise rule, the",
+  "  100-lb wind lifts, the 20% misrouting",
+  "  square portals, and the Powers - Loki's",
+  "  Hidden Realm with its Jotenheim",
+  "  shortcut, Tuonela and the desire-draining",
+  "  Manala, retired Anshar, Hruggek's",
+  "  bugbears). 6 consts + 9 bools, prefix ddk,",
+  "  header rules/limbopandemonium.h. THREE",
+  "  flips: gap census 68/22 -> 71/19. Spec",
+  "  17,325 bytes, md5 1262c19cf6d7e6870f3f7",
+  "  bcc6cede55a matched exactly first try, 15",
+  "  inlines. SEVENTEEN straight first-tries",
+  "  (R566-R582). NEXT - R583: the Abyss (pp.",
+  "  101-103, Pazunia the Plains of Infinite",
+  "  Portals, the terrain d100 table - rows",
+  "  already gathered through the Delusion",
+  "  layer, the iron fortresses and the",
+  "  sieges, the demon princes)."
+ ],
+ "banner": {
+  "title": "THE ABYSS - printed pp. 101-103, the 666-layered well of chaotic evil: Pazunia the Plains of Infinite Portals with its conduit holes, its siege-worn iron fortresses and the reverse Styx waterfalls, the ten-band terrain die, the eleven rumored dwellings of the demon princes, the souped-up servants, and the Powers from Vaprak to Kali.",
+  "provenance": "verified against printed pp. 101-103 of the uploaded motp.pdf OCR; the terrain table (with the evil-incarnate bodak tail), the servant bonuses and the demon princes are pinned exactly as printed, and the MM2 page-35 frequency additions (bodaks, shadow demons, hordings) ride the race bool; Tarterus (pp. 103-105) is left for the round that owns it.",
+  "sentinel": "the gap census after this round: 73 closed, 17 open - TWO boxes fall (the Abyss, the Abyssal-layers terrain table); the black-pearl layers of Tarterus open the evil-exile chain next."
+ },
+ "consts": [
+  {
+   "name": "ddlAbyssLayerCount",
+   "value": 666,
+   "comment": "the 666 layers of the Abyss - an estimate, but the Abyss definitely has the most layers and therefore potentially the most inhabitants of any of the outer planes; no sage or scholar claims to have visited or catalogued each layer, and each Power seems to claim at least one layer as its own, making further definition difficult; the plane combines all that is evil with all that is chaotic - an ugly, violent place where the strong survive only on the backs of the weak, the birthing place of the demonic races; called Demonholme by the natives of Gladsheim and Jurgarten (misshapen lands) by those of Arvandor."
+  },
+  {
+   "name": "ddlTerrainBand",
+   "value": 10,
+   "comment": "the Abyssal-layers terrain table, band width: a character thrust into a random layer (by curse, item, or wrong conduit) rolls d100, with each of the eight full 10-point bands a terrain stretching on forever and inhabited by foul creatures - 1-10 desert (miles of black/white/red dust without end, no water, standard WSG dehydration chances unless rations are available), 11-20 glacier (miles of black/white/orange ice with few peaks, effects as the para-elemental plane of Ice), 21-30 spatial (no gravity, no native matter - air exists but nothing else), 31-40 maelstrom (Limbo-like churn and bubble, the same difficulties as Limbo, but a safe zone cannot be generated by any being of power less than a lesser god), 41-50 rocky (the typical lower-plane territory, lava regions with volcanoes), 51-60 underground (pure solid rock burrowed and carved by its inhabitants; conduits in always land in areas of at least temporary safety), 61-70 water (an ocean with normal gravity and a surface that may be miles above the entry point), 71-80 normal terrain (the variety of a Prime Material plane)."
+  },
+  {
+   "name": "ddlTerrainRealmEnd",
+   "value": 95,
+   "comment": "the terrain table tail, first half: 81-90 a layer of delusion - it appears Prime-like, but the layer itself is a sentient being seeking to destroy the invaders (poison flowers, attacking trees, friends-turned-assassins are common; DM deviousness encouraged); 91-95 the realm or palace of a powerful Abyssal creature, usually a demon prince but often a god-like Power - visitors are not appreciated, so the traveler in Demogorgon's court had best have a good story or a quick way out."
+  },
+  {
+   "name": "ddlTerrainEvilEnd",
+   "value": 100,
+   "comment": "the terrain table tail, second half: 96-00 a layer of evil incarnate - mortals of good alignment must successfully save vs spell or be slain; neutral mortals (and the good-aligned who make the saving throw) are flung into another layer randomly; mortals of evil nature are transformed into bodaks with no saving throw."
+  },
+  {
+   "name": "ddlServantAcBonus",
+   "value": 1,
+   "comment": "the Abyss servant rule, armor: creatures used as servants and lackeys in the Abyss have additional powers compared to their Prime Material counterparts - subtract 1 from the listed Armor Class."
+  },
+  {
+   "name": "ddlServantHitBonus",
+   "value": 2,
+   "comment": "the Abyss servant rule, offense: a +2 bonus to hit if the servant is of less than low Intelligence - the mindless ones strike the harder."
+  },
+  {
+   "name": "ddlServantCastPct",
+   "value": 10,
+   "comment": "the Abyss servant rule, magic: a 10% chance of spell ability if the servant is of low Intelligence or higher, casting as an evil cleric of level 1d10."
+  }
+ ],
+ "bools": [
+  {
+   "name": "ddlAbyssDoctrine",
+   "value": true,
+   "comment": "the Abyss doctrine: the 666-layered well of chaotic evil - the most numerous creatures are the demon races, a fell group of foul monstrosities seemingly limitless in number; their prolificacy would cause concern in other planes were it not for the fact that the demons always turn on each other - the stronger seek to dominate the weaker, the weaker conspire to overthrow the stronger, and alliances mean little (the demonic allies of one moment become the enemies of the next)."
+  },
+  {
+   "name": "ddlPazuniaRule",
+   "value": true,
+   "comment": "Pazunia, the first layer - the Plains of Infinite Portals, or the Palace of 1,001 Closets (named for Pazuzu, who is most often found here): the topmost of the uncountable Abyssal layers, a barren, dusty place without life or greenery baking beneath a hell-red sun, broken by three features - the huge holes in the earth (conduits to the various layers, functioning like Astral-plane conduits: those who descend are immediately taken where the conduit leads), the great iron portals and fortresses (the interplanar portals also look like large holes, creating havoc for through-travelers; the fortresses usually house the material bodies of higher-level demons and demon lords traveling astrally, guarded by servants who fight to the death - permanent on this plane - to protect the lord's body; the fortresses are usually immune to astral-viewing portals, so astral travelers cannot enter from the Astral plane; demons sometimes war against each other while one is away on the Prime, seeking to stay the enemy's physical form and either kill the Power or maroon it on a Prime plane - sieges are common, and the lords return as soon as possible if their true body is in danger), and the river Styx (winding across the top layer, some channels pouring into holes while other portals feed the river of forgetfulness with waterfalls that run in reverse; travelers are advised to use the boatman Charon or his servants). No known barriers exist in the first layer; those known in other layers are jealously guarded by the inhabitants, can be located in any terrain, and can lead to any terrain on the other side."
+  },
+  {
+   "name": "ddlAbyssRaces",
+   "value": true,
+   "comment": "the demon-race census: a full listing of the general frequency of the various demon races is on page 35 of the Monster Manual II, with several additions for the Abyss - bodaks (uncommon), shadow demons (rare), and hordings (rare); the rulers of the various layers often maintain vast standing forces in their home layers; the demon lords are the most powerful of their race, each prince controlling one or more layers, continually at each other's throats with plans and counterplans to expand their domains - the only unifying force is their hatred of good and organized peoples; the exact layers inhabited by the demon princes are unrevealed, left for the traveler to discover."
+  },
+  {
+   "name": "ddlDemonPrinces",
+   "value": true,
+   "comment": "the rumored dwellings of the demon princes: Orcus in a great palace made of bone rising out of ground bone meal, his guards and servants undead, ruling many layers from his empty halls (said to have conquered a number of Prime planes); Demogorgon across several layers, each a jungle filled with dinosaurs, wild apes and bird-like monsters besides the standard demonic complement; Yeenoghu's mansion the size of a city, rolling across the barren salt waste pulled by slaves and controlled by gnolls; Juiblex in a layer of living fungus and rot, all matter decaying, slimes and molds living off each other's world forms; Lolth controlling a number of adjacent planes, reached through a great web built amid a primal maelstrom; Baphomet at the center of an infinite maze spanning his layer and those adjacent, the maze changing as it passes between layers, populated by minotaurs (some with breath weapons and magical abilities); Fraz-Urb'Luu newly returned and evicting the usurpers of his absence, his realms once rivaling the Twin Paradises or Arvandor in beauty - but only a cruel deception over decay and rotting flesh; Graz'zt in a great palace filling an entire layer and dominating the nearby lesser lords' layers, marshaling his army against Orcus and Demogorgon; Kostchtchie holding only part of a single glacial layer filled with all evil creatures of cold, his hatred spanning the layers; Pazuzu with no abode, ceded the air above the surface of every layer - the demons depend on him (and on Charon where the Styx runs) for ready transportation, making him that rarest of beings, a well-liked (or at least tolerated) demon; Zuggtmoy with several realms scattered among the layers, appearing as normal environments overrun by fungus and lit by a purplish light, all manner of fungoid creatures inhabiting them. Demon lords and princes are considered Lesser Powers in their home planes; if slain in the Abyss they are dead - though another creature will evolve into a being similar to the deceased demon to fill the gap."
+  },
+  {
+   "name": "ddlAbyssServantRule",
+   "value": true,
+   "comment": "the Abyss servant doctrine: creatures used as servants and lackeys gain additional powers and abilities compared to their Prime Material counterparts - armor one better, the +2 mindless hit bonus, and the 10% evil-cleric spell ability (the three consts pin the numbers)."
+  },
+  {
+   "name": "ddlAbyssPowers",
+   "value": true,
+   "comment": "the Powers of the Abyss: few Greater Powers make it their home, as they would have to continually deal with the upstart demon life filling the plane; some Powers are merely souped-up demons or powerful Prime Material monsters - Vaprak of the trolls and Laogzed of the troglodytes, less powerful than most demon princes, each ruling only part of a native layer; Urdlen, the evil gnome-god, in a layer of solid rock crisscrossed with the infinite tunnels he has carved in his hatred; the Chinese Powers Tou Mu and Lu Yueh in the realm called Feng-Tu - a mighty citadel rising up a forked branch of the Styx called the How Nai-ho, reachable by Charon and the charonadaemons, entered through the Kuei-Men-Kuan (the gate of demons, large enough for elephantine behemoths), the god of epidemics and the goddess of the northstar holding sway over a household of demons; and Kali, the black earth mother lesser goddess, controlling her entire layer of jagged peaks and blood-red tropical vegetation - decaying temples overgrown with scarlet vines and crimson flowers, her servants demons and chaotic evil rakshasas."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the AbyssLayerCount pin",
+   "expr": "m['ddlAbyssLayerCount']() != 666"
+  },
+  {
+   "note": "the TerrainBand pin",
+   "expr": "m['ddlTerrainBand']() != 10"
+  },
+  {
+   "note": "the TerrainRealmEnd pin",
+   "expr": "m['ddlTerrainRealmEnd']() != 95"
+  },
+  {
+   "note": "the TerrainEvilEnd pin",
+   "expr": "m['ddlTerrainEvilEnd']() != 100"
+  },
+  {
+   "note": "the ServantAcBonus pin",
+   "expr": "m['ddlServantAcBonus']() != 1"
+  },
+  {
+   "note": "the ServantHitBonus pin",
+   "expr": "m['ddlServantHitBonus']() != 2"
+  },
+  {
+   "note": "the ServantCastPct pin",
+   "expr": "m['ddlServantCastPct']() != 10"
+  },
+  {
+   "note": "the AbyssDoctrine pin",
+   "expr": "m['ddlAbyssDoctrine']() != 1"
+  },
+  {
+   "note": "the PazuniaRule pin",
+   "expr": "m['ddlPazuniaRule']() != 1"
+  },
+  {
+   "note": "the AbyssRaces pin",
+   "expr": "m['ddlAbyssRaces']() != 1"
+  },
+  {
+   "note": "the DemonPrinces pin",
+   "expr": "m['ddlDemonPrinces']() != 1"
+  },
+  {
+   "note": "the AbyssServantRule pin",
+   "expr": "m['ddlAbyssServantRule']() != 1"
+  },
+  {
+   "note": "the AbyssPowers pin",
+   "expr": "m['ddlAbyssPowers']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the abyss pins": [
+   {
+    "kind": "const",
+    "name": "ddlAbyssLayerCount"
+   },
+   {
+    "kind": "const",
+    "name": "ddlTerrainBand"
+   },
+   {
+    "kind": "const",
+    "name": "ddlTerrainRealmEnd"
+   },
+   {
+    "kind": "const",
+    "name": "ddlTerrainEvilEnd"
+   },
+   {
+    "kind": "const",
+    "name": "ddlServantAcBonus"
+   },
+   {
+    "kind": "const",
+    "name": "ddlServantHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "ddlServantCastPct"
+   },
+   {
+    "kind": "bool",
+    "name": "ddlAbyssDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "ddlPazuniaRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddlAbyssRaces"
+   },
+   {
+    "kind": "bool",
+    "name": "ddlDemonPrinces"
+   },
+   {
+    "kind": "bool",
+    "name": "ddlAbyssServantRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddlAbyssPowers"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the terrain table",
+   "from": "  - [ ] The Abyssal-layers terrain table (p. 101) - the general-description roll",
+   "to": "  - [x] The Abyssal-layers terrain table (p. 101) - the general-description roll - R583: the ddl terrain pins (the eight even 10-point bands, the delusion and realm bands, the evil-incarnate tail with the bodak transformation)"
+  },
+  {
+   "note": "the Abyss",
+   "from": "  - [ ] The Abyss (pp. 101-103)",
+   "to": "  - [x] The Abyss (pp. 101-103) - R583: the 666 layers (Pazunia the Plains of Infinite Portals, the conduits and the siege-worn iron fortresses, the reverse Styx waterfalls, the demon princes, the servant bonuses, the Powers)"
+  }
+ ],
+ "gap_census": {
+  "closed": 73,
+  "open": 17
+ },
+ "caller_files": [],
+ "inline_count": 13
+}
