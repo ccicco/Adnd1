@@ -1,0 +1,188 @@
+{
+ "round": 596,
+ "prefix": "dec",
+ "header_file": "rules/indices.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 519,
+ "title": "Indices",
+ "audit_label": "R596 Indices audit",
+ "audit_comment": "INDICES, printed pp. 127-128, the closing pair: the subject index of the whole book on p. 127 - 132 entries from the abjurations and alterations through the Yggdrasil, naming the planes (Astral 5, 60-72; Ethereal 5-21; inner 5, 22-59; outer 5, 73-116; the Prime 5, 117-119; the para-elemental and quasi-elemental 22-59), the rivers (Oceanus 84, 90; the Styx 83, 100-101, 103, 105; Mnemosyne 101 restored from the OCR Manale), the landmarks (Mount Olympus 72, 92, 105; Yggdrasil 72, 95, 105), the creatures (Bahamut and the archons 88, Charon and the charonadaemons 83, the dao and djian and efreet and marids, the githyanki and githzerai with their silver swords 61, 72, 99, the modrons 85, Nidhogg 106, the norns 116, Cerberus 106 restored from the OCR Corberus, the trillochs, the xag-ya and xeg-yi 54, the einheriar 122, the outer-planes creatures 122-123 and the inner 120-121), the mechanics (color pools 80, 82-84; conduits 66, 74; the ether cyclone 17; the psychic wind 64, 67; the silver cord 60-61; wormholes 66; subjective time and true time 5-6; the power compass 75; the borders intercalm, interlayer and interplanar 76); and the spell index of p. 128 - 89 spells with its stated purpose, the pages of unusual or important notes and the exceptions to the spell-type rules: the five airy variants (earth, element, fire, smoke, water), astral projection across its seven pages, plane shift at 11, 22, 61, 74, 117, teleport without error 75, the wish 79 and alter reality 79 and limited wish 79, the negative and positive plane protections 54, the two transform-element spells 28, contact other plane 35, 45, 49, 80, the chariot of Sustarre 29 restored to the real name, stone tell 28 restored from the OCR stone tail, and the necromancies restored from the OCR neoromantics.",
+ "include_comment": "the Indices closing pins",
+ "include_after": "#include \"rules/appendixivabilitiespowers.h\"  // R595: the Appendix IV Powers abilities pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R595 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R595 LANDED 2026-10-17: commit",
+  "  e344bb2b0a1e85362a0b7bca11d942e2b6",
+  "  126a8a (census 518 -> 519, pushed",
+  "  a1822b3..e344bb2), APPENDIX IV:",
+  "  ABILITIES OF THE POWERS, printed",
+  "  pp. 124-126, the divine ladder: the",
+  "  four ability types, the sixteen",
+  "  at-will standard powers with the cure",
+  "  and detect lists, the 30/20/15 magic",
+  "  levels and 4/3/2 command durations,",
+  "  the 30/20/10 protection radii, the",
+  "  Greater six-and-three Lesser",
+  "  four-and-two Demi three-and-one daily",
+  "  groups, the summon caps (2d6@40HD,",
+  "  1d6@30, 1d3@20), the wish limits, and",
+  "  the native heights - the",
+  "  vapor-reforming Greater, the",
+  "  soul-objected Lesser, the cord-cutting",
+  "  Demi. Header rules/appendixiv",
+  "  abilitiespowers.h, prefix deb (dea",
+  "  blocked by deathSpellBudget(), the",
+  "  R411 gate; deb is the chronological",
+  "  successor to ddz), 20 inlines (12",
+  "  consts 8 bools), one gap flip",
+  "  (Appendix IV) so 89/1. Spec",
+  "  tools/spec_r595.json 18116 bytes md5",
+  "  1d4b0634460bec5eea9d19e97621fc80.",
+  "  THIRTY straight first-tries",
+  "  (R566-R595). NEXT - R596: Indices,",
+  "  printed pp. 127-128, ONE box, closes",
+  "  the MotP gap report at 90/0; OCR",
+  "  pages 128-129; prefix debb or next",
+  "  chronological free prefix."
+ ],
+ "banner": {
+  "title": "INDICES - printed pp. 127-128, the closing pair: the 132-entry subject index of the wheel and the 89-spell index of unusual notes and type exceptions, from the airy variants to plane shift, the wish, and the protections of the energy planes.",
+  "provenance": "verified against printed pp. 127-128 of the uploaded motp.pdf OCR (OCR pages 128-129); the entry counts are pinned from the OCR text as counted, with the obvious slips restored (Cerberus, efreet, Mnemosyne, Sustarre, stone tell, necromancies); this is the LAST box of the MotP gap report - the census closes at 90/0.",
+  "sentinel": "the gap census after this round: 90 closed, 0 open - the final box falls (Indices); the Manual of the Planes gap report is CLOSED, every box of the 90-box census accounted for."
+ },
+ "consts": [
+  {
+   "name": "decIndexPages",
+   "value": 2,
+   "comment": "the two closing indices: the subject index on p. 127 and the spell index on p. 128, the last pages of the book before the covers."
+  },
+  {
+   "name": "decSubjectIndexEntries",
+   "value": 132,
+   "comment": "the subject index entry count: 132 entries as printed on p. 127, from abjurations and alterations through the Yggdrasil - the planes, rivers, landmarks, creatures and mechanics of the whole book in one column."
+  },
+  {
+   "name": "decSpellIndexEntries",
+   "value": 89,
+   "comment": "the spell index entry count: 89 spells as printed on p. 128, from aerial servant through wish - each with the pages of its unusual or important notes."
+  },
+  {
+   "name": "decAiryVariants",
+   "value": 5,
+   "comment": "the airy series of the spell index: airy earth 41, airy element 41, 58, airy fire 37, airy smoke 51 and airy water 23, 47 - the elemental survivability quintet, one entry apiece."
+  },
+  {
+   "name": "decPlaneShiftRefs",
+   "value": 5,
+   "comment": "the plane shift references: pp. 11, 22, 61, 74 and 117 - the spell's own page in the Ethereal chapter, the inner-plane statement, the Astral, the outer planes, and the Prime appendix."
+  }
+ ],
+ "bools": [
+  {
+   "name": "decSubjectIndex",
+   "value": true,
+   "comment": "the subject index roster: the five planes families each with their opening pages (Astral 5, 60-72; Ethereal 5-21; inner 5, 22-59; outer 5, 73-116; Prime 5, 117-119); the rivers - Oceanus 84, 90, the Styx 83, 100-101, 103, 105, and Mnemosyne 101 (the OCR Manale restored); Mount Olympus 72, 92, 105 and the Yggdrasil 72, 95, 105; Bahamut and the archons 88, Charon and the charonadaemons 83, the dao and djian, the efreet (the OCR Efreel restored) and marids, the githyanki silver swords 61, 72 and the githzerai 98-99, the modrons 85, Nidhogg 106, the norns 116, Cerberus 106 (the OCR Corberus restored), the trillochs 54, the xag-ya and xeg-yi 54, the einheriar 122; the para-elementals and quasi-elementals; the mechanics - color pools 80, 82-84, conduits 66, 74, the ether cyclone 17, the psychic wind 64, 67, the silver cord 60-61, wormholes 66, fixed portals 72, spell-crystals 83, subjective and true time 5-6, the power compass 75, and the three borders - intercalm, interlayer, interplanar - all at 76."
+  },
+  {
+   "name": "decSpellIndexRoster",
+   "value": true,
+   "comment": "the spell index roster: astral projection across 60, 62, 63, 66, 67, 71, 72 and 75; plane shift 11, 22, 61, 74, 117; teleport without error 75; the wish 79, alter reality 79 and limited wish 79; negative plane protection 54 and positive plane protection 54; the two transform-element spells at 28; contact other plane 35, 45, 49, 80; the chariot of Sustarre 29 (the real name restored from the OCR Susterre); stone tell 28 (restored from the OCR stone tail); the necromancies at 10, 19, 29, 70, 81 (restored from the OCR neoromantics); airy earth, element, fire, smoke and water; and the famous exceptions - fireball 25, 49, 59 across the inner planes, cloudkill 25, magic jar 7, 80, dispel magic 11, 63, 68, 78, shadow walk 21 into the Demiplane of Shadow, and Mordenkainen's faithful hound 12."
+  },
+  {
+   "name": "decSpellIndexNote",
+   "value": true,
+   "comment": "the spell index preamble: this index does not list every place a spell appears in the Manual of the Planes - given are the pages with unusual or important notes on specific spells, and the spells that are exceptions to the general rules governing their spell types."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the IndexPages pin",
+   "expr": "m['decIndexPages']() != 2"
+  },
+  {
+   "note": "the SubjectIndexEntries pin",
+   "expr": "m['decSubjectIndexEntries']() != 132"
+  },
+  {
+   "note": "the SpellIndexEntries pin",
+   "expr": "m['decSpellIndexEntries']() != 89"
+  },
+  {
+   "note": "the AiryVariants pin",
+   "expr": "m['decAiryVariants']() != 5"
+  },
+  {
+   "note": "the PlaneShiftRefs pin",
+   "expr": "m['decPlaneShiftRefs']() != 5"
+  },
+  {
+   "note": "the SubjectIndex pin",
+   "expr": "m['decSubjectIndex']() != 1"
+  },
+  {
+   "note": "the SpellIndexRoster pin",
+   "expr": "m['decSpellIndexRoster']() != 1"
+  },
+  {
+   "note": "the SpellIndexNote pin",
+   "expr": "m['decSpellIndexNote']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the Indices closing pins": [
+   {
+    "kind": "const",
+    "name": "decIndexPages"
+   },
+   {
+    "kind": "const",
+    "name": "decSubjectIndexEntries"
+   },
+   {
+    "kind": "const",
+    "name": "decSpellIndexEntries"
+   },
+   {
+    "kind": "const",
+    "name": "decAiryVariants"
+   },
+   {
+    "kind": "const",
+    "name": "decPlaneShiftRefs"
+   },
+   {
+    "kind": "bool",
+    "name": "decSubjectIndex"
+   },
+   {
+    "kind": "bool",
+    "name": "decSpellIndexRoster"
+   },
+   {
+    "kind": "bool",
+    "name": "decSpellIndexNote"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "indices",
+   "from": "- [ ] **Indices** (pp. 127-128) - the index roster",
+   "to": "- [x] **Indices** (pp. 127-128) - the index roster - R596: the closing pair (the 132-entry subject index of the wheel and the 89-spell index with its unusual-notes purpose, from the airy quintet and plane shift to the wish, the energy-plane protections, and the rivers and landmarks)"
+  }
+ ],
+ "gap_census": {
+  "closed": 90,
+  "open": 0
+ },
+ "caller_files": [],
+ "inline_count": 8
+}

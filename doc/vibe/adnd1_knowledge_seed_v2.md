@@ -10726,6 +10726,39 @@ when both halves land.
   IV: Abilities of the Powers, printed
   pp. 124-126, one box, gap 89/1;
   OCR pages 125-127.
+- R595 LANDED 2026-10-17: commit
+  e344bb2b0a1e85362a0b7bca11d942e2b6
+  126a8a (census 518 -> 519, pushed
+  a1822b3..e344bb2), APPENDIX IV:
+  ABILITIES OF THE POWERS, printed
+  pp. 124-126, the divine ladder: the
+  four ability types, the sixteen
+  at-will standard powers with the cure
+  and detect lists, the 30/20/15 magic
+  levels and 4/3/2 command durations,
+  the 30/20/10 protection radii, the
+  Greater six-and-three Lesser
+  four-and-two Demi three-and-one daily
+  groups, the summon caps (2d6@40HD,
+  1d6@30, 1d3@20), the wish limits, and
+  the native heights - the
+  vapor-reforming Greater, the
+  soul-objected Lesser, the cord-cutting
+  Demi. Header rules/appendixiv
+  abilitiespowers.h, prefix deb (dea
+  blocked by deathSpellBudget(), the
+  R411 gate; deb is the chronological
+  successor to ddz), 20 inlines (12
+  consts 8 bools), one gap flip
+  (Appendix IV) so 89/1. Spec
+  tools/spec_r595.json 18116 bytes md5
+  1d4b0634460bec5eea9d19e97621fc80.
+  THIRTY straight first-tries
+  (R566-R595). NEXT - R596: Indices,
+  printed pp. 127-128, ONE box, closes
+  the MotP gap report at 90/0; OCR
+  pages 128-129; prefix debb or next
+  chronological free prefix.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

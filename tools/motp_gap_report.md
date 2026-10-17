@@ -134,7 +134,7 @@ sample entries verified against the canonical PHB levels).
 - [x] **Appendix II: Creatures of the Inner Planes** (pp. 120-121) - R593: the elemental analogues (the no-analogue list, the stat modifications and the lair percentages, the per-element abilities, the size-change and appearance tables, the treasure rules by plane)
 - [x] **Appendix III: Creatures from the Outer Planes** (pp. 122-123) - R594: the new-creature summary (the einheriar with the class and level dies and the seven hosts, the maruts of Rudra, the mortal, and the five archons from the lantern proto-archons to the tome)
 - [x] **Appendix IV: Abilities of the Powers** (pp. 124-126) - R595: the divine ladder (the four ability types, the sixteen standard powers with the 30/20/15 magic levels and 4/3/2 command durations, the Greater six-and-three, Lesser four-and-two, Demi three-and-one daily groups, the wish limits, and the native heights from the vapor-reforming Greater to the soul-objected Lesser and the cord-cutting Demi)
-- [ ] **Indices** (pp. 127-128) - the index roster
+- [x] **Indices** (pp. 127-128) - the index roster - R596: the closing pair (the 132-entry subject index of the wheel and the 89-spell index with its unusual-notes purpose, from the airy quintet and plane shift to the wish, the energy-plane protections, and the rivers and landmarks)
 
 ## Census
 
