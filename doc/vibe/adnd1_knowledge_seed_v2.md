@@ -7907,6 +7907,64 @@ when both halves land.
   three per round per the content-density rule, starting
   with areas 1-3 (the Great Lake, the city dungeon, the
   fungus forest per the R503 re-grain list).
+- R534 LANDED 2026-10-17: commit 24139af (census 457 -> 458,
+  pushed a1fb6a6..24139af), THE DSG DEEPEARTH AREAS 1-3,
+  printed pp. 78-79 (pdf 79-80) - the individual area key
+  opens: Area 1 The Great Lake (the fresh cold water; the
+  rocky northern shore with the 1,200-ft maximum depth;
+  the sandy shores with their 400-ft average; the southern
+  limestone cliff rising 400 ft and never below 100, the
+  50-ft depth sloping to 400 toward the center; the
+  50-by-120-mile oval on bedrock under silt; the trout,
+  salmon, carnivores and boat-swallowing giant gars; the
+  lonely sirines and the central scrags; the fish and
+  mill-wheel resources; the 20-ft half-water cave to Area
+  5, the water-filled mine shafts, and the
+  wall-of-force-with-permanence spur), Area 2 Surface
+  Lands (the temperate terrain sloping south to north;
+  the fortified river-bank trading city; the centaurs,
+  halflings, and the rumored enchanted woods; the hill
+  dwarves and hill giants at odds; the smoldering
+  volcanoes rumored prowled by dragons; the farm-lumber-
+  fish resources with the dwarf gold, silver, copper,
+  bloodstone and ruby sales; the city dungeon linking
+  sewers to the palace dungeon and Area 9, the
+  thieves-guild connections, the four-level bandit
+  dungeon with its secret passage to Area 4, the
+  half-connecting hill caves to Area 3, and the taboo
+  abandoned mine shaft), and Area 3 Upper Caverns (the
+  central living-cave limestone maze, the 6-to-8-ft
+  pools, the 300-ft-square excavation cap, the
+  20x10x100-ft largest chamber with its 3x2-ft pinches,
+  the wall-of-force watery wall; the raiding races -
+  troglodytes, goblins, hobgoblins, ogres, trolls and
+  lycanthropes; the scavengers, the gibbering mouther,
+  greater basilisk, shambling mound and the wandering
+  beholder; the air-water-plants resources; the 80-ft
+  troglodyte amphitheater with the fungus-covered
+  war-hero statue and its 10,000-gp eye-diamonds; and
+  the 3x1-ft magic pool - the pint-per-year drip, the
+  60-ft infravision, the 2d6-week durations, the 30
+  pints keeping indefinitely). A CLEAN-READ ROUND: both
+  machine reads agree on every number (djvu ~lines
+  9840-9960, Capture idx 182-184; the "INDIVIDGAL" and
+  "GPPER" djvu header garbles non-load-bearing). SEAMS:
+  R518 water travel, Monster Manual denizens, PHB wall
+  of force and permanence, R521-R522 mining, the R503
+  re-grain. A ZERO-FLIP ROUND: the pp. 75-98 Deepearth
+  child remains open (the R527/R533 precedent - the gap
+  report NOT in the git add). Pinned as rules/dsgarea1.h
+  (prefix dnar, verified free; 44 inlines - 26 consts,
+  18 bools, no tables). Spec 26,829 bytes, md5
+  39a292cc94236a717a1acb8cef31b173 (user-side identical).
+  Engine applied 4 then 0/4, audit mirror clean. Gap
+  unchanged 139/16. PREFLIGHT GREEN with census 458
+  audit lines, each exactly once, all bad 0; BUILD: 0
+  warnings. NEXT - R535: the Deepearth areas 4-5
+  (printed pp. 79-80, pdf 80-81): Area 4 the Cathedral
+  Caverns (the 1d6-mile caverns with 100-ft ceilings,
+  the ornate stalactite appearance), then onward through
+  the area key per the R503 re-grain list.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
