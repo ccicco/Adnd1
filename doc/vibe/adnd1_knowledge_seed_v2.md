@@ -6593,6 +6593,46 @@ when both halves land.
   standing class. NEXT - R510: odor detection + Tables 15-16
   (printed pp. 37-38, pdf 38-39; manifest lines 180-181),
   then cave-ins (Table 17).
+- R510 LANDED 2026-10-17: commit 2148097 (census 435,
+  pushed ee310a8..2148097), the DSG ODOR DETECTION,
+  printed pp. 37-38 (pdf 38-39) - the Wisdom Check
+  procedure (at first encounter, secret DM roll, non-
+  repeating, rechecked only on a stronger scent or a
+  harder wind, full Wis only for easily-noticed odors,
+  the cross-ref as the Wis modifier, the dash = no
+  detection), the dog rules (Wis 16 this check only,
+  the doubled distance before the negative modifiers,
+  the described growl or cringe, the trained reaction),
+  the Table 15 row definitions and grid (nine sources
+  over the 1-120/121-360/361-1000/1000-5000 ft bands:
+  small 0/-4/-8/dash, large +2/0/-4/-8, oil +4/+2/0/-4,
+  conflagration +8/+4/+2/0, odorous gas +4/+2/0/-4,
+  strong-odor 0/-2/-6/-10, mild-odor -2/-6/-10/dash,
+  no-odor -6/-10/dash/dash, cooking food +2/0/-2/-6)
+  and the Table 16 wind effects (strong Normal/1/2/
+  none, medium Double/1/2/1-10, light Double/Normal/
+  1-4, in the percent encoding) plus the wind
+  definitions. The disputed small-fires row settled
+  THREE-WAY: chapter djvu vs the compiled-tables
+  appendix reprint vs the design ladder -> 0, -4, -8,
+  dash. STANDING METHOD: the appendix reprint is the
+  third read for disputed cells. Pinned as
+  rules/dsgodor.h (prefix dnv, verified free; 51
+  inlines: 15 consts + 27 bools + the two grids; 11
+  examples + 5 table checks; 7 header sections). Gap
+  73/82 -> 76/79: 3 flips - the Odor detection child
+  + BOTH manifest lines (Tables 15 and 16 count in the
+  closed census). DELIVERY LESSON: the spec goes via a
+  code canvas, NEVER a chat paste - the chat renderer
+  eats m['name'](arg) brackets (first attempt: engine
+  abort, user md5 2bcb78ae vs authored 8df833cf; the
+  canvas copy was byte-exact). Double-run applied
+  7/already 0 then 0/7; preflight GREEN, census 435,
+  gap 76/79. NEXT - R511: cave-ins - the causes
+  (printed p. 38, pdf 39; child line 109) + the random
+  occurrences and Table 17 (pp. 38-39; child line 110,
+  manifest line 182), then chain reactions (Table 18)
+  + the effects (R512).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
