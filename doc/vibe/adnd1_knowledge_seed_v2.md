@@ -7848,6 +7848,65 @@ when both halves land.
   boiling-hot danger, the tunnels with the 10% carved
   chance and the uniform 10-ft diameter) - the first
   procedurally-numbered DM-section round.
+- R533 LANDED 2026-10-17: commit a1fb6a6 (census 456 -> 457,
+  pushed 3c3fc98..a1fb6a6), THE DSG LANDS OF DEEPEARTH
+  OPENER, printed p. 75 (pdf 76) - the setting frame and
+  the connecting-passage generation: the frame (the lands
+  presented in detail as a campaign setting, the party
+  gaining many levels without exploring the entirety; the
+  alternative example-of-the-ecosystem view, use-and-
+  discard, expandable, the realms occupying no more area
+  than a moderately small nation; the numbered-area rough
+  detail; the page-114 three-dimensional and geomorphic
+  mapping referrals; the hollow-earth-below note with the
+  shafts from the lowest level; all passages passable to
+  human-sized characters), the water passages (the rivers
+  with their map-readable flow directions, the indicated
+  waterfalls with map-scale drops, the rest navigable by
+  boat with a skilled pilot and a little luck; the 1d6-x-10
+  width generation for the 10-60-ft spread, the width
+  constant for one mile, the drift reroll - 2-5 the same,
+  1 shrinking 10 ft or 5 at the 10-ft floor, 6 growing
+  10 ft even beyond 60; the 1d6 temperature - 1-5 very
+  cold, the 6 heat check with the second d6 - 1
+  cool-slightly-warmer, 6 boiling hot, 2-5 proportional;
+  only the boiling water unsafe for unprotected
+  characters), the tunnels (the human-passable diameters,
+  mostly natural caverns, the 10%-per-10-miles carved
+  chance, the carved uniform 10-ft diameter and height with
+  no sudden obstacles; the 33%-per-mile obstacle chance
+  with the 10d10 cliffs, the 20d10-deep 4d10-wide chasms,
+  the cave-in remnants and the water-quicksand-oil-tar
+  pools, never closing the passage; the 3d20 cavern
+  widths from 3 to 60 ft, constant for 1d20-x-100 ft of
+  100-2,000, the 1/3 change chance with the 3d20 reroll;
+  the unintelligent dwellers - scavengers, fungi, molds
+  and lichens - the intelligent denizens only passing
+  through, the banished renegade bands the exception), and
+  the area details (the framework-not-full-detail rule,
+  the 300-ft square as 30-by-30 graph squares, and the
+  DMG page-169 Random Dungeon Generation referral). A
+  CLEAN-READ ROUND with one settled garble: the djvu
+  cavern-width formula reads "(3420)", the Capture layer
+  reads "(3d20)" - settled as 3d20 by the Capture read,
+  corroborated by the 3-60-ft range (djvu ~lines
+  9584-9712, Capture idx 176; the map pages pp. 76-77 are
+  graphics and pin nothing). SEAMS: DMG Random Dungeon
+  Generation p. 169, R518 water travel, R531 geography,
+  the R503 re-grain. A ZERO-FLIP ROUND: the pp. 75-98
+  Deepearth child remains open (the R527 precedent - the
+  gap report NOT in the git add). Pinned as rules/
+  dsgland.h (prefix dndl, verified free; 52 inlines -
+  36 consts, 16 bools, no tables). Spec 25,945 bytes,
+  md5 caba0e8133c6ae2b65017fdcbc88151c (user-side
+  identical). Engine applied 4 then 0/4, audit mirror
+  clean. Gap unchanged 139/16. PREFLIGHT GREEN with
+  census 457 audit lines, each exactly once, all bad 0;
+  BUILD: 0 warnings. NEXT - R534: the Deepearth area key
+  begins (printed pp. 78+): the 31 numbered areas, two or
+  three per round per the content-density rule, starting
+  with areas 1-3 (the Great Lake, the city dungeon, the
+  fungus forest per the R503 re-grain list).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
