@@ -10096,6 +10096,57 @@ when both halves land.
   already gathered through the Delusion
   layer, the iron fortresses and the
   sieges, the demon princes).
+- R583 LANDED 2026-10-17: commit
+  833b09329fb7f7459c6bcf5bf5f33f3a6c
+  03d571 (census 506 -> 507, pushed
+  5fd1663..833b093), THE ABYSS, printed
+  pp. 101-103, the 666-layered well of
+  chaotic evil: Pazunia the Plains of
+  Infinite Portals (the conduit holes,
+  the siege-worn iron fortresses with
+  their fight-to-the-death guards, the
+  reverse Styx waterfalls, no barriers on
+  the first layer), the ten-band terrain
+  d100 (desert/glacier/spatial/maelstrom/
+  rocky/underground/water/normal at 10
+  points apiece, the delusion layer, the
+  realm band, the 96-00 evil-incarnate
+  tail with the bodak transformation), the
+  demon-race census (bodaks uncommon,
+  shadow demons and hordings rare, the
+  MM2 page-35 additions), the eleven
+  rumored dwellings of the demon princes
+  (Orcus's bone palace, Demogorgon's
+  dinosaur jungles, Yeenoghu's rolling
+  mansion, Juiblex's rot, Lolth's web,
+  Baphomet's maze, Fraz-Urb'Luu's
+  deception, Graz'zt's palace-layer,
+  Kostchtchie's glacier, Pazuzu the
+  well-liked ceded the air, Zuggtmoy's
+  fungus) with the Lesser-Powers
+  dead-if-slain rule, the servant bonuses
+  (AC 1 better, +2 to hit below low
+  Intelligence, 10% evil-cleric casting at
+  level 1d10), and the Powers (Vaprak's
+  trolls, Laogzed's troglodytes, Urdlen's
+  hate-carved tunnels, Tou Mu and Lu
+  Yueh's Feng-Tu up the How Nai-ho fork
+  of the Styx through the Kuei-Men-Kuan,
+  Kali's blood-red layer). 7 consts + 6
+  bools, prefix ddl, header rules/abyss.h.
+  TWO flips: gap census 71/19 -> 73/17
+  (the Abyss box and the Abyssal-layers
+  terrain table). Spec 19,586 bytes, md5
+  545d2f9db7d638c0f2254d29516b22a6
+  matched exactly first try, 13 inlines.
+  EIGHTEEN straight first-tries
+  (R566-R583). NEXT - R584: Tarterus
+  (pp. 103-105, the six crimson-pearl
+  layers Othrys/Cathrys/Minethys/Colothys/
+  Porphatys/Agathys with the layer
+  spacings and hazards; page-104 already
+  read, page-105.md to read for the
+  Tarterus features and the exiled titans).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

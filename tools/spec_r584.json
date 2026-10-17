@@ -1,0 +1,258 @@
+{
+ "round": 584,
+ "prefix": "ddm",
+ "header_file": "rules/tarterus.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 507,
+ "title": "Tarterus",
+ "audit_label": "R584 Tarterus audit",
+ "audit_comment": "TARTERUS, printed pp. 103-105, the land between Hades and the Abyss: six crimson-pearl layers, strings of world-sized orbs glowing dull red like fire-beetle phosphorescence yet no hotter than a summer's afternoon - the air-filled gulfs flyable, the orbs unspinning, the heat from the ground and the light from ground and neighbor alike, no day or night but by the Powers' wishes, the seasons random and the storm-fed flowers withering in hours. The layers: Othrys (the greater titans, orbs a hundred miles apart, marsh and glowing quicksand, the Styx and innumerable rivers crossing every world), Cathrys (500-mile gaps, overblown jungles and scarlet grass secreting an acid that eats metal in 1d10 rounds and deals 1d6 on contact), Minethys (5,000-mile gulfs of hard wind, poisonous-dust deserts under a permanent cloudkill, and every ten days a massive tornado carrying its catch to an adjacent orb or another string), Colothys (the most mountainous, spiked orbs a half-million miles apart, hundreds-mile mountains and hell-chasms walled with demon and daemon legions), Porphatys (the wettest save one, millions of miles apart, black acidic demonic snow at 1d4 per round that rots cloth in 10 rounds, spares stone and metal, and leaves the orbs under 1d6 feet of water), and Agathys (the deepest and coldest, each orb alone in pitch-black sky, dark ice streaked with red, the air of a Prime mountain peak). The barriers sit at the lowest points and always link the same orb layer-to-layer - nested spheres, the fifth-to-sixth barriers underwater and anything beyond the sixth sealed beneath miles of ice. The portals of Othrys are guarded obelisks read by shape - taller than wide to Hades, wider than tall to the Abyss, square to Concordant Opposition - transferred by touch, with the Styx flowing through the topmost layer besides. The features: the demons with numbers against the daemons with organization, a continual insurgency arcanadaemons and cambions straddle; the demodands above both - winged mixes of the worst of demon and daemon, the ruling shators served by kelubar and farastu, enslaving what they catch, spanning the gulfs and finding their way like elementals, before whom all but the mightiest make way; the achalera, nightmares, hordings, shadow demons, mephits and the shator-made vargouilles that ate their master; the natives immune to snow and cold while visiting princes shiver. And the Powers: the titans of Mount Othrys - Kronos's twin 50-mile peaks, the court of Coeus, Crius and Oceanus, the shattered road of Olympus that trapped them, the chaotic-good kin without and the wait-and-plan within, seizing useful travelers; Surma's open graves of walking undead and Kiputyto's winds of gout, ulcers and plague; Grolantor of the hill giants holding the fourth layer's peaks while the shators kneel out of fear.",
+ "include_comment": "the Tarterus pins",
+ "include_after": "#include \"rules/abyss.h\"  // R583: the Abyss pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R583 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R583 LANDED 2026-10-17: commit",
+  "  833b09329fb7f7459c6bcf5bf5f33f3a6c",
+  "  03d571 (census 506 -> 507, pushed",
+  "  5fd1663..833b093), THE ABYSS, printed",
+  "  pp. 101-103, the 666-layered well of",
+  "  chaotic evil: Pazunia the Plains of",
+  "  Infinite Portals (the conduit holes,",
+  "  the siege-worn iron fortresses with",
+  "  their fight-to-the-death guards, the",
+  "  reverse Styx waterfalls, no barriers on",
+  "  the first layer), the ten-band terrain",
+  "  d100 (desert/glacier/spatial/maelstrom/",
+  "  rocky/underground/water/normal at 10",
+  "  points apiece, the delusion layer, the",
+  "  realm band, the 96-00 evil-incarnate",
+  "  tail with the bodak transformation), the",
+  "  demon-race census (bodaks uncommon,",
+  "  shadow demons and hordings rare, the",
+  "  MM2 page-35 additions), the eleven",
+  "  rumored dwellings of the demon princes",
+  "  (Orcus's bone palace, Demogorgon's",
+  "  dinosaur jungles, Yeenoghu's rolling",
+  "  mansion, Juiblex's rot, Lolth's web,",
+  "  Baphomet's maze, Fraz-Urb'Luu's",
+  "  deception, Graz'zt's palace-layer,",
+  "  Kostchtchie's glacier, Pazuzu the",
+  "  well-liked ceded the air, Zuggtmoy's",
+  "  fungus) with the Lesser-Powers",
+  "  dead-if-slain rule, the servant bonuses",
+  "  (AC 1 better, +2 to hit below low",
+  "  Intelligence, 10% evil-cleric casting at",
+  "  level 1d10), and the Powers (Vaprak's",
+  "  trolls, Laogzed's troglodytes, Urdlen's",
+  "  hate-carved tunnels, Tou Mu and Lu",
+  "  Yueh's Feng-Tu up the How Nai-ho fork",
+  "  of the Styx through the Kuei-Men-Kuan,",
+  "  Kali's blood-red layer). 7 consts + 6",
+  "  bools, prefix ddl, header rules/abyss.h.",
+  "  TWO flips: gap census 71/19 -> 73/17",
+  "  (the Abyss box and the Abyssal-layers",
+  "  terrain table). Spec 19,586 bytes, md5",
+  "  545d2f9db7d638c0f2254d29516b22a6",
+  "  matched exactly first try, 13 inlines.",
+  "  EIGHTEEN straight first-tries",
+  "  (R566-R583). NEXT - R584: Tarterus",
+  "  (pp. 103-105, the six crimson-pearl",
+  "  layers Othrys/Cathrys/Minethys/Colothys/",
+  "  Porphatys/Agathys with the layer",
+  "  spacings and hazards; page-104 already",
+  "  read, page-105.md to read for the",
+  "  Tarterus features and the exiled titans)."
+ ],
+ "banner": {
+  "title": "TARTERUS - printed pp. 103-105, the six crimson-pearl layers between Hades and the Abyss: the flyable air-gulfs, the obelisk portals, the demodand shators, the trapped titans of Kronos, and the exile realms of Surma, Kiputyto and Grolantor.",
+  "provenance": "verified against printed pp. 103-105 of the uploaded motp.pdf OCR; the six layers with their spacings and hazards, the obelisk-portal shapes, the demodand hierarchy and the titan exile history are pinned exactly as printed; Hades (pp. 105-107) is left for the round that owns it.",
+  "sentinel": "the gap census after this round: 74 closed, 16 open - ONE box falls (Tarterus); the three grey Glooms of Hades open next."
+ },
+ "consts": [
+  {
+   "name": "ddmTarterusLayerCount",
+   "value": 6,
+   "comment": "the sixfold layers of Tarterus - a fell region inhabited by monsters and great evil beasts, home of many evil Powers in exile (such as the greater titans driven out of Olympus) and creatures planning their revenge; the layer names mostly titanish; the barriers sit at the lowest points of an orb (chasms, canyons, tunnels beneath the surface), each orb's barriers always leading to the same orb in the other layer - the layers nested spheres, one within the next; the fifth-to-sixth barriers are underwater, and any layers beyond the sixth are walled off beneath miles of ice."
+  },
+  {
+   "name": "ddmOrbGapColothysMiles",
+   "value": 500000,
+   "comment": "the orb gaps by layer, the fourth the widest: Othrys about 100 miles between orbs (easily crossed), Cathrys 500 (smaller worlds), Minethys 5,000 (hard winds in the airy gulfs), Colothys a half-million - about twice the Earth-Moon distance - and Porphatys millions; the gap between the worlds is filled with air, so travelers can fly from world to world in relative safety."
+  },
+  {
+   "name": "ddmCathrysAcidMetalRounds",
+   "value": 10,
+   "comment": "the Cathrys acid: the second layer's overblown jungles and scarlet grasslands secrete a powerful acid that eats through metal in 1d10 rounds and delivers 1d6 points of damage to those in contact - natives, of course, immune."
+  },
+  {
+   "name": "ddmMinethysTornadoDays",
+   "value": 10,
+   "comment": "the Minethys tornado: in the third layer's desert, windstorms born in the airy gulf sweep huge clouds of foul-smelling poisonous stinging dust across the land (effectively a permanent cloudkill) - and every 10 days a massive tornado sweeps the landscape, carrying any in its path to an adjacent orb or an orb on another string entirely."
+  },
+  {
+   "name": "ddmPorphatysSnowDamage",
+   "value": 4,
+   "comment": "the Porphatys black snow: the fifth and wettest-but-one layer, great black clouds moving between the orbs laden with a demonic acidic snow - exposed skin caught in a snowstorm suffers 1d4 points of damage per round, the acid rots cloth in 10 rounds but has no effect on stone or metal; the snow sticks only on the topmost peaks, so the orb surfaces stand covered in 1d6 feet of water, the fallen snow keeping its acidity (natives immune to all the layer's effects)."
+  },
+  {
+   "name": "ddmTitanPeakMiles",
+   "value": 50,
+   "comment": "the peaks of Mount Othrys: on two particular close orbs of the first layer, a set of huge peaks 50 miles high each erupts from the marshy plains and links the worlds together - where the mountains meet, the titans hold their citadel, Mount Othrys, which names the orbs and the layer alike."
+  }
+ ],
+ "bools": [
+  {
+   "name": "ddmTarterusDoctrine",
+   "value": true,
+   "comment": "the Tarterus doctrine: the worlds laid out like strings of huge crimson pearls, each pearl the size of a Prime Material world; every surface gives off a dull reddish glow from its soil, like the phosphorescence of fire beetles, bathing all the layers in hellish light - yet no hotter than a summer's afternoon; unlike Prime globes the orbs do not spin, taking heat from the ground and light from the ground and the adjacent orbs; no day or night save at the wishes of particular realms' Powers; seasons and weather sweep the plane at random, heavy storms following clear sky, and the scarce plant life bursts into full flower after a storm only to wither within hours."
+  },
+  {
+   "name": "ddmTarterusPortals",
+   "value": true,
+   "comment": "the Tarterus portals and travel: the portals of Othrys are obelisks, easily identified and usually guarded by demons or watch beasts, the destination read from the stone's shape - taller than wide leads to Hades, wider than tall to the Abyss, height equal to width to Concordant Opposition - transfer made by touching the obelisk; the river Styx also flows through the topmost layer, and on Othrys the Styx and innumerable other rivers cross every world, an easy passage from orb to orb without braving the gulf."
+  },
+  {
+   "name": "ddmDemodandRule",
+   "value": true,
+   "comment": "the demodands: Tarterus is the contested land between Hades and the Abyss, the demons (with numbers) and the daemons (with organization and planning) in a continual insurgency against whichever race tops a particular orb, the great princes not interfering - arcanadaemons and cambions often keeping both kinds in their households; rising above the struggle are the demodands (MMII), winged creatures mixing the worst features of demon and daemon, the most common of the Tarterian monsters - a shator (shaggy) demodand likely rules part of an orb with kelubar and farastu as servants, enslaving any living being they can; all are winged, spanning the gulfs between orbs without difficulty, with a sense of direction in the plane like the elementals in theirs; all but the most powerful demons and daemons make way."
+  },
+  {
+   "name": "ddmTarterusCreatures",
+   "value": true,
+   "comment": "the Tarteran bestiary: achalera, nightmares, hordlings, shadow demons and mephits also make the layers home, and the vargouille are a common nuisance - rumored created by a powerful shator to plague his foes in other planes until they turned on their master and consumed him; all creatures native to the layers are immune to the plane's effects including the acid snow and the cold of the lower layers, while similar creatures from other planes remain subject (an Abyssal demon lord feels the cold unless otherwise protected)."
+  },
+  {
+   "name": "ddmKronosRule",
+   "value": true,
+   "comment": "the titans of Othrys: the evil titans hold their citadel where the twin 50-mile peaks meet, ruled by Kronos - once master of Olympus, Hades and Tarterus before the coming of the Greek pantheon - with Coeus, Crius and Oceanus in his court (realms on orbs of the third, fourth and fifth layers, reachable only from Kronos's twin orbs); the upper layer was once linked by Mount Olympus to Hades' third layer, Olympus' first, and the Greek and titan Primes, and it was there the titans retreated upon defeat - the Olympians shattered the reaching mountain and trapped them; the outside titans have turned chaotic good, so only the spirits of the worst descend, and an attack would raise the ire of Hades, Hel, Anthraxus and the mobilized daemons and einherjar - so the titans wait and plan, seizing any travelers whose abilities, knowledge or items might aid the retaking of Olympus."
+  },
+  {
+   "name": "ddmTarterusPowers",
+   "value": true,
+   "comment": "the Powers of Tarterus: far from the titan orbs, the adjacent realms of the Finnish Powers Surma and Kiputyto - gloomy marshes dark despite the red glow, cold from first orb to farthest; Surma's realm filled with open graves where undead walk freely, Kiputyto's carrying disease on the winds (gout, ulcers, the plague), neither receiving many visitors; and Grolantor, god of the hill giants, uncaring, dwelling among the fourth layer's infinite peaks and mighty chasms, rarely venturing forth - the shator demodands of the layers above cede him vassalage more from fear of the evil giant-spirit armies than any love."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the TarterusLayerCount pin",
+   "expr": "m['ddmTarterusLayerCount']() != 6"
+  },
+  {
+   "note": "the OrbGapColothysMiles pin",
+   "expr": "m['ddmOrbGapColothysMiles']() != 500000"
+  },
+  {
+   "note": "the CathrysAcidMetalRounds pin",
+   "expr": "m['ddmCathrysAcidMetalRounds']() != 10"
+  },
+  {
+   "note": "the MinethysTornadoDays pin",
+   "expr": "m['ddmMinethysTornadoDays']() != 10"
+  },
+  {
+   "note": "the PorphatysSnowDamage pin",
+   "expr": "m['ddmPorphatysSnowDamage']() != 4"
+  },
+  {
+   "note": "the TitanPeakMiles pin",
+   "expr": "m['ddmTitanPeakMiles']() != 50"
+  },
+  {
+   "note": "the TarterusDoctrine pin",
+   "expr": "m['ddmTarterusDoctrine']() != 1"
+  },
+  {
+   "note": "the TarterusPortals pin",
+   "expr": "m['ddmTarterusPortals']() != 1"
+  },
+  {
+   "note": "the DemodandRule pin",
+   "expr": "m['ddmDemodandRule']() != 1"
+  },
+  {
+   "note": "the TarterusCreatures pin",
+   "expr": "m['ddmTarterusCreatures']() != 1"
+  },
+  {
+   "note": "the KronosRule pin",
+   "expr": "m['ddmKronosRule']() != 1"
+  },
+  {
+   "note": "the TarterusPowers pin",
+   "expr": "m['ddmTarterusPowers']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the tarterus pins": [
+   {
+    "kind": "const",
+    "name": "ddmTarterusLayerCount"
+   },
+   {
+    "kind": "const",
+    "name": "ddmOrbGapColothysMiles"
+   },
+   {
+    "kind": "const",
+    "name": "ddmCathrysAcidMetalRounds"
+   },
+   {
+    "kind": "const",
+    "name": "ddmMinethysTornadoDays"
+   },
+   {
+    "kind": "const",
+    "name": "ddmPorphatysSnowDamage"
+   },
+   {
+    "kind": "const",
+    "name": "ddmTitanPeakMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "ddmTarterusDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "ddmTarterusPortals"
+   },
+   {
+    "kind": "bool",
+    "name": "ddmDemodandRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddmTarterusCreatures"
+   },
+   {
+    "kind": "bool",
+    "name": "ddmKronosRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddmTarterusPowers"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "tarterus",
+   "from": "  - [ ] Tarterus (pp. 103-105)",
+   "to": "  - [x] Tarterus (pp. 103-105) - R584: the six crimson pearls (the layer gaps and hazards, the obelisk portals, the demodands, the trapped titans of Kronos, Surma and Kiputyto, Grolantor)"
+  }
+ ],
+ "gap_census": {
+  "closed": 74,
+  "open": 16
+ },
+ "caller_files": [],
+ "inline_count": 12
+}

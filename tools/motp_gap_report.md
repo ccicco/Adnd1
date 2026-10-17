@@ -121,7 +121,7 @@ sample entries verified against the canonical PHB levels).
   - [x] Limbo (pp. 97-99) - R582: chaos supreme (the random entry, the safe-zone radius ladder, the 1d10-hour matter, the slaadi, the githzerai, the floating realms)
   - [x] Pandemonium (pp. 99-101) - R582: the howling tunnels (the four layers, the 10-foot noise rule, the wind lifts, Loki's Hidden Realm, Tuonela and the Manala)
   - [x] The Abyss (pp. 101-103) - R583: the 666 layers (Pazunia the Plains of Infinite Portals, the conduits and the siege-worn iron fortresses, the reverse Styx waterfalls, the demon princes, the servant bonuses, the Powers)
-  - [ ] Tarterus (pp. 103-105)
+  - [x] Tarterus (pp. 103-105) - R584: the six crimson pearls (the layer gaps and hazards, the obelisk portals, the demodands, the trapped titans of Kronos, Surma and Kiputyto, Grolantor)
   - [ ] Hades (pp. 105-107)
   - [ ] Gehenna (pp. 107-109)
   - [ ] The Nine Hells (pp. 109-113)
