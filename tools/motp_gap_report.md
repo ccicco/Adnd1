@@ -112,8 +112,8 @@ sample entries verified against the canonical PHB levels).
   - [ ] The Concordant Opposition chaotic-destination table (p. 116) - the wrong-plane roll for chaotic travelers
   - [x] Nirvana (pp. 84-86) - R578: the clockwork plane (the disks, the no-illusion rule, Primus, the pantheons)
   - [x] Arcadia (pp. 86-87) - R578: the orchard plane (the day sphere, the potion fruit, the watch beasts, the militias, Marduk and Clanggedin)
-  - [ ] The Seven Heavens (pp. 87-89)
-  - [ ] The Twin Paradises (pp. 89-90)
+  - [x] The Seven Heavens (pp. 87-89) - R579: the seven ascending layers (Lunia to Chronias, the archon ladder, Yondalla and Moradin, Bahamut)
+  - [x] The Twin Paradises (pp. 89-90) - R579: the facing layers (the book with no spine, Dothion and Shurrock, the gnomish pantheon and Ukko)
   - [ ] Elysium (pp. 90-91)
   - [ ] The Happy Hunting Grounds (pp. 91-92)
   - [ ] Olympus (pp. 92-94)

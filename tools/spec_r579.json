@@ -1,0 +1,241 @@
+{
+  "round": 579,
+  "prefix": "ddh",
+  "header_file": "rules/heavenstwins.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 502,
+  "title": "the Seven Heavens and the Twin Paradises",
+  "audit_label": "R579 Heavens-Twins audit",
+  "audit_comment": "THE SEVEN HEAVENS AND THE TWIN PARADISES, printed pp. 87-90, the next two Upper Planes in one round: the Seven Heavens of goodness tempered by law (the seven ascending layers with the barrier-at-the-peak illusion of ascendency, the constant gravity, Lunia the Silver Heaven with its holy-water surf arrivals and silvery stars, Mercuria the Golden armory with Bahamut's court, Venya the Pearl with the halfling Green Fields, Solania the Electrum with Moradin's Soul Forge in Ereokhar, Mertion the Platinum with its citadels and domes, Jovar the Glittering with the Jovarian archons and the ziggurat council rumor, Chronias the Illuminated where goodness is raised and evil extinguished), the archon ladder (the five types - Lanterns, Hounds, Wardens, Swords, Tomes - deferring to the devas, planetars and solars), the finished-stone portals (the granite color codes), and the Powers (Yondalla's mythos with Brandobaris, Moradin and Berronar, the four-layer Bahamut palace problem, Chung Kuel and Kuan Yin, Vishnu and Surya with Garuda, Ebisu and Girru, the home-plane-benefits-anywhere rule); and the Twin Paradises of good with organization only when necessary (the book with no spine - the facing layers Dothion and Shurrock 20 miles apart, upside down to each other, the midair barrier crossed by the Wisdom check or paired mountains, the cavern portals with concentric, radiating and spiderweb patterns, the mild pastoral Dothion and the challenging dramatic Shurrock, NO additional restrictions, and the Powers - the gnomish pantheon of Garl Glittergold, Baervan with Whisperleaf, Segojan and Flandal, Ukko the blizzard-throwing Finn across the barrier with his air maidens, and the wandering destructive titan Epinetheus).",
+  "include_comment": "the Seven Heavens and Twin Paradises pins",
+  "include_after": "#include \"rules/nirvanaarcadia.h\"  // R578: the Nirvana and Arcadia pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R578 LANDED 2026-10-17: commit 8dffd144ad8c2edc189562",
+  "prev_record": [
+    "- R578 LANDED 2026-10-17: commit 8dffd144ad8c2edc189562",
+    "  edec6a51977a3f3539 (census 501 -> 502,",
+    "  pushed 0cbff95..8dffd14), NIRVANA AND",
+    "  ARCADIA, printed pp. 84-87, the first two",
+    "  named planes in one round (the R572",
+    "  multi-plane pattern): Nirvana the clockwork",
+    "  plane of ultimate Law (the 500-mile",
+    "  interlocking disks, the per-disk gravity",
+    "  with the walk-over-the-edge rule, the",
+    "  1/100-turn realm pull, the 20-day portal",
+    "  cycle, the always-open Concordant",
+    "  Opposition portal, the no-illusion rule,",
+    "  Primus and the modrons, Anu's Way, and the",
+    "  pantheons - Anu, Shang-Ti with the peaches",
+    "  and the library of lost knowledge,",
+    "  Shan-Hai Ching, Varuna, Rudra, Yama,",
+    "  Horus, Utu and Enki); and Arcadia the",
+    "  orchard plane (the half-radiant half-black",
+    "  day sphere with its dawnless day, the",
+    "  three layers, the metallic trees with",
+    "  double-strength potion fruit, the",
+    "  illusion-piercing watch beasts, the",
+    "  ivory/steel archway portals with the",
+    "  1-in-10 mist and 90/10 sides, the",
+    "  spirit-folk militias, and the Powers -",
+    "  Marduk and Clanggedin Silverbeard). 6",
+    "  consts + 8 bools, prefix ddg, header",
+    "  rules/nirvanaarcadia.h. TWO flips: gap",
+    "  census 59/31 -> 61/29. Spec 14,927 bytes,",
+    "  md5 432a571b019f6cb763e1cdf5b60bb1fc",
+    "  matched exactly first try, 14 inlines -",
+    "  the first CLEAN local run (the pre-staged",
+    "  rules/ dir from the R576 lesson held).",
+    "  THIRTEEN straight first-tries (R566-R578).",
+    "  NOTE (delivery, user-set 2026-10-17): the",
+    "  post-land paste is now SHORT - just the",
+    "  commit sha and the LANDED line; full",
+    "  output only for failed runs. NEXT - R579:",
+    "  the Seven Heavens (pp. 87-89, the seven",
+    "  ascending layers, Lunia to Chronias, the",
+    "  archons, Yondalla and Moradin) - the",
+    "  Upper Planes continue."
+  ],
+  "banner": {
+    "title": "THE SEVEN HEAVENS AND THE TWIN PARADISES - printed pp. 87-90, the next two Upper Planes in one round: the seven ascending layers of goodness and law with the archon ladder and Moradin's Soul Forge, and the two facing layers of the book with no spine with the gnomish pantheon and Ukko's blizzards.",
+    "provenance": "verified against printed pp. 87-90 of the uploaded motp.pdf OCR; the two planes ride together as the good-Law and good-neutral pair (the R578 pattern), each carrying its layers, portals, natives and Powers exactly as printed.",
+    "sentinel": "the gap census after this round: 63 closed, 27 open - TWO boxes fall (the Seven Heavens, the Twin Paradises); Elysium and the Happy Hunting Grounds continue the Upper Planes next."
+  },
+  "consts": [
+    {
+      "name": "ddhHeavenLayerCount",
+      "value": 7,
+      "comment": "the Seven Heavens structure: seven layers ascending (the illusion of ascendency - the crossable barriers sit only at the highest physical point of each layer, opening at the lowest point of the next, so each layer seems above the last, the mirror of the Nine Hells' pit); gravity constant throughout, each layer bathed in the soft light of its own heaven."
+    },
+    {
+      "name": "ddhTwinSeparationMiles",
+      "value": 20,
+      "comment": "the Twin Paradises structure: a book with no spine - two facing layers (Dothion the pastoral topmost, Shurrock the challenging lower), surfaces 20 miles apart sea level to sea level, each hanging overhead upside down from the other's view; the barrier sits in midair halfway between, crossed by flight (the Wisdom check) or by paired mountains that meet it."
+    },
+    {
+      "name": "ddhOceanusTransitDays",
+      "value": 10,
+      "comment": "the Elysium-relevant Oceanus rule (the flow links the Twin Paradises' neighbors): river travel between layers or planes runs 1d10 days, with normal encounters and a 10% per-day chance of blocking cascades or snags - but the Paradise layers themselves are positive and industrious, natives crossing for a change of clime, neither side the better."
+    },
+    {
+      "name": "ddhArchonTypeCount",
+      "value": 5,
+      "comment": "the archons, natives of the Heavens as the demons are to the hells: five types identified - Lanterns (spirits of the newly dead, soft bubbles of light), Hounds (dog-headed guardians, shapechange at will), Wardens (golden or silver bears with grasping hands, any divination spell), Swords (winged lion-headed leaders with prodigious casting), Tomes (hawk-headed, the power of knowledge); archons defer to devas, planetars and solars, rarely leaving the Heavens, Arcadia and the Twin Paradises."
+    }
+  ],
+  "bools": [
+    {
+      "name": "ddhLuniaSurfRule",
+      "value": true,
+      "comment": "Lunia the Silver Heaven: the first layer holds all Astral portals, a dark sky of silvery stars, and arrival ALWAYS in the surf of a mountain-island ocean of fresh water that functions as holy water - immersion destroys all but the most powerful holy-water-affected beings; an astral viewing portal cannot be steered to a dry landing, but flyers can enter above the wet."
+    },
+    {
+      "name": "ddhHeavenLayersDoctrine",
+      "value": true,
+      "comment": "the seven layers: Lunia (silver), Mercuria the Golden (armory and mustering, Bahamut's court), Venya the Pearl (green moors, the halfling Green Fields), Solania the Electrum (silver-glow mountains, Moradin's Soul Forge in Ereokhar), Mertion the Platinum (citadels and black domes, marshalling the paladins), Jovar the Glittering (ruby and garnet vault, the Jovarian archons and the rumored ziggurat council), Chronias the Illuminated (goodness raised or evil extinguished by the plane itself, home of a ruling archon if one exists)."
+    },
+    {
+      "name": "ddhHeavenPortalsRule",
+      "value": true,
+      "comment": "the Heaven portals: free-standing permanent blocks of finished stone - black granite shot with gold to Arcadia, white granite shot with silver to the Twin Paradises, red spattered with blue to Concordant Opposition; the plane hosts planetars, solars, devas, agathia, foo creatures, hollyphants, shedu, lammasu, ki-rin, dragon horses and an occasional titan."
+    },
+    {
+      "name": "ddhHeavenPowers",
+      "value": true,
+      "comment": "the Heavens' Powers: Yondalla's halfling mythos (Avoreen, Cyroclaise, Brandobaris the bolt-hole demigod) on Venya's Green Fields, on good terms with the archons (who appear in halfling bodies to their followers); Moradin and Berronar beneath Solania, the Soul Forge's heat warming the layer and its smoke the vale mists; Bahamut the Platinum Dragon (equal chance: the Heavens, the plane of Air, or a Prime; the palace placed on four different layers at different times); Chung Kuel and Kuan Yin on Solania; Vishnu and Surya on Mercuria with Garuda common to both; Ebisu of Lunia greeting travelers as a poor fisherman; Girru of Mercuria; and every deity gains its home-plane benefits ANYWHERE on the plane."
+    },
+    {
+      "name": "ddhTwinPortalPatterns",
+      "value": true,
+      "comment": "the Twin Paradises portals: caverns with shining patterns - concentric circles to the Seven Heavens, radiating lines to Elysium, spiderwebs to Concordant Opposition; each layer glows golden-white; Dothion is mild (gentle seasons, intelligent speechless animals), Shurrock dramatic (thunder squalls, hard winters, hot summers, everyone at work)."
+    },
+    {
+      "name": "ddhTwinPowers",
+      "value": true,
+      "comment": "the Twin Paradises' Powers: the gnomish pantheon on Dothion - Garl Glittergold, Baervan Wildwanderer (with the oak Whisperleaf on a barrier mountain), Segojan Earthcaller, Flandal Steelskin (winter labs in Shurrock), occasional gnomish archons; Ukko of the Finnish pantheon across the barrier in cold snowy Shurrock, venting wrath as a full blizzard, served by air maidens; and the wandering greater titan Epinetheus, who destroys each home he settles, understood by the gnomes, contained by Ukko."
+    },
+    {
+      "name": "ddhTwinNoRestrictions",
+      "value": true,
+      "comment": "the Twin Paradises law: NO additional restrictions beyond the general outer-plane rules (the mildest of the named planes); the layers host hollyphants, planetars, foo creatures, devas, solars, agathia and baku, plus sentient animals (average-plus intelligence, speechless) and sentient trees (treated as treants)."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the HeavenLayerCount pin",
+      "expr": "m['ddhHeavenLayerCount']() != 7"
+    },
+    {
+      "note": "the TwinSeparationMiles pin",
+      "expr": "m['ddhTwinSeparationMiles']() != 20"
+    },
+    {
+      "note": "the OceanusTransitDays pin",
+      "expr": "m['ddhOceanusTransitDays']() != 10"
+    },
+    {
+      "note": "the ArchonTypeCount pin",
+      "expr": "m['ddhArchonTypeCount']() != 5"
+    },
+    {
+      "note": "the LuniaSurfRule pin",
+      "expr": "m['ddhLuniaSurfRule']() != 1"
+    },
+    {
+      "note": "the HeavenLayersDoctrine pin",
+      "expr": "m['ddhHeavenLayersDoctrine']() != 1"
+    },
+    {
+      "note": "the HeavenPortalsRule pin",
+      "expr": "m['ddhHeavenPortalsRule']() != 1"
+    },
+    {
+      "note": "the HeavenPowers pin",
+      "expr": "m['ddhHeavenPowers']() != 1"
+    },
+    {
+      "note": "the TwinPortalPatterns pin",
+      "expr": "m['ddhTwinPortalPatterns']() != 1"
+    },
+    {
+      "note": "the TwinPowers pin",
+      "expr": "m['ddhTwinPowers']() != 1"
+    },
+    {
+      "note": "the TwinNoRestrictions pin",
+      "expr": "m['ddhTwinNoRestrictions']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the heavens and twins pins": [
+      {
+        "kind": "const",
+        "name": "ddhHeavenLayerCount"
+      },
+      {
+        "kind": "const",
+        "name": "ddhTwinSeparationMiles"
+      },
+      {
+        "kind": "const",
+        "name": "ddhOceanusTransitDays"
+      },
+      {
+        "kind": "const",
+        "name": "ddhArchonTypeCount"
+      },
+      {
+        "kind": "bool",
+        "name": "ddhLuniaSurfRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddhHeavenLayersDoctrine"
+      },
+      {
+        "kind": "bool",
+        "name": "ddhHeavenPortalsRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddhHeavenPowers"
+      },
+      {
+        "kind": "bool",
+        "name": "ddhTwinPortalPatterns"
+      },
+      {
+        "kind": "bool",
+        "name": "ddhTwinPowers"
+      },
+      {
+        "kind": "bool",
+        "name": "ddhTwinNoRestrictions"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the seven ascending layers",
+      "from": "  - [ ] The Seven Heavens (pp. 87-89)",
+      "to": "  - [x] The Seven Heavens (pp. 87-89) - R579: the seven ascending layers (Lunia to Chronias, the archon ladder, Yondalla and Moradin, Bahamut)"
+    },
+    {
+      "note": "the facing layers",
+      "from": "  - [ ] The Twin Paradises (pp. 89-90)",
+      "to": "  - [x] The Twin Paradises (pp. 89-90) - R579: the facing layers (the book with no spine, Dothion and Shurrock, the gnomish pantheon and Ukko)"
+    }
+  ],
+  "gap_census": {
+    "closed": 63,
+    "open": 27
+  },
+  "caller_files": [],
+  "inline_count": 11
+}

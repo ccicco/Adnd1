@@ -9904,6 +9904,48 @@ when both halves land.
   named planes begin - Nirvana (pp. 84-86),
   the clockwork plane, then plane by plane
   through the seventeen.
+- R578 LANDED 2026-10-17: commit 8dffd144ad8c2edc189562
+  edec6a51977a3f3539 (census 501 -> 502,
+  pushed 0cbff95..8dffd14), NIRVANA AND
+  ARCADIA, printed pp. 84-87, the first two
+  named planes in one round (the R572
+  multi-plane pattern): Nirvana the clockwork
+  plane of ultimate Law (the 500-mile
+  interlocking disks, the per-disk gravity
+  with the walk-over-the-edge rule, the
+  1/100-turn realm pull, the 20-day portal
+  cycle, the always-open Concordant
+  Opposition portal, the no-illusion rule,
+  Primus and the modrons, Anu's Way, and the
+  pantheons - Anu, Shang-Ti with the peaches
+  and the library of lost knowledge,
+  Shan-Hai Ching, Varuna, Rudra, Yama,
+  Horus, Utu and Enki); and Arcadia the
+  orchard plane (the half-radiant half-black
+  day sphere with its dawnless day, the
+  three layers, the metallic trees with
+  double-strength potion fruit, the
+  illusion-piercing watch beasts, the
+  ivory/steel archway portals with the
+  1-in-10 mist and 90/10 sides, the
+  spirit-folk militias, and the Powers -
+  Marduk and Clanggedin Silverbeard). 6
+  consts + 8 bools, prefix ddg, header
+  rules/nirvanaarcadia.h. TWO flips: gap
+  census 59/31 -> 61/29. Spec 14,927 bytes,
+  md5 432a571b019f6cb763e1cdf5b60bb1fc
+  matched exactly first try, 14 inlines -
+  the first CLEAN local run (the pre-staged
+  rules/ dir from the R576 lesson held).
+  THIRTEEN straight first-tries (R566-R578).
+  NOTE (delivery, user-set 2026-10-17): the
+  post-land paste is now SHORT - just the
+  commit sha and the LANDED line; full
+  output only for failed runs. NEXT - R579:
+  the Seven Heavens (pp. 87-89, the seven
+  ascending layers, Lunia to Chronias, the
+  archons, Yondalla and Moradin) - the
+  Upper Planes continue.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
