@@ -9214,6 +9214,52 @@ when both halves land.
   (basic mapping considerations, perspective
   mapping, selecting a grid), then the compiled
   tables and the arc tail.
+- R557 LANDED 2026-10-17: commit 3abdb7d50bbf121e72
+  fe359da0545ad55735afdc (census 480 -> 481,
+  pushed ec1acf3..3abdb7d), THE DSG MAPPING YOUR
+  SETTINGS, printed pp. 114-117 - the whole
+  mapping chapter in ONE round with the child
+  flipped in the same commit (the single-round
+  chapter precedent, as R530-R532): the head
+  (the orthographic blueprint map with its
+  per-level split, the perspective alternative),
+  Basic Mapping Considerations (the effective
+  map, the tools), Perspective Mapping (the 3-D
+  advantages and the occlusion/time costs, the
+  photocopy and tracing techniques), Selecting a
+  Grid (the shape match, the occluded-area
+  design, the front-loaded detail), Selecting a
+  Starting Point (the front start, the control
+  square), Drawing the Map, Mapping Symbols (the
+  translated symbols, the 3-D styles), Splitting
+  the Grid (the tracing and photocopy methods,
+  the 10-ft-square 20-ft-platform example),
+  Horizon Lines (the orientation, the
+  perpendicular verticals), Geomorphic Mapping
+  (the problem, the shapes - squares, triangles,
+  hexagons; the standardized left-right-symmetric
+  connections; the 60-ft section at 1-2 per side
+  against the square-mile 6-8; the 75% entry
+  rule), and Using Geomorphs (the random
+  generation, the d3/d4/d6 placement rolls, the
+  unnoticed matches and dead-end mismatches, the
+  variety hiding revisits). 8 consts + 35
+  bools, prefix dcj, header rules/dsgmap.h,
+  spec 24,770 bytes, md5
+  06ca8c8c0975a49990958655599be5d5 matched
+  exactly first try, 43 inlines; djvu lines
+  14880-15430 with the Capture pdf 114-118
+  cross-read (clean). The Mapping your settings
+  child flips [x] IN the same commit: gap census
+  141/14 -> 142/13, the gap report in the git
+  add (5 files). The pp. 118-120 grid plates are
+  graphics and pin nothing. No authoring
+  catches. NEXT - R558: the compiled tables p.
+  121 (the book's own reprints - much already
+  pinned const-for-const by R504/R505, so a
+  verify-and-flip round), then the DM-section
+  parent and the front-matter chapter p. 6,
+  then the arc tail.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

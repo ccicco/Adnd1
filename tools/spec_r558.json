@@ -1,0 +1,346 @@
+{
+  "round": 558,
+  "prefix": "dck",
+  "header_file": "rules/dsgtabs.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 481,
+  "title": "the DSG compiled tables",
+  "audit_label": "R558 DSG compiled tables audit",
+  "audit_comment": "The compiled tables pins printed pp. 121-123: the book's own reprint spread, verified const-for-const against the landed pins - Tables 1-9 the movement reprints (R504/R505), 15-16 the odor, 17-18 the cave-ins, 19 the DPV, 20 the unsteady reactions, 21-26 the boats, and 27-34 the mining - with the Table 3 five-row grapple delta pinned this round (the stone parapet, stone wall top, and tree branches rows the chapter original lacked), the Table 1 and Table 2 footnotes, the Table 25 proficiency slash split, and the Table 33 pure-vein footnote. The Compiled tables child flips [x] in the same commit.",
+  "include_comment": "the DSG compiled tables pins",
+  "include_after": "#include \"rules/dsgmap.h\"  // R557: the DSG mapping your settings pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R557 LANDED 2026-10-17: commit 3abdb7d50bbf121e72",
+  "prev_record": [
+    "- R557 LANDED 2026-10-17: commit 3abdb7d50bbf121e72",
+    "  fe359da0545ad55735afdc (census 480 -> 481,",
+    "  pushed ec1acf3..3abdb7d), THE DSG MAPPING YOUR",
+    "  SETTINGS, printed pp. 114-117 - the whole",
+    "  mapping chapter in ONE round with the child",
+    "  flipped in the same commit (the single-round",
+    "  chapter precedent, as R530-R532): the head",
+    "  (the orthographic blueprint map with its",
+    "  per-level split, the perspective alternative),",
+    "  Basic Mapping Considerations (the effective",
+    "  map, the tools), Perspective Mapping (the 3-D",
+    "  advantages and the occlusion/time costs, the",
+    "  photocopy and tracing techniques), Selecting a",
+    "  Grid (the shape match, the occluded-area",
+    "  design, the front-loaded detail), Selecting a",
+    "  Starting Point (the front start, the control",
+    "  square), Drawing the Map, Mapping Symbols (the",
+    "  translated symbols, the 3-D styles), Splitting",
+    "  the Grid (the tracing and photocopy methods,",
+    "  the 10-ft-square 20-ft-platform example),",
+    "  Horizon Lines (the orientation, the",
+    "  perpendicular verticals), Geomorphic Mapping",
+    "  (the problem, the shapes - squares, triangles,",
+    "  hexagons; the standardized left-right-symmetric",
+    "  connections; the 60-ft section at 1-2 per side",
+    "  against the square-mile 6-8; the 75% entry",
+    "  rule), and Using Geomorphs (the random",
+    "  generation, the d3/d4/d6 placement rolls, the",
+    "  unnoticed matches and dead-end mismatches, the",
+    "  variety hiding revisits). 8 consts + 35",
+    "  bools, prefix dcj, header rules/dsgmap.h,",
+    "  spec 24,770 bytes, md5",
+    "  06ca8c8c0975a49990958655599be5d5 matched",
+    "  exactly first try, 43 inlines; djvu lines",
+    "  14880-15430 with the Capture pdf 114-118",
+    "  cross-read (clean). The Mapping your settings",
+    "  child flips [x] IN the same commit: gap census",
+    "  141/14 -> 142/13, the gap report in the git",
+    "  add (5 files). The pp. 118-120 grid plates are",
+    "  graphics and pin nothing. No authoring",
+    "  catches. NEXT - R558: the compiled tables p.",
+    "  121 (the book's own reprints - much already",
+    "  pinned const-for-const by R504/R505, so a",
+    "  verify-and-flip round), then the DM-section",
+    "  parent and the front-matter chapter p. 6,",
+    "  then the arc tail."
+  ],
+  "banner": {
+    "title": "THE DSG COMPILED TABLES, R558: printed pp. 121-123 - the book's own reprint spread, a verification-and-flip round: the thirty-four numbered tables reprinted from the chapters, each verified const-for-const against the pins its chapter already landed - Tables 1-9 the movement block (the swimming encumbrance effects with the sink footnote, the climbing rates with the thieves-only footnote, the broad jumping bands, the grapple crossing, the thrown loop ranges, the passageway sizes, the armor width increases, the darkness course changes) against the R504/R505 pins; Tables 15-16 the odor detection and wind effects against the odor pins; Tables 17-18 the cave-in location and chain reaction against the cave-in pins; Table 19 the underground structure defensive point values against the DPV pins; Table 20 the unsteady NPC reactions - the screaming flight to the endurance limit, the nearby-PC attack, the quiet sneak away, the freeze - against the landed pins; Tables 21-26 the boats (the movement rates, the standstill acceleration, the draught and ceilings, the nonproficiency penalties, the collision probability with the proficiency slash, the damage bands) against the boat pins; and Tables 27-34 the mining (the rates grid, the vein direction, the path alterations, the products with the mithril check and the gemstones, the ore and gemstone quality with the pure-vein footnote) against the mining pins. ONE GENUINE DELTA pinned this round: the compiled Table 3 carries five grapple rows where the chapter original carried two - the stone parapet (01-72/73-78/79-00), the stone wall top (01-83/84-89/90-00), and the tree branches (01-66/67-70/71-00) now sit beside the landed rocky ledge and wooden wall rows. The spread skips tables 10-14 - the in-chapter proficiency and combat tables are not reprinted.",
+    "provenance": "djvu lines 15340-15800 with the Capture-layer pdf 121-123 cross-read (the pure-python extractor, parser page = printed page). The two reads agree across the round; the djvu table OCR is heavily garbled (the Cyrillic headers, the lost cells) but every load-bearing value matched against both the capture read and the landed chapter pins - the compiled reprints are the book's own second printing of values already verified in their chapter rounds, and this round verifies the reprints rather than re-deriving them. A CLEAN-READ ROUND. The Compiled tables child flips [x] in the same commit: the gap census moves 142/13 -> 143/12.",
+    "sentinel": "The arc tail: R557 the mapping chapter closed, R558 the compiled tables closed; next the perspective map plates pp. 124-127 (graphics - a verify-only round), the index p. 128 (a roster round), then the DM-section parent, the front-matter chapter p. 6, and the arc's final census."
+  },
+  "consts": [
+    {
+      "comment": "the compiled spread reprints the book's thirty-four numbered tables",
+      "name": "dckCompiledTableCount",
+      "value": 34
+    },
+    {
+      "comment": "the compiled Table 3 carries five grapple target rows - the chapter original carried two",
+      "name": "dckT3RowCount",
+      "value": 5
+    },
+    {
+      "comment": "the stone parapet row: 01-72 miss",
+      "name": "dckT3ParapetMiss",
+      "value": 72
+    },
+    {
+      "comment": "the stone parapet row: 73-78 catch and slip",
+      "name": "dckT3ParapetSlip",
+      "value": 78
+    },
+    {
+      "comment": "the stone wall top row: 01-83 miss",
+      "name": "dckT3WallTopMiss",
+      "value": 83
+    },
+    {
+      "comment": "the stone wall top row: 84-89 catch and slip",
+      "name": "dckT3WallTopSlip",
+      "value": 89
+    },
+    {
+      "comment": "the tree branches row: 01-66 miss",
+      "name": "dckT3BranchesMiss",
+      "value": 66
+    },
+    {
+      "comment": "the tree branches row: 67-70 catch and slip",
+      "name": "dckT3BranchesSlip",
+      "value": 70
+    },
+    {
+      "comment": "the catch maximum on every grapple row: 00 - 79-00, 90-00, 71-00 beside 94-00 and 75-00",
+      "name": "dckT3CatchMax",
+      "value": 100
+    }
+  ],
+  "bools": [
+    {
+      "comment": "the compiled spread pp. 121-123: the book's own table reprints, numbered per the in-book table numbers",
+      "name": "dckSpreadDefines",
+      "value": true
+    },
+    {
+      "comment": "Tables 1-9, the movement reprints - swimming encumbrance, climbing rates, broad jumping, the grapple crossing, the thrown loop ranges, passageway sizes, armor width, darkness course changes - verified const-for-const against the landed R504/R505 movement pins",
+      "name": "dckMovementReprints",
+      "value": true
+    },
+    {
+      "comment": "the Table 1 footnote: an encumbered character cannot move through the water under his own power - if he enters the water, he will sink",
+      "name": "dckT1Footnote",
+      "value": true
+    },
+    {
+      "comment": "the Table 2 footnote: the very-smooth and smooth-cracked surfaces can be climbed only by thieves",
+      "name": "dckT2Footnote",
+      "value": true
+    },
+    {
+      "comment": "the Table 3 delta: the compiled reprint carries five grapple rows where the chapter original carried two - the stone parapet, stone wall top, and tree branches rows pinned this round beside the landed rocky ledge and wooden wall",
+      "name": "dckT3Richer",
+      "value": true
+    },
+    {
+      "comment": "Tables 15-16, the odor reprints - detection by distance band and wind effects - verified against the landed odor pins",
+      "name": "dckOdorReprints",
+      "value": true
+    },
+    {
+      "comment": "Tables 17-18, the cave-in reprints - location and chain reaction - verified against the landed cave-in pins",
+      "name": "dckCaveInReprints",
+      "value": true
+    },
+    {
+      "comment": "Table 19, the underground structure defensive point value reprint - verified against the landed DPV pins",
+      "name": "dckDpvReprints",
+      "value": true
+    },
+    {
+      "comment": "Table 20, the unsteady NPC reactions reprint - the screaming flight, the nearby-PC attack, the quiet sneak away, the freeze - verified against the landed pins",
+      "name": "dckUnsteadyReprints",
+      "value": true
+    },
+    {
+      "comment": "Tables 21-26, the boat reprints - movement rates, standstill acceleration, draught and ceilings, nonproficiency penalties, collision probability, damage - verified against the landed boat pins",
+      "name": "dckBoatReprints",
+      "value": true
+    },
+    {
+      "comment": "the Table 25 footnote: the number before the slash is for a character with boating proficiency, the number after for one without",
+      "name": "dckT25Footnote",
+      "value": true
+    },
+    {
+      "comment": "Tables 27-34, the mining reprints - rates, vein direction, path alterations, products, the mithril check, gemstones, ore and gemstone quality - verified against the landed mining pins",
+      "name": "dckMiningReprints",
+      "value": true
+    },
+    {
+      "comment": "the Table 33 footnote: a 10 on the quality roll rerolled - another 10 means a pure vein of metal requiring no smelting, a 1-9 the normal smelting",
+      "name": "dckT33Footnote",
+      "value": true
+    },
+    {
+      "comment": "the compiled spread skips tables 10-14 - the in-chapter proficiency and combat tables are not reprinted",
+      "name": "dckT1014Absent",
+      "value": true
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "expr": "m['dckCompiledTableCount']() != 34",
+      "note": "the spread: thirty-four reprinted tables."
+    },
+    {
+      "expr": "m['dckT3RowCount']() != 5",
+      "note": "the grapple grid: five rows in the compiled reprint."
+    },
+    {
+      "expr": "m['dckT3ParapetMiss']() != 72 or m['dckT3ParapetSlip']() != 78",
+      "note": "the stone parapet: 01-72 miss, 73-78 slip."
+    },
+    {
+      "expr": "m['dckT3WallTopMiss']() != 83 or m['dckT3WallTopSlip']() != 89",
+      "note": "the stone wall top: 01-83 miss, 84-89 slip."
+    },
+    {
+      "expr": "m['dckT3BranchesMiss']() != 66 or m['dckT3BranchesSlip']() != 70",
+      "note": "the tree branches: 01-66 miss, 67-70 slip."
+    },
+    {
+      "expr": "m['dckT3CatchMax']() != 100",
+      "note": "the catch maximum: 00 on every grapple row."
+    },
+    {
+      "expr": "m['dckMovementReprints']() != 1 or m['dckOdorReprints']() != 1",
+      "note": "the reprints verified: the movement and odor tables."
+    },
+    {
+      "expr": "m['dckBoatReprints']() != 1 or m['dckMiningReprints']() != 1",
+      "note": "the reprints verified: the boat and mining tables."
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the spread head section": [
+      {
+        "kind": "const",
+        "name": "dckCompiledTableCount"
+      },
+      {
+        "kind": "bool",
+        "name": "dckSpreadDefines"
+      },
+      {
+        "kind": "bool",
+        "name": "dckT1014Absent"
+      }
+    ],
+    "the movement reprints section": [
+      {
+        "kind": "bool",
+        "name": "dckMovementReprints"
+      },
+      {
+        "kind": "bool",
+        "name": "dckT1Footnote"
+      },
+      {
+        "kind": "bool",
+        "name": "dckT2Footnote"
+      }
+    ],
+    "the grapple delta section": [
+      {
+        "kind": "const",
+        "name": "dckT3RowCount"
+      },
+      {
+        "kind": "const",
+        "name": "dckT3ParapetMiss"
+      },
+      {
+        "kind": "const",
+        "name": "dckT3ParapetSlip"
+      },
+      {
+        "kind": "const",
+        "name": "dckT3WallTopMiss"
+      },
+      {
+        "kind": "const",
+        "name": "dckT3WallTopSlip"
+      },
+      {
+        "kind": "const",
+        "name": "dckT3BranchesMiss"
+      },
+      {
+        "kind": "const",
+        "name": "dckT3BranchesSlip"
+      },
+      {
+        "kind": "const",
+        "name": "dckT3CatchMax"
+      },
+      {
+        "kind": "bool",
+        "name": "dckT3Richer"
+      }
+    ],
+    "the environment reprints section": [
+      {
+        "kind": "bool",
+        "name": "dckOdorReprints"
+      },
+      {
+        "kind": "bool",
+        "name": "dckCaveInReprints"
+      },
+      {
+        "kind": "bool",
+        "name": "dckDpvReprints"
+      },
+      {
+        "kind": "bool",
+        "name": "dckUnsteadyReprints"
+      }
+    ],
+    "the boat reprints section": [
+      {
+        "kind": "bool",
+        "name": "dckBoatReprints"
+      },
+      {
+        "kind": "bool",
+        "name": "dckT25Footnote"
+      }
+    ],
+    "the mining reprints section": [
+      {
+        "kind": "bool",
+        "name": "dckMiningReprints"
+      },
+      {
+        "kind": "bool",
+        "name": "dckT33Footnote"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "from": "- [ ] **Compiled tables** (p. 121) - the book's own table reprint pages",
+      "note": "the Compiled tables child closes",
+      "to": "- [x] **Compiled tables** (pp. 121-123) - R558: the thirty-four-table reprint spread verified const-for-const against the landed chapter pins (rules/dsgtabs.h) - Tables 1-9 the movement, 15-16 the odor, 17-18 the cave-ins, 19 the DPV, 20 the unsteady reactions, 21-26 the boats, 27-34 the mining - with the Table 3 five-row grapple delta pinned (the stone parapet, stone wall top, and tree branches rows the chapter original lacked); tables 10-14 not reprinted. Closed R558"
+    }
+  ],
+  "gap_census": {
+    "closed": 143,
+    "open": 12
+  },
+  "caller_files": [],
+  "inline_count": 23
+}
