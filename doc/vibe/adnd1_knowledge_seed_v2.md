@@ -7200,6 +7200,70 @@ when both halves land.
   djvu from ~line 6700, Capture idx 122-123; gap children
   128-133 (the placer value, smelting, duration, hazards
   and claim children), no named tables (a prose round).
+- R523 LANDED 2026-10-17: commit 0573b9b (census 446 -> 447,
+  pushed fbdd59f..0573b9b), THE DSG MINING TAIL, printed
+  p. 53 (pdf 54) plus the claim continuation on printed
+  p. 54 (pdf 55) - the placer value (only gold, silver or
+  platinum placer-minable - copper, iron, mithril and
+  gemstones impossible; the normal page-51 quality
+  determination then the 1d4 x 10 percentage of full value,
+  10-40%), the smelting (one smelter-proficiency character
+  runs the operation with unskilled workers under
+  supervision; the bellows-and-unmeltable-containers
+  equipment over a coal, sometimes wood, fire; the smoke
+  and smell making it almost impossible to conceal; the
+  underground rule that careless ventilation lets the fire
+  consume all the oxygen), the finishing (gemstones rarely
+  need smelting - occasional heat for crusted minerals; the
+  gem cutter proficiency cutting and polishing at 2d20
+  stones per character per day, excavation usually greatly
+  exceeding finishing; and the weekly 1d100
+  exceptional-stone check - a 00 unearths a stone worth
+  1d100 times the week's average value), the duration (the
+  secret d100 man-weeks roll, the doubles ladder - doubles
+  add a d100 of man-months, doubles again a d100 of
+  man-years, repeating until a non-doubles roll; a month
+  four weeks, a year 48 weeks; 12 miners use 12 man-weeks
+  per week; the placer exception disregarding doubles and
+  always depleting in 1-100 man-weeks), the hazards
+  (inherent, with success attracting problems almost
+  automatically), and the claim (the right to remove mineral
+  wealth; clear titles rare, rulers usually holding title;
+  the mining charter - as little as 25 or 30%, more often
+  50%, a strong ruler always 50% - enforced by spies,
+  surprise inspections, discreet observation or a
+  ruler-employed smelter reporting exact amounts; cheating
+  punished usually by death, leniency never restoring the
+  mine; and the wilderness continuation - the overnight
+  land war with tribute and winner-dependent claim
+  recognition, the savage denizens raiding trespassers
+  with cancellable charter-like monster agreements, no
+  legal protection with claims held by force, claim-jumpers
+  proportional to profitability, the rarely-working
+  concealment - entrance hiding with secret doors and
+  brush, tailings spread or dumped in water at the 25%
+  mining rate, the chipping noise carrying to Underdark
+  creatures, the bulette bust-in, the smelter smoke killing
+  concealment - and the wealth-disposal risk). A CLEAN-READ
+  ROUND: both machine reads agree on every number; the only
+  garbles the standing die-notation OCR class (djvu "14100"/
+  "4100", Capture "ld4"/"dlOO" all reading as 1d100/1d4).
+  CATCH-UP LESSON: the exceptional-stone paragraph sits on
+  printed p. 52 with no gap child of its own (it fell
+  between the R521 products child and the R522 quality
+  child) - it rode this round under the Finishing child
+  flip, keeping the report lossless. Pinned as
+  rules/dsgmine5.h (prefix dnrv, verified free; 48 inlines
+  - 16 consts, 32 bools, no tables - a pure prose round).
+  Spec 31,199 bytes, md5 4f1f2cdcd01ef0ff85637b692d6603b5
+  (user-side identical - no ./bn rewrite). Engine applied
+  10 then 0/10. Gap 112/43 -> 118/37 (6 flips: children
+  127-132). NEXT - R524: hireling loyalty (printed pp. 54-
+  55, pdf 55-56) - the loyalty basics, the loyalty checks,
+  the modifiers and the trigger events, with Table 36 if
+  the section carries one; djvu from ~line 7050, Capture
+  idx 127-129; gap child 133 plus any Table 36 manifest
+  line.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
