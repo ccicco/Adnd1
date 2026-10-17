@@ -250,6 +250,7 @@
 #include "rules/dsgarea13.h"  // R546: the DSG Deepearth areas 26-27 pins
 #include "rules/dsgarea14.h"  // R547: the DSG Deepearth areas 28-29 pins
 #include "rules/dsgarea15.h"  // R548: the DSG Deepearth areas 30-31 pins
+#include "rules/dsgdeep.h"  // R549: the DSG Deepearth closure
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -72992,6 +72993,20 @@ int main() {
         )
             ++bad;
         printf("R548 DSG Deepearth areas 30-31 audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R549 DSG Deepearth closed audit ----
+    // The first FLIP-ONLY round: zero consts, zero bools, zero tables - the
+    // census advances by the audit block alone. The pp. 75-98 Lands of
+    // Deepearth child closes against work already landed and verified: the
+    // R533 opener (rules/dsgland.h - the setting frame, the
+    // connecting-passage generation, the area-details framework) and the
+    // R534-R548 individual area key, all 31 areas (rules/dsgarea1.h through
+    // rules/dsgarea15.h).
+    {
+        using namespace rules;
+        int bad = 0;
+        printf("R549 DSG Deepearth closed audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

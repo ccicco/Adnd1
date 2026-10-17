@@ -8690,6 +8690,35 @@ when both halves land.
   carried Area 30's tail, the whirlpool cavern and
   all of Area 31; after R548 lands the pp. 75-98
   Deepearth child GAP-FLIP question reopens).
+- R548 LANDED 2026-10-17: commit fbd8408f56a7d817fd153e8
+  172405e2ced3149d0 (census 471 -> 472, pushed
+  627fcb2..fbd8408), THE DSG DEEPEARTH AREAS 30-31,
+  printed pp. 97-98 (pdf 98-99) - Area 30 the
+  Interplanar Whirlpool (the 2,000-ft plunge down a
+  100-ft-diameter shaft with 20-ft minimum ceilings,
+  the plane-water lake rarely shallower than 100 ft
+  with bottoms 1,000 ft down, the nereid
+  reinforcements arriving within 3 turns, the
+  water-drinking planar corruption) and Area 31 the
+  Darksea (the 100+ mile reach under 1,000-ft
+  ceilings plunging 2,000 ft at deepest, the dozen+
+  aboleth cities, the capital 3x usual size with 36
+  towers against the standard 6). Prose-only round;
+  12 consts + 24 bools, prefix dnaq, header
+  rules/dsgarea15.h, spec 21,385 bytes, 36 inlines;
+  djvu lines ~12557-12709 with capture idx 229
+  cross-read (garbles: seerns->seems, var-dig->
+  vardigg); first try: authored md5 cf3257a8e48110
+  41de3d57dbc8ea91f matched exactly; engine applied
+  4 then 0/4, preflight GREEN with AUDIT CENSUS:
+  472. A ZERO-FLIP ROUND: gap census stays 139/16,
+  the pp. 75-98 Deepearth child open. THE DEEPEARTH
+  AREA KEY IS COMPLETE (areas 1-31, R533-R548).
+  NEXT - R548: decision point - either the Deepearth
+  child gap-flip round (the R527/R533-R548
+  "until the setting lands in full" condition is
+  finally satisfied) or the next DSG section (pp.
+  99+ Campaign Considerations).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
