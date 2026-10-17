@@ -6443,6 +6443,57 @@ when both halves land.
   14 (Mounted Bow Fire); EXTRACTION ROUND first, the
   cross-book seam candidate the WSG combat chapter
   (wsgfight.h R488) - nothing auto-credited.
+- R507 LANDED 2026-10-17: commit 7403fbf (census 432,
+  pushed b9c1f90..7403fbf), the DSG COMBAT RULES FOR
+  UNDERGROUND PLAY, printed pp. 30-33 (pdf 31-34) - the
+  wall, bridge/ledge, grab, water, narrow-passage,
+  darkness, spellcasting and mounted rules with Table 14
+  and the dismount tactics. NOTE THE PLATE: printed p. 31
+  (pdf 32) is a full-page combat ILLUSTRATION PLATE (djvu
+  garbage glyphs, Acrobat zero words) - the chapter text
+  runs pp. 30 and 32-33 with the plummet-to/the-fate cut
+  spanning it; the gap-report child page labels are the
+  TOC's approximations (water/narrow/darkness print on
+  p. 32, mounted runs to p. 33) and flipped as-is. Pinned
+  as rules/dsgfight.h (prefix dnq, verified free; 216
+  inlines: 69 consts + 145 bools + Table 14's 2 cols;
+  34 examples, 2 table_checks). Gap 50/105 -> 60/95:
+  10 flips - the combat PARENT, 8 children, manifest
+  Table 14. SEAMS verified const-for-const against
+  wsgfight.h (R488) and the landed dmv/dmx/dnp DSG
+  headers, NOTHING auto-credited: agreements include the
+  -10 half-hp Climbing Check, water -4/floor 1,
+  darkness -4 + wild swing + Dex -2/Climb -10, mounted
+  +1, exact-hit-strikes-mount, Table 14 -1/-3/-5 with
+  the same band edges, 45 degrees, DMG p. 53, the whole
+  dismount ladder (1d3, natural-20 3-foot, 5-9-foot,
+  10-foot 16-20/25%, dive 1d6); SEVEN flagged divergences
+  pinned as printed - headliner the bridge Dex-per-foot
+  rule runs OPPOSITE SIGN to the WSG edge rule (+2/foot
+  from the drop-off vs WSG -2/foot, and a different
+  trigger: DSG hit-forced, WSG miss/10%-hp-forced), the
+  wall -2 covers attack+damage+saves (WSG splits cliff
+  -2/slope -1), the elevation flat +2/-2, the water
+  waist-threshold halved ladder (no -1 step), the
+  darkness -4 attacks+saves+damage+AC set, the mounted
+  rate of fire HALVES (2/1->1/1, 3/1->3/2) vs the WSG
+  one-step-down-the-scale, the bridge trigger itself;
+  DSG-only: the boulder rules, the grab system, water
+  grappling (UA 106/108), narrow passages (DMG 69-70),
+  spellcasting-in-darkness Table 9, the mount species
+  rules, the rider-vs-grappler -2; WSG-only not
+  credited: moonlight/natural-dark steps, the 50% wild
+  swing, swoop/braced/hover, the -4 pull-down. The
+  -1096 garble settles as -10% (the % -> 96 OCR class);
+  the clumsy-creature rating floor 0 is the one residual
+  caution, pinned as printed. Double-run applied 14/
+  already 0 then 0/14; preflight GREEN, census 432, gap
+  60/95. User-side spec md5 5aaefc7f vs authored
+  991f2515 - cosmetic, standing class. NEXT - R508: the
+  DSG Battlesystem options underground, printed
+  pp. 34-35 (pdf 35-36), no printed grid; EXTRACTION
+  ROUND first (the small chapter may pin in one round);
+  after that the underground-environment/DM section arc.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

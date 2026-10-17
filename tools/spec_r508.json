@@ -1,0 +1,1555 @@
+{
+ "round": 508,
+ "title": "the DSG Battlesystem options underground - the mass-combat adaptation with the narrow frontages, combat/formation/morale modifiers, ventilation, flying, line-of-sight and cave-in rules, plus the R507 chapter tail (the footman pull-down and the stake defenses)",
+ "census_before": 432,
+ "prefix": "dnr",
+ "header_file": "rules/dsgbatt.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "inline_count": 145,
+ "banner": {
+  "title": "The DSG BATTLESYSTEM OPTIONS UNDERGROUND, R508: the printed pp. 34-35 (pdf 35-36) - the opener (battles every bit as common underground, the new tactics, the any-scenario rule), the extremely narrow frontages (the 1/2- and 3/4-inch bottleneck figures), the combat modifiers (the 10% wounded marker vs the standard 25%, with the orc-figure example), the formation modifiers (the column formation, the 1-inch-10-yards scale, the shape-changing figure at twice lengthwise space, the narrower-corridor spacing), the morale effects (the no-room auto-rout and the chain reaction through the blocking friendly unit), the ventilation effects (the doubled gas durations, the wind-carried spell gas at 1/2 the area diameter), the flying effects (the 240/60/30 ceiling bands with the altitude thirds), the line-of-sight effects (the +6 Attack Rating composite of the -4 attacks and damage, the -4 saves, +4 AC vs melee, 1/3 movement, the first-rank obstacle rule, the one-light-per-figure negation, the +2 missile benefit against illuminated units) and the cave-ins (the 6d8 ceiling collapse halved on a save with the 60-dice orc example, the 4d8 mud fall, the 1% base with the +4% cumulative sub-25 increase and the heavy-unit 13-to-26 doubling) - PLUS the R507 chapter tail from the top of printed p. 34: the footman pull-down at -2/-4/-6 by mount speed and the stake defenses (two characters one hour per 10-foot square, the 1d4-1 stakes per 10-foot depth, the chain/plate barding reductions, the 2d6 per stake).",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR with the pdf Acrobat-Capture layer as the second read - every numeric cell dual-confirmed; the three garble classes settled: djvu 648 = 6d8 (proven by the 60-dice orc example at 10 orcs and the 4d8 mud read), djvu 496 = +4% (Acrobat \"raised 4%\"), djvu 1396 = 13% (Acrobat \"13%\", doubled to 26%); the dismount tail pins with this round per the content-density rule (it prints on the top of p. 34, past the R507 gap box's pp. 30-33) and CORRECTS the R507 record's \"WSG-only -4 pull-down\" note - the DSG pull-down is real but speed-band framed (-2/-4/-6) where the WSG pins the flat -4 (wfcGrappleUnmountedPenalty); the +6 Attack Rating is the composite of the R507 dnqDark -4 attacks and damage, verified against rules/dsgfight.h and rules/wsgfight.h const-for-const - NOTHING auto-credited.",
+  "sentinel": "Pure prose round - no printed grid, no tables, no sentinels. The Battlesystem figure-scale cells pin as inches-to-yards consts (1 inch = 10 yards); the wounded-marker and collapse-chance cells pin as percent consts; the R507 tail pins under the same dnr prefix with the provenance note that it is the R507 chapter's own continuation text."
+ },
+ "include_after": "#include \"rules/dsgfight.h\"  // R507: the DSG combat pins",
+ "include_comment": "the DSG battlesystem pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The DSG Battlesystem options underground pins the dismount tail (the footman pull-down at -2 below 6 inches per round, -4 at 7-12, -6 above 12, the free steed attacks on a fast miss, the -1 per additional footman up to 4, the no-damage multi-person cushion, the eight-man-sized-or-four-large surround, and the stake defenses - two characters one hour per 10-foot square of 4-5 foot stakes, the horsemanship check to enter, the 1d4-1 stakes per 10-foot depth, the chain -1 and plate -2 barding reductions, the 2d6 per stake), the opener (any Battlesystem scenario if all agree), the narrow frontages (the 1/2- and 3/4-inch bottleneck figures), the combat modifiers (the 10% wounded marker vs 25% standard, the orc figure at 1-9 dice wounded, 10 or more removed), the formation modifiers (the column formation with command radius at the head and no facing penalty, open for morale, the 1-inch-10-yards scale, the twice-lengthwise shape change with the extra space to the back, the doubled spacing in narrower corridors), the morale effects (the no-room auto-rout, the blocked-routing chain reaction), the ventilation effects (the doubled gas duration, the p. 36 smoke cross-ref, the wind-carried spell gas at 1/2 the area diameter lasting twice the duration), the flying effects (the 240-foot normal band, the 60-240 altitude thirds, the 30-60 medium-and-low split, the under-30 low-only rule), the line-of-sight effects (the +6 Attack Rating composite of the -4 attacks and damage, the -4 saves, the +4 AC vs melee, the 1/3 movement, the automatic first-rank obstacle hit, the one light per figure with the 24-figure example, the +2 missile benefit against illuminated units, the skirmisher exemption) and the cave-ins (the 6d8 collapse halved on a save with the plus-1-inch area and the 60-dice orc example, the 4d8 mud fall, the 1% base chance, the +4% cumulative increase per sub-25 survived check, the heavy-unit 13-to-26 doubling and the direct-hit and adjacent-collapse doublings).",
+ "audit_label": "R508 DSG battlesystem audit",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R507 LANDED 2026-10-17: commit 7403fbf (census 432,",
+ "prev_record": [
+  "- R507 LANDED 2026-10-17: commit 7403fbf (census 432,",
+  "  pushed b9c1f90..7403fbf), the DSG COMBAT RULES FOR",
+  "  UNDERGROUND PLAY, printed pp. 30-33 (pdf 31-34) - the",
+  "  wall, bridge/ledge, grab, water, narrow-passage,",
+  "  darkness, spellcasting and mounted rules with Table 14",
+  "  and the dismount tactics. NOTE THE PLATE: printed p. 31",
+  "  (pdf 32) is a full-page combat ILLUSTRATION PLATE (djvu",
+  "  garbage glyphs, Acrobat zero words) - the chapter text",
+  "  runs pp. 30 and 32-33 with the plummet-to/the-fate cut",
+  "  spanning it; the gap-report child page labels are the",
+  "  TOC's approximations (water/narrow/darkness print on",
+  "  p. 32, mounted runs to p. 33) and flipped as-is. Pinned",
+  "  as rules/dsgfight.h (prefix dnq, verified free; 216",
+  "  inlines: 69 consts + 145 bools + Table 14's 2 cols;",
+  "  34 examples, 2 table_checks). Gap 50/105 -> 60/95:",
+  "  10 flips - the combat PARENT, 8 children, manifest",
+  "  Table 14. SEAMS verified const-for-const against",
+  "  wsgfight.h (R488) and the landed dmv/dmx/dnp DSG",
+  "  headers, NOTHING auto-credited: agreements include the",
+  "  -10 half-hp Climbing Check, water -4/floor 1,",
+  "  darkness -4 + wild swing + Dex -2/Climb -10, mounted",
+  "  +1, exact-hit-strikes-mount, Table 14 -1/-3/-5 with",
+  "  the same band edges, 45 degrees, DMG p. 53, the whole",
+  "  dismount ladder (1d3, natural-20 3-foot, 5-9-foot,",
+  "  10-foot 16-20/25%, dive 1d6); SEVEN flagged divergences",
+  "  pinned as printed - headliner the bridge Dex-per-foot",
+  "  rule runs OPPOSITE SIGN to the WSG edge rule (+2/foot",
+  "  from the drop-off vs WSG -2/foot, and a different",
+  "  trigger: DSG hit-forced, WSG miss/10%-hp-forced), the",
+  "  wall -2 covers attack+damage+saves (WSG splits cliff",
+  "  -2/slope -1), the elevation flat +2/-2, the water",
+  "  waist-threshold halved ladder (no -1 step), the",
+  "  darkness -4 attacks+saves+damage+AC set, the mounted",
+  "  rate of fire HALVES (2/1->1/1, 3/1->3/2) vs the WSG",
+  "  one-step-down-the-scale, the bridge trigger itself;",
+  "  DSG-only: the boulder rules, the grab system, water",
+  "  grappling (UA 106/108), narrow passages (DMG 69-70),",
+  "  spellcasting-in-darkness Table 9, the mount species",
+  "  rules, the rider-vs-grappler -2; WSG-only not",
+  "  credited: moonlight/natural-dark steps, the 50% wild",
+  "  swing, swoop/braced/hover, the -4 pull-down. The",
+  "  -1096 garble settles as -10% (the % -> 96 OCR class);",
+  "  the clumsy-creature rating floor 0 is the one residual",
+  "  caution, pinned as printed. Double-run applied 14/",
+  "  already 0 then 0/14; preflight GREEN, census 432, gap",
+  "  60/95. User-side spec md5 5aaefc7f vs authored",
+  "  991f2515 - cosmetic, standing class. NEXT - R508: the",
+  "  DSG Battlesystem options underground, printed",
+  "  pp. 34-35 (pdf 35-36), no printed grid; EXTRACTION",
+  "  ROUND first (the small chapter may pin in one round);",
+  "  after that the underground-environment/DM section arc."
+ ],
+ "gap_census": {
+  "closed": 69,
+  "open": 86
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **Battlesystem options underground** (pp. 34-35) - the mass-combat adaptation: narrow frontages, combat modifiers, formation modifiers, morale effects, ventilation effects, flying effects, line-of-sight effects and battlefield cave-ins",
+   "to": "- [x] **Battlesystem options underground** (pp. 34-35) - the mass-combat adaptation: narrow frontages, combat modifiers, formation modifiers, morale effects, ventilation effects, flying effects, line-of-sight effects and battlefield cave-ins - R508: the Battlesystem chapter in one round - the column-formation rules, the 10% wounded marker, the morale chain reaction, the doubled gas durations, the ceiling-band flight rules, the +6 Attack Rating darkness composite and the cave-in system (with the R507 dismount tail from the top of p. 34: the speed-banded footman pull-down and the stake defenses)",
+   "note": "the battlesystem parent"
+  },
+  {
+   "from": "  - [ ] Extremely narrow frontages (p. 34)",
+   "to": "  - [x] Extremely narrow frontages (p. 34) - R508: the bottleneck rule - a single 1/2- or 3/4-inch figure holds a gap against a column; modify when only one or two figures face each other",
+   "note": "extremely narrow frontages"
+  },
+  {
+   "from": "  - [ ] Combat modifiers (p. 34)",
+   "to": "  - [x] Combat modifiers (p. 34) - R508: the wounded marker at 10% of the figure's Hit Dice (vs 25% standard), with the orc-figure example (1-9 dice wounds, less than 1 die nothing, 10 or more removes)",
+   "note": "combat modifiers"
+  },
+  {
+   "from": "  - [ ] Formation modifiers (p. 34)",
+   "to": "  - [x] Formation modifiers (p. 34) - R508: the column formation (one figure wide, command radius at the head, no facing-change penalty, open for morale), the 1-inch-10-yards scale, the shape-changing figure doubling its lengthwise space to the back, and the narrower-corridor spacing that doubles column length",
+   "note": "formation modifiers"
+  },
+  {
+   "from": "  - [ ] Morale effects (p. 34)",
+   "to": "  - [x] Morale effects (p. 34) - R508: the closed formation without room to expand automatically routs, and a routing formation blocked by a friendly unit routes the blocker - a chain reaction of whatever length required",
+   "note": "morale effects"
+  },
+  {
+   "from": "  - [ ] Ventilation effects (p. 34)",
+   "to": "  - [x] Ventilation effects (p. 34) - R508: the doubled poison-gas durations underground (skipped under unusually good circulation), the smoke cross-reference to the p. 36 environment section, and the wind-carried spell gas in a tunnel up to 1/2 the area-of-effect diameter lasting twice the normal duration",
+   "note": "ventilation effects"
+  },
+  {
+   "from": "  - [ ] Flying effects (p. 34)",
+   "to": "  - [x] Flying effects (p. 34) - R508: the ceiling bands - 240+ feet normal rules (no upward escape), 60-240 the altitude thirds, 30-60 medium and low evenly divided, under 30 low-level only, maneuverability critical",
+   "note": "flying effects"
+  },
+  {
+   "from": "  - [ ] Line-of-sight effects (p. 35)",
+   "to": "  - [x] Line-of-sight effects (p. 35) - R508: the +6 Attack Rating darkness composite (the -4 attacks and damage of blinded creatures), the -4 saves, +4 AC vs melee, 1/3 movement, the automatic first-rank obstacle hit, the one-light-per-figure negation with the 24-figure example, and the +2 missile benefit against illuminated units that spread-out skirmishers escape",
+   "note": "line-of-sight effects"
+  },
+  {
+   "from": "  - [ ] Cave-ins on a battlefield (p. 35)",
+   "to": "  - [x] Cave-ins on a battlefield (p. 35) - R508: the ceiling collapse at 6d8 (halved on a save) with the area plus 1 inch in all directions and the 60-dice orc-figure example, the 4d8 mud fall, and the fragile-formation system - base 1%, the secret d100 check, the +4% cumulative increase per sub-25 survived check, and the doublings for heavy units (13% to 26%), direct spell hits and adjacent collapses",
+   "note": "cave-ins on a battlefield"
+  }
+ ],
+ "consts": [
+  {
+   "name": "dnrPullSlowMaxInches",
+   "value": 6,
+   "comment": "the pull-down slow band: the steed moving at 6 inches per round or less."
+  },
+  {
+   "name": "dnrPullSlowPenalty",
+   "value": 2,
+   "comment": "the pull-down attack modifier in the slow band: -2."
+  },
+  {
+   "name": "dnrPullMidMinInches",
+   "value": 7,
+   "comment": "the pull-down mid band opens at 7 inches per round."
+  },
+  {
+   "name": "dnrPullMidMaxInches",
+   "value": 12,
+   "comment": "the pull-down mid band ceiling: 12 inches per round."
+  },
+  {
+   "name": "dnrPullMidPenalty",
+   "value": 4,
+   "comment": "the pull-down attack modifier in the mid band: -4 (the WSG pins a flat -4 for the unmounted pull-down - different framing, pinned as printed)."
+  },
+  {
+   "name": "dnrPullFastMinInches",
+   "value": 12,
+   "comment": "the pull-down fast band opens above 12 inches per round."
+  },
+  {
+   "name": "dnrPullFastPenalty",
+   "value": 6,
+   "comment": "the pull-down attack modifier in the fast band: -6."
+  },
+  {
+   "name": "dnrPullExtraFootmanMax",
+   "value": 4,
+   "comment": "each additional footman grappling - up to 4 - applies a penalty to the rider's Proficiency Check."
+  },
+  {
+   "name": "dnrPullExtraFootmanPenalty",
+   "value": 1,
+   "comment": "the per-additional-footman penalty to the rider's Proficiency Check: -1."
+  },
+  {
+   "name": "dnrPullSurroundManSizedCount",
+   "value": 8,
+   "comment": "a mount surrounded by eight man-sized creatures can be pulled down with its rider."
+  },
+  {
+   "name": "dnrPullSurroundLargeCount",
+   "value": 4,
+   "comment": "a mount surrounded by four large creatures can be pulled down with its rider."
+  },
+  {
+   "name": "dnrStakesPrepCharacters",
+   "value": 2,
+   "comment": "it takes two characters to prepare a staked defensive area."
+  },
+  {
+   "name": "dnrStakesPrepHours",
+   "value": 1,
+   "comment": "the staked-area preparation time: one hour."
+  },
+  {
+   "name": "dnrStakesAreaFeetSq",
+   "value": 10,
+   "comment": "the prepared stakes cover a 10-foot-square area."
+  },
+  {
+   "name": "dnrStakesLengthLoFt",
+   "value": 4,
+   "comment": "the stakes run about four feet in length."
+  },
+  {
+   "name": "dnrStakesLengthHiFt",
+   "value": 5,
+   "comment": "the stakes run up to about five feet in length."
+  },
+  {
+   "name": "dnrStakesHitDiceMinus",
+   "value": 1,
+   "comment": "the mount hits 0-3 stakes per 10-foot depth of the defenses: 1d4-1 (one die, minus 1)."
+  },
+  {
+   "name": "dnrStakesHitDiceSides",
+   "value": 4,
+   "comment": "the stakes-hit die: d4."
+  },
+  {
+   "name": "dnrStakesPerDepthFt",
+   "value": 10,
+   "comment": "the stakes hit per 10-foot-depth of the defenses."
+  },
+  {
+   "name": "dnrStakesBardingChainReduction",
+   "value": 1,
+   "comment": "chain mail barding reduces the number of stakes that hit by -1."
+  },
+  {
+   "name": "dnrStakesBardingPlateReduction",
+   "value": 2,
+   "comment": "plate barding reduces the number of stakes that hit by -2."
+  },
+  {
+   "name": "dnrStakeDamageDice",
+   "value": 2,
+   "comment": "each stake causes 2d6 points of damage to the mount: two dice."
+  },
+  {
+   "name": "dnrStakeDamageSides",
+   "value": 6,
+   "comment": "the stake damage die: d6."
+  },
+  {
+   "name": "dnrFrontNarrowFigureHalfInch",
+   "value": 2,
+   "comment": "the narrow bottleneck figures: the 1/2-inch-wide figure denominator (one half inch)."
+  },
+  {
+   "name": "dnrFrontNarrowFigureThreeQuarter",
+   "value": 3,
+   "comment": "the narrow bottleneck figures: the 3/4-inch-wide figure numerator-half (three quarters inch)."
+  },
+  {
+   "name": "dnrWoundedThresholdPct",
+   "value": 10,
+   "comment": "the wounded marker threshold underground: 10% or more of the figure's Hit Dice removed."
+  },
+  {
+   "name": "dnrWoundedStandardPct",
+   "value": 25,
+   "comment": "the standard-rules wounded marker threshold: 25% or more - the underground rule is stricter."
+  },
+  {
+   "name": "dnrWoundedOrcFigureOrcs",
+   "value": 10,
+   "comment": "the worked example orc figure represents 10 orcs."
+  },
+  {
+   "name": "dnrWoundedOrcFigureHitDice",
+   "value": 10,
+   "comment": "the worked example orc figure carries a total of 10 Hit Dice."
+  },
+  {
+   "name": "dnrWoundedOrcWoundedLoDice",
+   "value": 1,
+   "comment": "the orc figure is marked wounded if an attack inflicts 1-9 dice of damage: the floor 1."
+  },
+  {
+   "name": "dnrWoundedOrcWoundedHiDice",
+   "value": 9,
+   "comment": "the wounded-band ceiling in the orc example: 9 dice of damage still only wounds."
+  },
+  {
+   "name": "dnrWoundedRemovedDice",
+   "value": 10,
+   "comment": "an attack inflicting 10 or more dice removes the figure."
+  },
+  {
+   "name": "dnrScaleInchYards",
+   "value": 10,
+   "comment": "the Battlesystem game scale: 1 inch equals 10 yards."
+  },
+  {
+   "name": "dnrFigureLengthwiseMult",
+   "value": 2,
+   "comment": "the tight-confines figure occupies twice as much space lengthwise as it normally would."
+  },
+  {
+   "name": "dnrVentGasDurationMult",
+   "value": 2,
+   "comment": "the duration of all poisonous gases is DOUBLED when released underground."
+  },
+  {
+   "name": "dnrVentSmokeRefPage",
+   "value": 36,
+   "comment": "the smoke-effects cross-reference: the Underground Environment section on printed p. 36."
+  },
+  {
+   "name": "dnrVentSpellGasMaxDiameterFrac",
+   "value": 2,
+   "comment": "the wind-carry case requires a tunnel or passageway no more than 1/2 the diameter of the spell's area of effect (denominator 2)."
+  },
+  {
+   "name": "dnrFlyNormalMinCeilingFt",
+   "value": 240,
+   "comment": "a ceiling of 240 feet or higher uses the normal Battlesystem flight rules."
+  },
+  {
+   "name": "dnrFlyThirdsMinCeilingFt",
+   "value": 60,
+   "comment": "the thirds mapping opens at a ceiling of 60 feet."
+  },
+  {
+   "name": "dnrFlyTwoBandMinCeilingFt",
+   "value": 30,
+   "comment": "the two-altitude band opens above a 30-foot ceiling."
+  },
+  {
+   "name": "dnrLosArPenalty",
+   "value": 6,
+   "comment": "creatures without infravision fighting in darkness suffer a +6 penalty to the unit's Attack Rating."
+  },
+  {
+   "name": "dnrLosSavePenalty",
+   "value": 4,
+   "comment": "the saving throws of individuals unable to see suffer a -4 penalty."
+  },
+  {
+   "name": "dnrLosAcMeleePenalty",
+   "value": 4,
+   "comment": "the Armor Class of the creatures is raised by four against all melee attacks."
+  },
+  {
+   "name": "dnrLosMoveMultDen",
+   "value": 3,
+   "comment": "the movement rating of a unit that cannot see is reduced to 1/3 of its original (denominator 3)."
+  },
+  {
+   "name": "dnrLosLightExampleFigures",
+   "value": 24,
+   "comment": "the worked example: in a unit of 24 figures, at least 24 individuals must be equipped with torches or magical lights."
+  },
+  {
+   "name": "dnrLosLitMissileArBonus",
+   "value": 2,
+   "comment": "if missiles are fired against the illuminated unit, the Attack Rating of the missile-using troops receives a +2 benefit in addition to any other modifiers that apply."
+  },
+  {
+   "name": "dnrCaveinPlusInches",
+   "value": 1,
+   "comment": "the ground area expansion of a ceiling collapse: plus 1 inch in all directions."
+  },
+  {
+   "name": "dnrCaveinDamageDice",
+   "value": 6,
+   "comment": "a ceiling collapse deals 6d8 hit points of damage to all creatures in the area of effect: six dice (the djvu 648 garble, settled by the 60-dice orc example and the 4d8 mud read)."
+  },
+  {
+   "name": "dnrCaveinDamageSides",
+   "value": 8,
+   "comment": "the ceiling-collapse damage die: d8."
+  },
+  {
+   "name": "dnrCaveinOrcFigureDice",
+   "value": 60,
+   "comment": "the worked-example collapse damage on the 10-orc figure: 60 dice."
+  },
+  {
+   "name": "dnrCaveinMudDamageDice",
+   "value": 4,
+   "comment": "a similar weight of falling mud deals only 4d8 points of damage."
+  },
+  {
+   "name": "dnrCaveinMudDamageSides",
+   "value": 8,
+   "comment": "the falling-mud damage die: d8."
+  },
+  {
+   "name": "dnrCaveinBasePct",
+   "value": 1,
+   "comment": "the base chance of a frail feature collapsing is 1% whenever marching or melee combat occurs nearby."
+  },
+  {
+   "name": "dnrCaveinCumulativeRollBelow",
+   "value": 25,
+   "comment": "if a formation is checked once and does not collapse, but the resulting d100 roll was less than 25, the collapse chance rises."
+  },
+  {
+   "name": "dnrCaveinCumulativePlusPct",
+   "value": 4,
+   "comment": "the cumulative collapse-chance increase per sub-25 survived check: +4% (the djvu 496 garble, Acrobat \"raised 4%\")."
+  },
+  {
+   "name": "dnrCaveinHeavyExamplePct",
+   "value": 13,
+   "comment": "the worked example: a bridge with a 13% chance of collapse (the djvu 1396 garble, Acrobat 13%)."
+  },
+  {
+   "name": "dnrCaveinHeavyExampleDoubledPct",
+   "value": 26,
+   "comment": "the worked example doubled: the 13% bridge has a 26% chance if a heavy cavalry unit gallops over it."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnrFootmanPullManSizedOnly",
+   "value": true,
+   "comment": "characters and creatures on foot can attempt to pull a rider from his horse - but only creatures that are man-sized or larger."
+  },
+  {
+   "name": "dnrFootmanPullLargerCountTwoMen",
+   "value": true,
+   "comment": "creatures larger than man-size count as two men for the pull attempt."
+  },
+  {
+   "name": "dnrFootmanGrabAsPasses",
+   "value": true,
+   "comment": "the character on foot must first grab the rider as he passes by, with an attack roll modified by the speed of the mount."
+  },
+  {
+   "name": "dnrPullHitFollowsGrappleProcedure",
+   "value": true,
+   "comment": "a successful pull-down hit follows the same procedure as if the rider had been grappled by a mounted opponent."
+  },
+  {
+   "name": "dnrPullMissFastFreeAttacks",
+   "value": true,
+   "comment": "on a missed pull-down attempt with the steed moving faster than 12 inches per round, the steed gets a free set of attacks against the character on foot."
+  },
+  {
+   "name": "dnrPullMultiPersonNoDamage",
+   "value": true,
+   "comment": "a rider pulled from his mount by more than one person suffers no damage - his opponents actually cushion his fall."
+  },
+  {
+   "name": "dnrPullBothMountAndRider",
+   "value": true,
+   "comment": "the surrounded case pulls down both the mount and the rider."
+  },
+  {
+   "name": "dnrPullBothKeepNormalAttacks",
+   "value": true,
+   "comment": "during this combat both the mount and the rider are allowed their normal attacks."
+  },
+  {
+   "name": "dnrSetDefensesPreparable",
+   "value": true,
+   "comment": "given time and material, set defenses can be prepared to dismount riders and stop horses."
+  },
+  {
+   "name": "dnrSetDefensesSimpleTricks",
+   "value": true,
+   "comment": "most of the set defenses are simple tricks and traps - a rope hung between two columns at the rider's height, a trip wire, etc."
+  },
+  {
+   "name": "dnrSetDefensesDmChance",
+   "value": true,
+   "comment": "the DM determines the chance of success for these types of traps."
+  },
+  {
+   "name": "dnrStakesSharpened",
+   "value": true,
+   "comment": "for defense against mounted attackers, sharpened stakes can be set in the ground."
+  },
+  {
+   "name": "dnrStakesNeedSaplings",
+   "value": true,
+   "comment": "the stakes require a supply of saplings, light wood, or spears."
+  },
+  {
+   "name": "dnrStakesEasilySpotted",
+   "value": true,
+   "comment": "the defensive areas are easily spotted and can be avoided if there is an alternate route."
+  },
+  {
+   "name": "dnrStakesEnterHorsemanshipCheck",
+   "value": true,
+   "comment": "a rider who wishes his mount to enter a staked area must make a horsemanship Proficiency Check, just as if trying a jump or leap."
+  },
+  {
+   "name": "dnrStakesCheckFailRefuses",
+   "value": true,
+   "comment": "a failed check means the mount refuses to enter the area, although it continues moving in another direction if possible."
+  },
+  {
+   "name": "dnrStakesCheckSuccessEnters",
+   "value": true,
+   "comment": "a successful check means the mount enters the defended area."
+  },
+  {
+   "name": "dnrStakeDamageChargingOrNot",
+   "value": true,
+   "comment": "the stake damage applies whether or not the steed was charging at the time."
+  },
+  {
+   "name": "dnrBsBattlesCommonUnderground",
+   "value": true,
+   "comment": "battles are every bit as common underground as on the surface - armed expeditions to the underearth, or subterranean races vying for control of key tunnel sections."
+  },
+  {
+   "name": "dnrBsMassCombatInstrument",
+   "value": true,
+   "comment": "mass combat can be an instrument of every underground campaign."
+  },
+  {
+   "name": "dnrBsConstrictedNewTactics",
+   "value": true,
+   "comment": "the constricted nature of the underground environment demands a whole new set of tactics for warfare in the underearth."
+  },
+  {
+   "name": "dnrBsDarknessFlyingNovel",
+   "value": true,
+   "comment": "darkness and restrictions on flying create situations not commonly encountered above ground."
+  },
+  {
+   "name": "dnrBsForUnderearthBattlefields",
+   "value": true,
+   "comment": "the optional Battlesystem rules are designed for the unusual battlefields of the underearth."
+  },
+  {
+   "name": "dnrBsClarifiesIndoorWarfare",
+   "value": true,
+   "comment": "the rules also serve to clarify other types of combat, such as indoor or house-to-house warfare."
+  },
+  {
+   "name": "dnrBsAnyScenarioIfAllAgree",
+   "value": true,
+   "comment": "if all players are agreeable, the rules can be employed during any Battlesystem scenario."
+  },
+  {
+   "name": "dnrFrontBottleneckHoldsGap",
+   "value": true,
+   "comment": "underground battlefields often possess terrain bottlenecks that allow a single figure to hold a gap against a long column of attackers."
+  },
+  {
+   "name": "dnrFrontDesignedSeveralFigures",
+   "value": true,
+   "comment": "the Battlesystem rules are designed for combat between several figures at a time."
+  },
+  {
+   "name": "dnrFrontModifyOneOrTwo",
+   "value": true,
+   "comment": "the rules should be modified if only one or two figures face each other in combat."
+  },
+  {
+   "name": "dnrWoundedStricterThanStandard",
+   "value": true,
+   "comment": "the underground wounded threshold is stricter than the standard 25%."
+  },
+  {
+   "name": "dnrWoundedBelowOneDieNoEffect",
+   "value": true,
+   "comment": "an attack inflicting less than one die of damage does not affect the figure."
+  },
+  {
+   "name": "dnrColTunnelsForceColumns",
+   "value": true,
+   "comment": "movement through winding tunnels and narrow passages is difficult for military units in formation - such units generally move as long, thin columns."
+  },
+  {
+   "name": "dnrColOneFigureWide",
+   "value": true,
+   "comment": "a column formation displays as a line of figures, one figure wide and as long as the number of figures in the unit."
+  },
+  {
+   "name": "dnrColCommandRadiusAtHead",
+   "value": true,
+   "comment": "a column is in its leader's command radius when the figure at its head is in the leader's command radius."
+  },
+  {
+   "name": "dnrColNoFacingPenalty",
+   "value": true,
+   "comment": "a column pays no movement penalty for changing facing - as the tunnel winds, the column winds with it and still moves a distance equal to its movement rating."
+  },
+  {
+   "name": "dnrColOpenForMorale",
+   "value": true,
+   "comment": "a unit in column formation is considered in open formation for purposes of morale checks."
+  },
+  {
+   "name": "dnrScaleHalflingCannotOccupy",
+   "value": true,
+   "comment": "at the game scale not even a 1/2-inch halfling or kobold figure could normally occupy a 10-foot-wide corridor."
+  },
+  {
+   "name": "dnrFigureChangesShape",
+   "value": true,
+   "comment": "the individual creatures can still fit into the area, so the figure is assumed to change its shape to fit the tight confines."
+  },
+  {
+   "name": "dnrFigureOccupiesMoreFrontToBack",
+   "value": true,
+   "comment": "the figure actually occupies more space front to back than it does from side to side."
+  },
+  {
+   "name": "dnrFigureExtraSpaceToBack",
+   "value": true,
+   "comment": "the extra space is always considered to lie to the back of the figure."
+  },
+  {
+   "name": "dnrFigureAdjacentInFront",
+   "value": true,
+   "comment": "a 3/4-inch figure in a 1/3-inch corridor can be placed adjacent to an enemy figure in front of it."
+  },
+  {
+   "name": "dnrFigureRearApproachLimit",
+   "value": true,
+   "comment": "if another figure, friendly or enemy, approaches from the rear, it can only move to within 3/4 inch of the original figure."
+  },
+  {
+   "name": "dnrColNarrowerFiguresSpread",
+   "value": true,
+   "comment": "if a column or portion thereof occupies a corridor narrower than its figures, the figures must be placed twice as far apart as normal."
+  },
+  {
+   "name": "dnrColNarrowerDoublesLength",
+   "value": true,
+   "comment": "the twice-as-far-apart placement doubles the length of the column."
+  },
+  {
+   "name": "dnrMoraleClosedBreaksHarmful",
+   "value": true,
+   "comment": "units in closed formation can suffer harmful morale effects if forced to break into open formation where they lack sufficient room."
+  },
+  {
+   "name": "dnrMoraleExpandSidesFrontRear",
+   "value": true,
+   "comment": "a closed formation unit forced to break open can expand to the sides, or to the front or rear."
+  },
+  {
+   "name": "dnrMoraleNoRoomAutoRouts",
+   "value": true,
+   "comment": "a closed formation unit without enough space to expand fully in at least one direction automatically routs."
+  },
+  {
+   "name": "dnrMoraleRoutingBlockedRoutesBlocker",
+   "value": true,
+   "comment": "if a routing formation is prohibited from performing its routing movement by the presence of a friendly unit - no possible retreat path around it - the unit blocking the path of retreat is automatically routed."
+  },
+  {
+   "name": "dnrMoraleChainReaction",
+   "value": true,
+   "comment": "the automatic routing can turn into a chain reaction of whatever length is required to clear a path for the routing units."
+  },
+  {
+   "name": "dnrVentGoodCirculationSkip",
+   "value": true,
+   "comment": "if an underground battlefield has unusually good air circulation by natural or manufactured means, the ventilation rule should not be used."
+  },
+  {
+   "name": "dnrVentAirSlowerUnderground",
+   "value": true,
+   "comment": "in most cases air circulates much more slowly underground than in the outside world - gases and smoke take much longer to disperse."
+  },
+  {
+   "name": "dnrVentSmokeMajorProblem",
+   "value": true,
+   "comment": "the smoke caused by fires can create a major problem underground (see the Underground Environment section, printed p. 36)."
+  },
+  {
+   "name": "dnrVentSpellGasWindCarried",
+   "value": true,
+   "comment": "a gaseous spell effect in a windy but relatively small area can be moved by the wind and still retain its potency."
+  },
+  {
+   "name": "dnrVentWindCarryDurationDoubled",
+   "value": true,
+   "comment": "wind blowing through the cave does not disperse the gas until twice the normal duration of the gas."
+  },
+  {
+   "name": "dnrVentWindCarryAffectsPath",
+   "value": true,
+   "comment": "the carried gas affects all susceptible creatures in its path."
+  },
+  {
+   "name": "dnrFlyLargeCavernsAllowFlight",
+   "value": true,
+   "comment": "while the dimensions of many underground battlefields prohibit flying creatures, certain extraordinary caverns and realms are large enough to allow flight."
+  },
+  {
+   "name": "dnrFlyMayNotEscapeUpward",
+   "value": true,
+   "comment": "even with a normal-rules ceiling, a flying creature might not be able to escape the battlefield by flying up and away."
+  },
+  {
+   "name": "dnrFlyThirdsMapping",
+   "value": true,
+   "comment": "between 60 and 240 feet use the normal low, medium and high designations, altered so low covers the bottom third, medium the middle third, and high the upper third of the available flying space."
+  },
+  {
+   "name": "dnrFlyTwoBandOnly",
+   "value": true,
+   "comment": "a ceiling greater than 30 but less than 60 feet uses only medium and low altitudes, evenly divided between the two elevations."
+  },
+  {
+   "name": "dnrFlyLowOnlyUnderThirty",
+   "value": true,
+   "comment": "ceilings lower than 30 feet allow only low-level flying creatures to take flight."
+  },
+  {
+   "name": "dnrFlyManeuverabilityCritical",
+   "value": true,
+   "comment": "flying underground is very tricky and maneuverability is critical."
+  },
+  {
+   "name": "dnrLosBlackerThanNightBattles",
+   "value": true,
+   "comment": "a battle fought in the inky blackness of the underearth suffers vision effects even more extreme than those listed for Night Battles - Battlesystem game case 12.5."
+  },
+  {
+   "name": "dnrLosNeedFireMagicPhosphorescence",
+   "value": true,
+   "comment": "unless fire, magical light, or a patch of phosphorescence somehow illuminates the field, creatures without infravision are at a great disadvantage."
+  },
+  {
+   "name": "dnrLosArCompositesAttacksDamage",
+   "value": true,
+   "comment": "the +6 Attack Rating penalty reflects the combined effects of the -4 to attacks and -4 damage applied to blinded creatures (the R507 dnqDark numbers)."
+  },
+  {
+   "name": "dnrLosObstacleFirstRankAuto",
+   "value": true,
+   "comment": "if a unit unable to see encounters an unexpected obstacle such as a pit, pool of mud, or anything else that could trap the leading rank, the entire first rank of the unit is automatically affected."
+  },
+  {
+   "name": "dnrLosObstaclePushExplanation",
+   "value": true,
+   "comment": "the first-rank rule accounts for the fact that even at the slowed rate, the front individuals cannot communicate the obstacle before the ranks behind push them into it."
+  },
+  {
+   "name": "dnrLosOneLightPerFigure",
+   "value": true,
+   "comment": "at least one light source must be employed for each figure in the unit to negate the darkness penalties."
+  },
+  {
+   "name": "dnrLosLitMovesNormal",
+   "value": true,
+   "comment": "a unit carrying its light source moves at its normal rate."
+  },
+  {
+   "name": "dnrLosLitMeleesNormal",
+   "value": true,
+   "comment": "the illuminated unit performs melee attacks normally."
+  },
+  {
+   "name": "dnrLosLitSavesNormal",
+   "value": true,
+   "comment": "the illuminated unit makes saving throws with the usual percentage chance of success."
+  },
+  {
+   "name": "dnrLosLitNoMissilesAtUnseen",
+   "value": true,
+   "comment": "the illuminated unit cannot fire missiles at targets it cannot see."
+  },
+  {
+   "name": "dnrLosLitNoChargeBeyondVision",
+   "value": true,
+   "comment": "the illuminated unit cannot initiate a charge against a unit out of its range of vision."
+  },
+  {
+   "name": "dnrLosLitEasilySeen",
+   "value": true,
+   "comment": "a unit thus illuminated is easily seen by all forces on the field."
+  },
+  {
+   "name": "dnrSkirmishersIlluminateTargets",
+   "value": true,
+   "comment": "skirmishers can advance before a formation with torches, illuminating an enemy unit or target, or marking the terrain for a unit soon to come that way."
+  },
+  {
+   "name": "dnrSkirmishersNoLitPenalty",
+   "value": true,
+   "comment": "because they are spread so, skirmishers with torches do not suffer the +2 penalty against them when fired at with missile weapons."
+  },
+  {
+   "name": "dnrCaveinSpellsHighDemand",
+   "value": true,
+   "comment": "spells and effects that bring the massive weight of stone crashing down on foes are in high demand underground - the damage wrought by a collapse is devastating."
+  },
+  {
+   "name": "dnrCaveinEarthquakeCommon",
+   "value": true,
+   "comment": "earthquake and transmute rock to mud are commonly used to bring down ceilings."
+  },
+  {
+   "name": "dnrCaveinAreaPlusInch",
+   "value": true,
+   "comment": "if a ceiling collapses, the area affected on the ground is the same as the area of the ceiling collapsed, plus 1 inch in all directions."
+  },
+  {
+   "name": "dnrCaveinSaveHalves",
+   "value": true,
+   "comment": "a saving throw vs. spell reduces the collapse damage to half."
+  },
+  {
+   "name": "dnrCaveinOrcFigureDestroyed",
+   "value": true,
+   "comment": "the worked example: the 10-orc figure suffers 60 dice of damage and is automatically destroyed whether it saves or not."
+  },
+  {
+   "name": "dnrCaveinMudSaveHalves",
+   "value": true,
+   "comment": "the mud-fall damage is again halved if the saving throw is successful."
+  },
+  {
+   "name": "dnrCaveinUnstableDmDiscretion",
+   "value": true,
+   "comment": "unstable bridges, ledges, or other rock formations subject to unusual stress when heavy creatures move across or next to them are left to the DM's discretion."
+  },
+  {
+   "name": "dnrCaveinColumnsArchesCracked",
+   "value": true,
+   "comment": "along with bridges and ledges, the collapse of narrow columns or arches - even worn and cracked sections of cavern ceilings - can be catastrophic."
+  },
+  {
+   "name": "dnrCaveinSpellsTrigger",
+   "value": true,
+   "comment": "spells such as lightning bolt or earthquake can also trigger the collapse."
+  },
+  {
+   "name": "dnrCaveinSecretCheck",
+   "value": true,
+   "comment": "the DM or neutral referee should make a secret d100 check whenever stress is applied to a fragile formation."
+  },
+  {
+   "name": "dnrCaveinCumulativeEffect",
+   "value": true,
+   "comment": "the cumulative increase means the feature could grow increasingly fragile as the battle continues."
+  },
+  {
+   "name": "dnrCaveinHeavyUnitsDouble",
+   "value": true,
+   "comment": "the presence of heavy units - heavy cavalry, chariots, or large creatures - doubles the chance of a collapse."
+  },
+  {
+   "name": "dnrCaveinDirectSpellHitDoubles",
+   "value": true,
+   "comment": "the formation's chance of collapsing doubles if an explosive spell such as a lightning bolt strikes it directly."
+  },
+  {
+   "name": "dnrCaveinAdjacentCollapseDoubles",
+   "value": true,
+   "comment": "the chance also doubles if an earthquake or similar effect causes the rock immediately adjacent to the threatened area to collapse."
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['dnrPullSlowMaxInches']() != 6 or m['dnrPullSlowPenalty']() != 2 or m['dnrPullMidMinInches']() != 7 or m['dnrPullMidMaxInches']() != 12 or m['dnrPullMidPenalty']() != 4 or m['dnrPullFastMinInches']() != 12 or m['dnrPullFastPenalty']() != 6",
+   "note": "the pull-down speed bands: -2 at 6 or less, -4 at 7-12, -6 above 12 inches per round."
+  },
+  {
+   "expr": "m['dnrPullSlowPenalty']() + 2 != m['dnrPullMidPenalty']() or m['dnrPullMidPenalty']() + 2 != m['dnrPullFastPenalty']()",
+   "note": "the pull-down penalty ladder steps by 2: -2, -4, -6."
+  },
+  {
+   "expr": "m['dnrPullExtraFootmanMax']() != 4 or m['dnrPullExtraFootmanPenalty']() != 1",
+   "note": "each additional footman up to 4 applies -1 to the rider's Proficiency Check."
+  },
+  {
+   "expr": "m['dnrPullSurroundManSizedCount']() != 8 or m['dnrPullSurroundLargeCount']() != 4",
+   "note": "the surround counts: eight man-sized or four large creatures pull down both mount and rider."
+  },
+  {
+   "expr": "m['dnrStakesPrepCharacters']() != 2 or m['dnrStakesPrepHours']() != 1 or m['dnrStakesAreaFeetSq']() != 10 or m['dnrStakesLengthLoFt']() != 4 or m['dnrStakesLengthHiFt']() != 5",
+   "note": "the stakes: two characters, one hour, a 10-foot-square area, 4-5 foot stakes."
+  },
+  {
+   "expr": "m['dnrStakesHitDiceSides']() != 4 or m['dnrStakesHitDiceMinus']() != 1 or m['dnrStakesPerDepthFt']() != 10",
+   "note": "the stakes hit 1d4-1 per 10-foot depth of the defenses."
+  },
+  {
+   "expr": "m['dnrStakesBardingChainReduction']() != 1 or m['dnrStakesBardingPlateReduction']() != 2",
+   "note": "barding reductions: -1 chain mail, -2 plate."
+  },
+  {
+   "expr": "m['dnrStakeDamageDice']() != 2 or m['dnrStakeDamageSides']() != 6",
+   "note": "each stake deals 2d6 to the mount, charging or not."
+  },
+  {
+   "expr": "m['dnrWoundedThresholdPct']() != 10 or m['dnrWoundedStandardPct']() != 25",
+   "note": "the underground wounded marker at 10% vs the standard 25%."
+  },
+  {
+   "expr": "m['dnrWoundedOrcFigureOrcs']() != 10 or m['dnrWoundedOrcFigureHitDice']() != 10 or m['dnrWoundedOrcWoundedLoDice']() != 1 or m['dnrWoundedOrcWoundedHiDice']() != 9 or m['dnrWoundedRemovedDice']() != 10",
+   "note": "the orc-figure example: 10 orcs / 10 HD, 1-9 dice wounds, 10+ dice removes."
+  },
+  {
+   "expr": "m['dnrScaleInchYards']() != 10 or m['dnrFigureLengthwiseMult']() != 2",
+   "note": "the scale 1 inch = 10 yards; the tight-confines figure doubles its lengthwise space."
+  },
+  {
+   "expr": "m['dnrVentGasDurationMult']() != 2 or m['dnrVentSmokeRefPage']() != 36 or m['dnrVentSpellGasMaxDiameterFrac']() != 2",
+   "note": "gas duration doubled underground, the smoke cross-ref p. 36, the wind-carry case at 1/2 the area-of-effect diameter."
+  },
+  {
+   "expr": "m['dnrFlyNormalMinCeilingFt']() != 240 or m['dnrFlyThirdsMinCeilingFt']() != 60 or m['dnrFlyTwoBandMinCeilingFt']() != 30",
+   "note": "the flying ceiling bands: 240 normal, 60-240 thirds, 30-60 medium and low, under 30 low only."
+  },
+  {
+   "expr": "m['dnrLosArPenalty']() != 6 or m['dnrLosSavePenalty']() != 4 or m['dnrLosAcMeleePenalty']() != 4 or m['dnrLosMoveMultDen']() != 3 or m['dnrLosLitMissileArBonus']() != 2 or m['dnrLosLightExampleFigures']() != 24",
+   "note": "the line-of-sight penalties: +6 AR, -4 saves, +4 AC vs melee, 1/3 movement, +2 against illuminated units, the 24-figure example."
+  },
+  {
+   "expr": "m['dnrLosSavePenalty']() != m['dnrLosAcMeleePenalty']()",
+   "note": "the darkness save penalty equals the AC-vs-melee penalty: both 4."
+  },
+  {
+   "expr": "m['dnrCaveinDamageDice']() != 6 or m['dnrCaveinDamageSides']() != 8 or m['dnrCaveinPlusInches']() != 1",
+   "note": "the ceiling collapse: 6d8 damage, the area plus 1 inch in all directions."
+  },
+  {
+   "expr": "m['dnrCaveinOrcFigureDice']() != 60 or m['dnrCaveinOrcFigureDestroyed']() != 1",
+   "note": "the worked example: the 10-orc figure suffers 60 dice and is destroyed save or not."
+  },
+  {
+   "expr": "m['dnrCaveinMudDamageDice']() != 4 or m['dnrCaveinMudDamageSides']() != 8",
+   "note": "the falling-mud damage: 4d8, halved on a save."
+  },
+  {
+   "expr": "m['dnrCaveinMudDamageSides']() != m['dnrCaveinDamageSides']()",
+   "note": "the collapse and mud-fall damage dice are both d8."
+  },
+  {
+   "expr": "m['dnrCaveinBasePct']() != 1 or m['dnrCaveinCumulativeRollBelow']() != 25 or m['dnrCaveinCumulativePlusPct']() != 4",
+   "note": "the fragile-formation collapse: base 1%, +4% cumulative per sub-25 survived check."
+  },
+  {
+   "expr": "m['dnrCaveinHeavyExamplePct']() != 13 or m['dnrCaveinHeavyExampleDoubledPct']() != 26",
+   "note": "the heavy-unit doubling example: 13% becomes 26% under galloping heavy cavalry."
+  },
+  {
+   "expr": "m['dnrCaveinHeavyExampleDoubledPct']() - m['dnrCaveinHeavyExamplePct']() != m['dnrCaveinHeavyExamplePct']()",
+   "note": "the heavy-unit example is a true doubling: 26 = 13 + 13."
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the R507 tail: footmen pulling riders": [
+   {
+    "kind": "bool",
+    "name": "dnrFootmanPullManSizedOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFootmanPullLargerCountTwoMen"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFootmanGrabAsPasses"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullSlowMaxInches"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullSlowPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullMidMinInches"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullMidMaxInches"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullMidPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullFastMinInches"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullFastPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrPullHitFollowsGrappleProcedure"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrPullMissFastFreeAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullExtraFootmanMax"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullExtraFootmanPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrPullMultiPersonNoDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullSurroundManSizedCount"
+   },
+   {
+    "kind": "const",
+    "name": "dnrPullSurroundLargeCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrPullBothMountAndRider"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrPullBothKeepNormalAttacks"
+   }
+  ],
+  "the R507 tail: set defenses and stakes": [
+   {
+    "kind": "bool",
+    "name": "dnrSetDefensesPreparable"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrSetDefensesSimpleTricks"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrSetDefensesDmChance"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrStakesSharpened"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakesPrepCharacters"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakesPrepHours"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakesAreaFeetSq"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakesLengthLoFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakesLengthHiFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrStakesNeedSaplings"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrStakesEasilySpotted"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrStakesEnterHorsemanshipCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrStakesCheckFailRefuses"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrStakesCheckSuccessEnters"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakesHitDiceMinus"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakesHitDiceSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakesPerDepthFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakesBardingChainReduction"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakesBardingPlateReduction"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakeDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnrStakeDamageSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrStakeDamageChargingOrNot"
+   }
+  ],
+  "the Battlesystem opener": [
+   {
+    "kind": "bool",
+    "name": "dnrBsBattlesCommonUnderground"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrBsMassCombatInstrument"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrBsConstrictedNewTactics"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrBsDarknessFlyingNovel"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrBsForUnderearthBattlefields"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrBsClarifiesIndoorWarfare"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrBsAnyScenarioIfAllAgree"
+   }
+  ],
+  "extremely narrow frontages": [
+   {
+    "kind": "bool",
+    "name": "dnrFrontBottleneckHoldsGap"
+   },
+   {
+    "kind": "const",
+    "name": "dnrFrontNarrowFigureHalfInch"
+   },
+   {
+    "kind": "const",
+    "name": "dnrFrontNarrowFigureThreeQuarter"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFrontDesignedSeveralFigures"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFrontModifyOneOrTwo"
+   }
+  ],
+  "combat modifiers": [
+   {
+    "kind": "const",
+    "name": "dnrWoundedThresholdPct"
+   },
+   {
+    "kind": "const",
+    "name": "dnrWoundedStandardPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrWoundedStricterThanStandard"
+   },
+   {
+    "kind": "const",
+    "name": "dnrWoundedOrcFigureOrcs"
+   },
+   {
+    "kind": "const",
+    "name": "dnrWoundedOrcFigureHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnrWoundedOrcWoundedLoDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnrWoundedOrcWoundedHiDice"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrWoundedBelowOneDieNoEffect"
+   },
+   {
+    "kind": "const",
+    "name": "dnrWoundedRemovedDice"
+   }
+  ],
+  "formation modifiers": [
+   {
+    "kind": "bool",
+    "name": "dnrColTunnelsForceColumns"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrColOneFigureWide"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrColCommandRadiusAtHead"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrColNoFacingPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrColOpenForMorale"
+   },
+   {
+    "kind": "const",
+    "name": "dnrScaleInchYards"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrScaleHalflingCannotOccupy"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFigureChangesShape"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFigureOccupiesMoreFrontToBack"
+   },
+   {
+    "kind": "const",
+    "name": "dnrFigureLengthwiseMult"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFigureExtraSpaceToBack"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFigureAdjacentInFront"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFigureRearApproachLimit"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrColNarrowerFiguresSpread"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrColNarrowerDoublesLength"
+   }
+  ],
+  "morale effects": [
+   {
+    "kind": "bool",
+    "name": "dnrMoraleClosedBreaksHarmful"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrMoraleExpandSidesFrontRear"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrMoraleNoRoomAutoRouts"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrMoraleRoutingBlockedRoutesBlocker"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrMoraleChainReaction"
+   }
+  ],
+  "ventilation effects": [
+   {
+    "kind": "bool",
+    "name": "dnrVentGoodCirculationSkip"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrVentAirSlowerUnderground"
+   },
+   {
+    "kind": "const",
+    "name": "dnrVentGasDurationMult"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrVentSmokeMajorProblem"
+   },
+   {
+    "kind": "const",
+    "name": "dnrVentSmokeRefPage"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrVentSpellGasWindCarried"
+   },
+   {
+    "kind": "const",
+    "name": "dnrVentSpellGasMaxDiameterFrac"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrVentWindCarryDurationDoubled"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrVentWindCarryAffectsPath"
+   }
+  ],
+  "flying effects": [
+   {
+    "kind": "bool",
+    "name": "dnrFlyLargeCavernsAllowFlight"
+   },
+   {
+    "kind": "const",
+    "name": "dnrFlyNormalMinCeilingFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFlyMayNotEscapeUpward"
+   },
+   {
+    "kind": "const",
+    "name": "dnrFlyThirdsMinCeilingFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFlyThirdsMapping"
+   },
+   {
+    "kind": "const",
+    "name": "dnrFlyTwoBandMinCeilingFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFlyTwoBandOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFlyLowOnlyUnderThirty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrFlyManeuverabilityCritical"
+   }
+  ],
+  "line-of-sight effects": [
+   {
+    "kind": "bool",
+    "name": "dnrLosBlackerThanNightBattles"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosNeedFireMagicPhosphorescence"
+   },
+   {
+    "kind": "const",
+    "name": "dnrLosArPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosArCompositesAttacksDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dnrLosSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dnrLosAcMeleePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dnrLosMoveMultDen"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosObstacleFirstRankAuto"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosObstaclePushExplanation"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosOneLightPerFigure"
+   },
+   {
+    "kind": "const",
+    "name": "dnrLosLightExampleFigures"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosLitMovesNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosLitMeleesNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosLitSavesNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosLitNoMissilesAtUnseen"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosLitNoChargeBeyondVision"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrLosLitEasilySeen"
+   },
+   {
+    "kind": "const",
+    "name": "dnrLosLitMissileArBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrSkirmishersIlluminateTargets"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrSkirmishersNoLitPenalty"
+   }
+  ],
+  "cave-ins on a battlefield": [
+   {
+    "kind": "bool",
+    "name": "dnrCaveinSpellsHighDemand"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinEarthquakeCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinAreaPlusInch"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinPlusInches"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinDamageSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinSaveHalves"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinOrcFigureDestroyed"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinOrcFigureDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinMudDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinMudDamageSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinMudSaveHalves"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinUnstableDmDiscretion"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinColumnsArchesCracked"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinBasePct"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinSpellsTrigger"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinSecretCheck"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinCumulativeRollBelow"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinCumulativePlusPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinCumulativeEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinHeavyUnitsDouble"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinHeavyExamplePct"
+   },
+   {
+    "kind": "const",
+    "name": "dnrCaveinHeavyExampleDoubledPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinDirectSpellHitDoubles"
+   },
+   {
+    "kind": "bool",
+    "name": "dnrCaveinAdjacentCollapseDoubles"
+   }
+  ]
+ },
+ "caller_files": []
+}
+
