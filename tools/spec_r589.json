@@ -1,0 +1,279 @@
+{
+ "round": 589,
+ "prefix": "dds",
+ "header_file": "rules/concordantopposition.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 512,
+ "title": "Concordant Opposition",
+ "audit_label": "R589 Opposition audit",
+ "audit_comment": "CONCORDANT OPPOSITION, printed pp. 114-116, the exception plane: true neutral if aligned at all, connecting every outer plane and the Astral, mixing all their properties - limitless yet with a definite center, moment-to-moment change like chaos yet the same order and placement, good and evil coexisting with their effects on each other reduced. It presents a different face each visit (a gothic city, an aquatic wonderland, a forest of hollow trees) yet the familiar still find their way, the special locations constant; the first visit always a much-larger version of the traveler's homeland - the farm boy in acres of farms, the scribe in a massive library, the modern guide among more interlocking wheels than busy Nirvana. The minimum-damage rule: random-damage weapons and spells inflict the least possible (the short sword 1, the two-handed broadsword 3, cure light wounds 1, the heal all but 1), poisons and strength and magic bonuses unaffected, true throughout the plane. The center: a tower, column, mountain, waterspout, tornado, or tree, unclimbable, unenterable, undamageable by any means godly or not - and the neutralization ladder, one spell level per 100 miles inward from the 9th at 1,000 miles to the 1st at 200, with the specials: illusions failing as gems of seeing at 700 and life-draining dying; astral portals and artificial poisons at 600; natural poisons and the conduits' reach at 500; conjuration, summoning, and the demi-gods' powers at 400; the lesser gods' at 300; the greater gods' at 200; and at 100 the chemical reactions stop, neither man nor god a step closer. The Powers' common ground: the central region as meeting place and trade-market, the differing-alignment Greater Powers conferring at 200 miles without fear of advantage. The ways in: the color pools landing beyond 600 miles, and the great ring of white disks at the 1,000-mile mark - simple disks laid into any ground, party-sized, destination by concentration, majority rules, and the chaotic (alone or in majority) sometimes wrong: 1-80 the intended plane, 81-90 one step around the wheel, 91-00 the opposite location (do you remember the smell of brimstone the last time we were in Olympus?). The features: no native races, all the outer planes' intelligentsia at home frequencies - demons, devils, Anu's warriors, weapon-seeking spirit legions, einherjar, planetars, devas, slaadi; the Powers who reject the wheel - true neutrals, exiles, and the above-alignment - coloring the plane's face to their sensibilities, keeping domains outside the ring, and seeking the center when overmatched. The census: Dagda's Celtic swath of Tir na Og with Mag Mell, Brigit, Diancocht, Dunatis, Lugh, Morrigan, Nuada and Silvanus; Manannan mac Lir's Tir fo Thuiran under the waves; Goibhniu's weapons that work only in the Land of Youth; Ogma's near-center prison where devils and demons are negated; Thoth and Bes with their unoverlapping portfolios and separate households; Untamo's Sleeping Lands beside clattering Tvashtri and his discovery-first inventions; the Modrons' well of souls at the very edge of the center, an unattainable Yggdrasil where men and Powers seek their fortunes from the fates; Yen-Wang-Yeh the Chinese sorter of the dead, one week a year before the August Personage of Jade while his assistant misplaces the wandering spirits; Semuanya's swamp beside Eadro's sea of locathah and mermen; Sheela Peryroyal's orchard; Dumathoin's realm reaching near the center; and Vergadain the dwarven luck-god, suspiciously similar to Bes, both denying they are one Power.",
+ "include_comment": "the Concordant Opposition pins",
+ "include_after": "#include \"rules/acheron.h\"  // R588: the Acheron pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R588 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R588 LANDED 2026-10-17: commit",
+  "  cda2afa9eaa04ac6bc4ded97ad3379c4dd",
+  "  7b31a6 (census 511 -> 512, pushed",
+  "  fd8e03f..cda2afa), ACHERON, printed",
+  "  pp. 113-114, the iron-shod battle",
+  "  plains of lawful evil bridging the",
+  "  Hells and Nirvana's clockwork: the",
+  "  four block layers (Avalas with the",
+  "  black metal-hard ground, the iron",
+  "  citadels and the Styx rising from pit",
+  "  to pit, Thuldanin the scrap heap - the",
+  "  hollow blocks of stone-turned ships",
+  "  and devices at 0.1% per day's search",
+  "  and the monthly crushing-blow saves,",
+  "  Tintibulus and the fault-fractured",
+  "  hexagons of the solid grey volcanic",
+  "  blocks, Ocanthus's razor squares from",
+  "  inches to miles striking edge-on for",
+  "  1d10 dice as a 1d10-hit-die monster",
+  "  with no magical-armor benefit), the",
+  "  spherical portals hung fixed in space",
+  "  and read by their activation sound",
+  "  (the harmonious chord to Nirvana, the",
+  "  discord to Avernus, the silence to",
+  "  Concordant Opposition) with the 20d6",
+  "  arrival fall for the flightless, the",
+  "  unmoored barriers with the",
+  "  18-Intelligence pattern check (one per",
+  "  visit), the spirit legions - nations",
+  "  of the lawful-evil war dead who lost",
+  "  sight of their objectives, leaderless",
+  "  and reborn to full strength within 24",
+  "  hours - and the Powers (Lei Kung the",
+  "  Duke of Thunder alone on his",
+  "  cloud-island temple smiting for",
+  "  Shang-Ti; Maglubiyet and Gruumsh",
+  "  sharing one large spinning block, the",
+  "  goblin and orcish legions clashing",
+  "  daily, the wandering orcish pantheon",
+  "  seeking an Asgard of their own, the",
+  "  orbiting holdings of Luthic, Bahgtru",
+  "  and Ilneval, both sides waiting to hold",
+  "  the layer as the elves hold Arvandor -",
+  "  the everlasting war most deities cite",
+  "  as the folly of violence for its own",
+  "  end). 4 consts + 6 bools, prefix ddr,",
+  "  header rules/acheron.h. ONE flip: gap",
+  "  census 77/13 -> 78/12. Spec 17,147",
+  "  bytes, md5 d3f41796cdd8c4f4d97245d0",
+  "  cc9ee591 matched exactly first try,",
+  "  10 inlines. TWENTY-THREE straight",
+  "  first-tries (R566-R588). NEXT - R589:",
+  "  Concordant Opposition (pp. 114-116,",
+  "  the odd plane - the definite center,",
+  "  the ever-changing face resembling the",
+  "  traveler's homeland, the min-damage",
+  "  neutralization; PLUS the two gap",
+  "  tables: the center table p. 115 and",
+  "  the chaotic-destination table p. 116;",
+  "  page-115 already read, page-116.md",
+  "  still to read for the center mechanics",
+  "  and the destination roll)."
+ ],
+ "banner": {
+  "title": "CONCORDANT OPPOSITION - printed pp. 114-116, the odd plane at the wheel's hub: the ever-changing homeland face, the minimum-damage rule, the unclimbable center with its 100-mile spell ladder, the white disks of the 1,000-mile ring, the chaotic-destination roll, and the Powers from Dagda's Tir na Og to the Modrons' well of souls.",
+  "provenance": "verified against printed pp. 114-116 of the uploaded motp.pdf OCR; the center table and the chaotic-destination table (the report's last two MotP table boxes) are pinned in full, along with the minimum-damage rule, the disk ring, and the Powers census exactly as printed (the Modrons restored against the OCR's Norris, Eadro of the locathah); the closing essay Beyond the outer planes is left for the round that owns it.",
+  "sentinel": "the gap census after this round: 81 closed, 9 open - THREE boxes fall (the Concordant Opposition, the center table, the chaotic-destination table); the plane-by-plane census of the Manual of the Planes is CLOSED, with only the closing essay beyond the outer planes left to the MotP chapter."
+ },
+ "consts": [
+  {
+   "name": "ddsCenterSpellStepMiles",
+   "value": 100,
+   "comment": "the center table's spell ladder: each 100 miles inward from the ring neutralizes one spell level and its spell-like abilities, from the 9th at 1,000 miles down through the 1st at 200; spell-like abilities that mimic spells of different levels are always treated at the lesser level, and the lost levels apply to all casters - clerics, whose spells top at 7th, do not begin losing abilities until 800 miles from the center."
+  },
+  {
+   "name": "ddsCenterChemicalFloorMiles",
+   "value": 100,
+   "comment": "the center's absolute floor: at 100 miles chemical reactions - burning, dissolving, and the like - no longer work, and neither man nor god can come closer to the center; the center itself appears variously as a great tower, column, mountain, waterspout, tornado, or tree, and regardless of form cannot be climbed, entered, or damaged by any means, godly or not."
+  },
+  {
+   "name": "ddsChaosDestIntendedPct",
+   "value": 80,
+   "comment": "the chaotic-destination table (the report's box): chaotic travelers - chaotic good, chaotic evil, or chaotic neutral - or a chaotic-majority group sometimes end up in the wrong plane: 1-80 the intended destination."
+  },
+  {
+   "name": "ddsChaosDestAdjacentPct",
+   "value": 90,
+   "comment": "the chaotic-destination table, second band: 81-90 one plane away clockwise or counterclockwise on the wheel."
+  },
+  {
+   "name": "ddsChaosDestOppositePct",
+   "value": 100,
+   "comment": "the chaotic-destination table, final band: 91-00 the opposite location on the great wheel (that's odd - do you remember the smell of brimstone the last time we were in Olympus?)."
+  },
+  {
+   "name": "ddsPortalRingMiles",
+   "value": 1000,
+   "comment": "the ring of white disks: the portals to every other outer plane exist in a great ring at the 1,000-mile mark from the center, always appearing as simple white disks laid into the ground regardless of their surroundings, in sizes up to a whole adventuring party; color pools land more than 600 miles out."
+  }
+ ],
+ "bools": [
+  {
+   "name": "ddsOppositionDoctrine",
+   "value": true,
+   "comment": "the Concordant Opposition doctrine: the exception to many of the rules and assumptions concerning the outer planes - it does not coincide neatly with the great wheel (if it has an alignment, true neutral), yet creatures from every outer plane and the Astral are found here, for it connects with all of them; whether it is truly an outer plane or an entirely new form of plane or demi-plane is unrevealed. It mixes the properties of all the planes it touches: limitless yet with a definite center, changing from moment to moment like chaos yet always keeping the same sense of order and placement, good and evil coexisting in different forms with their ability to affect each other reduced. It has either a single layer or a multitude of similar layers with similar inhabitants, presenting a different face each visit - a gothic city, an aquatic wonderland, a great forest of hollow trees - yet the familiar traveler still finds his way (the same special locations, however varied); in general the first visit always resembles a much-larger version of the traveler's homeland (the farm boy sees acres of farms, his scribe companion a massive library, their modern guide more interlocking wheels than Nirvana at its busiest). Powers residing here can manipulate the appearance to a slight degree, but cannot fully control what it shows to others."
+  },
+  {
+   "name": "ddsMinDamageRule",
+   "value": true,
+   "comment": "the minimum-damage neutralization: weapons and spells that hurt (or heal) a random amount of damage inflict the minimum possible - a short sword 1 point, a two-handed broadsword 3, cure light wounds restores 1, cause light wounds inflicts 1, and a heal spell returns all but 1 point; poisons and other damage not measured by hit points are unaffected, as are strength and magical-weapon bonuses - true throughout the plane."
+  },
+  {
+   "name": "ddsCenterRule",
+   "value": true,
+   "comment": "the center neutralization ladder (the table's specials): at 700 miles illusion and phantasm spells fail as if all viewers wore gems of seeing (without revealing the plane's true nature) and life-draining abilities die; at 600 astral viewing portals and artificial poisons die; at 500 natural internal poisons die and conduits from other planes cannot reach beyond; at 400 no conjuration or summoning functions and the powers of demi-gods die; at 300 the powers of lesser gods die; at 200 the 1st level is gone and the powers of greater gods die; and at 100 chemical reactions stop and none - man or god - may come closer. Because powers are lost near the center yet regained on moving away, the central region serves as meeting place, trade-market, and common ground for the Powers: two hundred miles out, Greater Powers of differing alignment confer without fear that either side can turn the situation to its advantage."
+  },
+  {
+   "name": "ddsDiskRule",
+   "value": true,
+   "comment": "the white-disk travel rule: all disks send travelers to any of the outer planes merely by concentration, and in groups majority rules - a party of three paladins and four imps will likely end up wherever the imps decide to go; chaotic alignments sometimes end up in the wrong plane, the chaotic traveler or chaotic-majority group rolling on the destination table."
+  },
+  {
+   "name": "ddsOppositionInhabitants",
+   "value": true,
+   "comment": "the inhabitants: Concordant Opposition - sometimes called Goddard or the Friendly Opposition - has no native races, but a large number of extraplanar beings engage in trading, meetings, and the service of higher powers; all intelligent creatures of the outer planes are found here at their home-plane frequencies, the plane overrun by demons, devils, warriors of Anu, spirit legions seeking weapons, einherjar, planetars, devas, and slaadi. The Powers tend to reject the standard aligned-wheel concept: true neutrals, Powers removed from or having left their pantheons, and those above such petty concerns as alignment - unable to fully control what travelers see and hear, they color it to their own sensibilities (the Celts toward woodlands, Thoth toward places of learning). Most make their permanent domains outside the ring of white disks where their powers function as fully as the plane permits, and a Power challenged here seeks the areas nearer the center if overmatched, or takes the attacker to another plane where the god's full power may make the battle easier."
+  },
+  {
+   "name": "ddsOppositionPowers",
+   "value": true,
+   "comment": "the Powers of the Opposition: Dagda the Dagda King and most of the Celtic mythos rule a large swath radiating from the circle of white disks outward like a wheel - with Brigit, Diancocht, Dunatis, Lugh, Morrigan, Nuada, and Silvanus - the whole realm called Tir na Og, the Land of Youth, and Dagda's own domain Mag Mell, the Field of Happiness; Manannan mac Lir, the Celtic sea god, in the great ocean Tir fo Thuiran, the Land under the Waves; Goibhniu the Celtic blacksmith of the gods, said to craft weapons that function normally within the Land of Youth though the power fails outside it; Ogma, the Celtic god of knowledge, keeping a small domain closer to the center with a prison for extraplanar trouble-makers (usually devils and demons) where their powers are negated and they can do no mischief. Of the Egyptians, Thoth the god of knowledge and Bes the luck Power keep large expanses beyond the circle and lesser estates within, their portfolios unoverlapping, with little to do with each other save in times of need (usually Bes's). Untamo of the Finns in the Sleeping Lands, the lesser god of dreams rarely venturing beyond his borders - adjacent, surprisingly, to the noisy clattering realm of Tvashtri the Indian demi-god of artifice and science, its pipes, columns, and recently discovered inventions guarded jealously, for he believes discovery is the most important factor in creation, not gifts from the gods. The Modrons are said to have their well of souls at the very edge of the center, identifying it as an unattainable part of the Yggdrasil though it behaves unlike any other part of the World Ash conduit - here men and Powers alike seek their fortunes from the fates. Yen-Wang-Yeh across from Untamo, sorting the spirits of the Chinese mythos to their final destinations so they neither tarry on the Prime nor rest in the wrong place - a faithful bureaucratic servant answering to Shang-Ti who leaves one week a year to present his books to the August Personage of Jade in Nirvana, and it is during that week, with his assistant controlling the dead, that many spirits wander the earth and are misplaced. And the nonhuman escapes from factional politics: Semuanya of the lizard men in a great swampy region outside the circle, bordering the great sea of Eadro of the locathah and mermen; Sheela Peryroyal of the halflings in a rich orchard and farm nearby; Dumathoin of the dwarves in a large underground realm extending to very near the center; and Vergadain the dwarven god of luck, suspiciously similar to Bes in appearance and portfolio (luck and wealth), maintaining a separate household - both deny being one Power, and the few times they have been seen in the same plane prove nothing with Powers of this caliber."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the CenterSpellStepMiles pin",
+   "expr": "m['ddsCenterSpellStepMiles']() != 100"
+  },
+  {
+   "note": "the CenterChemicalFloorMiles pin",
+   "expr": "m['ddsCenterChemicalFloorMiles']() != 100"
+  },
+  {
+   "note": "the ChaosDestIntendedPct pin",
+   "expr": "m['ddsChaosDestIntendedPct']() != 80"
+  },
+  {
+   "note": "the ChaosDestAdjacentPct pin",
+   "expr": "m['ddsChaosDestAdjacentPct']() != 90"
+  },
+  {
+   "note": "the ChaosDestOppositePct pin",
+   "expr": "m['ddsChaosDestOppositePct']() != 100"
+  },
+  {
+   "note": "the PortalRingMiles pin",
+   "expr": "m['ddsPortalRingMiles']() != 1000"
+  },
+  {
+   "note": "the OppositionDoctrine pin",
+   "expr": "m['ddsOppositionDoctrine']() != 1"
+  },
+  {
+   "note": "the MinDamageRule pin",
+   "expr": "m['ddsMinDamageRule']() != 1"
+  },
+  {
+   "note": "the CenterRule pin",
+   "expr": "m['ddsCenterRule']() != 1"
+  },
+  {
+   "note": "the DiskRule pin",
+   "expr": "m['ddsDiskRule']() != 1"
+  },
+  {
+   "note": "the OppositionInhabitants pin",
+   "expr": "m['ddsOppositionInhabitants']() != 1"
+  },
+  {
+   "note": "the OppositionPowers pin",
+   "expr": "m['ddsOppositionPowers']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the concordant opposition pins": [
+   {
+    "kind": "const",
+    "name": "ddsCenterSpellStepMiles"
+   },
+   {
+    "kind": "const",
+    "name": "ddsCenterChemicalFloorMiles"
+   },
+   {
+    "kind": "const",
+    "name": "ddsChaosDestIntendedPct"
+   },
+   {
+    "kind": "const",
+    "name": "ddsChaosDestAdjacentPct"
+   },
+   {
+    "kind": "const",
+    "name": "ddsChaosDestOppositePct"
+   },
+   {
+    "kind": "const",
+    "name": "ddsPortalRingMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "ddsOppositionDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "ddsMinDamageRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddsCenterRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddsDiskRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddsOppositionInhabitants"
+   },
+   {
+    "kind": "bool",
+    "name": "ddsOppositionPowers"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the center table",
+   "from": "  - [ ] The Concordant Opposition center table (p. 115) - the powers-neutralized-by-distance roll",
+   "to": "  - [x] The Concordant Opposition center table (p. 115) - the powers-neutralized-by-distance roll - R589: the dds center pins (the 100-mile spell ladder from the 9th level at 1,000 miles to the chemical-reaction floor at 100, the god-power rungs, the meeting ground at 200)"
+  },
+  {
+   "note": "the chaotic-destination table",
+   "from": "  - [ ] The Concordant Opposition chaotic-destination table (p. 116) - the wrong-plane roll for chaotic travelers",
+   "to": "  - [x] The Concordant Opposition chaotic-destination table (p. 116) - the wrong-plane roll for chaotic travelers - R589: the dds destination pins (the 80/10/10 d100 split - intended, one plane off, the opposite of the wheel)"
+  },
+  {
+   "note": "the concordant opposition",
+   "from": "  - [ ] The Concordant Opposition (pp. 114-116)",
+   "to": "  - [x] The Concordant Opposition (pp. 114-116) - R589: the odd plane (the ever-changing homeland face, the minimum-damage rule, the ring of white disks at 1,000 miles, the center no god may touch, the full Powers census from Dagda and Tir na Og to Yen-Wang-Yeh and Vergadain)"
+  }
+ ],
+ "gap_census": {
+  "closed": 81,
+  "open": 9
+ },
+ "caller_files": [],
+ "inline_count": 12
+}

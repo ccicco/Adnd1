@@ -10377,6 +10377,68 @@ when both halves land.
   read, page-115.md still to read for
   the rest of the Acheron features and
   the goblinoid legions).
+- R588 LANDED 2026-10-17: commit
+  cda2afa9eaa04ac6bc4ded97ad3379c4dd
+  7b31a6 (census 511 -> 512, pushed
+  fd8e03f..cda2afa), ACHERON, printed
+  pp. 113-114, the iron-shod battle
+  plains of lawful evil bridging the
+  Hells and Nirvana's clockwork: the
+  four block layers (Avalas with the
+  black metal-hard ground, the iron
+  citadels and the Styx rising from pit
+  to pit, Thuldanin the scrap heap - the
+  hollow blocks of stone-turned ships
+  and devices at 0.1% per day's search
+  and the monthly crushing-blow saves,
+  Tintibulus and the fault-fractured
+  hexagons of the solid grey volcanic
+  blocks, Ocanthus's razor squares from
+  inches to miles striking edge-on for
+  1d10 dice as a 1d10-hit-die monster
+  with no magical-armor benefit), the
+  spherical portals hung fixed in space
+  and read by their activation sound
+  (the harmonious chord to Nirvana, the
+  discord to Avernus, the silence to
+  Concordant Opposition) with the 20d6
+  arrival fall for the flightless, the
+  unmoored barriers with the
+  18-Intelligence pattern check (one per
+  visit), the spirit legions - nations
+  of the lawful-evil war dead who lost
+  sight of their objectives, leaderless
+  and reborn to full strength within 24
+  hours - and the Powers (Lei Kung the
+  Duke of Thunder alone on his
+  cloud-island temple smiting for
+  Shang-Ti; Maglubiyet and Gruumsh
+  sharing one large spinning block, the
+  goblin and orcish legions clashing
+  daily, the wandering orcish pantheon
+  seeking an Asgard of their own, the
+  orbiting holdings of Luthic, Bahgtru
+  and Ilneval, both sides waiting to hold
+  the layer as the elves hold Arvandor -
+  the everlasting war most deities cite
+  as the folly of violence for its own
+  end). 4 consts + 6 bools, prefix ddr,
+  header rules/acheron.h. ONE flip: gap
+  census 77/13 -> 78/12. Spec 17,147
+  bytes, md5 d3f41796cdd8c4f4d97245d0
+  cc9ee591 matched exactly first try,
+  10 inlines. TWENTY-THREE straight
+  first-tries (R566-R588). NEXT - R589:
+  Concordant Opposition (pp. 114-116,
+  the odd plane - the definite center,
+  the ever-changing face resembling the
+  traveler's homeland, the min-damage
+  neutralization; PLUS the two gap
+  tables: the center table p. 115 and
+  the chaotic-destination table p. 116;
+  page-115 already read, page-116.md
+  still to read for the center mechanics
+  and the destination roll).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

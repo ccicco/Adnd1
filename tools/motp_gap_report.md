@@ -108,8 +108,8 @@ sample entries verified against the canonical PHB levels).
   - [x] The Olympus spell-casting-creatures table (p. 92) - the 10%-can-cast roll - R580: AMENDED - the table is the Beastlands beasts table (10% of very-intelligent beasts cast, the d100 spell ladder, the doubled hit dice), not Olympus
   - [x] The Limbo random-entry table (p. 97) - the baked/frozen/drowning/sliding-earth entry roll - R582: the ddk entry pins (the 20/20/20/20/9/9/2 d100 split, the drowning-compression-fire-cold effects)
   - [x] The Abyssal-layers terrain table (p. 101) - the general-description roll - R583: the ddl terrain pins (the eight even 10-point bands, the delusion and realm bands, the evil-incarnate tail with the bodak transformation)
-  - [ ] The Concordant Opposition center table (p. 115) - the powers-neutralized-by-distance roll
-  - [ ] The Concordant Opposition chaotic-destination table (p. 116) - the wrong-plane roll for chaotic travelers
+  - [x] The Concordant Opposition center table (p. 115) - the powers-neutralized-by-distance roll - R589: the dds center pins (the 100-mile spell ladder from the 9th level at 1,000 miles to the chemical-reaction floor at 100, the god-power rungs, the meeting ground at 200)
+  - [x] The Concordant Opposition chaotic-destination table (p. 116) - the wrong-plane roll for chaotic travelers - R589: the dds destination pins (the 80/10/10 d100 split - intended, one plane off, the opposite of the wheel)
   - [x] Nirvana (pp. 84-86) - R578: the clockwork plane (the disks, the no-illusion rule, Primus, the pantheons)
   - [x] Arcadia (pp. 86-87) - R578: the orchard plane (the day sphere, the potion fruit, the watch beasts, the militias, Marduk and Clanggedin)
   - [x] The Seven Heavens (pp. 87-89) - R579: the seven ascending layers (Lunia to Chronias, the archon ladder, Yondalla and Moradin, Bahamut)
@@ -126,7 +126,7 @@ sample entries verified against the canonical PHB levels).
   - [x] Gehenna (pp. 107-109) - R586: the fourfold furnaces (the 45-degree gravity, the four layers, the black-chasm portals, the barghests, Chih-Chiang Fyu-Ya, Loviatar, Shargaas the Night Lord)
   - [x] The Nine Hells (pp. 109-113) - R587: the nine layers and the arch-devils (Avernus through Nessus, the reddish-hoop portals, the home-layer immunity, the three factions, Asmodeus the overlord, and the Powers from Set and Sekolah to Kurtulmak and No Cha)
   - [x] Acheron (pp. 113-114) - R588: the iron-shod battle plains (the four block layers, the spherical portals by sound, the spirit legions reborn in 24 hours, Lei Kung on his cloud, Maglubiyet and Gruumsh on the contested block)
-  - [ ] The Concordant Opposition (pp. 114-116)
+  - [x] The Concordant Opposition (pp. 114-116) - R589: the odd plane (the ever-changing homeland face, the minimum-damage rule, the ring of white disks at 1,000 miles, the center no god may touch, the full Powers census from Dagda and Tir na Og to Yen-Wang-Yeh and Vergadain)
   - [ ] Beyond the outer planes (p. 116)
 - [ ] **Appendix I: The Prime Material Planes** (pp. 117-119) - the Alternate Primes doctrine
   - [ ] The Prime physical-factor table (p. 117) - the 1d10 factor and the odd/even sign roll
