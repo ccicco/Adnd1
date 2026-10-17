@@ -1,0 +1,296 @@
+{
+  "round": 516,
+  "title": "the DSG structural decay",
+  "census_before": 439,
+  "prefix": "dns",
+  "header_file": "rules/dsgdecay.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "inline_count": 14,
+  "banner": {
+    "title": "The DSG STRUCTURAL DECAY, R516: printed p. 43 (pdf 44) - the underground environment inflicting relatively swift decay upon wooden structures, the typical-location assumption of very humid air, the almost-completely-dry areas where wooden objects decay at a mere 2 or 3% of the given rate, the 1d6-year rot onset for anything made of wood and kept underground, the creosote-or-sealant doubling of the onset period, the 5% chance of collapse per multiple of the onset roll that passes with the roll-1 structure at 5% per year and a 20-year maximum (100%) and the roll-6 structure lasting as much as 120 years, the check whenever any activity puts unusual stress upon the structure, and the d100 roll against the percentage chance of collapse",
+    "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~5500-5525) with the pdf Acrobat-Capture layer as the second read (idx 62 = printed p. 43) - every number dual-confirmed: the 2 or 3% dry band, the 1d6-year rot onset (the djvu garble 146 = 1d6 settled by the Capture read), the creosote doubling, the 5%-per-multiple collapse chance with the roll-1 = 20-year and roll-6 = 120-year worked examples, and the stress check made with a d100 roll (the djvu garble 4100 = d100). The Underground Waterways section starts the NEXT round per the content-density rule.",
+    "sentinel": "No table in this section - the pins are consts and bools only. The 1d6 rot onset pins as dice + sides consts per the R508 convention. The collapse math stays prose: the 20-year and 120-year worked examples pin as consts but the engine multiplies nothing - nothing auto-credits."
+  },
+  "include_after": "#include \"rules/dsglode.h\"  // R514: the DSG lodestone and NPC reaction pins",
+  "include_comment": "the DSG structural decay pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "audit_comment": "The DSG structural decay pins the wooden-structure aging rules (the relatively swift decay of the underground environment, the very-humid-air assumption of the typical location, the almost-completely-dry areas at a mere 2 or 3% of the given rate, the 1d6-year rot onset for anything made of wood and kept underground, the creosote-or-sealant doubling of the period, the 5% chance of collapse per multiple of the onset roll that passes, the roll-1 example at 5% per year with the 20-year maximum and 100% collapse, the roll-6 example lasting as much as 120 years, the check whenever any activity puts unusual stress upon the structure, and the d100 roll against the percentage chance of collapse).",
+  "audit_label": "R516 DSG structural decay audit",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R515b LANDED 2026-10-17: commit b987ddb (census stays",
+  "prev_record": [
+    "- R514 LANDED 2026-10-17: commit ff2a1c6 (census 439,",
+    "  pushed ca386f5..ff2a1c6), the DSG LODESTONE AND NPC",
+    "  REACTIONS, printed pp. 42-43 (pdf 43-44) - the",
+    "  magnetic effects of lodestone (magnetism on iron",
+    "  armor and weapons, the innocuous iron-ore form",
+    "  that cannot impede, the deep concentrated ores of",
+    "  powerful magnetic rock, the Wis Check detection at",
+    "  120 ft as a slight tug, the obvious stage within",
+    "  90 ft (noticeable but cannot pull against the",
+    "  will), the threatened stage within 30 ft with the",
+    "  strap-snapping pull on hanging iron, the Str",
+    "  checks for hand-held iron and iron armor with the",
+    "  10-ft pull on a failed armor check, the",
+    "  no-repeat hold on a success unless closer, the",
+    "  repeats each 10 ft of approach, the -2 Str at",
+    "  20 ft and -4 at 10 ft, the -6 removal check with",
+    "  the forever-stuck failure, and the loss of all",
+    "  powers off-site) and the NPC reactions to long",
+    "  underground adventures (the special incentives,",
+    "  the Loyalty Check on being informed per DMG pp.",
+    "  36-37, the week-or-more trigger with the",
+    "  dwarf/gnome/drow exemption, -5% per planned week,",
+    "  the -10% deception modifier, the -20%-month desert",
+    "  example, separate rolls per NPC, avoidance short",
+    "  of risking life on a failure, the compelled NPC",
+    "  unsteady, the first-week ill effects with the 10%",
+    "  morale penalty and the nervous jumpiness, the",
+    "  weekly rechecks, the irrational break rolling d100",
+    "  on Table 20, the four-band reactions grid (01-20",
+    "  runs screaming to the limits of Endurance, 21-55",
+    "  attacks a nearby PC, 56-85 sneaks away quietly,",
+    "  86-00 freezes in place; 00 = 100), the effect until",
+    "  slain or surfaced, and the 1d6 above-ground weeks",
+    "  with the recovery Wis Check and the permanent",
+    "  affliction on a failure). Penalties pinned as",
+    "  positive magnitudes with the minus in the",
+    "  name/comment. The djvu garbles -209/ = -20%",
+    "  (Capture) and ih place = in place (appendix)",
+    "  settled; Table 20 confirmed THREE-WAY (chapter +",
+    "  appendix reprint + Capture idx 62). Pinned as",
+    "  rules/dsglode.h (prefix dnz, verified free; 45",
+    "  inlines: 15 consts + 27 bools + 3 T20 cols). Gap",
+    "  85/70 -> 88/67: 3 flips - the Lodestone and NPC",
+    "  reactions children + the Table 20 manifest line.",
+    "  DELIVERY: canvas r514-splice, authored md5",
+    "  bf4b84d3; user-side md5 bc98809b - the ./bn",
+    "  whitespace-rewrite class, engine ALL OK twice.",
+    "  Double-run applied 7/already 0 then 0/7;",
+    "  preflight GREEN, census 438 -> 439, gap 88/67.",
+    "  NEXT - R515: Structural decay (printed p. 43,",
+    "  child line 117 - humid-air decay, the dry 2-3%,",
+    "  1d6-year rot onset, creosote doubling, the 5%-per-",
+    "  multiple collapse chance with the 1 = 20-year max",
+    "  and 6 = 120-year examples, the stress check;",
+    "  djvu.txt lines ~5500-5525 + Capture idx 62, the",
+    "  garbles 146 = 1d6 and 4100 = d100) - then the",
+    "  underground waterways section (standing water,",
+    "  flowing water, water temperature) begins.",
+    "- R515b LANDED 2026-10-17: commit b987ddb (census stays",
+    "  439 - a TOOL ROUND, not a splice; pushed 8bd8a0d..",
+    "  b987ddb after the 8bd8a0d mishap), the regtest/preflight",
+    "  CLEANUP: (a) rules/character.cpp AbilityScores::set()",
+    "  gains default: break - the -Wswitch warning dies;",
+    "  (b) regtest.cpp R320 statusName becomes a std::strcmp -",
+    "  the -Wstring-compare warning dies AND the latent",
+    "  pointer-compare bug (the old != \"Breathing\" checked",
+    "  identity, not content); (c) tools/preflight.sh step 2",
+    "  gains the QUIET BATTERY DISPLAY (green 'audit: bad 0'",
+    "  lines filtered from the terminal view ONLY - tee still",
+    "  writes the full output to $batfile so the R112c census",
+    "  gate is byte-identical; a nonzero bad stays visible)",
+    "  and the WARNING GATE (build stderr captured to",
+    "  $warnfile; ANY warning ends RED - the build is",
+    "  warning-clean as of R515b, so a new warning can never",
+    "  ride unseen). Tool delivered as tools/r515_cleanup.py",
+    "  (md5 29388f058f, all-or-nothing patches, idempotent:",
+    "  applied 4/0 then 0/4; census printf shape untouched,",
+    "  439 sites). DELIVERY took three attempts: 8bd8a0d",
+    "  landed a 76-byte file (the user pasted the chat ritual",
+    "  block instead of the canvas body) - repaired via the",
+    "  r515b-cleanup canvas with the script BASE64-encoded",
+    "  (116 lines, 76 cols; nano -> paste b64 -> base64 -d >",
+    "  file -> md5sum gate) which decoded byte-exact first",
+    "  try. NANO LESSON (user-confirmed): nano APPENDS a",
+    "  trailing newline/blank line to the pasted b64 block,",
+    "  and it caused decode trouble until removed - after",
+    "  the nano save, strip the stray trailing blank line",
+    "  before base64 -d (the md5sum gate catches it either",
+    "  way). NOTE: canvas panels may render COLLAPSED - the",
+    "  user must expand the panel to see the body. Also",
+    "  deleted the stray untracked 434 and main files.",
+    "  Expect the quiet preflight from now on: smoke lines,",
+    "  BUILD: 0 warnings, AUDIT CENSUS: N audit lines, GREEN.",
+    "  NEXT - R516: back to the book rounds - Structural decay",
+    "  (printed p. 43, child line 117 - humid-air decay, the",
+    "  dry 2-3%, 1d6-year rot onset (djvu garble 146 = 1d6),",
+    "  creosote doubling, the 5%-per-multiple collapse chance",
+    "  with the roll-1 = 20-year max and roll-6 = 120-year",
+    "  examples, the stress check (garble 4100 = d100)) with",
+    "  census_before 439, the next free dn-prefix (verify in",
+    "  regtest.cpp), header rules/dsgdecay.h, include_after =",
+    "  the R514 dsglode.h include line."
+  ],
+  "gap_census": {
+    "closed": 89,
+    "open": 66
+  },
+  "gap_flips": [
+    {
+      "from": "  - [ ] Structural decay (p. 43) - the aging-of-worked-stone rules",
+      "to": "  - [x] Structural decay (p. 43) - the aging-of-worked-stone rules - R516: the humid-air assumption, the almost-completely-dry 2-3% rate, the 1d6-year rot onset doubled by creosote or sealant, the 5% collapse chance per multiple of the onset roll (the roll-1 20-year max, the roll-6 120-year max), and the d100 stress check",
+      "note": "the Structural decay child line"
+    }
+  ],
+  "consts": [
+    {
+      "name": "dnsDryRateLowPct",
+      "value": 2,
+      "comment": "in subterranean areas that are almost completely dry, the decay of wooden objects is a mere 2 or 3% of the rate given."
+    },
+    {
+      "name": "dnsDryRateHighPct",
+      "value": 3,
+      "comment": "the high end of the almost-completely-dry decay band: a mere 2 or 3% of the typical humid rate (the djvu garble class: 2 or 3% reads clean)."
+    },
+    {
+      "name": "dnsRotOnsetYearsDice",
+      "value": 1,
+      "comment": "anything made out of wood and kept underground begins to show signs of rot after 1d6 years - the dice of the onset roll (the djvu garble 146 = 1d6, settled by the Capture read)."
+    },
+    {
+      "name": "dnsRotOnsetYearsSides",
+      "value": 6,
+      "comment": "the sides of the 1d6-year rot-onset roll, pinned as dice + sides consts per the R508 convention."
+    },
+    {
+      "name": "dnsCreosotePeriodMultiplier",
+      "value": 2,
+      "comment": "if the wood is soaked in creosote or some other sealing substance, this period is doubled."
+    },
+    {
+      "name": "dnsCollapseChancePerMultiplePct",
+      "value": 5,
+      "comment": "the rot creates a 5% chance of collapse for each multiple of the 1d6 onset roll that passes."
+    },
+    {
+      "name": "dnsRollOneMaxYears",
+      "value": 20,
+      "comment": "if the first roll was a 1, there is a 5% chance of collapse every year, and the structure would last a maximum of 20 years (at which time the chance of collapse is 100%)."
+    },
+    {
+      "name": "dnsRollSixMaxYears",
+      "value": 120,
+      "comment": "if the original roll was a 6, however, the structure might last as much as 120 years (6 multiples x the 5% ladder)."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dnsHumidAirAssumed",
+      "value": true,
+      "comment": "the underground environment inflicts relatively swift decay upon wooden structures; the effects assume the presence of very humid air, the typical underground location."
+    },
+    {
+      "name": "dnsDryAreasMereFractionOfRate",
+      "value": true,
+      "comment": "in almost completely dry subterranean areas the wooden decay runs at a mere 2 or 3% of the given rate."
+    },
+    {
+      "name": "dnsCreosoteOrSealantDoubles",
+      "value": true,
+      "comment": "creosote or some other sealing substance doubles the rot-onset period."
+    },
+    {
+      "name": "dnsCollapseChancePerMultipleOfOnset",
+      "value": true,
+      "comment": "the collapse chance accrues per multiple of the 1d6 onset roll that passes - the roll sets both the interval and the lifetime."
+    },
+    {
+      "name": "dnsCheckOnUnusualStress",
+      "value": true,
+      "comment": "the wooden structure should be checked whenever any activity puts unusual stress upon it."
+    },
+    {
+      "name": "dnsStressCheckIsD100",
+      "value": true,
+      "comment": "the check is made with a d100 roll (the djvu garble 4100 = d100, settled by the Capture read) against the percentage chance of collapse for the structure."
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "examples": [
+    {
+      "expr": "m['dnsDryRateLowPct']() != 2 or m['dnsDryRateHighPct']() != 3",
+      "note": "the dry-area band: almost completely dry areas decay at a mere 2 or 3% of the typical humid rate."
+    },
+    {
+      "expr": "m['dnsRotOnsetYearsDice']() != 1 or m['dnsRotOnsetYearsSides']() != 6 or m['dnsCreosotePeriodMultiplier']() != 2",
+      "note": "the rot onset: wooden things underground show rot after 1d6 years, doubled to 2d6 by creosote or another sealing substance (the djvu garble 146 = 1d6)."
+    },
+    {
+      "expr": "m['dnsCollapseChancePerMultiplePct']() != 5 or m['dnsRollOneMaxYears']() != 20 or m['dnsRollSixMaxYears']() != 120",
+      "note": "the collapse ladder: 5% per multiple of the onset roll - the roll-1 structure reaches 100% at 20 years, the roll-6 structure might last 120 years."
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the structural decay opener": [
+      {
+        "kind": "bool",
+        "name": "dnsHumidAirAssumed"
+      },
+      {
+        "kind": "bool",
+        "name": "dnsDryAreasMereFractionOfRate"
+      },
+      {
+        "kind": "const",
+        "name": "dnsDryRateLowPct"
+      },
+      {
+        "kind": "const",
+        "name": "dnsDryRateHighPct"
+      }
+    ],
+    "the rot onset and the sealant": [
+      {
+        "kind": "const",
+        "name": "dnsRotOnsetYearsDice"
+      },
+      {
+        "kind": "const",
+        "name": "dnsRotOnsetYearsSides"
+      },
+      {
+        "kind": "bool",
+        "name": "dnsCreosoteOrSealantDoubles"
+      },
+      {
+        "kind": "const",
+        "name": "dnsCreosotePeriodMultiplier"
+      }
+    ],
+    "the collapse chance ladder": [
+      {
+        "kind": "const",
+        "name": "dnsCollapseChancePerMultiplePct"
+      },
+      {
+        "kind": "bool",
+        "name": "dnsCollapseChancePerMultipleOfOnset"
+      },
+      {
+        "kind": "const",
+        "name": "dnsRollOneMaxYears"
+      },
+      {
+        "kind": "const",
+        "name": "dnsRollSixMaxYears"
+      }
+    ],
+    "the stress check": [
+      {
+        "kind": "bool",
+        "name": "dnsCheckOnUnusualStress"
+      },
+      {
+        "kind": "bool",
+        "name": "dnsStressCheckIsD100"
+      }
+    ]
+  },
+  "caller_files": []
+}

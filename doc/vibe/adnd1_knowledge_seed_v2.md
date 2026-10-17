@@ -6778,6 +6778,108 @@ when both halves land.
   85/70. NEXT - R514: the Magnetic Effects of
   Lodestone section + the NPC long-adventure
   reactions through Table 20.
+- R514 LANDED 2026-10-17: commit ff2a1c6 (census 439,
+  pushed ca386f5..ff2a1c6), the DSG LODESTONE AND NPC
+  REACTIONS, printed pp. 42-43 (pdf 43-44) - the
+  magnetic effects of lodestone (magnetism on iron
+  armor and weapons, the innocuous iron-ore form
+  that cannot impede, the deep concentrated ores of
+  powerful magnetic rock, the Wis Check detection at
+  120 ft as a slight tug, the obvious stage within
+  90 ft (noticeable but cannot pull against the
+  will), the threatened stage within 30 ft with the
+  strap-snapping pull on hanging iron, the Str
+  checks for hand-held iron and iron armor with the
+  10-ft pull on a failed armor check, the
+  no-repeat hold on a success unless closer, the
+  repeats each 10 ft of approach, the -2 Str at
+  20 ft and -4 at 10 ft, the -6 removal check with
+  the forever-stuck failure, and the loss of all
+  powers off-site) and the NPC reactions to long
+  underground adventures (the special incentives,
+  the Loyalty Check on being informed per DMG pp.
+  36-37, the week-or-more trigger with the
+  dwarf/gnome/drow exemption, -5% per planned week,
+  the -10% deception modifier, the -20%-month desert
+  example, separate rolls per NPC, avoidance short
+  of risking life on a failure, the compelled NPC
+  unsteady, the first-week ill effects with the 10%
+  morale penalty and the nervous jumpiness, the
+  weekly rechecks, the irrational break rolling d100
+  on Table 20, the four-band reactions grid (01-20
+  runs screaming to the limits of Endurance, 21-55
+  attacks a nearby PC, 56-85 sneaks away quietly,
+  86-00 freezes in place; 00 = 100), the effect until
+  slain or surfaced, and the 1d6 above-ground weeks
+  with the recovery Wis Check and the permanent
+  affliction on a failure). Penalties pinned as
+  positive magnitudes with the minus in the
+  name/comment. The djvu garbles -209/ = -20%
+  (Capture) and ih place = in place (appendix)
+  settled; Table 20 confirmed THREE-WAY (chapter +
+  appendix reprint + Capture idx 62). Pinned as
+  rules/dsglode.h (prefix dnz, verified free; 45
+  inlines: 15 consts + 27 bools + 3 T20 cols). Gap
+  85/70 -> 88/67: 3 flips - the Lodestone and NPC
+  reactions children + the Table 20 manifest line.
+  DELIVERY: canvas r514-splice, authored md5
+  bf4b84d3; user-side md5 bc98809b - the ./bn
+  whitespace-rewrite class, engine ALL OK twice.
+  Double-run applied 7/already 0 then 0/7;
+  preflight GREEN, census 438 -> 439, gap 88/67.
+  NEXT - R515: Structural decay (printed p. 43,
+  child line 117 - humid-air decay, the dry 2-3%,
+  1d6-year rot onset, creosote doubling, the 5%-per-
+  multiple collapse chance with the 1 = 20-year max
+  and 6 = 120-year examples, the stress check;
+  djvu.txt lines ~5500-5525 + Capture idx 62, the
+  garbles 146 = 1d6 and 4100 = d100) - then the
+  underground waterways section (standing water,
+  flowing water, water temperature) begins.
+- R515b LANDED 2026-10-17: commit b987ddb (census stays
+  439 - a TOOL ROUND, not a splice; pushed 8bd8a0d..
+  b987ddb after the 8bd8a0d mishap), the regtest/preflight
+  CLEANUP: (a) rules/character.cpp AbilityScores::set()
+  gains default: break - the -Wswitch warning dies;
+  (b) regtest.cpp R320 statusName becomes a std::strcmp -
+  the -Wstring-compare warning dies AND the latent
+  pointer-compare bug (the old != "Breathing" checked
+  identity, not content); (c) tools/preflight.sh step 2
+  gains the QUIET BATTERY DISPLAY (green 'audit: bad 0'
+  lines filtered from the terminal view ONLY - tee still
+  writes the full output to $batfile so the R112c census
+  gate is byte-identical; a nonzero bad stays visible)
+  and the WARNING GATE (build stderr captured to
+  $warnfile; ANY warning ends RED - the build is
+  warning-clean as of R515b, so a new warning can never
+  ride unseen). Tool delivered as tools/r515_cleanup.py
+  (md5 29388f058f, all-or-nothing patches, idempotent:
+  applied 4/0 then 0/4; census printf shape untouched,
+  439 sites). DELIVERY took three attempts: 8bd8a0d
+  landed a 76-byte file (the user pasted the chat ritual
+  block instead of the canvas body) - repaired via the
+  r515b-cleanup canvas with the script BASE64-encoded
+  (116 lines, 76 cols; nano -> paste b64 -> base64 -d >
+  file -> md5sum gate) which decoded byte-exact first
+  try. NANO LESSON (user-confirmed): nano APPENDS a
+  trailing newline/blank line to the pasted b64 block,
+  and it caused decode trouble until removed - after
+  the nano save, strip the stray trailing blank line
+  before base64 -d (the md5sum gate catches it either
+  way). NOTE: canvas panels may render COLLAPSED - the
+  user must expand the panel to see the body. Also
+  deleted the stray untracked 434 and main files.
+  Expect the quiet preflight from now on: smoke lines,
+  BUILD: 0 warnings, AUDIT CENSUS: N audit lines, GREEN.
+  NEXT - R516: back to the book rounds - Structural decay
+  (printed p. 43, child line 117 - humid-air decay, the
+  dry 2-3%, 1d6-year rot onset (djvu garble 146 = 1d6),
+  creosote doubling, the 5%-per-multiple collapse chance
+  with the roll-1 = 20-year max and roll-6 = 120-year
+  examples, the stress check (garble 4100 = d100)) with
+  census_before 439, the next free dn-prefix (verify in
+  regtest.cpp), header rules/dsgdecay.h, include_after =
+  the R514 dsglode.h include line.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
