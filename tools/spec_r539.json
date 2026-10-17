@@ -1,0 +1,409 @@
+{
+ "round": 539,
+ "title": "the DSG Deepearth areas 12-13",
+ "census_before": 462,
+ "prefix": "dnah",
+ "header_file": "rules/dsgarea6.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dsg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "inline_count": 32,
+ "banner": {
+  "title": "THE DSG DEEPEARTH AREAS 12-13, R539: printed pp. 86-87 (pdf 87-88) - the individual area key crosses the battleground and the empty quarter: Area 12 Combat Zone (one of the most wide-open areas of Deepearth, over three miles wide and four miles long with very little rock fill; the cataclysmic earthquake that dropped the surrounding rock into the depths and left the treacherous bizarre landscape; the dozen mighty blocks, each hundreds of feet in diameter, holding up the sagging ceiling; the gorge-split floor where no one walks 100 feet at one elevation - the 10- and 20-foot drops, the 100-foot barriers; the jermalaine-widened passages to Areas 9 and 13, three by five feet at their smallest; the decimated, defeatist jermalaine of the pillar-base caves against the disciplined pech - under 100 strong, outnumbered at least 10 to 1, their stone wagons and wall-of-stone bridges and ramps, breaking into combat units and driving off every attack at minimal loss; the rat hordes, the ceiling-route mobats, the pillar-roaming chimera and the low-reach basilisk nests; the circulating air and the column-side waterfalls feeding the short-lived porous-floor pools; the quake-gathered iron, lead and gold veins with the jade and onyx deposits and the undiscovered surface gemstones; and the hollow-shell sabotage - a fifth of the bridges collapsing under more than 50 pounds, the 16 camouflaged troves of 2d6-x-1,000-gp gems, matching gold coins and lead-and-iron ingots behind their 16-foot walls of stone), and Area 13 Empty Caverns (the narrow tunnel to Area 12 and the southern canyon crack to Area 7; the numerous fairly small caverns and their maze of interconnecting passages, pinching under 18 inches in places; the classic dead caves with dull brittle formations under the dust; the thousands of sleeping bats, the preying basilisks and the floor-swarming carnivorous beetles; the two-end ventilation with no water, fungi or mold; and the abandoned intelligent-creature lair tunnels of the largest cave, dry since the water sources died)",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~10892-11036) with the pdf Acrobat-Capture layer as the second read (idx 392-396 = the printed pp. 86-88 windows); the compiled-tables appendix has no reprint of this prose. A CLEAN-READ ROUND: both machine reads agree on every load-bearing number - the three-by-four-mile zone, the dozen blocks, the 100-ft walk cap, the 10/20/100-ft barriers, the 3x5-ft passages, the sub-100 pech at 10-to-1 odds, the 20% sabotage rate at the 50-lb/500-gp collapse weight, the 16 troves with their 2d6-x-1,000-gp gems and 16-ft seals, and the 18-inch pinch; the only garbles are non-load-bearing (the djvu 'Adozen' spacing and 'asimilar', the Capture 'zbne', 'wallofstone' and 'widelyvarying' spacing noise). SEAMS: the Monster Manual denizens (the jermalaine, pech, chimera, basilisks, mobats and the rest), the PHB wall of stone and detect magic, the shared earthquake seam with Areas 6-7 and 10-12, the R521-R522 mining, and the R503 re-grain. A ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains open until the setting lands in full (the R527/R533-R538 precedent - the gap report is NOT in the git add). Nothing auto-credits.",
+  "sentinel": "A procedural-plus-prose round: no tables pin. The numbers pin as consts per the R508 convention - the zone's dimensions, the block and barrier counts, the passage sizes, the pech ceiling and odds, the sabotage percentage and collapse weights, the trove count, gem dice and seal thickness, and the empty-cavern pinch, with the 2d6-x-1,000 dice pinned as a count-sides-multiplier triple. The geography, denizens, resources and unique-features prose pins as bools for both areas. The MM/PHB/quake/mining/R503 seams are noted; the Deepearth child stays open; nothing auto-credits."
+ },
+ "include_after": "#include \"rules/dsgarea5.h\"  // R538: the DSG Deepearth areas 10-11 pins",
+ "include_comment": "the DSG Deepearth areas 12-13 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The DSG Deepearth areas 12-13 pin Area 12 (the Combat Zone with its jermalaine-pech war, the sabotaged hollow bridges and the 16 walled treasure troves) and Area 13 (the Empty Caverns with their bat thousands and the abandoned dry lairs).",
+ "audit_label": "R539 DSG Deepearth areas 12-13 audit",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R538 LANDED 2026-10-17: commit 19ed143 (census 461 -> 462,",
+ "prev_record": [
+  "- R538 LANDED 2026-10-17: commit 19ed143 (census 461 -> 462,",
+  "  pushed 7d0bc86..19ed143), THE DSG DEEPEARTH AREAS 10-11,",
+  "  printed pp. 84-86 (pdf 85-87) - the drowned land and the",
+  "  flayer outpost: Area 10 the Sunken Swamp (the ancient",
+  "  earthquake that split the faults and felled the surface",
+  "  forest and villages; the rock faces wedged into",
+  "  survivable hollows; the dozen-plus chambers 1,000 to",
+  "  4,000 ft wide and 3d6 miles long, dirt-lined over rotted",
+  "  timber, misted from above, glowing mosses as dim light;",
+  "  the oil-soaked shored tunnels linking each cavern to at",
+  "  least two others; the degenerated sub-savage tribes -",
+  "  50 to 100 per cavern, emotion-speech, the chosen-few",
+  "  factions, the study-then-eat hospitality, the",
+  "  free-for-all wars and casualty-devouring reconciliation",
+  "  councils; the scavengers, shambling mounds, snakes,",
+  "  spiders, toads, frogs over plentiful fungi; the muggy",
+  "  decay air, the shapeless earth, the smoky peat; the",
+  "  sacred roofless temple with its gold-silver-platinum",
+  "  relics, the corroded sacred armory; and the smallest dry",
+  "  cavern's petrified unburnable wood), and Area 11 the",
+  "  Outpost of the Illithids (the mile-round central cave",
+  "  with its 100-ft ceiling on six pillars, the four",
+  "  converging streams and the porous outflow-less pond; the",
+  "  four cardinal side caves - about a mile long, never more",
+  "  than 50 ft wide, ceilings to 20 ft but often 6 or less;",
+  "  the living-cave formations; the 25 mind flayers with their",
+  "  scouts and homeland alarms; the side-cave scavengers -",
+  "  crawlers, otyughs, rats, slimes, jellies, oozes; and the",
+  "  circle of dwarven one-room huts around the pool - a",
+  "  guard per entry cave, the secret trap-door trove of",
+  "  cp-sp-ep-gp coins, gems, weapons, scrolls, half-dozen",
+  "  potions). A CLEAN-READ ROUND: both machine reads agree on",
+  "  every number (djvu ~lines 10692-10885, Capture idx",
+  "  384-392). The user's stray spec_r538.json from the R537",
+  "  hiccup was removed pre-round and this round's delivery",
+  "  was clean on the first try: md5 477a7c14962016ff52ea48ff",
+  "  aad28123 matched exactly (spec 23,088 bytes). A",
+  "  ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains",
+  "  open (the R527/R533-R537 precedent - the gap report NOT",
+  "  in the git add). Pinned as rules/dsgarea5.h (prefix dnag,",
+  "  verified free; 37 inlines - 19 consts, 18 bools, no",
+  "  tables; 3d6 pinned as a count-sides pair). Engine applied",
+  "  4 then 0/4, audit mirror clean. Gap unchanged 139/16.",
+  "  PREFLIGHT GREEN with census 462 audit lines, each",
+  "  exactly once, all bad 0; BUILD: 0 warnings. NEXT - R539:",
+  "  Area 12 the Combat Zone (printed pp. 86-87, pdf 87-88):",
+  "  the three-by-four-mile open cavern, the dozen supporting",
+  "  blocks hundreds of feet across, the 100-ft gorge-floor",
+  "  walks, the 10/20/100-ft barriers, the jermalaine-pech",
+  "  war at 10-to-1 odds, the 3x5-ft widened connections - djvu",
+  "  head read, capture warm."
+ ],
+ "gap_census": {
+  "closed": 139,
+  "open": 16
+ },
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "dnahZoneWideMiles",
+   "value": 3,
+   "comment": "the combat zone is one of the most wide-open areas of Deepearth - over three miles wide."
+  },
+  {
+   "name": "dnahZoneLongMiles",
+   "value": 4,
+   "comment": "the combat zone stretches four miles long, very little of it filled with rock."
+  },
+  {
+   "name": "dnahBlockCount",
+   "value": 12,
+   "comment": "a dozen mighty blocks of stone, each hundreds of feet in diameter, support the sagging ceiling after the cataclysmic earthquake wrecked fearful changes here."
+  },
+  {
+   "name": "dnahWalkMaxFt",
+   "value": 100,
+   "comment": "the cavern floor is split with so many gorges, chasms and cliffs that it is impossible to walk more than 100 feet at the same elevation."
+  },
+  {
+   "name": "dnahBarrierLowFt",
+   "value": 10,
+   "comment": "some of the floor obstacles drop or climb a mere 10 or 20 feet (the low bound)."
+  },
+  {
+   "name": "dnahBarrierHighFt",
+   "value": 20,
+   "comment": "the smaller obstacles drop or climb 10 or 20 feet (the high bound)."
+  },
+  {
+   "name": "dnahBarrierMaxFt",
+   "value": 100,
+   "comment": "other obstacles present barriers 100 feet high or deep."
+  },
+  {
+   "name": "dnahPassHtFt",
+   "value": 3,
+   "comment": "the connecting passages to Areas 9 and 13, originally natural caves widened by the jermalaine, are at their smallest about three feet high."
+  },
+  {
+   "name": "dnahPassWidFt",
+   "value": 5,
+   "comment": "the jermalaine-widened connecting passages are at their smallest about five feet wide."
+  },
+  {
+   "name": "dnahPechMaxCount",
+   "value": 100,
+   "comment": "the pech inhabiting the combat zone are a disciplined, business-like group numbering less than 100, outnumbered at least 10 to 1 by the jermalaine."
+  },
+  {
+   "name": "dnahOddsRatio",
+   "value": 10,
+   "comment": "the pech are outnumbered at least 10 to 1 by the numerous but unorganized jermalaine, whose regular attacks on pech work parties are routinely driven off."
+  },
+  {
+   "name": "dnahSabotagePct",
+   "value": 20,
+   "comment": "about 20% of the pech bridges and ramps have been sabotaged - chipped to a hollow shell - and will collapse if anything heavier than 50 pounds (500 gp) tries to cross; alert characters tapping the stone will notice a hollow sound."
+  },
+  {
+   "name": "dnahCollapseWeightLb",
+   "value": 50,
+   "comment": "the sabotaged bridges collapse under anything heavier than 50 pounds (500 gp)."
+  },
+  {
+   "name": "dnahCollapseWeightGp",
+   "value": 500,
+   "comment": "the sabotaged bridges collapse under anything heavier than 50 pounds, i.e. 500 gp of weight."
+  },
+  {
+   "name": "dnahTroveCount",
+   "value": 16,
+   "comment": "in 16 different locations throughout the chamber the pech have excavated small holes to store their treasures, sealed over with camouflaged wall of stone spells that radiate magic to a detect magic spell."
+  },
+  {
+   "name": "dnahTroveGemsDice",
+   "value": 2,
+   "comment": "each treasure trove contains an assortment of gems worth 2d6 x 1,000 gp (the die count)."
+  },
+  {
+   "name": "dnahTroveGemsSides",
+   "value": 6,
+   "comment": "each trove's gems are worth 2d6 x 1,000 gp (the die sides)."
+  },
+  {
+   "name": "dnahTroveGemsMultGp",
+   "value": 1000,
+   "comment": "each trove's gems are worth 2d6 x 1,000 gp (the multiplier), with a pile of gold coins worth a similar amount and hundreds of lead and iron ingots besides."
+  },
+  {
+   "name": "dnahTroveSealFt",
+   "value": 16,
+   "comment": "the wall of stone covering each trove is 16 feet thick."
+  },
+  {
+   "name": "dnahPassDiaMaxIn",
+   "value": 18,
+   "comment": "the empty caverns are a maze of interconnecting passages; in some areas passages of less than 18 inches in diameter restrict the movement of many creatures, with fairly easy access throughout for creatures smaller than human size."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnahQuakeLandscape",
+   "value": true,
+   "comment": "the combat zone was originally a large natural cavern, but centuries ago a cataclysmic earthquake wreaked fearful changes - most of the rock around the caverns fell away into the depths of the earth, creating a treacherous and bizarre landscape; unlike the sunken swamp, material and creatures from the surface did not fall into this region."
+  },
+  {
+   "name": "dnahDecimatedJermalaine",
+   "value": true,
+   "comment": "a thriving jermalaine community in the original cavern was decimated by the quake, and the survivors have not tried to rebuild or re-excavate their homes; they live in small caves among the bases of the support pillars, no less malicious or vandalistic than usual for their race but defeatist - running from danger long before retreat seems warranted."
+  },
+  {
+   "name": "dnahPechWagons",
+   "value": true,
+   "comment": "the pech roam freely throughout the vast chamber, pulling heavy stone wagons in their search for mineral wealth and using their innate wall of stone ability to erect bridges and ramps so the wagons can go wherever they do; when the jermalaine attack, the pech instantly cease working and break into combat units, invariably driving off the foe while sustaining minimal losses."
+  },
+  {
+   "name": "dnahZoneFauna",
+   "value": true,
+   "comment": "other denizens include hordes of rats living among the jermalaine and many bats, including mobats, entering and leaving through unknown routes in the ceiling; a chimera roams among the pillars, and several nests of basilisks are located among the lowest reaches of the chamber."
+  },
+  {
+   "name": "dnahColumnWaterfalls",
+   "value": true,
+   "comment": "the huge chamber is well-supplied with air and water - hidden passages in the lofty ceiling let air circulate, and surface water seeps through in several locations, running down the cracked and rough sides of the massive supporting columns from cracks to ledges in many small waterfalls; small fresh pools form at pillar bases but quickly drain through the cracked porous floor to deeper areas, and no streams flow along the bottom."
+  },
+  {
+   "name": "dnahQuakeOres",
+   "value": true,
+   "comment": "the tumultuous earthquake forces brought slabs of rock from widely varying levels of the earth into this chamber, and this diversity has drawn the pech - veins of iron, lead and gold are all accessible, with small excavated deposits of jade and onyx, and several other gemstone types near the surface yet to be discovered."
+  },
+  {
+   "name": "dnahHollowBridges",
+   "value": true,
+   "comment": "the pech bridges and ramps create a haphazard series of pathways throughout the roughly floored cavern, most sturdy enough for any creatures; the sabotaged fifth are hollow shells chipped away by pech stonework skill."
+  },
+  {
+   "name": "dnahNarrowAttachments",
+   "value": true,
+   "comment": "the empty caverns are attached by a narrow tunnel to Area 12 (the Combat Zone) and to Area 7 (the Grand Canyon of Deepearth) by a narrow crack in the southern end of the canyon; the caverns themselves are numerous and fairly small."
+  },
+  {
+   "name": "dnahDeadDustyCaves",
+   "value": true,
+   "comment": "the empty caverns are all of natural origin, but water no longer flows here - classic examples of dead caves with dull, brittle formations that the slightest pressure breaks apart, and dust covering everything."
+  },
+  {
+   "name": "dnahBatRoost",
+   "value": true,
+   "comment": "the only denizens are thousands of bats that often fly here to sleep, clinging to the walls and ceiling, a few basilisks that attempt to prey on the flying mammals, and swarms of scavenging carnivorous beetles crawling about on the floor."
+  },
+  {
+   "name": "dnahDryVentilation",
+   "value": true,
+   "comment": "air circulates through the caverns thanks to ventilation from both ends of the area; there is no water, fungi, or mold here."
+  },
+  {
+   "name": "dnahAbandonedLairs",
+   "value": true,
+   "comment": "in the area's largest cave a number of tunnels have been excavated in one wall - once the lairs of a group of intelligent creatures, abandoned when the water sources dried up, now as dusty and decayed as the rest of the area."
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['dnahZoneWideMiles']() != 3 or m['dnahZoneLongMiles']() != 4 or m['dnahBlockCount']() != 12 or m['dnahWalkMaxFt']() != 100",
+   "note": "the Combat Zone dimensions: over three miles wide, four miles long, a dozen supporting blocks, no 100-foot same-elevation walks."
+  },
+  {
+   "expr": "m['dnahBarrierLowFt']() != 10 or m['dnahBarrierHighFt']() != 20 or m['dnahBarrierMaxFt']() != 100 or m['dnahPassHtFt']() != 3 or m['dnahPassWidFt']() != 5",
+   "note": "the zone's obstacles and connections: the 10/20-ft drops, the 100-ft barriers, the 3x5-ft smallest passages."
+  },
+  {
+   "expr": "m['dnahPechMaxCount']() != 100 or m['dnahOddsRatio']() != 10",
+   "note": "the war's odds: the pech under 100 strong, outnumbered at least 10 to 1."
+  },
+  {
+   "expr": "m['dnahSabotagePct']() != 20 or m['dnahCollapseWeightLb']() != 50 or m['dnahCollapseWeightGp']() != 500",
+   "note": "the sabotaged bridges: 20% of them, collapsing under more than 50 pounds (500 gp)."
+  },
+  {
+   "expr": "m['dnahTroveCount']() != 16 or m['dnahTroveGemsDice']() != 2 or m['dnahTroveGemsSides']() != 6 or m['dnahTroveGemsMultGp']() != 1000 or m['dnahTroveSealFt']() != 16",
+   "note": "the treasure troves: 16 of them, gems worth 2d6 x 1,000 gp, seals 16 feet thick."
+  },
+  {
+   "expr": "m['dnahPassDiaMaxIn']() != 18",
+   "note": "the empty caverns' pinch: passages under 18 inches in diameter."
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Area 12 Combat Zone section": [
+   {
+    "kind": "const",
+    "name": "dnahZoneWideMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dnahZoneLongMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dnahBlockCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahQuakeLandscape"
+   },
+   {
+    "kind": "const",
+    "name": "dnahWalkMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnahBarrierLowFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnahBarrierHighFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnahBarrierMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnahPassHtFt"
+   },
+   {
+    "kind": "const",
+    "name": "dnahPassWidFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahDecimatedJermalaine"
+   },
+   {
+    "kind": "const",
+    "name": "dnahPechMaxCount"
+   },
+   {
+    "kind": "const",
+    "name": "dnahOddsRatio"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahPechWagons"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahZoneFauna"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahColumnWaterfalls"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahQuakeOres"
+   },
+   {
+    "kind": "const",
+    "name": "dnahSabotagePct"
+   },
+   {
+    "kind": "const",
+    "name": "dnahCollapseWeightLb"
+   },
+   {
+    "kind": "const",
+    "name": "dnahCollapseWeightGp"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahHollowBridges"
+   },
+   {
+    "kind": "const",
+    "name": "dnahTroveCount"
+   },
+   {
+    "kind": "const",
+    "name": "dnahTroveGemsDice"
+   },
+   {
+    "kind": "const",
+    "name": "dnahTroveGemsSides"
+   },
+   {
+    "kind": "const",
+    "name": "dnahTroveGemsMultGp"
+   },
+   {
+    "kind": "const",
+    "name": "dnahTroveSealFt"
+   }
+  ],
+  "the Area 13 Empty Caverns section": [
+   {
+    "kind": "bool",
+    "name": "dnahNarrowAttachments"
+   },
+   {
+    "kind": "const",
+    "name": "dnahPassDiaMaxIn"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahDeadDustyCaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahBatRoost"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahDryVentilation"
+   },
+   {
+    "kind": "bool",
+    "name": "dnahAbandonedLairs"
+   }
+  ]
+ },
+ "caller_files": []
+}

@@ -8123,6 +8123,57 @@ when both halves land.
   miles long, the degenerated 50-100-strong cannibal
   tribes, the reconciliation councils - djvu head read,
   capture warm.
+- R538 LANDED 2026-10-17: commit 19ed143 (census 461 -> 462,
+  pushed 7d0bc86..19ed143), THE DSG DEEPEARTH AREAS 10-11,
+  printed pp. 84-86 (pdf 85-87) - the drowned land and the
+  flayer outpost: Area 10 the Sunken Swamp (the ancient
+  earthquake that split the faults and felled the surface
+  forest and villages; the rock faces wedged into
+  survivable hollows; the dozen-plus chambers 1,000 to
+  4,000 ft wide and 3d6 miles long, dirt-lined over rotted
+  timber, misted from above, glowing mosses as dim light;
+  the oil-soaked shored tunnels linking each cavern to at
+  least two others; the degenerated sub-savage tribes -
+  50 to 100 per cavern, emotion-speech, the chosen-few
+  factions, the study-then-eat hospitality, the
+  free-for-all wars and casualty-devouring reconciliation
+  councils; the scavengers, shambling mounds, snakes,
+  spiders, toads, frogs over plentiful fungi; the muggy
+  decay air, the shapeless earth, the smoky peat; the
+  sacred roofless temple with its gold-silver-platinum
+  relics, the corroded sacred armory; and the smallest dry
+  cavern's petrified unburnable wood), and Area 11 the
+  Outpost of the Illithids (the mile-round central cave
+  with its 100-ft ceiling on six pillars, the four
+  converging streams and the porous outflow-less pond; the
+  four cardinal side caves - about a mile long, never more
+  than 50 ft wide, ceilings to 20 ft but often 6 or less;
+  the living-cave formations; the 25 mind flayers with their
+  scouts and homeland alarms; the side-cave scavengers -
+  crawlers, otyughs, rats, slimes, jellies, oozes; and the
+  circle of dwarven one-room huts around the pool - a
+  guard per entry cave, the secret trap-door trove of
+  cp-sp-ep-gp coins, gems, weapons, scrolls, half-dozen
+  potions). A CLEAN-READ ROUND: both machine reads agree on
+  every number (djvu ~lines 10692-10885, Capture idx
+  384-392). The user's stray spec_r538.json from the R537
+  hiccup was removed pre-round and this round's delivery
+  was clean on the first try: md5 477a7c14962016ff52ea48ff
+  aad28123 matched exactly (spec 23,088 bytes). A
+  ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains
+  open (the R527/R533-R537 precedent - the gap report NOT
+  in the git add). Pinned as rules/dsgarea5.h (prefix dnag,
+  verified free; 37 inlines - 19 consts, 18 bools, no
+  tables; 3d6 pinned as a count-sides pair). Engine applied
+  4 then 0/4, audit mirror clean. Gap unchanged 139/16.
+  PREFLIGHT GREEN with census 462 audit lines, each
+  exactly once, all bad 0; BUILD: 0 warnings. NEXT - R539:
+  Area 12 the Combat Zone (printed pp. 86-87, pdf 87-88):
+  the three-by-four-mile open cavern, the dozen supporting
+  blocks hundreds of feet across, the 100-ft gorge-floor
+  walks, the 10/20/100-ft barriers, the jermalaine-pech
+  war at 10-to-1 odds, the 3x5-ft widened connections - djvu
+  head read, capture warm.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
