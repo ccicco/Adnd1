@@ -10305,6 +10305,78 @@ when both halves land.
   pages 110-112 already read, page-113.md
   still to read for the Hells features,
   the rulers and the Styx riddle).
+- R587 LANDED 2026-10-17: commit
+  fd8e03f59cf609105d316ade2d039a00a
+  8d5924a (census 510 -> 511, pushed
+  15ae156..fd8e03f), THE NINE HELLS,
+  printed pp. 109-113, evil organized:
+  the nine infinite layers with the
+  barrier rule (lowest point of the
+  upper, half a mile above the next, the
+  20d6 fall for the flightless), Avernus
+  the front parlor (the 1-in-6 fireball
+  vapor, 1-in-12 without open flame,
+  Tiamat's watchdog lair of abishai and
+  dragon spirits), Dis the Iron City of
+  Dispater with the stone-and-lead
+  sanctum, Minauros Mammon's sinking
+  city at 13% disease with the barrier
+  30 feet above the palace roofs,
+  Phlegethos the liquefied-fire realm of
+  Belial and Abriymoch, Stygia's
+  three-mile ice pack with the diluted
+  Styx and Geryon's Tantlin behind the
+  2d6 cold-fire walls, Malbolge Moloch's
+  rockfall viceroyalty, Maladomini and
+  Baalzebul's thousand-mile million-room
+  Malagard, Caina at -60 degrees under
+  Mephistopheles, Nessus with the rifts
+  descending to Asmodeus's palace on the
+  shifting ice lake of the Lethe with
+  the triple-strength fire waves), the
+  reddish-hoop portals of Avernus
+  (Acheron, Gehenna, Concordant
+  Opposition, Tiamat's guards and
+  traps), the Prime conduits, the
+  rumored pre-overlord conduit that
+  destroys all evil that touches it, the
+  home-layer immunity doctrine, the
+  arch-devil census and the three
+  factions (Asmodeus with Geryon and
+  Tiamat at 1-5-9, Baalzebul with Moloch
+  and the recruited Belial at 4-6-7,
+  Mephistopheles with Dispater and
+  Mammon at 2-3-8, the overlord supreme
+  playing both ends through the
+  underrated Tiamat), and the non-devil
+  Powers (Druaga tolerated beside Dis,
+  Set's blazing bone-dry Avernus swath
+  and his captive-built pyramid, Hecate
+  and Inanna adjacent in Phlegethos,
+  Sekolah beneath the Stygian ice
+  devouring Geryon's ambassadors,
+  Kurtulmak robbing his suitors blind,
+  the moving thief No Cha, and the
+  false-name devils Dagon and Nergal).
+  6 consts + 6 bools, prefix ddp, header
+  rules/ninehells.h. ONE flip: gap
+  census 76/14 -> 77/13. Spec 22,244
+  bytes, md5 931e05e67130b6259d7a157cc
+  376e8d1 matched exactly first try, 12
+  inlines. TWENTY-TWO straight
+  first-tries (R566-R587). NEXT - R588:
+  Acheron (pp. 113-114, the iron-shod
+  battle plains - Avalas with the Styx
+  pits and the spirit legions, the
+  hollow scrap-heap blocks of Thuldanin
+  with the 0.1% search chance, the
+  geometric blocks of Tintibulus, the
+  razor squares of Ocanthus, the
+  spherical portals and the spinning
+  pattern, Lei Kung; page-114 already
+  read, page-115.md still to read for
+  the rest of the Acheron features and
+  the goblinoid legions).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

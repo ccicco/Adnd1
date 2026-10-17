@@ -1,0 +1,253 @@
+{
+ "round": 588,
+ "prefix": "ddr",
+ "header_file": "rules/acheron.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 511,
+ "title": "Acheron",
+ "audit_label": "R588 Acheron audit",
+ "audit_comment": "ACHERON, printed pp. 113-114, the iron-shod battle plains, the most lawful of the evil planes, bridging the Hells and Nirvana's clockwork: home of those who inflict evil secondarily, order their chief aim - many armies, few leaders, initiative drifting away to more definite alignments. The four layers of huge blocks, nation-sized, drifting together and parting without tremors, gravity to each block's center, the between as air. Avalas the Battleplains: the black metal-hard ground reverberating to thousands of troops, cone mountains, pits, iron citadels, and the Styx rising from one pit to vanish into another, Charon riding the blocks it touches. Thuldanin the scrap heap: hollow pockmarked blocks stuffed with ships burst asunder, toppled buildings and flying devices, all turned to stone by the plane's magics, a day's search 0.1% likely to yield anything useful (and the DM decides if it even works home), the monthly crushing-blow saves turning left items to rock, no natives, only the victory-seeking visitors. Tintibulus: the solid grey volcanic blocks in regular shapes, fault-fracturing into huge hexagons, lifeless and attractive to magical researchers. Ocanthus: no blocks, only razor-thin black squares few inches to miles across flying like geese through the snow-white sky, walkable both faces, the edge-on strike 1d10 dice hitting as a 1d10-hit-die monster with no magical-armor benefit. The spherical portals hanging fixed while blocks orbit - touched to activate, the chord to Nirvana, the discord to Avernus, the silence to Concordant Opposition - the arrival draw toward the nearest block and its 20d6 for the flightless, the spheres passing through blocks freely and quiet within them; the barriers unmoored in space, the lower reaches hard to reach, but the careful order of the spinning discoverable by an Intelligence check of the 18-plus, one per visit. The features: a wasteland of immigrant imps, achaiarai, rust monsters, occasional modrons and devils - and the spirit legions, nations of the lawful-evil dead who lost sight of their war's objectives, humans, dwarves, halflings, kender, ogres, leaderless and milieu-tacticed, conquering block after block, the slain returning to full strength within 24 hours, the eternal soldier without respite. The Powers: Lei Kung the Duke of Thunder alone on his cloud-island temple, striking the guilty for Shang-Ti of Nirvana, servantless; and the great contested block of Maglubiyet and Gruumsh - goblin and hobgoblin legions clashing daily with the orcish, citadel sieges perpetual, the wandering orcish pantheon seeking an Asgard of their own, the orbiting holdings of Luthic, Bahgtru and Ilneval matching the goblin pantheon's aid, both sides waiting to hold the layer as the elves hold Arvandor, neither moving nor sharing the dull block - the everlasting war most deities cite as the folly of violence for its own end.",
+ "include_comment": "the Acheron pins",
+ "include_after": "#include \"rules/ninehells.h\"  // R587: the Nine Hells pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R587 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R587 LANDED 2026-10-17: commit",
+  "  fd8e03f59cf609105d316ade2d039a00a",
+  "  8d5924a (census 510 -> 511, pushed",
+  "  15ae156..fd8e03f), THE NINE HELLS,",
+  "  printed pp. 109-113, evil organized:",
+  "  the nine infinite layers with the",
+  "  barrier rule (lowest point of the",
+  "  upper, half a mile above the next, the",
+  "  20d6 fall for the flightless), Avernus",
+  "  the front parlor (the 1-in-6 fireball",
+  "  vapor, 1-in-12 without open flame,",
+  "  Tiamat's watchdog lair of abishai and",
+  "  dragon spirits), Dis the Iron City of",
+  "  Dispater with the stone-and-lead",
+  "  sanctum, Minauros Mammon's sinking",
+  "  city at 13% disease with the barrier",
+  "  30 feet above the palace roofs,",
+  "  Phlegethos the liquefied-fire realm of",
+  "  Belial and Abriymoch, Stygia's",
+  "  three-mile ice pack with the diluted",
+  "  Styx and Geryon's Tantlin behind the",
+  "  2d6 cold-fire walls, Malbolge Moloch's",
+  "  rockfall viceroyalty, Maladomini and",
+  "  Baalzebul's thousand-mile million-room",
+  "  Malagard, Caina at -60 degrees under",
+  "  Mephistopheles, Nessus with the rifts",
+  "  descending to Asmodeus's palace on the",
+  "  shifting ice lake of the Lethe with",
+  "  the triple-strength fire waves), the",
+  "  reddish-hoop portals of Avernus",
+  "  (Acheron, Gehenna, Concordant",
+  "  Opposition, Tiamat's guards and",
+  "  traps), the Prime conduits, the",
+  "  rumored pre-overlord conduit that",
+  "  destroys all evil that touches it, the",
+  "  home-layer immunity doctrine, the",
+  "  arch-devil census and the three",
+  "  factions (Asmodeus with Geryon and",
+  "  Tiamat at 1-5-9, Baalzebul with Moloch",
+  "  and the recruited Belial at 4-6-7,",
+  "  Mephistopheles with Dispater and",
+  "  Mammon at 2-3-8, the overlord supreme",
+  "  playing both ends through the",
+  "  underrated Tiamat), and the non-devil",
+  "  Powers (Druaga tolerated beside Dis,",
+  "  Set's blazing bone-dry Avernus swath",
+  "  and his captive-built pyramid, Hecate",
+  "  and Inanna adjacent in Phlegethos,",
+  "  Sekolah beneath the Stygian ice",
+  "  devouring Geryon's ambassadors,",
+  "  Kurtulmak robbing his suitors blind,",
+  "  the moving thief No Cha, and the",
+  "  false-name devils Dagon and Nergal).",
+  "  6 consts + 6 bools, prefix ddp, header",
+  "  rules/ninehells.h. ONE flip: gap",
+  "  census 76/14 -> 77/13. Spec 22,244",
+  "  bytes, md5 931e05e67130b6259d7a157cc",
+  "  376e8d1 matched exactly first try, 12",
+  "  inlines. TWENTY-TWO straight",
+  "  first-tries (R566-R587). NEXT - R588:",
+  "  Acheron (pp. 113-114, the iron-shod",
+  "  battle plains - Avalas with the Styx",
+  "  pits and the spirit legions, the",
+  "  hollow scrap-heap blocks of Thuldanin",
+  "  with the 0.1% search chance, the",
+  "  geometric blocks of Tintibulus, the",
+  "  razor squares of Ocanthus, the",
+  "  spherical portals and the spinning",
+  "  pattern, Lei Kung; page-114 already",
+  "  read, page-115.md still to read for",
+  "  the rest of the Acheron features and",
+  "  the goblinoid legions)."
+ ],
+ "banner": {
+  "title": "ACHERON - printed pp. 113-114, the iron-shod battle plains of lawful evil: the four block layers from Avalas to the razor squares of Ocanthus, the spherical portals that speak by sound, the spirit legions reborn within 24 hours, Lei Kung on his cloud, and Maglubiyet and Gruumsh warring forever over one dull block.",
+  "provenance": "verified against printed pp. 113-114 of the uploaded motp.pdf OCR; the four layers, the portal-sound convention, the scrap-heap and razor rules, the spirit legions and the goblin-orc war are pinned exactly as printed (Luthic and Ilneval restored against the OCR slips); Concordant Opposition (pp. 114-116) is left for the round that owns it.",
+  "sentinel": "the gap census after this round: 78 closed, 12 open - ONE box falls (Acheron); the odd plane of Concordant Opposition opens next, and the outer planes are nearly closed."
+ },
+ "consts": [
+  {
+   "name": "ddrAcheronLayerCount",
+   "value": 4,
+   "comment": "the four layers of Acheron, each stressing order over evil, the group over the individual: Avalas the topmost battle plain, Thuldanin the scrap heap, Tintibulus the geometric blocks, and Ocanthus the razor squares - each layer consisting of huge blocks that drift together, join for a time, then part again, the blocks the size of nations yet colliding without tremors; while blocks are joined, beings can change blocks and travel with the drifting river block; gravity pulls toward the center of each block, and the medium between them counts as air for breathing and flying."
+  },
+  {
+   "name": "ddrThuldaninSearchChance",
+   "value": 1000,
+   "comment": "the Thuldanin scrap heap: the second layer's hollow blocks, surfaces pockmarked with pits leading a few miles down into interiors filled with the broken scraps of thousands of devices - great ships burst asunder, toppled buildings, flying devices of every description, all inoperative, turned to stone by long exposure to the plane's magics; a day spent searching the litter yields anything useful only 0.1% of the time (1 in 1,000), and if useful the DM must determine whether it functions upon return to the Prime; there are no natives, only Avalas visitors seeking victory - and for each month a nonmagical item lies here it must save vs. crushing blow or turn to rock."
+  },
+  {
+   "name": "ddrOcanthusEdgeDice",
+   "value": 10,
+   "comment": "the Ocanthus razor squares: the final layer has no blocks, only razor-thin squares of hard black matter moving through the snow-white sky like a flurry of geese, from a few inches to several miles across, walkable on both faces (each side pulling gravitationally into the surface) - but a square striking edge-on inflicts 1d10 ten-sided dice of damage, hitting as a 1d10-hit-die monster with the target gaining no AC benefit from magical armor."
+  },
+  {
+   "name": "ddrPortalFallDice",
+   "value": 20,
+   "comment": "the Acheron portal arrival: those emerging from a spherical portal float in space and are slowly drawn to the nearest large block - and unless the traveler can fly, or the portal hangs very close to a block, he strikes the block with high velocity for 20d6 points of damage; flight spells operate normally in most of this layer."
+  }
+ ],
+ "bools": [
+  {
+   "name": "ddrAcheronDoctrine",
+   "value": true,
+   "comment": "the Acheron doctrine: the iron-shod battle plains, the most lawful of the evil planes, bridging the organized evil of the Nine Hells and the ultimate organization of Nirvana's clockwork disks - home of those who inflict evil secondarily, their chief aim organization and order; many armies but surprisingly few leaders, for those capable of initiative drift toward planes with more definite alignments."
+  },
+  {
+   "name": "ddrAvalasRule",
+   "value": true,
+   "comment": "Avalas, the topmost layer: the greatest number of block-like worlds and the most inhabitants, where the armies of the afterworlds come to battle - native legions and visitors settling differences in neutral territory; the ground black and hard as metal (the iron shod), reverberating to the passing of thousands of troops, the terrain cone-shaped mountains and pits, the iron citadels of armies, and the river Styx rising from one pit, crossing two or three sides of a block, then vanishing into another (Charon and his servants reach the blocks it touches)."
+  },
+  {
+   "name": "ddrTintibulusRule",
+   "value": true,
+   "comment": "Tintibulus, the third layer: blocks of many regular shapes - six-sided, eight-sided, and so on - solid throughout and made of grey volcanic stone; when collisions occur the stone fractures along natural fault lines, creating huge hexagons of various dimensions on the surfaces; no native life either, but the emptiness often attracts magical researchers."
+  },
+  {
+   "name": "ddrAcheronPortals",
+   "value": true,
+   "comment": "the Acheron portals and barriers: the upper layer (also called the Battleplains) is reached from Nirvana, Gehenna, and Concordant Opposition, each permanent portal hanging at a fixed point in space while the blocks slowly orbit it - a spherical portal activated by touch, its activation sound revealing the destination (a harmonious chord to Nirvana, a discordant one to Avernus of the Nine Hells, a silent sphere to Concordant Opposition); the spheres have no effect on the blocks, passing through them freely, though a portal will not function while inside a block, resuming as soon as the block passes; the interlayer barriers likewise hang in space unmoored to any block, making the lower reaches hard to reach or return from - but there is a careful order to the spinning of blocks, solids and black slabs, and those of at least 18 Intelligence who succeed an Intelligence check can discover an area's pattern and guide travelers barrier to barrier or portal to portal (one check per character per visit)."
+  },
+  {
+   "name": "ddrSpiritLegionRule",
+   "value": true,
+   "comment": "the spirit legions: compared to most other planes Acheron is a wasteland (though undiscovered life may hide as it would from an Antarctic landing), the imps, achaiarai and rust monsters immigrants from nearby planes along with occasional modrons and devils - the significant inhabitants are the spirit legions of the uppermost layer, gathering into nations of similar beliefs or alignments, all lawful with tendencies toward evil: the spirits of those who died in wars after losing sight of their objectives, war become an end in itself, humans among dwarves, halflings, kender, ogres and all manner of mindless soldiers; generally lacking leaders, they follow the tactics of the majority's milieu, fighting to conquer a block then joining against the legions of another block that comes within striking distance - and members slain in battle return to full strength within 24 hours, the eternal soldier fighting on without respite."
+  },
+  {
+   "name": "ddrAcheronPowers",
+   "value": true,
+   "comment": "the Powers of Acheron: the sole human Power is Lei Kung, the Chinese Duke of Thunder, who strikes the guilty as directed by Shang-Ti his lord in Nirvana - living not on any block but on a large cloud-island of his own devising, a small temple and quarters resting on the cloud between his callings, with no servants and no abode but the cloud. And Acheron is home to Maglubiyet of the goblins and hobgoblins, and Gruumsh of the orcs with most of the orcish pantheon: Maglubiyet and Gruumsh share the same large spinning block, the orcish spirit legions clashing daily with the goblin and hobgoblin legions, both Powers maintaining several large citadels, one spirit legion usually besieging another within them; Gruumsh's preoccupation with unwinnable wars may explain his pantheon's poor state - the orcish gods reported native to the Nine Hells, Gehenna, and most recently Acheron, moving plane to plane seeking a layer to call their own (an orcish Asgard); several smaller blocks orbit the great contested one, the holdings of Luthic, Bahgtru and Ilneval - Gruumsh's wife, son, and first lieutenant in battle - the son and lieutenant often aiding against the goblin legions, their aid matched by the goblin pantheon; both sides wait for the other's final defeat to control the layer as the elves control Arvandor, neither willing to move or share the dull block they fight over - and most other deities cite this everlasting war as the example of the folly of continued violence for its own end."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the AcheronLayerCount pin",
+   "expr": "m['ddrAcheronLayerCount']() != 4"
+  },
+  {
+   "note": "the ThuldaninSearchChance pin",
+   "expr": "m['ddrThuldaninSearchChance']() != 1000"
+  },
+  {
+   "note": "the OcanthusEdgeDice pin",
+   "expr": "m['ddrOcanthusEdgeDice']() != 10"
+  },
+  {
+   "note": "the PortalFallDice pin",
+   "expr": "m['ddrPortalFallDice']() != 20"
+  },
+  {
+   "note": "the AcheronDoctrine pin",
+   "expr": "m['ddrAcheronDoctrine']() != 1"
+  },
+  {
+   "note": "the AvalasRule pin",
+   "expr": "m['ddrAvalasRule']() != 1"
+  },
+  {
+   "note": "the TintibulusRule pin",
+   "expr": "m['ddrTintibulusRule']() != 1"
+  },
+  {
+   "note": "the AcheronPortals pin",
+   "expr": "m['ddrAcheronPortals']() != 1"
+  },
+  {
+   "note": "the SpiritLegionRule pin",
+   "expr": "m['ddrSpiritLegionRule']() != 1"
+  },
+  {
+   "note": "the AcheronPowers pin",
+   "expr": "m['ddrAcheronPowers']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the acheron pins": [
+   {
+    "kind": "const",
+    "name": "ddrAcheronLayerCount"
+   },
+   {
+    "kind": "const",
+    "name": "ddrThuldaninSearchChance"
+   },
+   {
+    "kind": "const",
+    "name": "ddrOcanthusEdgeDice"
+   },
+   {
+    "kind": "const",
+    "name": "ddrPortalFallDice"
+   },
+   {
+    "kind": "bool",
+    "name": "ddrAcheronDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "ddrAvalasRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddrTintibulusRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddrAcheronPortals"
+   },
+   {
+    "kind": "bool",
+    "name": "ddrSpiritLegionRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ddrAcheronPowers"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "acheron",
+   "from": "  - [ ] Acheron (pp. 113-114)",
+   "to": "  - [x] Acheron (pp. 113-114) - R588: the iron-shod battle plains (the four block layers, the spherical portals by sound, the spirit legions reborn in 24 hours, Lei Kung on his cloud, Maglubiyet and Gruumsh on the contested block)"
+  }
+ ],
+ "gap_census": {
+  "closed": 78,
+  "open": 12
+ },
+ "caller_files": [],
+ "inline_count": 10
+}

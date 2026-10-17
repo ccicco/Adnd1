@@ -125,7 +125,7 @@ sample entries verified against the canonical PHB levels).
   - [x] Hades (pp. 105-107) - R585: the three grey Glooms (the color fade and the larva trap, the coin portals, the Khin-Oin, the jailers-turned-prisoners, Nergal's seven domes, Hel and Nidhogg, Abbathor's Glitterhell, Yurtrus)
   - [x] Gehenna (pp. 107-109) - R586: the fourfold furnaces (the 45-degree gravity, the four layers, the black-chasm portals, the barghests, Chih-Chiang Fyu-Ya, Loviatar, Shargaas the Night Lord)
   - [x] The Nine Hells (pp. 109-113) - R587: the nine layers and the arch-devils (Avernus through Nessus, the reddish-hoop portals, the home-layer immunity, the three factions, Asmodeus the overlord, and the Powers from Set and Sekolah to Kurtulmak and No Cha)
-  - [ ] Acheron (pp. 113-114)
+  - [x] Acheron (pp. 113-114) - R588: the iron-shod battle plains (the four block layers, the spherical portals by sound, the spirit legions reborn in 24 hours, Lei Kung on his cloud, Maglubiyet and Gruumsh on the contested block)
   - [ ] The Concordant Opposition (pp. 114-116)
   - [ ] Beyond the outer planes (p. 116)
 - [ ] **Appendix I: The Prime Material Planes** (pp. 117-119) - the Alternate Primes doctrine
