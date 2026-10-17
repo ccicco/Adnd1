@@ -9432,6 +9432,45 @@ when both halves land.
   tooling are round-agnostic, but the next book
   or source must be chosen before any further
   spec is authored.
+- R564 LANDED 2026-10-17: commit c4f9c6b8283aa05b3bdc9
+  046d096450196f064f4 (census 487 -> 488, pushed
+  9f636b8..c4f9c6b), THE MotP ARC OPENER (the
+  R503 pattern), the Manual of the Planes
+  (1987, Jeff Grubb, 128 pp.), printed pp. 5-10
+  - the introduction: the five groupings
+  (Prime/Ethereal/inner/Astral/outer), the
+  organization pattern, the true/subjective
+  time doctrine (Deep Ethereal 10:1, inner 1:2,
+  Astral 365000:1), the natives-unaffected
+  rule, the Astral spell exemption, the
+  combined-spell both-limits rule. 4 consts +
+  4 bools, prefix dcs, header rules/motpintro.h
+  (MotP prefixes restart at dcs - dcm/dcn/dco/
+  dcp were the DSG index/DM-section/arc pins).
+  THIS ROUND LANDED A NEW GAP REPORT
+  tools/motp_gap_report.md (60 boxes at opener)
+  in the same commit as the spec - a FIRST for
+  the arc-opener pattern. A FLIP round, five
+  flips: gap census 0/60 -> 5/55; the spell-
+  summary tables pp. 8-9 are GARBLED OCR,
+  flagged in the report, staying open for a
+  careful reconstruction round. TWO RITUAL
+  CATCHES, both mine: (1) the gap report was
+  published POST-FLIP (my mirror md5 was taken
+  after the engine ran), so the first user run
+  hit the mixed-state abort (the R420 lesson)
+  - FIXED IN THE RITUAL: published canvases
+  must be PRE-ENGINE state; (2) the two abort/
+  restore cycles before the clean run (the
+  user's revert snippet from the spec's own
+  gap_flips worked first try). Spec 9,544
+  bytes, md5 ee10ebe4f1cfb9aa0b84634fa2cf22de,
+  8 inlines; gap report md5
+  e206be697eeb821b3cccf33aa22b3e9d pre-flip
+  state. NEXT - R565: the spell-summary
+  reconstruction (pp. 8-9, the garbled OCR -
+  column-by-column against the school lists),
+  then the Ethereal chapter (pp. 11-21).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

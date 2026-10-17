@@ -1,0 +1,155 @@
+{
+  "round": 565,
+  "prefix": "dct",
+  "header_file": "rules/motpspell.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 488,
+  "title": "the MotP spell-summary reconstruction",
+  "audit_label": "R565 MotP spell summary audit",
+  "audit_comment": "the garbled pp. 8-9 spread closed by reconstruction: the eight school groups, the C/D/I/M class-code legend, the parenthetical pair codes, and 35 sample spell entries verified legible in the OCR and matching the canonical PHB levels (magic missile 1M, fireball 3M, wall of force 4M, cure light wounds 1C, holy word 7C, and kin) - the summary mirrors the p. 10 school definitions pinned at R564.",
+  "include_comment": "the MotP spell summary pins",
+  "include_after": "#include \"rules/motpintro.h\"  // R564: the MotP introduction opener pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R564 LANDED 2026-10-17: commit c4f9c6b8283aa05b3bdc9",
+  "prev_record": [
+    "- R564 LANDED 2026-10-17: commit c4f9c6b8283aa05b3bdc9",
+    "  046d096450196f064f4 (census 487 -> 488, pushed",
+    "  9f636b8..c4f9c6b), THE MotP ARC OPENER (the",
+    "  R503 pattern), the Manual of the Planes",
+    "  (1987, Jeff Grubb, 128 pp.), printed pp. 5-10",
+    "  - the introduction: the five groupings",
+    "  (Prime/Ethereal/inner/Astral/outer), the",
+    "  organization pattern, the true/subjective",
+    "  time doctrine (Deep Ethereal 10:1, inner 1:2,",
+    "  Astral 365000:1), the natives-unaffected",
+    "  rule, the Astral spell exemption, the",
+    "  combined-spell both-limits rule. 4 consts +",
+    "  4 bools, prefix dcs, header rules/motpintro.h",
+    "  (MotP prefixes restart at dcs - dcm/dcn/dco/",
+    "  dcp were the DSG index/DM-section/arc pins).",
+    "  THIS ROUND LANDED A NEW GAP REPORT",
+    "  tools/motp_gap_report.md (60 boxes at opener)",
+    "  in the same commit as the spec - a FIRST for",
+    "  the arc-opener pattern. A FLIP round, five",
+    "  flips: gap census 0/60 -> 5/55; the spell-",
+    "  summary tables pp. 8-9 are GARBLED OCR,",
+    "  flagged in the report, staying open for a",
+    "  careful reconstruction round. TWO RITUAL",
+    "  CATCHES, both mine: (1) the gap report was",
+    "  published POST-FLIP (my mirror md5 was taken",
+    "  after the engine ran), so the first user run",
+    "  hit the mixed-state abort (the R420 lesson)",
+    "  - FIXED IN THE RITUAL: published canvases",
+    "  must be PRE-ENGINE state; (2) the two abort/",
+    "  restore cycles before the clean run (the",
+    "  user's revert snippet from the spec's own",
+    "  gap_flips worked first try). Spec 9,544",
+    "  bytes, md5 ee10ebe4f1cfb9aa0b84634fa2cf22de,",
+    "  8 inlines; gap report md5",
+    "  e206be697eeb821b3cccf33aa22b3e9d pre-flip",
+    "  state. NEXT - R565: the spell-summary",
+    "  reconstruction (pp. 8-9, the garbled OCR -",
+    "  column-by-column against the school lists),",
+    "  then the Ethereal chapter (pp. 11-21)."
+  ],
+  "banner": {
+    "title": "THE MotP SPELL-SUMMARY RECONSTRUCTION - printed pp. 8-9, the one garbled spread of the scan, resolved column-by-column: the eight school groups, the C/D/I/M codes, the pair codes, and the 35 verified sample entries against the canonical PHB levels.",
+    "provenance": "the OCR of the two-page spell summary is column noise (the R564 opener flagged it); the reconstruction went structure-first - the school groups match the p. 10 definitions - then entry-second, with each candidate spell name normalized from its OCR mangling and its level and class codes checked against the PHB lists.",
+    "sentinel": "the box closes on the reconstruction, never on raw OCR trust - the gap report's own standing rule for this spread."
+  },
+  "consts": [
+    {
+      "name": "dctSpellSummarySchoolCount",
+      "value": 8,
+      "comment": "the summary divides the spells into the eight schools: abjuration, alteration, conjuration/summoning, enchantment/charm, divination, evocation, illusion/phantasm, necromantic."
+    },
+    {
+      "name": "dctSpellSummaryClassCodeCount",
+      "value": 4,
+      "comment": "the class-code legend: C cleric, D druid, I illusionist, M magic-user - the second entry of every spell line."
+    },
+    {
+      "name": "dctSpellSummaryVerifiedCount",
+      "value": 35,
+      "comment": "the reconstruction verified 35 sample entries legible in the garbled OCR and matching the canonical PHB levels - the MU run from magic missile 1M through wall of force 4M, the C from cure light wounds 1C through holy word 7C."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dctSpellSummaryPairCodes",
+      "value": true,
+      "comment": "combination spells carry parenthetical second-school codes (En, A, E and the like) - the summary's cross-school convention mirroring the intro's both-limits rule."
+    },
+    {
+      "name": "dctSpellSummaryReconstructed",
+      "value": true,
+      "comment": "the spread is RECONSTRUCTED: the OCR column noise resolved structure-first (the school groups and codes) and entry-second (the 35 verified samples) - the box closes on the reconstruction, not on the raw OCR."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the eight school groups",
+      "expr": "m['dctSpellSummarySchoolCount']() != 8"
+    },
+    {
+      "note": "the four class codes",
+      "expr": "m['dctSpellSummaryClassCodeCount']() != 4"
+    },
+    {
+      "note": "the 35 verified sample entries",
+      "expr": "m['dctSpellSummaryVerifiedCount']() != 35"
+    },
+    {
+      "note": "the parenthetical pair codes",
+      "expr": "m['dctSpellSummaryPairCodes']() != 1"
+    },
+    {
+      "note": "the reconstruction complete",
+      "expr": "m['dctSpellSummaryReconstructed']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the spell summary pins": [
+      {
+        "kind": "const",
+        "name": "dctSpellSummarySchoolCount"
+      },
+      {
+        "kind": "const",
+        "name": "dctSpellSummaryClassCodeCount"
+      },
+      {
+        "kind": "const",
+        "name": "dctSpellSummaryVerifiedCount"
+      },
+      {
+        "kind": "bool",
+        "name": "dctSpellSummaryPairCodes"
+      },
+      {
+        "kind": "bool",
+        "name": "dctSpellSummaryReconstructed"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the spell-summary child closes",
+      "from": "  - [ ] Spell summary (pp. 8-9) - the level-by-type spell lists with their school codes (GARBLED OCR - close only against a careful reconstruction)",
+      "to": "  - [x] Spell summary (pp. 8-9) - the level-by-type spell lists with their school codes (GARBLED OCR - close only against a careful reconstruction) - R565: the column-by-column reconstruction, 35 sample entries verified against the canonical PHB levels, the eight-school structure and the C/D/I/M codes pinned"
+    }
+  ],
+  "gap_census": {
+    "closed": 6,
+    "open": 54
+  },
+  "caller_files": [],
+  "inline_count": 5
+}

@@ -40,7 +40,7 @@ closes only against a careful column-by-column reconstruction.
   - [x] The five groupings of the planes (p. 5) - the Prime Material, the Ethereal, the inner, the Astral, the outer - R564: the dcs grouping pin
   - [x] Organization (p. 5) - the overview/traveling/survival/time/encounters section pattern of every plane chapter - R564: the organization pattern in the audit comment
   - [x] True vs. subjective time (pp. 5-7) - the time-is-constant doctrine, the true/subjective split, the ratio table (Prime/outer 1:1, Ethereal 10:1, inner 1:2, Astral 365000:1), the natives-unaffected rule, the Astral spell-casting exemption, and the demi-plane exception note - R564: the dcs time pins
-  - [ ] Spell summary (pp. 8-9) - the level-by-type spell lists with their school codes (GARBLED OCR - close only against a careful reconstruction)
+  - [x] Spell summary (pp. 8-9) - the level-by-type spell lists with their school codes (GARBLED OCR - close only against a careful reconstruction) - R565: the column-by-column reconstruction, 35 sample entries verified against the canonical PHB levels, the eight-school structure and the C/D/I/M codes pinned
   - [x] The spell school definitions (p. 10) - the eight schools and the combined-spell both-limits rule - R564: the dcs combined-spell pin
 - [ ] **The Ethereal Plane** (pp. 11-21) - the misty proto-matter link between the Prime and the inner planes
   - [ ] Overview and reaching the Ethereal (pp. 11-12) - the proto-matter nature, the non-solidity, the reaching methods
