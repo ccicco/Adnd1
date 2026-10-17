@@ -40,12 +40,12 @@ re-grained then, before any DM pin round.
 
 ## The chapters (the book's own Table of Contents hierarchy)
 
-- [ ] **Dungeoneer's Survival Guide: what is it?** (p. 6) - the chapter frame: the mystery of the underdark, the new rules for underground play, the denizens of the underdark, the underground campaign and the using-this-information player/DM split
-  - [ ] The Mystery of the Underdark (p. 6)
-  - [ ] New Rules for Underground Play (p. 6)
-  - [ ] The Denizens of the Underdark (p. 6)
-  - [ ] The Underground Campaign (p. 6)
-  - [ ] Using This Information (p. 6)
+- [x] **Dungeoneer's Survival Guide: what is it?** (p. 6) - the chapter frame: the mystery of the underdark, the new rules for underground play, the denizens of the underdark, the underground campaign and the using-this-information player/DM split - the parent and all five children closed in one round (R562, the R557 single-round chapter precedent)
+  - [x] The Mystery of the Underdark (p. 6) - R562: the sunless-mystery realms, the vast cities, the formed-by and who-controls questions
+  - [x] New Rules for Underground Play (p. 6) - R562: the non-thief climbing, the wall-clinging and footbridge combat, the Oriental Adventures proficiencies reintroduced
+  - [x] The Denizens of the Underdark (p. 6) - R562: the four named cultures, the histories, the random location and encounter generators
+  - [x] The Underground Campaign (p. 6) - R562: the DM half, the 3-D mapping guidelines, the story conflicts, the player and out-of-hand campaign salvage
+  - [x] Using This Information (p. 6) - R562: the first section for player and DM alike, the latter portion the DM-only Forbidden Territory
 - [x] **Overview of the Underdark** (pp. 7-11) - R503: the three natural cave types (limestone, sea, lava) with the living/dead cave split, the geothermal side, the unnatural locale taxonomy (dungeons, mines, burrows, realms) and the five hazard families (cave-ins, floods, fires, poisonous gases, volcanoes)
   - [x] Natural underground locales (pp. 7-9) - R503: the limestone cave (acid erosion, the water-table drain, the inlet and sinkhole entrances, the drip formations, the living-cave glisten/mud vs the dead-cave brittle dust/rubble, the smooth water-filled passages), the smaller smooth sea caves with their relic likelihood, the dry hidden lava caves, the quake and fault chambers, the geothermal ladder (lava 1,800 F, crust, steam, hot water, warm air)
   - [x] Unnatural underground locales (pp. 9-11) - R503: the purpose-built dungeons (soft-rock excavation, 10-foot dirt shoring, the jail/treasure/lair/defense purposes, the stronger-than-castles note), the mine networks (active guarded, inactive laired), the creator-sized burrows with the umber-hulk stone exception, and the realms deeper than a mile (nation-scale caverns, seas with islands, wilderness-to-cities)

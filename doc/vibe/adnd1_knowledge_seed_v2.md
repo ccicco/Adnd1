@@ -9347,6 +9347,29 @@ when both halves land.
   flip-only against nine closed children, the
   R549/R556/R559 pattern), then the front-matter
   chapter p. 6, then the arc's final census.
+- R561 LANDED 2026-10-17: commit 576fc65d2af319de3633
+  75a04558172d657e7859 (census 484 -> 485, pushed
+  601f06b..576fc65), THE DSG DM SECTION PARENT
+  CLOSURE, printed pp. 64-120 - the fourth
+  FLIP-ONLY round of the arc (the R549/R556/R559
+  pattern): zero pins, the audit block the only
+  census movement, the parent box closing against
+  its nine already-closed children (the R503 DM
+  table of contents, the R530/R531 environment
+  chapter with the geography and theories, the
+  R532 cultures, the R533-R549 Deepearth lands,
+  the R550-R556 campaign chapter, the R557
+  mapping). The gap census moves 145/10 -> 146/9;
+  the gap report WAS in the git add (5 files).
+  Spec 4,484 bytes, md5
+  1ec18c627956f1221982d0b596b8c930 matched
+  exactly first try, 0 inlines, header
+  rules/dsgdmsec.h, prefix dcp. No authoring
+  catches. NEXT - R562: the front-matter chapter
+  p. 6 (the "what is it?" frame with its five
+  sub-items - the mystery, the new rules, the
+  denizens, the underground campaign, using this
+  information), then the arc's final census.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

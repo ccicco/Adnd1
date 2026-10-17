@@ -1,0 +1,203 @@
+{
+  "round": 562,
+  "prefix": "dcq",
+  "header_file": "rules/dsgintro.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 485,
+  "title": "the DSG what-is-it front matter",
+  "audit_label": "R562 DSG intro frame audit",
+  "audit_comment": "the printed p. 6 chapter frame: the mystery of the underdark (the sunless realms question), the new rules for underground play (the non-thief climbing, the Oriental Adventures proficiencies), the denizens (the four named cultures, the random generators), the underground campaign (the DM half, the 3-D mapping, the story conflicts) and the using-this-information player/DM split with the Forbidden Territory.",
+  "include_comment": "the DSG what-is-it front matter pins",
+  "include_after": "#include \"rules/dsgdmsec.h\"  // R561: the DSG DM section parent closure",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R561 LANDED 2026-10-17: commit 576fc65d2af319de3633",
+  "prev_record": [
+    "- R561 LANDED 2026-10-17: commit 576fc65d2af319de3633",
+    "  75a04558172d657e7859 (census 484 -> 485, pushed",
+    "  601f06b..576fc65), THE DSG DM SECTION PARENT",
+    "  CLOSURE, printed pp. 64-120 - the fourth",
+    "  FLIP-ONLY round of the arc (the R549/R556/R559",
+    "  pattern): zero pins, the audit block the only",
+    "  census movement, the parent box closing against",
+    "  its nine already-closed children (the R503 DM",
+    "  table of contents, the R530/R531 environment",
+    "  chapter with the geography and theories, the",
+    "  R532 cultures, the R533-R549 Deepearth lands,",
+    "  the R550-R556 campaign chapter, the R557",
+    "  mapping). The gap census moves 145/10 -> 146/9;",
+    "  the gap report WAS in the git add (5 files).",
+    "  Spec 4,484 bytes, md5",
+    "  1ec18c627956f1221982d0b596b8c930 matched",
+    "  exactly first try, 0 inlines, header",
+    "  rules/dsgdmsec.h, prefix dcp. No authoring",
+    "  catches. NEXT - R562: the front-matter chapter",
+    "  p. 6 (the \"what is it?\" frame with its five",
+    "  sub-items - the mystery, the new rules, the",
+    "  denizens, the underground campaign, using this",
+    "  information), then the arc's final census."
+  ],
+  "banner": {
+    "title": "THE DSG WHAT-IS-IT FRONT MATTER - the printed p. 6 chapter frame opening the book: the mystery of the underdark, the new rules for underground play, the denizens of the underdark, the underground campaign and the using-this-information player/DM split - the parent and all five children closed in one round.",
+    "provenance": "from the DSG chapter on printed p. 6, djvu lines 466-585, between the credits and the Overview of the Underdark (the R503 extraction round); every promise cross-checked against the chapter that later lands it - the climbing and proficiencies the movement chapter, the cultures the R532 round, the generators the R533 Deepearth frame, the 3-D mapping the R557 doctrine.",
+    "sentinel": "the front-matter frame is the arc's own table of contents in prose: each subhead is a promise the landed rounds already keep."
+  },
+  "consts": [
+    {
+      "name": "dcqFramePage",
+      "value": 6,
+      "comment": "the chapter sits on printed p. 6 between the credits and the Overview of the Underdark - the front-matter frame opening the whole book."
+    },
+    {
+      "name": "dcqNamedCultureCount",
+      "value": 4,
+      "comment": "the denizens subhead names four cultures - the drow, duergar, kuo-toa and myconids revealed in their natural environments - the cultures the R532 chapter later lands in full."
+    },
+    {
+      "name": "dcqSectionCount",
+      "value": 2,
+      "comment": "the book splits into two sections: the first for player and DM alike (the expanded rules, the spells, the proficiencies, the new equipment), the latter tailored to the DM alone."
+    },
+    {
+      "name": "dcqPlayerLureCount",
+      "value": 3,
+      "comment": "the mystery subhead counts three subterranean lures beneath the earth - the most fearsome foes, the most fabulous treasures and the most mysterious locales."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dcqNonthiefClimbCovered",
+      "value": true,
+      "comment": "the new-rules subhead asks whether a non-thief can climb a rough stone wall, fight while clinging to the wall, or duel atop a swaying footbridge - all covered by the rules this book introduces (the movement chapter era)."
+    },
+    {
+      "name": "dcqProficienciesFromOA",
+      "value": true,
+      "comment": "the proficiencies were first introduced in the AD&D Oriental Adventures book; the DSG reintroduces them and adds many more suited to the underearth."
+    },
+    {
+      "name": "dcqRandomGenerators",
+      "value": true,
+      "comment": "the denizens subhead promises the detailed random location and encounter generators - exciting adventuring with little or no preparation time (the Deepearth R533 generators)."
+    },
+    {
+      "name": "dcqForbiddenDMHalf",
+      "value": true,
+      "comment": "the using-this-information subhead marks the latter portion the DM's Forbidden Territory - players should avoid it or face the wrath of the DM."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the frame chapter at printed p. 6",
+      "expr": "m['dcqFramePage']() != 6"
+    },
+    {
+      "note": "the four named denizen cultures",
+      "expr": "m['dcqNamedCultureCount']() != 4"
+    },
+    {
+      "note": "the two player/DM sections",
+      "expr": "m['dcqSectionCount']() != 2"
+    },
+    {
+      "note": "the three subterranean lures",
+      "expr": "m['dcqPlayerLureCount']() != 3"
+    },
+    {
+      "note": "the non-thief wall and footbridge rules",
+      "expr": "m['dcqNonthiefClimbCovered']() != 1"
+    },
+    {
+      "note": "the Oriental Adventures proficiency origin",
+      "expr": "m['dcqProficienciesFromOA']() != 1"
+    },
+    {
+      "note": "the random generators with no prep time",
+      "expr": "m['dcqRandomGenerators']() != 1"
+    },
+    {
+      "note": "the DM-only Forbidden Territory",
+      "expr": "m['dcqForbiddenDMHalf']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the intro frame pins": [
+      {
+        "kind": "const",
+        "name": "dcqFramePage"
+      },
+      {
+        "kind": "const",
+        "name": "dcqNamedCultureCount"
+      },
+      {
+        "kind": "const",
+        "name": "dcqSectionCount"
+      },
+      {
+        "kind": "const",
+        "name": "dcqPlayerLureCount"
+      },
+      {
+        "kind": "bool",
+        "name": "dcqNonthiefClimbCovered"
+      },
+      {
+        "kind": "bool",
+        "name": "dcqProficienciesFromOA"
+      },
+      {
+        "kind": "bool",
+        "name": "dcqRandomGenerators"
+      },
+      {
+        "kind": "bool",
+        "name": "dcqForbiddenDMHalf"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the intro parent box closes",
+      "from": "- [ ] **Dungeoneer's Survival Guide: what is it?** (p. 6) - the chapter frame: the mystery of the underdark, the new rules for underground play, the denizens of the underdark, the underground campaign and the using-this-information player/DM split",
+      "to": "- [x] **Dungeoneer's Survival Guide: what is it?** (p. 6) - the chapter frame: the mystery of the underdark, the new rules for underground play, the denizens of the underdark, the underground campaign and the using-this-information player/DM split - the parent and all five children closed in one round (R562, the R557 single-round chapter precedent)"
+    },
+    {
+      "note": "the Mystery child closes",
+      "from": "  - [ ] The Mystery of the Underdark (p. 6)",
+      "to": "  - [x] The Mystery of the Underdark (p. 6) - R562: the sunless-mystery realms, the vast cities, the formed-by and who-controls questions"
+    },
+    {
+      "note": "the New Rules child closes",
+      "from": "  - [ ] New Rules for Underground Play (p. 6)",
+      "to": "  - [x] New Rules for Underground Play (p. 6) - R562: the non-thief climbing, the wall-clinging and footbridge combat, the Oriental Adventures proficiencies reintroduced"
+    },
+    {
+      "note": "the Denizens child closes",
+      "from": "  - [ ] The Denizens of the Underdark (p. 6)",
+      "to": "  - [x] The Denizens of the Underdark (p. 6) - R562: the four named cultures, the histories, the random location and encounter generators"
+    },
+    {
+      "note": "the Campaign child closes",
+      "from": "  - [ ] The Underground Campaign (p. 6)",
+      "to": "  - [x] The Underground Campaign (p. 6) - R562: the DM half, the 3-D mapping guidelines, the story conflicts, the player and out-of-hand campaign salvage"
+    },
+    {
+      "note": "the Using This Information child closes",
+      "from": "  - [ ] Using This Information (p. 6)",
+      "to": "  - [x] Using This Information (p. 6) - R562: the first section for player and DM alike, the latter portion the DM-only Forbidden Territory"
+    }
+  ],
+  "gap_census": {
+    "closed": 152,
+    "open": 3
+  },
+  "caller_files": [],
+  "inline_count": 8
+}
