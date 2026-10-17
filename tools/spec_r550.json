@@ -1,0 +1,671 @@
+{
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "The DSG campaign considerations opener pins printed pp. 99-100: the chapter frame (the myriad campaign ingredients, the skilled DM first and the willing players next, the type mismatch warning), the three player types (the Adventurers with combat above all and treasure as motivation, the Problem-Solvers with the twisted-plot puzzle frame, the Role-Players with total character detail and the shopping haggling), Challenges for the DM (the blend and the all-three-served rule), the Fine Art of Juggling (the feedback key, the dying-clue encounter juggle, the per-style rewards), Designing the Adventure and the World (the settings-and-story ingredients, the deferred detail, the preparation payoff), and Worlds of Adventure (the scope first, the surface-minimal rule, the race-placement discipline, the clear-split vs complex social structures).",
+ "audit_label": "R550 DSG campaign opener audit",
+ "banner": {
+  "provenance": "djvu lines 12711-13012 with the Capture-layer pdf pages 99-100 cross-read (the staging rebuild used a pure-python Capture-layer extractor - no poppler in the sandbox - reading the Tj/TJ text layer of the same IA pdf, with the parser page number equal to the printed page). The two reads agree across the round; the one settled garble: the djvu OCR prints NPC as NPO twice (settled as NPCs by the Capture read). The societies contrast sentence breaks across the pp. 100-101 page boundary - the contrast pins whole with the break noted here. The three-types taxonomy confirmed by the Capture read ('Most players fit into one of three general types: Adventurers, Problem Solvers, or Role-Players'). A CLEAN-READ ROUND. A ZERO-FLIP ROUND: the pp. 99-113 Campaign Considerations child stays open until the whole chapter lands (challenges p. 100, juggling p. 100, designing p. 100, plot and counterplot pp. 103-106, techniques pp. 109-110, running the game pp. 111-113).",
+  "sentinel": "The campaign chapter: R550 the opener, the rest of Worlds of Adventure pp. 101-103, plot and counterplot pp. 103-106, the techniques pp. 109-112, help from the players p. 113, then the child flip.",
+  "title": "THE DSG CAMPAIGN CONSIDERATIONS OPENER, R550: printed pp. 99-100 (pdf 100-101) - the chapter frame and the DM-facing campaign craft: the myriad ingredients of a successful campaign (the skilled DM with time, energy and the talent to communicate settings; the willing players sharing common goals; the hack-and-slash vs plot-structuring mismatch warning); the three player types - the Adventurers (combat above all, characters judged by the magic they bring to bear, slain characters quickly replaced, treasure alone enough to draw them underground, the easiest gamers to DM for, kept fresh by clever monster tactics, monster variations, wronged-monster retribution, varied treasure hiding, limited magic items with odd twists and restrictions, planning-gated major encounters, difficult character recovery with no instant death and several chances for drama, and the veterans' occasional return), the Problem-Solvers (the campaign as a great puzzle, the twisted and convoluted plot the better, battles only as tactical problems, rules creativity demanding a creative and consistent DM, the routine fatigue, the challenge balance - hard enough to challenge, easy enough to solve with effort - the borrowed tricks and traps, the motivating backgrounds with player-devised objectives, the random encounters as mysteries and clues, the carefully defined NPCs with motivations, and the mystery story line relished clue by clue), and the Role-Players (every character detail down to ancestry and minor possessions, the full shopping role-play with the copper-piece haggling, adventures as growth opportunities, the believability faults, the personality and motivation discipline, the NPC and PC interaction with talking over force, and the personal-stakes motivations - the family name, the vengeance, the kidnapped loved one, anything the characters value); Challenges for the DM (most players a blend of the three with one emphasis; the successful campaign challenges all three); the Fine Art of Juggling (the tailored fun for single-type groups, the juggling for mixed groups, the feedback key - watching and listening, the facial expressions - the restless-Adventurer random encounter, the dying-bandit clue and the search-discovery juggle for the Problem-Solvers, the talk-to-each-player cadence reading between the lines, the boredom signal, the per-style rewards keeping the game fresh); Designing the Adventure and the World (the settings and the story line as the other crucial ingredients, the setting definition - the locations, the denizens, their relationships - the deferred orc detail, the rough story sketch drawing all types, the no-total-advance-preparation rule with its semblance techniques, the preparation payoff and the anticipated-conflicts stability); and Worlds of Adventure: The Importance of Setting (the DM's unique creation as a blend of factors, the scope determined first, the surface-minimal underground campaign with its surface base for surface-dweller PCs, the dungeons-caverns-realms scope and relationships with the consistent captured-deep-dweller answers, the deferred race placements - the drow here, the duergar there, later - with races easy to add and hard to remove, and the social-structure split: the admittedly unrealistic clearly-defined good and evil, easier to design with friend-and-foe ease, against the complex realistic societies with good and evil opposed within the same society)."
+ },
+ "bools": [
+  {
+   "comment": "the ingredients of a successful campaign are myriad and cannot be exhaustively listed; even the most experienced DM benefits from other referees' experience",
+   "name": "dccIngredientsMyriad",
+   "value": true
+  },
+  {
+   "comment": "the most important ingredient: a skilled DM with the time and energy to carefully define and create his world, and the talent to communicate settings effectively",
+   "name": "dccSkilledDMFirst",
+   "value": true
+  },
+  {
+   "comment": "the next most important ingredients: willing players who share common goals with the DM",
+   "name": "dccWillingPlayersNext",
+   "value": true
+  },
+  {
+   "comment": "players interested in hack-and-slash should not be matched with a DM interested in careful plot structuring and detailed mystery solving",
+   "name": "dccTypeMismatch",
+   "value": true
+  },
+  {
+   "comment": "Adventurers enjoy combat above all other types of gaming activities",
+   "name": "dccCombatSupreme",
+   "value": true
+  },
+  {
+   "comment": "Adventurers prefer adventures where the obstacles are physical and dangerous and must be overcome by force",
+   "name": "dccPhysicalObstacles",
+   "value": true
+  },
+  {
+   "comment": "Adventurers judge characters on the magical bonuses brought to bear in combat, not on deep moral or philosophical concerns",
+   "name": "dccMagicBonusJudge",
+   "value": true
+  },
+  {
+   "comment": "slain Adventurer characters are replaced quickly, the disappointment being the lost magical items",
+   "name": "dccQuickReplacement",
+   "value": true
+  },
+  {
+   "comment": "Adventurer characters are usually motivated to enter a dungeon simply by the prospect of treasure to plunder",
+   "name": "dccTreasureDraws",
+   "value": true
+  },
+  {
+   "comment": "the Adventurer is the easiest gamer to DM for: a few monsters of increasing toughness with hoarded treasure entertains the group for weeks",
+   "name": "dccEasiestToDM",
+   "value": true
+  },
+  {
+   "comment": "keep Adventurers fresh: clever monster tactics played intelligently, new variations on easily-overcome monsters (poison, magic use), and retribution sought by wronged monsters",
+   "name": "dccMonsterIntelligence",
+   "value": true
+  },
+  {
+   "comment": "vary the treasure-hiding approaches; limit the number of magical items; potent items carry odd twists and restrictions - limited charges, or operation only in a particular environment",
+   "name": "dccItemDiscipline",
+   "value": true
+  },
+  {
+   "comment": "PCs should not succeed at major encounters unless they use careful planning",
+   "name": "dccPlanningGatesSuccess",
+   "value": true
+  },
+  {
+   "comment": "make recovering slain characters difficult, but avoid instant death situations - drama and tension increase when a character has several chances to avoid a terrible fate",
+   "name": "dccNoInstantDeath",
+   "value": true
+  },
+  {
+   "comment": "even experienced gamers who generally play in the other categories occasionally enjoy a return to the Adventurer style of play",
+   "name": "dccVeteranReturn",
+   "value": true
+  },
+  {
+   "comment": "Problem-Solvers see the campaign as a great puzzle, their purpose to put all the pieces together",
+   "name": "dccPuzzleFrame",
+   "value": true
+  },
+  {
+   "comment": "for Problem-Solvers the story becomes very important - the more twisted and convoluted the plot, the better",
+   "name": "dccConvolutionBest",
+   "value": true
+  },
+  {
+   "comment": "battles interest Problem-Solvers only from the standpoint of the tactical problems they present",
+   "name": "dccTacticalBattles",
+   "value": true
+  },
+  {
+   "comment": "Problem-Solvers are very creative with the rules, devising new equipment and magical items, and require a DM who is creative and consistent",
+   "name": "dccRulesCreativity",
+   "value": true
+  },
+  {
+   "comment": "Problem-Solvers are enthusiastic about unique, challenging sessions and quickly tire of routine campaigns - tough to referee, bored with anything that does not seem new",
+   "name": "dccRoutineBoredom",
+   "value": true
+  },
+  {
+   "comment": "Problem-Solver adventures must be hard enough to be challenging, but easy enough to be solved with sufficient effort",
+   "name": "dccChallengeBalance",
+   "value": true
+  },
+  {
+   "comment": "do not hesitate to borrow tricks, traps, and encounter ideas from books and other sources",
+   "name": "dccBorrowFreely",
+   "value": true
+  },
+  {
+   "comment": "give PCs motivating backgrounds, let players devise their own objectives, use random encounters to present mysteries and clues, and define NPCs with care and motivations",
+   "name": "dccMotivationToolkit",
+   "value": true
+  },
+  {
+   "comment": "Problem-Solvers relish a story line presenting a mystery, eagerly seeking clues and assembling plot elements; the course-of-action debates are great fun for all concerned",
+   "name": "dccMysteryStory",
+   "value": true
+  },
+  {
+   "comment": "Role-Players enjoy creating every detail of their characters' lives, down to ancestry and minor possessions",
+   "name": "dccTotalDetail",
+   "value": true
+  },
+  {
+   "comment": "Role-Players want to role-play the whole shopping experience, haggling over copper pieces with the shopkeeper",
+   "name": "dccShoppingRoleplay",
+   "value": true
+  },
+  {
+   "comment": "Role-Players view adventures as opportunities for their characters to grow, sometimes developed to almost painful detail",
+   "name": "dccGrowthFrame",
+   "value": true
+  },
+  {
+   "comment": "Role-Players almost always include one or more faults among their PCs' characteristics, adding believability",
+   "name": "dccBelievableFaults",
+   "value": true
+  },
+  {
+   "comment": "each PC's personality matters - players react as their characters would; Role-Players enjoy interaction with NPCs and other PCs and often talk their way out of problems others solve with force",
+   "name": "dccInteractionTalk",
+   "value": true
+  },
+  {
+   "comment": "for Role-Players the adventure motivation must be something important to the characters",
+   "name": "dccPersonalStakes",
+   "value": true
+  },
+  {
+   "comment": "anything affecting what the characters value sends them into the dungeon: the family name hoisted to glory or saved from the mud, vengeance for harm suffered, rescuing a kidnapped person close to them",
+   "name": "dccValueHooks",
+   "value": true
+  },
+  {
+   "comment": "most players represent a blend of the three types with an emphasis in one area; the categories are useful for determining the general thrust of the game",
+   "name": "dccBlendTypical",
+   "value": true
+  },
+  {
+   "comment": "a successful campaign must provide challenges for all three types of players",
+   "name": "dccAllThreeServed",
+   "value": true
+  },
+  {
+   "comment": "all-Adventurer groups want a series of challenging, exciting action encounters with appropriate rewards; all-Role-Player groups want interesting NPCs and opportunities for interaction",
+   "name": "dccTypeTailoredFun",
+   "value": true
+  },
+  {
+   "comment": "groups of more than one basic type need juggling to make sure each player is entertained",
+   "name": "dccMixedJuggling",
+   "value": true
+  },
+  {
+   "comment": "the key to successful juggling is feedback - information gained by watching and listening to players; boredom and frustration show in the facial expressions while the adventure runs",
+   "name": "dccFeedbackKey",
+   "value": true
+  },
+  {
+   "comment": "restless Adventurers while the Role-Players enjoy a chance meeting: time for a random encounter",
+   "name": "dccRestlessRandom",
+   "value": true
+  },
+  {
+   "comment": "challenge Problem-Solvers inside the same encounter - a bandit expiring murmurs an obscure clue to the party's mystery, or an unusual observation or search discovery",
+   "name": "dccDyingClue",
+   "value": true
+  },
+  {
+   "comment": "make it a point to talk to each player every few minutes, listening carefully to the responses, reading between the lines if necessary",
+   "name": "dccTalkRegularly",
+   "value": true
+  },
+  {
+   "comment": "any time a player sounds listless or bored, it is time to juggle something challenging into their path",
+   "name": "dccBoredomSignal",
+   "value": true
+  },
+  {
+   "comment": "the key: reward players for each style of play during an encounter - the variety of player types and DM challenges keeps the game fresh and inspired",
+   "name": "dccRewardEachStyle",
+   "value": true
+  },
+  {
+   "comment": "through successful juggling a campaign including players of all three types can be run smoothly",
+   "name": "dccSmoothAllThree",
+   "value": true
+  },
+  {
+   "comment": "the other crucial ingredients the DM must provide are the settings and the story line for the campaign",
+   "name": "dccTwoIngredients",
+   "value": true
+  },
+  {
+   "comment": "settings include all locations the PCs are allowed to adventure in, the NPCs and creatures that may be encountered there, and the relationships among the denizens of the dungeon",
+   "name": "dccSettingDefinition",
+   "value": true
+  },
+  {
+   "comment": "not all items need great detail at the beginning - 'orcs live here' suffices, with the hows and whys worked out later, presumably before the PCs decimate the orcs",
+   "name": "dccDeferredDetail",
+   "value": true
+  },
+  {
+   "comment": "a story line should be roughly worked out ahead of time; a good story can draw all types of players into a game",
+   "name": "dccStorySketch",
+   "value": true
+  },
+  {
+   "comment": "neither the story nor the setting must be prepared entirely in advance - the techniques give the players the semblance of a thoroughly designed world while letting the DM create features as the campaign develops",
+   "name": "dccNoAdvanceRequirement",
+   "value": true
+  },
+  {
+   "comment": "the underground game benefits from careful preparation - the more time the DM spends in preparation, the better the result is likely to be",
+   "name": "dccPrepPays",
+   "value": true
+  },
+  {
+   "comment": "anticipated conflicts and locales mean fewer on-the-spot decisions, maintaining the players' impression of a consistent and reasonably believable fantasy world",
+   "name": "dccAnticipatedStability",
+   "value": true
+  },
+  {
+   "comment": "a campaign world is a DM's unique creation - much work, great enjoyment; successful world design is a blend of many factors",
+   "name": "dccUniqueCreation",
+   "value": true
+  },
+  {
+   "comment": "the scope of the campaign must be determined first, so the DM knows what to define",
+   "name": "dccScopeFirst",
+   "value": true
+  },
+  {
+   "comment": "an underground campaign requires little detailing of surface continents, seas, and nations; a city, town, or village base is still necessary if the PCs are surface dwellers",
+   "name": "dccSurfaceMinimal",
+   "value": true
+  },
+  {
+   "comment": "with many dungeons, connecting caverns, and underground realms, the DM must determine their general scope and relationships - whether realm creatures visit the dungeons, what civilizations lie deep",
+   "name": "dccRelationshipScope",
+   "value": true
+  },
+  {
+   "comment": "those questions need not be answered in great detail, but considered - so a captured deep-dweller gets consistent answers under interrogation",
+   "name": "dccConsistentCaptives",
+   "value": true
+  },
+  {
+   "comment": "at first it is not even necessary to place races exactly - 'the drow over here, the duergar down there' can wait; as long as the race types are known, exact locations can be assigned later",
+   "name": "dccPlacementDeferred",
+   "value": true
+  },
+  {
+   "comment": "more races can be added later as the game develops",
+   "name": "dccRacesAddLater",
+   "value": true
+  },
+  {
+   "comment": "it is much more difficult to remove a race that has been thoughtlessly located somewhere, so consider these placements carefully",
+   "name": "dccRemovalHard",
+   "value": true
+  },
+  {
+   "comment": "the general social structure of the campaign setting also requires thought",
+   "name": "dccSocialThought",
+   "value": true
+  },
+  {
+   "comment": "societies of clearly defined good and evil alignments and practices are admittedly unrealistic, but easier and less time-consuming to design, and let players identify friend and foe with relative ease",
+   "name": "dccClearSplitEasy",
+   "value": true
+  },
+  {
+   "comment": "complex realistic societies put good and evil in opposition within the same society, requiring players to carefully plan and implement their interactions",
+   "name": "dccComplexRealistic",
+   "value": true
+  }
+ ],
+ "caller_files": [],
+ "census_before": 473,
+ "chains": [],
+ "consts": [
+  {
+   "comment": "the three general player types: Adventurers, Problem Solvers, Role-Players",
+   "name": "dccPlayerTypes",
+   "value": 3
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['dccPlayerTypes']() != 3",
+   "note": "the three general types: Adventurers, Problem Solvers, Role-Players."
+  },
+  {
+   "expr": "m['dccCombatSupreme']() != 1 or m['dccTreasureDraws']() != 1 or m['dccEasiestToDM']() != 1",
+   "note": "the Adventurer frame: combat above all, treasure as the draw, the easiest to DM for."
+  },
+  {
+   "expr": "m['dccPuzzleFrame']() != 1 or m['dccConvolutionBest']() != 1 or m['dccMysteryStory']() != 1",
+   "note": "the Problem-Solver frame: the puzzle, the convoluted plot, the mystery story line."
+  },
+  {
+   "expr": "m['dccShoppingRoleplay']() != 1 or m['dccBelievableFaults']() != 1 or m['dccValueHooks']() != 1",
+   "note": "the Role-Player frame: the shopping haggling, the believability faults, the value hooks."
+  },
+  {
+   "expr": "m['dccFeedbackKey']() != 1 or m['dccRewardEachStyle']() != 1",
+   "note": "the juggling keys: feedback, and rewards for each style of play."
+  },
+  {
+   "expr": "m['dccTwoIngredients']() != 1 or m['dccScopeFirst']() != 1",
+   "note": "the designing frame: settings and story line, the scope determined first."
+  },
+  {
+   "expr": "m['dccClearSplitEasy']() != 1 or m['dccComplexRealistic']() != 1",
+   "note": "the social-structure split: the clear good/evil ease against the complex realistic societies."
+  }
+ ],
+ "gap_census": {
+  "closed": 140,
+  "open": 15
+ },
+ "gap_flips": [],
+ "gap_report": "tools/dsg_gap_report.md",
+ "header_file": "rules/dsgcamp.h",
+ "header_sections": {
+  "the Adventurers section": [
+   {
+    "kind": "bool",
+    "name": "dccCombatSupreme"
+   },
+   {
+    "kind": "bool",
+    "name": "dccPhysicalObstacles"
+   },
+   {
+    "kind": "bool",
+    "name": "dccMagicBonusJudge"
+   },
+   {
+    "kind": "bool",
+    "name": "dccQuickReplacement"
+   },
+   {
+    "kind": "bool",
+    "name": "dccTreasureDraws"
+   },
+   {
+    "kind": "bool",
+    "name": "dccEasiestToDM"
+   },
+   {
+    "kind": "bool",
+    "name": "dccMonsterIntelligence"
+   },
+   {
+    "kind": "bool",
+    "name": "dccItemDiscipline"
+   },
+   {
+    "kind": "bool",
+    "name": "dccPlanningGatesSuccess"
+   },
+   {
+    "kind": "bool",
+    "name": "dccNoInstantDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "dccVeteranReturn"
+   }
+  ],
+  "the Challenges for the DM section": [
+   {
+    "kind": "bool",
+    "name": "dccBlendTypical"
+   },
+   {
+    "kind": "bool",
+    "name": "dccAllThreeServed"
+   }
+  ],
+  "the Designing the Adventure and the World section": [
+   {
+    "kind": "bool",
+    "name": "dccTwoIngredients"
+   },
+   {
+    "kind": "bool",
+    "name": "dccSettingDefinition"
+   },
+   {
+    "kind": "bool",
+    "name": "dccDeferredDetail"
+   },
+   {
+    "kind": "bool",
+    "name": "dccStorySketch"
+   },
+   {
+    "kind": "bool",
+    "name": "dccNoAdvanceRequirement"
+   },
+   {
+    "kind": "bool",
+    "name": "dccPrepPays"
+   },
+   {
+    "kind": "bool",
+    "name": "dccAnticipatedStability"
+   }
+  ],
+  "the Fine Art of Juggling section": [
+   {
+    "kind": "bool",
+    "name": "dccTypeTailoredFun"
+   },
+   {
+    "kind": "bool",
+    "name": "dccMixedJuggling"
+   },
+   {
+    "kind": "bool",
+    "name": "dccFeedbackKey"
+   },
+   {
+    "kind": "bool",
+    "name": "dccRestlessRandom"
+   },
+   {
+    "kind": "bool",
+    "name": "dccDyingClue"
+   },
+   {
+    "kind": "bool",
+    "name": "dccTalkRegularly"
+   },
+   {
+    "kind": "bool",
+    "name": "dccBoredomSignal"
+   },
+   {
+    "kind": "bool",
+    "name": "dccRewardEachStyle"
+   },
+   {
+    "kind": "bool",
+    "name": "dccSmoothAllThree"
+   }
+  ],
+  "the Problem-Solvers section": [
+   {
+    "kind": "bool",
+    "name": "dccPuzzleFrame"
+   },
+   {
+    "kind": "bool",
+    "name": "dccConvolutionBest"
+   },
+   {
+    "kind": "bool",
+    "name": "dccTacticalBattles"
+   },
+   {
+    "kind": "bool",
+    "name": "dccRulesCreativity"
+   },
+   {
+    "kind": "bool",
+    "name": "dccRoutineBoredom"
+   },
+   {
+    "kind": "bool",
+    "name": "dccChallengeBalance"
+   },
+   {
+    "kind": "bool",
+    "name": "dccBorrowFreely"
+   },
+   {
+    "kind": "bool",
+    "name": "dccMotivationToolkit"
+   },
+   {
+    "kind": "bool",
+    "name": "dccMysteryStory"
+   }
+  ],
+  "the Role-Players section": [
+   {
+    "kind": "bool",
+    "name": "dccTotalDetail"
+   },
+   {
+    "kind": "bool",
+    "name": "dccShoppingRoleplay"
+   },
+   {
+    "kind": "bool",
+    "name": "dccGrowthFrame"
+   },
+   {
+    "kind": "bool",
+    "name": "dccBelievableFaults"
+   },
+   {
+    "kind": "bool",
+    "name": "dccInteractionTalk"
+   },
+   {
+    "kind": "bool",
+    "name": "dccPersonalStakes"
+   },
+   {
+    "kind": "bool",
+    "name": "dccValueHooks"
+   }
+  ],
+  "the Worlds of Adventure section": [
+   {
+    "kind": "bool",
+    "name": "dccUniqueCreation"
+   },
+   {
+    "kind": "bool",
+    "name": "dccScopeFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "dccSurfaceMinimal"
+   },
+   {
+    "kind": "bool",
+    "name": "dccRelationshipScope"
+   },
+   {
+    "kind": "bool",
+    "name": "dccConsistentCaptives"
+   },
+   {
+    "kind": "bool",
+    "name": "dccPlacementDeferred"
+   },
+   {
+    "kind": "bool",
+    "name": "dccRacesAddLater"
+   },
+   {
+    "kind": "bool",
+    "name": "dccRemovalHard"
+   },
+   {
+    "kind": "bool",
+    "name": "dccSocialThought"
+   },
+   {
+    "kind": "bool",
+    "name": "dccClearSplitEasy"
+   },
+   {
+    "kind": "bool",
+    "name": "dccComplexRealistic"
+   }
+  ],
+  "the campaign frame section": [
+   {
+    "kind": "const",
+    "name": "dccPlayerTypes"
+   },
+   {
+    "kind": "bool",
+    "name": "dccIngredientsMyriad"
+   },
+   {
+    "kind": "bool",
+    "name": "dccSkilledDMFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "dccWillingPlayersNext"
+   },
+   {
+    "kind": "bool",
+    "name": "dccTypeMismatch"
+   }
+  ]
+ },
+ "include_after": "#include \"rules/dsgdeep.h\"  // R549: the DSG Deepearth closure",
+ "include_comment": "the DSG campaign opener pins",
+ "inline_count": 61,
+ "prefix": "dcc",
+ "prev_record": [
+  "- R549 LANDED 2026-10-17: commit 00c2b327a8a4bdc394a5fc",
+  "  7009888cc35715a64f (census 472 -> 473, pushed",
+  "  fbd8408..00c2b32), THE DSG LANDS OF DEEPEARTH",
+  "  CLOSED - THE FIRST FLIP-ONLY ROUND OF THE ARC:",
+  "  zero pins (0 consts, 0 bools, 0 tables, 0",
+  "  inlines), the census advances by the audit block",
+  "  alone, and the long-held pp. 75-98 Lands of",
+  "  Deepearth child finally flips [x] - the gap",
+  "  census moves 139/16 -> 140/15. The child closes",
+  "  against work already landed and verified: R533",
+  "  the opener (rules/dsgland.h - the setting frame,",
+  "  the connecting-passage generation, the",
+  "  area-details framework; the pp. 76-77 map plates",
+  "  graphics, pinning nothing) and R534-R548 the",
+  "  individual area key, areas 1-31 (rules/",
+  "  dsgarea1.h through dsgarea15.h). The R503",
+  "  closure criterion - a box closes when the",
+  "  feature PLAYS right, and the flip rides the SAME",
+  "  commit - satisfied for the child the whole",
+  "  Deepearth stretch held open \"until the setting",
+  "  lands in full\". Prefix dnas (NOTE: the summary",
+  "  list of used dna* prefixes missed dnar - the",
+  "  R533 opener itself; verified free against",
+  "  regtest before use), header rules/dsgdeep.h",
+  "  (empty namespace, banner only), spec 4,960",
+  "  bytes, md5 015111a42b8d9e84708cb051b1f4b3b3",
+  "  matched exactly first try; engine applied 5",
+  "  then 0/5 - FIVE patches, one more than the",
+  "  usual four, because the gap report is in play",
+  "  this round; dsg_gap_report.md IS in the git add",
+  "  (the flip rides the commit); preflight GREEN",
+  "  with AUDIT CENSUS: 473. NEXT - R549: the DM",
+  "  section has two open children left - Campaign",
+  "  Considerations (pp. 99-113) and Mapping",
+  "  (pp. 114-117); next round opens pp. 99+."
+ ],
+ "prev_seed_key": "- R549 LANDED 2026-10-17: commit 00c2b327a8a4bdc394a5fc",
+ "regtest": "regtest.cpp",
+ "round": 550,
+ "seed_anchor": "## Knowledge maintenance",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "switches": [],
+ "table_checks": [],
+ "tables": [],
+ "title": "the DSG campaign considerations opener"
+}

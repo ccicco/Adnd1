@@ -8719,6 +8719,41 @@ when both halves land.
   "until the setting lands in full" condition is
   finally satisfied) or the next DSG section (pp.
   99+ Campaign Considerations).
+- R549 LANDED 2026-10-17: commit 00c2b327a8a4bdc394a5fc
+  7009888cc35715a64f (census 472 -> 473, pushed
+  fbd8408..00c2b32), THE DSG LANDS OF DEEPEARTH
+  CLOSED - THE FIRST FLIP-ONLY ROUND OF THE ARC:
+  zero pins (0 consts, 0 bools, 0 tables, 0
+  inlines), the census advances by the audit block
+  alone, and the long-held pp. 75-98 Lands of
+  Deepearth child finally flips [x] - the gap
+  census moves 139/16 -> 140/15. The child closes
+  against work already landed and verified: R533
+  the opener (rules/dsgland.h - the setting frame,
+  the connecting-passage generation, the
+  area-details framework; the pp. 76-77 map plates
+  graphics, pinning nothing) and R534-R548 the
+  individual area key, areas 1-31 (rules/
+  dsgarea1.h through dsgarea15.h). The R503
+  closure criterion - a box closes when the
+  feature PLAYS right, and the flip rides the SAME
+  commit - satisfied for the child the whole
+  Deepearth stretch held open "until the setting
+  lands in full". Prefix dnas (NOTE: the summary
+  list of used dna* prefixes missed dnar - the
+  R533 opener itself; verified free against
+  regtest before use), header rules/dsgdeep.h
+  (empty namespace, banner only), spec 4,960
+  bytes, md5 015111a42b8d9e84708cb051b1f4b3b3
+  matched exactly first try; engine applied 5
+  then 0/5 - FIVE patches, one more than the
+  usual four, because the gap report is in play
+  this round; dsg_gap_report.md IS in the git add
+  (the flip rides the commit); preflight GREEN
+  with AUDIT CENSUS: 473. NEXT - R549: the DM
+  section has two open children left - Campaign
+  Considerations (pp. 99-113) and Mapping
+  (pp. 114-117); next round opens pp. 99+.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
