@@ -128,9 +128,9 @@ sample entries verified against the canonical PHB levels).
   - [x] Acheron (pp. 113-114) - R588: the iron-shod battle plains (the four block layers, the spherical portals by sound, the spirit legions reborn in 24 hours, Lei Kung on his cloud, Maglubiyet and Gruumsh on the contested block)
   - [x] The Concordant Opposition (pp. 114-116) - R589: the odd plane (the ever-changing homeland face, the minimum-damage rule, the ring of white disks at 1,000 miles, the center no god may touch, the full Powers census from Dagda and Tir na Og to Yen-Wang-Yeh and Vergadain)
   - [x] Beyond the outer planes (p. 116) - R590: the closing essay (the summary-not-final-word doctrine, the undiscovered layers, the growing model with the quasi/para additions, the new Astral forms, the finite demi-planes, the alternate Primes and the imagination limit)
-- [ ] **Appendix I: The Prime Material Planes** (pp. 117-119) - the Alternate Primes doctrine
-  - [ ] The Prime physical-factor table (p. 117) - the 1d10 factor and the odd/even sign roll
-  - [ ] The Alternate Primes encounter rules (p. 119) - the modified-stats doctrine
+- [x] **Appendix I: The Prime Material Planes** (pp. 117-119) - the Alternate Primes doctrine - R592: the whole appendix in one round (the Polyverse and the three factors, the reaching, the PF/MF/TF ladders, the survival and class rules, the encounters)
+  - [x] The Prime physical-factor table (p. 117) - the 1d10 factor and the odd/even sign roll - R592: the ddx PF pins (the 1d10 value and the 1d4 odd-negative/even-positive sign, the +10-to--10 ladder, the comfort range of 5)
+  - [x] The Alternate Primes encounter rules (p. 119) - the modified-stats doctrine - R592: the ddx encounter pins (adapt the standard tables to the plane factors, the combat and magic limits, the class abilities from the cleric deity rule to the barbarian range)
 - [ ] **Appendix II: Creatures of the Inner Planes** (pp. 120-121)
 - [ ] **Appendix III: Creatures from the Outer Planes** (pp. 122-123)
 - [ ] **Appendix IV: Abilities of the Powers** (pp. 124-126)

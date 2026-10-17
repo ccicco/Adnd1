@@ -10552,6 +10552,44 @@ when both halves land.
   tools/motp_gap_report.md (fetched at
   1e2f203) for the open list and pick
   the next chapter's first box.
+- R591 LANDED 2026-10-17: commit
+  d1cd2afb4de3019c7a60086441da02ae
+  4f3607cd (census 514 -> 515, pushed
+  1e2f203..d1cd2af), THE OUTER PLANES
+  CHAPTER SEAL, printed pp. 73-116: the
+  parent box closed on the census of
+  its children - the seventeen named
+  planes in wheel order (Nirvana and
+  Arcadia, the Seven Heavens, the Twin
+  Paradises, Elysium, the Happy Hunting
+  Grounds, Olympus and Gladsheim, Limbo
+  and Pandemonium, the Abyss, Tarterus,
+  Hades, Gehenna, the Nine Hells,
+  Acheron, and the Concordant Opposition
+  at the hub), the general doctrine of
+  R577 with its five tables and
+  doctrines, the seventeen plane rounds
+  R578-R589 (with the Beastlands casting
+  reattribution), and the closing essay
+  of R590. 1 const + 2 bools, prefix
+  ddu, header rules/outerplanesseal.h.
+  ONE flip: gap census 82/8 -> 83/7
+  (the chapter umbrella) - THE OUTER
+  PLANES CHAPTER IS SEALED. Spec 8,009
+  bytes, md5 651ec7802d0210135b2d85fa
+  2911c75f matched exactly first try, 3
+  inlines. TWENTY-SIX straight
+  first-tries (R566-R591). NEXT - R592:
+  Appendix I: The Prime Material Planes
+  (pp. 117-119, the Alternate Primes
+  doctrine with the Prime physical-factor
+  table at p. 117 - the 1d10 factor and
+  the odd/even sign roll - and the
+  Alternate Primes encounter rules at
+  p. 119; THREE boxes fall together; the
+  parent-plus-children one-round pattern;
+  OCR source pages 118-120 already
+  gathered).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
