@@ -8754,6 +8754,66 @@ when both halves land.
   section has two open children left - Campaign
   Considerations (pp. 99-113) and Mapping
   (pp. 114-117); next round opens pp. 99+.
+- R550 LANDED 2026-10-17: commit 033b4399407ad31ee37c7
+  17cdc990db7b37bb7a0 (census 473 -> 474, pushed
+  00c2b32..033b439), THE DSG CAMPAIGN CONSIDERATIONS
+  OPENER, printed pp. 99-100 (pdf 100-101) - the
+  chapter frame (the myriad ingredients, the skilled
+  DM with time, energy and the communication talent
+  first, the willing players sharing common goals
+  next, the hack-and-slash vs plot-structuring
+  mismatch warning), the three player types - the
+  Adventurers (combat above all, magic-bonus
+  judging, quick replacement, the treasure draw,
+  the easiest to DM for, monster intelligence and
+  variation, item discipline with odd restrictions,
+  planning-gated success, no instant death, the
+  veteran return), the Problem-Solvers (the great
+  puzzle, the convoluted plot the better, tactical
+  battles, rules creativity, the routine boredom,
+  the challenge balance, the borrowed tricks, the
+  motivation toolkit, the mystery story line), and
+  the Role-Players (total detail, the shopping
+  role-play, the growth frame, the believable
+  faults, the interaction talk, the personal
+  stakes, the value hooks) - Challenges for the DM
+  (the blend, all three served), the Fine Art of
+  Juggling (feedback, the restless-Adventurer
+  random encounter, the dying-bandit clue, the
+  talk cadence, the per-style rewards), Designing
+  the Adventure and the World (settings + story
+  line, the deferred orc detail, the no-advance
+  rule, the preparation payoff), and Worlds of
+  Adventure through the social-structure split
+  (the clear good/evil ease against the complex
+  realistic societies; the contrast sentence
+  breaks across the pp. 100-101 boundary and pins
+  whole with the break noted). Prose-only round: 1
+  const + 60 bools, prefix dcc (NEW FAMILY - the
+  campaign chapter leaves the dna* Deepearth run
+  behind; verified free), header rules/dsgcamp.h,
+  spec 26,449 bytes, md5 dad51b1ab207aecca09f6432
+  b55367b5 matched exactly first try, 61 inlines;
+  djvu lines 12711-13012 with the Capture-layer
+  pdf 100-101 cross-read - NOTE: the staging
+  rebuild had no poppler, so the capture read rode
+  a PURE-PYTHON extractor (book/pdf_text.py,
+  reading the Tj/TJ text layer of the same IA
+  pdf; parser page = printed page); the one
+  settled garble djvu NPOs->NPCs. ENGINE LESSON:
+  the cond syntax gate rejects the word 'not' in
+  example exprs - use the '!= 1' form for bool
+  examples (R550 first run aborted on it). A
+  ZERO-FLIP ROUND: gap census stays 140/15, the
+  pp. 99-113 Campaign Considerations child open
+  until the whole chapter lands. NEXT - R550: the
+  rest of Worlds of Adventure (pp. 101-103 - the
+  real-life sources, richness of detail, variety
+  of options, location types; djvu from ~line
+  13012), then Plot and Counterplot (pp.
+  103-106), the techniques + matrix campaign (pp.
+  109-112), help from the players (p. 113), then
+  the child flip.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
