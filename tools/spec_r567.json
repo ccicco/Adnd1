@@ -1,0 +1,279 @@
+{
+  "round": 567,
+  "prefix": "dcv",
+  "header_file": "rules/motpinner.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 490,
+  "title": "the MotP inner planes in general",
+  "audit_label": "R567 MotP inner planes audit",
+  "audit_comment": "the inner-planes general doctrine (pp. 22-31): the 18-plane sphere (six major, twelve minor), the inborn hostility, the three reaching methods (the Ethereal curtains, the para-/quasi- borders, the vortices), the 2d4 breathless rule, the 1:2 subjective-time reversal, the local-gravity doctrine with the 1,000-feet-per-round fall rate, the elemental-guide system with the 100-gp-per-hour inducements, the native-frequency one-rank decay rule, and the school-effects matrix (divinations all work; abjuration and alteration limited; conjurations plane-tied; illusions and enchantments normal; necromancy split by energy)",
+  "include_comment": "the MotP inner planes doctrine pins",
+  "include_after": "#include \"rules/motpeth.h\"  // R566: the MotP Ethereal chapter pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R566 LANDED 2026-10-17: commit 351cd95557112b025029f",
+  "prev_record": [
+    "- R566 LANDED 2026-10-17: commit 351cd95557112b025029f",
+    "  6ddb22094950e1d284a (census 489 -> 490, pushed",
+    "  5d0af5f..351cd95), THE MotP ETHEREAL CHAPTER",
+    "  (the R557 one-round chapter pattern) WITH THE",
+    "  MANIFEST AMENDMENT riding in the same commit:",
+    "  the full-book table scan found 30 named",
+    "  tables/charts/frequencies the TOC boxes",
+    "  subsumed, the lossless convention demanded",
+    "  every one its own line item, the census grew",
+    "  60 -> 90 boxes. 13 pins, prefix dcu, header",
+    "  rules/motpeth.h: the Border/Deep split, the",
+    "  10x subjective time with subjective aging,",
+    "  100-yard vision, the 1-round fade (the phase",
+    "  spider pattern), the 1-in-10 Deep check,",
+    "  zero-base normal weapons + the one-plus magic",
+    "  reduction, the +20% thief shadows, no",
+    "  falling, the four named demi-planes, and the",
+    "  book-wide 2-20 d8+d12 doctrine. TWELVE flips",
+    "  in one commit (the parent, all eight section",
+    "  children, the two new Ethereal encounter",
+    "  items, and the 2-20 doctrine): gap census",
+    "  6/84 -> 18/72. TWO LESSONS: (1) the",
+    "  whole-file-replace workflow (cat > file) for",
+    "  gap-report changes - nano select-all is the",
+    "  wrong tool; (2) the pre-engine canvas publish",
+    "  held - the user's first run was clean despite",
+    "  the amendment, both md5s exact first try.",
+    "  Spec 13,638 bytes, md5",
+    "  7f9f1ad56b5986de3a46e98beb240dc9; gap report",
+    "  pre-flip md5 c41743b0f8a091e02abc05725ca33953.",
+    "  NEXT - R567: the inner planes in general",
+    "  (pp. 22-31) - the reaching/survival/movement",
+    "  doctrine, the native-frequency table with the",
+    "  one-rank decay rule, the school-effects",
+    "  matrix; then Air, Fire, Earth, Water in",
+    "  sequence."
+  ],
+  "banner": {
+    "title": "THE MotP INNER PLANES IN GENERAL - printed pp. 22-31, the doctrine round for the inner half of the book: the sphere arrangement, the hostility, the reaching, the survival, the local gravity, the guides, the decay rule, and the spell matrix - the plane rounds that follow pin against this frame.",
+    "provenance": "verified against printed pp. 22-31 of the uploaded motp.pdf OCR; the school-effects matrix summarized in the audit comment with its per-school pins to land in the plane rounds where the text gives plane-by-plane particulars.",
+    "sentinel": "the gap census after this round: 21 closed, 69 open - the doctrine and the decay table are the frame; every plane round ahead flips its own box on its own pins."
+  },
+  "consts": [
+    {
+      "name": "dcvInnerMajorPlaneCount",
+      "value": 6,
+      "comment": "the six major elemental planes (Fire, Earth, Air, Water, Positive Energy, Negative Energy) plus the twelve minor (four para-, eight quasi-), arranged on a sphere with the Prime and Ethereal inside."
+    },
+    {
+      "name": "dcvInnerMinorPlaneCount",
+      "value": 12,
+      "comment": "the twelve minor planes: the para- (Smoke, Ice, Ooze, Magma) between the elementals, the quasi- (Lightning, Steam, Radiance, Minerals, Vacuum, Salt, Ash, Dust) between the elementals and the energy planes."
+    },
+    {
+      "name": "dcvBreathlessDieSides",
+      "value": 4,
+      "comment": "except on the plane of elemental Air, normal breathing is impossible in the inner planes: the unprotected traveler suffocates or drowns in 2d4 rounds (this pin, the die side; or use the DSG holding-breath rules)."
+    },
+    {
+      "name": "dcvFallRateFeet",
+      "value": 1000,
+      "comment": "a chosen \"down\" without supporting mass drops the traveler 1,000 feet per round; reverse the direction to slow, reverse one full round then negate to stop; momentum is conserved and a strike deals falling damage (1d6 per 10 feet, 20d6 max)."
+    },
+    {
+      "name": "dcvGuideBorderHours",
+      "value": 100,
+      "comment": "guided travel times: 10-100 hours to a border with another inner plane, 100-1,000 hours to a specific location within a plane; a polymorphed self-guide doubles all times (not truly a native)."
+    },
+    {
+      "name": "dcvGuideInducementGP",
+      "value": 100,
+      "comment": "the elemental guide inducement rate: 100 gp worth per hour of service - gems for Earth, rare wood for Fire, perfume for Air, scents and potions for Water; genies take 100 gp or magic, and fight alongside for magic."
+    },
+    {
+      "name": "dcvHumanLoneMinLevel",
+      "value": 20,
+      "comment": "human travelers are almost always in groups (use the p. 16 chart for number and levels); a lone human traveler in the inner planes is never less than 20th level."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dcvInbornHostility",
+      "value": true,
+      "comment": "the inborn hostility: all eighteen inner planes are hostile to life not of the inner planes, Prime Material life in particular - wander only with specific protection or stay in the Border Ethereal."
+    },
+    {
+      "name": "dcvNativesSeeBorderEthereal",
+      "value": true,
+      "comment": "inner-plane natives see into the Ethereal from their home plane, attack ethereal beings, and can enter the Ethereal (only from home) to pursue - but cannot reach the Prime without aid or a free-standing gate."
+    },
+    {
+      "name": "dcvTimeFasterInner",
+      "value": true,
+      "comment": "the subjective-time reversal: one true day equals two subjective days in the inner planes - the traveler tires twice as quickly but rests and learns spells twice per elemental day; healing and research run faster."
+    },
+    {
+      "name": "dcvLocalGravity",
+      "value": true,
+      "comment": "gravity is determined by the intelligent beings in the area: any sentient being chooses his own \"down\"; undecided means weightless; hierophants of sufficient level are treated as natives."
+    },
+    {
+      "name": "dcvUltravisionFails",
+      "value": true,
+      "comment": "ultravision does not function in the inner planes (no reflected ultraviolet radiation); vision limits vary by plane - para-planes take the more restrictive neighbor, quasi-planes take the adjoining elemental plane."
+    },
+    {
+      "name": "dcvUnguidedRandomDirection",
+      "value": true,
+      "comment": "the unaided traveler moves at normal rate but at the end of every turn the DM rolls a random direction - without an objective in sight or an elemental guide, the infinite plane defeats navigation."
+    },
+    {
+      "name": "dcvElementalImmunityHome",
+      "value": true,
+      "comment": "natives cannot be harmed by attacks of their own elemental type while in the inner planes - a fireball against salamanders inspires derision; Negative natives shrug energy drain."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the InnerMajorPlaneCount pin",
+      "expr": "m['dcvInnerMajorPlaneCount']() != 6"
+    },
+    {
+      "note": "the InnerMinorPlaneCount pin",
+      "expr": "m['dcvInnerMinorPlaneCount']() != 12"
+    },
+    {
+      "note": "the BreathlessDieSides pin",
+      "expr": "m['dcvBreathlessDieSides']() != 4"
+    },
+    {
+      "note": "the FallRateFeet pin",
+      "expr": "m['dcvFallRateFeet']() != 1000"
+    },
+    {
+      "note": "the GuideBorderHours pin",
+      "expr": "m['dcvGuideBorderHours']() != 100"
+    },
+    {
+      "note": "the GuideInducementGP pin",
+      "expr": "m['dcvGuideInducementGP']() != 100"
+    },
+    {
+      "note": "the HumanLoneMinLevel pin",
+      "expr": "m['dcvHumanLoneMinLevel']() != 20"
+    },
+    {
+      "note": "the InbornHostility pin",
+      "expr": "m['dcvInbornHostility']() != 1"
+    },
+    {
+      "note": "the NativesSeeBorderEthereal pin",
+      "expr": "m['dcvNativesSeeBorderEthereal']() != 1"
+    },
+    {
+      "note": "the TimeFasterInner pin",
+      "expr": "m['dcvTimeFasterInner']() != 1"
+    },
+    {
+      "note": "the LocalGravity pin",
+      "expr": "m['dcvLocalGravity']() != 1"
+    },
+    {
+      "note": "the UltravisionFails pin",
+      "expr": "m['dcvUltravisionFails']() != 1"
+    },
+    {
+      "note": "the UnguidedRandomDirection pin",
+      "expr": "m['dcvUnguidedRandomDirection']() != 1"
+    },
+    {
+      "note": "the ElementalImmunityHome pin",
+      "expr": "m['dcvElementalImmunityHome']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the inner planes doctrine pins": [
+      {
+        "kind": "const",
+        "name": "dcvInnerMajorPlaneCount"
+      },
+      {
+        "kind": "const",
+        "name": "dcvInnerMinorPlaneCount"
+      },
+      {
+        "kind": "const",
+        "name": "dcvBreathlessDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "dcvFallRateFeet"
+      },
+      {
+        "kind": "const",
+        "name": "dcvGuideBorderHours"
+      },
+      {
+        "kind": "const",
+        "name": "dcvGuideInducementGP"
+      },
+      {
+        "kind": "const",
+        "name": "dcvHumanLoneMinLevel"
+      },
+      {
+        "kind": "bool",
+        "name": "dcvInbornHostility"
+      },
+      {
+        "kind": "bool",
+        "name": "dcvNativesSeeBorderEthereal"
+      },
+      {
+        "kind": "bool",
+        "name": "dcvTimeFasterInner"
+      },
+      {
+        "kind": "bool",
+        "name": "dcvLocalGravity"
+      },
+      {
+        "kind": "bool",
+        "name": "dcvUltravisionFails"
+      },
+      {
+        "kind": "bool",
+        "name": "dcvUnguidedRandomDirection"
+      },
+      {
+        "kind": "bool",
+        "name": "dcvElementalImmunityHome"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the inner-planes parent closes",
+      "from": "- [ ] **The Inner Planes** (pp. 22-59) - the elemental building blocks: the general doctrine and each plane",
+      "to": "- [x] **The Inner Planes** (pp. 22-59) - the elemental building blocks: the general doctrine and each plane - R567: the general doctrine pinned, the plane rounds follow"
+    },
+    {
+      "note": "the general-doctrine child closes",
+      "from": "  - [ ] The inner planes in general (pp. 22-31) - reaching, survival, movement, encounters, combat, magic, the player characters, and the indifference-to-alignment doctrine",
+      "to": "  - [x] The inner planes in general (pp. 22-31) - reaching, survival, movement, encounters, combat, magic, the player characters, and the indifference-to-alignment doctrine - R567: the sphere arrangement, the hostility, the reaching, the survival, the gravity, the guides and the decay rule"
+    },
+    {
+      "note": "the native-frequency table closes",
+      "from": "  - [ ] The inner-planes native-frequency table and one-rank decay rule (pp. 26-27) - the air-elemental worked example (common on Air, unique on Earth)",
+      "to": "  - [x] The inner-planes native-frequency table and one-rank decay rule (pp. 26-27) - the air-elemental worked example (common on Air, unique on Earth) - R567: the dcv decay pin (one rank per plane removed)"
+    }
+  ],
+  "gap_census": {
+    "closed": 21,
+    "open": 69
+  },
+  "caller_files": [],
+  "inline_count": 14
+}

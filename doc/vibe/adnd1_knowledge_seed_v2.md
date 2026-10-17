@@ -9494,6 +9494,42 @@ when both halves land.
   combat, magic, the player characters and the
   demi-planes; expect the R557 single-round
   chapter pattern.
+- R566 LANDED 2026-10-17: commit 351cd95557112b025029f
+  6ddb22094950e1d284a (census 489 -> 490, pushed
+  5d0af5f..351cd95), THE MotP ETHEREAL CHAPTER
+  (the R557 one-round chapter pattern) WITH THE
+  MANIFEST AMENDMENT riding in the same commit:
+  the full-book table scan found 30 named
+  tables/charts/frequencies the TOC boxes
+  subsumed, the lossless convention demanded
+  every one its own line item, the census grew
+  60 -> 90 boxes. 13 pins, prefix dcu, header
+  rules/motpeth.h: the Border/Deep split, the
+  10x subjective time with subjective aging,
+  100-yard vision, the 1-round fade (the phase
+  spider pattern), the 1-in-10 Deep check,
+  zero-base normal weapons + the one-plus magic
+  reduction, the +20% thief shadows, no
+  falling, the four named demi-planes, and the
+  book-wide 2-20 d8+d12 doctrine. TWELVE flips
+  in one commit (the parent, all eight section
+  children, the two new Ethereal encounter
+  items, and the 2-20 doctrine): gap census
+  6/84 -> 18/72. TWO LESSONS: (1) the
+  whole-file-replace workflow (cat > file) for
+  gap-report changes - nano select-all is the
+  wrong tool; (2) the pre-engine canvas publish
+  held - the user's first run was clean despite
+  the amendment, both md5s exact first try.
+  Spec 13,638 bytes, md5
+  7f9f1ad56b5986de3a46e98beb240dc9; gap report
+  pre-flip md5 c41743b0f8a091e02abc05725ca33953.
+  NEXT - R567: the inner planes in general
+  (pp. 22-31) - the reaching/survival/movement
+  doctrine, the native-frequency table with the
+  one-rank decay rule, the school-effects
+  matrix; then Air, Fire, Earth, Water in
+  sequence.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

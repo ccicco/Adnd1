@@ -64,8 +64,8 @@ sample entries verified against the canonical PHB levels).
   - [x] Demi-planes (p. 21) - the finite islands of matter, the demi-plane time-reversal exception - R566: the four named demi-planes pin (Shadow, Time, Electro-Magnetism, Imprisonment)
   - [x] The Deep Ethereal encounter check (p. 14) - the 1-in-10 every four hours frequency - R566: the dcuDeepEncounterChance pin
   - [x] The Ethereal sample encounter charts (p. 17) - the human and creature charts - R566: the charts enumerated under the amended manifest, closing on the encounter-check pin
-- [ ] **The Inner Planes** (pp. 22-59) - the elemental building blocks: the general doctrine and each plane
-  - [ ] The inner planes in general (pp. 22-31) - reaching, survival, movement, encounters, combat, magic, the player characters, and the indifference-to-alignment doctrine
+- [x] **The Inner Planes** (pp. 22-59) - the elemental building blocks: the general doctrine and each plane - R567: the general doctrine pinned, the plane rounds follow
+  - [x] The inner planes in general (pp. 22-31) - reaching, survival, movement, encounters, combat, magic, the player characters, and the indifference-to-alignment doctrine - R567: the sphere arrangement, the hostility, the reaching, the survival, the gravity, the guides and the decay rule
   - [ ] The Plane of Elemental Air (pp. 31-36) - survival, encounters, movement, combat, magic, features
   - [ ] The Plane of Elemental Fire (pp. 36-41) - survival, movement, encounters, magic, features
   - [ ] The Plane of Elemental Earth (pp. 41-46) - survival, movement, encounters, combat, magic, features
@@ -74,7 +74,7 @@ sample entries verified against the canonical PHB levels).
   - [ ] The Energy Planes (p. 54) - Positive and Negative Energy
   - [ ] The Positive Quasi-Planes (pp. 55-57) - lightning, radiance, mineral, steam: survival, movement, encounters, combat, magic, features
   - [ ] The Negative Quasi-Planes (pp. 57-59) - ash, dust, salt, vacuum: survival, movement, encounters, combat, magic, features
-  - [ ] The inner-planes native-frequency table and one-rank decay rule (pp. 26-27) - the air-elemental worked example (common on Air, unique on Earth)
+  - [x] The inner-planes native-frequency table and one-rank decay rule (pp. 26-27) - the air-elemental worked example (common on Air, unique on Earth) - R567: the dcv decay pin (one rank per plane removed)
   - [ ] The Air phenomena table (p. 32) - the roll-on table for the plane's varied, stunning, and deadly phenomena
   - [ ] The Air high-winds table (p. 33) - the WSG-adapted wind effects
   - [ ] The Air elemental pockets table (p. 34) - the passive-plane pockets roll
