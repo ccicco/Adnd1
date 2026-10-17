@@ -1,0 +1,730 @@
+{
+  "round": 553,
+  "prefix": "dcf",
+  "header_file": "rules/dsgcamp4.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 476,
+  "title": "the DSG story elements tail",
+  "audit_label": "R553 DSG story elements tail audit",
+  "audit_comment": "The story elements tail pins printed pp. 107-108: the foreshadowing tail (the variety, the player-given invitations, dreams, the fortune-teller, the anonymous message, the town rumors), Mystery (the curiosity motivator, the who-done-it, the secret antagonist with its clue trail - the vampire lair, the campaign mysteries of unknown parentage and the vanished community, the background questions, the dying messenger of Eric of Calrede, the speak-with-dead caveat), Challenge (tailored to player types, the encounter role in game balance - random and introductory light, climactic and milestone to the utmost limits, the Hit Dice and damage rough balance, the tactics and position and luck, the intelligent-play sufficiency, the changeable screen dice), Reward (the accomplishment basis, the tracked count, the during-adventure handouts), Magical items (the one-or-two per level lid, the disposable generosity, the class-directed items, the armed-to-the-teeth warning, the described and named items, the Sathas Sundown sage, the item limitations, the story-part doctrine), Wealth (the drains, the kept XP, the low-value bulks, the rare gemstones, the spending sprees), Discoveries (the pieced-together clues), Gratitude (the high king's debt, the case-by-case extent, the explicit promises, the beggar and barmaid favors), Accomplishment (the intrinsic reward, the good-deed cleric, the free implementation), Experience Points (the adjustable DMG amounts, the landslide penalty, the tentative awards, the restructured system, the optional magic-item XP), and Moral (the consequences doctrine, the cooperation, the killer consequences, the accomplishment-merits-reward, the story-for-a-moral).",
+  "include_comment": "the DSG story elements tail pins",
+  "include_after": "#include \"rules/dsgcamp3.h\"  // R552: the DSG plot and counterplot pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R552 LANDED 2026-10-17: commit 3e9a7503d8891c183f9f0",
+  "prev_record": [
+    "- R552 LANDED 2026-10-17: commit 3e9a7503d8891c183f9f0",
+    "  cd98328babaf757989e (census 475 -> 476, pushed",
+    "  739d8fb..3e9a750), THE DSG PLOT AND COUNTERPLOT,",
+    "  printed pp. 103-106 (pdf 104-107) - the",
+    "  storytelling doctrine: the chapter head (the",
+    "  story as important as the world setting, the DM",
+    "  as bard or storyteller), The Story Structure",
+    "  (the ancient hearth lineage, the exposition,",
+    "  the development with its rising tension and",
+    "  several climaxes, the climax resolving the major",
+    "  conflicts, the denouement retrospection), the",
+    "  exposition craft (the long-NPC-speech mistake,",
+    "  the acted-out encounter, the handouts, the",
+    "  information cards with the format fit, the",
+    "  combat opener especially for Adventurer-types,",
+    "  the combat-before-speech rule, the between-",
+    "  session advance information), the development",
+    "  craft (the minion encounters teaching the",
+    "  opposition, the sages/seers/beggars prods, the",
+    "  random-encounter balance, the semi-climax), the",
+    "  climax doctrine (the game-balance primary, the",
+    "  mental-plus-physical, the deadly potential, the",
+    "  adversary tactics with the special aid and the",
+    "  emergency escape route - the always-escaping",
+    "  villain campaigns, the multiple solutions, the",
+    "  staging drama - the evil temple or the",
+    "  fiery-chasm bridge, the dramatic key goal of",
+    "  fun), the denouement (the loose ends, the",
+    "  safety with the arrogance reminder, the",
+    "  next-adventure lead avoiding the inn opening),",
+    "  Multiple Story Lines (the tailored lines, the",
+    "  heroic epic form - broad good-sanctioned",
+    "  purpose, cost-gained achievement, the",
+    "  years-spanning conflict, the session climax",
+    "  and the 3-4-session major objectives, the rare",
+    "  cliffhanger with its low player tolerance, the",
+    "  periodic changes - the new epic every year or",
+    "  so), and the Story Elements head with The",
+    "  Villains (the antagonist as any blocking force,",
+    "  the unintelligent single-session foes, the",
+    "  minimal-intelligence tactical options, the",
+    "  villain hierarchy, the unique NPCs, the",
+    "  familiarization without confrontation, the",
+    "  personal confrontation relished, the buffoon,",
+    "  the party-equal power or the protections, the",
+    "  surviving villain returning stronger) and the",
+    "  Foreshadowing opener (the hints/portents/",
+    "  dreams, the black-hole warning, the",
+    "  Problem-Solver affinity, the augury",
+    "  invitation - the section crossing the pp.",
+    "  106-107 boundary, its tail completing next",
+    "  round). 3 consts + 52 bools, prefix dce, header",
+    "  rules/dsgcamp3.h, spec 30,736 bytes, md5",
+    "  6a580bd99a3334f53888eef48f924fae matched",
+    "  exactly first try, 55 inlines; djvu lines",
+    "  13327-13752 with the Capture pdf 104-107",
+    "  cross-read (clean). Another inline_count",
+    "  authoring miss caught in staging (56 written",
+    "  for 55 pins - ALWAYS recompute the count",
+    "  before publish). A ZERO-FLIP ROUND: gap census",
+    "  stays 140/15. NEXT - R552: the rest of Story",
+    "  Elements pp. 107-108 (the foreshadowing tail",
+    "  and the following elements), then Techniques",
+    "  of Story and Campaign Design pp. 109-112 (the",
+    "  matrix campaign, the master storyteller), help",
+    "  from the players p. 113, then the child flip."
+  ],
+  "banner": {
+    "title": "THE DSG STORY ELEMENTS TAIL, R553: printed pp. 107-108 - the foreshadowing tail (the variety principle - corridor after corridor of bloody writing loses impact; the player-given invitations, the augury casting an invitation to the DM for clues; dreams effective but heavy-handed; the fortune-teller's dire warning; the anonymous message; town rumors); Mystery (the unknown as a great motivator of curiosity, the answers a major satisfying reward; the neglected who-done-it structure used successfully; the secret antagonist with a dropped clue every so often - the vampire-lair example with bats and wolves, the slain character with the broken mirror and the pouchful of garlic, the fresh corpse with the distinctive fang marks; the campaign mysteries - the unknown parentage, the vanished community; the long-standing background questions with only a general idea needed, the intriguing hint dropped to launch a fresh story line - the ragged dying messenger of Eric of Calrede; the speak-with-dead caveat); Challenge (the challenges shaped to the players' mental and physical interests - combat for Adventurers with an occasional mental problem, negotiation for Role-Players; the player feedback; the game-balance role of the encounter - random and introductory encounters light, climactic and milestone encounters to the players' utmost limits; the Hit Dice and average-damage rough balance against the tactics, positions, and luck; the intelligent-play sufficiency with logical solutions given a chance; the changeable devastating die roll behind the screen); Reward (based on the level of accomplishment, the count tracked; the tremendous wealth or power destroying campaign balance; the variety of types; the during-adventure rewards - key clues, small treasures, needed equipment); Magical items (one or two permanent items per level; generous with potions and scrolls; the class-directed items - leather armor to the thief, the mace +3 to the cleric; the lid on distribution - mid-level characters armed to the teeth with potent magic killing the campaign; the described and named swords with crest or script; the Sathas Sundown and Black Tower sage; the limitations on every permanent item - the evil-fighting glowing sword, the flame-vulnerable wax statue; the story-part doctrine); Wealth (the taxes, thievery, tolls, and prices as drains; the XP for lost wealth kept; the low-value bulks and encumbrance; gemstones rare until a few levels; the spending sprees with the cleaned-out week); Discoveries (information as reward - advancing story lines, warning of traps; the pieced-together clues the key); Gratitude (the high king's debt; the sincere majority; the case-by-case extent - the paid rescue owing nothing, the careful evaluation of motivations; the explicit promises against requests; the beggar and barmaid favors; selfless motives binding more); Accomplishment (the difficult objective as its own reward for Role-Players; the good-deed cleric; the DM's zero effort; the immediately apparent success or failure); Experience Points (the DMG amounts adjustable - the troll-holding fighter; the landslide village earning no XP and even a penalty; the tentative design awards - 1,000 XP per burned pirate ship, undisclosed until after; the restructured award system for non-treasure objectives; the optional magic-item XP, never for found-and-sold items); and Moral (the storyteller's meaningful lesson, unnoticed if not heavy-handed; the actions-with-consequences doctrine; the social structure's expectations; the cooperation example; the killer consequences - jail, hanging, the fugitive ire, justice catching up; the accomplishment-merits-reward moral; the story-for-a-moral with its 'It's not wise to fool the king' exemplars) - the round ending at the TECHNIQUES OF STORY AND CAMPAIGN DESIGN head.",
+    "provenance": "djvu lines 13752-14246 with the Capture-layer pdf 108-109 cross-read (the pure-python extractor, parser page = printed page). The two reads agree across the round; no OCR-failure cells. The djvu OCR quirks (the Cyrillic DM, 'moncv' for money, 'general!' for general, a broken 'an occa-') all settle by the capture cross-read; the two-column Capture pages interleave in extraction but every load-bearing claim matched sentence-for-sentence against the djvu. The Moral section runs to the bottom of p. 108, its tail sharing the capture page with the Techniques head - the boundary noted, the section pinned whole. A CLEAN-READ ROUND. A ZERO-FLIP ROUND: the pp. 99-113 Campaign Considerations child stays open.",
+    "sentinel": "The campaign chapter: R550 the opener, R551 the worlds tail, R552 plot and counterplot, R553 the story elements tail; next the techniques of story and campaign design pp. 109-112, help from the players p. 113, then the child flip."
+  },
+  "consts": [
+    {
+      "comment": "the magical-item lid: no more than one or two permanent magical items gained per level of experience - the minimum",
+      "name": "dcfPermanentPerLevelMin",
+      "value": 1
+    },
+    {
+      "comment": "the magical-item lid: no more than one or two permanent magical items gained per level of experience - the maximum",
+      "name": "dcfPermanentPerLevelMax",
+      "value": 2
+    },
+    {
+      "comment": "the tentative design award: an additional 1,000 XP for each pirate ship burned while on the base",
+      "name": "dcfPirateShipXP",
+      "value": 1000
+    }
+  ],
+  "bools": [
+    {
+      "comment": "use variety in the type of foreshadowing; corridor after corridor of bloody writing soon loses its impact",
+      "name": "dcfForeshadowVariety",
+      "value": true
+    },
+    {
+      "comment": "the players themselves give opportunities for foreshadowing; the casting of an augury is an invitation to the DM for a few clues about the future",
+      "name": "dcfForeshadowPlayerInvitation",
+      "value": true
+    },
+    {
+      "comment": "dreams are an effective, albeit somewhat heavy-handed, tactic of foreshadowing",
+      "name": "dcfForeshadowDreams",
+      "value": true
+    },
+    {
+      "comment": "the PCs could encounter a fortune-teller who pronounces a dire warning",
+      "name": "dcfForeshadowFortuneteller",
+      "value": true
+    },
+    {
+      "comment": "the PCs could receive an anonymous message from some mysterious source",
+      "name": "dcfForeshadowAnonymousMessage",
+      "value": true
+    },
+    {
+      "comment": "rumors picked up in town can also foreshadow events of the story",
+      "name": "dcfForeshadowRumors",
+      "value": true
+    },
+    {
+      "comment": "mystery is simply the unknown; curiosity is a great motivator, and discovering the answers can be a major and satisfying reward for all types of players",
+      "name": "dcfMysteryMotivates",
+      "value": true
+    },
+    {
+      "comment": "the who-done-it structure is often neglected by DMs but can be used quite successfully",
+      "name": "dcfMysteryWhodunit",
+      "value": true
+    },
+    {
+      "comment": "keep the antagonist's identity secret for much of the game, dropping a clue every so often so clever players eventually identify the foe",
+      "name": "dcfMysteryUnknownFoe",
+      "value": true
+    },
+    {
+      "comment": "the vampire-lair example: bats and wolves attack, a slain character with a broken mirror and a pouchful of garlic, a fresh corpse with the distinctive fang marks - the knowledge is much more chilling when gained by discovery",
+      "name": "dcfMysteryVampireLair",
+      "value": true
+    },
+    {
+      "comment": "mystery as a campaign feature: the character who does not know his parentage, the vanished community raising questions for many sessions to come",
+      "name": "dcfMysteryCampaign",
+      "value": true
+    },
+    {
+      "comment": "long-standing questions can lurk in the background; you need not have all the answers, though a general idea helps; drop an intriguing hint to launch a fresh story line",
+      "name": "dcfMysteryBackground",
+      "value": true
+    },
+    {
+      "comment": "the dying-messenger example: the ragged battered stranger gasping out a message from Eric of Calrede's father before dying",
+      "name": "dcfMysteryDyingMessenger",
+      "value": true
+    },
+    {
+      "comment": "if dealing with PCs who can speak with dead, a different technique is needed for the mystery",
+      "name": "dcfMysterySpeakWithDead",
+      "value": true
+    },
+    {
+      "comment": "challenges should be shaped to fit the players' mental and physical interests and abilities",
+      "name": "dcfChallengeFit",
+      "value": true
+    },
+    {
+      "comment": "with Adventurers rely primarily on combat encounters and physical challenges, but include an occasional mental problem such as a complicated trap or riddle",
+      "name": "dcfChallengeCombat",
+      "value": true
+    },
+    {
+      "comment": "Role-Players often find negotiating sessions or conversations with NPCs challenging",
+      "name": "dcfChallengeNegotiation",
+      "value": true
+    },
+    {
+      "comment": "pay attention to player feedback and modify game challenges accordingly",
+      "name": "dcfChallengeFeedback",
+      "value": true
+    },
+    {
+      "comment": "a randomly generated encounter or introductory trap should not challenge the PCs too strongly, while a climactic encounter or major milestone should challenge the players to their utmost limits",
+      "name": "dcfChallengeBalanceRole",
+      "value": true
+    },
+    {
+      "comment": "a simple comparison of Hit Dice and average damage gives rough ideas of encounter balance, but battles are decided by tactics, relative positions, and luck",
+      "name": "dcfChallengeHDBalance",
+      "value": true
+    },
+    {
+      "comment": "plan encounters so that intelligent PC play is sufficient to overcome the challenge; logical solutions developed by the players should have a chance to succeed",
+      "name": "dcfChallengeIntelligentPlay",
+      "value": true
+    },
+    {
+      "comment": "if you roll dice behind a screen, you always have the option of changing any die roll that is particularly devastating to the outcome",
+      "name": "dcfChallengeScreenDice",
+      "value": true
+    },
+    {
+      "comment": "rewards should be based on the level of the PCs' accomplishments, and the DM should keep track of the number of rewards granted",
+      "name": "dcfRewardAccomplishment",
+      "value": true
+    },
+    {
+      "comment": "characters with tremendous wealth or power can destroy the balance of an entire campaign, just as an excessively powerful monster destroys the balance of an encounter",
+      "name": "dcfRewardBalance",
+      "value": true
+    },
+    {
+      "comment": "use different types of rewards for different types of accomplishments, and do not neglect any one type in deference to the others",
+      "name": "dcfRewardVariety",
+      "value": true
+    },
+    {
+      "comment": "rewards should be handed out during the adventure as well as at the end: key clues showing the players they are on the right track, small treasures, or equipment needed later",
+      "name": "dcfRewardDuringAdventure",
+      "value": true
+    },
+    {
+      "comment": "magical items are always welcomed and can be one of the best forms of reward, if used sparingly; be more generous with disposable rewards such as potions and scrolls",
+      "name": "dcfMagicSparingly",
+      "value": true
+    },
+    {
+      "comment": "choose items best utilized by deserving characters, either items usable by only one character class or items likely given to certain classes: leather armor to a thief, a mace +3 to a cleric",
+      "name": "dcfMagicClassDirected",
+      "value": true
+    },
+    {
+      "comment": "keeping a lid on magical-item distribution cannot be stressed too much: mid-level characters armed to the teeth with potent magic kill the campaign and the DM's enthusiasm",
+      "name": "dcfMagicLid",
+      "value": true
+    },
+    {
+      "comment": "permanent magical items should be described in detail; magical swords can be named, inscribed with a crest or script telling of the sword's past or its rightful bearer",
+      "name": "dcfMagicDescribed",
+      "value": true
+    },
+    {
+      "comment": "the sage example: an old sage declares 'You carry the blade of Sathas Sundown! You are destined to bring down the evil of the Black Tower!' - the sword's destiny carrying it to a more cooperative bearer",
+      "name": "dcfMagicSageExample",
+      "value": true
+    },
+    {
+      "comment": "assign limitations to every permanent item to maintain balance: a sword that glows in the dark and only operates fully when fighting evil, an animated wax statue vulnerable to flame",
+      "name": "dcfMagicLimitations",
+      "value": true
+    },
+    {
+      "comment": "make magical items more than high-powered additions to the PC arsenal: a meaningful part of the story, advancing the story and adding to the detail of the campaign world",
+      "name": "dcfMagicStoryPart",
+      "value": true
+    },
+    {
+      "comment": "wealth is a standard category of reward, and unlike magical items it is fairly easy to remove excess wealth from the PCs without long-lasting hard feelings",
+      "name": "dcfWealthStandard",
+      "value": true
+    },
+    {
+      "comment": "balance the wealth the PCs collect with the expense they encounter: taxes, thievery, heavy tolls, and outrageous prices for goods and supplies reduce the cash characters carry",
+      "name": "dcfWealthDrains",
+      "value": true
+    },
+    {
+      "comment": "experience points for wealth that is gained and then lost are granted normally and not lost with the money; DMs must retain a measure of control",
+      "name": "dcfWealthXPKept",
+      "value": true
+    },
+    {
+      "comment": "place monetary rewards in large bulks of low-value coins such as silver or copper; carried fortunes encumber, and gemstones should be found only rarely until the characters have advanced a few levels",
+      "name": "dcfWealthLowValueBulks",
+      "value": true
+    },
+    {
+      "comment": "the principle of variety applies to wealth: occasional chances to spend money like it's going out of style, with the characters cleaned out a week later and forced into adventuring for room and board",
+      "name": "dcfWealthSpendingSprees",
+      "value": true
+    },
+    {
+      "comment": "information can be an extremely effective reward: advancing story lines, answering players' questions, pointing out solutions, and warning about nasty traps or encounters",
+      "name": "dcfDiscoveryInfo",
+      "value": true
+    },
+    {
+      "comment": "the key to information as a reward: not completely defined for the players - most valuable when they must use clues to piece it together themselves, adding enjoyment and familiarity",
+      "name": "dcfDiscoveryPieced",
+      "value": true
+    },
+    {
+      "comment": "story details and thoroughly designed primary adversaries generate a wealth of information for the players to uncover as the adventure progresses",
+      "name": "dcfDiscoveryDesign",
+      "value": true
+    },
+    {
+      "comment": "NPC friendship or gratitude can reward PCs; the high king owing a debt does not harm a character's position, and appropriate situations grow out of the story; in most cases gratitude is sincere",
+      "name": "dcfGratitudeDebt",
+      "value": true
+    },
+    {
+      "comment": "the extent of the benefit is case-by-case: a king who paid for a rescue may rule no debt is owed, while unpurchased heroism earns reward and debt; resolve by careful evaluation of motivations",
+      "name": "dcfGratitudeCaseByCase",
+      "value": true
+    },
+    {
+      "comment": "a debt may be spelled out clearly ('Anytime you need anything, do not hesitate to call on me!'); without such a promise a request is less likely to be automatically granted, and the king may change his mind",
+      "name": "dcfGratitudePromise",
+      "value": true
+    },
+    {
+      "comment": "debts of gratitude are not limited to kings and nobles: a beggar or barmaid spared a threat returns the favor; selfless motives bind more than reward-seeking ones",
+      "name": "dcfGratitudeHumble",
+      "value": true
+    },
+    {
+      "comment": "for good players, accomplishing a difficult objective can become a reward in itself, particularly in a campaign with Role-Player participants",
+      "name": "dcfAccomplishmentIntrinsic",
+      "value": true
+    },
+    {
+      "comment": "a Role-Player's good cleric gains a sense of reward simply from performing good deeds; this intangible is usually best as an occasional alternative to treasure and magical rewards",
+      "name": "dcfAccomplishmentGoodDeeds",
+      "value": true
+    },
+    {
+      "comment": "the DM does not have to do anything other than run the adventure to implement this reward; create adventures challenging the PCs to acts they perceive as valuable, with success or failure immediately apparent",
+      "name": "dcfAccomplishmentFree",
+      "value": true
+    },
+    {
+      "comment": "experience points are a game mechanic whose major function is to reward players; the primary measure of level readiness, their distribution requires careful DM planning and adjudication",
+      "name": "dcfXPMechanic",
+      "value": true
+    },
+    {
+      "comment": "the DMG's XP amounts may always be adjusted up or down by level of play and accomplishments: the fighter holding off trolls single-handedly earns points for heroism",
+      "name": "dcfXPAdjustable",
+      "value": true
+    },
+    {
+      "comment": "the landslide example: characters who wipe out an entire village to slay a single thief get no experience points, particularly if of good alignment - an XP penalty is even possible",
+      "name": "dcfXPLandslide",
+      "value": true
+    },
+    {
+      "comment": "tentatively assign XP to potential PC actions as you design an adventure, disclosing such awards only after the adventure, rewarding ingenuity in thinking of the action",
+      "name": "dcfXPTentative",
+      "value": true
+    },
+    {
+      "comment": "where treasure-gathering and monster-slaying are not the primary objectives, completely restructure the experience point award system for that adventure; reward good play",
+      "name": "dcfXPRestructure",
+      "value": true
+    },
+    {
+      "comment": "whether to award XP for magical items discovered is each DM's decision; if awarded for items found and used, they should not be awarded for items found and sold",
+      "name": "dcfXPMagicOptional",
+      "value": true
+    },
+    {
+      "comment": "the moral makes many DMs uncomfortable but using it greatly strengthens a story line; the storyteller shares a meaningful lesson, unnoticed if not heavy-handed",
+      "name": "dcfMoralStrengthens",
+      "value": true
+    },
+    {
+      "comment": "the moral simply put: player characters' actions should have proper consequences; the social structure places expectations on its members, and anti-social behavior meets an appropriate consequence",
+      "name": "dcfMoralConsequences",
+      "value": true
+    },
+    {
+      "comment": "the most important example is player cooperation within the party: a party unable to agree expends more time and energy fighting each other than fighting monsters",
+      "name": "dcfMoralCooperation",
+      "value": true
+    },
+    {
+      "comment": "societies frown upon taking innocent lives; killers must face society's wrath or flee it - jail terms, hanging, the ire of populace and gendarmerie - and justice eventually catches repeat murderers",
+      "name": "dcfMoralKillers",
+      "value": true
+    },
+    {
+      "comment": "the challenge-and-reward interaction theme: the moral most DMs impart is that accomplishment merits reward, a lesson quickly lost among treasure gained at little risk or cost",
+      "name": "dcfMoralAccomplishmentMerits",
+      "value": true
+    },
+    {
+      "comment": "create a story for the sake of its moral: select the message ahead of time and prove the point - 'It's not wise to fool the king,' 'A thief shouldn't flaunt his wealth in front of those he has robbed,' 'Things are not always as they seem'",
+      "name": "dcfMoralStoryForMoral",
+      "value": true
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "expr": "m['dcfPermanentPerLevelMin']() != 1 or m['dcfPermanentPerLevelMax']() != 2",
+      "note": "the lid: one or two permanent magical items per level of experience."
+    },
+    {
+      "expr": "m['dcfPirateShipXP']() != 1000",
+      "note": "the tentative award: 1,000 XP for each pirate ship burned."
+    },
+    {
+      "expr": "m['dcfForeshadowDreams']() != 1 or m['dcfForeshadowRumors']() != 1",
+      "note": "the foreshadowing tail: dreams and rumors."
+    },
+    {
+      "expr": "m['dcfMysteryVampireLair']() != 1 or m['dcfMysteryUnknownFoe']() != 1",
+      "note": "the mystery: the secret foe and the vampire-lair clues."
+    },
+    {
+      "expr": "m['dcfChallengeBalanceRole']() != 1 or m['dcfChallengeScreenDice']() != 1",
+      "note": "the challenge: the encounter role and the changeable screen dice."
+    },
+    {
+      "expr": "m['dcfMagicLid']() != 1 or m['dcfMagicStoryPart']() != 1",
+      "note": "the magical items: the lid and the story part."
+    },
+    {
+      "expr": "m['dcfWealthDrains']() != 1 or m['dcfWealthXPKept']() != 1",
+      "note": "the wealth: the drains and the kept XP."
+    },
+    {
+      "expr": "m['dcfMoralKillers']() != 1 or m['dcfMoralStoryForMoral']() != 1",
+      "note": "the moral: the killer consequences and the story-for-a-moral."
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the foreshadowing tail section": [
+      {
+        "kind": "bool",
+        "name": "dcfForeshadowVariety"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfForeshadowPlayerInvitation"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfForeshadowDreams"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfForeshadowFortuneteller"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfForeshadowAnonymousMessage"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfForeshadowRumors"
+      }
+    ],
+    "the mystery section": [
+      {
+        "kind": "bool",
+        "name": "dcfMysteryMotivates"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMysteryWhodunit"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMysteryUnknownFoe"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMysteryVampireLair"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMysteryCampaign"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMysteryBackground"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMysteryDyingMessenger"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMysterySpeakWithDead"
+      }
+    ],
+    "the challenge section": [
+      {
+        "kind": "bool",
+        "name": "dcfChallengeFit"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfChallengeCombat"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfChallengeNegotiation"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfChallengeFeedback"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfChallengeBalanceRole"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfChallengeHDBalance"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfChallengeIntelligentPlay"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfChallengeScreenDice"
+      }
+    ],
+    "the reward head section": [
+      {
+        "kind": "bool",
+        "name": "dcfRewardAccomplishment"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfRewardBalance"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfRewardVariety"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfRewardDuringAdventure"
+      }
+    ],
+    "the magical items section": [
+      {
+        "kind": "const",
+        "name": "dcfPermanentPerLevelMin"
+      },
+      {
+        "kind": "const",
+        "name": "dcfPermanentPerLevelMax"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMagicSparingly"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMagicClassDirected"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMagicLid"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMagicDescribed"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMagicSageExample"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMagicLimitations"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMagicStoryPart"
+      }
+    ],
+    "the wealth section": [
+      {
+        "kind": "bool",
+        "name": "dcfWealthStandard"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfWealthDrains"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfWealthXPKept"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfWealthLowValueBulks"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfWealthSpendingSprees"
+      }
+    ],
+    "the discoveries section": [
+      {
+        "kind": "bool",
+        "name": "dcfDiscoveryInfo"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfDiscoveryPieced"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfDiscoveryDesign"
+      }
+    ],
+    "the gratitude section": [
+      {
+        "kind": "bool",
+        "name": "dcfGratitudeDebt"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfGratitudeCaseByCase"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfGratitudePromise"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfGratitudeHumble"
+      }
+    ],
+    "the accomplishment section": [
+      {
+        "kind": "bool",
+        "name": "dcfAccomplishmentIntrinsic"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfAccomplishmentGoodDeeds"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfAccomplishmentFree"
+      }
+    ],
+    "the experience points section": [
+      {
+        "kind": "const",
+        "name": "dcfPirateShipXP"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfXPMechanic"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfXPAdjustable"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfXPLandslide"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfXPTentative"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfXPRestructure"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfXPMagicOptional"
+      }
+    ],
+    "the moral section": [
+      {
+        "kind": "bool",
+        "name": "dcfMoralStrengthens"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMoralConsequences"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMoralCooperation"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMoralKillers"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMoralAccomplishmentMerits"
+      },
+      {
+        "kind": "bool",
+        "name": "dcfMoralStoryForMoral"
+      }
+    ]
+  },
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 140,
+    "open": 15
+  },
+  "caller_files": [],
+  "inline_count": 63
+}

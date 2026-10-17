@@ -8870,6 +8870,72 @@ when both halves land.
   techniques; djvu from ~line 13327), then the
   story techniques pp. 109-112, help from the
   players p. 113, then the child flip.
+- R552 LANDED 2026-10-17: commit 3e9a7503d8891c183f9f0
+  cd98328babaf757989e (census 475 -> 476, pushed
+  739d8fb..3e9a750), THE DSG PLOT AND COUNTERPLOT,
+  printed pp. 103-106 (pdf 104-107) - the
+  storytelling doctrine: the chapter head (the
+  story as important as the world setting, the DM
+  as bard or storyteller), The Story Structure
+  (the ancient hearth lineage, the exposition,
+  the development with its rising tension and
+  several climaxes, the climax resolving the major
+  conflicts, the denouement retrospection), the
+  exposition craft (the long-NPC-speech mistake,
+  the acted-out encounter, the handouts, the
+  information cards with the format fit, the
+  combat opener especially for Adventurer-types,
+  the combat-before-speech rule, the between-
+  session advance information), the development
+  craft (the minion encounters teaching the
+  opposition, the sages/seers/beggars prods, the
+  random-encounter balance, the semi-climax), the
+  climax doctrine (the game-balance primary, the
+  mental-plus-physical, the deadly potential, the
+  adversary tactics with the special aid and the
+  emergency escape route - the always-escaping
+  villain campaigns, the multiple solutions, the
+  staging drama - the evil temple or the
+  fiery-chasm bridge, the dramatic key goal of
+  fun), the denouement (the loose ends, the
+  safety with the arrogance reminder, the
+  next-adventure lead avoiding the inn opening),
+  Multiple Story Lines (the tailored lines, the
+  heroic epic form - broad good-sanctioned
+  purpose, cost-gained achievement, the
+  years-spanning conflict, the session climax
+  and the 3-4-session major objectives, the rare
+  cliffhanger with its low player tolerance, the
+  periodic changes - the new epic every year or
+  so), and the Story Elements head with The
+  Villains (the antagonist as any blocking force,
+  the unintelligent single-session foes, the
+  minimal-intelligence tactical options, the
+  villain hierarchy, the unique NPCs, the
+  familiarization without confrontation, the
+  personal confrontation relished, the buffoon,
+  the party-equal power or the protections, the
+  surviving villain returning stronger) and the
+  Foreshadowing opener (the hints/portents/
+  dreams, the black-hole warning, the
+  Problem-Solver affinity, the augury
+  invitation - the section crossing the pp.
+  106-107 boundary, its tail completing next
+  round). 3 consts + 52 bools, prefix dce, header
+  rules/dsgcamp3.h, spec 30,736 bytes, md5
+  6a580bd99a3334f53888eef48f924fae matched
+  exactly first try, 55 inlines; djvu lines
+  13327-13752 with the Capture pdf 104-107
+  cross-read (clean). Another inline_count
+  authoring miss caught in staging (56 written
+  for 55 pins - ALWAYS recompute the count
+  before publish). A ZERO-FLIP ROUND: gap census
+  stays 140/15. NEXT - R552: the rest of Story
+  Elements pp. 107-108 (the foreshadowing tail
+  and the following elements), then Techniques
+  of Story and Campaign Design pp. 109-112 (the
+  matrix campaign, the master storyteller), help
+  from the players p. 113, then the child flip.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
