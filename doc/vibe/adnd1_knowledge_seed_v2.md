@@ -6729,6 +6729,55 @@ when both halves land.
   436 -> 437, gap 82/73. NEXT - R513: the Defensive
   Point Values of underground formations section +
   the Hypothermia optional rule.
+- R513 LANDED 2026-10-17: commit ca386f5 (census 438,
+  pushed 82af928..ca386f5), the DSG DPV AND
+  HYPOTHERMIA, printed pp. 40-42 (pdf 41-43) - the
+  defensive point values section (the DMG page-110
+  fortification seam, the natural and constructed
+  formations assigned DPVs, the destroy-on-attack-
+  or-spell use, the cubic-open-space reading where
+  the value is the damage needed to collapse the
+  ceiling, the chain-reaction follow-up check - the
+  R512 dsgcavein2.h seam) with the Table 19
+  thirteen-formation grid (room 10-ft tube 50, room
+  20-ft cube 90, column 3-ft 10, column 10-ft 100,
+  wall 10-ft square 20, bridge small wooden 12,
+  bridge small stone 40, bridge large stone 80,
+  rock ledge per 1-ft 10, ceiling small cavern
+  100, ceiling large cavern 250, stalactite small
+  8, stalactite large 20) and the hypothermia
+  optional rule (the damp-chill preamble, the
+  one-turn swimming onset assuming no subterranean
+  heat source, the shallow-water reduction -
+  knee-to-waist deep one hour, shallower than knee
+  no threat, the Constitution Check after onset
+  with 1d6 lost on a failure repeated every turn,
+  the losses accumulating until an external heat
+  source and continuing even out of the water,
+  the 1d6-per-turn recovery by a fire or
+  warm-blooded creatures until fully recovered,
+  the cold-adapted and ring-of-warmth immunity,
+  and the grease or oil coating doubling both the
+  pre-check time and the interval). Table 19
+  confirmed by chapter djvu + the appendix reprint
+  (all 13 rows); Capture idx 54 partial
+  corroboration (garble 104 = 10-ft, the appendix
+  drop of Stalactite on the small-8 row settled by
+  the chapter); hypothermia numbers dual-confirmed
+  on Capture idx 56-57. Pinned as
+  rules/dsgdpv.h (prefix dny, verified free; 27
+  inlines: 9 consts + 16 bools + 2 T19 cols; the
+  loss/recovery 1d6 dice+sides consts per the R508
+  convention). Gap 82/73 -> 85/70: 3 flips - the
+  DPV and Hypothermia children + the Table 19
+  manifest line. DELIVERY: canvas r513-splice,
+  authored md5 1cf05a69; user-side md5 199eaa39 -
+  the ./bn whitespace-rewrite class, engine ALL
+  OK twice. Double-run applied 7/already 0 then
+  0/7; preflight GREEN, census 437 -> 438, gap
+  85/70. NEXT - R514: the Magnetic Effects of
+  Lodestone section + the NPC long-adventure
+  reactions through Table 20.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
