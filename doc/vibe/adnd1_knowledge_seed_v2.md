@@ -9709,6 +9709,37 @@ when both halves land.
   Border Ethereal, no random encounters);
   then the two quasi-groups close the inner
   half.
+- R573 LANDED 2026-10-17: commit 38d8c24e959770d154e9
+  20c5a0cdafb717bb3a23 (census 496 -> 497,
+  pushed 1f15d1b..38d8c24), THE MotP ENERGY
+  PLANES, printed p. 54 - Positive and
+  Negative in one round: the Plane-of-Life/
+  Plane-of-Death doctrine, the 2d6-per-round
+  gain exploding at twice the original total
+  (extra points fading in 1d20 true turns),
+  the 2d6-plus-one-level drain, the
+  protection-spell paradox (the protections
+  cannot be cast IN the planes), the
+  no-breathing-energy rule, the 10-yard
+  vision, the 10%-per-turn weakened Border
+  Ethereal, the no-random-encounters
+  doctrine, the magic max/min rule, and the
+  features (the xeg-ya/xeg-yi with their
+  2d6-8 guide roll, the trilloch, the undead
+  Negative link). 5 consts + 6 bools, prefix
+  ddb, header rules/motpenergy.h. TWO flips:
+  gap census 34/56 -> 36/54. Spec 9,917
+  bytes, md5 a7730e54aefc3f80de43b43a172c62e3
+  matched exactly first try, 11 inlines. NOTE
+  (user observation at R573, GENERAL - the
+  whole splice ritual, not just the MotP
+  arc): the ritual is going faster now. NEXT - R574: the
+  Positive Quasi-Planes (pp.
+  55-57) - Lightning, Radiance, Minerals,
+  Steam in one round, including the Minerals
+  petrification rule (the 80/20 split, the
+  99% crumble); then the negative quasi-group
+  closes the inner half.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

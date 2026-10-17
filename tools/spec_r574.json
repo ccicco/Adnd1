@@ -1,0 +1,274 @@
+{
+  "round": 574,
+  "prefix": "ddc",
+  "header_file": "rules/motpquasipos.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/motp_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 497,
+  "title": "the MotP Positive Quasi-Planes",
+  "audit_label": "R574 MotP positive quasi-planes audit",
+  "audit_comment": "the Positive Quasi-Planes, printed pp. 55-57, the four in one round: Lightning, Radiance, Minerals and Steam - the agitated-matter doctrine with the tidal Positive borders, the per-plane survival (the 5/10/20% per-round strikes at 1d8-of-d10s, the thunder-deafness with the wax-plug fix, the Radiance blind save with the smoked lenses, the 1d4-plus-AC Minerals movement damage, the muggy Steam slow), the 1-in-10 encounter check, the wall-of-brilliance intrusion at 3d6 per round, the pocket conversion rule, the native immunities, the doubled guide prices, the tower ring, the gem economy with the 1-in-100 survival, and the fossilization (save per true turn, the 80/20 split, the 99% crumble).",
+  "include_comment": "the MotP positive quasi-planes pins",
+  "include_after": "#include \"rules/motpenergy.h\"  // R573: the MotP energy planes pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R573 LANDED 2026-10-17: commit 38d8c24e959770d154e9",
+  "prev_record": [
+    "- R573 LANDED 2026-10-17: commit 38d8c24e959770d154e9",
+    "  20c5a0cdafb717bb3a23 (census 496 -> 497,",
+    "  pushed 1f15d1b..38d8c24), THE MotP ENERGY",
+    "  PLANES, printed p. 54 - Positive and",
+    "  Negative in one round: the Plane-of-Life/",
+    "  Plane-of-Death doctrine, the 2d6-per-round",
+    "  gain exploding at twice the original total",
+    "  (extra points fading in 1d20 true turns),",
+    "  the 2d6-plus-one-level drain, the",
+    "  protection-spell paradox (the protections",
+    "  cannot be cast IN the planes), the",
+    "  no-breathing-energy rule, the 10-yard",
+    "  vision, the 10%-per-turn weakened Border",
+    "  Ethereal, the no-random-encounters",
+    "  doctrine, the magic max/min rule, and the",
+    "  features (the xeg-ya/xeg-yi with their",
+    "  2d6-8 guide roll, the trilloch, the undead",
+    "  Negative link). 5 consts + 6 bools, prefix",
+    "  ddb, header rules/motpenergy.h. TWO flips:",
+    "  gap census 34/56 -> 36/54. Spec 9,917",
+    "  bytes, md5 a7730e54aefc3f80de43b43a172c62e3",
+    "  matched exactly first try, 11 inlines. NOTE",
+    "  (user observation at R573, GENERAL - the",
+    "  whole splice ritual, not just the MotP",
+    "  arc): the ritual is going faster now. NEXT - R574: the",
+    "  Positive Quasi-Planes (pp.",
+    "  55-57) - Lightning, Radiance, Minerals,",
+    "  Steam in one round, including the Minerals",
+    "  petrification rule (the 80/20 split, the",
+    "  99% crumble); then the negative quasi-group",
+    "  closes the inner half."
+  ],
+  "banner": {
+    "title": "THE MotP POSITIVE QUASI-PLANES - printed pp. 55-57, the four in one round: Lightning, Radiance, Minerals and Steam - the survival ladder, the energy intrusions, the natives, the towers, and the Minerals fossilization with the gem economy.",
+    "provenance": "verified against printed pp. 55-57 of the uploaded motp.pdf OCR; the quasi-planes pin by mapping onto the major-plane frame (Radiance as Fire, Minerals as Earth, Steam as Water, Lightning as Air) with the MotP's own particular dangers carried explicitly.",
+    "sentinel": "the gap census after this round: 39 closed, 51 open - three boxes fall (the quasi-group, the encounter table, the Minerals petrification rule); the negative quasi-group closes the inner half next."
+  },
+  "consts": [
+    {
+      "name": "ddcQuasiPlaneCount",
+      "value": 4,
+      "comment": "the four positive quasi-planes between the Positive Material and the majors: Lightning (Air), Radiance (Fire), Minerals (Earth), Steam (Water) - the most changing and dynamic of the inner planes, their Positive borders ebbing and flowing like tides."
+    },
+    {
+      "name": "ddcLightningStrikePctL",
+      "value": 20,
+      "comment": "the lightning strike chances per round: 5% size S, 10% size M, 20% size L; a bolt deals 1d8 of d10s (1-80) halved by a save vs. spell; protection from lightning gives safety."
+    },
+    {
+      "name": "ddcLightningDeafTurns",
+      "value": 264,
+      "comment": "the elemental thunder: normal speech impossible, a turn unprotected deafens for 2d4x10 (264) turns, longer stays risk permanent deafness (Con check; heal cures) - wax or putty ear plugs negate; the harm stops at the Border Ethereal but the noise still drowns speech there."
+    },
+    {
+      "name": "ddcMineralsMoveDamageDie",
+      "value": 4,
+      "comment": "the Minerals movement damage: each round of movement deals 1d4 plus the traveler's AC; Earth/Minerals natives and AC below -4 are unharmed; Dex bonuses do not count, magic armor is two planes reduced."
+    },
+    {
+      "name": "ddcQuasiEncounterDenom",
+      "value": 10,
+      "comment": "travelers in the positive quasi-planes have a 1-in-10 chance of an encounter (the lightning bolts and crystal cuts excluded); roll: 1-20 positive energy phenomenon, 21-30 elemental pocket, 31-00 creature encounter."
+    },
+    {
+      "name": "ddcWallAdvanceDieSides",
+      "value": 6,
+      "comment": "the positive energy intrusion: a wall of advancing white brilliance moving 3d6 inches per round for 2d10 turns - full Positive Material immersion effects, the border lost after 1d4 rounds in the wall."
+    },
+    {
+      "name": "ddcPocketConvertPct",
+      "value": 30,
+      "comment": "the only pockets in a quasi-plane are of its related major plane (entering = entering that plane, 30% native lair chance); pockets survive energy walls by conversion - carried at the front, left behind at the retreat."
+    },
+    {
+      "name": "ddcGemSurviveDenom",
+      "value": 100,
+      "comment": "the Minerals gem economy: only one in 100 stones survives return to a gravity plane; survivors worth 1,000 gp base; removing more than ~100 stones alarms the natives - the guides abandon the greedy halfway through the plane."
+    },
+    {
+      "name": "ddcPetrifyStonePct",
+      "value": 80,
+      "comment": "the Minerals fossilization: non-inner natives save vs. spell each true turn (inner non-natives once per subjective day); failure petrifies instantly - 80% stone (stone to flesh reverses), 20% crystal/gold-veined granite (only a full wish); petrification protection does not help; brought to gravity, 99% crumble to dust."
+    }
+  ],
+  "bools": [
+    {
+      "name": "ddcRadianceBlindRule",
+      "value": true,
+      "comment": "the Radiance survival: Fire's burning and breathing dangers, plus unprotected eyes save vs. death or be permanently blinded (infravision -2 to the save, both visions -4); darkness spells or smoked lenses (fragile, 1-in-4 knocked off when hit) permit sight; Border viewers unharmed but formless to the eye."
+    },
+    {
+      "name": "ddcSteamMuggyRule",
+      "value": true,
+      "comment": "the Steam survival: not hot but muggy - movement slowed by water gathering in the lungs (water breathing negates), vision limited to 10d6 yards of thick fog; the least hostile positive quasi-plane."
+    },
+    {
+      "name": "ddcLightningNativeImmunity",
+      "value": true,
+      "comment": "the native immunities: Lightning natives immune to electrical attacks, resisting weather and wind as Air creatures; Radiance natives immune to fire, heat and light attacks, vulnerable to water as fire elementals, driven off by darkness; Minerals natives pass through earth, immune to solid-affecting spells; Steam natives unaffected by air, water and heat magic."
+    },
+    {
+      "name": "ddcGuidePriceDoubled",
+      "value": true,
+      "comment": "quasi-elemental guides: hyperactive and erratic, the first task is slowing them to bargain; the same bribes as their elemental cousins but the price is ALWAYS at least doubled; no conception of haggling - refuse the terms and they leave (or attack if evil and stronger)."
+    },
+    {
+      "name": "ddcNoQuasiArchoment",
+      "value": true,
+      "comment": "no known archoments or true rulers in the positive quasi-planes - the inhabitants too frantically busy for hierarchy; the ring of great towers (blue flame, lead, solidified clouds, ice) extends into the Positive on thin peninsulas, origin unknown, home to exiled Powers and researchers."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the QuasiPlaneCount pin",
+      "expr": "m['ddcQuasiPlaneCount']() != 4"
+    },
+    {
+      "note": "the LightningStrikePctL pin",
+      "expr": "m['ddcLightningStrikePctL']() != 20"
+    },
+    {
+      "note": "the LightningDeafTurns pin",
+      "expr": "m['ddcLightningDeafTurns']() != 264"
+    },
+    {
+      "note": "the MineralsMoveDamageDie pin",
+      "expr": "m['ddcMineralsMoveDamageDie']() != 4"
+    },
+    {
+      "note": "the QuasiEncounterDenom pin",
+      "expr": "m['ddcQuasiEncounterDenom']() != 10"
+    },
+    {
+      "note": "the WallAdvanceDieSides pin",
+      "expr": "m['ddcWallAdvanceDieSides']() != 6"
+    },
+    {
+      "note": "the PocketConvertPct pin",
+      "expr": "m['ddcPocketConvertPct']() != 30"
+    },
+    {
+      "note": "the GemSurviveDenom pin",
+      "expr": "m['ddcGemSurviveDenom']() != 100"
+    },
+    {
+      "note": "the PetrifyStonePct pin",
+      "expr": "m['ddcPetrifyStonePct']() != 80"
+    },
+    {
+      "note": "the RadianceBlindRule pin",
+      "expr": "m['ddcRadianceBlindRule']() != 1"
+    },
+    {
+      "note": "the SteamMuggyRule pin",
+      "expr": "m['ddcSteamMuggyRule']() != 1"
+    },
+    {
+      "note": "the LightningNativeImmunity pin",
+      "expr": "m['ddcLightningNativeImmunity']() != 1"
+    },
+    {
+      "note": "the GuidePriceDoubled pin",
+      "expr": "m['ddcGuidePriceDoubled']() != 1"
+    },
+    {
+      "note": "the NoQuasiArchoment pin",
+      "expr": "m['ddcNoQuasiArchoment']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the positive quasi-planes pins": [
+      {
+        "kind": "const",
+        "name": "ddcQuasiPlaneCount"
+      },
+      {
+        "kind": "const",
+        "name": "ddcLightningStrikePctL"
+      },
+      {
+        "kind": "const",
+        "name": "ddcLightningDeafTurns"
+      },
+      {
+        "kind": "const",
+        "name": "ddcMineralsMoveDamageDie"
+      },
+      {
+        "kind": "const",
+        "name": "ddcQuasiEncounterDenom"
+      },
+      {
+        "kind": "const",
+        "name": "ddcWallAdvanceDieSides"
+      },
+      {
+        "kind": "const",
+        "name": "ddcPocketConvertPct"
+      },
+      {
+        "kind": "const",
+        "name": "ddcGemSurviveDenom"
+      },
+      {
+        "kind": "const",
+        "name": "ddcPetrifyStonePct"
+      },
+      {
+        "kind": "bool",
+        "name": "ddcRadianceBlindRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddcSteamMuggyRule"
+      },
+      {
+        "kind": "bool",
+        "name": "ddcLightningNativeImmunity"
+      },
+      {
+        "kind": "bool",
+        "name": "ddcGuidePriceDoubled"
+      },
+      {
+        "kind": "bool",
+        "name": "ddcNoQuasiArchoment"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the positive quasi-planes child closes",
+      "from": "  - [ ] The Positive Quasi-Planes (pp. 55-57) - lightning, radiance, mineral, steam: survival, movement, encounters, combat, magic, features",
+      "to": "  - [x] The Positive Quasi-Planes (pp. 55-57) - lightning, radiance, mineral, steam: survival, movement, encounters, combat, magic, features - R574: the agitated-matter doctrine, the per-plane survival, the energy intrusions, the natives, the doubled guide prices, the towers, and the Minerals fossilization"
+    },
+    {
+      "note": "the positive quasi-planes encounter table closes",
+      "from": "  - [ ] The positive quasi-planes encounter table (p. 56) - the 1-in-10 per 12 hours",
+      "to": "  - [x] The positive quasi-planes encounter table (p. 56) - the 1-in-10 per 12 hours - R574: the ddc check pin (1 in 10, the phenomenon/pocket/creature split)"
+    },
+    {
+      "note": "the Minerals petrification rule closes",
+      "from": "  - [ ] The Minerals petrification rule (p. 57) - the save-vs-spell per true turn, the 80/20 stone/crystal split, the 99% crumble rule",
+      "to": "  - [x] The Minerals petrification rule (p. 57) - the save-vs-spell per true turn, the 80/20 stone/crystal split, the 99% crumble rule - R574: the ddc fossilization pins (the save per true turn, the 80/20 split, the 99% crumble)"
+    }
+  ],
+  "gap_census": {
+    "closed": 39,
+    "open": 51
+  },
+  "caller_files": [],
+  "inline_count": 14
+}
