@@ -9295,6 +9295,31 @@ when both halves land.
   128 (a roster round), then the DM-section
   parent, the front-matter chapter p. 6, and the
   arc's final census.
+- R559 LANDED 2026-10-17: commit 8060e227703c94fea42
+  9dd3a8630a7f174b337f5 (census 482 -> 483, pushed
+  9816ec6..8060e22), THE DSG PERSPECTIVE MAP
+  PLATES CLOSED - the third FLIP-ONLY round of
+  the arc (like R549/R556): zero pins, the
+  census advancing by the audit block alone.
+  The pp. 124-127 plates are graphics - the
+  perspective grids, the horizon lines, and the
+  printed 3-D symbol sheets serving the R557
+  mapping doctrine (rules/dsgmap.h) - and pin
+  nothing (the R549 Deepearth map-plate
+  precedent applied to the DM-section plates;
+  djvu lines 15810-15950 show zero prose cells,
+  the index opening clean at printed p. 128).
+  The gap census moves 143/12 -> 144/11; the
+  gap report WAS in the git add (5 files).
+  Spec 5,867 bytes, md5
+  185397cb1e3c194ac6bd2e719090a48d matched
+  exactly first try, 0 inlines, header
+  rules/dsgplate.h, prefix dcl. No authoring
+  catches. NEXT - R560: the index p. 128 (a
+  roster round against the landing pattern it
+  references), then the DM-section parent, the
+  front-matter chapter p. 6, and the arc's
+  final census.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1,0 +1,180 @@
+{
+  "round": 560,
+  "prefix": "dcm",
+  "header_file": "rules/dsgindex.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 483,
+  "title": "the DSG index",
+  "audit_label": "R560 DSG index audit",
+  "audit_comment": "the index roster: every pinned page reference lands on a chapter this arc already pinned - Ability Check p. 12, Mapping p. 114, the moral p. 109, the four theories p. 71, the equipment range pp. 56-58, the player types p. 99, the see-cross-references routing the roster, and the back-cover blurb past the index closing the book at printed p. 128.",
+  "include_comment": "the DSG index roster pins",
+  "include_after": "#include \"rules/dsgplate.h\"  // R559: the DSG perspective map plates closure",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R559 LANDED 2026-10-17: commit 8060e227703c94fea42",
+  "prev_record": [
+    "- R559 LANDED 2026-10-17: commit 8060e227703c94fea42",
+    "  9dd3a8630a7f174b337f5 (census 482 -> 483, pushed",
+    "  9816ec6..8060e22), THE DSG PERSPECTIVE MAP",
+    "  PLATES CLOSED - the third FLIP-ONLY round of",
+    "  the arc (like R549/R556): zero pins, the",
+    "  census advancing by the audit block alone.",
+    "  The pp. 124-127 plates are graphics - the",
+    "  perspective grids, the horizon lines, and the",
+    "  printed 3-D symbol sheets serving the R557",
+    "  mapping doctrine (rules/dsgmap.h) - and pin",
+    "  nothing (the R549 Deepearth map-plate",
+    "  precedent applied to the DM-section plates;",
+    "  djvu lines 15810-15950 show zero prose cells,",
+    "  the index opening clean at printed p. 128).",
+    "  The gap census moves 143/12 -> 144/11; the",
+    "  gap report WAS in the git add (5 files).",
+    "  Spec 5,867 bytes, md5",
+    "  185397cb1e3c194ac6bd2e719090a48d matched",
+    "  exactly first try, 0 inlines, header",
+    "  rules/dsgplate.h, prefix dcl. No authoring",
+    "  catches. NEXT - R560: the index p. 128 (a",
+    "  roster round against the landing pattern it",
+    "  references), then the DM-section parent, the",
+    "  front-matter chapter p. 6, and the arc's",
+    "  final census."
+  ],
+  "banner": {
+    "title": "THE DSG INDEX - the printed pp. 127-128 roster closing the book: the alphabetical topic list whose every page reference lands on a chapter this arc already pinned, from Ability Check (p. 12) through World design (p. 100), with the see-cross-references and the four underdark theories.",
+    "provenance": "from the DSG index, printed pp. 127-128, djvu lines 15866-16247, every entry cross-checked against the landed rounds page ranges; the roster references no page outside the pp. 6-128 book.",
+    "sentinel": "the roster is the arc own mirror: the DSG gap report and the index close together, the back-cover blurb the only prose past it."
+  },
+  "consts": [
+    {
+      "name": "dcmIndexFirstPage",
+      "value": 12,
+      "comment": "the index opens at Ability Check, printed p. 12 - the R504 movement chapter era; the roster runs A (Ability Check) through W (World design, p. 100) across the printed pp. 127-128 spread."
+    },
+    {
+      "name": "dcmMappingPage",
+      "value": 114,
+      "comment": "the Mapping entry refs p. 114 with its geomorphic (117), orthographic and perspective subheads - the R557 mapping chapter and the R559 plates it served."
+    },
+    {
+      "name": "dcmMoralPage",
+      "value": 109,
+      "comment": "the story elements moral subhead refs p. 109 - the R553 tail closing the elements, with the story types and the storytelling techniques (pace, voice) subheads at pp. 109/112."
+    },
+    {
+      "name": "dcmTheoryCount",
+      "value": 4,
+      "comment": "four underdark theories indexed at p. 71: Hollow Earth, Isolated Pockets, Partial Connections and Swiss Cheese - the R-era underground environment chapter."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dcmSeeCrossRefs",
+      "value": true,
+      "comment": "the index uses see-cross-references: Illithids see Mind flayers, Smell see Odor detection - the roster routes the reader instead of double-listing."
+    },
+    {
+      "name": "dcmPlayerTypesIndexed",
+      "value": true,
+      "comment": "Types of players and the Role-Players / Problem-Solvers subheads are indexed at p. 99 - the R550 campaign opener."
+    },
+    {
+      "name": "dcmEquipmentRangeIndexed",
+      "value": true,
+      "comment": "the Equipment entry refs the pp. 56-58 range with its proficiency-equipment subhead at p. 58 - the landed new-equipment chapter."
+    },
+    {
+      "name": "dcmBackCoverPastIndex",
+      "value": true,
+      "comment": "the back-cover blurb (the Niles quote and the TSR addresses) follows the index - the book ends at printed p. 128, the arc's final census boundary."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the Ability Check roster head at p. 12",
+      "expr": "m['dcmIndexFirstPage']() != 12"
+    },
+    {
+      "note": "the mapping chapter ref at p. 114",
+      "expr": "m['dcmMappingPage']() != 114"
+    },
+    {
+      "note": "the story-elements moral ref at p. 109",
+      "expr": "m['dcmMoralPage']() != 109"
+    },
+    {
+      "note": "the four underdark theories at p. 71",
+      "expr": "m['dcmTheoryCount']() != 4"
+    },
+    {
+      "note": "the see cross-references route the roster",
+      "expr": "m['dcmSeeCrossRefs']() != 1"
+    },
+    {
+      "note": "the player types ref at p. 99",
+      "expr": "m['dcmPlayerTypesIndexed']() != 1"
+    },
+    {
+      "note": "the equipment range ref pp. 56-58",
+      "expr": "m['dcmEquipmentRangeIndexed']() != 1"
+    },
+    {
+      "note": "the back-cover blurb past the index",
+      "expr": "m['dcmBackCoverPastIndex']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the index roster pins": [
+      {
+        "kind": "const",
+        "name": "dcmIndexFirstPage"
+      },
+      {
+        "kind": "const",
+        "name": "dcmMappingPage"
+      },
+      {
+        "kind": "const",
+        "name": "dcmMoralPage"
+      },
+      {
+        "kind": "const",
+        "name": "dcmTheoryCount"
+      },
+      {
+        "kind": "bool",
+        "name": "dcmSeeCrossRefs"
+      },
+      {
+        "kind": "bool",
+        "name": "dcmPlayerTypesIndexed"
+      },
+      {
+        "kind": "bool",
+        "name": "dcmEquipmentRangeIndexed"
+      },
+      {
+        "kind": "bool",
+        "name": "dcmBackCoverPastIndex"
+      }
+    ]
+  },
+  "gap_flips": [
+    {
+      "note": "the Index box closes",
+      "from": "- [ ] **Index** (p. 128)",
+      "to": "- [x] **Index** (p. 128) - the printed pp. 127-128 alphabetical roster, every page reference checked against the landed rounds - closed by R560"
+    }
+  ],
+  "gap_census": {
+    "closed": 145,
+    "open": 10
+  },
+  "caller_files": [],
+  "inline_count": 8
+}

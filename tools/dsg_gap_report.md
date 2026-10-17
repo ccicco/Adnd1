@@ -159,7 +159,7 @@ re-grained then, before any DM pin round.
   - [x] Mapping your settings (pp. 114-117) - R557: the whole chapter in one round (rules/dsgmap.h) - the orthographic head with the perspective alternative, the basic considerations and tools, the perspective advantages and costs with the photocopy and tracing techniques, the grid selection, the starting point with the control square, the drawing, the symbols, the splitting methods with the 10-foot-square 20-foot-platform example, the horizon lines, and the geomorphic system - the shapes, the standardized connections, the 60-foot section 1-2 per side against the square-mile 6-8, the 75% entry rule, and the random placement and exploration
 - [x] **Compiled tables** (pp. 121-123) - R558: the thirty-four-table reprint spread verified const-for-const against the landed chapter pins (rules/dsgtabs.h) - Tables 1-9 the movement, 15-16 the odor, 17-18 the cave-ins, 19 the DPV, 20 the unsteady reactions, 21-26 the boats, 27-34 the mining - with the Table 3 five-row grapple delta pinned (the stone parapet, stone wall top, and tree branches rows the chapter original lacked); tables 10-14 not reprinted. Closed R558
 - [x] **Perspective maps** (pp. 124-127) - R559: the 3-D map plates are graphics and pin nothing (the R549 map-plate precedent) - the perspective grids, the horizon lines, and the printed 3-D symbols serving the R557 mapping doctrine (rules/dsgmap.h), the child held open until the doctrine landed in full - closed R559
-- [ ] **Index** (p. 128)
+- [x] **Index** (p. 128) - the printed pp. 127-128 alphabetical roster, every page reference checked against the landed rounds - closed by R560
 
 ## The tables manifest (the book's own Tables index - every named table gets its own line)
 
