@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# rn - the pin-round landing ritual, two arguments: the round
+# number and the commit message. Derives the file facts from
+# tools/spec_rNNN.json: the header file, the seed file, and whether
+# the gap report belongs in the git add (any gap_flips entry). The
+# commit message is passed in, not derived. Guards: the md5 print
+# for the handoff check, the double engine run (applied N then
+# already N), and the preflight gate must be GREEN before the
+# commit. Born at R563 after 562 handoffs of the same command
+# block. Lives at the repo root; run it from ~/Adnd1.
+set -eu
+
+RND="${1:-}"
+CMSG="${2:-}"
+if [ -z "$RND" ] || [ -z "$CMSG" ]; then
+    echo "usage: ./rn NNN 'commit message'"
+    exit 1
+fi
+SPEC="tools/spec_r${RND}.json"
+[ -f "$SPEC" ] || { echo "rn ABORT: ${SPEC} not found"; exit 1; }
+
+# ---- derive the round facts from the spec ----
+HDR=$(python3 -c "import json,sys; print(json.load(open('$SPEC'))['header_file'])")
+SEED=$(python3 -c "import json,sys; print(json.load(open('$SPEC'))['seed_file'])")
+GR=$(python3 -c "import json,sys; print(json.load(open('$SPEC'))['gap_report'])")
+NFLIP=$(python3 -c "import json,sys; print(len(json.load(open('$SPEC')).get('gap_flips',[])))")
+
+echo "== rn R${RND}: spec $SPEC"
+echo "== header:  $HDR"
+echo "== seed:    $SEED"
+if [ "$NFLIP" -gt 0 ]; then
+    echo "== flip round ($NFLIP flip(s)): $GR goes in the git add"
+else
+    echo "== no-flip round: $GR NOT in the git add"
+fi
+echo "== commit:  $CMSG"
+
+# ---- the md5 for the handoff check ----
+md5sum "$SPEC"
+
+# ---- the double engine run ----
+python3 tools/splice_engine.py "$SPEC"
+python3 tools/splice_engine.py "$SPEC"
+
+# ---- the preflight gate ----
+./tools/preflight.sh
+
+# ---- the landing ----
+git add "$SPEC" "$HDR" regtest.cpp "$SEED"
+if [ "$NFLIP" -gt 0 ]; then
+    git add "$GR"
+fi
+git commit -m "$CMSG"
+git push
+git log -1 --format='%H'
+echo "== rn R${RND}: LANDED"
+
