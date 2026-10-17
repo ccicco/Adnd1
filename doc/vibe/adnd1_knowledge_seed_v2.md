@@ -7264,6 +7264,66 @@ when both halves land.
   the section carries one; djvu from ~line 7050, Capture
   idx 127-129; gap child 133 plus any Table 36 manifest
   line.
+- R524 LANDED 2026-10-17: commit 7c7074c (census 447 -> 448,
+  pushed 0573b9b..7c7074c), THE DSG HIRELING LOYALTY AND THE
+  P. 55 HAZARDS, printed pp. 54-55 (pdf 55-56) - the hireling
+  loyalty: a PC group cannot usually run a mine alone (even
+  with a miner-proficiency supervisor, a large mine needs
+  hired strong arms; adventurers better as scouts and guards
+  when the claim is questionable or monsters possible),
+  loyalty insignificant in iron or copper mines but a
+  precious-metal or gemstone find a great temptation, the
+  standard DMG page-36 Loyalty Check with the foreman as the
+  liege, the + or - 10% security modifiers (a post-shift
+  search +10%, no PCs present at shift end -10%), pay
+  evaluated against the mine's value (the 1,000 gp of
+  diamonds for a 20 gp wage), and the failed check not an
+  immediate grab-and-run - the DM weighs the NPC's
+  Intelligence, only perhaps 8-or-less attempting unplanned
+  theft, exceptionally high Intelligence preparing the theft
+  and the getaway or concealment, the thief stealing
+  1d6 x 10% of his daily output; the natural hazards:
+  flooding from a tapped underground water body or digging
+  below the water table (adjudicated from the DM's map, the
+  below-level escape very difficult, at-level a race to the
+  exit, above-level easy; the flooded mine needing draining
+  or pumping), and mine cave-ins (shoring partially
+  preventing but never eliminating - shored every 10 feet 2%
+  weekly, no shoring 50%, partial interpolated; the
+  earthquake 1d4 x 10%, heavy rain or flood 1d3 x 10%,
+  burrowers like umber hulks and ankhegs 1% per hit die; the
+  d100 location roll designating one end 01 and the other
+  100, e.g. a 30 on a 1200-ft shaft about 360 ft from the
+  entrance; the automatic 20-foot-long 10-foot-thick fallen
+  ceiling; chain reactions checked normally); and the
+  unnatural hazards: the unnamed evil lurking deep in the
+  earth at DM creativity (the burial-ground undead, the
+  concerned deep-dwelling monsters), the drow and duergar
+  regarding mineral wealth as their own with intervention
+  rising in direct proportion to the mine's value, and the
+  planar-gate risk - some horrid lower-plane denizen finding
+  a path into the world up a deep-plunging tunnel. A
+  CLEAN-READ ROUND: both machine reads agree on every
+  number. THE MINING BLOCK IS NOW FULLY CLOSED (all
+  children flipped), and the natural/unnatural hazards were
+  the last open children of the big underground-environment
+  chapter (pp. 36-55) - the chapter parent line is closeable
+  at the next census check. SEAMS: DMG p. 36 loyalty, R520
+  shoring (the 10-ft intervals match), R511 chain
+  reactions, R518 water travel. Pinned as rules/dsgmine6.h
+  (prefix dnsw, verified free; 38 inlines - 18 consts, 20
+  bools, no tables - a pure prose round). Spec 24,783
+  bytes, md5 1f37314d48a5eb0cbb1ca2024922da41 (user-side
+  identical - no ./bn rewrite). Engine applied 7 then 0/7.
+  Gap 118/37 -> 121/34 (3 flips: children 133-135). NEXT -
+  R525: new equipment (printed pp. 56-58, pdf 57-59) - the
+  Table 35 cost/weight grid plus the descriptions,
+  transportation and proficiency-equipment lists; djvu from
+  ~line 7220, Capture idx 130-131. WARNING: the djvu read
+  of Table 35 shows OCR-failure cells (the crowbar "Зар",
+  the reed "15р 1рс", the small-basket cost dropped) - plan
+  for screenshot reads of printed p. 56 before authoring;
+  gap children 136-140 plus the Table 35 manifest line.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

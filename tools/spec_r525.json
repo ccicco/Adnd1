@@ -1,0 +1,467 @@
+{
+  "round": 525,
+  "title": "the DSG equipment costs and weights",
+  "census_before": 448,
+  "prefix": "dnta",
+  "header_file": "rules/dsgequip.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/dsg_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "inline_count": 17,
+  "banner": {
+    "title": "The DSG NEW EQUIPMENT COSTS AND WEIGHTS, R525: printed pp. 56-57 (pdf 57-58) - the chapter frame (the equipment primarily for underground exploration but usable in any AD&D campaign, listed with average cost and typical encumbrance, descriptions to follow, the specific uses tied to the climbing, mining and underground water travel rules) and the Table 35 cost/weight grid: the twenty general rows (air bladder 15 gp and 20 gp, basket large 5 sp and 80 gp, basket small 2 sp and 40 gp, beacon 40 gp and 200 gp, birdcage 5 sp and 50 gp, box small gold 100 gp and 20 gp, box small lead 20 gp and 20 gp, crampons 40 gp and 50 gp, crowbar 3 gp and 75 gp, drill iron 5 gp and 50 gp, grappling hook 75 gp and 75 gp, lantern waterproof 50 gp and 50 gp, lard pint 5 cp and 20 gp, oil waterproofing 1 gp and 20 gp, pickaxe 20 gp and 200 gp, powder chalk 2 sp and 20 gp, pulley 25 gp and 60 gp, reed hollow 1 sp and 1 pc, shovel 10 gp and 180 gp, whistle 1 sp and 1 pc) and the four transportation rows (boat collapsible 500 gp and 600 gp, canoe small 100 gp and 800 gp, canoe large 300 gp and 1,600 gp, kayak 250 gp and 500 gp); and the equipment for proficiencies: the fourteen initial costs and minimum spaces (animal trainer 100 gp and 1-20 acres, armorer 1,250 gp and 20 x 20, blacksmith 1,000 gp and 30 x 30, boatwright 1,000 gp and 50 x 120, bowyer/fletcher 250 gp and 20 x 20, carpenter 400 gp and varies by task, gem cutter 2,225 gp and 15 x 15, leatherworker 300 gp and 15 x 15, miner 750 gp and varies, potter 600 gp and 20 x 30, smelter 2,000 gp and 50 x 50, stonemason 250 gp and varies, weaponsmith 1,500 gp and 40 x 30, weaver 500 gp and 30 x 30), the rule that a proficiency is only partially effective without the necessary space, and the raw-materials exclusion - the costs do not include the raw materials (an armorer or blacksmith needs iron, hardwood or coal), which run 11-20% (1d10 + 10) of the finished work value",
+    "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the text read from the IA djvu OCR (djvu.txt lines ~7205-7265) with the pdf Acrobat-Capture layer as the second read (idx 131 = the printed p. 56 window, idx 133 = the p. 57 window); the compiled-tables appendix has an equipment reprint but it shares the same failed OCR layer. AN OCR-FAILURE ROUND, THE THIRD OF THE MINING STRETCH: the Table 35 grid failed in both machine reads with genuine conflicts between them - the djvu garbled every sp as the Cyrillic \u0430\u0440 and dropped the basket-small cost entirely, while the Capture layer dropped the lard, reed and whistle cells and mislabeled others - and the vision passes over Curtiss's screenshots wobbled the currency units (air bladder 15 sp/5 sp/15 gp across passes). The grid was settled by Curtiss reading the physical printed p. 56: air bladder 15 gp (the direct read that also exposed the sp-pattern assumption as unsafe), basket small 2 sp and 40 gp, basket large 5 sp and 80 gp, crowbar 3 gp, pulley 25 gp and 60 gp, reed 1 sp and 1 pc, whistle 1 sp and 1 pc. The machine reads corroborate the clean cells (the beacon, boxes, crampons, drill, grappling hook, lantern, oil, pickaxe, powder and shovel rows agree across djvu and Capture), the four transportation rows, and the full fourteen-row proficiency list (both reads agree on every cost; the areas share only the trivial degree-sign glyph garble). The reed and whistle weight prints 1 pc - the book's own abbreviation in the coin-weight column, pinned as printed per the never-repair rule. The new-equipment descriptions and the transportation prose (children 138-139) land NEXT round per the content-density rule; the descriptions text is already extracted and clean in both machine reads. The R518 water-travel, R520 mining and climbing seams are noted; nothing auto-credits.",
+    "sentinel": "Two tables pin: Table 35 as a 24x2 grid (cost in copper pieces normalized, weight in gold-piece coin weight - the twenty general rows plus the four transportation rows), and the proficiency equipment as a 14x2 grid (initial cost in gold pieces, minimum space in square feet with the sentinel -99 for the animal-trainer acres and the carpenter/miner/stonemason Varies rows). The raw-material percent pins as dice + sides + add consts (1d10 + 10 giving the 11-20% range) per the R508 convention. The frame rules pin as prose bools: the any-campaign usability, the cost-and-encumbrance listing, the space-required rule, the raw-materials exclusion with the armorer/blacksmith example, and the printed 1-pc pin. The physical-read provenance is load-bearing for the seven OCR-failed cells (the air bladder, basket-small, basket-large, crowbar, pulley, reed and whistle cells); the R517/R521/R522 lessons apply. The climbing/mining/water-travel seams are noted; nothing auto-credits."
+  },
+  "include_after": "#include \"rules/dsgmine6.h\"  // R524: the DSG hireling loyalty and hazards pins",
+  "include_comment": "the DSG equipment costs pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "audit_comment": "The DSG equipment costs pins the Table 35 grid (the twenty general rows from the air bladder 15 gp and 20 gp through the whistle 1 sp and 1 pc, plus the transportation rows - boat 500/600, canoes 100/800 and 300/1,600, kayak 250/500 gp), the fourteen proficiency costs and minimum spaces (the gem cutter 2,225 gp and 15 x 15, the smelter 2,000 gp and 50 x 50, the weaponsmith 1,500 gp and 40 x 30), the space-required rule making an undersized proficiency only partially effective, and the raw-materials exclusion at 11-20% (1d10 + 10) of the finished work value.",
+  "audit_label": "R525 DSG equipment costs audit",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R524 LANDED 2026-10-17: commit 7c7074c (census 447 -> 448,",
+  "prev_record": [
+    "- R524 LANDED 2026-10-17: commit 7c7074c (census 447 -> 448,",
+    "  pushed 0573b9b..7c7074c), THE DSG HIRELING LOYALTY AND THE",
+    "  P. 55 HAZARDS, printed pp. 54-55 (pdf 55-56) - the hireling",
+    "  loyalty: a PC group cannot usually run a mine alone (even",
+    "  with a miner-proficiency supervisor, a large mine needs",
+    "  hired strong arms; adventurers better as scouts and guards",
+    "  when the claim is questionable or monsters possible),",
+    "  loyalty insignificant in iron or copper mines but a",
+    "  precious-metal or gemstone find a great temptation, the",
+    "  standard DMG page-36 Loyalty Check with the foreman as the",
+    "  liege, the + or - 10% security modifiers (a post-shift",
+    "  search +10%, no PCs present at shift end -10%), pay",
+    "  evaluated against the mine's value (the 1,000 gp of",
+    "  diamonds for a 20 gp wage), and the failed check not an",
+    "  immediate grab-and-run - the DM weighs the NPC's",
+    "  Intelligence, only perhaps 8-or-less attempting unplanned",
+    "  theft, exceptionally high Intelligence preparing the theft",
+    "  and the getaway or concealment, the thief stealing",
+    "  1d6 x 10% of his daily output; the natural hazards:",
+    "  flooding from a tapped underground water body or digging",
+    "  below the water table (adjudicated from the DM's map, the",
+    "  below-level escape very difficult, at-level a race to the",
+    "  exit, above-level easy; the flooded mine needing draining",
+    "  or pumping), and mine cave-ins (shoring partially",
+    "  preventing but never eliminating - shored every 10 feet 2%",
+    "  weekly, no shoring 50%, partial interpolated; the",
+    "  earthquake 1d4 x 10%, heavy rain or flood 1d3 x 10%,",
+    "  burrowers like umber hulks and ankhegs 1% per hit die; the",
+    "  d100 location roll designating one end 01 and the other",
+    "  100, e.g. a 30 on a 1200-ft shaft about 360 ft from the",
+    "  entrance; the automatic 20-foot-long 10-foot-thick fallen",
+    "  ceiling; chain reactions checked normally); and the",
+    "  unnatural hazards: the unnamed evil lurking deep in the",
+    "  earth at DM creativity (the burial-ground undead, the",
+    "  concerned deep-dwelling monsters), the drow and duergar",
+    "  regarding mineral wealth as their own with intervention",
+    "  rising in direct proportion to the mine's value, and the",
+    "  planar-gate risk - some horrid lower-plane denizen finding",
+    "  a path into the world up a deep-plunging tunnel. A",
+    "  CLEAN-READ ROUND: both machine reads agree on every",
+    "  number. THE MINING BLOCK IS NOW FULLY CLOSED (all",
+    "  children flipped), and the natural/unnatural hazards were",
+    "  the last open children of the big underground-environment",
+    "  chapter (pp. 36-55) - the chapter parent line is closeable",
+    "  at the next census check. SEAMS: DMG p. 36 loyalty, R520",
+    "  shoring (the 10-ft intervals match), R511 chain",
+    "  reactions, R518 water travel. Pinned as rules/dsgmine6.h",
+    "  (prefix dnsw, verified free; 38 inlines - 18 consts, 20",
+    "  bools, no tables - a pure prose round). Spec 24,783",
+    "  bytes, md5 1f37314d48a5eb0cbb1ca2024922da41 (user-side",
+    "  identical - no ./bn rewrite). Engine applied 7 then 0/7.",
+    "  Gap 118/37 -> 121/34 (3 flips: children 133-135). NEXT -",
+    "  R525: new equipment (printed pp. 56-58, pdf 57-59) - the",
+    "  Table 35 cost/weight grid plus the descriptions,",
+    "  transportation and proficiency-equipment lists; djvu from",
+    "  ~line 7220, Capture idx 130-131. WARNING: the djvu read",
+    "  of Table 35 shows OCR-failure cells (the crowbar \"\u0417\u0430\u0440\",",
+    "  the reed \"15\u0440 1\u0440\u0441\", the small-basket cost dropped) - plan",
+    "  for screenshot reads of printed p. 56 before authoring;",
+    "  gap children 136-140 plus the Table 35 manifest line."
+  ],
+  "gap_census": {
+    "closed": 124,
+    "open": 31
+  },
+  "gap_flips": [
+    {
+      "from": "  - [ ] Equipment costs and weight (p. 56) - Table 35",
+      "to": "  - [x] Equipment costs and weight (p. 56) - Table 35 - R525: the 24-row cost/weight grid (the air bladder 15 gp and 20 gp through the whistle 1 sp and 1 pc, with the transportation rows boat 500/600, canoes 100/800 and 300/1,600, kayak 250/500 gp), the contested cells settled by the physical read (air bladder 15 gp, basket small 2 sp and 40 gp, basket large 5 sp and 80 gp, crowbar 3 gp, pulley 25 gp and 60 gp, reed and whistle 1 sp and the printed 1 pc) after both machine reads OCR-failed them",
+      "note": "the Table 35 child line"
+    },
+    {
+      "from": "  - [ ] Equipment for proficiencies (p. 57)",
+      "to": "  - [x] Equipment for proficiencies (p. 57) - R525: the fourteen initial costs and minimum spaces (animal trainer 100 gp and 1-20 acres through weaver 500 gp and 30 x 30, the gem cutter 2,225 gp and 15 x 15, the smelter 2,000 gp and 50 x 50), the space-required rule (no space, only partially effective), and the raw-materials exclusion (the armorer or blacksmith needing iron and forge fuel, the raw materials at 11-20% - 1d10 + 10 - of the finished work value)",
+      "note": "the Proficiency equipment child line"
+    },
+    {
+      "from": "- [ ] Table 35: Equipment Cost and Weight (p. 56)",
+      "to": "- [x] Table 35: Equipment Cost and Weight (p. 56) - R525: the general rows - air bladder 15 gp/20 gp, basket large 5 sp/80 gp, basket small 2 sp/40 gp, beacon 40/200, birdcage 5 sp/50, box gold 100/20, box lead 20/20, crampons 40/50, crowbar 3/75, drill 5/50, grappling hook 75/75, lantern waterproof 50/50, lard pint 5 cp/20, oil waterproofing 1 gp/20, pickaxe 20/200, powder chalk 2 sp/20, pulley 25/60, reed 1 sp/1 pc, shovel 10/180, whistle 1 sp/1 pc - plus transportation boat 500/600, canoe small 100/800, canoe large 300/1,600, kayak 250/500 (all gp; the physical read settled the OCR-failed cells)",
+      "note": "the Table 35 manifest line"
+    }
+  ],
+  "consts": [
+    {
+      "name": "dntaT35RowCount",
+      "value": 24,
+      "comment": "the Table 35 cost/weight grid carries twenty general rows plus the four Transportation rows (the collapsible boat, the two canoes and the kayak)."
+    },
+    {
+      "name": "dntaProfRowCount",
+      "value": 14,
+      "comment": "the proficiency equipment grid carries fourteen proficiencies from animal trainer through weaver."
+    },
+    {
+      "name": "dntaRawMatDice",
+      "value": 1,
+      "comment": "the raw-material cost roll is one die."
+    },
+    {
+      "name": "dntaRawMatSides",
+      "value": 10,
+      "comment": "the cost of raw materials is 11-20% of the finished work value - 1d10 + 10."
+    },
+    {
+      "name": "dntaRawMatAddPct",
+      "value": 10,
+      "comment": "the +10 add makes the 1d10 raw-material roll the 11-20% range."
+    }
+  ],
+  "bools": [
+    {
+      "name": "dntaUsableAnyCampaign",
+      "value": true,
+      "comment": "the new equipment, while primarily intended for underground exploration, can be used in any AD&D game campaign."
+    },
+    {
+      "name": "dntaListedWithCostAndEncumbrance",
+      "value": true,
+      "comment": "the new equipment is listed with its average cost and typical encumbrance, with descriptions following the lists."
+    },
+    {
+      "name": "dntaUsesTiedToRules",
+      "value": true,
+      "comment": "specific uses of some equipment are explained under the rules for climbing, mining, and underground water travel (the cross-chapter seams)."
+    },
+    {
+      "name": "dntaProfSpaceRequired",
+      "value": true,
+      "comment": "the proficiency equipment gives the initial cost and the minimum space the operation requires - if the necessary space is not available, the proficiency is only partially effective."
+    },
+    {
+      "name": "dntaProfCostsExcludeRawMaterials",
+      "value": true,
+      "comment": "the given costs do not include the raw materials characters must buy before using most proficiencies - an armorer or blacksmith needs iron, hardwood or coal for the forge; the raw materials cost 11-20% (1d10 + 10) of the finished work value."
+    },
+    {
+      "name": "dntaReedWhistleWeightPrintedPc",
+      "value": true,
+      "comment": "the reed and whistle weight cells print as 1 pc (the book's own abbreviation in the coin-weight column, pinned as printed per the never-repair rule)."
+    },
+    {
+      "name": "dntaAnimalTrainerSpaceVaries",
+      "value": true,
+      "comment": "the animal trainer needs little specialized equipment - at most a few harnesses or leashes - but the training of most animals requires a great deal of room, generally some kind of outdoor space, with shelter and food if boarding animals (the 1-20 acres area varies)."
+    },
+    {
+      "name": "dntaCarpenterMinerStonemasonVary",
+      "value": true,
+      "comment": "the carpenter area varies by task, and the miner and stonemason areas vary - the three Varies rows of the proficiency grid."
+    }
+  ],
+  "chains": [],
+  "tables": [
+    {
+      "name": "Table 35: EQUIPMENT COST AND WEIGHT",
+      "tag": "35",
+      "count": "dntaT35RowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dntaT35CostCp",
+        "dntaT35WtGp"
+      ],
+      "col_comments": [
+        "the cost in copper pieces, rows air bladder, basket large, basket small, beacon, birdcage, box gold, box lead, crampons, crowbar, drill, grappling hook, lantern waterproof, lard, oil, pickaxe, powder chalk, pulley, reed, shovel, whistle, boat, canoe small, canoe large, kayak: 1500, 50, 20, 4000, 50, 10000, 2000, 4000, 300, 500, 7500, 5000, 5, 100, 2000, 20, 2500, 10, 1000, 10, 50000, 10000, 30000, 25000.",
+        "the typical encumbrance in gold-piece coin weight, same row order: 20, 80, 40, 200, 50, 20, 20, 50, 75, 50, 75, 50, 20, 20, 200, 20, 60, 1, 180, 1, 600, 800, 1600, 500 (the reed and whistle print 1 pc)."
+      ],
+      "audit_comment": "the Table 35 equipment cost and weight grid, the twenty general rows plus the four transportation rows",
+      "data": [
+        [
+          1500,
+          20
+        ],
+        [
+          50,
+          80
+        ],
+        [
+          20,
+          40
+        ],
+        [
+          4000,
+          200
+        ],
+        [
+          50,
+          50
+        ],
+        [
+          10000,
+          20
+        ],
+        [
+          2000,
+          20
+        ],
+        [
+          4000,
+          50
+        ],
+        [
+          300,
+          75
+        ],
+        [
+          500,
+          50
+        ],
+        [
+          7500,
+          75
+        ],
+        [
+          5000,
+          50
+        ],
+        [
+          5,
+          20
+        ],
+        [
+          100,
+          20
+        ],
+        [
+          2000,
+          200
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          2500,
+          60
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          1000,
+          180
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          50000,
+          600
+        ],
+        [
+          10000,
+          800
+        ],
+        [
+          30000,
+          1600
+        ],
+        [
+          25000,
+          500
+        ]
+      ]
+    },
+    {
+      "name": "EQUIPMENT FOR PROFICIENCIES",
+      "tag": "35P",
+      "count": "dntaProfRowCount",
+      "sentinel": -99,
+      "col_default": -99,
+      "cols": [
+        "dntaProfCostGp",
+        "dntaProfAreaSqft"
+      ],
+      "col_comments": [
+        "the initial equipment cost in gold pieces, rows animal trainer, armorer, blacksmith, boatwright, bowyer fletcher, carpenter, gem cutter, leatherworker, miner, potter, smelter, stonemason, weaponsmith, weaver: 100, 1250, 1000, 1000, 250, 400, 2225, 300, 750, 600, 2000, 250, 1500, 500.",
+        "the minimum space in square feet: -99 the animal trainer 1-20 acres varies, 400 armorer 20 x 20, 900 blacksmith 30 x 30, 6000 boatwright 50 x 120, 400 bowyer 20 x 20, -99 carpenter varies by task, 225 gem cutter 15 x 15, 225 leatherworker 15 x 15, -99 miner varies, 600 potter 20 x 30, 2500 smelter 50 x 50, -99 stonemason varies, 1200 weaponsmith 40 x 30, 900 weaver 30 x 30."
+      ],
+      "audit_comment": "the proficiency equipment grid, the fourteen initial costs and minimum spaces",
+      "data": [
+        [
+          100,
+          -99
+        ],
+        [
+          1250,
+          400
+        ],
+        [
+          1000,
+          900
+        ],
+        [
+          1000,
+          6000
+        ],
+        [
+          250,
+          400
+        ],
+        [
+          400,
+          -99
+        ],
+        [
+          2225,
+          225
+        ],
+        [
+          300,
+          225
+        ],
+        [
+          750,
+          -99
+        ],
+        [
+          600,
+          600
+        ],
+        [
+          2000,
+          2500
+        ],
+        [
+          250,
+          -99
+        ],
+        [
+          1500,
+          1200
+        ],
+        [
+          500,
+          900
+        ]
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "expr": "m['dntaT35RowCount']() != 24 or m['dntaProfRowCount']() != 14 or m['dntaRawMatDice']() != 1 or m['dntaRawMatSides']() != 10 or m['dntaRawMatAddPct']() != 10",
+      "note": "the row counts and the raw-material roll: twenty-four equipment rows, fourteen proficiencies, and the 1d10 + 10 raw-material percent."
+    },
+    {
+      "expr": "m['dntaProfCostGp'](6) != 2225 or m['dntaProfCostGp'](1) != 1250 or m['dntaProfCostGp'](10) != 2000",
+      "note": "the proficiency cost anchors: the gem cutter 2,225 gp, the armorer 1,250 gp, the smelter 2,000 gp."
+    },
+    {
+      "expr": "m['dntaUsableAnyCampaign']() != 1 or m['dntaProfSpaceRequired']() != 1 or m['dntaProfCostsExcludeRawMaterials']() != 1 or m['dntaReedWhistleWeightPrintedPc']() != 1 or m['dntaCarpenterMinerStonemasonVary']() != 1",
+      "note": "the frame prose: the any-campaign rule, the space-required rule, the raw-materials exclusion with the 11-20% cost, the 1-pc pin, and the Varies rows."
+    }
+  ],
+  "table_checks": [
+    {
+      "expr": "m['dntaT35CostCp'](0) != 1500 or m['dntaT35WtGp'](0) != 20 or m['dntaT35CostCp'](2) != 20 or m['dntaT35WtGp'](2) != 40 or m['dntaT35CostCp'](8) != 300 or m['dntaT35WtGp'](8) != 75 or m['dntaT35CostCp'](16) != 2500 or m['dntaT35WtGp'](16) != 60",
+      "note": "Table 35 anchor rows: the air bladder 15 gp and 20 gp, the basket small 2 sp and 40 gp, the crowbar 3 gp and 75 gp, the pulley 25 gp and 60 gp (all settled by the physical read)."
+    },
+    {
+      "expr": "m['dntaT35CostCp'](17) != 10 or m['dntaT35WtGp'](17) != 1 or m['dntaT35CostCp'](19) != 10 or m['dntaT35WtGp'](19) != 1 or m['dntaT35CostCp'](12) != 5",
+      "note": "Table 35 small-value rows: the reed and whistle at 1 sp and the printed 1 pc weight, and the lard pint at 5 cp."
+    },
+    {
+      "expr": "m['dntaT35CostCp'](20) != 50000 or m['dntaT35WtGp'](20) != 600 or m['dntaT35CostCp'](22) != 30000 or m['dntaT35WtGp'](22) != 1600 or m['dntaT35CostCp'](23) != 25000 or m['dntaT35WtGp'](23) != 500",
+      "note": "Table 35 transportation rows: the collapsible boat 500 gp and 600 gp, the large canoe 300 gp and 1,600 gp, the kayak 250 gp and 500 gp."
+    },
+    {
+      "expr": "m['dntaProfAreaSqft'](3) != 6000 or m['dntaProfAreaSqft'](10) != 2500 or m['dntaProfAreaSqft'](12) != 1200 or m['dntaProfAreaSqft'](0) != -99 or m['dntaProfAreaSqft'](8) != -99",
+      "note": "the proficiency space anchors: the boatwright 50 x 120 (6,000 sq ft), the smelter 50 x 50 (2,500), the weaponsmith 40 x 30 (1,200), and the animal-trainer and miner Varies rows at the sentinel."
+    }
+  ],
+  "header_sections": {
+    "the chapter frame": [
+      {
+        "kind": "bool",
+        "name": "dntaUsableAnyCampaign"
+      },
+      {
+        "kind": "bool",
+        "name": "dntaListedWithCostAndEncumbrance"
+      },
+      {
+        "kind": "bool",
+        "name": "dntaUsesTiedToRules"
+      },
+      {
+        "kind": "const",
+        "name": "dntaT35RowCount"
+      },
+      {
+        "kind": "table",
+        "name": "Table 35: EQUIPMENT COST AND WEIGHT"
+      }
+    ],
+    "the equipment for proficiencies": [
+      {
+        "kind": "bool",
+        "name": "dntaProfSpaceRequired"
+      },
+      {
+        "kind": "bool",
+        "name": "dntaProfCostsExcludeRawMaterials"
+      },
+      {
+        "kind": "const",
+        "name": "dntaRawMatDice"
+      },
+      {
+        "kind": "const",
+        "name": "dntaRawMatSides"
+      },
+      {
+        "kind": "const",
+        "name": "dntaRawMatAddPct"
+      },
+      {
+        "kind": "const",
+        "name": "dntaProfRowCount"
+      },
+      {
+        "kind": "table",
+        "name": "EQUIPMENT FOR PROFICIENCIES"
+      }
+    ],
+    "the grid footnotes": [
+      {
+        "kind": "bool",
+        "name": "dntaReedWhistleWeightPrintedPc"
+      },
+      {
+        "kind": "bool",
+        "name": "dntaAnimalTrainerSpaceVaries"
+      },
+      {
+        "kind": "bool",
+        "name": "dntaCarpenterMinerStonemasonVary"
+      }
+    ]
+  },
+  "caller_files": []
+}
