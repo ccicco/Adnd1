@@ -1,0 +1,1108 @@
+{
+ "round": 618,
+ "title": "THE ORIENTAL RACES - korobokuru, hengeyokai and spirit folk: the korobokuru save ladders and score modifications, the hengeyokai three-form doctrine with Table 11 Hengeyokai Creatures, and the bamboo, river and sea spirit folk powers",
+ "prefix": "dge",
+ "header_file": "rules/oaraces.h",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R617 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R617 LANDED 2026-10-18: commit",
+  "  0659a83e5b54c666c68e9f764bcee24",
+  "  fe9bd34f1 (census 539 -> 540,",
+  "  pushed 5aee136..0659a83), CLASS",
+  "  AND RACE COMBINATIONS, capture",
+  "  pp. 16-23 - the Chapter 2",
+  "  opener: rules/oaclasscombos.h,",
+  "  prefix dgd (verified free), 65",
+  "  inlines (26 consts, 11 bools, 28",
+  "  table columns): the combos",
+  "  riders, T9 10x5 with the alignment",
+  "  TIER COLUMN, T10 6x6, T12 10x12",
+  "  with the colon notation SPLIT into",
+  "  two columns and the barbarian Wis",
+  "  16 MAXIMUM as its own bool, T13",
+  "  10x5 with the text-heavy grid",
+  "  ENCODED AS TIERS and the LIST-",
+  "  COUNT COLUMN (shukenja 16, sohei",
+  "  7 exclusions, wu jen 20, monk",
+  "  16) plus the three riders. Battery",
+  "  293 mutants, 0 missed; full sha",
+  "  rverify GREEN. Gap census",
+  "  18/217 -> 23/212. Spec 28,743",
+  "  bytes md5",
+  "  f6390785beed71cd22ba8ba7225aa4d5",
+  "  (canvas md5",
+  "  8ce7d335c9a699ea25edde7bea604cda",
+  "  ). NEXT - R618: the three races",
+  "  with Table 11, prefix dge",
+  "  (verify free), audit \"R618 OA",
+  "  races audit\", include after rules/",
+  "  oaclasscombos.h."
+ ],
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_label": "R618 OA races audit",
+ "audit_comment": "OA round five (capture pp. 17-22): the three nonhuman races - the korobokuru save ladders and ability modifications, the hengeyokai form doctrine with the Table 11 twelve-creature grid, and the three spirit folk powers with their life-force ties.",
+ "census_before": 540,
+ "include_after": "#include \"rules/oaclasscombos.h\"  // R617: the OA class combos pins",
+ "include_comment": "the OA races pins",
+ "caller_files": [],
+ "switches": [],
+ "consts": [
+  {
+   "name": "dgeKoroClasses",
+   "value": 4,
+   "comment": "Korobokuru prose (capture p. 17): four permitted classes - barbarian, bushi, samurai, wu jen"
+  },
+  {
+   "name": "dgeKoroSaveDivisor",
+   "value": 2,
+   "comment": "Korobokuru prose (capture p. 17): the saving-throw bonus - +1 for every 4 1/2 points of Constitution vs. rods, staves, wands and spells, and the same vs. poison - the PHYSICAL COPY CONFIRMS the book itself prints 41h (a printed misprint for 4 1/2); read as the intended 4 1/2, the divisor pins as 2 (half the Con score per +1), the flag resolved"
+  },
+  {
+   "name": "dgeKoroInfravision",
+   "value": 120,
+   "comment": "Korobokuru prose (capture p. 17): infravision range in feet - the OCR prints infraction"
+  },
+  {
+   "name": "dgeKoroPlantIdPct",
+   "value": 66,
+   "comment": "Korobokuru prose (capture p. 17): the chance to recognize and identify normal plants and animals"
+  },
+  {
+   "name": "dgeKoroStrAdj",
+   "value": 1,
+   "comment": "Korobokuru prose (capture p. 18): +1 initial Strength"
+  },
+  {
+   "name": "dgeKoroConAdj",
+   "value": 1,
+   "comment": "Korobokuru prose (capture p. 18): +1 initial Constitution"
+  },
+  {
+   "name": "dgeKoroIntAdj",
+   "value": -2,
+   "comment": "Korobokuru prose (capture p. 18): -2 initial Intelligence"
+  },
+  {
+   "name": "dgeHengeClasses",
+   "value": 4,
+   "comment": "Hengeyokai prose (capture p. 18): four permitted classes - shukenja, kensai, bushi, wu jen; never samurai or ninja (not human)"
+  },
+  {
+   "name": "dgeHengeFormCount",
+   "value": 12,
+   "comment": "Table 11 (capture p. 18): twelve traditional animal forms"
+  },
+  {
+   "name": "dgeHengeFormsPerDay",
+   "value": 1,
+   "comment": "Hengeyokai prose (capture p. 19): form changes per day equal the character level - the 1st-level one-change example, the 3rd-level three"
+  },
+  {
+   "name": "dgeHengeAnimalHpHalved",
+   "value": 2,
+   "comment": "Hengeyokai prose (capture p. 19): animal form carries one-half the hit points, rounded up - the 23-to-12 printed example; wounds carry over point-for-point; no change that would reach 0 or fewer; 0 hit points in any form is death"
+  },
+  {
+   "name": "dgeT11RowCount",
+   "value": 12,
+   "comment": "Table 11 (capture p. 18): twelve creature rows - carp, cat, crab, crane, dog, drake, fox, hare, monkey, raccoon dog, rat, sparrow"
+  },
+  {
+   "name": "dgeT11NoDamage",
+   "value": 0,
+   "comment": "Table 11 (capture p. 18): the dash sentinel - no natural damage"
+  },
+  {
+   "name": "dgeT11NoMove",
+   "value": 0,
+   "comment": "Table 11 (capture p. 18): the dash sentinel - no land, fly or swim movement"
+  },
+  {
+   "name": "dgeT11AlignGood",
+   "value": 1,
+   "comment": "Table 11 (capture p. 18): the any-good alignment tier"
+  },
+  {
+   "name": "dgeT11AlignChaotic",
+   "value": 2,
+   "comment": "Table 11 (capture p. 18): the any-chaotic alignment tier"
+  },
+  {
+   "name": "dgeT11AlignAny",
+   "value": 3,
+   "comment": "Table 11 (capture p. 18): the any alignment tier (crab)"
+  },
+  {
+   "name": "dgeT11AlignEvil",
+   "value": 4,
+   "comment": "Table 11 (capture p. 18): the any-evil alignment tier"
+  },
+  {
+   "name": "dgeSpiritClasses",
+   "value": 3,
+   "comment": "Spirit Folk prose (capture p. 20): three permitted classes - samurai, kensai, bushi"
+  },
+  {
+   "name": "dgeBambooPlantPct",
+   "value": 75,
+   "comment": "Bamboo spirit folk prose (capture p. 21): the chance to identify normal plants"
+  },
+  {
+   "name": "dgeBambooAnimalPct",
+   "value": 50,
+   "comment": "Bamboo spirit folk prose (capture p. 21): the chance to identify normal animals"
+  },
+  {
+   "name": "dgeBambooHidePct",
+   "value": 75,
+   "comment": "Bamboo spirit folk prose (capture p. 21): the chance to hide in shadows in woods or forest"
+  },
+  {
+   "name": "dgeRiverLowerWaterFeet",
+   "value": 10,
+   "comment": "River spirit folk prose (capture p. 21): once per day lower a river or stream 10 feet for five rounds"
+  },
+  {
+   "name": "dgeRiverLowerWaterRounds",
+   "value": 5,
+   "comment": "River spirit folk prose (capture p. 21): the lower-water duration in rounds"
+  },
+  {
+   "name": "dgeSeaWeatherPct",
+   "value": 75,
+   "comment": "Sea spirit folk prose (capture p. 21): once per day predict the next 24 hours of weather at 75 percent (the OCR prints 7596)"
+  },
+  {
+   "name": "dgeSeaWeatherHours",
+   "value": 24,
+   "comment": "Sea spirit folk prose (capture p. 21): the weather prediction window in hours"
+  },
+  {
+   "name": "dgeSeaFavorsPerYear",
+   "value": 1,
+   "comment": "Sea spirit folk prose (capture p. 22): one favor from the sea per year - a specific request; two opposing requests cancel and both lose the favor"
+  },
+  {
+   "name": "dgeSeaGiftHonor",
+   "value": 85,
+   "comment": "Sea spirit folk prose (capture p. 22): at honor 85 the Lord of the Sea bestows a gift - treasure, a service or a magic item (the pearl of rising tide named), no conditions"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgeKoroBarbarianCommon",
+   "value": true,
+   "comment": "Korobokuru prose (capture p. 17): barbarians are the most common korobokuru class"
+  },
+  {
+   "name": "dgeKoroSamuraiSponsored",
+   "value": true,
+   "comment": "Korobokuru prose (capture p. 17): korobokuru samurai are rare - they must be sponsored by a human clan"
+  },
+  {
+   "name": "dgeKoroSavePoisonToo",
+   "value": true,
+   "comment": "Korobokuru prose (capture p. 17): the same +1 ladder applies against poison saves"
+  },
+  {
+   "name": "dgeKoroGoblinBonus",
+   "value": true,
+   "comment": "Korobokuru prose (capture p. 17): the +1 to hit bakemono, goblins, goblin rats and hobgoblins"
+  },
+  {
+   "name": "dgeKoroGiantPenalty",
+   "value": true,
+   "comment": "Korobokuru prose (capture p. 17): giants, oni, ogres, ogre magi and titans suffer -4 to hit korobokuru"
+  },
+  {
+   "name": "dgeKoroSizeLimits",
+   "value": true,
+   "comment": "Korobokuru prose (capture p. 17): cannot use the go-daichi, any polearm but the naginata, or any bow but the horsebow"
+  },
+  {
+   "name": "dgeKoroLanguages",
+   "value": true,
+   "comment": "Korobokuru prose (capture p. 18): speak the tribal, trade, spirit-folk and hengeyokai languages; no alignment languages and none learnable"
+  },
+  {
+   "name": "dgeKoroScoreBounds",
+   "value": true,
+   "comment": "Korobokuru prose (capture p. 18): the modified scores cannot exceed 19 nor fall below 8, 12 or 3 respectively - the pre-eligibility modifications"
+  },
+  {
+   "name": "dgeKoroFamilyRequired",
+   "value": true,
+   "comment": "Korobokuru prose (capture p. 18): player characters must belong to a family"
+  },
+  {
+   "name": "dgeHengeNotLycanthrope",
+   "value": true,
+   "comment": "Hengeyokai prose (capture p. 18): shapechange is natural - no moon cycles, no silver susceptibility, no wound transmission, no change-shape healing"
+  },
+  {
+   "name": "dgeHengeChangeRound",
+   "value": true,
+   "comment": "Hengeyokai prose (capture p. 19): changing form takes one complete round; armor and equipment do not change with the body"
+  },
+  {
+   "name": "dgeHengeScoresUnchanged",
+   "value": true,
+   "comment": "Hengeyokai prose (capture p. 19): level and ability scores are unchanged in all forms; the hengeyokai language is speakable in all forms"
+  },
+  {
+   "name": "dgeHengeAnimalReal",
+   "value": true,
+   "comment": "Hengeyokai prose (capture p. 19): the animal form is real, not illusory - undetectable by illusion-revealing spells"
+  },
+  {
+   "name": "dgeHengeAnimalInfravision",
+   "value": true,
+   "comment": "Hengeyokai prose (capture p. 19): infravision 120 feet and speak-with-normal-animals in animal form"
+  },
+  {
+   "name": "dgeHengeAnimalNoGear",
+   "value": true,
+   "comment": "Hengeyokai prose (capture p. 19): no weapons, armor, equipment or spells in animal form; only hengeyokai and animal speech"
+  },
+  {
+   "name": "dgeHengeBipedalFull",
+   "value": true,
+   "comment": "Hengeyokai prose (capture pp. 19-20): bipedal form - full hit points, all languages, infravision 120, all class gear; movement rate 12; no animal movement powers; easily identified"
+  },
+  {
+   "name": "dgeHengeHumanFull",
+   "value": true,
+   "comment": "Hengeyokai prose (capture p. 20): human form - full hit points, all class gear and spells, indistinguishable but for one retained animal feature; no infravision, no animal speech (understanding only), 12 movement"
+  },
+  {
+   "name": "dgeHengeNoClan",
+   "value": true,
+   "comment": "Hengeyokai prose (capture p. 20): hengeyokai belong to no clan - no kinship benefits or penalties; never establish families or strongholds"
+  },
+  {
+   "name": "dgeHengeProtector",
+   "value": true,
+   "comment": "Hengeyokai prose (capture p. 20): good-aligned hengeyokai may become protectors of a family or village at the family-establishing level - offerings of food, gifts and service in return"
+  },
+  {
+   "name": "dgeSpiritFamilyRequired",
+   "value": true,
+   "comment": "Spirit Folk prose (capture p. 20): all spirit folk must belong to a family or clan; they hold land and establish families when class and level allow"
+  },
+  {
+   "name": "dgeSpiritLordSummon",
+   "value": true,
+   "comment": "Spirit Folk prose (capture pp. 20-21): the spirit lord summons must be answered and obeyed - failure or dishonor brings natural disasters on the spirit folk and its human family; the spirit lord wins any conflict of interests"
+  },
+  {
+   "name": "dgeBambooTrail",
+   "value": true,
+   "comment": "Bamboo spirit folk prose (capture p. 21): alone on foot through woodland, forest or grassland - no trail; with others a -20 percent (-4 on 1d20) to track the group"
+  },
+  {
+   "name": "dgeBambooLanguagePerLevel",
+   "value": true,
+   "comment": "Bamboo spirit folk prose (capture p. 21): one forest-animal language learned per experience level, player-chosen"
+  },
+  {
+   "name": "dgeBambooSaveBonus",
+   "value": true,
+   "comment": "Bamboo spirit folk prose (capture p. 21): +1 saves vs. spells, rods, staves, wands and misc. magic of earth and wood"
+  },
+  {
+   "name": "dgeBambooGrove",
+   "value": true,
+   "comment": "Bamboo spirit folk prose (capture p. 21): the life force tied to a bamboo grove - grove damage suffers equal damage, grove destruction is instant death, entering the grove cures all wounds and diseases; the grove never moves, its shoots carry no power"
+  },
+  {
+   "name": "dgeRiverBreatheSwim",
+   "value": true,
+   "comment": "River spirit folk prose (capture p. 21): breathe in any fresh water, swim at normal rate, carried items stay perfectly dry"
+  },
+  {
+   "name": "dgeRiverSaveBonus",
+   "value": true,
+   "comment": "River spirit folk prose (capture p. 21): +1 saves vs. water-elemental magic; -1 vs. fire attacks"
+  },
+  {
+   "name": "dgeRiverLanguages",
+   "value": true,
+   "comment": "River spirit folk prose (capture p. 21): speak the fish language, the court language and the trade language"
+  },
+  {
+   "name": "dgeRiverLifeForce",
+   "value": true,
+   "comment": "River spirit folk prose (capture p. 21): the life force tied to one river in its natural banks - bathing cures all; drought weakens, flooding maddens, damming kills; drawn-off water is no longer the river"
+  },
+  {
+   "name": "dgeSeaBreatheSwim",
+   "value": true,
+   "comment": "Sea spirit folk prose (capture p. 21): breathe any salt water, swim at normal rate, gear never wets"
+  },
+  {
+   "name": "dgeSeaSaveBonus",
+   "value": true,
+   "comment": "Sea spirit folk prose (capture p. 21): +1 saves vs. fire-based attacks"
+  },
+  {
+   "name": "dgeSeaNoSeaTie",
+   "value": true,
+   "comment": "Sea spirit folk prose (capture p. 22): unaffected by changes in the sea and gain no healing from it"
+  }
+ ],
+ "chains": [],
+ "tables": [
+  {
+   "name": "dgeT11Grid",
+   "tag": "T11",
+   "count": "dgeT11RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgeT11Align",
+    "dgeT11DmgDie",
+    "dgeT11Ac",
+    "dgeT11Move",
+    "dgeT11Fly",
+    "dgeT11Swim",
+    "dgeT11Plus",
+    "dgeT11PlusAb",
+    "dgeT11Minus",
+    "dgeT11MinusAb"
+   ],
+   "data": [
+    [
+     1,
+     0,
+     7,
+     0,
+     0,
+     12,
+     1,
+     2,
+     -1,
+     0
+    ],
+    [
+     2,
+     3,
+     9,
+     12,
+     0,
+     0,
+     1,
+     1,
+     -1,
+     2
+    ],
+    [
+     3,
+     3,
+     8,
+     3,
+     0,
+     6,
+     2,
+     0,
+     -2,
+     4
+    ],
+    [
+     1,
+     2,
+     9,
+     6,
+     12,
+     0,
+     1,
+     2,
+     -1,
+     1
+    ],
+    [
+     1,
+     6,
+     9,
+     12,
+     0,
+     0,
+     1,
+     3,
+     -1,
+     3
+    ],
+    [
+     1,
+     0,
+     7,
+     6,
+     12,
+     9,
+     1,
+     4,
+     -1,
+     1
+    ],
+    [
+     4,
+     3,
+     6,
+     15,
+     0,
+     0,
+     1,
+     3,
+     -1,
+     2
+    ],
+    [
+     1,
+     0,
+     5,
+     18,
+     0,
+     0,
+     1,
+     2,
+     -1,
+     0
+    ],
+    [
+     2,
+     0,
+     6,
+     12,
+     0,
+     0,
+     2,
+     1,
+     -2,
+     2
+    ],
+    [
+     4,
+     6,
+     9,
+     9,
+     0,
+     0,
+     2,
+     0,
+     -2,
+     2
+    ],
+    [
+     4,
+     3,
+     5,
+     9,
+     0,
+     0,
+     2,
+     3,
+     -2,
+     4
+    ],
+    [
+     1,
+     0,
+     3,
+     3,
+     15,
+     0,
+     2,
+     4,
+     -2,
+     3
+    ]
+   ],
+   "comment": "the Table 11 hengeyokai creatures grid (capture p. 18)",
+   "col_comments": [
+    "the alignment tier column: good (carp, crane, dog, drake, hare, sparrow), chaotic (cat, monkey), any (crab), evil (fox, raccoon dog, rat) (capture p. 18).",
+    "the damage-die column: the natural-weapon die - 0 for the dash (carp, drake, hare, monkey, sparrow), 2 for the crane 1-2, 3 for the cat-crab-fox-rat 1-3, 6 for the dog and raccoon dog 1-6 (capture p. 18).",
+    "the animal-form AC column: sparrow 3, hare 5, rat 5, fox 6, monkey 6, carp 7, drake 7, crab 8, cat 9, crane 9, dog 9, raccoon dog 9 (capture p. 18).",
+    "the land movement column: crab and sparrow 3, crane and drake 6, cat-dog-monkey 12, raccoon dog and rat 9, fox 15, hare 18, carp 0 - the carp cannot cross land (capture p. 18).",
+    "the fly column: crane, drake and sparrow 12, 12 and 15; zero elsewhere (capture p. 18).",
+    "the swim column: carp 12, crab 6, drake 9; zero elsewhere (capture p. 18).",
+    "the ability plus column: the +1 or +2 of the modifications (capture p. 18).",
+    "the ability code column: ST 0, DE 1, CO 2, IN 3, WI 4, CH 5 - the plus-ability of the modifications (capture p. 18).",
+    "the ability minus column: the -1 or -2 of the modifications (capture p. 18).",
+    "the minus-ability code column: the minus-ability of the modifications (capture p. 18)."
+   ],
+   "audit_comment": "the Table 11 grid: alignment tiers, damage dice, animal AC, the move/fly/swim rates and the ability modifications across the twelve forms (capture p. 18)"
+  }
+ ],
+ "inline_count": 70,
+ "examples": [
+  {
+   "note": "the dgeKoroClasses pin",
+   "expr": "m['dgeKoroClasses']() != 4"
+  },
+  {
+   "note": "the dgeKoroBarbarianCommon pin",
+   "expr": "m['dgeKoroBarbarianCommon']() != 1"
+  },
+  {
+   "note": "the dgeKoroSamuraiSponsored pin",
+   "expr": "m['dgeKoroSamuraiSponsored']() != 1"
+  },
+  {
+   "note": "the dgeKoroSaveDivisor pin",
+   "expr": "m['dgeKoroSaveDivisor']() != 2"
+  },
+  {
+   "note": "the dgeKoroSavePoisonToo pin",
+   "expr": "m['dgeKoroSavePoisonToo']() != 1"
+  },
+  {
+   "note": "the dgeKoroInfravision pin",
+   "expr": "m['dgeKoroInfravision']() != 120"
+  },
+  {
+   "note": "the dgeKoroPlantIdPct pin",
+   "expr": "m['dgeKoroPlantIdPct']() != 66"
+  },
+  {
+   "note": "the dgeKoroGoblinBonus pin",
+   "expr": "m['dgeKoroGoblinBonus']() != 1"
+  },
+  {
+   "note": "the dgeKoroGiantPenalty pin",
+   "expr": "m['dgeKoroGiantPenalty']() != 1"
+  },
+  {
+   "note": "the dgeKoroSizeLimits pin",
+   "expr": "m['dgeKoroSizeLimits']() != 1"
+  },
+  {
+   "note": "the dgeKoroLanguages pin",
+   "expr": "m['dgeKoroLanguages']() != 1"
+  },
+  {
+   "note": "the dgeKoroStrAdj pin",
+   "expr": "m['dgeKoroStrAdj']() != 1"
+  },
+  {
+   "note": "the dgeKoroConAdj pin",
+   "expr": "m['dgeKoroConAdj']() != 1"
+  },
+  {
+   "note": "the dgeKoroIntAdj pin",
+   "expr": "m['dgeKoroIntAdj']() != -2"
+  },
+  {
+   "note": "the dgeKoroScoreBounds pin",
+   "expr": "m['dgeKoroScoreBounds']() != 1"
+  },
+  {
+   "note": "the dgeKoroFamilyRequired pin",
+   "expr": "m['dgeKoroFamilyRequired']() != 1"
+  },
+  {
+   "note": "the dgeHengeNotLycanthrope pin",
+   "expr": "m['dgeHengeNotLycanthrope']() != 1"
+  },
+  {
+   "note": "the dgeHengeClasses pin",
+   "expr": "m['dgeHengeClasses']() != 4"
+  },
+  {
+   "note": "the dgeHengeFormCount pin",
+   "expr": "m['dgeHengeFormCount']() != 12"
+  },
+  {
+   "note": "the dgeHengeFormsPerDay pin",
+   "expr": "m['dgeHengeFormsPerDay']() != 1"
+  },
+  {
+   "note": "the dgeHengeChangeRound pin",
+   "expr": "m['dgeHengeChangeRound']() != 1"
+  },
+  {
+   "note": "the dgeHengeScoresUnchanged pin",
+   "expr": "m['dgeHengeScoresUnchanged']() != 1"
+  },
+  {
+   "note": "the dgeHengeAnimalReal pin",
+   "expr": "m['dgeHengeAnimalReal']() != 1"
+  },
+  {
+   "note": "the dgeHengeAnimalInfravision pin",
+   "expr": "m['dgeHengeAnimalInfravision']() != 1"
+  },
+  {
+   "note": "the dgeHengeAnimalNoGear pin",
+   "expr": "m['dgeHengeAnimalNoGear']() != 1"
+  },
+  {
+   "note": "the dgeHengeAnimalHpHalved pin",
+   "expr": "m['dgeHengeAnimalHpHalved']() != 2"
+  },
+  {
+   "note": "the dgeHengeBipedalFull pin",
+   "expr": "m['dgeHengeBipedalFull']() != 1"
+  },
+  {
+   "note": "the dgeHengeHumanFull pin",
+   "expr": "m['dgeHengeHumanFull']() != 1"
+  },
+  {
+   "note": "the dgeHengeNoClan pin",
+   "expr": "m['dgeHengeNoClan']() != 1"
+  },
+  {
+   "note": "the dgeHengeProtector pin",
+   "expr": "m['dgeHengeProtector']() != 1"
+  },
+  {
+   "note": "the dgeT11RowCount pin",
+   "expr": "m['dgeT11RowCount']() != 12"
+  },
+  {
+   "note": "the dgeT11NoDamage pin",
+   "expr": "m['dgeT11NoDamage']() != 0"
+  },
+  {
+   "note": "the dgeT11NoMove pin",
+   "expr": "m['dgeT11NoMove']() != 0"
+  },
+  {
+   "note": "the dgeT11AlignGood pin",
+   "expr": "m['dgeT11AlignGood']() != 1"
+  },
+  {
+   "note": "the dgeT11AlignChaotic pin",
+   "expr": "m['dgeT11AlignChaotic']() != 2"
+  },
+  {
+   "note": "the dgeT11AlignAny pin",
+   "expr": "m['dgeT11AlignAny']() != 3"
+  },
+  {
+   "note": "the dgeT11AlignEvil pin",
+   "expr": "m['dgeT11AlignEvil']() != 4"
+  },
+  {
+   "note": "the dgeSpiritClasses pin",
+   "expr": "m['dgeSpiritClasses']() != 3"
+  },
+  {
+   "note": "the dgeSpiritFamilyRequired pin",
+   "expr": "m['dgeSpiritFamilyRequired']() != 1"
+  },
+  {
+   "note": "the dgeSpiritLordSummon pin",
+   "expr": "m['dgeSpiritLordSummon']() != 1"
+  },
+  {
+   "note": "the dgeBambooPlantPct pin",
+   "expr": "m['dgeBambooPlantPct']() != 75"
+  },
+  {
+   "note": "the dgeBambooAnimalPct pin",
+   "expr": "m['dgeBambooAnimalPct']() != 50"
+  },
+  {
+   "note": "the dgeBambooTrail pin",
+   "expr": "m['dgeBambooTrail']() != 1"
+  },
+  {
+   "note": "the dgeBambooHidePct pin",
+   "expr": "m['dgeBambooHidePct']() != 75"
+  },
+  {
+   "note": "the dgeBambooLanguagePerLevel pin",
+   "expr": "m['dgeBambooLanguagePerLevel']() != 1"
+  },
+  {
+   "note": "the dgeBambooSaveBonus pin",
+   "expr": "m['dgeBambooSaveBonus']() != 1"
+  },
+  {
+   "note": "the dgeBambooGrove pin",
+   "expr": "m['dgeBambooGrove']() != 1"
+  },
+  {
+   "note": "the dgeRiverBreatheSwim pin",
+   "expr": "m['dgeRiverBreatheSwim']() != 1"
+  },
+  {
+   "note": "the dgeRiverLowerWaterFeet pin",
+   "expr": "m['dgeRiverLowerWaterFeet']() != 10"
+  },
+  {
+   "note": "the dgeRiverLowerWaterRounds pin",
+   "expr": "m['dgeRiverLowerWaterRounds']() != 5"
+  },
+  {
+   "note": "the dgeRiverSaveBonus pin",
+   "expr": "m['dgeRiverSaveBonus']() != 1"
+  },
+  {
+   "note": "the dgeRiverLanguages pin",
+   "expr": "m['dgeRiverLanguages']() != 1"
+  },
+  {
+   "note": "the dgeRiverLifeForce pin",
+   "expr": "m['dgeRiverLifeForce']() != 1"
+  },
+  {
+   "note": "the dgeSeaBreatheSwim pin",
+   "expr": "m['dgeSeaBreatheSwim']() != 1"
+  },
+  {
+   "note": "the dgeSeaWeatherPct pin",
+   "expr": "m['dgeSeaWeatherPct']() != 75"
+  },
+  {
+   "note": "the dgeSeaWeatherHours pin",
+   "expr": "m['dgeSeaWeatherHours']() != 24"
+  },
+  {
+   "note": "the dgeSeaSaveBonus pin",
+   "expr": "m['dgeSeaSaveBonus']() != 1"
+  },
+  {
+   "note": "the dgeSeaNoSeaTie pin",
+   "expr": "m['dgeSeaNoSeaTie']() != 1"
+  },
+  {
+   "note": "the dgeSeaFavorsPerYear pin",
+   "expr": "m['dgeSeaFavorsPerYear']() != 1"
+  },
+  {
+   "note": "the dgeSeaGiftHonor pin",
+   "expr": "m['dgeSeaGiftHonor']() != 85"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the carp cannot cross land but swims 12 (capture p. 18)",
+   "expr": "m['dgeT11Move'](0) != 0 or m['dgeT11Swim'](0) != 12"
+  },
+  {
+   "note": "the hare is the fastest land form at 18 (capture p. 18)",
+   "expr": "m['dgeT11Move'](7) != 18"
+  },
+  {
+   "note": "the sparrow flies 15 and has AC 3 (capture p. 18)",
+   "expr": "m['dgeT11Fly'](11) != 15 or m['dgeT11Ac'](11) != 3"
+  },
+  {
+   "note": "the crab takes any alignment (capture p. 18)",
+   "expr": "m['dgeT11Align'](2) != 3"
+  },
+  {
+   "note": "the dog damage is 1-6 (capture p. 18)",
+   "expr": "m['dgeT11DmgDie'](4) != 6"
+  },
+  {
+   "note": "the korobokuru ability adjustments sum (capture p. 18)",
+   "expr": "m['dgeKoroStrAdj']() + m['dgeKoroConAdj']() + m['dgeKoroIntAdj']() != 0"
+  },
+  {
+   "note": "the hengeyokai change count equals the level (capture p. 19)",
+   "expr": "m['dgeHengeFormsPerDay']() != 1"
+  },
+  {
+   "note": "the river lower-water pair (capture p. 21)",
+   "expr": "m['dgeRiverLowerWaterFeet']() != 10 or m['dgeRiverLowerWaterRounds']() != 5"
+  },
+  {
+   "note": "the bamboo plant and hide chances both print 75 (capture p. 21)",
+   "expr": "m['dgeBambooPlantPct']() != m['dgeBambooHidePct']()"
+  },
+  {
+   "note": "the sea weather prediction window (capture p. 21)",
+   "expr": "m['dgeSeaWeatherHours']() != 24"
+  }
+ ],
+ "header_sections": {
+  "the korobokuru race pins": [
+   {
+    "kind": "const",
+    "name": "dgeKoroClasses"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeKoroBarbarianCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeKoroSamuraiSponsored"
+   },
+   {
+    "kind": "const",
+    "name": "dgeKoroSaveDivisor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeKoroSavePoisonToo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeKoroInfravision"
+   },
+   {
+    "kind": "const",
+    "name": "dgeKoroPlantIdPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeKoroGoblinBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeKoroGiantPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeKoroSizeLimits"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeKoroLanguages"
+   },
+   {
+    "kind": "const",
+    "name": "dgeKoroStrAdj"
+   },
+   {
+    "kind": "const",
+    "name": "dgeKoroConAdj"
+   },
+   {
+    "kind": "const",
+    "name": "dgeKoroIntAdj"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeKoroScoreBounds"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeKoroFamilyRequired"
+   }
+  ],
+  "the hengeyokai race pins": [
+   {
+    "kind": "bool",
+    "name": "dgeHengeNotLycanthrope"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHengeClasses"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHengeFormCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHengeFormsPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHengeChangeRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHengeScoresUnchanged"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHengeAnimalReal"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHengeAnimalInfravision"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHengeAnimalNoGear"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHengeAnimalHpHalved"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHengeBipedalFull"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHengeHumanFull"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHengeNoClan"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHengeProtector"
+   }
+  ],
+  "the Table 11 hengeyokai creatures grid": [
+   {
+    "kind": "const",
+    "name": "dgeT11RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeT11NoDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgeT11NoMove"
+   },
+   {
+    "kind": "const",
+    "name": "dgeT11AlignGood"
+   },
+   {
+    "kind": "const",
+    "name": "dgeT11AlignChaotic"
+   },
+   {
+    "kind": "const",
+    "name": "dgeT11AlignAny"
+   },
+   {
+    "kind": "const",
+    "name": "dgeT11AlignEvil"
+   },
+   {
+    "kind": "table",
+    "name": "dgeT11Grid"
+   }
+  ],
+  "the spirit folk race pins": [
+   {
+    "kind": "const",
+    "name": "dgeSpiritClasses"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSpiritFamilyRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSpiritLordSummon"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBambooPlantPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBambooAnimalPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBambooTrail"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBambooHidePct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBambooLanguagePerLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBambooSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBambooGrove"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeRiverBreatheSwim"
+   },
+   {
+    "kind": "const",
+    "name": "dgeRiverLowerWaterFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dgeRiverLowerWaterRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeRiverSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeRiverLanguages"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeRiverLifeForce"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSeaBreatheSwim"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSeaWeatherPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSeaWeatherHours"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSeaSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSeaNoSeaTie"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSeaFavorsPerYear"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSeaGiftHonor"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Korobokuru box closes",
+   "from": "  - [ ] Korobokuru (capture pp. 17-18) - the oriental\n    dwarf: the ability-score modifications applied\n    before class eligibility, the lair and lifestyle\n    doctrine",
+   "to": "  - [x] Korobokuru (capture pp. 17-18) - the oriental\n    dwarf: the ability-score modifications applied\n    before class eligibility, the lair and lifestyle\n    doctrine -\n    R618: the dge korobokuru pins - the four classes with\n    the sponsored-samurai rule, the 4 1/2-Con save\n    ladder vs. magic and poison, the 120-foot\n    infravision, the 66 percent plant id, the +1\n    vs. the bakemono-goblin family and the -4 for\n    the giant family, the weapon size limits, the\n    +1/+1/-2 ability adjustments with the\n    score bounds, the fixed four languages"
+  },
+  {
+   "note": "the   Hengeyokai box closes",
+   "from": "  - [ ] Hengeyokai (capture pp. 18-20) - the\n    shapechanger race: the animal forms, the\n    bilingual doctrine, the three-form limit",
+   "to": "  - [x] Hengeyokai (capture pp. 18-20) - the\n    shapechanger race: the animal forms, the\n    bilingual doctrine, the three-form limit -\n    R618: the dge hengeyokai pins - the not-lycanthrope\n    doctrine, the four classes with never samurai\n    or ninja, the level-equals-changes-per-day rule\n    with the one-round change and no gear\n    shift, the real-not-illusory animal form,\n    the halved-hit-points animal form (the\n    23-to-12 example) with the carryover\n    and the death-at-zero rules, the bipedal\n    and human form profiles, the no-clan\n    doctrine and the good-protector path"
+  },
+  {
+   "note": "the   Table 11: Hengeyokai Creatures box closes",
+   "from": "  - [ ] Table 11: Hengeyokai Creatures (capture p. 18)",
+   "to": "  - [x] Table 11: Hengeyokai Creatures (capture p. 18) -\n    R618: the dge T11 grid - twelve forms by ten\n    columns: the alignment tiers (good,\n    chaotic, any, evil), the damage dice,\n    the animal ACs and the move/fly/swim\n    rates (the carp swims 12 and cannot cross\n    land), the +1/+2 and -1/-2 ability\n    modifications with their ability codes"
+  },
+  {
+   "note": "the   Spirit Folk box closes",
+   "from": "  - [ ] Spirit Folk (capture pp. 20-22) - bamboo,\n    river and sea spirit folk: the immunity ladders,\n    the terrain-blessing doctrine",
+   "to": "  - [x] Spirit Folk (capture pp. 20-22) - bamboo,\n    river and sea spirit folk: the immunity ladders,\n    the terrain-blessing doctrine -\n    R618: the dge spirit folk pins - the three classes and\n    the family requirement, the spirit-lord\n    summons doctrine, the bamboo pair (the 75/50\n    plant and animal ids, the no-trail rule, the 75\n    hide, the earth-and-wood saves, the life-grove\n    with the equal-damage and instant-death rules),\n    the river pair (fresh-water breathing, the\n    10-foot five-round lower water, the water\n    save and the fire penalty, the river life\n    force), the sea pair (the 75-percent 24-\n    hour weather forecast, the fire save, the\n    yearly favor and the honor-85 gift)"
+  }
+ ],
+ "gap_census": {
+  "closed": 27,
+  "open": 208
+ },
+ "banner": {
+  "title": "THE ORIENTAL RACES, printed capture pp. 17-22 - the OA races round",
+  "provenance": "verified against capture pp. 17-22 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). OCR NORMALIZATIONS: the capture prints infraction for infravision - the physical copy confirms the clean infravision (a pure OCR garble); the korobokuru save ladder - the physical copy CONFIRMS the book itself prints 41h, a printed misprint read as the intended 4 1/2, pinned as the divisor 2, the flag RESOLVED; the percent signs garble as 7596, 5094 and -2096 - read clean as 75, 50 and -20; the hare prints as here. BOOK QUIRK: the prose cites a badger hengeyokai though badger is not among the twelve Table 11 forms (the evil forms are fox, raccoon dog and rat) - pinned as printed, flagged. The Table 11 modifications pin as four columns: the plus, its ability code (ST 0, DE 1, CO 2, IN 3, WI 4, CH 5), the minus and its code.",
+  "sentinel": "the gap census after this round: 27 closed, 208 open - the three races and Table 11 flip; the races run of Chapter 2 is done, the ten classes begin next (census 540 -> 541); NEXT - R619: the Oriental Barbarian and Bushi - the class doctrines, Tables 14, 15, 16 and 17, prefix dgf (verify free), audit \"R619 OA barbarian bushi audit\", include after rules/oaraces.h"
+ }
+}

@@ -11727,6 +11727,38 @@ when both halves land.
   (verify free), audit "R617 OA
   class combos audit", include
   after rules/oaabilityprose.h.
+- R617 LANDED 2026-10-18: commit
+  0659a83e5b54c666c68e9f764bcee24
+  fe9bd34f1 (census 539 -> 540,
+  pushed 5aee136..0659a83), CLASS
+  AND RACE COMBINATIONS, capture
+  pp. 16-23 - the Chapter 2
+  opener: rules/oaclasscombos.h,
+  prefix dgd (verified free), 65
+  inlines (26 consts, 11 bools, 28
+  table columns): the combos
+  riders, T9 10x5 with the alignment
+  TIER COLUMN, T10 6x6, T12 10x12
+  with the colon notation SPLIT into
+  two columns and the barbarian Wis
+  16 MAXIMUM as its own bool, T13
+  10x5 with the text-heavy grid
+  ENCODED AS TIERS and the LIST-
+  COUNT COLUMN (shukenja 16, sohei
+  7 exclusions, wu jen 20, monk
+  16) plus the three riders. Battery
+  293 mutants, 0 missed; full sha
+  rverify GREEN. Gap census
+  18/217 -> 23/212. Spec 28,743
+  bytes md5
+  f6390785beed71cd22ba8ba7225aa4d5
+  (canvas md5
+  8ce7d335c9a699ea25edde7bea604cda
+  ). NEXT - R618: the three races
+  with Table 11, prefix dge
+  (verify free), audit "R618 OA
+  races audit", include after rules/
+  oaclasscombos.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

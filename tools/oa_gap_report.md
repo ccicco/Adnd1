@@ -241,17 +241,54 @@ description riding the same round.
     samurai-kensai ninja-weapon honor loss,
     the samurai siege-oil exception, the ninja
     proficiency requirement)
-  - [ ] Korobokuru (capture pp. 17-18) - the oriental
+  - [x] Korobokuru (capture pp. 17-18) - the oriental
     dwarf: the ability-score modifications applied
     before class eligibility, the lair and lifestyle
-    doctrine
-  - [ ] Hengeyokai (capture pp. 18-20) - the
+    doctrine -
+    R618: the dge korobokuru pins - the four classes with
+    the sponsored-samurai rule, the 4 1/2-Con save
+    ladder vs. magic and poison, the 120-foot
+    infravision, the 66 percent plant id, the +1
+    vs. the bakemono-goblin family and the -4 for
+    the giant family, the weapon size limits, the
+    +1/+1/-2 ability adjustments with the
+    score bounds, the fixed four languages
+  - [x] Hengeyokai (capture pp. 18-20) - the
     shapechanger race: the animal forms, the
-    bilingual doctrine, the three-form limit
-  - [ ] Table 11: Hengeyokai Creatures (capture p. 18)
-  - [ ] Spirit Folk (capture pp. 20-22) - bamboo,
+    bilingual doctrine, the three-form limit -
+    R618: the dge hengeyokai pins - the not-lycanthrope
+    doctrine, the four classes with never samurai
+    or ninja, the level-equals-changes-per-day rule
+    with the one-round change and no gear
+    shift, the real-not-illusory animal form,
+    the halved-hit-points animal form (the
+    23-to-12 example) with the carryover
+    and the death-at-zero rules, the bipedal
+    and human form profiles, the no-clan
+    doctrine and the good-protector path
+  - [x] Table 11: Hengeyokai Creatures (capture p. 18) -
+    R618: the dge T11 grid - twelve forms by ten
+    columns: the alignment tiers (good,
+    chaotic, any, evil), the damage dice,
+    the animal ACs and the move/fly/swim
+    rates (the carp swims 12 and cannot cross
+    land), the +1/+2 and -1/-2 ability
+    modifications with their ability codes
+  - [x] Spirit Folk (capture pp. 20-22) - bamboo,
     river and sea spirit folk: the immunity ladders,
-    the terrain-blessing doctrine
+    the terrain-blessing doctrine -
+    R618: the dge spirit folk pins - the three classes and
+    the family requirement, the spirit-lord
+    summons doctrine, the bamboo pair (the 75/50
+    plant and animal ids, the no-trail rule, the 75
+    hide, the earth-and-wood saves, the life-grove
+    with the equal-damage and instant-death rules),
+    the river pair (fresh-water breathing, the
+    10-foot five-round lower water, the water
+    save and the fire penalty, the river life
+    force), the sea pair (the 75-percent 24-
+    hour weather forecast, the fire save, the
+    yearly favor and the honor-85 gift)
   - [ ] Barbarian (capture pp. 23-27) - the class
     doctrine, the special abilities and penalties
   - [ ] Table 14: Barbarians (capture p. 24)
