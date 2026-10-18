@@ -1,0 +1,5552 @@
+{
+ "round": 610,
+ "prefix": "dez",
+ "header_file": "rules/dmohighwizpri.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 532,
+ "title": "Wizards and Priests",
+ "audit_label": "R610 DMO wizard-priest audit",
+ "include_comment": "the DMO wizard and priest pins",
+ "include_after": "#include \"rules/dmohighskills.h\"  // R609: the DMO high-level skills pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R609 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R609 LANDED 2026-10-18: commit",
+  "  d92d4d53d94bb405374b2c76163eddad",
+  "  1a52c051 (census 531 -> 532,",
+  "  pushed a3960f0..d92d4d5),",
+  "  HIGH-LEVEL SKILLS AND WARRIORS,",
+  "  printed pp. 145-156, DMO Chapter 7",
+  "  round two of five per the split",
+  "  plan - THREE boxes flip (Table 40,",
+  "  Table 41, Warriors; the Chapter 7",
+  "  parent stays open until R612; gap",
+  "  census now 87 closed / 9 open):",
+  "  rules/dmohighskills.h, prefix dey",
+  "  (verified free), 293 inlines (110",
+  "  consts, 164 bools, 7 chains, 12",
+  "  table columns), 3 grids (T40 roster",
+  "  33x5 in four class bands - warriors",
+  "  0-10, wizards 11-13, priests 14-21,",
+  "  rogues 22-32; T41 modifiers 11x1 via",
+  "  the deyT41Band chain; T42 warrior",
+  "  advancement 11x6), 274 examples,",
+  "  29 table_checks, 547-mutant",
+  "  battery 0 missed. CONTESTED CELLS",
+  "  settled against the physical copy",
+  "  (user-confirmed 2026-10-18): Divine",
+  "  Voice and Detect Deception cost",
+  "  cells are BLANK in print (pinned as",
+  "  -99 printed blanks with the",
+  "  sentinel census), the bravery",
+  "  prerequisite line prints",
+  "  \"invulnerability\" (pinned verbatim,",
+  "  both captures + physical agree),",
+  "  Table 42 row 20 reads weapon 10,",
+  "  nonweapon 9. DELIVERY: raw JSON in",
+  "  the canvas (user-set: b64 NOT",
+  "  needed anymore), spec 128073 bytes,",
+  "  md5 dd57b4ebba4b37c5623c43db948",
+  "  02b38 verified byte-exact before",
+  "  ./rn. NEXT - R610: Wizards and",
+  "  Priests, Tables 43-46 (pp. 156-",
+  "  167); consult the gap report at",
+  "  HEAD d92d4d5; verify next prefix",
+  "  free (dez family next). Audit:",
+  "  \"R610 DMO wizard-priest audit\";",
+  "  include after rules/dmohighskills.h."
+ ],
+ "banner": {
+  "title": "WIZARDS AND PRIESTS BEYOND 20TH - DMO Chapter 7, round three of five: the wizard advancement grid (Table 43: 3,750,000 XP at 20th in 375K steps to 7,500,000 at 30th, weapon and nonweapon proficiencies, the 10+N d4 hit points with the Con-bonus footnote) and spell progression (Table 44: levels 20-30 by spell level 1-10, the true dweomers climbing 1-1-1-2-2-2-3-3-3-4-4), the sage ability (21st: two categories with one Alchemy or Chemistry, 6-or-less on 1d20; 24th specific and 27th exacting questions at 1d6 books of 1,000 gp each), the three wizard skills (mental focus with its 18-to-22 boost ladder, signature item with its six categories, spell sculpting with its 500-gp-per-level focus, the damage/duration/range/casting-time sculptings and the 1st-to-7th cap ladder), the priest doctrine (all priests cast true dweomers at 20th, divine power, the deity-interest rules), the priest advancement grid (Table 45: cleric 225K and druid 500K XP steps, the 9+N d8 hit points), the priest spell progression grid (the printed body caption reads Table 47 while the contents lists Table 46 - held per the body caption; spells by level 1-7 plus the true dweomer column 1-1-2-2-2-3-3-4-4-4-4), the priest powers (quest spells without sacrifice, improved undead turning at 21st with the Wulf lich-and-vampires example, spell selection at 21/25/27, the holy army at 1 troop per 1,000 XP with its officer chain and pay rules), and all nine priest skills (divine strength, divine voice, divine will, detect deception, eminence, invincibility, loan, smite and spell talisman).",
+  "provenance": "verified against printed pp. 156-167 of the archive.org DMO captures (items dungeon-master-option-high-level-campaigns and tsr02156dmsoptionhighlevelcampaigns, the djvu.txt full texts; the tsr02156 ABBYY read is primary and the tesseract read is cross-checked; leaf N = printed page N). Four printed quirks held: (1) the priest spell progression table caption prints Table 47 in the body while both captures contents pages read Table 46 - the body caption is held and the conflict is printed, not an OCR split; (2) the spell talisman skill is absent from the Table 40 roster - pinned from its detail section at priest 12+; (3) the eminence prose lists divine will among its five prerequisite skills while Table 40 and the divine will detail read priest 10+ without eminence - both pinned verbatim; (4) the wizard mental focus ceiling reads equal to or higher while the priest divine strength reads already higher - each pinned verbatim.",
+  "sentinel": "the gap census after this round: 89 closed, 7 open - two Chapter 7 children flip in round three of five (the parent stays open until R612); the DMO arc continues with R611 (Rogues, Tables 48-52, pp. 167-171)."
+ },
+ "consts": [
+  {
+   "name": "dezWizAdvLimit",
+   "value": 30,
+   "comment": "the wizard advancement ceiling: wizards continue to receive extra proficiencies and hit points until level 30 (printed p. 156)."
+  },
+  {
+   "name": "dezWizSkillPauseLevel",
+   "value": 20,
+   "comment": "the wizard skills note: wizards receive very little in the way of special skills once they reach 20th level (printed p. 156)."
+  },
+  {
+   "name": "dezT43RowCount",
+   "value": 11,
+   "comment": "the Table 43 row count: eleven levels from 20th through 30th (printed p. 156)."
+  },
+  {
+   "name": "dezT43XpStep",
+   "value": 375000,
+   "comment": "the Table 43 experience step: 375,000 experience points per level beyond 20th (printed p. 156)."
+  },
+  {
+   "name": "dezT43HpBase",
+   "value": 10,
+   "comment": "the Table 43 hit-point base: the constant 10 of the printed 10-plus-N d4 hit-point cells (printed p. 156)."
+  },
+  {
+   "name": "dezT44RowCount",
+   "value": 11,
+   "comment": "the Table 44 row count: eleven levels from 20th through 30th (printed p. 157)."
+  },
+  {
+   "name": "dezSageStartLevel",
+   "value": 21,
+   "comment": "the sage threshold: at 21st level a wizard has accumulated enough books and esoteric knowledge to function as a sage (printed pp. 157-158)."
+  },
+  {
+   "name": "dezSageCategoryCount",
+   "value": 2,
+   "comment": "the sage categories: the wizard can answer general questions in two categories from the Dungeon Master Guide Table 61 (printed pp. 157-158)."
+  },
+  {
+   "name": "dezSageBaseChance",
+   "value": 6,
+   "comment": "the sage base chance: 6 or less on 1d20 to answer a general question, modified by the Intelligence/Knowledge bonus (printed pp. 157-158)."
+  },
+  {
+   "name": "dezSageSpecificLevel",
+   "value": 24,
+   "comment": "the sage specific threshold: at 24th level the character can answer specific questions after acquiring 1d6 books or scrolls (printed pp. 157-158)."
+  },
+  {
+   "name": "dezSageExactingLevel",
+   "value": 27,
+   "comment": "the sage exacting threshold: at 27th level the character can answer exacting questions after acquiring 1d6 additional books or scrolls (printed pp. 157-158)."
+  },
+  {
+   "name": "dezSageBookDieSides",
+   "value": 6,
+   "comment": "the sage book count: 1d6 books or scrolls per threshold (printed pp. 157-158)."
+  },
+  {
+   "name": "dezSageBookCost",
+   "value": 1000,
+   "comment": "the sage book cost: 1,000 gold pieces each (printed pp. 157-158)."
+  },
+  {
+   "name": "dezSageResearchWeeksDieSides",
+   "value": 3,
+   "comment": "the sage research example: a simple but specific history question takes 1d3+1 weeks of study (printed p. 158)."
+  },
+  {
+   "name": "dezSageResearchWeeksBonus",
+   "value": 1,
+   "comment": "the sage research weeks bonus: the 1d3+1 form (printed p. 158)."
+  },
+  {
+   "name": "dezSageResearchCostPerWeek",
+   "value": 100,
+   "comment": "the sage research cost: 100 gold pieces a week, the same as the cost to discover a potion formula (printed p. 158)."
+  },
+  {
+   "name": "dezSageEsotericSpellMinLevel",
+   "value": 6,
+   "comment": "the esoteric research floor: a very difficult and esoteric question might require as much time and money as a 6th-level spell (printed p. 158)."
+  },
+  {
+   "name": "dezSageEsotericSpellMaxLevel",
+   "value": 7,
+   "comment": "the esoteric research ceiling: as much as a 6th- or 7th-level spell, with the chance to know the answer the same as successfully researching the spell (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusBoostBase",
+   "value": 18,
+   "comment": "the mental focus boost base: the improved score is 18 plus the level band (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusDurationPerLevel",
+   "value": 1,
+   "comment": "the mental focus duration: the improvement lasts one round per character level (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusOtherScoresPenalty",
+   "value": 2,
+   "comment": "the mental focus cost: the other two eligible ability scores drop by two for the same duration (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusAttemptCost",
+   "value": 2,
+   "comment": "the mental focus drain: each attempt, successful or not, lowers the base skill score by two for the day (printed p. 158)."
+  },
+  {
+   "name": "dezWizSigItemCategoryCount",
+   "value": 6,
+   "comment": "the wizard signature item categories: ring, rod, staff, wand, miscellaneous magic and weapon (printed p. 158)."
+  },
+  {
+   "name": "dezSculptFocusCostPerLevel",
+   "value": 500,
+   "comment": "the sculpting focus: a focus item must be worth at least 500 gold pieces per spell level (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptDamageDice",
+   "value": 2,
+   "comment": "the sculpting damage boost: an extra two dice of damage of the type normally rolled (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptDurationMultiple",
+   "value": 2,
+   "comment": "the sculpting duration boost: the total duration is doubled (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptRangeMultiple",
+   "value": 2,
+   "comment": "the sculpting range boost: the range is doubled (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptMinCastingTime",
+   "value": 1,
+   "comment": "the sculpting casting floor: the casting time is cut in half, to a minimum of 1 (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptFailDestroysRoll",
+   "value": 20,
+   "comment": "the sculpting focus risk: if the failure roll is a 20 the focus item is destroyed (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptFireballBaseDice",
+   "value": 10,
+   "comment": "the sculpting fireball example: a sculpted fireball inflicts 12d6 - the 10d6 base plus the extra two dice (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptFireballSculptedDice",
+   "value": 12,
+   "comment": "the sculpting fireball total: 12d6 points of damage (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptBurningHandsBaseDice",
+   "value": 1,
+   "comment": "the sculpting burning hands example: a 20th-level wizard sculpts burning hands to 3d3+20 - the 1d3 base die plus the extra two dice (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptMagicMissileBaseDice",
+   "value": 5,
+   "comment": "the sculpting magic missile example: five missiles at 20th level, sculpted to a total of 7d4+7 (printed pp. 158-159)."
+  },
+  {
+   "name": "dezPriestAdvLimit",
+   "value": 30,
+   "comment": "the priest advancement ceiling: priests receive extra proficiencies and hit points through 30th level (printed pp. 159-160)."
+  },
+  {
+   "name": "dezPriestSkillLevel",
+   "value": 10,
+   "comment": "the priest skill threshold: priests have access to special skills beginning at 10th level (printed pp. 159-160)."
+  },
+  {
+   "name": "dezPriestTdStartLevel",
+   "value": 20,
+   "comment": "the priest true dweomer threshold: all priests, even druids, gain the ability to cast true dweomers when they reach 20th level (printed pp. 159-160)."
+  },
+  {
+   "name": "dezT45RowCount",
+   "value": 11,
+   "comment": "the Table 45 row count: eleven levels from 20th through 30th (printed p. 160)."
+  },
+  {
+   "name": "dezT45ClericXpStep",
+   "value": 225000,
+   "comment": "the Table 45 cleric step: 225,000 experience points per level beyond 20th (printed p. 160)."
+  },
+  {
+   "name": "dezT45DruidXpStep",
+   "value": 500000,
+   "comment": "the Table 45 druid step: 500,000 experience points per level beyond 20th (printed p. 160)."
+  },
+  {
+   "name": "dezT45HpBase",
+   "value": 9,
+   "comment": "the Table 45 hit-point base: the constant 9 of the printed 9-plus-N d8 hit-point cells (printed p. 160)."
+  },
+  {
+   "name": "dezT45HpStep",
+   "value": 2,
+   "comment": "the Table 45 hit-point step: +2 per level beyond 20th (printed p. 160)."
+  },
+  {
+   "name": "dezT47RowCount",
+   "value": 11,
+   "comment": "the priest spell progression row count: eleven levels from 20th through 30th (printed p. 161)."
+  },
+  {
+   "name": "dezQuestSpellLevel",
+   "value": 20,
+   "comment": "the quest spell gate: any priest with access to true dweomers can receive a quest spell (printed p. 160)."
+  },
+  {
+   "name": "dezImprovedTurningLevel",
+   "value": 21,
+   "comment": "the improved turning threshold: upon reaching 21st level a priest with the granted power to turn undead can use it multiple times in the same encounter (printed p. 160)."
+  },
+  {
+   "name": "dezSpellSelectLevel1",
+   "value": 21,
+   "comment": "the first spell selection: at 21st level the priest gains minor access to a new sphere or another level in a minor sphere (printed pp. 160-161)."
+  },
+  {
+   "name": "dezSpellSelectLevel2",
+   "value": 25,
+   "comment": "the second spell selection: at 25th level the priest gains minor access to another sphere or adds another level in a minor sphere, including the one added or enhanced at 21st (printed pp. 160-161)."
+  },
+  {
+   "name": "dezSpellSelectLevel3",
+   "value": 27,
+   "comment": "the third spell selection: at 27th level the priest gains minor access to another sphere or adds another level in a minor sphere, including all previously added or enhanced (printed pp. 160-161)."
+  },
+  {
+   "name": "dezWulfTurnLevel",
+   "value": 21,
+   "comment": "the Wulf turning example: Wulf is a 21st-level cleric (printed p. 160)."
+  },
+  {
+   "name": "dezWulfTurnRoll",
+   "value": 7,
+   "comment": "the Wulf turning example roll: a 7 on the turning attempt (printed p. 160)."
+  },
+  {
+   "name": "dezWulfDestroyDiceCount",
+   "value": 2,
+   "comment": "the Wulf destroy dice: 2d6 plus 2d4 destroyed (printed p. 160)."
+  },
+  {
+   "name": "dezWulfDestroyMajorSides",
+   "value": 6,
+   "comment": "the Wulf destroy major die: the 2d6 half (printed p. 160)."
+  },
+  {
+   "name": "dezWulfDestroyMinorSides",
+   "value": 4,
+   "comment": "the Wulf destroy minor die: the 2d4 half (printed p. 160)."
+  },
+  {
+   "name": "dezWulfVampireRollSides",
+   "value": 6,
+   "comment": "the Wulf vampire roll: 2d6 to turn the vampires (printed p. 160)."
+  },
+  {
+   "name": "dezWulfVampireRollResult",
+   "value": 5,
+   "comment": "the Wulf vampire roll result: a 5, leaving one vampire unaffected (printed p. 160)."
+  },
+  {
+   "name": "dezWulfVampires",
+   "value": 6,
+   "comment": "the Wulf example foes: six vampires, a lich, and a horde of skeletons and ghouls (printed p. 160)."
+  },
+  {
+   "name": "dezWulfVampiresUnaffected",
+   "value": 1,
+   "comment": "the Wulf vampire outcome: one vampire unaffected by the 5 (printed p. 160)."
+  },
+  {
+   "name": "dezArmyMinLevel",
+   "value": 21,
+   "comment": "the holy army threshold: a priest of 21st level or higher (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyTroopsPerXp",
+   "value": 1000,
+   "comment": "the holy army size: as many troops as the priest experience point total divided by 1,000 (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyExampleTroops",
+   "value": 2925,
+   "comment": "the holy army example: a priest who has just attained 21st level can summon 2,925 troops (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyExamplePriestLevel",
+   "value": 21,
+   "comment": "the holy army example priest: 21st level (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyExampleCommander",
+   "value": 10,
+   "comment": "the holy army example commander: one commander of half the priest level, round down - 10th (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyExampleSubcommander",
+   "value": 5,
+   "comment": "the holy army example subcommanders: two of half the commander level - 5th (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyExampleLieutenant",
+   "value": 2,
+   "comment": "the holy army example lieutenants: four of half the subcommander level - 2nd (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyExampleSergeant",
+   "value": 1,
+   "comment": "the holy army example sergeants: eight of half the lieutenant level - 1st (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyPaladinChance",
+   "value": 10,
+   "comment": "the holy army paladin chance: 10 percent that any given officer is a paladin if the priest is lawful good (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyRangerChance",
+   "value": 10,
+   "comment": "the holy army ranger chance: 10 percent that any commander is a ranger if the priest is of any good alignment and the task is in the wilderness (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyGatherWeeksPer500",
+   "value": 2,
+   "comment": "the holy army gathering: two weeks to gather for every 500 people in it (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyDurationMonthsPerLevel",
+   "value": 1,
+   "comment": "the holy army duration: a maximum of one month for each level of the summoning priest (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyTroopPayLow",
+   "value": 2,
+   "comment": "the holy army pay, low end: 2 gold pieces per 0-level trooper (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyTroopPayHigh",
+   "value": 4,
+   "comment": "the holy army pay, high end: 4 gold pieces per 0-level trooper (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyOfficerPayPerLevel",
+   "value": 100,
+   "comment": "the holy army officer pay: 100 gold pieces per level for commanders and priests (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyExtensionDice",
+   "value": 2,
+   "comment": "the holy army extension: the troops remain active for an additional 2d4 months (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyExtensionDieSides",
+   "value": 4,
+   "comment": "the holy army extension die: d4 (printed pp. 161-162)."
+  },
+  {
+   "name": "dezPriestFocusBoostBase",
+   "value": 18,
+   "comment": "the divine strength boost base: the improved score is 18 plus the level band (printed p. 161)."
+  },
+  {
+   "name": "dezPriestFocusDurationPerLevel",
+   "value": 1,
+   "comment": "the divine strength duration: the improvement lasts one round per character level (printed p. 161)."
+  },
+  {
+   "name": "dezPriestFocusOtherScoresPenalty",
+   "value": 2,
+   "comment": "the divine strength cost: the other two eligible ability scores drop by two for the same duration (printed p. 161)."
+  },
+  {
+   "name": "dezPriestFocusAttemptCost",
+   "value": 2,
+   "comment": "the divine strength drain: each attempt, successful or not, lowers the base skill score by two for the day (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceRangeFeet",
+   "value": 180,
+   "comment": "the divine voice reach: every creature within 180 feet can hear the priest (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceRockFeet",
+   "value": 10,
+   "comment": "the divine voice penetration: up to 10 feet of solid rock (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceLeadInches",
+   "value": 3,
+   "comment": "the divine voice penetration: or three inches of lead (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceAutoEnthralHd",
+   "value": 5,
+   "comment": "the divine voice enthrall gate: creatures with less than 5 Hit Dice or levels are automatically enthralled (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceEnthralSpellLevel",
+   "value": 2,
+   "comment": "the divine voice spell: enthralled as the 2nd-level priest spell (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceHoldHours",
+   "value": 1,
+   "comment": "the divine voice hold: the audience can be held enthralled for up to one hour (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceMassSuggestionLevel",
+   "value": 6,
+   "comment": "the divine voice suggestion: a mass suggestion as the 6th-level wizard spell (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceEminenceCost",
+   "value": 2,
+   "comment": "the divine voice drain: each use reduces the base eminence score by two (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceEminenceDays",
+   "value": 7,
+   "comment": "the divine voice drain period: for one week (printed p. 161)."
+  },
+  {
+   "name": "dezWillEminenceCost",
+   "value": 2,
+   "comment": "the divine will drain: each use reduces the base eminence score by two (printed p. 162)."
+  },
+  {
+   "name": "dezWillEminenceDays",
+   "value": 1,
+   "comment": "the divine will drain period: for one day (printed p. 162)."
+  },
+  {
+   "name": "dezDeceiveRetryTurns",
+   "value": 1,
+   "comment": "the detect deception retry: an unsuccessful check leaves the priest aware of the failure and he must wait one turn to try again (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveEminenceCost",
+   "value": 2,
+   "comment": "the detect deception drain: each use lowers the base eminence score by two (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveEminenceDays",
+   "value": 7,
+   "comment": "the detect deception drain period: for one week (printed pp. 162-163)."
+  },
+  {
+   "name": "dezEminenceDurationPerLevel",
+   "value": 1,
+   "comment": "the eminence aura duration: one round for each level attained (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceReactionBonus",
+   "value": 4,
+   "comment": "the eminence reaction bonus: +4 encounter reaction when dealing with worshippers of the priest deity or creatures of the same alignment (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceFearRadius",
+   "value": 30,
+   "comment": "the eminence fear radius: hostile creatures feel the shudder of fear within 30 feet of the priest (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceFleeLevel",
+   "value": 4,
+   "comment": "the eminence flee gate: creatures of less than 4th level or 4 Hit Dice flee until the priest is no longer in sight (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceCost",
+   "value": 2,
+   "comment": "the eminence drain: each attempt to raise the aura reduces the base eminence score by two (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceDays",
+   "value": 7,
+   "comment": "the eminence drain period: for one week (printed p. 163)."
+  },
+  {
+   "name": "dezInvDelayBase",
+   "value": 5,
+   "comment": "the invincibility delay base: five rounds times one plus the level band (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvHeroicFloor",
+   "value": -20,
+   "comment": "the invincibility heroic floor: a successful check lets the priest fight until -20 hit points instead of dying at zero (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvConsciousAt",
+   "value": -19,
+   "comment": "the invincibility regen wake: regeneration to -19 or more during the delay restores consciousness (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvEminenceCost",
+   "value": 2,
+   "comment": "the invincibility drain: each use lowers the base eminence score by two (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvMinorDays",
+   "value": 1,
+   "comment": "the invincibility minor recovery: unconsciousness for 1 day (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvSevereWeeks",
+   "value": 1,
+   "comment": "the invincibility severe recovery: unconsciousness for 1 week (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvExtremeMonths",
+   "value": 1,
+   "comment": "the invincibility extreme recovery: unconsciousness for 1 month (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvExampleLevel",
+   "value": 25,
+   "comment": "the invincibility worked example: a 25th-level priest (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvExampleHpLeft",
+   "value": 52,
+   "comment": "the invincibility example hit points left: 52 (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvExampleHpTotal",
+   "value": 107,
+   "comment": "the invincibility example hit point total: 107 (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvExampleDelay",
+   "value": 10,
+   "comment": "the invincibility example delay: ten rounds, then heal lifts him over 60 hit points and the power word kill fizzles (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvExampleImmuneHp",
+   "value": 60,
+   "comment": "the invincibility example immunity: over 60 hit points carries immunity to power word kill (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvExampleHealRound",
+   "value": 4,
+   "comment": "the invincibility example timing: the heal comes four rounds into the ten (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvExampleCon",
+   "value": 15,
+   "comment": "the invincibility example system shock: a 15 Constitution character (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvExampleShockRoll",
+   "value": 96,
+   "comment": "the invincibility example system shock roll: 96 percent (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvExampleShockMargin",
+   "value": 6,
+   "comment": "the invincibility example margin: 6 percent over what he needed - the roll fails and he wakes just long enough to die (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvVampireLevels",
+   "value": 2,
+   "comment": "the invincibility multi-effect example: a vampire drained two levels, a lich added paralysis (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvParalysisWeeks",
+   "value": 1,
+   "comment": "the invincibility paralysis recovery: another week (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvNineWeeks",
+   "value": 9,
+   "comment": "the invincibility nine-week sum: one month per drained level plus the paralysis week (printed pp. 163-165)."
+  },
+  {
+   "name": "dezLoanHours",
+   "value": 24,
+   "comment": "the loan duration: transferred hit points remain with the recipient for 24 hours or until lost in an attack (printed p. 165)."
+  },
+  {
+   "name": "dezLoanBandCount",
+   "value": 4,
+   "comment": "the loan ladder row count: four level bands (printed p. 165)."
+  },
+  {
+   "name": "dezLoanCost",
+   "value": 2,
+   "comment": "the loan drain: each attempt lowers the base score by two (printed p. 165)."
+  },
+  {
+   "name": "dezLoanDays",
+   "value": 7,
+   "comment": "the loan drain period: for one week (printed p. 165)."
+  },
+  {
+   "name": "dezSmiteBodyDiameter",
+   "value": 5,
+   "comment": "the smite cone near end: 5 feet in diameter at the priest body (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteFarDiameter",
+   "value": 30,
+   "comment": "the smite cone far end: 30 feet in diameter at the far end (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteLengthBase",
+   "value": 30,
+   "comment": "the smite cone length base: 30 feet plus 20 per level band (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteLengthStep",
+   "value": 20,
+   "comment": "the smite cone length step: +20 feet per band - 30, 50, 70, 90, 110 (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteAweSaveHd",
+   "value": 10,
+   "comment": "the smite awe save gate: creatures with more than 10 Hit Dice or levels get a saving throw vs. spell (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteAweExtraDieSides",
+   "value": 8,
+   "comment": "the smite awe duration: one round per priest level plus 1d8 rounds (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBlindSaveHd",
+   "value": 12,
+   "comment": "the smite blind save gate: only creatures with 12 or more levels or Hit Dice get a saving throw vs. breath weapon (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBlindMoveNum",
+   "value": 2,
+   "comment": "the smite blind movement: two-thirds the normal rate (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBlindMoveDen",
+   "value": 3,
+   "comment": "the smite blind movement: 2/3 rate, the denominator (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBlindPenalty",
+   "value": 4,
+   "comment": "the smite blind penalty: -4 to attack rolls, saving throws, initiative rolls and ability checks (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteDeafMoveNum",
+   "value": 3,
+   "comment": "the smite deaf movement: three-quarters the normal rate (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteDeafMoveDen",
+   "value": 4,
+   "comment": "the smite deaf movement: 3/4 rate, the denominator (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteDeafPenalty",
+   "value": 2,
+   "comment": "the smite deaf penalty: -2 to attack rolls, initiative rolls and ability checks (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteDeafSpellFailPct",
+   "value": 50,
+   "comment": "the smite deaf casting: 50 percent chance any attempted spell fails outright (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBurnDice",
+   "value": 6,
+   "comment": "the smite burn damage: 6d8 points, save vs. breath weapon for half (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBurnSides",
+   "value": 8,
+   "comment": "the smite burn die: d8 (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteDeathDice",
+   "value": 12,
+   "comment": "the smite death damage: a doubled burning effect, 12d8, save vs. spells for half (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteDeathDustHd",
+   "value": 4,
+   "comment": "the smite death dust gate: enemies with 4 Hit Dice/levels or less are immediately reduced to dust (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteImmobHd",
+   "value": 6,
+   "comment": "the smite immobilize gate: creatures of 6+1 Hit Dice/levels or less are automatically paralyzed - the printed 6+1 form (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteImmobTurnsDice",
+   "value": 1,
+   "comment": "the smite immobilize duration: 1d4+2 turns, the dice (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteImmobTurnsSides",
+   "value": 4,
+   "comment": "the smite immobilize duration: 1d4+2 turns, the die (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteImmobTurnsBonus",
+   "value": 2,
+   "comment": "the smite immobilize duration: 1d4+2 turns, the bonus (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteSlowHd",
+   "value": 8,
+   "comment": "the smite slow gate: creatures with less than 8+1 Hit Dice or levels get no saving throw - the printed 8+1 form (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteSlowSpellLevel",
+   "value": 3,
+   "comment": "the smite slow effect: the same as the 3rd-level wizard spell slow (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteSlowTurnsDice",
+   "value": 1,
+   "comment": "the smite slow duration: 1d4+2 turns, the dice (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteSlowTurnsSides",
+   "value": 4,
+   "comment": "the smite slow duration: 1d4+2 turns, the die (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteSlowTurnsBonus",
+   "value": 2,
+   "comment": "the smite slow duration: 1d4+2 turns, the bonus (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteEminenceCost",
+   "value": 2,
+   "comment": "the smite drain: each use reduces the base eminence score by two (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteDays",
+   "value": 7,
+   "comment": "the smite drain period: for one week (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteMarissaEminence",
+   "value": 4,
+   "comment": "the Marissa example: an eminence score of 4 (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteMarissaBonus",
+   "value": 4,
+   "comment": "the Marissa example: a Charisma/Leadership bonus of +4 (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteMarissaRoll1",
+   "value": 3,
+   "comment": "the Marissa example first forced roll: a 3, and the smite works (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteMarissaRoll2",
+   "value": 18,
+   "comment": "the Marissa example second forced roll: an 18, and it fails (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteMarissaAfterFirst",
+   "value": -2,
+   "comment": "the Marissa example after the second smite: a base eminence of -2, raised to 2 by the bonus (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteMarissaAfterSecond",
+   "value": -4,
+   "comment": "the Marissa example after the failed second smite: -4, leaving no chance to smite again (printed pp. 165-166)."
+  },
+  {
+   "name": "dezTalReqLevel",
+   "value": 12,
+   "comment": "the spell talisman requirement: priest 12+ - noting the skill is absent from the Table 40 roster (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalBase",
+   "value": 4,
+   "comment": "the spell talisman base score: 4 (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalCostSlots",
+   "value": 1,
+   "comment": "the spell talisman slot cost: 1 (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalCostCp",
+   "value": 3,
+   "comment": "the spell talisman point cost: 3 character points (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalCostPerLevel",
+   "value": 100,
+   "comment": "the talisman worth: at least 100 gold pieces per spell level (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalHours",
+   "value": 24,
+   "comment": "the talisman storage: a maximum of 24 hours before it crumbles into dust and the spell is lost (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalSeparateHours",
+   "value": 1,
+   "comment": "the talisman separation: more than one hour from the priest crumbles it (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalInitBonus",
+   "value": 2,
+   "comment": "the talisman release initiative: a +2 modifier (printed pp. 166-167)."
+  },
+  {
+   "name": "dezWulfStoredTotal",
+   "value": 21,
+   "comment": "the Wulf talisman example: a 21st-level priest can have up to 21 levels of spells stored (printed pp. 166-167)."
+  },
+  {
+   "name": "dezWulfStored4th",
+   "value": 2,
+   "comment": "the Wulf talisman example: two spells of 4th level (printed pp. 166-167)."
+  },
+  {
+   "name": "dezWulfStored3rd",
+   "value": 2,
+   "comment": "the Wulf talisman example: two 3rd-level spells (printed pp. 166-167)."
+  },
+  {
+   "name": "dezWulfStored1st",
+   "value": 7,
+   "comment": "the Wulf talisman example: seven 1st-level spells (printed pp. 166-167)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dezT43ConBonusStopsAfter9",
+   "value": true,
+   "comment": "the Table 43 footnote: bonus hit points from high Constitution scores are not added after 9th level (printed p. 156)."
+  },
+  {
+   "name": "dezWizTenthLevelSpellsCount",
+   "value": true,
+   "comment": "the wizard power note: the ever-increasing number of spells, including 10th-level spells, gives wizards a great deal of power already (printed p. 156)."
+  },
+  {
+   "name": "dezWizIntroPhysicallyWeak",
+   "value": true,
+   "comment": "the wizard framing: physically weak, but the right combination of protective magical items makes them all but invulnerable except to high-level warriors and other high-level wizards (printed p. 156)."
+  },
+  {
+   "name": "dezSageOneCategoryAlchemyOrChemistry",
+   "value": true,
+   "comment": "the sage constraint: one of the two categories must be Alchemy or Chemistry, reflecting the knowledge of magical potions and scroll inks (printed pp. 157-158)."
+  },
+  {
+   "name": "dezSageOtherCategoryPlayerOrDm",
+   "value": true,
+   "comment": "the sage second category: the player can choose it or the DM can assign one (printed pp. 157-158)."
+  },
+  {
+   "name": "dezSageDifficultAnswersOtherRoutes",
+   "value": true,
+   "comment": "the sage fallback: a difficult question can always be answered by consulting another character, undertaking an adventure, or lengthy and expensive research (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusIntWisDex",
+   "value": true,
+   "comment": "the mental focus targets: a temporary bonus to Intelligence, Wisdom or Dexterity (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusOneBoostAtATime",
+   "value": true,
+   "comment": "the mental focus limit: only one ability score improvement can operate at any given time (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusConcentrationRoundOnlyAction",
+   "value": true,
+   "comment": "the mental focus round: no other actions while concentrating one round (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusBoostEndsAtWill",
+   "value": true,
+   "comment": "the mental focus control: the wizard can end the boost and restore the other scores at any time (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusNoEffectIfEqualOrHigher",
+   "value": true,
+   "comment": "the mental focus ceiling: no effect if the ability score is already equal to or higher than the table value - the wizard wording, printed verbatim (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusSubabilitiesRaisedEqual",
+   "value": true,
+   "comment": "the mental focus subabilities: under the optional rule both subabilities of the boosted score rise to the same value (printed p. 158)."
+  },
+  {
+   "name": "dezWizFocusBonusesImmediate",
+   "value": true,
+   "comment": "the mental focus timing: bonuses apply immediately on success and are lost immediately when the boost ends (printed p. 158)."
+  },
+  {
+   "name": "dezWizSigItemLikeWarriorSkill",
+   "value": true,
+   "comment": "the wizard signature item: except as noted, operates exactly like the warrior skill of the same name (printed p. 158)."
+  },
+  {
+   "name": "dezWizSigItemOnePerType",
+   "value": true,
+   "comment": "the wizard signature item limit: as many items as the wizard pays for, but no more than one of any type of item (printed p. 158)."
+  },
+  {
+   "name": "dezSculptRequiresFocusItem",
+   "value": true,
+   "comment": "the sculpting preparation: the wizard must prepare an item to focus and reshape the spell energy - a small object such as a jewel, wand or amulet (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptFocusNotConsumed",
+   "value": true,
+   "comment": "the sculpting component: the focus item is an additional material component, normally not consumed (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptFailCastsNormally",
+   "value": true,
+   "comment": "the sculpting failure: a failed skill roll casts the spell normally (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptOnceOnly",
+   "value": true,
+   "comment": "the sculpting limit: it is not possible to sculpt a spell more than once (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptNoTouchOrZeroRange",
+   "value": true,
+   "comment": "the sculpting range exclusion: a spell with a range of touch or 0 cannot be extended (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptNoInstantaneousDuration",
+   "value": true,
+   "comment": "the sculpting duration exclusion: spells with instantaneous durations cannot be extended (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptLocalMultiplierFirst",
+   "value": true,
+   "comment": "the sculpting order: if local conditions lengthen the casting time, apply the multiplier first, then cut the result in half (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptNoDicelessDamage",
+   "value": true,
+   "comment": "the sculpting damage exclusion: spells that do not use dice rolls to determine damage cannot be sculpted for damage (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptIndividualDiceNotIncreased",
+   "value": true,
+   "comment": "the sculpting missile rule: spells with individual damage dice such as magic missile are not increased individually - the extra dice can join one missile or split across two (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptMetamagicAllowedIfNoDuplication",
+   "value": true,
+   "comment": "the sculpting metamagic combo: a metamagic spell can apply to a sculpted spell provided the effects do not duplicate (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptFullCostPerSpell",
+   "value": true,
+   "comment": "the sculpting cost: learning to sculpt more than one spell requires the full skill cost for each spell (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculptImprovementAllSpells",
+   "value": true,
+   "comment": "the sculpting improvement: a base-score increase applies to all spells the wizard knows how to sculpt (printed pp. 158-159)."
+  },
+  {
+   "name": "dezSculstRequirementsStillMet",
+   "value": true,
+   "comment": "the sculpting cast: the wizard must meet all the usual requirements to cast the spell (printed pp. 158-159)."
+  },
+  {
+   "name": "dezAllPriestsCastTrueDweomers",
+   "value": true,
+   "comment": "the priest dweomer rule: all priests, even druids, cast true dweomers at 20th level - a new approach to magic very high-level druids can understand and use (printed pp. 159-160)."
+  },
+  {
+   "name": "dezPriestTdMightBeCalled8th",
+   "value": true,
+   "comment": "the priest dweomer naming: for a priest a true dweomer might be called an 8th-level spell, but it functions just like a wizard true dweomer (printed pp. 159-160)."
+  },
+  {
+   "name": "dezPriestTdUsesDivinePower",
+   "value": true,
+   "comment": "the priest dweomer source: unlike wizards, priests use divine power to create their true dweomers (printed pp. 159-160)."
+  },
+  {
+   "name": "dezPriestTdMustPromoteDeityInterests",
+   "value": true,
+   "comment": "the priest dweomer constraint: any true dweomer a priest casts must promote the deity interests in some way (printed pp. 159-160)."
+  },
+  {
+   "name": "dezPriestTdRequiresGoodStanding",
+   "value": true,
+   "comment": "the priest dweomer standing: the priest must be in good standing with the deity, having observed the requirements of both the alignment and the ethos (printed pp. 159-160)."
+  },
+  {
+   "name": "dezPriestTdSpherePortfolioLikelyGranted",
+   "value": true,
+   "comment": "the priest dweomer judgment: a true dweomer impacting the deity sphere of control or portfolio is likely to be granted unless it runs contrary to that power wishes (printed pp. 159-160)."
+  },
+  {
+   "name": "dezPriestTdCheckSpheresWhenInDoubt",
+   "value": true,
+   "comment": "the priest dweomer check: when in doubt, check the spheres of normal spells the priest can cast - effects found in those spells are probably acceptable (printed pp. 159-160)."
+  },
+  {
+   "name": "dezPriestsFormidableInCombat",
+   "value": true,
+   "comment": "the priest framing: priests combine spellcasting abilities with combat power, formidable with magical armor and weapons, but their primary strength comes from spells (printed pp. 159-160)."
+  },
+  {
+   "name": "dezT45ConBonusStopsAfter9",
+   "value": true,
+   "comment": "the Table 45 footnote: bonus hit points from high Constitution scores are not added after 9th level (printed p. 160)."
+  },
+  {
+   "name": "dezQuestSpellNoSacrifice",
+   "value": true,
+   "comment": "the quest spell rule: a priest with access to true dweomers receives a quest spell without sacrificing any spellcasting ability (printed p. 160)."
+  },
+  {
+   "name": "dezQuestSpellOtherRequirementsNormal",
+   "value": true,
+   "comment": "the quest spell catch: all other requirements for receiving a quest spell must be met normally, per the Tome of Magic (printed p. 160)."
+  },
+  {
+   "name": "dezTurningRepeatWhileSuccessful",
+   "value": true,
+   "comment": "the improved turning rule: the priest may continue to turn undead so long as prior attempts against the same group were successful (printed p. 160)."
+  },
+  {
+   "name": "dezTurningStopsAfterFail",
+   "value": true,
+   "comment": "the improved turning stop: once an attempt fails the priest cannot continue (printed p. 160)."
+  },
+  {
+   "name": "dezTurningMixedGroupUselessOnUnaffected",
+   "value": true,
+   "comment": "the improved turning mixed groups: further attempts to turn the unaffected creatures of a mixed group are useless (printed p. 160)."
+  },
+  {
+   "name": "dezTurningWeakerContinueIfSucceed",
+   "value": true,
+   "comment": "the improved turning weaker creatures: weaker creatures continue to be affected as long as attempts against them succeed (printed p. 160)."
+  },
+  {
+   "name": "dezWulfLichUnaffected",
+   "value": true,
+   "comment": "the Wulf lich outcome: the roll of 7 is insufficient to turn the lich, and it stays unaffected on later rounds (printed p. 160)."
+  },
+  {
+   "name": "dezSpellSelectMinorOrLevelEitherWay",
+   "value": true,
+   "comment": "the spell selection form: either minor access to a previously inaccessible sphere or access to another level in an existing minor sphere (printed pp. 160-161)."
+  },
+  {
+   "name": "dezSpellSelectDmOrPlayerChooses",
+   "value": true,
+   "comment": "the spell selection chooser: the DM can make the selection or let the player choose (printed pp. 160-161)."
+  },
+  {
+   "name": "dezArmySingleTask",
+   "value": true,
+   "comment": "the holy army task: called up to accomplish a single task through force of arms - destroying a castle, temple or town, rescuing a captive, recovering a stolen item, bringing a fugitive to justice, deposing a ruler (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyTaskWithinAlignment",
+   "value": true,
+   "comment": "the holy army constraint: the task cannot violate the principles of the priest alignment or ethos (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyOneAtATime",
+   "value": true,
+   "comment": "the holy army limit: cannot summon one while another is in the field (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyOncePerYear",
+   "value": true,
+   "comment": "the holy army frequency: no more than one each year (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyOfficersHavePriests",
+   "value": true,
+   "comment": "the holy army clergy: each commander and assistant is accompanied by a priest or cleric of similar level (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyOpenWorshipRequired",
+   "value": true,
+   "comment": "the holy army summoning place: somewhere people worship the character deity openly (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyGatherDoubledIfUncommon",
+   "value": true,
+   "comment": "the holy army slow gather: if worshippers are not common in the area the gathering time is doubled (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmySmallerAllowed",
+   "value": true,
+   "comment": "the holy army option: the priest can summon a smaller army (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyPayOrCharismaCheck",
+   "value": true,
+   "comment": "the holy army extension route: pay the troops well or make a successful Charisma/Leadership check (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyGoalWithinReach",
+   "value": true,
+   "comment": "the holy army condition: the army goal must be within easy reach (printed pp. 161-162)."
+  },
+  {
+   "name": "dezArmyDisbandIndependenceRisk",
+   "value": true,
+   "comment": "the holy army disband: troops may remain together as an independent force - best seen home to keep radical elements from taking control (printed pp. 161-162)."
+  },
+  {
+   "name": "dezPriestFocusWisStrCha",
+   "value": true,
+   "comment": "the divine strength targets: a temporary bonus to Wisdom, Strength or Charisma (printed p. 161)."
+  },
+  {
+   "name": "dezPriestFocusNoBonusSpells",
+   "value": true,
+   "comment": "the divine strength casting note: the priest gains no bonus spells from this skill (printed p. 161)."
+  },
+  {
+   "name": "dezPriestFocusWis19Immunity",
+   "value": true,
+   "comment": "the divine strength Wisdom note: a Wisdom score of 19 or higher grants immunity to certain spells per the Player Handbook Table 5 (printed p. 161)."
+  },
+  {
+   "name": "dezPriestFocusOneBoostAtATime",
+   "value": true,
+   "comment": "the divine strength limit: only one ability score improvement can operate at any given time (printed p. 161)."
+  },
+  {
+   "name": "dezPriestFocusConcentrationRoundOnlyAction",
+   "value": true,
+   "comment": "the divine strength round: no other actions while concentrating (printed p. 161)."
+  },
+  {
+   "name": "dezPriestFocusBoostEndsAtWill",
+   "value": true,
+   "comment": "the divine strength control: the priest can end the boost and restore the other scores at any time (printed p. 161)."
+  },
+  {
+   "name": "dezPriestFocusNoEffectIfHigher",
+   "value": true,
+   "comment": "the divine strength ceiling: no effect if the ability score is already higher than the table value - the priest wording, printed verbatim (printed p. 161)."
+  },
+  {
+   "name": "dezPriestFocusSubabilitiesRaisedEqual",
+   "value": true,
+   "comment": "the divine strength subabilities: under the optional rule both subabilities of the boosted score rise to the same value (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceFullRoundSpeech",
+   "value": true,
+   "comment": "the divine voice form: the priest must speak loudly and clearly for a full round, the check made at the end of the round (printed p. 161)."
+  },
+  {
+   "name": "dezVoicePenetratesSilence",
+   "value": true,
+   "comment": "the divine voice silence rule: the voice penetrates silence spells (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceAntimagicShields",
+   "value": true,
+   "comment": "the divine voice shielding: antimagic shells, prismatic spheres, cubes of force and 10th-level ward spells shield their occupants (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceMagicalDeafnessBlocks",
+   "value": true,
+   "comment": "the divine voice hearing: creatures magically deafened cannot hear it (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceSaveVsSpellOthers",
+   "value": true,
+   "comment": "the divine voice save: creatures with 5 or more Hit Dice or levels can save vs. spell to avoid the effect (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceHearingOnlyRequired",
+   "value": true,
+   "comment": "the divine voice understanding: creatures do not have to understand the words, merely hear them (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceUndeadAndCharmImmuneUnaffected",
+   "value": true,
+   "comment": "the divine voice immunities: undead and creatures normally immune to charm spells, such as golems, are not affected (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceWis19Immune",
+   "value": true,
+   "comment": "the divine voice willpower gate: creatures with Wisdom/Willpower scores of 19 or more are not affected (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceJeeringBreaks",
+   "value": true,
+   "comment": "the divine voice break: excessive jeering can break the effects, per the enthrall spell description (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceOneMassSuggestionPerUse",
+   "value": true,
+   "comment": "the divine voice limit: only one mass suggestion per use of the skill (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceNoSaveIfBeforeEnthralEnds",
+   "value": true,
+   "comment": "the divine voice suggestion save: no saving throw against the mass suggestion if completed before the enthrall effect ends (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceAffectsAllEnthralled",
+   "value": true,
+   "comment": "the divine voice spread: the mass suggestion affects every creature currently enthralled regardless of the priest level (printed p. 161)."
+  },
+  {
+   "name": "dezVoiceIneffectiveAtZeroEminence",
+   "value": true,
+   "comment": "the divine voice gate: ineffective if the eminence score is zero or less (printed p. 161)."
+  },
+  {
+   "name": "dezWillNegatesCompulsion",
+   "value": true,
+   "comment": "the divine will effect: a successful check negates the compulsion, no saving throw necessary (printed p. 162)."
+  },
+  {
+   "name": "dezWillSaveOnFail",
+   "value": true,
+   "comment": "the divine will fallback: if the check fails the priest still gets a saving throw if one is normally allowed (printed p. 162)."
+  },
+  {
+   "name": "dezWillCoversAllCompulsions",
+   "value": true,
+   "comment": "the divine will scope: effective against any effect that makes the priest act according to another creature will - all forms of charm, geas, quest, fear, beguiling, command (printed p. 162)."
+  },
+  {
+   "name": "dezWillEjectsMagicJarPsyche",
+   "value": true,
+   "comment": "the divine will magic jar: the invading psyche is ejected (printed p. 162)."
+  },
+  {
+   "name": "dezWillIneffectiveAtZero",
+   "value": true,
+   "comment": "the divine will gate: ineffective when the eminence score is zero or less (printed p. 162)."
+  },
+  {
+   "name": "dezDeceiveSeesFalsehoods",
+   "value": true,
+   "comment": "the detect deception effect: a successful roll uncovers any falsehood encountered, false images from illusions or false statements from creatures (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveAutoSpokenFalsehoods",
+   "value": true,
+   "comment": "the detect deception speech: while in effect the priest detects all forms of spoken falsehoods automatically for the duration (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveKnowsEvasionVsLie",
+   "value": true,
+   "comment": "the detect deception nuance: unlike a detect lie spell the priest knows when a creature is deliberately evading the truth (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveNoTruthRevealed",
+   "value": true,
+   "comment": "the detect deception limit: the skill does not tell the priest what the truth is, only that a lie or evasion was heard (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveMagicSpeechUnheard",
+   "value": true,
+   "comment": "the detect deception magic speech: if magic allows falsehoods to be spoken the priest cannot hear the protected creature speak, revealing the falsehood indirectly (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveImmediateSaveVsIllusion",
+   "value": true,
+   "comment": "the detect deception visions: an immediate saving throw vs. spell to see through any false vision or visual distortion from a spell, item or creature (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveDmSecretRoll",
+   "value": true,
+   "comment": "the detect deception roll: the DM should make the vision save secretly (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveSeesMist",
+   "value": true,
+   "comment": "the detect deception sight: a successful save shows the false image as a fine, semi-transparent mist (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveWorksVsVisualSpells",
+   "value": true,
+   "comment": "the detect deception targets: works against all false and misleading images - mirror image, blur, shadow door, phantasmal force and other misleading spells (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveNotVsInvisibility",
+   "value": true,
+   "comment": "the detect deception exclusion: illusion spells that create no image, such as invisibility, are not affected (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveDefeatsDisplacementBlending",
+   "value": true,
+   "comment": "the detect deception items: defeats cloaks of displacement, robes of blending and similar items (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveNotVsPhysicalChanges",
+   "value": true,
+   "comment": "the detect deception shape limit: no power against effects that disguise through physical changes, such as polymorph self or shape change (printed pp. 162-163)."
+  },
+  {
+   "name": "dezDeceiveIneffectiveAtZero",
+   "value": true,
+   "comment": "the detect deception gate: ineffective when the base eminence score is zero or less (printed pp. 162-163)."
+  },
+  {
+   "name": "dezEminenceAuraUndetectable",
+   "value": true,
+   "comment": "the eminence aura: undetectable except by a true seeing spell (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceHaloByAlignment",
+   "value": true,
+   "comment": "the eminence halo: true seeing reveals a bright silver, inky black or pearl gray halo depending on the priest alignment (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceFearAtWill",
+   "value": true,
+   "comment": "the eminence trigger: if the priest wills it the fear takes hold (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceSaveForStronger",
+   "value": true,
+   "comment": "the eminence save: more powerful creatures get a saving throw vs. spell to negate the fear (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceWorksVsFearImmune",
+   "value": true,
+   "comment": "the eminence reach: works against all types of creatures, even those normally immune to fear attacks such as undead (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceCloakOrRemoveFearBreaks",
+   "value": true,
+   "comment": "the eminence negations: a cloak of bravery or remove fear spell breaks the effect (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceSkillBreaks",
+   "value": true,
+   "comment": "the eminence counters: a successful use of the warrior skill bravery or the priest skill divine will breaks the effect (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceOnceResistedImmuneRestOfDay",
+   "value": true,
+   "comment": "the eminence resistance: once a creature has resisted the fear it is not subject to fear effects from the same priest for the rest of the day (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceOpposingPriestShields",
+   "value": true,
+   "comment": "the eminence opposition: creatures within 30 feet of an opposing priest using eminence are not subject to the fear if the second priest level is equal or higher (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceIneffectiveAtZero",
+   "value": true,
+   "comment": "the eminence gate: ineffective when the base eminence score is zero or less (printed p. 163)."
+  },
+  {
+   "name": "dezEminencePrereqFiveSkills",
+   "value": true,
+   "comment": "the eminence prerequisite list, printed verbatim: a prerequisite for the divine strength, divine voice, divine will, detect deception and invincibility skills - noting the printed tension: the Table 40 roster and the divine will detail read Priest 10+ without eminence (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceDrainsBySkill",
+   "value": true,
+   "comment": "the eminence drain rule: each use of the five dependent skills reduces the base eminence score by two for either one day or one week, depending on the skill used (printed p. 163)."
+  },
+  {
+   "name": "dezEminenceZeroBlocksAll",
+   "value": true,
+   "comment": "the eminence lockout: once the base score falls to zero the priest cannot use eminence or any of the other skills (printed p. 163)."
+  },
+  {
+   "name": "dezSmiteConnectedButUsableAtZero",
+   "value": true,
+   "comment": "the eminence smite link: the smite skill is connected to the eminence score but can be used, at some risk, when eminence is zero or less (printed p. 163)."
+  },
+  {
+   "name": "dezInvLikeWarriorHardiness",
+   "value": true,
+   "comment": "the invincibility kinship: very similar to the warrior skill hardiness (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvSaveFirst",
+   "value": true,
+   "comment": "the invincibility save order: if the effect allows a saving throw the priest rolls the save before checking the skill (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvNoSimpleOrContinuingDamage",
+   "value": true,
+   "comment": "the invincibility exclusion one: no delay of simple damage from any source, including continuing damage such as Melf acid arrow or a sword of wounding, or purely physical damage such as severed limbs or broken bones (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvNoCharmsEntangleImprison",
+   "value": true,
+   "comment": "the invincibility exclusion two: no protection against effects not directly harmful such as magical charms, entanglement or imprisonment (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvCureWithinDelayNoHarm",
+   "value": true,
+   "comment": "the invincibility cure window: the appropriate cure before the delay ends means no harm (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvShorterDurationNoEffect",
+   "value": true,
+   "comment": "the invincibility short effects: an effect whose duration is shorter than the delay never lands (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvSystemShockAtEnd",
+   "value": true,
+   "comment": "the invincibility recovery roll: a system shock roll at the end of the recovery time (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvShockSuccessHeals",
+   "value": true,
+   "comment": "the invincibility success: a successful system shock awakens the priest fully healed, the delayed magic nullified (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvShockFailFullForce",
+   "value": true,
+   "comment": "the invincibility failure: a failed system shock means the full force of the effect - possible to rest for months and wake only to die (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvMultipleEffectsSequential",
+   "value": true,
+   "comment": "the invincibility stacking: multiple effects mean system shock rolls at the end of each recovery period, the order chosen by the player, no awakening until all are made (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvUnconsciousRecoversInstantly",
+   "value": true,
+   "comment": "the invincibility sleeping cure: a cure applied while unconscious recovers the priest immediately and automatically (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvHeroicRoundsEqualDelay",
+   "value": true,
+   "comment": "the heroic effort duration: the priest functions at negative hit points for rounds equal to the delay (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvHeroicDeathAtDelayEnd",
+   "value": true,
+   "comment": "the heroic effort price: reduced to -20 or less the character dies once the delay expires (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvRaiseDuringDelaySaves",
+   "value": true,
+   "comment": "the heroic rescue: a raise dead or resurrection cast during the delay prevents death (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvRegenNoShock",
+   "value": true,
+   "comment": "the invincibility regeneration: a character returned to life through regeneration need not make a system shock roll (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvAmuletNoShock",
+   "value": true,
+   "comment": "the invincibility amulet: an amulet of life protection works like regeneration with no system shock roll (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvIneffectiveAtZero",
+   "value": true,
+   "comment": "the invincibility gate: ineffective when the base eminence score is zero or less (printed pp. 163-165)."
+  },
+  {
+   "name": "dezInvDrainRestOfDay",
+   "value": true,
+   "comment": "the invincibility drain period: for the rest of the day, unlike the one-week drains of the other eminence skills (printed pp. 163-165)."
+  },
+  {
+   "name": "dezLoanTransfersVitality",
+   "value": true,
+   "comment": "the loan effect: a successful roll transfers a small amount of hit points from the priest to a living creature or vice versa (printed p. 165)."
+  },
+  {
+   "name": "dezLoanUnwillingNeedsAttackRoll",
+   "value": true,
+   "comment": "the loan unwilling donor: an attack roll is required before the skill roll (printed p. 165)."
+  },
+  {
+   "name": "dezLoanLostLikeDamage",
+   "value": true,
+   "comment": "the loan loss: the donor loses the points as though subjected to a damaging attack, restorable by rest or magical healing (printed p. 165)."
+  },
+  {
+   "name": "dezLoanDonorDiesIfInsufficient",
+   "value": true,
+   "comment": "the loan overdose: if the donor has insufficient hit points only those available transfer and the donor dies (printed p. 165)."
+  },
+  {
+   "name": "dezLoanUselessAtZero",
+   "value": true,
+   "comment": "the loan gate: useless once the base score falls to zero or less (printed p. 165)."
+  },
+  {
+   "name": "dezSmiteConeAnyDirection",
+   "value": true,
+   "comment": "the smite cone: issues from the priest body in any direction the character wishes (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteDmChoosesEffect",
+   "value": true,
+   "comment": "the smite control: the priest has no control over the effect, the DM chooses from the list (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteOnlyEnemiesHarmed",
+   "value": true,
+   "comment": "the smite targeting: only the priest enemies are harmed - allies, innocent bystanders and worshippers in good standing are not affected (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteAweDefault",
+   "value": true,
+   "comment": "the smite awe default: granted when the deity does not find the targets offensive or threatening, or when a simple demonstration of power suffices (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteAweDepiction",
+   "value": true,
+   "comment": "the smite awe image: a two-dimensional depiction of the deity or its symbol appears before the priest (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteAweOneRoundEvenOnSave",
+   "value": true,
+   "comment": "the smite awe save: even on a successful save creatures are awestruck one round, regardless of personal immunities (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteAweRequiresMotionless",
+   "value": true,
+   "comment": "the smite awe upkeep: creatures remain awestruck only while the priest stays motionless and concentrates (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteAweLatecomersSubject",
+   "value": true,
+   "comment": "the smite awe latecomers: enemies entering the cone after the image appears are fully subject even if they avert their eyes (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteAweMotionBreaks",
+   "value": true,
+   "comment": "the smite awe break: any motion or the slightest break in concentration ends the effect, as does any offensive action by the priest allies (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteAweDistractionBreaks",
+   "value": true,
+   "comment": "the smite awe distractions: loud noises, magical displays, attacks or attempts to steal awestruck equipment or harm them break the effect (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBlindTouchCastingOnly",
+   "value": true,
+   "comment": "the smite blind casting: blinded spellcasters cannot cast unless they can touch their targets (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBlindUntilHealed",
+   "value": true,
+   "comment": "the smite blind duration: until a heal or cure blindness or deafness spell (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBurnAshNoRegen",
+   "value": true,
+   "comment": "the smite burn kill: creatures killed by the flames are reduced to piles of ash, no regeneration possible (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBurnEquipmentSaves",
+   "value": true,
+   "comment": "the smite burn equipment: if the target fails the save or is killed, its equipment must save vs. disintegration or be reduced to dust (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteBurnHeatless",
+   "value": true,
+   "comment": "the smite burn nature: heatless flames that do not harm the area but can affect equipment (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteDeafUntilHealed",
+   "value": true,
+   "comment": "the smite deaf duration: until a heal or cure blindness or deafness spell (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteDeathDoubledBurn",
+   "value": true,
+   "comment": "the smite death effect: enemies beyond the dust gate suffer a doubled burning effect (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteImmobCrystalline",
+   "value": true,
+   "comment": "the smite immobilize form: paralyzed flesh turns into a rigid crystalline substance easily shattered (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteImmobSaveVsPetrification",
+   "value": true,
+   "comment": "the smite immobilize save: creatures beyond the auto-paralyze gate get a save vs. petrification to negate (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteImmobFreeActionUseless",
+   "value": true,
+   "comment": "the smite immobilize defense: free action is useless against it (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteImmobShatterKill",
+   "value": true,
+   "comment": "the smite immobilize kill: striking the crystalline body with any hard object forces a save as rock crystal vs. crushing blow, only ring, cloak and armor bonuses count, failure is death (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmitePlagueDebilitating",
+   "value": true,
+   "comment": "the smite plague form: as a cause disease spell, the debilitating reversed-cure-disease form with a foul stench (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmitePlagueNotContagiousOrFatal",
+   "value": true,
+   "comment": "the smite plague limits: neither contagious nor fatal (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmitePlagueHigherLevelCure",
+   "value": true,
+   "comment": "the smite plague cure: a cure disease or breath of life spell from a caster of higher level than the priest (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmitePlagueWhenOffensive",
+   "value": true,
+   "comment": "the smite plague grant: when the targets are offensive but pose no danger to the deity interests (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteSlowWhenNoImmediateThreat",
+   "value": true,
+   "comment": "the smite slow grant: when the deity is offended but the enemies pose no immediate threat to a sacred site, the priest or friendly creatures (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteNoRollWithPositiveEminence",
+   "value": true,
+   "comment": "the smite free use: with a positive eminence score the priest need not roll to smite (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteCheckAtZeroOrLess",
+   "value": true,
+   "comment": "the smite at zero: with zero or less eminence the priest rolls an eminence check, possible only with a Charisma/Leadership bonus large enough to offset the negative base (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteFailDispleasesDeity",
+   "value": true,
+   "comment": "the smite failure: a failed check displeases the deity (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteFailMaySmitePriest",
+   "value": true,
+   "comment": "the smite backlash: at best no effect occurs, at worst the deity directs a smite effect upon the priest (printed pp. 165-166)."
+  },
+  {
+   "name": "dezSmiteMarissaAweBrokenByAttack",
+   "value": true,
+   "comment": "the Marissa example: the awe effect on the kobolds is broken by a fighter wading in with an all-around attack (printed pp. 165-166)."
+  },
+  {
+   "name": "dezTalCastAtDayStart",
+   "value": true,
+   "comment": "the talisman timing: cast at the beginning of each day, after praying for spells, directing the energy into the talisman (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalSmallObject",
+   "value": true,
+   "comment": "the talisman form: a small object such as a jewel, crystal bead or holy symbol blessed by the priest (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalRollToPlace",
+   "value": true,
+   "comment": "the talisman roll: a successful skill roll is required to place a spell (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalFailWastesSpell",
+   "value": true,
+   "comment": "the talisman failure: if the roll fails the spell is wasted (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalComponentsRequired",
+   "value": true,
+   "comment": "the talisman casting: all material components on hand and all usual casting requirements met (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalCastingEffectsOnFail",
+   "value": true,
+   "comment": "the talisman price: casting effects such as unnatural aging hit the priest even if the spell was not placed (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalTotalCappedAtLevel",
+   "value": true,
+   "comment": "the talisman capacity: the total levels stored cannot exceed the priest level (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalCapSharedLadder",
+   "value": true,
+   "comment": "the talisman spell cap: the highest level spell a priest can place follows the same printed ladder as spell sculpting, 1st at 12-14 up to 7th at 30 plus, read through dezSpellCapBand (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalReleaseRequiresContact",
+   "value": true,
+   "comment": "the talisman release: the priest must be holding or carrying the item and concentrate briefly and utter a few words (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalReleaseUndisruptable",
+   "value": true,
+   "comment": "the talisman release guard: the release cannot be disrupted (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalGaggedOrSilencedBlocks",
+   "value": true,
+   "comment": "the talisman release limit: a gagged or silenced priest could not release the spell (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalDestroysTalisman",
+   "value": true,
+   "comment": "the talisman release cost: releasing the spell destroys the talisman, the spell functioning as if cast normally (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalOnlyStorerReleases",
+   "value": true,
+   "comment": "the talisman lock: no being other than the storing priest can release the energy (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalNoRememorizeBefore24h",
+   "value": true,
+   "comment": "the talisman memory: if the priest memorizes spells again before the 24 hours expire the stored spell cannot be regained (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalNoTransferBack",
+   "value": true,
+   "comment": "the talisman one-way: a spell cannot transfer from talisman back into memory (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalDestroyedSpellLost",
+   "value": true,
+   "comment": "the talisman destruction: a destroyed talisman loses the spell (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalFadesOnReleaseOrLoss",
+   "value": true,
+   "comment": "the talisman fade: the spell fades from memory when released or lost (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalCastsWhereFactorDisallows",
+   "value": true,
+   "comment": "the talisman planar reach: stored spells can be cast on worlds where the local magical factor would not allow the spell (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalStoreNeedsLocalConditions",
+   "value": true,
+   "comment": "the talisman storage limit: a spell cannot be stored unless the local conditions allow the spell to be cast (printed pp. 166-167)."
+  },
+  {
+   "name": "dezTalInitUnaffectedByFactor",
+   "value": true,
+   "comment": "the talisman release modifier: the +2 initiative is never affected by the local magical factor (printed pp. 166-167)."
+  }
+ ],
+ "chains": [
+  {
+   "name": "dezWizFocusBand",
+   "limits": [
+    16,
+    20,
+    25,
+    29
+   ],
+   "tail": 4,
+   "comment": "the mental focus boost ladder: wizard levels 12-16 band 0 (boost to 18), 17-20 band 1 (19), 21-25 band 2 (20), 26-29 band 3 (21), and 30 or more the tail band 4 (22) - the improved score is 18 plus the band (printed p. 158)."
+  },
+  {
+   "name": "dezSpellCapBand",
+   "limits": [
+    14,
+    17,
+    20,
+    23,
+    26,
+    29
+   ],
+   "tail": 6,
+   "comment": "the highest spell level a wizard can sculpt: levels 12-14 band 0 (1st), 15-17 band 1 (2nd), 18-20 band 2 (3rd), 21-23 band 3 (4th), 24-26 band 4 (5th), 27-29 band 5 (6th), and 30 or more the tail band 6 (7th) - one plus the band (printed pp. 158-159)."
+  },
+  {
+   "name": "dezPriestFocusBand",
+   "limits": [
+    14,
+    19,
+    24,
+    29
+   ],
+   "tail": 4,
+   "comment": "the divine strength ladder: priest levels 10-14 band 0 (boost to 18), 15-19 band 1 (19), 20-24 band 2 (20), 25-29 band 3 (21), and 30 or more the tail band 4 (22) - the improved score is 18 plus the band (printed p. 161)."
+  },
+  {
+   "name": "dezDeceiveDurationBand",
+   "limits": [
+    17,
+    20,
+    23,
+    26
+   ],
+   "tail": 4,
+   "comment": "the detect deception duration ladder: priest levels 15-17 band 0 (one turn), 18-20 band 1 (two turns), 21-23 band 2 (three turns), 24-26 band 3 (four turns), and 27 or more band 4 (five turns): one turn plus the band (printed p. 162)."
+  },
+  {
+   "name": "dezInvDelayBand",
+   "limits": [
+    23,
+    26
+   ],
+   "tail": 2,
+   "comment": "the invincibility delay ladder: priest levels 21-23 band 0 (5 rounds of delay), 24-26 band 1 (10 rounds), and 27 or more the tail band 2 (15 rounds) - five rounds times one plus the band (printed pp. 163-165)."
+  },
+  {
+   "name": "dezLoanBand",
+   "limits": [
+    19,
+    24,
+    29
+   ],
+   "tail": 3,
+   "comment": "the loan band: priest levels 15-19 band 0 (1d8+2 hit points), 20-24 band 1 (2d6+4), 25-29 band 2 (3d6+6), and 30 or more the tail band 3 (4d6+8), read through the dezLoanGrid (printed p. 165)."
+  },
+  {
+   "name": "dezSmiteConeBand",
+   "limits": [
+    20,
+    23,
+    26,
+    29
+   ],
+   "tail": 4,
+   "comment": "the smite cone length ladder: priest levels 18-20 band 0 (a 30 foot cone), 21-23 band 1 (50 feet), 24-26 band 2 (70 feet), 27-29 band 3 (90 feet), and 30 or more the tail band 4 (110 feet) - 30 feet plus 20 per band (printed pp. 165-166)."
+  }
+ ],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dezT43Grid",
+   "tag": "T43",
+   "count": "dezT43RowCount",
+   "sentinel": -99,
+   "comment": "the Table 43 wizard advancement grid (printed p. 156): eleven rows for levels 20 through 30 (row index = level minus 20) - experience points, weapon and nonweapon proficiency counts, and the 10-plus-N d4 hit-point column read as its constant 10 base plus the per-level bonus.",
+   "col_comments": [
+    "the experience column: 3,750,000 at 20th rising in 375,000 steps to 7,500,000 at 30th (printed p. 156).",
+    "the weapon proficiency column: 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6 across levels 20-30 (printed p. 156).",
+    "the nonweapon proficiency column: 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14 - one more every three levels (printed p. 156).",
+    "the hit-point base column: the constant 10 of the printed 10-plus-N cells (printed p. 156).",
+    "the hit-point bonus column: 10 at 20th rising in +1 steps to 20 at 30th (printed p. 156)."
+   ],
+   "cols": [
+    "dezT43Xp",
+    "dezT43WeaponProf",
+    "dezT43NonweaponProf",
+    "dezT43HpBaseCol",
+    "dezT43HpBonus"
+   ],
+   "data": [
+    [
+     3750000,
+     4,
+     10,
+     10,
+     10
+    ],
+    [
+     4125000,
+     4,
+     11,
+     10,
+     11
+    ],
+    [
+     4500000,
+     5,
+     11,
+     10,
+     12
+    ],
+    [
+     4875000,
+     5,
+     11,
+     10,
+     13
+    ],
+    [
+     5250000,
+     5,
+     12,
+     10,
+     14
+    ],
+    [
+     5625000,
+     5,
+     12,
+     10,
+     15
+    ],
+    [
+     6000000,
+     5,
+     12,
+     10,
+     16
+    ],
+    [
+     6375000,
+     6,
+     13,
+     10,
+     17
+    ],
+    [
+     6750000,
+     6,
+     13,
+     10,
+     18
+    ],
+    [
+     7125000,
+     6,
+     13,
+     10,
+     19
+    ],
+    [
+     7500000,
+     6,
+     14,
+     10,
+     20
+    ]
+   ]
+  },
+  {
+   "name": "dezT44Grid",
+   "tag": "T44",
+   "count": "dezT44RowCount",
+   "sentinel": -99,
+   "comment": "the Table 44 wizard spell progression grid (printed p. 157): spells per level by spell level 1 through 10, eleven rows for levels 20 through 30 (row index = level minus 20); the 10th-level column counts true dweomers.",
+   "col_comments": [
+    "the 1st-level column: 5 at 20th through 25th, 6 at 26th through 28th, 7 at 29th and 30th (printed p. 157).",
+    "the 2nd-level column: 5 at 20th through 25th, 6 at 26th through 28th, 7 at 29th and 30th (printed p. 157).",
+    "the 3rd-level column: 5 at 20th through 25th, 6 at 26th through 28th, 7 at 29th and 30th (printed p. 157).",
+    "the 4th-level column: 5 at 20th through 25th, 6 at 26th through 28th, 7 at 29th and 30th (printed p. 157).",
+    "the 5th-level column: 5 at 20th, 5 at 21st, 5 through 25th, then 5, 6, 6, 6, 6, 7, 7 - reaching 6 at 27th and 7 at 30th (printed p. 157).",
+    "the 6th-level column: 4 at 20th and 21st, 5 at 22nd through 25th, 5 at 26th, 6 at 27th and 28th, 6 at 29th, 7 at 30th (printed p. 157).",
+    "the 7th-level column: 3 at 20th, 4 at 21st and 22nd, 5 at 23rd through 25th, 5 at 26th, 6 at 27th, 6 at 28th and 29th, 7 at 30th (printed p. 157).",
+    "the 8th-level column: 3 at 20th, 4 at 21st and 22nd, 5 at 23rd through 30th (printed p. 157).",
+    "the 9th-level column: 2 at 20th and 21st, 3 at 22nd and 23rd, 4 at 24th, 5 at 25th and 26th, 5 at 27th, 6 at 28th, 6 at 29th, 6 at 30th (printed p. 157).",
+    "the 10th-level column: the true dweomers per day - 1 at 20th through 22nd, 2 at 23rd through 25th, 3 at 26th through 28th, 4 at 29th and 30th (printed p. 157)."
+   ],
+   "cols": [
+    "dezT44L1",
+    "dezT44L2",
+    "dezT44L3",
+    "dezT44L4",
+    "dezT44L5",
+    "dezT44L6",
+    "dezT44L7",
+    "dezT44L8",
+    "dezT44L9",
+    "dezT44L10"
+   ],
+   "data": [
+    [
+     5,
+     5,
+     5,
+     5,
+     5,
+     4,
+     3,
+     3,
+     2,
+     1
+    ],
+    [
+     5,
+     5,
+     5,
+     5,
+     5,
+     4,
+     4,
+     4,
+     2,
+     1
+    ],
+    [
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     4,
+     4,
+     3,
+     1
+    ],
+    [
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     3,
+     2
+    ],
+    [
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     4,
+     2
+    ],
+    [
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     2
+    ],
+    [
+     6,
+     6,
+     6,
+     6,
+     5,
+     5,
+     5,
+     5,
+     5,
+     3
+    ],
+    [
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     5,
+     5,
+     3
+    ],
+    [
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     3
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     6,
+     6,
+     6,
+     6,
+     6,
+     4
+    ],
+    [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     6,
+     6,
+     4
+    ]
+   ]
+  },
+  {
+   "name": "dezT45Grid",
+   "tag": "T45",
+   "count": "dezT45RowCount",
+   "sentinel": -99,
+   "comment": "the Table 45 priest advancement grid (printed p. 160): eleven rows for levels 20 through 30 (row index = level minus 20) - cleric and druid experience points, weapon and nonweapon proficiency counts, and the 9-plus-N d8 hit-point column read as its constant 9 base plus the per-level bonus.",
+   "col_comments": [
+    "the cleric experience column: 2,700,000 at 20th rising in 225,000 steps to 4,950,000 at 30th (printed p. 160).",
+    "the druid experience column: 2,000,000 at 20th rising in 500,000 steps to 7,000,000 at 30th (printed p. 160).",
+    "the weapon proficiency column: 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9 - one more every four levels (printed p. 160).",
+    "the nonweapon proficiency column: 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14 - one more every three levels (printed p. 160).",
+    "the hit-point base column: the constant 9 of the printed 9-plus-N cells (printed p. 160).",
+    "the hit-point bonus column: 22 at 20th rising in +2 steps to 42 at 30th (printed p. 160)."
+   ],
+   "cols": [
+    "dezT45ClericXp",
+    "dezT45DruidXp",
+    "dezT45WeaponProf",
+    "dezT45NonweaponProf",
+    "dezT45HpBaseCol",
+    "dezT45HpBonus"
+   ],
+   "data": [
+    [
+     2700000,
+     2000000,
+     7,
+     10,
+     9,
+     22
+    ],
+    [
+     2925000,
+     2500000,
+     7,
+     11,
+     9,
+     24
+    ],
+    [
+     3150000,
+     3000000,
+     7,
+     11,
+     9,
+     26
+    ],
+    [
+     3375000,
+     3500000,
+     7,
+     11,
+     9,
+     28
+    ],
+    [
+     3600000,
+     4000000,
+     8,
+     12,
+     9,
+     30
+    ],
+    [
+     3825000,
+     4500000,
+     8,
+     12,
+     9,
+     32
+    ],
+    [
+     4050000,
+     5000000,
+     8,
+     12,
+     9,
+     34
+    ],
+    [
+     4275000,
+     5500000,
+     8,
+     13,
+     9,
+     36
+    ],
+    [
+     4500000,
+     6000000,
+     9,
+     13,
+     9,
+     38
+    ],
+    [
+     4725000,
+     6500000,
+     9,
+     13,
+     9,
+     40
+    ],
+    [
+     4950000,
+     7000000,
+     9,
+     14,
+     9,
+     42
+    ]
+   ]
+  },
+  {
+   "name": "dezT47Grid",
+   "tag": "T47",
+   "count": "dezT47RowCount",
+   "sentinel": -99,
+   "comment": "the priest spell progression grid (printed p. 161): spells per level by spell level 1 through 7 plus the true dweomer column, eleven rows for levels 20 through 30 (row index = level minus 20). The printed body caption reads Table 47 while the book contents lists this table as Table 46 - the caption conflict is printed, noted in the banner, and the body caption held.",
+   "col_comments": [
+    "the 1st-level column: 9 at every level 20 through 30 (printed p. 161).",
+    "the 2nd-level column: 9 at every level 20 through 30 (printed p. 161).",
+    "the 3rd-level column: 9 at every level 20 through 30 (printed p. 161).",
+    "the 4th-level column: 8 at 20th, then 9 at every level 21 through 30 (printed p. 161).",
+    "the 5th-level column: 7 at 20th, 8 at 21st, then 9 at every level 22 through 30 (printed p. 161).",
+    "the 6th-level column: 5 at 20th, 6 at 21st and 22nd, 7 at 23rd, 8 at 24th and 25th, then 9 at every level 26 through 30 (printed p. 161).",
+    "the 7th-level column: 2 at 20th and 21st, 3 at 22nd through 24th, 4 at 25th and 26th, 5 at 27th, 6 at 28th, 7 at 29th, 8 at 30th (printed p. 161).",
+    "the true dweomer column: 1 at 20th and 21st, 2 at 22nd through 24th, 3 at 25th and 26th, then 4 at every level 27 through 30 (printed p. 161)."
+   ],
+   "cols": [
+    "dezT47L1",
+    "dezT47L2",
+    "dezT47L3",
+    "dezT47L4",
+    "dezT47L5",
+    "dezT47L6",
+    "dezT47L7",
+    "dezT47Td"
+   ],
+   "data": [
+    [
+     9,
+     9,
+     9,
+     8,
+     7,
+     5,
+     2,
+     1
+    ],
+    [
+     9,
+     9,
+     9,
+     9,
+     8,
+     6,
+     2,
+     1
+    ],
+    [
+     9,
+     9,
+     9,
+     9,
+     9,
+     6,
+     3,
+     2
+    ],
+    [
+     9,
+     9,
+     9,
+     9,
+     9,
+     7,
+     3,
+     2
+    ],
+    [
+     9,
+     9,
+     9,
+     9,
+     9,
+     8,
+     3,
+     2
+    ],
+    [
+     9,
+     9,
+     9,
+     9,
+     9,
+     8,
+     4,
+     3
+    ],
+    [
+     9,
+     9,
+     9,
+     9,
+     9,
+     9,
+     4,
+     3
+    ],
+    [
+     9,
+     9,
+     9,
+     9,
+     9,
+     9,
+     5,
+     4
+    ],
+    [
+     9,
+     9,
+     9,
+     9,
+     9,
+     9,
+     6,
+     4
+    ],
+    [
+     9,
+     9,
+     9,
+     9,
+     9,
+     9,
+     7,
+     4
+    ],
+    [
+     9,
+     9,
+     9,
+     9,
+     9,
+     9,
+     8,
+     4
+    ]
+   ]
+  },
+  {
+   "name": "dezLoanGrid",
+   "tag": "TLN",
+   "count": "dezLoanBandCount",
+   "sentinel": -99,
+   "comment": "the loan amount grid (printed p. 165): the hit points transferred by level band - dice count, die sides and flat bonus, read through the dezLoanBand chain.",
+   "col_comments": [
+    "the loan dice-count column: 1, 2, 3, 4 dice across the four bands (printed p. 165).",
+    "the loan die-sides column: d8 in the first band, d6 in the other three (printed p. 165).",
+    "the loan bonus column: +2, +4, +6, +8 across the four bands (printed p. 165)."
+   ],
+   "cols": [
+    "dezLoanDice",
+    "dezLoanSides",
+    "dezLoanBonus"
+   ],
+   "data": [
+    [
+     1,
+     8,
+     2
+    ],
+    [
+     2,
+     6,
+     4
+    ],
+    [
+     3,
+     6,
+     6
+    ],
+    [
+     4,
+     6,
+     8
+    ]
+   ]
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the Table 43 experience steps: 375,000 per level (printed p. 156)",
+   "expr": "m['dezT43Xp'](1) - m['dezT43Xp'](0) != 375000"
+  },
+  {
+   "note": "the Table 43 hit-point steps: +1 per level (printed p. 156)",
+   "expr": "m['dezT43HpBonus'](1) - m['dezT43HpBonus'](0) != 1"
+  },
+  {
+   "note": "the Table 43 level 30 tail: 7,500,000 XP, 10+20 hit points (printed p. 156)",
+   "expr": "m['dezT43Xp'](10) != 7500000 or m['dezT43HpBonus'](10) != 20 or m['dezT43HpBaseCol'](10) != 10"
+  },
+  {
+   "note": "the Table 43 level 30 proficiencies: weapon 6, nonweapon 14 (printed p. 156)",
+   "expr": "m['dezT43WeaponProf'](10) != 6 or m['dezT43NonweaponProf'](10) != 14"
+  },
+  {
+   "note": "the Table 44 row 20 head: 5,5,5,5,5,4,3,3,2,1 (printed p. 157)",
+   "expr": "m['dezT44L6'](0) != 4 or m['dezT44L10'](0) != 1 or m['dezT44L1'](0) != 5"
+  },
+  {
+   "note": "the Table 44 row 30 tail: seven 1st- through 7th-level spells, four true dweomers (printed p. 157)",
+   "expr": "m['dezT44L1'](10) != 7 or m['dezT44L7'](10) != 7 or m['dezT44L10'](10) != 4"
+  },
+  {
+   "note": "the Table 44 true dweomer column climbs 1, 2, 3, 4 in three-level steps (printed p. 157)",
+   "expr": "m['dezT44L10'](3) != 2 or m['dezT44L10'](6) != 3 or m['dezT44L10'](9) != 4"
+  },
+  {
+   "note": "the Table 44 low columns hold 5 through 25th, reach 6 at 26th and 7 at 29th (printed p. 157)",
+   "expr": "m['dezT44L1'](5) != 5 or m['dezT44L1'](6) != 6 or m['dezT44L1'](9) != 7"
+  },
+  {
+   "note": "the sage ladder: specific at 24th, exacting at 27th (printed pp. 157-158)",
+   "expr": "m['dezSageSpecificLevel']() + 3 != m['dezSageExactingLevel']()"
+  },
+  {
+   "note": "the mental focus ladder: 12th boosts to 18, 30th to 22 (printed p. 158)",
+   "expr": "m['dezWizFocusBand'](12) + 18 != 18 or m['dezWizFocusBand'](30) + 18 != 22"
+  },
+  {
+   "note": "the sculpting cap ladder: 12th sculpts 1st, 21st 4th, 30th 7th (printed pp. 158-159)",
+   "expr": "m['dezSpellCapBand'](12) + 1 != 1 or m['dezSpellCapBand'](21) + 1 != 4 or m['dezSpellCapBand'](30) + 1 != 7"
+  },
+  {
+   "note": "the sculpting fireball example: 10d6 base plus two dice is 12d6 (printed pp. 158-159)",
+   "expr": "m['dezSculptFireballBaseDice']() + m['dezSculptDamageDice']() != m['dezSculptFireballSculptedDice']()"
+  },
+  {
+   "note": "the sculpting burning hands example: 1d3 base plus two dice is the printed 3d3 (printed pp. 158-159)",
+   "expr": "m['dezSculptBurningHandsBaseDice']() + m['dezSculptDamageDice']() != 3"
+  },
+  {
+   "note": "the sculpting magic missile example: five missiles plus two dice is the printed 7d4 (printed pp. 158-159)",
+   "expr": "m['dezSculptMagicMissileBaseDice']() + m['dezSculptDamageDice']() != 7"
+  },
+  {
+   "note": "the Table 45 cleric steps: 225,000 per level (printed p. 160)",
+   "expr": "m['dezT45ClericXp'](1) - m['dezT45ClericXp'](0) != 225000"
+  },
+  {
+   "note": "the Table 45 druid steps: 500,000 per level (printed p. 160)",
+   "expr": "m['dezT45DruidXp'](1) - m['dezT45DruidXp'](0) != 500000"
+  },
+  {
+   "note": "the Table 45 hit-point steps: +2 per level (printed p. 160)",
+   "expr": "m['dezT45HpBonus'](1) - m['dezT45HpBonus'](0) != 2"
+  },
+  {
+   "note": "the Table 45 level 30 tail: cleric 4,950,000, druid 7,000,000, 9+42 hit points (printed p. 160)",
+   "expr": "m['dezT45ClericXp'](10) != 4950000 or m['dezT45DruidXp'](10) != 7000000 or m['dezT45HpBonus'](10) != 42"
+  },
+  {
+   "note": "the Table 45 level 30 proficiencies: weapon 9, nonweapon 14 (printed p. 160)",
+   "expr": "m['dezT45WeaponProf'](10) != 9 or m['dezT45NonweaponProf'](10) != 14"
+  },
+  {
+   "note": "the priest spell progression row 20 head: 9,9,9,8 spells and 7,5,2,1 with one true dweomer (printed p. 161)",
+   "expr": "m['dezT47L4'](0) != 8 or m['dezT47L5'](0) != 7 or m['dezT47L6'](0) != 5 or m['dezT47Td'](0) != 1"
+  },
+  {
+   "note": "the priest spell progression row 30 tail: 9,9,9,9,9,9,8 and four true dweomers (printed p. 161)",
+   "expr": "m['dezT47L7'](10) != 8 or m['dezT47Td'](10) != 4 or m['dezT47L1'](10) != 9"
+  },
+  {
+   "note": "the priest true dweomer column climbs 1, 2, 3, 4 (printed p. 161)",
+   "expr": "m['dezT47Td'](2) != 2 or m['dezT47Td'](4) != 2 or m['dezT47Td'](5) != 3 or m['dezT47Td'](7) != 4"
+  },
+  {
+   "note": "the priest 6th-level column reaches 9 at 26th and holds through 30th (printed p. 161)",
+   "expr": "m['dezT47L6'](6) != 9 or m['dezT47L6'](10) != 9"
+  },
+  {
+   "note": "the Wulf turning example: six vampires, a 2d6 roll of 5 leaves one unaffected (printed p. 160)",
+   "expr": "m['dezWulfVampires']() - m['dezWulfVampireRollResult']() != m['dezWulfVampiresUnaffected']()"
+  },
+  {
+   "note": "the Wulf turning example: the destroy dice read 2d6+2d4 (printed p. 160)",
+   "expr": "m['dezWulfDestroyDiceCount']() * 2 != 4 or m['dezWulfDestroyMajorSides']() != 6 or m['dezWulfDestroyMinorSides']() != 4"
+  },
+  {
+   "note": "the holy army example chain halves with round down: 21st to 10th (printed pp. 161-162)",
+   "expr": "m['dezArmyExampleCommander']() * 2 + 1 != m['dezArmyExamplePriestLevel']() or m['dezArmyExampleCommander']() * 2 > m['dezArmyExamplePriestLevel']()"
+  },
+  {
+   "note": "the holy army example chain: subcommanders half of 10, lieutenants half of 5, sergeants half of 2 (printed pp. 161-162)",
+   "expr": "m['dezArmyExampleSubcommander']() * 2 != m['dezArmyExampleCommander']() or m['dezArmyExampleLieutenant']() * 2 + 1 != m['dezArmyExampleSubcommander']() or m['dezArmyExampleSergeant']() * 2 != m['dezArmyExampleLieutenant']()"
+  },
+  {
+   "note": "the holy army example size: 2,925,000 XP over 1,000 is the printed 2,925 troops (printed pp. 161-162)",
+   "expr": "m['dezT45ClericXp'](1) / m['dezArmyTroopsPerXp']() != m['dezArmyExampleTroops']()"
+  },
+  {
+   "note": "the divine strength ladder: 10th boosts to 18, 30th to 22 (printed p. 161)",
+   "expr": "m['dezPriestFocusBand'](10) + 18 != 18 or m['dezPriestFocusBand'](30) + 18 != 22"
+  },
+  {
+   "note": "the detect deception duration ladder: 15th gets one turn, 27th gets five (printed pp. 162-163)",
+   "expr": "m['dezDeceiveDurationBand'](15) + 1 != 1 or m['dezDeceiveDurationBand'](27) + 1 != 5"
+  },
+  {
+   "note": "the invincibility example: a 25th-level priest delays ten rounds (printed pp. 163-165)",
+   "expr": "m['dezInvExampleDelay']() != m['dezInvDelayBase']() * (m['dezInvDelayBand'](m['dezInvExampleLevel']()) + 1)"
+  },
+  {
+   "note": "the invincibility delay ladder tail: 27th through 30th delay fifteen rounds (printed pp. 163-165)",
+   "expr": "m['dezInvDelayBase']() * (m['dezInvDelayBand'](27) + 1) != 15"
+  },
+  {
+   "note": "the invincibility example system shock: 96 percent is 6 over the needed 90 (printed pp. 163-165)",
+   "expr": "m['dezInvExampleShockRoll']() - m['dezInvExampleShockMargin']() != 90"
+  },
+  {
+   "note": "the invincibility vampire-and-lich sum: two months plus the paralysis week is nine weeks (printed pp. 163-165)",
+   "expr": "m['dezInvVampireLevels']() * 4 + m['dezInvParalysisWeeks']() != m['dezInvNineWeeks']()"
+  },
+  {
+   "note": "the loan ladder bands: 15-19 reads 1d8+2, 30 or more reads 4d6+8 (printed p. 165)",
+   "expr": "m['dezLoanDice'](m['dezLoanBand'](15)) != 1 or m['dezLoanSides'](m['dezLoanBand'](15)) != 8 or m['dezLoanBonus'](m['dezLoanBand'](15)) != 2 or m['dezLoanDice'](m['dezLoanBand'](30)) != 4 or m['dezLoanSides'](m['dezLoanBand'](30)) != 6 or m['dezLoanBonus'](m['dezLoanBand'](30)) != 8"
+  },
+  {
+   "note": "the smite cone ladder: 18th through 20th reaches 30 feet, 30th reaches 110 (printed pp. 165-166)",
+   "expr": "m['dezSmiteLengthBase']() + m['dezSmiteLengthStep']() * m['dezSmiteConeBand'](18) != 30 or m['dezSmiteConeBand'](30) != 4"
+  },
+  {
+   "note": "the smite death effect doubles the burn: 6d8 becomes 12d8 (printed pp. 165-166)",
+   "expr": "m['dezSmiteBurnDice']() * 2 != m['dezSmiteDeathDice']()"
+  },
+  {
+   "note": "the Marissa example: after the second smite the -2 base plus the +4 bonus reads 2 (printed pp. 165-166)",
+   "expr": "m['dezSmiteMarissaAfterFirst']() + m['dezSmiteMarissaBonus']() != 2"
+  },
+  {
+   "note": "the Marissa example: after the failed third attempt the -4 base plus the +4 bonus leaves zero (printed pp. 165-166)",
+   "expr": "m['dezSmiteMarissaAfterSecond']() + m['dezSmiteMarissaBonus']() != 0"
+  },
+  {
+   "note": "the Marissa example: the eminence 4 equals her Charisma/Leadership bonus (printed pp. 165-166)",
+   "expr": "m['dezSmiteMarissaEminence']() != m['dezSmiteMarissaBonus']()"
+  },
+  {
+   "note": "the Wulf talisman example: two 4th plus two 3rd plus seven 1st is 21 stored levels (printed pp. 166-167)",
+   "expr": "m['dezWulfStored4th']() * 4 + m['dezWulfStored3rd']() * 3 + m['dezWulfStored1st']() != m['dezWulfStoredTotal']()"
+  },
+  {
+   "note": "the Wulf talisman example: a 21st-level priest caps at 4th-level spells (printed pp. 166-167)",
+   "expr": "m['dezSpellCapBand'](21) + 1 != 4"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dezWizAdvLimit pin",
+   "expr": "m['dezWizAdvLimit']() != 30"
+  },
+  {
+   "note": "the dezWizSkillPauseLevel pin",
+   "expr": "m['dezWizSkillPauseLevel']() != 20"
+  },
+  {
+   "note": "the dezT43RowCount pin",
+   "expr": "m['dezT43RowCount']() != 11"
+  },
+  {
+   "note": "the dezT43XpStep pin",
+   "expr": "m['dezT43XpStep']() != 375000"
+  },
+  {
+   "note": "the dezT43HpBase pin",
+   "expr": "m['dezT43HpBase']() != 10"
+  },
+  {
+   "note": "the dezT44RowCount pin",
+   "expr": "m['dezT44RowCount']() != 11"
+  },
+  {
+   "note": "the dezSageStartLevel pin",
+   "expr": "m['dezSageStartLevel']() != 21"
+  },
+  {
+   "note": "the dezSageCategoryCount pin",
+   "expr": "m['dezSageCategoryCount']() != 2"
+  },
+  {
+   "note": "the dezSageBaseChance pin",
+   "expr": "m['dezSageBaseChance']() != 6"
+  },
+  {
+   "note": "the dezSageSpecificLevel pin",
+   "expr": "m['dezSageSpecificLevel']() != 24"
+  },
+  {
+   "note": "the dezSageExactingLevel pin",
+   "expr": "m['dezSageExactingLevel']() != 27"
+  },
+  {
+   "note": "the dezSageBookDieSides pin",
+   "expr": "m['dezSageBookDieSides']() != 6"
+  },
+  {
+   "note": "the dezSageBookCost pin",
+   "expr": "m['dezSageBookCost']() != 1000"
+  },
+  {
+   "note": "the dezSageResearchWeeksDieSides pin",
+   "expr": "m['dezSageResearchWeeksDieSides']() != 3"
+  },
+  {
+   "note": "the dezSageResearchWeeksBonus pin",
+   "expr": "m['dezSageResearchWeeksBonus']() != 1"
+  },
+  {
+   "note": "the dezSageResearchCostPerWeek pin",
+   "expr": "m['dezSageResearchCostPerWeek']() != 100"
+  },
+  {
+   "note": "the dezSageEsotericSpellMinLevel pin",
+   "expr": "m['dezSageEsotericSpellMinLevel']() != 6"
+  },
+  {
+   "note": "the dezSageEsotericSpellMaxLevel pin",
+   "expr": "m['dezSageEsotericSpellMaxLevel']() != 7"
+  },
+  {
+   "note": "the dezWizFocusBoostBase pin",
+   "expr": "m['dezWizFocusBoostBase']() != 18"
+  },
+  {
+   "note": "the dezWizFocusDurationPerLevel pin",
+   "expr": "m['dezWizFocusDurationPerLevel']() != 1"
+  },
+  {
+   "note": "the dezWizFocusOtherScoresPenalty pin",
+   "expr": "m['dezWizFocusOtherScoresPenalty']() != 2"
+  },
+  {
+   "note": "the dezWizFocusAttemptCost pin",
+   "expr": "m['dezWizFocusAttemptCost']() != 2"
+  },
+  {
+   "note": "the dezWizSigItemCategoryCount pin",
+   "expr": "m['dezWizSigItemCategoryCount']() != 6"
+  },
+  {
+   "note": "the dezSculptFocusCostPerLevel pin",
+   "expr": "m['dezSculptFocusCostPerLevel']() != 500"
+  },
+  {
+   "note": "the dezSculptDamageDice pin",
+   "expr": "m['dezSculptDamageDice']() != 2"
+  },
+  {
+   "note": "the dezSculptDurationMultiple pin",
+   "expr": "m['dezSculptDurationMultiple']() != 2"
+  },
+  {
+   "note": "the dezSculptRangeMultiple pin",
+   "expr": "m['dezSculptRangeMultiple']() != 2"
+  },
+  {
+   "note": "the dezSculptMinCastingTime pin",
+   "expr": "m['dezSculptMinCastingTime']() != 1"
+  },
+  {
+   "note": "the dezSculptFailDestroysRoll pin",
+   "expr": "m['dezSculptFailDestroysRoll']() != 20"
+  },
+  {
+   "note": "the dezSculptFireballBaseDice pin",
+   "expr": "m['dezSculptFireballBaseDice']() != 10"
+  },
+  {
+   "note": "the dezSculptFireballSculptedDice pin",
+   "expr": "m['dezSculptFireballSculptedDice']() != 12"
+  },
+  {
+   "note": "the dezSculptBurningHandsBaseDice pin",
+   "expr": "m['dezSculptBurningHandsBaseDice']() != 1"
+  },
+  {
+   "note": "the dezSculptMagicMissileBaseDice pin",
+   "expr": "m['dezSculptMagicMissileBaseDice']() != 5"
+  },
+  {
+   "note": "the dezPriestAdvLimit pin",
+   "expr": "m['dezPriestAdvLimit']() != 30"
+  },
+  {
+   "note": "the dezPriestSkillLevel pin",
+   "expr": "m['dezPriestSkillLevel']() != 10"
+  },
+  {
+   "note": "the dezPriestTdStartLevel pin",
+   "expr": "m['dezPriestTdStartLevel']() != 20"
+  },
+  {
+   "note": "the dezT45RowCount pin",
+   "expr": "m['dezT45RowCount']() != 11"
+  },
+  {
+   "note": "the dezT45ClericXpStep pin",
+   "expr": "m['dezT45ClericXpStep']() != 225000"
+  },
+  {
+   "note": "the dezT45DruidXpStep pin",
+   "expr": "m['dezT45DruidXpStep']() != 500000"
+  },
+  {
+   "note": "the dezT45HpBase pin",
+   "expr": "m['dezT45HpBase']() != 9"
+  },
+  {
+   "note": "the dezT45HpStep pin",
+   "expr": "m['dezT45HpStep']() != 2"
+  },
+  {
+   "note": "the dezT47RowCount pin",
+   "expr": "m['dezT47RowCount']() != 11"
+  },
+  {
+   "note": "the dezQuestSpellLevel pin",
+   "expr": "m['dezQuestSpellLevel']() != 20"
+  },
+  {
+   "note": "the dezImprovedTurningLevel pin",
+   "expr": "m['dezImprovedTurningLevel']() != 21"
+  },
+  {
+   "note": "the dezSpellSelectLevel1 pin",
+   "expr": "m['dezSpellSelectLevel1']() != 21"
+  },
+  {
+   "note": "the dezSpellSelectLevel2 pin",
+   "expr": "m['dezSpellSelectLevel2']() != 25"
+  },
+  {
+   "note": "the dezSpellSelectLevel3 pin",
+   "expr": "m['dezSpellSelectLevel3']() != 27"
+  },
+  {
+   "note": "the dezWulfTurnLevel pin",
+   "expr": "m['dezWulfTurnLevel']() != 21"
+  },
+  {
+   "note": "the dezWulfTurnRoll pin",
+   "expr": "m['dezWulfTurnRoll']() != 7"
+  },
+  {
+   "note": "the dezWulfDestroyDiceCount pin",
+   "expr": "m['dezWulfDestroyDiceCount']() != 2"
+  },
+  {
+   "note": "the dezWulfDestroyMajorSides pin",
+   "expr": "m['dezWulfDestroyMajorSides']() != 6"
+  },
+  {
+   "note": "the dezWulfDestroyMinorSides pin",
+   "expr": "m['dezWulfDestroyMinorSides']() != 4"
+  },
+  {
+   "note": "the dezWulfVampireRollSides pin",
+   "expr": "m['dezWulfVampireRollSides']() != 6"
+  },
+  {
+   "note": "the dezWulfVampireRollResult pin",
+   "expr": "m['dezWulfVampireRollResult']() != 5"
+  },
+  {
+   "note": "the dezWulfVampires pin",
+   "expr": "m['dezWulfVampires']() != 6"
+  },
+  {
+   "note": "the dezWulfVampiresUnaffected pin",
+   "expr": "m['dezWulfVampiresUnaffected']() != 1"
+  },
+  {
+   "note": "the dezArmyMinLevel pin",
+   "expr": "m['dezArmyMinLevel']() != 21"
+  },
+  {
+   "note": "the dezArmyTroopsPerXp pin",
+   "expr": "m['dezArmyTroopsPerXp']() != 1000"
+  },
+  {
+   "note": "the dezArmyExampleTroops pin",
+   "expr": "m['dezArmyExampleTroops']() != 2925"
+  },
+  {
+   "note": "the dezArmyExamplePriestLevel pin",
+   "expr": "m['dezArmyExamplePriestLevel']() != 21"
+  },
+  {
+   "note": "the dezArmyExampleCommander pin",
+   "expr": "m['dezArmyExampleCommander']() != 10"
+  },
+  {
+   "note": "the dezArmyExampleSubcommander pin",
+   "expr": "m['dezArmyExampleSubcommander']() != 5"
+  },
+  {
+   "note": "the dezArmyExampleLieutenant pin",
+   "expr": "m['dezArmyExampleLieutenant']() != 2"
+  },
+  {
+   "note": "the dezArmyExampleSergeant pin",
+   "expr": "m['dezArmyExampleSergeant']() != 1"
+  },
+  {
+   "note": "the dezArmyPaladinChance pin",
+   "expr": "m['dezArmyPaladinChance']() != 10"
+  },
+  {
+   "note": "the dezArmyRangerChance pin",
+   "expr": "m['dezArmyRangerChance']() != 10"
+  },
+  {
+   "note": "the dezArmyGatherWeeksPer500 pin",
+   "expr": "m['dezArmyGatherWeeksPer500']() != 2"
+  },
+  {
+   "note": "the dezArmyDurationMonthsPerLevel pin",
+   "expr": "m['dezArmyDurationMonthsPerLevel']() != 1"
+  },
+  {
+   "note": "the dezArmyTroopPayLow pin",
+   "expr": "m['dezArmyTroopPayLow']() != 2"
+  },
+  {
+   "note": "the dezArmyTroopPayHigh pin",
+   "expr": "m['dezArmyTroopPayHigh']() != 4"
+  },
+  {
+   "note": "the dezArmyOfficerPayPerLevel pin",
+   "expr": "m['dezArmyOfficerPayPerLevel']() != 100"
+  },
+  {
+   "note": "the dezArmyExtensionDice pin",
+   "expr": "m['dezArmyExtensionDice']() != 2"
+  },
+  {
+   "note": "the dezArmyExtensionDieSides pin",
+   "expr": "m['dezArmyExtensionDieSides']() != 4"
+  },
+  {
+   "note": "the dezPriestFocusBoostBase pin",
+   "expr": "m['dezPriestFocusBoostBase']() != 18"
+  },
+  {
+   "note": "the dezPriestFocusDurationPerLevel pin",
+   "expr": "m['dezPriestFocusDurationPerLevel']() != 1"
+  },
+  {
+   "note": "the dezPriestFocusOtherScoresPenalty pin",
+   "expr": "m['dezPriestFocusOtherScoresPenalty']() != 2"
+  },
+  {
+   "note": "the dezPriestFocusAttemptCost pin",
+   "expr": "m['dezPriestFocusAttemptCost']() != 2"
+  },
+  {
+   "note": "the dezVoiceRangeFeet pin",
+   "expr": "m['dezVoiceRangeFeet']() != 180"
+  },
+  {
+   "note": "the dezVoiceRockFeet pin",
+   "expr": "m['dezVoiceRockFeet']() != 10"
+  },
+  {
+   "note": "the dezVoiceLeadInches pin",
+   "expr": "m['dezVoiceLeadInches']() != 3"
+  },
+  {
+   "note": "the dezVoiceAutoEnthralHd pin",
+   "expr": "m['dezVoiceAutoEnthralHd']() != 5"
+  },
+  {
+   "note": "the dezVoiceEnthralSpellLevel pin",
+   "expr": "m['dezVoiceEnthralSpellLevel']() != 2"
+  },
+  {
+   "note": "the dezVoiceHoldHours pin",
+   "expr": "m['dezVoiceHoldHours']() != 1"
+  },
+  {
+   "note": "the dezVoiceMassSuggestionLevel pin",
+   "expr": "m['dezVoiceMassSuggestionLevel']() != 6"
+  },
+  {
+   "note": "the dezVoiceEminenceCost pin",
+   "expr": "m['dezVoiceEminenceCost']() != 2"
+  },
+  {
+   "note": "the dezVoiceEminenceDays pin",
+   "expr": "m['dezVoiceEminenceDays']() != 7"
+  },
+  {
+   "note": "the dezWillEminenceCost pin",
+   "expr": "m['dezWillEminenceCost']() != 2"
+  },
+  {
+   "note": "the dezWillEminenceDays pin",
+   "expr": "m['dezWillEminenceDays']() != 1"
+  },
+  {
+   "note": "the dezDeceiveRetryTurns pin",
+   "expr": "m['dezDeceiveRetryTurns']() != 1"
+  },
+  {
+   "note": "the dezDeceiveEminenceCost pin",
+   "expr": "m['dezDeceiveEminenceCost']() != 2"
+  },
+  {
+   "note": "the dezDeceiveEminenceDays pin",
+   "expr": "m['dezDeceiveEminenceDays']() != 7"
+  },
+  {
+   "note": "the dezEminenceDurationPerLevel pin",
+   "expr": "m['dezEminenceDurationPerLevel']() != 1"
+  },
+  {
+   "note": "the dezEminenceReactionBonus pin",
+   "expr": "m['dezEminenceReactionBonus']() != 4"
+  },
+  {
+   "note": "the dezEminenceFearRadius pin",
+   "expr": "m['dezEminenceFearRadius']() != 30"
+  },
+  {
+   "note": "the dezEminenceFleeLevel pin",
+   "expr": "m['dezEminenceFleeLevel']() != 4"
+  },
+  {
+   "note": "the dezEminenceCost pin",
+   "expr": "m['dezEminenceCost']() != 2"
+  },
+  {
+   "note": "the dezEminenceDays pin",
+   "expr": "m['dezEminenceDays']() != 7"
+  },
+  {
+   "note": "the dezInvDelayBase pin",
+   "expr": "m['dezInvDelayBase']() != 5"
+  },
+  {
+   "note": "the dezInvHeroicFloor pin",
+   "expr": "m['dezInvHeroicFloor']() != -20"
+  },
+  {
+   "note": "the dezInvConsciousAt pin",
+   "expr": "m['dezInvConsciousAt']() != -19"
+  },
+  {
+   "note": "the dezInvEminenceCost pin",
+   "expr": "m['dezInvEminenceCost']() != 2"
+  },
+  {
+   "note": "the dezInvMinorDays pin",
+   "expr": "m['dezInvMinorDays']() != 1"
+  },
+  {
+   "note": "the dezInvSevereWeeks pin",
+   "expr": "m['dezInvSevereWeeks']() != 1"
+  },
+  {
+   "note": "the dezInvExtremeMonths pin",
+   "expr": "m['dezInvExtremeMonths']() != 1"
+  },
+  {
+   "note": "the dezInvExampleLevel pin",
+   "expr": "m['dezInvExampleLevel']() != 25"
+  },
+  {
+   "note": "the dezInvExampleHpLeft pin",
+   "expr": "m['dezInvExampleHpLeft']() != 52"
+  },
+  {
+   "note": "the dezInvExampleHpTotal pin",
+   "expr": "m['dezInvExampleHpTotal']() != 107"
+  },
+  {
+   "note": "the dezInvExampleDelay pin",
+   "expr": "m['dezInvExampleDelay']() != 10"
+  },
+  {
+   "note": "the dezInvExampleImmuneHp pin",
+   "expr": "m['dezInvExampleImmuneHp']() != 60"
+  },
+  {
+   "note": "the dezInvExampleHealRound pin",
+   "expr": "m['dezInvExampleHealRound']() != 4"
+  },
+  {
+   "note": "the dezInvExampleCon pin",
+   "expr": "m['dezInvExampleCon']() != 15"
+  },
+  {
+   "note": "the dezInvExampleShockRoll pin",
+   "expr": "m['dezInvExampleShockRoll']() != 96"
+  },
+  {
+   "note": "the dezInvExampleShockMargin pin",
+   "expr": "m['dezInvExampleShockMargin']() != 6"
+  },
+  {
+   "note": "the dezInvVampireLevels pin",
+   "expr": "m['dezInvVampireLevels']() != 2"
+  },
+  {
+   "note": "the dezInvParalysisWeeks pin",
+   "expr": "m['dezInvParalysisWeeks']() != 1"
+  },
+  {
+   "note": "the dezInvNineWeeks pin",
+   "expr": "m['dezInvNineWeeks']() != 9"
+  },
+  {
+   "note": "the dezLoanHours pin",
+   "expr": "m['dezLoanHours']() != 24"
+  },
+  {
+   "note": "the dezLoanBandCount pin",
+   "expr": "m['dezLoanBandCount']() != 4"
+  },
+  {
+   "note": "the dezLoanCost pin",
+   "expr": "m['dezLoanCost']() != 2"
+  },
+  {
+   "note": "the dezLoanDays pin",
+   "expr": "m['dezLoanDays']() != 7"
+  },
+  {
+   "note": "the dezSmiteBodyDiameter pin",
+   "expr": "m['dezSmiteBodyDiameter']() != 5"
+  },
+  {
+   "note": "the dezSmiteFarDiameter pin",
+   "expr": "m['dezSmiteFarDiameter']() != 30"
+  },
+  {
+   "note": "the dezSmiteLengthBase pin",
+   "expr": "m['dezSmiteLengthBase']() != 30"
+  },
+  {
+   "note": "the dezSmiteLengthStep pin",
+   "expr": "m['dezSmiteLengthStep']() != 20"
+  },
+  {
+   "note": "the dezSmiteAweSaveHd pin",
+   "expr": "m['dezSmiteAweSaveHd']() != 10"
+  },
+  {
+   "note": "the dezSmiteAweExtraDieSides pin",
+   "expr": "m['dezSmiteAweExtraDieSides']() != 8"
+  },
+  {
+   "note": "the dezSmiteBlindSaveHd pin",
+   "expr": "m['dezSmiteBlindSaveHd']() != 12"
+  },
+  {
+   "note": "the dezSmiteBlindMoveNum pin",
+   "expr": "m['dezSmiteBlindMoveNum']() != 2"
+  },
+  {
+   "note": "the dezSmiteBlindMoveDen pin",
+   "expr": "m['dezSmiteBlindMoveDen']() != 3"
+  },
+  {
+   "note": "the dezSmiteBlindPenalty pin",
+   "expr": "m['dezSmiteBlindPenalty']() != 4"
+  },
+  {
+   "note": "the dezSmiteDeafMoveNum pin",
+   "expr": "m['dezSmiteDeafMoveNum']() != 3"
+  },
+  {
+   "note": "the dezSmiteDeafMoveDen pin",
+   "expr": "m['dezSmiteDeafMoveDen']() != 4"
+  },
+  {
+   "note": "the dezSmiteDeafPenalty pin",
+   "expr": "m['dezSmiteDeafPenalty']() != 2"
+  },
+  {
+   "note": "the dezSmiteDeafSpellFailPct pin",
+   "expr": "m['dezSmiteDeafSpellFailPct']() != 50"
+  },
+  {
+   "note": "the dezSmiteBurnDice pin",
+   "expr": "m['dezSmiteBurnDice']() != 6"
+  },
+  {
+   "note": "the dezSmiteBurnSides pin",
+   "expr": "m['dezSmiteBurnSides']() != 8"
+  },
+  {
+   "note": "the dezSmiteDeathDice pin",
+   "expr": "m['dezSmiteDeathDice']() != 12"
+  },
+  {
+   "note": "the dezSmiteDeathDustHd pin",
+   "expr": "m['dezSmiteDeathDustHd']() != 4"
+  },
+  {
+   "note": "the dezSmiteImmobHd pin",
+   "expr": "m['dezSmiteImmobHd']() != 6"
+  },
+  {
+   "note": "the dezSmiteImmobTurnsDice pin",
+   "expr": "m['dezSmiteImmobTurnsDice']() != 1"
+  },
+  {
+   "note": "the dezSmiteImmobTurnsSides pin",
+   "expr": "m['dezSmiteImmobTurnsSides']() != 4"
+  },
+  {
+   "note": "the dezSmiteImmobTurnsBonus pin",
+   "expr": "m['dezSmiteImmobTurnsBonus']() != 2"
+  },
+  {
+   "note": "the dezSmiteSlowHd pin",
+   "expr": "m['dezSmiteSlowHd']() != 8"
+  },
+  {
+   "note": "the dezSmiteSlowSpellLevel pin",
+   "expr": "m['dezSmiteSlowSpellLevel']() != 3"
+  },
+  {
+   "note": "the dezSmiteSlowTurnsDice pin",
+   "expr": "m['dezSmiteSlowTurnsDice']() != 1"
+  },
+  {
+   "note": "the dezSmiteSlowTurnsSides pin",
+   "expr": "m['dezSmiteSlowTurnsSides']() != 4"
+  },
+  {
+   "note": "the dezSmiteSlowTurnsBonus pin",
+   "expr": "m['dezSmiteSlowTurnsBonus']() != 2"
+  },
+  {
+   "note": "the dezSmiteEminenceCost pin",
+   "expr": "m['dezSmiteEminenceCost']() != 2"
+  },
+  {
+   "note": "the dezSmiteDays pin",
+   "expr": "m['dezSmiteDays']() != 7"
+  },
+  {
+   "note": "the dezSmiteMarissaEminence pin",
+   "expr": "m['dezSmiteMarissaEminence']() != 4"
+  },
+  {
+   "note": "the dezSmiteMarissaBonus pin",
+   "expr": "m['dezSmiteMarissaBonus']() != 4"
+  },
+  {
+   "note": "the dezSmiteMarissaRoll1 pin",
+   "expr": "m['dezSmiteMarissaRoll1']() != 3"
+  },
+  {
+   "note": "the dezSmiteMarissaRoll2 pin",
+   "expr": "m['dezSmiteMarissaRoll2']() != 18"
+  },
+  {
+   "note": "the dezSmiteMarissaAfterFirst pin",
+   "expr": "m['dezSmiteMarissaAfterFirst']() != -2"
+  },
+  {
+   "note": "the dezSmiteMarissaAfterSecond pin",
+   "expr": "m['dezSmiteMarissaAfterSecond']() != -4"
+  },
+  {
+   "note": "the dezTalReqLevel pin",
+   "expr": "m['dezTalReqLevel']() != 12"
+  },
+  {
+   "note": "the dezTalBase pin",
+   "expr": "m['dezTalBase']() != 4"
+  },
+  {
+   "note": "the dezTalCostSlots pin",
+   "expr": "m['dezTalCostSlots']() != 1"
+  },
+  {
+   "note": "the dezTalCostCp pin",
+   "expr": "m['dezTalCostCp']() != 3"
+  },
+  {
+   "note": "the dezTalCostPerLevel pin",
+   "expr": "m['dezTalCostPerLevel']() != 100"
+  },
+  {
+   "note": "the dezTalHours pin",
+   "expr": "m['dezTalHours']() != 24"
+  },
+  {
+   "note": "the dezTalSeparateHours pin",
+   "expr": "m['dezTalSeparateHours']() != 1"
+  },
+  {
+   "note": "the dezTalInitBonus pin",
+   "expr": "m['dezTalInitBonus']() != 2"
+  },
+  {
+   "note": "the dezWulfStoredTotal pin",
+   "expr": "m['dezWulfStoredTotal']() != 21"
+  },
+  {
+   "note": "the dezWulfStored4th pin",
+   "expr": "m['dezWulfStored4th']() != 2"
+  },
+  {
+   "note": "the dezWulfStored3rd pin",
+   "expr": "m['dezWulfStored3rd']() != 2"
+  },
+  {
+   "note": "the dezWulfStored1st pin",
+   "expr": "m['dezWulfStored1st']() != 7"
+  },
+  {
+   "note": "the dezT43ConBonusStopsAfter9 pin",
+   "expr": "m['dezT43ConBonusStopsAfter9']() != 1"
+  },
+  {
+   "note": "the dezWizTenthLevelSpellsCount pin",
+   "expr": "m['dezWizTenthLevelSpellsCount']() != 1"
+  },
+  {
+   "note": "the dezWizIntroPhysicallyWeak pin",
+   "expr": "m['dezWizIntroPhysicallyWeak']() != 1"
+  },
+  {
+   "note": "the dezSageOneCategoryAlchemyOrChemistry pin",
+   "expr": "m['dezSageOneCategoryAlchemyOrChemistry']() != 1"
+  },
+  {
+   "note": "the dezSageOtherCategoryPlayerOrDm pin",
+   "expr": "m['dezSageOtherCategoryPlayerOrDm']() != 1"
+  },
+  {
+   "note": "the dezSageDifficultAnswersOtherRoutes pin",
+   "expr": "m['dezSageDifficultAnswersOtherRoutes']() != 1"
+  },
+  {
+   "note": "the dezWizFocusIntWisDex pin",
+   "expr": "m['dezWizFocusIntWisDex']() != 1"
+  },
+  {
+   "note": "the dezWizFocusOneBoostAtATime pin",
+   "expr": "m['dezWizFocusOneBoostAtATime']() != 1"
+  },
+  {
+   "note": "the dezWizFocusConcentrationRoundOnlyAction pin",
+   "expr": "m['dezWizFocusConcentrationRoundOnlyAction']() != 1"
+  },
+  {
+   "note": "the dezWizFocusBoostEndsAtWill pin",
+   "expr": "m['dezWizFocusBoostEndsAtWill']() != 1"
+  },
+  {
+   "note": "the dezWizFocusNoEffectIfEqualOrHigher pin",
+   "expr": "m['dezWizFocusNoEffectIfEqualOrHigher']() != 1"
+  },
+  {
+   "note": "the dezWizFocusSubabilitiesRaisedEqual pin",
+   "expr": "m['dezWizFocusSubabilitiesRaisedEqual']() != 1"
+  },
+  {
+   "note": "the dezWizFocusBonusesImmediate pin",
+   "expr": "m['dezWizFocusBonusesImmediate']() != 1"
+  },
+  {
+   "note": "the dezWizSigItemLikeWarriorSkill pin",
+   "expr": "m['dezWizSigItemLikeWarriorSkill']() != 1"
+  },
+  {
+   "note": "the dezWizSigItemOnePerType pin",
+   "expr": "m['dezWizSigItemOnePerType']() != 1"
+  },
+  {
+   "note": "the dezSculptRequiresFocusItem pin",
+   "expr": "m['dezSculptRequiresFocusItem']() != 1"
+  },
+  {
+   "note": "the dezSculptFocusNotConsumed pin",
+   "expr": "m['dezSculptFocusNotConsumed']() != 1"
+  },
+  {
+   "note": "the dezSculptFailCastsNormally pin",
+   "expr": "m['dezSculptFailCastsNormally']() != 1"
+  },
+  {
+   "note": "the dezSculptOnceOnly pin",
+   "expr": "m['dezSculptOnceOnly']() != 1"
+  },
+  {
+   "note": "the dezSculptNoTouchOrZeroRange pin",
+   "expr": "m['dezSculptNoTouchOrZeroRange']() != 1"
+  },
+  {
+   "note": "the dezSculptNoInstantaneousDuration pin",
+   "expr": "m['dezSculptNoInstantaneousDuration']() != 1"
+  },
+  {
+   "note": "the dezSculptLocalMultiplierFirst pin",
+   "expr": "m['dezSculptLocalMultiplierFirst']() != 1"
+  },
+  {
+   "note": "the dezSculptNoDicelessDamage pin",
+   "expr": "m['dezSculptNoDicelessDamage']() != 1"
+  },
+  {
+   "note": "the dezSculptIndividualDiceNotIncreased pin",
+   "expr": "m['dezSculptIndividualDiceNotIncreased']() != 1"
+  },
+  {
+   "note": "the dezSculptMetamagicAllowedIfNoDuplication pin",
+   "expr": "m['dezSculptMetamagicAllowedIfNoDuplication']() != 1"
+  },
+  {
+   "note": "the dezSculptFullCostPerSpell pin",
+   "expr": "m['dezSculptFullCostPerSpell']() != 1"
+  },
+  {
+   "note": "the dezSculptImprovementAllSpells pin",
+   "expr": "m['dezSculptImprovementAllSpells']() != 1"
+  },
+  {
+   "note": "the dezSculstRequirementsStillMet pin",
+   "expr": "m['dezSculstRequirementsStillMet']() != 1"
+  },
+  {
+   "note": "the dezAllPriestsCastTrueDweomers pin",
+   "expr": "m['dezAllPriestsCastTrueDweomers']() != 1"
+  },
+  {
+   "note": "the dezPriestTdMightBeCalled8th pin",
+   "expr": "m['dezPriestTdMightBeCalled8th']() != 1"
+  },
+  {
+   "note": "the dezPriestTdUsesDivinePower pin",
+   "expr": "m['dezPriestTdUsesDivinePower']() != 1"
+  },
+  {
+   "note": "the dezPriestTdMustPromoteDeityInterests pin",
+   "expr": "m['dezPriestTdMustPromoteDeityInterests']() != 1"
+  },
+  {
+   "note": "the dezPriestTdRequiresGoodStanding pin",
+   "expr": "m['dezPriestTdRequiresGoodStanding']() != 1"
+  },
+  {
+   "note": "the dezPriestTdSpherePortfolioLikelyGranted pin",
+   "expr": "m['dezPriestTdSpherePortfolioLikelyGranted']() != 1"
+  },
+  {
+   "note": "the dezPriestTdCheckSpheresWhenInDoubt pin",
+   "expr": "m['dezPriestTdCheckSpheresWhenInDoubt']() != 1"
+  },
+  {
+   "note": "the dezPriestsFormidableInCombat pin",
+   "expr": "m['dezPriestsFormidableInCombat']() != 1"
+  },
+  {
+   "note": "the dezT45ConBonusStopsAfter9 pin",
+   "expr": "m['dezT45ConBonusStopsAfter9']() != 1"
+  },
+  {
+   "note": "the dezQuestSpellNoSacrifice pin",
+   "expr": "m['dezQuestSpellNoSacrifice']() != 1"
+  },
+  {
+   "note": "the dezQuestSpellOtherRequirementsNormal pin",
+   "expr": "m['dezQuestSpellOtherRequirementsNormal']() != 1"
+  },
+  {
+   "note": "the dezTurningRepeatWhileSuccessful pin",
+   "expr": "m['dezTurningRepeatWhileSuccessful']() != 1"
+  },
+  {
+   "note": "the dezTurningStopsAfterFail pin",
+   "expr": "m['dezTurningStopsAfterFail']() != 1"
+  },
+  {
+   "note": "the dezTurningMixedGroupUselessOnUnaffected pin",
+   "expr": "m['dezTurningMixedGroupUselessOnUnaffected']() != 1"
+  },
+  {
+   "note": "the dezTurningWeakerContinueIfSucceed pin",
+   "expr": "m['dezTurningWeakerContinueIfSucceed']() != 1"
+  },
+  {
+   "note": "the dezWulfLichUnaffected pin",
+   "expr": "m['dezWulfLichUnaffected']() != 1"
+  },
+  {
+   "note": "the dezSpellSelectMinorOrLevelEitherWay pin",
+   "expr": "m['dezSpellSelectMinorOrLevelEitherWay']() != 1"
+  },
+  {
+   "note": "the dezSpellSelectDmOrPlayerChooses pin",
+   "expr": "m['dezSpellSelectDmOrPlayerChooses']() != 1"
+  },
+  {
+   "note": "the dezArmySingleTask pin",
+   "expr": "m['dezArmySingleTask']() != 1"
+  },
+  {
+   "note": "the dezArmyTaskWithinAlignment pin",
+   "expr": "m['dezArmyTaskWithinAlignment']() != 1"
+  },
+  {
+   "note": "the dezArmyOneAtATime pin",
+   "expr": "m['dezArmyOneAtATime']() != 1"
+  },
+  {
+   "note": "the dezArmyOncePerYear pin",
+   "expr": "m['dezArmyOncePerYear']() != 1"
+  },
+  {
+   "note": "the dezArmyOfficersHavePriests pin",
+   "expr": "m['dezArmyOfficersHavePriests']() != 1"
+  },
+  {
+   "note": "the dezArmyOpenWorshipRequired pin",
+   "expr": "m['dezArmyOpenWorshipRequired']() != 1"
+  },
+  {
+   "note": "the dezArmyGatherDoubledIfUncommon pin",
+   "expr": "m['dezArmyGatherDoubledIfUncommon']() != 1"
+  },
+  {
+   "note": "the dezArmySmallerAllowed pin",
+   "expr": "m['dezArmySmallerAllowed']() != 1"
+  },
+  {
+   "note": "the dezArmyPayOrCharismaCheck pin",
+   "expr": "m['dezArmyPayOrCharismaCheck']() != 1"
+  },
+  {
+   "note": "the dezArmyGoalWithinReach pin",
+   "expr": "m['dezArmyGoalWithinReach']() != 1"
+  },
+  {
+   "note": "the dezArmyDisbandIndependenceRisk pin",
+   "expr": "m['dezArmyDisbandIndependenceRisk']() != 1"
+  },
+  {
+   "note": "the dezPriestFocusWisStrCha pin",
+   "expr": "m['dezPriestFocusWisStrCha']() != 1"
+  },
+  {
+   "note": "the dezPriestFocusNoBonusSpells pin",
+   "expr": "m['dezPriestFocusNoBonusSpells']() != 1"
+  },
+  {
+   "note": "the dezPriestFocusWis19Immunity pin",
+   "expr": "m['dezPriestFocusWis19Immunity']() != 1"
+  },
+  {
+   "note": "the dezPriestFocusOneBoostAtATime pin",
+   "expr": "m['dezPriestFocusOneBoostAtATime']() != 1"
+  },
+  {
+   "note": "the dezPriestFocusConcentrationRoundOnlyAction pin",
+   "expr": "m['dezPriestFocusConcentrationRoundOnlyAction']() != 1"
+  },
+  {
+   "note": "the dezPriestFocusBoostEndsAtWill pin",
+   "expr": "m['dezPriestFocusBoostEndsAtWill']() != 1"
+  },
+  {
+   "note": "the dezPriestFocusNoEffectIfHigher pin",
+   "expr": "m['dezPriestFocusNoEffectIfHigher']() != 1"
+  },
+  {
+   "note": "the dezPriestFocusSubabilitiesRaisedEqual pin",
+   "expr": "m['dezPriestFocusSubabilitiesRaisedEqual']() != 1"
+  },
+  {
+   "note": "the dezVoiceFullRoundSpeech pin",
+   "expr": "m['dezVoiceFullRoundSpeech']() != 1"
+  },
+  {
+   "note": "the dezVoicePenetratesSilence pin",
+   "expr": "m['dezVoicePenetratesSilence']() != 1"
+  },
+  {
+   "note": "the dezVoiceAntimagicShields pin",
+   "expr": "m['dezVoiceAntimagicShields']() != 1"
+  },
+  {
+   "note": "the dezVoiceMagicalDeafnessBlocks pin",
+   "expr": "m['dezVoiceMagicalDeafnessBlocks']() != 1"
+  },
+  {
+   "note": "the dezVoiceSaveVsSpellOthers pin",
+   "expr": "m['dezVoiceSaveVsSpellOthers']() != 1"
+  },
+  {
+   "note": "the dezVoiceHearingOnlyRequired pin",
+   "expr": "m['dezVoiceHearingOnlyRequired']() != 1"
+  },
+  {
+   "note": "the dezVoiceUndeadAndCharmImmuneUnaffected pin",
+   "expr": "m['dezVoiceUndeadAndCharmImmuneUnaffected']() != 1"
+  },
+  {
+   "note": "the dezVoiceWis19Immune pin",
+   "expr": "m['dezVoiceWis19Immune']() != 1"
+  },
+  {
+   "note": "the dezVoiceJeeringBreaks pin",
+   "expr": "m['dezVoiceJeeringBreaks']() != 1"
+  },
+  {
+   "note": "the dezVoiceOneMassSuggestionPerUse pin",
+   "expr": "m['dezVoiceOneMassSuggestionPerUse']() != 1"
+  },
+  {
+   "note": "the dezVoiceNoSaveIfBeforeEnthralEnds pin",
+   "expr": "m['dezVoiceNoSaveIfBeforeEnthralEnds']() != 1"
+  },
+  {
+   "note": "the dezVoiceAffectsAllEnthralled pin",
+   "expr": "m['dezVoiceAffectsAllEnthralled']() != 1"
+  },
+  {
+   "note": "the dezVoiceIneffectiveAtZeroEminence pin",
+   "expr": "m['dezVoiceIneffectiveAtZeroEminence']() != 1"
+  },
+  {
+   "note": "the dezWillNegatesCompulsion pin",
+   "expr": "m['dezWillNegatesCompulsion']() != 1"
+  },
+  {
+   "note": "the dezWillSaveOnFail pin",
+   "expr": "m['dezWillSaveOnFail']() != 1"
+  },
+  {
+   "note": "the dezWillCoversAllCompulsions pin",
+   "expr": "m['dezWillCoversAllCompulsions']() != 1"
+  },
+  {
+   "note": "the dezWillEjectsMagicJarPsyche pin",
+   "expr": "m['dezWillEjectsMagicJarPsyche']() != 1"
+  },
+  {
+   "note": "the dezWillIneffectiveAtZero pin",
+   "expr": "m['dezWillIneffectiveAtZero']() != 1"
+  },
+  {
+   "note": "the dezDeceiveSeesFalsehoods pin",
+   "expr": "m['dezDeceiveSeesFalsehoods']() != 1"
+  },
+  {
+   "note": "the dezDeceiveAutoSpokenFalsehoods pin",
+   "expr": "m['dezDeceiveAutoSpokenFalsehoods']() != 1"
+  },
+  {
+   "note": "the dezDeceiveKnowsEvasionVsLie pin",
+   "expr": "m['dezDeceiveKnowsEvasionVsLie']() != 1"
+  },
+  {
+   "note": "the dezDeceiveNoTruthRevealed pin",
+   "expr": "m['dezDeceiveNoTruthRevealed']() != 1"
+  },
+  {
+   "note": "the dezDeceiveMagicSpeechUnheard pin",
+   "expr": "m['dezDeceiveMagicSpeechUnheard']() != 1"
+  },
+  {
+   "note": "the dezDeceiveImmediateSaveVsIllusion pin",
+   "expr": "m['dezDeceiveImmediateSaveVsIllusion']() != 1"
+  },
+  {
+   "note": "the dezDeceiveDmSecretRoll pin",
+   "expr": "m['dezDeceiveDmSecretRoll']() != 1"
+  },
+  {
+   "note": "the dezDeceiveSeesMist pin",
+   "expr": "m['dezDeceiveSeesMist']() != 1"
+  },
+  {
+   "note": "the dezDeceiveWorksVsVisualSpells pin",
+   "expr": "m['dezDeceiveWorksVsVisualSpells']() != 1"
+  },
+  {
+   "note": "the dezDeceiveNotVsInvisibility pin",
+   "expr": "m['dezDeceiveNotVsInvisibility']() != 1"
+  },
+  {
+   "note": "the dezDeceiveDefeatsDisplacementBlending pin",
+   "expr": "m['dezDeceiveDefeatsDisplacementBlending']() != 1"
+  },
+  {
+   "note": "the dezDeceiveNotVsPhysicalChanges pin",
+   "expr": "m['dezDeceiveNotVsPhysicalChanges']() != 1"
+  },
+  {
+   "note": "the dezDeceiveIneffectiveAtZero pin",
+   "expr": "m['dezDeceiveIneffectiveAtZero']() != 1"
+  },
+  {
+   "note": "the dezEminenceAuraUndetectable pin",
+   "expr": "m['dezEminenceAuraUndetectable']() != 1"
+  },
+  {
+   "note": "the dezEminenceHaloByAlignment pin",
+   "expr": "m['dezEminenceHaloByAlignment']() != 1"
+  },
+  {
+   "note": "the dezEminenceFearAtWill pin",
+   "expr": "m['dezEminenceFearAtWill']() != 1"
+  },
+  {
+   "note": "the dezEminenceSaveForStronger pin",
+   "expr": "m['dezEminenceSaveForStronger']() != 1"
+  },
+  {
+   "note": "the dezEminenceWorksVsFearImmune pin",
+   "expr": "m['dezEminenceWorksVsFearImmune']() != 1"
+  },
+  {
+   "note": "the dezEminenceCloakOrRemoveFearBreaks pin",
+   "expr": "m['dezEminenceCloakOrRemoveFearBreaks']() != 1"
+  },
+  {
+   "note": "the dezEminenceSkillBreaks pin",
+   "expr": "m['dezEminenceSkillBreaks']() != 1"
+  },
+  {
+   "note": "the dezEminenceOnceResistedImmuneRestOfDay pin",
+   "expr": "m['dezEminenceOnceResistedImmuneRestOfDay']() != 1"
+  },
+  {
+   "note": "the dezEminenceOpposingPriestShields pin",
+   "expr": "m['dezEminenceOpposingPriestShields']() != 1"
+  },
+  {
+   "note": "the dezEminenceIneffectiveAtZero pin",
+   "expr": "m['dezEminenceIneffectiveAtZero']() != 1"
+  },
+  {
+   "note": "the dezEminencePrereqFiveSkills pin",
+   "expr": "m['dezEminencePrereqFiveSkills']() != 1"
+  },
+  {
+   "note": "the dezEminenceDrainsBySkill pin",
+   "expr": "m['dezEminenceDrainsBySkill']() != 1"
+  },
+  {
+   "note": "the dezEminenceZeroBlocksAll pin",
+   "expr": "m['dezEminenceZeroBlocksAll']() != 1"
+  },
+  {
+   "note": "the dezSmiteConnectedButUsableAtZero pin",
+   "expr": "m['dezSmiteConnectedButUsableAtZero']() != 1"
+  },
+  {
+   "note": "the dezInvLikeWarriorHardiness pin",
+   "expr": "m['dezInvLikeWarriorHardiness']() != 1"
+  },
+  {
+   "note": "the dezInvSaveFirst pin",
+   "expr": "m['dezInvSaveFirst']() != 1"
+  },
+  {
+   "note": "the dezInvNoSimpleOrContinuingDamage pin",
+   "expr": "m['dezInvNoSimpleOrContinuingDamage']() != 1"
+  },
+  {
+   "note": "the dezInvNoCharmsEntangleImprison pin",
+   "expr": "m['dezInvNoCharmsEntangleImprison']() != 1"
+  },
+  {
+   "note": "the dezInvCureWithinDelayNoHarm pin",
+   "expr": "m['dezInvCureWithinDelayNoHarm']() != 1"
+  },
+  {
+   "note": "the dezInvShorterDurationNoEffect pin",
+   "expr": "m['dezInvShorterDurationNoEffect']() != 1"
+  },
+  {
+   "note": "the dezInvSystemShockAtEnd pin",
+   "expr": "m['dezInvSystemShockAtEnd']() != 1"
+  },
+  {
+   "note": "the dezInvShockSuccessHeals pin",
+   "expr": "m['dezInvShockSuccessHeals']() != 1"
+  },
+  {
+   "note": "the dezInvShockFailFullForce pin",
+   "expr": "m['dezInvShockFailFullForce']() != 1"
+  },
+  {
+   "note": "the dezInvMultipleEffectsSequential pin",
+   "expr": "m['dezInvMultipleEffectsSequential']() != 1"
+  },
+  {
+   "note": "the dezInvUnconsciousRecoversInstantly pin",
+   "expr": "m['dezInvUnconsciousRecoversInstantly']() != 1"
+  },
+  {
+   "note": "the dezInvHeroicRoundsEqualDelay pin",
+   "expr": "m['dezInvHeroicRoundsEqualDelay']() != 1"
+  },
+  {
+   "note": "the dezInvHeroicDeathAtDelayEnd pin",
+   "expr": "m['dezInvHeroicDeathAtDelayEnd']() != 1"
+  },
+  {
+   "note": "the dezInvRaiseDuringDelaySaves pin",
+   "expr": "m['dezInvRaiseDuringDelaySaves']() != 1"
+  },
+  {
+   "note": "the dezInvRegenNoShock pin",
+   "expr": "m['dezInvRegenNoShock']() != 1"
+  },
+  {
+   "note": "the dezInvAmuletNoShock pin",
+   "expr": "m['dezInvAmuletNoShock']() != 1"
+  },
+  {
+   "note": "the dezInvIneffectiveAtZero pin",
+   "expr": "m['dezInvIneffectiveAtZero']() != 1"
+  },
+  {
+   "note": "the dezInvDrainRestOfDay pin",
+   "expr": "m['dezInvDrainRestOfDay']() != 1"
+  },
+  {
+   "note": "the dezLoanTransfersVitality pin",
+   "expr": "m['dezLoanTransfersVitality']() != 1"
+  },
+  {
+   "note": "the dezLoanUnwillingNeedsAttackRoll pin",
+   "expr": "m['dezLoanUnwillingNeedsAttackRoll']() != 1"
+  },
+  {
+   "note": "the dezLoanLostLikeDamage pin",
+   "expr": "m['dezLoanLostLikeDamage']() != 1"
+  },
+  {
+   "note": "the dezLoanDonorDiesIfInsufficient pin",
+   "expr": "m['dezLoanDonorDiesIfInsufficient']() != 1"
+  },
+  {
+   "note": "the dezLoanUselessAtZero pin",
+   "expr": "m['dezLoanUselessAtZero']() != 1"
+  },
+  {
+   "note": "the dezSmiteConeAnyDirection pin",
+   "expr": "m['dezSmiteConeAnyDirection']() != 1"
+  },
+  {
+   "note": "the dezSmiteDmChoosesEffect pin",
+   "expr": "m['dezSmiteDmChoosesEffect']() != 1"
+  },
+  {
+   "note": "the dezSmiteOnlyEnemiesHarmed pin",
+   "expr": "m['dezSmiteOnlyEnemiesHarmed']() != 1"
+  },
+  {
+   "note": "the dezSmiteAweDefault pin",
+   "expr": "m['dezSmiteAweDefault']() != 1"
+  },
+  {
+   "note": "the dezSmiteAweDepiction pin",
+   "expr": "m['dezSmiteAweDepiction']() != 1"
+  },
+  {
+   "note": "the dezSmiteAweOneRoundEvenOnSave pin",
+   "expr": "m['dezSmiteAweOneRoundEvenOnSave']() != 1"
+  },
+  {
+   "note": "the dezSmiteAweRequiresMotionless pin",
+   "expr": "m['dezSmiteAweRequiresMotionless']() != 1"
+  },
+  {
+   "note": "the dezSmiteAweLatecomersSubject pin",
+   "expr": "m['dezSmiteAweLatecomersSubject']() != 1"
+  },
+  {
+   "note": "the dezSmiteAweMotionBreaks pin",
+   "expr": "m['dezSmiteAweMotionBreaks']() != 1"
+  },
+  {
+   "note": "the dezSmiteAweDistractionBreaks pin",
+   "expr": "m['dezSmiteAweDistractionBreaks']() != 1"
+  },
+  {
+   "note": "the dezSmiteBlindTouchCastingOnly pin",
+   "expr": "m['dezSmiteBlindTouchCastingOnly']() != 1"
+  },
+  {
+   "note": "the dezSmiteBlindUntilHealed pin",
+   "expr": "m['dezSmiteBlindUntilHealed']() != 1"
+  },
+  {
+   "note": "the dezSmiteBurnAshNoRegen pin",
+   "expr": "m['dezSmiteBurnAshNoRegen']() != 1"
+  },
+  {
+   "note": "the dezSmiteBurnEquipmentSaves pin",
+   "expr": "m['dezSmiteBurnEquipmentSaves']() != 1"
+  },
+  {
+   "note": "the dezSmiteBurnHeatless pin",
+   "expr": "m['dezSmiteBurnHeatless']() != 1"
+  },
+  {
+   "note": "the dezSmiteDeafUntilHealed pin",
+   "expr": "m['dezSmiteDeafUntilHealed']() != 1"
+  },
+  {
+   "note": "the dezSmiteDeathDoubledBurn pin",
+   "expr": "m['dezSmiteDeathDoubledBurn']() != 1"
+  },
+  {
+   "note": "the dezSmiteImmobCrystalline pin",
+   "expr": "m['dezSmiteImmobCrystalline']() != 1"
+  },
+  {
+   "note": "the dezSmiteImmobSaveVsPetrification pin",
+   "expr": "m['dezSmiteImmobSaveVsPetrification']() != 1"
+  },
+  {
+   "note": "the dezSmiteImmobFreeActionUseless pin",
+   "expr": "m['dezSmiteImmobFreeActionUseless']() != 1"
+  },
+  {
+   "note": "the dezSmiteImmobShatterKill pin",
+   "expr": "m['dezSmiteImmobShatterKill']() != 1"
+  },
+  {
+   "note": "the dezSmitePlagueDebilitating pin",
+   "expr": "m['dezSmitePlagueDebilitating']() != 1"
+  },
+  {
+   "note": "the dezSmitePlagueNotContagiousOrFatal pin",
+   "expr": "m['dezSmitePlagueNotContagiousOrFatal']() != 1"
+  },
+  {
+   "note": "the dezSmitePlagueHigherLevelCure pin",
+   "expr": "m['dezSmitePlagueHigherLevelCure']() != 1"
+  },
+  {
+   "note": "the dezSmitePlagueWhenOffensive pin",
+   "expr": "m['dezSmitePlagueWhenOffensive']() != 1"
+  },
+  {
+   "note": "the dezSmiteSlowWhenNoImmediateThreat pin",
+   "expr": "m['dezSmiteSlowWhenNoImmediateThreat']() != 1"
+  },
+  {
+   "note": "the dezSmiteNoRollWithPositiveEminence pin",
+   "expr": "m['dezSmiteNoRollWithPositiveEminence']() != 1"
+  },
+  {
+   "note": "the dezSmiteCheckAtZeroOrLess pin",
+   "expr": "m['dezSmiteCheckAtZeroOrLess']() != 1"
+  },
+  {
+   "note": "the dezSmiteFailDispleasesDeity pin",
+   "expr": "m['dezSmiteFailDispleasesDeity']() != 1"
+  },
+  {
+   "note": "the dezSmiteFailMaySmitePriest pin",
+   "expr": "m['dezSmiteFailMaySmitePriest']() != 1"
+  },
+  {
+   "note": "the dezSmiteMarissaAweBrokenByAttack pin",
+   "expr": "m['dezSmiteMarissaAweBrokenByAttack']() != 1"
+  },
+  {
+   "note": "the dezTalCastAtDayStart pin",
+   "expr": "m['dezTalCastAtDayStart']() != 1"
+  },
+  {
+   "note": "the dezTalSmallObject pin",
+   "expr": "m['dezTalSmallObject']() != 1"
+  },
+  {
+   "note": "the dezTalRollToPlace pin",
+   "expr": "m['dezTalRollToPlace']() != 1"
+  },
+  {
+   "note": "the dezTalFailWastesSpell pin",
+   "expr": "m['dezTalFailWastesSpell']() != 1"
+  },
+  {
+   "note": "the dezTalComponentsRequired pin",
+   "expr": "m['dezTalComponentsRequired']() != 1"
+  },
+  {
+   "note": "the dezTalCastingEffectsOnFail pin",
+   "expr": "m['dezTalCastingEffectsOnFail']() != 1"
+  },
+  {
+   "note": "the dezTalTotalCappedAtLevel pin",
+   "expr": "m['dezTalTotalCappedAtLevel']() != 1"
+  },
+  {
+   "note": "the dezTalCapSharedLadder pin",
+   "expr": "m['dezTalCapSharedLadder']() != 1"
+  },
+  {
+   "note": "the dezTalReleaseRequiresContact pin",
+   "expr": "m['dezTalReleaseRequiresContact']() != 1"
+  },
+  {
+   "note": "the dezTalReleaseUndisruptable pin",
+   "expr": "m['dezTalReleaseUndisruptable']() != 1"
+  },
+  {
+   "note": "the dezTalGaggedOrSilencedBlocks pin",
+   "expr": "m['dezTalGaggedOrSilencedBlocks']() != 1"
+  },
+  {
+   "note": "the dezTalDestroysTalisman pin",
+   "expr": "m['dezTalDestroysTalisman']() != 1"
+  },
+  {
+   "note": "the dezTalOnlyStorerReleases pin",
+   "expr": "m['dezTalOnlyStorerReleases']() != 1"
+  },
+  {
+   "note": "the dezTalNoRememorizeBefore24h pin",
+   "expr": "m['dezTalNoRememorizeBefore24h']() != 1"
+  },
+  {
+   "note": "the dezTalNoTransferBack pin",
+   "expr": "m['dezTalNoTransferBack']() != 1"
+  },
+  {
+   "note": "the dezTalDestroyedSpellLost pin",
+   "expr": "m['dezTalDestroyedSpellLost']() != 1"
+  },
+  {
+   "note": "the dezTalFadesOnReleaseOrLoss pin",
+   "expr": "m['dezTalFadesOnReleaseOrLoss']() != 1"
+  },
+  {
+   "note": "the dezTalCastsWhereFactorDisallows pin",
+   "expr": "m['dezTalCastsWhereFactorDisallows']() != 1"
+  },
+  {
+   "note": "the dezTalStoreNeedsLocalConditions pin",
+   "expr": "m['dezTalStoreNeedsLocalConditions']() != 1"
+  },
+  {
+   "note": "the dezTalInitUnaffectedByFactor pin",
+   "expr": "m['dezTalInitUnaffectedByFactor']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the DMO wizard advancement pins": [
+   {
+    "kind": "const",
+    "name": "dezWizAdvLimit"
+   },
+   {
+    "kind": "const",
+    "name": "dezWizSkillPauseLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezT43RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dezT43XpStep"
+   },
+   {
+    "kind": "const",
+    "name": "dezT43HpBase"
+   },
+   {
+    "kind": "bool",
+    "name": "dezT43ConBonusStopsAfter9"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizTenthLevelSpellsCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizIntroPhysicallyWeak"
+   },
+   {
+    "kind": "table",
+    "name": "dezT43Grid"
+   }
+  ],
+  "the DMO wizard spell-progression pins": [
+   {
+    "kind": "const",
+    "name": "dezT44RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dezT44Grid"
+   }
+  ],
+  "the DMO sage ability pins": [
+   {
+    "kind": "const",
+    "name": "dezSageStartLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageCategoryCount"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageBaseChance"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageSpecificLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageExactingLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageBookDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageBookCost"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageResearchWeeksDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageResearchWeeksBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageResearchCostPerWeek"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageEsotericSpellMinLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezSageEsotericSpellMaxLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSageOneCategoryAlchemyOrChemistry"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSageOtherCategoryPlayerOrDm"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSageDifficultAnswersOtherRoutes"
+   }
+  ],
+  "the DMO mental focus pins": [
+   {
+    "kind": "const",
+    "name": "dezWizFocusBoostBase"
+   },
+   {
+    "kind": "const",
+    "name": "dezWizFocusDurationPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezWizFocusOtherScoresPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dezWizFocusAttemptCost"
+   },
+   {
+    "kind": "chain",
+    "name": "dezWizFocusBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizFocusIntWisDex"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizFocusOneBoostAtATime"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizFocusConcentrationRoundOnlyAction"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizFocusBoostEndsAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizFocusNoEffectIfEqualOrHigher"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizFocusSubabilitiesRaisedEqual"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizFocusBonusesImmediate"
+   }
+  ],
+  "the DMO wizard signature item pins": [
+   {
+    "kind": "const",
+    "name": "dezWizSigItemCategoryCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizSigItemLikeWarriorSkill"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWizSigItemOnePerType"
+   }
+  ],
+  "the DMO spell sculpting pins": [
+   {
+    "kind": "const",
+    "name": "dezSculptFocusCostPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezSculptDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "dezSculptDurationMultiple"
+   },
+   {
+    "kind": "const",
+    "name": "dezSculptRangeMultiple"
+   },
+   {
+    "kind": "const",
+    "name": "dezSculptMinCastingTime"
+   },
+   {
+    "kind": "const",
+    "name": "dezSculptFailDestroysRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dezSculptFireballBaseDice"
+   },
+   {
+    "kind": "const",
+    "name": "dezSculptFireballSculptedDice"
+   },
+   {
+    "kind": "const",
+    "name": "dezSculptBurningHandsBaseDice"
+   },
+   {
+    "kind": "const",
+    "name": "dezSculptMagicMissileBaseDice"
+   },
+   {
+    "kind": "chain",
+    "name": "dezSpellCapBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptRequiresFocusItem"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptFocusNotConsumed"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptFailCastsNormally"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptOnceOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptNoTouchOrZeroRange"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptNoInstantaneousDuration"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptLocalMultiplierFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptNoDicelessDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptIndividualDiceNotIncreased"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptMetamagicAllowedIfNoDuplication"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptFullCostPerSpell"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculptImprovementAllSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSculstRequirementsStillMet"
+   }
+  ],
+  "the DMO priest doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dezPriestAdvLimit"
+   },
+   {
+    "kind": "const",
+    "name": "dezPriestSkillLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezPriestTdStartLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dezAllPriestsCastTrueDweomers"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestTdMightBeCalled8th"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestTdUsesDivinePower"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestTdMustPromoteDeityInterests"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestTdRequiresGoodStanding"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestTdSpherePortfolioLikelyGranted"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestTdCheckSpheresWhenInDoubt"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestsFormidableInCombat"
+   }
+  ],
+  "the DMO priest advancement pins": [
+   {
+    "kind": "const",
+    "name": "dezT45RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dezT45ClericXpStep"
+   },
+   {
+    "kind": "const",
+    "name": "dezT45DruidXpStep"
+   },
+   {
+    "kind": "const",
+    "name": "dezT45HpBase"
+   },
+   {
+    "kind": "const",
+    "name": "dezT45HpStep"
+   },
+   {
+    "kind": "bool",
+    "name": "dezT45ConBonusStopsAfter9"
+   },
+   {
+    "kind": "table",
+    "name": "dezT45Grid"
+   }
+  ],
+  "the DMO priest spell-progression pins": [
+   {
+    "kind": "const",
+    "name": "dezT47RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dezT47Grid"
+   }
+  ],
+  "the DMO priest powers pins": [
+   {
+    "kind": "const",
+    "name": "dezQuestSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezImprovedTurningLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezSpellSelectLevel1"
+   },
+   {
+    "kind": "const",
+    "name": "dezSpellSelectLevel2"
+   },
+   {
+    "kind": "const",
+    "name": "dezSpellSelectLevel3"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfTurnLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfTurnRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfDestroyDiceCount"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfDestroyMajorSides"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfDestroyMinorSides"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfVampireRollSides"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfVampireRollResult"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfVampires"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfVampiresUnaffected"
+   },
+   {
+    "kind": "bool",
+    "name": "dezQuestSpellNoSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "dezQuestSpellOtherRequirementsNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTurningRepeatWhileSuccessful"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTurningStopsAfterFail"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTurningMixedGroupUselessOnUnaffected"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTurningWeakerContinueIfSucceed"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWulfLichUnaffected"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSpellSelectMinorOrLevelEitherWay"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSpellSelectDmOrPlayerChooses"
+   }
+  ],
+  "the DMO holy army pins": [
+   {
+    "kind": "const",
+    "name": "dezArmyMinLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyTroopsPerXp"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyExampleTroops"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyExamplePriestLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyExampleCommander"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyExampleSubcommander"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyExampleLieutenant"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyExampleSergeant"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyPaladinChance"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyRangerChance"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyGatherWeeksPer500"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyDurationMonthsPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyTroopPayLow"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyTroopPayHigh"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyOfficerPayPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyExtensionDice"
+   },
+   {
+    "kind": "const",
+    "name": "dezArmyExtensionDieSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmySingleTask"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmyTaskWithinAlignment"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmyOneAtATime"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmyOncePerYear"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmyOfficersHavePriests"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmyOpenWorshipRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmyGatherDoubledIfUncommon"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmySmallerAllowed"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmyPayOrCharismaCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmyGoalWithinReach"
+   },
+   {
+    "kind": "bool",
+    "name": "dezArmyDisbandIndependenceRisk"
+   }
+  ],
+  "the DMO divine strength pins": [
+   {
+    "kind": "const",
+    "name": "dezPriestFocusBoostBase"
+   },
+   {
+    "kind": "const",
+    "name": "dezPriestFocusDurationPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezPriestFocusOtherScoresPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dezPriestFocusAttemptCost"
+   },
+   {
+    "kind": "chain",
+    "name": "dezPriestFocusBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestFocusWisStrCha"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestFocusNoBonusSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestFocusWis19Immunity"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestFocusOneBoostAtATime"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestFocusConcentrationRoundOnlyAction"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestFocusBoostEndsAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestFocusNoEffectIfHigher"
+   },
+   {
+    "kind": "bool",
+    "name": "dezPriestFocusSubabilitiesRaisedEqual"
+   }
+  ],
+  "the DMO divine voice pins": [
+   {
+    "kind": "const",
+    "name": "dezVoiceRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dezVoiceRockFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dezVoiceLeadInches"
+   },
+   {
+    "kind": "const",
+    "name": "dezVoiceAutoEnthralHd"
+   },
+   {
+    "kind": "const",
+    "name": "dezVoiceEnthralSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezVoiceHoldHours"
+   },
+   {
+    "kind": "const",
+    "name": "dezVoiceMassSuggestionLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezVoiceEminenceCost"
+   },
+   {
+    "kind": "const",
+    "name": "dezVoiceEminenceDays"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceFullRoundSpeech"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoicePenetratesSilence"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceAntimagicShields"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceMagicalDeafnessBlocks"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceSaveVsSpellOthers"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceHearingOnlyRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceUndeadAndCharmImmuneUnaffected"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceWis19Immune"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceJeeringBreaks"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceOneMassSuggestionPerUse"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceNoSaveIfBeforeEnthralEnds"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceAffectsAllEnthralled"
+   },
+   {
+    "kind": "bool",
+    "name": "dezVoiceIneffectiveAtZeroEminence"
+   }
+  ],
+  "the DMO divine will pins": [
+   {
+    "kind": "const",
+    "name": "dezWillEminenceCost"
+   },
+   {
+    "kind": "const",
+    "name": "dezWillEminenceDays"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWillNegatesCompulsion"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWillSaveOnFail"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWillCoversAllCompulsions"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWillEjectsMagicJarPsyche"
+   },
+   {
+    "kind": "bool",
+    "name": "dezWillIneffectiveAtZero"
+   }
+  ],
+  "the DMO detect deception pins": [
+   {
+    "kind": "const",
+    "name": "dezDeceiveRetryTurns"
+   },
+   {
+    "kind": "const",
+    "name": "dezDeceiveEminenceCost"
+   },
+   {
+    "kind": "const",
+    "name": "dezDeceiveEminenceDays"
+   },
+   {
+    "kind": "chain",
+    "name": "dezDeceiveDurationBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveSeesFalsehoods"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveAutoSpokenFalsehoods"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveKnowsEvasionVsLie"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveNoTruthRevealed"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveMagicSpeechUnheard"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveImmediateSaveVsIllusion"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveDmSecretRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveSeesMist"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveWorksVsVisualSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveNotVsInvisibility"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveDefeatsDisplacementBlending"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveNotVsPhysicalChanges"
+   },
+   {
+    "kind": "bool",
+    "name": "dezDeceiveIneffectiveAtZero"
+   }
+  ],
+  "the DMO eminence pins": [
+   {
+    "kind": "const",
+    "name": "dezEminenceDurationPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezEminenceReactionBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dezEminenceFearRadius"
+   },
+   {
+    "kind": "const",
+    "name": "dezEminenceFleeLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezEminenceCost"
+   },
+   {
+    "kind": "const",
+    "name": "dezEminenceDays"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceAuraUndetectable"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceHaloByAlignment"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceFearAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceSaveForStronger"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceWorksVsFearImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceCloakOrRemoveFearBreaks"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceSkillBreaks"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceOnceResistedImmuneRestOfDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceOpposingPriestShields"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceIneffectiveAtZero"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminencePrereqFiveSkills"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceDrainsBySkill"
+   },
+   {
+    "kind": "bool",
+    "name": "dezEminenceZeroBlocksAll"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteConnectedButUsableAtZero"
+   }
+  ],
+  "the DMO invincibility pins": [
+   {
+    "kind": "const",
+    "name": "dezInvDelayBase"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvHeroicFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvConsciousAt"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvEminenceCost"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvMinorDays"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvSevereWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvExtremeMonths"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvExampleLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvExampleHpLeft"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvExampleHpTotal"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvExampleDelay"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvExampleImmuneHp"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvExampleHealRound"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvExampleCon"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvExampleShockRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvExampleShockMargin"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvVampireLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvParalysisWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "dezInvNineWeeks"
+   },
+   {
+    "kind": "chain",
+    "name": "dezInvDelayBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvLikeWarriorHardiness"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvSaveFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvNoSimpleOrContinuingDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvNoCharmsEntangleImprison"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvCureWithinDelayNoHarm"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvShorterDurationNoEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvSystemShockAtEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvShockSuccessHeals"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvShockFailFullForce"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvMultipleEffectsSequential"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvUnconsciousRecoversInstantly"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvHeroicRoundsEqualDelay"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvHeroicDeathAtDelayEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvRaiseDuringDelaySaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvRegenNoShock"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvAmuletNoShock"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvIneffectiveAtZero"
+   },
+   {
+    "kind": "bool",
+    "name": "dezInvDrainRestOfDay"
+   }
+  ],
+  "the DMO loan pins": [
+   {
+    "kind": "const",
+    "name": "dezLoanHours"
+   },
+   {
+    "kind": "const",
+    "name": "dezLoanBandCount"
+   },
+   {
+    "kind": "const",
+    "name": "dezLoanCost"
+   },
+   {
+    "kind": "const",
+    "name": "dezLoanDays"
+   },
+   {
+    "kind": "chain",
+    "name": "dezLoanBand"
+   },
+   {
+    "kind": "table",
+    "name": "dezLoanGrid"
+   },
+   {
+    "kind": "bool",
+    "name": "dezLoanTransfersVitality"
+   },
+   {
+    "kind": "bool",
+    "name": "dezLoanUnwillingNeedsAttackRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dezLoanLostLikeDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "dezLoanDonorDiesIfInsufficient"
+   },
+   {
+    "kind": "bool",
+    "name": "dezLoanUselessAtZero"
+   }
+  ],
+  "the DMO smite pins": [
+   {
+    "kind": "const",
+    "name": "dezSmiteBodyDiameter"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteFarDiameter"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteLengthBase"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteLengthStep"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteAweSaveHd"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteAweExtraDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteBlindSaveHd"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteBlindMoveNum"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteBlindMoveDen"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteBlindPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteDeafMoveNum"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteDeafMoveDen"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteDeafPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteDeafSpellFailPct"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteBurnDice"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteBurnSides"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteDeathDice"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteDeathDustHd"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteImmobHd"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteImmobTurnsDice"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteImmobTurnsSides"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteImmobTurnsBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteSlowHd"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteSlowSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteSlowTurnsDice"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteSlowTurnsSides"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteSlowTurnsBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteEminenceCost"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteDays"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteMarissaEminence"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteMarissaBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteMarissaRoll1"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteMarissaRoll2"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteMarissaAfterFirst"
+   },
+   {
+    "kind": "const",
+    "name": "dezSmiteMarissaAfterSecond"
+   },
+   {
+    "kind": "chain",
+    "name": "dezSmiteConeBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteConeAnyDirection"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteDmChoosesEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteOnlyEnemiesHarmed"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteAweDefault"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteAweDepiction"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteAweOneRoundEvenOnSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteAweRequiresMotionless"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteAweLatecomersSubject"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteAweMotionBreaks"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteAweDistractionBreaks"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteBlindTouchCastingOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteBlindUntilHealed"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteBurnAshNoRegen"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteBurnEquipmentSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteBurnHeatless"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteDeafUntilHealed"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteDeathDoubledBurn"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteImmobCrystalline"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteImmobSaveVsPetrification"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteImmobFreeActionUseless"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteImmobShatterKill"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmitePlagueDebilitating"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmitePlagueNotContagiousOrFatal"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmitePlagueHigherLevelCure"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmitePlagueWhenOffensive"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteSlowWhenNoImmediateThreat"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteNoRollWithPositiveEminence"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteCheckAtZeroOrLess"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteFailDispleasesDeity"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteFailMaySmitePriest"
+   },
+   {
+    "kind": "bool",
+    "name": "dezSmiteMarissaAweBrokenByAttack"
+   }
+  ],
+  "the DMO spell talisman pins": [
+   {
+    "kind": "const",
+    "name": "dezTalReqLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezTalBase"
+   },
+   {
+    "kind": "const",
+    "name": "dezTalCostSlots"
+   },
+   {
+    "kind": "const",
+    "name": "dezTalCostCp"
+   },
+   {
+    "kind": "const",
+    "name": "dezTalCostPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dezTalHours"
+   },
+   {
+    "kind": "const",
+    "name": "dezTalSeparateHours"
+   },
+   {
+    "kind": "const",
+    "name": "dezTalInitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfStoredTotal"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfStored4th"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfStored3rd"
+   },
+   {
+    "kind": "const",
+    "name": "dezWulfStored1st"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalCastAtDayStart"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalSmallObject"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalRollToPlace"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalFailWastesSpell"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalComponentsRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalCastingEffectsOnFail"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalTotalCappedAtLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalCapSharedLadder"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalReleaseRequiresContact"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalReleaseUndisruptable"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalGaggedOrSilencedBlocks"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalDestroysTalisman"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalOnlyStorerReleases"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalNoRememorizeBefore24h"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalNoTransferBack"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalDestroyedSpellLost"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalFadesOnReleaseOrLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalCastsWhereFactorDisallows"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalStoreNeedsLocalConditions"
+   },
+   {
+    "kind": "bool",
+    "name": "dezTalInitUnaffectedByFactor"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the wizards box closes",
+   "from": "  - [ ] Wizards (pp. 156-159) - beyond 20th (Table\n    43: Wizard Advancement Beyond 20th Level, p. 156;\n    Table 44: Wizard Spell Progression, p. 157), the\n    wizard skills",
+   "to": "  - [x] Wizards (pp. 156-159) - beyond 20th (Table\n    43: Wizard Advancement Beyond 20th Level, p. 156;\n    Table 44: Wizard Spell Progression, p. 157), the\n    wizard skills - R610: the dez T43 and T44 grids\n    (375K XP steps, the 10+N d4 hit points, the spell\n    columns through 10th), the sage ability (6-or-less\n    base chance, 1d6 books at 24th and 27th), and the\n    three wizard skills pinned (mental focus with the\n    18-to-22 boost ladder, signature item with its\n    six categories, spell sculpting with the 1st-to-\n    7th cap ladder and the fireball/burning hands/\n    magic missile worked examples)"
+  },
+  {
+   "note": "the priests box closes",
+   "from": "  - [ ] Priests (pp. 159-167) - beyond 20th (Table\n    45: Priest Advancement Beyond 20th Level, p. 160;\n    Table 46: Priest Spell Progression, p. 161), the\n    priest skills",
+   "to": "  - [x] Priests (pp. 159-167) - beyond 20th (Table\n    45: Priest Advancement Beyond 20th Level, p. 160;\n    Table 46: Priest Spell Progression, p. 161), the\n    priest skills - R610: the dez T45 grid (cleric\n    225K and druid 500K XP steps, the 9+N d8 hit\n    points), the priest spell progression grid (the\n    printed body caption reads Table 47 while the\n    contents reads Table 46 - held per the body\n    caption), the 10th-level-spell doctrine, the\n    quest spell, improved turning and spell-selection\n    powers, the holy army, and all nine priest skills\n    pinned (divine strength, divine voice, divine\n    will, detect deception, eminence, invincibility,\n    loan, smite, spell talisman - the talisman is\n    absent from the Table 40 roster)"
+  }
+ ],
+ "gap_census": {
+  "closed": 89,
+  "open": 7
+ },
+ "caller_files": [],
+ "inline_count": 390,
+ "audit_comment": "DMO Chapter 7 round three of five (printed pp. 156-167): the Table 43 wizard advancement grid (375K XP steps, the proficiency columns, the 10+N d4 hit points), the Table 44 wizard spell progression with its true dweomer column, the sage ability thresholds and its 1d3+1-weeks research example, the wizard skills - mental focus with the 18-to-22 boost ladder, the six signature item categories, spell sculpting with its fireball/burning hands/magic missile worked examples and the shared 1st-to-7th cap chain; the priest true dweomer doctrine, the Table 45 advancement grid (cleric and druid XP ladders, the 9+N d8 hit points), the priest spell progression grid (body caption Table 47, contents Table 46), the quest spell, improved turning with the Wulf example, spell selection at 21/25/27, the holy army with its halving officer chain; and the nine priest skills - divine strength (18-to-22 ladder), divine voice (180 feet, rock and lead penetration, the enthrall and mass suggestion rules), divine will, detect deception (the one-to-five turn duration ladder), eminence (the 30-foot fear, the +4 reaction bonus, the five-skill prerequisite list with its printed divine will tension), invincibility (the 5/10/15-round delay ladder, the 96-percent system shock example, the nine-week vampire-and-lich sum), loan (the 1d8+2 to 4d6+8 grid), smite (the 30-to-110-foot cone ladder, all nine deific effects, the Marissa example) and the spell talisman (the Wulf storage example)."
+}

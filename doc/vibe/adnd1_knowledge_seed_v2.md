@@ -11351,6 +11351,50 @@ when both halves land.
   free (dex family next). Audit:
   "R609 DMO high-level skills audit";
   include after rules/dmohighlevel.h.
+- R609 LANDED 2026-10-18: commit
+  d92d4d53d94bb405374b2c76163eddad
+  1a52c051 (census 531 -> 532,
+  pushed a3960f0..d92d4d5),
+  HIGH-LEVEL SKILLS AND WARRIORS,
+  printed pp. 145-156, DMO Chapter 7
+  round two of five per the split
+  plan - THREE boxes flip (Table 40,
+  Table 41, Warriors; the Chapter 7
+  parent stays open until R612; gap
+  census now 87 closed / 9 open):
+  rules/dmohighskills.h, prefix dey
+  (verified free), 293 inlines (110
+  consts, 164 bools, 7 chains, 12
+  table columns), 3 grids (T40 roster
+  33x5 in four class bands - warriors
+  0-10, wizards 11-13, priests 14-21,
+  rogues 22-32; T41 modifiers 11x1 via
+  the deyT41Band chain; T42 warrior
+  advancement 11x6), 274 examples,
+  29 table_checks, 547-mutant
+  battery 0 missed. CONTESTED CELLS
+  settled against the physical copy
+  (user-confirmed 2026-10-18): Divine
+  Voice and Detect Deception cost
+  cells are BLANK in print (pinned as
+  -99 printed blanks with the
+  sentinel census), the bravery
+  prerequisite line prints
+  "invulnerability" (pinned verbatim,
+  both captures + physical agree),
+  Table 42 row 20 reads weapon 10,
+  nonweapon 9. DELIVERY: raw JSON in
+  the canvas (user-set: b64 NOT
+  needed anymore), spec 128073 bytes,
+  md5 dd57b4ebba4b37c5623c43db948
+  02b38 verified byte-exact before
+  ./rn. NEXT - R610: Wizards and
+  Priests, Tables 43-46 (pp. 156-
+  167); consult the gap report at
+  HEAD d92d4d5; verify next prefix
+  free (dez family next). Audit:
+  "R610 DMO wizard-priest audit";
+  include after rules/dmohighskills.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

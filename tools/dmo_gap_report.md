@@ -538,14 +538,33 @@ tables are data and close on table pins.
     attack, bravery, captivate, death blow,
     frighten/challenge, hardiness, inner focus,
     sense danger, signature item, signature mount)
-  - [ ] Wizards (pp. 156-159) - beyond 20th (Table
+  - [x] Wizards (pp. 156-159) - beyond 20th (Table
     43: Wizard Advancement Beyond 20th Level, p. 156;
     Table 44: Wizard Spell Progression, p. 157), the
-    wizard skills
-  - [ ] Priests (pp. 159-167) - beyond 20th (Table
+    wizard skills - R610: the dez T43 and T44 grids
+    (375K XP steps, the 10+N d4 hit points, the spell
+    columns through 10th), the sage ability (6-or-less
+    base chance, 1d6 books at 24th and 27th), and the
+    three wizard skills pinned (mental focus with the
+    18-to-22 boost ladder, signature item with its
+    six categories, spell sculpting with the 1st-to-
+    7th cap ladder and the fireball/burning hands/
+    magic missile worked examples)
+  - [x] Priests (pp. 159-167) - beyond 20th (Table
     45: Priest Advancement Beyond 20th Level, p. 160;
     Table 46: Priest Spell Progression, p. 161), the
-    priest skills
+    priest skills - R610: the dez T45 grid (cleric
+    225K and druid 500K XP steps, the 9+N d8 hit
+    points), the priest spell progression grid (the
+    printed body caption reads Table 47 while the
+    contents reads Table 46 - held per the body
+    caption), the 10th-level-spell doctrine, the
+    quest spell, improved turning and spell-selection
+    powers, the holy army, and all nine priest skills
+    pinned (divine strength, divine voice, divine
+    will, detect deception, eminence, invincibility,
+    loan, smite, spell talisman - the talisman is
+    absent from the Table 40 roster)
   - [ ] Rogues (pp. 167-171) - the thieves and bards
     beyond 20th (Table 47: Rogue Advancement Beyond
     20th Level, p. 168; Table 48: Thieving Skill Base
