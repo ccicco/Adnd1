@@ -1,0 +1,1108 @@
+{
+ "round": 602,
+ "prefix": "del",
+ "header_file": "rules/dmoworlds.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 524,
+ "title": "The World Ratings",
+ "audit_label": "R602 DMO world-ratings audit",
+ "audit_comment": "THE WORLD RATING TABLES of DMO Chapter 2 (printed pp. 46-54): Table 2 the chronological ratings (the 17-row local-time grid, the fast 9-or-less and slow 13-or-more thresholds, the locality doctrine), Table 3 the magical ratings (the 17-row ladder of max spell level, casting multiplier, and modified schools; the spellbook-free and study-free tiers; the demihuman and fantastic deprivation bands; the item-decay and priest-planar doctrines), Table 4 the technological ratings (the eight era thresholds from steel to FTL, the device-decay doctrine, the advanced-tech margin), Table 5 the ecological ratings (the 3x3 condition grid, the hazard and paradise bands, the native intolerance), and the quirks doctrine.",
+ "include_comment": "the DMO world-rating pins",
+ "include_after": "#include \"rules/dmoadventures.h\"  // R601: the DMO adventure-doctrine pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R601 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R601 LANDED 2026-10-18: commit",
+  "  d9cae88972563b4a1dbf2ab8a27ade6",
+  "  4b8db89bf (census 523 -> 524,",
+  "  pushed 9a4cfff..d9cae88), THE",
+  "  ADVENTURE DOCTRINES, printed pp.",
+  "  30-45, the doctrine half of DMO",
+  "  Chapter 2 in one round: the",
+  "  adventure-construction rules (show",
+  "  don't tell; prepare, don't",
+  "  over-plan; don't force the action -",
+  "  the backup plan; enhance, don't",
+  "  inflate; gifts vs. rewards;",
+  "  multiple threats; don't kill -",
+  "  scare; proactive and responsive",
+  "  foes; failures not catastrophic;",
+  "  the flexible decision-oriented",
+  "  plot), the encounter taxonomy (the",
+  "  TWELVE types - combat, deception,",
+  "  delay, dilemma, event, guardian,",
+  "  interaction, obstacle, puzzle,",
+  "  skirmish, surprise, trap; the FIVE",
+  "  linking methods - chained, ripple,",
+  "  interlocked, multi-layered,",
+  "  revisited; the FIVE combat-plan",
+  "  elements - attack power, mobility,",
+  "  organization, information,",
+  "  terrain), and the world-hopping",
+  "  doctrine (the three world types -",
+  "  plane, pocket dimension, demiplane;",
+  "  the 18 inner and 17 outer planes;",
+  "  the one-Prime correction; the four",
+  "  aspects - chronology, magic,",
+  "  technology, environment - rated",
+  "  2-20 on 2d10 with the 10-12 typical",
+  "  band; the polymorphed-lich rules",
+  "  springboard with its 60-turn/10-",
+  "  hour renewal). Header",
+  "  rules/dmoadventures.h, prefix dek,",
+  "  34 inlines (14 consts 20 bools).",
+  "  THREE flips: gap census 14/82 - the",
+  "  doctrine half of Chapter 2 closed.",
+  "  Spec tools/spec_r601.json 24435",
+  "  bytes md5 bdf31adbc770acf4e00812ac9",
+  "  2a14222 matched exactly first try;",
+  "  the spec also seats the R600",
+  "  record. THIRTY-FIVE straight",
+  "  first-tries (R566-R601). NEXT -",
+  "  R602: the Chapter 2 rating tables -",
+  "  Table 2 Alternate Chronology,",
+  "  Table 3 Magic Rating, Table 4",
+  "  Technological Level, Table 5",
+  "  Environmental Conditions (printed",
+  "  pp. 46-53 per the report); the",
+  "  monster-doctrine boxes follow;",
+  "  prefix del free."
+ ],
+ "banner": {
+  "title": "THE WORLD RATINGS - DMO Chapter 2 continues: Table 2 the chronological ladder (one local week = one base second on C2, one hundred base years on C20; visitors age at local time, spell durations local), Table 3 the magical ladder (dead magic at M2, the ninth-level bar at M8, spellbooks-free at M19, study-free at M20; demihumans save vs. death at M5-or-less, fantastic penalties from M6; items lose one plus per plane, four planes the maximum span), Table 4 the technological ladder (steel at 10-12 through FTL at 20; high-tech devices go inert low, advanced tech works like magic at a five-point margin), Table 5 the ecological grid (constitution, damage, and the poison save at severe, hostile, and deadly), and the world quirks (the Ravenloft infusion, the Athas metal bar, the named-spell bar, the dominant-race retaliation at M14+, the distance-immune world).",
+  "provenance": "verified against printed pp. 46-54 of the uploaded DMO session capture (part 1, printed page N at OCR page N+1); Table 2 from p. 46, Table 3 from pp. 46-47, Table 4 from pp. 51-52, Table 5 and the quirks from pp. 52-54; the Table 2 and Table 3 rows carry the printed magnitude and unit codes (the engine grids are numeric); the Table 4 prose ladder pins as the eight era-threshold consts per the R595 ladder precedent.",
+  "sentinel": "the gap census after this round: 19 closed, 77 open - the rating tables and the quirks are closed; the monster-doctrine boxes (the +/-1/2/3 modifier doctrine and Tables 6-22) follow."
+ },
+ "consts": [
+  {
+   "name": "delChronoCount",
+   "value": 17,
+   "comment": "the chronological grid row count: 17 rows spanning the ratings C2 through C20, the 10-12 band as one row (printed p. 46, Table 2)."
+  },
+  {
+   "name": "delMagicCount",
+   "value": 17,
+   "comment": "the magical grid row count: 17 rows spanning the ratings M2 through M20, the 10-12 band as one row (printed pp. 46-47, Table 3)."
+  },
+  {
+   "name": "delEcologyCount",
+   "value": 3,
+   "comment": "the ecological condition grid row count: three conditions - constitution loss, damage, and the poison save - each at severe, hostile, and deadly intensity (printed p. 54, Table 5)."
+  },
+  {
+   "name": "delChronoFastMax",
+   "value": 9,
+   "comment": "the fast-time threshold: in worlds rated 9 or less time flows more quickly than the base campaign - travelers return home to find almost no time has passed (printed p. 46)."
+  },
+  {
+   "name": "delChronoSlowMin",
+   "value": 13,
+   "comment": "the slow-time threshold: in worlds rated 13 or more time flows more slowly - travelers return to find their world greatly changed after even a short visit (printed p. 46)."
+  },
+  {
+   "name": "delMagicNoNinthMax",
+   "value": 8,
+   "comment": "the ninth-level bar: no character can cast a 9th-level spell on a world rated M8 or lower; stored spells and items are the exception (printed p. 48)."
+  },
+  {
+   "name": "delMagicSpellbookFreeMin",
+   "value": 19,
+   "comment": "the spellbook-free tier: on worlds rated M19 or higher wizards do not require spellbooks - after a good night's sleep they meditate and acquire any available spell, just as priests do (printed p. 51)."
+  },
+  {
+   "name": "delMagicStudyFreeMin",
+   "value": 20,
+   "comment": "the study-free tier: on M20 worlds wizards and priests do not require study time at all - they call spells to mind as needed, still limited by spells per day and components (printed p. 51)."
+  },
+  {
+   "name": "delDemihumanDeathSaveMax",
+   "value": 5,
+   "comment": "the demihuman bar: demihumans (elves, gnomes, dwarves, orcs, ogres, and similar) must save vs. death magic immediately when entering worlds rated M5 or less - failure is death (printed p. 52)."
+  },
+  {
+   "name": "delDemihumanMaxPenalty",
+   "value": 4,
+   "comment": "the demihuman deprivation maximum: -4 on an M2 world - the penalty grows one point per rating below 5, with the hit-point loss floored at one point per hit die (printed p. 52)."
+  },
+  {
+   "name": "delFantasticPenaltyStartMax",
+   "value": 6,
+   "comment": "the fantastic-creature bar: fantastic creatures (centaurs, dragons, chimeras, pixies, tanar'ri and others) suffer similar penalties beginning on worlds rated M6 (printed p. 52)."
+  },
+  {
+   "name": "delFantasticMaxPenalty",
+   "value": 5,
+   "comment": "the fantastic deprivation maximum: -5 on an M2 world (printed p. 52)."
+  },
+  {
+   "name": "delItemPlusLossPerPlane",
+   "value": 1,
+   "comment": "the item decay: magical weapons, armor, and protective devices are attuned to their world of making and lose one plus per plane removed from home - all Prime Material worlds share one plane (printed p. 52)."
+  },
+  {
+   "name": "delMaxPlaneDistance",
+   "value": 4,
+   "comment": "the planar span: the maximum distance between planes is four - Inner Plane to Ethereal to Prime Material to Astral to Outer Plane; the Astral and Ethereal are one removed from the Prime, the Inner and Outer two (printed p. 52)."
+  },
+  {
+   "name": "delPspUnaffectedMin",
+   "value": 13,
+   "comment": "the psionic high-magic tier: on worlds rated M13 or greater psionics are unaffected, though some worlds - the Demiplane of Ravenloft - have quirks that reach even psionics (printed p. 51)."
+  },
+  {
+   "name": "delPriestLossPerPlane",
+   "value": 1,
+   "comment": "the open-world divine agreement: priests lose one level of spellcasting ability for every plane they are removed from their deity's home plane - a 10th-level priest one plane away casts as 9th (printed p. 49)."
+  },
+  {
+   "name": "delPriestCelestiaAbyssLoss",
+   "value": 7,
+   "comment": "the great-ring worked example: a priest whose deity resides on Mount Celestia and who visits the Abyss loses seven levels of spellcasting ability, tracing the path along the ring (printed p. 50)."
+  },
+  {
+   "name": "delMajorRaceMinorMin",
+   "value": 7,
+   "comment": "the major-race minor tier: minor abilities (similar to 1st-2nd level spells, usable 1-3 times a day) function on worlds rated M7 or higher (printed p. 52)."
+  },
+  {
+   "name": "delMajorRaceMajorMin",
+   "value": 8,
+   "comment": "the major-race major tier: major abilities (similar to 3rd-5th level spells) function on worlds rated M8 or higher, the creature also carrying 4-6 minor abilities usable once a turn or once an hour (printed p. 52)."
+  },
+  {
+   "name": "delMajorRaceExtraordinaryMin",
+   "value": 9,
+   "comment": "the major-race extraordinary tier: extraordinary abilities (similar to 6th-7th level spells, once a day) function on worlds rated M9 or higher, with 6-10 minor abilities at will and 4-6 major abilities once a turn or hour (printed p. 52)."
+  },
+  {
+   "name": "delNaturalMinorMax",
+   "value": 3,
+   "comment": "the natural spellcasting bands: minor spellcasting is 1st-3rd level (printed p. 50)."
+  },
+  {
+   "name": "delNaturalMajorMax",
+   "value": 7,
+   "comment": "the natural spellcasting bands: major spellcasting is 4th-7th level (printed p. 50)."
+  },
+  {
+   "name": "delNaturalExtraordinaryMax",
+   "value": 11,
+   "comment": "the natural spellcasting bands: extraordinary spellcasting is 8th-11th level - the abilities retained when visiting lower-rated worlds, though casting times extend and high levels still become unavailable (printed p. 50)."
+  },
+  {
+   "name": "delTechSteelMin",
+   "value": 10,
+   "comment": "the tech ladder, the steel rung: ratings of 10-12 indicate the medieval technology common to most AD&D campaigns - steel tools and weapons, coal mining, trade and craft guilds, small slow sailing ships, feudal governments, extensive trade (printed pp. 51-52, Table 4)."
+  },
+  {
+   "name": "delTechFirearmMin",
+   "value": 14,
+   "comment": "the tech ladder, the firearm rung: cannons and ocean-going sailing ships arrive at 13; firearms, printing, and intercontinental trade at 14 (printed p. 52, Table 4)."
+  },
+  {
+   "name": "delTechSteamMin",
+   "value": 15,
+   "comment": "the tech ladder, the steam rung: steam engines, blast furnaces, and mechanical calculating machines at 15 (printed p. 52, Table 4)."
+  },
+  {
+   "name": "delTechCombustionMin",
+   "value": 16,
+   "comment": "the tech ladder, the combustion rung: internal combustion engines, light aircraft, steamships, railroads, and labor unions at 16 (printed p. 52, Table 4)."
+  },
+  {
+   "name": "delTechNuclearMin",
+   "value": 17,
+   "comment": "the tech ladder, the nuclear rung: nuclear power, civil and military aircraft, and electronic computers at 17 (printed p. 52, Table 4)."
+  },
+  {
+   "name": "delTechFusionMin",
+   "value": 18,
+   "comment": "the tech ladder, the fusion rung: fusion power, commercial spacecraft, laser weapons, genetic engineering, and intercontinental governments at 18 (printed p. 52, Table 4)."
+  },
+  {
+   "name": "delTechRobotMin",
+   "value": 19,
+   "comment": "the tech ladder, the robot rung: sentient robots and computers, solar power, and portable nuclear power at 19 (printed p. 52, Table 4)."
+  },
+  {
+   "name": "delTechFtlMin",
+   "value": 20,
+   "comment": "the tech ladder, the FTL rung: faster-than-light space travel, matter transmission and replication, and interplanetary governments at 20; the low end - tools unknown and fire unharnessed at 2, stone at 3, copper at 4-5, iron at 6 (printed p. 52, Table 4)."
+  },
+  {
+   "name": "delAdvancedTechMagicMargin",
+   "value": 5,
+   "comment": "the advanced-tech rule: sufficiently advanced technology works just like magic - an item whose technological rating exceeds the local technological rating still works if it also exceeds the local magical rating by at least five; steam engines require local T15 or higher or M10 or lower (printed p. 53)."
+  },
+  {
+   "name": "delEcologyHazardMax",
+   "value": 6,
+   "comment": "the hazard band: worlds rated E6 or less inflict one or more of the table effects upon visitors from the base campaign, the type reflecting the environment's nature (printed p. 53)."
+  },
+  {
+   "name": "delEcologyParadiseMin",
+   "value": 18,
+   "comment": "the paradise band: worlds rated E18 or higher seem paradises to visitors from E12 or less - with optional perils (the sleep until attacked, the flower's confusion-like euphoria with its singing and dancing) (printed p. 54)."
+  },
+  {
+   "name": "delEcologyNativeIntoleranceMin",
+   "value": 16,
+   "comment": "the native-intolerance band: natives of worlds rated E16 or higher cannot tolerate less benign worlds (printed p. 54)."
+  },
+  {
+   "name": "delNativeSevereGap",
+   "value": 5,
+   "comment": "the native intolerance, severe: E16+ natives suffer severe-condition effects on worlds rated five less than their home worlds (printed p. 54)."
+  },
+  {
+   "name": "delNativeHostileGap",
+   "value": 6,
+   "comment": "the native intolerance, hostile: hostile penalties on worlds rated six less than home (printed p. 54)."
+  },
+  {
+   "name": "delNativeDeadlyGap",
+   "value": 7,
+   "comment": "the native intolerance, deadly: deadly penalties on worlds rated seven or more less than home (printed p. 54)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "delChronoLocalityDoctrine",
+   "value": true,
+   "comment": "the chronological locality doctrine: characters are governed by local time wherever they are - a year on a C2 world ages the visitor a year while less than a minute passes at home; spell durations are local too (10 rounds on C11 is 10 rounds on C2 or C20); the flow always seems normal, even inside closed extra-dimensional spaces (portable holes, bags of holding, rope trick), with the shift imperceptible though clues appear (the noon portal into moonlit night) (printed p. 47)."
+  },
+  {
+   "name": "delMagicCastingTimeDoctrine",
+   "value": true,
+   "comment": "the low-magic casting-time doctrine: low-magic worlds impose a x2 to x5 multiplier on casting times; an adjusted casting time of 10 or more requires full rounds - 10 completes at the end of the round it began, 20 at the end of the second round; the odd remainder completes the next round at that initiative modifier (the fireball at 3 on an M6 world: adjusted 12, one full round, done in the second at modifier 2) (printed pp. 47-49)."
+  },
+  {
+   "name": "delMagicModificationDoctrine",
+   "value": true,
+   "comment": "the spell-modification doctrine: spells are modified by enhancement (one level higher, never on M9 or lower), diminution (one level lower), nullification (common on M9 or lower, rare on Prime worlds rated M10+ but frequent on highly magical outer planes and demiplanes), and alteration - superficial (the steam fireball), minor (the clairaudience ears with the save penalty vs. sound), or catastrophic (the berserk summons, the meteor swarm on the caster); natives often immune, PCs can learn the precautions; the Limbo Intelligence check negates any failed spell (printed p. 49)."
+  },
+  {
+   "name": "delPriestPlanarDoctrine",
+   "value": true,
+   "comment": "the priest planar doctrine: four world classes - open (lose levels by divine distance; all Outer Planes), closed (cast memorized but regain nothing above 2nd; many Prime worlds, pockets, demiplanes), restricted (all spells lost; very rare), unrestricted (full power; the Astral, Ethereal, and all known Inner planes); deities treat their focus Prime worlds as home; granted abilities generally function at full power by agreement, local conditions prevailing (no flame strike on the Plane of Elemental Water); divine agreement can circumvent the world's magical rating entirely (printed pp. 49-50)."
+  },
+  {
+   "name": "delPspDoctrine",
+   "value": true,
+   "comment": "the psionic doctrine: psionicists suffer less than spellcasters - the energies are personal and travel with the character; on M13+ worlds unaffected, on M9 or less the powers work but PSP costs rise for both initiating and maintaining; insufficient PSPs bar the power; local conditions never increase damage dice, duration, or range - increased cost is never an advantage (printed pp. 51-52)."
+  },
+  {
+   "name": "delItemDecayDoctrine",
+   "value": true,
+   "comment": "the item decay doctrine: items trace the shortest possible path home (unlike priest spells); an inert item still functions as its normal self (an inert suit of magical armor is still armor) and keeps its magical aura for detect magic, reviving when conditions improve; the cloak +3 example - full power across the Prime, +2 in the Astral or Ethereal, +1 on any Outer or Inner plane (printed p. 52)."
+  },
+  {
+   "name": "delMagicItemFunctionDoctrine",
+   "value": true,
+   "comment": "the item-function doctrine: as portable containers of power, items often function on low-magic worlds where their effects cannot be cast (the staff of the magi producing wall of fire on an M3 world); but a modified school reaches its items too (the catastrophically altered conjuration making Bucknard's everfull purse and a bag of tricks dangerous); stored spells and items bypass the spell-level bars (printed pp. 48, 52)."
+  },
+  {
+   "name": "delNaturalSpellcastingDoctrine",
+   "value": true,
+   "comment": "the natural spellcasting doctrine: intelligent natives of high-magic worlds cast naturally in the three bands, retained when visiting lower-rated worlds (with extended casting times and the high-level bars still applying); the abilities add to class abilities freely - the M20 fighter casts in metal armor, the M20 wizard still shuns armor but may enjoy extra spells or priest casting (printed pp. 50-51)."
+  },
+  {
+   "name": "delMajorRaceDoctrine",
+   "value": true,
+   "comment": "the major-race doctrine: a major race dominates its world as humans and demihumans dominate standard campaigns (the tanar'ri of the Abyss, the githyanki of the Astral); members native to high-magic worlds always have spell-like abilities in the three tiers, subject to local modifications - but natives always ignore their home world's detrimental effects (printed p. 52)."
+  },
+  {
+   "name": "delTechNotesDoctrine",
+   "value": true,
+   "comment": "the technological notes doctrine: sample items appear when affordable or in common use (the T5 algebra inventor working alone; not every T17 resident owns a jet, but they are in general use); devices from low-tech worlds work anywhere, but devices from high-tech worlds carried low go inert if they have moving parts, circuitry, or depend on chemical reactions - the T16 flashlight dies on a T8 world, the stainless steel ax still chops but loses its rust resistance, and a club is a club everywhere (printed p. 53)."
+  },
+  {
+   "name": "delEcologyDoctrine",
+   "value": true,
+   "comment": "the ecological doctrine: E2 is completely hostile, E20 a paradise, 10-12 generally earthlike with hazardous extremes (deserts, ocean depths, high-altitude thin air); the E6-or-less effects are the DM's choice reflecting the environment (the acidic atmosphere damaging, the polluted air draining Constitution); severe conditions allow mundane precautions (a desert or polar cap), hostile conditions threaten immediately (arctic water, volcanic gases - minor protective magic negates: endure cold/heat, ring of fire resistance, ring of warmth), deadly conditions kill within minutes (the lunar surface, a volcano's interior), and the listed deadly effects are minimums - the Plane of Elemental Fire demands a save vs. breath weapon or death, 5d10 damage even on a success (printed pp. 53-54)."
+  },
+  {
+   "name": "delQuirkDoctrine",
+   "value": true,
+   "comment": "the quirk doctrine: quirks are essential, serendipitous, or imposed - possibly changeable by the PCs; the infusion force twists everything (Ravenloft's evil bars all alignment detection and corrupts effects and psionics; on a Prime world it is temporary, removable by destroying the source); the conjuration bar (Athas - metal cannot be permanently created, the wall of iron falls to pieces); the named-spell bar (Melf's minute meteors unknown unless imported or researched from scratch); the dominant-race retaliation (possible only on M14+, leaders detect and retaliate against magical or psionic attacks - spell turning, the venomous insects per point of damage, the random spell); and the distance-immune world (items ignore planar distance, usually unrestricted) (printed pp. 53-54)."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "delChronoBaseMag",
+   "tag": "T2",
+   "count": "delChronoCount",
+   "comment": "the Table 2 grid (printed p. 46): 17 rows, ratings C2-C20 with the 10-12 band as one row; column 1 the base-campaign time MAGNITUDE, column 2 the UNIT code (1 second, 2 minute, 3 hour, 4 day, 5 week, 6 month, 7 year) - one week of local time equals the base time shown; the fast rungs 2-9, the typical band, the slow rungs 13-20.",
+   "cols": [
+    "delChronoBaseMag",
+    "delChronoBaseUnit",
+    "delChronoRating"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     2
+    ],
+    [
+     15,
+     1,
+     3
+    ],
+    [
+     1,
+     2,
+     4
+    ],
+    [
+     10,
+     2,
+     5
+    ],
+    [
+     30,
+     2,
+     6
+    ],
+    [
+     1,
+     3,
+     7
+    ],
+    [
+     6,
+     3,
+     8
+    ],
+    [
+     1,
+     4,
+     9
+    ],
+    [
+     1,
+     5,
+     10
+    ],
+    [
+     1,
+     6,
+     13
+    ],
+    [
+     3,
+     6,
+     14
+    ],
+    [
+     6,
+     6,
+     15
+    ],
+    [
+     1,
+     7,
+     16
+    ],
+    [
+     5,
+     7,
+     17
+    ],
+    [
+     10,
+     7,
+     18
+    ],
+    [
+     30,
+     7,
+     19
+    ],
+    [
+     100,
+     7,
+     20
+    ]
+   ],
+   "col_comments": [
+    "the Table 2 base-campaign time magnitude, by rating row (the fast rungs 2-9, the typical band 10-12, the slow rungs 13-20; one week of local time equals the base time shown).",
+    "the Table 2 unit code: 1 second, 2 minute, 3 hour, 4 day, 5 week, 6 month, 7 year - the unit of the base-campaign time magnitude.",
+    "the Table 2 rating, the row key: the campaign-time rating C2 through C20, the 10-12 band carried as one row keyed 10."
+   ],
+   "sentinel": -99
+  },
+  {
+   "name": "delMagicRating",
+   "tag": "T3",
+   "count": "delMagicCount",
+   "comment": "the Table 3 grid (printed pp. 46-47): 17 rows, ratings M2-M20 with the 10-12 band as one row; column 1 the RATING (the 10-12 band carries 10), column 2 the highest spell level castable (0 on dead-magic M2), column 3 the casting-time and PSP multiplier (0 on M2 where nothing functions), columns 4-5 the range of schools of magic modified (0-0 where none); the creature-size and demihuman bars ride the note consts.",
+   "cols": [
+    "delMagicRating",
+    "delMagicMaxLevel",
+    "delMagicCastMult",
+    "delMagicSchoolsMin",
+    "delMagicSchoolsMax"
+   ],
+   "data": [
+    [
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     3,
+     5,
+     6,
+     9
+    ],
+    [
+     4,
+     4,
+     5,
+     4,
+     9
+    ],
+    [
+     5,
+     5,
+     5,
+     3,
+     9
+    ],
+    [
+     6,
+     6,
+     4,
+     3,
+     9
+    ],
+    [
+     7,
+     7,
+     3,
+     2,
+     7
+    ],
+    [
+     8,
+     8,
+     2,
+     2,
+     5
+    ],
+    [
+     9,
+     9,
+     1,
+     1,
+     4
+    ],
+    [
+     10,
+     10,
+     1,
+     0,
+     0
+    ],
+    [
+     13,
+     10,
+     1,
+     0,
+     0
+    ],
+    [
+     14,
+     10,
+     1,
+     1,
+     4
+    ],
+    [
+     15,
+     10,
+     1,
+     2,
+     5
+    ],
+    [
+     16,
+     10,
+     1,
+     2,
+     7
+    ],
+    [
+     17,
+     10,
+     1,
+     3,
+     9
+    ],
+    [
+     18,
+     10,
+     1,
+     3,
+     9
+    ],
+    [
+     19,
+     10,
+     1,
+     3,
+     9
+    ],
+    [
+     20,
+     10,
+     1,
+     3,
+     9
+    ]
+   ],
+   "col_comments": [
+    "the Table 3 rating, the row key: the magic rating M2 through M20, the 10-12 band carried as one row keyed 10.",
+    "the Table 3 highest spell level castable at the rating (0 on the dead-magic M2 row).",
+    "the Table 3 casting-time and PSP multiplier (0 on M2 where nothing functions).",
+    "the low end of the range of schools of magic modified (0 where none are modified).",
+    "the high end of the range of schools of magic modified (0 where none are modified)."
+   ],
+   "sentinel": -99
+  },
+  {
+   "name": "delEcologyRollCount",
+   "tag": "T5",
+   "count": "delEcologyCount",
+   "comment": "the Table 5 grid (printed p. 54): three conditions at three intensities; column 1 the ROLL COUNT, column 2 the DIE SIZE (0 where no die is rolled - the poison save row), columns 3-5 the PERIOD codes for severe, hostile, and deadly (1 day, 2 hour, 3 round); the poison save is one saving throw at the end of each exposure period, failure immediate death; the deadly effects are minimums.",
+   "cols": [
+    "delEcologyRollCount",
+    "delEcologyDieSize",
+    "delEcologySeverePeriod",
+    "delEcologyHostilePeriod",
+    "delEcologyDeadlyPeriod"
+   ],
+   "data": [
+    [
+     1,
+     6,
+     1,
+     2,
+     3
+    ],
+    [
+     2,
+     4,
+     1,
+     2,
+     3
+    ],
+    [
+     1,
+     0,
+     1,
+     2,
+     3
+    ]
+   ],
+   "col_comments": [
+    "the Table 5 roll count for the condition (the number of dice rolled; 0 where no die is rolled - the poison save row).",
+    "the Table 5 die size (0 where no die is rolled - the poison save row is one saving throw at the end of each exposure period, failure immediate death).",
+    "the Table 5 severe-condition period code: 1 day, 2 hour, 3 round.",
+    "the Table 5 hostile-condition period code: 1 day, 2 hour, 3 round.",
+    "the Table 5 deadly-condition period code: 1 day, 2 hour, 3 round - the deadly effects are minimums."
+   ],
+   "sentinel": -99
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the C2 world ages a visitor a year while under a minute passes at home (the fast end of the Table 2 grid)",
+   "expr": "m['delChronoBaseMag'](0) != 1 or m['delChronoBaseUnit'](0) != 1 or m['delChronoRating'](0) != 2"
+  },
+  {
+   "note": "the C20 world: one local week equals a hundred base years (the slow end of the grid)",
+   "expr": "m['delChronoBaseMag'](16) != 100 or m['delChronoBaseUnit'](16) != 7 or m['delChronoRating'](16) != 20"
+  },
+  {
+   "note": "the M8 world bars the 9th level and doubles casting times",
+   "expr": "m['delMagicMaxLevel'](6) != 8 or m['delMagicCastMult'](6) != 2"
+  },
+  {
+   "note": "the dead-magic M2 world: nothing functions",
+   "expr": "m['delMagicMaxLevel'](0) != 0 or m['delMagicCastMult'](0) != 0"
+  },
+  {
+   "note": "the typical M10-12 band: everything works, no school modifications",
+   "expr": "m['delMagicMaxLevel'](8) != 10 or m['delMagicSchoolsMin'](8) != 0 or m['delMagicSchoolsMax'](8) != 0"
+  },
+  {
+   "note": "the deadly ecology: the constitution drain runs per round",
+   "expr": "m['delEcologyRollCount'](0) != 1 or m['delEcologyDieSize'](0) != 6 or m['delEcologyDeadlyPeriod'](0) != 3"
+  },
+  {
+   "note": "the poison save row rolls no dice, one save per period",
+   "expr": "m['delEcologyRollCount'](2) != 1 or m['delEcologyDieSize'](2) != 0 or m['delEcologySeverePeriod'](2) != 1"
+  }
+ ],
+ "header_sections": {
+  "the DMO world-rating pins": [
+   {
+    "kind": "const",
+    "name": "delChronoCount"
+   },
+   {
+    "kind": "const",
+    "name": "delMagicCount"
+   },
+   {
+    "kind": "const",
+    "name": "delEcologyCount"
+   },
+   {
+    "kind": "const",
+    "name": "delChronoFastMax"
+   },
+   {
+    "kind": "const",
+    "name": "delChronoSlowMin"
+   },
+   {
+    "kind": "const",
+    "name": "delMagicNoNinthMax"
+   },
+   {
+    "kind": "const",
+    "name": "delMagicSpellbookFreeMin"
+   },
+   {
+    "kind": "const",
+    "name": "delMagicStudyFreeMin"
+   },
+   {
+    "kind": "const",
+    "name": "delDemihumanDeathSaveMax"
+   },
+   {
+    "kind": "const",
+    "name": "delDemihumanMaxPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "delFantasticPenaltyStartMax"
+   },
+   {
+    "kind": "const",
+    "name": "delFantasticMaxPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "delItemPlusLossPerPlane"
+   },
+   {
+    "kind": "const",
+    "name": "delMaxPlaneDistance"
+   },
+   {
+    "kind": "const",
+    "name": "delPspUnaffectedMin"
+   },
+   {
+    "kind": "const",
+    "name": "delPriestLossPerPlane"
+   },
+   {
+    "kind": "const",
+    "name": "delPriestCelestiaAbyssLoss"
+   },
+   {
+    "kind": "const",
+    "name": "delMajorRaceMinorMin"
+   },
+   {
+    "kind": "const",
+    "name": "delMajorRaceMajorMin"
+   },
+   {
+    "kind": "const",
+    "name": "delMajorRaceExtraordinaryMin"
+   },
+   {
+    "kind": "const",
+    "name": "delNaturalMinorMax"
+   },
+   {
+    "kind": "const",
+    "name": "delNaturalMajorMax"
+   },
+   {
+    "kind": "const",
+    "name": "delNaturalExtraordinaryMax"
+   },
+   {
+    "kind": "const",
+    "name": "delTechSteelMin"
+   },
+   {
+    "kind": "const",
+    "name": "delTechFirearmMin"
+   },
+   {
+    "kind": "const",
+    "name": "delTechSteamMin"
+   },
+   {
+    "kind": "const",
+    "name": "delTechCombustionMin"
+   },
+   {
+    "kind": "const",
+    "name": "delTechNuclearMin"
+   },
+   {
+    "kind": "const",
+    "name": "delTechFusionMin"
+   },
+   {
+    "kind": "const",
+    "name": "delTechRobotMin"
+   },
+   {
+    "kind": "const",
+    "name": "delTechFtlMin"
+   },
+   {
+    "kind": "const",
+    "name": "delAdvancedTechMagicMargin"
+   },
+   {
+    "kind": "const",
+    "name": "delEcologyHazardMax"
+   },
+   {
+    "kind": "const",
+    "name": "delEcologyParadiseMin"
+   },
+   {
+    "kind": "const",
+    "name": "delEcologyNativeIntoleranceMin"
+   },
+   {
+    "kind": "const",
+    "name": "delNativeSevereGap"
+   },
+   {
+    "kind": "const",
+    "name": "delNativeHostileGap"
+   },
+   {
+    "kind": "const",
+    "name": "delNativeDeadlyGap"
+   },
+   {
+    "kind": "bool",
+    "name": "delChronoLocalityDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delMagicCastingTimeDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delMagicModificationDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delPriestPlanarDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delPspDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delItemDecayDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delMagicItemFunctionDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delNaturalSpellcastingDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delMajorRaceDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delTechNotesDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delEcologyDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "delQuirkDoctrine"
+   },
+   {
+    "kind": "table",
+    "name": "delChronoBaseMag"
+   },
+   {
+    "kind": "table",
+    "name": "delMagicRating"
+   },
+   {
+    "kind": "table",
+    "name": "delEcologyRollCount"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the delChronoCount pin",
+   "expr": "m['delChronoCount']() != 17"
+  },
+  {
+   "note": "the delMagicCount pin",
+   "expr": "m['delMagicCount']() != 17"
+  },
+  {
+   "note": "the delEcologyCount pin",
+   "expr": "m['delEcologyCount']() != 3"
+  },
+  {
+   "note": "the delChronoFastMax pin",
+   "expr": "m['delChronoFastMax']() != 9"
+  },
+  {
+   "note": "the delChronoSlowMin pin",
+   "expr": "m['delChronoSlowMin']() != 13"
+  },
+  {
+   "note": "the delMagicNoNinthMax pin",
+   "expr": "m['delMagicNoNinthMax']() != 8"
+  },
+  {
+   "note": "the delMagicSpellbookFreeMin pin",
+   "expr": "m['delMagicSpellbookFreeMin']() != 19"
+  },
+  {
+   "note": "the delMagicStudyFreeMin pin",
+   "expr": "m['delMagicStudyFreeMin']() != 20"
+  },
+  {
+   "note": "the delDemihumanDeathSaveMax pin",
+   "expr": "m['delDemihumanDeathSaveMax']() != 5"
+  },
+  {
+   "note": "the delDemihumanMaxPenalty pin",
+   "expr": "m['delDemihumanMaxPenalty']() != 4"
+  },
+  {
+   "note": "the delFantasticPenaltyStartMax pin",
+   "expr": "m['delFantasticPenaltyStartMax']() != 6"
+  },
+  {
+   "note": "the delFantasticMaxPenalty pin",
+   "expr": "m['delFantasticMaxPenalty']() != 5"
+  },
+  {
+   "note": "the delItemPlusLossPerPlane pin",
+   "expr": "m['delItemPlusLossPerPlane']() != 1"
+  },
+  {
+   "note": "the delMaxPlaneDistance pin",
+   "expr": "m['delMaxPlaneDistance']() != 4"
+  },
+  {
+   "note": "the delPspUnaffectedMin pin",
+   "expr": "m['delPspUnaffectedMin']() != 13"
+  },
+  {
+   "note": "the delPriestLossPerPlane pin",
+   "expr": "m['delPriestLossPerPlane']() != 1"
+  },
+  {
+   "note": "the delPriestCelestiaAbyssLoss pin",
+   "expr": "m['delPriestCelestiaAbyssLoss']() != 7"
+  },
+  {
+   "note": "the delMajorRaceMinorMin pin",
+   "expr": "m['delMajorRaceMinorMin']() != 7"
+  },
+  {
+   "note": "the delMajorRaceMajorMin pin",
+   "expr": "m['delMajorRaceMajorMin']() != 8"
+  },
+  {
+   "note": "the delMajorRaceExtraordinaryMin pin",
+   "expr": "m['delMajorRaceExtraordinaryMin']() != 9"
+  },
+  {
+   "note": "the delNaturalMinorMax pin",
+   "expr": "m['delNaturalMinorMax']() != 3"
+  },
+  {
+   "note": "the delNaturalMajorMax pin",
+   "expr": "m['delNaturalMajorMax']() != 7"
+  },
+  {
+   "note": "the delNaturalExtraordinaryMax pin",
+   "expr": "m['delNaturalExtraordinaryMax']() != 11"
+  },
+  {
+   "note": "the delTechSteelMin pin",
+   "expr": "m['delTechSteelMin']() != 10"
+  },
+  {
+   "note": "the delTechFirearmMin pin",
+   "expr": "m['delTechFirearmMin']() != 14"
+  },
+  {
+   "note": "the delTechSteamMin pin",
+   "expr": "m['delTechSteamMin']() != 15"
+  },
+  {
+   "note": "the delTechCombustionMin pin",
+   "expr": "m['delTechCombustionMin']() != 16"
+  },
+  {
+   "note": "the delTechNuclearMin pin",
+   "expr": "m['delTechNuclearMin']() != 17"
+  },
+  {
+   "note": "the delTechFusionMin pin",
+   "expr": "m['delTechFusionMin']() != 18"
+  },
+  {
+   "note": "the delTechRobotMin pin",
+   "expr": "m['delTechRobotMin']() != 19"
+  },
+  {
+   "note": "the delTechFtlMin pin",
+   "expr": "m['delTechFtlMin']() != 20"
+  },
+  {
+   "note": "the delAdvancedTechMagicMargin pin",
+   "expr": "m['delAdvancedTechMagicMargin']() != 5"
+  },
+  {
+   "note": "the delEcologyHazardMax pin",
+   "expr": "m['delEcologyHazardMax']() != 6"
+  },
+  {
+   "note": "the delEcologyParadiseMin pin",
+   "expr": "m['delEcologyParadiseMin']() != 18"
+  },
+  {
+   "note": "the delEcologyNativeIntoleranceMin pin",
+   "expr": "m['delEcologyNativeIntoleranceMin']() != 16"
+  },
+  {
+   "note": "the delNativeSevereGap pin",
+   "expr": "m['delNativeSevereGap']() != 5"
+  },
+  {
+   "note": "the delNativeHostileGap pin",
+   "expr": "m['delNativeHostileGap']() != 6"
+  },
+  {
+   "note": "the delNativeDeadlyGap pin",
+   "expr": "m['delNativeDeadlyGap']() != 7"
+  },
+  {
+   "note": "the delChronoLocalityDoctrine pin",
+   "expr": "m['delChronoLocalityDoctrine']() != 1"
+  },
+  {
+   "note": "the delMagicCastingTimeDoctrine pin",
+   "expr": "m['delMagicCastingTimeDoctrine']() != 1"
+  },
+  {
+   "note": "the delMagicModificationDoctrine pin",
+   "expr": "m['delMagicModificationDoctrine']() != 1"
+  },
+  {
+   "note": "the delPriestPlanarDoctrine pin",
+   "expr": "m['delPriestPlanarDoctrine']() != 1"
+  },
+  {
+   "note": "the delPspDoctrine pin",
+   "expr": "m['delPspDoctrine']() != 1"
+  },
+  {
+   "note": "the delItemDecayDoctrine pin",
+   "expr": "m['delItemDecayDoctrine']() != 1"
+  },
+  {
+   "note": "the delMagicItemFunctionDoctrine pin",
+   "expr": "m['delMagicItemFunctionDoctrine']() != 1"
+  },
+  {
+   "note": "the delNaturalSpellcastingDoctrine pin",
+   "expr": "m['delNaturalSpellcastingDoctrine']() != 1"
+  },
+  {
+   "note": "the delMajorRaceDoctrine pin",
+   "expr": "m['delMajorRaceDoctrine']() != 1"
+  },
+  {
+   "note": "the delTechNotesDoctrine pin",
+   "expr": "m['delTechNotesDoctrine']() != 1"
+  },
+  {
+   "note": "the delEcologyDoctrine pin",
+   "expr": "m['delEcologyDoctrine']() != 1"
+  },
+  {
+   "note": "the delQuirkDoctrine pin",
+   "expr": "m['delQuirkDoctrine']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the chronological ratings table closes",
+   "from": "  - [ ] Table 2: Chronological Ratings (p. 46) - the\n    local-time ladder (C2 through C20), the aging rule\n    (visitors age at local time), the magic-duration\n    locality rule",
+   "to": "  - [x] Table 2: Chronological Ratings (p. 46) - the\n    local-time ladder (C2 through C20), the aging rule\n    (visitors age at local time), the magic-duration\n    locality rule\n    - R602: the del chronology pins (the 17-row\n    local-time grid with the mag/unit encoding, the\n    fast/slow thresholds, the locality doctrine)"
+  },
+  {
+   "note": "the magical ratings table closes",
+   "from": "  - [ ] Table 3: Magical Ratings (pp. 46-47) - the\n    world-magic ladder (M0 dead magic through M20\n    magic-rich), the dead-magic and wild-magic zones",
+   "to": "  - [x] Table 3: Magical Ratings (pp. 46-47) - the\n    world-magic ladder (M0 dead magic through M20\n    magic-rich), the dead-magic and wild-magic zones\n    - R602: the del magic-grid pins (the 17-row ladder:\n    max spell level, casting multiplier, schools\n    modified; the spellbook-free tiers; the demihuman and\n    fantastic bands)"
+  },
+  {
+   "note": "the technological ratings table closes",
+   "from": "  - [ ] Table 4: Technological Ratings (pp. 51-52) -\n    the world-technology ladder",
+   "to": "  - [x] Table 4: Technological Ratings (pp. 51-52) -\n    the world-technology ladder\n    - R602: the del tech pins (the eight era thresholds,\n    the device-decay doctrine, the advanced-tech margin)"
+  },
+  {
+   "note": "the ecological ratings table closes",
+   "from": "  - [ ] Table 5: Ecological Ratings (pp. 52-54) - the\n    world-ecology ladder",
+   "to": "  - [x] Table 5: Ecological Ratings (pp. 52-54) - the\n    world-ecology ladder\n    - R602: the del ecology pins (the 3x3 condition grid,\n    the hazard and paradise bands, the native-intolerance\n    gaps)"
+  },
+  {
+   "note": "the world-quirk doctrine closes",
+   "from": "  - [ ] Quirks (pp. 53-54) - the world-quirk doctrine",
+   "to": "  - [x] Quirks (pp. 53-54) - the world-quirk doctrine\n    - R602: the del quirk pins (the infusion force, the\n    conjuration bar, the named-spell bar, the\n    dominant-race retaliation, the distance-immune items)"
+  }
+ ],
+ "gap_census": {
+  "closed": 19,
+  "open": 77
+ },
+ "caller_files": [],
+ "inline_count": 63
+}

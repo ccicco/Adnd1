@@ -126,18 +126,33 @@ tables are data and close on table pins.
     (plane, demiplane, pocket dimension) and properties
     - R601: the dek world pins (the three world types,
     the four aspects, the 2-20 rating scale)
-  - [ ] Table 2: Chronological Ratings (p. 46) - the
+  - [x] Table 2: Chronological Ratings (p. 46) - the
     local-time ladder (C2 through C20), the aging rule
     (visitors age at local time), the magic-duration
     locality rule
-  - [ ] Table 3: Magical Ratings (pp. 46-47) - the
+    - R602: the del chronology pins (the 17-row
+    local-time grid with the mag/unit encoding, the
+    fast/slow thresholds, the locality doctrine)
+  - [x] Table 3: Magical Ratings (pp. 46-47) - the
     world-magic ladder (M0 dead magic through M20
     magic-rich), the dead-magic and wild-magic zones
-  - [ ] Table 4: Technological Ratings (pp. 51-52) -
+    - R602: the del magic-grid pins (the 17-row ladder:
+    max spell level, casting multiplier, schools
+    modified; the spellbook-free tiers; the demihuman and
+    fantastic bands)
+  - [x] Table 4: Technological Ratings (pp. 51-52) -
     the world-technology ladder
-  - [ ] Table 5: Ecological Ratings (pp. 52-54) - the
+    - R602: the del tech pins (the eight era thresholds,
+    the device-decay doctrine, the advanced-tech margin)
+  - [x] Table 5: Ecological Ratings (pp. 52-54) - the
     world-ecology ladder
-  - [ ] Quirks (pp. 53-54) - the world-quirk doctrine
+    - R602: the del ecology pins (the 3x3 condition grid,
+    the hazard and paradise bands, the native-intolerance
+    gaps)
+  - [x] Quirks (pp. 53-54) - the world-quirk doctrine
+    - R602: the del quirk pins (the infusion force, the
+    conjuration bar, the named-spell bar, the
+    dominant-race retaliation, the distance-immune items)
   - [ ] Altering Monsters the Easy Way (pp. 57-58) -
     the +/-1/2/3 modifier doctrine (hit dice, THACO, the
     one-hit-point floor)

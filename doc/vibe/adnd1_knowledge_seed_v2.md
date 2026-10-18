@@ -10928,6 +10928,61 @@ when both halves land.
   Chapter 2 (Adventures) opens - the
   doctrine half in one round; prefixes
   dek, del free.
+- R601 LANDED 2026-10-18: commit
+  d9cae88972563b4a1dbf2ab8a27ade6
+  4b8db89bf (census 523 -> 524,
+  pushed 9a4cfff..d9cae88), THE
+  ADVENTURE DOCTRINES, printed pp.
+  30-45, the doctrine half of DMO
+  Chapter 2 in one round: the
+  adventure-construction rules (show
+  don't tell; prepare, don't
+  over-plan; don't force the action -
+  the backup plan; enhance, don't
+  inflate; gifts vs. rewards;
+  multiple threats; don't kill -
+  scare; proactive and responsive
+  foes; failures not catastrophic;
+  the flexible decision-oriented
+  plot), the encounter taxonomy (the
+  TWELVE types - combat, deception,
+  delay, dilemma, event, guardian,
+  interaction, obstacle, puzzle,
+  skirmish, surprise, trap; the FIVE
+  linking methods - chained, ripple,
+  interlocked, multi-layered,
+  revisited; the FIVE combat-plan
+  elements - attack power, mobility,
+  organization, information,
+  terrain), and the world-hopping
+  doctrine (the three world types -
+  plane, pocket dimension, demiplane;
+  the 18 inner and 17 outer planes;
+  the one-Prime correction; the four
+  aspects - chronology, magic,
+  technology, environment - rated
+  2-20 on 2d10 with the 10-12 typical
+  band; the polymorphed-lich rules
+  springboard with its 60-turn/10-
+  hour renewal). Header
+  rules/dmoadventures.h, prefix dek,
+  34 inlines (14 consts 20 bools).
+  THREE flips: gap census 14/82 - the
+  doctrine half of Chapter 2 closed.
+  Spec tools/spec_r601.json 24435
+  bytes md5 bdf31adbc770acf4e00812ac9
+  2a14222 matched exactly first try;
+  the spec also seats the R600
+  record. THIRTY-FIVE straight
+  first-tries (R566-R601). NEXT -
+  R602: the Chapter 2 rating tables -
+  Table 2 Alternate Chronology,
+  Table 3 Magic Rating, Table 4
+  Technological Level, Table 5
+  Environmental Conditions (printed
+  pp. 46-53 per the report); the
+  monster-doctrine boxes follow;
+  prefix del free.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
