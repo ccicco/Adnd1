@@ -1,0 +1,1855 @@
+{
+ "round": 615,
+ "title": "THE ABILITY TABLES - the OA Chapter 1 ability tables: Table 1 Strength, Table 2 Strength Adjustments, Table 3 Dexterity, Table 4 Constitution, Table 5 Intelligence, Table 6 Wisdom, Table 7 Charisma and Table 8 Comeliness Adjustments - the grids with their class and race annotation pins",
+ "prefix": "dgb",
+ "header_file": "rules/oaabilities.h",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R614 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R614 LANDED 2026-10-18: commit",
+  "  a7019b4ad63e23afa1a01698d19d1f5",
+  "  8b82300c (census 536 -> 537,",
+  "  pushed 8836093..a7019b4), THE",
+  "  OA ARC OPENER (the R564 MotP",
+  "  pattern): the gap report",
+  "  tools/oa_gap_report.md lands in",
+  "  the same commit as the spec -",
+  "  235 boxes at opener (all 88",
+  "  numbered tables itemized). OA",
+  "  (1986, TSR 1500): the capture",
+  "  carries no printed page numbers",
+  "  so cites are CAPTURE pages; a",
+  "  single-capture arc (contested",
+  "  cells settle book-internal,",
+  "  then the physical copy).",
+  "  RITUAL: an opener with a NEW",
+  "  gap report verifies rverify in",
+  "  working-tree mode only - the",
+  "  sha restore deletes the new",
+  "  report (the R564 lesson).",
+  "  PINS: rules/oacreating.h,",
+  "  prefix dga (verified free), 22",
+  "  inlines (7 consts, 15 bools):",
+  "  the front-matter doctrine (the",
+  "  European monk retired for the",
+  "  oriental monk, the Kara-Tur",
+  "  naming, the honor thesis), the",
+  "  four generation methods, the",
+  "  NPC rules, the wish ladder,",
+  "  the Strength yardstick (the",
+  "  470-lb 18/00 press). Battery",
+  "  22 mutants, 0 missed; double-",
+  "  run GREEN (applied 8). Gap",
+  "  census 0/235 -> 4/231. Spec",
+  "  14,829 bytes md5",
+  "  75583a1171e018c2145e52ffddc002",
+  "  8a (canvas md5",
+  "  5d34868f3f88f4f7acd459bda2fc1c",
+  "  21); gap report md5 pre-flip",
+  "  35136522ec218e19541900bb042298",
+  "  5a, post-flip",
+  "  2631deaa6196a65f906b45eb108b21",
+  "  7d. NEXT - R615: the Chapter 1",
+  "  ability tables (Tables 1-8),",
+  "  prefix dgb (verify free), audit",
+  "  \"R615 OA ability tables audit\",",
+  "  include after",
+  "  rules/oacreating.h."
+ ],
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_label": "R615 OA ability tables audit",
+ "audit_comment": "OA round two (capture pp. 7-13): the eight ability tables - the six grids (Strength Adjustments, Dexterity, Constitution, Intelligence, Wisdom, Charisma) with the Table 8 band chain and grid, the class and race annotations of the General Information columns, the Table 4 warrior-bonus footnote and the Table 2 one-attempt riders.",
+ "census_before": 537,
+ "include_after": "#include \"rules/oacreating.h\"  // R614: the OA arc opener pins",
+ "include_comment": "the OA ability tables pins",
+ "caller_files": [],
+ "switches": [],
+ "consts": [
+  {
+   "name": "dgbMinStrWuJen",
+   "value": 3,
+   "comment": "Table 1 (capture p. 7): minimum Strength for wu jen"
+  },
+  {
+   "name": "dgbMinStrSpiritFolk",
+   "value": 6,
+   "comment": "Table 1 (capture p. 7): minimum Strength for spirit folk"
+  },
+  {
+   "name": "dgbMinStrKorobokuru",
+   "value": 8,
+   "comment": "Table 1 (capture p. 7): minimum Strength for korobokuru"
+  },
+  {
+   "name": "dgbMinStrShukenja",
+   "value": 9,
+   "comment": "Table 1 (capture p. 7): minimum Strength for shukenja"
+  },
+  {
+   "name": "dgbMinStrBushi",
+   "value": 9,
+   "comment": "Table 1 (capture p. 7): minimum Strength for bushi"
+  },
+  {
+   "name": "dgbMinStrHengeyokai",
+   "value": 12,
+   "comment": "Table 1 (capture p. 7): minimum Strength for hengeyokai"
+  },
+  {
+   "name": "dgbMinStrKensai",
+   "value": 12,
+   "comment": "Table 1 (capture p. 7): minimum Strength for kensai"
+  },
+  {
+   "name": "dgbMinStrSamurai",
+   "value": 13,
+   "comment": "Table 1 (capture p. 7): minimum Strength for samurai"
+  },
+  {
+   "name": "dgbMinStrSohei",
+   "value": 13,
+   "comment": "Table 1 (capture p. 7): minimum Strength for sohei"
+  },
+  {
+   "name": "dgbMinStrBarbarian",
+   "value": 15,
+   "comment": "Table 1 (capture p. 7): minimum Strength for barbarian"
+  },
+  {
+   "name": "dgbMinStrMonk",
+   "value": 15,
+   "comment": "Table 1 (capture p. 7): minimum Strength for monk"
+  },
+  {
+   "name": "dgbMaxStrShukenja",
+   "value": 18,
+   "comment": "Table 1 (capture p. 7): maximum Strength for shukenja"
+  },
+  {
+   "name": "dgbMaxStrMonk",
+   "value": 18,
+   "comment": "Table 1 (capture p. 7): maximum Strength for monk"
+  },
+  {
+   "name": "dgbMaxStrWuJen",
+   "value": 18,
+   "comment": "Table 1 (capture p. 7): maximum Strength for wu jen"
+  },
+  {
+   "name": "dgbMaxStrYakuza",
+   "value": 18,
+   "comment": "Table 1 (capture p. 7): maximum Strength for yakuza"
+  },
+  {
+   "name": "dgbMaxStrHuman",
+   "value": 18,
+   "comment": "Table 1 (capture p. 7): maximum Strength for human - the 18/00 row (capture p. 7)"
+  },
+  {
+   "name": "dgbMaxStrKorobokuru",
+   "value": 19,
+   "comment": "Table 1 (capture p. 7): maximum Strength for korobokuru"
+  },
+  {
+   "name": "dgbT2RowCount",
+   "value": 16,
+   "comment": "Table 2 (capture p. 8): sixteen rows - Strength 3, 4-5, 6-7, 8-9, 10-11, 12-13, 14-15, 16, 17, 18, 18/01-50, 18/51-75, 18/76-90, 18/91-99, 18/00, 19"
+  },
+  {
+   "name": "dgbMinDexKorobokuru",
+   "value": 6,
+   "comment": "Table 3 (capture p. 9): minimum Dexterity for korobokuru"
+  },
+  {
+   "name": "dgbMinDexBushi",
+   "value": 8,
+   "comment": "Table 3 (capture p. 9): minimum Dexterity for bushi"
+  },
+  {
+   "name": "dgbMinDexHengeyokai",
+   "value": 9,
+   "comment": "Table 3 (capture p. 9): minimum Dexterity for hengeyokai"
+  },
+  {
+   "name": "dgbMinDexSpiritFolk",
+   "value": 12,
+   "comment": "Table 3 (capture p. 9): minimum Dexterity for spirit folk"
+  },
+  {
+   "name": "dgbMinDexKensai",
+   "value": 14,
+   "comment": "Table 3 (capture p. 9): minimum Dexterity for kensai"
+  },
+  {
+   "name": "dgbMinDexBarbarian",
+   "value": 14,
+   "comment": "Table 3 (capture p. 9): minimum Dexterity for barbarian"
+  },
+  {
+   "name": "dgbMinDexNinja",
+   "value": 14,
+   "comment": "Table 3 (capture p. 9): minimum Dexterity for ninja"
+  },
+  {
+   "name": "dgbMinDexMonk",
+   "value": 15,
+   "comment": "Table 3 (capture p. 9): minimum Dexterity for monk"
+  },
+  {
+   "name": "dgbT3RowCount",
+   "value": 17,
+   "comment": "Table 3 (capture p. 9): seventeen rows, Dexterity 3 through 19"
+  },
+  {
+   "name": "dgbMinConSpiritFolk",
+   "value": 6,
+   "comment": "Table 4 (capture p. 10): minimum Constitution for spirit folk"
+  },
+  {
+   "name": "dgbMinConBushi",
+   "value": 8,
+   "comment": "Table 4 (capture p. 10): minimum Constitution for bushi"
+  },
+  {
+   "name": "dgbMinConShukenja",
+   "value": 9,
+   "comment": "Table 4 (capture p. 10): minimum Constitution for shukenja"
+  },
+  {
+   "name": "dgbMinConSohei",
+   "value": 10,
+   "comment": "Table 4 (capture p. 10): minimum Constitution for sohei"
+  },
+  {
+   "name": "dgbMinConMonk",
+   "value": 11,
+   "comment": "Table 4 (capture p. 10): minimum Constitution for monk"
+  },
+  {
+   "name": "dgbMinConKorobokuru",
+   "value": 12,
+   "comment": "Table 4 (capture p. 10): minimum Constitution for korobokuru"
+  },
+  {
+   "name": "dgbMinConHengeyokai",
+   "value": 12,
+   "comment": "Table 4 (capture p. 10): minimum Constitution for hengeyokai"
+  },
+  {
+   "name": "dgbMinConSamurai",
+   "value": 13,
+   "comment": "Table 4 (capture p. 10): minimum Constitution for samurai"
+  },
+  {
+   "name": "dgbMaxConSpiritFolk",
+   "value": 14,
+   "comment": "Table 4 (capture p. 10): maximum Constitution for spirit folk"
+  },
+  {
+   "name": "dgbMinConBarbarian",
+   "value": 15,
+   "comment": "Table 4 (capture p. 10): minimum Constitution for barbarian"
+  },
+  {
+   "name": "dgbT4RowCount",
+   "value": 16,
+   "comment": "Table 4 (capture p. 10): sixteen rows, Constitution 3 through 18"
+  },
+  {
+   "name": "dgbMinIntKorobokuru",
+   "value": 3,
+   "comment": "Table 5 (capture p. 11): minimum Intelligence for korobokuru"
+  },
+  {
+   "name": "dgbMinIntHengeyokai",
+   "value": 12,
+   "comment": "Table 5 (capture p. 11): minimum Intelligence for hengeyokai"
+  },
+  {
+   "name": "dgbMinIntSpiritFolk",
+   "value": 12,
+   "comment": "Table 5 (capture p. 11): minimum Intelligence for spirit folk"
+  },
+  {
+   "name": "dgbMinIntWuJen",
+   "value": 13,
+   "comment": "Table 5 (capture p. 11): minimum Intelligence for wu jen"
+  },
+  {
+   "name": "dgbMinIntSamurai",
+   "value": 14,
+   "comment": "Table 5 (capture p. 11): minimum Intelligence for samurai"
+  },
+  {
+   "name": "dgbMinIntNinja",
+   "value": 15,
+   "comment": "Table 5 (capture p. 11): minimum Intelligence for ninja"
+  },
+  {
+   "name": "dgbMaxIntKorobokuru",
+   "value": 15,
+   "comment": "Table 5 (capture p. 11): maximum Intelligence for korobokuru - the capture splits the row; the annotation belongs to the Intelligence 15 row"
+  },
+  {
+   "name": "dgbT5RowCount",
+   "value": 16,
+   "comment": "Table 5 (capture p. 11): sixteen rows, Intelligence 3 through 18"
+  },
+  {
+   "name": "dgbMinWisSpiritFolk",
+   "value": 9,
+   "comment": "Table 6 (capture pp. 11-12): minimum Wisdom for spirit folk"
+  },
+  {
+   "name": "dgbMinWisSohei",
+   "value": 10,
+   "comment": "Table 6 (capture p. 12): minimum Wisdom for sohei"
+  },
+  {
+   "name": "dgbMinWisKensai",
+   "value": 12,
+   "comment": "Table 6 (capture p. 12): minimum Wisdom for kensai"
+  },
+  {
+   "name": "dgbMinWisShukenja",
+   "value": 12,
+   "comment": "Table 6 (capture p. 12): minimum Wisdom for shukenja"
+  },
+  {
+   "name": "dgbMinWisHengeyokai",
+   "value": 12,
+   "comment": "Table 6 (capture p. 12): minimum Wisdom for hengeyokai"
+  },
+  {
+   "name": "dgbMinWisSamurai",
+   "value": 13,
+   "comment": "Table 6 (capture p. 12): minimum Wisdom for samurai"
+  },
+  {
+   "name": "dgbMinWisMonk",
+   "value": 15,
+   "comment": "Table 6 (capture p. 12): minimum Wisdom for monk"
+  },
+  {
+   "name": "dgbMaxWisBarbarian",
+   "value": 16,
+   "comment": "Table 6 (capture p. 12): maximum Wisdom for barbarian"
+  },
+  {
+   "name": "dgbMaxWisKorobokuru",
+   "value": 17,
+   "comment": "Table 6 (capture p. 12): maximum Wisdom for korobokuru"
+  },
+  {
+   "name": "dgbT6RowCount",
+   "value": 16,
+   "comment": "Table 6 (capture pp. 11-12): sixteen rows, Wisdom 3 through 18"
+  },
+  {
+   "name": "dgbMinChaHengeyokai",
+   "value": 12,
+   "comment": "Table 7 (capture p. 12): minimum Charisma for hengeyokai"
+  },
+  {
+   "name": "dgbMinChaSpiritFolk",
+   "value": 14,
+   "comment": "Table 7 (capture p. 12): minimum Charisma for spirit folk"
+  },
+  {
+   "name": "dgbMinChaNinja",
+   "value": 14,
+   "comment": "Table 7 (capture p. 12): minimum Charisma for ninja"
+  },
+  {
+   "name": "dgbMaxChaKorobokuru",
+   "value": 16,
+   "comment": "Table 7 (capture p. 12): maximum Charisma for korobokuru"
+  },
+  {
+   "name": "dgbMaxChaHengeyokai",
+   "value": 17,
+   "comment": "Table 7 (capture p. 12): maximum Charisma for hengeyokai"
+  },
+  {
+   "name": "dgbT7RowCount",
+   "value": 16,
+   "comment": "Table 7 (capture p. 12): sixteen rows, Charisma 3 through 18"
+  },
+  {
+   "name": "dgbT8RowCount",
+   "value": 9,
+   "comment": "Table 8 (capture p. 13): nine Charisma bands - 2 or less, 3, 4-5, 6-8, 9-12, 13-15, 16-17, 18, 19 or more"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgbT2OpenDoorsRetry",
+   "value": true,
+   "comment": "Table 2 explanation (capture p. 8): a stuck door can be retried until it opens, each attempt noisy and slow"
+  },
+  {
+   "name": "dgbT2LockedOneAttempt",
+   "value": true,
+   "comment": "Table 2 explanation (capture p. 8): a locked, barred or magically held door allows one attempt ever - a failure is permanent for that character"
+  },
+  {
+   "name": "dgbT2BendBarsOneAttempt",
+   "value": true,
+   "comment": "Table 2 explanation (capture p. 8): a failed bend-bars or lift-gate attempt can never succeed at that task; the other task at the same gate stays open"
+  },
+  {
+   "name": "dgbT2DmgFloorOne",
+   "value": true,
+   "comment": "Table 2 explanation (capture p. 8): a successful hit never causes less than 1 point of damage"
+  },
+  {
+   "name": "dgbT2WeightSlowdown",
+   "value": true,
+   "comment": "Table 2 explanation (capture p. 8): each additional 350 coins (35 lbs.) of weight slows the character by 25 percent"
+  },
+  {
+   "name": "dgbT4HitDieFloorOne",
+   "value": true,
+   "comment": "Table 4 explanation (capture p. 10): no hit die ever yields fewer than 1 hit point, whatever the adjustment"
+  },
+  {
+   "name": "dgbT4WarriorFullCon",
+   "value": true,
+   "comment": "Table 4 footnote (capture p. 10): the +3 at Constitution 17 and +4 at 18 apply only to samurai, bushi, kensai and sohei"
+  },
+  {
+   "name": "dgbT4BarbarianFullCon",
+   "value": true,
+   "comment": "Table 4 footnote (capture p. 10): the barbarian also receives the full hit-point bonus for Constitution"
+  },
+  {
+   "name": "dgbT4OthersCapTwo",
+   "value": true,
+   "comment": "Table 4 footnote (capture p. 10): wu jen, shukenja, ninja and yakuza receive at most +2 per hit die at Constitution 18"
+  },
+  {
+   "name": "dgbT6MindAuto",
+   "value": true,
+   "comment": "Table 6 explanation (capture p. 11): the magical attack adjustment applies automatically against mind attacks - beguiling, charm, fear, hypnosis, illusion, possession, suggestion"
+  }
+ ],
+ "chains": [
+  {
+   "name": "dgbT8Band",
+   "arg": "cha",
+   "limits": [
+    2,
+    3,
+    5,
+    8,
+    12,
+    15,
+    17,
+    18
+   ],
+   "tail": 8,
+   "comment": "the Table 8 band chain (capture p. 13): a Charisma score maps to its band - 2 or less band 0, 3 band 1, 4-5 band 2, 6-8 band 3, 9-12 band 4, 13-15 band 5, 16-17 band 6, 18 band 7, 19 or more band 8"
+  }
+ ],
+ "tables": [
+  {
+   "name": "dgbT2Grid",
+   "tag": "T2",
+   "count": "dgbT2RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgbT2HitProb",
+    "dgbT2DmgAdj",
+    "dgbT2Weight",
+    "dgbT2OpenMax",
+    "dgbT2OpenLocked",
+    "dgbT2BendPct"
+   ],
+   "data": [
+    [
+     -3,
+     -1,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     -2,
+     -1,
+     100,
+     1,
+     0,
+     0
+    ],
+    [
+     -1,
+     0,
+     200,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     350,
+     2,
+     0,
+     1
+    ],
+    [
+     0,
+     0,
+     350,
+     2,
+     0,
+     2
+    ],
+    [
+     0,
+     0,
+     450,
+     2,
+     0,
+     4
+    ],
+    [
+     0,
+     0,
+     550,
+     2,
+     0,
+     7
+    ],
+    [
+     0,
+     1,
+     700,
+     3,
+     0,
+     10
+    ],
+    [
+     1,
+     1,
+     850,
+     3,
+     0,
+     13
+    ],
+    [
+     1,
+     2,
+     1100,
+     3,
+     0,
+     16
+    ],
+    [
+     1,
+     3,
+     1350,
+     3,
+     0,
+     20
+    ],
+    [
+     2,
+     3,
+     1600,
+     4,
+     0,
+     25
+    ],
+    [
+     2,
+     4,
+     1850,
+     4,
+     0,
+     30
+    ],
+    [
+     2,
+     5,
+     2350,
+     4,
+     1,
+     35
+    ],
+    [
+     3,
+     6,
+     3350,
+     5,
+     2,
+     40
+    ],
+    [
+     3,
+     7,
+     4850,
+     7,
+     3,
+     50
+    ]
+   ],
+   "comment": "the Table 2 Strength Adjustments grid (capture p. 8)",
+   "col_comments": [
+    "the hit probability column: -3 at Strength 3 to +3 at 18/00 and 19 (capture p. 8).",
+    "the damage adjustment column: -1 at Strength 3 to +7 at 19 (capture p. 8).",
+    "the weight allowance column in coins: 0 at Strength 3 (the printed zero, pinned as printed) to 4,850 at 19 (capture p. 8).",
+    "the open-doors max column: the highest d6 face that forces a stuck door; the Str 19 row prints 7-in-8, pinned as the face 7 (capture p. 8).",
+    "the open-doors locked column: the parenthetical chance on a locked, barred or held door - 0 except 1 at 18/91-99, 2 at 18/00, 3 at 19 (capture p. 8).",
+    "the bend-bars percent column: 0 at Strength 3 to 50 at 19 (capture p. 8)."
+   ],
+   "audit_comment": "the Table 2 grid: hit probability, damage adjustment, weight allowance, open-doors max and locked, bend-bars percent across the sixteen Strength rows (capture p. 8)"
+  },
+  {
+   "name": "dgbT3Grid",
+   "tag": "T3",
+   "count": "dgbT3RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgbT3Reaction",
+    "dgbT3Defensive"
+   ],
+   "data": [
+    [
+     -3,
+     4
+    ],
+    [
+     -2,
+     3
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     1,
+     -2
+    ],
+    [
+     2,
+     -3
+    ],
+    [
+     3,
+     -4
+    ]
+   ],
+   "comment": "the Table 3 Dexterity grid (capture p. 9)",
+   "col_comments": [
+    "the reaction/attacking adjustment column: -3 at Dexterity 3 to +3 at 19 (capture p. 9).",
+    "the defensive adjustment column: +4 at Dexterity 3 to -4 at 19 (capture p. 9)."
+   ],
+   "audit_comment": "the Table 3 grid: the reaction adjustment and the defensive adjustment across Dexterity 3-19 (capture p. 9)"
+  },
+  {
+   "name": "dgbT4Grid",
+   "tag": "T4",
+   "count": "dgbT4RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgbT4HpAdj",
+    "dgbT4WarriorHpAdj",
+    "dgbT4ShockPct",
+    "dgbT4ResPct"
+   ],
+   "data": [
+    [
+     -2,
+     -2,
+     35,
+     40
+    ],
+    [
+     -1,
+     -1,
+     40,
+     45
+    ],
+    [
+     -1,
+     -1,
+     45,
+     50
+    ],
+    [
+     -1,
+     -1,
+     50,
+     55
+    ],
+    [
+     0,
+     0,
+     55,
+     60
+    ],
+    [
+     0,
+     0,
+     60,
+     65
+    ],
+    [
+     0,
+     0,
+     65,
+     70
+    ],
+    [
+     0,
+     0,
+     70,
+     75
+    ],
+    [
+     0,
+     0,
+     75,
+     80
+    ],
+    [
+     0,
+     0,
+     80,
+     85
+    ],
+    [
+     0,
+     0,
+     85,
+     90
+    ],
+    [
+     0,
+     0,
+     88,
+     92
+    ],
+    [
+     1,
+     1,
+     91,
+     94
+    ],
+    [
+     2,
+     2,
+     95,
+     96
+    ],
+    [
+     2,
+     3,
+     97,
+     98
+    ],
+    [
+     2,
+     4,
+     99,
+     100
+    ]
+   ],
+   "comment": "the Table 4 Constitution grid (capture p. 10)",
+   "col_comments": [
+    "the hit-point adjustment column: -2 at Constitution 3 to +2 at 18 (capture p. 10).",
+    "the warrior hit-point column: the full bonus ladder - the +3 at Constitution 17 and +4 at 18 of the printed footnote (capture p. 10).",
+    "the system shock survival percent column: 35 at Constitution 3 to 99 at 18 (capture p. 10).",
+    "the resurrection survival percent column: 40 at Constitution 3 to 100 at 18 (capture p. 10)."
+   ],
+   "audit_comment": "the Table 4 grid: the hit-point and warrior hit-point adjustments, the system shock and resurrection survival percents across Constitution 3-18 (capture p. 10)"
+  },
+  {
+   "name": "dgbT5Grid",
+   "tag": "T5",
+   "count": "dgbT5RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgbT5Languages",
+    "dgbT5MaxSpellLevel"
+   ],
+   "data": [
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     9
+    ]
+   ],
+   "comment": "the Table 5 Intelligence grid (capture p. 11)",
+   "col_comments": [
+    "the additional languages column: 0 at Intelligence 3-7, 1 at 8-9, rising to 7 at 18 (capture p. 11).",
+    "the maximum wu jen spell level column: 4 at Intelligence 3-9, 5 at 10-11, 6 at 12-14, 7 at 15, 8 at 16-17, 9 at 18 (capture p. 11)."
+   ],
+   "audit_comment": "the Table 5 grid: the additional languages and the maximum wu jen spell level across Intelligence 3-18 (capture p. 11)"
+  },
+  {
+   "name": "dgbT6Grid",
+   "tag": "T6",
+   "count": "dgbT6RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgbT6MagicAttack"
+   ],
+   "data": [
+    [
+     -3
+    ],
+    [
+     -2
+    ],
+    [
+     -1
+    ],
+    [
+     -1
+    ],
+    [
+     -1
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ]
+   ],
+   "comment": "the Table 6 Wisdom grid (capture pp. 11-12)",
+   "col_comments": [
+    "the magical attack adjustment column: -3 at Wisdom 3 to +4 at 18 (capture pp. 11-12)."
+   ],
+   "audit_comment": "the Table 6 grid: the magical attack adjustment across Wisdom 3-18 (capture pp. 11-12)"
+  },
+  {
+   "name": "dgbT7Grid",
+   "tag": "T7",
+   "count": "dgbT7RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgbT7Henchmen",
+    "dgbT7Loyalty",
+    "dgbT7Reaction"
+   ],
+   "data": [
+    [
+     1,
+     -30,
+     -25
+    ],
+    [
+     1,
+     -25,
+     -20
+    ],
+    [
+     2,
+     -20,
+     -15
+    ],
+    [
+     2,
+     -15,
+     -10
+    ],
+    [
+     3,
+     -10,
+     -5
+    ],
+    [
+     3,
+     -5,
+     0
+    ],
+    [
+     4,
+     0,
+     0
+    ],
+    [
+     4,
+     0,
+     0
+    ],
+    [
+     4,
+     0,
+     0
+    ],
+    [
+     5,
+     0,
+     0
+    ],
+    [
+     5,
+     0,
+     5
+    ],
+    [
+     6,
+     5,
+     10
+    ],
+    [
+     7,
+     15,
+     15
+    ],
+    [
+     8,
+     20,
+     25
+    ],
+    [
+     10,
+     30,
+     30
+    ],
+    [
+     15,
+     40,
+     35
+    ]
+   ],
+   "comment": "the Table 7 Charisma grid (capture p. 12)",
+   "col_comments": [
+    "the maximum henchmen column: 1 at Charisma 3-4 rising to 15 at 18 (capture p. 12).",
+    "the loyalty base percent column: -30 at Charisma 3 to +40 at 18 (capture p. 12).",
+    "the reaction adjustment percent column: -25 at Charisma 3 to +35 at 18 (capture p. 12)."
+   ],
+   "audit_comment": "the Table 7 grid: the henchmen, loyalty base and reaction adjustment columns across Charisma 3-18 (capture p. 12)"
+  },
+  {
+   "name": "dgbT8Grid",
+   "tag": "T8",
+   "count": "dgbT8RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgbT8ChaMax",
+    "dgbT8Adj"
+   ],
+   "data": [
+    [
+     2,
+     -8
+    ],
+    [
+     3,
+     -5
+    ],
+    [
+     5,
+     -3
+    ],
+    [
+     8,
+     -1
+    ],
+    [
+     12,
+     0
+    ],
+    [
+     15,
+     1
+    ],
+    [
+     17,
+     2
+    ],
+    [
+     18,
+     3
+    ],
+    [
+     19,
+     5
+    ]
+   ],
+   "comment": "the Table 8 Comeliness Adjustments grid (capture p. 13)",
+   "col_comments": [
+    "the band-max column: the highest Charisma score of each band - 2, 3, 5, 8, 12, 15, 17, 18, and the 19-plus tail (capture p. 13).",
+    "the Comeliness adjustment column: -8 at Charisma 2 or less, -5 at 3, -3 at 4-5, -1 at 6-8, 0 at 9-12, +1 at 13-15, +2 at 16-17, +3 at 18, +5 at 19 or more (capture p. 13)."
+   ],
+   "audit_comment": "the Table 8 grid: the nine Charisma bands and their Comeliness adjustments (capture p. 13)"
+  }
+ ],
+ "inline_count": 94,
+ "examples": [
+  {
+   "note": "the dgbMinStrWuJen pin",
+   "expr": "m['dgbMinStrWuJen']() != 3"
+  },
+  {
+   "note": "the dgbMinStrSpiritFolk pin",
+   "expr": "m['dgbMinStrSpiritFolk']() != 6"
+  },
+  {
+   "note": "the dgbMinStrKorobokuru pin",
+   "expr": "m['dgbMinStrKorobokuru']() != 8"
+  },
+  {
+   "note": "the dgbMinStrShukenja pin",
+   "expr": "m['dgbMinStrShukenja']() != 9"
+  },
+  {
+   "note": "the dgbMinStrBushi pin",
+   "expr": "m['dgbMinStrBushi']() != 9"
+  },
+  {
+   "note": "the dgbMinStrHengeyokai pin",
+   "expr": "m['dgbMinStrHengeyokai']() != 12"
+  },
+  {
+   "note": "the dgbMinStrKensai pin",
+   "expr": "m['dgbMinStrKensai']() != 12"
+  },
+  {
+   "note": "the dgbMinStrSamurai pin",
+   "expr": "m['dgbMinStrSamurai']() != 13"
+  },
+  {
+   "note": "the dgbMinStrSohei pin",
+   "expr": "m['dgbMinStrSohei']() != 13"
+  },
+  {
+   "note": "the dgbMinStrBarbarian pin",
+   "expr": "m['dgbMinStrBarbarian']() != 15"
+  },
+  {
+   "note": "the dgbMinStrMonk pin",
+   "expr": "m['dgbMinStrMonk']() != 15"
+  },
+  {
+   "note": "the dgbMaxStrShukenja pin",
+   "expr": "m['dgbMaxStrShukenja']() != 18"
+  },
+  {
+   "note": "the dgbMaxStrMonk pin",
+   "expr": "m['dgbMaxStrMonk']() != 18"
+  },
+  {
+   "note": "the dgbMaxStrWuJen pin",
+   "expr": "m['dgbMaxStrWuJen']() != 18"
+  },
+  {
+   "note": "the dgbMaxStrYakuza pin",
+   "expr": "m['dgbMaxStrYakuza']() != 18"
+  },
+  {
+   "note": "the dgbMaxStrHuman pin",
+   "expr": "m['dgbMaxStrHuman']() != 18"
+  },
+  {
+   "note": "the dgbMaxStrKorobokuru pin",
+   "expr": "m['dgbMaxStrKorobokuru']() != 19"
+  },
+  {
+   "note": "the dgbT2OpenDoorsRetry pin",
+   "expr": "m['dgbT2OpenDoorsRetry']() != 1"
+  },
+  {
+   "note": "the dgbT2LockedOneAttempt pin",
+   "expr": "m['dgbT2LockedOneAttempt']() != 1"
+  },
+  {
+   "note": "the dgbT2BendBarsOneAttempt pin",
+   "expr": "m['dgbT2BendBarsOneAttempt']() != 1"
+  },
+  {
+   "note": "the dgbT2DmgFloorOne pin",
+   "expr": "m['dgbT2DmgFloorOne']() != 1"
+  },
+  {
+   "note": "the dgbT2WeightSlowdown pin",
+   "expr": "m['dgbT2WeightSlowdown']() != 1"
+  },
+  {
+   "note": "the dgbT2RowCount pin",
+   "expr": "m['dgbT2RowCount']() != 16"
+  },
+  {
+   "note": "the dgbMinDexKorobokuru pin",
+   "expr": "m['dgbMinDexKorobokuru']() != 6"
+  },
+  {
+   "note": "the dgbMinDexBushi pin",
+   "expr": "m['dgbMinDexBushi']() != 8"
+  },
+  {
+   "note": "the dgbMinDexHengeyokai pin",
+   "expr": "m['dgbMinDexHengeyokai']() != 9"
+  },
+  {
+   "note": "the dgbMinDexSpiritFolk pin",
+   "expr": "m['dgbMinDexSpiritFolk']() != 12"
+  },
+  {
+   "note": "the dgbMinDexKensai pin",
+   "expr": "m['dgbMinDexKensai']() != 14"
+  },
+  {
+   "note": "the dgbMinDexBarbarian pin",
+   "expr": "m['dgbMinDexBarbarian']() != 14"
+  },
+  {
+   "note": "the dgbMinDexNinja pin",
+   "expr": "m['dgbMinDexNinja']() != 14"
+  },
+  {
+   "note": "the dgbMinDexMonk pin",
+   "expr": "m['dgbMinDexMonk']() != 15"
+  },
+  {
+   "note": "the dgbT3RowCount pin",
+   "expr": "m['dgbT3RowCount']() != 17"
+  },
+  {
+   "note": "the dgbMinConSpiritFolk pin",
+   "expr": "m['dgbMinConSpiritFolk']() != 6"
+  },
+  {
+   "note": "the dgbMinConBushi pin",
+   "expr": "m['dgbMinConBushi']() != 8"
+  },
+  {
+   "note": "the dgbMinConShukenja pin",
+   "expr": "m['dgbMinConShukenja']() != 9"
+  },
+  {
+   "note": "the dgbMinConSohei pin",
+   "expr": "m['dgbMinConSohei']() != 10"
+  },
+  {
+   "note": "the dgbMinConMonk pin",
+   "expr": "m['dgbMinConMonk']() != 11"
+  },
+  {
+   "note": "the dgbMinConKorobokuru pin",
+   "expr": "m['dgbMinConKorobokuru']() != 12"
+  },
+  {
+   "note": "the dgbMinConHengeyokai pin",
+   "expr": "m['dgbMinConHengeyokai']() != 12"
+  },
+  {
+   "note": "the dgbMinConSamurai pin",
+   "expr": "m['dgbMinConSamurai']() != 13"
+  },
+  {
+   "note": "the dgbMaxConSpiritFolk pin",
+   "expr": "m['dgbMaxConSpiritFolk']() != 14"
+  },
+  {
+   "note": "the dgbMinConBarbarian pin",
+   "expr": "m['dgbMinConBarbarian']() != 15"
+  },
+  {
+   "note": "the dgbT4RowCount pin",
+   "expr": "m['dgbT4RowCount']() != 16"
+  },
+  {
+   "note": "the dgbT4HitDieFloorOne pin",
+   "expr": "m['dgbT4HitDieFloorOne']() != 1"
+  },
+  {
+   "note": "the dgbT4WarriorFullCon pin",
+   "expr": "m['dgbT4WarriorFullCon']() != 1"
+  },
+  {
+   "note": "the dgbT4BarbarianFullCon pin",
+   "expr": "m['dgbT4BarbarianFullCon']() != 1"
+  },
+  {
+   "note": "the dgbT4OthersCapTwo pin",
+   "expr": "m['dgbT4OthersCapTwo']() != 1"
+  },
+  {
+   "note": "the dgbMinIntKorobokuru pin",
+   "expr": "m['dgbMinIntKorobokuru']() != 3"
+  },
+  {
+   "note": "the dgbMinIntHengeyokai pin",
+   "expr": "m['dgbMinIntHengeyokai']() != 12"
+  },
+  {
+   "note": "the dgbMinIntSpiritFolk pin",
+   "expr": "m['dgbMinIntSpiritFolk']() != 12"
+  },
+  {
+   "note": "the dgbMinIntWuJen pin",
+   "expr": "m['dgbMinIntWuJen']() != 13"
+  },
+  {
+   "note": "the dgbMinIntSamurai pin",
+   "expr": "m['dgbMinIntSamurai']() != 14"
+  },
+  {
+   "note": "the dgbMinIntNinja pin",
+   "expr": "m['dgbMinIntNinja']() != 15"
+  },
+  {
+   "note": "the dgbMaxIntKorobokuru pin",
+   "expr": "m['dgbMaxIntKorobokuru']() != 15"
+  },
+  {
+   "note": "the dgbT5RowCount pin",
+   "expr": "m['dgbT5RowCount']() != 16"
+  },
+  {
+   "note": "the dgbMinWisSpiritFolk pin",
+   "expr": "m['dgbMinWisSpiritFolk']() != 9"
+  },
+  {
+   "note": "the dgbMinWisSohei pin",
+   "expr": "m['dgbMinWisSohei']() != 10"
+  },
+  {
+   "note": "the dgbMinWisKensai pin",
+   "expr": "m['dgbMinWisKensai']() != 12"
+  },
+  {
+   "note": "the dgbMinWisShukenja pin",
+   "expr": "m['dgbMinWisShukenja']() != 12"
+  },
+  {
+   "note": "the dgbMinWisHengeyokai pin",
+   "expr": "m['dgbMinWisHengeyokai']() != 12"
+  },
+  {
+   "note": "the dgbMinWisSamurai pin",
+   "expr": "m['dgbMinWisSamurai']() != 13"
+  },
+  {
+   "note": "the dgbMinWisMonk pin",
+   "expr": "m['dgbMinWisMonk']() != 15"
+  },
+  {
+   "note": "the dgbMaxWisBarbarian pin",
+   "expr": "m['dgbMaxWisBarbarian']() != 16"
+  },
+  {
+   "note": "the dgbMaxWisKorobokuru pin",
+   "expr": "m['dgbMaxWisKorobokuru']() != 17"
+  },
+  {
+   "note": "the dgbT6RowCount pin",
+   "expr": "m['dgbT6RowCount']() != 16"
+  },
+  {
+   "note": "the dgbT6MindAuto pin",
+   "expr": "m['dgbT6MindAuto']() != 1"
+  },
+  {
+   "note": "the dgbMinChaHengeyokai pin",
+   "expr": "m['dgbMinChaHengeyokai']() != 12"
+  },
+  {
+   "note": "the dgbMinChaSpiritFolk pin",
+   "expr": "m['dgbMinChaSpiritFolk']() != 14"
+  },
+  {
+   "note": "the dgbMinChaNinja pin",
+   "expr": "m['dgbMinChaNinja']() != 14"
+  },
+  {
+   "note": "the dgbMaxChaKorobokuru pin",
+   "expr": "m['dgbMaxChaKorobokuru']() != 16"
+  },
+  {
+   "note": "the dgbMaxChaHengeyokai pin",
+   "expr": "m['dgbMaxChaHengeyokai']() != 17"
+  },
+  {
+   "note": "the dgbT7RowCount pin",
+   "expr": "m['dgbT7RowCount']() != 16"
+  },
+  {
+   "note": "the dgbT8RowCount pin",
+   "expr": "m['dgbT8RowCount']() != 9"
+  },
+  {
+   "note": "the Table 8 band chain: Charisma 3 lands band 1",
+   "expr": "m['dgbT8Band'](3) != 1"
+  },
+  {
+   "note": "the Table 8 band chain: Charisma 19 lands band 8",
+   "expr": "m['dgbT8Band'](19) != 8"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the Table 2 18/00 row (capture p. 8)",
+   "expr": "m['dgbT2HitProb'](14) != 3 or m['dgbT2DmgAdj'](14) != 6 or m['dgbT2Weight'](14) != 3350 or m['dgbT2BendPct'](14) != 40"
+  },
+  {
+   "note": "the Table 2 Str 19 row prints 7-in-8 with the locked 3 (capture p. 8)",
+   "expr": "m['dgbT2OpenMax'](15) != 7 or m['dgbT2OpenLocked'](15) != 3"
+  },
+  {
+   "note": "the Table 3 Dexterity 18 row (capture p. 9)",
+   "expr": "m['dgbT3Reaction'](15) != 2 or m['dgbT3Defensive'](15) != -3"
+  },
+  {
+   "note": "the Table 4 Constitution 18 row: the warrior +4 and the 100 percent resurrection (capture p. 10)",
+   "expr": "m['dgbT4WarriorHpAdj'](15) != 4 or m['dgbT4ResPct'](15) != 100"
+  },
+  {
+   "note": "the Table 4 warrior column diverges from the common column only at 17 and 18 (capture p. 10)",
+   "expr": "m['dgbT4WarriorHpAdj'](13) != m['dgbT4HpAdj'](13)"
+  },
+  {
+   "note": "the Table 5 Intelligence 18 row (capture p. 11)",
+   "expr": "m['dgbT5Languages'](15) != 7 or m['dgbT5MaxSpellLevel'](15) != 9"
+  },
+  {
+   "note": "the Table 6 Wisdom 18 row (capture pp. 11-12)",
+   "expr": "m['dgbT6MagicAttack'](15) != 4"
+  },
+  {
+   "note": "the Table 7 Charisma 18 row (capture p. 12)",
+   "expr": "m['dgbT7Henchmen'](15) != 15 or m['dgbT7Loyalty'](15) != 40 or m['dgbT7Reaction'](15) != 35"
+  },
+  {
+   "note": "the Table 8 chain and grid agree: Charisma 18 adjusts +3 (capture p. 13)",
+   "expr": "m['dgbT8Adj'](m['dgbT8Band'](18)) != 3"
+  },
+  {
+   "note": "the Table 8 chain and grid agree: Charisma 2 adjusts -8 (capture p. 13)",
+   "expr": "m['dgbT8Adj'](m['dgbT8Band'](2)) != -8"
+  }
+ ],
+ "header_sections": {
+  "the OA ability table doctrine pins": [
+   {
+    "kind": "bool",
+    "name": "dgbT2OpenDoorsRetry"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbT2LockedOneAttempt"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbT2BendBarsOneAttempt"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbT2DmgFloorOne"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbT2WeightSlowdown"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbT4HitDieFloorOne"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbT4WarriorFullCon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbT4BarbarianFullCon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbT4OthersCapTwo"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbT6MindAuto"
+   }
+  ],
+  "the Table 1 Strength annotation pins and the Table 2 grid": [
+   {
+    "kind": "const",
+    "name": "dgbMinStrWuJen"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinStrSpiritFolk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinStrKorobokuru"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinStrShukenja"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinStrBushi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinStrHengeyokai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinStrKensai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinStrSamurai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinStrSohei"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinStrBarbarian"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinStrMonk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxStrShukenja"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxStrMonk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxStrWuJen"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxStrYakuza"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxStrHuman"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxStrKorobokuru"
+   },
+   {
+    "kind": "const",
+    "name": "dgbT2RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dgbT2Grid"
+   }
+  ],
+  "the Table 3 Dexterity annotation pins and grid": [
+   {
+    "kind": "const",
+    "name": "dgbMinDexKorobokuru"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinDexBushi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinDexHengeyokai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinDexSpiritFolk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinDexKensai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinDexBarbarian"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinDexNinja"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinDexMonk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbT3RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dgbT3Grid"
+   }
+  ],
+  "the Table 4 Constitution annotation pins and grid": [
+   {
+    "kind": "const",
+    "name": "dgbMinConSpiritFolk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinConBushi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinConShukenja"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinConSohei"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinConMonk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinConKorobokuru"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinConHengeyokai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinConSamurai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxConSpiritFolk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinConBarbarian"
+   },
+   {
+    "kind": "const",
+    "name": "dgbT4RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dgbT4Grid"
+   }
+  ],
+  "the Table 5 Intelligence annotation pins and grid": [
+   {
+    "kind": "const",
+    "name": "dgbMinIntKorobokuru"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinIntHengeyokai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinIntSpiritFolk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinIntWuJen"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinIntSamurai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinIntNinja"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxIntKorobokuru"
+   },
+   {
+    "kind": "const",
+    "name": "dgbT5RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dgbT5Grid"
+   }
+  ],
+  "the Table 6 Wisdom annotation pins and grid": [
+   {
+    "kind": "const",
+    "name": "dgbMinWisSpiritFolk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinWisSohei"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinWisKensai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinWisShukenja"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinWisHengeyokai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinWisSamurai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinWisMonk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxWisBarbarian"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxWisKorobokuru"
+   },
+   {
+    "kind": "const",
+    "name": "dgbT6RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dgbT6Grid"
+   }
+  ],
+  "the Table 7 Charisma annotation pins and grid": [
+   {
+    "kind": "const",
+    "name": "dgbMinChaHengeyokai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinChaSpiritFolk"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMinChaNinja"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxChaKorobokuru"
+   },
+   {
+    "kind": "const",
+    "name": "dgbMaxChaHengeyokai"
+   },
+   {
+    "kind": "const",
+    "name": "dgbT7RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dgbT7Grid"
+   }
+  ],
+  "the Table 8 Comeliness band pins and grid": [
+   {
+    "kind": "const",
+    "name": "dgbT8RowCount"
+   },
+   {
+    "kind": "chain",
+    "name": "dgbT8Band"
+   },
+   {
+    "kind": "table",
+    "name": "dgbT8Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Strength box closes",
+   "from": "  - [ ] Table 1: Strength (capture p. 7)",
+   "to": "  - [x] Table 1: Strength (capture p. 7) -\n    R615: the dgb annotation pins - the class and race\n    minimums and maximums printed in the General\n    Information column (17 consts: the wu jen\n    3 through the barbarian and monk 15 mins,\n    the shukenja-monk-wu jen-yakuza 18 maxes,\n    the human 18/00, the korobokuru 19)"
+  },
+  {
+   "note": "the Strength Adjustments box closes",
+   "from": "  - [ ] Table 2: Strength Adjustments (capture p. 8)",
+   "to": "  - [x] Table 2: Strength Adjustments (capture p. 8) -\n    R615: the dgb T2 grid - six columns (hit probability,\n    damage adjustment, weight allowance, the\n    open-doors max with the locked parentheticals,\n    bend-bars percent) across sixteen rows with\n    the one-attempt riders and the 350-coin\n    slowdown pinned"
+  },
+  {
+   "note": "the Dexterity box closes",
+   "from": "  - [ ] Table 3: Dexterity (capture p. 9)",
+   "to": "  - [x] Table 3: Dexterity (capture p. 9) -\n    R615: the dgb T3 grid - the reaction/attack and the\n    defensive adjustments across Dexterity 3-19,\n    with the Dex annotations (the korobokuru 6\n    through the monk 15)"
+  },
+  {
+   "note": "the Constitution box closes",
+   "from": "  - [ ] Table 4: Constitution (capture p. 10)",
+   "to": "  - [x] Table 4: Constitution (capture p. 10) -\n    R615: the dgb T4 grid - the hit-point and warrior\n    hit-point ladders, the system shock and the\n    resurrection percents, with the warrior +3/\n    +4 footnote (the samurai, bushi, kensai and\n    sohei plus the barbarian full, the wu jen,\n    shukenja, ninja and yakuza capped at +2)"
+  },
+  {
+   "note": "the Intelligence box closes",
+   "from": "  - [ ] Table 5: Intelligence (capture p. 11)",
+   "to": "  - [x] Table 5: Intelligence (capture p. 11) -\n    R615: the dgb T5 grid - the additional languages and\n    the maximum wu jen spell level, with the Int\n    annotations (the korobokuru 3/15 bounds, the\n    wu jen 13 min)"
+  },
+  {
+   "note": "the Wisdom box closes",
+   "from": "  - [ ] Table 6: Wisdom (capture p. 11)",
+   "to": "  - [x] Table 6: Wisdom (capture p. 11) -\n    R615: the dgb T6 grid - the magical attack adjustment\n    ladder across Wisdom 3-18, with the Wis\n    annotations (the sohei 10 through the monk 15\n    mins, the barbarian 16 and korobokuru 17\n    maxes) and the automatic mind-defense rider"
+  },
+  {
+   "note": "the Charisma box closes",
+   "from": "  - [ ] Table 7: Charisma (capture p. 12)",
+   "to": "  - [x] Table 7: Charisma (capture p. 12) -\n    R615: the dgb T7 grid - the henchmen, loyalty base\n    and reaction adjustment columns, with the Cha\n    annotations (the hengeyokai 12 min, the\n    spirit folk and ninja 14 mins, the korobokuru\n    16 and hengeyokai 17 maxes)"
+  },
+  {
+   "note": "the Comeliness Adjustments box closes",
+   "from": "  - [ ] Table 8: Comeliness Adjustments (capture p. 13)",
+   "to": "  - [x] Table 8: Comeliness Adjustments (capture p. 13) -\n    R615: the dgb T8 band chain and grid - the nine\n    Charisma bands (2-or-less through 19-or-more)\n    with their Comeliness adjustments (-8 through\n    +5)"
+  }
+ ],
+ "gap_census": {
+  "closed": 12,
+  "open": 223
+ },
+ "banner": {
+  "title": "THE ABILITY TABLES, printed capture pp. 7-13 - the OA Chapter 1 ability tables round",
+  "provenance": "verified against capture pp. 7-13 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). OCR normalizations: the Table 4 \"+\" and percent spacing read clean as numbers; the Table 5 korobokuru maximum splits from its Intelligence 15 row in the capture and merges back per book-internal settling; Table 2 Strength 3 weight allowance prints 0 - pinned as printed, flagged for the physical copy. The open-doors parentheticals pin as their own column (the engine strOpenDoors precedent); the Str 19 row prints 7-in-8 and pins as the face 7. The Table 4 footnote prints the warrior bonus (+3 at Con 17, +4 at 18) for samurai, bushi, kensai and sohei with the barbarian also entitled - all pinned as printed.",
+  "sentinel": "the gap census after this round: 12 closed, 223 open - the eight ability tables flip (census 537 -> 538); NEXT - R616: the six ability prose sub-items (the Dexterity, Constitution, Intelligence, Wisdom, Charisma and Comeliness prose - the column explanations, the smitten doctrine, the Comeliness reaction bands and the racial adjustments), prefix dgc (verify free), audit \"R616 OA ability prose audit\", include after rules/oaabilities.h"
+ }
+}

@@ -106,22 +106,62 @@ description riding the same round.
     weight ceiling, the 470-pound 18/00 ladder, the
     bushi 15-plus 10 percent bonus, the four
     exceptional-Strength classes)
-  - [ ] Table 1: Strength (capture p. 7)
-  - [ ] Table 2: Strength Adjustments (capture p. 8)
+  - [x] Table 1: Strength (capture p. 7) -
+    R615: the dgb annotation pins - the class and race
+    minimums and maximums printed in the General
+    Information column (17 consts: the wu jen
+    3 through the barbarian and monk 15 mins,
+    the shukenja-monk-wu jen-yakuza 18 maxes,
+    the human 18/00, the korobokuru 19)
+  - [x] Table 2: Strength Adjustments (capture p. 8) -
+    R615: the dgb T2 grid - six columns (hit probability,
+    damage adjustment, weight allowance, the
+    open-doors max with the locked parentheticals,
+    bend-bars percent) across sixteen rows with
+    the one-attempt riders and the 350-coin
+    slowdown pinned
   - [ ] Dexterity prose (capture p. 8)
-  - [ ] Table 3: Dexterity (capture p. 9)
+  - [x] Table 3: Dexterity (capture p. 9) -
+    R615: the dgb T3 grid - the reaction/attack and the
+    defensive adjustments across Dexterity 3-19,
+    with the Dex annotations (the korobokuru 6
+    through the monk 15)
   - [ ] Constitution prose (capture p. 9)
-  - [ ] Table 4: Constitution (capture p. 10)
+  - [x] Table 4: Constitution (capture p. 10) -
+    R615: the dgb T4 grid - the hit-point and warrior
+    hit-point ladders, the system shock and the
+    resurrection percents, with the warrior +3/
+    +4 footnote (the samurai, bushi, kensai and
+    sohei plus the barbarian full, the wu jen,
+    shukenja, ninja and yakuza capped at +2)
   - [ ] Intelligence prose (capture p. 10)
-  - [ ] Table 5: Intelligence (capture p. 11)
+  - [x] Table 5: Intelligence (capture p. 11) -
+    R615: the dgb T5 grid - the additional languages and
+    the maximum wu jen spell level, with the Int
+    annotations (the korobokuru 3/15 bounds, the
+    wu jen 13 min)
   - [ ] Wisdom prose (capture p. 11)
-  - [ ] Table 6: Wisdom (capture p. 11)
+  - [x] Table 6: Wisdom (capture p. 11) -
+    R615: the dgb T6 grid - the magical attack adjustment
+    ladder across Wisdom 3-18, with the Wis
+    annotations (the sohei 10 through the monk 15
+    mins, the barbarian 16 and korobokuru 17
+    maxes) and the automatic mind-defense rider
   - [ ] Charisma prose (capture p. 12)
-  - [ ] Table 7: Charisma (capture p. 12)
+  - [x] Table 7: Charisma (capture p. 12) -
+    R615: the dgb T7 grid - the henchmen, loyalty base
+    and reaction adjustment columns, with the Cha
+    annotations (the hengeyokai 12 min, the
+    spirit folk and ninja 14 mins, the korobokuru
+    16 and hengeyokai 17 maxes)
   - [ ] Comeliness prose (capture pp. 13-15) - the
     reaction bands, the smitten doctrine, the illusion
     and polymorph caps
-  - [ ] Table 8: Comeliness Adjustments (capture p. 13)
+  - [x] Table 8: Comeliness Adjustments (capture p. 13) -
+    R615: the dgb T8 band chain and grid - the nine
+    Charisma bands (2-or-less through 19-or-more)
+    with their Comeliness adjustments (-8 through
+    +5)
 
 - [ ] **Chapter 2: Character Classes and Races**
   (capture pp. 15-60) - the ten classes and the

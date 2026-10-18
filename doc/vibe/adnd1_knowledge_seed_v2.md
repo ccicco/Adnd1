@@ -11606,6 +11606,55 @@ when both halves land.
   include after
   rules/dmoduelroster.h; audit
   "R614 OA opener audit".
+- R614 LANDED 2026-10-18: commit
+  a7019b4ad63e23afa1a01698d19d1f5
+  8b82300c (census 536 -> 537,
+  pushed 8836093..a7019b4), THE
+  OA ARC OPENER (the R564 MotP
+  pattern): the gap report
+  tools/oa_gap_report.md lands in
+  the same commit as the spec -
+  235 boxes at opener (all 88
+  numbered tables itemized). OA
+  (1986, TSR 1500): the capture
+  carries no printed page numbers
+  so cites are CAPTURE pages; a
+  single-capture arc (contested
+  cells settle book-internal,
+  then the physical copy).
+  RITUAL: an opener with a NEW
+  gap report verifies rverify in
+  working-tree mode only - the
+  sha restore deletes the new
+  report (the R564 lesson).
+  PINS: rules/oacreating.h,
+  prefix dga (verified free), 22
+  inlines (7 consts, 15 bools):
+  the front-matter doctrine (the
+  European monk retired for the
+  oriental monk, the Kara-Tur
+  naming, the honor thesis), the
+  four generation methods, the
+  NPC rules, the wish ladder,
+  the Strength yardstick (the
+  470-lb 18/00 press). Battery
+  22 mutants, 0 missed; double-
+  run GREEN (applied 8). Gap
+  census 0/235 -> 4/231. Spec
+  14,829 bytes md5
+  75583a1171e018c2145e52ffddc002
+  8a (canvas md5
+  5d34868f3f88f4f7acd459bda2fc1c
+  21); gap report md5 pre-flip
+  35136522ec218e19541900bb042298
+  5a, post-flip
+  2631deaa6196a65f906b45eb108b21
+  7d. NEXT - R615: the Chapter 1
+  ability tables (Tables 1-8),
+  prefix dgb (verify free), audit
+  "R615 OA ability tables audit",
+  include after
+  rules/oacreating.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
