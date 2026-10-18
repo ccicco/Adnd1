@@ -11788,6 +11788,39 @@ when both halves land.
   14-17, prefix dgf (verify free),
   audit "R619 OA barbarian bushi
   audit", include after rules/oaraces.h.
+- R619 LANDED 2026-10-18: commit
+  96b0682cda3a7922e2a427ca4994e45d1
+  3f7bf90 (census 541 -> 542,
+  pushed 7305a1f..96b0682), THE
+  BARBARIAN AND BUSHI, capture pp. 23-28
+  - the class run opens: rules/
+  oabarbbushi.h, prefix dgf, 87 inlines
+  (50 consts, 23 bools, 14 table columns):
+  the barbarian (d12, the +2-per-Con-over-
+  14 bonus, T14/T15/T16, the three
+  territories, the horde with the
+  1 1/2-TIMES-LEVEL max - 1112 settled
+  against the 2018 print BEFORE pinning,
+  the settling doctrine FIRST LIVE USE),
+  the bushi (the AC-step-per-five-levels
+  rule, T17). LESSON: THE R618 v3
+  AMENDMENT FOLD DID NOT LAND - the rn
+  flow staged only the R619 files; the
+  landed tree still carries spec_r618 at
+  08fa91d7 and oaraces.h at 3786b6c2
+  (the v2). THE AMENDMENT IS RE-APPLIED
+  TO THE WORKING TREE AND MUST RIDE THE
+  R620 PUSH - EXPLICITLY git add
+  tools/spec_r618.json rules/oaraces.h
+  (a PRIOR-ROUND-FILE fold does not
+  happen by itself). Battery 227 mutants,
+  0 missed; gap census 27/208 -> 33/202.
+  Spec 37,972 bytes md5
+  5530686e0626ac064bd7e40f8db981dd. NEXT -
+  R620: the Kensai, Tables 18 and 19,
+  prefix dgg (verify free), audit "R620
+  OA kensai audit", include after rules/
+  oabarbbushi.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

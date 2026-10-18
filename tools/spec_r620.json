@@ -1,0 +1,972 @@
+{
+ "round": 620,
+ "title": "THE KENSAI - the sword saint: the favored-weapon doctrine, the natural AC formula, the ki power, the level ladders with the pupil and whirlwind powers, the duel doctrine, Tables 18 and 19",
+ "prefix": "dgg",
+ "header_file": "rules/oakensai.h",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R619 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R619 LANDED 2026-10-18: commit",
+  "  96b0682cda3a7922e2a427ca4994e45d1",
+  "  3f7bf90 (census 541 -> 542,",
+  "  pushed 7305a1f..96b0682), THE",
+  "  BARBARIAN AND BUSHI, capture pp. 23-28",
+  "  - the class run opens: rules/",
+  "  oabarbbushi.h, prefix dgf, 87 inlines",
+  "  (50 consts, 23 bools, 14 table columns):",
+  "  the barbarian (d12, the +2-per-Con-over-",
+  "  14 bonus, T14/T15/T16, the three",
+  "  territories, the horde with the",
+  "  1 1/2-TIMES-LEVEL max - 1112 settled",
+  "  against the 2018 print BEFORE pinning,",
+  "  the settling doctrine FIRST LIVE USE),",
+  "  the bushi (the AC-step-per-five-levels",
+  "  rule, T17). LESSON: THE R618 v3",
+  "  AMENDMENT FOLD DID NOT LAND - the rn",
+  "  flow staged only the R619 files; the",
+  "  landed tree still carries spec_r618 at",
+  "  08fa91d7 and oaraces.h at 3786b6c2",
+  "  (the v2). THE AMENDMENT IS RE-APPLIED",
+  "  TO THE WORKING TREE AND MUST RIDE THE",
+  "  R620 PUSH - EXPLICITLY git add",
+  "  tools/spec_r618.json rules/oaraces.h",
+  "  (a PRIOR-ROUND-FILE fold does not",
+  "  happen by itself). Battery 227 mutants,",
+  "  0 missed; gap census 27/208 -> 33/202.",
+  "  Spec 37,972 bytes md5",
+  "  5530686e0626ac064bd7e40f8db981dd. NEXT -",
+  "  R620: the Kensai, Tables 18 and 19,",
+  "  prefix dgg (verify free), audit \"R620",
+  "  OA kensai audit\", include after rules/",
+  "  oabarbbushi.h."
+ ],
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_label": "R620 OA kensai audit",
+ "audit_comment": "OA round seven (capture pp. 28-31): the kensai - the dual prime requisites, the natural AC formula and step, the initiative and ki powers, the damage and to-hit ladders, the pupil and whirlwind powers, the restrictions and practice, and the duel doctrine with the honor demotion.",
+ "census_before": 542,
+ "include_after": "#include \"rules/oabarbbushi.h\"  // R619: the OA barbarian and bushi pins",
+ "include_comment": "the OA kensai pins",
+ "caller_files": [],
+ "switches": [],
+ "consts": [
+  {
+   "name": "dggKensaiMinStr",
+   "value": 12,
+   "comment": "Kensai prose (capture p. 29): the Strength minimum"
+  },
+  {
+   "name": "dggKensaiMinWis",
+   "value": 12,
+   "comment": "Kensai prose (capture p. 29): the Wisdom minimum"
+  },
+  {
+   "name": "dggKensaiMinDex",
+   "value": 14,
+   "comment": "Kensai prose (capture p. 29): the Dexterity minimum"
+  },
+  {
+   "name": "dggKensaiHitDie",
+   "value": 10,
+   "comment": "Kensai prose (capture p. 29): the 10-sided hit die, one per level"
+  },
+  {
+   "name": "dggKensaiSlots",
+   "value": 3,
+   "comment": "Kensai prose (capture p. 29): three initial proficiency slots - the free chosen-weapon proficiency costs none; only one slot may buy a second weapon; the rest must be peaceful skills"
+  },
+  {
+   "name": "dggKensaiNaturalAcBase",
+   "value": 23,
+   "comment": "Kensai prose (capture p. 29): the natural AC formula - 23 minus Dexterity (the printed Dex 16 to AC 7 example)"
+  },
+  {
+   "name": "dggKensaiAcStepLevels",
+   "value": 3,
+   "comment": "Kensai prose (capture p. 29): the natural AC improves one step per three levels"
+  },
+  {
+   "name": "dggKensaiInitBase",
+   "value": 1,
+   "comment": "Kensai prose (capture p. 29): +1 on all initiative rolls, melee and missile, self only in a group"
+  },
+  {
+   "name": "dggKensaiSaveBonus",
+   "value": 1,
+   "comment": "Kensai prose (capture p. 29): +1 on all saving throws"
+  },
+  {
+   "name": "dggKensaiDuelBonusVsOthers",
+   "value": 2,
+   "comment": "Kensai prose (capture p. 29): the psychic-duel bonus vs. non-kensai; vs. another kensai only the levels count"
+  },
+  {
+   "name": "dggKensaiDmgLevels",
+   "value": 5,
+   "comment": "Kensai prose (capture p. 30): the damage bonus steps - +1 at 2nd, again at 5th, 8th, 10th and 12th, total +5"
+  },
+  {
+   "name": "dggKensaiHitLevels",
+   "value": 5,
+   "comment": "Kensai prose (capture p. 30): the to-hit bonus steps - +1 at 3rd, again at 5th, 8th, 10th and 12th, total +5 and the equivalence of a magical +5 weapon"
+  },
+  {
+   "name": "dggKensaiInitTwo",
+   "value": 2,
+   "comment": "Kensai prose (capture p. 30): the initiative bonus rises to +2 at 5th (the printed total modifier)"
+  },
+  {
+   "name": "dggKensaiInitThree",
+   "value": 3,
+   "comment": "Kensai prose (capture p. 30): the initiative bonus rises to +3 at 9th"
+  },
+  {
+   "name": "dggKensaiMeditateLevel",
+   "value": 4,
+   "comment": "Kensai prose (capture p. 30): at 4th level meditates like a shukenja"
+  },
+  {
+   "name": "dggKensaiSurpriseLevel",
+   "value": 6,
+   "comment": "Kensai prose (capture p. 30): at 6th level surprised only on a 1 on 1d6"
+  },
+  {
+   "name": "dggKensaiTwoWeaponsLevel",
+   "value": 7,
+   "comment": "Kensai prose (capture p. 30): at 7th level two weapons simultaneously with no penalty, and causes fear as a samurai"
+  },
+  {
+   "name": "dggKensaiPupilDie",
+   "value": 6,
+   "comment": "Kensai prose (capture p. 30): at 9th level attracts 1d6 pupils, all 1st-level kensai specializing in the master weapon"
+  },
+  {
+   "name": "dggKensaiPupilDepartPct",
+   "value": 5,
+   "comment": "Kensai prose (capture p. 30): a 5 percent chance per level that a pupil ends studies and leaves"
+  },
+  {
+   "name": "dggKensaiPupilLossPct",
+   "value": 50,
+   "comment": "Kensai prose (capture p. 30): a 50 percent chance per pupil of leaving when the master loses a duel to a lower-level kensai"
+  },
+  {
+   "name": "dggKensaiWhirlwindLevel",
+   "value": 11,
+   "comment": "Kensai prose (capture p. 30): the whirlwind attack at 11th level"
+  },
+  {
+   "name": "dggKensaiWhirlwindRange",
+   "value": 10,
+   "comment": "Kensai prose (capture p. 30): the whirlwind attacks all opponents within 10 feet once in the same round"
+  },
+  {
+   "name": "dggKensaiDuelXpMultiplier",
+   "value": 2,
+   "comment": "Kensai prose (capture p. 31): double experience for defeating another kensai in a duel; a duel with a particular opponent once per level"
+  },
+  {
+   "name": "dggKensaiPracticeHours",
+   "value": 2,
+   "comment": "Kensai prose (capture p. 31): at least two hours of daily practice; every skipped two-hour session must be made up before advancing (four hours per day when catching up - the printed Kiyomori example)"
+  },
+  {
+   "name": "dggT18RowCount",
+   "value": 12,
+   "comment": "Table 18 (capture pp. 28-29): twelve rows, levels 1-12"
+  },
+  {
+   "name": "dggT18XpBeyond",
+   "value": 250000,
+   "comment": "Table 18 note (capture p. 29): 250,000 experience points per level beyond 12th"
+  },
+  {
+   "name": "dggT18HpBeyond",
+   "value": 2,
+   "comment": "Table 18 note (capture p. 29): 2 hit points per level beyond 9th"
+  },
+  {
+   "name": "dggT19RowCount",
+   "value": 12,
+   "comment": "Table 19 (capture p. 30): twelve rows, levels 1 through 12+"
+  },
+  {
+   "name": "dggT19SpecNone",
+   "value": 0,
+   "comment": "Table 19 special code (capture p. 30): none"
+  },
+  {
+   "name": "dggT19SpecMeditate",
+   "value": 1,
+   "comment": "Table 19 special code (capture p. 30): meditation at 4th"
+  },
+  {
+   "name": "dggT19SpecSurprise",
+   "value": 2,
+   "comment": "Table 19 special code (capture p. 30): the 1-in-6 surprise at 6th"
+  },
+  {
+   "name": "dggT19SpecTwoWeapons",
+   "value": 3,
+   "comment": "Table 19 special code (capture p. 30): two weapons and fear at 7th"
+  },
+  {
+   "name": "dggT19SpecPupils",
+   "value": 4,
+   "comment": "Table 19 special code (capture p. 30): the 1-6 pupils at 9th"
+  },
+  {
+   "name": "dggT19SpecWhirlwind",
+   "value": 5,
+   "comment": "Table 19 special code (capture p. 30): the whirlwind attack at 11th"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dggKensaiDualPrime",
+   "value": true,
+   "comment": "Kensai prose (capture p. 29): Wisdom and Dexterity are the prime requisites - both 14 or higher earns the 10 percent experience bonus"
+  },
+  {
+   "name": "dggKensaiLawfulOnly",
+   "value": true,
+   "comment": "Kensai prose (capture p. 29): must be lawful - good, evil or neutral; humans, hengeyokai and spirit folk only"
+  },
+  {
+   "name": "dggKensaiFighterTables",
+   "value": true,
+   "comment": "Kensai prose (capture p. 29): the fighter combat and saving throw tables; any weapon, no armor"
+  },
+  {
+   "name": "dggKensaiNinjaHonorUnless",
+   "value": true,
+   "comment": "Kensai prose (capture p. 29): ninja preferred weapons lose honor - unless it is the chosen weapon"
+  },
+  {
+   "name": "dggKensaiNoDexAdjustments",
+   "value": true,
+   "comment": "Kensai prose (capture p. 29): no Reaction/Attack or Defensive Adjustments from Dexterity - the natural AC replaces them"
+  },
+  {
+   "name": "dggKensaiKiMaxDamage",
+   "value": true,
+   "comment": "Kensai prose (capture p. 29): the ki power - maximum damage on one attack with the specialty weapon, announced before the to-hit roll, times per day equal to level"
+  },
+  {
+   "name": "dggKensaiImmuneFear",
+   "value": true,
+   "comment": "Kensai prose (capture p. 29): all kensai are immune to fear"
+  },
+  {
+   "name": "dggKensaiPupilGain",
+   "value": true,
+   "comment": "Kensai prose (capture p. 30): defeating a higher-level kensai in a duel gains 1-2 additional pupils"
+  },
+  {
+   "name": "dggKensaiWhirlwindCostsAllKi",
+   "value": true,
+   "comment": "Kensai prose (capture p. 30): the whirlwind requires the entire day ki (none used before), specialty weapon only, initiative applies, no max-damage guarantee, all other bonuses apply"
+  },
+  {
+   "name": "dggKensaiNoMagicSpecialty",
+   "value": true,
+   "comment": "Kensai prose (capture p. 30): never a magical weapon of the specialty type - no true measure of skill; all armor prohibited"
+  },
+  {
+   "name": "dggKensaiHalfXpOtherWeapon",
+   "value": true,
+   "comment": "Kensai prose (capture p. 30): one-half experience for opponents defeated with a non-specialty weapon - even in part, unless fighting with specialty and another weapon at once"
+  },
+  {
+   "name": "dggKensaiDuelChallenge",
+   "value": true,
+   "comment": "Kensai prose (capture p. 31): on each level gain a 10-times-new-level percent chance of a duel challenge from a same-level kensai"
+  },
+  {
+   "name": "dggKensaiDuelRefuseCost",
+   "value": true,
+   "comment": "Kensai prose (capture p. 31): refusing or losing the duel forfeits the new level (bottom of the old) and loses honor; the 10th level must be dueled for; NPC duels cost honor only, never a level"
+  },
+  {
+   "name": "dggKensaiDuelConditions",
+   "value": true,
+   "comment": "Kensai prose (capture p. 31): the duel need not be to the death - surrender, first blood, first strike or first draw; no magical weapons or armor; no aid or support"
+  },
+  {
+   "name": "dggKensaiHonorDemotion",
+   "value": true,
+   "comment": "Kensai prose (capture p. 31): honor below the family honor means demotion to bushi of the same level - abilities kept, no new kensai abilities, bushi advancement"
+  },
+  {
+   "name": "dggKensaiBirthRequired",
+   "value": true,
+   "comment": "Kensai prose (capture p. 31): not high birth by requirement but must roll Table 38 - treated socially by birth until the reputation forms"
+  }
+ ],
+ "chains": [],
+ "tables": [
+  {
+   "name": "dggT18Grid",
+   "tag": "T18",
+   "count": "dggT18RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dggT18XpMax",
+    "dggT18Dice",
+    "dggT18HpBonus"
+   ],
+   "data": [
+    [
+     3000,
+     1,
+     0
+    ],
+    [
+     5500,
+     2,
+     0
+    ],
+    [
+     10000,
+     3,
+     0
+    ],
+    [
+     22000,
+     4,
+     0
+    ],
+    [
+     44000,
+     5,
+     0
+    ],
+    [
+     88000,
+     6,
+     0
+    ],
+    [
+     150000,
+     7,
+     0
+    ],
+    [
+     250000,
+     8,
+     0
+    ],
+    [
+     500000,
+     9,
+     0
+    ],
+    [
+     750000,
+     9,
+     2
+    ],
+    [
+     1000000,
+     9,
+     4
+    ],
+    [
+     1250000,
+     9,
+     6
+    ]
+   ],
+   "comment": "the Table 18 kensai advancement grid (capture pp. 28-29)",
+   "col_comments": [
+    "the experience column: the upper xp bound of each level, 3,000 at 1st to 1,250,000 at 12th (capture pp. 28-29).",
+    "the accumulated d10 dice column: one per level through 9th, then held at 9 (capture pp. 28-29).",
+    "the hit-point bonus column: the printed 9-plus-N cells - 2 per level beyond 9th: 0 through 9th, then 2, 4, 6 (capture pp. 28-29)."
+   ],
+   "audit_comment": "the Table 18 grid: the level xp bounds and the accumulated dice plus bonus (capture pp. 28-29)"
+  },
+  {
+   "name": "dggT19Grid",
+   "tag": "T19",
+   "count": "dggT19RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dggT19Init",
+    "dggT19Ac",
+    "dggT19Dmg",
+    "dggT19Hit",
+    "dggT19Special"
+   ],
+   "data": [
+    [
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     2,
+     2,
+     0
+    ],
+    [
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    [
+     2,
+     2,
+     2,
+     2,
+     3
+    ],
+    [
+     2,
+     3,
+     3,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     3,
+     3,
+     4
+    ],
+    [
+     3,
+     4,
+     4,
+     4,
+     0
+    ],
+    [
+     3,
+     4,
+     4,
+     4,
+     5
+    ],
+    [
+     3,
+     4,
+     5,
+     5,
+     0
+    ]
+   ],
+   "comment": "the Table 19 kensai bonuses grid (capture p. 30)",
+   "col_comments": [
+    "the initiative bonus column: +1 at 1st, +2 from 5th, +3 from 9th (capture p. 30).",
+    "the AC bonus column: +1 at 3rd stepping to +4 at 10th (capture p. 30).",
+    "the damage bonus column: +1 at 2nd stepping to +5 at 12+ (capture p. 30).",
+    "the to-hit bonus column: +1 at 3rd stepping to +5 at 12+ (capture p. 30).",
+    "the special code column: none 0, meditation 1 at 4th, the 1-in-6 surprise 2 at 6th, two weapons and fear 3 at 7th, the 1-6 pupils 4 at 9th, the whirlwind 5 at 11th (capture p. 30)."
+   ],
+   "audit_comment": "the Table 19 grid: the initiative, AC, damage and to-hit ladders with the special power codes across levels 1-12+ (capture p. 30)"
+  }
+ ],
+ "inline_count": 58,
+ "examples": [
+  {
+   "note": "the dggKensaiDualPrime pin",
+   "expr": "m['dggKensaiDualPrime']() != 1"
+  },
+  {
+   "note": "the dggKensaiMinStr pin",
+   "expr": "m['dggKensaiMinStr']() != 12"
+  },
+  {
+   "note": "the dggKensaiMinWis pin",
+   "expr": "m['dggKensaiMinWis']() != 12"
+  },
+  {
+   "note": "the dggKensaiMinDex pin",
+   "expr": "m['dggKensaiMinDex']() != 14"
+  },
+  {
+   "note": "the dggKensaiLawfulOnly pin",
+   "expr": "m['dggKensaiLawfulOnly']() != 1"
+  },
+  {
+   "note": "the dggKensaiHitDie pin",
+   "expr": "m['dggKensaiHitDie']() != 10"
+  },
+  {
+   "note": "the dggKensaiFighterTables pin",
+   "expr": "m['dggKensaiFighterTables']() != 1"
+  },
+  {
+   "note": "the dggKensaiNinjaHonorUnless pin",
+   "expr": "m['dggKensaiNinjaHonorUnless']() != 1"
+  },
+  {
+   "note": "the dggKensaiSlots pin",
+   "expr": "m['dggKensaiSlots']() != 3"
+  },
+  {
+   "note": "the dggKensaiNoDexAdjustments pin",
+   "expr": "m['dggKensaiNoDexAdjustments']() != 1"
+  },
+  {
+   "note": "the dggKensaiNaturalAcBase pin",
+   "expr": "m['dggKensaiNaturalAcBase']() != 23"
+  },
+  {
+   "note": "the dggKensaiAcStepLevels pin",
+   "expr": "m['dggKensaiAcStepLevels']() != 3"
+  },
+  {
+   "note": "the dggKensaiInitBase pin",
+   "expr": "m['dggKensaiInitBase']() != 1"
+  },
+  {
+   "note": "the dggKensaiSaveBonus pin",
+   "expr": "m['dggKensaiSaveBonus']() != 1"
+  },
+  {
+   "note": "the dggKensaiKiMaxDamage pin",
+   "expr": "m['dggKensaiKiMaxDamage']() != 1"
+  },
+  {
+   "note": "the dggKensaiDuelBonusVsOthers pin",
+   "expr": "m['dggKensaiDuelBonusVsOthers']() != 2"
+  },
+  {
+   "note": "the dggKensaiImmuneFear pin",
+   "expr": "m['dggKensaiImmuneFear']() != 1"
+  },
+  {
+   "note": "the dggKensaiDmgLevels pin",
+   "expr": "m['dggKensaiDmgLevels']() != 5"
+  },
+  {
+   "note": "the dggKensaiHitLevels pin",
+   "expr": "m['dggKensaiHitLevels']() != 5"
+  },
+  {
+   "note": "the dggKensaiInitTwo pin",
+   "expr": "m['dggKensaiInitTwo']() != 2"
+  },
+  {
+   "note": "the dggKensaiInitThree pin",
+   "expr": "m['dggKensaiInitThree']() != 3"
+  },
+  {
+   "note": "the dggKensaiMeditateLevel pin",
+   "expr": "m['dggKensaiMeditateLevel']() != 4"
+  },
+  {
+   "note": "the dggKensaiSurpriseLevel pin",
+   "expr": "m['dggKensaiSurpriseLevel']() != 6"
+  },
+  {
+   "note": "the dggKensaiTwoWeaponsLevel pin",
+   "expr": "m['dggKensaiTwoWeaponsLevel']() != 7"
+  },
+  {
+   "note": "the dggKensaiPupilDie pin",
+   "expr": "m['dggKensaiPupilDie']() != 6"
+  },
+  {
+   "note": "the dggKensaiPupilDepartPct pin",
+   "expr": "m['dggKensaiPupilDepartPct']() != 5"
+  },
+  {
+   "note": "the dggKensaiPupilLossPct pin",
+   "expr": "m['dggKensaiPupilLossPct']() != 50"
+  },
+  {
+   "note": "the dggKensaiPupilGain pin",
+   "expr": "m['dggKensaiPupilGain']() != 1"
+  },
+  {
+   "note": "the dggKensaiWhirlwindLevel pin",
+   "expr": "m['dggKensaiWhirlwindLevel']() != 11"
+  },
+  {
+   "note": "the dggKensaiWhirlwindRange pin",
+   "expr": "m['dggKensaiWhirlwindRange']() != 10"
+  },
+  {
+   "note": "the dggKensaiWhirlwindCostsAllKi pin",
+   "expr": "m['dggKensaiWhirlwindCostsAllKi']() != 1"
+  },
+  {
+   "note": "the dggKensaiNoMagicSpecialty pin",
+   "expr": "m['dggKensaiNoMagicSpecialty']() != 1"
+  },
+  {
+   "note": "the dggKensaiHalfXpOtherWeapon pin",
+   "expr": "m['dggKensaiHalfXpOtherWeapon']() != 1"
+  },
+  {
+   "note": "the dggKensaiDuelXpMultiplier pin",
+   "expr": "m['dggKensaiDuelXpMultiplier']() != 2"
+  },
+  {
+   "note": "the dggKensaiPracticeHours pin",
+   "expr": "m['dggKensaiPracticeHours']() != 2"
+  },
+  {
+   "note": "the dggKensaiDuelChallenge pin",
+   "expr": "m['dggKensaiDuelChallenge']() != 1"
+  },
+  {
+   "note": "the dggKensaiDuelRefuseCost pin",
+   "expr": "m['dggKensaiDuelRefuseCost']() != 1"
+  },
+  {
+   "note": "the dggKensaiDuelConditions pin",
+   "expr": "m['dggKensaiDuelConditions']() != 1"
+  },
+  {
+   "note": "the dggKensaiHonorDemotion pin",
+   "expr": "m['dggKensaiHonorDemotion']() != 1"
+  },
+  {
+   "note": "the dggKensaiBirthRequired pin",
+   "expr": "m['dggKensaiBirthRequired']() != 1"
+  },
+  {
+   "note": "the dggT18RowCount pin",
+   "expr": "m['dggT18RowCount']() != 12"
+  },
+  {
+   "note": "the dggT18XpBeyond pin",
+   "expr": "m['dggT18XpBeyond']() != 250000"
+  },
+  {
+   "note": "the dggT18HpBeyond pin",
+   "expr": "m['dggT18HpBeyond']() != 2"
+  },
+  {
+   "note": "the dggT19RowCount pin",
+   "expr": "m['dggT19RowCount']() != 12"
+  },
+  {
+   "note": "the dggT19SpecNone pin",
+   "expr": "m['dggT19SpecNone']() != 0"
+  },
+  {
+   "note": "the dggT19SpecMeditate pin",
+   "expr": "m['dggT19SpecMeditate']() != 1"
+  },
+  {
+   "note": "the dggT19SpecSurprise pin",
+   "expr": "m['dggT19SpecSurprise']() != 2"
+  },
+  {
+   "note": "the dggT19SpecTwoWeapons pin",
+   "expr": "m['dggT19SpecTwoWeapons']() != 3"
+  },
+  {
+   "note": "the dggT19SpecPupils pin",
+   "expr": "m['dggT19SpecPupils']() != 4"
+  },
+  {
+   "note": "the dggT19SpecWhirlwind pin",
+   "expr": "m['dggT19SpecWhirlwind']() != 5"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the natural AC formula - Dex 16 gives AC 7 (capture p. 29)",
+   "expr": "m['dggKensaiNaturalAcBase']() - 16 != 7"
+  },
+  {
+   "note": "the T19 capstones - initiative +3, AC +4, damage and hit +5 (capture p. 30)",
+   "expr": "m['dggT19Init'](11) != 3 or m['dggT19Ac'](11) != 4 or m['dggT19Dmg'](11) != 5 or m['dggT19Hit'](11) != 5"
+  },
+  {
+   "note": "the T18 level-10 row - nine dice plus the 2 bonus (capture p. 29)",
+   "expr": "m['dggT18Dice'](9) != 9 or m['dggT18HpBonus'](9) != 2"
+  },
+  {
+   "note": "the whirlwind special sits at level 11 (capture p. 30)",
+   "expr": "m['dggT19Special'](10) != 5"
+  },
+  {
+   "note": "the kensai and bushi beyond-9th hp steps agree (capture pp. 27, 29)",
+   "expr": "m['dggT18HpBeyond']() != 2"
+  },
+  {
+   "note": "the duel multiplier doubles (capture p. 31)",
+   "expr": "m['dggKensaiDuelXpMultiplier']() != 2"
+  }
+ ],
+ "header_sections": {
+  "the kensai doctrine pins": [
+   {
+    "kind": "bool",
+    "name": "dggKensaiDualPrime"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiMinStr"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiMinWis"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiMinDex"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiLawfulOnly"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiHitDie"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiFighterTables"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiNinjaHonorUnless"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiSlots"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiNoDexAdjustments"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiNaturalAcBase"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiAcStepLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiInitBase"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiKiMaxDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiDuelBonusVsOthers"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiImmuneFear"
+   }
+  ],
+  "the kensai level-power pins": [
+   {
+    "kind": "const",
+    "name": "dggKensaiDmgLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiHitLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiInitTwo"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiInitThree"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiMeditateLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiSurpriseLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiTwoWeaponsLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiPupilDie"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiPupilDepartPct"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiPupilLossPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiPupilGain"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiWhirlwindLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiWhirlwindRange"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiWhirlwindCostsAllKi"
+   }
+  ],
+  "the kensai restriction and duel pins": [
+   {
+    "kind": "bool",
+    "name": "dggKensaiNoMagicSpecialty"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiHalfXpOtherWeapon"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiDuelXpMultiplier"
+   },
+   {
+    "kind": "const",
+    "name": "dggKensaiPracticeHours"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiDuelChallenge"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiDuelRefuseCost"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiDuelConditions"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiHonorDemotion"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKensaiBirthRequired"
+   }
+  ],
+  "the Table 18 and Table 19 grids": [
+   {
+    "kind": "const",
+    "name": "dggT18RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dggT18Grid"
+   },
+   {
+    "kind": "const",
+    "name": "dggT18XpBeyond"
+   },
+   {
+    "kind": "const",
+    "name": "dggT18HpBeyond"
+   },
+   {
+    "kind": "const",
+    "name": "dggT19RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dggT19SpecNone"
+   },
+   {
+    "kind": "const",
+    "name": "dggT19SpecMeditate"
+   },
+   {
+    "kind": "const",
+    "name": "dggT19SpecSurprise"
+   },
+   {
+    "kind": "const",
+    "name": "dggT19SpecTwoWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "dggT19SpecPupils"
+   },
+   {
+    "kind": "const",
+    "name": "dggT19SpecWhirlwind"
+   },
+   {
+    "kind": "table",
+    "name": "dggT19Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Kensai box closes",
+   "from": "  - [ ] Kensai (capture pp. 28-31) - the weapon\n    master: the favored-weapon doctrine, the honor\n    code, the ki powers",
+   "to": "  - [x] Kensai (capture pp. 28-31) - the weapon\n    master: the favored-weapon doctrine, the honor\n    code, the ki powers -\n    R620: the dgg kensai pins - the Wis/Dex dual prime\n    with the mins, the natural AC formula (23 minus\n    Dex, one step per three levels), the\n    initiative ladder, the ki power, the level\n    powers (the pupils, the whirlwind), the\n    restrictions and practice, the duel\n    doctrine with the 10-times-level challenge\n    and the refuse-or-lose cost, the honor-\n    demotion to bushi"
+  },
+  {
+   "note": "the   Table 18: Kensai box closes",
+   "from": "  - [ ] Table 18: Kensai (capture p. 28)",
+   "to": "  - [x] Table 18: Kensai (capture p. 28) -\n    R620: the dgg T18 grid - twelve rows of xp bounds and\n    accumulated d10 dice with the 9-plus-N cells,\n    plus the 250,000-xp and 2-hp beyond-12th/9th\n    notes"
+  },
+  {
+   "note": "the   Table 19: Kensai box closes",
+   "from": "  - [ ] Table 19: Kensai (capture p. 30)",
+   "to": "  - [x] Table 19: Kensai (capture p. 30) -\n    R620: the dgg T19 grid - twelve rows of the initiative,\n    AC, damage and to-hit ladders with the\n    special powers as a coded column (meditation,\n    the 1-in-6 surprise, two weapons and fear,\n    the pupils, the whirlwind)"
+  }
+ ],
+ "gap_census": {
+  "closed": 36,
+  "open": 199
+ },
+ "banner": {
+  "title": "THE KENSAI, printed capture pp. 28-31 - the OA sword saint round",
+  "provenance": "verified against capture pp. 28-31 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The Table 19 special-abilities column pins as a coded ladder (meditation, the 1-in-6 surprise, two weapons and fear, the pupils, the whirlwind). OCR normalization: practice daisy reads as practice daily (prose only). This push ALSO carries the still-unlanded R618 v3 amendment (spec_r618 08fa91d7 -> 9ea88b9e, oaraces.h 3786b6c2 -> 615b853c) - the R619 fold silently failed because the rn flow stages only the current round files; this time the two prior-round files must be added explicitly.",
+  "sentinel": "the gap census after this round: 36 closed, 199 open - the kensai boxes with Tables 18 and 19 flip (census 542 -> 543); NEXT - R621: the Monk - the discipline ladder, the quirks, Tables 20 and 21, prefix dgh (verify free), audit \"R621 OA monk audit\", include after rules/oakensai.h"
+ }
+}

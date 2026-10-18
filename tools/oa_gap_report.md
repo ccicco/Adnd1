@@ -331,11 +331,29 @@ description riding the same round.
     and accumulated d10 dice with the 9-plus-N
     cells, plus the 250,000-xp and 2-hp
     beyond-12th/9th notes
-  - [ ] Kensai (capture pp. 28-31) - the weapon
+  - [x] Kensai (capture pp. 28-31) - the weapon
     master: the favored-weapon doctrine, the honor
-    code, the ki powers
-  - [ ] Table 18: Kensai (capture p. 28)
-  - [ ] Table 19: Kensai (capture p. 30)
+    code, the ki powers -
+    R620: the dgg kensai pins - the Wis/Dex dual prime
+    with the mins, the natural AC formula (23 minus
+    Dex, one step per three levels), the
+    initiative ladder, the ki power, the level
+    powers (the pupils, the whirlwind), the
+    restrictions and practice, the duel
+    doctrine with the 10-times-level challenge
+    and the refuse-or-lose cost, the honor-
+    demotion to bushi
+  - [x] Table 18: Kensai (capture p. 28) -
+    R620: the dgg T18 grid - twelve rows of xp bounds and
+    accumulated d10 dice with the 9-plus-N cells,
+    plus the 250,000-xp and 2-hp beyond-12th/9th
+    notes
+  - [x] Table 19: Kensai (capture p. 30) -
+    R620: the dgg T19 grid - twelve rows of the initiative,
+    AC, damage and to-hit ladders with the
+    special powers as a coded column (meditation,
+    the 1-in-6 surprise, two weapons and fear,
+    the pupils, the whirlwind)
   - [ ] Monk (capture pp. 31-35) - THE oriental monk:
     the discipline ladder, the quirks, the martial-arts
     foundation
