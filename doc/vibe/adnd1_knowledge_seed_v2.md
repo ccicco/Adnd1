@@ -10823,6 +10823,59 @@ when both halves land.
   the DMO arc opener, High-Level
   Campaigns (1995, 192 pp.), the gap
   report landing with the round.
+- R599 LANDED 2026-10-18: commit
+  9b43c02c636bb5a4ab007a687e51e596
+  60b5bd3f (census 521 -> 522, pushed
+  4d4793a..9b43c02), THE SEVEN
+  MAXIMS, the DMO ARC OPENER (the
+  R564 pattern): Dungeon Master
+  Option: High-Level Campaigns (1995,
+  Skip Williams, 192 pp.) - the round
+  lands tools/dmo_gap_report.md in
+  the SAME commit as the spec: 96
+  boxes, all 52 numbered tables
+  enumerated at opener (the R566
+  amended-manifest lesson applied
+  here), the census-style lossless
+  inventory with the two standing arc
+  rulings (the 2e cross-book seam
+  warning - NOTHING auto-credited
+  from the DMG or PHB, a DMO box
+  closes only on DMO-text pins with
+  the book's own deltas; the
+  advisory-prose scope ruling - the
+  maxim and adventures chapters
+  close on doctrine pins, the 52
+  tables on table pins). Pins: the
+  seven-principle maxim roster, the
+  high-level definitions (the level
+  10 floor, the 30th-level cap, the
+  level-20 retirement frame), the
+  flat-XP breakdown from 9th, the
+  Table 1 demographics ladder (the
+  1-in-5,000 10th, the
+  one-in-a-million 18th, the 1-in-500
+  paladin), the foreword previews (the
+  true dweomers as 10th-level spells,
+  the auto-fail foreshadow). Header
+  rules/dmomaxims.h, prefix deg, 13
+  inlines (8 consts 5 bools), SIX
+  flips: gap census 6/90 (the front
+  matter, the Chapter 1 parent, the
+  roster, the first maxim, Table 1,
+  the epic-scale maxim). Spec
+  tools/spec_r599.json 12330 bytes md5
+  9837bca89a218e6ec5979b0e7c3459fe
+  matched exactly first try. THIRTY-
+  THREE straight first-tries
+  (R566-R599). NEXT - R600: the
+  remaining Chapter 1 maxim boxes
+  (Intelligent Adversaries pp. 10-12,
+  Minimizing Personal Risks pp. 16-17,
+  Control Magic pp. 17-21, Plan Ahead
+  pp. 24-26, Share Responsibility pp.
+  27-29) in one round; prefixes dej,
+  dek, del free.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

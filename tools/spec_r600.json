@@ -1,0 +1,501 @@
+{
+ "round": 600,
+ "prefix": "dej",
+ "header_file": "rules/dmocampaign.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 522,
+ "title": "The Remaining Maxims",
+ "audit_label": "R600 DMO maxims audit",
+ "audit_comment": "THE REMAINING FIVE MAXIMS of DMO Chapter 1 (pp. 10-29), the doctrine round closing the chapter: the intelligent-adversary doctrines (the intelligence review, the weakness shielding, the strength maximization, the handling-defeat ladder with its four options), the villain self-preservation doctrines (the villain-absence rule, the bad-guys-don't-fight-fair rules), the control-magic doctrines (the AC -4 tension floor, the memorization economics, the no-magic-shops doctrine), the plan-ahead doctrines (the growing villain, the consequences ladder, the fame ledger), and the share-responsibility doctrines (the player-DM split, the goals, the personality profile).",
+ "include_comment": "the DMO maxim-doctrine pins",
+ "include_after": "#include \"rules/dmomaxims.h\"  // R599: the DMO arc opener pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R599 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R599 LANDED 2026-10-18: commit",
+  "  9b43c02c636bb5a4ab007a687e51e596",
+  "  60b5bd3f (census 521 -> 522, pushed",
+  "  4d4793a..9b43c02), THE SEVEN",
+  "  MAXIMS, the DMO ARC OPENER (the",
+  "  R564 pattern): Dungeon Master",
+  "  Option: High-Level Campaigns (1995,",
+  "  Skip Williams, 192 pp.) - the round",
+  "  lands tools/dmo_gap_report.md in",
+  "  the SAME commit as the spec: 96",
+  "  boxes, all 52 numbered tables",
+  "  enumerated at opener (the R566",
+  "  amended-manifest lesson applied",
+  "  here), the census-style lossless",
+  "  inventory with the two standing arc",
+  "  rulings (the 2e cross-book seam",
+  "  warning - NOTHING auto-credited",
+  "  from the DMG or PHB, a DMO box",
+  "  closes only on DMO-text pins with",
+  "  the book's own deltas; the",
+  "  advisory-prose scope ruling - the",
+  "  maxim and adventures chapters",
+  "  close on doctrine pins, the 52",
+  "  tables on table pins). Pins: the",
+  "  seven-principle maxim roster, the",
+  "  high-level definitions (the level",
+  "  10 floor, the 30th-level cap, the",
+  "  level-20 retirement frame), the",
+  "  flat-XP breakdown from 9th, the",
+  "  Table 1 demographics ladder (the",
+  "  1-in-5,000 10th, the",
+  "  one-in-a-million 18th, the 1-in-500",
+  "  paladin), the foreword previews (the",
+  "  true dweomers as 10th-level spells,",
+  "  the auto-fail foreshadow). Header",
+  "  rules/dmomaxims.h, prefix deg, 13",
+  "  inlines (8 consts 5 bools), SIX",
+  "  flips: gap census 6/90 (the front",
+  "  matter, the Chapter 1 parent, the",
+  "  roster, the first maxim, Table 1,",
+  "  the epic-scale maxim). Spec",
+  "  tools/spec_r599.json 12330 bytes md5",
+  "  9837bca89a218e6ec5979b0e7c3459fe",
+  "  matched exactly first try. THIRTY-",
+  "  THREE straight first-tries",
+  "  (R566-R599). NEXT - R600: the",
+  "  remaining Chapter 1 maxim boxes",
+  "  (Intelligent Adversaries pp. 10-12,",
+  "  Minimizing Personal Risks pp. 16-17,",
+  "  Control Magic pp. 17-21, Plan Ahead",
+  "  pp. 24-26, Share Responsibility pp.",
+  "  27-29) in one round; prefixes dej,",
+  "  dek, del free."
+ ],
+ "banner": {
+  "title": "THE REMAINING MAXIMS - DMO Chapter 1 closed: the intelligent-adversary doctrines (act as smart as the intelligence says, shield the weaknesses, maximize the strengths, handle defeat by motivation), the villain self-preservation rules (never be there; bad guys don't fight fair), the control-magic doctrines (the AC -4 floor, the 18-hour study vs 37-minute cast, no magic shops), the plan-ahead doctrines (villains who learn, consequences, fame), and the share-responsibility doctrines (the players as the cadre, the goals, the profile).",
+  "provenance": "verified against printed pp. 10-29 of the uploaded DMO session capture (part 1, printed page N at OCR page N+1); the defeat ladder from p. 13, the troll and vampire audits from pp. 12-13, the memorization economics from p. 21, the item rate from p. 28; the maxim roster from p. 6 (R599) rides the chapter parent.",
+  "sentinel": "the gap census after this round: 11 closed, 85 open - EVERY maxim box of Chapter 1 is closed; the DMO arc continues with Chapter 2 (Adventures)."
+ },
+ "consts": [
+  {
+   "name": "dejDefeatOptionCount",
+   "value": 4,
+   "comment": "the handling-defeat ladder: four options open to an opponent staring defeat in the face - surrender, flee, reversal, or fight (printed p. 13)."
+  },
+  {
+   "name": "dejEscapeGoalCount",
+   "value": 3,
+   "comment": "the leaving-the-field doctrine: a successful flee must accomplish three things - outrun the PCs, foil their ranged attacks, and elude long-term pursuit (printed p. 14)."
+  },
+  {
+   "name": "dejTrollRegenDelayRounds",
+   "value": 3,
+   "comment": "the troll regeneration delay: the creature regains no hit points until three rounds after it suffers its first wound (printed p. 12)."
+  },
+  {
+   "name": "dejTrollWeaponDamageBonus",
+   "value": 8,
+   "comment": "the troll strength read: the damage bonus when a troll employs a weapon such as a two-handed sword is +8 (printed p. 13)."
+  },
+  {
+   "name": "dejTensionAcFloor",
+   "value": -4,
+   "comment": "the armor-class tension floor: once characters get below an Armor Class of -4 a great deal of the tension dissipates - the heroes are virtually immune to most physical attacks (printed p. 19)."
+  },
+  {
+   "name": "dejBracersAc2Bonus",
+   "value": 8,
+   "comment": "the bracers of defense AC 2 grant an effective Armor Class bonus of +8 and should be rarer than even magical plate (printed p. 19)."
+  },
+  {
+   "name": "dejWizardStudyHours",
+   "value": 18,
+   "comment": "the memorization economics: a 20th-level wizard requires 18 hours of study time to memorize a full complement of spells (printed p. 21)."
+  },
+  {
+   "name": "dejWizardCastMinutes",
+   "value": 37,
+   "comment": "the memorization economics, the other half: it takes the same 20th-level wizard only 37 minutes to cast every spell in memory (printed p. 21)."
+  },
+  {
+   "name": "dejTeleportMemorizeMinutes",
+   "value": 50,
+   "comment": "the teleport impracticality: the 5th-level teleport spell requires 50 minutes of memorization time, making it impractical for any trip that can be made in less than an hour by other means (printed p. 21)."
+  },
+  {
+   "name": "dejTeleportMinorPct",
+   "value": 2,
+   "comment": "the teleport risk, the minor accident: even when very familiar with the destination there is a 2 percent chance per use of arriving too high (printed p. 21)."
+  },
+  {
+   "name": "dejTeleportFatalPct",
+   "value": 1,
+   "comment": "the teleport risk, the fatal accident: a 1 percent chance per use of teleporting low, potentially fatal (printed p. 21)."
+  },
+  {
+   "name": "dejPartyItemPerAdventure",
+   "value": 1,
+   "comment": "the balancing-act item rate: following the DMG suggestion of three to six adventures between levels, a party of six characters should find only about one magical item every adventure (printed p. 28)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dejIntelligenceDoctrine",
+   "value": true,
+   "comment": "maxim two, the intelligence review: an opponent has to avoid obvious mistakes, not be brilliant - even low-intelligence foes learn from experience (the man-eating tiger at Int 2-4), and average-intelligence kobolds and goblins are as smart as a typical human (printed pp. 10-11)."
+  },
+  {
+   "name": "dejWeaknessShielding",
+   "value": true,
+   "comment": "the weakness audit: against high-level PCs few allies are expendable, and discernible weaknesses (the rakshasa blessed bolt, troll fire and acid, vampire sunlight and turning, the giant slug Armor Class) must be shielded before the fight - with the prepared advantage explained to the PCs (printed pp. 11-12)."
+  },
+  {
+   "name": "dejStrengthMaximization",
+   "value": true,
+   "comment": "the strength audit: maximize the strong points - trolls in waves with fresh troops while the hurt regenerate, vampires fighting one-on-one using gaseous form and prepared pinholes, giant slugs with stoneskin and hidden approaches (printed pp. 12-14)."
+  },
+  {
+   "name": "dejHandlingDefeat",
+   "value": true,
+   "comment": "the handling-defeat doctrine: important NPCs never check morale, only rank-and-file troops; the four options ride the motivation - coerced foes fight on, magically compelled foes cannot flee, home-front defenders fall back to attack again, looters flee at the first difficulty, proud foes attempt the dramatic reversal; the surrendering foe keeps a bargaining chip (printed pp. 12-17)."
+  },
+  {
+   "name": "dejLeavingFieldDoctrine",
+   "value": true,
+   "comment": "the leaving-the-field doctrine: run somewhere the PCs cannot follow, divert with illusions or reinforcements, slow pursuit with caltrops and webs; foil ranged attacks with cover, broken bows and antimagic shell; foil tracking with faint trails, river crossings and changed forms; cover a withdrawal with wall spells and rear guards; hit-and-run attackers strike from concealment at the spellcasters and the mounted (printed pp. 14-17)."
+  },
+  {
+   "name": "dejReversalDoctrine",
+   "value": true,
+   "comment": "the reversal doctrine: exploit the opportunity unique to the situation (the bridge supports, the flammables, the avalanche), spare the treasure the opponent wants intact, hold the potent one-use weapons in reserve, and use knowledge of the PCs as a weapon (printed p. 17)."
+  },
+  {
+   "name": "dejVillainSelfPreservation",
+   "value": true,
+   "comment": "the minimizing-personal-risks doctrine: the safest villain never goes anywhere dangerous - henchmen do the dirty work; be somewhere else (project image, the magic jar in a servant's hands, posing as a bystander or prisoner), or strike where the PCs are vulnerable but absent (their castle, their friends, their business associates) (printed pp. 16-18)."
+  },
+  {
+   "name": "dejBadGuysDontFightFair",
+   "value": true,
+   "comment": "the bad-guys-don't-fight-fair doctrine: no trick is too low - innocents block the area effects, diversions force the PCs to abandon the fight, sentimental targets goad emotional decisions, and the villain never meets the heroes without an escape route and a hidden advantage (printed p. 18)."
+  },
+  {
+   "name": "dejControlMagicDoctrine",
+   "value": true,
+   "comment": "maxim three, the control-magic core: too much magic ruins play - the PCs become exterminators and the mechanics break down; too little disheartens the players; rarity keeps the wonder (a potion momentous, a holy sword no big deal when everyone owns two); protective stacking via barter and loaning must be watched (printed pp. 17-19)."
+  },
+  {
+   "name": "dejMagicItemUseDoctrine",
+   "value": true,
+   "comment": "the item-economy doctrine: intelligent opponents use their items against the PCs and expend charged items freely when faced with defeat; captured items should be nearly drained; item saves are rolled per item when a PC fails a save (protections do not extend to equipment); villains demand items for ransom; leprechauns, storms at sea and annoyed deities remove excess magic (printed pp. 19-20)."
+  },
+  {
+   "name": "dejMagicShopsDoctrine",
+   "value": true,
+   "comment": "the no-magic-shops doctrine: magic is never a commodity - supplies come from specialty shops by barter and haggling with only a reputation as guarantee; purchases are pig-in-a-poke adventures (the fake or damaged cube of force, the rival's favor-laden loan, the dragon learning of the search); the Encyclopedia Magica values set relative worth only (printed pp. 20-21)."
+  },
+  {
+   "name": "dejMagicLimitationDoctrine",
+   "value": true,
+   "comment": "the magic-is-unlike-technology doctrine: most spells do one thing and one thing only (magic missile harms nothing inanimate, knock opens no portcullis); players with modern minds must not be allowed to treat spells as adaptable tools (printed p. 21)."
+  },
+  {
+   "name": "dejPlanAheadDoctrine",
+   "value": true,
+   "comment": "maxim six, the plan-ahead doctrine: prepare the campaign for high-level play during low-level play, neither too late nor too soon; create villains who learn - the growing villain with ambitions achieved over play, built on the six background pillars: source of power, objectives, motives, personality, history, allies (printed pp. 24-25)."
+  },
+  {
+   "name": "dejConsequencesDoctrine",
+   "value": true,
+   "comment": "the consequences doctrine: every adventure has aftereffects - someone is left behind to pick up the hoard, word spreads by boasting or witnesses, and someone always cares (helped or hurt); the charmed servant of the slain dragon is the worked example; simple incidents can hide layer upon layer (printed pp. 25-27)."
+  },
+  {
+   "name": "dejFameInfamyDoctrine",
+   "value": true,
+   "comment": "the fame-and-infamy ledger: track the PCs' reputation - exaggerated accounts of early exploits, blowhards who did know them way back when; broken word blocks later land grants and knighthoods (printed p. 27)."
+  },
+  {
+   "name": "dejBalancingActDoctrine",
+   "value": true,
+   "comment": "the balancing-act doctrine: build the balanced campaign, do not fix a runaway one - set the XP rate per DMG Chapter Eight, place the magic in advance behind appropriate risks (never the holy avenger for one orc), and take the excess out of circulation; the fair rate: one permanent or rechargeable item per two or three levels plus one or two consumables per two levels (printed p. 28)."
+  },
+  {
+   "name": "dejShareResponsibilityDoctrine",
+   "value": true,
+   "comment": "maxim seven, the share-responsibility doctrine: the players are the cadre of helpers - they detail unexplored areas, histories and NPC actions; the DM garners their interests and weaves several threads at once (the artifact example); long-term character goals beyond wealth and XP; the allies-and-enemies ledger with its favors; and the personality profile beyond the record sheet (occupation, appearance, quirks, tastes, residence, history, friends, enemies, goals) (printed pp. 27-29)."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [],
+ "header_sections": {
+  "the DMO maxim-doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dejDefeatOptionCount"
+   },
+   {
+    "kind": "const",
+    "name": "dejEscapeGoalCount"
+   },
+   {
+    "kind": "const",
+    "name": "dejTrollRegenDelayRounds"
+   },
+   {
+    "kind": "const",
+    "name": "dejTrollWeaponDamageBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dejTensionAcFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dejBracersAc2Bonus"
+   },
+   {
+    "kind": "const",
+    "name": "dejWizardStudyHours"
+   },
+   {
+    "kind": "const",
+    "name": "dejWizardCastMinutes"
+   },
+   {
+    "kind": "const",
+    "name": "dejTeleportMemorizeMinutes"
+   },
+   {
+    "kind": "const",
+    "name": "dejTeleportMinorPct"
+   },
+   {
+    "kind": "const",
+    "name": "dejTeleportFatalPct"
+   },
+   {
+    "kind": "const",
+    "name": "dejPartyItemPerAdventure"
+   },
+   {
+    "kind": "bool",
+    "name": "dejIntelligenceDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejWeaknessShielding"
+   },
+   {
+    "kind": "bool",
+    "name": "dejStrengthMaximization"
+   },
+   {
+    "kind": "bool",
+    "name": "dejHandlingDefeat"
+   },
+   {
+    "kind": "bool",
+    "name": "dejLeavingFieldDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejReversalDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejVillainSelfPreservation"
+   },
+   {
+    "kind": "bool",
+    "name": "dejBadGuysDontFightFair"
+   },
+   {
+    "kind": "bool",
+    "name": "dejControlMagicDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejMagicItemUseDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejMagicShopsDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejMagicLimitationDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejPlanAheadDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejConsequencesDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejFameInfamyDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejBalancingActDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dejShareResponsibilityDoctrine"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the dejDefeatOptionCount pin",
+   "expr": "m['dejDefeatOptionCount']() != 4"
+  },
+  {
+   "note": "the dejEscapeGoalCount pin",
+   "expr": "m['dejEscapeGoalCount']() != 3"
+  },
+  {
+   "note": "the dejTrollRegenDelayRounds pin",
+   "expr": "m['dejTrollRegenDelayRounds']() != 3"
+  },
+  {
+   "note": "the dejTrollWeaponDamageBonus pin",
+   "expr": "m['dejTrollWeaponDamageBonus']() != 8"
+  },
+  {
+   "note": "the dejTensionAcFloor pin",
+   "expr": "m['dejTensionAcFloor']() != -4"
+  },
+  {
+   "note": "the dejBracersAc2Bonus pin",
+   "expr": "m['dejBracersAc2Bonus']() != 8"
+  },
+  {
+   "note": "the dejWizardStudyHours pin",
+   "expr": "m['dejWizardStudyHours']() != 18"
+  },
+  {
+   "note": "the dejWizardCastMinutes pin",
+   "expr": "m['dejWizardCastMinutes']() != 37"
+  },
+  {
+   "note": "the dejTeleportMemorizeMinutes pin",
+   "expr": "m['dejTeleportMemorizeMinutes']() != 50"
+  },
+  {
+   "note": "the dejTeleportMinorPct pin",
+   "expr": "m['dejTeleportMinorPct']() != 2"
+  },
+  {
+   "note": "the dejTeleportFatalPct pin",
+   "expr": "m['dejTeleportFatalPct']() != 1"
+  },
+  {
+   "note": "the dejPartyItemPerAdventure pin",
+   "expr": "m['dejPartyItemPerAdventure']() != 1"
+  },
+  {
+   "note": "the dejIntelligenceDoctrine pin",
+   "expr": "m['dejIntelligenceDoctrine']() != 1"
+  },
+  {
+   "note": "the dejWeaknessShielding pin",
+   "expr": "m['dejWeaknessShielding']() != 1"
+  },
+  {
+   "note": "the dejStrengthMaximization pin",
+   "expr": "m['dejStrengthMaximization']() != 1"
+  },
+  {
+   "note": "the dejHandlingDefeat pin",
+   "expr": "m['dejHandlingDefeat']() != 1"
+  },
+  {
+   "note": "the dejLeavingFieldDoctrine pin",
+   "expr": "m['dejLeavingFieldDoctrine']() != 1"
+  },
+  {
+   "note": "the dejReversalDoctrine pin",
+   "expr": "m['dejReversalDoctrine']() != 1"
+  },
+  {
+   "note": "the dejVillainSelfPreservation pin",
+   "expr": "m['dejVillainSelfPreservation']() != 1"
+  },
+  {
+   "note": "the dejBadGuysDontFightFair pin",
+   "expr": "m['dejBadGuysDontFightFair']() != 1"
+  },
+  {
+   "note": "the dejControlMagicDoctrine pin",
+   "expr": "m['dejControlMagicDoctrine']() != 1"
+  },
+  {
+   "note": "the dejMagicItemUseDoctrine pin",
+   "expr": "m['dejMagicItemUseDoctrine']() != 1"
+  },
+  {
+   "note": "the dejMagicShopsDoctrine pin",
+   "expr": "m['dejMagicShopsDoctrine']() != 1"
+  },
+  {
+   "note": "the dejMagicLimitationDoctrine pin",
+   "expr": "m['dejMagicLimitationDoctrine']() != 1"
+  },
+  {
+   "note": "the dejPlanAheadDoctrine pin",
+   "expr": "m['dejPlanAheadDoctrine']() != 1"
+  },
+  {
+   "note": "the dejConsequencesDoctrine pin",
+   "expr": "m['dejConsequencesDoctrine']() != 1"
+  },
+  {
+   "note": "the dejFameInfamyDoctrine pin",
+   "expr": "m['dejFameInfamyDoctrine']() != 1"
+  },
+  {
+   "note": "the dejBalancingActDoctrine pin",
+   "expr": "m['dejBalancingActDoctrine']() != 1"
+  },
+  {
+   "note": "the dejShareResponsibilityDoctrine pin",
+   "expr": "m['dejShareResponsibilityDoctrine']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the intelligent adversaries maxim closes",
+   "from": "  - [ ] Intelligent Adversaries (pp. 10-12) - the\n    opponent's intelligence review, the weaknesses and\n    strengths audits, the handling-defeat doctrine",
+   "to": "  - [x] Intelligent Adversaries (pp. 10-12) - the\n    opponent's intelligence review, the weaknesses and\n    strengths audits, the handling-defeat doctrine\n    - R600: the dej adversary pins (the intelligence\n    doctrine, the weakness shielding, the strength\n    maximization, the four defeat options)"
+  },
+  {
+   "note": "the personal-risk maxim closes",
+   "from": "  - [ ] Minimizing Personal Risks / Bad Guys Don't Fight\n    Fair (pp. 16-17) - the villain self-preservation\n    doctrine",
+   "to": "  - [x] Minimizing Personal Risks / Bad Guys Don't Fight\n    Fair (pp. 16-17) - the villain self-preservation\n    doctrine\n    - R600: the dej self-preservation pins (the\n    villain-absence doctrine, the\n    bad-guys-don't-fight-fair rules)"
+  },
+  {
+   "note": "the control-magic maxim closes",
+   "from": "  - [ ] Control Magic (pp. 17-21) - the magic-control\n    doctrine: the memorization limits, the magic shops\n    (p. 20), the item-removal doctrine",
+   "to": "  - [x] Control Magic (pp. 17-21) - the magic-control\n    doctrine: the memorization limits, the magic shops\n    (p. 20), the item-removal doctrine\n    - R600: the dej magic-control pins (the AC -4 tension\n    floor, the memorization economics, the no-magic-shops\n    doctrine)"
+  },
+  {
+   "note": "the plan-ahead maxim closes",
+   "from": "  - [ ] Plan Ahead / Create Villains Who Learn (pp.\n    24-26) - the consequences doctrine, the fame-and-\n    infamy ladder",
+   "to": "  - [x] Plan Ahead / Create Villains Who Learn (pp.\n    24-26) - the consequences doctrine, the fame-and-\n    infamy ladder\n    - R600: the dej plan-ahead pins (the growing-villain\n    doctrine, the consequences ladder, the\n    fame-and-infamy ledger)"
+  },
+  {
+   "note": "the share-responsibility maxim closes",
+   "from": "  - [ ] Share Responsibility (pp. 27-29) - the\n    player-DM split: the goals, the allies, the\n    personality work",
+   "to": "  - [x] Share Responsibility (pp. 27-29) - the\n    player-DM split: the goals, the allies, the\n    personality work\n    - R600: the dej share pins (the player-DM split, the\n    long-term goal doctrine, the personality profile)"
+  }
+ ],
+ "gap_census": {
+  "closed": 11,
+  "open": 85
+ },
+ "caller_files": [],
+ "inline_count": 29
+}

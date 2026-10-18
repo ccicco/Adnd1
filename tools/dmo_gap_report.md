@@ -69,15 +69,24 @@ tables are data and close on table pins.
     think-don't-roll prescription - R599: the deg
     tension-doctrine pins (the flat XP from 9th, the
     think-don't-roll prescription)
-  - [ ] Intelligent Adversaries (pp. 10-12) - the
+  - [x] Intelligent Adversaries (pp. 10-12) - the
     opponent's intelligence review, the weaknesses and
     strengths audits, the handling-defeat doctrine
-  - [ ] Minimizing Personal Risks / Bad Guys Don't Fight
+    - R600: the dej adversary pins (the intelligence
+    doctrine, the weakness shielding, the strength
+    maximization, the four defeat options)
+  - [x] Minimizing Personal Risks / Bad Guys Don't Fight
     Fair (pp. 16-17) - the villain self-preservation
     doctrine
-  - [ ] Control Magic (pp. 17-21) - the magic-control
+    - R600: the dej self-preservation pins (the
+    villain-absence doctrine, the
+    bad-guys-don't-fight-fair rules)
+  - [x] Control Magic (pp. 17-21) - the magic-control
     doctrine: the memorization limits, the magic shops
     (p. 20), the item-removal doctrine
+    - R600: the dej magic-control pins (the AC -4 tension
+    floor, the memorization economics, the no-magic-shops
+    doctrine)
   - [x] Table 1: Demographics (p. 22) - the level
     ladder of the general population (the 1-in-5,000
     10th-level character, the one-in-a-million 18th) -
@@ -89,12 +98,17 @@ tables are data and close on table pins.
     far-reaching impact - R599: the deg epic-scale
     doctrine pin (the heroes-not-anonymous rule, the
     heroic tasks, the far reach)
-  - [ ] Plan Ahead / Create Villains Who Learn (pp.
+  - [x] Plan Ahead / Create Villains Who Learn (pp.
     24-26) - the consequences doctrine, the fame-and-
     infamy ladder
-  - [ ] Share Responsibility (pp. 27-29) - the
+    - R600: the dej plan-ahead pins (the growing-villain
+    doctrine, the consequences ladder, the
+    fame-and-infamy ledger)
+  - [x] Share Responsibility (pp. 27-29) - the
     player-DM split: the goals, the allies, the
     personality work
+    - R600: the dej share pins (the player-DM split, the
+    long-term goal doctrine, the personality profile)
 - [ ] **Chapter 2: Adventures** (pp. 30-67) - building
   high-level adventures, worlds, and monsters
   - [ ] Common Mistakes / Plots (pp. 30-35) - the
