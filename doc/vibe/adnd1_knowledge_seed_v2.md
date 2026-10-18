@@ -11306,6 +11306,51 @@ when both halves land.
   Audit: "R607 DMO true-dweomers
   audit"; include after
   rules/dmoduels.h.
+- R608 LANDED 2026-10-18: commit
+  a3960f01c2812e4a8bacf4acc691e6b
+  979f99444 (census 530 -> 531,
+  pushed 55ce7ba..a3960f0),
+  HIGH-LEVEL SAVES AND THACO, printed
+  pp. 142-144, DMO Chapter 7 round one
+  of five per the split plan - FIVE
+  boxes flip (all children; the Chapter 7
+  parent stays open until R612; gap
+  census now 84 closed / 12 open):
+  rules/dmohighlevel.h, prefix dew
+  (verified free; only regtest hit was
+  the word dewberry), 51 inlines (27
+  consts, 15 bools, 5 chains, 4 table
+  columns), 2 grids (T36 Table 36
+  saves-by-caster-level 28x3 in four
+  group bands - priest 7, rogue 6,
+  warrior 10, wizard 5 - with the
+  defender-minus-caster row-band chains
+  plus row-base consts for the offset;
+  T38 Table 38 penalty ladder 7x1 read
+  via the dewT38Band chain), 24
+  table_checks (the Wulf 5-3=2 example,
+  the band heads and tails, the deity
+  ladder descent, the T39 order pins).
+  DELIVERY SAGA (three lessons seated
+  in Verification lessons): the canvas
+  b64 block copied at 15K (clipboard
+  clip), the raw-JSON chat route struck
+  (Markdown `](` mangling of every expr,
+  plus an author-side dev/dew typo in
+  examples[30] - both Vibe-side at the
+  chat source), repaired in place by
+  field/item md5 fingerprinting plus a
+  base64 repair blob; the spec md5
+  68b21a32ed99892aaba2d53291c912e9
+  verified byte-exact before ./rn.
+  Spec tools/spec_r608.json 33491
+  bytes. NEXT - R609: skills Tables
+  40-41 plus Warriors with Table 42
+  (pp. 145-156); consult the gap report
+  at HEAD a3960f0; verify next prefix
+  free (dex family next). Audit:
+  "R609 DMO high-level skills audit";
+  include after rules/dmohighlevel.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

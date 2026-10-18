@@ -513,15 +513,31 @@ tables are data and close on table pins.
     THACO-limit pins - priest 8, rogue 11, warrior 1, wizard
     14; the attack roll of 1 is always a miss, monsters have
     no THACO limits
-  - [ ] Table 40: Skills for High-Level Characters
+  - [x] Table 40: Skills for High-Level Characters
     (pp. 145-146) - the skill roster (the base scores,
-    the requirements, the costs)
-  - [ ] Table 41: Ability Modifiers to Skills (p.
-    146) - the ability/skill-adjustment grid
-  - [ ] Warriors (pp. 146-156) - the fighters, rangers
+    the requirements, the costs) - R609: the dey T40
+    roster grid - 33 rows in four class bands
+    (warriors 0-10, wizards 11-13, priests 14-21,
+    rogues 22-32) with the requirement, base score,
+    ability-code and cost columns; the two blank
+    priest cost cells (Divine Voice, Detect
+    Deception) pinned as printed blanks
+  - [x] Table 41: Ability Modifiers to Skills (p.
+    146) - the ability/skill-adjustment grid - R609:
+    the dey T41 grid, eleven bands from 3-or-less -5
+    to 18-plus +5 with the deyT41Band score chain
+  - [x] Warriors (pp. 146-156) - the fighters, rangers
     and paladins beyond 20th (Table 42: Warrior
     Advancement Beyond 20th Level, p. 147), the
-    warrior skill list
+    warrior skill list - R609: the dey T42 grid
+    (fighter and paladin/ranger XP, the proficiency
+    columns, the 9+N hit points with the Con
+    footnote), the breech and intimidation ladders,
+    the ranger and paladin powers, and all eleven
+    warrior skills pinned (adaptation, all-around
+    attack, bravery, captivate, death blow,
+    frighten/challenge, hardiness, inner focus,
+    sense danger, signature item, signature mount)
   - [ ] Wizards (pp. 156-159) - beyond 20th (Table
     43: Wizard Advancement Beyond 20th Level, p. 156;
     Table 44: Wizard Spell Progression, p. 157), the

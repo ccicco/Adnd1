@@ -1,0 +1,4365 @@
+{
+ "round": 609,
+ "prefix": "dey",
+ "header_file": "rules/dmohighskills.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 531,
+ "title": "High-Level Skills and Warriors",
+ "audit_label": "R609 DMO high-level skills audit",
+ "include_comment": "the DMO high-level skills pins",
+ "include_after": "#include \"rules/dmohighlevel.h\"  // R608: the DMO high-level save pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R608 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R608 LANDED 2026-10-18: commit",
+  "  a3960f01c2812e4a8bacf4acc691e6b",
+  "  979f99444 (census 530 -> 531,",
+  "  pushed 55ce7ba..a3960f0),",
+  "  HIGH-LEVEL SAVES AND THACO, printed",
+  "  pp. 142-144, DMO Chapter 7 round one",
+  "  of five per the split plan - FIVE",
+  "  boxes flip (all children; the Chapter 7",
+  "  parent stays open until R612; gap",
+  "  census now 84 closed / 12 open):",
+  "  rules/dmohighlevel.h, prefix dew",
+  "  (verified free; only regtest hit was",
+  "  the word dewberry), 51 inlines (27",
+  "  consts, 15 bools, 5 chains, 4 table",
+  "  columns), 2 grids (T36 Table 36",
+  "  saves-by-caster-level 28x3 in four",
+  "  group bands - priest 7, rogue 6,",
+  "  warrior 10, wizard 5 - with the",
+  "  defender-minus-caster row-band chains",
+  "  plus row-base consts for the offset;",
+  "  T38 Table 38 penalty ladder 7x1 read",
+  "  via the dewT38Band chain), 24",
+  "  table_checks (the Wulf 5-3=2 example,",
+  "  the band heads and tails, the deity",
+  "  ladder descent, the T39 order pins).",
+  "  DELIVERY SAGA (three lessons seated",
+  "  in Verification lessons): the canvas",
+  "  b64 block copied at 15K (clipboard",
+  "  clip), the raw-JSON chat route struck",
+  "  (Markdown `](` mangling of every expr,",
+  "  plus an author-side dev/dew typo in",
+  "  examples[30] - both Vibe-side at the",
+  "  chat source), repaired in place by",
+  "  field/item md5 fingerprinting plus a",
+  "  base64 repair blob; the spec md5",
+  "  68b21a32ed99892aaba2d53291c912e9",
+  "  verified byte-exact before ./rn.",
+  "  Spec tools/spec_r608.json 33491",
+  "  bytes. NEXT - R609: skills Tables",
+  "  40-41 plus Warriors with Table 42",
+  "  (pp. 145-156); consult the gap report",
+  "  at HEAD a3960f0; verify next prefix",
+  "  free (dex family next). Audit:",
+  "  \"R609 DMO high-level skills audit\";",
+  "  include after rules/dmohighlevel.h."
+ ],
+ "banner": {
+  "title": "HIGH-LEVEL SKILLS AND WARRIORS - DMO Chapter 7, round two of five: the skills doctrine (success as the number or less on 1d20, the Table 41 ability adjustments, the fixed drop of limited-use skills with the zero-or-less lockout that ability adjustments cannot lift and that spreads to dependent skills, the opposed-roll cases with re-rolled ties, the slot-and-character-point cost reading, the 16 mortal base-score ceiling that wishes cannot touch), the Table 40 skill roster (33 rows in four class bands - eleven warriors, three wizards, eight priests, eleven rogues - with the level requirements, base scores, relevant abilities and costs; the two blank priest cost cells pinned as printed blanks), the Table 42 warrior advancement grid (fighter 3.0M to 5.5M XP in 250K steps, paladin/ranger 3.6M to 6.6M in 300K steps, the weapon and nonweapon proficiency columns, the 9+N hit points with the Con-bonus footnote), the fighter breech-immunity ladder (+1 at 21st to +4 at 30th, any weapon including bare hands, no bonus, not magical, undiminished by planar distance or magic disruption) and intimidation (the 10-yard plain-sight use, the 4+1 auto-retreat, the 4+2 save vs. death magic, the -2 within 60 feet, the per-three-levels -2 growth to -6), the ranger followers/scroll/scrying powers and the paladin scroll/cure/disease-immunity powers, and all eleven warrior skills - adaptation, all-around attack, bravery, captivate, death blow, frighten/challenge, hardiness, inner focus, sense danger, signature item and signature mount.",
+  "provenance": "verified against printed pp. 145-156 of the archive.org DMO captures (items dungeon-master-option-high-level-campaigns and tsr02156dmsoptionhighlevelcampaigns, the djvu.txt full texts; the tsr02156 ABBYY read is primary and the tesseract read is cross-checked; leaf N = printed page N). The Table 40 roster, Table 41 grid and Table 42 grid from pp. 145-147, the skills doctrine from p. 146, the fighter, ranger and paladin powers from pp. 147-149, and the eleven skill descriptions from pp. 148-156. Three contested cells settled against the physical copy (2026-10-18): the Divine Voice and Detect Deception cost cells are blank in print as in both captures, and the bravery prerequisite line prints invulnerability - pinned verbatim. The Table 42 20th-level proficiency row reads weapon 10, nonweapon 9 per the physical copy.",
+  "sentinel": "the gap census after this round: 87 closed, 9 open - three Chapter 7 children flip in round two of five (the parent stays open until R612); the DMO arc continues with R610 (Wizards and Priests, Tables 43-46, pp. 156-167)."
+ },
+ "consts": [
+  {
+   "name": "deySkillDieSides",
+   "value": 20,
+   "comment": "the skill success check: success is rolling the skill's number or less on 1d20 (printed p. 146)."
+  },
+  {
+   "name": "deyMaxSkillBase",
+   "value": 16,
+   "comment": "the mortal ceiling: no mortal can ever have a base score of more than 16 in any skill (printed p. 146)."
+  },
+  {
+   "name": "deyT41RowCount",
+   "value": 11,
+   "comment": "the Table 41 row count: eleven ability bands from 3-or-less up to 18-plus (printed p. 146)."
+  },
+  {
+   "name": "deyT40RowCount",
+   "value": 33,
+   "comment": "the Table 40 row count: thirty-three skills - eleven warriors, three wizards, eight priests, eleven rogues (printed pp. 145-146)."
+  },
+  {
+   "name": "deyT40WarriorBase",
+   "value": 0,
+   "comment": "the Table 40 warrior band: rows 0 through 10 hold the eleven warrior skills (printed pp. 145-146)."
+  },
+  {
+   "name": "deyT40WizardBase",
+   "value": 11,
+   "comment": "the Table 40 wizard band: rows 11 through 13 hold the three wizard skills (printed pp. 145-146)."
+  },
+  {
+   "name": "deyT40PriestBase",
+   "value": 14,
+   "comment": "the Table 40 priest band: rows 14 through 21 hold the eight priest skills (printed pp. 145-146)."
+  },
+  {
+   "name": "deyT40RogueBase",
+   "value": 22,
+   "comment": "the Table 40 rogue band: rows 22 through 32 hold the eleven rogue skills (printed pp. 145-146)."
+  },
+  {
+   "name": "deyWarriorThacoStopLevel",
+   "value": 20,
+   "comment": "the warrior THACO stop: warriors' THACO ceases to improve once they reach level 20 (printed p. 146)."
+  },
+  {
+   "name": "deyWarriorAdvLimit",
+   "value": 30,
+   "comment": "the advancement ceiling: warriors continue to receive extra proficiencies and hit points until level 30 (printed p. 146)."
+  },
+  {
+   "name": "deyWarriorPowerLevel",
+   "value": 21,
+   "comment": "the power threshold: warriors automatically receive special powers beginning at 21st level (printed p. 146)."
+  },
+  {
+   "name": "deyWarriorSkillLevel",
+   "value": 10,
+   "comment": "the skill threshold: all warriors have access to the special skills beginning at level 10 (printed p. 146)."
+  },
+  {
+   "name": "deyT42RowCount",
+   "value": 11,
+   "comment": "the Table 42 row count: eleven levels from 20th through 30th (printed p. 147)."
+  },
+  {
+   "name": "deyBreechStartLevel",
+   "value": 21,
+   "comment": "the breech threshold: beginning at 21st level a fighter can harm creatures hit only by +1 or better magical weapons (printed pp. 147-148)."
+  },
+  {
+   "name": "deyIntimidationStartLevel",
+   "value": 21,
+   "comment": "the intimidation threshold: a fighter of 21st level or higher can shake an enemy's resolve before combat begins (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationSightYards",
+   "value": 10,
+   "comment": "the intimidation range: close enough to see the opponent's face clearly, 10 yards in good visibility (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationAutoRetreatHd",
+   "value": 4,
+   "comment": "the intimidation auto-retreat: opponents with 4+1 Hit Dice/levels or less automatically retreat (the printed 4+1 form) (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationSaveHd",
+   "value": 4,
+   "comment": "the intimidation save threshold: opponents with more than 4+2 Hit Dice/levels get a saving throw vs. death magic (the printed 4+2 form) (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationStayPenalty",
+   "value": 2,
+   "comment": "the intimidation stay penalty: a failed save leaves a -2 penalty on all initiative, attack, saving throw and ability check rolls while the fighter remains within 60 feet (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationRange",
+   "value": 60,
+   "comment": "the intimidation penalty range: the -2 penalties apply within 60 feet of the fighter and return when the creature re-enters (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationPenaltyStep",
+   "value": 3,
+   "comment": "the intimidation growth: for every three levels gained after receiving the ability the opponent saves at an additional -2 (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationPenaltyIncrement",
+   "value": 2,
+   "comment": "the intimidation increment: the per-three-levels saving throw adjustment is -2 per step - 24th level -2, 27th -4, 30th -6 (printed pp. 148-149)."
+  },
+  {
+   "name": "deyRangerFollowerLevel1",
+   "value": 21,
+   "comment": "the ranger follower threshold: at 21st level a ranger attracts 2d6 more followers (printed pp. 148-149)."
+  },
+  {
+   "name": "deyRangerFollowerLevel2",
+   "value": 26,
+   "comment": "the ranger follower repeat: another group of 2d6 followers at 26th level (printed pp. 148-149)."
+  },
+  {
+   "name": "deyRangerFollowerDiceCount",
+   "value": 2,
+   "comment": "the ranger follower dice: 2d6 followers per group (printed pp. 148-149)."
+  },
+  {
+   "name": "deyRangerFollowerDieSides",
+   "value": 6,
+   "comment": "the ranger follower die: d6 for the follower groups (printed pp. 148-149)."
+  },
+  {
+   "name": "deyRangerScrollLevel",
+   "value": 21,
+   "comment": "the ranger scroll threshold: at 21st level a ranger can read priest scrolls (printed pp. 148-149)."
+  },
+  {
+   "name": "deyRangerEffectiveLevel",
+   "value": 9,
+   "comment": "the ranger effective level: the ranger's level counts as 9th for spell failure, scroll writing and scrying (printed pp. 148-149)."
+  },
+  {
+   "name": "deyRangerScrollWriteLevel",
+   "value": 24,
+   "comment": "the ranger scroll-writing threshold: at 24th level a ranger can prepare scrolls of priest spells per the Chapter 4 rules (printed pp. 148-149)."
+  },
+  {
+   "name": "deyRangerScryingLevel",
+   "value": 27,
+   "comment": "the ranger scrying threshold: at 27th level a ranger can employ crystal balls and other scrying devices as a 9th-level wizard (printed pp. 148-149)."
+  },
+  {
+   "name": "deyPaladinScrollLevel",
+   "value": 21,
+   "comment": "the paladin scroll threshold: at 21st level a paladin can read priest scrolls (printed pp. 148-149)."
+  },
+  {
+   "name": "deyPaladinEffectiveLevel",
+   "value": 9,
+   "comment": "the paladin effective level: 9th for spell failure and scroll writing (printed pp. 148-149)."
+  },
+  {
+   "name": "deyPaladinScrollWriteLevel",
+   "value": 24,
+   "comment": "the paladin scroll-writing threshold: at 24th level a paladin can prepare scrolls of priest spells (printed pp. 148-149)."
+  },
+  {
+   "name": "deyPaladinDiseaseImmunityLevel",
+   "value": 27,
+   "comment": "the paladin disease threshold: at 27th level a paladin becomes immune to all forms of disease (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptForeignInitPenalty",
+   "value": 6,
+   "comment": "the adaptation target: the +6 foreign environment penalty to initiative (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptCheckBonus",
+   "value": 3,
+   "comment": "the adaptation check bonus: +3 (or +15%) to environment saving throws and ability checks (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptUnseenPenalty",
+   "value": 4,
+   "comment": "the adaptation fog penalty: characters who cannot observe their surroundings suffer -4 to the skill check (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptBonusDaysPerLevel",
+   "value": 1,
+   "comment": "the adaptation duration: the entire battle plus one day per character level (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptPracticeHours",
+   "value": 8,
+   "comment": "the adaptation practice: at least eight hours a week of practice in the environment extends the effect indefinitely (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptPermanentSlotCost",
+   "value": 1,
+   "comment": "the permanent adaptation cost: one extra weapon or nonweapon proficiency slot (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptPermanentCpCost",
+   "value": 3,
+   "comment": "the permanent adaptation point cost: three character points (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAAARadius",
+   "value": 5,
+   "comment": "the all-around radius: the hail of blows damages every enemy within 5 feet (printed pp. 149-150)."
+  },
+  {
+   "name": "deyAAADamageDie",
+   "value": 8,
+   "comment": "the all-around damage die: d8 per die of area damage (printed pp. 149-150)."
+  },
+  {
+   "name": "deyAAAInvisibilityAcBonus",
+   "value": 4,
+   "comment": "the all-around invisibility rule: invisible opponents can be harmed if their effective Armor Class after the -4 invisibility bonus is not better than the original target's (printed pp. 149-150)."
+  },
+  {
+   "name": "deyBraveryDerivedCost",
+   "value": 2,
+   "comment": "the bravery drain: each use of captivate, frighten/challenge or hardiness reduces the base bravery score by two for the rest of the day (printed pp. 149-150)."
+  },
+  {
+   "name": "deyCapSuggestionWizardLevel",
+   "value": 3,
+   "comment": "the captivate suggestion: planted as the 3rd-level wizard spell (printed p. 150)."
+  },
+  {
+   "name": "deyCapGiftSavePenalty",
+   "value": 4,
+   "comment": "the captivate gift: an appropriate gift or useful favor makes the saving throw at -4 (printed p. 150)."
+  },
+  {
+   "name": "deyCapHdImmune",
+   "value": 8,
+   "comment": "the captivate immunity: creatures with 8 or more Hit Dice/levels are immune (printed p. 150)."
+  },
+  {
+   "name": "deyCapBraveryCost",
+   "value": 2,
+   "comment": "the captivate drain: each suggestion attempt reduces the base bravery score by two (printed p. 150)."
+  },
+  {
+   "name": "deyFrightAuraHd",
+   "value": 4,
+   "comment": "the frighten aura target: a group of creatures of 4 Hit Dice/levels or less (printed pp. 151-152)."
+  },
+  {
+   "name": "deyFrightFleeRoundsDie",
+   "value": 10,
+   "comment": "the frighten flee duration: creatures flee for 1d10 additional rounds after pursuit ends (printed pp. 151-152)."
+  },
+  {
+   "name": "deyFrightImmuneFriendRange",
+   "value": 30,
+   "comment": "the frighten friendly-save: creatures within 30 feet of a friendly creature immune to the aura get a saving throw vs. spell (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeMinHd",
+   "value": 10,
+   "comment": "the challenge target: the creature must have at least 10 Hit Dice or levels (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeSightYards",
+   "value": 100,
+   "comment": "the challenge range: about 100 yards if light and visibility are good (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeNoRoleplayPenalty",
+   "value": 6,
+   "comment": "the challenge modifier one: -6 to the skill score with no attempt to role-play the challenge (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeFeeblePenalty",
+   "value": 4,
+   "comment": "the challenge modifier two: -4 for only a feeble role-playing attempt (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeCompanionBonus",
+   "value": 1,
+   "comment": "the challenge modifier three: +1 to the opponent's Wisdom/Willpower per companion accompanying the warrior (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeDamageBonusStep",
+   "value": 10,
+   "comment": "the challenge modifier four: +1 for any damage plus an additional +1 per 10% of original hit points lost (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeWeakBonus",
+   "value": 10,
+   "comment": "the challenge weak-powers modifier: +10 to the opponent's Wisdom/Willpower for creatures with weak combat powers (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeWeakThaco",
+   "value": 14,
+   "comment": "the challenge weak definition one: THACO 14 or higher (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeWeakAc",
+   "value": 2,
+   "comment": "the challenge weak definition two: Armor Class 2 or worse (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeWeakMaxDamage",
+   "value": 6,
+   "comment": "the challenge weak definition three: no physical attack inflicting more than 6 hit points of damage (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeRetreatRoundsDie",
+   "value": 4,
+   "comment": "the challenge both-fail retreat: the warrior stays away 1d4 rounds (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeBraveryCost",
+   "value": 1,
+   "comment": "the challenge drain: each use of either form lowers the bravery skill by one for the rest of the day (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeMoraleRoundsDie",
+   "value": 10,
+   "comment": "the frighten counter-morale: if the warrior attacks, the creatures automatically pass morale checks for the next 1d10 rounds (printed pp. 151-152)."
+  },
+  {
+   "name": "deyHardMinorDays",
+   "value": 1,
+   "comment": "the hardiness minor recovery: unconsciousness for 1 day (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardSevereWeeks",
+   "value": 1,
+   "comment": "the hardiness severe recovery: unconsciousness for 1 week (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardExtremeMonths",
+   "value": 1,
+   "comment": "the hardiness extreme recovery: unconsciousness for 1 month (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardHeroicFloor",
+   "value": -20,
+   "comment": "the hardiness heroic floor: a successful check lets the warrior fight until -20 hit points instead of dying at zero (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardConsciousAt",
+   "value": -19,
+   "comment": "the hardiness regen wake: regeneration to -19 or more during the delay restores consciousness (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardBraveryCost",
+   "value": 2,
+   "comment": "the hardiness drain: each use lowers the base bravery score by two for the rest of the day (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardExampleLevel",
+   "value": 17,
+   "comment": "the hardiness worked example: a 17th-level fighter with 34 of 115 hit points delays power word kill (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardExampleHpLeft",
+   "value": 34,
+   "comment": "the hardiness worked example hit points left: 34 (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardExampleHpTotal",
+   "value": 115,
+   "comment": "the hardiness worked example hit point total: 115 (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardExampleDelay",
+   "value": 5,
+   "comment": "the hardiness worked example delay: five rounds, then heal lifts him over 60 hit points and the power word kill fizzles (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardExampleImmuneHp",
+   "value": 60,
+   "comment": "the hardiness worked example immunity: over 60 hit points carries immunity to power word kill (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardVampireLevels",
+   "value": 2,
+   "comment": "the hardiness multi-effect example: a vampire drained two levels, a lich added paralysis (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardParalysisWeeks",
+   "value": 1,
+   "comment": "the hardiness paralysis recovery: another week for the paralysis (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardExampleWeeks",
+   "value": 9,
+   "comment": "the hardiness nine-week sum: one month per drained level plus the paralysis week (printed pp. 152-153)."
+  },
+  {
+   "name": "deyFocusBoostDurationPerLevel",
+   "value": 1,
+   "comment": "the inner focus duration: the improvement lasts one round per character level (printed pp. 153-154)."
+  },
+  {
+   "name": "deyFocusOtherScoresPenalty",
+   "value": 2,
+   "comment": "the inner focus cost: the other two eligible ability scores drop by two for the same duration (printed pp. 153-154)."
+  },
+  {
+   "name": "deyFocusExtraordinaryFloor",
+   "value": 16,
+   "comment": "the inner focus extraordinary rule: an extraordinary Strength score of 18/01-18/00 reduces to 16 (printed pp. 153-154)."
+  },
+  {
+   "name": "deyFocusAttemptCost",
+   "value": 2,
+   "comment": "the inner focus drain: each attempt, successful or not, lowers the base skill score by two for the day (printed pp. 153-154)."
+  },
+  {
+   "name": "deySenseAmbushScanYards",
+   "value": 200,
+   "comment": "the sense danger ambush scan: an area roughly 200 yards square in a single round (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseReadinessCube",
+   "value": 30,
+   "comment": "the sense danger readiness cube: a 30-foot cube of battle-readiness per round (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseHiddenRadius",
+   "value": 30,
+   "comment": "the sense danger hidden radius: invisible, ethereal, astral, out-of-phase or hidden creatures within 30 feet (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseHiddenInitPenalty",
+   "value": 1,
+   "comment": "the sense danger hidden cost: a +1 initiative penalty on the round the hidden-enemy sense is used (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseAlertnessBonus",
+   "value": 1,
+   "comment": "the sense danger proficiency synergy: the alertness proficiency grants a +1 bonus to the skill score (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseLowHpPct",
+   "value": 20,
+   "comment": "the size-up low bar: hit points 20% or less of the warrior's and THACO at least 15 points higher (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseLowThacoDiff",
+   "value": 15,
+   "comment": "the size-up low THACO difference: at least 15 points higher (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseModerateHpPct",
+   "value": 50,
+   "comment": "the size-up moderate bar: hit points 21-50% of the warrior's or THACO at least 10 points higher (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseModerateThacoDiff",
+   "value": 10,
+   "comment": "the size-up moderate THACO difference: at least 10 points higher (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseSignificantHpPctLow",
+   "value": 51,
+   "comment": "the size-up significant bar: hit points 51-70% of the warrior's and THACO at least 5 points higher (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseSignificantHpPctHigh",
+   "value": 70,
+   "comment": "the size-up significant ceiling: up to 70% of the warrior's hit points (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseSignificantThacoDiff",
+   "value": 5,
+   "comment": "the size-up significant THACO difference: at least 5 points higher (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseDangerousHpPctLow",
+   "value": 71,
+   "comment": "the size-up dangerous bar: hit points 71-100% of the warrior's and THACO less than 5 points higher, but not lower (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseDangerousHpPctHigh",
+   "value": 100,
+   "comment": "the size-up dangerous ceiling: up to 100% of the warrior's hit points (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseFailThreshold",
+   "value": 19,
+   "comment": "the sense danger secret roll: a fail at 19 or less detects nothing, a natural 20 a false indication (printed pp. 154-155)."
+  },
+  {
+   "name": "deySigItemOwnLevels",
+   "value": 1,
+   "comment": "the signature item ownership: the usual period is one level's worth of advancement (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemReplacementMonths",
+   "value": 1,
+   "comment": "the signature item nonmagical replacement: indistinguishable from the original after about one month (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemMagicXpMultiple",
+   "value": 5,
+   "comment": "the signature item magical replacement: the character loses five times the item's experience point value (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemEnchantMonths",
+   "value": 1,
+   "comment": "the signature item re-enchantment: the new item matches the original after about one month (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemCategories",
+   "value": 4,
+   "comment": "the signature item categories: armor, weapon, shield and miscellaneous magical item - one item each (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemVisionChecksPerDay",
+   "value": 1,
+   "comment": "the signature item vision: one skill check per day to see a lost or stolen item's location (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigMountMaxHd",
+   "value": 10,
+   "comment": "the signature mount size: no more than 10 Hit Dice (printed p. 156)."
+  },
+  {
+   "name": "deySigMountMinHpPerHd",
+   "value": 4,
+   "comment": "the signature mount toughness: at least four hit points per Hit Die (printed p. 156)."
+  },
+  {
+   "name": "deySigMountHeavyWarHorseMinHp",
+   "value": 25,
+   "comment": "the signature mount example: the 5+5 heavy war horse needs at least 25 hit points (printed p. 156)."
+  },
+  {
+   "name": "deySigMountHpPerLevel",
+   "value": 1,
+   "comment": "the signature mount link bonus: one hit point per character level at the link, plus one more each level gained (printed p. 156)."
+  },
+  {
+   "name": "deySigMountSmartInt",
+   "value": 5,
+   "comment": "the signature mount clever mount: Intelligence 5 or more need not be trained if it willingly serves (printed p. 156)."
+  },
+  {
+   "name": "deySigMountVisionChecksPerDay",
+   "value": 1,
+   "comment": "the signature mount vision: one skill check per day to see a replacement mount (printed p. 156)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "deySkillsNoCrossGroup",
+   "value": true,
+   "comment": "the group lock: characters cannot learn skills from outside their groups (printed p. 146)."
+  },
+  {
+   "name": "deySkillAbilityAdjustApplies",
+   "value": true,
+   "comment": "the Table 41 rule: a character's ability scores can alter the chance for success in most cases (printed p. 146)."
+  },
+  {
+   "name": "deySkillCostFirstIsSlots",
+   "value": true,
+   "comment": "the cost reading: the first cost number is the cost in nonweapon proficiency slots unless otherwise indicated (printed p. 146)."
+  },
+  {
+   "name": "deySkillCostParensIsPoints",
+   "value": true,
+   "comment": "the parenthesized cost: the number in parentheses is the skill's character point cost under the Skills & Powers point system (printed p. 146)."
+  },
+  {
+   "name": "deySkillBaseImprovableWithSlots",
+   "value": true,
+   "comment": "the improvement route: a base success number can be improved by devoting extra slots or character points to the skill (printed p. 146)."
+  },
+  {
+   "name": "deySkillLimitedUseDropsFixed",
+   "value": true,
+   "comment": "the limited-use rule: the success numbers of limited-use skills drop by a fixed amount each time they are used (printed p. 146)."
+  },
+  {
+   "name": "deySkillZeroUnavailableADay",
+   "value": true,
+   "comment": "the exhaustion rule: once a base score is reduced to zero or less the skill cannot be used for a set period, usually one day (printed p. 146)."
+  },
+  {
+   "name": "deySkillDependentsUnavailable",
+   "value": true,
+   "comment": "the dependent-skill rule: any skill based upon the reduced skill is likewise unavailable (printed p. 146)."
+  },
+  {
+   "name": "deySkillAbilityCantRestore",
+   "value": true,
+   "comment": "the no-restore rule: even if the Table 41 ability adjustment raises the score above zero the skill stays unavailable until the listed time has passed (printed p. 146)."
+  },
+  {
+   "name": "deySkillBaseRecoversAfterPeriod",
+   "value": true,
+   "comment": "the recovery rule: the base score returns to normal after the listed time has elapsed (printed p. 146)."
+  },
+  {
+   "name": "deyOpposedOneFailsOtherWins",
+   "value": true,
+   "comment": "the opposed roll, first case: if one opponent fails, the creature who succeeded wins the contest (printed p. 146)."
+  },
+  {
+   "name": "deyOpposedBothMakeHigherWins",
+   "value": true,
+   "comment": "the opposed roll, second case: if both make their rolls, the opponent with the higher roll wins (printed p. 146)."
+  },
+  {
+   "name": "deyOpposedBothFailUnusual",
+   "value": true,
+   "comment": "the opposed roll, third case: if both opponents fail, some unusual result usually occurs (printed p. 146)."
+  },
+  {
+   "name": "deyOpposedTiesRerolled",
+   "value": true,
+   "comment": "the opposed roll, ties: all ties are re-rolled (printed p. 146)."
+  },
+  {
+   "name": "deyWishesNoEffectOnLimit",
+   "value": true,
+   "comment": "the wish proof: wishes have no effect on the base-score limit of 16 (printed p. 146)."
+  },
+  {
+   "name": "deySkillsMoreDramaticThanProficiencies",
+   "value": true,
+   "comment": "the framing: skills are similar to nonweapon proficiencies but with a much more dramatic effect and a minimum level requirement (printed p. 146)."
+  },
+  {
+   "name": "deyCaptivateNeedsBravery",
+   "value": true,
+   "comment": "the captivate prerequisite: warrior 15+ and the bravery skill (printed pp. 145-146)."
+  },
+  {
+   "name": "deyFrightenNeedsBravery",
+   "value": true,
+   "comment": "the frighten/challenge prerequisite: warrior 10+ and the bravery skill (printed pp. 145-146)."
+  },
+  {
+   "name": "deyHardinessNeedsBravery",
+   "value": true,
+   "comment": "the hardiness prerequisite: warrior 15+ and the bravery skill (printed pp. 145-146)."
+  },
+  {
+   "name": "deyDivineStrengthNeedsEminence",
+   "value": true,
+   "comment": "the divine strength prerequisite: priest 10+ and eminence (printed pp. 145-146)."
+  },
+  {
+   "name": "deyDivineVoiceNeedsEminence",
+   "value": true,
+   "comment": "the divine voice prerequisite: priest 15+ and eminence (printed pp. 145-146)."
+  },
+  {
+   "name": "deyDetectDeceptionNeedsEminence",
+   "value": true,
+   "comment": "the detect deception prerequisite: priest 15+ and eminence (printed pp. 145-146)."
+  },
+  {
+   "name": "deyInvincibilityNeedsEminence",
+   "value": true,
+   "comment": "the invincibility prerequisite: priest 21+ and eminence (printed pp. 145-146)."
+  },
+  {
+   "name": "deySmiteNeedsEminence",
+   "value": true,
+   "comment": "the smite prerequisite: priest 15+ and eminence (printed pp. 145-146)."
+  },
+  {
+   "name": "deyShadowFlightNeedsShadowTravel",
+   "value": true,
+   "comment": "the shadow flight prerequisite: rogue 21+ and shadow travel (printed pp. 145-146)."
+  },
+  {
+   "name": "deyT42ConBonusStopsAfter9",
+   "value": true,
+   "comment": "the Table 42 footnote: bonus hit points from high Constitution scores are not added after 9th level (printed p. 147)."
+  },
+  {
+   "name": "deyBreechAnyWeaponIncludingBareHands",
+   "value": true,
+   "comment": "the breech weapon rule: any weapon qualifies, including bare hands (printed pp. 147-148)."
+  },
+  {
+   "name": "deyBreechNoAttackBonus",
+   "value": true,
+   "comment": "the breech no-bonus rule: the fighter gets no attack or damage bonus, only the ability to harm (printed pp. 147-148)."
+  },
+  {
+   "name": "deyBreechNotMagical",
+   "value": true,
+   "comment": "the breech nature: the power is not magical (printed pp. 147-148)."
+  },
+  {
+   "name": "deyBreechUndiminishedByPlanarOrAntimagic",
+   "value": true,
+   "comment": "the breech reach: not diminished by planar distances or effects that disrupt magic (printed pp. 147-148)."
+  },
+  {
+   "name": "deyIntimidationNotAnAttack",
+   "value": true,
+   "comment": "the intimidation classification: use does not constitute an attack (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationNoInitModifier",
+   "value": true,
+   "comment": "the intimidation initiative: there is no initiative modifier (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationCautiousRetreat",
+   "value": true,
+   "comment": "the retreat form: the creature does not flee in panic but cautiously backs away (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationAvoidsRestOfDay",
+   "value": true,
+   "comment": "the day-long effect: intimidated creatures seek to avoid any confrontation with the fighter for the rest of the day (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationFreeToCounterattack",
+   "value": true,
+   "comment": "the counterattack clause: if the fighter or party attacks, the creature is free to return the attack (printed pp. 148-149)."
+  },
+  {
+   "name": "deyIntimidationMustBeInPlainSight",
+   "value": true,
+   "comment": "the visibility requirement: the fighter must be in plain sight (printed pp. 148-149)."
+  },
+  {
+   "name": "deyRangerUsePriestItems",
+   "value": true,
+   "comment": "the ranger item use: the ranger can also use priest magical items at 21st level (printed pp. 148-149)."
+  },
+  {
+   "name": "deyPaladinImmuneCursedDisease",
+   "value": true,
+   "comment": "the paladin cursed-disease immunity: even cursed afflictions such as mummy rot and lycanthropy (printed pp. 148-149)."
+  },
+  {
+   "name": "deyPaladinNotImmuneTrueDweomers",
+   "value": true,
+   "comment": "the paladin exception one: not immune to disease inflicted by true dweomers (printed pp. 148-149)."
+  },
+  {
+   "name": "deyPaladinNotImmuneHigherPriestPowers",
+   "value": true,
+   "comment": "the paladin exception two: not immune to the special powers of priests higher level than the paladin (printed pp. 148-149)."
+  },
+  {
+   "name": "deyPaladinCureCursedAfflictions",
+   "value": true,
+   "comment": "the paladin cure upgrade: the cure disease ability now cures cursed afflictions such as mummy rot and lycanthropy (printed pp. 148-149)."
+  },
+  {
+   "name": "deyPaladinCureLowerLevelCurses",
+   "value": true,
+   "comment": "the paladin curse removal: cures any curse or affliction cast by a character of lower level than the paladin (printed pp. 148-149)."
+  },
+  {
+   "name": "deyPaladinCureCursedItems",
+   "value": true,
+   "comment": "the paladin item curse: the cure applies to cursed magical items as well (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptNegatesCombatPenalties",
+   "value": true,
+   "comment": "the adaptation effect: no combat or initiative penalties for fighting in an unfavorable environment (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptCheckEachRound",
+   "value": true,
+   "comment": "the adaptation check cadence: checked at the end of each round in combat, every round until successful (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptNoSituationalMovement",
+   "value": true,
+   "comment": "the adaptation limit one: no effect on situational movement penalties or physically impossible conditions (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptNoMagicalOrVisionPenalties",
+   "value": true,
+   "comment": "the adaptation limit two: no effect on penalties from magical properties, vision or lighting (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptIndefiniteWithPractice",
+   "value": true,
+   "comment": "the adaptation extension: eight hours a week of practice extends the effect indefinitely (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptPermanentOption",
+   "value": true,
+   "comment": "the adaptation permanence: the extra-slot cost buys a permanent adjustment if paid before the adaptation fades (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAdaptNoOtherActionCost",
+   "value": true,
+   "comment": "the adaptation freedom: the check requires only a moment's thought and does not prevent other actions (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAAAAnnouncedInDeterminationStep",
+   "value": true,
+   "comment": "the all-around timing: must be announced in the round's player determination step (printed pp. 149-150)."
+  },
+  {
+   "name": "deyAAAKillTriggersBlast",
+   "value": true,
+   "comment": "the all-around trigger: the radius damage comes only if the initial blow kills the opponent (printed pp. 149-150)."
+  },
+  {
+   "name": "deyAAALargerOrBetterAcExcluded",
+   "value": true,
+   "comment": "the all-around exclusion: enemies larger than the original target or with better Armor Class are not harmed (printed pp. 149-150)."
+  },
+  {
+   "name": "deyAAAWeaponImmuneExcluded",
+   "value": true,
+   "comment": "the all-around immunity: opponents immune to the weapon used cannot be harmed (printed pp. 149-150)."
+  },
+  {
+   "name": "deyAAAInitialMissFails",
+   "value": true,
+   "comment": "the all-around failure: if the initial attack misses, the all-around attack fails (printed pp. 149-150)."
+  },
+  {
+   "name": "deyAAANoKillNoRadius",
+   "value": true,
+   "comment": "the all-around no-kill rule: damage that fails to kill leaves no radius effect (printed pp. 149-150)."
+  },
+  {
+   "name": "deyAAANoMoveOrOtherAction",
+   "value": true,
+   "comment": "the all-around restriction: the warrior cannot move or take another action that round (printed pp. 149-150)."
+  },
+  {
+   "name": "deyAAAMeleeProficientWeaponsOnly",
+   "value": true,
+   "comment": "the all-around weapon set: any melee weapon the warrior is proficient with (printed pp. 149-150)."
+  },
+  {
+   "name": "deyAAACombatBonusesIrrelevant",
+   "value": true,
+   "comment": "the all-around balance: beyond the initial attack, the warrior's combat bonuses are not a factor (printed pp. 149-150)."
+  },
+  {
+   "name": "deyBraveryNegatesUnnaturalFear",
+   "value": true,
+   "comment": "the bravery effect: a successful check negates the fear effect - no saving throw necessary (printed pp. 149-150)."
+  },
+  {
+   "name": "deyBraverySaveStillAllowedOnFail",
+   "value": true,
+   "comment": "the bravery fallback: if the check fails the warrior still gets a saving throw if one is normally allowed (printed pp. 149-150)."
+  },
+  {
+   "name": "deyBraveryPaladinVsEvilTurning",
+   "value": true,
+   "comment": "the bravery paladin use: paladins can use it against turning attempts by evil priests (printed pp. 149-150)."
+  },
+  {
+   "name": "deyBraveryPrereqForCaptivateFrightenInvulnerability",
+   "value": true,
+   "comment": "the bravery prerequisite: printed verbatim, the skill is a prerequisite for the captivate, frighten/challenge, and invulnerability skills (the printed invulnerability wording held in both captures and the physical copy) (printed pp. 149-150)."
+  },
+  {
+   "name": "deyBraveryZeroBlocksAllFour",
+   "value": true,
+   "comment": "the bravery exhaustion: once the base score falls to zero the character cannot use bravery or the other three skills for the rest of the day (printed pp. 149-150)."
+  },
+  {
+   "name": "deyCapSameRaceFriendly",
+   "value": true,
+   "comment": "the captivate baseline: children, members of the opposite sex and other warriors tend to be friendly toward the character when of the same race (printed p. 150)."
+  },
+  {
+   "name": "deyCapSimilarAlignmentOneElement",
+   "value": true,
+   "comment": "the captivate alignment: alignments are similar when they share one common element - law, neutrality, chaos, good or evil (printed p. 150)."
+  },
+  {
+   "name": "deyCapSuggestionAutoIfNoRisk",
+   "value": true,
+   "comment": "the captivate auto-suggestion: the NPC automatically obeys if the suggestion involves no risk, loss or embarrassment (printed p. 150)."
+  },
+  {
+   "name": "deyCapSuccessfulSaveFlees",
+   "value": true,
+   "comment": "the captivate save outcome, printed verbatim: if the saving throw succeeds the NPC tries to flee from the warrior's presence (printed p. 150)."
+  },
+  {
+   "name": "deyCapHostileActBreaks",
+   "value": true,
+   "comment": "the captivate break: any hostile act or threat, including a failed suggestion, breaks the effect (printed p. 150)."
+  },
+  {
+   "name": "deyCapExtendedContactAttachment",
+   "value": true,
+   "comment": "the captivate attachment: extended personal contact lets the DM secretly roll for a troublesome NPC attachment (printed p. 150)."
+  },
+  {
+   "name": "deyDeathBlowAnnounced",
+   "value": true,
+   "comment": "the death blow timing: must be announced in the round's player determination step (printed pp. 150-151)."
+  },
+  {
+   "name": "deyDeathBlowSaveVsDeathMagic",
+   "value": true,
+   "comment": "the death blow save: a hit deals normal damage and the opponent must save vs. death magic or be slain immediately (printed pp. 150-151)."
+  },
+  {
+   "name": "deyDeathBlowProtectiveDevicesApply",
+   "value": true,
+   "comment": "the death blow defense: protective device bonuses (magical armor, rings of protection) always apply to the save (printed pp. 150-151)."
+  },
+  {
+   "name": "deyDeathBlowOptionalT36T38Modifiers",
+   "value": true,
+   "comment": "the death blow option: the DM may use the Table 36 or Table 38 saving throw modifiers (printed pp. 150-151)."
+  },
+  {
+   "name": "deyDeathBlowMoreHdImmune",
+   "value": true,
+   "comment": "the death blow immunity one: opponents with more Hit Dice/levels than the warrior are immune (printed pp. 150-151)."
+  },
+  {
+   "name": "deyDeathBlowWeaponImmuneImmune",
+   "value": true,
+   "comment": "the death blow immunity two: creatures not normally vulnerable to the weapon are immune (printed pp. 150-151)."
+  },
+  {
+   "name": "deyDeathBlowOnlyAttackThatRound",
+   "value": true,
+   "comment": "the death blow restriction: it is the only attack the warrior can make that round (printed pp. 150-151)."
+  },
+  {
+   "name": "deyDeathBlowAooAllowed",
+   "value": true,
+   "comment": "the death blow exception: attacks of opportunity are allowed (printed pp. 150-151)."
+  },
+  {
+   "name": "deyDeathBlowCombinesAllAround",
+   "value": true,
+   "comment": "the death blow combo: can be combined with an all-around attack (printed pp. 150-151)."
+  },
+  {
+   "name": "deyDeathBlowOnlyInitialTargetDies",
+   "value": true,
+   "comment": "the death blow combo limit: only the initial target of the all-around attack faces the instant death effect (printed pp. 150-151)."
+  },
+  {
+   "name": "deyFrightShoutAndCharge",
+   "value": true,
+   "comment": "the frighten form: the warrior must shout and charge (printed pp. 151-152)."
+  },
+  {
+   "name": "deyFrightMustSeeAndHear",
+   "value": true,
+   "comment": "the frighten senses: the creatures must see and hear the warrior (printed pp. 151-152)."
+  },
+  {
+   "name": "deyFrightUndeadImmune",
+   "value": true,
+   "comment": "the frighten immunity one: undead are not affected (printed pp. 151-152)."
+  },
+  {
+   "name": "deyFrightNoMoraleImmune",
+   "value": true,
+   "comment": "the frighten immunity two: creatures with no morale scores (conjured or summoned creatures under control) are not affected (printed pp. 151-152)."
+  },
+  {
+   "name": "deyFrightCloakOfBraveryNegates",
+   "value": true,
+   "comment": "the frighten negation: a cloak of bravery spell negates the effect (printed pp. 151-152)."
+  },
+  {
+   "name": "deyFrightNatural20Attacks",
+   "value": true,
+   "comment": "the frighten natural 20: if the skill roll is a 20 the affected creatures attack the warrior instead (printed pp. 151-152)."
+  },
+  {
+   "name": "deyFrightWarriorFleesTheyPursue",
+   "value": true,
+   "comment": "the frighten pursuit: if the warrior flees the creatures pursue as long as they can see him (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeOpposedChaVsWis",
+   "value": true,
+   "comment": "the challenge roll: an opposed roll using the warrior's Charisma/Leadership against the target's Wisdom/Willpower (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeWinnerMustCloseToMelee",
+   "value": true,
+   "comment": "the challenge compulsion: the winner's target must immediately advance and engage in physical combat unless restrained (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeRestraintTakesFullRound",
+   "value": true,
+   "comment": "the challenge restraint: restraint breaks the compulsion but keeps the creatures occupied a full round (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeUnwillingSaveEachRound",
+   "value": true,
+   "comment": "the challenge break-off: unwilling creatures can save vs. spell each round to break off (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeSpellsMissilesAfterClosing",
+   "value": true,
+   "comment": "the challenge attack set: spells or missile weapons allowed, but the creature must close to melee range first (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeNatural20AlwaysFails",
+   "value": true,
+   "comment": "the challenge natural 20: any roll of 20 is a failure regardless of the modified score (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeBothFailWarriorRetreats",
+   "value": true,
+   "comment": "the challenge double fail: the warrior loses confidence and must retreat into cover or move away at top speed (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeBraveryAvoidsRetreat",
+   "value": true,
+   "comment": "the challenge retreat out: the bravery skill can avoid the mandatory retreat (printed pp. 151-152)."
+  },
+  {
+   "name": "deyChallengeGazeCombosInRange",
+   "value": true,
+   "comment": "the challenge gaze: a fighter can use his intimidation gaze while issuing a challenge if the opponent is in range (printed pp. 151-152)."
+  },
+  {
+   "name": "deyHardSaveFirst",
+   "value": true,
+   "comment": "the hardiness save order: if the effect allows a saving throw the warrior rolls the save before checking the skill (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardNoSimpleOrContinuingDamage",
+   "value": true,
+   "comment": "the hardiness exclusion one: no delay of simple damage from any source, including continuing damage such as Melf's acid arrow or a sword of wounding (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardNoCharmsEntangleImprison",
+   "value": true,
+   "comment": "the hardiness exclusion two: no protection against effects not directly harmful such as magical charms, entanglement or imprisonment (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardCureWithinDelayNoHarm",
+   "value": true,
+   "comment": "the hardiness cure window: the appropriate cure before the delay ends means no harm (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardShorterDurationNoEffect",
+   "value": true,
+   "comment": "the hardiness short effects: an effect whose duration is shorter than the delay never lands (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardSystemShockAtEnd",
+   "value": true,
+   "comment": "the hardiness recovery roll: a system shock roll at the end of the recovery time (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardShockSuccessHeals",
+   "value": true,
+   "comment": "the hardiness success: a successful system shock awakens the character fully healed, the delayed magic nullified (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardShockFailFullForce",
+   "value": true,
+   "comment": "the hardiness failure: a failed system shock means the full force of the effect (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardMultipleEffectsSequential",
+   "value": true,
+   "comment": "the hardiness stacking: multiple effects mean system shock rolls at the end of each recovery period, no awakening until all are made (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardUnconsciousRecoversInstantly",
+   "value": true,
+   "comment": "the hardiness sleeping cure: a cure applied while unconscious recovers the character immediately and automatically (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardHeroicDelayRounds",
+   "value": true,
+   "comment": "the heroic effort duration: the warrior functions at negative hit points for rounds equal to the delay (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardHeroicDeathAtDelayEnd",
+   "value": true,
+   "comment": "the heroic effort price: reduced to -20 or less the character dies once the delay expires (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardRaiseDuringDelaySaves",
+   "value": true,
+   "comment": "the heroic rescue: a raise dead or resurrection cast during the delay prevents death (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardRegenNoShock",
+   "value": true,
+   "comment": "the regeneration clause: a character returned to life through regeneration need not make a system shock roll (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardAmuletNoShock",
+   "value": true,
+   "comment": "the amulet clause: an amulet of life protection works like regeneration with no system shock roll (printed pp. 152-153)."
+  },
+  {
+   "name": "deyHardIneffectiveAtZeroBravery",
+   "value": true,
+   "comment": "the hardiness gate: the skill is ineffective once the base bravery score is zero or less (printed pp. 152-153)."
+  },
+  {
+   "name": "deyFocusOneBoostAtATime",
+   "value": true,
+   "comment": "the inner focus limit: only one ability score improvement can operate at any given time (printed pp. 153-154)."
+  },
+  {
+   "name": "deyFocusConcentrationRoundOnlyAction",
+   "value": true,
+   "comment": "the inner focus round: no other actions while concentrating one round to raise the score (printed pp. 153-154)."
+  },
+  {
+   "name": "deyFocusBoostEndsAtWill",
+   "value": true,
+   "comment": "the inner focus control: the warrior can end the boost and restore the other scores at any time (printed pp. 153-154)."
+  },
+  {
+   "name": "deyFocusNoEffectIfAlreadyHigher",
+   "value": true,
+   "comment": "the inner focus ceiling: no effect if the ability score is already higher than the table value (printed pp. 153-154)."
+  },
+  {
+   "name": "deyFocusSubabilitiesRaisedEqual",
+   "value": true,
+   "comment": "the inner focus subabilities: under the optional rule both subabilities of the boosted score rise to the same value (printed pp. 153-154)."
+  },
+  {
+   "name": "deySenseFiveSubskills",
+   "value": true,
+   "comment": "the sense danger structure: the skill is actually five different subskills (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseDoublePurchaseExtraSubskill",
+   "value": true,
+   "comment": "the sense danger double purchase: buying the skill twice grants one extra subskill (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseImprovementAllSubskills",
+   "value": true,
+   "comment": "the sense danger spread: any improvement to the skill number improves all known subskills (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseAmbushOncePerTurn",
+   "value": true,
+   "comment": "the ambush scan cadence: an area can be scanned only once each turn (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseAmbushRevealsCountAndSize",
+   "value": true,
+   "comment": "the ambush scan yield: approximately how many creatures are hiding and their approximate size (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseBackNegatesSurpriseAndBonuses",
+   "value": true,
+   "comment": "the back-attack defense: success negates surprise and all rear-attack bonuses including a thief's backstab (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseBackDexBonusApplies",
+   "value": true,
+   "comment": "the back-attack dexterity: Dexterity/Balance defensive bonuses apply even without turning (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseBackShieldOnlyIfTurns",
+   "value": true,
+   "comment": "the back-attack shield: shield bonuses apply only if the character turns around (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseNoFreeCounterattack",
+   "value": true,
+   "comment": "the back-attack limit: unlike the barbarian's back protection, no free counterattack (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseHiddenOncePerRound",
+   "value": true,
+   "comment": "the hidden-enemy cadence: one check per round (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseHiddenNoDisguiseOrIntent",
+   "value": true,
+   "comment": "the hidden-enemy limit: no disguised creatures in plain sight, no intentions revealed (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseDmSecretRoll",
+   "value": true,
+   "comment": "the sense danger roll: the DM should roll the check secretly (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseFail19DetectsNothing",
+   "value": true,
+   "comment": "the sense danger plain fail: a fail at 19 or less means the character detects nothing (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseNatural20FalseIndication",
+   "value": true,
+   "comment": "the sense danger false read: a fail on a 20 gives a false indication (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseFalseNoBackAttackEffect",
+   "value": true,
+   "comment": "the false-read limit: a false indication has no effect on a back attack (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseDmChoosesCategory",
+   "value": true,
+   "comment": "the size-up ambiguity: a creature qualifying for more than one category lets the DM choose which is detected (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseDeadlyMoreHpLowerThaco",
+   "value": true,
+   "comment": "the size-up deadly bar: more hit points and a lower THACO than the warrior (printed pp. 154-155)."
+  },
+  {
+   "name": "deySenseNoMagicOrSpellPowers",
+   "value": true,
+   "comment": "the size-up limit: no indication of magical abilities, innate powers or breath weapons (printed pp. 154-155)."
+  },
+  {
+   "name": "deySigItemNamedAndDistinctive",
+   "value": true,
+   "comment": "the signature item designation: give it a name and note something distinctive (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemNoCheckToDesignate",
+   "value": true,
+   "comment": "the signature item designation roll: no skill check required (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemEmpathicLinkOnNaming",
+   "value": true,
+   "comment": "the signature item link: as soon as it is designated, described and named the warrior forms an empathic link (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemMustOwnAndUseRegularly",
+   "value": true,
+   "comment": "the signature item habit: owned for an extended period and used regularly (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemNonconsumableOnly",
+   "value": true,
+   "comment": "the signature item form: only nonconsumable items qualify, rechargeables allowed (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemItemSavesAutoSucceed",
+   "value": true,
+   "comment": "the signature item protection: item saving throws automatically succeed while the owner carries the item and survives the event (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemOwnerMustSurvive",
+   "value": true,
+   "comment": "the signature item condition: the auto-save holds only if the owner survives the event (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemDeliberateActsCanDestroy",
+   "value": true,
+   "comment": "the signature item destruction: deliberate actions leading to item saving throws can destroy it (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemDeadOwnerNormalRoll",
+   "value": true,
+   "comment": "the signature item lapse: if the owner does not survive the item rolls normally, and a link broken by the same event stays broken (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemOtherPlanePlaneOnly",
+   "value": true,
+   "comment": "the signature item vision limit: an item on another plane shows only the plane (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemMagicallyHiddenFactAndArea",
+   "value": true,
+   "comment": "the signature item hidden vision: a magically hidden item reveals the fact and its general location (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemNonmagicalReplacementByName",
+   "value": true,
+   "comment": "the signature item cheap replacement: a similar item with the same name re-forms the link (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemMagicalNeedsQualityAndCheck",
+   "value": true,
+   "comment": "the signature item magical replacement: an item of quality plus a successful skill check recreates the enchantment (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemXpLossOrBrokenLink",
+   "value": true,
+   "comment": "the signature item refusal: unwilling to pay the experience cost breaks the link (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemArtifactsExcluded",
+   "value": true,
+   "comment": "the signature item artifact bar: artifacts cannot be restored in this manner (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemOnePerCategory",
+   "value": true,
+   "comment": "the signature item count: one item from each of the four categories, each at full cost (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemPairsAtDmOption",
+   "value": true,
+   "comment": "the signature item pairs: at the DM's option pairs of magical items might qualify as one (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemImprovementAllItems",
+   "value": true,
+   "comment": "the signature item spread: improving the skill score applies to all signature equipment (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigItemNeglectBreaksLink",
+   "value": true,
+   "comment": "the signature item neglect: voluntarily giving it away or not making a reasonable recovery effort breaks the link (printed pp. 155-156)."
+  },
+  {
+   "name": "deySigMountMustBeTamed",
+   "value": true,
+   "comment": "the signature mount training: it must be tamed and recognize the warrior as master (printed p. 156)."
+  },
+  {
+   "name": "deySigMountMustBeNamedAndRecognizable",
+   "value": true,
+   "comment": "the signature mount naming: the warrior must name it and make it recognizable (printed p. 156)."
+  },
+  {
+   "name": "deySigMountAreaNoDamageIfRiderSaves",
+   "value": true,
+   "comment": "the signature mount area save: no damage from area attacks if the rider saves (printed p. 156)."
+  },
+  {
+   "name": "deySigMountHalfOrNoneOnRiderFail",
+   "value": true,
+   "comment": "the signature mount half: if the rider fails but survives, the mount saves for half or no damage using the rider's number (printed p. 156)."
+  },
+  {
+   "name": "deySigMountDirectAttacksUseRiderSave",
+   "value": true,
+   "comment": "the signature mount direct save: effects targeted at the mount use the rider's save while they are together (printed p. 156)."
+  },
+  {
+   "name": "deySigMountPowerWordMustOvercomeRider",
+   "value": true,
+   "comment": "the signature mount power words: must be potent enough to overcome the rider, affecting only the mount if targeted there (printed p. 156)."
+  },
+  {
+   "name": "deySigMountAloneOwnSave",
+   "value": true,
+   "comment": "the signature mount alone: without the rider it uses its own save and suffers normal effects (printed p. 156)."
+  },
+  {
+   "name": "deySigMountKilledSameTypeReplacement",
+   "value": true,
+   "comment": "the signature mount death: a new mount of the same type and hit points can be acquired (printed p. 156)."
+  },
+  {
+   "name": "deySigMountOnePerTerrain",
+   "value": true,
+   "comment": "the signature mount terrain rule: one mount per different type of terrain (printed p. 156)."
+  },
+  {
+   "name": "deySigMountWillinglyServesIfFound",
+   "value": true,
+   "comment": "the signature mount service: it willingly serves the warrior once obtained (printed p. 156)."
+  }
+ ],
+ "chains": [
+  {
+   "name": "deyT41Band",
+   "limits": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "tail": 10,
+   "comment": "the ability-score band of Table 41: a score of 3 or less reads band 0 (-5), 4 band 1, 5 band 2, 6 band 3, 7 band 4, 8 through 13 band 5 (modifier 0), 14 band 6 (+1), 15 band 7 (+2), 16 band 8 (+3), 17 band 9 (+4), and 18 or more the tail band 10 (+5) (printed p. 146)."
+  },
+  {
+   "name": "deyBreechBand",
+   "limits": [
+    20,
+    23,
+    26,
+    29
+   ],
+   "tail": 4,
+   "comment": "the breech-immunity ladder: level 20 or less stays in band 0 (no breech), 21st through 23rd band 1 (harms +1-or-better creatures), 24th through 26th band 2 (+2), 27th through 29th band 3 (+3), and 30th or more the tail band 4 (+4) (printed pp. 147-148)."
+  },
+  {
+   "name": "deyIntimidationPenaltyBand",
+   "limits": [
+    23,
+    26,
+    29
+   ],
+   "tail": 3,
+   "comment": "the intimidation save ladder: 21st through 23rd band 0 (no penalty), 24th through 26th band 1 (saves at -2), 27th through 29th band 2 (-4), and 30th or more the tail band 3 (-6) (printed pp. 148-149)."
+  },
+  {
+   "name": "deyAAADamageBand",
+   "limits": [
+    14,
+    19,
+    24,
+    29
+   ],
+   "tail": 4,
+   "comment": "the all-around damage ladder: warrior levels 10-14 band 0 (1d8 area damage), 15-19 band 1 (2d8), 20-24 band 2 (3d8), 25-29 band 3 (4d8), and 30 or more the tail band 4 (5d8) - one die plus the band (printed pp. 149-150)."
+  },
+  {
+   "name": "deyHardDelayBand",
+   "limits": [
+    19,
+    24,
+    29
+   ],
+   "tail": 3,
+   "comment": "the hardiness delay ladder: warrior levels 15-19 band 0 (5 rounds of delay), 20-24 band 1 (10), 25-29 band 2 (15), and 30 or more the tail band 3 (20) - five rounds times one plus the band (printed pp. 152-153)."
+  },
+  {
+   "name": "deyFocusBand",
+   "limits": [
+    14,
+    19,
+    24,
+    29
+   ],
+   "tail": 4,
+   "comment": "the inner focus ladder: warrior levels 10-14 band 0 (boost to 18, 18/00 under the subabilities rule), 15-19 band 1 (19), 20-24 band 2 (20), 25-29 band 3 (21), and 30 or more the tail band 4 (22) - the improved score is 18 plus the band (printed pp. 153-154)."
+  },
+  {
+   "name": "deySenseKnownBand",
+   "limits": [
+    19,
+    24,
+    29
+   ],
+   "tail": 3,
+   "comment": "the sense danger subskill ladder: levels 15-19 band 0 (one subskill known), 20-24 band 1 (two), 25-29 band 2 (three), and 30 or more the tail band 3 (four) - one subskill plus the band (printed pp. 154-155)."
+  }
+ ],
+ "switches": [],
+ "tables": [
+  {
+   "name": "deyT40Grid",
+   "tag": "T40",
+   "count": "deyT40RowCount",
+   "sentinel": -99,
+   "sentinel_census": [
+    0,
+    8,
+    8,
+    2,
+    2
+   ],
+   "comment": "the Table 40 skill roster (printed pp. 145-146): 33 rows in four class bands, each with the level requirement, base score, ability code, slot cost and character point cost; the printed dashes pin as the -99 sentinel and the two blank priest cost cells (Divine Voice row 15, Detect Deception row 17) pin as printed blanks - dropped by both archive.org captures and blank in the physical copy.",
+   "col_comments": [
+    "the requirement-level column: the minimum class level of each skill - warriors 10 or 15, wizards 12, priests 10, 15 or 21, rogues 11, 16 or 21 (printed pp. 145-146).",
+    "the base-score column: 9 adaptation, none printed for all-around attack, 4 bravery, 4 captivate, none printed for death blow, 4 frighten/challenge, 4 hardiness, 4 inner focus, 10 signature item, 9 signature mount, 6 sense danger; the eight unprinted cells pin -99 (printed pp. 145-146).",
+    "the ability-code column: 1 Intelligence/Reason, 2 Wisdom/Willpower, 3 Charisma/Appearance, 4 Constitution/Fitness, 5 Wisdom/Intuition, 6 Charisma/Leadership, 7 Intelligence/Knowledge, 8 Dexterity/Balance; the eight N/A cells pin -99 (printed pp. 145-146).",
+    "the slot-cost column: 1 or 2 nonweapon proficiency slots per skill, -99 at the two blank priest cells (Divine Voice row 15, Detect Deception row 17) (printed pp. 145-146).",
+    "the point-cost column: the parenthesized Skills & Powers character point cost, 3 or 6 - always three times the slot cost where printed, -99 at the two blank priest cells (printed pp. 145-146)."
+   ],
+   "cols": [
+    "deyT40ReqLevel",
+    "deyT40Base",
+    "deyT40Ability",
+    "deyT40CostSlots",
+    "deyT40CostCP"
+   ],
+   "data": [
+    [
+     10,
+     9,
+     1,
+     2,
+     6
+    ],
+    [
+     10,
+     -99,
+     -99,
+     1,
+     3
+    ],
+    [
+     10,
+     4,
+     2,
+     1,
+     3
+    ],
+    [
+     15,
+     4,
+     3,
+     1,
+     3
+    ],
+    [
+     15,
+     -99,
+     -99,
+     2,
+     6
+    ],
+    [
+     10,
+     4,
+     6,
+     1,
+     3
+    ],
+    [
+     15,
+     4,
+     4,
+     2,
+     6
+    ],
+    [
+     10,
+     4,
+     2,
+     1,
+     3
+    ],
+    [
+     10,
+     10,
+     5,
+     2,
+     6
+    ],
+    [
+     10,
+     9,
+     5,
+     1,
+     3
+    ],
+    [
+     15,
+     6,
+     5,
+     2,
+     6
+    ],
+    [
+     12,
+     4,
+     2,
+     1,
+     3
+    ],
+    [
+     12,
+     10,
+     5,
+     2,
+     6
+    ],
+    [
+     12,
+     8,
+     7,
+     1,
+     3
+    ],
+    [
+     10,
+     4,
+     2,
+     1,
+     3
+    ],
+    [
+     15,
+     4,
+     6,
+     -99,
+     -99
+    ],
+    [
+     10,
+     4,
+     2,
+     1,
+     3
+    ],
+    [
+     15,
+     6,
+     5,
+     -99,
+     -99
+    ],
+    [
+     10,
+     6,
+     6,
+     1,
+     3
+    ],
+    [
+     21,
+     4,
+     2,
+     2,
+     6
+    ],
+    [
+     15,
+     4,
+     5,
+     1,
+     3
+    ],
+    [
+     15,
+     -99,
+     -99,
+     2,
+     6
+    ],
+    [
+     11,
+     10,
+     1,
+     2,
+     6
+    ],
+    [
+     11,
+     4,
+     7,
+     2,
+     6
+    ],
+    [
+     16,
+     -99,
+     -99,
+     1,
+     3
+    ],
+    [
+     11,
+     11,
+     8,
+     1,
+     3
+    ],
+    [
+     11,
+     -99,
+     -99,
+     1,
+     3
+    ],
+    [
+     16,
+     -99,
+     -99,
+     2,
+     6
+    ],
+    [
+     11,
+     5,
+     2,
+     1,
+     3
+    ],
+    [
+     16,
+     4,
+     2,
+     2,
+     6
+    ],
+    [
+     16,
+     6,
+     1,
+     2,
+     6
+    ],
+    [
+     21,
+     -99,
+     -99,
+     1,
+     3
+    ],
+    [
+     16,
+     -99,
+     -99,
+     1,
+     3
+    ]
+   ]
+  },
+  {
+   "name": "deyT41Grid",
+   "tag": "T41",
+   "count": "deyT41RowCount",
+   "sentinel": -99,
+   "comment": "the Table 41 ability-modifier grid (printed p. 146): the skill adjustment by ability score band, -5 at 3 or less up to +5 at 18 or more, 0 across the 8-through-13 middle.",
+   "col_comments": [
+    "the modifier column: -5, -4, -3, -2, -1, 0, +1, +2, +3, +4, +5 across the eleven ability bands (printed p. 146)."
+   ],
+   "cols": [
+    "deyT41Mod"
+   ],
+   "data": [
+    [
+     -5
+    ],
+    [
+     -4
+    ],
+    [
+     -3
+    ],
+    [
+     -2
+    ],
+    [
+     -1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ]
+   ]
+  },
+  {
+   "name": "deyT42Grid",
+   "tag": "T42",
+   "count": "deyT42RowCount",
+   "sentinel": -99,
+   "comment": "the Table 42 warrior advancement grid (printed p. 147): eleven rows for levels 20 through 30 (row index = level minus 20) - fighter and paladin/ranger experience points, weapon and nonweapon proficiency counts, and the 9-plus-N hit-point column read as its constant 9 base plus the per-level bonus.",
+   "col_comments": [
+    "the fighter experience column: 3,000,000 at 20th rising in 250,000 steps to 5,500,000 at 30th (printed p. 147).",
+    "the paladin/ranger experience column: 3,600,000 at 20th rising in 300,000 steps to 6,600,000 at 30th (printed p. 147).",
+    "the weapon proficiency column: 10, 11, 11, 11, 12, 12, 12, 13, 13, 13, 14 - one more every three levels (printed p. 147).",
+    "the nonweapon proficiency column: 9, 10, 10, 10, 11, 11, 11, 12, 12, 12, 13 - always one behind the weapon column (printed p. 147).",
+    "the hit-point base column: the constant 9 of the printed 9-plus-N hit-point cells (printed p. 147).",
+    "the hit-point bonus column: 33 at 20th rising in +3 steps to 63 at 30th (printed p. 147)."
+   ],
+   "cols": [
+    "deyT42FighterXP",
+    "deyT42PalRangerXP",
+    "deyT42WeaponProf",
+    "deyT42NonweaponProf",
+    "deyT42HpBase",
+    "deyT42HpBonus"
+   ],
+   "data": [
+    [
+     3000000,
+     3600000,
+     10,
+     9,
+     9,
+     33
+    ],
+    [
+     3250000,
+     3900000,
+     11,
+     10,
+     9,
+     36
+    ],
+    [
+     3500000,
+     4200000,
+     11,
+     10,
+     9,
+     39
+    ],
+    [
+     3750000,
+     4500000,
+     11,
+     10,
+     9,
+     42
+    ],
+    [
+     4000000,
+     4800000,
+     12,
+     11,
+     9,
+     45
+    ],
+    [
+     4250000,
+     5100000,
+     12,
+     11,
+     9,
+     48
+    ],
+    [
+     4500000,
+     5400000,
+     12,
+     11,
+     9,
+     51
+    ],
+    [
+     4750000,
+     5700000,
+     13,
+     12,
+     9,
+     54
+    ],
+    [
+     5000000,
+     6000000,
+     13,
+     12,
+     9,
+     57
+    ],
+    [
+     5250000,
+     6300000,
+     13,
+     12,
+     9,
+     60
+    ],
+    [
+     5500000,
+     6600000,
+     14,
+     13,
+     9,
+     63
+    ]
+   ]
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the Table 40 point cost is triple the slot cost - adaptation 2(6) (printed p. 145)",
+   "expr": "m['deyT40CostCP'](0) != 3 * m['deyT40CostSlots'](0)"
+  },
+  {
+   "note": "the Table 40 point cost is triple the slot cost - bravery 1(3) (printed p. 145)",
+   "expr": "m['deyT40CostCP'](2) != 3 * m['deyT40CostSlots'](2)"
+  },
+  {
+   "note": "the Table 40 point cost is triple the slot cost - invincibility 2(6) (printed p. 146)",
+   "expr": "m['deyT40CostCP'](19) != 3 * m['deyT40CostSlots'](19)"
+  },
+  {
+   "note": "the Table 40 point cost is triple the slot cost - rogue adaptation 2(6) (printed p. 146)",
+   "expr": "m['deyT40CostCP'](22) != 3 * m['deyT40CostSlots'](22)"
+  },
+  {
+   "note": "the Table 40 blank priest cost cells pin as printed blanks (Divine Voice row 15, printed p. 146)",
+   "expr": "m['deyT40CostSlots'](15) != -99 or m['deyT40CostCP'](15) != -99"
+  },
+  {
+   "note": "the Table 40 blank priest cost cells pin as printed blanks (Detect Deception row 17, printed p. 146)",
+   "expr": "m['deyT40CostSlots'](17) != -99 or m['deyT40CostCP'](17) != -99"
+  },
+  {
+   "note": "the Table 41 middle band reads 0: an 8 reads 0 and a 13 reads 0 (printed p. 146)",
+   "expr": "m['deyT41Mod'](m['deyT41Band'](8)) != 0 or m['deyT41Mod'](m['deyT41Band'](13)) != 0"
+  },
+  {
+   "note": "the Table 41 edges: a 3 reads -5, an 18 reads +5 (printed p. 146)",
+   "expr": "m['deyT41Mod'](m['deyT41Band'](3)) != -5 or m['deyT41Mod'](m['deyT41Band'](18)) != 5"
+  },
+  {
+   "note": "the Table 42 fighter steps: 250,000 per level (printed p. 147)",
+   "expr": "m['deyT42FighterXP'](1) - m['deyT42FighterXP'](0) != 250000"
+  },
+  {
+   "note": "the Table 42 paladin/ranger steps: 300,000 per level (printed p. 147)",
+   "expr": "m['deyT42PalRangerXP'](1) - m['deyT42PalRangerXP'](0) != 300000"
+  },
+  {
+   "note": "the Table 42 hit-point bonus steps: +3 per level (printed p. 147)",
+   "expr": "m['deyT42HpBonus'](1) - m['deyT42HpBonus'](0) != 3"
+  },
+  {
+   "note": "the Table 42 proficiency columns track one apart (printed p. 147)",
+   "expr": "m['deyT42WeaponProf'](5) != m['deyT42NonweaponProf'](5) + 1"
+  },
+  {
+   "note": "the Table 42 row 20 reads weapon 10, nonweapon 9 (printed p. 147)",
+   "expr": "m['deyT42WeaponProf'](0) != 10 or m['deyT42NonweaponProf'](0) != 9"
+  },
+  {
+   "note": "the Table 42 level 30 tail: weapon 14, nonweapon 13, 9+63 hit points (printed p. 147)",
+   "expr": "m['deyT42WeaponProf'](10) != 14 or m['deyT42NonweaponProf'](10) != 13 or m['deyT42HpBonus'](10) != 63"
+  },
+  {
+   "note": "the breech ladder head: 21st harms +1-or-better creatures (printed p. 147)",
+   "expr": "m['deyBreechBand'](21) != 1 or m['deyBreechBand'](20) != 0"
+  },
+  {
+   "note": "the breech ladder tail: 30th reaches +4 (printed p. 148)",
+   "expr": "m['deyBreechBand'](30) != 4"
+  },
+  {
+   "note": "the intimidation save ladder: 30th inflicts the -6 adjustment (printed p. 149)",
+   "expr": "m['deyIntimidationPenaltyIncrement']() * m['deyIntimidationPenaltyBand'](30) - 6 != 0"
+  },
+  {
+   "note": "the intimidation save ladder: 21st through 23rd carry no penalty, 24th starts -2 (printed p. 149)",
+   "expr": "m['deyIntimidationPenaltyBand'](21) != 0 or m['deyIntimidationPenaltyBand'](24) != 1"
+  },
+  {
+   "note": "the all-around damage ladder: 10th deals 1d8, 30th deals 5d8 (printed pp. 149-150)",
+   "expr": "m['deyAAADamageBand'](10) + 1 != 1 or m['deyAAADamageBand'](30) + 1 != 5"
+  },
+  {
+   "note": "the hardiness delay ladder: a 17th-level warrior delays five rounds (printed p. 152)",
+   "expr": "(m['deyHardDelayBand'](17) + 1) * 5 != 5"
+  },
+  {
+   "note": "the hardiness delay ladder tail: 30th delays twenty rounds (printed p. 152)",
+   "expr": "(m['deyHardDelayBand'](30) + 1) * 5 != 20"
+  },
+  {
+   "note": "the hardiness worked example: five rounds of delay matches the 17th-level band (printed p. 152)",
+   "expr": "m['deyHardExampleDelay']() != (m['deyHardDelayBand'](m['deyHardExampleLevel']()) + 1) * 5"
+  },
+  {
+   "note": "the hardiness vampire-and-lich sum: two months plus the paralysis week is nine weeks (printed p. 153)",
+   "expr": "m['deyHardVampireLevels']() * 4 + m['deyHardParalysisWeeks']() != m['deyHardExampleWeeks']()"
+  },
+  {
+   "note": "the inner focus ladder: 10th boosts to 18, 30th to 22 (printed p. 154)",
+   "expr": "m['deyFocusBand'](10) + 18 != 18 or m['deyFocusBand'](30) + 18 != 22"
+  },
+  {
+   "note": "the sense danger subskills: 15th knows one, 30th knows four (printed p. 154)",
+   "expr": "m['deySenseKnownBand'](15) + 1 != 1 or m['deySenseKnownBand'](30) + 1 != 4"
+  },
+  {
+   "note": "the bravery drain matches the captivate and hardiness drains (printed pp. 150-153)",
+   "expr": "m['deyBraveryDerivedCost']() != m['deyCapBraveryCost']() or m['deyBraveryDerivedCost']() != m['deyHardBraveryCost']()"
+  },
+  {
+   "note": "the frighten drain is one, half the other bravery-derived drains (printed p. 152)",
+   "expr": "m['deyChallengeBraveryCost']() * 2 != m['deyBraveryDerivedCost']()"
+  },
+  {
+   "note": "the signature mount example: the heavy war horse floor of 25 hit points (printed p. 156)",
+   "expr": "m['deySigMountHeavyWarHorseMinHp']() < 25"
+  },
+  {
+   "note": "the warrior advancement spans 20th through 30th (printed pp. 146-147)",
+   "expr": "m['deyT42RowCount']() != m['deyWarriorAdvLimit']() - m['deyWarriorThacoStopLevel']() + 1"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the deySkillDieSides pin",
+   "expr": "m['deySkillDieSides']() != 20"
+  },
+  {
+   "note": "the deyMaxSkillBase pin",
+   "expr": "m['deyMaxSkillBase']() != 16"
+  },
+  {
+   "note": "the deyT41RowCount pin",
+   "expr": "m['deyT41RowCount']() != 11"
+  },
+  {
+   "note": "the deyT40RowCount pin",
+   "expr": "m['deyT40RowCount']() != 33"
+  },
+  {
+   "note": "the deyT40WarriorBase pin",
+   "expr": "m['deyT40WarriorBase']() != 0"
+  },
+  {
+   "note": "the deyT40WizardBase pin",
+   "expr": "m['deyT40WizardBase']() != 11"
+  },
+  {
+   "note": "the deyT40PriestBase pin",
+   "expr": "m['deyT40PriestBase']() != 14"
+  },
+  {
+   "note": "the deyT40RogueBase pin",
+   "expr": "m['deyT40RogueBase']() != 22"
+  },
+  {
+   "note": "the deyWarriorThacoStopLevel pin",
+   "expr": "m['deyWarriorThacoStopLevel']() != 20"
+  },
+  {
+   "note": "the deyWarriorAdvLimit pin",
+   "expr": "m['deyWarriorAdvLimit']() != 30"
+  },
+  {
+   "note": "the deyWarriorPowerLevel pin",
+   "expr": "m['deyWarriorPowerLevel']() != 21"
+  },
+  {
+   "note": "the deyWarriorSkillLevel pin",
+   "expr": "m['deyWarriorSkillLevel']() != 10"
+  },
+  {
+   "note": "the deyT42RowCount pin",
+   "expr": "m['deyT42RowCount']() != 11"
+  },
+  {
+   "note": "the deyBreechStartLevel pin",
+   "expr": "m['deyBreechStartLevel']() != 21"
+  },
+  {
+   "note": "the deyIntimidationStartLevel pin",
+   "expr": "m['deyIntimidationStartLevel']() != 21"
+  },
+  {
+   "note": "the deyIntimidationSightYards pin",
+   "expr": "m['deyIntimidationSightYards']() != 10"
+  },
+  {
+   "note": "the deyIntimidationAutoRetreatHd pin",
+   "expr": "m['deyIntimidationAutoRetreatHd']() != 4"
+  },
+  {
+   "note": "the deyIntimidationSaveHd pin",
+   "expr": "m['deyIntimidationSaveHd']() != 4"
+  },
+  {
+   "note": "the deyIntimidationStayPenalty pin",
+   "expr": "m['deyIntimidationStayPenalty']() != 2"
+  },
+  {
+   "note": "the deyIntimidationRange pin",
+   "expr": "m['deyIntimidationRange']() != 60"
+  },
+  {
+   "note": "the deyIntimidationPenaltyStep pin",
+   "expr": "m['deyIntimidationPenaltyStep']() != 3"
+  },
+  {
+   "note": "the deyIntimidationPenaltyIncrement pin",
+   "expr": "m['deyIntimidationPenaltyIncrement']() != 2"
+  },
+  {
+   "note": "the deyRangerFollowerLevel1 pin",
+   "expr": "m['deyRangerFollowerLevel1']() != 21"
+  },
+  {
+   "note": "the deyRangerFollowerLevel2 pin",
+   "expr": "m['deyRangerFollowerLevel2']() != 26"
+  },
+  {
+   "note": "the deyRangerFollowerDiceCount pin",
+   "expr": "m['deyRangerFollowerDiceCount']() != 2"
+  },
+  {
+   "note": "the deyRangerFollowerDieSides pin",
+   "expr": "m['deyRangerFollowerDieSides']() != 6"
+  },
+  {
+   "note": "the deyRangerScrollLevel pin",
+   "expr": "m['deyRangerScrollLevel']() != 21"
+  },
+  {
+   "note": "the deyRangerEffectiveLevel pin",
+   "expr": "m['deyRangerEffectiveLevel']() != 9"
+  },
+  {
+   "note": "the deyRangerScrollWriteLevel pin",
+   "expr": "m['deyRangerScrollWriteLevel']() != 24"
+  },
+  {
+   "note": "the deyRangerScryingLevel pin",
+   "expr": "m['deyRangerScryingLevel']() != 27"
+  },
+  {
+   "note": "the deyPaladinScrollLevel pin",
+   "expr": "m['deyPaladinScrollLevel']() != 21"
+  },
+  {
+   "note": "the deyPaladinEffectiveLevel pin",
+   "expr": "m['deyPaladinEffectiveLevel']() != 9"
+  },
+  {
+   "note": "the deyPaladinScrollWriteLevel pin",
+   "expr": "m['deyPaladinScrollWriteLevel']() != 24"
+  },
+  {
+   "note": "the deyPaladinDiseaseImmunityLevel pin",
+   "expr": "m['deyPaladinDiseaseImmunityLevel']() != 27"
+  },
+  {
+   "note": "the deyAdaptForeignInitPenalty pin",
+   "expr": "m['deyAdaptForeignInitPenalty']() != 6"
+  },
+  {
+   "note": "the deyAdaptCheckBonus pin",
+   "expr": "m['deyAdaptCheckBonus']() != 3"
+  },
+  {
+   "note": "the deyAdaptUnseenPenalty pin",
+   "expr": "m['deyAdaptUnseenPenalty']() != 4"
+  },
+  {
+   "note": "the deyAdaptBonusDaysPerLevel pin",
+   "expr": "m['deyAdaptBonusDaysPerLevel']() != 1"
+  },
+  {
+   "note": "the deyAdaptPracticeHours pin",
+   "expr": "m['deyAdaptPracticeHours']() != 8"
+  },
+  {
+   "note": "the deyAdaptPermanentSlotCost pin",
+   "expr": "m['deyAdaptPermanentSlotCost']() != 1"
+  },
+  {
+   "note": "the deyAdaptPermanentCpCost pin",
+   "expr": "m['deyAdaptPermanentCpCost']() != 3"
+  },
+  {
+   "note": "the deyAAARadius pin",
+   "expr": "m['deyAAARadius']() != 5"
+  },
+  {
+   "note": "the deyAAADamageDie pin",
+   "expr": "m['deyAAADamageDie']() != 8"
+  },
+  {
+   "note": "the deyAAAInvisibilityAcBonus pin",
+   "expr": "m['deyAAAInvisibilityAcBonus']() != 4"
+  },
+  {
+   "note": "the deyBraveryDerivedCost pin",
+   "expr": "m['deyBraveryDerivedCost']() != 2"
+  },
+  {
+   "note": "the deyCapSuggestionWizardLevel pin",
+   "expr": "m['deyCapSuggestionWizardLevel']() != 3"
+  },
+  {
+   "note": "the deyCapGiftSavePenalty pin",
+   "expr": "m['deyCapGiftSavePenalty']() != 4"
+  },
+  {
+   "note": "the deyCapHdImmune pin",
+   "expr": "m['deyCapHdImmune']() != 8"
+  },
+  {
+   "note": "the deyCapBraveryCost pin",
+   "expr": "m['deyCapBraveryCost']() != 2"
+  },
+  {
+   "note": "the deyFrightAuraHd pin",
+   "expr": "m['deyFrightAuraHd']() != 4"
+  },
+  {
+   "note": "the deyFrightFleeRoundsDie pin",
+   "expr": "m['deyFrightFleeRoundsDie']() != 10"
+  },
+  {
+   "note": "the deyFrightImmuneFriendRange pin",
+   "expr": "m['deyFrightImmuneFriendRange']() != 30"
+  },
+  {
+   "note": "the deyChallengeMinHd pin",
+   "expr": "m['deyChallengeMinHd']() != 10"
+  },
+  {
+   "note": "the deyChallengeSightYards pin",
+   "expr": "m['deyChallengeSightYards']() != 100"
+  },
+  {
+   "note": "the deyChallengeNoRoleplayPenalty pin",
+   "expr": "m['deyChallengeNoRoleplayPenalty']() != 6"
+  },
+  {
+   "note": "the deyChallengeFeeblePenalty pin",
+   "expr": "m['deyChallengeFeeblePenalty']() != 4"
+  },
+  {
+   "note": "the deyChallengeCompanionBonus pin",
+   "expr": "m['deyChallengeCompanionBonus']() != 1"
+  },
+  {
+   "note": "the deyChallengeDamageBonusStep pin",
+   "expr": "m['deyChallengeDamageBonusStep']() != 10"
+  },
+  {
+   "note": "the deyChallengeWeakBonus pin",
+   "expr": "m['deyChallengeWeakBonus']() != 10"
+  },
+  {
+   "note": "the deyChallengeWeakThaco pin",
+   "expr": "m['deyChallengeWeakThaco']() != 14"
+  },
+  {
+   "note": "the deyChallengeWeakAc pin",
+   "expr": "m['deyChallengeWeakAc']() != 2"
+  },
+  {
+   "note": "the deyChallengeWeakMaxDamage pin",
+   "expr": "m['deyChallengeWeakMaxDamage']() != 6"
+  },
+  {
+   "note": "the deyChallengeRetreatRoundsDie pin",
+   "expr": "m['deyChallengeRetreatRoundsDie']() != 4"
+  },
+  {
+   "note": "the deyChallengeBraveryCost pin",
+   "expr": "m['deyChallengeBraveryCost']() != 1"
+  },
+  {
+   "note": "the deyChallengeMoraleRoundsDie pin",
+   "expr": "m['deyChallengeMoraleRoundsDie']() != 10"
+  },
+  {
+   "note": "the deyHardMinorDays pin",
+   "expr": "m['deyHardMinorDays']() != 1"
+  },
+  {
+   "note": "the deyHardSevereWeeks pin",
+   "expr": "m['deyHardSevereWeeks']() != 1"
+  },
+  {
+   "note": "the deyHardExtremeMonths pin",
+   "expr": "m['deyHardExtremeMonths']() != 1"
+  },
+  {
+   "note": "the deyHardHeroicFloor pin",
+   "expr": "m['deyHardHeroicFloor']() != -20"
+  },
+  {
+   "note": "the deyHardConsciousAt pin",
+   "expr": "m['deyHardConsciousAt']() != -19"
+  },
+  {
+   "note": "the deyHardBraveryCost pin",
+   "expr": "m['deyHardBraveryCost']() != 2"
+  },
+  {
+   "note": "the deyHardExampleLevel pin",
+   "expr": "m['deyHardExampleLevel']() != 17"
+  },
+  {
+   "note": "the deyHardExampleHpLeft pin",
+   "expr": "m['deyHardExampleHpLeft']() != 34"
+  },
+  {
+   "note": "the deyHardExampleHpTotal pin",
+   "expr": "m['deyHardExampleHpTotal']() != 115"
+  },
+  {
+   "note": "the deyHardExampleDelay pin",
+   "expr": "m['deyHardExampleDelay']() != 5"
+  },
+  {
+   "note": "the deyHardExampleImmuneHp pin",
+   "expr": "m['deyHardExampleImmuneHp']() != 60"
+  },
+  {
+   "note": "the deyHardVampireLevels pin",
+   "expr": "m['deyHardVampireLevels']() != 2"
+  },
+  {
+   "note": "the deyHardParalysisWeeks pin",
+   "expr": "m['deyHardParalysisWeeks']() != 1"
+  },
+  {
+   "note": "the deyHardExampleWeeks pin",
+   "expr": "m['deyHardExampleWeeks']() != 9"
+  },
+  {
+   "note": "the deyFocusBoostDurationPerLevel pin",
+   "expr": "m['deyFocusBoostDurationPerLevel']() != 1"
+  },
+  {
+   "note": "the deyFocusOtherScoresPenalty pin",
+   "expr": "m['deyFocusOtherScoresPenalty']() != 2"
+  },
+  {
+   "note": "the deyFocusExtraordinaryFloor pin",
+   "expr": "m['deyFocusExtraordinaryFloor']() != 16"
+  },
+  {
+   "note": "the deyFocusAttemptCost pin",
+   "expr": "m['deyFocusAttemptCost']() != 2"
+  },
+  {
+   "note": "the deySenseAmbushScanYards pin",
+   "expr": "m['deySenseAmbushScanYards']() != 200"
+  },
+  {
+   "note": "the deySenseReadinessCube pin",
+   "expr": "m['deySenseReadinessCube']() != 30"
+  },
+  {
+   "note": "the deySenseHiddenRadius pin",
+   "expr": "m['deySenseHiddenRadius']() != 30"
+  },
+  {
+   "note": "the deySenseHiddenInitPenalty pin",
+   "expr": "m['deySenseHiddenInitPenalty']() != 1"
+  },
+  {
+   "note": "the deySenseAlertnessBonus pin",
+   "expr": "m['deySenseAlertnessBonus']() != 1"
+  },
+  {
+   "note": "the deySenseLowHpPct pin",
+   "expr": "m['deySenseLowHpPct']() != 20"
+  },
+  {
+   "note": "the deySenseLowThacoDiff pin",
+   "expr": "m['deySenseLowThacoDiff']() != 15"
+  },
+  {
+   "note": "the deySenseModerateHpPct pin",
+   "expr": "m['deySenseModerateHpPct']() != 50"
+  },
+  {
+   "note": "the deySenseModerateThacoDiff pin",
+   "expr": "m['deySenseModerateThacoDiff']() != 10"
+  },
+  {
+   "note": "the deySenseSignificantHpPctLow pin",
+   "expr": "m['deySenseSignificantHpPctLow']() != 51"
+  },
+  {
+   "note": "the deySenseSignificantHpPctHigh pin",
+   "expr": "m['deySenseSignificantHpPctHigh']() != 70"
+  },
+  {
+   "note": "the deySenseSignificantThacoDiff pin",
+   "expr": "m['deySenseSignificantThacoDiff']() != 5"
+  },
+  {
+   "note": "the deySenseDangerousHpPctLow pin",
+   "expr": "m['deySenseDangerousHpPctLow']() != 71"
+  },
+  {
+   "note": "the deySenseDangerousHpPctHigh pin",
+   "expr": "m['deySenseDangerousHpPctHigh']() != 100"
+  },
+  {
+   "note": "the deySenseFailThreshold pin",
+   "expr": "m['deySenseFailThreshold']() != 19"
+  },
+  {
+   "note": "the deySigItemOwnLevels pin",
+   "expr": "m['deySigItemOwnLevels']() != 1"
+  },
+  {
+   "note": "the deySigItemReplacementMonths pin",
+   "expr": "m['deySigItemReplacementMonths']() != 1"
+  },
+  {
+   "note": "the deySigItemMagicXpMultiple pin",
+   "expr": "m['deySigItemMagicXpMultiple']() != 5"
+  },
+  {
+   "note": "the deySigItemEnchantMonths pin",
+   "expr": "m['deySigItemEnchantMonths']() != 1"
+  },
+  {
+   "note": "the deySigItemCategories pin",
+   "expr": "m['deySigItemCategories']() != 4"
+  },
+  {
+   "note": "the deySigItemVisionChecksPerDay pin",
+   "expr": "m['deySigItemVisionChecksPerDay']() != 1"
+  },
+  {
+   "note": "the deySigMountMaxHd pin",
+   "expr": "m['deySigMountMaxHd']() != 10"
+  },
+  {
+   "note": "the deySigMountMinHpPerHd pin",
+   "expr": "m['deySigMountMinHpPerHd']() != 4"
+  },
+  {
+   "note": "the deySigMountHeavyWarHorseMinHp pin",
+   "expr": "m['deySigMountHeavyWarHorseMinHp']() != 25"
+  },
+  {
+   "note": "the deySigMountHpPerLevel pin",
+   "expr": "m['deySigMountHpPerLevel']() != 1"
+  },
+  {
+   "note": "the deySigMountSmartInt pin",
+   "expr": "m['deySigMountSmartInt']() != 5"
+  },
+  {
+   "note": "the deySigMountVisionChecksPerDay pin",
+   "expr": "m['deySigMountVisionChecksPerDay']() != 1"
+  },
+  {
+   "note": "the deySkillsNoCrossGroup pin",
+   "expr": "m['deySkillsNoCrossGroup']() != 1"
+  },
+  {
+   "note": "the deySkillAbilityAdjustApplies pin",
+   "expr": "m['deySkillAbilityAdjustApplies']() != 1"
+  },
+  {
+   "note": "the deySkillCostFirstIsSlots pin",
+   "expr": "m['deySkillCostFirstIsSlots']() != 1"
+  },
+  {
+   "note": "the deySkillCostParensIsPoints pin",
+   "expr": "m['deySkillCostParensIsPoints']() != 1"
+  },
+  {
+   "note": "the deySkillBaseImprovableWithSlots pin",
+   "expr": "m['deySkillBaseImprovableWithSlots']() != 1"
+  },
+  {
+   "note": "the deySkillLimitedUseDropsFixed pin",
+   "expr": "m['deySkillLimitedUseDropsFixed']() != 1"
+  },
+  {
+   "note": "the deySkillZeroUnavailableADay pin",
+   "expr": "m['deySkillZeroUnavailableADay']() != 1"
+  },
+  {
+   "note": "the deySkillDependentsUnavailable pin",
+   "expr": "m['deySkillDependentsUnavailable']() != 1"
+  },
+  {
+   "note": "the deySkillAbilityCantRestore pin",
+   "expr": "m['deySkillAbilityCantRestore']() != 1"
+  },
+  {
+   "note": "the deySkillBaseRecoversAfterPeriod pin",
+   "expr": "m['deySkillBaseRecoversAfterPeriod']() != 1"
+  },
+  {
+   "note": "the deyOpposedOneFailsOtherWins pin",
+   "expr": "m['deyOpposedOneFailsOtherWins']() != 1"
+  },
+  {
+   "note": "the deyOpposedBothMakeHigherWins pin",
+   "expr": "m['deyOpposedBothMakeHigherWins']() != 1"
+  },
+  {
+   "note": "the deyOpposedBothFailUnusual pin",
+   "expr": "m['deyOpposedBothFailUnusual']() != 1"
+  },
+  {
+   "note": "the deyOpposedTiesRerolled pin",
+   "expr": "m['deyOpposedTiesRerolled']() != 1"
+  },
+  {
+   "note": "the deyWishesNoEffectOnLimit pin",
+   "expr": "m['deyWishesNoEffectOnLimit']() != 1"
+  },
+  {
+   "note": "the deySkillsMoreDramaticThanProficiencies pin",
+   "expr": "m['deySkillsMoreDramaticThanProficiencies']() != 1"
+  },
+  {
+   "note": "the deyCaptivateNeedsBravery pin",
+   "expr": "m['deyCaptivateNeedsBravery']() != 1"
+  },
+  {
+   "note": "the deyFrightenNeedsBravery pin",
+   "expr": "m['deyFrightenNeedsBravery']() != 1"
+  },
+  {
+   "note": "the deyHardinessNeedsBravery pin",
+   "expr": "m['deyHardinessNeedsBravery']() != 1"
+  },
+  {
+   "note": "the deyDivineStrengthNeedsEminence pin",
+   "expr": "m['deyDivineStrengthNeedsEminence']() != 1"
+  },
+  {
+   "note": "the deyDivineVoiceNeedsEminence pin",
+   "expr": "m['deyDivineVoiceNeedsEminence']() != 1"
+  },
+  {
+   "note": "the deyDetectDeceptionNeedsEminence pin",
+   "expr": "m['deyDetectDeceptionNeedsEminence']() != 1"
+  },
+  {
+   "note": "the deyInvincibilityNeedsEminence pin",
+   "expr": "m['deyInvincibilityNeedsEminence']() != 1"
+  },
+  {
+   "note": "the deySmiteNeedsEminence pin",
+   "expr": "m['deySmiteNeedsEminence']() != 1"
+  },
+  {
+   "note": "the deyShadowFlightNeedsShadowTravel pin",
+   "expr": "m['deyShadowFlightNeedsShadowTravel']() != 1"
+  },
+  {
+   "note": "the deyT42ConBonusStopsAfter9 pin",
+   "expr": "m['deyT42ConBonusStopsAfter9']() != 1"
+  },
+  {
+   "note": "the deyBreechAnyWeaponIncludingBareHands pin",
+   "expr": "m['deyBreechAnyWeaponIncludingBareHands']() != 1"
+  },
+  {
+   "note": "the deyBreechNoAttackBonus pin",
+   "expr": "m['deyBreechNoAttackBonus']() != 1"
+  },
+  {
+   "note": "the deyBreechNotMagical pin",
+   "expr": "m['deyBreechNotMagical']() != 1"
+  },
+  {
+   "note": "the deyBreechUndiminishedByPlanarOrAntimagic pin",
+   "expr": "m['deyBreechUndiminishedByPlanarOrAntimagic']() != 1"
+  },
+  {
+   "note": "the deyIntimidationNotAnAttack pin",
+   "expr": "m['deyIntimidationNotAnAttack']() != 1"
+  },
+  {
+   "note": "the deyIntimidationNoInitModifier pin",
+   "expr": "m['deyIntimidationNoInitModifier']() != 1"
+  },
+  {
+   "note": "the deyIntimidationCautiousRetreat pin",
+   "expr": "m['deyIntimidationCautiousRetreat']() != 1"
+  },
+  {
+   "note": "the deyIntimidationAvoidsRestOfDay pin",
+   "expr": "m['deyIntimidationAvoidsRestOfDay']() != 1"
+  },
+  {
+   "note": "the deyIntimidationFreeToCounterattack pin",
+   "expr": "m['deyIntimidationFreeToCounterattack']() != 1"
+  },
+  {
+   "note": "the deyIntimidationMustBeInPlainSight pin",
+   "expr": "m['deyIntimidationMustBeInPlainSight']() != 1"
+  },
+  {
+   "note": "the deyRangerUsePriestItems pin",
+   "expr": "m['deyRangerUsePriestItems']() != 1"
+  },
+  {
+   "note": "the deyPaladinImmuneCursedDisease pin",
+   "expr": "m['deyPaladinImmuneCursedDisease']() != 1"
+  },
+  {
+   "note": "the deyPaladinNotImmuneTrueDweomers pin",
+   "expr": "m['deyPaladinNotImmuneTrueDweomers']() != 1"
+  },
+  {
+   "note": "the deyPaladinNotImmuneHigherPriestPowers pin",
+   "expr": "m['deyPaladinNotImmuneHigherPriestPowers']() != 1"
+  },
+  {
+   "note": "the deyPaladinCureCursedAfflictions pin",
+   "expr": "m['deyPaladinCureCursedAfflictions']() != 1"
+  },
+  {
+   "note": "the deyPaladinCureLowerLevelCurses pin",
+   "expr": "m['deyPaladinCureLowerLevelCurses']() != 1"
+  },
+  {
+   "note": "the deyPaladinCureCursedItems pin",
+   "expr": "m['deyPaladinCureCursedItems']() != 1"
+  },
+  {
+   "note": "the deyAdaptNegatesCombatPenalties pin",
+   "expr": "m['deyAdaptNegatesCombatPenalties']() != 1"
+  },
+  {
+   "note": "the deyAdaptCheckEachRound pin",
+   "expr": "m['deyAdaptCheckEachRound']() != 1"
+  },
+  {
+   "note": "the deyAdaptNoSituationalMovement pin",
+   "expr": "m['deyAdaptNoSituationalMovement']() != 1"
+  },
+  {
+   "note": "the deyAdaptNoMagicalOrVisionPenalties pin",
+   "expr": "m['deyAdaptNoMagicalOrVisionPenalties']() != 1"
+  },
+  {
+   "note": "the deyAdaptIndefiniteWithPractice pin",
+   "expr": "m['deyAdaptIndefiniteWithPractice']() != 1"
+  },
+  {
+   "note": "the deyAdaptPermanentOption pin",
+   "expr": "m['deyAdaptPermanentOption']() != 1"
+  },
+  {
+   "note": "the deyAdaptNoOtherActionCost pin",
+   "expr": "m['deyAdaptNoOtherActionCost']() != 1"
+  },
+  {
+   "note": "the deyAAAAnnouncedInDeterminationStep pin",
+   "expr": "m['deyAAAAnnouncedInDeterminationStep']() != 1"
+  },
+  {
+   "note": "the deyAAAKillTriggersBlast pin",
+   "expr": "m['deyAAAKillTriggersBlast']() != 1"
+  },
+  {
+   "note": "the deyAAALargerOrBetterAcExcluded pin",
+   "expr": "m['deyAAALargerOrBetterAcExcluded']() != 1"
+  },
+  {
+   "note": "the deyAAAWeaponImmuneExcluded pin",
+   "expr": "m['deyAAAWeaponImmuneExcluded']() != 1"
+  },
+  {
+   "note": "the deyAAAInitialMissFails pin",
+   "expr": "m['deyAAAInitialMissFails']() != 1"
+  },
+  {
+   "note": "the deyAAANoKillNoRadius pin",
+   "expr": "m['deyAAANoKillNoRadius']() != 1"
+  },
+  {
+   "note": "the deyAAANoMoveOrOtherAction pin",
+   "expr": "m['deyAAANoMoveOrOtherAction']() != 1"
+  },
+  {
+   "note": "the deyAAAMeleeProficientWeaponsOnly pin",
+   "expr": "m['deyAAAMeleeProficientWeaponsOnly']() != 1"
+  },
+  {
+   "note": "the deyAAACombatBonusesIrrelevant pin",
+   "expr": "m['deyAAACombatBonusesIrrelevant']() != 1"
+  },
+  {
+   "note": "the deyBraveryNegatesUnnaturalFear pin",
+   "expr": "m['deyBraveryNegatesUnnaturalFear']() != 1"
+  },
+  {
+   "note": "the deyBraverySaveStillAllowedOnFail pin",
+   "expr": "m['deyBraverySaveStillAllowedOnFail']() != 1"
+  },
+  {
+   "note": "the deyBraveryPaladinVsEvilTurning pin",
+   "expr": "m['deyBraveryPaladinVsEvilTurning']() != 1"
+  },
+  {
+   "note": "the deyBraveryPrereqForCaptivateFrightenInvulnerability pin",
+   "expr": "m['deyBraveryPrereqForCaptivateFrightenInvulnerability']() != 1"
+  },
+  {
+   "note": "the deyBraveryZeroBlocksAllFour pin",
+   "expr": "m['deyBraveryZeroBlocksAllFour']() != 1"
+  },
+  {
+   "note": "the deyCapSameRaceFriendly pin",
+   "expr": "m['deyCapSameRaceFriendly']() != 1"
+  },
+  {
+   "note": "the deyCapSimilarAlignmentOneElement pin",
+   "expr": "m['deyCapSimilarAlignmentOneElement']() != 1"
+  },
+  {
+   "note": "the deyCapSuggestionAutoIfNoRisk pin",
+   "expr": "m['deyCapSuggestionAutoIfNoRisk']() != 1"
+  },
+  {
+   "note": "the deyCapSuccessfulSaveFlees pin",
+   "expr": "m['deyCapSuccessfulSaveFlees']() != 1"
+  },
+  {
+   "note": "the deyCapHostileActBreaks pin",
+   "expr": "m['deyCapHostileActBreaks']() != 1"
+  },
+  {
+   "note": "the deyCapExtendedContactAttachment pin",
+   "expr": "m['deyCapExtendedContactAttachment']() != 1"
+  },
+  {
+   "note": "the deyDeathBlowAnnounced pin",
+   "expr": "m['deyDeathBlowAnnounced']() != 1"
+  },
+  {
+   "note": "the deyDeathBlowSaveVsDeathMagic pin",
+   "expr": "m['deyDeathBlowSaveVsDeathMagic']() != 1"
+  },
+  {
+   "note": "the deyDeathBlowProtectiveDevicesApply pin",
+   "expr": "m['deyDeathBlowProtectiveDevicesApply']() != 1"
+  },
+  {
+   "note": "the deyDeathBlowOptionalT36T38Modifiers pin",
+   "expr": "m['deyDeathBlowOptionalT36T38Modifiers']() != 1"
+  },
+  {
+   "note": "the deyDeathBlowMoreHdImmune pin",
+   "expr": "m['deyDeathBlowMoreHdImmune']() != 1"
+  },
+  {
+   "note": "the deyDeathBlowWeaponImmuneImmune pin",
+   "expr": "m['deyDeathBlowWeaponImmuneImmune']() != 1"
+  },
+  {
+   "note": "the deyDeathBlowOnlyAttackThatRound pin",
+   "expr": "m['deyDeathBlowOnlyAttackThatRound']() != 1"
+  },
+  {
+   "note": "the deyDeathBlowAooAllowed pin",
+   "expr": "m['deyDeathBlowAooAllowed']() != 1"
+  },
+  {
+   "note": "the deyDeathBlowCombinesAllAround pin",
+   "expr": "m['deyDeathBlowCombinesAllAround']() != 1"
+  },
+  {
+   "note": "the deyDeathBlowOnlyInitialTargetDies pin",
+   "expr": "m['deyDeathBlowOnlyInitialTargetDies']() != 1"
+  },
+  {
+   "note": "the deyFrightShoutAndCharge pin",
+   "expr": "m['deyFrightShoutAndCharge']() != 1"
+  },
+  {
+   "note": "the deyFrightMustSeeAndHear pin",
+   "expr": "m['deyFrightMustSeeAndHear']() != 1"
+  },
+  {
+   "note": "the deyFrightUndeadImmune pin",
+   "expr": "m['deyFrightUndeadImmune']() != 1"
+  },
+  {
+   "note": "the deyFrightNoMoraleImmune pin",
+   "expr": "m['deyFrightNoMoraleImmune']() != 1"
+  },
+  {
+   "note": "the deyFrightCloakOfBraveryNegates pin",
+   "expr": "m['deyFrightCloakOfBraveryNegates']() != 1"
+  },
+  {
+   "note": "the deyFrightNatural20Attacks pin",
+   "expr": "m['deyFrightNatural20Attacks']() != 1"
+  },
+  {
+   "note": "the deyFrightWarriorFleesTheyPursue pin",
+   "expr": "m['deyFrightWarriorFleesTheyPursue']() != 1"
+  },
+  {
+   "note": "the deyChallengeOpposedChaVsWis pin",
+   "expr": "m['deyChallengeOpposedChaVsWis']() != 1"
+  },
+  {
+   "note": "the deyChallengeWinnerMustCloseToMelee pin",
+   "expr": "m['deyChallengeWinnerMustCloseToMelee']() != 1"
+  },
+  {
+   "note": "the deyChallengeRestraintTakesFullRound pin",
+   "expr": "m['deyChallengeRestraintTakesFullRound']() != 1"
+  },
+  {
+   "note": "the deyChallengeUnwillingSaveEachRound pin",
+   "expr": "m['deyChallengeUnwillingSaveEachRound']() != 1"
+  },
+  {
+   "note": "the deyChallengeSpellsMissilesAfterClosing pin",
+   "expr": "m['deyChallengeSpellsMissilesAfterClosing']() != 1"
+  },
+  {
+   "note": "the deyChallengeNatural20AlwaysFails pin",
+   "expr": "m['deyChallengeNatural20AlwaysFails']() != 1"
+  },
+  {
+   "note": "the deyChallengeBothFailWarriorRetreats pin",
+   "expr": "m['deyChallengeBothFailWarriorRetreats']() != 1"
+  },
+  {
+   "note": "the deyChallengeBraveryAvoidsRetreat pin",
+   "expr": "m['deyChallengeBraveryAvoidsRetreat']() != 1"
+  },
+  {
+   "note": "the deyChallengeGazeCombosInRange pin",
+   "expr": "m['deyChallengeGazeCombosInRange']() != 1"
+  },
+  {
+   "note": "the deyHardSaveFirst pin",
+   "expr": "m['deyHardSaveFirst']() != 1"
+  },
+  {
+   "note": "the deyHardNoSimpleOrContinuingDamage pin",
+   "expr": "m['deyHardNoSimpleOrContinuingDamage']() != 1"
+  },
+  {
+   "note": "the deyHardNoCharmsEntangleImprison pin",
+   "expr": "m['deyHardNoCharmsEntangleImprison']() != 1"
+  },
+  {
+   "note": "the deyHardCureWithinDelayNoHarm pin",
+   "expr": "m['deyHardCureWithinDelayNoHarm']() != 1"
+  },
+  {
+   "note": "the deyHardShorterDurationNoEffect pin",
+   "expr": "m['deyHardShorterDurationNoEffect']() != 1"
+  },
+  {
+   "note": "the deyHardSystemShockAtEnd pin",
+   "expr": "m['deyHardSystemShockAtEnd']() != 1"
+  },
+  {
+   "note": "the deyHardShockSuccessHeals pin",
+   "expr": "m['deyHardShockSuccessHeals']() != 1"
+  },
+  {
+   "note": "the deyHardShockFailFullForce pin",
+   "expr": "m['deyHardShockFailFullForce']() != 1"
+  },
+  {
+   "note": "the deyHardMultipleEffectsSequential pin",
+   "expr": "m['deyHardMultipleEffectsSequential']() != 1"
+  },
+  {
+   "note": "the deyHardUnconsciousRecoversInstantly pin",
+   "expr": "m['deyHardUnconsciousRecoversInstantly']() != 1"
+  },
+  {
+   "note": "the deyHardHeroicDelayRounds pin",
+   "expr": "m['deyHardHeroicDelayRounds']() != 1"
+  },
+  {
+   "note": "the deyHardHeroicDeathAtDelayEnd pin",
+   "expr": "m['deyHardHeroicDeathAtDelayEnd']() != 1"
+  },
+  {
+   "note": "the deyHardRaiseDuringDelaySaves pin",
+   "expr": "m['deyHardRaiseDuringDelaySaves']() != 1"
+  },
+  {
+   "note": "the deyHardRegenNoShock pin",
+   "expr": "m['deyHardRegenNoShock']() != 1"
+  },
+  {
+   "note": "the deyHardAmuletNoShock pin",
+   "expr": "m['deyHardAmuletNoShock']() != 1"
+  },
+  {
+   "note": "the deyHardIneffectiveAtZeroBravery pin",
+   "expr": "m['deyHardIneffectiveAtZeroBravery']() != 1"
+  },
+  {
+   "note": "the deyFocusOneBoostAtATime pin",
+   "expr": "m['deyFocusOneBoostAtATime']() != 1"
+  },
+  {
+   "note": "the deyFocusConcentrationRoundOnlyAction pin",
+   "expr": "m['deyFocusConcentrationRoundOnlyAction']() != 1"
+  },
+  {
+   "note": "the deyFocusBoostEndsAtWill pin",
+   "expr": "m['deyFocusBoostEndsAtWill']() != 1"
+  },
+  {
+   "note": "the deyFocusNoEffectIfAlreadyHigher pin",
+   "expr": "m['deyFocusNoEffectIfAlreadyHigher']() != 1"
+  },
+  {
+   "note": "the deyFocusSubabilitiesRaisedEqual pin",
+   "expr": "m['deyFocusSubabilitiesRaisedEqual']() != 1"
+  },
+  {
+   "note": "the deySenseFiveSubskills pin",
+   "expr": "m['deySenseFiveSubskills']() != 1"
+  },
+  {
+   "note": "the deySenseDoublePurchaseExtraSubskill pin",
+   "expr": "m['deySenseDoublePurchaseExtraSubskill']() != 1"
+  },
+  {
+   "note": "the deySenseImprovementAllSubskills pin",
+   "expr": "m['deySenseImprovementAllSubskills']() != 1"
+  },
+  {
+   "note": "the deySenseAmbushOncePerTurn pin",
+   "expr": "m['deySenseAmbushOncePerTurn']() != 1"
+  },
+  {
+   "note": "the deySenseAmbushRevealsCountAndSize pin",
+   "expr": "m['deySenseAmbushRevealsCountAndSize']() != 1"
+  },
+  {
+   "note": "the deySenseBackNegatesSurpriseAndBonuses pin",
+   "expr": "m['deySenseBackNegatesSurpriseAndBonuses']() != 1"
+  },
+  {
+   "note": "the deySenseBackDexBonusApplies pin",
+   "expr": "m['deySenseBackDexBonusApplies']() != 1"
+  },
+  {
+   "note": "the deySenseBackShieldOnlyIfTurns pin",
+   "expr": "m['deySenseBackShieldOnlyIfTurns']() != 1"
+  },
+  {
+   "note": "the deySenseNoFreeCounterattack pin",
+   "expr": "m['deySenseNoFreeCounterattack']() != 1"
+  },
+  {
+   "note": "the deySenseHiddenOncePerRound pin",
+   "expr": "m['deySenseHiddenOncePerRound']() != 1"
+  },
+  {
+   "note": "the deySenseHiddenNoDisguiseOrIntent pin",
+   "expr": "m['deySenseHiddenNoDisguiseOrIntent']() != 1"
+  },
+  {
+   "note": "the deySenseDmSecretRoll pin",
+   "expr": "m['deySenseDmSecretRoll']() != 1"
+  },
+  {
+   "note": "the deySenseFail19DetectsNothing pin",
+   "expr": "m['deySenseFail19DetectsNothing']() != 1"
+  },
+  {
+   "note": "the deySenseNatural20FalseIndication pin",
+   "expr": "m['deySenseNatural20FalseIndication']() != 1"
+  },
+  {
+   "note": "the deySenseFalseNoBackAttackEffect pin",
+   "expr": "m['deySenseFalseNoBackAttackEffect']() != 1"
+  },
+  {
+   "note": "the deySenseDmChoosesCategory pin",
+   "expr": "m['deySenseDmChoosesCategory']() != 1"
+  },
+  {
+   "note": "the deySenseDeadlyMoreHpLowerThaco pin",
+   "expr": "m['deySenseDeadlyMoreHpLowerThaco']() != 1"
+  },
+  {
+   "note": "the deySenseNoMagicOrSpellPowers pin",
+   "expr": "m['deySenseNoMagicOrSpellPowers']() != 1"
+  },
+  {
+   "note": "the deySigItemNamedAndDistinctive pin",
+   "expr": "m['deySigItemNamedAndDistinctive']() != 1"
+  },
+  {
+   "note": "the deySigItemNoCheckToDesignate pin",
+   "expr": "m['deySigItemNoCheckToDesignate']() != 1"
+  },
+  {
+   "note": "the deySigItemEmpathicLinkOnNaming pin",
+   "expr": "m['deySigItemEmpathicLinkOnNaming']() != 1"
+  },
+  {
+   "note": "the deySigItemMustOwnAndUseRegularly pin",
+   "expr": "m['deySigItemMustOwnAndUseRegularly']() != 1"
+  },
+  {
+   "note": "the deySigItemNonconsumableOnly pin",
+   "expr": "m['deySigItemNonconsumableOnly']() != 1"
+  },
+  {
+   "note": "the deySigItemItemSavesAutoSucceed pin",
+   "expr": "m['deySigItemItemSavesAutoSucceed']() != 1"
+  },
+  {
+   "note": "the deySigItemOwnerMustSurvive pin",
+   "expr": "m['deySigItemOwnerMustSurvive']() != 1"
+  },
+  {
+   "note": "the deySigItemDeliberateActsCanDestroy pin",
+   "expr": "m['deySigItemDeliberateActsCanDestroy']() != 1"
+  },
+  {
+   "note": "the deySigItemDeadOwnerNormalRoll pin",
+   "expr": "m['deySigItemDeadOwnerNormalRoll']() != 1"
+  },
+  {
+   "note": "the deySigItemOtherPlanePlaneOnly pin",
+   "expr": "m['deySigItemOtherPlanePlaneOnly']() != 1"
+  },
+  {
+   "note": "the deySigItemMagicallyHiddenFactAndArea pin",
+   "expr": "m['deySigItemMagicallyHiddenFactAndArea']() != 1"
+  },
+  {
+   "note": "the deySigItemNonmagicalReplacementByName pin",
+   "expr": "m['deySigItemNonmagicalReplacementByName']() != 1"
+  },
+  {
+   "note": "the deySigItemMagicalNeedsQualityAndCheck pin",
+   "expr": "m['deySigItemMagicalNeedsQualityAndCheck']() != 1"
+  },
+  {
+   "note": "the deySigItemXpLossOrBrokenLink pin",
+   "expr": "m['deySigItemXpLossOrBrokenLink']() != 1"
+  },
+  {
+   "note": "the deySigItemArtifactsExcluded pin",
+   "expr": "m['deySigItemArtifactsExcluded']() != 1"
+  },
+  {
+   "note": "the deySigItemOnePerCategory pin",
+   "expr": "m['deySigItemOnePerCategory']() != 1"
+  },
+  {
+   "note": "the deySigItemPairsAtDmOption pin",
+   "expr": "m['deySigItemPairsAtDmOption']() != 1"
+  },
+  {
+   "note": "the deySigItemImprovementAllItems pin",
+   "expr": "m['deySigItemImprovementAllItems']() != 1"
+  },
+  {
+   "note": "the deySigItemNeglectBreaksLink pin",
+   "expr": "m['deySigItemNeglectBreaksLink']() != 1"
+  },
+  {
+   "note": "the deySigMountMustBeTamed pin",
+   "expr": "m['deySigMountMustBeTamed']() != 1"
+  },
+  {
+   "note": "the deySigMountMustBeNamedAndRecognizable pin",
+   "expr": "m['deySigMountMustBeNamedAndRecognizable']() != 1"
+  },
+  {
+   "note": "the deySigMountAreaNoDamageIfRiderSaves pin",
+   "expr": "m['deySigMountAreaNoDamageIfRiderSaves']() != 1"
+  },
+  {
+   "note": "the deySigMountHalfOrNoneOnRiderFail pin",
+   "expr": "m['deySigMountHalfOrNoneOnRiderFail']() != 1"
+  },
+  {
+   "note": "the deySigMountDirectAttacksUseRiderSave pin",
+   "expr": "m['deySigMountDirectAttacksUseRiderSave']() != 1"
+  },
+  {
+   "note": "the deySigMountPowerWordMustOvercomeRider pin",
+   "expr": "m['deySigMountPowerWordMustOvercomeRider']() != 1"
+  },
+  {
+   "note": "the deySigMountAloneOwnSave pin",
+   "expr": "m['deySigMountAloneOwnSave']() != 1"
+  },
+  {
+   "note": "the deySigMountKilledSameTypeReplacement pin",
+   "expr": "m['deySigMountKilledSameTypeReplacement']() != 1"
+  },
+  {
+   "note": "the deySigMountOnePerTerrain pin",
+   "expr": "m['deySigMountOnePerTerrain']() != 1"
+  },
+  {
+   "note": "the deySigMountWillinglyServesIfFound pin",
+   "expr": "m['deySigMountWillinglyServesIfFound']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the DMO skills-doctrine pins": [
+   {
+    "kind": "const",
+    "name": "deySkillDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "deyMaxSkillBase"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillsNoCrossGroup"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillAbilityAdjustApplies"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillCostFirstIsSlots"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillCostParensIsPoints"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillBaseImprovableWithSlots"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillLimitedUseDropsFixed"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillZeroUnavailableADay"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillDependentsUnavailable"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillAbilityCantRestore"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillBaseRecoversAfterPeriod"
+   },
+   {
+    "kind": "bool",
+    "name": "deyOpposedOneFailsOtherWins"
+   },
+   {
+    "kind": "bool",
+    "name": "deyOpposedBothMakeHigherWins"
+   },
+   {
+    "kind": "bool",
+    "name": "deyOpposedBothFailUnusual"
+   },
+   {
+    "kind": "bool",
+    "name": "deyOpposedTiesRerolled"
+   },
+   {
+    "kind": "bool",
+    "name": "deyWishesNoEffectOnLimit"
+   },
+   {
+    "kind": "bool",
+    "name": "deySkillsMoreDramaticThanProficiencies"
+   }
+  ],
+  "the DMO Table 41 modifier pins": [
+   {
+    "kind": "const",
+    "name": "deyT41RowCount"
+   },
+   {
+    "kind": "chain",
+    "name": "deyT41Band"
+   },
+   {
+    "kind": "table",
+    "name": "deyT41Grid"
+   }
+  ],
+  "the DMO Table 40 roster pins": [
+   {
+    "kind": "const",
+    "name": "deyT40RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "deyT40WarriorBase"
+   },
+   {
+    "kind": "const",
+    "name": "deyT40WizardBase"
+   },
+   {
+    "kind": "const",
+    "name": "deyT40PriestBase"
+   },
+   {
+    "kind": "const",
+    "name": "deyT40RogueBase"
+   },
+   {
+    "kind": "table",
+    "name": "deyT40Grid"
+   }
+  ],
+  "the DMO Table 40 prerequisite pins": [
+   {
+    "kind": "bool",
+    "name": "deyCaptivateNeedsBravery"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFrightenNeedsBravery"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardinessNeedsBravery"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDivineStrengthNeedsEminence"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDivineVoiceNeedsEminence"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDetectDeceptionNeedsEminence"
+   },
+   {
+    "kind": "bool",
+    "name": "deyInvincibilityNeedsEminence"
+   },
+   {
+    "kind": "bool",
+    "name": "deySmiteNeedsEminence"
+   },
+   {
+    "kind": "bool",
+    "name": "deyShadowFlightNeedsShadowTravel"
+   }
+  ],
+  "the DMO warrior advancement pins": [
+   {
+    "kind": "const",
+    "name": "deyWarriorThacoStopLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyWarriorAdvLimit"
+   },
+   {
+    "kind": "const",
+    "name": "deyWarriorPowerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyWarriorSkillLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyT42RowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "deyT42ConBonusStopsAfter9"
+   },
+   {
+    "kind": "table",
+    "name": "deyT42Grid"
+   }
+  ],
+  "the DMO fighter breech-immunity pins": [
+   {
+    "kind": "const",
+    "name": "deyBreechStartLevel"
+   },
+   {
+    "kind": "chain",
+    "name": "deyBreechBand"
+   },
+   {
+    "kind": "bool",
+    "name": "deyBreechAnyWeaponIncludingBareHands"
+   },
+   {
+    "kind": "bool",
+    "name": "deyBreechNoAttackBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "deyBreechNotMagical"
+   },
+   {
+    "kind": "bool",
+    "name": "deyBreechUndiminishedByPlanarOrAntimagic"
+   }
+  ],
+  "the DMO fighter intimidation pins": [
+   {
+    "kind": "const",
+    "name": "deyIntimidationStartLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyIntimidationSightYards"
+   },
+   {
+    "kind": "const",
+    "name": "deyIntimidationAutoRetreatHd"
+   },
+   {
+    "kind": "const",
+    "name": "deyIntimidationSaveHd"
+   },
+   {
+    "kind": "const",
+    "name": "deyIntimidationStayPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deyIntimidationRange"
+   },
+   {
+    "kind": "const",
+    "name": "deyIntimidationPenaltyStep"
+   },
+   {
+    "kind": "const",
+    "name": "deyIntimidationPenaltyIncrement"
+   },
+   {
+    "kind": "chain",
+    "name": "deyIntimidationPenaltyBand"
+   },
+   {
+    "kind": "bool",
+    "name": "deyIntimidationNotAnAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "deyIntimidationNoInitModifier"
+   },
+   {
+    "kind": "bool",
+    "name": "deyIntimidationCautiousRetreat"
+   },
+   {
+    "kind": "bool",
+    "name": "deyIntimidationAvoidsRestOfDay"
+   },
+   {
+    "kind": "bool",
+    "name": "deyIntimidationFreeToCounterattack"
+   },
+   {
+    "kind": "bool",
+    "name": "deyIntimidationMustBeInPlainSight"
+   }
+  ],
+  "the DMO ranger and paladin pins": [
+   {
+    "kind": "const",
+    "name": "deyRangerFollowerLevel1"
+   },
+   {
+    "kind": "const",
+    "name": "deyRangerFollowerLevel2"
+   },
+   {
+    "kind": "const",
+    "name": "deyRangerFollowerDiceCount"
+   },
+   {
+    "kind": "const",
+    "name": "deyRangerFollowerDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "deyRangerScrollLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyRangerEffectiveLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyRangerScrollWriteLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyRangerScryingLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "deyRangerUsePriestItems"
+   },
+   {
+    "kind": "const",
+    "name": "deyPaladinScrollLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyPaladinEffectiveLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyPaladinScrollWriteLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyPaladinDiseaseImmunityLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "deyPaladinImmuneCursedDisease"
+   },
+   {
+    "kind": "bool",
+    "name": "deyPaladinNotImmuneTrueDweomers"
+   },
+   {
+    "kind": "bool",
+    "name": "deyPaladinNotImmuneHigherPriestPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "deyPaladinCureCursedAfflictions"
+   },
+   {
+    "kind": "bool",
+    "name": "deyPaladinCureLowerLevelCurses"
+   },
+   {
+    "kind": "bool",
+    "name": "deyPaladinCureCursedItems"
+   }
+  ],
+  "the DMO warrior adaptation pins": [
+   {
+    "kind": "const",
+    "name": "deyAdaptForeignInitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deyAdaptCheckBonus"
+   },
+   {
+    "kind": "const",
+    "name": "deyAdaptUnseenPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deyAdaptBonusDaysPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyAdaptPracticeHours"
+   },
+   {
+    "kind": "const",
+    "name": "deyAdaptPermanentSlotCost"
+   },
+   {
+    "kind": "const",
+    "name": "deyAdaptPermanentCpCost"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAdaptNegatesCombatPenalties"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAdaptCheckEachRound"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAdaptNoSituationalMovement"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAdaptNoMagicalOrVisionPenalties"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAdaptIndefiniteWithPractice"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAdaptPermanentOption"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAdaptNoOtherActionCost"
+   }
+  ],
+  "the DMO all-around attack pins": [
+   {
+    "kind": "const",
+    "name": "deyAAARadius"
+   },
+   {
+    "kind": "const",
+    "name": "deyAAADamageDie"
+   },
+   {
+    "kind": "const",
+    "name": "deyAAAInvisibilityAcBonus"
+   },
+   {
+    "kind": "chain",
+    "name": "deyAAADamageBand"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAAAAnnouncedInDeterminationStep"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAAAKillTriggersBlast"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAAALargerOrBetterAcExcluded"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAAAWeaponImmuneExcluded"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAAAInitialMissFails"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAAANoKillNoRadius"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAAANoMoveOrOtherAction"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAAAMeleeProficientWeaponsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "deyAAACombatBonusesIrrelevant"
+   }
+  ],
+  "the DMO bravery pins": [
+   {
+    "kind": "const",
+    "name": "deyBraveryDerivedCost"
+   },
+   {
+    "kind": "bool",
+    "name": "deyBraveryNegatesUnnaturalFear"
+   },
+   {
+    "kind": "bool",
+    "name": "deyBraverySaveStillAllowedOnFail"
+   },
+   {
+    "kind": "bool",
+    "name": "deyBraveryPaladinVsEvilTurning"
+   },
+   {
+    "kind": "bool",
+    "name": "deyBraveryPrereqForCaptivateFrightenInvulnerability"
+   },
+   {
+    "kind": "bool",
+    "name": "deyBraveryZeroBlocksAllFour"
+   }
+  ],
+  "the DMO captivate pins": [
+   {
+    "kind": "const",
+    "name": "deyCapSuggestionWizardLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyCapGiftSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deyCapHdImmune"
+   },
+   {
+    "kind": "const",
+    "name": "deyCapBraveryCost"
+   },
+   {
+    "kind": "bool",
+    "name": "deyCapSameRaceFriendly"
+   },
+   {
+    "kind": "bool",
+    "name": "deyCapSimilarAlignmentOneElement"
+   },
+   {
+    "kind": "bool",
+    "name": "deyCapSuggestionAutoIfNoRisk"
+   },
+   {
+    "kind": "bool",
+    "name": "deyCapSuccessfulSaveFlees"
+   },
+   {
+    "kind": "bool",
+    "name": "deyCapHostileActBreaks"
+   },
+   {
+    "kind": "bool",
+    "name": "deyCapExtendedContactAttachment"
+   }
+  ],
+  "the DMO death blow pins": [
+   {
+    "kind": "bool",
+    "name": "deyDeathBlowAnnounced"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDeathBlowSaveVsDeathMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDeathBlowProtectiveDevicesApply"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDeathBlowOptionalT36T38Modifiers"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDeathBlowMoreHdImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDeathBlowWeaponImmuneImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDeathBlowOnlyAttackThatRound"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDeathBlowAooAllowed"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDeathBlowCombinesAllAround"
+   },
+   {
+    "kind": "bool",
+    "name": "deyDeathBlowOnlyInitialTargetDies"
+   }
+  ],
+  "the DMO frighten/challenge pins": [
+   {
+    "kind": "const",
+    "name": "deyFrightAuraHd"
+   },
+   {
+    "kind": "const",
+    "name": "deyFrightFleeRoundsDie"
+   },
+   {
+    "kind": "const",
+    "name": "deyFrightImmuneFriendRange"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFrightShoutAndCharge"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFrightMustSeeAndHear"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFrightUndeadImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFrightNoMoraleImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFrightCloakOfBraveryNegates"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFrightNatural20Attacks"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFrightWarriorFleesTheyPursue"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeMinHd"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeSightYards"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeNoRoleplayPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeFeeblePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeCompanionBonus"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeDamageBonusStep"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeWeakBonus"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeWeakThaco"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeWeakAc"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeWeakMaxDamage"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeRetreatRoundsDie"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeBraveryCost"
+   },
+   {
+    "kind": "const",
+    "name": "deyChallengeMoraleRoundsDie"
+   },
+   {
+    "kind": "bool",
+    "name": "deyChallengeOpposedChaVsWis"
+   },
+   {
+    "kind": "bool",
+    "name": "deyChallengeWinnerMustCloseToMelee"
+   },
+   {
+    "kind": "bool",
+    "name": "deyChallengeRestraintTakesFullRound"
+   },
+   {
+    "kind": "bool",
+    "name": "deyChallengeUnwillingSaveEachRound"
+   },
+   {
+    "kind": "bool",
+    "name": "deyChallengeSpellsMissilesAfterClosing"
+   },
+   {
+    "kind": "bool",
+    "name": "deyChallengeNatural20AlwaysFails"
+   },
+   {
+    "kind": "bool",
+    "name": "deyChallengeBothFailWarriorRetreats"
+   },
+   {
+    "kind": "bool",
+    "name": "deyChallengeBraveryAvoidsRetreat"
+   },
+   {
+    "kind": "bool",
+    "name": "deyChallengeGazeCombosInRange"
+   }
+  ],
+  "the DMO hardiness pins": [
+   {
+    "kind": "const",
+    "name": "deyHardMinorDays"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardSevereWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardExtremeMonths"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardHeroicFloor"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardConsciousAt"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardBraveryCost"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardExampleLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardExampleHpLeft"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardExampleHpTotal"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardExampleDelay"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardExampleImmuneHp"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardVampireLevels"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardParalysisWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "deyHardExampleWeeks"
+   },
+   {
+    "kind": "chain",
+    "name": "deyHardDelayBand"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardSaveFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardNoSimpleOrContinuingDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardNoCharmsEntangleImprison"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardCureWithinDelayNoHarm"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardShorterDurationNoEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardSystemShockAtEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardShockSuccessHeals"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardShockFailFullForce"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardMultipleEffectsSequential"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardUnconsciousRecoversInstantly"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardHeroicDelayRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardHeroicDeathAtDelayEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardRaiseDuringDelaySaves"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardRegenNoShock"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardAmuletNoShock"
+   },
+   {
+    "kind": "bool",
+    "name": "deyHardIneffectiveAtZeroBravery"
+   }
+  ],
+  "the DMO inner focus pins": [
+   {
+    "kind": "const",
+    "name": "deyFocusBoostDurationPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deyFocusOtherScoresPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deyFocusExtraordinaryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "deyFocusAttemptCost"
+   },
+   {
+    "kind": "chain",
+    "name": "deyFocusBand"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFocusOneBoostAtATime"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFocusConcentrationRoundOnlyAction"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFocusBoostEndsAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFocusNoEffectIfAlreadyHigher"
+   },
+   {
+    "kind": "bool",
+    "name": "deyFocusSubabilitiesRaisedEqual"
+   }
+  ],
+  "the DMO sense danger pins": [
+   {
+    "kind": "const",
+    "name": "deySenseAmbushScanYards"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseReadinessCube"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseHiddenRadius"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseHiddenInitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseAlertnessBonus"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseLowHpPct"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseLowThacoDiff"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseModerateHpPct"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseModerateThacoDiff"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseSignificantHpPctLow"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseSignificantHpPctHigh"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseSignificantThacoDiff"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseDangerousHpPctLow"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseDangerousHpPctHigh"
+   },
+   {
+    "kind": "const",
+    "name": "deySenseFailThreshold"
+   },
+   {
+    "kind": "chain",
+    "name": "deySenseKnownBand"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseFiveSubskills"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseDoublePurchaseExtraSubskill"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseImprovementAllSubskills"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseAmbushOncePerTurn"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseAmbushRevealsCountAndSize"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseBackNegatesSurpriseAndBonuses"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseBackDexBonusApplies"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseBackShieldOnlyIfTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseNoFreeCounterattack"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseHiddenOncePerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseHiddenNoDisguiseOrIntent"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseDmSecretRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseFail19DetectsNothing"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseNatural20FalseIndication"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseFalseNoBackAttackEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseDmChoosesCategory"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseDeadlyMoreHpLowerThaco"
+   },
+   {
+    "kind": "bool",
+    "name": "deySenseNoMagicOrSpellPowers"
+   }
+  ],
+  "the DMO signature item pins": [
+   {
+    "kind": "const",
+    "name": "deySigItemOwnLevels"
+   },
+   {
+    "kind": "const",
+    "name": "deySigItemReplacementMonths"
+   },
+   {
+    "kind": "const",
+    "name": "deySigItemMagicXpMultiple"
+   },
+   {
+    "kind": "const",
+    "name": "deySigItemEnchantMonths"
+   },
+   {
+    "kind": "const",
+    "name": "deySigItemCategories"
+   },
+   {
+    "kind": "const",
+    "name": "deySigItemVisionChecksPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemNamedAndDistinctive"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemNoCheckToDesignate"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemEmpathicLinkOnNaming"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemMustOwnAndUseRegularly"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemNonconsumableOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemItemSavesAutoSucceed"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemOwnerMustSurvive"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemDeliberateActsCanDestroy"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemDeadOwnerNormalRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemOtherPlanePlaneOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemMagicallyHiddenFactAndArea"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemNonmagicalReplacementByName"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemMagicalNeedsQualityAndCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemXpLossOrBrokenLink"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemArtifactsExcluded"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemOnePerCategory"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemPairsAtDmOption"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemImprovementAllItems"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigItemNeglectBreaksLink"
+   }
+  ],
+  "the DMO signature mount pins": [
+   {
+    "kind": "const",
+    "name": "deySigMountMaxHd"
+   },
+   {
+    "kind": "const",
+    "name": "deySigMountMinHpPerHd"
+   },
+   {
+    "kind": "const",
+    "name": "deySigMountHeavyWarHorseMinHp"
+   },
+   {
+    "kind": "const",
+    "name": "deySigMountHpPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deySigMountSmartInt"
+   },
+   {
+    "kind": "const",
+    "name": "deySigMountVisionChecksPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigMountMustBeTamed"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigMountMustBeNamedAndRecognizable"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigMountAreaNoDamageIfRiderSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigMountHalfOrNoneOnRiderFail"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigMountDirectAttacksUseRiderSave"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigMountPowerWordMustOvercomeRider"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigMountAloneOwnSave"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigMountKilledSameTypeReplacement"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigMountOnePerTerrain"
+   },
+   {
+    "kind": "bool",
+    "name": "deySigMountWillinglyServesIfFound"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 40 skills box closes",
+   "from": "  - [ ] Table 40: Skills for High-Level Characters\n    (pp. 145-146) - the skill roster (the base scores,\n    the requirements, the costs)",
+   "to": "  - [x] Table 40: Skills for High-Level Characters\n    (pp. 145-146) - the skill roster (the base scores,\n    the requirements, the costs) - R609: the dey T40\n    roster grid - 33 rows in four class bands\n    (warriors 0-10, wizards 11-13, priests 14-21,\n    rogues 22-32) with the requirement, base score,\n    ability-code and cost columns; the two blank\n    priest cost cells (Divine Voice, Detect\n    Deception) pinned as printed blanks"
+  },
+  {
+   "note": "the Table 41 modifiers box closes",
+   "from": "  - [ ] Table 41: Ability Modifiers to Skills (p.\n    146) - the ability/skill-adjustment grid",
+   "to": "  - [x] Table 41: Ability Modifiers to Skills (p.\n    146) - the ability/skill-adjustment grid - R609:\n    the dey T41 grid, eleven bands from 3-or-less -5\n    to 18-plus +5 with the deyT41Band score chain"
+  },
+  {
+   "note": "the warriors box closes",
+   "from": "  - [ ] Warriors (pp. 146-156) - the fighters, rangers\n    and paladins beyond 20th (Table 42: Warrior\n    Advancement Beyond 20th Level, p. 147), the\n    warrior skill list",
+   "to": "  - [x] Warriors (pp. 146-156) - the fighters, rangers\n    and paladins beyond 20th (Table 42: Warrior\n    Advancement Beyond 20th Level, p. 147), the\n    warrior skill list - R609: the dey T42 grid\n    (fighter and paladin/ranger XP, the proficiency\n    columns, the 9+N hit points with the Con\n    footnote), the breech and intimidation ladders,\n    the ranger and paladin powers, and all eleven\n    warrior skills pinned (adaptation, all-around\n    attack, bravery, captivate, death blow,\n    frighten/challenge, hardiness, inner focus,\n    sense danger, signature item, signature mount)"
+  }
+ ],
+ "gap_census": {
+  "closed": 87,
+  "open": 9
+ },
+ "caller_files": [],
+ "inline_count": 293,
+ "audit_comment": "DMO Chapter 7 round two of five (printed pp. 145-156): the skills doctrine - the number-or-less 1d20 success roll, the Table 41 ability bands (-5 at 3 or less to +5 at 18 plus), the fixed per-use drop of limited-use skills, the zero-or-less lockout with unavailable dependents and no ability rescue, the opposed-roll cases, the slot/point cost reading, the 16 mortal ceiling no wish can lift; the Table 40 roster - 33 skills in four class bands with the two blank priest cost cells pinned as printed blanks; the Table 42 advancement grid with its XP ladders, proficiency columns and 9+N hit points; the fighter breech ladder (+1 at 21st to +4 at 30th) and intimidation (the 4+1 auto-retreat, the 4+2 save, the -2 penalty, the -2 step per three levels); the ranger follower/scroll/scrying powers and the paladin powers including the 27th-level disease immunity; and the eleven warrior skills with their ladders - the all-around 1d8-to-5d8 damage, the bravery drains (-2 for captivate and hardiness, -1 for frighten/challenge), the hardiness delay bands (5/10/15/20 rounds) with the nine-week vampire-and-lich example, the inner focus 18-to-22 boost ladder, and the sense danger subskill ladder (one at 15th to four at 30th)."
+}
