@@ -1,0 +1,9068 @@
+{
+ "round": 613,
+ "prefix": "dfc",
+ "header_file": "rules/dmoduelroster.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 535,
+ "title": "The Spell Dueling Roster and Index",
+ "audit_label": "R613 DMO dueling appendix audit",
+ "include_comment": "the DMO spell dueling roster pins",
+ "include_after": "#include \"rules/dmohighascend.h\"  // R612: the DMO demihuman and ascension pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R612 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R612 LANDED 2026-10-18: commit",
+  "  2ff6ba87f1715469ed87c8d6492a93be",
+  "  25c1f6b3 (census 534 -> 535,",
+  "  pushed 1de9c4b..2ff6ba8), DEMIHUMANS",
+  "  AND DIVINE ASCENSION, printed pp. 178-",
+  "  179, DMO Chapter 7 round five of five",
+  "  per the split plan - THREE boxes flip",
+  "  (Demihumans, Beyond 30th / Divine",
+  "  Ascension, AND the Chapter 7 PARENT;",
+  "  gap census now 93 closed / 3 open;",
+  "  Chapter 7 fully closed across",
+  "  R608-R612): rules/dmohighascend.h,",
+  "  prefix dfb (verified free), 54",
+  "  inlines (10 consts, 44 bools, no",
+  "  chains or grids - a prose-only round;",
+  "  both captures agree on every number,",
+  "  only the standing lOth-for-10th OCR",
+  "  misread on the transformation and",
+  "  imbue spell names, settled per the",
+  "  index), 54 examples, 4 table_checks,",
+  "  54-mutant battery 0 missed. The",
+  "  demihuman doctrine and its four",
+  "  solutions (wish or 10th-level",
+  "  transformation to human; wish or",
+  "  imbue per level beyond the racial",
+  "  max with earned XP; Slow Advancement",
+  "  with humans pulling ahead from 10th;",
+  "  slow-after-max with the racial heroic",
+  "  task), the 30th-level ceiling, and",
+  "  the full ascension path (seek after",
+  "  20th, the sponsor, the gift at the",
+  "  XP-total value, the 500K-per-save-",
+  "  point benefit to a minimum of three,",
+  "  the Table 59 offering roll, the",
+  "  heroic task with five examples, no",
+  "  ability under 13, the demigod NPC",
+  "  ending, heroes not gods). DELIVERY:",
+  "  raw JSON in the canvas (user-set:",
+  "  b64 NOT needed), spec 30792 bytes,",
+  "  md5 7573d01110738825393f70488b2f05fc",
+  "  verified byte-exact before ./rn. NEXT",
+  "  - R613: the Appendix - Spell Dueling",
+  "  Characteristics (pp. 180-188, the",
+  "  per-spell PR/MV/A/L/D roster - a big",
+  "  grid round) then the Index (pp.",
+  "  189-192) closes the DMO arc; consult",
+  "  the gap report at HEAD 2ff6ba8;",
+  "  verify next prefix free (dfc family",
+  "  next). Audit: \"R613 DMO dueling",
+  "  appendix audit\"; include after",
+  "  rules/dmohighascend.h."
+ ],
+ "banner": {
+  "title": "THE SPELL DUELING ROSTER AND INDEX - the DMO Appendix (Spell Dueling Characteristics, printed pp. 180-188) and the closing Index (pp. 189-192): the complete per-spell dueling roster, 707 entries in 24 letter sections A through Z (no X or Y - no dueling spells begin with them), each pinned with its school (priest or wizard), level 1-9, usage code (the A/D/L/M/Any bitmask: A 1, D 2, L 4, M 8, Any 16, combinations summed), power rating PR 10-19, movement value MV 1-5 single or ranged, the Tome of Magic dagger mark and the Chapter 5 special-effect asterisk mark.",
+  "provenance": "verified against printed pp. 180-192 of the archive.org DMO captures (items dungeon-master-option-high-level-campaigns and tsr02156dmsoptionhighlevelcampaigns; the ABBYY tsr02156 read is primary, the tesseract read cross-checked entry by entry - all 707 rows parsed from the primary band with zero unparsed lines and the usage histogram identical across the handoff audit). STANDING OCR CLASSES, all settled dual-capture: (1) the F class - 38 usage cells read F, a code absent from the legend, cross-checked to the leech code L on every member and pinned as the leech mask 4; (2) the four printed PR exceptions (Consequence PR 15, Disguise PR 19, Fire Shield PR 19, Fumble PR 19) confirmed in both captures and pinned as printed; (3) the Thought Capture usage cell prints a bare digit - confirmed against the physical copy 2026-10-18 and pinned as the no-code value 0; (4) the Barkskin entry prints PR 11 MV 1 without the comma; (5) the marker glyphs garble as digits, letters and quotes in both captures - the dagger (ToM) class reads 1, t, f, r, apostrophe, caret or plus and the asterisk (special) class reads s, 5, 8, quote or star; the two classes were adjudicated entry by entry against the printed legend, the Chapter 5 special dueling characteristics lists (the five groups - mental or debilitating, creature-summoning, illusions, reversible, teleportation - plus the individual abilities) and the Tome of Magic roster itself, including the second-printing Mind Tracker (which replaced Mindkiller) and the wild-magic asterisks of the ToM pages. NAME REPAIRS, each dual-capture verified: Animal Summoning El reads Animal Summoning III; Past Fife reads Past Life; Otiluke's Tele ki netic Sphere reads Telekinetic; Screens reads Screen (the attached s is the asterisk); Far Reaching If reads Far Reaching II (the second I and the dagger merged in both captures); Mind Log reads Mind Fog. Names pinned as the DMO prints them where DMO and the source books differ: Thoughtweave (the ToM prints Thoughtwave), Impending Permission (the ToM prints Impeding Permission), Magical Stone (the PHB prints Magic Stone), The Great Circle seated in the G section as printed. THE INDEX FLIPS HERE: the closing index carries no numbers of its own - the DMO gap report closes at 96 boxes, 96 closed, 0 open, the full arc R599 through R613.",
+  "sentinel": "the gap census after this round: 96 closed, 0 open - the Appendix and the Index both flip in R613 and the DMO arc is fully closed; census 535 -> 536; NEXT - none: the DMO gap report is complete; consult the user for the next arc."
+ },
+ "consts": [
+  {
+   "name": "dfcRosterCount",
+   "value": 707,
+   "comment": "the full dueling roster: 707 spell entries across 24 letter sections A through Z (no X or Y section - no dueling spells begin with those letters) (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcSectionCount",
+   "value": 24,
+   "comment": "the roster section count: 24 letter sections from A to Z (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcMaxSectionCount",
+   "value": 84,
+   "comment": "the largest section: the S section carries 84 dueling spells (printed pp. 184-185)."
+  },
+  {
+   "name": "dfcMinSectionCount",
+   "value": 1,
+   "comment": "the smallest section: the Q section carries a single dueling spell, Quest (printed p. 183)."
+  },
+  {
+   "name": "dfcPrBase",
+   "value": 9,
+   "comment": "the power rating doctrine: PR equals the spell level plus nine, giving the 10-18 PR band for 1st- through 9th-level spells (printed p. 180; the R606 detPRBase doctrine)."
+  },
+  {
+   "name": "dfcMinPr",
+   "value": 10,
+   "comment": "the minimum power rating on the roster: PR 10 for every 1st-level dueling spell (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcMaxPr",
+   "value": 18,
+   "comment": "the doctrine maximum power rating: PR 18 for every 9th-level dueling spell (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcMaxPrPrinted",
+   "value": 19,
+   "comment": "the highest power rating actually printed on the roster: PR 19 on Disguise, Fire Shield and Fumble - three of the four printed PR exceptions (printed pp. 181-182)."
+  },
+  {
+   "name": "dfcPrExceptionCount",
+   "value": 4,
+   "comment": "the printed PR exceptions: exactly four roster entries break the level-plus-nine doctrine - Consequence (PR 15 at 5th), Disguise (PR 19 at 5th), Fire Shield (PR 19 at 4th) and Fumble (PR 19 at 4th) - all four confirmed in both captures and pinned as printed (printed pp. 181-182)."
+  },
+  {
+   "name": "dfcMinLevel",
+   "value": 1,
+   "comment": "the lowest spell level on the roster: 1st (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcMaxLevel",
+   "value": 9,
+   "comment": "the highest spell level on the roster: 9th (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcMinMv",
+   "value": 1,
+   "comment": "the minimum movement value: MV 1 (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcMaxMv",
+   "value": 5,
+   "comment": "the maximum movement value: MV 5 (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcUsageMaskA",
+   "value": 1,
+   "comment": "the usage code bitmask: A (attack) is 1 (the printed legend: A = Attack; printed p. 180)."
+  },
+  {
+   "name": "dfcUsageMaskD",
+   "value": 2,
+   "comment": "the usage code bitmask: D (defense) is 2 (the printed legend: D = Defense; printed p. 180)."
+  },
+  {
+   "name": "dfcUsageMaskL",
+   "value": 4,
+   "comment": "the usage code bitmask: L (leech) is 4 (the printed legend: L = Leech; printed p. 180)."
+  },
+  {
+   "name": "dfcUsageMaskM",
+   "value": 8,
+   "comment": "the usage code bitmask: M (missile) is 8 (the printed legend: M = Missile; printed p. 180)."
+  },
+  {
+   "name": "dfcUsageMaskAny",
+   "value": 16,
+   "comment": "the usage code bitmask: Any is 16 (the printed legend: Any = any function; printed p. 180)."
+  },
+  {
+   "name": "dfcSchoolPriest",
+   "value": 0,
+   "comment": "the school code: 0 for a priest spell (the roster prints (P n); printed pp. 180-188)."
+  },
+  {
+   "name": "dfcSchoolWizard",
+   "value": 1,
+   "comment": "the school code: 1 for a wizard spell (the roster prints (W n); printed pp. 180-188)."
+  },
+  {
+   "name": "dfcFReadCount",
+   "value": 38,
+   "comment": "the F-read OCR artifact class: 38 roster entries read usage F in both captures - F is not a legend code; the class is the leech code L misread by the primary capture (confirmed against the tesseract read entry by entry) and every F read pins as the leech mask 4 (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcFReadPinnedMask",
+   "value": 4,
+   "comment": "the pinned usage mask for every F-read entry: the leech mask 4 (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcTomeMarkedCount",
+   "value": 209,
+   "comment": "the Tome of Magic census: 209 roster entries carry the dagger mark (the legend t = spell from the Tome of Magic; printed p. 180) - the mark class verified spell by spell against the Tome of Magic roster, including the second-printing Mind Tracker that replaced Mindkiller."
+  },
+  {
+   "name": "dfcSpecialMarkedCount",
+   "value": 148,
+   "comment": "the special-effect census: 148 roster entries carry the asterisk mark (the legend * = the spell has a special effect; see Chapter 5, pp. 108-116) plus the Chapter 3 spell clarification entries the typesetter also flagged (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcThoughtCaptureUsage",
+   "value": 0,
+   "comment": "the printed Thought Capture quirk: the usage code cell prints a bare digit, not a legend code (confirmed against the physical copy, 2026-10-18) - pinned as usage 0, the no-code value (printed p. 187)."
+  },
+  {
+   "name": "dfcAnyCount",
+   "value": 8,
+   "comment": "the Any-function entries: 8 roster entries read usage Any (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcACount",
+   "value": 49,
+   "comment": "the A section roster count: 49 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcBCount",
+   "value": 22,
+   "comment": "the B section roster count: 22 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcCCount",
+   "value": 72,
+   "comment": "the C section roster count: 72 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcDCount",
+   "value": 47,
+   "comment": "the D section roster count: 47 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcECount",
+   "value": 31,
+   "comment": "the E section roster count: 31 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcFCount",
+   "value": 46,
+   "comment": "the F section roster count: 46 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcGCount",
+   "value": 22,
+   "comment": "the G section roster count: 22 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcHCount",
+   "value": 24,
+   "comment": "the H section roster count: 24 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcICount",
+   "value": 26,
+   "comment": "the I section roster count: 26 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcJCount",
+   "value": 2,
+   "comment": "the J section roster count: 2 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcKCount",
+   "value": 8,
+   "comment": "the K section roster count: 8 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcLCount",
+   "value": 26,
+   "comment": "the L section roster count: 26 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcMCount",
+   "value": 69,
+   "comment": "the M section roster count: 69 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcNCount",
+   "value": 7,
+   "comment": "the N section roster count: 7 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcOCount",
+   "value": 5,
+   "comment": "the O section roster count: 5 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcPCount",
+   "value": 46,
+   "comment": "the P section roster count: 46 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcQCount",
+   "value": 1,
+   "comment": "the Q section roster count: 1 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcRCount",
+   "value": 29,
+   "comment": "the R section roster count: 29 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcSCount",
+   "value": 84,
+   "comment": "the S section roster count: 84 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcTCount",
+   "value": 37,
+   "comment": "the T section roster count: 37 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcUCount",
+   "value": 7,
+   "comment": "the U section roster count: 7 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcVCount",
+   "value": 8,
+   "comment": "the V section roster count: 8 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcWCount",
+   "value": 37,
+   "comment": "the W section roster count: 37 dueling spells (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcZCount",
+   "value": 2,
+   "comment": "the Z section roster count: 2 dueling spells (printed pp. 180-188)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dfcLegendA",
+   "value": true,
+   "comment": "the roster legend: A = Attack (printed p. 180)."
+  },
+  {
+   "name": "dfcLegendD",
+   "value": true,
+   "comment": "the roster legend: D = Defense (printed p. 180)."
+  },
+  {
+   "name": "dfcLegendL",
+   "value": true,
+   "comment": "the roster legend: L = Leech (printed p. 180)."
+  },
+  {
+   "name": "dfcLegendM",
+   "value": true,
+   "comment": "the roster legend: M = Missile (printed p. 180)."
+  },
+  {
+   "name": "dfcLegendAd",
+   "value": true,
+   "comment": "the roster legend: AD = Attack/Defense - a spell that serves as both an attack and a defense (printed p. 180)."
+  },
+  {
+   "name": "dfcLegendAny",
+   "value": true,
+   "comment": "the roster legend: Any = a spell that can serve any function - attack, defense, missile or leech (printed p. 180)."
+  },
+  {
+   "name": "dfcLegendTomeMark",
+   "value": true,
+   "comment": "the roster legend: the dagger mark t means the spell comes from the Tome of Magic (printed p. 180)."
+  },
+  {
+   "name": "dfcLegendSpecialMark",
+   "value": true,
+   "comment": "the roster legend: the asterisk mark means the spell has a special effect - see Chapter 5, the special dueling characteristics (printed p. 180)."
+  },
+  {
+   "name": "dfcPrLevelPlus9",
+   "value": true,
+   "comment": "the PR doctrine: a dueling spell power rating equals its spell level plus nine, as printed for all but four roster entries (printed p. 180)."
+  },
+  {
+   "name": "dfcCodesDuelOnly",
+   "value": true,
+   "comment": "the roster scope: the PR/MV/usage codes describe a spell only within the dueling arena system of Chapter 5 (printed pp. 96-117 and 180)."
+  },
+  {
+   "name": "dfcFReadsAreLeech",
+   "value": true,
+   "comment": "the F-read class: every usage cell that reads F is the leech code L misread - F is not a legend code, and the tesseract cross-check reads L for every member of the class (printed pp. 180-188)."
+  },
+  {
+   "name": "dfcThoughtCapturePrintsDigit",
+   "value": true,
+   "comment": "the Thought Capture quirk: the usage code cell prints a bare digit where a legend letter belongs - verified against the physical copy on 2026-10-18 and pinned as printed (printed p. 187)."
+  },
+  {
+   "name": "dfcPrExceptionsAsPrinted",
+   "value": true,
+   "comment": "the four printed PR exceptions pin as printed: Consequence PR 15, Disguise PR 19, Fire Shield PR 19 and Fumble PR 19, each confirmed identically in both captures (printed pp. 181-182)."
+  },
+  {
+   "name": "dfcBarkskinMissingComma",
+   "value": true,
+   "comment": "the Barkskin printed quirk: the entry prints PR 11 MV 1 without the comma every other entry carries - both captures agree, pinned as printed, data unaffected (printed p. 181)."
+  },
+  {
+   "name": "dfcIndexClosesDmoArc",
+   "value": true,
+   "comment": "the Index box flips with this round: the closing index (pp. 189-192) completes the DMO gap report at 96 closed and 0 open - the full DMO arc is closed from R599 through R613."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dfcAGrid",
+   "tag": "A",
+   "count": "dfcACount",
+   "sentinel": -99,
+   "comment": "the A section of the spell dueling roster (printed pp. 180-188): 49 rows, one per dueling spell in printed order - Abi-Dalzim's Horrid Wilting, Abjure, Accelerate Healing, Acid Storm, Adaptation, Addition, Advanced Illusion, Aerial Servant, Affect Normal Fires, Age Creature, Age Dragon, Age Object, Age Plant, Aid, Airboat, Air Walk, Airy Water, Alacrity, Alamir's Fundamental Breakdown 8, Alarm, Alter Self, Alternate Reality, Analyze Balance, Animal Friendship, Animal Growth, Animal Growth, Animal Summoning I, Animal Summoning II, Animal Summoning III, Animate Dead, Animate Dead, Animate Object, Animate Rock, Antianimal Shell, Antimagic Shell, Antiplant Shell, Antipathy-Sympathy, Anti-Vermin Barrier, Armor, Astral Spell, Astral Spell, Astral Window, Atonement, Audible Glamer, Augmentation I, Augmentation II, Augury, Aura of Comfort, Avoidance. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the A section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the A section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the A section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the A section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the A section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the A section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the A section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the A section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcASchool",
+    "dfcALevel",
+    "dfcAUsage",
+    "dfcAPr",
+    "dfcAMvMin",
+    "dfcAMvMax",
+    "dfcATome",
+    "dfcASpecial"
+   ],
+   "data": [
+    [
+     1,
+     8,
+     1,
+     17,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     7,
+     1,
+     16,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     16,
+     14,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     6,
+     3,
+     15,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     2,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     4,
+     17,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     2,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     4,
+     4,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     3,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     3,
+     14,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     3,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     3,
+     15,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     3,
+     16,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     2,
+     15,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     6,
+     3,
+     15,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     8,
+     4,
+     17,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     2,
+     10,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     4,
+     18,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     2,
+     2,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcBGrid",
+   "tag": "B",
+   "count": "dfcBCount",
+   "sentinel": -99,
+   "comment": "the B section of the spell dueling roster (printed pp. 180-188): 22 rows, one per dueling spell in printed order - Banishment, Barkskin, Barrier of Retention, Bigby's Clenched Fist, Bigby's Crushing Hand, Bigby's Forceful Hand, Bigby's Grasping Hand, Bigby's Interposing Hand, Bind, Binding, Blade Barrier, Bless, Blessed Abundance, Blessed Warmth st, Blindness, Blink, Bloodstone's Frightful Joining, Bloodstone's Spectral Steed, Blur, Body Clock, Breath of Life, Burning Hands. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the B section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the B section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the B section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the B section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the B section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the B section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the B section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the B section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcBSchool",
+    "dfcBLevel",
+    "dfcBUsage",
+    "dfcBPr",
+    "dfcBMvMin",
+    "dfcBMvMax",
+    "dfcBTome",
+    "dfcBSpecial"
+   ],
+   "data": [
+    [
+     1,
+     7,
+     4,
+     16,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     2,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     8,
+     3,
+     17,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     9,
+     3,
+     18,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     6,
+     3,
+     15,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     7,
+     3,
+     16,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     5,
+     3,
+     14,
+     4,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     4,
+     17,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     3,
+     15,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     2,
+     10,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     3,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     2,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     10,
+     1,
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcCGrid",
+   "tag": "C",
+   "count": "dfcCCount",
+   "sentinel": -99,
+   "comment": "the C section of the spell dueling roster (printed pp. 180-188): 72 rows, one per dueling spell in printed order - Call Lightning, Call Upon Faith, Call Woodland Beings, Calm Chaos, Caltrops, Cantrip, Chain Contingency, Chain Lightning, Champion's Strength, Change Self, Changestaff, Chant, Chaos, Chaos Shield, Chaotic Combat, Chaotic Commands, Chaotic Sleep, Chariot of Sustarre, Charm Monster, Charm Person, Charm Person or Mammal, Charm Plants, Chill Touch, Choose Future, Circle of Privacy st, Clairaudience, Clairvoyance, Claws of the Umber Hulk, Clear Path, Cloak of Bravery, Clone, Cloudkill, Cloud of Purification, Color Spray, Combine, Command, Commune, Commune With Nature, Comprehend Languages, Compulsive Order st, Cone of Cold, Confusion, Confusion, Conjure Animals, Conjure Animals, Conjure Earth Elemental, Conjure Elemental, Conjure Fire Elemental, Conjure Spell Component, Consequence, Contact Other Plane, Contagion, Continual Light, Continual Light, Control Temperature, 10' Radius, Control Undead, Control Weather, Control Weather, Control Winds, Courage s, Create Campsite, Create Food & Water, Create Holy Symbol, Create Water, Creeping Doom, Crushing Walls st, Crystalbrittle, Cure Blindness or Deafness, Cure Critical Wounds, Cure Disease, Cure Light Wounds, Cure Serious Wounds. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the C section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the C section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the C section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the C section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the C section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the C section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the C section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the C section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcCSchool",
+    "dfcCLevel",
+    "dfcCUsage",
+    "dfcCPr",
+    "dfcCMvMin",
+    "dfcCMvMax",
+    "dfcCTome",
+    "dfcCSpecial"
+   ],
+   "data": [
+    [
+     0,
+     3,
+     1,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     2,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     1,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     4,
+     5,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     7,
+     10,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     4,
+     18,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     8,
+     15,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     2,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     3,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     2,
+     11,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     13,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     10,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     1,
+     11,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     8,
+     4,
+     17,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     2,
+     2,
+     0,
+     1
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     3,
+     3,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     1,
+     10,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     1,
+     13,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     4,
+     4,
+     0,
+     1
+    ],
+    [
+     0,
+     7,
+     1,
+     16,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     3,
+     15,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     3,
+     15,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     3,
+     16,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     3,
+     14,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     3,
+     15,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     1,
+     12,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     4,
+     4,
+     0,
+     1
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     2,
+     10,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     3,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     2,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     4,
+     18,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     2,
+     10,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ]
+   ]
+  },
+  {
+   "name": "dfcDGrid",
+   "tag": "D",
+   "count": "dfcDCount",
+   "sentinel": -99,
+   "comment": "the D section of the spell dueling roster (printed pp. 180-188): 47 rows, one per dueling spell in printed order - Dancing Lights, Darkness, 15' Radius, Deafness, Death Fog, Death Spell, Deeppockets, Defensive Harmony, Delayed Blast Fireball, Delude, Demand, Demishadow Magic, Demishadow Monsters, Detect Charm, Detect Evil, Detect Evil, Detect Invisibility, Detect Lie, Detect Magic, Detect Magic, Detect Poison, Detect Scrying, Detect Snares & Pits, Detect Undead, Dig, Dilation I, Dilation II, Dimension Door, Dimensional Folding S|, Disbelief 8, Disguise, Disintegrate, Dismissal, Dispel Evil, Dispel Magic, Dispel Magic, Dissension's Feast, Distance Distortion, Divination, Divination Enhancement, Divine Inspiration, Domination, Dragonbane, Draw Upon Holy Might, Drawmij's Instant Summons, Dream, Duo-Dimension, Dust Devil. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the D section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the D section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the D section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the D section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the D section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the D section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the D section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the D section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcDSchool",
+    "dfcDLevel",
+    "dfcDUsage",
+    "dfcDPr",
+    "dfcDMvMin",
+    "dfcDMvMax",
+    "dfcDTome",
+    "dfcDSpecial"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     4,
+     10,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     1,
+     15,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     5,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     1,
+     7,
+     8,
+     16,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     4,
+     17,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     12,
+     15,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     5,
+     3,
+     14,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     2,
+     15,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     5,
+     4,
+     19,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     1,
+     15,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     3,
+     12,
+     4,
+     4,
+     0,
+     1
+    ],
+    [
+     1,
+     3,
+     3,
+     12,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     2,
+     11,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     2,
+     16,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     3,
+     11,
+     3,
+     3,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcEGrid",
+   "tag": "E",
+   "count": "dfcECount",
+   "sentinel": -99,
+   "comment": "the E section of the spell dueling roster (printed pp. 180-188): 31 rows, one per dueling spell in printed order - ESP, Earthquake, Easy March, Efficacious Monster Ward S|, Elemental Aura st, Elemental Forbiddance, Emotion, Emotion Control st, Emotion Perception, Emotion Read, Enchant an Item, Enchanted Weapon, Endure Heat/Endure Cold, Energy Drain, Enervation, Enlarge, Ensnarement, Entangle, Enthrall, Erase, Estate Transference, Evard's Black Tentacles, Exaction, Explosive Runes, Extension I, Extension II, Extension III, Extradimensional Detection 1, Extradimensional Manipulation, Extradimensional Pocket, Eyebite. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the E section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the E section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the E section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the E section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the E section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the E section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the E section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the E section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcESchool",
+    "dfcELevel",
+    "dfcEUsage",
+    "dfcEPr",
+    "dfcEMvMin",
+    "dfcEMvMax",
+    "dfcETome",
+    "dfcESpecial"
+   ],
+   "data": [
+    [
+     1,
+     2,
+     4,
+     11,
+     2,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     3,
+     16,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     2,
+     18,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     4,
+     3,
+     13,
+     4,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     3,
+     12,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     2,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     2,
+     10,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     9,
+     1,
+     18,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     4,
+     8,
+     13,
+     4,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     1,
+     10,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     5,
+     11,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     4,
+     18,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     13,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     1,
+     15,
+     2,
+     2,
+     0,
+     1
+    ]
+   ]
+  },
+  {
+   "name": "dfcFGrid",
+   "tag": "F",
+   "count": "dfcFCount",
+   "sentinel": -99,
+   "comment": "the F section of the spell dueling roster (printed pp. 180-188): 46 rows, one per dueling spell in printed order - Fabricate, Faerie Fire, False Vision, Far Reaching I, Far Reaching II, Far Reaching III, Fear, Feather Fall, Feeblemind, Feign Death, Feign Death, Find Familiar, Find Traps, Find the Path, Finger of Death, Fireball, Fire Burst, Fire Charm, Fireflow, Fire Purge st, Fire Seeds, Fire Shield, Fire Storm, Fire Trap, Fire Trap, Fist of Stone, Flame Arrow, Flame Blade, Flame Strike, Flame Walk, Flaming Sphere, Fly, Focus, Fog Cloud, Fools' Gold, Fool's Speech, Forbiddance, Forcecage, Foresight, Forest's Fiery Constrictor, Forget, Fortify, Free Action, Friends, Frisky Chest, Fumble. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the F section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the F section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the F section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the F section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the F section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the F section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the F section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the F section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcFSchool",
+    "dfcFLevel",
+    "dfcFUsage",
+    "dfcFPr",
+    "dfcFMvMin",
+    "dfcFMvMax",
+    "dfcFTome",
+    "dfcFSpecial"
+   ],
+   "data": [
+    [
+     1,
+     5,
+     4,
+     14,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     1,
+     16,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     8,
+     12,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     10,
+     2,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     8,
+     15,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     1,
+     4,
+     2,
+     19,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     7,
+     1,
+     16,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     8,
+     12,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     1,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     1,
+     14,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     3,
+     11,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     3,
+     16,
+     4,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     9,
+     2,
+     18,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     6,
+     1,
+     15,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     5,
+     11,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     19,
+     4,
+     5,
+     1,
+     1
+    ]
+   ]
+  },
+  {
+   "name": "dfcGGrid",
+   "tag": "G",
+   "count": "dfcGCount",
+   "sentinel": -99,
+   "comment": "the G section of the spell dueling roster (printed pp. 180-188): 22 rows, one per dueling spell in printed order - Gate, Gate, Gaze Reflection, Geas, Genius, Giant Insect, Glassee, Glassteel, Glitterdust, Globe of Invulnerability, Glorious Transmutation, Glyph of Warding, Goodberry, Gravity Variation, Grease, The Great Circle, Greater Malison, Grounding, Group Mind, Guards and Wards, Gunther's Kaleidoscopic Strike, Gust of Wind. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the G section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the G section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the G section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the G section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the G section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the G section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the G section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the G section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcGSchool",
+    "dfcGLevel",
+    "dfcGUsage",
+    "dfcGPr",
+    "dfcGMvMin",
+    "dfcGMvMax",
+    "dfcGTome",
+    "dfcGSpecial"
+   ],
+   "data": [
+    [
+     0,
+     7,
+     4,
+     16,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     4,
+     18,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     2,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     1,
+     15,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     3,
+     13,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     4,
+     17,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     3,
+     15,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     9,
+     4,
+     18,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     2,
+     11,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     10,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     5,
+     13,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     3,
+     3,
+     1,
+     1
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     1,
+     17,
+     4,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     1
+    ]
+   ]
+  },
+  {
+   "name": "dfcHGrid",
+   "tag": "H",
+   "count": "dfcHCount",
+   "sentinel": -99,
+   "comment": "the H section of the spell dueling roster (printed pp. 180-188): 24 rows, one per dueling spell in printed order - Hallucinatory Forest, Hallucinatory Terrain, Haste, Hatch the Stone from the Egg, Heal, Heat Metal, Helping Hand, Heroes' Feast, Hesitation, Hold Animal, Hold Monster, Hold Person, Hold Plant, Hold Portal, Hold Undead, Holy Word, Homunculus Shield, Hornung's Baneful Deflector S|, Hornung's Guess, Hornung's Random Dispatcher, Hornung's Surge Selector, Hovering Road, Hypnotic Pattern, Hypnotism. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the H section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the H section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the H section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the H section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the H section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the H section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the H section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the H section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcHSchool",
+    "dfcHLevel",
+    "dfcHUsage",
+    "dfcHPr",
+    "dfcHMvMin",
+    "dfcHMvMax",
+    "dfcHTome",
+    "dfcHSpecial"
+   ],
+   "data": [
+    [
+     0,
+     4,
+     4,
+     13,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     4,
+     4,
+     0,
+     1
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     6,
+     2,
+     15,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     9,
+     11,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     1,
+     12,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     5,
+     12,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     1,
+     16,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     8,
+     4,
+     17,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     3,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     8,
+     4,
+     17,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     5,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     5,
+     10,
+     2,
+     2,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcIGrid",
+   "tag": "I",
+   "count": "dfcICount",
+   "sentinel": -99,
+   "comment": "the I section of the spell dueling roster (printed pp. 180-188): 26 rows, one per dueling spell in printed order - Ice Storm, Idea, Identify, Illusionary Script, Illusionary Wall, Illusory Artillery, Illusory Fortification, Imbue With Spell Ability, Impending Permission, Imprisonment, Improved Invisibility, Improved Phantasmal Force, Incendiary Cloud, Infravision, Insatiable Thirst, Insect Plague, Intensify Summoning, Inverted Ethics, Invisibility, Invisibility to Animals, Invisibility to Undead, Invisibility, 10' Radius, Invisibility Purge, Invisible Stalker, Irritation, Item. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the I section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the I section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the I section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the I section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the I section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the I section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the I section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the I section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcISchool",
+    "dfcILevel",
+    "dfcIUsage",
+    "dfcIPr",
+    "dfcIMvMin",
+    "dfcIMvMax",
+    "dfcITome",
+    "dfcISpecial"
+   ],
+   "data": [
+    [
+     1,
+     4,
+     1,
+     13,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     3,
+     13,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     1,
+     14,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     9,
+     1,
+     18,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     16,
+     11,
+     3,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     8,
+     1,
+     17,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     2,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     1,
+     14,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     2,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     1,
+     15,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcJGrid",
+   "tag": "J",
+   "count": "dfcJCount",
+   "sentinel": -99,
+   "comment": "the J section of the spell dueling roster (printed pp. 180-188): 2 rows, one per dueling spell in printed order - Join With Astral Traveler, Jump. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the J section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the J section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the J section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the J section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the J section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the J section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the J section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the J section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcJSchool",
+    "dfcJLevel",
+    "dfcJUsage",
+    "dfcJPr",
+    "dfcJMvMin",
+    "dfcJMvMax",
+    "dfcJTome",
+    "dfcJSpecial"
+   ],
+   "data": [
+    [
+     0,
+     4,
+     4,
+     13,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcKGrid",
+   "tag": "K",
+   "count": "dfcKCount",
+   "sentinel": -99,
+   "comment": "the K section of the spell dueling roster (printed pp. 180-188): 8 rows, one per dueling spell in printed order - Khazid's Procurement, Knock, Know Age, Know Alignment, Know Alignment, Know Customs, Know Direction, Know Time. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the K section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the K section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the K section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the K section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the K section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the K section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the K section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the K section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcKSchool",
+    "dfcKLevel",
+    "dfcKUsage",
+    "dfcKPr",
+    "dfcKMvMin",
+    "dfcKMvMax",
+    "dfcKTome",
+    "dfcKSpecial"
+   ],
+   "data": [
+    [
+     1,
+     5,
+     4,
+     14,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcLGrid",
+   "tag": "L",
+   "count": "dfcLCount",
+   "sentinel": -99,
+   "comment": "the L section of the spell dueling roster (printed pp. 180-188): 26 rows, one per dueling spell in printed order - Land of Stability s, Lasting Breath, Leadership, Legal Thoughts st, Legend Lore, Leomund's Lamentable Belaborment, Leomund's Secret Chest, Leomund's Tiny Hut, Leomund's Trap, Levitate, Light, Light, Lighten Load, Lightning Bolt, Limited Wish, Line of Protection 1, Liveoak, Locate Animals or Plants, Locate Creature, Locate Object, Locate Object, Log of Everburning, Lorloveim's Creeping Shadow, Lower Resistance, Lower Water, Lower Water. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the L section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the L section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the L section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the L section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the L section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the L section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the L section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the L section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcLSchool",
+    "dfcLLevel",
+    "dfcLUsage",
+    "dfcLPr",
+    "dfcLMvMin",
+    "dfcLMvMax",
+    "dfcLTome",
+    "dfcLSpecial"
+   ],
+   "data": [
+    [
+     0,
+     6,
+     2,
+     15,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     2,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     6,
+     1,
+     15,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     2,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     1,
+     10,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     10,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     8,
+     12,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     16,
+     16,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     6,
+     3,
+     15,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     4,
+     4,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     4,
+     4,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcMGrid",
+   "tag": "M",
+   "count": "dfcMCount",
+   "sentinel": -99,
+   "comment": "the M section of the spell dueling roster (printed pp. 180-188): 69 rows, one per dueling spell in printed order - Magic Font, Magic Jar, Magic Mirror, Magic Missile, Magic Mouth, Magic Staff 1, Magical Stone, Magical Vestment, Major Creation, Malec-Keth's Flame Fist, Mask of Death, Mass Charm, Mass Invisibility, Mass Suggestion, Maximilian's Earthen Grasp, Maximilian's Stony Grasp, Massmorph, Maze, Meld, Meld Into Stone, Melf's Acid Arrow, Melf's Minute Meteors, Memory Read, Memory Wrack, Mending, Mental Domination, Message, Messenger, Metamorphose Liquids, Meteor Swarm, Mind Blank, Mind Log 1, Mind Tracker, Mind Read, Mindshatter, Minor Creation, Minor Globe of Invulnerability, Minor Malison, Minor Spell Turning st, Mirage Arcana, Mirror Image, Miscast Magic, Misdirection, Mislead, Mistaken Missive, Modify Memory, Moment st, Moment Reading, Monster Mount, Monster Summoning I, Monster Summoning II, Monster Summoning III, Monster Summoning IV, Monster Summoning V, Monster Summoning VI, Monster Summoning VII, Moonbeam, Morale, Mordenkainen's Celerity, Mordenkainen's Disjunction, Mordenkainen's Faithful Hound, Mordenkainen's Lucubration, Mordenkainen's Magnificent Mansion, Mordenkainen's Sword, Mount, Move Earth, Murdock's Feathery Flyer, Music of the Spheres, Mystic Transfer. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the M section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the M section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the M section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the M section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the M section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the M section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the M section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the M section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcMSchool",
+    "dfcMLevel",
+    "dfcMUsage",
+    "dfcMPr",
+    "dfcMMvMin",
+    "dfcMMvMax",
+    "dfcMTome",
+    "dfcMSpecial"
+   ],
+   "data": [
+    [
+     0,
+     5,
+     4,
+     14,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     8,
+     10,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     8,
+     10,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     1,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     8,
+     1,
+     17,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     1,
+     15,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     5,
+     11,
+     3,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     5,
+     12,
+     4,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     1,
+     17,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     8,
+     11,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     8,
+     12,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     1,
+     13,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     9,
+     8,
+     18,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     2,
+     17,
+     2,
+     2,
+     0,
+     1
+    ],
+    [
+     1,
+     5,
+     5,
+     14,
+     4,
+     4,
+     0,
+     1
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     2,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     1,
+     14,
+     3,
+     4,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     3,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     3,
+     5,
+     12,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     3,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     2,
+     11,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     1,
+     12,
+     4,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     3,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     3,
+     12,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     3,
+     13,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     3,
+     14,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     3,
+     15,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     3,
+     16,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     3,
+     17,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     3,
+     18,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     9,
+     3,
+     18,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     5,
+     2,
+     14,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     1,
+     16,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     1,
+     11,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     1,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcNGrid",
+   "tag": "N",
+   "count": "dfcNCount",
+   "sentinel": -99,
+   "comment": "the N section of the spell dueling roster (printed pp. 180-188): 7 rows, one per dueling spell in printed order - Nahal's Nonsensical Nullified, Nahal's Reckless Dweomer, Nap, Negative Plane Protection, Neutralize Poison, Nondetection, Nystul's Magical Aura. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the N section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the N section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the N section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the N section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the N section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the N section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the N section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the N section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcNSchool",
+    "dfcNLevel",
+    "dfcNUsage",
+    "dfcNPr",
+    "dfcNMvMin",
+    "dfcNMvMax",
+    "dfcNTome",
+    "dfcNSpecial"
+   ],
+   "data": [
+    [
+     1,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcOGrid",
+   "tag": "O",
+   "count": "dfcOCount",
+   "sentinel": -99,
+   "comment": "the O section of the spell dueling roster (printed pp. 180-188): 5 rows, one per dueling spell in printed order - Obscurement, Otiluke's Freezing Sphere, Otiluke's Resilient Sphere, Otiluke's Tele ki netic Sphere, Otto's Irresistible Dance. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the O section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the O section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the O section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the O section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the O section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the O section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the O section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the O section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcOSchool",
+    "dfcOLevel",
+    "dfcOUsage",
+    "dfcOPr",
+    "dfcOMvMin",
+    "dfcOMvMax",
+    "dfcOTome",
+    "dfcOSpecial"
+   ],
+   "data": [
+    [
+     0,
+     2,
+     3,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     9,
+     15,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     4,
+     3,
+     13,
+     2,
+     2,
+     0,
+     1
+    ],
+    [
+     1,
+     8,
+     3,
+     17,
+     2,
+     2,
+     0,
+     1
+    ],
+    [
+     1,
+     8,
+     1,
+     17,
+     1,
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcPGrid",
+   "tag": "P",
+   "count": "dfcPCount",
+   "sentinel": -99,
+   "comment": "the P section of the spell dueling roster (printed pp. 180-188): 46 rows, one per dueling spell in printed order - Part Water, Part Water, Pass Plant, Pass Without Trace, Pass wall, Past Fife, Pattern Weave, Permanency, Permanent Illusion, Personal Reading, Phantasmal Force, Phantasmal Killer, Phantom Steed, Phase Door, Physical Mirror, Plane Shift, Plant Door, Plant Growth, Plant Growth, Polymorph Any Object, Polymorph Other, Polymorph Self, Power Word, Blind, Power Word, Kill, Power Word, Stun, Prayer, Prismatic Sphere, Prismatic Spray, Prismatic Wall, Probability Control, Produce Fire, Produce Flame, Programmed Illusion, Project Image, Protection From Cantrips, Protection From Evil, Protection From Evil, Protection From Evil, 10' Radius, Protection From Evil, 10' Radius, Protection From Fire, Protection From Lightning, Protection From Normal Missiles, Protection From Paralysis, Purify Food & Drink, Pyrotechnics, Pyrotechnics. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the P section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the P section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the P section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the P section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the P section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the P section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the P section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the P section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcPSchool",
+    "dfcPLevel",
+    "dfcPUsage",
+    "dfcPPr",
+    "dfcPMvMin",
+    "dfcPMvMax",
+    "dfcPTome",
+    "dfcPSpecial"
+   ],
+   "data": [
+    [
+     0,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     1,
+     8,
+     4,
+     17,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     6,
+     16,
+     15,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     16,
+     10,
+     3,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     4,
+     1,
+     13,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     3,
+     15,
+     3,
+     3,
+     1,
+     1
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     1,
+     17,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     13,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     1,
+     17,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     1,
+     18,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     1,
+     16,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     3,
+     18,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     1,
+     16,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     3,
+     17,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     1,
+     13,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     8,
+     11,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     16,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     2,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     2,
+     10,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     2,
+     10,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     2,
+     11,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     1,
+     12,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     5,
+     5,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcQGrid",
+   "tag": "Q",
+   "count": "dfcQCount",
+   "sentinel": -99,
+   "comment": "the Q section of the spell dueling roster (printed pp. 180-188): 1 rows, one per dueling spell in printed order - Quest. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the Q section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the Q section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the Q section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the Q section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the Q section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the Q section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the Q section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the Q section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcQSchool",
+    "dfcQLevel",
+    "dfcQUsage",
+    "dfcQPr",
+    "dfcQMvMin",
+    "dfcQMvMax",
+    "dfcQTome",
+    "dfcQSpecial"
+   ],
+   "data": [
+    [
+     0,
+     5,
+     1,
+     14,
+     4,
+     4,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcRGrid",
+   "tag": "R",
+   "count": "dfcRCount",
+   "sentinel": -99,
+   "comment": "the R section of the spell dueling roster (printed pp. 180-188): 29 rows, one per dueling spell in printed order - Rainbow, Rainbow Pattern, Raise Dead, Rally, Random Casualty, Rapport, Rary's Mnemonic Enhancer, Ray of Enfeeblement, Read Magic, Reflecting Pool, Regenerate, Reincarnate, Reincarnation, Remove Curse, Remove Curse, Remove Fear, Remove Paralysis, Repeat Action, Repel Insects, Repulsion, Resist Fire/Resist Cold, Restoration, Resurrection, Reverse Gravity, Reverse Time, Ride the Wind, Rigid Thinking, Ring of Hands r, Rope Trick. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the R section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the R section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the R section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the R section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the R section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the R section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the R section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the R section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcRSchool",
+    "dfcRLevel",
+    "dfcRUsage",
+    "dfcRPr",
+    "dfcRMvMin",
+    "dfcRMvMax",
+    "dfcRTome",
+    "dfcRSpecial"
+   ],
+   "data": [
+    [
+     0,
+     5,
+     8,
+     14,
+     5,
+     5,
+     1,
+     1
+    ],
+    [
+     1,
+     4,
+     5,
+     13,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     5,
+     11,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     2,
+     16,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     6,
+     2,
+     15,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     2,
+     10,
+     2,
+     2,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     5,
+     5,
+     14,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     6,
+     3,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     2,
+     11,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     7,
+     2,
+     16,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     7,
+     1,
+     16,
+     4,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     2,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     1,
+     12,
+     4,
+     4,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcSGrid",
+   "tag": "S",
+   "count": "dfcSCount",
+   "sentinel": -99,
+   "comment": "the S section of the spell dueling roster (printed pp. 180-188): 84 rows, one per dueling spell in printed order - Sacred Guardian, Safeguarding 1, Sanctify 1, Sanctuary, Scare, Screen, Secret Page, Seclusion, Seeming, Sending, Sense Shifting, Sepia Snake Sigil, Serten's Spell Immunity, Shades, Shadowcat, Shadow Door, Shadow Engines st, Shadow Magic, Shadow Monsters, Shadow Walk, Shape Change, Shatter, Shield, Shillelagh, Shocking Grasp, Shout, Shrieking Walls st, Silence, 15' Radius, Simulacrum, Sink, Skip Day, Sleep, Slow, Slow Poison, Slow Rot, Snake Charm, Snare, Sol's Searing Orb, Solid Fog, Solipsism 1, Spacewarp, Speak With Animals, Speak with Astral Traveler, Speak With Dead, Speak With Monsters, Speak With Plants, Spectral Force, Spectral Hand, Spell Immunity, Spell Shape, Spell Turning, Spider Climb, Spike Growth, Spike Stones, Spirit Armor, Spirit of Power, Spiritual Hammer, Spiritual Wrath, Spook, Squaring the Circle, Squeaking Floors, Stabilize, Starshine, Statue, Steal Enchantment, Sticks to Snakes, Stinking Cloud, Stone Shape, Stone Tell, Stone to Flesh, Stoneskin, Strength, Strength of One, Succor, Succor, Suffocate, Suggestion, Summon Insects, Summon Lycanthrope, Summon Shadow, Summon Swarm, Sunray, Symbol, Symbol. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the S section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the S section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the S section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the S section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the S section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the S section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the S section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the S section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcSSchool",
+    "dfcSLevel",
+    "dfcSUsage",
+    "dfcSPr",
+    "dfcSMvMin",
+    "dfcSMvMax",
+    "dfcSTome",
+    "dfcSSpecial"
+   ],
+   "data": [
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     2,
+     2,
+     1,
+     1
+    ],
+    [
+     0,
+     1,
+     2,
+     10,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     5,
+     11,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     2,
+     17,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     2,
+     17,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     3,
+     15,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     3,
+     16,
+     5,
+     5,
+     1,
+     1
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     8,
+     16,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     9,
+     14,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     4,
+     3,
+     13,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     2,
+     18,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     5,
+     11,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     3,
+     10,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     1,
+     10,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     1,
+     14,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     1,
+     11,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     1,
+     17,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     5,
+     10,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     1,
+     12,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     1,
+     12,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     6,
+     8,
+     15,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     4,
+     5,
+     1,
+     1
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     16,
+     12,
+     4,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     7,
+     2,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     7,
+     2,
+     16,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     4,
+     4,
+     0,
+     1
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     1,
+     3,
+     2,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     8,
+     11,
+     2,
+     2,
+     0,
+     1
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     5,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     9,
+     2,
+     18,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     1,
+     13,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     5,
+     15,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     4,
+     2,
+     13,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     9,
+     4,
+     18,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     7,
+     1,
+     16,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     1,
+     12,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     1,
+     12,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     3,
+     13,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     3,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     3,
+     17,
+     1,
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcTGrid",
+   "tag": "T",
+   "count": "dfcTCount",
+   "sentinel": -99,
+   "comment": "the T section of the spell dueling roster (printed pp. 180-188): 37 rows, one per dueling spell in printed order - Tanglefoot st, Tasha's Uncontrollable Hideous Laughter, Taunt, Telekinesis, Telepathy, Teleport, Teleport Without Error, Telethaumaturgy, Temporal Stasis, Tenser's Floating Disc, Tenser's Transformation, Tentacle Walls, There/Not There, Thief's Lament, Thought Broadcast, Thought Capture, Thoughtweave, Thunder Staff, Timelessness, Time Pool, Time Stop, Tongues, Tongues, Transmute Metal to Wood, Transmute Rock to Mud, Transmute Rock to Mud, Transmute Water to Dust, Transmute Water to Dust, Transport Via Plants, Trap the Soul, Tree, Tree Steed, Trip, True Seeing, True Seeing, Turn Wood, Turn Pebble to Boulder. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the T section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the T section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the T section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the T section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the T section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the T section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the T section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the T section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcTSchool",
+    "dfcTLevel",
+    "dfcTUsage",
+    "dfcTPr",
+    "dfcTMvMin",
+    "dfcTMvMax",
+    "dfcTTome",
+    "dfcTSpecial"
+   ],
+   "data": [
+    [
+     0,
+     4,
+     2,
+     13,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     10,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     12,
+     14,
+     4,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     9,
+     1,
+     18,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     3,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     3,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     4,
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     9,
+     1,
+     18,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     1,
+     14,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     4,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     1,
+     17,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     1,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     6,
+     2,
+     15,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcUGrid",
+   "tag": "U",
+   "count": "dfcUCount",
+   "sentinel": -99,
+   "comment": "the U section of the spell dueling roster (printed pp. 180-188): 7 rows, one per dueling spell in printed order - Unceasing Vigilance of the Holy Sentinel, Uncontrolled Weather, Undead Ward, Unearthly Choir, Unluck st, Unseen Servant, Uplift. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the U section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the U section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the U section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the U section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the U section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the U section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the U section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the U section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcUSchool",
+    "dfcULevel",
+    "dfcUUsage",
+    "dfcUPr",
+    "dfcUMvMin",
+    "dfcUMvMax",
+    "dfcUTome",
+    "dfcUSpecial"
+   ],
+   "data": [
+    [
+     0,
+     5,
+     2,
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     5,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     2,
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     13,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     1,
+     1,
+     1,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcVGrid",
+   "tag": "V",
+   "count": "dfcVCount",
+   "sentinel": -99,
+   "comment": "the V section of the spell dueling roster (printed pp. 180-188): 8 rows, one per dueling spell in printed order - Vacancy, Vampiric Touch, Vanish, Veil, Ventriloquism, Vision, Von Gasik's Refusal, Vortex. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the V section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the V section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the V section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the V section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the V section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the V section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the V section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the V section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcVSchool",
+    "dfcVLevel",
+    "dfcVUsage",
+    "dfcVPr",
+    "dfcVMvMin",
+    "dfcVMvMax",
+    "dfcVTome",
+    "dfcVSpecial"
+   ],
+   "data": [
+    [
+     1,
+     4,
+     4,
+     13,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     1,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     2,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     16,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     2,
+     14,
+     4,
+     5,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     1,
+     14,
+     3,
+     3,
+     1,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcWGrid",
+   "tag": "W",
+   "count": "dfcWCount",
+   "sentinel": -99,
+   "comment": "the W section of the spell dueling roster (printed pp. 180-188): 37 rows, one per dueling spell in printed order - Wail of the Banshee, Wall of Fire, Wall of Fire, Wall of Fog, Wall of Force, Wall of Ice, Wall of Iron, Wall of Stone, Wall of Thorns, Warp Wood, Water Breathing, Water Breathing, Water Walk, Watery Double st, Waveform 1, Weather Stasis, Weather Summoning, Web, Weighty Chest, Weird, Whispering Wind, Wildfire, Wildshield, Wildstrike, Wildwind st, Wildzone, Wind Walk, Wind Wall, Wish, Withdraw, Wizard Eye, Wizard Lock, Wizard Mark, Wizard Sight, Word of Recall, Wraithform, Wyvern Watch. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the W section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the W section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the W section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the W section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the W section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the W section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the W section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the W section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcWSchool",
+    "dfcWLevel",
+    "dfcWUsage",
+    "dfcWPr",
+    "dfcWMvMin",
+    "dfcWMvMax",
+    "dfcWTome",
+    "dfcWSpecial"
+   ],
+   "data": [
+    [
+     1,
+     9,
+     1,
+     18,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     5,
+     3,
+     14,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     3,
+     13,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     3,
+     10,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     1,
+     5,
+     3,
+     14,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     1,
+     4,
+     3,
+     13,
+     4,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     3,
+     14,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     3,
+     14,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     3,
+     15,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     1,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     5,
+     4,
+     14,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     4,
+     4,
+     13,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     11,
+     2,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     4,
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     9,
+     1,
+     18,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     4,
+     18,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     3,
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     6,
+     1,
+     15,
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     9,
+     1,
+     18,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     4,
+     17,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     7,
+     4,
+     16,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     3,
+     12,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     1,
+     9,
+     16,
+     18,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     2,
+     11,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     4,
+     4,
+     13,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     4,
+     11,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     10,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     15,
+     5,
+     5,
+     0,
+     1
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     3,
+     11,
+     3,
+     3,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfcZGrid",
+   "tag": "Z",
+   "count": "dfcZCount",
+   "sentinel": -99,
+   "comment": "the Z section of the spell dueling roster (printed pp. 180-188): 2 rows, one per dueling spell in printed order - Zone of Sweet Air st, Zone of Truth. The columns: school 0 = priest, 1 = wizard; level 1-9; usage the A/D/L/M/Any bitmask (A 1, D 2, L 4, M 8, Any 16, combinations summed); PR the power rating; MV the movement minimum and maximum; the dagger mark 1 = the spell is from the Tome of Magic; the asterisk mark 1 = the spell has a Chapter 5 special dueling effect.",
+   "col_comments": [
+    "the Z section school column: 0 = priest, 1 = wizard, in printed order (printed pp. 180-188).",
+    "the Z section level column: the (W n)/(P n) level 1-9 in printed order (printed pp. 180-188).",
+    "the Z section usage column: the A/D/L/M/Any bitmask in printed order - the 38 F reads pin as the leech mask 4 and Thought Capture pins as 0 as printed (printed pp. 180-188).",
+    "the Z section power rating column: PR 10-19 in printed order, the level-plus-nine doctrine with the printed exceptions pinned as printed (printed pp. 180-188).",
+    "the Z section movement minimum column: MV 1-5 (printed pp. 180-188).",
+    "the Z section movement maximum column: MV 1-5, equal to the minimum for single-value entries (printed pp. 180-188).",
+    "the Z section Tome of Magic mark column: 1 where the printed dagger stands (printed pp. 180-188).",
+    "the Z section special-effect mark column: 1 where the printed asterisk stands (printed pp. 180-188)."
+   ],
+   "cols": [
+    "dfcZSchool",
+    "dfcZLevel",
+    "dfcZUsage",
+    "dfcZPr",
+    "dfcZMvMin",
+    "dfcZMvMax",
+    "dfcZTome",
+    "dfcZSpecial"
+   ],
+   "data": [
+    [
+     0,
+     3,
+     2,
+     12,
+     3,
+     5,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     4,
+     11,
+     3,
+     3,
+     1,
+     0
+    ]
+   ]
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the section counts sum to the full roster (printed pp. 180-188)",
+   "expr": "m['dfcACount']() + m['dfcBCount']() + m['dfcCCount']() + m['dfcDCount']() + m['dfcECount']() + m['dfcFCount']() + m['dfcGCount']() + m['dfcHCount']() + m['dfcICount']() + m['dfcJCount']() + m['dfcKCount']() + m['dfcLCount']() + m['dfcMCount']() + m['dfcNCount']() + m['dfcOCount']() + m['dfcPCount']() + m['dfcQCount']() + m['dfcRCount']() + m['dfcSCount']() + m['dfcTCount']() + m['dfcUCount']() + m['dfcVCount']() + m['dfcWCount']() + m['dfcZCount']() != 707 or m['dfcRosterCount']() != 707"
+  },
+  {
+   "note": "the A section count (printed pp. 180-188)",
+   "expr": "m['dfcACount']() != 49"
+  },
+  {
+   "note": "the B section count (printed pp. 180-188)",
+   "expr": "m['dfcBCount']() != 22"
+  },
+  {
+   "note": "the C section count (printed pp. 180-188)",
+   "expr": "m['dfcCCount']() != 72"
+  },
+  {
+   "note": "the D section count (printed pp. 180-188)",
+   "expr": "m['dfcDCount']() != 47"
+  },
+  {
+   "note": "the E section count (printed pp. 180-188)",
+   "expr": "m['dfcECount']() != 31"
+  },
+  {
+   "note": "the F section count (printed pp. 180-188)",
+   "expr": "m['dfcFCount']() != 46"
+  },
+  {
+   "note": "the G section count (printed pp. 180-188)",
+   "expr": "m['dfcGCount']() != 22"
+  },
+  {
+   "note": "the H section count (printed pp. 180-188)",
+   "expr": "m['dfcHCount']() != 24"
+  },
+  {
+   "note": "the I section count (printed pp. 180-188)",
+   "expr": "m['dfcICount']() != 26"
+  },
+  {
+   "note": "the J section count (printed pp. 180-188)",
+   "expr": "m['dfcJCount']() != 2"
+  },
+  {
+   "note": "the K section count (printed pp. 180-188)",
+   "expr": "m['dfcKCount']() != 8"
+  },
+  {
+   "note": "the L section count (printed pp. 180-188)",
+   "expr": "m['dfcLCount']() != 26"
+  },
+  {
+   "note": "the M section count (printed pp. 180-188)",
+   "expr": "m['dfcMCount']() != 69"
+  },
+  {
+   "note": "the N section count (printed pp. 180-188)",
+   "expr": "m['dfcNCount']() != 7"
+  },
+  {
+   "note": "the O section count (printed pp. 180-188)",
+   "expr": "m['dfcOCount']() != 5"
+  },
+  {
+   "note": "the P section count (printed pp. 180-188)",
+   "expr": "m['dfcPCount']() != 46"
+  },
+  {
+   "note": "the Q section count (printed pp. 180-188)",
+   "expr": "m['dfcQCount']() != 1"
+  },
+  {
+   "note": "the R section count (printed pp. 180-188)",
+   "expr": "m['dfcRCount']() != 29"
+  },
+  {
+   "note": "the S section count (printed pp. 180-188)",
+   "expr": "m['dfcSCount']() != 84"
+  },
+  {
+   "note": "the T section count (printed pp. 180-188)",
+   "expr": "m['dfcTCount']() != 37"
+  },
+  {
+   "note": "the U section count (printed pp. 180-188)",
+   "expr": "m['dfcUCount']() != 7"
+  },
+  {
+   "note": "the V section count (printed pp. 180-188)",
+   "expr": "m['dfcVCount']() != 8"
+  },
+  {
+   "note": "the W section count (printed pp. 180-188)",
+   "expr": "m['dfcWCount']() != 37"
+  },
+  {
+   "note": "the Z section count (printed pp. 180-188)",
+   "expr": "m['dfcZCount']() != 2"
+  },
+  {
+   "note": "the roster opens on Abi-Dalzim's Horrid Wilting (printed p. 180)",
+   "expr": "m['dfcASchool'](0) != 1 or m['dfcALevel'](0) != 8 or m['dfcAUsage'](0) != 1 or m['dfcAPr'](0) != 17 or m['dfcAMvMin'](0) != 2 or m['dfcAMvMax'](0) != 2 or m['dfcATome'](0) != 1 or m['dfcASpecial'](0) != 0"
+  },
+  {
+   "note": "the roster closes on Zone of Truth (printed p. 188)",
+   "expr": "m['dfcZSchool'](1) != 0 or m['dfcZLevel'](1) != 2 or m['dfcZUsage'](1) != 4 or m['dfcZPr'](1) != 11 or m['dfcZMvMin'](1) != 3 or m['dfcZTome'](1) != 1 or m['dfcZSpecial'](1) != 0"
+  },
+  {
+   "note": "the four printed PR exceptions pin as printed (printed pp. 181-182)",
+   "expr": "m['dfcCPr'](49) != 15 or m['dfcCLevel'](49) != 5 or m['dfcDPr'](29) != 19 or m['dfcDLevel'](29) != 5 or m['dfcFPr'](21) != 19 or m['dfcFLevel'](21) != 4 or m['dfcFPr'](45) != 19 or m['dfcFLevel'](45) != 4"
+  },
+  {
+   "note": "the PR exception census (printed pp. 180-188)",
+   "expr": "m['dfcPrExceptionCount']() != 4 or m['dfcPrBase']() != 9 or m['dfcMinPr']() != 10 or m['dfcMaxPr']() != 18 or m['dfcMaxPrPrinted']() != 19"
+  },
+  {
+   "note": "the Thought Capture usage quirk (printed p. 187)",
+   "expr": "m['dfcTUsage'](15) != 0 or m['dfcTLevel'](15) != 1 or m['dfcTPr'](15) != 10 or m['dfcTMvMin'](15) != 1 or m['dfcTTome'](15) != 1"
+  },
+  {
+   "note": "the F-read class: Fire Charm pins as the leech mask (printed pp. 180-188)",
+   "expr": "m['dfcFUsage'](17) != 4"
+  },
+  {
+   "note": "the F-read class: Explosive Runes pins as the leech mask (printed pp. 180-188)",
+   "expr": "m['dfcEUsage'](23) != 4"
+  },
+  {
+   "note": "the F-read class: Murdock's Feathery Flyer pins as the leech mask (printed pp. 180-188)",
+   "expr": "m['dfcMUsage'](66) != 4"
+  },
+  {
+   "note": "the F-read class: Nap pins as the leech mask (printed pp. 180-188)",
+   "expr": "m['dfcNUsage'](2) != 4"
+  },
+  {
+   "note": "the F-read class: Nondetection pins as the leech mask (printed pp. 180-188)",
+   "expr": "m['dfcNUsage'](5) != 4"
+  },
+  {
+   "note": "the F-read class: Part Water pins as the leech mask (printed pp. 180-188)",
+   "expr": "m['dfcPUsage'](0) != 4"
+  },
+  {
+   "note": "the F-read class: Pass wall pins as the leech mask (printed pp. 180-188)",
+   "expr": "m['dfcPUsage'](4) != 4"
+  },
+  {
+   "note": "the F-read class: Purify Food & Drink pins as the leech mask (printed pp. 180-188)",
+   "expr": "m['dfcPUsage'](43) != 4"
+  },
+  {
+   "note": "the F-read class census (printed pp. 180-188)",
+   "expr": "m['dfcFReadCount']() != 38 or m['dfcFReadPinnedMask']() != 4"
+  },
+  {
+   "note": "the usage bitmask values (printed p. 180)",
+   "expr": "m['dfcUsageMaskA']() != 1 or m['dfcUsageMaskD']() != 2 or m['dfcUsageMaskL']() != 4 or m['dfcUsageMaskM']() != 8 or m['dfcUsageMaskAny']() != 16"
+  },
+  {
+   "note": "the Any-function class pins (printed pp. 180-188)",
+   "expr": "m['dfcPUsage'](10) != 16 or m['dfcAnyCount']() != 8"
+  },
+  {
+   "note": "the movement range pin: Affect Normal Fires MV 2-5 (printed p. 180)",
+   "expr": "m['dfcAMvMin'](8) != 2 or m['dfcAMvMax'](8) != 5"
+  },
+  {
+   "note": "the single-value movement pin: Armor MV 1 (printed p. 180)",
+   "expr": "m['dfcAMvMin'](38) != 1 or m['dfcAMvMax'](38) != 1"
+  },
+  {
+   "note": "the merged-glyph mark class pins both marks (printed pp. 180-188)",
+   "expr": "m['dfcGTome'](12) != 1 or m['dfcGSpecial'](12) != 1 or m['dfcCTome'](21) != 1 or m['dfcFTome'](45) != 1 or m['dfcFSpecial'](45) != 1"
+  },
+  {
+   "note": "the second-printing Tome of Magic entry Mind Tracker (printed p. 185)",
+   "expr": "m['dfcMTome'](32) != 1 or m['dfcMSpecial'](32) != 0 or m['dfcMLevel'](32) != 7 or m['dfcMPr'](32) != 16"
+  },
+  {
+   "note": "the teleportation group special marks (printed pp. 180-188)",
+   "expr": "m['dfcTSpecial'](5) != 1 or m['dfcTSpecial'](6) != 1"
+  },
+  {
+   "note": "the Chapter 3 clarification marks print on the roster (printed p. 180)",
+   "expr": "m['dfcCSpecial'](40) != 1 or m['dfcCTome'](40) != 0"
+  },
+  {
+   "note": "the Crystalbrittle both-mark pin (printed pp. 180-188)",
+   "expr": "m['dfcCTome'](66) != 1 or m['dfcCSpecial'](66) != 1"
+  },
+  {
+   "note": "the mark censuses (printed pp. 180-188)",
+   "expr": "m['dfcTomeMarkedCount']() != 209 or m['dfcSpecialMarkedCount']() != 148"
+  },
+  {
+   "note": "the school codes (printed pp. 180-188)",
+   "expr": "m['dfcSchoolPriest']() != 0 or m['dfcSchoolWizard']() != 1"
+  },
+  {
+   "note": "the section size extremes (printed pp. 180-188)",
+   "expr": "m['dfcMaxSectionCount']() != 84 or m['dfcMinSectionCount']() != 1 or m['dfcSectionCount']() != 24"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dfcRosterCount pin",
+   "expr": "m['dfcRosterCount']() != 707"
+  },
+  {
+   "note": "the dfcSectionCount pin",
+   "expr": "m['dfcSectionCount']() != 24"
+  },
+  {
+   "note": "the dfcMaxSectionCount pin",
+   "expr": "m['dfcMaxSectionCount']() != 84"
+  },
+  {
+   "note": "the dfcMinSectionCount pin",
+   "expr": "m['dfcMinSectionCount']() != 1"
+  },
+  {
+   "note": "the dfcPrBase pin",
+   "expr": "m['dfcPrBase']() != 9"
+  },
+  {
+   "note": "the dfcMinPr pin",
+   "expr": "m['dfcMinPr']() != 10"
+  },
+  {
+   "note": "the dfcMaxPr pin",
+   "expr": "m['dfcMaxPr']() != 18"
+  },
+  {
+   "note": "the dfcMaxPrPrinted pin",
+   "expr": "m['dfcMaxPrPrinted']() != 19"
+  },
+  {
+   "note": "the dfcPrExceptionCount pin",
+   "expr": "m['dfcPrExceptionCount']() != 4"
+  },
+  {
+   "note": "the dfcMinLevel pin",
+   "expr": "m['dfcMinLevel']() != 1"
+  },
+  {
+   "note": "the dfcMaxLevel pin",
+   "expr": "m['dfcMaxLevel']() != 9"
+  },
+  {
+   "note": "the dfcMinMv pin",
+   "expr": "m['dfcMinMv']() != 1"
+  },
+  {
+   "note": "the dfcMaxMv pin",
+   "expr": "m['dfcMaxMv']() != 5"
+  },
+  {
+   "note": "the dfcUsageMaskA pin",
+   "expr": "m['dfcUsageMaskA']() != 1"
+  },
+  {
+   "note": "the dfcUsageMaskD pin",
+   "expr": "m['dfcUsageMaskD']() != 2"
+  },
+  {
+   "note": "the dfcUsageMaskL pin",
+   "expr": "m['dfcUsageMaskL']() != 4"
+  },
+  {
+   "note": "the dfcUsageMaskM pin",
+   "expr": "m['dfcUsageMaskM']() != 8"
+  },
+  {
+   "note": "the dfcUsageMaskAny pin",
+   "expr": "m['dfcUsageMaskAny']() != 16"
+  },
+  {
+   "note": "the dfcSchoolPriest pin",
+   "expr": "m['dfcSchoolPriest']() != 0"
+  },
+  {
+   "note": "the dfcSchoolWizard pin",
+   "expr": "m['dfcSchoolWizard']() != 1"
+  },
+  {
+   "note": "the dfcFReadCount pin",
+   "expr": "m['dfcFReadCount']() != 38"
+  },
+  {
+   "note": "the dfcFReadPinnedMask pin",
+   "expr": "m['dfcFReadPinnedMask']() != 4"
+  },
+  {
+   "note": "the dfcTomeMarkedCount pin",
+   "expr": "m['dfcTomeMarkedCount']() != 209"
+  },
+  {
+   "note": "the dfcSpecialMarkedCount pin",
+   "expr": "m['dfcSpecialMarkedCount']() != 148"
+  },
+  {
+   "note": "the dfcThoughtCaptureUsage pin",
+   "expr": "m['dfcThoughtCaptureUsage']() != 0"
+  },
+  {
+   "note": "the dfcAnyCount pin",
+   "expr": "m['dfcAnyCount']() != 8"
+  },
+  {
+   "note": "the dfcACount pin",
+   "expr": "m['dfcACount']() != 49"
+  },
+  {
+   "note": "the dfcBCount pin",
+   "expr": "m['dfcBCount']() != 22"
+  },
+  {
+   "note": "the dfcCCount pin",
+   "expr": "m['dfcCCount']() != 72"
+  },
+  {
+   "note": "the dfcDCount pin",
+   "expr": "m['dfcDCount']() != 47"
+  },
+  {
+   "note": "the dfcECount pin",
+   "expr": "m['dfcECount']() != 31"
+  },
+  {
+   "note": "the dfcFCount pin",
+   "expr": "m['dfcFCount']() != 46"
+  },
+  {
+   "note": "the dfcGCount pin",
+   "expr": "m['dfcGCount']() != 22"
+  },
+  {
+   "note": "the dfcHCount pin",
+   "expr": "m['dfcHCount']() != 24"
+  },
+  {
+   "note": "the dfcICount pin",
+   "expr": "m['dfcICount']() != 26"
+  },
+  {
+   "note": "the dfcJCount pin",
+   "expr": "m['dfcJCount']() != 2"
+  },
+  {
+   "note": "the dfcKCount pin",
+   "expr": "m['dfcKCount']() != 8"
+  },
+  {
+   "note": "the dfcLCount pin",
+   "expr": "m['dfcLCount']() != 26"
+  },
+  {
+   "note": "the dfcMCount pin",
+   "expr": "m['dfcMCount']() != 69"
+  },
+  {
+   "note": "the dfcNCount pin",
+   "expr": "m['dfcNCount']() != 7"
+  },
+  {
+   "note": "the dfcOCount pin",
+   "expr": "m['dfcOCount']() != 5"
+  },
+  {
+   "note": "the dfcPCount pin",
+   "expr": "m['dfcPCount']() != 46"
+  },
+  {
+   "note": "the dfcQCount pin",
+   "expr": "m['dfcQCount']() != 1"
+  },
+  {
+   "note": "the dfcRCount pin",
+   "expr": "m['dfcRCount']() != 29"
+  },
+  {
+   "note": "the dfcSCount pin",
+   "expr": "m['dfcSCount']() != 84"
+  },
+  {
+   "note": "the dfcTCount pin",
+   "expr": "m['dfcTCount']() != 37"
+  },
+  {
+   "note": "the dfcUCount pin",
+   "expr": "m['dfcUCount']() != 7"
+  },
+  {
+   "note": "the dfcVCount pin",
+   "expr": "m['dfcVCount']() != 8"
+  },
+  {
+   "note": "the dfcWCount pin",
+   "expr": "m['dfcWCount']() != 37"
+  },
+  {
+   "note": "the dfcZCount pin",
+   "expr": "m['dfcZCount']() != 2"
+  },
+  {
+   "note": "the dfcLegendA pin",
+   "expr": "m['dfcLegendA']() != 1"
+  },
+  {
+   "note": "the dfcLegendD pin",
+   "expr": "m['dfcLegendD']() != 1"
+  },
+  {
+   "note": "the dfcLegendL pin",
+   "expr": "m['dfcLegendL']() != 1"
+  },
+  {
+   "note": "the dfcLegendM pin",
+   "expr": "m['dfcLegendM']() != 1"
+  },
+  {
+   "note": "the dfcLegendAd pin",
+   "expr": "m['dfcLegendAd']() != 1"
+  },
+  {
+   "note": "the dfcLegendAny pin",
+   "expr": "m['dfcLegendAny']() != 1"
+  },
+  {
+   "note": "the dfcLegendTomeMark pin",
+   "expr": "m['dfcLegendTomeMark']() != 1"
+  },
+  {
+   "note": "the dfcLegendSpecialMark pin",
+   "expr": "m['dfcLegendSpecialMark']() != 1"
+  },
+  {
+   "note": "the dfcPrLevelPlus9 pin",
+   "expr": "m['dfcPrLevelPlus9']() != 1"
+  },
+  {
+   "note": "the dfcCodesDuelOnly pin",
+   "expr": "m['dfcCodesDuelOnly']() != 1"
+  },
+  {
+   "note": "the dfcFReadsAreLeech pin",
+   "expr": "m['dfcFReadsAreLeech']() != 1"
+  },
+  {
+   "note": "the dfcThoughtCapturePrintsDigit pin",
+   "expr": "m['dfcThoughtCapturePrintsDigit']() != 1"
+  },
+  {
+   "note": "the dfcPrExceptionsAsPrinted pin",
+   "expr": "m['dfcPrExceptionsAsPrinted']() != 1"
+  },
+  {
+   "note": "the dfcBarkskinMissingComma pin",
+   "expr": "m['dfcBarkskinMissingComma']() != 1"
+  },
+  {
+   "note": "the dfcIndexClosesDmoArc pin",
+   "expr": "m['dfcIndexClosesDmoArc']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the DMO roster doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dfcRosterCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfcSectionCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfcMaxSectionCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfcMinSectionCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfcPrBase"
+   },
+   {
+    "kind": "const",
+    "name": "dfcMinPr"
+   },
+   {
+    "kind": "const",
+    "name": "dfcMaxPr"
+   },
+   {
+    "kind": "const",
+    "name": "dfcMaxPrPrinted"
+   },
+   {
+    "kind": "const",
+    "name": "dfcPrExceptionCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfcMinLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfcMaxLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfcMinMv"
+   },
+   {
+    "kind": "const",
+    "name": "dfcMaxMv"
+   },
+   {
+    "kind": "const",
+    "name": "dfcUsageMaskA"
+   },
+   {
+    "kind": "const",
+    "name": "dfcUsageMaskD"
+   },
+   {
+    "kind": "const",
+    "name": "dfcUsageMaskL"
+   },
+   {
+    "kind": "const",
+    "name": "dfcUsageMaskM"
+   },
+   {
+    "kind": "const",
+    "name": "dfcUsageMaskAny"
+   },
+   {
+    "kind": "const",
+    "name": "dfcSchoolPriest"
+   },
+   {
+    "kind": "const",
+    "name": "dfcSchoolWizard"
+   },
+   {
+    "kind": "const",
+    "name": "dfcFReadCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfcFReadPinnedMask"
+   },
+   {
+    "kind": "const",
+    "name": "dfcTomeMarkedCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfcSpecialMarkedCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfcThoughtCaptureUsage"
+   },
+   {
+    "kind": "const",
+    "name": "dfcAnyCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcLegendA"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcLegendD"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcLegendL"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcLegendM"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcLegendAd"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcLegendAny"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcLegendTomeMark"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcLegendSpecialMark"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcPrLevelPlus9"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcCodesDuelOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcFReadsAreLeech"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcThoughtCapturePrintsDigit"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcPrExceptionsAsPrinted"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcBarkskinMissingComma"
+   },
+   {
+    "kind": "bool",
+    "name": "dfcIndexClosesDmoArc"
+   }
+  ],
+  "the DMO dueling roster A section pins": [
+   {
+    "kind": "const",
+    "name": "dfcACount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcAGrid"
+   }
+  ],
+  "the DMO dueling roster B section pins": [
+   {
+    "kind": "const",
+    "name": "dfcBCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcBGrid"
+   }
+  ],
+  "the DMO dueling roster C section pins": [
+   {
+    "kind": "const",
+    "name": "dfcCCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcCGrid"
+   }
+  ],
+  "the DMO dueling roster D section pins": [
+   {
+    "kind": "const",
+    "name": "dfcDCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcDGrid"
+   }
+  ],
+  "the DMO dueling roster E section pins": [
+   {
+    "kind": "const",
+    "name": "dfcECount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcEGrid"
+   }
+  ],
+  "the DMO dueling roster F section pins": [
+   {
+    "kind": "const",
+    "name": "dfcFCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcFGrid"
+   }
+  ],
+  "the DMO dueling roster G section pins": [
+   {
+    "kind": "const",
+    "name": "dfcGCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcGGrid"
+   }
+  ],
+  "the DMO dueling roster H section pins": [
+   {
+    "kind": "const",
+    "name": "dfcHCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcHGrid"
+   }
+  ],
+  "the DMO dueling roster I section pins": [
+   {
+    "kind": "const",
+    "name": "dfcICount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcIGrid"
+   }
+  ],
+  "the DMO dueling roster J section pins": [
+   {
+    "kind": "const",
+    "name": "dfcJCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcJGrid"
+   }
+  ],
+  "the DMO dueling roster K section pins": [
+   {
+    "kind": "const",
+    "name": "dfcKCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcKGrid"
+   }
+  ],
+  "the DMO dueling roster L section pins": [
+   {
+    "kind": "const",
+    "name": "dfcLCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcLGrid"
+   }
+  ],
+  "the DMO dueling roster M section pins": [
+   {
+    "kind": "const",
+    "name": "dfcMCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcMGrid"
+   }
+  ],
+  "the DMO dueling roster N section pins": [
+   {
+    "kind": "const",
+    "name": "dfcNCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcNGrid"
+   }
+  ],
+  "the DMO dueling roster O section pins": [
+   {
+    "kind": "const",
+    "name": "dfcOCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcOGrid"
+   }
+  ],
+  "the DMO dueling roster P section pins": [
+   {
+    "kind": "const",
+    "name": "dfcPCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcPGrid"
+   }
+  ],
+  "the DMO dueling roster Q section pins": [
+   {
+    "kind": "const",
+    "name": "dfcQCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcQGrid"
+   }
+  ],
+  "the DMO dueling roster R section pins": [
+   {
+    "kind": "const",
+    "name": "dfcRCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcRGrid"
+   }
+  ],
+  "the DMO dueling roster S section pins": [
+   {
+    "kind": "const",
+    "name": "dfcSCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcSGrid"
+   }
+  ],
+  "the DMO dueling roster T section pins": [
+   {
+    "kind": "const",
+    "name": "dfcTCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcTGrid"
+   }
+  ],
+  "the DMO dueling roster U section pins": [
+   {
+    "kind": "const",
+    "name": "dfcUCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcUGrid"
+   }
+  ],
+  "the DMO dueling roster V section pins": [
+   {
+    "kind": "const",
+    "name": "dfcVCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcVGrid"
+   }
+  ],
+  "the DMO dueling roster W section pins": [
+   {
+    "kind": "const",
+    "name": "dfcWCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcWGrid"
+   }
+  ],
+  "the DMO dueling roster Z section pins": [
+   {
+    "kind": "const",
+    "name": "dfcZCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfcZGrid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Appendix box closes",
+   "from": "- [ ] **Appendix: Spell Dueling Characteristics**\n  (pp. 180-188) - the per-spell dueling roster (the\n  PR/MV/A/L/D codes for every dueling spell)",
+   "to": "- [x] **Appendix: Spell Dueling Characteristics**\n  (pp. 180-188) - the per-spell dueling roster (the\n  PR/MV/A/L/D codes for every dueling spell) - R613:\n  the dfc roster grids - 24 letter sections, 707\n  spells, the usage bitmask (A/D/L/M/Any), the PR\n  level-plus-nine doctrine with its four printed\n  exceptions, the MV ranges, the Tome of Magic\n  daggers and the Chapter 5 special-effect\n  asterisks)"
+  },
+  {
+   "note": "the Index box closes",
+   "from": "- [ ] **Index** (pp. 189-192) - the closing index",
+   "to": "- [x] **Index** (pp. 189-192) - the closing index -\n    R613: the Index flips with the roster round; the\n    DMO gap report closes at 96 boxes, 96 closed,\n    0 open - the full DMO arc lands R599 through\n    R613"
+  }
+ ],
+ "gap_census": {
+  "closed": 95,
+  "open": 1
+ },
+ "caller_files": [],
+ "inline_count": 257,
+ "audit_comment": "DMO round fifteen and last (printed pp. 180-192): the full spell dueling roster - 707 entries in 24 letter sections, each with school, level, the A/D/L/M/Any usage bitmask, the PR level-plus-nine doctrine and its four printed exceptions, the MV ranges, the Tome of Magic daggers and the Chapter 5 special-effect asterisks - plus the closing Index; the DMO gap report ends at 96 closed and 0 open."
+}

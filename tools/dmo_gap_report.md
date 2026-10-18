@@ -610,10 +610,20 @@ tables are data and close on table pins.
     three, the Table 59 offering roll, the heroic
     task, no ability under 13, the demigod NPC
     ending, heroes not gods)
-- [ ] **Appendix: Spell Dueling Characteristics**
+- [x] **Appendix: Spell Dueling Characteristics**
   (pp. 180-188) - the per-spell dueling roster (the
-  PR/MV/A/L/D codes for every dueling spell)
-- [ ] **Index** (pp. 189-192) - the closing index
+  PR/MV/A/L/D codes for every dueling spell) - R613:
+  the dfc roster grids - 24 letter sections, 707
+  spells, the usage bitmask (A/D/L/M/Any), the PR
+  level-plus-nine doctrine with its four printed
+  exceptions, the MV ranges, the Tome of Magic
+  daggers and the Chapter 5 special-effect
+  asterisks)
+- [x] **Index** (pp. 189-192) - the closing index -
+    R613: the Index flips with the roster round; the
+    DMO gap report closes at 96 boxes, 96 closed,
+    0 open - the full DMO arc lands R599 through
+    R613
 
 ## Census
 

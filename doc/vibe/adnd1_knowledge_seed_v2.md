@@ -11512,6 +11512,57 @@ when both halves land.
   (dfb family next). Audit: "R612
   DMO demihumans-ascension audit";
   include after rules/dmohighrogues.h.
+- R612 LANDED 2026-10-18: commit
+  2ff6ba87f1715469ed87c8d6492a93be
+  25c1f6b3 (census 534 -> 535,
+  pushed 1de9c4b..2ff6ba8), DEMIHUMANS
+  AND DIVINE ASCENSION, printed pp. 178-
+  179, DMO Chapter 7 round five of five
+  per the split plan - THREE boxes flip
+  (Demihumans, Beyond 30th / Divine
+  Ascension, AND the Chapter 7 PARENT;
+  gap census now 93 closed / 3 open;
+  Chapter 7 fully closed across
+  R608-R612): rules/dmohighascend.h,
+  prefix dfb (verified free), 54
+  inlines (10 consts, 44 bools, no
+  chains or grids - a prose-only round;
+  both captures agree on every number,
+  only the standing lOth-for-10th OCR
+  misread on the transformation and
+  imbue spell names, settled per the
+  index), 54 examples, 4 table_checks,
+  54-mutant battery 0 missed. The
+  demihuman doctrine and its four
+  solutions (wish or 10th-level
+  transformation to human; wish or
+  imbue per level beyond the racial
+  max with earned XP; Slow Advancement
+  with humans pulling ahead from 10th;
+  slow-after-max with the racial heroic
+  task), the 30th-level ceiling, and
+  the full ascension path (seek after
+  20th, the sponsor, the gift at the
+  XP-total value, the 500K-per-save-
+  point benefit to a minimum of three,
+  the Table 59 offering roll, the
+  heroic task with five examples, no
+  ability under 13, the demigod NPC
+  ending, heroes not gods). DELIVERY:
+  raw JSON in the canvas (user-set:
+  b64 NOT needed), spec 30792 bytes,
+  md5 7573d01110738825393f70488b2f05fc
+  verified byte-exact before ./rn. NEXT
+  - R613: the Appendix - Spell Dueling
+  Characteristics (pp. 180-188, the
+  per-spell PR/MV/A/L/D roster - a big
+  grid round) then the Index (pp.
+  189-192) closes the DMO arc; consult
+  the gap report at HEAD 2ff6ba8;
+  verify next prefix free (dfc family
+  next). Audit: "R613 DMO dueling
+  appendix audit"; include after
+  rules/dmohighascend.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
