@@ -11759,6 +11759,35 @@ when both halves land.
   (verify free), audit "R618 OA
   races audit", include after rules/
   oaclasscombos.h.
+- R618 LANDED 2026-10-18: commit
+  7305a1fa0c38e5274e868458c6ea3861b
+  e28547c (census 540 -> 541,
+  pushed 0659a83..7305a1f), THE
+  ORIENTAL RACES, capture pp. 17-22:
+  rules/oaraces.h, prefix dge, 70
+  inlines - the korobokuru, hengeyokai
+  (T11 12x10) and the three spirit folk
+  with their life-force ties. THE 4 1/2
+  SAGA: the first capture prints 41h;
+  THE USER UPLOADED THE 2018 PRINT
+  (145 capture pages, DIFFERENT
+  PAGINATION - its cites never mix),
+  which reads 4 1/2 CLEAN - 41h was a
+  transcription artifact, NOT a printed
+  misprint; the divisor-2 pin held
+  throughout. DOCTRINE: the 2018-print
+  capture is the SETTLING SOURCE for
+  contested cells. THE R618 v3
+  ADJUDICATION AMENDMENT (comment-  only: spec 08fa91d7 -> 9ea88b9e,
+  oaraces.h 3786b6c2 -> 615b853c)
+  missed the R618 push - FOLDED INTO
+  THE R619 PUSH (this round). Battery
+  180 mutants, 0 missed; gap census
+  23/212 -> 27/208. NEXT - R619: the
+  Barbarian and Bushi with Tables
+  14-17, prefix dgf (verify free),
+  audit "R619 OA barbarian bushi
+  audit", include after rules/oaraces.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

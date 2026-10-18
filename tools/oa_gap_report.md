@@ -289,15 +289,48 @@ description riding the same round.
     force), the sea pair (the 75-percent 24-
     hour weather forecast, the fire save, the
     yearly favor and the honor-85 gift)
-  - [ ] Barbarian (capture pp. 23-27) - the class
-    doctrine, the special abilities and penalties
-  - [ ] Table 14: Barbarians (capture p. 24)
-  - [ ] Table 15: Barbarian Bonuses (capture p. 25)
-  - [ ] Table 16: Barbarian Capabilities (capture
-    p. 25)
-  - [ ] Bushi (capture pp. 27-28) - the peasant
-    soldier class
-  - [ ] Table 17: Bushi (capture p. 27)
+  - [x] Barbarian (capture pp. 23-27) - the class
+    doctrine, the special abilities and penalties -
+    R619: the dgf barbarian pins - the d12 die and
+    the +2-per-Con-point-over-14 bonus, the
+    magic hatred with the xp rules, the six
+    first-level capabilities (the half-chance
+    climb and hide riders, the 3-in-6 surprise,
+    the 5-percent back protection with the
+    free attack, the leap distances, the
+    illusion and magic detections), the three
+    territories with their counts, the
+    outsider doctrine and the horde (the
+    xp-over-2000 size, the aide ladder, the
+    fixed purpose, the 1 1/2-times-weeks
+    max)
+  - [x] Table 14: Barbarians (capture p. 24) -
+    R619: the dgf T14 grid - eleven rows of xp bounds
+    and accumulated d12 dice with the 8-plus-N
+    bonus cells, plus the 500,000-xp and
+    4-hp beyond-11th/8th notes
+  - [x] Table 15: Barbarian Bonuses (capture p. 25) -
+    R619: the dgf T15 grid - ten bonus rows as coded
+    levels 3-12 with the save bonuses as
+    their own column (+1, +2, +3)
+  - [x] Table 16: Barbarian Capabilities (capture
+    p. 25) -
+    R619: the dgf T16 grid - eleven rows by five
+    percentage columns: climb, hide, back
+    protection, detect illusion, detect magic
+  - [x] Bushi (capture pp. 27-28) - the peasant
+    soldier class -
+    R619: the dgf bushi pins - the masterless
+    doctrine, the Str prime with the 14 bonus,
+    the d10 die, the ninja-weapon honor loss,
+    the four slots and the specialization,
+    the three poverty proficiencies, the
+    AC-step-per-five-levels rule
+  - [x] Table 17: Bushi (capture p. 27) -
+    R619: the dgf T17 grid - twelve rows of xp bounds
+    and accumulated d10 dice with the 9-plus-N
+    cells, plus the 250,000-xp and 2-hp
+    beyond-12th/9th notes
   - [ ] Kensai (capture pp. 28-31) - the weapon
     master: the favored-weapon doctrine, the honor
     code, the ki powers
