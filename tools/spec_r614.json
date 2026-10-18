@@ -1,0 +1,408 @@
+{
+ "round": 614,
+ "title": "CREATING THE PLAYER CHARACTER - the OA arc opener: the front-matter doctrine (the European monk retired for the oriental monk, the Kara-Tur naming, the honor thesis), the four generation methods, the NPC generation rules, the wish-on-ability-scores ladder, and the Strength yardstick pins",
+ "prefix": "dga",
+ "header_file": "rules/oacreating.h",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R613 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R613 LANDED 2026-10-18: commit",
+  "  0f6f8e3d01558f33ba2f87e11a66fe46",
+  "  8c2966bd (census 535 -> 536,",
+  "  pushed 2ff6ba8..0f6f8e3), THE",
+  "  SPELL DUELING ROSTER AND INDEX,",
+  "  printed pp. 180-192, DMO arc",
+  "  closer - the Appendix and Index",
+  "  boxes flip (the TRUE census after",
+  "  R613 was 95/1; the committed",
+  "  96/0 prose claims stood false",
+  "  until R613b): rules/",
+  "  dmoduelroster.h, prefix dfc",
+  "  (verified free), 257 inlines",
+  "  (50 consts, 15 bools, 192 table",
+  "  columns), 24 letter grids with",
+  "  707 roster entries, the usage",
+  "  bitmask doctrine (A1 D2 L4 M8",
+  "  Any16), Thought Capture pinned",
+  "  usage 0 (physical-copy",
+  "  confirmed), 38 F-reads pinned as",
+  "  leech mask 4, the four printed",
+  "  PR exceptions, dagger 209 /",
+  "  asterisk 148 by the glyph",
+  "  adjudication, 5721-mutant",
+  "  battery 0 missed. Spec 144,727",
+  "  bytes md5",
+  "  7e9be62b7cd92bae7bd72951831a",
+  "  7314 (canvas 144,802 bytes md5",
+  "  1e1ec74d110e65ffaa1d28d0897bfd",
+  "  0f), both published and verified",
+  "  byte-exact before ./rn. R613b",
+  "  (direct fix, no spec, the R391b",
+  "  precedent) flipped the missed",
+  "  Chapter 2 parent at HEAD",
+  "  8836093: the DMO arc stands",
+  "  96/0 true. NEXT - R614: the OA",
+  "  arc (Oriental Adventures 1986,",
+  "  TSR 1500, 144 pp.) - the gap",
+  "  report lands with the opener",
+  "  (the R564 pattern); prefix dga;",
+  "  include after",
+  "  rules/dmoduelroster.h; audit",
+  "  \"R614 OA opener audit\"."
+ ],
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_label": "R614 OA opener audit",
+ "audit_comment": "OA round one (capture pp. 1-8): the arc opener - the front-matter doctrine (the monk retirement, the Kara-Tur naming, the honor thesis), the four generation methods with the NPC rules and the wish ladder, and the Strength yardstick with its exceptional-Strength ladder.",
+ "census_before": 536,
+ "include_after": "#include \"rules/dmoduelroster.h\"  // R613: the DMO spell dueling roster pins",
+ "include_comment": "the OA arc opener pins",
+ "caller_files": [],
+ "switches": [],
+ "consts": [
+  {
+   "name": "dgaMethodCount",
+   "value": 4,
+   "comment": "the four PC generation methods offered for creating player characters (capture p. 6)"
+  },
+  {
+   "name": "dgaWishLowCeiling",
+   "value": 15,
+   "comment": "the wish ladder boundary: a wish or alter reality raises a score of 3-15 by one full point (capture p. 6)"
+  },
+  {
+   "name": "dgaWishesFrom16To17",
+   "value": 9,
+   "comment": "the printed wish example: nine more wishes are needed to reach 17 after the first one-tenth step (capture p. 6)"
+  },
+  {
+   "name": "dgaPressLbsPerPoint",
+   "value": 10,
+   "comment": "the military-press yardstick: 10 pounds lifted per point of Strength (capture p. 7)"
+  },
+  {
+   "name": "dgaBodyWeightCap",
+   "value": 2,
+   "comment": "the overhead ceiling: no human or humanoid presses more than twice its own body weight (capture p. 7)"
+  },
+  {
+   "name": "dgaExceptionalLift",
+   "value": 470,
+   "comment": "the Strength 18/00 maximum military press in pounds (capture p. 7)"
+  },
+  {
+   "name": "dgaBushiXpFloor",
+   "value": 15,
+   "comment": "the bushi Strength prime-requisite floor for the experience bonus (capture p. 7)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgaMonkRetired",
+   "value": true,
+   "comment": "the preface doctrine: remove the monk from European-type campaigns - what is found herein is superior and in the proper surroundings (capture p. 3)"
+  },
+  {
+   "name": "dgaKaraTurNamed",
+   "value": true,
+   "comment": "the Kara-Tur framework: the book names Shou Lung, T'i Lung and Kozakura as the modeled lands (capture p. 5)"
+  },
+  {
+   "name": "dgaHonorThesis",
+   "value": true,
+   "comment": "the honor thesis: social skills and personal honor are as important as combat abilities (capture p. 5)"
+  },
+  {
+   "name": "dgaMethodI",
+   "value": true,
+   "comment": "Method I: roll 4d6 discard the lowest, total the rest, six times, assign the six results freely (capture p. 6)"
+  },
+  {
+   "name": "dgaMethodII",
+   "value": true,
+   "comment": "Method II: roll 3d6 twelve times, retain any six scores, assign as desired (capture p. 6)"
+  },
+  {
+   "name": "dgaMethodIII",
+   "value": true,
+   "comment": "Method III: roll 3d6 six times, assign one result to Strength, then repeat per ability in order (capture p. 6)"
+  },
+  {
+   "name": "dgaMethodIV",
+   "value": true,
+   "comment": "Method IV: roll 3d6 in ability order to create twelve characters, then choose the preferred one (capture p. 6)"
+  },
+  {
+   "name": "dgaNpcAveraging",
+   "value": true,
+   "comment": "the run-of-the-mill NPC rule: roll 3d6 per ability, counting any 1 as 3 and any 6 as 4 (capture p. 6)"
+  },
+  {
+   "name": "dgaNpcProfessionBoost",
+   "value": true,
+   "comment": "the special-character rule: profession abilities roll 3d6 with +1 added to each die that rolls 5 or less (capture p. 6)"
+  },
+  {
+   "name": "dgaWishHighTenth",
+   "value": true,
+   "comment": "the wish rule above the boundary: scores of 16 or better rise only one-tenth of a point per wish (capture p. 6)"
+  },
+  {
+   "name": "dgaWishBooksExempt",
+   "value": true,
+   "comment": "the wish exemption: magical books and devices can still raise scores of 16 or better a full point (capture p. 6)"
+  },
+  {
+   "name": "dgaPressOrBodyWeight",
+   "value": true,
+   "comment": "the 18-Strength press: 180 pounds or own body weight, whichever is greater (capture p. 7)"
+  },
+  {
+   "name": "dgaExceptionalLiftLadder",
+   "value": true,
+   "comment": "the exceptional-Strength lift ladder: 1 pound per percentage point 1-50, 4 pounds per point 51-90, 8 pounds per point 91-100 (capture p. 7)"
+  },
+  {
+   "name": "dgaBushiXpBonus",
+   "value": true,
+   "comment": "the bushi prime requisite: Strength 15 or more earns a 10 percent experience bonus (capture p. 7)"
+  },
+  {
+   "name": "dgaExceptionalClasses",
+   "value": true,
+   "comment": "the exceptional-Strength roll: samurai, kensai, barbarians and bushi with Strength 18 roll percentile dice (capture p. 7)"
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "inline_count": 22,
+ "examples": [
+  {
+   "note": "the dgaMonkRetired pin",
+   "expr": "m['dgaMonkRetired']() != 1"
+  },
+  {
+   "note": "the dgaKaraTurNamed pin",
+   "expr": "m['dgaKaraTurNamed']() != 1"
+  },
+  {
+   "note": "the dgaHonorThesis pin",
+   "expr": "m['dgaHonorThesis']() != 1"
+  },
+  {
+   "note": "the dgaMethodCount pin",
+   "expr": "m['dgaMethodCount']() != 4"
+  },
+  {
+   "note": "the dgaMethodI pin",
+   "expr": "m['dgaMethodI']() != 1"
+  },
+  {
+   "note": "the dgaMethodII pin",
+   "expr": "m['dgaMethodII']() != 1"
+  },
+  {
+   "note": "the dgaMethodIII pin",
+   "expr": "m['dgaMethodIII']() != 1"
+  },
+  {
+   "note": "the dgaMethodIV pin",
+   "expr": "m['dgaMethodIV']() != 1"
+  },
+  {
+   "note": "the dgaNpcAveraging pin",
+   "expr": "m['dgaNpcAveraging']() != 1"
+  },
+  {
+   "note": "the dgaNpcProfessionBoost pin",
+   "expr": "m['dgaNpcProfessionBoost']() != 1"
+  },
+  {
+   "note": "the dgaWishLowCeiling pin",
+   "expr": "m['dgaWishLowCeiling']() != 15"
+  },
+  {
+   "note": "the dgaWishHighTenth pin",
+   "expr": "m['dgaWishHighTenth']() != 1"
+  },
+  {
+   "note": "the dgaWishesFrom16To17 pin",
+   "expr": "m['dgaWishesFrom16To17']() != 9"
+  },
+  {
+   "note": "the dgaWishBooksExempt pin",
+   "expr": "m['dgaWishBooksExempt']() != 1"
+  },
+  {
+   "note": "the dgaPressLbsPerPoint pin",
+   "expr": "m['dgaPressLbsPerPoint']() != 10"
+  },
+  {
+   "note": "the dgaPressOrBodyWeight pin",
+   "expr": "m['dgaPressOrBodyWeight']() != 1"
+  },
+  {
+   "note": "the dgaBodyWeightCap pin",
+   "expr": "m['dgaBodyWeightCap']() != 2"
+  },
+  {
+   "note": "the dgaExceptionalLiftLadder pin",
+   "expr": "m['dgaExceptionalLiftLadder']() != 1"
+  },
+  {
+   "note": "the dgaExceptionalLift pin",
+   "expr": "m['dgaExceptionalLift']() != 470"
+  },
+  {
+   "note": "the dgaBushiXpFloor pin",
+   "expr": "m['dgaBushiXpFloor']() != 15"
+  },
+  {
+   "note": "the dgaBushiXpBonus pin",
+   "expr": "m['dgaBushiXpBonus']() != 1"
+  },
+  {
+   "note": "the dgaExceptionalClasses pin",
+   "expr": "m['dgaExceptionalClasses']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the press yardstick consistency, Strength 3 and 18 (capture p. 7)",
+   "expr": "m['dgaPressLbsPerPoint']() * 3 != 30 or m['dgaPressLbsPerPoint']() * 18 != 180"
+  },
+  {
+   "note": "the exceptional ladder sums to the 18/00 press (capture p. 7)",
+   "expr": "m['dgaPressLbsPerPoint']() * 18 + 290 != m['dgaExceptionalLift']()"
+  },
+  {
+   "note": "the wish ladder boundary cross-check (capture p. 6)",
+   "expr": "m['dgaWishLowCeiling']() + 1 != 16 or m['dgaWishesFrom16To17']() + 1 != 10"
+  }
+ ],
+ "header_sections": {
+  "the OA opener pins": [
+   {
+    "kind": "const",
+    "name": "dgaMethodCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgaWishLowCeiling"
+   },
+   {
+    "kind": "const",
+    "name": "dgaWishesFrom16To17"
+   },
+   {
+    "kind": "const",
+    "name": "dgaPressLbsPerPoint"
+   },
+   {
+    "kind": "const",
+    "name": "dgaBodyWeightCap"
+   },
+   {
+    "kind": "const",
+    "name": "dgaExceptionalLift"
+   },
+   {
+    "kind": "const",
+    "name": "dgaBushiXpFloor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMonkRetired"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaKaraTurNamed"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaHonorThesis"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMethodI"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMethodII"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMethodIII"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMethodIV"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaNpcAveraging"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaNpcProfessionBoost"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaWishHighTenth"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaWishBooksExempt"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaPressOrBodyWeight"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaExceptionalLiftLadder"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaBushiXpBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaExceptionalClasses"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the front matter closes",
+   "from": "- [ ] **Front matter** (capture pp. 1-5) - the cover,\n  the credits, the Gygax preface and the Cook/Winter\n  introductions - the load-bearing previews: the monk\n  retirement doctrine (what is found herein is superior\n  and in the proper surroundings), the Kara-Tur\n  framework naming Shou Lung, T'i Lung and Kozakura,\n  the honor-and-social-skills thesis",
+   "to": "- [x] **Front matter** (capture pp. 1-5) - the cover,\n  the credits, the Gygax preface and the Cook/Winter\n  introductions - the load-bearing previews: the monk\n  retirement doctrine (what is found herein is superior\n  and in the proper surroundings), the Kara-Tur\n  framework naming Shou Lung, T'i Lung and Kozakura,\n  the honor-and-social-skills thesis - R614: the\n  opener pins the preface doctrine (the European monk\n  retired for the oriental monk, honor and social\n  skill as important as the sword)"
+  },
+  {
+   "note": "the Chapter 1 parent opens",
+   "from": "- [ ] **Chapter 1: Creating The Player Character**\n  (capture pp. 5-15) - the seven abilities and\n  character generation",
+   "to": "- [x] **Chapter 1: Creating The Player Character**\n  (capture pp. 5-15) - the seven abilities and\n  character generation - R614: the parent opens\n  (the generation doctrine and the Strength prose\n  pinned; the ability tables close in their own\n  rounds)"
+  },
+  {
+   "note": "the generation methods close",
+   "from": "  - [ ] The four generation methods (Method I 4d6-drop,\n    Method II 3d6-twelve, Method III 3d6-assign, Method\n    IV 3d6-in-order) with the NPC generation rule\n    (run-of-the-mill 3d6 with the 1-as-3 and 6-as-4\n    averaging option; special characters roll 3d6\n    with the profession-ability boost) and the\n    wish-on-ability-scores rule (3-15 up one point,\n    16-plus one-tenth per wish)",
+   "to": "  - [x] The four generation methods (Method I 4d6-drop,\n    Method II 3d6-twelve, Method III 3d6-assign, Method\n    IV 3d6-in-order) with the NPC generation rule\n    (run-of-the-mill 3d6 with the 1-as-3 and 6-as-4\n    averaging option; special characters roll 3d6\n    with the profession-ability boost) and the\n    wish-on-ability-scores rule (3-15 up one point,\n    16-plus one-tenth per wish) - R614: the dga\n    generation pins (the four method dice, the NPC\n    averaging and profession-boost rules, the wish\n    ladder with the nine-more-wishes line)"
+  },
+  {
+   "note": "the Strength prose closes",
+   "from": "  - [ ] Strength prose (capture pp. 7-8) - the\n    military-press yardstick, the 18/00 470-pound lift,\n    the exceptional-Strength classes",
+   "to": "  - [x] Strength prose (capture pp. 7-8) - the\n    military-press yardstick, the 18/00 470-pound lift,\n    the exceptional-Strength classes - R614: the dga\n    yardstick pins (10 pounds per point of Strength,\n    the body-weight-greater rule, the twice-body-\n    weight ceiling, the 470-pound 18/00 ladder, the\n    bushi 15-plus 10 percent bonus, the four\n    exceptional-Strength classes)"
+  }
+ ],
+ "gap_census": {
+  "closed": 4,
+  "open": 231
+ },
+ "banner": {
+  "title": "CREATING THE PLAYER CHARACTER, printed capture pp. 5-8 - the OA arc opener",
+  "provenance": "verified against capture pp. 1-8 of the oa.pdf OCR session (315 capture pages, single Mistral-OCR capture; the book prints no page numbers in the capture margin so all cites are capture pages; contested cells settle book-internal first, then against the physical copy). THE OA GAP REPORT LANDS WITH THIS ROUND IN THE SAME COMMIT - the R564 MotP opener pattern: tools/oa_gap_report.md ships pre-flip (235 boxes, 0 closed) beside the spec, and the engine flips the opener boxes in place.",
+  "sentinel": "the gap census after this round: 4 closed, 231 open - the OA arc begins (R613b closed the DMO arc at 96/0 with the Chapter 2 parent flip; census 536 -> 537); NEXT - R615: the Chapter 1 ability tables (Tables 1-8) close on grid pins, prefix dgb, audit \"R615 OA ability tables audit\", include after rules/oacreating.h"
+ }
+}

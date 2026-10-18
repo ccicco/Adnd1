@@ -11563,6 +11563,49 @@ when both halves land.
   next). Audit: "R613 DMO dueling
   appendix audit"; include after
   rules/dmohighascend.h.
+- R613 LANDED 2026-10-18: commit
+  0f6f8e3d01558f33ba2f87e11a66fe46
+  8c2966bd (census 535 -> 536,
+  pushed 2ff6ba8..0f6f8e3), THE
+  SPELL DUELING ROSTER AND INDEX,
+  printed pp. 180-192, DMO arc
+  closer - the Appendix and Index
+  boxes flip (the TRUE census after
+  R613 was 95/1; the committed
+  96/0 prose claims stood false
+  until R613b): rules/
+  dmoduelroster.h, prefix dfc
+  (verified free), 257 inlines
+  (50 consts, 15 bools, 192 table
+  columns), 24 letter grids with
+  707 roster entries, the usage
+  bitmask doctrine (A1 D2 L4 M8
+  Any16), Thought Capture pinned
+  usage 0 (physical-copy
+  confirmed), 38 F-reads pinned as
+  leech mask 4, the four printed
+  PR exceptions, dagger 209 /
+  asterisk 148 by the glyph
+  adjudication, 5721-mutant
+  battery 0 missed. Spec 144,727
+  bytes md5
+  7e9be62b7cd92bae7bd72951831a
+  7314 (canvas 144,802 bytes md5
+  1e1ec74d110e65ffaa1d28d0897bfd
+  0f), both published and verified
+  byte-exact before ./rn. R613b
+  (direct fix, no spec, the R391b
+  precedent) flipped the missed
+  Chapter 2 parent at HEAD
+  8836093: the DMO arc stands
+  96/0 true. NEXT - R614: the OA
+  arc (Oriental Adventures 1986,
+  TSR 1500, 144 pp.) - the gap
+  report lands with the opener
+  (the R564 pattern); prefix dga;
+  include after
+  rules/dmoduelroster.h; audit
+  "R614 OA opener audit".
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
