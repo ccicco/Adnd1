@@ -440,13 +440,40 @@ description riding the same round.
     cells (2 hp per level beyond 10th) and the
     damage bonus ladder, plus the 300,000-xp
     beyond-12th note
-  - [ ] Shukenja (capture pp. 42-45) - the holy man:
-    the spell failure by Wisdom, the ethos spells
-  - [ ] Table 26: Shukenja (capture p. 42)
-  - [ ] Table 27: Shukenja Wisdom Adjustments
-    (capture p. 43)
-  - [ ] Table 28: Shukenja Spells Usable By Level
-    (capture p. 43)
+  - [x] Shukenja (capture pp. 42-45) - the holy man:
+    the spell failure by Wisdom, the ethos spells -
+    R624: the dgk shukenja pins - the Wis 12 and
+    Str/Con 9 minima with the Wis-plus-Con-15 xp
+    bonus, the good-alignment requirement, the d6
+    doctrine with the six slots (two weapons,
+    religion and calligraphy), the cleric tables
+    with the studded-leather cap, the three-part
+    training (the purification curse ladder, the
+    sanctified circle, the meditation, the free
+    style), the ki save bonus, the ethos xp rules
+    (half for the defeated, the donated treasure,
+    the 100 xp healing award), the religious
+    restrictions, the family severance
+  - [x] Table 26: Shukenja (capture p. 42) -
+    R624: the dgk T26 grid - twelve rows of xp
+    bounds and accumulated d6 dice with the
+    9-plus-N cells (1 hp per level beyond 9th)
+    plus the 250,000-xp beyond-12th note; the
+    row-1 and row-12 bounds OCR-mangled in the
+    capture and settled against the 2018 print
+    (1,250 and 1,200,000)
+  - [x] Table 27: Shukenja Wisdom Adjustments
+    (capture p. 43) -
+    R624: the dgk T27 grid - ten rows, scores 9-18,
+    of the cumulative spell-bonus tiers (one 1st
+    through one 4th as codes) and the spell-
+    failure ladder 20 down to 0, with the 6th- and
+    7th-level spell minima footnoted
+  - [x] Table 28: Shukenja Spells Usable By Level
+    (capture p. 43) -
+    R624: the dgk T28 grid - twenty-nine rows of
+    the seven spell-level columns, the dashes as
+    zeros, first level 1-9 and seventh 1-5
   - [ ] Sohei (capture pp. 45-47) - the warrior monk:
     the spell list, the ki powers
   - [ ] Table 29: Sohei (capture p. 45)

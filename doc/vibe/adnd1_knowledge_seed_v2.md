@@ -11983,6 +11983,61 @@ when both halves land.
   (verify free), audit "R623 OA
   samurai audit", include after rules/
   oaninja.h.
+- R623 LANDED 2026-10-18: commit
+  666c85abf6e556a7e86397ed8caf700d09342c76
+  (census 545 -> 546, pushed
+  7efe429..666c85a), THE SAMURAI, capture
+  pp. 39-42: rules/oasamurai.h, prefix
+  dgj (verified free), 76 inlines (45
+  consts, 27 bools, 4 table columns):
+  the Str/Wis/Con 13 and Int 14 minima
+  with the fighter tables, the d10
+  doctrine with the five slots and the
+  MANDATORY KATANA specialization (the
+  only two-weapon class - katana and
+  daikyu), the caste birth doctrine (the
+  +10 Table 38 bonus, the korobokuru
+  sponsor rule with the bushi limbo),
+  the proficiency deadlines (horsemanship
+  2nd, bow 3rd, the three arts 6th), the
+  ki power (Str 18/00, one round, level
+  per day) and the GREAT KIAI (9th, two
+  rounds, the 10-ft paralyzation, once
+  daily, never with the ki), the damage
+  ladder (+1 at 2nd, one per three
+  beyond), the 1-in-6 surprise at 3rd,
+  the fear immunity at 5th, the
+  appearance fear at 6th, the jito (7th,
+  the quarter tax, 10 bushi plus 1-4
+  samurai) and shugo (8th, 10d10 bushi,
+  the 20 percent ninja infiltrator, one
+  per household) stewardships, the 9th
+  followers (2d10 samurai, the 2-7
+  specialists, the 10 percent spy), the
+  bushido precepts, the ronin with the
+  2-times xp and the return path, T25
+  12x4 (xp bounds, accumulated d10, the
+  9-plus-N hp cells - 2 hp beyond 10th -
+  the damage ladder). THE T25 GRID SAT
+  AS AN EXTRACTED IMAGE in the first
+  capture - the cells pin from the
+  page-40 continuation, with the 2018
+  print confirming every cell and the
+  header (10-sided dice). OCR
+  normalization: 2d level reads as 2nd
+  level; a fitting homes reads as a
+  fitting home (prose only). Battery
+  120 mutants, 0 missed; full sha
+  rverify GREEN. Gap census 43/192 ->
+  45/190. Spec 33,806 bytes md5
+  51c8f8158fa739d93320fff32ce77ebb
+  (canvas md5
+  e9ff1694f9e97d008bc68b242ed5bc5d).
+  NEXT - R624: the Shukenja, capture
+  pp. 42-45, Tables 26, 27 and 28,
+  prefix dgk (verify free), audit "R624
+  OA shukenja audit", include after
+  rules/oasamurai.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
