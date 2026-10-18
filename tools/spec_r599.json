@@ -1,0 +1,278 @@
+{
+ "round": 599,
+ "prefix": "deg",
+ "header_file": "rules/dmomaxims.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 521,
+ "title": "The Seven Maxims",
+ "audit_label": "R599 DMO opener audit",
+ "audit_comment": "THE DMO ARC OPENER (the R564 pattern): Dungeon Master Option: High-Level Campaigns (1995, Skip Williams, 192 pp.), the front matter and the Seven Maxims - the foreword previews (the true dweomers as 10th-level spells, the automatic saving-throw failure), the seven-principle roster, the high-level definitions (level 10+, the 30th-level cap, the retirement frame), the flat-XP breakdown from 9th, and the Table 1 demographics ladder (the 1-in-5,000 10th, the one-in-a-million 18th, the 1-in-500 paladin).",
+ "include_comment": "the DMO arc opener pins",
+ "include_after": "#include \"rules/motpethcyclone.h\"  // R598: the MotP Ether cyclone pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R598 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R598 LANDED 2026-10-18: commit",
+  "  4d4793a7b6d01e06f9936b92bb82e5a",
+  "  38aac3412 (census 520 -> 521, pushed",
+  "  d3b3aaa..4d4793a), ETHER CYCLONE,",
+  "  printed p. 17: the one named table",
+  "  the R566 full-book scan missed -",
+  "  found by the R596-post three-way",
+  "  audit (book prose vs gap report vs",
+  "  repo). The 50% warning with the",
+  "  1d6-round deep-hum herald, the d20",
+  "  bands (1-10 the disrupted flow +4h,",
+  "  11-15 the random curtain, 16-18 the",
+  "  farther curtain +5d12 days, 19-20",
+  "  the lowest-level save: success",
+  "  +10d12 days to an unexplored",
+  "  section, failure the Astral tumble",
+  "  as plane shift, no silver cord),",
+  "  the Prime fallback saves, the",
+  "  inner-plane Border stop, the",
+  "  demi-plane of Time caveat. Header",
+  "  rules/motpethcyclone.h, prefix",
+  "  ded, 17 inlines (11 consts 6",
+  "  bools), one NEW gap box (not a",
+  "  flip): census grows 90 -> 91 boxes,",
+  "  91/0; the spec also seats the R596",
+  "  record (R597 the tool round skipped",
+  "  the seat). Spec tools/spec_r598.json",
+  "  10960 bytes md5 daf10b58e8fac35025",
+  "  1e6c70420fea3b. THIRTY-TWO straight",
+  "  first-tries (R566-R598). NEXT - R599:",
+  "  the DMO arc opener, High-Level",
+  "  Campaigns (1995, 192 pp.), the gap",
+  "  report landing with the round."
+ ],
+ "banner": {
+  "title": "THE SEVEN MAXIMS - the DMO arc opener: the front matter and the campaign doctrine of printed pp. 1-23 - the seven-principle roster, the high-level definitions (level 10 or more, the 30th-level cap, the level-20 retirement frame), the flat-XP breakdown, the Table 1 demographics ladder, and the foreword previews of the true dweomers and the auto-fail rule.",
+  "provenance": "verified against printed pp. 1-22 of the uploaded dmo.pdf OCR (part 1 of the session capture); the maxim roster from p. 6, the tension doctrine from pp. 7-10, the demographics from p. 22; THIS ROUND LANDS A NEW GAP REPORT tools/dmo_gap_report.md (96 boxes at opener, all 52 numbered tables enumerated per the R566 amended-manifest lesson applied at opener) in the same commit as the spec.",
+  "sentinel": "the gap census after this round: 6 closed, 90 open - the DMO arc begins (R566 -> R596 closed MotP at 91/0; the high-level arc opens here)."
+ },
+ "consts": [
+  {
+   "name": "degMaximCount",
+   "value": 7,
+   "comment": "the maxim roster count: seven basic principles for running a high-level campaign - don't depend on the dice, use adversaries intelligently and inventively, control magic, be aware of demographics, think on an epic scale, plan ahead, share responsibility with the players."
+  },
+  {
+   "name": "degHighLevelFloor",
+   "value": 10,
+   "comment": "the high-level definition: for this book's purposes, any character of level 10 or more is high-level (printed p. 6)."
+  },
+  {
+   "name": "degBookLevelCap",
+   "value": 30,
+   "comment": "the book's scope: rules and campaign suggestions for characters of up to 30th level (printed p. 6) - the ceiling the Chapter 7 ascension doctrine later caps."
+  },
+  {
+   "name": "degRetirementLevel",
+   "value": 20,
+   "comment": "the retirement frame: per the DMG Chapter Three, retirement is inevitable once characters exceed level 20 - the doctrine this book argues against (printed p. 6)."
+  },
+  {
+   "name": "degFlatXpFrom",
+   "value": 9,
+   "comment": "the beyond-9th-level breakdown: the experience required to gain the next level no longer increases geometrically once the PCs reach 9th level - a flat increase from level to level instead (printed p. 8, Figure 3)."
+  },
+  {
+   "name": "degDemographicTenth",
+   "value": 5000,
+   "comment": "the demographic ladder, Table 1: there is only one 10th-level character in a general population of 5,000 (printed p. 22)."
+  },
+  {
+   "name": "degDemographicEighteenth",
+   "value": 1000000,
+   "comment": "the demographic ladder's top: an 18th-level character of any class is truly a one-in-a-million individual (printed p. 22)."
+  },
+  {
+   "name": "degPaladinRate",
+   "value": 500,
+   "comment": "the subclass rarity: only .2% of the population (1 in 500) qualifies to be a paladin; other subclasses with strict ability requirements (bards, rangers, druids) are equally rare (printed p. 22)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "degMaximRoster",
+   "value": true,
+   "comment": "the seven named maxims, in book order: don't depend on the dice; use adversaries intelligently and inventively; control magic; be aware of demographics; think on an epic scale; plan ahead; share responsibility with your players - following them does not guarantee a great game, but all successful high-level campaigns use them to one degree or another."
+  },
+  {
+   "name": "degForewordDweomerThesis",
+   "value": true,
+   "comment": "the foreword preview, Chapter 6: true dweomers are essentially 10th-level spells - world-shaking magic for high-level spellcasters, included to allow the casting of a single true dweomer to keep a group of PCs busy for a long time."
+  },
+  {
+   "name": "degForewordAutoFail",
+   "value": true,
+   "comment": "the foreword preview, Chapter 7: the revised rule for automatic failure of saving throws - something that places a little fear back into high-level characters' lives."
+  },
+  {
+   "name": "degTensionDoctrine",
+   "value": true,
+   "comment": "the first maxim's core: maintain tension without inflating the level of power - create situations where the players rely on their own memories and reasoning skills; not every encounter has to be a fight; do not allow the PCs to become so dominant that every situation descends into a die-rolling extravaganza."
+  },
+  {
+   "name": "degEpicScaleDoctrine",
+   "value": true,
+   "comment": "the fifth maxim's core: heroes are not anonymous, heroes deserve heroic tasks, and the impact of high-level deeds reaches far - the campaign doctrine of printed pp. 22-23."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [],
+ "header_sections": {
+  "the DMO opener pins": [
+   {
+    "kind": "const",
+    "name": "degMaximCount"
+   },
+   {
+    "kind": "const",
+    "name": "degHighLevelFloor"
+   },
+   {
+    "kind": "const",
+    "name": "degBookLevelCap"
+   },
+   {
+    "kind": "const",
+    "name": "degRetirementLevel"
+   },
+   {
+    "kind": "const",
+    "name": "degFlatXpFrom"
+   },
+   {
+    "kind": "const",
+    "name": "degDemographicTenth"
+   },
+   {
+    "kind": "const",
+    "name": "degDemographicEighteenth"
+   },
+   {
+    "kind": "const",
+    "name": "degPaladinRate"
+   },
+   {
+    "kind": "bool",
+    "name": "degMaximRoster"
+   },
+   {
+    "kind": "bool",
+    "name": "degForewordDweomerThesis"
+   },
+   {
+    "kind": "bool",
+    "name": "degForewordAutoFail"
+   },
+   {
+    "kind": "bool",
+    "name": "degTensionDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "degEpicScaleDoctrine"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the degMaximCount pin",
+   "expr": "m['degMaximCount']() != 7"
+  },
+  {
+   "note": "the degHighLevelFloor pin",
+   "expr": "m['degHighLevelFloor']() != 10"
+  },
+  {
+   "note": "the degBookLevelCap pin",
+   "expr": "m['degBookLevelCap']() != 30"
+  },
+  {
+   "note": "the degRetirementLevel pin",
+   "expr": "m['degRetirementLevel']() != 20"
+  },
+  {
+   "note": "the degFlatXpFrom pin",
+   "expr": "m['degFlatXpFrom']() != 9"
+  },
+  {
+   "note": "the degDemographicTenth pin",
+   "expr": "m['degDemographicTenth']() != 5000"
+  },
+  {
+   "note": "the degDemographicEighteenth pin",
+   "expr": "m['degDemographicEighteenth']() != 1000000"
+  },
+  {
+   "note": "the degPaladinRate pin",
+   "expr": "m['degPaladinRate']() != 500"
+  },
+  {
+   "note": "the degMaximRoster pin",
+   "expr": "m['degMaximRoster']() != 1"
+  },
+  {
+   "note": "the degForewordDweomerThesis pin",
+   "expr": "m['degForewordDweomerThesis']() != 1"
+  },
+  {
+   "note": "the degForewordAutoFail pin",
+   "expr": "m['degForewordAutoFail']() != 1"
+  },
+  {
+   "note": "the degTensionDoctrine pin",
+   "expr": "m['degTensionDoctrine']() != 1"
+  },
+  {
+   "note": "the degEpicScaleDoctrine pin",
+   "expr": "m['degEpicScaleDoctrine']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the front matter opens",
+   "from": "- [ ] **Front matter** (pp. 1-5) - the credits, the\n  foreword, the table of contents",
+   "to": "- [x] **Front matter** (pp. 1-5) - the credits, the\n  foreword, the table of contents - R599: the opener\n  pins the foreword's load-bearing previews (the\n  true-dweomer thesis, the auto-fail foreshadow, the\n  Ellis Strongheart frame)"
+  },
+  {
+   "note": "the Seven Maxims parent opens",
+   "from": "- [ ] **Chapter 1: The Seven Maxims** (pp. 6-29) - the\n  campaign doctrine for high-level play",
+   "to": "- [x] **Chapter 1: The Seven Maxims** (pp. 6-29) - the\n  campaign doctrine for high-level play - R599: the\n  parent opens (the roster and the first maxim's\n  doctrine pinned; the remaining maxims close in\n  their own rounds)"
+  },
+  {
+   "note": "the maxim roster closes",
+   "from": "  - [ ] The seven maxims themselves (p. 6) - the roster:\n    don't depend on the dice, intelligent adversaries,\n    control magic, be aware of demographics, think on an\n    epic scale, plan ahead, share responsibility",
+   "to": "  - [x] The seven maxims themselves (p. 6) - the roster:\n    don't depend on the dice, intelligent adversaries,\n    control magic, be aware of demographics, think on an\n    epic scale, plan ahead, share responsibility - R599:\n    the deg maxim-roster pins (the seven named\n    principles, the level-10 floor, the 30th-level cap)"
+  },
+  {
+   "note": "the first maxim closes",
+   "from": "  - [ ] Don't Depend on the Dice (pp. 7-10) - the\n    tension doctrine, the beyond-9th-level breakdown (the\n    flat XP increase, the assured THACO and saves), the\n    think-don't-roll prescription",
+   "to": "  - [x] Don't Depend on the Dice (pp. 7-10) - the\n    tension doctrine, the beyond-9th-level breakdown (the\n    flat XP increase, the assured THACO and saves), the\n    think-don't-roll prescription - R599: the deg\n    tension-doctrine pins (the flat XP from 9th, the\n    think-don't-roll prescription)"
+  },
+  {
+   "note": "Table 1 closes",
+   "from": "  - [ ] Table 1: Demographics (p. 22) - the level\n    ladder of the general population (the 1-in-5,000\n    10th-level character, the one-in-a-million 18th)",
+   "to": "  - [x] Table 1: Demographics (p. 22) - the level\n    ladder of the general population (the 1-in-5,000\n    10th-level character, the one-in-a-million 18th) -\n    R599: the deg demographic pins (the 5,000\n    population per 10th-level, the one-in-a-million\n    18th, the 1-in-500 paladin rarity)"
+  },
+  {
+   "note": "the epic-scale maxim closes",
+   "from": "  - [ ] Think on an Epic Scale (pp. 22-23) - the\n    heroes-not-anonymous doctrine, the heroic tasks, the\n    far-reaching impact",
+   "to": "  - [x] Think on an Epic Scale (pp. 22-23) - the\n    heroes-not-anonymous doctrine, the heroic tasks, the\n    far-reaching impact - R599: the deg epic-scale\n    doctrine pin (the heroes-not-anonymous rule, the\n    heroic tasks, the far reach)"
+  }
+ ],
+ "gap_census": {
+  "closed": 6,
+  "open": 90
+ },
+ "caller_files": [],
+ "inline_count": 13
+}

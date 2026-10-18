@@ -10790,6 +10790,39 @@ when both halves land.
   audit, then the logging
   reclassification tool round, UA
   to 102/0).
+- R598 LANDED 2026-10-18: commit
+  4d4793a7b6d01e06f9936b92bb82e5a
+  38aac3412 (census 520 -> 521, pushed
+  d3b3aaa..4d4793a), ETHER CYCLONE,
+  printed p. 17: the one named table
+  the R566 full-book scan missed -
+  found by the R596-post three-way
+  audit (book prose vs gap report vs
+  repo). The 50% warning with the
+  1d6-round deep-hum herald, the d20
+  bands (1-10 the disrupted flow +4h,
+  11-15 the random curtain, 16-18 the
+  farther curtain +5d12 days, 19-20
+  the lowest-level save: success
+  +10d12 days to an unexplored
+  section, failure the Astral tumble
+  as plane shift, no silver cord),
+  the Prime fallback saves, the
+  inner-plane Border stop, the
+  demi-plane of Time caveat. Header
+  rules/motpethcyclone.h, prefix
+  ded, 17 inlines (11 consts 6
+  bools), one NEW gap box (not a
+  flip): census grows 90 -> 91 boxes,
+  91/0; the spec also seats the R596
+  record (R597 the tool round skipped
+  the seat). Spec tools/spec_r598.json
+  10960 bytes md5 daf10b58e8fac35025
+  1e6c70420fea3b. THIRTY-TWO straight
+  first-tries (R566-R598). NEXT - R599:
+  the DMO arc opener, High-Level
+  Campaigns (1995, 192 pp.), the gap
+  report landing with the round.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
