@@ -474,8 +474,16 @@ tables are data and close on table pins.
     canonical dweomer list - R607: the dev T49 grid - the thirteen canonical
     dweomers with their difficulty and final-difficulty pairs, plus the Nazzer
     cloak and Ratecliffe and Tenser reads
-- [ ] **Chapter 7: High-Level Characters** (pp.
-  142-179) - the beyond-core progression system
+- [x] **Chapter 7: High-Level Characters** (pp.
+  142-179) - the beyond-core progression system -
+    R612: the chapter PARENT closes - all Chapter
+    7 children landed across R608 (the save
+    auto-failure doctrine, opening doctrine),
+    R609 (Table 40 skills, Table 41 modifiers,
+    Table 42 warriors), R610 (Tables 43-47, the
+    wizards and priests), R611 (Tables 48-52, the
+    rogues) and R612 (the demihuman limits and
+    the divine ascension)
   - [x] Automatic Saving Throw Failure (pp. 142-143)
     - the fail-on-3-or-less rule, the deity ladders
     (2 for lesser, 1 for intermediate, never for
@@ -583,11 +591,25 @@ tables are data and close on table pins.
     evasion, fall/jump, featherfoot, improvised
     attack, inner focus, nondetection, sense
     danger, shadow flight, shadow travel)
-  - [ ] Demihumans in High-Level Play / Demihuman
+  - [x] Demihumans in High-Level Play / Demihuman
     Advancement (pp. 178-179) - the level-limit
-    doctrine for high-level demihumans
-  - [ ] Beyond 30th Level / Divine Ascension (p.
-    179) - the level ceiling, the ascension doctrine
+    doctrine for high-level demihumans - R612:
+    the dfb doctrine pins (do not ignore the
+    limits; the four solutions: wish or 10th-
+    level transformation to human, wish or imbue
+    per extra level with earned XP, the Slow
+    Advancement rule, slow-after-max with the
+    racial heroic task)
+  - [x] Beyond 30th Level / Divine Ascension (p.
+    179) - the level ceiling, the ascension
+    doctrine - R612: the dfb ceiling pins (all
+    advancement stops at 30th) and the full
+    ascension path (seek after 20th, the divine
+    sponsor, the gift at XP-total value, the
+    500K-per-save-point benefit to a minimum of
+    three, the Table 59 offering roll, the heroic
+    task, no ability under 13, the demigod NPC
+    ending, heroes not gods)
 - [ ] **Appendix: Spell Dueling Characteristics**
   (pp. 180-188) - the per-spell dueling roster (the
   PR/MV/A/L/D codes for every dueling spell)

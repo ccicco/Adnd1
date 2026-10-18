@@ -1,0 +1,850 @@
+{
+ "round": 612,
+ "prefix": "dfb",
+ "header_file": "rules/dmohighascend.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 534,
+ "title": "Demihumans and Divine Ascension",
+ "audit_label": "R612 DMO ascension audit",
+ "include_comment": "the DMO demihuman and ascension pins",
+ "include_after": "#include \"rules/dmohighrogues.h\"  // R611: the DMO rogue pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R611 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R611 LANDED 2026-10-18: commit",
+  "  1de9c4b4e71c072964a9c667e08c13db",
+  "  2e96a250 (census 533 -> 534,",
+  "  pushed 74d21c6..1de9c4b),",
+  "  ROGUES, printed pp. 167-177, DMO",
+  "  Chapter 7 round four of five per",
+  "  the split plan - ONE box flips",
+  "  (Rogues; gap census now 90 closed",
+  "  / 6 open):",
+  "  rules/dmohighrogues.h, prefix dfa",
+  "  (verified free), 273 inlines (111",
+  "  consts, 117 bools, 6 chains, 39",
+  "  table columns), 9 grids (T47r",
+  "  rogue advancement 11x5; T49",
+  "  racial 5x6; T50 Dexterity-aim 2x10;",
+  "  T51 armor 3x3; bribe status 4x2;",
+  "  tunneling earth 3x2; T52 bard",
+  "  spell progression 11x8; fall",
+  "  surface 7x1; featherfoot 3x2),",
+  "  228 examples, 42 table_checks,",
+  "  478-mutant battery 0 missed. TWO",
+  "  CONTESTED CELLS settled against",
+  "  the physical copy (user-confirmed",
+  "  2026-10-18): the T47 level-30 XP",
+  "  reads 4,300,000 (ABBYY; tesseract",
+  "  4,500,000, series 4,400,000) with",
+  "  the final step only 120K not 220K;",
+  "  and the T50 tunneling row prints a",
+  "  dash at Dex 17 and +30 at 22",
+  "  (tesseract; ABBYY dropped the final",
+  "  cell). THREE printed quirks pinned",
+  "  verbatim: the rogue advancement",
+  "  caption shares printed number 47",
+  "  with the priest spell progression",
+  "  caption; the T49 halfling",
+  "  detect-magic cell prints +5 without",
+  "  the percent sign; the rogue",
+  "  Con-bonus footnote reads after",
+  "  10th level (warrior and wizard read",
+  "  9th). All eleven rogue skills pinned",
+  "  (adaptation, classify traps,",
+  "  evasion, fall/jump with the Jobare",
+  "  shaft example, featherfoot,",
+  "  improvised attack with its",
+  "  save-modifier ladder and trick-hat",
+  "  example, inner focus,",
+  "  nondetection, sense danger with",
+  "  its subskill ladder, shadow",
+  "  flight, shadow travel). DELIVERY:",
+  "  raw JSON in the canvas (user-set:",
+  "  b64 NOT needed), spec 124783",
+  "  bytes, md5",
+  "  6ebd867df11799adcd4f16361bca6b5d",
+  "  verified byte-exact before ./rn.",
+  "  NEXT - R612: Demihumans in",
+  "  High-Level Play / Demihuman",
+  "  Advancement + Beyond 30th Level /",
+  "  Divine Ascension (pp. 178-179) -",
+  "  the Chapter 7 PARENT flips here;",
+  "  consult the gap report at HEAD",
+  "  1de9c4b; verify next prefix free",
+  "  (dfb family next). Audit: \"R612",
+  "  DMO demihumans-ascension audit\";",
+  "  include after rules/dmohighrogues.h."
+ ],
+ "banner": {
+  "title": "DEMIHUMANS AND DIVINE ASCENSION - DMO Chapter 7, round five of five: the demihuman advancement doctrine (retirement is what is supposed to happen, do not ignore the limits, the limits are the price of the demihuman advantages), the four solutions (a wish or 10th-level transformation spell to become human; a wish or 10th-level imbue spell per level beyond the racial maximum with the experience earned; the Slow Advancement rule with humans pulling ahead from 10th level; slow-after-max with the racial heroic task per extra level), the beyond-30th ceiling (all advancement stops at 30th, the pinnacle of mortal achievement, more hit points than five normal men, powers greater than the avatars), and the divine ascension path (seek anytime after 20th, never turn back, the divine sponsor, the gift at the experience-point total value, the 500,000-per-point saving throw benefit down to a minimum of three, the Table 59 offering roll with the three match columns, the heroic task with its five examples, no ability score under 13, the demigod-and-NPC ending, and the closing line: AD&D is a game of heroes, not gods).",
+  "provenance": "verified against printed pp. 178-179 of the archive.org DMO captures (items dungeon-master-option-high-level-campaigns and tsr02156dmsoptionhighlevelcampaigns, the djvu.txt full texts; the tsr02156 ABBYY read is primary and the tesseract read is cross-checked; leaf N = printed page N). A prose-only round with no printed grids; both captures agree on every number. The only OCR artifact is the standing lOth-for-10th misread both captures make on the spell names (transformation, imbue), settled as 10th-level per the index and the standing OCR class. THE CHAPTER 7 PARENT flips with this round: every Chapter 7 child has now landed (R608 through R612).",
+  "sentinel": "the gap census after this round: 93 closed, 3 open - the Chapter 7 parent and its last two children flip in round five of five; the DMO arc closes on R613 (the Appendix: Spell Dueling Characteristics, pp. 180-188) and the Index (pp. 189-192)."
+ },
+ "consts": [
+  {
+   "name": "dfbSolutionCount",
+   "value": 4,
+   "comment": "the demihuman solutions count: the DM can solve the demihuman advancement problem in four ways without forcing demihuman characters out of the game (printed p. 178)."
+  },
+  {
+   "name": "dfbImbueSpellsPerLevel",
+   "value": 1,
+   "comment": "the second solution cost: each level gained beyond the maximum requires one wish or 10th-level imbue spell (printed p. 178)."
+  },
+  {
+   "name": "dfbSlowPullAheadLevel",
+   "value": 10,
+   "comment": "the third solution note: at low levels slow advancement does not much affect play, but humans begin to pull ahead fairly rapidly once the characters reach 10th level or so (printed p. 178)."
+  },
+  {
+   "name": "dfbAdvancementStopsLevel",
+   "value": 30,
+   "comment": "the mortal ceiling: all character advancement stops at 30th level, which represents the pinnacle of mortal achievement (printed p. 179)."
+  },
+  {
+   "name": "dfbAscendMinLevel",
+   "value": 20,
+   "comment": "the ascension timing: a character can seek to ascend anytime after reaching 20th level, or earlier if the DM allows it (printed p. 179)."
+  },
+  {
+   "name": "dfbGiftMinValueXpRatio",
+   "value": 1,
+   "comment": "the ascension offering floor: the gift monetary value must be at least equal to the character experience point total - the ratio is one copper or coin of value per experience point (printed p. 179)."
+  },
+  {
+   "name": "dfbSaveThrowXpStep",
+   "value": 500000,
+   "comment": "the ascension benefit: for each 500,000 experience points gained the character can lower one saving throw number one point (printed p. 179)."
+  },
+  {
+   "name": "dfbSaveThrowMin",
+   "value": 3,
+   "comment": "the ascension benefit floor: the saving throw numbers go down to a minimum saving throw of three (printed p. 179)."
+  },
+  {
+   "name": "dfbTaskExampleCount",
+   "value": 5,
+   "comment": "the ascension task examples: five sample heroic tasks are listed (printed p. 179)."
+  },
+  {
+   "name": "dfbMinAbilityScore",
+   "value": 13,
+   "comment": "the ascension completion floor: the character cannot have any ability score or subability score lower than 13 (printed p. 179)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dfbRetireIsIntended",
+   "value": true,
+   "comment": "the demihuman doctrine: demihuman characters are usually forced to retire or assume secondary roles once human characters reach high levels and the demihumans reach their advancement limits - that is exactly what is supposed to happen (printed p. 178)."
+  },
+  {
+   "name": "dfbDontIgnoreLimits",
+   "value": true,
+   "comment": "the demihuman doctrine: do not ignore demihuman advancement limits - many DMs are tempted to, especially when players are unwilling to retire their high-level demihuman characters (printed p. 178)."
+  },
+  {
+   "name": "dfbLimitsAreThePrice",
+   "value": true,
+   "comment": "the demihuman doctrine: the advancement limits are the price players must pay for gaining demihuman advantages at lower levels (printed p. 178)."
+  },
+  {
+   "name": "dfbIgnoringUnbalancesPlay",
+   "value": true,
+   "comment": "the demihuman doctrine: ignoring the advancement limits unbalances play by placing high-level power in the hands of characters who already have extra abilities (printed p. 178)."
+  },
+  {
+   "name": "dfbUnfairToHumanPlayers",
+   "value": true,
+   "comment": "the demihuman doctrine: ignoring the advancement limits is grossly unfair to players who chose human characters and labored to reach the point where their choices pay dividends in unlimited advancement (printed p. 178)."
+  },
+  {
+   "name": "dfbLimitsFactOfLife",
+   "value": true,
+   "comment": "the demihuman doctrine: demihuman advancement limits are a fact of life in any AD&D game world (printed p. 178)."
+  },
+  {
+   "name": "dfbSolutionWishTransformation",
+   "value": true,
+   "comment": "the first solution: a demihuman character can use a wish or 10th-level transformation spell to become human - the character might still look and act demihuman but has put aside the racial characteristics and special racial abilities that held the character back (printed p. 178)."
+  },
+  {
+   "name": "dfbSolutionWishImbue",
+   "value": true,
+   "comment": "the second solution: a demihuman character can use a wish or 10th-level imbue spell to gain one level beyond the normal racial maximum (printed p. 178)."
+  },
+  {
+   "name": "dfbImbueNeedsEarnedXp",
+   "value": true,
+   "comment": "the second solution gate: the character must have earned enough experience to actually gain the level (printed p. 178)."
+  },
+  {
+   "name": "dfbSolutionSlowAdvancement",
+   "value": true,
+   "comment": "the third solution: the DM can use the Slow Advancement rule from Chapter 2 of the Dungeon Master Guide (printed p. 178)."
+  },
+  {
+   "name": "dfbSolutionSlowOnlyAfterMax",
+   "value": true,
+   "comment": "the fourth solution: the DM can apply the Slow Advancement rule only after demihuman characters reach their maximum levels - representing their struggle to stay focused despite the distractions of being a demihuman (printed pp. 178-179)."
+  },
+  {
+   "name": "dfbRacialTaskPerExtraLevel",
+   "value": true,
+   "comment": "the fourth solution doctrine: reflect the demihuman nonhuman viewpoint by requiring a heroic task that furthers the interests of the character race each time the character advances a level beyond the usual maximum (printed pp. 178-179)."
+  },
+  {
+   "name": "dfbRacialHeroExample",
+   "value": true,
+   "comment": "the fourth solution example: an elf wizard might undertake a quest to protect a tract of virgin forest and perhaps establish a colony there - this kind of effort marks the character as a racial hero instead of a demihuman with human interests (printed p. 179)."
+  },
+  {
+   "name": "dfbWizardMoreHpThanFiveMen",
+   "value": true,
+   "comment": "the 30th-level note: at this level even a wizard has more hit points than five normal men (printed p. 179)."
+  },
+  {
+   "name": "dfbPowersExceedAvatars",
+   "value": true,
+   "comment": "the 30th-level note: characters of any class have powers greater than the avatars that deities use to conduct business in the mortal world (printed p. 179)."
+  },
+  {
+   "name": "dfbNowhereElseToGo",
+   "value": true,
+   "comment": "the 30th-level note: once a character has gotten this far there is nowhere else to go - or is there? (the printed hook into divine ascension) (printed p. 179)."
+  },
+  {
+   "name": "dfbNeedsDmApproval",
+   "value": true,
+   "comment": "the ascension gate: with the DM approval a character can abandon his or her profession and follow a different path to power - divine ascension requires a great deal of attention and creativity from both DM and player, and only the barest guidelines are given because each character and campaign are unique (printed p. 179)."
+  },
+  {
+   "name": "dfbOnlyOptionAfter30",
+   "value": true,
+   "comment": "the ascension timing: once a character has reached 30th level this is the only option that allows the character any further advancement (printed p. 179)."
+  },
+  {
+   "name": "dfbNeverTurnBack",
+   "value": true,
+   "comment": "the ascension doctrine: once the character embarks on the path to godhood he can never turn back (printed p. 179)."
+  },
+  {
+   "name": "dfbCeasesClassAdvancement",
+   "value": true,
+   "comment": "the ascension doctrine: the character ceases advancing in the original class (printed p. 179)."
+  },
+  {
+   "name": "dfbRetainsClassAbilities",
+   "value": true,
+   "comment": "the ascension doctrine: the character retains all class abilities but gives up normal adventuring and acts with a new purpose (printed p. 179)."
+  },
+  {
+   "name": "dfbNeedsDivineSponsor",
+   "value": true,
+   "comment": "the ascension procedure: the character must seek a divine sponsor - usually a deity appropriate to the character alignment, original class and race - and prepare a special offering for that deity (printed p. 179)."
+  },
+  {
+   "name": "dfbGiftDmAgreed",
+   "value": true,
+   "comment": "the ascension offering: the gift can be anything the character desires and the DM agrees to, and the donation need not be a single item (printed p. 179)."
+  },
+  {
+   "name": "dfbXpNormalDuringPreparation",
+   "value": true,
+   "comment": "the ascension procedure: while preparing the offering the character receives experience points normally (printed p. 179)."
+  },
+  {
+   "name": "dfbBelowClassMinimumSpecial",
+   "value": true,
+   "comment": "the ascension doctrine: the ability to reduce saving throw numbers below the normal minimum for the character original class is special, and it is why the character must give up the original class (printed p. 179)."
+  },
+  {
+   "name": "dfbNoOtherXpBenefits",
+   "value": true,
+   "comment": "the ascension doctrine: the character gains no other benefits from accumulated experience - no hit points, proficiencies, skills, etc. (printed p. 179)."
+  },
+  {
+   "name": "dfbJourneyToAbode",
+   "value": true,
+   "comment": "the ascension procedure: when the offering is completed the character must journey to the deity abode and present the gift (printed p. 179)."
+  },
+  {
+   "name": "dfbTrueCharactersLikelyAccepted",
+   "value": true,
+   "comment": "the ascension procedure: if the character has been true to the principles of alignment and profession the deity probably accepts the gift (printed p. 179)."
+  },
+  {
+   "name": "dfbTable59ReactionRoll",
+   "value": true,
+   "comment": "the ascension procedure: if in doubt use Table 59 Encounter Reactions from the Dungeon Master Guide - matching deity alignment and portfolio use the first column, a slight mismatch the second, otherwise the third (printed p. 179)."
+  },
+  {
+   "name": "dfbFriendlyAccepts",
+   "value": true,
+   "comment": "the ascension procedure: if the reaction roll is friendly the deity accepts the gift (printed p. 179)."
+  },
+  {
+   "name": "dfbUnfriendlyDestroysGift",
+   "value": true,
+   "comment": "the ascension procedure: if not, the deity destroys the gift and sends the character away - the character can try again with the same deity or with another deity (printed p. 179)."
+  },
+  {
+   "name": "dfbMaybeNoImmediateAudience",
+   "value": true,
+   "comment": "the ascension procedure: the character might not get an immediate audience - just finding and entering the deity abode could be an adventure in itself, and the Planescape setting material can provide details (printed p. 179)."
+  },
+  {
+   "name": "dfbDeityAssignsTask",
+   "value": true,
+   "comment": "the ascension procedure: once the deity accepts the gift it assigns some heroic task to the character, and completing the task proves the character mettle - in a Planescape campaign the character becomes the deity proxy (printed p. 179)."
+  },
+  {
+   "name": "dfbTaskExampleDynasty",
+   "value": true,
+   "comment": "the first task example: found a dynasty (printed p. 179)."
+  },
+  {
+   "name": "dfbTaskExampleCreation",
+   "value": true,
+   "comment": "the second task example: create a new magical item or spell that others seek to imitate (printed p. 179)."
+  },
+  {
+   "name": "dfbTaskExampleArtifact",
+   "value": true,
+   "comment": "the third task example: find and destroy an artifact from an opposing alignment (printed p. 179)."
+  },
+  {
+   "name": "dfbTaskExampleRivalAvatar",
+   "value": true,
+   "comment": "the fourth task example: find and defeat the avatar of a rival deity (printed p. 179)."
+  },
+  {
+   "name": "dfbTaskExampleMonument",
+   "value": true,
+   "comment": "the fifth task example: build a lasting monument to the deity (printed p. 179)."
+  },
+  {
+   "name": "dfbDmDesignsTaskAdventures",
+   "value": true,
+   "comment": "the ascension procedure: it is up to the DM to create a suitable task and design a series of adventures so the character can complete it (printed p. 179)."
+  },
+  {
+   "name": "dfbTaskNeedsAllSavesAtThree",
+   "value": true,
+   "comment": "the ascension completion: the character must complete the task and earn enough experience to lower all saving throw numbers to three (printed p. 179)."
+  },
+  {
+   "name": "dfbBecomesDemigod",
+   "value": true,
+   "comment": "the ascension completion: when all of that is accomplished the character becomes a demigod and companion to the sponsor - and the character becomes an NPC under the DM control (printed p. 179)."
+  },
+  {
+   "name": "dfbPlayersMayBeUpset",
+   "value": true,
+   "comment": "the ascension epilogue: some players may be upset that they have worked hard only to lose control of their characters - remind them of their contributions to the campaign world (printed p. 179)."
+  },
+  {
+   "name": "dfbNewCharactersWorshipHeroes",
+   "value": true,
+   "comment": "the ascension epilogue: new characters can worship their retired heroes and demigods, and the players should be invited to help construct the new powers portfolios (printed p. 179)."
+  },
+  {
+   "name": "dfbHeroesNotGods",
+   "value": true,
+   "comment": "the ascension epilogue, pinned verbatim: AD&D is a game of heroes, not gods (printed p. 179)."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [
+  {
+   "note": "the demihuman solution numbers (printed pp. 178-179)",
+   "expr": "m['dfbSolutionCount']() != 4 or m['dfbImbueSpellsPerLevel']() != 1 or m['dfbSlowPullAheadLevel']() != 10"
+  },
+  {
+   "note": "the mortal ceiling (printed p. 179)",
+   "expr": "m['dfbAdvancementStopsLevel']() != 30"
+  },
+  {
+   "note": "the ascension benefit ladder (printed p. 179)",
+   "expr": "m['dfbSaveThrowXpStep']() != 500000 or m['dfbSaveThrowMin']() != 3 or m['dfbAscendMinLevel']() != 20 or m['dfbGiftMinValueXpRatio']() != 1"
+  },
+  {
+   "note": "the ascension completion floors (printed p. 179)",
+   "expr": "m['dfbMinAbilityScore']() != 13 or m['dfbTaskExampleCount']() != 5"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dfbSolutionCount pin",
+   "expr": "m['dfbSolutionCount']() != 4"
+  },
+  {
+   "note": "the dfbImbueSpellsPerLevel pin",
+   "expr": "m['dfbImbueSpellsPerLevel']() != 1"
+  },
+  {
+   "note": "the dfbSlowPullAheadLevel pin",
+   "expr": "m['dfbSlowPullAheadLevel']() != 10"
+  },
+  {
+   "note": "the dfbAdvancementStopsLevel pin",
+   "expr": "m['dfbAdvancementStopsLevel']() != 30"
+  },
+  {
+   "note": "the dfbAscendMinLevel pin",
+   "expr": "m['dfbAscendMinLevel']() != 20"
+  },
+  {
+   "note": "the dfbGiftMinValueXpRatio pin",
+   "expr": "m['dfbGiftMinValueXpRatio']() != 1"
+  },
+  {
+   "note": "the dfbSaveThrowXpStep pin",
+   "expr": "m['dfbSaveThrowXpStep']() != 500000"
+  },
+  {
+   "note": "the dfbSaveThrowMin pin",
+   "expr": "m['dfbSaveThrowMin']() != 3"
+  },
+  {
+   "note": "the dfbTaskExampleCount pin",
+   "expr": "m['dfbTaskExampleCount']() != 5"
+  },
+  {
+   "note": "the dfbMinAbilityScore pin",
+   "expr": "m['dfbMinAbilityScore']() != 13"
+  },
+  {
+   "note": "the dfbRetireIsIntended pin",
+   "expr": "m['dfbRetireIsIntended']() != 1"
+  },
+  {
+   "note": "the dfbDontIgnoreLimits pin",
+   "expr": "m['dfbDontIgnoreLimits']() != 1"
+  },
+  {
+   "note": "the dfbLimitsAreThePrice pin",
+   "expr": "m['dfbLimitsAreThePrice']() != 1"
+  },
+  {
+   "note": "the dfbIgnoringUnbalancesPlay pin",
+   "expr": "m['dfbIgnoringUnbalancesPlay']() != 1"
+  },
+  {
+   "note": "the dfbUnfairToHumanPlayers pin",
+   "expr": "m['dfbUnfairToHumanPlayers']() != 1"
+  },
+  {
+   "note": "the dfbLimitsFactOfLife pin",
+   "expr": "m['dfbLimitsFactOfLife']() != 1"
+  },
+  {
+   "note": "the dfbSolutionWishTransformation pin",
+   "expr": "m['dfbSolutionWishTransformation']() != 1"
+  },
+  {
+   "note": "the dfbSolutionWishImbue pin",
+   "expr": "m['dfbSolutionWishImbue']() != 1"
+  },
+  {
+   "note": "the dfbImbueNeedsEarnedXp pin",
+   "expr": "m['dfbImbueNeedsEarnedXp']() != 1"
+  },
+  {
+   "note": "the dfbSolutionSlowAdvancement pin",
+   "expr": "m['dfbSolutionSlowAdvancement']() != 1"
+  },
+  {
+   "note": "the dfbSolutionSlowOnlyAfterMax pin",
+   "expr": "m['dfbSolutionSlowOnlyAfterMax']() != 1"
+  },
+  {
+   "note": "the dfbRacialTaskPerExtraLevel pin",
+   "expr": "m['dfbRacialTaskPerExtraLevel']() != 1"
+  },
+  {
+   "note": "the dfbRacialHeroExample pin",
+   "expr": "m['dfbRacialHeroExample']() != 1"
+  },
+  {
+   "note": "the dfbWizardMoreHpThanFiveMen pin",
+   "expr": "m['dfbWizardMoreHpThanFiveMen']() != 1"
+  },
+  {
+   "note": "the dfbPowersExceedAvatars pin",
+   "expr": "m['dfbPowersExceedAvatars']() != 1"
+  },
+  {
+   "note": "the dfbNowhereElseToGo pin",
+   "expr": "m['dfbNowhereElseToGo']() != 1"
+  },
+  {
+   "note": "the dfbNeedsDmApproval pin",
+   "expr": "m['dfbNeedsDmApproval']() != 1"
+  },
+  {
+   "note": "the dfbOnlyOptionAfter30 pin",
+   "expr": "m['dfbOnlyOptionAfter30']() != 1"
+  },
+  {
+   "note": "the dfbNeverTurnBack pin",
+   "expr": "m['dfbNeverTurnBack']() != 1"
+  },
+  {
+   "note": "the dfbCeasesClassAdvancement pin",
+   "expr": "m['dfbCeasesClassAdvancement']() != 1"
+  },
+  {
+   "note": "the dfbRetainsClassAbilities pin",
+   "expr": "m['dfbRetainsClassAbilities']() != 1"
+  },
+  {
+   "note": "the dfbNeedsDivineSponsor pin",
+   "expr": "m['dfbNeedsDivineSponsor']() != 1"
+  },
+  {
+   "note": "the dfbGiftDmAgreed pin",
+   "expr": "m['dfbGiftDmAgreed']() != 1"
+  },
+  {
+   "note": "the dfbXpNormalDuringPreparation pin",
+   "expr": "m['dfbXpNormalDuringPreparation']() != 1"
+  },
+  {
+   "note": "the dfbBelowClassMinimumSpecial pin",
+   "expr": "m['dfbBelowClassMinimumSpecial']() != 1"
+  },
+  {
+   "note": "the dfbNoOtherXpBenefits pin",
+   "expr": "m['dfbNoOtherXpBenefits']() != 1"
+  },
+  {
+   "note": "the dfbJourneyToAbode pin",
+   "expr": "m['dfbJourneyToAbode']() != 1"
+  },
+  {
+   "note": "the dfbTrueCharactersLikelyAccepted pin",
+   "expr": "m['dfbTrueCharactersLikelyAccepted']() != 1"
+  },
+  {
+   "note": "the dfbTable59ReactionRoll pin",
+   "expr": "m['dfbTable59ReactionRoll']() != 1"
+  },
+  {
+   "note": "the dfbFriendlyAccepts pin",
+   "expr": "m['dfbFriendlyAccepts']() != 1"
+  },
+  {
+   "note": "the dfbUnfriendlyDestroysGift pin",
+   "expr": "m['dfbUnfriendlyDestroysGift']() != 1"
+  },
+  {
+   "note": "the dfbMaybeNoImmediateAudience pin",
+   "expr": "m['dfbMaybeNoImmediateAudience']() != 1"
+  },
+  {
+   "note": "the dfbDeityAssignsTask pin",
+   "expr": "m['dfbDeityAssignsTask']() != 1"
+  },
+  {
+   "note": "the dfbTaskExampleDynasty pin",
+   "expr": "m['dfbTaskExampleDynasty']() != 1"
+  },
+  {
+   "note": "the dfbTaskExampleCreation pin",
+   "expr": "m['dfbTaskExampleCreation']() != 1"
+  },
+  {
+   "note": "the dfbTaskExampleArtifact pin",
+   "expr": "m['dfbTaskExampleArtifact']() != 1"
+  },
+  {
+   "note": "the dfbTaskExampleRivalAvatar pin",
+   "expr": "m['dfbTaskExampleRivalAvatar']() != 1"
+  },
+  {
+   "note": "the dfbTaskExampleMonument pin",
+   "expr": "m['dfbTaskExampleMonument']() != 1"
+  },
+  {
+   "note": "the dfbDmDesignsTaskAdventures pin",
+   "expr": "m['dfbDmDesignsTaskAdventures']() != 1"
+  },
+  {
+   "note": "the dfbTaskNeedsAllSavesAtThree pin",
+   "expr": "m['dfbTaskNeedsAllSavesAtThree']() != 1"
+  },
+  {
+   "note": "the dfbBecomesDemigod pin",
+   "expr": "m['dfbBecomesDemigod']() != 1"
+  },
+  {
+   "note": "the dfbPlayersMayBeUpset pin",
+   "expr": "m['dfbPlayersMayBeUpset']() != 1"
+  },
+  {
+   "note": "the dfbNewCharactersWorshipHeroes pin",
+   "expr": "m['dfbNewCharactersWorshipHeroes']() != 1"
+  },
+  {
+   "note": "the dfbHeroesNotGods pin",
+   "expr": "m['dfbHeroesNotGods']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the DMO demihuman doctrine pins": [
+   {
+    "kind": "bool",
+    "name": "dfbRetireIsIntended"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbDontIgnoreLimits"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbLimitsAreThePrice"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbIgnoringUnbalancesPlay"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbUnfairToHumanPlayers"
+   },
+   {
+    "kind": "const",
+    "name": "dfbSolutionCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbLimitsFactOfLife"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbSolutionWishTransformation"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbSolutionWishImbue"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbImbueNeedsEarnedXp"
+   },
+   {
+    "kind": "const",
+    "name": "dfbImbueSpellsPerLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbSolutionSlowAdvancement"
+   },
+   {
+    "kind": "const",
+    "name": "dfbSlowPullAheadLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbSolutionSlowOnlyAfterMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbRacialTaskPerExtraLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbRacialHeroExample"
+   }
+  ],
+  "the DMO beyond-30th pins": [
+   {
+    "kind": "const",
+    "name": "dfbAdvancementStopsLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbWizardMoreHpThanFiveMen"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbPowersExceedAvatars"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbNowhereElseToGo"
+   }
+  ],
+  "the DMO ascension path pins": [
+   {
+    "kind": "bool",
+    "name": "dfbNeedsDmApproval"
+   },
+   {
+    "kind": "const",
+    "name": "dfbAscendMinLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbOnlyOptionAfter30"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbNeverTurnBack"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbCeasesClassAdvancement"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbRetainsClassAbilities"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbNeedsDivineSponsor"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbGiftDmAgreed"
+   },
+   {
+    "kind": "const",
+    "name": "dfbGiftMinValueXpRatio"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbXpNormalDuringPreparation"
+   },
+   {
+    "kind": "const",
+    "name": "dfbSaveThrowXpStep"
+   },
+   {
+    "kind": "const",
+    "name": "dfbSaveThrowMin"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbBelowClassMinimumSpecial"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbNoOtherXpBenefits"
+   }
+  ],
+  "the DMO ascension offering and task pins": [
+   {
+    "kind": "bool",
+    "name": "dfbJourneyToAbode"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbTrueCharactersLikelyAccepted"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbTable59ReactionRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbFriendlyAccepts"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbUnfriendlyDestroysGift"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbMaybeNoImmediateAudience"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbDeityAssignsTask"
+   },
+   {
+    "kind": "const",
+    "name": "dfbTaskExampleCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbTaskExampleDynasty"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbTaskExampleCreation"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbTaskExampleArtifact"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbTaskExampleRivalAvatar"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbTaskExampleMonument"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbDmDesignsTaskAdventures"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbTaskNeedsAllSavesAtThree"
+   },
+   {
+    "kind": "const",
+    "name": "dfbMinAbilityScore"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbBecomesDemigod"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbPlayersMayBeUpset"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbNewCharactersWorshipHeroes"
+   },
+   {
+    "kind": "bool",
+    "name": "dfbHeroesNotGods"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the demihumans box closes",
+   "from": "  - [ ] Demihumans in High-Level Play / Demihuman\n    Advancement (pp. 178-179) - the level-limit\n    doctrine for high-level demihumans",
+   "to": "  - [x] Demihumans in High-Level Play / Demihuman\n    Advancement (pp. 178-179) - the level-limit\n    doctrine for high-level demihumans - R612:\n    the dfb doctrine pins (do not ignore the\n    limits; the four solutions: wish or 10th-\n    level transformation to human, wish or imbue\n    per extra level with earned XP, the Slow\n    Advancement rule, slow-after-max with the\n    racial heroic task)"
+  },
+  {
+   "note": "the ascension box closes",
+   "from": "  - [ ] Beyond 30th Level / Divine Ascension (p.\n    179) - the level ceiling, the ascension doctrine",
+   "to": "  - [x] Beyond 30th Level / Divine Ascension (p.\n    179) - the level ceiling, the ascension\n    doctrine - R612: the dfb ceiling pins (all\n    advancement stops at 30th) and the full\n    ascension path (seek after 20th, the divine\n    sponsor, the gift at XP-total value, the\n    500K-per-save-point benefit to a minimum of\n    three, the Table 59 offering roll, the heroic\n    task, no ability under 13, the demigod NPC\n    ending, heroes not gods)"
+  },
+  {
+   "note": "the Chapter 7 parent box closes",
+   "from": "- [ ] **Chapter 7: High-Level Characters** (pp.\n  142-179) - the beyond-core progression system",
+   "to": "- [x] **Chapter 7: High-Level Characters** (pp.\n  142-179) - the beyond-core progression system -\n    R612: the chapter PARENT closes - all Chapter\n    7 children landed across R608 (the save\n    auto-failure doctrine, opening doctrine),\n    R609 (Table 40 skills, Table 41 modifiers,\n    Table 42 warriors), R610 (Tables 43-47, the\n    wizards and priests), R611 (Tables 48-52, the\n    rogues) and R612 (the demihuman limits and\n    the divine ascension)"
+  }
+ ],
+ "gap_census": {
+  "closed": 93,
+  "open": 3
+ },
+ "caller_files": [],
+ "inline_count": 54,
+ "audit_comment": "DMO Chapter 7 round five of five (printed pp. 178-179, the chapter parent flips here): the demihuman advancement doctrine and its four solutions, the beyond-30th level ceiling, and the full divine ascension path - the sponsor, the offering and its Table 59 roll, the 500K-per-point saving throw ladder to the minimum of three, the heroic task with its five examples, the ability-score floor of 13, and the demigod ending."
+}

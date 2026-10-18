@@ -11448,6 +11448,70 @@ when both halves land.
   Audit: "R611 DMO rogues
   audit"; include after
   rules/dmohighwizpri.h.
+- R611 LANDED 2026-10-18: commit
+  1de9c4b4e71c072964a9c667e08c13db
+  2e96a250 (census 533 -> 534,
+  pushed 74d21c6..1de9c4b),
+  ROGUES, printed pp. 167-177, DMO
+  Chapter 7 round four of five per
+  the split plan - ONE box flips
+  (Rogues; gap census now 90 closed
+  / 6 open):
+  rules/dmohighrogues.h, prefix dfa
+  (verified free), 273 inlines (111
+  consts, 117 bools, 6 chains, 39
+  table columns), 9 grids (T47r
+  rogue advancement 11x5; T49
+  racial 5x6; T50 Dexterity-aim 2x10;
+  T51 armor 3x3; bribe status 4x2;
+  tunneling earth 3x2; T52 bard
+  spell progression 11x8; fall
+  surface 7x1; featherfoot 3x2),
+  228 examples, 42 table_checks,
+  478-mutant battery 0 missed. TWO
+  CONTESTED CELLS settled against
+  the physical copy (user-confirmed
+  2026-10-18): the T47 level-30 XP
+  reads 4,300,000 (ABBYY; tesseract
+  4,500,000, series 4,400,000) with
+  the final step only 120K not 220K;
+  and the T50 tunneling row prints a
+  dash at Dex 17 and +30 at 22
+  (tesseract; ABBYY dropped the final
+  cell). THREE printed quirks pinned
+  verbatim: the rogue advancement
+  caption shares printed number 47
+  with the priest spell progression
+  caption; the T49 halfling
+  detect-magic cell prints +5 without
+  the percent sign; the rogue
+  Con-bonus footnote reads after
+  10th level (warrior and wizard read
+  9th). All eleven rogue skills pinned
+  (adaptation, classify traps,
+  evasion, fall/jump with the Jobare
+  shaft example, featherfoot,
+  improvised attack with its
+  save-modifier ladder and trick-hat
+  example, inner focus,
+  nondetection, sense danger with
+  its subskill ladder, shadow
+  flight, shadow travel). DELIVERY:
+  raw JSON in the canvas (user-set:
+  b64 NOT needed), spec 124783
+  bytes, md5
+  6ebd867df11799adcd4f16361bca6b5d
+  verified byte-exact before ./rn.
+  NEXT - R612: Demihumans in
+  High-Level Play / Demihuman
+  Advancement + Beyond 30th Level /
+  Divine Ascension (pp. 178-179) -
+  the Chapter 7 PARENT flips here;
+  consult the gap report at HEAD
+  1de9c4b; verify next prefix free
+  (dfb family next). Audit: "R612
+  DMO demihumans-ascension audit";
+  include after rules/dmohighrogues.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
