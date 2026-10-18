@@ -1,0 +1,2889 @@
+{
+ "round": 605,
+ "prefix": "der",
+ "header_file": "rules/dmoitems.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 527,
+ "title": "Creating Magical Items",
+ "audit_label": "R605 DMO item-creation audit",
+ "audit_comment": "CHAPTER 4 of the DMO (printed pp. 86-95), the item-creation economy closing in one round: the holy water ceremony (the five-spell chain, the eight-hour meditations and rest, the -4 combat window, the one-font-one-week rule with the cost ladder and the Delsenora recycle read), the requirements doctrine (the class level thresholds, the common-rare-exotic materials and processes, the laboratory and altar economics), the Table 23 creation grid (28 rows of material, process, footnote, cost and time codes), the per-type details (the 70/80/60 bases, the potion and ring research windows, the ink ladder, the drained-item death rule), the recharge window with its -1 save-or-dust risk, the 96-00 automatic failure with the cursed-item twists, the Table 24 XP grid, and the Rozmare worked examples at 94 and 65 percent.",
+ "include_comment": "the DMO item-creation pins",
+ "include_after": "#include \"rules/dmospells.h\"  // R604: the DMO spells-and-items pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R604 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R604 LANDED 2026-10-18: commit",
+  "  35536f1a1cd2dd7540ac1f95b2ac6c22",
+  "  aa034ce2 (census 526 -> 527,",
+  "  pushed 08891d9..35536f1),",
+  "  SPELLS AND MAGICAL ITEMS, printed",
+  "  pp. 68-85, DMO Chapter 3 closed",
+  "  in one round - FIVE boxes flip",
+  "  and the chapter is DONE (gap",
+  "  census 42/54): the daily-",
+  "  recovery doctrine (the eight-",
+  "  hour rest, the ten minutes a",
+  "  level, the eight-hour study",
+  "  cap, the restart-on-",
+  "  distraction), the wizard and",
+  "  priest per-spell pins (the",
+  "  horrid wilting 16d8 with the",
+  "  OCR-misread note, the cone and",
+  "  delayed-blast dice, the ESP",
+  "  save ladder, the wish aging",
+  "  grids with the five races,",
+  "  the planar-research 4x5 grid",
+  "  with month=4/year=52, the",
+  "  plane-shift companions, the",
+  "  bag grid, the extradimensional",
+  "  portable-hole seam, the",
+  "  sphere cap and withering",
+  "  ladders), the item-use",
+  "  doctrines. Header",
+  "  rules/dmospells.h, prefix deq",
+  "  (dep NOT free - the depthFt",
+  "  collision; dem precedent),",
+  "  157 inlines (114 consts, 33",
+  "  bools, 10 table columns, 3",
+  "  grids T31-T33). Spec",
+  "  tools/spec_r604.json 72055",
+  "  bytes md5",
+  "  63806f24b1a9d4d9b26810a85f992c",
+  "  e6 matched exactly first try.",
+  "  THIRTY-EIGHT straight first-",
+  "  tries (R566-R604). NEXT - R605:",
+  "  Chapter 4 (Creating Magical",
+  "  Items, pp. 86-95) - the holy",
+  "  water font ceremony, the",
+  "  materials and processes",
+  "  doctrine, Table 23 and Table",
+  "  24, the per-type success",
+  "  formulas, the Rozmare worked",
+  "  examples; prefix der."
+ ],
+ "banner": {
+  "title": "CREATING MAGICAL ITEMS - DMO Chapter 4 closes: the holy water ceremony (the five-spell chain with the two reversed unholy forms, the eight-hour meditations, the chant turn, the -4 combat window, the one-font-one-week rule, the nine-row cost ladder with the Delsenora recycle read at 30 percent of 21,000 gp), the requirements doctrine (the wizard 9-and-11 and priest 7-9-11 thresholds, the specialist +5, the 5,000-gp laboratory with its 500-a-month upkeep, the 2,000-gp altar with its one-week vigil), the Table 23 grid (28 item rows of material, process, footnote, cost and time codes), the per-type success formulas (the 70/80/60 bases, the 1d3+1-week potion research at 100 gp a week, the 1d6+1-week ring research at 200 gp a week, the ink ladder, the scroll and ring reads, the drained-item death rule), the 24-hour recharge window with the -1 save-or-dust preparation risk, the 96-00 automatic failure with the cursed and creator curses, the Table 24 XP grid with its per-plus and special forms, and the Rozmare worked examples (the potion of speed at 94 percent, the long sword +1 +3 vs. regenerating creatures at 65 percent with its eight-week preparation).",
+  "provenance": "verified against printed pp. 86-95 of the uploaded DMO session capture (part 1 holds printed 1-90, printed page N at OCR page N+1; part 2 holds printed 91-192, the 86-90 overlap resolved to the part 1 text); the holy water ceremony from pp. 86-87, the font cost ladder from p. 87, the level thresholds and working space from pp. 87-88, Table 23 from p. 89, the item details from pp. 90-92, the recharge and failure doctrine from pp. 92-93, Table 24 and the cursed values from pp. 93-94, the Rozmare examples from pp. 94-95. The potion success rule prints +1 percent for every two levels while the book's own Rozmare example works her 13th level at +26 percent, two percent a level; the printed rule and the worked read are both pinned with the divergence noted.",
+  "sentinel": "the gap census after this round: 52 closed, 44 open - Chapter 4 is DONE in one round, ten boxes flip (nine children and the parent); the DMO arc continues with Chapter 5 (Magical Duels, pp. 96-117)."
+ },
+ "consts": [
+  {
+   "name": "derHolySpellCount",
+   "value": 5,
+   "comment": "the holy-water ceremony chain length: five spells, create water, purify food and drink, bless, chant and prayer, cast in the listed order (printed p. 86)."
+  },
+  {
+   "name": "derHolyUnholySpellCount",
+   "value": 2,
+   "comment": "the unholy-water reversal count: two of the five spells, purify food and drink and bless, are cast in reversed form (printed p. 86)."
+  },
+  {
+   "name": "derHolyMeditateHours",
+   "value": 8,
+   "comment": "the pre-casting meditation: at least eight hours of praying and meditating before casting the chain (printed p. 86)."
+  },
+  {
+   "name": "derHolyChantTurns",
+   "value": 1,
+   "comment": "the chant maintenance: the chant spell is maintained for one full turn after the chain (printed p. 86)."
+  },
+  {
+   "name": "derHolyRestHours",
+   "value": 8,
+   "comment": "the post-ceremony rest: at least eight hours of rest before casting any spells (printed p. 86)."
+  },
+  {
+   "name": "derHolyCombatPenalty",
+   "value": -4,
+   "comment": "the combat-window penalty: forced combat during the rest costs -4 on all attack rolls, saving throws and ability checks (printed p. 86)."
+  },
+  {
+   "name": "derFontUsePerWeek",
+   "value": 1,
+   "comment": "the one-font-one-week rule: a particular font can be used only once a week (printed p. 86)."
+  },
+  {
+   "name": "derFontsPerBuilding",
+   "value": 1,
+   "comment": "the temple font limit: a religious building contains only one font, one per wing or floor at the DM option (printed p. 86)."
+  },
+  {
+   "name": "derFontRowCount",
+   "value": 9,
+   "comment": "the font-cost ladder length: nine capacity rows, six vials through fifty (printed p. 87)."
+  },
+  {
+   "name": "derFontBuildWeeksDieCount",
+   "value": 2,
+   "comment": "the font construction dice count: 2d4+2 weeks to design and fashion the basin and pedestal (printed p. 87)."
+  },
+  {
+   "name": "derFontBuildWeeksDieSize",
+   "value": 4,
+   "comment": "the font construction die size: 2d4+2 weeks (printed p. 87)."
+  },
+  {
+   "name": "derFontBuildWeeksBonus",
+   "value": 2,
+   "comment": "the font construction bonus weeks: 2d4+2 (printed p. 87)."
+  },
+  {
+   "name": "derVialCostGp",
+   "value": 5,
+   "comment": "the blessed vial cost: five gp for a crystal or leaded-glass vial holding a quarter pint (printed p. 87)."
+  },
+  {
+   "name": "derVialPotencyTurns",
+   "value": 1,
+   "comment": "the potency window: holy water loses potency if removed from the font for more than one turn unless in a blessed vial (printed p. 87)."
+  },
+  {
+   "name": "derEmptyVialSellDieCount",
+   "value": 1,
+   "comment": "the empty-vial resale dice count: 1d4+1 gp each on the open market (printed p. 87)."
+  },
+  {
+   "name": "derEmptyVialSellDieSize",
+   "value": 4,
+   "comment": "the empty-vial resale die size: 1d4+1 gp (printed p. 87)."
+  },
+  {
+   "name": "derEmptyVialSellBonus",
+   "value": 1,
+   "comment": "the empty-vial resale bonus: 1d4+1 gp (printed p. 87)."
+  },
+  {
+   "name": "derRecyclePctDieCount",
+   "value": 1,
+   "comment": "the basin-recycle dice count: the defiled basin materials recycle at (1d4+1) x 10 percent of the original cost (printed p. 87)."
+  },
+  {
+   "name": "derRecyclePctDieSize",
+   "value": 4,
+   "comment": "the basin-recycle die size: (1d4+1) x 10 percent (printed p. 87)."
+  },
+  {
+   "name": "derRecyclePctBonus",
+   "value": 1,
+   "comment": "the basin-recycle bonus: (1d4+1) x 10 percent (printed p. 87)."
+  },
+  {
+   "name": "derRecyclePctMult",
+   "value": 10,
+   "comment": "the basin-recycle multiplier: (1d4+1) x 10 percent (printed p. 87)."
+  },
+  {
+   "name": "derDelsenoraFontVials",
+   "value": 32,
+   "comment": "the Delsenora read: her temple font holds 32 vials, the seventh ladder row (printed p. 87)."
+  },
+  {
+   "name": "derDelsenoraBasinCost",
+   "value": 21000,
+   "comment": "the Delsenora read: the initial basin cost was 21,000 gp (printed p. 87)."
+  },
+  {
+   "name": "derDelsenoraPedestalCost",
+   "value": 1500,
+   "comment": "the Delsenora read: the pedestal cost was 1,500 gp and is repaid on a remake (printed p. 87)."
+  },
+  {
+   "name": "derDelsenoraRecycleRoll",
+   "value": 2,
+   "comment": "the Delsenora read: she rolls a 2 on the recycle die (printed p. 87)."
+  },
+  {
+   "name": "derDelsenoraRecyclePct",
+   "value": 30,
+   "comment": "the Delsenora read: the roll works out to 30 percent of the original basin cost (printed p. 87)."
+  },
+  {
+   "name": "derDelsenoraRecycleCost",
+   "value": 6300,
+   "comment": "the Delsenora read: 30 percent of 21,000 gp is 6,300 gp (printed p. 87)."
+  },
+  {
+   "name": "derWizPotionScrollLevel",
+   "value": 9,
+   "comment": "the wizard threshold: potions and scrolls at 9th level, given the spells (printed p. 87)."
+  },
+  {
+   "name": "derWizOtherItemLevel",
+   "value": 11,
+   "comment": "the wizard threshold: all other items at 11th level (printed p. 87)."
+  },
+  {
+   "name": "derPriestScrollLevel",
+   "value": 7,
+   "comment": "the priest thresholds: scrolls at 7th level (printed p. 87)."
+  },
+  {
+   "name": "derPriestPotionLevel",
+   "value": 9,
+   "comment": "the priest thresholds: potions at 9th level (printed p. 87)."
+  },
+  {
+   "name": "derPriestOtherLevel",
+   "value": 11,
+   "comment": "the priest thresholds: all other items at 11th level (printed p. 87)."
+  },
+  {
+   "name": "derSpecialistSchoolBonusPct",
+   "value": 5,
+   "comment": "the specialist bonus: +5 percent to success when the item holds abilities from the school of specialization (printed p. 88)."
+  },
+  {
+   "name": "derLabMinSqFt",
+   "value": 500,
+   "comment": "the wizard laboratory floor: at least 500 square feet, 20 x 25 feet, more preferable (printed p. 88)."
+  },
+  {
+   "name": "derLabSetupCostGp",
+   "value": 5000,
+   "comment": "the laboratory setup cost: 5,000 gp for basic furnishings and supplies (printed p. 88)."
+  },
+  {
+   "name": "derLabMonthlyGp",
+   "value": 500,
+   "comment": "the laboratory upkeep: 500 gp a month to stay properly equipped (printed p. 88)."
+  },
+  {
+   "name": "derAltarMinCostGp",
+   "value": 2000,
+   "comment": "the priest altar minimum: 2,000 gp to build and properly consecrate (printed p. 88)."
+  },
+  {
+   "name": "derAltarVigilWeeks",
+   "value": 1,
+   "comment": "the consecration vigil: one week of prayer and meditation occupying all waking hours (printed p. 88)."
+  },
+  {
+   "name": "derMatCommon",
+   "value": 1,
+   "comment": "the material rarity code: common - plentiful, steel, oak staves, copper, wool (printed pp. 90-91)."
+  },
+  {
+   "name": "derMatRare",
+   "value": 2,
+   "comment": "the material rarity code: rare - expensive and difficult, silk, diamonds, roc feathers, ebony (printed pp. 90-91)."
+  },
+  {
+   "name": "derMatExotic",
+   "value": 3,
+   "comment": "the material rarity code: exotic - unique, unpurchasable, adventure-borne, moon tears and goddess hair (printed pp. 90-91)."
+  },
+  {
+   "name": "derMatRareAndCommon",
+   "value": 4,
+   "comment": "the material code: one rare and one common, the scroll-spell read (printed p. 89)."
+  },
+  {
+   "name": "derMatExoticPerFunction",
+   "value": 5,
+   "comment": "the material code: one exotic per function, the multiple-function read (printed p. 89)."
+  },
+  {
+   "name": "derMatExoticPerUse",
+   "value": 6,
+   "comment": "the material code: one exotic per use, the limited-use read (printed p. 89)."
+  },
+  {
+   "name": "derProcCommon",
+   "value": 1,
+   "comment": "the process code: common - simple and straightforward, spring-storm snow and lava tempering (printed pp. 91 and 91)."
+  },
+  {
+   "name": "derProcRare",
+   "value": 2,
+   "comment": "the process code: rare - extra effort or extraordinary expense (printed p. 91)."
+  },
+  {
+   "name": "derProcExotic",
+   "value": 3,
+   "comment": "the process code: exotic - unique, adventure-only, a lover's sigh and burning ice (printed p. 91)."
+  },
+  {
+   "name": "derProcRareAndCommon",
+   "value": 4,
+   "comment": "the process code: one rare and one common, the armor and weapon single-function read (printed p. 89)."
+  },
+  {
+   "name": "derProcExoticPerFunction",
+   "value": 5,
+   "comment": "the process code: one exotic per function (printed p. 89)."
+  },
+  {
+   "name": "derProcExoticPerUse",
+   "value": 6,
+   "comment": "the process code: one exotic per use (printed p. 89)."
+  },
+  {
+   "name": "derProcRarePerFunction",
+   "value": 7,
+   "comment": "the process code: one rare per function, the miscellaneous-multiple read (printed p. 89)."
+  },
+  {
+   "name": "derProcVariable",
+   "value": 0,
+   "comment": "the process code zero: variable, the scroll-spell read (printed p. 89)."
+  },
+  {
+   "name": "derExtraNone",
+   "value": 0,
+   "comment": "the footnote-process code: no extra process required (printed p. 89)."
+  },
+  {
+   "name": "derExtraCommon",
+   "value": 1,
+   "comment": "the footnote one: one common process also is required (printed p. 89)."
+  },
+  {
+   "name": "derExtraExotic",
+   "value": 3,
+   "comment": "the footnote two: one exotic process also is required (printed p. 89)."
+  },
+  {
+   "name": "derExtraRareCommon",
+   "value": 4,
+   "comment": "the footnote three: one rare and one common process also are required (printed p. 89)."
+  },
+  {
+   "name": "derCostHalfXp",
+   "value": 1,
+   "comment": "the cost code: half the XP value in gp (printed p. 89)."
+  },
+  {
+   "name": "derCostXp",
+   "value": 2,
+   "comment": "the cost code: the XP value in gp (printed p. 89)."
+  },
+  {
+   "name": "derCostDoubleXp",
+   "value": 4,
+   "comment": "the cost code: double the XP value in gp (printed p. 89)."
+  },
+  {
+   "name": "derCostTripleXp",
+   "value": 6,
+   "comment": "the cost code: triple the XP value in gp (printed p. 89)."
+  },
+  {
+   "name": "derCostQuadXp",
+   "value": 8,
+   "comment": "the cost code: quadruple the XP value in gp (printed p. 89)."
+  },
+  {
+   "name": "derTimeDayPerHundredGp",
+   "value": 1,
+   "comment": "the time code: one day per 100 gp (printed p. 89)."
+  },
+  {
+   "name": "derTimeDayPerSpellLevel",
+   "value": 2,
+   "comment": "the time code: one day per spell level (printed p. 89)."
+  },
+  {
+   "name": "derTimeFixedDays",
+   "value": 3,
+   "comment": "the time code: a fixed number of days (printed p. 89)."
+  },
+  {
+   "name": "derTimeWeekPerHundredGp",
+   "value": 4,
+   "comment": "the time code: one week per 100 gp (printed p. 89)."
+  },
+  {
+   "name": "derTimeWeekPerThousandGp",
+   "value": 5,
+   "comment": "the time code: one week per 1,000 gp (printed p. 89)."
+  },
+  {
+   "name": "derPermanencyConLoss",
+   "value": 1,
+   "comment": "the permanency price: wizards lose one point of Constitution casting the permanency most items require (printed p. 90)."
+  },
+  {
+   "name": "derPotionBasePct",
+   "value": 70,
+   "comment": "the potion brew base: 70 percent (printed p. 91)."
+  },
+  {
+   "name": "derPotionLevelPctStep",
+   "value": 1,
+   "comment": "the potion level bonus: +1 percent for every two levels of the creator (printed p. 91) - the book's own Rozmare example works her 13th level at +26, two percent a level, the divergence noted in the banner."
+  },
+  {
+   "name": "derPotionCostStepGp",
+   "value": 100,
+   "comment": "the potion cost penalty: -1 percent for each 100 gp the potion costs (printed p. 91)."
+  },
+  {
+   "name": "derPotionResearchDieCount",
+   "value": 1,
+   "comment": "the potion-formula research dice: 1d3+1 weeks from scratch (printed p. 91)."
+  },
+  {
+   "name": "derPotionResearchDieSize",
+   "value": 3,
+   "comment": "the potion-formula research die size: 1d3+1 weeks (printed p. 91)."
+  },
+  {
+   "name": "derPotionResearchBonus",
+   "value": 1,
+   "comment": "the potion-formula research bonus: 1d3+1 weeks (printed p. 91)."
+  },
+  {
+   "name": "derPotionResearchWeeklyGp",
+   "value": 100,
+   "comment": "the potion-formula research cost: 100 gp a week (printed p. 91)."
+  },
+  {
+   "name": "derPotionAnalyzeWeeks",
+   "value": 1,
+   "comment": "the potion analysis: with a dose or another caster's formula the research is free and takes one week (printed p. 91)."
+  },
+  {
+   "name": "derScrollBasePct",
+   "value": 80,
+   "comment": "the scroll-writing base: 80 percent (printed p. 91)."
+  },
+  {
+   "name": "derScrollLevelPctPerLevel",
+   "value": 1,
+   "comment": "the scroll level bonus: +1 percent for every level of the creator (printed p. 91)."
+  },
+  {
+   "name": "derScrollSpellPctPerSpellLevel",
+   "value": 1,
+   "comment": "the scroll spell penalty: -1 percent for each level of the written spell (printed p. 91)."
+  },
+  {
+   "name": "derScrollInkBlendDays",
+   "value": 1,
+   "comment": "the ink blending: one day to blend, the ink must be used within two weeks (printed p. 91)."
+  },
+  {
+   "name": "derScrollInkUseWeeks",
+   "value": 2,
+   "comment": "the ink window: two weeks from blending to use (printed p. 91)."
+  },
+  {
+   "name": "derScrollLowInkLevelMax",
+   "value": 3,
+   "comment": "the ink ladder: spells of levels 1-3 require a rare ingredient (printed p. 91)."
+  },
+  {
+   "name": "derScrollHighInkLevelMin",
+   "value": 4,
+   "comment": "the ink ladder: spells of levels 4-6 require an exotic ingredient (printed p. 91)."
+  },
+  {
+   "name": "derScrollTopInkLevelMin",
+   "value": 7,
+   "comment": "the ink ladder: spells of levels 7 and up require one rare and one exotic ingredient (printed p. 91)."
+  },
+  {
+   "name": "derScrollSpellsDieSize",
+   "value": 6,
+   "comment": "the scroll capacity: 1d6 spells per scroll, secretly rolled, the character knows when it is full (printed p. 91)."
+  },
+  {
+   "name": "derRingBasePct",
+   "value": 60,
+   "comment": "the ring creation base: 60 percent (printed p. 91)."
+  },
+  {
+   "name": "derRingLevelPctPerLevel",
+   "value": 1,
+   "comment": "the ring level bonus: +1 percent for every level of the creator (printed p. 91)."
+  },
+  {
+   "name": "derRingSpellPctPerSpell",
+   "value": 1,
+   "comment": "the ring penalty: -1 percent for each spell and special process required, except enchant an item (printed p. 91)."
+  },
+  {
+   "name": "derRingResearchDieCount",
+   "value": 1,
+   "comment": "the ring research dice: 1d6+1 weeks (printed p. 91)."
+  },
+  {
+   "name": "derRingResearchDieSize",
+   "value": 6,
+   "comment": "the ring research die size: 1d6+1 weeks (printed p. 91)."
+  },
+  {
+   "name": "derRingResearchBonus",
+   "value": 1,
+   "comment": "the ring research bonus: 1d6+1 weeks (printed p. 91)."
+  },
+  {
+   "name": "derRingResearchWeeklyGp",
+   "value": 200,
+   "comment": "the ring research cost: 200 gp a week (printed p. 91)."
+  },
+  {
+   "name": "derRingResearchAidedWeeks",
+   "value": 2,
+   "comment": "the aided ring research: contact other plane or commune reduces the time to two weeks (printed p. 91)."
+  },
+  {
+   "name": "derRodStaffWandBasePct",
+   "value": 60,
+   "comment": "the rods-staves-wands base: the same chance as a ring, 60 percent (printed p. 92)."
+  },
+  {
+   "name": "derInitialCharges",
+   "value": 1,
+   "comment": "the rechargeable birth: created with one charge, the rest added by recharging (printed p. 92)."
+  },
+  {
+   "name": "derRechargeWindowHours",
+   "value": 24,
+   "comment": "the recharge window: 24 hours to create charges once the preparatory spell or ceremony is complete (printed p. 93)."
+  },
+  {
+   "name": "derRechargeSavePenalty",
+   "value": -1,
+   "comment": "the preparation risk: each preparation forces a save vs. spell at the caster's level with a -1 penalty; failure is dust (printed p. 93)."
+  },
+  {
+   "name": "derAutoFailRollMin",
+   "value": 96,
+   "comment": "the automatic failure floor: any roll of 96-00 fails automatically (printed p. 93)."
+  },
+  {
+   "name": "derAutoFailRollMax",
+   "value": 100,
+   "comment": "the automatic failure ceiling: rolls 96 through 100 (printed p. 93)."
+  },
+  {
+   "name": "derXpFlat",
+   "value": 0,
+   "comment": "the Table 24 code: a flat min-max range (printed p. 93)."
+  },
+  {
+   "name": "derXpPerPlus",
+   "value": 1,
+   "comment": "the Table 24 code: the range is per plus, the armor and weapon reads (printed p. 93)."
+  },
+  {
+   "name": "derXpSumOfValues",
+   "value": 2,
+   "comment": "the Table 24 code: the multiple-function value is the lower value plus the higher value, the armor read (printed p. 93)."
+  },
+  {
+   "name": "derXpLowerPlusShare",
+   "value": 3,
+   "comment": "the Table 24 code: the lower value plus 20-40 percent of the higher value, the weapon read (printed p. 93)."
+  },
+  {
+   "name": "derXpPerSpellLevel",
+   "value": 4,
+   "comment": "the Table 24 code: 100 XP per spell level, the scroll-spell read (printed p. 93)."
+  },
+  {
+   "name": "derRozmareLevel",
+   "value": 13,
+   "comment": "the Rozmare level: 13th in both worked examples (printed pp. 94-95)."
+  },
+  {
+   "name": "derPotionSpeedXpValue",
+   "value": 200,
+   "comment": "the potion-of-speed read: its XP value is 200 gp, also the additional-materials cost (printed p. 95)."
+  },
+  {
+   "name": "derPotionSpeedBrewWeeks",
+   "value": 2,
+   "comment": "the potion-of-speed read: brewing takes two weeks (printed p. 95)."
+  },
+  {
+   "name": "derPotionSpeedSuccessPct",
+   "value": 94,
+   "comment": "the potion-of-speed read: the DM rolls 71 against her 94 percent (printed p. 95)."
+  },
+  {
+   "name": "derRozmareSwordXpValue",
+   "value": 800,
+   "comment": "the Rozmare sword: an 800 XP value, the long sword +1 +3 vs. regenerating creatures (printed p. 95)."
+  },
+  {
+   "name": "derRozmareSwordMaterialGp",
+   "value": 1600,
+   "comment": "the Rozmare sword: additional materials cost double the XP value, 1,600 gp (printed p. 95)."
+  },
+  {
+   "name": "derSwordResearchWeeks",
+   "value": 3,
+   "comment": "the Rozmare sword: three weeks of research without magical aid (printed p. 95)."
+  },
+  {
+   "name": "derSwordResearchGp",
+   "value": 600,
+   "comment": "the Rozmare sword: 600 gp spent on the research (printed p. 95)."
+  },
+  {
+   "name": "derPrepWeeksPerThousandGp",
+   "value": 4,
+   "comment": "the preparation doctrine: four weeks per 1,000 gp of cost, rounded up to the nearest 1,000 (printed p. 95)."
+  },
+  {
+   "name": "derRozmareSwordPrepWeeks",
+   "value": 8,
+   "comment": "the Rozmare sword: 1,600 gp rounds to 2,000, four weeks a thousand - eight weeks (printed p. 95)."
+  },
+  {
+   "name": "derRozmareSwordSuccessPct",
+   "value": 65,
+   "comment": "the Rozmare sword: base 60 + 13 for level - 8 for processes and spells, 65 percent; the DM rolls 54 (printed p. 95)."
+  },
+  {
+   "name": "derRozmareSwordExoticMaterials",
+   "value": 2,
+   "comment": "the Rozmare sword: two exotic materials, fallen-star metal and vampire-coffin nails (printed p. 95)."
+  },
+  {
+   "name": "derT23RowCount",
+   "value": 28,
+   "comment": "the Table 23 grid length: 28 item rows, potion single-use through weapon limited-use (printed p. 89)."
+  },
+  {
+   "name": "derT24RowCount",
+   "value": 27,
+   "comment": "the Table 24 grid length: 27 item rows, potion single-use through weapon limited-use (printed p. 93)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "derUnholyReversedSpells",
+   "value": true,
+   "comment": "the reversed-spell rule: the spells marked with an asterisk are used in reversed form to create unholy water (printed p. 86)."
+  },
+  {
+   "name": "derCeremonyRuinOnDelay",
+   "value": true,
+   "comment": "the no-delay rule: any delay between finishing one spell and starting the next ruins the ceremony (printed p. 86)."
+  },
+  {
+   "name": "derCreateWaterOverflowDissipated",
+   "value": true,
+   "comment": "the overflow rule: the create water spell produces more water than the basin holds and the extra is channeled away or magically dissipated (printed p. 86)."
+  },
+  {
+   "name": "derFontDefileByCurse",
+   "value": true,
+   "comment": "the magical defilement: touching the font and casting a curse spell defiles it for holy water and magic font spells (printed p. 87)."
+  },
+  {
+   "name": "derFontDefileNonmagical",
+   "value": true,
+   "comment": "the mundane defilement: placing anything repugnant to the deity within the font defiles it nonmagically (printed p. 87)."
+  },
+  {
+   "name": "derDefiledFontRemade",
+   "value": true,
+   "comment": "the remade-font rule: a defiled font must be entirely remade; it cannot be cleansed or restored except by a wish (printed p. 87)."
+  },
+  {
+   "name": "derWarriorsRoguesCannot",
+   "value": true,
+   "comment": "the class bar: warriors and rogues cannot create magical items even with spellcasting ability (printed p. 87)."
+  },
+  {
+   "name": "derNoMagicalBooks",
+   "value": true,
+   "comment": "the writings bar: no character can make a magical book, libram, manual, tome or artifact (printed p. 87)."
+  },
+  {
+   "name": "derNoAbilityWritings",
+   "value": true,
+   "comment": "the writings bar: magical writings that increase levels and ability scores are likewise unbalancing (printed p. 87)."
+  },
+  {
+   "name": "derRacialItemsRacePriestOnly",
+   "value": true,
+   "comment": "the racial rule: racial items such as boots of elvenkind only by priests of the indicated race (printed p. 87)."
+  },
+  {
+   "name": "derPriestsCastStoredSpellsOk",
+   "value": true,
+   "comment": "the spell-source rule: priests and wizards can use spells on scrolls, stored in items or cast by other characters (printed p. 87)."
+  },
+  {
+   "name": "derOnlyUsableItems",
+   "value": true,
+   "comment": "the usability bar: priests and specialist wizards can make only items they can use - no cleric long swords, no transmuter wands of fire (printed p. 88)."
+  },
+  {
+   "name": "derVigilRestartOnInterrupt",
+   "value": true,
+   "comment": "the vigil restart: if interrupted, the vigil must be started over again (printed p. 88)."
+  },
+  {
+   "name": "derOnlyConsecratorUsesAltar",
+   "value": true,
+   "comment": "the altar monopoly: only the priest who performed the consecration can use it, no other creature while the priest lives (printed p. 88)."
+  },
+  {
+   "name": "derDefiledAltarReconsecrated",
+   "value": true,
+   "comment": "the defiled altar: if defiled, the priest must consecrate it again (printed p. 88)."
+  },
+  {
+   "name": "derDmApprovalRequired",
+   "value": true,
+   "comment": "the approval gate: the DM must approve any new magical item entering the campaign (printed p. 89)."
+  },
+  {
+   "name": "derItemFinestQuality",
+   "value": true,
+   "comment": "the quality rule: every item must be of the finest quality, specifically created to hold enchantment - no smithy sword becomes a frost brand (printed p. 90)."
+  },
+  {
+   "name": "derRequirementsNotAutoKnown",
+   "value": true,
+   "comment": "the hidden-requirements rule: the character does not automatically know what materials and processes are necessary (printed p. 90)."
+  },
+  {
+   "name": "derEnchantAndPermanencyRequired",
+   "value": true,
+   "comment": "the wizard chain: enchant an item to focus the energy, the power-duplicating spells, and most items also require permanency (printed p. 90)."
+  },
+  {
+   "name": "derPriestsPetitionDeities",
+   "value": true,
+   "comment": "the priest path: priests lack enchant an item and must petition their deities, the DMG Chapter 10 procedure (printed p. 90)."
+  },
+  {
+   "name": "derPriestNoConLossDefault",
+   "value": true,
+   "comment": "the priest read: priests do not normally suffer the loss, though the DM can rule the taxing process drains a point on permanency-class items (printed p. 90)."
+  },
+  {
+   "name": "derPotionDoseNotConsumed",
+   "value": true,
+   "comment": "the analysis dose: a full dose is needed but not consumed in the research (printed p. 91)."
+  },
+  {
+   "name": "derPotionFormulaReusable",
+   "value": true,
+   "comment": "the recorded formula: once personally researched and recorded, no re-research unless the record is lost (printed p. 91)."
+  },
+  {
+   "name": "derScrollNoSpellsCast",
+   "value": true,
+   "comment": "the scroll doctrine: no spells are actually cast in writing, but the writer must know the spell and hold the components (printed p. 91)."
+  },
+  {
+   "name": "derScrollComponentsConsumed",
+   "value": true,
+   "comment": "the scroll components: if normally consumed in casting, they are consumed in writing (printed p. 91)."
+  },
+  {
+   "name": "derScrollPenaltyCarried",
+   "value": true,
+   "comment": "the scroll penalty carry: a casting penalty such as magical aging carries into the scroll writing (printed p. 91)."
+  },
+  {
+   "name": "derScrollFailurePreservesSpells",
+   "value": true,
+   "comment": "the scroll failure: a failed spell fills the remaining space with an ink blob, leaving written spells intact (printed p. 91)."
+  },
+  {
+   "name": "derScrollNewQuillPerSpell",
+   "value": true,
+   "comment": "the scroll quill: a new quill must be used for each spell written (printed p. 91)."
+  },
+  {
+   "name": "derRingCommonProcessExtra",
+   "value": true,
+   "comment": "the ring read: any ring requires one common process beyond its Table 23 needs (printed p. 91)."
+  },
+  {
+   "name": "derRingPriestsSufferPenalty",
+   "value": true,
+   "comment": "the ring read: priests still suffer the spell penalty though they cast nothing - the complex enchantment is harder to petition (printed p. 91)."
+  },
+  {
+   "name": "derRodStaffWandPermanency",
+   "value": true,
+   "comment": "the rods-staves-wands chain: enchant an item, the power spells, and a permanency spell is required (printed p. 92)."
+  },
+  {
+   "name": "derDrainedItemDeadForever",
+   "value": true,
+   "comment": "the drained-item death: losing all charges kills the magic forever, even a rechargeable item can never be enchanted again (printed p. 92)."
+  },
+  {
+   "name": "derEachPlusSeparateSpell",
+   "value": true,
+   "comment": "the plus rule: each plus for a weapon or protective device requires a separate spell (printed p. 92)."
+  },
+  {
+   "name": "derSingleUseNoPermanency",
+   "value": true,
+   "comment": "the permanency exemption: single-use and limited-use items do not require permanency (printed p. 92)."
+  },
+  {
+   "name": "derMiscSameAsRing",
+   "value": true,
+   "comment": "the misc-armor-weapon base: the chance to create one of these is the same as for a ring (printed p. 92)."
+  },
+  {
+   "name": "derTimeNotReducible",
+   "value": true,
+   "comment": "the time doctrine: manufacturing time cannot be reduced by extra workers, help or money (printed p. 91)."
+  },
+  {
+   "name": "derMagesRechargeNoncasterItems",
+   "value": true,
+   "comment": "the recharge permission: mages can also recharge items usable only by fighters or rogues (printed p. 93)."
+  },
+  {
+   "name": "derRechargeSpellDuplicatesPower",
+   "value": true,
+   "comment": "the recharge doctrine: the spell must duplicate the item's power - the most powerful function for multi-function items, a cone of cold for a wand of frost (printed p. 93)."
+  },
+  {
+   "name": "derRechargeNormalCastingTime",
+   "value": true,
+   "comment": "the recharge timing: each spell takes its normal casting time, not the enchant an item delay (printed p. 93)."
+  },
+  {
+   "name": "derDmRollsSecretly",
+   "value": true,
+   "comment": "the secret roll: the DM secretly rolls the dice for each creation attempt (printed p. 93)."
+  },
+  {
+   "name": "derSuccessNeverImproves",
+   "value": true,
+   "comment": "the mastery limit: no matter how many times a character has created an item, the chances stay the same (printed p. 93)."
+  },
+  {
+   "name": "derFailureUsuallyRuins",
+   "value": true,
+   "comment": "the ordinary failure: most failed attempts ruin the item into useless slag (printed p. 93)."
+  },
+  {
+   "name": "derAutoFailMakesCurse",
+   "value": true,
+   "comment": "the 96-00 twist: the item appears normal but carries a cursed or reversed effect, DM's choice (printed pp. 93-94)."
+  },
+  {
+   "name": "derCursedCompareToSimilar",
+   "value": true,
+   "comment": "the cursed-item doctrine: judge cost and difficulty against useful items of similar power - a sword -2 is as hard as a sword +2 (printed p. 94)."
+  },
+  {
+   "name": "derCursedFailureDestroys",
+   "value": true,
+   "comment": "the cursed failure: a failed cursed-item attempt is destroyed (printed p. 94)."
+  },
+  {
+   "name": "derCreatorCursedOnAutoFail",
+   "value": true,
+   "comment": "the creator curse: a cursed-item attempt failing on 96-00 puts the curse on the creator, never a useful item (printed p. 94)."
+  },
+  {
+   "name": "derNonstandardCompareToSimilar",
+   "value": true,
+   "comment": "the nonstandard doctrine: assign an XP value by comparison to similar existing items; err high (printed p. 94)."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "derT23Grid",
+   "tag": "T34",
+   "count": "derT23RowCount",
+   "cols": [
+    "derT23MatCode",
+    "derT23ProcCode",
+    "derT23ProcExtraCode",
+    "derT23CostHalfXp",
+    "derT23TimeKind",
+    "derT23TimeRate"
+   ],
+   "sentinel": -99,
+   "comment": "the Table 23 creation grid (printed p. 89): 28 item rows, potion single-use through weapon limited-use; the material and process rarity codes, the footnote process, the cost in half-XP units and the time kind with its rate.",
+   "col_comments": [
+    "the material code: 1 common, 2 rare, 3 exotic, 4 rare-and-common, 5 exotic-per-function, 6 exotic-per-use (printed p. 89).",
+    "the process code: 0 variable, 1 common, 2 rare, 3 exotic, 4 rare-and-common, 5 exotic-per-function, 6 exotic-per-use, 7 rare-per-function (printed p. 89).",
+    "the footnote process: 0 none, 1 the footnote-one common, 3 the footnote-two exotic, 4 the footnote-three rare-and-common (printed p. 89).",
+    "the cost in half-XP units: 1 half value, 2 the value, 4 double, 6 triple, 8 quadruple (printed p. 89).",
+    "the time kind: 1 day per 100 gp, 2 day per spell level, 3 fixed days, 4 week per 100 gp, 5 week per 1,000 gp (printed p. 89).",
+    "the time rate: the days or weeks of the time kind, or the fixed day count (printed p. 89)."
+   ],
+   "data": [
+    [
+     2,
+     1,
+     0,
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     2,
+     0,
+     2,
+     1,
+     1
+    ],
+    [
+     4,
+     0,
+     0,
+     1,
+     2,
+     1
+    ],
+    [
+     3,
+     2,
+     0,
+     1,
+     3,
+     6
+    ],
+    [
+     3,
+     1,
+     0,
+     2,
+     4,
+     1
+    ],
+    [
+     5,
+     5,
+     1,
+     4,
+     4,
+     1
+    ],
+    [
+     3,
+     3,
+     1,
+     4,
+     4,
+     1
+    ],
+    [
+     3,
+     2,
+     0,
+     1,
+     5,
+     1
+    ],
+    [
+     3,
+     2,
+     0,
+     1,
+     4,
+     1
+    ],
+    [
+     5,
+     5,
+     1,
+     1,
+     4,
+     2
+    ],
+    [
+     3,
+     6,
+     0,
+     1,
+     4,
+     4
+    ],
+    [
+     2,
+     2,
+     0,
+     1,
+     4,
+     1
+    ],
+    [
+     5,
+     5,
+     1,
+     1,
+     4,
+     2
+    ],
+    [
+     3,
+     6,
+     0,
+     1,
+     4,
+     4
+    ],
+    [
+     2,
+     2,
+     0,
+     1,
+     4,
+     1
+    ],
+    [
+     5,
+     5,
+     1,
+     1,
+     4,
+     2
+    ],
+    [
+     3,
+     6,
+     0,
+     1,
+     4,
+     4
+    ],
+    [
+     3,
+     3,
+     0,
+     4,
+     4,
+     1
+    ],
+    [
+     3,
+     3,
+     0,
+     6,
+     4,
+     1
+    ],
+    [
+     5,
+     7,
+     3,
+     8,
+     4,
+     1
+    ],
+    [
+     6,
+     6,
+     3,
+     4,
+     4,
+     3
+    ],
+    [
+     3,
+     4,
+     0,
+     4,
+     5,
+     3
+    ],
+    [
+     5,
+     5,
+     4,
+     4,
+     5,
+     4
+    ],
+    [
+     6,
+     6,
+     4,
+     4,
+     5,
+     2
+    ],
+    [
+     2,
+     1,
+     0,
+     2,
+     4,
+     1
+    ],
+    [
+     3,
+     4,
+     0,
+     4,
+     5,
+     3
+    ],
+    [
+     5,
+     5,
+     4,
+     4,
+     5,
+     4
+    ],
+    [
+     6,
+     6,
+     4,
+     4,
+     5,
+     2
+    ]
+   ]
+  },
+  {
+   "name": "derT24Grid",
+   "tag": "T35",
+   "count": "derT24RowCount",
+   "cols": [
+    "derT24XpMin",
+    "derT24XpMax",
+    "derT24PerPlus"
+   ],
+   "sentinel": -99,
+   "comment": "the Table 24 typical experience values (printed p. 93): 27 item rows with the min and max XP and the special-form code - per plus, the value sum, the lower-plus-20-40-percent share and the per-spell-level read.",
+   "col_comments": [
+    "the XP minimum: the low end of the range, or the per-plus and per-spell-level base (printed p. 93).",
+    "the XP maximum: the high end of the range, zero where a special form applies (printed p. 93).",
+    "the special-form code: 0 flat, 1 per plus, 2 lower value plus higher value, 3 lower value plus 20-40 percent of the higher, 4 per spell level (printed p. 93)."
+   ],
+   "data": [
+    [
+     200,
+     1000,
+     0
+    ],
+    [
+     250,
+     1000,
+     0
+    ],
+    [
+     100,
+     0,
+     4
+    ],
+    [
+     1000,
+     2500,
+     0
+    ],
+    [
+     1000,
+     4000,
+     0
+    ],
+    [
+     3000,
+     5000,
+     0
+    ],
+    [
+     1000,
+     5000,
+     0
+    ],
+    [
+     4000,
+     10000,
+     0
+    ],
+    [
+     5000,
+     10000,
+     0
+    ],
+    [
+     6000,
+     10000,
+     0
+    ],
+    [
+     4000,
+     10000,
+     0
+    ],
+    [
+     5000,
+     8000,
+     0
+    ],
+    [
+     7000,
+     15000,
+     0
+    ],
+    [
+     2500,
+     5000,
+     0
+    ],
+    [
+     2000,
+     4000,
+     0
+    ],
+    [
+     4000,
+     7000,
+     0
+    ],
+    [
+     4000,
+     6000,
+     0
+    ],
+    [
+     200,
+     2000,
+     0
+    ],
+    [
+     2000,
+     10000,
+     0
+    ],
+    [
+     2500,
+     10000,
+     0
+    ],
+    [
+     500,
+     2500,
+     0
+    ],
+    [
+     250,
+     800,
+     1
+    ],
+    [
+     0,
+     0,
+     2
+    ],
+    [
+     3000,
+     5000,
+     0
+    ],
+    [
+     20,
+     50,
+     1
+    ],
+    [
+     400,
+     600,
+     1
+    ],
+    [
+     0,
+     0,
+     3
+    ],
+    [
+     1000,
+     5000,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "derFontGrid",
+   "tag": "T36",
+   "count": "derFontRowCount",
+   "cols": [
+    "derFontCapVials",
+    "derFontBasinDieCount",
+    "derFontBasinDieSize",
+    "derFontBasinDieMult",
+    "derFontBasinBonusGp",
+    "derFontPedestalGp"
+   ],
+   "sentinel": -99,
+   "comment": "the holy water font cost ladder (printed p. 87): nine capacities, six through fifty vials; the basin cost as dice x multiplier plus bonus, the pedestal a flat fee.",
+   "col_comments": [
+    "the capacity in vials: 6, 8, 10, 14, 18, 24, 32, 40, 50 (printed p. 87).",
+    "the basin cost dice count: one die on every row (printed p. 87).",
+    "the basin cost die size: d6, d6, d6, d4, d4, d4, d4, d6, d10 (printed p. 87).",
+    "the basin cost die multiplier: 10, 50, 100, 500, 1,000, 1,000, 1,000, 10,000, 10,000 (printed p. 87).",
+    "the basin cost bonus in gp: 120, 1,000, 1,800, 5,200, 8,000, 15,000, 18,000, 50,000, 100,000 (printed p. 87).",
+    "the pedestal cost in gp: 200 through 2,000, a flat fee (printed p. 87)."
+   ],
+   "data": [
+    [
+     6,
+     1,
+     6,
+     10,
+     120,
+     200
+    ],
+    [
+     8,
+     1,
+     6,
+     50,
+     1000,
+     350
+    ],
+    [
+     10,
+     1,
+     6,
+     100,
+     1800,
+     500
+    ],
+    [
+     14,
+     1,
+     4,
+     500,
+     5200,
+     750
+    ],
+    [
+     18,
+     1,
+     4,
+     1000,
+     8000,
+     1000
+    ],
+    [
+     24,
+     1,
+     4,
+     1000,
+     15000,
+     1250
+    ],
+    [
+     32,
+     1,
+     4,
+     1000,
+     18000,
+     1500
+    ],
+    [
+     40,
+     1,
+     6,
+     10000,
+     50000,
+     1750
+    ],
+    [
+     50,
+     1,
+     10,
+     10000,
+     100000,
+     2000
+    ]
+   ]
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the Rozmare potion read: 70 + 26 - 2 is 94 percent (printed p. 95)",
+   "expr": "m['derPotionBasePct']() + 26 - 2 != 94"
+  },
+  {
+   "note": "the Rozmare sword read: 60 + 13 - 8 is 65 percent (printed p. 95)",
+   "expr": "m['derRingBasePct']() + 13 - 8 != 65"
+  },
+  {
+   "note": "the potion single-use row: rare material, common process, XP cost, a day per 100 gp (printed p. 89)",
+   "expr": "m['derT23MatCode'](0) != 2 or m['derT23ProcCode'](0) != 1 or m['derT23CostHalfXp'](0) != 2 or m['derT23TimeKind'](0) != 1 or m['derT23TimeRate'](0) != 1"
+  },
+  {
+   "note": "the scroll-spell row: rare-and-common material, half-XP cost, a day per spell level (printed p. 89)",
+   "expr": "m['derT23MatCode'](2) != 4 or m['derT23CostHalfXp'](2) != 1 or m['derT23TimeKind'](2) != 2"
+  },
+  {
+   "note": "the scroll-protection row: exotic material, six fixed days (printed p. 89)",
+   "expr": "m['derT23TimeKind'](3) != 3 or m['derT23TimeRate'](3) != 6"
+  },
+  {
+   "note": "the staff-multiple row: exotic per function with the common footnote, two weeks per 100 gp (printed p. 89)",
+   "expr": "m['derT23MatCode'](12) != 5 or m['derT23ProcCode'](12) != 5 or m['derT23ProcExtraCode'](12) != 1 or m['derT23TimeKind'](12) != 4 or m['derT23TimeRate'](12) != 2"
+  },
+  {
+   "note": "the armor single-function row: rare-and-common process, double cost, three weeks per 1,000 gp (printed p. 89)",
+   "expr": "m['derT23ProcCode'](21) != 4 or m['derT23CostHalfXp'](21) != 4 or m['derT23TimeKind'](21) != 5 or m['derT23TimeRate'](21) != 3"
+  },
+  {
+   "note": "the weapon-limited row: exotic per use with the rare-and-common footnote, two weeks per 1,000 gp (printed p. 89)",
+   "expr": "m['derT23ProcExtraCode'](27) != 4 or m['derT23TimeKind'](27) != 5 or m['derT23TimeRate'](27) != 2"
+  },
+  {
+   "note": "the rod-multiple row: two weeks per 100 gp, the footnote-one common process (printed p. 89)",
+   "expr": "m['derT23TimeRate'](9) != 2 or m['derT23ProcExtraCode'](9) != 1"
+  },
+  {
+   "note": "the misc-limited row: three weeks per 100 gp, the footnote-two exotic process (printed p. 89)",
+   "expr": "m['derT23TimeRate'](20) != 3 or m['derT23ProcExtraCode'](20) != 3"
+  },
+  {
+   "note": "the wand single-function XP band: 2,000 through 4,000 (printed p. 93)",
+   "expr": "m['derT24XpMin'](14) != 2000 or m['derT24XpMax'](14) != 4000"
+  },
+  {
+   "note": "the armor single-function XP: 250-800 per plus (printed p. 93)",
+   "expr": "m['derT24XpMin'](21) != 250 or m['derT24XpMax'](21) != 800 or m['derT24PerPlus'](21) != 1"
+  },
+  {
+   "note": "the weapon-multiple XP: the lower value plus 20-40 percent of the higher (printed p. 93)",
+   "expr": "m['derT24PerPlus'](26) != 3"
+  },
+  {
+   "note": "the scroll-spell XP: 100 per spell level (printed p. 93)",
+   "expr": "m['derT24PerPlus'](2) != 4 or m['derT24XpMin'](2) != 100"
+  },
+  {
+   "note": "the Delsenora font row: 32 vials, the 18,000 gp basin bonus, the 1,500 gp pedestal (printed p. 87)",
+   "expr": "m['derFontCapVials'](6) != 32 or m['derFontBasinBonusGp'](6) != 18000 or m['derFontPedestalGp'](6) != 1500"
+  },
+  {
+   "note": "the Delsenora recycle read: 30 percent of 21,000 gp is 6,300 (printed p. 87)",
+   "expr": "m['derDelsenoraRecyclePct']() * m['derDelsenoraBasinCost']() / 100 != 6300"
+  },
+  {
+   "note": "the ceremony window: eight hours meditating plus eight hours rest (printed p. 86)",
+   "expr": "m['derHolyMeditateHours']() + m['derHolyRestHours']() != 16"
+  },
+  {
+   "note": "the Rozmare sword materials: double the 800 XP value is 1,600 gp (printed p. 95)",
+   "expr": "m['derRozmareSwordMaterialGp']() / m['derRozmareSwordXpValue']() != 2"
+  },
+  {
+   "note": "the Rozmare sword preparation: 1,600 gp rounds to 2,000, four weeks a thousand is eight (printed p. 95)",
+   "expr": "m['derPrepWeeksPerThousandGp']() * (m['derRozmareSwordMaterialGp']() + 400) / 1000 != 8"
+  },
+  {
+   "note": "the font construction window: 2d4+2 weeks, the minimum four (printed p. 87)",
+   "expr": "m['derFontBuildWeeksDieCount']() + m['derFontBuildWeeksBonus']() != 4"
+  },
+  {
+   "note": "the level thresholds: wizards at 9 and 11, priests at 7, 9 and 11 (printed p. 87)",
+   "expr": "m['derWizPotionScrollLevel']() != 9 or m['derWizOtherItemLevel']() != 11 or m['derPriestScrollLevel']() != 7 or m['derPriestPotionLevel']() != 9 or m['derPriestOtherLevel']() != 11"
+  }
+ ],
+ "header_sections": {
+  "the DMO holy-water ceremony pins": [
+   {
+    "kind": "const",
+    "name": "derHolySpellCount"
+   },
+   {
+    "kind": "const",
+    "name": "derHolyUnholySpellCount"
+   },
+   {
+    "kind": "const",
+    "name": "derHolyMeditateHours"
+   },
+   {
+    "kind": "const",
+    "name": "derHolyChantTurns"
+   },
+   {
+    "kind": "const",
+    "name": "derHolyRestHours"
+   },
+   {
+    "kind": "const",
+    "name": "derHolyCombatPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "derFontUsePerWeek"
+   },
+   {
+    "kind": "const",
+    "name": "derFontsPerBuilding"
+   },
+   {
+    "kind": "bool",
+    "name": "derUnholyReversedSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "derCeremonyRuinOnDelay"
+   },
+   {
+    "kind": "bool",
+    "name": "derCreateWaterOverflowDissipated"
+   },
+   {
+    "kind": "const",
+    "name": "derFontRowCount"
+   },
+   {
+    "kind": "const",
+    "name": "derFontBuildWeeksDieCount"
+   },
+   {
+    "kind": "const",
+    "name": "derFontBuildWeeksDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "derFontBuildWeeksBonus"
+   },
+   {
+    "kind": "const",
+    "name": "derVialCostGp"
+   },
+   {
+    "kind": "const",
+    "name": "derVialPotencyTurns"
+   },
+   {
+    "kind": "const",
+    "name": "derEmptyVialSellDieCount"
+   },
+   {
+    "kind": "const",
+    "name": "derEmptyVialSellDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "derEmptyVialSellBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "derFontDefileByCurse"
+   },
+   {
+    "kind": "bool",
+    "name": "derFontDefileNonmagical"
+   },
+   {
+    "kind": "bool",
+    "name": "derDefiledFontRemade"
+   },
+   {
+    "kind": "const",
+    "name": "derRecyclePctDieCount"
+   },
+   {
+    "kind": "const",
+    "name": "derRecyclePctDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "derRecyclePctBonus"
+   },
+   {
+    "kind": "const",
+    "name": "derRecyclePctMult"
+   },
+   {
+    "kind": "const",
+    "name": "derDelsenoraFontVials"
+   },
+   {
+    "kind": "const",
+    "name": "derDelsenoraBasinCost"
+   },
+   {
+    "kind": "const",
+    "name": "derDelsenoraPedestalCost"
+   },
+   {
+    "kind": "const",
+    "name": "derDelsenoraRecycleRoll"
+   },
+   {
+    "kind": "const",
+    "name": "derDelsenoraRecyclePct"
+   },
+   {
+    "kind": "const",
+    "name": "derDelsenoraRecycleCost"
+   },
+   {
+    "kind": "table",
+    "name": "derFontGrid"
+   }
+  ],
+  "the DMO item-creation requirement pins": [
+   {
+    "kind": "const",
+    "name": "derWizPotionScrollLevel"
+   },
+   {
+    "kind": "const",
+    "name": "derWizOtherItemLevel"
+   },
+   {
+    "kind": "const",
+    "name": "derPriestScrollLevel"
+   },
+   {
+    "kind": "const",
+    "name": "derPriestPotionLevel"
+   },
+   {
+    "kind": "const",
+    "name": "derPriestOtherLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "derWarriorsRoguesCannot"
+   },
+   {
+    "kind": "bool",
+    "name": "derNoMagicalBooks"
+   },
+   {
+    "kind": "bool",
+    "name": "derNoAbilityWritings"
+   },
+   {
+    "kind": "bool",
+    "name": "derRacialItemsRacePriestOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "derPriestsCastStoredSpellsOk"
+   },
+   {
+    "kind": "bool",
+    "name": "derOnlyUsableItems"
+   },
+   {
+    "kind": "const",
+    "name": "derSpecialistSchoolBonusPct"
+   },
+   {
+    "kind": "const",
+    "name": "derLabMinSqFt"
+   },
+   {
+    "kind": "const",
+    "name": "derLabSetupCostGp"
+   },
+   {
+    "kind": "const",
+    "name": "derLabMonthlyGp"
+   },
+   {
+    "kind": "const",
+    "name": "derAltarMinCostGp"
+   },
+   {
+    "kind": "const",
+    "name": "derAltarVigilWeeks"
+   },
+   {
+    "kind": "bool",
+    "name": "derVigilRestartOnInterrupt"
+   },
+   {
+    "kind": "bool",
+    "name": "derOnlyConsecratorUsesAltar"
+   },
+   {
+    "kind": "bool",
+    "name": "derDefiledAltarReconsecrated"
+   },
+   {
+    "kind": "bool",
+    "name": "derDmApprovalRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "derItemFinestQuality"
+   },
+   {
+    "kind": "bool",
+    "name": "derRequirementsNotAutoKnown"
+   },
+   {
+    "kind": "bool",
+    "name": "derEnchantAndPermanencyRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "derPriestsPetitionDeities"
+   },
+   {
+    "kind": "const",
+    "name": "derPermanencyConLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "derPriestNoConLossDefault"
+   },
+   {
+    "kind": "const",
+    "name": "derMatCommon"
+   },
+   {
+    "kind": "const",
+    "name": "derMatRare"
+   },
+   {
+    "kind": "const",
+    "name": "derMatExotic"
+   },
+   {
+    "kind": "const",
+    "name": "derMatRareAndCommon"
+   },
+   {
+    "kind": "const",
+    "name": "derMatExoticPerFunction"
+   },
+   {
+    "kind": "const",
+    "name": "derMatExoticPerUse"
+   },
+   {
+    "kind": "const",
+    "name": "derProcCommon"
+   },
+   {
+    "kind": "const",
+    "name": "derProcRare"
+   },
+   {
+    "kind": "const",
+    "name": "derProcExotic"
+   },
+   {
+    "kind": "const",
+    "name": "derProcRareAndCommon"
+   },
+   {
+    "kind": "const",
+    "name": "derProcExoticPerFunction"
+   },
+   {
+    "kind": "const",
+    "name": "derProcExoticPerUse"
+   },
+   {
+    "kind": "const",
+    "name": "derProcRarePerFunction"
+   },
+   {
+    "kind": "const",
+    "name": "derProcVariable"
+   },
+   {
+    "kind": "const",
+    "name": "derExtraNone"
+   },
+   {
+    "kind": "const",
+    "name": "derExtraCommon"
+   },
+   {
+    "kind": "const",
+    "name": "derExtraExotic"
+   },
+   {
+    "kind": "const",
+    "name": "derExtraRareCommon"
+   },
+   {
+    "kind": "const",
+    "name": "derCostHalfXp"
+   },
+   {
+    "kind": "const",
+    "name": "derCostXp"
+   },
+   {
+    "kind": "const",
+    "name": "derCostDoubleXp"
+   },
+   {
+    "kind": "const",
+    "name": "derCostTripleXp"
+   },
+   {
+    "kind": "const",
+    "name": "derCostQuadXp"
+   },
+   {
+    "kind": "const",
+    "name": "derTimeDayPerHundredGp"
+   },
+   {
+    "kind": "const",
+    "name": "derTimeDayPerSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "derTimeFixedDays"
+   },
+   {
+    "kind": "const",
+    "name": "derTimeWeekPerHundredGp"
+   },
+   {
+    "kind": "const",
+    "name": "derTimeWeekPerThousandGp"
+   },
+   {
+    "kind": "const",
+    "name": "derT23RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "derT23Grid"
+   }
+  ],
+  "the DMO item-details pins": [
+   {
+    "kind": "const",
+    "name": "derPotionBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "derPotionLevelPctStep"
+   },
+   {
+    "kind": "const",
+    "name": "derPotionCostStepGp"
+   },
+   {
+    "kind": "const",
+    "name": "derPotionResearchDieCount"
+   },
+   {
+    "kind": "const",
+    "name": "derPotionResearchDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "derPotionResearchBonus"
+   },
+   {
+    "kind": "const",
+    "name": "derPotionResearchWeeklyGp"
+   },
+   {
+    "kind": "const",
+    "name": "derPotionAnalyzeWeeks"
+   },
+   {
+    "kind": "bool",
+    "name": "derPotionDoseNotConsumed"
+   },
+   {
+    "kind": "bool",
+    "name": "derPotionFormulaReusable"
+   },
+   {
+    "kind": "const",
+    "name": "derScrollBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "derScrollLevelPctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "derScrollSpellPctPerSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "derScrollInkBlendDays"
+   },
+   {
+    "kind": "const",
+    "name": "derScrollInkUseWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "derScrollLowInkLevelMax"
+   },
+   {
+    "kind": "const",
+    "name": "derScrollHighInkLevelMin"
+   },
+   {
+    "kind": "const",
+    "name": "derScrollTopInkLevelMin"
+   },
+   {
+    "kind": "const",
+    "name": "derScrollSpellsDieSize"
+   },
+   {
+    "kind": "bool",
+    "name": "derScrollNoSpellsCast"
+   },
+   {
+    "kind": "bool",
+    "name": "derScrollComponentsConsumed"
+   },
+   {
+    "kind": "bool",
+    "name": "derScrollPenaltyCarried"
+   },
+   {
+    "kind": "bool",
+    "name": "derScrollFailurePreservesSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "derScrollNewQuillPerSpell"
+   },
+   {
+    "kind": "const",
+    "name": "derRingBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "derRingLevelPctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "derRingSpellPctPerSpell"
+   },
+   {
+    "kind": "const",
+    "name": "derRingResearchDieCount"
+   },
+   {
+    "kind": "const",
+    "name": "derRingResearchDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "derRingResearchBonus"
+   },
+   {
+    "kind": "const",
+    "name": "derRingResearchWeeklyGp"
+   },
+   {
+    "kind": "const",
+    "name": "derRingResearchAidedWeeks"
+   },
+   {
+    "kind": "bool",
+    "name": "derRingCommonProcessExtra"
+   },
+   {
+    "kind": "bool",
+    "name": "derRingPriestsSufferPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "derRodStaffWandPermanency"
+   },
+   {
+    "kind": "bool",
+    "name": "derDrainedItemDeadForever"
+   },
+   {
+    "kind": "bool",
+    "name": "derEachPlusSeparateSpell"
+   },
+   {
+    "kind": "bool",
+    "name": "derSingleUseNoPermanency"
+   },
+   {
+    "kind": "bool",
+    "name": "derMiscSameAsRing"
+   },
+   {
+    "kind": "bool",
+    "name": "derTimeNotReducible"
+   },
+   {
+    "kind": "const",
+    "name": "derRodStaffWandBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "derInitialCharges"
+   }
+  ],
+  "the DMO recharge and failure pins": [
+   {
+    "kind": "const",
+    "name": "derRechargeWindowHours"
+   },
+   {
+    "kind": "const",
+    "name": "derRechargeSavePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "derMagesRechargeNoncasterItems"
+   },
+   {
+    "kind": "bool",
+    "name": "derRechargeSpellDuplicatesPower"
+   },
+   {
+    "kind": "bool",
+    "name": "derRechargeNormalCastingTime"
+   },
+   {
+    "kind": "const",
+    "name": "derAutoFailRollMin"
+   },
+   {
+    "kind": "const",
+    "name": "derAutoFailRollMax"
+   },
+   {
+    "kind": "bool",
+    "name": "derDmRollsSecretly"
+   },
+   {
+    "kind": "bool",
+    "name": "derSuccessNeverImproves"
+   },
+   {
+    "kind": "bool",
+    "name": "derFailureUsuallyRuins"
+   },
+   {
+    "kind": "bool",
+    "name": "derAutoFailMakesCurse"
+   },
+   {
+    "kind": "bool",
+    "name": "derCursedCompareToSimilar"
+   },
+   {
+    "kind": "bool",
+    "name": "derCursedFailureDestroys"
+   },
+   {
+    "kind": "bool",
+    "name": "derCreatorCursedOnAutoFail"
+   },
+   {
+    "kind": "bool",
+    "name": "derNonstandardCompareToSimilar"
+   }
+  ],
+  "the DMO Table 24 XP grid": [
+   {
+    "kind": "const",
+    "name": "derXpFlat"
+   },
+   {
+    "kind": "const",
+    "name": "derXpPerPlus"
+   },
+   {
+    "kind": "const",
+    "name": "derXpSumOfValues"
+   },
+   {
+    "kind": "const",
+    "name": "derXpLowerPlusShare"
+   },
+   {
+    "kind": "const",
+    "name": "derXpPerSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "derT24RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "derT24Grid"
+   }
+  ],
+  "the DMO Rozmare worked-example pins": [
+   {
+    "kind": "const",
+    "name": "derRozmareLevel"
+   },
+   {
+    "kind": "const",
+    "name": "derPotionSpeedXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "derPotionSpeedBrewWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "derPotionSpeedSuccessPct"
+   },
+   {
+    "kind": "const",
+    "name": "derRozmareSwordXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "derRozmareSwordMaterialGp"
+   },
+   {
+    "kind": "const",
+    "name": "derSwordResearchWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "derSwordResearchGp"
+   },
+   {
+    "kind": "const",
+    "name": "derPrepWeeksPerThousandGp"
+   },
+   {
+    "kind": "const",
+    "name": "derRozmareSwordPrepWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "derRozmareSwordSuccessPct"
+   },
+   {
+    "kind": "const",
+    "name": "derRozmareSwordExoticMaterials"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the derHolySpellCount pin",
+   "expr": "m['derHolySpellCount']() != 5"
+  },
+  {
+   "note": "the derHolyUnholySpellCount pin",
+   "expr": "m['derHolyUnholySpellCount']() != 2"
+  },
+  {
+   "note": "the derHolyMeditateHours pin",
+   "expr": "m['derHolyMeditateHours']() != 8"
+  },
+  {
+   "note": "the derHolyChantTurns pin",
+   "expr": "m['derHolyChantTurns']() != 1"
+  },
+  {
+   "note": "the derHolyRestHours pin",
+   "expr": "m['derHolyRestHours']() != 8"
+  },
+  {
+   "note": "the derHolyCombatPenalty pin",
+   "expr": "m['derHolyCombatPenalty']() != -4"
+  },
+  {
+   "note": "the derFontUsePerWeek pin",
+   "expr": "m['derFontUsePerWeek']() != 1"
+  },
+  {
+   "note": "the derFontsPerBuilding pin",
+   "expr": "m['derFontsPerBuilding']() != 1"
+  },
+  {
+   "note": "the derFontRowCount pin",
+   "expr": "m['derFontRowCount']() != 9"
+  },
+  {
+   "note": "the derFontBuildWeeksDieCount pin",
+   "expr": "m['derFontBuildWeeksDieCount']() != 2"
+  },
+  {
+   "note": "the derFontBuildWeeksDieSize pin",
+   "expr": "m['derFontBuildWeeksDieSize']() != 4"
+  },
+  {
+   "note": "the derFontBuildWeeksBonus pin",
+   "expr": "m['derFontBuildWeeksBonus']() != 2"
+  },
+  {
+   "note": "the derVialCostGp pin",
+   "expr": "m['derVialCostGp']() != 5"
+  },
+  {
+   "note": "the derVialPotencyTurns pin",
+   "expr": "m['derVialPotencyTurns']() != 1"
+  },
+  {
+   "note": "the derEmptyVialSellDieCount pin",
+   "expr": "m['derEmptyVialSellDieCount']() != 1"
+  },
+  {
+   "note": "the derEmptyVialSellDieSize pin",
+   "expr": "m['derEmptyVialSellDieSize']() != 4"
+  },
+  {
+   "note": "the derEmptyVialSellBonus pin",
+   "expr": "m['derEmptyVialSellBonus']() != 1"
+  },
+  {
+   "note": "the derRecyclePctDieCount pin",
+   "expr": "m['derRecyclePctDieCount']() != 1"
+  },
+  {
+   "note": "the derRecyclePctDieSize pin",
+   "expr": "m['derRecyclePctDieSize']() != 4"
+  },
+  {
+   "note": "the derRecyclePctBonus pin",
+   "expr": "m['derRecyclePctBonus']() != 1"
+  },
+  {
+   "note": "the derRecyclePctMult pin",
+   "expr": "m['derRecyclePctMult']() != 10"
+  },
+  {
+   "note": "the derDelsenoraFontVials pin",
+   "expr": "m['derDelsenoraFontVials']() != 32"
+  },
+  {
+   "note": "the derDelsenoraBasinCost pin",
+   "expr": "m['derDelsenoraBasinCost']() != 21000"
+  },
+  {
+   "note": "the derDelsenoraPedestalCost pin",
+   "expr": "m['derDelsenoraPedestalCost']() != 1500"
+  },
+  {
+   "note": "the derDelsenoraRecycleRoll pin",
+   "expr": "m['derDelsenoraRecycleRoll']() != 2"
+  },
+  {
+   "note": "the derDelsenoraRecyclePct pin",
+   "expr": "m['derDelsenoraRecyclePct']() != 30"
+  },
+  {
+   "note": "the derDelsenoraRecycleCost pin",
+   "expr": "m['derDelsenoraRecycleCost']() != 6300"
+  },
+  {
+   "note": "the derWizPotionScrollLevel pin",
+   "expr": "m['derWizPotionScrollLevel']() != 9"
+  },
+  {
+   "note": "the derWizOtherItemLevel pin",
+   "expr": "m['derWizOtherItemLevel']() != 11"
+  },
+  {
+   "note": "the derPriestScrollLevel pin",
+   "expr": "m['derPriestScrollLevel']() != 7"
+  },
+  {
+   "note": "the derPriestPotionLevel pin",
+   "expr": "m['derPriestPotionLevel']() != 9"
+  },
+  {
+   "note": "the derPriestOtherLevel pin",
+   "expr": "m['derPriestOtherLevel']() != 11"
+  },
+  {
+   "note": "the derSpecialistSchoolBonusPct pin",
+   "expr": "m['derSpecialistSchoolBonusPct']() != 5"
+  },
+  {
+   "note": "the derLabMinSqFt pin",
+   "expr": "m['derLabMinSqFt']() != 500"
+  },
+  {
+   "note": "the derLabSetupCostGp pin",
+   "expr": "m['derLabSetupCostGp']() != 5000"
+  },
+  {
+   "note": "the derLabMonthlyGp pin",
+   "expr": "m['derLabMonthlyGp']() != 500"
+  },
+  {
+   "note": "the derAltarMinCostGp pin",
+   "expr": "m['derAltarMinCostGp']() != 2000"
+  },
+  {
+   "note": "the derAltarVigilWeeks pin",
+   "expr": "m['derAltarVigilWeeks']() != 1"
+  },
+  {
+   "note": "the derMatCommon pin",
+   "expr": "m['derMatCommon']() != 1"
+  },
+  {
+   "note": "the derMatRare pin",
+   "expr": "m['derMatRare']() != 2"
+  },
+  {
+   "note": "the derMatExotic pin",
+   "expr": "m['derMatExotic']() != 3"
+  },
+  {
+   "note": "the derMatRareAndCommon pin",
+   "expr": "m['derMatRareAndCommon']() != 4"
+  },
+  {
+   "note": "the derMatExoticPerFunction pin",
+   "expr": "m['derMatExoticPerFunction']() != 5"
+  },
+  {
+   "note": "the derMatExoticPerUse pin",
+   "expr": "m['derMatExoticPerUse']() != 6"
+  },
+  {
+   "note": "the derProcCommon pin",
+   "expr": "m['derProcCommon']() != 1"
+  },
+  {
+   "note": "the derProcRare pin",
+   "expr": "m['derProcRare']() != 2"
+  },
+  {
+   "note": "the derProcExotic pin",
+   "expr": "m['derProcExotic']() != 3"
+  },
+  {
+   "note": "the derProcRareAndCommon pin",
+   "expr": "m['derProcRareAndCommon']() != 4"
+  },
+  {
+   "note": "the derProcExoticPerFunction pin",
+   "expr": "m['derProcExoticPerFunction']() != 5"
+  },
+  {
+   "note": "the derProcExoticPerUse pin",
+   "expr": "m['derProcExoticPerUse']() != 6"
+  },
+  {
+   "note": "the derProcRarePerFunction pin",
+   "expr": "m['derProcRarePerFunction']() != 7"
+  },
+  {
+   "note": "the derProcVariable pin",
+   "expr": "m['derProcVariable']() != 0"
+  },
+  {
+   "note": "the derExtraNone pin",
+   "expr": "m['derExtraNone']() != 0"
+  },
+  {
+   "note": "the derExtraCommon pin",
+   "expr": "m['derExtraCommon']() != 1"
+  },
+  {
+   "note": "the derExtraExotic pin",
+   "expr": "m['derExtraExotic']() != 3"
+  },
+  {
+   "note": "the derExtraRareCommon pin",
+   "expr": "m['derExtraRareCommon']() != 4"
+  },
+  {
+   "note": "the derCostHalfXp pin",
+   "expr": "m['derCostHalfXp']() != 1"
+  },
+  {
+   "note": "the derCostXp pin",
+   "expr": "m['derCostXp']() != 2"
+  },
+  {
+   "note": "the derCostDoubleXp pin",
+   "expr": "m['derCostDoubleXp']() != 4"
+  },
+  {
+   "note": "the derCostTripleXp pin",
+   "expr": "m['derCostTripleXp']() != 6"
+  },
+  {
+   "note": "the derCostQuadXp pin",
+   "expr": "m['derCostQuadXp']() != 8"
+  },
+  {
+   "note": "the derTimeDayPerHundredGp pin",
+   "expr": "m['derTimeDayPerHundredGp']() != 1"
+  },
+  {
+   "note": "the derTimeDayPerSpellLevel pin",
+   "expr": "m['derTimeDayPerSpellLevel']() != 2"
+  },
+  {
+   "note": "the derTimeFixedDays pin",
+   "expr": "m['derTimeFixedDays']() != 3"
+  },
+  {
+   "note": "the derTimeWeekPerHundredGp pin",
+   "expr": "m['derTimeWeekPerHundredGp']() != 4"
+  },
+  {
+   "note": "the derTimeWeekPerThousandGp pin",
+   "expr": "m['derTimeWeekPerThousandGp']() != 5"
+  },
+  {
+   "note": "the derPermanencyConLoss pin",
+   "expr": "m['derPermanencyConLoss']() != 1"
+  },
+  {
+   "note": "the derPotionBasePct pin",
+   "expr": "m['derPotionBasePct']() != 70"
+  },
+  {
+   "note": "the derPotionLevelPctStep pin",
+   "expr": "m['derPotionLevelPctStep']() != 1"
+  },
+  {
+   "note": "the derPotionCostStepGp pin",
+   "expr": "m['derPotionCostStepGp']() != 100"
+  },
+  {
+   "note": "the derPotionResearchDieCount pin",
+   "expr": "m['derPotionResearchDieCount']() != 1"
+  },
+  {
+   "note": "the derPotionResearchDieSize pin",
+   "expr": "m['derPotionResearchDieSize']() != 3"
+  },
+  {
+   "note": "the derPotionResearchBonus pin",
+   "expr": "m['derPotionResearchBonus']() != 1"
+  },
+  {
+   "note": "the derPotionResearchWeeklyGp pin",
+   "expr": "m['derPotionResearchWeeklyGp']() != 100"
+  },
+  {
+   "note": "the derPotionAnalyzeWeeks pin",
+   "expr": "m['derPotionAnalyzeWeeks']() != 1"
+  },
+  {
+   "note": "the derScrollBasePct pin",
+   "expr": "m['derScrollBasePct']() != 80"
+  },
+  {
+   "note": "the derScrollLevelPctPerLevel pin",
+   "expr": "m['derScrollLevelPctPerLevel']() != 1"
+  },
+  {
+   "note": "the derScrollSpellPctPerSpellLevel pin",
+   "expr": "m['derScrollSpellPctPerSpellLevel']() != 1"
+  },
+  {
+   "note": "the derScrollInkBlendDays pin",
+   "expr": "m['derScrollInkBlendDays']() != 1"
+  },
+  {
+   "note": "the derScrollInkUseWeeks pin",
+   "expr": "m['derScrollInkUseWeeks']() != 2"
+  },
+  {
+   "note": "the derScrollLowInkLevelMax pin",
+   "expr": "m['derScrollLowInkLevelMax']() != 3"
+  },
+  {
+   "note": "the derScrollHighInkLevelMin pin",
+   "expr": "m['derScrollHighInkLevelMin']() != 4"
+  },
+  {
+   "note": "the derScrollTopInkLevelMin pin",
+   "expr": "m['derScrollTopInkLevelMin']() != 7"
+  },
+  {
+   "note": "the derScrollSpellsDieSize pin",
+   "expr": "m['derScrollSpellsDieSize']() != 6"
+  },
+  {
+   "note": "the derRingBasePct pin",
+   "expr": "m['derRingBasePct']() != 60"
+  },
+  {
+   "note": "the derRingLevelPctPerLevel pin",
+   "expr": "m['derRingLevelPctPerLevel']() != 1"
+  },
+  {
+   "note": "the derRingSpellPctPerSpell pin",
+   "expr": "m['derRingSpellPctPerSpell']() != 1"
+  },
+  {
+   "note": "the derRingResearchDieCount pin",
+   "expr": "m['derRingResearchDieCount']() != 1"
+  },
+  {
+   "note": "the derRingResearchDieSize pin",
+   "expr": "m['derRingResearchDieSize']() != 6"
+  },
+  {
+   "note": "the derRingResearchBonus pin",
+   "expr": "m['derRingResearchBonus']() != 1"
+  },
+  {
+   "note": "the derRingResearchWeeklyGp pin",
+   "expr": "m['derRingResearchWeeklyGp']() != 200"
+  },
+  {
+   "note": "the derRingResearchAidedWeeks pin",
+   "expr": "m['derRingResearchAidedWeeks']() != 2"
+  },
+  {
+   "note": "the derRodStaffWandBasePct pin",
+   "expr": "m['derRodStaffWandBasePct']() != 60"
+  },
+  {
+   "note": "the derInitialCharges pin",
+   "expr": "m['derInitialCharges']() != 1"
+  },
+  {
+   "note": "the derRechargeWindowHours pin",
+   "expr": "m['derRechargeWindowHours']() != 24"
+  },
+  {
+   "note": "the derRechargeSavePenalty pin",
+   "expr": "m['derRechargeSavePenalty']() != -1"
+  },
+  {
+   "note": "the derAutoFailRollMin pin",
+   "expr": "m['derAutoFailRollMin']() != 96"
+  },
+  {
+   "note": "the derAutoFailRollMax pin",
+   "expr": "m['derAutoFailRollMax']() != 100"
+  },
+  {
+   "note": "the derXpFlat pin",
+   "expr": "m['derXpFlat']() != 0"
+  },
+  {
+   "note": "the derXpPerPlus pin",
+   "expr": "m['derXpPerPlus']() != 1"
+  },
+  {
+   "note": "the derXpSumOfValues pin",
+   "expr": "m['derXpSumOfValues']() != 2"
+  },
+  {
+   "note": "the derXpLowerPlusShare pin",
+   "expr": "m['derXpLowerPlusShare']() != 3"
+  },
+  {
+   "note": "the derXpPerSpellLevel pin",
+   "expr": "m['derXpPerSpellLevel']() != 4"
+  },
+  {
+   "note": "the derRozmareLevel pin",
+   "expr": "m['derRozmareLevel']() != 13"
+  },
+  {
+   "note": "the derPotionSpeedXpValue pin",
+   "expr": "m['derPotionSpeedXpValue']() != 200"
+  },
+  {
+   "note": "the derPotionSpeedBrewWeeks pin",
+   "expr": "m['derPotionSpeedBrewWeeks']() != 2"
+  },
+  {
+   "note": "the derPotionSpeedSuccessPct pin",
+   "expr": "m['derPotionSpeedSuccessPct']() != 94"
+  },
+  {
+   "note": "the derRozmareSwordXpValue pin",
+   "expr": "m['derRozmareSwordXpValue']() != 800"
+  },
+  {
+   "note": "the derRozmareSwordMaterialGp pin",
+   "expr": "m['derRozmareSwordMaterialGp']() != 1600"
+  },
+  {
+   "note": "the derSwordResearchWeeks pin",
+   "expr": "m['derSwordResearchWeeks']() != 3"
+  },
+  {
+   "note": "the derSwordResearchGp pin",
+   "expr": "m['derSwordResearchGp']() != 600"
+  },
+  {
+   "note": "the derPrepWeeksPerThousandGp pin",
+   "expr": "m['derPrepWeeksPerThousandGp']() != 4"
+  },
+  {
+   "note": "the derRozmareSwordPrepWeeks pin",
+   "expr": "m['derRozmareSwordPrepWeeks']() != 8"
+  },
+  {
+   "note": "the derRozmareSwordSuccessPct pin",
+   "expr": "m['derRozmareSwordSuccessPct']() != 65"
+  },
+  {
+   "note": "the derRozmareSwordExoticMaterials pin",
+   "expr": "m['derRozmareSwordExoticMaterials']() != 2"
+  },
+  {
+   "note": "the derT23RowCount pin",
+   "expr": "m['derT23RowCount']() != 28"
+  },
+  {
+   "note": "the derT24RowCount pin",
+   "expr": "m['derT24RowCount']() != 27"
+  },
+  {
+   "note": "the derUnholyReversedSpells pin",
+   "expr": "m['derUnholyReversedSpells']() != 1"
+  },
+  {
+   "note": "the derCeremonyRuinOnDelay pin",
+   "expr": "m['derCeremonyRuinOnDelay']() != 1"
+  },
+  {
+   "note": "the derCreateWaterOverflowDissipated pin",
+   "expr": "m['derCreateWaterOverflowDissipated']() != 1"
+  },
+  {
+   "note": "the derFontDefileByCurse pin",
+   "expr": "m['derFontDefileByCurse']() != 1"
+  },
+  {
+   "note": "the derFontDefileNonmagical pin",
+   "expr": "m['derFontDefileNonmagical']() != 1"
+  },
+  {
+   "note": "the derDefiledFontRemade pin",
+   "expr": "m['derDefiledFontRemade']() != 1"
+  },
+  {
+   "note": "the derWarriorsRoguesCannot pin",
+   "expr": "m['derWarriorsRoguesCannot']() != 1"
+  },
+  {
+   "note": "the derNoMagicalBooks pin",
+   "expr": "m['derNoMagicalBooks']() != 1"
+  },
+  {
+   "note": "the derNoAbilityWritings pin",
+   "expr": "m['derNoAbilityWritings']() != 1"
+  },
+  {
+   "note": "the derRacialItemsRacePriestOnly pin",
+   "expr": "m['derRacialItemsRacePriestOnly']() != 1"
+  },
+  {
+   "note": "the derPriestsCastStoredSpellsOk pin",
+   "expr": "m['derPriestsCastStoredSpellsOk']() != 1"
+  },
+  {
+   "note": "the derOnlyUsableItems pin",
+   "expr": "m['derOnlyUsableItems']() != 1"
+  },
+  {
+   "note": "the derVigilRestartOnInterrupt pin",
+   "expr": "m['derVigilRestartOnInterrupt']() != 1"
+  },
+  {
+   "note": "the derOnlyConsecratorUsesAltar pin",
+   "expr": "m['derOnlyConsecratorUsesAltar']() != 1"
+  },
+  {
+   "note": "the derDefiledAltarReconsecrated pin",
+   "expr": "m['derDefiledAltarReconsecrated']() != 1"
+  },
+  {
+   "note": "the derDmApprovalRequired pin",
+   "expr": "m['derDmApprovalRequired']() != 1"
+  },
+  {
+   "note": "the derItemFinestQuality pin",
+   "expr": "m['derItemFinestQuality']() != 1"
+  },
+  {
+   "note": "the derRequirementsNotAutoKnown pin",
+   "expr": "m['derRequirementsNotAutoKnown']() != 1"
+  },
+  {
+   "note": "the derEnchantAndPermanencyRequired pin",
+   "expr": "m['derEnchantAndPermanencyRequired']() != 1"
+  },
+  {
+   "note": "the derPriestsPetitionDeities pin",
+   "expr": "m['derPriestsPetitionDeities']() != 1"
+  },
+  {
+   "note": "the derPriestNoConLossDefault pin",
+   "expr": "m['derPriestNoConLossDefault']() != 1"
+  },
+  {
+   "note": "the derPotionDoseNotConsumed pin",
+   "expr": "m['derPotionDoseNotConsumed']() != 1"
+  },
+  {
+   "note": "the derPotionFormulaReusable pin",
+   "expr": "m['derPotionFormulaReusable']() != 1"
+  },
+  {
+   "note": "the derScrollNoSpellsCast pin",
+   "expr": "m['derScrollNoSpellsCast']() != 1"
+  },
+  {
+   "note": "the derScrollComponentsConsumed pin",
+   "expr": "m['derScrollComponentsConsumed']() != 1"
+  },
+  {
+   "note": "the derScrollPenaltyCarried pin",
+   "expr": "m['derScrollPenaltyCarried']() != 1"
+  },
+  {
+   "note": "the derScrollFailurePreservesSpells pin",
+   "expr": "m['derScrollFailurePreservesSpells']() != 1"
+  },
+  {
+   "note": "the derScrollNewQuillPerSpell pin",
+   "expr": "m['derScrollNewQuillPerSpell']() != 1"
+  },
+  {
+   "note": "the derRingCommonProcessExtra pin",
+   "expr": "m['derRingCommonProcessExtra']() != 1"
+  },
+  {
+   "note": "the derRingPriestsSufferPenalty pin",
+   "expr": "m['derRingPriestsSufferPenalty']() != 1"
+  },
+  {
+   "note": "the derRodStaffWandPermanency pin",
+   "expr": "m['derRodStaffWandPermanency']() != 1"
+  },
+  {
+   "note": "the derDrainedItemDeadForever pin",
+   "expr": "m['derDrainedItemDeadForever']() != 1"
+  },
+  {
+   "note": "the derEachPlusSeparateSpell pin",
+   "expr": "m['derEachPlusSeparateSpell']() != 1"
+  },
+  {
+   "note": "the derSingleUseNoPermanency pin",
+   "expr": "m['derSingleUseNoPermanency']() != 1"
+  },
+  {
+   "note": "the derMiscSameAsRing pin",
+   "expr": "m['derMiscSameAsRing']() != 1"
+  },
+  {
+   "note": "the derTimeNotReducible pin",
+   "expr": "m['derTimeNotReducible']() != 1"
+  },
+  {
+   "note": "the derMagesRechargeNoncasterItems pin",
+   "expr": "m['derMagesRechargeNoncasterItems']() != 1"
+  },
+  {
+   "note": "the derRechargeSpellDuplicatesPower pin",
+   "expr": "m['derRechargeSpellDuplicatesPower']() != 1"
+  },
+  {
+   "note": "the derRechargeNormalCastingTime pin",
+   "expr": "m['derRechargeNormalCastingTime']() != 1"
+  },
+  {
+   "note": "the derDmRollsSecretly pin",
+   "expr": "m['derDmRollsSecretly']() != 1"
+  },
+  {
+   "note": "the derSuccessNeverImproves pin",
+   "expr": "m['derSuccessNeverImproves']() != 1"
+  },
+  {
+   "note": "the derFailureUsuallyRuins pin",
+   "expr": "m['derFailureUsuallyRuins']() != 1"
+  },
+  {
+   "note": "the derAutoFailMakesCurse pin",
+   "expr": "m['derAutoFailMakesCurse']() != 1"
+  },
+  {
+   "note": "the derCursedCompareToSimilar pin",
+   "expr": "m['derCursedCompareToSimilar']() != 1"
+  },
+  {
+   "note": "the derCursedFailureDestroys pin",
+   "expr": "m['derCursedFailureDestroys']() != 1"
+  },
+  {
+   "note": "the derCreatorCursedOnAutoFail pin",
+   "expr": "m['derCreatorCursedOnAutoFail']() != 1"
+  },
+  {
+   "note": "the derNonstandardCompareToSimilar pin",
+   "expr": "m['derNonstandardCompareToSimilar']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the chapter parent box closes",
+   "from": "- [ ] **Chapter 4: Creating Magical Items** (pp.\n  86-95) - the high-level item-creation economy",
+   "to": "- [x] **Chapter 4: Creating Magical Items** (pp.\n  86-95) - the high-level item-creation economy\n  86-95) - the high-level item-creation economy - R605: the der\n  creation-economy pins - Chapter 4 of the DMO is DONE in one round (ten boxes\n  flip, the census moves 42/54 to 52/44)"
+  },
+  {
+   "note": "the holy-water box closes",
+   "from": "  - [ ] Holy Water (p. 86) - the font ceremony (the\n    spell chain create water through prayer, the\n    eight-hour meditations, the -4 combat penalty\n    window, the one-font-one-week rule)",
+   "to": "  - [x] Holy Water (p. 86) - the font ceremony (the\n    spell chain create water through prayer, the\n    eight-hour meditations, the -4 combat penalty\n    window, the one-font-one-week rule)\n    window, the one-font-one-week rule) - R605: the der ceremony pins (the\n    five-spell chain with the two reversed forms, the eight-hour meditations,\n    the chant turn, the -4 combat window, the one-font-one-week rule, the cost\n    ladder with the Delsenora recycle read)"
+  },
+  {
+   "note": "the requirements box closes",
+   "from": "  - [ ] Requirements: materials and processes (pp.\n    87-90) - the common/rare/exotic doctrine, the cost\n    and time rules (four weeks per 1,000 gp)",
+   "to": "  - [x] Requirements: materials and processes (pp.\n    87-90) - the common/rare/exotic doctrine, the cost\n    and time rules (four weeks per 1,000 gp)\n    and time rules (four weeks per 1,000 gp) - R605: the der requirement pins\n    (the class level thresholds, the common-rare-exotic doctrine, the\n    laboratory and altar economics, the specialist bonus, the Table 23 codes)"
+  },
+  {
+   "note": "the Table 23 box closes",
+   "from": "  - [ ] Table 23: Magical Item Creation (p. 89) - the\n    per-item-type requirements: spells, time, cost",
+   "to": "  - [x] Table 23: Magical Item Creation (p. 89) - the\n    per-item-type requirements: spells, time, cost\n    per-item-type requirements: spells, time, cost - R605: the der T34 grid -\n    28 rows x 6 cols of material, process, footnote, cost and time codes"
+  },
+  {
+   "note": "the item-details box closes",
+   "from": "  - [ ] Item details: potions, scrolls, rings, rods,\n    staves, wands, misc (pp. 90-92) - the per-type\n    success formulas (the 70/80/60 bases and their\n    level and cost adjustments, the 1d3+1-week potion\n    research, the 1d6+1-week ring research, the\n    ink-blending doctrine, the drained-item death rule)",
+   "to": "  - [x] Item details: potions, scrolls, rings, rods,\n    staves, wands, misc (pp. 90-92) - the per-type\n    success formulas (the 70/80/60 bases and their\n    level and cost adjustments, the 1d3+1-week potion\n    research, the 1d6+1-week ring research, the\n    ink-blending doctrine, the drained-item death rule)\n    ink-blending doctrine, the drained-item death rule) - R605: the der\n    per-type pins (the 70/80/60 bases, the 1d3+1 potion research, the 1d6+1\n    ring research, the ink ladder, the drained-item death rule)"
+  },
+  {
+   "note": "the recharging box closes",
+   "from": "  - [ ] Recharging Items (p. 93) - the 24-hour window,\n    the power-duplication rule, the -1 save-or-dust\n    preparation risk",
+   "to": "  - [x] Recharging Items (p. 93) - the 24-hour window,\n    the power-duplication rule, the -1 save-or-dust\n    preparation risk\n    preparation risk - R605: the der recharge pins (the 24-hour window, the\n    power-duplication rule, the -1 save-or-dust preparation risk)"
+  },
+  {
+   "note": "the success-and-failure box closes",
+   "from": "  - [ ] Success and Failure (p. 93) - the 96-00\n    automatic-failure rule, the cursed-item creation\n    doctrine",
+   "to": "  - [x] Success and Failure (p. 93) - the 96-00\n    automatic-failure rule, the cursed-item creation\n    doctrine\n    doctrine - R605: the der failure pins (the 96-00 automatic failure, the\n    cursed-item twist, the creator curse)"
+  },
+  {
+   "note": "the Table 24 box closes",
+   "from": "  - [ ] Table 24: Typical Experience Point Values\n    (p. 93) - the per-item-type XP ranges (the\n    Rozmare example worked at 94% and 65%)",
+   "to": "  - [x] Table 24: Typical Experience Point Values\n    (p. 93) - the per-item-type XP ranges (the\n    Rozmare example worked at 94% and 65%)\n    Rozmare example worked at 94% and 65%) - R605: the der T35 grid - 27 rows\n    x 3 cols of XP min, max and special form; the Rozmare reads at 94 and 65\n    percent"
+  },
+  {
+   "note": "the cursed-values box closes",
+   "from": "  - [ ] Values for Cursed and Nonstandard Items (p.\n    94) - the compare-to-similar doctrine, the\n    creator-curse on 96-00",
+   "to": "  - [x] Values for Cursed and Nonstandard Items (p.\n    94) - the compare-to-similar doctrine, the\n    creator-curse on 96-00\n    creator-curse on 96-00 - R605: the der compare-to-similar pins (the cursed\n    sword -2 as a sword +2, the err-high doctrine)"
+  },
+  {
+   "note": "the examples box closes",
+   "from": "  - [ ] Examples of Magical Item Creation (pp. 94-95)\n    - the Rozmare worked examples (the potion of speed\n    at 13th level, the long sword +1 +3 vs.\n    regenerating creatures with its materials and\n    processes)",
+   "to": "  - [x] Examples of Magical Item Creation (pp. 94-95)\n    - the Rozmare worked examples (the potion of speed\n    at 13th level, the long sword +1 +3 vs.\n    regenerating creatures with its materials and\n    processes)\n    processes) - R605: the der Rozmare worked pins (the 13th-level potion of\n    speed at 94 percent, the long sword +1 +3 vs. regenerating creatures at\n    65, the eight-week preparation)"
+  }
+ ],
+ "gap_census": {
+  "closed": 52,
+  "open": 44
+ },
+ "caller_files": [],
+ "inline_count": 179
+}

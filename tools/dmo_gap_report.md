@@ -261,40 +261,67 @@ tables are data and close on table pins.
     bag-of-holding grid, the extradimensional seam,
     the potion 12th-level bar, the rod and staff
     doctrines, the sphere 92-percent cap)
-- [ ] **Chapter 4: Creating Magical Items** (pp.
+- [x] **Chapter 4: Creating Magical Items** (pp.
   86-95) - the high-level item-creation economy
-  - [ ] Holy Water (p. 86) - the font ceremony (the
+  86-95) - the high-level item-creation economy - R605: the der
+  creation-economy pins - Chapter 4 of the DMO is DONE in one round (ten boxes
+  flip, the census moves 42/54 to 52/44)
+  - [x] Holy Water (p. 86) - the font ceremony (the
     spell chain create water through prayer, the
     eight-hour meditations, the -4 combat penalty
     window, the one-font-one-week rule)
-  - [ ] Requirements: materials and processes (pp.
+    window, the one-font-one-week rule) - R605: the der ceremony pins (the
+    five-spell chain with the two reversed forms, the eight-hour meditations,
+    the chant turn, the -4 combat window, the one-font-one-week rule, the cost
+    ladder with the Delsenora recycle read)
+  - [x] Requirements: materials and processes (pp.
     87-90) - the common/rare/exotic doctrine, the cost
     and time rules (four weeks per 1,000 gp)
-  - [ ] Table 23: Magical Item Creation (p. 89) - the
+    and time rules (four weeks per 1,000 gp) - R605: the der requirement pins
+    (the class level thresholds, the common-rare-exotic doctrine, the
+    laboratory and altar economics, the specialist bonus, the Table 23 codes)
+  - [x] Table 23: Magical Item Creation (p. 89) - the
     per-item-type requirements: spells, time, cost
-  - [ ] Item details: potions, scrolls, rings, rods,
+    per-item-type requirements: spells, time, cost - R605: the der T34 grid -
+    28 rows x 6 cols of material, process, footnote, cost and time codes
+  - [x] Item details: potions, scrolls, rings, rods,
     staves, wands, misc (pp. 90-92) - the per-type
     success formulas (the 70/80/60 bases and their
     level and cost adjustments, the 1d3+1-week potion
     research, the 1d6+1-week ring research, the
     ink-blending doctrine, the drained-item death rule)
-  - [ ] Recharging Items (p. 93) - the 24-hour window,
+    ink-blending doctrine, the drained-item death rule) - R605: the der
+    per-type pins (the 70/80/60 bases, the 1d3+1 potion research, the 1d6+1
+    ring research, the ink ladder, the drained-item death rule)
+  - [x] Recharging Items (p. 93) - the 24-hour window,
     the power-duplication rule, the -1 save-or-dust
     preparation risk
-  - [ ] Success and Failure (p. 93) - the 96-00
+    preparation risk - R605: the der recharge pins (the 24-hour window, the
+    power-duplication rule, the -1 save-or-dust preparation risk)
+  - [x] Success and Failure (p. 93) - the 96-00
     automatic-failure rule, the cursed-item creation
     doctrine
-  - [ ] Table 24: Typical Experience Point Values
+    doctrine - R605: the der failure pins (the 96-00 automatic failure, the
+    cursed-item twist, the creator curse)
+  - [x] Table 24: Typical Experience Point Values
     (p. 93) - the per-item-type XP ranges (the
     Rozmare example worked at 94% and 65%)
-  - [ ] Values for Cursed and Nonstandard Items (p.
+    Rozmare example worked at 94% and 65%) - R605: the der T35 grid - 27 rows
+    x 3 cols of XP min, max and special form; the Rozmare reads at 94 and 65
+    percent
+  - [x] Values for Cursed and Nonstandard Items (p.
     94) - the compare-to-similar doctrine, the
     creator-curse on 96-00
-  - [ ] Examples of Magical Item Creation (pp. 94-95)
+    creator-curse on 96-00 - R605: the der compare-to-similar pins (the cursed
+    sword -2 as a sword +2, the err-high doctrine)
+  - [x] Examples of Magical Item Creation (pp. 94-95)
     - the Rozmare worked examples (the potion of speed
     at 13th level, the long sword +1 +3 vs.
     regenerating creatures with its materials and
     processes)
+    processes) - R605: the der Rozmare worked pins (the 13th-level potion of
+    speed at 94 percent, the long sword +1 +3 vs. regenerating creatures at
+    65, the eight-week preparation)
 - [ ] **Chapter 5: Magical Duels** (pp. 96-117) - the
   arena combat system
   - [ ] Creating the Arena (pp. 96-97) - the

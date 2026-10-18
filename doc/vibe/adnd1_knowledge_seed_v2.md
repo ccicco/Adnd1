@@ -11087,6 +11087,54 @@ when both halves land.
   spell level), the wizard and priest
   spell clarifications, the item-use
   doctrines; prefix dep reserved.
+- R604 LANDED 2026-10-18: commit
+  35536f1a1cd2dd7540ac1f95b2ac6c22
+  aa034ce2 (census 526 -> 527,
+  pushed 08891d9..35536f1),
+  SPELLS AND MAGICAL ITEMS, printed
+  pp. 68-85, DMO Chapter 3 closed
+  in one round - FIVE boxes flip
+  and the chapter is DONE (gap
+  census 42/54): the daily-
+  recovery doctrine (the eight-
+  hour rest, the ten minutes a
+  level, the eight-hour study
+  cap, the restart-on-
+  distraction), the wizard and
+  priest per-spell pins (the
+  horrid wilting 16d8 with the
+  OCR-misread note, the cone and
+  delayed-blast dice, the ESP
+  save ladder, the wish aging
+  grids with the five races,
+  the planar-research 4x5 grid
+  with month=4/year=52, the
+  plane-shift companions, the
+  bag grid, the extradimensional
+  portable-hole seam, the
+  sphere cap and withering
+  ladders), the item-use
+  doctrines. Header
+  rules/dmospells.h, prefix deq
+  (dep NOT free - the depthFt
+  collision; dem precedent),
+  157 inlines (114 consts, 33
+  bools, 10 table columns, 3
+  grids T31-T33). Spec
+  tools/spec_r604.json 72055
+  bytes md5
+  63806f24b1a9d4d9b26810a85f992c
+  e6 matched exactly first try.
+  THIRTY-EIGHT straight first-
+  tries (R566-R604). NEXT - R605:
+  Chapter 4 (Creating Magical
+  Items, pp. 86-95) - the holy
+  water font ceremony, the
+  materials and processes
+  doctrine, Table 23 and Table
+  24, the per-type success
+  formulas, the Rozmare worked
+  examples; prefix der.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
