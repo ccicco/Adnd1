@@ -11821,6 +11821,61 @@ when both halves land.
   prefix dgg (verify free), audit "R620
   OA kensai audit", include after rules/
   oabarbbushi.h.
+- R620 LANDED 2026-10-18: commit
+  36f2d5c330c3ec2bb05ce4c24894b9922
+  2c812df (census 542 -> 543,
+  pushed 96b0682..36f2d5c), THE
+  KENSAI, capture pp. 28-31 - the
+  sword saint: rules/oakensai.h,
+  prefix dgg (verified free), 58
+  inlines (34 consts, 16 bools, 8
+  table columns): the Wis/Dex dual
+  prime, the NATURAL AC FORMULA
+  (23 minus Dex, one step per
+  three levels, replacing the Dex
+  adjustments), the initiative
+  ladder, the ki power (max damage,
+  announced pre-roll, level/day),
+  the level powers (the dmg/hit
+  ladders to +5, meditate at 4th,
+  the 1-in-6 surprise at 6th, two
+  weapons + fear at 7th, the pupil
+  doctrine at 9th, the whirlwind
+  at 11th), the restrictions (no
+  magic specialty weapon, half-xp
+  other weapons), the practice
+  debt, the duel doctrine (the
+  10-times-level challenge,
+  refuse-or-lose, the honor-
+  demotion to bushi), T18 12x3,
+  T19 12x5 with the special powers
+  as a coded column. THE R618 v3
+  AMENDMENT LANDED MANUALLY as
+  commit 17d2892 (pushed
+  36f2d5c..17d2892): spec_r618 md5
+  9ea88b9e04b2127bcf2d08572631988a,
+  oaraces.h md5
+  615b853c9ee3f4fb37963efc6089ea22,
+  both confirmed on Termux. STANDING
+  LESSON: prior-round folds never
+  ride ./rn (it stages only the
+  current round's files) and must
+  be committed manually (git add
+  the two named files). The
+  two-miss saga is CLOSED. Battery 146
+  mutants, 0 missed; full sha
+  rverify GREEN. Gap census
+  33/202 -> 36/199. Spec 26,426
+  bytes md5
+  e903fef69d08823b58aa685bb199adc
+  b (canvas md5
+  95d69cc0798205bc4aaae125cfeef7e
+  9). NEXT - R621: the Monk - the
+  discipline ladder, the quirks,
+  Tables 20 and 21, prefix dgh
+  (verify free), audit "R621 OA
+  monk audit", include after rules/
+  oakensai.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

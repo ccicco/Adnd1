@@ -354,11 +354,32 @@ description riding the same round.
     special powers as a coded column (meditation,
     the 1-in-6 surprise, two weapons and fear,
     the pupils, the whirlwind)
-  - [ ] Monk (capture pp. 31-35) - THE oriental monk:
+  - [x] Monk (capture pp. 31-35) - THE oriental monk:
     the discipline ladder, the quirks, the martial-arts
-    foundation
-  - [ ] Table 20: Monks (capture p. 31)
-  - [ ] Table 21: Monk Capabilities (capture p. 33)
+    foundation -
+    R621: the dgh monk pins - the Str/Wis/Dex 15 and
+    Con 11 minima with no prime requisite, the 2d4 start
+    and 1d4 per level, the ki power (save negates, half
+    on fail from 9th), the level powers (speak with
+    animals, the two falls, ESP 30 minus 2 per level,
+    disease and haste/slow, cataleptic, the heal, speak
+    with plants, the charm 50 plus 5 ladder, the Int-18
+    mind shield, poison, geas, the free maneuver), the
+    monastery duel with the three 8ths, the material
+    restrictions (no armor, no property, the 2-weapon
+    and 3-item caps)
+  - [x] Table 20: Monks (capture p. 31) -
+    R621: the dgh T20 grid - seventeen rows of xp
+    bounds, accumulated d4 dice (the level-plus-one
+    column, header settled against the 2018 print) and
+    the title codes Novice through Grand Master of
+    Flowers
+  - [x] Table 21: Monk Capabilities (capture p. 33) -
+    R621: the dgh T21 grid - seventeen rows of the AC,
+    movement and surprise ladders with the six thief
+    skills and the martial-arts attack and damage
+    columns as codes (1/4 through 3/1, the plus-N and
+    plus-dice damage)
   - [ ] Ninja (capture pp. 35-39) - the dual-class
     doctrine (all ninja must also be bushi, sohei, wu
     jen or yakuza), the mission and honor mechanics,
