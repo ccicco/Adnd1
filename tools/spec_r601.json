@@ -1,0 +1,555 @@
+{
+ "round": 601,
+ "prefix": "dek",
+ "header_file": "rules/dmoadventures.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 523,
+ "title": "The Adventure Doctrines",
+ "audit_label": "R601 DMO adventures audit",
+ "audit_comment": "THE ADVENTURE DOCTRINES of DMO Chapter 2 (pp. 30-45), the doctrine half of the chapter: the adventure-construction rules (show don't tell, prepare don't over-plan, don't force the action, enhance don't inflate, gifts vs. rewards, multiple threats, don't kill - scare, proactive and responsive foes, failures not catastrophic, the plot rules), the encounter taxonomy (the twelve types with their doctrines, the five linking methods, the five combat-plan elements), and the world-hopping doctrine (the three world types, the 18 inner and 17 outer planes, the one-Prime correction, the four aspects on the 2-20 scale).",
+ "include_comment": "the DMO adventure-doctrine pins",
+ "include_after": "#include \"rules/dmocampaign.h\"  // R600: the DMO maxim-doctrine pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R600 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R600 LANDED 2026-10-18: commit",
+  "  9a4cfff174f3d3085d65964b65c6b",
+  "  65298354452 (census 522 -> 523,",
+  "  pushed 9b43c02..9a4cfff), THE",
+  "  REMAINING MAXIMS, printed pp. 10-29,",
+  "  the doctrine round closing DMO",
+  "  Chapter 1 - every maxim box of the",
+  "  seven is now closed: the",
+  "  intelligent-adversary doctrines (act",
+  "  as smart as the intelligence says -",
+  "  the tiger at Int 2-4 and the",
+  "  average-intelligence kobolds; shield",
+  "  the weaknesses - the troll regen",
+  "  delay 3 rounds, the vampire",
+  "  sunlight-and-turning counters;",
+  "  maximize the strengths - troll waves,",
+  "  the vampire one-on-one; handle",
+  "  defeat by motivation with the",
+  "  four-option ladder",
+  "  surrender/flee/reversal/fight and the",
+  "  three-goal leaving-the-field), the",
+  "  villain self-preservation rules",
+  "  (never be there - project image, the",
+  "  magic jar, the bystander pose; bad",
+  "  guys don't fight fair - innocents,",
+  "  diversions, sentimental targets, the",
+  "  hidden advantage), the control-magic",
+  "  doctrines (the AC -4 tension floor,",
+  "  the bracers +8, the 18-hour study vs",
+  "  37-minute cast, the teleport 50-minute",
+  "  memorize with 2%/1% risk, no magic",
+  "  shops, magic unlike technology, the",
+  "  one-item-per-adventure rate), the",
+  "  plan-ahead doctrines (villains who",
+  "  learn on the six background pillars,",
+  "  consequences, the fame ledger), and",
+  "  the share-responsibility doctrines",
+  "  (the players as the cadre, the goals,",
+  "  the allies ledger, the personality",
+  "  profile). Header rules/dmocampaign.h,",
+  "  prefix dej, 29 inlines (12 consts",
+  "  17 bools). FIVE flips: gap census",
+  "  11/85 - CHAPTER 1 IS CLOSED. Spec",
+  "  tools/spec_r600.json 21913 bytes md5",
+  "  f923aae5f4a886dcc0f58926ed530145",
+  "  matched exactly first try; the spec",
+  "  also seats the R599 record. THIRTY-",
+  "  FOUR straight first-tries",
+  "  (R566-R600). NEXT - R601: DMO",
+  "  Chapter 2 (Adventures) opens - the",
+  "  doctrine half in one round; prefixes",
+  "  dek, del free."
+ ],
+ "banner": {
+  "title": "THE ADVENTURE DOCTRINES - DMO Chapter 2 opens: the construction rules (show don't tell; prepare, don't over-plan; don't force the action - the backup plan; enhance, don't inflate; gifts vs. rewards; multiple threats; don't kill - scare; proactive and responsive foes; failures not catastrophic), the plot doctrine (the hook, the flexible decision-oriented plot), the twelve encounter types, the five linking methods, the five combat-plan elements, and the world-hopping doctrine (plane, pocket dimension, demiplane; the four aspects rated 2-20 on 2d10, the 10-12 typical band).",
+  "provenance": "verified against printed pp. 30-45 of the uploaded DMO session capture (part 1, printed page N at OCR page N+1); the twelve encounter types from p. 36, the five plan elements from p. 43, the polymorphed-lich worked example from p. 35, the world types and aspects from pp. 44-45; the rating-table boxes (Tables 2-5) and the monster tables stay open for their own rounds.",
+  "sentinel": "the gap census after this round: 14 closed, 82 open - the doctrine half of Chapter 2 is closed; the rating tables (Tables 2-5) and the monster-doctrine boxes follow."
+ },
+ "consts": [
+  {
+   "name": "dekEncounterTypeCount",
+   "value": 12,
+   "comment": "the encounter taxonomy: twelve different types of encounters are described - combat, deception, delay, dilemma, event, guardian, interaction, obstacle, puzzle, skirmish, surprise, and trap - the categories not definitive, with considerable overlap (printed p. 36)."
+  },
+  {
+   "name": "dekLinkingMethodCount",
+   "value": 5,
+   "comment": "the adventure-linking methods: five ways to turn separate adventures into a series - chained adventures, ripples in a pond, interlocking adventures, multi-layered adventures, and revisited adventures (printed pp. 40-42)."
+  },
+  {
+   "name": "dekCombatPlanElementCount",
+   "value": 5,
+   "comment": "the combat-plan elements: a combat plan should consider five elements - attack power, mobility, organization, information, and terrain - with the planning depth riding the foe's intelligence and the encounter's plot importance (printed p. 43)."
+  },
+  {
+   "name": "dekSecretDoorSearchTurns",
+   "value": 10,
+   "comment": "the delay economics: searching a 10' x 10' section of wall for a secret door requires a full turn (10 minutes) of game time, resolved in seconds of play - the model for delays that eat game time, not real time (printed p. 38)."
+  },
+  {
+   "name": "dekPolymorphSelfTurnsPerLevel",
+   "value": 2,
+   "comment": "the polymorph self duration: two turns per caster level - the rules-springboard doctrine worked through the polymorphed lich example (printed p. 35)."
+  },
+  {
+   "name": "dekPolymorphLichTurns",
+   "value": 60,
+   "comment": "the polymorphed lich: 60 turns (10 hours) at 30th level - the masquerade must renew the spell every 10 hours, the mumble to herself the neighbors noticed (printed p. 35)."
+  },
+  {
+   "name": "dekWorldTypeCount",
+   "value": 3,
+   "comment": "the world types: three - the plane (infinitely large, no clear form or dimensions), the pocket dimension (a small discrete world attached to a parent, usually mirroring it, creatable artificially), and the demiplane (a discrete world floating in the Ethereal depths, creatable artificially, believed able to grow into full planes) (printed pp. 44-45)."
+  },
+  {
+   "name": "dekInnerPlaneCount",
+   "value": 18,
+   "comment": "the inner-plane census: 18 inner planes - elemental, para-elemental, energy, and quasi-elemental; any undiscovered ones likely exist between known planes (printed p. 44)."
+  },
+  {
+   "name": "dekOuterPlaneCount",
+   "value": 17,
+   "comment": "the outer-plane census: 17 known outer planes - sixteen forming the great ring with Concordant Opposition (the Outlands) in the middle; new ones would form between existing planes or as additional layers (printed p. 44)."
+  },
+  {
+   "name": "dekWorldAspectCount",
+   "value": 4,
+   "comment": "the world aspects: four combine to define a world's unique reality - chronology, magic, technology, and environment (printed p. 45)."
+  },
+  {
+   "name": "dekWorldAspectMin",
+   "value": 2,
+   "comment": "the world-rating floor: each aspect is rated on a scale ranging from 2 to 20, generated randomly with 2d10; the lower the rating, the weaker the aspect (printed p. 45)."
+  },
+  {
+   "name": "dekWorldAspectMax",
+   "value": 20,
+   "comment": "the world-rating ceiling: 20 - ratings higher than 20 and lower than 2 are possible, but all known planes fall within these extremes (printed p. 45)."
+  },
+  {
+   "name": "dekWorldAspectTypicalLow",
+   "value": 10,
+   "comment": "the typical campaign band, low end: ratings from 10 to 12 reflect conditions on typical AD&D campaign worlds - a 10 is weaker than a 12, but the difference is imperceptible to player characters (printed p. 45)."
+  },
+  {
+   "name": "dekWorldAspectTypicalHigh",
+   "value": 12,
+   "comment": "the typical campaign band, high end: 12 - the typical-world ceiling; a world's rating is usually fixed, though some shift slowly over time without the residents realizing (printed p. 45)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dekGoodAdventureDoctrine",
+   "value": true,
+   "comment": "the good-adventure checklist: begins with a hook, unfolds like a novel or short story plunging the characters into an ongoing web of activities, tests the skills of both player and character, contains plenty of excitement especially at beginning and end, and changes the world - always in a discernible way (printed p. 30)."
+  },
+  {
+   "name": "dekShowDontTell",
+   "value": true,
+   "comment": "the show-don't-tell rule: brief sensory descriptions for most scenes - colors, smells, textures, sounds - and the same for spells (the detect magic hues, the detect undead nausea, the fireball-or-delayed-blast ambiguity); sensory details control the mood (printed p. 32)."
+  },
+  {
+   "name": "dekPrepareDontOverplan",
+   "value": true,
+   "comment": "the prepare-don't-over-plan rule: high-level characters set their own agendas, so avoid work on encounters they might ignore; preparations mean hard data ready to hand - statistics, NPC personalities, treasure lists - not choreography; roll random events and rumors ahead of time and record them (printed p. 32)."
+  },
+  {
+   "name": "dekDontForceAction",
+   "value": true,
+   "comment": "the don't-force-the-action rule: treat the adventure as a story with an unwritten ending; build plots that stand up to PC tinkering; when something breaks the plan, put a backup plan into effect (the captured-villain worked example - the lie that still yields travel plans) (printed pp. 32-33)."
+  },
+  {
+   "name": "dekEncounterVariety",
+   "value": true,
+   "comment": "the encounter-variety rule: don't use just one type of encounter - offer a mix of challenges (combat, trick/trap, negotiation), the bulk of them the kind the players like best (printed p. 33)."
+  },
+  {
+   "name": "dekCombatVsCreativity",
+   "value": true,
+   "comment": "the combat-vs-creativity rule: don't encourage combat, encourage creativity - most combat rolls are moot for high-level characters; give problems that can't be solved through combat (the raging forest fire) and combats that require brain power (the hidden fire elemental) (printed p. 33)."
+  },
+  {
+   "name": "dekEnhanceDontInflate",
+   "value": true,
+   "comment": "the enhance-don't-inflate rule: resist bizarre new creatures with mind-boggling power, legions of high-level villains, or direct conflict with deities - enhancement challenges without overpowering (printed p. 33)."
+  },
+  {
+   "name": "dekGiftsVsRewards",
+   "value": true,
+   "comment": "the gifts-vs-rewards rule: a gift is anything the PCs haven't truly earned - the dragon trapped where it can't fly or breathe, the vorpal blade in a random hoard; a reward follows a long epic quest, and any battle with a really big dragon should be an epic conflict (printed pp. 33-34)."
+  },
+  {
+   "name": "dekMultipleThreats",
+   "value": true,
+   "comment": "the multiple-threats doctrine: a single source of threat generates only one type of challenge and coasts to a halt when overcome; multiple threats are flexible, resistant to PC successes, and offer variety (the kidnapper chase made rich with the rival party, the jungle, the tanar'ri) (printed p. 34)."
+  },
+  {
+   "name": "dekDontKillScare",
+   "value": true,
+   "comment": "the don't-kill-scare rule: grinding down high-level characters is monotonous - undermine confidence instead by attacking specific strengths (the silence 15' radius reminder, the antimagic shells, the heat metal and rust monster counters); undetectable foes make players assume the worst; lethal adventures drive retirement (printed p. 34)."
+  },
+  {
+   "name": "dekCharacterKnowledgeDoctrine",
+   "value": true,
+   "comment": "the character-knowledge doctrine: don't waste time on knowledge arguments - prepare reference materials for common knowledge and a rumor list passed around at the game's start; specialists know their own areas (the archmage and the old spell's new twist) (printed p. 34)."
+  },
+  {
+   "name": "dekRulesConsistency",
+   "value": true,
+   "comment": "the don't-ignore-the-rules doctrine: the rules define reality for the PCs as physics does for real folks - interpret them consistently or players lose their basis for meaningful decisions; the rules are a creative springboard (the polymorphed-lich worked example with its renewal schedule, the aura and the chilling touch, the thick gloves) (printed pp. 34-35)."
+  },
+  {
+   "name": "dekProactiveFoes",
+   "value": true,
+   "comment": "the proactive-foes rule: foes capable of challenging high-level adventurers make plans and actively implement them - they notice encroachment and act before too much damage is done; even stay-at-homes follow a personal agenda (printed p. 35)."
+  },
+  {
+   "name": "dekResponsiveFoes",
+   "value": true,
+   "comment": "the responsive-foes rule: PCs are a major disruption - plans already in motion should be dropped or altered to meet the situation; the keyed dungeon where occupants die room by room is the worst example - decide what goes on while the PCs are absent and make the locals react (printed p. 35)."
+  },
+  {
+   "name": "dekFailuresNotCatastrophic",
+   "value": true,
+   "comment": "the all-failures-not-catastrophic rule: not every situation should be all-or-nothing - if the PCs fail but survive, let the world change for the worse just a little and give them another chance; use failure to create further adventures (the dead king breaking the alliance, the deity's wrath) (printed p. 36)."
+  },
+  {
+   "name": "dekPlotDoctrine",
+   "value": true,
+   "comment": "the plot doctrine: a plot provides the unifying theme dealing with who, what, when, where, why, and how; it should arise from the campaign's structure, ride the player goals, and hook the characters through their personal goals or quirks; a good plot is flexible and decision-oriented - concentrate on what the players decide to do, not what their characters can accomplish (the worked newcomer example with its choice-preserving branches) (printed pp. 36-37)."
+  },
+  {
+   "name": "dekEncounterTaxonomyDoctrine",
+   "value": true,
+   "comment": "the encounter-type doctrines: combat needs a logical tactical plan; deception fails when overused or unvaried; delays eaten sparingly control magic by exhausting durations; the dilemma forces choices with apparent stakes; events advance plots and warn; guardians must survive a major offensive; interactions test communication (the sweet-toothed wizardess); obstacles combine with combat (the stone giants across the chasm); puzzles test the players, not the characters; the skirmish softens and probes; surprises used very sparingly; traps hinder rather than dose out damage, mindful of the hit-point spread (printed pp. 36-40)."
+  },
+  {
+   "name": "dekLinkingDoctrine",
+   "value": true,
+   "comment": "the linking doctrines: the chain needs only superficial links (clues, maps, NPC statements) and gives players freedom; the ripple uses consequences as springboards in a specified order or any order; the interlock nests one adventure inside another or follows the loose ends; the multi-layer peels toward a final conflict whose nature is hidden at the start; the revisited site keeps generating play (the thieves' guild, the flaring feud) (printed pp. 40-43)."
+  },
+  {
+   "name": "dekCombatPlanDoctrine",
+   "value": true,
+   "comment": "the combat-plan doctrines: plan less for unintelligent creatures and always carefully for major foes; concentrate attacks against as few enemies as possible - wounded creatures fight on - and disrupt spellcasters; nonlethal forms (charms, wrestling, entanglement, disarming) often limit counterattacks better than damage; mobility need not mean speed (walls, slow, transmute rock to mud; darkness and the clouds); one clever leader suffices for organization; fight on what the foe knows and can discover, and remember the PCs gather information too; terrain chooses the fight - cover for defenders, exposure for attackers, the castle doctrine (printed pp. 43-45)."
+  },
+  {
+   "name": "dekWorldHoppingDoctrine",
+   "value": true,
+   "comment": "the world-hopping doctrine: staging adventures on unfamiliar worlds keeps a high-level campaign fresh - even fairly weak creatures challenge when the spells and items act in unanticipated ways; the Ethereal connects the Prime with the Inner (travelers drift toward the Inner Planes or home, no Prime-to-Prime transit), the Astral connects the Prime to the Outer (and allows travel between Prime Material Worlds); both carry solid islands; the misconception corrected - only ONE Prime Material Plane, holding an infinity of crystal spheres (printed pp. 44-45)."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [],
+ "header_sections": {
+  "the DMO adventure-doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dekEncounterTypeCount"
+   },
+   {
+    "kind": "const",
+    "name": "dekLinkingMethodCount"
+   },
+   {
+    "kind": "const",
+    "name": "dekCombatPlanElementCount"
+   },
+   {
+    "kind": "const",
+    "name": "dekSecretDoorSearchTurns"
+   },
+   {
+    "kind": "const",
+    "name": "dekPolymorphSelfTurnsPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dekPolymorphLichTurns"
+   },
+   {
+    "kind": "const",
+    "name": "dekWorldTypeCount"
+   },
+   {
+    "kind": "const",
+    "name": "dekInnerPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "dekOuterPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "dekWorldAspectCount"
+   },
+   {
+    "kind": "const",
+    "name": "dekWorldAspectMin"
+   },
+   {
+    "kind": "const",
+    "name": "dekWorldAspectMax"
+   },
+   {
+    "kind": "const",
+    "name": "dekWorldAspectTypicalLow"
+   },
+   {
+    "kind": "const",
+    "name": "dekWorldAspectTypicalHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "dekGoodAdventureDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dekShowDontTell"
+   },
+   {
+    "kind": "bool",
+    "name": "dekPrepareDontOverplan"
+   },
+   {
+    "kind": "bool",
+    "name": "dekDontForceAction"
+   },
+   {
+    "kind": "bool",
+    "name": "dekEncounterVariety"
+   },
+   {
+    "kind": "bool",
+    "name": "dekCombatVsCreativity"
+   },
+   {
+    "kind": "bool",
+    "name": "dekEnhanceDontInflate"
+   },
+   {
+    "kind": "bool",
+    "name": "dekGiftsVsRewards"
+   },
+   {
+    "kind": "bool",
+    "name": "dekMultipleThreats"
+   },
+   {
+    "kind": "bool",
+    "name": "dekDontKillScare"
+   },
+   {
+    "kind": "bool",
+    "name": "dekCharacterKnowledgeDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dekRulesConsistency"
+   },
+   {
+    "kind": "bool",
+    "name": "dekProactiveFoes"
+   },
+   {
+    "kind": "bool",
+    "name": "dekResponsiveFoes"
+   },
+   {
+    "kind": "bool",
+    "name": "dekFailuresNotCatastrophic"
+   },
+   {
+    "kind": "bool",
+    "name": "dekPlotDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dekEncounterTaxonomyDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dekLinkingDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dekCombatPlanDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dekWorldHoppingDoctrine"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the dekEncounterTypeCount pin",
+   "expr": "m['dekEncounterTypeCount']() != 12"
+  },
+  {
+   "note": "the dekLinkingMethodCount pin",
+   "expr": "m['dekLinkingMethodCount']() != 5"
+  },
+  {
+   "note": "the dekCombatPlanElementCount pin",
+   "expr": "m['dekCombatPlanElementCount']() != 5"
+  },
+  {
+   "note": "the dekSecretDoorSearchTurns pin",
+   "expr": "m['dekSecretDoorSearchTurns']() != 10"
+  },
+  {
+   "note": "the dekPolymorphSelfTurnsPerLevel pin",
+   "expr": "m['dekPolymorphSelfTurnsPerLevel']() != 2"
+  },
+  {
+   "note": "the dekPolymorphLichTurns pin",
+   "expr": "m['dekPolymorphLichTurns']() != 60"
+  },
+  {
+   "note": "the dekWorldTypeCount pin",
+   "expr": "m['dekWorldTypeCount']() != 3"
+  },
+  {
+   "note": "the dekInnerPlaneCount pin",
+   "expr": "m['dekInnerPlaneCount']() != 18"
+  },
+  {
+   "note": "the dekOuterPlaneCount pin",
+   "expr": "m['dekOuterPlaneCount']() != 17"
+  },
+  {
+   "note": "the dekWorldAspectCount pin",
+   "expr": "m['dekWorldAspectCount']() != 4"
+  },
+  {
+   "note": "the dekWorldAspectMin pin",
+   "expr": "m['dekWorldAspectMin']() != 2"
+  },
+  {
+   "note": "the dekWorldAspectMax pin",
+   "expr": "m['dekWorldAspectMax']() != 20"
+  },
+  {
+   "note": "the dekWorldAspectTypicalLow pin",
+   "expr": "m['dekWorldAspectTypicalLow']() != 10"
+  },
+  {
+   "note": "the dekWorldAspectTypicalHigh pin",
+   "expr": "m['dekWorldAspectTypicalHigh']() != 12"
+  },
+  {
+   "note": "the dekGoodAdventureDoctrine pin",
+   "expr": "m['dekGoodAdventureDoctrine']() != 1"
+  },
+  {
+   "note": "the dekShowDontTell pin",
+   "expr": "m['dekShowDontTell']() != 1"
+  },
+  {
+   "note": "the dekPrepareDontOverplan pin",
+   "expr": "m['dekPrepareDontOverplan']() != 1"
+  },
+  {
+   "note": "the dekDontForceAction pin",
+   "expr": "m['dekDontForceAction']() != 1"
+  },
+  {
+   "note": "the dekEncounterVariety pin",
+   "expr": "m['dekEncounterVariety']() != 1"
+  },
+  {
+   "note": "the dekCombatVsCreativity pin",
+   "expr": "m['dekCombatVsCreativity']() != 1"
+  },
+  {
+   "note": "the dekEnhanceDontInflate pin",
+   "expr": "m['dekEnhanceDontInflate']() != 1"
+  },
+  {
+   "note": "the dekGiftsVsRewards pin",
+   "expr": "m['dekGiftsVsRewards']() != 1"
+  },
+  {
+   "note": "the dekMultipleThreats pin",
+   "expr": "m['dekMultipleThreats']() != 1"
+  },
+  {
+   "note": "the dekDontKillScare pin",
+   "expr": "m['dekDontKillScare']() != 1"
+  },
+  {
+   "note": "the dekCharacterKnowledgeDoctrine pin",
+   "expr": "m['dekCharacterKnowledgeDoctrine']() != 1"
+  },
+  {
+   "note": "the dekRulesConsistency pin",
+   "expr": "m['dekRulesConsistency']() != 1"
+  },
+  {
+   "note": "the dekProactiveFoes pin",
+   "expr": "m['dekProactiveFoes']() != 1"
+  },
+  {
+   "note": "the dekResponsiveFoes pin",
+   "expr": "m['dekResponsiveFoes']() != 1"
+  },
+  {
+   "note": "the dekFailuresNotCatastrophic pin",
+   "expr": "m['dekFailuresNotCatastrophic']() != 1"
+  },
+  {
+   "note": "the dekPlotDoctrine pin",
+   "expr": "m['dekPlotDoctrine']() != 1"
+  },
+  {
+   "note": "the dekEncounterTaxonomyDoctrine pin",
+   "expr": "m['dekEncounterTaxonomyDoctrine']() != 1"
+  },
+  {
+   "note": "the dekLinkingDoctrine pin",
+   "expr": "m['dekLinkingDoctrine']() != 1"
+  },
+  {
+   "note": "the dekCombatPlanDoctrine pin",
+   "expr": "m['dekCombatPlanDoctrine']() != 1"
+  },
+  {
+   "note": "the dekWorldHoppingDoctrine pin",
+   "expr": "m['dekWorldHoppingDoctrine']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the adventure-construction doctrine closes",
+   "from": "  - [ ] Common Mistakes / Plots (pp. 30-35) - the\n    adventure-construction doctrine",
+   "to": "  - [x] Common Mistakes / Plots (pp. 30-35) - the\n    adventure-construction doctrine\n    - R601: the dek construction pins (the\n    show-don't-tell rules, the backup-plan doctrine, the\n    multiple-threats doctrine, the plot rules)"
+  },
+  {
+   "note": "the encounter-taxonomy box closes",
+   "from": "  - [ ] Types of Encounters / Linking Adventures /\n    Planning Combats (pp. 36-43) - the encounter\n    taxonomy and the combat-planning doctrine",
+   "to": "  - [x] Types of Encounters / Linking Adventures /\n    Planning Combats (pp. 36-43) - the encounter\n    taxonomy and the combat-planning doctrine\n    - R601: the dek taxonomy pins (the twelve encounter\n    types, the five linking methods, the five combat-plan\n    elements)"
+  },
+  {
+   "note": "the world-hopping box closes",
+   "from": "  - [ ] World Hopping (pp. 44-45) - the world types\n    (plane, demiplane, pocket dimension) and properties",
+   "to": "  - [x] World Hopping (pp. 44-45) - the world types\n    (plane, demiplane, pocket dimension) and properties\n    - R601: the dek world pins (the three world types,\n    the four aspects, the 2-20 rating scale)"
+  }
+ ],
+ "gap_census": {
+  "closed": 14,
+  "open": 82
+ },
+ "caller_files": [],
+ "inline_count": 34
+}

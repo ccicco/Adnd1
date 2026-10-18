@@ -111,13 +111,21 @@ tables are data and close on table pins.
     long-term goal doctrine, the personality profile)
 - [ ] **Chapter 2: Adventures** (pp. 30-67) - building
   high-level adventures, worlds, and monsters
-  - [ ] Common Mistakes / Plots (pp. 30-35) - the
+  - [x] Common Mistakes / Plots (pp. 30-35) - the
     adventure-construction doctrine
-  - [ ] Types of Encounters / Linking Adventures /
+    - R601: the dek construction pins (the
+    show-don't-tell rules, the backup-plan doctrine, the
+    multiple-threats doctrine, the plot rules)
+  - [x] Types of Encounters / Linking Adventures /
     Planning Combats (pp. 36-43) - the encounter
     taxonomy and the combat-planning doctrine
-  - [ ] World Hopping (pp. 44-45) - the world types
+    - R601: the dek taxonomy pins (the twelve encounter
+    types, the five linking methods, the five combat-plan
+    elements)
+  - [x] World Hopping (pp. 44-45) - the world types
     (plane, demiplane, pocket dimension) and properties
+    - R601: the dek world pins (the three world types,
+    the four aspects, the 2-20 rating scale)
   - [ ] Table 2: Chronological Ratings (p. 46) - the
     local-time ladder (C2 through C20), the aging rule
     (visitors age at local time), the magic-duration

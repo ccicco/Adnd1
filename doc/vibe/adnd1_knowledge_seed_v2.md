@@ -10876,6 +10876,58 @@ when both halves land.
   pp. 24-26, Share Responsibility pp.
   27-29) in one round; prefixes dej,
   dek, del free.
+- R600 LANDED 2026-10-18: commit
+  9a4cfff174f3d3085d65964b65c6b
+  65298354452 (census 522 -> 523,
+  pushed 9b43c02..9a4cfff), THE
+  REMAINING MAXIMS, printed pp. 10-29,
+  the doctrine round closing DMO
+  Chapter 1 - every maxim box of the
+  seven is now closed: the
+  intelligent-adversary doctrines (act
+  as smart as the intelligence says -
+  the tiger at Int 2-4 and the
+  average-intelligence kobolds; shield
+  the weaknesses - the troll regen
+  delay 3 rounds, the vampire
+  sunlight-and-turning counters;
+  maximize the strengths - troll waves,
+  the vampire one-on-one; handle
+  defeat by motivation with the
+  four-option ladder
+  surrender/flee/reversal/fight and the
+  three-goal leaving-the-field), the
+  villain self-preservation rules
+  (never be there - project image, the
+  magic jar, the bystander pose; bad
+  guys don't fight fair - innocents,
+  diversions, sentimental targets, the
+  hidden advantage), the control-magic
+  doctrines (the AC -4 tension floor,
+  the bracers +8, the 18-hour study vs
+  37-minute cast, the teleport 50-minute
+  memorize with 2%/1% risk, no magic
+  shops, magic unlike technology, the
+  one-item-per-adventure rate), the
+  plan-ahead doctrines (villains who
+  learn on the six background pillars,
+  consequences, the fame ledger), and
+  the share-responsibility doctrines
+  (the players as the cadre, the goals,
+  the allies ledger, the personality
+  profile). Header rules/dmocampaign.h,
+  prefix dej, 29 inlines (12 consts
+  17 bools). FIVE flips: gap census
+  11/85 - CHAPTER 1 IS CLOSED. Spec
+  tools/spec_r600.json 21913 bytes md5
+  f923aae5f4a886dcc0f58926ed530145
+  matched exactly first try; the spec
+  also seats the R599 record. THIRTY-
+  FOUR straight first-tries
+  (R566-R600). NEXT - R601: DMO
+  Chapter 2 (Adventures) opens - the
+  doctrine half in one round; prefixes
+  dek, del free.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
