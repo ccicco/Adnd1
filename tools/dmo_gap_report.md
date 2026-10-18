@@ -109,8 +109,17 @@ tables are data and close on table pins.
     personality work
     - R600: the dej share pins (the player-DM split, the
     long-term goal doctrine, the personality profile)
-- [ ] **Chapter 2: Adventures** (pp. 30-67) - building
-  high-level adventures, worlds, and monsters
+- [x] **Chapter 2: Adventures** (pp. 30-67) - building
+  high-level adventures, worlds, and monsters -
+    R613b: the chapter PARENT closes - all Chapter
+    2 children landed across R601 (the construction
+    and encounter-taxonomy doctrine), R602 (the
+    chronology, magic, technology and ecology
+    ladders, the quirk doctrine) and R603 (the
+    monster-modification doctrine, Altering
+    Monsters and Tables 6-22); the parent flip was
+    missed at R603 and landed late - the DMO gap
+    report closes at 96 boxes, 96 closed, 0 open
   - [x] Common Mistakes / Plots (pp. 30-35) - the
     adventure-construction doctrine
     - R601: the dek construction pins (the
