@@ -565,14 +565,24 @@ tables are data and close on table pins.
     will, detect deception, eminence, invincibility,
     loan, smite, spell talisman - the talisman is
     absent from the Table 40 roster)
-  - [ ] Rogues (pp. 167-171) - the thieves and bards
+  - [x] Rogues (pp. 167-171) - the thieves and bards
     beyond 20th (Table 47: Rogue Advancement Beyond
     20th Level, p. 168; Table 48: Thieving Skill Base
     Scores, p. 169; Table 49: Thieving Skill Racial
     Adjustments, p. 169; Table 50: Dexterity/Aim
     Adjustments, p. 170; Table 51: Thieving Skill
     Armor Adjustments, p. 170; Table 52: Bard Spell
-    Progression, p. 171)
+    Progression, p. 171) - R611: the dfa T47r grid
+    (220K XP steps with the printed 120K final step
+    to 4,300,000, the 10+N d6 hit points), the base
+    scores and the racial, Dexterity-aim and armor
+    grids, the thief and bard scroll ladders (25 and
+    15 percent higher-level failure), the Table 52
+    bard spell progression, and all eleven rogue
+    skills pinned (adaptation, classify traps,
+    evasion, fall/jump, featherfoot, improvised
+    attack, inner focus, nondetection, sense
+    danger, shadow flight, shadow travel)
   - [ ] Demihumans in High-Level Play / Demihuman
     Advancement (pp. 178-179) - the level-limit
     doctrine for high-level demihumans

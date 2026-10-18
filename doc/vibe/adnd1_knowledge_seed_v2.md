@@ -11395,6 +11395,59 @@ when both halves land.
   free (dez family next). Audit:
   "R610 DMO wizard-priest audit";
   include after rules/dmohighskills.h.
+- R610 LANDED 2026-10-18: commit
+  74d21c689276b8ae13e9a406cecab0e
+  880c76c8e (census 532 -> 533,
+  pushed d92d4d5..74d21c6),
+  WIZARDS AND PRIESTS, printed
+  pp. 156-167, DMO Chapter 7
+  round three of five per the
+  split plan - TWO boxes flip
+  (Wizards, Priests; gap census
+  now 89 closed / 7 open):
+  rules/dmohighwizpri.h, prefix
+  dez (verified free), 390
+  inlines (167 consts, 184
+  bools, 7 chains, 32 table
+  columns), 5 grids (T43 wizard
+  advancement 11x5; T44 wizard
+  spell progression 11x10; T45
+  priest advancement 11x6; T47
+  priest spell progression 11x8;
+  loan 4x3), 351 examples, 42
+  table_checks, 709-mutant
+  battery 0 missed. FOUR
+  PRINTED QUIRKS pinned
+  verbatim: the priest spell
+  progression body caption
+  prints Table 47 while both
+  ToCs read Table 46 (held per
+  body caption); Spell Talisman
+  is absent from the Table 40
+  roster (pinned from its
+  detail section); the eminence
+  prose lists divine will among
+  its five prerequisites while
+  Table 40 reads priest 10+
+  without eminence (both
+  pinned); the wizard mental
+  focus ceiling reads equal to
+  or higher vs the priest
+  already higher. DELIVERY: raw
+  JSON in the canvas (user-set:
+  b64 NOT needed), spec 161942
+  bytes, md5
+  8b212a3800959b0a4264a0f5261
+  8801a verified byte-exact
+  before ./rn. NEXT
+  - R611: Rogues, Tables
+  48-52 (pp. 167-171); consult
+  the gap report at HEAD
+  74d21c6; verify next prefix
+  free (dfa family next).
+  Audit: "R611 DMO rogues
+  audit"; include after
+  rules/dmohighwizpri.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

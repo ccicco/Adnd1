@@ -1,0 +1,3906 @@
+{
+ "round": 611,
+ "prefix": "dfa",
+ "header_file": "rules/dmohighrogues.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 533,
+ "title": "Rogues",
+ "audit_label": "R611 DMO rogues audit",
+ "include_comment": "the DMO rogue pins",
+ "include_after": "#include \"rules/dmohighwizpri.h\"  // R610: the DMO wizard and priest pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R610 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R610 LANDED 2026-10-18: commit",
+  "  74d21c689276b8ae13e9a406cecab0e",
+  "  880c76c8e (census 532 -> 533,",
+  "  pushed d92d4d5..74d21c6),",
+  "  WIZARDS AND PRIESTS, printed",
+  "  pp. 156-167, DMO Chapter 7",
+  "  round three of five per the",
+  "  split plan - TWO boxes flip",
+  "  (Wizards, Priests; gap census",
+  "  now 89 closed / 7 open):",
+  "  rules/dmohighwizpri.h, prefix",
+  "  dez (verified free), 390",
+  "  inlines (167 consts, 184",
+  "  bools, 7 chains, 32 table",
+  "  columns), 5 grids (T43 wizard",
+  "  advancement 11x5; T44 wizard",
+  "  spell progression 11x10; T45",
+  "  priest advancement 11x6; T47",
+  "  priest spell progression 11x8;",
+  "  loan 4x3), 351 examples, 42",
+  "  table_checks, 709-mutant",
+  "  battery 0 missed. FOUR",
+  "  PRINTED QUIRKS pinned",
+  "  verbatim: the priest spell",
+  "  progression body caption",
+  "  prints Table 47 while both",
+  "  ToCs read Table 46 (held per",
+  "  body caption); Spell Talisman",
+  "  is absent from the Table 40",
+  "  roster (pinned from its",
+  "  detail section); the eminence",
+  "  prose lists divine will among",
+  "  its five prerequisites while",
+  "  Table 40 reads priest 10+",
+  "  without eminence (both",
+  "  pinned); the wizard mental",
+  "  focus ceiling reads equal to",
+  "  or higher vs the priest",
+  "  already higher. DELIVERY: raw",
+  "  JSON in the canvas (user-set:",
+  "  b64 NOT needed), spec 161942",
+  "  bytes, md5",
+  "  8b212a3800959b0a4264a0f5261",
+  "  8801a verified byte-exact",
+  "  before ./rn. NEXT",
+  "  - R611: Rogues, Tables",
+  "  48-52 (pp. 167-171); consult",
+  "  the gap report at HEAD",
+  "  74d21c6; verify next prefix",
+  "  free (dfa family next).",
+  "  Audit: \"R611 DMO rogues",
+  "  audit\"; include after",
+  "  rules/dmohighwizpri.h."
+ ],
+ "banner": {
+  "title": "ROGUES BEYOND 20TH - DMO Chapter 7, round four of five: the rogue advancement grid (the printed body caption reads Table 47 - the same number the priest spell progression caption printed - with 2,200,000 XP at 20th in 220K steps and the printed 120K final step to 4,300,000 at 30th, weapon and nonweapon proficiencies, the 10+N d6 hit points with the Con-bonus-after-10th footnote), the thieving doctrine (the 95 percent cap below 11th, no limit from 11th, 96-or-higher automatic failure, penalties from the base score), the five new thieving skills with their base scores and the racial, Dexterity-aim and armor adjustment grids (Tables 48 through 51), the thief powers (five skills at 21st, 50 S&P character points with the 9-skill overflow rule, the 24th-level scroll ladder at 25 percent), the bard powers (two skills at 21st, 20 points, the 21st-level scroll ladder at 15 percent, 55 percent item identification, wands at 24th, item creation at 27th) with the Table 52 bard spell progression, and all eleven rogue skills (adaptation, classify traps, evasion, fall and jump, featherfoot, improvised attack, inner focus, nondetection, sense danger, shadow flight and shadow travel).",
+  "provenance": "verified against printed pp. 167-177 of the archive.org DMO captures (items dungeon-master-option-high-level-campaigns and tsr02156dmsoptionhighlevelcampaigns, the djvu.txt full texts; the tsr02156 ABBYY read is primary and the tesseract read is cross-checked; leaf N = printed page N). TWO contested cells settled against the physical copy (user-confirmed 2026-10-18): the Table 47 level-30 experience print reads 4,300,000 (the ABBYY read; tesseract read 4,500,000 and the series would give 4,400,000) with the final step only 120,000 points; and the Table 50 tunneling row prints a dash at Dexterity 17 and +30 percent at Dexterity 22 (the tesseract read; the ABBYY capture dropped the final cell). TWO more printed quirks held: the rogue advancement caption shares the printed number 47 with the priest spell progression caption (whose contents entry reads 46); and the Table 49 halfling detect magic cell prints +5 without the percent sign its row siblings carry.",
+  "sentinel": "the gap census after this round: 90 closed, 6 open - one Chapter 7 child flips in round four of five (the parent stays open until R612); the DMO arc closes with R612 (Demihumans + Beyond 30th / Divine Ascension, pp. 178-179) then the Appendix and Index."
+ },
+ "consts": [
+  {
+   "name": "dfaRogueSkillStartLevel",
+   "value": 11,
+   "comment": "the rogue skills gate: rogues also have access to a host of special skills beginning at 11th level (printed p. 167)."
+  },
+  {
+   "name": "dfaRogueAdvLimit",
+   "value": 30,
+   "comment": "the rogue advancement ceiling: rogues continue to receive extra proficiencies and hit points until level 30 (printed p. 167)."
+  },
+  {
+   "name": "dfaRogueExtraAbilityLevel",
+   "value": 21,
+   "comment": "the rogue power note: rogues receive extra abilities at 21st level (printed p. 167)."
+  },
+  {
+   "name": "dfaThiefScoreCap",
+   "value": 95,
+   "comment": "the thieving score cap: rogues of 10th level or lower are limited to scores of 95 percent or less in thieving skills (printed p. 167)."
+  },
+  {
+   "name": "dfaThiefCapLiftLevel",
+   "value": 11,
+   "comment": "the thieving cap lift: once a rogue reaches 11th level the 95 percent limitation is removed and there is no limit to how far a skill can be improved (printed p. 167)."
+  },
+  {
+   "name": "dfaThiefAutoFailRoll",
+   "value": 96,
+   "comment": "the thieving auto-fail roll: no matter what the skill score, any roll of 96 percent or higher is an automatic failure (printed p. 167)."
+  },
+  {
+   "name": "dfaJobareTrapScore",
+   "value": 120,
+   "comment": "the Jobare find/remove traps score: 120 percent (printed p. 167)."
+  },
+  {
+   "name": "dfaJobareMagicalTrapChance",
+   "value": 60,
+   "comment": "the Jobare magical trap chance: a 120 percent score gives a 60 percent chance because magical traps reduce the score by half (printed p. 167)."
+  },
+  {
+   "name": "dfaJobareLockScore",
+   "value": 100,
+   "comment": "the Jobare open locks score: 100 percent (printed p. 167)."
+  },
+  {
+   "name": "dfaJobareMasterfulPenalty",
+   "value": 60,
+   "comment": "the masterful lock penalty: a masterful lock imposes a penalty of 60 percent (printed p. 167)."
+  },
+  {
+   "name": "dfaJobareMasterfulChance",
+   "value": 40,
+   "comment": "the Jobare masterful lock chance: the 100 percent score less the 60 percent penalty leaves a 40 percent chance (printed p. 167)."
+  },
+  {
+   "name": "dfaT47RowCount",
+   "value": 11,
+   "comment": "the Table 47 row count: eleven levels from 20th through 30th (printed p. 168)."
+  },
+  {
+   "name": "dfaT47XpBase",
+   "value": 2200000,
+   "comment": "the Table 47 experience base: 2,200,000 experience points at 20th level (printed p. 168)."
+  },
+  {
+   "name": "dfaT47XpStep",
+   "value": 220000,
+   "comment": "the Table 47 experience step: 220,000 experience points per level from 21st through 29th (printed p. 168)."
+  },
+  {
+   "name": "dfaT47Xp30",
+   "value": 4300000,
+   "comment": "the Table 47 30th-level experience print: 4,300,000 points - the ABBYY capture reads 4,300,000, the tesseract capture reads 4,500,000, and the series would give 4,400,000; settled against the physical copy, user-confirmed 2026-10-18, and the printed value 4,300,000 is held (printed p. 168)."
+  },
+  {
+   "name": "dfaT47HpBase",
+   "value": 10,
+   "comment": "the Table 47 hit-point base: the constant 10 of the printed 10-plus-N d6 hit-point cells (printed p. 168)."
+  },
+  {
+   "name": "dfaT47HpStep",
+   "value": 2,
+   "comment": "the Table 47 hit-point step: the per-level bonus climbs from 20 to 40 in plus-two steps (printed p. 168)."
+  },
+  {
+   "name": "dfaNewThiefSkillCount",
+   "value": 5,
+   "comment": "the new thieving skill count: at 21st level a thief gains five new skills (printed p. 168)."
+  },
+  {
+   "name": "dfaBribeBase",
+   "value": 5,
+   "comment": "the bribe base chance: 5 percent (printed p. 169)."
+  },
+  {
+   "name": "dfaDetectIllusionBase",
+   "value": 10,
+   "comment": "the detect illusion base chance: 10 percent (printed p. 169)."
+  },
+  {
+   "name": "dfaDetectMagicBase",
+   "value": 5,
+   "comment": "the detect magic base chance: 5 percent (printed p. 169)."
+  },
+  {
+   "name": "dfaEscapeBondsBase",
+   "value": 10,
+   "comment": "the escape bonds base chance: 10 percent (printed p. 169)."
+  },
+  {
+   "name": "dfaTunnelingBase",
+   "value": 15,
+   "comment": "the tunneling base chance: 15 percent (printed p. 169)."
+  },
+  {
+   "name": "dfaT49RowCount",
+   "value": 5,
+   "comment": "the Table 49 row count: five skills (printed p. 169)."
+  },
+  {
+   "name": "dfaT50RowCount",
+   "value": 2,
+   "comment": "the Table 50 row count: two skills (escape bonds and tunneling) (printed p. 170)."
+  },
+  {
+   "name": "dfaT51RowCount",
+   "value": 3,
+   "comment": "the Table 51 row count: three skills (printed p. 170)."
+  },
+  {
+   "name": "dfaBribeRowCount",
+   "value": 4,
+   "comment": "the bribe status table row count: four NPC stations (printed pp. 168-169)."
+  },
+  {
+   "name": "dfaJobareReactionRoll",
+   "value": 13,
+   "comment": "the Jobare bribe example reaction roll: a 13 on the first column of Table 59 makes the peasant cautious (printed p. 169)."
+  },
+  {
+   "name": "dfaJobareFriendlyMax",
+   "value": 7,
+   "comment": "the Jobare bribe example friendly ceiling: the highest number that gives a friendly result on the first column of Table 59 is a 7 (printed p. 169)."
+  },
+  {
+   "name": "dfaJobareBribeDiff",
+   "value": 6,
+   "comment": "the Jobare bribe example difference: 13 minus 7 leaves 6 (printed p. 169)."
+  },
+  {
+   "name": "dfaJobareBaseBribeCp",
+   "value": 5,
+   "comment": "the Jobare bribe example base value: the secret 2d4 roll comes up 5 copper pieces (printed p. 169)."
+  },
+  {
+   "name": "dfaJobarePaidCp",
+   "value": 30,
+   "comment": "the Jobare bribe example payment: 5 times 6 makes at least 30 copper pieces for an effective bribe (printed p. 169)."
+  },
+  {
+   "name": "dfaDetectIllusionRange",
+   "value": 90,
+   "comment": "the detect illusion range: thieves can see through visible illusions within their line of sight up to 90 feet away (printed p. 169)."
+  },
+  {
+   "name": "dfaDetectMagicRange",
+   "value": 60,
+   "comment": "the detect magic range: thieves can spot magical emanations within their line of sight up to 60 feet away (printed p. 169)."
+  },
+  {
+   "name": "dfaDetectMagicIntensityCount",
+   "value": 5,
+   "comment": "the detect magic intensity ladder: dim, faint, moderate, strong and overwhelming - five intensity levels (printed p. 169)."
+  },
+  {
+   "name": "dfaEscapeBondsRounds",
+   "value": 5,
+   "comment": "the escape bonds timing: the skill takes five rounds to use (printed p. 169)."
+  },
+  {
+   "name": "dfaEscapeBondsHurryPenalty",
+   "value": 5,
+   "comment": "the escape bonds hurry penalty: the thief suffers a minus 5 percent penalty for each round shaved from the required time (printed p. 169)."
+  },
+  {
+   "name": "dfaTunnelChunkFeet",
+   "value": 10,
+   "comment": "the tunneling chunk: the table shows the time required to dig a 10 foot tunnel with adequate tools, and every 10 feet requires a skill check (printed p. 169)."
+  },
+  {
+   "name": "dfaTunnelRowCount",
+   "value": 3,
+   "comment": "the tunneling earth table row count: three earth types (printed p. 169)."
+  },
+  {
+   "name": "dfaThiefSkillBonusCp",
+   "value": 50,
+   "comment": "the thief S&P bonus: if the Skills and Powers character point system is in play the thief gains 50 bonus character points at 21st level to buy thieving skills from Table 27 (printed p. 170)."
+  },
+  {
+   "name": "dfaThiefSpSkillThreshold",
+   "value": 9,
+   "comment": "the thief S&P overflow gate: if the thief already has 9 or more of the Table 27 skills the points go to proficiencies and high-level rogue skills instead (printed p. 170)."
+  },
+  {
+   "name": "dfaThiefScrollLevel",
+   "value": 24,
+   "comment": "the thief scroll gate: at 24th level a thief begins to develop an understanding of magic and can read some spell scrolls (printed p. 170)."
+  },
+  {
+   "name": "dfaThiefScrollFailPct",
+   "value": 25,
+   "comment": "the thief scroll failure: scroll spells of higher level than the listed level have the standard 25 percent chance for a reversed or harmful effect (printed p. 170)."
+  },
+  {
+   "name": "dfaBardNewSkillCount",
+   "value": 2,
+   "comment": "the bard new skill count: at 21st level a bard gains two of the five new skills listed in the thief section (printed pp. 170-171)."
+  },
+  {
+   "name": "dfaBardNewSkillLevel",
+   "value": 21,
+   "comment": "the bard new skill gate: the two new thieving skills arrive at 21st level (printed pp. 170-171)."
+  },
+  {
+   "name": "dfaBardSkillBonusCp",
+   "value": 20,
+   "comment": "the bard S&P bonus: under the Skills and Powers system the bard gains 20 bonus character points at 21st level (printed p. 170)."
+  },
+  {
+   "name": "dfaBardScrollLevel",
+   "value": 21,
+   "comment": "the bard scroll gate: also at 21st level a bard can read wizard spells from scrolls with no chance of failure provided the bard is high enough level to cast the spell (printed pp. 170-171)."
+  },
+  {
+   "name": "dfaBardScrollFailPct",
+   "value": 15,
+   "comment": "the bard scroll failure: the bard has the standard 15 percent chance for a reversed or harmful effect when reading wizard spells of higher level than castable or priest spells above the table level (printed pp. 170-171)."
+  },
+  {
+   "name": "dfaBardIdentifyLevel",
+   "value": 21,
+   "comment": "the bard item identification gate: at 21st level a bard can analyze magical items and determine something about their specific powers (printed p. 171)."
+  },
+  {
+   "name": "dfaBardIdentifyChance",
+   "value": 55,
+   "comment": "the bard item identification chance: for each hour spent studying an item the character has a 55 percent chance to determine a single power (printed p. 171)."
+  },
+  {
+   "name": "dfaBardItemUseLevel",
+   "value": 24,
+   "comment": "the bard magical item use gate: at 24th level a bard can use wands, staves and rods as a wizard of the same level (printed p. 171)."
+  },
+  {
+   "name": "dfaBardItemCreationLevel",
+   "value": 27,
+   "comment": "the bard item creation gate: at 27th level a bard can write wizard spells the character knows and brew potions as a wizard of the same level (printed p. 171)."
+  },
+  {
+   "name": "dfaT52RowCount",
+   "value": 11,
+   "comment": "the Table 52 row count: eleven levels from 20th through 30th (printed p. 171)."
+  },
+  {
+   "name": "dfaAdaptInitPenaltyAvoided",
+   "value": 6,
+   "comment": "the adaptation initiative note: successful rogues do not suffer combat and initiative penalties for fighting in an unfavorable environment, most notably the plus 6 foreign environment penalty to initiative (printed p. 171)."
+  },
+  {
+   "name": "dfaAdaptCheckBonus",
+   "value": 3,
+   "comment": "the adaptation check bonus: if the environment includes special saving throws or ability checks due to physical conditions, characters successfully using the skill receive a plus 3 (or plus 15 percent) bonus to the check (printed p. 171)."
+  },
+  {
+   "name": "dfaAdaptBlindCheckPenalty",
+   "value": 4,
+   "comment": "the adaptation vision penalty: characters who cannot observe their surroundings suffer a minus 4 penalty to the skill check (printed p. 171)."
+  },
+  {
+   "name": "dfaAdaptPracticeHours",
+   "value": 8,
+   "comment": "the adaptation practice: the effect can be extended indefinitely if the character practices fighting in the environment for at least 8 hours a week (printed p. 171)."
+  },
+  {
+   "name": "dfaAdaptPermanentCp",
+   "value": 3,
+   "comment": "the adaptation permanent cost: at an extra cost of one weapon or nonweapon proficiency slot (or three character points) the character can become permanently adjusted to fighting in the environment (printed p. 172)."
+  },
+  {
+   "name": "dfaClassifyExamTurns",
+   "value": 1,
+   "comment": "the classify traps timing: the examination requires at least a turn for basic constructs and possibly much longer for very elaborate traps (printed p. 172)."
+  },
+  {
+   "name": "dfaClassifyFalseRoll",
+   "value": 20,
+   "comment": "the classify traps false assumption: a roll of 20 means the rogue has made a false assumption about what the trap does (printed p. 172)."
+  },
+  {
+   "name": "dfaClassifyEvasionSaveBonus",
+   "value": 2,
+   "comment": "the classify traps evasion note: if the rogue also has the evasion skill the character gets a plus 2 bonus to the saving throw (printed p. 172)."
+  },
+  {
+   "name": "dfaFallSafeBase",
+   "value": 30,
+   "comment": "the fall/jump safe distance base: 30 feet plus 30 feet per band - 30 at 11th to 210 at 30th (printed pp. 172-173)."
+  },
+  {
+   "name": "dfaFallSurfaceRowCount",
+   "value": 7,
+   "comment": "the fall/jump surface distance column count: seven level bands (printed pp. 172-173)."
+  },
+  {
+   "name": "dfaJobareFallLevel",
+   "value": 20,
+   "comment": "the Jobare shaft example level: a 20th level thief whose skill roll succeeds (printed p. 173)."
+  },
+  {
+   "name": "dfaJobareShaftFeet",
+   "value": 150,
+   "comment": "the Jobare shaft example: the shaft goes down 150 feet (printed p. 173)."
+  },
+  {
+   "name": "dfaJobareChamberFeet",
+   "value": 30,
+   "comment": "the Jobare shaft example: the shaft opens into a chamber 30 feet high (printed p. 173)."
+  },
+  {
+   "name": "dfaJobareBreakFeet",
+   "value": 120,
+   "comment": "the Jobare shaft example: the 20th level thief breaks only the first 120 feet of his fall (printed p. 173)."
+  },
+  {
+   "name": "dfaJobareFinalFeet",
+   "value": 60,
+   "comment": "the Jobare shaft example: the final 60 feet of the fall go unbroken (150 plus 30 less 120) (printed p. 173)."
+  },
+  {
+   "name": "dfaJobareFallDice",
+   "value": 6,
+   "comment": "the Jobare shaft example damage: 6d6 points of damage for the final 60 feet (printed p. 173)."
+  },
+  {
+   "name": "dfaJobareFallSides",
+   "value": 6,
+   "comment": "the Jobare shaft example damage die: d6 (printed p. 173)."
+  },
+  {
+   "name": "dfaJobare30thDice",
+   "value": 3,
+   "comment": "the Jobare shaft example 30th-level note: even a 30th level thief would suffer 3d6 because there was no surface within reach to break the final 30 feet (printed p. 173)."
+  },
+  {
+   "name": "dfaJobare30thFeet",
+   "value": 30,
+   "comment": "the Jobare shaft example 30th-level note: the chamber has no wall within reach for the final 30 feet (printed p. 173)."
+  },
+  {
+   "name": "dfaFeatherRowCount",
+   "value": 3,
+   "comment": "the featherfoot grid row count: three surface bands (printed p. 173)."
+  },
+  {
+   "name": "dfaImprovisedDailyPerLearning",
+   "value": 1,
+   "comment": "the improvised attack allotment: a rogue can use this skill only once a day, but can learn the skill multiple times - three learnings give three improvised attacks each day (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedBlindPenalty",
+   "value": 4,
+   "comment": "the improvised attack blinding effect: the opponent suffers the full penalties for darkness - minus 4 to attacks, saving throws and Armor Class, with movement reduced to one third (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedBlindClearRoll",
+   "value": 9,
+   "comment": "the improvised attack blinding clear roll: the blinding effect lasts until the opponent clears his vision, which requires a roll of 9 or less on 1d20 (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedImmobFreeRoll",
+   "value": 9,
+   "comment": "the improvised attack immobilize effect: the opponent works free only on a roll of 9 or less on 1d20 (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedKillHpOffset",
+   "value": 10,
+   "comment": "the improvised attack kill effect offset: a failed save vs. death magic reduces the creature hit points to minus ten instantly - the offset ten is pinned (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedStunDice",
+   "value": 2,
+   "comment": "the improvised attack stun duration dice: 2d4 rounds (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedStunSides",
+   "value": 4,
+   "comment": "the improvised attack stun die: d4 (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedStunPenalty",
+   "value": 2,
+   "comment": "the improvised attack stun penalty: the stunned character suffers a minus 2 penalty to Armor Class, attack rolls, saving throws and ability checks (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedTripLowSides",
+   "value": 3,
+   "comment": "the improvised attack trip damage: creatures that fall while moving at speeds greater than 12 might suffer minor damage - 1d3 at the DM option (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedTripHighSides",
+   "value": 6,
+   "comment": "the improvised attack trip damage: 1d6 points at the DM option (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSaveNoRoleplay",
+   "value": 6,
+   "comment": "the improvised attack save modifier: plus 6 if the rogue player made no attempt to role play or describe the attack (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSaveFeeble",
+   "value": 4,
+   "comment": "the improvised attack save modifier: plus 4 if the rogue player makes only a feeble attempt to role play or describe the attack (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSaveTrickAdventure",
+   "value": 2,
+   "comment": "the improvised attack save modifier: plus 2 if the rogue has used the same trick earlier in the adventure (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSaveTrickEncounter",
+   "value": 4,
+   "comment": "the improvised attack save modifier: plus 4 if the rogue has used the trick earlier in the same encounter (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSaveSameCreatureAdventure",
+   "value": 6,
+   "comment": "the improvised attack save modifier: plus 6 if the rogue has used the trick on the same creature during this adventure (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSaveSameCreatureEncounter",
+   "value": 8,
+   "comment": "the improvised attack save modifier: plus 8 if the rogue has used the trick on the same creature this encounter (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSaveSurprised",
+   "value": 2,
+   "comment": "the improvised attack save modifier: minus 2 if the opponent is surprised (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSaveAppropriate",
+   "value": 4,
+   "comment": "the improvised attack save modifier: minus 4 if the attack described is particularly appropriate (printed p. 174)."
+  },
+  {
+   "name": "dfaJobareSurpriseRoll",
+   "value": 2,
+   "comment": "the Jobare trick hat example: the surprised man rolls a 2 on the surprise die (printed p. 174)."
+  },
+  {
+   "name": "dfaFocusBoostBase",
+   "value": 18,
+   "comment": "the inner focus boost base: the improved score is 18 plus the band - 18, 19, 20 and 21 across the ladder (printed p. 175)."
+  },
+  {
+   "name": "dfaFocusOtherPenalty",
+   "value": 2,
+   "comment": "the inner focus other penalty: the other two eligible ability scores are reduced by two points each while the boost lasts (printed p. 175)."
+  },
+  {
+   "name": "dfaFocusDurationPerLevel",
+   "value": 1,
+   "comment": "the inner focus duration: the improvement lasts one round per character level (printed p. 175)."
+  },
+  {
+   "name": "dfaFocusAttemptCost",
+   "value": 2,
+   "comment": "the inner focus drain: each attempt, successful or not, during a single day lowers the base skill score by two (printed p. 175)."
+  },
+  {
+   "name": "dfaNondetectionSpellLevel",
+   "value": 3,
+   "comment": "the nondetection spell: rogues can shield themselves from many types of magical divination as the 3rd level wizard spell of the same name (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseSubskillCount",
+   "value": 4,
+   "comment": "the sense danger subskill count: four subskills - ambushes, concealed weapons, hostile intentions and impending attacks (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseAmbushYards",
+   "value": 200,
+   "comment": "the sense danger ambush scan: the rogue can scan an area roughly 200 yards square in a single round (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseImpendingSurpriseBonus",
+   "value": 2,
+   "comment": "the sense danger impending attacks bonus: a successful skill check gives a plus 2 bonus on surprise rolls (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseImpendingInitBonus",
+   "value": 1,
+   "comment": "the sense danger impending attacks bonus: a successful skill check gives a plus 1 bonus to the initiative roll during the first round of combat if the character is not surprised (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseFalseRoll",
+   "value": 20,
+   "comment": "the sense danger false indication: if the roll fails on a 20 the character gets a false indication (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseAlertnessBonus",
+   "value": 1,
+   "comment": "the sense danger alertness note: a character with the alertness proficiency receives a plus 1 bonus to the skill score (printed p. 176)."
+  },
+  {
+   "name": "dfaFlightWeakRate",
+   "value": 15,
+   "comment": "the shadow flight weak shadow rate: 15 with maneuverability class D (printed p. 177)."
+  },
+  {
+   "name": "dfaFlightStrongRate",
+   "value": 18,
+   "comment": "the shadow flight strong shadow rate: 18 with maneuverability class C (printed p. 177)."
+  },
+  {
+   "name": "dfaFlightVeryRate",
+   "value": 24,
+   "comment": "the shadow flight very shadowy rate: 24 with maneuverability class B (printed p. 177)."
+  },
+  {
+   "name": "dfaFlightLeapYards",
+   "value": 360,
+   "comment": "the shadow flight leap: once an hour the rogue can instantly move up to 360 yards as a dimension door spell (printed p. 177)."
+  },
+  {
+   "name": "dfaFlightLeapPerHour",
+   "value": 1,
+   "comment": "the shadow flight leap frequency: once an hour (printed p. 177)."
+  },
+  {
+   "name": "dfaShadowWeakRate",
+   "value": 15,
+   "comment": "the shadow travel weak shadow rate: movement rate 15 (printed p. 177)."
+  },
+  {
+   "name": "dfaShadowStrongRate",
+   "value": 18,
+   "comment": "the shadow travel strong shadow rate: movement rate 18 (printed p. 177)."
+  },
+  {
+   "name": "dfaShadowVeryRate",
+   "value": 24,
+   "comment": "the shadow travel very shadowy rate: movement rate 24 (printed p. 177)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dfaThief95CapSpendElsewhere",
+   "value": true,
+   "comment": "the thieving cap doctrine: once a single skill reaches 95 percent the character must spend discretionary points on other skills (printed p. 167)."
+  },
+  {
+   "name": "dfaThiefAll95PointsLost",
+   "value": true,
+   "comment": "the thieving cap doctrine: if all the thieving skill scores are 95 percent, the discretionary points are lost (printed p. 167)."
+  },
+  {
+   "name": "dfaThiefLostPointsNotRegained",
+   "value": true,
+   "comment": "the thieving cap doctrine: discretionary points the character lost earlier are not regained when the cap is lifted at 11th level (printed p. 167)."
+  },
+  {
+   "name": "dfaThiefPenaltiesFromBase",
+   "value": true,
+   "comment": "the thieving penalty rule: any penalties to the roll are subtracted from the base score (printed p. 167)."
+  },
+  {
+   "name": "dfaT47FinalStepShort",
+   "value": true,
+   "comment": "the Table 47 printed quirk: the final 29th-to-30th experience step is only 120,000 points, not the 220,000-point series the first ten steps follow (settled against the physical copy, user-confirmed 2026-10-18) (printed p. 168)."
+  },
+  {
+   "name": "dfaT47ConBonusStopsAfter10",
+   "value": true,
+   "comment": "the Table 47 footnote: bonus hit points from high Constitution scores are not added after 10th level - the rogue footnote reads 10TH where the warrior and wizard tables read 9th (pinned verbatim) (printed p. 168)."
+  },
+  {
+   "name": "dfaT47CaptionSharesPrintedNumber",
+   "value": true,
+   "comment": "the Table 47 caption duplication: this body caption prints Table 47, the same printed number the priest spell progression body caption uses on printed p. 161 (whose contents entry reads Table 46) - the printed book numbers two different tables 47 (printed pp. 161, 168)."
+  },
+  {
+   "name": "dfaNewSkillsApplyPointsImmediately",
+   "value": true,
+   "comment": "the new thieving skill doctrine: the character can immediately apply discretionary points to the new skills (printed p. 168)."
+  },
+  {
+   "name": "dfaT49HalflingDetectMagicNoPercent",
+   "value": true,
+   "comment": "the Table 49 printed quirk: the halfling detect magic cell prints +5 without the percent sign its row siblings carry (pinned per the primary ABBYY capture; the value is unchanged) (printed p. 169)."
+  },
+  {
+   "name": "dfaT50TunnelingDashAt17",
+   "value": true,
+   "comment": "the Table 50 printed quirk: the tunneling row prints a dash at Dexterity 17 and jumps from +20 percent at 21 to +30 percent at 22 with no +25 percent cell - the tesseract capture reads the full row, the ABBYY capture drops the final cell; settled against the physical copy, user-confirmed 2026-10-18 (printed p. 170)."
+  },
+  {
+   "name": "dfaBribeOneAttemptPerTarget",
+   "value": true,
+   "comment": "the bribe doctrine: only one bribe can be attempted per target (printed pp. 168-169)."
+  },
+  {
+   "name": "dfaBribeFailReactionRoll",
+   "value": true,
+   "comment": "the bribe doctrine: if the attempt fails the DM makes a reaction roll for the target to determine how he counters the bribe (printed pp. 168-169)."
+  },
+  {
+   "name": "dfaBribeNotEveryoneSusceptible",
+   "value": true,
+   "comment": "the bribe doctrine: the DM must decide if the NPC in question can be bribed - not everyone is susceptible (printed pp. 168-169)."
+  },
+  {
+   "name": "dfaBribeNotOutsideStation",
+   "value": true,
+   "comment": "the bribe doctrine: no character can be bribed to do something that falls outside his job or station (printed pp. 168-169)."
+  },
+  {
+   "name": "dfaBribeNeverDangerousOrLong",
+   "value": true,
+   "comment": "the bribe doctrine: a bribed NPC does not perform any action that takes more than a few minutes of effort or places himself in danger - the task must strike the character as quick and harmless (printed pp. 168-169)."
+  },
+  {
+   "name": "dfaBribeNeverAgainstBeliefs",
+   "value": true,
+   "comment": "the bribe doctrine: a simple bribe never induces a character to compromise something he believes in (printed pp. 168-169)."
+  },
+  {
+   "name": "dfaBribeSecretReactionRoll",
+   "value": true,
+   "comment": "the bribe procedure: secretly roll 1d20 against Table 59 of the Dungeon Master Guide and do not tell the player the reaction - simply role play the response (printed pp. 168-169)."
+  },
+  {
+   "name": "dfaBribeFriendlyNeedsNoBribe",
+   "value": true,
+   "comment": "the bribe procedure: if the reaction roll is friendly the NPC probably does what the thief wants without a bribe (printed pp. 168-169)."
+  },
+  {
+   "name": "dfaBribeMultiplyByDifference",
+   "value": true,
+   "comment": "the bribe procedure: the amount required is the status table roll multiplied by the difference between the reaction roll and the highest number on Table 59 that is a friendly result (printed pp. 168-169)."
+  },
+  {
+   "name": "dfaBribePlayerNeverToldValues",
+   "value": true,
+   "comment": "the bribe procedure: the player should never be told the NPC station, the base bribe value, or the initial reaction roll (printed p. 169)."
+  },
+  {
+   "name": "dfaDetectIllusionNeedsRound",
+   "value": true,
+   "comment": "the detect illusion doctrine: detection is not automatic - the thief must spend a round concentrating on the area of effect (printed p. 169)."
+  },
+  {
+   "name": "dfaDetectIllusionTranslucent",
+   "value": true,
+   "comment": "the detect illusion doctrine: the thief perceives the illusion as a translucent image, as though it were a light mist - the more real the illusion the more solid the image (printed p. 169)."
+  },
+  {
+   "name": "dfaDetectIllusionNotVsNonvisible",
+   "value": true,
+   "comment": "the detect illusion doctrine: invisibility and other nonvisible effects cannot be discerned (printed p. 169)."
+  },
+  {
+   "name": "dfaDetectIllusionNotFailSafe",
+   "value": true,
+   "comment": "the detect illusion doctrine: knowing that something is an illusion is not necessarily a fail-safe defense, such as in the case of a simulacrum (printed p. 169)."
+  },
+  {
+   "name": "dfaDetectMagicBlockedLikeSpell",
+   "value": true,
+   "comment": "the detect magic doctrine: the ability can be blocked by the same things that prevent detect magic spells from operating (printed p. 169)."
+  },
+  {
+   "name": "dfaEscapeBondsRollPerDevice",
+   "value": true,
+   "comment": "the escape bonds doctrine: the thief must roll to break free of every device binding him - tied at wrists and ankles means two successful rolls (printed p. 169)."
+  },
+  {
+   "name": "dfaEscapeBondsLockedNeedPicks",
+   "value": true,
+   "comment": "the escape bonds doctrine: locked items also require the thief to successfully pick the locks (printed p. 169)."
+  },
+  {
+   "name": "dfaEscapeBondsFailCantRetryThatBond",
+   "value": true,
+   "comment": "the escape bonds doctrine: a failure on any attempt means the thief cannot loosen that bond or pick the lock (printed p. 169)."
+  },
+  {
+   "name": "dfaTunnelCollapseOnFail",
+   "value": true,
+   "comment": "the tunneling doctrine: a failed skill check means the front of the tunnel collapses (printed p. 169)."
+  },
+  {
+   "name": "dfaTunnelRedugAtLooseRate",
+   "value": true,
+   "comment": "the tunneling doctrine: a collapsed tunnel can be re-dug at the loose earth rate (printed p. 169)."
+  },
+  {
+   "name": "dfaThiefSpOverflowToProficiencies",
+   "value": true,
+   "comment": "the thief S&P doctrine: a thief who already has 9 or more of the listed skills cannot spend all 50 points on thieving skills (printed p. 170)."
+  },
+  {
+   "name": "dfaThiefExtraSkillsOnlyAt21st",
+   "value": true,
+   "comment": "the thief doctrine: the ability to acquire additional thieving skills is a special bonus for reaching 21st level - it is not normally possible to gain additional thieving skills after the character is created (printed p. 170)."
+  },
+  {
+   "name": "dfaThiefScrollNoFailAtOrBelow",
+   "value": true,
+   "comment": "the thief scroll doctrine: there is no chance for failure when reading a scroll of the listed level or less (printed p. 170)."
+  },
+  {
+   "name": "dfaBardScrollWizardNoFailIfCastable",
+   "value": true,
+   "comment": "the bard scroll doctrine: wizard scrolls of a level the bard can cast are read with no chance of failure (printed pp. 170-171)."
+  },
+  {
+   "name": "dfaBardIdentifyNoBonusesCharges",
+   "value": true,
+   "comment": "the bard item identification limit: the item exact magical bonuses and number of charges are never revealed (printed p. 171)."
+  },
+  {
+   "name": "dfaBardIdentifyNoHandling",
+   "value": true,
+   "comment": "the bard item identification doctrine: the bard need not handle the item or expend any materials - merely examining it closely (printed p. 171)."
+  },
+  {
+   "name": "dfaAdaptLikeWarriorSkill",
+   "value": true,
+   "comment": "the adaptation doctrine: except where noted the rogue skill is identical to the warrior skill of the same name (printed p. 171)."
+  },
+  {
+   "name": "dfaAdaptNoSituationalOrNoncombat",
+   "value": true,
+   "comment": "the adaptation limit: the skill does not allow characters to ignore situational movement penalties or environmental factors that are not combat related, or conditions that are physically impossible to overcome (printed p. 171)."
+  },
+  {
+   "name": "dfaAdaptNoMagicalOrVisionPenalties",
+   "value": true,
+   "comment": "the adaptation limit: the skill has no effect on penalties derived from an environment magical properties or on penalties based on vision or lighting (printed p. 171)."
+  },
+  {
+   "name": "dfaAdaptCheckEachRound",
+   "value": true,
+   "comment": "the adaptation procedure: at the end of each round in combat the character checks the skill - it requires only a moment thought, can be checked every round until successful, and does not prevent other actions (printed pp. 171-172)."
+  },
+  {
+   "name": "dfaAdaptLastsBattlePlusDays",
+   "value": true,
+   "comment": "the adaptation duration: once the skill succeeds the character temporarily ignores the environment special effects for the entire battle plus one day per character level thereafter (printed p. 172)."
+  },
+  {
+   "name": "dfaAdaptPermanentBeforeFade",
+   "value": true,
+   "comment": "the adaptation permanent gate: the permanent adjustment holds only if the additional cost is paid before the adaptation fades (printed p. 172)."
+  },
+  {
+   "name": "dfaClassifyNeedsFindTraps",
+   "value": true,
+   "comment": "the classify traps limit: the skill is useless without the find traps ability (printed pp. 171-172)."
+  },
+  {
+   "name": "dfaClassifyRevealsExactNature",
+   "value": true,
+   "comment": "the classify traps doctrine: a successful roll reveals the trap exact nature - how it works, what it does to people who trigger it, and where its attacks are aimed provided the rogue can observe those areas (printed pp. 171-172)."
+  },
+  {
+   "name": "dfaClassifyMagicalHalvedRoundUp",
+   "value": true,
+   "comment": "the classify traps limit: a magical or invisible trap reduces the rogue success number, including ability score bonuses, by half with fractions rounded up (printed p. 172)."
+  },
+  {
+   "name": "dfaClassifyFailUnder20LearnsNothing",
+   "value": true,
+   "comment": "the classify traps doctrine: a failed roll of less than 20 means the rogue cannot determine anything special about the trap (printed p. 172)."
+  },
+  {
+   "name": "dfaClassifySecretRoll",
+   "value": true,
+   "comment": "the classify traps doctrine: the DM should make the skill roll secretly (printed p. 172)."
+  },
+  {
+   "name": "dfaClassifyTwoRemoveRollsBest",
+   "value": true,
+   "comment": "the classify traps disarm option: after a successful examination the character can make two remove traps rolls taking only the best result (printed p. 172)."
+  },
+  {
+   "name": "dfaClassifyBypassSaveVsBreath",
+   "value": true,
+   "comment": "the classify traps bypass option: the rogue can trigger the trap from a safe place - if complete avoidance is impossible the rogue saves vs. breath weapon, is unharmed on success, and takes half damage on failure (printed p. 172)."
+  },
+  {
+   "name": "dfaClassifyCompanionsMaySave",
+   "value": true,
+   "comment": "the classify traps companion option: companions warned by the rogue can attempt breath weapon saving throws to avoid the effects and suffer only half damage on a failed save (printed p. 172)."
+  },
+  {
+   "name": "dfaClassifyNoHalfEffectRuling",
+   "value": true,
+   "comment": "the classify traps doctrine: when a trap attack cannot have a half effect the DM can require another saving throw against the trap attack form or rule that characters are fully effected when they fail the breath weapon saving throw (printed p. 172)."
+  },
+  {
+   "name": "dfaEvasionAutomatic",
+   "value": true,
+   "comment": "the evasion doctrine: the skill operates automatically whenever a rogue is subjected to an energy attack that causes damage (printed p. 172)."
+  },
+  {
+   "name": "dfaEvasionNoDamageOnSave",
+   "value": true,
+   "comment": "the evasion doctrine: the rogue rolls a normal saving throw vs. the effect and suffers no damage if it is successful (printed p. 172)."
+  },
+  {
+   "name": "dfaEvasionNotVsNonDamage",
+   "value": true,
+   "comment": "the evasion limit: the skill is not effective against effects that do not inflict damage or that do not normally allow a saving throw - a bronze dragon repulsion breath, a gorgon petrifying breath or magic missile spells (printed p. 172)."
+  },
+  {
+   "name": "dfaEvasionFixedMissilesOnly",
+   "value": true,
+   "comment": "the evasion missile rule: the rogue can avoid missiles fired from fixed points such as traps and siege engines, but not from creatures (printed p. 172)."
+  },
+  {
+   "name": "dfaEvasionNeedsNotSurprised",
+   "value": true,
+   "comment": "the evasion missile rule: if not surprised the rogue avoids the missile with a successful saving throw vs. breath weapon (printed p. 172)."
+  },
+  {
+   "name": "dfaFallAlwaysWithinOneFoot",
+   "value": true,
+   "comment": "the fall/jump surface rule: rogues who simply step off a precipice or fall while climbing are always within one foot of a vertical surface unless it has a negative slope (printed p. 173)."
+  },
+  {
+   "name": "dfaFallFrictionSurfacesOk",
+   "value": true,
+   "comment": "the fall/jump surface rule: any surface that can provide a reasonable amount of friction is sufficient (ropes, tree trunks, walls) while very smooth or slippery surfaces are useless (ice walls, greased poles, walls of force) (printed p. 173)."
+  },
+  {
+   "name": "dfaFallDamageOnExcess",
+   "value": true,
+   "comment": "the fall/jump damage rule: if the fall is longer than the safe distance allowed for the rogue level, subtract the safe distance from the total distance before determining damage from the fall (printed p. 173)."
+  },
+  {
+   "name": "dfaFeatherNeedsMoveSilently",
+   "value": true,
+   "comment": "the featherfoot gate: the skill is a function of the rogue move silently ability, which is a requirement for using this skill (printed p. 173)."
+  },
+  {
+   "name": "dfaFeatherMustStopAtDistance",
+   "value": true,
+   "comment": "the featherfoot limit: the rogue must stop and make contact with the surface after moving the allowed distance (printed p. 173)."
+  },
+  {
+   "name": "dfaFeatherSilentNoTracks",
+   "value": true,
+   "comment": "the featherfoot doctrine: the character moves in complete silence and leaves no tracks on the ground, and the character weight does not press down upon the surface at all (printed p. 173)."
+  },
+  {
+   "name": "dfaFeatherNoWeightTriggers",
+   "value": true,
+   "comment": "the featherfoot doctrine: the character does not set off any alarm or trap triggered by weight and does not trigger a squeaking floors spell (printed p. 173)."
+  },
+  {
+   "name": "dfaImprovisedLearnMultipleTimes",
+   "value": true,
+   "comment": "the improvised attack doctrine: each time the rogue learns the skill again the daily allotment grows by one (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedBlindfightingNoHelp",
+   "value": true,
+   "comment": "the improvised attack blinding note: the blindfighting proficiency does not reduce the penalties, and many creatures cannot be blinded because they have no visual organs (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedDisarmStuckNeedsOpenDoors",
+   "value": true,
+   "comment": "the improvised attack disarm effect: the opponent saves vs. petrification or loses the use of one weapon; recovering a dropped weapon takes a half move and a stuck weapon needs a successful open doors roll (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedKillHigherHdImmune",
+   "value": true,
+   "comment": "the improvised attack kill limit: opponents with more Hit Dice or a higher level than the rogue are immune to kill effects and take normal damage (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedStunNoSpellsAttack",
+   "value": true,
+   "comment": "the improvised attack stun doctrine: a stunned character is unable to cast spells, attack, or move at more than half speed (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedAnnounceDeclareDescribe",
+   "value": true,
+   "comment": "the improvised attack procedure: the attack must be announced in the declaration phase and described exactly in the resolution phase - a simple called shot never qualifies (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedNormalAttackRoll",
+   "value": true,
+   "comment": "the improvised attack procedure: the rogue makes a normal attack roll with standard combat modifiers; the backstab bonus applies to rear attacks, the Dexterity/Aim missile bonus usually applies, and Strength/Muscle bonuses apply to blows (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSuccessNoDamage",
+   "value": true,
+   "comment": "the improvised attack doctrine: if the attack succeeds the opponent suffers no damage but must roll a saving throw or suffer the special effect (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSaveUnlikelyRange",
+   "value": true,
+   "comment": "the improvised attack save modifier: plus 2 to plus 6 if the attack described is physically unlikely to have the desired effect (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedSaveAutoIfInadequate",
+   "value": true,
+   "comment": "the improvised attack save modifier: the save is automatic if the method described is completely inadequate (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedTable3638Optional",
+   "value": true,
+   "comment": "the improvised attack option: the optional saving throw modifiers from Table 36 or Table 38 can be applied if the DM wishes (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedTrickThreeAdventures",
+   "value": true,
+   "comment": "the improvised attack trick establishment: if a rogue has successfully used the same improvised attack in three separate adventures the character can purchase the skill again at the next level to make the trick a permanent part of the character skills (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedTrickOncePerEncounter",
+   "value": true,
+   "comment": "the improvised attack trick doctrine: an established trick can be used once per encounter without the usual penalty for multiple use, though situational penalties still apply (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedTrickNotDailyAllotment",
+   "value": true,
+   "comment": "the improvised attack trick doctrine: using an established trick does not count toward the daily allotment unless the trick is used more than once in a single encounter (printed p. 174)."
+  },
+  {
+   "name": "dfaImprovisedTrickPreparedPlus6",
+   "value": true,
+   "comment": "the improvised attack trick doctrine: opponents who have fought the rogue previously and are prepared for an established trick gain a plus 6 saving throw bonus against it (printed p. 174)."
+  },
+  {
+   "name": "dfaJobareHatBlindExample",
+   "value": true,
+   "comment": "the Jobare trick hat example: the DM and player agree the clamped hat is a blinding attack, the attack succeeds, and the man fails his save vs. breath weapon at minus 2 - later Jobare establishes the trick hat as a permanent skill (printed p. 174)."
+  },
+  {
+   "name": "dfaFocusLikeWarriorSkill",
+   "value": true,
+   "comment": "the inner focus doctrine: the rogue skill marshals personal energies to provide a temporary bonus to Dexterity, Intelligence or Constitution scores and is otherwise similar to the warrior skill of the same name (printed p. 175)."
+  },
+  {
+   "name": "dfaFocusAlreadyHigherNoEffect",
+   "value": true,
+   "comment": "the inner focus ceiling: if the character ability score is already higher than the value listed on the table this skill has no effect - the priest wording again, not the wizard equal to or higher (pinned verbatim) (printed p. 175)."
+  },
+  {
+   "name": "dfaFocusEndAtWill",
+   "value": true,
+   "comment": "the inner focus doctrine: the rogue can end the boost - and restore the values of the other two ability scores - at any time (printed p. 175)."
+  },
+  {
+   "name": "dfaFocusSubabilitiesRaisedEqual",
+   "value": true,
+   "comment": "the inner focus doctrine: under the optional subabilities rule both subabilities scores in the increased ability are raised to the same value (printed p. 175)."
+  },
+  {
+   "name": "dfaFocusOneBoostAtATime",
+   "value": true,
+   "comment": "the inner focus limit: a character can have only one ability score improvement from this skill operating at any given time (printed p. 175)."
+  },
+  {
+   "name": "dfaFocusNoOtherActions",
+   "value": true,
+   "comment": "the inner focus procedure: the rogue can take no other actions during the round spent concentrating on raising the selected ability score (printed p. 175)."
+  },
+  {
+   "name": "dfaFocusBonusesImmediate",
+   "value": true,
+   "comment": "the inner focus doctrine: bonuses from an increased score are applied immediately when the skill succeeds and are immediately lost when the boost duration ends - reduced score effects are likewise restored when the improvement ends (printed p. 175)."
+  },
+  {
+   "name": "dfaNondetectionBeatsDivinations",
+   "value": true,
+   "comment": "the nondetection doctrine: a successful skill check defeats a spell such as ESP, clairaudience or detect invisibility, or a magical item such as a crystal ball (printed p. 176)."
+  },
+  {
+   "name": "dfaNondetectionSavesEvenOnFail",
+   "value": true,
+   "comment": "the nondetection doctrine: even if the roll fails the rogue is still entitled to any applicable saving throws (printed p. 176)."
+  },
+  {
+   "name": "dfaNondetectionBeatsSenseDanger",
+   "value": true,
+   "comment": "the nondetection reach: the skill is also effective against the sense danger skill (printed p. 176)."
+  },
+  {
+   "name": "dfaNondetectionBeatsDetectDeception",
+   "value": true,
+   "comment": "the nondetection reach: the skill is also effective against the priest detect deception skill (printed p. 176)."
+  },
+  {
+   "name": "dfaNondetectionOpposedWillpower",
+   "value": true,
+   "comment": "the nondetection procedure: when subjected to one of these powers the rogue can attempt an opposed Wisdom/Willpower check to remain undetected (printed p. 176)."
+  },
+  {
+   "name": "dfaNondetectionNotVsFourSpells",
+   "value": true,
+   "comment": "the nondetection limit: the skill is not effective against know alignment, true seeing, commune or contact other plane (printed p. 176)."
+  },
+  {
+   "name": "dfaNondetectionNotVsLegendaryOrDeities",
+   "value": true,
+   "comment": "the nondetection limit: the skill is not effective against the detection abilities of legendary monsters, wyrm and great wyrm dragons, or deities (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseSecondPurchaseExtra",
+   "value": true,
+   "comment": "the sense danger doctrine: if the character purchases this skill twice the rogue gains one extra subskill (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseImprovesAllSubskills",
+   "value": true,
+   "comment": "the sense danger doctrine: any improvement to the skill number improves all the subskills the character knows (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseAmbushOncePerTurn",
+   "value": true,
+   "comment": "the sense danger ambush limit: an area can be scanned only once each turn (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseAmbushRevealsCountAndSize",
+   "value": true,
+   "comment": "the sense danger ambush doctrine: a successful scan reveals approximately how many creatures are hiding in the area and their approximate size (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseConcealedRevealsSizeLocationType",
+   "value": true,
+   "comment": "the sense danger concealed weapons doctrine: a successful check reveals the weapon general size, location and type (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseUnknownCreatureAttackModes",
+   "value": true,
+   "comment": "the sense danger concealed weapons doctrine: faced with an unknown creature a successful check determines its attack modes (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseMagicalConcealmentDetected",
+   "value": true,
+   "comment": "the sense danger concealed weapons note: unlike the warrior version a rogue can detect magically concealed weapons (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseHostilityNotPreparedness",
+   "value": true,
+   "comment": "the sense danger hostile intentions doctrine: a successful roll gives a general level of hostility - low, medium or high - but not how well prepared the creature is, nor how likely it is to attack (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseImpendingDirectionAndDistance",
+   "value": true,
+   "comment": "the sense danger impending attacks doctrine: the rogue receives a vague impression of the attacker general direction (front, rear, left, right) and distance (close, far) (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseImpendingMustFace",
+   "value": true,
+   "comment": "the sense danger impending attacks limit: unlike the warrior back protection the rogue must turn to face the attacker to negate rear attack bonuses - if surprised the attacker receives all rear attack bonuses including backstab adjustments (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseSecretRolls",
+   "value": true,
+   "comment": "the sense danger procedure: the DM should roll the check secretly (printed p. 176)."
+  },
+  {
+   "name": "dfaSenseFalseNotImpending",
+   "value": true,
+   "comment": "the sense danger false indication: it has no effect on an impending attack (printed p. 176)."
+  },
+  {
+   "name": "dfaFlightLikeShadowTravel",
+   "value": true,
+   "comment": "the shadow flight doctrine: the ability is similar to the shadow travel skill except a successful hide in shadows roll allows the character to fly silently from shadow to shadow (printed p. 177)."
+  },
+  {
+   "name": "dfaFlightNeedsHideInShadows",
+   "value": true,
+   "comment": "the shadow flight procedure: the rogue must begin with a successful hide in shadows roll (printed p. 177)."
+  },
+  {
+   "name": "dfaFlightNoFlightWithoutShadow",
+   "value": true,
+   "comment": "the shadow flight limit: with no shadow flight is not possible and movement is normal (printed p. 177)."
+  },
+  {
+   "name": "dfaFlightLeapNeedsAsShadowy",
+   "value": true,
+   "comment": "the shadow flight leap limit: the destination must be at least as shadowy as the rogue current position (printed p. 177)."
+  },
+  {
+   "name": "dfaFlightLightEncumbranceOnly",
+   "value": true,
+   "comment": "the shadow flight limit: while flying or traveling instantaneously the rogue can be no more than lightly encumbered (printed p. 177)."
+  },
+  {
+   "name": "dfaFlightCarryWithinLimit",
+   "value": true,
+   "comment": "the shadow flight limit: the rogue can carry other creatures if their weight does not exceed the light encumbrance limit (printed p. 177)."
+  },
+  {
+   "name": "dfaShadowNeedsHideInShadows",
+   "value": true,
+   "comment": "the shadow travel procedure: the rogue must first successfully hide in shadows, which is required to use this skill (printed p. 177)."
+  },
+  {
+   "name": "dfaShadowNoShadowsNormal",
+   "value": true,
+   "comment": "the shadow travel limit: with no shadows available the movement rate is normal (printed p. 177)."
+  },
+  {
+   "name": "dfaShadowVisibleBetweenShadows",
+   "value": true,
+   "comment": "the shadow travel doctrine: the rogue is visible when moving between shadows but remains hidden while within them (printed p. 177)."
+  },
+  {
+   "name": "dfaShadowEndsOnAttack",
+   "value": true,
+   "comment": "the shadow travel doctrine: accelerated movement lasts until the character attacks or the shadows get weaker; the rogue can re-enter and resume on any round without an attack (printed p. 177)."
+  },
+  {
+   "name": "dfaShadowNotSilent",
+   "value": true,
+   "comment": "the shadow travel doctrine: shadow movement is not silent, but the rogue can attempt a move silently roll while moving through shadows and still move at the accelerated rate (printed p. 177)."
+  },
+  {
+   "name": "dfaShadowTerrainAndEncumbranceApply",
+   "value": true,
+   "comment": "the shadow travel doctrine: accelerated movement is subject to normal modifiers for terrain and encumbrance (printed p. 177)."
+  }
+ ],
+ "chains": [
+  {
+   "name": "dfaThiefScrollBand",
+   "limits": [
+    23,
+    26,
+    28
+   ],
+   "tail": 3,
+   "comment": "the thief scroll ladder: thief levels 23 or less band 0 (no scroll use), 24-26 band 1 (1st-level scrolls), 27-28 band 2 (2nd-level scrolls), and 29 or more the tail band 3 (3rd-level scrolls) (printed p. 170)."
+  },
+  {
+   "name": "dfaBardScrollBand",
+   "limits": [
+    20,
+    23,
+    26,
+    29
+   ],
+   "tail": 4,
+   "comment": "the bard scroll ladder: bard levels 20 or less band 0 (no scroll use), 21-23 band 1 (1st), 24-26 band 2 (2nd), 27-29 band 3 (3rd), and 30 or more the tail band 4 (4th-level scrolls) (printed pp. 170-171)."
+  },
+  {
+   "name": "dfaFallBand",
+   "limits": [
+    13,
+    16,
+    19,
+    21,
+    24,
+    27
+   ],
+   "tail": 6,
+   "comment": "the fall/jump level ladder: rogue levels 11-13 band 0 (30 feet), 14-16 band 1 (60), 17-19 band 2 (90), 20-21 band 3 (120), 22-24 band 4 (150), 25-27 band 5 (180), and 28 or more the tail band 6 (210) - the safe fall distance is 30 feet plus 30 feet per band (printed pp. 172-173)."
+  },
+  {
+   "name": "dfaFeatherBand",
+   "limits": [
+    13,
+    16
+   ],
+   "tail": 2,
+   "comment": "the featherfoot level ladder: rogue levels 11-13 band 0 (soft surfaces), 14-16 band 1 (very soft surfaces), and 17 or more the tail band 2 (liquid surfaces) (printed p. 173)."
+  },
+  {
+   "name": "dfaFocusBand",
+   "limits": [
+    15,
+    20,
+    25
+   ],
+   "tail": 3,
+   "comment": "the inner focus boost ladder: rogue levels 11-15 band 0 (boost to 18), 16-20 band 1 (19), 21-25 band 2 (20), and 26 or more the tail band 3 (21) - the improved score is 18 plus the band (printed p. 175)."
+  },
+  {
+   "name": "dfaSenseBand",
+   "limits": [
+    15,
+    20,
+    25
+   ],
+   "tail": 3,
+   "comment": "the sense danger subskill ladder: rogue levels 15 or less band 0 (skill unavailable), 16-20 band 1 (one subskill), 21-25 band 2 (two subskills), and 26 or more the tail band 3 (three subskills) - the subskill count is the band (printed pp. 176-177)."
+  }
+ ],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dfaT47Grid",
+   "tag": "T47r",
+   "count": "dfaT47RowCount",
+   "sentinel": -99,
+   "comment": "the Table 47 rogue advancement grid (printed p. 168): eleven rows for levels 20 through 30 (row index = level minus 20) - experience points, weapon and nonweapon proficiency counts, and the 10-plus-N d6 hit-point cells read as the constant 10 base plus the per-level bonus. The tag T47r distinguishes this grid from the priest spell progression grid that shares the printed caption number 47.",
+   "col_comments": [
+    "the experience column: 2,200,000 at 20th in 220,000 steps to 4,180,000 at 29th, then the printed 120,000 final step to 4,300,000 at 30th (printed p. 168).",
+    "the weapon proficiency column: 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9 across levels 20-30 (printed p. 168).",
+    "the nonweapon proficiency column: 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10 - one more every four levels (printed p. 168).",
+    "the hit-point base column: the constant 10 of the printed 10-plus-N cells (printed p. 168).",
+    "the hit-point bonus column: 20 at 20th rising in plus-two steps to 40 at 30th (printed p. 168)."
+   ],
+   "cols": [
+    "dfaT47Xp",
+    "dfaT47WeaponProf",
+    "dfaT47NonweaponProf",
+    "dfaT47HpBaseCol",
+    "dfaT47HpBonus"
+   ],
+   "data": [
+    [
+     2200000,
+     7,
+     8,
+     10,
+     20
+    ],
+    [
+     2420000,
+     7,
+     8,
+     10,
+     22
+    ],
+    [
+     2640000,
+     7,
+     8,
+     10,
+     24
+    ],
+    [
+     2860000,
+     7,
+     8,
+     10,
+     26
+    ],
+    [
+     3080000,
+     8,
+     9,
+     10,
+     28
+    ],
+    [
+     3300000,
+     8,
+     9,
+     10,
+     30
+    ],
+    [
+     3520000,
+     8,
+     9,
+     10,
+     32
+    ],
+    [
+     3740000,
+     8,
+     9,
+     10,
+     34
+    ],
+    [
+     3960000,
+     9,
+     10,
+     10,
+     36
+    ],
+    [
+     4180000,
+     9,
+     10,
+     10,
+     38
+    ],
+    [
+     4300000,
+     9,
+     10,
+     10,
+     40
+    ]
+   ]
+  },
+  {
+   "name": "dfaT49Grid",
+   "tag": "T49",
+   "count": "dfaT49RowCount",
+   "sentinel": -99,
+   "comment": "the Table 49 thieving skill racial adjustment grid (printed p. 169): five rows (bribe, detect illusion, detect magic, escape bonds, tunneling) by six race columns (dwarf, elf, gnome, half-elf, halfling, human). The printed dashes read as zero - no racial adjustment; the halfling detect magic cell prints +5 without the percent sign.",
+   "col_comments": [
+    "the dwarf column: minus 5 on bribe, plus 5 on detect illusion, plus 5 on detect magic, no escape bonds adjustment, plus 10 on tunneling (printed p. 169).",
+    "the elf column: plus 15 on bribe, no detect illusion adjustment, plus 10 on detect magic, no escape bonds adjustment, minus 10 on tunneling (printed p. 169).",
+    "the gnome column: plus 5 on bribe, plus 10 on detect illusion, plus 5 on detect magic, no escape bonds adjustment, plus 5 on tunneling (printed p. 169).",
+    "the half-elf column: plus 5 on bribe, plus 5 on detect illusion, plus 5 on detect magic, no escape bonds adjustment, minus 5 on tunneling (printed p. 169).",
+    "the halfling column: no bribe, detect illusion or detect magic adjustment beyond the printed +5 cell, plus 10 on escape bonds, plus 5 on tunneling (printed p. 169).",
+    "the human column: no racial adjustments on any of the five skills (printed p. 169)."
+   ],
+   "cols": [
+    "dfaT49Dwarf",
+    "dfaT49Elf",
+    "dfaT49Gnome",
+    "dfaT49Halfelf",
+    "dfaT49Halfling",
+    "dfaT49Human"
+   ],
+   "data": [
+    [
+     -5,
+     15,
+     5,
+     5,
+     0,
+     0
+    ],
+    [
+     5,
+     0,
+     10,
+     5,
+     0,
+     0
+    ],
+    [
+     5,
+     10,
+     5,
+     5,
+     5,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     10,
+     0
+    ],
+    [
+     10,
+     -10,
+     5,
+     -5,
+     5,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "dfaT50Grid",
+   "tag": "T50",
+   "count": "dfaT50RowCount",
+   "sentinel": -99,
+   "comment": "the Table 50 Dexterity/Aim adjustment grid (printed p. 170): two rows (escape bonds and tunneling) by ten Dexterity columns (9, 10, 11, 12-16, 17, 18, 19, 20, 21, 22). The printed dashes read as zero; the tunneling row prints a dash at Dexterity 17 and +30 percent at 22.",
+   "col_comments": [
+    "the Dexterity 9 column: escape bonds minus 15, tunneling minus 10 (printed p. 170).",
+    "the Dexterity 10 column: escape bonds minus 10, tunneling minus 5 (printed p. 170).",
+    "the Dexterity 11 column: escape bonds minus 5, tunneling no adjustment (printed p. 170).",
+    "the Dexterity 12-16 column: no adjustment on either skill (printed p. 170).",
+    "the Dexterity 17 column: escape bonds plus 5, tunneling the printed dash (no adjustment) (printed p. 170).",
+    "the Dexterity 18 column: escape bonds plus 10, tunneling plus 5 (printed p. 170).",
+    "the Dexterity 19 column: escape bonds plus 15, tunneling plus 10 (printed p. 170).",
+    "the Dexterity 20 column: escape bonds plus 20, tunneling plus 15 (printed p. 170).",
+    "the Dexterity 21 column: escape bonds plus 25, tunneling plus 20 (printed p. 170).",
+    "the Dexterity 22 column: escape bonds plus 30, tunneling the printed plus 30 (printed p. 170)."
+   ],
+   "cols": [
+    "dfaT50Dex9",
+    "dfaT50Dex10",
+    "dfaT50Dex11",
+    "dfaT50Dex1216",
+    "dfaT50Dex17",
+    "dfaT50Dex18",
+    "dfaT50Dex19",
+    "dfaT50Dex20",
+    "dfaT50Dex21",
+    "dfaT50Dex22"
+   ],
+   "data": [
+    [
+     -15,
+     -10,
+     -5,
+     0,
+     5,
+     10,
+     15,
+     20,
+     25,
+     30
+    ],
+    [
+     -10,
+     -5,
+     0,
+     0,
+     0,
+     5,
+     10,
+     15,
+     20,
+     30
+    ]
+   ]
+  },
+  {
+   "name": "dfaT51Grid",
+   "tag": "T51",
+   "count": "dfaT51RowCount",
+   "sentinel": -99,
+   "comment": "the Table 51 thieving skill armor adjustment grid (printed p. 170): three rows (bribe, escape bonds, tunneling) by three armor columns (no armor, elven chain, padded or studded leather).",
+   "col_comments": [
+    "the no armor column: bribe minus 10, escape bonds plus 5, tunneling plus 10 (printed p. 170).",
+    "the elven chain column: bribe plus 5, escape bonds minus 5, tunneling minus 5 (printed p. 170).",
+    "the padded or studded leather column: bribe minus 5, escape bonds minus 5, tunneling minus 10 (printed p. 170)."
+   ],
+   "cols": [
+    "dfaT51NoArmor",
+    "dfaT51ElvenChain",
+    "dfaT51Leather"
+   ],
+   "data": [
+    [
+     -10,
+     5,
+     -5
+    ],
+    [
+     5,
+     -5,
+     -5
+    ],
+    [
+     10,
+     -5,
+     -10
+    ]
+   ]
+  },
+  {
+   "name": "dfaBribeGrid",
+   "tag": "bribe",
+   "count": "dfaBribeRowCount",
+   "sentinel": -99,
+   "comment": "the bribe status grid (printed pp. 168-169): four NPC stations (peasant or slave, freeman or soldier, merchant or officer, noble or general) each with a dice count and die size in copper pieces.",
+   "col_comments": [
+    "the bribe dice column: 2d4 for a peasant or slave, 3d8 for a freeman or soldier, 5d10 for a merchant or officer, 5d100 for a noble or general (printed pp. 168-169).",
+    "the bribe die size column: the second number of each dice notation - 4, 8, 10 and 100 (printed pp. 168-169)."
+   ],
+   "cols": [
+    "dfaBribeDice",
+    "dfaBribeSides"
+   ],
+   "data": [
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     5,
+     100
+    ]
+   ]
+  },
+  {
+   "name": "dfaTunnelGrid",
+   "tag": "tunnel",
+   "count": "dfaTunnelRowCount",
+   "sentinel": -99,
+   "comment": "the tunneling earth grid (printed p. 169): three earth types (sand or loose earth, packed earth, rock) each with a skill modifier and a digging time in hours per 10 foot tunnel. The packed earth dash reads as zero modifier.",
+   "col_comments": [
+    "the earth modifier column: minus 10 for sand or loose earth, zero for packed earth, plus 10 for rock (printed p. 169).",
+    "the earth hours column: 5 hours for sand or loose earth, 10 for packed earth, 30 for rock (printed p. 169)."
+   ],
+   "cols": [
+    "dfaTunnelMod",
+    "dfaTunnelHours"
+   ],
+   "data": [
+    [
+     -10,
+     5
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     10,
+     30
+    ]
+   ]
+  },
+  {
+   "name": "dfaT52Grid",
+   "tag": "T52",
+   "count": "dfaT52RowCount",
+   "sentinel": -99,
+   "comment": "the Table 52 bard spell progression grid (printed p. 171): eleven rows for levels 20 through 30 (row index = level minus 20) by eight spell level columns. The printed dashes read as zero - the bard cannot yet cast spells of that level.",
+   "col_comments": [
+    "the 1st-level column: 4 through 24th, 5 from 25th, 6 from 28th (printed p. 171).",
+    "the 2nd-level column: 4 through 24th, 5 from 26th, 6 at 30th (printed p. 171).",
+    "the 3rd-level column: 3 at 20th, 4 from 21st, 5 from 26th, 6 at 30th (printed p. 171).",
+    "the 4th-level column: 4 through 25th, 5 from 26th, 6 at 30th (printed p. 171).",
+    "the 5th-level column: 4 through 25th, 5 from 26th (printed p. 171).",
+    "the 6th-level column: 3 at 20th, 4 from 21st, 5 from 28th (printed p. 171).",
+    "the 7th-level column: the printed dash at 20th, then 1 at 21st climbing to 5 at 28th (printed p. 171).",
+    "the 8th-level column: the printed dashes through 28th, then 1 at 29th and 30th (printed p. 171)."
+   ],
+   "cols": [
+    "dfaT52L1",
+    "dfaT52L2",
+    "dfaT52L3",
+    "dfaT52L4",
+    "dfaT52L5",
+    "dfaT52L6",
+    "dfaT52L7",
+    "dfaT52L8"
+   ],
+   "data": [
+    [
+     4,
+     4,
+     4,
+     4,
+     4,
+     3,
+     0,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     1,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     2,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     3,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     0
+    ],
+    [
+     5,
+     5,
+     4,
+     4,
+     4,
+     4,
+     4,
+     0
+    ],
+    [
+     5,
+     5,
+     5,
+     5,
+     4,
+     4,
+     4,
+     0
+    ],
+    [
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     4,
+     0
+    ],
+    [
+     6,
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     0
+    ],
+    [
+     6,
+     6,
+     5,
+     5,
+     5,
+     5,
+     5,
+     1
+    ],
+    [
+     6,
+     6,
+     6,
+     6,
+     5,
+     5,
+     5,
+     1
+    ]
+   ]
+  },
+  {
+   "name": "dfaFallSurfaceGrid",
+   "tag": "fallsurf",
+   "count": "dfaFallSurfaceRowCount",
+   "sentinel": -99,
+   "comment": "the fall/jump surface distance grid (printed pp. 172-173): the maximum distance from a vertical surface by level band - 1 foot at 11-13, 2 at 14-16, 3 at 17-19, 5 at 20-21, 7 at 22-24, 9 at 25-27 and 11 feet at 28-30 (row index = the dfaFallBand band).",
+   "col_comments": [
+    "the surface distance column: 1, 2, 3, 5, 7, 9 and 11 feet across the seven level bands (printed pp. 172-173)."
+   ],
+   "cols": [
+    "dfaFallSurface"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     5
+    ],
+    [
+     7
+    ],
+    [
+     9
+    ],
+    [
+     11
+    ]
+   ]
+  },
+  {
+   "name": "dfaFeatherGrid",
+   "tag": "feather",
+   "count": "dfaFeatherRowCount",
+   "sentinel": -99,
+   "comment": "the featherfoot surface grid (printed p. 173): three bands (soft - mud, snow, sand; very soft - quicksand, fine dust; liquid - water) with the distance in feet and the movement rate (row index = the dfaFeatherBand band).",
+   "col_comments": [
+    "the surface distance column: 30 feet over soft, 60 over very soft, 120 over liquid (printed p. 173).",
+    "the movement column: movement rate 12 over soft, 15 over very soft, 18 over liquid (printed p. 173)."
+   ],
+   "cols": [
+    "dfaFeatherDistance",
+    "dfaFeatherMove"
+   ],
+   "data": [
+    [
+     30,
+     12
+    ],
+    [
+     60,
+     15
+    ],
+    [
+     120,
+     18
+    ]
+   ]
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the Jobare doctrine examples (printed p. 167)",
+   "expr": "m['dfaJobareTrapScore']() / 2 != m['dfaJobareMagicalTrapChance']() or m['dfaJobareLockScore']() - m['dfaJobareMasterfulPenalty']() != m['dfaJobareMasterfulChance']()"
+  },
+  {
+   "note": "the Table 47r experience steps (printed p. 168)",
+   "expr": "m['dfaT47Xp'](1) - m['dfaT47Xp'](0) != 220000 or m['dfaT47Xp'](5) - m['dfaT47Xp'](4) != 220000"
+  },
+  {
+   "note": "the Table 47r printed final step (printed p. 168)",
+   "expr": "m['dfaT47Xp'](10) - m['dfaT47Xp'](9) != 120000 or m['dfaT47Xp'](10) != 4300000 or m['dfaT47Xp'](9) != 4180000"
+  },
+  {
+   "note": "the Table 47r hit-point columns (printed p. 168)",
+   "expr": "m['dfaT47HpBonus'](1) - m['dfaT47HpBonus'](0) != 2 or m['dfaT47HpBonus'](10) != 40 or m['dfaT47HpBaseCol'](10) != 10"
+  },
+  {
+   "note": "the Table 47r weapon column steps (printed p. 168)",
+   "expr": "m['dfaT47WeaponProf'](3) != 7 or m['dfaT47WeaponProf'](4) != 8 or m['dfaT47WeaponProf'](8) != 9 or m['dfaT47WeaponProf'](10) != 9"
+  },
+  {
+   "note": "the Table 47r nonweapon column steps (printed p. 168)",
+   "expr": "m['dfaT47NonweaponProf'](3) != 8 or m['dfaT47NonweaponProf'](4) != 9 or m['dfaT47NonweaponProf'](8) != 10"
+  },
+  {
+   "note": "the Table 49 bribe and detect illusion rows (printed p. 169)",
+   "expr": "m['dfaT49Dwarf'](0) + 5 != 0 or m['dfaT49Elf'](0) != 15 or m['dfaT49Dwarf'](1) != 5 or m['dfaT49Gnome'](1) != 10 or m['dfaT49Human'](1) != 0"
+  },
+  {
+   "note": "the Table 49 detect magic row (printed p. 169)",
+   "expr": "m['dfaT49Elf'](2) != 10 or m['dfaT49Halfling'](2) != 5 or m['dfaT49Human'](2) != 0 or m['dfaT49Gnome'](2) != 5"
+  },
+  {
+   "note": "the Table 49 escape bonds and tunneling rows (printed p. 169)",
+   "expr": "m['dfaT49Halfling'](3) != 10 or m['dfaT49Human'](3) != 0 or m['dfaT49Dwarf'](4) != 10 or m['dfaT49Elf'](4) + 10 != 0 or m['dfaT49Halfelf'](4) + 5 != 0 or m['dfaT49Halfling'](4) != 5"
+  },
+  {
+   "note": "the Table 50 escape bonds ladder (printed p. 170)",
+   "expr": "m['dfaT50Dex9'](0) + 15 != 0 or m['dfaT50Dex11'](0) + 5 != 0 or m['dfaT50Dex17'](0) != 5 or m['dfaT50Dex21'](0) != 25 or m['dfaT50Dex22'](0) != 30"
+  },
+  {
+   "note": "the Table 50 tunneling row with its printed dash (printed p. 170)",
+   "expr": "m['dfaT50Dex9'](1) + 10 != 0 or m['dfaT50Dex17'](1) != 0 or m['dfaT50Dex18'](1) != 5 or m['dfaT50Dex21'](1) != 20 or m['dfaT50Dex22'](1) != 30"
+  },
+  {
+   "note": "the Table 51 armor grid (printed p. 170)",
+   "expr": "m['dfaT51NoArmor'](0) + 10 != 0 or m['dfaT51ElvenChain'](0) != 5 or m['dfaT51NoArmor'](2) != 10 or m['dfaT51Leather'](2) + 10 != 0 or m['dfaT51ElvenChain'](1) + 5 != 0"
+  },
+  {
+   "note": "the Table 48 base scores (printed p. 169)",
+   "expr": "m['dfaBribeBase']() != 5 or m['dfaDetectIllusionBase']() != 10 or m['dfaDetectMagicBase']() != 5 or m['dfaEscapeBondsBase']() != 10 or m['dfaTunnelingBase']() != 15"
+  },
+  {
+   "note": "the bribe status grid (printed pp. 168-169)",
+   "expr": "m['dfaBribeDice'](0) != 2 or m['dfaBribeSides'](0) != 4 or m['dfaBribeDice'](1) != 3 or m['dfaBribeSides'](1) != 8 or m['dfaBribeDice'](2) != 5 or m['dfaBribeSides'](2) != 10 or m['dfaBribeSides'](3) != 100"
+  },
+  {
+   "note": "the Jobare bribe worked example (printed p. 169)",
+   "expr": "m['dfaJobareReactionRoll']() - m['dfaJobareFriendlyMax']() != m['dfaJobareBribeDiff']() or m['dfaJobareBaseBribeCp']() * m['dfaJobareBribeDiff']() != m['dfaJobarePaidCp']()"
+  },
+  {
+   "note": "the tunneling earth grid (printed p. 169)",
+   "expr": "m['dfaTunnelMod'](0) + 10 != 0 or m['dfaTunnelHours'](0) != 5 or m['dfaTunnelMod'](1) != 0 or m['dfaTunnelHours'](1) != 10 or m['dfaTunnelMod'](2) != 10 or m['dfaTunnelHours'](2) != 30"
+  },
+  {
+   "note": "the detect skill ranges (printed p. 169)",
+   "expr": "m['dfaDetectIllusionRange']() != 90 or m['dfaDetectMagicRange']() != 60 or m['dfaDetectMagicIntensityCount']() != 5"
+  },
+  {
+   "note": "the thief scroll ladder (printed p. 170)",
+   "expr": "m['dfaThiefScrollBand'](23) != 0 or m['dfaThiefScrollBand'](24) != 1 or m['dfaThiefScrollBand'](26) != 1 or m['dfaThiefScrollBand'](27) != 2 or m['dfaThiefScrollBand'](28) != 2 or m['dfaThiefScrollBand'](29) != 3 or m['dfaThiefScrollBand'](30) != 3"
+  },
+  {
+   "note": "the bard scroll ladder (printed pp. 170-171)",
+   "expr": "m['dfaBardScrollBand'](20) != 0 or m['dfaBardScrollBand'](21) != 1 or m['dfaBardScrollBand'](23) != 1 or m['dfaBardScrollBand'](24) != 2 or m['dfaBardScrollBand'](27) != 3 or m['dfaBardScrollBand'](30) != 4"
+  },
+  {
+   "note": "the Table 52 low columns (printed p. 171)",
+   "expr": "m['dfaT52L1'](0) != 4 or m['dfaT52L1'](10) != 6 or m['dfaT52L2'](10) != 6 or m['dfaT52L3'](10) != 6 or m['dfaT52L4'](10) != 6"
+  },
+  {
+   "note": "the Table 52 sixth and seventh columns (printed p. 171)",
+   "expr": "m['dfaT52L6'](0) != 3 or m['dfaT52L7'](0) != 0 or m['dfaT52L7'](1) != 1 or m['dfaT52L7'](4) != 4 or m['dfaT52L7'](8) != 5"
+  },
+  {
+   "note": "the Table 52 eighth column (printed p. 171)",
+   "expr": "m['dfaT52L8'](8) != 0 or m['dfaT52L8'](9) != 1 or m['dfaT52L8'](10) != 1"
+  },
+  {
+   "note": "the Table 52 26th-level row (printed p. 171)",
+   "expr": "m['dfaT52L1'](6) != 5 or m['dfaT52L2'](6) != 5 or m['dfaT52L3'](6) != 5 or m['dfaT52L4'](6) != 5 or m['dfaT52L5'](6) != 4 or m['dfaT52L6'](6) != 4 or m['dfaT52L7'](6) != 4 or m['dfaT52L8'](6) != 0"
+  },
+  {
+   "note": "the bard power gates (printed pp. 170-171)",
+   "expr": "m['dfaBardItemUseLevel']() != 24 or m['dfaBardItemCreationLevel']() != 27 or m['dfaBardIdentifyChance']() != 55 or m['dfaBardIdentifyLevel']() != 21 or m['dfaThiefScrollLevel']() != 24"
+  },
+  {
+   "note": "the thief and bard S&P bonuses (printed pp. 170-171)",
+   "expr": "m['dfaThiefSkillBonusCp']() != 50 or m['dfaBardSkillBonusCp']() != 20 or m['dfaThiefSpSkillThreshold']() != 9 or m['dfaBardNewSkillCount']() != 2 or m['dfaNewThiefSkillCount']() != 5"
+  },
+  {
+   "note": "the scroll failure percentages (printed pp. 170-171)",
+   "expr": "m['dfaThiefScrollFailPct']() != 25 or m['dfaBardScrollFailPct']() != 15"
+  },
+  {
+   "note": "the adaptation bonuses (printed pp. 171-172)",
+   "expr": "m['dfaAdaptInitPenaltyAvoided']() != 6 or m['dfaAdaptCheckBonus']() != 3 or m['dfaAdaptBlindCheckPenalty']() != 4 or m['dfaAdaptPracticeHours']() != 8 or m['dfaAdaptPermanentCp']() != 3"
+  },
+  {
+   "note": "the classify traps numbers (printed p. 172)",
+   "expr": "m['dfaClassifyExamTurns']() != 1 or m['dfaClassifyFalseRoll']() != 20 or m['dfaClassifyEvasionSaveBonus']() != 2"
+  },
+  {
+   "note": "the fall/jump band boundaries (printed pp. 172-173)",
+   "expr": "m['dfaFallBand'](12) != 0 or m['dfaFallBand'](13) != 0 or m['dfaFallBand'](14) != 1 or m['dfaFallBand'](16) != 1 or m['dfaFallBand'](17) != 2 or m['dfaFallBand'](20) != 3"
+  },
+  {
+   "note": "the fall/jump safe distance ladder (printed pp. 172-173)",
+   "expr": "m['dfaFallSafeBase']() + 30 * m['dfaFallBand'](20) != 120 or m['dfaFallSafeBase']() + 30 * m['dfaFallBand'](26) != 180 or m['dfaFallSafeBase']() + 30 * m['dfaFallBand'](29) != 210"
+  },
+  {
+   "note": "the fall/jump surface distance column (printed pp. 172-173)",
+   "expr": "m['dfaFallSurface'](0) != 1 or m['dfaFallSurface'](2) != 3 or m['dfaFallSurface'](3) != 5 or m['dfaFallSurface'](6) != 11"
+  },
+  {
+   "note": "the Jobare shaft worked example (printed p. 173)",
+   "expr": "m['dfaJobareShaftFeet']() + m['dfaJobareChamberFeet']() - m['dfaJobareBreakFeet']() != m['dfaJobareFinalFeet']() or m['dfaJobareFinalFeet']() / 10 != m['dfaJobareFallDice']() or m['dfaJobare30thFeet']() / 10 != m['dfaJobare30thDice']() or m['dfaJobareFallSides']() != 6"
+  },
+  {
+   "note": "the featherfoot band and grid (printed p. 173)",
+   "expr": "m['dfaFeatherBand'](13) != 0 or m['dfaFeatherBand'](14) != 1 or m['dfaFeatherBand'](17) != 2 or m['dfaFeatherDistance'](2) != 120 or m['dfaFeatherMove'](0) != 12 or m['dfaFeatherMove'](2) != 18"
+  },
+  {
+   "note": "the improvised attack save modifier ladder (printed p. 174)",
+   "expr": "m['dfaImprovisedSaveTrickEncounter']() != 2 * m['dfaImprovisedSaveTrickAdventure']() or m['dfaImprovisedSaveSameCreatureEncounter']() != m['dfaImprovisedSaveSameCreatureAdventure']() + 2 or m['dfaImprovisedSaveNoRoleplay']() != 6 or m['dfaImprovisedSaveFeeble']() != 4"
+  },
+  {
+   "note": "the improvised attack effect numbers (printed p. 174)",
+   "expr": "m['dfaImprovisedBlindClearRoll']() != 9 or m['dfaImprovisedImmobFreeRoll']() != 9 or m['dfaImprovisedBlindPenalty']() != 4 or m['dfaImprovisedStunPenalty']() != 2 or m['dfaImprovisedKillHpOffset']() != 10"
+  },
+  {
+   "note": "the improvised attack dice (printed p. 174)",
+   "expr": "m['dfaImprovisedStunDice']() != 2 or m['dfaImprovisedStunSides']() != 4 or m['dfaImprovisedTripLowSides']() != 3 or m['dfaImprovisedTripHighSides']() != 6 or m['dfaJobareSurpriseRoll']() != 2"
+  },
+  {
+   "note": "the inner focus band boundaries (printed p. 175)",
+   "expr": "m['dfaFocusBand'](14) != 0 or m['dfaFocusBand'](15) != 0 or m['dfaFocusBand'](16) != 1 or m['dfaFocusBand'](20) != 1 or m['dfaFocusBand'](21) != 2 or m['dfaFocusBand'](25) != 2"
+  },
+  {
+   "note": "the inner focus boost ceiling (printed p. 175)",
+   "expr": "m['dfaFocusBand'](26) != 3 or m['dfaFocusBoostBase']() + m['dfaFocusBand'](26) != 21 or m['dfaFocusBoostBase']() + m['dfaFocusBand'](16) != 19 or m['dfaFocusBoostBase']() + m['dfaFocusBand'](13) != 18"
+  },
+  {
+   "note": "the inner focus drain and duration (printed p. 175)",
+   "expr": "m['dfaFocusOtherPenalty']() != 2 or m['dfaFocusDurationPerLevel']() != 1 or m['dfaFocusAttemptCost']() != 2 or m['dfaNondetectionSpellLevel']() != 3"
+  },
+  {
+   "note": "the sense danger subskill ladder (printed pp. 176-177)",
+   "expr": "m['dfaSenseBand'](15) != 0 or m['dfaSenseBand'](16) != 1 or m['dfaSenseBand'](20) != 1 or m['dfaSenseBand'](21) != 2 or m['dfaSenseBand'](26) != 3 or m['dfaSenseBand'](30) != 3 or m['dfaSenseSubskillCount']() != 4"
+  },
+  {
+   "note": "the sense danger bonuses (printed pp. 176-177)",
+   "expr": "m['dfaSenseImpendingSurpriseBonus']() != 2 or m['dfaSenseImpendingInitBonus']() != 1 or m['dfaSenseAmbushYards']() != 200 or m['dfaSenseAlertnessBonus']() != 1 or m['dfaSenseFalseRoll']() != 20"
+  },
+  {
+   "note": "the shadow rate ladders (printed p. 177)",
+   "expr": "m['dfaShadowWeakRate']() != 15 or m['dfaShadowStrongRate']() != 18 or m['dfaShadowVeryRate']() != 24 or m['dfaFlightWeakRate']() != 15 or m['dfaFlightStrongRate']() != 18 or m['dfaFlightVeryRate']() != 24 or m['dfaFlightLeapYards']() != 360 or m['dfaFlightLeapPerHour']() != 1"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dfaRogueSkillStartLevel pin",
+   "expr": "m['dfaRogueSkillStartLevel']() != 11"
+  },
+  {
+   "note": "the dfaRogueAdvLimit pin",
+   "expr": "m['dfaRogueAdvLimit']() != 30"
+  },
+  {
+   "note": "the dfaRogueExtraAbilityLevel pin",
+   "expr": "m['dfaRogueExtraAbilityLevel']() != 21"
+  },
+  {
+   "note": "the dfaThiefScoreCap pin",
+   "expr": "m['dfaThiefScoreCap']() != 95"
+  },
+  {
+   "note": "the dfaThiefCapLiftLevel pin",
+   "expr": "m['dfaThiefCapLiftLevel']() != 11"
+  },
+  {
+   "note": "the dfaThiefAutoFailRoll pin",
+   "expr": "m['dfaThiefAutoFailRoll']() != 96"
+  },
+  {
+   "note": "the dfaJobareTrapScore pin",
+   "expr": "m['dfaJobareTrapScore']() != 120"
+  },
+  {
+   "note": "the dfaJobareMagicalTrapChance pin",
+   "expr": "m['dfaJobareMagicalTrapChance']() != 60"
+  },
+  {
+   "note": "the dfaJobareLockScore pin",
+   "expr": "m['dfaJobareLockScore']() != 100"
+  },
+  {
+   "note": "the dfaJobareMasterfulPenalty pin",
+   "expr": "m['dfaJobareMasterfulPenalty']() != 60"
+  },
+  {
+   "note": "the dfaJobareMasterfulChance pin",
+   "expr": "m['dfaJobareMasterfulChance']() != 40"
+  },
+  {
+   "note": "the dfaT47RowCount pin",
+   "expr": "m['dfaT47RowCount']() != 11"
+  },
+  {
+   "note": "the dfaT47XpBase pin",
+   "expr": "m['dfaT47XpBase']() != 2200000"
+  },
+  {
+   "note": "the dfaT47XpStep pin",
+   "expr": "m['dfaT47XpStep']() != 220000"
+  },
+  {
+   "note": "the dfaT47Xp30 pin",
+   "expr": "m['dfaT47Xp30']() != 4300000"
+  },
+  {
+   "note": "the dfaT47HpBase pin",
+   "expr": "m['dfaT47HpBase']() != 10"
+  },
+  {
+   "note": "the dfaT47HpStep pin",
+   "expr": "m['dfaT47HpStep']() != 2"
+  },
+  {
+   "note": "the dfaNewThiefSkillCount pin",
+   "expr": "m['dfaNewThiefSkillCount']() != 5"
+  },
+  {
+   "note": "the dfaBribeBase pin",
+   "expr": "m['dfaBribeBase']() != 5"
+  },
+  {
+   "note": "the dfaDetectIllusionBase pin",
+   "expr": "m['dfaDetectIllusionBase']() != 10"
+  },
+  {
+   "note": "the dfaDetectMagicBase pin",
+   "expr": "m['dfaDetectMagicBase']() != 5"
+  },
+  {
+   "note": "the dfaEscapeBondsBase pin",
+   "expr": "m['dfaEscapeBondsBase']() != 10"
+  },
+  {
+   "note": "the dfaTunnelingBase pin",
+   "expr": "m['dfaTunnelingBase']() != 15"
+  },
+  {
+   "note": "the dfaT49RowCount pin",
+   "expr": "m['dfaT49RowCount']() != 5"
+  },
+  {
+   "note": "the dfaT50RowCount pin",
+   "expr": "m['dfaT50RowCount']() != 2"
+  },
+  {
+   "note": "the dfaT51RowCount pin",
+   "expr": "m['dfaT51RowCount']() != 3"
+  },
+  {
+   "note": "the dfaBribeRowCount pin",
+   "expr": "m['dfaBribeRowCount']() != 4"
+  },
+  {
+   "note": "the dfaJobareReactionRoll pin",
+   "expr": "m['dfaJobareReactionRoll']() != 13"
+  },
+  {
+   "note": "the dfaJobareFriendlyMax pin",
+   "expr": "m['dfaJobareFriendlyMax']() != 7"
+  },
+  {
+   "note": "the dfaJobareBribeDiff pin",
+   "expr": "m['dfaJobareBribeDiff']() != 6"
+  },
+  {
+   "note": "the dfaJobareBaseBribeCp pin",
+   "expr": "m['dfaJobareBaseBribeCp']() != 5"
+  },
+  {
+   "note": "the dfaJobarePaidCp pin",
+   "expr": "m['dfaJobarePaidCp']() != 30"
+  },
+  {
+   "note": "the dfaDetectIllusionRange pin",
+   "expr": "m['dfaDetectIllusionRange']() != 90"
+  },
+  {
+   "note": "the dfaDetectMagicRange pin",
+   "expr": "m['dfaDetectMagicRange']() != 60"
+  },
+  {
+   "note": "the dfaDetectMagicIntensityCount pin",
+   "expr": "m['dfaDetectMagicIntensityCount']() != 5"
+  },
+  {
+   "note": "the dfaEscapeBondsRounds pin",
+   "expr": "m['dfaEscapeBondsRounds']() != 5"
+  },
+  {
+   "note": "the dfaEscapeBondsHurryPenalty pin",
+   "expr": "m['dfaEscapeBondsHurryPenalty']() != 5"
+  },
+  {
+   "note": "the dfaTunnelChunkFeet pin",
+   "expr": "m['dfaTunnelChunkFeet']() != 10"
+  },
+  {
+   "note": "the dfaTunnelRowCount pin",
+   "expr": "m['dfaTunnelRowCount']() != 3"
+  },
+  {
+   "note": "the dfaThiefSkillBonusCp pin",
+   "expr": "m['dfaThiefSkillBonusCp']() != 50"
+  },
+  {
+   "note": "the dfaThiefSpSkillThreshold pin",
+   "expr": "m['dfaThiefSpSkillThreshold']() != 9"
+  },
+  {
+   "note": "the dfaThiefScrollLevel pin",
+   "expr": "m['dfaThiefScrollLevel']() != 24"
+  },
+  {
+   "note": "the dfaThiefScrollFailPct pin",
+   "expr": "m['dfaThiefScrollFailPct']() != 25"
+  },
+  {
+   "note": "the dfaBardNewSkillCount pin",
+   "expr": "m['dfaBardNewSkillCount']() != 2"
+  },
+  {
+   "note": "the dfaBardNewSkillLevel pin",
+   "expr": "m['dfaBardNewSkillLevel']() != 21"
+  },
+  {
+   "note": "the dfaBardSkillBonusCp pin",
+   "expr": "m['dfaBardSkillBonusCp']() != 20"
+  },
+  {
+   "note": "the dfaBardScrollLevel pin",
+   "expr": "m['dfaBardScrollLevel']() != 21"
+  },
+  {
+   "note": "the dfaBardScrollFailPct pin",
+   "expr": "m['dfaBardScrollFailPct']() != 15"
+  },
+  {
+   "note": "the dfaBardIdentifyLevel pin",
+   "expr": "m['dfaBardIdentifyLevel']() != 21"
+  },
+  {
+   "note": "the dfaBardIdentifyChance pin",
+   "expr": "m['dfaBardIdentifyChance']() != 55"
+  },
+  {
+   "note": "the dfaBardItemUseLevel pin",
+   "expr": "m['dfaBardItemUseLevel']() != 24"
+  },
+  {
+   "note": "the dfaBardItemCreationLevel pin",
+   "expr": "m['dfaBardItemCreationLevel']() != 27"
+  },
+  {
+   "note": "the dfaT52RowCount pin",
+   "expr": "m['dfaT52RowCount']() != 11"
+  },
+  {
+   "note": "the dfaAdaptInitPenaltyAvoided pin",
+   "expr": "m['dfaAdaptInitPenaltyAvoided']() != 6"
+  },
+  {
+   "note": "the dfaAdaptCheckBonus pin",
+   "expr": "m['dfaAdaptCheckBonus']() != 3"
+  },
+  {
+   "note": "the dfaAdaptBlindCheckPenalty pin",
+   "expr": "m['dfaAdaptBlindCheckPenalty']() != 4"
+  },
+  {
+   "note": "the dfaAdaptPracticeHours pin",
+   "expr": "m['dfaAdaptPracticeHours']() != 8"
+  },
+  {
+   "note": "the dfaAdaptPermanentCp pin",
+   "expr": "m['dfaAdaptPermanentCp']() != 3"
+  },
+  {
+   "note": "the dfaClassifyExamTurns pin",
+   "expr": "m['dfaClassifyExamTurns']() != 1"
+  },
+  {
+   "note": "the dfaClassifyFalseRoll pin",
+   "expr": "m['dfaClassifyFalseRoll']() != 20"
+  },
+  {
+   "note": "the dfaClassifyEvasionSaveBonus pin",
+   "expr": "m['dfaClassifyEvasionSaveBonus']() != 2"
+  },
+  {
+   "note": "the dfaFallSafeBase pin",
+   "expr": "m['dfaFallSafeBase']() != 30"
+  },
+  {
+   "note": "the dfaFallSurfaceRowCount pin",
+   "expr": "m['dfaFallSurfaceRowCount']() != 7"
+  },
+  {
+   "note": "the dfaJobareFallLevel pin",
+   "expr": "m['dfaJobareFallLevel']() != 20"
+  },
+  {
+   "note": "the dfaJobareShaftFeet pin",
+   "expr": "m['dfaJobareShaftFeet']() != 150"
+  },
+  {
+   "note": "the dfaJobareChamberFeet pin",
+   "expr": "m['dfaJobareChamberFeet']() != 30"
+  },
+  {
+   "note": "the dfaJobareBreakFeet pin",
+   "expr": "m['dfaJobareBreakFeet']() != 120"
+  },
+  {
+   "note": "the dfaJobareFinalFeet pin",
+   "expr": "m['dfaJobareFinalFeet']() != 60"
+  },
+  {
+   "note": "the dfaJobareFallDice pin",
+   "expr": "m['dfaJobareFallDice']() != 6"
+  },
+  {
+   "note": "the dfaJobareFallSides pin",
+   "expr": "m['dfaJobareFallSides']() != 6"
+  },
+  {
+   "note": "the dfaJobare30thDice pin",
+   "expr": "m['dfaJobare30thDice']() != 3"
+  },
+  {
+   "note": "the dfaJobare30thFeet pin",
+   "expr": "m['dfaJobare30thFeet']() != 30"
+  },
+  {
+   "note": "the dfaFeatherRowCount pin",
+   "expr": "m['dfaFeatherRowCount']() != 3"
+  },
+  {
+   "note": "the dfaImprovisedDailyPerLearning pin",
+   "expr": "m['dfaImprovisedDailyPerLearning']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedBlindPenalty pin",
+   "expr": "m['dfaImprovisedBlindPenalty']() != 4"
+  },
+  {
+   "note": "the dfaImprovisedBlindClearRoll pin",
+   "expr": "m['dfaImprovisedBlindClearRoll']() != 9"
+  },
+  {
+   "note": "the dfaImprovisedImmobFreeRoll pin",
+   "expr": "m['dfaImprovisedImmobFreeRoll']() != 9"
+  },
+  {
+   "note": "the dfaImprovisedKillHpOffset pin",
+   "expr": "m['dfaImprovisedKillHpOffset']() != 10"
+  },
+  {
+   "note": "the dfaImprovisedStunDice pin",
+   "expr": "m['dfaImprovisedStunDice']() != 2"
+  },
+  {
+   "note": "the dfaImprovisedStunSides pin",
+   "expr": "m['dfaImprovisedStunSides']() != 4"
+  },
+  {
+   "note": "the dfaImprovisedStunPenalty pin",
+   "expr": "m['dfaImprovisedStunPenalty']() != 2"
+  },
+  {
+   "note": "the dfaImprovisedTripLowSides pin",
+   "expr": "m['dfaImprovisedTripLowSides']() != 3"
+  },
+  {
+   "note": "the dfaImprovisedTripHighSides pin",
+   "expr": "m['dfaImprovisedTripHighSides']() != 6"
+  },
+  {
+   "note": "the dfaImprovisedSaveNoRoleplay pin",
+   "expr": "m['dfaImprovisedSaveNoRoleplay']() != 6"
+  },
+  {
+   "note": "the dfaImprovisedSaveFeeble pin",
+   "expr": "m['dfaImprovisedSaveFeeble']() != 4"
+  },
+  {
+   "note": "the dfaImprovisedSaveTrickAdventure pin",
+   "expr": "m['dfaImprovisedSaveTrickAdventure']() != 2"
+  },
+  {
+   "note": "the dfaImprovisedSaveTrickEncounter pin",
+   "expr": "m['dfaImprovisedSaveTrickEncounter']() != 4"
+  },
+  {
+   "note": "the dfaImprovisedSaveSameCreatureAdventure pin",
+   "expr": "m['dfaImprovisedSaveSameCreatureAdventure']() != 6"
+  },
+  {
+   "note": "the dfaImprovisedSaveSameCreatureEncounter pin",
+   "expr": "m['dfaImprovisedSaveSameCreatureEncounter']() != 8"
+  },
+  {
+   "note": "the dfaImprovisedSaveSurprised pin",
+   "expr": "m['dfaImprovisedSaveSurprised']() != 2"
+  },
+  {
+   "note": "the dfaImprovisedSaveAppropriate pin",
+   "expr": "m['dfaImprovisedSaveAppropriate']() != 4"
+  },
+  {
+   "note": "the dfaJobareSurpriseRoll pin",
+   "expr": "m['dfaJobareSurpriseRoll']() != 2"
+  },
+  {
+   "note": "the dfaFocusBoostBase pin",
+   "expr": "m['dfaFocusBoostBase']() != 18"
+  },
+  {
+   "note": "the dfaFocusOtherPenalty pin",
+   "expr": "m['dfaFocusOtherPenalty']() != 2"
+  },
+  {
+   "note": "the dfaFocusDurationPerLevel pin",
+   "expr": "m['dfaFocusDurationPerLevel']() != 1"
+  },
+  {
+   "note": "the dfaFocusAttemptCost pin",
+   "expr": "m['dfaFocusAttemptCost']() != 2"
+  },
+  {
+   "note": "the dfaNondetectionSpellLevel pin",
+   "expr": "m['dfaNondetectionSpellLevel']() != 3"
+  },
+  {
+   "note": "the dfaSenseSubskillCount pin",
+   "expr": "m['dfaSenseSubskillCount']() != 4"
+  },
+  {
+   "note": "the dfaSenseAmbushYards pin",
+   "expr": "m['dfaSenseAmbushYards']() != 200"
+  },
+  {
+   "note": "the dfaSenseImpendingSurpriseBonus pin",
+   "expr": "m['dfaSenseImpendingSurpriseBonus']() != 2"
+  },
+  {
+   "note": "the dfaSenseImpendingInitBonus pin",
+   "expr": "m['dfaSenseImpendingInitBonus']() != 1"
+  },
+  {
+   "note": "the dfaSenseFalseRoll pin",
+   "expr": "m['dfaSenseFalseRoll']() != 20"
+  },
+  {
+   "note": "the dfaSenseAlertnessBonus pin",
+   "expr": "m['dfaSenseAlertnessBonus']() != 1"
+  },
+  {
+   "note": "the dfaFlightWeakRate pin",
+   "expr": "m['dfaFlightWeakRate']() != 15"
+  },
+  {
+   "note": "the dfaFlightStrongRate pin",
+   "expr": "m['dfaFlightStrongRate']() != 18"
+  },
+  {
+   "note": "the dfaFlightVeryRate pin",
+   "expr": "m['dfaFlightVeryRate']() != 24"
+  },
+  {
+   "note": "the dfaFlightLeapYards pin",
+   "expr": "m['dfaFlightLeapYards']() != 360"
+  },
+  {
+   "note": "the dfaFlightLeapPerHour pin",
+   "expr": "m['dfaFlightLeapPerHour']() != 1"
+  },
+  {
+   "note": "the dfaShadowWeakRate pin",
+   "expr": "m['dfaShadowWeakRate']() != 15"
+  },
+  {
+   "note": "the dfaShadowStrongRate pin",
+   "expr": "m['dfaShadowStrongRate']() != 18"
+  },
+  {
+   "note": "the dfaShadowVeryRate pin",
+   "expr": "m['dfaShadowVeryRate']() != 24"
+  },
+  {
+   "note": "the dfaThief95CapSpendElsewhere pin",
+   "expr": "m['dfaThief95CapSpendElsewhere']() != 1"
+  },
+  {
+   "note": "the dfaThiefAll95PointsLost pin",
+   "expr": "m['dfaThiefAll95PointsLost']() != 1"
+  },
+  {
+   "note": "the dfaThiefLostPointsNotRegained pin",
+   "expr": "m['dfaThiefLostPointsNotRegained']() != 1"
+  },
+  {
+   "note": "the dfaThiefPenaltiesFromBase pin",
+   "expr": "m['dfaThiefPenaltiesFromBase']() != 1"
+  },
+  {
+   "note": "the dfaT47FinalStepShort pin",
+   "expr": "m['dfaT47FinalStepShort']() != 1"
+  },
+  {
+   "note": "the dfaT47ConBonusStopsAfter10 pin",
+   "expr": "m['dfaT47ConBonusStopsAfter10']() != 1"
+  },
+  {
+   "note": "the dfaT47CaptionSharesPrintedNumber pin",
+   "expr": "m['dfaT47CaptionSharesPrintedNumber']() != 1"
+  },
+  {
+   "note": "the dfaNewSkillsApplyPointsImmediately pin",
+   "expr": "m['dfaNewSkillsApplyPointsImmediately']() != 1"
+  },
+  {
+   "note": "the dfaT49HalflingDetectMagicNoPercent pin",
+   "expr": "m['dfaT49HalflingDetectMagicNoPercent']() != 1"
+  },
+  {
+   "note": "the dfaT50TunnelingDashAt17 pin",
+   "expr": "m['dfaT50TunnelingDashAt17']() != 1"
+  },
+  {
+   "note": "the dfaBribeOneAttemptPerTarget pin",
+   "expr": "m['dfaBribeOneAttemptPerTarget']() != 1"
+  },
+  {
+   "note": "the dfaBribeFailReactionRoll pin",
+   "expr": "m['dfaBribeFailReactionRoll']() != 1"
+  },
+  {
+   "note": "the dfaBribeNotEveryoneSusceptible pin",
+   "expr": "m['dfaBribeNotEveryoneSusceptible']() != 1"
+  },
+  {
+   "note": "the dfaBribeNotOutsideStation pin",
+   "expr": "m['dfaBribeNotOutsideStation']() != 1"
+  },
+  {
+   "note": "the dfaBribeNeverDangerousOrLong pin",
+   "expr": "m['dfaBribeNeverDangerousOrLong']() != 1"
+  },
+  {
+   "note": "the dfaBribeNeverAgainstBeliefs pin",
+   "expr": "m['dfaBribeNeverAgainstBeliefs']() != 1"
+  },
+  {
+   "note": "the dfaBribeSecretReactionRoll pin",
+   "expr": "m['dfaBribeSecretReactionRoll']() != 1"
+  },
+  {
+   "note": "the dfaBribeFriendlyNeedsNoBribe pin",
+   "expr": "m['dfaBribeFriendlyNeedsNoBribe']() != 1"
+  },
+  {
+   "note": "the dfaBribeMultiplyByDifference pin",
+   "expr": "m['dfaBribeMultiplyByDifference']() != 1"
+  },
+  {
+   "note": "the dfaBribePlayerNeverToldValues pin",
+   "expr": "m['dfaBribePlayerNeverToldValues']() != 1"
+  },
+  {
+   "note": "the dfaDetectIllusionNeedsRound pin",
+   "expr": "m['dfaDetectIllusionNeedsRound']() != 1"
+  },
+  {
+   "note": "the dfaDetectIllusionTranslucent pin",
+   "expr": "m['dfaDetectIllusionTranslucent']() != 1"
+  },
+  {
+   "note": "the dfaDetectIllusionNotVsNonvisible pin",
+   "expr": "m['dfaDetectIllusionNotVsNonvisible']() != 1"
+  },
+  {
+   "note": "the dfaDetectIllusionNotFailSafe pin",
+   "expr": "m['dfaDetectIllusionNotFailSafe']() != 1"
+  },
+  {
+   "note": "the dfaDetectMagicBlockedLikeSpell pin",
+   "expr": "m['dfaDetectMagicBlockedLikeSpell']() != 1"
+  },
+  {
+   "note": "the dfaEscapeBondsRollPerDevice pin",
+   "expr": "m['dfaEscapeBondsRollPerDevice']() != 1"
+  },
+  {
+   "note": "the dfaEscapeBondsLockedNeedPicks pin",
+   "expr": "m['dfaEscapeBondsLockedNeedPicks']() != 1"
+  },
+  {
+   "note": "the dfaEscapeBondsFailCantRetryThatBond pin",
+   "expr": "m['dfaEscapeBondsFailCantRetryThatBond']() != 1"
+  },
+  {
+   "note": "the dfaTunnelCollapseOnFail pin",
+   "expr": "m['dfaTunnelCollapseOnFail']() != 1"
+  },
+  {
+   "note": "the dfaTunnelRedugAtLooseRate pin",
+   "expr": "m['dfaTunnelRedugAtLooseRate']() != 1"
+  },
+  {
+   "note": "the dfaThiefSpOverflowToProficiencies pin",
+   "expr": "m['dfaThiefSpOverflowToProficiencies']() != 1"
+  },
+  {
+   "note": "the dfaThiefExtraSkillsOnlyAt21st pin",
+   "expr": "m['dfaThiefExtraSkillsOnlyAt21st']() != 1"
+  },
+  {
+   "note": "the dfaThiefScrollNoFailAtOrBelow pin",
+   "expr": "m['dfaThiefScrollNoFailAtOrBelow']() != 1"
+  },
+  {
+   "note": "the dfaBardScrollWizardNoFailIfCastable pin",
+   "expr": "m['dfaBardScrollWizardNoFailIfCastable']() != 1"
+  },
+  {
+   "note": "the dfaBardIdentifyNoBonusesCharges pin",
+   "expr": "m['dfaBardIdentifyNoBonusesCharges']() != 1"
+  },
+  {
+   "note": "the dfaBardIdentifyNoHandling pin",
+   "expr": "m['dfaBardIdentifyNoHandling']() != 1"
+  },
+  {
+   "note": "the dfaAdaptLikeWarriorSkill pin",
+   "expr": "m['dfaAdaptLikeWarriorSkill']() != 1"
+  },
+  {
+   "note": "the dfaAdaptNoSituationalOrNoncombat pin",
+   "expr": "m['dfaAdaptNoSituationalOrNoncombat']() != 1"
+  },
+  {
+   "note": "the dfaAdaptNoMagicalOrVisionPenalties pin",
+   "expr": "m['dfaAdaptNoMagicalOrVisionPenalties']() != 1"
+  },
+  {
+   "note": "the dfaAdaptCheckEachRound pin",
+   "expr": "m['dfaAdaptCheckEachRound']() != 1"
+  },
+  {
+   "note": "the dfaAdaptLastsBattlePlusDays pin",
+   "expr": "m['dfaAdaptLastsBattlePlusDays']() != 1"
+  },
+  {
+   "note": "the dfaAdaptPermanentBeforeFade pin",
+   "expr": "m['dfaAdaptPermanentBeforeFade']() != 1"
+  },
+  {
+   "note": "the dfaClassifyNeedsFindTraps pin",
+   "expr": "m['dfaClassifyNeedsFindTraps']() != 1"
+  },
+  {
+   "note": "the dfaClassifyRevealsExactNature pin",
+   "expr": "m['dfaClassifyRevealsExactNature']() != 1"
+  },
+  {
+   "note": "the dfaClassifyMagicalHalvedRoundUp pin",
+   "expr": "m['dfaClassifyMagicalHalvedRoundUp']() != 1"
+  },
+  {
+   "note": "the dfaClassifyFailUnder20LearnsNothing pin",
+   "expr": "m['dfaClassifyFailUnder20LearnsNothing']() != 1"
+  },
+  {
+   "note": "the dfaClassifySecretRoll pin",
+   "expr": "m['dfaClassifySecretRoll']() != 1"
+  },
+  {
+   "note": "the dfaClassifyTwoRemoveRollsBest pin",
+   "expr": "m['dfaClassifyTwoRemoveRollsBest']() != 1"
+  },
+  {
+   "note": "the dfaClassifyBypassSaveVsBreath pin",
+   "expr": "m['dfaClassifyBypassSaveVsBreath']() != 1"
+  },
+  {
+   "note": "the dfaClassifyCompanionsMaySave pin",
+   "expr": "m['dfaClassifyCompanionsMaySave']() != 1"
+  },
+  {
+   "note": "the dfaClassifyNoHalfEffectRuling pin",
+   "expr": "m['dfaClassifyNoHalfEffectRuling']() != 1"
+  },
+  {
+   "note": "the dfaEvasionAutomatic pin",
+   "expr": "m['dfaEvasionAutomatic']() != 1"
+  },
+  {
+   "note": "the dfaEvasionNoDamageOnSave pin",
+   "expr": "m['dfaEvasionNoDamageOnSave']() != 1"
+  },
+  {
+   "note": "the dfaEvasionNotVsNonDamage pin",
+   "expr": "m['dfaEvasionNotVsNonDamage']() != 1"
+  },
+  {
+   "note": "the dfaEvasionFixedMissilesOnly pin",
+   "expr": "m['dfaEvasionFixedMissilesOnly']() != 1"
+  },
+  {
+   "note": "the dfaEvasionNeedsNotSurprised pin",
+   "expr": "m['dfaEvasionNeedsNotSurprised']() != 1"
+  },
+  {
+   "note": "the dfaFallAlwaysWithinOneFoot pin",
+   "expr": "m['dfaFallAlwaysWithinOneFoot']() != 1"
+  },
+  {
+   "note": "the dfaFallFrictionSurfacesOk pin",
+   "expr": "m['dfaFallFrictionSurfacesOk']() != 1"
+  },
+  {
+   "note": "the dfaFallDamageOnExcess pin",
+   "expr": "m['dfaFallDamageOnExcess']() != 1"
+  },
+  {
+   "note": "the dfaFeatherNeedsMoveSilently pin",
+   "expr": "m['dfaFeatherNeedsMoveSilently']() != 1"
+  },
+  {
+   "note": "the dfaFeatherMustStopAtDistance pin",
+   "expr": "m['dfaFeatherMustStopAtDistance']() != 1"
+  },
+  {
+   "note": "the dfaFeatherSilentNoTracks pin",
+   "expr": "m['dfaFeatherSilentNoTracks']() != 1"
+  },
+  {
+   "note": "the dfaFeatherNoWeightTriggers pin",
+   "expr": "m['dfaFeatherNoWeightTriggers']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedLearnMultipleTimes pin",
+   "expr": "m['dfaImprovisedLearnMultipleTimes']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedBlindfightingNoHelp pin",
+   "expr": "m['dfaImprovisedBlindfightingNoHelp']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedDisarmStuckNeedsOpenDoors pin",
+   "expr": "m['dfaImprovisedDisarmStuckNeedsOpenDoors']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedKillHigherHdImmune pin",
+   "expr": "m['dfaImprovisedKillHigherHdImmune']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedStunNoSpellsAttack pin",
+   "expr": "m['dfaImprovisedStunNoSpellsAttack']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedAnnounceDeclareDescribe pin",
+   "expr": "m['dfaImprovisedAnnounceDeclareDescribe']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedNormalAttackRoll pin",
+   "expr": "m['dfaImprovisedNormalAttackRoll']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedSuccessNoDamage pin",
+   "expr": "m['dfaImprovisedSuccessNoDamage']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedSaveUnlikelyRange pin",
+   "expr": "m['dfaImprovisedSaveUnlikelyRange']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedSaveAutoIfInadequate pin",
+   "expr": "m['dfaImprovisedSaveAutoIfInadequate']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedTable3638Optional pin",
+   "expr": "m['dfaImprovisedTable3638Optional']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedTrickThreeAdventures pin",
+   "expr": "m['dfaImprovisedTrickThreeAdventures']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedTrickOncePerEncounter pin",
+   "expr": "m['dfaImprovisedTrickOncePerEncounter']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedTrickNotDailyAllotment pin",
+   "expr": "m['dfaImprovisedTrickNotDailyAllotment']() != 1"
+  },
+  {
+   "note": "the dfaImprovisedTrickPreparedPlus6 pin",
+   "expr": "m['dfaImprovisedTrickPreparedPlus6']() != 1"
+  },
+  {
+   "note": "the dfaJobareHatBlindExample pin",
+   "expr": "m['dfaJobareHatBlindExample']() != 1"
+  },
+  {
+   "note": "the dfaFocusLikeWarriorSkill pin",
+   "expr": "m['dfaFocusLikeWarriorSkill']() != 1"
+  },
+  {
+   "note": "the dfaFocusAlreadyHigherNoEffect pin",
+   "expr": "m['dfaFocusAlreadyHigherNoEffect']() != 1"
+  },
+  {
+   "note": "the dfaFocusEndAtWill pin",
+   "expr": "m['dfaFocusEndAtWill']() != 1"
+  },
+  {
+   "note": "the dfaFocusSubabilitiesRaisedEqual pin",
+   "expr": "m['dfaFocusSubabilitiesRaisedEqual']() != 1"
+  },
+  {
+   "note": "the dfaFocusOneBoostAtATime pin",
+   "expr": "m['dfaFocusOneBoostAtATime']() != 1"
+  },
+  {
+   "note": "the dfaFocusNoOtherActions pin",
+   "expr": "m['dfaFocusNoOtherActions']() != 1"
+  },
+  {
+   "note": "the dfaFocusBonusesImmediate pin",
+   "expr": "m['dfaFocusBonusesImmediate']() != 1"
+  },
+  {
+   "note": "the dfaNondetectionBeatsDivinations pin",
+   "expr": "m['dfaNondetectionBeatsDivinations']() != 1"
+  },
+  {
+   "note": "the dfaNondetectionSavesEvenOnFail pin",
+   "expr": "m['dfaNondetectionSavesEvenOnFail']() != 1"
+  },
+  {
+   "note": "the dfaNondetectionBeatsSenseDanger pin",
+   "expr": "m['dfaNondetectionBeatsSenseDanger']() != 1"
+  },
+  {
+   "note": "the dfaNondetectionBeatsDetectDeception pin",
+   "expr": "m['dfaNondetectionBeatsDetectDeception']() != 1"
+  },
+  {
+   "note": "the dfaNondetectionOpposedWillpower pin",
+   "expr": "m['dfaNondetectionOpposedWillpower']() != 1"
+  },
+  {
+   "note": "the dfaNondetectionNotVsFourSpells pin",
+   "expr": "m['dfaNondetectionNotVsFourSpells']() != 1"
+  },
+  {
+   "note": "the dfaNondetectionNotVsLegendaryOrDeities pin",
+   "expr": "m['dfaNondetectionNotVsLegendaryOrDeities']() != 1"
+  },
+  {
+   "note": "the dfaSenseSecondPurchaseExtra pin",
+   "expr": "m['dfaSenseSecondPurchaseExtra']() != 1"
+  },
+  {
+   "note": "the dfaSenseImprovesAllSubskills pin",
+   "expr": "m['dfaSenseImprovesAllSubskills']() != 1"
+  },
+  {
+   "note": "the dfaSenseAmbushOncePerTurn pin",
+   "expr": "m['dfaSenseAmbushOncePerTurn']() != 1"
+  },
+  {
+   "note": "the dfaSenseAmbushRevealsCountAndSize pin",
+   "expr": "m['dfaSenseAmbushRevealsCountAndSize']() != 1"
+  },
+  {
+   "note": "the dfaSenseConcealedRevealsSizeLocationType pin",
+   "expr": "m['dfaSenseConcealedRevealsSizeLocationType']() != 1"
+  },
+  {
+   "note": "the dfaSenseUnknownCreatureAttackModes pin",
+   "expr": "m['dfaSenseUnknownCreatureAttackModes']() != 1"
+  },
+  {
+   "note": "the dfaSenseMagicalConcealmentDetected pin",
+   "expr": "m['dfaSenseMagicalConcealmentDetected']() != 1"
+  },
+  {
+   "note": "the dfaSenseHostilityNotPreparedness pin",
+   "expr": "m['dfaSenseHostilityNotPreparedness']() != 1"
+  },
+  {
+   "note": "the dfaSenseImpendingDirectionAndDistance pin",
+   "expr": "m['dfaSenseImpendingDirectionAndDistance']() != 1"
+  },
+  {
+   "note": "the dfaSenseImpendingMustFace pin",
+   "expr": "m['dfaSenseImpendingMustFace']() != 1"
+  },
+  {
+   "note": "the dfaSenseSecretRolls pin",
+   "expr": "m['dfaSenseSecretRolls']() != 1"
+  },
+  {
+   "note": "the dfaSenseFalseNotImpending pin",
+   "expr": "m['dfaSenseFalseNotImpending']() != 1"
+  },
+  {
+   "note": "the dfaFlightLikeShadowTravel pin",
+   "expr": "m['dfaFlightLikeShadowTravel']() != 1"
+  },
+  {
+   "note": "the dfaFlightNeedsHideInShadows pin",
+   "expr": "m['dfaFlightNeedsHideInShadows']() != 1"
+  },
+  {
+   "note": "the dfaFlightNoFlightWithoutShadow pin",
+   "expr": "m['dfaFlightNoFlightWithoutShadow']() != 1"
+  },
+  {
+   "note": "the dfaFlightLeapNeedsAsShadowy pin",
+   "expr": "m['dfaFlightLeapNeedsAsShadowy']() != 1"
+  },
+  {
+   "note": "the dfaFlightLightEncumbranceOnly pin",
+   "expr": "m['dfaFlightLightEncumbranceOnly']() != 1"
+  },
+  {
+   "note": "the dfaFlightCarryWithinLimit pin",
+   "expr": "m['dfaFlightCarryWithinLimit']() != 1"
+  },
+  {
+   "note": "the dfaShadowNeedsHideInShadows pin",
+   "expr": "m['dfaShadowNeedsHideInShadows']() != 1"
+  },
+  {
+   "note": "the dfaShadowNoShadowsNormal pin",
+   "expr": "m['dfaShadowNoShadowsNormal']() != 1"
+  },
+  {
+   "note": "the dfaShadowVisibleBetweenShadows pin",
+   "expr": "m['dfaShadowVisibleBetweenShadows']() != 1"
+  },
+  {
+   "note": "the dfaShadowEndsOnAttack pin",
+   "expr": "m['dfaShadowEndsOnAttack']() != 1"
+  },
+  {
+   "note": "the dfaShadowNotSilent pin",
+   "expr": "m['dfaShadowNotSilent']() != 1"
+  },
+  {
+   "note": "the dfaShadowTerrainAndEncumbranceApply pin",
+   "expr": "m['dfaShadowTerrainAndEncumbranceApply']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the DMO rogue doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dfaRogueSkillStartLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaRogueAdvLimit"
+   },
+   {
+    "kind": "const",
+    "name": "dfaRogueExtraAbilityLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaThiefScoreCap"
+   },
+   {
+    "kind": "const",
+    "name": "dfaThiefCapLiftLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaThiefAutoFailRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaThief95CapSpendElsewhere"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaThiefAll95PointsLost"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaThiefLostPointsNotRegained"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaThiefPenaltiesFromBase"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareTrapScore"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareMagicalTrapChance"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareLockScore"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareMasterfulPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareMasterfulChance"
+   }
+  ],
+  "the DMO rogue advancement pins": [
+   {
+    "kind": "const",
+    "name": "dfaT47RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfaT47XpBase"
+   },
+   {
+    "kind": "const",
+    "name": "dfaT47XpStep"
+   },
+   {
+    "kind": "const",
+    "name": "dfaT47Xp30"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaT47FinalStepShort"
+   },
+   {
+    "kind": "const",
+    "name": "dfaT47HpBase"
+   },
+   {
+    "kind": "const",
+    "name": "dfaT47HpStep"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaT47ConBonusStopsAfter10"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaT47CaptionSharesPrintedNumber"
+   },
+   {
+    "kind": "table",
+    "name": "dfaT47Grid"
+   }
+  ],
+  "the DMO thieving grids": [
+   {
+    "kind": "const",
+    "name": "dfaNewThiefSkillCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfaBribeBase"
+   },
+   {
+    "kind": "const",
+    "name": "dfaDetectIllusionBase"
+   },
+   {
+    "kind": "const",
+    "name": "dfaDetectMagicBase"
+   },
+   {
+    "kind": "const",
+    "name": "dfaEscapeBondsBase"
+   },
+   {
+    "kind": "const",
+    "name": "dfaTunnelingBase"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaNewSkillsApplyPointsImmediately"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaT49HalflingDetectMagicNoPercent"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaT50TunnelingDashAt17"
+   },
+   {
+    "kind": "const",
+    "name": "dfaT49RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfaT50RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfaT51RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfaT49Grid"
+   },
+   {
+    "kind": "table",
+    "name": "dfaT50Grid"
+   },
+   {
+    "kind": "table",
+    "name": "dfaT51Grid"
+   }
+  ],
+  "the DMO bribe skill pins": [
+   {
+    "kind": "const",
+    "name": "dfaBribeRowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBribeOneAttemptPerTarget"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBribeFailReactionRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBribeNotEveryoneSusceptible"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBribeNotOutsideStation"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBribeNeverDangerousOrLong"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBribeNeverAgainstBeliefs"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBribeSecretReactionRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBribeFriendlyNeedsNoBribe"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBribeMultiplyByDifference"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBribePlayerNeverToldValues"
+   },
+   {
+    "kind": "table",
+    "name": "dfaBribeGrid"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareReactionRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareFriendlyMax"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareBribeDiff"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareBaseBribeCp"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobarePaidCp"
+   }
+  ],
+  "the DMO detect, bonds and tunneling pins": [
+   {
+    "kind": "const",
+    "name": "dfaDetectIllusionRange"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaDetectIllusionNeedsRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaDetectIllusionTranslucent"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaDetectIllusionNotVsNonvisible"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaDetectIllusionNotFailSafe"
+   },
+   {
+    "kind": "const",
+    "name": "dfaDetectMagicRange"
+   },
+   {
+    "kind": "const",
+    "name": "dfaDetectMagicIntensityCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaDetectMagicBlockedLikeSpell"
+   },
+   {
+    "kind": "const",
+    "name": "dfaEscapeBondsRounds"
+   },
+   {
+    "kind": "const",
+    "name": "dfaEscapeBondsHurryPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaEscapeBondsRollPerDevice"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaEscapeBondsLockedNeedPicks"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaEscapeBondsFailCantRetryThatBond"
+   },
+   {
+    "kind": "const",
+    "name": "dfaTunnelChunkFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaTunnelCollapseOnFail"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaTunnelRedugAtLooseRate"
+   },
+   {
+    "kind": "const",
+    "name": "dfaTunnelRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfaTunnelGrid"
+   }
+  ],
+  "the DMO thief 21st-level powers pins": [
+   {
+    "kind": "const",
+    "name": "dfaThiefSkillBonusCp"
+   },
+   {
+    "kind": "const",
+    "name": "dfaThiefSpSkillThreshold"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaThiefSpOverflowToProficiencies"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaThiefExtraSkillsOnlyAt21st"
+   },
+   {
+    "kind": "const",
+    "name": "dfaThiefScrollLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaThiefScrollFailPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaThiefScrollNoFailAtOrBelow"
+   },
+   {
+    "kind": "chain",
+    "name": "dfaThiefScrollBand"
+   }
+  ],
+  "the DMO bard powers pins": [
+   {
+    "kind": "const",
+    "name": "dfaBardNewSkillCount"
+   },
+   {
+    "kind": "const",
+    "name": "dfaBardNewSkillLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaBardSkillBonusCp"
+   },
+   {
+    "kind": "const",
+    "name": "dfaBardScrollLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaBardScrollFailPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBardScrollWizardNoFailIfCastable"
+   },
+   {
+    "kind": "chain",
+    "name": "dfaBardScrollBand"
+   },
+   {
+    "kind": "const",
+    "name": "dfaBardIdentifyLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaBardIdentifyChance"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBardIdentifyNoBonusesCharges"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaBardIdentifyNoHandling"
+   },
+   {
+    "kind": "const",
+    "name": "dfaBardItemUseLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaBardItemCreationLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaT52RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dfaT52Grid"
+   }
+  ],
+  "the DMO rogue skills: adaptation and traps": [
+   {
+    "kind": "bool",
+    "name": "dfaAdaptLikeWarriorSkill"
+   },
+   {
+    "kind": "const",
+    "name": "dfaAdaptInitPenaltyAvoided"
+   },
+   {
+    "kind": "const",
+    "name": "dfaAdaptCheckBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dfaAdaptBlindCheckPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dfaAdaptPracticeHours"
+   },
+   {
+    "kind": "const",
+    "name": "dfaAdaptPermanentCp"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaAdaptNoSituationalOrNoncombat"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaAdaptNoMagicalOrVisionPenalties"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaAdaptCheckEachRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaAdaptLastsBattlePlusDays"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaAdaptPermanentBeforeFade"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaClassifyNeedsFindTraps"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaClassifyRevealsExactNature"
+   },
+   {
+    "kind": "const",
+    "name": "dfaClassifyExamTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaClassifyMagicalHalvedRoundUp"
+   },
+   {
+    "kind": "const",
+    "name": "dfaClassifyFalseRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaClassifyFailUnder20LearnsNothing"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaClassifySecretRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaClassifyTwoRemoveRollsBest"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaClassifyBypassSaveVsBreath"
+   },
+   {
+    "kind": "const",
+    "name": "dfaClassifyEvasionSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaClassifyCompanionsMaySave"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaClassifyNoHalfEffectRuling"
+   }
+  ],
+  "the DMO rogue skills: evasion and fall/jump": [
+   {
+    "kind": "bool",
+    "name": "dfaEvasionAutomatic"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaEvasionNoDamageOnSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaEvasionNotVsNonDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaEvasionFixedMissilesOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaEvasionNeedsNotSurprised"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFallSafeBase"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFallSurfaceRowCount"
+   },
+   {
+    "kind": "chain",
+    "name": "dfaFallBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFallAlwaysWithinOneFoot"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFallFrictionSurfacesOk"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFallDamageOnExcess"
+   },
+   {
+    "kind": "table",
+    "name": "dfaFallSurfaceGrid"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareFallLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareShaftFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareChamberFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareBreakFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareFinalFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareFallDice"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareFallSides"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobare30thDice"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobare30thFeet"
+   }
+  ],
+  "the DMO rogue skills: featherfoot and improvised attack": [
+   {
+    "kind": "bool",
+    "name": "dfaFeatherNeedsMoveSilently"
+   },
+   {
+    "kind": "chain",
+    "name": "dfaFeatherBand"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFeatherRowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFeatherMustStopAtDistance"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFeatherSilentNoTracks"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFeatherNoWeightTriggers"
+   },
+   {
+    "kind": "table",
+    "name": "dfaFeatherGrid"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedDailyPerLearning"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedLearnMultipleTimes"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedBlindPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedBlindClearRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedBlindfightingNoHelp"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedDisarmStuckNeedsOpenDoors"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedImmobFreeRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedKillHpOffset"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedKillHigherHdImmune"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedStunDice"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedStunSides"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedStunPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedStunNoSpellsAttack"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedTripLowSides"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedTripHighSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedAnnounceDeclareDescribe"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedNormalAttackRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedSuccessNoDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedSaveNoRoleplay"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedSaveFeeble"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedSaveUnlikelyRange"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedSaveAutoIfInadequate"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedSaveTrickAdventure"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedSaveTrickEncounter"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedSaveSameCreatureAdventure"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedSaveSameCreatureEncounter"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedSaveSurprised"
+   },
+   {
+    "kind": "const",
+    "name": "dfaImprovisedSaveAppropriate"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedTable3638Optional"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedTrickThreeAdventures"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedTrickOncePerEncounter"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedTrickNotDailyAllotment"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaImprovisedTrickPreparedPlus6"
+   },
+   {
+    "kind": "const",
+    "name": "dfaJobareSurpriseRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaJobareHatBlindExample"
+   }
+  ],
+  "the DMO rogue skills: focus and nondetection": [
+   {
+    "kind": "bool",
+    "name": "dfaFocusLikeWarriorSkill"
+   },
+   {
+    "kind": "chain",
+    "name": "dfaFocusBand"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFocusBoostBase"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFocusOtherPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFocusDurationPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFocusAttemptCost"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFocusAlreadyHigherNoEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFocusEndAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFocusSubabilitiesRaisedEqual"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFocusOneBoostAtATime"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFocusNoOtherActions"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFocusBonusesImmediate"
+   },
+   {
+    "kind": "const",
+    "name": "dfaNondetectionSpellLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaNondetectionBeatsDivinations"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaNondetectionSavesEvenOnFail"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaNondetectionBeatsSenseDanger"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaNondetectionBeatsDetectDeception"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaNondetectionOpposedWillpower"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaNondetectionNotVsFourSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaNondetectionNotVsLegendaryOrDeities"
+   }
+  ],
+  "the DMO rogue skills: sense danger and shadows": [
+   {
+    "kind": "const",
+    "name": "dfaSenseSubskillCount"
+   },
+   {
+    "kind": "chain",
+    "name": "dfaSenseBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseSecondPurchaseExtra"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseImprovesAllSubskills"
+   },
+   {
+    "kind": "const",
+    "name": "dfaSenseAmbushYards"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseAmbushOncePerTurn"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseAmbushRevealsCountAndSize"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseConcealedRevealsSizeLocationType"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseUnknownCreatureAttackModes"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseMagicalConcealmentDetected"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseHostilityNotPreparedness"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseImpendingDirectionAndDistance"
+   },
+   {
+    "kind": "const",
+    "name": "dfaSenseImpendingSurpriseBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dfaSenseImpendingInitBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseImpendingMustFace"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseSecretRolls"
+   },
+   {
+    "kind": "const",
+    "name": "dfaSenseFalseRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaSenseFalseNotImpending"
+   },
+   {
+    "kind": "const",
+    "name": "dfaSenseAlertnessBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFlightLikeShadowTravel"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFlightNeedsHideInShadows"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFlightWeakRate"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFlightStrongRate"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFlightVeryRate"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFlightNoFlightWithoutShadow"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFlightLeapYards"
+   },
+   {
+    "kind": "const",
+    "name": "dfaFlightLeapPerHour"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFlightLeapNeedsAsShadowy"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFlightLightEncumbranceOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaFlightCarryWithinLimit"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaShadowNeedsHideInShadows"
+   },
+   {
+    "kind": "const",
+    "name": "dfaShadowWeakRate"
+   },
+   {
+    "kind": "const",
+    "name": "dfaShadowStrongRate"
+   },
+   {
+    "kind": "const",
+    "name": "dfaShadowVeryRate"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaShadowNoShadowsNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaShadowVisibleBetweenShadows"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaShadowEndsOnAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaShadowNotSilent"
+   },
+   {
+    "kind": "bool",
+    "name": "dfaShadowTerrainAndEncumbranceApply"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the rogues box closes",
+   "from": "  - [ ] Rogues (pp. 167-171) - the thieves and bards\n    beyond 20th (Table 47: Rogue Advancement Beyond\n    20th Level, p. 168; Table 48: Thieving Skill Base\n    Scores, p. 169; Table 49: Thieving Skill Racial\n    Adjustments, p. 169; Table 50: Dexterity/Aim\n    Adjustments, p. 170; Table 51: Thieving Skill\n    Armor Adjustments, p. 170; Table 52: Bard Spell\n    Progression, p. 171)",
+   "to": "  - [x] Rogues (pp. 167-171) - the thieves and bards\n    beyond 20th (Table 47: Rogue Advancement Beyond\n    20th Level, p. 168; Table 48: Thieving Skill Base\n    Scores, p. 169; Table 49: Thieving Skill Racial\n    Adjustments, p. 169; Table 50: Dexterity/Aim\n    Adjustments, p. 170; Table 51: Thieving Skill\n    Armor Adjustments, p. 170; Table 52: Bard Spell\n    Progression, p. 171) - R611: the dfa T47r grid\n    (220K XP steps with the printed 120K final step\n    to 4,300,000, the 10+N d6 hit points), the base\n    scores and the racial, Dexterity-aim and armor\n    grids, the thief and bard scroll ladders (25 and\n    15 percent higher-level failure), the Table 52\n    bard spell progression, and all eleven rogue\n    skills pinned (adaptation, classify traps,\n    evasion, fall/jump, featherfoot, improvised\n    attack, inner focus, nondetection, sense\n    danger, shadow flight, shadow travel)"
+  }
+ ],
+ "gap_census": {
+  "closed": 90,
+  "open": 6
+ },
+ "caller_files": [],
+ "inline_count": 273,
+ "audit_comment": "DMO Chapter 7 round four of five (printed pp. 167-177): the rogue doctrine with the 95 percent cap and the Jobare worked examples, the Table 47r advancement grid (the 220K steps with the printed 120K final step, the proficiency columns, the 10+N d6 hit points), the Table 48 base scores, the Table 49 racial grid, the Table 50 Dexterity-aim grid and the Table 51 armor grid, the five thief skills with the bribe status table and the Jobare 30-cp example, the tunneling earth table, the thief and bard scroll ladders, the Table 52 bard spell progression, and the eleven rogue skills - adaptation, classify traps, evasion, the fall/jump safe-fall ladder with the Jobare shaft example, featherfoot, improvised attack with its save-modifier ladder and the trick hat example, inner focus, nondetection, sense danger with its subskill ladder, shadow flight and shadow travel."
+}
