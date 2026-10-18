@@ -59,7 +59,7 @@
   {
    "name": "dgeKoroSaveDivisor",
    "value": 2,
-   "comment": "Korobokuru prose (capture p. 17): the saving-throw bonus - +1 for every 4 1/2 points of Constitution vs. rods, staves, wands and spells, and the same vs. poison - the PHYSICAL COPY CONFIRMS the book itself prints 41h (a printed misprint for 4 1/2); read as the intended 4 1/2, the divisor pins as 2 (half the Con score per +1), the flag resolved"
+   "comment": "Korobokuru prose (capture p. 17): the saving-throw bonus - +1 for every 4 1/2 points of Constitution vs. rods, staves, wands and spells, and the same vs. poison - the physical-copy capture (the 2018 print) reads 4 1/2 CLEAN - the 41h was a transcription artifact of the first capture; the divisor pins as 2 (half the Con score per +1), the flag resolved"
   },
   {
    "name": "dgeKoroInfravision",
@@ -1102,7 +1102,7 @@
  },
  "banner": {
   "title": "THE ORIENTAL RACES, printed capture pp. 17-22 - the OA races round",
-  "provenance": "verified against capture pp. 17-22 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). OCR NORMALIZATIONS: the capture prints infraction for infravision - the physical copy confirms the clean infravision (a pure OCR garble); the korobokuru save ladder - the physical copy CONFIRMS the book itself prints 41h, a printed misprint read as the intended 4 1/2, pinned as the divisor 2, the flag RESOLVED; the percent signs garble as 7596, 5094 and -2096 - read clean as 75, 50 and -20; the hare prints as here. BOOK QUIRK: the prose cites a badger hengeyokai though badger is not among the twelve Table 11 forms (the evil forms are fox, raccoon dog and rat) - pinned as printed, flagged. The Table 11 modifications pin as four columns: the plus, its ability code (ST 0, DE 1, CO 2, IN 3, WI 4, CH 5), the minus and its code.",
+  "provenance": "verified against capture pp. 17-22 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). OCR NORMALIZATIONS: the capture prints infraction for infravision - the physical copy confirms the clean infravision (a pure OCR garble); the korobokuru save ladder - the physical-copy capture (the 2018 print) reads 4 1/2 CLEAN, the 41h was a transcription artifact of the first capture; pinned as the divisor 2, the flag RESOLVED; the percent signs garble as 7596, 5094 and -2096 - read clean as 75, 50 and -20; the hare prints as here. BOOK QUIRK: the prose cites a badger hengeyokai though badger is not among the twelve Table 11 forms (the evil forms are fox, raccoon dog and rat) - pinned as printed, flagged. The Table 11 modifications pin as four columns: the plus, its ability code (ST 0, DE 1, CO 2, IN 3, WI 4, CH 5), the minus and its code.",
   "sentinel": "the gap census after this round: 27 closed, 208 open - the three races and Table 11 flip; the races run of Chapter 2 is done, the ten classes begin next (census 540 -> 541); NEXT - R619: the Oriental Barbarian and Bushi - the class doctrines, Tables 14, 15, 16 and 17, prefix dgf (verify free), audit \"R619 OA barbarian bushi audit\", include after rules/oaraces.h"
  }
 }
