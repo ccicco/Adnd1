@@ -11250,6 +11250,62 @@ when both halves land.
   the 10th-level spell system,
   Tables 28 through 35; prefix
   dev.
+- R607 LANDED 2026-10-18: commit
+  55ce7ba71ee7b7cddfffea2e6dda476
+  0ceb6e438 (census 529 -> 530,
+  pushed 10a395b..55ce7ba),
+  TRUE DWEOMERS, printed pp.
+  118-141, DMO Chapter 6 closed in
+  ONE round - TEN boxes flip (nine
+  children + parent; gap census now
+  79 closed / 17 open) - the
+  10th-level spell system:
+  rules/dmodweomers.h, prefix dev,
+  238 inlines (180 consts, 42
+  bools, 16 table columns), 8
+  grids (T42 Table 28 true dweomers
+  29x3 with sentinel_census [1,1,1]
+  for the shadow-shape row; T43
+  Table 29 areas 10x4 census
+  [0,3,0,0]; T44 Table 30 animated
+  objects 6x2; T45 Table 31 ranges
+  10x1; T46 Table 32 durations
+  11x1; T47 Table 33 prep/cast
+  10x2; T48 Table 35 duel types
+  29x1; T49 13 known dweomers
+  difficulty/final pairs), 30+
+  table_checks including the
+  Pharjis worked example
+  (110->70->35->5->10). DIVERGENCE
+  pinned in the banner: the Pharjis
+  example reads half-day duration
+  at +10 while Table 32 prints 6
+  hours at 7 and 12 hours at 10 -
+  example arithmetic pinned
+  verbatim with note. FIVE
+  pre-publish fixes (one `//` in a
+  table_check expr, four miskeyed
+  table_checks - data right, check
+  expressions wrong: Table 28
+  easiest-at-20 row indices, Table
+  35 duel-type rows, fortify ladder
+  via the 30-point base difficulty
+  x2/x4, Table 32 one-year row
+  index 9) plus one mid-run restore
+  (first engine run half-patched the
+  gap report; standard repo.tgz
+  recovery). Spec tools/
+  spec_r607.json 107766 bytes md5
+  0e8b7dd5027aaf880091f839ee09362
+  d. NEXT - R608: Chapter 7
+  (High-Level Characters, pp.
+  142-164) - the LAST DMO chapter;
+  consult the gap report at new HEAD
+  55ce7ba for its boxes; verify next
+  prefix free (likely dew family).
+  Audit: "R607 DMO true-dweomers
+  audit"; include after
+  rules/dmoduels.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

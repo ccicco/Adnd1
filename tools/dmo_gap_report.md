@@ -476,20 +476,43 @@ tables are data and close on table pins.
     cloak and Ratecliffe and Tenser reads
 - [ ] **Chapter 7: High-Level Characters** (pp.
   142-179) - the beyond-core progression system
-  - [ ] Automatic Saving Throw Failure (pp. 142-143)
+  - [x] Automatic Saving Throw Failure (pp. 142-143)
     - the fail-on-3-or-less rule, the deity ladders
     (2 for lesser, 1 for intermediate, never for
     greater)
-  - [ ] Table 36: Saving Throws by Caster Level or
+    greater) - R608: the dew auto-failure doctrine pins - the
+    universal fail on 3 or less, the deity ladders (2 lesser,
+    1 intermediate, never greater), the PHB Table 60 save-limit
+    levels by group (priest 19, rogue 21, warrior 17, wizard
+    21), the Wulf worked example (5 - 3 = 2, still auto-fail
+    on an actual 1, 2 or 3)
+  - [x] Table 36: Saving Throws by Caster Level or
     Hit Dice (p. 143) - the target-save modifier
     ladder
-  - [ ] Table 37: Device Casting Levels (p. 144) -
+    ladder - R608: the dew T36 grid - 28 rows x 3 columns in
+    four group bands (priest 7, rogue 6, warrior 10, wizard 5)
+    plus the four defender-minus-caster row-band chains; the
+    grid is for magical dueling, the non-spell attacks use the
+    standard tables
+  - [x] Table 37: Device Casting Levels (p. 144) -
     the item caster-level defaults
-  - [ ] Table 38: Saving Throw Penalties by Caster
+    the item caster-level defaults - R608: the dew device-level
+    pins - rod 12, staff 8, wand 6, other magical item 12,
+    artifact 20; the wielder's level is irrelevant, the device
+    type is the attacker
+  - [x] Table 38: Saving Throw Penalties by Caster
     Level or Hit Dice (p. 144) - the direct-attack
     penalty ladder
-  - [ ] Table 39: THACO Limits (p. 144) - the
+    penalty ladder - R608: the dew T38 penalty chain - 0 at
+    caster level 1-12, minus 1 at 13-15, down to minus 6 at
+    28-30; using Table 38 excludes Table 36 (the PHB Table 60
+    governs instead)
+  - [x] Table 39: THACO Limits (p. 144) - the
     automatic-miss and minimum-score rules
+    automatic-miss and minimum-score rules - R608: the dew
+    THACO-limit pins - priest 8, rogue 11, warrior 1, wizard
+    14; the attack roll of 1 is always a miss, monsters have
+    no THACO limits
   - [ ] Table 40: Skills for High-Level Characters
     (pp. 145-146) - the skill roster (the base scores,
     the requirements, the costs)

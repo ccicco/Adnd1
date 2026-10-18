@@ -1,0 +1,1076 @@
+{
+ "round": 608,
+ "prefix": "dew",
+ "header_file": "rules/dmohighlevel.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 530,
+ "title": "High-Level Saves and THACO",
+ "audit_label": "R608 DMO auto-save-failure audit",
+ "include_comment": "the DMO high-level save pins",
+ "include_after": "#include \"rules/dmodweomers.h\"  // R607: the DMO true-dweomer pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R607 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R607 LANDED 2026-10-18: commit",
+  "  55ce7ba71ee7b7cddfffea2e6dda476",
+  "  0ceb6e438 (census 529 -> 530,",
+  "  pushed 10a395b..55ce7ba),",
+  "  TRUE DWEOMERS, printed pp.",
+  "  118-141, DMO Chapter 6 closed in",
+  "  ONE round - TEN boxes flip (nine",
+  "  children + parent; gap census now",
+  "  79 closed / 17 open) - the",
+  "  10th-level spell system:",
+  "  rules/dmodweomers.h, prefix dev,",
+  "  238 inlines (180 consts, 42",
+  "  bools, 16 table columns), 8",
+  "  grids (T42 Table 28 true dweomers",
+  "  29x3 with sentinel_census [1,1,1]",
+  "  for the shadow-shape row; T43",
+  "  Table 29 areas 10x4 census",
+  "  [0,3,0,0]; T44 Table 30 animated",
+  "  objects 6x2; T45 Table 31 ranges",
+  "  10x1; T46 Table 32 durations",
+  "  11x1; T47 Table 33 prep/cast",
+  "  10x2; T48 Table 35 duel types",
+  "  29x1; T49 13 known dweomers",
+  "  difficulty/final pairs), 30+",
+  "  table_checks including the",
+  "  Pharjis worked example",
+  "  (110->70->35->5->10). DIVERGENCE",
+  "  pinned in the banner: the Pharjis",
+  "  example reads half-day duration",
+  "  at +10 while Table 32 prints 6",
+  "  hours at 7 and 12 hours at 10 -",
+  "  example arithmetic pinned",
+  "  verbatim with note. FIVE",
+  "  pre-publish fixes (one `//` in a",
+  "  table_check expr, four miskeyed",
+  "  table_checks - data right, check",
+  "  expressions wrong: Table 28",
+  "  easiest-at-20 row indices, Table",
+  "  35 duel-type rows, fortify ladder",
+  "  via the 30-point base difficulty",
+  "  x2/x4, Table 32 one-year row",
+  "  index 9) plus one mid-run restore",
+  "  (first engine run half-patched the",
+  "  gap report; standard repo.tgz",
+  "  recovery). Spec tools/",
+  "  spec_r607.json 107766 bytes md5",
+  "  0e8b7dd5027aaf880091f839ee09362",
+  "  d. NEXT - R608: Chapter 7",
+  "  (High-Level Characters, pp.",
+  "  142-164) - the LAST DMO chapter;",
+  "  consult the gap report at new HEAD",
+  "  55ce7ba for its boxes; verify next",
+  "  prefix free (likely dew family).",
+  "  Audit: \"R607 DMO true-dweomers",
+  "  audit\"; include after",
+  "  rules/dmoduels.h."
+ ],
+ "banner": {
+  "title": "HIGH-LEVEL CHARACTERS OPENS - DMO Chapter 7, round one of five: the saving-throw improvement limits by group (priest 19, rogue 21, warrior 17, wizard 21, read from the PHB Table 60 reference), the automatic saving-throw failure doctrine (the universal fail on 3 or less on 1d20, the lesser-deity 2, the intermediate 1, the greater never, the bonus-proof and always-a-chance rules, the adjusted-roll reading of 3-or-less numbers, the Wulf worked example reading 5 - 3 = 2 with the actual 1, 2 or 3 still failing), the Table 36 saving-throw grid (28 rows in four group bands by the defender-minus-caster difference: priest 7 rows, rogue 6, warrior 10, wizard 5, in the paralyzation-or-death, petrification-or-polymorph and spell columns) with its four row-band chains, the Table 37 device casting levels (rod 12, staff 8, wand 6, other item 12, artifact 20), the Table 38 caster-level penalty ladder (0 at 1-12 down to -6 at 28-30, the either-or rule that excludes Table 36 in favor of the PHB Table 60), and the Table 39 THACO limits (priest 8, rogue 11, warrior 1, wizard 14, the attack roll of 1 always a miss, monsters unlimited).",
+  "provenance": "verified against printed pp. 142-144 of the archive.org DMO captures (items dungeon-master-option-high-level-campaigns and tsr02156dmsoptionhighlevelcampaigns, the djvu.txt full texts, leaf N = printed page N; the tsr02156 ABBYY read is primary and the tesseract read is cross-checked - its two misreads noted here: the fails-on-5-or-less for the printed 3-or-less, and the -1-to-5 row for the printed -1 to -3); the save limits and the auto-failure doctrine from p. 142, the Table 36 grid, the footnote worked examples and the usage doctrine from p. 143, the Tables 37 through 39 from p. 144. The Wulf example is pinned verbatim: the -3 poison penalty succeeds on 5 or higher while an actual 1, 2 or 3 still fails.",
+  "sentinel": "the gap census after this round: 84 closed, 12 open - five Chapter 7 children flip in round one of five (the parent stays open until R612); the DMO arc continues with R609 (Tables 40-41 plus the Warriors with Table 42)."
+ },
+ "consts": [
+  {
+   "name": "dewPriestSaveLimitLevel",
+   "value": 19,
+   "comment": "the improvement cap: priests reach a level beyond which saving throws cannot be further improved, at level 19 (printed p. 142)."
+  },
+  {
+   "name": "dewRogueSaveLimitLevel",
+   "value": 21,
+   "comment": "the improvement cap: rogues reach the saving-throw limit at level 21 (printed p. 142)."
+  },
+  {
+   "name": "dewWarriorSaveLimitLevel",
+   "value": 17,
+   "comment": "the improvement cap: warriors reach the saving-throw limit at level 17 (printed p. 142)."
+  },
+  {
+   "name": "dewWizardSaveLimitLevel",
+   "value": 21,
+   "comment": "the improvement cap: wizards reach the saving-throw limit at level 21 (printed p. 142)."
+  },
+  {
+   "name": "dewPhbSaveTable",
+   "value": 60,
+   "comment": "the reference table: the group save limits are read from Table 60 in the Player's Handbook (printed p. 142; referenced, not reprinted)."
+  },
+  {
+   "name": "dewAutoFailMortal",
+   "value": 3,
+   "comment": "the universal failure floor: all characters and most other creatures fail their saving throws on rolls of 3 or less on 1d20 (printed p. 142)."
+  },
+  {
+   "name": "dewAutoFailLesserDeity",
+   "value": 2,
+   "comment": "the lesser-deity failure floor: lesser deities fail their saving throws on rolls of 2 or less (printed p. 142)."
+  },
+  {
+   "name": "dewAutoFailIntermediateDeity",
+   "value": 1,
+   "comment": "the intermediate-deity failure floor: intermediate deities fail on rolls of 1 (printed p. 142)."
+  },
+  {
+   "name": "dewAutoFailGreaterDeity",
+   "value": 0,
+   "comment": "the greater-deity failure floor: greater deities need not roll at all - they never fail; the fail number is zero (printed p. 142)."
+  },
+  {
+   "name": "dewT36RowCount",
+   "value": 28,
+   "comment": "the Table 36 row count: 28 rows in four group bands - priest 7, rogue 6, warrior 10, wizard 5 (printed p. 143)."
+  },
+  {
+   "name": "dewRogueRowBase",
+   "value": 7,
+   "comment": "the rogue row base: the rogue bands of Table 36 sit at grid rows 7 through 12 (printed p. 143)."
+  },
+  {
+   "name": "dewWarriorRowBase",
+   "value": 13,
+   "comment": "the warrior row base: the warrior bands of Table 36 sit at grid rows 13 through 22 (printed p. 143)."
+  },
+  {
+   "name": "dewWizardRowBase",
+   "value": 23,
+   "comment": "the wizard row base: the wizard bands of Table 36 sit at grid rows 23 through 27 (printed p. 143)."
+  },
+  {
+   "name": "dewT38BandCount",
+   "value": 7,
+   "comment": "the Table 38 band count: seven caster-level bands, 1-12 through 28-30 plus the beyond-30 tail (printed p. 144)."
+  },
+  {
+   "name": "dewWulfParSaveNumber",
+   "value": 2,
+   "comment": "the Wulf worked example: Wulf, a 21st-level priest, has a saving-throw number of 2 against paralyzation, poison or death magic (printed p. 143)."
+  },
+  {
+   "name": "dewWulfPoisonPenalty",
+   "value": -3,
+   "comment": "the Wulf worked example: a particularly virulent poison imposes a -3 penalty to the saving throw (printed p. 143)."
+  },
+  {
+   "name": "dewWulfSuccessRoll",
+   "value": 5,
+   "comment": "the Wulf worked example: the save succeeds on a roll of 5 or higher - the roll beats the automatic-failure number and still equals 2 after the -3 modifier (printed p. 143)."
+  },
+  {
+   "name": "dewRodLevel",
+   "value": 12,
+   "comment": "the device casting level: a rod attacks at caster level 12 (Table 37, printed p. 144)."
+  },
+  {
+   "name": "dewStaffLevel",
+   "value": 8,
+   "comment": "the device casting level: a staff attacks at caster level 8 (Table 37, printed p. 144)."
+  },
+  {
+   "name": "dewWandLevel",
+   "value": 6,
+   "comment": "the device casting level: a wand attacks at caster level 6 (Table 37, printed p. 144)."
+  },
+  {
+   "name": "dewOtherItemLevel",
+   "value": 12,
+   "comment": "the device casting level: any other magical item attacks at caster level 12 (Table 37, printed p. 144)."
+  },
+  {
+   "name": "dewArtifactLevel",
+   "value": 20,
+   "comment": "the device casting level: an artifact attacks at caster level 20 (Table 37, printed p. 144)."
+  },
+  {
+   "name": "dewThacoLimitPriest",
+   "value": 8,
+   "comment": "the THACO limit: a priest's THACO advancement stops at 8 (Table 39, printed p. 144)."
+  },
+  {
+   "name": "dewThacoLimitRogue",
+   "value": 11,
+   "comment": "the THACO limit: a rogue's THACO advancement stops at 11 (Table 39, printed p. 144)."
+  },
+  {
+   "name": "dewThacoLimitWarrior",
+   "value": 1,
+   "comment": "the THACO limit: a warrior's THACO advancement stops at 1 - warriors improve THACO the most (Table 39, printed p. 144)."
+  },
+  {
+   "name": "dewThacoLimitWizard",
+   "value": 14,
+   "comment": "the THACO limit: a wizard's THACO advancement stops at 14 (Table 39, printed p. 144)."
+  },
+  {
+   "name": "dewAutoMissRoll",
+   "value": 1,
+   "comment": "the automatic miss: no matter what the attacker's THACO, an attack roll of 1 is always a miss (printed p. 144)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dewAutoFailAlwaysPossible",
+   "value": true,
+   "comment": "the always-a-chance rule: barring a special circumstance that makes the save unnecessary (a successful magic-resistance roll, immunity to the attack form), there is always a chance a character can fail (printed p. 142)."
+  },
+  {
+   "name": "dewAutoFailIgnoresBonuses",
+   "value": true,
+   "comment": "the bonus-proof rule: the automatic failure stands no matter how many bonuses the roll receives from magical items, spells, ability scores and the like (printed p. 142)."
+  },
+  {
+   "name": "dewSaveNumberIsAdjustedRoll",
+   "value": true,
+   "comment": "the adjusted-roll reading: a saving-throw success number of 3 or less from Table 60 or Table 36 refers to the character's adjusted die roll, not the actual number rolled (printed p. 143)."
+  },
+  {
+   "name": "dewGreaterDeityNeverFails",
+   "value": true,
+   "comment": "the greater-deity immunity: greater deities need not roll at all - they never fail their saving throws (printed p. 142)."
+  },
+  {
+   "name": "dewT36ForDuelsOnly",
+   "value": true,
+   "comment": "the intended use: Table 36 is intended primarily for magical dueling, see Chapter 5; in regular play it is somewhat cumbersome (printed p. 143)."
+  },
+  {
+   "name": "dewT36NotForNonSpells",
+   "value": true,
+   "comment": "the non-spell exclusion: saving throws against poisons, breath weapons, or any other attack that is not a spell or spell-like ability from a creature or device use the standard saving-throw tables, not Table 36 (printed p. 143)."
+  },
+  {
+   "name": "dewDeviceClosestColumn",
+   "value": true,
+   "comment": "the device column rule: rods, staves, wands and other magical devices use the Table 36 column that is closest to their effects (printed p. 143)."
+  },
+  {
+   "name": "dewWielderLevelIrrelevant",
+   "value": true,
+   "comment": "the device-level rule: the wielder's level or Hit Dice is irrelevant when a device is used - the device type determines the attacker's level (printed p. 143)."
+  },
+  {
+   "name": "dewDmConcealsCasterLevel",
+   "value": true,
+   "comment": "the concealment doctrine: during play the DM should conceal the attacker's true level of power - announce the attack form, then the success or failure on the adjusted roll (printed p. 143)."
+  },
+  {
+   "name": "dewT38ExcludesT36",
+   "value": true,
+   "comment": "the either-or rule: if you use Table 38, do not use Table 36; use Table 60 from the Player's Handbook instead (printed p. 144)."
+  },
+  {
+   "name": "dewFireballUsesSpellColumn",
+   "value": true,
+   "comment": "the worked device example: a fireball from a wand of fire uses the spell column of Table 36 (printed p. 143)."
+  },
+  {
+   "name": "dewWandParalyzationUsesParColumn",
+   "value": true,
+   "comment": "the worked device example: a paralyzation beam from a wand of paralyzation uses the paralyzation or death magic column (printed p. 143)."
+  },
+  {
+   "name": "dewThacoAdvancementLimited",
+   "value": true,
+   "comment": "the limit doctrine: a character's THACO advancement is limited - professional skills and training extend a creature's natural talents only so far (printed p. 144)."
+  },
+  {
+   "name": "dewWarriorsImproveThacoMost",
+   "value": true,
+   "comment": "the warrior emphasis: warriors, naturally, can improve THACO the most (printed p. 144)."
+  },
+  {
+   "name": "dewMonstersNoThacoLimit",
+   "value": true,
+   "comment": "the monster exception: monsters have no THACO limits (printed p. 144)."
+  }
+ ],
+ "chains": [
+  {
+   "name": "dewPriestRow",
+   "limits": [
+    -7,
+    -4,
+    -1,
+    0,
+    3,
+    6
+   ],
+   "tail": 6,
+   "comment": "the priest row band of Table 36: the defender's level minus the caster's level maps -7 or less to row 0, -4 to -6 to row 1, -1 to -3 to row 2, 0 to row 3, +1 to +3 to row 4, +4 to +6 to row 5, and +7 or more to row 6 (printed p. 143)."
+  },
+  {
+   "name": "dewRogueRow",
+   "limits": [
+    -9,
+    -5,
+    -1,
+    0,
+    4
+   ],
+   "tail": 5,
+   "comment": "the rogue row band of Table 36: -9 or less to row 0, -5 to -8 to row 1, -1 to -4 to row 2, 0 to row 3, +1 to +4 to row 4, and +5 or more to row 5 (printed p. 143)."
+  },
+  {
+   "name": "dewWarriorRow",
+   "limits": [
+    -7,
+    -5,
+    -3,
+    -1,
+    0,
+    2,
+    4,
+    6,
+    8
+   ],
+   "tail": 9,
+   "comment": "the warrior row band of Table 36: -7 or less to row 0, -5 to -6 to row 1, -3 to -4 to row 2, -1 to -2 to row 3, 0 to row 4, +1 to +2 to row 5, +3 to +4 to row 6, +5 to +6 to row 7, +7 to +8 to row 8, and +9 or more to row 9 (printed p. 143)."
+  },
+  {
+   "name": "dewWizardRow",
+   "limits": [
+    -6,
+    -1,
+    0,
+    5
+   ],
+   "tail": 4,
+   "comment": "the wizard row band of Table 36: -6 or less to row 0, -1 to -5 to row 1, 0 to row 2, +1 to +5 to row 3, and +6 or more to row 4 (printed p. 143)."
+  },
+  {
+   "name": "dewT38Band",
+   "limits": [
+    12,
+    15,
+    18,
+    21,
+    24,
+    27
+   ],
+   "tail": 6,
+   "comment": "the Table 38 caster-level band (printed p. 144): levels 1-12 fall in band 0, 13-15 in band 1, 16-18 in band 2, 19-21 in band 3, 22-24 in band 4, 25-27 in band 5, 28-30 in band 6, and the band holds at 6 beyond 30; the penalty itself reads from the dewT38Penalty column by band."
+  }
+ ],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dewT36Grid",
+   "tag": "T36",
+   "count": "dewT36RowCount",
+   "sentinel": -99,
+   "comment": "the Table 36 saving-throw grid (printed p. 143): the base save number by the defender's level minus the caster's level or Hit Dice (footnote 1), four groups in row bands - priest rows 0-6, rogue rows 7-12, warrior rows 13-22, wizard rows 23-27; the spell column excludes attacks that cause death, petrification or polymorph (the asterisk footnote).",
+   "col_comments": [
+    "the paralyzation or death magic column: priest 10 down to 2, rogue 13 down to 8, warrior 16 down to 3, wizard 14 down to 8 across the defender-minus-caster bands (printed p. 143).",
+    "the petrification or polymorph column: priest 13 down to 5, rogue 12 down to 7, warrior 17 down to 4, wizard 13 down to 5 (printed p. 143).",
+    "the spell column (excluding death, petrification or polymorph attacks): priest 15 down to 7, rogue 15 down to 5, warrior 19 down to 6, wizard 12 down to 4 (printed p. 143)."
+   ],
+   "cols": [
+    "dewT36Par",
+    "dewT36Petr",
+    "dewT36Spell"
+   ],
+   "data": [
+    [
+     10,
+     13,
+     15
+    ],
+    [
+     9,
+     12,
+     14
+    ],
+    [
+     7,
+     10,
+     12
+    ],
+    [
+     6,
+     9,
+     11
+    ],
+    [
+     5,
+     8,
+     10
+    ],
+    [
+     4,
+     7,
+     9
+    ],
+    [
+     2,
+     5,
+     7
+    ],
+    [
+     13,
+     12,
+     15
+    ],
+    [
+     12,
+     11,
+     13
+    ],
+    [
+     11,
+     10,
+     11
+    ],
+    [
+     10,
+     9,
+     9
+    ],
+    [
+     9,
+     8,
+     7
+    ],
+    [
+     8,
+     7,
+     5
+    ],
+    [
+     16,
+     17,
+     19
+    ],
+    [
+     14,
+     15,
+     17
+    ],
+    [
+     13,
+     14,
+     16
+    ],
+    [
+     11,
+     12,
+     14
+    ],
+    [
+     10,
+     11,
+     13
+    ],
+    [
+     8,
+     9,
+     11
+    ],
+    [
+     7,
+     8,
+     10
+    ],
+    [
+     5,
+     6,
+     8
+    ],
+    [
+     4,
+     5,
+     7
+    ],
+    [
+     3,
+     4,
+     6
+    ],
+    [
+     14,
+     13,
+     12
+    ],
+    [
+     13,
+     11,
+     10
+    ],
+    [
+     11,
+     9,
+     8
+    ],
+    [
+     10,
+     7,
+     6
+    ],
+    [
+     8,
+     5,
+     4
+    ]
+   ]
+  },
+  {
+   "name": "dewT38Grid",
+   "tag": "T38",
+   "count": "dewT38BandCount",
+   "sentinel": -99,
+   "comment": "the Table 38 saving-throw penalty ladder (printed p. 144): the penalty by caster-level band - 0 for levels 1-12, minus 1 for 13-15, minus 2 for 16-18, minus 3 for 19-21, minus 4 for 22-24, minus 5 for 25-27, minus 6 for 28-30 and beyond.",
+   "col_comments": [
+    "the penalty by band: 0, -1, -2, -3, -4, -5, -6 - a quicker and easier method than Table 36; if you use this table, do not use Table 36 (printed p. 144)."
+   ],
+   "cols": [
+    "dewT38Penalty"
+   ],
+   "data": [
+    [
+     0
+    ],
+    [
+     -1
+    ],
+    [
+     -2
+    ],
+    [
+     -3
+    ],
+    [
+     -4
+    ],
+    [
+     -5
+    ],
+    [
+     -6
+    ]
+   ]
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the Wulf arithmetic: 5 - 3 = 2 (printed p. 143)",
+   "expr": "m['dewWulfSuccessRoll']() + m['dewWulfPoisonPenalty']() != m['dewWulfParSaveNumber']()"
+  },
+  {
+   "note": "the Wulf success roll beats the mortal auto-fail 3 (printed p. 143)",
+   "expr": "m['dewWulfSuccessRoll']() <= m['dewAutoFailMortal']()"
+  },
+  {
+   "note": "the mortal auto-fail is 3 or less on 1d20 (printed p. 142)",
+   "expr": "m['dewAutoFailMortal']() < 3"
+  },
+  {
+   "note": "the Wulf save number of 2 falls in the 3-or-less adjusted-roll class (printed p. 143)",
+   "expr": "m['dewWulfParSaveNumber']() > 3"
+  },
+  {
+   "note": "the footnote-1 worked example: a -1 difference lands the priest on row 2, spell column 12 (printed p. 143)",
+   "expr": "m['dewT36Spell'](m['dewPriestRow'](-1)) != 12"
+  },
+  {
+   "note": "the priest band head: a -9 difference reads the -7-or-more row, paralyzation 10 (printed p. 143)",
+   "expr": "m['dewT36Par'](m['dewPriestRow'](-9)) != 10"
+  },
+  {
+   "note": "the rogue band head: a -12 difference reads the -9-or-more row, paralyzation 13 (printed p. 143)",
+   "expr": "m['dewT36Par'](m['dewRogueRow'](-12) + m['dewRogueRowBase']()) != 13"
+  },
+  {
+   "note": "the warrior band head: a -8 difference reads the -7-or-more row, paralyzation 16 (printed p. 143)",
+   "expr": "m['dewT36Par'](m['dewWarriorRow'](-8) + m['dewWarriorRowBase']()) != 16"
+  },
+  {
+   "note": "the wizard band head: a -10 difference reads the -6-or-more row, paralyzation 14 (printed p. 143)",
+   "expr": "m['dewT36Par'](m['dewWizardRow'](-10) + m['dewWizardRowBase']()) != 14"
+  },
+  {
+   "note": "the priest band tail: a +9 difference reads the +7-or-more row, spell 7 (printed p. 143)",
+   "expr": "m['dewT36Spell'](m['dewPriestRow'](9)) != 7"
+  },
+  {
+   "note": "the rogue band tail: a +6 difference reads the +5-or-more row, spell 5 (printed p. 143)",
+   "expr": "m['dewT36Spell'](m['dewRogueRow'](6) + m['dewRogueRowBase']()) != 5"
+  },
+  {
+   "note": "the warrior band tail: a +11 difference reads the +9-or-more row, spell 6 (printed p. 143)",
+   "expr": "m['dewT36Spell'](m['dewWarriorRow'](11) + m['dewWarriorRowBase']()) != 6"
+  },
+  {
+   "note": "the wizard band tail: a +8 difference reads the +6-or-more row, spell 4 (printed p. 143)",
+   "expr": "m['dewT36Spell'](m['dewWizardRow'](8) + m['dewWizardRowBase']()) != 4"
+  },
+  {
+   "note": "the deity ladder descends: lesser 2 fails below the mortal 3 (printed p. 142)",
+   "expr": "m['dewAutoFailLesserDeity']() > m['dewAutoFailMortal']()"
+  },
+  {
+   "note": "the deity ladder descends: intermediate 1 below lesser 2 (printed p. 142)",
+   "expr": "m['dewAutoFailIntermediateDeity']() > m['dewAutoFailLesserDeity']()"
+  },
+  {
+   "note": "the deity ladder ends: greater 0 below intermediate 1 (printed p. 142)",
+   "expr": "m['dewAutoFailGreaterDeity']() > m['dewAutoFailIntermediateDeity']()"
+  },
+  {
+   "note": "the Table 38 band edges: 12 reads 0, 16 reads -2, 30 reads -6 (printed p. 144)",
+   "expr": "m['dewT38Penalty'](m['dewT38Band'](12)) != 0 or m['dewT38Penalty'](m['dewT38Band'](16)) != -2 or m['dewT38Penalty'](m['dewT38Band'](30)) != -6"
+  },
+  {
+   "note": "the Table 38 in-band read: 13 and 15 both read -1 (printed p. 144)",
+   "expr": "m['dewT38Penalty'](m['dewT38Band'](13)) != -1 or m['dewT38Penalty'](m['dewT38Band'](15)) != -1"
+  },
+  {
+   "note": "the Table 38 tail: beyond 30 holds -6 (printed p. 144)",
+   "expr": "m['dewT38Penalty'](m['dewT38Band'](31)) != -6"
+  },
+  {
+   "note": "the Table 37 ladder: the artifact 20 outruns the rod 12 (printed p. 144)",
+   "expr": "m['dewArtifactLevel']() <= m['dewRodLevel']()"
+  },
+  {
+   "note": "the Table 37 ladder: the wand 6 is the lowest device level (printed p. 144)",
+   "expr": "m['dewWandLevel']() >= m['dewStaffLevel']()"
+  },
+  {
+   "note": "the Table 39 order: the warrior limit 1 beats the priest 8 (printed p. 144)",
+   "expr": "m['dewThacoLimitWarrior']() >= m['dewThacoLimitPriest']()"
+  },
+  {
+   "note": "the Table 39 order: the priest limit 8 is better than the rogue 11 (printed p. 144)",
+   "expr": "m['dewThacoLimitPriest']() >= m['dewThacoLimitRogue']()"
+  },
+  {
+   "note": "the Table 39 order: the rogue limit 11 is better than the wizard 14 (printed p. 144)",
+   "expr": "m['dewThacoLimitRogue']() >= m['dewThacoLimitWizard']()"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dewPriestSaveLimitLevel pin",
+   "expr": "m['dewPriestSaveLimitLevel']() != 19"
+  },
+  {
+   "note": "the dewRogueSaveLimitLevel pin",
+   "expr": "m['dewRogueSaveLimitLevel']() != 21"
+  },
+  {
+   "note": "the dewWarriorSaveLimitLevel pin",
+   "expr": "m['dewWarriorSaveLimitLevel']() != 17"
+  },
+  {
+   "note": "the dewWizardSaveLimitLevel pin",
+   "expr": "m['dewWizardSaveLimitLevel']() != 21"
+  },
+  {
+   "note": "the dewPhbSaveTable pin",
+   "expr": "m['dewPhbSaveTable']() != 60"
+  },
+  {
+   "note": "the dewAutoFailMortal pin",
+   "expr": "m['dewAutoFailMortal']() != 3"
+  },
+  {
+   "note": "the dewAutoFailLesserDeity pin",
+   "expr": "m['dewAutoFailLesserDeity']() != 2"
+  },
+  {
+   "note": "the dewAutoFailIntermediateDeity pin",
+   "expr": "m['dewAutoFailIntermediateDeity']() != 1"
+  },
+  {
+   "note": "the dewAutoFailGreaterDeity pin",
+   "expr": "m['dewAutoFailGreaterDeity']() != 0"
+  },
+  {
+   "note": "the dewT36RowCount pin",
+   "expr": "m['dewT36RowCount']() != 28"
+  },
+  {
+   "note": "the dewRogueRowBase pin",
+   "expr": "m['dewRogueRowBase']() != 7"
+  },
+  {
+   "note": "the dewWarriorRowBase pin",
+   "expr": "m['dewWarriorRowBase']() != 13"
+  },
+  {
+   "note": "the dewWizardRowBase pin",
+   "expr": "m['dewWizardRowBase']() != 23"
+  },
+  {
+   "note": "the dewT38BandCount pin",
+   "expr": "m['dewT38BandCount']() != 7"
+  },
+  {
+   "note": "the dewWulfParSaveNumber pin",
+   "expr": "m['dewWulfParSaveNumber']() != 2"
+  },
+  {
+   "note": "the dewWulfPoisonPenalty pin",
+   "expr": "m['dewWulfPoisonPenalty']() != -3"
+  },
+  {
+   "note": "the dewWulfSuccessRoll pin",
+   "expr": "m['dewWulfSuccessRoll']() != 5"
+  },
+  {
+   "note": "the dewRodLevel pin",
+   "expr": "m['dewRodLevel']() != 12"
+  },
+  {
+   "note": "the dewStaffLevel pin",
+   "expr": "m['dewStaffLevel']() != 8"
+  },
+  {
+   "note": "the dewWandLevel pin",
+   "expr": "m['dewWandLevel']() != 6"
+  },
+  {
+   "note": "the dewOtherItemLevel pin",
+   "expr": "m['dewOtherItemLevel']() != 12"
+  },
+  {
+   "note": "the dewArtifactLevel pin",
+   "expr": "m['dewArtifactLevel']() != 20"
+  },
+  {
+   "note": "the dewThacoLimitPriest pin",
+   "expr": "m['dewThacoLimitPriest']() != 8"
+  },
+  {
+   "note": "the dewThacoLimitRogue pin",
+   "expr": "m['dewThacoLimitRogue']() != 11"
+  },
+  {
+   "note": "the dewThacoLimitWarrior pin",
+   "expr": "m['dewThacoLimitWarrior']() != 1"
+  },
+  {
+   "note": "the dewThacoLimitWizard pin",
+   "expr": "m['dewThacoLimitWizard']() != 14"
+  },
+  {
+   "note": "the dewAutoMissRoll pin",
+   "expr": "m['dewAutoMissRoll']() != 1"
+  },
+  {
+   "note": "the dewAutoFailAlwaysPossible pin",
+   "expr": "m['dewAutoFailAlwaysPossible']() != 1"
+  },
+  {
+   "note": "the dewAutoFailIgnoresBonuses pin",
+   "expr": "m['dewAutoFailIgnoresBonuses']() != 1"
+  },
+  {
+   "note": "the dewSaveNumberIsAdjustedRoll pin",
+   "expr": "m['dewSaveNumberIsAdjustedRoll']() != 1"
+  },
+  {
+   "note": "the dewGreaterDeityNeverFails pin",
+   "expr": "m['dewGreaterDeityNeverFails']() != 1"
+  },
+  {
+   "note": "the dewT36ForDuelsOnly pin",
+   "expr": "m['dewT36ForDuelsOnly']() != 1"
+  },
+  {
+   "note": "the dewT36NotForNonSpells pin",
+   "expr": "m['dewT36NotForNonSpells']() != 1"
+  },
+  {
+   "note": "the dewDeviceClosestColumn pin",
+   "expr": "m['dewDeviceClosestColumn']() != 1"
+  },
+  {
+   "note": "the dewWielderLevelIrrelevant pin",
+   "expr": "m['dewWielderLevelIrrelevant']() != 1"
+  },
+  {
+   "note": "the dewDmConcealsCasterLevel pin",
+   "expr": "m['dewDmConcealsCasterLevel']() != 1"
+  },
+  {
+   "note": "the dewT38ExcludesT36 pin",
+   "expr": "m['dewT38ExcludesT36']() != 1"
+  },
+  {
+   "note": "the dewFireballUsesSpellColumn pin",
+   "expr": "m['dewFireballUsesSpellColumn']() != 1"
+  },
+  {
+   "note": "the dewWandParalyzationUsesParColumn pin",
+   "expr": "m['dewWandParalyzationUsesParColumn']() != 1"
+  },
+  {
+   "note": "the dewThacoAdvancementLimited pin",
+   "expr": "m['dewThacoAdvancementLimited']() != 1"
+  },
+  {
+   "note": "the dewWarriorsImproveThacoMost pin",
+   "expr": "m['dewWarriorsImproveThacoMost']() != 1"
+  },
+  {
+   "note": "the dewMonstersNoThacoLimit pin",
+   "expr": "m['dewMonstersNoThacoLimit']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the DMO save-limit pins": [
+   {
+    "kind": "const",
+    "name": "dewPriestSaveLimitLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dewRogueSaveLimitLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dewWarriorSaveLimitLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dewWizardSaveLimitLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dewPhbSaveTable"
+   }
+  ],
+  "the DMO auto-failure pins": [
+   {
+    "kind": "const",
+    "name": "dewAutoFailMortal"
+   },
+   {
+    "kind": "const",
+    "name": "dewAutoFailLesserDeity"
+   },
+   {
+    "kind": "const",
+    "name": "dewAutoFailIntermediateDeity"
+   },
+   {
+    "kind": "const",
+    "name": "dewAutoFailGreaterDeity"
+   },
+   {
+    "kind": "bool",
+    "name": "dewAutoFailAlwaysPossible"
+   },
+   {
+    "kind": "bool",
+    "name": "dewAutoFailIgnoresBonuses"
+   },
+   {
+    "kind": "bool",
+    "name": "dewSaveNumberIsAdjustedRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dewGreaterDeityNeverFails"
+   }
+  ],
+  "the DMO Wulf worked-example pins": [
+   {
+    "kind": "const",
+    "name": "dewWulfParSaveNumber"
+   },
+   {
+    "kind": "const",
+    "name": "dewWulfPoisonPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dewWulfSuccessRoll"
+   }
+  ],
+  "the DMO T36 usage-doctrine pins": [
+   {
+    "kind": "bool",
+    "name": "dewT36NotForNonSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dewDeviceClosestColumn"
+   },
+   {
+    "kind": "bool",
+    "name": "dewWielderLevelIrrelevant"
+   },
+   {
+    "kind": "bool",
+    "name": "dewFireballUsesSpellColumn"
+   },
+   {
+    "kind": "bool",
+    "name": "dewWandParalyzationUsesParColumn"
+   },
+   {
+    "kind": "bool",
+    "name": "dewDmConcealsCasterLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dewT36ForDuelsOnly"
+   }
+  ],
+  "the DMO T36 row-band chains": [
+   {
+    "kind": "const",
+    "name": "dewRogueRowBase"
+   },
+   {
+    "kind": "const",
+    "name": "dewWarriorRowBase"
+   },
+   {
+    "kind": "const",
+    "name": "dewWizardRowBase"
+   },
+   {
+    "kind": "chain",
+    "name": "dewPriestRow"
+   },
+   {
+    "kind": "chain",
+    "name": "dewRogueRow"
+   },
+   {
+    "kind": "chain",
+    "name": "dewWarriorRow"
+   },
+   {
+    "kind": "chain",
+    "name": "dewWizardRow"
+   }
+  ],
+  "the DMO Table 36 grid": [
+   {
+    "kind": "const",
+    "name": "dewT36RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dewT36Grid"
+   }
+  ],
+  "the DMO Table 37 device-level pins": [
+   {
+    "kind": "const",
+    "name": "dewRodLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dewStaffLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dewWandLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dewOtherItemLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dewArtifactLevel"
+   }
+  ],
+  "the DMO Table 38 penalty pins": [
+   {
+    "kind": "chain",
+    "name": "dewT38Band"
+   },
+   {
+    "kind": "const",
+    "name": "dewT38BandCount"
+   },
+   {
+    "kind": "table",
+    "name": "dewT38Grid"
+   },
+   {
+    "kind": "bool",
+    "name": "dewT38ExcludesT36"
+   }
+  ],
+  "the DMO Table 39 THACO-limit pins": [
+   {
+    "kind": "const",
+    "name": "dewThacoLimitPriest"
+   },
+   {
+    "kind": "const",
+    "name": "dewThacoLimitRogue"
+   },
+   {
+    "kind": "const",
+    "name": "dewThacoLimitWarrior"
+   },
+   {
+    "kind": "const",
+    "name": "dewThacoLimitWizard"
+   },
+   {
+    "kind": "const",
+    "name": "dewAutoMissRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dewThacoAdvancementLimited"
+   },
+   {
+    "kind": "bool",
+    "name": "dewWarriorsImproveThacoMost"
+   },
+   {
+    "kind": "bool",
+    "name": "dewMonstersNoThacoLimit"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the automatic-failure box closes",
+   "from": "  - [ ] Automatic Saving Throw Failure (pp. 142-143)\n    - the fail-on-3-or-less rule, the deity ladders\n    (2 for lesser, 1 for intermediate, never for\n    greater)",
+   "to": "  - [x] Automatic Saving Throw Failure (pp. 142-143)\n    - the fail-on-3-or-less rule, the deity ladders\n    (2 for lesser, 1 for intermediate, never for\n    greater)\n    greater) - R608: the dew auto-failure doctrine pins - the\n    universal fail on 3 or less, the deity ladders (2 lesser,\n    1 intermediate, never greater), the PHB Table 60 save-limit\n    levels by group (priest 19, rogue 21, warrior 17, wizard\n    21), the Wulf worked example (5 - 3 = 2, still auto-fail\n    on an actual 1, 2 or 3)"
+  },
+  {
+   "note": "the Table 36 box closes",
+   "from": "  - [ ] Table 36: Saving Throws by Caster Level or\n    Hit Dice (p. 143) - the target-save modifier\n    ladder",
+   "to": "  - [x] Table 36: Saving Throws by Caster Level or\n    Hit Dice (p. 143) - the target-save modifier\n    ladder\n    ladder - R608: the dew T36 grid - 28 rows x 3 columns in\n    four group bands (priest 7, rogue 6, warrior 10, wizard 5)\n    plus the four defender-minus-caster row-band chains; the\n    grid is for magical dueling, the non-spell attacks use the\n    standard tables"
+  },
+  {
+   "note": "the Table 37 box closes",
+   "from": "  - [ ] Table 37: Device Casting Levels (p. 144) -\n    the item caster-level defaults",
+   "to": "  - [x] Table 37: Device Casting Levels (p. 144) -\n    the item caster-level defaults\n    the item caster-level defaults - R608: the dew device-level\n    pins - rod 12, staff 8, wand 6, other magical item 12,\n    artifact 20; the wielder's level is irrelevant, the device\n    type is the attacker"
+  },
+  {
+   "note": "the Table 38 box closes",
+   "from": "  - [ ] Table 38: Saving Throw Penalties by Caster\n    Level or Hit Dice (p. 144) - the direct-attack\n    penalty ladder",
+   "to": "  - [x] Table 38: Saving Throw Penalties by Caster\n    Level or Hit Dice (p. 144) - the direct-attack\n    penalty ladder\n    penalty ladder - R608: the dew T38 penalty chain - 0 at\n    caster level 1-12, minus 1 at 13-15, down to minus 6 at\n    28-30; using Table 38 excludes Table 36 (the PHB Table 60\n    governs instead)"
+  },
+  {
+   "note": "the Table 39 box closes",
+   "from": "  - [ ] Table 39: THACO Limits (p. 144) - the\n    automatic-miss and minimum-score rules",
+   "to": "  - [x] Table 39: THACO Limits (p. 144) - the\n    automatic-miss and minimum-score rules\n    automatic-miss and minimum-score rules - R608: the dew\n    THACO-limit pins - priest 8, rogue 11, warrior 1, wizard\n    14; the attack roll of 1 is always a miss, monsters have\n    no THACO limits"
+  }
+ ],
+ "gap_census": {
+  "closed": 84,
+  "open": 12
+ },
+ "caller_files": [],
+ "inline_count": 51,
+ "audit_comment": "DMO Chapter 7 round one of five (printed pp. 142-144): the saving-throw doctrine - the group improvement limits (19, 21, 17, 21), the automatic failure on 3 or less with the deity ladders (2, 1, never), the adjusted-roll reading, the Wulf worked example (5 - 3 = 2); the Table 36 saves-by-caster-level grid with its four defender-minus-caster row-band chains; the Table 37 device casting levels; the Table 38 caster-level penalty ladder with its either-or rule; the Table 39 THACO limits with the automatic miss on 1."
+}
