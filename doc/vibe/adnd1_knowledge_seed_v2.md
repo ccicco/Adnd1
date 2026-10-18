@@ -11691,6 +11691,42 @@ when both halves land.
   free), audit "R616 OA ability prose
   audit", include after rules/
   oaabilities.h.
+- R616 LANDED 2026-10-18: commit
+  5aee1367e139fdec336bf1181241ce1a
+  150ad8e2 (census 538 -> 539,
+  pushed 79bfb8d..5aee136), THE
+  ABILITY PROSE, capture pp. 8-15
+  - the six Chapter 1 prose
+  sub-items flip and CHAPTER 1
+  CLOSES COMPLETE: rules/
+  oaabilityprose.h, prefix dgc,
+  50 inlines (22 consts, 28 bools)
+  - the Con revival ledger, the
+  wu jen Int spell gate, the full
+  Comeliness system (nine reaction
+  bands, the smitten doctrine, the
+  magic caps). ADJUDICATION: the
+  printed 26-27 band hole pinned
+  as printed. TWO RITUAL CATCHES,
+  both engine-gated: a Python
+  ternary tripped the R426 gate;
+  a wrong contiguity check FAILED
+  THE AUDIT MIRROR; the abort
+  left a mixed tree - cleaned by
+  the R420 restore-and-rerun.
+  Battery 50 mutants, 0 missed;
+  full sha rverify GREEN. Gap
+  census 12/223 -> 18/217. Spec
+  27,310 bytes md5
+  56f3cb0f78562b8ba267516a633a218c
+  (canvas md5
+  f4a81b5243f4bf07936027ad3c5c615f
+  ). NEXT - R617: Chapter 2 opens -
+  the class combos prose, Tables 9,
+  10, 12 and 13, prefix dgd
+  (verify free), audit "R617 OA
+  class combos audit", include
+  after rules/oaabilityprose.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

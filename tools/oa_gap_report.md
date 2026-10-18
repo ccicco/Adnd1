@@ -204,14 +204,43 @@ description riding the same round.
 - [ ] **Chapter 2: Character Classes and Races**
   (capture pp. 15-60) - the ten classes and the
   oriental races
-  - [ ] Class and Race Combinations prose (capture
-    p. 16)
-  - [ ] Table 9: Character Class Limits (capture p. 16)
-  - [ ] Table 10: Racial Ability Score Limits
-    (capture p. 16)
-  - [ ] Table 12: Class Ability Score (capture p. 22)
-  - [ ] Table 13: Armor & Weapons Permitted by Class
-    (capture p. 22)
+  - [x] Class and Race Combinations prose (capture
+    p. 16) -
+    R617: the dgd combos riders - the U and number and
+    No conventions, the wish-one-above-cap
+    rule, the alignment applying to all races
+  - [x] Table 9: Character Class Limits (capture p. 16) -
+    R617: the dgd T9 grid - the ten classes by the four
+    race level-cap columns (U unlimited, the
+    monk human and spirit folk 17 caps, the
+    korobokuru samurai 6, the spirit folk
+    samurai 12) with the alignment tier
+    column
+  - [x] Table 10: Racial Ability Score Limits
+    (capture p. 16) -
+    R617: the dgd T10 grid - the min/max pairs for the
+    korobokuru (Str 8/19 Con 12/19), the
+    hengeyokai and the spirit folk (Con 6/14,
+    Cha 14/18), with the exceptional-Strength
+    footnote for the five warrior classes
+  - [x] Table 12: Class Ability Score (capture p. 22) -
+    R617: the dgd T12 grid - the ten classes by the six
+    ability minimums with the 10-percent bonus
+    minimums as their own columns (the bushi
+    Str 9:14, the wu jen Int 13:15, the
+    sohei Str 13:15), the barbarian Wis 16
+    MAXIMUM as its own pin
+  - [x] Table 13: Armor & Weapons Permitted by Class
+    (capture p. 22) -
+    R617: the dgd T13 grid - the armor tiers (any, the
+    leather class, none), the weapon modes
+    (any, any-but, the named lists) with the
+    list counts (shukenja 16, sohei 7
+    exclusions, wu jen 20, monk 16), the oil and
+    poison tiers, and the three riders (the
+    samurai-kensai ninja-weapon honor loss,
+    the samurai siege-oil exception, the ninja
+    proficiency requirement)
   - [ ] Korobokuru (capture pp. 17-18) - the oriental
     dwarf: the ability-score modifications applied
     before class eligibility, the lair and lifestyle
