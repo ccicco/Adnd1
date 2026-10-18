@@ -153,38 +153,80 @@ tables are data and close on table pins.
     - R602: the del quirk pins (the infusion force, the
     conjuration bar, the named-spell bar, the
     dominant-race retaliation, the distance-immune items)
-  - [ ] Altering Monsters the Easy Way (pp. 57-58) -
+  - [x] Altering Monsters the Easy Way (pp. 57-58) -
     the +/-1/2/3 modifier doctrine (hit dice, THACO, the
     one-hit-point floor)
-  - [ ] Table 6: Monster Strength Scores (p. 58)
-  - [ ] Table 7: Monster Dexterity Scores (p. 58)
-  - [ ] Table 8: Monster Constitution Scores (p. 58)
-  - [ ] Table 9: Monster Intelligence Scores (p. 59)
-  - [ ] Table 10: Monster Wisdom Scores (p. 59)
-  - [ ] Table 11: Monster Charisma Scores (p. 61)
-  - [ ] Table 12: Legendary Monsters (p. 61) - the
-    ten-rank legendary ladder (Lesser Scion through
-    Superior Powers)
-  - [ ] Table 13: Breath Weapons (pp. 62-63) - the
-    rank-indexed damage and save-modifier columns
-  - [ ] Table 14: Disease (p. 63) - the legendary
-    disease effects
-  - [ ] Table 15: Fear Effects (p. 63) - the fear
-    attack ladder
-  - [ ] Table 16: Crush Attacks (p. 63) - the trample
-    and crush doctrine
-  - [ ] Table 17: Wounding Effects (pp. 64-65) - the
-    continuing-damage ladder
-  - [ ] Table 18: Enhanced Melee Damage (p. 65) - the
-    extra-damage doctrine
-  - [ ] Table 19: Enhanced Movement (p. 66) - the
-    movement-mode ladder
-  - [ ] Table 20: Gaze Weapons (p. 66) - the gaze
-    attack rules
-  - [ ] Table 21: Magic Resistance (p. 66) - the
-    legendary MR ladder
-  - [ ] Table 22: Regeneration Rates (p. 66) - the
-    regeneration ladder
+    - R603: the den modifier pins (the +/-3 cap, the
+      hit-point and damage floors, the save ceiling 20
+      and floor 3, the XP floor 1-1, the unchanged
+      characteristics, the size-shift option; the scrag
+      colony example rides the checks)
+  - [x] Table 6: Monster Strength Scores (p. 58) - R603:
+    the den ability grid (13 roll bands x six size
+    columns, the 9-12 band as one row; the exceptional
+    strengths encoded 1801 through 1800)
+  - [x] Table 7: Monster Dexterity Scores (p. 58) - R603:
+    the den ability grid (13 roll bands x six size
+    columns, the tiny column at score+10 stepping two a
+    column)
+  - [x] Table 8: Monster Constitution Scores (p. 58) -
+    R603: the den ability grid (13 roll bands x six size
+    columns, the tiny column at the score stepping two a
+    column)
+  - [x] Table 9: Monster Intelligence Scores (p. 59) -
+    R603: the den ability grid (13 roll bands x ten
+    columns from Animal through Godlike)
+  - [x] Table 10: Monster Wisdom Scores (p. 59) - R603:
+    the den ability grid (13 roll bands x ten columns
+    from Animal through Godlike)
+  - [x] Table 11: Monster Charisma Scores (p. 61) -
+    R603: the den ability grid (13 roll bands x ten
+    columns, the reaction and loyalty limits riding the
+    doctrine)
+  - [x] Table 12: Legendary Monsters (p. 61) - the
+    legendary ladder - R603: the den rank grid (the AC
+    -4 through -12, the HD +5 through +25, the area
+    multiplier 1.5x through 3.5x; the rank ability rolls
+    and power counts pinned as consts)
+  - [x] Table 13: Breath Weapons (pp. 62-63) - the
+    rank-indexed damage and save-modifier columns -
+    R603: the den breath grid (the 26-35 through 66-75
+    averages, the save mods, the cloud/cone/line sizes,
+    the half-point dice averages)
+  - [x] Table 14: Disease (p. 63) - the legendary
+    disease effects - R603: the den disease grid (the
+    onset and fatality dice with unit codes, the
+    delirium and fever and chills pins)
+  - [x] Table 15: Fear Effects (p. 63) - the fear
+    attack ladder - R603: the den fear grid (the 30-50
+    foot radius, the save ladder, the 4+1 HD and
+    4th-level panic bars)
+  - [x] Table 16: Crush Attacks (p. 63) - the trample
+    and crush doctrine - R603: the den crush grid (the
+    10-30 foot radius, 3d8 through 7d8, the size-based
+    save penalties)
+  - [x] Table 17: Wounding Effects (pp. 64-65) - the
+    continuing-damage ladder - R603: the den wound grid
+    (the 0 through 2d6 bleeding, the no-regen doctrine)
+  - [x] Table 18: Enhanced Melee Damage (p. 65) - the
+    extra-damage doctrine - R603: the den melee grid
+    (the per-die bonus, the great-elder and paragon
+    extra dice, the size percentages)
+  - [x] Table 19: Enhanced Movement (p. 66) - the
+    movement-mode ladder - R603: the den move grid (the
+    20-60 percent ladder, the displacer beast example)
+  - [x] Table 20: Gaze Weapons (p. 66) - the gaze
+    attack rules - R603: the den gaze grid (the -2
+    through -6 saves, the existing-weapon next-rank
+    rule with the paragon -8)
+  - [x] Table 21: Magic Resistance (p. 66) - the
+    legendary MR ladder - R603: the den resist grid
+    (the 60-100 percent ladder, the conditional-
+    resistance doctrine)
+  - [x] Table 22: Regeneration Rates (p. 66) - the
+    regeneration ladder - R603: the den regen grid (the
+    1-4 per round, the lesser-scion three-round delay,
+    the fire and acid bar)
 - [ ] **Chapter 3: Spells and Magical Items** (pp.
   68-85) - the high-level magic-management chapter
   - [ ] Daily Recovery of Spells (pp. 68-69) - the

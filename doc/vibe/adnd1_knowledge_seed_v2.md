@@ -10983,6 +10983,51 @@ when both halves land.
   pp. 46-53 per the report); the
   monster-doctrine boxes follow;
   prefix del free.
+- R602 LANDED 2026-10-18: commit
+  394b9aab41f872433e10a91cfebe5cb520
+  613286 (census 524 -> 525,
+  pushed d9cae88..394b9aa), THE
+  WORLD RATINGS, printed pp. 46-54,
+  the table half of DMO Chapter 2:
+  the Table 2 alternate-chronology
+  grid (17 rows, ratings C2-C20, the
+  10-12 band one row; base-campaign
+  time magnitude + unit code 1-sec
+  2-min 3-hr 4-day 5-wk 6-mo 7-yr +
+  rating), the Table 3 magic-rating
+  grid (17 rows, ratings M2-M20;
+  rating, max spell level, cast/PSP
+  multiplier, schools-modified range;
+  dead-magic M2 pins 0s), the Table 4
+  technological ladder pinned as
+  eight era-threshold consts per the
+  R595 precedent (steel 10, firearm
+  14, steam 15, combustion 16,
+  nuclear 17, fusion 18, robot 19,
+  FTL 20), and the Table 5
+  environmental-conditions grid (3
+  rows x 5 cols: roll count, die
+  size, severe/hostile/deadly period
+  codes 1-day 2-hour 3-round; the
+  poison save row). Header
+  rules/dmoworlds.h, prefix del, 63
+  inlines (38 consts, 12 bools, 13
+  table columns). FIVE flips: gap
+  census 19/77 - the rating tables
+  and the quirks boxes closed. Spec
+  tools/spec_r602.json 39232 bytes
+  md5 7595cd8f1d5fa282db16954bf0086
+  f85 matched exactly first try
+  (after two pre-gate build fixes:
+  col_comments/sentinel added to the
+  three grids, inline count 50 ->
+  63). THIRTY-SIX straight
+  first-tries (R566-R602). NEXT -
+  R603: the monster-doctrine boxes -
+  the +/-1/2/3 modifier doctrine
+  (printed pp. 57-58) and Tables
+  6-22 (printed pp. 58-66); prefix
+  den free.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
