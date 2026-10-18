@@ -416,10 +416,30 @@ description riding the same round.
     tightrope, the pole vault (half-foot cells),
     the fall ladder, the escape and the backstab
     multipliers x2 through x5
-  - [ ] Samurai (capture pp. 39-42) - THE oriental
+  - [x] Samurai (capture pp. 39-42) - THE oriental
     knight: the birth requirement, the twin swords,
-    the fear and honor mechanics
-  - [ ] Table 25: Samurai (capture p. 39)
+    the fear and honor mechanics -
+    R623: the dgj samurai pins - the Str/Wis/Con 13
+    and Int 14 minima with no prime requisite, the
+    fighter tables, the d10 doctrine with the five
+    slots and the katana specialization (the only
+    two-weapon class, katana and daikyu), the caste
+    birth doctrine (the +10 Table 38 bonus, the
+    korobokuru sponsor rule), the proficiency
+    deadlines (horsemanship, bow, the three arts),
+    the ki power (Str 18/00, one round, level per
+    day), the damage ladder, the 1-in-6 surprise,
+    the fear immunity, the appearance fear, the
+    jito and shugo stewardships with the follower
+    doctrines and the ninja infiltrators, the
+    great kiai, the bushido precepts, the ronin
+    with the 2-times xp cost
+  - [x] Table 25: Samurai (capture p. 39) -
+    R623: the dgj T25 grid - twelve rows of xp
+    bounds, accumulated d10 dice with the 9-plus-N
+    cells (2 hp per level beyond 10th) and the
+    damage bonus ladder, plus the 300,000-xp
+    beyond-12th note
   - [ ] Shukenja (capture pp. 42-45) - the holy man:
     the spell failure by Wisdom, the ethos spells
   - [ ] Table 26: Shukenja (capture p. 42)

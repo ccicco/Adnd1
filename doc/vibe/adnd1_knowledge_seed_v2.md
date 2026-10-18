@@ -11929,6 +11929,60 @@ when both halves land.
   dgi (verify free), audit "R622 OA
   ninja audit", include after rules/
   oamonk.h.
+- R622 LANDED 2026-10-18: commit
+  7efe429eae3143fb3b5e6203f56172fc69089e58
+  (census 544 -> 545, pushed
+  9ae052e..7efe429), THE NINJA, capture
+  pp. 35-39: rules/oaninja.h, prefix
+  dgi (verified free), 100 inlines (44
+  consts, 37 bools, 19 table columns):
+  the human-only split class (Dex 14,
+  Cha 14, Int 15 minima, no prime
+  requisite), the split xp with the
+  DM-skew rider, the 1-2 hp per level
+  with the halved round-up other-class
+  die and the printed 2-to-7
+  bushi/ninja example, the thief
+  saves, the honor-free special
+  weapons with the cross-slot honor
+  loss, the eleven capabilities (the
+  nightingale floors, the tightrope
+  wind ladder with the -5 fight
+  penalty, the pole vault, the
+  once-per-level locks), the three ki
+  powers (breath at 1st, water walk at
+  5th, the wall pass at 12th), the
+  family rule, the mission and honor
+  mechanics, the nukenin with the
+  2-times xp cost, T22 12x2, T23 10x5,
+  T24 20x11 with the pole vault in
+  half feet. TWO CELLS SETTLED
+  AGAINST THE 2018 PRINT BEFORE
+  PINNING: the T22 level-2 bound pins
+  as 8,000 (the 2018 8,001 cell
+  contradicts its own next-row floor);
+  the T23 Dex-11 pockets cell pins as
+  -5 (the 2018 05 reading lost the
+  minus against the ladder). LESSON:
+  the settling source settles only
+  what is CONSISTENT - a settling
+  reading that contradicts its own
+  table ladder does not overturn the
+  capture cell. OCR normalization: 15
+  points reads as 1-5 points;
+  infraction reads as infravision;
+  1096 reads as 10 percent. Battery
+  376 mutants, 0 missed; full sha
+  rverify GREEN. Gap census 39/196 ->
+  43/192. Spec 44,392 bytes md5
+  b9debd1ae731649f66654ae3bc6c6595
+  (canvas md5
+  6ffd78033f585bdd7d2ae82652250540).
+  NEXT - R623: the Samurai, capture
+  pp. 39-42, Table 25, prefix dgj
+  (verify free), audit "R623 OA
+  samurai audit", include after rules/
+  oaninja.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
