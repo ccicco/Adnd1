@@ -1,0 +1,4177 @@
+{
+ "round": 606,
+ "prefix": "det",
+ "header_file": "rules/dmoduels.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 528,
+ "title": "Magical Duels",
+ "audit_label": "R606 DMO magical-duels audit",
+ "audit_comment": "CHAPTER 5 of the DMO (printed pp. 96-117), the dueling system closing in one round: the arena construction protocol with the consent doctrine, the balance-of-power cap, the corridor geometry (ten spaces plus the highest contributed levels, capped at thirty), the five-type doctrine with PR = level + nine, the Table 25 interactions grid, the Table 26 movement bands, the 1d20 spell combat with the lock rules, the character power scores and counter-spell doctrine, the item rules (the 6d6/8d6/9d6 leech caps, the protection power-score read at 14), the specialist gates, the friendly, death and service stakes ladders with the plane-blow and disintegration chances, the mediator duties, the special dueling characteristics (the five groups and the quantified individual abilities), and the Calvin-and-Delsenora worked duel.",
+ "include_comment": "the DMO magical-duels pins",
+ "include_after": "#include \"rules/dmoitems.h\"  // R605: the DMO item-creation pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R605 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R605 LANDED 2026-10-18: commit",
+  "  c3111fd0cccb7c812e10996e3eaa45c",
+  "  0807b0452 (census 527 -> 528,",
+  "  pushed 35536f1..c3111fd),",
+  "  CREATING MAGICAL ITEMS, printed",
+  "  pp. 86-95, DMO Chapter 4 closed",
+  "  in one round - TEN boxes flip",
+  "  (nine children + parent; gap",
+  "  census now 52 closed / 44 open)",
+  "  - the item-creation economy:",
+  "  rules/dmoitems.h, prefix der,",
+  "  179 inlines (117 consts, 47",
+  "  bools, 15 table columns), 3",
+  "  grids (T34 the Table 23",
+  "  creation grid 28x6 with the",
+  "  material, process, footnote,",
+  "  cost and time codes; T35 the",
+  "  Table 24 XP grid 27x3 with",
+  "  the per-plus, value-sum,",
+  "  20-40-percent-share and",
+  "  per-spell-level forms; T36 the",
+  "  font ladder 9x6 with the",
+  "  dice-times-multiplier basin",
+  "  costs), the holy water",
+  "  ceremony pins (the five-spell",
+  "  chain with the reversed",
+  "  unholy forms, the eight-hour",
+  "  meditations, the -4 combat",
+  "  window, the Delsenora recycle",
+  "  read at 30 percent of 21,000",
+  "  gp), the level thresholds",
+  "  (wizard 9-and-11, priest",
+  "  7-9-11, specialist +5), the",
+  "  70/80/60 per-type success",
+  "  bases, the 1d3+1-week potion",
+  "  and 1d6+1-week ring research",
+  "  windows, the ink ladder, the",
+  "  drained-item death rule, the",
+  "  24-hour recharge window with",
+  "  the -1 save-or-dust risk, the",
+  "  96-00 failure with the cursed",
+  "  and creator curses, the",
+  "  Rozmare reads at 94 and 65",
+  "  percent; the potion-rule",
+  "  divergence (prints +1 per two",
+  "  levels, the example works +26",
+  "  at 13th) pinned with the",
+  "  banner note. Spec",
+  "  tools/spec_r605.json 78591",
+  "  bytes md5",
+  "  ccd5a18c16bec52582713b0dab9cc5",
+  "  eb. THIRTY-NINE straight first-",
+  "  tries (R566-R605). NEXT - R606:",
+  "  Chapter 5 (Magical Duels, pp.",
+  "  96-117) - the arena construction,",
+  "  the balance of power, Table 25",
+  "  through 27, the spoils ladders;",
+  "  prefix des reserved."
+ ],
+ "banner": {
+  "title": "MAGICAL DUELS - DMO Chapter 5 closes: the arena protocol (the one-turn circling chant, the restart on disturbance, the mediator's protective spell, the contributed memorized spells lost as cast, the secret recording, the compulsion and threat consent doctrine), the balance-of-power cap at the weaker level, the corridor geometry (a 12-to-30-space corridor, ten base spaces plus each side's highest contribution, thirty at most between, thirty-two at largest), the four-step round with the advantage doctrine (the highest single spell, the 1d10 tie, the shift on destruction), the five-type doctrine with PR = level + nine, the Table 25 interactions grid and Table 26 movement bands, the 1d20-vs-PR combat with the lock rules and the Rary-Serten reads, the character power scores of Table 27 with the counter-spell doctrine and the 1d6-or-1d4-push personal combat, the item rules (the scroll of protection at PR 15 MV 1, the 6d6, 8d6 and 9d6 item leech caps, the 14 protection read, the absolute arena blockers), the specialist gates with the opposition-school +1, the friendly, death and service stakes ladders (the death bands running 2d6 to 10d6 damage with the 20 and 40 percent plane blows and the 50 percent disintegration), the mediator duties, the special dueling characteristics (the mental, summoning, illusion, reversible and teleportation groups, the demishadow and shadow magic reads, the earthquake counters, the wish reads), and the Calvin-and-Delsenora worked duel at ten spaces.",
+  "provenance": "verified against printed pp. 96-117 of the uploaded DMO session capture (part 2, printed page N at OCR page N+90); the arena protocol from pp. 96-97, the corridor and combat rules from pp. 97-101, Tables 25 and 26 from p. 99, Table 27 from p. 101, the character rules from pp. 103-104, the item and specialist rules from pp. 104-105, the stakes ladders from pp. 105-107, the special characteristics from pp. 108-116, the worked duel from pp. 116-117. The death ladder prints an 18-22 band after the 13-18 band, overlapping at 18; both bands are pinned verbatim in row order with the note here.",
+  "sentinel": "the gap census after this round: 69 closed, 27 open - Chapter 5 is DONE in one round, seventeen boxes flip (sixteen children and the parent); the DMO arc continues with Chapter 6 (True Dweomers, pp. 118-141)."
+ },
+ "consts": [
+  {
+   "name": "detArenaChantTurns",
+   "value": 1,
+   "comment": "the arena protocol: the opponents stand at arm's length and circle each other chanting and gesturing for a full turn (printed p. 96)."
+  },
+  {
+   "name": "detBalanceExampleWizardLevel",
+   "value": 7,
+   "comment": "the balance example: Calvin the 7th-level wizard dueling Delsenora the 12th-level priest (printed p. 97)."
+  },
+  {
+   "name": "detBalanceExamplePriestLevel",
+   "value": 12,
+   "comment": "the balance example: the 12th-level priest (printed p. 97)."
+  },
+  {
+   "name": "detBalanceExampleCapLevel",
+   "value": 7,
+   "comment": "the balance example: neither could contribute a spell higher than 7th level or spells totaling seven levels (printed p. 97)."
+  },
+  {
+   "name": "detArenaCorridorMinSpaces",
+   "value": 12,
+   "comment": "the corridor geometry: the arena is a rectangle 12 to 30 spaces long and one space wide (printed p. 97)."
+  },
+  {
+   "name": "detArenaCorridorMaxSpaces",
+   "value": 30,
+   "comment": "the corridor geometry: never more than 30 spaces between the opponents (printed p. 97)."
+  },
+  {
+   "name": "detArenaBaseSpaces",
+   "value": 10,
+   "comment": "the distance base: if neither opponent contributed a spell there are 10 intervening spaces (printed p. 97)."
+  },
+  {
+   "name": "detArenaMaxIntervening",
+   "value": 30,
+   "comment": "the distance cap: there are never more than 30 spaces between the opponents (printed p. 97)."
+  },
+  {
+   "name": "detArenaLargestTotal",
+   "value": 32,
+   "comment": "the largest arena: 32 spaces total, each combatant occupying one end space, 30 between (printed p. 97)."
+  },
+  {
+   "name": "detArenaExampleSpaces",
+   "value": 18,
+   "comment": "the distance example: a 5th-level plus a 3rd-level contribution makes 18 spaces (printed p. 97)."
+  },
+  {
+   "name": "detArenaExampleSpellA",
+   "value": 5,
+   "comment": "the distance example: the first opponent's highest contributed spell, level 5 (printed p. 97)."
+  },
+  {
+   "name": "detArenaExampleSpellB",
+   "value": 3,
+   "comment": "the distance example: the second opponent's highest, level 3 (printed p. 97)."
+  },
+  {
+   "name": "detRoundSteps",
+   "value": 4,
+   "comment": "the round sequence: the advantaged spells move, the disadvantaged spells move, both cast, repeat (printed p. 98)."
+  },
+  {
+   "name": "detTieAdvantageDie",
+   "value": 10,
+   "comment": "the advantage tie: with no contributions or an equal highest, each opponent rolls 1d10, high roll wins the advantage (printed p. 97)."
+  },
+  {
+   "name": "detSpellTypes",
+   "value": 5,
+   "comment": "the dueling types: attack, defense, attack/defense, leech and missile (printed p. 99)."
+  },
+  {
+   "name": "detPRBase",
+   "value": 9,
+   "comment": "the power rank: a spell's PR is its level plus nine (printed p. 100)."
+  },
+  {
+   "name": "detFireballPR",
+   "value": 12,
+   "comment": "the PR example: a fireball, 3rd level, PR 12 (printed p. 100)."
+  },
+  {
+   "name": "detOnlyOneDefensiveStay",
+   "value": 1,
+   "comment": "the defensive exception: only one such spell can remain with the caster at a time (printed p. 100)."
+  },
+  {
+   "name": "detLeechDmgDie",
+   "value": 6,
+   "comment": "the leech strike: a leech reaching the opponent's square inflicts 1d6 points of damage per spell level (printed p. 99)."
+  },
+  {
+   "name": "detLeechDmgPerLevel",
+   "value": 1,
+   "comment": "the leech strike: one die per spell level (printed p. 99)."
+  },
+  {
+   "name": "detADDmgDie",
+   "value": 6,
+   "comment": "the AD strike: an attack/defense spell reaching the opponent usually inflicts 1d6 points of damage per spell level (printed p. 100)."
+  },
+  {
+   "name": "detADDmgPerLevel",
+   "value": 1,
+   "comment": "the AD strike: one die per spell level (printed p. 100)."
+  },
+  {
+   "name": "detMvTouch",
+   "value": 1,
+   "comment": "the movement ladder: touch, zero-range and sub-yard spells move one space (printed p. 99)."
+  },
+  {
+   "name": "detMvShort",
+   "value": 2,
+   "comment": "the movement ladder: 1-20 yard ranges move two spaces (printed p. 99)."
+  },
+  {
+   "name": "detMvMedium",
+   "value": 3,
+   "comment": "the movement ladder: 21-50 yard ranges move three spaces (printed p. 99)."
+  },
+  {
+   "name": "detMvLong",
+   "value": 4,
+   "comment": "the movement ladder: 51-100 yard ranges move four spaces (printed p. 99)."
+  },
+  {
+   "name": "detMvVeryLong",
+   "value": 5,
+   "comment": "the movement ladder: 101-plus yard ranges, instantaneous movement and huge areas move five spaces (printed p. 99)."
+  },
+  {
+   "name": "detFireball5thMv",
+   "value": 4,
+   "comment": "the level-varied range: a 5th-level wizard's fireball at 60 yards moves four (printed p. 99)."
+  },
+  {
+   "name": "detFireball15thMv",
+   "value": 5,
+   "comment": "the level-varied range: a 15th-level wizard's fireball at 160 yards moves five (printed p. 99)."
+  },
+  {
+   "name": "detCombatDie",
+   "value": 20,
+   "comment": "the spell combat roll: each player rolls 1d20 against the spell's power rank (printed p. 100)."
+  },
+  {
+   "name": "detRaryCharmPR",
+   "value": 10,
+   "comment": "the Rary-Serten read: charm person, an attack spell with PR 10 (printed p. 101)."
+  },
+  {
+   "name": "detSertenCurePR",
+   "value": 10,
+   "comment": "the Rary-Serten read: cure light wounds, a defense spell with PR 10 (printed p. 101)."
+  },
+  {
+   "name": "detRaryRoll",
+   "value": 12,
+   "comment": "the Rary-Serten read: Rary rolls 12, Serten 1 - the charm fails, the cure succeeds (printed p. 101)."
+  },
+  {
+   "name": "detSertenRoll",
+   "value": 1,
+   "comment": "the Rary-Serten read: Serten's 1 (printed p. 101)."
+  },
+  {
+   "name": "detRaryAltRoll",
+   "value": 9,
+   "comment": "the Rary-Serten alternate: with a 9 the charm would destroy the cure, succeeding with a higher roll (printed p. 101)."
+  },
+  {
+   "name": "detLockExampleRaryRoll",
+   "value": 20,
+   "comment": "the lock read: Serten 20 against Rary 12, or both rolling 10 - a lock (printed p. 101)."
+  },
+  {
+   "name": "detCharMoveOneSpace",
+   "value": 1,
+   "comment": "the duelist move: a character can move one space each round instead of casting (printed p. 103)."
+  },
+  {
+   "name": "detCharPRBase",
+   "value": 9,
+   "comment": "the character power rank: 9 plus the bonus for high Intelligence or Wisdom (printed p. 103)."
+  },
+  {
+   "name": "detOneCounterPerIncoming",
+   "value": 1,
+   "comment": "the counter cap: only a single counter spell against each incoming spell (printed p. 103)."
+  },
+  {
+   "name": "detCharVsCharDmgDie",
+   "value": 6,
+   "comment": "the personal combat prize: the winner inflicts 1d6 points of damage or (printed p. 104)."
+  },
+  {
+   "name": "detCharVsCharPushDie",
+   "value": 4,
+   "comment": "the personal combat prize: sends the loser 1d4 spaces in either direction, never out of the arena (printed p. 104)."
+  },
+  {
+   "name": "detScrollProtectionPR",
+   "value": 15,
+   "comment": "the scroll of protection: creates a defensive effect with power rank 15 (printed p. 104)."
+  },
+  {
+   "name": "detScrollProtectionMv",
+   "value": 1,
+   "comment": "the scroll of protection: movement rate 1 (printed p. 104)."
+  },
+  {
+   "name": "detItemClassPrepTurns",
+   "value": 1,
+   "comment": "the item cost: an extra turn of preparation for each class of item to be allowed (printed p. 104)."
+  },
+  {
+   "name": "detSpecificItemPrepTurns",
+   "value": 1,
+   "comment": "the item cost: one extra turn to allow only one particular item (printed p. 104)."
+  },
+  {
+   "name": "detItemLeechMaxDice",
+   "value": 6,
+   "comment": "the item leech: a spell-like item effect in doubt creates a leech inflicting a maximum of 6d6 points of damage (printed p. 104)."
+  },
+  {
+   "name": "detStaffLeechMaxDice",
+   "value": 8,
+   "comment": "the item leech: a staff leech drains a maximum of 8d6 dice of damage (printed p. 104)."
+  },
+  {
+   "name": "detOtherItemLeechMaxDice",
+   "value": 9,
+   "comment": "the item leech: other items inflict a maximum of 9d6 points of damage (printed p. 104)."
+  },
+  {
+   "name": "detExamplePowerScore",
+   "value": 11,
+   "comment": "the protection read: a priest with power score 11 (printed p. 104)."
+  },
+  {
+   "name": "detExampleArmorBonus",
+   "value": 2,
+   "comment": "the protection read: plate armor +2 (printed p. 104)."
+  },
+  {
+   "name": "detExampleRingBonus",
+   "value": 1,
+   "comment": "the protection read: a ring of protection +1 (printed p. 104)."
+  },
+  {
+   "name": "detExampleAdjustedPS",
+   "value": 14,
+   "comment": "the protection read: 11 + 2 + 1 is an adjusted power score of 14 against spells (printed p. 104)."
+  },
+  {
+   "name": "detPreexistingPrepTurns",
+   "value": 1,
+   "comment": "the preexisting cost: an extra turn of preparation for each preexisting effect to be incorporated (printed p. 104)."
+  },
+  {
+   "name": "detSpecialistPrepTurns",
+   "value": 1,
+   "comment": "the specialist read: the extra preparation turn (printed p. 105)."
+  },
+  {
+   "name": "detOppositionSchoolPRBonus",
+   "value": 1,
+   "comment": "the specialist flaw: spells from the opposition school gain an extra power rank against the specialist (printed p. 105)."
+  },
+  {
+   "name": "detDispelBasePR",
+   "value": 12,
+   "comment": "the specialist example: dispel magic normally PR 12 (printed p. 105)."
+  },
+  {
+   "name": "detDispelVsIllusionistPR",
+   "value": 13,
+   "comment": "the specialist example: PR 13 against illusionists, Abjuration opposed to Illusion (printed p. 105)."
+  },
+  {
+   "name": "detUnseenServantPR",
+   "value": 10,
+   "comment": "the Johan read: unseen servant normally PR 10 (printed p. 105)."
+  },
+  {
+   "name": "detVariedUnseenServantPR",
+   "value": 5,
+   "comment": "the Johan read: a level variation of -5 drops it to PR 5 (printed p. 105)."
+  },
+  {
+   "name": "detVariedFireballPR",
+   "value": 7,
+   "comment": "the Johan read: a 13th-level wild mage's fireball at -5 variation, PR 7 (printed p. 105)."
+  },
+  {
+   "name": "detVariedFireballDmgDice",
+   "value": 8,
+   "comment": "the Johan read: the varied fireball inflicts only 8d6 points of damage (printed p. 105)."
+  },
+  {
+   "name": "detVariedFireballMv",
+   "value": 4,
+   "comment": "the Johan read: the varied fireball moves four, down from five (printed p. 105)."
+  },
+  {
+   "name": "detExtraCondPrepTurns",
+   "value": 1,
+   "comment": "the extra conditions: an extra turn of preparation for each extra end condition (printed p. 105)."
+  },
+  {
+   "name": "detUnequalCondPrepTurns",
+   "value": 2,
+   "comment": "the extra conditions: two extra turns if the condition does not apply equally to both (printed p. 105)."
+  },
+  {
+   "name": "detExcessAbilityLoss",
+   "value": 1,
+   "comment": "the overdraw: one point of Intelligence or Wisdom lost for each excess spell level (printed p. 106)."
+  },
+  {
+   "name": "detTempDmgRegenPerRound",
+   "value": 1,
+   "comment": "the temporary damage: it returns at one hit point per round (printed pp. 106-107)."
+  },
+  {
+   "name": "detTempDeathAtMinus",
+   "value": 10,
+   "comment": "the temporary damage: at -10 or less the character dies; 0 to -9 is unconscious until hit points rise to 1 (printed p. 107)."
+  },
+  {
+   "name": "detUnconsciousTurnsDice",
+   "value": 2,
+   "comment": "the knockout length: unconsciousness lasting 2d6 turns (printed pp. 106-107)."
+  },
+  {
+   "name": "detUnconsciousTurnsSize",
+   "value": 6,
+   "comment": "the knockout length: 2d6 turns (printed pp. 106-107)."
+  },
+  {
+   "name": "detPlaneBlowBand4",
+   "value": 20,
+   "comment": "the plane blow: a 20 percent chance the loser is blown to another plane on the 18-22 death ladder (printed p. 106)."
+  },
+  {
+   "name": "detPlaneBlowBand5",
+   "value": 40,
+   "comment": "the plane blow: 40 percent on the 23-plus death ladder (printed p. 106)."
+  },
+  {
+   "name": "detDisintegrateChance",
+   "value": 50,
+   "comment": "the death read: a 50 percent chance the body disintegrates into dust (printed p. 107)."
+  },
+  {
+   "name": "detSummoningDmgDie",
+   "value": 6,
+   "comment": "the summoning group: a victorious summoning inflicts 1d6 points of damage per spell level and remains to fight again (printed p. 108)."
+  },
+  {
+   "name": "detSummoningDmgPerLevel",
+   "value": 1,
+   "comment": "the summoning group: one die per spell level (printed p. 108)."
+  },
+  {
+   "name": "detIllusionDmgDie",
+   "value": 6,
+   "comment": "the illusion group: a winning illusion inflicts 1d6 points of damage per level of the illusion (printed p. 108)."
+  },
+  {
+   "name": "detIllusionDmgPerLevel",
+   "value": 1,
+   "comment": "the illusion group: one die per level (printed p. 108)."
+  },
+  {
+   "name": "detDemishadowFailDmgDice",
+   "value": 10,
+   "comment": "the demishadow magic read: a failed save inflicts 10d6, a counter or second save reduces it to 5d6; a made save gives 4d6, reducible to 2d6 (printed p. 110)."
+  },
+  {
+   "name": "detDemishadowCounterDmgDice",
+   "value": 5,
+   "comment": "the demishadow magic read: the counter-spell reduction, 5d6 (printed p. 110)."
+  },
+  {
+   "name": "detDemishadowSaveDmgDice",
+   "value": 4,
+   "comment": "the demishadow magic read: the made-save damage, 4d6 (printed p. 110)."
+  },
+  {
+   "name": "detDemishadowSaveCounterDmgDice",
+   "value": 2,
+   "comment": "the demishadow magic read: the made-save counter reduction, 2d6 (printed p. 110)."
+  },
+  {
+   "name": "detShadowFailDmgDice",
+   "value": 10,
+   "comment": "the shadow magic read: a failed save inflicts 10d6, a save or counter reduces it to 5d6; a made save allows a second save for 1d6, else 2d6 (printed p. 115)."
+  },
+  {
+   "name": "detShadowCounterDmgDice",
+   "value": 5,
+   "comment": "the shadow magic read: the counter reduction, 5d6 (printed p. 115)."
+  },
+  {
+   "name": "detShadowSecondSaveDmgDice",
+   "value": 1,
+   "comment": "the shadow magic read: the second-save reduction, 1d6 (printed p. 115)."
+  },
+  {
+   "name": "detShadowFailCounterDmgDice",
+   "value": 2,
+   "comment": "the shadow magic read: the failed-counter damage, 2d6 (printed p. 115)."
+  },
+  {
+   "name": "detDemishadowMonDmgDice",
+   "value": 5,
+   "comment": "the demishadow monsters read: 5d6 points with a successful attack, or (printed p. 110)."
+  },
+  {
+   "name": "detDemishadowMonSaveDmgDice",
+   "value": 2,
+   "comment": "the demishadow monsters read: 2d6 if the save succeeds (printed p. 110)."
+  },
+  {
+   "name": "detEnergyDrainLevels",
+   "value": 2,
+   "comment": "the energy drain read: a failed combat roll or counter costs two levels until the duel ends (printed p. 111)."
+  },
+  {
+   "name": "detEnervationDivisor",
+   "value": 4,
+   "comment": "the enervation read: one level lost for every four levels of the caster (printed p. 111)."
+  },
+  {
+   "name": "detEarthquakeDmgDice",
+   "value": 5,
+   "comment": "the earthquake read: save vs. death magic or die; a successful save still suffers 5d10 (printed p. 111)."
+  },
+  {
+   "name": "detEarthquakeDmgSize",
+   "value": 10,
+   "comment": "the earthquake read: 5d10 points of damage (printed p. 111)."
+  },
+  {
+   "name": "detEarthquakeCounterCount",
+   "value": 6,
+   "comment": "the earthquake read: the only effective counters - antimagic shell, disbelief, dispel magic, elemental aura, fly and levitate; character combat is ineffective (printed p. 111)."
+  },
+  {
+   "name": "detFireSeedsDmgDice",
+   "value": 8,
+   "comment": "the fire seeds read: a winning combat inflicts 8d6; a power-score victory still costs a save vs. 4d4 (printed p. 111)."
+  },
+  {
+   "name": "detFireSeedsSaveDice",
+   "value": 4,
+   "comment": "the fire seeds read: the 4d4 save-or-suffer (printed p. 111)."
+  },
+  {
+   "name": "detMagicalStoneDmgDice",
+   "value": 3,
+   "comment": "the magical stone read: a successful character combat roll inflicts 3d4 (printed p. 113)."
+  },
+  {
+   "name": "detMagicalStoneDmgSize",
+   "value": 4,
+   "comment": "the magical stone read: 3d4 points (printed p. 113)."
+  },
+  {
+   "name": "detMeteorsPerRound",
+   "value": 5,
+   "comment": "the minute meteors read: five missiles per round; extras follow next round or are forgone (printed p. 113)."
+  },
+  {
+   "name": "detMeteorDmgDie",
+   "value": 4,
+   "comment": "the minute meteors read: each group inflicts 1d4+1 per missile on a winning character combat (printed p. 113)."
+  },
+  {
+   "name": "detMeteorDmgBonus",
+   "value": 1,
+   "comment": "the minute meteors read: the +1 per missile (printed p. 113)."
+  },
+  {
+   "name": "detMomentBonus",
+   "value": 4,
+   "comment": "the moment read: character combat with a +4 bonus - a 12 from a PR-13 caster reads as 16 (printed p. 113)."
+  },
+  {
+   "name": "detFreezingSphereMissileDice",
+   "value": 6,
+   "comment": "the freezing sphere read: as a missile it conducts character combat for 6d6 (printed p. 113)."
+  },
+  {
+   "name": "detFreezingSpherePerLevelDie",
+   "value": 4,
+   "comment": "the freezing sphere read: as an attack it inflicts 1d4+2 per caster level, save for half (printed p. 113)."
+  },
+  {
+   "name": "detFreezingSpherePerLevelBonus",
+   "value": 2,
+   "comment": "the freezing sphere read: the +2 per level (printed p. 113)."
+  },
+  {
+   "name": "detFreezingSphereMaxDice",
+   "value": 10,
+   "comment": "the freezing sphere read: a maximum of 10d4+20 (printed p. 113)."
+  },
+  {
+   "name": "detRainbowFirstMissiles",
+   "value": 4,
+   "comment": "the rainbow read: the bow version creates four missiles on the cast round (printed p. 114)."
+  },
+  {
+   "name": "detRainbowExtraMissiles",
+   "value": 3,
+   "comment": "the rainbow read: three more on the second round or forgone (printed p. 114)."
+  },
+  {
+   "name": "detRainbowDmgDie",
+   "value": 6,
+   "comment": "the rainbow read: each group conducts character combat, 1d6+2 per missile (printed p. 114)."
+  },
+  {
+   "name": "detRainbowDmgBonus",
+   "value": 2,
+   "comment": "the rainbow read: the +2 per missile (printed p. 114)."
+  },
+  {
+   "name": "detHeatMetalDmgPerRound",
+   "value": 3,
+   "comment": "the heat metal read: the attack version inflicts three points of damage each round (printed p. 112)."
+  },
+  {
+   "name": "detHeatMetalMissileDmg",
+   "value": 1,
+   "comment": "the heat metal read: as a missile, one point of damage each round until defeated (printed p. 112)."
+  },
+  {
+   "name": "detHolyWordPSReduction",
+   "value": 2,
+   "comment": "the holy word read: affected characters and spells lose two power scores, except against the holy word itself (printed p. 112)."
+  },
+  {
+   "name": "detChantCastRounds",
+   "value": 2,
+   "comment": "the chant read: two rounds to cast, unusable as a counter, disruptable in the first round - an exception to the general rule (printed p. 109)."
+  },
+  {
+   "name": "detFirePurgeCastRounds",
+   "value": 10,
+   "comment": "the fire purge and insect plague read: a full turn, ten rounds to cast, disrupted in the first nine (printed pp. 111-112)."
+  },
+  {
+   "name": "detFirePurgeDisruptRounds",
+   "value": 9,
+   "comment": "the fire purge and insect plague read: the disruption window (printed pp. 111-112)."
+  },
+  {
+   "name": "detWishDuelDmgDice",
+   "value": 10,
+   "comment": "the wish and limited wish read: used as attack, AD, missile or leech they inflict 10d6, save vs. spells for half (printed pp. 112-113 and 116)."
+  },
+  {
+   "name": "detLimitedWishCounterMaxLevel",
+   "value": 6,
+   "comment": "the limited wish read: as a counter it automatically counters any spell of 6th level or lower, and serves as a counter to all others; it cannot be locked by spells of 6th or less (printed p. 113)."
+  },
+  {
+   "name": "detGlobeLockMaxLevel",
+   "value": 4,
+   "comment": "the globe of invulnerability read: cannot be locked by spells of 4th level or less; missiles and leeches of 4th or less must battle it (printed p. 112)."
+  },
+  {
+   "name": "detMinorGlobeLockMaxLevel",
+   "value": 3,
+   "comment": "the minor globe read: cannot be locked by spells of 3rd level or less; missiles and leeches of 3rd or lower must battle it (printed p. 113)."
+  },
+  {
+   "name": "detSpiritualHammerDmgDie",
+   "value": 6,
+   "comment": "the spiritual hammer read: character combat inflicting 1d6, attacking each round until defeated or expired (printed p. 115)."
+  },
+  {
+   "name": "detShillelaghDmgDie",
+   "value": 6,
+   "comment": "the shillelagh read: character combat inflicting 1d6, attacking again if successful (printed p. 115)."
+  },
+  {
+   "name": "detWateryDoubleDmgDice",
+   "value": 3,
+   "comment": "the watery double read: a successful combat inflicts 3d6 and continues attacking each round (printed p. 116)."
+  },
+  {
+   "name": "detTelekinesisDmgPerLevel",
+   "value": 1,
+   "comment": "the telekinesis read: character combat inflicting one point of damage per caster level (printed p. 115)."
+  },
+  {
+   "name": "detLiveoakOneAtATime",
+   "value": 1,
+   "comment": "the liveoak read: only one liveoak effect active per arena at any time (printed p. 113)."
+  },
+  {
+   "name": "detElementalAuraElementCount",
+   "value": 4,
+   "comment": "the elemental aura read: air, earth, fire or water chosen at casting; it battles its own element and is destroyed by locks with it (printed p. 111)."
+  },
+  {
+   "name": "detExampleAdvantageRollDie",
+   "value": 10,
+   "comment": "the worked duel: neither contributed, both roll 1d10 for the advantage - Calvin wins (printed p. 116)."
+  },
+  {
+   "name": "detExClairvoyanceLevel",
+   "value": 3,
+   "comment": "the worked duel: clairvoyance, a leech (printed p. 116)."
+  },
+  {
+   "name": "detExCalvinClairvoyancePR",
+   "value": 12,
+   "comment": "the worked duel: clairvoyance PR 12, MV 5 - the level-plus-nine read (printed p. 116)."
+  },
+  {
+   "name": "detExClairvoyanceMv",
+   "value": 5,
+   "comment": "the worked duel: clairvoyance moves five (printed p. 116)."
+  },
+  {
+   "name": "detExWithdrawLevel",
+   "value": 2,
+   "comment": "the worked duel: withdraw, a defense cast in Delsenora's own square (printed p. 116)."
+  },
+  {
+   "name": "detExWithdrawPR",
+   "value": 11,
+   "comment": "the worked duel: withdraw PR 11, MV 1 (printed p. 116)."
+  },
+  {
+   "name": "detExWithdrawMv",
+   "value": 1,
+   "comment": "the worked duel: withdraw moves one (printed p. 116)."
+  },
+  {
+   "name": "detExMonsterSumLevel",
+   "value": 4,
+   "comment": "the worked duel: monster summoning II from Calvin's ring of spell storing, an AD spell (printed p. 117)."
+  },
+  {
+   "name": "detExMonsterSumPR",
+   "value": 13,
+   "comment": "the worked duel: monster summoning II PR 13, MV 3 (printed p. 117)."
+  },
+  {
+   "name": "detExMonsterSumMv",
+   "value": 3,
+   "comment": "the worked duel: monster summoning II moves three (printed p. 117)."
+  },
+  {
+   "name": "detExDispelPR",
+   "value": 12,
+   "comment": "the worked duel: Delsenora's dispel magic, an AD spell, PR 12, MV 4 (printed p. 117)."
+  },
+  {
+   "name": "detExDispelMv",
+   "value": 4,
+   "comment": "the worked duel: dispel magic moves four (printed p. 117)."
+  },
+  {
+   "name": "detExMagicMissilePR",
+   "value": 10,
+   "comment": "the worked duel: magic missile, a missile spell, PR 10, MV 5 (printed p. 117)."
+  },
+  {
+   "name": "detExMagicMissileMv",
+   "value": 5,
+   "comment": "the worked duel: magic missile moves five (printed p. 117)."
+  },
+  {
+   "name": "detExAnimatePR",
+   "value": 15,
+   "comment": "the worked duel: animate object, an AD spell, PR 15, MV 3 (printed p. 117)."
+  },
+  {
+   "name": "detExAnimateMv",
+   "value": 3,
+   "comment": "the worked duel: animate object moves three (printed p. 117)."
+  },
+  {
+   "name": "detExCalvinRoll",
+   "value": 20,
+   "comment": "the worked duel: Calvin rolls 20, Delsenora 9 - the clairvoyance is destroyed and the advantage shifts to Delsenora (printed p. 117)."
+  },
+  {
+   "name": "detExDelsenoraRoll",
+   "value": 9,
+   "comment": "the worked duel: Delsenora's 9 (printed p. 117)."
+  },
+  {
+   "name": "detT25RowCount",
+   "value": 5,
+   "comment": "the Table 25 grid: five spell types squared (printed p. 99)."
+  },
+  {
+   "name": "detT26RowCount",
+   "value": 5,
+   "comment": "the Table 26 grid: five movement bands (printed p. 99)."
+  },
+  {
+   "name": "detT27RowCount",
+   "value": 5,
+   "comment": "the Table 27 grid: five ability bands (printed p. 101)."
+  },
+  {
+   "name": "detFriendlyBandCount",
+   "value": 4,
+   "comment": "the friendly stakes ladder: four bands, 0-6, 7-12, 13-18 and 19-plus spell levels (printed p. 105)."
+  },
+  {
+   "name": "detDeathBandCount",
+   "value": 5,
+   "comment": "the death stakes ladder: five bands, 0-6, 7-12, 13-18, 18-22 and 23-plus spell levels (printed pp. 105-106)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "detArenaRestartOnDisturbance",
+   "value": true,
+   "comment": "the restart rule: if the combatants' concentration is disturbed before the arena is complete, the preparations begin again (printed p. 96)."
+  },
+  {
+   "name": "detMediatorProtectiveRequired",
+   "value": true,
+   "comment": "the mediator's spell: the mediator casts a protective spell over the combatants, wall of force the usual choice (printed p. 96)."
+  },
+  {
+   "name": "detContributedMustBeMemorized",
+   "value": true,
+   "comment": "the contribution rule: contributed spells need not be protective but must be currently memorized (printed p. 96)."
+  },
+  {
+   "name": "detContributedLostAsCast",
+   "value": true,
+   "comment": "the contribution cost: a contributed spell disappears from memory as though cast, with no normal effect (printed p. 96)."
+  },
+  {
+   "name": "detContributionSecret",
+   "value": true,
+   "comment": "the secrecy: contributed spells are recorded secretly; the opponent cannot tell how many or how long (printed p. 97)."
+  },
+  {
+   "name": "detMediatorKnowsAll",
+   "value": true,
+   "comment": "the mediator's sight: the mediator is aware of the spells contributed by both sides (printed p. 97)."
+  },
+  {
+   "name": "detCharmCannotConsent",
+   "value": true,
+   "comment": "the compulsion bar: a character under magical or psionic compulsion such as charm person or suggestion cannot be forced to consent (printed p. 97)."
+  },
+  {
+   "name": "detThreatConsentValid",
+   "value": true,
+   "comment": "the threat read: consent under threat is still consent as long as the character is free to think (printed p. 97)."
+  },
+  {
+   "name": "detGeasSubjectFreeToRefuse",
+   "value": true,
+   "comment": "the geas read: a geas or quest subject is free to ignore the request and face the consequences (printed p. 97)."
+  },
+  {
+   "name": "detBalanceCapWeakerLevel",
+   "value": true,
+   "comment": "the balance-of-power cap: when levels differ, the spell levels each side contributes cannot exceed the weaker opponent's level (printed p. 97)."
+  },
+  {
+   "name": "detDuelistSpacesNotCounted",
+   "value": true,
+   "comment": "the geometry note: the duelists' own spaces do not count in the corridor length (printed p. 97)."
+  },
+  {
+   "name": "detOnlyHighestFactored",
+   "value": true,
+   "comment": "the distance rule: only the single highest-level spell contributed by each side is factored (printed p. 97)."
+  },
+  {
+   "name": "detFirstRoundNoMovement",
+   "value": true,
+   "comment": "the opening round: no spell movement because there are no spells in the arena (printed p. 98)."
+  },
+  {
+   "name": "detAdvantageMovesFirst",
+   "value": true,
+   "comment": "the movement order: all the advantaged caster's spells move first even if combat shifts the advantage mid-move (printed p. 100)."
+  },
+  {
+   "name": "detAdvantageHighestSingleSpell",
+   "value": true,
+   "comment": "the advantage rule: the advantage goes to whoever contributed the highest single-level spell, not the highest combined (printed p. 97)."
+  },
+  {
+   "name": "detAdvantageShiftsOnSpellDeath",
+   "value": true,
+   "comment": "the shift rule: the advantage shifts when a spell is destroyed in spell combat, to the victor's caster (printed p. 97)."
+  },
+  {
+   "name": "detNoShiftOnSaveOrPR",
+   "value": true,
+   "comment": "the shift exception: no shift when a character defeats a spell by power rating or saving throw (printed pp. 97-98)."
+  },
+  {
+   "name": "detSpellNeverLeavesArena",
+   "value": true,
+   "comment": "the arena seal: a spell never leaves the arena or affects creatures outside (printed p. 98)."
+  },
+  {
+   "name": "detNoSelfCasting",
+   "value": true,
+   "comment": "the no-self rule: combatants are constructs in the arena - no casting on oneself; a cure heals nothing, a teleport goes nowhere (printed p. 98)."
+  },
+  {
+   "name": "detSpellsAffectConstructs",
+   "value": true,
+   "comment": "the construct doctrine: spells restrict the opponent's actions until thrown off, never controlling or imprisoning him directly (printed p. 98)."
+  },
+  {
+   "name": "detDetectIdentifies",
+   "value": true,
+   "comment": "the identification: spells are not readily identifiable; detect magic and the spellcraft proficiency can identify them (printed p. 98)."
+  },
+  {
+   "name": "detDefensiveMayStay",
+   "value": true,
+   "comment": "the defensive exception: a defensive spell may remain in the caster's space instead of crossing (printed p. 100)."
+  },
+  {
+   "name": "detMustMoveOneSpace",
+   "value": true,
+   "comment": "the movement floor: most spells must move at least one space every round unless locked in combat (printed p. 100)."
+  },
+  {
+   "name": "detCastingSimultaneous",
+   "value": true,
+   "comment": "the dueling cast: all spellcasting during a duel is simultaneous (printed p. 100)."
+  },
+  {
+   "name": "detCastingNotDisrupted",
+   "value": true,
+   "comment": "the dueling cast: spells cannot be disrupted as in a normal encounter (printed p. 100)."
+  },
+  {
+   "name": "detArenaSuppliesComponents",
+   "value": true,
+   "comment": "the component supply: no additional components required - pyrotechnics works in an arena with no fire source (printed p. 100)."
+  },
+  {
+   "name": "detSpellAppearsAhead",
+   "value": true,
+   "comment": "the cast placement: a spell appears in the space immediately ahead of the caster, or in the caster's space if defensive (printed p. 100)."
+  },
+  {
+   "name": "detNoMoveOnCastRound",
+   "value": true,
+   "comment": "the cast placement: no spell moves on the round it is cast (printed p. 100)."
+  },
+  {
+   "name": "detAttackMustFightDefense",
+   "value": true,
+   "comment": "the attack doctrine: an attack spell must conduct combat with any opposing defensive spell it meets, may fight leeches at the advantaged caster's choice, ignores missiles and attacks (printed p. 99)."
+  },
+  {
+   "name": "detDefenseMustFightAttack",
+   "value": true,
+   "comment": "the defense doctrine: a defensive spell must fight opposing attacks, may fight leeches, generally ignores missiles, always ignores other defenses, and vanishes at the opponent's square (printed p. 99)."
+  },
+  {
+   "name": "detLeechMustFightLeech",
+   "value": true,
+   "comment": "the leech doctrine: a leech must fight opposing leeches, may fight attacks or defenses, ignores missiles (printed p. 99)."
+  },
+  {
+   "name": "detLeechSaveHalf",
+   "value": true,
+   "comment": "the leech strike: saving throw vs. spell reduces the damage by half (printed p. 99)."
+  },
+  {
+   "name": "detADMustFightAD",
+   "value": true,
+   "comment": "the attack/defense doctrine: an AD spell must fight opposing defensive and attack spells, may fight leeches or missiles at the advantaged caster's choice (printed p. 100)."
+  },
+  {
+   "name": "detADSaveOrCombat",
+   "value": true,
+   "comment": "the AD strike: the opponent saves vs. spell or makes a spell combat roll to avoid the damage (printed p. 100)."
+  },
+  {
+   "name": "detMissileIgnoresMost",
+   "value": true,
+   "comment": "the missile doctrine: a missile may fight attack/defense spells, ignores missiles, leeches, attacks and most defenses (printed p. 100)."
+  },
+  {
+   "name": "detMoveOrderClosestFirst",
+   "value": true,
+   "comment": "the movement order: the spell closest to the opponent always moves first, then the next, and so on (printed p. 100)."
+  },
+  {
+   "name": "detFriendlyStackingOk",
+   "value": true,
+   "comment": "the friendly stack: one character's spells freely move through each other or share a space; the fastest moves first when stacked (printed p. 100)."
+  },
+  {
+   "name": "detNoBackwardMove",
+   "value": true,
+   "comment": "the one-way rule: spells never move backward unless forced by an opposing spell's special ability (printed p. 100)."
+  },
+  {
+   "name": "detFailIfHigher",
+   "value": true,
+   "comment": "the combat read: a roll higher than the power rank fails, equal or less succeeds (printed p. 100)."
+  },
+  {
+   "name": "detLockOnBothFail",
+   "value": true,
+   "comment": "the lock: both spells failing locks them in place (printed p. 101)."
+  },
+  {
+   "name": "detLockOnEqualPRTie",
+   "value": true,
+   "comment": "the lock: two spells with the same power scores tying each other also locks (printed p. 101)."
+  },
+  {
+   "name": "detHigherRollWins",
+   "value": true,
+   "comment": "the double success: with both succeeding, the higher roll destroys the lower (printed p. 101)."
+  },
+  {
+   "name": "detWinningSpellFinishesMove",
+   "value": true,
+   "comment": "the victory move: a winning spell that was moving may finish its move after the battle (printed p. 101)."
+  },
+  {
+   "name": "detOneCombatPerPairPerRound",
+   "value": true,
+   "comment": "the combat cap: one spell may fight several battles a round, but any one pair only once (printed p. 101)."
+  },
+  {
+   "name": "detLockedBlockPassage",
+   "value": true,
+   "comment": "the lock: locked spells block all passage, even spells that could normally ignore the opposing spell (printed p. 101)."
+  },
+  {
+   "name": "detHighestMVCheckedFirst",
+   "value": true,
+   "comment": "the multi-spell check: with multiple opposing spells and no lock, the highest movement rate is checked first (printed p. 101)."
+  },
+  {
+   "name": "detDisadvantagedAnnouncesType",
+   "value": true,
+   "comment": "the type announcement: the disadvantaged caster must announce his spell's type; the advantaged caster need not (printed p. 100)."
+  },
+  {
+   "name": "detCharMoveBackward",
+   "value": true,
+   "comment": "the duelist move: unlike spells, characters move forward or backward (printed p. 103)."
+  },
+  {
+   "name": "detSavingThrowsByCasterLevel",
+   "value": true,
+   "comment": "the duel save: the saving-throws-by-caster-level optional rule is always used in duels (printed p. 103)."
+  },
+  {
+   "name": "detAbilityBonusesNeverApply",
+   "value": true,
+   "comment": "the duel save: bonuses for high ability scores never apply during a duel (printed p. 103)."
+  },
+  {
+   "name": "detZeroHpLoses",
+   "value": true,
+   "comment": "the knockout: characters reduced to zero hit points or less lose the duel (printed p. 103)."
+  },
+  {
+   "name": "detLingeringBlocksButCounters",
+   "value": true,
+   "comment": "the lingering read: a hindered character cannot move or cast into the arena but may cast counter spells (printed p. 103)."
+  },
+  {
+   "name": "detPositiveHpNeverRemoved",
+   "value": true,
+   "comment": "the endurance rule: a character with positive hit points can never be removed from the arena or forced to end the duel by duel magic (printed p. 103)."
+  },
+  {
+   "name": "detCharLockDestroysAttacker",
+   "value": true,
+   "comment": "the character lock: when a character combats a spell, a lock destroys the attacking spell instead (printed p. 103)."
+  },
+  {
+   "name": "detCounterBothDestroyed",
+   "value": true,
+   "comment": "the counter spell: if the counter wins or locks, both the attacking and counter spells are destroyed; if the counter loses, the attack lands (printed p. 103)."
+  },
+  {
+   "name": "detUnlimitedCountersPerRound",
+   "value": true,
+   "comment": "the counter flow: any number of counter spells per round if memorized; countering does not prevent a later cast (printed p. 103)."
+  },
+  {
+   "name": "detDefenseVanishesAtOpponent",
+   "value": true,
+   "comment": "the defense read: defense spells vanish at the opponent's space; one may be cast in the character's own space as a stationary guard (printed p. 103)."
+  },
+  {
+   "name": "detPushIntoSpellTriggers",
+   "value": true,
+   "comment": "the push read: forced movement into a space with an opposing spell makes the spell take effect (printed p. 104)."
+  },
+  {
+   "name": "detNoCastWhileEngaged",
+   "value": true,
+   "comment": "the engagement bar: no spellcasting while engaged in character combat, and counter spells cannot be used against a character (printed p. 104)."
+  },
+  {
+   "name": "detPowerCheckIdentify",
+   "value": true,
+   "comment": "the spellcraft read: a character may identify an opposing spell with a power check instead of moving or casting (printed p. 104)."
+  },
+  {
+   "name": "detSpellRevealedAtSquare",
+   "value": true,
+   "comment": "the reveal: opposing spells are revealed when they enter a character's square (printed p. 103)."
+  },
+  {
+   "name": "detNoEquipmentInArena",
+   "value": true,
+   "comment": "the mind-only rule: no equipment can be carried into the arena; the opponents enter only in their minds (printed p. 104)."
+  },
+  {
+   "name": "detStoringItemsWork",
+   "value": true,
+   "comment": "the storing items: rings of spell storing, magical scrolls and rods of absorption can create spells in a duel (printed p. 104)."
+  },
+  {
+   "name": "detWandsUsuallyBanned",
+   "value": true,
+   "comment": "the item bar: wands, staves, potions and miscellaneous items and most rods usually cannot be used unless both agree (printed p. 104)."
+  },
+  {
+   "name": "detDeviceLevelSaves",
+   "value": true,
+   "comment": "the item save: an effect from a device uses the device level for the saving throw, not the wielder's (printed p. 104)."
+  },
+  {
+   "name": "detProtectiveBonusesVsSpellsOnly",
+   "value": true,
+   "comment": "the protection read: protective bonuses raise the power score against spells, not for personal combat (printed p. 104)."
+  },
+  {
+   "name": "detAcNoEffect",
+   "value": true,
+   "comment": "the AC bar: armor class has no effect on a duel; bracers of defense do not help (printed p. 104)."
+  },
+  {
+   "name": "detAttackBonusPersonalOnly",
+   "value": true,
+   "comment": "the weapon read: attack bonuses from magical weapons raise the power score for personal combat only (printed p. 104)."
+  },
+  {
+   "name": "detArenaBlockersAbsolute",
+   "value": true,
+   "comment": "the arena blockers: antimagic shell, prismatic sphere, the Otiluke spheres, wall spells and protection-from-magic scrolls can never be incorporated, even by agreement (printed p. 105)."
+  },
+  {
+   "name": "detSpecialistSavesApply",
+   "value": true,
+   "comment": "the specialist read: saving-throw adjustments from the school of specialization apply during duels unless forgone, at an extra turn of preparation (printed p. 105)."
+  },
+  {
+   "name": "detWildSurgesNever",
+   "value": true,
+   "comment": "the wild read: wild surges never occur in the stable arena environment (printed p. 105)."
+  },
+  {
+   "name": "detLevelVariationBothWildMages",
+   "value": true,
+   "comment": "the wild read: level variations possible only if both combatants are wild mages (printed p. 105)."
+  },
+  {
+   "name": "detElementalistBoostBothElementalists",
+   "value": true,
+   "comment": "the elementalist read: the higher-than-normal cast applies only if both combatants are elementalists (printed p. 105)."
+  },
+  {
+   "name": "detEndOnNoSpellsOrHp",
+   "value": true,
+   "comment": "the end conditions: a duel always ends when a combatant runs out of spells or hit points; the combatants choose one or both (printed p. 105)."
+  },
+  {
+   "name": "detAutoEndWhenMet",
+   "value": true,
+   "comment": "the binding: once set, the duel automatically ends when the condition is met, even if minds change (printed p. 105)."
+  },
+  {
+   "name": "detSurrenderAlwaysAllowed",
+   "value": true,
+   "comment": "the exit: a character can always end a duel early by surrendering and accepting defeat (printed p. 105)."
+  },
+  {
+   "name": "detSpellLossAsCast",
+   "value": true,
+   "comment": "the spell loss: spells lost after a duel are gone as though cast, their components consumed (printed p. 106)."
+  },
+  {
+   "name": "detContributedAlwaysLost",
+   "value": true,
+   "comment": "the spell loss: spells contributed to the arena are always lost (printed p. 106)."
+  },
+  {
+   "name": "detWinnerCapAtCast",
+   "value": true,
+   "comment": "the spell loss: the winner cannot lose more spell levels than were cast, but the loser can (printed p. 106)."
+  },
+  {
+   "name": "detExcessPermanentIfDeath",
+   "value": true,
+   "comment": "the overdraw: permanent if fought to the death, else one point restored per full day of rest (printed p. 106)."
+  },
+  {
+   "name": "detMassiveDamageNA",
+   "value": true,
+   "comment": "the damage note: the Death From Massive Damage rule does not apply in duels (printed p. 107)."
+  },
+  {
+   "name": "detCharmIgnoresResistances",
+   "value": true,
+   "comment": "the service charm: unaffected by magic resistance, racial charm resistance or high ability scores - the winner bores into the psyche (printed p. 107)."
+  },
+  {
+   "name": "detUnconsciousKillable",
+   "value": true,
+   "comment": "the unconscious risk: anyone with a weapon can kill an unconscious character with a single blow (printed p. 107)."
+  },
+  {
+   "name": "detBlownEquipmentStays",
+   "value": true,
+   "comment": "the plane blow: the loser leaves a pile of dust; destroyed equipment remains behind and a wish recovers him (printed p. 107)."
+  },
+  {
+   "name": "detDisintegrateNoRegeneration",
+   "value": true,
+   "comment": "the death read: regeneration is ineffective; only a wish restores a disintegrated character (printed p. 107)."
+  },
+  {
+   "name": "detBand4EquipmentSaveFire",
+   "value": true,
+   "comment": "the death ladder: failed breath save - equipment saves vs. magical fire on the 18-22 band (printed p. 106)."
+  },
+  {
+   "name": "detBand5EquipmentSaveLightning",
+   "value": true,
+   "comment": "the death ladder: equipment saves vs. lightning on the 23-plus band (printed p. 106)."
+  },
+  {
+   "name": "detServiceGeasLiftNeeds",
+   "value": true,
+   "comment": "the service read: the 19-plus geas lifts only by a wish, dispel magic or remove curse from a higher-level caster (printed p. 106)."
+  },
+  {
+   "name": "detWinnerTempCappedAtDuel",
+   "value": true,
+   "comment": "the damage cap: a victor cannot suffer more temporary damage than was suffered in the duel; the loser can suffer more normal damage (printed p. 107)."
+  },
+  {
+   "name": "detInterferenceEndsDuel",
+   "value": true,
+   "comment": "the interference rule: any attack on a duelist, successful or not, disrupts the arena and ends the duel (printed p. 107)."
+  },
+  {
+   "name": "detBothVictorsOnInterference",
+   "value": true,
+   "comment": "the interference rule: both characters count as victor for the aftereffects, other terms rendered invalid (printed p. 107)."
+  },
+  {
+   "name": "detTouchCombatantsEnds",
+   "value": true,
+   "comment": "the interference rule: touching the combatants, handing them equipment or casting spells on them ends the duel; shouting advice is allowed if the protective spell permits (printed p. 107)."
+  },
+  {
+   "name": "detMediatorAttacksNoEffect",
+   "value": true,
+   "comment": "the interference rule: attacks on the mediator or the protective spell have no effect on the duel (printed p. 107)."
+  },
+  {
+   "name": "detMediatorChoosesIsolation",
+   "value": true,
+   "comment": "the mediator's role: he decides how isolated the combatants are (printed p. 107)."
+  },
+  {
+   "name": "detMediatorSearchesContraband",
+   "value": true,
+   "comment": "the mediator's role: it is traditional to search each combatant for contraband, physically, to foil nondetection (printed p. 107)."
+  },
+  {
+   "name": "detMediatorTouchEnds",
+   "value": true,
+   "comment": "the mediator's role: the mediator can end the construction or the duel just by touching a combatant (printed p. 107)."
+  },
+  {
+   "name": "detMediatorNoCompulsion",
+   "value": true,
+   "comment": "the mediator's role: under no special compulsion toward fairness unless duelists take precautions such as a geas (printed p. 107)."
+  },
+  {
+   "name": "detMediatorMayIncludeSelf",
+   "value": true,
+   "comment": "the mediator's role: a large protective spell can include the mediator; prismatic sphere allows free passage in and out (printed p. 107)."
+  },
+  {
+   "name": "detMentalTemporaryOnly",
+   "value": true,
+   "comment": "the mental-attack group: charm, command, confusion and their kin have only a temporary effect - the victim cannot move or cast but may counter (printed p. 108)."
+  },
+  {
+   "name": "detNeverCompelledToLeave",
+   "value": true,
+   "comment": "the mental-attack group: duelists can never be compelled to leave the arena or perform unwanted actions (printed p. 108)."
+  },
+  {
+   "name": "detSummoningCounterOnly",
+   "value": true,
+   "comment": "the summoning group: while a creature summoning occupies his space the opponent can cast only counter spells and must fight with his power score (printed p. 108)."
+  },
+  {
+   "name": "detSummoningLockPersists",
+   "value": true,
+   "comment": "the summoning group: a lock does not destroy a summoning spell - it attacks again next round, unlike normal character-vs-spell combat (printed p. 108)."
+  },
+  {
+   "name": "detIllusionAnyType",
+   "value": true,
+   "comment": "the illusion group: phantasmal-force spells can duplicate any type, chosen at casting and never changed (printed p. 108)."
+  },
+  {
+   "name": "detIllusionTypeFixedAtCast",
+   "value": true,
+   "comment": "the illusion group: the type is chosen when cast and cannot change (printed p. 108)."
+  },
+  {
+   "name": "detIllusionDefenseLockDestroys",
+   "value": true,
+   "comment": "the illusion group: employed as a defense, any lock destroys the illusion unless the opponent summons a creature (printed p. 108)."
+  },
+  {
+   "name": "detReversedOpposite",
+   "value": true,
+   "comment": "the reversible group: reversed forms usually function opposite - a reversed defense is an attack; a reversed leech is still a leech (printed p. 108)."
+  },
+  {
+   "name": "detReverseCountersReverse",
+   "value": true,
+   "comment": "the reversible group: a spell's reverse always counters itself and vice versa (printed p. 108)."
+  },
+  {
+   "name": "detTeleportIgnoresBarrierLocks",
+   "value": true,
+   "comment": "the teleportation group: instantaneous-travel spells cannot be locked by physical barriers - a lock means the spells ignore each other (printed p. 108)."
+  },
+  {
+   "name": "detTeleportCounterLockDestroys",
+   "value": true,
+   "comment": "the teleportation group: used as a counter spell, a lock still destroys both spells (printed p. 108)."
+  },
+  {
+   "name": "detWishNoAgingUnlessLost",
+   "value": true,
+   "comment": "the wish and limited wish read: no aging unless actually lost from memory in the aftermath (printed pp. 113 and 116)."
+  },
+  {
+   "name": "detHasteSlowMutual",
+   "value": true,
+   "comment": "the haste read: haste automatically destroys and is automatically destroyed by slow (printed p. 112)."
+  },
+  {
+   "name": "detShieldDefeatsMagicMissile",
+   "value": true,
+   "comment": "the shield read: missiles must battle it, and it always defeats magic missile (printed p. 115)."
+  },
+  {
+   "name": "detTransmuteDefeatsWallOfStone",
+   "value": true,
+   "comment": "the transmute rock to mud read: it always defeats wall of stone (printed p. 116)."
+  },
+  {
+   "name": "detFlyLevitateCounterTransmute",
+   "value": true,
+   "comment": "the fly and levitate read: both always counter transmute rock to mud (printed p. 112)."
+  },
+  {
+   "name": "detTrueSeeingDefeatsIllusions",
+   "value": true,
+   "comment": "the true seeing read: it always defeats illusions (printed p. 116)."
+  },
+  {
+   "name": "detStabilizeIneffective",
+   "value": true,
+   "comment": "the ineffective trio: stabilize, windwild and wildzone do nothing in a dueling arena (printed pp. 115-116)."
+  },
+  {
+   "name": "detMindBlankCountersLeeches",
+   "value": true,
+   "comment": "the mind blank read: cannot be locked by mind attacks; it counters all leech spells and mental attacks (printed p. 113)."
+  },
+  {
+   "name": "detPermanencyNoConLoss",
+   "value": true,
+   "comment": "the permanency read: used in a duel it does not drain Constitution, even if lost from memory afterward (printed p. 113)."
+  },
+  {
+   "name": "detNeutralizePoisonCounters",
+   "value": true,
+   "comment": "the neutralize poison read: it automatically counters poisonous spells such as stinking cloud and cloudkill (printed p. 113)."
+  },
+  {
+   "name": "detRemoveParalysisCounters",
+   "value": true,
+   "comment": "the remove paralysis read: it automatically counters all hold spells and paralysis (printed p. 114)."
+  },
+  {
+   "name": "detRaiseDeadCountersDamage",
+   "value": true,
+   "comment": "the raise dead and reincarnate read: they counter any spell that inflicts damage (printed p. 114)."
+  },
+  {
+   "name": "detCrystalbrittleDefeatsMetal",
+   "value": true,
+   "comment": "the crystalbrittle read: it automatically defeats wall of iron and any other metal-mass spell, in combat and as a counter (printed p. 110)."
+  },
+  {
+   "name": "detDisintegrateDefeatsBarriers",
+   "value": true,
+   "comment": "the disintegrate read: it always defeats solid-barrier spells such as wall spells (printed p. 110)."
+  },
+  {
+   "name": "detDispelDestroysOnLoss",
+   "value": true,
+   "comment": "the dispel magic read: if locked or defeated it can still destroy the opposing spell with a normal dispel roll; it dissipates at the opponent's space (printed pp. 110-111)."
+  },
+  {
+   "name": "detExWithdrawForcesCombat",
+   "value": true,
+   "comment": "the worked duel: withdraw's special ability forces leeches and missiles to fight it despite the advantage (printed p. 117)."
+  },
+  {
+   "name": "detExArenaTenSpaces",
+   "value": true,
+   "comment": "the worked duel: no contributions, so ten spaces between the combatants (printed p. 116)."
+  }
+ ],
+ "chains": [
+  {
+   "name": "detServiceLadder",
+   "limits": [
+    6,
+    12,
+    18
+   ],
+   "tail": 3,
+   "comment": "the service stakes ladder (printed p. 106): by contributed spell levels the loser is charmed at 0-6, plus a suggestion at 7-12, plus a geas at 13-18, and falls under domination at 19-plus; the codes run charm, suggestion, geas, domination."
+  }
+ ],
+ "switches": [],
+ "tables": [
+  {
+   "name": "detT25Grid",
+   "tag": "T37",
+   "count": "detT25RowCount",
+   "cols": [
+    "detT25VsA",
+    "detT25VsD",
+    "detT25VsAD",
+    "detT25VsL",
+    "detT25VsM"
+   ],
+   "sentinel": -99,
+   "comment": "the Table 25 spell interactions grid (printed p. 99): rows the acting spell type A, D, AD, L, M; columns the opposing type met; codes - 0 pass, 1 combat, 2 the advantaged caster decides, 3 generally ignore.",
+   "col_comments": [
+    "meeting an attack spell: attacks pass attacks, defenses and attacks fight, AD fights, leeches let the advantage decide, missiles pass (printed p. 99).",
+    "meeting a defense spell: attacks must fight, defenses pass each other, AD fights, leeches let the advantage decide, missiles generally ignore (printed p. 99).",
+    "meeting an attack/defense spell: attacks, defenses and attacks/defenses fight; leeches and missiles let the advantage decide (printed p. 99).",
+    "meeting a leech spell: attacks and defenses let the advantage decide, attack/defenses let the advantage decide, leeches fight leeches, missiles pass (printed p. 99).",
+    "meeting a missile spell: attacks pass, defenses generally ignore, attack/defenses let the advantage decide, leeches pass, missiles pass (printed p. 99)."
+   ],
+   "data": [
+    [
+     0,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     1,
+     0,
+     1,
+     2,
+     3
+    ],
+    [
+     1,
+     1,
+     1,
+     2,
+     2
+    ],
+    [
+     2,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     2,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "detT26Grid",
+   "tag": "T38",
+   "count": "detT26RowCount",
+   "cols": [
+    "detT26Mv"
+   ],
+   "sentinel": -99,
+   "comment": "the Table 26 spell movement grid (printed p. 99): five range bands, touch through 101-plus yards, each with its arena movement rate; level-varied ranges move with the range.",
+   "col_comments": [
+    "the movement rate by range band: touch or zero moves one, 1-20 yards two, 21-50 three, 51-100 four, 101-plus and instantaneous-huge effects five (printed p. 99)."
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ]
+   ]
+  },
+  {
+   "name": "detT27Grid",
+   "tag": "T39",
+   "count": "detT27RowCount",
+   "cols": [
+    "detT27Bonus",
+    "detT27PowerScore"
+   ],
+   "sentinel": -99,
+   "comment": "the Table 27 character power scores (printed p. 101): five ability bands, 14-or-less through 18-plus, with the bonus and the power score; wizards and bards use Intelligence, priests, paladins and rangers Wisdom.",
+   "col_comments": [
+    "the ability bonus: zero at 14 or less, one at 15, two at 16, three at 17, four at 18 or more (printed p. 101).",
+    "the power score: nine at 14 or less, ten at 15, eleven at 16, twelve at 17, thirteen at 18 or more (printed p. 101)."
+   ],
+   "data": [
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     10
+    ],
+    [
+     2,
+     11
+    ],
+    [
+     3,
+     12
+    ],
+    [
+     4,
+     13
+    ]
+   ]
+  },
+  {
+   "name": "detFriendlyStakes",
+   "tag": "T40",
+   "count": "detFriendlyBandCount",
+   "cols": [
+    "detFriendlyLoserDmgDice",
+    "detFriendlyLoserDmgSize",
+    "detFriendlyLoserSpellDice",
+    "detFriendlyLoserSpellSize",
+    "detFriendlyWinnerSpellDice",
+    "detFriendlyWinnerSpellSize"
+   ],
+   "sentinel": -99,
+   "sentinel_census": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "comment": "the friendly-competition stakes ladder (printed p. 105): four bands by contributed spell levels, the loser's temporary damage dice and forfeited spell levels, the winner's lost spell levels; a dash marks a band where nothing is lost, and the loser's hit points always return to normal.",
+   "col_comments": [
+    "the loser's temporary damage dice: nothing at 0-6, 2d6 at 7-12, 4d6 at 13-18, 8d6 at 19-plus (printed p. 105).",
+    "the loser's temporary damage die size: d6 throughout (printed p. 105).",
+    "the loser's forfeited spell-level dice: nothing, 2d4, 4d4, 8d4 (printed p. 105).",
+    "the loser's forfeited spell-level die size: d4 throughout (printed p. 105).",
+    "the winner's lost spell-level dice: nothing until 13-18 where 1d6, 4d6 at 19-plus (printed p. 105).",
+    "the winner's lost spell-level die size: d6 where lost (printed p. 105)."
+   ],
+   "data": [
+    [
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     2,
+     6,
+     2,
+     4,
+     -99,
+     -99
+    ],
+    [
+     4,
+     6,
+     4,
+     4,
+     1,
+     6
+    ],
+    [
+     8,
+     6,
+     8,
+     4,
+     4,
+     6
+    ]
+   ]
+  },
+  {
+   "name": "detDeathStakes",
+   "tag": "T41",
+   "count": "detDeathBandCount",
+   "cols": [
+    "detDeathLoserDmgDice",
+    "detDeathLoserDmgSize",
+    "detDeathLoserSpellDice",
+    "detDeathLoserSpellSize",
+    "detDeathWinnerSpellDice",
+    "detDeathWinnerSpellSize",
+    "detDeathWinnerTempDice",
+    "detDeathWinnerTempSize"
+   ],
+   "sentinel": -99,
+   "sentinel_census": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "comment": "the death-duel stakes ladder (printed pp. 105-106): five bands by contributed spell levels; the loser always saves vs. death or dies on the first three bands, the last two use the breath-weapon save with the explosion; the winner's temporary damage and lost spell levels ride beside the loser's.",
+   "col_comments": [
+    "the loser's damage dice: 2d6, 4d6, 6d6, 8d6, 10d6 across the five bands (printed pp. 105-106).",
+    "the loser's damage die size: d6 throughout (printed pp. 105-106).",
+    "the loser's lost spell-level dice: none on the first band, then 4d4, 8d4, 12d4, 18d4 (printed pp. 105-106).",
+    "the loser's lost spell-level die size: d4 throughout (printed pp. 105-106).",
+    "the winner's lost spell-level dice: none, 1d6, 2d6, 4d6, 2d6 (printed pp. 105-106).",
+    "the winner's lost spell-level die size: d6 throughout (printed pp. 105-106).",
+    "the winner's temporary damage dice: none on the first two bands, 1d6, 2d6, 4d6 (printed pp. 105-106).",
+    "the winner's temporary damage die size: d6 throughout (printed pp. 105-106)."
+   ],
+   "data": [
+    [
+     2,
+     6,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     4,
+     6,
+     4,
+     4,
+     1,
+     6,
+     -99,
+     -99
+    ],
+    [
+     6,
+     6,
+     8,
+     4,
+     2,
+     6,
+     1,
+     6
+    ],
+    [
+     8,
+     6,
+     12,
+     4,
+     4,
+     6,
+     2,
+     6
+    ],
+    [
+     10,
+     6,
+     18,
+     4,
+     2,
+     6,
+     4,
+     6
+    ]
+   ]
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the PR read: a fireball's level plus nine is 12 (printed p. 100)",
+   "expr": "m['detFireballPR']() - m['detPRBase']() != 3"
+  },
+  {
+   "note": "the worked-duel clairvoyance: level 3 plus nine is PR 12 (printed p. 116)",
+   "expr": "m['detExClairvoyanceLevel']() + m['detPRBase']() != 12 or m['detExCalvinClairvoyancePR']() != 12"
+  },
+  {
+   "note": "the worked-duel withdraw: level 2 plus nine is PR 11 (printed p. 116)",
+   "expr": "m['detExWithdrawLevel']() + m['detPRBase']() != 11 or m['detExWithdrawPR']() != 11"
+  },
+  {
+   "note": "the worked-duel monster summoning II: level 4 plus nine is PR 13 (printed p. 117)",
+   "expr": "m['detExMonsterSumLevel']() + m['detPRBase']() != 13 or m['detExMonsterSumPR']() != 13"
+  },
+  {
+   "note": "the worked-duel magic missile: level 1 plus nine is PR 10 (printed p. 117)",
+   "expr": "1 + m['detPRBase']() != 10 or m['detExMagicMissilePR']() != 10"
+  },
+  {
+   "note": "the worked-duel dispel magic and animate object: PRs 12 and 15 (printed p. 117)",
+   "expr": "3 + m['detPRBase']() != 12 or 6 + m['detPRBase']() != 15"
+  },
+  {
+   "note": "the arena distance: ten spaces plus five plus three is 18 (printed p. 97)",
+   "expr": "m['detArenaBaseSpaces']() + m['detArenaExampleSpellA']() + m['detArenaExampleSpellB']() != 18"
+  },
+  {
+   "note": "the corridor cap: the largest arena is 30 between plus two duelists (printed p. 97)",
+   "expr": "m['detArenaMaxIntervening']() + 2 != 32"
+  },
+  {
+   "note": "the character power score: base nine plus the Table 27 top bonus is 13 (printed p. 101)",
+   "expr": "m['detCharPRBase']() + m['detT27Bonus'](4) != 13 or m['detT27PowerScore'](4) != 13"
+  },
+  {
+   "note": "the Table 27 read: a 15 ability gives bonus 1 and power score 10 (printed p. 101)",
+   "expr": "m['detT27Bonus'](1) != 1 or m['detT27PowerScore'](1) != 10"
+  },
+  {
+   "note": "the Table 26 read: touch moves one, 101-plus moves five (printed p. 99)",
+   "expr": "m['detT26Mv'](0) != 1 or m['detT26Mv'](4) != 5"
+  },
+  {
+   "note": "the Table 25 read: an attack meets a defense - combat; a defense meets a missile - generally ignore (printed p. 99)",
+   "expr": "m['detT25VsD'](0) != 1 or m['detT25VsM'](1) != 3"
+  },
+  {
+   "note": "the Table 25 read: leeches fight leeches; missiles pass attacks (printed p. 99)",
+   "expr": "m['detT25VsL'](3) != 1 or m['detT25VsA'](4) != 0"
+  },
+  {
+   "note": "the Table 25 read: attack/defense fights attacks, defenses and its own kind (printed p. 99)",
+   "expr": "m['detT25VsA'](2) != 1 or m['detT25VsD'](2) != 1 or m['detT25VsAD'](2) != 1"
+  },
+  {
+   "note": "the friendly ladder: the 7-12 band costs the loser 2d6 and 2d4 (printed p. 105)",
+   "expr": "m['detFriendlyLoserDmgDice'](1) != 2 or m['detFriendlyLoserSpellDice'](1) != 2 or m['detFriendlyWinnerSpellDice'](1) != -99"
+  },
+  {
+   "note": "the friendly ladder: the 19-plus band costs the loser 8d6 and 8d4, the winner 4d6 (printed p. 105)",
+   "expr": "m['detFriendlyLoserDmgDice'](3) != 8 or m['detFriendlyLoserSpellDice'](3) != 8 or m['detFriendlyWinnerSpellDice'](3) != 4"
+  },
+  {
+   "note": "the death ladder: the first band is 2d6 damage with the death save (printed p. 105)",
+   "expr": "m['detDeathLoserDmgDice'](0) != 2 or m['detDeathLoserSpellDice'](0) != -99"
+  },
+  {
+   "note": "the death ladder: the 23-plus band costs the loser 10d6 and 18d4, the winner 4d6 temporary (printed p. 106)",
+   "expr": "m['detDeathLoserDmgDice'](4) != 10 or m['detDeathLoserSpellDice'](4) != 18 or m['detDeathWinnerTempDice'](4) != 4"
+  },
+  {
+   "note": "the service ladder: 0-6 charm, 7-12 plus suggestion, 13-18 plus geas, 19-plus domination (printed p. 106)",
+   "expr": "m['detServiceLadder'](3) != 0 or m['detServiceLadder'](7) != 1 or m['detServiceLadder'](13) != 2 or m['detServiceLadder'](19) != 3"
+  },
+  {
+   "note": "the protection read: 11 plus 2 plus 1 is 14 (printed p. 104)",
+   "expr": "m['detExamplePowerScore']() + m['detExampleArmorBonus']() + m['detExampleRingBonus']() != 14"
+  },
+  {
+   "note": "the specialist read: dispel magic at 12 gains one against illusionists for 13 (printed p. 105)",
+   "expr": "m['detDispelBasePR']() + m['detOppositionSchoolPRBonus']() != 13"
+  },
+  {
+   "note": "the Johan read: unseen servant at 10 minus the 5 variation is 5 (printed p. 105)",
+   "expr": "m['detUnseenServantPR']() - 5 != 5 or m['detVariedUnseenServantPR']() != 5"
+  },
+  {
+   "note": "the freeze read: 10d4 at +2 per die is the 20-damage cap (printed p. 113)",
+   "expr": "m['detFreezingSphereMaxDice']() * m['detFreezingSpherePerLevelBonus']() != 20"
+  },
+  {
+   "note": "the chant and fire purge reads: two rounds and ten rounds with nine disruptible (printed pp. 109 and 111)",
+   "expr": "m['detChantCastRounds']() != 2 or m['detFirePurgeCastRounds']() - m['detFirePurgeDisruptRounds']() != 1"
+  },
+  {
+   "note": "the enervation read: a 12th-level caster drains three levels (printed p. 111)",
+   "expr": "12 / m['detEnervationDivisor']() != 3"
+  },
+  {
+   "note": "the lock read: the Rary-Serten pair at PR 10 each ties on equal rolls (printed p. 101)",
+   "expr": "m['detRaryCharmPR']() != m['detSertenCurePR']() or m['detRaryCharmPR']() != 10"
+  },
+  {
+   "note": "the worked duel: Calvin's 20 against a PR-12 clairvoyance fails; Delsenora's 9 against 11 succeeds (printed p. 117)",
+   "expr": "m['detExCalvinRoll']() <= m['detExCalvinClairvoyancePR']() or m['detExDelsenoraRoll']() > m['detExWithdrawPR']()"
+  },
+  {
+   "note": "the balance example: the cap is the wizard's level, seven (printed p. 97)",
+   "expr": "m['detBalanceExampleCapLevel']() != m['detBalanceExampleWizardLevel']() or m['detBalanceExamplePriestLevel']() != 12"
+  },
+  {
+   "note": "the plane blows: 20 percent on the 18-22 band, 40 percent on the 23-plus band (printed p. 106)",
+   "expr": "m['detPlaneBlowBand5']() - m['detPlaneBlowBand4']() != 20"
+  },
+  {
+   "note": "the disintegration read: half the deaths leave dust (printed p. 107)",
+   "expr": "m['detDisintegrateChance']() != 50"
+  }
+ ],
+ "header_sections": {
+  "the DMO arena-creation pins": [
+   {
+    "kind": "const",
+    "name": "detArenaChantTurns"
+   },
+   {
+    "kind": "const",
+    "name": "detBalanceExampleWizardLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detBalanceExamplePriestLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detBalanceExampleCapLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detArenaCorridorMinSpaces"
+   },
+   {
+    "kind": "const",
+    "name": "detArenaCorridorMaxSpaces"
+   },
+   {
+    "kind": "const",
+    "name": "detArenaBaseSpaces"
+   },
+   {
+    "kind": "const",
+    "name": "detArenaMaxIntervening"
+   },
+   {
+    "kind": "const",
+    "name": "detArenaLargestTotal"
+   },
+   {
+    "kind": "const",
+    "name": "detArenaExampleSpaces"
+   },
+   {
+    "kind": "const",
+    "name": "detArenaExampleSpellA"
+   },
+   {
+    "kind": "const",
+    "name": "detArenaExampleSpellB"
+   },
+   {
+    "kind": "const",
+    "name": "detRoundSteps"
+   },
+   {
+    "kind": "const",
+    "name": "detTieAdvantageDie"
+   },
+   {
+    "kind": "bool",
+    "name": "detArenaRestartOnDisturbance"
+   },
+   {
+    "kind": "bool",
+    "name": "detMediatorProtectiveRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "detContributedMustBeMemorized"
+   },
+   {
+    "kind": "bool",
+    "name": "detContributedLostAsCast"
+   },
+   {
+    "kind": "bool",
+    "name": "detContributionSecret"
+   },
+   {
+    "kind": "bool",
+    "name": "detMediatorKnowsAll"
+   },
+   {
+    "kind": "bool",
+    "name": "detCharmCannotConsent"
+   },
+   {
+    "kind": "bool",
+    "name": "detThreatConsentValid"
+   },
+   {
+    "kind": "bool",
+    "name": "detGeasSubjectFreeToRefuse"
+   },
+   {
+    "kind": "bool",
+    "name": "detBalanceCapWeakerLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "detDuelistSpacesNotCounted"
+   },
+   {
+    "kind": "bool",
+    "name": "detOnlyHighestFactored"
+   },
+   {
+    "kind": "bool",
+    "name": "detFirstRoundNoMovement"
+   },
+   {
+    "kind": "bool",
+    "name": "detAdvantageMovesFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "detAdvantageHighestSingleSpell"
+   },
+   {
+    "kind": "bool",
+    "name": "detAdvantageShiftsOnSpellDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "detNoShiftOnSaveOrPR"
+   }
+  ],
+  "the DMO duel-type doctrine pins": [
+   {
+    "kind": "const",
+    "name": "detSpellTypes"
+   },
+   {
+    "kind": "const",
+    "name": "detPRBase"
+   },
+   {
+    "kind": "const",
+    "name": "detFireballPR"
+   },
+   {
+    "kind": "const",
+    "name": "detLeechDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "detLeechDmgPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detADDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "detADDmgPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detMvTouch"
+   },
+   {
+    "kind": "const",
+    "name": "detMvShort"
+   },
+   {
+    "kind": "const",
+    "name": "detMvMedium"
+   },
+   {
+    "kind": "const",
+    "name": "detMvLong"
+   },
+   {
+    "kind": "const",
+    "name": "detMvVeryLong"
+   },
+   {
+    "kind": "const",
+    "name": "detFireball5thMv"
+   },
+   {
+    "kind": "const",
+    "name": "detFireball15thMv"
+   },
+   {
+    "kind": "const",
+    "name": "detOnlyOneDefensiveStay"
+   },
+   {
+    "kind": "bool",
+    "name": "detSpellNeverLeavesArena"
+   },
+   {
+    "kind": "bool",
+    "name": "detNoSelfCasting"
+   },
+   {
+    "kind": "bool",
+    "name": "detSpellsAffectConstructs"
+   },
+   {
+    "kind": "bool",
+    "name": "detDetectIdentifies"
+   },
+   {
+    "kind": "bool",
+    "name": "detDefensiveMayStay"
+   },
+   {
+    "kind": "bool",
+    "name": "detMustMoveOneSpace"
+   },
+   {
+    "kind": "bool",
+    "name": "detCastingSimultaneous"
+   },
+   {
+    "kind": "bool",
+    "name": "detCastingNotDisrupted"
+   },
+   {
+    "kind": "bool",
+    "name": "detArenaSuppliesComponents"
+   },
+   {
+    "kind": "bool",
+    "name": "detSpellAppearsAhead"
+   },
+   {
+    "kind": "bool",
+    "name": "detNoMoveOnCastRound"
+   },
+   {
+    "kind": "bool",
+    "name": "detAttackMustFightDefense"
+   },
+   {
+    "kind": "bool",
+    "name": "detDefenseMustFightAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "detLeechMustFightLeech"
+   },
+   {
+    "kind": "bool",
+    "name": "detLeechSaveHalf"
+   },
+   {
+    "kind": "bool",
+    "name": "detADMustFightAD"
+   },
+   {
+    "kind": "bool",
+    "name": "detADSaveOrCombat"
+   },
+   {
+    "kind": "bool",
+    "name": "detMissileIgnoresMost"
+   }
+  ],
+  "the DMO spell-combat pins": [
+   {
+    "kind": "const",
+    "name": "detCombatDie"
+   },
+   {
+    "kind": "const",
+    "name": "detRaryCharmPR"
+   },
+   {
+    "kind": "const",
+    "name": "detSertenCurePR"
+   },
+   {
+    "kind": "const",
+    "name": "detRaryRoll"
+   },
+   {
+    "kind": "const",
+    "name": "detSertenRoll"
+   },
+   {
+    "kind": "const",
+    "name": "detRaryAltRoll"
+   },
+   {
+    "kind": "const",
+    "name": "detLockExampleRaryRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "detMoveOrderClosestFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "detFriendlyStackingOk"
+   },
+   {
+    "kind": "bool",
+    "name": "detNoBackwardMove"
+   },
+   {
+    "kind": "bool",
+    "name": "detFailIfHigher"
+   },
+   {
+    "kind": "bool",
+    "name": "detLockOnBothFail"
+   },
+   {
+    "kind": "bool",
+    "name": "detLockOnEqualPRTie"
+   },
+   {
+    "kind": "bool",
+    "name": "detHigherRollWins"
+   },
+   {
+    "kind": "bool",
+    "name": "detWinningSpellFinishesMove"
+   },
+   {
+    "kind": "bool",
+    "name": "detOneCombatPerPairPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "detLockedBlockPassage"
+   },
+   {
+    "kind": "bool",
+    "name": "detHighestMVCheckedFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "detDisadvantagedAnnouncesType"
+   }
+  ],
+  "the DMO duelist pins": [
+   {
+    "kind": "const",
+    "name": "detCharMoveOneSpace"
+   },
+   {
+    "kind": "const",
+    "name": "detCharPRBase"
+   },
+   {
+    "kind": "const",
+    "name": "detCharVsCharDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "detCharVsCharPushDie"
+   },
+   {
+    "kind": "const",
+    "name": "detOneCounterPerIncoming"
+   },
+   {
+    "kind": "bool",
+    "name": "detCharMoveBackward"
+   },
+   {
+    "kind": "bool",
+    "name": "detSavingThrowsByCasterLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "detAbilityBonusesNeverApply"
+   },
+   {
+    "kind": "bool",
+    "name": "detZeroHpLoses"
+   },
+   {
+    "kind": "bool",
+    "name": "detLingeringBlocksButCounters"
+   },
+   {
+    "kind": "bool",
+    "name": "detPositiveHpNeverRemoved"
+   },
+   {
+    "kind": "bool",
+    "name": "detCharLockDestroysAttacker"
+   },
+   {
+    "kind": "bool",
+    "name": "detCounterBothDestroyed"
+   },
+   {
+    "kind": "bool",
+    "name": "detUnlimitedCountersPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "detDefenseVanishesAtOpponent"
+   },
+   {
+    "kind": "bool",
+    "name": "detPushIntoSpellTriggers"
+   },
+   {
+    "kind": "bool",
+    "name": "detNoCastWhileEngaged"
+   },
+   {
+    "kind": "bool",
+    "name": "detPowerCheckIdentify"
+   },
+   {
+    "kind": "bool",
+    "name": "detSpellRevealedAtSquare"
+   }
+  ],
+  "the DMO dueling-item pins": [
+   {
+    "kind": "const",
+    "name": "detScrollProtectionPR"
+   },
+   {
+    "kind": "const",
+    "name": "detScrollProtectionMv"
+   },
+   {
+    "kind": "const",
+    "name": "detItemClassPrepTurns"
+   },
+   {
+    "kind": "const",
+    "name": "detSpecificItemPrepTurns"
+   },
+   {
+    "kind": "const",
+    "name": "detItemLeechMaxDice"
+   },
+   {
+    "kind": "const",
+    "name": "detStaffLeechMaxDice"
+   },
+   {
+    "kind": "const",
+    "name": "detOtherItemLeechMaxDice"
+   },
+   {
+    "kind": "const",
+    "name": "detExamplePowerScore"
+   },
+   {
+    "kind": "const",
+    "name": "detExampleArmorBonus"
+   },
+   {
+    "kind": "const",
+    "name": "detExampleRingBonus"
+   },
+   {
+    "kind": "const",
+    "name": "detExampleAdjustedPS"
+   },
+   {
+    "kind": "const",
+    "name": "detPreexistingPrepTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "detNoEquipmentInArena"
+   },
+   {
+    "kind": "bool",
+    "name": "detStoringItemsWork"
+   },
+   {
+    "kind": "bool",
+    "name": "detWandsUsuallyBanned"
+   },
+   {
+    "kind": "bool",
+    "name": "detDeviceLevelSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "detProtectiveBonusesVsSpellsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "detAcNoEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "detAttackBonusPersonalOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "detArenaBlockersAbsolute"
+   }
+  ],
+  "the DMO specialist pins": [
+   {
+    "kind": "const",
+    "name": "detSpecialistPrepTurns"
+   },
+   {
+    "kind": "const",
+    "name": "detOppositionSchoolPRBonus"
+   },
+   {
+    "kind": "const",
+    "name": "detDispelBasePR"
+   },
+   {
+    "kind": "const",
+    "name": "detDispelVsIllusionistPR"
+   },
+   {
+    "kind": "const",
+    "name": "detUnseenServantPR"
+   },
+   {
+    "kind": "const",
+    "name": "detVariedUnseenServantPR"
+   },
+   {
+    "kind": "const",
+    "name": "detVariedFireballPR"
+   },
+   {
+    "kind": "const",
+    "name": "detVariedFireballDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detVariedFireballMv"
+   },
+   {
+    "kind": "bool",
+    "name": "detSpecialistSavesApply"
+   },
+   {
+    "kind": "bool",
+    "name": "detWildSurgesNever"
+   },
+   {
+    "kind": "bool",
+    "name": "detLevelVariationBothWildMages"
+   },
+   {
+    "kind": "bool",
+    "name": "detElementalistBoostBothElementalists"
+   }
+  ],
+  "the DMO spoils-of-victory pins": [
+   {
+    "kind": "const",
+    "name": "detExtraCondPrepTurns"
+   },
+   {
+    "kind": "const",
+    "name": "detUnequalCondPrepTurns"
+   },
+   {
+    "kind": "const",
+    "name": "detExcessAbilityLoss"
+   },
+   {
+    "kind": "const",
+    "name": "detTempDmgRegenPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "detTempDeathAtMinus"
+   },
+   {
+    "kind": "const",
+    "name": "detUnconsciousTurnsDice"
+   },
+   {
+    "kind": "const",
+    "name": "detUnconsciousTurnsSize"
+   },
+   {
+    "kind": "const",
+    "name": "detPlaneBlowBand4"
+   },
+   {
+    "kind": "const",
+    "name": "detPlaneBlowBand5"
+   },
+   {
+    "kind": "const",
+    "name": "detDisintegrateChance"
+   },
+   {
+    "kind": "const",
+    "name": "detT25RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "detT26RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "detT27RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "detFriendlyBandCount"
+   },
+   {
+    "kind": "const",
+    "name": "detDeathBandCount"
+   },
+   {
+    "kind": "bool",
+    "name": "detEndOnNoSpellsOrHp"
+   },
+   {
+    "kind": "bool",
+    "name": "detAutoEndWhenMet"
+   },
+   {
+    "kind": "bool",
+    "name": "detSurrenderAlwaysAllowed"
+   },
+   {
+    "kind": "bool",
+    "name": "detSpellLossAsCast"
+   },
+   {
+    "kind": "bool",
+    "name": "detContributedAlwaysLost"
+   },
+   {
+    "kind": "bool",
+    "name": "detWinnerCapAtCast"
+   },
+   {
+    "kind": "bool",
+    "name": "detExcessPermanentIfDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "detMassiveDamageNA"
+   },
+   {
+    "kind": "bool",
+    "name": "detCharmIgnoresResistances"
+   },
+   {
+    "kind": "bool",
+    "name": "detUnconsciousKillable"
+   },
+   {
+    "kind": "bool",
+    "name": "detBlownEquipmentStays"
+   },
+   {
+    "kind": "bool",
+    "name": "detDisintegrateNoRegeneration"
+   },
+   {
+    "kind": "bool",
+    "name": "detBand4EquipmentSaveFire"
+   },
+   {
+    "kind": "bool",
+    "name": "detBand5EquipmentSaveLightning"
+   },
+   {
+    "kind": "bool",
+    "name": "detServiceGeasLiftNeeds"
+   },
+   {
+    "kind": "bool",
+    "name": "detWinnerTempCappedAtDuel"
+   },
+   {
+    "kind": "bool",
+    "name": "detInterferenceEndsDuel"
+   },
+   {
+    "kind": "bool",
+    "name": "detBothVictorsOnInterference"
+   },
+   {
+    "kind": "bool",
+    "name": "detTouchCombatantsEnds"
+   },
+   {
+    "kind": "bool",
+    "name": "detMediatorAttacksNoEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "detMediatorChoosesIsolation"
+   },
+   {
+    "kind": "bool",
+    "name": "detMediatorSearchesContraband"
+   },
+   {
+    "kind": "bool",
+    "name": "detMediatorTouchEnds"
+   },
+   {
+    "kind": "bool",
+    "name": "detMediatorNoCompulsion"
+   },
+   {
+    "kind": "bool",
+    "name": "detMediatorMayIncludeSelf"
+   }
+  ],
+  "the DMO special-characteristic pins": [
+   {
+    "kind": "const",
+    "name": "detSummoningDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "detSummoningDmgPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detIllusionDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "detIllusionDmgPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detDemishadowFailDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detDemishadowCounterDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detDemishadowSaveDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detDemishadowSaveCounterDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detShadowFailDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detShadowCounterDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detShadowSecondSaveDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detShadowFailCounterDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detDemishadowMonDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detDemishadowMonSaveDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detEnergyDrainLevels"
+   },
+   {
+    "kind": "const",
+    "name": "detEnervationDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "detEarthquakeDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detEarthquakeDmgSize"
+   },
+   {
+    "kind": "const",
+    "name": "detEarthquakeCounterCount"
+   },
+   {
+    "kind": "const",
+    "name": "detFireSeedsDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detFireSeedsSaveDice"
+   },
+   {
+    "kind": "const",
+    "name": "detMagicalStoneDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detMagicalStoneDmgSize"
+   },
+   {
+    "kind": "const",
+    "name": "detMeteorsPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "detMeteorDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "detMeteorDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "detMomentBonus"
+   },
+   {
+    "kind": "const",
+    "name": "detFreezingSphereMissileDice"
+   },
+   {
+    "kind": "const",
+    "name": "detFreezingSpherePerLevelDie"
+   },
+   {
+    "kind": "const",
+    "name": "detFreezingSpherePerLevelBonus"
+   },
+   {
+    "kind": "const",
+    "name": "detFreezingSphereMaxDice"
+   },
+   {
+    "kind": "const",
+    "name": "detRainbowFirstMissiles"
+   },
+   {
+    "kind": "const",
+    "name": "detRainbowExtraMissiles"
+   },
+   {
+    "kind": "const",
+    "name": "detRainbowDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "detRainbowDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "detHeatMetalDmgPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "detHeatMetalMissileDmg"
+   },
+   {
+    "kind": "const",
+    "name": "detHolyWordPSReduction"
+   },
+   {
+    "kind": "const",
+    "name": "detChantCastRounds"
+   },
+   {
+    "kind": "const",
+    "name": "detFirePurgeCastRounds"
+   },
+   {
+    "kind": "const",
+    "name": "detFirePurgeDisruptRounds"
+   },
+   {
+    "kind": "const",
+    "name": "detWishDuelDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detLimitedWishCounterMaxLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detGlobeLockMaxLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detMinorGlobeLockMaxLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detSpiritualHammerDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "detShillelaghDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "detWateryDoubleDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "detTelekinesisDmgPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detLiveoakOneAtATime"
+   },
+   {
+    "kind": "const",
+    "name": "detElementalAuraElementCount"
+   },
+   {
+    "kind": "bool",
+    "name": "detMentalTemporaryOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "detNeverCompelledToLeave"
+   },
+   {
+    "kind": "bool",
+    "name": "detSummoningCounterOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "detSummoningLockPersists"
+   },
+   {
+    "kind": "bool",
+    "name": "detIllusionAnyType"
+   },
+   {
+    "kind": "bool",
+    "name": "detIllusionTypeFixedAtCast"
+   },
+   {
+    "kind": "bool",
+    "name": "detIllusionDefenseLockDestroys"
+   },
+   {
+    "kind": "bool",
+    "name": "detReversedOpposite"
+   },
+   {
+    "kind": "bool",
+    "name": "detReverseCountersReverse"
+   },
+   {
+    "kind": "bool",
+    "name": "detTeleportIgnoresBarrierLocks"
+   },
+   {
+    "kind": "bool",
+    "name": "detTeleportCounterLockDestroys"
+   },
+   {
+    "kind": "bool",
+    "name": "detHasteSlowMutual"
+   },
+   {
+    "kind": "bool",
+    "name": "detShieldDefeatsMagicMissile"
+   },
+   {
+    "kind": "bool",
+    "name": "detTransmuteDefeatsWallOfStone"
+   },
+   {
+    "kind": "bool",
+    "name": "detFlyLevitateCounterTransmute"
+   },
+   {
+    "kind": "bool",
+    "name": "detTrueSeeingDefeatsIllusions"
+   },
+   {
+    "kind": "bool",
+    "name": "detStabilizeIneffective"
+   },
+   {
+    "kind": "bool",
+    "name": "detMindBlankCountersLeeches"
+   },
+   {
+    "kind": "bool",
+    "name": "detPermanencyNoConLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "detNeutralizePoisonCounters"
+   },
+   {
+    "kind": "bool",
+    "name": "detRemoveParalysisCounters"
+   },
+   {
+    "kind": "bool",
+    "name": "detRaiseDeadCountersDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "detCrystalbrittleDefeatsMetal"
+   },
+   {
+    "kind": "bool",
+    "name": "detDisintegrateDefeatsBarriers"
+   },
+   {
+    "kind": "bool",
+    "name": "detDispelDestroysOnLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "detWishNoAgingUnlessLost"
+   }
+  ],
+  "the DMO worked-duel pins": [
+   {
+    "kind": "const",
+    "name": "detExampleAdvantageRollDie"
+   },
+   {
+    "kind": "const",
+    "name": "detExClairvoyanceLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detExCalvinClairvoyancePR"
+   },
+   {
+    "kind": "const",
+    "name": "detExClairvoyanceMv"
+   },
+   {
+    "kind": "const",
+    "name": "detExWithdrawLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detExWithdrawPR"
+   },
+   {
+    "kind": "const",
+    "name": "detExWithdrawMv"
+   },
+   {
+    "kind": "const",
+    "name": "detExMonsterSumLevel"
+   },
+   {
+    "kind": "const",
+    "name": "detExMonsterSumPR"
+   },
+   {
+    "kind": "const",
+    "name": "detExMonsterSumMv"
+   },
+   {
+    "kind": "const",
+    "name": "detExDispelPR"
+   },
+   {
+    "kind": "const",
+    "name": "detExDispelMv"
+   },
+   {
+    "kind": "const",
+    "name": "detExMagicMissilePR"
+   },
+   {
+    "kind": "const",
+    "name": "detExMagicMissileMv"
+   },
+   {
+    "kind": "const",
+    "name": "detExAnimatePR"
+   },
+   {
+    "kind": "const",
+    "name": "detExAnimateMv"
+   },
+   {
+    "kind": "const",
+    "name": "detExCalvinRoll"
+   },
+   {
+    "kind": "const",
+    "name": "detExDelsenoraRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "detExWithdrawForcesCombat"
+   },
+   {
+    "kind": "bool",
+    "name": "detExArenaTenSpaces"
+   },
+   {
+    "kind": "table",
+    "name": "detT25Grid"
+   },
+   {
+    "kind": "table",
+    "name": "detT26Grid"
+   },
+   {
+    "kind": "table",
+    "name": "detT27Grid"
+   },
+   {
+    "kind": "table",
+    "name": "detFriendlyStakes"
+   },
+   {
+    "kind": "table",
+    "name": "detDeathStakes"
+   },
+   {
+    "kind": "chain",
+    "name": "detServiceLadder"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the detArenaChantTurns pin",
+   "expr": "m['detArenaChantTurns']() != 1"
+  },
+  {
+   "note": "the detBalanceExampleWizardLevel pin",
+   "expr": "m['detBalanceExampleWizardLevel']() != 7"
+  },
+  {
+   "note": "the detBalanceExamplePriestLevel pin",
+   "expr": "m['detBalanceExamplePriestLevel']() != 12"
+  },
+  {
+   "note": "the detBalanceExampleCapLevel pin",
+   "expr": "m['detBalanceExampleCapLevel']() != 7"
+  },
+  {
+   "note": "the detArenaCorridorMinSpaces pin",
+   "expr": "m['detArenaCorridorMinSpaces']() != 12"
+  },
+  {
+   "note": "the detArenaCorridorMaxSpaces pin",
+   "expr": "m['detArenaCorridorMaxSpaces']() != 30"
+  },
+  {
+   "note": "the detArenaBaseSpaces pin",
+   "expr": "m['detArenaBaseSpaces']() != 10"
+  },
+  {
+   "note": "the detArenaMaxIntervening pin",
+   "expr": "m['detArenaMaxIntervening']() != 30"
+  },
+  {
+   "note": "the detArenaLargestTotal pin",
+   "expr": "m['detArenaLargestTotal']() != 32"
+  },
+  {
+   "note": "the detArenaExampleSpaces pin",
+   "expr": "m['detArenaExampleSpaces']() != 18"
+  },
+  {
+   "note": "the detArenaExampleSpellA pin",
+   "expr": "m['detArenaExampleSpellA']() != 5"
+  },
+  {
+   "note": "the detArenaExampleSpellB pin",
+   "expr": "m['detArenaExampleSpellB']() != 3"
+  },
+  {
+   "note": "the detRoundSteps pin",
+   "expr": "m['detRoundSteps']() != 4"
+  },
+  {
+   "note": "the detTieAdvantageDie pin",
+   "expr": "m['detTieAdvantageDie']() != 10"
+  },
+  {
+   "note": "the detSpellTypes pin",
+   "expr": "m['detSpellTypes']() != 5"
+  },
+  {
+   "note": "the detPRBase pin",
+   "expr": "m['detPRBase']() != 9"
+  },
+  {
+   "note": "the detFireballPR pin",
+   "expr": "m['detFireballPR']() != 12"
+  },
+  {
+   "note": "the detOnlyOneDefensiveStay pin",
+   "expr": "m['detOnlyOneDefensiveStay']() != 1"
+  },
+  {
+   "note": "the detLeechDmgDie pin",
+   "expr": "m['detLeechDmgDie']() != 6"
+  },
+  {
+   "note": "the detLeechDmgPerLevel pin",
+   "expr": "m['detLeechDmgPerLevel']() != 1"
+  },
+  {
+   "note": "the detADDmgDie pin",
+   "expr": "m['detADDmgDie']() != 6"
+  },
+  {
+   "note": "the detADDmgPerLevel pin",
+   "expr": "m['detADDmgPerLevel']() != 1"
+  },
+  {
+   "note": "the detMvTouch pin",
+   "expr": "m['detMvTouch']() != 1"
+  },
+  {
+   "note": "the detMvShort pin",
+   "expr": "m['detMvShort']() != 2"
+  },
+  {
+   "note": "the detMvMedium pin",
+   "expr": "m['detMvMedium']() != 3"
+  },
+  {
+   "note": "the detMvLong pin",
+   "expr": "m['detMvLong']() != 4"
+  },
+  {
+   "note": "the detMvVeryLong pin",
+   "expr": "m['detMvVeryLong']() != 5"
+  },
+  {
+   "note": "the detFireball5thMv pin",
+   "expr": "m['detFireball5thMv']() != 4"
+  },
+  {
+   "note": "the detFireball15thMv pin",
+   "expr": "m['detFireball15thMv']() != 5"
+  },
+  {
+   "note": "the detCombatDie pin",
+   "expr": "m['detCombatDie']() != 20"
+  },
+  {
+   "note": "the detRaryCharmPR pin",
+   "expr": "m['detRaryCharmPR']() != 10"
+  },
+  {
+   "note": "the detSertenCurePR pin",
+   "expr": "m['detSertenCurePR']() != 10"
+  },
+  {
+   "note": "the detRaryRoll pin",
+   "expr": "m['detRaryRoll']() != 12"
+  },
+  {
+   "note": "the detSertenRoll pin",
+   "expr": "m['detSertenRoll']() != 1"
+  },
+  {
+   "note": "the detRaryAltRoll pin",
+   "expr": "m['detRaryAltRoll']() != 9"
+  },
+  {
+   "note": "the detLockExampleRaryRoll pin",
+   "expr": "m['detLockExampleRaryRoll']() != 20"
+  },
+  {
+   "note": "the detCharMoveOneSpace pin",
+   "expr": "m['detCharMoveOneSpace']() != 1"
+  },
+  {
+   "note": "the detCharPRBase pin",
+   "expr": "m['detCharPRBase']() != 9"
+  },
+  {
+   "note": "the detOneCounterPerIncoming pin",
+   "expr": "m['detOneCounterPerIncoming']() != 1"
+  },
+  {
+   "note": "the detCharVsCharDmgDie pin",
+   "expr": "m['detCharVsCharDmgDie']() != 6"
+  },
+  {
+   "note": "the detCharVsCharPushDie pin",
+   "expr": "m['detCharVsCharPushDie']() != 4"
+  },
+  {
+   "note": "the detScrollProtectionPR pin",
+   "expr": "m['detScrollProtectionPR']() != 15"
+  },
+  {
+   "note": "the detScrollProtectionMv pin",
+   "expr": "m['detScrollProtectionMv']() != 1"
+  },
+  {
+   "note": "the detItemClassPrepTurns pin",
+   "expr": "m['detItemClassPrepTurns']() != 1"
+  },
+  {
+   "note": "the detSpecificItemPrepTurns pin",
+   "expr": "m['detSpecificItemPrepTurns']() != 1"
+  },
+  {
+   "note": "the detItemLeechMaxDice pin",
+   "expr": "m['detItemLeechMaxDice']() != 6"
+  },
+  {
+   "note": "the detStaffLeechMaxDice pin",
+   "expr": "m['detStaffLeechMaxDice']() != 8"
+  },
+  {
+   "note": "the detOtherItemLeechMaxDice pin",
+   "expr": "m['detOtherItemLeechMaxDice']() != 9"
+  },
+  {
+   "note": "the detExamplePowerScore pin",
+   "expr": "m['detExamplePowerScore']() != 11"
+  },
+  {
+   "note": "the detExampleArmorBonus pin",
+   "expr": "m['detExampleArmorBonus']() != 2"
+  },
+  {
+   "note": "the detExampleRingBonus pin",
+   "expr": "m['detExampleRingBonus']() != 1"
+  },
+  {
+   "note": "the detExampleAdjustedPS pin",
+   "expr": "m['detExampleAdjustedPS']() != 14"
+  },
+  {
+   "note": "the detPreexistingPrepTurns pin",
+   "expr": "m['detPreexistingPrepTurns']() != 1"
+  },
+  {
+   "note": "the detSpecialistPrepTurns pin",
+   "expr": "m['detSpecialistPrepTurns']() != 1"
+  },
+  {
+   "note": "the detOppositionSchoolPRBonus pin",
+   "expr": "m['detOppositionSchoolPRBonus']() != 1"
+  },
+  {
+   "note": "the detDispelBasePR pin",
+   "expr": "m['detDispelBasePR']() != 12"
+  },
+  {
+   "note": "the detDispelVsIllusionistPR pin",
+   "expr": "m['detDispelVsIllusionistPR']() != 13"
+  },
+  {
+   "note": "the detUnseenServantPR pin",
+   "expr": "m['detUnseenServantPR']() != 10"
+  },
+  {
+   "note": "the detVariedUnseenServantPR pin",
+   "expr": "m['detVariedUnseenServantPR']() != 5"
+  },
+  {
+   "note": "the detVariedFireballPR pin",
+   "expr": "m['detVariedFireballPR']() != 7"
+  },
+  {
+   "note": "the detVariedFireballDmgDice pin",
+   "expr": "m['detVariedFireballDmgDice']() != 8"
+  },
+  {
+   "note": "the detVariedFireballMv pin",
+   "expr": "m['detVariedFireballMv']() != 4"
+  },
+  {
+   "note": "the detExtraCondPrepTurns pin",
+   "expr": "m['detExtraCondPrepTurns']() != 1"
+  },
+  {
+   "note": "the detUnequalCondPrepTurns pin",
+   "expr": "m['detUnequalCondPrepTurns']() != 2"
+  },
+  {
+   "note": "the detExcessAbilityLoss pin",
+   "expr": "m['detExcessAbilityLoss']() != 1"
+  },
+  {
+   "note": "the detTempDmgRegenPerRound pin",
+   "expr": "m['detTempDmgRegenPerRound']() != 1"
+  },
+  {
+   "note": "the detTempDeathAtMinus pin",
+   "expr": "m['detTempDeathAtMinus']() != 10"
+  },
+  {
+   "note": "the detUnconsciousTurnsDice pin",
+   "expr": "m['detUnconsciousTurnsDice']() != 2"
+  },
+  {
+   "note": "the detUnconsciousTurnsSize pin",
+   "expr": "m['detUnconsciousTurnsSize']() != 6"
+  },
+  {
+   "note": "the detPlaneBlowBand4 pin",
+   "expr": "m['detPlaneBlowBand4']() != 20"
+  },
+  {
+   "note": "the detPlaneBlowBand5 pin",
+   "expr": "m['detPlaneBlowBand5']() != 40"
+  },
+  {
+   "note": "the detDisintegrateChance pin",
+   "expr": "m['detDisintegrateChance']() != 50"
+  },
+  {
+   "note": "the detSummoningDmgDie pin",
+   "expr": "m['detSummoningDmgDie']() != 6"
+  },
+  {
+   "note": "the detSummoningDmgPerLevel pin",
+   "expr": "m['detSummoningDmgPerLevel']() != 1"
+  },
+  {
+   "note": "the detIllusionDmgDie pin",
+   "expr": "m['detIllusionDmgDie']() != 6"
+  },
+  {
+   "note": "the detIllusionDmgPerLevel pin",
+   "expr": "m['detIllusionDmgPerLevel']() != 1"
+  },
+  {
+   "note": "the detDemishadowFailDmgDice pin",
+   "expr": "m['detDemishadowFailDmgDice']() != 10"
+  },
+  {
+   "note": "the detDemishadowCounterDmgDice pin",
+   "expr": "m['detDemishadowCounterDmgDice']() != 5"
+  },
+  {
+   "note": "the detDemishadowSaveDmgDice pin",
+   "expr": "m['detDemishadowSaveDmgDice']() != 4"
+  },
+  {
+   "note": "the detDemishadowSaveCounterDmgDice pin",
+   "expr": "m['detDemishadowSaveCounterDmgDice']() != 2"
+  },
+  {
+   "note": "the detShadowFailDmgDice pin",
+   "expr": "m['detShadowFailDmgDice']() != 10"
+  },
+  {
+   "note": "the detShadowCounterDmgDice pin",
+   "expr": "m['detShadowCounterDmgDice']() != 5"
+  },
+  {
+   "note": "the detShadowSecondSaveDmgDice pin",
+   "expr": "m['detShadowSecondSaveDmgDice']() != 1"
+  },
+  {
+   "note": "the detShadowFailCounterDmgDice pin",
+   "expr": "m['detShadowFailCounterDmgDice']() != 2"
+  },
+  {
+   "note": "the detDemishadowMonDmgDice pin",
+   "expr": "m['detDemishadowMonDmgDice']() != 5"
+  },
+  {
+   "note": "the detDemishadowMonSaveDmgDice pin",
+   "expr": "m['detDemishadowMonSaveDmgDice']() != 2"
+  },
+  {
+   "note": "the detEnergyDrainLevels pin",
+   "expr": "m['detEnergyDrainLevels']() != 2"
+  },
+  {
+   "note": "the detEnervationDivisor pin",
+   "expr": "m['detEnervationDivisor']() != 4"
+  },
+  {
+   "note": "the detEarthquakeDmgDice pin",
+   "expr": "m['detEarthquakeDmgDice']() != 5"
+  },
+  {
+   "note": "the detEarthquakeDmgSize pin",
+   "expr": "m['detEarthquakeDmgSize']() != 10"
+  },
+  {
+   "note": "the detEarthquakeCounterCount pin",
+   "expr": "m['detEarthquakeCounterCount']() != 6"
+  },
+  {
+   "note": "the detFireSeedsDmgDice pin",
+   "expr": "m['detFireSeedsDmgDice']() != 8"
+  },
+  {
+   "note": "the detFireSeedsSaveDice pin",
+   "expr": "m['detFireSeedsSaveDice']() != 4"
+  },
+  {
+   "note": "the detMagicalStoneDmgDice pin",
+   "expr": "m['detMagicalStoneDmgDice']() != 3"
+  },
+  {
+   "note": "the detMagicalStoneDmgSize pin",
+   "expr": "m['detMagicalStoneDmgSize']() != 4"
+  },
+  {
+   "note": "the detMeteorsPerRound pin",
+   "expr": "m['detMeteorsPerRound']() != 5"
+  },
+  {
+   "note": "the detMeteorDmgDie pin",
+   "expr": "m['detMeteorDmgDie']() != 4"
+  },
+  {
+   "note": "the detMeteorDmgBonus pin",
+   "expr": "m['detMeteorDmgBonus']() != 1"
+  },
+  {
+   "note": "the detMomentBonus pin",
+   "expr": "m['detMomentBonus']() != 4"
+  },
+  {
+   "note": "the detFreezingSphereMissileDice pin",
+   "expr": "m['detFreezingSphereMissileDice']() != 6"
+  },
+  {
+   "note": "the detFreezingSpherePerLevelDie pin",
+   "expr": "m['detFreezingSpherePerLevelDie']() != 4"
+  },
+  {
+   "note": "the detFreezingSpherePerLevelBonus pin",
+   "expr": "m['detFreezingSpherePerLevelBonus']() != 2"
+  },
+  {
+   "note": "the detFreezingSphereMaxDice pin",
+   "expr": "m['detFreezingSphereMaxDice']() != 10"
+  },
+  {
+   "note": "the detRainbowFirstMissiles pin",
+   "expr": "m['detRainbowFirstMissiles']() != 4"
+  },
+  {
+   "note": "the detRainbowExtraMissiles pin",
+   "expr": "m['detRainbowExtraMissiles']() != 3"
+  },
+  {
+   "note": "the detRainbowDmgDie pin",
+   "expr": "m['detRainbowDmgDie']() != 6"
+  },
+  {
+   "note": "the detRainbowDmgBonus pin",
+   "expr": "m['detRainbowDmgBonus']() != 2"
+  },
+  {
+   "note": "the detHeatMetalDmgPerRound pin",
+   "expr": "m['detHeatMetalDmgPerRound']() != 3"
+  },
+  {
+   "note": "the detHeatMetalMissileDmg pin",
+   "expr": "m['detHeatMetalMissileDmg']() != 1"
+  },
+  {
+   "note": "the detHolyWordPSReduction pin",
+   "expr": "m['detHolyWordPSReduction']() != 2"
+  },
+  {
+   "note": "the detChantCastRounds pin",
+   "expr": "m['detChantCastRounds']() != 2"
+  },
+  {
+   "note": "the detFirePurgeCastRounds pin",
+   "expr": "m['detFirePurgeCastRounds']() != 10"
+  },
+  {
+   "note": "the detFirePurgeDisruptRounds pin",
+   "expr": "m['detFirePurgeDisruptRounds']() != 9"
+  },
+  {
+   "note": "the detWishDuelDmgDice pin",
+   "expr": "m['detWishDuelDmgDice']() != 10"
+  },
+  {
+   "note": "the detLimitedWishCounterMaxLevel pin",
+   "expr": "m['detLimitedWishCounterMaxLevel']() != 6"
+  },
+  {
+   "note": "the detGlobeLockMaxLevel pin",
+   "expr": "m['detGlobeLockMaxLevel']() != 4"
+  },
+  {
+   "note": "the detMinorGlobeLockMaxLevel pin",
+   "expr": "m['detMinorGlobeLockMaxLevel']() != 3"
+  },
+  {
+   "note": "the detSpiritualHammerDmgDie pin",
+   "expr": "m['detSpiritualHammerDmgDie']() != 6"
+  },
+  {
+   "note": "the detShillelaghDmgDie pin",
+   "expr": "m['detShillelaghDmgDie']() != 6"
+  },
+  {
+   "note": "the detWateryDoubleDmgDice pin",
+   "expr": "m['detWateryDoubleDmgDice']() != 3"
+  },
+  {
+   "note": "the detTelekinesisDmgPerLevel pin",
+   "expr": "m['detTelekinesisDmgPerLevel']() != 1"
+  },
+  {
+   "note": "the detLiveoakOneAtATime pin",
+   "expr": "m['detLiveoakOneAtATime']() != 1"
+  },
+  {
+   "note": "the detElementalAuraElementCount pin",
+   "expr": "m['detElementalAuraElementCount']() != 4"
+  },
+  {
+   "note": "the detExampleAdvantageRollDie pin",
+   "expr": "m['detExampleAdvantageRollDie']() != 10"
+  },
+  {
+   "note": "the detExClairvoyanceLevel pin",
+   "expr": "m['detExClairvoyanceLevel']() != 3"
+  },
+  {
+   "note": "the detExCalvinClairvoyancePR pin",
+   "expr": "m['detExCalvinClairvoyancePR']() != 12"
+  },
+  {
+   "note": "the detExClairvoyanceMv pin",
+   "expr": "m['detExClairvoyanceMv']() != 5"
+  },
+  {
+   "note": "the detExWithdrawLevel pin",
+   "expr": "m['detExWithdrawLevel']() != 2"
+  },
+  {
+   "note": "the detExWithdrawPR pin",
+   "expr": "m['detExWithdrawPR']() != 11"
+  },
+  {
+   "note": "the detExWithdrawMv pin",
+   "expr": "m['detExWithdrawMv']() != 1"
+  },
+  {
+   "note": "the detExMonsterSumLevel pin",
+   "expr": "m['detExMonsterSumLevel']() != 4"
+  },
+  {
+   "note": "the detExMonsterSumPR pin",
+   "expr": "m['detExMonsterSumPR']() != 13"
+  },
+  {
+   "note": "the detExMonsterSumMv pin",
+   "expr": "m['detExMonsterSumMv']() != 3"
+  },
+  {
+   "note": "the detExDispelPR pin",
+   "expr": "m['detExDispelPR']() != 12"
+  },
+  {
+   "note": "the detExDispelMv pin",
+   "expr": "m['detExDispelMv']() != 4"
+  },
+  {
+   "note": "the detExMagicMissilePR pin",
+   "expr": "m['detExMagicMissilePR']() != 10"
+  },
+  {
+   "note": "the detExMagicMissileMv pin",
+   "expr": "m['detExMagicMissileMv']() != 5"
+  },
+  {
+   "note": "the detExAnimatePR pin",
+   "expr": "m['detExAnimatePR']() != 15"
+  },
+  {
+   "note": "the detExAnimateMv pin",
+   "expr": "m['detExAnimateMv']() != 3"
+  },
+  {
+   "note": "the detExCalvinRoll pin",
+   "expr": "m['detExCalvinRoll']() != 20"
+  },
+  {
+   "note": "the detExDelsenoraRoll pin",
+   "expr": "m['detExDelsenoraRoll']() != 9"
+  },
+  {
+   "note": "the detT25RowCount pin",
+   "expr": "m['detT25RowCount']() != 5"
+  },
+  {
+   "note": "the detT26RowCount pin",
+   "expr": "m['detT26RowCount']() != 5"
+  },
+  {
+   "note": "the detT27RowCount pin",
+   "expr": "m['detT27RowCount']() != 5"
+  },
+  {
+   "note": "the detFriendlyBandCount pin",
+   "expr": "m['detFriendlyBandCount']() != 4"
+  },
+  {
+   "note": "the detDeathBandCount pin",
+   "expr": "m['detDeathBandCount']() != 5"
+  },
+  {
+   "note": "the detArenaRestartOnDisturbance pin",
+   "expr": "m['detArenaRestartOnDisturbance']() != 1"
+  },
+  {
+   "note": "the detMediatorProtectiveRequired pin",
+   "expr": "m['detMediatorProtectiveRequired']() != 1"
+  },
+  {
+   "note": "the detContributedMustBeMemorized pin",
+   "expr": "m['detContributedMustBeMemorized']() != 1"
+  },
+  {
+   "note": "the detContributedLostAsCast pin",
+   "expr": "m['detContributedLostAsCast']() != 1"
+  },
+  {
+   "note": "the detContributionSecret pin",
+   "expr": "m['detContributionSecret']() != 1"
+  },
+  {
+   "note": "the detMediatorKnowsAll pin",
+   "expr": "m['detMediatorKnowsAll']() != 1"
+  },
+  {
+   "note": "the detCharmCannotConsent pin",
+   "expr": "m['detCharmCannotConsent']() != 1"
+  },
+  {
+   "note": "the detThreatConsentValid pin",
+   "expr": "m['detThreatConsentValid']() != 1"
+  },
+  {
+   "note": "the detGeasSubjectFreeToRefuse pin",
+   "expr": "m['detGeasSubjectFreeToRefuse']() != 1"
+  },
+  {
+   "note": "the detBalanceCapWeakerLevel pin",
+   "expr": "m['detBalanceCapWeakerLevel']() != 1"
+  },
+  {
+   "note": "the detDuelistSpacesNotCounted pin",
+   "expr": "m['detDuelistSpacesNotCounted']() != 1"
+  },
+  {
+   "note": "the detOnlyHighestFactored pin",
+   "expr": "m['detOnlyHighestFactored']() != 1"
+  },
+  {
+   "note": "the detFirstRoundNoMovement pin",
+   "expr": "m['detFirstRoundNoMovement']() != 1"
+  },
+  {
+   "note": "the detAdvantageMovesFirst pin",
+   "expr": "m['detAdvantageMovesFirst']() != 1"
+  },
+  {
+   "note": "the detAdvantageHighestSingleSpell pin",
+   "expr": "m['detAdvantageHighestSingleSpell']() != 1"
+  },
+  {
+   "note": "the detAdvantageShiftsOnSpellDeath pin",
+   "expr": "m['detAdvantageShiftsOnSpellDeath']() != 1"
+  },
+  {
+   "note": "the detNoShiftOnSaveOrPR pin",
+   "expr": "m['detNoShiftOnSaveOrPR']() != 1"
+  },
+  {
+   "note": "the detSpellNeverLeavesArena pin",
+   "expr": "m['detSpellNeverLeavesArena']() != 1"
+  },
+  {
+   "note": "the detNoSelfCasting pin",
+   "expr": "m['detNoSelfCasting']() != 1"
+  },
+  {
+   "note": "the detSpellsAffectConstructs pin",
+   "expr": "m['detSpellsAffectConstructs']() != 1"
+  },
+  {
+   "note": "the detDetectIdentifies pin",
+   "expr": "m['detDetectIdentifies']() != 1"
+  },
+  {
+   "note": "the detDefensiveMayStay pin",
+   "expr": "m['detDefensiveMayStay']() != 1"
+  },
+  {
+   "note": "the detMustMoveOneSpace pin",
+   "expr": "m['detMustMoveOneSpace']() != 1"
+  },
+  {
+   "note": "the detCastingSimultaneous pin",
+   "expr": "m['detCastingSimultaneous']() != 1"
+  },
+  {
+   "note": "the detCastingNotDisrupted pin",
+   "expr": "m['detCastingNotDisrupted']() != 1"
+  },
+  {
+   "note": "the detArenaSuppliesComponents pin",
+   "expr": "m['detArenaSuppliesComponents']() != 1"
+  },
+  {
+   "note": "the detSpellAppearsAhead pin",
+   "expr": "m['detSpellAppearsAhead']() != 1"
+  },
+  {
+   "note": "the detNoMoveOnCastRound pin",
+   "expr": "m['detNoMoveOnCastRound']() != 1"
+  },
+  {
+   "note": "the detAttackMustFightDefense pin",
+   "expr": "m['detAttackMustFightDefense']() != 1"
+  },
+  {
+   "note": "the detDefenseMustFightAttack pin",
+   "expr": "m['detDefenseMustFightAttack']() != 1"
+  },
+  {
+   "note": "the detLeechMustFightLeech pin",
+   "expr": "m['detLeechMustFightLeech']() != 1"
+  },
+  {
+   "note": "the detLeechSaveHalf pin",
+   "expr": "m['detLeechSaveHalf']() != 1"
+  },
+  {
+   "note": "the detADMustFightAD pin",
+   "expr": "m['detADMustFightAD']() != 1"
+  },
+  {
+   "note": "the detADSaveOrCombat pin",
+   "expr": "m['detADSaveOrCombat']() != 1"
+  },
+  {
+   "note": "the detMissileIgnoresMost pin",
+   "expr": "m['detMissileIgnoresMost']() != 1"
+  },
+  {
+   "note": "the detMoveOrderClosestFirst pin",
+   "expr": "m['detMoveOrderClosestFirst']() != 1"
+  },
+  {
+   "note": "the detFriendlyStackingOk pin",
+   "expr": "m['detFriendlyStackingOk']() != 1"
+  },
+  {
+   "note": "the detNoBackwardMove pin",
+   "expr": "m['detNoBackwardMove']() != 1"
+  },
+  {
+   "note": "the detFailIfHigher pin",
+   "expr": "m['detFailIfHigher']() != 1"
+  },
+  {
+   "note": "the detLockOnBothFail pin",
+   "expr": "m['detLockOnBothFail']() != 1"
+  },
+  {
+   "note": "the detLockOnEqualPRTie pin",
+   "expr": "m['detLockOnEqualPRTie']() != 1"
+  },
+  {
+   "note": "the detHigherRollWins pin",
+   "expr": "m['detHigherRollWins']() != 1"
+  },
+  {
+   "note": "the detWinningSpellFinishesMove pin",
+   "expr": "m['detWinningSpellFinishesMove']() != 1"
+  },
+  {
+   "note": "the detOneCombatPerPairPerRound pin",
+   "expr": "m['detOneCombatPerPairPerRound']() != 1"
+  },
+  {
+   "note": "the detLockedBlockPassage pin",
+   "expr": "m['detLockedBlockPassage']() != 1"
+  },
+  {
+   "note": "the detHighestMVCheckedFirst pin",
+   "expr": "m['detHighestMVCheckedFirst']() != 1"
+  },
+  {
+   "note": "the detDisadvantagedAnnouncesType pin",
+   "expr": "m['detDisadvantagedAnnouncesType']() != 1"
+  },
+  {
+   "note": "the detCharMoveBackward pin",
+   "expr": "m['detCharMoveBackward']() != 1"
+  },
+  {
+   "note": "the detSavingThrowsByCasterLevel pin",
+   "expr": "m['detSavingThrowsByCasterLevel']() != 1"
+  },
+  {
+   "note": "the detAbilityBonusesNeverApply pin",
+   "expr": "m['detAbilityBonusesNeverApply']() != 1"
+  },
+  {
+   "note": "the detZeroHpLoses pin",
+   "expr": "m['detZeroHpLoses']() != 1"
+  },
+  {
+   "note": "the detLingeringBlocksButCounters pin",
+   "expr": "m['detLingeringBlocksButCounters']() != 1"
+  },
+  {
+   "note": "the detPositiveHpNeverRemoved pin",
+   "expr": "m['detPositiveHpNeverRemoved']() != 1"
+  },
+  {
+   "note": "the detCharLockDestroysAttacker pin",
+   "expr": "m['detCharLockDestroysAttacker']() != 1"
+  },
+  {
+   "note": "the detCounterBothDestroyed pin",
+   "expr": "m['detCounterBothDestroyed']() != 1"
+  },
+  {
+   "note": "the detUnlimitedCountersPerRound pin",
+   "expr": "m['detUnlimitedCountersPerRound']() != 1"
+  },
+  {
+   "note": "the detDefenseVanishesAtOpponent pin",
+   "expr": "m['detDefenseVanishesAtOpponent']() != 1"
+  },
+  {
+   "note": "the detPushIntoSpellTriggers pin",
+   "expr": "m['detPushIntoSpellTriggers']() != 1"
+  },
+  {
+   "note": "the detNoCastWhileEngaged pin",
+   "expr": "m['detNoCastWhileEngaged']() != 1"
+  },
+  {
+   "note": "the detPowerCheckIdentify pin",
+   "expr": "m['detPowerCheckIdentify']() != 1"
+  },
+  {
+   "note": "the detSpellRevealedAtSquare pin",
+   "expr": "m['detSpellRevealedAtSquare']() != 1"
+  },
+  {
+   "note": "the detNoEquipmentInArena pin",
+   "expr": "m['detNoEquipmentInArena']() != 1"
+  },
+  {
+   "note": "the detStoringItemsWork pin",
+   "expr": "m['detStoringItemsWork']() != 1"
+  },
+  {
+   "note": "the detWandsUsuallyBanned pin",
+   "expr": "m['detWandsUsuallyBanned']() != 1"
+  },
+  {
+   "note": "the detDeviceLevelSaves pin",
+   "expr": "m['detDeviceLevelSaves']() != 1"
+  },
+  {
+   "note": "the detProtectiveBonusesVsSpellsOnly pin",
+   "expr": "m['detProtectiveBonusesVsSpellsOnly']() != 1"
+  },
+  {
+   "note": "the detAcNoEffect pin",
+   "expr": "m['detAcNoEffect']() != 1"
+  },
+  {
+   "note": "the detAttackBonusPersonalOnly pin",
+   "expr": "m['detAttackBonusPersonalOnly']() != 1"
+  },
+  {
+   "note": "the detArenaBlockersAbsolute pin",
+   "expr": "m['detArenaBlockersAbsolute']() != 1"
+  },
+  {
+   "note": "the detSpecialistSavesApply pin",
+   "expr": "m['detSpecialistSavesApply']() != 1"
+  },
+  {
+   "note": "the detWildSurgesNever pin",
+   "expr": "m['detWildSurgesNever']() != 1"
+  },
+  {
+   "note": "the detLevelVariationBothWildMages pin",
+   "expr": "m['detLevelVariationBothWildMages']() != 1"
+  },
+  {
+   "note": "the detElementalistBoostBothElementalists pin",
+   "expr": "m['detElementalistBoostBothElementalists']() != 1"
+  },
+  {
+   "note": "the detEndOnNoSpellsOrHp pin",
+   "expr": "m['detEndOnNoSpellsOrHp']() != 1"
+  },
+  {
+   "note": "the detAutoEndWhenMet pin",
+   "expr": "m['detAutoEndWhenMet']() != 1"
+  },
+  {
+   "note": "the detSurrenderAlwaysAllowed pin",
+   "expr": "m['detSurrenderAlwaysAllowed']() != 1"
+  },
+  {
+   "note": "the detSpellLossAsCast pin",
+   "expr": "m['detSpellLossAsCast']() != 1"
+  },
+  {
+   "note": "the detContributedAlwaysLost pin",
+   "expr": "m['detContributedAlwaysLost']() != 1"
+  },
+  {
+   "note": "the detWinnerCapAtCast pin",
+   "expr": "m['detWinnerCapAtCast']() != 1"
+  },
+  {
+   "note": "the detExcessPermanentIfDeath pin",
+   "expr": "m['detExcessPermanentIfDeath']() != 1"
+  },
+  {
+   "note": "the detMassiveDamageNA pin",
+   "expr": "m['detMassiveDamageNA']() != 1"
+  },
+  {
+   "note": "the detCharmIgnoresResistances pin",
+   "expr": "m['detCharmIgnoresResistances']() != 1"
+  },
+  {
+   "note": "the detUnconsciousKillable pin",
+   "expr": "m['detUnconsciousKillable']() != 1"
+  },
+  {
+   "note": "the detBlownEquipmentStays pin",
+   "expr": "m['detBlownEquipmentStays']() != 1"
+  },
+  {
+   "note": "the detDisintegrateNoRegeneration pin",
+   "expr": "m['detDisintegrateNoRegeneration']() != 1"
+  },
+  {
+   "note": "the detBand4EquipmentSaveFire pin",
+   "expr": "m['detBand4EquipmentSaveFire']() != 1"
+  },
+  {
+   "note": "the detBand5EquipmentSaveLightning pin",
+   "expr": "m['detBand5EquipmentSaveLightning']() != 1"
+  },
+  {
+   "note": "the detServiceGeasLiftNeeds pin",
+   "expr": "m['detServiceGeasLiftNeeds']() != 1"
+  },
+  {
+   "note": "the detWinnerTempCappedAtDuel pin",
+   "expr": "m['detWinnerTempCappedAtDuel']() != 1"
+  },
+  {
+   "note": "the detInterferenceEndsDuel pin",
+   "expr": "m['detInterferenceEndsDuel']() != 1"
+  },
+  {
+   "note": "the detBothVictorsOnInterference pin",
+   "expr": "m['detBothVictorsOnInterference']() != 1"
+  },
+  {
+   "note": "the detTouchCombatantsEnds pin",
+   "expr": "m['detTouchCombatantsEnds']() != 1"
+  },
+  {
+   "note": "the detMediatorAttacksNoEffect pin",
+   "expr": "m['detMediatorAttacksNoEffect']() != 1"
+  },
+  {
+   "note": "the detMediatorChoosesIsolation pin",
+   "expr": "m['detMediatorChoosesIsolation']() != 1"
+  },
+  {
+   "note": "the detMediatorSearchesContraband pin",
+   "expr": "m['detMediatorSearchesContraband']() != 1"
+  },
+  {
+   "note": "the detMediatorTouchEnds pin",
+   "expr": "m['detMediatorTouchEnds']() != 1"
+  },
+  {
+   "note": "the detMediatorNoCompulsion pin",
+   "expr": "m['detMediatorNoCompulsion']() != 1"
+  },
+  {
+   "note": "the detMediatorMayIncludeSelf pin",
+   "expr": "m['detMediatorMayIncludeSelf']() != 1"
+  },
+  {
+   "note": "the detMentalTemporaryOnly pin",
+   "expr": "m['detMentalTemporaryOnly']() != 1"
+  },
+  {
+   "note": "the detNeverCompelledToLeave pin",
+   "expr": "m['detNeverCompelledToLeave']() != 1"
+  },
+  {
+   "note": "the detSummoningCounterOnly pin",
+   "expr": "m['detSummoningCounterOnly']() != 1"
+  },
+  {
+   "note": "the detSummoningLockPersists pin",
+   "expr": "m['detSummoningLockPersists']() != 1"
+  },
+  {
+   "note": "the detIllusionAnyType pin",
+   "expr": "m['detIllusionAnyType']() != 1"
+  },
+  {
+   "note": "the detIllusionTypeFixedAtCast pin",
+   "expr": "m['detIllusionTypeFixedAtCast']() != 1"
+  },
+  {
+   "note": "the detIllusionDefenseLockDestroys pin",
+   "expr": "m['detIllusionDefenseLockDestroys']() != 1"
+  },
+  {
+   "note": "the detReversedOpposite pin",
+   "expr": "m['detReversedOpposite']() != 1"
+  },
+  {
+   "note": "the detReverseCountersReverse pin",
+   "expr": "m['detReverseCountersReverse']() != 1"
+  },
+  {
+   "note": "the detTeleportIgnoresBarrierLocks pin",
+   "expr": "m['detTeleportIgnoresBarrierLocks']() != 1"
+  },
+  {
+   "note": "the detTeleportCounterLockDestroys pin",
+   "expr": "m['detTeleportCounterLockDestroys']() != 1"
+  },
+  {
+   "note": "the detWishNoAgingUnlessLost pin",
+   "expr": "m['detWishNoAgingUnlessLost']() != 1"
+  },
+  {
+   "note": "the detHasteSlowMutual pin",
+   "expr": "m['detHasteSlowMutual']() != 1"
+  },
+  {
+   "note": "the detShieldDefeatsMagicMissile pin",
+   "expr": "m['detShieldDefeatsMagicMissile']() != 1"
+  },
+  {
+   "note": "the detTransmuteDefeatsWallOfStone pin",
+   "expr": "m['detTransmuteDefeatsWallOfStone']() != 1"
+  },
+  {
+   "note": "the detFlyLevitateCounterTransmute pin",
+   "expr": "m['detFlyLevitateCounterTransmute']() != 1"
+  },
+  {
+   "note": "the detTrueSeeingDefeatsIllusions pin",
+   "expr": "m['detTrueSeeingDefeatsIllusions']() != 1"
+  },
+  {
+   "note": "the detStabilizeIneffective pin",
+   "expr": "m['detStabilizeIneffective']() != 1"
+  },
+  {
+   "note": "the detMindBlankCountersLeeches pin",
+   "expr": "m['detMindBlankCountersLeeches']() != 1"
+  },
+  {
+   "note": "the detPermanencyNoConLoss pin",
+   "expr": "m['detPermanencyNoConLoss']() != 1"
+  },
+  {
+   "note": "the detNeutralizePoisonCounters pin",
+   "expr": "m['detNeutralizePoisonCounters']() != 1"
+  },
+  {
+   "note": "the detRemoveParalysisCounters pin",
+   "expr": "m['detRemoveParalysisCounters']() != 1"
+  },
+  {
+   "note": "the detRaiseDeadCountersDamage pin",
+   "expr": "m['detRaiseDeadCountersDamage']() != 1"
+  },
+  {
+   "note": "the detCrystalbrittleDefeatsMetal pin",
+   "expr": "m['detCrystalbrittleDefeatsMetal']() != 1"
+  },
+  {
+   "note": "the detDisintegrateDefeatsBarriers pin",
+   "expr": "m['detDisintegrateDefeatsBarriers']() != 1"
+  },
+  {
+   "note": "the detDispelDestroysOnLoss pin",
+   "expr": "m['detDispelDestroysOnLoss']() != 1"
+  },
+  {
+   "note": "the detExWithdrawForcesCombat pin",
+   "expr": "m['detExWithdrawForcesCombat']() != 1"
+  },
+  {
+   "note": "the detExArenaTenSpaces pin",
+   "expr": "m['detExArenaTenSpaces']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the chapter parent box closes",
+   "from": "- [ ] **Chapter 5: Magical Duels** (pp. 96-117) - the\n  arena combat system",
+   "to": "- [x] **Chapter 5: Magical Duels** (pp. 96-117) - the\n  arena combat system\n  arena combat system - R606: the det arena-economy pins - Chapter 5 of the\n  DMO is DONE in one round (seventeen boxes flip, the census moves 52/44 to\n  69/27)"
+  },
+  {
+   "note": "the creating-the-arena box closes",
+   "from": "  - [ ] Creating the Arena (pp. 96-97) - the\n    cooperative construction (the arm's-length circling\n    chant, the mediator's protective spell, the\n    contributed spells, the secret recording)",
+   "to": "  - [x] Creating the Arena (pp. 96-97) - the\n    cooperative construction (the arm's-length circling\n    chant, the mediator's protective spell, the\n    contributed spells, the secret recording)\n    contributed spells, the secret recording) - R606: the det arena pins (the\n    one-turn circling chant, the restart-on-disturbance, the mediator\n    protective spell, the contributed memorized spells lost as cast, the\n    secret recording, the consent doctrine)"
+  },
+  {
+   "note": "the balance-of-power box closes",
+   "from": "  - [ ] Balance of Power (p. 97) - the weaker-level\n    cap on contributed spell levels",
+   "to": "  - [x] Balance of Power (p. 97) - the weaker-level\n    cap on contributed spell levels\n    cap on contributed spell levels - R606: the det balance pins (the\n    weaker-level cap, the Calvin-7 vs Delsenora-12 example)"
+  },
+  {
+   "note": "the arena-physics box closes",
+   "from": "  - [ ] Arena Physics / Conducting the Duel (pp.\n    97-98) - the arena size from contributed spells",
+   "to": "  - [x] Arena Physics / Conducting the Duel (pp.\n    97-98) - the arena size from contributed spells\n    97-98) - the arena size from contributed spells - R606: the det corridor\n    pins (the 12-to-30 corridor, the ten-space base plus the highest levels\n    each side, the 30 cap, the 32-space largest arena, the four-step round)"
+  },
+  {
+   "note": "the advantage box closes",
+   "from": "  - [ ] Determining Advantage (p. 97) - the advantage\n    roll and stakes",
+   "to": "  - [x] Determining Advantage (p. 97) - the advantage\n    roll and stakes\n    roll and stakes - R606: the det advantage pins (the highest-single-spell\n    rule, the 1d10 tie roll, the shift-on-destruction doctrine, the\n    no-shift-on-save exception)"
+  },
+  {
+   "note": "the Table 25 box closes",
+   "from": "  - [ ] Table 25: Spell Interactions (p. 99) - the\n    spell-vs-spell resolution grid",
+   "to": "  - [x] Table 25: Spell Interactions (p. 99) - the\n    spell-vs-spell resolution grid\n    spell-vs-spell resolution grid - R606: the det T37 grid - five types\n    squared with the pass, combat, advantage-decides and generally-ignore\n    codes"
+  },
+  {
+   "note": "the Table 26 box closes",
+   "from": "  - [ ] Table 26: Spell Movement (p. 99) - the spell\n    movement rates in the arena",
+   "to": "  - [x] Table 26: Spell Movement (p. 99) - the spell\n    movement rates in the arena\n    movement rates in the arena - R606: the det T38 grid - the five range\n    bands with their movement rates, the level-varied fireball reads"
+  },
+  {
+   "note": "the Table 27 box closes",
+   "from": "  - [ ] Table 27: Character Power Scores (p. 101) -\n    the per-class dueling power scores",
+   "to": "  - [x] Table 27: Character Power Scores (p. 101) -\n    the per-class dueling power scores\n    the per-class dueling power scores - R606: the det T39 grid - the ability\n    bonuses zero through four over the power scores nine through thirteen"
+  },
+  {
+   "note": "the spells-in-the-arena box closes",
+   "from": "  - [ ] Spells in the Arena (pp. 98-100) - the arena\n    spell doctrine (the casting rules, the contributed\n    powers)",
+   "to": "  - [x] Spells in the Arena (pp. 98-100) - the arena\n    spell doctrine (the casting rules, the contributed\n    powers)\n    powers) - R606: the det arena-spell pins (the five-type doctrine, PR =\n    level + 9, the leech and AD damage reads, the simultaneous no-disruption\n    casting, the component supply)"
+  },
+  {
+   "note": "the spell-combat box closes",
+   "from": "  - [ ] Spell Movement and Combat (pp. 100-103) - the\n    spell-vs-spell and spell-vs-character combat rules",
+   "to": "  - [x] Spell Movement and Combat (pp. 100-103) - the\n    spell-vs-spell and spell-vs-character combat rules\n    spell-vs-spell and spell-vs-character combat rules - R606: the det combat\n    pins (the 1d20-vs-PR roll, the fail-if-higher rule, the lock doctrine, the\n    blocking locks, the Rary and Serten reads)"
+  },
+  {
+   "note": "the character-combat box closes",
+   "from": "  - [ ] Character Movement and Combat (pp. 103-104) -\n    the duelist movement, the power-score combat",
+   "to": "  - [x] Character Movement and Combat (pp. 103-104) -\n    the duelist movement, the power-score combat\n    the duelist movement, the power-score combat - R606: the det character\n    pins (the power-score combat, the counter-spell doctrine, the\n    1d6-or-1d4-push victory, the caster-level saving throws)"
+  },
+  {
+   "note": "the items box closes",
+   "from": "  - [ ] Magical Items and Preexisting Spells (p.\n    104) - the item rules in the arena",
+   "to": "  - [x] Magical Items and Preexisting Spells (p.\n    104) - the item rules in the arena\n    104) - the item rules in the arena - R606: the det item pins (the storing\n    items, the scroll-of-protection PR 15 MV 1, the 6d6/8d6/9d6 item leech\n    caps, the protection-bonus power-score read at 14, the arena blockers)"
+  },
+  {
+   "note": "the specialist box closes",
+   "from": "  - [ ] Specialist Wizards (p. 105) - the specialist\n    dueling bonuses",
+   "to": "  - [x] Specialist Wizards (p. 105) - the specialist\n    dueling bonuses\n    dueling bonuses - R606: the det specialist pins (the opposition-school +1\n    PR with the dispel-vs-illusionist read, the wild-mage and elementalist\n    gates, the Johan variation reads)"
+  },
+  {
+   "note": "the spoils box closes",
+   "from": "  - [ ] The Spoils of Victory (pp. 105-107) - the\n    defeat consequences (the stakes ladder)",
+   "to": "  - [x] The Spoils of Victory (pp. 105-107) - the\n    defeat consequences (the stakes ladder)\n    defeat consequences (the stakes ladder) - R606: the det stakes pins (the\n    friendly T40 and death T41 ladders, the service chain\n    charm-suggestion-geas-domination, the 50-percent disintegration, the 20\n    and 40 percent plane blows, the overdraw doctrine)"
+  },
+  {
+   "note": "the mediator box closes",
+   "from": "  - [ ] The Role of the Mediator (p. 107) - the\n    mediator's duties",
+   "to": "  - [x] The Role of the Mediator (p. 107) - the\n    mediator's duties\n    mediator's duties - R606: the det mediator pins (the isolation choice, the\n    contraband search, the touch-to-end, the interference doctrine with both\n    victors)"
+  },
+  {
+   "note": "the special-characteristics box closes",
+   "from": "  - [ ] Special Dueling Characteristics (pp.\n    108-116) - the mental attacks, the summoned\n    creatures, the reversible spells, the teleportation\n    doctrine, the individual spells' special abilities",
+   "to": "  - [x] Special Dueling Characteristics (pp.\n    108-116) - the mental attacks, the summoned\n    creatures, the reversible spells, the teleportation\n    doctrine, the individual spells' special abilities\n    doctrine, the individual spells' special abilities - R606: the det\n    special-characteristic pins (the mental, summoning, illusion, reversible\n    and teleportation groups, the quantified individual abilities from\n    antianimal shell to zone of sweet air)"
+  },
+  {
+   "note": "the example box closes",
+   "from": "  - [ ] An Example of Magical Dueling (pp. 116-117)\n    - the worked duel",
+   "to": "  - [x] An Example of Magical Dueling (pp. 116-117)\n    - the worked duel\n    - the worked duel - R606: the det worked-duel pins (Calvin vs Delsenora,\n    the ten-space arena, the clairvoyance-versus-withdraw lock, the advantage\n    shift on the 20 and 9 rolls)"
+  }
+ ],
+ "gap_census": {
+  "closed": 69,
+  "open": 27
+ },
+ "caller_files": [],
+ "inline_count": 295
+}

@@ -11135,6 +11135,64 @@ when both halves land.
   24, the per-type success
   formulas, the Rozmare worked
   examples; prefix der.
+- R605 LANDED 2026-10-18: commit
+  c3111fd0cccb7c812e10996e3eaa45c
+  0807b0452 (census 527 -> 528,
+  pushed 35536f1..c3111fd),
+  CREATING MAGICAL ITEMS, printed
+  pp. 86-95, DMO Chapter 4 closed
+  in one round - TEN boxes flip
+  (nine children + parent; gap
+  census now 52 closed / 44 open)
+  - the item-creation economy:
+  rules/dmoitems.h, prefix der,
+  179 inlines (117 consts, 47
+  bools, 15 table columns), 3
+  grids (T34 the Table 23
+  creation grid 28x6 with the
+  material, process, footnote,
+  cost and time codes; T35 the
+  Table 24 XP grid 27x3 with
+  the per-plus, value-sum,
+  20-40-percent-share and
+  per-spell-level forms; T36 the
+  font ladder 9x6 with the
+  dice-times-multiplier basin
+  costs), the holy water
+  ceremony pins (the five-spell
+  chain with the reversed
+  unholy forms, the eight-hour
+  meditations, the -4 combat
+  window, the Delsenora recycle
+  read at 30 percent of 21,000
+  gp), the level thresholds
+  (wizard 9-and-11, priest
+  7-9-11, specialist +5), the
+  70/80/60 per-type success
+  bases, the 1d3+1-week potion
+  and 1d6+1-week ring research
+  windows, the ink ladder, the
+  drained-item death rule, the
+  24-hour recharge window with
+  the -1 save-or-dust risk, the
+  96-00 failure with the cursed
+  and creator curses, the
+  Rozmare reads at 94 and 65
+  percent; the potion-rule
+  divergence (prints +1 per two
+  levels, the example works +26
+  at 13th) pinned with the
+  banner note. Spec
+  tools/spec_r605.json 78591
+  bytes md5
+  ccd5a18c16bec52582713b0dab9cc5
+  eb. THIRTY-NINE straight first-
+  tries (R566-R605). NEXT - R606:
+  Chapter 5 (Magical Duels, pp.
+  96-117) - the arena construction,
+  the balance of power, Table 25
+  through 27, the spoils ladders;
+  prefix des reserved.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -322,45 +322,96 @@ tables are data and close on table pins.
     processes) - R605: the der Rozmare worked pins (the 13th-level potion of
     speed at 94 percent, the long sword +1 +3 vs. regenerating creatures at
     65, the eight-week preparation)
-- [ ] **Chapter 5: Magical Duels** (pp. 96-117) - the
+- [x] **Chapter 5: Magical Duels** (pp. 96-117) - the
   arena combat system
-  - [ ] Creating the Arena (pp. 96-97) - the
+  arena combat system - R606: the det arena-economy pins - Chapter 5 of the
+  DMO is DONE in one round (seventeen boxes flip, the census moves 52/44 to
+  69/27)
+  - [x] Creating the Arena (pp. 96-97) - the
     cooperative construction (the arm's-length circling
     chant, the mediator's protective spell, the
     contributed spells, the secret recording)
-  - [ ] Balance of Power (p. 97) - the weaker-level
+    contributed spells, the secret recording) - R606: the det arena pins (the
+    one-turn circling chant, the restart-on-disturbance, the mediator
+    protective spell, the contributed memorized spells lost as cast, the
+    secret recording, the consent doctrine)
+  - [x] Balance of Power (p. 97) - the weaker-level
     cap on contributed spell levels
-  - [ ] Arena Physics / Conducting the Duel (pp.
+    cap on contributed spell levels - R606: the det balance pins (the
+    weaker-level cap, the Calvin-7 vs Delsenora-12 example)
+  - [x] Arena Physics / Conducting the Duel (pp.
     97-98) - the arena size from contributed spells
-  - [ ] Determining Advantage (p. 97) - the advantage
+    97-98) - the arena size from contributed spells - R606: the det corridor
+    pins (the 12-to-30 corridor, the ten-space base plus the highest levels
+    each side, the 30 cap, the 32-space largest arena, the four-step round)
+  - [x] Determining Advantage (p. 97) - the advantage
     roll and stakes
-  - [ ] Table 25: Spell Interactions (p. 99) - the
+    roll and stakes - R606: the det advantage pins (the highest-single-spell
+    rule, the 1d10 tie roll, the shift-on-destruction doctrine, the
+    no-shift-on-save exception)
+  - [x] Table 25: Spell Interactions (p. 99) - the
     spell-vs-spell resolution grid
-  - [ ] Table 26: Spell Movement (p. 99) - the spell
+    spell-vs-spell resolution grid - R606: the det T37 grid - five types
+    squared with the pass, combat, advantage-decides and generally-ignore
+    codes
+  - [x] Table 26: Spell Movement (p. 99) - the spell
     movement rates in the arena
-  - [ ] Table 27: Character Power Scores (p. 101) -
+    movement rates in the arena - R606: the det T38 grid - the five range
+    bands with their movement rates, the level-varied fireball reads
+  - [x] Table 27: Character Power Scores (p. 101) -
     the per-class dueling power scores
-  - [ ] Spells in the Arena (pp. 98-100) - the arena
+    the per-class dueling power scores - R606: the det T39 grid - the ability
+    bonuses zero through four over the power scores nine through thirteen
+  - [x] Spells in the Arena (pp. 98-100) - the arena
     spell doctrine (the casting rules, the contributed
     powers)
-  - [ ] Spell Movement and Combat (pp. 100-103) - the
+    powers) - R606: the det arena-spell pins (the five-type doctrine, PR =
+    level + 9, the leech and AD damage reads, the simultaneous no-disruption
+    casting, the component supply)
+  - [x] Spell Movement and Combat (pp. 100-103) - the
     spell-vs-spell and spell-vs-character combat rules
-  - [ ] Character Movement and Combat (pp. 103-104) -
+    spell-vs-spell and spell-vs-character combat rules - R606: the det combat
+    pins (the 1d20-vs-PR roll, the fail-if-higher rule, the lock doctrine, the
+    blocking locks, the Rary and Serten reads)
+  - [x] Character Movement and Combat (pp. 103-104) -
     the duelist movement, the power-score combat
-  - [ ] Magical Items and Preexisting Spells (p.
+    the duelist movement, the power-score combat - R606: the det character
+    pins (the power-score combat, the counter-spell doctrine, the
+    1d6-or-1d4-push victory, the caster-level saving throws)
+  - [x] Magical Items and Preexisting Spells (p.
     104) - the item rules in the arena
-  - [ ] Specialist Wizards (p. 105) - the specialist
+    104) - the item rules in the arena - R606: the det item pins (the storing
+    items, the scroll-of-protection PR 15 MV 1, the 6d6/8d6/9d6 item leech
+    caps, the protection-bonus power-score read at 14, the arena blockers)
+  - [x] Specialist Wizards (p. 105) - the specialist
     dueling bonuses
-  - [ ] The Spoils of Victory (pp. 105-107) - the
+    dueling bonuses - R606: the det specialist pins (the opposition-school +1
+    PR with the dispel-vs-illusionist read, the wild-mage and elementalist
+    gates, the Johan variation reads)
+  - [x] The Spoils of Victory (pp. 105-107) - the
     defeat consequences (the stakes ladder)
-  - [ ] The Role of the Mediator (p. 107) - the
+    defeat consequences (the stakes ladder) - R606: the det stakes pins (the
+    friendly T40 and death T41 ladders, the service chain
+    charm-suggestion-geas-domination, the 50-percent disintegration, the 20
+    and 40 percent plane blows, the overdraw doctrine)
+  - [x] The Role of the Mediator (p. 107) - the
     mediator's duties
-  - [ ] Special Dueling Characteristics (pp.
+    mediator's duties - R606: the det mediator pins (the isolation choice, the
+    contraband search, the touch-to-end, the interference doctrine with both
+    victors)
+  - [x] Special Dueling Characteristics (pp.
     108-116) - the mental attacks, the summoned
     creatures, the reversible spells, the teleportation
     doctrine, the individual spells' special abilities
-  - [ ] An Example of Magical Dueling (pp. 116-117)
+    doctrine, the individual spells' special abilities - R606: the det
+    special-characteristic pins (the mental, summoning, illusion, reversible
+    and teleportation groups, the quantified individual abilities from
+    antianimal shell to zone of sweet air)
+  - [x] An Example of Magical Dueling (pp. 116-117)
     - the worked duel
+    - the worked duel - R606: the det worked-duel pins (Calvin vs Delsenora,
+    the ten-space arena, the clairvoyance-versus-withdraw lock, the advantage
+    shift on the 20 and 9 rolls)
 - [ ] **Chapter 6: True Dweomers** (pp. 118-141) -
   the 10th-level spell system
   - [ ] Requirements (pp. 118-119) - the knowledge,
