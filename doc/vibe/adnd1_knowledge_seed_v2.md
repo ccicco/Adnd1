@@ -10759,6 +10759,37 @@ when both halves land.
   the MotP gap report at 90/0; OCR
   pages 128-129; prefix debb or next
   chronological free prefix.
+- R596 LANDED 2026-10-17: commit
+  13903a82cbf9b7ad29012e9787168c73f
+  82d1116 (census 519 -> 520, pushed
+  e344bb2..13903a8), INDICES, printed
+  pp. 127-128, the closing pair: the
+  132-entry subject index of the
+  whole book (the five plane
+  families, the rivers with
+  Mnemosyne restored from the OCR
+  Manale, the creatures with
+  Cerberus restored from Corberus
+  and efreet from Efreel, the
+  color pools and conduits) and
+  the 89-spell index with its
+  unusual-notes purpose, from the
+  airy quintet and plane shift to
+  the wish. Header rules/indices.h,
+  prefix dec, 8 inlines (5 consts
+  3 bools), one gap flip (Indices)
+  closing the MotP gap report at
+  90/0 - the whole 1987 Manual of
+  the Planes pinned, 31 straight
+  first-tries (R566-R596). Spec
+  tools/spec_r596.json 10005 bytes
+  md5 a35c97bf1c0c3f3e6282c23f32
+  27384c. NEXT - R597: the
+  maintenance round at HEAD (the
+  census/gap/engine/seed/lint
+  audit, then the logging
+  reclassification tool round, UA
+  to 102/0).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

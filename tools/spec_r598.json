@@ -1,0 +1,303 @@
+{
+ "round": 598,
+ "prefix": "ded",
+ "header_file": "rules/motpethcyclone.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/motp_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 520,
+ "title": "Ether Cyclone",
+ "audit_label": "R598 Ether cyclone audit",
+ "audit_comment": "ETHER CYCLONE, printed p. 17: the sinuous storm of the Deep Ethereal - the 50% warning (the 1d6-round deep-hum herald), the one-roll-per-group doctrine, the d20 effects from the disrupted flow (+4 hours, one extra encounter check) through the curtain blows (the random Border, and the farther-plane +5d12 days) to the saving throw of the lowest-level member (success: an unexplored section with 10d12 days added; failure: the Astral tumble, as plane shift, no silver cord), and the aftermath: the Prime fallback saves, the inner-plane Border stop, and the demi-plane of Time caveat.",
+ "include_comment": "the MotP Ether cyclone pins",
+ "include_after": "#include \"rules/indices.h\"  // R596: the Indices closing pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R596 LANDED 2026-10-17: commit",
+ "prev_record": [
+  "- R596 LANDED 2026-10-17: commit",
+  "  13903a82cbf9b7ad29012e9787168c73f",
+  "  82d1116 (census 519 -> 520, pushed",
+  "  e344bb2..13903a8), INDICES, printed",
+  "  pp. 127-128, the closing pair: the",
+  "  132-entry subject index of the",
+  "  whole book (the five plane",
+  "  families, the rivers with",
+  "  Mnemosyne restored from the OCR",
+  "  Manale, the creatures with",
+  "  Cerberus restored from Corberus",
+  "  and efreet from Efreel, the",
+  "  color pools and conduits) and",
+  "  the 89-spell index with its",
+  "  unusual-notes purpose, from the",
+  "  airy quintet and plane shift to",
+  "  the wish. Header rules/indices.h,",
+  "  prefix dec, 8 inlines (5 consts",
+  "  3 bools), one gap flip (Indices)",
+  "  closing the MotP gap report at",
+  "  90/0 - the whole 1987 Manual of",
+  "  the Planes pinned, 31 straight",
+  "  first-tries (R566-R596). Spec",
+  "  tools/spec_r596.json 10005 bytes",
+  "  md5 a35c97bf1c0c3f3e6282c23f32",
+  "  27384c. NEXT - R597: the",
+  "  maintenance round at HEAD (the",
+  "  census/gap/engine/seed/lint",
+  "  audit, then the logging",
+  "  reclassification tool round, UA",
+  "  to 102/0)."
+ ],
+ "banner": {
+  "title": "THE ETHER CYCLONE - printed p. 17, the Ethereal chapter's storm: the warning doctrine, the d20 effects table, and the curtain-blow aftermath rules - the one named table the R566 full-book scan missed, found by the R596-post full-coverage audit.",
+  "provenance": "verified against printed p. 17 of the uploaded motp.pdf OCR (OCR page 18); the 50% warning with its 1d6-round herald, the four d20 bands (1-10 the disrupted flow, 11-15 the random curtain, 16-18 the farther curtain, 19-20 the saving throw), the added-day dice (5d12 and 10d12), and the Border Ethereal fallback rules pinned from the OCR text as printed; the gap census grows 90 -> 91 boxes (91/0).",
+  "sentinel": "the gap census after this round: 91 closed, 0 open - the missed table gets its box; the R566 amended-manifest promise (every named table its own line item) now kept whole."
+ },
+ "consts": [
+  {
+   "name": "dedCycloneWarningChance",
+   "value": 50,
+   "comment": "the warning chance: fifty percent of the time travelers receive warning of the approaching cyclone - 1d6 rounds of it - the other fifty percent, none at all. The warning sign is a deep hum in the ethereal matter underneath, portions ripped away by the approaching storm."
+  },
+  {
+   "name": "dedCycloneWarningRoundsHigh",
+   "value": 6,
+   "comment": "the warning, when it comes, gives 1d6 rounds before the cyclone strikes - time to reach a safe haven: another plane, a demi-plane, the Border Ethereal, or a curtain."
+  },
+  {
+   "name": "dedCycloneDisruptedHigh",
+   "value": 10,
+   "comment": "the first d20 band, 1-10: the flow of the ether is disrupted - add four hours (one additional encounter check) to the travel time."
+  },
+  {
+   "name": "dedCycloneDisruptedHours",
+   "value": 4,
+   "comment": "the disrupted-flow band adds four hours to the travel time - one additional encounter check."
+  },
+  {
+   "name": "dedCycloneCurtainHigh",
+   "value": 15,
+   "comment": "the second d20 band, 11-15: the party is blown through a curtain into the Border Ethereal of a random plane or demi-plane - the usual encounter check for crossing a curtain, and the journey must begin again."
+  },
+  {
+   "name": "dedCycloneFartherHigh",
+   "value": 18,
+   "comment": "the third d20 band, 16-18: blown through a curtain into the Border Ethereal of a random plane farther from the original destination - the journey restarts with 5d12 days added."
+  },
+  {
+   "name": "dedCycloneFartherDaysDice",
+   "value": 5,
+   "comment": "the farther-plane blow adds 5d12 days to the total travel time."
+  },
+  {
+   "name": "dedCycloneFartherDaysSides",
+   "value": 12,
+   "comment": "the farther-plane blow's added days roll 5d12."
+  },
+  {
+   "name": "dedCycloneSaveHigh",
+   "value": 20,
+   "comment": "the fourth d20 band, 19-20: the saving-throw band."
+  },
+  {
+   "name": "dedCycloneLostDaysDice",
+   "value": 10,
+   "comment": "the 19-20 save made: the party is blown far from their tracks to an unexplored section of the Ethereal - 10d12 days added to reach any other plane or destination."
+  },
+  {
+   "name": "dedCycloneLostDaysSides",
+   "value": 12,
+   "comment": "the unexplored-section blow's added days roll 10d12."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dedCycloneGroupRoll",
+   "value": true,
+   "comment": "one roll per group: all caught in the cyclone suffer the same d20 effects - though the aftermath saves are per member."
+  },
+  {
+   "name": "dedCycloneLowestLevelSaves",
+   "value": true,
+   "comment": "the 19-20 band: the lowest-level member of the party makes the saving throw vs. spell - success blows the party to an unexplored section, failure blows the entire party into the Astral plane."
+  },
+  {
+   "name": "dedCycloneAstralNoCord",
+   "value": true,
+   "comment": "the failed-save tumble into the Astral is as for plane shift and does not require a silver cord."
+  },
+  {
+   "name": "dedCyclonePrimeFallback",
+   "value": true,
+   "comment": "blown through a curtain into the Border Ethereal of the Prime or a hospitable demi-plane: each member saves vs. spell - success remains in the Border, failure flings the individual back into the Prime plane or demi-plane, no longer ethereal or invisible."
+  },
+  {
+   "name": "dedCycloneInnerBorderStop",
+   "value": true,
+   "comment": "travelers blown through a curtain into an inner plane or an inhospitable demi-plane stop in the Border Ethereal and are not transported into the plane."
+  },
+  {
+   "name": "dedCycloneTimeBorderDanger",
+   "value": true,
+   "comment": "the Border Ethereal is dangerous in its own right in some cases - the demi-plane of Time is the book's named example."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [],
+ "header_sections": {
+  "the Ether Cyclone pins": [
+   {
+    "kind": "const",
+    "name": "dedCycloneWarningChance"
+   },
+   {
+    "kind": "const",
+    "name": "dedCycloneWarningRoundsHigh"
+   },
+   {
+    "kind": "const",
+    "name": "dedCycloneDisruptedHigh"
+   },
+   {
+    "kind": "const",
+    "name": "dedCycloneDisruptedHours"
+   },
+   {
+    "kind": "const",
+    "name": "dedCycloneCurtainHigh"
+   },
+   {
+    "kind": "const",
+    "name": "dedCycloneFartherHigh"
+   },
+   {
+    "kind": "const",
+    "name": "dedCycloneFartherDaysDice"
+   },
+   {
+    "kind": "const",
+    "name": "dedCycloneFartherDaysSides"
+   },
+   {
+    "kind": "const",
+    "name": "dedCycloneSaveHigh"
+   },
+   {
+    "kind": "const",
+    "name": "dedCycloneLostDaysDice"
+   },
+   {
+    "kind": "const",
+    "name": "dedCycloneLostDaysSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dedCycloneGroupRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dedCycloneLowestLevelSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dedCycloneAstralNoCord"
+   },
+   {
+    "kind": "bool",
+    "name": "dedCyclonePrimeFallback"
+   },
+   {
+    "kind": "bool",
+    "name": "dedCycloneInnerBorderStop"
+   },
+   {
+    "kind": "bool",
+    "name": "dedCycloneTimeBorderDanger"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the dedCycloneWarningChance pin",
+   "expr": "m['dedCycloneWarningChance']() != 50"
+  },
+  {
+   "note": "the dedCycloneWarningRoundsHigh pin",
+   "expr": "m['dedCycloneWarningRoundsHigh']() != 6"
+  },
+  {
+   "note": "the dedCycloneDisruptedHigh pin",
+   "expr": "m['dedCycloneDisruptedHigh']() != 10"
+  },
+  {
+   "note": "the dedCycloneDisruptedHours pin",
+   "expr": "m['dedCycloneDisruptedHours']() != 4"
+  },
+  {
+   "note": "the dedCycloneCurtainHigh pin",
+   "expr": "m['dedCycloneCurtainHigh']() != 15"
+  },
+  {
+   "note": "the dedCycloneFartherHigh pin",
+   "expr": "m['dedCycloneFartherHigh']() != 18"
+  },
+  {
+   "note": "the dedCycloneFartherDaysDice pin",
+   "expr": "m['dedCycloneFartherDaysDice']() != 5"
+  },
+  {
+   "note": "the dedCycloneFartherDaysSides pin",
+   "expr": "m['dedCycloneFartherDaysSides']() != 12"
+  },
+  {
+   "note": "the dedCycloneSaveHigh pin",
+   "expr": "m['dedCycloneSaveHigh']() != 20"
+  },
+  {
+   "note": "the dedCycloneLostDaysDice pin",
+   "expr": "m['dedCycloneLostDaysDice']() != 10"
+  },
+  {
+   "note": "the dedCycloneLostDaysSides pin",
+   "expr": "m['dedCycloneLostDaysSides']() != 12"
+  },
+  {
+   "note": "the dedCycloneGroupRoll pin",
+   "expr": "m['dedCycloneGroupRoll']() != 1"
+  },
+  {
+   "note": "the dedCycloneLowestLevelSaves pin",
+   "expr": "m['dedCycloneLowestLevelSaves']() != 1"
+  },
+  {
+   "note": "the dedCycloneAstralNoCord pin",
+   "expr": "m['dedCycloneAstralNoCord']() != 1"
+  },
+  {
+   "note": "the dedCyclonePrimeFallback pin",
+   "expr": "m['dedCyclonePrimeFallback']() != 1"
+  },
+  {
+   "note": "the dedCycloneInnerBorderStop pin",
+   "expr": "m['dedCycloneInnerBorderStop']() != 1"
+  },
+  {
+   "note": "the dedCycloneTimeBorderDanger pin",
+   "expr": "m['dedCycloneTimeBorderDanger']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the new cyclone box",
+   "from": "  - [x] The Ethereal sample encounter charts (p. 17) - the human and creature charts - R566: the charts enumerated under the amended manifest, closing on the encounter-check pin",
+   "to": "  - [x] The Ethereal sample encounter charts (p. 17) - the human and creature charts - R566: the charts enumerated under the amended manifest, closing on the encounter-check pin\n  - [x] The Ether Cyclone effects table (p. 17) - the storm roll and its aftermath - R598: the ded cyclone pins (the 50% warning with the 1d6-round herald, the d20 bands from the disrupted flow to the saving throw, the curtain blows with the added-day dice, the Astral tumble, and the Prime fallback rule)"
+  }
+ ],
+ "gap_census": {
+  "closed": 91,
+  "open": 0
+ },
+ "caller_files": [],
+ "inline_count": 17
+}

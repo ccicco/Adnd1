@@ -64,6 +64,7 @@ sample entries verified against the canonical PHB levels).
   - [x] Demi-planes (p. 21) - the finite islands of matter, the demi-plane time-reversal exception - R566: the four named demi-planes pin (Shadow, Time, Electro-Magnetism, Imprisonment)
   - [x] The Deep Ethereal encounter check (p. 14) - the 1-in-10 every four hours frequency - R566: the dcuDeepEncounterChance pin
   - [x] The Ethereal sample encounter charts (p. 17) - the human and creature charts - R566: the charts enumerated under the amended manifest, closing on the encounter-check pin
+  - [x] The Ether Cyclone effects table (p. 17) - the storm roll and its aftermath - R598: the ded cyclone pins (the 50% warning with the 1d6-round herald, the d20 bands from the disrupted flow to the saving throw, the curtain blows with the added-day dice, the Astral tumble, and the Prime fallback rule)
 - [x] **The Inner Planes** (pp. 22-59) - the elemental building blocks: the general doctrine and each plane - R567: the general doctrine pinned, the plane rounds follow
   - [x] The inner planes in general (pp. 22-31) - reaching, survival, movement, encounters, combat, magic, the player characters, and the indifference-to-alignment doctrine - R567: the sphere arrangement, the hostility, the reaching, the survival, the gravity, the guides and the decay rule
   - [x] The Plane of Elemental Air (pp. 31-36) - survival, encounters, movement, combat, magic, features - R568: the hospitable-plane doctrine, the borders, the survival, the phenomena, the pockets, the encounter chart, the magic and the features
