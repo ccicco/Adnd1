@@ -11655,6 +11655,42 @@ when both halves land.
   "R615 OA ability tables audit",
   include after
   rules/oacreating.h.
+- R615 LANDED 2026-10-18: commit
+  79bfb8dba8895ad96d5fa7d9c8c1
+  88dc0850b2f (census 537 -> 538,
+  pushed a7019b4..79bfb8d), THE
+  ABILITY TABLES, capture pp. 7-13
+  - all EIGHT Chapter 1 tables flip
+  in one round: rules/
+  oaabilities.h, prefix dgb (verified
+  free), 94 inlines (63 consts, 10
+  bools, 1 chain dgbT8Band, 20 table
+  columns): 7 grids (T2 16x6 with
+  the locked-parenthetical column,
+  T3 17x2, T4 16x4 with the warrior
+  +3/+4 footnote column, T5 16x2,
+  T6 16x1, T7 16x3, T8 9x2), 56
+  class/race annotation consts (T1
+  pins ENTIRELY on annotations), 10
+  rider bools. ADJUDICATIONS: T2 Str
+  3 weight prints 0 - pinned as
+  printed, flagged for the physical
+  copy; the T5 orphaned korobokuru-
+  max row merged onto Int 15; Str 19
+  "7 in 8" pins as face 7. Battery
+  389 mutants, 0 missed; full sha
+  rverify GREEN (the gap report now
+  tracked). Gap census 4/231 ->
+  12/223. Spec 41,599 bytes md5
+  3fffbdf6a5acff0d9d79e9ab28fea88
+  (canvas 466b3bcaab8f6b688bf500600
+  f37ee8a); gap report post-flip md5
+  83559aa9327a7d428c9f522aa53401b9.
+  NEXT - R616: the six ability prose
+  sub-items, prefix dgc (verify
+  free), audit "R616 OA ability prose
+  audit", include after rules/
+  oaabilities.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

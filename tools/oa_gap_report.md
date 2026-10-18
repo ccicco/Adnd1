@@ -120,13 +120,23 @@ description riding the same round.
     bend-bars percent) across sixteen rows with
     the one-attempt riders and the 350-coin
     slowdown pinned
-  - [ ] Dexterity prose (capture p. 8)
+  - [x] Dexterity prose (capture p. 8) -
+    R616: the dgc Dex pins - the ninja prime
+    requisite with its 10 percent bonus, the reaction
+    adjustment on missile fire and both sides of surprise,
+    the defensive adjustment on dodgable saves and AC
   - [x] Table 3: Dexterity (capture p. 9) -
     R615: the dgb T3 grid - the reaction/attack and the
     defensive adjustments across Dexterity 3-19,
     with the Dex annotations (the korobokuru 6
     through the monk 15)
-  - [ ] Constitution prose (capture p. 9)
+  - [x] Constitution prose (capture p. 9) -
+    R616: the dgc Con pins - the revival-count doctrine
+    (each revival costs one Constitution point, the
+    original score binds, restoration grants no
+    refund, only a wish revives past the limit), the
+    return-polymorph second shock roll, the
+    final irrevocable resurrection failure
   - [x] Table 4: Constitution (capture p. 10) -
     R615: the dgb T4 grid - the hit-point and warrior
     hit-point ladders, the system shock and the
@@ -134,29 +144,57 @@ description riding the same round.
     +4 footnote (the samurai, bushi, kensai and
     sohei plus the barbarian full, the wu jen,
     shukenja, ninja and yakuza capped at +2)
-  - [ ] Intelligence prose (capture p. 10)
+  - [x] Intelligence prose (capture p. 10) -
+    R616: the dgc Int pins - the wu jen prime requisite
+    with its 10 percent bonus, the Intelligence
+    spell gate (learn and remember counts,
+    only the highest Intelligence comprehends
+    the 9th-level spells)
   - [x] Table 5: Intelligence (capture p. 11) -
     R615: the dgb T5 grid - the additional languages and
     the maximum wu jen spell level, with the Int
     annotations (the korobokuru 3/15 bounds, the
     wu jen 13 min)
-  - [ ] Wisdom prose (capture p. 11)
+  - [x] Wisdom prose (capture p. 11) -
+    R616: the dgc Wis pins - the shukenja prime requisite
+    with its 10 percent bonus, the 13-plus
+    bonus spells for shukenja and sohei
   - [x] Table 6: Wisdom (capture p. 11) -
     R615: the dgb T6 grid - the magical attack adjustment
     ladder across Wisdom 3-18, with the Wis
     annotations (the sohei 10 through the monk 15
     mins, the barbarian 16 and korobokuru 17
     maxes) and the automatic mind-defense rider
-  - [ ] Charisma prose (capture p. 12)
+  - [x] Charisma prose (capture p. 12) -
+    R616: the dgc Cha pins - the henchmen doctrine with
+    the absolute-limit and the no-replacement rule
+    for the killed and the mistreated, the paid
+    servitors unaffected
   - [x] Table 7: Charisma (capture p. 12) -
     R615: the dgb T7 grid - the henchmen, loyalty base
     and reaction adjustment columns, with the Cha
     annotations (the hengeyokai 12 min, the
     spirit folk and ninja 14 mins, the korobokuru
     16 and hengeyokai 17 maxes)
-  - [ ] Comeliness prose (capture pp. 13-15) - the
+  - [x] Comeliness prose (capture pp. 13-15) - the
     reaction bands, the smitten doctrine, the illusion
-    and polymorph caps
+    and polymorph caps -
+    R616: the dgc Comeliness pins - the 3d6 base roll, the
+    human -2-to-23 range, the racial adjustments
+    (-2 korobokuru, -1 hengeyokai, +1 spirit folk,
+    other-races only), the seven reaction bands
+    (the horror, disgust, aversion, ugly,
+    homely, plain, good-looking, beautiful,
+    stunning and unearthly - with the printed
+    gaps: no 26-27 band, the unearthly starts
+    at 28), the smitten doctrine (the
+    fascinate equation, the 3d6 order roll with
+    the hazard modifiers, alignment holds,
+    the evil-alignment inversion), the
+    temporary-effect and the magic caps (the
+    illusion 1-point cap and single-round
+    rule, the polymorph 2-point cap, the
+    shapechange full transfer)
   - [x] Table 8: Comeliness Adjustments (capture p. 13) -
     R615: the dgb T8 band chain and grid - the nine
     Charisma bands (2-or-less through 19-or-more)
