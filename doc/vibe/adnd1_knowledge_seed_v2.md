@@ -11193,6 +11193,63 @@ when both halves land.
   the balance of power, Table 25
   through 27, the spoils ladders;
   prefix des reserved.
+- R606 LANDED 2026-10-18: commit
+  10a395b32c4cf8625413be92bea8c
+  edd3493991e (census 528 -> 529,
+  pushed c3111fd..10a395b),
+  MAGICAL DUELS, printed pp. 96-117
+  (the biggest DMO chapter),
+  closed in ONE round - SEVENTEEN
+  boxes flip (sixteen children +
+  parent; gap census now 69 closed
+  / 27 open) - the dueling system:
+  rules/dmoduels.h, prefix det (des
+  NOT free - 7 collisions), 295
+  inlines (146 consts, 126 bools,
+  22 table columns, 1 chain), 5
+  grids (T37 Table 25 interactions
+  5x5; T38 Table 26 movement 5x1;
+  T39 Table 27 power scores 5x2
+  bonus 0-4 over PS 9-13; T40
+  friendly stakes 4x6 and T41
+  death stakes 5x8, both with
+  sentinel censuses) plus the
+  service chain (charm,
+  suggestion, geas, domination),
+  the arena protocol with the
+  consent doctrine, the corridor
+  geometry ten-plus-levels
+  capped at thirty, the five-type
+  doctrine with PR = level + 9,
+  the 1d20 combat with the lock
+  rules, the counter-spell
+  doctrine, the item rules (the
+  scroll of protection PR 15 MV
+  1, the 6d6/8d6/9d6 leech caps,
+  the 14 protection read), the
+  specialist gates with the
+  opposition-school +1, the
+  stakes ladders with the 20 and
+  40 percent plane blows and the
+  50 percent disintegration, the
+  special dueling characteristics
+  (the five groups plus the
+  quantified individual
+  abilities), the Calvin-Delsenora
+  worked duel. THREE pre-publish
+  fixes (two flip-anchor wrap
+  mismatches, one R391-class
+  sense inversion) - the
+  first-try streak ENDS at 39
+  (R566-R605). Spec
+  tools/spec_r606.json 123655
+  bytes md5
+  dcad6af6bd3e754b933849cb3078c7
+  c0. NEXT - R607: Chapter 6
+  (True Dweomers, pp. 118-141) -
+  the 10th-level spell system,
+  Tables 28 through 35; prefix
+  dev.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

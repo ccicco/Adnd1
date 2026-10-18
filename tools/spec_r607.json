@@ -1,0 +1,3841 @@
+{
+ "round": 607,
+ "prefix": "dev",
+ "header_file": "rules/dmodweomers.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 529,
+ "title": "True Dweomers",
+ "audit_label": "R607 DMO true-dweomers audit",
+ "audit_comment": "CHAPTER 6 of the DMO (printed pp. 118-141), the 10th-level spell system closing in one round: the requirement gates (the 20th level, the ability 18, the four-per-day cap, the unrecordable rule), the difficulty calculus (the level and specialist and practiced adjustments, the component and condition reductions, the save and resistance trades), the eight grids (the Table 28 type ladder with its duel-type mirror, the Table 29 areas, the Table 30 animated objects, the Table 31 ranges, the Table 32 durations, the Table 33 prep-and-cast bands), the school effects from dispel and ward through slay and tap with their doubling and tripling ladders, the preparation and final-check rules, the Pharjis worked creation at 110 through 10, the in-play and dueling and quest-spell doctrines with the duel PR 19, and the thirteen known dweomers with their difficulty pairs.",
+ "include_comment": "the DMO true-dweomer pins",
+ "include_after": "#include \"rules/dmoduels.h\"  // R606: the DMO magical-duels pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R606 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R606 LANDED 2026-10-18: commit",
+  "  10a395b32c4cf8625413be92bea8c",
+  "  edd3493991e (census 528 -> 529,",
+  "  pushed c3111fd..10a395b),",
+  "  MAGICAL DUELS, printed pp. 96-117",
+  "  (the biggest DMO chapter),",
+  "  closed in ONE round - SEVENTEEN",
+  "  boxes flip (sixteen children +",
+  "  parent; gap census now 69 closed",
+  "  / 27 open) - the dueling system:",
+  "  rules/dmoduels.h, prefix det (des",
+  "  NOT free - 7 collisions), 295",
+  "  inlines (146 consts, 126 bools,",
+  "  22 table columns, 1 chain), 5",
+  "  grids (T37 Table 25 interactions",
+  "  5x5; T38 Table 26 movement 5x1;",
+  "  T39 Table 27 power scores 5x2",
+  "  bonus 0-4 over PS 9-13; T40",
+  "  friendly stakes 4x6 and T41",
+  "  death stakes 5x8, both with",
+  "  sentinel censuses) plus the",
+  "  service chain (charm,",
+  "  suggestion, geas, domination),",
+  "  the arena protocol with the",
+  "  consent doctrine, the corridor",
+  "  geometry ten-plus-levels",
+  "  capped at thirty, the five-type",
+  "  doctrine with PR = level + 9,",
+  "  the 1d20 combat with the lock",
+  "  rules, the counter-spell",
+  "  doctrine, the item rules (the",
+  "  scroll of protection PR 15 MV",
+  "  1, the 6d6/8d6/9d6 leech caps,",
+  "  the 14 protection read), the",
+  "  specialist gates with the",
+  "  opposition-school +1, the",
+  "  stakes ladders with the 20 and",
+  "  40 percent plane blows and the",
+  "  50 percent disintegration, the",
+  "  special dueling characteristics",
+  "  (the five groups plus the",
+  "  quantified individual",
+  "  abilities), the Calvin-Delsenora",
+  "  worked duel. THREE pre-publish",
+  "  fixes (two flip-anchor wrap",
+  "  mismatches, one R391-class",
+  "  sense inversion) - the",
+  "  first-try streak ENDS at 39",
+  "  (R566-R605). Spec",
+  "  tools/spec_r606.json 123655",
+  "  bytes md5",
+  "  dcad6af6bd3e754b933849cb3078c7",
+  "  c0. NEXT - R607: Chapter 6",
+  "  (True Dweomers, pp. 118-141) -",
+  "  the 10th-level spell system,",
+  "  Tables 28 through 35; prefix",
+  "  dev."
+ ],
+ "banner": {
+  "title": "TRUE DWEOMERS - DMO Chapter 6 closes: the requirement gates (wizards and priests of 20th level with ability 18, at most four dweomers a day, never scrollable or storable), the difficulty calculus (the combined type-plus-area-plus-range-plus-duration total less the caster level, less five for a specialist, less ten when practiced, then the component and condition reductions - three rares at minus ten each within a 30-point limit, an exotic at half or minus 20), the eight grids (the Table 28 29-type ladder from charm 20 through slay 50 with the variable shadow shape, the Table 29 areas from five feet to a whole plane at difficulty 160, the Table 30 animated objects, the Table 31 ranges touch through trans-planar, the Table 32 durations instantaneous through permanent at 100, the Table 33 prep-and-cast bands - a year of preparation and a week of casting at 151-plus - and the Table 35 duel-type mirror), the school effects (the dispel 50-percent read at 11-plus on 1d20, the ward ladder to the 210-point full resistance, the reflect, fortify, transform, afflict, conjure, summon, imbue, reveal and tap ladders in their doubling and tripling steps, the strike capped at 30d8), the preparation doctrine (the eight-hour day, the restart and backtrack rules, the 1d100 final check, the halve-or-minus-10 extension trade), the Pharjis worked creation computing 110 down to a final 10 with the 02-fail and 81-success rolls, the in-play doctrine (the duel PR 19, the wish auto-dispel, the quest-spell ward floor of 18), and the thirteen known dweomers from Hurd's Obligation to Yunni's Herald with their difficulty pairs.",
+  "provenance": "verified against printed pp. 118-141 of the uploaded DMO session capture (part 2, printed page N at OCR page N+90); the requirements and calculus from pp. 118-120, the Table 28 grid and school effects from pp. 120-130, the Tables 29 through 33 from pp. 130-133, the preparation and final-check rules from pp. 133-134, the worked creation from p. 134, the in-play and duel and quest doctrines from pp. 134-136, the thirteen known dweomers from pp. 136-141. The worked-example region watch reads a half-day duration at +10; Table 32 prints six hours at 7 and 12 hours at 10 - the example's own arithmetic (+10) is pinned verbatim with the note here.",
+  "sentinel": "the gap census after this round: 79 closed, 17 open - Chapter 6 is DONE in one round, ten boxes flip (nine children and the parent); the DMO arc continues with Chapter 7 (High-Level Characters, pp. 142-164)."
+ },
+ "consts": [
+  {
+   "name": "devMinCasterLevel",
+   "value": 20,
+   "comment": "the knowledge gate: wizards and priests must be at least 20th level to cast true dweomers (printed p. 119)."
+  },
+  {
+   "name": "devMinAbilityScore",
+   "value": 18,
+   "comment": "the knowledge gate: Intelligence 18 or higher for wizards, Wisdom 18 or higher for priests (printed p. 119)."
+  },
+  {
+   "name": "devMaxPerDay",
+   "value": 4,
+   "comment": "the daily cap: no mortal can prepare, cast or hold ready more than four true dweomers in a single day (printed p. 119)."
+  },
+  {
+   "name": "devCasterLevelStep",
+   "value": -1,
+   "comment": "the difficulty calculus: the caster's level is subtracted from the combined difficulty total (printed p. 120)."
+  },
+  {
+   "name": "devSpecialistBonus",
+   "value": -5,
+   "comment": "the specialist read: a specialist wizard subtracts an extra five points when using a type from the school of specialization (printed p. 120)."
+  },
+  {
+   "name": "devPrevCastBonus",
+   "value": -10,
+   "comment": "the practiced read: casting the same spell before, or holding notes from one who has, subtracts 10 more points (printed p. 120)."
+  },
+  {
+   "name": "devRareComponentAdjust",
+   "value": -10,
+   "comment": "the rare component: each rare component reduces the adjusted or final difficulty by 10, at most three per spell, a 30-point limit (printed p. 131)."
+  },
+  {
+   "name": "devRareComponentMax",
+   "value": 3,
+   "comment": "the rare component: at most three per spell (printed p. 131)."
+  },
+  {
+   "name": "devRareComponentLimit",
+   "value": -30,
+   "comment": "the rare component: the total limit once per spell (printed p. 131)."
+  },
+  {
+   "name": "devExoticComponentAdjust",
+   "value": -20,
+   "comment": "the exotic component: reduces the adjusted or final difficulty by half or by 20 points, whichever is greater (printed p. 131)."
+  },
+  {
+   "name": "devRareConditionAdjust",
+   "value": -10,
+   "comment": "the rare condition: an extra-effort or extraordinary-expense condition reduces the difficulty by 10, only one per spell (printed p. 132)."
+  },
+  {
+   "name": "devExoticConditionAdjust",
+   "value": -20,
+   "comment": "the exotic condition: an adventure-borne condition reduces by half or 20, only one per spell, either difficulty but not both (printed p. 133)."
+  },
+  {
+   "name": "devSaveModPerFive",
+   "value": 5,
+   "comment": "the save trade: each +5 added to the difficulty imposes a -1 saving throw modifier on the target; each -5 gives +1 (printed p. 132)."
+  },
+  {
+   "name": "devNoSaveDifficulty",
+   "value": 100,
+   "comment": "the save trade: a difficulty modifier of 100 eliminates any saving throw (printed p. 132)."
+  },
+  {
+   "name": "devMrModPerPoint",
+   "value": 1,
+   "comment": "the resistance trade: each +1 of difficulty reduces the target's magic resistance by 1 percent; resistance can never be raised to buy ease (printed p. 132)."
+  },
+  {
+   "name": "devDispelBasePct",
+   "value": 50,
+   "comment": "the dispel read: at base difficulty 30 the chance to destroy an opposing spell is 50 percent, a roll of 11 or higher on 1d20 (printed p. 122)."
+  },
+  {
+   "name": "devDispelSuccessRollMin",
+   "value": 11,
+   "comment": "the dispel read: 11 or higher on 1d20 indicates success (printed p. 122)."
+  },
+  {
+   "name": "devDispelLowMagicPct",
+   "value": 100,
+   "comment": "the dispel read: against spells of 9th level or lower the base chance is 100 percent and the area is irrelevant (printed p. 122)."
+  },
+  {
+   "name": "devDispelItemSuppressRounds",
+   "value": 4,
+   "comment": "the dispel read: a lower-level dispel renders a permanent effect or item nonoperational for 1d4 rounds (printed p. 122)."
+  },
+  {
+   "name": "devDispelItemDieSize",
+   "value": 4,
+   "comment": "the dispel read: the 1d4-round suppression (printed p. 122)."
+  },
+  {
+   "name": "devDispelAugmentPerFive",
+   "value": 5,
+   "comment": "the dispel read: +1 to the die roll for every five points of added difficulty; an extended dispel creates a zone of antimagic (printed p. 122)."
+  },
+  {
+   "name": "devWardSaveBonus",
+   "value": 4,
+   "comment": "the ward read: at base 35 the ward grants +4 against magical attacks, or a -4 attack penalty when no save applies (printed p. 122)."
+  },
+  {
+   "name": "devWardDamagePerTwo",
+   "value": 2,
+   "comment": "the ward read: added difficulty negates one point of damage for every two points of difficulty, computed after saves (printed p. 122)."
+  },
+  {
+   "name": "devWardPctResistDifficulty",
+   "value": 105,
+   "comment": "the ward read: at difficulty 105 the ward grants 50 percent resistance to the attack form (printed p. 122)."
+  },
+  {
+   "name": "devWardFullResistDifficulty",
+   "value": 210,
+   "comment": "the ward read: at difficulty 210 the ward provides 100 percent resistance (printed p. 122)."
+  },
+  {
+   "name": "devWardHedgeTypeDifficulty",
+   "value": 70,
+   "comment": "the ward hedge: hedging out a type of creature doubles the difficulty to 70 (printed p. 122)."
+  },
+  {
+   "name": "devWardHedgeClassDifficulty",
+   "value": 105,
+   "comment": "the ward hedge: a general class of creature triples it to 105 (printed p. 122)."
+  },
+  {
+   "name": "devReflectSingleDifficulty",
+   "value": 25,
+   "comment": "the reflect ladder: one specific action by one creature reverses at base 25 (printed p. 122)."
+  },
+  {
+   "name": "devReflectLimitedDifficulty",
+   "value": 50,
+   "comment": "the reflect ladder: a limited class of actions doubles the difficulty to 50 (printed p. 122)."
+  },
+  {
+   "name": "devReflectGeneralDifficulty",
+   "value": 75,
+   "comment": "the reflect ladder: a general class of actions triples it to 75 (printed p. 122)."
+  },
+  {
+   "name": "devAnimateObjWeight",
+   "value": 50,
+   "comment": "the animate read: at base 25 an object of 50 pounds or less moves at speed 12 (printed p. 123)."
+  },
+  {
+   "name": "devAnimateObjSpeed",
+   "value": 12,
+   "comment": "the animate read: the base movement rate 12 (printed p. 123)."
+  },
+  {
+   "name": "devDestroyRemakeDie",
+   "value": 6,
+   "comment": "the destroy read: a smashed object can be remade at 1d6 x 10 percent of its original cost (printed p. 123)."
+  },
+  {
+   "name": "devDestroyRemakePctMult",
+   "value": 10,
+   "comment": "the destroy read: the 10-percent multiplier (printed p. 123)."
+  },
+  {
+   "name": "devDestroyDisintegrateDifficulty",
+   "value": 90,
+   "comment": "the destroy read: doubling to 90 shatters or disintegrates utterly (printed p. 123)."
+  },
+  {
+   "name": "devFortifyBasePct",
+   "value": 10,
+   "comment": "the fortify ladder: base 30 gains 10 percent; 60 gains 1d4x10; 90 gains 2d3x10; 120 gains 3d4x10; each further multiple adds 1d4x10 (printed p. 124)."
+  },
+  {
+   "name": "devFortifyDoubleDifficulty",
+   "value": 60,
+   "comment": "the fortify ladder: the doubled difficulty (printed p. 124)."
+  },
+  {
+   "name": "devFortifyTripleDifficulty",
+   "value": 90,
+   "comment": "the fortify ladder: the tripled difficulty (printed p. 124)."
+  },
+  {
+   "name": "devFortifyQuadDifficulty",
+   "value": 120,
+   "comment": "the fortify ladder: the quadrupled difficulty (printed p. 124)."
+  },
+  {
+   "name": "devFortifyAbilityLowBonus",
+   "value": 1,
+   "comment": "the fortify ability read: each 10 percent gain is +1 if the enhanced score is 15 or less (printed p. 124)."
+  },
+  {
+   "name": "devFortifyAbilityHighBonus",
+   "value": 1,
+   "comment": "the fortify ability read: each 100 percent gain is +1 if the score is 16 or higher (printed p. 124)."
+  },
+  {
+   "name": "devTransformMaxTons",
+   "value": 50,
+   "comment": "the transform read: no single object over 50 tons (printed p. 124)."
+  },
+  {
+   "name": "devTransformCreatureDifficulty",
+   "value": 70,
+   "comment": "the transform ladder: doubling to 70 transforms a living creature or one material to a similar one (printed p. 124)."
+  },
+  {
+   "name": "devTransformObjectDifficulty",
+   "value": 105,
+   "comment": "the transform ladder: tripling to 105 transforms a creature into an object or material to a wholly different type (printed p. 124)."
+  },
+  {
+   "name": "devTransportBaseBonusMv",
+   "value": 12,
+   "comment": "the transport ladder: base 35 adds 12 to movement or grants a new mode - fly or swim 12, burrow or jump 3, difficult terrain 6 (printed p. 124)."
+  },
+  {
+   "name": "devTransportBurrowMv",
+   "value": 3,
+   "comment": "the transport ladder: the burrow or jump rate (printed p. 124)."
+  },
+  {
+   "name": "devTransportDifficultMv",
+   "value": 6,
+   "comment": "the transport ladder: the difficult-terrain rate (printed p. 124)."
+  },
+  {
+   "name": "devTransportDoubleDifficulty",
+   "value": 70,
+   "comment": "the transport ladder: doubling to 70 doubles the speed or grants extraordinary movement at 3 (printed p. 124)."
+  },
+  {
+   "name": "devTransportTeleportDifficulty",
+   "value": 105,
+   "comment": "the transport ladder: tripling to 105 allows error-free teleportation, range factored from Table 31 (printed p. 124)."
+  },
+  {
+   "name": "devAfflictBaseDifficulty",
+   "value": 40,
+   "comment": "the afflict ladder: base 40 a minor affliction; 80 major; 120 life-ruining; 160 life-imperiling (printed p. 124)."
+  },
+  {
+   "name": "devAfflictHarmlessDifficulty",
+   "value": 20,
+   "comment": "the afflict ladder: a harmless affliction at half difficulty 20, duration modifiers halved too (printed p. 124)."
+  },
+  {
+   "name": "devAfflictDoubleDifficulty",
+   "value": 80,
+   "comment": "the afflict ladder: the doubled difficulty (printed p. 124)."
+  },
+  {
+   "name": "devAfflictTripleDifficulty",
+   "value": 120,
+   "comment": "the afflict ladder: the tripled difficulty (printed p. 124)."
+  },
+  {
+   "name": "devAfflictQuadDifficulty",
+   "value": 160,
+   "comment": "the afflict ladder: the quadrupled difficulty (printed p. 124)."
+  },
+  {
+   "name": "devBindBaseDifficulty",
+   "value": 35,
+   "comment": "the bind read: base 35 imposes one agreement while the target keeps its will; even charm-immune creatures can be bound (printed p. 125)."
+  },
+  {
+   "name": "devConjureBaseDifficulty",
+   "value": 40,
+   "comment": "the conjure ladder: base 40 a block of simple elemental material; 80 simple objects; 120 complex objects (printed p. 125)."
+  },
+  {
+   "name": "devConjureDoubleDifficulty",
+   "value": 80,
+   "comment": "the conjure ladder: the doubled difficulty, permanent without Constitution loss at 80 or less (printed p. 125)."
+  },
+  {
+   "name": "devConjureTripleDifficulty",
+   "value": 120,
+   "comment": "the conjure ladder: the tripled difficulty (printed p. 125)."
+  },
+  {
+   "name": "devSummonBaseDifficulty",
+   "value": 50,
+   "comment": "the summon read: base 50 summons a single creature whose Hit Dice do not exceed the caster's level (printed p. 125)."
+  },
+  {
+   "name": "devSummonDoubleDifficulty",
+   "value": 100,
+   "comment": "the summon read: doubling to 100 doubles the total Hit Dice; tripling to 150 triples them (printed p. 125)."
+  },
+  {
+   "name": "devSummonTripleDifficulty",
+   "value": 150,
+   "comment": "the summon read: the tripled difficulty (printed p. 125)."
+  },
+  {
+   "name": "devCharmBaseDifficulty",
+   "value": 20,
+   "comment": "the charm read: base 20 inspires a pure emotional state; casting on undead triples the difficulty (printed p. 125)."
+  },
+  {
+   "name": "devCharmUndeadDifficulty",
+   "value": 60,
+   "comment": "the charm read: the tripled undead difficulty (printed p. 125)."
+  },
+  {
+   "name": "devCompelBaseDifficulty",
+   "value": 30,
+   "comment": "the compel read: base 30 forces a single immediate, non-suicidal action of one round (printed p. 125)."
+  },
+  {
+   "name": "devImbueBaseDifficulty",
+   "value": 45,
+   "comment": "the imbue ladder: base 45 a common non-offensive ability within touch (printed p. 126)."
+  },
+  {
+   "name": "devImbueDoubleDifficulty",
+   "value": 90,
+   "comment": "the imbue ladder: doubling to 90 grants unusual abilities within 30 feet (printed p. 126)."
+  },
+  {
+   "name": "devImbueReachFt",
+   "value": 30,
+   "comment": "the imbue ladder: the 30-foot reach of the doubled form (printed p. 126)."
+  },
+  {
+   "name": "devImbueLeadCopperDifficulty",
+   "value": 150,
+   "comment": "the imbue transmutation read: lead to copper at base plus a transform, 45 + 105 (printed p. 126)."
+  },
+  {
+   "name": "devImbueLeadSilverDifficulty",
+   "value": 90,
+   "comment": "the imbue transmutation read: lead into silver doubles the imbue difficulty (printed p. 126)."
+  },
+  {
+   "name": "devImbueLeadGoldDifficulty",
+   "value": 135,
+   "comment": "the imbue transmutation read: lead into gold triples it (printed p. 126)."
+  },
+  {
+   "name": "devImbueWoodGoldDifficulty",
+   "value": 285,
+   "comment": "the imbue transmutation read: wood into gold, a nonmetallic source, costs an extra multiple - 285 (printed p. 126)."
+  },
+  {
+   "name": "devForeseeBaseDifficulty",
+   "value": 25,
+   "comment": "the foresee read: base 25 poses one question; tripling to 75 extends one sense into the future (printed p. 126)."
+  },
+  {
+   "name": "devForeseeKingDifficulty",
+   "value": 125,
+   "comment": "the foresee read: the fate-of-a-king example, base 25 plus 100 for an unspecified time frame (printed p. 126)."
+  },
+  {
+   "name": "devForeseeUnspecifiedCost",
+   "value": 100,
+   "comment": "the foresee read: the unspecified-time-frame difficulty cost (printed p. 126)."
+  },
+  {
+   "name": "devForeseeSenseDifficulty",
+   "value": 75,
+   "comment": "the foresee read: the tripled sense-extension difficulty (printed p. 126)."
+  },
+  {
+   "name": "devRevealBaseDifficulty",
+   "value": 20,
+   "comment": "the reveal ladder: base 20 projects one sense or reads one aura by touch (printed p. 126)."
+  },
+  {
+   "name": "devRevealDoubleDifficulty",
+   "value": 40,
+   "comment": "the reveal ladder: doubling to 40 doubles penetration and analyzes what is detected (printed p. 126)."
+  },
+  {
+   "name": "devRevealTripleDifficulty",
+   "value": 60,
+   "comment": "the reveal ladder: tripling to 60 triples penetration and gives complete analysis (printed p. 126)."
+  },
+  {
+   "name": "devRevealTrueSeeingDifficulty",
+   "value": 100,
+   "comment": "the reveal ladder: quintuple difficulty 100 bestows true seeing (printed p. 127)."
+  },
+  {
+   "name": "devRevealPastDivisor",
+   "value": 10,
+   "comment": "the reveal past read: the past is easier - divide the Table 32 time periods by 10; ten years back adds 70 (printed p. 127)."
+  },
+  {
+   "name": "devRevealPastTenYears",
+   "value": 70,
+   "comment": "the reveal past read: the ten-year example cost (printed p. 127)."
+  },
+  {
+   "name": "devConcealBaseDifficulty",
+   "value": 20,
+   "comment": "the conceal read: base 20 hides from one ordinary sense; magical senses double the difficulty (printed p. 127)."
+  },
+  {
+   "name": "devConcealMagicalDifficulty",
+   "value": 40,
+   "comment": "the conceal read: the doubled magical-sense difficulty (printed p. 127)."
+  },
+  {
+   "name": "devDeludeBaseDifficulty",
+   "value": 30,
+   "comment": "the delude read: base 30 changes one sensory aspect; doubling to 60 deceives extraordinary senses such as ESP (printed p. 127)."
+  },
+  {
+   "name": "devDeludeEspDifficulty",
+   "value": 60,
+   "comment": "the delude read: the doubled ESP-deception difficulty (printed p. 127)."
+  },
+  {
+   "name": "devDeludeGiantExampleDifficulty",
+   "value": 150,
+   "comment": "the delude read: a storm giant seeming a mindless halfling, size change plus ESP, a minimum of 150 (printed p. 127)."
+  },
+  {
+   "name": "devPhantomBaseDifficulty",
+   "value": 40,
+   "comment": "the phantom read: base 40 impacts one sense; each multiple adds a sense; a specific thought or emotion adds 40 (printed p. 127)."
+  },
+  {
+   "name": "devPhantomMentalCost",
+   "value": 40,
+   "comment": "the phantom read: the added-thought cost (printed p. 127)."
+  },
+  {
+   "name": "devShadowDisbelievedAc",
+   "value": 4,
+   "comment": "the shadow shape read: disbelieved shapes keep Armor Class 4 and 80 percent of hit points and damage (printed p. 127)."
+  },
+  {
+   "name": "devShadowDisbelievedPct",
+   "value": 80,
+   "comment": "the shadow shape read: the 80-percent retention (printed p. 127)."
+  },
+  {
+   "name": "devShadowSpecialPersistPct",
+   "value": 50,
+   "comment": "the shadow shape read: a 50 percent chance special attacks persist after the spell fades (printed p. 127)."
+  },
+  {
+   "name": "devEnergyWallDifficulty",
+   "value": 25,
+   "comment": "the create read: base 25 makes a five-foot energy wall, 2d8 damage plus one per caster level, 1d8 within 10 feet save for half (printed p. 128)."
+  },
+  {
+   "name": "devEnergyWallDmgDice",
+   "value": 2,
+   "comment": "the create read: the 2d8 wall damage (printed p. 128)."
+  },
+  {
+   "name": "devEnergyWallDmgSize",
+   "value": 8,
+   "comment": "the create read: the d8 wall die (printed p. 128)."
+  },
+  {
+   "name": "devEnergyWallNearbyDmg",
+   "value": 8,
+   "comment": "the create read: the 1d8 nearby damage, save vs. spells for half (printed p. 128)."
+  },
+  {
+   "name": "devEnergyWallNearbyFt",
+   "value": 10,
+   "comment": "the create read: the 10-foot splash radius (printed p. 128)."
+  },
+  {
+   "name": "devSoftWallDifficulty",
+   "value": 50,
+   "comment": "the create ladder: doubling to 50 makes a soft wall of wood, clay or ice, six inches thick (printed p. 128)."
+  },
+  {
+   "name": "devHardWallDifficulty",
+   "value": 75,
+   "comment": "the create ladder: tripling to 75 makes a hard granite or iron wall; a fall kills outright (printed p. 129)."
+  },
+  {
+   "name": "devForceWallDifficulty",
+   "value": 100,
+   "comment": "the create ladder: quadrupling to 100 duplicates wall of force (printed p. 129)."
+  },
+  {
+   "name": "devFallingWallDmgDice",
+   "value": 3,
+   "comment": "the create read: a soft wall falling inflicts 3d10, save vs. death magic (printed p. 129)."
+  },
+  {
+   "name": "devFallingWallDmgSize",
+   "value": 10,
+   "comment": "the create read: the 3d10 fall damage (printed p. 129)."
+  },
+  {
+   "name": "devMatterBlockDifficulty",
+   "value": 35,
+   "comment": "the create ladder: matter at base 35, a 50-pound block; 70 soft compound; 105 common pure metal (printed p. 129)."
+  },
+  {
+   "name": "devMatterSoftDifficulty",
+   "value": 70,
+   "comment": "the create ladder: the doubled soft-material difficulty (printed p. 129)."
+  },
+  {
+   "name": "devMatterMetalDifficulty",
+   "value": 105,
+   "comment": "the create ladder: the tripled pure-metal difficulty (printed p. 129)."
+  },
+  {
+   "name": "devStrikeBaseDifficulty",
+   "value": 25,
+   "comment": "the strike read: base 25 inflicts 2d8 plus one per caster level by touch or burst, save vs. spell for half (printed p. 129)."
+  },
+  {
+   "name": "devStrikeDmgDice",
+   "value": 2,
+   "comment": "the strike read: the 2d8 base damage (printed p. 129)."
+  },
+  {
+   "name": "devStrikeMaxDice",
+   "value": 30,
+   "comment": "the strike read: +1d8 per five added difficulty, to a maximum of 30d8 (printed p. 129)."
+  },
+  {
+   "name": "devStrikeStepPerFive",
+   "value": 5,
+   "comment": "the strike read: the five-point step per extra die (printed p. 129)."
+  },
+  {
+   "name": "devMobileSpellAc",
+   "value": 0,
+   "comment": "the strike read: an animated strike-wall effect has Armor Class 0 and the caster's hit points (printed p. 129)."
+  },
+  {
+   "name": "devCrushingSpellAc",
+   "value": -2,
+   "comment": "the strike read: the crushing-hand combination has Armor Class -2 and twice the caster's hit points (printed p. 129)."
+  },
+  {
+   "name": "devCrushingSpellHpMult",
+   "value": 2,
+   "comment": "the strike read: the doubled hit points (printed p. 129)."
+  },
+  {
+   "name": "devAnimateDeadBaseDifficulty",
+   "value": 25,
+   "comment": "the animate dead read: base 25 animates one Hit Die of skeletons or zombies per caster level (printed p. 129)."
+  },
+  {
+   "name": "devAnimateDeadDoubleDifficulty",
+   "value": 50,
+   "comment": "the animate dead read: doubling to 50 doubles the Hit Dice, tripling to 75 triples them (printed p. 129)."
+  },
+  {
+   "name": "devAnimateDeadTripleDifficulty",
+   "value": 75,
+   "comment": "the animate dead read: the tripled difficulty (printed p. 129)."
+  },
+  {
+   "name": "devAnimateScatteredAdj",
+   "value": 25,
+   "comment": "the animate dead read: scattered remains add 25; scattered and ancient add 75 (printed p. 129)."
+  },
+  {
+   "name": "devAnimateScatteredAncientAdj",
+   "value": 75,
+   "comment": "the animate dead read: the scattered-and-ancient adjustment (printed p. 129)."
+  },
+  {
+   "name": "devSlayBaseDifficulty",
+   "value": 50,
+   "comment": "the slay read: base 50 slays one creature of the caster's Hit Dice or less; +5 difficulty per extra Hit Die, no maximum (printed p. 129)."
+  },
+  {
+   "name": "devSlayHdPerFive",
+   "value": 1,
+   "comment": "the slay read: one Hit Die per five points of added difficulty (printed p. 129)."
+  },
+  {
+   "name": "devSlaySaveHdMin",
+   "value": 9,
+   "comment": "the slay read: targets of 9 Hit Dice or more save vs. death to negate (printed p. 129)."
+  },
+  {
+   "name": "devTapBaseDifficulty",
+   "value": 40,
+   "comment": "the tap read: base 40 drains 1d8 hit points by touch, save vs. spells at 9 Hit Dice or more; +5 per extra die, max 30d8 (printed p. 129)."
+  },
+  {
+   "name": "devTapDmgDie",
+   "value": 8,
+   "comment": "the tap read: the d8 tap die (printed p. 129)."
+  },
+  {
+   "name": "devTapMaxDice",
+   "value": 30,
+   "comment": "the tap read: the 30d8 maximum (printed p. 129)."
+  },
+  {
+   "name": "devTapTransferDifficulty",
+   "value": 80,
+   "comment": "the tap read: doubling to 80 transfers drained hit points - or one ability score point - to the caster for the duration (printed p. 130)."
+  },
+  {
+   "name": "devTapAbilityTransferDifficulty",
+   "value": 160,
+   "comment": "the tap read: at 160 the stolen ability score transfers to the caster (printed p. 130)."
+  },
+  {
+   "name": "devTapLevelDifficulty",
+   "value": 120,
+   "comment": "the tap read: tripling to 120 drains one energy level for the duration; at 240 it transfers (printed p. 130)."
+  },
+  {
+   "name": "devTapLevelTransferDifficulty",
+   "value": 240,
+   "comment": "the tap read: the level-transfer difficulty (printed p. 130)."
+  },
+  {
+   "name": "devPrepHoursPerDay",
+   "value": 8,
+   "comment": "the preparation day: preparations of a day or more require eight hours of effort per day, the remaining 16 free (printed p. 133)."
+  },
+  {
+   "name": "devPharjisLevel",
+   "value": 25,
+   "comment": "the Pharjis read: a 25th-level diviner throughout (printed pp. 133-134)."
+  },
+  {
+   "name": "devPharjisDiff15PrepWeeks",
+   "value": 1,
+   "comment": "the Pharjis read: difficulty 15 requires a week of preparation (printed p. 133)."
+  },
+  {
+   "name": "devPharjisExplosionLostDays",
+   "value": 2,
+   "comment": "the Pharjis read: the day-four explosion loses that day plus a backtrack day - five more days to cast (printed p. 133)."
+  },
+  {
+   "name": "devPharjisDiff55PrepMonths",
+   "value": 2,
+   "comment": "the Pharjis read: difficulty 55 requires two months of preparation (printed p. 133)."
+  },
+  {
+   "name": "devFinalCheckDie",
+   "value": 100,
+   "comment": "the final check: roll 1d20 - no, 1d100; equal or higher than the final difficulty completes the preparations (printed p. 133)."
+  },
+  {
+   "name": "devPharjisDiff55Final",
+   "value": 28,
+   "comment": "the Pharjis read: six months of preparation reduce difficulty 55 to 28, fractions rounded up (printed p. 133)."
+  },
+  {
+   "name": "devPharjisDiff15Shortened",
+   "value": 30,
+   "comment": "the Pharjis read: one day of preparation raises difficulty 15 to 30 (printed p. 133)."
+  },
+  {
+   "name": "devPharjisDiff160Final",
+   "value": 80,
+   "comment": "the Pharjis read: difficulty 160 halved by two years of preparation to 80 (printed p. 134)."
+  },
+  {
+   "name": "devHoldTimeCap",
+   "value": 1,
+   "comment": "the hold rule: a prepared spell can be held only as long as its minimum preparation time - Pharjis waits up to a year (printed p. 134)."
+  },
+  {
+   "name": "devExRevealBase",
+   "value": 20,
+   "comment": "the Pharjis example: the reveal type at base 20, region area +80, half-day duration +10 - a combined 110 (printed p. 134)."
+  },
+  {
+   "name": "devExRegionAdj",
+   "value": 80,
+   "comment": "the Pharjis example: the 100-mile region area modifier (printed p. 134)."
+  },
+  {
+   "name": "devExHalfDayAdj",
+   "value": 10,
+   "comment": "the Pharjis example: the half-day duration modifier, six hours on Table 32 (printed p. 134)."
+  },
+  {
+   "name": "devExCombinedDifficulty",
+   "value": 110,
+   "comment": "the Pharjis example: 20 + 80 + 10 = 110 (printed p. 134)."
+  },
+  {
+   "name": "devExAdjustedDifficulty",
+   "value": 70,
+   "comment": "the Pharjis example: 110 - 25 level - 5 diviner - 10 practiced = 70 (printed p. 134)."
+  },
+  {
+   "name": "devExExoticHalved",
+   "value": 35,
+   "comment": "the Pharjis example: the giant-eagle feather halves 70 to 35 (printed p. 134)."
+  },
+  {
+   "name": "devExRareReduced",
+   "value": 5,
+   "comment": "the Pharjis example: three rare components - spyglass, spectacles, map - reduce 35 to 5 (printed p. 134)."
+  },
+  {
+   "name": "devExDoubledFinal",
+   "value": 10,
+   "comment": "the Pharjis example: halving the preparation to a round doubles the final difficulty to 10 (printed p. 134)."
+  },
+  {
+   "name": "devExFailRoll",
+   "value": 2,
+   "comment": "the Pharjis example: the first final check rolls 02, a failure (printed p. 134)."
+  },
+  {
+   "name": "devExSuccessRoll",
+   "value": 81,
+   "comment": "the Pharjis example: the second check rolls 81, a success (printed p. 134)."
+  },
+  {
+   "name": "devExWatchHours",
+   "value": 12,
+   "comment": "the Pharjis example: he searches the region for 12 hours (printed p. 134)."
+  },
+  {
+   "name": "devDispelMagicSuppressRounds",
+   "value": 4,
+   "comment": "the in-play read: a 3rd-level dispel magic directed solely at the dweomer suppresses it for 1d4 rounds (printed p. 134)."
+  },
+  {
+   "name": "devDisjunctionPctPerLevel",
+   "value": 1,
+   "comment": "the in-play read: Mordenkainen's disjunction has a 1-percent chance per caster level of disjoining a true dweomer, wholly if any portion (printed p. 135)."
+  },
+  {
+   "name": "devLimitedWishHours",
+   "value": 8,
+   "comment": "the in-play read: the 1d8-hour negation (printed p. 135)."
+  },
+  {
+   "name": "devDuelPR",
+   "value": 19,
+   "comment": "the duel read: all true dweomers have power ranks of 19 and move by range; each preparation or casting round costs a duel round (printed p. 135)."
+  },
+  {
+   "name": "devQuestWardSaveFloor",
+   "value": 18,
+   "comment": "the quest read: a ward grants a saving throw of 18 against a quest spell that allows none; a ward's magic resistance is halved (printed p. 136)."
+  },
+  {
+   "name": "devKnownDweomerCount",
+   "value": 13,
+   "comment": "the canonical list: thirteen documented true dweomers from Hurd's Obligation through Yunni's Herald (printed pp. 136-141)."
+  },
+  {
+   "name": "devHurdSavePenalty",
+   "value": -8,
+   "comment": "Hurd's Obligation: a bind of conditional duration, saving throw negates at an -8 penalty; only a 10th-level dispel removes it (printed p. 136)."
+  },
+  {
+   "name": "devKolinUndeadHd",
+   "value": 200,
+   "comment": "Kolin's Undead Legion: animates 200 Hit Dice of skeletons or zombies anywhere on the plane, 5,000 feet square (printed p. 136)."
+  },
+  {
+   "name": "devKrebDragonFailPct",
+   "value": 20,
+   "comment": "Kreb's Flaming Dragon: a disbelieved shadow dragon keeps Armor Class 4 and 80 percent, and its non-damaging powers have a 20 percent chance to fail (printed p. 137)."
+  },
+  {
+   "name": "devNazzerBaseDiff",
+   "value": 55,
+   "comment": "Nazzer's Nullification: the 10th-level dispel magic, difficulty 55 with a final of -5; the cloak version runs 90 to 13 (printed p. 137)."
+  },
+  {
+   "name": "devNazzerCloakDiff",
+   "value": 90,
+   "comment": "Nazzer's Nullification cloak: the second version, difficulty 90, final 13 (printed p. 137)."
+  },
+  {
+   "name": "devNazzerCloakFinal",
+   "value": 13,
+   "comment": "Nazzer's Nullification cloak: the final difficulty 13 (printed p. 137)."
+  },
+  {
+   "name": "devNazzerItemLevel",
+   "value": 12,
+   "comment": "Nazzer's Nullification: most standard items resist at an effective 12th level; artifacts are immune (printed p. 138)."
+  },
+  {
+   "name": "devNazzerCloakRounds",
+   "value": 10,
+   "comment": "Nazzer's Nullification cloak: operates one full turn - ten rounds - disrupting all entering magic; a resisting spell is immune for the remainder (printed p. 138)."
+  },
+  {
+   "name": "devNejaPleaHours",
+   "value": 12,
+   "comment": "Neja's Irresistible Plea: compels a task of 12 hours or less, saving throw negates at -3 (printed p. 138)."
+  },
+  {
+   "name": "devNejaPleaSaveBonus",
+   "value": -3,
+   "comment": "Neja's Irresistible Plea: the -3 saving throw modifier (printed p. 138)."
+  },
+  {
+   "name": "devRatecliffeHd",
+   "value": 40,
+   "comment": "Ratecliffe's Deadly Finger: slays 40 Hit Dice of creatures in a 50-foot square; those under 9 Hit Dice get no save (printed p. 140)."
+  },
+  {
+   "name": "devRatecliffeAreaFt",
+   "value": 50,
+   "comment": "Ratecliffe's Deadly Finger: the 50-foot square (printed p. 140)."
+  },
+  {
+   "name": "devTenserDmgDice",
+   "value": 20,
+   "comment": "Tenser's Telling Blow: a force blast of 20d8 + 20 points of damage, save for half; only against creatures already engaged in combat (printed p. 140)."
+  },
+  {
+   "name": "devTenserDmgBonus",
+   "value": 20,
+   "comment": "Tenser's Telling Blow: the +20 bonus damage (printed p. 140)."
+  },
+  {
+   "name": "devWulfRectAreaDia",
+   "value": 50,
+   "comment": "Wulf's Rectification: banishes 1d4+1 extra-planar usurpers in a 50-foot diameter, magic resistance at -20 percent (printed p. 141)."
+  },
+  {
+   "name": "devWulfRectMrPenalty",
+   "value": -20,
+   "comment": "Wulf's Rectification: the -20 percent magic resistance penalty (printed p. 141)."
+  },
+  {
+   "name": "devYunniWeightLbs",
+   "value": 50,
+   "comment": "Yunni's Herald: animates objects of 50 pounds or less, moving at speed 12 to deliver a spoken message for up to a week (printed p. 141)."
+  },
+  {
+   "name": "devT28RowCount",
+   "value": 29,
+   "comment": "the Table 28 grid: 29 spell types across the eight schools, abjuration through necromancy (printed p. 120)."
+  },
+  {
+   "name": "devT29RowCount",
+   "value": 10,
+   "comment": "the Table 29 grid: ten area-of-effect rows from a single creature to a whole plane (printed p. 130)."
+  },
+  {
+   "name": "devT30RowCount",
+   "value": 6,
+   "comment": "the Table 30 grid: six animated-object size rows, tiny through gargantuan (printed p. 130)."
+  },
+  {
+   "name": "devT31RowCount",
+   "value": 10,
+   "comment": "the Table 31 grid: ten range rows, touch through trans-planar (printed p. 131)."
+  },
+  {
+   "name": "devT32RowCount",
+   "value": 11,
+   "comment": "the Table 32 grid: eleven duration rows, instantaneous through permanent (printed p. 131)."
+  },
+  {
+   "name": "devT33RowCount",
+   "value": 10,
+   "comment": "the Table 33 grid: ten adjusted-difficulty bands from -1-or-less through 151-plus (printed p. 132)."
+  },
+  {
+   "name": "devT35RowCount",
+   "value": 29,
+   "comment": "the Table 35 grid: the 29 dweomer types mapped to their dueling types (printed p. 135)."
+  },
+  {
+   "name": "devProvinceMiles",
+   "value": 20,
+   "comment": "the area codes: a province is 20 miles square, a region 100 miles square, a plane fills the plane (printed p. 130)."
+  },
+  {
+   "name": "devRegionMiles",
+   "value": 100,
+   "comment": "the area codes: the region dimension (printed p. 130)."
+  },
+  {
+   "name": "devAreaAllCreaturesMult",
+   "value": 10,
+   "comment": "the area read: affecting all creatures in a designated area multiplies the difficulty modifier by 10 (printed p. 130)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "devNoScrollOrDevice",
+   "value": true,
+   "comment": "the unrecordable rule: a true dweomer can never be written onto a scroll, recorded in a spellbook or stored in a magical device (printed p. 119)."
+  },
+  {
+   "name": "devNeverSameTwice",
+   "value": true,
+   "comment": "the flux rule: every true dweomer is a little different each time it is cast - the energies constantly change (printed p. 119)."
+  },
+  {
+   "name": "devDmApprovalRequired",
+   "value": true,
+   "comment": "the approval gate: the DM must approve a true dweomer before it is used; there is no cost beyond materials (printed p. 119)."
+  },
+  {
+   "name": "devWizardsAnySchool",
+   "value": true,
+   "comment": "the school rule: wizards cast dweomers using their available schools; priests use any school but must reflect their deity's portfolio (printed p. 119)."
+  },
+  {
+   "name": "devCommonComponentRequired",
+   "value": true,
+   "comment": "the component floor: every true dweomer requires at least one common material component, with no difficulty reduction for multiples (printed p. 131)."
+  },
+  {
+   "name": "devPriestHolySymbolNeeded",
+   "value": true,
+   "comment": "the priest read: priest dweomers require holy symbols, not consumed; other components are (printed p. 119)."
+  },
+  {
+   "name": "devWizardsNeedNoSpellbook",
+   "value": true,
+   "comment": "the wizard read: no spellbook needed, though written notes help (printed p. 119)."
+  },
+  {
+   "name": "devComponentsSymbolic",
+   "value": true,
+   "comment": "the symbolism rule: a component must be symbolic of what the spell does - a diamond for earth or value, not mere cost (printed p. 119)."
+  },
+  {
+   "name": "devExoticEitherNotBoth",
+   "value": true,
+   "comment": "the exotic component: a single exotic component reduces either the adjusted or the final difficulty, never both (printed p. 131)."
+  },
+  {
+   "name": "devWardHalfEvenOnFail",
+   "value": true,
+   "comment": "the ward read: even if the save fails, damage from the warded attack is reduced by half (printed p. 122)."
+  },
+  {
+   "name": "devWardTwoResistRolls",
+   "value": true,
+   "comment": "the ward read: a warded creature with magic resistance gets two separate resistance rolls, never added (printed p. 122)."
+  },
+  {
+   "name": "devTransformSimplePermanentFree",
+   "value": true,
+   "comment": "the transform read: a simple transformation of nonmagical material can be made permanent without a Constitution loss (printed p. 124)."
+  },
+  {
+   "name": "devAfflictHarmlessPermanentFree",
+   "value": true,
+   "comment": "the afflict read: a harmless affliction can be made permanent without a Constitution loss, as can a condition the victim can end (printed p. 124)."
+  },
+  {
+   "name": "devBindYearlySave",
+   "value": true,
+   "comment": "the bind read: a binding of a year or more allows a yearly saving throw to break it (printed p. 125)."
+  },
+  {
+   "name": "devBindNoSuicide",
+   "value": true,
+   "comment": "the bind read: no binding is effective if impossible to honor or suicidal (printed p. 125)."
+  },
+  {
+   "name": "devSummonNoControlOvernamed",
+   "value": true,
+   "comment": "the summon read: a creature over the caster's level, or specifically named, is beyond control though it can be bound, charmed or compelled (printed p. 125)."
+  },
+  {
+   "name": "devGolemsNeverCharmed",
+   "value": true,
+   "comment": "the charm read: golems, automatons and animated objects cannot be charmed (printed p. 125)."
+  },
+  {
+   "name": "devRevealNoSaveUnlessUnwilling",
+   "value": true,
+   "comment": "the reveal read: no saving throw unless examining an unwilling creature's alignment, thoughts or mental state (printed p. 127)."
+  },
+  {
+   "name": "devConcealBrokenByAttack",
+   "value": true,
+   "comment": "the conceal read: an attack breaks the concealment unless combined with an imbue of the same duration (printed p. 127)."
+  },
+  {
+   "name": "devTrueSeeingDefeatsConceal",
+   "value": true,
+   "comment": "the conceal read: true seeing always defeats a conceal spell (printed p. 127)."
+  },
+  {
+   "name": "devPhantomNoRealDamage",
+   "value": true,
+   "comment": "the phantom read: an image cannot inflict real damage even if believed - but a mental fear image can kill like a slay spell (printed p. 127)."
+  },
+  {
+   "name": "devMatterPermanentFree",
+   "value": true,
+   "comment": "the create read: matter-producing creation can be made permanent without a Constitution loss (printed p. 129)."
+  },
+  {
+   "name": "devForceImmuneToOwnEnergy",
+   "value": true,
+   "comment": "the strike read: the mobile effect is harmed only by magic and is immune to its own form of energy (printed p. 129)."
+  },
+  {
+   "name": "devOnlyPriestsHealWithTap",
+   "value": true,
+   "comment": "the tap read: priests, and only priests, use the tap spell to heal injuries (printed p. 129)."
+  },
+  {
+   "name": "devTapDamageInstantOnly",
+   "value": true,
+   "comment": "the tap read: a damage-inflicting tap is always instantaneous and cannot be extended (printed p. 129)."
+  },
+  {
+   "name": "devPrepDayRestart",
+   "value": true,
+   "comment": "the disruption rule: preparations of a day or less are completely disrupted and restart (printed p. 133)."
+  },
+  {
+   "name": "devPrepWeekBacktrack",
+   "value": true,
+   "comment": "the disruption rule: week-or-longer preparations lose the current day plus another day of backtracking (printed p. 133)."
+  },
+  {
+   "name": "devPrepExtensionHalves",
+   "value": true,
+   "comment": "the time trade: raising preparation one category halves the final difficulty or takes -10, whichever is greater; shortening doubles it (printed p. 133)."
+  },
+  {
+   "name": "devCastDailyNoBreaks",
+   "value": true,
+   "comment": "the casting read: day-or-longer casting needs eight hours daily, consecutive; a missed day loses the spell (printed p. 134)."
+  },
+  {
+   "name": "devCastBrokenRuinsSpell",
+   "value": true,
+   "comment": "the casting read: broken concentration during casting ruins the spell and consumes the components in a fizzle (printed p. 133)."
+  },
+  {
+   "name": "devPlayCasterLevelSaves",
+   "value": true,
+   "comment": "the in-play read: the saving-throws-by-character-level optional rule is always used, and high-ability bonuses apply normally (printed p. 134)."
+  },
+  {
+   "name": "devIounStonesIneffective",
+   "value": true,
+   "comment": "the in-play read: pale lavender and lavender-and-green ioun stones, rods of absorption and staffs of the magi absorption are ineffective against true dweomers (printed p. 134)."
+  },
+  {
+   "name": "devDispelMagicAreaCapped",
+   "value": true,
+   "comment": "the in-play read: dispel magic cannot disrupt a dweomer whose area exceeds its own (printed p. 134)."
+  },
+  {
+   "name": "devWishAutoDispels",
+   "value": true,
+   "comment": "the in-play read: a wish automatically dispels a true dweomer, its only effect; a limited wish negates for 1d8 hours (printed p. 135)."
+  },
+  {
+   "name": "devDispelDestroysBarriers",
+   "value": true,
+   "comment": "the barrier read: a dispel true dweomer instantly destroys any wall or barrier from a 1st-9th level spell or device - wall of force, prismatic wall and sphere, antimagic shell, cube of force (printed p. 135)."
+  },
+  {
+   "name": "devSphericalBarriersHold",
+   "value": true,
+   "comment": "the barrier read: flat barriers are circumvented by a big enough area, spherical ones cannot be (printed p. 135)."
+  },
+  {
+   "name": "devDuelCountersUseless",
+   "value": true,
+   "comment": "the duel read: any dweomer with a casting time over one round is useless as a counter spell (printed p. 135)."
+  },
+  {
+   "name": "devQuestSpellsUncounterable",
+   "value": true,
+   "comment": "the quest read: quest-spell effects generally cannot be countered; a dispel dweomer is ineffective, though creatures and wardable effects can be attacked (printed p. 135)."
+  },
+  {
+   "name": "devQuestWardMrHalved",
+   "value": true,
+   "comment": "the quest read: the halved magic resistance (printed p. 136)."
+  },
+  {
+   "name": "devNazzerAutoFailOne",
+   "value": true,
+   "comment": "Nazzer's Nullification: a roll of 1 always fails and a 20 always succeeds (printed p. 138)."
+  },
+  {
+   "name": "devNejaToadstoolSystemShock",
+   "value": true,
+   "comment": "Neja's Toadstool: Nazzer's nullification can reverse the transform, but a system shock roll is required with failure meaning death (printed p. 138)."
+  },
+  {
+   "name": "devRatecliffeWishOnlyRevival",
+   "value": true,
+   "comment": "Ratecliffe's Deadly Finger: the slain revive only by a wish, another true dweomer or a deity (printed p. 140)."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "devT28Grid",
+   "tag": "T42",
+   "count": "devT28RowCount",
+   "cols": [
+    "devT28BaseDiff",
+    "devT28BaseDuration",
+    "devT28EffectCode"
+   ],
+   "sentinel": -99,
+   "sentinel_census": [
+    1,
+    1,
+    1
+   ],
+   "comment": "the Table 28 true dweomers grid (printed p. 120): 29 spell types by school with the base difficulty, the base duration code (0 instantaneous, 1 one round, 2 round or instantaneous, -99 variable) and the effect code (0 area, 1 creature or object, 2 object, 3 creature or area, 4 creature, -99 variable); the shadow shape row is variable in all three.",
+   "col_comments": [
+    "the base difficulty by type: banish 30, dispel 30, reflect 25, ward 35; the alteration ladder 25 through 45; the conjuration 35 through 50; enchantment 20 through 45; divination 20 and 25; illusion 20 through 40; evocation 25 through 45; necromancy 25 through 50; the shadow shape is variable (printed p. 120).",
+    "the base duration code: 0 instantaneous, 1 one round, 2 round or instantaneous by use, -99 the variable shadow shape (printed p. 120).",
+    "the effect code: 0 area, 1 creature or object, 2 object, 3 creature or area, 4 creature, -99 variable (printed p. 120)."
+   ],
+   "data": [
+    [
+     30,
+     0,
+     1
+    ],
+    [
+     30,
+     0,
+     0
+    ],
+    [
+     25,
+     1,
+     0
+    ],
+    [
+     35,
+     1,
+     0
+    ],
+    [
+     25,
+     1,
+     2
+    ],
+    [
+     45,
+     0,
+     2
+    ],
+    [
+     30,
+     1,
+     1
+    ],
+    [
+     35,
+     1,
+     1
+    ],
+    [
+     35,
+     2,
+     1
+    ],
+    [
+     40,
+     1,
+     3
+    ],
+    [
+     35,
+     1,
+     4
+    ],
+    [
+     40,
+     1,
+     2
+    ],
+    [
+     50,
+     2,
+     4
+    ],
+    [
+     20,
+     1,
+     4
+    ],
+    [
+     30,
+     1,
+     4
+    ],
+    [
+     30,
+     1,
+     1
+    ],
+    [
+     45,
+     1,
+     1
+    ],
+    [
+     25,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     3
+    ],
+    [
+     30,
+     1,
+     3
+    ],
+    [
+     -99,
+     -99,
+     -99
+    ],
+    [
+     40,
+     1,
+     0
+    ],
+    [
+     35,
+     2,
+     0
+    ],
+    [
+     45,
+     1,
+     1
+    ],
+    [
+     25,
+     0,
+     0
+    ],
+    [
+     25,
+     0,
+     0
+    ],
+    [
+     50,
+     0,
+     4
+    ],
+    [
+     40,
+     0,
+     4
+    ]
+   ]
+  },
+  {
+   "name": "devT29Grid",
+   "tag": "T43",
+   "count": "devT29RowCount",
+   "cols": [
+    "devT29Creatures",
+    "devT29AreaFt",
+    "devT29ObjectLbs",
+    "devT29Difficulty"
+   ],
+   "sentinel": -99,
+   "sentinel_census": [
+    0,
+    3,
+    0,
+    0
+   ],
+   "comment": "the Table 29 areas of effect (printed p. 130): ten rows - the creature count (the parenthetical fixed numbers), the area in square feet (-99 the province, region and plane rows), the object weight cap in pounds, and the difficulty modifier from 0 through 160.",
+   "col_comments": [
+    "the creature count: 1, 3, 6, 9, 12, 15, 18, 21, 24, 27 - the fixed parenthetical numbers of the dice entries (printed p. 130).",
+    "the area in feet: 5, 50, 500, 5,000, 10,000, 25,000, 50,000, then province, region and plane - a province 20 miles square, a region 100 (printed p. 130).",
+    "the object weight cap in pounds: 200 through one million, a 500-ton plane row (printed p. 130).",
+    "the difficulty modifier: 0, 5, 10, 15, 20, 25, 30, 40, 80, 160 (printed p. 130)."
+   ],
+   "data": [
+    [
+     1,
+     5,
+     200,
+     0
+    ],
+    [
+     3,
+     50,
+     500,
+     5
+    ],
+    [
+     6,
+     500,
+     1000,
+     10
+    ],
+    [
+     9,
+     5000,
+     2000,
+     15
+    ],
+    [
+     12,
+     10000,
+     10000,
+     20
+    ],
+    [
+     15,
+     25000,
+     20000,
+     25
+    ],
+    [
+     18,
+     50000,
+     100000,
+     30
+    ],
+    [
+     21,
+     -99,
+     200000,
+     40
+    ],
+    [
+     24,
+     -99,
+     400000,
+     80
+    ],
+    [
+     27,
+     -99,
+     1000000,
+     160
+    ]
+   ]
+  },
+  {
+   "name": "devT30Grid",
+   "tag": "T44",
+   "count": "devT30RowCount",
+   "cols": [
+    "devT30WeightLbs",
+    "devT30Damage"
+   ],
+   "sentinel": -99,
+   "comment": "the Table 30 animated objects (printed p. 130): six size rows, tiny through gargantuan, with the weight cap in pounds and the average damage of a single blow; objects over a ton cannot wholly move.",
+   "col_comments": [
+    "the weight cap in pounds: 50, 100, 200, 500, 1,000 and a one-ton gargantuan row (printed p. 130).",
+    "the average damage per blow: 2, 5, 10, 15, 20, 25 (printed p. 130)."
+   ],
+   "data": [
+    [
+     50,
+     2
+    ],
+    [
+     100,
+     5
+    ],
+    [
+     200,
+     10
+    ],
+    [
+     500,
+     15
+    ],
+    [
+     1000,
+     20
+    ],
+    [
+     2000,
+     25
+    ]
+   ]
+  },
+  {
+   "name": "devT31Grid",
+   "tag": "T45",
+   "count": "devT31RowCount",
+   "cols": [
+    "devT31Difficulty"
+   ],
+   "sentinel": -99,
+   "comment": "the Table 31 ranges (printed p. 131): ten rows, touch through trans-planar; only transport and reveal spells work at trans-planar range, and planar range serves unknown locations.",
+   "col_comments": [
+    "the range difficulty: touch 0, 20 yards 5, 50 yards 10, 100 yards 15, 500 yards 20, 1,000 yards 25, 1,500 yards 30, line of sight 40, plane 60, trans-planar 100 (printed p. 131)."
+   ],
+   "data": [
+    [
+     0
+    ],
+    [
+     5
+    ],
+    [
+     10
+    ],
+    [
+     15
+    ],
+    [
+     20
+    ],
+    [
+     25
+    ],
+    [
+     30
+    ],
+    [
+     40
+    ],
+    [
+     60
+    ],
+    [
+     100
+    ]
+   ]
+  },
+  {
+   "name": "devT32Grid",
+   "tag": "T46",
+   "count": "devT32RowCount",
+   "cols": [
+    "devT32Difficulty"
+   ],
+   "sentinel": -99,
+   "comment": "the Table 32 durations (printed p. 131): eleven rows, instantaneous through permanent; a permanent spell usually drains a point of Constitution; instantaneous effects are lasting.",
+   "col_comments": [
+    "the duration difficulty: instantaneous 0, one round 1, one turn 3, one hour 5, six hours 7, 12 hours 10, one day 15, one week 30, one month 50, one year 70, permanent 100 (printed p. 131)."
+   ],
+   "data": [
+    [
+     0
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     5
+    ],
+    [
+     7
+    ],
+    [
+     10
+    ],
+    [
+     15
+    ],
+    [
+     30
+    ],
+    [
+     50
+    ],
+    [
+     70
+    ],
+    [
+     100
+    ]
+   ]
+  },
+  {
+   "name": "devT33Grid",
+   "tag": "T47",
+   "count": "devT33RowCount",
+   "cols": [
+    "devT33PrepCode",
+    "devT33CastCode"
+   ],
+   "sentinel": -99,
+   "comment": "the Table 33 preparation and casting times (printed p. 132): ten adjusted-difficulty bands from -1-or-less through 151-plus; the preparation code (0 none, 1 round, 2 turn, 3 day, 4 week, 5 two weeks, 6 month, 7 two months, 8 six months, 9 year) beside the casting code (0 round, 1 turn, 2 hour, 3 day, 4 week).",
+   "col_comments": [
+    "the preparation time code: none at -1 or less, round at 0, turn through 5, day 6-10, week 11-20, two weeks 21-30, month 31-50, two months 51-100, six months 101-150, year at 151-plus (printed p. 132).",
+    "the casting time code: round through 10, turn 11-20, hour 21-50, day 51-150, week at 151-plus (printed p. 132)."
+   ],
+   "data": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     9,
+     4
+    ]
+   ]
+  },
+  {
+   "name": "devT35Grid",
+   "tag": "T48",
+   "count": "devT35RowCount",
+   "cols": [
+    "devT35DuelType"
+   ],
+   "sentinel": -99,
+   "comment": "the Table 35 true dweomer spell types for duels (printed p. 135): the 29 dweomer types aligned with the Table 28 rows, mapped to dueling types - attack 0, defense 1, attack/defense 2, leech 3, missile 4, any 5, attack/defense-or-missile 6.",
+   "col_comments": [
+    "the dueling type code: banish attack, dispel attack/defense, reflect and ward defense; alteration animate attack/defense, destroy fortify transport leeches, transform attack; conjures attack or leech, summon attack/defense; the enchantments attack or leech; divinations leech; conceal delude leech, phantom any, shadow shape attack/defense-or-missile; create attack/defense, strike missile; necromancy animate attack/defense, tap and slay attack (printed p. 135)."
+   ],
+   "data": [
+    [
+     0
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     3
+    ],
+    [
+     3
+    ],
+    [
+     3
+    ],
+    [
+     3
+    ],
+    [
+     3
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     2
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ]
+   ]
+  },
+  {
+   "name": "devKnownDweomers",
+   "tag": "T49",
+   "count": "devKnownDweomerCount",
+   "cols": [
+    "devKnownDifficulty",
+    "devKnownFinal"
+   ],
+   "sentinel": -99,
+   "comment": "the known true dweomers grid (printed pp. 136-141): thirteen documented dweomers with the difficulty rating before reductions and the final difficulty as cast by a nonspecialist 20th-level caster with all listed components plus the -10 practiced adjustment - Hurd's Obligation, Kolin's Undead Legion, Kreb's Flaming Dragon, Kreb's Stately Veil, Nazzer's Nullification, Neja's Irresistible Plea, Neja's Toadstool, Neja's Unfailing Contempt, Ratecliffe's Deadly Finger, Tenser's Telling Blow, Wulf's Erasure, Wulf's Rectification, Yunni's Herald.",
+   "col_comments": [
+    "the difficulty before reductions: 180, 325, 65, 120, 55, 60, 120, 220, 190, 160, 85, 155, 140 (printed pp. 136-141).",
+    "the final difficulty: 45, 45, 5, 5, -5, 0, 3, 3, 0, -7, 8, 2, -2 - Nazzer's base version; the cloak runs 13 (printed pp. 136-141)."
+   ],
+   "data": [
+    [
+     180,
+     45
+    ],
+    [
+     325,
+     45
+    ],
+    [
+     65,
+     5
+    ],
+    [
+     120,
+     5
+    ],
+    [
+     55,
+     -5
+    ],
+    [
+     60,
+     0
+    ],
+    [
+     120,
+     3
+    ],
+    [
+     220,
+     3
+    ],
+    [
+     190,
+     0
+    ],
+    [
+     160,
+     -7
+    ],
+    [
+     85,
+     8
+    ],
+    [
+     155,
+     2
+    ],
+    [
+     140,
+     -2
+    ]
+   ]
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the Pharjis computation: 20 + 80 + 10 = 110 (printed p. 134)",
+   "expr": "m['devExRevealBase']() + m['devExRegionAdj']() + m['devExHalfDayAdj']() != 110 or m['devExCombinedDifficulty']() != 110"
+  },
+  {
+   "note": "the Pharjis adjustment: 110 - 25 - 5 - 10 = 70 (printed p. 134)",
+   "expr": "m['devExCombinedDifficulty']() + m['devCasterLevelStep']() * m['devPharjisLevel']() + m['devSpecialistBonus']() + m['devPrevCastBonus']() != 70 or m['devExAdjustedDifficulty']() != 70"
+  },
+  {
+   "note": "the Pharjis exotic read: half of 70 is 35 (printed p. 134)",
+   "expr": "m['devExAdjustedDifficulty']() / 2 != 35 or m['devExExoticHalved']() != 35"
+  },
+  {
+   "note": "the Pharjis rare read: 35 - 30 = 5 (printed p. 134)",
+   "expr": "m['devExExoticHalved']() + m['devRareComponentLimit']() != 5 or m['devExRareReduced']() != 5"
+  },
+  {
+   "note": "the Pharjis final: doubling 5 to shorten preparation gives 10 (printed p. 134)",
+   "expr": "m['devExRareReduced']() * 2 != 10 or m['devExDoubledFinal']() != 10"
+  },
+  {
+   "note": "the Pharjis roll: 02 fails, 81 succeeds against 10 (printed p. 134)",
+   "expr": "m['devExFailRoll']() >= 10 or m['devExSuccessRoll']() < 10"
+  },
+  {
+   "note": "the Pharjis time trade: difficulty 55 halved and rounded up is 28 (printed p. 133)",
+   "expr": "(55 + 1) / 2 != 28 or m['devPharjisDiff55Final']() != 28"
+  },
+  {
+   "note": "the Pharjis 160 read: halved by the two-year preparation is 80 (printed p. 134)",
+   "expr": "m['devPharjisDiff160Final']() != 80"
+  },
+  {
+   "note": "the Table 28 read: slay is the hardest base at 50, charm and conceal and reveal the easiest at 20 (printed p. 120)",
+   "expr": "m['devT28BaseDiff'](27) != 50 or m['devT28BaseDiff'](13) != 20 or m['devT28BaseDiff'](18) != 20 or m['devT28BaseDiff'](19) != 20"
+  },
+  {
+   "note": "the Table 28 read: the ward base 35, the reflect 25 (printed p. 120)",
+   "expr": "m['devT28BaseDiff'](3) != 35 or m['devT28BaseDiff'](2) != 25"
+  },
+  {
+   "note": "the Table 28 shadow shape row: variable throughout (printed p. 120)",
+   "expr": "m['devT28BaseDiff'](21) != -99 or m['devT28BaseDuration'](21) != -99 or m['devT28EffectCode'](21) != -99"
+  },
+  {
+   "note": "the Table 29 read: the plane row costs 160 with a million-pound object cap (printed p. 130)",
+   "expr": "m['devT29Difficulty'](9) != 160 or m['devT29ObjectLbs'](9) != 1000000 or m['devT29AreaFt'](9) != -99"
+  },
+  {
+   "note": "the Table 29 read: the base row is one creature, five feet, zero difficulty (printed p. 130)",
+   "expr": "m['devT29Creatures'](0) != 1 or m['devT29AreaFt'](0) != 5 or m['devT29Difficulty'](0) != 0"
+  },
+  {
+   "note": "the Table 30 read: a man-sized object weighs 200 pounds and averages 10 damage (printed p. 130)",
+   "expr": "m['devT30WeightLbs'](2) != 200 or m['devT30Damage'](2) != 10"
+  },
+  {
+   "note": "the Table 31 read: touch is free, trans-planar costs 100 (printed p. 131)",
+   "expr": "m['devT31Difficulty'](0) != 0 or m['devT31Difficulty'](9) != 100"
+  },
+  {
+   "note": "the Table 32 read: one round costs 1, one year 70, permanent 100 (printed p. 131)",
+   "expr": "m['devT32Difficulty'](1) != 1 or m['devT32Difficulty'](9) != 70 or m['devT32Difficulty'](10) != 100"
+  },
+  {
+   "note": "the Table 33 read: difficulty 15 sits in the week band; 55 in the two-month band (printed pp. 132-133)",
+   "expr": "m['devT33PrepCode'](4) != 4 or m['devT33CastCode'](4) != 1 or m['devT33PrepCode'](7) != 7 or m['devT33CastCode'](7) != 3"
+  },
+  {
+   "note": "the Table 33 read: the top band prepares a year and casts a week (printed p. 132)",
+   "expr": "m['devT33PrepCode'](9) != 9 or m['devT33CastCode'](9) != 4"
+  },
+  {
+   "note": "the Table 35 read: dispel is attack/defense, strike a missile, phantom any (printed p. 135)",
+   "expr": "m['devT35DuelType'](1) != 2 or m['devT35DuelType'](25) != 4 or m['devT35DuelType'](21) != 5 or m['devT35DuelType'](22) != 6"
+  },
+  {
+   "note": "the known list: Kolin's Legion is the hardest at 325; Neja's Plea the easiest at 60 (printed pp. 136-139)",
+   "expr": "m['devKnownDifficulty'](1) != 325 or m['devKnownDifficulty'](5) != 60"
+  },
+  {
+   "note": "the known list: Tenser's final runs negative at -7, Yunni's at -2 (printed pp. 140-141)",
+   "expr": "m['devKnownFinal'](9) != -7 or m['devKnownFinal'](12) != -2"
+  },
+  {
+   "note": "the ward resistance ladder: 105 for 50 percent, 210 for 100 (printed p. 122)",
+   "expr": "m['devWardPctResistDifficulty']() * 2 != 210 or m['devWardFullResistDifficulty']() != 210"
+  },
+  {
+   "note": "the reflect ladder: 25 doubled 50 tripled 75 (printed p. 122)",
+   "expr": "m['devReflectSingleDifficulty']() * 2 != 50 or m['devReflectSingleDifficulty']() * 3 != 75"
+  },
+  {
+   "note": "the fortify ladder: 30, 60, 90, 120 in even multiples (printed p. 124)",
+   "expr": "m['devT28BaseDiff'](6) * 2 != 60 or m['devFortifyDoubleDifficulty']() != 60 or m['devT28BaseDiff'](6) * 4 != 120 or m['devFortifyQuadDifficulty']() != 120"
+  },
+  {
+   "note": "the dispel read: 11-or-higher on d20 is the 50-percent base (printed p. 122)",
+   "expr": "m['devDispelSuccessRollMin']() != 11 or m['devDispelBasePct']() != 50"
+  },
+  {
+   "note": "the strike read: 2d8 base, +1d8 per five, capped at 30d8 (printed p. 129)",
+   "expr": "m['devStrikeDmgDice']() != 2 or m['devStrikeMaxDice']() != 30 or m['devStrikeStepPerFive']() != 5"
+  },
+  {
+   "note": "the animate dead ladder: 25, 50, 75 (printed p. 129)",
+   "expr": "m['devAnimateDeadBaseDifficulty']() * 2 != 50 or m['devAnimateDeadTripleDifficulty']() != 75"
+  },
+  {
+   "note": "the tap transfer ladder: 80, 160, 120, 240 (printed p. 130)",
+   "expr": "m['devTapTransferDifficulty']() * 2 != 160 or m['devTapLevelDifficulty']() * 2 != 240"
+  },
+  {
+   "note": "the area multiplier: all-creatures spells cost ten times the modifier (printed p. 130)",
+   "expr": "m['devAreaAllCreaturesMult']() != 10"
+  },
+  {
+   "note": "the duration past read: Table 32 divided by ten makes ten years cost 70 (printed p. 127)",
+   "expr": "m['devT32Difficulty'](9) / m['devRevealPastDivisor']() != 7 or m['devRevealPastTenYears']() != 70"
+  },
+  {
+   "note": "the requisites: 20th level, ability 18, four per day (printed p. 119)",
+   "expr": "m['devMinCasterLevel']() != 20 or m['devMinAbilityScore']() != 18 or m['devMaxPerDay']() != 4"
+  }
+ ],
+ "header_sections": {
+  "the DMO dweomer-requirement pins": [
+   {
+    "kind": "const",
+    "name": "devMinCasterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "devMinAbilityScore"
+   },
+   {
+    "kind": "const",
+    "name": "devMaxPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "devNoScrollOrDevice"
+   },
+   {
+    "kind": "bool",
+    "name": "devNeverSameTwice"
+   },
+   {
+    "kind": "bool",
+    "name": "devDmApprovalRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "devWizardsAnySchool"
+   },
+   {
+    "kind": "bool",
+    "name": "devCommonComponentRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "devPriestHolySymbolNeeded"
+   },
+   {
+    "kind": "bool",
+    "name": "devWizardsNeedNoSpellbook"
+   },
+   {
+    "kind": "bool",
+    "name": "devComponentsSymbolic"
+   }
+  ],
+  "the DMO difficulty-calculus pins": [
+   {
+    "kind": "const",
+    "name": "devCasterLevelStep"
+   },
+   {
+    "kind": "const",
+    "name": "devSpecialistBonus"
+   },
+   {
+    "kind": "const",
+    "name": "devPrevCastBonus"
+   },
+   {
+    "kind": "const",
+    "name": "devRareComponentAdjust"
+   },
+   {
+    "kind": "const",
+    "name": "devRareComponentMax"
+   },
+   {
+    "kind": "const",
+    "name": "devRareComponentLimit"
+   },
+   {
+    "kind": "const",
+    "name": "devExoticComponentAdjust"
+   },
+   {
+    "kind": "const",
+    "name": "devRareConditionAdjust"
+   },
+   {
+    "kind": "const",
+    "name": "devExoticConditionAdjust"
+   },
+   {
+    "kind": "const",
+    "name": "devSaveModPerFive"
+   },
+   {
+    "kind": "const",
+    "name": "devNoSaveDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devMrModPerPoint"
+   },
+   {
+    "kind": "bool",
+    "name": "devExoticEitherNotBoth"
+   }
+  ],
+  "the DMO abjuration-effect pins": [
+   {
+    "kind": "const",
+    "name": "devDispelBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "devDispelSuccessRollMin"
+   },
+   {
+    "kind": "const",
+    "name": "devDispelLowMagicPct"
+   },
+   {
+    "kind": "const",
+    "name": "devDispelItemSuppressRounds"
+   },
+   {
+    "kind": "const",
+    "name": "devDispelItemDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "devDispelAugmentPerFive"
+   },
+   {
+    "kind": "const",
+    "name": "devWardSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "devWardDamagePerTwo"
+   },
+   {
+    "kind": "const",
+    "name": "devWardPctResistDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devWardFullResistDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devWardHedgeTypeDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devWardHedgeClassDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devReflectSingleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devReflectLimitedDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devReflectGeneralDifficulty"
+   },
+   {
+    "kind": "bool",
+    "name": "devWardHalfEvenOnFail"
+   },
+   {
+    "kind": "bool",
+    "name": "devWardTwoResistRolls"
+   }
+  ],
+  "the DMO alteration-effect pins": [
+   {
+    "kind": "const",
+    "name": "devAnimateObjWeight"
+   },
+   {
+    "kind": "const",
+    "name": "devAnimateObjSpeed"
+   },
+   {
+    "kind": "const",
+    "name": "devDestroyRemakeDie"
+   },
+   {
+    "kind": "const",
+    "name": "devDestroyRemakePctMult"
+   },
+   {
+    "kind": "const",
+    "name": "devDestroyDisintegrateDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devFortifyBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "devFortifyDoubleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devFortifyTripleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devFortifyQuadDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devFortifyAbilityLowBonus"
+   },
+   {
+    "kind": "const",
+    "name": "devFortifyAbilityHighBonus"
+   },
+   {
+    "kind": "const",
+    "name": "devTransformMaxTons"
+   },
+   {
+    "kind": "const",
+    "name": "devTransformCreatureDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devTransformObjectDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devTransportBaseBonusMv"
+   },
+   {
+    "kind": "const",
+    "name": "devTransportBurrowMv"
+   },
+   {
+    "kind": "const",
+    "name": "devTransportDifficultMv"
+   },
+   {
+    "kind": "const",
+    "name": "devTransportDoubleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devTransportTeleportDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devAfflictBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devAfflictHarmlessDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devAfflictDoubleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devAfflictTripleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devAfflictQuadDifficulty"
+   },
+   {
+    "kind": "bool",
+    "name": "devTransformSimplePermanentFree"
+   },
+   {
+    "kind": "bool",
+    "name": "devAfflictHarmlessPermanentFree"
+   }
+  ],
+  "the DMO conjuration-effect pins": [
+   {
+    "kind": "const",
+    "name": "devBindBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devConjureBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devConjureDoubleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devConjureTripleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devSummonBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devSummonDoubleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devSummonTripleDifficulty"
+   },
+   {
+    "kind": "bool",
+    "name": "devBindYearlySave"
+   },
+   {
+    "kind": "bool",
+    "name": "devBindNoSuicide"
+   },
+   {
+    "kind": "bool",
+    "name": "devSummonNoControlOvernamed"
+   }
+  ],
+  "the DMO enchantment-effect pins": [
+   {
+    "kind": "const",
+    "name": "devCharmBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devCharmUndeadDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devCompelBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devImbueBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devImbueDoubleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devImbueReachFt"
+   },
+   {
+    "kind": "const",
+    "name": "devImbueLeadCopperDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devImbueLeadSilverDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devImbueLeadGoldDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devImbueWoodGoldDifficulty"
+   },
+   {
+    "kind": "bool",
+    "name": "devGolemsNeverCharmed"
+   }
+  ],
+  "the DMO divination-effect pins": [
+   {
+    "kind": "const",
+    "name": "devForeseeBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devForeseeKingDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devForeseeUnspecifiedCost"
+   },
+   {
+    "kind": "const",
+    "name": "devForeseeSenseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devRevealBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devRevealDoubleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devRevealTripleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devRevealTrueSeeingDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devRevealPastDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "devRevealPastTenYears"
+   },
+   {
+    "kind": "bool",
+    "name": "devRevealNoSaveUnlessUnwilling"
+   }
+  ],
+  "the DMO illusion-effect pins": [
+   {
+    "kind": "const",
+    "name": "devConcealBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devConcealMagicalDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devDeludeBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devDeludeEspDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devDeludeGiantExampleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devPhantomBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devPhantomMentalCost"
+   },
+   {
+    "kind": "const",
+    "name": "devShadowDisbelievedAc"
+   },
+   {
+    "kind": "const",
+    "name": "devShadowDisbelievedPct"
+   },
+   {
+    "kind": "const",
+    "name": "devShadowSpecialPersistPct"
+   },
+   {
+    "kind": "bool",
+    "name": "devConcealBrokenByAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "devTrueSeeingDefeatsConceal"
+   },
+   {
+    "kind": "bool",
+    "name": "devPhantomNoRealDamage"
+   }
+  ],
+  "the DMO evocation-effect pins": [
+   {
+    "kind": "const",
+    "name": "devEnergyWallDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devEnergyWallDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "devEnergyWallDmgSize"
+   },
+   {
+    "kind": "const",
+    "name": "devEnergyWallNearbyDmg"
+   },
+   {
+    "kind": "const",
+    "name": "devEnergyWallNearbyFt"
+   },
+   {
+    "kind": "const",
+    "name": "devSoftWallDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devHardWallDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devForceWallDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devFallingWallDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "devFallingWallDmgSize"
+   },
+   {
+    "kind": "const",
+    "name": "devMatterBlockDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devMatterSoftDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devMatterMetalDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devStrikeBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devStrikeDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "devStrikeMaxDice"
+   },
+   {
+    "kind": "const",
+    "name": "devStrikeStepPerFive"
+   },
+   {
+    "kind": "const",
+    "name": "devMobileSpellAc"
+   },
+   {
+    "kind": "const",
+    "name": "devCrushingSpellAc"
+   },
+   {
+    "kind": "const",
+    "name": "devCrushingSpellHpMult"
+   },
+   {
+    "kind": "bool",
+    "name": "devMatterPermanentFree"
+   },
+   {
+    "kind": "bool",
+    "name": "devForceImmuneToOwnEnergy"
+   }
+  ],
+  "the DMO necromancy-effect pins": [
+   {
+    "kind": "const",
+    "name": "devAnimateDeadBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devAnimateDeadDoubleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devAnimateDeadTripleDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devAnimateScatteredAdj"
+   },
+   {
+    "kind": "const",
+    "name": "devAnimateScatteredAncientAdj"
+   },
+   {
+    "kind": "const",
+    "name": "devSlayBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devSlayHdPerFive"
+   },
+   {
+    "kind": "const",
+    "name": "devSlaySaveHdMin"
+   },
+   {
+    "kind": "const",
+    "name": "devTapBaseDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devTapDmgDie"
+   },
+   {
+    "kind": "const",
+    "name": "devTapMaxDice"
+   },
+   {
+    "kind": "const",
+    "name": "devTapTransferDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devTapAbilityTransferDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devTapLevelDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devTapLevelTransferDifficulty"
+   },
+   {
+    "kind": "bool",
+    "name": "devOnlyPriestsHealWithTap"
+   },
+   {
+    "kind": "bool",
+    "name": "devTapDamageInstantOnly"
+   }
+  ],
+  "the DMO preparation-and-casting pins": [
+   {
+    "kind": "const",
+    "name": "devPrepHoursPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "devPharjisLevel"
+   },
+   {
+    "kind": "const",
+    "name": "devPharjisDiff15PrepWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "devPharjisExplosionLostDays"
+   },
+   {
+    "kind": "const",
+    "name": "devPharjisDiff55PrepMonths"
+   },
+   {
+    "kind": "const",
+    "name": "devFinalCheckDie"
+   },
+   {
+    "kind": "const",
+    "name": "devPharjisDiff55Final"
+   },
+   {
+    "kind": "const",
+    "name": "devPharjisDiff15Shortened"
+   },
+   {
+    "kind": "const",
+    "name": "devPharjisDiff160Final"
+   },
+   {
+    "kind": "const",
+    "name": "devHoldTimeCap"
+   },
+   {
+    "kind": "bool",
+    "name": "devPrepDayRestart"
+   },
+   {
+    "kind": "bool",
+    "name": "devPrepWeekBacktrack"
+   },
+   {
+    "kind": "bool",
+    "name": "devPrepExtensionHalves"
+   },
+   {
+    "kind": "bool",
+    "name": "devCastDailyNoBreaks"
+   },
+   {
+    "kind": "bool",
+    "name": "devCastBrokenRuinsSpell"
+   }
+  ],
+  "the DMO worked-creation pins": [
+   {
+    "kind": "const",
+    "name": "devExRevealBase"
+   },
+   {
+    "kind": "const",
+    "name": "devExRegionAdj"
+   },
+   {
+    "kind": "const",
+    "name": "devExHalfDayAdj"
+   },
+   {
+    "kind": "const",
+    "name": "devExCombinedDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devExAdjustedDifficulty"
+   },
+   {
+    "kind": "const",
+    "name": "devExExoticHalved"
+   },
+   {
+    "kind": "const",
+    "name": "devExRareReduced"
+   },
+   {
+    "kind": "const",
+    "name": "devExDoubledFinal"
+   },
+   {
+    "kind": "const",
+    "name": "devExFailRoll"
+   },
+   {
+    "kind": "const",
+    "name": "devExSuccessRoll"
+   },
+   {
+    "kind": "const",
+    "name": "devExWatchHours"
+   }
+  ],
+  "the DMO dweomers-in-play pins": [
+   {
+    "kind": "const",
+    "name": "devDispelMagicSuppressRounds"
+   },
+   {
+    "kind": "const",
+    "name": "devDisjunctionPctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "devLimitedWishHours"
+   },
+   {
+    "kind": "const",
+    "name": "devDuelPR"
+   },
+   {
+    "kind": "const",
+    "name": "devQuestWardSaveFloor"
+   },
+   {
+    "kind": "bool",
+    "name": "devPlayCasterLevelSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "devIounStonesIneffective"
+   },
+   {
+    "kind": "bool",
+    "name": "devDispelMagicAreaCapped"
+   },
+   {
+    "kind": "bool",
+    "name": "devWishAutoDispels"
+   },
+   {
+    "kind": "bool",
+    "name": "devDispelDestroysBarriers"
+   },
+   {
+    "kind": "bool",
+    "name": "devSphericalBarriersHold"
+   },
+   {
+    "kind": "bool",
+    "name": "devDuelCountersUseless"
+   },
+   {
+    "kind": "bool",
+    "name": "devQuestSpellsUncounterable"
+   },
+   {
+    "kind": "bool",
+    "name": "devQuestWardMrHalved"
+   }
+  ],
+  "the DMO known-dweomer pins": [
+   {
+    "kind": "const",
+    "name": "devKnownDweomerCount"
+   },
+   {
+    "kind": "const",
+    "name": "devHurdSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "devKolinUndeadHd"
+   },
+   {
+    "kind": "const",
+    "name": "devKrebDragonFailPct"
+   },
+   {
+    "kind": "const",
+    "name": "devNazzerBaseDiff"
+   },
+   {
+    "kind": "const",
+    "name": "devNazzerCloakDiff"
+   },
+   {
+    "kind": "const",
+    "name": "devNazzerCloakFinal"
+   },
+   {
+    "kind": "const",
+    "name": "devNazzerItemLevel"
+   },
+   {
+    "kind": "const",
+    "name": "devNazzerCloakRounds"
+   },
+   {
+    "kind": "const",
+    "name": "devNejaPleaHours"
+   },
+   {
+    "kind": "const",
+    "name": "devNejaPleaSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "devRatecliffeHd"
+   },
+   {
+    "kind": "const",
+    "name": "devRatecliffeAreaFt"
+   },
+   {
+    "kind": "const",
+    "name": "devTenserDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "devTenserDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "devWulfRectAreaDia"
+   },
+   {
+    "kind": "const",
+    "name": "devWulfRectMrPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "devYunniWeightLbs"
+   },
+   {
+    "kind": "const",
+    "name": "devT28RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "devT29RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "devT30RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "devT31RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "devT32RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "devT33RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "devT35RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "devProvinceMiles"
+   },
+   {
+    "kind": "const",
+    "name": "devRegionMiles"
+   },
+   {
+    "kind": "const",
+    "name": "devAreaAllCreaturesMult"
+   },
+   {
+    "kind": "bool",
+    "name": "devNazzerAutoFailOne"
+   },
+   {
+    "kind": "bool",
+    "name": "devNejaToadstoolSystemShock"
+   },
+   {
+    "kind": "bool",
+    "name": "devRatecliffeWishOnlyRevival"
+   },
+   {
+    "kind": "table",
+    "name": "devT28Grid"
+   },
+   {
+    "kind": "table",
+    "name": "devT29Grid"
+   },
+   {
+    "kind": "table",
+    "name": "devT30Grid"
+   },
+   {
+    "kind": "table",
+    "name": "devT31Grid"
+   },
+   {
+    "kind": "table",
+    "name": "devT32Grid"
+   },
+   {
+    "kind": "table",
+    "name": "devT33Grid"
+   },
+   {
+    "kind": "table",
+    "name": "devT35Grid"
+   },
+   {
+    "kind": "table",
+    "name": "devKnownDweomers"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the devMinCasterLevel pin",
+   "expr": "m['devMinCasterLevel']() != 20"
+  },
+  {
+   "note": "the devMinAbilityScore pin",
+   "expr": "m['devMinAbilityScore']() != 18"
+  },
+  {
+   "note": "the devMaxPerDay pin",
+   "expr": "m['devMaxPerDay']() != 4"
+  },
+  {
+   "note": "the devCasterLevelStep pin",
+   "expr": "m['devCasterLevelStep']() != -1"
+  },
+  {
+   "note": "the devSpecialistBonus pin",
+   "expr": "m['devSpecialistBonus']() != -5"
+  },
+  {
+   "note": "the devPrevCastBonus pin",
+   "expr": "m['devPrevCastBonus']() != -10"
+  },
+  {
+   "note": "the devRareComponentAdjust pin",
+   "expr": "m['devRareComponentAdjust']() != -10"
+  },
+  {
+   "note": "the devRareComponentMax pin",
+   "expr": "m['devRareComponentMax']() != 3"
+  },
+  {
+   "note": "the devRareComponentLimit pin",
+   "expr": "m['devRareComponentLimit']() != -30"
+  },
+  {
+   "note": "the devExoticComponentAdjust pin",
+   "expr": "m['devExoticComponentAdjust']() != -20"
+  },
+  {
+   "note": "the devRareConditionAdjust pin",
+   "expr": "m['devRareConditionAdjust']() != -10"
+  },
+  {
+   "note": "the devExoticConditionAdjust pin",
+   "expr": "m['devExoticConditionAdjust']() != -20"
+  },
+  {
+   "note": "the devSaveModPerFive pin",
+   "expr": "m['devSaveModPerFive']() != 5"
+  },
+  {
+   "note": "the devNoSaveDifficulty pin",
+   "expr": "m['devNoSaveDifficulty']() != 100"
+  },
+  {
+   "note": "the devMrModPerPoint pin",
+   "expr": "m['devMrModPerPoint']() != 1"
+  },
+  {
+   "note": "the devDispelBasePct pin",
+   "expr": "m['devDispelBasePct']() != 50"
+  },
+  {
+   "note": "the devDispelSuccessRollMin pin",
+   "expr": "m['devDispelSuccessRollMin']() != 11"
+  },
+  {
+   "note": "the devDispelLowMagicPct pin",
+   "expr": "m['devDispelLowMagicPct']() != 100"
+  },
+  {
+   "note": "the devDispelItemSuppressRounds pin",
+   "expr": "m['devDispelItemSuppressRounds']() != 4"
+  },
+  {
+   "note": "the devDispelItemDieSize pin",
+   "expr": "m['devDispelItemDieSize']() != 4"
+  },
+  {
+   "note": "the devDispelAugmentPerFive pin",
+   "expr": "m['devDispelAugmentPerFive']() != 5"
+  },
+  {
+   "note": "the devWardSaveBonus pin",
+   "expr": "m['devWardSaveBonus']() != 4"
+  },
+  {
+   "note": "the devWardDamagePerTwo pin",
+   "expr": "m['devWardDamagePerTwo']() != 2"
+  },
+  {
+   "note": "the devWardPctResistDifficulty pin",
+   "expr": "m['devWardPctResistDifficulty']() != 105"
+  },
+  {
+   "note": "the devWardFullResistDifficulty pin",
+   "expr": "m['devWardFullResistDifficulty']() != 210"
+  },
+  {
+   "note": "the devWardHedgeTypeDifficulty pin",
+   "expr": "m['devWardHedgeTypeDifficulty']() != 70"
+  },
+  {
+   "note": "the devWardHedgeClassDifficulty pin",
+   "expr": "m['devWardHedgeClassDifficulty']() != 105"
+  },
+  {
+   "note": "the devReflectSingleDifficulty pin",
+   "expr": "m['devReflectSingleDifficulty']() != 25"
+  },
+  {
+   "note": "the devReflectLimitedDifficulty pin",
+   "expr": "m['devReflectLimitedDifficulty']() != 50"
+  },
+  {
+   "note": "the devReflectGeneralDifficulty pin",
+   "expr": "m['devReflectGeneralDifficulty']() != 75"
+  },
+  {
+   "note": "the devAnimateObjWeight pin",
+   "expr": "m['devAnimateObjWeight']() != 50"
+  },
+  {
+   "note": "the devAnimateObjSpeed pin",
+   "expr": "m['devAnimateObjSpeed']() != 12"
+  },
+  {
+   "note": "the devDestroyRemakeDie pin",
+   "expr": "m['devDestroyRemakeDie']() != 6"
+  },
+  {
+   "note": "the devDestroyRemakePctMult pin",
+   "expr": "m['devDestroyRemakePctMult']() != 10"
+  },
+  {
+   "note": "the devDestroyDisintegrateDifficulty pin",
+   "expr": "m['devDestroyDisintegrateDifficulty']() != 90"
+  },
+  {
+   "note": "the devFortifyBasePct pin",
+   "expr": "m['devFortifyBasePct']() != 10"
+  },
+  {
+   "note": "the devFortifyDoubleDifficulty pin",
+   "expr": "m['devFortifyDoubleDifficulty']() != 60"
+  },
+  {
+   "note": "the devFortifyTripleDifficulty pin",
+   "expr": "m['devFortifyTripleDifficulty']() != 90"
+  },
+  {
+   "note": "the devFortifyQuadDifficulty pin",
+   "expr": "m['devFortifyQuadDifficulty']() != 120"
+  },
+  {
+   "note": "the devFortifyAbilityLowBonus pin",
+   "expr": "m['devFortifyAbilityLowBonus']() != 1"
+  },
+  {
+   "note": "the devFortifyAbilityHighBonus pin",
+   "expr": "m['devFortifyAbilityHighBonus']() != 1"
+  },
+  {
+   "note": "the devTransformMaxTons pin",
+   "expr": "m['devTransformMaxTons']() != 50"
+  },
+  {
+   "note": "the devTransformCreatureDifficulty pin",
+   "expr": "m['devTransformCreatureDifficulty']() != 70"
+  },
+  {
+   "note": "the devTransformObjectDifficulty pin",
+   "expr": "m['devTransformObjectDifficulty']() != 105"
+  },
+  {
+   "note": "the devTransportBaseBonusMv pin",
+   "expr": "m['devTransportBaseBonusMv']() != 12"
+  },
+  {
+   "note": "the devTransportBurrowMv pin",
+   "expr": "m['devTransportBurrowMv']() != 3"
+  },
+  {
+   "note": "the devTransportDifficultMv pin",
+   "expr": "m['devTransportDifficultMv']() != 6"
+  },
+  {
+   "note": "the devTransportDoubleDifficulty pin",
+   "expr": "m['devTransportDoubleDifficulty']() != 70"
+  },
+  {
+   "note": "the devTransportTeleportDifficulty pin",
+   "expr": "m['devTransportTeleportDifficulty']() != 105"
+  },
+  {
+   "note": "the devAfflictBaseDifficulty pin",
+   "expr": "m['devAfflictBaseDifficulty']() != 40"
+  },
+  {
+   "note": "the devAfflictHarmlessDifficulty pin",
+   "expr": "m['devAfflictHarmlessDifficulty']() != 20"
+  },
+  {
+   "note": "the devAfflictDoubleDifficulty pin",
+   "expr": "m['devAfflictDoubleDifficulty']() != 80"
+  },
+  {
+   "note": "the devAfflictTripleDifficulty pin",
+   "expr": "m['devAfflictTripleDifficulty']() != 120"
+  },
+  {
+   "note": "the devAfflictQuadDifficulty pin",
+   "expr": "m['devAfflictQuadDifficulty']() != 160"
+  },
+  {
+   "note": "the devBindBaseDifficulty pin",
+   "expr": "m['devBindBaseDifficulty']() != 35"
+  },
+  {
+   "note": "the devConjureBaseDifficulty pin",
+   "expr": "m['devConjureBaseDifficulty']() != 40"
+  },
+  {
+   "note": "the devConjureDoubleDifficulty pin",
+   "expr": "m['devConjureDoubleDifficulty']() != 80"
+  },
+  {
+   "note": "the devConjureTripleDifficulty pin",
+   "expr": "m['devConjureTripleDifficulty']() != 120"
+  },
+  {
+   "note": "the devSummonBaseDifficulty pin",
+   "expr": "m['devSummonBaseDifficulty']() != 50"
+  },
+  {
+   "note": "the devSummonDoubleDifficulty pin",
+   "expr": "m['devSummonDoubleDifficulty']() != 100"
+  },
+  {
+   "note": "the devSummonTripleDifficulty pin",
+   "expr": "m['devSummonTripleDifficulty']() != 150"
+  },
+  {
+   "note": "the devCharmBaseDifficulty pin",
+   "expr": "m['devCharmBaseDifficulty']() != 20"
+  },
+  {
+   "note": "the devCharmUndeadDifficulty pin",
+   "expr": "m['devCharmUndeadDifficulty']() != 60"
+  },
+  {
+   "note": "the devCompelBaseDifficulty pin",
+   "expr": "m['devCompelBaseDifficulty']() != 30"
+  },
+  {
+   "note": "the devImbueBaseDifficulty pin",
+   "expr": "m['devImbueBaseDifficulty']() != 45"
+  },
+  {
+   "note": "the devImbueDoubleDifficulty pin",
+   "expr": "m['devImbueDoubleDifficulty']() != 90"
+  },
+  {
+   "note": "the devImbueReachFt pin",
+   "expr": "m['devImbueReachFt']() != 30"
+  },
+  {
+   "note": "the devImbueLeadCopperDifficulty pin",
+   "expr": "m['devImbueLeadCopperDifficulty']() != 150"
+  },
+  {
+   "note": "the devImbueLeadSilverDifficulty pin",
+   "expr": "m['devImbueLeadSilverDifficulty']() != 90"
+  },
+  {
+   "note": "the devImbueLeadGoldDifficulty pin",
+   "expr": "m['devImbueLeadGoldDifficulty']() != 135"
+  },
+  {
+   "note": "the devImbueWoodGoldDifficulty pin",
+   "expr": "m['devImbueWoodGoldDifficulty']() != 285"
+  },
+  {
+   "note": "the devForeseeBaseDifficulty pin",
+   "expr": "m['devForeseeBaseDifficulty']() != 25"
+  },
+  {
+   "note": "the devForeseeKingDifficulty pin",
+   "expr": "m['devForeseeKingDifficulty']() != 125"
+  },
+  {
+   "note": "the devForeseeUnspecifiedCost pin",
+   "expr": "m['devForeseeUnspecifiedCost']() != 100"
+  },
+  {
+   "note": "the devForeseeSenseDifficulty pin",
+   "expr": "m['devForeseeSenseDifficulty']() != 75"
+  },
+  {
+   "note": "the devRevealBaseDifficulty pin",
+   "expr": "m['devRevealBaseDifficulty']() != 20"
+  },
+  {
+   "note": "the devRevealDoubleDifficulty pin",
+   "expr": "m['devRevealDoubleDifficulty']() != 40"
+  },
+  {
+   "note": "the devRevealTripleDifficulty pin",
+   "expr": "m['devRevealTripleDifficulty']() != 60"
+  },
+  {
+   "note": "the devRevealTrueSeeingDifficulty pin",
+   "expr": "m['devRevealTrueSeeingDifficulty']() != 100"
+  },
+  {
+   "note": "the devRevealPastDivisor pin",
+   "expr": "m['devRevealPastDivisor']() != 10"
+  },
+  {
+   "note": "the devRevealPastTenYears pin",
+   "expr": "m['devRevealPastTenYears']() != 70"
+  },
+  {
+   "note": "the devConcealBaseDifficulty pin",
+   "expr": "m['devConcealBaseDifficulty']() != 20"
+  },
+  {
+   "note": "the devConcealMagicalDifficulty pin",
+   "expr": "m['devConcealMagicalDifficulty']() != 40"
+  },
+  {
+   "note": "the devDeludeBaseDifficulty pin",
+   "expr": "m['devDeludeBaseDifficulty']() != 30"
+  },
+  {
+   "note": "the devDeludeEspDifficulty pin",
+   "expr": "m['devDeludeEspDifficulty']() != 60"
+  },
+  {
+   "note": "the devDeludeGiantExampleDifficulty pin",
+   "expr": "m['devDeludeGiantExampleDifficulty']() != 150"
+  },
+  {
+   "note": "the devPhantomBaseDifficulty pin",
+   "expr": "m['devPhantomBaseDifficulty']() != 40"
+  },
+  {
+   "note": "the devPhantomMentalCost pin",
+   "expr": "m['devPhantomMentalCost']() != 40"
+  },
+  {
+   "note": "the devShadowDisbelievedAc pin",
+   "expr": "m['devShadowDisbelievedAc']() != 4"
+  },
+  {
+   "note": "the devShadowDisbelievedPct pin",
+   "expr": "m['devShadowDisbelievedPct']() != 80"
+  },
+  {
+   "note": "the devShadowSpecialPersistPct pin",
+   "expr": "m['devShadowSpecialPersistPct']() != 50"
+  },
+  {
+   "note": "the devEnergyWallDifficulty pin",
+   "expr": "m['devEnergyWallDifficulty']() != 25"
+  },
+  {
+   "note": "the devEnergyWallDmgDice pin",
+   "expr": "m['devEnergyWallDmgDice']() != 2"
+  },
+  {
+   "note": "the devEnergyWallDmgSize pin",
+   "expr": "m['devEnergyWallDmgSize']() != 8"
+  },
+  {
+   "note": "the devEnergyWallNearbyDmg pin",
+   "expr": "m['devEnergyWallNearbyDmg']() != 8"
+  },
+  {
+   "note": "the devEnergyWallNearbyFt pin",
+   "expr": "m['devEnergyWallNearbyFt']() != 10"
+  },
+  {
+   "note": "the devSoftWallDifficulty pin",
+   "expr": "m['devSoftWallDifficulty']() != 50"
+  },
+  {
+   "note": "the devHardWallDifficulty pin",
+   "expr": "m['devHardWallDifficulty']() != 75"
+  },
+  {
+   "note": "the devForceWallDifficulty pin",
+   "expr": "m['devForceWallDifficulty']() != 100"
+  },
+  {
+   "note": "the devFallingWallDmgDice pin",
+   "expr": "m['devFallingWallDmgDice']() != 3"
+  },
+  {
+   "note": "the devFallingWallDmgSize pin",
+   "expr": "m['devFallingWallDmgSize']() != 10"
+  },
+  {
+   "note": "the devMatterBlockDifficulty pin",
+   "expr": "m['devMatterBlockDifficulty']() != 35"
+  },
+  {
+   "note": "the devMatterSoftDifficulty pin",
+   "expr": "m['devMatterSoftDifficulty']() != 70"
+  },
+  {
+   "note": "the devMatterMetalDifficulty pin",
+   "expr": "m['devMatterMetalDifficulty']() != 105"
+  },
+  {
+   "note": "the devStrikeBaseDifficulty pin",
+   "expr": "m['devStrikeBaseDifficulty']() != 25"
+  },
+  {
+   "note": "the devStrikeDmgDice pin",
+   "expr": "m['devStrikeDmgDice']() != 2"
+  },
+  {
+   "note": "the devStrikeMaxDice pin",
+   "expr": "m['devStrikeMaxDice']() != 30"
+  },
+  {
+   "note": "the devStrikeStepPerFive pin",
+   "expr": "m['devStrikeStepPerFive']() != 5"
+  },
+  {
+   "note": "the devMobileSpellAc pin",
+   "expr": "m['devMobileSpellAc']() != 0"
+  },
+  {
+   "note": "the devCrushingSpellAc pin",
+   "expr": "m['devCrushingSpellAc']() != -2"
+  },
+  {
+   "note": "the devCrushingSpellHpMult pin",
+   "expr": "m['devCrushingSpellHpMult']() != 2"
+  },
+  {
+   "note": "the devAnimateDeadBaseDifficulty pin",
+   "expr": "m['devAnimateDeadBaseDifficulty']() != 25"
+  },
+  {
+   "note": "the devAnimateDeadDoubleDifficulty pin",
+   "expr": "m['devAnimateDeadDoubleDifficulty']() != 50"
+  },
+  {
+   "note": "the devAnimateDeadTripleDifficulty pin",
+   "expr": "m['devAnimateDeadTripleDifficulty']() != 75"
+  },
+  {
+   "note": "the devAnimateScatteredAdj pin",
+   "expr": "m['devAnimateScatteredAdj']() != 25"
+  },
+  {
+   "note": "the devAnimateScatteredAncientAdj pin",
+   "expr": "m['devAnimateScatteredAncientAdj']() != 75"
+  },
+  {
+   "note": "the devSlayBaseDifficulty pin",
+   "expr": "m['devSlayBaseDifficulty']() != 50"
+  },
+  {
+   "note": "the devSlayHdPerFive pin",
+   "expr": "m['devSlayHdPerFive']() != 1"
+  },
+  {
+   "note": "the devSlaySaveHdMin pin",
+   "expr": "m['devSlaySaveHdMin']() != 9"
+  },
+  {
+   "note": "the devTapBaseDifficulty pin",
+   "expr": "m['devTapBaseDifficulty']() != 40"
+  },
+  {
+   "note": "the devTapDmgDie pin",
+   "expr": "m['devTapDmgDie']() != 8"
+  },
+  {
+   "note": "the devTapMaxDice pin",
+   "expr": "m['devTapMaxDice']() != 30"
+  },
+  {
+   "note": "the devTapTransferDifficulty pin",
+   "expr": "m['devTapTransferDifficulty']() != 80"
+  },
+  {
+   "note": "the devTapAbilityTransferDifficulty pin",
+   "expr": "m['devTapAbilityTransferDifficulty']() != 160"
+  },
+  {
+   "note": "the devTapLevelDifficulty pin",
+   "expr": "m['devTapLevelDifficulty']() != 120"
+  },
+  {
+   "note": "the devTapLevelTransferDifficulty pin",
+   "expr": "m['devTapLevelTransferDifficulty']() != 240"
+  },
+  {
+   "note": "the devPrepHoursPerDay pin",
+   "expr": "m['devPrepHoursPerDay']() != 8"
+  },
+  {
+   "note": "the devPharjisLevel pin",
+   "expr": "m['devPharjisLevel']() != 25"
+  },
+  {
+   "note": "the devPharjisDiff15PrepWeeks pin",
+   "expr": "m['devPharjisDiff15PrepWeeks']() != 1"
+  },
+  {
+   "note": "the devPharjisExplosionLostDays pin",
+   "expr": "m['devPharjisExplosionLostDays']() != 2"
+  },
+  {
+   "note": "the devPharjisDiff55PrepMonths pin",
+   "expr": "m['devPharjisDiff55PrepMonths']() != 2"
+  },
+  {
+   "note": "the devFinalCheckDie pin",
+   "expr": "m['devFinalCheckDie']() != 100"
+  },
+  {
+   "note": "the devPharjisDiff55Final pin",
+   "expr": "m['devPharjisDiff55Final']() != 28"
+  },
+  {
+   "note": "the devPharjisDiff15Shortened pin",
+   "expr": "m['devPharjisDiff15Shortened']() != 30"
+  },
+  {
+   "note": "the devPharjisDiff160Final pin",
+   "expr": "m['devPharjisDiff160Final']() != 80"
+  },
+  {
+   "note": "the devHoldTimeCap pin",
+   "expr": "m['devHoldTimeCap']() != 1"
+  },
+  {
+   "note": "the devExRevealBase pin",
+   "expr": "m['devExRevealBase']() != 20"
+  },
+  {
+   "note": "the devExRegionAdj pin",
+   "expr": "m['devExRegionAdj']() != 80"
+  },
+  {
+   "note": "the devExHalfDayAdj pin",
+   "expr": "m['devExHalfDayAdj']() != 10"
+  },
+  {
+   "note": "the devExCombinedDifficulty pin",
+   "expr": "m['devExCombinedDifficulty']() != 110"
+  },
+  {
+   "note": "the devExAdjustedDifficulty pin",
+   "expr": "m['devExAdjustedDifficulty']() != 70"
+  },
+  {
+   "note": "the devExExoticHalved pin",
+   "expr": "m['devExExoticHalved']() != 35"
+  },
+  {
+   "note": "the devExRareReduced pin",
+   "expr": "m['devExRareReduced']() != 5"
+  },
+  {
+   "note": "the devExDoubledFinal pin",
+   "expr": "m['devExDoubledFinal']() != 10"
+  },
+  {
+   "note": "the devExFailRoll pin",
+   "expr": "m['devExFailRoll']() != 2"
+  },
+  {
+   "note": "the devExSuccessRoll pin",
+   "expr": "m['devExSuccessRoll']() != 81"
+  },
+  {
+   "note": "the devExWatchHours pin",
+   "expr": "m['devExWatchHours']() != 12"
+  },
+  {
+   "note": "the devDispelMagicSuppressRounds pin",
+   "expr": "m['devDispelMagicSuppressRounds']() != 4"
+  },
+  {
+   "note": "the devDisjunctionPctPerLevel pin",
+   "expr": "m['devDisjunctionPctPerLevel']() != 1"
+  },
+  {
+   "note": "the devLimitedWishHours pin",
+   "expr": "m['devLimitedWishHours']() != 8"
+  },
+  {
+   "note": "the devDuelPR pin",
+   "expr": "m['devDuelPR']() != 19"
+  },
+  {
+   "note": "the devQuestWardSaveFloor pin",
+   "expr": "m['devQuestWardSaveFloor']() != 18"
+  },
+  {
+   "note": "the devKnownDweomerCount pin",
+   "expr": "m['devKnownDweomerCount']() != 13"
+  },
+  {
+   "note": "the devHurdSavePenalty pin",
+   "expr": "m['devHurdSavePenalty']() != -8"
+  },
+  {
+   "note": "the devKolinUndeadHd pin",
+   "expr": "m['devKolinUndeadHd']() != 200"
+  },
+  {
+   "note": "the devKrebDragonFailPct pin",
+   "expr": "m['devKrebDragonFailPct']() != 20"
+  },
+  {
+   "note": "the devNazzerBaseDiff pin",
+   "expr": "m['devNazzerBaseDiff']() != 55"
+  },
+  {
+   "note": "the devNazzerCloakDiff pin",
+   "expr": "m['devNazzerCloakDiff']() != 90"
+  },
+  {
+   "note": "the devNazzerCloakFinal pin",
+   "expr": "m['devNazzerCloakFinal']() != 13"
+  },
+  {
+   "note": "the devNazzerItemLevel pin",
+   "expr": "m['devNazzerItemLevel']() != 12"
+  },
+  {
+   "note": "the devNazzerCloakRounds pin",
+   "expr": "m['devNazzerCloakRounds']() != 10"
+  },
+  {
+   "note": "the devNejaPleaHours pin",
+   "expr": "m['devNejaPleaHours']() != 12"
+  },
+  {
+   "note": "the devNejaPleaSaveBonus pin",
+   "expr": "m['devNejaPleaSaveBonus']() != -3"
+  },
+  {
+   "note": "the devRatecliffeHd pin",
+   "expr": "m['devRatecliffeHd']() != 40"
+  },
+  {
+   "note": "the devRatecliffeAreaFt pin",
+   "expr": "m['devRatecliffeAreaFt']() != 50"
+  },
+  {
+   "note": "the devTenserDmgDice pin",
+   "expr": "m['devTenserDmgDice']() != 20"
+  },
+  {
+   "note": "the devTenserDmgBonus pin",
+   "expr": "m['devTenserDmgBonus']() != 20"
+  },
+  {
+   "note": "the devWulfRectAreaDia pin",
+   "expr": "m['devWulfRectAreaDia']() != 50"
+  },
+  {
+   "note": "the devWulfRectMrPenalty pin",
+   "expr": "m['devWulfRectMrPenalty']() != -20"
+  },
+  {
+   "note": "the devYunniWeightLbs pin",
+   "expr": "m['devYunniWeightLbs']() != 50"
+  },
+  {
+   "note": "the devT28RowCount pin",
+   "expr": "m['devT28RowCount']() != 29"
+  },
+  {
+   "note": "the devT29RowCount pin",
+   "expr": "m['devT29RowCount']() != 10"
+  },
+  {
+   "note": "the devT30RowCount pin",
+   "expr": "m['devT30RowCount']() != 6"
+  },
+  {
+   "note": "the devT31RowCount pin",
+   "expr": "m['devT31RowCount']() != 10"
+  },
+  {
+   "note": "the devT32RowCount pin",
+   "expr": "m['devT32RowCount']() != 11"
+  },
+  {
+   "note": "the devT33RowCount pin",
+   "expr": "m['devT33RowCount']() != 10"
+  },
+  {
+   "note": "the devT35RowCount pin",
+   "expr": "m['devT35RowCount']() != 29"
+  },
+  {
+   "note": "the devProvinceMiles pin",
+   "expr": "m['devProvinceMiles']() != 20"
+  },
+  {
+   "note": "the devRegionMiles pin",
+   "expr": "m['devRegionMiles']() != 100"
+  },
+  {
+   "note": "the devAreaAllCreaturesMult pin",
+   "expr": "m['devAreaAllCreaturesMult']() != 10"
+  },
+  {
+   "note": "the devNoScrollOrDevice pin",
+   "expr": "m['devNoScrollOrDevice']() != 1"
+  },
+  {
+   "note": "the devNeverSameTwice pin",
+   "expr": "m['devNeverSameTwice']() != 1"
+  },
+  {
+   "note": "the devDmApprovalRequired pin",
+   "expr": "m['devDmApprovalRequired']() != 1"
+  },
+  {
+   "note": "the devWizardsAnySchool pin",
+   "expr": "m['devWizardsAnySchool']() != 1"
+  },
+  {
+   "note": "the devCommonComponentRequired pin",
+   "expr": "m['devCommonComponentRequired']() != 1"
+  },
+  {
+   "note": "the devPriestHolySymbolNeeded pin",
+   "expr": "m['devPriestHolySymbolNeeded']() != 1"
+  },
+  {
+   "note": "the devWizardsNeedNoSpellbook pin",
+   "expr": "m['devWizardsNeedNoSpellbook']() != 1"
+  },
+  {
+   "note": "the devComponentsSymbolic pin",
+   "expr": "m['devComponentsSymbolic']() != 1"
+  },
+  {
+   "note": "the devExoticEitherNotBoth pin",
+   "expr": "m['devExoticEitherNotBoth']() != 1"
+  },
+  {
+   "note": "the devWardHalfEvenOnFail pin",
+   "expr": "m['devWardHalfEvenOnFail']() != 1"
+  },
+  {
+   "note": "the devWardTwoResistRolls pin",
+   "expr": "m['devWardTwoResistRolls']() != 1"
+  },
+  {
+   "note": "the devTransformSimplePermanentFree pin",
+   "expr": "m['devTransformSimplePermanentFree']() != 1"
+  },
+  {
+   "note": "the devAfflictHarmlessPermanentFree pin",
+   "expr": "m['devAfflictHarmlessPermanentFree']() != 1"
+  },
+  {
+   "note": "the devBindYearlySave pin",
+   "expr": "m['devBindYearlySave']() != 1"
+  },
+  {
+   "note": "the devBindNoSuicide pin",
+   "expr": "m['devBindNoSuicide']() != 1"
+  },
+  {
+   "note": "the devSummonNoControlOvernamed pin",
+   "expr": "m['devSummonNoControlOvernamed']() != 1"
+  },
+  {
+   "note": "the devGolemsNeverCharmed pin",
+   "expr": "m['devGolemsNeverCharmed']() != 1"
+  },
+  {
+   "note": "the devRevealNoSaveUnlessUnwilling pin",
+   "expr": "m['devRevealNoSaveUnlessUnwilling']() != 1"
+  },
+  {
+   "note": "the devConcealBrokenByAttack pin",
+   "expr": "m['devConcealBrokenByAttack']() != 1"
+  },
+  {
+   "note": "the devTrueSeeingDefeatsConceal pin",
+   "expr": "m['devTrueSeeingDefeatsConceal']() != 1"
+  },
+  {
+   "note": "the devPhantomNoRealDamage pin",
+   "expr": "m['devPhantomNoRealDamage']() != 1"
+  },
+  {
+   "note": "the devMatterPermanentFree pin",
+   "expr": "m['devMatterPermanentFree']() != 1"
+  },
+  {
+   "note": "the devForceImmuneToOwnEnergy pin",
+   "expr": "m['devForceImmuneToOwnEnergy']() != 1"
+  },
+  {
+   "note": "the devOnlyPriestsHealWithTap pin",
+   "expr": "m['devOnlyPriestsHealWithTap']() != 1"
+  },
+  {
+   "note": "the devTapDamageInstantOnly pin",
+   "expr": "m['devTapDamageInstantOnly']() != 1"
+  },
+  {
+   "note": "the devPrepDayRestart pin",
+   "expr": "m['devPrepDayRestart']() != 1"
+  },
+  {
+   "note": "the devPrepWeekBacktrack pin",
+   "expr": "m['devPrepWeekBacktrack']() != 1"
+  },
+  {
+   "note": "the devPrepExtensionHalves pin",
+   "expr": "m['devPrepExtensionHalves']() != 1"
+  },
+  {
+   "note": "the devCastDailyNoBreaks pin",
+   "expr": "m['devCastDailyNoBreaks']() != 1"
+  },
+  {
+   "note": "the devCastBrokenRuinsSpell pin",
+   "expr": "m['devCastBrokenRuinsSpell']() != 1"
+  },
+  {
+   "note": "the devPlayCasterLevelSaves pin",
+   "expr": "m['devPlayCasterLevelSaves']() != 1"
+  },
+  {
+   "note": "the devIounStonesIneffective pin",
+   "expr": "m['devIounStonesIneffective']() != 1"
+  },
+  {
+   "note": "the devDispelMagicAreaCapped pin",
+   "expr": "m['devDispelMagicAreaCapped']() != 1"
+  },
+  {
+   "note": "the devWishAutoDispels pin",
+   "expr": "m['devWishAutoDispels']() != 1"
+  },
+  {
+   "note": "the devDispelDestroysBarriers pin",
+   "expr": "m['devDispelDestroysBarriers']() != 1"
+  },
+  {
+   "note": "the devSphericalBarriersHold pin",
+   "expr": "m['devSphericalBarriersHold']() != 1"
+  },
+  {
+   "note": "the devDuelCountersUseless pin",
+   "expr": "m['devDuelCountersUseless']() != 1"
+  },
+  {
+   "note": "the devQuestSpellsUncounterable pin",
+   "expr": "m['devQuestSpellsUncounterable']() != 1"
+  },
+  {
+   "note": "the devQuestWardMrHalved pin",
+   "expr": "m['devQuestWardMrHalved']() != 1"
+  },
+  {
+   "note": "the devNazzerAutoFailOne pin",
+   "expr": "m['devNazzerAutoFailOne']() != 1"
+  },
+  {
+   "note": "the devNejaToadstoolSystemShock pin",
+   "expr": "m['devNejaToadstoolSystemShock']() != 1"
+  },
+  {
+   "note": "the devRatecliffeWishOnlyRevival pin",
+   "expr": "m['devRatecliffeWishOnlyRevival']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the chapter parent box closes",
+   "from": "- [ ] **Chapter 6: True Dweomers** (pp. 118-141) -\n  the 10th-level spell system",
+   "to": "- [x] **Chapter 6: True Dweomers** (pp. 118-141) -\n  the 10th-level spell system\n  the 10th-level spell system - R607: the dev dweomer-economy pins - Chapter 6\n  of the DMO is DONE in one round (ten boxes flip, the census moves 69/27 to\n  79/17)"
+  },
+  {
+   "note": "the requirements box closes",
+   "from": "  - [ ] Requirements (pp. 118-119) - the knowledge,\n    materials, preparation and approval gates",
+   "to": "  - [x] Requirements (pp. 118-119) - the knowledge,\n    materials, preparation and approval gates\n    materials, preparation and approval gates - R607: the dev requirement pins\n    (the 20th-level and ability-18 gates, the four-per-day cap, the\n    no-scroll-or-device rule, the component symbolism doctrine)"
+  },
+  {
+   "note": "the Table 28 box closes",
+   "from": "  - [ ] Table 28: True Dweomers (p. 120) - the\n    base-difficulty ladder by school and level",
+   "to": "  - [x] Table 28: True Dweomers (p. 120) - the\n    base-difficulty ladder by school and level\n    base-difficulty ladder by school and level - R607: the dev T42 grid - 29\n    spell types by school with base difficulty, duration and effect codes; the\n    T48 duel-type mirror"
+  },
+  {
+   "note": "the school-effects box closes",
+   "from": "  - [ ] The school effects (pp. 121-129) - the\n    Abjuration through Necromancy effect lists (the\n    damage caps, the duration bands, the area doctrine\n    per school)",
+   "to": "  - [x] The school effects (pp. 121-129) - the\n    Abjuration through Necromancy effect lists (the\n    damage caps, the duration bands, the area doctrine\n    per school)\n    per school) - R607: the dev school pins (the dispel 50-percent read, the\n    ward ladder to 100 percent, the reflect and fortify and transform and\n    afflict ladders, the conjure and summon reads, the imbue transmutations,\n    the reveal past divisor, the shadow-shape 80-percent retention, the create\n    and strike and slay and tap ladders)"
+  },
+  {
+   "note": "the components box closes",
+   "from": "  - [ ] Material Components (pp. 130-131) - the\n    component doctrine (Table 29: Areas of Effect, p.\n    130; Table 30: Animated Objects, p. 130; Table 31:\n    Ranges, p. 131; Table 32: Durations, p. 131)",
+   "to": "  - [x] Material Components (pp. 130-131) - the\n    component doctrine (Table 29: Areas of Effect, p.\n    130; Table 30: Animated Objects, p. 130; Table 31:\n    Ranges, p. 131; Table 32: Durations, p. 131)\n    Ranges, p. 131; Table 32: Durations, p. 131) - R607: the dev component\n    pins (the common floor, the three-rare 30-point limit, the exotic\n    half-or-20 rule; the T43 areas, T44 animated objects, T45 ranges and T46\n    durations grids)"
+  },
+  {
+   "note": "the special-conditions box closes",
+   "from": "  - [ ] Special Conditions (pp. 132-133) - Table 33:\n    Preparation and Casting Times (p. 132), Table 34:\n    Difficulty Adjustments (p. 132), the condition\n    doctrine",
+   "to": "  - [x] Special Conditions (pp. 132-133) - Table 33:\n    Preparation and Casting Times (p. 132), Table 34:\n    Difficulty Adjustments (p. 132), the condition\n    doctrine\n    doctrine - R607: the dev condition pins (the rare -10 and exotic\n    half-or-20 conditions, the save trade at five per point, the\n    magic-resistance trade; the T47 prep-and-cast grid)"
+  },
+  {
+   "note": "the preparing-and-casting box closes",
+   "from": "  - [ ] Preparing and Casting the Spell (pp.\n    133-134) - the final difficulty computation, the\n    casting rolls",
+   "to": "  - [x] Preparing and Casting the Spell (pp.\n    133-134) - the final difficulty computation, the\n    casting rolls\n    casting rolls - R607: the dev preparation pins (the eight-hour day, the\n    restart and backtrack rules, the 1d100 final check, the halve-or-10\n    extension trade, the daily casting chain)"
+  },
+  {
+   "note": "the example box closes",
+   "from": "  - [ ] An Example of True Dweomer Creation (p. 134)\n    - the worked creation",
+   "to": "  - [x] An Example of True Dweomer Creation (p. 134)\n    - the worked creation\n    - the worked creation - R607: the dev Pharjis worked pins (the\n    110-70-35-5-10 computation, the 02-fail and 81-success rolls, the 12-hour\n    watch)"
+  },
+  {
+   "note": "the in-play box closes",
+   "from": "  - [ ] True Dweomers in Play / in Magical Duels /\n    and Quest Spells (pp. 134-135) - Table 35: True\n    Dweomer Spell Types for Magical Duels (p. 135)",
+   "to": "  - [x] True Dweomers in Play / in Magical Duels /\n    and Quest Spells (pp. 134-135) - Table 35: True\n    Dweomer Spell Types for Magical Duels (p. 135)\n    Dweomer Spell Types for Magical Duels (p. 135) - R607: the dev in-play\n    pins (the caster-level saves, the ioun and absorption bars, the 1d4-round\n    dispel suppression, the disjunction percent, the wish auto-dispel, the\n    duel PR 19, the quest-spell ward floor of 18)"
+  },
+  {
+   "note": "the known-dweomers box closes",
+   "from": "  - [ ] Known True Dweomers (pp. 136-141) - the\n    canonical dweomer list",
+   "to": "  - [x] Known True Dweomers (pp. 136-141) - the\n    canonical dweomer list\n    canonical dweomer list - R607: the dev T49 grid - the thirteen canonical\n    dweomers with their difficulty and final-difficulty pairs, plus the Nazzer\n    cloak and Ratecliffe and Tenser reads"
+  }
+ ],
+ "gap_census": {
+  "closed": 79,
+  "open": 17
+ },
+ "caller_files": [],
+ "inline_count": 238
+}

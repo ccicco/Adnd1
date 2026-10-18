@@ -412,34 +412,68 @@ tables are data and close on table pins.
     - the worked duel - R606: the det worked-duel pins (Calvin vs Delsenora,
     the ten-space arena, the clairvoyance-versus-withdraw lock, the advantage
     shift on the 20 and 9 rolls)
-- [ ] **Chapter 6: True Dweomers** (pp. 118-141) -
+- [x] **Chapter 6: True Dweomers** (pp. 118-141) -
   the 10th-level spell system
-  - [ ] Requirements (pp. 118-119) - the knowledge,
+  the 10th-level spell system - R607: the dev dweomer-economy pins - Chapter 6
+  of the DMO is DONE in one round (ten boxes flip, the census moves 69/27 to
+  79/17)
+  - [x] Requirements (pp. 118-119) - the knowledge,
     materials, preparation and approval gates
-  - [ ] Table 28: True Dweomers (p. 120) - the
+    materials, preparation and approval gates - R607: the dev requirement pins
+    (the 20th-level and ability-18 gates, the four-per-day cap, the
+    no-scroll-or-device rule, the component symbolism doctrine)
+  - [x] Table 28: True Dweomers (p. 120) - the
     base-difficulty ladder by school and level
-  - [ ] The school effects (pp. 121-129) - the
+    base-difficulty ladder by school and level - R607: the dev T42 grid - 29
+    spell types by school with base difficulty, duration and effect codes; the
+    T48 duel-type mirror
+  - [x] The school effects (pp. 121-129) - the
     Abjuration through Necromancy effect lists (the
     damage caps, the duration bands, the area doctrine
     per school)
-  - [ ] Material Components (pp. 130-131) - the
+    per school) - R607: the dev school pins (the dispel 50-percent read, the
+    ward ladder to 100 percent, the reflect and fortify and transform and
+    afflict ladders, the conjure and summon reads, the imbue transmutations,
+    the reveal past divisor, the shadow-shape 80-percent retention, the create
+    and strike and slay and tap ladders)
+  - [x] Material Components (pp. 130-131) - the
     component doctrine (Table 29: Areas of Effect, p.
     130; Table 30: Animated Objects, p. 130; Table 31:
     Ranges, p. 131; Table 32: Durations, p. 131)
-  - [ ] Special Conditions (pp. 132-133) - Table 33:
+    Ranges, p. 131; Table 32: Durations, p. 131) - R607: the dev component
+    pins (the common floor, the three-rare 30-point limit, the exotic
+    half-or-20 rule; the T43 areas, T44 animated objects, T45 ranges and T46
+    durations grids)
+  - [x] Special Conditions (pp. 132-133) - Table 33:
     Preparation and Casting Times (p. 132), Table 34:
     Difficulty Adjustments (p. 132), the condition
     doctrine
-  - [ ] Preparing and Casting the Spell (pp.
+    doctrine - R607: the dev condition pins (the rare -10 and exotic
+    half-or-20 conditions, the save trade at five per point, the
+    magic-resistance trade; the T47 prep-and-cast grid)
+  - [x] Preparing and Casting the Spell (pp.
     133-134) - the final difficulty computation, the
     casting rolls
-  - [ ] An Example of True Dweomer Creation (p. 134)
+    casting rolls - R607: the dev preparation pins (the eight-hour day, the
+    restart and backtrack rules, the 1d100 final check, the halve-or-10
+    extension trade, the daily casting chain)
+  - [x] An Example of True Dweomer Creation (p. 134)
     - the worked creation
-  - [ ] True Dweomers in Play / in Magical Duels /
+    - the worked creation - R607: the dev Pharjis worked pins (the
+    110-70-35-5-10 computation, the 02-fail and 81-success rolls, the 12-hour
+    watch)
+  - [x] True Dweomers in Play / in Magical Duels /
     and Quest Spells (pp. 134-135) - Table 35: True
     Dweomer Spell Types for Magical Duels (p. 135)
-  - [ ] Known True Dweomers (pp. 136-141) - the
+    Dweomer Spell Types for Magical Duels (p. 135) - R607: the dev in-play
+    pins (the caster-level saves, the ioun and absorption bars, the 1d4-round
+    dispel suppression, the disjunction percent, the wish auto-dispel, the
+    duel PR 19, the quest-spell ward floor of 18)
+  - [x] Known True Dweomers (pp. 136-141) - the
     canonical dweomer list
+    canonical dweomer list - R607: the dev T49 grid - the thirteen canonical
+    dweomers with their difficulty and final-difficulty pairs, plus the Nazzer
+    cloak and Ratecliffe and Tenser reads
 - [ ] **Chapter 7: High-Level Characters** (pp.
   142-179) - the beyond-core progression system
   - [ ] Automatic Saving Throw Failure (pp. 142-143)
