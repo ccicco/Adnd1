@@ -380,14 +380,42 @@ description riding the same round.
     skills and the martial-arts attack and damage
     columns as codes (1/4 through 3/1, the plus-N and
     plus-dice damage)
-  - [ ] Ninja (capture pp. 35-39) - the dual-class
+  - [x] Ninja (capture pp. 35-39) - the dual-class
     doctrine (all ninja must also be bushi, sohei, wu
     jen or yakuza), the mission and honor mechanics,
-    the nukenin penalty
-  - [ ] Table 22: Ninja (capture p. 35)
-  - [ ] Table 23: Ninja Dexterity Adjustments
-    (capture p. 36)
-  - [ ] Table 24: Ninja Capabilities (capture p. 38)
+    the nukenin penalty -
+    R622: the dgi ninja pins - the human-only split
+    class (Dex 14, Cha 14, Int 15 minima, no prime
+    requisite), the split experience and the 1-2 hp
+    per level with the halved other-class die, the
+    thief saves, the honor-free special weapons, the
+    eleven capabilities (the nightingale floors, the
+    tightrope winds, the pole vault, the locks), the
+    three ki powers (breath, water walking, the
+    wall pass), the family rule, the mission and
+    honor mechanics, the nukenin with the 2-times
+    xp cost
+  - [x] Table 22: Ninja (capture p. 35) -
+    R622: the dgi T22 grid - twelve rows of xp
+    bounds and the hit-point column (1-2 per level
+    through 9th, 1 beyond) plus the 300,000-xp
+    beyond-12th note; the level-2 bound 8,000
+    settled against the 2018 print (its 8,001 cell
+    contradicts the next-row floor)
+  - [x] Table 23: Ninja Dexterity Adjustments
+    (capture p. 36) -
+    R622: the dgi T23 grid - ten rows, scores 9-18,
+    of the five thief-skill adjustments (picking
+    pockets, traps, silence, shadows, locks); the
+    Dex-11 pockets cell -5 settled against the 2018
+    print (its 05 reading lost the minus)
+  - [x] Table 24: Ninja Capabilities (capture p. 38)
+    -
+    R622: the dgi T24 grid - twenty rows of the
+    eleven capabilities - the six thief skills, the
+    tightrope, the pole vault (half-foot cells),
+    the fall ladder, the escape and the backstab
+    multipliers x2 through x5
   - [ ] Samurai (capture pp. 39-42) - THE oriental
     knight: the birth requirement, the twin swords,
     the fear and honor mechanics

@@ -1,0 +1,1733 @@
+{
+ "round": 622,
+ "title": "THE NINJA - the dual-class doctrine: the split experience and hit points, the thief saves, the eleven capabilities with the three ki powers, the family rule with the mission and honor mechanics and the nukenin penalty, Tables 22, 23 and 24",
+ "prefix": "dgi",
+ "header_file": "rules/oaninja.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 544,
+ "inline_count": 100,
+ "audit_label": "R622 OA ninja audit",
+ "audit_comment": "OA round nine (capture pp. 35-39): the ninja - the dual-class doctrine, the capability ladders of Tables 22, 23 and 24, the ki powers, the honor mechanics and the nukenin",
+ "banner": {
+  "title": "THE NINJA, printed capture pp. 35-39 - the OA ninja round",
+  "provenance": "verified against capture pp. 35-39 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Two cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T22 level-2 bound pins as 8,000 (the 2018 8,001 cell contradicts its own next-row floor of 8,001) and the T23 Dex-11 pockets cell pins as -5 (the 2018 05 reading lost its minus against the ladder). The T24 pole-vault column pins in half feet. OCR normalization: 15 points for the bushi class reads as 1-5 points; infraction reads as infravision; 1096 reads as 10 percent (prose only)",
+  "sentinel": "the gap census after this round: 43 closed, 192 open - the ninja boxes with Tables 22, 23 and 24 flip (census 544 -> 545); NEXT - R623: the Samurai, capture pp. 39-42, Table 25, prefix dgj (verify free), audit \"R623 OA samurai audit\", include after rules/oaninja.h"
+ },
+ "consts": [
+  {
+   "name": "dgiNinjaMinDex",
+   "value": 14,
+   "comment": "Ninja prose (capture p. 36): the Dexterity minimum"
+  },
+  {
+   "name": "dgiNinjaMinCha",
+   "value": 14,
+   "comment": "Ninja prose (capture p. 36): the Charisma minimum"
+  },
+  {
+   "name": "dgiNinjaMinInt",
+   "value": 15,
+   "comment": "Ninja prose (capture p. 36): the Intelligence minimum"
+  },
+  {
+   "name": "dgiNinjaXpSplitDiv",
+   "value": 2,
+   "comment": "Ninja prose (capture p. 36): the experience points split between the two classes - normally exactly in half, the DM may skew"
+  },
+  {
+   "name": "dgiNinjaHpMin",
+   "value": 1,
+   "comment": "Ninja prose (capture p. 36): 1-2 hit points for advancing a ninja level"
+  },
+  {
+   "name": "dgiNinjaHpMax",
+   "value": 2,
+   "comment": "Ninja prose (capture p. 36): the hit-point upper bound per ninja level"
+  },
+  {
+   "name": "dgiNinjaOtherHpDiv",
+   "value": 2,
+   "comment": "Ninja prose (capture p. 36): the other-class hit points - roll the normal die and divide the result by two"
+  },
+  {
+   "name": "dgiNinjaExampleHpMin",
+   "value": 2,
+   "comment": "Ninja prose (capture p. 36): the printed 1st-level bushi/ninja example - from 2 hit points (1-5 for the bushi class plus 1-2 for the ninja class)"
+  },
+  {
+   "name": "dgiNinjaExampleHpMax",
+   "value": 7,
+   "comment": "Ninja prose (capture p. 36): the bushi/ninja example upper bound (5 plus 2)"
+  },
+  {
+   "name": "dgiNinjaSlots",
+   "value": 2,
+   "comment": "Ninja prose (capture p. 37): two proficiency slots at the beginning usable for the special ninja items"
+  },
+  {
+   "name": "dgiNinjaNightingaleDiv",
+   "value": 2,
+   "comment": "Ninja prose (capture p. 37): nightingale floors reduce the move silently chance by one-half"
+  },
+  {
+   "name": "dgiNinjaTightropeAngle",
+   "value": 45,
+   "comment": "Ninja prose (capture p. 37): tightrope walking works on surfaces angled at 45 degrees or less"
+  },
+  {
+   "name": "dgiNinjaTightropeCheckFeet",
+   "value": 60,
+   "comment": "Ninja prose (capture p. 37): one tightrope check per 60 feet covered"
+  },
+  {
+   "name": "dgiNinjaTightropeMove",
+   "value": 60,
+   "comment": "Ninja prose (capture p. 37): the tightrope movement rate, 60 feet per round"
+  },
+  {
+   "name": "dgiNinjaTightropeBalanceBonus",
+   "value": 10,
+   "comment": "Ninja prose (capture p. 37): a balancing item increases the tightrope chance by 10 percent"
+  },
+  {
+   "name": "dgiNinjaTightropeModerateWind",
+   "value": -10,
+   "comment": "Ninja prose (capture pp. 37-38): moderate winds lower the tightrope chance by 10 percent"
+  },
+  {
+   "name": "dgiNinjaTightropeStrongWind",
+   "value": -20,
+   "comment": "Ninja prose (capture p. 38): strong winds lower the tightrope chance by 20 percent"
+  },
+  {
+   "name": "dgiNinjaTightropeGustingWind",
+   "value": -30,
+   "comment": "Ninja prose (capture p. 38): gusting winds lower the tightrope chance by 30 percent"
+  },
+  {
+   "name": "dgiNinjaTightropeFightPenalty",
+   "value": -5,
+   "comment": "Ninja prose (capture p. 38): fighting one-handed on a tightrope suffers -5 to hit plus an immediate fall check"
+  },
+  {
+   "name": "dgiNinjaVaultRunFeet",
+   "value": 30,
+   "comment": "Ninja prose (capture p. 38): the pole vault needs a 30-foot running start"
+  },
+  {
+   "name": "dgiNinjaVaultPoleExtraFeet",
+   "value": 4,
+   "comment": "Ninja prose (capture p. 38): the pole must be at least four feet longer than the character"
+  },
+  {
+   "name": "dgiNinjaVaultObstacleReduction",
+   "value": 1,
+   "comment": "Ninja prose (capture p. 38): vaulting atop an obstacle reduces the maximum height by 1 foot"
+  },
+  {
+   "name": "dgiNinjaVaultDistanceMult",
+   "value": 2,
+   "comment": "Ninja prose (capture p. 38): a distance vault covers twice the length of the pole"
+  },
+  {
+   "name": "dgiNinjaEscapeRoundsDie",
+   "value": 10,
+   "comment": "Ninja prose (capture p. 38): the escape attempt takes 1d10 rounds"
+  },
+  {
+   "name": "dgiNinjaOpenLocksPerLevel",
+   "value": 1,
+   "comment": "Ninja prose (capture p. 38): one try per lock per experience level"
+  },
+  {
+   "name": "dgiNinjaDisguiseSexDiv",
+   "value": 2,
+   "comment": "Ninja prose (capture p. 37): the opposite-sex disguise chance is reduced by half"
+  },
+  {
+   "name": "dgiNinjaDisguisePersonDiv",
+   "value": 2,
+   "comment": "Ninja prose (capture p. 37): impersonating a specific person is one-half the normal disguise percentage"
+  },
+  {
+   "name": "dgiNinjaDisguiseObserveDays",
+   "value": 30,
+   "comment": "Ninja prose (capture p. 37): one month of close observation restores the normal impersonation chance"
+  },
+  {
+   "name": "dgiNinjaKiBreathLevel",
+   "value": 1,
+   "comment": "Ninja prose (capture p. 39): the breath-holding ki at 1st level - rounds equal to the ninja level"
+  },
+  {
+   "name": "dgiNinjaKiWaterLevel",
+   "value": 5,
+   "comment": "Ninja prose (capture p. 39): the water-walking ki at 5th level"
+  },
+  {
+   "name": "dgiNinjaKiWaterFeetPerLevel",
+   "value": 5,
+   "comment": "Ninja prose (capture p. 39): the water walk crosses 5 feet of water per ninja level"
+  },
+  {
+   "name": "dgiNinjaKiWaterMove",
+   "value": 30,
+   "comment": "Ninja prose (capture p. 39): the water-walking movement rate, 30 feet per round"
+  },
+  {
+   "name": "dgiNinjaKiWaterPerDayMult",
+   "value": 1,
+   "comment": "Ninja prose (capture p. 39): the water-walking uses per day equal to the ninja level"
+  },
+  {
+   "name": "dgiNinjaKiWallLevel",
+   "value": 12,
+   "comment": "Ninja prose (capture p. 39): the wall-passing ki at 12th level - the ultimate ninja power"
+  },
+  {
+   "name": "dgiNinjaKiWallPrepRounds",
+   "value": 3,
+   "comment": "Ninja prose (capture p. 39): three rounds of concentration before entering the wall"
+  },
+  {
+   "name": "dgiNinjaKiWallDurationRounds",
+   "value": 1,
+   "comment": "Ninja prose (capture p. 39): the wall pass lasts one round"
+  },
+  {
+   "name": "dgiNinjaKiWallFeetPerLevel",
+   "value": 1,
+   "comment": "Ninja prose (capture p. 39): the wall pass moves 1 foot per experience level; not through by the end means death inside"
+  },
+  {
+   "name": "dgiNinjaNukeXpMult",
+   "value": 2,
+   "comment": "Ninja prose (capture p. 39): a nukenin needs twice the normal experience points to advance as a ninja - the other class advances normally"
+  },
+  {
+   "name": "dgiT22RowCount",
+   "value": 12,
+   "comment": "Table 22 (capture pp. 35-36): twelve rows, levels 1-12"
+  },
+  {
+   "name": "dgiT22XpBeyond",
+   "value": 300000,
+   "comment": "Table 22 note (capture p. 36): 300,000 experience points are required for each level beyond 12th"
+  },
+  {
+   "name": "dgiT22HpBeyond",
+   "value": 1,
+   "comment": "Table 22 (capture pp. 35-36): the hit-point column reads 1 for the 10th through 12th rows - 1 hp per level beyond 9th"
+  },
+  {
+   "name": "dgiT23RowCount",
+   "value": 10,
+   "comment": "Table 23 (capture p. 36): ten rows, Dexterity scores 9 through 18"
+  },
+  {
+   "name": "dgiT23FirstScore",
+   "value": 9,
+   "comment": "Table 23 (capture p. 36): the first ability score row is 9 - the row index is the score minus 9"
+  },
+  {
+   "name": "dgiT24RowCount",
+   "value": 20,
+   "comment": "Table 24 (capture pp. 38-39): twenty rows, levels 1-20"
+  },
+  {
+   "name": "dgiT24VaultHalfFoot",
+   "value": 2,
+   "comment": "Table 24 (capture pp. 38-39): the pole vault column is in half feet - the 8 through 18 prime cells are the printed heights times two"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgiNinjaHumanOnly",
+   "value": true,
+   "comment": "Ninja prose (capture p. 36): the ninja class is only open to human characters"
+  },
+  {
+   "name": "dgiNinjaSplitClassOnly",
+   "value": true,
+   "comment": "Ninja prose (capture p. 36): not an independent class - the character must first qualify for the bushi, sohei, wu jen or yakuza class"
+  },
+  {
+   "name": "dgiNinjaNoPrimeBonus",
+   "value": true,
+   "comment": "Ninja prose (capture p. 36): no prime requisite - the 10 percent bonus never applies to the ninja class even when earned in the other class"
+  },
+  {
+   "name": "dgiNinjaNoConBonusHp",
+   "value": true,
+   "comment": "Ninja prose (capture p. 36): never the high-Constitution hit point bonus on the ninja rolls"
+  },
+  {
+   "name": "dgiNinjaOtherHpRoundedUp",
+   "value": true,
+   "comment": "Ninja prose (capture p. 36): the halved other-class die is rounded up, then the Constitution bonus of that class applies"
+  },
+  {
+   "name": "dgiNinjaThiefSaves",
+   "value": true,
+   "comment": "Ninja prose (capture p. 36): always the saving throw tables of thieves"
+  },
+  {
+   "name": "dgiNinjaOtherCombatTable",
+   "value": true,
+   "comment": "Ninja prose (capture p. 36): the combat table of the other character class"
+  },
+  {
+   "name": "dgiNinjaWeaponsNoHonorLoss",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): the special ninja weapons (Tables 49, 50 and 51) cost no honor, regardless of the other class"
+  },
+  {
+   "name": "dgiNinjaCrossSlotHonorLoss",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): bushi/ninja who use other-class proficiencies to master ninja weapons lose honor"
+  },
+  {
+   "name": "dgiNinjaOtherClassArmor",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): wears the armor of the other class, though certain ninja abilities may not work in armor"
+  },
+  {
+   "name": "dgiNinjaMagicItemsUnion",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): any magical items of the other class plus the ninja-only items"
+  },
+  {
+   "name": "dgiNinjaSilentNoMetal",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): move silently cannot be used while wearing metal armor"
+  },
+  {
+   "name": "dgiNinjaHideWatched",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): hide in shadows cannot be used while someone is watching - the character always thinks he is hidden"
+  },
+  {
+   "name": "dgiNinjaHideInfravision",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): near a heat source the skill works against infravision - the heat blinds it"
+  },
+  {
+   "name": "dgiNinjaTrapsSmallOnly",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): find/remove traps works only for small traps, not large ones"
+  },
+  {
+   "name": "dgiNinjaTrapsOneAttempt",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): only one attempt per character per trap - an equal chance to remove once found"
+  },
+  {
+   "name": "dgiNinjaClimbChainMail",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): climb walls cannot be used in metal armor other than chain mail"
+  },
+  {
+   "name": "dgiNinjaClimbMidpointCheck",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): one climb check at the midpoint - failure means the fall at the midpoint"
+  },
+  {
+   "name": "dgiNinjaDisguiseClassOnly",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): disguise covers any general class of person of about the same height, weight and age"
+  },
+  {
+   "name": "dgiNinjaDisguiseFailForever",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): once a specific-person impersonation fails, that person can never be impersonated"
+  },
+  {
+   "name": "dgiNinjaAssassinatePlanned",
+   "value": true,
+   "comment": "Ninja prose (capture p. 37): the DMG assassination tables, carefully planned, DM-adjusted - not a combat skill, unusable in melee"
+  },
+  {
+   "name": "dgiNinjaVaultNoMetal",
+   "value": true,
+   "comment": "Ninja prose (capture p. 38): no metal armor when pole vaulting"
+  },
+  {
+   "name": "dgiNinjaFallChainMail",
+   "value": true,
+   "comment": "Ninja prose (capture p. 38): the safe fall allows no metal armor other than chain mail"
+  },
+  {
+   "name": "dgiNinjaFallVerticalSurface",
+   "value": true,
+   "comment": "Ninja prose (capture p. 38): the safe fall needs a reachable vertical surface; beyond the stated distance the full damage applies"
+  },
+  {
+   "name": "dgiNinjaEscapeOneAttempt",
+   "value": true,
+   "comment": "Ninja prose (capture p. 38): one escape attempt only - with guards present it is easily thwarted"
+  },
+  {
+   "name": "dgiNinjaOpenLocksLockedForever",
+   "value": true,
+   "comment": "Ninja prose (capture p. 38): a failed lock never opens - the retry comes at the next experience level"
+  },
+  {
+   "name": "dgiNinjaBackstabUnnoticed",
+   "value": true,
+   "comment": "Ninja prose (capture p. 38): the backstab strikes unnoticed from behind - the usual Strength, class and magic modifiers apply before the multiplier"
+  },
+  {
+   "name": "dgiNinjaKiBreathOnceDaily",
+   "value": true,
+   "comment": "Ninja prose (capture p. 39): the breath-holding ki is usable only once per day"
+  },
+  {
+   "name": "dgiNinjaKiWaterBrokenByInjury",
+   "value": true,
+   "comment": "Ninja prose (capture p. 39): any injury breaks the water-walking concentration"
+  },
+  {
+   "name": "dgiNinjaKiWallCostsAllKi",
+   "value": true,
+   "comment": "Ninja prose (capture p. 39): the wall pass needs the entire day ki - disturbance loses this and all other ki powers for the day"
+  },
+  {
+   "name": "dgiNinjaFamilyRule",
+   "value": true,
+   "comment": "Ninja prose (capture p. 39): ruled absolutely by the head of the family - disobedience brings assassination attempts until the character dies or slays the head"
+  },
+  {
+   "name": "dgiNinjaIdentityCost",
+   "value": true,
+   "comment": "Ninja prose (capture p. 39): discovery of the true identity costs honor - others may know he is a ninja but never who he is"
+  },
+  {
+   "name": "dgiNinjaMissionRetryable",
+   "value": true,
+   "comment": "Ninja prose (capture p. 39): failing a mission costs honor but the mission can be attempted again"
+  },
+  {
+   "name": "dgiNinjaMissionRefusalAllHonor",
+   "value": true,
+   "comment": "Ninja prose (capture p. 39): refusing a mission loses all honor - defiance of the head of the family"
+  },
+  {
+   "name": "dgiNinjaHonorAboveFamily",
+   "value": true,
+   "comment": "Ninja prose (capture p. 39): the ninja must maintain his honor above the family honor - the ninja honor measures obedience and loyalty"
+  },
+  {
+   "name": "dgiNinjaNukeDeathOrNukenin",
+   "value": true,
+   "comment": "Ninja prose (capture p. 39): failing that carries the same punishment as disobedience, death - a survivor is a nukenin"
+  },
+  {
+   "name": "dgiNinjaMissionsFromHead",
+   "value": true,
+   "comment": "Ninja prose (capture p. 39): all missions come from the head of the family - the DM may forbid missions against player characters"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dgiT22Grid",
+   "tag": "T22",
+   "count": "dgiT22RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgiT22XpMax",
+    "dgiT22HpMax"
+   ],
+   "data": [
+    [
+     4000,
+     2
+    ],
+    [
+     8000,
+     2
+    ],
+    [
+     15000,
+     2
+    ],
+    [
+     30000,
+     2
+    ],
+    [
+     60000,
+     2
+    ],
+    [
+     120000,
+     2
+    ],
+    [
+     240000,
+     2
+    ],
+    [
+     500000,
+     2
+    ],
+    [
+     1000000,
+     2
+    ],
+    [
+     1300000,
+     1
+    ],
+    [
+     1600000,
+     1
+    ],
+    [
+     1900000,
+     1
+    ]
+   ],
+   "comment": "the Table 22 ninja advancement grid (capture pp. 35-36)",
+   "col_comments": [
+    "the experience column: the upper xp bound of each level, 4,000 at 1st to 1,900,000 at 12th (capture pp. 35-36).",
+    "the hit points per level column: the printed 1-2 range through 9th, then 1 for the 10th through 12th rows (capture pp. 35-36)."
+   ],
+   "audit_comment": "the Table 22 grid: the xp bounds and the hit points per level (capture pp. 35-36)",
+   "sentinel_census": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgiT23Grid",
+   "tag": "T23",
+   "count": "dgiT23RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgiT23Pockets",
+    "dgiT23Traps",
+    "dgiT23Silent",
+    "dgiT23Hide",
+    "dgiT23Locks"
+   ],
+   "data": [
+    [
+     -15,
+     -10,
+     -20,
+     -10,
+     -15
+    ],
+    [
+     -10,
+     -10,
+     -15,
+     -5,
+     -10
+    ],
+    [
+     -5,
+     -5,
+     -10,
+     0,
+     -5
+    ],
+    [
+     0,
+     0,
+     -5,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     0,
+     5,
+     5,
+     5
+    ],
+    [
+     10,
+     5,
+     10,
+     10,
+     10
+    ]
+   ],
+   "comment": "the Table 23 ninja Dexterity adjustments grid (capture p. 36)",
+   "col_comments": [
+    "the picking pockets column: -15 percent at Dex 9 to +10 at 18 (capture p. 36).",
+    "the locating and removing traps column: -10 percent at Dex 9 to +5 at 18 (capture p. 36).",
+    "the moving silently column: -20 percent at Dex 9 to +10 at 18 (capture p. 36).",
+    "the hiding in shadows column: -10 percent at Dex 9 to +10 at 18 (capture p. 36).",
+    "the open locks column: -15 percent at Dex 9 to +10 at 18 (capture p. 36)."
+   ],
+   "audit_comment": "the Table 23 grid: the five thief-skill Dexterity adjustments (capture p. 36)",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgiT24Grid",
+   "tag": "T24",
+   "count": "dgiT24RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgiT24Hide",
+    "dgiT24Silent",
+    "dgiT24Traps",
+    "dgiT24Climb",
+    "dgiT24Disguise",
+    "dgiT24Locks",
+    "dgiT24Tightrope",
+    "dgiT24Vault",
+    "dgiT24Fall",
+    "dgiT24Escape",
+    "dgiT24Backstab"
+   ],
+   "data": [
+    [
+     10,
+     15,
+     20,
+     85,
+     20,
+     25,
+     20,
+     16,
+     0,
+     10,
+     2
+    ],
+    [
+     15,
+     21,
+     25,
+     86,
+     24,
+     29,
+     25,
+     18,
+     0,
+     14,
+     2
+    ],
+    [
+     20,
+     27,
+     30,
+     87,
+     28,
+     33,
+     30,
+     19,
+     10,
+     18,
+     2
+    ],
+    [
+     25,
+     33,
+     35,
+     88,
+     32,
+     37,
+     35,
+     20,
+     15,
+     22,
+     2
+    ],
+    [
+     31,
+     40,
+     40,
+     89,
+     36,
+     42,
+     40,
+     21,
+     20,
+     26,
+     3
+    ],
+    [
+     37,
+     47,
+     45,
+     90,
+     40,
+     47,
+     45,
+     22,
+     25,
+     30,
+     3
+    ],
+    [
+     43,
+     55,
+     50,
+     91,
+     44,
+     52,
+     50,
+     23,
+     30,
+     34,
+     3
+    ],
+    [
+     49,
+     62,
+     55,
+     92,
+     48,
+     57,
+     55,
+     24,
+     35,
+     38,
+     3
+    ],
+    [
+     56,
+     70,
+     60,
+     93,
+     52,
+     62,
+     60,
+     25,
+     40,
+     42,
+     3
+    ],
+    [
+     63,
+     78,
+     65,
+     94,
+     56,
+     67,
+     65,
+     26,
+     45,
+     46,
+     4
+    ],
+    [
+     70,
+     86,
+     70,
+     95,
+     60,
+     72,
+     70,
+     27,
+     50,
+     50,
+     4
+    ],
+    [
+     77,
+     94,
+     75,
+     96,
+     64,
+     77,
+     75,
+     28,
+     55,
+     54,
+     4
+    ],
+    [
+     85,
+     95,
+     80,
+     97,
+     68,
+     82,
+     80,
+     29,
+     60,
+     58,
+     4
+    ],
+    [
+     93,
+     96,
+     85,
+     98,
+     72,
+     87,
+     85,
+     30,
+     65,
+     62,
+     4
+    ],
+    [
+     94,
+     97,
+     90,
+     99,
+     76,
+     92,
+     90,
+     31,
+     70,
+     66,
+     4
+    ],
+    [
+     95,
+     98,
+     95,
+     99,
+     80,
+     97,
+     95,
+     32,
+     75,
+     70,
+     4
+    ],
+    [
+     96,
+     99,
+     95,
+     99,
+     84,
+     99,
+     96,
+     33,
+     80,
+     74,
+     4
+    ],
+    [
+     97,
+     99,
+     95,
+     99,
+     88,
+     99,
+     97,
+     34,
+     85,
+     78,
+     4
+    ],
+    [
+     98,
+     99,
+     95,
+     99,
+     92,
+     99,
+     98,
+     35,
+     90,
+     82,
+     4
+    ],
+    [
+     99,
+     99,
+     95,
+     99,
+     96,
+     99,
+     99,
+     36,
+     95,
+     86,
+     5
+    ]
+   ],
+   "comment": "the Table 24 ninja capabilities grid (capture pp. 38-39)",
+   "col_comments": [
+    "the hide in shadows column: 10 percent at 1st to 99 at 20th (capture pp. 38-39).",
+    "the move silently column: 15 percent at 1st to 99 from 17th (capture pp. 38-39).",
+    "the find and remove traps column: 20 percent at 1st to 95 from 13th (capture pp. 38-39).",
+    "the climb walls column: 85 percent at 1st to 99 from 15th (capture pp. 38-39).",
+    "the disguise column: 20 percent at 1st to 96 at 20th (capture pp. 38-39).",
+    "the open locks column: 25 percent at 1st to 99 from 17th (capture pp. 38-39).",
+    "the tightrope walk column: 20 percent at 1st to 99 at 20th (capture pp. 38-39).",
+    "the pole vault column in half feet: 16 (8 feet) at 1st to 36 (18 feet) at 20th (capture pp. 38-39).",
+    "the fall column: 0 feet at 1st and 2nd, then 10 at 3rd climbing 5 per level to 95 at 20th (capture pp. 38-39).",
+    "the escape column: 10 percent at 1st to 86 at 20th (capture pp. 38-39).",
+    "the backstab multiplier column: x2 at 1st, x3 at 5th, x4 at 10th, x5 at 20th (capture pp. 38-39)."
+   ],
+   "audit_comment": "the Table 24 grid: the eleven capability columns, levels 1-20 (capture pp. 38-39)",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dgiNinjaMinDex pin",
+   "expr": "m['dgiNinjaMinDex']() != 14"
+  },
+  {
+   "note": "the dgiNinjaMinCha pin",
+   "expr": "m['dgiNinjaMinCha']() != 14"
+  },
+  {
+   "note": "the dgiNinjaMinInt pin",
+   "expr": "m['dgiNinjaMinInt']() != 15"
+  },
+  {
+   "note": "the dgiNinjaXpSplitDiv pin",
+   "expr": "m['dgiNinjaXpSplitDiv']() != 2"
+  },
+  {
+   "note": "the dgiNinjaHpMin pin",
+   "expr": "m['dgiNinjaHpMin']() != 1"
+  },
+  {
+   "note": "the dgiNinjaHpMax pin",
+   "expr": "m['dgiNinjaHpMax']() != 2"
+  },
+  {
+   "note": "the dgiNinjaOtherHpDiv pin",
+   "expr": "m['dgiNinjaOtherHpDiv']() != 2"
+  },
+  {
+   "note": "the dgiNinjaExampleHpMin pin",
+   "expr": "m['dgiNinjaExampleHpMin']() != 2"
+  },
+  {
+   "note": "the dgiNinjaExampleHpMax pin",
+   "expr": "m['dgiNinjaExampleHpMax']() != 7"
+  },
+  {
+   "note": "the dgiNinjaSlots pin",
+   "expr": "m['dgiNinjaSlots']() != 2"
+  },
+  {
+   "note": "the dgiNinjaNightingaleDiv pin",
+   "expr": "m['dgiNinjaNightingaleDiv']() != 2"
+  },
+  {
+   "note": "the dgiNinjaTightropeAngle pin",
+   "expr": "m['dgiNinjaTightropeAngle']() != 45"
+  },
+  {
+   "note": "the dgiNinjaTightropeCheckFeet pin",
+   "expr": "m['dgiNinjaTightropeCheckFeet']() != 60"
+  },
+  {
+   "note": "the dgiNinjaTightropeMove pin",
+   "expr": "m['dgiNinjaTightropeMove']() != 60"
+  },
+  {
+   "note": "the dgiNinjaTightropeBalanceBonus pin",
+   "expr": "m['dgiNinjaTightropeBalanceBonus']() != 10"
+  },
+  {
+   "note": "the dgiNinjaTightropeModerateWind pin",
+   "expr": "m['dgiNinjaTightropeModerateWind']() != -10"
+  },
+  {
+   "note": "the dgiNinjaTightropeStrongWind pin",
+   "expr": "m['dgiNinjaTightropeStrongWind']() != -20"
+  },
+  {
+   "note": "the dgiNinjaTightropeGustingWind pin",
+   "expr": "m['dgiNinjaTightropeGustingWind']() != -30"
+  },
+  {
+   "note": "the dgiNinjaTightropeFightPenalty pin",
+   "expr": "m['dgiNinjaTightropeFightPenalty']() != -5"
+  },
+  {
+   "note": "the dgiNinjaVaultRunFeet pin",
+   "expr": "m['dgiNinjaVaultRunFeet']() != 30"
+  },
+  {
+   "note": "the dgiNinjaVaultPoleExtraFeet pin",
+   "expr": "m['dgiNinjaVaultPoleExtraFeet']() != 4"
+  },
+  {
+   "note": "the dgiNinjaVaultObstacleReduction pin",
+   "expr": "m['dgiNinjaVaultObstacleReduction']() != 1"
+  },
+  {
+   "note": "the dgiNinjaVaultDistanceMult pin",
+   "expr": "m['dgiNinjaVaultDistanceMult']() != 2"
+  },
+  {
+   "note": "the dgiNinjaEscapeRoundsDie pin",
+   "expr": "m['dgiNinjaEscapeRoundsDie']() != 10"
+  },
+  {
+   "note": "the dgiNinjaOpenLocksPerLevel pin",
+   "expr": "m['dgiNinjaOpenLocksPerLevel']() != 1"
+  },
+  {
+   "note": "the dgiNinjaDisguiseSexDiv pin",
+   "expr": "m['dgiNinjaDisguiseSexDiv']() != 2"
+  },
+  {
+   "note": "the dgiNinjaDisguisePersonDiv pin",
+   "expr": "m['dgiNinjaDisguisePersonDiv']() != 2"
+  },
+  {
+   "note": "the dgiNinjaDisguiseObserveDays pin",
+   "expr": "m['dgiNinjaDisguiseObserveDays']() != 30"
+  },
+  {
+   "note": "the dgiNinjaKiBreathLevel pin",
+   "expr": "m['dgiNinjaKiBreathLevel']() != 1"
+  },
+  {
+   "note": "the dgiNinjaKiWaterLevel pin",
+   "expr": "m['dgiNinjaKiWaterLevel']() != 5"
+  },
+  {
+   "note": "the dgiNinjaKiWaterFeetPerLevel pin",
+   "expr": "m['dgiNinjaKiWaterFeetPerLevel']() != 5"
+  },
+  {
+   "note": "the dgiNinjaKiWaterMove pin",
+   "expr": "m['dgiNinjaKiWaterMove']() != 30"
+  },
+  {
+   "note": "the dgiNinjaKiWaterPerDayMult pin",
+   "expr": "m['dgiNinjaKiWaterPerDayMult']() != 1"
+  },
+  {
+   "note": "the dgiNinjaKiWallLevel pin",
+   "expr": "m['dgiNinjaKiWallLevel']() != 12"
+  },
+  {
+   "note": "the dgiNinjaKiWallPrepRounds pin",
+   "expr": "m['dgiNinjaKiWallPrepRounds']() != 3"
+  },
+  {
+   "note": "the dgiNinjaKiWallDurationRounds pin",
+   "expr": "m['dgiNinjaKiWallDurationRounds']() != 1"
+  },
+  {
+   "note": "the dgiNinjaKiWallFeetPerLevel pin",
+   "expr": "m['dgiNinjaKiWallFeetPerLevel']() != 1"
+  },
+  {
+   "note": "the dgiNinjaNukeXpMult pin",
+   "expr": "m['dgiNinjaNukeXpMult']() != 2"
+  },
+  {
+   "note": "the dgiT22RowCount pin",
+   "expr": "m['dgiT22RowCount']() != 12"
+  },
+  {
+   "note": "the dgiT22XpBeyond pin",
+   "expr": "m['dgiT22XpBeyond']() != 300000"
+  },
+  {
+   "note": "the dgiT22HpBeyond pin",
+   "expr": "m['dgiT22HpBeyond']() != 1"
+  },
+  {
+   "note": "the dgiT23RowCount pin",
+   "expr": "m['dgiT23RowCount']() != 10"
+  },
+  {
+   "note": "the dgiT23FirstScore pin",
+   "expr": "m['dgiT23FirstScore']() != 9"
+  },
+  {
+   "note": "the dgiT24RowCount pin",
+   "expr": "m['dgiT24RowCount']() != 20"
+  },
+  {
+   "note": "the dgiT24VaultHalfFoot pin",
+   "expr": "m['dgiT24VaultHalfFoot']() != 2"
+  },
+  {
+   "note": "the dgiNinjaHumanOnly pin",
+   "expr": "m['dgiNinjaHumanOnly']() != 1"
+  },
+  {
+   "note": "the dgiNinjaSplitClassOnly pin",
+   "expr": "m['dgiNinjaSplitClassOnly']() != 1"
+  },
+  {
+   "note": "the dgiNinjaNoPrimeBonus pin",
+   "expr": "m['dgiNinjaNoPrimeBonus']() != 1"
+  },
+  {
+   "note": "the dgiNinjaNoConBonusHp pin",
+   "expr": "m['dgiNinjaNoConBonusHp']() != 1"
+  },
+  {
+   "note": "the dgiNinjaOtherHpRoundedUp pin",
+   "expr": "m['dgiNinjaOtherHpRoundedUp']() != 1"
+  },
+  {
+   "note": "the dgiNinjaThiefSaves pin",
+   "expr": "m['dgiNinjaThiefSaves']() != 1"
+  },
+  {
+   "note": "the dgiNinjaOtherCombatTable pin",
+   "expr": "m['dgiNinjaOtherCombatTable']() != 1"
+  },
+  {
+   "note": "the dgiNinjaWeaponsNoHonorLoss pin",
+   "expr": "m['dgiNinjaWeaponsNoHonorLoss']() != 1"
+  },
+  {
+   "note": "the dgiNinjaCrossSlotHonorLoss pin",
+   "expr": "m['dgiNinjaCrossSlotHonorLoss']() != 1"
+  },
+  {
+   "note": "the dgiNinjaOtherClassArmor pin",
+   "expr": "m['dgiNinjaOtherClassArmor']() != 1"
+  },
+  {
+   "note": "the dgiNinjaMagicItemsUnion pin",
+   "expr": "m['dgiNinjaMagicItemsUnion']() != 1"
+  },
+  {
+   "note": "the dgiNinjaSilentNoMetal pin",
+   "expr": "m['dgiNinjaSilentNoMetal']() != 1"
+  },
+  {
+   "note": "the dgiNinjaHideWatched pin",
+   "expr": "m['dgiNinjaHideWatched']() != 1"
+  },
+  {
+   "note": "the dgiNinjaHideInfravision pin",
+   "expr": "m['dgiNinjaHideInfravision']() != 1"
+  },
+  {
+   "note": "the dgiNinjaTrapsSmallOnly pin",
+   "expr": "m['dgiNinjaTrapsSmallOnly']() != 1"
+  },
+  {
+   "note": "the dgiNinjaTrapsOneAttempt pin",
+   "expr": "m['dgiNinjaTrapsOneAttempt']() != 1"
+  },
+  {
+   "note": "the dgiNinjaClimbChainMail pin",
+   "expr": "m['dgiNinjaClimbChainMail']() != 1"
+  },
+  {
+   "note": "the dgiNinjaClimbMidpointCheck pin",
+   "expr": "m['dgiNinjaClimbMidpointCheck']() != 1"
+  },
+  {
+   "note": "the dgiNinjaDisguiseClassOnly pin",
+   "expr": "m['dgiNinjaDisguiseClassOnly']() != 1"
+  },
+  {
+   "note": "the dgiNinjaDisguiseFailForever pin",
+   "expr": "m['dgiNinjaDisguiseFailForever']() != 1"
+  },
+  {
+   "note": "the dgiNinjaAssassinatePlanned pin",
+   "expr": "m['dgiNinjaAssassinatePlanned']() != 1"
+  },
+  {
+   "note": "the dgiNinjaVaultNoMetal pin",
+   "expr": "m['dgiNinjaVaultNoMetal']() != 1"
+  },
+  {
+   "note": "the dgiNinjaFallChainMail pin",
+   "expr": "m['dgiNinjaFallChainMail']() != 1"
+  },
+  {
+   "note": "the dgiNinjaFallVerticalSurface pin",
+   "expr": "m['dgiNinjaFallVerticalSurface']() != 1"
+  },
+  {
+   "note": "the dgiNinjaEscapeOneAttempt pin",
+   "expr": "m['dgiNinjaEscapeOneAttempt']() != 1"
+  },
+  {
+   "note": "the dgiNinjaOpenLocksLockedForever pin",
+   "expr": "m['dgiNinjaOpenLocksLockedForever']() != 1"
+  },
+  {
+   "note": "the dgiNinjaBackstabUnnoticed pin",
+   "expr": "m['dgiNinjaBackstabUnnoticed']() != 1"
+  },
+  {
+   "note": "the dgiNinjaKiBreathOnceDaily pin",
+   "expr": "m['dgiNinjaKiBreathOnceDaily']() != 1"
+  },
+  {
+   "note": "the dgiNinjaKiWaterBrokenByInjury pin",
+   "expr": "m['dgiNinjaKiWaterBrokenByInjury']() != 1"
+  },
+  {
+   "note": "the dgiNinjaKiWallCostsAllKi pin",
+   "expr": "m['dgiNinjaKiWallCostsAllKi']() != 1"
+  },
+  {
+   "note": "the dgiNinjaFamilyRule pin",
+   "expr": "m['dgiNinjaFamilyRule']() != 1"
+  },
+  {
+   "note": "the dgiNinjaIdentityCost pin",
+   "expr": "m['dgiNinjaIdentityCost']() != 1"
+  },
+  {
+   "note": "the dgiNinjaMissionRetryable pin",
+   "expr": "m['dgiNinjaMissionRetryable']() != 1"
+  },
+  {
+   "note": "the dgiNinjaMissionRefusalAllHonor pin",
+   "expr": "m['dgiNinjaMissionRefusalAllHonor']() != 1"
+  },
+  {
+   "note": "the dgiNinjaHonorAboveFamily pin",
+   "expr": "m['dgiNinjaHonorAboveFamily']() != 1"
+  },
+  {
+   "note": "the dgiNinjaNukeDeathOrNukenin pin",
+   "expr": "m['dgiNinjaNukeDeathOrNukenin']() != 1"
+  },
+  {
+   "note": "the dgiNinjaMissionsFromHead pin",
+   "expr": "m['dgiNinjaMissionsFromHead']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the T22 first row - 4,000 xp, the 1-2 hp range (capture p. 35)",
+   "expr": "m['dgiT22XpMax'](0) != 4000 or m['dgiT22HpMax'](0) != 2"
+  },
+  {
+   "note": "the T22 level-2 bound settled at 8,000 - the 2018 print 8,001 cell contradicts the next-row floor (capture p. 35)",
+   "expr": "m['dgiT22XpMax'](1) != 8000 or m['dgiT22XpMax'](2) != 15000"
+  },
+  {
+   "note": "the T22 beyond-9th rows - hp 1 and the 1,900,000 cap (capture p. 36)",
+   "expr": "m['dgiT22HpMax'](9) != 1 or m['dgiT22HpMax'](11) != 1 or m['dgiT22XpMax'](11) != 1900000 or m['dgiT22HpBeyond']() != 1"
+  },
+  {
+   "note": "the T23 Dex-9 row - the five penalties (capture p. 36)",
+   "expr": "m['dgiT23Pockets'](0) != -15 or m['dgiT23Silent'](0) != -20 or m['dgiT23Locks'](0) != -15"
+  },
+  {
+   "note": "the T23 Dex-11 pockets cell settled at -5 - the 2018 print 05 reading lost the minus (capture p. 36)",
+   "expr": "m['dgiT23Pockets'](2) != -5 or m['dgiT23Pockets'](3) != 0"
+  },
+  {
+   "note": "the T23 Dex-18 row - the five bonuses (capture p. 36)",
+   "expr": "m['dgiT23Pockets'](9) != 10 or m['dgiT23Traps'](9) != 5 or m['dgiT23Silent'](9) != 10 or m['dgiT23Hide'](9) != 10 or m['dgiT23Locks'](9) != 10"
+  },
+  {
+   "note": "the T24 1st-level row - the eleven capabilities (capture p. 38)",
+   "expr": "m['dgiT24Hide'](0) != 10 or m['dgiT24Climb'](0) != 85 or m['dgiT24Vault'](0) != 16 or m['dgiT24Fall'](0) != 0 or m['dgiT24Backstab'](0) != 2"
+  },
+  {
+   "note": "the T24 capstone - the 20th-level row with the x5 backstab (capture p. 39)",
+   "expr": "m['dgiT24Hide'](19) != 99 or m['dgiT24Disguise'](19) != 96 or m['dgiT24Vault'](19) != 36 or m['dgiT24Fall'](19) != 95 or m['dgiT24Escape'](19) != 86 or m['dgiT24Backstab'](19) != 5"
+  },
+  {
+   "note": "the T24 backstab ladder - x3 at 5th, x4 at 10th (capture pp. 38-39)",
+   "expr": "m['dgiT24Backstab'](4) != 3 or m['dgiT24Backstab'](9) != 4"
+  },
+  {
+   "note": "the T24 pole-vault ladder - the 9.5 prime cell at 3rd is 19 half feet (capture p. 38)",
+   "expr": "m['dgiT24Vault'](2) != 19 or m['dgiT24VaultHalfFoot']() != 2"
+  },
+  {
+   "note": "the T24 fall ladder opens at 10 feet on the 3rd-level row (capture p. 38)",
+   "expr": "m['dgiT24Fall'](1) != 0 or m['dgiT24Fall'](2) != 10"
+  },
+  {
+   "note": "the bushi/ninja example - 2 to 7 hit points, the 1-5 halved die plus 1-2 (capture p. 36)",
+   "expr": "m['dgiNinjaExampleHpMin']() != 2 or m['dgiNinjaExampleHpMax']() != 7 or m['dgiNinjaOtherHpDiv']() != 2"
+  }
+ ],
+ "header_sections": {
+  "the ninja doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dgiNinjaMinDex"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaMinCha"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaMinInt"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaHumanOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaSplitClassOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaNoPrimeBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaXpSplitDiv"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaHpMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaHpMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaNoConBonusHp"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaOtherHpDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaOtherHpRoundedUp"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaExampleHpMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaExampleHpMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaThiefSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaOtherCombatTable"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaSlots"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaWeaponsNoHonorLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaCrossSlotHonorLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaOtherClassArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaMagicItemsUnion"
+   }
+  ],
+  "the ninja capability pins": [
+   {
+    "kind": "bool",
+    "name": "dgiNinjaSilentNoMetal"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaNightingaleDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaHideWatched"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaHideInfravision"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaTrapsSmallOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaTrapsOneAttempt"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaClimbChainMail"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaClimbMidpointCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaDisguiseClassOnly"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaDisguiseSexDiv"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaDisguisePersonDiv"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaDisguiseObserveDays"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaDisguiseFailForever"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaAssassinatePlanned"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaTightropeAngle"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaTightropeCheckFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaTightropeMove"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaTightropeBalanceBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaTightropeModerateWind"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaTightropeStrongWind"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaTightropeGustingWind"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaTightropeFightPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaVaultNoMetal"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaVaultRunFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaVaultPoleExtraFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaVaultObstacleReduction"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaVaultDistanceMult"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaFallChainMail"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaFallVerticalSurface"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaEscapeOneAttempt"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaEscapeRoundsDie"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaOpenLocksPerLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaOpenLocksLockedForever"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaBackstabUnnoticed"
+   }
+  ],
+  "the ninja ki and honor pins": [
+   {
+    "kind": "const",
+    "name": "dgiNinjaKiBreathLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaKiBreathOnceDaily"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaKiWaterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaKiWaterFeetPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaKiWaterMove"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaKiWaterPerDayMult"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaKiWaterBrokenByInjury"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaKiWallLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaKiWallPrepRounds"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaKiWallDurationRounds"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaKiWallFeetPerLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaKiWallCostsAllKi"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaFamilyRule"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaMissionsFromHead"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaIdentityCost"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaMissionRetryable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaMissionRefusalAllHonor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaHonorAboveFamily"
+   },
+   {
+    "kind": "bool",
+    "name": "dgiNinjaNukeDeathOrNukenin"
+   },
+   {
+    "kind": "const",
+    "name": "dgiNinjaNukeXpMult"
+   }
+  ],
+  "the Table 22, Table 23 and Table 24 grids": [
+   {
+    "kind": "const",
+    "name": "dgiT22RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dgiT22Grid"
+   },
+   {
+    "kind": "const",
+    "name": "dgiT22XpBeyond"
+   },
+   {
+    "kind": "const",
+    "name": "dgiT22HpBeyond"
+   },
+   {
+    "kind": "const",
+    "name": "dgiT23RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgiT23FirstScore"
+   },
+   {
+    "kind": "table",
+    "name": "dgiT23Grid"
+   },
+   {
+    "kind": "const",
+    "name": "dgiT24RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgiT24VaultHalfFoot"
+   },
+   {
+    "kind": "table",
+    "name": "dgiT24Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Ninja box closes",
+   "from": "  - [ ] Ninja (capture pp. 35-39) - the dual-class\n    doctrine (all ninja must also be bushi, sohei, wu\n    jen or yakuza), the mission and honor mechanics,\n    the nukenin penalty",
+   "to": "  - [x] Ninja (capture pp. 35-39) - the dual-class\n    doctrine (all ninja must also be bushi, sohei, wu\n    jen or yakuza), the mission and honor mechanics,\n    the nukenin penalty -\n    R622: the dgi ninja pins - the human-only split\n    class (Dex 14, Cha 14, Int 15 minima, no prime\n    requisite), the split experience and the 1-2 hp\n    per level with the halved other-class die, the\n    thief saves, the honor-free special weapons, the\n    eleven capabilities (the nightingale floors, the\n    tightrope winds, the pole vault, the locks), the\n    three ki powers (breath, water walking, the\n    wall pass), the family rule, the mission and\n    honor mechanics, the nukenin with the 2-times\n    xp cost"
+  },
+  {
+   "note": "the   Table 22: Ninja box closes",
+   "from": "  - [ ] Table 22: Ninja (capture p. 35)",
+   "to": "  - [x] Table 22: Ninja (capture p. 35) -\n    R622: the dgi T22 grid - twelve rows of xp\n    bounds and the hit-point column (1-2 per level\n    through 9th, 1 beyond) plus the 300,000-xp\n    beyond-12th note; the level-2 bound 8,000\n    settled against the 2018 print (its 8,001 cell\n    contradicts the next-row floor)"
+  },
+  {
+   "note": "the   Table 23: Ninja Dexterity Adjustments box closes",
+   "from": "  - [ ] Table 23: Ninja Dexterity Adjustments\n    (capture p. 36)",
+   "to": "  - [x] Table 23: Ninja Dexterity Adjustments\n    (capture p. 36) -\n    R622: the dgi T23 grid - ten rows, scores 9-18,\n    of the five thief-skill adjustments (picking\n    pockets, traps, silence, shadows, locks); the\n    Dex-11 pockets cell -5 settled against the 2018\n    print (its 05 reading lost the minus)"
+  },
+  {
+   "note": "the   Table 24: Ninja Capabilities box closes",
+   "from": "  - [ ] Table 24: Ninja Capabilities (capture p. 38)",
+   "to": "  - [x] Table 24: Ninja Capabilities (capture p. 38)\n    -\n    R622: the dgi T24 grid - twenty rows of the\n    eleven capabilities - the six thief skills, the\n    tightrope, the pole vault (half-foot cells),\n    the fall ladder, the escape and the backstab\n    multipliers x2 through x5"
+  }
+ ],
+ "gap_census": {
+  "closed": 43,
+  "open": 192
+ },
+ "include_comment": "the OA ninja pins",
+ "include_after": "#include \"rules/oamonk.h\"  // R621: the OA monk pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R621 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R621 LANDED 2026-10-18: commit",
+  "  9ae052e37815d0baa1accd52e83af4ba914d4b5f",
+  "  (census 543 -> 544, pushed",
+  "  17d2892..9ae052e), THE MONK, capture",
+  "  pp. 31-35: rules/oamonk.h, prefix",
+  "  dgh (verified free), 93 inlines (59",
+  "  consts, 20 bools, 14 table columns):",
+  "  the Str/Wis/Dex 15 and Con 11 minima",
+  "  with no prime requisite, the 2d4",
+  "  start and 1d4 per level, the ki",
+  "  power (save negates at 1st, declared",
+  "  even after the roll, half damage on",
+  "  a FAILED save from 9th), the",
+  "  level-power ladder (speak with",
+  "  animals at 3rd, the 20-ft and 30-ft",
+  "  falls, the ESP 30-minus-2 ladder",
+  "  from 4th, disease and haste/slow at",
+  "  5th, cataleptic twice level, the",
+  "  2-5-plus-1 heal from 7th, speak with",
+  "  plants and the 2-5 followers at 8th,",
+  "  the charm 50-plus-5 ladder from 9th,",
+  "  the Int-18 mind shield at 10th,",
+  "  poison at 11th, geas at 12th, the",
+  "  free maneuver at 13th), the free",
+  "  Missile Deflection, the material",
+  "  restrictions (no property, the",
+  "  2-weapon and 3-item caps, the",
+  "  DMG rings-or-thieves gate), the",
+  "  monastery duel with the three 8ths",
+  "  and the 98,001 reset example, T20",
+  "  17x3 (xp bounds, accumulated d4 dice",
+  "  - the 2-through-18 column header",
+  "  SETTLED against the 2018 print -",
+  "  and title codes Novice through",
+  "  Grand Master of Flowers), T21 17x11",
+  "  (the AC/move/surprise ladders, the",
+  "  six thief skills, the martial-arts",
+  "  attack codes 1/4 through 3/1 and",
+  "  the plus-dice damage codes). OCR",
+  "  normalization: may riot own horses",
+  "  reads as may not; immune to gees",
+  "  reads as immune to geas. Battery 317",
+  "  mutants, 0 missed; full sha rverify",
+  "  GREEN. Gap census 36/199 -> 39/196.",
+  "  Spec 38,425 bytes md5",
+  "  8ae3a830dc7f489c87fb6a8dfd837c5d",
+  "  (canvas md5",
+  "  7c5d331fda0ebb6f3142b6115738c036).",
+  "  NEXT - R622: the Ninja, capture",
+  "  pp. 35-39, Tables 22 and 23, prefix",
+  "  dgi (verify free), audit \"R622 OA",
+  "  ninja audit\", include after rules/",
+  "  oamonk.h."
+ ]
+}

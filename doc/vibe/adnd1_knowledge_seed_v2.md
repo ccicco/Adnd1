@@ -11876,6 +11876,59 @@ when both halves land.
   (verify free), audit "R621 OA
   monk audit", include after rules/
   oakensai.h.
+- R621 LANDED 2026-10-18: commit
+  9ae052e37815d0baa1accd52e83af4ba914d4b5f
+  (census 543 -> 544, pushed
+  17d2892..9ae052e), THE MONK, capture
+  pp. 31-35: rules/oamonk.h, prefix
+  dgh (verified free), 93 inlines (59
+  consts, 20 bools, 14 table columns):
+  the Str/Wis/Dex 15 and Con 11 minima
+  with no prime requisite, the 2d4
+  start and 1d4 per level, the ki
+  power (save negates at 1st, declared
+  even after the roll, half damage on
+  a FAILED save from 9th), the
+  level-power ladder (speak with
+  animals at 3rd, the 20-ft and 30-ft
+  falls, the ESP 30-minus-2 ladder
+  from 4th, disease and haste/slow at
+  5th, cataleptic twice level, the
+  2-5-plus-1 heal from 7th, speak with
+  plants and the 2-5 followers at 8th,
+  the charm 50-plus-5 ladder from 9th,
+  the Int-18 mind shield at 10th,
+  poison at 11th, geas at 12th, the
+  free maneuver at 13th), the free
+  Missile Deflection, the material
+  restrictions (no property, the
+  2-weapon and 3-item caps, the
+  DMG rings-or-thieves gate), the
+  monastery duel with the three 8ths
+  and the 98,001 reset example, T20
+  17x3 (xp bounds, accumulated d4 dice
+  - the 2-through-18 column header
+  SETTLED against the 2018 print -
+  and title codes Novice through
+  Grand Master of Flowers), T21 17x11
+  (the AC/move/surprise ladders, the
+  six thief skills, the martial-arts
+  attack codes 1/4 through 3/1 and
+  the plus-dice damage codes). OCR
+  normalization: may riot own horses
+  reads as may not; immune to gees
+  reads as immune to geas. Battery 317
+  mutants, 0 missed; full sha rverify
+  GREEN. Gap census 36/199 -> 39/196.
+  Spec 38,425 bytes md5
+  8ae3a830dc7f489c87fb6a8dfd837c5d
+  (canvas md5
+  7c5d331fda0ebb6f3142b6115738c036).
+  NEXT - R622: the Ninja, capture
+  pp. 35-39, Tables 22 and 23, prefix
+  dgi (verify free), audit "R622 OA
+  ninja audit", include after rules/
+  oamonk.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
