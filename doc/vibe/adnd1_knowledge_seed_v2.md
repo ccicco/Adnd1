@@ -11028,6 +11028,65 @@ when both halves land.
   (printed pp. 57-58) and Tables
   6-22 (printed pp. 58-66); prefix
   den free.
+- R603 LANDED 2026-10-18: commit
+  08891d938a05a4ac30afe4966827e56fd
+  cee6079 (census 525 -> 526,
+  pushed 394b9aa..08891d9), THE
+  LEGENDARY LADDER, printed pp. 57-66,
+  the monster tail of DMO Chapter 2 in
+  one round - ALL EIGHTEEN boxes flip
+  and the chapter is DONE: the
+  altering-monsters doctrine (the
+  +/-1/2/3 modifier used throughout;
+  hit points floored at one a die,
+  damage at one a die, saves capped at
+  20 and floored at 3, XP floored at
+  1-1; movement, Intelligence, alignment
+  and morale unchanged; the optional
+  three-point size shift), the six
+  ability-score grids T6-T11 (13 roll
+  bands, the 9-12 band one row; the
+  exceptional strengths encoded 1801
+  through 1800; the rust monster reads
+  ride the checks), and the eleven rank
+  tables T12-T22 (AC -4 to -12, HD +5
+  to +25 with the x1.5-x3.5 area
+  multiplier; breath 26-75 averages with
+  cloud/cone/line sizes; disease
+  onset/fatality dice with unit codes
+  1-round through 6-month; fear 30-50
+  ft; crush 3d8-7d8 with the -4/-8 size
+  saves; wounding 0-2d6 bleed; melee
+  +1 to +3/die with great-elder and
+  paragon extra dice and the size
+  percentages; movement 20-60 percent;
+  gaze -2 to -6 with the existing-
+  weapon paragon -8; MR 60-100
+  percent; regen 1-4 with the
+  lesser-scion three-round delay). The
+  rank ability rolls (3d4+4, 2d6+6,
+  1d10+8, 1d10+8, 1d8+10) and power
+  counts (2-3, 3-4, 3-5, 4-6, 5-7)
+  pinned as consts. Header
+  rules/dmomonsters.h, prefix den (dem
+  was NOT free - the demiHumanTroops
+  collision), 167 inlines (75 consts,
+  14 bools, 78 table columns, 17
+  grids). EIGHTEEN flips: gap census
+  37/59 - Chapter 2 closed. Spec
+  tools/spec_r603.json 70369 bytes md5
+  120c1c5263c18ebc2c40a2b3c6405bef
+  matched exactly first try (after two
+  pre-gate build fixes: the bool-example
+  != 1 form, the den prefix switch).
+  THIRTY-SEVEN straight first-tries
+  (R566-R603). NEXT - R604: Chapter 3
+  (Spells and Magical Items, pp. 68-85)
+  - the daily recovery of spells (the
+  eight-hour rest, the 10 minutes per
+  spell level), the wizard and priest
+  spell clarifications, the item-use
+  doctrines; prefix dep reserved.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

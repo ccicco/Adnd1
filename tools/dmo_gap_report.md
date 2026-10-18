@@ -227,20 +227,40 @@ tables are data and close on table pins.
     regeneration ladder - R603: the den regen grid (the
     1-4 per round, the lesser-scion three-round delay,
     the fire and acid bar)
-- [ ] **Chapter 3: Spells and Magical Items** (pp.
-  68-85) - the high-level magic-management chapter
-  - [ ] Daily Recovery of Spells (pp. 68-69) - the
+- [x] **Chapter 3: Spells and Magical Items** (pp.
+  68-85) - the high-level magic-management chapter -
+  R604: the chapter closes in one round on doctrine
+  pins per the advisory-prose scope ruling (the
+  recovery doctrine, the spell clarifications, the
+  item doctrines) with the planar-research and
+  bag-of-holding grids riding the engine
+  - [x] Daily Recovery of Spells (pp. 68-69) - the
     rest requirement (the eight-hour minimum, the 10
     minutes per spell level), the distraction doctrine
-  - [ ] Wizard Spells (pp. 69-76) - the per-spell
+    - R604: the deq recovery pins (the eight-hour
+      rest, the 10 minutes a level, the eight-hour
+      study cap, the no-sleep once-a-day rule, the
+      restart-on-distraction doctrine)
+  - [x] Wizard Spells (pp. 69-76) - the per-spell
     clarifications (the wish limits, the binding
-    doctrine, the perimeter-of-world effects)
-  - [ ] Priest Spells (pp. 76-79) - the per-spell
+    doctrine, the perimeter-of-world effects) - R604:
+    the deq wizard pins (the damage caps, the
+    antimagic-shell doctrine, the ESP ladder, the
+    wish and limited-wish aging grids, the
+    permanency and teleport and stoneskin rules)
+  - [x] Priest Spells (pp. 76-79) - the per-spell
     clarifications (the gate doctrine, the quest-spell
-    framework)
-  - [ ] Magical Items (pp. 79-85) - the item-use
+    framework) - R604: the deq priest pins (the
+    holy-might cap 25, the know-time estimator, the
+    plane-shift seven companions and the research
+    grid, the nap and sentinel rest windows)
+  - [x] Magical Items (pp. 79-85) - the item-use
     clarifications (the artifact doctrine, the charged
-    item rules, the wishes-per-item limits)
+    item rules, the wishes-per-item limits) - R604:
+    the deq item pins (the amulet seven days, the
+    bag-of-holding grid, the extradimensional seam,
+    the potion 12th-level bar, the rod and staff
+    doctrines, the sphere 92-percent cap)
 - [ ] **Chapter 4: Creating Magical Items** (pp.
   86-95) - the high-level item-creation economy
   - [ ] Holy Water (p. 86) - the font ceremony (the

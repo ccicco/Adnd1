@@ -1,0 +1,2230 @@
+{
+ "round": 604,
+ "prefix": "deq",
+ "header_file": "rules/dmospells.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/dmo_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 526,
+ "title": "Spells and Magical Items",
+ "audit_label": "R604 DMO spells-and-items audit",
+ "audit_comment": "CHAPTER 3 of the DMO (printed pp. 68-85), the magic-management chapter closing in one round: the daily recovery doctrine (the eight-hour rest minimum, the 10 minutes per spell level, the eight-hour study cap, the no-sleep once-a-day rule, the restart on distraction), the wizard clarifications (the damage caps of horrid wilting, cone of cold and delayed blast fireball, the antimagic-shell scope, the ESP save ladder, the feather-fall bands, the fly maneuvering, the haste aging, the identify cost, the limited-wish and wish aging grids and scopes, the permanency and dispel doctrines, the teleport firm-surface rule and the permanent dimensions, the astral projection economics, the stoneskin limits), the priest clarifications (the holy-might cap, the know-time estimator, the plane-shift companions and the planar-research grid with the pocket-dimension modifiers, the nap and sentinel windows, the speak-with-dead range), and the item doctrines (the amulet seven days, the bag-of-holding air and water grid, the extradimensional seam, the potion 12th-level bar, the rod and staff rules, the sphere 92-percent control cap, the withering limb ladders, the stone of luck).",
+ "include_comment": "the DMO spells-and-items pins",
+ "include_after": "#include \"rules/dmomonsters.h\"  // R603: the DMO monster-doctrine pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R603 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R603 LANDED 2026-10-18: commit",
+  "  08891d938a05a4ac30afe4966827e56fd",
+  "  cee6079 (census 525 -> 526,",
+  "  pushed 394b9aa..08891d9), THE",
+  "  LEGENDARY LADDER, printed pp. 57-66,",
+  "  the monster tail of DMO Chapter 2 in",
+  "  one round - ALL EIGHTEEN boxes flip",
+  "  and the chapter is DONE: the",
+  "  altering-monsters doctrine (the",
+  "  +/-1/2/3 modifier used throughout;",
+  "  hit points floored at one a die,",
+  "  damage at one a die, saves capped at",
+  "  20 and floored at 3, XP floored at",
+  "  1-1; movement, Intelligence, alignment",
+  "  and morale unchanged; the optional",
+  "  three-point size shift), the six",
+  "  ability-score grids T6-T11 (13 roll",
+  "  bands, the 9-12 band one row; the",
+  "  exceptional strengths encoded 1801",
+  "  through 1800; the rust monster reads",
+  "  ride the checks), and the eleven rank",
+  "  tables T12-T22 (AC -4 to -12, HD +5",
+  "  to +25 with the x1.5-x3.5 area",
+  "  multiplier; breath 26-75 averages with",
+  "  cloud/cone/line sizes; disease",
+  "  onset/fatality dice with unit codes",
+  "  1-round through 6-month; fear 30-50",
+  "  ft; crush 3d8-7d8 with the -4/-8 size",
+  "  saves; wounding 0-2d6 bleed; melee",
+  "  +1 to +3/die with great-elder and",
+  "  paragon extra dice and the size",
+  "  percentages; movement 20-60 percent;",
+  "  gaze -2 to -6 with the existing-",
+  "  weapon paragon -8; MR 60-100",
+  "  percent; regen 1-4 with the",
+  "  lesser-scion three-round delay). The",
+  "  rank ability rolls (3d4+4, 2d6+6,",
+  "  1d10+8, 1d10+8, 1d8+10) and power",
+  "  counts (2-3, 3-4, 3-5, 4-6, 5-7)",
+  "  pinned as consts. Header",
+  "  rules/dmomonsters.h, prefix den (dem",
+  "  was NOT free - the demiHumanTroops",
+  "  collision), 167 inlines (75 consts,",
+  "  14 bools, 78 table columns, 17",
+  "  grids). EIGHTEEN flips: gap census",
+  "  37/59 - Chapter 2 closed. Spec",
+  "  tools/spec_r603.json 70369 bytes md5",
+  "  120c1c5263c18ebc2c40a2b3c6405bef",
+  "  matched exactly first try (after two",
+  "  pre-gate build fixes: the bool-example",
+  "  != 1 form, the den prefix switch).",
+  "  THIRTY-SEVEN straight first-tries",
+  "  (R566-R603). NEXT - R604: Chapter 3",
+  "  (Spells and Magical Items, pp. 68-85)",
+  "  - the daily recovery of spells (the",
+  "  eight-hour rest, the 10 minutes per",
+  "  spell level), the wizard and priest",
+  "  spell clarifications, the item-use",
+  "  doctrines; prefix dep reserved."
+ ],
+ "banner": {
+  "title": "SPELLS AND MAGICAL ITEMS - DMO Chapter 3 closes: the daily recovery doctrine (the good night's sleep and the eight-hour minimum, the ten minutes a level, the distraction restart, the eight-hour study cap), the wizard and priest per-spell clarifications (the antimagic-shell scope, the ESP save ladder, the haste aging, the identify cost, the wish framework with its race aging grids, the teleport and astral economics, the plane-shift rods with the research grid), and the item doctrines (the amulet window, the bag grid, the extradimensional seam with the portable-hole gate, the potion bar, the sphere cap, the withering ladders).",
+  "provenance": "verified against printed pp. 68-85 of the uploaded DMO session capture (part 1, printed page N at OCR page N+1); the Rozmare examples from pp. 69, 72 and 74, the permanency rosters from p. 73, the planar-research table from p. 79, the bag-of-holding table from p. 80, the item doctrines from pp. 79-85. The horrid-wilting die prints 16d8; the OCR B is a misread and the pin carries the note.",
+  "sentinel": "the gap census after this round: 42 closed, 54 open - Chapter 3 is DONE in one round per the advisory-prose scope ruling; the DMO arc continues with Chapter 4 (Creating Magical Items, pp. 86-95)."
+ },
+ "consts": [
+  {
+   "name": "deqRaceCount",
+   "value": 5,
+   "comment": "the aging-ladder race count: five races, the human, the halfling and half-elf band, the dwarf, the gnome, the elf (printed pp. 72 and 76)."
+  },
+  {
+   "name": "deqPlaneTypeCount",
+   "value": 4,
+   "comment": "the planar-research plane-type count: the inner, outer, demiplane and prime-material rows of the research table (printed p. 79)."
+  },
+  {
+   "name": "deqBagTypeCount",
+   "value": 4,
+   "comment": "the bag-of-holding size count: the 250, 500, 1,000 and 1,500-pound bags (printed p. 80)."
+  },
+  {
+   "name": "deqMemorizeMinutesPerLevel",
+   "value": 10,
+   "comment": "the memorization effort: 10 minutes of study per level of the spell (printed p. 68; the Rozmare fly spell at 3rd level takes 30 minutes)."
+  },
+  {
+   "name": "deqRestHoursMin",
+   "value": 8,
+   "comment": "the rest requirement: about eight hours spent in reasonable comfort - never a night in a saddle - is the minimum to regain spells (printed p. 68)."
+  },
+  {
+   "name": "deqStudyHoursMax",
+   "value": 8,
+   "comment": "the limited-study cap: a spellcaster can spend a maximum of eight hours a day acquiring spells; past that no concentration remains, with no other disadvantage (printed p. 69)."
+  },
+  {
+   "name": "deqHorridWiltingDice",
+   "value": 16,
+   "comment": "the horrid-wilting cap, the die count: the maximum damage is 16 dice (printed p. 69; the OCR renders the die as 16dB, read as 16d8)."
+  },
+  {
+   "name": "deqHorridWiltingDieSize",
+   "value": 8,
+   "comment": "the horrid-wilting cap, the die: d8 (printed p. 69, the OCR B misread)."
+  },
+  {
+   "name": "deqConeOfColdDice",
+   "value": 10,
+   "comment": "the cone-of-cold maximum damage, the die count: 10d4+10 points (printed p. 70)."
+  },
+  {
+   "name": "deqConeOfColdDieSize",
+   "value": 4,
+   "comment": "the cone-of-cold die: d4, plus the flat 10 (printed p. 70)."
+  },
+  {
+   "name": "deqConeOfColdBonus",
+   "value": 10,
+   "comment": "the cone-of-cold flat bonus: +10 on top of the dice (printed p. 70)."
+  },
+  {
+   "name": "deqDelayedBlastDice",
+   "value": 15,
+   "comment": "the delayed-blast-fireball maximum damage, the die count: 15d6+15 points (printed p. 70)."
+  },
+  {
+   "name": "deqDelayedBlastDieSize",
+   "value": 6,
+   "comment": "the delayed-blast-fireball die: d6, plus the flat 15 (printed p. 70)."
+  },
+  {
+   "name": "deqDelayedBlastBonus",
+   "value": 15,
+   "comment": "the delayed-blast-fireball flat bonus: +15 on top of the dice (printed p. 70)."
+  },
+  {
+   "name": "deqColorSprayHandWidthFt",
+   "value": 5,
+   "comment": "the color-spray geometry, at the hand: a plane five feet wide (printed p. 70)."
+  },
+  {
+   "name": "deqColorSprayLengthFt",
+   "value": 20,
+   "comment": "the color-spray geometry, the length: 20 feet (printed p. 70)."
+  },
+  {
+   "name": "deqColorSprayFarWidthFt",
+   "value": 20,
+   "comment": "the color-spray geometry, at the far end: 20 feet wide (printed p. 70)."
+  },
+  {
+   "name": "deqDispelItemInertDie",
+   "value": 4,
+   "comment": "the dispel-magic item rule: an unattended magical item is rendered inoperable for 1d4 rounds, the die (printed p. 70)."
+  },
+  {
+   "name": "deqPotionDispelLevel",
+   "value": 12,
+   "comment": "the potion dispelling level: all potion effects are treated as magic cast at 12th level for purposes of dispelling (printed p. 82)."
+  },
+  {
+   "name": "deqEspBonusMinor",
+   "value": 1,
+   "comment": "the ESP save ladder, the minor tier: +1 when the subject dislikes the interrogator or faces embarrassing requests (printed p. 71)."
+  },
+  {
+   "name": "deqEspBonusDamaging",
+   "value": 2,
+   "comment": "the ESP save ladder, the damaging tier: +2 for a hostile interrogator or damaging questions - hidden treasure, betrayed trusts (printed p. 72)."
+  },
+  {
+   "name": "deqEspBonusSerious",
+   "value": 3,
+   "comment": "the ESP save ladder, the serious tier: +3 when the interrogator has attacked the subject or asks seriously damaging questions - military plans, trade secrets (printed p. 72)."
+  },
+  {
+   "name": "deqEspBonusDeep",
+   "value": 4,
+   "comment": "the ESP save ladder, the deep tier: +4 when the interrogator has killed one of the subject's companions or probes deeply personal ground - a family heirloom, a guarded password (printed p. 72)."
+  },
+  {
+   "name": "deqFeatherFallAutoFt",
+   "value": 10,
+   "comment": "the feather-fall auto-cast: at the beginning of any fall of 10 feet or more, provided the caster is not prevented from casting (printed p. 72)."
+  },
+  {
+   "name": "deqFeatherFallFtPerLevel",
+   "value": 120,
+   "comment": "the feather-fall extreme band: beyond 120 feet per level the caster can opt to delay the spell so the duration does not expire before landing (printed p. 72)."
+  },
+  {
+   "name": "deqFeatherFallInitPerBand",
+   "value": 1,
+   "comment": "the feather-fall initiative: the caster adds +1 for the casting time, the fall +1 for each 120 feet of free fall (printed p. 72)."
+  },
+  {
+   "name": "deqFlyManeuverClass",
+   "value": 2,
+   "comment": "the fly maneuverability: class B on the A=1..E=5 scale, limiting the user to turns totaling 180 degrees or less per round (printed p. 72)."
+  },
+  {
+   "name": "deqFlyTurnDegrees",
+   "value": 180,
+   "comment": "the fly turning budget: 180 degrees per round; past it the flier finishes the round straight or stops (printed p. 72)."
+  },
+  {
+   "name": "deqFearConeInitMod",
+   "value": 3,
+   "comment": "the permanent-fear attack: the recipient radiates a cone once per round as a wand of fear - no casting time or command word, but an action with a +3 initiative modifier (printed p. 72)."
+  },
+  {
+   "name": "deqHasteAgingYears",
+   "value": 1,
+   "comment": "the haste aging: one year of magical aging requiring a system shock roll, failure meaning death - the aging lands only on the first round, and only when a fresh haste's effect overlaps the old (printed p. 72)."
+  },
+  {
+   "name": "deqIdentifyPurifyHours",
+   "value": 8,
+   "comment": "the identify ritual: the caster spends the eight hours preceding the casting purifying the items to be identified (printed p. 72)."
+  },
+  {
+   "name": "deqIdentifyConLoss",
+   "value": 8,
+   "comment": "the identify cost: an eight-point temporary Constitution loss inflicted by the spell - the moment enemies love (printed p. 72)."
+  },
+  {
+   "name": "deqReinvisibilityInitMod",
+   "value": 3,
+   "comment": "the permanent-invisibility return: any attack breaks it, but the recipient can become invisible again the next round at a +3 initiative modifier with no other action (printed p. 72)."
+  },
+  {
+   "name": "deqLimitedWishMimicMax",
+   "value": 7,
+   "comment": "the limited-wish scope: it can mimic most other spells of 7th level or less, but never produce wealth or magical items (printed p. 72)."
+  },
+  {
+   "name": "deqWishDuplicateMax",
+   "value": 9,
+   "comment": "the wish scope: a wish can always duplicate any spell of 9th level or less (printed p. 75)."
+  },
+  {
+   "name": "deqWishStrLoss",
+   "value": 3,
+   "comment": "the wish cost: most uses lower the caster's Strength/Stamina by three points and force 2d4 days of bed rest, the Strength returning at the end of the rest (printed p. 75)."
+  },
+  {
+   "name": "deqWishBedRestDie",
+   "value": 4,
+   "comment": "the wish bed-rest die: 2d4 days (printed p. 75)."
+  },
+  {
+   "name": "deqWishBedRestCount",
+   "value": 2,
+   "comment": "the wish bed-rest die count: two dice of the d4 (printed p. 75)."
+  },
+  {
+   "name": "deqWishWealthDiceCount",
+   "value": 5,
+   "comment": "the wish-wealth roll, the count: a random 5,000 to 40,000 gold pieces - 5d8 x 1,000 (printed p. 76)."
+  },
+  {
+   "name": "deqWishWealthDieSize",
+   "value": 8,
+   "comment": "the wish-wealth roll, the die: d8, multiplied by 1,000 (printed p. 76)."
+  },
+  {
+   "name": "deqWishWealthMult",
+   "value": 1000,
+   "comment": "the wish-wealth multiplier: the 5d8 read in thousands of gold pieces (printed p. 76)."
+  },
+  {
+   "name": "deqWishItemLoanHours",
+   "value": 1,
+   "comment": "the wish-borrowed item: a wish can produce a magical item but not an artifact, typically borrowed for about an hour before it goes back where it came from (printed p. 76)."
+  },
+  {
+   "name": "deqWishLevelPerWish",
+   "value": 1,
+   "comment": "the wish level-advance: an elf can wish to advance in level like a human, at most one level per wish, each advance needing its own wish (printed p. 76)."
+  },
+  {
+   "name": "deqMagicStaffMinRating",
+   "value": 4,
+   "comment": "the magic-staff bar: spells stored in the staff are unusable on worlds rated M4 or less - the staff of the magi springboard (printed p. 72)."
+  },
+  {
+   "name": "deqPwsMoveDivisor",
+   "value": 3,
+   "comment": "the power-word-stun movement cap, the divisor: movement is limited to one third the creature's current rate (printed p. 74)."
+  },
+  {
+   "name": "deqPwsMoveMax",
+   "value": 3,
+   "comment": "the power-word-stun movement cap, the floor: one third the rate or a rate of 3, whichever is less (printed p. 74)."
+  },
+  {
+   "name": "deqPwsAttackBonus",
+   "value": 4,
+   "comment": "the power-word-stun attack bonus: attacks against stunned creatures gain +4 (printed p. 74)."
+  },
+  {
+   "name": "deqRopeTrickLbs",
+   "value": 1000,
+   "comment": "the rope-trick limit: the space supports about 1,000 pounds, the DM free to adjust - and placing another extradimensional space inside is catastrophic (printed p. 74)."
+  },
+  {
+   "name": "deqStoneskinHours",
+   "value": 24,
+   "comment": "the stoneskin duration: 24 hours or until the spell absorbs its allotment of attacks (printed p. 74)."
+  },
+  {
+   "name": "deqTeleportPermanentCuFt",
+   "value": 1000,
+   "comment": "the permanent-teleport object: a single object of no more than 1,000 cubic feet - a 10-foot cube (printed p. 75)."
+  },
+  {
+   "name": "deqTeleportPermanentSqFt",
+   "value": 400,
+   "comment": "the permanent-teleport area: an area no larger than 400 square feet - 20 feet square (printed p. 75)."
+  },
+  {
+   "name": "deqTeleportLowYardsDie",
+   "value": 100,
+   "comment": "the teleport-low arrival: roll 1d100 to see how many yards below the surface the caster lands; low into any solid object is always fatal, feathers as deadly as rock (printed p. 74)."
+  },
+  {
+   "name": "deqUnseenServantHoverFt",
+   "value": 30,
+   "comment": "the permanent unseen servant: it always hovers within 30 feet of the caster (printed p. 75)."
+  },
+  {
+   "name": "deqUnseenServantReformDie",
+   "value": 10,
+   "comment": "the permanent unseen servant reform: destroyed, it reforms in 2d10 rounds - the die (printed p. 75)."
+  },
+  {
+   "name": "deqUnseenServantReformCount",
+   "value": 2,
+   "comment": "the permanent unseen servant reform: two dice of the d10, in rounds (printed p. 75)."
+  },
+  {
+   "name": "deqAstralMovePerInt",
+   "value": 30,
+   "comment": "the astral movement rate: 30 times the character's Intelligence/Reason score, by pure thought (printed p. 70)."
+  },
+  {
+   "name": "deqAstralReturnHp",
+   "value": 1,
+   "comment": "the astral-death return: a successful system shock draws the traveler back to the original body, waking with one hit point (printed p. 70)."
+  },
+  {
+   "name": "deqAstralPenalty",
+   "value": 4,
+   "comment": "the astral-return debilitation: a -4 penalty to dice rolls, moving at half speed, no casting or memorizing, until the character regains at least half his hit points (printed p. 70)."
+  },
+  {
+   "name": "deqHolyMightCap",
+   "value": 25,
+   "comment": "the draw-upon-holy-might cap: the spell cannot increase an ability score beyond 25 (printed p. 76)."
+  },
+  {
+   "name": "deqKnowTimePctPerLevel",
+   "value": 2,
+   "comment": "the know-time estimate: on a world with a different time flow, a 2 percent chance per caster level of learning the difference - great, moderate or minor by the Table 2 bands (printed p. 77)."
+  },
+  {
+   "name": "deqPlaneShiftCompanions",
+   "value": 7,
+   "comment": "the plane-shift load: the caster and up to seven other creatures on a one-way trip, a unique forked rod per plane or sphere (printed p. 77)."
+  },
+  {
+   "name": "deqPocketDimExtraCost",
+   "value": 2000,
+   "comment": "the pocket-dimension research modifier, cost: add 2,000 gold pieces to the attached plane's research cost (printed p. 79; the Ethereal-attached example totals 2,500)."
+  },
+  {
+   "name": "deqPocketDimExtraWeeks",
+   "value": 4,
+   "comment": "the pocket-dimension research modifier, time: add one month - pinned as four weeks - to the research time (printed p. 79; the example runs five weeks)."
+  },
+  {
+   "name": "deqNapWindowHours",
+   "value": 18,
+   "comment": "the nap limit: no effect if the recipient is unwilling or has received a nap in the previous 18 hours - and it never reduces the 10-minutes-per-level study time (printed p. 77)."
+  },
+  {
+   "name": "deqSentinelRestTurns",
+   "value": 48,
+   "comment": "the holy-sentinel rest: a nap spell grants the recovering priest 48 turns of rest (printed p. 79)."
+  },
+  {
+   "name": "deqSpeakWithDeadRangeYds",
+   "value": 1,
+   "comment": "the speak-with-dead range: one yard - and the dead do not lie, though they can be evasive, misleading or obtusely literal (printed p. 79)."
+  },
+  {
+   "name": "deqAmuletPsycheDays",
+   "value": 7,
+   "comment": "the amulet of life protection: a character whose psyche is held in the amulet does not truly die until seven days have passed, any sufficient healing reviving him to a positive hit point total (printed p. 79)."
+  },
+  {
+   "name": "deqFortressDamageRounds",
+   "value": 3,
+   "comment": "the Daern's instant-fortress wall rule: a magical weapon inflicts one point of damage for every three rounds spent attacking the walls (printed p. 80)."
+  },
+  {
+   "name": "deqExtradimensionalGateFt",
+   "value": 10,
+   "comment": "the portable-hole gate: a hole placed within another extradimensional space opens a gate to a random plane, drawing all creatures within a 10-foot radius through, no saving throw (printed p. 81)."
+  },
+  {
+   "name": "deqFlightDailyMult",
+   "value": 2,
+   "comment": "the flight-item daily rate: miles per day equal to twice the item's flight speed - the 4-person carpet at speed 24 covers 48 miles (printed p. 81)."
+  },
+  {
+   "name": "deqFlightNormalHours",
+   "value": 10,
+   "comment": "the flight-item day: the rate assumes 10 hours of flying with ample rest stops (printed p. 81)."
+  },
+  {
+   "name": "deqFlightHurriedMinHours",
+   "value": 18,
+   "comment": "the hurried flight, minimum: 18-20 hours aloft doubles the daily rate at forced-march cost (printed p. 81)."
+  },
+  {
+   "name": "deqFlightHurriedMaxHours",
+   "value": 20,
+   "comment": "the hurried flight, maximum: 20 hours aloft (printed p. 81)."
+  },
+  {
+   "name": "deqFlightAllDayMultHalf",
+   "value": 5,
+   "comment": "the round-the-clock flight: 24 hours a day moves at 2.5 times the normal daily rate - pinned in half-units as 5 - at double forced march penalties (printed p. 81)."
+  },
+  {
+   "name": "deqGirdlePouchGallons",
+   "value": 1,
+   "comment": "the girdle of many pouches: each small pouch holds about one gallon of water or a single tiny creature, four minutes of air when belted and sealed (printed p. 82)."
+  },
+  {
+   "name": "deqGirdlePouchAirMin",
+   "value": 4,
+   "comment": "the girdle of many pouches sealed air: about four minutes (printed p. 82)."
+  },
+  {
+   "name": "deqHaversackSideGallons",
+   "value": 2,
+   "comment": "the Heward's handy haversack side pouches: two gallons of water or one tiny creature each (printed p. 82)."
+  },
+  {
+   "name": "deqHaversackCentralGallons",
+   "value": 8,
+   "comment": "the Heward's handy haversack central compartment: eight gallons of water or a single small creature (printed p. 82)."
+  },
+  {
+   "name": "deqHaversackAirMin",
+   "value": 4,
+   "comment": "the haversack sealed air: about four minutes (printed p. 82)."
+  },
+  {
+   "name": "deqPouchGallons",
+   "value": 1,
+   "comment": "the pouch of accessibility: about one gallon of water or a single tiny creature per internal pouch (printed p. 83)."
+  },
+  {
+   "name": "deqPouchAirMin",
+   "value": 4,
+   "comment": "the pouch of accessibility sealed air: about four minutes (printed p. 83)."
+  },
+  {
+   "name": "deqFlatboxGallons",
+   "value": 60,
+   "comment": "the flatbox capacity: 60 gallons of water, six minutes of air with the lid closed - and notoriously unstable (printed p. 81)."
+  },
+  {
+   "name": "deqFlatboxAirMin",
+   "value": 6,
+   "comment": "the flatbox sealed air: six minutes (printed p. 81)."
+  },
+  {
+   "name": "deqJavelinRangeYds",
+   "value": 90,
+   "comment": "the javelin of lightning maximum range: 90 yards, the bolt extending from the target back toward the thrower (printed p. 82)."
+  },
+  {
+   "name": "deqJavelinMinTargetFt",
+   "value": 30,
+   "comment": "the javelin of lightning safety margin: never use it against a target within 30 feet (printed p. 82)."
+  },
+  {
+   "name": "deqPortableHoleCuFt",
+   "value": 280,
+   "comment": "the portable-hole capacity: about 280 cubic feet (printed p. 82)."
+  },
+  {
+   "name": "deqPortableHoleGallons",
+   "value": 2100,
+   "comment": "the portable-hole water load: about 2,100 gallons, or 100,000 standard coins, with no weight limit (printed p. 82)."
+  },
+  {
+   "name": "deqPortableHoleCoins",
+   "value": 100000,
+   "comment": "the portable-hole coin load: 100,000 standard coins (printed p. 82)."
+  },
+  {
+   "name": "deqPortableHoleAirMin",
+   "value": 10,
+   "comment": "the portable-hole air: 10 minutes for a creature inside (printed p. 82)."
+  },
+  {
+   "name": "deqVitalityHealHours",
+   "value": 4,
+   "comment": "the potion of vitality: natural healing rises to one hit point every four hours, restoring even magic-proof damage - but not damage that only magic can heal (printed p. 83)."
+  },
+  {
+   "name": "deqBeguilingRadiusFt",
+   "value": 20,
+   "comment": "the rod of beguiling radius: 20 feet, no saving throw, magic and mental resistance applying, the beguile lasting the full turn even out of the radius (printed p. 84)."
+  },
+  {
+   "name": "deqBeguilingDurationTurns",
+   "value": 1,
+   "comment": "the rod of beguiling duration: the full one-turn effect (printed p. 84)."
+  },
+  {
+   "name": "deqRulershipRadiusFt",
+   "value": 150,
+   "comment": "the rod of rulership radius: 150 feet - the ruled need not stay inside once affected (printed p. 84)."
+  },
+  {
+   "name": "deqResurrectionSpecialtyCharges",
+   "value": 2,
+   "comment": "the rod of resurrection specialty-priest cost: two charges instead of the usual one - healing, protection, warfare and endurance priests still pay one (printed p. 84)."
+  },
+  {
+   "name": "deqEntangleAreaSqFt",
+   "value": 200,
+   "comment": "the rope of entanglement area: all targets must fit within 200 square feet - eight 5-foot squares in any contiguous shape (printed p. 84)."
+  },
+  {
+   "name": "deqEntangleSaveMoveFt",
+   "value": 10,
+   "comment": "the rope of entanglement escape: successful savers can move 10 feet each round and attack nearby creatures, but not the rope (printed p. 84)."
+  },
+  {
+   "name": "deqEntangleInitPenalty",
+   "value": 2,
+   "comment": "the rope of entanglement penalty: entwined creatures suffer a +2 initiative penalty and attacks against them gain +2 (printed p. 84)."
+  },
+  {
+   "name": "deqEntangleImmobileBonus",
+   "value": 4,
+   "comment": "the rope of entanglement immobile bonus: failed savers are held completely immobile, attacks against them at +4 (printed p. 84)."
+  },
+  {
+   "name": "deqSphereControlMax",
+   "value": 92,
+   "comment": "the sphere-of-annihilation control cap: 92 percent for a 21st-level wizard of 18 Intelligence/Reason, no bonuses beyond (printed p. 85)."
+  },
+  {
+   "name": "deqSphereControlLevel",
+   "value": 21,
+   "comment": "the sphere-of-annihilation cap level: 21st (printed p. 85)."
+  },
+  {
+   "name": "deqSphereControlInt",
+   "value": 18,
+   "comment": "the sphere-of-annihilation cap Intelligence/Reason: 18 (printed p. 85)."
+  },
+  {
+   "name": "deqTalismanIntMult",
+   "value": 2,
+   "comment": "the talisman of the sphere: it doubles the wizard's Intelligence bonus for controlling the sphere (printed p. 85)."
+  },
+  {
+   "name": "deqWitherCharges",
+   "value": 3,
+   "comment": "the staff of withering cost: three charges per withered limb, announced at the beginning of the round (printed p. 85)."
+  },
+  {
+   "name": "deqWitherLimbDie",
+   "value": 4,
+   "comment": "the staff of withering humanoid roll: 1d4 - the right arm, the left arm, the right leg, the left leg (printed p. 85)."
+  },
+  {
+   "name": "deqWitherArmDexPenalty",
+   "value": 2,
+   "comment": "the withered-arm penalty: -2 Dexterity per shriveled arm, the arm useless for weapons, shields or unarmed attacks (printed p. 85)."
+  },
+  {
+   "name": "deqWitherLegDexPenalty",
+   "value": 6,
+   "comment": "the withered-leg penalty: -6 Dexterity, reduced to a crawl, no physical attacks, a crutch needed to walk (printed p. 85)."
+  },
+  {
+   "name": "deqWitherQuadMoveNum",
+   "value": 2,
+   "comment": "the withered quadruped movement, the numerator: a one-leg-shriveled quadruped moves at 2/3 its normal rate (printed p. 85)."
+  },
+  {
+   "name": "deqWitherQuadMoveDen",
+   "value": 3,
+   "comment": "the withered quadruped movement, the denominator: 2/3 rate, no attacks with the shriveled limb, two limbs meaning no movement or physical attack (printed p. 85)."
+  },
+  {
+   "name": "deqWitherQuadLimbDie",
+   "value": 6,
+   "comment": "the staff of withering quadruped roll: 1d6, 1-3 the right and 4-6 the left - the flying-humanoid roll riding the same die with the wings at 5 and 6 (printed p. 85)."
+  },
+  {
+   "name": "deqWitherRegenPoints",
+   "value": 20,
+   "comment": "the withered-limb regeneration: regenerators recover the limb after regenerating the equivalent of 20 points of damage - the ring wearer in 20 turns, the troll in seven rounds (printed p. 85)."
+  },
+  {
+   "name": "deqNegationInitMod",
+   "value": 1,
+   "comment": "the wand of negation initiative: +1 - it suppresses a device's spell-like function, expending its charges, but never cast spells or innate abilities (printed p. 85)."
+  },
+  {
+   "name": "deqScrollMinMagicRating",
+   "value": 2,
+   "comment": "the scroll bar: spell scrolls go inert on worlds rated M2 or lower - and the plane of Elemental Water turns a fireball scroll into harmless vapor (printed p. 84)."
+  },
+  {
+   "name": "deqStoneLuckBonus",
+   "value": 1,
+   "comment": "the stone of good luck bonus: +1 - or +5 percent - whenever dice decide whether the character, not the equipment, avoids an adverse happening: saves, system shock, resurrection survival (printed p. 85)."
+  },
+  {
+   "name": "deqStoneLuckPctBonus",
+   "value": 5,
+   "comment": "the stone of good luck percentage form: +5 percent (printed p. 85)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "deqNoSleepOnceDaily",
+   "value": true,
+   "comment": "the no-sleep rule: characters who do not require sleep acquire spells only once each day and only after eight hours of restful calm, never immediately after movement, combat or spellcasting (printed p. 69)."
+  },
+  {
+   "name": "deqDistractionRestarts",
+   "value": true,
+   "comment": "the distraction doctrine: a disturbed caster must begin the spell again, all time already spent lost - the pixie-prank Rozmare restarts her 30-minute fly (printed p. 69)."
+  },
+  {
+   "name": "deqShellNoDestroy",
+   "value": true,
+   "comment": "the antimagic-shell doctrine: the shell suppresses magic within the area but destroys or dispels nothing and kills no magical creatures - the golem, simulacrum, clone and most undead pass unaffected, conjured and extra-planar creatures hedged out (printed p. 69)."
+  },
+  {
+   "name": "deqShellBlocksRangedOnly",
+   "value": true,
+   "comment": "the antimagic-shell scope: special attacks working over a distance - breath, gaze, sonic, psionics - are suppressed, but touch-delivered attacks like energy draining stay effective; holy water is not magical and works fully (printed p. 69)."
+  },
+  {
+   "name": "deqAstralDiesWithBody",
+   "value": true,
+   "comment": "the astral-projection rule: the character dies immediately if the physical body is killed; dispel magic on the body recalls the traveler unharmed; projected items go inert on the Prime (printed pp. 69-70)."
+  },
+  {
+   "name": "deqHasteNeverStacks",
+   "value": true,
+   "comment": "the haste stacking rule: two or more haste-type effects grant only the best, and haste never magnifies magical items - boots or potions of speed (printed p. 71)."
+  },
+  {
+   "name": "deqStoneskinNonCumulative",
+   "value": true,
+   "comment": "the stoneskin rule: multiple stoneskins on one creature are not cumulative - the better protection wins, and the caster does not know the count; stoneskin blocks only blows, cuts, pokes and slashes, never falls, magic, touch attacks or non-blow poisons (printed p. 74)."
+  },
+  {
+   "name": "deqPermanentDispelledOnlyByGreater",
+   "value": true,
+   "comment": "the permanency doctrine: a permanent spell on a creature is dispelled only by a caster of greater level than the permanency caster at casting time, the dispel targeted solely on the creature; object and area permanencies can be dispelled by any caster, one effect per casting (printed p. 73)."
+  },
+  {
+   "name": "deqIdentifyWearItem",
+   "value": true,
+   "comment": "the identify handling rule: the caster must handle the item - wear or wield it as intended - so cursed items can bite, and no charges or pluses are ever revealed (printed p. 72)."
+  },
+  {
+   "name": "deqWishLetterAndLeastResistance",
+   "value": true,
+   "comment": "the wish adjudication: an errant wish follows the player's wording to the letter and the result follows the path of least resistance - the greedy staff-wisher standing naked before the former owner (printed p. 76)."
+  },
+  {
+   "name": "deqWishNoGainNoRest",
+   "value": true,
+   "comment": "the wish exemption: a change that leaves the caster no better off than before the wished-for events skips the Strength loss and the bed rest - the never-met-monster wish; any created advantage pays the full cost (printed p. 76)."
+  },
+  {
+   "name": "deqTeleportNeedsFirmSurface",
+   "value": true,
+   "comment": "the teleport destination rule: a firm surface is required - never open air or a water pool chosen to dodge the low arrival (printed p. 74)."
+  },
+  {
+   "name": "deqPolymorphNoMagicAbilities",
+   "value": true,
+   "comment": "the polymorph doctrine: the survivor gains purely physical abilities only - never magic, agility or intelligence based ones unless the mentality changes too; polymorph self grants movement and breathing only (printed p. 73)."
+  },
+  {
+   "name": "deqPolymorphSeenFormsOnly",
+   "value": true,
+   "comment": "the polymorph-self limit: the caster can assume only forms he has personally seen - never the unseen ochre jelly (printed p. 74)."
+  },
+  {
+   "name": "deqShapeChangeNonmagicalOnly",
+   "value": true,
+   "comment": "the shape-change doctrine: any non-magical, non-mental ability of the assumed form is gained - the owl's night vision yes, the cockatrice's petrifying touch no, never magic resistance (printed p. 74)."
+  },
+  {
+   "name": "deqStinkingCloudPermanent",
+   "value": true,
+   "comment": "the permanent stinking cloud: it stays and returns one round after any wind, hurricane force included, dispersing it; fire burns it away for one round after the flames die (printed p. 74)."
+  },
+  {
+   "name": "deqPermanentWebReforms",
+   "value": true,
+   "comment": "the permanent web doctrine: torn or burned-away webbing springs back - new webs replacing the old one round after the flames die, chunks carried out dissolving in seconds (printed p. 75)."
+  },
+  {
+   "name": "deqAgeCreatureNegatesMagicalAging",
+   "value": true,
+   "comment": "the restore-youth doctrine: it negates aging that is the magic's primary effect - age creature, the withering staff, the ghost - but never incidental aging from a wish or haste (printed p. 76)."
+  },
+  {
+   "name": "deqExtradimensionalRift",
+   "value": true,
+   "comment": "the extradimensional-seam doctrine: one such space placed inside another opens an Astral rift scattering both - the rope-trick rest camp - with the portable hole's inside-out gate and the flatbox's explosion the exceptions (printed p. 81)."
+  },
+  {
+   "name": "deqPotionsSelfOnlyDispelled",
+   "value": true,
+   "comment": "the potion-dispelling rule: an imbiber-only effect cannot be removed unless the dispel targets the creature directly; control-potion effects reaching others dispel normally, all at the 12th-level bar (printed p. 82)."
+  },
+  {
+   "name": "deqPotionShellDelayed",
+   "value": true,
+   "comment": "the potion-in-shell rule: a potion consumed inside an antimagic shell activates only on leaving; a consumed one is suppressed unless permanent - healing potions riding through (printed p. 82)."
+  },
+  {
+   "name": "deqRingRegenOnlyPostDonning",
+   "value": true,
+   "comment": "the ring-of-regeneration rule: it repairs only damage inflicted after the ring goes on - never reviving the dead or unconscious - and removes no need to eat, sleep or breathe (printed p. 83)."
+  },
+  {
+   "name": "deqRodAbsorbTargetOnly",
+   "value": true,
+   "comment": "the rod-of-absorption doctrine: only spells targeted specifically at the wielder can be absorbed - never the fireball burst centered elsewhere - an absorbed multi-target spell is negated for everyone, and 10th-level spells can never be absorbed (printed p. 83)."
+  },
+  {
+   "name": "deqDeckWishProof",
+   "value": true,
+   "comment": "the deck-of-many-things rule: its banes cannot be removed by wishes or lesser means - a wish only helps indirectly, and 10th-level wards cannot shield the harm while keeping the benefit (printed p. 81)."
+  },
+  {
+   "name": "deqGemInsightOnce",
+   "value": true,
+   "comment": "the gem-of-insight rule: a character benefits only once in a lifetime, no matter how many gems are found or kept (printed p. 82)."
+  },
+  {
+   "name": "deqQuiverNoCreatures",
+   "value": true,
+   "comment": "the quiver-of-Ehlonna limit: only long, thin objects fit - no creatures, no water (printed p. 83)."
+  },
+  {
+   "name": "deqIronBandsEscapable",
+   "value": true,
+   "comment": "the iron-bands-of-Bilarro rule: no saving throw but a successful attack roll required, a miss never entrapping; free action, wraithform, antimagic shell and duo-dimension all free the victim - teleportation merely moves the bands along (printed p. 82)."
+  },
+  {
+   "name": "deqWeightyChestNoWeapon",
+   "value": true,
+   "comment": "the weighty-chest rule: the weight increase triggers only when another creature tries to move or lift the chest - it can never be used as a weapon, though a foe can be tricked into lifting it (printed p. 79)."
+  },
+  {
+   "name": "deqBooksTriggerOnPerusal",
+   "value": true,
+   "comment": "the book doctrine: baneful and beneficial effects alike trigger on perusing even a small passage; magical books vanish after helping and stay after harming, and the multi-classed character takes only the best result (printed p. 80)."
+  },
+  {
+   "name": "deqDisplacementFirstAttackOnly",
+   "value": true,
+   "comment": "the cloak-of-displacement doctrine: the first melee or missile attack automatically misses and only that one, observers adjusting after; unaimed and area attacks ignore displacement, spells without attack rolls never miss but grant the +2 save (printed p. 80)."
+  },
+  {
+   "name": "deqFlightForcedMarch",
+   "value": true,
+   "comment": "the flight-item endurance rule: staying aloft 18-20 hours doubles the daily rate at forced-march cost, and 24-hour flying suffers double forced-march penalties (printed p. 81)."
+  },
+  {
+   "name": "deqScrollsCrossClass",
+   "value": true,
+   "comment": "the scroll rule: priests cannot read wizard scrolls nor wizards priest scrolls - but any reader of the right type reads past his normal restrictions, the illusionist reading dispel magic, the priest reading closed spheres (printed p. 84)."
+  },
+  {
+   "name": "deqSphereAutoAbove100",
+   "value": true,
+   "comment": "the sphere-of-annihilation rule: an adjusted control score of 100 percent or more means automatic success, other wizards able to contest the control (printed p. 85)."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "deqWishAging",
+   "tag": "T31",
+   "count": "deqRaceCount",
+   "cols": [
+    "deqLimitedWishAgingYears",
+    "deqWishAgingYears"
+   ],
+   "data": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     3,
+     15
+    ],
+    [
+     4,
+     20
+    ],
+    [
+     5,
+     25
+    ]
+   ],
+   "sentinel": -99,
+   "comment": "the aging ladder (printed pp. 72 and 76): five races, human through elf; the limited-wish column and the wish column, each requiring a system shock roll with failure meaning death.",
+   "col_comments": [
+    "the limited-wish aging in years for the race - one year for a human, two for a halfling or half-elf, three for a dwarf, four for a gnome, five for an elf (printed p. 72).",
+    "the wish aging in years for the race - five for a human, 10 for a halfling or half-elf, 15 for a dwarf, 20 for a gnome, 25 for an elf (printed p. 76)."
+   ]
+  },
+  {
+   "name": "deqPlanarResearch",
+   "tag": "T32",
+   "count": "deqPlaneTypeCount",
+   "cols": [
+    "deqResearchKnownCost",
+    "deqResearchUnknownCost",
+    "deqResearchKnownWeeks",
+    "deqResearchUnknownWeeks",
+    "deqRodCost"
+   ],
+   "data": [
+    [
+     500,
+     1500,
+     1,
+     6,
+     100
+    ],
+    [
+     1000,
+     3000,
+     2,
+     12,
+     300
+    ],
+    [
+     5000,
+     15000,
+     8,
+     52,
+     400
+    ],
+    [
+     750,
+     3000,
+     3,
+     9,
+     250
+    ]
+   ],
+   "sentinel": -99,
+   "comment": "the planar-research grid (printed p. 79): four plane types; the research cost in gold pieces and the research time in weeks, each split by whether the destination is generally known to the campaign's spellcasters or little known; the rod construction cost. A month pins as four weeks and the year as 52; the Astral and Ethereal count as known inner planes; commune access cuts the research time one step (a year to a month) but not the cost).",
+   "col_comments": [
+    "the research cost in gold pieces for a generally-known plane of this type (printed p. 79).",
+    "the research cost in gold pieces for a little-known plane of this type (printed p. 79).",
+    "the research time in weeks for a generally-known plane of this type - a month pins as four weeks, a year as 52 (printed p. 79).",
+    "the research time in weeks for a little-known plane of this type (printed p. 79).",
+    "the rod construction cost in gold pieces for the plane type, rare materials costing more (printed p. 79)."
+   ]
+  },
+  {
+   "name": "deqBagHolding",
+   "tag": "T33",
+   "count": "deqBagTypeCount",
+   "cols": [
+    "deqBagCapacityLbs",
+    "deqBagAirMinutes",
+    "deqBagWaterGallons"
+   ],
+   "data": [
+    [
+     250,
+     4,
+     30
+    ],
+    [
+     500,
+     6,
+     60
+    ],
+    [
+     1000,
+     8,
+     120
+    ],
+    [
+     1500,
+     10,
+     180
+    ]
+   ],
+   "sentinel": -99,
+   "comment": "the bag-of-holding grid (printed p. 80): four bag sizes; the sealed-bag air a single creature gets before gasping (twice the listed time forces a save vs. poison each turn to stay conscious, a second failure killing) and the water capacity - a full water load looking only ten percent full, an easy way to exceed the weight limit and destroy the bag).",
+   "col_comments": [
+    "the capacity in pounds of the bag - 250, 500, 1,000, 1,500 (printed p. 80).",
+    "the minutes of air for a single creature in the sealed bag; at twice the listed time the gasping saves begin (printed p. 80).",
+    "the water capacity in gallons of the bag - 30, 60, 120, 180, a full load reading ten percent (printed p. 80)."
+   ]
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the Rozmare fly read: a 3rd-level spell takes 30 minutes at 10 minutes a level (printed pp. 68-69)",
+   "expr": "m['deqMemorizeMinutesPerLevel']() != 10"
+  },
+  {
+   "note": "the limited-wish read: a gnome ages four years from a limited wish and twenty from a wish (printed pp. 72, 76)",
+   "expr": "m['deqLimitedWishAgingYears'](3) != 4 or m['deqWishAgingYears'](3) != 20"
+  },
+  {
+   "note": "the demiplane research: 5,000 gp known and 15,000 unknown, eight weeks known and a year - 52 weeks - unknown, the rod at 400 gp (printed p. 79)",
+   "expr": "m['deqResearchKnownCost'](2) != 5000 or m['deqResearchUnknownCost'](2) != 15000 or m['deqResearchUnknownWeeks'](2) != 52 or m['deqRodCost'](2) != 400"
+  },
+  {
+   "note": "the Ethereal-attached pocket dimension: the inner-plane known cost 500 plus the 2,000 modifier = 2,500 gp, one week plus the four-week modifier = five weeks (printed p. 79)",
+   "expr": "m['deqResearchKnownCost'](0) != 500 or m['deqPocketDimExtraCost']() != 2000 or m['deqResearchKnownWeeks'](0) != 1 or m['deqPocketDimExtraWeeks']() != 4"
+  },
+  {
+   "note": "the 1,000-pound bag: eight minutes of air and 120 gallons of water (printed p. 80)",
+   "expr": "m['deqBagCapacityLbs'](2) != 1000 or m['deqBagAirMinutes'](2) != 8 or m['deqBagWaterGallons'](2) != 120"
+  },
+  {
+   "note": "the horrid-wilting cap: 16 dice of d8 (printed p. 69, the OCR B misread)",
+   "expr": "m['deqHorridWiltingDice']() != 16 or m['deqHorridWiltingDieSize']() != 8"
+  },
+  {
+   "note": "the cone of cold: 10d4+10 (printed p. 70)",
+   "expr": "m['deqConeOfColdDice']() != 10 or m['deqConeOfColdDieSize']() != 4 or m['deqConeOfColdBonus']() != 10"
+  },
+  {
+   "note": "the troll wither-recovery: 20 points of regeneration - seven rounds for a troll regenerating three a round, 20 turns for the ring wearer (printed p. 85)",
+   "expr": "m['deqWitherRegenPoints']() != 20"
+  },
+  {
+   "note": "the sphere cap: 92 percent at 21st level and 18 Intelligence, the talisman doubling the bonus (printed p. 85)",
+   "expr": "m['deqSphereControlMax']() != 92 or m['deqSphereControlLevel']() != 21 or m['deqSphereControlInt']() != 18 or m['deqTalismanIntMult']() != 2"
+  },
+  {
+   "note": "the wish wealth: 5d8 x 1,000 - 5,000 to 40,000 gold pieces (printed p. 76)",
+   "expr": "m['deqWishWealthDiceCount']() != 5 or m['deqWishWealthDieSize']() != 8 or m['deqWishWealthMult']() != 1000"
+  },
+  {
+   "note": "the permanent teleport: a 10-foot cube - 1,000 cubic feet - or 20 feet square - 400 square feet (printed p. 75)",
+   "expr": "m['deqTeleportPermanentCuFt']() != 1000 or m['deqTeleportPermanentSqFt']() != 400"
+  },
+  {
+   "note": "the astral return: one hit point, the -4 penalty, movement 30 times Intelligence (printed p. 70)",
+   "expr": "m['deqAstralReturnHp']() != 1 or m['deqAstralPenalty']() != 4 or m['deqAstralMovePerInt']() != 30"
+  }
+ ],
+ "header_sections": {
+  "the DMO spells-and-items pins": [
+   {
+    "kind": "const",
+    "name": "deqRaceCount"
+   },
+   {
+    "kind": "const",
+    "name": "deqPlaneTypeCount"
+   },
+   {
+    "kind": "const",
+    "name": "deqBagTypeCount"
+   },
+   {
+    "kind": "const",
+    "name": "deqMemorizeMinutesPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deqRestHoursMin"
+   },
+   {
+    "kind": "const",
+    "name": "deqStudyHoursMax"
+   },
+   {
+    "kind": "const",
+    "name": "deqHorridWiltingDice"
+   },
+   {
+    "kind": "const",
+    "name": "deqHorridWiltingDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "deqConeOfColdDice"
+   },
+   {
+    "kind": "const",
+    "name": "deqConeOfColdDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "deqConeOfColdBonus"
+   },
+   {
+    "kind": "const",
+    "name": "deqDelayedBlastDice"
+   },
+   {
+    "kind": "const",
+    "name": "deqDelayedBlastDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "deqDelayedBlastBonus"
+   },
+   {
+    "kind": "const",
+    "name": "deqColorSprayHandWidthFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqColorSprayLengthFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqColorSprayFarWidthFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqDispelItemInertDie"
+   },
+   {
+    "kind": "const",
+    "name": "deqPotionDispelLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deqEspBonusMinor"
+   },
+   {
+    "kind": "const",
+    "name": "deqEspBonusDamaging"
+   },
+   {
+    "kind": "const",
+    "name": "deqEspBonusSerious"
+   },
+   {
+    "kind": "const",
+    "name": "deqEspBonusDeep"
+   },
+   {
+    "kind": "const",
+    "name": "deqFeatherFallAutoFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqFeatherFallFtPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deqFeatherFallInitPerBand"
+   },
+   {
+    "kind": "const",
+    "name": "deqFlyManeuverClass"
+   },
+   {
+    "kind": "const",
+    "name": "deqFlyTurnDegrees"
+   },
+   {
+    "kind": "const",
+    "name": "deqFearConeInitMod"
+   },
+   {
+    "kind": "const",
+    "name": "deqHasteAgingYears"
+   },
+   {
+    "kind": "const",
+    "name": "deqIdentifyPurifyHours"
+   },
+   {
+    "kind": "const",
+    "name": "deqIdentifyConLoss"
+   },
+   {
+    "kind": "const",
+    "name": "deqReinvisibilityInitMod"
+   },
+   {
+    "kind": "const",
+    "name": "deqLimitedWishMimicMax"
+   },
+   {
+    "kind": "const",
+    "name": "deqWishDuplicateMax"
+   },
+   {
+    "kind": "const",
+    "name": "deqWishStrLoss"
+   },
+   {
+    "kind": "const",
+    "name": "deqWishBedRestDie"
+   },
+   {
+    "kind": "const",
+    "name": "deqWishBedRestCount"
+   },
+   {
+    "kind": "const",
+    "name": "deqWishWealthDiceCount"
+   },
+   {
+    "kind": "const",
+    "name": "deqWishWealthDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "deqWishWealthMult"
+   },
+   {
+    "kind": "const",
+    "name": "deqWishItemLoanHours"
+   },
+   {
+    "kind": "const",
+    "name": "deqWishLevelPerWish"
+   },
+   {
+    "kind": "const",
+    "name": "deqMagicStaffMinRating"
+   },
+   {
+    "kind": "const",
+    "name": "deqPwsMoveDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "deqPwsMoveMax"
+   },
+   {
+    "kind": "const",
+    "name": "deqPwsAttackBonus"
+   },
+   {
+    "kind": "const",
+    "name": "deqRopeTrickLbs"
+   },
+   {
+    "kind": "const",
+    "name": "deqStoneskinHours"
+   },
+   {
+    "kind": "const",
+    "name": "deqTeleportPermanentCuFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqTeleportPermanentSqFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqTeleportLowYardsDie"
+   },
+   {
+    "kind": "const",
+    "name": "deqUnseenServantHoverFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqUnseenServantReformDie"
+   },
+   {
+    "kind": "const",
+    "name": "deqUnseenServantReformCount"
+   },
+   {
+    "kind": "const",
+    "name": "deqAstralMovePerInt"
+   },
+   {
+    "kind": "const",
+    "name": "deqAstralReturnHp"
+   },
+   {
+    "kind": "const",
+    "name": "deqAstralPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deqHolyMightCap"
+   },
+   {
+    "kind": "const",
+    "name": "deqKnowTimePctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deqPlaneShiftCompanions"
+   },
+   {
+    "kind": "const",
+    "name": "deqPocketDimExtraCost"
+   },
+   {
+    "kind": "const",
+    "name": "deqPocketDimExtraWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "deqNapWindowHours"
+   },
+   {
+    "kind": "const",
+    "name": "deqSentinelRestTurns"
+   },
+   {
+    "kind": "const",
+    "name": "deqSpeakWithDeadRangeYds"
+   },
+   {
+    "kind": "const",
+    "name": "deqAmuletPsycheDays"
+   },
+   {
+    "kind": "const",
+    "name": "deqFortressDamageRounds"
+   },
+   {
+    "kind": "const",
+    "name": "deqExtradimensionalGateFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqFlightDailyMult"
+   },
+   {
+    "kind": "const",
+    "name": "deqFlightNormalHours"
+   },
+   {
+    "kind": "const",
+    "name": "deqFlightHurriedMinHours"
+   },
+   {
+    "kind": "const",
+    "name": "deqFlightHurriedMaxHours"
+   },
+   {
+    "kind": "const",
+    "name": "deqFlightAllDayMultHalf"
+   },
+   {
+    "kind": "const",
+    "name": "deqGirdlePouchGallons"
+   },
+   {
+    "kind": "const",
+    "name": "deqGirdlePouchAirMin"
+   },
+   {
+    "kind": "const",
+    "name": "deqHaversackSideGallons"
+   },
+   {
+    "kind": "const",
+    "name": "deqHaversackCentralGallons"
+   },
+   {
+    "kind": "const",
+    "name": "deqHaversackAirMin"
+   },
+   {
+    "kind": "const",
+    "name": "deqPouchGallons"
+   },
+   {
+    "kind": "const",
+    "name": "deqPouchAirMin"
+   },
+   {
+    "kind": "const",
+    "name": "deqFlatboxGallons"
+   },
+   {
+    "kind": "const",
+    "name": "deqFlatboxAirMin"
+   },
+   {
+    "kind": "const",
+    "name": "deqJavelinRangeYds"
+   },
+   {
+    "kind": "const",
+    "name": "deqJavelinMinTargetFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqPortableHoleCuFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqPortableHoleGallons"
+   },
+   {
+    "kind": "const",
+    "name": "deqPortableHoleCoins"
+   },
+   {
+    "kind": "const",
+    "name": "deqPortableHoleAirMin"
+   },
+   {
+    "kind": "const",
+    "name": "deqVitalityHealHours"
+   },
+   {
+    "kind": "const",
+    "name": "deqBeguilingRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqBeguilingDurationTurns"
+   },
+   {
+    "kind": "const",
+    "name": "deqRulershipRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqResurrectionSpecialtyCharges"
+   },
+   {
+    "kind": "const",
+    "name": "deqEntangleAreaSqFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqEntangleSaveMoveFt"
+   },
+   {
+    "kind": "const",
+    "name": "deqEntangleInitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deqEntangleImmobileBonus"
+   },
+   {
+    "kind": "const",
+    "name": "deqSphereControlMax"
+   },
+   {
+    "kind": "const",
+    "name": "deqSphereControlLevel"
+   },
+   {
+    "kind": "const",
+    "name": "deqSphereControlInt"
+   },
+   {
+    "kind": "const",
+    "name": "deqTalismanIntMult"
+   },
+   {
+    "kind": "const",
+    "name": "deqWitherCharges"
+   },
+   {
+    "kind": "const",
+    "name": "deqWitherLimbDie"
+   },
+   {
+    "kind": "const",
+    "name": "deqWitherArmDexPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deqWitherLegDexPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "deqWitherQuadMoveNum"
+   },
+   {
+    "kind": "const",
+    "name": "deqWitherQuadMoveDen"
+   },
+   {
+    "kind": "const",
+    "name": "deqWitherQuadLimbDie"
+   },
+   {
+    "kind": "const",
+    "name": "deqWitherRegenPoints"
+   },
+   {
+    "kind": "const",
+    "name": "deqNegationInitMod"
+   },
+   {
+    "kind": "const",
+    "name": "deqScrollMinMagicRating"
+   },
+   {
+    "kind": "const",
+    "name": "deqStoneLuckBonus"
+   },
+   {
+    "kind": "const",
+    "name": "deqStoneLuckPctBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "deqNoSleepOnceDaily"
+   },
+   {
+    "kind": "bool",
+    "name": "deqDistractionRestarts"
+   },
+   {
+    "kind": "bool",
+    "name": "deqShellNoDestroy"
+   },
+   {
+    "kind": "bool",
+    "name": "deqShellBlocksRangedOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "deqAstralDiesWithBody"
+   },
+   {
+    "kind": "bool",
+    "name": "deqHasteNeverStacks"
+   },
+   {
+    "kind": "bool",
+    "name": "deqStoneskinNonCumulative"
+   },
+   {
+    "kind": "bool",
+    "name": "deqPermanentDispelledOnlyByGreater"
+   },
+   {
+    "kind": "bool",
+    "name": "deqIdentifyWearItem"
+   },
+   {
+    "kind": "bool",
+    "name": "deqWishLetterAndLeastResistance"
+   },
+   {
+    "kind": "bool",
+    "name": "deqWishNoGainNoRest"
+   },
+   {
+    "kind": "bool",
+    "name": "deqTeleportNeedsFirmSurface"
+   },
+   {
+    "kind": "bool",
+    "name": "deqPolymorphNoMagicAbilities"
+   },
+   {
+    "kind": "bool",
+    "name": "deqPolymorphSeenFormsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "deqShapeChangeNonmagicalOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "deqStinkingCloudPermanent"
+   },
+   {
+    "kind": "bool",
+    "name": "deqPermanentWebReforms"
+   },
+   {
+    "kind": "bool",
+    "name": "deqAgeCreatureNegatesMagicalAging"
+   },
+   {
+    "kind": "bool",
+    "name": "deqExtradimensionalRift"
+   },
+   {
+    "kind": "bool",
+    "name": "deqPotionsSelfOnlyDispelled"
+   },
+   {
+    "kind": "bool",
+    "name": "deqPotionShellDelayed"
+   },
+   {
+    "kind": "bool",
+    "name": "deqRingRegenOnlyPostDonning"
+   },
+   {
+    "kind": "bool",
+    "name": "deqRodAbsorbTargetOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "deqDeckWishProof"
+   },
+   {
+    "kind": "bool",
+    "name": "deqGemInsightOnce"
+   },
+   {
+    "kind": "bool",
+    "name": "deqQuiverNoCreatures"
+   },
+   {
+    "kind": "bool",
+    "name": "deqIronBandsEscapable"
+   },
+   {
+    "kind": "bool",
+    "name": "deqWeightyChestNoWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "deqBooksTriggerOnPerusal"
+   },
+   {
+    "kind": "bool",
+    "name": "deqDisplacementFirstAttackOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "deqFlightForcedMarch"
+   },
+   {
+    "kind": "bool",
+    "name": "deqScrollsCrossClass"
+   },
+   {
+    "kind": "bool",
+    "name": "deqSphereAutoAbove100"
+   },
+   {
+    "kind": "table",
+    "name": "deqWishAging"
+   },
+   {
+    "kind": "table",
+    "name": "deqPlanarResearch"
+   },
+   {
+    "kind": "table",
+    "name": "deqBagHolding"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the deqRaceCount pin",
+   "expr": "m['deqRaceCount']() != 5"
+  },
+  {
+   "note": "the deqPlaneTypeCount pin",
+   "expr": "m['deqPlaneTypeCount']() != 4"
+  },
+  {
+   "note": "the deqBagTypeCount pin",
+   "expr": "m['deqBagTypeCount']() != 4"
+  },
+  {
+   "note": "the deqMemorizeMinutesPerLevel pin",
+   "expr": "m['deqMemorizeMinutesPerLevel']() != 10"
+  },
+  {
+   "note": "the deqRestHoursMin pin",
+   "expr": "m['deqRestHoursMin']() != 8"
+  },
+  {
+   "note": "the deqStudyHoursMax pin",
+   "expr": "m['deqStudyHoursMax']() != 8"
+  },
+  {
+   "note": "the deqHorridWiltingDice pin",
+   "expr": "m['deqHorridWiltingDice']() != 16"
+  },
+  {
+   "note": "the deqHorridWiltingDieSize pin",
+   "expr": "m['deqHorridWiltingDieSize']() != 8"
+  },
+  {
+   "note": "the deqConeOfColdDice pin",
+   "expr": "m['deqConeOfColdDice']() != 10"
+  },
+  {
+   "note": "the deqConeOfColdDieSize pin",
+   "expr": "m['deqConeOfColdDieSize']() != 4"
+  },
+  {
+   "note": "the deqConeOfColdBonus pin",
+   "expr": "m['deqConeOfColdBonus']() != 10"
+  },
+  {
+   "note": "the deqDelayedBlastDice pin",
+   "expr": "m['deqDelayedBlastDice']() != 15"
+  },
+  {
+   "note": "the deqDelayedBlastDieSize pin",
+   "expr": "m['deqDelayedBlastDieSize']() != 6"
+  },
+  {
+   "note": "the deqDelayedBlastBonus pin",
+   "expr": "m['deqDelayedBlastBonus']() != 15"
+  },
+  {
+   "note": "the deqColorSprayHandWidthFt pin",
+   "expr": "m['deqColorSprayHandWidthFt']() != 5"
+  },
+  {
+   "note": "the deqColorSprayLengthFt pin",
+   "expr": "m['deqColorSprayLengthFt']() != 20"
+  },
+  {
+   "note": "the deqColorSprayFarWidthFt pin",
+   "expr": "m['deqColorSprayFarWidthFt']() != 20"
+  },
+  {
+   "note": "the deqDispelItemInertDie pin",
+   "expr": "m['deqDispelItemInertDie']() != 4"
+  },
+  {
+   "note": "the deqPotionDispelLevel pin",
+   "expr": "m['deqPotionDispelLevel']() != 12"
+  },
+  {
+   "note": "the deqEspBonusMinor pin",
+   "expr": "m['deqEspBonusMinor']() != 1"
+  },
+  {
+   "note": "the deqEspBonusDamaging pin",
+   "expr": "m['deqEspBonusDamaging']() != 2"
+  },
+  {
+   "note": "the deqEspBonusSerious pin",
+   "expr": "m['deqEspBonusSerious']() != 3"
+  },
+  {
+   "note": "the deqEspBonusDeep pin",
+   "expr": "m['deqEspBonusDeep']() != 4"
+  },
+  {
+   "note": "the deqFeatherFallAutoFt pin",
+   "expr": "m['deqFeatherFallAutoFt']() != 10"
+  },
+  {
+   "note": "the deqFeatherFallFtPerLevel pin",
+   "expr": "m['deqFeatherFallFtPerLevel']() != 120"
+  },
+  {
+   "note": "the deqFeatherFallInitPerBand pin",
+   "expr": "m['deqFeatherFallInitPerBand']() != 1"
+  },
+  {
+   "note": "the deqFlyManeuverClass pin",
+   "expr": "m['deqFlyManeuverClass']() != 2"
+  },
+  {
+   "note": "the deqFlyTurnDegrees pin",
+   "expr": "m['deqFlyTurnDegrees']() != 180"
+  },
+  {
+   "note": "the deqFearConeInitMod pin",
+   "expr": "m['deqFearConeInitMod']() != 3"
+  },
+  {
+   "note": "the deqHasteAgingYears pin",
+   "expr": "m['deqHasteAgingYears']() != 1"
+  },
+  {
+   "note": "the deqIdentifyPurifyHours pin",
+   "expr": "m['deqIdentifyPurifyHours']() != 8"
+  },
+  {
+   "note": "the deqIdentifyConLoss pin",
+   "expr": "m['deqIdentifyConLoss']() != 8"
+  },
+  {
+   "note": "the deqReinvisibilityInitMod pin",
+   "expr": "m['deqReinvisibilityInitMod']() != 3"
+  },
+  {
+   "note": "the deqLimitedWishMimicMax pin",
+   "expr": "m['deqLimitedWishMimicMax']() != 7"
+  },
+  {
+   "note": "the deqWishDuplicateMax pin",
+   "expr": "m['deqWishDuplicateMax']() != 9"
+  },
+  {
+   "note": "the deqWishStrLoss pin",
+   "expr": "m['deqWishStrLoss']() != 3"
+  },
+  {
+   "note": "the deqWishBedRestDie pin",
+   "expr": "m['deqWishBedRestDie']() != 4"
+  },
+  {
+   "note": "the deqWishBedRestCount pin",
+   "expr": "m['deqWishBedRestCount']() != 2"
+  },
+  {
+   "note": "the deqWishWealthDiceCount pin",
+   "expr": "m['deqWishWealthDiceCount']() != 5"
+  },
+  {
+   "note": "the deqWishWealthDieSize pin",
+   "expr": "m['deqWishWealthDieSize']() != 8"
+  },
+  {
+   "note": "the deqWishWealthMult pin",
+   "expr": "m['deqWishWealthMult']() != 1000"
+  },
+  {
+   "note": "the deqWishItemLoanHours pin",
+   "expr": "m['deqWishItemLoanHours']() != 1"
+  },
+  {
+   "note": "the deqWishLevelPerWish pin",
+   "expr": "m['deqWishLevelPerWish']() != 1"
+  },
+  {
+   "note": "the deqMagicStaffMinRating pin",
+   "expr": "m['deqMagicStaffMinRating']() != 4"
+  },
+  {
+   "note": "the deqPwsMoveDivisor pin",
+   "expr": "m['deqPwsMoveDivisor']() != 3"
+  },
+  {
+   "note": "the deqPwsMoveMax pin",
+   "expr": "m['deqPwsMoveMax']() != 3"
+  },
+  {
+   "note": "the deqPwsAttackBonus pin",
+   "expr": "m['deqPwsAttackBonus']() != 4"
+  },
+  {
+   "note": "the deqRopeTrickLbs pin",
+   "expr": "m['deqRopeTrickLbs']() != 1000"
+  },
+  {
+   "note": "the deqStoneskinHours pin",
+   "expr": "m['deqStoneskinHours']() != 24"
+  },
+  {
+   "note": "the deqTeleportPermanentCuFt pin",
+   "expr": "m['deqTeleportPermanentCuFt']() != 1000"
+  },
+  {
+   "note": "the deqTeleportPermanentSqFt pin",
+   "expr": "m['deqTeleportPermanentSqFt']() != 400"
+  },
+  {
+   "note": "the deqTeleportLowYardsDie pin",
+   "expr": "m['deqTeleportLowYardsDie']() != 100"
+  },
+  {
+   "note": "the deqUnseenServantHoverFt pin",
+   "expr": "m['deqUnseenServantHoverFt']() != 30"
+  },
+  {
+   "note": "the deqUnseenServantReformDie pin",
+   "expr": "m['deqUnseenServantReformDie']() != 10"
+  },
+  {
+   "note": "the deqUnseenServantReformCount pin",
+   "expr": "m['deqUnseenServantReformCount']() != 2"
+  },
+  {
+   "note": "the deqAstralMovePerInt pin",
+   "expr": "m['deqAstralMovePerInt']() != 30"
+  },
+  {
+   "note": "the deqAstralReturnHp pin",
+   "expr": "m['deqAstralReturnHp']() != 1"
+  },
+  {
+   "note": "the deqAstralPenalty pin",
+   "expr": "m['deqAstralPenalty']() != 4"
+  },
+  {
+   "note": "the deqHolyMightCap pin",
+   "expr": "m['deqHolyMightCap']() != 25"
+  },
+  {
+   "note": "the deqKnowTimePctPerLevel pin",
+   "expr": "m['deqKnowTimePctPerLevel']() != 2"
+  },
+  {
+   "note": "the deqPlaneShiftCompanions pin",
+   "expr": "m['deqPlaneShiftCompanions']() != 7"
+  },
+  {
+   "note": "the deqPocketDimExtraCost pin",
+   "expr": "m['deqPocketDimExtraCost']() != 2000"
+  },
+  {
+   "note": "the deqPocketDimExtraWeeks pin",
+   "expr": "m['deqPocketDimExtraWeeks']() != 4"
+  },
+  {
+   "note": "the deqNapWindowHours pin",
+   "expr": "m['deqNapWindowHours']() != 18"
+  },
+  {
+   "note": "the deqSentinelRestTurns pin",
+   "expr": "m['deqSentinelRestTurns']() != 48"
+  },
+  {
+   "note": "the deqSpeakWithDeadRangeYds pin",
+   "expr": "m['deqSpeakWithDeadRangeYds']() != 1"
+  },
+  {
+   "note": "the deqAmuletPsycheDays pin",
+   "expr": "m['deqAmuletPsycheDays']() != 7"
+  },
+  {
+   "note": "the deqFortressDamageRounds pin",
+   "expr": "m['deqFortressDamageRounds']() != 3"
+  },
+  {
+   "note": "the deqExtradimensionalGateFt pin",
+   "expr": "m['deqExtradimensionalGateFt']() != 10"
+  },
+  {
+   "note": "the deqFlightDailyMult pin",
+   "expr": "m['deqFlightDailyMult']() != 2"
+  },
+  {
+   "note": "the deqFlightNormalHours pin",
+   "expr": "m['deqFlightNormalHours']() != 10"
+  },
+  {
+   "note": "the deqFlightHurriedMinHours pin",
+   "expr": "m['deqFlightHurriedMinHours']() != 18"
+  },
+  {
+   "note": "the deqFlightHurriedMaxHours pin",
+   "expr": "m['deqFlightHurriedMaxHours']() != 20"
+  },
+  {
+   "note": "the deqFlightAllDayMultHalf pin",
+   "expr": "m['deqFlightAllDayMultHalf']() != 5"
+  },
+  {
+   "note": "the deqGirdlePouchGallons pin",
+   "expr": "m['deqGirdlePouchGallons']() != 1"
+  },
+  {
+   "note": "the deqGirdlePouchAirMin pin",
+   "expr": "m['deqGirdlePouchAirMin']() != 4"
+  },
+  {
+   "note": "the deqHaversackSideGallons pin",
+   "expr": "m['deqHaversackSideGallons']() != 2"
+  },
+  {
+   "note": "the deqHaversackCentralGallons pin",
+   "expr": "m['deqHaversackCentralGallons']() != 8"
+  },
+  {
+   "note": "the deqHaversackAirMin pin",
+   "expr": "m['deqHaversackAirMin']() != 4"
+  },
+  {
+   "note": "the deqPouchGallons pin",
+   "expr": "m['deqPouchGallons']() != 1"
+  },
+  {
+   "note": "the deqPouchAirMin pin",
+   "expr": "m['deqPouchAirMin']() != 4"
+  },
+  {
+   "note": "the deqFlatboxGallons pin",
+   "expr": "m['deqFlatboxGallons']() != 60"
+  },
+  {
+   "note": "the deqFlatboxAirMin pin",
+   "expr": "m['deqFlatboxAirMin']() != 6"
+  },
+  {
+   "note": "the deqJavelinRangeYds pin",
+   "expr": "m['deqJavelinRangeYds']() != 90"
+  },
+  {
+   "note": "the deqJavelinMinTargetFt pin",
+   "expr": "m['deqJavelinMinTargetFt']() != 30"
+  },
+  {
+   "note": "the deqPortableHoleCuFt pin",
+   "expr": "m['deqPortableHoleCuFt']() != 280"
+  },
+  {
+   "note": "the deqPortableHoleGallons pin",
+   "expr": "m['deqPortableHoleGallons']() != 2100"
+  },
+  {
+   "note": "the deqPortableHoleCoins pin",
+   "expr": "m['deqPortableHoleCoins']() != 100000"
+  },
+  {
+   "note": "the deqPortableHoleAirMin pin",
+   "expr": "m['deqPortableHoleAirMin']() != 10"
+  },
+  {
+   "note": "the deqVitalityHealHours pin",
+   "expr": "m['deqVitalityHealHours']() != 4"
+  },
+  {
+   "note": "the deqBeguilingRadiusFt pin",
+   "expr": "m['deqBeguilingRadiusFt']() != 20"
+  },
+  {
+   "note": "the deqBeguilingDurationTurns pin",
+   "expr": "m['deqBeguilingDurationTurns']() != 1"
+  },
+  {
+   "note": "the deqRulershipRadiusFt pin",
+   "expr": "m['deqRulershipRadiusFt']() != 150"
+  },
+  {
+   "note": "the deqResurrectionSpecialtyCharges pin",
+   "expr": "m['deqResurrectionSpecialtyCharges']() != 2"
+  },
+  {
+   "note": "the deqEntangleAreaSqFt pin",
+   "expr": "m['deqEntangleAreaSqFt']() != 200"
+  },
+  {
+   "note": "the deqEntangleSaveMoveFt pin",
+   "expr": "m['deqEntangleSaveMoveFt']() != 10"
+  },
+  {
+   "note": "the deqEntangleInitPenalty pin",
+   "expr": "m['deqEntangleInitPenalty']() != 2"
+  },
+  {
+   "note": "the deqEntangleImmobileBonus pin",
+   "expr": "m['deqEntangleImmobileBonus']() != 4"
+  },
+  {
+   "note": "the deqSphereControlMax pin",
+   "expr": "m['deqSphereControlMax']() != 92"
+  },
+  {
+   "note": "the deqSphereControlLevel pin",
+   "expr": "m['deqSphereControlLevel']() != 21"
+  },
+  {
+   "note": "the deqSphereControlInt pin",
+   "expr": "m['deqSphereControlInt']() != 18"
+  },
+  {
+   "note": "the deqTalismanIntMult pin",
+   "expr": "m['deqTalismanIntMult']() != 2"
+  },
+  {
+   "note": "the deqWitherCharges pin",
+   "expr": "m['deqWitherCharges']() != 3"
+  },
+  {
+   "note": "the deqWitherLimbDie pin",
+   "expr": "m['deqWitherLimbDie']() != 4"
+  },
+  {
+   "note": "the deqWitherArmDexPenalty pin",
+   "expr": "m['deqWitherArmDexPenalty']() != 2"
+  },
+  {
+   "note": "the deqWitherLegDexPenalty pin",
+   "expr": "m['deqWitherLegDexPenalty']() != 6"
+  },
+  {
+   "note": "the deqWitherQuadMoveNum pin",
+   "expr": "m['deqWitherQuadMoveNum']() != 2"
+  },
+  {
+   "note": "the deqWitherQuadMoveDen pin",
+   "expr": "m['deqWitherQuadMoveDen']() != 3"
+  },
+  {
+   "note": "the deqWitherQuadLimbDie pin",
+   "expr": "m['deqWitherQuadLimbDie']() != 6"
+  },
+  {
+   "note": "the deqWitherRegenPoints pin",
+   "expr": "m['deqWitherRegenPoints']() != 20"
+  },
+  {
+   "note": "the deqNegationInitMod pin",
+   "expr": "m['deqNegationInitMod']() != 1"
+  },
+  {
+   "note": "the deqScrollMinMagicRating pin",
+   "expr": "m['deqScrollMinMagicRating']() != 2"
+  },
+  {
+   "note": "the deqStoneLuckBonus pin",
+   "expr": "m['deqStoneLuckBonus']() != 1"
+  },
+  {
+   "note": "the deqStoneLuckPctBonus pin",
+   "expr": "m['deqStoneLuckPctBonus']() != 5"
+  },
+  {
+   "note": "the deqNoSleepOnceDaily pin",
+   "expr": "m['deqNoSleepOnceDaily']() != 1"
+  },
+  {
+   "note": "the deqDistractionRestarts pin",
+   "expr": "m['deqDistractionRestarts']() != 1"
+  },
+  {
+   "note": "the deqShellNoDestroy pin",
+   "expr": "m['deqShellNoDestroy']() != 1"
+  },
+  {
+   "note": "the deqShellBlocksRangedOnly pin",
+   "expr": "m['deqShellBlocksRangedOnly']() != 1"
+  },
+  {
+   "note": "the deqAstralDiesWithBody pin",
+   "expr": "m['deqAstralDiesWithBody']() != 1"
+  },
+  {
+   "note": "the deqHasteNeverStacks pin",
+   "expr": "m['deqHasteNeverStacks']() != 1"
+  },
+  {
+   "note": "the deqStoneskinNonCumulative pin",
+   "expr": "m['deqStoneskinNonCumulative']() != 1"
+  },
+  {
+   "note": "the deqPermanentDispelledOnlyByGreater pin",
+   "expr": "m['deqPermanentDispelledOnlyByGreater']() != 1"
+  },
+  {
+   "note": "the deqIdentifyWearItem pin",
+   "expr": "m['deqIdentifyWearItem']() != 1"
+  },
+  {
+   "note": "the deqWishLetterAndLeastResistance pin",
+   "expr": "m['deqWishLetterAndLeastResistance']() != 1"
+  },
+  {
+   "note": "the deqWishNoGainNoRest pin",
+   "expr": "m['deqWishNoGainNoRest']() != 1"
+  },
+  {
+   "note": "the deqTeleportNeedsFirmSurface pin",
+   "expr": "m['deqTeleportNeedsFirmSurface']() != 1"
+  },
+  {
+   "note": "the deqPolymorphNoMagicAbilities pin",
+   "expr": "m['deqPolymorphNoMagicAbilities']() != 1"
+  },
+  {
+   "note": "the deqPolymorphSeenFormsOnly pin",
+   "expr": "m['deqPolymorphSeenFormsOnly']() != 1"
+  },
+  {
+   "note": "the deqShapeChangeNonmagicalOnly pin",
+   "expr": "m['deqShapeChangeNonmagicalOnly']() != 1"
+  },
+  {
+   "note": "the deqStinkingCloudPermanent pin",
+   "expr": "m['deqStinkingCloudPermanent']() != 1"
+  },
+  {
+   "note": "the deqPermanentWebReforms pin",
+   "expr": "m['deqPermanentWebReforms']() != 1"
+  },
+  {
+   "note": "the deqAgeCreatureNegatesMagicalAging pin",
+   "expr": "m['deqAgeCreatureNegatesMagicalAging']() != 1"
+  },
+  {
+   "note": "the deqExtradimensionalRift pin",
+   "expr": "m['deqExtradimensionalRift']() != 1"
+  },
+  {
+   "note": "the deqPotionsSelfOnlyDispelled pin",
+   "expr": "m['deqPotionsSelfOnlyDispelled']() != 1"
+  },
+  {
+   "note": "the deqPotionShellDelayed pin",
+   "expr": "m['deqPotionShellDelayed']() != 1"
+  },
+  {
+   "note": "the deqRingRegenOnlyPostDonning pin",
+   "expr": "m['deqRingRegenOnlyPostDonning']() != 1"
+  },
+  {
+   "note": "the deqRodAbsorbTargetOnly pin",
+   "expr": "m['deqRodAbsorbTargetOnly']() != 1"
+  },
+  {
+   "note": "the deqDeckWishProof pin",
+   "expr": "m['deqDeckWishProof']() != 1"
+  },
+  {
+   "note": "the deqGemInsightOnce pin",
+   "expr": "m['deqGemInsightOnce']() != 1"
+  },
+  {
+   "note": "the deqQuiverNoCreatures pin",
+   "expr": "m['deqQuiverNoCreatures']() != 1"
+  },
+  {
+   "note": "the deqIronBandsEscapable pin",
+   "expr": "m['deqIronBandsEscapable']() != 1"
+  },
+  {
+   "note": "the deqWeightyChestNoWeapon pin",
+   "expr": "m['deqWeightyChestNoWeapon']() != 1"
+  },
+  {
+   "note": "the deqBooksTriggerOnPerusal pin",
+   "expr": "m['deqBooksTriggerOnPerusal']() != 1"
+  },
+  {
+   "note": "the deqDisplacementFirstAttackOnly pin",
+   "expr": "m['deqDisplacementFirstAttackOnly']() != 1"
+  },
+  {
+   "note": "the deqFlightForcedMarch pin",
+   "expr": "m['deqFlightForcedMarch']() != 1"
+  },
+  {
+   "note": "the deqScrollsCrossClass pin",
+   "expr": "m['deqScrollsCrossClass']() != 1"
+  },
+  {
+   "note": "the deqSphereAutoAbove100 pin",
+   "expr": "m['deqSphereAutoAbove100']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the daily-recovery box closes",
+   "from": "  - [ ] Daily Recovery of Spells (pp. 68-69) - the\n    rest requirement (the eight-hour minimum, the 10\n    minutes per spell level), the distraction doctrine",
+   "to": "  - [x] Daily Recovery of Spells (pp. 68-69) - the\n    rest requirement (the eight-hour minimum, the 10\n    minutes per spell level), the distraction doctrine\n    - R604: the deq recovery pins (the eight-hour\n      rest, the 10 minutes a level, the eight-hour\n      study cap, the no-sleep once-a-day rule, the\n      restart-on-distraction doctrine)"
+  },
+  {
+   "note": "the wizard-spells box closes",
+   "from": "  - [ ] Wizard Spells (pp. 69-76) - the per-spell\n    clarifications (the wish limits, the binding\n    doctrine, the perimeter-of-world effects)",
+   "to": "  - [x] Wizard Spells (pp. 69-76) - the per-spell\n    clarifications (the wish limits, the binding\n    doctrine, the perimeter-of-world effects) - R604:\n    the deq wizard pins (the damage caps, the\n    antimagic-shell doctrine, the ESP ladder, the\n    wish and limited-wish aging grids, the\n    permanency and teleport and stoneskin rules)"
+  },
+  {
+   "note": "the priest-spells box closes",
+   "from": "  - [ ] Priest Spells (pp. 76-79) - the per-spell\n    clarifications (the gate doctrine, the quest-spell\n    framework)",
+   "to": "  - [x] Priest Spells (pp. 76-79) - the per-spell\n    clarifications (the gate doctrine, the quest-spell\n    framework) - R604: the deq priest pins (the\n    holy-might cap 25, the know-time estimator, the\n    plane-shift seven companions and the research\n    grid, the nap and sentinel rest windows)"
+  },
+  {
+   "note": "the magical-items box closes",
+   "from": "  - [ ] Magical Items (pp. 79-85) - the item-use\n    clarifications (the artifact doctrine, the charged\n    item rules, the wishes-per-item limits)",
+   "to": "  - [x] Magical Items (pp. 79-85) - the item-use\n    clarifications (the artifact doctrine, the charged\n    item rules, the wishes-per-item limits) - R604:\n    the deq item pins (the amulet seven days, the\n    bag-of-holding grid, the extradimensional seam,\n    the potion 12th-level bar, the rod and staff\n    doctrines, the sphere 92-percent cap)"
+  },
+  {
+   "note": "the Chapter 3 parent closes",
+   "from": "- [ ] **Chapter 3: Spells and Magical Items** (pp.\n  68-85) - the high-level magic-management chapter",
+   "to": "- [x] **Chapter 3: Spells and Magical Items** (pp.\n  68-85) - the high-level magic-management chapter -\n  R604: the chapter closes in one round on doctrine\n  pins per the advisory-prose scope ruling (the\n  recovery doctrine, the spell clarifications, the\n  item doctrines) with the planar-research and\n  bag-of-holding grids riding the engine"
+  }
+ ],
+ "gap_census": {
+  "closed": 42,
+  "open": 54
+ },
+ "caller_files": [],
+ "inline_count": 157
+}
