@@ -843,9 +843,14 @@ description riding the same round.
     harness, transport)
   - [ ] Weapons prose and the weapon descriptions
     (capture pp. 84-93)
-  - [ ] Table 48: Weapon Equivalents (capture p. 84)
-  - [ ] Table 49: Weight And Damage By Weapon Type
-    (capture p. 84)
+  - [x] Table 48: Weapon Equivalents (capture p. 84) - R640: the dha
+    equivalents grid - sixteen rows pinned as the equivalent-name counts, the
+    many-names doctrine with the appearance and function reads
+  - [x] Table 49: Weight And Damage By Weapon Type
+    (capture p. 84) - R640: the dha T49 grid - sixty-nine weapon rows pinned
+    as the weight and damage bounds with the a-h bitmask letters, the
+    set-weapon stars, the lasso and needle dashes, the footnotes and the
+    boldface note
   - [ ] Table 50: Hand Held Weapons, General Data &
     to Hit Adjustments (capture p. 86)
   - [ ] Table 51: Hurled Weapons and Missiles

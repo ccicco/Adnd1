@@ -12932,6 +12932,68 @@ when both halves land.
   dgz (verify free), audit "R639 OA
   equipment audit", include after
   rules/oaexch.h.
+- R639 LANDED 2026-10-19: commit
+  f81fe22d0c20e2e355e596145d3e4c008ae2ac7f
+  (census 561 -> 562, pushed
+  6580845..f81fe22), EQUIPMENT - the
+  equipping doctrine and Table 47, capture
+  pp. 76-78: rules/oaequip.h, prefix dgz
+  (verified free), 50 inlines (11 consts,
+  30 table columns, 9 bools): the
+  equipping prose (equip-after-creation,
+  the not-enough-money adventuring
+  reason, the established-currency prices,
+  the barter purchase, the incomplete
+  list with DM additions, the price
+  changes, the area availability), T47
+  as the ten printed cost sections - all
+  256 rows pinned as cost-unit-star
+  triples (the unit code 1 fen, 2 yuan,
+  3 tael, 4 ch'ien per the T43 doctrine;
+  the star flags pin the printed
+  asterisks - the ten armor-piece rows,
+  the chijiriki, the five ninja-preferred
+  misc rows), the two footnote bools.
+  The printed table carries ten sections
+  - the eight cost lists the gap box
+  names plus the ARMOR and ARMS lists
+  that ride the same table; the box
+  label's capture pp. 78-84 preserved
+  byte-exact in the flip (the table pins
+  from printed pp. 39-40). PINNED FROM
+  THE 2018 PRINT CAPTURE ALONE (the
+  settling authority; the first
+  Mistral-OCR capture session is
+  unavailable above p. 33, so no
+  cross-capture check). OCR
+  normalizations: the Kyoketsu-shogi
+  "(biaded rope)" reads as bladed rope,
+  the stray mid-table separator row is
+  an artifact pinning nothing. REPAIR
+  NOTE: the first cut used hyphenated
+  table tags (T47-Armor) and died at the
+  Termux preflight compile (the Python
+  engine and battery never compile the
+  audit block); tags renamed CamelCase,
+  tree reset, re-landed same round
+  (the lesson seated in Verification
+  lessons). Battery 788 mutants, 0
+  missed; full sha rverify GREEN;
+  preflight GREEN on the repair run.
+  Gap census 88/147 -> 89/146. Spec
+  37,296 bytes md5
+  b78271721e82be6466fa960dbb0634dd
+  (authored-plus-newline md5
+  a8f56281524e9a8425786a97a1b2348d;
+  canvas md5
+  a9968fb857d09c88ac0faff0e91f8d66).
+  NEXT - R640: the Weapons prose with
+  Table 48 (Weapon Equivalents) and
+  Table 49 (Weight and Damage by Weapon
+  Type), capture pp. 79-80, the weapon
+  equivalents doctrine, prefix dha
+  (verify free), audit "R640 OA weapons
+  audit", include after rules/oaequip.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
