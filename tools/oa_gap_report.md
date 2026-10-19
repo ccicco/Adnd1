@@ -899,10 +899,23 @@ description riding the same round.
     too-heavy X and the elephant blanks as the -99 sentinel and the lone
     elephant 12 as the lo=hi convention
 
-- [ ] **Chapter 6: Proficiencies** (capture pp.
-  99-110) - the proficiency system
-  - [ ] Weapon Proficiencies and Weapon
-    Specialization prose (capture pp. 100-101)
+- [x] **Chapter 6: Proficiencies** (capture pp.
+  99-110) - the proficiency system - R650: the parent opens (the proficiency
+  slot system pinned - the 1st-level slots, the weapon-or-peaceful fill, the
+  saved slots and the no-change-after-selection rule; the Table 57,
+  non-weapon, Table 56, artisan, barbarian, common and court boxes close in
+  their own rounds)
+  - [x] Weapon Proficiencies and Weapon
+    Specialization prose (capture pp. 100-101) - R650: the dhk weapon
+    specialization pins - the slot-cost doctrine (one slot per weapon
+    proficiency, two for melee or crossbow specialization, three for other
+    missiles, one more to double specialize at +3 to hit and damage), the
+    melee specialist bonuses with the iaijutsu and next-attack-rank rules and
+    the 3/2 and 2/1 attack examples, the bow, crossbow and other-missile
+    specialist bonuses with the point-blank bands and the doubled-base-damage
+    and ready-to-fire doctrines, and the height-and-weight weapon
+    restrictions; the compressed plus-as-minus OCR artifact class settles per
+    the print capture
   - [ ] Table 57: Missile Weapon Specializations
     (capture p. 100)
   - [ ] Non-Weapon Proficiencies prose with the

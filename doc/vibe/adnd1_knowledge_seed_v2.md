@@ -13462,6 +13462,39 @@ when both halves land.
   audit", include after
   rules/oabardprose.h - the last
   Chapter 5 box.
+- R649 LANDED 2026-10-19: commit ffef1f8ff283803a88a8ccab17d5b8de848cf110
+  (census 571 -> 572, pushed 22d52ad..ffef1f8), ARMOR PROSE AND DESCRIPTIONS -
+  the suits-and-pieces doctrine and the armor description entries, capture pp.
+  93-98: rules/oaarmordesc.h, prefix dhj (verified free), 40 inlines (13
+  consts, 27 bools, no table): the two-group suits-and-pieces doctrine with
+  the common, rare and virtually-unknown suit lists as counts (the names
+  riding the comments), the corselet-AC-7 example equal to studded leather and
+  the kote-only AC 9 and kote-do-maru-haidate AC 6 printed examples
+  (cross-checks of the R643 T52 and R644 T53 grids), the averaging doctrine,
+  the one-piece-per-area, no-pieces-with-suits and sode-needs-a-corselet
+  rules, and the nineteen description entries - the horo back-missile bonus 1,
+  the kabuto head AC 3, the sode one foot square, the o-yoroi six included
+  pieces and five smaller, the concealability split, the movement-category
+  drop with the o-yoroi floor. The prose cross-checked paragraph-by-paragraph
+  between the two passes - every printed number agrees, zero contested cells;
+  the shared OCR slips settled per the R643 branded-mail pattern: the print
+  Hare-ate and here-ate reads fall to the print pass's own Table 53 (hara-ate,
+  compressed-corroborated), the compressed Hanburt falls to the print Hanburi,
+  and the print suns-ate, sods, Bode and Kate reads fall to the compressed
+  corroboration (sune-ate, sode, kote). One pre-publish repair on the
+  authoring side: the rebuilt gap_to wrap dropped the second label line's
+  indent (caught inspecting the flip before rverify, the user side never saw
+  the break) - the gen script is kept at r649/ and the scratch fetch tree
+  rebuilds from the base sha each round. First publish clean. rverify GREEN at
+  22d52ad, 40 mutants, 0 missed; preflight GREEN (572 audit census, BUILD 0
+  warnings). Gap census 99/136 -> 100/135. Spec 23,990 bytes md5
+  8890c2cd244af3f8ffffdf46f42a19cb (authored-plus-newline md5
+  4962679107228337f39a14937f6fa961 - the value the ritual gated and matched;
+  canvas md5 10f15d4495d1829913a815e7912e6653). NEXT - R650: the Chapter 6
+  Proficiencies arc begins - the weapon proficiencies and weapon
+  specialization prose (capture pp. 100-101), prefix dhk (verify free), audit
+  "R650 OA proficiencies audit", include after rules/oaarmordesc.h - the
+  Chapter 6 boxes at HEAD name the exact labels
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

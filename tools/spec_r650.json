@@ -1,0 +1,574 @@
+{
+ "round": 650,
+ "title": "WEAPON PROFICIENCIES AND SPECIALIZATION - the Chapter 6 opener with the slot doctrine and the specialist bonuses",
+ "prefix": "dhk",
+ "header_file": "rules/oaweaponspec.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 572,
+ "inline_count": 47,
+ "audit_label": "R650 OA proficiencies audit",
+ "audit_comment": "OA round thirty-seven (capture pp. 99-101): the Chapter 6 opener - the proficiency slot system and the weapon specialization doctrine with the weapon restrictions",
+ "banner": {
+  "title": "WEAPON PROFICIENCIES AND SPECIALIZATION, printed capture pp. 99-101 - the OA proficiencies arc opener",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the section - the chapter opener intro on capture p. 99 and the weapon proficiencies and specialization prose on pp. 100-101 of the print pass, cross-checked paragraph-by-paragraph between the two passes (compressed pp. 52-53); every printed number agrees. One OCR artifact class: the compressed pass systematically renders the specialization bonuses with minus signs - the +1/+2 melee, the +3 double, the +2/+2 and +1 bow reads all print as negatives - and each such read contradicts its own sentence (an increase to a bonus, a doubled base damage), so the print + signs stand per the R643 pattern; likewise the print pocked read of the arrow-ready doctrine is a letter slip, settled as nocked. The Chapter 6 parent box opens this round with the proficiency slot system pinned: all characters receive slots at 1st level, some or all fillable with weapon training and the rest with other skills, unfilled slots saveable, and a selected proficiency never changed for any reason. The specialization doctrine pins as consts and bools: a weapon proficiency costs one slot; only samurai and bushi specialize; the bushi any-one-weapon at-creation rule and the samurai katana-and-bow two-weapon rule (the katana at creation, the bow delayable); melee or crossbow specialization costs two slots, other missile weapons three; unarmed combat cannot be a weapon proficiency except under a master; the specific-type-not-general-class rule; the melee specialist +1 to hit and +2 damage, the iaijutsu fast-draw benefit, the next-higher-rank multiple-attack rule with the 3/2 first-level and 2/1 fifth-level samurai examples, and double specialization at one more slot for +3 to hit and damage. The bow specialist gains the point blank band (5 to 30 feet, +2 to hit and damage, the base damage doubled with strength and magic added to the final total), +1 at short range, no special bonus at medium and longer, no damage bonuses beyond point blank, and the ready-arrow auto-fire before initiative; the crossbow specialist the same point blank benefits within 5 to 60 feet, +1 to hit and damage at short range, +1 to hit at medium, and the same ready benefit; other missile specialists +1 to hit and +2 damage, with the higher-level extra attacks listed on Table 57 (its own box) and the per-class numbers on Table 56 (likewise). The p. 101 restrictions pin: class-disallowed weapons usable at the non-proficiency penalty (worst for split class) but never kept and carried; the under-5-feet 12-foot weapon-length bound; the under-4-feet daikyu ban; and the under-100-pounds heavy crossbow, over-200-gp and two-handed-sword bans - prohibitions that override the penalty since the weapons cannot be wielded at all",
+  "sentinel": "the gap census after this round: 102 closed, 133 open - the Chapter 6 parent box opens and the weapon proficiencies and specialization prose box flips (census 572 -> 573); NEXT - R651: Table 57 (Missile Weapon Specializations), capture p. 100, the specialist attacks-per-round grid, prefix dhl (verify free), audit \"R651 OA missile specializations audit\", include after rules/oaweaponspec.h"
+ },
+ "consts": [
+  {
+   "name": "dhkSlotsAtFirstLevel",
+   "value": 1,
+   "comment": "all characters receive their number of proficiency slots at 1st level (capture p. 99 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkWeaponProfSlotCost",
+   "value": 1,
+   "comment": "each weapon proficiency costs one proficiency slot from those the character has available (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSpecMeleeSlots",
+   "value": 2,
+   "comment": "weapon specialization in any melee weapon or crossbow counts as two proficiency slots (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSpecMissileSlots",
+   "value": 3,
+   "comment": "specialization in any other missile weapon counts as three proficiency slots (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkMeleeSpecHit",
+   "value": 1,
+   "comment": "the melee specialist is +1 on to hit rolls with the specialized weapon (capture p. 100 of the print pass; compressed p. 52, where the minus read is the plus-as-minus OCR artifact)"
+  },
+  {
+   "name": "dhkMeleeSpecDmg",
+   "value": 2,
+   "comment": "the melee specialist is +2 on damage rolls with the specialized weapon (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkDoubleSpecSlotCost",
+   "value": 1,
+   "comment": "an additional proficiency slot spent to double specialize once the character advances beyond 1st level (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkDoubleSpecHit",
+   "value": 3,
+   "comment": "double specialization increases the bonus to +3 on to hit (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkDoubleSpecDmg",
+   "value": 3,
+   "comment": "double specialization increases the bonus to +3 on damage (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkBowPointBlankMin",
+   "value": 5,
+   "comment": "the bow specialist's point blank range begins at 5 feet (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkBowPointBlankMax",
+   "value": 30,
+   "comment": "the point blank range extends to 30 feet (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkBowPointBlankHit",
+   "value": 2,
+   "comment": "the bow specialist is +2 to hit at any target within point blank (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkBowPointBlankDmg",
+   "value": 2,
+   "comment": "the bow specialist is +2 damage at any target within point blank (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkBowShortHit",
+   "value": 1,
+   "comment": "at short range the bow specialist is +1 on his to hit rolls (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkXbowPointBlankMin",
+   "value": 5,
+   "comment": "the crossbow specialist's point blank range begins at 5 feet (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkXbowPointBlankMax",
+   "value": 60,
+   "comment": "the crossbow point blank range extends to 60 feet (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkXbowShortHit",
+   "value": 1,
+   "comment": "at short range the crossbow specialist is +1 on to hit rolls (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkXbowShortDmg",
+   "value": 1,
+   "comment": "at short range the crossbow specialist is +1 on damage rolls (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkXbowMediumHit",
+   "value": 1,
+   "comment": "at medium range the crossbow specialist is +1 on his chances to hit (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkOtherMissileHit",
+   "value": 1,
+   "comment": "specializing in other missile weapons gains +1 on to hit rolls (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkOtherMissileDmg",
+   "value": 2,
+   "comment": "specializing in other missile weapons gains +2 on damage (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSpecFirstAttNum",
+   "value": 3,
+   "comment": "a first-level samurai makes 3/2 attacks per round with his specialized weapon - the numerator of the printed example (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSpecFirstAttDen",
+   "value": 2,
+   "comment": "the 3/2 denominator of the first-level attack example (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSpecFifthAttNum",
+   "value": 2,
+   "comment": "at fifth level the same character makes 2 attacks per round with his specialized weapon - the numerator (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSpecFifthAttDen",
+   "value": 1,
+   "comment": "the 2/1 denominator of the fifth-level attack example (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkHeightLimitFeet",
+   "value": 5,
+   "comment": "characters under 5 feet in height cannot effectively use any weapon over 12 feet in length - the height bound (capture p. 101 of the print pass; compressed p. 53)"
+  },
+  {
+   "name": "dhkWeaponLenLimitFeet",
+   "value": 12,
+   "comment": "the weapon-length bound of the under-5-feet rule (capture p. 101 of the print pass; compressed p. 53)"
+  },
+  {
+   "name": "dhkDaikyuHeightFeet",
+   "value": 4,
+   "comment": "characters under 4 feet in height cannot use the daikyu, the great bow (capture p. 101 of the print pass; compressed p. 53)"
+  },
+  {
+   "name": "dhkBodyWeightPounds",
+   "value": 100,
+   "comment": "characters of less than 100 pounds body weight cannot use a heavy crossbow, any weapon weighing more than 200 gp, or a two-handed sword - the weight bound (capture p. 101 of the print pass; compressed p. 53)"
+  },
+  {
+   "name": "dhkHeavyWeaponGp",
+   "value": 200,
+   "comment": "the weapon-weight bound of the under-100-pounds rule, in gold-piece weight (capture p. 101 of the print pass; compressed p. 53)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dhkPeacefulAsImportant",
+   "value": true,
+   "comment": "the artistic and peaceful skills are as important to a character as his ability to fight - the society emphasizes creative talents almost as much as combat prowess (capture p. 99 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSlotsWeaponOrPeaceful",
+   "value": true,
+   "comment": "depending on the character's class, some or all slots can be filled with weapon training, and any not devoted to weapons can be filled with other skills (capture p. 99 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSlotsSaveable",
+   "value": true,
+   "comment": "the character is not required to fill all his proficiency slots - those not filled can be saved and used at a later time (capture p. 99 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkNoChangeAfterSelection",
+   "value": true,
+   "comment": "once a proficiency has been selected it cannot be changed for any reason (capture p. 99 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkUnarmedNeedsMaster",
+   "value": true,
+   "comment": "unarmed combat cannot be taken as a weapon proficiency unless the character is studying under a master (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkOnlySamuraiBushiSpec",
+   "value": true,
+   "comment": "only samurai and bushi can choose to use weapon specialization (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkBushiOneWeapon",
+   "value": true,
+   "comment": "the bushi can choose any one weapon to specialize in, the selection made as soon as the character is created, except for samurai (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSamuraiKatanaBow",
+   "value": true,
+   "comment": "only the samurai can specialize in two weapons at once - the katana and the bow; he must specialize in the katana as soon as created but can delay the bow for a later time (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSpecSpecificType",
+   "value": true,
+   "comment": "melee specialization must be a specific weapon type, not a general class of weapons - the katana yes, all swords no (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSpecGivesIaijutsu",
+   "value": true,
+   "comment": "the specialist has learned the art of iaijutsu, the fast draw, with the specialized weapon and receives the benefits explained under that proficiency (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkSpecNextAttackRank",
+   "value": true,
+   "comment": "the specialist can make extra multiple attacks beyond those given on the Multiple Attacks Table, utilizing the next higher rank when fighting with his specialized weapon (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkBowPointBlankDmgDoubled",
+   "value": true,
+   "comment": "the base damage done at point blank is automatically doubled; bonuses to damage for strength and magic are not doubled - they are added to the final total (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkBowNoBonusBeyond",
+   "value": true,
+   "comment": "at medium range and longer the bow specialist has no special bonus to hit, and at all ranges beyond point blank there are no bonuses to damage (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkBowReadyFiresFirst",
+   "value": true,
+   "comment": "a bow specialist who begins the round with his arrow ready - nocked, drawn and aimed on a target - can automatically fire before any initiative check is made (capture p. 100 of the print pass; compressed p. 52; the print pocked read is a letter slip, settled as nocked)"
+  },
+  {
+   "name": "dhkXbowPointBlankSame",
+   "value": true,
+   "comment": "within point blank the crossbow specialist receives the same benefits as a bow specialist, including the weapon-ready benefit at the start of the round; the multiple attacks depend on the type of crossbow (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhkClassNonprofApplies",
+   "value": true,
+   "comment": "weapons not permitted to a class may be picked up and used, but the non-proficiency penalty for that class always applies - the worst penalty for split class characters - and such disallowed weapons cannot be kept and carried by the character for use later (capture p. 101 of the print pass; compressed p. 53)"
+  },
+  {
+   "name": "dhkProhibitionsOverride",
+   "value": true,
+   "comment": "the height and weight prohibitions override the non-proficiency stipulation - the penalty is immaterial, since these weapons cannot be wielded at all (capture p. 101 of the print pass; compressed p. 53)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the slot-system pins - the 1st-level slots and the one-slot weapon proficiency cost",
+   "expr": "m['dhkSlotsAtFirstLevel']() != 1 or m['dhkWeaponProfSlotCost']() != 1"
+  },
+  {
+   "note": "the slot-rule pins - the fill, the saving and the no-change doctrine",
+   "expr": "m['dhkPeacefulAsImportant']() != 1 or m['dhkSlotsWeaponOrPeaceful']() != 1 or m['dhkSlotsSaveable']() != 1 or m['dhkNoChangeAfterSelection']() != 1"
+  },
+  {
+   "note": "the specialization slot-cost pins - two for melee or crossbow, three for other missiles",
+   "expr": "m['dhkSpecMeleeSlots']() != 2 or m['dhkSpecMissileSlots']() != 3"
+  },
+  {
+   "note": "the eligibility pins - samurai and bushi only, the unarmed master rule, the bushi one-weapon rule, the katana-and-bow rule, the specific-type rule",
+   "expr": "m['dhkOnlySamuraiBushiSpec']() != 1 or m['dhkUnarmedNeedsMaster']() != 1 or m['dhkBushiOneWeapon']() != 1 or m['dhkSamuraiKatanaBow']() != 1 or m['dhkSpecSpecificType']() != 1"
+  },
+  {
+   "note": "the melee specialist bonus pins - +1 to hit, +2 damage",
+   "expr": "m['dhkMeleeSpecHit']() != 1 or m['dhkMeleeSpecDmg']() != 2"
+  },
+  {
+   "note": "the attack-example pins - 3/2 at first level, 2/1 at fifth level",
+   "expr": "m['dhkSpecFirstAttNum']() != 3 or m['dhkSpecFirstAttDen']() != 2 or m['dhkSpecFifthAttNum']() != 2 or m['dhkSpecFifthAttDen']() != 1"
+  },
+  {
+   "note": "the iaijutsu and next-attack-rank pins",
+   "expr": "m['dhkSpecGivesIaijutsu']() != 1 or m['dhkSpecNextAttackRank']() != 1"
+  },
+  {
+   "note": "the double-specialization pins - one slot more, +3 to hit and damage",
+   "expr": "m['dhkDoubleSpecSlotCost']() != 1 or m['dhkDoubleSpecHit']() != 3 or m['dhkDoubleSpecDmg']() != 3"
+  },
+  {
+   "note": "the bow point-blank band pins - 5 to 30 feet, +2 to hit and damage",
+   "expr": "m['dhkBowPointBlankMin']() != 5 or m['dhkBowPointBlankMax']() != 30 or m['dhkBowPointBlankHit']() != 2 or m['dhkBowPointBlankDmg']() != 2"
+  },
+  {
+   "note": "the bow doctrine pins - +1 at short range, the doubled base damage, no bonus beyond, the ready auto-fire",
+   "expr": "m['dhkBowShortHit']() != 1 or m['dhkBowPointBlankDmgDoubled']() != 1 or m['dhkBowNoBonusBeyond']() != 1 or m['dhkBowReadyFiresFirst']() != 1"
+  },
+  {
+   "note": "the crossbow pins - 5 to 60 feet point blank, +1/+1 short, +1 medium, the same benefits",
+   "expr": "m['dhkXbowPointBlankMin']() != 5 or m['dhkXbowPointBlankMax']() != 60 or m['dhkXbowShortHit']() != 1 or m['dhkXbowShortDmg']() != 1 or m['dhkXbowMediumHit']() != 1 or m['dhkXbowPointBlankSame']() != 1"
+  },
+  {
+   "note": "the other-missile specialist pins - +1 to hit, +2 damage",
+   "expr": "m['dhkOtherMissileHit']() != 1 or m['dhkOtherMissileDmg']() != 2"
+  },
+  {
+   "note": "the weapon-restriction pins - the class penalty applies and the prohibitions override",
+   "expr": "m['dhkClassNonprofApplies']() != 1 or m['dhkProhibitionsOverride']() != 1"
+  },
+  {
+   "note": "the bound pins - 5 feet against 12 feet, the 4-foot daikyu ban, 100 pounds against 200 gp",
+   "expr": "m['dhkHeightLimitFeet']() != 5 or m['dhkWeaponLenLimitFeet']() != 12 or m['dhkDaikyuHeightFeet']() != 4 or m['dhkBodyWeightPounds']() != 100 or m['dhkHeavyWeaponGp']() != 200"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the proficiency slot system pins": [
+   {
+    "kind": "const",
+    "name": "dhkSlotsAtFirstLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkPeacefulAsImportant"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkSlotsWeaponOrPeaceful"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkSlotsSaveable"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkNoChangeAfterSelection"
+   },
+   {
+    "kind": "const",
+    "name": "dhkWeaponProfSlotCost"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkUnarmedNeedsMaster"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkOnlySamuraiBushiSpec"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkBushiOneWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkSamuraiKatanaBow"
+   },
+   {
+    "kind": "const",
+    "name": "dhkSpecMeleeSlots"
+   },
+   {
+    "kind": "const",
+    "name": "dhkSpecMissileSlots"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkSpecSpecificType"
+   }
+  ],
+  "the melee specialist pins": [
+   {
+    "kind": "const",
+    "name": "dhkMeleeSpecHit"
+   },
+   {
+    "kind": "const",
+    "name": "dhkMeleeSpecDmg"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkSpecGivesIaijutsu"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkSpecNextAttackRank"
+   },
+   {
+    "kind": "const",
+    "name": "dhkSpecFirstAttNum"
+   },
+   {
+    "kind": "const",
+    "name": "dhkSpecFirstAttDen"
+   },
+   {
+    "kind": "const",
+    "name": "dhkSpecFifthAttNum"
+   },
+   {
+    "kind": "const",
+    "name": "dhkSpecFifthAttDen"
+   },
+   {
+    "kind": "const",
+    "name": "dhkDoubleSpecSlotCost"
+   },
+   {
+    "kind": "const",
+    "name": "dhkDoubleSpecHit"
+   },
+   {
+    "kind": "const",
+    "name": "dhkDoubleSpecDmg"
+   }
+  ],
+  "the missile specialist pins": [
+   {
+    "kind": "const",
+    "name": "dhkBowPointBlankMin"
+   },
+   {
+    "kind": "const",
+    "name": "dhkBowPointBlankMax"
+   },
+   {
+    "kind": "const",
+    "name": "dhkBowPointBlankHit"
+   },
+   {
+    "kind": "const",
+    "name": "dhkBowPointBlankDmg"
+   },
+   {
+    "kind": "const",
+    "name": "dhkBowShortHit"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkBowPointBlankDmgDoubled"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkBowNoBonusBeyond"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkBowReadyFiresFirst"
+   },
+   {
+    "kind": "const",
+    "name": "dhkXbowPointBlankMin"
+   },
+   {
+    "kind": "const",
+    "name": "dhkXbowPointBlankMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkXbowPointBlankSame"
+   },
+   {
+    "kind": "const",
+    "name": "dhkXbowShortHit"
+   },
+   {
+    "kind": "const",
+    "name": "dhkXbowShortDmg"
+   },
+   {
+    "kind": "const",
+    "name": "dhkXbowMediumHit"
+   },
+   {
+    "kind": "const",
+    "name": "dhkOtherMissileHit"
+   },
+   {
+    "kind": "const",
+    "name": "dhkOtherMissileDmg"
+   }
+  ],
+  "the weapon restriction pins": [
+   {
+    "kind": "bool",
+    "name": "dhkClassNonprofApplies"
+   },
+   {
+    "kind": "const",
+    "name": "dhkHeightLimitFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dhkWeaponLenLimitFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dhkDaikyuHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dhkBodyWeightPounds"
+   },
+   {
+    "kind": "const",
+    "name": "dhkHeavyWeaponGp"
+   },
+   {
+    "kind": "bool",
+    "name": "dhkProhibitionsOverride"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Chapter 6 parent box opens",
+   "from": "- [ ] **Chapter 6: Proficiencies** (capture pp.\n  99-110) - the proficiency system",
+   "to": "- [x] **Chapter 6: Proficiencies** (capture pp.\n  99-110) - the proficiency system - R650: the parent opens (the proficiency\n  slot system pinned - the 1st-level slots, the weapon-or-peaceful fill, the\n  saved slots and the no-change-after-selection rule; the Table 57,\n  non-weapon, Table 56, artisan, barbarian, common and court boxes close in\n  their own rounds)"
+  },
+  {
+   "note": "the weapon proficiencies and weapon specialization prose box closes",
+   "from": "  - [ ] Weapon Proficiencies and Weapon\n    Specialization prose (capture pp. 100-101)",
+   "to": "  - [x] Weapon Proficiencies and Weapon\n    Specialization prose (capture pp. 100-101) - R650: the dhk weapon\n    specialization pins - the slot-cost doctrine (one slot per weapon\n    proficiency, two for melee or crossbow specialization, three for other\n    missiles, one more to double specialize at +3 to hit and damage), the\n    melee specialist bonuses with the iaijutsu and next-attack-rank rules and\n    the 3/2 and 2/1 attack examples, the bow, crossbow and other-missile\n    specialist bonuses with the point-blank bands and the doubled-base-damage\n    and ready-to-fire doctrines, and the height-and-weight weapon\n    restrictions; the compressed plus-as-minus OCR artifact class settles per\n    the print capture"
+  }
+ ],
+ "gap_census": {
+  "closed": 102,
+  "open": 133
+ },
+ "include_comment": "the OA weapon specialization pins",
+ "include_after": "#include \"rules/oaarmordesc.h\"  // R649: the OA armor descriptions pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R649 LANDED 2026-10-19: commit ffef1f8ff283803a88a8ccab17d5b8de848cf110",
+ "prev_record": [
+  "- R649 LANDED 2026-10-19: commit ffef1f8ff283803a88a8ccab17d5b8de848cf110",
+  "  (census 571 -> 572, pushed 22d52ad..ffef1f8), ARMOR PROSE AND DESCRIPTIONS -",
+  "  the suits-and-pieces doctrine and the armor description entries, capture pp.",
+  "  93-98: rules/oaarmordesc.h, prefix dhj (verified free), 40 inlines (13",
+  "  consts, 27 bools, no table): the two-group suits-and-pieces doctrine with",
+  "  the common, rare and virtually-unknown suit lists as counts (the names",
+  "  riding the comments), the corselet-AC-7 example equal to studded leather and",
+  "  the kote-only AC 9 and kote-do-maru-haidate AC 6 printed examples",
+  "  (cross-checks of the R643 T52 and R644 T53 grids), the averaging doctrine,",
+  "  the one-piece-per-area, no-pieces-with-suits and sode-needs-a-corselet",
+  "  rules, and the nineteen description entries - the horo back-missile bonus 1,",
+  "  the kabuto head AC 3, the sode one foot square, the o-yoroi six included",
+  "  pieces and five smaller, the concealability split, the movement-category",
+  "  drop with the o-yoroi floor. The prose cross-checked paragraph-by-paragraph",
+  "  between the two passes - every printed number agrees, zero contested cells;",
+  "  the shared OCR slips settled per the R643 branded-mail pattern: the print",
+  "  Hare-ate and here-ate reads fall to the print pass's own Table 53 (hara-ate,",
+  "  compressed-corroborated), the compressed Hanburt falls to the print Hanburi,",
+  "  and the print suns-ate, sods, Bode and Kate reads fall to the compressed",
+  "  corroboration (sune-ate, sode, kote). One pre-publish repair on the",
+  "  authoring side: the rebuilt gap_to wrap dropped the second label line's",
+  "  indent (caught inspecting the flip before rverify, the user side never saw",
+  "  the break) - the gen script is kept at r649/ and the scratch fetch tree",
+  "  rebuilds from the base sha each round. First publish clean. rverify GREEN at",
+  "  22d52ad, 40 mutants, 0 missed; preflight GREEN (572 audit census, BUILD 0",
+  "  warnings). Gap census 99/136 -> 100/135. Spec 23,990 bytes md5",
+  "  8890c2cd244af3f8ffffdf46f42a19cb (authored-plus-newline md5",
+  "  4962679107228337f39a14937f6fa961 - the value the ritual gated and matched;",
+  "  canvas md5 10f15d4495d1829913a815e7912e6653). NEXT - R650: the Chapter 6",
+  "  Proficiencies arc begins - the weapon proficiencies and weapon",
+  "  specialization prose (capture pp. 100-101), prefix dhk (verify free), audit",
+  "  \"R650 OA proficiencies audit\", include after rules/oaarmordesc.h - the",
+  "  Chapter 6 boxes at HEAD name the exact labels"
+ ]
+}
