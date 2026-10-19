@@ -623,11 +623,34 @@ description riding the same round.
 - [ ] **Chapter 3: Families, Class, and Caste**
   (capture pp. 60-69) - the birth, family and caste
   system
-  - [ ] Birth Rank prose and the caste doctrine
-    (capture pp. 60-62)
-  - [ ] Table 37: Birth Requirements by Class
-    (capture p. 60)
-  - [ ] Table 38: Character Birth (capture p. 61)
+  - [x] Birth Rank prose and the caste doctrine
+    (capture pp. 60-62) -
+    R629: the dgp birth rank pins - the 2d10
+    birth roll with the modifier doctrine, the
+    NPC reaction read (the base-score difference
+    as a plus-or-minus, the -25 Chang Lui
+    example), the family-not-character honor
+    column, the family structure doctrine (the
+    three-row chart, the 1d8 spaces per row, the
+    head at position 1, the 70 percent male
+    chance, the family-name-first rule)
+  - [x] Table 37: Birth Requirements by Class
+    (capture p. 60) -
+    R629: the dgp T37 grid - nine class rows of
+    the birth modifier (the samurai +10, the
+    yakuza -10) with the birth-table and family
+    requirement codes, plus the korobokuru
+    samurai lowest-rank rule and the ninja
+    automatic clan
+  - [x] Table 38: Character Birth (capture p. 61) -
+    R629: the dgp T38 grid - seventeen birth
+    rows of the rank codes with the 5-90
+    reaction scores, the ancestry and birthright
+    die codes and the 0-35 family honor; the
+    row-27 ancestry cell was contested (the
+    first capture printed d100/9, the second
+    d100/8) and settled against the 2018
+    print as d100/8
   - [ ] Family Structure + Additional Family
     Structures (capture pp. 62-64) - the family chart
     rows, the honor-by-position doctrine

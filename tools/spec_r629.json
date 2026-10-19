@@ -1,0 +1,775 @@
+{
+ "round": 629,
+ "title": "THE CHAPTER 3 opener - the family doctrine, the birth rank and the caste doctrine, Tables 37 and 38",
+ "prefix": "dgp",
+ "header_file": "rules/oabirth.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 551,
+ "inline_count": 35,
+ "audit_label": "R629 OA families audit",
+ "audit_comment": "OA round sixteen (capture pp. 60-62): the Chapter 3 opener - the family doctrine, the birth rank prose and the Tables 37 and 38 grids",
+ "banner": {
+  "title": "FAMILIES, CLASS, AND CASTE, printed capture pp. 60-62 - the OA Chapter 3 opener round",
+  "provenance": "verified against capture pp. 60-62 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). ONE CONTESTED CELL SETTLED AGAINST THE 2018 PRINT BEFORE PINNING: the T38 row-27 ancestry cell d100/8 (the first capture printed d100/9, the second d100/8 - the settled reading stands). The T38 holds seventeen printed rows (the 2d10 bands 2 through 30 - the first preflight run mispinned eighteen and the battery caught bad 14); the T38 rank column pins as the 0-16 code (outcast 0 through the 1st Rank 16); the ancestry and birthright dice pin as die codes (d4=4 through d100=100) with the rolls as the after-slash counts; the T37 requirement columns pin as the 0/1 code. OCR normalization: \"should affect and NPC\" reads as should affect an NPC; \"1 d6\" reads as 1d6; the Table 38 header spans two rows in the second capture (the printed six-column header stands)",
+  "sentinel": "the gap census after this round: 67 closed, 168 open - the Birth Rank prose, Table 37 and Table 38 boxes flip (census 551 -> 552); NEXT - R630: the Family Structure and Additional Family Structures prose, capture pp. 62-64, the family chart rows with the honor-by-position doctrine, prefix dgq (verify free), audit \"R630 OA family structures audit\", include after rules/oabirth.h"
+ },
+ "consts": [
+  {
+   "name": "dgpT37RowCount",
+   "value": 9,
+   "comment": "Table 37 (capture p. 60): nine class rows"
+  },
+  {
+   "name": "dgpBirthRollDice",
+   "value": 2,
+   "comment": "Birth rank prose (capture p. 61): roll 2d10 for the birth rank"
+  },
+  {
+   "name": "dgpBirthRollSides",
+   "value": 10,
+   "comment": "Birth rank prose (capture p. 61): the 2d10 birth roll dice sides"
+  },
+  {
+   "name": "dgpT38RowCount",
+   "value": 17,
+   "comment": "Table 38 (capture p. 61): seventeen birth rows"
+  },
+  {
+   "name": "dgpNpcExampleDiffPct",
+   "value": 25,
+   "comment": "NPC reaction prose (capture p. 62): the Chang Lui example, the -25 percent modifier"
+  },
+  {
+   "name": "dgpNpcExamplePc",
+   "value": 30,
+   "comment": "NPC reaction prose (capture p. 62): the lower upper class base score in the example"
+  },
+  {
+   "name": "dgpNpcExampleNpc",
+   "value": 55,
+   "comment": "NPC reaction prose (capture p. 62): the 7th Rank base score in the example"
+  },
+  {
+   "name": "dgpFamilyChartRows",
+   "value": 3,
+   "comment": "Family structure prose (capture p. 62): three generational rows on the Family Chart"
+  },
+  {
+   "name": "dgpHeadPosition",
+   "value": 1,
+   "comment": "Family structure prose (capture p. 62): the head of family always occupies position 1"
+  },
+  {
+   "name": "dgpRowSpacesDice",
+   "value": 8,
+   "comment": "Family structure prose (capture p. 62): 1d8 spaces used per row"
+  },
+  {
+   "name": "dgpMaleChancePct",
+   "value": 70,
+   "comment": "Family structure prose (capture p. 62): the 70 percent male chance per space"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgpFamilyIncludesAllRelations",
+   "value": true,
+   "comment": "Family prose (capture p. 60): the family or clan means the entire set of relations"
+  },
+  {
+   "name": "dgpAncestorsAddHonor",
+   "value": true,
+   "comment": "Family prose (capture p. 60): ancestors add great honor to a family"
+  },
+  {
+   "name": "dgpClassesMayAdoptProfession",
+   "value": true,
+   "comment": "Family prose (capture p. 60): certain classes adopt the profession as a new family"
+  },
+  {
+   "name": "dgpShukenjaSeversConnections",
+   "value": true,
+   "comment": "Family prose (capture p. 60): a shukenja severs all connections with his past"
+  },
+  {
+   "name": "dgpOptionalFamilyFollowsRules",
+   "value": true,
+   "comment": "Family prose (capture p. 60): an optional family background must abide by the family rules"
+  },
+  {
+   "name": "dgpKorobokuruSamuraiNoRoll",
+   "value": true,
+   "comment": "Table 37 prose (capture p. 61): korobokuru samurai do not roll on Table 38"
+  },
+  {
+   "name": "dgpKorobokuruSamuraiLowestRank",
+   "value": true,
+   "comment": "Table 37 prose (capture p. 61): korobokuru samurai take the lowest allowable samurai rank"
+  },
+  {
+   "name": "dgpNinjaAutomaticClan",
+   "value": true,
+   "comment": "Table 37 prose (capture p. 61): a ninja automatically belongs to the Ninja clan"
+  },
+  {
+   "name": "dgpNinjaBirthRankOptional",
+   "value": true,
+   "comment": "Table 37 prose (capture p. 61): the ninja birth rank can still be determined normally"
+  },
+  {
+   "name": "dgpBirthRankNpcReaction",
+   "value": true,
+   "comment": "Birth rank prose (capture p. 61): the rank modifies NPC reactions where title and respect matter"
+  },
+  {
+   "name": "dgpBirthRankAncestryBirthright",
+   "value": true,
+   "comment": "Birth rank prose (capture p. 61): the rank determines the ancestors and the starting birthright"
+  },
+  {
+   "name": "dgpHonorIsFamilyNotCharacter",
+   "value": true,
+   "comment": "Birth rank prose (capture p. 62): the honor column is gained by the family, not the character"
+  },
+  {
+   "name": "dgpHeadAutoMale",
+   "value": true,
+   "comment": "Family structure prose (capture p. 62): the head, grandfather and father are automatically male"
+  },
+  {
+   "name": "dgpFamilyNameFirst",
+   "value": true,
+   "comment": "Family structure prose (capture p. 62): the family name is written and spoken before the individual name"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dgpT37Grid",
+   "tag": "T37",
+   "count": "dgpT37RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgpT37Mod",
+    "dgpT37BirthReq",
+    "dgpT37FamilyReq"
+   ],
+   "data": [
+    [
+     10,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     -10,
+     0,
+     1
+    ]
+   ],
+   "comment": "the Table 37 birth requirements grid (capture pp. 60-61)",
+   "col_comments": [
+    "the modifier column: the samurai +10, the yakuza -10, all others 0 (capture pp. 60-61).",
+    "the birth-table-required column, pinned as the 0/1 code (capture pp. 60-61).",
+    "the family-required column, pinned as the 0/1 code (capture pp. 60-61)."
+   ],
+   "audit_comment": "the Table 37 grid: the class birth modifiers and the requirement codes (capture pp. 60-61)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgpT38Grid",
+   "tag": "T38",
+   "count": "dgpT38RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgpT38RankCode",
+    "dgpT38NpcPct",
+    "dgpT38AncDie",
+    "dgpT38AncRolls",
+    "dgpT38BirthDie",
+    "dgpT38BirthRolls",
+    "dgpT38Honor"
+   ],
+   "data": [
+    [
+     0,
+     5,
+     6,
+     1,
+     4,
+     1,
+     0
+    ],
+    [
+     1,
+     10,
+     4,
+     2,
+     4,
+     2,
+     1
+    ],
+    [
+     2,
+     15,
+     6,
+     2,
+     6,
+     1,
+     5
+    ],
+    [
+     3,
+     20,
+     10,
+     1,
+     8,
+     2,
+     8
+    ],
+    [
+     4,
+     25,
+     20,
+     2,
+     20,
+     2,
+     10
+    ],
+    [
+     5,
+     30,
+     100,
+     2,
+     20,
+     4,
+     15
+    ],
+    [
+     6,
+     35,
+     100,
+     4,
+     100,
+     3,
+     17
+    ],
+    [
+     7,
+     40,
+     100,
+     5,
+     100,
+     4,
+     20
+    ],
+    [
+     8,
+     45,
+     100,
+     6,
+     100,
+     5,
+     22
+    ],
+    [
+     9,
+     50,
+     100,
+     7,
+     100,
+     6,
+     24
+    ],
+    [
+     10,
+     55,
+     100,
+     7,
+     100,
+     7,
+     25
+    ],
+    [
+     11,
+     60,
+     100,
+     7,
+     100,
+     8,
+     26
+    ],
+    [
+     12,
+     65,
+     100,
+     8,
+     100,
+     9,
+     27
+    ],
+    [
+     13,
+     70,
+     100,
+     8,
+     100,
+     10,
+     28
+    ],
+    [
+     14,
+     75,
+     100,
+     9,
+     100,
+     10,
+     29
+    ],
+    [
+     15,
+     80,
+     100,
+     9,
+     100,
+     10,
+     30
+    ],
+    [
+     16,
+     90,
+     100,
+     10,
+     100,
+     10,
+     35
+    ]
+   ],
+   "comment": "the Table 38 character birth grid (capture p. 61)",
+   "col_comments": [
+    "the birth rank code column: outcast 0, lower class 1, lower middle 2, middle 3, upper middle 4, lower upper 5, upper 6, then the 10th through 1st ranks as 7-16 (capture p. 61).",
+    "the NPC reaction base score column, pinned as the whole percent 5 to 90 (capture p. 61).",
+    "the ancestry die column, pinned as the die code: d4=4, d6=6, d8=8, d10=10, d20=20, d100=100 (capture p. 61).",
+    "the ancestry rolls column: the number after the slash - the row-27 cell was contested (the first capture printed 9, the second 8) and settled against the 2018 print as 8 (capture p. 61).",
+    "the birthright die column, pinned as the die code (capture p. 61).",
+    "the birthright rolls column: the number after the slash (capture p. 61).",
+    "the honor column: the family honor 0 to 35 (capture p. 61)."
+   ],
+   "audit_comment": "the Table 38 grid: the rank codes, reaction scores, ancestry and birthright dice with the family honor (capture p. 61)",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dgpT37RowCount pin",
+   "expr": "m['dgpT37RowCount']() != 9"
+  },
+  {
+   "note": "the dgpBirthRollDice pin",
+   "expr": "m['dgpBirthRollDice']() != 2"
+  },
+  {
+   "note": "the dgpBirthRollSides pin",
+   "expr": "m['dgpBirthRollSides']() != 10"
+  },
+  {
+   "note": "the dgpT38RowCount pin",
+   "expr": "m['dgpT38RowCount']() != 17"
+  },
+  {
+   "note": "the dgpNpcExampleDiffPct pin",
+   "expr": "m['dgpNpcExampleDiffPct']() != 25"
+  },
+  {
+   "note": "the dgpNpcExamplePc pin",
+   "expr": "m['dgpNpcExamplePc']() != 30"
+  },
+  {
+   "note": "the dgpNpcExampleNpc pin",
+   "expr": "m['dgpNpcExampleNpc']() != 55"
+  },
+  {
+   "note": "the dgpFamilyChartRows pin",
+   "expr": "m['dgpFamilyChartRows']() != 3"
+  },
+  {
+   "note": "the dgpHeadPosition pin",
+   "expr": "m['dgpHeadPosition']() != 1"
+  },
+  {
+   "note": "the dgpRowSpacesDice pin",
+   "expr": "m['dgpRowSpacesDice']() != 8"
+  },
+  {
+   "note": "the dgpMaleChancePct pin",
+   "expr": "m['dgpMaleChancePct']() != 70"
+  },
+  {
+   "note": "the dgpFamilyIncludesAllRelations pin",
+   "expr": "m['dgpFamilyIncludesAllRelations']() != 1"
+  },
+  {
+   "note": "the dgpAncestorsAddHonor pin",
+   "expr": "m['dgpAncestorsAddHonor']() != 1"
+  },
+  {
+   "note": "the dgpClassesMayAdoptProfession pin",
+   "expr": "m['dgpClassesMayAdoptProfession']() != 1"
+  },
+  {
+   "note": "the dgpShukenjaSeversConnections pin",
+   "expr": "m['dgpShukenjaSeversConnections']() != 1"
+  },
+  {
+   "note": "the dgpOptionalFamilyFollowsRules pin",
+   "expr": "m['dgpOptionalFamilyFollowsRules']() != 1"
+  },
+  {
+   "note": "the dgpKorobokuruSamuraiNoRoll pin",
+   "expr": "m['dgpKorobokuruSamuraiNoRoll']() != 1"
+  },
+  {
+   "note": "the dgpKorobokuruSamuraiLowestRank pin",
+   "expr": "m['dgpKorobokuruSamuraiLowestRank']() != 1"
+  },
+  {
+   "note": "the dgpNinjaAutomaticClan pin",
+   "expr": "m['dgpNinjaAutomaticClan']() != 1"
+  },
+  {
+   "note": "the dgpNinjaBirthRankOptional pin",
+   "expr": "m['dgpNinjaBirthRankOptional']() != 1"
+  },
+  {
+   "note": "the dgpBirthRankNpcReaction pin",
+   "expr": "m['dgpBirthRankNpcReaction']() != 1"
+  },
+  {
+   "note": "the dgpBirthRankAncestryBirthright pin",
+   "expr": "m['dgpBirthRankAncestryBirthright']() != 1"
+  },
+  {
+   "note": "the dgpHonorIsFamilyNotCharacter pin",
+   "expr": "m['dgpHonorIsFamilyNotCharacter']() != 1"
+  },
+  {
+   "note": "the dgpHeadAutoMale pin",
+   "expr": "m['dgpHeadAutoMale']() != 1"
+  },
+  {
+   "note": "the dgpFamilyNameFirst pin",
+   "expr": "m['dgpFamilyNameFirst']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the T37 samurai row - the +10 modifier, both requirements (capture pp. 60-61)",
+   "expr": "m['dgpT37Mod'](0) != 10 or m['dgpT37BirthReq'](0) != 1 or m['dgpT37FamilyReq'](0) != 1"
+  },
+  {
+   "note": "the T37 yakuza row - the -10 modifier, no birth roll, family required (capture p. 61)",
+   "expr": "m['dgpT37Mod'](8) != -10 or m['dgpT37BirthReq'](8) != 0 or m['dgpT37FamilyReq'](8) != 1"
+  },
+  {
+   "note": "the T37 ninja row - no modifier, no birth roll, family required (capture p. 61)",
+   "expr": "m['dgpT37Mod'](7) != 0 or m['dgpT37BirthReq'](7) != 0 or m['dgpT37FamilyReq'](7) != 1"
+  },
+  {
+   "note": "the T37 middle block - shukenja, sohei and wu jen require neither (capture pp. 60-61)",
+   "expr": "m['dgpT37BirthReq'](1) != 0 or m['dgpT37BirthReq'](2) != 0 or m['dgpT37BirthReq'](6) != 0 or m['dgpT37FamilyReq'](6) != 0"
+  },
+  {
+   "note": "the T38 outcast row - 5 percent, d6/1 ancestry, d4/1 birthright, 0 honor (capture p. 61)",
+   "expr": "m['dgpT38RankCode'](0) != 0 or m['dgpT38NpcPct'](0) != 5 or m['dgpT38AncDie'](0) != 6 or m['dgpT38AncRolls'](0) != 1 or m['dgpT38BirthDie'](0) != 4 or m['dgpT38BirthRolls'](0) != 1 or m['dgpT38Honor'](0) != 0"
+  },
+  {
+   "note": "the T38 row-3 settled cell - the ancestry d100/8 read against the 2018 print (capture p. 61)",
+   "expr": "m['dgpT38AncDie'](13) != 100 or m['dgpT38AncRolls'](13) != 8"
+  },
+  {
+   "note": "the T38 1st Rank capstone - 90 percent, d100/10 both, honor 35, seventeen rows only (capture p. 61)",
+   "expr": "m['dgpT38RankCode'](16) != 16 or m['dgpT38NpcPct'](16) != 90 or m['dgpT38AncRolls'](16) != 10 or m['dgpT38BirthRolls'](16) != 10 or m['dgpT38Honor'](16) != 35 or m['dgpT38RowCount']() != 17"
+  },
+  {
+   "note": "the T38 honor ladder - 0 at outcast, 35 at 1st Rank (capture p. 61)",
+   "expr": "m['dgpT38Honor'](0) != 0 or m['dgpT38Honor'](6) != 17 or m['dgpT38Honor'](16) != 35"
+  },
+  {
+   "note": "the T38 reaction example - the 55-minus-30 read for the -25 modifier (capture p. 62)",
+   "expr": "m['dgpNpcExampleNpc']() - m['dgpNpcExamplePc']() != 25 or m['dgpNpcExampleDiffPct']() != 25"
+  },
+  {
+   "note": "the birth roll doctrine - 2d10 with the modifier applied (capture p. 61)",
+   "expr": "m['dgpBirthRollDice']() != 2 or m['dgpBirthRollSides']() != 10"
+  },
+  {
+   "note": "the family chart doctrine - 1d8 spaces per row, three rows, head at position 1 (capture p. 62)",
+   "expr": "m['dgpRowSpacesDice']() != 8 or m['dgpFamilyChartRows']() != 3 or m['dgpHeadPosition']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the family doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dgpT37RowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpFamilyIncludesAllRelations"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpAncestorsAddHonor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpClassesMayAdoptProfession"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpShukenjaSeversConnections"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpOptionalFamilyFollowsRules"
+   }
+  ],
+  "the birth rank doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dgpBirthRollDice"
+   },
+   {
+    "kind": "const",
+    "name": "dgpBirthRollSides"
+   },
+   {
+    "kind": "const",
+    "name": "dgpT38RowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpBirthRankNpcReaction"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpBirthRankAncestryBirthright"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpHonorIsFamilyNotCharacter"
+   },
+   {
+    "kind": "const",
+    "name": "dgpNpcExampleDiffPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgpNpcExamplePc"
+   },
+   {
+    "kind": "const",
+    "name": "dgpNpcExampleNpc"
+   }
+  ],
+  "the Table 37 doctrine pins": [
+   {
+    "kind": "bool",
+    "name": "dgpKorobokuruSamuraiNoRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpKorobokuruSamuraiLowestRank"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpNinjaAutomaticClan"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpNinjaBirthRankOptional"
+   }
+  ],
+  "the family structure pins": [
+   {
+    "kind": "const",
+    "name": "dgpFamilyChartRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgpHeadPosition"
+   },
+   {
+    "kind": "const",
+    "name": "dgpRowSpacesDice"
+   },
+   {
+    "kind": "const",
+    "name": "dgpMaleChancePct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpHeadAutoMale"
+   },
+   {
+    "kind": "bool",
+    "name": "dgpFamilyNameFirst"
+   }
+  ],
+  "the Table 37 and Table 38 grids": [
+   {
+    "kind": "table",
+    "name": "dgpT37Grid"
+   },
+   {
+    "kind": "table",
+    "name": "dgpT38Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Birth Rank prose and the caste doctrine box closes",
+   "from": "  - [ ] Birth Rank prose and the caste doctrine\n    (capture pp. 60-62)",
+   "to": "  - [x] Birth Rank prose and the caste doctrine\n    (capture pp. 60-62) -\n    R629: the dgp birth rank pins - the 2d10\n    birth roll with the modifier doctrine, the\n    NPC reaction read (the base-score difference\n    as a plus-or-minus, the -25 Chang Lui\n    example), the family-not-character honor\n    column, the family structure doctrine (the\n    three-row chart, the 1d8 spaces per row, the\n    head at position 1, the 70 percent male\n    chance, the family-name-first rule)"
+  },
+  {
+   "note": "the   Table 37: Birth Requirements by Class box closes",
+   "from": "  - [ ] Table 37: Birth Requirements by Class\n    (capture p. 60)",
+   "to": "  - [x] Table 37: Birth Requirements by Class\n    (capture p. 60) -\n    R629: the dgp T37 grid - nine class rows of\n    the birth modifier (the samurai +10, the\n    yakuza -10) with the birth-table and family\n    requirement codes, plus the korobokuru\n    samurai lowest-rank rule and the ninja\n    automatic clan"
+  },
+  {
+   "note": "the   Table 38: Character Birth box closes",
+   "from": "  - [ ] Table 38: Character Birth (capture p. 61)",
+   "to": "  - [x] Table 38: Character Birth (capture p. 61) -\n    R629: the dgp T38 grid - seventeen birth\n    rows of the rank codes with the 5-90\n    reaction scores, the ancestry and birthright\n    die codes and the 0-35 family honor; the\n    row-27 ancestry cell was contested (the\n    first capture printed d100/9, the second\n    d100/8) and settled against the 2018\n    print as d100/8"
+  }
+ ],
+ "gap_census": {
+  "closed": 67,
+  "open": 168
+ },
+ "include_comment": "the OA families pins",
+ "include_after": "#include \"rules/oacharab.h\"  // R628: the OA character abilities pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R628 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R628 LANDED 2026-10-19: commit",
+  "  1b788fead1df9e688032cc6327bbe177b41630c7",
+  "  (census 550 -> 551, pushed",
+  "  db94e62..1b788fe), THE CHARACTER",
+  "  ABILITIES chapter opener, capture",
+  "  pp. 55-59: rules/oacharab.h, prefix",
+  "  dgo (verified free), 47 inlines (10",
+  "  consts, 32 bools, 5 table columns):",
+  "  the multiple attacks doctrine (beyond",
+  "  fighters, melee only, ninja-weapons",
+  "  only with no carry from the other",
+  "  class, the proficiency boost, the",
+  "  one-per-level versus under-1-HD",
+  "  monsters, the split-between-targets",
+  "  rule, the 1/1, 3/2, 2/1 and kensai",
+  "  5/2 notation read), the dual-class",
+  "  doctrine (human only, the 15-in-old",
+  "  and 17-or-18-in-new requisites, any",
+  "  level, the kept old abilities with",
+  "  the xp-to-new-class rule, the",
+  "  no-hp-until-surpass rule, the",
+  "  restrictions binding until surpass,",
+  "  the old-use xp forfeiture, the best",
+  "  combat and save tables, the free mix",
+  "  after surpass, the weapons",
+  "  exception), the alignment doctrine",
+  "  (nine alignments, not religion, law",
+  "  most common in Kara-Tur, the",
+  "  complementary-party encouragement),",
+  "  the languages (the home/trade/",
+  "  alignment slot ladder, the",
+  "  potential-only Table 5 count, the",
+  "  75/50 dialect and wild-land",
+  "  comprehension, the trade-language",
+  "  limits, the 20-minus-Int study",
+  "  months with the every-other-day",
+  "  doubling and the native-speaker",
+  "  halving, the permanent accent), T36",
+  "  19x5 with the class column as the",
+  "  1-6 code (bushi, kensai, ninja,",
+  "  barbarian, samurai, sohei), the",
+  "  printed \"and up\" bands as the -1",
+  "  code and the N/D rates as the",
+  "  numerator and denominator columns.",
+  "  NO CONTESTED CELLS THIS ROUND -",
+  "  both captures agree on every pinned",
+  "  value. OCR normalization: \"lying and",
+  "  yang\" reads as yin and yang (prose",
+  "  only); the ninja asterisk footnote",
+  "  appears twice in the second capture",
+  "  (the printed footnote stands).",
+  "  Battery 137 mutants, 0 missed; full",
+  "  sha rverify GREEN. Gap census",
+  "  59/176 -> 64/171. Spec 27,422 bytes",
+  "  md5 1d6910fd6fa19e0f36883084f43f9c62",
+  "  (authored-plus-newline md5",
+  "  26e807e289fbdfd705d5c8d643243a33;",
+  "  canvas md5",
+  "  704d722c51a595c531f657ee44e7ea2d).",
+  "  NEXT - R629: the Chapter 3 opener,",
+  "  the birth rank prose and the caste",
+  "  doctrine, capture pp. 60-62, Table",
+  "  37 (Birth Requirements by Class) and",
+  "  Table 38 (Character Birth), prefix",
+  "  dgp (verify free), audit \"R629 OA",
+  "  families audit\", include after",
+  "  rules/oacharab.h."
+ ]
+}

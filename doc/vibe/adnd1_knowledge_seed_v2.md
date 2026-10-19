@@ -12267,6 +12267,73 @@ when both halves land.
   dgo (verify free), audit "R628 OA
   character abilities audit", include
   after rules/oayakuza.h.
+- R628 LANDED 2026-10-19: commit
+  1b788fead1df9e688032cc6327bbe177b41630c7
+  (census 550 -> 551, pushed
+  db94e62..1b788fe), THE CHARACTER
+  ABILITIES chapter opener, capture
+  pp. 55-59: rules/oacharab.h, prefix
+  dgo (verified free), 47 inlines (10
+  consts, 32 bools, 5 table columns):
+  the multiple attacks doctrine (beyond
+  fighters, melee only, ninja-weapons
+  only with no carry from the other
+  class, the proficiency boost, the
+  one-per-level versus under-1-HD
+  monsters, the split-between-targets
+  rule, the 1/1, 3/2, 2/1 and kensai
+  5/2 notation read), the dual-class
+  doctrine (human only, the 15-in-old
+  and 17-or-18-in-new requisites, any
+  level, the kept old abilities with
+  the xp-to-new-class rule, the
+  no-hp-until-surpass rule, the
+  restrictions binding until surpass,
+  the old-use xp forfeiture, the best
+  combat and save tables, the free mix
+  after surpass, the weapons
+  exception), the alignment doctrine
+  (nine alignments, not religion, law
+  most common in Kara-Tur, the
+  complementary-party encouragement),
+  the languages (the home/trade/
+  alignment slot ladder, the
+  potential-only Table 5 count, the
+  75/50 dialect and wild-land
+  comprehension, the trade-language
+  limits, the 20-minus-Int study
+  months with the every-other-day
+  doubling and the native-speaker
+  halving, the permanent accent), T36
+  19x5 with the class column as the
+  1-6 code (bushi, kensai, ninja,
+  barbarian, samurai, sohei), the
+  printed "and up" bands as the -1
+  code and the N/D rates as the
+  numerator and denominator columns.
+  NO CONTESTED CELLS THIS ROUND -
+  both captures agree on every pinned
+  value. OCR normalization: "lying and
+  yang" reads as yin and yang (prose
+  only); the ninja asterisk footnote
+  appears twice in the second capture
+  (the printed footnote stands).
+  Battery 137 mutants, 0 missed; full
+  sha rverify GREEN. Gap census
+  59/176 -> 64/171. Spec 27,422 bytes
+  md5 1d6910fd6fa19e0f36883084f43f9c62
+  (authored-plus-newline md5
+  26e807e289fbdfd705d5c8d643243a33;
+  canvas md5
+  704d722c51a595c531f657ee44e7ea2d).
+  NEXT - R629: the Chapter 3 opener,
+  the birth rank prose and the caste
+  doctrine, capture pp. 60-62, Table
+  37 (Birth Requirements by Class) and
+  Table 38 (Character Birth), prefix
+  dgp (verify free), audit "R629 OA
+  families audit", include after
+  rules/oacharab.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
