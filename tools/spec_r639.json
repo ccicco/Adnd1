@@ -1,0 +1,1992 @@
+{
+ "round": 639,
+ "title": "EQUIPMENT - the equipping doctrine, Table 47",
+ "prefix": "dgz",
+ "header_file": "rules/oaequip.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 561,
+ "inline_count": 50,
+ "audit_label": "R639 OA equipment audit",
+ "audit_comment": "OA round twenty-six (capture pp. 76-78): the equipping the character prose and the Table 47 cost lists",
+ "banner": {
+  "title": "EQUIPPING THE CHARACTER AND TABLE 47, printed capture pp. 76-78 - the OA equipment round",
+  "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. The equipping prose pins from capture p. 76 (printed p. 38) and the full Table 47 from capture pp. 77-78 (printed pp. 39-40); the T47 gap box label reads capture pp. 78-84 - the label is preserved byte-exact in the flip. The printed table carries TEN sections - the eight cost lists the box names plus the ARMOR and ARMS lists that ride the same table; all ten pin this round as 256 rows, each a cost-unit-star triple (the unit code 1 fen, 2 yuan, 3 tael, 4 ch'ien per the R636 T43 doctrine; the star flags pin the printed asterisks - the ten armor-piece rows, the chijiriki, the five ninja-preferred misc rows). No contested cells detected within the single source. OCR normalizations: the Kyoketsu-shogi \"(biaded rope)\" reads as bladed rope and the stray mid-table separator row after it is an OCR artifact pinning nothing. The Weapons chapter prose with Tables 48-49 (capture pp. 79-80) is deliberately left for the next round",
+  "sentinel": "the gap census after this round: 89 closed, 146 open - the Table 47 box flips (census 561 -> 562); NEXT - R640: the Weapons prose with Table 48 (Weapon Equivalents) and Table 49 (Weight and Damage by Weapon Type), capture pp. 79-80, the weapon equivalents doctrine, prefix dha (verify free), audit \"R640 OA weapons audit\", include after rules/oaequip.h"
+ },
+ "consts": [
+  {
+   "name": "dgzT47RowCount",
+   "value": 256,
+   "comment": "Table 47 (capture pp. 77-78): the total row count across the ten printed sections"
+  },
+  {
+   "name": "dgzT47ArmorCount",
+   "value": 28,
+   "comment": "Table 47 (capture pp. 77-78): the armor cost list row count"
+  },
+  {
+   "name": "dgzT47ArmsCount",
+   "value": 76,
+   "comment": "Table 47 (capture pp. 77-78): the arms cost list row count"
+  },
+  {
+   "name": "dgzT47ClothingCount",
+   "value": 22,
+   "comment": "Table 47 (capture pp. 77-78): the clothing cost list row count"
+  },
+  {
+   "name": "dgzT47LivestockCount",
+   "value": 25,
+   "comment": "Table 47 (capture pp. 77-78): the livestock cost list row count"
+  },
+  {
+   "name": "dgzT47MiscCount",
+   "value": 42,
+   "comment": "Table 47 (capture pp. 77-78): the misc cost list row count"
+  },
+  {
+   "name": "dgzT47ProvisionsCount",
+   "value": 11,
+   "comment": "Table 47 (capture pp. 77-78): the provisions cost list row count"
+  },
+  {
+   "name": "dgzT47ReligiousCount",
+   "value": 8,
+   "comment": "Table 47 (capture pp. 77-78): the religious cost list row count"
+  },
+  {
+   "name": "dgzT47ServicesCount",
+   "value": 15,
+   "comment": "Table 47 (capture pp. 77-78): the services cost list row count"
+  },
+  {
+   "name": "dgzT47TackCount",
+   "value": 16,
+   "comment": "Table 47 (capture pp. 77-78): the tack cost list row count"
+  },
+  {
+   "name": "dgzT47TransportCount",
+   "value": 13,
+   "comment": "Table 47 (capture pp. 77-78): the transport cost list row count"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgzEquipAfterCreation",
+   "value": true,
+   "comment": "equipping prose (capture p. 76): after a character is created it is important to equip him - without equipment the character is at a great disadvantage"
+  },
+  {
+   "name": "dgzEquipAdventuringReason",
+   "value": true,
+   "comment": "equipping prose (capture p. 76): initially the character is not likely to get everything he wants - not enough money - which is not bad, since it provides the perfect reason to adventure"
+  },
+  {
+   "name": "dgzEquipEstablishedPrices",
+   "value": true,
+   "comment": "equipping prose (capture p. 76): the prices given are figured using established currency"
+  },
+  {
+   "name": "dgzEquipBarterPurchase",
+   "value": true,
+   "comment": "equipping prose (capture p. 76): characters can also purchase the equipment through barter units, using the barter-unit values already given"
+  },
+  {
+   "name": "dgzEquipIncompleteList",
+   "value": true,
+   "comment": "equipping prose (capture p. 76): the equipment list is by no means complete - it covers the items most frequently used, and the DM can freely add items if needed"
+  },
+  {
+   "name": "dgzEquipPriceChange",
+   "value": true,
+   "comment": "equipping prose (capture p. 76): the DM can change the price of any item for sound campaign reasons - scarcity, quality of workmanship"
+  },
+  {
+   "name": "dgzEquipAvailability",
+   "value": true,
+   "comment": "equipping prose (capture p. 76): the DM can rule items unavailable in areas of Kara-Tur - such items obviously cannot be purchased"
+  },
+  {
+   "name": "dgzT47ArmorPieceNote",
+   "value": true,
+   "comment": "T47 armor footnote (capture p. 77): the asterisk marks an armor piece, not a complete suit"
+  },
+  {
+   "name": "dgzT47NinjaPrefNote",
+   "value": true,
+   "comment": "T47 misc footnote (capture p. 78): the asterisked items are preferred by ninja"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dgzT47ArmorGrid",
+   "tag": "T47Armor",
+   "count": "dgzT47ArmorCount",
+   "sentinel": -99,
+   "cols": [
+    "dgzT47ArmorCost",
+    "dgzT47ArmorUnit",
+    "dgzT47ArmorStar"
+   ],
+   "data": [
+    [
+     5,
+     4,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     5,
+     4,
+     0
+    ],
+    [
+     5,
+     4,
+     1
+    ],
+    [
+     1,
+     4,
+     1
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     1,
+     4,
+     1
+    ],
+    [
+     5,
+     3,
+     1
+    ],
+    [
+     2,
+     4,
+     1
+    ],
+    [
+     3,
+     4,
+     1
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     8,
+     3,
+     0
+    ],
+    [
+     2,
+     3,
+     1
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     5,
+     4,
+     0
+    ],
+    [
+     8,
+     3,
+     1
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     20,
+     4,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     2,
+     4,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     30,
+     2,
+     0
+    ],
+    [
+     8,
+     3,
+     1
+    ],
+    [
+     4,
+     4,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     3,
+     1
+    ]
+   ],
+   "comment": "the Table 47 armor cost list (capture pp. 77-78)",
+   "col_comments": [
+    "the printed cost value by row - 0 Banded, 1 Buckler, 2 Chain, 3 Do-maru, 4 Haidate, 5 Hanburi, 6 Hara-ate, 7 Hara-ate-gawa, 8 Haramaki, 9 Haramaki-do, 10 Helmet, small, 11 Hide, 12 Horo, 13 Jingasa (war hat), 14 Kabuto (great helm), 15 Kote (armored sleeves), 16 Leather, 17 O-yoroi (great armor), 18 Padded, 19 Ring, 20 Scale, leather, 21 Scale, metal, 22 Shield, large, 23 Shield, medium, 24 Sode, pair, 25 Splinted, 26 Studded, 27 Sune-ate (capture pp. 77-78).",
+    "the cost unit as the 1-4 code: 1 fen, 2 yuan, 3 tael, 4 ch'ien - the R636 T43 coin values (capture pp. 77-78).",
+    "1 marks the printed asterisk rows - the footnote read (capture pp. 77-78); 0 elsewhere."
+   ],
+   "audit_comment": "the Table 47 armor grid: cost, unit, star (capture pp. 77-78)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgzT47ArmsGrid",
+   "tag": "T47Arms",
+   "count": "dgzT47ArmsCount",
+   "sentinel": -99,
+   "cols": [
+    "dgzT47ArmsCost",
+    "dgzT47ArmsUnit",
+    "dgzT47ArmsStar"
+   ],
+   "data": [
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     6,
+     3,
+     1
+    ],
+    [
+     3,
+     4,
+     0
+    ],
+    [
+     8,
+     3,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     10,
+     4,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     8,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     10,
+     4,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     50,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     7,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     8,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     15,
+     2,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     7,
+     3,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     2,
+     4,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     6,
+     4,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ]
+   ],
+   "comment": "the Table 47 arms cost list (capture pp. 77-78)",
+   "col_comments": [
+    "the printed cost value by row - 0 Arrow, armor piercer, 1 Arrow, frog crotch, 2 Arrow, humming bulb, 3 Arrow, leaf head, 4 Arrow, normal, 5 Axe, battle, 6 Axe, hand or throwing, 7 Blowpipe, 8 Bo stick, 9 Boku-toh (wooden sword), 10 Bow, composite short, 11 Bow, short, 12 Chain, 13 Chijiriki (spear & chain), 14 Chu-ko-nu (repeating crossbow), 15 Crossbow, heavy, 16 Crossbow, light, 17 Dagger, 18 Daikyu (great bow), 19 Dart, blowpipe, 20 Dart, thrown, 21 Fang (good), 22 Gunsen (iron fan), 23 Halberd, 24 Hankyu (little bow), 25 Javelin, 26 Jitte, 27 Jo stick, 28 Kama (sickle), 29 Katana & scabbard, 30 Kau sin ke (whipping chain), 31 Kawanaga (grappling hook), 32 Kiseru (iron pipe), 33 Kumade (climbing rake), 34 Kusari-gama (sickle & chain), 35 Kyoketsu-shogi (bladed rope), 36 Lajatang, 37 Lance (light horse), 38 Man catcher, 39 Metsubishi (pepper blower), 40 Nagimaki (horseman's glaive), 41 Naginata (footman's glaive), 42 Needle, 43 Nekode, pair (climbing claws), 44 Ninja-to & scabbard (sword), 45 Nunchaku, 46 Parang (machete), 47 Pellet bow, 48 Quarrel, single, 49 Quarrel, two dozen, 50 Sai, 51 Sang kauw, 52 Shaken, 53 Shakujo yari (concealed spear), 54 Shikomi-zu, 55 Shuriken, spike, 56 Shuriken, star, large, 57 Shuriken, star, small, 58 Siangkam (metal arrow), 59 Sling, 60 Sling, staff, 61 Sling/pellet bow bullets, score, 62 Sode garami (sleeve entangler), 63 Spear, 64 Sword, broad & scabbard, 65 Sword, long & scabbard, 66 Sword, short & scabbard, 67 Sword, two-handed, 68 Tetsu-bishi (caltrops), 69 Tetsubo (iron staff), 70 Three-piece rod, 71 Trident, 72 Tui-fa, 73 Uchi-ne (small javelin), 74 Wakizashi & scabbard (short sword), 75 Whip (capture pp. 77-78).",
+    "the cost unit as the 1-4 code: 1 fen, 2 yuan, 3 tael, 4 ch'ien - the R636 T43 coin values (capture pp. 77-78).",
+    "1 marks the printed asterisk rows - the footnote read (capture pp. 77-78); 0 elsewhere."
+   ],
+   "audit_comment": "the Table 47 arms grid: cost, unit, star (capture pp. 77-78)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgzT47ClothingGrid",
+   "tag": "T47Clothing",
+   "count": "dgzT47ClothingCount",
+   "sentinel": -99,
+   "cols": [
+    "dgzT47ClothingCost",
+    "dgzT47ClothingUnit",
+    "dgzT47ClothingStar"
+   ],
+   "data": [
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ]
+   ],
+   "comment": "the Table 47 clothing cost list (capture pp. 77-78)",
+   "col_comments": [
+    "the printed cost value by row - 0 Boots, high hard, 1 Boots, high soft, 2 Cap, 3 Cloak, cloth, 4 Cloak, fur, 5 Gloves, 6 Hat, fur, 7 Hat, straw, 8 Loincloth, 9 Outer robe (ho, happi), 10 Raincape, straw (mino), 11 Robe, cotton (kosode, kimono), 12 Robe, fur trimmed, 13 Robe, silk (kosode), 14 Sandals, 15 Sash or belt (obi), 16 Tabi (boot/sock), 17 Trousers, cotton (hakama), 18 Trousers, woolen, 19 Turban, 20 Vest, fur, 21 Vest, silk (capture pp. 77-78).",
+    "the cost unit as the 1-4 code: 1 fen, 2 yuan, 3 tael, 4 ch'ien - the R636 T43 coin values (capture pp. 77-78).",
+    "1 marks the printed asterisk rows - the footnote read (capture pp. 77-78); 0 elsewhere."
+   ],
+   "audit_comment": "the Table 47 clothing grid: cost, unit, star (capture pp. 77-78)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgzT47LivestockGrid",
+   "tag": "T47Livestock",
+   "count": "dgzT47LivestockCount",
+   "sentinel": -99,
+   "cols": [
+    "dgzT47LivestockCost",
+    "dgzT47LivestockUnit",
+    "dgzT47LivestockStar"
+   ],
+   "data": [
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     8,
+     3,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     50,
+     4,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     5,
+     4,
+     0
+    ],
+    [
+     20,
+     4,
+     0
+    ],
+    [
+     15,
+     3,
+     0
+    ],
+    [
+     5,
+     4,
+     0
+    ],
+    [
+     25,
+     3,
+     0
+    ],
+    [
+     3,
+     4,
+     0
+    ],
+    [
+     2,
+     4,
+     0
+    ],
+    [
+     8,
+     3,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     2,
+     4,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     15,
+     3,
+     0
+    ],
+    [
+     2,
+     4,
+     0
+    ]
+   ],
+   "comment": "the Table 47 livestock cost list (capture pp. 77-78)",
+   "col_comments": [
+    "the printed cost value by row - 0 Canary, 1 Cat, 2 Chicken or rooster, 3 Cricket, lighting, 4 Dog, guard, 5 Dog, hunting, 6 Dog, lap, 7 Donkey, 8 Dove, 9 Elephant, war, 10 Fish, ornamental, 11 Goat, 12 Hawk, fledgling, 13 Hawk, trained, 14 Horse, draft, 15 Horse, heavy war, 16 Horse, light war, 17 Horse, medium war, 18 Horse, riding (light), 19 Monkey, 20 Nightingale, 21 Ox, 22 Peacock, 23 Pony, riding, 24 Pony, war (capture pp. 77-78).",
+    "the cost unit as the 1-4 code: 1 fen, 2 yuan, 3 tael, 4 ch'ien - the R636 T43 coin values (capture pp. 77-78).",
+    "1 marks the printed asterisk rows - the footnote read (capture pp. 77-78); 0 elsewhere."
+   ],
+   "audit_comment": "the Table 47 livestock grid: cost, unit, star (capture pp. 77-78)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgzT47MiscGrid",
+   "tag": "T47Misc",
+   "count": "dgzT47MiscCount",
+   "sentinel": -99,
+   "cols": [
+    "dgzT47MiscCost",
+    "dgzT47MiscUnit",
+    "dgzT47MiscStar"
+   ],
+   "data": [
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     30,
+     2,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     3,
+     4,
+     0
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     10,
+     2,
+     1
+    ],
+    [
+     3,
+     3,
+     1
+    ],
+    [
+     1,
+     3,
+     1
+    ],
+    [
+     1,
+     4,
+     1
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     5,
+     4,
+     1
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     8,
+     2,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     10,
+     3,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ]
+   ],
+   "comment": "the Table 47 misc cost list (capture pp. 77-78)",
+   "col_comments": [
+    "the printed cost value by row - 0 Backpack, wicker, 1 Basket, large, 2 Basket, small, 3 Blanket, coarse, 4 Candle, tallow, 5 Chest, Armor, 6 Chest, common wooden, large, 7 Chest, common wooden, small, 8 Chest, quality, large, 9 Chest, quality, small, 10 Chopsticks, lacquered, 11 Cloth, cotton bolt, 12 Cloth, silk bolt, 13 Cord, 10 ft, 14 Eggshell grenade, dust, 15 Eggshell grenade, flashpowder, 16 Eggshell grenade, pepper, 17 Eggshell grenade, poison smoke, 18 Fishhook, 19 Fishing net, 10 ft, 20 Goza (straw mat), 21 Ink, brush, and inking stone, 22 Lantern, hooded, 23 Lantern, paper, 24 Mirror, small metal, 25 Oil, flask of, 26 Paper, writing, 10 sheets, 27 Pot, iron, 28 Quiver, 2 dozen arrows cap, 29 Rope, hemp 50 ft, 30 Rope, silk 50 ft, 31 Signal rocket, 32 Standard, flag, sashimono, 33 Sword stand, 34 Tent, large, 35 Tent, small, 36 Thieves picks and tools, 37 Tinder box, flint and steel, 38 Tobacco pipe, 39 Tobacco, 1 lb, 40 Tool, common, 41 Torch (capture pp. 77-78).",
+    "the cost unit as the 1-4 code: 1 fen, 2 yuan, 3 tael, 4 ch'ien - the R636 T43 coin values (capture pp. 77-78).",
+    "1 marks the printed asterisk rows - the footnote read (capture pp. 77-78); 0 elsewhere."
+   ],
+   "audit_comment": "the Table 47 misc grid: cost, unit, star (capture pp. 77-78)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgzT47ProvisionsGrid",
+   "tag": "T47Provisions",
+   "count": "dgzT47ProvisionsCount",
+   "sentinel": -99,
+   "cols": [
+    "dgzT47ProvisionsCost",
+    "dgzT47ProvisionsUnit",
+    "dgzT47ProvisionsStar"
+   ],
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     5,
+     4,
+     0
+    ],
+    [
+     15,
+     2,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ]
+   ],
+   "comment": "the Table 47 provisions cost list (capture pp. 77-78)",
+   "col_comments": [
+    "the printed cost value by row - 0 Beer, jar, 1 Food, banquet, 2 Food, common meal, 3 Food, exotic, 4 Food, poor, 5 Grain, horse 1 day, 6 Pepper/spices, 1 lb, 7 Rice, koku, 8 Ricecake, 1 week rations, 9 Sake, jar, 10 Tea, 1 lb (capture pp. 77-78).",
+    "the cost unit as the 1-4 code: 1 fen, 2 yuan, 3 tael, 4 ch'ien - the R636 T43 coin values (capture pp. 77-78).",
+    "1 marks the printed asterisk rows - the footnote read (capture pp. 77-78); 0 elsewhere."
+   ],
+   "audit_comment": "the Table 47 provisions grid: cost, unit, star (capture pp. 77-78)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgzT47ReligiousGrid",
+   "tag": "T47Religious",
+   "count": "dgzT47ReligiousCount",
+   "sentinel": -99,
+   "cols": [
+    "dgzT47ReligiousCost",
+    "dgzT47ReligiousUnit",
+    "dgzT47ReligiousStar"
+   ],
+   "data": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     50,
+     4,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ]
+   ],
+   "comment": "the Table 47 religious cost list (capture pp. 77-78)",
+   "col_comments": [
+    "the printed cost value by row - 0 Beads, prayer, 1 Bell, small, 2 Bell, temple, 3 Gong, 4 Incense, stick, 5 Paper, prayer strip, 6 Symbol, holy (unholy), 7 Wheel, prayer (capture pp. 77-78).",
+    "the cost unit as the 1-4 code: 1 fen, 2 yuan, 3 tael, 4 ch'ien - the R636 T43 coin values (capture pp. 77-78).",
+    "1 marks the printed asterisk rows - the footnote read (capture pp. 77-78); 0 elsewhere."
+   ],
+   "audit_comment": "the Table 47 religious grid: cost, unit, star (capture pp. 77-78)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgzT47ServicesGrid",
+   "tag": "T47Services",
+   "count": "dgzT47ServicesCount",
+   "sentinel": -99,
+   "cols": [
+    "dgzT47ServicesCost",
+    "dgzT47ServicesUnit",
+    "dgzT47ServicesStar"
+   ],
+   "data": [
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     7,
+     3,
+     0
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ]
+   ],
+   "comment": "the Table 47 services cost list (capture pp. 77-78)",
+   "col_comments": [
+    "the printed cost value by row - 0 Acrobats, per performance, 1 Actors, per performance, 2 Chef, per banquet, 3 Clerk, per month, 4 Courier, per day, 5 Dancers, per performance, 6 Gardener, per month, 7 Lantern bearer, 8 Lodging, common or small village, 9 Lodging, good inn, 10 Messenger, in town, 11 Mourners, 12 Musician, per performance, 13 Servant, one month, 14 Stabling, one night (capture pp. 77-78).",
+    "the cost unit as the 1-4 code: 1 fen, 2 yuan, 3 tael, 4 ch'ien - the R636 T43 coin values (capture pp. 77-78).",
+    "1 marks the printed asterisk rows - the footnote read (capture pp. 77-78); 0 elsewhere."
+   ],
+   "audit_comment": "the Table 47 services grid: cost, unit, star (capture pp. 77-78)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgzT47TackGrid",
+   "tag": "T47Tack",
+   "count": "dgzT47TackCount",
+   "sentinel": -99,
+   "cols": [
+    "dgzT47TackCost",
+    "dgzT47TackUnit",
+    "dgzT47TackStar"
+   ],
+   "data": [
+    [
+     10,
+     4,
+     0
+    ],
+    [
+     20,
+     4,
+     0
+    ],
+    [
+     2,
+     4,
+     0
+    ],
+    [
+     5,
+     4,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     8,
+     4,
+     0
+    ],
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     15,
+     2,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     4,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     15,
+     2,
+     0
+    ],
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     8,
+     3,
+     0
+    ]
+   ],
+   "comment": "the Table 47 tack cost list (capture pp. 77-78)",
+   "col_comments": [
+    "the printed cost value by row - 0 Barding, half chain, 1 Barding, elephant, leather, 2 Barding, full leather or padded, 3 Barding, half brigandine, 4 Barding, half padded, 5 Barding, half metal scale, 6 Bit and bridle, 7 Harness and feed bag, 8 Horse yoke, 9 Howdah, 10 Ox yoke, 11 Saddle bags, large, 12 Saddle bags, small, 13 Saddle blanket, 14 Saddle, pack, 15 Saddle, riding (capture pp. 77-78).",
+    "the cost unit as the 1-4 code: 1 fen, 2 yuan, 3 tael, 4 ch'ien - the R636 T43 coin values (capture pp. 77-78).",
+    "1 marks the printed asterisk rows - the footnote read (capture pp. 77-78); 0 elsewhere."
+   ],
+   "audit_comment": "the Table 47 tack grid: cost, unit, star (capture pp. 77-78)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgzT47TransportGrid",
+   "tag": "T47Transport",
+   "count": "dgzT47TransportCount",
+   "sentinel": -99,
+   "cols": [
+    "dgzT47TransportCost",
+    "dgzT47TransportUnit",
+    "dgzT47TransportStar"
+   ],
+   "data": [
+    [
+     300,
+     4,
+     0
+    ],
+    [
+     100,
+     4,
+     0
+    ],
+    [
+     20,
+     4,
+     0
+    ],
+    [
+     3,
+     4,
+     0
+    ],
+    [
+     8,
+     4,
+     0
+    ],
+    [
+     50,
+     4,
+     0
+    ],
+    [
+     100,
+     4,
+     0
+    ],
+    [
+     500,
+     4,
+     0
+    ],
+    [
+     300,
+     4,
+     0
+    ],
+    [
+     800,
+     4,
+     0
+    ],
+    [
+     5,
+     4,
+     0
+    ],
+    [
+     5,
+     4,
+     0
+    ],
+    [
+     20,
+     4,
+     0
+    ]
+   ],
+   "comment": "the Table 47 transport cost list (capture pp. 77-78)",
+   "col_comments": [
+    "the printed cost value by row - 0 Barge, large, 1 Barge, small, 2 Boat, 3 Canoe, small, 4 Canoe, war, 5 Chariot, riding, 6 Chariot, war, 7 Junk, large, 8 Junk, small, 9 Junk, war, 10 Ox cart, 11 Palanquin, 12 Wagon (capture pp. 77-78).",
+    "the cost unit as the 1-4 code: 1 fen, 2 yuan, 3 tael, 4 ch'ien - the R636 T43 coin values (capture pp. 77-78).",
+    "1 marks the printed asterisk rows - the footnote read (capture pp. 77-78); 0 elsewhere."
+   ],
+   "audit_comment": "the Table 47 transport grid: cost, unit, star (capture pp. 77-78)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the T47 total row count pin",
+   "expr": "m['dgzT47RowCount']() != 256"
+  },
+  {
+   "note": "the armor count pin",
+   "expr": "m['dgzT47ArmorCount']() != 28"
+  },
+  {
+   "note": "the arms count pin",
+   "expr": "m['dgzT47ArmsCount']() != 76"
+  },
+  {
+   "note": "the clothing count pin",
+   "expr": "m['dgzT47ClothingCount']() != 22"
+  },
+  {
+   "note": "the livestock count pin",
+   "expr": "m['dgzT47LivestockCount']() != 25"
+  },
+  {
+   "note": "the misc count pin",
+   "expr": "m['dgzT47MiscCount']() != 42"
+  },
+  {
+   "note": "the provisions count pin",
+   "expr": "m['dgzT47ProvisionsCount']() != 11"
+  },
+  {
+   "note": "the religious count pin",
+   "expr": "m['dgzT47ReligiousCount']() != 8"
+  },
+  {
+   "note": "the services count pin",
+   "expr": "m['dgzT47ServicesCount']() != 15"
+  },
+  {
+   "note": "the tack count pin",
+   "expr": "m['dgzT47TackCount']() != 16"
+  },
+  {
+   "note": "the transport count pin",
+   "expr": "m['dgzT47TransportCount']() != 13"
+  },
+  {
+   "note": "the EquipAfterCreation pin",
+   "expr": "m['dgzEquipAfterCreation']() != 1"
+  },
+  {
+   "note": "the EquipAdventuringReason pin",
+   "expr": "m['dgzEquipAdventuringReason']() != 1"
+  },
+  {
+   "note": "the EquipEstablishedPrices pin",
+   "expr": "m['dgzEquipEstablishedPrices']() != 1"
+  },
+  {
+   "note": "the EquipBarterPurchase pin",
+   "expr": "m['dgzEquipBarterPurchase']() != 1"
+  },
+  {
+   "note": "the EquipIncompleteList pin",
+   "expr": "m['dgzEquipIncompleteList']() != 1"
+  },
+  {
+   "note": "the EquipPriceChange pin",
+   "expr": "m['dgzEquipPriceChange']() != 1"
+  },
+  {
+   "note": "the EquipAvailability pin",
+   "expr": "m['dgzEquipAvailability']() != 1"
+  },
+  {
+   "note": "the T47ArmorPieceNote pin",
+   "expr": "m['dgzT47ArmorPieceNote']() != 1"
+  },
+  {
+   "note": "the T47NinjaPrefNote pin",
+   "expr": "m['dgzT47NinjaPrefNote']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the T47 armor O-yoroi row - the great armor at 20 ch'ien (capture p. 77)",
+   "expr": "m['dgzT47ArmorCost'](17) != 20 or m['dgzT47ArmorUnit'](17) != 4"
+  },
+  {
+   "note": "the T47 arms katana row - the katana and scabbard at 10 ch'ien (capture p. 77)",
+   "expr": "m['dgzT47ArmsCost'](29) != 10 or m['dgzT47ArmsUnit'](29) != 4"
+  },
+  {
+   "note": "the T47 arms kiseru row - the iron pipe at 50 yuan (capture p. 77)",
+   "expr": "m['dgzT47ArmsCost'](32) != 50 or m['dgzT47ArmsUnit'](32) != 2"
+  },
+  {
+   "note": "the T47 clothing silk robe row - the silk kosode at 3 tael (capture p. 77)",
+   "expr": "m['dgzT47ClothingCost'](13) != 3 or m['dgzT47ClothingUnit'](13) != 3"
+  },
+  {
+   "note": "the T47 livestock elephant row - the war elephant at 50 ch'ien (capture p. 78)",
+   "expr": "m['dgzT47LivestockCost'](9) != 50 or m['dgzT47LivestockUnit'](9) != 4"
+  },
+  {
+   "note": "the T47 misc poison-smoke grenade row - 1 ch'ien, starred (capture p. 78)",
+   "expr": "m['dgzT47MiscCost'](17) != 1 or m['dgzT47MiscUnit'](17) != 4 or m['dgzT47MiscStar'](17) != 1"
+  },
+  {
+   "note": "the T47 misc silk rope row - 5 ch'ien, starred (capture p. 78)",
+   "expr": "m['dgzT47MiscCost'](30) != 5 or m['dgzT47MiscUnit'](30) != 4 or m['dgzT47MiscStar'](30) != 1"
+  },
+  {
+   "note": "the T47 provisions rice row - the koku at 5 ch'ien (capture p. 78)",
+   "expr": "m['dgzT47ProvisionsCost'](7) != 5 or m['dgzT47ProvisionsUnit'](7) != 4"
+  },
+  {
+   "note": "the T47 religious temple bell row - 50 ch'ien (capture p. 78)",
+   "expr": "m['dgzT47ReligiousCost'](2) != 50 or m['dgzT47ReligiousUnit'](2) != 4"
+  },
+  {
+   "note": "the T47 services rows - the servant 5 tael, the clerk 7 tael (capture p. 78)",
+   "expr": "m['dgzT47ServicesCost'](13) != 5 or m['dgzT47ServicesCost'](3) != 7 or m['dgzT47ServicesUnit'](3) != 3"
+  },
+  {
+   "note": "the T47 tack elephant barding row - 20 ch'ien (capture p. 78)",
+   "expr": "m['dgzT47TackCost'](1) != 20 or m['dgzT47TackUnit'](1) != 4"
+  },
+  {
+   "note": "the T47 transport war junk row - 800 ch'ien (capture p. 78)",
+   "expr": "m['dgzT47TransportCost'](9) != 800 or m['dgzT47TransportUnit'](9) != 4"
+  },
+  {
+   "note": "the T47 star flags - the Do-maru and Sune-ate armor pieces, the chijiriki, the unstarred wakizashi (capture pp. 77-78)",
+   "expr": "m['dgzT47ArmorStar'](3) != 1 or m['dgzT47ArmorStar'](27) != 1 or m['dgzT47ArmsStar'](13) != 1 or m['dgzT47ArmsStar'](74) != 0"
+  }
+ ],
+ "header_sections": {
+  "the equipping prose pins": [
+   {
+    "kind": "bool",
+    "name": "dgzEquipAfterCreation"
+   },
+   {
+    "kind": "bool",
+    "name": "dgzEquipAdventuringReason"
+   },
+   {
+    "kind": "bool",
+    "name": "dgzEquipEstablishedPrices"
+   },
+   {
+    "kind": "bool",
+    "name": "dgzEquipBarterPurchase"
+   },
+   {
+    "kind": "bool",
+    "name": "dgzEquipIncompleteList"
+   },
+   {
+    "kind": "bool",
+    "name": "dgzEquipPriceChange"
+   },
+   {
+    "kind": "bool",
+    "name": "dgzEquipAvailability"
+   }
+  ],
+  "the Table 47 cost lists": [
+   {
+    "kind": "const",
+    "name": "dgzT47RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgzT47ArmorCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgzT47ArmsCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgzT47ClothingCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgzT47LivestockCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgzT47MiscCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgzT47ProvisionsCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgzT47ReligiousCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgzT47ServicesCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgzT47TackCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgzT47TransportCount"
+   },
+   {
+    "kind": "table",
+    "name": "dgzT47ArmorGrid"
+   },
+   {
+    "kind": "table",
+    "name": "dgzT47ArmsGrid"
+   },
+   {
+    "kind": "table",
+    "name": "dgzT47ClothingGrid"
+   },
+   {
+    "kind": "table",
+    "name": "dgzT47LivestockGrid"
+   },
+   {
+    "kind": "table",
+    "name": "dgzT47MiscGrid"
+   },
+   {
+    "kind": "table",
+    "name": "dgzT47ProvisionsGrid"
+   },
+   {
+    "kind": "table",
+    "name": "dgzT47ReligiousGrid"
+   },
+   {
+    "kind": "table",
+    "name": "dgzT47ServicesGrid"
+   },
+   {
+    "kind": "table",
+    "name": "dgzT47TackGrid"
+   },
+   {
+    "kind": "table",
+    "name": "dgzT47TransportGrid"
+   },
+   {
+    "kind": "bool",
+    "name": "dgzT47ArmorPieceNote"
+   },
+   {
+    "kind": "bool",
+    "name": "dgzT47NinjaPrefNote"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 47: Basic Equipment and Supplies Cost box closes",
+   "from": "  - [ ] Table 47: Basic Equipment and Supplies Cost\n    (capture pp. 78-84) - the eight cost lists ride\n    this table: clothing, livestock, miscellaneous\n    equipment, provisions, religious items, common\n    services, tack and harness, transport",
+   "to": "  - [x] Table 47: Basic Equipment and Supplies Cost\n    (capture pp. 78-84) - the eight cost lists ride\n    this table: clothing, livestock, miscellaneous\n    equipment, provisions, religious items, common\n    services, tack and harness, transport - R639:\n    the dgz equipment pins - the equipping doctrine\n    (add items, price changes, availability, the\n    barter purchase) with the ten printed cost sections\n    pinned as the 256-row cost-unit-star grids (armor,\n    arms, clothing, livestock, misc equipment,\n    provisions, religious items, services, tack and\n    harness, transport)"
+  }
+ ],
+ "gap_census": {
+  "closed": 89,
+  "open": 146
+ },
+ "include_comment": "the OA equipment pins",
+ "include_after": "#include \"rules/oaexch.h\"  // R638: the OA exchange pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R638 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R638 LANDED 2026-10-19: commit",
+  "  6580845aae3991ceb742dc6190e5e89ced932de8",
+  "  (census 560 -> 561, pushed",
+  "  1cd7075..6580845), EXCHANGE - the gajin",
+  "  rates and Table 46, capture pp. 76-77:",
+  "  rules/oaexch.h, prefix dgy (verified",
+  "  free), 27 inlines (9 consts, 14 bools,",
+  "  4 table columns): the gajin-contact",
+  "  exchange need, the caravan-route and",
+  "  trading-port moneylenders, the worthless",
+  "  ch'ao with the convert advice, the",
+  "  gold-not-currency read with the market",
+  "  factors (the flooding read), the",
+  "  undesired foreign silver, the standard",
+  "  copper (one fen per two coppers), the",
+  "  export smuggling offense, the Kara-Tur",
+  "  coins accepted abroad, the coin",
+  "  speculation, the prose street rates",
+  "  (the fen one cp, the yuan one cp, the",
+  "  tael 4-14 sp as 2d6-2, the gold 2-7",
+  "  tael, the silver 1d6+7 fen - the OCR",
+  "  \"(1d6 - 7)\" dash read), T46 as the 9x4",
+  "  grid (the fen-based real values with",
+  "  every printed multi-value cell agreeing",
+  "  in fen, the per-row exchange lo-hi",
+  "  bounds, the market-value flags on the",
+  "  electrum, gold and platinum rows), the",
+  "  notes doctrine (real value, exchange",
+  "  value, market price). PINNED FROM THE",
+  "  2018 PRINT CAPTURE ALONE (the settling",
+  "  authority; the first Mistral-OCR",
+  "  capture session is unavailable above",
+  "  p. 33, so no cross-capture check); the",
+  "  prose street rates and the T46 standard",
+  "  rates differ as printed (the yuan one-cp",
+  "  street rate vs the five-cp real value,",
+  "  the tael 4-14 sp street fetch vs the",
+  "  2-12 standard) - both pinned. The",
+  "  Equipping the Character prose with",
+  "  Table 47 deliberately left for R639.",
+  "  Battery 59 mutants, 0 missed; full sha",
+  "  rverify GREEN; preflight GREEN. Gap",
+  "  census 86/149 -> 88/147. Spec 18,652",
+  "  bytes md5 cd6919255dceb0ce362d4ad255befc80",
+  "  (authored-plus-newline md5",
+  "  d28a57a113096f414a0bf7338760fb7e;",
+  "  canvas md5",
+  "  4c5d79325b6247796d0b08135ef5ec64).",
+  "  NEXT - R639: the Equipping the",
+  "  Character prose with Table 47 (Basic",
+  "  Equipment and Supplies Cost), capture",
+  "  pp. 77-84, the eight cost lists, prefix",
+  "  dgz (verify free), audit \"R639 OA",
+  "  equipment audit\", include after",
+  "  rules/oaexch.h."
+ ]
+}

@@ -12877,6 +12877,61 @@ when both halves land.
   doctrine, prefix dgy (verify free),
   audit "R638 OA exchange audit",
   include after rules/oastart.h.
+- R638 LANDED 2026-10-19: commit
+  6580845aae3991ceb742dc6190e5e89ced932de8
+  (census 560 -> 561, pushed
+  1cd7075..6580845), EXCHANGE - the gajin
+  rates and Table 46, capture pp. 76-77:
+  rules/oaexch.h, prefix dgy (verified
+  free), 27 inlines (9 consts, 14 bools,
+  4 table columns): the gajin-contact
+  exchange need, the caravan-route and
+  trading-port moneylenders, the worthless
+  ch'ao with the convert advice, the
+  gold-not-currency read with the market
+  factors (the flooding read), the
+  undesired foreign silver, the standard
+  copper (one fen per two coppers), the
+  export smuggling offense, the Kara-Tur
+  coins accepted abroad, the coin
+  speculation, the prose street rates
+  (the fen one cp, the yuan one cp, the
+  tael 4-14 sp as 2d6-2, the gold 2-7
+  tael, the silver 1d6+7 fen - the OCR
+  "(1d6 - 7)" dash read), T46 as the 9x4
+  grid (the fen-based real values with
+  every printed multi-value cell agreeing
+  in fen, the per-row exchange lo-hi
+  bounds, the market-value flags on the
+  electrum, gold and platinum rows), the
+  notes doctrine (real value, exchange
+  value, market price). PINNED FROM THE
+  2018 PRINT CAPTURE ALONE (the settling
+  authority; the first Mistral-OCR
+  capture session is unavailable above
+  p. 33, so no cross-capture check); the
+  prose street rates and the T46 standard
+  rates differ as printed (the yuan one-cp
+  street rate vs the five-cp real value,
+  the tael 4-14 sp street fetch vs the
+  2-12 standard) - both pinned. The
+  Equipping the Character prose with
+  Table 47 deliberately left for R639.
+  Battery 59 mutants, 0 missed; full sha
+  rverify GREEN; preflight GREEN. Gap
+  census 86/149 -> 88/147. Spec 18,652
+  bytes md5 cd6919255dceb0ce362d4ad255befc80
+  (authored-plus-newline md5
+  d28a57a113096f414a0bf7338760fb7e;
+  canvas md5
+  4c5d79325b6247796d0b08135ef5ec64).
+  NEXT - R639: the Equipping the
+  Character prose with Table 47 (Basic
+  Equipment and Supplies Cost), capture
+  pp. 77-84, the eight cost lists, prefix
+  dgz (verify free), audit "R639 OA
+  equipment audit", include after
+  rules/oaexch.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

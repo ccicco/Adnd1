@@ -829,11 +829,18 @@ description riding the same round.
     values, the per-row exchange bounds with the
     market-value flags, the notes doctrine (real,
     exchange, market)
-  - [ ] Table 47: Basic Equipment and Supplies Cost
+  - [x] Table 47: Basic Equipment and Supplies Cost
     (capture pp. 78-84) - the eight cost lists ride
     this table: clothing, livestock, miscellaneous
     equipment, provisions, religious items, common
-    services, tack and harness, transport
+    services, tack and harness, transport - R639:
+    the dgz equipment pins - the equipping doctrine
+    (add items, price changes, availability, the
+    barter purchase) with the ten printed cost sections
+    pinned as the 256-row cost-unit-star grids (armor,
+    arms, clothing, livestock, misc equipment,
+    provisions, religious items, services, tack and
+    harness, transport)
   - [ ] Weapons prose and the weapon descriptions
     (capture pp. 84-93)
   - [ ] Table 48: Weapon Equivalents (capture p. 84)
