@@ -13185,6 +13185,58 @@ when both halves land.
   p. 94, the armor-class grid, prefix dhd
   (verify free), audit "R643 OA armor audit",
   include after rules/oahurled.h.
+- R643 LANDED 2026-10-19: commit
+  86110ce4a39d218d2a260ceca762f7b298337e47
+  (census 565 -> 566, pushed
+  b784a11..86110ce), ARMOR CLASS TABLE -
+  Table 52 (Armor Class Table), capture p.
+  94: rules/oaarmor.h, prefix dhd (verified
+  free), 2 inlines (1 const, 1 table
+  column): the 8-row suit grid - the armor
+  class rating ladder, 10 through 3 one
+  step per row, the -99 default sentinel
+  per the T48 single-column precedent, the
+  type-of-armor names riding the column
+  comment per the T48 doctrine (the
+  shield/kote and o-yori spellings as
+  printed; the suit rows enumerate multiple
+  types per rating). The 8-row table
+  cross-checked cell-by-cell between the
+  two passes; the numeric ladder agrees -
+  zero contested cells; the one contest is
+  a name: the AC-4 row third type reads
+  branded mail in the print against the
+  compressed banded mail - the print's own
+  page prose prints banded mail twice in
+  the rare-suits sentence, so the row read
+  is an OCR slip and the name pins as
+  banded mail (a read contradicting its own
+  page does not stand). The
+  corselet-of-laced-armor prose example
+  (AC 7, equal to studded leather)
+  cross-checks the row-3 rating; the prose
+  stays in the open armor prose box. One
+  pre-publish repair the machinery caught:
+  the single-line gap label - the first
+  gap_to draft duplicated the flipped label
+  standalone; the label-uniqueness assert
+  (the R641 repair) caught it, the helper
+  now extends the flipped line directly.
+  rverify GREEN at b784a11, 9 mutants, 0
+  missed; preflight GREEN (566 audit
+  census, BUILD 0 warnings). Gap census
+  93/142 -> 94/141. Spec 8,473 bytes md5
+  b74a8e26c2aa4564beeee3f6120a9463
+  (authored-plus-newline md5
+  546320e7960ddf98d13220880133cf82 - the
+  value the ritual gated and matched;
+  canvas md5
+  d562900b181aaa8213faf59d6f9c888d). NEXT -
+  R644: Table 53 (Individual Piece Armor
+  Class), capture p. 95, the laced-armor
+  piece class steps, prefix dhe (verify
+  free), audit "R644 OA piece armor audit",
+  include after rules/oaarmor.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -867,8 +867,10 @@ description riding the same round.
   eight suit rows pinned as the armor class rating ladder, 10 through 3, with
   the armor type names riding the column comment and the branded-mail OCR slip
   settled as banded mail
-  - [ ] Table 53: Individual Piece Armor Class
-    (capture p. 95)
+  - [x] Table 53: Individual Piece Armor Class
+    (capture p. 95) - R644: the dhe T53 grid - nine piece rows pinned as the
+    armor class steps from AC 10 with the star set (the hara-ate backside
+    pair) and the backside note as a bool
   - [ ] Table 54: Types of Armor & Encumbrance
     (capture p. 95)
   - [ ] Miscellaneous Equipment Descriptions
