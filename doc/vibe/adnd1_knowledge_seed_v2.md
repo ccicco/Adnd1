@@ -12203,6 +12203,70 @@ when both halves land.
   dgn (verify free), audit "R627 OA
   yakuza audit", include after rules/
   oawujen.h.
+- R627 LANDED 2026-10-19: commit
+  db94e62fd73176ba4f77cba6dbda777e63f4a535
+  (census 549 -> 550, pushed
+  5f23689..db94e62), THE YAKUZA, capture
+  pp. 51-54: rules/oayakuza.h, prefix
+  dgn (verified free), 62 inlines (36
+  consts, 21 bools, 5 table columns):
+  the Str 11/Int 15/Dex 15/Cha 16 minima
+  with no prime requisite, the ALWAYS-
+  LAWFUL rule, the d6 with the thief
+  tables, any weapon with the Table 13
+  armor and no shields, the family-clan
+  requirement with the -5 birth
+  modifier, three slots plus the free
+  gaming proficiency, the thief skills
+  at the ninja chances with hear noise
+  as monk, the investigate tiers
+  (common 1 day/2d6 fen always
+  accurate; uncommon 1-3 days/2d4 yuan
+  10 percent; confidential 2d6 days/
+  2d10 tael 25 percent; secret 3d6
+  days/2d10 ch'ien 40 percent), never
+  magical or legendary, the contacts
+  doctrine (one per two levels, never
+  more than four levels above), the ki
+  halves-damage power (round up, once
+  per round, level times per day), the
+  +10 percent reaction bonus except
+  social-status rolls, the adoption
+  into the kumi without the Table 39/40
+  rolls, the Zingi family honor with
+  the 2-ch'ien-per-level monthly
+  stipend, the kyodai-bun brethren from
+  2nd level (one per level, at least
+  one level beneath, never above 8th,
+  major enterprises need oyabun
+  approval), the tattoos-per-level rule,
+  the cast-out non-person doctrine with
+  regainable membership, T34 12x3 with
+  the 9-plus-N cells and the
+  300,000-xp/1-hp notes, T35 21x2 with
+  the area covered pinned as the 1-9
+  code (1/2/3 blocks; 1 ward 4; 2
+  wards 5; 1 district 6; 2 districts 7;
+  3 districts 8; province 9). NO
+  CONTESTED CELLS THIS ROUND - both
+  captures agree on every pinned value.
+  OCR normalization: Zing reads Zingi;
+  2d level reads 2nd level; hide-out
+  and hideout both printed. Battery 135
+  mutants, 0 missed; full sha rverify
+  GREEN. Gap census 56/179 -> 59/176.
+  Spec 29,495 bytes md5
+  e2cd4461c78bc8f9fedea94daaf7b701
+  (authored-plus-newline md5
+  0798e57f3ca5372eec3b2eb9d21f0427;
+  canvas md5
+  1acd67aa889fd699c3667ff5bccdea5a).
+  NEXT - R628: the Character Abilities
+  chapter opener, capture pp. 55-59,
+  Tables 36 (Multiple Attacks), prefix
+  dgo (verify free), audit "R628 OA
+  character abilities audit", include
+  after rules/oayakuza.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1,0 +1,911 @@
+{
+ "round": 628,
+ "title": "THE CHARACTER ABILITIES chapter opener - the multiple attacks, the dual-class doctrine, the alignment doctrine, the languages, Table 36",
+ "prefix": "dgo",
+ "header_file": "rules/oacharab.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 550,
+ "inline_count": 47,
+ "audit_label": "R628 OA character abilities audit",
+ "audit_comment": "OA round fifteen (capture pp. 55-59): the character abilities chapter opener - the multiple attacks, the dual-class doctrine, the alignment doctrine and the languages",
+ "banner": {
+  "title": "THE CHARACTER ABILITIES, printed capture pp. 55-59 - the OA chapter opener round",
+  "provenance": "verified against capture pp. 55-59 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). No contested cells this round - both captures agree on every pinned value. The T36 class column pins as the 1-6 code (bushi, kensai, ninja, barbarian, samurai, sohei); the printed \"and up\" bands pin as the -1 code; the attack rates pin as the numerator and denominator of the printed N/D notation. OCR normalization: \"lying and yang\" reads as yin and yang (prose only); \"human (or human)\" reads as the printed text (prose only); the ninja asterisk footnote appears twice in the second capture (the printed footnote stands)",
+  "sentinel": "the gap census after this round: 64 closed, 171 open - the Character Abilities, Multi-Class and Dual-Class, Alignment, Languages and Table 36 boxes flip (census 550 -> 551); NEXT - R629: the Chapter 3 opener, the birth rank prose and the caste doctrine, capture pp. 60-62, Table 37 (Birth Requirements by Class) and Table 38 (Character Birth), prefix dgp (verify free), audit \"R629 OA families audit\", include after rules/oacharab.h"
+ },
+ "consts": [
+  {
+   "name": "dgoT36RowCount",
+   "value": 19,
+   "comment": "Table 36 (capture p. 55): nineteen level-band rows"
+  },
+  {
+   "name": "dgoDualOldClassReqMin",
+   "value": 15,
+   "comment": "Dual-class prose (capture p. 56): 15 or more in the prime requisites of the original class"
+  },
+  {
+   "name": "dgoDualNewClassReqMin",
+   "value": 17,
+   "comment": "Dual-class prose (capture p. 56): 17 or 18 in the prime requisites of the new class"
+  },
+  {
+   "name": "dgoAlignCount",
+   "value": 9,
+   "comment": "Alignment prose (capture p. 56): nine different alignments"
+  },
+  {
+   "name": "dgoLangSlotHome",
+   "value": 1,
+   "comment": "Language prose (capture p. 59): the first slot is the home country language"
+  },
+  {
+   "name": "dgoLangSlotTrade",
+   "value": 2,
+   "comment": "Language prose (capture p. 59): the second tongue is the trade language"
+  },
+  {
+   "name": "dgoLangSlotAlignment",
+   "value": 3,
+   "comment": "Language prose (capture p. 59): the third slot is the alignment language"
+  },
+  {
+   "name": "dgoLangDialectComprehension",
+   "value": 75,
+   "comment": "Language prose (capture p. 59): dialect speakers understand each other 75 percent of the time"
+  },
+  {
+   "name": "dgoLangWildComprehension",
+   "value": 50,
+   "comment": "Language prose (capture p. 59): barbarian and wild-land dialect comprehension limited to 50 percent"
+  },
+  {
+   "name": "dgoLangStudyMonthsBase",
+   "value": 20,
+   "comment": "Language prose (capture p. 59): study months with daily contact, 20 minus the Intelligence"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgoT36ExtendsBeyondFighters",
+   "value": true,
+   "comment": "Multiple attacks prose (capture p. 55): the ability extends beyond fighters and fighter sub-classes"
+  },
+  {
+   "name": "dgoT36NinjaNinjaWeaponsOnly",
+   "value": true,
+   "comment": "Table 36 footnote (capture p. 55): ninja multiple attacks only with ninja weapons"
+  },
+  {
+   "name": "dgoT36NinjaOtherClassNoCarry",
+   "value": true,
+   "comment": "Table 36 footnote (capture p. 55): the other class attack rate never applies to ninja weapons"
+  },
+  {
+   "name": "dgoT36MeleeOnly",
+   "value": true,
+   "comment": "Multiple attacks prose (capture p. 55): the rates apply only to melee weapons, never missile"
+  },
+  {
+   "name": "dgoT36ProficiencyIncreases",
+   "value": true,
+   "comment": "Multiple attacks prose (capture p. 55): proficiencies increase attacks with both melee and missile weapons"
+  },
+  {
+   "name": "dgoT36OnePerLevelVsWeak",
+   "value": true,
+   "comment": "Multiple attacks prose (capture p. 55): versus monsters under 1 hit die, one melee attack per level"
+  },
+  {
+   "name": "dgoT36SplitBetweenTargets",
+   "value": true,
+   "comment": "Multiple attacks prose (capture p. 55): multiple attacks divide between targets as the player sees fit"
+  },
+  {
+   "name": "dgoDualHumanOnly",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): no non-human character can have more than one class"
+  },
+  {
+   "name": "dgoDualAnyLevel",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): a character can become dual-class at any level"
+  },
+  {
+   "name": "dgoDualKeepsOldAbilities",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): the old-class abilities are never lost"
+  },
+  {
+   "name": "dgoDualNewClassFirstLevel",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): considered a 1st-level character in the new class"
+  },
+  {
+   "name": "dgoDualXpToNewClass",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): all later experience applies to the new class"
+  },
+  {
+   "name": "dgoDualNeverAdvanceOld",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): the old profession can never be advanced again"
+  },
+  {
+   "name": "dgoDualNoHpUntilSurpass",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): no new hit points until the old-class level is surpassed"
+  },
+  {
+   "name": "dgoDualRestrictionsUntilSurpass",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): the new-class restrictions bind until the old level is surpassed"
+  },
+  {
+   "name": "dgoDualOldUseForfeitsXp",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): using an old-class ability forfeits the adventure experience"
+  },
+  {
+   "name": "dgoDualBestTables",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): always the most advantageous combat and saving throw tables"
+  },
+  {
+   "name": "dgoDualFreeMixAfterSurpass",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): the two classes mix freely after surpassing the old level"
+  },
+  {
+   "name": "dgoDualWeaponsException",
+   "value": true,
+   "comment": "Dual-class prose (capture p. 56): any weapon of either class without restriction"
+  },
+  {
+   "name": "dgoAlignNotReligion",
+   "value": true,
+   "comment": "Alignment prose (capture p. 56): alignment is not religion; differing alignments share one religion"
+  },
+  {
+   "name": "dgoAlignLawMostCommon",
+   "value": true,
+   "comment": "Alignment prose (capture p. 57): law is by far the most common alignment in Kara-Tur"
+  },
+  {
+   "name": "dgoAlignEncourageComplement",
+   "value": true,
+   "comment": "Alignment prose (capture p. 58): players encouraged to select complementary alignments"
+  },
+  {
+   "name": "dgoLangPotentialOnly",
+   "value": true,
+   "comment": "Language prose (capture p. 58): the Table 5 count is the learnable potential, not the starting knowledge"
+  },
+  {
+   "name": "dgoLangHomeCounts",
+   "value": true,
+   "comment": "Language prose (capture p. 59): the home language counts as one of the learnable languages"
+  },
+  {
+   "name": "dgoLangSecondIsTrade",
+   "value": true,
+   "comment": "Language prose (capture p. 59): the second tongue is the trade language unless wholly isolated"
+  },
+  {
+   "name": "dgoLangThirdIsAlignment",
+   "value": true,
+   "comment": "Language prose (capture p. 59): the third slot is the alignment language"
+  },
+  {
+   "name": "dgoLangTradeBusinessOnly",
+   "value": true,
+   "comment": "Language prose (capture p. 59): the trade language suits business and common needs, few abstractions"
+  },
+  {
+   "name": "dgoLangNonHumanSpecial",
+   "value": true,
+   "comment": "Language prose (capture p. 59): non-humans often speak additional specialized racial languages"
+  },
+  {
+   "name": "dgoLangEveryOtherDayDoubles",
+   "value": true,
+   "comment": "Language prose (capture p. 59): seeing the teacher every other day doubles the study time"
+  },
+  {
+   "name": "dgoLangNativeSpeakersHalve",
+   "value": true,
+   "comment": "Language prose (capture p. 59): living among native speakers halves the learning time"
+  },
+  {
+   "name": "dgoLangAlwaysAccent",
+   "value": true,
+   "comment": "Language prose (capture p. 59): the student always retains a foreigner accent"
+  },
+  {
+   "name": "dgoLangNuancesNativeOnly",
+   "value": true,
+   "comment": "Language prose (capture p. 59): only native speakers or the early-trained grasp every nuance"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dgoT36Grid",
+   "tag": "T36",
+   "count": "dgoT36RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgoT36Class",
+    "dgoT36LevelLo",
+    "dgoT36LevelHi",
+    "dgoT36AtkNum",
+    "dgoT36AtkDen"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     5,
+     1,
+     1
+    ],
+    [
+     1,
+     6,
+     10,
+     3,
+     2
+    ],
+    [
+     1,
+     11,
+     -1,
+     2,
+     1
+    ],
+    [
+     2,
+     1,
+     3,
+     1,
+     1
+    ],
+    [
+     2,
+     4,
+     7,
+     3,
+     2
+    ],
+    [
+     2,
+     8,
+     14,
+     2,
+     1
+    ],
+    [
+     2,
+     15,
+     -1,
+     5,
+     2
+    ],
+    [
+     3,
+     1,
+     6,
+     1,
+     1
+    ],
+    [
+     3,
+     7,
+     14,
+     3,
+     2
+    ],
+    [
+     3,
+     15,
+     -1,
+     2,
+     1
+    ],
+    [
+     4,
+     1,
+     6,
+     1,
+     1
+    ],
+    [
+     4,
+     7,
+     12,
+     3,
+     2
+    ],
+    [
+     4,
+     13,
+     -1,
+     2,
+     1
+    ],
+    [
+     5,
+     1,
+     4,
+     1,
+     1
+    ],
+    [
+     5,
+     5,
+     8,
+     3,
+     2
+    ],
+    [
+     5,
+     9,
+     -1,
+     2,
+     1
+    ],
+    [
+     6,
+     1,
+     6,
+     1,
+     1
+    ],
+    [
+     6,
+     7,
+     12,
+     3,
+     2
+    ],
+    [
+     6,
+     13,
+     -1,
+     2,
+     1
+    ]
+   ],
+   "comment": "the Table 36 multiple attacks grid (capture p. 55)",
+   "col_comments": [
+    "the class column, pinned as the 1-6 code: bushi 1, kensai 2, ninja 3, barbarian 4, samurai 5, sohei 6 (capture p. 55).",
+    "the level-band lower bound column (capture p. 55).",
+    "the level-band upper bound column: the printed \"and up\" bands pin as the -1 code - bushi 11, kensai 15, ninja 15, barbarian 13, samurai 9, sohei 13 (capture p. 55).",
+    "the attacks numerator column: the first number of the printed N/D rate (capture p. 55).",
+    "the attacks denominator column: the melee rounds of the printed N/D rate - 1/1, 3/2, 2/1, kensai 5/2 (capture p. 55)."
+   ],
+   "audit_comment": "the Table 36 grid: the class codes, level bands and the attack rates (capture p. 55)",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dgoT36RowCount pin",
+   "expr": "m['dgoT36RowCount']() != 19"
+  },
+  {
+   "note": "the dgoDualOldClassReqMin pin",
+   "expr": "m['dgoDualOldClassReqMin']() != 15"
+  },
+  {
+   "note": "the dgoDualNewClassReqMin pin",
+   "expr": "m['dgoDualNewClassReqMin']() != 17"
+  },
+  {
+   "note": "the dgoAlignCount pin",
+   "expr": "m['dgoAlignCount']() != 9"
+  },
+  {
+   "note": "the dgoLangSlotHome pin",
+   "expr": "m['dgoLangSlotHome']() != 1"
+  },
+  {
+   "note": "the dgoLangSlotTrade pin",
+   "expr": "m['dgoLangSlotTrade']() != 2"
+  },
+  {
+   "note": "the dgoLangSlotAlignment pin",
+   "expr": "m['dgoLangSlotAlignment']() != 3"
+  },
+  {
+   "note": "the dgoLangDialectComprehension pin",
+   "expr": "m['dgoLangDialectComprehension']() != 75"
+  },
+  {
+   "note": "the dgoLangWildComprehension pin",
+   "expr": "m['dgoLangWildComprehension']() != 50"
+  },
+  {
+   "note": "the dgoLangStudyMonthsBase pin",
+   "expr": "m['dgoLangStudyMonthsBase']() != 20"
+  },
+  {
+   "note": "the dgoT36ExtendsBeyondFighters pin",
+   "expr": "m['dgoT36ExtendsBeyondFighters']() != 1"
+  },
+  {
+   "note": "the dgoT36NinjaNinjaWeaponsOnly pin",
+   "expr": "m['dgoT36NinjaNinjaWeaponsOnly']() != 1"
+  },
+  {
+   "note": "the dgoT36NinjaOtherClassNoCarry pin",
+   "expr": "m['dgoT36NinjaOtherClassNoCarry']() != 1"
+  },
+  {
+   "note": "the dgoT36MeleeOnly pin",
+   "expr": "m['dgoT36MeleeOnly']() != 1"
+  },
+  {
+   "note": "the dgoT36ProficiencyIncreases pin",
+   "expr": "m['dgoT36ProficiencyIncreases']() != 1"
+  },
+  {
+   "note": "the dgoT36OnePerLevelVsWeak pin",
+   "expr": "m['dgoT36OnePerLevelVsWeak']() != 1"
+  },
+  {
+   "note": "the dgoT36SplitBetweenTargets pin",
+   "expr": "m['dgoT36SplitBetweenTargets']() != 1"
+  },
+  {
+   "note": "the dgoDualHumanOnly pin",
+   "expr": "m['dgoDualHumanOnly']() != 1"
+  },
+  {
+   "note": "the dgoDualAnyLevel pin",
+   "expr": "m['dgoDualAnyLevel']() != 1"
+  },
+  {
+   "note": "the dgoDualKeepsOldAbilities pin",
+   "expr": "m['dgoDualKeepsOldAbilities']() != 1"
+  },
+  {
+   "note": "the dgoDualNewClassFirstLevel pin",
+   "expr": "m['dgoDualNewClassFirstLevel']() != 1"
+  },
+  {
+   "note": "the dgoDualXpToNewClass pin",
+   "expr": "m['dgoDualXpToNewClass']() != 1"
+  },
+  {
+   "note": "the dgoDualNeverAdvanceOld pin",
+   "expr": "m['dgoDualNeverAdvanceOld']() != 1"
+  },
+  {
+   "note": "the dgoDualNoHpUntilSurpass pin",
+   "expr": "m['dgoDualNoHpUntilSurpass']() != 1"
+  },
+  {
+   "note": "the dgoDualRestrictionsUntilSurpass pin",
+   "expr": "m['dgoDualRestrictionsUntilSurpass']() != 1"
+  },
+  {
+   "note": "the dgoDualOldUseForfeitsXp pin",
+   "expr": "m['dgoDualOldUseForfeitsXp']() != 1"
+  },
+  {
+   "note": "the dgoDualBestTables pin",
+   "expr": "m['dgoDualBestTables']() != 1"
+  },
+  {
+   "note": "the dgoDualFreeMixAfterSurpass pin",
+   "expr": "m['dgoDualFreeMixAfterSurpass']() != 1"
+  },
+  {
+   "note": "the dgoDualWeaponsException pin",
+   "expr": "m['dgoDualWeaponsException']() != 1"
+  },
+  {
+   "note": "the dgoAlignNotReligion pin",
+   "expr": "m['dgoAlignNotReligion']() != 1"
+  },
+  {
+   "note": "the dgoAlignLawMostCommon pin",
+   "expr": "m['dgoAlignLawMostCommon']() != 1"
+  },
+  {
+   "note": "the dgoAlignEncourageComplement pin",
+   "expr": "m['dgoAlignEncourageComplement']() != 1"
+  },
+  {
+   "note": "the dgoLangPotentialOnly pin",
+   "expr": "m['dgoLangPotentialOnly']() != 1"
+  },
+  {
+   "note": "the dgoLangHomeCounts pin",
+   "expr": "m['dgoLangHomeCounts']() != 1"
+  },
+  {
+   "note": "the dgoLangSecondIsTrade pin",
+   "expr": "m['dgoLangSecondIsTrade']() != 1"
+  },
+  {
+   "note": "the dgoLangThirdIsAlignment pin",
+   "expr": "m['dgoLangThirdIsAlignment']() != 1"
+  },
+  {
+   "note": "the dgoLangTradeBusinessOnly pin",
+   "expr": "m['dgoLangTradeBusinessOnly']() != 1"
+  },
+  {
+   "note": "the dgoLangNonHumanSpecial pin",
+   "expr": "m['dgoLangNonHumanSpecial']() != 1"
+  },
+  {
+   "note": "the dgoLangEveryOtherDayDoubles pin",
+   "expr": "m['dgoLangEveryOtherDayDoubles']() != 1"
+  },
+  {
+   "note": "the dgoLangNativeSpeakersHalve pin",
+   "expr": "m['dgoLangNativeSpeakersHalve']() != 1"
+  },
+  {
+   "note": "the dgoLangAlwaysAccent pin",
+   "expr": "m['dgoLangAlwaysAccent']() != 1"
+  },
+  {
+   "note": "the dgoLangNuancesNativeOnly pin",
+   "expr": "m['dgoLangNuancesNativeOnly']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the T36 first row - bushi 1-5, one attack per round (capture p. 55)",
+   "expr": "m['dgoT36Class'](0) != 1 or m['dgoT36LevelLo'](0) != 1 or m['dgoT36LevelHi'](0) != 5 or m['dgoT36AtkNum'](0) != 1 or m['dgoT36AtkDen'](0) != 1"
+  },
+  {
+   "note": "the T36 bushi capstone - 11 and up, 2/1, the -1 unbounded code (capture p. 55)",
+   "expr": "m['dgoT36Class'](2) != 1 or m['dgoT36LevelHi'](2) != -1 or m['dgoT36AtkNum'](2) != 2 or m['dgoT36AtkDen'](2) != 1"
+  },
+  {
+   "note": "the T36 kensai ladder - 1-3 at 1/1, 4-7 at 3/2, 8-14 at 2/1 (capture p. 55)",
+   "expr": "m['dgoT36AtkNum'](3) != 1 or m['dgoT36AtkNum'](4) != 3 or m['dgoT36AtkDen'](4) != 2 or m['dgoT36AtkNum'](5) != 2"
+  },
+  {
+   "note": "the T36 kensai capstone - 15 and up, the printed 5/2 (capture p. 55)",
+   "expr": "m['dgoT36Class'](6) != 2 or m['dgoT36LevelHi'](6) != -1 or m['dgoT36AtkNum'](6) != 5 or m['dgoT36AtkDen'](6) != 2"
+  },
+  {
+   "note": "the T36 ninja bands - 1-6 at 1/1, 7-14 at 3/2, 15 and up at 2/1 (capture p. 55)",
+   "expr": "m['dgoT36Class'](7) != 3 or m['dgoT36LevelHi'](7) != 6 or m['dgoT36AtkNum'](8) != 3 or m['dgoT36LevelLo'](9) != 15 or m['dgoT36AtkDen'](9) != 1"
+  },
+  {
+   "note": "the T36 barbarian bands - 1-6, 7-12, 13 and up (capture p. 55)",
+   "expr": "m['dgoT36Class'](10) != 4 or m['dgoT36LevelHi'](11) != 12 or m['dgoT36LevelLo'](12) != 13 or m['dgoT36AtkNum'](12) != 2"
+  },
+  {
+   "note": "the T36 samurai bands - 1-4, 5-8, 9 and up (capture p. 55)",
+   "expr": "m['dgoT36Class'](13) != 5 or m['dgoT36LevelHi'](13) != 4 or m['dgoT36LevelLo'](14) != 5 or m['dgoT36LevelHi'](15) != -1"
+  },
+  {
+   "note": "the T36 sohei bands - 1-6, 7-12, 13 and up, nineteen rows only (capture p. 55)",
+   "expr": "m['dgoT36Class'](16) != 6 or m['dgoT36LevelHi'](17) != 12 or m['dgoT36LevelHi'](18) != -1 or m['dgoT36AtkNum'](18) != 2 or m['dgoT36RowCount']() != 19"
+  },
+  {
+   "note": "the dual-class minima pair - 15 in the old requisites, 17 or 18 in the new (capture p. 56)",
+   "expr": "m['dgoDualOldClassReqMin']() != 15 or m['dgoDualNewClassReqMin']() != 17"
+  },
+  {
+   "note": "the alignment count - nine alignments (capture p. 56)",
+   "expr": "m['dgoAlignCount']() != 9"
+  },
+  {
+   "note": "the language slot ladder - home, trade, alignment (capture p. 59)",
+   "expr": "m['dgoLangSlotHome']() != 1 or m['dgoLangSlotTrade']() != 2 or m['dgoLangSlotAlignment']() != 3"
+  },
+  {
+   "note": "the comprehension pair - 75 percent between dialects, 50 in the wild lands (capture p. 59)",
+   "expr": "m['dgoLangDialectComprehension']() != 75 or m['dgoLangWildComprehension']() != 50"
+  },
+  {
+   "note": "the study doctrine - 20 minus Intelligence months, Int 15 means five months (capture p. 59)",
+   "expr": "m['dgoLangStudyMonthsBase']() != 20 or m['dgoLangStudyMonthsBase']() - 15 != 5"
+  }
+ ],
+ "header_sections": {
+  "the multiple attacks pins": [
+   {
+    "kind": "const",
+    "name": "dgoT36RowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoT36ExtendsBeyondFighters"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoT36NinjaNinjaWeaponsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoT36NinjaOtherClassNoCarry"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoT36MeleeOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoT36ProficiencyIncreases"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoT36OnePerLevelVsWeak"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoT36SplitBetweenTargets"
+   }
+  ],
+  "the dual-class pins": [
+   {
+    "kind": "const",
+    "name": "dgoDualOldClassReqMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgoDualNewClassReqMin"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualHumanOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualAnyLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualKeepsOldAbilities"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualNewClassFirstLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualXpToNewClass"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualNeverAdvanceOld"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualNoHpUntilSurpass"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualRestrictionsUntilSurpass"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualOldUseForfeitsXp"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualBestTables"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualFreeMixAfterSurpass"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoDualWeaponsException"
+   }
+  ],
+  "the alignment pins": [
+   {
+    "kind": "const",
+    "name": "dgoAlignCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoAlignNotReligion"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoAlignLawMostCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoAlignEncourageComplement"
+   }
+  ],
+  "the language pins": [
+   {
+    "kind": "const",
+    "name": "dgoLangSlotHome"
+   },
+   {
+    "kind": "const",
+    "name": "dgoLangSlotTrade"
+   },
+   {
+    "kind": "const",
+    "name": "dgoLangSlotAlignment"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoLangPotentialOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoLangHomeCounts"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoLangSecondIsTrade"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoLangThirdIsAlignment"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoLangTradeBusinessOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoLangNonHumanSpecial"
+   },
+   {
+    "kind": "const",
+    "name": "dgoLangDialectComprehension"
+   },
+   {
+    "kind": "const",
+    "name": "dgoLangWildComprehension"
+   },
+   {
+    "kind": "const",
+    "name": "dgoLangStudyMonthsBase"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoLangEveryOtherDayDoubles"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoLangNativeSpeakersHalve"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoLangAlwaysAccent"
+   },
+   {
+    "kind": "bool",
+    "name": "dgoLangNuancesNativeOnly"
+   }
+  ],
+  "the Table 36 grid": [
+   {
+    "kind": "table",
+    "name": "dgoT36Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Character Abilities box closes",
+   "from": "  - [ ] Character Abilities (capture p. 55) - the\n    class-by-class summary of prime requisites and\n    special abilities",
+   "to": "  - [x] Character Abilities (capture p. 55) - the\n    class-by-class summary of prime requisites and\n    special abilities -\n    R628: the dgo character abilities pins - the\n    multiple attacks doctrine (melee only, the\n    ninja-weapons restriction, the proficiencies\n    boost, the one-per-level versus under-1-HD\n    monsters, the split-between-targets rule),\n    the dual-class doctrine (the human-only rule,\n    the 15/17-or-18 requisites, the any-level\n    switch, the kept old abilities, the no-hp-\n    until-surpass rule, the forfeited adventure\n    xp, the best tables, the weapons exception),\n    the alignment doctrine (nine alignments,\n    not religion, law most common in Kara-Tur),\n    the languages (the home/trade/alignment slot\n    ladder, the 75/50 dialect comprehension, the\n    20-minus-Int study months)"
+  },
+  {
+   "note": "the   Multi-Class and Dual-Class Characters box closes",
+   "from": "  - [ ] Multi-Class and Dual-Class Characters\n    (capture p. 56)",
+   "to": "  - [x] Multi-Class and Dual-Class Characters\n    (capture p. 56) -\n    R628: the dgo dual-class pins - the human-only\n    rule with the 15-in-old and 17-or-18-in-new\n    requisites, the any-level switch, the kept old\n    abilities with the xp-to-new-class rule, the\n    no-hp-until-surpass doctrine, the restrictions\n    binding until surpass, the old-use xp\n    forfeiture, the best tables, the free mix and\n    the weapons exception"
+  },
+  {
+   "note": "the   Alignment box closes",
+   "from": "  - [ ] Alignment (capture pp. 56-58) - the OA\n    alignment doctrine and its law-chaos read",
+   "to": "  - [x] Alignment (capture pp. 56-58) - the OA\n    alignment doctrine and its law-chaos read -\n    R628: the dgo alignment pins - the nine\n    alignments, the not-religion rule with the\n    shared-religion reading, the law-most-common\n    Kara-Tur doctrine, the complementary-party\n    encouragement"
+  },
+  {
+   "note": "the   Languages box closes",
+   "from": "  - [ ] Languages (capture pp. 58-59)",
+   "to": "  - [x] Languages (capture pp. 58-59) -\n    R628: the dgo language pins - the home/trade/\n    alignment slot ladder, the potential-only\n    reading of the Table 5 count, the 75 percent\n    dialect and 50 percent wild-land\n    comprehension, the trade-language limits,\n    the 20-minus-Int study months with the\n    every-other-day doubling and the native-\n    speaker halving, the permanent accent"
+  },
+  {
+   "note": "the   Table 36: Multiple Attacks box closes",
+   "from": "  - [ ] Table 36: Multiple Attacks (capture p. 55)",
+   "to": "  - [x] Table 36: Multiple Attacks (capture p. 55) -\n    R628: the dgo T36 grid - nineteen level-band\n    rows of the six classes (bushi, kensai,\n    ninja, barbarian, samurai, sohei) with the\n    1/1, 3/2, 2/1 and kensai 5/2 rates, the\n    printed \"and up\" bands pinned as the -1 code"
+  }
+ ],
+ "gap_census": {
+  "closed": 64,
+  "open": 171
+ },
+ "include_comment": "the OA character abilities pins",
+ "include_after": "#include \"rules/oayakuza.h\"  // R627: the OA yakuza pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R627 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R627 LANDED 2026-10-19: commit",
+  "  db94e62fd73176ba4f77cba6dbda777e63f4a535",
+  "  (census 549 -> 550, pushed",
+  "  5f23689..db94e62), THE YAKUZA, capture",
+  "  pp. 51-54: rules/oayakuza.h, prefix",
+  "  dgn (verified free), 62 inlines (36",
+  "  consts, 21 bools, 5 table columns):",
+  "  the Str 11/Int 15/Dex 15/Cha 16 minima",
+  "  with no prime requisite, the ALWAYS-",
+  "  LAWFUL rule, the d6 with the thief",
+  "  tables, any weapon with the Table 13",
+  "  armor and no shields, the family-clan",
+  "  requirement with the -5 birth",
+  "  modifier, three slots plus the free",
+  "  gaming proficiency, the thief skills",
+  "  at the ninja chances with hear noise",
+  "  as monk, the investigate tiers",
+  "  (common 1 day/2d6 fen always",
+  "  accurate; uncommon 1-3 days/2d4 yuan",
+  "  10 percent; confidential 2d6 days/",
+  "  2d10 tael 25 percent; secret 3d6",
+  "  days/2d10 ch'ien 40 percent), never",
+  "  magical or legendary, the contacts",
+  "  doctrine (one per two levels, never",
+  "  more than four levels above), the ki",
+  "  halves-damage power (round up, once",
+  "  per round, level times per day), the",
+  "  +10 percent reaction bonus except",
+  "  social-status rolls, the adoption",
+  "  into the kumi without the Table 39/40",
+  "  rolls, the Zingi family honor with",
+  "  the 2-ch'ien-per-level monthly",
+  "  stipend, the kyodai-bun brethren from",
+  "  2nd level (one per level, at least",
+  "  one level beneath, never above 8th,",
+  "  major enterprises need oyabun",
+  "  approval), the tattoos-per-level rule,",
+  "  the cast-out non-person doctrine with",
+  "  regainable membership, T34 12x3 with",
+  "  the 9-plus-N cells and the",
+  "  300,000-xp/1-hp notes, T35 21x2 with",
+  "  the area covered pinned as the 1-9",
+  "  code (1/2/3 blocks; 1 ward 4; 2",
+  "  wards 5; 1 district 6; 2 districts 7;",
+  "  3 districts 8; province 9). NO",
+  "  CONTESTED CELLS THIS ROUND - both",
+  "  captures agree on every pinned value.",
+  "  OCR normalization: Zing reads Zingi;",
+  "  2d level reads 2nd level; hide-out",
+  "  and hideout both printed. Battery 135",
+  "  mutants, 0 missed; full sha rverify",
+  "  GREEN. Gap census 56/179 -> 59/176.",
+  "  Spec 29,495 bytes md5",
+  "  e2cd4461c78bc8f9fedea94daaf7b701",
+  "  (authored-plus-newline md5",
+  "  0798e57f3ca5372eec3b2eb9d21f0427;",
+  "  canvas md5",
+  "  1acd67aa889fd699c3667ff5bccdea5a).",
+  "  NEXT - R628: the Character Abilities",
+  "  chapter opener, capture pp. 55-59,",
+  "  Tables 36 (Multiple Attacks), prefix",
+  "  dgo (verify free), audit \"R628 OA",
+  "  character abilities audit\", include",
+  "  after rules/oayakuza.h."
+ ]
+}

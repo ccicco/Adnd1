@@ -569,15 +569,56 @@ description riding the same round.
     investigate ladder 20 to 95 with the area
     covered pinned as the 1-9 code (blocks, wards,
     districts, province)
-  - [ ] Character Abilities (capture p. 55) - the
+  - [x] Character Abilities (capture p. 55) - the
     class-by-class summary of prime requisites and
-    special abilities
-  - [ ] Multi-Class and Dual-Class Characters
-    (capture p. 56)
-  - [ ] Alignment (capture pp. 56-58) - the OA
-    alignment doctrine and its law-chaos read
-  - [ ] Languages (capture pp. 58-59)
-  - [ ] Table 36: Multiple Attacks (capture p. 55)
+    special abilities -
+    R628: the dgo character abilities pins - the
+    multiple attacks doctrine (melee only, the
+    ninja-weapons restriction, the proficiencies
+    boost, the one-per-level versus under-1-HD
+    monsters, the split-between-targets rule),
+    the dual-class doctrine (the human-only rule,
+    the 15/17-or-18 requisites, the any-level
+    switch, the kept old abilities, the no-hp-
+    until-surpass rule, the forfeited adventure
+    xp, the best tables, the weapons exception),
+    the alignment doctrine (nine alignments,
+    not religion, law most common in Kara-Tur),
+    the languages (the home/trade/alignment slot
+    ladder, the 75/50 dialect comprehension, the
+    20-minus-Int study months)
+  - [x] Multi-Class and Dual-Class Characters
+    (capture p. 56) -
+    R628: the dgo dual-class pins - the human-only
+    rule with the 15-in-old and 17-or-18-in-new
+    requisites, the any-level switch, the kept old
+    abilities with the xp-to-new-class rule, the
+    no-hp-until-surpass doctrine, the restrictions
+    binding until surpass, the old-use xp
+    forfeiture, the best tables, the free mix and
+    the weapons exception
+  - [x] Alignment (capture pp. 56-58) - the OA
+    alignment doctrine and its law-chaos read -
+    R628: the dgo alignment pins - the nine
+    alignments, the not-religion rule with the
+    shared-religion reading, the law-most-common
+    Kara-Tur doctrine, the complementary-party
+    encouragement
+  - [x] Languages (capture pp. 58-59) -
+    R628: the dgo language pins - the home/trade/
+    alignment slot ladder, the potential-only
+    reading of the Table 5 count, the 75 percent
+    dialect and 50 percent wild-land
+    comprehension, the trade-language limits,
+    the 20-minus-Int study months with the
+    every-other-day doubling and the native-
+    speaker halving, the permanent accent
+  - [x] Table 36: Multiple Attacks (capture p. 55) -
+    R628: the dgo T36 grid - nineteen level-band
+    rows of the six classes (bushi, kensai,
+    ninja, barbarian, samurai, sohei) with the
+    1/1, 3/2, 2/1 and kensai 5/2 rates, the
+    printed "and up" bands pinned as the -1 code
 
 - [ ] **Chapter 3: Families, Class, and Caste**
   (capture pp. 60-69) - the birth, family and caste
