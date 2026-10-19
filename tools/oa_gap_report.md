@@ -696,9 +696,16 @@ description riding the same round.
     ancestry results pinned as the 0-34
     code, the roll-again rows at 6, 10, 20
     and 97
-  - [ ] Assigning Ancestral Holdings (capture pp.
-    67-68) - the head-of-family rule, the NPC-only
-    holdings
+  - [x] Assigning Ancestral Holdings (capture pp.
+    67-68) - R632: the dgs holdings pins - the
+    T39 property results owned by family NPCs
+    (never the player character or his siblings
+    at career start), the first holding to the
+    head of the family, the dice-assigned
+    remainder to the Head of Family and Father
+    rows by the position method, the overflow
+    roll to the head, the owner permission, the
+    reaction roll and the DM refusal
   - [ ] Birthrights prose (capture p. 68)
   - [ ] Table 40: Birthrights (capture p. 68)
 

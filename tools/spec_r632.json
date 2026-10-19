@@ -1,0 +1,259 @@
+{
+ "round": 632,
+ "title": "ASSIGNING ANCESTRAL HOLDINGS - the NPC ownership, the head-of-family rule, the permission doctrine",
+ "prefix": "dgs",
+ "header_file": "rules/oahold.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 554,
+ "inline_count": 11,
+ "audit_label": "R632 OA holdings audit",
+ "audit_comment": "OA round nineteen (capture pp. 67-68): the assigning ancestral holdings prose",
+ "banner": {
+  "title": "ASSIGNING ANCESTRAL HOLDINGS, printed capture pp. 67-68 - the OA holdings round",
+  "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. A pure-prose round with no tables and no numeric cells, so no contested cells can arise within the single source; every doctrine of the two capture paragraphs is pinned as a bool (the R431 prose codifies insight: no section is unpinnable). The Birthrights prose and Table 40 (capture pp. 68-69) are deliberately left for the next round",
+  "sentinel": "the gap census after this round: 72 closed, 163 open - the Assigning Ancestral Holdings box flips (census 554 -> 555); NEXT - R633: the Birthrights prose and Table 40, capture pp. 68-69, the property-share, heirloom and cash-string doctrines, prefix dgt (verify free), audit \"R633 OA birthrights audit\", include after rules/oahold.h"
+ },
+ "consts": [],
+ "bools": [
+  {
+   "name": "dgsHoldingsAreT39Property",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): the holdings are the property results gained on Table 39: Ancestry"
+  },
+  {
+   "name": "dgsNpcAutoOwnership",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): the holdings are automatically owned by some NPC of the family"
+  },
+  {
+   "name": "dgsNeverPcOwnedAtStart",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): never owned by a player character or his siblings at the start of the career"
+  },
+  {
+   "name": "dgsFirstHoldingToHead",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): the first ancestral holding is automatically held by the head of the family"
+  },
+  {
+   "name": "dgsRemainderDiceAssignment",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): any remaining holdings are assigned by random dice roll to NPCs on the Head of Family and Father rows of the Family Chart"
+  },
+  {
+   "name": "dgsPositionMethodUsed",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): the assignment uses the method described for determining the character's position in the family"
+  },
+  {
+   "name": "dgsOverflowToHead",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): a die roll greater than the number of spaces gives the property to the head of the family"
+  },
+  {
+   "name": "dgsNoAutomaticPcUse",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): clan ownership does not automatically grant the player character use of the property"
+  },
+  {
+   "name": "dgsOwnerPermissionRequired",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): the player character must request permission of the NPC owner"
+  },
+  {
+   "name": "dgsReactionRollStillMade",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): a reaction roll must still be made"
+  },
+  {
+   "name": "dgsDmMayRefuse",
+   "value": true,
+   "comment": "Ancestral holdings prose (capture pp. 67-68): the DM can refuse requests not in keeping with his campaign"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the dgsHoldingsAreT39Property pin",
+   "expr": "m['dgsHoldingsAreT39Property']() != 1"
+  },
+  {
+   "note": "the dgsNpcAutoOwnership pin",
+   "expr": "m['dgsNpcAutoOwnership']() != 1"
+  },
+  {
+   "note": "the dgsNeverPcOwnedAtStart pin",
+   "expr": "m['dgsNeverPcOwnedAtStart']() != 1"
+  },
+  {
+   "note": "the dgsFirstHoldingToHead pin",
+   "expr": "m['dgsFirstHoldingToHead']() != 1"
+  },
+  {
+   "note": "the dgsRemainderDiceAssignment pin",
+   "expr": "m['dgsRemainderDiceAssignment']() != 1"
+  },
+  {
+   "note": "the dgsPositionMethodUsed pin",
+   "expr": "m['dgsPositionMethodUsed']() != 1"
+  },
+  {
+   "note": "the dgsOverflowToHead pin",
+   "expr": "m['dgsOverflowToHead']() != 1"
+  },
+  {
+   "note": "the dgsNoAutomaticPcUse pin",
+   "expr": "m['dgsNoAutomaticPcUse']() != 1"
+  },
+  {
+   "note": "the dgsOwnerPermissionRequired pin",
+   "expr": "m['dgsOwnerPermissionRequired']() != 1"
+  },
+  {
+   "note": "the dgsReactionRollStillMade pin",
+   "expr": "m['dgsReactionRollStillMade']() != 1"
+  },
+  {
+   "note": "the dgsDmMayRefuse pin",
+   "expr": "m['dgsDmMayRefuse']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the holdings ownership pins": [
+   {
+    "kind": "bool",
+    "name": "dgsHoldingsAreT39Property"
+   },
+   {
+    "kind": "bool",
+    "name": "dgsNpcAutoOwnership"
+   },
+   {
+    "kind": "bool",
+    "name": "dgsNeverPcOwnedAtStart"
+   },
+   {
+    "kind": "bool",
+    "name": "dgsFirstHoldingToHead"
+   },
+   {
+    "kind": "bool",
+    "name": "dgsRemainderDiceAssignment"
+   },
+   {
+    "kind": "bool",
+    "name": "dgsPositionMethodUsed"
+   },
+   {
+    "kind": "bool",
+    "name": "dgsOverflowToHead"
+   }
+  ],
+  "the holdings-use pins": [
+   {
+    "kind": "bool",
+    "name": "dgsNoAutomaticPcUse"
+   },
+   {
+    "kind": "bool",
+    "name": "dgsOwnerPermissionRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "dgsReactionRollStillMade"
+   },
+   {
+    "kind": "bool",
+    "name": "dgsDmMayRefuse"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Assigning Ancestral Holdings box closes",
+   "from": "  - [ ] Assigning Ancestral Holdings (capture pp.\n    67-68) - the head-of-family rule, the NPC-only\n    holdings",
+   "to": "  - [x] Assigning Ancestral Holdings (capture pp.\n    67-68) - R632: the dgs holdings pins - the\n    T39 property results owned by family NPCs\n    (never the player character or his siblings\n    at career start), the first holding to the\n    head of the family, the dice-assigned\n    remainder to the Head of Family and Father\n    rows by the position method, the overflow\n    roll to the head, the owner permission, the\n    reaction roll and the DM refusal"
+  }
+ ],
+ "gap_census": {
+  "closed": 72,
+  "open": 163
+ },
+ "include_comment": "the OA holdings pins",
+ "include_after": "#include \"rules/oaanc.h\"  // R631: the OA ancestry pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R631 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R631 LANDED 2026-10-19: commit",
+  "  f0a630e9d7907375267d65357683c9c90a8d4fc8",
+  "  (census 553 -> 554, pushed",
+  "  9fbb973..f0a630e), THE MASTER FAMILY",
+  "  CHART and ANCESTRY, capture pp. 64-65:",
+  "  rules/oaanc.h, prefix dgr (verified",
+  "  free), 29 inlines (13 consts, 12",
+  "  bools, 4 table columns): the master",
+  "  family chart doctrine (the DM chart of",
+  "  names, birth ranks, honor, alliances",
+  "  and relationships, the emperor at the",
+  "  center, the rank-by-distance",
+  "  doctrine, the line codes - dashed",
+  "  marriage, solid blood, dotted allies,",
+  "  arrows enemies), the ancestry doctrine",
+  "  (the beyond-ancestors read with the",
+  "  cooperative detail, the HONOR-ADDS-",
+  "  TO-BIRTH rule, the +20 percent",
+  "  alliance and -40 percent feud",
+  "  modifiers, the 1-3 social-level",
+  "  advantageous marriage, the 10-to-2,000",
+  "  property income, the 100-to-1,000",
+  "  estate and fleet incomes, the 2-5",
+  "  ships, the moneylender extra roll, the",
+  "  hereditary-title succession, the",
+  "  secret-society contacts, the tragic",
+  "  honor, the roll-again doctrine - the",
+  "  next larger die, or add 10 at d100),",
+  "  T39 46x4 with the die bands pinned as",
+  "  the lo and hi bounds (contiguous 1",
+  "  through 100, asserted in the gen",
+  "  script), the honor column -20 to +15",
+  "  and the ancestry results as the 0-34",
+  "  code with the roll-again rows at 6,",
+  "  10, 20 and 97. PINNED FROM THE 2018",
+  "  PRINT CAPTURE ALONE (the settling",
+  "  authority; the first Mistral-OCR",
+  "  capture session is unavailable above",
+  "  p. 33, so no cross-capture check);",
+  "  no contested cells within the single",
+  "  source. OCR normalization: the T39",
+  "  classic artist reads as the prose",
+  "  classical artist; rows 6, 10 and 20",
+  "  read \"next higher die or + 10\" while",
+  "  row 97 reads \"+ 10 on die roll\" (both",
+  "  pin as the roll-again code). The",
+  "  Assigning Ancestral Holdings and",
+  "  Birthrights prose (capture pp. 67-69)",
+  "  is deliberately held for the next",
+  "  rounds. Battery 209 mutants, 0 missed;",
+  "  full sha rverify GREEN; preflight",
+  "  GREEN. Gap census 68/167 -> 71/164.",
+  "  Spec 20,324 bytes md5",
+  "  3335a22b665aca2e7e9f8f1f5be14759",
+  "  (authored-plus-newline md5",
+  "  29e19f36ed4c96545d0496bb99ffd4d3;",
+  "  canvas md5",
+  "  7c91f65d18517fe380f3744904bd64a3).",
+  "  NEXT - R632: the Assigning Ancestral",
+  "  Holdings prose, capture pp. 67-68, the",
+  "  head-of-family rule and the NPC-only",
+  "  holdings, prefix dgs (verify free),",
+  "  audit \"R632 OA holdings audit\",",
+  "  include after rules/oaanc.h."
+ ]
+}

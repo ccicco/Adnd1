@@ -12473,6 +12473,70 @@ when both halves land.
   prefix dgr (verify free), audit
   "R631 OA ancestry audit", include
   after rules/oafamstr.h.
+- R631 LANDED 2026-10-19: commit
+  f0a630e9d7907375267d65357683c9c90a8d4fc8
+  (census 553 -> 554, pushed
+  9fbb973..f0a630e), THE MASTER FAMILY
+  CHART and ANCESTRY, capture pp. 64-65:
+  rules/oaanc.h, prefix dgr (verified
+  free), 29 inlines (13 consts, 12
+  bools, 4 table columns): the master
+  family chart doctrine (the DM chart of
+  names, birth ranks, honor, alliances
+  and relationships, the emperor at the
+  center, the rank-by-distance
+  doctrine, the line codes - dashed
+  marriage, solid blood, dotted allies,
+  arrows enemies), the ancestry doctrine
+  (the beyond-ancestors read with the
+  cooperative detail, the HONOR-ADDS-
+  TO-BIRTH rule, the +20 percent
+  alliance and -40 percent feud
+  modifiers, the 1-3 social-level
+  advantageous marriage, the 10-to-2,000
+  property income, the 100-to-1,000
+  estate and fleet incomes, the 2-5
+  ships, the moneylender extra roll, the
+  hereditary-title succession, the
+  secret-society contacts, the tragic
+  honor, the roll-again doctrine - the
+  next larger die, or add 10 at d100),
+  T39 46x4 with the die bands pinned as
+  the lo and hi bounds (contiguous 1
+  through 100, asserted in the gen
+  script), the honor column -20 to +15
+  and the ancestry results as the 0-34
+  code with the roll-again rows at 6,
+  10, 20 and 97. PINNED FROM THE 2018
+  PRINT CAPTURE ALONE (the settling
+  authority; the first Mistral-OCR
+  capture session is unavailable above
+  p. 33, so no cross-capture check);
+  no contested cells within the single
+  source. OCR normalization: the T39
+  classic artist reads as the prose
+  classical artist; rows 6, 10 and 20
+  read "next higher die or + 10" while
+  row 97 reads "+ 10 on die roll" (both
+  pin as the roll-again code). The
+  Assigning Ancestral Holdings and
+  Birthrights prose (capture pp. 67-69)
+  is deliberately held for the next
+  rounds. Battery 209 mutants, 0 missed;
+  full sha rverify GREEN; preflight
+  GREEN. Gap census 68/167 -> 71/164.
+  Spec 20,324 bytes md5
+  3335a22b665aca2e7e9f8f1f5be14759
+  (authored-plus-newline md5
+  29e19f36ed4c96545d0496bb99ffd4d3;
+  canvas md5
+  7c91f65d18517fe380f3744904bd64a3).
+  NEXT - R632: the Assigning Ancestral
+  Holdings prose, capture pp. 67-68, the
+  head-of-family rule and the NPC-only
+  holdings, prefix dgs (verify free),
+  audit "R632 OA holdings audit",
+  include after rules/oaanc.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
