@@ -12994,6 +12994,70 @@ when both halves land.
   equivalents doctrine, prefix dha
   (verify free), audit "R640 OA weapons
   audit", include after rules/oaequip.h.
+- R640 LANDED 2026-10-19: commit
+  baac37c95564540d3dd84ab9f6064ead6a93c888
+  (census 562 -> 563, pushed
+  f81fe22..baac37c), WEAPONS - the
+  chapter opener with the
+  weapon-equivalents prose, Table 48
+  (Weapon Equivalents) and Table 49
+  (Weight and Damage by Weapon Type),
+  capture pp. 79-80: rules/oaweapon.h,
+  prefix dha (verified free), 26
+  inlines (2 consts, 10 table columns,
+  14 bools): the equivalents doctrine
+  (the English names, the many-names,
+  the appearance-differs/function-same
+  rule), the boldface note (the
+  boldface set itself lost to OCR),
+  the star-set note, the eight
+  footnotes a-h, T48 as 16
+  equivalent-count rows (the names
+  ride the column comment; Axe battle
+  11, Dagger/Halberd 4, Spear 1), T49
+  as the 69-row weight/damage grid -
+  footnote letters as bitmask a=1
+  ... h=128 (chain 224, spear 34,
+  short sword 132), -99 sentinel for
+  the lasso damage dashes and the
+  needle's blank vs-L, stars javelin
+  19, naginata 36, spear 56, ranges
+  spear 40-60, two-handed sword
+  150-250 (L 3-18), whip 25-35. The
+  footnotes print under T50 on the
+  capture page and serve both tables.
+  Tags CamelCase (T48Equiv, T49Data)
+  per the R639 hyphen lesson; static
+  scan of the emitted audit block: 0
+  hyphen code tokens. Wrap repair
+  pre-publish: the first cut's gap-flip
+  annotations were single 201/225-char
+  lines violating the gap-report wrap;
+  rebuilt via a gap_to() textwrap
+  helper in the gen script before
+  publish (the user side never saw the
+  break). Engine double-run applied 6
+  -> already 6; rverify 653 mutants, 0
+  missed; preflight GREEN (563 audit
+  census, BUILD 0 warnings). Gap
+  census 89/146 -> 91/144 (the T48 and
+  T49 boxes flip; the
+  weapon-descriptions prose box
+  capture pp. 84-93 deliberately stays
+  open - the descriptions pin later).
+  Spec 24,761 bytes md5
+  f918ac1b4de364de5244f5f425bc3ed0
+  (authored-plus-newline md5
+  4ee8116a03cb5a9beee336ceab1d9038;
+  canvas md5
+  5a9b4d5dfe9718f7244911fbce77c4d9).
+  NEXT - R641: Table 50 (Hand Held
+  Weapons, General Data and To Hit
+  Adjustments), capture p. 80, the
+  hand-held AC-adjustment grid, prefix
+  dhb (verify free), audit "R641 OA
+  handheld audit", include after
+  rules/oaweapon.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

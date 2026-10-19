@@ -851,8 +851,11 @@ description riding the same round.
     as the weight and damage bounds with the a-h bitmask letters, the
     set-weapon stars, the lasso and needle dashes, the footnotes and the
     boldface note
-  - [ ] Table 50: Hand Held Weapons, General Data &
-    to Hit Adjustments (capture p. 86)
+  - [x] Table 50: Hand Held Weapons, General Data &
+    to Hit Adjustments (capture p. 86) - R641: the dhb T50 grid - forty-nine
+    rows pinned as the speed factor bounds and the eleven-column AC 0-10
+    adjustment ladder with the d and h bitmask letters, the chijiriki-chain
+    dashes and the four contested cells settled per the print capture
   - [ ] Table 51: Hurled Weapons and Missiles
     (capture p. 87)
   - [ ] Armor prose and the armor descriptions
