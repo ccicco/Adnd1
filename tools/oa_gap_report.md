@@ -939,8 +939,14 @@ description riding the same round.
     elimination resolution, the inauspicious all-fail rule, 50 vs 100 times
     the host's level); the compressed plus-as-minus artifact settles per the
     print pass - zero contested reads otherwise
-  - [ ] Table 56: Character Proficiencies
-    (capture p. 99)
+  - [x] Table 56: Character Proficiencies
+    (capture p. 99) - R653: the dhn T56 grid - the eight class rows (samurai,
+    shukenja, sohei, kensai, o. barbarian, bushi, wu jen, ninja) with the
+    initial proficiencies (5, 6, 4, 3, 9, 4, 6, 2), the levels per added
+    proficiency as the 1/N denominators (1, 2, 3, 2, 3, 2, 2, 3) and the
+    non-proficiency penalties (2, 4, 2, 3, 2, 2, 5, 4), plus the ninja
+    weapon-only rule - cross-checked cell-by-cell between the two passes, zero
+    contested cells
   - [ ] Table 58: Artisan Proficiencies
     (capture p. 103)
   - [ ] Table 59: Barbarian Proficiencies

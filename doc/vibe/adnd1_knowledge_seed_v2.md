@@ -13559,6 +13559,38 @@ when both halves land.
   success-and-failure doctrine and the contests (capture pp. 101-103), prefix
   dhm (verify free), audit "R652 OA non-weapon proficiencies audit", include
   after rules/oamslspec.h
+- R652 LANDED 2026-10-19: commit 125647b399484360b77fcc815dfb7182d8a40ef6
+  (census 574 -> 575, pushed 4cfbabe..125647b), NON-WEAPON
+  PROFICIENCIES - the peaceful-arts prose, capture pp. 101-103:
+  rules/oanwprof.h, prefix dhm (verified free), 33 inlines (12
+  consts, 21 bools, no tables): the four categories (Common,
+  Artisan, Court, Barbarian) with the only-barbarians rule and the
+  category learning environments, the no-required-study-times and
+  tools-and-guidance learning doctrine, the base-chance rules
+  (identical to the to-hit roll, never improving with level), the
+  +1-per-slot improvement from 2nd level, the no-limit rule and
+  the never-below-3 floor, the magical-only-if-known rule, the
+  Akimori calligraphy example (two slots, base 17, 16 at third, 14
+  at fourth), the optional +1/+2 player bonuses (strictly
+  optional), the success-and-failure doctrine with the always-roll
+  proficiencies (weapon-smith, armorer) and the contest rules
+  (formal vs impromptu, the elimination resolution, the
+  inauspicious all-fail rule, 50 vs 100 times the host's level).
+  The compressed plus-as-minus OCR artifact settles per the print
+  pass: the compressed renders the slot and optional bonuses as
+  minuses where the print prints pluses, and the Akimori
+  arithmetic (the chance falling as the modifier rises) reads
+  nonsense with genuine minuses - genuine pluses pinned per the
+  R650 precedent; zero contested reads otherwise. rverify GREEN at
+  4cfbabe, 33 mutants, 0 missed; preflight GREEN (575 audit
+  census, BUILD 0 warnings). Gap census 103/132 -> 104/131. Spec
+  19,624 bytes md5 20eacc3e7a91ae60c38538835044cac4
+  (authored-plus-newline md5 7c7bf524778ba7566ab79930c3cf9c3a -
+  the value the ritual gated and matched; canvas md5
+  5d3d530d16625de243c26b249ecc8479). NEXT - R653: Table 56
+  (Character Proficiencies), capture p. 99, prefix dhn (verify
+  free), audit "R653 OA character proficiencies audit", include
+  after rules/oanwprof.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
