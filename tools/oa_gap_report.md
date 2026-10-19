@@ -506,16 +506,45 @@ description riding the same round.
     blank row plus the 6th through 29th rows of
     the four spell-level columns, the dashes as
     zeros - no spells until 6th level
-  - [ ] Wu Jen class (capture pp. 47-51) - the
+  - [x] Wu Jen class (capture pp. 47-51) - the
     oriental wizard: the scroll-and-treatise doctrine
     (no spell book), the 3d6 initial-spells roll with
     the Intelligence minimums and maximums, the
-    favored-weapon +1, the elemental tabs
-  - [ ] Table 31: Wu Jen (capture p. 47)
-  - [ ] Table 32: Wu Jen Intelligence Adjustments
-    (capture p. 48)
-  - [ ] Table 33: Wu Jen Spells Usable by Level
-    (capture p. 49)
+    favored-weapon +1, the elemental tabs -
+    R626: the dgm wu jen pins - the Int 13 minimum
+    with the Int-15 xp bonus, the never-lawful
+    rule, the d4 doctrine with the +1-per-die
+    bonus, the magic-user tables, the favored
+    weapon, six slots, no armor, the understand/
+    know/memorize distinction, the two ki powers
+    (the +3 initiative burst, the 4th-level
+    maximum-effect power), the elemental mastery
+    (-1 enemy saves, +1 damage, +1 own saves),
+    the 1d4 pupils at 10th, the tengu and oni
+    +20 reaction, the no-family and light-honor
+    doctrine, the taboo ladder (one at 1st, one
+    per five levels)
+  - [x] Table 31: Wu Jen (capture p. 47) -
+    R626: the dgm T31 grid - eleven rows of xp
+    bounds and accumulated d4 dice with the
+    9-plus-N cells (1 hp per level beyond 9th)
+    plus the 300,000-xp beyond-11th note; the
+    row-2 bound OCR-mangled in the capture (4000
+    without the comma) and settled against the
+    2018 print (4,000)
+  - [x] Table 32: Wu Jen Intelligence Adjustments
+    (capture p. 48) -
+    R626: the dgm T32 grid - seven tier rows of
+    the chance-to-know ladder 35 to 95 with the
+    minimum 4-10 and maximum 6-18 columns, the
+    19-or-more All maximum pinned as the -1 code
+  - [x] Table 33: Wu Jen Spells Usable by Level
+    (capture p. 49) -
+    R626: the dgm T33 grid - twenty-nine rows of
+    the nine spell-level columns, the dashes as
+    zeros; the row-5 and row-22 contested cells
+    settled against the 2018 print (its
+    ladder-consistent readings stand)
   - [ ] Yakuza (capture pp. 51-54) - the gangster:
     the family-clan requirement, the -5 birth modifier,
     the stipend, the gaming proficiency

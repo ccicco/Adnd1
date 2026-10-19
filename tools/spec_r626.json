@@ -1,0 +1,1271 @@
+{
+ "round": 626,
+ "title": "THE WU JEN - the oriental wizard: the Intelligence doctrine with the spell-learning mechanics, the two ki powers, the elemental mastery, the pupils, the taboo ladder, Tables 31, 32 and 33",
+ "prefix": "dgm",
+ "header_file": "rules/oawujen.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 548,
+ "inline_count": 60,
+ "audit_label": "R626 OA wu jen audit",
+ "audit_comment": "OA round thirteen (capture pp. 47-51): the wu jen - the minima, the spell-learning doctrine, the ki powers, the elemental mastery and the taboo ladder",
+ "banner": {
+  "title": "THE WU JEN, printed capture pp. 47-51 - the OA wu jen round",
+  "provenance": "verified against capture pp. 47-51 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Three cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T31 row-2 bound (the capture lost the comma - 4,000); the T33 row-5 first-spell cell (the capture prints 4, the 2018 prints 3, the ladder-consistent reading stands); the T33 row-22 ninth-spell cell (the capture prints 2, the 2018 prints 1, the ladder-consistent reading stands). The T32 All maximum pins as the -1 code; the T33 dashes pin as zeros. OCR normalization: konobokuru reads as korobokuru; in hit, spell book reads as in his spell book; cloud/adder reads as cloud ladder (prose only)",
+  "sentinel": "the gap census after this round: 56 closed, 179 open - the wu jen boxes with Tables 31, 32 and 33 flip (census 548 -> 549); NEXT - R627: the Yakuza, capture pp. 51-54, Tables 34 and 35, prefix dgn (verify free), audit \"R627 OA yakuza audit\", include after rules/oawujen.h"
+ },
+ "consts": [
+  {
+   "name": "dgmWuJenMinInt",
+   "value": 13,
+   "comment": "Wu jen prose (capture p. 48): the Intelligence minimum"
+  },
+  {
+   "name": "dgmWuJenBonusInt",
+   "value": 15,
+   "comment": "Wu jen prose (capture p. 48): Intelligence 15 or greater earns the 10 percent experience bonus"
+  },
+  {
+   "name": "dgmWuJenBonusPct",
+   "value": 10,
+   "comment": "Wu jen prose (capture p. 48): the bonus value"
+  },
+  {
+   "name": "dgmWuJenHitDie",
+   "value": 4,
+   "comment": "Wu jen prose (capture p. 48): the 4-sided hit die, one per level"
+  },
+  {
+   "name": "dgmWuJenHpBonusPerDie",
+   "value": 1,
+   "comment": "Wu jen prose (capture p. 48): the automatic +1 hit point bonus per die, 2-5 per level"
+  },
+  {
+   "name": "dgmWuJenHpPerLevelMin",
+   "value": 2,
+   "comment": "Wu jen prose (capture p. 48): the 2-5 hit points per level lower bound"
+  },
+  {
+   "name": "dgmWuJenHpPerLevelMax",
+   "value": 5,
+   "comment": "Wu jen prose (capture p. 48): the 2-5 upper bound"
+  },
+  {
+   "name": "dgmWuJenSlots",
+   "value": 6,
+   "comment": "Wu jen prose (capture p. 48): six proficiency slots at the beginning"
+  },
+  {
+   "name": "dgmWuJenFavoredBonus",
+   "value": 1,
+   "comment": "Wu jen prose (capture p. 48): the favored weapon earns +1 to hit"
+  },
+  {
+   "name": "dgmWuJenKiInitBonus",
+   "value": 3,
+   "comment": "Wu jen prose (capture p. 50): the ki burst gives +3 on the initiative roll"
+  },
+  {
+   "name": "dgmWuJenKiInitRounds",
+   "value": 1,
+   "comment": "Wu jen prose (capture p. 50): the ki burst lasts one round"
+  },
+  {
+   "name": "dgmWuJenKiInitPerDay",
+   "value": 1,
+   "comment": "Wu jen prose (capture p. 50): the ki burst once per day"
+  },
+  {
+   "name": "dgmWuJenKiMaxEffectLevel",
+   "value": 4,
+   "comment": "Wu jen prose (capture p. 50): the second ki power at 4th level - maximum effect"
+  },
+  {
+   "name": "dgmWuJenKiMaxEffectGap",
+   "value": 3,
+   "comment": "Wu jen prose (capture p. 50): any one spell three or more levels lower than the wu jen level, at maximum effect"
+  },
+  {
+   "name": "dgmWuJenElementCount",
+   "value": 5,
+   "comment": "Wu jen prose (capture p. 50): five elemental groups - earth/metal, water, fire, wind and wood/nature"
+  },
+  {
+   "name": "dgmWuJenMasterEnemySaveMod",
+   "value": -1,
+   "comment": "Wu jen prose (capture p. 50): the element master casts with a -1 saving throw modifier against the enemies"
+  },
+  {
+   "name": "dgmWuJenMasterDamageBonus",
+   "value": 1,
+   "comment": "Wu jen prose (capture p. 50): the element master gains +1 to all damage of that element"
+  },
+  {
+   "name": "dgmWuJenMasterSaveBonus",
+   "value": 1,
+   "comment": "Wu jen prose (capture p. 50): the element master gains +1 on saves versus spells of that element"
+  },
+  {
+   "name": "dgmWuJenPupilLevel",
+   "value": 10,
+   "comment": "Wu jen prose (capture p. 50): the 1d4 pupils attracted at 10th level"
+  },
+  {
+   "name": "dgmWuJenPupilDice",
+   "value": 4,
+   "comment": "Wu jen prose (capture p. 50): the pupil die"
+  },
+  {
+   "name": "dgmWuJenPupilLeaveDiv",
+   "value": 2,
+   "comment": "Wu jen prose (capture p. 50): the pupils leave at a level equal to one-half their master level, each replaced by a new 1st-level seeker"
+  },
+  {
+   "name": "dgmWuJenTenguOniReaction",
+   "value": 20,
+   "comment": "Wu jen prose (capture p. 51): the +20 percent reaction modifier with tengu and oni"
+  },
+  {
+   "name": "dgmWuJenTabooFirstLevel",
+   "value": 1,
+   "comment": "Wu jen prose (capture p. 51): one taboo at 1st level"
+  },
+  {
+   "name": "dgmWuJenTabooStepLevels",
+   "value": 5,
+   "comment": "Wu jen prose (capture p. 51): an additional taboo upon gaining every five levels"
+  },
+  {
+   "name": "dgmT31RowCount",
+   "value": 11,
+   "comment": "Table 31 (capture pp. 47-48): eleven rows, levels 1-11"
+  },
+  {
+   "name": "dgmT31XpBeyond",
+   "value": 300000,
+   "comment": "Table 31 note (capture p. 48): 300,000 experience points are required for each level beyond 11th"
+  },
+  {
+   "name": "dgmT31HpBeyond",
+   "value": 1,
+   "comment": "Table 31 note (capture p. 48): wu jen gain 1 hp per level beyond 9th"
+  },
+  {
+   "name": "dgmT32RowCount",
+   "value": 7,
+   "comment": "Table 32 (capture p. 48): seven tier rows, Intelligence 9 through 19 or more"
+  },
+  {
+   "name": "dgmT32MaxAll",
+   "value": -1,
+   "comment": "Table 32 (capture p. 48): the 19-or-more maximum reads All - pinned as the -1 code"
+  },
+  {
+   "name": "dgmT33RowCount",
+   "value": 29,
+   "comment": "Table 33 (capture p. 49): twenty-nine rows, levels 1-29"
+  },
+  {
+   "name": "dgmT33SpellLevels",
+   "value": 9,
+   "comment": "Table 33 (capture p. 49): nine spell-level columns, 1st through 9th"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgmWuJenNeverLawful",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 48): wu jen cannot be lawful"
+  },
+  {
+   "name": "dgmWuJenRaces",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 48): human, korobokuru and hengeyokai can be wu jen"
+  },
+  {
+   "name": "dgmWuJenMagicUserTables",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 48): the magic-user combat and saving throw tables"
+  },
+  {
+   "name": "dgmWuJenNoArmor",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 48): cannot wear armor or use shields, limited to the Table 13 weapons"
+  },
+  {
+   "name": "dgmWuJenMeditates",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 50): learns to meditate like a shukenja as part of the mental regimen"
+  },
+  {
+   "name": "dgmWuJenUnderstandKnowMemorize",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 50): understanding, knowing and remembering are three different things - only study of the spell book lets him cast from memory"
+  },
+  {
+   "name": "dgmWuJenIntLossRecheck",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 50): a lasting Intelligence loss forces a recheck of every understood spell against the new maximum; a gain allows new learning"
+  },
+  {
+   "name": "dgmWuJenScrollDestroyed",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 50): new spells come from a teacher, another wu jen book or a scroll - the scroll is destroyed in learning"
+  },
+  {
+   "name": "dgmWuJenMasterLostOnNewLevel",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 50): the element mastery is lost when a higher spell level becomes castable until all its spells are learned"
+  },
+  {
+   "name": "dgmWuJenStrongholdWithLieutenant",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 50): no fighting men attracted - he hires them and must employ a lieutenant to command them"
+  },
+  {
+   "name": "dgmWuJenTenguOniLanguage",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 51): wu jen speak the language of tengu and oni"
+  },
+  {
+   "name": "dgmWuJenNoFamily",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 51): no Table 38 roll, no family bonuses or penalties"
+  },
+  {
+   "name": "dgmWuJenLightHonor",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 51): integrity without the honor codes - bonuses and penalties of honor are much smaller"
+  },
+  {
+   "name": "dgmWuJenTabooConsequences",
+   "value": true,
+   "comment": "Wu jen prose (capture p. 51): violating a taboo brings loss of spells, illness or other evil events; the DM may add similar taboos"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dgmT31Grid",
+   "tag": "T31",
+   "count": "dgmT31RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgmT31XpMax",
+    "dgmT31Dice",
+    "dgmT31HpBonus"
+   ],
+   "data": [
+    [
+     2000,
+     1,
+     0
+    ],
+    [
+     4000,
+     2,
+     0
+    ],
+    [
+     8000,
+     3,
+     0
+    ],
+    [
+     18000,
+     4,
+     0
+    ],
+    [
+     36000,
+     5,
+     0
+    ],
+    [
+     65000,
+     6,
+     0
+    ],
+    [
+     100000,
+     7,
+     0
+    ],
+    [
+     140000,
+     8,
+     0
+    ],
+    [
+     280000,
+     9,
+     0
+    ],
+    [
+     600000,
+     9,
+     1
+    ],
+    [
+     800000,
+     9,
+     2
+    ]
+   ],
+   "comment": "the Table 31 wu jen advancement grid (capture pp. 47-48)",
+   "col_comments": [
+    "the experience column: the upper xp bound of each level, 2,000 at 1st to 800,000 at 11th - the row-2 bound OCR-mangled in the capture (4000 without the comma) and settled against the 2018 print (capture pp. 47-48).",
+    "the accumulated d4 dice column: one per level through 9th, then held at 9 (capture pp. 47-48).",
+    "the hit-point bonus column: the printed 9-plus-N cells - 1 hp per level beyond 9th: 0 through 9th, then 1, 2 (capture pp. 47-48)."
+   ],
+   "audit_comment": "the Table 31 grid: the xp bounds and the accumulated dice plus bonus (capture pp. 47-48)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgmT32Grid",
+   "tag": "T32",
+   "count": "dgmT32RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgmT32KnowPct",
+    "dgmT32MinSpells",
+    "dgmT32MaxSpells"
+   ],
+   "data": [
+    [
+     35,
+     4,
+     6
+    ],
+    [
+     45,
+     5,
+     7
+    ],
+    [
+     55,
+     6,
+     9
+    ],
+    [
+     65,
+     7,
+     11
+    ],
+    [
+     75,
+     8,
+     14
+    ],
+    [
+     85,
+     9,
+     18
+    ],
+    [
+     95,
+     10,
+     -1
+    ]
+   ],
+   "comment": "the Table 32 wu jen Intelligence adjustments grid (capture p. 48)",
+   "col_comments": [
+    "the chance to know each listed spell column: 35 percent at Int 9 climbing 10 per tier to 95 at 19 or more (capture p. 48).",
+    "the minimum number of spells per level column: 4 at Int 9 to 10 at 19 or more (capture p. 48).",
+    "the maximum number of spells per level column: 6 at Int 9 to 18 at Int 18, then the printed All at 19 or more pinned as the -1 code (capture p. 48)."
+   ],
+   "audit_comment": "the Table 32 grid: the know chance with the spell minima and maxima (capture p. 48)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgmT33Grid",
+   "tag": "T33",
+   "count": "dgmT33RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgmT33S1",
+    "dgmT33S2",
+    "dgmT33S3",
+    "dgmT33S4",
+    "dgmT33S5",
+    "dgmT33S6",
+    "dgmT33S7",
+    "dgmT33S8",
+    "dgmT33S9"
+   ],
+   "data": [
+    [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     2,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     4,
+     2,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     4,
+     3,
+     2,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     4,
+     3,
+     3,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     3,
+     3,
+     2,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     4,
+     3,
+     2,
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     4,
+     4,
+     2,
+     2,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     5,
+     4,
+     2,
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     5,
+     4,
+     4,
+     2,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     5,
+     4,
+     4,
+     2,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     6,
+     5,
+     4,
+     4,
+     3,
+     3,
+     2,
+     0,
+     0
+    ],
+    [
+     6,
+     6,
+     5,
+     4,
+     4,
+     3,
+     2,
+     0,
+     0
+    ],
+    [
+     6,
+     6,
+     5,
+     5,
+     4,
+     3,
+     2,
+     1,
+     0
+    ],
+    [
+     6,
+     6,
+     5,
+     5,
+     4,
+     4,
+     2,
+     2,
+     0
+    ],
+    [
+     6,
+     6,
+     6,
+     5,
+     5,
+     4,
+     2,
+     2,
+     0
+    ],
+    [
+     6,
+     6,
+     6,
+     5,
+     5,
+     4,
+     3,
+     3,
+     0
+    ],
+    [
+     7,
+     6,
+     6,
+     6,
+     5,
+     4,
+     3,
+     3,
+     1
+    ],
+    [
+     7,
+     7,
+     6,
+     6,
+     5,
+     5,
+     3,
+     3,
+     1
+    ],
+    [
+     7,
+     7,
+     7,
+     6,
+     6,
+     5,
+     3,
+     3,
+     2
+    ],
+    [
+     7,
+     7,
+     7,
+     6,
+     6,
+     5,
+     4,
+     4,
+     2
+    ],
+    [
+     8,
+     7,
+     7,
+     6,
+     6,
+     6,
+     4,
+     4,
+     2
+    ],
+    [
+     8,
+     8,
+     7,
+     7,
+     6,
+     6,
+     5,
+     4,
+     3
+    ],
+    [
+     8,
+     8,
+     8,
+     7,
+     7,
+     6,
+     5,
+     4,
+     3
+    ],
+    [
+     9,
+     8,
+     8,
+     7,
+     7,
+     7,
+     5,
+     5,
+     3
+    ],
+    [
+     9,
+     9,
+     8,
+     8,
+     7,
+     7,
+     6,
+     5,
+     4
+    ]
+   ],
+   "comment": "the Table 33 wu jen spells usable by level grid (capture p. 49)",
+   "col_comments": [
+    "the 1st-level spells column: 1 at 1st to 9 at 28th - the row-5 cell (level 5) is contested, the capture prints 4 and the 2018 print 3; the 2018 ladder-consistent reading stands (capture p. 49).",
+    "the 2nd-level spells column: none until 3rd, then 1 to 9 at 29th (capture p. 49).",
+    "the 3rd-level spells column: none until 5th, then 1 to 8 at 29th (capture p. 49).",
+    "the 4th-level spells column: none until 7th, then 1 to 8 at 29th (capture p. 49).",
+    "the 5th-level spells column: none until 9th, then 1 to 7 at 29th (capture p. 49).",
+    "the 6th-level spells column: none until 11th, then 1 to 7 at 29th (capture p. 49).",
+    "the 7th-level spells column: none until 13th, then 1 to 6 at 29th (capture p. 49).",
+    "the 8th-level spells column: none until 17th, then 1 to 5 at 29th (capture p. 49).",
+    "the 9th-level spells column: none until 21st, then 1 to 4 at 29th - the row-22 cell (level 22) is contested, the capture prints 2 and the 2018 print 1; the 2018 ladder-consistent reading stands (capture p. 49)."
+   ],
+   "audit_comment": "the Table 33 grid: the nine spell-level columns, levels 1-29 (capture p. 49)",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dgmWuJenMinInt pin",
+   "expr": "m['dgmWuJenMinInt']() != 13"
+  },
+  {
+   "note": "the dgmWuJenBonusInt pin",
+   "expr": "m['dgmWuJenBonusInt']() != 15"
+  },
+  {
+   "note": "the dgmWuJenBonusPct pin",
+   "expr": "m['dgmWuJenBonusPct']() != 10"
+  },
+  {
+   "note": "the dgmWuJenHitDie pin",
+   "expr": "m['dgmWuJenHitDie']() != 4"
+  },
+  {
+   "note": "the dgmWuJenHpBonusPerDie pin",
+   "expr": "m['dgmWuJenHpBonusPerDie']() != 1"
+  },
+  {
+   "note": "the dgmWuJenHpPerLevelMin pin",
+   "expr": "m['dgmWuJenHpPerLevelMin']() != 2"
+  },
+  {
+   "note": "the dgmWuJenHpPerLevelMax pin",
+   "expr": "m['dgmWuJenHpPerLevelMax']() != 5"
+  },
+  {
+   "note": "the dgmWuJenSlots pin",
+   "expr": "m['dgmWuJenSlots']() != 6"
+  },
+  {
+   "note": "the dgmWuJenFavoredBonus pin",
+   "expr": "m['dgmWuJenFavoredBonus']() != 1"
+  },
+  {
+   "note": "the dgmWuJenKiInitBonus pin",
+   "expr": "m['dgmWuJenKiInitBonus']() != 3"
+  },
+  {
+   "note": "the dgmWuJenKiInitRounds pin",
+   "expr": "m['dgmWuJenKiInitRounds']() != 1"
+  },
+  {
+   "note": "the dgmWuJenKiInitPerDay pin",
+   "expr": "m['dgmWuJenKiInitPerDay']() != 1"
+  },
+  {
+   "note": "the dgmWuJenKiMaxEffectLevel pin",
+   "expr": "m['dgmWuJenKiMaxEffectLevel']() != 4"
+  },
+  {
+   "note": "the dgmWuJenKiMaxEffectGap pin",
+   "expr": "m['dgmWuJenKiMaxEffectGap']() != 3"
+  },
+  {
+   "note": "the dgmWuJenElementCount pin",
+   "expr": "m['dgmWuJenElementCount']() != 5"
+  },
+  {
+   "note": "the dgmWuJenMasterEnemySaveMod pin",
+   "expr": "m['dgmWuJenMasterEnemySaveMod']() != -1"
+  },
+  {
+   "note": "the dgmWuJenMasterDamageBonus pin",
+   "expr": "m['dgmWuJenMasterDamageBonus']() != 1"
+  },
+  {
+   "note": "the dgmWuJenMasterSaveBonus pin",
+   "expr": "m['dgmWuJenMasterSaveBonus']() != 1"
+  },
+  {
+   "note": "the dgmWuJenPupilLevel pin",
+   "expr": "m['dgmWuJenPupilLevel']() != 10"
+  },
+  {
+   "note": "the dgmWuJenPupilDice pin",
+   "expr": "m['dgmWuJenPupilDice']() != 4"
+  },
+  {
+   "note": "the dgmWuJenPupilLeaveDiv pin",
+   "expr": "m['dgmWuJenPupilLeaveDiv']() != 2"
+  },
+  {
+   "note": "the dgmWuJenTenguOniReaction pin",
+   "expr": "m['dgmWuJenTenguOniReaction']() != 20"
+  },
+  {
+   "note": "the dgmWuJenTabooFirstLevel pin",
+   "expr": "m['dgmWuJenTabooFirstLevel']() != 1"
+  },
+  {
+   "note": "the dgmWuJenTabooStepLevels pin",
+   "expr": "m['dgmWuJenTabooStepLevels']() != 5"
+  },
+  {
+   "note": "the dgmT31RowCount pin",
+   "expr": "m['dgmT31RowCount']() != 11"
+  },
+  {
+   "note": "the dgmT31XpBeyond pin",
+   "expr": "m['dgmT31XpBeyond']() != 300000"
+  },
+  {
+   "note": "the dgmT31HpBeyond pin",
+   "expr": "m['dgmT31HpBeyond']() != 1"
+  },
+  {
+   "note": "the dgmT32RowCount pin",
+   "expr": "m['dgmT32RowCount']() != 7"
+  },
+  {
+   "note": "the dgmT32MaxAll pin",
+   "expr": "m['dgmT32MaxAll']() != -1"
+  },
+  {
+   "note": "the dgmT33RowCount pin",
+   "expr": "m['dgmT33RowCount']() != 29"
+  },
+  {
+   "note": "the dgmT33SpellLevels pin",
+   "expr": "m['dgmT33SpellLevels']() != 9"
+  },
+  {
+   "note": "the dgmWuJenNeverLawful pin",
+   "expr": "m['dgmWuJenNeverLawful']() != 1"
+  },
+  {
+   "note": "the dgmWuJenRaces pin",
+   "expr": "m['dgmWuJenRaces']() != 1"
+  },
+  {
+   "note": "the dgmWuJenMagicUserTables pin",
+   "expr": "m['dgmWuJenMagicUserTables']() != 1"
+  },
+  {
+   "note": "the dgmWuJenNoArmor pin",
+   "expr": "m['dgmWuJenNoArmor']() != 1"
+  },
+  {
+   "note": "the dgmWuJenMeditates pin",
+   "expr": "m['dgmWuJenMeditates']() != 1"
+  },
+  {
+   "note": "the dgmWuJenUnderstandKnowMemorize pin",
+   "expr": "m['dgmWuJenUnderstandKnowMemorize']() != 1"
+  },
+  {
+   "note": "the dgmWuJenIntLossRecheck pin",
+   "expr": "m['dgmWuJenIntLossRecheck']() != 1"
+  },
+  {
+   "note": "the dgmWuJenScrollDestroyed pin",
+   "expr": "m['dgmWuJenScrollDestroyed']() != 1"
+  },
+  {
+   "note": "the dgmWuJenMasterLostOnNewLevel pin",
+   "expr": "m['dgmWuJenMasterLostOnNewLevel']() != 1"
+  },
+  {
+   "note": "the dgmWuJenStrongholdWithLieutenant pin",
+   "expr": "m['dgmWuJenStrongholdWithLieutenant']() != 1"
+  },
+  {
+   "note": "the dgmWuJenTenguOniLanguage pin",
+   "expr": "m['dgmWuJenTenguOniLanguage']() != 1"
+  },
+  {
+   "note": "the dgmWuJenNoFamily pin",
+   "expr": "m['dgmWuJenNoFamily']() != 1"
+  },
+  {
+   "note": "the dgmWuJenLightHonor pin",
+   "expr": "m['dgmWuJenLightHonor']() != 1"
+  },
+  {
+   "note": "the dgmWuJenTabooConsequences pin",
+   "expr": "m['dgmWuJenTabooConsequences']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the T31 first row - 2,000 xp, one die (capture p. 47)",
+   "expr": "m['dgmT31XpMax'](0) != 2000 or m['dgmT31Dice'](0) != 1 or m['dgmT31HpBonus'](0) != 0"
+  },
+  {
+   "note": "the T31 row-2 bound settled at 4,000 - the capture lost the comma (capture pp. 47-48)",
+   "expr": "m['dgmT31XpMax'](1) != 4000 or m['dgmT31XpMax'](2) != 8000"
+  },
+  {
+   "note": "the T31 capstone - 800,000 xp, nine dice plus two, eleven rows only (capture p. 48)",
+   "expr": "m['dgmT31XpMax'](10) != 800000 or m['dgmT31Dice'](10) != 9 or m['dgmT31HpBonus'](10) != 2"
+  },
+  {
+   "note": "the T32 ladder - 35 percent at Int 9, the 7-and-11 Hideyori tier (capture pp. 48, 50)",
+   "expr": "m['dgmT32KnowPct'](0) != 35 or m['dgmT32KnowPct'](3) != 65 or m['dgmT32MinSpells'](3) != 7 or m['dgmT32MaxSpells'](3) != 11"
+  },
+  {
+   "note": "the T32 All maximum - the 19-or-more row pins as the -1 code (capture p. 48)",
+   "expr": "m['dgmT32KnowPct'](6) != 95 or m['dgmT32MaxSpells'](6) != m['dgmT32MaxAll']()"
+  },
+  {
+   "note": "the T33 row-5 cell settled - three 1st-level spells at 5th, the capture printed 4 (capture p. 49)",
+   "expr": "m['dgmT33S1'](4) != 3 or m['dgmT33S1'](5) != 4"
+  },
+  {
+   "note": "the T33 row-22 cell settled - one 9th-level spell at 22nd, the capture printed 2 (capture p. 49)",
+   "expr": "m['dgmT33S9'](20) != 1 or m['dgmT33S9'](21) != 1 or m['dgmT33S9'](22) != 2"
+  },
+  {
+   "note": "the T33 openings - the 3rd at 5th, the 5th at 9th, the 9th at 21st (capture p. 49)",
+   "expr": "m['dgmT33S3'](4) != 1 or m['dgmT33S5'](8) != 1 or m['dgmT33S9'](20) != 1"
+  },
+  {
+   "note": "the T33 capstone - the 29th-level row (capture p. 49)",
+   "expr": "m['dgmT33S1'](28) != 9 or m['dgmT33S6'](28) != 7 or m['dgmT33S9'](28) != 4"
+  },
+  {
+   "note": "the maximum-effect ki - a 4th-level wu jen casts a 1st-level spell at maximum effect, the gap is three levels (capture p. 50)",
+   "expr": "m['dgmWuJenKiMaxEffectLevel']() - m['dgmWuJenKiMaxEffectGap']() != 1"
+  },
+  {
+   "note": "the taboo ladder - one at 1st, another per five levels (capture p. 51)",
+   "expr": "m['dgmWuJenTabooFirstLevel']() != 1 or m['dgmWuJenTabooStepLevels']() != 5"
+  }
+ ],
+ "header_sections": {
+  "the wu jen doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dgmWuJenMinInt"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenBonusInt"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenBonusPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenNeverLawful"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenRaces"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenHitDie"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenHpBonusPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenHpPerLevelMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenHpPerLevelMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenMagicUserTables"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenNoArmor"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenFavoredBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenSlots"
+   }
+  ],
+  "the wu jen spell and ki pins": [
+   {
+    "kind": "bool",
+    "name": "dgmWuJenUnderstandKnowMemorize"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenIntLossRecheck"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenScrollDestroyed"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenMeditates"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenKiInitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenKiInitRounds"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenKiInitPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenKiMaxEffectLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenKiMaxEffectGap"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenElementCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenMasterEnemySaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenMasterDamageBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenMasterSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenMasterLostOnNewLevel"
+   }
+  ],
+  "the wu jen pupil and taboo pins": [
+   {
+    "kind": "const",
+    "name": "dgmWuJenPupilLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenPupilDice"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenPupilLeaveDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenStrongholdWithLieutenant"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenTenguOniLanguage"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenTenguOniReaction"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenNoFamily"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenLightHonor"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenTabooFirstLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgmWuJenTabooStepLevels"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmWuJenTabooConsequences"
+   }
+  ],
+  "the Table 31, Table 32 and Table 33 grids": [
+   {
+    "kind": "const",
+    "name": "dgmT31RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dgmT31Grid"
+   },
+   {
+    "kind": "const",
+    "name": "dgmT31XpBeyond"
+   },
+   {
+    "kind": "const",
+    "name": "dgmT31HpBeyond"
+   },
+   {
+    "kind": "const",
+    "name": "dgmT32RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgmT32MaxAll"
+   },
+   {
+    "kind": "table",
+    "name": "dgmT32Grid"
+   },
+   {
+    "kind": "const",
+    "name": "dgmT33RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgmT33SpellLevels"
+   },
+   {
+    "kind": "table",
+    "name": "dgmT33Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Wu Jen class box closes",
+   "from": "  - [ ] Wu Jen class (capture pp. 47-51) - the\n    oriental wizard: the scroll-and-treatise doctrine\n    (no spell book), the 3d6 initial-spells roll with\n    the Intelligence minimums and maximums, the\n    favored-weapon +1, the elemental tabs",
+   "to": "  - [x] Wu Jen class (capture pp. 47-51) - the\n    oriental wizard: the scroll-and-treatise doctrine\n    (no spell book), the 3d6 initial-spells roll with\n    the Intelligence minimums and maximums, the\n    favored-weapon +1, the elemental tabs -\n    R626: the dgm wu jen pins - the Int 13 minimum\n    with the Int-15 xp bonus, the never-lawful\n    rule, the d4 doctrine with the +1-per-die\n    bonus, the magic-user tables, the favored\n    weapon, six slots, no armor, the understand/\n    know/memorize distinction, the two ki powers\n    (the +3 initiative burst, the 4th-level\n    maximum-effect power), the elemental mastery\n    (-1 enemy saves, +1 damage, +1 own saves),\n    the 1d4 pupils at 10th, the tengu and oni\n    +20 reaction, the no-family and light-honor\n    doctrine, the taboo ladder (one at 1st, one\n    per five levels)"
+  },
+  {
+   "note": "the   Table 31: Wu Jen box closes",
+   "from": "  - [ ] Table 31: Wu Jen (capture p. 47)",
+   "to": "  - [x] Table 31: Wu Jen (capture p. 47) -\n    R626: the dgm T31 grid - eleven rows of xp\n    bounds and accumulated d4 dice with the\n    9-plus-N cells (1 hp per level beyond 9th)\n    plus the 300,000-xp beyond-11th note; the\n    row-2 bound OCR-mangled in the capture (4000\n    without the comma) and settled against the\n    2018 print (4,000)"
+  },
+  {
+   "note": "the   Table 32: Wu Jen Intelligence Adjustments box closes",
+   "from": "  - [ ] Table 32: Wu Jen Intelligence Adjustments\n    (capture p. 48)",
+   "to": "  - [x] Table 32: Wu Jen Intelligence Adjustments\n    (capture p. 48) -\n    R626: the dgm T32 grid - seven tier rows of\n    the chance-to-know ladder 35 to 95 with the\n    minimum 4-10 and maximum 6-18 columns, the\n    19-or-more All maximum pinned as the -1 code"
+  },
+  {
+   "note": "the   Table 33: Wu Jen Spells Usable By Level box closes",
+   "from": "  - [ ] Table 33: Wu Jen Spells Usable by Level\n    (capture p. 49)",
+   "to": "  - [x] Table 33: Wu Jen Spells Usable by Level\n    (capture p. 49) -\n    R626: the dgm T33 grid - twenty-nine rows of\n    the nine spell-level columns, the dashes as\n    zeros; the row-5 and row-22 contested cells\n    settled against the 2018 print (its\n    ladder-consistent readings stand)"
+  }
+ ],
+ "gap_census": {
+  "closed": 56,
+  "open": 179
+ },
+ "include_comment": "the OA wu jen pins",
+ "include_after": "#include \"rules/oasohei.h\"  // R625: the OA sohei pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R625 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R625 LANDED 2026-10-18: commit",
+  "  9204c4c58ed247ce08775d243de60aeddbfa58bd",
+  "  (census 547 -> 548, pushed",
+  "  7bbb728..9204c4c), THE SOHEI, capture",
+  "  pp. 45-47: rules/oasohei.h, prefix",
+  "  dgl (verified free), 53 inlines (33",
+  "  consts, 12 bools, 7 table columns):",
+  "  the Str 13 and Wis/Con 10 minima",
+  "  with the Str-plus-Wis-15 dual-prime",
+  "  bonus, the lawful requirement",
+  "  independent of the monastery, the",
+  "  d10 doctrine with any armor and",
+  "  four slots, the cleric tables, the",
+  "  shukenja spell gate with the Table",
+  "  27 bonuses and failure, the weapon",
+  "  of choice, the BERSERK KI at 3rd",
+  "  (one turn, once daily, the extra",
+  "  attack, the AC/move/hit/save riders,",
+  "  the missile deflection), the",
+  "  5th-level FANATICISM (fighting to",
+  "  -10 with the +2 reserves, then",
+  "  death, posthumous honor), the",
+  "  6th-level command (10-30 sohei,",
+  "  plus 10 per level above 6th,",
+  "  replaceable, lost only if all",
+  "  slain), the 9th-level commission,",
+  "  the less-strict rules (the fish",
+  "  rider, the monastery-cause xp), the",
+  "  caste and honor doctrine, T29 12x3,",
+  "  T30 25x4 with row 0 as the printed",
+  "  levels 1-5 blank row (row k is",
+  "  level k plus 5) and the dashes",
+  "  pinned as zeros. TWO CELLS SETTLED",
+  "  AGAINST THE 2018 PRINT BEFORE",
+  "  PINNING: the T29 row-4 level cell",
+  "  (the capture prints 3 against four",
+  "  dice - the 2018 prints 4); the",
+  "  fanaticism roll bonus (the capture",
+  "  prints +2, KEPT - the 2018 minus 2",
+  "  is a lost plus against the sustain-",
+  "  himself reading). OCR normalization:",
+  "  1stlevel reads as 1st-level (prose",
+  "  only). Battery 182 mutants, 0",
+  "  missed; full sha rverify GREEN. Gap",
+  "  census 49/186 -> 52/183. Spec 26,919",
+  "  bytes md5",
+  "  cd6733ac0ae78c0b909e0a5708e3c873",
+  "  (canvas md5",
+  "  2623dc770b5010570b04474e54793724).",
+  "  NEXT - R626: the Wu Jen, capture",
+  "  pp. 47-51, Table 31, prefix dgm",
+  "  (verify free), audit \"R626 OA wu",
+  "  jen audit\", include after rules/",
+  "  oasohei.h."
+ ]
+}

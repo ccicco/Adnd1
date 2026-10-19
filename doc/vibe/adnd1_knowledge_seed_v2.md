@@ -12093,6 +12093,60 @@ when both halves land.
   dgl (verify free), audit "R625 OA
   sohei audit", include after rules/
   oashukenja.h.
+- R625 LANDED 2026-10-18: commit
+  9204c4c58ed247ce08775d243de60aeddbfa58bd
+  (census 547 -> 548, pushed
+  7bbb728..9204c4c), THE SOHEI, capture
+  pp. 45-47: rules/oasohei.h, prefix
+  dgl (verified free), 53 inlines (33
+  consts, 12 bools, 7 table columns):
+  the Str 13 and Wis/Con 10 minima
+  with the Str-plus-Wis-15 dual-prime
+  bonus, the lawful requirement
+  independent of the monastery, the
+  d10 doctrine with any armor and
+  four slots, the cleric tables, the
+  shukenja spell gate with the Table
+  27 bonuses and failure, the weapon
+  of choice, the BERSERK KI at 3rd
+  (one turn, once daily, the extra
+  attack, the AC/move/hit/save riders,
+  the missile deflection), the
+  5th-level FANATICISM (fighting to
+  -10 with the +2 reserves, then
+  death, posthumous honor), the
+  6th-level command (10-30 sohei,
+  plus 10 per level above 6th,
+  replaceable, lost only if all
+  slain), the 9th-level commission,
+  the less-strict rules (the fish
+  rider, the monastery-cause xp), the
+  caste and honor doctrine, T29 12x3,
+  T30 25x4 with row 0 as the printed
+  levels 1-5 blank row (row k is
+  level k plus 5) and the dashes
+  pinned as zeros. TWO CELLS SETTLED
+  AGAINST THE 2018 PRINT BEFORE
+  PINNING: the T29 row-4 level cell
+  (the capture prints 3 against four
+  dice - the 2018 prints 4); the
+  fanaticism roll bonus (the capture
+  prints +2, KEPT - the 2018 minus 2
+  is a lost plus against the sustain-
+  himself reading). OCR normalization:
+  1stlevel reads as 1st-level (prose
+  only). Battery 182 mutants, 0
+  missed; full sha rverify GREEN. Gap
+  census 49/186 -> 52/183. Spec 26,919
+  bytes md5
+  cd6733ac0ae78c0b909e0a5708e3c873
+  (canvas md5
+  2623dc770b5010570b04474e54793724).
+  NEXT - R626: the Wu Jen, capture
+  pp. 47-51, Table 31, prefix dgm
+  (verify free), audit "R626 OA wu
+  jen audit", include after rules/
+  oasohei.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
