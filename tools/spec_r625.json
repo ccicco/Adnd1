@@ -1,0 +1,1033 @@
+{
+ "round": 625,
+ "title": "THE SOHEI - the warrior monk: the dual prime requisites, the shukenja spell gate with the weapon of choice, the berserk ki and the fanaticism, the command and the commission, the less-strict rules, Tables 29 and 30",
+ "prefix": "dgl",
+ "header_file": "rules/oasohei.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 547,
+ "inline_count": 53,
+ "audit_label": "R625 OA sohei audit",
+ "audit_comment": "OA round twelve (capture pp. 45-47): the sohei - the minima, the ki powers, the command doctrine, and the advancement and spell grids",
+ "banner": {
+  "title": "THE SOHEI, printed capture pp. 45-47 - the OA sohei round",
+  "provenance": "verified against capture pp. 45-47 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Two cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T29 row-4 level cell (the capture prints 3 against four dice; the 2018 prints 4) and the fanaticism roll bonus (the capture prints plus 2; the 2018 prints minus 2, a lost plus against the sustain-himself reading). The T30 row 0 covers the printed levels 1-5 blank row; row k is level k plus 5. The dashes pin as zeros. OCR normalization: 1stlevel reads as 1st-level (prose only)",
+  "sentinel": "the gap census after this round: 52 closed, 183 open - the sohei boxes with Tables 29 and 30 flip (census 547 -> 548); NEXT - R626: the Wu Jen, capture pp. 47-51, Table 31, prefix dgm (verify free), audit \"R626 OA wu jen audit\", include after rules/oasohei.h"
+ },
+ "consts": [
+  {
+   "name": "dglSoheiMinStr",
+   "value": 13,
+   "comment": "Sohei prose (capture p. 46): the Strength minimum"
+  },
+  {
+   "name": "dglSoheiMinWis",
+   "value": 10,
+   "comment": "Sohei prose (capture p. 46): the Wisdom minimum"
+  },
+  {
+   "name": "dglSoheiMinCon",
+   "value": 10,
+   "comment": "Sohei prose (capture p. 46): the Constitution minimum"
+  },
+  {
+   "name": "dglSoheiBonusStat",
+   "value": 15,
+   "comment": "Sohei prose (capture p. 46): both Strength and Wisdom 15 or greater earn the 10 percent experience bonus"
+  },
+  {
+   "name": "dglSoheiBonusPct",
+   "value": 10,
+   "comment": "Sohei prose (capture p. 46): the bonus value"
+  },
+  {
+   "name": "dglSoheiHitDie",
+   "value": 10,
+   "comment": "Sohei prose (capture p. 46): the 10-sided hit die, one per level"
+  },
+  {
+   "name": "dglSoheiSlots",
+   "value": 4,
+   "comment": "Sohei prose (capture p. 46): four proficiency slots at the beginning, any allowed weapon or peaceful art"
+  },
+  {
+   "name": "dglSoheiWeaponChoiceBonus",
+   "value": 1,
+   "comment": "Sohei prose (capture p. 47): the weapon of choice earns +1 on to hit and damage rolls"
+  },
+  {
+   "name": "dglSoheiKiLevel",
+   "value": 3,
+   "comment": "Sohei prose (capture p. 47): the berserk ki focus at 3rd level"
+  },
+  {
+   "name": "dglSoheiKiDurationTurns",
+   "value": 1,
+   "comment": "Sohei prose (capture p. 47): the berserk state lasts one turn"
+  },
+  {
+   "name": "dglSoheiKiPerDay",
+   "value": 1,
+   "comment": "Sohei prose (capture p. 47): the berserk ki once per day"
+  },
+  {
+   "name": "dglSoheiKiExtraAttacks",
+   "value": 1,
+   "comment": "Sohei prose (capture p. 47): one extra attack per round in the berserk state"
+  },
+  {
+   "name": "dglSoheiKiAcBonus",
+   "value": 1,
+   "comment": "Sohei prose (capture p. 47): the Armor Class improves by 1 in the berserk state"
+  },
+  {
+   "name": "dglSoheiKiMoveBonus",
+   "value": 3,
+   "comment": "Sohei prose (capture p. 47): the movement increases by 3 feet in the berserk state"
+  },
+  {
+   "name": "dglSoheiKiRollBonus",
+   "value": 1,
+   "comment": "Sohei prose (capture p. 47): an additional +1 on to hit, damage and saving throw rolls in the berserk state"
+  },
+  {
+   "name": "dglSoheiFanaticLevel",
+   "value": 5,
+   "comment": "Sohei prose (capture p. 47): the fanaticism at 5th level - fighting on after 0 hit points"
+  },
+  {
+   "name": "dglSoheiFanaticDeathHp",
+   "value": -10,
+   "comment": "Sohei prose (capture p. 47): the fight continues until -10 hit points or the enemy is defeated"
+  },
+  {
+   "name": "dglSoheiFanaticRollBonus",
+   "value": 2,
+   "comment": "Sohei prose (capture p. 47): the +2 on to hit and damage rolls from the final ki reserves - the 2018 print lost the plus"
+  },
+  {
+   "name": "dglSoheiCommandLevel",
+   "value": 6,
+   "comment": "Sohei prose (capture p. 47): the command over other sohei at 6th level"
+  },
+  {
+   "name": "dglSoheiCommandMin",
+   "value": 10,
+   "comment": "Sohei prose (capture p. 47): command over 10-30 other sohei, all 1st level"
+  },
+  {
+   "name": "dglSoheiCommandMax",
+   "value": 30,
+   "comment": "Sohei prose (capture p. 47): the command upper bound"
+  },
+  {
+   "name": "dglSoheiCommandStep",
+   "value": 10,
+   "comment": "Sohei prose (capture p. 47): the command grows by 10 sohei per level above 6th"
+  },
+  {
+   "name": "dglSoheiCommissionLevel",
+   "value": 9,
+   "comment": "Sohei prose (capture p. 47): the monastery commission at 9th level"
+  },
+  {
+   "name": "dglSoheiOffCauseXpDiv",
+   "value": 2,
+   "comment": "Sohei prose (capture p. 47): full experience only for the monastery cause - one-half otherwise"
+  },
+  {
+   "name": "dglT29RowCount",
+   "value": 12,
+   "comment": "Table 29 (capture p. 45): twelve rows, levels 1-12"
+  },
+  {
+   "name": "dglT29XpBeyond",
+   "value": 200000,
+   "comment": "Table 29 note (capture pp. 45-46): 200,000 experience points are required for each level beyond 12th"
+  },
+  {
+   "name": "dglT29HpBeyond",
+   "value": 1,
+   "comment": "Table 29 note (capture p. 46): sohei gain 1 hp per level beyond 9th"
+  },
+  {
+   "name": "dglT30RowCount",
+   "value": 25,
+   "comment": "Table 30 (capture p. 46): the levels 1-5 blank row plus the 6th through 29th rows - row 0 covers levels 1-5, row k is level k plus 5"
+  },
+  {
+   "name": "dglT30SpellLevels",
+   "value": 4,
+   "comment": "Table 30 (capture p. 46): four spell-level columns, 1st through 4th"
+  },
+  {
+   "name": "dglT30FirstSpellLevel",
+   "value": 6,
+   "comment": "Table 30 (capture p. 46): no spells until 6th level"
+  },
+  {
+   "name": "dglT30MaxCastable",
+   "value": 7,
+   "comment": "Table 30 (capture p. 46): the maximum castable per spell level - seven 1st through six 4th"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dglSoheiLawfulOnly",
+   "value": true,
+   "comment": "Sohei prose (capture p. 46): must be lawful - good, neutral or evil, regardless of the home monastery alignment"
+  },
+  {
+   "name": "dglSoheiDualPrime",
+   "value": true,
+   "comment": "Sohei prose (capture p. 46): two prime requisites - Strength and Wisdom"
+  },
+  {
+   "name": "dglSoheiClericTables",
+   "value": true,
+   "comment": "Sohei prose (capture p. 46): the combat and saving throw tables of clerics"
+  },
+  {
+   "name": "dglSoheiAnyArmor",
+   "value": true,
+   "comment": "Sohei prose (capture p. 46): allowed any armor and the Table 13 weapons"
+  },
+  {
+   "name": "dglSoheiCastShukenjaSpells",
+   "value": true,
+   "comment": "Sohei prose (capture p. 46): at higher levels casts shukenja spells - only the listed ones, with the same Table 27 bonuses and failure chances"
+  },
+  {
+   "name": "dglSoheiMilitant",
+   "value": true,
+   "comment": "Sohei prose (capture p. 46): more militant than holy, subject to the leader of the temple, defending the monastery and advancing its claims"
+  },
+  {
+   "name": "dglSoheiWeaponChoiceProficiency",
+   "value": true,
+   "comment": "Sohei prose (capture p. 47): the weapon of choice must be one with which he already has proficiency"
+  },
+  {
+   "name": "dglSoheiKiMissileDeflection",
+   "value": true,
+   "comment": "Sohei prose (capture p. 47): in the berserk state he can dodge or deflect missile weapons with a successful save vs breath weapon"
+  },
+  {
+   "name": "dglSoheiFanaticFinalAct",
+   "value": true,
+   "comment": "Sohei prose (capture p. 47): the fanaticism is a final act - no other actions, then collapse and death, earning posthumous honor"
+  },
+  {
+   "name": "dglSoheiCommandReplaceable",
+   "value": true,
+   "comment": "Sohei prose (capture p. 47): the fallen in the command are always replaced by additional 1st-level sohei"
+  },
+  {
+   "name": "dglSoheiCommandLostIfSlain",
+   "value": true,
+   "comment": "Sohei prose (capture p. 47): the command is lost only if all within it other than the commander are slain"
+  },
+  {
+   "name": "dglSoheiCommissionCommander",
+   "value": true,
+   "comment": "Sohei prose (capture p. 47): the commission makes him the commander of all sohei at the new monastery, still subject to the parent"
+  },
+  {
+   "name": "dglSoheiFishAllowed",
+   "value": true,
+   "comment": "Sohei prose (capture p. 47): the less-strict rules - no meat but fish is allowed, no excess; no injunction against killing or violence though outright murder is a sin"
+  },
+  {
+   "name": "dglSoheiAnyCaste",
+   "value": true,
+   "comment": "Sohei prose (capture p. 47): any caste, no Table 38 roll required - the monastery is the new family"
+  },
+  {
+   "name": "dglSoheiHonorImportant",
+   "value": true,
+   "comment": "Sohei prose (capture p. 47): affected by honor more than a shukenja, but never gains honor for the actions of his monastery"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dglT29Grid",
+   "tag": "T29",
+   "count": "dglT29RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dglT29XpMax",
+    "dglT29Dice",
+    "dglT29HpBonus"
+   ],
+   "data": [
+    [
+     2000,
+     1,
+     0
+    ],
+    [
+     4000,
+     2,
+     0
+    ],
+    [
+     7000,
+     3,
+     0
+    ],
+    [
+     13000,
+     4,
+     0
+    ],
+    [
+     24000,
+     5,
+     0
+    ],
+    [
+     48000,
+     6,
+     0
+    ],
+    [
+     85000,
+     7,
+     0
+    ],
+    [
+     150000,
+     8,
+     0
+    ],
+    [
+     350000,
+     9,
+     0
+    ],
+    [
+     550000,
+     9,
+     1
+    ],
+    [
+     750000,
+     9,
+     2
+    ],
+    [
+     950000,
+     9,
+     3
+    ]
+   ],
+   "comment": "the Table 29 sohei advancement grid (capture p. 45)",
+   "col_comments": [
+    "the experience column: the upper xp bound of each level, 2,000 at 1st to 950,000 at 12th (capture p. 45).",
+    "the accumulated d10 dice column: one per level through 9th, then held at 9 - the row-4 level cell OCR-mangled in the capture (3 against four dice) and settled against the 2018 print as level 4 (capture p. 45).",
+    "the hit-point bonus column: the printed 9-plus-N cells - 1 hp per level beyond 9th: 0 through 9th, then 1, 2, 3 (capture p. 45)."
+   ],
+   "audit_comment": "the Table 29 grid: the xp bounds and the accumulated dice plus bonus (capture p. 45)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dglT30Grid",
+   "tag": "T30",
+   "count": "dglT30RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dglT30S1",
+    "dglT30S2",
+    "dglT30S3",
+    "dglT30S4"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     3,
+     2,
+     0
+    ],
+    [
+     3,
+     3,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     3,
+     1
+    ],
+    [
+     3,
+     3,
+     3,
+     2
+    ],
+    [
+     4,
+     3,
+     3,
+     2
+    ],
+    [
+     4,
+     4,
+     3,
+     2
+    ],
+    [
+     4,
+     4,
+     4,
+     3
+    ],
+    [
+     5,
+     4,
+     4,
+     3
+    ],
+    [
+     5,
+     5,
+     4,
+     3
+    ],
+    [
+     5,
+     5,
+     4,
+     4
+    ],
+    [
+     5,
+     5,
+     5,
+     4
+    ],
+    [
+     6,
+     5,
+     5,
+     4
+    ],
+    [
+     6,
+     6,
+     5,
+     4
+    ],
+    [
+     6,
+     6,
+     5,
+     5
+    ],
+    [
+     6,
+     6,
+     6,
+     5
+    ],
+    [
+     6,
+     6,
+     6,
+     6
+    ],
+    [
+     7,
+     7,
+     6,
+     6
+    ]
+   ],
+   "comment": "the Table 30 sohei spells usable by level grid (capture p. 46)",
+   "col_comments": [
+    "the 1st-level spells column: the row 0 levels 1-5 blank, then 1 at 6th to 7 at 29th - the row index is the level minus 5 (capture p. 46).",
+    "the 2nd-level spells column: none until 7th, then 1 to 7 at 29th (capture p. 46).",
+    "the 3rd-level spells column: none until 10th, then 1 to 6 at 29th (capture p. 46).",
+    "the 4th-level spells column: none until 15th, then 1 to 6 at 29th (capture p. 46)."
+   ],
+   "audit_comment": "the Table 30 grid: the four spell-level columns, levels 1-29 (capture p. 46)",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dglSoheiMinStr pin",
+   "expr": "m['dglSoheiMinStr']() != 13"
+  },
+  {
+   "note": "the dglSoheiMinWis pin",
+   "expr": "m['dglSoheiMinWis']() != 10"
+  },
+  {
+   "note": "the dglSoheiMinCon pin",
+   "expr": "m['dglSoheiMinCon']() != 10"
+  },
+  {
+   "note": "the dglSoheiBonusStat pin",
+   "expr": "m['dglSoheiBonusStat']() != 15"
+  },
+  {
+   "note": "the dglSoheiBonusPct pin",
+   "expr": "m['dglSoheiBonusPct']() != 10"
+  },
+  {
+   "note": "the dglSoheiHitDie pin",
+   "expr": "m['dglSoheiHitDie']() != 10"
+  },
+  {
+   "note": "the dglSoheiSlots pin",
+   "expr": "m['dglSoheiSlots']() != 4"
+  },
+  {
+   "note": "the dglSoheiWeaponChoiceBonus pin",
+   "expr": "m['dglSoheiWeaponChoiceBonus']() != 1"
+  },
+  {
+   "note": "the dglSoheiKiLevel pin",
+   "expr": "m['dglSoheiKiLevel']() != 3"
+  },
+  {
+   "note": "the dglSoheiKiDurationTurns pin",
+   "expr": "m['dglSoheiKiDurationTurns']() != 1"
+  },
+  {
+   "note": "the dglSoheiKiPerDay pin",
+   "expr": "m['dglSoheiKiPerDay']() != 1"
+  },
+  {
+   "note": "the dglSoheiKiExtraAttacks pin",
+   "expr": "m['dglSoheiKiExtraAttacks']() != 1"
+  },
+  {
+   "note": "the dglSoheiKiAcBonus pin",
+   "expr": "m['dglSoheiKiAcBonus']() != 1"
+  },
+  {
+   "note": "the dglSoheiKiMoveBonus pin",
+   "expr": "m['dglSoheiKiMoveBonus']() != 3"
+  },
+  {
+   "note": "the dglSoheiKiRollBonus pin",
+   "expr": "m['dglSoheiKiRollBonus']() != 1"
+  },
+  {
+   "note": "the dglSoheiFanaticLevel pin",
+   "expr": "m['dglSoheiFanaticLevel']() != 5"
+  },
+  {
+   "note": "the dglSoheiFanaticDeathHp pin",
+   "expr": "m['dglSoheiFanaticDeathHp']() != -10"
+  },
+  {
+   "note": "the dglSoheiFanaticRollBonus pin",
+   "expr": "m['dglSoheiFanaticRollBonus']() != 2"
+  },
+  {
+   "note": "the dglSoheiCommandLevel pin",
+   "expr": "m['dglSoheiCommandLevel']() != 6"
+  },
+  {
+   "note": "the dglSoheiCommandMin pin",
+   "expr": "m['dglSoheiCommandMin']() != 10"
+  },
+  {
+   "note": "the dglSoheiCommandMax pin",
+   "expr": "m['dglSoheiCommandMax']() != 30"
+  },
+  {
+   "note": "the dglSoheiCommandStep pin",
+   "expr": "m['dglSoheiCommandStep']() != 10"
+  },
+  {
+   "note": "the dglSoheiCommissionLevel pin",
+   "expr": "m['dglSoheiCommissionLevel']() != 9"
+  },
+  {
+   "note": "the dglSoheiOffCauseXpDiv pin",
+   "expr": "m['dglSoheiOffCauseXpDiv']() != 2"
+  },
+  {
+   "note": "the dglT29RowCount pin",
+   "expr": "m['dglT29RowCount']() != 12"
+  },
+  {
+   "note": "the dglT29XpBeyond pin",
+   "expr": "m['dglT29XpBeyond']() != 200000"
+  },
+  {
+   "note": "the dglT29HpBeyond pin",
+   "expr": "m['dglT29HpBeyond']() != 1"
+  },
+  {
+   "note": "the dglT30RowCount pin",
+   "expr": "m['dglT30RowCount']() != 25"
+  },
+  {
+   "note": "the dglT30SpellLevels pin",
+   "expr": "m['dglT30SpellLevels']() != 4"
+  },
+  {
+   "note": "the dglT30FirstSpellLevel pin",
+   "expr": "m['dglT30FirstSpellLevel']() != 6"
+  },
+  {
+   "note": "the dglT30MaxCastable pin",
+   "expr": "m['dglT30MaxCastable']() != 7"
+  },
+  {
+   "note": "the dglSoheiLawfulOnly pin",
+   "expr": "m['dglSoheiLawfulOnly']() != 1"
+  },
+  {
+   "note": "the dglSoheiDualPrime pin",
+   "expr": "m['dglSoheiDualPrime']() != 1"
+  },
+  {
+   "note": "the dglSoheiClericTables pin",
+   "expr": "m['dglSoheiClericTables']() != 1"
+  },
+  {
+   "note": "the dglSoheiAnyArmor pin",
+   "expr": "m['dglSoheiAnyArmor']() != 1"
+  },
+  {
+   "note": "the dglSoheiCastShukenjaSpells pin",
+   "expr": "m['dglSoheiCastShukenjaSpells']() != 1"
+  },
+  {
+   "note": "the dglSoheiMilitant pin",
+   "expr": "m['dglSoheiMilitant']() != 1"
+  },
+  {
+   "note": "the dglSoheiWeaponChoiceProficiency pin",
+   "expr": "m['dglSoheiWeaponChoiceProficiency']() != 1"
+  },
+  {
+   "note": "the dglSoheiKiMissileDeflection pin",
+   "expr": "m['dglSoheiKiMissileDeflection']() != 1"
+  },
+  {
+   "note": "the dglSoheiFanaticFinalAct pin",
+   "expr": "m['dglSoheiFanaticFinalAct']() != 1"
+  },
+  {
+   "note": "the dglSoheiCommandReplaceable pin",
+   "expr": "m['dglSoheiCommandReplaceable']() != 1"
+  },
+  {
+   "note": "the dglSoheiCommandLostIfSlain pin",
+   "expr": "m['dglSoheiCommandLostIfSlain']() != 1"
+  },
+  {
+   "note": "the dglSoheiCommissionCommander pin",
+   "expr": "m['dglSoheiCommissionCommander']() != 1"
+  },
+  {
+   "note": "the dglSoheiFishAllowed pin",
+   "expr": "m['dglSoheiFishAllowed']() != 1"
+  },
+  {
+   "note": "the dglSoheiAnyCaste pin",
+   "expr": "m['dglSoheiAnyCaste']() != 1"
+  },
+  {
+   "note": "the dglSoheiHonorImportant pin",
+   "expr": "m['dglSoheiHonorImportant']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the T29 first row - 2,000 xp, one die (capture p. 45)",
+   "expr": "m['dglT29XpMax'](0) != 2000 or m['dglT29Dice'](0) != 1 or m['dglT29HpBonus'](0) != 0"
+  },
+  {
+   "note": "the T29 row-4 cell settled - 13,000 xp is level 4 with four dice, the capture printed 3 (capture p. 45)",
+   "expr": "m['dglT29XpMax'](3) != 13000 or m['dglT29Dice'](3) != 4 or m['dglT29Dice'](4) != 5"
+  },
+  {
+   "note": "the T29 capstone - 950,000 xp, nine dice plus three (capture p. 45)",
+   "expr": "m['dglT29XpMax'](11) != 950000 or m['dglT29Dice'](11) != 9 or m['dglT29HpBonus'](11) != 3"
+  },
+  {
+   "note": "the T29 9-plus-N cells open on the 10th-level row (capture p. 45)",
+   "expr": "m['dglT29Dice'](9) != 9 or m['dglT29HpBonus'](9) != 1"
+  },
+  {
+   "note": "the T30 row 0 - the levels 1-5 blank (capture p. 46)",
+   "expr": "m['dglT30S1'](0) != 0 or m['dglT30S4'](0) != 0"
+  },
+  {
+   "note": "the T30 openings - the 1st at 6th, the 2nd at 7th, the 3rd at 10th, the 4th at 15th (capture p. 46)",
+   "expr": "m['dglT30S1'](1) != 1 or m['dglT30S2'](2) != 1 or m['dglT30S3'](5) != 1 or m['dglT30S4'](10) != 1"
+  },
+  {
+   "note": "the T30 capstone - the 29th-level row (capture p. 46)",
+   "expr": "m['dglT30S1'](24) != 7 or m['dglT30S2'](24) != 7 or m['dglT30S3'](24) != 6 or m['dglT30S4'](24) != 6"
+  },
+  {
+   "note": "the berserk ki riders - the extra attack, AC, movement and roll bonuses (capture p. 47)",
+   "expr": "m['dglSoheiKiExtraAttacks']() != 1 or m['dglSoheiKiAcBonus']() != 1 or m['dglSoheiKiMoveBonus']() != 3 or m['dglSoheiKiRollBonus']() != 1"
+  },
+  {
+   "note": "the fanaticism bounds - the -10 death floor with the +2 reserves (capture p. 47)",
+   "expr": "m['dglSoheiFanaticDeathHp']() != -10 or m['dglSoheiFanaticRollBonus']() != 2"
+  },
+  {
+   "note": "the command ladder - 10-30 sohei plus 10 per level above 6th (capture p. 47)",
+   "expr": "m['dglSoheiCommandMin']() != 10 or m['dglSoheiCommandMax']() != 30 or m['dglSoheiCommandStep']() != 10"
+  }
+ ],
+ "header_sections": {
+  "the sohei doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dglSoheiMinStr"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiMinWis"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiMinCon"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiDualPrime"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiBonusStat"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiBonusPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiLawfulOnly"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiHitDie"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiSlots"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiClericTables"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiAnyArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiCastShukenjaSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiMilitant"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiWeaponChoiceProficiency"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiWeaponChoiceBonus"
+   }
+  ],
+  "the sohei ki pins": [
+   {
+    "kind": "const",
+    "name": "dglSoheiKiLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiKiDurationTurns"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiKiPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiKiExtraAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiKiAcBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiKiMoveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiKiRollBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiKiMissileDeflection"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiFanaticLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiFanaticDeathHp"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiFanaticRollBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiFanaticFinalAct"
+   }
+  ],
+  "the sohei command pins": [
+   {
+    "kind": "const",
+    "name": "dglSoheiCommandLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiCommandMin"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiCommandMax"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiCommandStep"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiCommandReplaceable"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiCommandLostIfSlain"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiCommissionLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiCommissionCommander"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiFishAllowed"
+   },
+   {
+    "kind": "const",
+    "name": "dglSoheiOffCauseXpDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiAnyCaste"
+   },
+   {
+    "kind": "bool",
+    "name": "dglSoheiHonorImportant"
+   }
+  ],
+  "the Table 29 and Table 30 grids": [
+   {
+    "kind": "const",
+    "name": "dglT29RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dglT29Grid"
+   },
+   {
+    "kind": "const",
+    "name": "dglT29XpBeyond"
+   },
+   {
+    "kind": "const",
+    "name": "dglT29HpBeyond"
+   },
+   {
+    "kind": "const",
+    "name": "dglT30RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dglT30SpellLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dglT30FirstSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dglT30MaxCastable"
+   },
+   {
+    "kind": "table",
+    "name": "dglT30Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Sohei box closes",
+   "from": "  - [ ] Sohei (capture pp. 45-47) - the warrior monk:\n    the spell list, the ki powers",
+   "to": "  - [x] Sohei (capture pp. 45-47) - the warrior monk:\n    the spell list, the ki powers -\n    R625: the dgl sohei pins - the Str 13 and\n    Wis/Con 10 minima with the Str-plus-Wis-15 xp\n    bonus, the lawful requirement independent of\n    the monastery, the d10 doctrine with any\n    armor and four slots, the cleric tables, the\n    shukenja spell gate with the Table 27\n    bonuses and failure, the weapon of choice,\n    the berserk ki at 3rd (one turn, once daily,\n    the extra attack, the AC, movement, to-hit,\n    save and missile riders), the 5th-level\n    fanaticism (fighting to -10 with the +2\n    reserves, then death), the 6th-level command\n    (10-30 sohei, plus 10 per level above 6th),\n    the 9th-level commission, the less-strict\n    rules (the fish rider, the monastery-cause\n    xp), the caste and honor doctrine"
+  },
+  {
+   "note": "the   Table 29: Sohei box closes",
+   "from": "  - [ ] Table 29: Sohei (capture p. 45)",
+   "to": "  - [x] Table 29: Sohei (capture p. 45) -\n    R625: the dgl T29 grid - twelve rows of xp\n    bounds and accumulated d10 dice with the\n    9-plus-N cells (1 hp per level beyond 9th)\n    plus the 200,000-xp beyond-12th note; the\n    row-4 level cell OCR-mangled in the capture\n    (3 against four dice) and settled against\n    the 2018 print (4)"
+  },
+  {
+   "note": "the   Table 30: Sohei Spells Usable By Level box closes",
+   "from": "  - [ ] Table 30: Sohei Spells Usable By Level\n    (capture p. 46)",
+   "to": "  - [x] Table 30: Sohei Spells Usable By Level\n    (capture p. 46) -\n    R625: the dgl T30 grid - the levels 1-5\n    blank row plus the 6th through 29th rows of\n    the four spell-level columns, the dashes as\n    zeros - no spells until 6th level"
+  }
+ ],
+ "gap_census": {
+  "closed": 52,
+  "open": 183
+ },
+ "include_comment": "the OA sohei pins",
+ "include_after": "#include \"rules/oashukenja.h\"  // R624: the OA shukenja pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R624 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R624 LANDED 2026-10-18: commit",
+  "  7bbb728da165260b0eb07f84aa32dd9d44b943c1",
+  "  (census 546 -> 547, pushed",
+  "  666c85a..7bbb728), THE",
+  "  SHUKENJA, capture pp. 42-45:",
+  "  rules/oashukenja.h, prefix dgk",
+  "  (verified free), 63 inlines (31",
+  "  consts, 19 bools, 13 table columns):",
+  "  the Wis 12 and Str/Con 9 minima",
+  "  with the Wis-plus-Con-15 xp bonus,",
+  "  the good-alignment requirement, the",
+  "  d6 doctrine with the six slots (two",
+  "  weapons, religion, calligraphy), the",
+  "  cleric tables with the studded-",
+  "  leather cap, the three-part training",
+  "  (the 5-percent-per-level curse",
+  "  ladder, the 75-square-foot sanctify",
+  "  circle, the 2-to-1 meditation, the",
+  "  free style), the +3 ki save usable",
+  "  level times per day before the die,",
+  "  the ethos xp rules (half for the",
+  "  defeated, full for evil spirits,",
+  "  donated treasure only, the 100 xp",
+  "  healing award), the no-meat and",
+  "  behavior restrictions, the family",
+  "  severance, T26 12x3, T27 10x2 with",
+  "  the CUMULATIVE SPELL-BONUS CODES",
+  "  (none through 12, one 1st at 13-14,",
+  "  one 2nd at 15-16, one 3rd at 17, one",
+  "  4th at 18) and the failure ladder 20",
+  "  down to 0 with the Wis 17/18 spell",
+  "  minima footnoted, T28 29x7 with the",
+  "  dashes pinned as zeros. TWO",
+  "  OCR-MANGLED T26 BOUNDS SETTLED",
+  "  AGAINST THE 2018 PRINT BEFORE",
+  "  PINNING: row 1 = 1,250 (the capture",
+  "  prints 0-1 250) and row 12 =",
+  "  1,200,000 (the capture prints",
+  "  1,200,00). OCR normalization:",
+  "  minimum scares reads as minimum",
+  "  scores; principal attitude reads as",
+  "  principal attribute; t has failed",
+  "  reads as it has failed (prose",
+  "  only). Battery 310 mutants, 0",
+  "  missed; full sha rverify GREEN. Gap",
+  "  census 45/190 -> 49/186. Spec 32,144",
+  "  bytes md5",
+  "  224708f952814b8b48cc0a781322f3d3",
+  "  (canvas md5",
+  "  95519e73f67e3c1acfa4923b02aadc01).",
+  "  NEXT - R625: the Sohei, capture",
+  "  pp. 45-47, Tables 29 and 30, prefix",
+  "  dgl (verify free), audit \"R625 OA",
+  "  sohei audit\", include after rules/",
+  "  oashukenja.h."
+ ]
+}

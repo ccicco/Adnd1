@@ -12038,6 +12038,61 @@ when both halves land.
   prefix dgk (verify free), audit "R624
   OA shukenja audit", include after
   rules/oasamurai.h.
+- R624 LANDED 2026-10-18: commit
+  7bbb728da165260b0eb07f84aa32dd9d44b943c1
+  (census 546 -> 547, pushed
+  666c85a..7bbb728), THE
+  SHUKENJA, capture pp. 42-45:
+  rules/oashukenja.h, prefix dgk
+  (verified free), 63 inlines (31
+  consts, 19 bools, 13 table columns):
+  the Wis 12 and Str/Con 9 minima
+  with the Wis-plus-Con-15 xp bonus,
+  the good-alignment requirement, the
+  d6 doctrine with the six slots (two
+  weapons, religion, calligraphy), the
+  cleric tables with the studded-
+  leather cap, the three-part training
+  (the 5-percent-per-level curse
+  ladder, the 75-square-foot sanctify
+  circle, the 2-to-1 meditation, the
+  free style), the +3 ki save usable
+  level times per day before the die,
+  the ethos xp rules (half for the
+  defeated, full for evil spirits,
+  donated treasure only, the 100 xp
+  healing award), the no-meat and
+  behavior restrictions, the family
+  severance, T26 12x3, T27 10x2 with
+  the CUMULATIVE SPELL-BONUS CODES
+  (none through 12, one 1st at 13-14,
+  one 2nd at 15-16, one 3rd at 17, one
+  4th at 18) and the failure ladder 20
+  down to 0 with the Wis 17/18 spell
+  minima footnoted, T28 29x7 with the
+  dashes pinned as zeros. TWO
+  OCR-MANGLED T26 BOUNDS SETTLED
+  AGAINST THE 2018 PRINT BEFORE
+  PINNING: row 1 = 1,250 (the capture
+  prints 0-1 250) and row 12 =
+  1,200,000 (the capture prints
+  1,200,00). OCR normalization:
+  minimum scares reads as minimum
+  scores; principal attitude reads as
+  principal attribute; t has failed
+  reads as it has failed (prose
+  only). Battery 310 mutants, 0
+  missed; full sha rverify GREEN. Gap
+  census 45/190 -> 49/186. Spec 32,144
+  bytes md5
+  224708f952814b8b48cc0a781322f3d3
+  (canvas md5
+  95519e73f67e3c1acfa4923b02aadc01).
+  NEXT - R625: the Sohei, capture
+  pp. 45-47, Tables 29 and 30, prefix
+  dgl (verify free), audit "R625 OA
+  sohei audit", include after rules/
+  oashukenja.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

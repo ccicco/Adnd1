@@ -474,11 +474,38 @@ description riding the same round.
     R624: the dgk T28 grid - twenty-nine rows of
     the seven spell-level columns, the dashes as
     zeros, first level 1-9 and seventh 1-5
-  - [ ] Sohei (capture pp. 45-47) - the warrior monk:
-    the spell list, the ki powers
-  - [ ] Table 29: Sohei (capture p. 45)
-  - [ ] Table 30: Sohei Spells Usable By Level
-    (capture p. 46)
+  - [x] Sohei (capture pp. 45-47) - the warrior monk:
+    the spell list, the ki powers -
+    R625: the dgl sohei pins - the Str 13 and
+    Wis/Con 10 minima with the Str-plus-Wis-15 xp
+    bonus, the lawful requirement independent of
+    the monastery, the d10 doctrine with any
+    armor and four slots, the cleric tables, the
+    shukenja spell gate with the Table 27
+    bonuses and failure, the weapon of choice,
+    the berserk ki at 3rd (one turn, once daily,
+    the extra attack, the AC, movement, to-hit,
+    save and missile riders), the 5th-level
+    fanaticism (fighting to -10 with the +2
+    reserves, then death), the 6th-level command
+    (10-30 sohei, plus 10 per level above 6th),
+    the 9th-level commission, the less-strict
+    rules (the fish rider, the monastery-cause
+    xp), the caste and honor doctrine
+  - [x] Table 29: Sohei (capture p. 45) -
+    R625: the dgl T29 grid - twelve rows of xp
+    bounds and accumulated d10 dice with the
+    9-plus-N cells (1 hp per level beyond 9th)
+    plus the 200,000-xp beyond-12th note; the
+    row-4 level cell OCR-mangled in the capture
+    (3 against four dice) and settled against
+    the 2018 print (4)
+  - [x] Table 30: Sohei Spells Usable By Level
+    (capture p. 46) -
+    R625: the dgl T30 grid - the levels 1-5
+    blank row plus the 6th through 29th rows of
+    the four spell-level columns, the dashes as
+    zeros - no spells until 6th level
   - [ ] Wu Jen class (capture pp. 47-51) - the
     oriental wizard: the scroll-and-treatise doctrine
     (no spell book), the 3d6 initial-spells roll with
