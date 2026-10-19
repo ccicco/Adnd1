@@ -13283,6 +13283,52 @@ when both halves land.
   prefix dhf (verify free), audit "R645
   OA encumbrance audit", include after
   rules/oapiece.h.
+- R645 LANDED 2026-10-19: commit
+  50ada1ab00a3541f1c9f3e3581f9df3c9c592be4
+  (census 567 -> 568, pushed
+  91f1d95..50ada1a), ARMOR ENCUMBRANCE -
+  Table 54 (Types of Armor & Encumbrance),
+  capture p. 95: rules/oaencumb.h, prefix
+  dhf (verified free), 3 inlines (1 const,
+  2 table columns): the 23-row armor type
+  grid - the base weight column (pounds,
+  the # mark stripped) and the base
+  movement column (feet, the prime
+  stripped; the seven dash cells - buckler,
+  haidate, kote, the two shields, the sode
+  pair, sune-ate - pin as -99); the armor
+  names, the bulk classes (non/fairly/
+  bulky) and the banded/chain
+  plus-after-pound marks riding the column
+  comments per the T48 doctrine. The
+  23-row grid cross-checked cell-by-cell
+  between the two passes - the weights and
+  movements agree, zero numeric contested
+  cells; the textual contests settle per
+  the print: the compressed bulk
+  trailing-hyphen artifact, the kote
+  weight cell blank against the compressed
+  dash (both read no base weight, the -99
+  sentinel carries it), the movement prime
+  against the compressed double-prime.
+  First publish clean - no repairs.
+  rverify GREEN at 91f1d95, 47 mutants,
+  0 missed; preflight GREEN (568 audit
+  census, BUILD 0 warnings). Gap census
+  95/140 -> 96/139. Spec 9,854 bytes md5
+  5f6520ed69f0ede86d068ca3e88c3ff6
+  (authored-plus-newline md5
+  4ac2cd2919bf7a0fdcc7bbb6897d381c - the
+  value the ritual gated and matched;
+  canvas md5
+  0c4c26c252299a19bdc2065af21d6da8). NEXT -
+  R646: Table 55 (Barded Warhorse Base
+  Movement Rates), capture p. 98, the
+  barding movement grid, prefix dhg
+  (verify free), audit "R646 OA barding
+  audit", include after rules/oaencumb.h -
+  the misc equipment and barding prose
+  boxes stay open.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

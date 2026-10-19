@@ -879,8 +879,11 @@ description riding the same round.
   - [ ] Miscellaneous Equipment Descriptions
     (capture p. 98)
   - [ ] Barding prose (capture p. 98)
-  - [ ] Table 55: Barded Warhorse Base Movement Rates
-    (capture p. 98)
+  - [x] Table 55: Barded Warhorse Base Movement Rates
+    (capture p. 98) - R646: the dhg T55 grid - four warhorse rows pinned as
+    the full/half barding movement pairs for the three materials, the
+    too-heavy X and the elephant blanks as the -99 sentinel and the lone
+    elephant 12 as the lo=hi convention
 
 - [ ] **Chapter 6: Proficiencies** (capture pp.
   99-110) - the proficiency system
