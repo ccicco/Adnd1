@@ -726,8 +726,10 @@ description riding the same round.
     as the 0-11 code, the roll-again rows
     at 4, 7 and 100
 
-- [ ] **Chapter 4: Honor** (capture pp. 69-73) - the
-  honor system
+- [x] **Chapter 4: Honor** (capture pp. 69-73) - the
+  honor system - R635: the chapter closes
+  (the opener and T41 in R634, the ledger,
+  the effects and T42 in R635)
   - [x] Gaining and Losing Honor prose (capture p. 70) -
     R634: the dgu honor pins - the
     opener doctrine (the family reflection,
@@ -745,10 +747,31 @@ description riding the same round.
     rows pinned as the base-honor lo
     and hi bounds with the yakuza 1d20
     + 20 read as 21 through 40
-  - [ ] Altering Family Honor (capture p. 70) - the
+  - [x] Altering Family Honor (capture p. 70) - the
     family honor ledger and the zero floor
-  - [ ] Effects of Honor prose (capture pp. 71-72)
-  - [ ] Table 42: Honor Awards (capture p. 72)
+    R635: the dgv ledger pins - the 10-point
+    raise step with the once-per-group
+    bonus and the pinnacle read, the
+    5-point single-action blot with the
+    -1 family loss, the shared family
+    change
+  - [x] Effects of Honor prose (capture pp. 71-72) -
+    R635: the dgv effects pins - the
+    below-zero elimination, the samurai-
+    kensai status loss, the -20 percent
+    family modifier, the +5 percent per
+    10 with the harder-to-impress read,
+    the 75-point gift, 80-point songs and
+    boasts, 90-point lord and 95-point
+    great hero doctrines, the successor
+    bonus with the 3-point cap
+  - [x] Table 42: Honor Awards (capture p. 72) -
+    R635: the dgv T42 grid - sixty-eight
+    award rows across the ten sections
+    pinned as the points and mark columns
+    (the samurai-doubled stars, the single-
+    creature monsters read), the kensai
+    once-per-level duel rule
 
 - [ ] **Chapter 5: Money and Equipment**
   (capture pp. 73-99) - the coinage, barter and

@@ -12644,6 +12644,69 @@ when both halves land.
   capture pp. 69-70, prefix dgu
   (verify free), audit "R634 OA honor
   audit", include after rules/oabr.h.
+- R634 LANDED 2026-10-19: commit
+  0d6f2cbd6eaf635ab035d2dd9a72bb5c9ead043f
+  (census 556 -> 557, pushed
+  91502ba..0d6f2cb), HONOR - the
+  chapter opener, the starting honor
+  doctrine and Table 41, capture pp.
+  69-70: rules/oahonor.h, prefix dgu
+  (verified free), 21 inlines (2
+  consts, 17 bools, 2 table columns):
+  the opener doctrine (the family
+  reflection with the respect-power-
+  influence read, the easier-to-lose
+  rule, the dishonor and honor deed
+  lists, the reaction and gift
+  rewards, the not-alignment read
+  with the villain-samurai example,
+  the deeds-of-both measure), the
+  honor-point tracking (the DM awards
+  at the end of an adventure, the
+  something-special requirement), the
+  starting honor doctrine (the
+  birth-rank base with the T39
+  adjustments and the 0 floor, the
+  birthright and lowest-ability adds,
+  the no-clan T41 route), the class
+  sensitivity (the samurai
+  fluctuation), the DM-judgment
+  doctrine with the 100-point cap,
+  T41 7x2 with the class rows pinned
+  as the base-honor lo and hi bounds
+  (shukenja 20, sohei 15, kensai 25,
+  bushi 10, hengeyokai 10, wu jen 15,
+  the yakuza 1d20 + 20 read as 21
+  through 40). PINNED FROM THE 2018
+  PRINT CAPTURE ALONE (the settling
+  authority; the first Mistral-OCR
+  capture session is unavailable above
+  p. 33, so no cross-capture check);
+  no contested cells within the single
+  source. OCR normalization: none
+  required for this range beyond the
+  yakuza die read; the opener prose
+  carries the printed em dashes. The
+  Altering Family Honor and Effects of
+  Honor prose and Table 42 (capture
+  pp. 70-72) are deliberately held
+  for the next rounds. Battery 33
+  mutants, 0 missed; full sha rverify
+  GREEN; preflight GREEN. Gap census
+  74/161 -> 76/159. Spec 15,477 bytes
+  md5 cd219445dfdc1bcf03f785201b500453
+  (authored-plus-newline md5
+  16f0501e89f072817b1e97d52c01765b;
+  canvas md5
+  599d497bea98244472a054c5b2033fef).
+  NEXT - R635: the Altering Family
+  Honor prose and the Effects of Honor
+  prose with Table 42, capture pp.
+  70-72, the family ledger and the
+  reaction doctrine, prefix dgv
+  (verify free), audit "R635 OA
+  effects of honor audit", include
+  after rules/oahonor.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

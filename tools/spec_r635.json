@@ -1,0 +1,988 @@
+{
+ "round": 635,
+ "title": "ALTERING FAMILY HONOR, THE EFFECTS OF HONOR and TABLE 42 - the family ledger, the honor doctrines, the T42 grid",
+ "prefix": "dgv",
+ "header_file": "rules/oaeff.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 557,
+ "inline_count": 41,
+ "audit_label": "R635 OA effects of honor audit",
+ "audit_comment": "OA round twenty-two (capture pp. 70-72): the altering family honor prose, the effects of honor doctrines and the Table 42 grid",
+ "banner": {
+  "title": "ALTERING FAMILY HONOR, THE EFFECTS OF HONOR AND TABLE 42, printed capture pp. 70-72 - the OA effects of honor round",
+  "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. No contested cells detected within the single source: the T42 grid pins as 68 rows x 2 columns across the ten printed sections (all characters, shukenja, hengeyokai, kensai, ninja, samurai, sohei, spirit folk, wu jen, yakuza); the points column carries every printed award and the mark column codes the printed footnotes (0 unmarked, 1 the samurai-doubled star, 2 the single-creature double star). The two rate rows pin as per-unit consts - the monsters row -1 per 2000 experience points for a single creature, the yakuza stolen-goods row +1 per 100 ch'ien - with the base points in the grid. OCR normalization: the double-star footnote reads \"defeating a single-creature\" with a printed em dash (pins as single-creature); the awards use the printed x.p. abbreviation. The Chapter 5 Money and Equipment prose (capture pp. 73+) is deliberately left for the next rounds",
+  "sentinel": "the gap census after this round: 80 closed, 155 open - the Altering Family Honor, Effects of Honor prose, Table 42 and the Chapter 4 parent boxes flip (census 557 -> 558); NEXT - R636: the Chapter 5 Money and Equipment opener, the Currency prose with Table 43 (Currency Values) and Table 44 (Barter Units), capture pp. 73-75, prefix dgw (verify free), audit \"R636 OA money audit\", include after rules/oaeff.h"
+ },
+ "consts": [
+  {
+   "name": "dgvT42RowCount",
+   "value": 68,
+   "comment": "Table 42 (capture p. 72): sixty-eight honor-award rows"
+  },
+  {
+   "name": "dgvFamilyRaiseStep",
+   "value": 10,
+   "comment": "Altering family honor prose (capture p. 70): the character 10 points above the family honor raises the family base"
+  },
+  {
+   "name": "dgvFamilyRaiseAmount",
+   "value": 1,
+   "comment": "Altering family honor prose (capture p. 70): the family base honor raise per step, also at 20, 30, 40 and so on"
+  },
+  {
+   "name": "dgvFamilyLossThreshold",
+   "value": 5,
+   "comment": "Altering family honor prose (capture p. 70): the single-action loss that blots the family - five or more points"
+  },
+  {
+   "name": "dgvFamilyLossAmount",
+   "value": 1,
+   "comment": "Altering family honor prose (capture p. 70): the family base honor loss for the blot"
+  },
+  {
+   "name": "dgvBelowBaseModPct",
+   "value": -20,
+   "comment": "Effects of honor prose (capture pp. 71-72): the reaction modifier below the family or class base, -20 percent with the family members"
+  },
+  {
+   "name": "dgvAboveBaseBonusPct",
+   "value": 5,
+   "comment": "Effects of honor prose (capture pp. 71-72): the reaction bonus per 10 points above the base, +5 percent"
+  },
+  {
+   "name": "dgvGiftHonorPoints",
+   "value": 75,
+   "comment": "Effects of honor prose (capture pp. 71-72): the gift from a powerful lord at 75 honor points"
+  },
+  {
+   "name": "dgvSongsHonorPoints",
+   "value": 80,
+   "comment": "Effects of honor prose (capture pp. 71-72): the songs and stories at 80 honor points"
+  },
+  {
+   "name": "dgvServeHonorPoints",
+   "value": 90,
+   "comment": "Effects of honor prose (capture pp. 71-72): the invitation to serve a great lord at 90 honor points"
+  },
+  {
+   "name": "dgvGreatHeroHonorPoints",
+   "value": 95,
+   "comment": "Effects of honor prose (capture pp. 71-72): the great hero at 95 honor points"
+  },
+  {
+   "name": "dgvFoeBoastPct",
+   "value": 10,
+   "comment": "Effects of honor prose (capture pp. 71-72): the 10 percent weekly chance of the notorious foe boasting"
+  },
+  {
+   "name": "dgvFoeRefuseHonorLoss",
+   "value": 10,
+   "comment": "Effects of honor prose (capture pp. 71-72): the honor loss for refusing to seek out the boasting foe"
+  },
+  {
+   "name": "dgvServeRefusePct",
+   "value": -10,
+   "comment": "Effects of honor prose (capture pp. 71-72): the refusal penalty with the lord and his followers, -10 percent"
+  },
+  {
+   "name": "dgvGreatHeroBonusPct",
+   "value": 10,
+   "comment": "Effects of honor prose (capture pp. 71-72): the +10 percent bonus with lesser rank, the -10 percent penalty with the opposite alignment"
+  },
+  {
+   "name": "dgvSuccessorDivisor",
+   "value": 10,
+   "comment": "The final benefit prose (capture p. 72): the death-honor remainder divided by 10, fractions rounded down"
+  },
+  {
+   "name": "dgvSuccessorMaxPerRoll",
+   "value": 3,
+   "comment": "The final benefit prose (capture p. 72): no more than three points on any single roll"
+  },
+  {
+   "name": "dgvMonsterXpPerPoint",
+   "value": 2000,
+   "comment": "T42 monsters row (capture p. 72): the honor loss per 2000 experience points, single creatures only"
+  },
+  {
+   "name": "dgvStolenChienPerPoint",
+   "value": 100,
+   "comment": "T42 yakuza row (capture p. 72): the honor gain per 100 ch'ien of stolen goods"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgvClanFortunesFollow",
+   "value": true,
+   "comment": "Altering family honor prose (capture p. 70): noble, heroic and successful characters elevate the family name while craven, lying and treacherous characters drag it down"
+  },
+  {
+   "name": "dgvRaiseOncePerGroup",
+   "value": true,
+   "comment": "Altering family honor prose (capture p. 70): the family raise is earned only once for each group of 10 points"
+  },
+  {
+   "name": "dgvRaiseAtMaxHonor",
+   "value": true,
+   "comment": "Altering family honor prose (capture p. 70): the bonus can be earned even at the honor maximum - the character has reached his pinnacle but his deeds still reflect well upon the clan"
+  },
+  {
+   "name": "dgvLossBlotsFamily",
+   "value": true,
+   "comment": "Altering family honor prose (capture p. 70): losing five or more points for a single action is a lasting blot on the family name"
+  },
+  {
+   "name": "dgvFamilyShareChange",
+   "value": true,
+   "comment": "Altering family honor prose (capture p. 70): when a character changes the family honor, all other family members change by the same amount - family members affect each other"
+  },
+  {
+   "name": "dgvEffectsAutomatic",
+   "value": true,
+   "comment": "Effects of honor prose (capture pp. 71-72): the advantages and disadvantages automatically come into play as honor is gained and lost"
+  },
+  {
+   "name": "dgvBelowZeroOut",
+   "value": true,
+   "comment": "Effects of honor prose (capture pp. 71-72): honor below zero means the character is out of the game - the record sheet is crumpled up and tossed away"
+  },
+  {
+   "name": "dgvSamuraiKensaiStatus",
+   "value": true,
+   "comment": "Effects of honor prose (capture pp. 71-72): a samurai or kensai whose honor falls below the family base loses his status - the samurai becomes a ronin and the kensai is treated as a bushi"
+  },
+  {
+   "name": "dgvBelowBaseFamilyMod",
+   "value": true,
+   "comment": "Effects of honor prose (capture pp. 71-72): any class below the family honor or the class base takes the -20 percent family modifier until the honor again equals or exceeds the base"
+  },
+  {
+   "name": "dgvHarderToImpress",
+   "value": true,
+   "comment": "Effects of honor prose (capture pp. 71-72): every 10 points above the base gives the +5 percent bonus, but the family or group honor also rises - it becomes harder and harder to impress them"
+  },
+  {
+   "name": "dgvGiftFromLord",
+   "value": true,
+   "comment": "Effects of honor prose (capture pp. 71-72): the 75-point gift is appropriate to the level and class, never a threat to the lord, and the player character is expected to return the compliment"
+  },
+  {
+   "name": "dgvSongsAndBoasts",
+   "value": true,
+   "comment": "Effects of honor prose (capture pp. 71-72): at 80 points the name appears in songs and stories; the notorious foe boasts reach the character's ears automatically"
+  },
+  {
+   "name": "dgvLordInvitation",
+   "value": true,
+   "comment": "Effects of honor prose (capture pp. 71-72): at 90 points the character is invited to serve one of the most powerful lords - under no obligation, but refusal angers the lord"
+  },
+  {
+   "name": "dgvGreatHeroRead",
+   "value": true,
+   "comment": "Effects of honor prose (capture pp. 71-72): at 95 points the great hero gains the +10 percent bonus with lesser rank and the -10 percent penalty with opposite alignment or belief - friends treat him with respect, enemies hate him more"
+  },
+  {
+   "name": "dgvSuccessorBonus",
+   "value": true,
+   "comment": "The final benefit prose (capture p. 72): a character who dies and is not returned to play grants the next character bonus points - the death honor above the base, divided by 10 rounded down, added to ability or hit point dice rolls"
+  },
+  {
+   "name": "dgvSuccessorLimits",
+   "value": true,
+   "comment": "The final benefit prose (capture p. 72): the bonus cannot raise a roll above the racial or class maximum and cannot be saved for later in the career"
+  },
+  {
+   "name": "dgvSuccessorFreedom",
+   "value": true,
+   "comment": "The final benefit prose (capture p. 72): the created character can be of any race, class or family, meeting the ability requirements normally"
+  },
+  {
+   "name": "dgvKensaiDuelOncePerLevel",
+   "value": true,
+   "comment": "T42 kensai prose (capture p. 72): duel awards are given only for fighting a particular NPC once per level - a second duel has no effect until the character advances"
+  },
+  {
+   "name": "dgvSamuraiDoubleAwards",
+   "value": true,
+   "comment": "T42 footnote (capture p. 72): the starred awards are doubled for samurai characters"
+  },
+  {
+   "name": "dgvSingleCreatureRead",
+   "value": true,
+   "comment": "T42 footnote (capture p. 72): the monsters award applies only to points earned for defeating a single creature"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dgvT42Grid",
+   "tag": "T42",
+   "count": "dgvT42RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgvT42Points",
+    "dgvT42Mark"
+   ],
+   "data": [
+    [
+     -4,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     -5,
+     0
+    ],
+    [
+     -10,
+     1
+    ],
+    [
+     -4,
+     1
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     -10,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     -10,
+     0
+    ],
+    [
+     -5,
+     1
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     -2,
+     1
+    ],
+    [
+     -30,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -5,
+     0
+    ],
+    [
+     -5,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     -10,
+     0
+    ],
+    [
+     -30,
+     0
+    ],
+    [
+     -5,
+     0
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -10,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -4,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     -5,
+     0
+    ],
+    [
+     -10,
+     0
+    ],
+    [
+     -10,
+     0
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -10,
+     0
+    ],
+    [
+     -5,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "comment": "the Table 42 honor awards grid (capture p. 72)",
+   "col_comments": [
+    "the honor points column, by deed row - the sections run 0-29 all characters, 30-32 shukenja, 33-34 hengeyokai, 35-41 kensai, 42-45 ninja, 46-58 samurai, 59-61 sohei, 62 spirit folk, 63 wu jen, 64-67 yakuza (capture p. 72).",
+    "the mark column: 0 unmarked, 1 the samurai-doubled star, 2 the single-creature double star (capture p. 72)."
+   ],
+   "audit_comment": "the Table 42 grid: the deed awards and the footnote marks (capture p. 72)",
+   "sentinel_census": [
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dgvT42RowCount pin",
+   "expr": "m['dgvT42RowCount']() != 68"
+  },
+  {
+   "note": "the dgvFamilyRaiseStep pin",
+   "expr": "m['dgvFamilyRaiseStep']() != 10"
+  },
+  {
+   "note": "the dgvFamilyRaiseAmount pin",
+   "expr": "m['dgvFamilyRaiseAmount']() != 1"
+  },
+  {
+   "note": "the dgvFamilyLossThreshold pin",
+   "expr": "m['dgvFamilyLossThreshold']() != 5"
+  },
+  {
+   "note": "the dgvFamilyLossAmount pin",
+   "expr": "m['dgvFamilyLossAmount']() != 1"
+  },
+  {
+   "note": "the dgvBelowBaseModPct pin",
+   "expr": "m['dgvBelowBaseModPct']() != -20"
+  },
+  {
+   "note": "the dgvAboveBaseBonusPct pin",
+   "expr": "m['dgvAboveBaseBonusPct']() != 5"
+  },
+  {
+   "note": "the dgvGiftHonorPoints pin",
+   "expr": "m['dgvGiftHonorPoints']() != 75"
+  },
+  {
+   "note": "the dgvSongsHonorPoints pin",
+   "expr": "m['dgvSongsHonorPoints']() != 80"
+  },
+  {
+   "note": "the dgvServeHonorPoints pin",
+   "expr": "m['dgvServeHonorPoints']() != 90"
+  },
+  {
+   "note": "the dgvGreatHeroHonorPoints pin",
+   "expr": "m['dgvGreatHeroHonorPoints']() != 95"
+  },
+  {
+   "note": "the dgvFoeBoastPct pin",
+   "expr": "m['dgvFoeBoastPct']() != 10"
+  },
+  {
+   "note": "the dgvFoeRefuseHonorLoss pin",
+   "expr": "m['dgvFoeRefuseHonorLoss']() != 10"
+  },
+  {
+   "note": "the dgvServeRefusePct pin",
+   "expr": "m['dgvServeRefusePct']() != -10"
+  },
+  {
+   "note": "the dgvGreatHeroBonusPct pin",
+   "expr": "m['dgvGreatHeroBonusPct']() != 10"
+  },
+  {
+   "note": "the dgvSuccessorDivisor pin",
+   "expr": "m['dgvSuccessorDivisor']() != 10"
+  },
+  {
+   "note": "the dgvSuccessorMaxPerRoll pin",
+   "expr": "m['dgvSuccessorMaxPerRoll']() != 3"
+  },
+  {
+   "note": "the dgvMonsterXpPerPoint pin",
+   "expr": "m['dgvMonsterXpPerPoint']() != 2000"
+  },
+  {
+   "note": "the dgvStolenChienPerPoint pin",
+   "expr": "m['dgvStolenChienPerPoint']() != 100"
+  },
+  {
+   "note": "the dgvClanFortunesFollow pin",
+   "expr": "m['dgvClanFortunesFollow']() != 1"
+  },
+  {
+   "note": "the dgvRaiseOncePerGroup pin",
+   "expr": "m['dgvRaiseOncePerGroup']() != 1"
+  },
+  {
+   "note": "the dgvRaiseAtMaxHonor pin",
+   "expr": "m['dgvRaiseAtMaxHonor']() != 1"
+  },
+  {
+   "note": "the dgvLossBlotsFamily pin",
+   "expr": "m['dgvLossBlotsFamily']() != 1"
+  },
+  {
+   "note": "the dgvFamilyShareChange pin",
+   "expr": "m['dgvFamilyShareChange']() != 1"
+  },
+  {
+   "note": "the dgvEffectsAutomatic pin",
+   "expr": "m['dgvEffectsAutomatic']() != 1"
+  },
+  {
+   "note": "the dgvBelowZeroOut pin",
+   "expr": "m['dgvBelowZeroOut']() != 1"
+  },
+  {
+   "note": "the dgvSamuraiKensaiStatus pin",
+   "expr": "m['dgvSamuraiKensaiStatus']() != 1"
+  },
+  {
+   "note": "the dgvBelowBaseFamilyMod pin",
+   "expr": "m['dgvBelowBaseFamilyMod']() != 1"
+  },
+  {
+   "note": "the dgvHarderToImpress pin",
+   "expr": "m['dgvHarderToImpress']() != 1"
+  },
+  {
+   "note": "the dgvGiftFromLord pin",
+   "expr": "m['dgvGiftFromLord']() != 1"
+  },
+  {
+   "note": "the dgvSongsAndBoasts pin",
+   "expr": "m['dgvSongsAndBoasts']() != 1"
+  },
+  {
+   "note": "the dgvLordInvitation pin",
+   "expr": "m['dgvLordInvitation']() != 1"
+  },
+  {
+   "note": "the dgvGreatHeroRead pin",
+   "expr": "m['dgvGreatHeroRead']() != 1"
+  },
+  {
+   "note": "the dgvSuccessorBonus pin",
+   "expr": "m['dgvSuccessorBonus']() != 1"
+  },
+  {
+   "note": "the dgvSuccessorLimits pin",
+   "expr": "m['dgvSuccessorLimits']() != 1"
+  },
+  {
+   "note": "the dgvSuccessorFreedom pin",
+   "expr": "m['dgvSuccessorFreedom']() != 1"
+  },
+  {
+   "note": "the dgvKensaiDuelOncePerLevel pin",
+   "expr": "m['dgvKensaiDuelOncePerLevel']() != 1"
+  },
+  {
+   "note": "the dgvSamuraiDoubleAwards pin",
+   "expr": "m['dgvSamuraiDoubleAwards']() != 1"
+  },
+  {
+   "note": "the dgvSingleCreatureRead pin",
+   "expr": "m['dgvSingleCreatureRead']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the T42 treason and identity rows - the two -30 awards (capture p. 72)",
+   "expr": "m['dgvT42Points'](28) != -30 or m['dgvT42Points'](44) != -30"
+  },
+  {
+   "note": "the T42 family debt row - the +7 best all-character award (capture p. 72)",
+   "expr": "m['dgvT42Points'](12) != 7"
+  },
+  {
+   "note": "the T42 +5 trio - avenging murder, the great deed, the life saved at great risk (capture p. 72)",
+   "expr": "m['dgvT42Points'](2) != 5 or m['dgvT42Points'](6) != 5 or m['dgvT42Points'](26) != 5"
+  },
+  {
+   "note": "the T42 starred rows - the samurai-doubled marks at prisoner, broken oath, ancestral enemy, lost birthright, served lord (capture p. 72)",
+   "expr": "m['dgvT42Mark'](4) != 1 or m['dgvT42Mark'](5) != 1 or m['dgvT42Mark'](8) != 1 or m['dgvT42Mark'](16) != 1 or m['dgvT42Mark'](27) != 1"
+  },
+  {
+   "note": "the T42 monsters row - the -1 per 2000 experience points, single creatures only (capture p. 72)",
+   "expr": "m['dgvT42Points'](10) != -1 or m['dgvT42Mark'](10) != 2 or m['dgvMonsterXpPerPoint']() != 2000"
+  },
+  {
+   "note": "the T42 yakuza rate row - the +1 per 100 ch'ien stolen-goods read (capture p. 72)",
+   "expr": "m['dgvT42Points'](67) != 1 or m['dgvStolenChienPerPoint']() != 100"
+  },
+  {
+   "note": "the T42 kensai duel trio - the +1 win, the -3 loss, the -5 refusal (capture p. 72)",
+   "expr": "m['dgvT42Points'](41) != 1 or m['dgvT42Points'](35) != -3 or m['dgvT42Points'](38) != -5"
+  },
+  {
+   "note": "the T42 -10 gravest rows - fleeing a fight, the lost magical item, the ninja-weapon proficiency, the failing mission, the lost minyan (capture p. 72)",
+   "expr": "m['dgvT42Points'](47) != -10 or m['dgvT42Points'](53) != -10 or m['dgvT42Points'](54) != -10 or m['dgvT42Points'](43) != -10 or m['dgvT42Points'](61) != -10"
+  },
+  {
+   "note": "the T42 bounds - the -4 accused first row, the +1 stolen-goods last row, sixty-eight rows only (capture p. 72)",
+   "expr": "m['dgvT42Points'](0) != -4 or m['dgvT42Points'](67) != 1 or m['dgvT42RowCount']() != 68"
+  },
+  {
+   "note": "the family ledger doctrine - the 10-point raise step with the +1 raise and the once-per-group read, the 5-point blot with the -1 loss (capture p. 70)",
+   "expr": "m['dgvFamilyRaiseStep']() != 10 or m['dgvFamilyRaiseAmount']() != 1 or m['dgvRaiseOncePerGroup']() != 1 or m['dgvFamilyLossThreshold']() != 5 or m['dgvFamilyLossAmount']() != 1"
+  },
+  {
+   "note": "the effects thresholds - the 75 gift, the 80 songs, the 90 invitation, the 95 great hero (capture pp. 71-72)",
+   "expr": "m['dgvGiftHonorPoints']() != 75 or m['dgvSongsHonorPoints']() != 80 or m['dgvServeHonorPoints']() != 90 or m['dgvGreatHeroHonorPoints']() != 95"
+  },
+  {
+   "note": "the successor doctrine - the remainder divided by 10, the 3-point cap, the freedom of race, class and family (capture p. 72)",
+   "expr": "m['dgvSuccessorDivisor']() != 10 or m['dgvSuccessorMaxPerRoll']() != 3 or m['dgvSuccessorBonus']() != 1 or m['dgvSuccessorFreedom']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the altering family honor pins": [
+   {
+    "kind": "const",
+    "name": "dgvFamilyRaiseStep"
+   },
+   {
+    "kind": "const",
+    "name": "dgvFamilyRaiseAmount"
+   },
+   {
+    "kind": "const",
+    "name": "dgvFamilyLossThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "dgvFamilyLossAmount"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvClanFortunesFollow"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvRaiseOncePerGroup"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvRaiseAtMaxHonor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvLossBlotsFamily"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvFamilyShareChange"
+   }
+  ],
+  "the effects of honor pins": [
+   {
+    "kind": "const",
+    "name": "dgvBelowBaseModPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgvAboveBaseBonusPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgvGiftHonorPoints"
+   },
+   {
+    "kind": "const",
+    "name": "dgvSongsHonorPoints"
+   },
+   {
+    "kind": "const",
+    "name": "dgvServeHonorPoints"
+   },
+   {
+    "kind": "const",
+    "name": "dgvGreatHeroHonorPoints"
+   },
+   {
+    "kind": "const",
+    "name": "dgvFoeBoastPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgvFoeRefuseHonorLoss"
+   },
+   {
+    "kind": "const",
+    "name": "dgvServeRefusePct"
+   },
+   {
+    "kind": "const",
+    "name": "dgvGreatHeroBonusPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgvSuccessorDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "dgvSuccessorMaxPerRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvEffectsAutomatic"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvBelowZeroOut"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvSamuraiKensaiStatus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvBelowBaseFamilyMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvHarderToImpress"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvGiftFromLord"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvSongsAndBoasts"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvLordInvitation"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvGreatHeroRead"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvSuccessorBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvSuccessorLimits"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvSuccessorFreedom"
+   }
+  ],
+  "the Table 42 grid": [
+   {
+    "kind": "const",
+    "name": "dgvT42RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgvMonsterXpPerPoint"
+   },
+   {
+    "kind": "const",
+    "name": "dgvStolenChienPerPoint"
+   },
+   {
+    "kind": "table",
+    "name": "dgvT42Grid"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvKensaiDuelOncePerLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvSamuraiDoubleAwards"
+   },
+   {
+    "kind": "bool",
+    "name": "dgvSingleCreatureRead"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Altering Family Honor box closes",
+   "from": "  - [ ] Altering Family Honor (capture p. 70) - the\n    family honor ledger and the zero floor",
+   "to": "  - [x] Altering Family Honor (capture p. 70) - the\n    family honor ledger and the zero floor\n    R635: the dgv ledger pins - the 10-point\n    raise step with the once-per-group\n    bonus and the pinnacle read, the\n    5-point single-action blot with the\n    -1 family loss, the shared family\n    change"
+  },
+  {
+   "note": "the   Effects of Honor prose box closes",
+   "from": "  - [ ] Effects of Honor prose (capture pp. 71-72)",
+   "to": "  - [x] Effects of Honor prose (capture pp. 71-72) -\n    R635: the dgv effects pins - the\n    below-zero elimination, the samurai-\n    kensai status loss, the -20 percent\n    family modifier, the +5 percent per\n    10 with the harder-to-impress read,\n    the 75-point gift, 80-point songs and\n    boasts, 90-point lord and 95-point\n    great hero doctrines, the successor\n    bonus with the 3-point cap"
+  },
+  {
+   "note": "the   Table 42: Honor Awards box closes",
+   "from": "  - [ ] Table 42: Honor Awards (capture p. 72)",
+   "to": "  - [x] Table 42: Honor Awards (capture p. 72) -\n    R635: the dgv T42 grid - sixty-eight\n    award rows across the ten sections\n    pinned as the points and mark columns\n    (the samurai-doubled stars, the single-\n    creature monsters read), the kensai\n    once-per-level duel rule"
+  },
+  {
+   "note": "the   Chapter 4: Honor parent box closes",
+   "from": "- [ ] **Chapter 4: Honor** (capture pp. 69-73) - the\n  honor system",
+   "to": "- [x] **Chapter 4: Honor** (capture pp. 69-73) - the\n  honor system - R635: the chapter closes\n  (the opener and T41 in R634, the ledger,\n  the effects and T42 in R635)"
+  }
+ ],
+ "gap_census": {
+  "closed": 80,
+  "open": 155
+ },
+ "include_comment": "the OA effects of honor pins",
+ "include_after": "#include \"rules/oahonor.h\"  // R634: the OA honor pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R634 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R634 LANDED 2026-10-19: commit",
+  "  0d6f2cbd6eaf635ab035d2dd9a72bb5c9ead043f",
+  "  (census 556 -> 557, pushed",
+  "  91502ba..0d6f2cb), HONOR - the",
+  "  chapter opener, the starting honor",
+  "  doctrine and Table 41, capture pp.",
+  "  69-70: rules/oahonor.h, prefix dgu",
+  "  (verified free), 21 inlines (2",
+  "  consts, 17 bools, 2 table columns):",
+  "  the opener doctrine (the family",
+  "  reflection with the respect-power-",
+  "  influence read, the easier-to-lose",
+  "  rule, the dishonor and honor deed",
+  "  lists, the reaction and gift",
+  "  rewards, the not-alignment read",
+  "  with the villain-samurai example,",
+  "  the deeds-of-both measure), the",
+  "  honor-point tracking (the DM awards",
+  "  at the end of an adventure, the",
+  "  something-special requirement), the",
+  "  starting honor doctrine (the",
+  "  birth-rank base with the T39",
+  "  adjustments and the 0 floor, the",
+  "  birthright and lowest-ability adds,",
+  "  the no-clan T41 route), the class",
+  "  sensitivity (the samurai",
+  "  fluctuation), the DM-judgment",
+  "  doctrine with the 100-point cap,",
+  "  T41 7x2 with the class rows pinned",
+  "  as the base-honor lo and hi bounds",
+  "  (shukenja 20, sohei 15, kensai 25,",
+  "  bushi 10, hengeyokai 10, wu jen 15,",
+  "  the yakuza 1d20 + 20 read as 21",
+  "  through 40). PINNED FROM THE 2018",
+  "  PRINT CAPTURE ALONE (the settling",
+  "  authority; the first Mistral-OCR",
+  "  capture session is unavailable above",
+  "  p. 33, so no cross-capture check);",
+  "  no contested cells within the single",
+  "  source. OCR normalization: none",
+  "  required for this range beyond the",
+  "  yakuza die read; the opener prose",
+  "  carries the printed em dashes. The",
+  "  Altering Family Honor and Effects of",
+  "  Honor prose and Table 42 (capture",
+  "  pp. 70-72) are deliberately held",
+  "  for the next rounds. Battery 33",
+  "  mutants, 0 missed; full sha rverify",
+  "  GREEN; preflight GREEN. Gap census",
+  "  74/161 -> 76/159. Spec 15,477 bytes",
+  "  md5 cd219445dfdc1bcf03f785201b500453",
+  "  (authored-plus-newline md5",
+  "  16f0501e89f072817b1e97d52c01765b;",
+  "  canvas md5",
+  "  599d497bea98244472a054c5b2033fef).",
+  "  NEXT - R635: the Altering Family",
+  "  Honor prose and the Effects of Honor",
+  "  prose with Table 42, capture pp.",
+  "  70-72, the family ledger and the",
+  "  reaction doctrine, prefix dgv",
+  "  (verify free), audit \"R635 OA",
+  "  effects of honor audit\", include",
+  "  after rules/oahonor.h."
+ ]
+}
