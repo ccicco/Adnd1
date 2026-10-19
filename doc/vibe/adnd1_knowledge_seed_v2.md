@@ -13531,6 +13531,34 @@ when both halves land.
   Weapon Specializations), capture p. 100, the specialist attacks-per-round
   grid, prefix dhl (verify free), audit "R651 OA missile specializations
   audit", include after rules/oaweaponspec.h
+- R651 LANDED 2026-10-19: commit 4cfbabe427dd5f88becb74d482c7090eeef2f605
+  (census 573 -> 574, pushed 689abc7..4cfbabe), TABLE 57 MISSILE
+  SPECIALIZATIONS - the specialist attacks-per-round grid, capture p. 100:
+  rules/oamslspec.h, prefix dhl (verified free), 17 inlines (3 consts, 14
+  table columns, no bools): the grid per the T55 pair precedent - each printed
+  num/den attacks pair a numerator and denominator column across the three
+  level bands (the band bounds as consts - three bands, tops at 6 and 12), the
+  seven printed columns the bow 2/1-3/1-4/1, the light crossbow 1/1-3/2-2/1,
+  the pellet bow & heavy crossbow 1/2-1/1-3/2, the lasso & staff sling
+  1/1-3/2-2/1, the large shuriken & thrown dagger 3/1-4/1-5/1, the dart &
+  small shuriken 4/1-5/1-6/1 and the other column 3/2-2/1-5/2, the table tag
+  T57Data identifier-safe per the R639 lesson. The grid cross-checked
+  cell-by-cell between the two passes - every printed cell agrees, zero
+  contested cells; two column-name reads settled from the print pass's own p.
+  100 header fragments plus the compressed corroboration: the p. 101 header
+  reads dropped the Pellet and the Large, the names pin as pellet bow & heavy
+  crossbow and large shuriken & thrown dagger. One pre-publish repair the
+  machinery caught: the first build omitted the table tag/count/comment keys,
+  the engine double-run RED - rebuilt before publish, the user side never saw
+  the break. rverify GREEN at 689abc7, 45 mutants, 0 missed; preflight GREEN
+  (574 audit census, BUILD 0 warnings). Gap census 102/133 -> 103/132. Spec
+  13,264 bytes md5 214fb83bc72b8518ea6c98c778c289b9 (authored-plus-newline md5
+  864c3c32f6c0c4d43920858c17aea3fc - the value the ritual gated and matched;
+  canvas md5 17cd9a5e93fd6c370276f282ad615621). NEXT - R652: the Non-Weapon
+  Proficiencies prose with the optional peaceful proficiency bonuses, the
+  success-and-failure doctrine and the contests (capture pp. 101-103), prefix
+  dhm (verify free), audit "R652 OA non-weapon proficiencies audit", include
+  after rules/oamslspec.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

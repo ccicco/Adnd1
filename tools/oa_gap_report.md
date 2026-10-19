@@ -925,10 +925,20 @@ description riding the same round.
     column, with the level-band bounds as consts; the print p. 100 header
     fragments settle the pellet-bow and large-shuriken column names -
     cross-checked cell-by-cell between the two passes, zero contested cells
-  - [ ] Non-Weapon Proficiencies prose with the
+  - [x] Non-Weapon Proficiencies prose with the
     optional peaceful proficiency bonuses, the
     success-and-failure doctrine and the contests
-    (capture pp. 101-103)
+    (capture pp. 101-103) - R652: the dhm non-weapon pins - the four
+    categories (Common, Artisan, Court, Barbarian) with the only-barbarians
+    rule, the learning doctrine and the base-chance rules (identical to the
+    to-hit roll, never improving with level), the +1-per-slot improvement from
+    2nd level with the no-limit rule and the never-below-3 floor, the Akimori
+    calligraphy example (base 17, 16 at third, 14 at fourth), the optional
+    +1/+2 player bonuses, the success-and-failure doctrine with the
+    always-roll proficiencies and the contest rules (formal vs impromptu, the
+    elimination resolution, the inauspicious all-fail rule, 50 vs 100 times
+    the host's level); the compressed plus-as-minus artifact settles per the
+    print pass - zero contested reads otherwise
   - [ ] Table 56: Character Proficiencies
     (capture p. 99)
   - [ ] Table 58: Artisan Proficiencies
