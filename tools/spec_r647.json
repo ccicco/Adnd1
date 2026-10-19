@@ -1,0 +1,321 @@
+{
+ "round": 647,
+ "title": "MISC EQUIPMENT - the grenades prose of the equipment descriptions",
+ "prefix": "dhh",
+ "header_file": "rules/oagrenade.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 569,
+ "inline_count": 20,
+ "audit_label": "R647 OA misc equipment audit",
+ "audit_comment": "OA round thirty-four (capture p. 98): the miscellaneous equipment descriptions - the grenades prose (pepper, dust, flash powder and poison smoke)",
+ "banner": {
+  "title": "MISCELLANEOUS EQUIPMENT DESCRIPTIONS (THE GRENADES PROSE), printed capture p. 98 - the OA misc equipment round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the page - the grenades prose cross-checked paragraph-by-paragraph between the two passes; every printed number agrees - zero contested cells. The lone glyph artifact is the em-dash class (the print hyphen against the compressed em-dash in the not-modern-sense clause - not a pin, noted). The grenades are blown-out eggshells (nutshells and paper packets also used) filled with powders - four kinds pin: pepper-filled (single target, save versus poison or incapacitated 1-6 rounds by choking and sneezing), dust-filled (the same save, blinded 1-6 rounds), flash powder (thrown onto a fire source, all looking automatically blinded 1-3 rounds, the may-or-may-not-looking allowed a save versus petrification) and poison smoke (cast onto a fire source, fills five feet by five feet per round, save versus poison or blinded and incapacitated, 1-2 hit points per round within, enough powder for a 10-foot by 10-foot area, remains one turn or until the wind). The to-hit doctrine pins as a bool pair: no armor modifiers (the contents burst in a small cloud on impact) and the eggshell fragility (a fall of 10 feet or more with damage forces a save versus crushing blow per grenade carried). The barding prose box and the armor descriptions box stay open",
+  "sentinel": "the gap census after this round: 98 closed, 137 open - the Miscellaneous Equipment Descriptions box flips (census 569 -> 570); NEXT - R648: the Barding prose box (capture p. 98), the barding AC-factor and weight paragraph, prefix dhi (verify free), audit \"R648 OA barding prose audit\", include after rules/oagrenade.h - the armor descriptions box stays open beside it"
+ },
+ "consts": [
+  {
+   "name": "dhhGrenadeKindCount",
+   "value": 4,
+   "comment": "the four grenade kinds - pepper-filled, dust-filled, flash powder and poison smoke (capture p. 98)"
+  },
+  {
+   "name": "dhhPepperIncapLo",
+   "value": 1,
+   "comment": "the pepper grenade incapacitation lower bound, in rounds - save versus poison or incapacitated by choking and sneezing (capture p. 98)"
+  },
+  {
+   "name": "dhhPepperIncapHi",
+   "value": 6,
+   "comment": "the pepper grenade incapacitation upper bound, in rounds (capture p. 98)"
+  },
+  {
+   "name": "dhhDustBlindLo",
+   "value": 1,
+   "comment": "the dust grenade blinding lower bound, in rounds - the same save-versus-poison way as pepper (capture p. 98)"
+  },
+  {
+   "name": "dhhDustBlindHi",
+   "value": 6,
+   "comment": "the dust grenade blinding upper bound, in rounds (capture p. 98)"
+  },
+  {
+   "name": "dhhFlashBlindLo",
+   "value": 1,
+   "comment": "the flash powder blinding lower bound, in rounds - all looking at the flare are blinded automatically (capture p. 98)"
+  },
+  {
+   "name": "dhhFlashBlindHi",
+   "value": 3,
+   "comment": "the flash powder blinding upper bound, in rounds (capture p. 98)"
+  },
+  {
+   "name": "dhhSmokeFillFeet",
+   "value": 5,
+   "comment": "the poison smoke per-round fill - a five foot by five foot area each round (capture p. 98)"
+  },
+  {
+   "name": "dhhSmokeDmgLo",
+   "value": 1,
+   "comment": "the poison smoke damage lower bound, hit points per round to all within the smoke (capture p. 98)"
+  },
+  {
+   "name": "dhhSmokeDmgHi",
+   "value": 2,
+   "comment": "the poison smoke damage upper bound, hit points per round (capture p. 98)"
+  },
+  {
+   "name": "dhhSmokeAreaFeet",
+   "value": 10,
+   "comment": "the poison smoke total fill - each grenade holds enough powder for a 10 foot by 10 foot area (capture p. 98)"
+  },
+  {
+   "name": "dhhSmokeTurns",
+   "value": 1,
+   "comment": "the poison smoke duration, in turns - remains one turn or until the wind blows it away (capture p. 98)"
+  },
+  {
+   "name": "dhhEggshellFallFeet",
+   "value": 10,
+   "comment": "the eggshell grenade fragility threshold - a fall of 10 feet or more that suffers damage forces the save (capture p. 98)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dhhGrenadeNoAcMod",
+   "value": true,
+   "comment": "the to-hit doctrine: no armor modifiers - the contents burst in a small cloud on impact (capture p. 98)"
+  },
+  {
+   "name": "dhhPepperSingleTarget",
+   "value": true,
+   "comment": "pepper-filled grenades only affect a single target (capture p. 98)"
+  },
+  {
+   "name": "dhhFlashNeedsFire",
+   "value": true,
+   "comment": "flash powder grenades must be thrown onto a fire source, exploding in a brilliant flare of light (capture p. 98)"
+  },
+  {
+   "name": "dhhFlashPetrifySave",
+   "value": true,
+   "comment": "the flash powder save - characters who may or may not be looking are allowed a save versus petrification; a success means unaffected (capture p. 98)"
+  },
+  {
+   "name": "dhhSmokeNeedsFire",
+   "value": true,
+   "comment": "poison smoke grenades must also be cast onto a fire source to work (capture p. 98)"
+  },
+  {
+   "name": "dhhSmokePoisonSave",
+   "value": true,
+   "comment": "the poison smoke save - all within the area must save versus poison or be blinded and incapacitated by the foul, acidic stench (capture p. 98)"
+  },
+  {
+   "name": "dhhEggshellCrushSave",
+   "value": true,
+   "comment": "the eggshell fragility save - a saving throw versus crushing blow must be made for each grenade carried after the threshold fall (capture p. 98)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the grenade kind count pin",
+   "expr": "m['dhhGrenadeKindCount']() != 4"
+  },
+  {
+   "note": "the pepper incapacitation bounds pin - 1-6 rounds",
+   "expr": "m['dhhPepperIncapLo']() != 1 or m['dhhPepperIncapHi']() != 6"
+  },
+  {
+   "note": "the dust blinding bounds pin - 1-6 rounds",
+   "expr": "m['dhhDustBlindLo']() != 1 or m['dhhDustBlindHi']() != 6"
+  },
+  {
+   "note": "the flash blinding bounds pin - 1-3 rounds",
+   "expr": "m['dhhFlashBlindLo']() != 1 or m['dhhFlashBlindHi']() != 3"
+  },
+  {
+   "note": "the poison smoke numbers pin - the 5-foot fill, the 1-2 damage, the 10-foot area, the one turn",
+   "expr": "m['dhhSmokeFillFeet']() != 5 or m['dhhSmokeDmgLo']() != 1 or m['dhhSmokeDmgHi']() != 2 or m['dhhSmokeAreaFeet']() != 10 or m['dhhSmokeTurns']() != 1"
+  },
+  {
+   "note": "the eggshell fall threshold pin - 10 feet",
+   "expr": "m['dhhEggshellFallFeet']() != 10"
+  },
+  {
+   "note": "the no-armor-modifier doctrine pin",
+   "expr": "m['dhhGrenadeNoAcMod']() != 1"
+  },
+  {
+   "note": "the pepper single-target pin",
+   "expr": "m['dhhPepperSingleTarget']() != 1"
+  },
+  {
+   "note": "the flash fire-source and petrification-save pins",
+   "expr": "m['dhhFlashNeedsFire']() != 1 or m['dhhFlashPetrifySave']() != 1"
+  },
+  {
+   "note": "the smoke fire-source and poison-save pins",
+   "expr": "m['dhhSmokeNeedsFire']() != 1 or m['dhhSmokePoisonSave']() != 1"
+  },
+  {
+   "note": "the eggshell crushing-blow save pin",
+   "expr": "m['dhhEggshellCrushSave']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the grenades prose pins": [
+   {
+    "kind": "const",
+    "name": "dhhGrenadeKindCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhhPepperIncapLo"
+   },
+   {
+    "kind": "const",
+    "name": "dhhPepperIncapHi"
+   },
+   {
+    "kind": "const",
+    "name": "dhhDustBlindLo"
+   },
+   {
+    "kind": "const",
+    "name": "dhhDustBlindHi"
+   },
+   {
+    "kind": "const",
+    "name": "dhhFlashBlindLo"
+   },
+   {
+    "kind": "const",
+    "name": "dhhFlashBlindHi"
+   },
+   {
+    "kind": "const",
+    "name": "dhhSmokeFillFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dhhSmokeDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dhhSmokeDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dhhSmokeAreaFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dhhSmokeTurns"
+   },
+   {
+    "kind": "const",
+    "name": "dhhEggshellFallFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dhhGrenadeNoAcMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dhhPepperSingleTarget"
+   },
+   {
+    "kind": "bool",
+    "name": "dhhFlashNeedsFire"
+   },
+   {
+    "kind": "bool",
+    "name": "dhhFlashPetrifySave"
+   },
+   {
+    "kind": "bool",
+    "name": "dhhSmokeNeedsFire"
+   },
+   {
+    "kind": "bool",
+    "name": "dhhSmokePoisonSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dhhEggshellCrushSave"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Miscellaneous Equipment Descriptions box closes",
+   "from": "  - [ ] Miscellaneous Equipment Descriptions\n    (capture p. 98)",
+   "to": "  - [x] Miscellaneous Equipment Descriptions\n    (capture p. 98) - R647: the dhh grenades prose pins - the four grenade\n    kinds with their save-vs doctrine as bools and every printed number as\n    consts: the pepper and dust 1-6, the flash 1-3, the smoke 5-foot fill, 1-2\n    damage, 10-foot area and one turn, the 10-foot eggshell fall threshold"
+  }
+ ],
+ "gap_census": {
+  "closed": 98,
+  "open": 137
+ },
+ "include_comment": "the OA grenades pins",
+ "include_after": "#include \"rules/oabarding.h\"  // R646: the OA barding pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R646 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R646 LANDED 2026-10-19: commit",
+  "  6ad968b14ba64ea06b25a77f0927888ae3a170c5",
+  "  (census 568 -> 569, pushed",
+  "  50ada1a..6ad968b), BARDING - Table 55",
+  "  (Barded Warhorse Base Movement Rates),",
+  "  capture p. 98: rules/oabarding.h, prefix",
+  "  dhg (verified free), 10 inlines (2 consts,",
+  "  6 table columns, 2 bools): the 4-row",
+  "  barded warhorse grid - the full/half",
+  "  movement pairs for the three barding",
+  "  materials (padded/leather, metal scale,",
+  "  chain; the prime stripped per the R645",
+  "  glyph class), the light-horse chain X",
+  "  (too heavy) and the elephant blank",
+  "  metal/chain cells as -99, the lone",
+  "  elephant 12 as the T50 lo=hi convention,",
+  "  the note doctrine as two bools (the number",
+  "  before the slash is full barding; an X",
+  "  means heavier than the horse can bear).",
+  "  The 4-row grid cross-checked cell-by-cell",
+  "  between the two passes - the pairs agree,",
+  "  zero numeric contested cells; the glyph",
+  "  artifacts settle per the print (the",
+  "  prime, the stray-space 15); the note's",
+  "  first word reads Tumber in both passes -",
+  "  an OCR slip for \"The number\", noted.",
+  "  First publish clean - no repairs.",
+  "  rverify GREEN at 50ada1a, 28 mutants,",
+  "  0 missed; preflight GREEN (569 audit",
+  "  census, BUILD 0 warnings). Gap census",
+  "  96/139 -> 97/138 - the Chapter 5",
+  "  armor/equipment tables are all closed.",
+  "  Spec 10,201 bytes md5",
+  "  2df45213039a6ebc26d2137585b14729",
+  "  (authored-plus-newline md5",
+  "  de36ad5f26105e74d456c56ec309901e - the",
+  "  value the ritual gated and matched;",
+  "  canvas md5",
+  "  bf7f7df2eb63009ed54ad3294b8b92ab). NEXT -",
+  "  R647: the Miscellaneous Equipment",
+  "  Descriptions prose box (capture p. 98),",
+  "  the grenades prose, prefix dhh (verify",
+  "  free), audit \"R647 OA misc equipment",
+  "  audit\", include after rules/oabarding.h -",
+  "  the barding prose box stays open beside",
+  "  it."
+ ]
+}

@@ -876,8 +876,11 @@ description riding the same round.
     pinned as the base weight and movement columns with the bulk classes and
     armor names riding the column comments and the kote no-weight cell as the
     -99 sentinel
-  - [ ] Miscellaneous Equipment Descriptions
-    (capture p. 98)
+  - [x] Miscellaneous Equipment Descriptions
+    (capture p. 98) - R647: the dhh grenades prose pins - the four grenade
+    kinds with their save-vs doctrine as bools and every printed number as
+    consts: the pepper and dust 1-6, the flash 1-3, the smoke 5-foot fill, 1-2
+    damage, 10-foot area and one turn, the 10-foot eggshell fall threshold
   - [ ] Barding prose (capture p. 98)
   - [x] Table 55: Barded Warhorse Base Movement Rates
     (capture p. 98) - R646: the dhg T55 grid - four warhorse rows pinned as

@@ -13329,6 +13329,52 @@ when both halves land.
   audit", include after rules/oaencumb.h -
   the misc equipment and barding prose
   boxes stay open.
+- R646 LANDED 2026-10-19: commit
+  6ad968b14ba64ea06b25a77f0927888ae3a170c5
+  (census 568 -> 569, pushed
+  50ada1a..6ad968b), BARDING - Table 55
+  (Barded Warhorse Base Movement Rates),
+  capture p. 98: rules/oabarding.h, prefix
+  dhg (verified free), 10 inlines (2 consts,
+  6 table columns, 2 bools): the 4-row
+  barded warhorse grid - the full/half
+  movement pairs for the three barding
+  materials (padded/leather, metal scale,
+  chain; the prime stripped per the R645
+  glyph class), the light-horse chain X
+  (too heavy) and the elephant blank
+  metal/chain cells as -99, the lone
+  elephant 12 as the T50 lo=hi convention,
+  the note doctrine as two bools (the number
+  before the slash is full barding; an X
+  means heavier than the horse can bear).
+  The 4-row grid cross-checked cell-by-cell
+  between the two passes - the pairs agree,
+  zero numeric contested cells; the glyph
+  artifacts settle per the print (the
+  prime, the stray-space 15); the note's
+  first word reads Tumber in both passes -
+  an OCR slip for "The number", noted.
+  First publish clean - no repairs.
+  rverify GREEN at 50ada1a, 28 mutants,
+  0 missed; preflight GREEN (569 audit
+  census, BUILD 0 warnings). Gap census
+  96/139 -> 97/138 - the Chapter 5
+  armor/equipment tables are all closed.
+  Spec 10,201 bytes md5
+  2df45213039a6ebc26d2137585b14729
+  (authored-plus-newline md5
+  de36ad5f26105e74d456c56ec309901e - the
+  value the ritual gated and matched;
+  canvas md5
+  bf7f7df2eb63009ed54ad3294b8b92ab). NEXT -
+  R647: the Miscellaneous Equipment
+  Descriptions prose box (capture p. 98),
+  the grenades prose, prefix dhh (verify
+  free), audit "R647 OA misc equipment
+  audit", include after rules/oabarding.h -
+  the barding prose box stays open beside
+  it.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
