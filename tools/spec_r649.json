@@ -1,0 +1,524 @@
+{
+ "round": 649,
+ "title": "ARMOR PROSE AND DESCRIPTIONS - the suits-and-pieces doctrine and the armor description entries",
+ "prefix": "dhj",
+ "header_file": "rules/oaarmordesc.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 571,
+ "inline_count": 40,
+ "audit_label": "R649 OA armor descriptions audit",
+ "audit_comment": "OA round thirty-six (capture pp. 93-98): the armor prose and the armor descriptions - the suits-and-pieces doctrine, the piece-combination rules and the armor description entries",
+ "banner": {
+  "title": "ARMOR PROSE AND DESCRIPTIONS, printed capture pp. 93-97 - the OA armor descriptions round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the section - the armor prose and the description entries cross-checked paragraph-by-paragraph between the two passes (the intro on capture p. 93, the suits-and-pieces doctrine and the corselet example on p. 94, the averaging and piece-combination rules on p. 95, the nineteen description entries on pp. 96-97 of the print pass); every printed number agrees - zero contested cells. The doctrine pins as consts and bools: all armor falls into two groups, suits and pieces, with the common suit list (padded, leather, studded leather, leather scale, chain mail, brigandine), the rare list (metal scale, splint, banded, laced) and the virtually-unknown list (plate, field plate, full plate) as counts with the names riding the comments; a suit's type sets the armor class via the Table 52 grid pinned in R643; the corselet example pins AC 7 equal to studded leather and the printed piece examples pin kote-only AC 9 and kote-do-maru-haidate AC 6, cross-checking the Table 53 steps pinned in R644; the averaging doctrine, the no-general-protection rule for the specialized small pieces, the o-yoroi-below-the-pieces-combined rule, the one-piece-per-area rule and the no-pieces-with-suits rule pin as bools. The description entries pin their printed numbers as consts - the horo back-missile bonus of 1, the kabuto head armor class 3, the sode one foot square, the o-yoroi six included pieces and five smaller pieces - and their categorical rules as bools: the buckler same-hand rule, the chain-under-clothing detection rule, the do-maru lamellar rule, the kote under-robes rule, the hara-ate-gawa leather rule, the hara-ate rear-attacks-AC-10 rule (the prose mirror of the R644 star pair), the haramaki and haramaki-do concealability split, the hide-better-than-leather rule, the horo riding-only and no-other-use rules, the sode-needs-a-corselet rule, the o-yoroi matched-set rule, the scale commoner split, the shields-lighter rule, the sune-ate crippling-blow rule, and the movement drop with the o-yoroi floor. The hanburi, haidate, kabuto and jingasa flavor text rides the banner and comments. The shared OCR slips settle per the R643 branded-mail pattern - a read contradicting its own page does not stand: the print Hare-ate and here-ate reads are slips against the print pass's own Table 53 (hara-ate, corroborated by the compressed pass), the compressed Hanburt is a slip against the print Hanburi, and the print suns-ate, sods, Bode and Kate reads are slips corroborated by the compressed pass (sune-ate, sode, kote). The Table 52, 53, 54 and 55 grids stay with their rounds - R643 through R646. This is the last Chapter 5 box",
+  "sentinel": "the gap census after this round: 100 closed, 135 open - the armor prose and armor descriptions box flips (census 571 -> 572); NEXT - R650: the Chapter 6 Proficiencies arc begins - the weapon proficiencies and weapon specialization prose (capture pp. 100-101), prefix dhk (verify free), audit \"R650 OA proficiencies audit\", include after rules/oaarmordesc.h - the Chapter 6 boxes at HEAD name the exact labels"
+ },
+ "consts": [
+  {
+   "name": "dhjArmorGroupCount",
+   "value": 2,
+   "comment": "all armor falls into one of two general groups - suits and pieces (capture p. 94 of the print pass; compressed p. 49)"
+  },
+  {
+   "name": "dhjCommonSuitCount",
+   "value": 6,
+   "comment": "the most common suits of armor - padded, leather, studded leather, leather scale, chain mail and brigandine, the names riding this comment (capture p. 94 of the print pass; compressed p. 49)"
+  },
+  {
+   "name": "dhjRareSuitCount",
+   "value": 4,
+   "comment": "rare suits - metal scale mail, splint mail, banded mail and laced armor, the names riding this comment (capture p. 94 of the print pass; compressed p. 49)"
+  },
+  {
+   "name": "dhjUnknownSuitCount",
+   "value": 3,
+   "comment": "virtually unknown suits - plate mail, field plate and full plate armor, the names riding this comment (capture p. 94 of the print pass; compressed p. 49)"
+  },
+  {
+   "name": "dhjCorseletAc",
+   "value": 7,
+   "comment": "a corselet of laced armor, covering the chest, back and shoulders, is armor class 7 - equal to studded leather armor, the prose cross-check of the R643 T52 row (capture p. 94 of the print pass; compressed p. 49)"
+  },
+  {
+   "name": "dhjKoteOnlyAc",
+   "value": 9,
+   "comment": "a character wearing only kote has armor class 9 - the printed piece example, 10 minus the kote step of the R644 T53 grid (capture p. 95 of the print pass; compressed pp. 49-50)"
+  },
+  {
+   "name": "dhjKoteDomaruHaidateAc",
+   "value": 6,
+   "comment": "a character wearing kote, do-maru and haidate has armor class 6 - the second printed piece example, 10 minus the 1, 2 and 1 steps of the R644 T53 grid (capture p. 95 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjSodeSideFeet",
+   "value": 1,
+   "comment": "the sode is normally about one foot square, square or rectangular in shape (capture p. 97 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjHoroMissileAc",
+   "value": 1,
+   "comment": "the horo improves the wearer's armor class by 1 against missile weapons shot at the back of the character only (capture pp. 96-97 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjKabutoHeadAc",
+   "value": 3,
+   "comment": "the kabuto gives armor class 3 to the head of the wearer (capture p. 97 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjOyoroiPieceCount",
+   "value": 6,
+   "comment": "the o-yoroi is a complete suit of laced armor including kote, do-maru, sode, haidate, kabuto and sune-ate - six pieces, the names riding this comment (capture p. 97 of the print pass; compressed p. 50; the print sods and suns-ate reads are OCR slips)"
+  },
+  {
+   "name": "dhjOyoroiSmallCount",
+   "value": 5,
+   "comment": "the o-yoroi also includes the smaller specialized pieces - the mempo face mask, nodawa neck guard, wakibiki armpit guards, and the sendan-no-ita and hato-wo-no-ita front-of-armpit guards - five pieces, the names riding this comment (capture p. 97 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjScaleTypeCount",
+   "value": 2,
+   "comment": "two types of scale armor are in common use - leather scale and metal scale, the names riding this comment (capture p. 97 of the print pass; compressed p. 50)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dhjClothLeatherCommon",
+   "value": true,
+   "comment": "the most common types of armor in Kara-Tur are of cloth and leather - the foot soldier's quilted cotton or padded leathers, the higher ranks' hardened leather scales or brigandine (capture p. 94 of the print pass; compressed p. 49)"
+  },
+  {
+   "name": "dhjFieldPlateSeldom",
+   "value": true,
+   "comment": "thick metal armor such as field plate is seldom seen in Kara-Tur - the armorers make great use of leather, brigandine, mail and lamellar constructions (capture p. 93 of the print pass; compressed p. 49)"
+  },
+  {
+   "name": "dhjPiecesAreLaced",
+   "value": true,
+   "comment": "pieces of armor are made of laced armor and come in a variety of shapes and colors, each piece providing some amount of protection to the wearer (capture p. 94 of the print pass; compressed p. 49)"
+  },
+  {
+   "name": "dhjSuitSetsAc",
+   "value": true,
+   "comment": "when a character is wearing a suit of armor, the type of armor determines the armor class - the Table 52 grid pinned in R643 (capture p. 94 of the print pass; compressed p. 49)"
+  },
+  {
+   "name": "dhjAveragedAc",
+   "value": true,
+   "comment": "the armor class rating averages the exposed and unexposed areas and the referee uses the averaged values - the specific armor worn on an area counts only in rare cases: striking from behind, stepping on a caltrop, striking at the only exposed part (capture pp. 94-95 of the print pass; compressed p. 49)"
+  },
+  {
+   "name": "dhjSpecialNoGeneral",
+   "value": true,
+   "comment": "a full suit of laced armor includes a number of smaller pieces whose uses are so specialized they afford no general protection when worn alone (capture p. 95 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjOyoroiBelowPieces",
+   "value": true,
+   "comment": "a full suit of laced armor - the o-yoroi - has a lower armor class than the individual pieces combined (capture p. 95 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjOnePiecePerArea",
+   "value": true,
+   "comment": "each piece of armor covers a particular area and only one piece can be worn on any area - kote, haidate, haramaki-do and sode can be worn together, but not a do-maru and a haramaki-do, since each covers the same area (capture p. 95 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjPiecesNotWithSuits",
+   "value": true,
+   "comment": "armor pieces, since they are carefully fitted and fastened, cannot be worn with suits of armor (capture p. 95 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjBucklerSameHand",
+   "value": true,
+   "comment": "the buckler is a small shield strapped to the arm close to the fist, worn while still using a weapon in the same hand, and counts as a small shield for armor purposes - commonly used by the horse nomads of Kara-Tur (capture p. 96 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjChainConcealable",
+   "value": true,
+   "comment": "chain mail worn under clothing is difficult to detect - it is used to make kote and its suits are worn by ninja and nobles both (capture p. 96 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjDomaruLamellar",
+   "value": true,
+   "comment": "the do-maru is a corselet covering the stomach, chest, shoulders and back, normally made of lamellar - laced - armor, its small tassels overlapping the haidate (capture p. 96 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjKoteUnderRobes",
+   "value": true,
+   "comment": "the kote - armored sleeves from the shoulders to the backs of the hands - can be worn inconspicuously under robes and in combinations with other pieces of armor (capture p. 97 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjHaraateGawaLeather",
+   "value": true,
+   "comment": "the hara-ate-gawa is a simple leather corselet for the stomach, chest and back, cheap to make and normally worn by common foot soldiers (capture p. 96 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjHaraateRearAc10",
+   "value": true,
+   "comment": "the hara-ate protects the front of the body - it is open in the back and attacks from the rear are treated as armor class 10, the prose mirror of the R644 T53 star pair (capture p. 96 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjHaramakiConcealable",
+   "value": true,
+   "comment": "the haramaki - the belly protector of silk and chain mail or small metal plates - is not bulky and can be easily worn under clothing (capture p. 96 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjHaramakidoExposed",
+   "value": true,
+   "comment": "the haramaki-do is similar in construction and design to the haramaki, but it cannot be concealed under clothing (capture p. 96 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjHideBetterThanLeather",
+   "value": true,
+   "comment": "hide armor is made of the hide of particularly thick-skinned creatures - elephant and rhinoceros hide the most common - giving better protection than normal leather (capture p. 96 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjHoroRidingOnly",
+   "value": true,
+   "comment": "the cloth horo is effective only when the wearer is riding - the wind balloons it out behind the rider - unless a wicker skeleton is worn underneath, allowing it to work at all times (capture p. 96 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjHoroNoOtherUse",
+   "value": true,
+   "comment": "the horo has no other protective use beyond the back-missile bonus - usually brightly colored and decorated with the crest of the owner (capture p. 97 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjSodeNeedsCorselet",
+   "value": true,
+   "comment": "the sode is fastened by cords to the other pieces of armor, particularly the corselet - it can never be worn without the do-maru, hara-ate, haramaki or haramaki-do (capture p. 97 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjOyoroiMatchedBetter",
+   "value": true,
+   "comment": "the o-yoroi is made as a matched set, the colors and patterns complimenting each other - the improved fit gives a better armor class than a collection of unmatched pieces; expensive and highly decorative, it is worn for ceremonial occasions or major battles, seldom in everyday situations (capture p. 97 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjScaleLeatherCommoner",
+   "value": true,
+   "comment": "leather scale is worn by common soldiers and horsemen; metal scale is made the same way but is far less common, most often worn by wealthier or more important warriors (capture p. 97 of the print pass; compressed p. 50)"
+  },
+  {
+   "name": "dhjShieldsLighter",
+   "value": true,
+   "comment": "shields vary by land - in some lands never used at all - and nearly all are of lighter construction than those of other AD&D game lands; the materials - woven bamboo and wicker, stretched and hardened leather, coconut fiber or hemp - ride the banner, and metal-edged wooden shields are extremely rare (capture p. 97 of the print pass; compressed pp. 50-51)"
+  },
+  {
+   "name": "dhjSuneateCrippling",
+   "value": true,
+   "comment": "the sune-ate is a shin guard from the top of the ankle to the bottom of the knee, normally splints of metal on leather padding, protecting against crippling blows to the lower leg (capture p. 97 of the print pass; compressed p. 51)"
+  },
+  {
+   "name": "dhjPieceMovementDrop",
+   "value": true,
+   "comment": "when several pieces of armor are worn, the movement rate drops to the next lower category (capture p. 97 of the print pass; compressed p. 51)"
+  },
+  {
+   "name": "dhjMovementFloorOyoroi",
+   "value": true,
+   "comment": "the movement rate of several worn pieces never falls below that of the o-yoroi - the floor rule (capture p. 97 of the print pass; compressed p. 51)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the two-group doctrine pin - suits and pieces",
+   "expr": "m['dhjArmorGroupCount']() != 2"
+  },
+  {
+   "note": "the suit-list pins - the common, rare and virtually-unknown counts",
+   "expr": "m['dhjCommonSuitCount']() != 6 or m['dhjRareSuitCount']() != 4 or m['dhjUnknownSuitCount']() != 3"
+  },
+  {
+   "note": "the intro doctrine pins - cloth and leather common, field plate seldom, pieces are laced",
+   "expr": "m['dhjClothLeatherCommon']() != 1 or m['dhjFieldPlateSeldom']() != 1 or m['dhjPiecesAreLaced']() != 1"
+  },
+  {
+   "note": "the suit-sets-AC and averaging doctrine pins",
+   "expr": "m['dhjSuitSetsAc']() != 1 or m['dhjAveragedAc']() != 1"
+  },
+  {
+   "note": "the corselet AC pin - AC 7, equal to studded leather",
+   "expr": "m['dhjCorseletAc']() != 7"
+  },
+  {
+   "note": "the printed piece-example pins - kote only AC 9, kote-do-maru-haidate AC 6 (the T53 cross-checks)",
+   "expr": "m['dhjKoteOnlyAc']() != 9 or m['dhjKoteDomaruHaidateAc']() != 6"
+  },
+  {
+   "note": "the piece-combination rule pins - the specialized small pieces, the o-yoroi floor rule, one per area, not with suits",
+   "expr": "m['dhjSpecialNoGeneral']() != 1 or m['dhjOyoroiBelowPieces']() != 1 or m['dhjOnePiecePerArea']() != 1 or m['dhjPiecesNotWithSuits']() != 1"
+  },
+  {
+   "note": "the sode pins - one foot square, needs a corselet",
+   "expr": "m['dhjSodeSideFeet']() != 1 or m['dhjSodeNeedsCorselet']() != 1"
+  },
+  {
+   "note": "the concealability pins - chain under clothing, kote under robes, haramaki concealable, haramaki-do not",
+   "expr": "m['dhjChainConcealable']() != 1 or m['dhjKoteUnderRobes']() != 1 or m['dhjHaramakiConcealable']() != 1 or m['dhjHaramakidoExposed']() != 1"
+  },
+  {
+   "note": "the hara-ate pair pins - the leather corselet and the rear-attacks-AC-10 rule",
+   "expr": "m['dhjHaraateGawaLeather']() != 1 or m['dhjHaraateRearAc10']() != 1"
+  },
+  {
+   "note": "the horo pins - the back-missile bonus, riding only, no other use",
+   "expr": "m['dhjHoroMissileAc']() != 1 or m['dhjHoroRidingOnly']() != 1 or m['dhjHoroNoOtherUse']() != 1"
+  },
+  {
+   "note": "the kabuto head-AC pin - AC 3",
+   "expr": "m['dhjKabutoHeadAc']() != 3"
+  },
+  {
+   "note": "the o-yoroi pins - six pieces, five smaller pieces, the matched-set rule",
+   "expr": "m['dhjOyoroiPieceCount']() != 6 or m['dhjOyoroiSmallCount']() != 5 or m['dhjOyoroiMatchedBetter']() != 1"
+  },
+  {
+   "note": "the entry pins - buckler same hand, do-maru lamellar, hide better than leather",
+   "expr": "m['dhjBucklerSameHand']() != 1 or m['dhjDomaruLamellar']() != 1 or m['dhjHideBetterThanLeather']() != 1"
+  },
+  {
+   "note": "the scale pins - two types, leather the commoner",
+   "expr": "m['dhjScaleTypeCount']() != 2 or m['dhjScaleLeatherCommoner']() != 1"
+  },
+  {
+   "note": "the shields and sune-ate pins - lighter construction, crippling-blow protection",
+   "expr": "m['dhjShieldsLighter']() != 1 or m['dhjSuneateCrippling']() != 1"
+  },
+  {
+   "note": "the movement pins - the category drop and the o-yoroi floor",
+   "expr": "m['dhjPieceMovementDrop']() != 1 or m['dhjMovementFloorOyoroi']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the suits-and-pieces doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dhjArmorGroupCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhjCommonSuitCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhjRareSuitCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhjUnknownSuitCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjClothLeatherCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjFieldPlateSeldom"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjPiecesAreLaced"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjSuitSetsAc"
+   }
+  ],
+  "the piece-combination pins": [
+   {
+    "kind": "const",
+    "name": "dhjCorseletAc"
+   },
+   {
+    "kind": "const",
+    "name": "dhjKoteOnlyAc"
+   },
+   {
+    "kind": "const",
+    "name": "dhjKoteDomaruHaidateAc"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjAveragedAc"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjSpecialNoGeneral"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjOyoroiBelowPieces"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjOnePiecePerArea"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjPiecesNotWithSuits"
+   }
+  ],
+  "the armor description entry pins": [
+   {
+    "kind": "bool",
+    "name": "dhjBucklerSameHand"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjChainConcealable"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjDomaruLamellar"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjKoteUnderRobes"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjHaraateGawaLeather"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjHaraateRearAc10"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjHaramakiConcealable"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjHaramakidoExposed"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjHideBetterThanLeather"
+   },
+   {
+    "kind": "const",
+    "name": "dhjHoroMissileAc"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjHoroRidingOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjHoroNoOtherUse"
+   },
+   {
+    "kind": "const",
+    "name": "dhjKabutoHeadAc"
+   },
+   {
+    "kind": "const",
+    "name": "dhjSodeSideFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjSodeNeedsCorselet"
+   },
+   {
+    "kind": "const",
+    "name": "dhjOyoroiPieceCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhjOyoroiSmallCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjOyoroiMatchedBetter"
+   },
+   {
+    "kind": "const",
+    "name": "dhjScaleTypeCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjScaleLeatherCommoner"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjShieldsLighter"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjSuneateCrippling"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjPieceMovementDrop"
+   },
+   {
+    "kind": "bool",
+    "name": "dhjMovementFloorOyoroi"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the armor prose and the armor descriptions box closes",
+   "from": "  - [ ] Armor prose and the armor descriptions\n    (capture pp. 93-98)",
+   "to": "  - [x] Armor prose and the armor descriptions\n    (capture pp. 93-98) - R649: the dhj armor prose and description pins - the\n    suits-and-pieces doctrine (the two-group split, the common, rare and\n    virtually-unknown suit lists, the corselet and kote-combination AC\n    examples, the one-piece-per-area, no-pieces-with-suits and\n    sode-needs-a-corselet rules), the averaging doctrine, and the description\n    entries as consts and bools - the horo back-missile bonus, the kabuto head\n    AC, the o-yoroi piece counts, the concealability split and the\n    movement-category drop with the o-yoroi floor; the OCR slips settle as\n    hanburi, hara-ate and sune-ate"
+  }
+ ],
+ "gap_census": {
+  "closed": 100,
+  "open": 135
+ },
+ "include_comment": "the OA armor descriptions pins",
+ "include_after": "#include \"rules/oabardprose.h\"  // R648: the OA barding prose pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R648 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R648 LANDED 2026-10-19: commit",
+  "  22d52ad542a3d89aae5d75c3d07eff42ac5a383b",
+  "  (census 570 -> 571, pushed",
+  "  9a2f19d..22d52ad), BARDING PROSE - the",
+  "  barding AC factors and weight doctrine,",
+  "  capture pp. 98-99: rules/oabardprose.h,",
+  "  prefix dhi (verified free), 13 inlines",
+  "  (8 consts, 5 bools, no table): the",
+  "  barding AC-factor ladder (leather or",
+  "  padded 1 factor 160#, metal scale 2",
+  "  factors 250#, chain 3 factors 350#),",
+  "  the half-barding doctrine (weighs half",
+  "  - the divisor 2 - frontal protection",
+  "  only, the rear no bonus, more common",
+  "  than full), the plate-never-used rule,",
+  "  the must-carry-weight rule",
+  "  cross-referencing the R646 Table 55",
+  "  grid. The prose cross-checked",
+  "  paragraph-by-paragraph between the two",
+  "  passes - every printed number agrees,",
+  "  zero contested cells. First publish",
+  "  clean - no repairs. rverify GREEN at",
+  "  9a2f19d, 13 mutants, 0 missed;",
+  "  preflight GREEN (571 audit census,",
+  "  BUILD 0 warnings). Gap census 98/137",
+  "  -> 99/136. Spec 9,786 bytes md5",
+  "  8e7445d7a1cfa33b955c721e13e3f211",
+  "  (authored-plus-newline md5",
+  "  1bd30d7fe9600f84674e5dac6928db4c - the",
+  "  value the ritual gated and matched;",
+  "  canvas md5",
+  "  1af05965804d59c0ccb470e60a9eeba3).",
+  "  NEXT - R649: the armor prose and the",
+  "  armor descriptions box (capture",
+  "  pp. 93-98), the suits-and-pieces",
+  "  doctrine and the armor description",
+  "  entries, prefix dhj (verify free),",
+  "  audit \"R649 OA armor descriptions",
+  "  audit\", include after",
+  "  rules/oabardprose.h - the last",
+  "  Chapter 5 box."
+ ]
+}

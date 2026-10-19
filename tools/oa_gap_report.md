@@ -861,8 +861,16 @@ description riding the same round.
     eleven-column AC 0-10 to-hit adjustment ladder with the fire rates and
     range bands riding the column comments, the d and h bitmask letters, the
     star set and the six contested cells settled per the print capture
-  - [ ] Armor prose and the armor descriptions
-    (capture pp. 93-98)
+  - [x] Armor prose and the armor descriptions
+    (capture pp. 93-98) - R649: the dhj armor prose and description pins - the
+    suits-and-pieces doctrine (the two-group split, the common, rare and
+    virtually-unknown suit lists, the corselet and kote-combination AC
+    examples, the one-piece-per-area, no-pieces-with-suits and
+    sode-needs-a-corselet rules), the averaging doctrine, and the description
+    entries as consts and bools - the horo back-missile bonus, the kabuto head
+    AC, the o-yoroi piece counts, the concealability split and the
+    movement-category drop with the o-yoroi floor; the OCR slips settle as
+    hanburi, hara-ate and sune-ate
   - [x] Table 52: Armor Class Table (capture p. 94) - R643: the dhd T52 grid -
   eight suit rows pinned as the armor class rating ladder, 10 through 3, with
   the armor type names riding the column comment and the branded-mail OCR slip

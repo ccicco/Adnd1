@@ -13421,6 +13421,47 @@ when both halves land.
   audit", include after rules/oagrenade.h -
   the armor descriptions box stays open
   beside it.
+- R648 LANDED 2026-10-19: commit
+  22d52ad542a3d89aae5d75c3d07eff42ac5a383b
+  (census 570 -> 571, pushed
+  9a2f19d..22d52ad), BARDING PROSE - the
+  barding AC factors and weight doctrine,
+  capture pp. 98-99: rules/oabardprose.h,
+  prefix dhi (verified free), 13 inlines
+  (8 consts, 5 bools, no table): the
+  barding AC-factor ladder (leather or
+  padded 1 factor 160#, metal scale 2
+  factors 250#, chain 3 factors 350#),
+  the half-barding doctrine (weighs half
+  - the divisor 2 - frontal protection
+  only, the rear no bonus, more common
+  than full), the plate-never-used rule,
+  the must-carry-weight rule
+  cross-referencing the R646 Table 55
+  grid. The prose cross-checked
+  paragraph-by-paragraph between the two
+  passes - every printed number agrees,
+  zero contested cells. First publish
+  clean - no repairs. rverify GREEN at
+  9a2f19d, 13 mutants, 0 missed;
+  preflight GREEN (571 audit census,
+  BUILD 0 warnings). Gap census 98/137
+  -> 99/136. Spec 9,786 bytes md5
+  8e7445d7a1cfa33b955c721e13e3f211
+  (authored-plus-newline md5
+  1bd30d7fe9600f84674e5dac6928db4c - the
+  value the ritual gated and matched;
+  canvas md5
+  1af05965804d59c0ccb470e60a9eeba3).
+  NEXT - R649: the armor prose and the
+  armor descriptions box (capture
+  pp. 93-98), the suits-and-pieces
+  doctrine and the armor description
+  entries, prefix dhj (verify free),
+  audit "R649 OA armor descriptions
+  audit", include after
+  rules/oabardprose.h - the last
+  Chapter 5 box.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
