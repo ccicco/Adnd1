@@ -13767,6 +13767,40 @@ when both halves land.
   capture p. 112, the full spell list by level, prefix
   dhs (verify free), audit "R658 OA shukenja spells
   audit", include after rules/oacourtprof.h
+- R658 LANDED 2026-10-19: commit 15eda016e1bd92154ee09d20cd55b907829bf4d7
+  (census 580 -> 581, pushed 88168f0..15eda01), TABLE 62
+  SHUKENJA SPELLS - the spell list by level with the
+  sohei and reversible markers, capture p. 112, plus
+  the Chapter 7 parent open - the first parent-open
+  flip since R650: rules/oashkspells.h, prefix dhs
+  (verified free), TWO gap flips this round (parent
+  2-line top-level label, no checkbox indent, 2-space
+  continuation; child 2-line label), 10 consts, 24
+  inlines (grid tag T62Data, 20 rows x 14 cols - 7
+  sohei + 7 reversible level columns, sentinel -99
+  past the twelve-spell levels 5-7), gap census
+  109/126 -> 111/124: the 116 shukenja spells by level
+  (20, 20, 20, 20, 12, 12, 12) with the sohei-usable
+  markers (26 spells, cross-checked cell-by-cell
+  between the passes, zero contested reads; print p.
+  112 vs compressed pp. 57-58) and the reversible
+  markers (33 spells, print-only - the compressed
+  renders no italics; the compressed name garbles
+  Purity Food and Drink, Enthral, Smile and the 2d/3d
+  Level headers all settle per print). One authoring
+  repair: an example pin read L7Rev(11) != -99 where
+  index 11 is a real level-7 cell; corrected to
+  (11) != 0 and (12) != -99. rverify GREEN at
+  88168f0, 290 mutants, 0 missed; preflight GREEN
+  (581 audit census, BUILD 0 warnings). Spec 21,816
+  bytes md5 f77d870c892522d91e38d7365e4ac765
+  (authored-plus-newline md5
+  d7e28fe187ab74569202c8aa40dcca9f - the value the
+  ritual gated and matched; canvas md5
+  44e99ad7644eed23305c7e5467ea8547). NEXT - R659:
+  First Level Spells (capture pp. 112-119), prefix dht
+  (verify free), audit "R659 OA first level spells
+  audit", include after rules/oashkspells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

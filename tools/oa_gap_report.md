@@ -990,7 +990,15 @@ description riding the same round.
     reads) and the reversible markers (33 spells, print-only - the compressed
     renders no italics); the names ride the column comments, the spell
     descriptions close in their own rounds
-  - [ ] First Level Spells (capture pp. 112-119)
+  - [x] First Level Spells (capture pp. 112-119) -
+    R659: the dht L1 stat grid - the 20 first level
+    spells with the school, component, casting time,
+    saving throw, reversible and sohei codes (the sohei
+    and reversible marks matching the R658 T62 grid;
+    the stat blocks cross-checked spell by spell between
+    the passes); the names ride the column comments, the
+    prose descriptions and the Table 63 divination results
+    close in their own rounds
   - [ ] Second Level Spells (capture pp. 119-126)
   - [ ] Third Level Spells (capture pp. 126-132)
   - [ ] Fourth Level Spells (capture pp. 132-140)
