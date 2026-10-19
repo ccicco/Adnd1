@@ -1,0 +1,631 @@
+{
+ "round": 630,
+ "title": "THE FAMILY STRUCTURE prose - the additional family structures: the marriages, the adoptions, the polygamy, the interrelated characters, the deaths ladder",
+ "prefix": "dgq",
+ "header_file": "rules/oafamstr.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 552,
+ "inline_count": 37,
+ "audit_label": "R630 OA family structures audit",
+ "audit_comment": "OA round seventeen (capture pp. 62-64): the family structure and the additional structures - the marriages, adoptions, polygamy, interrelated characters and the deaths ladder",
+ "banner": {
+  "title": "FAMILY STRUCTURE AND ADDITIONAL FAMILY STRUCTURES, printed capture pp. 62-64 - the OA family structures round",
+  "provenance": "pinned from the 2018 print capture alone for this range (the settling authority per the R629 ruling): the first Mistral-OCR capture session is no longer available above p. 33, so the cross-capture agreement check is impossible for pp. 62-64. No tables this round, so no contested cells. Cites are the capture pp. 62-64 range (the per-fact printed pages cannot be isolated without the first capture). OCR normalization: splinterhood reads as spinsterhood; the deaths bad-feelings sentence appears twice in the 2018 print (the second occurrence stands as printed); the Master Family Chart prose (capture pp. 64-65) is deliberately left for the next round",
+  "sentinel": "the gap census after this round: 68 closed, 167 open - the Family Structure + Additional Family Structures box flips (census 552 -> 553); NEXT - R631: the Master Family Chart and Ancestry prose, capture pp. 64-65, Table 39 (Ancestry), prefix dgr (verify free), audit \"R631 OA ancestry audit\", include after rules/oafamstr.h"
+ },
+ "consts": [
+  {
+   "name": "dgqChildrenDiceSides",
+   "value": 8,
+   "comment": "Family structure prose (capture pp. 62-64): the children per space roll 1d8"
+  },
+  {
+   "name": "dgqChildrenDiceMod",
+   "value": -2,
+   "comment": "Family structure prose (capture pp. 62-64): the minus-2 on the children roll - negatives and zero mean no offspring"
+  },
+  {
+   "name": "dgqMarriageDiceSides",
+   "value": 6,
+   "comment": "Marriages prose (capture pp. 62-64): the marriage check die 1d6"
+  },
+  {
+   "name": "dgqMarriageRollMax",
+   "value": 5,
+   "comment": "Marriages prose (capture pp. 62-64): a female member marries on 1-5 on 1d6"
+  },
+  {
+   "name": "dgqMarriageBonusPct",
+   "value": 10,
+   "comment": "Marriages prose (capture pp. 62-64): the +10 percent reaction bonus from marriage-related NPCs"
+  },
+  {
+   "name": "dgqAdoptChancePct",
+   "value": 5,
+   "comment": "Adoptions prose (capture pp. 62-64): the 1-in-20 chance that any person entered the clan by adoption"
+  },
+  {
+   "name": "dgqAdoptDiceSides",
+   "value": 6,
+   "comment": "Adoptions prose (capture pp. 62-64): the orphan check die 1d6"
+  },
+  {
+   "name": "dgqAdoptOrphanMax",
+   "value": 2,
+   "comment": "Adoptions prose (capture pp. 62-64): an adopted member is an orphan on 1-2 on 1d6"
+  },
+  {
+   "name": "dgqAdoptBonusPct",
+   "value": 10,
+   "comment": "Adoptions prose (capture pp. 62-64): the +10 percent reaction bonus with the adopted clan"
+  },
+  {
+   "name": "dgqDeathCheckPerYear",
+   "value": 1,
+   "comment": "Deaths prose (capture pp. 62-64): the fate check once per game year"
+  },
+  {
+   "name": "dgqDeathHeadPct",
+   "value": 10,
+   "comment": "Deaths prose (capture pp. 62-64): the Head of Family row death chance, 10 percent"
+  },
+  {
+   "name": "dgqDeathFatherPct",
+   "value": 7,
+   "comment": "Deaths prose (capture pp. 62-64): the Father row death chance, 7 percent"
+  },
+  {
+   "name": "dgqDeathSiblingPct",
+   "value": 5,
+   "comment": "Deaths prose (capture pp. 62-64): the Siblings row death chance, 5 percent"
+  },
+  {
+   "name": "dgqDeathFirstbornPct",
+   "value": 75,
+   "comment": "Deaths prose (capture pp. 62-64): the possessions pass to the firstborn son 75 percent of the time"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgqChartDirectBranchOnly",
+   "value": true,
+   "comment": "Family structure prose (capture pp. 62-64): the chart is only needed for the branch leading to the player character"
+  },
+  {
+   "name": "dgqLineageDieClosestNotLess",
+   "value": true,
+   "comment": "Family structure prose (capture pp. 62-64): the lineage die most closely matches the spaces without being less - five spaces means 1d6"
+  },
+  {
+   "name": "dgqLineageRerollOverflow",
+   "value": true,
+   "comment": "Family structure prose (capture pp. 62-64): a lineage die roll greater than the spaces means roll again"
+  },
+  {
+   "name": "dgqComplicationsOptional",
+   "value": true,
+   "comment": "Additional structures prose (capture pp. 62-64): the complications are optional and fleshed out gradually"
+  },
+  {
+   "name": "dgqPcFemalesNeverRequired",
+   "value": true,
+   "comment": "Marriages prose (capture pp. 62-64): player character females are never required to be married"
+  },
+  {
+   "name": "dgqMarriageUsuallyOutsideClan",
+   "value": true,
+   "comment": "Marriages prose (capture pp. 62-64): the marriages are usually outside the family clan"
+  },
+  {
+   "name": "dgqMarriageEqualRank",
+   "value": true,
+   "comment": "Marriages prose (capture pp. 62-64): the marriages are usually between families of approximately equal rank"
+  },
+  {
+   "name": "dgqAdoptOrphansRelatedOnlyClan",
+   "value": true,
+   "comment": "Adoptions prose (capture pp. 62-64): orphans are related only to the members of their adoptive family clan"
+  },
+  {
+   "name": "dgqAdoptTwoClansWhenAlive",
+   "value": true,
+   "comment": "Adoptions prose (capture pp. 62-64): an adoption with the hereditary family alive leaves two family clans"
+  },
+  {
+   "name": "dgqAdoptOftenPolitical",
+   "value": true,
+   "comment": "Adoptions prose (capture pp. 62-64): the adoptions often cross birth ranks and are politically motivated"
+  },
+  {
+   "name": "dgqPolygamyLegal",
+   "value": true,
+   "comment": "Polygamy prose (capture pp. 62-64): polygamy is legal and not unknown in the OA societies"
+  },
+  {
+   "name": "dgqPolygamyMostMonogamous",
+   "value": true,
+   "comment": "Polygamy prose (capture pp. 62-64): most marriages are monogamous"
+  },
+  {
+   "name": "dgqPolygamyGrandfatherFatherOnly",
+   "value": true,
+   "comment": "Polygamy prose (capture pp. 62-64): only a polygamous grandfather or father has any effect"
+  },
+  {
+   "name": "dgqFirstWifeChildrenInherit",
+   "value": true,
+   "comment": "Polygamy prose (capture pp. 62-64): the first wife is most favored - her children are eligible for direct inheritance"
+  },
+  {
+   "name": "dgqInheritanceFirstSonFirstWife",
+   "value": true,
+   "comment": "Polygamy prose (capture pp. 62-64): as a rule the inheritance passes to the first son of the first wife"
+  },
+  {
+   "name": "dgqFurtherGenerationsNoModifier",
+   "value": true,
+   "comment": "Further generations prose (capture pp. 62-64): the ancestors beyond three generations give no reaction modifiers"
+  },
+  {
+   "name": "dgqInterrelatedDmApproval",
+   "value": true,
+   "comment": "Interrelated prose (capture pp. 62-64): the interrelated player characters need the DM agreement"
+  },
+  {
+   "name": "dgqInterrelatedSameRace",
+   "value": true,
+   "comment": "Interrelated prose (capture pp. 62-64): the interrelated characters must be of the same race - barbarians only with barbarians, samurai only with samurai"
+  },
+  {
+   "name": "dgqInterrelatedSameBirthRank",
+   "value": true,
+   "comment": "Interrelated prose (capture pp. 62-64): the interrelated characters share the birth rank and the Head of Family spaces"
+  },
+  {
+   "name": "dgqInterrelatedTwinsOnly",
+   "value": true,
+   "comment": "Interrelated prose (capture pp. 62-64): the same chart slot only for twins - and one must be older"
+  },
+  {
+   "name": "dgqInterrelatedSharedAncestry",
+   "value": true,
+   "comment": "Interrelated prose (capture pp. 62-64): one Ancestry roll set for both, the holdings and names identical"
+  },
+  {
+   "name": "dgqPcReentryFirstLevel",
+   "value": true,
+   "comment": "Deaths prose (capture pp. 62-64): a dead player character re-enters as a brother or sister, no property, normal birthright rolls, at 1st level"
+  },
+  {
+   "name": "dgqHeadTitleSuccession",
+   "value": true,
+   "comment": "Deaths prose (capture pp. 62-64): the head title passes to the next brother, else the eldest son"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the dgqChildrenDiceSides pin",
+   "expr": "m['dgqChildrenDiceSides']() != 8"
+  },
+  {
+   "note": "the dgqChildrenDiceMod pin",
+   "expr": "m['dgqChildrenDiceMod']() != -2"
+  },
+  {
+   "note": "the dgqMarriageDiceSides pin",
+   "expr": "m['dgqMarriageDiceSides']() != 6"
+  },
+  {
+   "note": "the dgqMarriageRollMax pin",
+   "expr": "m['dgqMarriageRollMax']() != 5"
+  },
+  {
+   "note": "the dgqMarriageBonusPct pin",
+   "expr": "m['dgqMarriageBonusPct']() != 10"
+  },
+  {
+   "note": "the dgqAdoptChancePct pin",
+   "expr": "m['dgqAdoptChancePct']() != 5"
+  },
+  {
+   "note": "the dgqAdoptDiceSides pin",
+   "expr": "m['dgqAdoptDiceSides']() != 6"
+  },
+  {
+   "note": "the dgqAdoptOrphanMax pin",
+   "expr": "m['dgqAdoptOrphanMax']() != 2"
+  },
+  {
+   "note": "the dgqAdoptBonusPct pin",
+   "expr": "m['dgqAdoptBonusPct']() != 10"
+  },
+  {
+   "note": "the dgqDeathCheckPerYear pin",
+   "expr": "m['dgqDeathCheckPerYear']() != 1"
+  },
+  {
+   "note": "the dgqDeathHeadPct pin",
+   "expr": "m['dgqDeathHeadPct']() != 10"
+  },
+  {
+   "note": "the dgqDeathFatherPct pin",
+   "expr": "m['dgqDeathFatherPct']() != 7"
+  },
+  {
+   "note": "the dgqDeathSiblingPct pin",
+   "expr": "m['dgqDeathSiblingPct']() != 5"
+  },
+  {
+   "note": "the dgqDeathFirstbornPct pin",
+   "expr": "m['dgqDeathFirstbornPct']() != 75"
+  },
+  {
+   "note": "the dgqChartDirectBranchOnly pin",
+   "expr": "m['dgqChartDirectBranchOnly']() != 1"
+  },
+  {
+   "note": "the dgqLineageDieClosestNotLess pin",
+   "expr": "m['dgqLineageDieClosestNotLess']() != 1"
+  },
+  {
+   "note": "the dgqLineageRerollOverflow pin",
+   "expr": "m['dgqLineageRerollOverflow']() != 1"
+  },
+  {
+   "note": "the dgqComplicationsOptional pin",
+   "expr": "m['dgqComplicationsOptional']() != 1"
+  },
+  {
+   "note": "the dgqPcFemalesNeverRequired pin",
+   "expr": "m['dgqPcFemalesNeverRequired']() != 1"
+  },
+  {
+   "note": "the dgqMarriageUsuallyOutsideClan pin",
+   "expr": "m['dgqMarriageUsuallyOutsideClan']() != 1"
+  },
+  {
+   "note": "the dgqMarriageEqualRank pin",
+   "expr": "m['dgqMarriageEqualRank']() != 1"
+  },
+  {
+   "note": "the dgqAdoptOrphansRelatedOnlyClan pin",
+   "expr": "m['dgqAdoptOrphansRelatedOnlyClan']() != 1"
+  },
+  {
+   "note": "the dgqAdoptTwoClansWhenAlive pin",
+   "expr": "m['dgqAdoptTwoClansWhenAlive']() != 1"
+  },
+  {
+   "note": "the dgqAdoptOftenPolitical pin",
+   "expr": "m['dgqAdoptOftenPolitical']() != 1"
+  },
+  {
+   "note": "the dgqPolygamyLegal pin",
+   "expr": "m['dgqPolygamyLegal']() != 1"
+  },
+  {
+   "note": "the dgqPolygamyMostMonogamous pin",
+   "expr": "m['dgqPolygamyMostMonogamous']() != 1"
+  },
+  {
+   "note": "the dgqPolygamyGrandfatherFatherOnly pin",
+   "expr": "m['dgqPolygamyGrandfatherFatherOnly']() != 1"
+  },
+  {
+   "note": "the dgqFirstWifeChildrenInherit pin",
+   "expr": "m['dgqFirstWifeChildrenInherit']() != 1"
+  },
+  {
+   "note": "the dgqInheritanceFirstSonFirstWife pin",
+   "expr": "m['dgqInheritanceFirstSonFirstWife']() != 1"
+  },
+  {
+   "note": "the dgqFurtherGenerationsNoModifier pin",
+   "expr": "m['dgqFurtherGenerationsNoModifier']() != 1"
+  },
+  {
+   "note": "the dgqInterrelatedDmApproval pin",
+   "expr": "m['dgqInterrelatedDmApproval']() != 1"
+  },
+  {
+   "note": "the dgqInterrelatedSameRace pin",
+   "expr": "m['dgqInterrelatedSameRace']() != 1"
+  },
+  {
+   "note": "the dgqInterrelatedSameBirthRank pin",
+   "expr": "m['dgqInterrelatedSameBirthRank']() != 1"
+  },
+  {
+   "note": "the dgqInterrelatedTwinsOnly pin",
+   "expr": "m['dgqInterrelatedTwinsOnly']() != 1"
+  },
+  {
+   "note": "the dgqInterrelatedSharedAncestry pin",
+   "expr": "m['dgqInterrelatedSharedAncestry']() != 1"
+  },
+  {
+   "note": "the dgqPcReentryFirstLevel pin",
+   "expr": "m['dgqPcReentryFirstLevel']() != 1"
+  },
+  {
+   "note": "the dgqHeadTitleSuccession pin",
+   "expr": "m['dgqHeadTitleSuccession']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the children doctrine - 1d8 minus 2, the negatives and zero mean no offspring (capture pp. 62-64)",
+   "expr": "m['dgqChildrenDiceSides']() != 8 or m['dgqChildrenDiceMod']() != -2 or m['dgqChildrenDiceSides']() + m['dgqChildrenDiceMod']() != 6"
+  },
+  {
+   "note": "the deaths ladder - 10, 7 and 5 percent by row (capture pp. 62-64)",
+   "expr": "m['dgqDeathHeadPct']() != 10 or m['dgqDeathFatherPct']() != 7 or m['dgqDeathSiblingPct']() != 5"
+  },
+  {
+   "note": "the death read - once per game year, the 75 percent firstborn pass (capture pp. 62-64)",
+   "expr": "m['dgqDeathCheckPerYear']() != 1 or m['dgqDeathFirstbornPct']() != 75"
+  },
+  {
+   "note": "the marriage read - 1-5 on 1d6 with the +10 bonus (capture pp. 62-64)",
+   "expr": "m['dgqMarriageDiceSides']() != 6 or m['dgqMarriageRollMax']() != 5 or m['dgqMarriageBonusPct']() != 10"
+  },
+  {
+   "note": "the adoption read - the 5 percent entry, the 1-2 orphan check, the +10 bonus (capture pp. 62-64)",
+   "expr": "m['dgqAdoptChancePct']() != 5 or m['dgqAdoptDiceSides']() != 6 or m['dgqAdoptOrphanMax']() != 2 or m['dgqAdoptBonusPct']() != 10"
+  }
+ ],
+ "header_sections": {
+  "the family chart doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dgqChildrenDiceSides"
+   },
+   {
+    "kind": "const",
+    "name": "dgqChildrenDiceMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqChartDirectBranchOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqLineageDieClosestNotLess"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqLineageRerollOverflow"
+   }
+  ],
+  "the marriage and adoption pins": [
+   {
+    "kind": "const",
+    "name": "dgqMarriageDiceSides"
+   },
+   {
+    "kind": "const",
+    "name": "dgqMarriageRollMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgqMarriageBonusPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgqAdoptChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "dgqAdoptDiceSides"
+   },
+   {
+    "kind": "const",
+    "name": "dgqAdoptOrphanMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgqAdoptBonusPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqComplicationsOptional"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqPcFemalesNeverRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqMarriageUsuallyOutsideClan"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqMarriageEqualRank"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqAdoptOrphansRelatedOnlyClan"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqAdoptTwoClansWhenAlive"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqAdoptOftenPolitical"
+   }
+  ],
+  "the polygamy pins": [
+   {
+    "kind": "bool",
+    "name": "dgqPolygamyLegal"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqPolygamyMostMonogamous"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqPolygamyGrandfatherFatherOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqFirstWifeChildrenInherit"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqInheritanceFirstSonFirstWife"
+   }
+  ],
+  "the generations and interrelation pins": [
+   {
+    "kind": "bool",
+    "name": "dgqFurtherGenerationsNoModifier"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqInterrelatedDmApproval"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqInterrelatedSameRace"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqInterrelatedSameBirthRank"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqInterrelatedTwinsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqInterrelatedSharedAncestry"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqPcReentryFirstLevel"
+   }
+  ],
+  "the deaths pins": [
+   {
+    "kind": "const",
+    "name": "dgqDeathCheckPerYear"
+   },
+   {
+    "kind": "const",
+    "name": "dgqDeathHeadPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgqDeathFatherPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgqDeathSiblingPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgqDeathFirstbornPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgqHeadTitleSuccession"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Family Structure + Additional Family Structures box closes",
+   "from": "  - [ ] Family Structure + Additional Family\n    Structures (capture pp. 62-64) - the family chart\n    rows, the honor-by-position doctrine",
+   "to": "  - [x] Family Structure + Additional Family\n    Structures (capture pp. 62-64) - the family chart\n    rows, the honor-by-position doctrine -\n    R630: the dgq family structures pins - the\n    1d8-minus-2 children per space with the\n    direct-branch-only charts and the lineage\n    die rules, the optional marriages (the 1-5\n    on 1d6 read, the +10 reaction bonus, the\n    equal-rank doctrine), the adoptions (the\n    5 percent entry chance, the 1-2 orphan\n    read, the two-clan doctrine), the polygamy\n    doctrine (the grandfather-or-father rule,\n    the first-wife inheritance), the further\n    generations with no reaction modifiers,\n    the interrelated player characters, the\n    deaths ladder (10/7/5 with the 75 percent\n    firstborn read and the head succession),\n    the player-character re-entry"
+  }
+ ],
+ "gap_census": {
+  "closed": 68,
+  "open": 167
+ },
+ "include_comment": "the OA family structures pins",
+ "include_after": "#include \"rules/oabirth.h\"  // R629: the OA families pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R629 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R629 LANDED 2026-10-19: commit",
+  "  681a99f54cf86a496ac25f9d008ffb438c7b4ba8",
+  "  (census 551 -> 552, pushed",
+  "  1b788fe..681a99f), THE CHAPTER 3",
+  "  opener - the family doctrine, the",
+  "  birth rank and the caste doctrine,",
+  "  capture pp. 60-62: rules/oabirth.h,",
+  "  prefix dgp (verified free), 35",
+  "  inlines (10 consts, 12 bools, 10",
+  "  table columns): the family doctrine",
+  "  (all relations, the ancestors-add-",
+  "  honor rule, the adopted-profession",
+  "  classes, the shukenja severance),",
+  "  the 2d10 birth roll, the NPC",
+  "  reaction read (the base-score",
+  "  difference as a plus-or-minus, the",
+  "  -25 Chang Lui example), the",
+  "  family-not-character honor column,",
+  "  the korobokuru samurai lowest-rank",
+  "  rule with the ninja automatic clan,",
+  "  the family structure doctrine (the",
+  "  three-row chart, the 1d8 spaces per",
+  "  row, the head at position 1, the 70",
+  "  percent male chance, the family-",
+  "  name-first rule), T37 9x3 with the",
+  "  samurai +10 and yakuza -10 birth",
+  "  modifiers and the 0/1 requirement",
+  "  codes, T38 17x7 with the rank codes",
+  "  0-16, the 5-90 reaction scores, the",
+  "  ancestry and birthright die codes",
+  "  and the 0-35 family honor. ONE",
+  "  CONTESTED CELL SETTLED AGAINST THE",
+  "  2018 PRINT BEFORE PINNING: the T38",
+  "  row-27 ancestry cell d100/8 (the",
+  "  first capture printed d100/9). THE",
+  "  R629a LESSON: the first run mispinned",
+  "  the T38 row count as 18 (17 printed",
+  "  rows) and the PREFLIGHT BATTERY",
+  "  caught bad 14 - the emitted C++",
+  "  audit loop bounds by the count const",
+  "  while the expected grid holds the",
+  "  data rows, so an inflated count walks",
+  "  the sentinel default past the grid",
+  "  edge; the Python mirror misses it",
+  "  (speclib bounds by len(data)). THE",
+  "  GUARD: every gen script now asserts",
+  "  each count const equals its grid",
+  "  row count. The run-2 abort (the",
+  "  missing T38 flip anchor) was run-1",
+  "  residue - a RED preflight leaves the",
+  "  applied edits in the tree, so a",
+  "  retry needs git checkout of the four",
+  "  touched files plus rm of the run-1",
+  "  header first. Battery 171 mutants, 0",
+  "  missed; full sha rverify GREEN;",
+  "  preflight GREEN after the fix. Gap",
+  "  census 64/171 -> 67/168. Spec 21,576",
+  "  bytes md5 5a80540e1f5a8ec91b678985cd",
+  "  9df92a (authored-plus-newline md5",
+  "  95bdb513386a5d3bf2c56c18e8d08dd3;",
+  "  canvas md5",
+  "  2a9640fb440f641fe3fb2284ba8f5b7e).",
+  "  NEXT - R630: the Family Structure",
+  "  and Additional Family Structures",
+  "  prose, capture pp. 62-64, the family",
+  "  chart rows with the honor-by-",
+  "  position doctrine, prefix dgq (verify",
+  "  free), audit \"R630 OA family",
+  "  structures audit\", include after",
+  "  rules/oabirth.h."
+ ]
+}

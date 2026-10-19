@@ -651,9 +651,24 @@ description riding the same round.
     first capture printed d100/9, the second
     d100/8) and settled against the 2018
     print as d100/8
-  - [ ] Family Structure + Additional Family
+  - [x] Family Structure + Additional Family
     Structures (capture pp. 62-64) - the family chart
-    rows, the honor-by-position doctrine
+    rows, the honor-by-position doctrine -
+    R630: the dgq family structures pins - the
+    1d8-minus-2 children per space with the
+    direct-branch-only charts and the lineage
+    die rules, the optional marriages (the 1-5
+    on 1d6 read, the +10 reaction bonus, the
+    equal-rank doctrine), the adoptions (the
+    5 percent entry chance, the 1-2 orphan
+    read, the two-clan doctrine), the polygamy
+    doctrine (the grandfather-or-father rule,
+    the first-wife inheritance), the further
+    generations with no reaction modifiers,
+    the interrelated player characters, the
+    deaths ladder (10/7/5 with the 75 percent
+    firstborn read and the head succession),
+    the player-character re-entry
   - [ ] Master Family Chart (capture pp. 64-65)
   - [ ] Ancestry prose (capture p. 65)
   - [ ] Table 39: Ancestry (capture p. 65)

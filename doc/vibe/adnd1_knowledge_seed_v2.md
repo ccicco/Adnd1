@@ -12334,6 +12334,76 @@ when both halves land.
   dgp (verify free), audit "R629 OA
   families audit", include after
   rules/oacharab.h.
+- R629 LANDED 2026-10-19: commit
+  681a99f54cf86a496ac25f9d008ffb438c7b4ba8
+  (census 551 -> 552, pushed
+  1b788fe..681a99f), THE CHAPTER 3
+  opener - the family doctrine, the
+  birth rank and the caste doctrine,
+  capture pp. 60-62: rules/oabirth.h,
+  prefix dgp (verified free), 35
+  inlines (10 consts, 12 bools, 10
+  table columns): the family doctrine
+  (all relations, the ancestors-add-
+  honor rule, the adopted-profession
+  classes, the shukenja severance),
+  the 2d10 birth roll, the NPC
+  reaction read (the base-score
+  difference as a plus-or-minus, the
+  -25 Chang Lui example), the
+  family-not-character honor column,
+  the korobokuru samurai lowest-rank
+  rule with the ninja automatic clan,
+  the family structure doctrine (the
+  three-row chart, the 1d8 spaces per
+  row, the head at position 1, the 70
+  percent male chance, the family-
+  name-first rule), T37 9x3 with the
+  samurai +10 and yakuza -10 birth
+  modifiers and the 0/1 requirement
+  codes, T38 17x7 with the rank codes
+  0-16, the 5-90 reaction scores, the
+  ancestry and birthright die codes
+  and the 0-35 family honor. ONE
+  CONTESTED CELL SETTLED AGAINST THE
+  2018 PRINT BEFORE PINNING: the T38
+  row-27 ancestry cell d100/8 (the
+  first capture printed d100/9). THE
+  R629a LESSON: the first run mispinned
+  the T38 row count as 18 (17 printed
+  rows) and the PREFLIGHT BATTERY
+  caught bad 14 - the emitted C++
+  audit loop bounds by the count const
+  while the expected grid holds the
+  data rows, so an inflated count walks
+  the sentinel default past the grid
+  edge; the Python mirror misses it
+  (speclib bounds by len(data)). THE
+  GUARD: every gen script now asserts
+  each count const equals its grid
+  row count. The run-2 abort (the
+  missing T38 flip anchor) was run-1
+  residue - a RED preflight leaves the
+  applied edits in the tree, so a
+  retry needs git checkout of the four
+  touched files plus rm of the run-1
+  header first. Battery 171 mutants, 0
+  missed; full sha rverify GREEN;
+  preflight GREEN after the fix. Gap
+  census 64/171 -> 67/168. Spec 21,576
+  bytes md5 5a80540e1f5a8ec91b678985cd
+  9df92a (authored-plus-newline md5
+  95bdb513386a5d3bf2c56c18e8d08dd3;
+  canvas md5
+  2a9640fb440f641fe3fb2284ba8f5b7e).
+  NEXT - R630: the Family Structure
+  and Additional Family Structures
+  prose, capture pp. 62-64, the family
+  chart rows with the honor-by-
+  position doctrine, prefix dgq (verify
+  free), audit "R630 OA family
+  structures audit", include after
+  rules/oabirth.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
