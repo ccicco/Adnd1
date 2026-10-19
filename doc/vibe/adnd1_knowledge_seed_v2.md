@@ -13058,6 +13058,70 @@ when both halves land.
   dhb (verify free), audit "R641 OA
   handheld audit", include after
   rules/oaweapon.h.
+- R641 LANDED 2026-10-19: commit
+  739dd573f81b4c839a535ceb98d901e63161de59
+  (census 563 -> 564, pushed
+  baac37c..739dd57), HAND HELD WEAPONS -
+  Table 50 (Hand Held Weapons, General
+  Data and To Hit Adjustments), capture
+  p. 80: rules/oahandheld.h, prefix dhb
+  (verified free), 17 inlines (2 consts,
+  14 table columns, 1 bool): the 49-row
+  hand-held grid - the speed factor
+  bounds (the lone numbers as lo=hi; the
+  chijiriki-spear, spear and trident 6-8
+  and the whip 5-8 ranges), the
+  eleven-column AC 0-10 to-hit adjustment
+  ladder, the footnote letters as the
+  R640 bitmask (the mace h 128, the
+  tetsu-bishi d 8), the chijiriki-chain
+  row with the -99 dashes and the
+  (see chain) bool, the length and
+  space-required cells riding the column
+  comments per the T48 doctrine. FIRST
+  CROSS-CAPTURE CHECK ABOVE P. 33 (the
+  compressed capture OCR'd full this
+  turn): the 49-row grid cross-checked
+  cell-by-cell between the two passes;
+  four cells contest, all settled per the
+  print capture - the katana AC-8,
+  sword-short AC-8 and tui-fa AC-9 cells
+  pin +1 (the compressed -1 dips
+  non-monotonically, the R622 doctrine
+  kills the class), the jo-stick AC-5
+  cell pins -1 (both readings
+  ladder-consistent, the settling print
+  read stands; flagged for the
+  physical-copy check). The footnote
+  texts are not re-pinned (the block
+  under T50 serves both tables, pinned in
+  R640; the d and h lines reprint under
+  the T50 tail). Two pre-publish repairs
+  the machinery caught: a man-catcher
+  transcription slip (the audit-mirror
+  sim fired on healthy data - the R391
+  gate working as designed), and a
+  gap-flip builder bug duplicating the
+  box's second label line (caught by
+  inspecting the patched gap report; a
+  label-uniqueness assert added to the
+  builder). rverify GREEN at baac37c,
+  689 mutants, 0 missed; preflight GREEN
+  (564 audit census, BUILD 0 warnings).
+  Gap census 91/144 -> 92/143. Spec
+  20,659 bytes md5
+  e1bb51477f0b32fc61491f288442251d
+  (authored-plus-newline md5
+  b16adccc9ff1ad0f869e3f00995ef411 -
+  the value the ritual gated and
+  matched; canvas md5
+  1cf7a2a4fe512c8584b26b2bf035e430).
+  NEXT - R642: Table 51 (Hurled Weapons
+  and Missiles), capture pp. 80-81, the
+  hurled-missile fire-rate and
+  AC-adjustment grid, prefix dhc (verify
+  free), audit "R642 OA hurled audit",
+  include after rules/oahandheld.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -856,8 +856,11 @@ description riding the same round.
     rows pinned as the speed factor bounds and the eleven-column AC 0-10
     adjustment ladder with the d and h bitmask letters, the chijiriki-chain
     dashes and the four contested cells settled per the print capture
-  - [ ] Table 51: Hurled Weapons and Missiles
-    (capture p. 87)
+  - [x] Table 51: Hurled Weapons and Missiles
+    (capture p. 87) - R642: the dhc T51 grid - twenty-eight rows pinned as the
+    eleven-column AC 0-10 to-hit adjustment ladder with the fire rates and
+    range bands riding the column comments, the d and h bitmask letters, the
+    star set and the six contested cells settled per the print capture
   - [ ] Armor prose and the armor descriptions
     (capture pp. 93-98)
   - [ ] Table 52: Armor Class Table (capture p. 94)

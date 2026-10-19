@@ -1,0 +1,735 @@
+{
+ "round": 642,
+ "title": "HURLED WEAPONS AND MISSILES - Table 51, the fire rates, ranges and to-hit adjustments",
+ "prefix": "dhc",
+ "header_file": "rules/oahurled.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 564,
+ "inline_count": 20,
+ "audit_label": "R642 OA hurled audit",
+ "audit_comment": "OA round twenty-nine (capture pp. 80-81): the Table 51 hurled weapons and missiles grid - the fire rates, ranges and the to-hit adjustments",
+ "banner": {
+  "title": "TABLE 51 (HURLED WEAPONS AND MISSILES), printed capture pp. 80-81 - the OA hurled round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the spread - the 28-row grid cross-checked cell-by-cell between the two passes; six cells contest in two clusters and all settle per the print capture: the bow-short AC-10 cell reads +3 in the print against the compressed +2 (both readings ladder-consistent, the settling print read stands, flagged for the physical-copy check) and the sling-staff-stone ladder reads -4, -4, -3, -3, -2, -2, -1 in the print against the compressed -6, -5, -4, -3, -2, -1, 0 (the compressed stone-one-worse-than-bullet pattern is design-plausible, but the settling print read stands, flagged for the physical-copy check). The four note lines the print pass OCR dropped entirely were recovered from the compressed capture and corroborated by the UA sibling doctrine (rules/uamissile.h - the aklys feet note, the medium -2 and long -5): the star feet note (range is 10 feet, not 10 yards), the double-star see-description note on the needle fire rate, the short-range basis note and the medium/long adjust pins. T51 pins as the 28-row hurled grid: the eleven-column AC 0-10 to-hit adjustment ladder, the footnote letters as the R640 bitmask (the grenade, hankyu and metsubishi d 8, the javelin h 128), the star set (metsubishi and needle), -99 sentinels for the grenade and metsubishi dashes; the two stacked two-line cells (the blow pipe dart AC 0-2, the needle AC 0-4) decode cleanly in both passes; the fire rates and the short/medium/long range bands are textual and ride the column comments per the T48 doctrine. The weapon descriptions prose box stays open; Table 52 (capture p. 94) is deliberately left for the next round",
+  "sentinel": "the gap census after this round: 93 closed, 142 open - the Table 51 box flips (census 564 -> 565); NEXT - R643: Table 52 (Armor Class Table), capture p. 94, the armor-class grid, prefix dhd (verify free), audit \"R643 OA armor audit\", include after rules/oahurled.h"
+ },
+ "consts": [
+  {
+   "name": "dhcT51RowCount",
+   "value": 28,
+   "comment": "Table 51 (capture pp. 80-81): twenty-eight hurled weapon and missile rows"
+  },
+  {
+   "name": "dhcT51AcCount",
+   "value": 11,
+   "comment": "the AC adjustment ladder - armor classes 0 through 10, eleven columns (capture pp. 80-81)"
+  },
+  {
+   "name": "dhcT51MediumAdjust",
+   "value": -2,
+   "comment": "the grid note under Table 51: adjust by -2 at all medium ranges (capture p. 81)"
+  },
+  {
+   "name": "dhcT51LongAdjust",
+   "value": -5,
+   "comment": "the grid note under Table 51: adjust by -5 at all long ranges (capture p. 81)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dhcT51AcAtShortRange",
+   "value": true,
+   "comment": "the grid note: the armor class adjustment is based on the weapon or missile being discharged at short range (capture p. 81)"
+  },
+  {
+   "name": "dhcT51StarFeetNote",
+   "value": true,
+   "comment": "the star note under Table 51: range is 10 feet, not 10 yards (capture p. 81)"
+  },
+  {
+   "name": "dhcT51DoubleStarSeeDescription",
+   "value": true,
+   "comment": "the double-star note on the needle fire rate: see weapon description (capture p. 81)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dhcT51Grid",
+   "tag": "T51Data",
+   "count": "dhcT51RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dhcT51Ac0",
+    "dhcT51Ac1",
+    "dhcT51Ac2",
+    "dhcT51Ac3",
+    "dhcT51Ac4",
+    "dhcT51Ac5",
+    "dhcT51Ac6",
+    "dhcT51Ac7",
+    "dhcT51Ac8",
+    "dhcT51Ac9",
+    "dhcT51Ac10",
+    "dhcT51LNote",
+    "dhcT51Star"
+   ],
+   "comment": "the Table 51 hurled weapons and missiles grid (capture pp. 80-81)",
+   "col_comments": [
+    "the to-hit adjustment vs armor class 0 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99. The weapon roster with the fire rate and the short/medium/long range bands rides this comment: 0 Axe, hand (rate 1; ranges 1/2/3), 1 Blow pipe dart (rate 2; ranges 1/2/3), 2 Bow, composite short (rate 2; ranges 5/10/18), 3 Bow, short (rate 2; ranges 5/10/15), 4 Chu-ko-nu (repeating crossbow) (rate 2; ranges 5/10/15), 5 Club, thrown (rate 1; ranges 2/4/6), 6 Crossbow, heavy (rate 1/2; ranges 8/16/24), 7 Crossbow, light (rate 1; ranges 6/12/18), 8 Dagger, thrown (rate 2; ranges 1/2/3), 9 Daikyu (great bow) (rate 2; ranges 7/14/21), 10 Dart (rate 3; ranges 1.5/3/4.5), 11 Grenade (rate 3; ranges 1/1.5/2), 12 Hankyu (little bow) (rate 2; ranges 5/10/15), 13 Javelin (rate 1; ranges 2/4/6), 14 Lasso (rate 1/2; ranges 1/2/3), 15 Metsubishi (rate 1/3; ranges 3'/-/-), 16 Needle (rate **; ranges 1/2/1/2), 17 Pellet bow (rate 1; ranges 6/12/18), 18 Shaken (rate 2; ranges 1/2/3), 19 Shuriken, spike (rate 2; ranges 1/-/-), 20 Shuriken, star, large (rate 3; ranges 1/2/1/2), 21 Shuriken, star, small (rate 4; ranges 1/2/1/2), 22 Sling (bullet) (rate 1; ranges 5/10/20), 23 Sling (stone) (rate 1; ranges 4/8/16), 24 Sling, staff (bullet) (rate 1/2; ranges -/3-6/9), 25 Sling, staff (stone) (rate 1/2; ranges -/3-6/9), 26 Spear (rate 1; ranges 1/2/3), 27 Uchi-ne (rate 2; ranges 1/2/3); the needle fire rate prints the double star (see weapon description), the metsubishi short range prints 3 feet with dashes beyond, the shuriken-spike and sling-staff short cells and the shuriken-spike medium/long cells print dashes, the sling-staff medium/long print 3-6/9 (capture pp. 80-81).",
+    "the to-hit adjustment vs armor class 1 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99.",
+    "the to-hit adjustment vs armor class 2 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99.",
+    "the to-hit adjustment vs armor class 3 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99.",
+    "the to-hit adjustment vs armor class 4 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99.",
+    "the to-hit adjustment vs armor class 5 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99.",
+    "the to-hit adjustment vs armor class 6 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99.",
+    "the to-hit adjustment vs armor class 7 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99.",
+    "the to-hit adjustment vs armor class 8 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99.",
+    "the to-hit adjustment vs armor class 9 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99.",
+    "the to-hit adjustment vs armor class 10 (capture pp. 80-81); the grenade and metsubishi rows print dashes and pin as -99.",
+    "the printed footnote letters as a bitmask: a=1, b=2, c=4, d=8, e=16, f=32, g=64, h=128 per the R640 doctrine; the grenade, hankyu and metsubishi rows carry d 8 and the javelin h 128, 0 elsewhere (capture pp. 80-81).",
+    "the star footnote markers: the metsubishi and needle rows carry the star, 0 elsewhere - the star note reads range is 10 feet, not 10 yards (capture p. 81)."
+   ],
+   "audit_comment": "the Table 51 grid: the AC 0-10 ladder, the footnote bitmask letters and the star set",
+   "data": [
+    [
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     -1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     -14,
+     -12,
+     -10,
+     -8,
+     -6,
+     -4,
+     -2,
+     -1,
+     -1,
+     1,
+     2,
+     0,
+     0
+    ],
+    [
+     -4,
+     -4,
+     -3,
+     -3,
+     -1,
+     0,
+     1,
+     2,
+     2,
+     2,
+     3,
+     0,
+     0
+    ],
+    [
+     -7,
+     -6,
+     -5,
+     -4,
+     -1,
+     0,
+     0,
+     1,
+     2,
+     2,
+     3,
+     0,
+     0
+    ],
+    [
+     -4,
+     -3,
+     -3,
+     -2,
+     -1,
+     0,
+     0,
+     1,
+     2,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     -9,
+     -8,
+     -7,
+     -5,
+     -3,
+     -2,
+     -1,
+     -1,
+     -1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     -2,
+     -1,
+     -1,
+     0,
+     1,
+     2,
+     3,
+     3,
+     4,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     -3,
+     -2,
+     -2,
+     -1,
+     0,
+     0,
+     1,
+     2,
+     3,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     -1,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     -1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     2,
+     3,
+     4,
+     4,
+     4,
+     0,
+     0
+    ],
+    [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     8,
+     0
+    ],
+    [
+     -5,
+     -5,
+     -4,
+     -4,
+     -2,
+     -1,
+     0,
+     0,
+     1,
+     2,
+     2,
+     8,
+     0
+    ],
+    [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     -1,
+     0,
+     0,
+     1,
+     128,
+     0
+    ],
+    [
+     9,
+     8,
+     7,
+     6,
+     5,
+     4,
+     3,
+     2,
+     1,
+     0,
+     -1,
+     0,
+     0
+    ],
+    [
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     -99,
+     8,
+     1
+    ],
+    [
+     -16,
+     -14,
+     -12,
+     -10,
+     -10,
+     -8,
+     -6,
+     -4,
+     -2,
+     -3,
+     0,
+     0,
+     1
+    ],
+    [
+     -3,
+     -2,
+     -2,
+     -1,
+     0,
+     0,
+     1,
+     2,
+     3,
+     3,
+     3,
+     0,
+     0
+    ],
+    [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     -3,
+     -3,
+     -2,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     2,
+     1,
+     3,
+     0,
+     0
+    ],
+    [
+     -7,
+     -6,
+     -5,
+     -4,
+     -2,
+     -1,
+     0,
+     0,
+     2,
+     1,
+     3,
+     0,
+     0
+    ],
+    [
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     -4,
+     -4,
+     -3,
+     -3,
+     -2,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     -4,
+     -4,
+     -3,
+     -3,
+     -2,
+     -2,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     -7,
+     -6,
+     -5,
+     -4,
+     -3,
+     -2,
+     -1,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0
+    ]
+   ],
+   "sentinel_census": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the T51 row count pin",
+   "expr": "m['dhcT51RowCount']() != 28"
+  },
+  {
+   "note": "the T51 AC ladder width pin",
+   "expr": "m['dhcT51AcCount']() != 11"
+  },
+  {
+   "note": "the medium/long range adjust pins",
+   "expr": "m['dhcT51MediumAdjust']() != -2 or m['dhcT51LongAdjust']() != -5"
+  },
+  {
+   "note": "the short-range basis note pin",
+   "expr": "m['dhcT51AcAtShortRange']() != 1"
+  },
+  {
+   "note": "the star feet note pin",
+   "expr": "m['dhcT51StarFeetNote']() != 1"
+  },
+  {
+   "note": "the double-star see-description note pin",
+   "expr": "m['dhcT51DoubleStarSeeDescription']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the bow, short row - the contested AC-10 cell settles +3 per the print capture (both readings ladder-consistent, the settling print read stands over the compressed +2; flagged for the physical-copy check)",
+   "expr": "m['dhcT51Ac10'](3) != 3"
+  },
+  {
+   "note": "the sling, staff (stone) row - the contested ladder settles per the print capture (the compressed stone-one-worse-than-bullet pattern is design-plausible, but the settling print read stands; flagged for the physical-copy check)",
+   "expr": "m['dhcT51Ac0'](25) != -4 or m['dhcT51Ac1'](25) != -4 or m['dhcT51Ac5'](25) != -2 or m['dhcT51Ac6'](25) != -1"
+  },
+  {
+   "note": "the blow pipe dart row - the stacked two-line cells decode as -14, -12, -10 (capture p. 80)",
+   "expr": "m['dhcT51Ac0'](1) != -14 or m['dhcT51Ac2'](1) != -10"
+  },
+  {
+   "note": "the needle row - the stacked two-line cells decode as -16 through -10, the AC-9 dip at -3, the star marker (capture p. 81)",
+   "expr": "m['dhcT51Ac0'](16) != -16 or m['dhcT51Ac4'](16) != -10 or m['dhcT51Ac9'](16) != -3 or m['dhcT51Star'](16) != 1"
+  },
+  {
+   "note": "the grenade row - the -99 dashes across the ladder, the d footnote letter 8 (capture p. 81)",
+   "expr": "m['dhcT51Ac0'](11) != -99 or m['dhcT51Ac10'](11) != -99 or m['dhcT51LNote'](11) != 8"
+  },
+  {
+   "note": "the metsubishi row - the -99 dashes, the d footnote letter 8, the star marker (capture p. 81)",
+   "expr": "m['dhcT51Ac0'](15) != -99 or m['dhcT51LNote'](15) != 8 or m['dhcT51Star'](15) != 1"
+  },
+  {
+   "note": "the javelin row - the h footnote letter, bitmask 128 (capture p. 81)",
+   "expr": "m['dhcT51LNote'](13) != 128"
+  },
+  {
+   "note": "the hankyu row - the d footnote letter 8 (capture p. 81)",
+   "expr": "m['dhcT51LNote'](12) != 8"
+  },
+  {
+   "note": "the lasso row - the inverted ladder, +9 at AC 0 falling to -1 at AC 10 (capture p. 81)",
+   "expr": "m['dhcT51Ac0'](14) != 9 or m['dhcT51Ac10'](14) != -1"
+  },
+  {
+   "note": "the sling (bullet) row - the AC-8 bump at +2 over the AC-9 +1 (capture p. 81)",
+   "expr": "m['dhcT51Ac8'](22) != 2 or m['dhcT51Ac9'](22) != 1"
+  },
+  {
+   "note": "the heavy crossbow row - the shallowest ladder, -2 at AC 0 to the +4 plateau (capture p. 81)",
+   "expr": "m['dhcT51Ac0'](6) != -2 or m['dhcT51Ac10'](6) != 4"
+  },
+  {
+   "note": "the daikyu row - the AC-0 at -1 only, the +4 plateau at the tail (capture p. 81)",
+   "expr": "m['dhcT51Ac0'](9) != -1 or m['dhcT51Ac10'](9) != 4"
+  },
+  {
+   "note": "the sling, staff (bullet) row - the flat zero tail from AC 5 through AC 10 (capture p. 81)",
+   "expr": "m['dhcT51Ac5'](24) != 0 or m['dhcT51Ac10'](24) != 0"
+  }
+ ],
+ "header_sections": {
+  "the Table 51 hurled grid": [
+   {
+    "kind": "const",
+    "name": "dhcT51RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhcT51AcCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhcT51MediumAdjust"
+   },
+   {
+    "kind": "const",
+    "name": "dhcT51LongAdjust"
+   },
+   {
+    "kind": "table",
+    "name": "dhcT51Grid"
+   },
+   {
+    "kind": "bool",
+    "name": "dhcT51AcAtShortRange"
+   },
+   {
+    "kind": "bool",
+    "name": "dhcT51StarFeetNote"
+   },
+   {
+    "kind": "bool",
+    "name": "dhcT51DoubleStarSeeDescription"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 51: Hurled Weapons and Missiles box closes",
+   "from": "  - [ ] Table 51: Hurled Weapons and Missiles\n    (capture p. 87)",
+   "to": "  - [x] Table 51: Hurled Weapons and Missiles\n    (capture p. 87) - R642: the dhc T51 grid - twenty-eight rows pinned as the\n    eleven-column AC 0-10 to-hit adjustment ladder with the fire rates and\n    range bands riding the column comments, the d and h bitmask letters, the\n    star set and the six contested cells settled per the print capture"
+  }
+ ],
+ "gap_census": {
+  "closed": 93,
+  "open": 142
+ },
+ "include_comment": "the OA hurled pins",
+ "include_after": "#include \"rules/oahandheld.h\"  // R641: the OA hand-held pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R641 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R641 LANDED 2026-10-19: commit",
+  "  739dd573f81b4c839a535ceb98d901e63161de59",
+  "  (census 563 -> 564, pushed",
+  "  baac37c..739dd57), HAND HELD WEAPONS -",
+  "  Table 50 (Hand Held Weapons, General",
+  "  Data and To Hit Adjustments), capture",
+  "  p. 80: rules/oahandheld.h, prefix dhb",
+  "  (verified free), 17 inlines (2 consts,",
+  "  14 table columns, 1 bool): the 49-row",
+  "  hand-held grid - the speed factor",
+  "  bounds (the lone numbers as lo=hi; the",
+  "  chijiriki-spear, spear and trident 6-8",
+  "  and the whip 5-8 ranges), the",
+  "  eleven-column AC 0-10 to-hit adjustment",
+  "  ladder, the footnote letters as the",
+  "  R640 bitmask (the mace h 128, the",
+  "  tetsu-bishi d 8), the chijiriki-chain",
+  "  row with the -99 dashes and the",
+  "  (see chain) bool, the length and",
+  "  space-required cells riding the column",
+  "  comments per the T48 doctrine. FIRST",
+  "  CROSS-CAPTURE CHECK ABOVE P. 33 (the",
+  "  compressed capture OCR'd full this",
+  "  turn): the 49-row grid cross-checked",
+  "  cell-by-cell between the two passes;",
+  "  four cells contest, all settled per the",
+  "  print capture - the katana AC-8,",
+  "  sword-short AC-8 and tui-fa AC-9 cells",
+  "  pin +1 (the compressed -1 dips",
+  "  non-monotonically, the R622 doctrine",
+  "  kills the class), the jo-stick AC-5",
+  "  cell pins -1 (both readings",
+  "  ladder-consistent, the settling print",
+  "  read stands; flagged for the",
+  "  physical-copy check). The footnote",
+  "  texts are not re-pinned (the block",
+  "  under T50 serves both tables, pinned in",
+  "  R640; the d and h lines reprint under",
+  "  the T50 tail). Two pre-publish repairs",
+  "  the machinery caught: a man-catcher",
+  "  transcription slip (the audit-mirror",
+  "  sim fired on healthy data - the R391",
+  "  gate working as designed), and a",
+  "  gap-flip builder bug duplicating the",
+  "  box's second label line (caught by",
+  "  inspecting the patched gap report; a",
+  "  label-uniqueness assert added to the",
+  "  builder). rverify GREEN at baac37c,",
+  "  689 mutants, 0 missed; preflight GREEN",
+  "  (564 audit census, BUILD 0 warnings).",
+  "  Gap census 91/144 -> 92/143. Spec",
+  "  20,659 bytes md5",
+  "  e1bb51477f0b32fc61491f288442251d",
+  "  (authored-plus-newline md5",
+  "  b16adccc9ff1ad0f869e3f00995ef411 -",
+  "  the value the ritual gated and",
+  "  matched; canvas md5",
+  "  1cf7a2a4fe512c8584b26b2bf035e430).",
+  "  NEXT - R642: Table 51 (Hurled Weapons",
+  "  and Missiles), capture pp. 80-81, the",
+  "  hurled-missile fire-rate and",
+  "  AC-adjustment grid, prefix dhc (verify",
+  "  free), audit \"R642 OA hurled audit\",",
+  "  include after rules/oahandheld.h."
+ ]
+}
