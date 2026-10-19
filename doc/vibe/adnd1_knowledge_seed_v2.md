@@ -13872,6 +13872,42 @@ when both halves land.
   Third Level Spells (capture pp. 126-132), prefix
   dhv (verify free), audit "R661 OA third level
   spells audit", include after rules/oal2spells.h
+- R661 LANDED 2026-10-19: commit 4590ae7c255039908d6d52aab848ac6bc2cb58c1
+  (census 583 -> 584, pushed 350c96b..4590ae7), THIRD
+  LEVEL SPELLS - the 20 third level shukenja spell
+  stat blocks, capture pp. 126-132: rules/oal3spells.h,
+  prefix dhv (verified free), ONE gap flip (single-line
+  child label), 19 consts, 25 inlines (grid tag L3Data,
+  20 rows x 6 cols - school with invocation 8 and
+  illusion/phantasm 9 debuting, components bitmask,
+  casting time in segments substitution=180, saving
+  throw code, reversible, sohei), gap census
+  113/122 -> 114/121: all 20 stat blocks cross-checked
+  spell by spell between the passes (print pp.
+  126-132 vs compressed pp. 63-66), zero contested
+  stat reads - invocation (dream vision) and
+  illusion/phantasm (invisibility to spirits) debut,
+  both headers reading identically in the two passes;
+  abjuration the most common school at seven spells;
+  magical vestment's dual conjuration/alteration pins
+  as the primary conjuration (the R660 aid
+  convention); substitution the longest cast at three
+  turns. The reversible seven (cure blindness, cure
+  disease, dream vision, know alignment, oath, remove
+  curse, remove paralysis) and sohei four (castigate,
+  dispel magic, flame walk, prayer) match the R658
+  T62 grid exactly. rverify GREEN at 350c96b, 139
+  mutants, 0 missed - GREEN on the first build;
+  preflight GREEN (584 audit census, BUILD 0
+  warnings). Spec 20,727 bytes md5
+  cea782690dfe219cc7e672d5ea3542f0
+  (authored-plus-newline md5
+  cfe8a345215c63f2cf23aba93025ae57 - the value the
+  ritual gated and matched; canvas md5
+  2a03522fad1f8872d77d680a2c48eeb6). NEXT - R662:
+  Fourth Level Spells (capture pp. 132-140), prefix
+  dhw (verify free), audit "R662 OA fourth level
+  spells audit", include after rules/oal3spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

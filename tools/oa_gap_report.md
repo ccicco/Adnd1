@@ -1017,7 +1017,16 @@ description riding the same round.
     blocks cross-checked spell by spell between the
     passes); the names ride the column comments, the
     prose descriptions close in their own rounds
-  - [ ] Fourth Level Spells (capture pp. 132-140)
+  - [x] Fourth Level Spells (capture pp. 132-140) -
+    R662: the dhw L4 stat grid - the 20 fourth level
+    spells with the school, component, casting time,
+    saving throw, reversible and sohei codes (the sohei
+    and reversible marks matching the R658 T62 grid;
+    exorcise the variable cast and the snake barrier
+    half save debuting; the stat blocks cross-checked
+    spell by spell between the passes); the names ride the
+    column comments, the prose descriptions close in
+    their own rounds
   - [ ] Fifth Level Spells (capture pp. 140-143)
   - [ ] Sixth Level Spells (capture pp. 143-147)
   - [ ] Seventh Level Spells (capture pp. 147-152)
