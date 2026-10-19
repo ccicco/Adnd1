@@ -970,7 +970,13 @@ description riding the same round.
     juggling, swimming); the print pass settles the three contested bases
     (fishing 17, juggling 16, small water craft 16), the hunting marker
     settles per the compressed-plus-prose reading
-  - [ ] Table 61: Court Proficiencies (capture p. 108)
+  - [x] Table 61: Court Proficiencies (capture p. 108) - R657: the dhr T61
+    grid - the twelve court rows (calligraphy through tea ceremony) with the
+    slot costs (calligraphy, falconry, tea ceremony 2, the rest 1), the base
+    chances (18, 16, 17, 15, 12, 16, 17, 14, 19, 19, 12, 15) and the
+    always-roll markers (etiquette, falconry, heraldry); cross-checked
+    cell-by-cell between the two passes, zero contested cells - the Chapter 6
+    proficiencies arc closes
 
 - [ ] **Chapter 7: Shukenja Spells** (capture pp.
   110-152) - the shukenja spell book

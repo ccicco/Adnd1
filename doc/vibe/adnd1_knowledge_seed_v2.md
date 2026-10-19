@@ -13689,6 +13689,48 @@ when both halves land.
   60 (Common Proficiencies), capture p. 106, prefix dhq
   (verify free), audit "R656 OA common proficiencies
   audit", include after rules/oabarbprof.h
+- R656 LANDED 2026-10-19: commit 19aa44bba03af6497ec88eb0e4c3a4beb57903a3
+  (census 578 -> 579, pushed 0a7ef34..19aa44b), TABLE 60
+  COMMON PROFICIENCIES - the common grid with the slot
+  costs, base chances and always-roll markers, capture
+  p. 106: rules/oacomprof.h, prefix dhq (verified
+  free), 4 inlines (1 const, 3 table columns, tag
+  T60Data, no bools): the seventeen common rows
+  (agriculture through swimming) riding the first
+  column comment, with the slot costs (animal handling
+  2, the rest 1), the base chances (15, 14, 16, 17, 17,
+  16, 18, 16, 14, the iaijutsu printed dash as the
+  sentinel, 16, 17, 10, 15, 17, 16, 10) and the
+  always-roll markers (animal handling, gaming,
+  horsemanship, hunting, juggling, swimming). The arc's
+  first contested numeric reads: the compressed reads
+  fishing 14, juggling 13 and small water craft 13
+  against the print 17, 16, 16 - the print pass (the
+  settling authority) settles all three, the
+  compressed deltas recorded as its OCR artifact; the
+  hunting a marker (dropped in print, carried in
+  compressed) settles per the compressed-plus-prose
+  reading - the hunting prose mandates the die roll,
+  the R654 precedent. One pre-verify repair the
+  machinery caught: this is the arc's first single-line
+  box label and the gap_to helper's two-line assumption
+  re-appended the unflipped line as the continuation -
+  the engine double-run went RED on the open count
+  before any write; fixed (flip the first line, wrap the
+  note onto the already-flipped last line), rebuilt,
+  double-run GREEN - Table 61's label is single-line
+  too, so the fix is proven for R657. rverify GREEN at
+  0a7ef34, 52 mutants, 0 missed; preflight GREEN (579
+  audit census, BUILD 0 warnings). Gap census 107/128 ->
+  108/127. Spec 10,480 bytes md5
+  086266104a3aeabd8ae0fecf9cdf014f
+  (authored-plus-newline md5
+  a1bfec96574daf3fc074b2d35dac3c37 - the value the
+  ritual gated and matched; canvas md5
+  5c879c09825e8920c01aa432d64bdcb2). NEXT - R657: Table
+  61 (Court Proficiencies), capture p. 108, prefix dhr
+  (verify free), audit "R657 OA court proficiencies
+  audit", include after rules/oacomprof.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
