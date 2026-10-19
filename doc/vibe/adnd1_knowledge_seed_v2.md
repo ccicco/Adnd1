@@ -13982,6 +13982,50 @@ when both halves land.
   Sixth Level Spells (capture pp. 143-147), prefix
   dhy (verify free), audit "R664 OA sixth level
   spells audit", include after rules/oal5spells.h
+- R664 LANDED 2026-10-19: commit c0a5a683535eb2e0028617c47e90969f84983893
+  (census 586 -> 587, pushed 28d5951..c0a5a68),
+  SIXTH LEVEL SPELLS - the 12 sixth
+  level shukenja spell stat blocks,
+  capture pp. 143-147: rules/oal6spells.h,
+  prefix dhy (verified free), ONE gap flip
+  (single-line child label), 15 consts,
+  21 inlines (grid tag L6Data, 12 rows x
+  6 cols), gap census 116/119 -> 117/118:
+  all 12 stat blocks cross-checked spell
+  by spell between the passes (print pp.
+  143-147 vs compressed pp. 69-72), zero
+  contested stat reads - alteration the
+  most common school at five spells, the
+  other seven appearing schools exactly
+  once each (no invocation this level);
+  two half saves (force shapechange,
+  smite); longevity the one-day cast,
+  pinned 8640 segments; instruct the
+  three-turn and find the path the
+  three-round cast; force shapechange's
+  components read V, S, M in the
+  compressed, the print line cutting at
+  its page boundary (the R660 detect
+  charm pattern). The reversible four
+  (find the path, heal, immunity to
+  weapons, quickgrowth) and sohei four
+  (find the path, immunity to weapons,
+  smite, speak w/ monsters) match the
+  R658 T62 grid exactly. rverify GREEN
+  at 28d5951, 87 mutants, 0 missed;
+  preflight GREEN (587 audit census,
+  BUILD 0 warnings). Spec md5
+  ddb798032d4f7b13c3eba2245f851878
+  (authored-plus-newline md5
+  2e5c95cd304aa579acfe97a23627d02f -
+  the value the ritual gated and
+  matched; canvas md5
+  7c3317399151b06d03d1d645bb742869).
+  NEXT - R665: Seventh Level Spells
+  (capture pp. 147-152), prefix dhz
+  (verify free), audit "R665 OA seventh
+  level spells audit", include after
+  rules/oal6spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

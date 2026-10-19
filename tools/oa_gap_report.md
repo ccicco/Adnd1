@@ -1044,7 +1044,18 @@ description riding the same round.
     cross-checked spell by spell between the passes);
     the names ride the column comments, the prose
     descriptions close in their own rounds
-  - [ ] Seventh Level Spells (capture pp. 147-152)
+  - [x] Seventh Level Spells (capture pp. 147-152) -
+    R665: the dhz L7 stat grid - the 12 seventh
+    level spells with the school, component,
+    casting time, saving throw, reversible and
+    sohei codes (the sohei and reversible marks
+    matching the R658 T62 grid - ancient curse
+    the one sohei, resurrection the one
+    reversible; astral spell the three-turn
+    cast; the stat blocks cross-checked spell
+    by spell between the passes); the names
+    ride the column comments, the prose
+    descriptions close in their own rounds
   - [ ] Table 63: Divination Results (capture p. 117)
   - [ ] Table 64: Speak with Dead (capture p. 132)
   - [ ] Table 65: Fate (capture p. 135)
