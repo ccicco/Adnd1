@@ -13836,6 +13836,42 @@ when both halves land.
   Second Level Spells (capture pp. 119-126), prefix
   dhu (verify free), audit "R660 OA second level
   spells audit", include after rules/oal1spells.h
+- R660 LANDED 2026-10-19: commit 350c96b770e0913a8ccef2a8fcd673fa016b6a88
+  (census 582 -> 583, pushed e95ea54..350c96b), SECOND
+  LEVEL SPELLS - the 20 second level shukenja spell
+  stat blocks, capture pp. 119-126: rules/oal2spells.h,
+  prefix dhu (verified free), ONE gap flip (single-line
+  child label), 15 consts, 21 inlines (grid tag L2Data,
+  20 rows x 6 cols - school with the abjuration code 7
+  debuting, components V=1 S=2 M=4 bitmask, casting
+  time in segments request=180/slow poison=1, saving
+  throw code, reversible, sohei), gap census
+  112/123 -> 113/122: all 20 stat blocks cross-checked
+  spell by spell between the passes (print pp.
+  119-125 vs compressed pp. 60-63), zero contested
+  stat reads - thirteen VSM / six VS / dream sight
+  the unique S,M no-verbal spell (read in both
+  passes); detect charm's components read V, S in
+  both passes (the print line breaking at its page
+  boundary, the compressed confirming); abjuration
+  debuts (protection from spirits, request); aid's
+  dual school pins as the primary necromantic 5;
+  request takes the longest cast at three turns.
+  The reversible three (create spring, detect charm,
+  know motivation) and sohei four (chant, messenger,
+  slow poison, warning) match the R658 T62 grid
+  exactly. rverify GREEN at e95ea54, 135 mutants, 0
+  missed - GREEN on the first build, the R659
+  col_default lesson carried forward; preflight
+  GREEN (583 audit census, BUILD 0 warnings). Spec
+  19,105 bytes md5 062062c698ff856d9cd2baa22153116a
+  (authored-plus-newline md5
+  540f529cc6feb4d0cb7a30154dfb22c3 - the value the
+  ritual gated and matched; canvas md5
+  18bdea9643625324578df542cf7d6ae7). NEXT - R661:
+  Third Level Spells (capture pp. 126-132), prefix
+  dhv (verify free), audit "R661 OA third level
+  spells audit", include after rules/oal2spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

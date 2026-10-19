@@ -1008,7 +1008,15 @@ description riding the same round.
     cross-checked spell by spell between the passes);
     the names ride the column comments, the prose
     descriptions close in their own rounds
-  - [ ] Third Level Spells (capture pp. 126-132)
+  - [x] Third Level Spells (capture pp. 126-132) -
+    R661: the dhv L3 stat grid - the 20 third level
+    spells with the school, component, casting time,
+    saving throw, reversible and sohei codes (the sohei
+    and reversible marks matching the R658 T62 grid;
+    invocation and illusion/phantasm debuting; the stat
+    blocks cross-checked spell by spell between the
+    passes); the names ride the column comments, the
+    prose descriptions close in their own rounds
   - [ ] Fourth Level Spells (capture pp. 132-140)
   - [ ] Fifth Level Spells (capture pp. 140-143)
   - [ ] Sixth Level Spells (capture pp. 143-147)

@@ -1,0 +1,482 @@
+{
+ "round": 661,
+ "title": "THIRD LEVEL SPELLS - the 20 third level shukenja spells with the school, component, casting time, saving throw, reversible and sohei codes",
+ "prefix": "dhv",
+ "header_file": "rules/oal3spells.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 583,
+ "inline_count": 25,
+ "audit_label": "R661 OA third level spells audit",
+ "audit_comment": "OA round forty-eight (capture pp. 126-132): the third level spell stat blocks - the school, component, casting time and saving throw codes with the reversible and sohei-usable markers, cross-checked spell by spell between the passes",
+ "banner": {
+  "title": "THIRD LEVEL SPELLS, printed capture pp. 126-132 - the OA third level spells round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read - the 20 third level spell stat blocks cross-checked spell by spell between the passes (print pp. 126-132; compressed pp. 63-66); all 20 schools, component sets, casting times and saving throws agree, zero contested stat reads. Two school codes debut this level: invocation (dream vision) and illusion/phantasm (invisibility to spirits) - both headers read identically in the two passes. Abjuration becomes the most common school at seven spells (castigate, cure blindness, cure disease, dispel magic, oath, remove curse, remove paralysis); magical vestment's dual school conjuration/alteration pins as the primary conjuration, the aid convention from the second level. Substitution takes the longest cast in the level at three turns. The reversible flags agree between the passes; the sohei-usable marks ride the R658 T62 grid, settled three rounds before. The stat grid pins as a table: 20 rows the spell ordinals, six columns - school, components (a V=1 S=2 M=4 bitmask), casting time in segments (1 round = 10, 1 turn = 60, 3 turns = 180), saving throw code (0 none, 1 neg., 2 special), reversible and sohei markers. The spell names ride the column comments, the prose descriptions and the Table 64 speak with dead grid close in their own rounds. The table tag L3Data identifier-safe per the R639 lesson",
+  "sentinel": "the gap census after this round: 114 closed, 121 open - the Third Level Spells box flips (census 583 -> 584); NEXT - R662: the Fourth Level Spells (capture pp. 132-140), prefix dhw (verify free), audit \"R662 OA fourth level spells audit\", include after rules/oal3spells.h"
+ },
+ "consts": [
+  {
+   "name": "dhvL3SpellCount",
+   "value": 20,
+   "comment": "the 20 third level shukenja spells (print pp. 126-132; compressed pp. 63-66)"
+  },
+  {
+   "name": "dhvL3SoheiCount",
+   "value": 4,
+   "comment": "the four third level spells usable by sohei - castigate, dispel magic, flame walk, prayer"
+  },
+  {
+   "name": "dhvL3ReversibleCount",
+   "value": 7,
+   "comment": "the seven reversible third level spells - cure blindness, cure disease, dream vision, know alignment, oath, remove curse, remove paralysis"
+  },
+  {
+   "name": "dhvL3AbjurationCount",
+   "value": 7,
+   "comment": "the seven abjuration third level spells - the most common school of the level: castigate, cure blindness, cure disease, dispel magic, oath, remove curse, remove paralysis"
+  },
+  {
+   "name": "dhvL3DivinationCount",
+   "value": 3,
+   "comment": "the three divination third level spells - detect curse, divination, know alignment"
+  },
+  {
+   "name": "dhvL3AlterationCount",
+   "value": 3,
+   "comment": "the three alteration third level spells - flame walk, levitate, substitution"
+  },
+  {
+   "name": "dhvL3ConjurationCount",
+   "value": 2,
+   "comment": "the two conjuration third level spells - magical vestment (its dual school pinned as the primary conjuration) and prayer"
+  },
+  {
+   "name": "dhvL3NecromanticCount",
+   "value": 2,
+   "comment": "the two necromantic third level spells - death's door, speak w/ dead"
+  },
+  {
+   "name": "dhvL3InvocationCount",
+   "value": 1,
+   "comment": "the one invocation third level spell - dream vision; the school debuting this level"
+  },
+  {
+   "name": "dhvL3IllusionCount",
+   "value": 1,
+   "comment": "the one illusion/phantasm third level spell - invisibility to spirits; the school debuting this level"
+  },
+  {
+   "name": "dhvL3EnchCharmCount",
+   "value": 1,
+   "comment": "the one enchantment/charm third level spell - possess animal"
+  },
+  {
+   "name": "dhvL3VSMCount",
+   "value": 14,
+   "comment": "the fourteen third level spells taking all three components - the bitmask reads 7"
+  },
+  {
+   "name": "dhvL3VSCount",
+   "value": 6,
+   "comment": "the six third level spells taking verbal and somatic - the bitmask reads 3"
+  },
+  {
+   "name": "dhvL3TurnCasts",
+   "value": 5,
+   "comment": "the five third level spells with a one-turn casting time - cure disease, divination, dream vision, invisibility to spirits, speak w/ dead"
+  },
+  {
+   "name": "dhvL3ThreeTurnCasts",
+   "value": 1,
+   "comment": "the one third level spell with a three-turn casting time - substitution, the longest cast in the level"
+  },
+  {
+   "name": "dhvL3RoundCasts",
+   "value": 6,
+   "comment": "the six third level spells with a one-round casting time"
+  },
+  {
+   "name": "dhvL3SixSegmentCasts",
+   "value": 4,
+   "comment": "the four third level spells with a six-segment casting time - dispel magic, prayer, remove curse, remove paralysis"
+  },
+  {
+   "name": "dhvL3NegSaves",
+   "value": 3,
+   "comment": "the three third level spells with a negation saving throw - levitate, oath, possess animal"
+  },
+  {
+   "name": "dhvL3SpecialSaves",
+   "value": 2,
+   "comment": "the two third level spells with a special saving throw - castigate, remove curse"
+  }
+ ],
+ "bools": [],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dhvL3Grid",
+   "tag": "L3Data",
+   "count": "dhvL3SpellCount",
+   "col_default": 0,
+   "cols": [
+    "dhvL3School",
+    "dhvL3Components",
+    "dhvL3CastTime",
+    "dhvL3Save",
+    "dhvL3Reversible",
+    "dhvL3Sohei"
+   ],
+   "col_comments": [
+    "the shukenja 3rd level spell schools by ordinal (print pp. 126-132; compressed pp. 63-66). The spell list rides this comment: 1 castigate, 2 cure blindness, 3 cure disease, 4 death's door, 5 detect curse, 6 dispel magic, 7 divination, 8 dream vision, 9 flame walk, 10 invisibility to spirits, 11 know alignment, 12 levitate, 13 magical vestment, 14 oath, 15 possess animal, 16 prayer, 17 remove curse, 18 remove paralysis, 19 speak w/ dead, 20 substitution - the school codes: 1 enchantment/charm, 2 divination, 3 evocation, 4 conjuration/summoning, 5 necromantic, 6 alteration, 7 abjuration, 8 invocation, 9 illusion/phantasm - invocation and illusion/phantasm debuting this level (dream vision, invisibility to spirits); abjuration the most common at seven spells; magical vestment pins its dual school conjuration/alteration as the primary 4",
+    "the shukenja 3rd level spell components by ordinal (print pp. 126-132; compressed pp. 63-66). The spell list rides this comment: 1 castigate, 2 cure blindness, 3 cure disease, 4 death's door, 5 detect curse, 6 dispel magic, 7 divination, 8 dream vision, 9 flame walk, 10 invisibility to spirits, 11 know alignment, 12 levitate, 13 magical vestment, 14 oath, 15 possess animal, 16 prayer, 17 remove curse, 18 remove paralysis, 19 speak w/ dead, 20 substitution - the component codes a bitmask: verbal 1, somatic 2, material 4 - fourteen spells take all three (7), six take verbal and somatic (3): cure blindness, cure disease, dispel magic, know alignment, remove curse, remove paralysis",
+    "the shukenja 3rd level spell casting times by ordinal (print pp. 126-132; compressed pp. 63-66). The spell list rides this comment: 1 castigate, 2 cure blindness, 3 cure disease, 4 death's door, 5 detect curse, 6 dispel magic, 7 divination, 8 dream vision, 9 flame walk, 10 invisibility to spirits, 11 know alignment, 12 levitate, 13 magical vestment, 14 oath, 15 possess animal, 16 prayer, 17 remove curse, 18 remove paralysis, 19 speak w/ dead, 20 substitution - the casting time in segments - 1 round = 10 segments, 1 turn = 60, 3 turns = 180: substitution takes the three turns (the longest cast in the level), five spells take a turn (cure disease, divination, dream vision, invisibility to spirits, speak w/ dead), six a round, four take six segments (dispel magic, prayer, remove curse, remove paralysis), and the level runs down to levitate's two segments (castigate three, death's door and flame walk five)",
+    "the shukenja 3rd level spell saving throws by ordinal (print pp. 126-132; compressed pp. 63-66). The spell list rides this comment: 1 castigate, 2 cure blindness, 3 cure disease, 4 death's door, 5 detect curse, 6 dispel magic, 7 divination, 8 dream vision, 9 flame walk, 10 invisibility to spirits, 11 know alignment, 12 levitate, 13 magical vestment, 14 oath, 15 possess animal, 16 prayer, 17 remove curse, 18 remove paralysis, 19 speak w/ dead, 20 substitution - the saving throw codes: 0 none, 1 neg., 2 special - levitate, oath and possess animal are neg., castigate and remove curse are special, the other fifteen none",
+    "the shukenja 3rd level spell reversible markers by ordinal (print pp. 126-132; compressed pp. 63-66). The spell list rides this comment: 1 castigate, 2 cure blindness, 3 cure disease, 4 death's door, 5 detect curse, 6 dispel magic, 7 divination, 8 dream vision, 9 flame walk, 10 invisibility to spirits, 11 know alignment, 12 levitate, 13 magical vestment, 14 oath, 15 possess animal, 16 prayer, 17 remove curse, 18 remove paralysis, 19 speak w/ dead, 20 substitution - the cell is 1 where the printed header reads Reversible - cure blindness, cure disease, dream vision, know alignment, oath, remove curse, remove paralysis; the seven matching the R658 T62 reversible column",
+    "the shukenja 3rd level spell sohei-usable markers by ordinal (print pp. 126-132; compressed pp. 63-66). The spell list rides this comment: 1 castigate, 2 cure blindness, 3 cure disease, 4 death's door, 5 detect curse, 6 dispel magic, 7 divination, 8 dream vision, 9 flame walk, 10 invisibility to spirits, 11 know alignment, 12 levitate, 13 magical vestment, 14 oath, 15 possess animal, 16 prayer, 17 remove curse, 18 remove paralysis, 19 speak w/ dead, 20 substitution - the cell is 1 where the printed asterisk marks the spell usable by sohei - castigate, dispel magic, flame walk, prayer; the four matching the R658 T62 sohei column"
+   ],
+   "data": [
+    [
+     7,
+     7,
+     3,
+     2,
+     0,
+     1
+    ],
+    [
+     7,
+     3,
+     10,
+     0,
+     1,
+     0
+    ],
+    [
+     7,
+     3,
+     60,
+     0,
+     1,
+     0
+    ],
+    [
+     5,
+     7,
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     7,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     7,
+     3,
+     6,
+     0,
+     0,
+     1
+    ],
+    [
+     2,
+     7,
+     60,
+     0,
+     0,
+     0
+    ],
+    [
+     8,
+     7,
+     60,
+     0,
+     1,
+     0
+    ],
+    [
+     6,
+     7,
+     5,
+     0,
+     0,
+     1
+    ],
+    [
+     9,
+     7,
+     60,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     3,
+     10,
+     0,
+     1,
+     0
+    ],
+    [
+     6,
+     7,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     4,
+     7,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     7,
+     7,
+     10,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     7,
+     10,
+     1,
+     0,
+     0
+    ],
+    [
+     4,
+     7,
+     6,
+     0,
+     0,
+     1
+    ],
+    [
+     7,
+     3,
+     6,
+     2,
+     1,
+     0
+    ],
+    [
+     7,
+     3,
+     6,
+     0,
+     1,
+     0
+    ],
+    [
+     5,
+     7,
+     60,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     7,
+     180,
+     0,
+     0,
+     0
+    ]
+   ],
+   "comment": "the Table 62 third level spell stat grid (print pp. 126-132; compressed pp. 63-66)",
+   "audit_comment": "the third level stat grid: the school, component, casting time and saving throw codes with the reversible and sohei markers by spell ordinal"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the count pins - twenty third level spells, four sohei-usable, seven reversible, seven abjuration",
+   "expr": "m['dhvL3SpellCount']() != 20 or m['dhvL3SoheiCount']() != 4 or m['dhvL3ReversibleCount']() != 7 or m['dhvL3AbjurationCount']() != 7 or m['dhvL3InvocationCount']() != 1 or m['dhvL3IllusionCount']() != 1 or m['dhvL3ConjurationCount']() != 2 or m['dhvL3NecromanticCount']() != 2"
+  },
+  {
+   "note": "the school pins - castigate abjuration; death's door and speak w/ dead necromantic; dispel magic abjuration; dream vision the debuting invocation 8; flame walk, levitate and substitution alteration; invisibility to spirits the debuting illusion/phantasm 9; magical vestment the dual school primary conjuration 4; possess animal enchantment/charm",
+   "expr": "m['dhvL3School'](0) != 7 or m['dhvL3School'](3) != 5 or m['dhvL3School'](5) != 7 or m['dhvL3School'](7) != 8 or m['dhvL3School'](9) != 9 or m['dhvL3School'](12) != 4 or m['dhvL3School'](14) != 1 or m['dhvL3School'](19) != 6 or m['dhvL3School'](18) != 5"
+  },
+  {
+   "note": "the component pins - the fourteen all-component spells with castigate, dream vision and substitution pinned; the six verbal and somatic with cure blindness, dispel magic and remove paralysis pinned",
+   "expr": "m['dhvL3Components'](0) != 7 or m['dhvL3Components'](7) != 7 or m['dhvL3Components'](19) != 7 or m['dhvL3Components'](1) != 3 or m['dhvL3Components'](5) != 3 or m['dhvL3Components'](17) != 3 or m['dhvL3Components'](4) != 7 or m['dhvL3Components'](11) != 7"
+  },
+  {
+   "note": "the casting time pins - substitution the three-turn cast (the longest in the level); the five one-turn casts (cure disease, divination, dream vision, invisibility to spirits, speak w/ dead); the six-segment casts (dispel magic, prayer, remove curse, remove paralysis); levitate the two-segment, castigate the three-segment, death's door and flame walk the five-segment casts",
+   "expr": "m['dhvL3CastTime'](19) != 180 or m['dhvL3CastTime'](2) != 60 or m['dhvL3CastTime'](6) != 60 or m['dhvL3CastTime'](9) != 60 or m['dhvL3CastTime'](18) != 60 or m['dhvL3CastTime'](5) != 6 or m['dhvL3CastTime'](15) != 6 or m['dhvL3CastTime'](16) != 6 or m['dhvL3CastTime'](11) != 2 or m['dhvL3CastTime'](0) != 3 or m['dhvL3CastTime'](3) != 5 or m['dhvL3CastTime'](8) != 5"
+  },
+  {
+   "note": "the saving throw pins - levitate, oath and possess animal neg.; castigate and remove curse special; the fifteen others none",
+   "expr": "m['dhvL3Save'](11) != 1 or m['dhvL3Save'](13) != 1 or m['dhvL3Save'](14) != 1 or m['dhvL3Save'](0) != 2 or m['dhvL3Save'](16) != 2 or m['dhvL3Save'](1) != 0 or m['dhvL3Save'](19) != 0 or m['dhvL3Save'](9) != 0"
+  },
+  {
+   "note": "the reversible pins - the seven marks (cure blindness, cure disease, dream vision, know alignment, oath, remove curse, remove paralysis); castigate, levitate and substitution not - the seven matching the R658 T62 reversible column",
+   "expr": "m['dhvL3Reversible'](1) != 1 or m['dhvL3Reversible'](2) != 1 or m['dhvL3Reversible'](7) != 1 or m['dhvL3Reversible'](10) != 1 or m['dhvL3Reversible'](13) != 1 or m['dhvL3Reversible'](16) != 1 or m['dhvL3Reversible'](17) != 1 or m['dhvL3Reversible'](0) != 0 or m['dhvL3Reversible'](11) != 0 or m['dhvL3Reversible'](19) != 0"
+  },
+  {
+   "note": "the sohei pins - castigate, dispel magic, flame walk and prayer marked; death's door, divination and levitate not - the four matching the R658 T62 sohei column",
+   "expr": "m['dhvL3Sohei'](0) != 1 or m['dhvL3Sohei'](5) != 1 or m['dhvL3Sohei'](8) != 1 or m['dhvL3Sohei'](15) != 1 or m['dhvL3Sohei'](3) != 0 or m['dhvL3Sohei'](6) != 0 or m['dhvL3Sohei'](11) != 0"
+  },
+  {
+   "note": "the grid-sum pins - fourteen VSM and six VS components; five one-turn and one three-turn casts; four six-segment casts; three neg. and two special saves",
+   "expr": "m['dhvL3VSMCount']() != 14 or m['dhvL3VSCount']() != 6 or m['dhvL3TurnCasts']() != 5 or m['dhvL3ThreeTurnCasts']() != 1 or m['dhvL3RoundCasts']() != 6 or m['dhvL3SixSegmentCasts']() != 4 or m['dhvL3NegSaves']() != 3 or m['dhvL3SpecialSaves']() != 2 or m['dhvL3DivinationCount']() != 3 or m['dhvL3AlterationCount']() != 3 or m['dhvL3EnchCharmCount']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the spell count pins": [
+   {
+    "kind": "const",
+    "name": "dhvL3SpellCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3SoheiCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3ReversibleCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3AbjurationCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3DivinationCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3AlterationCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3ConjurationCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3NecromanticCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3InvocationCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3IllusionCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3EnchCharmCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3VSMCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3VSCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3TurnCasts"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3ThreeTurnCasts"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3RoundCasts"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3SixSegmentCasts"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3NegSaves"
+   },
+   {
+    "kind": "const",
+    "name": "dhvL3SpecialSaves"
+   }
+  ],
+  "the stat grid pins": [
+   {
+    "kind": "table",
+    "name": "dhvL3Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Third Level Spells box closes",
+   "to": "  - [x] Third Level Spells (capture pp. 126-132) -\n    R661: the dhv L3 stat grid - the 20 third level\n    spells with the school, component, casting time,\n    saving throw, reversible and sohei codes (the sohei\n    and reversible marks matching the R658 T62 grid;\n    invocation and illusion/phantasm debuting; the stat\n    blocks cross-checked spell by spell between the\n    passes); the names ride the column comments, the\n    prose descriptions close in their own rounds",
+   "from": "  - [ ] Third Level Spells (capture pp. 126-132)"
+  }
+ ],
+ "gap_census": {
+  "closed": 114,
+  "open": 121
+ },
+ "include_comment": "the OA third level spells pins",
+ "include_after": "#include \"rules/oal2spells.h\"  // R660: the OA second level spells pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R660 LANDED 2026-10-19: commit 350c96b770e0913a8ccef2a8fcd673fa016b6a88",
+ "prev_record": [
+  "- R660 LANDED 2026-10-19: commit 350c96b770e0913a8ccef2a8fcd673fa016b6a88",
+  "  (census 582 -> 583, pushed e95ea54..350c96b), SECOND",
+  "  LEVEL SPELLS - the 20 second level shukenja spell",
+  "  stat blocks, capture pp. 119-126: rules/oal2spells.h,",
+  "  prefix dhu (verified free), ONE gap flip (single-line",
+  "  child label), 15 consts, 21 inlines (grid tag L2Data,",
+  "  20 rows x 6 cols - school with the abjuration code 7",
+  "  debuting, components V=1 S=2 M=4 bitmask, casting",
+  "  time in segments request=180/slow poison=1, saving",
+  "  throw code, reversible, sohei), gap census",
+  "  112/123 -> 113/122: all 20 stat blocks cross-checked",
+  "  spell by spell between the passes (print pp.",
+  "  119-125 vs compressed pp. 60-63), zero contested",
+  "  stat reads - thirteen VSM / six VS / dream sight",
+  "  the unique S,M no-verbal spell (read in both",
+  "  passes); detect charm's components read V, S in",
+  "  both passes (the print line breaking at its page",
+  "  boundary, the compressed confirming); abjuration",
+  "  debuts (protection from spirits, request); aid's",
+  "  dual school pins as the primary necromantic 5;",
+  "  request takes the longest cast at three turns.",
+  "  The reversible three (create spring, detect charm,",
+  "  know motivation) and sohei four (chant, messenger,",
+  "  slow poison, warning) match the R658 T62 grid",
+  "  exactly. rverify GREEN at e95ea54, 135 mutants, 0",
+  "  missed - GREEN on the first build, the R659",
+  "  col_default lesson carried forward; preflight",
+  "  GREEN (583 audit census, BUILD 0 warnings). Spec",
+  "  19,105 bytes md5 062062c698ff856d9cd2baa22153116a",
+  "  (authored-plus-newline md5",
+  "  540f529cc6feb4d0cb7a30154dfb22c3 - the value the",
+  "  ritual gated and matched; canvas md5",
+  "  18bdea9643625324578df542cf7d6ae7). NEXT - R661:",
+  "  Third Level Spells (capture pp. 126-132), prefix",
+  "  dhv (verify free), audit \"R661 OA third level",
+  "  spells audit\", include after rules/oal2spells.h"
+ ]
+}
