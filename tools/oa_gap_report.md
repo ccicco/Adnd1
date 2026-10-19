@@ -545,11 +545,30 @@ description riding the same round.
     zeros; the row-5 and row-22 contested cells
     settled against the 2018 print (its
     ladder-consistent readings stand)
-  - [ ] Yakuza (capture pp. 51-54) - the gangster:
+  - [x] Yakuza (capture pp. 51-54) - the gangster:
     the family-clan requirement, the -5 birth modifier,
-    the stipend, the gaming proficiency
-  - [ ] Table 34: Yakuza (capture p. 51)
-  - [ ] Table 35: Yakuza Capabilities (capture p. 53)
+    the stipend, the gaming proficiency -
+    R627: the dgn yakuza pins - the minima (Str 11,
+    Int 15, Dex 15, Cha 16) with no prime requisite,
+    the always-lawful rule, the d6 with the thief
+    tables, any weapon with the Table 13 armor and
+    no shields, the family-clan -5 birth modifier
+    with the free gaming proficiency, the thief
+    skills at the ninja chances, the investigate
+    tiers, the ki halves-damage power, the +10
+    reaction bonus, the contacts, the brethren,
+    the stipend, the tattoo and honor doctrine
+  - [x] Table 34: Yakuza (capture p. 51) -
+    R627: the dgn T34 grid - twelve rows of xp bounds
+    and accumulated d6 dice with the 9-plus-N cells
+    (1 hp per level beyond 9th) plus the 300,000-xp
+    beyond-12th note
+  - [x] Table 35: Yakuza Capabilities (capture p.
+    53) -
+    R627: the dgn T35 grid - twenty-one rows of the
+    investigate ladder 20 to 95 with the area
+    covered pinned as the 1-9 code (blocks, wards,
+    districts, province)
   - [ ] Character Abilities (capture p. 55) - the
     class-by-class summary of prime requisites and
     special abilities

@@ -12147,6 +12147,62 @@ when both halves land.
   (verify free), audit "R626 OA wu
   jen audit", include after rules/
   oasohei.h.
+- R626 LANDED 2026-10-18: commit
+  5f23689fda6387c0a263f0dd0220183ce5b706a6
+  (census 548 -> 549, pushed
+  9204c4c..5f23689), THE WU JEN, capture
+  pp. 47-51: rules/oawujen.h, prefix
+  dgm (verified free), 60 inlines (31
+  consts, 14 bools, 15 table columns):
+  the Int 13 minimum with the Int-15 xp
+  bonus, the NEVER-LAWFUL rule, the d4
+  plus 1-per-die doctrine (2-5 hp per
+  level), the magic-user tables, the
+  favored weapon +1, six slots, the
+  UNDERSTAND/KNOW/MEMORIZE doctrine
+  with the Int-loss recheck and the
+  destroyed scroll, the two ki powers
+  (the +3 initiative burst once daily;
+  the 4th-level MAXIMUM-EFFECT power,
+  any spell three-plus levels lower,
+  max range, duration and effect), the
+  ELEMENTAL MASTERY (five groups, -1
+  enemy saves, +1 damage, +1 own saves,
+  lost on new spell levels), the 1d4
+  pupils at 10th leaving at half the
+  master level and replaced, the
+  stronghold-with-lieutenant rule, the
+  tengu/oni language with the +20
+  reaction, the no-family and light-
+  honor doctrine, the taboo ladder
+  (one at 1st, one per five levels),
+  T31 11x3, T32 7x3 with the printed
+  All maximum pinned as the -1 code,
+  T33 29x9 with the dashes as zeros.
+  THREE CELLS SETTLED AGAINST THE 2018
+  PRINT BEFORE PINNING: the T31 row-2
+  bound 4,000 (the capture lost the
+  comma); the T33 row-5 first-spell
+  cell 3 (the capture prints 4 - the
+  ladder-consistent reading stands);
+  the T33 row-22 ninth-spell cell 1
+  (the capture prints 2 - same
+  doctrine). OCR normalization:
+  konobokuru reads as korobokuru; in
+  hit, spell book reads as in his
+  spell book; cloud/adder reads as
+  cloud ladder (prose only). Battery
+  360 mutants, 0 missed; full sha
+  rverify GREEN. Gap census 52/183 ->
+  56/179. Spec 30,674 bytes md5
+  716cd27ccc5e0384d110f565ffd8aa4b
+  (canvas md5
+  c1661af5761352ffd1951e682237368d).
+  NEXT - R627: the Yakuza, capture
+  pp. 51-54, Tables 34 and 35, prefix
+  dgn (verify free), audit "R627 OA
+  yakuza audit", include after rules/
+  oawujen.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

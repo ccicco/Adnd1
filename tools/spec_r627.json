@@ -1,0 +1,1111 @@
+{
+ "round": 627,
+ "title": "THE YAKUZA - the gangster: the family-clan requirement, the investigate tiers, the ki power, the brethren, the stipend, Tables 34 and 35",
+ "prefix": "dgn",
+ "header_file": "rules/oayakuza.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 549,
+ "inline_count": 62,
+ "audit_label": "R627 OA yakuza audit",
+ "audit_comment": "OA round fourteen (capture pp. 51-54): the yakuza - the minima, the investigate tiers, the ki power and the brethren",
+ "banner": {
+  "title": "THE YAKUZA, printed capture pp. 51-54 - the OA yakuza round",
+  "provenance": "verified against capture pp. 51-54 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). No contested cells this round - both captures agree on every pinned value. The T35 area column pins as the 1-9 code: 1, 2 and 3 blocks; 1 ward 4; 2 wards 5; 1 district 6; 2 districts 7; 3 districts 8; province 9. The T34 9-plus-N cells pin as dice 9 with the 1-per-level bonus 1, 2, 3. OCR normalization: Zing reads Zingi; 2d level reads 2nd level; hide-out and hideout both printed",
+  "sentinel": "the gap census after this round: 59 closed, 176 open - the yakuza boxes with Tables 34 and 35 flip (census 549 -> 550); NEXT - R628: the Character Abilities chapter opener, capture pp. 55-59, Tables 36 (Multiple Attacks), prefix dgo (verify free), audit \"R628 OA character abilities audit\", include after rules/oayakuza.h"
+ },
+ "consts": [
+  {
+   "name": "dgnYakuzaMinStr",
+   "value": 11,
+   "comment": "Yakuza prose (capture p. 52): the Strength minimum"
+  },
+  {
+   "name": "dgnYakuzaMinInt",
+   "value": 15,
+   "comment": "Yakuza prose (capture p. 52): the Intelligence minimum"
+  },
+  {
+   "name": "dgnYakuzaMinDex",
+   "value": 15,
+   "comment": "Yakuza prose (capture p. 52): the Dexterity minimum"
+  },
+  {
+   "name": "dgnYakuzaMinCha",
+   "value": 16,
+   "comment": "Yakuza prose (capture p. 52): the Charisma minimum"
+  },
+  {
+   "name": "dgnYakuzaHitDie",
+   "value": 6,
+   "comment": "Yakuza prose (capture p. 52): the 6-sided hit die, one per level"
+  },
+  {
+   "name": "dgnYakuzaSlots",
+   "value": 3,
+   "comment": "Yakuza prose (capture p. 52): three weapon proficiency slots"
+  },
+  {
+   "name": "dgnYakuzaFamilyBirthMod",
+   "value": -5,
+   "comment": "Yakuza prose (capture p. 52): the -5 birth-rank modifier on the family-clan roll"
+  },
+  {
+   "name": "dgnYakuzaStipendPerLevel",
+   "value": 2,
+   "comment": "Yakuza prose (capture p. 53): the monthly stipend, 2 ch'ien per level"
+  },
+  {
+   "name": "dgnYakuzaContactLevelDiv",
+   "value": 2,
+   "comment": "Yakuza prose (capture p. 53): one contact per two levels of experience"
+  },
+  {
+   "name": "dgnYakuzaContactMaxAbove",
+   "value": 4,
+   "comment": "Yakuza prose (capture p. 53): no contact more than four levels above the yakuza"
+  },
+  {
+   "name": "dgnYakuzaKiDamageDiv",
+   "value": 2,
+   "comment": "Yakuza prose (capture p. 53): the ki power halves the damage, rounding up"
+  },
+  {
+   "name": "dgnYakuzaKiPerRound",
+   "value": 1,
+   "comment": "Yakuza prose (capture p. 53): the ki power usable once per round"
+  },
+  {
+   "name": "dgnYakuzaKiPerDayPerLevel",
+   "value": 1,
+   "comment": "Yakuza prose (capture p. 53): the ki power usable once per level per day"
+  },
+  {
+   "name": "dgnYakuzaReactionBonusPct",
+   "value": 10,
+   "comment": "Yakuza prose (capture p. 53): the +10 percent encounter reaction bonus"
+  },
+  {
+   "name": "dgnYakuzaInfoCommonDays",
+   "value": 1,
+   "comment": "Yakuza prose (capture p. 53): common information takes one day"
+  },
+  {
+   "name": "dgnYakuzaInfoCommonCostCount",
+   "value": 2,
+   "comment": "Yakuza prose (capture p. 53): common information costs 2d6 fen"
+  },
+  {
+   "name": "dgnYakuzaInfoCommonCostDice",
+   "value": 6,
+   "comment": "Yakuza prose (capture p. 53): the 2d6-fen common cost dice"
+  },
+  {
+   "name": "dgnYakuzaInfoUncommonDaysMin",
+   "value": 1,
+   "comment": "Yakuza prose (capture p. 53): uncommon information takes 1-3 days"
+  },
+  {
+   "name": "dgnYakuzaInfoUncommonDaysMax",
+   "value": 3,
+   "comment": "Yakuza prose (capture p. 53): the 1-3 day uncommon upper bound"
+  },
+  {
+   "name": "dgnYakuzaInfoUncommonCostDice",
+   "value": 4,
+   "comment": "Yakuza prose (capture p. 53): uncommon information costs 2d4 yuan"
+  },
+  {
+   "name": "dgnYakuzaInfoUncommonInacc",
+   "value": 10,
+   "comment": "Yakuza prose (capture p. 53): the 10 percent inaccurate chance, uncommon"
+  },
+  {
+   "name": "dgnYakuzaInfoConfDaysMin",
+   "value": 2,
+   "comment": "Yakuza prose (capture p. 53): confidential information takes 2d6 days"
+  },
+  {
+   "name": "dgnYakuzaInfoConfDaysMax",
+   "value": 12,
+   "comment": "Yakuza prose (capture p. 53): the 2d6-day confidential upper bound"
+  },
+  {
+   "name": "dgnYakuzaInfoConfCostDice",
+   "value": 10,
+   "comment": "Yakuza prose (capture p. 53): confidential information costs 2d10 tael"
+  },
+  {
+   "name": "dgnYakuzaInfoConfInacc",
+   "value": 25,
+   "comment": "Yakuza prose (capture p. 53): the 25 percent inaccurate chance, confidential"
+  },
+  {
+   "name": "dgnYakuzaInfoSecretDaysMin",
+   "value": 3,
+   "comment": "Yakuza prose (capture p. 53): secret information takes 3d6 days"
+  },
+  {
+   "name": "dgnYakuzaInfoSecretDaysMax",
+   "value": 18,
+   "comment": "Yakuza prose (capture p. 53): the 3d6-day secret upper bound"
+  },
+  {
+   "name": "dgnYakuzaInfoSecretCostDice",
+   "value": 10,
+   "comment": "Yakuza prose (capture p. 53): secret information costs 2d10 ch'ien"
+  },
+  {
+   "name": "dgnYakuzaInfoSecretInacc",
+   "value": 40,
+   "comment": "Yakuza prose (capture p. 53): the 40 percent inaccurate chance, secret"
+  },
+  {
+   "name": "dgnYakuzaBrethrenMinLevel",
+   "value": 2,
+   "comment": "Yakuza prose (capture p. 54): the kyodai-bun brethren gained from 2nd level"
+  },
+  {
+   "name": "dgnYakuzaBrethrenPerLevel",
+   "value": 1,
+   "comment": "Yakuza prose (capture p. 54): one brother gained once per level of experience"
+  },
+  {
+   "name": "dgnYakuzaBrethrenMaxLevel",
+   "value": 8,
+   "comment": "Yakuza prose (capture p. 54): no brother ever above 8th level"
+  },
+  {
+   "name": "dgnT34RowCount",
+   "value": 12,
+   "comment": "Table 34 (capture p. 51): twelve advancement rows"
+  },
+  {
+   "name": "dgnYakuzaXpBeyond12th",
+   "value": 300000,
+   "comment": "Table 34 note (capture p. 51): 300,000 xp per level beyond 12th"
+  },
+  {
+   "name": "dgnYakuzaHpPerLevelBeyond9",
+   "value": 1,
+   "comment": "Table 34 note (capture p. 51): 1 hit point per level beyond 9th"
+  },
+  {
+   "name": "dgnT35RowCount",
+   "value": 21,
+   "comment": "Table 35 (capture p. 53): twenty-one capability rows"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgnYakuzaAlwaysLawful",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 52): the yakuza is always lawful, rarely lawful good"
+  },
+  {
+   "name": "dgnYakuzaNoPrimeReq",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 52): no prime requisite"
+  },
+  {
+   "name": "dgnYakuzaThiefTables",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 52): the thief combat and saving throw tables"
+  },
+  {
+   "name": "dgnYakuzaAnyWeapon",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 52): any weapon may be used"
+  },
+  {
+   "name": "dgnYakuzaArmorFromTable13",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 52): the armor choices from Table 13"
+  },
+  {
+   "name": "dgnYakuzaNoShields",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 52): no shield may be used"
+  },
+  {
+   "name": "dgnYakuzaFamilyClanRequired",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 52): the yakuza must belong to a family or clan"
+  },
+  {
+   "name": "dgnYakuzaFreeGamingProf",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 52): the free gaming proficiency"
+  },
+  {
+   "name": "dgnYakuzaThiefSkillsAtNinja",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 52): the thief abilities at the ninja chances"
+  },
+  {
+   "name": "dgnYakuzaHearNoiseAsMonk",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 52): hear noise at the monk chances"
+  },
+  {
+   "name": "dgnYakuzaInfoNeverMagical",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 53): the investigate ability never reveals magical items"
+  },
+  {
+   "name": "dgnYakuzaInfoNeverLegendary",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 53): the investigate ability never reveals legendary lore"
+  },
+  {
+   "name": "dgnYakuzaInfoCommonAlwaysAccurate",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 53): common information is always accurate"
+  },
+  {
+   "name": "dgnYakuzaKiHalvesRoundUp",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 53): the halved damage rounds up"
+  },
+  {
+   "name": "dgnYakuzaReactionExcludesStatus",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 53): the +10 reaction bonus never applies to social-status rolls"
+  },
+  {
+   "name": "dgnYakuzaAdoptedNoRolls",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 54): adoption into the kumi without the Table 39 or 40 rolls"
+  },
+  {
+   "name": "dgnYakuzaEnterpriseNeedsOyabun",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 54): major enterprises need the oyabun approval"
+  },
+  {
+   "name": "dgnYakuzaTattoosNeverFaceHandsFeet",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 54): tattoos per level, never on the face, hands or feet"
+  },
+  {
+   "name": "dgnYakuzaCastOutNonPerson",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 54): cast out below the family honor, a non-person whose death is not avenged"
+  },
+  {
+   "name": "dgnYakuzaMembershipRegainable",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 54): cast-out membership can be regained"
+  },
+  {
+   "name": "dgnYakuzaWaryOfLaw",
+   "value": true,
+   "comment": "Yakuza prose (capture p. 54): always criminals, wary of the law"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dgnT34Grid",
+   "tag": "T34",
+   "count": "dgnT34RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgnT34XpMax",
+    "dgnT34Dice",
+    "dgnT34HpBonus"
+   ],
+   "data": [
+    [
+     2000,
+     1,
+     0
+    ],
+    [
+     4000,
+     2,
+     0
+    ],
+    [
+     8000,
+     3,
+     0
+    ],
+    [
+     16000,
+     4,
+     0
+    ],
+    [
+     30000,
+     5,
+     0
+    ],
+    [
+     60000,
+     6,
+     0
+    ],
+    [
+     130000,
+     7,
+     0
+    ],
+    [
+     260000,
+     8,
+     0
+    ],
+    [
+     520000,
+     9,
+     0
+    ],
+    [
+     800000,
+     9,
+     1
+    ],
+    [
+     1100000,
+     9,
+     2
+    ],
+    [
+     1400000,
+     9,
+     3
+    ]
+   ],
+   "comment": "the Table 34 yakuza advancement grid (capture p. 51)",
+   "col_comments": [
+    "the experience column: the upper xp bound of each level, 2,000 at 1st to 1,400,000 at 12th (capture p. 51).",
+    "the accumulated d6 dice column: one per level through 9th, then held at 9 (capture p. 51).",
+    "the hit-point bonus column: the printed 9-plus-N cells - 1 hp per level beyond 9th: 0 through 9th, then 1, 2, 3 (capture p. 51)."
+   ],
+   "audit_comment": "the Table 34 grid: the xp bounds and the accumulated dice plus bonus (capture p. 51)",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dgnT35Grid",
+   "tag": "T35",
+   "count": "dgnT35RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgnT35InvestigatePct",
+    "dgnT35AreaCode"
+   ],
+   "data": [
+    [
+     20,
+     1
+    ],
+    [
+     24,
+     1
+    ],
+    [
+     28,
+     2
+    ],
+    [
+     32,
+     2
+    ],
+    [
+     36,
+     3
+    ],
+    [
+     40,
+     3
+    ],
+    [
+     44,
+     4
+    ],
+    [
+     48,
+     4
+    ],
+    [
+     52,
+     4
+    ],
+    [
+     56,
+     5
+    ],
+    [
+     60,
+     5
+    ],
+    [
+     64,
+     5
+    ],
+    [
+     68,
+     6
+    ],
+    [
+     72,
+     6
+    ],
+    [
+     76,
+     6
+    ],
+    [
+     80,
+     7
+    ],
+    [
+     84,
+     7
+    ],
+    [
+     88,
+     7
+    ],
+    [
+     92,
+     8
+    ],
+    [
+     95,
+     8
+    ],
+    [
+     95,
+     9
+    ]
+   ],
+   "comment": "the Table 35 yakuza capabilities grid (capture p. 53)",
+   "col_comments": [
+    "the investigate column: the whole-percent ladder, 20 at 1st rising by 4 to 92 at 19th, then 95 at 20th and 21st (capture p. 53).",
+    "the area covered column, pinned as the 1-9 code: 1, 2 and 3 blocks as 1, 2, 3; 1 ward 4; 2 wards 5; 1 district 6; 2 districts 7; 3 districts 8; province 9 (capture p. 53)."
+   ],
+   "audit_comment": "the Table 35 grid: the investigate ladder and the coded area column (capture p. 53)",
+   "sentinel_census": [
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dgnYakuzaMinStr pin",
+   "expr": "m['dgnYakuzaMinStr']() != 11"
+  },
+  {
+   "note": "the dgnYakuzaMinInt pin",
+   "expr": "m['dgnYakuzaMinInt']() != 15"
+  },
+  {
+   "note": "the dgnYakuzaMinDex pin",
+   "expr": "m['dgnYakuzaMinDex']() != 15"
+  },
+  {
+   "note": "the dgnYakuzaMinCha pin",
+   "expr": "m['dgnYakuzaMinCha']() != 16"
+  },
+  {
+   "note": "the dgnYakuzaHitDie pin",
+   "expr": "m['dgnYakuzaHitDie']() != 6"
+  },
+  {
+   "note": "the dgnYakuzaSlots pin",
+   "expr": "m['dgnYakuzaSlots']() != 3"
+  },
+  {
+   "note": "the dgnYakuzaFamilyBirthMod pin",
+   "expr": "m['dgnYakuzaFamilyBirthMod']() != -5"
+  },
+  {
+   "note": "the dgnYakuzaStipendPerLevel pin",
+   "expr": "m['dgnYakuzaStipendPerLevel']() != 2"
+  },
+  {
+   "note": "the dgnYakuzaContactLevelDiv pin",
+   "expr": "m['dgnYakuzaContactLevelDiv']() != 2"
+  },
+  {
+   "note": "the dgnYakuzaContactMaxAbove pin",
+   "expr": "m['dgnYakuzaContactMaxAbove']() != 4"
+  },
+  {
+   "note": "the dgnYakuzaKiDamageDiv pin",
+   "expr": "m['dgnYakuzaKiDamageDiv']() != 2"
+  },
+  {
+   "note": "the dgnYakuzaKiPerRound pin",
+   "expr": "m['dgnYakuzaKiPerRound']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaKiPerDayPerLevel pin",
+   "expr": "m['dgnYakuzaKiPerDayPerLevel']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaReactionBonusPct pin",
+   "expr": "m['dgnYakuzaReactionBonusPct']() != 10"
+  },
+  {
+   "note": "the dgnYakuzaInfoCommonDays pin",
+   "expr": "m['dgnYakuzaInfoCommonDays']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaInfoCommonCostCount pin",
+   "expr": "m['dgnYakuzaInfoCommonCostCount']() != 2"
+  },
+  {
+   "note": "the dgnYakuzaInfoCommonCostDice pin",
+   "expr": "m['dgnYakuzaInfoCommonCostDice']() != 6"
+  },
+  {
+   "note": "the dgnYakuzaInfoUncommonDaysMin pin",
+   "expr": "m['dgnYakuzaInfoUncommonDaysMin']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaInfoUncommonDaysMax pin",
+   "expr": "m['dgnYakuzaInfoUncommonDaysMax']() != 3"
+  },
+  {
+   "note": "the dgnYakuzaInfoUncommonCostDice pin",
+   "expr": "m['dgnYakuzaInfoUncommonCostDice']() != 4"
+  },
+  {
+   "note": "the dgnYakuzaInfoUncommonInacc pin",
+   "expr": "m['dgnYakuzaInfoUncommonInacc']() != 10"
+  },
+  {
+   "note": "the dgnYakuzaInfoConfDaysMin pin",
+   "expr": "m['dgnYakuzaInfoConfDaysMin']() != 2"
+  },
+  {
+   "note": "the dgnYakuzaInfoConfDaysMax pin",
+   "expr": "m['dgnYakuzaInfoConfDaysMax']() != 12"
+  },
+  {
+   "note": "the dgnYakuzaInfoConfCostDice pin",
+   "expr": "m['dgnYakuzaInfoConfCostDice']() != 10"
+  },
+  {
+   "note": "the dgnYakuzaInfoConfInacc pin",
+   "expr": "m['dgnYakuzaInfoConfInacc']() != 25"
+  },
+  {
+   "note": "the dgnYakuzaInfoSecretDaysMin pin",
+   "expr": "m['dgnYakuzaInfoSecretDaysMin']() != 3"
+  },
+  {
+   "note": "the dgnYakuzaInfoSecretDaysMax pin",
+   "expr": "m['dgnYakuzaInfoSecretDaysMax']() != 18"
+  },
+  {
+   "note": "the dgnYakuzaInfoSecretCostDice pin",
+   "expr": "m['dgnYakuzaInfoSecretCostDice']() != 10"
+  },
+  {
+   "note": "the dgnYakuzaInfoSecretInacc pin",
+   "expr": "m['dgnYakuzaInfoSecretInacc']() != 40"
+  },
+  {
+   "note": "the dgnYakuzaBrethrenMinLevel pin",
+   "expr": "m['dgnYakuzaBrethrenMinLevel']() != 2"
+  },
+  {
+   "note": "the dgnYakuzaBrethrenPerLevel pin",
+   "expr": "m['dgnYakuzaBrethrenPerLevel']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaBrethrenMaxLevel pin",
+   "expr": "m['dgnYakuzaBrethrenMaxLevel']() != 8"
+  },
+  {
+   "note": "the dgnT34RowCount pin",
+   "expr": "m['dgnT34RowCount']() != 12"
+  },
+  {
+   "note": "the dgnYakuzaXpBeyond12th pin",
+   "expr": "m['dgnYakuzaXpBeyond12th']() != 300000"
+  },
+  {
+   "note": "the dgnYakuzaHpPerLevelBeyond9 pin",
+   "expr": "m['dgnYakuzaHpPerLevelBeyond9']() != 1"
+  },
+  {
+   "note": "the dgnT35RowCount pin",
+   "expr": "m['dgnT35RowCount']() != 21"
+  },
+  {
+   "note": "the dgnYakuzaAlwaysLawful pin",
+   "expr": "m['dgnYakuzaAlwaysLawful']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaNoPrimeReq pin",
+   "expr": "m['dgnYakuzaNoPrimeReq']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaThiefTables pin",
+   "expr": "m['dgnYakuzaThiefTables']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaAnyWeapon pin",
+   "expr": "m['dgnYakuzaAnyWeapon']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaArmorFromTable13 pin",
+   "expr": "m['dgnYakuzaArmorFromTable13']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaNoShields pin",
+   "expr": "m['dgnYakuzaNoShields']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaFamilyClanRequired pin",
+   "expr": "m['dgnYakuzaFamilyClanRequired']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaFreeGamingProf pin",
+   "expr": "m['dgnYakuzaFreeGamingProf']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaThiefSkillsAtNinja pin",
+   "expr": "m['dgnYakuzaThiefSkillsAtNinja']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaHearNoiseAsMonk pin",
+   "expr": "m['dgnYakuzaHearNoiseAsMonk']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaInfoNeverMagical pin",
+   "expr": "m['dgnYakuzaInfoNeverMagical']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaInfoNeverLegendary pin",
+   "expr": "m['dgnYakuzaInfoNeverLegendary']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaInfoCommonAlwaysAccurate pin",
+   "expr": "m['dgnYakuzaInfoCommonAlwaysAccurate']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaKiHalvesRoundUp pin",
+   "expr": "m['dgnYakuzaKiHalvesRoundUp']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaReactionExcludesStatus pin",
+   "expr": "m['dgnYakuzaReactionExcludesStatus']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaAdoptedNoRolls pin",
+   "expr": "m['dgnYakuzaAdoptedNoRolls']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaEnterpriseNeedsOyabun pin",
+   "expr": "m['dgnYakuzaEnterpriseNeedsOyabun']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaTattoosNeverFaceHandsFeet pin",
+   "expr": "m['dgnYakuzaTattoosNeverFaceHandsFeet']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaCastOutNonPerson pin",
+   "expr": "m['dgnYakuzaCastOutNonPerson']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaMembershipRegainable pin",
+   "expr": "m['dgnYakuzaMembershipRegainable']() != 1"
+  },
+  {
+   "note": "the dgnYakuzaWaryOfLaw pin",
+   "expr": "m['dgnYakuzaWaryOfLaw']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the T34 first row - 2,000 xp, one die (capture p. 51)",
+   "expr": "m['dgnT34XpMax'](0) != 2000 or m['dgnT34Dice'](0) != 1 or m['dgnT34HpBonus'](0) != 0"
+  },
+  {
+   "note": "the T34 9th-level row - nine dice, no bonus (capture p. 51)",
+   "expr": "m['dgnT34XpMax'](8) != 520000 or m['dgnT34Dice'](8) != 9 or m['dgnT34HpBonus'](8) != 0"
+  },
+  {
+   "note": "the T34 10th-level row - nine dice plus one (capture p. 51)",
+   "expr": "m['dgnT34XpMax'](9) != 800000 or m['dgnT34Dice'](9) != 9 or m['dgnT34HpBonus'](9) != 1"
+  },
+  {
+   "note": "the T34 capstone - 1,400,000 xp, nine dice plus three, twelve rows only (capture p. 51)",
+   "expr": "m['dgnT34XpMax'](11) != 1400000 or m['dgnT34Dice'](11) != 9 or m['dgnT34HpBonus'](11) != 3 or m['dgnT34RowCount']() != 12"
+  },
+  {
+   "note": "the T34 note pair - 300,000 xp beyond 12th, 1 hp per level beyond 9th (capture p. 51)",
+   "expr": "m['dgnYakuzaXpBeyond12th']() != 300000 or m['dgnYakuzaHpPerLevelBeyond9']() != 1"
+  },
+  {
+   "note": "the T35 first row - 20 percent, one block (capture p. 53)",
+   "expr": "m['dgnT35InvestigatePct'](0) != 20 or m['dgnT35AreaCode'](0) != 1"
+  },
+  {
+   "note": "the T35 7th-level row - the first ward row, code 4 (capture p. 53)",
+   "expr": "m['dgnT35InvestigatePct'](6) != 44 or m['dgnT35AreaCode'](6) != 4"
+  },
+  {
+   "note": "the T35 13th-level row - the first district row, code 6 (capture p. 53)",
+   "expr": "m['dgnT35InvestigatePct'](12) != 68 or m['dgnT35AreaCode'](12) != 6"
+  },
+  {
+   "note": "the T35 19th-level row - 92 percent, the 3-district code 8 (capture p. 53)",
+   "expr": "m['dgnT35InvestigatePct'](18) != 92 or m['dgnT35AreaCode'](18) != 8"
+  },
+  {
+   "note": "the T35 capstone - 95 percent, the province code 9, twenty-one rows only (capture p. 53)",
+   "expr": "m['dgnT35InvestigatePct'](20) != 95 or m['dgnT35AreaCode'](20) != 9 or m['dgnT35RowCount']() != 21"
+  },
+  {
+   "note": "the T35 ladder shape - the by-4 rise through 19th, then 95 twice (capture p. 53)",
+   "expr": "m['dgnT35InvestigatePct'](1) - m['dgnT35InvestigatePct'](0) != 4 or m['dgnT35InvestigatePct'](19) != 95 or m['dgnT35InvestigatePct'](20) - m['dgnT35InvestigatePct'](19) != 0"
+  }
+ ],
+ "header_sections": {
+  "the yakuza doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dgnYakuzaMinStr"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaMinInt"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaMinDex"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaMinCha"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaHitDie"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaSlots"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaAlwaysLawful"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaNoPrimeReq"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaThiefTables"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaAnyWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaArmorFromTable13"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaNoShields"
+   }
+  ],
+  "the yakuza family and ki pins": [
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaFamilyClanRequired"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaFamilyBirthMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaFreeGamingProf"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaThiefSkillsAtNinja"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaHearNoiseAsMonk"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaKiDamageDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaKiHalvesRoundUp"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaKiPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaKiPerDayPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaReactionBonusPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaReactionExcludesStatus"
+   }
+  ],
+  "the yakuza investigate pins": [
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoCommonDays"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoCommonCostCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoCommonCostDice"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaInfoCommonAlwaysAccurate"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoUncommonDaysMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoUncommonDaysMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoUncommonCostDice"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoUncommonInacc"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoConfDaysMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoConfDaysMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoConfCostDice"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoConfInacc"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoSecretDaysMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoSecretDaysMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoSecretCostDice"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaInfoSecretInacc"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaInfoNeverMagical"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaInfoNeverLegendary"
+   }
+  ],
+  "the yakuza brethren and honor pins": [
+   {
+    "kind": "const",
+    "name": "dgnYakuzaBrethrenMinLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaBrethrenPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaBrethrenMaxLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaEnterpriseNeedsOyabun"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaAdoptedNoRolls"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaStipendPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaContactLevelDiv"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaContactMaxAbove"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaTattoosNeverFaceHandsFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaCastOutNonPerson"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaMembershipRegainable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgnYakuzaWaryOfLaw"
+   }
+  ],
+  "the Table 34 and Table 35 grids": [
+   {
+    "kind": "const",
+    "name": "dgnT34RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaXpBeyond12th"
+   },
+   {
+    "kind": "const",
+    "name": "dgnYakuzaHpPerLevelBeyond9"
+   },
+   {
+    "kind": "const",
+    "name": "dgnT35RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dgnT34Grid"
+   },
+   {
+    "kind": "table",
+    "name": "dgnT35Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Yakuza class box closes",
+   "from": "  - [ ] Yakuza (capture pp. 51-54) - the gangster:\n    the family-clan requirement, the -5 birth modifier,\n    the stipend, the gaming proficiency",
+   "to": "  - [x] Yakuza (capture pp. 51-54) - the gangster:\n    the family-clan requirement, the -5 birth modifier,\n    the stipend, the gaming proficiency -\n    R627: the dgn yakuza pins - the minima (Str 11,\n    Int 15, Dex 15, Cha 16) with no prime requisite,\n    the always-lawful rule, the d6 with the thief\n    tables, any weapon with the Table 13 armor and\n    no shields, the family-clan -5 birth modifier\n    with the free gaming proficiency, the thief\n    skills at the ninja chances, the investigate\n    tiers, the ki halves-damage power, the +10\n    reaction bonus, the contacts, the brethren,\n    the stipend, the tattoo and honor doctrine"
+  },
+  {
+   "note": "the   Table 34: Yakuza box closes",
+   "from": "  - [ ] Table 34: Yakuza (capture p. 51)",
+   "to": "  - [x] Table 34: Yakuza (capture p. 51) -\n    R627: the dgn T34 grid - twelve rows of xp bounds\n    and accumulated d6 dice with the 9-plus-N cells\n    (1 hp per level beyond 9th) plus the 300,000-xp\n    beyond-12th note"
+  },
+  {
+   "note": "the   Table 35: Yakuza Capabilities box closes",
+   "from": "  - [ ] Table 35: Yakuza Capabilities (capture p. 53)",
+   "to": "  - [x] Table 35: Yakuza Capabilities (capture p.\n    53) -\n    R627: the dgn T35 grid - twenty-one rows of the\n    investigate ladder 20 to 95 with the area\n    covered pinned as the 1-9 code (blocks, wards,\n    districts, province)"
+  }
+ ],
+ "gap_census": {
+  "closed": 59,
+  "open": 176
+ },
+ "include_comment": "the OA yakuza pins",
+ "include_after": "#include \"rules/oawujen.h\"  // R626: the OA wu jen pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R626 LANDED 2026-10-18: commit",
+ "prev_record": [
+  "- R626 LANDED 2026-10-18: commit",
+  "  5f23689fda6387c0a263f0dd0220183ce5b706a6",
+  "  (census 548 -> 549, pushed",
+  "  9204c4c..5f23689), THE WU JEN, capture",
+  "  pp. 47-51: rules/oawujen.h, prefix",
+  "  dgm (verified free), 60 inlines (31",
+  "  consts, 14 bools, 15 table columns):",
+  "  the Int 13 minimum with the Int-15 xp",
+  "  bonus, the NEVER-LAWFUL rule, the d4",
+  "  plus 1-per-die doctrine (2-5 hp per",
+  "  level), the magic-user tables, the",
+  "  favored weapon +1, six slots, the",
+  "  UNDERSTAND/KNOW/MEMORIZE doctrine",
+  "  with the Int-loss recheck and the",
+  "  destroyed scroll, the two ki powers",
+  "  (the +3 initiative burst once daily;",
+  "  the 4th-level MAXIMUM-EFFECT power,",
+  "  any spell three-plus levels lower,",
+  "  max range, duration and effect), the",
+  "  ELEMENTAL MASTERY (five groups, -1",
+  "  enemy saves, +1 damage, +1 own saves,",
+  "  lost on new spell levels), the 1d4",
+  "  pupils at 10th leaving at half the",
+  "  master level and replaced, the",
+  "  stronghold-with-lieutenant rule, the",
+  "  tengu/oni language with the +20",
+  "  reaction, the no-family and light-",
+  "  honor doctrine, the taboo ladder",
+  "  (one at 1st, one per five levels),",
+  "  T31 11x3, T32 7x3 with the printed",
+  "  All maximum pinned as the -1 code,",
+  "  T33 29x9 with the dashes as zeros.",
+  "  THREE CELLS SETTLED AGAINST THE 2018",
+  "  PRINT BEFORE PINNING: the T31 row-2",
+  "  bound 4,000 (the capture lost the",
+  "  comma); the T33 row-5 first-spell",
+  "  cell 3 (the capture prints 4 - the",
+  "  ladder-consistent reading stands);",
+  "  the T33 row-22 ninth-spell cell 1",
+  "  (the capture prints 2 - same",
+  "  doctrine). OCR normalization:",
+  "  konobokuru reads as korobokuru; in",
+  "  hit, spell book reads as in his",
+  "  spell book; cloud/adder reads as",
+  "  cloud ladder (prose only). Battery",
+  "  360 mutants, 0 missed; full sha",
+  "  rverify GREEN. Gap census 52/183 ->",
+  "  56/179. Spec 30,674 bytes md5",
+  "  716cd27ccc5e0384d110f565ffd8aa4b",
+  "  (canvas md5",
+  "  c1661af5761352ffd1951e682237368d).",
+  "  NEXT - R627: the Yakuza, capture",
+  "  pp. 51-54, Tables 34 and 35, prefix",
+  "  dgn (verify free), audit \"R627 OA",
+  "  yakuza audit\", include after rules/",
+  "  oawujen.h."
+ ]
+}
