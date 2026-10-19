@@ -1056,7 +1056,17 @@ description riding the same round.
     by spell between the passes); the names
     ride the column comments, the prose
     descriptions close in their own rounds
-  - [ ] Table 63: Divination Results (capture p. 117)
+  - [x] Table 63: Divination Results (capture p. 117) -
+    R666: the dia T63 band grid - the five omen
+    bands (ill omen, great danger, neutral,
+    favorable, auspicious) with the party to
+    hit and save, foe to hit, encounter
+    multiplier, reaction and travel modifiers,
+    and the 1d10 chain mapping the die roll to
+    its band (the table cross-checked between
+    the passes); the band names ride the
+    column comments, the omen prose closes in
+    its own round
   - [ ] Table 64: Speak with Dead (capture p. 132)
   - [ ] Table 65: Fate (capture p. 135)
 

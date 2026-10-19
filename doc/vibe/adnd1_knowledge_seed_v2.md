@@ -14026,6 +14026,54 @@ when both halves land.
   (verify free), audit "R665 OA seventh
   level spells audit", include after
   rules/oal6spells.h
+- R665 LANDED 2026-10-19: commit f5652858ad7f7ce01928dba09f90067828dfa29b
+  (census 587 -> 588, pushed c0a5a68..f565285),
+  SEVENTH LEVEL SPELLS - the 12 seventh
+  level shukenja spell stat blocks,
+  capture pp. 147-152: rules/oal7spells.h,
+  prefix dhz (verified free at c0a5a68), ONE
+  gap flip (single-line child label), 16
+  consts, 22 inlines (grid tag L7Data, 12
+  rows x 6 cols), gap census 117/118 ->
+  118/117 - THE SHUKENJA SPELL CHAPTER ROUNDS
+  COMPLETE: all 12 stat blocks cross-checked
+  spell by spell between the passes (print pp.
+  147-152 vs compressed pp. 71-73), zero
+  contested stat reads - conjuration/summoning
+  and necromantic tie as the most common
+  school at three spells each; exaction dual
+  Evocation/Alteration pinned primary evocation
+  (the abjure and aid precedent); no divination
+  or illusion this level. Resurrection alone
+  reads Reversible (the destruction reverse) -
+  the single mark matching the R658 T62
+  reversible column; holy (unholy) word
+  carries no reversible marker in either pass
+  despite the parenthetical name; ancient curse
+  alone sohei-usable, matching the T62 sohei
+  column. Astral spell the three-turn cast
+  (180), three one-turn casts (divine wind,
+  reincarnate, resurrection), five one-round,
+  quest eight segments, gate five, holy word
+  the single segment; two neg. saves (compel,
+  quest), two special (exaction, restore
+  spirit - the system shock roll), no half
+  saves. One prose divergence outside the stat
+  grid: compel's greater-than-150% bracket
+  penalty reads +4 in the print against -4 in
+  the compressed - the print settles. rverify
+  GREEN at c0a5a68, 88 mutants, 0 missed;
+  preflight GREEN (588 audit census, BUILD 0
+  warnings). Spec md5
+  75fe5ba8d0842c437e71e4859a7721a8
+  (authored-plus-newline md5
+  4861cd156260865fbe1915d9347f8298 - the value
+  the ritual gated and matched; canvas md5
+  f764ee61f5bfecb47e7cccc74289433f). NEXT -
+  R666: Table 63 Divination Results (capture
+  p. 117, rides its own box), prefix dia
+  (verify free), audit "R666 OA divination
+  results audit"
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
