@@ -13654,6 +13654,41 @@ when both halves land.
   59 (Barbarian Proficiencies), capture p. 104, prefix
   dhp (verify free), audit "R655 OA barbarian
   proficiencies audit", include after rules/oaartprof.h
+- R655 LANDED 2026-10-19: commit 0a7ef34bcaadeae7469d2956773922ef5a1f82f9
+  (census 577 -> 578, pushed b7a45cc..0a7ef34), TABLE 59
+  BARBARIAN PROFICIENCIES - the barbarian grid with the
+  slot costs, base chances and always-roll markers,
+  capture p. 104: rules/oabarbprof.h, prefix dhp
+  (verified free), 4 inlines (1 const, 3 table columns,
+  tag T59Data, no bools): the eight barbarian rows
+  (chanting through tracking) riding the first column
+  comment, with the slot costs (1, 1, 1, 1, 1, 2, 2,
+  3), the base chances (15, 8, 16, 12, 14, 16, 15, 17)
+  and the always-roll markers (fire building, running,
+  signaling, snare building, sound imitation, tracking;
+  chanting and survival unmarked); the asterisk set
+  (all but chanting) rides the row comments. Cross-
+  checked cell-by-cell between the two passes - zero
+  contested cells, marker for marker. SESSION RECOVERY
+  NOTE: the original print OCR session was lost to an
+  extraction-persistence failure at the R655 open; the
+  user re-uploaded the scan, the recovered session
+  extracted at 315 pages with pagination aligned to
+  the book, its p. 101 cross-checked verbatim against
+  the prior session read and its p. 103 corroborating
+  the R654 marker reads - the print-pass read route is
+  the new session (the compressed session was never
+  touched). rverify GREEN at b7a45cc, 25 mutants, 0
+  missed; preflight GREEN (578 audit census, BUILD 0
+  warnings). Gap census 106/129 -> 107/128. Spec 8,879
+  bytes md5 c3455f6a2b4d2aaa83bf03b2febedefc
+  (authored-plus-newline md5
+  ddfcb8fc91e3ce409aae44e3d4c3b516 - the value the
+  ritual gated and matched; canvas md5
+  8d4d37c92f79ca10d33fda8c949b0092). NEXT - R656: Table
+  60 (Common Proficiencies), capture p. 106, prefix dhq
+  (verify free), audit "R656 OA common proficiencies
+  audit", include after rules/oabarbprof.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -962,7 +962,14 @@ description riding the same round.
     markers (fire building, running, signaling, snare building, sound
     imitation, tracking); cross-checked cell-by-cell between the two passes,
     zero contested cells
-  - [ ] Table 60: Common Proficiencies (capture p. 106)
+  - [x] Table 60: Common Proficiencies (capture p. 106) - R656: the dhq T60
+    grid - the seventeen common rows (agriculture through swimming) with the
+    slot costs (animal handling 2, the rest 1), the base chances (15, 14, 16,
+    17, 17, 16, 18, 16, 14, the iaijutsu dash, 16, 17, 10, 15, 17, 16, 10) and
+    the always-roll markers (animal handling, gaming, horsemanship, hunting,
+    juggling, swimming); the print pass settles the three contested bases
+    (fishing 17, juggling 16, small water craft 16), the hunting marker
+    settles per the compressed-plus-prose reading
   - [ ] Table 61: Court Proficiencies (capture p. 108)
 
 - [ ] **Chapter 7: Shukenja Spells** (capture pp.
