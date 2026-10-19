@@ -13801,6 +13801,41 @@ when both halves land.
   First Level Spells (capture pp. 112-119), prefix dht
   (verify free), audit "R659 OA first level spells
   audit", include after rules/oashkspells.h
+- R659 LANDED 2026-10-19: commit e95ea548a13790f5627dbfbd78e241c741c2da16
+  (census 581 -> 582, pushed 15eda01..e95ea54), FIRST
+  LEVEL SPELLS - the 20 first level shukenja spell
+  stat blocks, capture pp. 112-119: rules/oal1spells.h,
+  prefix dht (verified free), ONE gap flip (single-line
+  child label, the R656 fix), 11 consts, 17 inlines
+  (grid tag L1Data, 20 rows x 6 cols - school,
+  components V=1 S=2 M=4 bitmask, casting time in
+  segments turn=60/round=10, saving throw code 0/1/2,
+  reversible, sohei), gap census 111/124 -> 112/123:
+  all 20 stat blocks cross-checked spell by spell
+  between the passes (print pp. 113-119 vs compressed
+  pp. 58-60), zero contested stat reads - ten
+  divination spells, twelve VSM / two verbal-only
+  (beneficence, omen) / six VS, four one-turn casts,
+  two neg. saves (animal companion, calm), two special
+  (deflection, know history); the reversible five and
+  sohei five match the R658 T62 grid exactly. The
+  compressed inch-mark garbles render as degree glyphs
+  and stars (its artifact class); the print p. 113
+  augury "1 orb per level" garble is prose-only,
+  nothing pinned rides it. One authoring repair: the
+  engine emits table columns as switches and needs a
+  default - added col_default=0 (no sentinel, all 20
+  ordinals real). rverify GREEN at 15eda01, 131
+  mutants, 0 missed; preflight GREEN (582 audit
+  census, BUILD 0 warnings). Spec 17,048 bytes md5
+  38006ca7b10ac17d73092a7719854eb3
+  (authored-plus-newline md5
+  c33b1300f8da56724327bec81b323c45 - the value the
+  ritual gated and matched; canvas md5
+  949ca5665fdc3f8829d0239b81b560a3). NEXT - R660:
+  Second Level Spells (capture pp. 119-126), prefix
+  dhu (verify free), audit "R660 OA second level
+  spells audit", include after rules/oal1spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -999,7 +999,15 @@ description riding the same round.
     the passes); the names ride the column comments, the
     prose descriptions and the Table 63 divination results
     close in their own rounds
-  - [ ] Second Level Spells (capture pp. 119-126)
+  - [x] Second Level Spells (capture pp. 119-126) -
+    R660: the dhu L2 stat grid - the 20 second level
+    spells with the school, component, casting time,
+    saving throw, reversible and sohei codes (the sohei
+    and reversible marks matching the R658 T62 grid;
+    the abjuration school debuting; the stat blocks
+    cross-checked spell by spell between the passes);
+    the names ride the column comments, the prose
+    descriptions close in their own rounds
   - [ ] Third Level Spells (capture pp. 126-132)
   - [ ] Fourth Level Spells (capture pp. 132-140)
   - [ ] Fifth Level Spells (capture pp. 140-143)
