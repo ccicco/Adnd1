@@ -13621,6 +13621,39 @@ when both halves land.
   (Artisan Proficiencies), capture p. 103, prefix dho
   (verify free), audit "R654 OA artisan proficiencies
   audit", include after rules/oacharprof.h
+- R654 LANDED 2026-10-19: commit b7a45cc8a6edae052ee3a230369b1f7123deadc6
+  (census 576 -> 577, pushed f96f0da..b7a45cc), TABLE 58
+  ARTISAN PROFICIENCIES - the artisan grid with the slot
+  costs, base chances and always-roll markers, capture
+  p. 103: rules/oaartprof.h, prefix dho (verified
+  free), 4 inlines (1 const, 3 table columns, tag
+  T58Data, no bools): the eighteen artisan rows (armorer
+  through weaver) riding the first column comment, with
+  the slot costs (2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1,
+  1, 1, 1, 3, 1), the base chances (16, 14, 15, 16, 15,
+  18, 17, 16, 14, 12, 18, 16, 17, 19, 16, 15, 17, 15)
+  and the always-roll markers (armorer, bowyer,
+  herbalist, navigator, weaponsmith; 0 for the other
+  thirteen). Every numeric cell agrees between the
+  passes - zero contested numbers. Two footnote-marker
+  reads settle against the prose: the print pass drops
+  the weaponsmith a and the bowyer asterisk where the
+  compressed carries both, and the weaponsmith prose
+  mandates the end-of-construction die roll while the
+  bowyer explanation section exists - both markers pin
+  per the compressed-plus-prose reading, the print drops
+  reading as an OCR omission. rverify GREEN at f96f0da,
+  55 mutants, 0 missed; preflight GREEN (577 audit
+  census, BUILD 0 warnings). Gap census 105/130 ->
+  106/129. Spec 9,448 bytes md5
+  1376b7e2d286eef204fad313c58619fd
+  (authored-plus-newline md5
+  8a45a9042aeae83c2d29652278d6e4a5 - the value the
+  ritual gated and matched; canvas md5
+  27d134328268eeb917aa60e611ae4beb). NEXT - R655: Table
+  59 (Barbarian Proficiencies), capture p. 104, prefix
+  dhp (verify free), audit "R655 OA barbarian
+  proficiencies audit", include after rules/oaartprof.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -955,8 +955,13 @@ description riding the same round.
     (armorer, bowyer, herbalist, navigator, weaponsmith); every numeric cell
     agrees between the passes, the two dropped print footnote markers settle
     per the compressed-plus-prose reading
-  - [ ] Table 59: Barbarian Proficiencies
-    (capture p. 104)
+  - [x] Table 59: Barbarian Proficiencies
+    (capture p. 104) - R655: the dhp T59 grid - the eight barbarian rows
+    (chanting through tracking) with the slot costs (1, 1, 1, 1, 1, 2, 2, 3),
+    the base chances (15, 8, 16, 12, 14, 16, 15, 17) and the always-roll
+    markers (fire building, running, signaling, snare building, sound
+    imitation, tracking); cross-checked cell-by-cell between the two passes,
+    zero contested cells
   - [ ] Table 60: Common Proficiencies (capture p. 106)
   - [ ] Table 61: Court Proficiencies (capture p. 108)
 

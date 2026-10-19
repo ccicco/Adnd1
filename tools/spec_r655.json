@@ -1,0 +1,178 @@
+{
+ "round": 655,
+ "title": "TABLE 59 BARBARIAN PROFICIENCIES - the barbarian grid with the slot costs, base chances and always-roll markers",
+ "prefix": "dhp",
+ "header_file": "rules/oabarbprof.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 577,
+ "inline_count": 4,
+ "audit_label": "R655 OA barbarian proficiencies audit",
+ "audit_comment": "OA round forty-two (capture p. 104): Table 59 - the barbarian proficiencies grid, the slot costs, the base chances and the always-roll markers",
+ "banner": {
+  "title": "TABLE 59 BARBARIAN PROFICIENCIES, printed capture p. 104 - the OA barbarian proficiencies round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the table - the Table 59 grid cross-checked cell-by-cell between the two passes (the table opening at the bottom of capture p. 104 of the print pass with the eight grid rows printing at the top of p. 105; compressed p. 53 carrying the full grid); every printed cell agrees - zero contested cells, marker for marker. The print pass read here comes from the recovered capture session: the original print OCR session was lost to an extraction failure at the R655 open, the re-uploaded scan extracted at 315 pages with its pagination aligned to the book (its p. 101 cross-checked verbatim against the prior session read, its p. 103 corroborating the R654 marker reads). The grid pins as a table: the barbarian rows 0 chanting, 1 fire building, 2 running, 3 signaling, 4 snare building, 5 sound imitation, 6 survival and 7 tracking riding the first column comment, three data columns - the proficiency slots required (1, 1, 1, 1, 1, 2, 2, 3), the base chance of success (15, 8, 16, 12, 14, 16, 15, 17) and the always-roll marker (1 for fire building, running, signaling, snare building, sound imitation and tracking, 0 for chanting and survival). The asterisk (further-explanation) markers ride the row comments - all but chanting carry it; the barbarian prose explanations (the fire-building 30 minutes, the running doctrine, the tracking terrain modifiers) stay with their own rounds. The table tag T59Data identifier-safe per the R639 lesson",
+  "sentinel": "the gap census after this round: 107 closed, 128 open - the Table 59 box flips (census 577 -> 578); NEXT - R656: Table 60 (Common Proficiencies), capture p. 106, prefix dhq (verify free), audit \"R656 OA common proficiencies audit\", include after rules/oabarbprof.h"
+ },
+ "consts": [
+  {
+   "name": "dhpT59RowCount",
+   "value": 8,
+   "comment": "the eight barbarian proficiencies of the Table 59 grid (capture p. 104 of the print pass; compressed p. 53)"
+  }
+ ],
+ "bools": [],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dhpT59Grid",
+   "tag": "T59Data",
+   "count": "dhpT59RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dhpT59Slots",
+    "dhpT59Base",
+    "dhpT59AlwaysRoll"
+   ],
+   "col_comments": [
+    "the proficiency slots required to initially gain the proficiency (capture p. 104 of the print pass; compressed p. 53). The barbarian rows ride this comment: 0 chanting, 1 fire building, 2 running, 3 signaling, 4 snare building, 5 sound imitation, 6 survival, 7 tracking - the printed asterisk (further-explanation) marker rides here too: all but chanting carry it",
+    "the base chance of success - the base number for the 1d20 roll (capture p. 104 of the print pass; compressed p. 53)",
+    "the always-roll marker - 1 where the printed a footnote marks a die roll always required to determine success, 0 otherwise (capture p. 104 of the print pass; compressed p. 53). The six-marked set: fire building, running, signaling, snare building, sound imitation and tracking - chanting and survival carry no marker in either pass"
+   ],
+   "data": [
+    [
+     1,
+     15,
+     0
+    ],
+    [
+     1,
+     8,
+     1
+    ],
+    [
+     1,
+     16,
+     1
+    ],
+    [
+     1,
+     12,
+     1
+    ],
+    [
+     1,
+     14,
+     1
+    ],
+    [
+     2,
+     16,
+     1
+    ],
+    [
+     2,
+     15,
+     0
+    ],
+    [
+     3,
+     17,
+     1
+    ]
+   ],
+   "comment": "the Table 59 barbarian proficiencies grid (capture p. 104 of the print pass; compressed p. 53)",
+   "audit_comment": "the Table 59 grid: the barbarian slot costs, base chances and always-roll markers",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the slot-cost pins - chanting through snare building one slot, sound imitation and survival two, tracking three",
+   "expr": "m['dhpT59Slots'](0) != 1 or m['dhpT59Slots'](4) != 1 or m['dhpT59Slots'](5) != 2 or m['dhpT59Slots'](6) != 2 or m['dhpT59Slots'](7) != 3"
+  },
+  {
+   "note": "the base-chance pins - fire building 8, signaling 12, snare building 14, chanting and survival 15, running and sound imitation 16, tracking 17",
+   "expr": "m['dhpT59Base'](1) != 8 or m['dhpT59Base'](3) != 12 or m['dhpT59Base'](4) != 14 or m['dhpT59Base'](0) != 15 or m['dhpT59Base'](6) != 15 or m['dhpT59Base'](2) != 16 or m['dhpT59Base'](5) != 16 or m['dhpT59Base'](7) != 17"
+  },
+  {
+   "note": "the always-roll pins - fire building, running, signaling, snare building, sound imitation and tracking roll, chanting and survival never do",
+   "expr": "m['dhpT59AlwaysRoll'](1) != 1 or m['dhpT59AlwaysRoll'](2) != 1 or m['dhpT59AlwaysRoll'](3) != 1 or m['dhpT59AlwaysRoll'](4) != 1 or m['dhpT59AlwaysRoll'](5) != 1 or m['dhpT59AlwaysRoll'](7) != 1 or m['dhpT59AlwaysRoll'](0) != 0 or m['dhpT59AlwaysRoll'](6) != 0"
+  },
+  {
+   "note": "the row-count pin - eight barbarian proficiencies",
+   "expr": "m['dhpT59RowCount']() != 8"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 59 grid pins": [
+   {
+    "kind": "const",
+    "name": "dhpT59RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dhpT59Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 59 barbarian proficiencies box closes",
+   "from": "  - [ ] Table 59: Barbarian Proficiencies\n    (capture p. 104)",
+   "to": "  - [x] Table 59: Barbarian Proficiencies\n    (capture p. 104) - R655: the dhp T59 grid - the eight barbarian rows\n    (chanting through tracking) with the slot costs (1, 1, 1, 1, 1, 2, 2, 3),\n    the base chances (15, 8, 16, 12, 14, 16, 15, 17) and the always-roll\n    markers (fire building, running, signaling, snare building, sound\n    imitation, tracking); cross-checked cell-by-cell between the two passes,\n    zero contested cells"
+  }
+ ],
+ "gap_census": {
+  "closed": 107,
+  "open": 128
+ },
+ "include_comment": "the OA barbarian proficiencies pins",
+ "include_after": "#include \"rules/oaartprof.h\"  // R654: the OA artisan proficiencies pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R654 LANDED 2026-10-19: commit b7a45cc8a6edae052ee3a230369b1f7123deadc6",
+ "prev_record": [
+  "- R654 LANDED 2026-10-19: commit b7a45cc8a6edae052ee3a230369b1f7123deadc6",
+  "  (census 576 -> 577, pushed f96f0da..b7a45cc), TABLE 58",
+  "  ARTISAN PROFICIENCIES - the artisan grid with the slot",
+  "  costs, base chances and always-roll markers, capture",
+  "  p. 103: rules/oaartprof.h, prefix dho (verified",
+  "  free), 4 inlines (1 const, 3 table columns, tag",
+  "  T58Data, no bools): the eighteen artisan rows (armorer",
+  "  through weaver) riding the first column comment, with",
+  "  the slot costs (2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1,",
+  "  1, 1, 1, 3, 1), the base chances (16, 14, 15, 16, 15,",
+  "  18, 17, 16, 14, 12, 18, 16, 17, 19, 16, 15, 17, 15)",
+  "  and the always-roll markers (armorer, bowyer,",
+  "  herbalist, navigator, weaponsmith; 0 for the other",
+  "  thirteen). Every numeric cell agrees between the",
+  "  passes - zero contested numbers. Two footnote-marker",
+  "  reads settle against the prose: the print pass drops",
+  "  the weaponsmith a and the bowyer asterisk where the",
+  "  compressed carries both, and the weaponsmith prose",
+  "  mandates the end-of-construction die roll while the",
+  "  bowyer explanation section exists - both markers pin",
+  "  per the compressed-plus-prose reading, the print drops",
+  "  reading as an OCR omission. rverify GREEN at f96f0da,",
+  "  55 mutants, 0 missed; preflight GREEN (577 audit",
+  "  census, BUILD 0 warnings). Gap census 105/130 ->",
+  "  106/129. Spec 9,448 bytes md5",
+  "  1376b7e2d286eef204fad313c58619fd",
+  "  (authored-plus-newline md5",
+  "  8a45a9042aeae83c2d29652278d6e4a5 - the value the",
+  "  ritual gated and matched; canvas md5",
+  "  27d134328268eeb917aa60e611ae4beb). NEXT - R655: Table",
+  "  59 (Barbarian Proficiencies), capture p. 104, prefix",
+  "  dhp (verify free), audit \"R655 OA barbarian",
+  "  proficiencies audit\", include after rules/oaartprof.h"
+ ]
+}
