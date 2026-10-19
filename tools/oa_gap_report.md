@@ -706,8 +706,25 @@ description riding the same round.
     rows by the position method, the overflow
     roll to the head, the owner permission, the
     reaction roll and the DM refusal
-  - [ ] Birthrights prose (capture p. 68)
-  - [ ] Table 40: Birthrights (capture p. 68)
+  - [x] Birthrights prose (capture p. 68) -
+    R633: the dgt birthrights pins - the
+    clan-virtue doctrine with the shared
+    ownership, the death return to the clan
+    and the lost-birthright honor loss, the
+    T38 die and roll doctrine with the
+    birth-rank subtraction, the personal
+    honor read, the 10-to-30 percent
+    property share from the ancestor lands,
+    the 100-coin cash strings, the
+    heirloom transfer ban, the +2 magical
+    weapon, the roll-again doctrine
+  - [x] Table 40: Birthrights (capture p. 68) -
+    R633: the dgt T40 grid - twenty-six
+    contiguous die bands 1 through 100
+    with the personal honor column (0 to
+    +4) and the birthright results pinned
+    as the 0-11 code, the roll-again rows
+    at 4, 7 and 100
 
 - [ ] **Chapter 4: Honor** (capture pp. 69-73) - the
   honor system

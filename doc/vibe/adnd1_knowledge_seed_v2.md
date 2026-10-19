@@ -12537,6 +12537,51 @@ when both halves land.
   holdings, prefix dgs (verify free),
   audit "R632 OA holdings audit",
   include after rules/oaanc.h.
+- R632 LANDED 2026-10-19: commit
+  bb00f5aeca9115cc74140583b9c06e63b30130d7
+  (census 554 -> 555, pushed
+  f0a630e..bb00f5a), THE ASSIGNING
+  ANCESTRAL HOLDINGS prose, capture pp.
+  67-68: rules/oahold.h, prefix dgs
+  (verified free), 11 inlines (11
+  bools, no consts, no tables): the
+  holdings as the Table 39 property
+  results, the automatic NPC ownership
+  (never the player character or his
+  siblings at career start), the first
+  holding to the head of the family,
+  the dice-assigned remainder to the
+  Head of Family and Father rows by
+  the position-determination method,
+  the overflow roll to the head, the
+  no-automatic-use doctrine (the owner
+  permission with the reaction roll and
+  the DM refusal). PINNED FROM THE
+  2018 PRINT CAPTURE ALONE (the
+  settling authority; the first
+  Mistral-OCR capture session is
+  unavailable above p. 33, so no
+  cross-capture check); a pure-prose
+  round - no tables, no numeric cells,
+  no contested cells. The Birthrights
+  prose and Table 40 (capture pp.
+  68-69) are deliberately held for the
+  next round. Battery 11 mutants,
+  0 missed; full sha rverify GREEN;
+  preflight GREEN. Gap census 71/164
+  -> 72/163. Spec 9,529 bytes md5
+  42a8e92c5c7080d9f1544b4f19eb06c5
+  (authored-plus-newline md5
+  96997b261d2b2b64e2ceabe69fbc5364;
+  canvas md5
+  4badf29668205d71be12b47e077c961c).
+  NEXT - R633: the Birthrights prose
+  and Table 40, capture pp. 68-69, the
+  property-share, heirloom and
+  cash-string doctrines, prefix dgt
+  (verify free), audit "R633 OA
+  birthrights audit", include after
+  rules/oahold.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
