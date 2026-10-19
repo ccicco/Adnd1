@@ -916,8 +916,15 @@ description riding the same round.
     and ready-to-fire doctrines, and the height-and-weight weapon
     restrictions; the compressed plus-as-minus OCR artifact class settles per
     the print capture
-  - [ ] Table 57: Missile Weapon Specializations
-    (capture p. 100)
+  - [x] Table 57: Missile Weapon Specializations
+    (capture p. 100) - R651: the dhl T57 grid - the specialist
+    attacks-per-round pairs by level band (1-6, 7-12, 13 & up) as the num/den
+    columns per the T55 pair precedent - the bow 2/1-3/1-4/1 ladder, the light
+    crossbow, the pellet bow & heavy crossbow, the lasso & staff sling, the
+    large shuriken & thrown dagger, the dart & small shuriken and the other
+    column, with the level-band bounds as consts; the print p. 100 header
+    fragments settle the pellet-bow and large-shuriken column names -
+    cross-checked cell-by-cell between the two passes, zero contested cells
   - [ ] Non-Weapon Proficiencies prose with the
     optional peaceful proficiency bonuses, the
     success-and-failure doctrine and the contests

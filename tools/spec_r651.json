@@ -1,0 +1,257 @@
+{
+ "round": 651,
+ "title": "TABLE 57 MISSILE SPECIALIZATIONS - the specialist attacks-per-round grid",
+ "prefix": "dhl",
+ "header_file": "rules/oamslspec.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 573,
+ "inline_count": 17,
+ "audit_label": "R651 OA missile specializations audit",
+ "audit_comment": "OA round thirty-eight (capture p. 100): Table 57 - the missile weapon specializations grid, the specialist attacks-per-round pairs by level band",
+ "banner": {
+  "title": "TABLE 57 MISSILE SPECIALIZATIONS, printed capture pp. 100-101 - the OA missile specializations round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the section - the Table 57 grid cross-checked cell-by-cell between the two passes (the table opens on capture p. 100 of the print pass with the Number of Attacks Per Round With header and its column-name fragments, the full grid printing on p. 101; compressed p. 52); every printed cell agrees - zero contested cells. The grid pins per the T55 pair precedent: each printed num/den attacks pair becomes a numerator and a denominator column, the level rows 0 the 1-6 band, 1 the 7-12 band and 2 the 13-and-up band riding the first column comment, and the level-band bounds pin as consts (three bands, tops at 6 and 12). The seven printed columns: the bow (2/1, 3/1, 4/1 up the bands), the light crossbow (1/1, 3/2, 2/1), the pellet bow and heavy crossbow (1/2, 1/1, 3/2), the lasso and staff sling (1/1, 3/2, 2/1), the large shuriken and thrown dagger (3/1, 4/1, 5/1), the dart and small shuriken (4/1, 5/1, 6/1) and the other column (3/2, 2/1, 5/2). Two column-name reads settle from the print pass's own p. 100 header fragments plus the compressed corroboration: the p. 101 header reads Bow & Heavy Crossbow and Shuriken, Thrown Dagger, dropping the Pellet and Large that the p. 100 fragments carry - the names pin as pellet bow & heavy crossbow and large shuriken & thrown dagger. The specialist-prose cross-references stay with R650; the grid completes the weapon proficiencies arc of Chapter 6",
+  "sentinel": "the gap census after this round: 103 closed, 132 open - the Table 57 box flips (census 573 -> 574); NEXT - R652: the Non-Weapon Proficiencies prose with the optional peaceful proficiency bonuses, the success-and-failure doctrine and the contests (capture pp. 101-103), prefix dhm (verify free), audit \"R652 OA non-weapon proficiencies audit\", include after rules/oamslspec.h"
+ },
+ "consts": [
+  {
+   "name": "dhlT57BandCount",
+   "value": 3,
+   "comment": "the three level bands of the specialist grid - 1 through 6, 7 through 12, and 13 and up (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhlT57FirstBandTop",
+   "value": 6,
+   "comment": "the first level band runs 1 through 6 (capture p. 100 of the print pass; compressed p. 52)"
+  },
+  {
+   "name": "dhlT57SecondBandTop",
+   "value": 12,
+   "comment": "the second level band runs 7 through 12, the third band 13 and up (capture p. 100 of the print pass; compressed p. 52)"
+  }
+ ],
+ "bools": [],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dhlT57Grid",
+   "tag": "T57Data",
+   "count": "dhlT57BandCount",
+   "sentinel": -99,
+   "cols": [
+    "dhlT57BowNum",
+    "dhlT57BowDen",
+    "dhlT57LightNum",
+    "dhlT57LightDen",
+    "dhlT57PelletHeavyNum",
+    "dhlT57PelletHeavyDen",
+    "dhlT57LassoNum",
+    "dhlT57LassoDen",
+    "dhlT57ShurikenNum",
+    "dhlT57ShurikenDen",
+    "dhlT57DartNum",
+    "dhlT57DartDen",
+    "dhlT57OtherNum",
+    "dhlT57OtherDen"
+   ],
+   "col_comments": [
+    "the bow specialist attacks-per-round numerator by level band (capture p. 100 of the print pass; compressed p. 52). The level rows ride this comment: 0 the 1-6 band, 1 the 7-12 band, 2 the 13-and-up band - the printed cell is the num/den attacks pair, carried per the T55 full/half pair precedent",
+    "the bow specialist attacks-per-round denominator - the number after the slash (capture p. 100 of the print pass; compressed p. 52)",
+    "the light crossbow specialist attacks-per-round numerator (capture p. 100 of the print pass; compressed p. 52)",
+    "the light crossbow denominator (capture p. 100 of the print pass; compressed p. 52)",
+    "the pellet bow and heavy crossbow specialist attacks-per-round numerator - the column name settles from the print p. 100 header fragment Pellet plus the compressed corroboration, the print p. 101 header read dropping it (capture pp. 100-101 of the print pass; compressed p. 52)",
+    "the pellet bow and heavy crossbow denominator (capture p. 100 of the print pass; compressed p. 52)",
+    "the lasso and staff sling specialist attacks-per-round numerator (capture p. 100 of the print pass; compressed p. 52)",
+    "the lasso and staff sling denominator (capture p. 100 of the print pass; compressed p. 52)",
+    "the large shuriken and thrown dagger specialist attacks-per-round numerator - the column name settles from the print p. 100 header fragment Large plus the compressed corroboration (capture pp. 100-101 of the print pass; compressed p. 52)",
+    "the large shuriken and thrown dagger denominator (capture p. 100 of the print pass; compressed p. 52)",
+    "the dart and small shuriken specialist attacks-per-round numerator (capture p. 100 of the print pass; compressed p. 52)",
+    "the dart and small shuriken denominator (capture p. 100 of the print pass; compressed p. 52)",
+    "the other missile weapons column attacks-per-round numerator (capture p. 100 of the print pass; compressed p. 52)",
+    "the other column denominator (capture p. 100 of the print pass; compressed p. 52)"
+   ],
+   "data": [
+    [
+     2,
+     1,
+     1,
+     1,
+     1,
+     2,
+     1,
+     1,
+     3,
+     1,
+     4,
+     1,
+     3,
+     2
+    ],
+    [
+     3,
+     1,
+     3,
+     2,
+     1,
+     1,
+     3,
+     2,
+     4,
+     1,
+     5,
+     1,
+     2,
+     1
+    ],
+    [
+     4,
+     1,
+     2,
+     1,
+     3,
+     2,
+     2,
+     1,
+     5,
+     1,
+     6,
+     1,
+     5,
+     2
+    ]
+   ],
+   "comment": "the Table 57 missile weapon specializations grid (capture p. 100 of the print pass; compressed p. 52)",
+   "audit_comment": "the Table 57 grid: the specialist attacks-per-round pairs by level band",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the level-band pins - three bands, tops at 6 and 12",
+   "expr": "m['dhlT57BandCount']() != 3 or m['dhlT57FirstBandTop']() != 6 or m['dhlT57SecondBandTop']() != 12"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the bow row pairs - 2/1, 3/1, 4/1 up the bands (capture p. 100 of the print pass; compressed p. 52)",
+   "expr": "m['dhlT57BowNum'](0) != 2 or m['dhlT57BowDen'](0) != 1 or m['dhlT57BowNum'](1) != 3 or m['dhlT57BowDen'](1) != 1 or m['dhlT57BowNum'](2) != 4 or m['dhlT57BowDen'](2) != 1"
+  },
+  {
+   "note": "the light crossbow row pairs - 1/1, 3/2, 2/1 (capture p. 100)",
+   "expr": "m['dhlT57LightNum'](0) != 1 or m['dhlT57LightDen'](0) != 1 or m['dhlT57LightNum'](1) != 3 or m['dhlT57LightDen'](1) != 2 or m['dhlT57LightNum'](2) != 2 or m['dhlT57LightDen'](2) != 1"
+  },
+  {
+   "note": "the pellet bow & heavy crossbow row pairs - 1/2, 1/1, 3/2 (capture p. 100)",
+   "expr": "m['dhlT57PelletHeavyNum'](0) != 1 or m['dhlT57PelletHeavyDen'](0) != 2 or m['dhlT57PelletHeavyNum'](1) != 1 or m['dhlT57PelletHeavyDen'](1) != 1 or m['dhlT57PelletHeavyNum'](2) != 3 or m['dhlT57PelletHeavyDen'](2) != 2"
+  },
+  {
+   "note": "the lasso & staff sling row pairs - 1/1, 3/2, 2/1 (capture p. 100)",
+   "expr": "m['dhlT57LassoNum'](0) != 1 or m['dhlT57LassoDen'](0) != 1 or m['dhlT57LassoNum'](1) != 3 or m['dhlT57LassoDen'](1) != 2 or m['dhlT57LassoNum'](2) != 2 or m['dhlT57LassoDen'](2) != 1"
+  },
+  {
+   "note": "the large shuriken & thrown dagger row pairs - 3/1, 4/1, 5/1 (capture p. 100)",
+   "expr": "m['dhlT57ShurikenNum'](0) != 3 or m['dhlT57ShurikenDen'](0) != 1 or m['dhlT57ShurikenNum'](1) != 4 or m['dhlT57ShurikenDen'](1) != 1 or m['dhlT57ShurikenNum'](2) != 5 or m['dhlT57ShurikenDen'](2) != 1"
+  },
+  {
+   "note": "the dart & small shuriken row pairs - 4/1, 5/1, 6/1 (capture p. 100)",
+   "expr": "m['dhlT57DartNum'](0) != 4 or m['dhlT57DartDen'](0) != 1 or m['dhlT57DartNum'](1) != 5 or m['dhlT57DartDen'](1) != 1 or m['dhlT57DartNum'](2) != 6 or m['dhlT57DartDen'](2) != 1"
+  },
+  {
+   "note": "the other column row pairs - 3/2, 2/1, 5/2 (capture p. 100)",
+   "expr": "m['dhlT57OtherNum'](0) != 3 or m['dhlT57OtherDen'](0) != 2 or m['dhlT57OtherNum'](1) != 2 or m['dhlT57OtherDen'](1) != 1 or m['dhlT57OtherNum'](2) != 5 or m['dhlT57OtherDen'](2) != 2"
+  }
+ ],
+ "header_sections": {
+  "the Table 57 grid pins": [
+   {
+    "kind": "const",
+    "name": "dhlT57BandCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhlT57FirstBandTop"
+   },
+   {
+    "kind": "const",
+    "name": "dhlT57SecondBandTop"
+   },
+   {
+    "kind": "table",
+    "name": "dhlT57Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 57 missile weapon specializations box closes",
+   "from": "  - [ ] Table 57: Missile Weapon Specializations\n    (capture p. 100)",
+   "to": "  - [x] Table 57: Missile Weapon Specializations\n    (capture p. 100) - R651: the dhl T57 grid - the specialist\n    attacks-per-round pairs by level band (1-6, 7-12, 13 & up) as the num/den\n    columns per the T55 pair precedent - the bow 2/1-3/1-4/1 ladder, the light\n    crossbow, the pellet bow & heavy crossbow, the lasso & staff sling, the\n    large shuriken & thrown dagger, the dart & small shuriken and the other\n    column, with the level-band bounds as consts; the print p. 100 header\n    fragments settle the pellet-bow and large-shuriken column names -\n    cross-checked cell-by-cell between the two passes, zero contested cells"
+  }
+ ],
+ "gap_census": {
+  "closed": 103,
+  "open": 132
+ },
+ "include_comment": "the OA missile specializations pins",
+ "include_after": "#include \"rules/oaweaponspec.h\"  // R650: the OA weapon specialization pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R650 LANDED 2026-10-19: commit 689abc769fdd33a284bc877400722a3c0d510a30",
+ "prev_record": [
+  "- R650 LANDED 2026-10-19: commit 689abc769fdd33a284bc877400722a3c0d510a30",
+  "  (census 572 -> 573, pushed ffef1f8..689abc7), WEAPON PROFICIENCIES AND",
+  "  SPECIALIZATION - the Chapter 6 opener with the slot doctrine and the",
+  "  specialist bonuses, capture pp. 99-101: rules/oaweaponspec.h, prefix dhk",
+  "  (verified free), 47 inlines (30 consts, 17 bools, no table). THE ARC-OPENER",
+  "  PRECEDENT APPLIED: per the R636 pattern the Chapter 6 parent box opens this",
+  "  round alongside the first child - two gap flips (the parent with the",
+  "  slot-system prose pinned, the weapon proficiencies and specialization prose",
+  "  box). The pins: the slot doctrine (the 1st-level slots, the",
+  "  weapon-or-peaceful fill, the saveable slots, the never-change rule, one slot",
+  "  per weapon proficiency), the specialization doctrine (samurai and bushi",
+  "  only, two slots melee or crossbow, three other missiles, the bushi",
+  "  one-weapon rule, the samurai katana-and-bow rule with the delayable bow, the",
+  "  specific-type rule, the melee specialist +1/+2 with iaijutsu and the",
+  "  next-attack-rank rule, the 3/2 and 2/1 attack examples, double",
+  "  specialization at one slot more for +3/+3), the bow point-blank band (5-30",
+  "  feet, +2/+2, doubled base damage, the ready-arrow auto-fire), the crossbow",
+  "  point-blank band (5-60 feet, +1/+1 short, +1 medium, the same benefits), the",
+  "  other-missile +1/+2, and the p. 101 restrictions (the class penalty on",
+  "  disallowed weapons never kept and carried, the under-5-feet 12-foot bound,",
+  "  the under-4-feet daikyu ban, the under-100-pounds heavy-crossbow, 200-gp and",
+  "  two-handed-sword bans, overriding the penalty entirely). The prose",
+  "  cross-checked paragraph-by-paragraph between the two passes - every printed",
+  "  number agrees; one OCR artifact class settled per the R643 pattern: the",
+  "  compressed pass systematically renders the specialization bonuses as minuses",
+  "  and each read contradicts its own sentence (an increase to a bonus, a",
+  "  doubled base damage), so the print + signs stand; the print pocked",
+  "  letter-slip settles as nocked. First publish clean - no repairs. rverify",
+  "  GREEN at ffef1f8, 47 mutants, 0 missed; preflight GREEN (573 audit census,",
+  "  BUILD 0 warnings). Gap census 100/135 -> 102/133. Spec 25,960 bytes md5",
+  "  2a3c25c56046abb56ec0614dc1aed8fe (authored-plus-newline md5",
+  "  4538b7f51911bec04f71e602f0061a2a - the value the ritual gated and matched;",
+  "  canvas md5 6030c661d4703ac2207bfb626512eb3a). NEXT - R651: Table 57 (Missile",
+  "  Weapon Specializations), capture p. 100, the specialist attacks-per-round",
+  "  grid, prefix dhl (verify free), audit \"R651 OA missile specializations",
+  "  audit\", include after rules/oaweaponspec.h"
+ ]
+}

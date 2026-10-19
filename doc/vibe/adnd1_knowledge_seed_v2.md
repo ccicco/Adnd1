@@ -13495,6 +13495,42 @@ when both halves land.
   specialization prose (capture pp. 100-101), prefix dhk (verify free), audit
   "R650 OA proficiencies audit", include after rules/oaarmordesc.h - the
   Chapter 6 boxes at HEAD name the exact labels
+- R650 LANDED 2026-10-19: commit 689abc769fdd33a284bc877400722a3c0d510a30
+  (census 572 -> 573, pushed ffef1f8..689abc7), WEAPON PROFICIENCIES AND
+  SPECIALIZATION - the Chapter 6 opener with the slot doctrine and the
+  specialist bonuses, capture pp. 99-101: rules/oaweaponspec.h, prefix dhk
+  (verified free), 47 inlines (30 consts, 17 bools, no table). THE ARC-OPENER
+  PRECEDENT APPLIED: per the R636 pattern the Chapter 6 parent box opens this
+  round alongside the first child - two gap flips (the parent with the
+  slot-system prose pinned, the weapon proficiencies and specialization prose
+  box). The pins: the slot doctrine (the 1st-level slots, the
+  weapon-or-peaceful fill, the saveable slots, the never-change rule, one slot
+  per weapon proficiency), the specialization doctrine (samurai and bushi
+  only, two slots melee or crossbow, three other missiles, the bushi
+  one-weapon rule, the samurai katana-and-bow rule with the delayable bow, the
+  specific-type rule, the melee specialist +1/+2 with iaijutsu and the
+  next-attack-rank rule, the 3/2 and 2/1 attack examples, double
+  specialization at one slot more for +3/+3), the bow point-blank band (5-30
+  feet, +2/+2, doubled base damage, the ready-arrow auto-fire), the crossbow
+  point-blank band (5-60 feet, +1/+1 short, +1 medium, the same benefits), the
+  other-missile +1/+2, and the p. 101 restrictions (the class penalty on
+  disallowed weapons never kept and carried, the under-5-feet 12-foot bound,
+  the under-4-feet daikyu ban, the under-100-pounds heavy-crossbow, 200-gp and
+  two-handed-sword bans, overriding the penalty entirely). The prose
+  cross-checked paragraph-by-paragraph between the two passes - every printed
+  number agrees; one OCR artifact class settled per the R643 pattern: the
+  compressed pass systematically renders the specialization bonuses as minuses
+  and each read contradicts its own sentence (an increase to a bonus, a
+  doubled base damage), so the print + signs stand; the print pocked
+  letter-slip settles as nocked. First publish clean - no repairs. rverify
+  GREEN at ffef1f8, 47 mutants, 0 missed; preflight GREEN (573 audit census,
+  BUILD 0 warnings). Gap census 100/135 -> 102/133. Spec 25,960 bytes md5
+  2a3c25c56046abb56ec0614dc1aed8fe (authored-plus-newline md5
+  4538b7f51911bec04f71e602f0061a2a - the value the ritual gated and matched;
+  canvas md5 6030c661d4703ac2207bfb626512eb3a). NEXT - R651: Table 57 (Missile
+  Weapon Specializations), capture p. 100, the specialist attacks-per-round
+  grid, prefix dhl (verify free), audit "R651 OA missile specializations
+  audit", include after rules/oaweaponspec.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
