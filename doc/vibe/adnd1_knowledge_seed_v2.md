@@ -12582,6 +12582,68 @@ when both halves land.
   (verify free), audit "R633 OA
   birthrights audit", include after
   rules/oahold.h.
+- R633 LANDED 2026-10-19: commit
+  91502ba33b87772847a90b3ca77ace2fa69ae287
+  (census 555 -> 556, pushed
+  bb00f5a..91502ba), BIRTHRIGHTS and
+  TABLE 40, capture pp. 68-69:
+  rules/oabr.h (oabirth.h is taken by
+  R629), prefix dgt (verified free), 30
+  inlines (6 consts, 20 bools, 4 table
+  columns): the clan-virtue doctrine
+  (the shared ownership with the death
+  return to the clan and the
+  lost-birthright honor loss), the T38
+  die and roll doctrine with the
+  birth-rank subtraction (the first son
+  subtracts one), the personal honor
+  read, the 10-to-30 percent property
+  share from the father, grandfather
+  and head-held lands with the single-
+  property 30 percent cap and the
+  no-property read, the 100-coin cash
+  strings, the heirloom transfer ban
+  (the DM armor, the player weapon),
+  the +2 magical weapon with the great
+  honor loss on losing it, the roll-
+  again doctrine, T40 26x4 with the die
+  bands pinned as the lo and hi bounds
+  (contiguous 1 through 100, asserted
+  in the gen script), the personal
+  honor column 0 to +4 and the results
+  as the 0-11 code with the roll-again
+  rows at 4, 7 and 100. PINNED FROM THE
+  2018 PRINT CAPTURE ALONE (the
+  settling authority; the first
+  Mistral-OCR capture session is
+  unavailable above p. 33, so no
+  cross-capture check); no contested
+  cells within the single source. OCR
+  normalization: the print
+  capitalization varies (Property Share
+  at 6 and 17-18, Property share at 8,
+  41-45 and 56-60) - all pin as the
+  same codes; rows 4 and 7 read "next
+  higher die or + 10" while row 100
+  reads "with + 10 on die roll" (both
+  pin as the roll-again codes 1 and 11).
+  The Chapter 4 Honor prose (capture
+  pp. 69-73) is deliberately held for
+  the next rounds. Battery 130 mutants,
+  0 missed; full sha rverify GREEN;
+  preflight GREEN. Gap census 72/163
+  -> 74/161. Spec 19,617 bytes md5
+  fcd1423440807b7fe9b2fe71abc46fed
+  (authored-plus-newline md5
+  560ac8bba857a9382122a257470366ab;
+  canvas md5
+  cf99a563f079836d6ac8b17d43c51b2b).
+  NEXT - R634: the Honor chapter
+  opener, the Gaining and Losing Honor
+  prose and Table 41 (Initial Honor),
+  capture pp. 69-70, prefix dgu
+  (verify free), audit "R634 OA honor
+  audit", include after rules/oabr.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

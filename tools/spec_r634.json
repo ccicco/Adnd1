@@ -1,0 +1,455 @@
+{
+ "round": 634,
+ "title": "HONOR - the chapter opener, the starting honor doctrine, Table 41",
+ "prefix": "dgu",
+ "header_file": "rules/oahonor.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 556,
+ "inline_count": 21,
+ "audit_label": "R634 OA honor audit",
+ "audit_comment": "OA round twenty-one (capture pp. 69-70): the honor opener prose, the starting honor doctrine and the Table 41 grid",
+ "banner": {
+  "title": "THE HONOR OPENER AND TABLE 41, printed capture pp. 69-70 - the OA honor round",
+  "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. No contested cells detected within the single source: the T41 rows are five fixed base honors plus the single die-roll row (the yakuza 1d20 + 20 read pins as the 21-40 bounds; the class row order pins as the 0-6 code: shukenja, sohei, kensai, bushi, hengeyokai, wu jen, yakuza). The T41 base-honor column pins as the lo and hi bounds. OCR normalization: none required for this range beyond the yakuza die read - the honor opener prose carries the printed em dashes. The Altering Family Honor and Effects of Honor prose and Table 42 (capture pp. 70-72) are deliberately left for the next rounds",
+  "sentinel": "the gap census after this round: 76 closed, 159 open - the Gaining and Losing Honor prose and Table 41 boxes flip (census 556 -> 557); NEXT - R635: the Altering Family Honor prose and the Effects of Honor prose with Table 42, capture pp. 70-72, the family ledger and the reaction doctrine, prefix dgv (verify free), audit \"R635 OA effects of honor audit\", include after rules/oahonor.h"
+ },
+ "consts": [
+  {
+   "name": "dguT41RowCount",
+   "value": 7,
+   "comment": "Table 41 (capture p. 70): seven initial-honor rows"
+  },
+  {
+   "name": "dguHonorMax",
+   "value": 100,
+   "comment": "Gaining and losing prose (capture p. 70): no character can have more than 100 points of honor"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dguHonorReflectsFamily",
+   "value": true,
+   "comment": "Honor opener prose (capture pp. 69-70): honor reflects the character and the character of his family - the family affects the character and vice versa"
+  },
+  {
+   "name": "dguHonorBringsRespect",
+   "value": true,
+   "comment": "Honor opener prose (capture pp. 69-70): with honor comes respect, power, influence and position; without it, disrespect, humiliation and insults"
+  },
+  {
+   "name": "dguHonorEasierToLose",
+   "value": true,
+   "comment": "Honor opener prose (capture pp. 69-70): honor is easier to lose than to gain"
+  },
+  {
+   "name": "dguDishonorDeeds",
+   "value": true,
+   "comment": "Honor opener prose (capture pp. 69-70): breaking faith, treachery, cowardice and unavenged insults cause a loss of honor"
+  },
+  {
+   "name": "dguHonorDeeds",
+   "value": true,
+   "comment": "Honor opener prose (capture pp. 69-70): valiant deeds, self-sacrifice, mastery of skills and keeping faith earn honor"
+  },
+  {
+   "name": "dguHonorImprovesReactions",
+   "value": true,
+   "comment": "Honor opener prose (capture pp. 69-70): gaining honor brings better encounter reactions, gifts and better replacement characters"
+  },
+  {
+   "name": "dguHonorNotAlignment",
+   "value": true,
+   "comment": "Honor opener prose (capture pp. 69-70): oriental honor is not a judgment of good and evil - a cruel villain can hold high honor and a heroic samurai low honor"
+  },
+  {
+   "name": "dguHonorDeedsBoth",
+   "value": true,
+   "comment": "Honor opener prose (capture pp. 69-70): honor measures the deeds of the character and the family clan - obedience, loyalty, talent and success, regardless of alignment"
+  },
+  {
+   "name": "dguHonorPointsTracked",
+   "value": true,
+   "comment": "Honor points prose (capture pp. 69-70): players record honor points - the DM gives them at the end of an adventure or major encounter and takes them away for dishonorable actions"
+  },
+  {
+   "name": "dguNotEveryAdventure",
+   "value": true,
+   "comment": "Honor points prose (capture pp. 69-70): characters do not earn honor points for every adventure - they must do something special"
+  },
+  {
+   "name": "dguClanStartByBirthRank",
+   "value": true,
+   "comment": "Starting honor prose (capture p. 70): family-clan characters start with the base honor determined by birth rank, adjusted by the Table 39 results - the family honor"
+  },
+  {
+   "name": "dguFamilyHonorFloorZero",
+   "value": true,
+   "comment": "Starting honor prose (capture p. 70): a negative family honor is raised to 0"
+  },
+  {
+   "name": "dguClanStartAddsBirthrights",
+   "value": true,
+   "comment": "Starting honor prose (capture p. 70): the starting honor is the family honor plus the birthright bonuses plus the character's lowest ability score"
+  },
+  {
+   "name": "dguNoClanT41Base",
+   "value": true,
+   "comment": "Starting honor prose (capture p. 70): characters without family clans take the Table 41 base honor by class or race, plus the lowest ability score"
+  },
+  {
+   "name": "dguClassSensitivity",
+   "value": true,
+   "comment": "Gaining and losing prose (capture p. 70): classes gain and lose honor at different rates - a samurai's honor fluctuates more than a wu jen's or shukenja's"
+  },
+  {
+   "name": "dguDmAwardsHonor",
+   "value": true,
+   "comment": "Gaining and losing prose (capture p. 70): honor points are always awarded by the DM, normally at the end of an adventure; the DM's judgment is final; the typical awards are listed on Table 42"
+  },
+  {
+   "name": "dguDmJudgment",
+   "value": true,
+   "comment": "Gaining and losing prose (capture p. 70): the list cannot cover every situation - the DM relies on his judgment using the table as a guideline"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dguT41Grid",
+   "tag": "T41",
+   "count": "dguT41RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dguT41BaseLo",
+    "dguT41BaseHi"
+   ],
+   "data": [
+    [
+     20,
+     20
+    ],
+    [
+     15,
+     15
+    ],
+    [
+     25,
+     25
+    ],
+    [
+     10,
+     10
+    ],
+    [
+     10,
+     10
+    ],
+    [
+     15,
+     15
+    ],
+    [
+     21,
+     40
+    ]
+   ],
+   "comment": "the Table 41 initial honor grid (capture p. 70)",
+   "col_comments": [
+    "the initial-honor lower bound column, by class row - 0 shukenja, 1 sohei, 2 kensai, 3 bushi, 4 hengeyokai, 5 wu jen, 6 yakuza (capture p. 70).",
+    "the initial-honor upper bound column - the fixed rows pin lo equal to hi; the yakuza row reads 1d20 + 20, pinning as 21 through 40 (capture p. 70)."
+   ],
+   "audit_comment": "the Table 41 grid: the class base-honor bounds (capture p. 70)",
+   "sentinel_census": [
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dguT41RowCount pin",
+   "expr": "m['dguT41RowCount']() != 7"
+  },
+  {
+   "note": "the dguHonorMax pin",
+   "expr": "m['dguHonorMax']() != 100"
+  },
+  {
+   "note": "the dguHonorReflectsFamily pin",
+   "expr": "m['dguHonorReflectsFamily']() != 1"
+  },
+  {
+   "note": "the dguHonorBringsRespect pin",
+   "expr": "m['dguHonorBringsRespect']() != 1"
+  },
+  {
+   "note": "the dguHonorEasierToLose pin",
+   "expr": "m['dguHonorEasierToLose']() != 1"
+  },
+  {
+   "note": "the dguDishonorDeeds pin",
+   "expr": "m['dguDishonorDeeds']() != 1"
+  },
+  {
+   "note": "the dguHonorDeeds pin",
+   "expr": "m['dguHonorDeeds']() != 1"
+  },
+  {
+   "note": "the dguHonorImprovesReactions pin",
+   "expr": "m['dguHonorImprovesReactions']() != 1"
+  },
+  {
+   "note": "the dguHonorNotAlignment pin",
+   "expr": "m['dguHonorNotAlignment']() != 1"
+  },
+  {
+   "note": "the dguHonorDeedsBoth pin",
+   "expr": "m['dguHonorDeedsBoth']() != 1"
+  },
+  {
+   "note": "the dguHonorPointsTracked pin",
+   "expr": "m['dguHonorPointsTracked']() != 1"
+  },
+  {
+   "note": "the dguNotEveryAdventure pin",
+   "expr": "m['dguNotEveryAdventure']() != 1"
+  },
+  {
+   "note": "the dguClanStartByBirthRank pin",
+   "expr": "m['dguClanStartByBirthRank']() != 1"
+  },
+  {
+   "note": "the dguFamilyHonorFloorZero pin",
+   "expr": "m['dguFamilyHonorFloorZero']() != 1"
+  },
+  {
+   "note": "the dguClanStartAddsBirthrights pin",
+   "expr": "m['dguClanStartAddsBirthrights']() != 1"
+  },
+  {
+   "note": "the dguNoClanT41Base pin",
+   "expr": "m['dguNoClanT41Base']() != 1"
+  },
+  {
+   "note": "the dguClassSensitivity pin",
+   "expr": "m['dguClassSensitivity']() != 1"
+  },
+  {
+   "note": "the dguDmAwardsHonor pin",
+   "expr": "m['dguDmAwardsHonor']() != 1"
+  },
+  {
+   "note": "the dguDmJudgment pin",
+   "expr": "m['dguDmJudgment']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the T41 shukenja and kensai rows - the 20 and 25 bases (capture p. 70)",
+   "expr": "m['dguT41BaseLo'](0) != 20 or m['dguT41BaseHi'](0) != 20 or m['dguT41BaseLo'](2) != 25 or m['dguT41BaseHi'](2) != 25"
+  },
+  {
+   "note": "the T41 sohei and wu jen rows - the 15 bases (capture p. 70)",
+   "expr": "m['dguT41BaseLo'](1) != 15 or m['dguT41BaseHi'](1) != 15 or m['dguT41BaseLo'](5) != 15 or m['dguT41BaseHi'](5) != 15"
+  },
+  {
+   "note": "the T41 bushi and hengeyokai rows - the 10 bases (capture p. 70)",
+   "expr": "m['dguT41BaseLo'](3) != 10 or m['dguT41BaseHi'](3) != 10 or m['dguT41BaseLo'](4) != 10 or m['dguT41BaseHi'](4) != 10"
+  },
+  {
+   "note": "the T41 yakuza row - the 1d20 + 20 read pinned as 21 through 40 (capture p. 70)",
+   "expr": "m['dguT41BaseLo'](6) != 21 or m['dguT41BaseHi'](6) != 40"
+  },
+  {
+   "note": "the T41 row count - seven rows only (capture p. 70)",
+   "expr": "m['dguT41RowCount']() != 7"
+  },
+  {
+   "note": "the honor cap - no character above 100 points (capture p. 70)",
+   "expr": "m['dguHonorMax']() != 100"
+  },
+  {
+   "note": "the starting honor doctrine - the birth-rank base with the T39 adjustments, the 0 floor, the birthright and lowest-ability adds, the no-clan route (capture p. 70)",
+   "expr": "m['dguClanStartByBirthRank']() != 1 or m['dguFamilyHonorFloorZero']() != 1 or m['dguClanStartAddsBirthrights']() != 1 or m['dguNoClanT41Base']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the honor doctrine pins": [
+   {
+    "kind": "bool",
+    "name": "dguHonorReflectsFamily"
+   },
+   {
+    "kind": "bool",
+    "name": "dguHonorBringsRespect"
+   },
+   {
+    "kind": "bool",
+    "name": "dguHonorEasierToLose"
+   },
+   {
+    "kind": "bool",
+    "name": "dguDishonorDeeds"
+   },
+   {
+    "kind": "bool",
+    "name": "dguHonorDeeds"
+   },
+   {
+    "kind": "bool",
+    "name": "dguHonorImprovesReactions"
+   },
+   {
+    "kind": "bool",
+    "name": "dguHonorNotAlignment"
+   },
+   {
+    "kind": "bool",
+    "name": "dguHonorDeedsBoth"
+   },
+   {
+    "kind": "bool",
+    "name": "dguHonorPointsTracked"
+   },
+   {
+    "kind": "bool",
+    "name": "dguNotEveryAdventure"
+   }
+  ],
+  "the starting honor pins": [
+   {
+    "kind": "const",
+    "name": "dguT41RowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dguClanStartByBirthRank"
+   },
+   {
+    "kind": "bool",
+    "name": "dguFamilyHonorFloorZero"
+   },
+   {
+    "kind": "bool",
+    "name": "dguClanStartAddsBirthrights"
+   },
+   {
+    "kind": "bool",
+    "name": "dguNoClanT41Base"
+   }
+  ],
+  "the gaining and losing pins": [
+   {
+    "kind": "const",
+    "name": "dguHonorMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dguClassSensitivity"
+   },
+   {
+    "kind": "bool",
+    "name": "dguDmAwardsHonor"
+   },
+   {
+    "kind": "bool",
+    "name": "dguDmJudgment"
+   }
+  ],
+  "the Table 41 grid": [
+   {
+    "kind": "table",
+    "name": "dguT41Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Gaining and Losing Honor prose box closes",
+   "from": "  - [ ] Gaining and Losing Honor prose (capture p. 70)",
+   "to": "  - [x] Gaining and Losing Honor prose (capture p. 70) -\n    R634: the dgu honor pins - the\n    opener doctrine (the family reflection,\n    the easier-to-lose rule, the deed\n    lists, the not-alignment read), the\n    honor-point tracking with the DM\n    awards, the starting honor doctrine\n    (the birth-rank base with the T39\n    adjustments, the 0 floor, the\n    birthright and lowest-ability adds,\n    the no-clan T41 route), the class\n    sensitivity, the 100-point cap"
+  },
+  {
+   "note": "the   Table 41: Initial Honor box closes",
+   "from": "  - [ ] Table 41: Initial Honor (capture p. 70)",
+   "to": "  - [x] Table 41: Initial Honor (capture p. 70) -\n    R634: the dgu T41 grid - seven class\n    rows pinned as the base-honor lo\n    and hi bounds with the yakuza 1d20\n    + 20 read as 21 through 40"
+  }
+ ],
+ "gap_census": {
+  "closed": 76,
+  "open": 159
+ },
+ "include_comment": "the OA honor pins",
+ "include_after": "#include \"rules/oabr.h\"  // R633: the OA birthrights pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R633 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R633 LANDED 2026-10-19: commit",
+  "  91502ba33b87772847a90b3ca77ace2fa69ae287",
+  "  (census 555 -> 556, pushed",
+  "  bb00f5a..91502ba), BIRTHRIGHTS and",
+  "  TABLE 40, capture pp. 68-69:",
+  "  rules/oabr.h (oabirth.h is taken by",
+  "  R629), prefix dgt (verified free), 30",
+  "  inlines (6 consts, 20 bools, 4 table",
+  "  columns): the clan-virtue doctrine",
+  "  (the shared ownership with the death",
+  "  return to the clan and the",
+  "  lost-birthright honor loss), the T38",
+  "  die and roll doctrine with the",
+  "  birth-rank subtraction (the first son",
+  "  subtracts one), the personal honor",
+  "  read, the 10-to-30 percent property",
+  "  share from the father, grandfather",
+  "  and head-held lands with the single-",
+  "  property 30 percent cap and the",
+  "  no-property read, the 100-coin cash",
+  "  strings, the heirloom transfer ban",
+  "  (the DM armor, the player weapon),",
+  "  the +2 magical weapon with the great",
+  "  honor loss on losing it, the roll-",
+  "  again doctrine, T40 26x4 with the die",
+  "  bands pinned as the lo and hi bounds",
+  "  (contiguous 1 through 100, asserted",
+  "  in the gen script), the personal",
+  "  honor column 0 to +4 and the results",
+  "  as the 0-11 code with the roll-again",
+  "  rows at 4, 7 and 100. PINNED FROM THE",
+  "  2018 PRINT CAPTURE ALONE (the",
+  "  settling authority; the first",
+  "  Mistral-OCR capture session is",
+  "  unavailable above p. 33, so no",
+  "  cross-capture check); no contested",
+  "  cells within the single source. OCR",
+  "  normalization: the print",
+  "  capitalization varies (Property Share",
+  "  at 6 and 17-18, Property share at 8,",
+  "  41-45 and 56-60) - all pin as the",
+  "  same codes; rows 4 and 7 read \"next",
+  "  higher die or + 10\" while row 100",
+  "  reads \"with + 10 on die roll\" (both",
+  "  pin as the roll-again codes 1 and 11).",
+  "  The Chapter 4 Honor prose (capture",
+  "  pp. 69-73) is deliberately held for",
+  "  the next rounds. Battery 130 mutants,",
+  "  0 missed; full sha rverify GREEN;",
+  "  preflight GREEN. Gap census 72/163",
+  "  -> 74/161. Spec 19,617 bytes md5",
+  "  fcd1423440807b7fe9b2fe71abc46fed",
+  "  (authored-plus-newline md5",
+  "  560ac8bba857a9382122a257470366ab;",
+  "  canvas md5",
+  "  cf99a563f079836d6ac8b17d43c51b2b).",
+  "  NEXT - R634: the Honor chapter",
+  "  opener, the Gaining and Losing Honor",
+  "  prose and Table 41 (Initial Honor),",
+  "  capture pp. 69-70, prefix dgu",
+  "  (verify free), audit \"R634 OA honor",
+  "  audit\", include after rules/oabr.h."
+ ]
+}

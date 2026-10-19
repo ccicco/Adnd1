@@ -728,8 +728,23 @@ description riding the same round.
 
 - [ ] **Chapter 4: Honor** (capture pp. 69-73) - the
   honor system
-  - [ ] Gaining and Losing Honor prose (capture p. 70)
-  - [ ] Table 41: Initial Honor (capture p. 70)
+  - [x] Gaining and Losing Honor prose (capture p. 70) -
+    R634: the dgu honor pins - the
+    opener doctrine (the family reflection,
+    the easier-to-lose rule, the deed
+    lists, the not-alignment read), the
+    honor-point tracking with the DM
+    awards, the starting honor doctrine
+    (the birth-rank base with the T39
+    adjustments, the 0 floor, the
+    birthright and lowest-ability adds,
+    the no-clan T41 route), the class
+    sensitivity, the 100-point cap
+  - [x] Table 41: Initial Honor (capture p. 70) -
+    R634: the dgu T41 grid - seven class
+    rows pinned as the base-honor lo
+    and hi bounds with the yakuza 1d20
+    + 20 read as 21 through 40
   - [ ] Altering Family Honor (capture p. 70) - the
     family honor ledger and the zero floor
   - [ ] Effects of Honor prose (capture pp. 71-72)
