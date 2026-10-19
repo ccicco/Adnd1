@@ -947,8 +947,14 @@ description riding the same round.
     non-proficiency penalties (2, 4, 2, 3, 2, 2, 5, 4), plus the ninja
     weapon-only rule - cross-checked cell-by-cell between the two passes, zero
     contested cells
-  - [ ] Table 58: Artisan Proficiencies
-    (capture p. 103)
+  - [x] Table 58: Artisan Proficiencies
+    (capture p. 103) - R654: the dho T58 grid - the eighteen artisan rows
+    (armorer through weaver) with the slot costs (2, 1, 1, 1, 1, 2, 2, 2, 1,
+    1, 1, 1, 1, 1, 1, 1, 3, 1), the base chances (16, 14, 15, 16, 15, 18, 17,
+    16, 14, 12, 18, 16, 17, 19, 16, 15, 17, 15) and the always-roll markers
+    (armorer, bowyer, herbalist, navigator, weaponsmith); every numeric cell
+    agrees between the passes, the two dropped print footnote markers settle
+    per the compressed-plus-prose reading
   - [ ] Table 59: Barbarian Proficiencies
     (capture p. 104)
   - [ ] Table 60: Common Proficiencies (capture p. 106)

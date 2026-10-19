@@ -1,0 +1,225 @@
+{
+ "round": 654,
+ "title": "TABLE 58 ARTISAN PROFICIENCIES - the artisan grid with the slot costs, base chances and always-roll markers",
+ "prefix": "dho",
+ "header_file": "rules/oaartprof.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 576,
+ "inline_count": 4,
+ "audit_label": "R654 OA artisan proficiencies audit",
+ "audit_comment": "OA round forty-one (capture p. 103): Table 58 - the artisan proficiencies grid, the slot costs, the base chances and the always-roll markers",
+ "banner": {
+  "title": "TABLE 58 ARTISAN PROFICIENCIES, printed capture p. 103 - the OA artisan proficiencies round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the table - the Table 58 grid cross-checked cell-by-cell between the two passes (the table printing on capture p. 103 of the print pass; compressed p. 53); every numeric cell agrees - zero contested numbers. The grid pins as a table: the artisan rows 0 armorer, 1 blacksmith, 2 bowyer, 3 brewer, 4 carpenter, 5 civil engineer, 6 herbalist, 7 jeweler, 8 masseur, 9 navigator, 10 paper-maker, 11 potter, 12 seamstress/tailor, 13 silk maker, 14 stonemason, 15 tanner/leatherworker, 16 weaponsmith and 17 weaver riding the first column comment, three data columns - the proficiency slots required (2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1), the base chance of success (16, 14, 15, 16, 15, 18, 17, 16, 14, 12, 18, 16, 17, 19, 16, 15, 17, 15) and the always-roll marker (1 for armorer, bowyer, herbalist, navigator and weaponsmith, 0 for the other thirteen). Two footnote-marker reads settle against the prose: the print pass drops the weaponsmith a marker where the compressed carries it and the weaponsmith prose mandates the end-of-construction die roll, and the print pass drops the bowyer asterisk where the compressed carries it and the bowyer explanation section exists - both markers pin per the compressed-plus-prose reading, the print drops reading as an OCR omission. The asterisk (further-explanation) markers ride the row comments, not the grid; the artisan prose explanations stay with their own rounds. The table tag T58Data identifier-safe per the R639 lesson",
+  "sentinel": "the gap census after this round: 106 closed, 129 open - the Table 58 box flips (census 576 -> 577); NEXT - R655: Table 59 (Barbarian Proficiencies), capture p. 104, prefix dhp (verify free), audit \"R655 OA barbarian proficiencies audit\", include after rules/oaartprof.h"
+ },
+ "consts": [
+  {
+   "name": "dhoT58RowCount",
+   "value": 18,
+   "comment": "the eighteen artisan proficiencies of the Table 58 grid (capture p. 103 of the print pass; compressed p. 53)"
+  }
+ ],
+ "bools": [],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dhoT58Grid",
+   "tag": "T58Data",
+   "count": "dhoT58RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dhoT58Slots",
+    "dhoT58Base",
+    "dhoT58AlwaysRoll"
+   ],
+   "col_comments": [
+    "the proficiency slots required to initially gain the proficiency (capture p. 103 of the print pass; compressed p. 53). The artisan rows ride this comment: 0 armorer, 1 blacksmith, 2 bowyer, 3 brewer, 4 carpenter, 5 civil engineer, 6 herbalist, 7 jeweler, 8 masseur, 9 navigator, 10 paper-maker, 11 potter, 12 seamstress/tailor, 13 silk maker, 14 stonemason, 15 tanner/leatherworker, 16 weaponsmith, 17 weaver",
+    "the base chance of success - the base number for the 1d20 roll (capture p. 103 of the print pass; compressed p. 53)",
+    "the always-roll marker - 1 where the printed a footnote marks a die roll always required to determine success, 0 otherwise (capture p. 103 of the print pass; compressed p. 53). The four-marked set: armorer, bowyer, herbalist, navigator and weaponsmith - the print pass drops the weaponsmith a marker, the compressed carries it and the weaponsmith prose mandates the roll, so the marker pins per the compressed-plus-prose reading"
+   ],
+   "data": [
+    [
+     2,
+     16,
+     1
+    ],
+    [
+     1,
+     14,
+     0
+    ],
+    [
+     1,
+     15,
+     1
+    ],
+    [
+     1,
+     16,
+     0
+    ],
+    [
+     1,
+     15,
+     0
+    ],
+    [
+     2,
+     18,
+     0
+    ],
+    [
+     2,
+     17,
+     1
+    ],
+    [
+     2,
+     16,
+     0
+    ],
+    [
+     1,
+     14,
+     0
+    ],
+    [
+     1,
+     12,
+     1
+    ],
+    [
+     1,
+     18,
+     0
+    ],
+    [
+     1,
+     16,
+     0
+    ],
+    [
+     1,
+     17,
+     0
+    ],
+    [
+     1,
+     19,
+     0
+    ],
+    [
+     1,
+     16,
+     0
+    ],
+    [
+     1,
+     15,
+     0
+    ],
+    [
+     3,
+     17,
+     1
+    ],
+    [
+     1,
+     15,
+     0
+    ]
+   ],
+   "comment": "the Table 58 artisan proficiencies grid (capture p. 103 of the print pass; compressed p. 53)",
+   "audit_comment": "the Table 58 grid: the artisan slot costs, base chances and always-roll markers",
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the slot-cost pins - armorer 2, weaponsmith 3, the single-slot artisans 1, the double-slot civil engineer, herbalist and jeweler 2",
+   "expr": "m['dhoT58Slots'](0) != 2 or m['dhoT58Slots'](16) != 3 or m['dhoT58Slots'](1) != 1 or m['dhoT58Slots'](5) != 2 or m['dhoT58Slots'](6) != 2 or m['dhoT58Slots'](7) != 2"
+  },
+  {
+   "note": "the base-chance pins - navigator 12, silk maker 19, paper-maker 18, civil engineer 18, masseur and blacksmith 14",
+   "expr": "m['dhoT58Base'](9) != 12 or m['dhoT58Base'](13) != 19 or m['dhoT58Base'](10) != 18 or m['dhoT58Base'](5) != 18 or m['dhoT58Base'](8) != 14 or m['dhoT58Base'](1) != 14"
+  },
+  {
+   "note": "the always-roll pins - armorer, bowyer, herbalist, navigator and weaponsmith roll, the other thirteen never do",
+   "expr": "m['dhoT58AlwaysRoll'](0) != 1 or m['dhoT58AlwaysRoll'](2) != 1 or m['dhoT58AlwaysRoll'](6) != 1 or m['dhoT58AlwaysRoll'](9) != 1 or m['dhoT58AlwaysRoll'](16) != 1 or m['dhoT58AlwaysRoll'](1) != 0 or m['dhoT58AlwaysRoll'](3) != 0 or m['dhoT58AlwaysRoll'](13) != 0 or m['dhoT58AlwaysRoll'](17) != 0"
+  },
+  {
+   "note": "the row-count pin - eighteen artisan proficiencies",
+   "expr": "m['dhoT58RowCount']() != 18"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 58 grid pins": [
+   {
+    "kind": "const",
+    "name": "dhoT58RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dhoT58Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 58 artisan proficiencies box closes",
+   "from": "  - [ ] Table 58: Artisan Proficiencies\n    (capture p. 103)",
+   "to": "  - [x] Table 58: Artisan Proficiencies\n    (capture p. 103) - R654: the dho T58 grid - the eighteen artisan rows\n    (armorer through weaver) with the slot costs (2, 1, 1, 1, 1, 2, 2, 2, 1,\n    1, 1, 1, 1, 1, 1, 1, 3, 1), the base chances (16, 14, 15, 16, 15, 18, 17,\n    16, 14, 12, 18, 16, 17, 19, 16, 15, 17, 15) and the always-roll markers\n    (armorer, bowyer, herbalist, navigator, weaponsmith); every numeric cell\n    agrees between the passes, the two dropped print footnote markers settle\n    per the compressed-plus-prose reading"
+  }
+ ],
+ "gap_census": {
+  "closed": 106,
+  "open": 129
+ },
+ "include_comment": "the OA artisan proficiencies pins",
+ "include_after": "#include \"rules/oacharprof.h\"  // R653: the OA character proficiencies pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R653 LANDED 2026-10-19: commit f96f0da050e1cc80244a8f8c0cdf7f78d542024b",
+ "prev_record": [
+  "- R653 LANDED 2026-10-19: commit f96f0da050e1cc80244a8f8c0cdf7f78d542024b",
+  "  (census 575 -> 576, pushed 125647b..f96f0da), TABLE 56",
+  "  CHARACTER PROFICIENCIES - the class grid with the ninja",
+  "  rule, capture p. 99: rules/oacharprof.h, prefix dhn",
+  "  (verified free), 5 inlines (1 const, 1 bool, 3 table",
+  "  columns, tag T56Data): the eight class rows (samurai,",
+  "  shukenja, sohei, kensai, o. barbarian, bushi, wu jen,",
+  "  ninja) riding the first column comment, with the initial",
+  "  proficiencies (5, 6, 4, 3, 9, 4, 6, 2), the levels per",
+  "  added proficiency as the 1/N denominators (1, 2, 3, 2,",
+  "  3, 2, 2, 3) and the non-proficiency penalties (2, 4, 2,",
+  "  3, 2, 2, 5, 4); the ninja weapon-only rule pins as a",
+  "  bool (the non-proficiency penalty applies only to ninja",
+  "  weapons, all other weapons take the other class",
+  "  penalty). Cross-checked cell-by-cell between the two",
+  "  passes - every printed cell agrees, zero contested",
+  "  cells. One pre-verify repair the machinery caught: the",
+  "  first build omitted the tables key so the engine",
+  "  emitted no grid (2 inlines instead of 5) - the seating",
+  "  assert flagged it, rebuilt before publish, the user side",
+  "  never saw the break. rverify GREEN at 125647b, 26",
+  "  mutants, 0 missed; preflight GREEN (576 audit census,",
+  "  BUILD 0 warnings). Gap census 104/131 -> 105/130. Spec",
+  "  9,543 bytes md5 f31c8dd0e2ad0fd2bea406cd0e9b5a49",
+  "  (authored-plus-newline md5 62d5839b0ddd9aca2fe1534af6e42376",
+  "  - the value the ritual gated and matched; canvas md5",
+  "  0cd79fd5a24f9d9e41d90efa2a8582ba). NEXT - R654: Table 58",
+  "  (Artisan Proficiencies), capture p. 103, prefix dho",
+  "  (verify free), audit \"R654 OA artisan proficiencies",
+  "  audit\", include after rules/oacharprof.h"
+ ]
+}

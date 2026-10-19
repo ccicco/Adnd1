@@ -13591,6 +13591,36 @@ when both halves land.
   (Character Proficiencies), capture p. 99, prefix dhn (verify
   free), audit "R653 OA character proficiencies audit", include
   after rules/oanwprof.h
+- R653 LANDED 2026-10-19: commit f96f0da050e1cc80244a8f8c0cdf7f78d542024b
+  (census 575 -> 576, pushed 125647b..f96f0da), TABLE 56
+  CHARACTER PROFICIENCIES - the class grid with the ninja
+  rule, capture p. 99: rules/oacharprof.h, prefix dhn
+  (verified free), 5 inlines (1 const, 1 bool, 3 table
+  columns, tag T56Data): the eight class rows (samurai,
+  shukenja, sohei, kensai, o. barbarian, bushi, wu jen,
+  ninja) riding the first column comment, with the initial
+  proficiencies (5, 6, 4, 3, 9, 4, 6, 2), the levels per
+  added proficiency as the 1/N denominators (1, 2, 3, 2,
+  3, 2, 2, 3) and the non-proficiency penalties (2, 4, 2,
+  3, 2, 2, 5, 4); the ninja weapon-only rule pins as a
+  bool (the non-proficiency penalty applies only to ninja
+  weapons, all other weapons take the other class
+  penalty). Cross-checked cell-by-cell between the two
+  passes - every printed cell agrees, zero contested
+  cells. One pre-verify repair the machinery caught: the
+  first build omitted the tables key so the engine
+  emitted no grid (2 inlines instead of 5) - the seating
+  assert flagged it, rebuilt before publish, the user side
+  never saw the break. rverify GREEN at 125647b, 26
+  mutants, 0 missed; preflight GREEN (576 audit census,
+  BUILD 0 warnings). Gap census 104/131 -> 105/130. Spec
+  9,543 bytes md5 f31c8dd0e2ad0fd2bea406cd0e9b5a49
+  (authored-plus-newline md5 62d5839b0ddd9aca2fe1534af6e42376
+  - the value the ritual gated and matched; canvas md5
+  0cd79fd5a24f9d9e41d90efa2a8582ba). NEXT - R654: Table 58
+  (Artisan Proficiencies), capture p. 103, prefix dho
+  (verify free), audit "R654 OA artisan proficiencies
+  audit", include after rules/oacharprof.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
