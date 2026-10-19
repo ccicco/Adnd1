@@ -1,0 +1,207 @@
+{
+ "round": 643,
+ "title": "ARMOR CLASS TABLE - Table 52, the suit armor class ratings",
+ "prefix": "dhd",
+ "header_file": "rules/oaarmor.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 565,
+ "inline_count": 2,
+ "audit_label": "R643 OA armor audit",
+ "audit_comment": "OA round thirty (capture p. 94): the Table 52 armor class table - the suit armor class ratings",
+ "banner": {
+  "title": "TABLE 52 (ARMOR CLASS TABLE), printed capture p. 94 - the OA armor round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the page - the eight-row table cross-checked cell-by-cell between the two passes; the numeric rating ladder agrees in both passes (10 through 3, one step per row, no contested cells). The one contest is a name, not a number: the AC-4 row third type reads branded mail in the print pass against the compressed banded mail - the print capture own page prose prints banded mail twice in the rare-suits sentence, so the row read is an OCR slip and the name pins as banded mail (a read contradicting its own page does not stand). The type-of-armor names are textual and ride the column comment per the T48 doctrine (the kote and o-yori spellings as printed; the suit rows enumerate multiple types per rating). The corselet-of-laced-armor prose example (armor class 7, equal to studded leather) cross-checks the row-3 rating - the prose itself stays in the open armor prose box. The suits-versus-pieces doctrine and the averaging paragraph stay open; Table 53 (capture p. 95) is deliberately left for the next round",
+  "sentinel": "the gap census after this round: 94 closed, 141 open - the Table 52 box flips (census 565 -> 566); NEXT - R644: Table 53 (Individual Piece Armor Class), capture p. 95, the laced-armor piece class steps, prefix dhe (verify free), audit \"R644 OA piece armor audit\", include after rules/oaarmor.h"
+ },
+ "consts": [
+  {
+   "name": "dhdT52RowCount",
+   "value": 8,
+   "comment": "Table 52 (capture p. 94): eight suit armor rows"
+  }
+ ],
+ "bools": [],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dhdT52Grid",
+   "tag": "T52Data",
+   "count": "dhdT52RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dhdT52Ac"
+   ],
+   "comment": "the Table 52 armor class table (capture p. 94)",
+   "col_comments": [
+    "the armor class rating, by suit row (capture p. 94). The type-of-armor names ride this comment: 0 None, 1 Shield/kote, 2 Leather or padded armor, 3 Leather, padded armor, & shield/studded leather/leather scale/ring mail, 4 Studded leather, ring mail, leather scale & shield/hide/metal scale/brigandine, 5 Hide, metal scale, brigandine & shield/chain mail, 6 Chain mail & shield/splint mail/banded mail, 7 Splint or banded mail & shield/o-yori - the ratings run 10 through 3, one step per row; the row-6 third type pins as banded mail (the print pass branded read is an OCR slip against its own page prose); a row index outside the table returns the -99 sentinel (capture p. 94)."
+   ],
+   "audit_comment": "the Table 52 grid: the suit armor class ratings",
+   "data": [
+    [
+     10
+    ],
+    [
+     9
+    ],
+    [
+     8
+    ],
+    [
+     7
+    ],
+    [
+     6
+    ],
+    [
+     5
+    ],
+    [
+     4
+    ],
+    [
+     3
+    ]
+   ],
+   "sentinel_census": [
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the T52 row count pin",
+   "expr": "m['dhdT52RowCount']() != 8"
+  },
+  {
+   "note": "the unarmored rating pin",
+   "expr": "m['dhdT52Ac'](0) != 10"
+  },
+  {
+   "note": "the best suit rating pin",
+   "expr": "m['dhdT52Ac'](7) != 3"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the None row - the unarmored rating 10 (capture p. 94)",
+   "expr": "m['dhdT52Ac'](0) != 10"
+  },
+  {
+   "note": "the shield/kote row - the shield-alone rating 9, the kote spelling as printed (capture p. 94)",
+   "expr": "m['dhdT52Ac'](1) != 9"
+  },
+  {
+   "note": "the studded-leather row - the rating 7, the corselet-equality cross-check from the page prose (capture p. 94)",
+   "expr": "m['dhdT52Ac'](3) != 7"
+  },
+  {
+   "note": "the hide and chain-mail rows - the ratings 5 and 4, the chain-mail row third type settling as banded mail (capture p. 94)",
+   "expr": "m['dhdT52Ac'](5) != 5 or m['dhdT52Ac'](6) != 4"
+  },
+  {
+   "note": "the o-yori tail row - the best suit rating 3 (capture p. 94)",
+   "expr": "m['dhdT52Ac'](7) != 3"
+  },
+  {
+   "note": "the ladder - one step per row from 10 through 3, no gaps (capture p. 94)",
+   "expr": "m['dhdT52Ac'](2) != 8 or m['dhdT52Ac'](4) != 6"
+  }
+ ],
+ "header_sections": {
+  "the Table 52 armor class grid": [
+   {
+    "kind": "const",
+    "name": "dhdT52RowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dhdT52Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 52: Armor Class Table box closes",
+   "from": "  - [ ] Table 52: Armor Class Table (capture p. 94)",
+   "to": "  - [x] Table 52: Armor Class Table (capture p. 94) - R643: the dhd T52 grid -\n  eight suit rows pinned as the armor class rating ladder, 10 through 3, with\n  the armor type names riding the column comment and the branded-mail OCR slip\n  settled as banded mail"
+  }
+ ],
+ "gap_census": {
+  "closed": 94,
+  "open": 141
+ },
+ "include_comment": "the OA armor pins",
+ "include_after": "#include \"rules/oahurled.h\"  // R642: the OA hurled pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R642 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R642 LANDED 2026-10-19: commit",
+  "  b784a11e74a769a9413c240f29cfc643f5ab6145",
+  "  (census 564 -> 565, pushed",
+  "  739dd57..b784a11), HURLED WEAPONS AND",
+  "  MISSILES - Table 51 (Hurled Weapons and",
+  "  Missiles), capture pp. 80-81:",
+  "  rules/oahurled.h, prefix dhc (verified",
+  "  free), 20 inlines (4 consts, 13 table",
+  "  columns, 3 bools): the 28-row hurled grid",
+  "  - the eleven-column AC 0-10 to-hit",
+  "  adjustment ladder, the -99 sentinels for",
+  "  the grenade and metsubishi dash rows, the",
+  "  footnote letters as the R640 bitmask (the",
+  "  grenade, hankyu and metsubishi d 8, the",
+  "  javelin h 128), the star set (metsubishi",
+  "  and needle), the fire rates and the",
+  "  short/medium/long range bands riding the",
+  "  column comments per the T48 doctrine (the",
+  "  needle fire rate prints the double star,",
+  "  the metsubishi short range prints 3 feet,",
+  "  the shuriken-spike and sling-staff",
+  "  dashes). The four note lines the print",
+  "  pass's OCR dropped entirely were recovered",
+  "  from the compressed capture and",
+  "  corroborated by the UA sibling doctrine",
+  "  (rules/uamissile.h - the aklys feet note,",
+  "  the medium -2 and long -5): the star feet",
+  "  note, the double-star see-description",
+  "  note, the short-range basis note, and the",
+  "  medium/long adjust consts. The 28-row grid",
+  "  cross-checked cell-by-cell between the two",
+  "  passes; six cells contest in two clusters,",
+  "  all settled per the print capture - the",
+  "  bow-short AC-10 cell pins +3 (the",
+  "  compressed +2, both readings",
+  "  ladder-consistent; flagged for the",
+  "  physical-copy check), and the",
+  "  sling-staff-stone ladder pins the print",
+  "  row -4,-4,-3,-3,-2,-2,-1 (the compressed",
+  "  stone-one-worse-than-bullet pattern is",
+  "  design-plausible; flagged likewise). The",
+  "  stacked two-line cells (the blow pipe dart",
+  "  AC 0-2, the needle AC 0-4) decode cleanly",
+  "  in both passes. One pre-publish repair the",
+  "  machinery caught: the header_sections shape",
+  "  (a named-section dict, not a flat item",
+  "  list - the first rverify double-run RED;",
+  "  rebuilt before publish, the user side never",
+  "  saw the break). rverify GREEN at 739dd57,",
+  "  371 mutants, 0 missed; preflight GREEN",
+  "  (565 audit census, BUILD 0 warnings). Gap",
+  "  census 92/143 -> 93/142. Spec 18,949",
+  "  bytes md5",
+  "  c2318a7d6bfb34f23facd0ee1c791794",
+  "  (authored-plus-newline md5",
+  "  f975ce3bc0603408a29bb972716404e2 -",
+  "  the value the ritual gated and matched;",
+  "  canvas md5",
+  "  8822a06b2b1f6fe40fb5fbfb7e2067e0). NEXT -",
+  "  R643: Table 52 (Armor Class Table), capture",
+  "  p. 94, the armor-class grid, prefix dhd",
+  "  (verify free), audit \"R643 OA armor audit\",",
+  "  include after rules/oahurled.h."
+ ]
+}

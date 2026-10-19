@@ -863,7 +863,10 @@ description riding the same round.
     star set and the six contested cells settled per the print capture
   - [ ] Armor prose and the armor descriptions
     (capture pp. 93-98)
-  - [ ] Table 52: Armor Class Table (capture p. 94)
+  - [x] Table 52: Armor Class Table (capture p. 94) - R643: the dhd T52 grid -
+  eight suit rows pinned as the armor class rating ladder, 10 through 3, with
+  the armor type names riding the column comment and the branded-mail OCR slip
+  settled as banded mail
   - [ ] Table 53: Individual Piece Armor Class
     (capture p. 95)
   - [ ] Table 54: Types of Armor & Encumbrance

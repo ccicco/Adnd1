@@ -13122,6 +13122,69 @@ when both halves land.
   AC-adjustment grid, prefix dhc (verify
   free), audit "R642 OA hurled audit",
   include after rules/oahandheld.h.
+- R642 LANDED 2026-10-19: commit
+  b784a11e74a769a9413c240f29cfc643f5ab6145
+  (census 564 -> 565, pushed
+  739dd57..b784a11), HURLED WEAPONS AND
+  MISSILES - Table 51 (Hurled Weapons and
+  Missiles), capture pp. 80-81:
+  rules/oahurled.h, prefix dhc (verified
+  free), 20 inlines (4 consts, 13 table
+  columns, 3 bools): the 28-row hurled grid
+  - the eleven-column AC 0-10 to-hit
+  adjustment ladder, the -99 sentinels for
+  the grenade and metsubishi dash rows, the
+  footnote letters as the R640 bitmask (the
+  grenade, hankyu and metsubishi d 8, the
+  javelin h 128), the star set (metsubishi
+  and needle), the fire rates and the
+  short/medium/long range bands riding the
+  column comments per the T48 doctrine (the
+  needle fire rate prints the double star,
+  the metsubishi short range prints 3 feet,
+  the shuriken-spike and sling-staff
+  dashes). The four note lines the print
+  pass's OCR dropped entirely were recovered
+  from the compressed capture and
+  corroborated by the UA sibling doctrine
+  (rules/uamissile.h - the aklys feet note,
+  the medium -2 and long -5): the star feet
+  note, the double-star see-description
+  note, the short-range basis note, and the
+  medium/long adjust consts. The 28-row grid
+  cross-checked cell-by-cell between the two
+  passes; six cells contest in two clusters,
+  all settled per the print capture - the
+  bow-short AC-10 cell pins +3 (the
+  compressed +2, both readings
+  ladder-consistent; flagged for the
+  physical-copy check), and the
+  sling-staff-stone ladder pins the print
+  row -4,-4,-3,-3,-2,-2,-1 (the compressed
+  stone-one-worse-than-bullet pattern is
+  design-plausible; flagged likewise). The
+  stacked two-line cells (the blow pipe dart
+  AC 0-2, the needle AC 0-4) decode cleanly
+  in both passes. One pre-publish repair the
+  machinery caught: the header_sections shape
+  (a named-section dict, not a flat item
+  list - the first rverify double-run RED;
+  rebuilt before publish, the user side never
+  saw the break). rverify GREEN at 739dd57,
+  371 mutants, 0 missed; preflight GREEN
+  (565 audit census, BUILD 0 warnings). Gap
+  census 92/143 -> 93/142. Spec 18,949
+  bytes md5
+  c2318a7d6bfb34f23facd0ee1c791794
+  (authored-plus-newline md5
+  f975ce3bc0603408a29bb972716404e2 -
+  the value the ritual gated and matched;
+  canvas md5
+  8822a06b2b1f6fe40fb5fbfb7e2067e0). NEXT -
+  R643: Table 52 (Armor Class Table), capture
+  p. 94, the armor-class grid, prefix dhd
+  (verify free), audit "R643 OA armor audit",
+  include after rules/oahurled.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
