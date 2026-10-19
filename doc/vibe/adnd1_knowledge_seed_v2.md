@@ -13908,6 +13908,44 @@ when both halves land.
   Fourth Level Spells (capture pp. 132-140), prefix
   dhw (verify free), audit "R662 OA fourth level
   spells audit", include after rules/oal3spells.h
+- R662 LANDED 2026-10-19: commit bf5257b872279240b0a96730a05cee7e323578a3
+  (census 584 -> 585, pushed 4590ae7..bf5257b), FOURTH
+  LEVEL SPELLS - the 20 fourth level shukenja spell
+  stat blocks, capture pp. 132-140: rules/oal4spells.h,
+  prefix dhw (verified free), ONE gap flip (single-line
+  child label), 20 consts, 26 inlines (grid tag L4Data,
+  20 rows x 6 cols - school, components bitmask,
+  casting time in segments fate=360/exorcise=-1,
+  saving throw code with the half 3 debuting,
+  reversible, sohei), gap census 114/121 -> 115/120:
+  all 20 stat blocks cross-checked spell by spell
+  between the passes (print pp. 132-140 vs compressed
+  pp. 66-69), zero contested stat reads - exorcise's
+  variable 1-100+ turns cast pinned as -1 (the only
+  unfixed cast in the chapter); the snake barrier
+  half save debuts as code 3 (the print garbling the
+  1/2 as 112, the compressed reading it clean);
+  polymorph self V-only, endurance S,M, reward V,M -
+  three component singles all read identically in
+  the two passes; alteration the most common school
+  at seven; abjure's dual school pins as the primary
+  abjuration; fate the longest fixed cast at six
+  turns. The reversible seven (abjure, cure serious
+  wounds, detect lie, endurance, neutralize poison,
+  protection from evil 10', tongues) and sohei three
+  (endurance, penetrate disguise, spell immunity)
+  match the R658 T62 grid exactly. rverify GREEN at
+  4590ae7, 140 mutants, 0 missed - GREEN on the first
+  build; preflight GREEN (585 audit census, BUILD 0
+  warnings). Spec 21,140 bytes md5
+  5ec09741fbc2f03104be4cb193127064
+  (authored-plus-newline md5
+  86ed280449cfa08f13cbd7cab89c2f8f - the value the
+  ritual gated and matched; canvas md5
+  d679d57d6a7b2ccd82408ed43a6eec60). NEXT - R663:
+  Fifth Level Spells (capture pp. 140-143), prefix
+  dhx (verify free), audit "R663 OA fifth level
+  spells audit", include after rules/oal4spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

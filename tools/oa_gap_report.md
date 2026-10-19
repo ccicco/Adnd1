@@ -1027,7 +1027,14 @@ description riding the same round.
     spell by spell between the passes); the names ride the
     column comments, the prose descriptions close in
     their own rounds
-  - [ ] Fifth Level Spells (capture pp. 140-143)
+  - [x] Fifth Level Spells (capture pp. 140-143) -
+    R663: the dhx L5 stat grid - the 12 fifth level
+    spells with the school, component, casting time,
+    saving throw, reversible and sohei codes (the sohei
+    and reversible marks matching the R658 T62 grid;
+    the stat blocks cross-checked spell by spell between
+    the passes); the names ride the column comments, the
+    prose descriptions close in their own rounds
   - [ ] Sixth Level Spells (capture pp. 143-147)
   - [ ] Seventh Level Spells (capture pp. 147-152)
   - [ ] Table 63: Divination Results (capture p. 117)
