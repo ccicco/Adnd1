@@ -1,0 +1,809 @@
+{
+ "round": 631,
+ "title": "THE MASTER FAMILY CHART and ANCESTRY - the honor-adds-to-birth doctrine, the ancestry results, Table 39",
+ "prefix": "dgr",
+ "header_file": "rules/oaanc.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 553,
+ "inline_count": 29,
+ "audit_label": "R631 OA ancestry audit",
+ "audit_comment": "OA round eighteen (capture pp. 64-65): the master family chart, the ancestry doctrine and the Table 39 grid",
+ "banner": {
+  "title": "MASTER FAMILY CHART AND ANCESTRY, printed capture pp. 64-65 - the OA ancestry round",
+  "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. No contested cells detected within the single source: the T39 bands run contiguously 1 through 100 and every honor value sits on its printed row. The T39 result column pins as the 0-34 code (blank 0, roll again 1, criminal 2 through tragic event 34); the die bands pin as lo and hi bounds. OCR normalization: the T39 classic artist reads as the prose classical artist; the T39 roll-again rows 6, 10 and 20 read \"next higher die or + 10\" while row 97 reads \"+ 10 on die roll\" (the printed d100 doctrine - both pin as the roll-again code); Folk Hero capitalized as printed; the Assigning Ancestral Holdings and Birthrights prose (capture pp. 67-69) is deliberately left for the next rounds",
+  "sentinel": "the gap census after this round: 71 closed, 164 open - the Master Family Chart, Ancestry prose and Table 39 boxes flip (census 553 -> 554); NEXT - R632: the Assigning Ancestral Holdings prose, capture pp. 67-68, the head-of-family rule and the NPC-only holdings, prefix dgs (verify free), audit \"R632 OA holdings audit\", include after rules/oaanc.h"
+ },
+ "consts": [
+  {
+   "name": "dgrT39RowCount",
+   "value": 46,
+   "comment": "Table 39 (capture p. 65): forty-six ancestry rows"
+  },
+  {
+   "name": "dgrAllianceBonusPct",
+   "value": 20,
+   "comment": "Ancestral alliance prose (capture p. 65): the +20 percent reaction modifier between allied families"
+  },
+  {
+   "name": "dgrFeudModPct",
+   "value": -40,
+   "comment": "Ancestral feud prose (capture p. 65): the -40 percent reaction modifier between feud families"
+  },
+  {
+   "name": "dgrAdvMarriageLevels",
+   "value": 3,
+   "comment": "Advantageous marriage prose (capture p. 65): the daughter married 1-3 social levels higher"
+  },
+  {
+   "name": "dgrLandIncomeMin",
+   "value": 10,
+   "comment": "Land prose (capture p. 65): the property income lower bound, 10 ch'ien"
+  },
+  {
+   "name": "dgrLandIncomeMax",
+   "value": 2000,
+   "comment": "Land prose (capture p. 65): the property income upper bound, 2,000 ch'ien"
+  },
+  {
+   "name": "dgrEstateIncomeMin",
+   "value": 100,
+   "comment": "Estate prose (capture p. 65): the estate income lower bound, 100 ch'ien"
+  },
+  {
+   "name": "dgrEstateIncomeMax",
+   "value": 1000,
+   "comment": "Estate prose (capture p. 65): the estate income upper bound, 1,000 ch'ien"
+  },
+  {
+   "name": "dgrFleetShipsMin",
+   "value": 2,
+   "comment": "Merchant fleet prose (capture p. 65): the fleet lower bound, 2 ships"
+  },
+  {
+   "name": "dgrFleetShipsMax",
+   "value": 5,
+   "comment": "Merchant fleet prose (capture p. 65): the fleet upper bound, 5 ships"
+  },
+  {
+   "name": "dgrFleetIncomeMin",
+   "value": 100,
+   "comment": "Merchant fleet prose (capture p. 65): the fleet income lower bound, 100 ch'ien"
+  },
+  {
+   "name": "dgrFleetIncomeMax",
+   "value": 1000,
+   "comment": "Merchant fleet prose (capture p. 65): the fleet income upper bound, 1,000 ch'ien"
+  },
+  {
+   "name": "dgrFolkHeroBonusPct",
+   "value": 10,
+   "comment": "Folk hero prose (capture p. 65): the +10 percent reaction bonus with NPC commoners"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgrMasterChartPurpose",
+   "value": true,
+   "comment": "Master chart prose (capture pp. 64-65): the chart records names, birth ranks, honor, alliances and relationships for all families"
+  },
+  {
+   "name": "dgrMasterChartCenter",
+   "value": true,
+   "comment": "Master chart prose (capture pp. 64-65): the emperor or supreme ruler holds the center space"
+  },
+  {
+   "name": "dgrMasterChartRankDistance",
+   "value": true,
+   "comment": "Master chart prose (capture pp. 64-65): the high birth rank families sit closer to the center"
+  },
+  {
+   "name": "dgrMasterChartLineCodes",
+   "value": true,
+   "comment": "Master chart prose (capture pp. 64-65): dashed for marriage, solid for blood, dotted for allies, arrows for enemies"
+  },
+  {
+   "name": "dgrAncestryBeyondAncestors",
+   "value": true,
+   "comment": "Ancestry prose (capture p. 65): the ancestry covers holdings, debts, alliances, feuds and notable deeds"
+  },
+  {
+   "name": "dgrAncestryCooperativeDetail",
+   "value": true,
+   "comment": "Ancestry prose (capture p. 65): the player and the DM supply the names and details together"
+  },
+  {
+   "name": "dgrHonorAddsToBirth",
+   "value": true,
+   "comment": "Ancestry prose (capture p. 65): the Table 39 honor adds to the Character Birth honor for the family base honor"
+  },
+  {
+   "name": "dgrMoneylenderExtraRoll",
+   "value": true,
+   "comment": "Notorious money lender prose (capture p. 65): the character gains an extra roll on Table 40"
+  },
+  {
+   "name": "dgrHereditaryTitlePassesToSon",
+   "value": true,
+   "comment": "Hereditary title prose (capture p. 65): the title passes to the son when the head dies"
+  },
+  {
+   "name": "dgrSecretSocietyContacts",
+   "value": true,
+   "comment": "Secret society prose (capture p. 65): the connection provides the player character contacts inside the society"
+  },
+  {
+   "name": "dgrTragicEventAddsHonor",
+   "value": true,
+   "comment": "Tragic event prose (capture p. 65): the nobility of the ancestor's suffering increases the family honor"
+  },
+  {
+   "name": "dgrRollAgainNextDie",
+   "value": true,
+   "comment": "Roll again prose (capture p. 65): reroll on the next larger die, or add 10 when already rolling d100"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dgrT39Grid",
+   "tag": "T39",
+   "count": "dgrT39RowCount",
+   "sentinel": -99,
+   "cols": [
+    "dgrT39DieLo",
+    "dgrT39DieHi",
+    "dgrT39Honor",
+    "dgrT39Result"
+   ],
+   "data": [
+    [
+     1,
+     3,
+     0,
+     0
+    ],
+    [
+     4,
+     4,
+     -15,
+     2
+    ],
+    [
+     5,
+     5,
+     0,
+     3
+    ],
+    [
+     6,
+     6,
+     0,
+     1
+    ],
+    [
+     7,
+     8,
+     2,
+     4
+    ],
+    [
+     9,
+     9,
+     2,
+     5
+    ],
+    [
+     10,
+     10,
+     0,
+     1
+    ],
+    [
+     11,
+     11,
+     -10,
+     6
+    ],
+    [
+     12,
+     15,
+     3,
+     7
+    ],
+    [
+     16,
+     19,
+     6,
+     8
+    ],
+    [
+     20,
+     20,
+     0,
+     1
+    ],
+    [
+     21,
+     24,
+     0,
+     0
+    ],
+    [
+     25,
+     26,
+     6,
+     9
+    ],
+    [
+     27,
+     31,
+     3,
+     10
+    ],
+    [
+     32,
+     35,
+     2,
+     11
+    ],
+    [
+     36,
+     38,
+     0,
+     0
+    ],
+    [
+     39,
+     39,
+     6,
+     12
+    ],
+    [
+     40,
+     42,
+     8,
+     13
+    ],
+    [
+     43,
+     44,
+     10,
+     14
+    ],
+    [
+     45,
+     45,
+     7,
+     15
+    ],
+    [
+     46,
+     46,
+     -10,
+     16
+    ],
+    [
+     47,
+     49,
+     0,
+     0
+    ],
+    [
+     50,
+     50,
+     -10,
+     17
+    ],
+    [
+     51,
+     54,
+     6,
+     18
+    ],
+    [
+     55,
+     56,
+     7,
+     19
+    ],
+    [
+     57,
+     57,
+     9,
+     20
+    ],
+    [
+     58,
+     58,
+     1,
+     21
+    ],
+    [
+     59,
+     59,
+     8,
+     22
+    ],
+    [
+     60,
+     63,
+     0,
+     0
+    ],
+    [
+     64,
+     69,
+     0,
+     0
+    ],
+    [
+     70,
+     70,
+     10,
+     23
+    ],
+    [
+     71,
+     71,
+     -20,
+     24
+    ],
+    [
+     72,
+     72,
+     15,
+     25
+    ],
+    [
+     73,
+     77,
+     0,
+     0
+    ],
+    [
+     78,
+     78,
+     12,
+     26
+    ],
+    [
+     79,
+     79,
+     -5,
+     27
+    ],
+    [
+     80,
+     80,
+     -7,
+     28
+    ],
+    [
+     81,
+     85,
+     0,
+     0
+    ],
+    [
+     86,
+     87,
+     4,
+     29
+    ],
+    [
+     88,
+     91,
+     2,
+     30
+    ],
+    [
+     92,
+     93,
+     -5,
+     31
+    ],
+    [
+     94,
+     96,
+     7,
+     32
+    ],
+    [
+     97,
+     97,
+     0,
+     1
+    ],
+    [
+     98,
+     98,
+     0,
+     33
+    ],
+    [
+     99,
+     99,
+     3,
+     34
+    ],
+    [
+     100,
+     100,
+     0,
+     0
+    ]
+   ],
+   "comment": "the Table 39 ancestry grid (capture p. 65)",
+   "col_comments": [
+    "the die-band lower bound column (capture p. 65).",
+    "the die-band upper bound column - the bands run contiguously 1 through 100 (capture p. 65).",
+    "the honor column: the family honor adjustment, -20 to +15 (capture p. 65).",
+    "the ancestry result column, pinned as the 0-34 code: blank 0, roll again 1, criminal 2 through tragic event 34 (capture p. 65)."
+   ],
+   "audit_comment": "the Table 39 grid: the die bands, the honor column and the coded ancestry results (capture p. 65)",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dgrT39RowCount pin",
+   "expr": "m['dgrT39RowCount']() != 46"
+  },
+  {
+   "note": "the dgrAllianceBonusPct pin",
+   "expr": "m['dgrAllianceBonusPct']() != 20"
+  },
+  {
+   "note": "the dgrFeudModPct pin",
+   "expr": "m['dgrFeudModPct']() != -40"
+  },
+  {
+   "note": "the dgrAdvMarriageLevels pin",
+   "expr": "m['dgrAdvMarriageLevels']() != 3"
+  },
+  {
+   "note": "the dgrLandIncomeMin pin",
+   "expr": "m['dgrLandIncomeMin']() != 10"
+  },
+  {
+   "note": "the dgrLandIncomeMax pin",
+   "expr": "m['dgrLandIncomeMax']() != 2000"
+  },
+  {
+   "note": "the dgrEstateIncomeMin pin",
+   "expr": "m['dgrEstateIncomeMin']() != 100"
+  },
+  {
+   "note": "the dgrEstateIncomeMax pin",
+   "expr": "m['dgrEstateIncomeMax']() != 1000"
+  },
+  {
+   "note": "the dgrFleetShipsMin pin",
+   "expr": "m['dgrFleetShipsMin']() != 2"
+  },
+  {
+   "note": "the dgrFleetShipsMax pin",
+   "expr": "m['dgrFleetShipsMax']() != 5"
+  },
+  {
+   "note": "the dgrFleetIncomeMin pin",
+   "expr": "m['dgrFleetIncomeMin']() != 100"
+  },
+  {
+   "note": "the dgrFleetIncomeMax pin",
+   "expr": "m['dgrFleetIncomeMax']() != 1000"
+  },
+  {
+   "note": "the dgrFolkHeroBonusPct pin",
+   "expr": "m['dgrFolkHeroBonusPct']() != 10"
+  },
+  {
+   "note": "the dgrMasterChartPurpose pin",
+   "expr": "m['dgrMasterChartPurpose']() != 1"
+  },
+  {
+   "note": "the dgrMasterChartCenter pin",
+   "expr": "m['dgrMasterChartCenter']() != 1"
+  },
+  {
+   "note": "the dgrMasterChartRankDistance pin",
+   "expr": "m['dgrMasterChartRankDistance']() != 1"
+  },
+  {
+   "note": "the dgrMasterChartLineCodes pin",
+   "expr": "m['dgrMasterChartLineCodes']() != 1"
+  },
+  {
+   "note": "the dgrAncestryBeyondAncestors pin",
+   "expr": "m['dgrAncestryBeyondAncestors']() != 1"
+  },
+  {
+   "note": "the dgrAncestryCooperativeDetail pin",
+   "expr": "m['dgrAncestryCooperativeDetail']() != 1"
+  },
+  {
+   "note": "the dgrHonorAddsToBirth pin",
+   "expr": "m['dgrHonorAddsToBirth']() != 1"
+  },
+  {
+   "note": "the dgrMoneylenderExtraRoll pin",
+   "expr": "m['dgrMoneylenderExtraRoll']() != 1"
+  },
+  {
+   "note": "the dgrHereditaryTitlePassesToSon pin",
+   "expr": "m['dgrHereditaryTitlePassesToSon']() != 1"
+  },
+  {
+   "note": "the dgrSecretSocietyContacts pin",
+   "expr": "m['dgrSecretSocietyContacts']() != 1"
+  },
+  {
+   "note": "the dgrTragicEventAddsHonor pin",
+   "expr": "m['dgrTragicEventAddsHonor']() != 1"
+  },
+  {
+   "note": "the dgrRollAgainNextDie pin",
+   "expr": "m['dgrRollAgainNextDie']() != 1"
+  }
+ ],
+ "table_checks": [
+  {
+   "note": "the T39 first row - the blank 1-3 band (capture p. 65)",
+   "expr": "m['dgrT39DieLo'](0) != 1 or m['dgrT39DieHi'](0) != 3 or m['dgrT39Honor'](0) != 0 or m['dgrT39Result'](0) != 0"
+  },
+  {
+   "note": "the T39 criminal cell - the -15 honor at die 4 (capture p. 65)",
+   "expr": "m['dgrT39Honor'](1) != -15 or m['dgrT39Result'](1) != 2"
+  },
+  {
+   "note": "the T39 roll-again rows - 6, 10 and 20 with the next-higher-die read, 97 with the d100 add-10 read (capture p. 65)",
+   "expr": "m['dgrT39Result'](3) != 1 or m['dgrT39Result'](6) != 1 or m['dgrT39Result'](10) != 1 or m['dgrT39Result'](42) != 1"
+  },
+  {
+   "note": "the T39 dishonor pair - the great betrayal -20 at 71, the defeated family -10 at 50 (capture p. 65)",
+   "expr": "m['dgrT39Honor'](31) != -20 or m['dgrT39Honor'](22) != -10"
+  },
+  {
+   "note": "the T39 great hero cell - the +15 honor at die 72 (capture p. 65)",
+   "expr": "m['dgrT39Honor'](32) != 15 or m['dgrT39Result'](32) != 25"
+  },
+  {
+   "note": "the T39 imperial bloodline cell - the +12 honor at die 78 (capture p. 65)",
+   "expr": "m['dgrT39Honor'](34) != 12 or m['dgrT39Result'](34) != 26"
+  },
+  {
+   "note": "the T39 famous trio - the general +9, the holy man +1, the minister +8 (capture p. 65)",
+   "expr": "m['dgrT39Honor'](25) != 9 or m['dgrT39Honor'](26) != 1 or m['dgrT39Honor'](27) != 8"
+  },
+  {
+   "note": "the T39 tragic event capstone - the +3 honor at die 99, the blank at 100, forty-six rows only (capture p. 65)",
+   "expr": "m['dgrT39Honor'](44) != 3 or m['dgrT39Result'](44) != 34 or m['dgrT39DieLo'](45) != 100 or m['dgrT39Honor'](45) != 0 or m['dgrT39RowCount']() != 46"
+  },
+  {
+   "note": "the T39 band contiguity - 3 to 4, 24 to 25, 69 to 70, 96 to 97 (capture p. 65)",
+   "expr": "m['dgrT39DieLo'](1) - m['dgrT39DieHi'](0) != 1 or m['dgrT39DieLo'](12) - m['dgrT39DieHi'](11) != 1 or m['dgrT39DieLo'](30) - m['dgrT39DieHi'](29) != 1 or m['dgrT39DieLo'](42) - m['dgrT39DieHi'](41) != 1"
+  },
+  {
+   "note": "the T39 honor-adds doctrine - the base honor is the Character Birth honor plus the Table 39 honor (capture p. 65)",
+   "expr": "m['dgrHonorAddsToBirth']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the master family chart pins": [
+   {
+    "kind": "bool",
+    "name": "dgrMasterChartPurpose"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrMasterChartCenter"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrMasterChartRankDistance"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrMasterChartLineCodes"
+   }
+  ],
+  "the ancestry doctrine pins": [
+   {
+    "kind": "const",
+    "name": "dgrT39RowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrAncestryBeyondAncestors"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrAncestryCooperativeDetail"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrHonorAddsToBirth"
+   },
+   {
+    "kind": "const",
+    "name": "dgrAllianceBonusPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgrFeudModPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgrAdvMarriageLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dgrLandIncomeMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgrLandIncomeMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgrEstateIncomeMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgrEstateIncomeMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgrFleetShipsMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgrFleetShipsMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgrFleetIncomeMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgrFleetIncomeMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgrFolkHeroBonusPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrMoneylenderExtraRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrHereditaryTitlePassesToSon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrSecretSocietyContacts"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrTragicEventAddsHonor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgrRollAgainNextDie"
+   }
+  ],
+  "the Table 39 grid": [
+   {
+    "kind": "table",
+    "name": "dgrT39Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the   Master Family Chart box closes",
+   "from": "  - [ ] Master Family Chart (capture pp. 64-65)",
+   "to": "  - [x] Master Family Chart (capture pp. 64-65) -\n    R631: the dgr master chart pins - the DM\n    chart of names, birth ranks, honor,\n    alliances and relationships with the\n    emperor at the center, the rank-by-\n    distance doctrine and the line codes\n    (dashed marriage, solid blood, dotted\n    allies, arrows enemies)"
+  },
+  {
+   "note": "the   Ancestry prose box closes",
+   "from": "  - [ ] Ancestry prose (capture p. 65)",
+   "to": "  - [x] Ancestry prose (capture p. 65) -\n    R631: the dgr ancestry pins - the\n    beyond-ancestors doctrine with the\n    cooperative detail, the honor-adds-to-\n    birth rule, the +20 alliance and -40\n    feud modifiers, the 1-3 social-level\n    marriage, the 10-to-2,000 property and\n    100-to-1,000 estate and fleet incomes,\n    the 2-5 ships, the moneylender extra\n    roll, the hereditary-title succession,\n    the secret-society contacts, the tragic\n    honor, the roll-again doctrine"
+  },
+  {
+   "note": "the   Table 39: Ancestry box closes",
+   "from": "  - [ ] Table 39: Ancestry (capture p. 65)",
+   "to": "  - [x] Table 39: Ancestry (capture p. 65) -\n    R631: the dgr T39 grid - forty-six\n    contiguous die bands 1 through 100 with\n    the honor column (-20 to +15) and the\n    ancestry results pinned as the 0-34\n    code, the roll-again rows at 6, 10, 20\n    and 97"
+  }
+ ],
+ "gap_census": {
+  "closed": 71,
+  "open": 164
+ },
+ "include_comment": "the OA ancestry pins",
+ "include_after": "#include \"rules/oafamstr.h\"  // R630: the OA family structures pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R630 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R630 LANDED 2026-10-19: commit",
+  "  9fbb97306d976609d17d947c15ed5f0411ef00b6",
+  "  (census 552 -> 553, pushed",
+  "  681a99f..9fbb973), THE FAMILY",
+  "  STRUCTURE prose - the additional family",
+  "  structures, capture pp. 62-64:",
+  "  rules/oafamstr.h, prefix dgq",
+  "  (verified free), 37 inlines (14",
+  "  consts, 23 bools, no tables): the",
+  "  1d8-minus-2 children per space with",
+  "  the direct-branch-only charts and",
+  "  the lineage die rules (closest",
+  "  without being less, reroll the",
+  "  overflow), the optional marriages",
+  "  (the 1-5-on-1d6 read, the PC females",
+  "  never required, the usually-outside-",
+  "  clan and equal-rank doctrine, the",
+  "  +10 percent reaction bonus), the",
+  "  adoptions (the 1-in-20 entry chance,",
+  "  the 1-2 orphan read, the two-clan",
+  "  doctrine, the political cross-rank",
+  "  pattern, the +10 percent bonus),",
+  "  the polygamy doctrine (legal and not",
+  "  unknown, mostly monogamous, the",
+  "  grandfather-or-father rule, the",
+  "  first-wife inheritance with the",
+  "  first-son-of-first-wife rule), the",
+  "  further generations with no",
+  "  reaction modifiers, the interrelated",
+  "  player characters (the DM approval,",
+  "  same race with the barbarian and",
+  "  samurai matches, same birth rank and",
+  "  Head-of-Family spaces, twins-only",
+  "  for the same slot, the shared",
+  "  ancestry with identical holdings",
+  "  and names), the deaths ladder (the",
+  "  once-per-year check, the 10/7/5 row",
+  "  chances, the 75 percent firstborn",
+  "  pass, the head-title succession),",
+  "  the player-character re-entry at",
+  "  1st level. PINNED FROM THE 2018",
+  "  PRINT CAPTURE ALONE - the first",
+  "  Mistral-OCR capture session is no",
+  "  longer available above p. 33, so",
+  "  the cross-capture agreement check",
+  "  is impossible for this range (no",
+  "  tables, no contested cells; the",
+  "  cites span the capture pp. 62-64",
+  "  range). OCR normalization:",
+  "  splinterhood reads as spinsterhood;",
+  "  the deaths bad-feelings sentence",
+  "  appears twice in the 2018 print.",
+  "  The Master Family Chart prose",
+  "  (capture pp. 64-65) is deliberately",
+  "  held for the next round. Battery 37",
+  "  mutants, 0 missed; full sha rverify",
+  "  GREEN. Gap census 67/168 -> 68/167.",
+  "  Spec 20,565 bytes md5",
+  "  4ec49fb4de7359113d60684f2dc0be09",
+  "  (authored-plus-newline md5",
+  "  213883ad3ebbd1419f4fa3ab4292e994;",
+  "  canvas md5",
+  "  d07aecf19cdab317b624270c0aa1c15c).",
+  "  NEXT - R631: the Master Family",
+  "  Chart and Ancestry prose, capture",
+  "  pp. 64-65, Table 39 (Ancestry),",
+  "  prefix dgr (verify free), audit",
+  "  \"R631 OA ancestry audit\", include",
+  "  after rules/oafamstr.h."
+ ]
+}

@@ -12404,6 +12404,75 @@ when both halves land.
   free), audit "R630 OA family
   structures audit", include after
   rules/oabirth.h.
+- R630 LANDED 2026-10-19: commit
+  9fbb97306d976609d17d947c15ed5f0411ef00b6
+  (census 552 -> 553, pushed
+  681a99f..9fbb973), THE FAMILY
+  STRUCTURE prose - the additional family
+  structures, capture pp. 62-64:
+  rules/oafamstr.h, prefix dgq
+  (verified free), 37 inlines (14
+  consts, 23 bools, no tables): the
+  1d8-minus-2 children per space with
+  the direct-branch-only charts and
+  the lineage die rules (closest
+  without being less, reroll the
+  overflow), the optional marriages
+  (the 1-5-on-1d6 read, the PC females
+  never required, the usually-outside-
+  clan and equal-rank doctrine, the
+  +10 percent reaction bonus), the
+  adoptions (the 1-in-20 entry chance,
+  the 1-2 orphan read, the two-clan
+  doctrine, the political cross-rank
+  pattern, the +10 percent bonus),
+  the polygamy doctrine (legal and not
+  unknown, mostly monogamous, the
+  grandfather-or-father rule, the
+  first-wife inheritance with the
+  first-son-of-first-wife rule), the
+  further generations with no
+  reaction modifiers, the interrelated
+  player characters (the DM approval,
+  same race with the barbarian and
+  samurai matches, same birth rank and
+  Head-of-Family spaces, twins-only
+  for the same slot, the shared
+  ancestry with identical holdings
+  and names), the deaths ladder (the
+  once-per-year check, the 10/7/5 row
+  chances, the 75 percent firstborn
+  pass, the head-title succession),
+  the player-character re-entry at
+  1st level. PINNED FROM THE 2018
+  PRINT CAPTURE ALONE - the first
+  Mistral-OCR capture session is no
+  longer available above p. 33, so
+  the cross-capture agreement check
+  is impossible for this range (no
+  tables, no contested cells; the
+  cites span the capture pp. 62-64
+  range). OCR normalization:
+  splinterhood reads as spinsterhood;
+  the deaths bad-feelings sentence
+  appears twice in the 2018 print.
+  The Master Family Chart prose
+  (capture pp. 64-65) is deliberately
+  held for the next round. Battery 37
+  mutants, 0 missed; full sha rverify
+  GREEN. Gap census 67/168 -> 68/167.
+  Spec 20,565 bytes md5
+  4ec49fb4de7359113d60684f2dc0be09
+  (authored-plus-newline md5
+  213883ad3ebbd1419f4fa3ab4292e994;
+  canvas md5
+  d07aecf19cdab317b624270c0aa1c15c).
+  NEXT - R631: the Master Family
+  Chart and Ancestry prose, capture
+  pp. 64-65, Table 39 (Ancestry),
+  prefix dgr (verify free), audit
+  "R631 OA ancestry audit", include
+  after rules/oafamstr.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

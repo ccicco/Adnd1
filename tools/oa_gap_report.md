@@ -669,9 +669,33 @@ description riding the same round.
     deaths ladder (10/7/5 with the 75 percent
     firstborn read and the head succession),
     the player-character re-entry
-  - [ ] Master Family Chart (capture pp. 64-65)
-  - [ ] Ancestry prose (capture p. 65)
-  - [ ] Table 39: Ancestry (capture p. 65)
+  - [x] Master Family Chart (capture pp. 64-65) -
+    R631: the dgr master chart pins - the DM
+    chart of names, birth ranks, honor,
+    alliances and relationships with the
+    emperor at the center, the rank-by-
+    distance doctrine and the line codes
+    (dashed marriage, solid blood, dotted
+    allies, arrows enemies)
+  - [x] Ancestry prose (capture p. 65) -
+    R631: the dgr ancestry pins - the
+    beyond-ancestors doctrine with the
+    cooperative detail, the honor-adds-to-
+    birth rule, the +20 alliance and -40
+    feud modifiers, the 1-3 social-level
+    marriage, the 10-to-2,000 property and
+    100-to-1,000 estate and fleet incomes,
+    the 2-5 ships, the moneylender extra
+    roll, the hereditary-title succession,
+    the secret-society contacts, the tragic
+    honor, the roll-again doctrine
+  - [x] Table 39: Ancestry (capture p. 65) -
+    R631: the dgr T39 grid - forty-six
+    contiguous die bands 1 through 100 with
+    the honor column (-20 to +15) and the
+    ancestry results pinned as the 0-34
+    code, the roll-again rows at 6, 10, 20
+    and 97
   - [ ] Assigning Ancestral Holdings (capture pp.
     67-68) - the head-of-family rule, the NPC-only
     holdings
