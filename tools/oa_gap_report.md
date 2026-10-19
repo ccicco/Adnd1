@@ -816,10 +816,19 @@ description riding the same round.
     tael, yuan and fen lo and hi bounds
     (the tael reads as ch'ao), the ninja
     addition footnote
-  - [ ] Gajin and Rates of Exchange prose
-    (capture pp. 76-77)
-  - [ ] Table 46: Currency Exchange Rates
-    (capture p. 77)
+  - [x] Gajin and Rates of Exchange prose
+    (capture pp. 76-77) - R638: the dgy exchange
+    pins - the gajin-contact need, the caravan
+    moneylenders, the worthless ch'ao with the
+    convert advice, the gold-not-currency read with
+    the market factors, the undesired silver, the
+    export smuggling offense, the speculation
+  - [x] Table 46: Currency Exchange Rates
+    (capture p. 77) - R638: the dgy T46 grid - nine
+    currency rows pinned as the fen-based real
+    values, the per-row exchange bounds with the
+    market-value flags, the notes doctrine (real,
+    exchange, market)
   - [ ] Table 47: Basic Equipment and Supplies Cost
     (capture pp. 78-84) - the eight cost lists ride
     this table: clothing, livestock, miscellaneous

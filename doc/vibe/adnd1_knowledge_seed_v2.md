@@ -12834,6 +12834,49 @@ when both halves land.
   funds dice, prefix dgx (verify free),
   audit "R637 OA starting money audit",
   include after rules/oamoney.h.
+- R637 LANDED 2026-10-19: commit
+  1cd70755ae0991a0d8381646c02e37f01d68d2ed
+  (census 559 -> 560, pushed
+  482dad2..1cd7075), STARTING MONEY - the
+  class funds dice and Table 45, capture
+  pp. 75-76: rules/oastart.h, prefix dgx
+  (verified free), 13 inlines (1 const
+  dgxT45RowCount=10, 4 bools, 8 table
+  columns): the Starting Money opener
+  with the roll-your-funds doctrine, T45
+  as the 10 class rows x 8 lo-hi bound
+  pairs over the chien, tael, yuan and
+  fen components (0-0 pins no such
+  component for the class), row codes
+  0-9: samurai, shukenja, monk, sohei,
+  kensai, barbarian, bushi, wu jen,
+  ninja, yakuza, the tael column reading
+  as (ch'ao), the ninja no-armor-footnote
+  pinned as a bool. PINNED FROM THE 2018
+  PRINT CAPTURE ALONE (the settling
+  authority; the first Mistral-OCR
+  capture session is unavailable above
+  p. 33, so no cross-capture check); no
+  contested cells within the single
+  source. OCR normalization: none
+  material this round. The Gajin and
+  Rates of Exchange prose with Table 46
+  deliberately left for R638. Battery 85
+  mutants, 0 missed; full sha rverify
+  GREEN; preflight GREEN. Gap census
+  84/151 -> 86/149. Spec 11,765 bytes
+  md5 812398901ee3f6a34e8bc59958e67f61
+  (authored-plus-newline md5
+  27ec6de4b594ea96966b3bce13372da7;
+  canvas md5
+  4784ddeba4b602cc2a69773e397a1333).
+  NEXT - R638: the Gajin and Rates of
+  Exchange prose with Table 46 (Currency
+  Exchange Rates), capture pp. 76-77,
+  the real-value and exchange-rate
+  doctrine, prefix dgy (verify free),
+  audit "R638 OA exchange audit",
+  include after rules/oastart.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
