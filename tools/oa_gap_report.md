@@ -804,9 +804,18 @@ description riding the same round.
     ch'ien, the common and silk bolts 1 and 3
     ch'ien), the koku 5-to-6 bushels, the
     20-yard cloth bolts
-  - [ ] Starting Money (capture pp. 75-76)
-  - [ ] Table 45: Initial Character Funds
-    (capture p. 76)
+  - [x] Starting Money (capture pp. 75-76) -
+    R637: the dgx funds pins - the unusual-
+    character capital read, the class dice
+    roll with the birthright exclusion, the
+    barter-unit translation with the
+    nearest-unit rounding
+  - [x] Table 45: Initial Character Funds
+    (capture p. 76) - R637: the dgx T45 grid -
+    ten class rows pinned as the ch'ien,
+    tael, yuan and fen lo and hi bounds
+    (the tael reads as ch'ao), the ninja
+    addition footnote
   - [ ] Gajin and Rates of Exchange prose
     (capture pp. 76-77)
   - [ ] Table 46: Currency Exchange Rates

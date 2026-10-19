@@ -12777,6 +12777,63 @@ when both halves land.
   pp. 73-75, prefix dgw (verify
   free), audit "R636 OA money audit",
   include after rules/oaeff.h.
+- R636 LANDED 2026-10-19: commit
+  482dad2bf247794c9abfa32c3bb33c617e51e610
+  (census 558 -> 559, pushed
+  6d3f2b7..482dad2), MONEY - the chapter
+  opener, the currency systems and Tables
+  43-44, capture pp. 73-75:
+  rules/oamoney.h, prefix dgw (verified
+  free), 32 inlines (17 consts, 13
+  bools, 2 table columns): the gold-not-
+  currency read (copper, silver and
+  paper; gold reserved for art and
+  craft), the pierced coins threaded on
+  the 50-to-100 cash strings tucked in
+  the sleeve, the paper ch'ao with the
+  one-ten-100 notes and the 100-fen
+  preference, the hoarded ch'ien, the
+  noble-spending opener, the four
+  monetary systems (established, regular,
+  irregular, pure barter) with the Shou
+  Lung-to-barbarian spread and the DM
+  choice, the barter-unit doctrine with
+  the quality-varying value, T43 as the
+  coin-value consts (the yuan 5 fen, the
+  ch'ao 100 fen or 20 yuan, the tael 100
+  fen, 20 yuan or 1 ch'ao with the
+  ch'ao-tael equality, the ch'ien 1000
+  fen, 200 yuan, 10 ch'ao, 10 tael), T44
+  5x2 (the koku 5 ch'ien, the sheep or
+  goat 5 tael, the horse 2 ch'ien, the
+  common and silk bolts 1 and 3 ch'ien)
+  with the koku 5-to-6 bushels and the
+  20-yard bolts. PINNED FROM THE 2018
+  PRINT CAPTURE ALONE (the settling
+  authority; the first Mistral-OCR
+  capture session is unavailable above
+  p. 33, so no cross-capture check); no
+  contested cells within the single
+  source. OCR normalization: the systems
+  prose reads "[x]" placeholders for the
+  printed blanks - they pin nothing
+  numeric. The Chapter 5: Money and
+  Equipment parent box opens this round
+  (the first pinned child). Battery 40
+  mutants, 0 missed; full sha rverify
+  GREEN; preflight GREEN. Gap census
+  80/155 -> 84/151. Spec 20,744 bytes
+  md5 59e3027a1b995ca357186a521c29ee46
+  (authored-plus-newline md5
+  88df185eb7a7f1cfdaf27e861e9ccb25;
+  canvas md5
+  40c8004e2fbeb786ba377a3ee5d55b0b).
+  NEXT - R637: the Starting Money prose
+  and Table 45 (Initial Character
+  Funds), capture pp. 75-76, the class
+  funds dice, prefix dgx (verify free),
+  audit "R637 OA starting money audit",
+  include after rules/oamoney.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
