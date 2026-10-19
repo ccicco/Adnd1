@@ -12707,6 +12707,76 @@ when both halves land.
   (verify free), audit "R635 OA
   effects of honor audit", include
   after rules/oahonor.h.
+- R635 LANDED 2026-10-19: commit
+  6d3f2b767d379c76eb5e2b7179ea6cd950dbf6b4
+  (census 557 -> 558, pushed
+  0d6f2cb..6d3f2b7), ALTERING FAMILY
+  HONOR, THE EFFECTS OF HONOR and
+  TABLE 42, capture pp. 70-72:
+  rules/oaeff.h, prefix dgv (verified
+  free), 41 inlines (19 consts, 20
+  bools, 2 table columns): the family
+  ledger (the 10-point raise step with
+  the +1 raise, the once-per-group
+  bonus, the pinnacle read, the
+  5-point single-action blot with the
+  -1 family loss, the shared family
+  change), the effects doctrine (the
+  below-zero elimination with the
+  crumpled sheet, the samurai-ronin
+  and kensai-bushi status loss, the
+  -20 percent family modifier, the +5
+  percent per 10 with the harder-to-
+  impress read, the 75-point gift,
+  the 80-point songs with the 10
+  percent weekly boasts and the -10
+  refusal loss, the 90-point lord
+  invitation with the -10 percent
+  refusal penalty, the 95-point great
+  hero with the +10/-10 read, the
+  successor bonus with the divide-by-
+  10, the 3-point cap and the any-
+  race-class-family freedom), T42 68x2
+  across the ten sections (all
+  characters, shukenja, hengeyokai,
+  kensai, ninja, samurai, sohei,
+  spirit folk, wu jen, yakuza) with
+  the points and mark columns (the
+  five samurai-doubled stars, the
+  single-creature double star), the
+  monsters -1 per 2000 x.p. and the
+  stolen-goods +1 per 100 ch'ien rate
+  consts, the kensai once-per-level
+  duel rule. PINNED FROM THE 2018
+  PRINT CAPTURE ALONE (the settling
+  authority; the first Mistral-OCR
+  capture session is unavailable above
+  p. 33, so no cross-capture check);
+  no contested cells within the
+  single source. OCR normalization:
+  the double-star footnote reads
+  "defeating a single-creature" with
+  a printed em dash (pins as single-
+  creature); the awards use the
+  printed x.p. abbreviation. The
+  Chapter 4: Honor parent box closes
+  this round (all five honor boxes
+  pinned). Battery 175 mutants,
+  0 missed; full sha rverify GREEN;
+  preflight GREEN. Gap census 76/159
+  -> 80/155. Spec 27,392 bytes md5
+  4d54f2eef7e60d1948dc261cb36e5515
+  (authored-plus-newline md5
+  da23d66c10eb7638973e3fb6a20ce480;
+  canvas md5
+  ec0c30b55a014671fd99b5af2725937a).
+  NEXT - R636: the Chapter 5 Money and
+  Equipment opener, the Currency prose
+  with Table 43 (Currency Values) and
+  Table 44 (Barter Units), capture
+  pp. 73-75, prefix dgw (verify
+  free), audit "R636 OA money audit",
+  include after rules/oaeff.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

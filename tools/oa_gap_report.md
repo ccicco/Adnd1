@@ -773,14 +773,37 @@ description riding the same round.
     creature monsters read), the kensai
     once-per-level duel rule
 
-- [ ] **Chapter 5: Money and Equipment**
+- [x] **Chapter 5: Money and Equipment**
   (capture pp. 73-99) - the coinage, barter and
-  equipment chapters
-  - [ ] Currency prose (capture pp. 73-75) - the coins
+  equipment chapters - R636: the parent opens
+  (the currency systems and the coin values
+  pinned; the funds and equipment boxes close
+  in their own rounds)
+  - [x] Currency prose (capture pp. 73-75) - the coins
     (ch'ien, yuan, tael and more), the barter doctrine
-  - [ ] Table 43: Currency Values (capture p. 75)
-  - [ ] Table 44: Barter Units Standard Value
-    (capture p. 75)
+    R636: the dgw money pins - the gold-not-
+    currency read, the pierced coins on the
+    50-to-100 cash strings, the paper ch'ao
+    with the 100-fen preference, the hoarded
+    ch'ien, the four monetary systems with
+    the Shou Lung-to-barbarian spread, the DM
+    choice, the barter-unit doctrine with the
+    quality-varying value
+  - [x] Table 43: Currency Values (capture p. 75) -
+    R636: the dgw coin-value pins - the T43
+    matrix as the fen-basis values and the
+    printed cross ratios (the yuan 5 fen, the
+    ch'ao 100 fen or 20 yuan, the tael 100
+    fen, 20 yuan or 1 ch'ao, the ch'ien 1000
+    fen, 200 yuan, 10 ch'ao, 10 tael)
+  - [x] Table 44: Barter Units Standard Value
+    (capture p. 75) - R636: the dgw T44 grid -
+    five barter rows pinned as the ch'ien and
+    tael value columns (the koku 5 ch'ien,
+    the sheep or goat 5 tael, the horse 2
+    ch'ien, the common and silk bolts 1 and 3
+    ch'ien), the koku 5-to-6 bushels, the
+    20-yard cloth bolts
   - [ ] Starting Money (capture pp. 75-76)
   - [ ] Table 45: Initial Character Funds
     (capture p. 76)
