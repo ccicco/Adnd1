@@ -13237,6 +13237,52 @@ when both halves land.
   piece class steps, prefix dhe (verify
   free), audit "R644 OA piece armor audit",
   include after rules/oaarmor.h.
+- R644 LANDED 2026-10-19: commit
+  91f1d9505802772b1598a46222ca7a77f88735cd
+  (census 566 -> 567, pushed
+  86110ce..91f1d95), PIECE ARMOR -
+  Table 53 (Individual Piece Armor
+  Class), capture p. 95: rules/oapiece.h,
+  prefix dhe (verified free), 5 inlines
+  (2 consts, 2 table columns, 1 bool):
+  the 9-row laced-armor piece grid - the
+  armor class steps (2 for do-maru,
+  hara-ate and haramaki-do, 1 elsewhere)
+  measured from the AC-10 base (the
+  definitional sentence under the table),
+  the star set (the hara-ate /
+  hara-ate-gawa backside pair), the
+  backside note as a bool (the starred
+  pieces do not cover the backside at
+  all - attacks from behind treated as
+  AC 10), the piece names riding the
+  column comment per the T48 doctrine
+  (the hyphenated spellings as printed).
+  The 9-row grid cross-checked
+  cell-by-cell between the two passes -
+  the steps, the star set and the
+  backside footnote text agree verbatim,
+  zero contested cells. The page worked
+  examples cross-check the steps
+  arithmetic as table checks (kote alone
+  AC 9; kote, do-maru and haidate AC 6).
+  First publish clean - no repairs.
+  rverify GREEN at 86110ce, 21 mutants,
+  0 missed; preflight GREEN (567 audit
+  census, BUILD 0 warnings). Gap census
+  94/141 -> 95/140. Spec 8,852 bytes
+  md5 64144178f6c85f5cb4e038452e6417ac
+  (authored-plus-newline md5
+  a82279854249f28a44bf7cfde6f9c24c - the
+  value the ritual gated and matched;
+  canvas md5
+  7ec2abad4c816cd9853d17f821edd2ad).
+  NEXT - R645: Table 54 (Types of Armor
+  & Encumbrance), capture p. 95, the
+  armor bulk/weight/movement grid,
+  prefix dhf (verify free), audit "R645
+  OA encumbrance audit", include after
+  rules/oapiece.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

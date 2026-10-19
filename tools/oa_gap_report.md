@@ -871,8 +871,11 @@ description riding the same round.
     (capture p. 95) - R644: the dhe T53 grid - nine piece rows pinned as the
     armor class steps from AC 10 with the star set (the hara-ate backside
     pair) and the backside note as a bool
-  - [ ] Table 54: Types of Armor & Encumbrance
-    (capture p. 95)
+  - [x] Table 54: Types of Armor & Encumbrance
+    (capture p. 95) - R645: the dhf T54 grid - twenty-three armor type rows
+    pinned as the base weight and movement columns with the bulk classes and
+    armor names riding the column comments and the kote no-weight cell as the
+    -99 sentinel
   - [ ] Miscellaneous Equipment Descriptions
     (capture p. 98)
   - [ ] Barding prose (capture p. 98)
