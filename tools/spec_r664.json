@@ -1,0 +1,382 @@
+{
+ "round": 664,
+ "title": "SIXTH LEVEL SPELLS - the 12 sixth level shukenja spells with the school, component, casting time, saving throw, reversible and sohei codes",
+ "prefix": "dhy",
+ "header_file": "rules/oal6spells.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 586,
+ "inline_count": 21,
+ "audit_label": "R664 OA sixth level spells audit",
+ "audit_comment": "OA round fifty-one (capture pp. 143-147): the sixth level spell stat blocks - the school, component, casting time and saving throw codes with the reversible and sohei-usable markers, cross-checked spell by spell between the passes",
+ "banner": {
+  "title": "SIXTH LEVEL SPELLS, printed capture pp. 143-147 - the OA sixth level spells round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read - the 12 sixth level spell stat blocks cross-checked spell by spell between the passes (print pp. 143-147; compressed pp. 69-72); all 12 schools, component sets, casting times and saving throws agree, zero contested stat reads. Force shapechange's components read V, S, M in the compressed, the print line cutting at its page boundary - the R660 detect charm pattern. The level runs the widest cast spread in the chapter: three single-segment casts (force shapechange, immunity to weapons, smite) up through longevity's one-day cast, pinned as 8640 segments (60 per turn, 144 turns per day, the turn=60 convention) - and instruct takes three turns, find the path three rounds. Two spells take the half save (force shapechange, smite), longevity the special. Alteration is the most common school at five spells, with the other seven appearing schools exactly once each (no invocation this level). The reversible flags agree between the passes; the sohei-usable marks ride the R658 T62 grid. The stat grid pins as a table: 12 rows the spell ordinals, six columns - school, components (a V=1 S=2 M=4 bitmask), casting time in segments (1 round = 10, 1 turn = 60, 3 turns = 180, 1 day = 8640), saving throw code (0 none, 1 neg., 2 special, 3 half), reversible and sohei markers. The spell names ride the column comments, the prose descriptions close in their own rounds. The table tag L6Data identifier-safe per the R639 lesson",
+  "sentinel": "the gap census after this round: 117 closed, 118 open - the Sixth Level Spells box flips (census 586 -> 587); NEXT - R665: the Seventh Level Spells (capture pp. 147-152), prefix dhz (verify free), audit \"R665 OA seventh level spells audit\", include after rules/oal6spells.h"
+ },
+ "consts": [
+  {
+   "name": "dhyL6SpellCount",
+   "value": 12,
+   "comment": "the 12 sixth level shukenja spells (print pp. 143-147; compressed pp. 69-72)"
+  },
+  {
+   "name": "dhyL6SoheiCount",
+   "value": 4,
+   "comment": "the four sixth level spells usable by sohei - find the path, immunity to weapons, smite, speak w/ monsters"
+  },
+  {
+   "name": "dhyL6ReversibleCount",
+   "value": 4,
+   "comment": "the four reversible sixth level spells - find the path, heal, immunity to weapons, quickgrowth"
+  },
+  {
+   "name": "dhyL6AlterationCount",
+   "value": 5,
+   "comment": "the five alteration sixth level spells - the most common school of the level: immunity to weapons, longevity, plane shift, quickgrowth, speak w/ monsters"
+  },
+  {
+   "name": "dhyL6VSMCount",
+   "value": 8,
+   "comment": "the eight sixth level spells taking all three components - the bitmask reads 7"
+  },
+  {
+   "name": "dhyL6VSCount",
+   "value": 3,
+   "comment": "the three sixth level spells taking verbal and somatic - heal, immunity to weapons, speak w/ monsters; the bitmask reads 3"
+  },
+  {
+   "name": "dhyL6VerbalOnlyCount",
+   "value": 1,
+   "comment": "the one sixth level spell taking the verbal component only - instruct"
+  },
+  {
+   "name": "dhyL6DayCasts",
+   "value": 1,
+   "comment": "the one sixth level spell with a one-day casting time - longevity, the longest cast in the chapter, pinned as 8640 segments (60 per turn, 144 turns per day)"
+  },
+  {
+   "name": "dhyL6ThreeTurnCasts",
+   "value": 1,
+   "comment": "the one sixth level spell with a three-turn casting time - instruct"
+  },
+  {
+   "name": "dhyL6ThreeRoundCasts",
+   "value": 1,
+   "comment": "the one sixth level spell with a three-round casting time - find the path"
+  },
+  {
+   "name": "dhyL6RoundCasts",
+   "value": 4,
+   "comment": "the four sixth level spells with a one-round casting time - heal, inanimate servant, invisibility to enemies, quickgrowth"
+  },
+  {
+   "name": "dhyL6OneSegmentCasts",
+   "value": 3,
+   "comment": "the three sixth level spells with a one-segment casting time - force shapechange, immunity to weapons, smite"
+  },
+  {
+   "name": "dhyL6NegSaves",
+   "value": 2,
+   "comment": "the two sixth level spells with a negation saving throw - instruct, plane shift"
+  },
+  {
+   "name": "dhyL6SpecialSaves",
+   "value": 1,
+   "comment": "the one sixth level spell with a special saving throw - longevity (the system shock roll)"
+  },
+  {
+   "name": "dhyL6HalfSaves",
+   "value": 2,
+   "comment": "the two sixth level spells with the half saving throw code - force shapechange, smite; a successful save halving the damage"
+  }
+ ],
+ "bools": [],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dhyL6Grid",
+   "tag": "L6Data",
+   "count": "dhyL6SpellCount",
+   "col_default": 0,
+   "cols": [
+    "dhyL6School",
+    "dhyL6Components",
+    "dhyL6CastTime",
+    "dhyL6Save",
+    "dhyL6Reversible",
+    "dhyL6Sohei"
+   ],
+   "col_comments": [
+    "the shukenja 6th level spell schools by ordinal (print pp. 143-147; compressed pp. 69-72). The spell list rides this comment: 1 find the path, 2 force shapechange, 3 heal, 4 immunity to weapons, 5 inanimate servant, 6 instruct, 7 invisibility to enemies, 8 longevity, 9 plane shift, 10 quickgrowth, 11 smite, 12 speak w/ monsters - the school codes: 1 enchantment/charm, 2 divination, 3 evocation, 4 conjuration/summoning, 5 necromantic, 6 alteration, 7 abjuration, 9 illusion/phantasm - alteration the most common at five spells (immunity to weapons, longevity, plane shift, quickgrowth, speak w/ monsters); the other seven schools appear exactly once each; no invocation spell this level",
+    "the shukenja 6th level spell components by ordinal (print pp. 143-147; compressed pp. 69-72). The spell list rides this comment: 1 find the path, 2 force shapechange, 3 heal, 4 immunity to weapons, 5 inanimate servant, 6 instruct, 7 invisibility to enemies, 8 longevity, 9 plane shift, 10 quickgrowth, 11 smite, 12 speak w/ monsters - the component codes a bitmask: verbal 1, somatic 2, material 4 - eight spells take all three (7), three take verbal and somatic (3): heal, immunity to weapons, speak w/ monsters; instruct takes the verbal only (1); force shapechange reads V, S, M in the compressed (the print line cutting at its page boundary)",
+    "the shukenja 6th level spell casting times by ordinal (print pp. 143-147; compressed pp. 69-72). The spell list rides this comment: 1 find the path, 2 force shapechange, 3 heal, 4 immunity to weapons, 5 inanimate servant, 6 instruct, 7 invisibility to enemies, 8 longevity, 9 plane shift, 10 quickgrowth, 11 smite, 12 speak w/ monsters - the casting time in segments - 1 round = 10 segments, 1 turn = 60, 3 turns = 180, 3 rounds = 30, and longevity's 1 day pinned as 8640 (60 segments per turn, 144 turns per day, the turn=60 convention): find the path takes three rounds, instruct three turns, four spells a round (heal, inanimate servant, invisibility to enemies, quickgrowth), plane shift eight segments, speak w/ monsters nine, and three cast in a single segment (force shapechange, immunity to weapons, smite)",
+    "the shukenja 6th level spell saving throws by ordinal (print pp. 143-147; compressed pp. 69-72). The spell list rides this comment: 1 find the path, 2 force shapechange, 3 heal, 4 immunity to weapons, 5 inanimate servant, 6 instruct, 7 invisibility to enemies, 8 longevity, 9 plane shift, 10 quickgrowth, 11 smite, 12 speak w/ monsters - the saving throw codes: 0 none, 1 neg., 2 special, 3 half - instruct and plane shift are neg., longevity is special, force shapechange and smite take the half code (a successful save halving the damage), the other seven none",
+    "the shukenja 6th level spell reversible markers by ordinal (print pp. 143-147; compressed pp. 69-72). The spell list rides this comment: 1 find the path, 2 force shapechange, 3 heal, 4 immunity to weapons, 5 inanimate servant, 6 instruct, 7 invisibility to enemies, 8 longevity, 9 plane shift, 10 quickgrowth, 11 smite, 12 speak w/ monsters - the cell is 1 where the printed header reads Reversible - find the path, heal, immunity to weapons, quickgrowth; the four matching the R658 T62 reversible column",
+    "the shukenja 6th level spell sohei-usable markers by ordinal (print pp. 143-147; compressed pp. 69-72). The spell list rides this comment: 1 find the path, 2 force shapechange, 3 heal, 4 immunity to weapons, 5 inanimate servant, 6 instruct, 7 invisibility to enemies, 8 longevity, 9 plane shift, 10 quickgrowth, 11 smite, 12 speak w/ monsters - the cell is 1 where the printed asterisk marks the spell usable by sohei - find the path, immunity to weapons, smite, speak w/ monsters; the four matching the R658 T62 sohei column"
+   ],
+   "data": [
+    [
+     2,
+     7,
+     30,
+     0,
+     1,
+     1
+    ],
+    [
+     7,
+     7,
+     1,
+     3,
+     0,
+     0
+    ],
+    [
+     5,
+     3,
+     10,
+     0,
+     1,
+     0
+    ],
+    [
+     6,
+     3,
+     1,
+     0,
+     1,
+     1
+    ],
+    [
+     4,
+     7,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     180,
+     1,
+     0,
+     0
+    ],
+    [
+     9,
+     7,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     7,
+     8640,
+     2,
+     0,
+     0
+    ],
+    [
+     6,
+     7,
+     8,
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     7,
+     10,
+     0,
+     1,
+     0
+    ],
+    [
+     3,
+     7,
+     1,
+     3,
+     0,
+     1
+    ],
+    [
+     6,
+     3,
+     9,
+     0,
+     0,
+     1
+    ]
+   ],
+   "comment": "the Table 62 sixth level spell stat grid (print pp. 143-147; compressed pp. 69-72)",
+   "audit_comment": "the sixth level stat grid: the school, component, casting time and saving throw codes with the reversible and sohei markers by spell ordinal"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the count pins - twelve sixth level spells, four sohei-usable, four reversible, five alteration",
+   "expr": "m['dhyL6SpellCount']() != 12 or m['dhyL6SoheiCount']() != 4 or m['dhyL6ReversibleCount']() != 4 or m['dhyL6AlterationCount']() != 5 or m['dhyL6VSMCount']() != 8 or m['dhyL6VSCount']() != 3 or m['dhyL6VerbalOnlyCount']() != 1"
+  },
+  {
+   "note": "the school pins - find the path divination; force shapechange abjuration; heal necromantic; inanimate servant conjuration; instruct enchantment/charm; invisibility to enemies illusion/phantasm; smite evocation; immunity to weapons, longevity, plane shift, quickgrowth and speak w/ monsters alteration",
+   "expr": "m['dhyL6School'](0) != 2 or m['dhyL6School'](1) != 7 or m['dhyL6School'](2) != 5 or m['dhyL6School'](4) != 4 or m['dhyL6School'](5) != 1 or m['dhyL6School'](6) != 9 or m['dhyL6School'](10) != 3 or m['dhyL6School'](3) != 6 or m['dhyL6School'](7) != 6 or m['dhyL6School'](8) != 6 or m['dhyL6School'](9) != 6 or m['dhyL6School'](11) != 6"
+  },
+  {
+   "note": "the component pins - the three verbal and somatic (heal, immunity to weapons, speak w/ monsters); instruct the verbal only; the eight all-component with find the path, force shapechange, longevity and smite pinned",
+   "expr": "m['dhyL6Components'](2) != 3 or m['dhyL6Components'](3) != 3 or m['dhyL6Components'](11) != 3 or m['dhyL6Components'](5) != 1 or m['dhyL6Components'](0) != 7 or m['dhyL6Components'](1) != 7 or m['dhyL6Components'](7) != 7 or m['dhyL6Components'](10) != 7 or m['dhyL6Components'](4) != 7 or m['dhyL6Components'](9) != 7"
+  },
+  {
+   "note": "the casting time pins - longevity the one-day cast 8640 (the longest in the chapter); instruct three turns; find the path three rounds; the four one-round casts; plane shift eight segments; speak w/ monsters nine; the three single-segment casts (force shapechange, immunity to weapons, smite)",
+   "expr": "m['dhyL6CastTime'](7) != 8640 or m['dhyL6CastTime'](5) != 180 or m['dhyL6CastTime'](0) != 30 or m['dhyL6CastTime'](2) != 10 or m['dhyL6CastTime'](4) != 10 or m['dhyL6CastTime'](6) != 10 or m['dhyL6CastTime'](9) != 10 or m['dhyL6CastTime'](8) != 8 or m['dhyL6CastTime'](11) != 9 or m['dhyL6CastTime'](1) != 1 or m['dhyL6CastTime'](3) != 1 or m['dhyL6CastTime'](10) != 1"
+  },
+  {
+   "note": "the saving throw pins - instruct and plane shift neg.; longevity special; force shapechange and smite the half code; the seven others none",
+   "expr": "m['dhyL6Save'](5) != 1 or m['dhyL6Save'](8) != 1 or m['dhyL6Save'](7) != 2 or m['dhyL6Save'](1) != 3 or m['dhyL6Save'](10) != 3 or m['dhyL6Save'](0) != 0 or m['dhyL6Save'](2) != 0 or m['dhyL6Save'](11) != 0"
+  },
+  {
+   "note": "the reversible pins - find the path, heal, immunity to weapons and quickgrowth marked; force shapechange, longevity and smite not - the four matching the R658 T62 reversible column",
+   "expr": "m['dhyL6Reversible'](0) != 1 or m['dhyL6Reversible'](2) != 1 or m['dhyL6Reversible'](3) != 1 or m['dhyL6Reversible'](9) != 1 or m['dhyL6Reversible'](1) != 0 or m['dhyL6Reversible'](7) != 0 or m['dhyL6Reversible'](10) != 0"
+  },
+  {
+   "note": "the sohei pins - find the path, immunity to weapons, smite and speak w/ monsters marked; heal, instruct and longevity not - the four matching the R658 T62 sohei column",
+   "expr": "m['dhyL6Sohei'](0) != 1 or m['dhyL6Sohei'](3) != 1 or m['dhyL6Sohei'](10) != 1 or m['dhyL6Sohei'](11) != 1 or m['dhyL6Sohei'](2) != 0 or m['dhyL6Sohei'](5) != 0 or m['dhyL6Sohei'](7) != 0"
+  },
+  {
+   "note": "the grid-sum pins - eight VSM, three VS and the instruct verbal only; the one-day, three-turn and three-round casts; four one-round and three one-segment casts; two neg., one special and two half saves",
+   "expr": "m['dhyL6DayCasts']() != 1 or m['dhyL6ThreeTurnCasts']() != 1 or m['dhyL6ThreeRoundCasts']() != 1 or m['dhyL6RoundCasts']() != 4 or m['dhyL6OneSegmentCasts']() != 3 or m['dhyL6NegSaves']() != 2 or m['dhyL6SpecialSaves']() != 1 or m['dhyL6HalfSaves']() != 2"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the spell count pins": [
+   {
+    "kind": "const",
+    "name": "dhyL6SpellCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6SoheiCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6ReversibleCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6AlterationCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6VSMCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6VSCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6VerbalOnlyCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6DayCasts"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6ThreeTurnCasts"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6ThreeRoundCasts"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6RoundCasts"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6OneSegmentCasts"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6NegSaves"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6SpecialSaves"
+   },
+   {
+    "kind": "const",
+    "name": "dhyL6HalfSaves"
+   }
+  ],
+  "the stat grid pins": [
+   {
+    "kind": "table",
+    "name": "dhyL6Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Sixth Level Spells box closes",
+   "to": "  - [x] Sixth Level Spells (capture pp. 143-147) -\n    R664: the dhy L6 stat grid - the 12 sixth level\n    spells with the school, component, casting time,\n    saving throw, reversible and sohei codes (the sohei\n    and reversible marks matching the R658 T62 grid;\n    longevity the one-day cast; the stat blocks\n    cross-checked spell by spell between the passes);\n    the names ride the column comments, the prose\n    descriptions close in their own rounds",
+   "from": "  - [ ] Sixth Level Spells (capture pp. 143-147)"
+  }
+ ],
+ "gap_census": {
+  "closed": 117,
+  "open": 118
+ },
+ "include_comment": "the OA sixth level spells pins",
+ "include_after": "#include \"rules/oal5spells.h\"  // R663: the OA fifth level spells pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R663 LANDED 2026-10-19: commit 28d59514e9c97f9a0bc3e775eb1f99420b74eaa4",
+ "prev_record": [
+  "- R663 LANDED 2026-10-19: commit 28d59514e9c97f9a0bc3e775eb1f99420b74eaa4",
+  "  (census 585 -> 586, pushed bf5257b..28d5951), FIFTH",
+  "  LEVEL SPELLS - the 12 fifth level shukenja spell",
+  "  stat blocks, capture pp. 140-143: rules/oal5spells.h,",
+  "  prefix dhx (verified free), ONE gap flip (single-line",
+  "  child label), 18 consts, 24 inlines (grid tag",
+  "  L5Data, 12 rows x 6 cols - the level sizes dropping",
+  "  from 20 to 12 per the R658 T62 grid), gap census",
+  "  115/120 -> 116/119: all 12 stat blocks cross-checked",
+  "  spell by spell between the passes (print pp.",
+  "  140-143 vs compressed pp. 68-70), zero contested",
+  "  stat reads - alteration and divination tie as the",
+  "  most common school at three each, no evocation or",
+  "  conjuration this level; advice the V-only single;",
+  "  air walk the one-segment cast; three eight-segment",
+  "  casts; raise dead and remember the special saves.",
+  "  One authoring repair (caught by the data asserts):",
+  "  initially five reversible marks, but the R658 T62",
+  "  grid settles SIX - raise dead's header reads",
+  "  Reversible; the missing pin made the mirror report",
+  "  1 bad on the first build, the second build GREEN.",
+  "  The reversible six (cure critical wounds, dispel",
+  "  evil, mental strength, raise dead, remember, true",
+  "  seeing) and sohei four (dispel evil, mental",
+  "  strength, strength, true seeing) match the R658",
+  "  T62 grid exactly. rverify GREEN at bf5257b, 90",
+  "  mutants, 0 missed; preflight GREEN (586 audit",
+  "  census, BUILD 0 warnings). Spec 18,373 bytes md5",
+  "  7dd46db7a368a73da0973c2042cb8ef1",
+  "  (authored-plus-newline md5",
+  "  b004457bd723014ab847f5b0154cada8 - the value the",
+  "  ritual gated and matched; canvas md5",
+  "  b8d1f22985fc9db1fd47ae52743b0c97). NEXT - R664:",
+  "  Sixth Level Spells (capture pp. 143-147), prefix",
+  "  dhy (verify free), audit \"R664 OA sixth level",
+  "  spells audit\", include after rules/oal5spells.h"
+ ]
+}

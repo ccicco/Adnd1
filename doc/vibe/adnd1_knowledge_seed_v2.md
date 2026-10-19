@@ -13946,6 +13946,42 @@ when both halves land.
   Fifth Level Spells (capture pp. 140-143), prefix
   dhx (verify free), audit "R663 OA fifth level
   spells audit", include after rules/oal4spells.h
+- R663 LANDED 2026-10-19: commit 28d59514e9c97f9a0bc3e775eb1f99420b74eaa4
+  (census 585 -> 586, pushed bf5257b..28d5951), FIFTH
+  LEVEL SPELLS - the 12 fifth level shukenja spell
+  stat blocks, capture pp. 140-143: rules/oal5spells.h,
+  prefix dhx (verified free), ONE gap flip (single-line
+  child label), 18 consts, 24 inlines (grid tag
+  L5Data, 12 rows x 6 cols - the level sizes dropping
+  from 20 to 12 per the R658 T62 grid), gap census
+  115/120 -> 116/119: all 12 stat blocks cross-checked
+  spell by spell between the passes (print pp.
+  140-143 vs compressed pp. 68-70), zero contested
+  stat reads - alteration and divination tie as the
+  most common school at three each, no evocation or
+  conjuration this level; advice the V-only single;
+  air walk the one-segment cast; three eight-segment
+  casts; raise dead and remember the special saves.
+  One authoring repair (caught by the data asserts):
+  initially five reversible marks, but the R658 T62
+  grid settles SIX - raise dead's header reads
+  Reversible; the missing pin made the mirror report
+  1 bad on the first build, the second build GREEN.
+  The reversible six (cure critical wounds, dispel
+  evil, mental strength, raise dead, remember, true
+  seeing) and sohei four (dispel evil, mental
+  strength, strength, true seeing) match the R658
+  T62 grid exactly. rverify GREEN at bf5257b, 90
+  mutants, 0 missed; preflight GREEN (586 audit
+  census, BUILD 0 warnings). Spec 18,373 bytes md5
+  7dd46db7a368a73da0973c2042cb8ef1
+  (authored-plus-newline md5
+  b004457bd723014ab847f5b0154cada8 - the value the
+  ritual gated and matched; canvas md5
+  b8d1f22985fc9db1fd47ae52743b0c97). NEXT - R664:
+  Sixth Level Spells (capture pp. 143-147), prefix
+  dhy (verify free), audit "R664 OA sixth level
+  spells audit", include after rules/oal5spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
