@@ -13375,6 +13375,52 @@ when both halves land.
   audit", include after rules/oabarding.h -
   the barding prose box stays open beside
   it.
+- R647 LANDED 2026-10-19: commit
+  9a2f19dbd849209219bb8595159b6c416ebe4a05
+  (census 569 -> 570, pushed
+  6ad968b..9a2f19d), MISC EQUIPMENT - the
+  grenades prose of the equipment
+  descriptions, capture p. 98:
+  rules/oagrenade.h, prefix dhh (verified
+  free), 20 inlines (13 consts, 7 bools,
+  no table): the four grenade kinds with
+  the save-vs doctrine - pepper (single
+  target, save versus poison, incapacitated
+  1-6 rounds), dust (the same save,
+  blinded 1-6), flash powder (fire source,
+  auto-blind 1-3, the maybe-looking save
+  versus petrification) and poison smoke
+  (fire source, the 5-foot per-round fill,
+  save versus poison, 1-2 hp per round, the
+  10-foot area, one turn); the to-hit
+  doctrine as bools (no armor modifiers -
+  the contents burst in a small cloud on
+  impact; the eggshell 10-foot fall
+  threshold with the save versus crushing
+  blow per grenade). The prose
+  cross-checked paragraph-by-paragraph
+  between the two passes - every printed
+  number agrees, zero contested cells; the
+  lone glyph artifact is an em-dash class
+  (not a pin, noted). First publish clean -
+  no repairs. rverify GREEN at 6ad968b,
+  20 mutants, 0 missed; preflight GREEN
+  (570 audit census, BUILD 0 warnings).
+  Gap census 97/138 -> 98/137. Spec
+  11,835 bytes md5
+  cc67d8391502b1299fd9851f04257449
+  (authored-plus-newline md5
+  aff6eadcec8612fdcbd87365dfbc4e5c - the
+  value the ritual gated and matched;
+  canvas md5
+  89865ff4113eac060a0ea1750395fd58).
+  NEXT - R648: the Barding prose box
+  (capture p. 98), the barding AC-factor
+  and weight paragraph, prefix dhi (verify
+  free), audit "R648 OA barding prose
+  audit", include after rules/oagrenade.h -
+  the armor descriptions box stays open
+  beside it.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

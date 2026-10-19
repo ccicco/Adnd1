@@ -881,7 +881,10 @@ description riding the same round.
     kinds with their save-vs doctrine as bools and every printed number as
     consts: the pepper and dust 1-6, the flash 1-3, the smoke 5-foot fill, 1-2
     damage, 10-foot area and one turn, the 10-foot eggshell fall threshold
-  - [ ] Barding prose (capture p. 98)
+  - [x] Barding prose (capture p. 98) - R648: the dhi barding prose pins - the
+  three barding materials with their AC factors and weights (leather or padded
+  1 factor 160#, metal scale 2 factors 250#, chain 3 factors 350#), the
+  half-barding doctrine as bools and the plate-never-used rule
   - [x] Table 55: Barded Warhorse Base Movement Rates
     (capture p. 98) - R646: the dhg T55 grid - four warhorse rows pinned as
     the full/half barding movement pairs for the three materials, the

@@ -1,0 +1,246 @@
+{
+ "round": 648,
+ "title": "BARDING PROSE - the barding AC factors and weight doctrine",
+ "prefix": "dhi",
+ "header_file": "rules/oabardprose.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 570,
+ "inline_count": 13,
+ "audit_label": "R648 OA barding prose audit",
+ "audit_comment": "OA round thirty-five (capture pp. 98-99): the barding prose - the AC factors, the weights and the half-barding doctrine",
+ "banner": {
+  "title": "BARDING PROSE, printed capture pp. 98-99 - the OA barding prose round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the section - the barding prose cross-checked paragraph-by-paragraph between the two passes (the intro on capture p. 98, the AC-factor list on capture p. 99 of the print pass); every printed number agrees - zero contested cells. The AC-factor list pins: leather or padded adds 1 factor to the AC and weighs 160#, metal scale adds 2 factors and weighs 250#, chain adds 3 factors and weighs 350#. The half-barding doctrine pins as consts and bools: half barding weighs half the amount of full barding (the divisor 2), increases the AC for frontal attacks only, and attacks from the rear do not gain the AC bonus; half barding is more frequently used than full barding, and half covers the head, neck and forequarters while full covers the entire body (the coverage split rides the comments). The materials paragraph pins: the most common material is quilted and padded cotton, the others in descending order are leather, leather scale, brigandine, metal scale and chain mail (the order rides the comment), and plate barding is never used - as a rule barding is only used on the mounts of important nobles, generals and shock troops (the mounts-only rule rides the comment). The warhorse must be able to carry the barding weight in addition to the rider and any equipment - and the movement-rate reduction cross-references the Table 55 grid already pinned in R646. The armor descriptions box stays open - the last Chapter 5 box",
+  "sentinel": "the gap census after this round: 99 closed, 136 open - the Barding prose box flips (census 570 -> 571); NEXT - R649: the armor prose and armor descriptions box (capture pp. 93-98), the suits-and-pieces doctrine and the armor description entries, prefix dhj (verify free), audit \"R649 OA armor descriptions audit\", include after rules/oabardprose.h - the last Chapter 5 box"
+ },
+ "consts": [
+  {
+   "name": "dhiBardingMatCount",
+   "value": 3,
+   "comment": "the AC-factor list materials - leather or padded, metal scale and chain (capture p. 99 of the print pass; compressed p. 51)"
+  },
+  {
+   "name": "dhiLeatherAcFactor",
+   "value": 1,
+   "comment": "leather or padded barding adds 1 factor to the AC (capture p. 99 of the print pass)"
+  },
+  {
+   "name": "dhiLeatherWeight",
+   "value": 160,
+   "comment": "leather or padded barding weighs 160# (capture p. 99 of the print pass)"
+  },
+  {
+   "name": "dhiMetalAcFactor",
+   "value": 2,
+   "comment": "metal scale barding adds 2 factors to the AC (capture p. 99 of the print pass)"
+  },
+  {
+   "name": "dhiMetalWeight",
+   "value": 250,
+   "comment": "metal scale barding weighs 250# (capture p. 99 of the print pass)"
+  },
+  {
+   "name": "dhiChainAcFactor",
+   "value": 3,
+   "comment": "chain barding adds 3 factors to the AC (capture p. 99 of the print pass)"
+  },
+  {
+   "name": "dhiChainWeight",
+   "value": 350,
+   "comment": "chain barding weighs 350# (capture p. 99 of the print pass)"
+  },
+  {
+   "name": "dhiHalfWeightDiv",
+   "value": 2,
+   "comment": "half barding weighs half the amount of full barding - the divisor 2 (capture p. 99 of the print pass)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dhiHalfMoreCommon",
+   "value": true,
+   "comment": "half barding is more frequently used than full barding - half covers the head, neck and forequarters while full covers the entire body (capture p. 98)"
+  },
+  {
+   "name": "dhiPlateNeverUsed",
+   "value": true,
+   "comment": "plate barding is never used - the most common material is quilted and padded cotton, the others in descending order leather, leather scale, brigandine, metal scale and chain mail (capture p. 98)"
+  },
+  {
+   "name": "dhiHalfFrontalOnly",
+   "value": true,
+   "comment": "half barding increases the AC for frontal attacks only (capture p. 99 of the print pass)"
+  },
+  {
+   "name": "dhiRearNoBonus",
+   "value": true,
+   "comment": "attacks from the rear do not gain the AC bonus (capture p. 99 of the print pass)"
+  },
+  {
+   "name": "dhiMustCarryWeight",
+   "value": true,
+   "comment": "the warhorse must be able to carry the weight of the barding, in addition to that of the rider and any equipment; the movement-rate reduction is the Table 55 grid pinned in R646 (capture p. 99 of the print pass)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the barding material count pin - the AC-factor list",
+   "expr": "m['dhiBardingMatCount']() != 3"
+  },
+  {
+   "note": "the leather-or-padded factor and weight pins - 1 factor, 160#",
+   "expr": "m['dhiLeatherAcFactor']() != 1 or m['dhiLeatherWeight']() != 160"
+  },
+  {
+   "note": "the metal-scale factor and weight pins - 2 factors, 250#",
+   "expr": "m['dhiMetalAcFactor']() != 2 or m['dhiMetalWeight']() != 250"
+  },
+  {
+   "note": "the chain factor and weight pins - 3 factors, 350#",
+   "expr": "m['dhiChainAcFactor']() != 3 or m['dhiChainWeight']() != 350"
+  },
+  {
+   "note": "the half-barding weight divisor pin - half of full",
+   "expr": "m['dhiHalfWeightDiv']() != 2"
+  },
+  {
+   "note": "the half-barding doctrine pins - frontal only, rear no bonus, more common",
+   "expr": "m['dhiHalfFrontalOnly']() != 1 or m['dhiRearNoBonus']() != 1 or m['dhiHalfMoreCommon']() != 1"
+  },
+  {
+   "note": "the plate-never-used rule pin",
+   "expr": "m['dhiPlateNeverUsed']() != 1"
+  },
+  {
+   "note": "the must-carry-weight rule pin",
+   "expr": "m['dhiMustCarryWeight']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the barding prose pins": [
+   {
+    "kind": "const",
+    "name": "dhiBardingMatCount"
+   },
+   {
+    "kind": "const",
+    "name": "dhiLeatherAcFactor"
+   },
+   {
+    "kind": "const",
+    "name": "dhiLeatherWeight"
+   },
+   {
+    "kind": "const",
+    "name": "dhiMetalAcFactor"
+   },
+   {
+    "kind": "const",
+    "name": "dhiMetalWeight"
+   },
+   {
+    "kind": "const",
+    "name": "dhiChainAcFactor"
+   },
+   {
+    "kind": "const",
+    "name": "dhiChainWeight"
+   },
+   {
+    "kind": "const",
+    "name": "dhiHalfWeightDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "dhiHalfMoreCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "dhiPlateNeverUsed"
+   },
+   {
+    "kind": "bool",
+    "name": "dhiHalfFrontalOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dhiRearNoBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dhiMustCarryWeight"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Barding prose box closes",
+   "from": "  - [ ] Barding prose (capture p. 98)",
+   "to": "  - [x] Barding prose (capture p. 98) - R648: the dhi barding prose pins - the\n  three barding materials with their AC factors and weights (leather or padded\n  1 factor 160#, metal scale 2 factors 250#, chain 3 factors 350#), the\n  half-barding doctrine as bools and the plate-never-used rule"
+  }
+ ],
+ "gap_census": {
+  "closed": 99,
+  "open": 136
+ },
+ "include_comment": "the OA barding prose pins",
+ "include_after": "#include \"rules/oagrenade.h\"  // R647: the OA grenades pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R647 LANDED 2026-10-19: commit",
+ "prev_record": [
+  "- R647 LANDED 2026-10-19: commit",
+  "  9a2f19dbd849209219bb8595159b6c416ebe4a05",
+  "  (census 569 -> 570, pushed",
+  "  6ad968b..9a2f19d), MISC EQUIPMENT - the",
+  "  grenades prose of the equipment",
+  "  descriptions, capture p. 98:",
+  "  rules/oagrenade.h, prefix dhh (verified",
+  "  free), 20 inlines (13 consts, 7 bools,",
+  "  no table): the four grenade kinds with",
+  "  the save-vs doctrine - pepper (single",
+  "  target, save versus poison, incapacitated",
+  "  1-6 rounds), dust (the same save,",
+  "  blinded 1-6), flash powder (fire source,",
+  "  auto-blind 1-3, the maybe-looking save",
+  "  versus petrification) and poison smoke",
+  "  (fire source, the 5-foot per-round fill,",
+  "  save versus poison, 1-2 hp per round, the",
+  "  10-foot area, one turn); the to-hit",
+  "  doctrine as bools (no armor modifiers -",
+  "  the contents burst in a small cloud on",
+  "  impact; the eggshell 10-foot fall",
+  "  threshold with the save versus crushing",
+  "  blow per grenade). The prose",
+  "  cross-checked paragraph-by-paragraph",
+  "  between the two passes - every printed",
+  "  number agrees, zero contested cells; the",
+  "  lone glyph artifact is an em-dash class",
+  "  (not a pin, noted). First publish clean -",
+  "  no repairs. rverify GREEN at 6ad968b,",
+  "  20 mutants, 0 missed; preflight GREEN",
+  "  (570 audit census, BUILD 0 warnings).",
+  "  Gap census 97/138 -> 98/137. Spec",
+  "  11,835 bytes md5",
+  "  cc67d8391502b1299fd9851f04257449",
+  "  (authored-plus-newline md5",
+  "  aff6eadcec8612fdcbd87365dfbc4e5c - the",
+  "  value the ritual gated and matched;",
+  "  canvas md5",
+  "  89865ff4113eac060a0ea1750395fd58).",
+  "  NEXT - R648: the Barding prose box",
+  "  (capture p. 98), the barding AC-factor",
+  "  and weight paragraph, prefix dhi (verify",
+  "  free), audit \"R648 OA barding prose",
+  "  audit\", include after rules/oagrenade.h -",
+  "  the armor descriptions box stays open",
+  "  beside it."
+ ]
+}
