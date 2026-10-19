@@ -978,10 +978,18 @@ description riding the same round.
     cell-by-cell between the two passes, zero contested cells - the Chapter 6
     proficiencies arc closes
 
-- [ ] **Chapter 7: Shukenja Spells** (capture pp.
-  110-152) - the shukenja spell book
-  - [ ] Table 62: Shukenja Spells (capture p. 112) -
-    the full spell list by level
+- [x] **Chapter 7: Shukenja Spells** (capture pp.
+  110-152) - the shukenja spell book - R658: the parent opens (the Table 62
+  spell list pinned - the 116 spells by level with the sohei-usable and
+  reversible markers; the first through sixth level spell boxes close in their
+  own rounds)
+  - [x] Table 62: Shukenja Spells (capture p. 112) -
+    the full spell list by level - R658: the dhs T62 grid - the 116 shukenja
+    spells by level (20, 20, 20, 20, 12, 12, 12) with the sohei-usable markers
+    (26 spells, cross-checked cell by cell between the passes, zero contested
+    reads) and the reversible markers (33 spells, print-only - the compressed
+    renders no italics); the names ride the column comments, the spell
+    descriptions close in their own rounds
   - [ ] First Level Spells (capture pp. 112-119)
   - [ ] Second Level Spells (capture pp. 119-126)
   - [ ] Third Level Spells (capture pp. 126-132)

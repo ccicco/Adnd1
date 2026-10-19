@@ -13731,6 +13731,42 @@ when both halves land.
   61 (Court Proficiencies), capture p. 108, prefix dhr
   (verify free), audit "R657 OA court proficiencies
   audit", include after rules/oacomprof.h
+- R657 LANDED 2026-10-19: commit 88168f07084ae63c68066fe079985f9fd6fa60eb
+  (census 579 -> 580, pushed 19aa44b..88168f0), TABLE 61
+  COURT PROFICIENCIES - the court grid with the slot
+  costs, base chances and always-roll markers, capture
+  p. 108: rules/oacourtprof.h, prefix dhr (verified
+  free), 4 inlines (1 const, 3 table columns, tag
+  T61Data, no bools): the twelve court rows
+  (calligraphy through tea ceremony) riding the first
+  column comment, with the slot costs (calligraphy,
+  falconry, tea ceremony 2, the rest 1), the base
+  chances (18, 16, 17, 15, 12, 16, 17, 14, 19, 19, 12,
+  15) and the always-roll markers (etiquette, falconry,
+  heraldry); the asterisk set (calligraphy, etiquette,
+  falconry, heraldry, noh, religion, tea ceremony)
+  rides the row comments. Cross-checked cell-by-cell
+  between the two passes - zero contested cells,
+  marker for marker (the grid opening print p. 108,
+  the religion and tea ceremony rows at the top of
+  print p. 109; the compressed full grid p. 56). The
+  R656 single-line-label fix handled this round's
+  single-line flip cleanly on the first build. This
+  round closes the Chapter 6 proficiencies arc - the
+  Table 56 and Tables 58-61 grids plus the weapon,
+  missile, non-weapon and character prose all landed.
+  rverify GREEN at 19aa44b, 37 mutants, 0 missed;
+  preflight GREEN (580 audit census, BUILD 0
+  warnings). Gap census 108/127 -> 109/126. Spec
+  9,474 bytes md5 a5ffa95047a61f2e30791dce05e2cc12
+  (authored-plus-newline md5
+  4c1d355bc843417d8d56bc29ac2677ce - the value the
+  ritual gated and matched; canvas md5
+  42d9bae23dbd21b977c5630092ed0db7). NEXT - R658: the
+  Chapter 7 parent opens - Table 62 (Shukenja Spells),
+  capture p. 112, the full spell list by level, prefix
+  dhs (verify free), audit "R658 OA shukenja spells
+  audit", include after rules/oacourtprof.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
