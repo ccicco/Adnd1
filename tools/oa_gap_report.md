@@ -1290,7 +1290,21 @@ description riding the same round.
     attack expected - and the peaceful-eruption
     clause; single-pass pins per the Chapter 9
     provenance shift
-  - [ ] Initiative Modifiers (capture p. 218)
+  - [x] Initiative Modifiers (capture p. 218) -
+    R681: the diu initiative modifier pins -
+    the quickness doctrine, the roll still
+    once per side with the modifier applied
+    for the actions of that character only,
+    the round dividing into more than two
+    phases, the tie not rerolled with all
+    acting in the same instant and the
+    effects landing only after the action
+    completes, the landslide rule, and the
+    printed kensai example - the PC 3
+    against the NPC 4, the kensai riding
+    the same instant at modified 4, the
+    hypothetical NPC kensai striking first
+    at modified 5
   - [ ] Combat Procedures (capture p. 219)
   - [ ] Table 67: Horseback Bowfire Modifiers
     (capture p. 220)

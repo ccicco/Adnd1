@@ -15018,6 +15018,59 @@ when both halves land.
   repo hits), audit "R680 OA
   iaijutsu surprise audit", include
   after rules/oacombatseq.h
+- R680 LANDED 2026-10-20: commit
+  9f5856273ca8c769b02d43dd362665669c1ec602
+  (census 602 -> 603, pushed 8bd8801..9f58562),
+  OA SURPRISE AND IAIJUTSU - the
+  dueling draw doctrine, capture p.
+  218: rules/oaiaijutsu.h, prefix
+  diq (verified free at 8bd8801 -
+  zero repo hits), ONE gap flip, 2
+  consts + 6 bools (8 inlines, no
+  table), gap census 132/103 ->
+  133/102. The -1 iaijutsu surprise
+  modifier applied to the surprise
+  die roll of the character WITHOUT
+  the proficiency when only one side
+  is trained; the both-trained case
+  carrying the -1 on BOTH rolls; the
+  special-situations scope - the
+  noncombat encounter suddenly
+  erupting into attack (the
+  kneel-beside sheathed-weapons
+  negotiation the printed example);
+  the two exceptions - no modifier
+  when weapons are already drawn,
+  none when the attack is expected -
+  and the peaceful-eruption clause.
+  Single-pass pins per the Chapter 9
+  provenance shift. LESSON: examples
+  must stay WITHIN-ROUND - the
+  rverify model parses only the
+  round's own header, so a
+  cross-round example referencing
+  the R679 surprise-die pin threw a
+  KeyError RED; replaced with a
+  within-round modifier-shape
+  example, second run GREEN. Also:
+  dir is TAKEN for future prefixes -
+  the comment-words directory,
+  direct; R681 takes dis. rverify
+  GREEN at 8bd8801, 8 mutants, 0
+  missed. Spec md5 edeb900b539795c8
+  9845e2b0822232af (authored-plus-
+  newline md5 7ecf220289bbe8e486d0a
+  4ce837ec4a7 - the value the ritual
+  gated and matched; canvas md5
+  88bc159f2fa9d887f863ed30e5500315).
+  NEXT - R681: the Initiative
+  Modifiers (capture p. 218), prefix
+  dis (verify free at 9f58562 - only
+  file-content substrings outside
+  the engine paren gate), audit
+  "R681 OA initiative modifiers
+  audit", include after
+  rules/oaiaijutsu.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
