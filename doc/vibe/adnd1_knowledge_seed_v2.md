@@ -15071,6 +15071,53 @@ when both halves land.
   "R681 OA initiative modifiers
   audit", include after
   rules/oaiaijutsu.h
+- R681 LANDED 2026-10-20: commit
+  eb63a121c4cebd133926e5c810daf9b02f09cc19
+  (census 603 -> 604, pushed 9f58562..eb63a12),
+  OA INITIATIVE MODIFIERS - the
+  quickness doctrine, capture pp.
+  218-219: rules/oainitmods.h, prefix
+  diu (verified free at 9f58562), ONE
+  gap flip, 5 consts + 8 bools (13
+  inlines, no table), gap census
+  133/102 -> 134/101. The quickness
+  frame; the roll still once per side
+  with the modifier applied for the
+  actions of that character only; the
+  round dividing into more than two
+  phases; the tie not rerolled, all
+  acting in the same instant, the
+  effects landing only after the
+  action completes; the landslide
+  rule; the printed kensai example -
+  the PC 3 against the NPC 4, the
+  kensai riding the same instant at
+  modified 4, the hypothetical NPC
+  kensai striking first at modified
+  5. Single-pass pins per the Chapter
+  9 provenance shift. LESSONS: the
+  R426 split-identifier guard fired
+  on the long four-const example
+  chain - audit examples split into
+  four short within-round checks; and
+  equality-shaped example pins must
+  be spelled != - the audit counts
+  bad on true, so an == pin is a
+  healthy-base RED (2 bad) until
+  respelled. rverify GREEN at
+  9f58562, 13 mutants, 0 missed.
+  Spec md5 ce3bb077c351cdefaac82c650
+  c440869 (authored-plus-newline md5
+  83bfd3404470134f052acc68abbeb257 -
+  the value the ritual gated and
+  matched; canvas md5 dadd355a105b0f
+  649f2ecdbae4c15d1c). NEXT - R682:
+  the Combat Procedures with the
+  missile fire from horseback doctrine
+  (capture p. 219), prefix div
+  (verify free at eb63a12), audit
+  "R682 OA combat procedures audit",
+  include after rules/oainitmods.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

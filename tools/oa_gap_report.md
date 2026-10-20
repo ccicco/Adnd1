@@ -1305,7 +1305,19 @@ description riding the same round.
     the same instant at modified 4, the
     hypothetical NPC kensai striking first
     at modified 5
-  - [ ] Combat Procedures (capture p. 219)
+  - [x] Combat Procedures (capture
+    p. 219) - R682: the div mounted
+    bowfire pins - the doctrine frame,
+    the unmoving-horse freedom, the
+    horsemanship gate for the moving
+    mount, the two-hands rule with
+    the knees guidance, the DM rough-
+    ground clause, the halved rate of
+    fire with the 2/1 to 1/1 and 3/1
+    to 3/2 conversions, the speed-
+    based to-hit penalties of Table
+    67; single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Table 67: Horseback Bowfire Modifiers
     (capture p. 220)
   - [ ] Unhorsing (capture p. 220)
