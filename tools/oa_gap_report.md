@@ -1483,8 +1483,27 @@ description riding the same round.
     Physical Training any-style category);
     single-pass pins per the Chapter 9
     provenance shift
-  - [ ] Table 69: Martial Style Combinations
-    (capture p. 226)
+  - [x] Table 69: Martial Style
+    Combinations (capture p. 226) - R691:
+    the dje combinations grid pins - the
+    three forms (Hard 1/1/4, Soft 3/0/2 -
+    the lone zero attack mod, Hard/Soft
+    2/1/3) and the eight methods (Kick
+    1/1/4 Foot, Lock 1/1/2 Body, Movement
+    2/1/2 Legs, Push 2/1/1 Hand, Strike
+    1/1/1 Hand, Throw 1/1/2 Body, Vital
+    Area 2/1/1 Hand-and-Foot, Weapon
+    1/1 by-weapon Hand-and-Arm), the
+    damage mod column riding the
+    round-up-to-die convention with the
+    Weapon row pinned 0 - BY WEAPON, the
+    R662 convention, the body part column
+    coded; the derived-style examples
+    prove the mechanics within the round
+    (Hard plus Kick the AC 8, attacks 2,
+    damage 8; Soft plus Movement the 4);
+    single-pass pins per the Chapter 9
+    provenance shift
   - [ ] Table 70: Martial Arts Special Maneuvers
     (capture p. 227)
   - [ ] Principal Methods prose (capture pp. 228-232)

@@ -1,0 +1,226 @@
+{
+ "round": 691,
+ "title": "OA TABLE 69 - the martial style combinations: the three forms and eight principal methods with their AC, attack and damage mods and the coded body parts",
+ "prefix": "dje",
+ "header_file": "rules/oa69combos.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 613,
+ "inline_count": 5,
+ "audit_label": "R691 OA style combinations audit",
+ "audit_comment": "OA round seventy-eight (capture p. 226): Table 69 - the martial style combinations grid, the three forms and eight methods across four columns with the derived-style examples, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TABLE 69, printed capture p. 226 - the martial style combinations round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE FORM ROWS: Hard the AC 1, attack 1, damage 4 - the muscles and bones for power; Soft the AC 3, attack 0 - the only zero of the grid, damage 2 - the inner power; Hard/Soft the 2/1/3 of the best practices from each. THE METHOD ROWS: Kick the 1/1/4 of the Foot; Lock the 1/1/2 of the Body; Movement the 2/1/2 of the Legs; Push the 2/1/1 of the Hand; Strike the 1/1/1 of the Hand; Throw the 1/1/2 of the whole Body; Vital Area the 2/1/1 of the Hand and Foot; Weapon the 1/1 of the Hand and Arm, the damage BY WEAPON - pinned 0, not a mod, the R662 convention. THE USE: the mods totaled per the R690 mechanics - the AC from the 10, the attacks style-specific, the damage rounded up to the die, the body part free; the derived examples prove it within the round - Hard plus Kick the AC 8, attacks 2, damage 8; Soft plus Movement the damage 4. The grid codifies per the R431 calculus",
+  "sentinel": "the gap census after this round: 144 closed, 91 open - the Table 69 box flips (census 613 -> 614); NEXT - R692: Table 70 the martial arts special maneuvers grid (capture p. 227), prefix djf (verify free at the landing), audit \"R692 OA special maneuvers audit\", include after rules/oa69combos.h"
+ },
+ "consts": [
+  {
+   "name": "djeOA69RowCount",
+   "value": 11,
+   "comment": "the Table 69 row count - the three form rows and the eight principal method rows, the loop bound of the emitted grid audit (print capture p. 226)"
+  }
+ ],
+ "bools": [],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "djeOA69Grid",
+   "tag": "OA69Data",
+   "count": "djeOA69RowCount",
+   "col_default": 0,
+   "cols": [
+    "djeOA69ACMod",
+    "djeOA69AtMod",
+    "djeOA69DamageMod",
+    "djeOA69BodyPart"
+   ],
+   "col_comments": [
+    "the Table 69 armor class mods by row ordinal (print capture p. 226): rows 0-2 the forms - Hard 1, Soft 3, Hard/Soft 2; rows 3-10 the methods - Kick 1, Lock 1, Movement 2, Push 2, Strike 1, Throw 1, Vital Area 2, Weapon 1; the AC of a style 10 minus the totaled form and method mods",
+    "the Table 69 attack mods by row ordinal (print capture p. 226): the forms - Hard 1, Soft 0 - the only zero of the grid, Hard/Soft 1; every method a 1; the number of attacks the totaled form and method mods",
+    "the Table 69 damage mods by row ordinal (print capture p. 226): the forms - Hard 4, Soft 2, Hard/Soft 3; the methods - Kick 4, Lock 2, Movement 2, Push 1, Strike 1, Throw 2, Vital Area 1; the Weapon row a 0 - the printed damage BY WEAPON, not a mod, the R662 convention; the damage the totaled mods rounded up to the nearest die - 6 the 1d6, 4 the 1d4, 5 the 1d6",
+    "the Table 69 body parts by row ordinal, coded (print capture p. 226): 0 none - the form rows printed a dash; 1 Foot (Kick), 2 Body (Lock and Throw), 3 Legs (Movement), 4 Hand (Push and Strike), 5 Hand and Foot (Vital Area), 6 Hand and Arm (Weapon); kicking the feet, throwing the whole body, the attacks effective so long as the part is unbound or free to move"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     3,
+     0,
+     2,
+     0
+    ],
+    [
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     1,
+     1,
+     4,
+     1
+    ],
+    [
+     1,
+     1,
+     2,
+     2
+    ],
+    [
+     2,
+     1,
+     2,
+     3
+    ],
+    [
+     2,
+     1,
+     1,
+     4
+    ],
+    [
+     1,
+     1,
+     1,
+     4
+    ],
+    [
+     1,
+     1,
+     2,
+     2
+    ],
+    [
+     2,
+     1,
+     1,
+     5
+    ],
+    [
+     1,
+     1,
+     0,
+     6
+    ]
+   ],
+   "comment": "Table 69: the martial style combinations - the three forms and the eight principal methods with their AC, attack and damage mods and body parts (print capture p. 226)",
+   "audit_comment": "the Table 69 grid - the eleven rows across four columns"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the form rows - Hard 1/1/4, Soft 3/0/2, Hard/Soft 2/1/3",
+   "expr": "m['djeOA69ACMod'](0) != 1 or m['djeOA69AtMod'](0) != 1 or m['djeOA69DamageMod'](0) != 4 or m['djeOA69ACMod'](1) != 3 or m['djeOA69AtMod'](1) != 0 or m['djeOA69DamageMod'](1) != 2 or m['djeOA69ACMod'](2) != 2 or m['djeOA69DamageMod'](2) != 3"
+  },
+  {
+   "note": "the method AC mods - Kick, Lock and Throw at 1, Movement, Push and Vital Area at 2",
+   "expr": "m['djeOA69ACMod'](3) != 1 or m['djeOA69ACMod'](4) != 1 or m['djeOA69ACMod'](5) != 2 or m['djeOA69ACMod'](6) != 2 or m['djeOA69ACMod'](9) != 2 or m['djeOA69ACMod'](10) != 1"
+  },
+  {
+   "note": "the damage mods - the Kick 4 the highest method, Push, Strike and Vital Area the 1s, Weapon the by-weapon 0",
+   "expr": "m['djeOA69DamageMod'](3) != 4 or m['djeOA69DamageMod'](6) != 1 or m['djeOA69DamageMod'](7) != 1 or m['djeOA69DamageMod'](9) != 1 or m['djeOA69DamageMod'](10) != 0"
+  },
+  {
+   "note": "the body parts - Foot, Body, Legs, Hand, Hand, Body, Hand-and-Foot, Hand-and-Arm",
+   "expr": "m['djeOA69BodyPart'](3) != 1 or m['djeOA69BodyPart'](4) != 2 or m['djeOA69BodyPart'](5) != 3 or m['djeOA69BodyPart'](6) != 4 or m['djeOA69BodyPart'](8) != 2 or m['djeOA69BodyPart'](9) != 5 or m['djeOA69BodyPart'](10) != 6"
+  },
+  {
+   "note": "the derived style - Hard plus Kick: the AC 10-1-1, the attacks 1+1",
+   "expr": "10 - m['djeOA69ACMod'](0) - m['djeOA69ACMod'](3) != 8 or m['djeOA69AtMod'](0) + m['djeOA69AtMod'](3) != 2"
+  },
+  {
+   "note": "the derived damage - Hard plus Kick the 8, Soft plus Movement the 4",
+   "expr": "m['djeOA69DamageMod'](0) + m['djeOA69DamageMod'](3) != 8 or m['djeOA69DamageMod'](1) + m['djeOA69DamageMod'](5) != 4"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 69 combinations grid": [
+   {
+    "kind": "table",
+    "name": "djeOA69Grid"
+   },
+   {
+    "kind": "const",
+    "name": "djeOA69RowCount"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 69 box closes",
+   "from": "  - [ ] Table 69: Martial Style Combinations\n    (capture p. 226)",
+   "to": "  - [x] Table 69: Martial Style\n    Combinations (capture p. 226) - R691:\n    the dje combinations grid pins - the\n    three forms (Hard 1/1/4, Soft 3/0/2 -\n    the lone zero attack mod, Hard/Soft\n    2/1/3) and the eight methods (Kick\n    1/1/4 Foot, Lock 1/1/2 Body, Movement\n    2/1/2 Legs, Push 2/1/1 Hand, Strike\n    1/1/1 Hand, Throw 1/1/2 Body, Vital\n    Area 2/1/1 Hand-and-Foot, Weapon\n    1/1 by-weapon Hand-and-Arm), the\n    damage mod column riding the\n    round-up-to-die convention with the\n    Weapon row pinned 0 - BY WEAPON, the\n    R662 convention, the body part column\n    coded; the derived-style examples\n    prove the mechanics within the round\n    (Hard plus Kick the AC 8, attacks 2,\n    damage 8; Soft plus Movement the 4);\n    single-pass pins per the Chapter 9\n    provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 144,
+  "open": 91
+ },
+ "include_comment": "the OA Table 69 style combinations pins",
+ "include_after": "#include \"rules/oacreatestyle.h\"  // R690: the OA creating a style pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R690 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R690 LANDED 2026-10-20: commit",
+  "  5b21b324e337b519e3a3be167260d774abe3fe27",
+  "  (census 612 -> 613, pushed 8d86b06..5b21b32),",
+  "  OA CREATING A STYLE - the style-",
+  "  construction doctrine, capture pp.",
+  "  225-227 prose (Table 69 itself the next",
+  "  gap item): rules/oacreatestyle.h,",
+  "  prefix djd (verified free at 8d86b06),",
+  "  ONE gap flip, 5 consts + 21 bools (26",
+  "  inlines, no table), gap census 142/93 ->",
+  "  143/92. The creation frame (the DM",
+  "  encouraged, the NPC masters); the three",
+  "  forms - hard (muscles and bones,",
+  "  direct, offensive), soft (the inner",
+  "  power, fluid and circular, defensive,",
+  "  the attacker's force against him),",
+  "  combined (the best of each, physical",
+  "  balanced with psychic); the unusual-",
+  "  weapons clause; the principal method",
+  "  with the other-methods rule (the single",
+  "  form the certain defeat); the one-form-",
+  "  one-method selection; the Table 69",
+  "  mechanics pinned as rules - the AC base",
+  "  10 minus the totaled mods, the style-",
+  "  specific attacks, the round-up damage",
+  "  (6-d6, 4-d4, 5-d6), the free body part;",
+  "  the 1d4-minus-two weapons of the",
+  "  martial-arts-only list; the Special",
+  "  Maneuvers intro - the combat cost",
+  "  (attacks) and the movement cost (no",
+  "  attacks), the 1d8 first roll and the",
+  "  1-3 second roll (the arsenal of",
+  "  tactics), the ranking progression with",
+  "  the printed Circle Kick 1 Flying Kick 2",
+  "  All-Around Sight 2 Backward Kick 3",
+  "  example, the gradual learning, the",
+  "  any-style Mental and Physical Training.",
+  "  Single-pass pins per the Chapter 9",
+  "  provenance shift. rverify GREEN first",
+  "  try at 8d86b06, 26 mutants, 0 missed.",
+  "  Spec md5 8518f6647f489c2fb62ac099bfdf",
+  "  d8ac (authored-plus-newline md5 b9433422",
+  "  6352a957008faf473e05e366 - the value",
+  "  the ritual gated and matched; canvas",
+  "  md5 06d9099a4b29509631e5ee24bf673182).",
+  "  NEXT - R691: Table 69 the martial style",
+  "  combinations grid (capture p. 226),",
+  "  prefix dje (verify free at 5b21b32),",
+  "  audit \"R691 OA style combinations",
+  "  audit\", include after rules/oacreatestyle.h"
+ ]
+}

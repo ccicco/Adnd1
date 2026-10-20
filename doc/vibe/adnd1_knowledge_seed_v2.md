@@ -15448,6 +15448,56 @@ when both halves land.
   (verify free at 8d86b06), audit "R690 OA
   creating a style audit", include after
   rules/oa68styles.h
+- R690 LANDED 2026-10-20: commit
+  5b21b324e337b519e3a3be167260d774abe3fe27
+  (census 612 -> 613, pushed 8d86b06..5b21b32),
+  OA CREATING A STYLE - the style-
+  construction doctrine, capture pp.
+  225-227 prose (Table 69 itself the next
+  gap item): rules/oacreatestyle.h,
+  prefix djd (verified free at 8d86b06),
+  ONE gap flip, 5 consts + 21 bools (26
+  inlines, no table), gap census 142/93 ->
+  143/92. The creation frame (the DM
+  encouraged, the NPC masters); the three
+  forms - hard (muscles and bones,
+  direct, offensive), soft (the inner
+  power, fluid and circular, defensive,
+  the attacker's force against him),
+  combined (the best of each, physical
+  balanced with psychic); the unusual-
+  weapons clause; the principal method
+  with the other-methods rule (the single
+  form the certain defeat); the one-form-
+  one-method selection; the Table 69
+  mechanics pinned as rules - the AC base
+  10 minus the totaled mods, the style-
+  specific attacks, the round-up damage
+  (6-d6, 4-d4, 5-d6), the free body part;
+  the 1d4-minus-two weapons of the
+  martial-arts-only list; the Special
+  Maneuvers intro - the combat cost
+  (attacks) and the movement cost (no
+  attacks), the 1d8 first roll and the
+  1-3 second roll (the arsenal of
+  tactics), the ranking progression with
+  the printed Circle Kick 1 Flying Kick 2
+  All-Around Sight 2 Backward Kick 3
+  example, the gradual learning, the
+  any-style Mental and Physical Training.
+  Single-pass pins per the Chapter 9
+  provenance shift. rverify GREEN first
+  try at 8d86b06, 26 mutants, 0 missed.
+  Spec md5 8518f6647f489c2fb62ac099bfdf
+  d8ac (authored-plus-newline md5 b9433422
+  6352a957008faf473e05e366 - the value
+  the ritual gated and matched; canvas
+  md5 06d9099a4b29509631e5ee24bf673182).
+  NEXT - R691: Table 69 the martial style
+  combinations grid (capture p. 226),
+  prefix dje (verify free at 5b21b32),
+  audit "R691 OA style combinations
+  audit", include after rules/oacreatestyle.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
