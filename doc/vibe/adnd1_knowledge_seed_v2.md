@@ -15662,6 +15662,65 @@ when both halves land.
   at 269b6c0), audit "R694 OA mental
   and physical training audit",
   include after rules/oamethods.h
+- R694 LANDED 2026-10-20: commit
+  e9a5608056da7e6942124195ef1fc903c
+  063d053 (census 616 -> 617, pushed
+  269b6c0..e9a5608), OA MENTAL AND
+  PHYSICAL TRAINING - the any-style
+  training maneuvers with the stunning
+  and incapacitating rules, capture pp.
+  232-233 print: rules/oatrain.h,
+  prefix djh (verified free at 269b6c0),
+  ONE gap flip, gap census 146/89 ->
+  147/88. 11 consts + 17 bools (28
+  inlines, no table): the training
+  category (no principal method, any
+  practitioner - Meditation the
+  shukenja powers with the shukenja and
+  kensai spending no slot; All-Around
+  Sight constant, the invisible unseen,
+  no strike from behind nor back-attack
+  penalty; Mental Resistance the +2
+  against charm, illusion and hold;
+  Blind Fighting the -1 in darkness,
+  blindness or vs the invisible, the
+  silence spell with any blinding
+  again; Ironskin AC 2 better only
+  unarmored; Levitation the rarest -
+  one turn of concentration, five feet
+  per round, no actions, the broken
+  concentration a fall, one round of
+  rest); the Stunning and
+  Incapacitating - every style's chance
+  vs a man-sized opponent, the
+  UNMODIFIED 20 forcing the save vs.
+  paralyzation, the save made keeping
+  the normal damage, the save failed
+  comparing the roll to the hit dice or
+  level - less the 1d6 round stun,
+  greater the 1-3 hour incapacity,
+  equal the stun per the printed
+  lizard man example (the 2 equal to
+  the 2+1 dice), the +4 or greater hit
+  dice bonus one extra die - the OCR
+  artifact t-3 resolved as 1-3 per the
+  example. Single-pass pins per the
+  Chapter 9 provenance shift. rverify
+  GREEN first try at 269b6c0, 28
+  mutants, 0 missed. Spec md5 206cd30a
+  b57a12d134b0d1d0ebbf779a
+  (authored-plus-newline md5 d788df50
+  d157d3f16fdff2416c4542cd - the value
+  the ritual gated and matched; canvas
+  md5 c3ae2f790976ea835f00e01c09a93105).
+  NEXT - R695: the Learning Martial
+  Arts with Multiple Styles and
+  Combining Styles prose (capture pp.
+  233-235), prefix dji (verified free
+  at e9a5608 - only djinn prose in
+  old headers, no identifiers), audit
+  "R695 OA learning martial arts
+  audit", include after rules/oatrain.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

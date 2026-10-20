@@ -395,6 +395,7 @@
 #include "rules/oa70maneuvers.h"  // R692: the OA Table 70 special maneuvers pins
 #include "rules/oamethods.h"  // R693: the OA principal methods pins
 #include "rules/oatrain.h"  // R694: the OA mental and physical training pins
+#include "rules/oalearn.h"  // R695: the OA learning martial arts pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -109959,6 +109960,72 @@ int main() {
         )
             ++bad;
         printf("R694 OA mental and physical training audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R695 OA learning martial arts audit ----
+    // OA round eighty-two (capture pp. 233-235): the Learning Martial Arts
+    // prose - the master search, the acceptance and challenge routes, the
+    // study obligations and proficiency slot costs - with the Multiple Styles
+    // and Combining Styles rules, single-pass pins per the Chapter 9
+    // provenance shift
+    {
+        using namespace rules;
+        int bad = 0;
+    if (djiAcceptBasePct() != 10
+            || djiAcceptGiftPct() != 10
+            || djiStudyMinMonths() != 1
+            || djiPracticeHoursPerDay() != 1
+            || djiMasterHoursPerWeek() != 6
+            || djiSlotsPerManeuver() != 1
+            || djiMaxSlotsPerLevel() != 2
+            || djiStylesKnownMin() != 2
+            || !djiMasterHonoraryTitle()
+            || !djiMasterAnywhere()
+            || !djiMasterSecretive()
+            || !djiOffendNeverAccepted()
+            || !djiChallengeAutoAccepted()
+            || !djiStudentIfUnknown()
+            || !djiChallengeSubduePreferred()
+            || !djiChallengeWinAccepted()
+            || !djiChallengeLoseOptions()
+            || !djiMasterBasicsAuto()
+            || !djiMasterWeaponsDie()
+            || !djiMasterManeuversDie()
+            || !djiMasterNeverIncreases()
+            || !djiBasicsSlotGrant()
+            || !djiObligationGate()
+            || !djiManeuverPracticeAssumed()
+            || !djiLearnAllNewMaster()
+            || !djiMultipleStylesAllowed()
+            || !djiOneStylePerFight()
+            || !djiConstantManeuversException()
+            || !djiStyleChangePerRound()
+            || !djiCombineUniqueStyle()
+            || !djiCombineElements()
+            || !djiCombineTeachAsMaster()
+        )
+            ++bad;
+        // the acceptance percentages - the 10 base and the 10 per gift
+    if (djiAcceptBasePct() != 10
+            || djiAcceptGiftPct() != 10
+        )
+            ++bad;
+        // the study obligations - one month, one hour a day, six hours a week
+    if (djiStudyMinMonths() != 1
+            || djiPracticeHoursPerDay() != 1
+            || djiMasterHoursPerWeek() != 6
+        )
+            ++bad;
+        // the slot costs - one per maneuver, two per style per level the cap
+    if (djiSlotsPerManeuver() != 1
+            || djiMaxSlotsPerLevel() != 2
+        )
+            ++bad;
+        // the combining threshold - two or more styles
+    if (djiStylesKnownMin() != 2
+        )
+            ++bad;
+        printf("R695 OA learning martial arts audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

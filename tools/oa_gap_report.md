@@ -1644,8 +1644,50 @@ description riding the same round.
     extra die - the OCR artifact t-3
     resolved as 1-3; single-pass pins
     per the Chapter 9 provenance shift
-  - [ ] Learning Martial Arts with Multiple Styles
-    and Combining Styles (capture pp. 233-235)
+  - [x] Learning Martial Arts with Multiple
+    Styles and Combining Styles (capture
+    pp. 233-235) - R695: the dji learning
+    pins - the master title honorary,
+    anyone anywhere (the peasant, the
+    hermit, the bushi, the teacher, the
+    samurai, the priest), the scarcity
+    and the secret societies; the 10%
+    acceptance at the humble presentation,
+    +10% per gift-bearing visit until
+    accepted or the master offended,
+    the offense permanent (the visit
+    round repeatable until one or the
+    other); the automatically accepted
+    challenge, the unknown challenger
+    given a student, the subdue
+    preferred over the death, the death
+    no crime, the victor accepted, the
+    loser begging or returning; the
+    master's knowledge: the basics
+    automatic, the weapons
+    and maneuvers each rolled on the
+    nearest die at or above their count,
+    the lowest difficulty upward, the
+    master fixed; the study - one month
+    then one slot for the basics (AC,
+    attacks, damage, no maneuvers yet),
+    the one hour daily and six master
+    hours weekly, the obligation the
+    gate; one slot per maneuver or
+    weapon, two per style per level the
+    cap, the strict difficulty order;
+    the outgrown master left; the
+    multiple styles - one master each,
+    one style fought at a time, the
+    constant maneuvers the exception,
+    the round-to-round change; the
+    combining after all learned - the
+    unique style of mixed elements, the
+    AC of one with the attacks and
+    damage of another, every maneuver
+    combined, the creator teaching as a
+    master; single-pass pins per the
+    Chapter 9 provenance shift
 
 - [ ] **Chapter 10: Events and Encounters**
   (capture pp. 235-251) - the event system
