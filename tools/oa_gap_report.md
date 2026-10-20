@@ -1197,7 +1197,25 @@ description riding the same round.
     passes); the names ride the column
     comments, the prose descriptions close in
     their own rounds
-  - [ ] Seventh Level Spells (capture pp. 203-207)
+  - [x] Seventh Level Spells (capture pp. 203-207) -
+    R676: the dil WJL7 stat grid - the 12
+    seventh level wu jen spells with the
+    school, component, casting time,
+    saving throw, reversible and element
+    codes (the element cell cross-checking
+    the R669 T66 grid - ice blight Water
+    the one tagged cell; THREE dual-school
+    prints pinned primary - elemental
+    servant, ice blight, obedience; FOUR
+    verbal-only spells - limited wish,
+    power word stun, tool, vanish;
+    limited wish the lone Special cast
+    pinned -1; withering palm the lone half
+    save; the stat blocks cross-checked
+    spell by spell between the passes);
+    the names ride the column comments,
+    the prose descriptions close in their
+    own rounds
   - [ ] Eighth Level Spells (capture pp. 207-213)
   - [ ] Ninth Level Spells (capture pp. 213-216)
 

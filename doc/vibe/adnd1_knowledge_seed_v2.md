@@ -14643,6 +14643,88 @@ when both halves land.
   die precedent), audit "R675 OA wu
   jen sixth level spells audit",
   include after rules/oawjl5spells.h
+- R675 LANDED 2026-10-20: commit b23dcfea241d5382ce4597804d7a77bfe112b4fc
+  (census 597 -> 598, pushed 7cf655d..b23dcfe),
+  WU JEN SIXTH LEVEL SPELLS - the 24
+  sixth level wu jen spell stat
+  blocks, capture pp. 196-203:
+  rules/oawjl6spells.h, prefix dik
+  (verified free at 7cf655d - only
+  the comment-word dikes), ONE gap
+  flip (single-line child label), 18
+  consts, 24 inlines (grid tag
+  WJL6Data, 24 rows x 6 cols), gap
+  census 127/108 -> 128/107: all 24
+  stat blocks cross-checked spell by
+  spell between the passes (print pp.
+  196-203 vs compressed pp. 90-93),
+  zero contested stat reads - the
+  R669-settled Glassee reading clean
+  in both stat-block passes. The
+  level carries THREE dual-school
+  prints (the most of any wu jen
+  level yet), all pinned primary (the
+  exaction precedent): gambler's luck
+  the Invocation; Enchantment/Charm
+  dual pinned 8, spiritwrack and
+  sword of darkness both pinned 3;
+  THREE Casting Time: Special lines
+  (enchant an item, move earth,
+  spiritwrack) pinned -1, the R662
+  exorcise convention; geas the lone
+  verbal-only; NO half save this
+  level. Schools: nine alteration,
+  three illusion, two each of
+  invocation, conjuration,
+  enchantment/charm, divination and
+  evocation, speak with dead the lone
+  necromantic, repulsion the lone
+  abjuration. Components: 17 VSM,
+  three VS (aura, true sight, veil),
+  three V,M (mass suggestion,
+  repulsion, spiritwrack). Four
+  reversible (aura, lower water,
+  metal to rust, stone to flesh).
+  The element column cross-checks the
+  R669 dieWJT66L6Element grid: seven
+  tagged cells matching exactly -
+  five Earth, two Water. The mid-
+  build catch: the generator's own
+  sanity assert flagged the round-
+  cast census as four; both OCR
+  passes settle true sight at 1
+  round - FIVE one-round casts (aura,
+  glassee, metal to rust, true sight,
+  warp stone), alongside six six-
+  segment (the most common), five
+  one-turn, two single segments. The
+  const dikWJL6RoundCasts lands the
+  correct 5 (true sight named in its
+  comment), but the landed header
+  OPENER prose census still reads
+  "four one-round" - a one-word
+  comment slip the battery cannot
+  catch (it tests consts, not prose);
+  rverify GREEN first try at 7cf655d,
+  162 mutants, 0 missed. R676 should
+  amend that header line in the same
+  commit as its own round. Spec md5
+  76761fd780f23a44c470be1c8b9eab3c
+  (authored-plus-newline md5
+  f0dd68a22db1cbf2dc966146c91675db -
+  the value the ritual gated and
+  matched; canvas md5
+  d1e314d8cc3b48eb66a06547e999e154).
+  NEXT - R676: the wu jen Seventh
+  Level Spells (capture pp. 203-207,
+  the 12 stat blocks), prefix dil
+  (verified free at b23dcfe - the
+  R675 regtest diff adds zero dil
+  tokens; only the string-literal
+  dill, the R669 die precedent),
+  audit "R676 OA wu jen seventh
+  level spells audit", include after
+  rules/oawjl6spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
