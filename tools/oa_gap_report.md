@@ -1374,7 +1374,27 @@ description riding the same round.
     attempts to disarm, the regrip);
     single-pass pins per the Chapter 9
     provenance shift
-  - [ ] Subduing Opponents (capture p. 221)
+  - [x] Subduing Opponents (capture
+    p. 221) - R686: the diz subdual pins -
+    the doctrine frame (the shukenja
+    forbidden to kill, the live prisoners
+    and hostages), the low-intelligence
+    gate with the genius voluntary-
+    surrender clause, the any-creature
+    scope, the player-choice rule (a PC
+    never forced into submission), the
+    fight-start declaration with the blunt
+    striking surfaces, the quarter split -
+    1/4 hit points, 3/4 subdual recorded
+    separately, the surrender at the
+    STARTING hit points, the normal-damage
+    voiding, the subdued state (stop and
+    drop weapons), the oath mechanics (the
+    secret honor roll or the save versus
+    death, compliance or the show of
+    agreement), the captive escape clause;
+    single-pass pins per the Chapter 9
+    provenance shift
   - [ ] The Psychic Duel (capture pp. 222-223)
   - [ ] Martial Arts prose and Styles (capture pp.
     223-225) - the style doctrine and the principal

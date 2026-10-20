@@ -15249,6 +15249,45 @@ when both halves land.
   p. 221), prefix diy (verify free at
   5e63625), audit "R685 OA disarming
   audit", include after rules/oaunhorsing.h
+- R685 LANDED 2026-10-20: commit
+  e0bebcbc3a59ac9bcec564dfb9682f5436e5d874
+  (census 607 -> 608, pushed 5e63625..e0bebcb),
+  OA DISARMING - the disarm doctrine,
+  capture p. 221: rules/oadisarming.h,
+  prefix diy (verified free at 5e63625),
+  ONE gap flip, 4 consts + 7 bools (11
+  inlines, no table), gap census 137/98 ->
+  138/97. The doctrine frame (the charmed
+  party member, the capture without harm);
+  the two methods - the parry-out through
+  superior weapon skill, the bare-hands
+  wrest; the weapon disarm: equal-or-
+  greater size, declared at the round
+  start, the normal hit with no damage,
+  the save versus petrification or the
+  weapon knocked loose, the 1d6-feet fall,
+  the one-round recovery; the bare-hands
+  systems (UA weaponless combat or the
+  martial arts) with the any-size knock
+  and the +2 victim save; the two-handed
+  weapon rule - one hand per success, two
+  same-round attempts to disarm, else the
+  regrip at the end of the round.
+  Single-pass pins per the Chapter 9
+  provenance shift. rverify GREEN first try
+  at 5e63625, 11 mutants, 0 missed. Spec
+  md5 2a9d8aaef126ee8680a0e35fbfd719f0
+  (authored-plus-newline md5 7e1a4c9de8e4
+  53ee1a5fc8aaf16ef13d - the value the
+  ritual gated and matched; canvas md5
+  53b1b3908cd214d201da89042b08bfe1). NEXT
+  - R686: the Subduing Opponents doctrine
+  (capture p. 221), prefix diz (verify free
+  at e0bebcb) - THE LAST FREE di- PREFIX;
+  from R687 the dj- family opens (djf first
+  free if dja through dje collide), audit
+  "R686 OA subduing audit", include after
+  rules/oadisarming.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
