@@ -14129,6 +14129,53 @@ when both halves land.
   Fate (print p. 135), then the wu jen
   spell chapter (Chapter 8: Table 66
   and L1-L9)
+- R667 LANDED 2026-10-19: commit eb88e69f073f422cee9f0b487af43c7705ce47b0
+  (census 589 -> 590, pushed 633d0d8..eb88e69),
+  TABLE 64 SPEAK WITH DEAD - the six
+  shukenja level bands, capture p. 132:
+  rules/oat64speakdead.h, prefix dib
+  (verified free at 633d0d8), ONE gap flip
+  (single-line child label), 9 consts,
+  1 chain, 13 inlines (grid tag T64Data,
+  6 rows x 3 cols), gap census 119/116
+  -> 120/115: all six band rows
+  cross-checked line by line between the
+  passes (print p. 132 vs compressed
+  pp. 64-65), zero contested reads - the
+  one OCR variance the compressed "2 turn"
+  on the 13-15 questioning row against the
+  print's 2 turns (the print settles). The
+  chain maps the shukenja's level to its
+  band (6 and below the least band, 7-8,
+  9-12, 13-15, 16-20, more than 20 the
+  tail); the ladder grid: the maximum dead
+  time in days (7 the week, 30 the month,
+  365 the year - the 30-day month and
+  365-day year conventions - then a
+  decade climb per band to the 1000-year
+  greatest band pinned 365000), the
+  questioning time in segments (10, 30,
+  60, 120, 180, 360 - one round to six
+  turns, the round=10 and turn=60
+  conventions), and the question counts
+  climbing one per band from two to seven
+  - the band ordinal plus the
+  dibT64QuestionsBase pin. rverify GREEN
+  at 633d0d8, 32 mutants, 0 missed;
+  preflight GREEN (590 audit census,
+  BUILD 0 warnings). Spec md5
+  c665905d2afd90fd7742c5c604c2eb36
+  (authored-plus-newline md5
+  3d1a735d8c9fea01fe6936cec20551f7 -
+  the value the ritual gated and matched;
+  canvas md5
+  16fcf3842586d1ef656522337c030503).
+  NEXT - R668: Table 65 Fate (print
+  p. 135), prefix did (verified free - dic is NOT free: the dice() helpers),
+  audit "R668 OA fate audit", include
+  after rules/oat64speakdead.h; then the
+  wu jen spell chapter (Chapter 8: Table
+  66 and L1-L9)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1079,7 +1079,17 @@ description riding the same round.
     passes); the band names ride the column
     comments, the spell prose closes in its own
     round
-  - [ ] Table 65: Fate (capture p. 135)
+  - [x] Table 65: Fate (capture p. 135) -
+    R668: the did T65 band grid - the twelve
+    fate bands of the 1d20 roll with their
+    face widths (six single-face, four
+    two-face and two three-face bands) and
+    the die-roll chain mapping the 1d20 to
+    its band; the outcomes are DM-adventure
+    prose riding the column comment, the
+    fate spell prose closes in its own
+    round (the table cross-checked between
+    the passes)
 
 - [ ] **Chapter 8: Wu Jen Spells** (capture pp.
   152-216) - the wu jen spell book
