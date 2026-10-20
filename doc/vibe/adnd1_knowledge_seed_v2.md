@@ -14563,6 +14563,86 @@ when both halves land.
   "R674 OA wu jen fifth level spells
   audit", include after
   rules/oawjl4spells.h
+- R674 LANDED 2026-10-20: commit 7cf655dd2108b7f795f94244f18fd14636b90759
+  (census 596 -> 597, pushed fba4d34..7cf655d),
+  WU JEN FIFTH LEVEL SPELLS - the 24
+  fifth level wu jen spell stat
+  blocks, capture pp. 189-196:
+  rules/oawjl5spells.h, prefix dij
+  (verified free at fba4d34), ONE gap
+  flip (single-line child label), 18
+  consts, 24 inlines (grid tag
+  WJL5Data, 24 rows x 6 cols), gap
+  census 126/109 -> 127/108: all 24
+  stat blocks cross-checked spell by
+  spell between the passes (print pp.
+  189-196 vs compressed pp. 87-91),
+  zero contested stat reads - the
+  variances typographic or prose-only
+  (the fire breath save printed 1/z
+  for the half, the wall of stone
+  range garbled X12, the servant
+  horde count 2d6 + 1 in the print
+  against 2d6 - 1 in the compressed -
+  a prose divergence outside the
+  grid). Alteration-heavy yet again:
+  10 of the 24, evocation eight,
+  conjuration two, and FOUR
+  lone-school spells - animate dead
+  the lone necromantic, aiming at the
+  target the lone invocation, shadow
+  door the lone illusion, dismissal
+  the lone abjuration with its odd
+  triple-line print Abjuration)
+  Reversible (Conjuration/Summoning)
+  pinned primary 7; no divination or
+  enchantment/charm spell this level.
+  TWO somatic-only spells (aiming at
+  the target, shadow door) - the
+  first somatic-only spells of the wu
+  jen levels; 20 VSM, animal growth
+  and telekinesis the VS pair; no
+  verbal-only or V,M spell this
+  level. Casts: nine five-segment
+  (the most common), six one-round,
+  three three-segment, two one-turn,
+  animate dead the five-ROUND cast
+  pinned 50 segments (the longest of
+  the level), servant horde the lone
+  single segment. Three negation
+  saves, cone of cold and fire breath
+  the two half saves, no special save
+  this level. Four reversible (animal
+  growth, dismissal, water to poison,
+  wood rot). The SIXTH column
+  cross-checks the R669
+  dieWJT66L5Element grid - the 13
+  tagged cells matching exactly (the
+  richest element column yet), with
+  water to poison carrying the
+  Nature/Water dual code 9 and six
+  Earth marks. TWO rverify REDs on
+  the way, both one class: stray wrong
+  clauses in the school example
+  (water to poison indexed as
+  evocation) - the healthy-base gate
+  caught each, fixed, third run
+  GREEN. rverify GREEN at fba4d34,
+  162 mutants, 0 missed. Spec md5
+  3c44ac8faedb50f97fd1cb7a2f6e0159
+  (authored-plus-newline md5
+  4e0e9f006195d365579556b588510e03 -
+  the value the ritual gated and
+  matched; canvas md5
+  9d42f37aa4ec6c9113e3bf6780f31bae).
+  NEXT - R675: the wu jen Sixth
+  Level Spells (capture pp. 196-202,
+  the 12 stat blocks), prefix dik
+  (verified free at 7cf655d - only
+  the comment-word dikes, the R669
+  die precedent), audit "R675 OA wu
+  jen sixth level spells audit",
+  include after rules/oawjl5spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

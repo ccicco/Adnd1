@@ -1182,7 +1182,21 @@ description riding the same round.
     passes); the names ride the column
     comments, the prose descriptions close in
     their own rounds
-  - [ ] Sixth Level Spells (capture pp. 196-203)
+  - [x] Sixth Level Spells (capture pp. 196-203) -
+    R675: the dik WJL6 stat grid - the 24
+    sixth level wu jen spells with the school,
+    component, casting time, saving throw,
+    reversible and element codes (the element
+    cells cross-checking the R669 T66 grid;
+    THREE dual-school prints pinned primary -
+    gambler's luck, spiritwrack, sword of
+    darkness; the three Casting Time: Special
+    lines pinned -1; geas the lone verbal-only;
+    no half save this level; the stat blocks
+    cross-checked spell by spell between the
+    passes); the names ride the column
+    comments, the prose descriptions close in
+    their own rounds
   - [ ] Seventh Level Spells (capture pp. 203-207)
   - [ ] Eighth Level Spells (capture pp. 207-213)
   - [ ] Ninth Level Spells (capture pp. 213-216)
