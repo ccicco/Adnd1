@@ -1279,8 +1279,17 @@ description riding the same round.
     initiative loser performing step 4 - the
     first single-pass round, the compressed
     capture ending mid ninth level spells
-  - [ ] Surprise and Iaijutsu (capture p. 218) - the
-    dueling draw doctrine
+  - [x] Surprise and Iaijutsu (capture p. 218) - the
+    dueling draw doctrine - R680: the diq iaijutsu
+    pins - the -1 surprise modifier on the
+    untrained side of the sudden draw, the
+    both-trained case carrying the -1 on both
+    rolls, the special-situations scope (the
+    noncombat encounter erupting into attack),
+    the two exceptions - weapons already drawn,
+    attack expected - and the peaceful-eruption
+    clause; single-pass pins per the Chapter 9
+    provenance shift
   - [ ] Initiative Modifiers (capture p. 218)
   - [ ] Combat Procedures (capture p. 219)
   - [ ] Table 67: Horseback Bowfire Modifiers

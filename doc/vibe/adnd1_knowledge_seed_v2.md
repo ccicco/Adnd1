@@ -14962,6 +14962,62 @@ when both halves land.
   the R669 die precedent), audit
   "R679 OA combat sequence audit",
   include after rules/oawjl9spells.h
+- R679 LANDED 2026-10-20: commit
+  8bd8801808b4c0fe016925c0c937f72424572b5e
+  (census 601 -> 602, pushed b446391..8bd8801),
+  OA COMBAT SEQUENCE - the Summary of
+  the Combat Sequence, capture p.
+  218: rules/oacombatseq.h, prefix
+  dip (verified free at b446391),
+  ONE gap flip, 6 consts + 10 bools
+  (16 inlines, no table - the first
+  no-grid doctrine round of the OA
+  arc), gap census 131/104 -> 132/
+  103. THE PROVENANCE SHIFT: the
+  compressed-print capture ends mid
+  ninth level spells, so from
+  Chapter 9 onward the print pass
+  is the SOLE surviving authority -
+  single-pass pins, contested reads
+  settling book-internal first,
+  then against the physical copy;
+  the banner and gap-flip text both
+  carry it. The five resolution
+  steps: (1) surprise 1-2 on 1d6,
+  often impossible from visibility,
+  surroundings or noise; (2) the
+  players state their actions,
+  announcing subdue/disarm/unhorse;
+  (3) initiative 1d6 only without
+  surprise, kensai and wu jen able
+  to modify the die roll; (4) the
+  kensai/wu jen first-strike, the
+  1d20 to hit against the combat
+  table, ki stated before the die,
+  shukenja ki stated before any
+  save, the four damage modifiers
+  (strength, magical weapons,
+  weapons of quality, ki powers),
+  subdual damage recorded
+  separately; (5) the initiative
+  loser then performs step 4. The
+  prose codifies per the R431
+  calculus - no printed grid
+  needed. rverify GREEN first try
+  at b446391, 16 mutants, 0 missed.
+  Spec md5 375102a4d772d747f118b560
+  bc0d0d66 (authored-plus-newline
+  md5 429bee1fc324ae13be158301e821
+  be86 - the value the ritual gated
+  and matched; canvas md5
+  2c6cf060b715ce3b7d30fa50120d6280).
+  NEXT - R680: the Surprise and
+  Iaijutsu dueling draw doctrine
+  (capture p. 218), prefix diq
+  (verified free at 8bd8801 - zero
+  repo hits), audit "R680 OA
+  iaijutsu surprise audit", include
+  after rules/oacombatseq.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
