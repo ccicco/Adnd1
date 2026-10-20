@@ -1238,7 +1238,28 @@ description riding the same round.
     the names ride the column comments,
     the prose descriptions close in
     their own rounds
-  - [ ] Ninth Level Spells (capture pp. 213-216)
+  - [x] Ninth Level Spells (capture pp. 213-216) -
+    R678: the dio WJL9 stat grid - the 13
+    ninth level wu jen spells with the
+    school, component, casting time,
+    saving throw, reversible and element
+    codes (SIX nine-segment casts - the
+    ninth level signature; the opening
+    V,S quartet; wish the lone Special
+    cast AND the special save; summon
+    spirit the lone dual pinned primary
+    conjuration; imprisonment the lone
+    reversible; tsunami the lone half
+    save; the three element cells
+    cross-checking the R669 T66 grid -
+    crystalbrittle Earth, internal fire
+    Fire, tsunami Water; the stat blocks
+    cross-checked spell by spell between
+    the passes); the wu jen spell book
+    grid CLOSED - all nine levels pinned;
+    the names ride the column comments,
+    the prose descriptions close in their
+    own rounds
 
 - [ ] **Chapter 9: Combat** (capture pp. 216-235) -
   the combat and martial arts system

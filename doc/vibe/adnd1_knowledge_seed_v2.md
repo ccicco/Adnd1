@@ -14811,6 +14811,89 @@ when both halves land.
   "R677 OA wu jen eighth level
   spells audit", include after
   rules/oawjl7spells.h
+- R677 LANDED 2026-10-20: commit
+  3039a769ba35e237e1b93dbc96c9895560b528dd
+  (census 599 -> 600, pushed 9525d0c..3039a76),
+  WU JEN EIGHTH LEVEL SPELLS - the
+  14 eighth level wu jen spell stat
+  blocks, capture pp. 207-213:
+  rules/oawjl8spells.h, prefix dim
+  (verified free at 9525d0c - only
+  comment-words, the R669 die
+  precedent), ONE gap flip
+  (single-line child label), 13
+  consts, 19 inlines (grid tag
+  WJL8Data, 14 rows x 6 cols), gap
+  census 129/106 -> 130/105: all 14
+  stat blocks cross-checked spell by
+  spell between the passes (print
+  pp. 207-213 vs compressed pp.
+  95-97), zero contested stat reads -
+  the whirlwind print save garbling
+  as 112, the compressed pass reading
+  1/2, settled as the half save (the
+  R674 fire breath precedent class).
+  SUMMONING WIND the FIRST
+  school-less print of the wu jen
+  levels - the bare heading in both
+  stat-block passes, the roster
+  silent - pinned 0, the grid school
+  comment carrying the new code.
+  Antipathy/sympathy the six-TURN
+  cast pinned 360 segments, the
+  longest cast of the wu jen levels
+  yet; NO Casting Time: Special line
+  this level. TWO duals, both pinned
+  primary alteration: finding the
+  center (Alteration/Invocation) and
+  incendiary cloud
+  (Alteration/Evocation), both 6;
+  finding the center the lone
+  somatic-only, the first since the
+  L5 pair. Alteration the most
+  common school at seven,
+  conjuration four (call, power word
+  blind, symbol, whirlwind); no
+  divination, necromantic, invocation
+  or illusion spell this level. 10
+  VSM, mind blank and summoning wind
+  the V,S pair, power word blind the
+  lone verbal-only. Call the lone
+  negation save; antipathy/sympathy,
+  polymorph any object and symbol
+  special; incendiary cloud and
+  whirlwind the two half saves.
+  Giant size the one reversible. The
+  element column cross-checks the
+  R669 dieWJT66L8Element grid: FOUR
+  tagged cells matching exactly -
+  three Air (cloud trapeze, summoning
+  wind, whirlwind), one Fire
+  (incendiary cloud), the richest
+  Air column of the wu jen levels.
+  rverify GREEN first try at 9525d0c,
+  97 mutants, 0 missed. PREFIX
+  LESSON: din is TAKEN for R678 -
+  the dinosaurSubBands( call collides
+  with the engine paren gate (the
+  first prefix in the di- block lost
+  to a real symbol rather than a
+  string literal); R678 takes dio.
+  Spec md5 84fe33cb6a49e4caadbf1e91
+  e5f3fca6 (authored-plus-newline md5
+  716a5de00594f378a51f813f94b188ff -
+  the value the ritual gated and
+  matched; canvas md5
+  b03324bd36d3ca05eae8ffe13de13f31,
+  the fresh-name publish lesson
+  applied and it surfaced on the
+  first try). NEXT - R678: the wu
+  jen Ninth Level Spells (capture
+  pp. 213-216, the 13 stat blocks),
+  prefix dio (verified free at
+  3039a76), audit "R678 OA wu jen
+  ninth level spells audit", include
+  after rules/oawjl8spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
