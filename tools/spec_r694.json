@@ -1,0 +1,399 @@
+{
+ "round": 694,
+ "title": "OA MENTAL AND PHYSICAL TRAINING - the any-style training maneuvers with the stunning and incapacitating rules of the unmodified 20",
+ "prefix": "djh",
+ "header_file": "rules/oatrain.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 616,
+ "inline_count": 28,
+ "audit_label": "R694 OA mental and physical training audit",
+ "audit_comment": "OA round eighty-one (capture pp. 232-233): the Mental and Physical Training maneuvers - Meditation, All-Around Sight, Mental Resistance, Blind Fighting, Ironskin and Levitation - with the Stunning and Incapacitating rules, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MENTAL AND PHYSICAL TRAINING, printed capture pp. 232-233 - the any-style training round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE CATEGORY: the training maneuvers belong to no principal method - learned by practitioners of any method or style, reflecting the superb control over mind and body. THE MANEUVERS: the Meditation with all the shukenja powers, the shukenja and kensai spending no slot for what they have; the All-Around Sight constant, the opponents on all sides detected but the invisible unseen, never struck from behind nor penalized from a back attack; the Mental Resistance constant, the +2 against the charm, illusion and hold; the Blind Fighting constant, only a -1 in darkness or blindness or against the invisible, but the silence spell with any of them leaving the character effectively blind again; the Ironskin, the muscles hardened like iron for the AC 2 better - only unarmored; the Levitation the rarest, one turn of concentration to negate the weight, then five feet per round up, down or sideways, no actions, the broken concentration a fall, one round of rest owed. THE STUNNING AND INCAPACITATING: every style's chance against a man-sized opponent - the UNMODIFIED 20 on the to hit roll forcing the save vs. paralyzation; the save made meaning no stun or incapacity but the normal damage kept; the save failed meaning the die roll compared to the hit dice or level - the roll LESS the 1d6 melee round stun, the roll GREATER the 1-3 hour incapacity, an equal roll the stun per the printed lizard man example (the 2 rolled equal to the 2+1 dice); the +4 or greater on the hit dice treated as one extra die. The grid mechanics codified per the R431 calculus",
+  "sentinel": "the gap census after this round: 147 closed, 88 open - the Mental and Physical Training box flips (census 616 -> 617); NEXT - R695: the Learning Martial Arts with Multiple Styles and Combining Styles prose (capture pp. 233-235), prefix dji (verify free at the landing), audit \"R695 OA learning martial arts audit\", include after rules/oatrain.h"
+ },
+ "consts": [
+  {
+   "name": "djhMentalResSaveBonus",
+   "value": 2,
+   "comment": "the Mental Resistance saving throw bonus - +2 on all saves against mental attacks including charm, illusion and hold spells (print capture p. 233)"
+  },
+  {
+   "name": "djhBlindFightPenalty",
+   "value": 1,
+   "comment": "the Blind Fighting penalty - only a -1 when fighting in darkness, blinded or against invisible opponents (print capture p. 233)"
+  },
+  {
+   "name": "djhIronskinACBonus",
+   "value": 2,
+   "comment": "the Ironskin armor class bonus - the muscles hardened like iron, AC improved by 2 only when wearing no other armor (print capture p. 233)"
+  },
+  {
+   "name": "djhLevConcTurns",
+   "value": 1,
+   "comment": "the Levitation concentration - one turn of concentration required before the body's weight is overcome (print capture p. 233)"
+  },
+  {
+   "name": "djhLevMoveFt",
+   "value": 5,
+   "comment": "the Levitation movement - up, down or sideways at five feet per round (print capture p. 233)"
+  },
+  {
+   "name": "djhLevRestRounds",
+   "value": 1,
+   "comment": "the Levitation rest - one round of rest owed upon completion before any other action (print capture p. 233)"
+  },
+  {
+   "name": "djhStunHitRoll",
+   "value": 20,
+   "comment": "the Stunning and Incapacitating trigger - an unmodified 20 on the martial arts to hit roll forces the victim's save vs. paralyzation (print capture p. 233)"
+  },
+  {
+   "name": "djhStunDie",
+   "value": 6,
+   "comment": "the stun duration die - 1d6 melee rounds when the die roll is less than the victim's hit dice or level (print capture p. 233)"
+  },
+  {
+   "name": "djhIncapHoursMin",
+   "value": 1,
+   "comment": "the incapacitation minimum - 1-3 hours when the die roll is greater than the hit dice or level, the OCR artifact t-3 resolved as 1-3 per the printed lizard man example (print capture p. 233)"
+  },
+  {
+   "name": "djhIncapHoursMax",
+   "value": 3,
+   "comment": "the incapacitation maximum - the 3 of the 1-3 hours (print capture p. 233)"
+  },
+  {
+   "name": "djhExtraDieHDBonus",
+   "value": 4,
+   "comment": "the extra-die threshold - creatures with a +4 or greater on their hit dice are treated as having one extra die for the stun or incapacity calculation (print capture p. 233)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djhTrainAnyStyle",
+   "value": true,
+   "comment": "the Training category - the maneuvers do not belong to the principal methods, learned by practitioners of any method or style in the course of training (print capture p. 232)"
+  },
+  {
+   "name": "djhMeditationShukenjaPowers",
+   "value": true,
+   "comment": "the Meditation - all the powers of meditation as explained under the shukenja character description (print capture p. 232)"
+  },
+  {
+   "name": "djhMeditationFreeSlot",
+   "value": true,
+   "comment": "the Meditation exemption - shukenja and kensai, who already have the ability, need not spend a proficiency slot on this maneuver (print capture p. 232)"
+  },
+  {
+   "name": "djhAllAroundSightConst",
+   "value": true,
+   "comment": "the All-Around Sight - constantly in effect, detecting opponents on all sides provided they are not invisible (print capture p. 232)"
+  },
+  {
+   "name": "djhAllAroundNoBackAttack",
+   "value": true,
+   "comment": "the All-Around Sight protection - the character can never be struck from behind nor suffer a penalty from a back attack (print capture p. 232)"
+  },
+  {
+   "name": "djhMentalResConst",
+   "value": true,
+   "comment": "the Mental Resistance - constantly in effect, the will toughened by the mental exercises and ordeals of the training (print capture p. 233)"
+  },
+  {
+   "name": "djhBlindFightConst",
+   "value": true,
+   "comment": "the Blind Fighting - constantly in effect, the senses trained under the blindfold and in darkened rooms (print capture p. 233)"
+  },
+  {
+   "name": "djhBlindFightSilenceRule",
+   "value": true,
+   "comment": "the Blind Fighting limit - any of the blindness causes combined with a silence spell render the character effectively blind again (print capture p. 233)"
+  },
+  {
+   "name": "djhIronskinUnarmoredOnly",
+   "value": true,
+   "comment": "the Ironskin limit - the AC improvement applies only when the character wears no other type of armor (print capture p. 233)"
+  },
+  {
+   "name": "djhLevRarest",
+   "value": true,
+   "comment": "the Levitation - the rarest of the maneuvers, the utmost of concentration and mental discipline negating the character's own weight (print capture p. 233)"
+  },
+  {
+   "name": "djhLevNoActions",
+   "value": true,
+   "comment": "the Levitation limit - no actions while levitating, a broken concentration dropping the character to the ground (print capture p. 233)"
+  },
+  {
+   "name": "djhStunManSizedOnly",
+   "value": true,
+   "comment": "the Stunning and Incapacitating scope - all styles have the chance against a man-sized opponent (print capture p. 233)"
+  },
+  {
+   "name": "djhStunUnmodifiedOnly",
+   "value": true,
+   "comment": "the Stunning and Incapacitating trigger - the UNMODIFIED 20 on the to hit roll, not a modified one (print capture p. 233)"
+  },
+  {
+   "name": "djhStunSavePara",
+   "value": true,
+   "comment": "the stun save - the victim is allowed a saving throw vs. paralyzation (print capture p. 233)"
+  },
+  {
+   "name": "djhStunSaveSuccessDamage",
+   "value": true,
+   "comment": "the successful stun save - the victim not stunned or incapacitated but still taking the normal damage of the attack (print capture p. 233)"
+  },
+  {
+   "name": "djhStunCompareHD",
+   "value": true,
+   "comment": "the stun or incapacity calculus - the die roll compared to the victim's hit dice or level: the roll less means the 1d6 round stun, the roll greater the 1-3 hour incapacity, an equal roll the stun per the printed lizard man example (print capture p. 233)"
+  },
+  {
+   "name": "djhExtraDieRule",
+   "value": true,
+   "comment": "the +4 hit dice rule - creatures with a +4 or greater on their hit dice treated as having one extra die for this calculation (print capture p. 233)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the training constants - the mental +2, the blind -1, the ironskin AC 2",
+   "expr": "m['djhMentalResSaveBonus']() != 2 or m['djhBlindFightPenalty']() != 1 or m['djhIronskinACBonus']() != 2"
+  },
+  {
+   "note": "the levitation - one turn of concentration, five feet per round, one round of rest",
+   "expr": "m['djhLevConcTurns']() != 1 or m['djhLevMoveFt']() != 5 or m['djhLevRestRounds']() != 1"
+  },
+  {
+   "note": "the stun trigger - the unmodified 20 and the 1d6 round stun die",
+   "expr": "m['djhStunHitRoll']() != 20 or m['djhStunDie']() != 6"
+  },
+  {
+   "note": "the incapacitation hours - 1 to 3, the OCR artifact t-3 resolved per the lizard man example",
+   "expr": "m['djhIncapHoursMin']() != 1 or m['djhIncapHoursMax']() != 3"
+  },
+  {
+   "note": "the extra-die threshold - the +4 or greater hit dice bonus treated as one extra die",
+   "expr": "m['djhExtraDieHDBonus']() != 4"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the mental and physical training maneuvers": [
+   {
+    "kind": "bool",
+    "name": "djhTrainAnyStyle"
+   },
+   {
+    "kind": "bool",
+    "name": "djhMeditationShukenjaPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "djhMeditationFreeSlot"
+   },
+   {
+    "kind": "bool",
+    "name": "djhAllAroundSightConst"
+   },
+   {
+    "kind": "bool",
+    "name": "djhAllAroundNoBackAttack"
+   },
+   {
+    "kind": "const",
+    "name": "djhMentalResSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "djhMentalResConst"
+   },
+   {
+    "kind": "const",
+    "name": "djhBlindFightPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "djhBlindFightConst"
+   },
+   {
+    "kind": "bool",
+    "name": "djhBlindFightSilenceRule"
+   },
+   {
+    "kind": "const",
+    "name": "djhIronskinACBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "djhIronskinUnarmoredOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "djhLevRarest"
+   },
+   {
+    "kind": "const",
+    "name": "djhLevConcTurns"
+   },
+   {
+    "kind": "const",
+    "name": "djhLevMoveFt"
+   },
+   {
+    "kind": "const",
+    "name": "djhLevRestRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "djhLevNoActions"
+   }
+  ],
+  "the stunning and incapacitating rules": [
+   {
+    "kind": "const",
+    "name": "djhStunHitRoll"
+   },
+   {
+    "kind": "const",
+    "name": "djhStunDie"
+   },
+   {
+    "kind": "const",
+    "name": "djhIncapHoursMin"
+   },
+   {
+    "kind": "const",
+    "name": "djhIncapHoursMax"
+   },
+   {
+    "kind": "const",
+    "name": "djhExtraDieHDBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "djhStunManSizedOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "djhStunUnmodifiedOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "djhStunSavePara"
+   },
+   {
+    "kind": "bool",
+    "name": "djhStunSaveSuccessDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "djhStunCompareHD"
+   },
+   {
+    "kind": "bool",
+    "name": "djhExtraDieRule"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Mental and Physical Training box closes",
+   "from": "  - [ ] Mental and Physical Training with Stunning\n    and Incapacitating (capture pp. 232-233)",
+   "to": "  - [x] Mental and Physical Training with\n    Stunning and Incapacitating (capture\n    pp. 232-233) - R694: the djh training\n    pins - the any-style category (the\n    maneuvers of no principal method,\n    learned by any practitioner):\n    Meditation with all the shukenja\n    powers, the shukenja and kensai\n    spending no slot; All-Around Sight\n    constant, the invisible unseen, no\n    strike from behind nor back attack\n    penalty; Mental Resistance constant,\n    the +2 against the charm, illusion\n    and hold; Blind Fighting constant,\n    only a -1 in darkness or blindness\n    or against the invisible, the\n    silence spell with any of them\n    blinding again; Ironskin the AC 2\n    better only unarmored; Levitation\n    the rarest - one turn of\n    concentration, five feet per round,\n    no actions, the broken concentration\n    a fall, one round of rest owed; the\n    Stunning and Incapacitating - every\n    style's chance against a man-sized\n    opponent, the UNMODIFIED 20 forcing\n    the save vs. paralyzation, the save\n    made keeping the normal damage, the\n    save failed comparing the roll to\n    the hit dice or level - less the\n    1d6 round stun, greater the 1-3\n    hour incapacity, equal the stun per\n    the printed lizard man example\n    (the 2 equal to the 2+1 dice), the\n    +4 or greater hit dice bonus one\n    extra die - the OCR artifact t-3\n    resolved as 1-3; single-pass pins\n    per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 147,
+  "open": 88
+ },
+ "include_comment": "the OA mental and physical training pins",
+ "include_after": "#include \"rules/oamethods.h\"  // R693: the OA principal methods pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R693 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R693 LANDED 2026-10-20: commit",
+  "  269b6c083bc75dc62eea0f766e9a730c9",
+  "  da84b78 (census 615 -> 616, pushed",
+  "  1393818..269b6c0), OA PRINCIPAL",
+  "  METHODS - the eight method",
+  "  descriptions, capture pp. 228-232",
+  "  print: rules/oamethods.h, prefix djg",
+  "  (verified free at 1393818), ONE gap",
+  "  flip, gap census 145/90 -> 146/89. 42",
+  "  consts + 46 bools (88 inlines, no",
+  "  table): kick (Circle Kick double",
+  "  damage and the lost next attack,",
+  "  Flying Kick triple of the five-foot",
+  "  run, Backward Kick miss harmless),",
+  "  lock (Choke Hold the -2 escapes and",
+  "  the 1-3 round unconsciousness,",
+  "  Locking Block feet-only +4 with the",
+  "  weapon damage on a miss,",
+  "  Incapacitator the double damage and",
+  "  the 24-hour limb, Immobilizing the",
+  "  -6 escape and the -4 miss),",
+  "  movement (Feint +2, the constant",
+  "  Prone Fighting, Immovability",
+  "  auto-save, Missile Deflection save",
+  "  per attack awareness required, Leap",
+  "  standing 4/3 running 8/10 plus a",
+  "  foot per level, Speed double",
+  "  attacks and combat movement only",
+  "  once per day five rounds then rest,",
+  "  Slow Resistance automatic), push",
+  "  (Concentrated Push a foot per level",
+  "  with the three-foot save threshold,",
+  "  Sticking Touch +2 and AC 2 better,",
+  "  One Finger the round's only action),",
+  "  strike (Iron Fist 1d10, Crushing",
+  "  Blow half-foot wood and quarter-foot",
+  "  stone per level, Eagle Claw 3d10 -",
+  "  the OCR artifact 3410 resolved,",
+  "  corroborated against a 1e OA",
+  "  transcription), throw (the constant",
+  "  Fall half damage, Instant Stand,",
+  "  Hurl 1d4 feet double damage, Great",
+  "  Throw six plus a foot per level on a",
+  "  charge, triple damage), vital area",
+  "  (human and humanoid only - Pain",
+  "  Touch -2/+2 for 1-3 rounds, Stun",
+  "  1d4 rounds, Paralyze 1d6 turns,",
+  "  Distance Death Pain unsavable and",
+  "  Stunning at -2 or triple damage),",
+  "  weapon (the martial-arts-exclusive",
+  "  weapons only - Weapon Catch lock",
+  "  and +2 with the disarm on a miss,",
+  "  Weapon Breaker melee-only with the",
+  "  save vs. crushing blow, Steel Cloth",
+  "  six to ten feet spear-like,",
+  "  automatic). The stray Distance",
+  "  Death line of p. 228 (column bleed)",
+  "  folded into the vital area prose,",
+  "  not double-pinned. Single-pass pins",
+  "  per the Chapter 9 provenance shift.",
+  "  rverify GREEN first try at 1393818,",
+  "  88 mutants, 0 missed. Spec md5 c0ed",
+  "  3a5a6c8659001449c3c2cdd5282e",
+  "  (authored-plus-newline md5 bc7c5bc5",
+  "  1207a3748444eff4938d3369 - the value",
+  "  the ritual gated and matched; canvas",
+  "  md5 2abbc206652d119cda23d04dcb5c54e3).",
+  "  NEXT - R694: the Mental and Physical",
+  "  Training with Stunning and",
+  "  Incapacitating prose (capture pp.",
+  "  232-233), prefix djh (verified free",
+  "  at 269b6c0), audit \"R694 OA mental",
+  "  and physical training audit\",",
+  "  include after rules/oamethods.h"
+ ]
+}

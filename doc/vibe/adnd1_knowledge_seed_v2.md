@@ -15588,6 +15588,80 @@ when both halves land.
   1393818), audit "R693 OA principal
   methods audit", include after
   rules/oa70maneuvers.h
+- R693 LANDED 2026-10-20: commit
+  269b6c083bc75dc62eea0f766e9a730c9
+  da84b78 (census 615 -> 616, pushed
+  1393818..269b6c0), OA PRINCIPAL
+  METHODS - the eight method
+  descriptions, capture pp. 228-232
+  print: rules/oamethods.h, prefix djg
+  (verified free at 1393818), ONE gap
+  flip, gap census 145/90 -> 146/89. 42
+  consts + 46 bools (88 inlines, no
+  table): kick (Circle Kick double
+  damage and the lost next attack,
+  Flying Kick triple of the five-foot
+  run, Backward Kick miss harmless),
+  lock (Choke Hold the -2 escapes and
+  the 1-3 round unconsciousness,
+  Locking Block feet-only +4 with the
+  weapon damage on a miss,
+  Incapacitator the double damage and
+  the 24-hour limb, Immobilizing the
+  -6 escape and the -4 miss),
+  movement (Feint +2, the constant
+  Prone Fighting, Immovability
+  auto-save, Missile Deflection save
+  per attack awareness required, Leap
+  standing 4/3 running 8/10 plus a
+  foot per level, Speed double
+  attacks and combat movement only
+  once per day five rounds then rest,
+  Slow Resistance automatic), push
+  (Concentrated Push a foot per level
+  with the three-foot save threshold,
+  Sticking Touch +2 and AC 2 better,
+  One Finger the round's only action),
+  strike (Iron Fist 1d10, Crushing
+  Blow half-foot wood and quarter-foot
+  stone per level, Eagle Claw 3d10 -
+  the OCR artifact 3410 resolved,
+  corroborated against a 1e OA
+  transcription), throw (the constant
+  Fall half damage, Instant Stand,
+  Hurl 1d4 feet double damage, Great
+  Throw six plus a foot per level on a
+  charge, triple damage), vital area
+  (human and humanoid only - Pain
+  Touch -2/+2 for 1-3 rounds, Stun
+  1d4 rounds, Paralyze 1d6 turns,
+  Distance Death Pain unsavable and
+  Stunning at -2 or triple damage),
+  weapon (the martial-arts-exclusive
+  weapons only - Weapon Catch lock
+  and +2 with the disarm on a miss,
+  Weapon Breaker melee-only with the
+  save vs. crushing blow, Steel Cloth
+  six to ten feet spear-like,
+  automatic). The stray Distance
+  Death line of p. 228 (column bleed)
+  folded into the vital area prose,
+  not double-pinned. Single-pass pins
+  per the Chapter 9 provenance shift.
+  rverify GREEN first try at 1393818,
+  88 mutants, 0 missed. Spec md5 c0ed
+  3a5a6c8659001449c3c2cdd5282e
+  (authored-plus-newline md5 bc7c5bc5
+  1207a3748444eff4938d3369 - the value
+  the ritual gated and matched; canvas
+  md5 2abbc206652d119cda23d04dcb5c54e3).
+  NEXT - R694: the Mental and Physical
+  Training with Stunning and
+  Incapacitating prose (capture pp.
+  232-233), prefix djh (verified free
+  at 269b6c0), audit "R694 OA mental
+  and physical training audit",
+  include after rules/oamethods.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

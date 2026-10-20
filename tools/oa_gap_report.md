@@ -1606,8 +1606,44 @@ description riding the same round.
     spear that cannot be thrown,
     automatic); single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Mental and Physical Training with Stunning
-    and Incapacitating (capture pp. 232-233)
+  - [x] Mental and Physical Training with
+    Stunning and Incapacitating (capture
+    pp. 232-233) - R694: the djh training
+    pins - the any-style category (the
+    maneuvers of no principal method,
+    learned by any practitioner):
+    Meditation with all the shukenja
+    powers, the shukenja and kensai
+    spending no slot; All-Around Sight
+    constant, the invisible unseen, no
+    strike from behind nor back attack
+    penalty; Mental Resistance constant,
+    the +2 against the charm, illusion
+    and hold; Blind Fighting constant,
+    only a -1 in darkness or blindness
+    or against the invisible, the
+    silence spell with any of them
+    blinding again; Ironskin the AC 2
+    better only unarmored; Levitation
+    the rarest - one turn of
+    concentration, five feet per round,
+    no actions, the broken concentration
+    a fall, one round of rest owed; the
+    Stunning and Incapacitating - every
+    style's chance against a man-sized
+    opponent, the UNMODIFIED 20 forcing
+    the save vs. paralyzation, the save
+    made keeping the normal damage, the
+    save failed comparing the roll to
+    the hit dice or level - less the
+    1d6 round stun, greater the 1-3
+    hour incapacity, equal the stun per
+    the printed lizard man example
+    (the 2 equal to the 2+1 dice), the
+    +4 or greater hit dice bonus one
+    extra die - the OCR artifact t-3
+    resolved as 1-3; single-pass pins
+    per the Chapter 9 provenance shift
   - [ ] Learning Martial Arts with Multiple Styles
     and Combining Styles (capture pp. 233-235)
 
