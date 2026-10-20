@@ -1355,7 +1355,25 @@ description riding the same round.
     other-creatures clause; single-pass
     pins per the Chapter 9 provenance
     shift
-  - [ ] Disarming (capture p. 221)
+  - [x] Disarming (capture p. 221) - R685:
+    the diy disarm pins - the doctrine
+    frame (the charmed party member, the
+    capture without harm), the two methods
+    (the parry-out and the bare-hands
+    wrest), the equal-or-greater weapon
+    size rule, the round-start declaration,
+    the normal hit with no damage, the
+    save versus petrification or the
+    weapon knocked loose, the 1d6-feet
+    fall with the one-round recovery, the
+    bare-hands systems (UA weaponless
+    combat or the martial arts with the
+    any-size knock and the +2 victim
+    save), the two-handed weapon rule
+    (one hand per success, two same-round
+    attempts to disarm, the regrip);
+    single-pass pins per the Chapter 9
+    provenance shift
   - [ ] Subduing Opponents (capture p. 221)
   - [ ] The Psychic Duel (capture pp. 222-223)
   - [ ] Martial Arts prose and Styles (capture pp.

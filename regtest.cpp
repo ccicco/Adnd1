@@ -385,6 +385,7 @@
 #include "rules/oahorsefire.h"  // R682: the OA mounted bowfire pins
 #include "rules/oa67bowfire.h"  // R683: the OA Table 67 bowfire modifier pins
 #include "rules/oaunhorsing.h"  // R684: the OA unhorsing pins
+#include "rules/oadisarming.h"  // R685: the OA disarming pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -109130,6 +109131,45 @@ int main() {
         )
             ++bad;
         printf("R684 OA unhorsing audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R685 OA disarming audit ----
+    // OA round seventy-two (capture p. 221): the Disarming doctrine - the two
+    // methods, the weapon disarm with the save versus petrification and the
+    // 1d6 fall, the bare-hands systems with the martial-arts any-size knock
+    // and the two-handed weapon rule, single-pass pins per the Chapter 9
+    // provenance shift
+    {
+        using namespace rules;
+        int bad = 0;
+    if (diyOADisarmWeaponFallDice() != 6
+            || diyOADisarmRecoverRounds() != 1
+            || diyOADisarmMartialArtsSaveBonus() != 2
+            || diyOADisarmTwoHandedAttemptsNeeded() != 2
+            || !diyOADisarmDoctrine()
+            || !diyOADisarmTwoMethods()
+            || !diyOADisarmEqualOrGreaterSize()
+            || !diyOADisarmMustDeclare()
+            || !diyOADisarmNoDamage()
+            || !diyOADisarmSaveVersusPetrification()
+            || !diyOADisarmBareHandsSystems()
+        )
+            ++bad;
+        // the weapon-disarm pins - the 1d6 feet fall and the one-round
+        // recovery
+    if (diyOADisarmWeaponFallDice() != 6
+            || diyOADisarmRecoverRounds() != 1
+        )
+            ++bad;
+        // the martial-arts save bonus - the +2 on the victim save
+    if (diyOADisarmMartialArtsSaveBonus() != 2
+        )
+            ++bad;
+        // the two-handed rule - the two same-round attempts needed
+    if (diyOADisarmTwoHandedAttemptsNeeded() != 2
+        )
+            ++bad;
+        printf("R685 OA disarming audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

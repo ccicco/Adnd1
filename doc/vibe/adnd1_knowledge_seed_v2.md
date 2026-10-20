@@ -15209,6 +15209,46 @@ when both halves land.
   cefc1ba - zero engine-gate hits), audit
   "R684 OA unhorsing audit", include
   after rules/oa67bowfire.h
+- R684 LANDED 2026-10-20: commit
+  5e63625cea248cd415357c5ab2f9220155fd5270
+  (census 606 -> 607, pushed cefc1ba..5e63625),
+  OA UNHORSING - the dismount doctrine,
+  capture pp. 220-221: rules/oaunhorsing.h,
+  prefix dix (verified free at cefc1ba),
+  ONE gap flip, 22 consts + 12 bools (34
+  inlines, no table), gap census 136/99 ->
+  137/98. The doctrine frame with the
+  slain-mount rule and the no-prize clause;
+  the mounted natural-20 unhorsing - 3-
+  or-more-feet weapons of another mounted
+  character, the automatic fall and 1d3
+  without horsemanship, the proficiency
+  check with it; the foot-soldier bands -
+  5-to-9 feet the same chance as mounted,
+  10-or-more the 25 percent 16-20 on 1d20;
+  the grapple doctrine - the dive-on, the
+  1d6 falls, the hang-on state, the every-
+  turn re-roll, the -2 rider penalty; the
+  footman pull - the man-sized gate, the
+  -2/-4/-6 speed ladder, the -1 per extra
+  footman to 4, the eight-men surround, the
+  free attacks above 12 feet; the set
+  defenses - the stake line: 2d6 per stake,
+  1d4-1 per 10 feet of depth, the chain -1
+  and plate -2 barding reductions, the
+  jump check, the other-creatures clause.
+  Single-pass pins per the Chapter 9
+  provenance shift. rverify GREEN first try
+  at cefc1ba, 34 mutants, 0 missed. Spec
+  md5 65353b96203c28eff4d00ad774899242
+  (authored-plus-newline md5 681c89fa3edff
+  c7729e00be31068795b - the value the
+  ritual gated and matched; canvas md5
+  11a6ad2d7ff557c7e23c56336672ebe6). NEXT
+  - R685: the Disarming doctrine (capture
+  p. 221), prefix diy (verify free at
+  5e63625), audit "R685 OA disarming
+  audit", include after rules/oaunhorsing.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
