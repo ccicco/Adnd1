@@ -1107,7 +1107,19 @@ description riding the same round.
     names ride the column comments, the
     spell descriptions close in their own
     rounds
-  - [ ] First Level Spells (capture pp. 155-165)
+  - [x] First Level Spells (capture pp. 155-165) -
+    R670: the dif WJL1 stat grid - the 30
+    first level wu jen spells with the school,
+    component, casting time, saving throw,
+    reversible and element codes (the element
+    cells cross-checking the R669 T66 grid;
+    ventriloquism the lone V,M and secret
+    signs the Components: Special oddity;
+    elemental burst the lone half save; the
+    stat blocks cross-checked spell by spell
+    between the passes); the names ride the
+    column comments, the prose descriptions
+    close in their own rounds
   - [ ] Second Level Spells (capture pp. 165-170)
   - [ ] Third Level Spells (capture pp. 170-177)
   - [ ] Fourth Level Spells (capture pp. 177-188)

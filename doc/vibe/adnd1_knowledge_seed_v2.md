@@ -14232,6 +14232,69 @@ when both halves land.
   grep), audit "R669 OA wu jen spell
   list audit", include after
   rules/oat65fate.h
+- R669 LANDED 2026-10-20: commit f0cdd266503487243703bb2393e29dbfca59ca13
+  (census 591 -> 592, pushed f2ddaaa..f0cdd26),
+  TABLE 66 WU JEN SPELLS - the full
+  wu jen spell list by level, capture
+  pp. 153-155: rules/oawjspelllist.h,
+  prefix die (verified free at f2ddaaa -
+  only comment-word matches, the engine's
+  call-site check governs), ONE gap flip
+  (the box label spans TWO lines - "the
+  full spell list by level" rides the
+  second line; the flip replaced both),
+  23 consts, 32 inlines (grid tag
+  WJT66Data, 30 rows x 9 cols - the R658
+  T62 pattern restated for the wu jen:
+  the -99 sentinel pads the ordinals
+  beyond each level's count, sentinel
+  census [0,0,6,6,6,6,18,16,17]), gap
+  census 121/114 -> 122/113 - THE WU JEN
+  CHAPTER OPENS: all nine level columns
+  cross-checked name by name between the
+  passes (print pp. 153-155 vs compressed
+  pp. 74-75). The roster: 30/30/24/24/24/
+  24/12/14/13 - 195 spells total, the
+  ordinal max 30. ONE contested name:
+  the sixth level Glassee reads Glasses
+  in the print OCR against Glassee in
+  the compressed - the compressed settles
+  the known PHB name (noted in the banner
+  and an example note); the other
+  variances typographic (Haute for Haste,
+  Ventiloquism, the print's stray r on
+  Duo-Dimension, the Power Word period
+  artifacts). The element census: Earth
+  the most common at 16, Air 13, Fire
+  11, Water 10, Nature 7, the lone Wood
+  mark (warp wood), four All marks
+  (elemental burst, scry, elemental
+  turning, conjure elemental), the two
+  duals (cloudburst Water/Air code 8,
+  water to poison Nature/Water code 9)
+  - 64 tagged against 131 untagged. The
+  memorization doctrine pins as two
+  consts: the six hours of restful
+  meditation and the 3d6 starting-spell
+  roll. rverify GREEN at f2ddaaa, 293
+  mutants, 0 missed (the biggest battery
+  yet - every cell of the 30x9 grid);
+  preflight GREEN (592 audit census,
+  BUILD 0 warnings). Spec md5
+  7a0ab56a40a3c40a5bb82b5b539e2ea8
+  (authored-plus-newline md5
+  7fdf1e5c6d06d29ec8baf65c2d852a67 -
+  the value the ritual gated and matched;
+  canvas md5
+  cf8c76b1c807232b279800a9df38c552).
+  NEXT - R670: the wu jen First Level
+  Spells (capture pp. 155-165, the 30
+  stat blocks - school, components,
+  casting time, save, the element mark
+  riding the R669 grid), prefix dif
+  (verify free), audit "R670 OA wu jen
+  first level spells audit", include
+  after rules/oawjspelllist.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
