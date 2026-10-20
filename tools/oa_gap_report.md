@@ -1120,7 +1120,22 @@ description riding the same round.
     between the passes); the names ride the
     column comments, the prose descriptions
     close in their own rounds
-  - [ ] Second Level Spells (capture pp. 165-170)
+  - [x] Second Level Spells (capture pp. 165-170) -
+    R671: the dig WJL2 stat grid - the 30
+    second level wu jen spells with the school,
+    component, casting time, saving throw,
+    reversible and element codes (the element
+    cells cross-checking the R669 T66 grid;
+    bind the Alteration/Enchantment dual and
+    whispering wind the Alteration/Phantasm
+    dual both pinned primary alteration; knock
+    the lone verbal-only and hypnotic pattern
+    and vocalize the S,M pairs; wind breath
+    the lone half save; stinking cloud printed
+    Evocation; the stat blocks cross-checked
+    spell by spell between the passes); the
+    names ride the column comments, the prose
+    descriptions close in their own rounds
   - [ ] Third Level Spells (capture pp. 170-177)
   - [ ] Fourth Level Spells (capture pp. 177-188)
   - [ ] Fifth Level Spells (capture pp. 189-196)

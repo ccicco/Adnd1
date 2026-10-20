@@ -14295,6 +14295,71 @@ when both halves land.
   (verify free), audit "R670 OA wu jen
   first level spells audit", include
   after rules/oawjspelllist.h
+- R670 LANDED 2026-10-20: commit d50aeaf87b9292c4d97ecf84b2527d45badfc29d
+  (census 592 -> 593, pushed f0cdd26..d50aeaf),
+  WU JEN FIRST LEVEL SPELLS - the 30
+  first level wu jen spell stat
+  blocks, capture pp. 155-165:
+  rules/oawjl1spells.h, prefix dif
+  (verified free at f0cdd26), ONE gap
+  flip (single-line child label), 18
+  consts, 24 inlines (grid tag
+  WJL1Data, 30 rows x 6 cols), gap
+  census 122/113 -> 123/112: all 30
+  stat blocks cross-checked spell by
+  spell between the passes (print pp.
+  155-165 vs compressed pp. 75-79),
+  zero contested stat reads - the
+  variances typographic (the print's
+  fumble-lingers against the
+  compressed fumble-fingers for the
+  prestidigitation reverse, the
+  print's pared for para-elemental in
+  the melt prose). Alteration-heavy:
+  15 of the 30 spells, conjuration
+  six, divination three,
+  enchantment/charm, evocation and
+  illusion two each - no necromantic
+  or abjuration. TWO component
+  oddities pinned as cells:
+  ventriloquism the lone V,M without
+  the somatic (bitmask 5), and secret
+  signs the Components: Special line
+  (bitmask 0, none of the three - the
+  component whatever method sends the
+  message, the spell castable even
+  bound and gagged). Elemental burst
+  alone takes the half save (the
+  sliver and spark damage halved);
+  drowsy insects and hypnotism the
+  negation; four special. Casts: 13
+  one-segment, 12 one-round, warp
+  wood the lone four-segment, fiery
+  eyes and ghost light the
+  five-segment pair. Six reversible
+  (accuracy, comprehend languages,
+  prestidigitation, read magic, still
+  water, swim). The SIXTH column is
+  the NEW wu jen convention: the
+  element marks cross-checking the
+  R669 dieWJT66L1Element grid - the 12
+  tagged cells matching exactly.
+  rverify GREEN at f0cdd26, 198
+  mutants, 0 missed; preflight GREEN
+  (593 audit census, BUILD 0
+  warnings). Spec md5
+  c74a746b72b3ce7e9fa157bf0f880369
+  (authored-plus-newline md5
+  df7ba0c6fbdef9490b537b9b375faf44 -
+  the value the ritual gated and
+  matched; canvas md5
+  110000cefc484e7ad5d39cfe6870d050).
+  NEXT - R671: the wu jen Second
+  Level Spells (capture pp. 165-170,
+  the 30 stat blocks), prefix dig
+  (verify free), audit "R671 OA wu
+  jen second level spells audit",
+  include after rules/oawjl1spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
