@@ -1457,7 +1457,32 @@ description riding the same round.
     form, the maneuver secrets);
     single-pass pins per the Chapter 9
     provenance shift
-  - [ ] Creating a Style (capture pp. 225-228)
+  - [x] Creating a Style (capture
+    pp. 225-228) - R690: the djd creation
+    pins - the creation frame (the DM
+    encouraged, the NPC masters), the
+    hard, soft and combined forms, the
+    unusual-weapons clause, the principal
+    method with the other-methods rule,
+    the one-form-one-method selection, the
+    Table 69 mechanics (the 10-minus-mods
+    AC, the style-specific attacks, the
+    round-up damage 6-d6 4-d4 5-d6, the
+    free body part), the 1d4-minus-two
+    weapons from the martial-arts-only
+    list, the Special Maneuvers intro
+    (the intensive study, the combat and
+    movement costs, the method
+    organization with the hard/soft
+    identity, the 1d8 first and 1-3 second
+    rolls, the arsenal-of-tactics clause,
+    the ranking progression with the
+    Circle Kick 1 Flying Kick 2 All-Around
+    Sight 2 Backward Kick 3 example, the
+    gradual learning, the Mental and
+    Physical Training any-style category);
+    single-pass pins per the Chapter 9
+    provenance shift
   - [ ] Table 69: Martial Style Combinations
     (capture p. 226)
   - [ ] Table 70: Martial Arts Special Maneuvers

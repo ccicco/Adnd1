@@ -390,6 +390,7 @@
 #include "rules/oapsychicduel.h"  // R687: the OA psychic duel pins
 #include "rules/oamartialopen.h"  // R688: the OA martial arts opener pins
 #include "rules/oa68styles.h"  // R689: the OA Table 68 common styles pins
+#include "rules/oacreatestyle.h"  // R690: the OA creating a style pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -109391,6 +109392,57 @@ int main() {
         )
             ++bad;
         printf("R689 OA common martial styles audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R690 OA creating a style audit ----
+    // OA round seventy-seven (capture pp. 225-227): the Creating a Style
+    // doctrine - the three forms with the principal method, the Table 69
+    // mechanics, the weapons roll and the Special Maneuvers intro,
+    // single-pass pins per the Chapter 9 provenance shift
+    {
+        using namespace rules;
+        int bad = 0;
+    if (djdOACreateACBase() != 10
+            || djdOACreateWeaponsDie() != 4
+            || djdOACreateWeaponsShift() != 2
+            || djdOACreateManeuverFirstDie() != 8
+            || djdOACreateManeuverSecondDie() != 3
+            || !djdOACreateDoctrine()
+            || !djdOACreateHardForm()
+            || !djdOACreateSoftForm()
+            || !djdOACreateCombinedForm()
+            || !djdOACreateUnusualWeapons()
+            || !djdOACreatePrincipalMethod()
+            || !djdOACreateOtherMethods()
+            || !djdOACreateOneFormOneMethod()
+            || !djdOACreateAttacksStyleSpecific()
+            || !djdOACreateDamageRounding()
+            || !djdOACreateBodyPartFree()
+            || !djdOACreateWeaponsList()
+            || !djdOACreateManeuversLast()
+            || !djdOAManeuversIntensiveStudy()
+            || !djdOAManeuversCombatCost()
+            || !djdOAManeuversMovementCost()
+            || !djdOAManeuversMethodOrganized()
+            || !djdOAManeuversSecondRollOthers()
+            || !djdOAManeuversRanking()
+            || !djdOAManeuversGradualLearning()
+            || !djdOAMentalPhysicalAnyStyle()
+        )
+            ++bad;
+        // the construction numbers - the AC base 10, the 1d4-minus-two
+        // weapons, the 1d8 and 1-3 maneuver rolls
+    if (djdOACreateACBase() != 10
+            || djdOACreateWeaponsDie() != 4
+            || djdOACreateWeaponsShift() != 2
+        )
+            ++bad;
+        // the maneuver rolls - the 1d8 first with the 1-3 second
+    if (djdOACreateManeuverFirstDie() != 8
+            || djdOACreateManeuverSecondDie() != 3
+        )
+            ++bad;
+        printf("R690 OA creating a style audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

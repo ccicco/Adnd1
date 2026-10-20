@@ -1,0 +1,329 @@
+{
+ "round": 690,
+ "title": "OA CREATING A STYLE - the style-construction doctrine: the three forms, the principal method choice, the Table 69 mechanics, the weapons roll and the Special Maneuvers intro",
+ "prefix": "djd",
+ "header_file": "rules/oacreatestyle.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 612,
+ "inline_count": 26,
+ "audit_label": "R690 OA creating a style audit",
+ "audit_comment": "OA round seventy-seven (capture pp. 225-227): the Creating a Style doctrine - the three forms with the principal method, the Table 69 mechanics, the weapons roll and the Special Maneuvers intro, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA CREATING A STYLE, printed capture pp. 225-227 - the style-construction round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE FRAME: the DM encouraged to create new styles taught by NPC masters, the general characteristics chosen then the values, terms and abilities selected from the lists. THE THREE FORMS: hard - muscles and bones, direct, offensive; soft - the inner power, fluid and circular, defensive, the attacker's force against him, attacking only after the commitment; combined - the best of each, physical balanced with psychic; all using the unusual weapons. THE PRINCIPAL METHOD: the most common fighting method, every style incorporating moves from other methods - the single form the certain defeat. THE MECHANICS: one form and one method per style; the mods totaled - the AC from the 10, the attacks style-specific, the damage rounded up to the die (6 the d6, 4 the d4, 5 the d6), the body part free; the 1d4-minus-two weapons of the martial-arts-only list. THE MANEUVERS: the intensive study, the combat cost (one or more attacks) and the movement cost (no attacks), the method organization with the hard/soft identity and the crossover; the 1d8 roll of the principal method or the Mental and Physical Training, the 1-3 roll of the other methods - the arsenal of tactics; the ranking progression from 1 up, the higher learned only beneath; the gradual learning; the Mental and Physical Training learnable in any style. The prose codifies per the R431 calculus",
+  "sentinel": "the gap census after this round: 143 closed, 92 open - the Creating a Style box flips (census 612 -> 613); NEXT - R691: Table 69 the martial style combinations grid (capture p. 226), prefix dje (verify free at the landing), audit \"R691 OA style combinations audit\", include after rules/oacreatestyle.h"
+ },
+ "consts": [
+  {
+   "name": "djdOACreateACBase",
+   "value": 10,
+   "comment": "the style armor class base - the AC Mod. of the form and the method totaled, the number subtracted from 10 to get the armor class of the style (print capture p. 226)"
+  },
+  {
+   "name": "djdOACreateWeaponsDie",
+   "value": 4,
+   "comment": "the weapons-taught die - the DM rolls 1d4 and subtracts two from the result, the number of weapons taught under the style (print capture p. 226)"
+  },
+  {
+   "name": "djdOACreateWeaponsShift",
+   "value": 2,
+   "comment": "the weapons-taught shift - the two subtracted from the 1d4 roll (print capture p. 226)"
+  },
+  {
+   "name": "djdOACreateManeuverFirstDie",
+   "value": 8,
+   "comment": "the first maneuver roll - roll 1d8, the number of special maneuvers chosen from the principal method of the style or from the Mental and Physical Training lists (print capture p. 227)"
+  },
+  {
+   "name": "djdOACreateManeuverSecondDie",
+   "value": 3,
+   "comment": "the second maneuver roll - a roll of 1-3 made to find the number of maneuvers chosen from other methods (or again the Mental and Physical Training category) (print capture p. 227)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djdOACreateDoctrine",
+   "value": true,
+   "comment": "the creation frame - in addition to the common styles the DM is encouraged to create new styles taught by various NPC masters, a style created by choosing the general characteristics then selecting values, terms and abilities from the lists given in the text (print capture p. 225)"
+  },
+  {
+   "name": "djdOACreateHardForm",
+   "value": true,
+   "comment": "the hard form - emphasizing the use of the muscles and bones for power, very direct movements, generally offensive, stressing the attack (print capture p. 225)"
+  },
+  {
+   "name": "djdOACreateSoftForm",
+   "value": true,
+   "comment": "the soft form - relying more on the inner power of the character, the movements fluid and circular, generally more defensive, diverting the attacker with his own force against him and attacking only after the enemy has committed himself, the training more mentally oriented (print capture p. 225)"
+  },
+  {
+   "name": "djdOACreateCombinedForm",
+   "value": true,
+   "comment": "the combined form - using the best practices from each, the circular and gentle defensive movements combined with swift and direct attacks, the physical training balanced with the psychic (print capture p. 225)"
+  },
+  {
+   "name": "djdOACreateUnusualWeapons",
+   "value": true,
+   "comment": "the weapons clause - all styles can make use of a number of unusual weapons (print capture p. 225)"
+  },
+  {
+   "name": "djdOACreatePrincipalMethod",
+   "value": true,
+   "comment": "the principal method choice - the fighting method most commonly used in the style, the character more often than not using it when attacking, each method describing the most common means of attack (print capture p. 225)"
+  },
+  {
+   "name": "djdOACreateOtherMethods",
+   "value": true,
+   "comment": "the other-methods rule - every style incorporates moves from other methods, since reliance on a single form would certainly mean defeat (print capture p. 225)"
+  },
+  {
+   "name": "djdOACreateOneFormOneMethod",
+   "value": true,
+   "comment": "the selection rule - the DM must select one form and one principal method for each style (print capture p. 226)"
+  },
+  {
+   "name": "djdOACreateAttacksStyleSpecific",
+   "value": true,
+   "comment": "the attacks rule - the #AT Mod. of the form and the method totaled is the number of attacks allowed in a melee round when fighting in this style, applying to no other style nor when fighting with normal weapons (print capture p. 226)"
+  },
+  {
+   "name": "djdOACreateDamageRounding",
+   "value": true,
+   "comment": "the damage rule - the Damage Mod. of the form and the method totaled, rounded up to the nearest die size used in the game: a total of 6 the 1d6, of 4 the 1d4, of 5 the 1d6 - the basic damage done when fighting in the style (print capture p. 226)"
+  },
+  {
+   "name": "djdOACreateBodyPartFree",
+   "value": true,
+   "comment": "the body part rule - the listed part or parts most commonly used, kicking the feet, throwing the whole body; so long as the body part is unbound or free to move the character can still attack effectively with the style (print capture p. 226)"
+  },
+  {
+   "name": "djdOACreateWeaponsList",
+   "value": true,
+   "comment": "the weapons selection - the weapons selected from those that can be used in martial arts only (print capture p. 226)"
+  },
+  {
+   "name": "djdOACreateManeuversLast",
+   "value": true,
+   "comment": "the creation order - finally the DM must determine the special maneuvers used by the style (print capture p. 226)"
+  },
+  {
+   "name": "djdOAManeuversIntensiveStudy",
+   "value": true,
+   "comment": "the maneuvers frame - actions and abilities requiring intensive study and skill to learn, giving the user greater-than-normal results; some attempted during a fight (Flying Kick, One Finger), others constant abilities always in effect (Ironskin, Blind Fighting) (print capture pp. 226-227)"
+  },
+  {
+   "name": "djdOAManeuversCombatCost",
+   "value": true,
+   "comment": "the combat maneuver cost - combat maneuvers risky, failure often leaving the character in an exposed or dangerous position, the maneuver costing one or more of his attacks for the melee round (print capture p. 227)"
+  },
+  {
+   "name": "djdOAManeuversMovementCost",
+   "value": true,
+   "comment": "the movement maneuver cost - a movement maneuver counts as movement, preventing the character from making any attacks that round unless the maneuver notes otherwise (print capture p. 227)"
+  },
+  {
+   "name": "djdOAManeuversMethodOrganized",
+   "value": true,
+   "comment": "the organization - all maneuvers organized according to the principal method of fighting used, kicking covering kicks, movement the leaps, tumbles, dives and acrobatics; each maneuver identified as hard, soft or hard/soft, matching the general classification of the style, the crossover not prevented (print capture p. 227)"
+  },
+  {
+   "name": "djdOAManeuversSecondRollOthers",
+   "value": true,
+   "comment": "the second-roll scope - the 1-3 roll finding the maneuvers chosen from other methods, all styles usually incorporating a few maneuvers from other methods to provide the character an arsenal of tactics (print capture p. 227)"
+  },
+  {
+   "name": "djdOAManeuversRanking",
+   "value": true,
+   "comment": "the ranking rule - the maneuvers ranked by difficulty, the lower the number the easier to learn and execute; when selecting there must be a progression from 1 on up, not within a single method, more than one at the same level allowed - a style beginning Circle Kick (1), Flying Kick (2), All-Around Sight (2), ending Backward Kick (3); a higher difficulty maneuver learned only if those beneath it are already learned (print capture p. 227)"
+  },
+  {
+   "name": "djdOAManeuversGradualLearning",
+   "value": true,
+   "comment": "the gradual rule - special maneuvers not gained immediately upon learning the style, requiring extra training and learned gradually (print capture p. 227)"
+  },
+  {
+   "name": "djdOAMentalPhysicalAnyStyle",
+   "value": true,
+   "comment": "the Mental and Physical Training category - maneuvers learnable in any style because of the methods of practice and discipline of the training (print capture p. 227)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the construction numbers - the AC base 10, the 1d4-minus-two weapons, the 1d8 and 1-3 maneuver rolls",
+   "expr": "m['djdOACreateACBase']() != 10 or m['djdOACreateWeaponsDie']() != 4 or m['djdOACreateWeaponsShift']() != 2"
+  },
+  {
+   "note": "the maneuver rolls - the 1d8 first with the 1-3 second",
+   "expr": "m['djdOACreateManeuverFirstDie']() != 8 or m['djdOACreateManeuverSecondDie']() != 3"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the style construction number pins": [
+   {
+    "kind": "const",
+    "name": "djdOACreateACBase"
+   },
+   {
+    "kind": "const",
+    "name": "djdOACreateWeaponsDie"
+   },
+   {
+    "kind": "const",
+    "name": "djdOACreateWeaponsShift"
+   },
+   {
+    "kind": "const",
+    "name": "djdOACreateManeuverFirstDie"
+   },
+   {
+    "kind": "const",
+    "name": "djdOACreateManeuverSecondDie"
+   }
+  ],
+  "the style construction doctrine pins": [
+   {
+    "kind": "bool",
+    "name": "djdOACreateDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateHardForm"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateSoftForm"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateCombinedForm"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateUnusualWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreatePrincipalMethod"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateOtherMethods"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateOneFormOneMethod"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateAttacksStyleSpecific"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateDamageRounding"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateBodyPartFree"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateWeaponsList"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOACreateManeuversLast"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOAManeuversIntensiveStudy"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOAManeuversCombatCost"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOAManeuversMovementCost"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOAManeuversMethodOrganized"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOAManeuversSecondRollOthers"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOAManeuversRanking"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOAManeuversGradualLearning"
+   },
+   {
+    "kind": "bool",
+    "name": "djdOAMentalPhysicalAnyStyle"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Creating a Style box closes",
+   "from": "  - [ ] Creating a Style (capture pp. 225-228)",
+   "to": "  - [x] Creating a Style (capture\n    pp. 225-228) - R690: the djd creation\n    pins - the creation frame (the DM\n    encouraged, the NPC masters), the\n    hard, soft and combined forms, the\n    unusual-weapons clause, the principal\n    method with the other-methods rule,\n    the one-form-one-method selection, the\n    Table 69 mechanics (the 10-minus-mods\n    AC, the style-specific attacks, the\n    round-up damage 6-d6 4-d4 5-d6, the\n    free body part), the 1d4-minus-two\n    weapons from the martial-arts-only\n    list, the Special Maneuvers intro\n    (the intensive study, the combat and\n    movement costs, the method\n    organization with the hard/soft\n    identity, the 1d8 first and 1-3 second\n    rolls, the arsenal-of-tactics clause,\n    the ranking progression with the\n    Circle Kick 1 Flying Kick 2 All-Around\n    Sight 2 Backward Kick 3 example, the\n    gradual learning, the Mental and\n    Physical Training any-style category);\n    single-pass pins per the Chapter 9\n    provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 143,
+  "open": 92
+ },
+ "include_comment": "the OA creating a style pins",
+ "include_after": "#include \"rules/oa68styles.h\"  // R689: the OA Table 68 common styles pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R689 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R689 LANDED 2026-10-20: commit",
+  "  8d86b06610e73f32e992bb2f9ec0248836efdd26",
+  "  (census 611 -> 612, pushed 5d2af58..8d86b06),",
+  "  OA TABLE 68 - the common martial styles,",
+  "  capture pp. 224-225: rules/oa68styles.h,",
+  "  prefix djc (verified free at 5d2af58),",
+  "  ONE gap flip, 1 const + 5 bools (12",
+  "  inlines, 4x6 grid tag OA68Data - the",
+  "  count a CONST FUNCTION per the R683",
+  "  lesson), gap census 141/94 -> 142/93.",
+  "  The four styles pinned across six",
+  "  columns: Karate the 3/1, d6, AC 8, Hand,",
+  "  six maneuver ranks; Kung-fu the 2/1, d6,",
+  "  AC 6 the best, Hand, eight ranks; Tae",
+  "  Kwon Do the 1/1, the lone d8, AC 8, the",
+  "  only Foot principal, six ranks; Jujutsu",
+  "  the 2/1, d6, AC 7, Hand, the eleven",
+  "  ranks - the richest; the maneuver cells",
+  "  encoded as rank counts with the full",
+  "  lists riding the column comments. The",
+  "  p. 225 explanatory prose as five bools.",
+  "  Single-pass pins per the Chapter 9",
+  "  provenance shift. rverify GREEN first",
+  "  try at 5d2af58, 30 mutants, 0 missed.",
+  "  Spec md5 88774c5b48b4053e186458c390077",
+  "  6e (authored-plus-newline md5 a77f3ee511",
+  "  ac20b48d193d94b0309af4 - the value the",
+  "  ritual gated and matched; canvas md5",
+  "  caeee1910e5978472ec25e1195a8e938). NEXT",
+  "  - R690: the Creating a Style doctrine",
+  "  (capture pp. 225-228), prefix djd",
+  "  (verify free at 8d86b06), audit \"R690 OA",
+  "  creating a style audit\", include after",
+  "  rules/oa68styles.h"
+ ]
+}

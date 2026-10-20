@@ -15414,6 +15414,40 @@ when both halves land.
   (verify free at 5d2af58), audit "R689 OA
   common martial styles audit", include
   after rules/oamartialopen.h
+- R689 LANDED 2026-10-20: commit
+  8d86b06610e73f32e992bb2f9ec0248836efdd26
+  (census 611 -> 612, pushed 5d2af58..8d86b06),
+  OA TABLE 68 - the common martial styles,
+  capture pp. 224-225: rules/oa68styles.h,
+  prefix djc (verified free at 5d2af58),
+  ONE gap flip, 1 const + 5 bools (12
+  inlines, 4x6 grid tag OA68Data - the
+  count a CONST FUNCTION per the R683
+  lesson), gap census 141/94 -> 142/93.
+  The four styles pinned across six
+  columns: Karate the 3/1, d6, AC 8, Hand,
+  six maneuver ranks; Kung-fu the 2/1, d6,
+  AC 6 the best, Hand, eight ranks; Tae
+  Kwon Do the 1/1, the lone d8, AC 8, the
+  only Foot principal, six ranks; Jujutsu
+  the 2/1, d6, AC 7, Hand, the eleven
+  ranks - the richest; the maneuver cells
+  encoded as rank counts with the full
+  lists riding the column comments. The
+  p. 225 explanatory prose as five bools.
+  Single-pass pins per the Chapter 9
+  provenance shift. rverify GREEN first
+  try at 5d2af58, 30 mutants, 0 missed.
+  Spec md5 88774c5b48b4053e186458c390077
+  6e (authored-plus-newline md5 a77f3ee511
+  ac20b48d193d94b0309af4 - the value the
+  ritual gated and matched; canvas md5
+  caeee1910e5978472ec25e1195a8e938). NEXT
+  - R690: the Creating a Style doctrine
+  (capture pp. 225-228), prefix djd
+  (verify free at 8d86b06), audit "R690 OA
+  creating a style audit", include after
+  rules/oa68styles.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
