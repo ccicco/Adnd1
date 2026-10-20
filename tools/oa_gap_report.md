@@ -1263,8 +1263,22 @@ description riding the same round.
 
 - [ ] **Chapter 9: Combat** (capture pp. 216-235) -
   the combat and martial arts system
-  - [ ] Summary Of The Combat Sequence (capture
-    p. 218)
+  - [x] Summary Of The Combat Sequence (capture
+    p. 218) - R679: the dip combat sequence
+    pins - the five resolution steps: the
+    1-2 on 1d6 surprise read with the
+    impossibility clause, the declared actions
+    with the subdue/disarm/unhorse announcement,
+    the 1d6 initiative only without surprise
+    with the kensai and wu jen modifiers and
+    first-strike rule, the 1d20 to hit against
+    the combat table with the ki declarations
+    before the die and before the saves, the
+    four damage modifiers with the subdual
+    damage recorded separately, and the
+    initiative loser performing step 4 - the
+    first single-pass round, the compressed
+    capture ending mid ninth level spells
   - [ ] Surprise and Iaijutsu (capture p. 218) - the
     dueling draw doctrine
   - [ ] Initiative Modifiers (capture p. 218)

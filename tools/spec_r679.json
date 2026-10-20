@@ -1,0 +1,293 @@
+{
+ "round": 679,
+ "title": "OA COMBAT SEQUENCE - the Summary of the Combat Sequence, the five resolution steps with the surprise, initiative, to hit and damage doctrine pins",
+ "prefix": "dip",
+ "header_file": "rules/oacombatseq.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 601,
+ "inline_count": 16,
+ "audit_label": "R679 OA combat sequence audit",
+ "audit_comment": "OA round sixty-six (capture p. 218): the Summary of the Combat Sequence - the five resolution steps with the surprise, initiative, to hit and damage doctrine pins, the first round of the Chapter 9 Combat arc and the first single-pass round - the compressed capture ends mid ninth level spells",
+ "banner": {
+  "title": "OA COMBAT SEQUENCE, printed capture p. 218 - the OA Chapter 9 Combat arc opener, the Summary of the Combat Sequence round",
+  "provenance": "pinned from the 2018 print capture - THE SOLE SURVIVING PASS from Chapter 9 onward: the compressed-print capture ends mid ninth level spells, so the dual-capture cross-check of the wu jen spell rounds gives way here to single-pass pins, contested reads settling book-internal first, then against the physical copy (the gap report opener rule). The Summary of the Combat Sequence walks the five resolution steps: (1) surprise, normally 1-2 on 1d6, often impossible from visibility, surroundings or noise; (2) the players state their actions, announcing any subdue, disarm or unhorse attempt; (3) initiative on 1d6 only when there is no surprise, the higher roll gaining the round, kensai and wu jen able to modify their die roll; (4) kensai and wu jen with a higher modified roll than either side strike first, then the initiative side rolls 1d20 to hit against the combat table - equal or greater hits, certain characters stating ki power before the die is rolled - the spell targets then make their saving throws with shukenja stating ki before any save, and the damage dice add the four modifiers (strength, magical weapons, weapons of quality, ki powers), subdual damage recorded separately rather than subtracted; (5) the side that lost initiative now performs step 4. The prose codifies: the summary maps onto consts and bools per the R431 prose-to-code calculus, no printed grid needed",
+  "sentinel": "the gap census after this round: 132 closed, 103 open - the Summary of the Combat Sequence box flips (census 601 -> 602), the Chapter 9 Combat arc begun; NEXT - R680: the Surprise and Iaijutsu dueling draw doctrine (capture p. 218), prefix diq (verify free at the landing), audit \"R680 OA iaijutsu surprise audit\", include after rules/oacombatseq.h"
+ },
+ "consts": [
+  {
+   "name": "dipOACombatSequenceSteps",
+   "value": 5,
+   "comment": "the five steps of resolving a combat: (1) determine surprise, (2) players state the actions their characters attempt, (3) roll for initiative if there is no surprise, (4) the attacks and damage of the initiative side, (5) the side that lost the initiative performs step 4 (print capture p. 218)"
+  },
+  {
+   "name": "dipOASurpriseDieSides",
+   "value": 6,
+   "comment": "the surprise die - characters are normally surprised on a roll of 1-2 on 1d6, the six-sided surprise die of the sequence step 1 (print capture p. 218)"
+  },
+  {
+   "name": "dipOASurpriseRollMax",
+   "value": 2,
+   "comment": "the surprise roll ceiling - the 2 of the 1-2 on 1d6 surprise read, the top of the surprised band (print capture p. 218)"
+  },
+  {
+   "name": "dipOAInitiativeDieSides",
+   "value": 6,
+   "comment": "the initiative die - 1d6 rolled per side when there is no surprise, the higher die roll gaining the initiative for the round, the sequence step 3 (print capture p. 218)"
+  },
+  {
+   "name": "dipOAHitDieSides",
+   "value": 20,
+   "comment": "the to hit die - 1d20 rolled for each character on the initiative side attempting to hit, compared to the Armor Class of the target on the combat table, equal or greater hits, the sequence step 4 (print capture p. 218)"
+  },
+  {
+   "name": "dipOADamageModifierCount",
+   "value": 4,
+   "comment": "the four damage modifiers of the sequence step 4 - strength, magical weapons, weapons of quality, and ki powers, added to the damage dice for each hit (print capture p. 218)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dipOASurpriseSometimesNil",
+   "value": true,
+   "comment": "the surprise impossibility clause - there are often cases where surprise is not possible due to visibility, surroundings, noise, etc., the sequence step 1 (print capture p. 218)"
+  },
+  {
+   "name": "dipOAActionsStatedFirst",
+   "value": true,
+   "comment": "the declared-action rule of the sequence step 2 - players state the actions their characters are attempting before the round resolves (print capture p. 218)"
+  },
+  {
+   "name": "dipOASubdueDisarmUnhorseAnnounced",
+   "value": true,
+   "comment": "the announcement requirement of the sequence step 2 - players must also announce if their characters are attempting to subdue, disarm, or unhorse an opponent (print capture p. 218)"
+  },
+  {
+   "name": "dipOAInitiativeOnlyWithoutSurprise",
+   "value": true,
+   "comment": "the initiative gate of the sequence step 3 - the initiative die is rolled only if there is no surprise (print capture p. 218)"
+  },
+  {
+   "name": "dipOAKensaiWuJenInitMods",
+   "value": true,
+   "comment": "the initiative modifiers of the sequence step 3 - kensai and wu jen characters are able to modify their initiative die roll (print capture p. 218)"
+  },
+  {
+   "name": "dipOAKensaiWuJenFirstAttack",
+   "value": true,
+   "comment": "the first-strike rule of the sequence step 4 - kensai and wu jen characters with a higher modified initiative roll than either side make their attacks before the initiative side resolves (print capture p. 218)"
+  },
+  {
+   "name": "dipOAKiStatedBeforeHitDie",
+   "value": true,
+   "comment": "the ki declaration rule of the sequence step 4 - certain characters must state whether they are using ki power before the die is rolled (print capture p. 218)"
+  },
+  {
+   "name": "dipOAShukKiStatedBeforeSave",
+   "value": true,
+   "comment": "the shukenja ki rule of the sequence step 4 - shukenja must state whether they are using ki power before any saving throw is made, the save step following the to hit resolution for the targets of spells (print capture p. 218)"
+  },
+  {
+   "name": "dipOASubdualRecordedSeparately",
+   "value": true,
+   "comment": "the subdual damage rule of the sequence step 4 - subdual damage is not subtracted from the opponent current hit points, but recorded separately (print capture p. 218)"
+  },
+  {
+   "name": "dipOALoserSideRepeatsStepFour",
+   "value": true,
+   "comment": "the sequence step 5 - the side that lost the initiative now performs step 4, closing the five-step round (print capture p. 218)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the sequence shape pins - five steps, the six-sided surprise and initiative dice, the 1-2 surprise band, the twenty-sided to hit die",
+   "expr": "m['dipOACombatSequenceSteps']() != 5 or m['dipOASurpriseDieSides']() != 6 or m['dipOASurpriseRollMax']() != 2 or m['dipOAInitiativeDieSides']() != 6 or m['dipOAHitDieSides']() != 20"
+  },
+  {
+   "note": "the damage modifier pins - the four damage modifiers added to the damage dice for each hit",
+   "expr": "m['dipOADamageModifierCount']() != 4"
+  },
+  {
+   "note": "the step 1 and 2 doctrine pins - surprise often impossible, actions stated first, the subdue/disarm/unhorse announcement",
+   "expr": "m['dipOASurpriseSometimesNil']() != 1 or m['dipOAActionsStatedFirst']() != 1 or m['dipOASubdueDisarmUnhorseAnnounced']() != 1"
+  },
+  {
+   "note": "the step 3 doctrine pins - initiative only without surprise, the kensai and wu jen initiative modifiers",
+   "expr": "m['dipOAInitiativeOnlyWithoutSurprise']() != 1 or m['dipOAKensaiWuJenInitMods']() != 1"
+  },
+  {
+   "note": "the step 4 doctrine pins - the kensai/wu jen first-strike, the ki declarations before the hit die and before the saves, the separate subdual record",
+   "expr": "m['dipOAKensaiWuJenFirstAttack']() != 1 or m['dipOAKiStatedBeforeHitDie']() != 1 or m['dipOAShukKiStatedBeforeSave']() != 1 or m['dipOASubdualRecordedSeparately']() != 1"
+  },
+  {
+   "note": "the step 5 pin - the initiative loser then performs step 4, closing the five-step round",
+   "expr": "m['dipOALoserSideRepeatsStepFour']() != 1"
+  },
+  {
+   "note": "the die pins read together - the 1d6 surprise read of the 1-2 band, the 1d6 initiative, the 1d20 to hit",
+   "expr": "m['dipOASurpriseDieSides']() != m['dipOAInitiativeDieSides']() or m['dipOAHitDieSides']() != 20 or m['dipOASurpriseRollMax']() > m['dipOASurpriseDieSides']()"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the combat sequence shape pins": [
+   {
+    "kind": "const",
+    "name": "dipOACombatSequenceSteps"
+   },
+   {
+    "kind": "const",
+    "name": "dipOASurpriseDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "dipOASurpriseRollMax"
+   },
+   {
+    "kind": "const",
+    "name": "dipOAInitiativeDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "dipOAHitDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "dipOADamageModifierCount"
+   }
+  ],
+  "the combat sequence doctrine pins": [
+   {
+    "kind": "bool",
+    "name": "dipOASurpriseSometimesNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dipOAActionsStatedFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "dipOASubdueDisarmUnhorseAnnounced"
+   },
+   {
+    "kind": "bool",
+    "name": "dipOAInitiativeOnlyWithoutSurprise"
+   },
+   {
+    "kind": "bool",
+    "name": "dipOAKensaiWuJenInitMods"
+   },
+   {
+    "kind": "bool",
+    "name": "dipOAKensaiWuJenFirstAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "dipOAKiStatedBeforeHitDie"
+   },
+   {
+    "kind": "bool",
+    "name": "dipOAShukKiStatedBeforeSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dipOASubdualRecordedSeparately"
+   },
+   {
+    "kind": "bool",
+    "name": "dipOALoserSideRepeatsStepFour"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Summary of the Combat Sequence box closes",
+   "from": "  - [ ] Summary Of The Combat Sequence (capture\n    p. 218)",
+   "to": "  - [x] Summary Of The Combat Sequence (capture\n    p. 218) - R679: the dip combat sequence\n    pins - the five resolution steps: the\n    1-2 on 1d6 surprise read with the\n    impossibility clause, the declared actions\n    with the subdue/disarm/unhorse announcement,\n    the 1d6 initiative only without surprise\n    with the kensai and wu jen modifiers and\n    first-strike rule, the 1d20 to hit against\n    the combat table with the ki declarations\n    before the die and before the saves, the\n    four damage modifiers with the subdual\n    damage recorded separately, and the\n    initiative loser performing step 4 - the\n    first single-pass round, the compressed\n    capture ending mid ninth level spells"
+  }
+ ],
+ "gap_census": {
+  "closed": 132,
+  "open": 103
+ },
+ "include_comment": "the OA combat sequence pins",
+ "include_after": "#include \"rules/oawjl9spells.h\"  // R678: the OA wu jen ninth level spells pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R678 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R678 LANDED 2026-10-20: commit",
+  "  b44639162fbf8227a45070dfd3b28dcf0f059e89",
+  "  (census 600 -> 601, pushed 3039a76..b446391),",
+  "  WU JEN NINTH LEVEL SPELLS - the",
+  "  13 ninth level wu jen spell stat",
+  "  blocks, capture pp. 213-216: THE",
+  "  WU JEN SPELL BOOK GRID CLOSED -",
+  "  all nine levels pinned (R670-R678,",
+  "  197 stat blocks).",
+  "  rules/oawjl9spells.h, prefix dio",
+  "  (din TAKEN - the dinosaurSubBands",
+  "  call collides with the engine",
+  "  paren gate, the first prefix lost",
+  "  to a real symbol), ONE gap flip,",
+  "  14 consts, 20 inlines (grid tag",
+  "  WJL9Data, 13 rows x 6 cols), gap",
+  "  census 130/105 -> 131/104: all 13",
+  "  stat blocks cross-checked spell by",
+  "  spell between the passes (print",
+  "  pp. 213-216 vs compressed pp.",
+  "  97-98), zero contested stat reads -",
+  "  the roster carrying two garbles",
+  "  (Instant Regenerate, Power Word.",
+  "  III) against the clean stat-block",
+  "  headings in both passes,",
+  "  roster-only variances outside the",
+  "  grid. SIX nine-segment casts",
+  "  (astral spell, crystalbrittle,",
+  "  gate, imprisonment, shape change,",
+  "  time stop) - the ninth level",
+  "  signature, the most common cast of",
+  "  the level; the opening quartet",
+  "  (astral spell, crystalbrittle,",
+  "  gate, imprisonment) all V,S only.",
+  "  Wish carries BOTH the lone Special",
+  "  cast (pinned -1, the R662",
+  "  convention) and the special save;",
+  "  power word kill, time stop and",
+  "  wish the three verbal-only. Summon",
+  "  spirit the lone dual",
+  "  (Conjuration/Summoning; Necromantic)",
+  "  pinned primary conjuration 4;",
+  "  conjuration the most common school",
+  "  at five; imprisonment the lone",
+  "  abjuration and the one reversible;",
+  "  tsunami the lone half save;",
+  "  instant regeneration the lone",
+  "  necromantic. The element column",
+  "  closes the book cross-check:",
+  "  crystalbrittle Earth, internal fire",
+  "  Fire, tsunami Water, matching the",
+  "  R669 dieWJT66L9Element grid",
+  "  exactly. rverify GREEN first try at",
+  "  3039a76, 92 mutants, 0 missed.",
+  "  Spec md5 4539a2084a2a26487f7315b5",
+  "  006669af (authored-plus-newline md5",
+  "  3981679decea584275e5e8e5c52c59f3 -",
+  "  the value the ritual gated and",
+  "  matched; canvas md5",
+  "  c5f6eb65052a57a412000e75fb1832ab).",
+  "  NEXT - R679: the OA Chapter 9",
+  "  Combat arc opens - the Summary of",
+  "  the Combat Sequence (capture p.",
+  "  218), prefix dip (verify free at",
+  "  b446391 - only comment-word dips,",
+  "  the R669 die precedent), audit",
+  "  \"R679 OA combat sequence audit\",",
+  "  include after rules/oawjl9spells.h"
+ ]
+}

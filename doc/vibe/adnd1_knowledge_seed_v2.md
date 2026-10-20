@@ -14894,6 +14894,74 @@ when both halves land.
   3039a76), audit "R678 OA wu jen
   ninth level spells audit", include
   after rules/oawjl8spells.h
+- R678 LANDED 2026-10-20: commit
+  b44639162fbf8227a45070dfd3b28dcf0f059e89
+  (census 600 -> 601, pushed 3039a76..b446391),
+  WU JEN NINTH LEVEL SPELLS - the
+  13 ninth level wu jen spell stat
+  blocks, capture pp. 213-216: THE
+  WU JEN SPELL BOOK GRID CLOSED -
+  all nine levels pinned (R670-R678,
+  197 stat blocks).
+  rules/oawjl9spells.h, prefix dio
+  (din TAKEN - the dinosaurSubBands
+  call collides with the engine
+  paren gate, the first prefix lost
+  to a real symbol), ONE gap flip,
+  14 consts, 20 inlines (grid tag
+  WJL9Data, 13 rows x 6 cols), gap
+  census 130/105 -> 131/104: all 13
+  stat blocks cross-checked spell by
+  spell between the passes (print
+  pp. 213-216 vs compressed pp.
+  97-98), zero contested stat reads -
+  the roster carrying two garbles
+  (Instant Regenerate, Power Word.
+  III) against the clean stat-block
+  headings in both passes,
+  roster-only variances outside the
+  grid. SIX nine-segment casts
+  (astral spell, crystalbrittle,
+  gate, imprisonment, shape change,
+  time stop) - the ninth level
+  signature, the most common cast of
+  the level; the opening quartet
+  (astral spell, crystalbrittle,
+  gate, imprisonment) all V,S only.
+  Wish carries BOTH the lone Special
+  cast (pinned -1, the R662
+  convention) and the special save;
+  power word kill, time stop and
+  wish the three verbal-only. Summon
+  spirit the lone dual
+  (Conjuration/Summoning; Necromantic)
+  pinned primary conjuration 4;
+  conjuration the most common school
+  at five; imprisonment the lone
+  abjuration and the one reversible;
+  tsunami the lone half save;
+  instant regeneration the lone
+  necromantic. The element column
+  closes the book cross-check:
+  crystalbrittle Earth, internal fire
+  Fire, tsunami Water, matching the
+  R669 dieWJT66L9Element grid
+  exactly. rverify GREEN first try at
+  3039a76, 92 mutants, 0 missed.
+  Spec md5 4539a2084a2a26487f7315b5
+  006669af (authored-plus-newline md5
+  3981679decea584275e5e8e5c52c59f3 -
+  the value the ritual gated and
+  matched; canvas md5
+  c5f6eb65052a57a412000e75fb1832ab).
+  NEXT - R679: the OA Chapter 9
+  Combat arc opens - the Summary of
+  the Combat Sequence (capture p.
+  218), prefix dip (verify free at
+  b446391 - only comment-word dips,
+  the R669 die precedent), audit
+  "R679 OA combat sequence audit",
+  include after rules/oawjl9spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
