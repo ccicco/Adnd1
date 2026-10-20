@@ -14493,6 +14493,76 @@ when both halves land.
   "R673 OA wu jen fourth level spells
   audit", include after
   rules/oawjl3spells.h
+- R673 LANDED 2026-10-20: commit fba4d3493287cee1363dc6c74ea0358ce879d100
+  (census 595 -> 596, pushed f6b10e5..fba4d34),
+  WU JEN FOURTH LEVEL SPELLS - the 24
+  fourth level wu jen spell stat
+  blocks, capture pp. 181-188:
+  rules/oawjl4spells.h, prefix dii
+  (verified free at f6b10e5), ONE gap
+  flip (single-line child label), 21
+  consts, 27 inlines (grid tag
+  WJL4Data, 24 rows x 6 cols), gap
+  census 125/110 -> 126/109: all 24
+  stat blocks cross-checked spell by
+  spell between the passes (print pp.
+  181-188 vs compressed pp. 85-88),
+  zero contested stat reads (the
+  variances typographic or prose-only -
+  the compressed minus signs for the
+  spectral force plus signs, the
+  degree marks for the inch marks).
+  THE INVOCATION SCHOOL DEBUTS for
+  the wu jen (dream vision, vengeance,
+  both code 8); wall of bones the
+  lone conjuration, its dual school
+  Conjuration/Necromantic pinned
+  primary 4 (the exaction precedent);
+  alteration and enchantment/charm tie
+  at six each, evocation four,
+  abjuration three, illusion two; no
+  divination spell this level. THREE
+  verbal-only spells (dimension door,
+  polymorph self, vengeance), 13 VSM,
+  seven VS, shout the lone V,M.
+  Casts: seven four-segment (the most
+  common), seven one-round, three
+  one-turn, four three-segment,
+  dimension door and shout the single
+  segments, elemental turning the lone
+  five. Eight negation saves, three
+  special, NO half save - the first
+  wu jen level without one. Three
+  reversible (dream vision, remove
+  curse, reverse flow). The SIXTH
+  column cross-checks the R669
+  dieWJT66L4Element grid - the seven
+  tagged cells matching exactly
+  (dimension door Earth, elemental
+  turning All, fire enchantment, melt
+  metal and wall of fire Fire, plant
+  growth and polymorph other Nature).
+  ONE rverify RED on the way: a
+  casting-time example misindexed
+  polymorph other (cast 4) where it
+  meant transfix (cast 10) - the
+  healthy-base gate caught it, fixed,
+  second run GREEN. rverify GREEN at
+  f6b10e5, 165 mutants, 0 missed.
+  Spec md5
+  360c0d66abef99e31c5ff2e7b870fe52
+  (authored-plus-newline md5
+  da829f84dca0d3c4be8574cb22f01f1b -
+  the value the ritual gated and
+  matched; canvas md5
+  d8dc875318e0e29b3c0e64089e6811e9).
+  NEXT - R674: the wu jen Fifth
+  Level Spells (capture pp. 189-196,
+  the 24 stat blocks), prefix dij
+  (verified free at fba4d34), audit
+  "R674 OA wu jen fifth level spells
+  audit", include after
+  rules/oawjl4spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

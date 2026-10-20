@@ -1165,7 +1165,23 @@ description riding the same round.
     between the passes); the names ride the
     column comments, the prose descriptions
     close in their own rounds
-  - [ ] Fifth Level Spells (capture pp. 189-196)
+  - [x] Fifth Level Spells (capture pp. 189-196) -
+    R674: the dij WJL5 stat grid - the 24
+    fifth level wu jen spells with the school,
+    component, casting time, saving throw,
+    reversible and element codes (the element
+    cells cross-checking the R669 T66 grid -
+    the richest element column yet with
+    water to poison the Nature/Water dual;
+    aiming at the target and shadow door the
+    first somatic-only spells; animate dead the
+    five-round 50-segment cast; dismissal the
+    lone abjuration with its triple-line print
+    pinned primary; the stat blocks
+    cross-checked spell by spell between the
+    passes); the names ride the column
+    comments, the prose descriptions close in
+    their own rounds
   - [ ] Sixth Level Spells (capture pp. 196-203)
   - [ ] Seventh Level Spells (capture pp. 203-207)
   - [ ] Eighth Level Spells (capture pp. 207-213)
