@@ -1720,7 +1720,31 @@ description riding the same round.
     Chapter 9 provenance shift
   - [ ] Yearly Events prose and explanations
     (capture pp. 237-243)
-  - [ ] Table 71: Yearly Events (capture p. 237)
+  - [x] Table 71: Yearly Events (capture
+    p. 237) - R697: the djk yearly events
+    grid pins - the nineteen events of
+    the percentile die with the ranges
+    contiguous 1-100: Ambassador 1-10,
+    Assassination of a Lord 11-15, Birth
+    16-30, Comet the lone 31, Death of
+    a Lord 32-40, Earthquake Major
+    41-43, Famine 44-47, Fire Major
+    48-52, Flood 53-57, Incursion Major
+    the lone 58, Marriage 59-68, New
+    Religion the lone 69, Plague 70-74,
+    Political Plot 75-78, Rebellion
+    79-85, Tsunami the lone 86,
+    Visitation the lone 87, Volcano the
+    lone 88, War the 89-100 - the
+    widest range, the likeliest year;
+    the one-event-per-year rule (the
+    first determination, the whole-year
+    effect, the monthly type steered),
+    the 1d12 occurrence month, the
+    campaign-area scope with an event
+    per land of involvement; single-pass
+    pins per the Chapter 9
+    provenance shift
   - [ ] Monthly Events prose and explanations
     (capture pp. 238-247)
   - [ ] Table 72: Monthly Events (capture p. 238)

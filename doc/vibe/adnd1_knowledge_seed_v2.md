@@ -15791,6 +15791,56 @@ when both halves land.
   (verified free at 61d0647), audit
   "R696 OA calendar audit", include
   after rules/oalearn.h
+- R696 LANDED 2026-10-20: commit
+  918b6cbad0a1f723e64f90febfdaaba
+  d30980961 (census 618 -> 619, pushed
+  61d0647..918b6cb), OA THE CALENDAR -
+  the twelve months of the Shou Lung
+  calendar with their day counts and
+  festival counts, capture pp. 236-237
+  print: rules/oacalendar.h, prefix
+  djj (verified free at 61d0647), ONE
+  gap flip, gap census 148/87 ->
+  149/86. 2 consts + 7 bools + the
+  12x2 grid OACalendarData (11
+  inlines): the emperor origin (Shou
+  Lung, the regular holidays fixed),
+  the common use throughout the
+  civilized lands, the new year in
+  February or March; the months
+  (Tsou 30/8 the richest - New Year's
+  Festival, God of Heaven, Feast of
+  Lanterns, God of Spring, God of
+  Wealth, Fertility Festival, God of
+  Happiness, God of Learning; Ju 30/2,
+  Yu 30/3, Kao 30/2, Kao II 29/3, Chu
+  30/0 none printed, Hsiang 29/2,
+  Chuang 30/4, Hsuan 30/4, Yang 29/1,
+  Ku 30/0 none printed, Tu 29/1 the
+  Kings' Festival); the 356-day year -
+  the eight 30s plus the four 29s
+  (Kao II, Hsiang, Yang, Tu); the
+  observance kinds - festivals lasting
+  days to weeks, feasts the banquets,
+  holy days per the local religion and
+  character, observances simple. One
+  preflight RED: a derived example
+  summed Tsou+KaoII+Yang as 89 (the
+  true 88), caught by the audit
+  mirror pre-publish, fixed. Single-
+  pass pins per the Chapter 9
+  provenance shift. rverify GREEN at
+  61d0647, 33 mutants, 0 missed. Spec
+  md5 2179466c9f2ca88fa2bfc5ee2287b7e4
+  (authored-plus-newline md5 241cc1b6
+  98f682313a89bfb3abdd529c - the value
+  the ritual gated and matched; canvas
+  md5 75a3a06ad086c05d093d45d9f556efa4).
+  NEXT - R697: Table 71 the yearly
+  events grid (capture p. 237), prefix
+  djk (verified free at 918b6cb),
+  audit "R697 OA yearly events audit",
+  include after rules/oacalendar.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

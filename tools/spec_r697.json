@@ -1,0 +1,274 @@
+{
+ "round": 697,
+ "title": "OA TABLE 71 - the yearly events: the nineteen events of the percentile die with their contiguous ranges 1-100",
+ "prefix": "djk",
+ "header_file": "rules/oa71yearly.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 619,
+ "inline_count": 8,
+ "audit_label": "R697 OA yearly events audit",
+ "audit_comment": "OA round eighty-four (capture p. 237): Table 71 - the yearly events grid, the nineteen events across the percentile die with the contiguous ranges, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TABLE 71, printed capture p. 237 - the yearly events round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE GRID: the nineteen yearly events across the percentile die, the ranges contiguous and complete - Ambassador 1-10; Assassination of a Lord 11-15; Birth 16-30; Comet the lone 31; Death of a Lord 32-40; Earthquake Major 41-43; Famine 44-47; Fire Major 48-52; Flood 53-57; Incursion Major the lone 58; Marriage 59-68; New Religion the lone 69; Plague 70-74; Political Plot 75-78; Rebellion 79-85; Tsunami the lone 86; Visitation the lone 87; Volcano the lone 88; War the 89-100 - the widest range, war the likeliest of the year. THE USE: the yearly event determined FIRST, one only in a given year, remaining in effect for the entire year and often determining the type of the monthly events; the occurrence month the 1d12 roll; the scope the campaign area alone, or one event per land when the player characters travel or spread. The grid codifies per the R431 calculus",
+  "sentinel": "the gap census after this round: 150 closed, 85 open - the Table 71 box flips (census 619 -> 620); NEXT - R698: the Yearly Events prose and explanations (capture pp. 237-243), prefix djl (verify free at the landing), audit \"R698 OA yearly events prose audit\", include after rules/oa71yearly.h"
+ },
+ "consts": [
+  {
+   "name": "djkOA71EventCount",
+   "value": 19,
+   "comment": "the Table 71 event count - the nineteen yearly events across the percentile die, the loop bound of the emitted grid audit (print capture p. 237)"
+  },
+  {
+   "name": "djkOA71WarMin",
+   "value": 89,
+   "comment": "the War range minimum - the 89 of the 89-100, the widest range of the table, war the likeliest yearly event (print capture p. 237)"
+  },
+  {
+   "name": "djkOA71WarMax",
+   "value": 100,
+   "comment": "the War range maximum - the 100 of the 89-100 (print capture p. 237)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djkOA71OnePerYear",
+   "value": true,
+   "comment": "the yearly event rule - only one yearly event in a given year, determined first and remaining in effect for the entire year, often determining the type of monthly events that occur (print capture p. 237)"
+  },
+  {
+   "name": "djkOA71Month1d12",
+   "value": true,
+   "comment": "the occurrence month - once the yearly event is known, 1d12 rolled to find the month it occurs in or begins (print capture p. 237)"
+  },
+  {
+   "name": "djkOA71CampaignAreaOnly",
+   "value": true,
+   "comment": "the scope - yearly events normally figured only for the campaign area, but a traveling group or several groups meaning one yearly event per land of involvement (the Kozakura and Shou Lung example) (print capture p. 237)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "djkOA71Grid",
+   "tag": "OA71Data",
+   "count": "djkOA71EventCount",
+   "col_default": 0,
+   "cols": [
+    "djkOA71MinRoll",
+    "djkOA71MaxRoll"
+   ],
+   "col_comments": [
+    "the Table 71 minimum rolls by row ordinal (print capture p. 237): Ambassador 1, Assassination 11, Birth 16, Comet 31, Death of a Lord 32, Earthquake 41, Famine 44, Fire 48, Flood 53, Incursion 58, Marriage 59, New Religion 69, Plague 70, Political Plot 75, Rebellion 79, Tsunami 86, Visitation 87, Volcano 88, War 89 - the ranges contiguous, each event beginning where the last ended",
+    "the Table 71 maximum rolls by row ordinal (print capture p. 237): Ambassador 10, Assassination 15, Birth 30, Comet 31, Death of a Lord 40, Earthquake 43, Famine 47, Fire 52, Flood 57, Incursion 58, Marriage 68, New Religion 69, Plague 74, Political Plot 78, Rebellion 85, Tsunami 86, Visitation 87, Volcano 88, War 100 - the six single-roll events (Comet, Incursion, New Religion, Tsunami, Visitation, Volcano) and the War closing the table at 100"
+   ],
+   "data": [
+    [
+     1,
+     10
+    ],
+    [
+     11,
+     15
+    ],
+    [
+     16,
+     30
+    ],
+    [
+     31,
+     31
+    ],
+    [
+     32,
+     40
+    ],
+    [
+     41,
+     43
+    ],
+    [
+     44,
+     47
+    ],
+    [
+     48,
+     52
+    ],
+    [
+     53,
+     57
+    ],
+    [
+     58,
+     58
+    ],
+    [
+     59,
+     68
+    ],
+    [
+     69,
+     69
+    ],
+    [
+     70,
+     74
+    ],
+    [
+     75,
+     78
+    ],
+    [
+     79,
+     85
+    ],
+    [
+     86,
+     86
+    ],
+    [
+     87,
+     87
+    ],
+    [
+     88,
+     88
+    ],
+    [
+     89,
+     100
+    ]
+   ],
+   "comment": "Table 71: the yearly events - the nineteen events with their percentile ranges (print capture p. 237)",
+   "audit_comment": "the Table 71 grid - the nineteen events across two columns"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the wide ranges - Ambassador 1-10, Birth 16-30, War 89-100",
+   "expr": "m['djkOA71MinRoll'](0) != 1 or m['djkOA71MaxRoll'](0) != 10 or m['djkOA71MinRoll'](2) != 16 or m['djkOA71MaxRoll'](2) != 30 or m['djkOA71MinRoll'](18) != 89 or m['djkOA71MaxRoll'](18) != 100"
+  },
+  {
+   "note": "the single-roll events - Comet 31, Incursion 58, New Religion 69, Tsunami 86, Visitation 87, Volcano 88",
+   "expr": "m['djkOA71MinRoll'](3) != 31 or m['djkOA71MaxRoll'](3) != 31 or m['djkOA71MaxRoll'](9) != 58 or m['djkOA71MaxRoll'](11) != 69 or m['djkOA71MaxRoll'](15) != 86 or m['djkOA71MaxRoll'](16) != 87 or m['djkOA71MaxRoll'](17) != 88"
+  },
+  {
+   "note": "the middle events - Earthquake 41-43, Famine 44-47, Fire 48-52, Flood 53-57, Marriage 59-68",
+   "expr": "m['djkOA71MinRoll'](5) != 41 or m['djkOA71MaxRoll'](5) != 43 or m['djkOA71MinRoll'](6) != 44 or m['djkOA71MaxRoll'](7) != 52 or m['djkOA71MinRoll'](8) != 53 or m['djkOA71MaxRoll'](8) != 57 or m['djkOA71MinRoll'](10) != 59 or m['djkOA71MaxRoll'](10) != 68"
+  },
+  {
+   "note": "the late events - Plague 70-74, Political Plot 75-78, Rebellion 79-85",
+   "expr": "m['djkOA71MinRoll'](12) != 70 or m['djkOA71MaxRoll'](12) != 74 or m['djkOA71MinRoll'](13) != 75 or m['djkOA71MaxRoll'](13) != 78 or m['djkOA71MinRoll'](14) != 79 or m['djkOA71MaxRoll'](14) != 85"
+  },
+  {
+   "note": "the contiguity - each row beginning where the last ended, the 100 the close",
+   "expr": "m['djkOA71MaxRoll'](0) + 1 != m['djkOA71MinRoll'](1) or m['djkOA71MaxRoll'](4) + 1 != m['djkOA71MinRoll'](5) or m['djkOA71MaxRoll'](18) != 100 or m['djkOA71EventCount']() != 19 or m['djkOA71WarMin']() != 89 or m['djkOA71WarMax']() != 100"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 71 yearly events grid": [
+   {
+    "kind": "table",
+    "name": "djkOA71Grid"
+   },
+   {
+    "kind": "const",
+    "name": "djkOA71EventCount"
+   },
+   {
+    "kind": "const",
+    "name": "djkOA71WarMin"
+   },
+   {
+    "kind": "const",
+    "name": "djkOA71WarMax"
+   },
+   {
+    "kind": "bool",
+    "name": "djkOA71OnePerYear"
+   },
+   {
+    "kind": "bool",
+    "name": "djkOA71Month1d12"
+   },
+   {
+    "kind": "bool",
+    "name": "djkOA71CampaignAreaOnly"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 71 box closes",
+   "from": "  - [ ] Table 71: Yearly Events (capture p. 237)",
+   "to": "  - [x] Table 71: Yearly Events (capture\n    p. 237) - R697: the djk yearly events\n    grid pins - the nineteen events of\n    the percentile die with the ranges\n    contiguous 1-100: Ambassador 1-10,\n    Assassination of a Lord 11-15, Birth\n    16-30, Comet the lone 31, Death of\n    a Lord 32-40, Earthquake Major\n    41-43, Famine 44-47, Fire Major\n    48-52, Flood 53-57, Incursion Major\n    the lone 58, Marriage 59-68, New\n    Religion the lone 69, Plague 70-74,\n    Political Plot 75-78, Rebellion\n    79-85, Tsunami the lone 86,\n    Visitation the lone 87, Volcano the\n    lone 88, War the 89-100 - the\n    widest range, the likeliest year;\n    the one-event-per-year rule (the\n    first determination, the whole-year\n    effect, the monthly type steered),\n    the 1d12 occurrence month, the\n    campaign-area scope with an event\n    per land of involvement; single-pass\n    pins per the Chapter 9\n    provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 150,
+  "open": 85
+ },
+ "include_comment": "the OA Table 71 yearly events pins",
+ "include_after": "#include \"rules/oacalendar.h\"  // R696: the OA calendar pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R696 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R696 LANDED 2026-10-20: commit",
+  "  918b6cbad0a1f723e64f90febfdaaba",
+  "  d30980961 (census 618 -> 619, pushed",
+  "  61d0647..918b6cb), OA THE CALENDAR -",
+  "  the twelve months of the Shou Lung",
+  "  calendar with their day counts and",
+  "  festival counts, capture pp. 236-237",
+  "  print: rules/oacalendar.h, prefix",
+  "  djj (verified free at 61d0647), ONE",
+  "  gap flip, gap census 148/87 ->",
+  "  149/86. 2 consts + 7 bools + the",
+  "  12x2 grid OACalendarData (11",
+  "  inlines): the emperor origin (Shou",
+  "  Lung, the regular holidays fixed),",
+  "  the common use throughout the",
+  "  civilized lands, the new year in",
+  "  February or March; the months",
+  "  (Tsou 30/8 the richest - New Year's",
+  "  Festival, God of Heaven, Feast of",
+  "  Lanterns, God of Spring, God of",
+  "  Wealth, Fertility Festival, God of",
+  "  Happiness, God of Learning; Ju 30/2,",
+  "  Yu 30/3, Kao 30/2, Kao II 29/3, Chu",
+  "  30/0 none printed, Hsiang 29/2,",
+  "  Chuang 30/4, Hsuan 30/4, Yang 29/1,",
+  "  Ku 30/0 none printed, Tu 29/1 the",
+  "  Kings' Festival); the 356-day year -",
+  "  the eight 30s plus the four 29s",
+  "  (Kao II, Hsiang, Yang, Tu); the",
+  "  observance kinds - festivals lasting",
+  "  days to weeks, feasts the banquets,",
+  "  holy days per the local religion and",
+  "  character, observances simple. One",
+  "  preflight RED: a derived example",
+  "  summed Tsou+KaoII+Yang as 89 (the",
+  "  true 88), caught by the audit",
+  "  mirror pre-publish, fixed. Single-",
+  "  pass pins per the Chapter 9",
+  "  provenance shift. rverify GREEN at",
+  "  61d0647, 33 mutants, 0 missed. Spec",
+  "  md5 2179466c9f2ca88fa2bfc5ee2287b7e4",
+  "  (authored-plus-newline md5 241cc1b6",
+  "  98f682313a89bfb3abdd529c - the value",
+  "  the ritual gated and matched; canvas",
+  "  md5 75a3a06ad086c05d093d45d9f556efa4).",
+  "  NEXT - R697: Table 71 the yearly",
+  "  events grid (capture p. 237), prefix",
+  "  djk (verified free at 918b6cb),",
+  "  audit \"R697 OA yearly events audit\",",
+  "  include after rules/oacalendar.h"
+ ]
+}
