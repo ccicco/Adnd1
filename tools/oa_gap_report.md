@@ -1093,8 +1093,20 @@ description riding the same round.
 
 - [ ] **Chapter 8: Wu Jen Spells** (capture pp.
   152-216) - the wu jen spell book
-  - [ ] Table 66: Wu Jen Spells (capture p. 153) - the
+  - [x] Table 66: Wu Jen Spells (capture p. 153) - the
     full spell list by level
+    R669: the die WJT66 element grid - the
+    195 wu jen spells across the nine levels
+    (30/30/24/24/24/24/12/14/13) with the
+    elemental marks (Earth the most common
+    at 16, the lone Wood mark, the two
+    duals and 131 untagged; the roster
+    cross-checked name by name between the
+    passes, Glassee settled from the
+    compressed against the print OCR); the
+    names ride the column comments, the
+    spell descriptions close in their own
+    rounds
   - [ ] First Level Spells (capture pp. 155-165)
   - [ ] Second Level Spells (capture pp. 165-170)
   - [ ] Third Level Spells (capture pp. 170-177)

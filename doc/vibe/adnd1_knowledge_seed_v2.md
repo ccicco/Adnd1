@@ -14176,6 +14176,62 @@ when both halves land.
   after rules/oat64speakdead.h; then the
   wu jen spell chapter (Chapter 8: Table
   66 and L1-L9)
+- R668 LANDED 2026-10-20: commit f2ddaaaf29a2e3f0ff642ba408e997403d50babb
+  (census 590 -> 591, pushed eb88e69..f2ddaaa),
+  TABLE 65 FATE - the twelve fate bands of
+  the 1d20 roll, capture p. 135:
+  rules/oat65fate.h, prefix did (the
+  dic GUESS WAS WRONG - the dice()
+  helpers occupy it, caught by the
+  engine's prefix gate at the first run;
+  did verified free at eb88e69), ONE gap
+  flip (single-line child label), 6
+  consts, 1 chain, 8 inlines (grid tag
+  T65Data, 12 rows x 1 col), gap census
+  120/115 -> 121/114 - THE SHUKENJA
+  CHAPTER BOXES ALL CLOSED: the twelve
+  band rows cross-checked line by line
+  between the passes (print p. 135 vs
+  compressed p. 66), zero contested reads
+  - the outcome prose agrees verbatim.
+  The bands pin as a chain (the 1d20
+  mapped to its band: rolls 1, 2, 3 the
+  single-face bands, 4-5, 6-7, 8-9 and
+  16-17 the two-face pairs, 10-12 and
+  13-15 the three-face widest bands at
+  the ladder middle, 18, 19 and 20 the
+  single-face tail) and a one-column
+  face-width grid (six single, four
+  two-face, two three-face bands summing
+  to the twenty die faces); the outcomes
+  are DM-adventure prose riding the
+  column comment, NOT pinned cells; the
+  one-fate-at-a-time rule pins as the
+  didT65FateLimit const. SECOND authoring
+  repair: a census example using Python
+  comprehensions does not survive the
+  py-to-C++ audit translation (the
+  engine aborted on a split identifier,
+  the R426 class) - replaced with plain
+  equality chains and subtotals. rverify
+  GREEN at eb88e69, 29 mutants, 0
+  missed; preflight GREEN (591 audit
+  census, BUILD 0 warnings). Spec md5
+  0b96e7648637efda1e880a9885128daf
+  (authored-plus-newline md5
+  2d679b2311d1d3b0e7332f43d25b55dc -
+  the value the ritual gated and matched;
+  canvas md5
+  2aabe785a022e754d048fe847df55945).
+  NEXT - R669: the wu jen spell chapter
+  OPENS - Table 66 Wu Jen Spells
+  (capture p. 153, the full spell list by
+  level), prefix die (verify free - the
+  dice() lesson: check the engine's
+  call-site regex, not just whole-word
+  grep), audit "R669 OA wu jen spell
+  list audit", include after
+  rules/oat65fate.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
