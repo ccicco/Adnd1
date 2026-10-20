@@ -1538,9 +1538,74 @@ description riding the same round.
     from the other methods; the gradual
     learning; single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Principal Methods prose (capture pp. 228-232)
-    - movement, push, strike, throw, vital area and
-    weapon
+  - [x] Principal Methods prose (capture pp.
+    228-232) - R693: the djg pins of the
+    eight method descriptions: kick
+    (Circle Kick the double damage and
+    the lost next attack; Flying Kick the
+    triple damage of the five-foot run;
+    Backward Kick behind without facing,
+    miss harmless), lock (the Choke Hold
+    -2 escapes per attack and the 1-3
+    round unconsciousness; the Locking
+    Block scissors trap, the feet-only +4,
+    the weapon damage on a miss; the
+    Incapacitator double damage and the
+    24-hour limb before the save vs.
+    paralyzation; the one-hand
+    Immobilizing with the -6 escape and
+    the -4 miss), movement (the Feint
+    +2; the constant Prone Fighting,
+    Instant Stand alone beside it; the
+    Immovability auto-save; the Missile
+    Deflection save per attack, awareness
+    required; the Leap standing 4 up 3
+    forward, running 8 up 10 forward, a
+    foot per level, one attack the cost;
+    the Speed doubling attacks and the
+    combat movement only, once per day,
+    five rounds, then the rest; the Slow
+    Resistance automatic), push (the
+    Concentrated Push a foot per level,
+    the three-foot save threshold, the
+    fall damage into a solid object, the
+    +2 against the character on a miss;
+    the Sticking Touch +2 to hit and two
+    better AC; the One Finger push at a
+    foot per level, the round's only
+    action), strike (the Iron Fist 1d10;
+    the Crushing Blow half-foot wood and
+    quarter-foot stone per level, the
+    living target normal plus level, the
+    hurt hand on the missed hard object;
+    the Eagle Claw 3d10 - the OCR
+    artifact 3410 resolved - shafts
+    snapped, metal crushed), throw (the
+    constant Fall at half damage; the
+    Instant Stand in place of an attack;
+    the Hurl 1d4 feet, double damage,
+    the miss costing attacks and
+    initiative; the Great Throw a foot per
+    level standing, six plus a foot per
+    level against a charge, triple
+    damage), vital area (human and
+    humanoid only - the Pain Touch
+    -2/+2 for 1-3 rounds; the Stunning
+    Touch 1d4 rounds before the save; the
+    Paralyzing Touch 1d6 turns before
+    the save; the Distance Death with
+    Pain unsavable, Stunning saved at
+    -2, or the triple damage), weapon
+    (the martial-arts-exclusive weapons
+    only - the Weapon Catch lock and +2
+    with the disarm on a miss; the
+    Weapon Breaker against melee weapons
+    alone, the save vs. crushing blow,
+    the bo stick vs the sword; the Steel
+    Cloth six to ten feet rigid as a
+    spear that cannot be thrown,
+    automatic); single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Mental and Physical Training with Stunning
     and Incapacitating (capture pp. 232-233)
   - [ ] Learning Martial Arts with Multiple Styles

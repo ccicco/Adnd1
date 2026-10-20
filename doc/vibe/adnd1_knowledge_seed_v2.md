@@ -15535,6 +15535,59 @@ when both halves land.
   (verified free at 3a019a9), audit
   "R692 OA special maneuvers audit",
   include after rules/oa69combos.h
+- R692 LANDED 2026-10-20: commit
+  1393818055009697f6597b226615c76e
+  fe60ff6a (census 614 -> 615, pushed
+  3a019a9..1393818), OA TABLE 70 - the
+  martial arts special maneuvers, capture
+  p. 227 print: rules/oa70maneuvers.h,
+  prefix djf (verified free at 3a019a9),
+  ONE gap flip, gap census 144/91 ->
+  145/90. The 36x3 grid OA70Data across
+  the nine method columns (Kick 3:
+  Circle Kick, Flying Kick, Backward
+  Kick; Movement 7 the deepest: Feint,
+  Prone Fighting, Immovability, Missile
+  Deflection, Leap, Speed, Slow
+  Resistance; Strike 3 all hard: Iron
+  Fist, Crushing Blow, Eagle Claw;
+  Weapon 3: Weapon Catch, Weapon
+  Breaker, Steel Cloth; Lock 4: Choke
+  Hold, Locking Block, Incapacitator,
+  Immobilizing; Throw 4: Fall, Instant
+  Stand, Hurl, Great Throw; Mental and
+  Physical Training 6 the any-style
+  category: Meditation, All-Around
+  Sight, Mental Resistance, Blind
+  Fighting, Ironskin, Levitation; Push 3
+  and Vital Area 3 all soft), the
+  method, rank and form columns coded -
+  the form tag 0 hard, 1 soft, 2
+  hard/soft, crossover allowed, the
+  rank progression from 1 on up (the
+  printed Circle Kick 1 Flying Kick 2
+  All-Around Sight 2 Backward Kick 3
+  example); ten consts (the count
+  function djfOA70RowCount plus the nine
+  per-method counts). The jumbled OCR
+  table needed the column
+  reconstruction - the Movement ranks
+  4-7 scattered across header rows,
+  verified against the print. Single-
+  pass pins per the Chapter 9
+  provenance shift. rverify GREEN first
+  try at 3a019a9, 118 mutants, 0
+  missed. Spec md5 9587db3426a69ef442
+  949eadd1056fa1 (authored-plus-newline
+  md5 e80c4c5132259233eccbcd942352e953
+  - the value the ritual gated and
+  matched; canvas md5 d62f1e99828ab4f1
+  42db89f562dcd8c1). NEXT - R693: the
+  Principal Methods prose (capture pp.
+  228-232), prefix djg (verified free at
+  1393818), audit "R693 OA principal
+  methods audit", include after
+  rules/oa70maneuvers.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
