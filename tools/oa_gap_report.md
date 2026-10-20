@@ -1136,7 +1136,20 @@ description riding the same round.
     spell by spell between the passes); the
     names ride the column comments, the prose
     descriptions close in their own rounds
-  - [ ] Third Level Spells (capture pp. 170-177)
+  - [x] Third Level Spells (capture pp. 170-177) -
+    R672: the dih WJL3 stat grid - the 24
+    third level wu jen spells with the school,
+    component, casting time, saving throw,
+    reversible and element codes (the element
+    cells cross-checking the R669 T66 grid;
+    fabricate and face the dual-school prints
+    pinned primary; the three Casting Time:
+    Special lines pinned -1; fire rain and
+    steam breath the half saves; the stat
+    blocks cross-checked spell by spell
+    between the passes); the names ride the
+    column comments, the prose descriptions
+    close in their own rounds
   - [ ] Fourth Level Spells (capture pp. 177-188)
   - [ ] Fifth Level Spells (capture pp. 189-196)
   - [ ] Sixth Level Spells (capture pp. 196-203)

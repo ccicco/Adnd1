@@ -14360,6 +14360,66 @@ when both halves land.
   (verify free), audit "R671 OA wu
   jen second level spells audit",
   include after rules/oawjl1spells.h
+- R671 LANDED 2026-10-20: commit 234a53ba34a0be22ad9a93f1b963225802137cb3
+  (census 593 -> 594, pushed d50aeaf..234a53b),
+  WU JEN SECOND LEVEL SPELLS - the 30
+  second level wu jen spell stat
+  blocks, capture pp. 165-173:
+  rules/oawjl2spells.h, prefix dig
+  (verified free at d50aeaf), ONE gap
+  flip (single-line child label), 20
+  consts, 26 inlines (grid tag
+  WJL2Data, 30 rows x 6 cols), gap
+  census 123/112 -> 124/111: all 30
+  stat blocks cross-checked spell by
+  spell between the passes (print pp.
+  165-173 vs compressed pp. 79-82),
+  zero contested stat reads.
+  Alteration-heavy again: 11 of the 30
+  spells, evocation six, divination
+  and illusion five each, conjuration,
+  enchantment/charm and abjuration one
+  each (animal companion the lone
+  enchantment/charm, protection from
+  charm the lone abjuration). TWO
+  dual-school prints pinned primary
+  alteration (the exaction precedent):
+  bind the Alteration/Enchantment dual
+  and whispering wind the
+  Alteration/Phantasm dual; stinking
+  cloud printed Evocation, pinned 3.
+  The component census: 19 VSM, seven
+  verbal and somatic, hypnotic pattern
+  and vocalize the S,M pairs without
+  the verbal, omen the lone V,M, knock
+  the lone verbal-only oddity. Wind
+  breath alone takes the half save
+  (the wind damage halved); five
+  negation, three special. Casts: 16
+  two-segment, seven one-round, FOUR
+  one-turn (animal companion, enchanted
+  blade, omen, strength), fire shuriken
+  and phantasmal force three-segment,
+  knock the lone single segment. Two
+  reversible (detect evil, locate
+  object). The SIXTH column cross-checks
+  the R669 dieWJT66L2Element grid - the
+  10 tagged cells (six Air, two Water,
+  two Fire) matching exactly. rverify
+  GREEN at d50aeaf, 200 mutants,
+  0 missed. Spec md5
+  b5e2b485a21fccd0be87abde0db17d46
+  (authored-plus-newline md5
+  758efbfae817822006e8460212845f2b -
+  the value the ritual gated and
+  matched; canvas md5
+  5c63deaf787a60efedcc265d05780571).
+  NEXT - R672: the wu jen Third Level
+  Spells (capture pp. 170-177, the 24
+  stat blocks), prefix dih (verified
+  free at 234a53b), audit "R672 OA wu
+  jen third level spells audit",
+  include after rules/oawjl2spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
