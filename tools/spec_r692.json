@@ -1,0 +1,422 @@
+{
+ "round": 692,
+ "title": "OA TABLE 70 - the martial arts special maneuvers: the nine method columns of ranked maneuvers with their hard, soft and hard/soft form tags",
+ "prefix": "djf",
+ "header_file": "rules/oa70maneuvers.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 614,
+ "inline_count": 13,
+ "audit_label": "R692 OA special maneuvers audit",
+ "audit_comment": "OA round seventy-nine (capture p. 227): Table 70 - the martial arts special maneuvers grid, the thirty-six ranked maneuvers across the nine method columns with the hard, soft and hard/soft form tags, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TABLE 70, printed capture p. 227 - the martial arts special maneuvers round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE GRID: thirty-six maneuvers across the nine method columns - 1 Kick (Circle Kick 1, Flying Kick 2, Backward Kick 3), 2 Movement the seven-deep column (Feint 1, Prone Fighting 2, Immovability 3, Missile Deflection 4, Leap 5, Speed 6, Slow Resistance 7), 3 Strike (Iron Fist 1, Crushing Blow 2, Eagle Claw 3), 4 Weapon (Weapon Catch 1, Weapon Breaker 2, Steel Cloth 3), 5 Lock (Choke Hold 1, Locking Block 2, Incapacitator 3, Immobilizing 4), 6 Throw (Fall 1, Instant Stand 2, Hurl 3, Great Throw 4), 7 Mental and Physical Training (Meditation 1, All-Around Sight 2, Mental Resistance 3, Blind Fighting 4, Ironskin 5, Levitation 6), 8 Push (Concentrated Push 1, Sticking Touch 2, One Finger 3), 9 Vital Area (Pain Touch 1, Stunning Touch 2, Paralyzing Touch 3). THE FORM TAGS coded 0 hard, 1 soft, 2 hard/soft - the general classification of the fighting style, crossover allowed; the all-soft columns Push and Vital Area; the Strike column all hard; the Movement column all soft but Speed and Slow Resistance the hard/soft. THE RANKING: the lower number the easier to learn and execute, the progression from 1 on up, more than one maneuver allowed at the same difficulty - the printed Circle Kick 1, Flying Kick 2, All-Around Sight 2, Backward Kick 3 example; a higher maneuver learned only when those beneath it are learned. THE SELECTION: the 1d8 maneuvers of the principal method or the Training list, the second 1-3 roll from the other methods - the arsenal of tactics; the Training category learnable in any style; the maneuvers gained gradually per Learning Martial Arts. The grid codifies per the R431 calculus",
+  "sentinel": "the gap census after this round: 145 closed, 90 open - the Table 70 box flips (census 614 -> 615); NEXT - R693: the Principal Methods prose (capture pp. 228-232), prefix djg (verify free at the landing), audit \"R693 OA principal methods audit\", include after rules/oa70maneuvers.h"
+ },
+ "consts": [
+  {
+   "name": "djfOA70RowCount",
+   "value": 36,
+   "comment": "the Table 70 maneuver count - the thirty-six ranked special maneuvers across the nine method columns, the loop bound of the emitted grid audit (print capture p. 227)"
+  },
+  {
+   "name": "djfOA70KickCount",
+   "value": 3,
+   "comment": "the Kick column maneuver count - Circle Kick, Flying Kick, Backward Kick (print capture p. 227)"
+  },
+  {
+   "name": "djfOA70MoveCount",
+   "value": 7,
+   "comment": "the Movement column maneuver count - the deepest column of the table: Feint, Prone Fighting, Immovability, Missile Deflection, Leap, Speed, Slow Resistance (print capture p. 227)"
+  },
+  {
+   "name": "djfOA70StrikeCount",
+   "value": 3,
+   "comment": "the Strike column maneuver count - Iron Fist, Crushing Blow, Eagle Claw, all hard (print capture p. 227)"
+  },
+  {
+   "name": "djfOA70WeaponCount",
+   "value": 3,
+   "comment": "the Weapon column maneuver count - Weapon Catch, Weapon Breaker, Steel Cloth (print capture p. 227)"
+  },
+  {
+   "name": "djfOA70LockCount",
+   "value": 4,
+   "comment": "the Lock column maneuver count - Choke Hold, Locking Block, Incapacitator, Immobilizing (print capture p. 227)"
+  },
+  {
+   "name": "djfOA70ThrowCount",
+   "value": 4,
+   "comment": "the Throw column maneuver count - Fall, Instant Stand, Hurl, Great Throw (print capture p. 227)"
+  },
+  {
+   "name": "djfOA70TrainCount",
+   "value": 6,
+   "comment": "the Mental and Physical Training column maneuver count - Meditation, All-Around Sight, Mental Resistance, Blind Fighting, Ironskin, Levitation, learnable in any style (print capture p. 227)"
+  },
+  {
+   "name": "djfOA70PushCount",
+   "value": 3,
+   "comment": "the Push column maneuver count - Concentrated Push, Sticking Touch, One Finger, all soft (print capture p. 227)"
+  },
+  {
+   "name": "djfOA70VitalCount",
+   "value": 3,
+   "comment": "the Vital Area column maneuver count - Pain Touch, Stunning Touch, Paralyzing Touch, all soft (print capture p. 227)"
+  }
+ ],
+ "bools": [],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "djfOA70Grid",
+   "tag": "OA70Data",
+   "count": "djfOA70RowCount",
+   "col_default": 0,
+   "cols": [
+    "djfOA70Method",
+    "djfOA70Rank",
+    "djfOA70Form"
+   ],
+   "col_comments": [
+    "the Table 70 method codes by row ordinal (print capture p. 227): 1 Kick, 2 Movement, 3 Strike, 4 Weapon, 5 Lock, 6 Throw, 7 Mental and Physical Training, 8 Push, 9 Vital Area - the maneuvers grouped under the principal method of fighting used, the Training category learnable in any style",
+    "the Table 70 difficulty ranks by row ordinal (print capture p. 227): 1 the easiest, ranked per column with no gaps - Kick 1-3, Movement 1-7, Strike 1-3, Weapon 1-3, Lock 1-4, Throw 1-4, Training 1-6, Push 1-3, Vital Area 1-3; the progression from 1 on up, more than one maneuver at the same difficulty allowed, a higher maneuver learned only when those beneath it are learned",
+    "the Table 70 form tags by row ordinal, coded (print capture p. 227): 0 hard, 1 soft, 2 hard/soft - the general classification of the fighting style; Strike all hard, Push and Vital Area all soft, Movement soft but Speed and Slow Resistance hard/soft; the crossover between the styles allowed, the tag only the general type of maneuver each style uses"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     1,
+     3,
+     2
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     2,
+     2,
+     1
+    ],
+    [
+     2,
+     3,
+     1
+    ],
+    [
+     2,
+     4,
+     1
+    ],
+    [
+     2,
+     5,
+     1
+    ],
+    [
+     2,
+     6,
+     2
+    ],
+    [
+     2,
+     7,
+     2
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     4,
+     1,
+     2
+    ],
+    [
+     4,
+     2,
+     2
+    ],
+    [
+     4,
+     3,
+     1
+    ],
+    [
+     5,
+     1,
+     2
+    ],
+    [
+     5,
+     2,
+     1
+    ],
+    [
+     5,
+     3,
+     2
+    ],
+    [
+     5,
+     4,
+     2
+    ],
+    [
+     6,
+     1,
+     2
+    ],
+    [
+     6,
+     2,
+     2
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     6,
+     4,
+     1
+    ],
+    [
+     7,
+     1,
+     2
+    ],
+    [
+     7,
+     2,
+     1
+    ],
+    [
+     7,
+     3,
+     1
+    ],
+    [
+     7,
+     4,
+     1
+    ],
+    [
+     7,
+     5,
+     0
+    ],
+    [
+     7,
+     6,
+     1
+    ],
+    [
+     8,
+     1,
+     1
+    ],
+    [
+     8,
+     2,
+     1
+    ],
+    [
+     8,
+     3,
+     1
+    ],
+    [
+     9,
+     1,
+     1
+    ],
+    [
+     9,
+     2,
+     1
+    ],
+    [
+     9,
+     3,
+     1
+    ]
+   ],
+   "comment": "Table 70: the martial arts special maneuvers - the thirty-six ranked maneuvers across the nine method columns with their form tags (print capture p. 227)",
+   "audit_comment": "the Table 70 grid - the thirty-six maneuvers across three columns"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the Kick column - Circle Kick 1 hard, Flying Kick 2 hard, Backward Kick 3 hard/soft",
+   "expr": "m['djfOA70Method'](0) != 1 or m['djfOA70Rank'](0) != 1 or m['djfOA70Form'](0) != 0 or m['djfOA70Rank'](1) != 2 or m['djfOA70Form'](1) != 0 or m['djfOA70Rank'](2) != 3 or m['djfOA70Form'](2) != 2"
+  },
+  {
+   "note": "the Movement column - seven deep, Feint 1 hard/soft through Slow Resistance 7 hard/soft, the Missile Deflection 4 soft",
+   "expr": "m['djfOA70Method'](3) != 2 or m['djfOA70Method'](9) != 2 or m['djfOA70Rank'](3) != 1 or m['djfOA70Rank'](9) != 7 or m['djfOA70Form'](3) != 2 or m['djfOA70Form'](6) != 1 or m['djfOA70Form'](8) != 2 or m['djfOA70Form'](9) != 2"
+  },
+  {
+   "note": "the Strike column - all three maneuvers hard",
+   "expr": "m['djfOA70Method'](10) != 3 or m['djfOA70Form'](10) != 0 or m['djfOA70Form'](11) != 0 or m['djfOA70Form'](12) != 0 or m['djfOA70Rank'](12) != 3"
+  },
+  {
+   "note": "the Weapon column - Weapon Catch and Weapon Breaker hard/soft, Steel Cloth soft",
+   "expr": "m['djfOA70Method'](13) != 4 or m['djfOA70Form'](13) != 2 or m['djfOA70Form'](14) != 2 or m['djfOA70Rank'](14) != 2 or m['djfOA70Form'](15) != 1"
+  },
+  {
+   "note": "the Lock column - Choke Hold 1 through Immobilizing 4, Locking Block the soft",
+   "expr": "m['djfOA70Method'](16) != 5 or m['djfOA70Rank'](16) != 1 or m['djfOA70Rank'](19) != 4 or m['djfOA70Form'](17) != 1 or m['djfOA70Form'](19) != 2"
+  },
+  {
+   "note": "the Throw column - Fall 1 and Instant Stand 2 hard/soft, Hurl 3 hard, Great Throw 4 soft",
+   "expr": "m['djfOA70Method'](20) != 6 or m['djfOA70Rank'](21) != 2 or m['djfOA70Form'](22) != 0 or m['djfOA70Form'](23) != 1 or m['djfOA70Rank'](23) != 4"
+  },
+  {
+   "note": "the Mental and Physical Training column - Meditation 1 through Levitation 6, All-Around Sight 2 soft, Ironskin 5 the hard",
+   "expr": "m['djfOA70Method'](24) != 7 or m['djfOA70Rank'](24) != 1 or m['djfOA70Rank'](29) != 6 or m['djfOA70Form'](25) != 1 or m['djfOA70Form'](28) != 0 or m['djfOA70Form'](29) != 1"
+  },
+  {
+   "note": "the Push and Vital Area columns - all six maneuvers soft, the Vital ranks 1-3",
+   "expr": "m['djfOA70Method'](30) != 8 or m['djfOA70Form'](30) != 1 or m['djfOA70Form'](31) != 1 or m['djfOA70Form'](32) != 1 or m['djfOA70Method'](33) != 9 or m['djfOA70Rank'](35) != 3 or m['djfOA70Form'](35) != 1"
+  },
+  {
+   "note": "the per-method counts - Kick 3, Movement 7, Throw 4, Training 6, Vital Area 3, the grid the 36",
+   "expr": "m['djfOA70KickCount']() != 3 or m['djfOA70MoveCount']() != 7 or m['djfOA70ThrowCount']() != 4 or m['djfOA70TrainCount']() != 6 or m['djfOA70VitalCount']() != 3 or m['djfOA70RowCount']() != 36"
+  },
+  {
+   "note": "the printed progression example - Circle Kick 1, Flying Kick 2, All-Around Sight 2, Backward Kick 3",
+   "expr": "m['djfOA70Rank'](0) != 1 or m['djfOA70Rank'](1) != 2 or m['djfOA70Rank'](25) != 2 or m['djfOA70Rank'](2) != 3"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 70 special maneuvers grid": [
+   {
+    "kind": "table",
+    "name": "djfOA70Grid"
+   },
+   {
+    "kind": "const",
+    "name": "djfOA70RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "djfOA70KickCount"
+   },
+   {
+    "kind": "const",
+    "name": "djfOA70MoveCount"
+   },
+   {
+    "kind": "const",
+    "name": "djfOA70StrikeCount"
+   },
+   {
+    "kind": "const",
+    "name": "djfOA70WeaponCount"
+   },
+   {
+    "kind": "const",
+    "name": "djfOA70LockCount"
+   },
+   {
+    "kind": "const",
+    "name": "djfOA70ThrowCount"
+   },
+   {
+    "kind": "const",
+    "name": "djfOA70TrainCount"
+   },
+   {
+    "kind": "const",
+    "name": "djfOA70PushCount"
+   },
+   {
+    "kind": "const",
+    "name": "djfOA70VitalCount"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 70 box closes",
+   "from": "  - [ ] Table 70: Martial Arts Special Maneuvers\n    (capture p. 227)",
+   "to": "  - [x] Table 70: Martial Arts Special\n    Maneuvers (capture p. 227) - R692:\n    the thirty-six ranked maneuvers across\n    the nine method columns (Kick 3:\n    Circle Kick, Flying Kick, Backward\n    Kick; Movement 7 the deepest: Feint,\n    Prone Fighting, Immovability,\n    Missile Deflection, Leap, Speed,\n    Slow Resistance; Strike 3 all hard:\n    Iron Fist, Crushing Blow, Eagle\n    Claw; Weapon 3: Weapon Catch,\n    Weapon Breaker, Steel Cloth; Lock 4:\n    Choke Hold, Locking Block,\n    Incapacitator, Immobilizing; Throw\n    4: Fall, Instant Stand, Hurl, Great\n    Throw; Mental and Physical Training\n    6 the any-style category: Meditation,\n    All-Around Sight, Mental Resistance,\n    Blind Fighting, Ironskin, Levitation;\n    Push 3 and Vital Area 3 all soft),\n    the method, rank and form columns\n    coded - the form tag 0 hard, 1 soft,\n    2 hard/soft, the general\n    classification with crossover\n    allowed; the ranking the progression\n    from 1 on up, more than one maneuver\n    at the same difficulty (the printed\n    Circle Kick 1 Flying Kick 2\n    All-Around Sight 2 Backward Kick 3\n    example); the 1d8 principal-method\n    selection and the second 1-3 roll\n    from the other methods; the gradual\n    learning; single-pass pins per the\n    Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 145,
+  "open": 90
+ },
+ "include_comment": "the OA Table 70 special maneuvers pins",
+ "include_after": "#include \"rules/oa69combos.h\"  // R691: the OA Table 69 style combinations pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R691 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R691 LANDED 2026-10-20: commit",
+  "  3a019a93b8145cb4fdd1760fcecb778ac",
+  "  396168b (census 613 -> 614, pushed",
+  "  5b21b32..3a019a9), OA TABLE 69 - the",
+  "  martial style combinations, capture p.",
+  "  226 print: rules/oa69combos.h, prefix",
+  "  dje (verified free at 5b21b32), ONE gap",
+  "  flip, gap census 143/92 -> 144/91. The",
+  "  11x4 grid OA69Data: three forms (Hard",
+  "  1/1/4, Soft 3/0/2, Hard/Soft 2/1/3,",
+  "  body part 0) and eight methods (Kick",
+  "  1/1/4 Foot=1, Lock 1/1/2 Body=2,",
+  "  Movement 2/1/2 Legs=3, Push 2/1/1",
+  "  Hand=4, Strike 1/1/1 Hand=4, Throw",
+  "  1/1/2 Body=2, Vital Area 2/1/1",
+  "  Hand&Foot=5, Weapon 1/1/0-by-weapon",
+  "  Hand&Arm=6 - the by-weapon damage 0",
+  "  per the R662 convention); the count",
+  "  const function djeOA69RowCount (the",
+  "  bare-int hazard of R683 avoided); six",
+  "  examples incl. the derived styles",
+  "  (Hard+Kick -> AC 8, attacks 2, damage",
+  "  8; Soft+Movement -> damage 4).",
+  "  Single-pass pins per the Chapter 9",
+  "  provenance shift. rverify GREEN first",
+  "  try at 5b21b32, 45 mutants, 0 missed.",
+  "  Spec md5 3a3457d97bda02355a3fe77582fb",
+  "  06c1 (authored-plus-newline md5",
+  "  07132a0c6b30f51679e7b7068eb9aefe -",
+  "  the value the ritual gated and",
+  "  matched; canvas md5 77ffae2df6db2453",
+  "  7fbd75934695b16c). NEXT - R692: Table",
+  "  70 the martial arts special maneuvers",
+  "  grid (capture p. 227), prefix djf",
+  "  (verified free at 3a019a9), audit",
+  "  \"R692 OA special maneuvers audit\",",
+  "  include after rules/oa69combos.h"
+ ]
+}

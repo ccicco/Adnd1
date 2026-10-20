@@ -1504,8 +1504,40 @@ description riding the same round.
     damage 8; Soft plus Movement the 4);
     single-pass pins per the Chapter 9
     provenance shift
-  - [ ] Table 70: Martial Arts Special Maneuvers
-    (capture p. 227)
+  - [x] Table 70: Martial Arts Special
+    Maneuvers (capture p. 227) - R692:
+    the thirty-six ranked maneuvers across
+    the nine method columns (Kick 3:
+    Circle Kick, Flying Kick, Backward
+    Kick; Movement 7 the deepest: Feint,
+    Prone Fighting, Immovability,
+    Missile Deflection, Leap, Speed,
+    Slow Resistance; Strike 3 all hard:
+    Iron Fist, Crushing Blow, Eagle
+    Claw; Weapon 3: Weapon Catch,
+    Weapon Breaker, Steel Cloth; Lock 4:
+    Choke Hold, Locking Block,
+    Incapacitator, Immobilizing; Throw
+    4: Fall, Instant Stand, Hurl, Great
+    Throw; Mental and Physical Training
+    6 the any-style category: Meditation,
+    All-Around Sight, Mental Resistance,
+    Blind Fighting, Ironskin, Levitation;
+    Push 3 and Vital Area 3 all soft),
+    the method, rank and form columns
+    coded - the form tag 0 hard, 1 soft,
+    2 hard/soft, the general
+    classification with crossover
+    allowed; the ranking the progression
+    from 1 on up, more than one maneuver
+    at the same difficulty (the printed
+    Circle Kick 1 Flying Kick 2
+    All-Around Sight 2 Backward Kick 3
+    example); the 1d8 principal-method
+    selection and the second 1-3 roll
+    from the other methods; the gradual
+    learning; single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Principal Methods prose (capture pp. 228-232)
     - movement, push, strike, throw, vital area and
     weapon

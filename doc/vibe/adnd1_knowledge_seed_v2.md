@@ -15498,6 +15498,43 @@ when both halves land.
   prefix dje (verify free at 5b21b32),
   audit "R691 OA style combinations
   audit", include after rules/oacreatestyle.h
+- R691 LANDED 2026-10-20: commit
+  3a019a93b8145cb4fdd1760fcecb778ac
+  396168b (census 613 -> 614, pushed
+  5b21b32..3a019a9), OA TABLE 69 - the
+  martial style combinations, capture p.
+  226 print: rules/oa69combos.h, prefix
+  dje (verified free at 5b21b32), ONE gap
+  flip, gap census 143/92 -> 144/91. The
+  11x4 grid OA69Data: three forms (Hard
+  1/1/4, Soft 3/0/2, Hard/Soft 2/1/3,
+  body part 0) and eight methods (Kick
+  1/1/4 Foot=1, Lock 1/1/2 Body=2,
+  Movement 2/1/2 Legs=3, Push 2/1/1
+  Hand=4, Strike 1/1/1 Hand=4, Throw
+  1/1/2 Body=2, Vital Area 2/1/1
+  Hand&Foot=5, Weapon 1/1/0-by-weapon
+  Hand&Arm=6 - the by-weapon damage 0
+  per the R662 convention); the count
+  const function djeOA69RowCount (the
+  bare-int hazard of R683 avoided); six
+  examples incl. the derived styles
+  (Hard+Kick -> AC 8, attacks 2, damage
+  8; Soft+Movement -> damage 4).
+  Single-pass pins per the Chapter 9
+  provenance shift. rverify GREEN first
+  try at 5b21b32, 45 mutants, 0 missed.
+  Spec md5 3a3457d97bda02355a3fe77582fb
+  06c1 (authored-plus-newline md5
+  07132a0c6b30f51679e7b7068eb9aefe -
+  the value the ritual gated and
+  matched; canvas md5 77ffae2df6db2453
+  7fbd75934695b16c). NEXT - R692: Table
+  70 the martial arts special maneuvers
+  grid (capture p. 227), prefix djf
+  (verified free at 3a019a9), audit
+  "R692 OA special maneuvers audit",
+  include after rules/oa69combos.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
