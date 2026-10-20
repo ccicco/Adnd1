@@ -14725,6 +14725,92 @@ when both halves land.
   audit "R676 OA wu jen seventh
   level spells audit", include after
   rules/oawjl6spells.h
+- R676 LANDED 2026-10-20: commit
+  343227ea7198171f40c7c1ead459933d87e1a28f
+  (census 598 -> 599, pushed b23dcfe..343227e),
+  WU JEN SEVENTH LEVEL SPELLS - the
+  12 seventh level wu jen spell stat
+  blocks, capture pp. 203-207:
+  rules/oawjl7spells.h, prefix dil
+  (verified free at b23dcfe - only
+  the string-literal dill, the R669
+  die precedent), ONE gap flip
+  (single-line child label), 12
+  consts, 18 inlines (grid tag
+  WJL7Data, 12 rows x 6 cols), gap
+  census 128/107 -> 129/106: all 12
+  stat blocks cross-checked spell by
+  spell between the passes (print
+  pp. 203-207 vs compressed pp.
+  93-95), zero contested stat reads -
+  the print Components' V typo on
+  vanish reading V in both passes;
+  body outside body the OA printing
+  its near-duplicate of the sixth
+  level vessel at the seventh. THREE
+  dual-school prints again, all
+  pinned primary (the exaction
+  precedent): elemental servant the
+  Conjuration/Summoning;
+  Enchantment/Charm dual pinned 4,
+  ice blight the
+  Evocation/Summoning dual pinned 3,
+  obedience the
+  Enchantment/Evocation dual pinned
+  1. Conjuration the most common
+  school at five; alteration and
+  evocation two each; NO illusion,
+  invocation or abjuration spell this
+  level. FOUR verbal-only spells
+  (limited wish, power word stun,
+  tool, vanish) - the most of any wu
+  jen level yet; withering palm the
+  lone V,S and the lone half save;
+  limited wish carries BOTH the
+  Casting Time: Special line (pinned
+  -1, the R662 convention) and the
+  special save; ice blight (drought)
+  the one reversible, Water the one
+  element tag matching the R669
+  dieWJT66L7Element grid exactly.
+  rverify GREEN first try at b23dcfe,
+  84 mutants, 0 missed. LESSONS: the
+  sed amendment to the R675 header
+  did NOT ride the landing - rn does
+  a targeted git add of its own five
+  files, so the oawjl6spells.h edit
+  stayed uncommitted, landed as the
+  R676b follow-up commit 9525d0c
+  (verified: four -> five one-round);
+  future header amendments need
+  their own commit); the user's ./bn 676
+  detour (struck per the R516 rule)
+  caused no drift - the spec md5
+  printed the authored value. The
+  canvas delivery itself stumbled this
+  round: the first publish did not
+  surface for the user, a same-folder
+  delete/recreate did not either, and
+  only a FRESH canvas folder name
+  (r676-spec) rendered - on any
+  future publish failure, publish
+  under a new name immediately rather
+  than rewriting the same folder.
+  Spec md5 a024f5b954fa0d94392a67f
+  7997e53ec (authored-plus-newline
+  md5 e10ccc352abab87d144b62b83090b
+  95a - the value the ritual gated
+  and matched; canvas md5
+  91cd39ddc599622df3ecf0c86ddec459).
+  NEXT - R677: the wu jen Eighth
+  Level Spells (capture pp. 207-213,
+  the 14 stat blocks), prefix dim
+  (verify free at 343227e - only the
+  comment-words dim, dims, diminish,
+  the R669 die precedent), audit
+  "R677 OA wu jen eighth level
+  spells audit", include after
+  rules/oawjl7spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

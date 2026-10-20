@@ -1,0 +1,442 @@
+{
+ "round": 677,
+ "title": "WU JEN EIGHTH LEVEL SPELLS - the 14 eighth level wu jen spells with the school, component, casting time, saving throw, reversible and element codes",
+ "prefix": "dim",
+ "header_file": "rules/oawjl8spells.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 599,
+ "inline_count": 19,
+ "audit_label": "R677 OA wu jen eighth level spells audit",
+ "audit_comment": "OA round sixty-four (capture pp. 207-213): the wu jen eighth level spell stat blocks - the school, component, casting time and saving throw codes with the reversible and element markers, cross-checked spell by spell between the passes",
+ "banner": {
+  "title": "WU JEN EIGHTH LEVEL SPELLS, printed capture pp. 207-213 - the OA wu jen eighth level spells round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read (print pp. 207-213; compressed pp. 95-97); all 14 stat blocks cross-checked spell by spell between the passes, zero contested stat reads - the whirlwind print save garbling as 112 with the compressed pass reading 1/2, the half settled by the R674 fire breath precedent class, and summoning wind the FIRST school-less print of the wu jen levels, the bare heading in both stat-block passes and the roster silent, pinned 0 with the grid school comment carrying the code. The level carries TWO dual-school prints, both pinned primary alteration (the exaction precedent): finding the center the Alteration/Invocation dual and incendiary cloud the Alteration/Evocation dual both pinned 6. Alteration the most common school at seven spells, conjuration four (call, power word blind, symbol, whirlwind); antipathy/sympathy the lone enchantment/charm, mind blank the lone abjuration; NO divination, necromantic, invocation or illusion spell this level. The component census: 10 VSM, mind blank and summoning wind the verbal and somatic pair, power word blind the lone verbal-only, finding the center the lone SOMATIC-only - the first since the fifth level aiming at the target and shadow door pair. The casts: antipathy/sympathy the six-TURN cast pinned 360 segments, the longest of the wu jen levels yet; four one-turn (call, giant size, summoning wind, whirlwind); permanency the two-round cast pinned 20; polymorph any object and surelife the one-round casts; symbol eight segments, cloud trapeze five, incendiary cloud two, three single segments (finding the center, mind blank, power word blind); NO Casting Time: Special line this level. Call the lone negation save; antipathy/sympathy, polymorph any object and symbol special; incendiary cloud and whirlwind the two half saves. One reversible spell (giant size). The element column cross-checks the R669 dieWJT66L8Element grid: the FOUR tagged cells matching exactly - three Air (cloud trapeze, summoning wind, whirlwind) and one Fire (incendiary cloud), the richest Air column of the wu jen levels",
+  "sentinel": "the gap census after this round: 130 closed, 105 open - the wu jen Eighth Level Spells box flips (census 599 -> 600); NEXT - R678: the wu jen Ninth Level Spells (capture pp. 213-216, the 13 stat blocks), prefix dio (verify free - din is TAKEN, the dinosaurSubBands call colliding with the engine paren gate), audit \"R678 OA wu jen ninth level spells audit\""
+ },
+ "consts": [
+  {
+   "name": "dimWJL8SpellCount",
+   "value": 14,
+   "comment": "the 14 eighth level wu jen spells (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8AlterationCount",
+   "value": 7,
+   "comment": "the seven alteration eighth level wu jen spells - cloud trapeze, finding the center, giant size, incendiary cloud, permanency, polymorph any object, surelife; the most common school of the level (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8ConjurationCount",
+   "value": 4,
+   "comment": "the four conjuration eighth level wu jen spells - call, power word blind, symbol, whirlwind (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8DualSchoolCount",
+   "value": 2,
+   "comment": "the two dual-school eighth level wu jen prints, both pinned primary alteration (the exaction precedent) - finding the center the Alteration/Invocation dual, incendiary cloud the Alteration/Evocation dual, both pinned 6 (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8VSMCount",
+   "value": 10,
+   "comment": "the 10 eighth level wu jen spells taking all three components - the bitmask reads 7 (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8SomaticOnlyCount",
+   "value": 1,
+   "comment": "the one somatic-only eighth level wu jen spell - finding the center, the lone S of the wu jen levels since the fifth level pair (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8VerbalOnlyCount",
+   "value": 1,
+   "comment": "the one verbal-only eighth level wu jen spell - power word blind (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8ReversibleCount",
+   "value": 1,
+   "comment": "the one reversible eighth level wu jen spell - giant size (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8SixTurnCast",
+   "value": 360,
+   "comment": "the antipathy/sympathy six-turn casting time pinned 360 segments - the longest cast of the wu jen levels yet (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8TurnCasts",
+   "value": 4,
+   "comment": "the four eighth level wu jen spells with a one-turn casting time - call, giant size, summoning wind, whirlwind (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8SpecialSaves",
+   "value": 3,
+   "comment": "the three eighth level wu jen spells with a special saving throw - antipathy/sympathy, polymorph any object, symbol (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8HalfSaves",
+   "value": 2,
+   "comment": "the two eighth level wu jen spells with a half saving throw - incendiary cloud and whirlwind (the whirlwind print save garbling as 112, the compressed pass reading 1/2 - the R674 fire breath precedent class) (print pp. 207-213; compressed pp. 95-97)"
+  },
+  {
+   "name": "dimWJL8ElementCount",
+   "value": 4,
+   "comment": "the four element-tagged eighth level wu jen spells - three Air (cloud trapeze, summoning wind, whirlwind) and one Fire (incendiary cloud) - matching the R669 dieWJT66L8Element grid exactly, the richest Air column of the wu jen levels (print pp. 207-213; compressed pp. 95-97)"
+  }
+ ],
+ "bools": [],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dimWJL8Grid",
+   "tag": "WJL8Data",
+   "count": "dimWJL8SpellCount",
+   "col_default": 0,
+   "cols": [
+    "dimWJL8School",
+    "dimWJL8Components",
+    "dimWJL8CastTime",
+    "dimWJL8Save",
+    "dimWJL8Reversible",
+    "dimWJL8Element"
+   ],
+   "col_comments": [
+    "the wu jen 8th level spell schools by ordinal (print pp. 207-213; compressed pp. 95-97). The spell list rides this comment: 1 antipathy/sympathy, 2 call, 3 cloud trapeze, 4 finding the center, 5 giant size, 6 incendiary cloud, 7 mind blank, 8 permanency, 9 polymorph any object, 10 power word blind, 11 summoning wind, 12 surelife, 13 symbol, 14 whirlwind - the school codes: 0 the school-less print, 1 enchantment/charm, 2 divination, 3 evocation, 4 conjuration (the printed Conjuration and Conjuration/Summoning both pinned 4), 5 necromantic, 6 alteration, 7 abjuration, 8 invocation, 9 illusion/phantasm - alteration the most common school at seven spells (cloud trapeze, finding the center, giant size, incendiary cloud, permanency, polymorph any object, surelife); conjuration four (call, power word blind, symbol, whirlwind); antipathy/sympathy the lone enchantment/charm, mind blank the lone abjuration; NO divination, necromantic, invocation or illusion spell this level - TWO dual-school prints, both pinned primary (the exaction precedent): finding the center the Alteration/Invocation dual and incendiary cloud the Alteration/Evocation dual both pinned 6 - and summoning wind the FIRST school-less print of the wu jen levels, the bare heading in both passes and the roster silent, pinned 0",
+    "the wu jen 8th level spell components by ordinal (print pp. 207-213; compressed pp. 95-97). The spell list rides this comment: 1 antipathy/sympathy, 2 call, 3 cloud trapeze, 4 finding the center, 5 giant size, 6 incendiary cloud, 7 mind blank, 8 permanency, 9 polymorph any object, 10 power word blind, 11 summoning wind, 12 surelife, 13 symbol, 14 whirlwind - the component codes a bitmask: verbal 1, somatic 2, material 4 - 10 spells take all three (7); mind blank and summoning wind the verbal and somatic pair (3); power word blind the lone verbal-only (1); finding the center the lone SOMATIC-only (2), the first since the fifth level aiming at the target and shadow door pair",
+    "the wu jen 8th level spell casting times by ordinal (print pp. 207-213; compressed pp. 95-97). The spell list rides this comment: 1 antipathy/sympathy, 2 call, 3 cloud trapeze, 4 finding the center, 5 giant size, 6 incendiary cloud, 7 mind blank, 8 permanency, 9 polymorph any object, 10 power word blind, 11 summoning wind, 12 surelife, 13 symbol, 14 whirlwind - the casting time in segments - 1 segment to 1 turn = 60 segments: antipathy/sympathy the six-TURN cast pinned 360, the longest cast of the wu jen levels yet; four one-turn (call, giant size, summoning wind, whirlwind); permanency the two-round cast pinned 20; polymorph any object and surelife the one-round casts; symbol eight segments, cloud trapeze five, incendiary cloud two; finding the center, mind blank and power word blind the single segments - NO Casting Time: Special line this level",
+    "the wu jen 8th level spell saving throws by ordinal (print pp. 207-213; compressed pp. 95-97). The spell list rides this comment: 1 antipathy/sympathy, 2 call, 3 cloud trapeze, 4 finding the center, 5 giant size, 6 incendiary cloud, 7 mind blank, 8 permanency, 9 polymorph any object, 10 power word blind, 11 summoning wind, 12 surelife, 13 symbol, 14 whirlwind - the saving throw codes: 0 none, 1 neg., 2 special, 3 half - call the lone negation save; antipathy/sympathy, polymorph any object and symbol special; incendiary cloud and whirlwind the two HALF saves (the whirlwind print garbling the save as 112, the compressed pass reading 1/2 - the R674 fire breath precedent class); the other eight none",
+    "the wu jen 8th level spell reversible markers by ordinal (print pp. 207-213; compressed pp. 95-97). The spell list rides this comment: 1 antipathy/sympathy, 2 call, 3 cloud trapeze, 4 finding the center, 5 giant size, 6 incendiary cloud, 7 mind blank, 8 permanency, 9 polymorph any object, 10 power word blind, 11 summoning wind, 12 surelife, 13 symbol, 14 whirlwind - the cell is 1 where the printed header reads Reversible - giant size the one",
+    "the wu jen 8th level spell element marks by ordinal (print pp. 207-213; compressed pp. 95-97). The spell list rides this comment: 1 antipathy/sympathy, 2 call, 3 cloud trapeze, 4 finding the center, 5 giant size, 6 incendiary cloud, 7 mind blank, 8 permanency, 9 polymorph any object, 10 power word blind, 11 summoning wind, 12 surelife, 13 symbol, 14 whirlwind - the element codes of the R669 T66 grid: 0 none, 1 Air, 2 Earth, 3 Fire, 4 Water, 5 Nature, 6 Wood, 7 All - the FOUR tagged spells (cloud trapeze, summoning wind and whirlwind Air; incendiary cloud Fire) matching the R669 dieWJT66L8Element pins exactly, the richest Air column of the wu jen levels - the cross-check column"
+   ],
+   "data": [
+    [
+     1,
+     7,
+     360,
+     2,
+     0,
+     0
+    ],
+    [
+     4,
+     7,
+     60,
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     7,
+     5,
+     0,
+     0,
+     1
+    ],
+    [
+     6,
+     2,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     7,
+     60,
+     0,
+     1,
+     0
+    ],
+    [
+     6,
+     7,
+     2,
+     3,
+     0,
+     3
+    ],
+    [
+     7,
+     3,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     7,
+     20,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     7,
+     10,
+     2,
+     0,
+     0
+    ],
+    [
+     4,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     3,
+     60,
+     0,
+     0,
+     1
+    ],
+    [
+     6,
+     7,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     4,
+     7,
+     8,
+     2,
+     0,
+     0
+    ],
+    [
+     4,
+     7,
+     60,
+     3,
+     0,
+     1
+    ]
+   ],
+   "comment": "the wu jen 8th level spell stat grid (print pp. 207-213; compressed pp. 95-97). The spell list rides the column comments: 1 antipathy/sympathy, 2 call, 3 cloud trapeze, 4 finding the center, 5 giant size, 6 incendiary cloud, 7 mind blank, 8 permanency, 9 polymorph any object, 10 power word blind, 11 summoning wind, 12 surelife, 13 symbol, 14 whirlwind - 14 rows the spell ordinals, six columns: school, components (a V=1 S=2 M=4 bitmask), casting time in segments (1 round = 10, 1 turn = 60, the six-turn cast 360), saving throw code (0 none, 1 neg., 2 special, 3 half), reversible and element markers; the element cells cross-check the R669 T66 grid (three Air and one Fire the four tagged cells). The table tag WJL8Data identifier-safe per the R639 lesson",
+   "audit_comment": "the stat grid - one cell per spell and column, every grid cell pinned from the stat blocks cross-checked between the passes"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the count pins - 14 spells, seven alteration, four conjuration, two dual-school prints, one reversible, four element-tagged",
+   "expr": "m['dimWJL8SpellCount']() != 14 or m['dimWJL8AlterationCount']() != 7 or m['dimWJL8ConjurationCount']() != 4 or m['dimWJL8DualSchoolCount']() != 2 or m['dimWJL8ReversibleCount']() != 1 or m['dimWJL8ElementCount']() != 4"
+  },
+  {
+   "note": "the component pins - 10 VSM, finding the center the lone somatic-only, power word blind the lone verbal-only",
+   "expr": "m['dimWJL8VSMCount']() != 10 or m['dimWJL8SomaticOnlyCount']() != 1 or m['dimWJL8VerbalOnlyCount']() != 1"
+  },
+  {
+   "note": "the casting time pins - the antipathy/sympathy six-turn cast pinned 360 (the longest of the wu jen levels yet), four one-turn, no Special cast this level",
+   "expr": "m['dimWJL8SixTurnCast']() != 360 or m['dimWJL8TurnCasts']() != 4"
+  },
+  {
+   "note": "the saving throw pins - call the lone neg., three special, the two half saves (the whirlwind 112 print garble settled by the compressed 1/2)",
+   "expr": "m['dimWJL8SpecialSaves']() != 3 or m['dimWJL8HalfSaves']() != 2"
+  },
+  {
+   "note": "the school column - the two duals pinned primary 6 (finding the center, incendiary cloud), summoning wind the FIRST school-less print pinned 0, mind blank the lone abjuration",
+   "expr": "m['dimWJL8School'](0) != 1 or m['dimWJL8School'](1) != 4 or m['dimWJL8School'](2) != 6 or m['dimWJL8School'](3) != 6 or m['dimWJL8School'](4) != 6 or m['dimWJL8School'](5) != 6 or m['dimWJL8School'](6) != 7 or m['dimWJL8School'](7) != 6 or m['dimWJL8School'](8) != 6 or m['dimWJL8School'](9) != 4 or m['dimWJL8School'](10) != 0 or m['dimWJL8School'](11) != 6 or m['dimWJL8School'](12) != 4 or m['dimWJL8School'](13) != 4"
+  },
+  {
+   "note": "the component column - the 10 VSM spells, mind blank and summoning wind the V,S pair, power word blind verbal-only, finding the center somatic-only",
+   "expr": "m['dimWJL8Components'](0) != 7 or m['dimWJL8Components'](1) != 7 or m['dimWJL8Components'](2) != 7 or m['dimWJL8Components'](3) != 2 or m['dimWJL8Components'](4) != 7 or m['dimWJL8Components'](5) != 7 or m['dimWJL8Components'](6) != 3 or m['dimWJL8Components'](7) != 7 or m['dimWJL8Components'](8) != 7 or m['dimWJL8Components'](9) != 1 or m['dimWJL8Components'](10) != 3 or m['dimWJL8Components'](11) != 7 or m['dimWJL8Components'](12) != 7 or m['dimWJL8Components'](13) != 7"
+  },
+  {
+   "note": "the casting time column - antipathy/sympathy 360, the four one-turn casts, permanency 20, the one-round pair, symbol eight, cloud trapeze five, incendiary cloud two, the three single segments",
+   "expr": "m['dimWJL8CastTime'](0) != 360 or m['dimWJL8CastTime'](1) != 60 or m['dimWJL8CastTime'](2) != 5 or m['dimWJL8CastTime'](3) != 1 or m['dimWJL8CastTime'](4) != 60 or m['dimWJL8CastTime'](5) != 2 or m['dimWJL8CastTime'](6) != 1 or m['dimWJL8CastTime'](7) != 20 or m['dimWJL8CastTime'](8) != 10 or m['dimWJL8CastTime'](9) != 1 or m['dimWJL8CastTime'](10) != 60 or m['dimWJL8CastTime'](11) != 10 or m['dimWJL8CastTime'](12) != 8 or m['dimWJL8CastTime'](13) != 60"
+  },
+  {
+   "note": "the saving throw column - call the lone neg., the three special saves, the two half saves, the other eight none",
+   "expr": "m['dimWJL8Save'](0) != 2 or m['dimWJL8Save'](1) != 1 or m['dimWJL8Save'](2) != 0 or m['dimWJL8Save'](3) != 0 or m['dimWJL8Save'](4) != 0 or m['dimWJL8Save'](5) != 3 or m['dimWJL8Save'](6) != 0 or m['dimWJL8Save'](7) != 0 or m['dimWJL8Save'](8) != 2 or m['dimWJL8Save'](9) != 0 or m['dimWJL8Save'](10) != 0 or m['dimWJL8Save'](11) != 0 or m['dimWJL8Save'](12) != 2 or m['dimWJL8Save'](13) != 3"
+  },
+  {
+   "note": "the reversible column - giant size the one reversible spell of the level",
+   "expr": "m['dimWJL8Reversible'](4) != 1 or m['dimWJL8Reversible'](0) != 0 or m['dimWJL8Reversible'](3) != 0 or m['dimWJL8Reversible'](6) != 0 or m['dimWJL8Reversible'](13) != 0"
+  },
+  {
+   "note": "the element column - the four tagged cells matching the R669 dieWJT66L8Element grid exactly: three Air (cloud trapeze, summoning wind, whirlwind), one Fire (incendiary cloud)",
+   "expr": "m['dimWJL8Element'](2) != 1 or m['dimWJL8Element'](5) != 3 or m['dimWJL8Element'](10) != 1 or m['dimWJL8Element'](13) != 1 or m['dimWJL8Element'](0) != 0 or m['dimWJL8Element'](1) != 0 or m['dimWJL8Element'](7) != 0 or m['dimWJL8Element'](12) != 0"
+  },
+  {
+   "note": "the summoning wind line - the school-less print pinned 0 with the V,S components, the one-turn cast, no save, the Air tag",
+   "expr": "m['dimWJL8School'](10) != 0 or m['dimWJL8Components'](10) != 3 or m['dimWJL8CastTime'](10) != 60 or m['dimWJL8Save'](10) != 0 or m['dimWJL8Element'](10) != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the spell count pins": [
+   {
+    "kind": "const",
+    "name": "dimWJL8SpellCount"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8AlterationCount"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8ConjurationCount"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8DualSchoolCount"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8VSMCount"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8SomaticOnlyCount"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8VerbalOnlyCount"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8ReversibleCount"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8SixTurnCast"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8TurnCasts"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8SpecialSaves"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8HalfSaves"
+   },
+   {
+    "kind": "const",
+    "name": "dimWJL8ElementCount"
+   }
+  ],
+  "the stat grid pins": [
+   {
+    "kind": "table",
+    "name": "dimWJL8Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the wu jen Eighth Level Spells box closes",
+   "from": "  - [ ] Eighth Level Spells (capture pp. 207-213)",
+   "to": "  - [x] Eighth Level Spells (capture pp. 207-213) -\n    R677: the dim WJL8 stat grid - the 14\n    eighth level wu jen spells with the\n    school, component, casting time,\n    saving throw, reversible and element\n    codes (summoning wind the FIRST\n    school-less print of the wu jen\n    levels, pinned 0; the antipathy/\n    sympathy six-turn cast pinned 360,\n    the longest yet; the two duals\n    pinned primary alteration; finding\n    the center the lone somatic-only;\n    the two half saves with the print\n    whirlwind 112 garble settled by\n    the compressed 1/2; the four\n    element cells cross-checking the\n    R669 T66 grid - three Air, one\n    Fire; the stat blocks cross-checked\n    spell by spell between the passes);\n    the names ride the column comments,\n    the prose descriptions close in\n    their own rounds"
+  }
+ ],
+ "gap_census": {
+  "closed": 130,
+  "open": 105
+ },
+ "include_comment": "the OA wu jen eighth level spells pins",
+ "include_after": "#include \"rules/oawjl7spells.h\"  // R676: the OA wu jen seventh level spells pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R676 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R676 LANDED 2026-10-20: commit",
+  "  343227ea7198171f40c7c1ead459933d87e1a28f",
+  "  (census 598 -> 599, pushed b23dcfe..343227e),",
+  "  WU JEN SEVENTH LEVEL SPELLS - the",
+  "  12 seventh level wu jen spell stat",
+  "  blocks, capture pp. 203-207:",
+  "  rules/oawjl7spells.h, prefix dil",
+  "  (verified free at b23dcfe - only",
+  "  the string-literal dill, the R669",
+  "  die precedent), ONE gap flip",
+  "  (single-line child label), 12",
+  "  consts, 18 inlines (grid tag",
+  "  WJL7Data, 12 rows x 6 cols), gap",
+  "  census 128/107 -> 129/106: all 12",
+  "  stat blocks cross-checked spell by",
+  "  spell between the passes (print",
+  "  pp. 203-207 vs compressed pp.",
+  "  93-95), zero contested stat reads -",
+  "  the print Components' V typo on",
+  "  vanish reading V in both passes;",
+  "  body outside body the OA printing",
+  "  its near-duplicate of the sixth",
+  "  level vessel at the seventh. THREE",
+  "  dual-school prints again, all",
+  "  pinned primary (the exaction",
+  "  precedent): elemental servant the",
+  "  Conjuration/Summoning;",
+  "  Enchantment/Charm dual pinned 4,",
+  "  ice blight the",
+  "  Evocation/Summoning dual pinned 3,",
+  "  obedience the",
+  "  Enchantment/Evocation dual pinned",
+  "  1. Conjuration the most common",
+  "  school at five; alteration and",
+  "  evocation two each; NO illusion,",
+  "  invocation or abjuration spell this",
+  "  level. FOUR verbal-only spells",
+  "  (limited wish, power word stun,",
+  "  tool, vanish) - the most of any wu",
+  "  jen level yet; withering palm the",
+  "  lone V,S and the lone half save;",
+  "  limited wish carries BOTH the",
+  "  Casting Time: Special line (pinned",
+  "  -1, the R662 convention) and the",
+  "  special save; ice blight (drought)",
+  "  the one reversible, Water the one",
+  "  element tag matching the R669",
+  "  dieWJT66L7Element grid exactly.",
+  "  rverify GREEN first try at b23dcfe,",
+  "  84 mutants, 0 missed. LESSONS: the",
+  "  sed amendment to the R675 header",
+  "  did NOT ride the landing - rn does",
+  "  a targeted git add of its own five",
+  "  files, so the oawjl6spells.h edit",
+  "  stayed uncommitted, landed as the",
+  "  R676b follow-up commit 9525d0c",
+  "  (verified: four -> five one-round);",
+  "  future header amendments need",
+  "  their own commit); the user's ./bn 676",
+  "  detour (struck per the R516 rule)",
+  "  caused no drift - the spec md5",
+  "  printed the authored value. The",
+  "  canvas delivery itself stumbled this",
+  "  round: the first publish did not",
+  "  surface for the user, a same-folder",
+  "  delete/recreate did not either, and",
+  "  only a FRESH canvas folder name",
+  "  (r676-spec) rendered - on any",
+  "  future publish failure, publish",
+  "  under a new name immediately rather",
+  "  than rewriting the same folder.",
+  "  Spec md5 a024f5b954fa0d94392a67f",
+  "  7997e53ec (authored-plus-newline",
+  "  md5 e10ccc352abab87d144b62b83090b",
+  "  95a - the value the ritual gated",
+  "  and matched; canvas md5",
+  "  91cd39ddc599622df3ecf0c86ddec459).",
+  "  NEXT - R677: the wu jen Eighth",
+  "  Level Spells (capture pp. 207-213,",
+  "  the 14 stat blocks), prefix dim",
+  "  (verify free at 343227e - only the",
+  "  comment-words dim, dims, diminish,",
+  "  the R669 die precedent), audit",
+  "  \"R677 OA wu jen eighth level",
+  "  spells audit\", include after",
+  "  rules/oawjl7spells.h"
+ ]
+}

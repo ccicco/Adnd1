@@ -1216,7 +1216,28 @@ description riding the same round.
     the names ride the column comments,
     the prose descriptions close in their
     own rounds
-  - [ ] Eighth Level Spells (capture pp. 207-213)
+  - [x] Eighth Level Spells (capture pp. 207-213) -
+    R677: the dim WJL8 stat grid - the 14
+    eighth level wu jen spells with the
+    school, component, casting time,
+    saving throw, reversible and element
+    codes (summoning wind the FIRST
+    school-less print of the wu jen
+    levels, pinned 0; the antipathy/
+    sympathy six-turn cast pinned 360,
+    the longest yet; the two duals
+    pinned primary alteration; finding
+    the center the lone somatic-only;
+    the two half saves with the print
+    whirlwind 112 garble settled by
+    the compressed 1/2; the four
+    element cells cross-checking the
+    R669 T66 grid - three Air, one
+    Fire; the stat blocks cross-checked
+    spell by spell between the passes);
+    the names ride the column comments,
+    the prose descriptions close in
+    their own rounds
   - [ ] Ninth Level Spells (capture pp. 213-216)
 
 - [ ] **Chapter 9: Combat** (capture pp. 216-235) -
