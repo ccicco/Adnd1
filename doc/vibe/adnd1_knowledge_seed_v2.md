@@ -15370,6 +15370,50 @@ when both halves land.
   (verify free at 4c558a3), audit "R688 OA
   martial arts opener audit", include
   after rules/oapsychicduel.h
+- R688 LANDED 2026-10-20: commit
+  5d2af58dbe52e06aa64f38cc0fd840ced0adad90
+  (census 610 -> 611, pushed 4c558a3..5d2af58),
+  OA MARTIAL ARTS OPENER - the doctrine
+  prose through the Styles intro, capture
+  pp. 223-225: rules/oamartialopen.h,
+  prefix djb (verified free at 4c558a3),
+  ONE gap flip, 1 const + 18 bools (19
+  inlines, no table), gap census 140/95 ->
+  141/94. The doctrine frame (the body as
+  weapon, unique to the OA lands); the
+  training discipline; the three reason
+  strands - the nature-forces philosophy,
+  the religious divestment, the weapon-
+  edict social pressure; the regularized
+  art of self-perfection; the style
+  proliferation (every land its own, two
+  masters of one style in different
+  forms); the school challenges with the
+  spectators; the primary goal (avoid being
+  hurt) with the defensive, aggressive and
+  weapon-master schools; the forms
+  variety; the unarmed misnomer (the
+  tui-fu in the master's hands); the
+  rules fit (styles defined by their
+  effects); the five style characteristics;
+  the poetic names and the use
+  identities. Single-pass pins per the
+  Chapter 9 provenance shift. Caught pre-
+  rverify: the gap anchor is a TWO-LINE
+  wrap (pp. then 223-225) - the exact
+  lines read before writing the flip, no
+  anchor RED. rverify GREEN first try at
+  4c558a3, 19 mutants, 0 missed. Spec md5
+  b3a970cd02b254b5bff87d48983ea227
+  (authored-plus-newline md5 7653d2463844
+  b9d6e4ad60ed854e5a3e - the value the
+  ritual gated and matched; canvas md5
+  63a21d68d60c0abfdb8b6ed77ab9872e). NEXT
+  - R689: Table 68 the common martial
+  styles grid (capture p. 224), prefix djc
+  (verify free at 5d2af58), audit "R689 OA
+  common martial styles audit", include
+  after rules/oamartialopen.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1438,8 +1438,25 @@ description riding the same round.
     the use identities; single-pass pins
     per the Chapter 9 provenance shift
     styles
-  - [ ] Table 68: Common Martial Styles (capture
-    p. 224)
+  - [x] Table 68: Common Martial Styles
+    (capture p. 224) - R689: the djc common
+    styles grid pins - the four styles
+    (Karate, Kung-fu, Tae Kwon Do,
+    Jujutsu) with their attack rates (3/1,
+    2/1, 1/1, 2/1), damage dice (the d6s
+    with Tae Kwon Do the lone d8), armor
+    classes (8, 6, 8, 7 - Kung-fu the
+    best), principal forms (Hand, Hand,
+    Foot, Hand - Tae Kwon Do the only
+    Foot), special maneuver rank counts
+    (6, 8, 6, 11 - Jujutsu the richest),
+    and the p. 225 explanatory prose
+    (style-dependent attacks, the
+    defensive-low damage, the training-
+    born AC, the free-body-part principal
+    form, the maneuver secrets);
+    single-pass pins per the Chapter 9
+    provenance shift
   - [ ] Creating a Style (capture pp. 225-228)
   - [ ] Table 69: Martial Style Combinations
     (capture p. 226)
