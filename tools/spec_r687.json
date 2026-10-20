@@ -1,0 +1,308 @@
+{
+ "round": 687,
+ "title": "OA THE PSYCHIC DUEL - the wills contest: the special circumstances, the save-versus-death resolution with the kensai bonus, and the honor awards with the loser options",
+ "prefix": "dja",
+ "header_file": "rules/oapsychicduel.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 609,
+ "inline_count": 22,
+ "audit_label": "R687 OA psychic duel audit",
+ "audit_comment": "OA round seventy-four (capture pp. 222-223): The Psychic Duel - the mental combat of the wills with the save-versus-death resolution, the kensai bonus, the three outcomes, the honor awards and the loser options, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA THE PSYCHIC DUEL, printed capture pp. 222-223 - the wills contest round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE FRAME: the psychic duel a type of mental combat practiced by any character race or class, requiring no psionic talent - the test of the wills, the invisible fight revealed by the grimace, the eyelid, the tic; the wise man admitting defeat before it occurs. THE CIRCUMSTANCES: only on or by intelligent human or humanoid creatures, strictly one-on-one - never between friends (3 points of honor), never with crossed weapons, never under outside attack: the pre-battle challenge or the swaggering bully. THE RESOLUTION: the round spent within 10 feet concentrating the will, each saving throw vs. death - the kensai +2 against non-kensai; one makes one wins, both fail inconclusive, both make locked for another round; the breaker the loser, his nerve broken. THE HONOR: 2 points beating a higher level, 1 the equal, none the lower. THE LOSER: retreat losing the equal honor, or attack at -1 on initiative, to hit and saves throughout, no surprise - both sides prepared. The prose codifies per the R431 calculus",
+  "sentinel": "the gap census after this round: 140 closed, 95 open - the Psychic Duel box flips (census 609 -> 610); NEXT - R688: the Martial Arts doctrine opener (capture pp. 223-224), prefix djb (verify free at the landing), audit \"R688 OA martial arts opener audit\", include after rules/oapsychicduel.h"
+ },
+ "consts": [
+  {
+   "name": "djaOAPsychicDuelRangeFeet",
+   "value": 10,
+   "comment": "the psychic duel range - the characters spend the round within 10 feet of each other, concentrating their will (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelKensaiBonus",
+   "value": 2,
+   "comment": "the kensai duel bonus - kensai characters have a bonus of +2 to the saving throw vs. death roll when facing non-kensai characters (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelFriendsHonor",
+   "value": 3,
+   "comment": "the friends dishonor - the duel never used between friends or companions, such an action being highly insulting and dishonorable for both, 3 points of honor (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelHigherLevelHonor",
+   "value": 2,
+   "comment": "the higher-level honor award - the winner of a psychic duel gains 2 points of honor if his opponent is of a higher experience level than himself (print capture p. 223)"
+  },
+  {
+   "name": "djaOAPsychicDuelEqualLevelHonor",
+   "value": 1,
+   "comment": "the equal-level honor award - if the two are equal level, the winner gains 1 point of honor (print capture p. 223)"
+  },
+  {
+   "name": "djaOAPsychicDuelLoserAttackPenalty",
+   "value": -1,
+   "comment": "the loser attack penalty - if the loser attacks regardless of the outcome, he is -1 on his initiative, to hit, and saving throw rolls throughout the ensuing battle (print capture p. 223)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djaOAPsychicDuelDoctrine",
+   "value": true,
+   "comment": "the doctrine frame - the psychic duel a type of mental combat practiced by any character race or class, requiring no psionic talent, a test of the wills of the duelists - their courage, skill and determination, the invisible fight revealed by a faint grimace, the flicker of an eyelid, or the tic of a muscle (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelAnyoneMayTry",
+   "value": true,
+   "comment": "the anyone clause - although the psychic duel can be attempted by anyone, it can only be done under special circumstances (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelHumanOnly",
+   "value": true,
+   "comment": "the human-or-humanoid gate - it can only be used on or by intelligent creatures of human or humanoid races (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelOneOnOne",
+   "value": true,
+   "comment": "the one-on-one rule - it is strictly a one-on-one duel, a single character facing off against another (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelNeverFriends",
+   "value": true,
+   "comment": "the friends exclusion - it is never used between friends or companions, such an action being highly insulting and dishonorable for both (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelNoCrossedWeapons",
+   "value": true,
+   "comment": "the crossed-weapons exclusion - the characters cannot have crossed weapons before during the encounter (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelNoOutsideAttacks",
+   "value": true,
+   "comment": "the outside-attack exclusion - neither can it be used if they are attacked by others during the course of the psychic duel, not in the heat of a furious battle but in a challenge before the battle, or on a swaggering bully in the street (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelSaveVersusDeath",
+   "value": true,
+   "comment": "the resolution roll - each character rolls a saving throw vs. death (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelOneMakesOneWins",
+   "value": true,
+   "comment": "the split outcome - if one character makes a successful saving throw and the other does not, the successful character has won the duel (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelBothFailInconclusive",
+   "value": true,
+   "comment": "the inconclusive outcome - if both characters fail the saving throw, the duel is inconclusive and neither wins (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelBothMakeContinue",
+   "value": true,
+   "comment": "the continuation outcome - if both characters make the saving throw, they are locked in the mental battle and the duel continues for another round (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelBreakerLoses",
+   "value": true,
+   "comment": "the nerve-break rule - should one player break off the duel and attack before it is resolved, he is the loser, his nerve has broken (print capture p. 222)"
+  },
+  {
+   "name": "djaOAPsychicDuelLoserRetreat",
+   "value": true,
+   "comment": "the loser retreat option - the loser may retreat, losing points of honor equal to those gained by the victor (print capture p. 223)"
+  },
+  {
+   "name": "djaOAPsychicDuelLoserMayAttack",
+   "value": true,
+   "comment": "the loser attack option - the loser can attack regardless of the outcome of the psychic duel (print capture p. 223)"
+  },
+  {
+   "name": "djaOAPsychicDuelNoSurprise",
+   "value": true,
+   "comment": "the no-surprise rule - no surprise roll is made after the duel, since both sides are prepared (print capture p. 223)"
+  },
+  {
+   "name": "djaOAPsychicDuelLowerLevelNoHonor",
+   "value": true,
+   "comment": "the lower-level rule - if the loser is of lower level, the winner gains no honor for the duel (print capture p. 223)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the duel mechanics - the 10 feet and the kensai +2 against non-kensai",
+   "expr": "m['djaOAPsychicDuelRangeFeet']() != 10 or m['djaOAPsychicDuelKensaiBonus']() != 2"
+  },
+  {
+   "note": "the honor awards - the 2 for the higher, the 1 for the equal",
+   "expr": "m['djaOAPsychicDuelHigherLevelHonor']() != 2 or m['djaOAPsychicDuelEqualLevelHonor']() != 1"
+  },
+  {
+   "note": "the friends dishonor - the 3 points of honor",
+   "expr": "m['djaOAPsychicDuelFriendsHonor']() != 3"
+  },
+  {
+   "note": "the loser attack penalty - the -1 throughout the battle",
+   "expr": "m['djaOAPsychicDuelLoserAttackPenalty']() != -1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the psychic duel number pins": [
+   {
+    "kind": "const",
+    "name": "djaOAPsychicDuelRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "djaOAPsychicDuelKensaiBonus"
+   },
+   {
+    "kind": "const",
+    "name": "djaOAPsychicDuelFriendsHonor"
+   },
+   {
+    "kind": "const",
+    "name": "djaOAPsychicDuelHigherLevelHonor"
+   },
+   {
+    "kind": "const",
+    "name": "djaOAPsychicDuelEqualLevelHonor"
+   },
+   {
+    "kind": "const",
+    "name": "djaOAPsychicDuelLoserAttackPenalty"
+   }
+  ],
+  "the psychic duel doctrine pins": [
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelAnyoneMayTry"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelHumanOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelOneOnOne"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelNeverFriends"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelNoCrossedWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelNoOutsideAttacks"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelSaveVersusDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelOneMakesOneWins"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelBothFailInconclusive"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelBothMakeContinue"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelBreakerLoses"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelLoserRetreat"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelLoserMayAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelNoSurprise"
+   },
+   {
+    "kind": "bool",
+    "name": "djaOAPsychicDuelLowerLevelNoHonor"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Psychic Duel box closes",
+   "from": "  - [ ] The Psychic Duel (capture pp. 222-223)",
+   "to": "  - [x] The Psychic Duel (capture\n    pp. 222-223) - R687: the dja psychic duel\n    pins - the mental-combat frame (any\n    race or class, no psionic talent, the\n    wills test), the circumstances (the\n    human-or-humanoid gate, one-on-one,\n    never between friends - 3 honor, no\n    crossed weapons, no outside attacks),\n    the resolution (the 10 feet, the save\n    versus death, the kensai +2 against\n    non-kensai, the split-outcome win,\n    both-fail inconclusive, both-make\n    continuation, the nerve-break loser),\n    the honor awards (2 higher, 1 equal,\n    none lower), the loser's options\n    (retreat losing the equal honor, or\n    attack at -1 throughout with no\n    surprise); single-pass pins per the\n    Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 140,
+  "open": 95
+ },
+ "include_comment": "the OA psychic duel pins",
+ "include_after": "#include \"rules/oasubdual.h\"  // R686: the OA subduing pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R686 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R686 LANDED 2026-10-20: commit",
+  "  c553d0303b1888b87d210c8a446b952d6fd27233",
+  "  (census 608 -> 609, pushed e0bebcb..c553d03),",
+  "  OA SUBDUING OPPONENTENTS - the subdual",
+  "  doctrine, capture pp. 221-222 (the",
+  "  section ran past its gap-item page):",
+  "  rules/oasubdual.h, prefix diz (verified",
+  "  free at e0bebcb) - THE LAST di- PREFIX,",
+  "  ONE gap flip, 4 consts + 13 bools (17",
+  "  inlines, no table), gap census 138/97 ->",
+  "  139/96. The doctrine frame - the shukenja",
+  "  forbidden to kill, the live prisoners and",
+  "  hostages; the low-intelligence gate with",
+  "  the genius voluntary-surrender clause;",
+  "  the any-creature scope; the player-choice",
+  "  rule (a PC never forced into submission);",
+  "  the fight-start declaration with the",
+  "  blunt striking surfaces; the quarter",
+  "  split - each blow normal, 1/4 hit points,",
+  "  3/4 subdual recorded separately, a split-",
+  "  integrity example proving the shares sum",
+  "  to the whole; the surrender at the",
+  "  STARTING hit points; the normal-damage",
+  "  voiding (all subdual points gone); the",
+  "  subdued state (stop, drop weapons); the",
+  "  oath mechanics - the secret honor roll or",
+  "  the save versus death, compliance or the",
+  "  show of agreement; the captive escape",
+  "  clause. Single-pass pins per the Chapter",
+  "  9 provenance shift. rverify GREEN first",
+  "  try at e0bebcb, 17 mutants, 0 missed.",
+  "  Spec md5 c8e102abea0544a982d2c6247c944e",
+  "  3d (authored-plus-newline md5 31657627571",
+  "  c6975f66459577ff8a19c - the value the",
+  "  ritual gated and matched; canvas md5",
+  "  9e73d8193447f29bb8ff6ff65b4fd260). NEXT",
+  "  - R687: The Psychic Duel (capture pp.",
+  "  222-223), prefix dja (verify free at",
+  "  c553d03) - THE dj- FAMILY OPENS, audit",
+  "  \"R687 OA psychic duel audit\", include",
+  "  after rules/oasubdual.h"
+ ]
+}

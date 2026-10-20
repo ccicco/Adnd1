@@ -1395,7 +1395,25 @@ description riding the same round.
     agreement), the captive escape clause;
     single-pass pins per the Chapter 9
     provenance shift
-  - [ ] The Psychic Duel (capture pp. 222-223)
+  - [x] The Psychic Duel (capture
+    pp. 222-223) - R687: the dja psychic duel
+    pins - the mental-combat frame (any
+    race or class, no psionic talent, the
+    wills test), the circumstances (the
+    human-or-humanoid gate, one-on-one,
+    never between friends - 3 honor, no
+    crossed weapons, no outside attacks),
+    the resolution (the 10 feet, the save
+    versus death, the kensai +2 against
+    non-kensai, the split-outcome win,
+    both-fail inconclusive, both-make
+    continuation, the nerve-break loser),
+    the honor awards (2 higher, 1 equal,
+    none lower), the loser's options
+    (retreat losing the equal honor, or
+    attack at -1 throughout with no
+    surprise); single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Martial Arts prose and Styles (capture pp.
     223-225) - the style doctrine and the principal
     styles

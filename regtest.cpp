@@ -387,6 +387,7 @@
 #include "rules/oaunhorsing.h"  // R684: the OA unhorsing pins
 #include "rules/oadisarming.h"  // R685: the OA disarming pins
 #include "rules/oasubdual.h"  // R686: the OA subduing pins
+#include "rules/oapsychicduel.h"  // R687: the OA psychic duel pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -109215,6 +109216,60 @@ int main() {
         )
             ++bad;
         printf("R686 OA subduing audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R687 OA psychic duel audit ----
+    // OA round seventy-four (capture pp. 222-223): The Psychic Duel - the
+    // mental combat of the wills with the save-versus-death resolution, the
+    // kensai bonus, the three outcomes, the honor awards and the loser
+    // options, single-pass pins per the Chapter 9 provenance shift
+    {
+        using namespace rules;
+        int bad = 0;
+    if (djaOAPsychicDuelRangeFeet() != 10
+            || djaOAPsychicDuelKensaiBonus() != 2
+            || djaOAPsychicDuelFriendsHonor() != 3
+            || djaOAPsychicDuelHigherLevelHonor() != 2
+            || djaOAPsychicDuelEqualLevelHonor() != 1
+            || djaOAPsychicDuelLoserAttackPenalty() != -1
+            || !djaOAPsychicDuelDoctrine()
+            || !djaOAPsychicDuelAnyoneMayTry()
+            || !djaOAPsychicDuelHumanOnly()
+            || !djaOAPsychicDuelOneOnOne()
+            || !djaOAPsychicDuelNeverFriends()
+            || !djaOAPsychicDuelNoCrossedWeapons()
+            || !djaOAPsychicDuelNoOutsideAttacks()
+            || !djaOAPsychicDuelSaveVersusDeath()
+            || !djaOAPsychicDuelOneMakesOneWins()
+            || !djaOAPsychicDuelBothFailInconclusive()
+            || !djaOAPsychicDuelBothMakeContinue()
+            || !djaOAPsychicDuelBreakerLoses()
+            || !djaOAPsychicDuelLoserRetreat()
+            || !djaOAPsychicDuelLoserMayAttack()
+            || !djaOAPsychicDuelNoSurprise()
+            || !djaOAPsychicDuelLowerLevelNoHonor()
+        )
+            ++bad;
+        // the duel mechanics - the 10 feet and the kensai +2 against
+        // non-kensai
+    if (djaOAPsychicDuelRangeFeet() != 10
+            || djaOAPsychicDuelKensaiBonus() != 2
+        )
+            ++bad;
+        // the honor awards - the 2 for the higher, the 1 for the equal
+    if (djaOAPsychicDuelHigherLevelHonor() != 2
+            || djaOAPsychicDuelEqualLevelHonor() != 1
+        )
+            ++bad;
+        // the friends dishonor - the 3 points of honor
+    if (djaOAPsychicDuelFriendsHonor() != 3
+        )
+            ++bad;
+        // the loser attack penalty - the -1 throughout the battle
+    if (djaOAPsychicDuelLoserAttackPenalty() != -1
+        )
+            ++bad;
+        printf("R687 OA psychic duel audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

@@ -15288,6 +15288,47 @@ when both halves land.
   free if dja through dje collide), audit
   "R686 OA subduing audit", include after
   rules/oadisarming.h
+- R686 LANDED 2026-10-20: commit
+  c553d0303b1888b87d210c8a446b952d6fd27233
+  (census 608 -> 609, pushed e0bebcb..c553d03),
+  OA SUBDUING OPPONENTENTS - the subdual
+  doctrine, capture pp. 221-222 (the
+  section ran past its gap-item page):
+  rules/oasubdual.h, prefix diz (verified
+  free at e0bebcb) - THE LAST di- PREFIX,
+  ONE gap flip, 4 consts + 13 bools (17
+  inlines, no table), gap census 138/97 ->
+  139/96. The doctrine frame - the shukenja
+  forbidden to kill, the live prisoners and
+  hostages; the low-intelligence gate with
+  the genius voluntary-surrender clause;
+  the any-creature scope; the player-choice
+  rule (a PC never forced into submission);
+  the fight-start declaration with the
+  blunt striking surfaces; the quarter
+  split - each blow normal, 1/4 hit points,
+  3/4 subdual recorded separately, a split-
+  integrity example proving the shares sum
+  to the whole; the surrender at the
+  STARTING hit points; the normal-damage
+  voiding (all subdual points gone); the
+  subdued state (stop, drop weapons); the
+  oath mechanics - the secret honor roll or
+  the save versus death, compliance or the
+  show of agreement; the captive escape
+  clause. Single-pass pins per the Chapter
+  9 provenance shift. rverify GREEN first
+  try at e0bebcb, 17 mutants, 0 missed.
+  Spec md5 c8e102abea0544a982d2c6247c944e
+  3d (authored-plus-newline md5 31657627571
+  c6975f66459577ff8a19c - the value the
+  ritual gated and matched; canvas md5
+  9e73d8193447f29bb8ff6ff65b4fd260). NEXT
+  - R687: The Psychic Duel (capture pp.
+  222-223), prefix dja (verify free at
+  c553d03) - THE dj- FAMILY OPENS, audit
+  "R687 OA psychic duel audit", include
+  after rules/oasubdual.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
