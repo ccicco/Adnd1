@@ -1,0 +1,577 @@
+{
+ "round": 673,
+ "title": "WU JEN FOURTH LEVEL SPELLS - the 24 fourth level wu jen spells with the school, component, casting time, saving throw, reversible and element codes",
+ "prefix": "dii",
+ "header_file": "rules/oawjl4spells.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 595,
+ "inline_count": 27,
+ "audit_label": "R673 OA wu jen fourth level spells audit",
+ "audit_comment": "OA round sixty (capture pp. 181-188): the wu jen fourth level spell stat blocks - the school, component, casting time and saving throw codes with the reversible and element markers, cross-checked spell by spell between the passes",
+ "banner": {
+  "title": "WU JEN FOURTH LEVEL SPELLS, printed capture pp. 181-188 - the OA wu jen fourth level spells round",
+  "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read (print pp. 181-188; compressed pp. 85-88); all 24 stat blocks cross-checked spell by spell between the passes, zero contested stat reads - the variances typographic or prose-only (the compressed minus signs for the spectral force plus signs, the degree marks for the inch marks). Alteration and enchantment/charm tie as the most common schools at six spells each, evocation four, abjuration three, invocation and illusion two each - THE INVOCATION SCHOOL DEBUTING for the wu jen (dream vision, vengeance); wall of bones the lone conjuration, its dual school Conjuration/Necromantic pinned primary 4 (the exaction precedent); no divination spell this level. The component census: 13 VSM, seven verbal and somatic, THREE verbal-only spells (dimension door, polymorph self, vengeance), shout the lone V,M. The casting times: seven four-segment (the most common cast), seven one-round, three one-turn (dream vision, minor creation, reverse flow), four three-segment, dimension door and shout the single segments, elemental turning the lone five-segment. Eight negation saves, three special, NO half save - the first wu jen level without one. Three spells read Reversible (dream vision, remove curse, reverse flow). The sixth column cross-checks the R669 element grid: the seven tagged cells matching the landed dieWJT66L4Element pins exactly - dimension door Earth, elemental turning All, fire enchantment, melt metal and wall of fire Fire, plant growth and polymorph other Nature. The stat grid pins as a table: 24 rows the spell ordinals, six columns - school, components (a V=1 S=2 M=4 bitmask), casting time in segments (1 round = 10, 1 turn = 60), saving throw code (0 none, 1 neg., 2 special, 3 half), reversible and element markers. The spell names ride the column comments, the prose descriptions close in their own rounds. The table tag WJL4Data identifier-safe per the R639 lesson",
+  "sentinel": "the gap census after this round: 126 closed, 109 open - the wu jen Fourth Level Spells box flips (census 595 -> 596); NEXT - R674: the wu jen Fifth Level Spells (capture pp. 189-196, the 24 stat blocks), prefix dij (verify free), audit \"R674 OA wu jen fifth level spells audit\""
+ },
+ "consts": [
+  {
+   "name": "diiWJL4SpellCount",
+   "value": 24,
+   "comment": "the 24 fourth level wu jen spells (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4AlterationCount",
+   "value": 6,
+   "comment": "the six alteration fourth level wu jen spells - dimension door, minor creation, plant growth, polymorph other, polymorph self, reverse flow (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4EnchantmentCount",
+   "value": 6,
+   "comment": "the six enchantment/charm fourth level wu jen spells - bargain, confusion, emotion, fire enchantment, quell, transfix (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4EvocationCount",
+   "value": 4,
+   "comment": "the four evocation fourth level wu jen spells - dancing blade, melt metal, shout, wall of fire (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4AbjurationCount",
+   "value": 3,
+   "comment": "the three abjuration fourth level wu jen spells - dispel illusion, elemental turning, remove curse (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4InvocationCount",
+   "value": 2,
+   "comment": "the two invocation fourth level wu jen spells - dream vision, vengeance; the invocation school debuting for the wu jen (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4IllusionCount",
+   "value": 2,
+   "comment": "the two illusion fourth level wu jen spells - improved invisibility, spectral force (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4ReversibleCount",
+   "value": 3,
+   "comment": "the three reversible fourth level wu jen spells - dream vision, remove curse, reverse flow (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4VSMCount",
+   "value": 13,
+   "comment": "the 13 fourth level wu jen spells taking all three components - the bitmask reads 7 (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4VSCount",
+   "value": 7,
+   "comment": "the seven fourth level wu jen spells taking verbal and somatic - dispel illusion, emotion, improved invisibility, plant growth, quell, remove curse, reverse flow; the bitmask reads 3 (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4VerbalOnlyCount",
+   "value": 3,
+   "comment": "the three fourth level wu jen spells taking the verbal component only - dimension door, polymorph self, vengeance (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4VMCount",
+   "value": 1,
+   "comment": "the one fourth level wu jen spell taking verbal and material without the somatic - shout; the bitmask reads 5 (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4FourSegmentCasts",
+   "value": 7,
+   "comment": "the seven fourth level wu jen spells with a four-segment casting time - confusion, emotion, improved invisibility, plant growth, polymorph other, remove curse, wall of fire; the most common cast of the level (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4RoundCasts",
+   "value": 7,
+   "comment": "the seven fourth level wu jen spells with a one-round casting time - bargain, dancing blade, fire enchantment, melt metal, transfix, vengeance, wall of bones (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4TurnCasts",
+   "value": 3,
+   "comment": "the three fourth level wu jen spells with a one-turn casting time - dream vision, minor creation, reverse flow (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4ThreeSegmentCasts",
+   "value": 4,
+   "comment": "the four fourth level wu jen spells with a three-segment casting time - dispel illusion, polymorph self, quell, spectral force (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4OneSegmentCasts",
+   "value": 2,
+   "comment": "the two fourth level wu jen spells with a one-segment casting time - dimension door, shout (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4FiveSegmentCasts",
+   "value": 1,
+   "comment": "the one fourth level wu jen spell with a five-segment casting time - elemental turning (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4NegSaves",
+   "value": 8,
+   "comment": "the eight fourth level wu jen spells with a negation saving throw - bargain, elemental turning, emotion, fire enchantment, polymorph other, quell, shout, transfix (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4SpecialSaves",
+   "value": 3,
+   "comment": "the three fourth level wu jen spells with a special saving throw - confusion, remove curse, spectral force (print pp. 181-188; compressed pp. 85-88)"
+  },
+  {
+   "name": "diiWJL4ElementCount",
+   "value": 7,
+   "comment": "the seven element-tagged fourth level wu jen spells - dimension door Earth, elemental turning All, fire enchantment, melt metal and wall of fire Fire, plant growth and polymorph other Nature - matching the R669 dieWJT66L4Element grid exactly (print pp. 181-188; compressed pp. 85-88)"
+  }
+ ],
+ "bools": [],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "diiWJL4Grid",
+   "tag": "WJL4Data",
+   "count": "diiWJL4SpellCount",
+   "col_default": 0,
+   "cols": [
+    "diiWJL4School",
+    "diiWJL4Components",
+    "diiWJL4CastTime",
+    "diiWJL4Save",
+    "diiWJL4Reversible",
+    "diiWJL4Element"
+   ],
+   "col_comments": [
+    "the wu jen 4th level spell schools by ordinal (print pp. 181-188; compressed pp. 85-88). The spell list rides this comment: 1 bargain, 2 confusion, 3 dancing blade, 4 dimension door, 5 dispel illusion, 6 dream vision, 7 elemental turning, 8 emotion, 9 fire enchantment, 10 improved invisibility, 11 melt metal, 12 minor creation, 13 plant growth, 14 polymorph other, 15 polymorph self, 16 quell, 17 remove curse, 18 reverse flow, 19 shout, 20 spectral force, 21 transfix, 22 vengeance, 23 wall of bones, 24 wall of fire - the school codes: 1 enchantment/charm, 2 divination, 3 evocation, 4 conjuration (the printed Conjuration and Conjuration/Summoning both pinned 4), 6 alteration, 7 abjuration, 8 invocation, 9 illusion/phantasm - alteration and enchantment/charm tied as the most common schools at six spells each (dimension door, minor creation, plant growth, polymorph other, polymorph self, reverse flow; bargain, confusion, emotion, fire enchantment, quell, transfix); evocation four; abjuration three; invocation and illusion two each - the invocation school DEBUTING for the wu jen (dream vision, vengeance); wall of bones the lone conjuration, its dual school Conjuration/Necromantic pinned primary 4 (the exaction precedent); no divination or necromantic spell this level",
+    "the wu jen 4th level spell components by ordinal (print pp. 181-188; compressed pp. 85-88). The spell list rides this comment: 1 bargain, 2 confusion, 3 dancing blade, 4 dimension door, 5 dispel illusion, 6 dream vision, 7 elemental turning, 8 emotion, 9 fire enchantment, 10 improved invisibility, 11 melt metal, 12 minor creation, 13 plant growth, 14 polymorph other, 15 polymorph self, 16 quell, 17 remove curse, 18 reverse flow, 19 shout, 20 spectral force, 21 transfix, 22 vengeance, 23 wall of bones, 24 wall of fire - the component codes a bitmask: verbal 1, somatic 2, material 4 - 13 spells take all three (7), seven verbal and somatic (3): dispel illusion, emotion, improved invisibility, plant growth, quell, remove curse, reverse flow; THREE verbal-only spells (1): dimension door, polymorph self, vengeance; shout the lone verbal and material without the somatic (5)",
+    "the wu jen 4th level spell casting times by ordinal (print pp. 181-188; compressed pp. 85-88). The spell list rides this comment: 1 bargain, 2 confusion, 3 dancing blade, 4 dimension door, 5 dispel illusion, 6 dream vision, 7 elemental turning, 8 emotion, 9 fire enchantment, 10 improved invisibility, 11 melt metal, 12 minor creation, 13 plant growth, 14 polymorph other, 15 polymorph self, 16 quell, 17 remove curse, 18 reverse flow, 19 shout, 20 spectral force, 21 transfix, 22 vengeance, 23 wall of bones, 24 wall of fire - the casting time in segments - 1 round = 10 segments, 1 turn = 60 segments: seven spells four segments (the most common cast of the level), seven a full round (bargain, dancing blade, fire enchantment, melt metal, transfix, vengeance, wall of bones), three a full turn (dream vision, minor creation, reverse flow), four three segments, dimension door and shout the single segments, elemental turning the lone five-segment cast",
+    "the wu jen 4th level spell saving throws by ordinal (print pp. 181-188; compressed pp. 85-88). The spell list rides this comment: 1 bargain, 2 confusion, 3 dancing blade, 4 dimension door, 5 dispel illusion, 6 dream vision, 7 elemental turning, 8 emotion, 9 fire enchantment, 10 improved invisibility, 11 melt metal, 12 minor creation, 13 plant growth, 14 polymorph other, 15 polymorph self, 16 quell, 17 remove curse, 18 reverse flow, 19 shout, 20 spectral force, 21 transfix, 22 vengeance, 23 wall of bones, 24 wall of fire - the saving throw codes: 0 none, 1 neg., 2 special, 3 half - eight negation (bargain, elemental turning, emotion, fire enchantment, polymorph other, quell, shout, transfix), three special (confusion, remove curse, spectral force), the other 13 none - NO half save this level, the first wu jen level without one",
+    "the wu jen 4th level spell reversible markers by ordinal (print pp. 181-188; compressed pp. 85-88). The spell list rides this comment: 1 bargain, 2 confusion, 3 dancing blade, 4 dimension door, 5 dispel illusion, 6 dream vision, 7 elemental turning, 8 emotion, 9 fire enchantment, 10 improved invisibility, 11 melt metal, 12 minor creation, 13 plant growth, 14 polymorph other, 15 polymorph self, 16 quell, 17 remove curse, 18 reverse flow, 19 shout, 20 spectral force, 21 transfix, 22 vengeance, 23 wall of bones, 24 wall of fire - the cell is 1 where the printed header reads Reversible - dream vision, remove curse, reverse flow; the three",
+    "the wu jen 4th level spell element marks by ordinal (print pp. 181-188; compressed pp. 85-88). The spell list rides this comment: 1 bargain, 2 confusion, 3 dancing blade, 4 dimension door, 5 dispel illusion, 6 dream vision, 7 elemental turning, 8 emotion, 9 fire enchantment, 10 improved invisibility, 11 melt metal, 12 minor creation, 13 plant growth, 14 polymorph other, 15 polymorph self, 16 quell, 17 remove curse, 18 reverse flow, 19 shout, 20 spectral force, 21 transfix, 22 vengeance, 23 wall of bones, 24 wall of fire - the element codes of the R669 T66 grid: 0 none, 1 Air, 2 Earth, 3 Fire, 4 Water, 5 Nature, 6 Wood, 7 All - the seven tagged spells (dimension door Earth, elemental turning All, fire enchantment, melt metal and wall of fire Fire, plant growth and polymorph other Nature) matching the R669 dieWJT66L4Element pins exactly - the cross-check column"
+   ],
+   "data": [
+    [
+     1,
+     7,
+     10,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     4,
+     2,
+     0,
+     0
+    ],
+    [
+     3,
+     7,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     0,
+     0,
+     2
+    ],
+    [
+     7,
+     3,
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     8,
+     7,
+     60,
+     0,
+     1,
+     0
+    ],
+    [
+     7,
+     7,
+     5,
+     1,
+     0,
+     7
+    ],
+    [
+     1,
+     3,
+     4,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     10,
+     1,
+     0,
+     3
+    ],
+    [
+     9,
+     3,
+     4,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     7,
+     10,
+     0,
+     0,
+     3
+    ],
+    [
+     6,
+     7,
+     60,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     3,
+     4,
+     0,
+     0,
+     5
+    ],
+    [
+     6,
+     7,
+     4,
+     1,
+     0,
+     5
+    ],
+    [
+     6,
+     1,
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     3,
+     1,
+     0,
+     0
+    ],
+    [
+     7,
+     3,
+     4,
+     2,
+     1,
+     0
+    ],
+    [
+     6,
+     3,
+     60,
+     0,
+     1,
+     0
+    ],
+    [
+     3,
+     5,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     9,
+     7,
+     3,
+     2,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     10,
+     1,
+     0,
+     0
+    ],
+    [
+     8,
+     1,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     4,
+     7,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     7,
+     4,
+     0,
+     0,
+     3
+    ]
+   ],
+   "comment": "the wu jen fourth level spell stat grid (print pp. 181-188; compressed pp. 85-88)",
+   "audit_comment": "the wu jen fourth level stat grid: the school, component, casting time and saving throw codes with the reversible and element markers by spell ordinal"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the count pins - 24 spells, six alteration, six enchantment/charm, four evocation, three abjuration, two invocation, two illusion, three reversible",
+   "expr": "m['diiWJL4SpellCount']() != 24 or m['diiWJL4AlterationCount']() != 6 or m['diiWJL4EnchantmentCount']() != 6 or m['diiWJL4EvocationCount']() != 4 or m['diiWJL4AbjurationCount']() != 3 or m['diiWJL4InvocationCount']() != 2 or m['diiWJL4IllusionCount']() != 2 or m['diiWJL4ReversibleCount']() != 3"
+  },
+  {
+   "note": "the component pins - 13 VSM, seven VS, the three verbal-only spells, shout the lone V,M",
+   "expr": "m['diiWJL4VSMCount']() != 13 or m['diiWJL4VSCount']() != 7 or m['diiWJL4VerbalOnlyCount']() != 3 or m['diiWJL4VMCount']() != 1"
+  },
+  {
+   "note": "the casting time pins - seven four-segment, seven round casts, three turn casts, four three-segment, two single-segment, elemental turning the lone five",
+   "expr": "m['diiWJL4FourSegmentCasts']() != 7 or m['diiWJL4RoundCasts']() != 7 or m['diiWJL4TurnCasts']() != 3 or m['diiWJL4ThreeSegmentCasts']() != 4 or m['diiWJL4OneSegmentCasts']() != 2 or m['diiWJL4FiveSegmentCasts']() != 1"
+  },
+  {
+   "note": "the saving throw pins - eight neg., three special, the seven element tags",
+   "expr": "m['diiWJL4NegSaves']() != 8 or m['diiWJL4SpecialSaves']() != 3 or m['diiWJL4ElementCount']() != 7"
+  },
+  {
+   "note": "the school pins - wall of bones the dual Conjuration/Necromantic pinned primary 4; dream vision and vengeance the debuting invocation 8; dispel illusion, elemental turning and remove curse abjuration; improved invisibility and spectral force illusion; dancing blade, melt metal, shout and wall of fire evocation; bargain and quell among the six enchantment/charm; dimension door and plant growth among the six alteration",
+   "expr": "m['diiWJL4School'](22) != 4 or m['diiWJL4School'](5) != 8 or m['diiWJL4School'](21) != 8 or m['diiWJL4School'](4) != 7 or m['diiWJL4School'](6) != 7 or m['diiWJL4School'](16) != 7 or m['diiWJL4School'](9) != 9 or m['diiWJL4School'](19) != 9 or m['diiWJL4School'](2) != 3 or m['diiWJL4School'](10) != 3 or m['diiWJL4School'](18) != 3 or m['diiWJL4School'](23) != 3 or m['diiWJL4School'](0) != 1 or m['diiWJL4School'](1) != 1 or m['diiWJL4School'](7) != 1 or m['diiWJL4School'](8) != 1 or m['diiWJL4School'](15) != 1 or m['diiWJL4School'](20) != 1 or m['diiWJL4School'](3) != 6 or m['diiWJL4School'](11) != 6 or m['diiWJL4School'](12) != 6 or m['diiWJL4School'](13) != 6 or m['diiWJL4School'](14) != 6 or m['diiWJL4School'](17) != 6"
+  },
+  {
+   "note": "the component cell pins - the three verbal-only spells, the V,M shout, the VS set, and the VSM spots",
+   "expr": "m['diiWJL4Components'](3) != 1 or m['diiWJL4Components'](14) != 1 or m['diiWJL4Components'](21) != 1 or m['diiWJL4Components'](18) != 5 or m['diiWJL4Components'](4) != 3 or m['diiWJL4Components'](7) != 3 or m['diiWJL4Components'](9) != 3 or m['diiWJL4Components'](12) != 3 or m['diiWJL4Components'](15) != 3 or m['diiWJL4Components'](16) != 3 or m['diiWJL4Components'](17) != 3 or m['diiWJL4Components'](0) != 7 or m['diiWJL4Components'](2) != 7 or m['diiWJL4Components'](22) != 7"
+  },
+  {
+   "note": "the casting time cell pins - the two single segments, elemental turning the five, the turn casts, spectral force three, and the four-segment spots",
+   "expr": "m['diiWJL4CastTime'](3) != 1 or m['diiWJL4CastTime'](18) != 1 or m['diiWJL4CastTime'](6) != 5 or m['diiWJL4CastTime'](5) != 60 or m['diiWJL4CastTime'](11) != 60 or m['diiWJL4CastTime'](17) != 60 or m['diiWJL4CastTime'](19) != 3 or m['diiWJL4CastTime'](14) != 3 or m['diiWJL4CastTime'](15) != 3 or m['diiWJL4CastTime'](4) != 3 or m['diiWJL4CastTime'](1) != 4 or m['diiWJL4CastTime'](7) != 4 or m['diiWJL4CastTime'](23) != 4 or m['diiWJL4CastTime'](13) != 4 or m['diiWJL4CastTime'](20) != 10 or m['diiWJL4CastTime'](22) != 10"
+  },
+  {
+   "note": "the saving throw cell pins - the eight negation saves, the three special saves, dancing blade none",
+   "expr": "m['diiWJL4Save'](0) != 1 or m['diiWJL4Save'](6) != 1 or m['diiWJL4Save'](7) != 1 or m['diiWJL4Save'](8) != 1 or m['diiWJL4Save'](13) != 1 or m['diiWJL4Save'](15) != 1 or m['diiWJL4Save'](18) != 1 or m['diiWJL4Save'](20) != 1 or m['diiWJL4Save'](1) != 2 or m['diiWJL4Save'](16) != 2 or m['diiWJL4Save'](19) != 2 or m['diiWJL4Save'](2) != 0"
+  },
+  {
+   "note": "the reversible pins - dream vision, remove curse and reverse flow marked; bargain, confusion and wall of fire not",
+   "expr": "m['diiWJL4Reversible'](5) != 1 or m['diiWJL4Reversible'](16) != 1 or m['diiWJL4Reversible'](17) != 1 or m['diiWJL4Reversible'](0) != 0 or m['diiWJL4Reversible'](1) != 0 or m['diiWJL4Reversible'](23) != 0 or m['diiWJL4Reversible'](13) != 0"
+  },
+  {
+   "note": "the element cross-check pins - the seven tagged cells matching the R669 dieWJT66L4Element grid: dimension door Earth, elemental turning All, fire enchantment, melt metal and wall of fire Fire, plant growth and polymorph other Nature; confusion untagged",
+   "expr": "m['diiWJL4Element'](3) != 2 or m['diiWJL4Element'](6) != 7 or m['diiWJL4Element'](8) != 3 or m['diiWJL4Element'](10) != 3 or m['diiWJL4Element'](23) != 3 or m['diiWJL4Element'](12) != 5 or m['diiWJL4Element'](13) != 5 or m['diiWJL4Element'](1) != 0 or m['diiWJL4Element'](0) != 0"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the spell count pins": [
+   {
+    "kind": "const",
+    "name": "diiWJL4SpellCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4AlterationCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4EnchantmentCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4EvocationCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4AbjurationCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4InvocationCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4IllusionCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4ReversibleCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4VSMCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4VSCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4VerbalOnlyCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4VMCount"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4FourSegmentCasts"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4RoundCasts"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4TurnCasts"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4ThreeSegmentCasts"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4OneSegmentCasts"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4FiveSegmentCasts"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4NegSaves"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4SpecialSaves"
+   },
+   {
+    "kind": "const",
+    "name": "diiWJL4ElementCount"
+   }
+  ],
+  "the stat grid pins": [
+   {
+    "kind": "table",
+    "name": "diiWJL4Grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the wu jen Fourth Level Spells box closes",
+   "to": "  - [x] Fourth Level Spells (capture pp. 177-188) -\n    R673: the dii WJL4 stat grid - the 24\n    fourth level wu jen spells with the school,\n    component, casting time, saving throw,\n    reversible and element codes (the element\n    cells cross-checking the R669 T66 grid;\n    the invocation school debuting for the\n    wu jen; wall of bones the dual\n    Conjuration/Necromantic pinned primary;\n    three verbal-only spells and NO half save,\n    the first level without one; the stat\n    blocks cross-checked spell by spell\n    between the passes); the names ride the\n    column comments, the prose descriptions\n    close in their own rounds",
+   "from": "  - [ ] Fourth Level Spells (capture pp. 177-188)"
+  }
+ ],
+ "gap_census": {
+  "closed": 126,
+  "open": 109
+ },
+ "include_comment": "the OA wu jen fourth level spells pins",
+ "include_after": "#include \"rules/oawjl3spells.h\"  // R672: the OA wu jen third level spells pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R672 LANDED 2026-10-20: commit f6b10e54b3174de9a64fc7f1ddfdc0047b775102",
+ "prev_record": [
+  "- R672 LANDED 2026-10-20: commit f6b10e54b3174de9a64fc7f1ddfdc0047b775102",
+  "  (census 594 -> 595, pushed 234a53b..f6b10e5),",
+  "  WU JEN THIRD LEVEL SPELLS - the 24",
+  "  third level wu jen spell stat",
+  "  blocks, capture pp. 173-181:",
+  "  rules/oawjl3spells.h, prefix dih",
+  "  (verified free at 234a53b), ONE gap",
+  "  flip (single-line child label), 20",
+  "  consts, 26 inlines (grid tag",
+  "  WJL3Data, 24 rows x 6 cols), gap",
+  "  census 124/111 -> 125/110: all 24",
+  "  stat blocks cross-checked spell by",
+  "  spell between the passes (print pp.",
+  "  173-181 vs compressed pp. 82-85),",
+  "  zero contested stat reads - the",
+  "  variances typographic or prose-only",
+  "  (the compressed Scy for scry in the",
+  "  header, the print 6-10 against the",
+  "  compressed 8-10 for the cloudburst",
+  "  large-fire quench, the feign death",
+  "  duration sign, the fire rain 1d8",
+  "  read as 108 in the compressed).",
+  "  Alteration again the most common:",
+  "  seven of the 24, enchantment/charm",
+  "  and illusion four each, divination",
+  "  three, evocation and abjuration two",
+  "  each, conjuration and necromantic",
+  "  one each (animate fire the lone",
+  "  conjuration, feign death the lone",
+  "  necromantic). TWO dual-school prints",
+  "  pinned primary (the exaction",
+  "  precedent): fabricate the",
+  "  Enchantment/Alteration dual pinned",
+  "  1, face the Illusion/Phantasm;",
+  "  Enchantment/Charm dual pinned 9.",
+  "  THREE spells take the Casting Time:",
+  "  Special line (fabricate, illusionary",
+  "  script, memory) pinned -1, the R662",
+  "  exorcise convention; four one-turn",
+  "  casts, five one-round, seven",
+  "  three-segment, cloudburst and fire",
+  "  rain five segments, statue the lone",
+  "  seven-segment, feign death the lone",
+  "  single segment. Components: 19 VSM,",
+  "  dispel magic and feign death the VS",
+  "  pair, suggestion and tongues the",
+  "  V,M pairs, hold person the lone",
+  "  verbal-only. Four negation saves,",
+  "  four special, fire rain and steam",
+  "  breath the two half saves. Four",
+  "  reversible (face, magnetism, memory,",
+  "  tongues). The SIXTH column",
+  "  cross-checks the R669",
+  "  dieWJT66L3Element grid - the seven",
+  "  tagged cells matching exactly, with",
+  "  cloudburst carrying the Water/Air",
+  "  dual code 8 (the first dual element",
+  "  in a stat grid). rverify GREEN at",
+  "  234a53b, 164 mutants, 0 missed.",
+  "  Spec md5",
+  "  27262a7799827b43ba8c6f8f85dd0164",
+  "  (authored-plus-newline md5",
+  "  33e415bda31ac72c4d3b5c4a4d162ebc -",
+  "  the value the ritual gated and",
+  "  matched; canvas md5",
+  "  38a0367b457d4af6e552946103d16b8e).",
+  "  NEXT - R673: the wu jen Fourth",
+  "  Level Spells (capture pp. 177-188,",
+  "  the 24 stat blocks), prefix dii",
+  "  (verified free at f6b10e5), audit",
+  "  \"R673 OA wu jen fourth level spells",
+  "  audit\", include after",
+  "  rules/oawjl3spells.h"
+ ]
+}

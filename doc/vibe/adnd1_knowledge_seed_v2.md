@@ -14420,6 +14420,79 @@ when both halves land.
   free at 234a53b), audit "R672 OA wu
   jen third level spells audit",
   include after rules/oawjl2spells.h
+- R672 LANDED 2026-10-20: commit f6b10e54b3174de9a64fc7f1ddfdc0047b775102
+  (census 594 -> 595, pushed 234a53b..f6b10e5),
+  WU JEN THIRD LEVEL SPELLS - the 24
+  third level wu jen spell stat
+  blocks, capture pp. 173-181:
+  rules/oawjl3spells.h, prefix dih
+  (verified free at 234a53b), ONE gap
+  flip (single-line child label), 20
+  consts, 26 inlines (grid tag
+  WJL3Data, 24 rows x 6 cols), gap
+  census 124/111 -> 125/110: all 24
+  stat blocks cross-checked spell by
+  spell between the passes (print pp.
+  173-181 vs compressed pp. 82-85),
+  zero contested stat reads - the
+  variances typographic or prose-only
+  (the compressed Scy for scry in the
+  header, the print 6-10 against the
+  compressed 8-10 for the cloudburst
+  large-fire quench, the feign death
+  duration sign, the fire rain 1d8
+  read as 108 in the compressed).
+  Alteration again the most common:
+  seven of the 24, enchantment/charm
+  and illusion four each, divination
+  three, evocation and abjuration two
+  each, conjuration and necromantic
+  one each (animate fire the lone
+  conjuration, feign death the lone
+  necromantic). TWO dual-school prints
+  pinned primary (the exaction
+  precedent): fabricate the
+  Enchantment/Alteration dual pinned
+  1, face the Illusion/Phantasm;
+  Enchantment/Charm dual pinned 9.
+  THREE spells take the Casting Time:
+  Special line (fabricate, illusionary
+  script, memory) pinned -1, the R662
+  exorcise convention; four one-turn
+  casts, five one-round, seven
+  three-segment, cloudburst and fire
+  rain five segments, statue the lone
+  seven-segment, feign death the lone
+  single segment. Components: 19 VSM,
+  dispel magic and feign death the VS
+  pair, suggestion and tongues the
+  V,M pairs, hold person the lone
+  verbal-only. Four negation saves,
+  four special, fire rain and steam
+  breath the two half saves. Four
+  reversible (face, magnetism, memory,
+  tongues). The SIXTH column
+  cross-checks the R669
+  dieWJT66L3Element grid - the seven
+  tagged cells matching exactly, with
+  cloudburst carrying the Water/Air
+  dual code 8 (the first dual element
+  in a stat grid). rverify GREEN at
+  234a53b, 164 mutants, 0 missed.
+  Spec md5
+  27262a7799827b43ba8c6f8f85dd0164
+  (authored-plus-newline md5
+  33e415bda31ac72c4d3b5c4a4d162ebc -
+  the value the ritual gated and
+  matched; canvas md5
+  38a0367b457d4af6e552946103d16b8e).
+  NEXT - R673: the wu jen Fourth
+  Level Spells (capture pp. 177-188,
+  the 24 stat blocks), prefix dii
+  (verified free at f6b10e5), audit
+  "R673 OA wu jen fourth level spells
+  audit", include after
+  rules/oawjl3spells.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1150,7 +1150,21 @@ description riding the same round.
     between the passes); the names ride the
     column comments, the prose descriptions
     close in their own rounds
-  - [ ] Fourth Level Spells (capture pp. 177-188)
+  - [x] Fourth Level Spells (capture pp. 177-188) -
+    R673: the dii WJL4 stat grid - the 24
+    fourth level wu jen spells with the school,
+    component, casting time, saving throw,
+    reversible and element codes (the element
+    cells cross-checking the R669 T66 grid;
+    the invocation school debuting for the
+    wu jen; wall of bones the dual
+    Conjuration/Necromantic pinned primary;
+    three verbal-only spells and NO half save,
+    the first level without one; the stat
+    blocks cross-checked spell by spell
+    between the passes); the names ride the
+    column comments, the prose descriptions
+    close in their own rounds
   - [ ] Fifth Level Spells (capture pp. 189-196)
   - [ ] Sixth Level Spells (capture pp. 196-203)
   - [ ] Seventh Level Spells (capture pp. 203-207)
