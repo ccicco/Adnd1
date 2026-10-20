@@ -21,7 +21,7 @@
 // suggestion, repulsion, spiritwrack), geas the lone verbal-only. THREE
 // spells take the Casting Time: Special line (enchant an item, move earth,
 // spiritwrack) pinned -1, the R662 exorcise convention; six six-segment (the
-// most common cast), five one-turn, four one-round, gambler's luck and pain
+// most common cast), five one-turn, five one-round, gambler's luck and pain
 // the single segments. Three negation saves, five special, NO half save this
 // level. Four spells read Reversible (aura, lower water, metal to rust, stone
 // to flesh). The sixth column cross-checks the R669 element grid: the seven
