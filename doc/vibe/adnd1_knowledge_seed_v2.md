@@ -15329,6 +15329,47 @@ when both halves land.
   c553d03) - THE dj- FAMILY OPENS, audit
   "R687 OA psychic duel audit", include
   after rules/oasubdual.h
+- R687 LANDED 2026-10-20: commit
+  4c558a35c3afe3b3b8e3d79a85cb33e04ffa9e70
+  (census 609 -> 610, pushed c553d03..4c558a3),
+  OA THE PSYCHIC DUEL - the wills contest,
+  capture pp. 222-223: rules/oapsychicduel.h,
+  prefix dja (verified free at c553d03) -
+  THE FIRST dj- PREFIX, the family opened
+  after diz closed the di- line at R686,
+  ONE gap flip, 6 consts + 16 bools (22
+  inlines, no table), gap census 139/96 ->
+  140/95. The mental-combat frame (any
+  race or class, no psionic talent, the
+  wills test); the circumstances - the
+  human-or-humanoid gate, one-on-one,
+  never between friends (3 honor), no
+  crossed weapons, no outside attacks;
+  the resolution - the 10 feet, the save
+  versus death, the kensai +2 against
+  non-kensai, the split-outcome win, the
+  both-fail inconclusive, the both-make
+  continuation, the nerve-break loser;
+  the honor awards - 2 higher, 1 equal,
+  none lower; the loser's options - the
+  retreat losing the equal honor or the
+  attack at -1 throughout with no
+  surprise. Single-pass pins per the
+  Chapter 9 provenance shift. Caught pre-
+  rverify: the gap item cites pp. 222-223,
+  not p. 222 - flip anchor aligned before
+  the first verify. rverify GREEN at
+  c553d03, 22 mutants, 0 missed. Spec md5
+  c63b31001c731e572230f2b867c77b44
+  (authored-plus-newline md5 e9967bb57da8
+  438bb3f1d2aa8930eb3b - the value the
+  ritual gated and matched; canvas md5
+  e9936fe01d8520a2f8b66ecfe1c66087). NEXT
+  - R688: the Martial Arts doctrine opener
+  (capture pp. 223-224), prefix djb
+  (verify free at 4c558a3), audit "R688 OA
+  martial arts opener audit", include
+  after rules/oapsychicduel.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

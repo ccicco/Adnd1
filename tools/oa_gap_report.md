@@ -1414,8 +1414,29 @@ description riding the same round.
     attack at -1 throughout with no
     surprise); single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Martial Arts prose and Styles (capture pp.
-    223-225) - the style doctrine and the principal
+  - [x] Martial Arts prose and Styles
+    (capture pp. 223-225) - R688: the djb
+    martial arts opener pins - the doctrine
+    frame (the body as weapon, the unique
+    OA combat form), the training
+    discipline, the three reason strands
+    (the nature-forces philosophy, the
+    religious divestment, the weapon-edict
+    social pressure), the regularized art
+    of self-perfection, the style
+    proliferation (every land its own, two
+    masters of one style in different
+    forms), the school challenges with the
+    spectators, the primary goal (avoid
+    being hurt) with the defensive,
+    aggressive and weapon-master schools,
+    the forms variety, the unarmed
+    misnomer (the tui-fu in the master's
+    hands), the rules fit (styles defined
+    by their effects), the five style
+    characteristics, the poetic names and
+    the use identities; single-pass pins
+    per the Chapter 9 provenance shift
     styles
   - [ ] Table 68: Common Martial Styles (capture
     p. 224)
