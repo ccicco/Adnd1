@@ -1067,7 +1067,18 @@ description riding the same round.
     the passes); the band names ride the
     column comments, the omen prose closes in
     its own round
-  - [ ] Table 64: Speak with Dead (capture p. 132)
+  - [x] Table 64: Speak with Dead (capture p. 132) -
+    R667: the dib T64 ladder grid - the six
+    shukenja level bands with the maximum dead
+    time (in days, the 30-day month and 365-day
+    year conventions, a decade climb per band),
+    the questioning time in segments and the
+    question counts, and the level chain
+    mapping the shukenja's level to its band
+    (the table cross-checked between the
+    passes); the band names ride the column
+    comments, the spell prose closes in its own
+    round
   - [ ] Table 65: Fate (capture p. 135)
 
 - [ ] **Chapter 8: Wu Jen Spells** (capture pp.

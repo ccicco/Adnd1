@@ -14074,6 +14074,61 @@ when both halves land.
   p. 117, rides its own box), prefix dia
   (verify free), audit "R666 OA divination
   results audit"
+- R666 LANDED 2026-10-19: commit 633d0d8795da665ecbf052708d00f35d502e904f
+  (census 588 -> 589, pushed f565285..633d0d8),
+  TABLE 63 DIVINATION RESULTS - the
+  five omen bands, capture p. 117:
+  rules/oat63divination.h, prefix dia
+  (the NEW FAMILY - dh exhausted at
+  R665; verified free at f565285 by the
+  engine's own call-site check), ONE gap
+  flip (single-line child label), 14
+  consts, 1 chain, 21 inlines (grid tag
+  T63Data, 5 rows x 6 cols - the first
+  table-band round of the OA arc: the
+  chain maps the 1d10 roll to its band,
+  1-2 ill omen, 3-4 great danger, 5-7
+  neutral, 8-9 favorable, 10 auspicious,
+  the neutral band the widest at three
+  faces), gap census 118/117 -> 119/116:
+  the five band rows cross-checked line
+  by line between the passes (print
+  p. 117 vs compressed pp. 59-60), zero
+  contested reads - the only OCR
+  variance typographic (the compressed
+  dropping a period on the neutral row
+  and a stray quote on the favorable to
+  hit line). The grid: party to hit and
+  save, foe to hit, encounter
+  multiplier, reaction and travel boost
+  by band - the ill omen party
+  penalties (-1 to hit and saves)
+  conditional on ignoring the advice
+  (pinned via diaIllOmenIgnorePenalty),
+  the doubled encounters and -10 reaction
+  applying outright; great danger shares
+  those two and adds the adversaries to
+  hit at +1; favorable and auspicious
+  travel at half again the rate (pinned
+  +50 percent) with opponents to hit at
+  -1, auspicious stacking the save +1.
+  rverify GREEN at f565285, 48 mutants,
+  0 missed; preflight GREEN (589 audit
+  census, BUILD 0 warnings). Spec md5
+  cc7f6a5485481e45808e06dbaa6e87e6
+  (authored-plus-newline md5
+  512c2a07318c562896e01a57431488a7 -
+  the value the ritual gated and
+  matched; canvas md5
+  31102f49c488d8290fd675ff8aa34a25).
+  NEXT - R667: Table 64 Speak with Dead
+  (print p. 132), prefix dib (verify
+  free), audit "R667 OA speak with dead
+  audit", include after
+  rules/oat63divination.h; then Table 65
+  Fate (print p. 135), then the wu jen
+  spell chapter (Chapter 8: Table 66
+  and L1-L9)
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
