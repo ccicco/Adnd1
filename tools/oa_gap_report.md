@@ -1318,8 +1318,21 @@ description riding the same round.
     based to-hit penalties of Table
     67; single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Table 67: Horseback Bowfire Modifiers
-    (capture p. 220)
+  - [x] Table 67: Horseback Bowfire
+    Modifiers (capture p. 220) - R683:
+    the diw Table 67 pins - the three
+    speed bands read as eighths of the
+    animal's normal movement (less than
+    half, half to less than three-
+    quarters, three-quarters to maximum)
+    with the -1, -3 and -5 to-hit
+    modifiers, cumulative with the range
+    and weapon versus armor modifiers,
+    the 30-degree slight-turning limit
+    with the sharper turns preventing
+    the bowfire, and the horse-like
+    creatures clause; single-pass pins
+    per the Chapter 9 provenance shift
   - [ ] Unhorsing (capture p. 220)
   - [ ] Disarming (capture p. 221)
   - [ ] Subduing Opponents (capture p. 221)

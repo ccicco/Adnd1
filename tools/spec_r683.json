@@ -1,0 +1,198 @@
+{
+ "round": 683,
+ "title": "OA TABLE 67 - the horseback bowfire modifiers: the three speed bands with their to-hit penalties, the 30-degree turn limit and the horse-like creatures clause",
+ "prefix": "diw",
+ "header_file": "rules/oa67bowfire.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 605,
+ "inline_count": 8,
+ "audit_label": "R683 OA horseback bowfire modifiers audit",
+ "audit_comment": "OA round seventy (capture p. 220): Table 67 - the horseback bowfire modifiers - the three speed bands of the animal with the -1, -3 and -5 to-hit penalties, the cumulative clause, the 30-degree slight-turning limit and the horse-like creatures clause, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TABLE 67, printed capture p. 220 - the horseback bowfire modifiers round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE GRID: the animal's current movement read as eighths of its normal movement - less than 1/2 the -1, 1/2 to less than 3/4 the -3, 3/4 to maximum speed the -5 - the modifiers cumulative with those for range, weapon versus armor type, etc. THE TURN LIMIT: during the round in which he fires, the character cannot perform maneuvers with his mount except for slight turning - the most 30 degrees to either side of its current direction, sharper turns and maneuvers preventing the bowfire. THE HORSE-LIKE CLAUSE: the firing also performed mounted on any horse-like creature to which the horsemanship proficiency applies. The grid codifies per the R431 calculus",
+  "sentinel": "the gap census after this round: 136 closed, 99 open - the Table 67 box flips (census 605 -> 606); NEXT - R684: the Unhorsing doctrine (capture p. 220), prefix dix (verify free at the landing - diu, div and diw TAKEN by the R681-R683 call families), audit \"R684 OA unhorsing audit\", include after rules/oa67bowfire.h"
+ },
+ "consts": [
+  {
+   "name": "diwOA67TurnDegrees",
+   "value": 30,
+   "comment": "the maneuver limit - during the round in which he fires, the character cannot perform maneuvers with his mount except for slight turning, the most the horse can be turned being 30 degrees to either side of its current direction (print capture p. 220)"
+  },
+  {
+   "name": "diwOA67BandCount",
+   "value": 3,
+   "comment": "the Table 67 band count - the three speed bands of the horseback bowfire grid, the loop bound of the emitted grid audit (print capture p. 220)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "diwOA67CumulativeModifiers",
+   "value": true,
+   "comment": "the cumulative clause - the horseback bowfire modifiers are cumulative with those for range, weapon versus armor type, etc. (print capture p. 220)"
+  },
+  {
+   "name": "diwOA67SharperTurnsPreventFire",
+   "value": true,
+   "comment": "the sharper-turns rule - sharper turns and maneuvers prevent the character from firing his bow (print capture p. 220)"
+  },
+  {
+   "name": "diwOA67HorseLikeCreaturesApply",
+   "value": true,
+   "comment": "the horse-like clause - firing from horseback can also be performed while mounted on any horse-like creature to which the horsemanship proficiency also applies (print capture p. 220)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "diwOA67Grid",
+   "tag": "OA67Data",
+   "count": "diwOA67BandCount",
+   "col_default": 0,
+   "cols": [
+    "diwOA67MinEighths",
+    "diwOA67MaxEighths",
+    "diwOA67Modifier"
+   ],
+   "col_comments": [
+    "the Table 67 band floors in eighths of the animal's normal movement, by band ordinal (print capture p. 220): band 0 the less-than-half floor 0, band 1 the half floor 4, band 2 the three-quarters floor 6 - the printed bands read as eighths: less than 1/2, 1/2 to less than 3/4, 3/4 to maximum speed",
+    "the Table 67 band ceilings in eighths of the animal's normal movement, by band ordinal (print capture p. 220): band 0 the below-half ceiling 3, band 1 the below-three-quarters ceiling 5, band 2 the maximum-speed ceiling 8 - the full-speed band capping at the whole movement",
+    "the Table 67 horseback bowfire to-hit modifiers by band ordinal (print capture p. 220): -1 below half speed, -3 from half to less than three-quarters, -5 from three-quarters to maximum speed - the modifiers deepening with the speed of the animal, cumulative with the range and weapon versus armor modifiers"
+   ],
+   "data": [
+    [
+     0,
+     3,
+     -1
+    ],
+    [
+     4,
+     5,
+     -3
+    ],
+    [
+     6,
+     8,
+     -5
+    ]
+   ],
+   "comment": "Table 67: the horseback bowfire modifiers - the three speed bands of the animal's current movement with their to-hit penalties, pinned as the eighths-of-normal-movement grid (print capture p. 220)",
+   "audit_comment": "the Table 67 grid - the three speed bands and their modifiers"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the modifier column - the -1, -3 and -5 of the three speed bands",
+   "expr": "m['diwOA67Modifier'](0) != -1 or m['diwOA67Modifier'](1) != -3 or m['diwOA67Modifier'](2) != -5"
+  },
+  {
+   "note": "the band floors - 0, 4 and 6 eighths of normal movement",
+   "expr": "m['diwOA67MinEighths'](0) != 0 or m['diwOA67MinEighths'](1) != 4 or m['diwOA67MinEighths'](2) != 6"
+  },
+  {
+   "note": "the band ceilings - 3, 5 and 8 eighths of normal movement",
+   "expr": "m['diwOA67MaxEighths'](0) != 3 or m['diwOA67MaxEighths'](1) != 5 or m['diwOA67MaxEighths'](2) != 8"
+  },
+  {
+   "note": "the band contiguity - each ceiling abutting the next floor",
+   "expr": "m['diwOA67MaxEighths'](0) != m['diwOA67MinEighths'](1) - 1 or m['diwOA67MaxEighths'](1) != m['diwOA67MinEighths'](2) - 1"
+  },
+  {
+   "note": "the turn pin - the 30 degrees of slight turning",
+   "expr": "m['diwOA67TurnDegrees']() != 30"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 67 horseback bowfire grid": [
+   {
+    "kind": "table",
+    "name": "diwOA67Grid"
+   }
+  ],
+  "the Table 67 prose pins": [
+   {
+    "kind": "const",
+    "name": "diwOA67TurnDegrees"
+   },
+   {
+    "kind": "const",
+    "name": "diwOA67BandCount"
+   },
+   {
+    "kind": "bool",
+    "name": "diwOA67CumulativeModifiers"
+   },
+   {
+    "kind": "bool",
+    "name": "diwOA67SharperTurnsPreventFire"
+   },
+   {
+    "kind": "bool",
+    "name": "diwOA67HorseLikeCreaturesApply"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 67 box closes",
+   "from": "  - [ ] Table 67: Horseback Bowfire Modifiers\n    (capture p. 220)",
+   "to": "  - [x] Table 67: Horseback Bowfire\n    Modifiers (capture p. 220) - R683:\n    the diw Table 67 pins - the three\n    speed bands read as eighths of the\n    animal's normal movement (less than\n    half, half to less than three-\n    quarters, three-quarters to maximum)\n    with the -1, -3 and -5 to-hit\n    modifiers, cumulative with the range\n    and weapon versus armor modifiers,\n    the 30-degree slight-turning limit\n    with the sharper turns preventing\n    the bowfire, and the horse-like\n    creatures clause; single-pass pins\n    per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 136,
+  "open": 99
+ },
+ "include_comment": "the OA Table 67 bowfire modifier pins",
+ "include_after": "#include \"rules/oahorsefire.h\"  // R682: the OA mounted bowfire pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R682 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R682 LANDED 2026-10-20: commit",
+  "  4080171dd4a20735c444d1691600ac9c8064e6ef",
+  "  (census 604 -> 605, pushed eb63a12..4080171),",
+  "  OA COMBAT PROCEDURES - the missile fire",
+  "  from horseback doctrine, capture p.",
+  "  219: rules/oahorsefire.h, prefix div",
+  "  (verified free at eb63a12 - zero engine",
+  "  gate hits), ONE gap flip, 5 consts + 6",
+  "  bools (11 inlines, no table), gap census",
+  "  134/101 -> 135/100. The mounted-bowman",
+  "  doctrine frame; the unmoving-horse",
+  "  freedom - any character, no particular",
+  "  skill; the horsemanship gate for the",
+  "  moving mount; the two-hands rule with",
+  "  the knees guidance; the DM rough-ground",
+  "  clause forcing the reins and preventing",
+  "  bowfire; the rate of fire halved with",
+  "  the printed 2/1 to 1/1 and 3/1 to 3/2",
+  "  conversions; the speed-based to-hit",
+  "  penalties pointing at Table 67 without",
+  "  pinning it - the separate p. 220 gap",
+  "  item. Single-pass pins per the Chapter",
+  "  9 provenance shift. LESSON: do not",
+  "  hand-hyphenate audit comment words",
+  "  (profi-ciency) - the engine wraps whole",
+  "  tokens itself. Also noted: the seed",
+  "  mechanic seats the spec prev_record, so",
+  "  the R681 seed record rode this ritual.",
+  "  rverify GREEN first try at eb63a12, 11",
+  "  mutants, 0 missed. Spec md5 a54f237ab92",
+  "  2f0462ecc88e5f658ef4a (authored-plus-",
+  "  newline md5 db3ad51bebca5bd8e6b3625694cd",
+  "  484f - the value the ritual gated and",
+  "  matched; canvas md5 2b0c4c97ccdfb7bf9b16",
+  "  2e9009f647fd). NEXT - R683: Table 67",
+  "  the horseback bowfire modifiers",
+  "  (capture p. 220), prefix diw (verified",
+  "  free at 4080171 - zero repo hits), audit",
+  "  \"R683 OA horseback bowfire modifiers",
+  "  audit\", include after rules/oahorsefire.h"
+ ]
+}

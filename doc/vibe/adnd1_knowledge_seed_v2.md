@@ -15118,6 +15118,46 @@ when both halves land.
   (verify free at eb63a12), audit
   "R682 OA combat procedures audit",
   include after rules/oainitmods.h
+- R682 LANDED 2026-10-20: commit
+  4080171dd4a20735c444d1691600ac9c8064e6ef
+  (census 604 -> 605, pushed eb63a12..4080171),
+  OA COMBAT PROCEDURES - the missile fire
+  from horseback doctrine, capture p.
+  219: rules/oahorsefire.h, prefix div
+  (verified free at eb63a12 - zero engine
+  gate hits), ONE gap flip, 5 consts + 6
+  bools (11 inlines, no table), gap census
+  134/101 -> 135/100. The mounted-bowman
+  doctrine frame; the unmoving-horse
+  freedom - any character, no particular
+  skill; the horsemanship gate for the
+  moving mount; the two-hands rule with
+  the knees guidance; the DM rough-ground
+  clause forcing the reins and preventing
+  bowfire; the rate of fire halved with
+  the printed 2/1 to 1/1 and 3/1 to 3/2
+  conversions; the speed-based to-hit
+  penalties pointing at Table 67 without
+  pinning it - the separate p. 220 gap
+  item. Single-pass pins per the Chapter
+  9 provenance shift. LESSON: do not
+  hand-hyphenate audit comment words
+  (profi-ciency) - the engine wraps whole
+  tokens itself. Also noted: the seed
+  mechanic seats the spec prev_record, so
+  the R681 seed record rode this ritual.
+  rverify GREEN first try at eb63a12, 11
+  mutants, 0 missed. Spec md5 a54f237ab92
+  2f0462ecc88e5f658ef4a (authored-plus-
+  newline md5 db3ad51bebca5bd8e6b3625694cd
+  484f - the value the ritual gated and
+  matched; canvas md5 2b0c4c97ccdfb7bf9b16
+  2e9009f647fd). NEXT - R683: Table 67
+  the horseback bowfire modifiers
+  (capture p. 220), prefix diw (verified
+  free at 4080171 - zero repo hits), audit
+  "R683 OA horseback bowfire modifiers
+  audit", include after rules/oahorsefire.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
