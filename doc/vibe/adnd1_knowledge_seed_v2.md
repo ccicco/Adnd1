@@ -15158,6 +15158,57 @@ when both halves land.
   free at 4080171 - zero repo hits), audit
   "R683 OA horseback bowfire modifiers
   audit", include after rules/oahorsefire.h
+- R683 LANDED 2026-10-20: commit
+  cefc1ba03050db726113124162d8b5df3d6b823b
+  (census 605 -> 606, pushed 4080171..cefc1ba),
+  OA TABLE 67 - the horseback bowfire
+  modifiers, capture p. 220:
+  rules/oa67bowfire.h, prefix diw
+  (verified free at 4080171), ONE gap
+  flip, 2 consts + 3 bools (8 inlines,
+  3x3 grid tag OA67Data), gap census
+  135/100 -> 136/99. The three speed
+  bands read as eighths of the animal's
+  normal movement - less than half the
+  -1, half to less than three-quarters
+  the -3, three-quarters to maximum
+  speed the -5, each floor and ceiling
+  pinned with a contiguity example; the
+  modifiers cumulative with range and
+  weapon versus armor; the 30-degree
+  slight-turning limit, sharper turns
+  preventing the bowfire; the horse-like
+  creatures clause. THE FIRST CHAPTER 9
+  GRID ROUND - single-pass, no
+  compressed cross-check. TWO LESSONS:
+  (1) the table count field must be a
+  CONST FUNCTION (the R678
+  dioWJL9SpellCount precedent) - a bare
+  int emits the invalid C++ 'b < 3();',
+  invisible to rverify (a python
+  mirror) and to the engine syntax gate
+  (if-conditions only); the ritual
+  build gate caught it, ~500 census
+  FAILs were the cascade from the one
+  compile error; (2) after a preflight
+  RED the tree carries the applied
+  patches - the v2 re-run hit the R420
+  drift abort until the tree was
+  restored (git checkout 4080171 --
+  four files + rm the header).
+  rverify GREEN at 4080171, 14 mutants,
+  0 missed. Spec md5 d7f2e29a3b2b79b6a5c
+  fb2af97af85d6 (authored-plus-newline
+  md5 25945545f55ff2440c1f5a870d2cfec8 -
+  the value the ritual gated and
+  matched; canvas md5 a461ee196d0cce6261
+  0d75f53b2da7d2, the r683-spec-b folder
+  per the R676 fresh-name rule). NEXT -
+  R684: the Unhorsing doctrine (capture
+  p. 220), prefix dix (verified free at
+  cefc1ba - zero engine-gate hits), audit
+  "R684 OA unhorsing audit", include
+  after rules/oa67bowfire.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

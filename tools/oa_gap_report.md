@@ -1333,7 +1333,28 @@ description riding the same round.
     the bowfire, and the horse-like
     creatures clause; single-pass pins
     per the Chapter 9 provenance shift
-  - [ ] Unhorsing (capture p. 220)
+  - [x] Unhorsing (capture p. 220) - R684:
+    the dix unhorsing pins - the doctrine
+    frame, the slain-mount rule with the
+    no-prize clause, the mounted natural-20
+    unhorsing (3-or-more-feet weapons, the
+    proficiency check with the automatic
+    fall and the 1d3), the foot-soldier
+    bands (5-to-9 same chance, 10-or-more
+    the 25 percent 16-20 on 1d20), the
+    grapple doctrine (the dive-on, the
+    1d6 falls, the hang-on state, the
+    every-turn re-roll, the -2 rider
+    penalty), the footman pull (the -2/
+    -4/-6 speed ladder, the man-sized
+    gate, the -1 per extra man to 4, the
+    eight-men surround, the free attacks),
+    the set defenses and the stake line
+    (the 2d6 per stake, the barding
+    reductions, the jump check), the
+    other-creatures clause; single-pass
+    pins per the Chapter 9 provenance
+    shift
   - [ ] Disarming (capture p. 221)
   - [ ] Subduing Opponents (capture p. 221)
   - [ ] The Psychic Duel (capture pp. 222-223)
