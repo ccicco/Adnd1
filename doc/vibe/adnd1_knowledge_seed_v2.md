@@ -15721,6 +15721,76 @@ when both halves land.
   old headers, no identifiers), audit
   "R695 OA learning martial arts
   audit", include after rules/oatrain.h
+- R695 LANDED 2026-10-20: commit
+  61d0647bb81a15e75f68845a7a8b724a
+  12daaa9d (census 617 -> 618, pushed
+  e9a5608..61d0647), OA LEARNING
+  MARTIAL ARTS - the master search and
+  acceptance, the study obligations
+  and slot costs, with the multiple
+  styles and the combining of styles,
+  capture pp. 233-235 print:
+  rules/oalearn.h, prefix dji
+  (verified free at e9a5608 - only
+  djinn prose in old headers, no
+  identifiers), ONE gap flip, gap
+  census 147/88 -> 148/87. 8 consts +
+  24 bools (32 inlines, no table):
+  the master title honorary not a
+  class (brilliant, skilled, mediocre
+  and incompetent all called master),
+  anyone anywhere (the peasant, the
+  hermit, the bushi, the teacher, the
+  samurai, the priest), the scarcity
+  and the secret societies; the 10%
+  acceptance at the humble
+  presentation, +10% per gift-bearing
+  visit until accepted or the master
+  offended - the offense permanent;
+  the automatically accepted
+  challenge, the unknown challenger
+  given a student, the subdue
+  preferred over the death, the death
+  no crime, the victor accepted, the
+  loser begging or returning; the
+  master's knowledge - the basics
+  automatic, the weapons and the
+  maneuvers each rolled on the nearest
+  die at or above their count, the
+  lowest difficulty upward, the master
+  fixed; the study - one month then
+  one slot for the basics (AC,
+  attacks, damage, no maneuvers yet),
+  the one hour daily and six master
+  hours weekly, the obligation the
+  gate; one slot per maneuver or
+  weapon, two per style per level the
+  cap, the strict difficulty order;
+  the outgrown master left; the
+  multiple styles - one master each,
+  one style fought at a time, the
+  constant maneuvers the exception,
+  the round-to-round change; the
+  combining after all learned - the
+  unique style of mixed elements, the
+  AC of one with the attacks and
+  damage of another, every maneuver
+  combined, the creator teaching as a
+  master. Chapter 9 closes with this
+  round. Single-pass pins per the
+  Chapter 9 provenance shift. rverify
+  GREEN first try at e9a5608, 32
+  mutants, 0 missed. Spec md5 34ee00
+  727dbb9514a299c8fadefab15e
+  (authored-plus-newline md5 1f849eae
+  a64c2565644427a08e56c67c - the value
+  the ritual gated and matched; canvas
+  md5 110e5a0238fad8a471bbf3646bd70f01).
+  NEXT - R696: the Chapter 10 Calendar
+  prose (capture p. 236), prefix djj
+  (verified free at 61d0647), audit
+  "R696 OA calendar audit", include
+  after rules/oalearn.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

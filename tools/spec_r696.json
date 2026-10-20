@@ -1,0 +1,293 @@
+{
+ "round": 696,
+ "title": "OA THE CALENDAR - the twelve months of the Shou Lung calendar with their day counts and festival counts",
+ "prefix": "djj",
+ "header_file": "rules/oacalendar.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 618,
+ "inline_count": 11,
+ "audit_label": "R696 OA calendar audit",
+ "audit_comment": "OA round eighty-three (capture p. 236): the Calendar - the twelve months of the Shou Lung emperor's calendar with their days and the festivals, feasts and holy days counted, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA THE CALENDAR, printed capture pp. 236-237 - the months and festivals round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE CALENDAR: devised in ancient times by one of the great emperors of Shou Lung to fix the regular holidays and festivals, a success used throughout all the civilized lands of Kara-Tur, the first of the year falling sometime in modern-day February or March. THE TWELVE MONTHS with their days and festival counts: Tsou the 30 of eight observances - the New Year's Festival, the God of Heaven, the Feast of Lanterns, the God of Spring, the God of Wealth, the Fertility Festival, the God of Happiness, the God of Learning; Ju the 30 of the God of North and the Goddess of Mercy; Yu the 30 of the God of Central Mound, the Queen of Heaven, the Cherry Blossom Festival; Kao the 30 of the God of Medicine and the God of South; Kao II the 29 of the Thunder God, the Dragon Boat Festival, the God of War; Chu the 30 with none printed; Hsiang the 29 of the God of Fire and the Purification Festival; Chuang the 30 of the Moon Feast Festival, the God of Land and Grain, the God of Furnace, the Great Sage's Birthday; Hsuan the 30 of the Wine God, the Yang Feast, the Polar Gods, the God of Wealth; Yang the 29 of the God of Disease; Ku the 30 with none printed; Tu the 29 of the Kings' Festival. THE YEAR: eight months of 30 days and four of 29 - Kao II, Hsiang, Yang and Tu - the 356-day year. THE OBSERVANCE KINDS: the festivals lasting several days to weeks; the feasts the banquet gatherings; the holy days observed or not per the religion of the area and the character of the inhabitants; the observances simple, the excuse for a feast. The calendar pins per the R431 calculus",
+  "sentinel": "the gap census after this round: 149 closed, 86 open - the Calendar box flips (census 618 -> 619); NEXT - R697: Table 71 the yearly events grid (capture p. 237), prefix djk (verify free at the landing), audit \"R697 OA yearly events audit\", include after rules/oacalendar.h"
+ },
+ "consts": [
+  {
+   "name": "djjOACalendarRowCount",
+   "value": 12,
+   "comment": "the calendar month count - the twelve months of the Shou Lung calendar, the loop bound of the emitted grid audit (print capture pp. 236-237)"
+  },
+  {
+   "name": "djjOAYearDays",
+   "value": 356,
+   "comment": "the calendar year length - the eight thirty-day months plus the four twenty-nine-day months total 356 days (print capture pp. 236-237)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djjOACalendarEmperorOrigin",
+   "value": true,
+   "comment": "the calendar origin - devised in ancient times by one of the great emperors of Shou Lung to fix the occurrence of the regular holidays and festivals (print capture p. 236)"
+  },
+  {
+   "name": "djjOACalendarCommonUse",
+   "value": true,
+   "comment": "the calendar spread - highly successful and commonly used throughout all the civilized lands of Kara-Tur (print capture p. 236)"
+  },
+  {
+   "name": "djjOANewYearFebMar",
+   "value": true,
+   "comment": "the new year - the first of the year falls sometime in modern-day February or March (print capture p. 236)"
+  },
+  {
+   "name": "djjOAFestivalsLong",
+   "value": true,
+   "comment": "the festivals - celebrations lasting several days, possibly even weeks (print capture p. 237)"
+  },
+  {
+   "name": "djjOAFeastsBanquets",
+   "value": true,
+   "comment": "the feasts - reasons to gather together for as sumptuous a banquet as can be afforded (print capture p. 237)"
+  },
+  {
+   "name": "djjOAHolyDaysOptional",
+   "value": true,
+   "comment": "the holy days - may or may not be observed, depending greatly on the religion of the area and the character of the inhabitants (print capture p. 237)"
+  },
+  {
+   "name": "djjOAObservancesSimple",
+   "value": true,
+   "comment": "the observances - simple, often used as an excuse to have a feast (print capture p. 237)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "djjOACalendarGrid",
+   "tag": "OACalendarData",
+   "count": "djjOACalendarRowCount",
+   "col_default": 0,
+   "cols": [
+    "djjOAMonthDays",
+    "djjOAMonthFestivals"
+   ],
+   "col_comments": [
+    "the calendar days by month ordinal (print capture pp. 236-237): the 30 of Tsou, Ju, Yu, Kao, Chu, Chuang, Hsuan and Ku; the 29 of Kao II, Hsiang, Yang and Tu - the four short months spread across the year, the 356-day total",
+    "the calendar festival counts by month ordinal (print capture pp. 236-237): Tsou 8 the richest - the New Year's Festival, God of Heaven, Feast of Lanterns, God of Spring, God of Wealth, Fertility Festival, God of Happiness, God of Learning; Ju 2, Yu 3, Kao 2, Kao II 3, Chu 0 - none printed, Hsiang 2, Chuang 4, Hsuan 4, Yang 1, Ku 0 - none printed, Tu 1 the Kings' Festival"
+   ],
+   "data": [
+    [
+     30,
+     8
+    ],
+    [
+     30,
+     2
+    ],
+    [
+     30,
+     3
+    ],
+    [
+     30,
+     2
+    ],
+    [
+     29,
+     3
+    ],
+    [
+     30,
+     0
+    ],
+    [
+     29,
+     2
+    ],
+    [
+     30,
+     4
+    ],
+    [
+     30,
+     4
+    ],
+    [
+     29,
+     1
+    ],
+    [
+     30,
+     0
+    ],
+    [
+     29,
+     1
+    ]
+   ],
+   "comment": "the Shou Lung calendar - the twelve months with their day and festival counts (print capture pp. 236-237)",
+   "audit_comment": "the calendar grid - the twelve months across two columns"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the 30-day months - Tsou, Ju, Yu, Kao, Chu, Chuang, Hsuan, Ku",
+   "expr": "m['djjOAMonthDays'](0) != 30 or m['djjOAMonthDays'](1) != 30 or m['djjOAMonthDays'](3) != 30 or m['djjOAMonthDays'](5) != 30 or m['djjOAMonthDays'](7) != 30 or m['djjOAMonthDays'](8) != 30 or m['djjOAMonthDays'](10) != 30"
+  },
+  {
+   "note": "the 29-day months - Kao II, Hsiang, Yang, Tu",
+   "expr": "m['djjOAMonthDays'](4) != 29 or m['djjOAMonthDays'](6) != 29 or m['djjOAMonthDays'](9) != 29 or m['djjOAMonthDays'](11) != 29"
+  },
+  {
+   "note": "the festival counts - Tsou the eight, Chuang and Hsuan the four",
+   "expr": "m['djjOAMonthFestivals'](0) != 8 or m['djjOAMonthFestivals'](7) != 4 or m['djjOAMonthFestivals'](8) != 4"
+  },
+  {
+   "note": "the bare months - Chu and Ku with none printed, Tu the single Kings' Festival",
+   "expr": "m['djjOAMonthFestivals'](5) != 0 or m['djjOAMonthFestivals'](10) != 0 or m['djjOAMonthFestivals'](11) != 1"
+  },
+  {
+   "note": "the year length - the eight 30s plus the four 29s the 356",
+   "expr": "m['djjOAYearDays']() != 356 or m['djjOAMonthDays'](0) + m['djjOAMonthDays'](4) + m['djjOAMonthDays'](9) != 88"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the calendar grid": [
+   {
+    "kind": "table",
+    "name": "djjOACalendarGrid"
+   },
+   {
+    "kind": "const",
+    "name": "djjOACalendarRowCount"
+   },
+   {
+    "kind": "const",
+    "name": "djjOAYearDays"
+   },
+   {
+    "kind": "bool",
+    "name": "djjOACalendarEmperorOrigin"
+   },
+   {
+    "kind": "bool",
+    "name": "djjOACalendarCommonUse"
+   },
+   {
+    "kind": "bool",
+    "name": "djjOANewYearFebMar"
+   },
+   {
+    "kind": "bool",
+    "name": "djjOAFestivalsLong"
+   },
+   {
+    "kind": "bool",
+    "name": "djjOAFeastsBanquets"
+   },
+   {
+    "kind": "bool",
+    "name": "djjOAHolyDaysOptional"
+   },
+   {
+    "kind": "bool",
+    "name": "djjOAObservancesSimple"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Calendar box closes",
+   "from": "  - [ ] The Calendar (capture p. 236)",
+   "to": "  - [x] The Calendar (capture p. 236)\n    - R696: the djj calendar pins - the\n    Shou Lung emperor's calendar of\n    twelve months used throughout the\n    civilized lands, the new year in\n    February or March; the months with\n    their days and festival counts\n    (Tsou 30/8 the richest - the New\n    Year's Festival, God of Heaven,\n    Feast of Lanterns, God of Spring,\n    God of Wealth, Fertility Festival,\n    God of Happiness, God of Learning;\n    Ju 30/2, Yu 30/3, Kao 30/2, Kao II\n    29/3, Chu 30/0 none printed,\n    Hsiang 29/2, Chuang 30/4, Hsuan\n    30/4, Yang 29/1, Ku 30/0 none\n    printed, Tu 29/1 the Kings'\n    Festival); the 356-day year - the\n    eight 30s plus the four 29s; the\n    observance kinds - the festivals\n    lasting days to weeks, the feasts\n    the banquets, the holy days\n    observed or not per the local\n    religion and character, the\n    observances simple, the excuse for\n    a feast; single-pass pins per the\n    Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 149,
+  "open": 86
+ },
+ "include_comment": "the OA calendar pins",
+ "include_after": "#include \"rules/oalearn.h\"  // R695: the OA learning martial arts pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R695 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R695 LANDED 2026-10-20: commit",
+  "  61d0647bb81a15e75f68845a7a8b724a",
+  "  12daaa9d (census 617 -> 618, pushed",
+  "  e9a5608..61d0647), OA LEARNING",
+  "  MARTIAL ARTS - the master search and",
+  "  acceptance, the study obligations",
+  "  and slot costs, with the multiple",
+  "  styles and the combining of styles,",
+  "  capture pp. 233-235 print:",
+  "  rules/oalearn.h, prefix dji",
+  "  (verified free at e9a5608 - only",
+  "  djinn prose in old headers, no",
+  "  identifiers), ONE gap flip, gap",
+  "  census 147/88 -> 148/87. 8 consts +",
+  "  24 bools (32 inlines, no table):",
+  "  the master title honorary not a",
+  "  class (brilliant, skilled, mediocre",
+  "  and incompetent all called master),",
+  "  anyone anywhere (the peasant, the",
+  "  hermit, the bushi, the teacher, the",
+  "  samurai, the priest), the scarcity",
+  "  and the secret societies; the 10%",
+  "  acceptance at the humble",
+  "  presentation, +10% per gift-bearing",
+  "  visit until accepted or the master",
+  "  offended - the offense permanent;",
+  "  the automatically accepted",
+  "  challenge, the unknown challenger",
+  "  given a student, the subdue",
+  "  preferred over the death, the death",
+  "  no crime, the victor accepted, the",
+  "  loser begging or returning; the",
+  "  master's knowledge - the basics",
+  "  automatic, the weapons and the",
+  "  maneuvers each rolled on the nearest",
+  "  die at or above their count, the",
+  "  lowest difficulty upward, the master",
+  "  fixed; the study - one month then",
+  "  one slot for the basics (AC,",
+  "  attacks, damage, no maneuvers yet),",
+  "  the one hour daily and six master",
+  "  hours weekly, the obligation the",
+  "  gate; one slot per maneuver or",
+  "  weapon, two per style per level the",
+  "  cap, the strict difficulty order;",
+  "  the outgrown master left; the",
+  "  multiple styles - one master each,",
+  "  one style fought at a time, the",
+  "  constant maneuvers the exception,",
+  "  the round-to-round change; the",
+  "  combining after all learned - the",
+  "  unique style of mixed elements, the",
+  "  AC of one with the attacks and",
+  "  damage of another, every maneuver",
+  "  combined, the creator teaching as a",
+  "  master. Chapter 9 closes with this",
+  "  round. Single-pass pins per the",
+  "  Chapter 9 provenance shift. rverify",
+  "  GREEN first try at e9a5608, 32",
+  "  mutants, 0 missed. Spec md5 34ee00",
+  "  727dbb9514a299c8fadefab15e",
+  "  (authored-plus-newline md5 1f849eae",
+  "  a64c2565644427a08e56c67c - the value",
+  "  the ritual gated and matched; canvas",
+  "  md5 110e5a0238fad8a471bbf3646bd70f01).",
+  "  NEXT - R696: the Chapter 10 Calendar",
+  "  prose (capture p. 236), prefix djj",
+  "  (verified free at 61d0647), audit",
+  "  \"R696 OA calendar audit\", include",
+  "  after rules/oalearn.h"
+ ]
+}

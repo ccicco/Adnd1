@@ -1691,7 +1691,33 @@ description riding the same round.
 
 - [ ] **Chapter 10: Events and Encounters**
   (capture pp. 235-251) - the event system
-  - [ ] The Calendar (capture p. 236)
+  - [x] The Calendar (capture p. 236)
+    - R696: the djj calendar pins - the
+    Shou Lung emperor's calendar of
+    twelve months used throughout the
+    civilized lands, the new year in
+    February or March; the months with
+    their days and festival counts
+    (Tsou 30/8 the richest - the New
+    Year's Festival, God of Heaven,
+    Feast of Lanterns, God of Spring,
+    God of Wealth, Fertility Festival,
+    God of Happiness, God of Learning;
+    Ju 30/2, Yu 30/3, Kao 30/2, Kao II
+    29/3, Chu 30/0 none printed,
+    Hsiang 29/2, Chuang 30/4, Hsuan
+    30/4, Yang 29/1, Ku 30/0 none
+    printed, Tu 29/1 the Kings'
+    Festival); the 356-day year - the
+    eight 30s plus the four 29s; the
+    observance kinds - the festivals
+    lasting days to weeks, the feasts
+    the banquets, the holy days
+    observed or not per the local
+    religion and character, the
+    observances simple, the excuse for
+    a feast; single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Yearly Events prose and explanations
     (capture pp. 237-243)
   - [ ] Table 71: Yearly Events (capture p. 237)
