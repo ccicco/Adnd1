@@ -1800,7 +1800,22 @@ description riding the same round.
     provenance shift
   - [ ] Monthly Events prose and explanations
     (capture pp. 238-247)
-  - [ ] Table 72: Monthly Events (capture p. 238)
+  - [x] Table 72: Monthly Events (capture
+    p. 238)
+    - R699: the djm monthly events grid
+    pins - the forty die-range rows of
+    the percentile die across the three
+    columns (the war months, the natural
+    disaster months, the other months),
+    the thirty event names by ordinal,
+    the ranges contiguous 1-100 (Accident
+    the 01-05 of all three columns, No
+    Event the 95-100 of all three); the
+    column steering by the yearly event,
+    one roll per month, the DM free to
+    substitute and to add beyond the
+    list; single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Daily Events prose and explanations
     (capture pp. 247-251)
   - [ ] Table 73: Daily Events (capture p. 247)

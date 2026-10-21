@@ -15888,6 +15888,34 @@ when both halves land.
   prefix djl (verified free at 491c0a6),
   audit "R698 OA yearly events prose
   audit", include after rules/oa71yearly.h
+- R698 LANDED 2026-10-21: commit c729f3c4a30e83ba6823f77949ccd5b10bdc55b9
+  (census 620 -> 621, pushed 491c0a6..c729f3c), OA EXPLANATION OF YEARLY
+  EVENTS, capture pp. 240-243 print: rules/oa71explain.h, prefix djl (verified
+  free at 491c0a6), ONE gap flip, gap census 150/85 -> 151/84. 65 consts + 27
+  bools (92 inlines): the nineteen Table 71 events explained with their
+  durations, chances and effects (the Ambassador 3d10-month stay, 10% gaijin,
+  50/50 direction; the Assassination 30% alive, 1% accusation, 20%
+  no-successor, 1d6-month turmoil; the Comet 1d4 weeks plus the DM's second
+  event; the Major Earthquake 50-mile radius, 70% fire, 40% plague; the Famine
+  2-7 months, 100x food, 25% next-year, 60% uprising, 5%/mo pop, 20% plague;
+  the Major Fire 50-80% city, 10-40% pop, 20% plague, 10% famine, 10x lumber 4
+  months; the Flood 5d6 crest max 30 ft, 4d6-hour high, 50%/80% farm losses,
+  40% famine, 20% plague, no desert; the Incursion 1d12 months; the New
+  Religion 75/60/40%, arrival 2-7 months; the Plague 2d6 months, 40%/60%
+  contagion, 5%/mo pop, 5x imports; the Political Plot 40%/80% accusation, 20%
+  rising, 1-3-month turmoil; the Rebellion 1d6 months; the Tsunami 50-mile
+  coast, 100-200 ft, 70% pop loss, landlocked no event, 10% plague, 3x build
+  materials; the Visitation 5-mile despised radius; the Volcano 70/30 origin,
+  5-mile destroyed, 30-mile ash, 1d12-month active, 10%/mo re-eruption; the
+  War 50/50, 2-5-month summer campaign, 1-3 years, 50% farm loss); plus the
+  never-rerolled rule (prevented = no yearly event that year) and the season
+  check after the month roll. rverify GREEN at 491c0a6 (one dangling-hyphen
+  fix in the gap flip before the first full run), 92 mutants, 0 missed. Spec
+  md5 5cbf1201f38463cd48b9d9247a23ef5c (authored-plus-newline md5
+  4229b67f406e80f9fae96f39ff3c6386 - the value the ritual gated and matched;
+  canvas md5 16ab54c79da166edfaa3c4c27fa720de). NEXT - R699: Table 72 the
+  monthly events grid (capture p. 238), prefix djm (verified free at c729f3c),
+  audit "R699 OA monthly events audit", include after rules/oa71explain.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
