@@ -16054,6 +16054,38 @@ when both halves land.
   prefix djq (verified
   free at eb09e60), audit "R703 OA terrain encounter tables audit",
   include after rules/oa73explain.h
+- R703 LANDED 2026-10-21: commit f4c28d73ff909f45d67bc550dea1b3f0f1363155
+  (census 625 -> 626, pushed eb09e60..f4c28d7), OA CHAPTER 11 - the
+  terrain encounter tables, capture pp. 251-252 print:
+  rules/oa74terrain.h, prefix djq (verified free at eb09e60), ONE gap
+  flip, gap census 155/80 -> 156/79. 16 grid cols + 5 consts + 2
+  bools (23 inlines): the sixteen terrain columns of the 2-20 roll
+  grid (the City/Town, the T/S Mountains, the T/S Ocean, the
+  Temperate Swamp, the Rural, the T/S Forest, the Temperate
+  Mountain, the Temperate Freshwater, the Steppes, the T/S Swamp,
+  the Temperate Forest, the Temperate Ocean, the Aerial, the T/S
+  Freshwater, the Temperate Plain, the Cold Regions the
+  all-terrain-types column), each column the nineteen rolls 2-20,
+  the 164 encounter names by ordinal; the 304 cells. THE OCR
+  REPAIRS: the City/Town 15 Busho read as the Buso, tigbauna; the
+  Temperate Mountain 9 Giang read as the Giant, hill; the hai nu
+  capitalization at the T/S Ocean 16. AS PRINTED: the Temperate
+  Ocean the School of fish at 10 and 12, the Men, wako at 7 and 14.
+  THE R702 LESSON SCALED: the generator PARSES the OCR pages
+  directly - the 304 cells machine-transcribed, the repairs
+  asserted against unique pre-repair strings, every example built
+  from the parsed data; two generator-side false starts caught by
+  its own asserts BEFORE any spec existed (the repair note said
+  Rural 15, the parse proved City/Town 15 - the machine right, the
+  note wrong). First rverify GREEN, 311 mutants, 0 missed. Spec
+  md5 1566ad5f19c3a87cb62c0526fc7a63c7
+  (authored-plus-newline md5 f32fc32fdcb4eaa2cb29079a2acb764e
+  - the value the ritual gated and matched byte-exact at the
+  landing; canvas md5
+  7c54d716b555430ba28042d46042c4e0). NEXT - R704: the Climate
+  Groupings with Creatures from Previous Books (capture p. 252),
+  prefix djr (verified free at f4c28d7), audit "R704 OA climate
+  groupings audit", include after rules/oa74terrain.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

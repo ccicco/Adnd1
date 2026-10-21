@@ -1950,9 +1950,27 @@ description riding the same round.
     twice and the Men, wako twice as
     printed; single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Climate Groupings with Creatures from
+  - [x] Climate Groupings with Creatures from
     Previous Books (capture p. 252) - the climate
     doctrine and the earlier-books cross-reference
+    - R704: the djr climate grouping pins - the
+    seven climate groupings with their game
+    creature lists (the Sub-Arctic Forests 18,
+    the Temperate Plain/Forest 20, the
+    Steppelands 13, the Sub-Tropical Forest 18,
+    the Tropical Forest 18, the Cold Oceans 6,
+    the Warm Oceans 4), the 61 distinct creatures;
+    the Creatures from Previous Books the 124
+    entries cross-referenced to the MMI, FF,
+    MMII, and LL (the 59/18/46/1); the doctrine
+    (the unique-to-Kara-Tur creatures, the
+    held-at-bay geography, the groupings by
+    climate, the game creatures off the
+    encounter tables, the DM-aid, the
+    not-exclusive list, the Celestial
+    Bureaucracy with its replaceable officials);
+    single-pass pins per the Chapter 9
+    provenance shift
 
 - [ ] **Chapter 12: Monsters** (capture pp. 252-285)
   - the monster roster - per monster: the stat block

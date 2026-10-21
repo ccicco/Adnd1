@@ -1,0 +1,297 @@
+{
+ "round": 704,
+ "title": "OA CLIMATE GROUPINGS - the seven climate groupings with the game creatures and the Creatures from Previous Books cross-reference",
+ "prefix": "djr",
+ "header_file": "rules/oa75climate.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 626,
+ "inline_count": 22,
+ "audit_label": "R704 OA climate groupings audit",
+ "audit_comment": "OA round ninety-one (capture pp. 252-253): the Climate Groupings with Creatures from Previous Books - the seven climate groupings, the game creature lists, the doctrine, and the earlier-books cross-reference, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA CLIMATE GROUPINGS, printed capture pp. 252-253 - the climate doctrine and cross-reference round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE SEVEN GROUPINGS: the Sub-Arctic Forests (the 18 creatures - bear, carp, deer through tiger, wolf, wolverine); the Temperate Plain/Forest (the 20 - badger through wolverine); the Steppelands (the 13 - the Bactrian camel through wolf); the Sub-Tropical Forest (the 18 - alligator through wolf); the Tropical Forest (the 18 - badger through wild boar); the Cold Oceans (the 6 - cod through seal); the Warm Oceans (the 4 - dolphin through shark); the 61 distinct creatures across the seven. THE DOCTRINE: the creatures unique to Kara-Tur; the common creatures held at bay by stormy oceans, grim mountain ranges, and scalding deserts; the grouping by geography and climate; the common and game creatures off the encounter tables. THE CROSS-REFERENCE: the Creatures from Previous Books - 124 entries alphabetical, the MMI 59, the FF 18, the MMII 46, the LL 1; the list aids the DM and is not exclusive - the listed are those most likely to fit the mythos. THE CELESTIAL BUREAUCRACY: the Celestial Emperor heads the government of the spirits; the officials can be corrupt, disobedient, just, or incompetent, replaced after the yearly examination of their activities. The prose codifies per the R431 calculus",
+  "sentinel": "the gap census after this round: 157 closed, 78 open - the Climate Groupings box flips (census 626 -> 627); NEXT - R705: the Chapter 12 monster roster opener - the Bajang (capture pp. 253-254), prefix djs (verify free at the landing), audit \"R705 OA monsters Bajang audit\", include after rules/oa75climate.h"
+ },
+ "consts": [
+  {
+   "name": "djrOA75GroupCount",
+   "value": 7,
+   "comment": "the climate grouping count - the seven climate groupings of the Chapter 12 opening (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75CreatureCount",
+   "value": 61,
+   "comment": "the distinct climate-grouped game creature count - the 61 distinct names across the seven groupings (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75SubArcticCount",
+   "value": 18,
+   "comment": "the sub-arctic forests grouping - the 18 game creatures listed (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75TemperateCount",
+   "value": 20,
+   "comment": "the temperate plain/forest regions grouping - the 20 game creatures listed (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75SteppelandsCount",
+   "value": 13,
+   "comment": "the steppelands grouping - the 13 game creatures listed (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75SubTropicalCount",
+   "value": 18,
+   "comment": "the sub-tropical forest regions grouping - the 18 game creatures listed (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75TropicalCount",
+   "value": 18,
+   "comment": "the tropical forest regions grouping - the 18 game creatures listed (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75ColdCount",
+   "value": 6,
+   "comment": "the cold oceans grouping - the 6 game creatures listed (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75WarmCount",
+   "value": 4,
+   "comment": "the warm oceans grouping - the 4 game creatures listed (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75CrossCount",
+   "value": 124,
+   "comment": "the Creatures from Previous Books count - the 124 cross-referenced monsters (print capture pp. 252-253)"
+  },
+  {
+   "name": "djrOA75CrossMMICount",
+   "value": 59,
+   "comment": "the Creatures from Previous Books - the 59 entries sourced from the MMI (print capture pp. 252-253)"
+  },
+  {
+   "name": "djrOA75CrossFFCount",
+   "value": 18,
+   "comment": "the Creatures from Previous Books - the 18 entries sourced from the FF (print capture pp. 252-253)"
+  },
+  {
+   "name": "djrOA75CrossMMIICount",
+   "value": 46,
+   "comment": "the Creatures from Previous Books - the 46 entries sourced from the MMII (print capture pp. 252-253)"
+  },
+  {
+   "name": "djrOA75CrossLLCount",
+   "value": 1,
+   "comment": "the Creatures from Previous Books - the 1 entries sourced from the LL (print capture pp. 252-253)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djrOA75UniqueCreaturesExist",
+   "value": true,
+   "comment": "the Chapter 12 doctrine - a number of creatures unique to Kara-Tur, described in this section (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75HeldAtBayByGeography",
+   "value": true,
+   "comment": "the Chapter 12 doctrine - creatures common elsewhere never made their appearance in Kara-Tur, held at bay by stormy oceans, grim mountain ranges, and scalding deserts (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75GroupedByClimate",
+   "value": true,
+   "comment": "the Chapter 12 doctrine - the animals and monsters grouped under the type of geography and climate they inhabit (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75GameCreaturesNotOnTables",
+   "value": true,
+   "comment": "the Chapter 12 doctrine - common and game creatures are not described in this section nor on the majority of the encounter tables, listed to inform the DM of the typical wild game per climate (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75CrossListAidsDM",
+   "value": true,
+   "comment": "the Creatures from Previous Books - listed alphabetically to aid the DM in creating his own adventures (print capture p. 252)"
+  },
+  {
+   "name": "djrOA75CrossNotExclusive",
+   "value": true,
+   "comment": "the Creatures from Previous Books - simply because a creature is not listed does not mean it cannot appear in an oriental adventure; the list is those most likely to fit the mythos and style (print capture pp. 252-253)"
+  },
+  {
+   "name": "djrOA75CelestialBureaucracy",
+   "value": true,
+   "comment": "the Chapter 12 doctrine - the Celestial Emperor heads the Celestial Bureaucracy, the government of the spirits; many spirit creatures hold offices, receive and carry out orders, punish the wicked, and file reports (print capture p. 253)"
+  },
+  {
+   "name": "djrOA75OfficialsReplaceable",
+   "value": true,
+   "comment": "the Celestial Bureaucracy - like real-world bureaucrats the spirit officials can be corrupt, disobedient, just, or incompetent, and can be replaced, their activities examined yearly (print capture p. 253)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the seven groupings and the doctrine - the group count, the creature count, the unique creatures, the held-at-bay, the grouped-by-climate, the game creatures off the tables",
+   "expr": "m['djrOA75GroupCount']() != 7 or m['djrOA75CreatureCount']() != 61 or m['djrOA75UniqueCreaturesExist']() != 1 or m['djrOA75HeldAtBayByGeography']() != 1 or m['djrOA75GroupedByClimate']() != 1 or m['djrOA75GameCreaturesNotOnTables']() != 1"
+  },
+  {
+   "note": "the grouping sizes - the Sub-Arctic Forests 18, the Temperate Plain/Forest 20, the Steppelands 13, the Sub-Tropical Forest 18",
+   "expr": "m['djrOA75SubArcticCount']() != 18 or m['djrOA75TemperateCount']() != 20 or m['djrOA75SteppelandsCount']() != 13 or m['djrOA75SubTropicalCount']() != 18 or m['djrOA75TropicalCount']() != 18 or m['djrOA75ColdCount']() != 6 or m['djrOA75WarmCount']() != 4 or m['djrOA75CrossMMICount']() != 59 or m['djrOA75CrossFFCount']() != 18 or m['djrOA75CrossMMIICount']() != 46 or m['djrOA75CrossLLCount']() != 1 or m['djrOA75GroupCount']() != 7"
+  },
+  {
+   "note": "the cross-reference - the count, the four sources, the aids the DM, the not-exclusive, the celestial bureaucracy, the replaceable officials",
+   "expr": "m['djrOA75CrossCount']() != 124 or m['djrOA75CrossMMICount']() != 59 or m['djrOA75CrossFFCount']() != 18 or m['djrOA75CrossMMIICount']() != 46 or m['djrOA75CrossLLCount']() != 1 or m['djrOA75CrossListAidsDM']() != 1 or m['djrOA75CrossNotExclusive']() != 1 or m['djrOA75CelestialBureaucracy']() != 1 or m['djrOA75OfficialsReplaceable']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the climate groupings": [
+   {
+    "kind": "const",
+    "name": "djrOA75GroupCount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75CreatureCount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75SubArcticCount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75TemperateCount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75SteppelandsCount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75SubTropicalCount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75TropicalCount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75ColdCount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75WarmCount"
+   }
+  ],
+  "the creatures from previous books": [
+   {
+    "kind": "const",
+    "name": "djrOA75CrossCount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75CrossMMICount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75CrossFFCount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75CrossMMIICount"
+   },
+   {
+    "kind": "const",
+    "name": "djrOA75CrossLLCount"
+   },
+   {
+    "kind": "bool",
+    "name": "djrOA75CrossListAidsDM"
+   },
+   {
+    "kind": "bool",
+    "name": "djrOA75CrossNotExclusive"
+   }
+  ],
+  "the doctrine": [
+   {
+    "kind": "bool",
+    "name": "djrOA75UniqueCreaturesExist"
+   },
+   {
+    "kind": "bool",
+    "name": "djrOA75HeldAtBayByGeography"
+   },
+   {
+    "kind": "bool",
+    "name": "djrOA75GroupedByClimate"
+   },
+   {
+    "kind": "bool",
+    "name": "djrOA75GameCreaturesNotOnTables"
+   },
+   {
+    "kind": "bool",
+    "name": "djrOA75CelestialBureaucracy"
+   },
+   {
+    "kind": "bool",
+    "name": "djrOA75OfficialsReplaceable"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Climate Groupings box",
+   "from": "  - [ ] Climate Groupings with Creatures from\n    Previous Books (capture p. 252) - the climate\n    doctrine and the earlier-books cross-reference",
+   "to": "  - [x] Climate Groupings with Creatures from\n    Previous Books (capture p. 252) - the climate\n    doctrine and the earlier-books cross-reference\n    - R704: the djr climate grouping pins - the\n    seven climate groupings with their game\n    creature lists (the Sub-Arctic Forests 18,\n    the Temperate Plain/Forest 20, the\n    Steppelands 13, the Sub-Tropical Forest 18,\n    the Tropical Forest 18, the Cold Oceans 6,\n    the Warm Oceans 4), the 61 distinct creatures;\n    the Creatures from Previous Books the 124\n    entries cross-referenced to the MMI, FF,\n    MMII, and LL (the 59/18/46/1); the doctrine\n    (the unique-to-Kara-Tur creatures, the\n    held-at-bay geography, the groupings by\n    climate, the game creatures off the\n    encounter tables, the DM-aid, the\n    not-exclusive list, the Celestial\n    Bureaucracy with its replaceable officials);\n    single-pass pins per the Chapter 9\n    provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 157,
+  "open": 78
+ },
+ "include_comment": "the OA climate groupings pins",
+ "include_after": "#include \"rules/oa74terrain.h\"  // R703: the OA Chapter 11 terrain encounter tables pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R703 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R703 LANDED 2026-10-21: commit f4c28d73ff909f45d67bc550dea1b3f0f1363155",
+  "  (census 625 -> 626, pushed eb09e60..f4c28d7), OA CHAPTER 11 - the",
+  "  terrain encounter tables, capture pp. 251-252 print:",
+  "  rules/oa74terrain.h, prefix djq (verified free at eb09e60), ONE gap",
+  "  flip, gap census 155/80 -> 156/79. 16 grid cols + 5 consts + 2",
+  "  bools (23 inlines): the sixteen terrain columns of the 2-20 roll",
+  "  grid (the City/Town, the T/S Mountains, the T/S Ocean, the",
+  "  Temperate Swamp, the Rural, the T/S Forest, the Temperate",
+  "  Mountain, the Temperate Freshwater, the Steppes, the T/S Swamp,",
+  "  the Temperate Forest, the Temperate Ocean, the Aerial, the T/S",
+  "  Freshwater, the Temperate Plain, the Cold Regions the",
+  "  all-terrain-types column), each column the nineteen rolls 2-20,",
+  "  the 164 encounter names by ordinal; the 304 cells. THE OCR",
+  "  REPAIRS: the City/Town 15 Busho read as the Buso, tigbauna; the",
+  "  Temperate Mountain 9 Giang read as the Giant, hill; the hai nu",
+  "  capitalization at the T/S Ocean 16. AS PRINTED: the Temperate",
+  "  Ocean the School of fish at 10 and 12, the Men, wako at 7 and 14.",
+  "  THE R702 LESSON SCALED: the generator PARSES the OCR pages",
+  "  directly - the 304 cells machine-transcribed, the repairs",
+  "  asserted against unique pre-repair strings, every example built",
+  "  from the parsed data; two generator-side false starts caught by",
+  "  its own asserts BEFORE any spec existed (the repair note said",
+  "  Rural 15, the parse proved City/Town 15 - the machine right, the",
+  "  note wrong). First rverify GREEN, 311 mutants, 0 missed. Spec",
+  "  md5 1566ad5f19c3a87cb62c0526fc7a63c7",
+  "  (authored-plus-newline md5 f32fc32fdcb4eaa2cb29079a2acb764e",
+  "  - the value the ritual gated and matched byte-exact at the",
+  "  landing; canvas md5",
+  "  7c54d716b555430ba28042d46042c4e0). NEXT - R704: the Climate",
+  "  Groupings with Creatures from Previous Books (capture p. 252),",
+  "  prefix djr (verified free at f4c28d7), audit \"R704 OA climate",
+  "  groupings audit\", include after rules/oa74terrain.h"
+ ]
+}
