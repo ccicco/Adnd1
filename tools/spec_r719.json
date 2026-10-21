@@ -1,0 +1,707 @@
+{
+ "round": 719,
+ "title": "OA MONSTERS - the Hsing-Sing: the war-season raiders",
+ "prefix": "dkg",
+ "header_file": "rules/oa90hsingsing.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 641,
+ "inline_count": 65,
+ "audit_label": "R719 OA monsters Hsing-Sing audit",
+ "audit_comment": "OA round one hundred six (capture p. 269): the Chapter 12 monster roster - the hsing-sing, the stat block and the description riding together, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE HSING-SING, printed capture p. 269 - the war-season round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 172 closed, 63 open - the hsing-sing box flips (census 641 -> 642); NEXT - R720: the Hu Hsien, Lesser Spirit (capture pp. 269-272), prefix dkh (verify free at the landing), audit \"R720 OA monsters Hu Hsien audit\", include after rules/oa90hsingsing.h"
+ },
+ "consts": [
+  {
+   "name": "dkgAppearMin",
+   "value": 2,
+   "comment": "the appearing minimum - the 2 of the 2-20 appearing (print capture p. 269)"
+  },
+  {
+   "name": "dkgAppearMax",
+   "value": 20,
+   "comment": "the appearing maximum - the 20 of the 2-20 appearing (print capture p. 269)"
+  },
+  {
+   "name": "dkgAC",
+   "value": 6,
+   "comment": "the hsing-sing armor class - the AC 6 of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgMoveWalk",
+   "value": 6,
+   "comment": "the walking rate - the 6 of the move 6/9 (print capture p. 269)"
+  },
+  {
+   "name": "dkgMoveClimb",
+   "value": 9,
+   "comment": "the climbing rate - the 9 of the move 6/9 (print capture p. 269)"
+  },
+  {
+   "name": "dkgHD",
+   "value": 2,
+   "comment": "the hit dice - the 2 of the 2+1 (print capture p. 269)"
+  },
+  {
+   "name": "dkgHDPlus",
+   "value": 1,
+   "comment": "the hit dice bonus - the +1 of the 2+1 (print capture p. 269)"
+  },
+  {
+   "name": "dkgLairPct",
+   "value": 25,
+   "comment": "the in-lair percentage - the 25% of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgAttackCount",
+   "value": 1,
+   "comment": "the attack count - the 1 of the number of attacks (print capture p. 269)"
+  },
+  {
+   "name": "dkgDmgMin",
+   "value": 1,
+   "comment": "the damage minimum - the 1 of the 1-6 or by weapon type (print capture p. 269)"
+  },
+  {
+   "name": "dkgDmgMax",
+   "value": 6,
+   "comment": "the damage maximum - the 6 of the 1-6 or by weapon type (print capture p. 269)"
+  },
+  {
+   "name": "dkgXPBase",
+   "value": 35,
+   "comment": "the xp base - the 35 of the II/35 + 3 per hp (print capture p. 269)"
+  },
+  {
+   "name": "dkgXPPerHP",
+   "value": 3,
+   "comment": "the xp per hit point - the 3 of the II/35 + 3/hp (print capture p. 269)"
+  },
+  {
+   "name": "dkgWarSeasonPerYear",
+   "value": 1,
+   "comment": "the war season cadence - once per year they go on a war-season (print capture p. 269)"
+  },
+  {
+   "name": "dkgRaidMemoryYears",
+   "value": 2,
+   "comment": "the raid memory - clever enough not to strike the same settlement two years in a row (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonCount",
+   "value": 2,
+   "comment": "the principal poison count - the two poisons of the blowgun darts (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonOneFailedSaveDeath",
+   "value": 0,
+   "comment": "the first poison failed save - death if the saving throw vs. poison is failed (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonOneSaveDmgDice",
+   "value": 1,
+   "comment": "the first poison save damage dice - the 1d8 points of damage on a successful save (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonOneSaveDmgSides",
+   "value": 8,
+   "comment": "the first poison save damage sides - the 1d8 points of damage on a successful save (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonTwoParalysisTurnsDice",
+   "value": 2,
+   "comment": "the second poison paralysis dice - the 2d6 turns of paralysis on a failed save (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonTwoParalysisTurnsSides",
+   "value": 6,
+   "comment": "the second poison paralysis sides - the 2d6 turns of paralysis on a failed save (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonTwoSlowTurnsDice",
+   "value": 1,
+   "comment": "the second poison slow dice - the 1d6 turns of slowing on a successful save (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonTwoSlowTurnsSides",
+   "value": 6,
+   "comment": "the second poison slow sides - the 1d6 turns of slowing on a successful save (print capture p. 269)"
+  },
+  {
+   "name": "dkgLairFemalePct",
+   "value": 50,
+   "comment": "the lair female share - the females and children equal to 50% of the number encountered (print capture p. 269)"
+  },
+  {
+   "name": "dkgFemaleHD",
+   "value": 1,
+   "comment": "the female hit dice - the 1 hit die of the females fighting from the branches (print capture p. 269)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkgFrequencyRare",
+   "value": 1,
+   "comment": "the frequency - the rare of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgTreasureTypeB",
+   "value": 1,
+   "comment": "the treasure type - the B of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgDamageByWeaponType",
+   "value": 1,
+   "comment": "the damage clause - the 1-6 or by weapon type of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgSpecialAttacksNil",
+   "value": 1,
+   "comment": "the special attacks - the nil of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgSpecialDefensesNil",
+   "value": 1,
+   "comment": "the special defenses - the nil of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgMagicResistStandard",
+   "value": 1,
+   "comment": "the magic resistance - the standard of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgIntelligenceAverage",
+   "value": 1,
+   "comment": "the intelligence - the average of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgAlignmentNeutral",
+   "value": 1,
+   "comment": "the alignment - the neutral of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgSizeMedium",
+   "value": 1,
+   "comment": "the size class - the M of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgPsionicNil",
+   "value": 1,
+   "comment": "the psionic ability - the nil of the stat block (print capture p. 269)"
+  },
+  {
+   "name": "dkgLevelII",
+   "value": 1,
+   "comment": "the level value - the II of the II/35 + 3/hp (print capture p. 269)"
+  },
+  {
+   "name": "dkgApeLikeHumanoids",
+   "value": 1,
+   "comment": "the race - ape-like humanoids, white-furred and with the faces of men (print capture p. 269)"
+  },
+  {
+   "name": "dkgWhiteFurred",
+   "value": 1,
+   "comment": "the coat - white-furred (print capture p. 269)"
+  },
+  {
+   "name": "dkgFacesOfMen",
+   "value": 1,
+   "comment": "the face - with the faces of men (print capture p. 269)"
+  },
+  {
+   "name": "dkgMountainousSubTropicalForests",
+   "value": 1,
+   "comment": "the range - the mountainous sub-tropical forests (print capture p. 269)"
+  },
+  {
+   "name": "dkgSpeaksOwnAndTrade",
+   "value": 1,
+   "comment": "the tongues - the language of their own race and the trade language (print capture p. 269)"
+  },
+  {
+   "name": "dkgPrefersLeftAlone",
+   "value": 1,
+   "comment": "the temperament - normally prefer to be left alone (print capture p. 269)"
+  },
+  {
+   "name": "dkgWeaknessForStrongDrink",
+   "value": 1,
+   "comment": "the vice - a weakness for strong drink brings them to human villages to trade (print capture p. 269)"
+  },
+  {
+   "name": "dkgTradesRareTreasures",
+   "value": 1,
+   "comment": "the outbound trade - the parrots, feathers of rare birds, scented woods, and exotic fruits of the forest enclaves (print capture p. 269)"
+  },
+  {
+   "name": "dkgTakesMetalPotteryWineRice",
+   "value": 1,
+   "comment": "the inbound trade - the forged metal, pottery, wine, and rice they take in exchange (print capture p. 269)"
+  },
+  {
+   "name": "dkgPracticesNoCrafts",
+   "value": 1,
+   "comment": "the craft clause - practice no crafts themselves, preferring a simple existence (print capture p. 269)"
+  },
+  {
+   "name": "dkgHarmonyWithNature",
+   "value": 1,
+   "comment": "the scholars view - held as perfect examples of the principles of harmony with nature and non-action (print capture p. 269)"
+  },
+  {
+   "name": "dkgNotEntirelyPeaceful",
+   "value": 1,
+   "comment": "the caveat - not entirely peaceful (print capture p. 269)"
+  },
+  {
+   "name": "dkgWarSeason",
+   "value": 1,
+   "comment": "the war season - the extremely savage and aggressive annual raiding period (print capture p. 269)"
+  },
+  {
+   "name": "dkgOrganizesRaidingBands",
+   "value": 1,
+   "comment": "the muster - organize themselves into raiding bands attacking settlements on the edges of their territory (print capture p. 269)"
+  },
+  {
+   "name": "dkgImpartialPillage",
+   "value": 1,
+   "comment": "the impartiality - attacks impartial, pillaging good and evil creatures alike (print capture p. 269)"
+  },
+  {
+   "name": "dkgNeverSameSettlementTwice",
+   "value": 1,
+   "comment": "the clever rotation - never striking the same settlement two years in a row (print capture p. 269)"
+  },
+  {
+   "name": "dkgCarriesSpears",
+   "value": 1,
+   "comment": "the first war gear - the spear (print capture p. 269)"
+  },
+  {
+   "name": "dkgCarriesParangs",
+   "value": 1,
+   "comment": "the second war gear - the parang (print capture p. 269)"
+  },
+  {
+   "name": "dkgCarriesBlowguns",
+   "value": 1,
+   "comment": "the third war gear - the blowgun (print capture p. 269)"
+  },
+  {
+   "name": "dkgCarriesWickerShields",
+   "value": 1,
+   "comment": "the fourth war gear - the wicker shield (print capture p. 269)"
+  },
+  {
+   "name": "dkgAdeptWithPoisons",
+   "value": 1,
+   "comment": "the poison craft - quite adept at using poisons, the blowgun darts always dipped in noxious concoctions (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonOneDeath",
+   "value": 1,
+   "comment": "the first poison - causes death if the saving throw vs. poison is failed (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonOneSaveDamage",
+   "value": 1,
+   "comment": "the first poison save - the 1d8 points of damage if the save is successful (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonTwoMuscleRelaxant",
+   "value": 1,
+   "comment": "the second poison - a strong muscle relaxant paralyzing the victim on a failed save (print capture p. 269)"
+  },
+  {
+   "name": "dkgPoisonTwoSaveSlows",
+   "value": 1,
+   "comment": "the second poison save - slowing him for 1d6 turns if the save is successful (print capture p. 269)"
+  },
+  {
+   "name": "dkgLairInLargeTree",
+   "value": 1,
+   "comment": "the lair - a large tree in the forest (print capture p. 269)"
+  },
+  {
+   "name": "dkgSleepingPlatforms",
+   "value": 1,
+   "comment": "the quarters - simple sleeping platforms with thatched roofs in the branches (print capture p. 269)"
+  },
+  {
+   "name": "dkgFemalesFightFromBranches",
+   "value": 1,
+   "comment": "the lair defense - the females fight from the branches, hurling clubs and stones at attackers (print capture p. 269)"
+  },
+  {
+   "name": "dkgDespisesTasloi",
+   "value": 1,
+   "comment": "the grudge - despise the tasloi, which sometimes wander up from their tropical homes on raids (print capture p. 269)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the stat block - the stat block pins, healthy values, each condition false",
+   "expr": "m['dkgAppearMin']() != 2 or m['dkgAppearMax']() != 20 or m['dkgAC']() != 6 or m['dkgMoveWalk']() != 6 or m['dkgMoveClimb']() != 9 or m['dkgHD']() != 2 or m['dkgHDPlus']() != 1 or m['dkgLairPct']() != 25 or m['dkgFrequencyRare']() != 1 or m['dkgTreasureTypeB']() != 1 or m['dkgAttackCount']() != 1 or m['dkgDmgMin']() != 1 or m['dkgDmgMax']() != 6 or m['dkgDamageByWeaponType']() != 1 or m['dkgSpecialAttacksNil']() != 1 or m['dkgSpecialDefensesNil']() != 1 or m['dkgMagicResistStandard']() != 1 or m['dkgIntelligenceAverage']() != 1 or m['dkgAlignmentNeutral']() != 1 or m['dkgSizeMedium']() != 1 or m['dkgPsionicNil']() != 1 or m['dkgLevelII']() != 1 or m['dkgXPBase']() != 35 or m['dkgXPPerHP']() != 3"
+  },
+  {
+   "note": "the ape-like race - the white-furred race, healthy values, each condition false",
+   "expr": "m['dkgApeLikeHumanoids']() != 1 or m['dkgWhiteFurred']() != 1 or m['dkgFacesOfMen']() != 1 or m['dkgMountainousSubTropicalForests']() != 1 or m['dkgSpeaksOwnAndTrade']() != 1"
+  },
+  {
+   "note": "the strong-drink trade - the trade treks, healthy values, each condition false",
+   "expr": "m['dkgPrefersLeftAlone']() != 1 or m['dkgWeaknessForStrongDrink']() != 1 or m['dkgTradesRareTreasures']() != 1 or m['dkgTakesMetalPotteryWineRice']() != 1 or m['dkgPracticesNoCrafts']() != 1 or m['dkgHarmonyWithNature']() != 1"
+  },
+  {
+   "note": "the war season - the annual raids, healthy values, each condition false",
+   "expr": "m['dkgNotEntirelyPeaceful']() != 1 or m['dkgWarSeason']() != 1 or m['dkgWarSeasonPerYear']() != 1 or m['dkgOrganizesRaidingBands']() != 1 or m['dkgImpartialPillage']() != 1 or m['dkgRaidMemoryYears']() != 2 or m['dkgNeverSameSettlementTwice']() != 1"
+  },
+  {
+   "note": "the war gear and the poisons - the raid kit and the two darts, healthy values, each condition false",
+   "expr": "m['dkgCarriesSpears']() != 1 or m['dkgCarriesParangs']() != 1 or m['dkgCarriesBlowguns']() != 1 or m['dkgCarriesWickerShields']() != 1 or m['dkgAdeptWithPoisons']() != 1 or m['dkgPoisonCount']() != 2 or m['dkgPoisonOneDeath']() != 1 or m['dkgPoisonOneFailedSaveDeath']() != 0 or m['dkgPoisonOneSaveDamage']() != 1 or m['dkgPoisonOneSaveDmgDice']() != 1 or m['dkgPoisonOneSaveDmgSides']() != 8 or m['dkgPoisonTwoMuscleRelaxant']() != 1 or m['dkgPoisonTwoParalysisTurnsDice']() != 2 or m['dkgPoisonTwoParalysisTurnsSides']() != 6 or m['dkgPoisonTwoSaveSlows']() != 1 or m['dkgPoisonTwoSlowTurnsDice']() != 1 or m['dkgPoisonTwoSlowTurnsSides']() != 6"
+  },
+  {
+   "note": "the tree lair - the platforms and the defenders, healthy values, each condition false",
+   "expr": "m['dkgLairInLargeTree']() != 1 or m['dkgSleepingPlatforms']() != 1 or m['dkgLairFemalePct']() != 50 or m['dkgFemaleHD']() != 1 or m['dkgFemalesFightFromBranches']() != 1 or m['dkgDespisesTasloi']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat block": [
+   {
+    "kind": "const",
+    "name": "dkgAppearMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkgAppearMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkgAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkgMoveWalk"
+   },
+   {
+    "kind": "const",
+    "name": "dkgMoveClimb"
+   },
+   {
+    "kind": "const",
+    "name": "dkgHD"
+   },
+   {
+    "kind": "const",
+    "name": "dkgHDPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dkgLairPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgFrequencyRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgTreasureTypeB"
+   },
+   {
+    "kind": "const",
+    "name": "dkgAttackCount"
+   },
+   {
+    "kind": "const",
+    "name": "dkgDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkgDmgMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgDamageByWeaponType"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgSpecialAttacksNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgSpecialDefensesNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgMagicResistStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgIntelligenceAverage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgAlignmentNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgSizeMedium"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgLevelII"
+   },
+   {
+    "kind": "const",
+    "name": "dkgXPBase"
+   },
+   {
+    "kind": "const",
+    "name": "dkgXPPerHP"
+   }
+  ],
+  "the ape-like race": [
+   {
+    "kind": "bool",
+    "name": "dkgApeLikeHumanoids"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgWhiteFurred"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgFacesOfMen"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgMountainousSubTropicalForests"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgSpeaksOwnAndTrade"
+   }
+  ],
+  "the strong-drink trade": [
+   {
+    "kind": "bool",
+    "name": "dkgPrefersLeftAlone"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgWeaknessForStrongDrink"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgTradesRareTreasures"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgTakesMetalPotteryWineRice"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgPracticesNoCrafts"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgHarmonyWithNature"
+   }
+  ],
+  "the war season": [
+   {
+    "kind": "bool",
+    "name": "dkgNotEntirelyPeaceful"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgWarSeason"
+   },
+   {
+    "kind": "const",
+    "name": "dkgWarSeasonPerYear"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgOrganizesRaidingBands"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgImpartialPillage"
+   },
+   {
+    "kind": "const",
+    "name": "dkgRaidMemoryYears"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgNeverSameSettlementTwice"
+   }
+  ],
+  "the war gear and the poisons": [
+   {
+    "kind": "bool",
+    "name": "dkgCarriesSpears"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgCarriesParangs"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgCarriesBlowguns"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgCarriesWickerShields"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgAdeptWithPoisons"
+   },
+   {
+    "kind": "const",
+    "name": "dkgPoisonCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgPoisonOneDeath"
+   },
+   {
+    "kind": "const",
+    "name": "dkgPoisonOneFailedSaveDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgPoisonOneSaveDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dkgPoisonOneSaveDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkgPoisonOneSaveDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgPoisonTwoMuscleRelaxant"
+   },
+   {
+    "kind": "const",
+    "name": "dkgPoisonTwoParalysisTurnsDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkgPoisonTwoParalysisTurnsSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgPoisonTwoSaveSlows"
+   },
+   {
+    "kind": "const",
+    "name": "dkgPoisonTwoSlowTurnsDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkgPoisonTwoSlowTurnsSides"
+   }
+  ],
+  "the tree lair": [
+   {
+    "kind": "bool",
+    "name": "dkgLairInLargeTree"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgSleepingPlatforms"
+   },
+   {
+    "kind": "const",
+    "name": "dkgLairFemalePct"
+   },
+   {
+    "kind": "const",
+    "name": "dkgFemaleHD"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgFemalesFightFromBranches"
+   },
+   {
+    "kind": "bool",
+    "name": "dkgDespisesTasloi"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the hsing-sing box",
+   "from": "  - [ ] Hsing-Sing (capture p. 269)",
+   "to": "  - [x] Hsing-Sing (capture p. 269)\n    - R719: the dkg hsing-sing pins - the\n    stat block (the rare 2-20, the AC 6, the\n    move 6/9, the HD 2+1, the 25% lair, the B\n    treasure, the 1 attack of 1-6 or by\n    weapon, the nil specials, the standard\n    MR, the average, the neutral, the M size,\n    the nil psionics, the II/35 + 3), the\n    ape-like race (the white fur, the faces\n    of men, the sub-tropical forests, the two\n    tongues), the strong-drink trade (the\n    parrots and rare feathers, the scented\n    woods and exotic fruits, the metal\n    pottery wine and rice, the no-crafts\n    simplicity), the war season (the once a\n    year, the raiding bands, the impartial\n    pillage, the never-twice rotation), the\n    war gear (the spear, the parang, the\n    blowgun, the wicker shield), the two\n    poisons (the death-or-1d8, the 2d6-turn\n    paralysis-or-1d6-turn slow), the tree\n    lair (the thatched platforms, the 50%\n    females, the 1 HD branch fighters, the\n    tasloi grudge); single-pass pins per the\n    Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 172,
+  "open": 63
+ },
+ "include_comment": "the OA Hsing-Sing pins",
+ "include_after": "#include \"rules/oa89hainu.h\"  // R718: the OA Hai Nu pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R718 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R718 LANDED 2026-10-21: commit d4c68bd064af867cd154b484afdd24755688fd80",
+  "  (census 640 -> 641, pushed 658be4c..d4c68bd), OA MONSTERS - the",
+  "  Hai Nu (capture pp. 268-269 print): rules/oa89hainu.h,",
+  "  prefix dkf (verified free at 658be4c), ONE gap flip, gap",
+  "  census 171/64 - the hai nu box. A TABLES round. 29",
+  "  consts + 30 bools + 1 table col (60 inlines): the stat",
+  "  block (the rare 4-40, the AC 7, the move 6/15, the HD 1",
+  "  to 4, the 30% lair, the U treasure, the 1 attack by",
+  "  weapon, the nil special attacks, the water immunity,",
+  "  the standard MR, the average-to-high, the lawful",
+  "  neutral, the M size, the nil psionics); the xp ladder",
+  "  (the 14 + 1, the 28 + 2, the 50 + 3, the 85 + 4); the",
+  "  aquatic servitor (the webbed hands and feet, the",
+  "  shimmering fur, the warm shallow seas, the Sea Lord",
+  "  court, the two tongues); the matriarchal community",
+  "  (the sunken ships and kelp, the 75% female, the 6 HD",
+  "  AC 5 matron, the 2d6 tamed sharks, the 40% 3d4",
+  "  escort); the arms table (the 20% short sword, the 50%",
+  "  trident and speargun, the 20% trident and dagger, the",
+  "  10% sword and net, the dkfArmsCount row count riding",
+  "  the tag-plus-count wiring); the fisherman feud (the",
+  "  seldom-attacked vessels, the cut lines and fouled",
+  "  nets, the petition to the Sea Lord); the element",
+  "  edges (the 1-per-round out-of-water damage, the",
+  "  double fire damage, the +1-per-die cold damage). One",
+  "  false start, caught and fixed in-authored: the engine",
+  "  requires tag plus count on tables, so the row-count",
+  "  const was added before delivery. First rverify GREEN",
+  "  after the fix, 63 mutants, 0 missed. Spec md5",
+  "  400ce53ca0550240080271091dd42db4",
+  "  (authored-plus-newline md5",
+  "  9e5b9dc52fa0640f2892c3082b85a6ce, the ritual gate,",
+  "  matched byte-exact; canvas md5",
+  "  a893a00a8ed07946f03926c014d53b2a). NEXT - R719: the",
+  "  Hsing-Sing (capture p. 269), prefix dkg (verified",
+  "  free at d4c68bd), audit \"R719 OA monsters Hsing-Sing",
+  "  audit\", include after rules/oa89hainu.h."
+ ]
+}

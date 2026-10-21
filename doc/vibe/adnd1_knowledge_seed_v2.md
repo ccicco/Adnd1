@@ -16501,6 +16501,43 @@ when both halves land.
   Hai Nu (capture p. 268), prefix dkf (verified free at
   658be4c), audit "R718 OA monsters Hai Nu audit",
   include after rules/oa88goblinspider.h.
+- R718 LANDED 2026-10-21: commit d4c68bd064af867cd154b484afdd24755688fd80
+  (census 640 -> 641, pushed 658be4c..d4c68bd), OA MONSTERS - the
+  Hai Nu (capture pp. 268-269 print): rules/oa89hainu.h,
+  prefix dkf (verified free at 658be4c), ONE gap flip, gap
+  census 171/64 - the hai nu box. A TABLES round. 29
+  consts + 30 bools + 1 table col (60 inlines): the stat
+  block (the rare 4-40, the AC 7, the move 6/15, the HD 1
+  to 4, the 30% lair, the U treasure, the 1 attack by
+  weapon, the nil special attacks, the water immunity,
+  the standard MR, the average-to-high, the lawful
+  neutral, the M size, the nil psionics); the xp ladder
+  (the 14 + 1, the 28 + 2, the 50 + 3, the 85 + 4); the
+  aquatic servitor (the webbed hands and feet, the
+  shimmering fur, the warm shallow seas, the Sea Lord
+  court, the two tongues); the matriarchal community
+  (the sunken ships and kelp, the 75% female, the 6 HD
+  AC 5 matron, the 2d6 tamed sharks, the 40% 3d4
+  escort); the arms table (the 20% short sword, the 50%
+  trident and speargun, the 20% trident and dagger, the
+  10% sword and net, the dkfArmsCount row count riding
+  the tag-plus-count wiring); the fisherman feud (the
+  seldom-attacked vessels, the cut lines and fouled
+  nets, the petition to the Sea Lord); the element
+  edges (the 1-per-round out-of-water damage, the
+  double fire damage, the +1-per-die cold damage). One
+  false start, caught and fixed in-authored: the engine
+  requires tag plus count on tables, so the row-count
+  const was added before delivery. First rverify GREEN
+  after the fix, 63 mutants, 0 missed. Spec md5
+  400ce53ca0550240080271091dd42db4
+  (authored-plus-newline md5
+  9e5b9dc52fa0640f2892c3082b85a6ce, the ritual gate,
+  matched byte-exact; canvas md5
+  a893a00a8ed07946f03926c014d53b2a). NEXT - R719: the
+  Hsing-Sing (capture p. 269), prefix dkg (verified
+  free at d4c68bd), audit "R719 OA monsters Hsing-Sing
+  audit", include after rules/oa89hainu.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

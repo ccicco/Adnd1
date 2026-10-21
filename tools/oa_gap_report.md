@@ -2317,7 +2317,31 @@ description riding the same round.
     double fire damage, the +1-per-die
     cold damage); single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Hsing-Sing (capture p. 269)
+  - [x] Hsing-Sing (capture p. 269)
+    - R719: the dkg hsing-sing pins - the
+    stat block (the rare 2-20, the AC 6, the
+    move 6/9, the HD 2+1, the 25% lair, the B
+    treasure, the 1 attack of 1-6 or by
+    weapon, the nil specials, the standard
+    MR, the average, the neutral, the M size,
+    the nil psionics, the II/35 + 3), the
+    ape-like race (the white fur, the faces
+    of men, the sub-tropical forests, the two
+    tongues), the strong-drink trade (the
+    parrots and rare feathers, the scented
+    woods and exotic fruits, the metal
+    pottery wine and rice, the no-crafts
+    simplicity), the war season (the once a
+    year, the raiding bands, the impartial
+    pillage, the never-twice rotation), the
+    war gear (the spear, the parang, the
+    blowgun, the wicker shield), the two
+    poisons (the death-or-1d8, the 2d6-turn
+    paralysis-or-1d6-turn slow), the tree
+    lair (the thatched platforms, the 50%
+    females, the 1 HD branch fighters, the
+    tasloi grudge); single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Hu Hsien, Lesser Spirit (capture pp. 269-272)
   - [ ] Kala (capture p. 272)
   - [ ] Kappa (capture p. 273)
