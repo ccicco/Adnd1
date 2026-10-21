@@ -2342,7 +2342,55 @@ description riding the same round.
     females, the 1 HD branch fighters, the
     tasloi grudge); single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Hu Hsien, Lesser Spirit (capture pp. 269-272)
+  - [x] Hu Hsien, Lesser Spirit (capture pp.
+    269-272)
+    - R720: the dkh hu hsien box pins - the
+    triple round, the fox spirit, the
+    ikiryo, and the jishin mushi riding one
+    flip. The hu hsien: the stat block (the
+    rare, the AC 7, the move 15, the HD 6,
+    the 10% lair, the I S T treasure, the 1
+    attack of 1-6 or by weapon, the 50% MR,
+    the genius chaotic evil, the M size,
+    the VII/1,150 + 6), the fox forms (the
+    two forms, the upright fox, the human
+    maiden at 18 Charisma 25 Comeliness,
+    the tail that never changes, the +3
+    weapon, the 2-per-hour regeneration),
+    the power roster (the 12 at-will one
+    per round, the 3 daily, the 3-per-week
+    reward or ancient curse, the
+    fascination), the defenses (the fire
+    immunity, the half cold, the double
+    electrical, the thunderstorm fear),
+    the life drain (the one level per day,
+    the unaware victim, the rescue only by
+    others), the character (the wine and
+    the reversion, the tricks, the
+    scholars), the lair (the village edge,
+    the illusion house, the fox den
+    mansion, the floorboards). The ikiryo:
+    the stat block (the very rare 1, the
+    nil block, the 200-260 psionics, the B
+    C D E and F G H modes, the VIII/3,500),
+    the nature (the projection of evil
+    thoughts, the true sight and detect
+    reveals, the dispel and exorcism, the
+    confrontation vanish), the drain (the
+    one point per score per day, the death
+    at zero, the one-per-day recovery),
+    the dm guidance. The jishin mushi: the
+    stat block (the very rare 1-3, the AC
+    3, the move 9/13, the HD 5+4, the
+    2-16, the V/275 + 6), the beetle (the
+    blue-green carapace, the oxen raids,
+    the mandibles), the tremor rounds (the
+    five-foot knockdown, the growing
+    radii, the 1d6 round-three damage, the
+    round-five cracks, the round-six
+    earthquake, the take to the air), the
+    2-tael ichor; single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Kala (capture p. 272)
   - [ ] Kappa (capture p. 273)
   - [ ] Kuei, Lesser Spirit (capture p. 274)

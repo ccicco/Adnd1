@@ -16538,6 +16538,36 @@ when both halves land.
   Hsing-Sing (capture p. 269), prefix dkg (verified
   free at d4c68bd), audit "R719 OA monsters Hsing-Sing
   audit", include after rules/oa89hainu.h.
+- R719 LANDED 2026-10-21: commit de4c144fa311638060787782e08ec55dc34f94ca
+  (census 641 -> 642, pushed d4c68bd..de4c144), OA MONSTERS - the
+  Hsing-Sing (capture p. 269 print): rules/oa90hsingsing.h,
+  prefix dkg (verified free at d4c68bd), ONE gap flip, gap
+  census 172/63 - the hsing-sing box. 25 consts + 40 bools
+  (65 inlines): the stat block (the rare 2-20, the AC 6, the
+  move 6/9, the HD 2+1, the 25% lair, the B treasure, the 1
+  attack of 1-6 or by weapon, the nil specials, the standard
+  MR, the average, the neutral, the M size, the nil
+  psionics, the II/35 + 3); the ape-like race (the white
+  fur, the faces of men, the sub-tropical forests, the two
+  tongues); the strong-drink trade (the parrots and rare
+  feathers, the scented woods and exotic fruits, the
+  metal pottery wine and rice, the no-crafts simplicity,
+  the harmony-with-nature scholars); the war season (the
+  once a year, the raiding bands, the impartial pillage,
+  the never-twice rotation); the war gear (the spear, the
+  parang, the blowgun, the wicker shield) and the two
+  poisons (the death-or-1d8, the 2d6-turn paralysis or
+  the 1d6-turn slow); the tree lair (the thatched
+  platforms, the 50% females, the 1 HD branch fighters,
+  the tasloi grudge). Zero false starts, first rverify
+  GREEN, 65 mutants, 0 missed. Spec md5
+  3c3cd44b253bb01158d0f8061a582ca5 (authored-plus-newline
+  md5 34e95de26ce171746531e84ef7f578e8, the ritual gate,
+  matched byte-exact; canvas md5
+  db359f792c38c5eb2a4e528d4a132221). NEXT - R720: the
+  Hu Hsien, Lesser Spirit (capture pp. 269-272), prefix
+  dkh (verified free at de4c144), audit "R720 OA monsters
+  Hu Hsien audit", include after rules/oa90hsingsing.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
