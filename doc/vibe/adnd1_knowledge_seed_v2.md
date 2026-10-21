@@ -16443,6 +16443,34 @@ when both halves land.
   NEXT - R716: the Goblin Rat (capture p. 266), prefix dkd
   (verified free at 1669743), audit "R716 OA monsters Goblin
   Rat audit", include after rules/oa86generals.h.
+- R716 LANDED 2026-10-21: commit 91bfd2404a253ff1842ac0c22616361c5f30a604
+  (census 638 -> 639, pushed 1669743..91bfd24), OA MONSTERS - the
+  Goblin Rat (capture pp. 266-267 print): rules/oa87goblinrat.h,
+  prefix dkd (verified free at 1669743), ONE gap flip, gap
+  census 169/66 - the goblin rat box. 24 consts + 37 bools
+  (61 inlines): the stat block (the rare 1-20, the AC 7, the
+  move 9, the HD 3, the 20% lair, the B treasure, the 1-8
+  bite or by weapon, the nil special attacks, the shapechange
+  defense, the 10% MR, the low-to-standard intelligence, the
+  lawful evil, the S 3-4 size, the nil psionics, the
+  VI/1,000 + 10 per hp); the shapechanger (the hengeyokai
+  kin, the two forms, the foul giant rat and the ratman, the
+  full hp in either form); the disease bite (the 5% disease
+  chance, the cholera plague fevers); the ratman arms (the
+  weapons and armor, the spear, the naginata, the
+  two-handed sword); the king (the 10-plus group, the 5 HD,
+  the AC 4, the +2 bite); the feline fear (the save vs.
+  paralyzation, the panic flight, the +1 cat to-hit, the
+  life-like cat paintings of quality); the lair (the fringe
+  of settlements, the deserted temple or abandoned hut, the
+  trade and human tongues). Zero false starts, first rverify
+  GREEN, 61 mutants, 0 missed. Spec md5
+  646c0cb0fd740087938d79fed9eef670 (authored-plus-newline md5
+  f74b4877ea59d582c61403caeb9469ff, the ritual gate, matched
+  byte-exact; canvas md5 2e808dd7e25c9475cbbe96320c903d5e).
+  NEXT - R717: the Goblin Spider (capture p. 267), prefix
+  dke (verified free at 91bfd24), audit "R717 OA monsters
+  Goblin Spider audit", include after rules/oa87goblinrat.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -2263,7 +2263,31 @@ description riding the same round.
     cat to-hit, the life-like cat paintings
     of quality); single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Goblin Spider (capture p. 267)
+  - [x] Goblin Spider (capture p. 267)
+    - R717: the dke goblin spider pins - the
+    stat block (the rare 1-4, the AC 4, the
+    move 18, the HD 6 to 9, the 80% lair,
+    the C treasure, the 2 attacks of 1-8,
+    the surprise and grasp, the +1 weapon
+    to hit, the 20% MR, the low, the neutral
+    evil, the L 8-10, the nil psionics), the
+    xp ladder (the 575 + 6, the 900 + 8, the
+    1,350 + 10, the 2,200 + 12), the earth
+    spider (the huge furry evil cast, the
+    wooded mountains, the former dominion,
+    the invaders grudge), the trapdoor
+    ambush (the no-webs tunnels, the
+    concealed trapdoor, the overhead
+    vibrations, the 1-4 surprise, the drag
+    into the lair), the grasp (the both-hits
+    hold, the -4 held penalty, the bend bars
+    escape, the 20-point two-character
+    rescue, the no-other-attacks grip), the
+    mimicry (the any-voice imitation, the
+    repeat-only parrot clause, the lure to
+    doom, the four tongues), the 30% 2d4
+    giant spider guards; single-pass pins
+    per the Chapter 9 provenance shift
   - [ ] Hai Nu (capture p. 268)
   - [ ] Hsing-Sing (capture p. 269)
   - [ ] Hu Hsien, Lesser Spirit (capture pp. 269-272)

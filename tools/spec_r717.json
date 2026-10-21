@@ -1,0 +1,722 @@
+{
+ "round": 717,
+ "title": "OA MONSTERS - the Goblin Spider: the trapdoor ambush",
+ "prefix": "dke",
+ "header_file": "rules/oa88goblinspider.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 639,
+ "inline_count": 67,
+ "audit_label": "R717 OA monsters Goblin Spider audit",
+ "audit_comment": "OA round one hundred four (capture pp. 267-268): the Chapter 12 monster roster - the goblin spider, the stat block and the description riding together, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE GOBLIN SPIDER, printed capture p. 267 - the trapdoor ambush round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 170 closed, 65 open - the goblin spider box flips (census 639 -> 640); NEXT - R718: the Hai Nu (capture p. 268), prefix dkf (verify free at the landing), audit \"R718 OA monsters Hai Nu audit\", include after rules/oa88goblinspider.h"
+ },
+ "consts": [
+  {
+   "name": "dkeAppearMin",
+   "value": 1,
+   "comment": "the appearing minimum - the 1 of the 1-4 appearing (print capture p. 267)"
+  },
+  {
+   "name": "dkeAppearMax",
+   "value": 4,
+   "comment": "the appearing maximum - the 4 of the 1-4 appearing (print capture p. 267)"
+  },
+  {
+   "name": "dkeAC",
+   "value": 4,
+   "comment": "the goblin spider armor class - the AC 4 of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkeMove",
+   "value": 18,
+   "comment": "the goblin spider move - the 18 of the move 18 (print capture p. 267)"
+  },
+  {
+   "name": "dkeHDMin",
+   "value": 6,
+   "comment": "the hit dice minimum - the 6 of the 6 to 9 (print capture p. 267)"
+  },
+  {
+   "name": "dkeHDMax",
+   "value": 9,
+   "comment": "the hit dice maximum - the 9 of the 6 to 9 (print capture p. 267)"
+  },
+  {
+   "name": "dkeLairPct",
+   "value": 80,
+   "comment": "the in-lair percentage - the 80% of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkeAttackCount",
+   "value": 2,
+   "comment": "the attack count - the 2 of the number of attacks (print capture p. 267)"
+  },
+  {
+   "name": "dkeDmgMin",
+   "value": 1,
+   "comment": "the damage minimum - the 1 of the 1-8 per attack (print capture p. 267)"
+  },
+  {
+   "name": "dkeDmgMax",
+   "value": 8,
+   "comment": "the damage maximum - the 8 of the 1-8 per attack (print capture p. 267)"
+  },
+  {
+   "name": "dkeWeaponPlusRequired",
+   "value": 1,
+   "comment": "the weapon requirement - the +1 or better weapons to hit (print capture p. 267)"
+  },
+  {
+   "name": "dkeMagicResistPct",
+   "value": 20,
+   "comment": "the magic resistance - the 20% of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkeSizeMinFeet",
+   "value": 8,
+   "comment": "the size minimum - the 8 of the L 8-10 (print capture p. 267)"
+  },
+  {
+   "name": "dkeSizeMaxFeet",
+   "value": 10,
+   "comment": "the size maximum - the 10 of the L 8-10 (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP6Base",
+   "value": 575,
+   "comment": "the 6 HD xp base - the 575 of the VI/575 + 6 per hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP6PerHP",
+   "value": 6,
+   "comment": "the 6 HD xp per hit point - the 6 of the VI/575 + 6/hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP7Base",
+   "value": 900,
+   "comment": "the 7 HD xp base - the 900 of the VI/900 + 8 per hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP7PerHP",
+   "value": 8,
+   "comment": "the 7 HD xp per hit point - the 8 of the VI/900 + 8/hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP8Base",
+   "value": 1350,
+   "comment": "the 8 HD xp base - the 1,350 of the VII/1,350 + 10 per hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP8PerHP",
+   "value": 10,
+   "comment": "the 8 HD xp per hit point - the 10 of the VII/1,350 + 10/hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP9Base",
+   "value": 2200,
+   "comment": "the 9 HD xp base - the 2,200 of the VII/2,200 + 12 per hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP9PerHP",
+   "value": 12,
+   "comment": "the 9 HD xp per hit point - the 12 of the VII/2,200 + 12/hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeSurpriseDieMax",
+   "value": 4,
+   "comment": "the ambush surprise - springing suddenly from the lair, surprising on a 1-4 (print capture p. 267)"
+  },
+  {
+   "name": "dkeHeldToHitPenalty",
+   "value": 4,
+   "comment": "the held victim penalty - held victims fight with a -4 on their chances to hit (print capture p. 267)"
+  },
+  {
+   "name": "dkeFreeStrengthPoints",
+   "value": 20,
+   "comment": "the rescue strength - 20 or more points of Strength to wrench the victim loose (print capture p. 267)"
+  },
+  {
+   "name": "dkeFreeMinCharacters",
+   "value": 2,
+   "comment": "the rescue party - at least two characters to wrench the victim loose (print capture p. 267)"
+  },
+  {
+   "name": "dkeGuardsPct",
+   "value": 30,
+   "comment": "the guard chance - the 30% chance of 2d4 giant spiders near any lair (print capture p. 268)"
+  },
+  {
+   "name": "dkeGuardsDice",
+   "value": 2,
+   "comment": "the guard dice - the 2d4 giant spiders in the immediate vicinity (print capture p. 268)"
+  },
+  {
+   "name": "dkeGuardsSides",
+   "value": 4,
+   "comment": "the guard dice sides - the 2d4 giant spiders in the immediate vicinity (print capture p. 268)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkeFrequencyRare",
+   "value": 1,
+   "comment": "the frequency - the rare of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkeTreasureTypeC",
+   "value": 1,
+   "comment": "the treasure type - the C of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkeSpecialAttackSurprise",
+   "value": 1,
+   "comment": "the first special attack - the surprise of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkeSpecialAttackGrasp",
+   "value": 1,
+   "comment": "the second special attack - the grasp of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkeIntelligenceLow",
+   "value": 1,
+   "comment": "the intelligence - the low of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkeAlignmentNeutralEvil",
+   "value": 1,
+   "comment": "the alignment - the neutral evil of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkeSizeLarge",
+   "value": 1,
+   "comment": "the size class - the L of the L 8-10 (print capture p. 267)"
+  },
+  {
+   "name": "dkePsionicNil",
+   "value": 1,
+   "comment": "the psionic ability - the nil of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkePsionicModesNil",
+   "value": 1,
+   "comment": "the attack and defense modes - the nil of the stat block (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP6LevelVI",
+   "value": 1,
+   "comment": "the 6 HD xp level - the VI of the VI/575 + 6/hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP7LevelVI",
+   "value": 1,
+   "comment": "the 7 HD xp level - the VI of the VI/900 + 8/hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP8LevelVII",
+   "value": 1,
+   "comment": "the 8 HD xp level - the VII of the VII/1,350 + 10/hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeXP9LevelVII",
+   "value": 1,
+   "comment": "the 9 HD xp level - the VII of the VII/2,200 + 12/hp (print capture p. 267)"
+  },
+  {
+   "name": "dkeEarthSpiderName",
+   "value": 1,
+   "comment": "the name - the goblin spider or earth spider (print capture p. 267)"
+  },
+  {
+   "name": "dkeHugeFurryEvilCast",
+   "value": 1,
+   "comment": "the look - a huge furry spider of particularly evil cast (print capture p. 267)"
+  },
+  {
+   "name": "dkeDwellFarFromHumans",
+   "value": 1,
+   "comment": "the habitat - dwell far from human habitations (print capture p. 267)"
+  },
+  {
+   "name": "dkeWoodedMountains",
+   "value": 1,
+   "comment": "the range - the rough wooded mountains common to Kara-Tur (print capture p. 267)"
+  },
+  {
+   "name": "dkeFormerDominion",
+   "value": 1,
+   "comment": "the history - once dominated large sections of the land now controlled by humans (print capture p. 267)"
+  },
+  {
+   "name": "dkeViewHumansAsInvaders",
+   "value": 1,
+   "comment": "the grudge - view humans and their allies as invaders to their homelands (print capture p. 267)"
+  },
+  {
+   "name": "dkeHarmTravelersAndSettlers",
+   "value": 1,
+   "comment": "the malice - take every opportunity to cause harm to human travelers and settlers on the edges of their territories (print capture p. 267)"
+  },
+  {
+   "name": "dkeNoWebs",
+   "value": 1,
+   "comment": "the web clause - goblin spiders do not spin webs (print capture p. 267)"
+  },
+  {
+   "name": "dkeLairInTunnels",
+   "value": 1,
+   "comment": "the lair - making their lairs in tunnels underground (print capture p. 267)"
+  },
+  {
+   "name": "dkeTrapdoorEntrances",
+   "value": 1,
+   "comment": "the door - the entrances carefully concealed by trapdoor openings (print capture p. 267)"
+  },
+  {
+   "name": "dkeDetectVibrationsOverhead",
+   "value": 1,
+   "comment": "the trigger - able to detect the vibrations of creatures passing overhead (print capture p. 267)"
+  },
+  {
+   "name": "dkeDragIntoLair",
+   "value": 1,
+   "comment": "the abduction - attempt to grab their victim and drag him back into the lair, closing the door behind them (print capture p. 267)"
+  },
+  {
+   "name": "dkeBothHitsGrasp",
+   "value": 1,
+   "comment": "the grasp - in any melee round with both attacks hitting, the victim has been grasped and held (print capture p. 267)"
+  },
+  {
+   "name": "dkeBendBarsFrees",
+   "value": 1,
+   "comment": "the escape - a successful bend bars/lift gates roll frees the victim from the grip (print capture p. 267)"
+  },
+  {
+   "name": "dkeHelpersWrenchLoose",
+   "value": 1,
+   "comment": "the rescue - those not held can help free the victim (print capture p. 267)"
+  },
+  {
+   "name": "dkeGrippingBlocksAttacks",
+   "value": 1,
+   "comment": "the grip cost - while gripping a victim, it cannot make any other attacks (print capture p. 267)"
+  },
+  {
+   "name": "dkeExcellentMimic",
+   "value": 1,
+   "comment": "the mimicry - excellent mimics, able to imitate any voice or animal sound they hear (print capture p. 267)"
+  },
+  {
+   "name": "dkeUnknownTonguesRepeatOnly",
+   "value": 1,
+   "comment": "the parrot clause - when imitating languages they do not understand they can only repeat words they have heard spoken (print capture p. 267)"
+  },
+  {
+   "name": "dkeCleverAndDevious",
+   "value": 1,
+   "comment": "the mind - not exceptionally intelligent, but clever and devious (print capture p. 267)"
+  },
+  {
+   "name": "dkeMimicryLuresVictims",
+   "value": 1,
+   "comment": "the lure - often using their mimicry to lure victims to their doom (print capture p. 267)"
+  },
+  {
+   "name": "dkeSpeaksOwnLanguage",
+   "value": 1,
+   "comment": "the first tongue - their own language (print capture p. 267)"
+  },
+  {
+   "name": "dkeSpeaksSpiderLanguage",
+   "value": 1,
+   "comment": "the second tongue - the language of spiders (print capture p. 267)"
+  },
+  {
+   "name": "dkeSpeaksTradeLanguage",
+   "value": 1,
+   "comment": "the third tongue - the trade language (print capture p. 267)"
+  },
+  {
+   "name": "dkeSpeaksLocalHuman",
+   "value": 1,
+   "comment": "the fourth tongue - the language common to the human inhabitants near their lair (print capture p. 267)"
+  },
+  {
+   "name": "dkeGiantSpiderGuards",
+   "value": 1,
+   "comment": "the retinue - 2d4 giant spiders in the immediate vicinity serve as guards and assist them in any battle (print capture p. 268)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the stat block - the stat block pins, healthy values, each condition false",
+   "expr": "m['dkeAppearMin']() != 1 or m['dkeAppearMax']() != 4 or m['dkeAC']() != 4 or m['dkeMove']() != 18 or m['dkeHDMin']() != 6 or m['dkeHDMax']() != 9 or m['dkeLairPct']() != 80 or m['dkeFrequencyRare']() != 1 or m['dkeTreasureTypeC']() != 1 or m['dkeAttackCount']() != 2 or m['dkeDmgMin']() != 1 or m['dkeDmgMax']() != 8 or m['dkeSpecialAttackSurprise']() != 1 or m['dkeSpecialAttackGrasp']() != 1 or m['dkeWeaponPlusRequired']() != 1 or m['dkeMagicResistPct']() != 20 or m['dkeIntelligenceLow']() != 1 or m['dkeAlignmentNeutralEvil']() != 1 or m['dkeSizeLarge']() != 1 or m['dkeSizeMinFeet']() != 8 or m['dkeSizeMaxFeet']() != 10 or m['dkePsionicNil']() != 1 or m['dkePsionicModesNil']() != 1"
+  },
+  {
+   "note": "the xp ladder - the four-step xp ladder, healthy values, each condition false",
+   "expr": "m['dkeXP6Base']() != 575 or m['dkeXP6PerHP']() != 6 or m['dkeXP6LevelVI']() != 1 or m['dkeXP7Base']() != 900 or m['dkeXP7PerHP']() != 8 or m['dkeXP7LevelVI']() != 1 or m['dkeXP8Base']() != 1350 or m['dkeXP8PerHP']() != 10 or m['dkeXP8LevelVII']() != 1 or m['dkeXP9Base']() != 2200 or m['dkeXP9PerHP']() != 12 or m['dkeXP9LevelVII']() != 1"
+  },
+  {
+   "note": "the earth spider - the name and the grudge, healthy values, each condition false",
+   "expr": "m['dkeEarthSpiderName']() != 1 or m['dkeHugeFurryEvilCast']() != 1 or m['dkeDwellFarFromHumans']() != 1 or m['dkeWoodedMountains']() != 1 or m['dkeFormerDominion']() != 1 or m['dkeViewHumansAsInvaders']() != 1 or m['dkeHarmTravelersAndSettlers']() != 1"
+  },
+  {
+   "note": "the trapdoor ambush - the tunnel lair and the spring, healthy values, each condition false",
+   "expr": "m['dkeNoWebs']() != 1 or m['dkeLairInTunnels']() != 1 or m['dkeTrapdoorEntrances']() != 1 or m['dkeDetectVibrationsOverhead']() != 1 or m['dkeSurpriseDieMax']() != 4 or m['dkeDragIntoLair']() != 1"
+  },
+  {
+   "note": "the grasp - the hold and the rescue, healthy values, each condition false",
+   "expr": "m['dkeBothHitsGrasp']() != 1 or m['dkeHeldToHitPenalty']() != 4 or m['dkeBendBarsFrees']() != 1 or m['dkeHelpersWrenchLoose']() != 1 or m['dkeFreeStrengthPoints']() != 20 or m['dkeFreeMinCharacters']() != 2 or m['dkeGrippingBlocksAttacks']() != 1"
+  },
+  {
+   "note": "the mimicry and the tongues - the mimic and the four tongues, healthy values, each condition false",
+   "expr": "m['dkeExcellentMimic']() != 1 or m['dkeUnknownTonguesRepeatOnly']() != 1 or m['dkeCleverAndDevious']() != 1 or m['dkeMimicryLuresVictims']() != 1 or m['dkeSpeaksOwnLanguage']() != 1 or m['dkeSpeaksSpiderLanguage']() != 1 or m['dkeSpeaksTradeLanguage']() != 1 or m['dkeSpeaksLocalHuman']() != 1"
+  },
+  {
+   "note": "the giant spider guards - the lair retinue, healthy values, each condition false",
+   "expr": "m['dkeGuardsPct']() != 30 or m['dkeGuardsDice']() != 2 or m['dkeGuardsSides']() != 4 or m['dkeGiantSpiderGuards']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat block": [
+   {
+    "kind": "const",
+    "name": "dkeAppearMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkeAppearMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkeAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkeMove"
+   },
+   {
+    "kind": "const",
+    "name": "dkeHDMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkeHDMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkeLairPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeFrequencyRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeTreasureTypeC"
+   },
+   {
+    "kind": "const",
+    "name": "dkeAttackCount"
+   },
+   {
+    "kind": "const",
+    "name": "dkeDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkeDmgMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeSpecialAttackSurprise"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeSpecialAttackGrasp"
+   },
+   {
+    "kind": "const",
+    "name": "dkeWeaponPlusRequired"
+   },
+   {
+    "kind": "const",
+    "name": "dkeMagicResistPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeIntelligenceLow"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeAlignmentNeutralEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeSizeLarge"
+   },
+   {
+    "kind": "const",
+    "name": "dkeSizeMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dkeSizeMaxFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dkePsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkePsionicModesNil"
+   }
+  ],
+  "the xp ladder": [
+   {
+    "kind": "const",
+    "name": "dkeXP6Base"
+   },
+   {
+    "kind": "const",
+    "name": "dkeXP6PerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeXP6LevelVI"
+   },
+   {
+    "kind": "const",
+    "name": "dkeXP7Base"
+   },
+   {
+    "kind": "const",
+    "name": "dkeXP7PerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeXP7LevelVI"
+   },
+   {
+    "kind": "const",
+    "name": "dkeXP8Base"
+   },
+   {
+    "kind": "const",
+    "name": "dkeXP8PerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeXP8LevelVII"
+   },
+   {
+    "kind": "const",
+    "name": "dkeXP9Base"
+   },
+   {
+    "kind": "const",
+    "name": "dkeXP9PerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeXP9LevelVII"
+   }
+  ],
+  "the earth spider": [
+   {
+    "kind": "bool",
+    "name": "dkeEarthSpiderName"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeHugeFurryEvilCast"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeDwellFarFromHumans"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeWoodedMountains"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeFormerDominion"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeViewHumansAsInvaders"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeHarmTravelersAndSettlers"
+   }
+  ],
+  "the trapdoor ambush": [
+   {
+    "kind": "bool",
+    "name": "dkeNoWebs"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeLairInTunnels"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeTrapdoorEntrances"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeDetectVibrationsOverhead"
+   },
+   {
+    "kind": "const",
+    "name": "dkeSurpriseDieMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeDragIntoLair"
+   }
+  ],
+  "the grasp": [
+   {
+    "kind": "bool",
+    "name": "dkeBothHitsGrasp"
+   },
+   {
+    "kind": "const",
+    "name": "dkeHeldToHitPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeBendBarsFrees"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeHelpersWrenchLoose"
+   },
+   {
+    "kind": "const",
+    "name": "dkeFreeStrengthPoints"
+   },
+   {
+    "kind": "const",
+    "name": "dkeFreeMinCharacters"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeGrippingBlocksAttacks"
+   }
+  ],
+  "the mimicry and the tongues": [
+   {
+    "kind": "bool",
+    "name": "dkeExcellentMimic"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeUnknownTonguesRepeatOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeCleverAndDevious"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeMimicryLuresVictims"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeSpeaksOwnLanguage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeSpeaksSpiderLanguage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeSpeaksTradeLanguage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeSpeaksLocalHuman"
+   }
+  ],
+  "the giant spider guards": [
+   {
+    "kind": "const",
+    "name": "dkeGuardsPct"
+   },
+   {
+    "kind": "const",
+    "name": "dkeGuardsDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkeGuardsSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dkeGiantSpiderGuards"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the goblin spider box",
+   "from": "  - [ ] Goblin Spider (capture p. 267)",
+   "to": "  - [x] Goblin Spider (capture p. 267)\n    - R717: the dke goblin spider pins - the\n    stat block (the rare 1-4, the AC 4, the\n    move 18, the HD 6 to 9, the 80% lair,\n    the C treasure, the 2 attacks of 1-8,\n    the surprise and grasp, the +1 weapon\n    to hit, the 20% MR, the low, the neutral\n    evil, the L 8-10, the nil psionics), the\n    xp ladder (the 575 + 6, the 900 + 8, the\n    1,350 + 10, the 2,200 + 12), the earth\n    spider (the huge furry evil cast, the\n    wooded mountains, the former dominion,\n    the invaders grudge), the trapdoor\n    ambush (the no-webs tunnels, the\n    concealed trapdoor, the overhead\n    vibrations, the 1-4 surprise, the drag\n    into the lair), the grasp (the both-hits\n    hold, the -4 held penalty, the bend bars\n    escape, the 20-point two-character\n    rescue, the no-other-attacks grip), the\n    mimicry (the any-voice imitation, the\n    repeat-only parrot clause, the lure to\n    doom, the four tongues), the 30% 2d4\n    giant spider guards; single-pass pins\n    per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 170,
+  "open": 65
+ },
+ "include_comment": "the OA Goblin Spider pins",
+ "include_after": "#include \"rules/oa87goblinrat.h\"  // R716: the OA Goblin Rat pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R716 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R716 LANDED 2026-10-21: commit 91bfd2404a253ff1842ac0c22616361c5f30a604",
+  "  (census 638 -> 639, pushed 1669743..91bfd24), OA MONSTERS - the",
+  "  Goblin Rat (capture pp. 266-267 print): rules/oa87goblinrat.h,",
+  "  prefix dkd (verified free at 1669743), ONE gap flip, gap",
+  "  census 169/66 - the goblin rat box. 24 consts + 37 bools",
+  "  (61 inlines): the stat block (the rare 1-20, the AC 7, the",
+  "  move 9, the HD 3, the 20% lair, the B treasure, the 1-8",
+  "  bite or by weapon, the nil special attacks, the shapechange",
+  "  defense, the 10% MR, the low-to-standard intelligence, the",
+  "  lawful evil, the S 3-4 size, the nil psionics, the",
+  "  VI/1,000 + 10 per hp); the shapechanger (the hengeyokai",
+  "  kin, the two forms, the foul giant rat and the ratman, the",
+  "  full hp in either form); the disease bite (the 5% disease",
+  "  chance, the cholera plague fevers); the ratman arms (the",
+  "  weapons and armor, the spear, the naginata, the",
+  "  two-handed sword); the king (the 10-plus group, the 5 HD,",
+  "  the AC 4, the +2 bite); the feline fear (the save vs.",
+  "  paralyzation, the panic flight, the +1 cat to-hit, the",
+  "  life-like cat paintings of quality); the lair (the fringe",
+  "  of settlements, the deserted temple or abandoned hut, the",
+  "  trade and human tongues). Zero false starts, first rverify",
+  "  GREEN, 61 mutants, 0 missed. Spec md5",
+  "  646c0cb0fd740087938d79fed9eef670 (authored-plus-newline md5",
+  "  f74b4877ea59d582c61403caeb9469ff, the ritual gate, matched",
+  "  byte-exact; canvas md5 2e808dd7e25c9475cbbe96320c903d5e).",
+  "  NEXT - R717: the Goblin Spider (capture p. 267), prefix",
+  "  dke (verified free at 91bfd24), audit \"R717 OA monsters",
+  "  Goblin Spider audit\", include after rules/oa87goblinrat.h."
+ ]
+}
