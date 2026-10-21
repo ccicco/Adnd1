@@ -15990,6 +15990,32 @@ when both halves land.
   canvas md5 073e8da443d5134acb3121991f153b4e). NEXT - R701: Table 73 the
   daily events grid (capture p. 247), prefix djo (verified free at 7ffe095),
   audit "R701 OA daily events audit", include after rules/oa72explain.h
+- R701 LANDED 2026-10-21: commit 708d6810f25d3f621de7880d158fab619da85cc7
+  (census 623 -> 624, pushed 7ffe095..708d681), OA TABLE 73 - the daily
+  events, capture pp. 247-248 print: rules/oa73daily.h, prefix djo (verified
+  free at 7ffe095), ONE gap flip, gap census 153/82 -> 154/81. 9 consts +
+  3 bools + 7 grid cols (19 inlines): the twenty-eight die-range rows of
+  the percentile die across the five location columns (the court, the
+  city/town, the rural, the wilderness, the ocean), the twenty-nine event
+  names by ordinal (Bandit Camp the 1 through VIP the 29, No Event the
+  18 of the rows 01-50 in all five columns, the first event at 51); the
+  location frequency chart (the 0-1/0-1/0-2/0-3/0-2 events per day, the
+  column by location, the maximum rolled, the common no-event). THE OCR
+  REPAIR: the row 88 cell-drop resolved to Special/VIP/Shrine/Ruins/Ship
+  (ordinals 25/29/24/22/23) per the column bands. THE DEFECTS CAUGHT: first
+  rverify RED on six band examples using one-based row ordinals (the row
+  0 = the 1-50 No Event row), fixed with computed _R(roll) lookups; second
+  trip in the rural example - the band note claimed Monster 71-83 but the
+  grid reads Monster 71-80, Stranger 81-83 (the grid was right, the note
+  wrong) - fixed, the second rverify GREEN, 208 mutants, 0 missed. Spec
+  md5 94551309ada8d159a38192655a9bbc6d (authored-plus-newline md5
+  75a6a9dcac296f6820765b5de00da67e - the value the ritual gated and
+  matched at the landing, byte-exact against the landed tools/spec; the
+  canvas frontmatter was normalized by the renderer, canvas md5
+  17bae81bb5a657f6a543948f73594e63). NEXT - R702: the Daily Events prose
+  and explanations (capture pp. 247-251), prefix djp (verified free at
+  708d681), audit "R702 OA daily events prose audit", include after
+  rules/oa73daily.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

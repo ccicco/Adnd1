@@ -1871,8 +1871,36 @@ description riding the same round.
     substitute and to add beyond the
     list; single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Daily Events prose and explanations
-    (capture pp. 247-251)
+  - [x] Daily Events prose and
+    explanations (capture pp. 247-251)
+    - R702: the djp daily events
+    explanation pins - the twenty-nine
+    events explained in prose: the
+    Bandits (the 2d10 camp-edge count,
+    the two warners, the 3d10 mounted
+    scouts avoiding the fight), the
+    Contest (the two honor points), the
+    Fire small (the 70% arson, the 70%
+    spread), the Illness (the 20/80
+    target, the 2d6 course, the save at
+    the end), the Mystery (the 60%), the
+    Nobles (the 2d10 bushi, the 1d6
+    samurai, the 1-3 of rank, the 80/20
+    open and disguised), the Pirates
+    (the 1-3 wako ships), the Ruins
+    (the 01-10/11-60/61-90/91-100 type
+    bands at 70/20/50/30 haunted), the
+    Ship (the 30% ghost, the 50%
+    merchant - the OCR misprint 509-6
+    repaired, the 20% warship, the 10%
+    gajin), the Shrine (the 10% bless,
+    the 24 hours, the 80% curse), the
+    Storm (the 5d6 hours, the 1-2 per
+    hour), the Stranger (the 30% with
+    the seven 10s), the VIP (the 20d6
+    bushi, the 10d4 samurai); the
+    single-pass pins per the Chapter 9
+    provenance shift
   - [x] Table 73: Daily Events (capture
     p. 247)
     - R701: the djo daily events grid
