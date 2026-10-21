@@ -2011,7 +2011,26 @@ description riding the same round.
     the four languages, the easily tricked,
     the sake weakness; single-pass pins per
     the Chapter 9 provenance shift
-  - [ ] Bisan, Lesser Spirit (capture p. 255)
+  - [x] Bisan, Lesser Spirit (capture p. 255)
+    - R707: the dju Bisan pins - the stat
+    block (the very rare, the 1, the AC 0,
+    the move 24, the HD 10, the 100% lair,
+    the Q T, the 1 attack of 1-10, the 40%
+    MR, the VII/2,100 + 14/hp), the tree
+    lifeforce (the harvest spirit, the
+    camphor most common, the same-type
+    protection, the one tree per bisan, the
+    tree damage, the harvest allowance, the
+    end-of-life felling, the two offerings,
+    the anger rule), the powers (the
+    polymorph, the invisible, the ethereal,
+    the once per round nine-entry battery
+    with the reversible bless), the nature
+    (the mischief doctrine, the flees
+    unless defending its tree, the woods
+    known by superstition, the own-language
+    speech); single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Buso (capture p. 256)
   - [ ] Carp, Giant (capture p. 257)
   - [ ] Con-Tinh, Lesser Spirit (capture p. 258)

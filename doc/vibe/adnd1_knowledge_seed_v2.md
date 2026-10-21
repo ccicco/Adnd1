@@ -16144,6 +16144,28 @@ when both halves land.
   (capture pp. 254-255), prefix djt (verified free at 2b9c1e3),
   audit "R706 OA monsters Bakemono audit", include after
   rules/oa76bajang.h
+- R706 LANDED 2026-10-21: commit 393b41b6aff2613cdb33b5c70c03c175696883f4
+  (census 628 -> 629, pushed 2b9c1e3..393b41b), OA MONSTERS - the
+  Bakemono, capture pp. 254-255 print: rules/oa77bakemono.h,
+  prefix djt (verified free at 2b9c1e3), ONE gap flip, gap census
+  158/77 -> 159/76. 28 consts + 10 bools (38 inlines): the stat
+  block (the 1-100 frequency, the AC 6, the move 6, the HD 1-1,
+  the 40% lair, the treasure A, the 1 attack of 1-6, the 1/10 +
+  1 per hp); the band organization (the oni or ogre mage rule,
+  the lieutenant per 20 at HD 2, AC 4, 1-8, with absolute
+  command); the abandoned-temple lair with the 40% stockade; the
+  seven-row scavenged equipment table (katana 5, naginata and
+  short sword 20, spear 40, tetsubo and short sword 10, short
+  sword and shortbow 10, chain and shuriken 5, kusari-gama and
+  trident 10, asserted to sum 100); the 20% at AC 5 unusable by
+  PCs; the four languages; the easily tricked; the sake weakness.
+  Zero false starts, first rverify GREEN, 38 mutants, 0 missed.
+  Spec md5 3b216cb8f9cdc82b4ba088e833a9f9d5 (authored-plus-newline
+  md5 b4410501887fe1e894b3531da61d1682 - the ritual gate, matched
+  byte-exact; canvas md5 912e819173622fef6d9dc2e0ccf767a9).
+  NEXT - R707: the Bisan, Lesser Spirit (capture pp. 255-256),
+  prefix dju (verified free at 393b41b), audit "R707 OA monsters
+  Bisan audit", include after rules/oa77bakemono.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
