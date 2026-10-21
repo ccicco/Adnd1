@@ -2881,8 +2881,21 @@ description riding the same round.
     destiny and others, the DMG supplement
     and the peculiar Oriental items); single
     pass pins per the R679 provenance shift
-  - [ ] Random Treasure Determination prose
+  - [x] Random Treasure Determination prose
     (capture p. 285-286)
+    - R734: the dkv random treasure pins -
+    the DMG procedure used to randomly
+    determine treasures and magical items;
+    the Table 74 exception (the versions
+    given here, not the DMG-printed tables);
+    the additional Table 86 Oriental Magical
+    Items for the randomly selected items of
+    this book; the Table II.A. (ORIENT) and
+    Table III (ORIENT) replacing the DMG
+    Tables II.A. and III of the pages 120
+    and 121, in the world of Oriental
+    Adventures; single-pass pins per the
+    R679 provenance shift
   - [ ] Table 74: Monetary Treasure And Magical Items
     (capture p. 286)
   - [ ] Table II.A. (Orient): Monetary Treasure

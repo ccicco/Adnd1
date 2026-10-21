@@ -17186,6 +17186,40 @@ when both halves land.
   (verify free at the landing), audit "R733
   OA treasure class usage audit", include
   after rules/oa103tengu.h.
+- R733 LANDED 2026-10-21: commit
+  943ff7ecc6fa96607f5b43d4d9697e6ac20917b4
+  (census 655 -> 656, pushed d8cf893..943ff7e),
+  OA TREASURE, the Chapter 13 opener, the
+  Magical Items Usable by Character Class
+  table (capture p. 285), header
+  rules/oa104classuse.h, prefix dku
+  (verified free at d8cf893), one gap flip
+  (the class usage box, its two-line wrap
+  handled), gap census now 186 closed /
+  49 open. Round type: the Chapter 13
+  treasure opener, single-pass pins per the
+  R679 provenance shift. Inlines: 25 =
+  6 consts + 18 bools + 1 table col; one
+  table dkuClassUse[8] mapping the eight
+  Oriental classes to DMG usability codes
+  (fighter 1 of samurai/bushi/kensai, sohei
+  split 5 with the staves exception in the
+  code, cleric 2, magic-user 3, thief 4);
+  the Chapter 13 opener prose and the
+  restrictions clause as bools. Stumble: the
+  gap census miscounted as 186/50, the engine
+  corrected to 186/49 - the flip itself
+  decrements the open count. Battery 32
+  mutants, 0 missed. spec md5
+  104f3e71c8422559c84dff240d3c380e, gate
+  md5 9b87e18ef68957e26e6358843f3718d5,
+  canvas md5 a72c63d1029b9d3b7af399bb047299
+  ec. NEXT - R734: the Random Treasure
+  Determination prose (capture
+  pp. 285-286), prefix dkv (verify free at
+  the landing), audit "R734 OA random
+  treasure prose audit", include after
+  rules/oa104classuse.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
