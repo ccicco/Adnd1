@@ -1,0 +1,521 @@
+{
+ "round": 701,
+ "title": "OA TABLE 73 - the daily events: the twenty-eight die-range rows of the five location columns with the twenty-nine event names and the frequency chart",
+ "prefix": "djo",
+ "header_file": "rules/oa73daily.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 623,
+ "inline_count": 19,
+ "audit_label": "R701 OA daily events audit",
+ "audit_comment": "OA round eighty-eight (capture pp. 247-248): Table 73 - the daily events grid, the twenty-eight die-range rows across the five location columns with the twenty-nine event names, plus the frequency chart, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TABLE 73, printed capture pp. 247-248 - the daily events round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE GRID: the twenty-eight die-range rows of the daily events across the percentile die, the ranges contiguous and complete 1-100, each row read across the five location columns - the court, the city/town, the rural, the wilderness, the ocean. THE TWENTY-NINE NAMES by ordinal: Bandit Camp the 1; Bandits the 2; Becalmed the 3; Contest the 4; Crime the 5; Duel the 6; Entreaty the 7; Fire Small the 8; Haunting the 9; Illness the 10; Insult the 11; Invitation the 12; Kidnapping the 13; Land the 14; Maiden the 15; Monster the 16; Mystery the 17; No Event the 18; Nobles the 19; Pirates the 20; Plot the 21; Ruins the 22; Ship the 23; Shrine the 24; Special the 25; Storm the 26; Stranger the 27; Traveler the 28; VIP the 29. THE OPEN: the rows 01-50 No Event in all five columns, the first possible event at 51. THE FREQUENCY CHART: the events possible per day by location - court 0-1, city and town 0-1, rural 0-2, wilderness 0-3, sea and ocean 0-2; the roll on the column best fitting the location, the maximum rolled for the area (three die rolls in wilderness), many rolls no event. THE OCR REPAIR: the row 88 cell-drop resolved to Shrine/Ruins/Ship per the column bands. The grid codifies per the R431 calculus",
+  "sentinel": "the gap census after this round: 154 closed, 81 open - the Table 73 box flips (census 623 -> 624); NEXT - R702: the Daily Events prose and explanations (capture pp. 247-251), prefix djp (verify free at the landing), audit \"R702 OA daily events prose audit\", include after rules/oa73daily.h"
+ },
+ "consts": [
+  {
+   "name": "djoOA73RowCount",
+   "value": 28,
+   "comment": "the Table 73 row count - the twenty-eight die-range rows spanning the percentile die 1-100 (print capture pp. 247-248)"
+  },
+  {
+   "name": "djoOA73NameCount",
+   "value": 29,
+   "comment": "the Table 73 event name count - the twenty-nine distinct daily events named across the five columns (print capture pp. 247-248)"
+  },
+  {
+   "name": "djoOA73NoEventId",
+   "value": 18,
+   "comment": "the No Event ordinal - the eighteenth of the twenty-nine names, the rows 01-50 No Event in all five columns (print capture p. 247)"
+  },
+  {
+   "name": "djoOA73NoEventMinRoll",
+   "value": 51,
+   "comment": "the first eventful roll - the rows 01-50 No Event, the first possible event at 51 (print capture p. 247)"
+  },
+  {
+   "name": "djoOA73CourtMaxPerDay",
+   "value": 1,
+   "comment": "the court frequency - 0-1 events possible per day (print capture p. 247)"
+  },
+  {
+   "name": "djoOA73CityMaxPerDay",
+   "value": 1,
+   "comment": "the city, town frequency - 0-1 events possible per day (print capture p. 247)"
+  },
+  {
+   "name": "djoOA73RuralMaxPerDay",
+   "value": 2,
+   "comment": "the rural area frequency - 0-2 events possible per day (print capture p. 247)"
+  },
+  {
+   "name": "djoOA73WildernessMaxPerDay",
+   "value": 3,
+   "comment": "the wilderness frequency - 0-3 events possible per day, the maximum number rolled for the area (print capture p. 247)"
+  },
+  {
+   "name": "djoOA73OceanMaxPerDay",
+   "value": 2,
+   "comment": "the sea, ocean frequency - 0-2 events possible per day (print capture p. 247)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djoOA73ColumnByLocation",
+   "value": true,
+   "comment": "the daily roll - roll percentile dice on the column best fitting the current location for that day, the mountain pass Wilderness, the farmland Rural (print capture p. 247)"
+  },
+  {
+   "name": "djoOA73RollTheMax",
+   "value": true,
+   "comment": "the area maximum - the maximum number of events rolled for in the area, in wilderness three die rolls made (print capture p. 247)"
+  },
+  {
+   "name": "djoOA73ManyRollsNoEvent",
+   "value": true,
+   "comment": "the no-event common - many of the die rolls may result in no event, the rows 01-50 blank in every column (print capture p. 247)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "djoOA73Grid",
+   "tag": "OA73Data",
+   "count": "djoOA73RowCount",
+   "col_default": 0,
+   "cols": [
+    "djoOA73MinRoll",
+    "djoOA73MaxRoll",
+    "djoOA73CourtEvent",
+    "djoOA73CityEvent",
+    "djoOA73RuralEvent",
+    "djoOA73WildEvent",
+    "djoOA73OceanEvent"
+   ],
+   "col_comments": [
+    "the Table 73 minimum rolls by row ordinal (print capture pp. 247-248): 1, 51, 52, 54, 56, 61, 64, 66, 70, 71, 73, 78, 80, 81, 82, 83, 84, 85, 87, 88, 89, 91, 92, 93, 94, 95, 96, 99 - the twenty-eight rows contiguous 1-100",
+    "the Table 73 maximum rolls by row ordinal (print capture pp. 247-248): 50, 51, 53, 55, 60, 63, 65, 69, 70, 72, 77, 79, 80, 81, 82, 83, 84, 86, 87, 88, 90, 91, 92, 93, 94, 95, 98, 100 - the 100 the close",
+    "the court column event ordinals by row ordinal (print capture pp. 247-248): Contest 4; Duel 6; Entreaty 7; Illness 10; Invitation 12; Maiden 15; Monster 16; No Event 18; Plot 21; Special 25; VIP 29",
+    "the city/town column event ordinals by row ordinal (print capture pp. 247-248), the dashes the No Event: Duel 6; Entreaty 7; Fire Small 8; Insult 11; Invitation 12; Kidnapping 13; Maiden 15; Monster 16; No Event 18; VIP 29",
+    "the rural column event ordinals by row ordinal (print capture pp. 247-248): Bandits 2; Crime 5; Haunting 9; Monster 16; Mystery 17; No Event 18; Shrine 24; Stranger 27; VIP 29",
+    "the wilderness column event ordinals by row ordinal (print capture pp. 247-248), the row 88 OCR cell-drop resolved to Ruins per the column bands: Bandit Camp 1; Monster 16; No Event 18; Nobles 19; Ruins 22; Shrine 24; Storm 26; Stranger 27; Traveler 28",
+    "the ocean column event ordinals by row ordinal (print capture pp. 247-248): Becalmed 3; Land 14; Monster 16; No Event 18; Pirates 20; Ship 23; Storm 26"
+   ],
+   "data": [
+    [
+     1,
+     50,
+     18,
+     18,
+     18,
+     18,
+     18
+    ],
+    [
+     51,
+     51,
+     4,
+     6,
+     2,
+     1,
+     3
+    ],
+    [
+     52,
+     53,
+     4,
+     6,
+     2,
+     16,
+     3
+    ],
+    [
+     54,
+     55,
+     4,
+     6,
+     2,
+     16,
+     16
+    ],
+    [
+     56,
+     60,
+     4,
+     7,
+     2,
+     16,
+     16
+    ],
+    [
+     61,
+     63,
+     6,
+     8,
+     5,
+     16,
+     16
+    ],
+    [
+     64,
+     65,
+     6,
+     11,
+     5,
+     16,
+     16
+    ],
+    [
+     66,
+     69,
+     7,
+     11,
+     9,
+     16,
+     16
+    ],
+    [
+     70,
+     70,
+     10,
+     11,
+     9,
+     16,
+     16
+    ],
+    [
+     71,
+     72,
+     10,
+     12,
+     16,
+     16,
+     16
+    ],
+    [
+     73,
+     77,
+     12,
+     12,
+     16,
+     16,
+     16
+    ],
+    [
+     78,
+     79,
+     12,
+     13,
+     16,
+     16,
+     20
+    ],
+    [
+     80,
+     80,
+     15,
+     15,
+     16,
+     16,
+     20
+    ],
+    [
+     81,
+     81,
+     15,
+     15,
+     27,
+     16,
+     20
+    ],
+    [
+     82,
+     82,
+     15,
+     16,
+     27,
+     19,
+     20
+    ],
+    [
+     83,
+     83,
+     16,
+     16,
+     27,
+     22,
+     20
+    ],
+    [
+     84,
+     84,
+     21,
+     16,
+     24,
+     22,
+     20
+    ],
+    [
+     85,
+     86,
+     21,
+     29,
+     24,
+     22,
+     20
+    ],
+    [
+     87,
+     87,
+     25,
+     29,
+     24,
+     22,
+     20
+    ],
+    [
+     88,
+     88,
+     25,
+     29,
+     24,
+     22,
+     23
+    ],
+    [
+     89,
+     90,
+     25,
+     29,
+     17,
+     24,
+     23
+    ],
+    [
+     91,
+     91,
+     25,
+     29,
+     29,
+     24,
+     23
+    ],
+    [
+     92,
+     92,
+     29,
+     29,
+     29,
+     26,
+     23
+    ],
+    [
+     93,
+     93,
+     29,
+     29,
+     29,
+     26,
+     26
+    ],
+    [
+     94,
+     94,
+     29,
+     29,
+     29,
+     27,
+     26
+    ],
+    [
+     95,
+     95,
+     29,
+     18,
+     29,
+     28,
+     26
+    ],
+    [
+     96,
+     98,
+     29,
+     18,
+     18,
+     28,
+     26
+    ],
+    [
+     99,
+     100,
+     29,
+     18,
+     18,
+     28,
+     14
+    ]
+   ],
+   "comment": "Table 73: the daily events - the twenty-eight die-range rows across the five location columns, the twenty-nine names by ordinal: Bandit Camp the 1; Bandits the 2; Becalmed the 3; Contest the 4; Crime the 5; Duel the 6; Entreaty the 7; Fire Small the 8; Haunting the 9; Illness the 10; Insult the 11; Invitation the 12; Kidnapping the 13; Land the 14; Maiden the 15; Monster the 16; Mystery the 17; No Event the 18; Nobles the 19; Pirates the 20; Plot the 21; Ruins the 22; Ship the 23; Shrine the 24; Special the 25; Storm the 26; Stranger the 27; Traveler the 28; VIP the 29 (print capture pp. 247-248)",
+   "audit_comment": "the Table 73 grid - the twenty-eight die-range rows across the five location columns"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the open - the rows 01-50 No Event ordinal 18 in all five columns, the first event at 51",
+   "expr": "m['djoOA73MinRoll'](0) != 1 or m['djoOA73MaxRoll'](0) != 50 or m['djoOA73CourtEvent'](0) != 18 or m['djoOA73CityEvent'](0) != 18 or m['djoOA73RuralEvent'](0) != 18 or m['djoOA73WildEvent'](0) != 18 or m['djoOA73OceanEvent'](0) != 18 or m['djoOA73MinRoll'](1) != 51 or m['djoOA73CourtEvent'](1) != 4 or m['djoOA73CityEvent'](1) != 6 or m['djoOA73RuralEvent'](1) != 2 or m['djoOA73WildEvent'](1) != 1 or m['djoOA73OceanEvent'](1) != 3"
+  },
+  {
+   "note": "the close - VIP 92-100 ordinal 29 in court, the city dashes No Event from 95, the Traveler 95-100, Land the 99-100",
+   "expr": "m['djoOA73CourtEvent'](22) != 29 or m['djoOA73CourtEvent'](27) != 29 or m['djoOA73CityEvent'](25) != 18 or m['djoOA73WildEvent'](25) != 28 or m['djoOA73WildEvent'](27) != 28 or m['djoOA73OceanEvent'](27) != 14 or m['djoOA73MaxRoll'](27) != 100"
+  },
+  {
+   "note": "the ocean bands - Becalmed 51-53 ordinal 3, Monster 54-77, Pirates 78-87 ordinal 20, Ship 88-92 ordinal 23, Storm 93-98, Land the lone close",
+   "expr": "m['djoOA73OceanEvent'](2) != 3 or m['djoOA73OceanEvent'](4) != 16 or m['djoOA73OceanEvent'](11) != 20 or m['djoOA73OceanEvent'](19) != 23 or m['djoOA73OceanEvent'](22) != 23 or m['djoOA73OceanEvent'](23) != 26 or m['djoOA73OceanEvent'](26) != 26 or m['djoOA73OceanEvent'](27) != 14"
+  },
+  {
+   "note": "the wilderness bands - Bandit Camp the lone 51 ordinal 1, Monster 52-81, Nobles the lone 82 ordinal 19, Ruins 83-88 ordinal 22, Shrine 89-91 ordinal 24, Storm 92-93, Stranger the lone 94 ordinal 27",
+   "expr": "m['djoOA73WildEvent'](1) != 1 or m['djoOA73WildEvent'](2) != 16 or m['djoOA73WildEvent'](13) != 16 or m['djoOA73WildEvent'](14) != 19 or m['djoOA73WildEvent'](15) != 22 or m['djoOA73WildEvent'](19) != 22 or m['djoOA73WildEvent'](20) != 24 or m['djoOA73WildEvent'](21) != 24 or m['djoOA73WildEvent'](22) != 26 or m['djoOA73WildEvent'](24) != 27"
+  },
+  {
+   "note": "the court bands - Contest 51-60 ordinal 4, Duel 61-65 ordinal 6, Entreaty 66-69 ordinal 7, Illness 70-72 ordinal 10, Invitation 73-79 ordinal 12, Maiden 80-83 ordinal 15, Plot 84-86 ordinal 21, Special 87-91 ordinal 25",
+   "expr": "m['djoOA73CourtEvent'](1) != 4 or m['djoOA73CourtEvent'](4) != 4 or m['djoOA73CourtEvent'](5) != 6 or m['djoOA73CourtEvent'](7) != 7 or m['djoOA73CourtEvent'](8) != 10 or m['djoOA73CourtEvent'](10) != 12 or m['djoOA73CourtEvent'](12) != 15 or m['djoOA73CourtEvent'](16) != 21 or m['djoOA73CourtEvent'](18) != 25"
+  },
+  {
+   "note": "the rural bands - Bandits 51-60 ordinal 2, Crime 61-65 ordinal 5, Haunting 66-70 ordinal 9, Monster 71-80 ordinal 16, Stranger 81-83 ordinal 27, Shrine 84-88 ordinal 24, Mystery 89-90 ordinal 17, VIP 91-94 ordinal 29",
+   "expr": "m['djoOA73RuralEvent'](1) != 2 or m['djoOA73RuralEvent'](4) != 2 or m['djoOA73RuralEvent'](6) != 5 or m['djoOA73RuralEvent'](8) != 9 or m['djoOA73RuralEvent'](9) != 16 or m['djoOA73RuralEvent'](15) != 27 or m['djoOA73RuralEvent'](16) != 24 or m['djoOA73RuralEvent'](19) != 24 or m['djoOA73RuralEvent'](20) != 17 or m['djoOA73RuralEvent'](24) != 29"
+  },
+  {
+   "note": "the city bands - Duel 51-55 ordinal 6, Entreaty 56-60 ordinal 7, Fire Small 61-63 ordinal 8, Insult 64-70 ordinal 11, Invitation 71-79 ordinal 12, Kidnapping 78-79 ordinal 13",
+   "expr": "m['djoOA73CityEvent'](1) != 6 or m['djoOA73CityEvent'](3) != 6 or m['djoOA73CityEvent'](4) != 7 or m['djoOA73CityEvent'](5) != 8 or m['djoOA73CityEvent'](6) != 11 or m['djoOA73CityEvent'](8) != 11 or m['djoOA73CityEvent'](9) != 12 or m['djoOA73CityEvent'](11) != 13"
+  },
+  {
+   "note": "the row 88 OCR repair - Special 25 / VIP 29 / Shrine 24 / Ruins 22 / Ship 23 read from the column bands",
+   "expr": "m['djoOA73CourtEvent'](19) != 25 or m['djoOA73CityEvent'](19) != 29 or m['djoOA73RuralEvent'](19) != 24 or m['djoOA73WildEvent'](19) != 22 or m['djoOA73OceanEvent'](19) != 23"
+  },
+  {
+   "note": "the frequency chart - the 1/1/2/3/2 events per day, the column by location, the max rolled, the common no-event",
+   "expr": "m['djoOA73CourtMaxPerDay']() != 1 or m['djoOA73CityMaxPerDay']() != 1 or m['djoOA73RuralMaxPerDay']() != 2 or m['djoOA73WildernessMaxPerDay']() != 3 or m['djoOA73OceanMaxPerDay']() != 2 or m['djoOA73ColumnByLocation']() != 1 or m['djoOA73RollTheMax']() != 1 or m['djoOA73ManyRollsNoEvent']() != 1"
+  },
+  {
+   "note": "the contiguity - each row beginning where the last ended, the 100 the close",
+   "expr": "m['djoOA73MinRoll'](1) != m['djoOA73MaxRoll'](0) + 1 or m['djoOA73MinRoll'](5) != m['djoOA73MaxRoll'](4) + 1 or m['djoOA73MinRoll'](12) != m['djoOA73MaxRoll'](11) + 1 or m['djoOA73MinRoll'](18) != m['djoOA73MaxRoll'](17) + 1 or m['djoOA73MinRoll'](27) != m['djoOA73MaxRoll'](26) + 1 or m['djoOA73MaxRoll'](27) != 100"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 73 daily events grid": [
+   {
+    "kind": "table",
+    "name": "djoOA73Grid"
+   },
+   {
+    "kind": "const",
+    "name": "djoOA73RowCount"
+   },
+   {
+    "kind": "const",
+    "name": "djoOA73NameCount"
+   },
+   {
+    "kind": "const",
+    "name": "djoOA73NoEventId"
+   },
+   {
+    "kind": "const",
+    "name": "djoOA73NoEventMinRoll"
+   }
+  ],
+  "the daily frequency chart": [
+   {
+    "kind": "const",
+    "name": "djoOA73CourtMaxPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "djoOA73CityMaxPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "djoOA73RuralMaxPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "djoOA73WildernessMaxPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "djoOA73OceanMaxPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "djoOA73ColumnByLocation"
+   },
+   {
+    "kind": "bool",
+    "name": "djoOA73RollTheMax"
+   },
+   {
+    "kind": "bool",
+    "name": "djoOA73ManyRollsNoEvent"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 73 grid box closes",
+   "from": "  - [ ] Table 73: Daily Events (capture p. 247)",
+   "to": "  - [x] Table 73: Daily Events (capture\n    p. 247)\n    - R701: the djo daily events grid\n    pins - the twenty-eight die-range rows\n    of the percentile die across the five\n    location columns (the court, the\n    city/town, the rural, the wilderness,\n    the ocean), the twenty-nine event names\n    by ordinal, the ranges contiguous\n    1-100 (No Event the 01-50 of all five\n    columns, the first event at 51); the\n    location frequency chart (the 0-1/0-1/\n    0-2/0-3/0-2 events per day), the column\n    chosen by location, the maximum rolled\n    for the area, the common no-event;\n    the row 88 OCR cell-drop resolved per\n    the column bands; single-pass pins per\n    the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 154,
+  "open": 81
+ },
+ "include_comment": "the OA Table 73 daily events pins",
+ "include_after": "#include \"rules/oa72explain.h\"  // R700: the OA monthly events explanation pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R700 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R700 LANDED 2026-10-21: commit 7ffe0952a0d3974369d3ec4ffb66a1c961ffa4e1",
+  "  (census 622 -> 623, pushed 11ae6a8..7ffe095), OA EXPLANATION OF MONTHLY",
+  "  EVENTS, capture pp. 243-247 print: rules/oa72explain.h, prefix djn (verified",
+  "  free at 11ae6a8), ONE gap flip, gap census 152/83 -> 153/82. 66 consts + 46",
+  "  bools (112 inlines): the twenty-eight monthly events explained (the Accident",
+  "  DM-chose; the Bad Harvest 25% income, 5% famine, 50% food, the blamed ruler;",
+  "  the Bad Weather 50% movement, 15% desertion, 15% farm; the Bandit Activity",
+  "  20-200, the 50% caravans, 80% lone, the spies, the boast rule, until-slim",
+  "  stay; the Birth 95/5, nine months; the Death 30% other heir, the 2-7-week",
+  "  official, suspended duties; the Minor Earthquake 5-mile, 50% damaged, 20/30",
+  "  fires, doubled materials 1-2 months; the Excessive Taxes 30% uprising, 70%",
+  "  bandits; the Famous Person quiet 1d6 weeks; the Minor Fire",
+  "  10-40/50-70/80-100; the Flooding 5d4-foot wave, 101-200 feet wide, 1d6",
+  "  miles, 3d2 inches; the Haunting DM-decided; the Horrendous Monster",
+  "  offerings-if-unbeaten, the kin; the Incursions sudden-major and",
+  "  smaller-minor; the Injustice 5/20 accusations; the Landslide hills-only, 1-2",
+  "  weeks; the Maiden of Virtue 50/30/10/10, the 13s, the arts, the impossible",
+  "  tasks; the Major Battle BATTLESYSTEM; the Maneater 1-2 strikes weekly; the",
+  "  Marriage accepted, feasting; the Notorious Criminal maybe-rumor; the Plague",
+  "  see-yearly; the Recruiting 20% sweep; the Troop Movements 10% spy arrest,",
+  "  40% ninja orders, no repayment; the Uprising 10% armored, 60% monasteries,",
+  "  2-4-month training, 70% heard, 70% bandits 1-3 months; the Vengeful Stranger",
+  "  70% found, the ancestral feud; the VIP disguise, banquets); the rigidity:",
+  "  monthly rerolled, yearly NEVER (the R698 pin); the worked example 82/5/3",
+  "  with the 4/3/5 column split; the DM preparing adventures from the known",
+  "  future. THE DEFECT CAUGHT: example 8 emitted Python True into the C++",
+  "  regtest, the local preflight build gate killed the first landing (0 missed",
+  "  still, rverify GREEN - the engine and battery never build); fixed to != 1",
+  "  (valid in both languages), the aborted run's dirty tree restored via git",
+  "  checkout of the four files, the second rverify GREEN, 112 mutants, 0 missed.",
+  "  Spec md5 b7a6a583a2e06429b3cf2ffbba91b37f (authored-plus-newline md5",
+  "  d15b11329269a6d086c1018ac7b2b633 - the value the ritual gated and matched;",
+  "  canvas md5 073e8da443d5134acb3121991f153b4e). NEXT - R701: Table 73 the",
+  "  daily events grid (capture p. 247), prefix djo (verified free at 7ffe095),",
+  "  audit \"R701 OA daily events audit\", include after rules/oa72explain.h"
+ ]
+}

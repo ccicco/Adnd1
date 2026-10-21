@@ -15955,6 +15955,41 @@ when both halves land.
   Monthly Events prose and explanations (capture pp. 238-247), prefix djn
   (verified free at 11ae6a8), audit "R700 OA monthly events prose audit",
   include after rules/oa72monthly.h
+- R700 LANDED 2026-10-21: commit 7ffe0952a0d3974369d3ec4ffb66a1c961ffa4e1
+  (census 622 -> 623, pushed 11ae6a8..7ffe095), OA EXPLANATION OF MONTHLY
+  EVENTS, capture pp. 243-247 print: rules/oa72explain.h, prefix djn (verified
+  free at 11ae6a8), ONE gap flip, gap census 152/83 -> 153/82. 66 consts + 46
+  bools (112 inlines): the twenty-eight monthly events explained (the Accident
+  DM-chose; the Bad Harvest 25% income, 5% famine, 50% food, the blamed ruler;
+  the Bad Weather 50% movement, 15% desertion, 15% farm; the Bandit Activity
+  20-200, the 50% caravans, 80% lone, the spies, the boast rule, until-slim
+  stay; the Birth 95/5, nine months; the Death 30% other heir, the 2-7-week
+  official, suspended duties; the Minor Earthquake 5-mile, 50% damaged, 20/30
+  fires, doubled materials 1-2 months; the Excessive Taxes 30% uprising, 70%
+  bandits; the Famous Person quiet 1d6 weeks; the Minor Fire
+  10-40/50-70/80-100; the Flooding 5d4-foot wave, 101-200 feet wide, 1d6
+  miles, 3d2 inches; the Haunting DM-decided; the Horrendous Monster
+  offerings-if-unbeaten, the kin; the Incursions sudden-major and
+  smaller-minor; the Injustice 5/20 accusations; the Landslide hills-only, 1-2
+  weeks; the Maiden of Virtue 50/30/10/10, the 13s, the arts, the impossible
+  tasks; the Major Battle BATTLESYSTEM; the Maneater 1-2 strikes weekly; the
+  Marriage accepted, feasting; the Notorious Criminal maybe-rumor; the Plague
+  see-yearly; the Recruiting 20% sweep; the Troop Movements 10% spy arrest,
+  40% ninja orders, no repayment; the Uprising 10% armored, 60% monasteries,
+  2-4-month training, 70% heard, 70% bandits 1-3 months; the Vengeful Stranger
+  70% found, the ancestral feud; the VIP disguise, banquets); the rigidity:
+  monthly rerolled, yearly NEVER (the R698 pin); the worked example 82/5/3
+  with the 4/3/5 column split; the DM preparing adventures from the known
+  future. THE DEFECT CAUGHT: example 8 emitted Python True into the C++
+  regtest, the local preflight build gate killed the first landing (0 missed
+  still, rverify GREEN - the engine and battery never build); fixed to != 1
+  (valid in both languages), the aborted run's dirty tree restored via git
+  checkout of the four files, the second rverify GREEN, 112 mutants, 0 missed.
+  Spec md5 b7a6a583a2e06429b3cf2ffbba91b37f (authored-plus-newline md5
+  d15b11329269a6d086c1018ac7b2b633 - the value the ritual gated and matched;
+  canvas md5 073e8da443d5134acb3121991f153b4e). NEXT - R701: Table 73 the
+  daily events grid (capture p. 247), prefix djo (verified free at 7ffe095),
+  audit "R701 OA daily events audit", include after rules/oa72explain.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

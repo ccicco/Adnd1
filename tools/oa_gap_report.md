@@ -1873,7 +1873,24 @@ description riding the same round.
     Chapter 9 provenance shift
   - [ ] Daily Events prose and explanations
     (capture pp. 247-251)
-  - [ ] Table 73: Daily Events (capture p. 247)
+  - [x] Table 73: Daily Events (capture
+    p. 247)
+    - R701: the djo daily events grid
+    pins - the twenty-eight die-range rows
+    of the percentile die across the five
+    location columns (the court, the
+    city/town, the rural, the wilderness,
+    the ocean), the twenty-nine event names
+    by ordinal, the ranges contiguous
+    1-100 (No Event the 01-50 of all five
+    columns, the first event at 51); the
+    location frequency chart (the 0-1/0-1/
+    0-2/0-3/0-2 events per day), the column
+    chosen by location, the maximum rolled
+    for the area, the common no-event;
+    the row 88 OCR cell-drop resolved per
+    the column bands; single-pass pins per
+    the Chapter 9 provenance shift
 
 - [ ] **Chapter 11: Encounter Tables by Terrain
   Type** (capture pp. 251-252) - the terrain encounter
