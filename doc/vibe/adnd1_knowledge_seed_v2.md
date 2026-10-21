@@ -16723,6 +16723,54 @@ when both halves land.
   dkl (verified free at a4ed27f), audit "R724 OA
   monsters Men Wako audit", include after
   rules/oa94kuei.h.
+- R724 LANDED 2026-10-21: commit
+  fc2b428dbb81f386b2ffb7909257b2f38b0afd48
+  (census 646 -> 647, pushed a4ed27f..fc2b428), OA
+  MONSTERS, the Men Wako, the Sea Pirate (capture
+  pp. 275-276 print): rules/oa95menwako.h, prefix
+  dkl (verified free at a4ed27f), ONE gap flip, gap
+  census 177/58 - the men wako box. A TABLES
+  round. 26 consts + 26 bools + 1 table col (53
+  inlines): the stat block (the uncommon, the 30
+  to 180, the AC see below, the move 12, the HD 1
+  with the 2 to 7 hit points, the 100% lair, the A
+  treasure, the 1 attack by weapon, the
+  leader-type attacks and defenses, the standard
+  MR, the average-to-very, the lawful evil, the M
+  size, the leader-type psionics, the 14 + 1 xp);
+  the sea raiders (the warm seas, the boarded
+  ships, the raided coastal towns, the feared
+  scourge, the low-class origins, the western
+  pirate fear); the ferocity (the disregard for
+  death, the fight to the last man, the no
+  prisoners but the women, the utterly ferocious,
+  the +2 to hit, the +1 to damage); the leaders
+  (the 5th-level bushi per 30, the 7th-level
+  barbarian per 60, the in-addition rule, the
+  always-led samurai of the 10th level, the
+  8th-level lieutenant, the 1 to 3 sixth-level
+  mates, the 5% wu jen of the 6th to 9th level);
+  the arms table, DklArms[6] (the 50
+  hara-ate-gawa and sword, the 10 sword and bow,
+  the 15 do-maru and sword, the 10 kote and
+  spear, the 5 kote and do-maru and sword and
+  bow, the 10 haramaki and sword and spear and
+  bow; the capture's 150 and kote 8 spear
+  misreads pinned as the 15 and the kote and
+  spear of the print; the o-yoroi of the
+  leaders); the lair (the permanent settlement,
+  the sponsoring lord lands, the walled defense
+  and patrol). Zero false starts, first rverify
+  GREEN, 58 mutants, 0 missed. Spec md5
+  2606bd04be5992864c564dd08efea0dd
+  (authored-plus-newline md5
+  223bd5b7ffe3eae8d5f710d4bb42dcdf, the ritual
+  gate, matched byte-exact; canvas md5
+  e01270652923fee630fef5c18beee63d). NEXT - R725:
+  the Nat, the Lesser Spirit (capture
+  pp. 276-278), prefix dkm (verified free at
+  fc2b428), audit "R725 OA monsters Nat audit",
+  include after rules/oa95menwako.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

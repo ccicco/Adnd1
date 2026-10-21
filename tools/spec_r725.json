@@ -1,0 +1,1006 @@
+{
+ "round": 725,
+ "title": "OA MONSTERS - the Nat: the three lesser spirits of hearth, village, and grave",
+ "prefix": "dkm",
+ "header_file": "rules/oa96nat.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 647,
+ "inline_count": 98,
+ "audit_label": "R725 OA monsters Nat audit",
+ "audit_comment": "OA round one hundred twelve (capture pp. 276-278): the Chapter 12 monster roster - the nat, the three lesser spirits of the tropics - the stat table and the three descriptions riding together, the AC 0 of the hkum yang colliding with the table sentinel (an R722-class find), single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE NAT, printed capture pp. 276-278 - the lesser spirit round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 178 closed, 57 open - the nat box flips (census 647 -> 648); NEXT - R726: the Nature Spirits, the Lesser and the Greater (capture pp. 278-279), prefix dkn (verify free at the landing), audit \"R726 OA monsters Nature Spirits audit\", include after rules/oa96nat.h"
+ },
+ "consts": [
+  {
+   "name": "dkmNatCount",
+   "value": 3,
+   "comment": "the nat table row count - the einsaung, the hkum yang, and the lu of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmAppear",
+   "value": 1,
+   "comment": "the appearing - the 1 of every column of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmFearRadius",
+   "value": 10,
+   "comment": "the fear aura radius - the 10-foot radius of the hkum yang fear aura (print capture p. 277)"
+  },
+  {
+   "name": "dkmFearFleeMin",
+   "value": 2,
+   "comment": "the panic minimum - the 2 of the 2-5 rounds of fleeing in panic (print capture p. 277)"
+  },
+  {
+   "name": "dkmFearFleeMax",
+   "value": 5,
+   "comment": "the panic maximum - the 5 of the 2-5 rounds of fleeing in panic (print capture p. 277)"
+  },
+  {
+   "name": "dkmDiseaseCloudDiameter",
+   "value": 10,
+   "comment": "the disease cloud diameter - the 10-foot diameter of the lu invisible disease cloud (print capture p. 278)"
+  },
+  {
+   "name": "dkmDiseaseHPPerTurn",
+   "value": 10,
+   "comment": "the disease loss die - the 1d10 hit points per turn of the rotting disease (print capture p. 278)"
+  },
+  {
+   "name": "dkmAnimFireWoodPerDay",
+   "value": 3,
+   "comment": "the animate uses - the hkum yang animate fire and animate wood three times per day (print capture p. 277)"
+  },
+  {
+   "name": "dkmLuCursePerDay",
+   "value": 3,
+   "comment": "the lu curse uses - the curse and creeping darkness three times per day (print capture p. 278)"
+  },
+  {
+   "name": "dkmElemDmgDivisor",
+   "value": 2,
+   "comment": "the element divisor - the rats suffer half damage from electrical and fire attacks, no damage if the save is made (print capture p. 277)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkmEinsaungRare",
+   "value": 1,
+   "comment": "the einsaung frequency - the rare of the stat table header, where the capture carries the frequencies rather than a row (print capture p. 276)"
+  },
+  {
+   "name": "dkmHkumVeryRare",
+   "value": 1,
+   "comment": "the hkum yang frequency - the very rare of the stat table header (print capture p. 276)"
+  },
+  {
+   "name": "dkmLuRare",
+   "value": 1,
+   "comment": "the lu frequency - the rare of the stat table header (print capture p. 276)"
+  },
+  {
+   "name": "dkmEinsaungChaoticGood",
+   "value": 1,
+   "comment": "the einsaung alignment - the chaotic good of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmHkumNeutral",
+   "value": 1,
+   "comment": "the hkum yang alignment - the neutral of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmLuChaoticEvil",
+   "value": 1,
+   "comment": "the lu alignment - the chaotic evil of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmEinsaungIntVery",
+   "value": 1,
+   "comment": "the einsaung intelligence - the very of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmHkumIntStandard",
+   "value": 1,
+   "comment": "the hkum yang intelligence - the standard of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmLuIntLow",
+   "value": 1,
+   "comment": "the lu intelligence - the low of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmEinsaungSizeSmall",
+   "value": 1,
+   "comment": "the einsaung size - the S of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmHkumSizeMedium",
+   "value": 1,
+   "comment": "the hkum yang size - the M of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmLuSizeMedium",
+   "value": 1,
+   "comment": "the lu size - the M of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmTreasureNil",
+   "value": 1,
+   "comment": "the treasure type - the nil of every column of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmPsionicNil",
+   "value": 1,
+   "comment": "the psionic ability - the nil of every column of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmModesNil",
+   "value": 1,
+   "comment": "the attack and defense modes - the nil of every column, capture p. 277 (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumFearAttack",
+   "value": 1,
+   "comment": "the hkum yang special attack - the fear of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmLuDiseaseAttack",
+   "value": 1,
+   "comment": "the lu special attack - the disease of the stat table (print capture p. 276)"
+  },
+  {
+   "name": "dkmDefensesSeeBelow",
+   "value": 1,
+   "comment": "the special defenses - the see below of the stat table, the weapon floors and the auras riding below (print capture p. 276)"
+  },
+  {
+   "name": "dkmTropicalJungleSpirits",
+   "value": 1,
+   "comment": "the habitat - a group of lesser spirits found in tropical jungles (print capture p. 277)"
+  },
+  {
+   "name": "dkmHumanoidDemonicCast",
+   "value": 1,
+   "comment": "the look - humanoid in appearance, with brightly colored skins and a general demonic cast (print capture p. 277)"
+  },
+  {
+   "name": "dkmWildTangledHair",
+   "value": 1,
+   "comment": "the hair - wild and tangled (print capture p. 277)"
+  },
+  {
+   "name": "dkmLongClawedFingernails",
+   "value": 1,
+   "comment": "the hands - they end in long, clawed fingernails (print capture p. 277)"
+  },
+  {
+   "name": "dkmSharpFangedTeeth",
+   "value": 1,
+   "comment": "the teeth - all have sharp, fanged teeth (print capture p. 277)"
+  },
+  {
+   "name": "dkmNotAllBiteEffectively",
+   "value": 1,
+   "comment": "the bite clause - although not all rats are able to bite effectively (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillInvisible",
+   "value": 1,
+   "comment": "the first at-will power - become invisible (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillLevitate",
+   "value": 1,
+   "comment": "the second at-will power - levitate (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillESP",
+   "value": 1,
+   "comment": "the third at-will power - ESP (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillComprehendLanguages",
+   "value": 1,
+   "comment": "the fourth at-will power - comprehend languages (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillDeflection",
+   "value": 1,
+   "comment": "the fifth at-will power - deflection (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillDreamVision",
+   "value": 1,
+   "comment": "the sixth at-will power - dream vision (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillPossessAnimal",
+   "value": 1,
+   "comment": "the seventh at-will power - possess animal (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillDetectShapechanger",
+   "value": 1,
+   "comment": "the eighth at-will power - detect shapechanger (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillQuickgrowth",
+   "value": 1,
+   "comment": "the ninth at-will power - quickgrowth (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillPasswall",
+   "value": 1,
+   "comment": "the tenth at-will power - passwall (print capture p. 277)"
+  },
+  {
+   "name": "dkmAtWillDancingBlade",
+   "value": 1,
+   "comment": "the eleventh at-will power - dancing blade (print capture p. 277)"
+  },
+  {
+   "name": "dkmImmuneToPoisonAndDisease",
+   "value": 1,
+   "comment": "the immunity - they are immune to poisons and diseases (print capture p. 277)"
+  },
+  {
+   "name": "dkmHalfElectricalFireDamage",
+   "value": 1,
+   "comment": "the element clause - half damage from electrical and fire attacks, no damage if the saving throw is made (print capture p. 277)"
+  },
+  {
+   "name": "dkmSpeakOwnAndWuJenLanguage",
+   "value": 1,
+   "comment": "the languages - the language of their own kind and the wu jen language common to their area (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungBeneficialIfPleased",
+   "value": 1,
+   "comment": "the temper - a beneficial and helpful spirit if properly pleased by offerings of food and small treasures (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungTakesUpResidence",
+   "value": 1,
+   "comment": "the residence - if properly beseeched it takes up residence in the house (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungGoodLuckSign",
+   "value": 1,
+   "comment": "the luck - to have such a rat residing in one's home is a sign of good luck (' + P277 + ')"
+  },
+  {
+   "name": "dkmEinsaungDepartureIllOmen",
+   "value": 1,
+   "comment": "the departure - if the rat should ever leave the inhabitants take this as a sign of grievous fortune or evil to come (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungSouthCornerpost",
+   "value": 1,
+   "comment": "the home post - the home of the einsaung is always the south cornerpost of the house (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungLairEthereal",
+   "value": 1,
+   "comment": "the actual lair - on the Ethereal Plane, though the einsaung centers its effects around the post (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungOfferingsAtPost",
+   "value": 1,
+   "comment": "the offerings - they are always placed at the south cornerpost (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungExtraAtWillPowers",
+   "value": 1,
+   "comment": "the einsaung at-will powers - become ethereal, beneficence, know history, slow poison, detect curse, protection from evil 10-foot radius, and polymorph self, all at will once per round (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungDailyPowers",
+   "value": 1,
+   "comment": "the einsaung daily powers - omen and cure disease once per day (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungWeeklyPowers",
+   "value": 1,
+   "comment": "the einsaung weekly powers - dispel evil and possess once per week (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungBlessAura",
+   "value": 1,
+   "comment": "the bless aura - radiates an aura with the same effect as a bless upon the owner and family of the house (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungAuraCoversHouse",
+   "value": 1,
+   "comment": "the aura reach - the radius always covers the entire house and any attached grounds (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungShy",
+   "value": 1,
+   "comment": "the shyness - extremely shy, preferring to remain invisible and ethereal (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungActsThroughPossession",
+   "value": 1,
+   "comment": "the distress clause - in times of distress it uses its powers without revealing itself or possesses a person and acts through them (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungAvoidsCombat",
+   "value": 1,
+   "comment": "the combat clause - they prefer to avoid combat either directly or indirectly (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungAidsByAdvice",
+   "value": 1,
+   "comment": "the aid - most often helps the household by providing advice, information which mysteriously appears, and good fortune (print capture p. 277)"
+  },
+  {
+   "name": "dkmEinsaungPlaysWithChildren",
+   "value": 1,
+   "comment": "the children clause - it reveals itself in order to play when only children are present (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumFearedProtector",
+   "value": 1,
+   "comment": "the standing - although a protector, more feared than respected for its powers (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumVillageProtector",
+   "value": 1,
+   "comment": "the charge - assumes the role of protector of an entire village, generally a village of fierce savages as befits its nature (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumCentralResidence",
+   "value": 1,
+   "comment": "the residence - some central point, the head stakes of a headhunting tribe or the main building of a warrior tribe (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumSpoilsToEthereal",
+   "value": 1,
+   "comment": "the offerings - given the spoils of the tribe's battles which it carries back to its lair on the Ethereal Plane (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumDispleasureDisaster",
+   "value": 1,
+   "comment": "the displeasure - should it grow displeased it brings misfortune and disaster to the village (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumDefendsVillage",
+   "value": 1,
+   "comment": "the defense - so long as properly appeased it assists in the defense of the village from attack by both human and spirit enemies (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumExtraAtWillPowers",
+   "value": 1,
+   "comment": "the hkum yang at-will powers - purify food and drink, create spring, snake summon, dispel magic, castigate, oath, hail of stones, fire rain, elemental burst, and become ethereal, all usable at will once per round, the capture misreading wilt for will (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumAnimateFireWood",
+   "value": 1,
+   "comment": "the animate powers - animate fire and animate wood, three times per day (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumDailyPowers",
+   "value": 1,
+   "comment": "the hkum yang daily powers - quell and remove curse once per day (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumWeeklyPowers",
+   "value": 1,
+   "comment": "the hkum yang weekly power - ancient curse once per week (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumFearAura",
+   "value": 1,
+   "comment": "the fear aura - radiates an aura of fear which causes those who fail the saving throw vs. spell to flee in panic (print capture p. 277)"
+  },
+  {
+   "name": "dkmHkumFearSightOnly",
+   "value": 1,
+   "comment": "the fear limit - the power only affects those who can see the hkum yang, either because it appears or is detected (print capture p. 277)"
+  },
+  {
+   "name": "dkmLuTotallyEvil",
+   "value": 1,
+   "comment": "the temper - totally evil and malicious, seeking to cause harm whenever possible (print capture p. 277)"
+  },
+  {
+   "name": "dkmLuGraveyardLair",
+   "value": 1,
+   "comment": "the lair - always found in a graveyard or cemetery, where it disturbs the rest of the dead (print capture p. 277)"
+  },
+  {
+   "name": "dkmLuSimpleMinded",
+   "value": 1,
+   "comment": "the wits - fortunately it is simple-minded and can be appeased by offerings of food (print capture p. 277)"
+  },
+  {
+   "name": "dkmLuHungryDescent",
+   "value": 1,
+   "comment": "the hunger clause - when it grows hungry it descends upon a village causing sickness and death until the offerings are resumed (print capture p. 277)"
+  },
+  {
+   "name": "dkmLuExtraAtWillPowers",
+   "value": 1,
+   "comment": "the lu at-will powers - apparition, transfix, melt, fire shuriken, and stinking cloud, all at will once per round (print capture p. 278)"
+  },
+  {
+   "name": "dkmLuCurseCreepingDarkness",
+   "value": 1,
+   "comment": "the lu thrice powers - curse and creeping darkness three times per day (print capture p. 278)"
+  },
+  {
+   "name": "dkmLuDailyPowers",
+   "value": 1,
+   "comment": "the lu daily powers - water to poison and wood rot once per day (print capture p. 278)"
+  },
+  {
+   "name": "dkmLuDiseaseCloud",
+   "value": 1,
+   "comment": "the disease cloud - surrounded by an invisible cloud of disease (print capture p. 278)"
+  },
+  {
+   "name": "dkmLuCloudSaveVsDeath",
+   "value": 1,
+   "comment": "the cloud save - all within must make a successful saving throw vs. death each round spent in the cloud or become afflicted with a rotting disease (print capture p. 278)"
+  },
+  {
+   "name": "dkmLuNoHealingUntilCured",
+   "value": 1,
+   "comment": "the cure clause - until cured the victim cannot heal naturally or benefit from healing spells (print capture p. 278)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dkmNat",
+   "tag": "Nat",
+   "count": "dkmNatCount",
+   "comment": "the nat stat table - the einsaung, the hkum yang, and the lu, row by row, the frequencies riding the capture header rather than a row (print capture p. 276)",
+   "cols": [
+    "dkmNatAC",
+    "dkmNatMove",
+    "dkmNatHD",
+    "dkmNatLairPct",
+    "dkmNatAttacks",
+    "dkmNatMRPct",
+    "dkmNatWeaponPlus",
+    "dkmNatXPBase",
+    "dkmNatXPPerHP",
+    "dkmNatDmgMin",
+    "dkmNatDmgMax"
+   ],
+   "col_comments": [
+    "the armor class - the 2, the 0, and the -2 of the three columns; the hkum yang AC 0 collides with the sentinel, so this column census is 1 (print capture p. 276)",
+    "the move - the 12, the 12, and the 9 of the three columns (print capture p. 276)",
+    "the hit dice - the 2, the 4, and the 8 of the three columns (print capture p. 276)",
+    "the in-lair percent - the 100, the 100, and the 80 (print capture p. 276)",
+    "the attack count - the 1, the 2, and the 3 (print capture p. 276)",
+    "the magic resistance - the 10%, the 30%, and the 10% (print capture p. 276)",
+    "the weapon floor - the +1, the +2, and the +3 needed to hit the einsaung, the hkum yang, and the lu (print capture p. 277 and print capture p. 278)",
+    "the xp base - the 113 of the III/113 + 2, the 405 of the V/405 + 4, and the 2,250 of the VII/2,250 + 10, capture p. 277 (print capture p. 277)",
+    "the xp per hit point - the 2, the 4, and the 10 of the three xp lines (print capture p. 277)",
+    "the damage minimum - the 1 of the 1-6 and of the 1-8 ladders (print capture p. 276)",
+    "the damage maximum - the 6 of the 1-6 and 1-6/1-6, the 8 of the 1-8/1-8/1-8 (print capture p. 276)"
+   ],
+   "data": [
+    [
+     2,
+     12,
+     2,
+     100,
+     1,
+     10,
+     1,
+     113,
+     2,
+     1,
+     6
+    ],
+    [
+     0,
+     12,
+     4,
+     100,
+     2,
+     30,
+     2,
+     405,
+     4,
+     1,
+     6
+    ],
+    [
+     -2,
+     9,
+     8,
+     80,
+     3,
+     10,
+     3,
+     2250,
+     10,
+     1,
+     8
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the stat table - the per-type lines, healthy values, each condition false",
+   "expr": "m['dkmAppear']() != 1 or m['dkmEinsaungRare']() != 1 or m['dkmHkumVeryRare']() != 1 or m['dkmLuRare']() != 1 or m['dkmEinsaungChaoticGood']() != 1 or m['dkmHkumNeutral']() != 1 or m['dkmLuChaoticEvil']() != 1 or m['dkmEinsaungIntVery']() != 1 or m['dkmHkumIntStandard']() != 1 or m['dkmLuIntLow']() != 1 or m['dkmEinsaungSizeSmall']() != 1 or m['dkmHkumSizeMedium']() != 1 or m['dkmLuSizeMedium']() != 1 or m['dkmTreasureNil']() != 1 or m['dkmPsionicNil']() != 1 or m['dkmModesNil']() != 1 or m['dkmHkumFearAttack']() != 1 or m['dkmLuDiseaseAttack']() != 1 or m['dkmDefensesSeeBelow']() != 1"
+  },
+  {
+   "note": "the nat grid - the three-column stat table, audited cell by cell by the table audit",
+   "expr": "m['dkmNatCount']() != 3"
+  },
+  {
+   "note": "the lesser spirit nature - the habitat, the look, and the at-will roster, healthy values, each condition false",
+   "expr": "m['dkmTropicalJungleSpirits']() != 1 or m['dkmHumanoidDemonicCast']() != 1 or m['dkmWildTangledHair']() != 1 or m['dkmLongClawedFingernails']() != 1 or m['dkmSharpFangedTeeth']() != 1 or m['dkmNotAllBiteEffectively']() != 1 or m['dkmAtWillInvisible']() != 1 or m['dkmAtWillLevitate']() != 1 or m['dkmAtWillESP']() != 1 or m['dkmAtWillComprehendLanguages']() != 1 or m['dkmAtWillDeflection']() != 1 or m['dkmAtWillDreamVision']() != 1 or m['dkmAtWillPossessAnimal']() != 1 or m['dkmAtWillDetectShapechanger']() != 1 or m['dkmAtWillQuickgrowth']() != 1 or m['dkmAtWillPasswall']() != 1 or m['dkmAtWillDancingBlade']() != 1 or m['dkmImmuneToPoisonAndDisease']() != 1 or m['dkmHalfElectricalFireDamage']() != 1 or m['dkmElemDmgDivisor']() != 2 or m['dkmSpeakOwnAndWuJenLanguage']() != 1"
+  },
+  {
+   "note": "the einsaung nat - the household benefactor and its powers, healthy values, each condition false",
+   "expr": "m['dkmEinsaungBeneficialIfPleased']() != 1 or m['dkmEinsaungTakesUpResidence']() != 1 or m['dkmEinsaungGoodLuckSign']() != 1 or m['dkmEinsaungDepartureIllOmen']() != 1 or m['dkmEinsaungSouthCornerpost']() != 1 or m['dkmEinsaungLairEthereal']() != 1 or m['dkmEinsaungOfferingsAtPost']() != 1 or m['dkmEinsaungExtraAtWillPowers']() != 1 or m['dkmEinsaungDailyPowers']() != 1 or m['dkmEinsaungWeeklyPowers']() != 1 or m['dkmEinsaungBlessAura']() != 1 or m['dkmEinsaungAuraCoversHouse']() != 1 or m['dkmEinsaungShy']() != 1 or m['dkmEinsaungActsThroughPossession']() != 1 or m['dkmEinsaungAvoidsCombat']() != 1 or m['dkmEinsaungAidsByAdvice']() != 1 or m['dkmEinsaungPlaysWithChildren']() != 1"
+  },
+  {
+   "note": "the hkum yang nat - the village protector and its powers, healthy values, each condition false",
+   "expr": "m['dkmHkumFearedProtector']() != 1 or m['dkmHkumVillageProtector']() != 1 or m['dkmHkumCentralResidence']() != 1 or m['dkmHkumSpoilsToEthereal']() != 1 or m['dkmHkumDispleasureDisaster']() != 1 or m['dkmHkumDefendsVillage']() != 1 or m['dkmHkumExtraAtWillPowers']() != 1 or m['dkmHkumAnimateFireWood']() != 1 or m['dkmAnimFireWoodPerDay']() != 3 or m['dkmHkumDailyPowers']() != 1 or m['dkmHkumWeeklyPowers']() != 1 or m['dkmHkumFearAura']() != 1 or m['dkmFearRadius']() != 10 or m['dkmFearFleeMin']() != 2 or m['dkmFearFleeMax']() != 5 or m['dkmHkumFearSightOnly']() != 1"
+  },
+  {
+   "note": "the lu nat - the graveyard evil and its disease cloud, healthy values, each condition false",
+   "expr": "m['dkmLuTotallyEvil']() != 1 or m['dkmLuGraveyardLair']() != 1 or m['dkmLuSimpleMinded']() != 1 or m['dkmLuHungryDescent']() != 1 or m['dkmLuExtraAtWillPowers']() != 1 or m['dkmLuCurseCreepingDarkness']() != 1 or m['dkmLuCursePerDay']() != 3 or m['dkmLuDailyPowers']() != 1 or m['dkmLuDiseaseCloud']() != 1 or m['dkmDiseaseCloudDiameter']() != 10 or m['dkmLuCloudSaveVsDeath']() != 1 or m['dkmDiseaseHPPerTurn']() != 10 or m['dkmLuNoHealingUntilCured']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat table": [
+   {
+    "kind": "const",
+    "name": "dkmNatCount"
+   },
+   {
+    "kind": "table",
+    "name": "dkmNat"
+   },
+   {
+    "kind": "const",
+    "name": "dkmAppear"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumVeryRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungChaoticGood"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuChaoticEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungIntVery"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumIntStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuIntLow"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungSizeSmall"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumSizeMedium"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuSizeMedium"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmTreasureNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmModesNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumFearAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuDiseaseAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmDefensesSeeBelow"
+   }
+  ],
+  "the lesser spirit nature": [
+   {
+    "kind": "bool",
+    "name": "dkmTropicalJungleSpirits"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHumanoidDemonicCast"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmWildTangledHair"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLongClawedFingernails"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmSharpFangedTeeth"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmNotAllBiteEffectively"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillInvisible"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillLevitate"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillESP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillComprehendLanguages"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillDeflection"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillDreamVision"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillPossessAnimal"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillDetectShapechanger"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillQuickgrowth"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillPasswall"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmAtWillDancingBlade"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmImmuneToPoisonAndDisease"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHalfElectricalFireDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dkmElemDmgDivisor"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmSpeakOwnAndWuJenLanguage"
+   }
+  ],
+  "the einsaung nat": [
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungBeneficialIfPleased"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungTakesUpResidence"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungGoodLuckSign"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungDepartureIllOmen"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungSouthCornerpost"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungLairEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungOfferingsAtPost"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungExtraAtWillPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungDailyPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungWeeklyPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungBlessAura"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungAuraCoversHouse"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungShy"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungActsThroughPossession"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungAvoidsCombat"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungAidsByAdvice"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmEinsaungPlaysWithChildren"
+   }
+  ],
+  "the hkum yang nat": [
+   {
+    "kind": "bool",
+    "name": "dkmHkumFearedProtector"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumVillageProtector"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumCentralResidence"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumSpoilsToEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumDispleasureDisaster"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumDefendsVillage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumExtraAtWillPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumAnimateFireWood"
+   },
+   {
+    "kind": "const",
+    "name": "dkmAnimFireWoodPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumDailyPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumWeeklyPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumFearAura"
+   },
+   {
+    "kind": "const",
+    "name": "dkmFearRadius"
+   },
+   {
+    "kind": "const",
+    "name": "dkmFearFleeMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkmFearFleeMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmHkumFearSightOnly"
+   }
+  ],
+  "the lu nat": [
+   {
+    "kind": "bool",
+    "name": "dkmLuTotallyEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuGraveyardLair"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuSimpleMinded"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuHungryDescent"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuExtraAtWillPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuCurseCreepingDarkness"
+   },
+   {
+    "kind": "const",
+    "name": "dkmLuCursePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuDailyPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuDiseaseCloud"
+   },
+   {
+    "kind": "const",
+    "name": "dkmDiseaseCloudDiameter"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuCloudSaveVsDeath"
+   },
+   {
+    "kind": "const",
+    "name": "dkmDiseaseHPPerTurn"
+   },
+   {
+    "kind": "bool",
+    "name": "dkmLuNoHealingUntilCured"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the nat box",
+   "from": "  - [ ] Nat, Lesser Spirit (capture pp. 276-278)",
+   "to": "  - [x] Nat, Lesser Spirit (capture pp. 276-278)\n    - R725: the dkm nat pins - the stat\n    table (the three columns of the\n    einsaung, the hkum yang, and the lu:\n    the rare and very rare and rare, the\n    1 appearing apiece, the AC 2, 0, and\n    -2, the moves 12, 12, and 9, the HD\n    2, 4, and 8, the lairs 100%, 100%,\n    and 80%, the nil treasure, the\n    attacks 1, 2, and 3 of the 1-6,\n    1-6/1-6, and 1-8/1-8/1-8, the nil,\n    fear, and disease specials, the MR\n    10%, 30%, and 10%, the very,\n    standard, and low wits, the good,\n    neutral, and evil alignments, the S\n    and M and M sizes, the nil psionics,\n    the +1, +2, and +3 weapon floors,\n    the xp of the 113 + 2, the 405 + 4,\n    and the 2,250 + 10); the lesser\n    spirit nature (the tropical jungle\n    spirits, the humanoid demonic cast,\n    the wild hair, the clawed hands, the\n    fanged teeth, the eleven at-will\n    powers, the poison and disease\n    immunity, the half electrical and\n    fire damage, the two languages); the\n    einsaung (the household benefactor,\n    the good luck sign, the south\n    cornerpost, the ethereal lair, the\n    at-will and daily and weekly powers,\n    the bless aura over the house, the\n    shyness, the possession in distress,\n    the advice and mysterious\n    information, the play with children);\n    the hkum yang (the feared village\n    protector, the head-stakes residence,\n    the spoils carried to the Ethereal,\n    the disaster of displeasure, the\n    at-will and thrice and daily and\n    weekly powers, the 10-foot fear aura\n    and the 2 to 5 round panic of those\n    who see it); the lu (the graveyard\n    evil, the simple-mindedness, the\n    appeasing food, the hungry descent,\n    the at-will and thrice and daily\n    powers, the 10-foot disease cloud,\n    the save vs. death each round, the\n    1d10-per-turn rotting disease, the\n    healing bar until cured);\n    single-pass\n    pins per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 178,
+  "open": 57
+ },
+ "include_comment": "the OA Nat pins",
+ "include_after": "#include \"rules/oa95menwako.h\"  // R724: the OA Men Wako pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R724 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R724 LANDED 2026-10-21: commit",
+  "  fc2b428dbb81f386b2ffb7909257b2f38b0afd48",
+  "  (census 646 -> 647, pushed a4ed27f..fc2b428), OA",
+  "  MONSTERS, the Men Wako, the Sea Pirate (capture",
+  "  pp. 275-276 print): rules/oa95menwako.h, prefix",
+  "  dkl (verified free at a4ed27f), ONE gap flip, gap",
+  "  census 177/58 - the men wako box. A TABLES",
+  "  round. 26 consts + 26 bools + 1 table col (53",
+  "  inlines): the stat block (the uncommon, the 30",
+  "  to 180, the AC see below, the move 12, the HD 1",
+  "  with the 2 to 7 hit points, the 100% lair, the A",
+  "  treasure, the 1 attack by weapon, the",
+  "  leader-type attacks and defenses, the standard",
+  "  MR, the average-to-very, the lawful evil, the M",
+  "  size, the leader-type psionics, the 14 + 1 xp);",
+  "  the sea raiders (the warm seas, the boarded",
+  "  ships, the raided coastal towns, the feared",
+  "  scourge, the low-class origins, the western",
+  "  pirate fear); the ferocity (the disregard for",
+  "  death, the fight to the last man, the no",
+  "  prisoners but the women, the utterly ferocious,",
+  "  the +2 to hit, the +1 to damage); the leaders",
+  "  (the 5th-level bushi per 30, the 7th-level",
+  "  barbarian per 60, the in-addition rule, the",
+  "  always-led samurai of the 10th level, the",
+  "  8th-level lieutenant, the 1 to 3 sixth-level",
+  "  mates, the 5% wu jen of the 6th to 9th level);",
+  "  the arms table, DklArms[6] (the 50",
+  "  hara-ate-gawa and sword, the 10 sword and bow,",
+  "  the 15 do-maru and sword, the 10 kote and",
+  "  spear, the 5 kote and do-maru and sword and",
+  "  bow, the 10 haramaki and sword and spear and",
+  "  bow; the capture's 150 and kote 8 spear",
+  "  misreads pinned as the 15 and the kote and",
+  "  spear of the print; the o-yoroi of the",
+  "  leaders); the lair (the permanent settlement,",
+  "  the sponsoring lord lands, the walled defense",
+  "  and patrol). Zero false starts, first rverify",
+  "  GREEN, 58 mutants, 0 missed. Spec md5",
+  "  2606bd04be5992864c564dd08efea0dd",
+  "  (authored-plus-newline md5",
+  "  223bd5b7ffe3eae8d5f710d4bb42dcdf, the ritual",
+  "  gate, matched byte-exact; canvas md5",
+  "  e01270652923fee630fef5c18beee63d). NEXT - R725:",
+  "  the Nat, the Lesser Spirit (capture",
+  "  pp. 276-278), prefix dkm (verified free at",
+  "  fc2b428), audit \"R725 OA monsters Nat audit\",",
+  "  include after rules/oa95menwako.h."
+ ]
+}

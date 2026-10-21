@@ -2513,7 +2513,57 @@ description riding the same round.
     the walled defense and patrol);
     single-pass
     pins per the Chapter 9 provenance shift
-  - [ ] Nat, Lesser Spirit (capture pp. 276-278)
+  - [x] Nat, Lesser Spirit (capture pp. 276-278)
+    - R725: the dkm nat pins - the stat
+    table (the three columns of the
+    einsaung, the hkum yang, and the lu:
+    the rare and very rare and rare, the
+    1 appearing apiece, the AC 2, 0, and
+    -2, the moves 12, 12, and 9, the HD
+    2, 4, and 8, the lairs 100%, 100%,
+    and 80%, the nil treasure, the
+    attacks 1, 2, and 3 of the 1-6,
+    1-6/1-6, and 1-8/1-8/1-8, the nil,
+    fear, and disease specials, the MR
+    10%, 30%, and 10%, the very,
+    standard, and low wits, the good,
+    neutral, and evil alignments, the S
+    and M and M sizes, the nil psionics,
+    the +1, +2, and +3 weapon floors,
+    the xp of the 113 + 2, the 405 + 4,
+    and the 2,250 + 10); the lesser
+    spirit nature (the tropical jungle
+    spirits, the humanoid demonic cast,
+    the wild hair, the clawed hands, the
+    fanged teeth, the eleven at-will
+    powers, the poison and disease
+    immunity, the half electrical and
+    fire damage, the two languages); the
+    einsaung (the household benefactor,
+    the good luck sign, the south
+    cornerpost, the ethereal lair, the
+    at-will and daily and weekly powers,
+    the bless aura over the house, the
+    shyness, the possession in distress,
+    the advice and mysterious
+    information, the play with children);
+    the hkum yang (the feared village
+    protector, the head-stakes residence,
+    the spoils carried to the Ethereal,
+    the disaster of displeasure, the
+    at-will and thrice and daily and
+    weekly powers, the 10-foot fear aura
+    and the 2 to 5 round panic of those
+    who see it); the lu (the graveyard
+    evil, the simple-mindedness, the
+    appeasing food, the hungry descent,
+    the at-will and thrice and daily
+    powers, the 10-foot disease cloud,
+    the save vs. death each round, the
+    1d10-per-turn rotting disease, the
+    healing bar until cured);
+    single-pass
+    pins per the Chapter 9 provenance shift
   - [ ] Nature Spirits (capture pp. 278-279) - the
     greater and lesser types
   - [ ] Ningyo (capture p. 279)
