@@ -16347,6 +16347,39 @@ when both halves land.
   Lesser Spirit (capture pp. 262-263), prefix dka (verified
   free at 683d2c6), audit "R713 OA monsters Gaki audit",
   include after rules/oa83dragons.h.
+- R713 LANDED 2026-10-21: commit 0124fd4ca300c5abf57005f5bedc018b4b1f0947
+  (census 635 -> 636, pushed 683d2c6..0124fd4), OA MONSTERS - the
+  Gaki, Lesser Spirit, capture pp. 262-263 print:
+  rules/oa84gaki.h, prefix dka (verified free at 683d2c6), ONE
+  gap flip, gap census 166/69 - OA round one hundred, the
+  four hungry spirits riding one flip. 56 consts + 42 bools
+  (98 inlines): the shared doctrine (the spirits of the
+  wicked, the crimes determine the type, the compelled evil,
+  the never-sated hunger, the invisible and the insect
+  polymorph at will, the passwall three per day, the mental
+  spell immunity with the spirit spell vulnerability); the
+  jiki-ketsu (the very rare, the AC 2, the HD 8, the 3
+  attacks of 1-3/1-3/1-8, the VII/1,075 + 10, the vampiric
+  gripped bite draining 1-10 per round, the +3 weapons, the
+  1-per-round regeneration, the cold and fire immunity, the
+  night activity); the jiki-niku (the rare, the AC 6, the
+  HD 3, the II/50 + 3, the flesh eating, the graveyard
+  haunts, the 1-per-turn regeneration); the shikki (the
+  uncommon, the AC 4, the HD 5, the IV/245 + 5, the save vs.
+  poison per hit, the 2d6-turn onset delirium at 1 hp per
+  hour for 2-5 days, the +1 weapons, the 2-per-turn
+  regeneration); the shinen (the uncommon, the AC 0, the
+  HD 4, the move 0, the III/135 + 4, the moving fire luring
+  to the circle of flame, the 1d10 fire damage, the -2
+  water save with the +1 per die, the +2 weapons, the
+  3-per-turn regeneration). Zero false starts, first rverify
+  GREEN, 98 mutants, 0 missed. Spec md5
+  453cbba52b2ee04f0ab1007a9a9a799f (authored-plus-newline md5
+  b4e1c086c1dc376f4fc7458e52b05887, the ritual gate, matched
+  byte-exact; canvas md5 4230843d82b31ded684dffaaa2c24e5e).
+  NEXT - R714: the Gargantua (capture pp. 263-265), prefix
+  dkb (verified free at 0124fd4), audit "R714 OA monsters
+  Gargantua audit", include after rules/oa84gaki.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

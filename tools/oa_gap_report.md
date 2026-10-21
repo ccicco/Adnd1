@@ -2186,7 +2186,34 @@ description riding the same round.
     the four types: jiki-ketsu-gaki the vampiric,
     jiki-niku-gaki the flesh-eater, shikki-gaki the
     diseased, shinen-gaki the fire spirit
-  - [ ] Gargantua (capture pp. 263-265) - the
+  - [x] Gargantua (capture pp. 263-265) - the
+    - R714: the dkb gargantua pins - the
+    shared doctrine (the monstrous class, the
+    unknown origin, the mindless brutes, the
+    ground-trembling no-surprise rule, the
+    squealing roars, the 4-per-round
+    regeneration, the national-emergency
+    rarity), the humanoid (the very rare, the
+    AC 4, the move 21, the HD 35, the 2
+    fists of 4-40, the 10-100 trample, the
+    25% comprehension by empathy, the
+    mountain-island lair, the 16,600 +
+    35/hp), the insectoid (the rare, the AC 6, the
+    move 6/36 MC E, the 3-30, the egg-larva
+    20 HD growing 1 per week to the 25 HD
+    cocoon and the 2d4-week pupae, the 30 HD
+    moth, the 60-foot silk severed at 20
+    damage or bend bars, the -4 save
+    windstorm blowing 10-40 for 1d6 per
+    foot, the 20 HD 11,100 + 30 and the 21
+    + HD 13,600 + 35), the reptilian (the
+    rare, the AC 2, the move 18/12, the HD
+    50, the 3 attacks of 3-30/3-30/6-60,
+    the 10d10 upright trample, the 90-foot
+    tail sweep with the save vs. death or
+    8d10, the swimming tropical islands, the
+    Level X 22,600 + 35); single-pass pins
+    per the Chapter 9 provenance shift
     insectoid, reptilian and humanoid types
   - [ ] Generals of the Animal Kings, Greater
     Spirits (capture p. 265)

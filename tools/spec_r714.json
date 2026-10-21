@@ -1,0 +1,1078 @@
+{
+ "round": 714,
+ "title": "OA MONSTERS - the Gargantua: the three types and the shared doctrine",
+ "prefix": "dkb",
+ "header_file": "rules/oa85gargantua.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 636,
+ "inline_count": 108,
+ "audit_label": "R714 OA monsters Gargantua audit",
+ "audit_comment": "OA round one hundred one (capture pp. 263-265): the Chapter 12 monster roster - the gargantua kaiju round, the stat block and the description riding together, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE GARGANTUA, printed capture pp. 263-265 - the kaiju round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 167 closed, 68 open - the gargantua box flips (census 636 -> 637); NEXT - R715: the Generals of the Animal Kings, Greater Spirits (capture p. 265), prefix dkc (verify free at the landing), audit \"R715 OA monsters Animal Generals audit\", include after rules/oa85gargantua.h"
+ },
+ "consts": [
+  {
+   "name": "dkbGargantuaTypeCount",
+   "value": 3,
+   "comment": "the gargantua type count - the humanoid, the insectoid, the reptilian of the three-column stat block (print capture p. 263)"
+  },
+  {
+   "name": "dkbGargantuaRegenPerRound",
+   "value": 4,
+   "comment": "the gargantua regeneration - all possess the ability to regenerate 4 hit points per round (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidNoAppMin",
+   "value": 1,
+   "comment": "the humanoid gargantua appearance minimum - the 1 of the 1-2 (print capture p. 263)"
+  },
+  {
+   "name": "dkbHumanoidNoAppMax",
+   "value": 2,
+   "comment": "the humanoid gargantua appearance maximum - the 2 of the 1-2 (print capture p. 263)"
+  },
+  {
+   "name": "dkbHumanoidAC",
+   "value": 4,
+   "comment": "the humanoid gargantua armor class - the AC 4 of the stat block (print capture p. 263)"
+  },
+  {
+   "name": "dkbHumanoidMove",
+   "value": 21,
+   "comment": "the humanoid gargantua movement rate - the move 21' of the stat block (print capture p. 263)"
+  },
+  {
+   "name": "dkbHumanoidHD",
+   "value": 35,
+   "comment": "the humanoid gargantua hit dice - the HD 35 of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidAttacks",
+   "value": 2,
+   "comment": "the humanoid gargantua attacks per round - the 2 fists of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidFistDmgMin",
+   "value": 4,
+   "comment": "the humanoid gargantua fist damage minimum - the 4 of the 4-40/4-40, the 4d10 each (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidFistDmgMax",
+   "value": 40,
+   "comment": "the humanoid gargantua fist damage maximum - the 40 of the 4-40/4-40 (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidTrampleDmgMin",
+   "value": 10,
+   "comment": "the humanoid gargantua trample minimum - the 10 of the 10-100 points of damage (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidTrampleDmgMax",
+   "value": 100,
+   "comment": "the humanoid gargantua trample maximum - the 100 of the 10-100 (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidSizeMinFt",
+   "value": 80,
+   "comment": "the humanoid gargantua length minimum - the 80' of the 80'-100' size L entry (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidSizeMaxFt",
+   "value": 100,
+   "comment": "the humanoid gargantua length maximum - the 100' of the 80'-100' size L entry (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidHeightMinFt",
+   "value": 60,
+   "comment": "the humanoid gargantua height minimum - the 60 of the 60 to 100 feet tall (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidHeightMaxFt",
+   "value": 100,
+   "comment": "the humanoid gargantua height maximum - the 100 of the 60 to 100 feet tall (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidComprehendPct",
+   "value": 25,
+   "comment": "the humanoid gargantua comprehension - able to comprehend the meanings of other languages 25% of the time (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidXPBase",
+   "value": 16600,
+   "comment": "the humanoid gargantua base experience - the 16,600 of the 16,600 + 35/hp column (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidXPPerHP",
+   "value": 35,
+   "comment": "the humanoid gargantua experience per hit point - the + 35/hp (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidNoAppMin",
+   "value": 1,
+   "comment": "the insectoid gargantua appearance minimum - the 1 of the 1-3 (print capture p. 263)"
+  },
+  {
+   "name": "dkbInsectoidNoAppMax",
+   "value": 3,
+   "comment": "the insectoid gargantua appearance maximum - the 3 of the 1-3 (print capture p. 263)"
+  },
+  {
+   "name": "dkbInsectoidAC",
+   "value": 6,
+   "comment": "the insectoid gargantua armor class - the AC 6 of the stat block (print capture p. 263)"
+  },
+  {
+   "name": "dkbInsectoidMoveGround",
+   "value": 6,
+   "comment": "the insectoid gargantua ground rate - the 6' of the move 6'/36' (MC:E) (print capture p. 263)"
+  },
+  {
+   "name": "dkbInsectoidMoveFly",
+   "value": 36,
+   "comment": "the insectoid gargantua fly rate - the 36' of the move 6'/36' maneuver class E (print capture p. 263)"
+  },
+  {
+   "name": "dkbInsectoidAttacks",
+   "value": 1,
+   "comment": "the insectoid gargantua attacks per round - the 1 of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidDmgMin",
+   "value": 3,
+   "comment": "the insectoid gargantua damage minimum - the 3 of the 3-30 (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidDmgMax",
+   "value": 30,
+   "comment": "the insectoid gargantua damage maximum - the 30 of the 3-30 (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidSizeFt",
+   "value": 60,
+   "comment": "the insectoid gargantua size - the L (60') of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidLarvaHD",
+   "value": 20,
+   "comment": "the insectoid gargantua larva - starting life with 20 hit dice (the stat-block 200 garble settled by the larva read) (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidGrowthPerWeek",
+   "value": 1,
+   "comment": "the insectoid gargantua growth - increasing 1 hit die per week (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidPupationHD",
+   "value": 25,
+   "comment": "the insectoid gargantua pupation - upon attaining 25 hit dice the larva spins a cocoon (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidPupaeWeeksDice",
+   "value": 2,
+   "comment": "the insectoid gargantua pupae duration - the 2 of the 2d4 weeks (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidPupaeWeeksSides",
+   "value": 4,
+   "comment": "the insectoid gargantua pupae duration sides - the 4 of the 2d4 weeks (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidMothHD",
+   "value": 30,
+   "comment": "the insectoid gargantua moth - emerging as a gigantic moth with 30 hit dice (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidSilkRangeFt",
+   "value": 60,
+   "comment": "the insectoid larva silk - the strand of cocoon silk shot to a range of 60 feet (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidSilkSeverDmg",
+   "value": 20,
+   "comment": "the insectoid larva silk rule - a strand severed with 20 points of damage from an edged weapon (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidSilkSeverHDMonster",
+   "value": 10,
+   "comment": "the insectoid larva silk rule - or by monsters of 10 hit dice or more (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidWindstormWidthFt",
+   "value": 6,
+   "comment": "the insectoid moth windstorm - the storm 6' wide (the extent djvu garble -24' not pinned, unreadable even by eye-read) (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidWindstormSavePenalty",
+   "value": 4,
+   "comment": "the insectoid moth windstorm - the save vs. death at a -4 on the die (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidBlowbackMinFt",
+   "value": 10,
+   "comment": "the insectoid moth windstorm - the blown back 10' of the 10-40 feet (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidBlowbackMaxFt",
+   "value": 40,
+   "comment": "the insectoid moth windstorm - the blown back 40' of the 10-40 feet (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidBlowbackDmgPerFt",
+   "value": 6,
+   "comment": "the insectoid moth windstorm - 1d6 points of damage for every 1' blown (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidXP20HDBase",
+   "value": 11100,
+   "comment": "the insectoid gargantua 20 HD experience - the 11,100 + 30/hp tier (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidXP20HDPerHP",
+   "value": 30,
+   "comment": "the insectoid gargantua 20 HD experience per hit point - the + 30/hp (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidXP21HDBase",
+   "value": 13600,
+   "comment": "the insectoid gargantua 21 + HD experience - the 13,600 + 35/hp tier (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidXP21HDPerHP",
+   "value": 35,
+   "comment": "the insectoid gargantua 21 + HD experience per hit point - the + 35/hp (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianNoAppMin",
+   "value": 1,
+   "comment": "the reptilian gargantua appearance minimum - the 1 of the 1-2 (print capture p. 263)"
+  },
+  {
+   "name": "dkbReptilianNoAppMax",
+   "value": 2,
+   "comment": "the reptilian gargantua appearance maximum - the 2 of the 1-2 (print capture p. 263)"
+  },
+  {
+   "name": "dkbReptilianAC",
+   "value": 2,
+   "comment": "the reptilian gargantua armor class - the AC 2 of the stat block (print capture p. 263)"
+  },
+  {
+   "name": "dkbReptilianMoveWalk",
+   "value": 18,
+   "comment": "the reptilian gargantua walking rate - the 18' of the move 18'/12' (print capture p. 263)"
+  },
+  {
+   "name": "dkbReptilianMoveSwim",
+   "value": 12,
+   "comment": "the reptilian gargantua swimming rate - the 12' of the move 18'/12' (print capture p. 263)"
+  },
+  {
+   "name": "dkbReptilianHD",
+   "value": 50,
+   "comment": "the reptilian gargantua hit dice - the HD 50 of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianAttacks",
+   "value": 3,
+   "comment": "the reptilian gargantua attacks per round - the 3 of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianClawDmgMin",
+   "value": 3,
+   "comment": "the reptilian gargantua claw damage minimum - the 3 of the 3-30/3-30/6-60 (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianClawDmgMax",
+   "value": 30,
+   "comment": "the reptilian gargantua claw damage maximum - the 30 of the 3-30/3-30/6-60 (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianBiteDmgMin",
+   "value": 6,
+   "comment": "the reptilian gargantua bite damage minimum - the 6 of the 3-30/3-30/6-60 (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianBiteDmgMax",
+   "value": 60,
+   "comment": "the reptilian gargantua bite damage maximum - the 60 of the 3-30/3-30/6-60 (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianSizeMinFt",
+   "value": 100,
+   "comment": "the reptilian gargantua length minimum - the 100' of the 100'-200' size L entry (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianSizeMaxFt",
+   "value": 200,
+   "comment": "the reptilian gargantua length maximum - the 200' of the 100'-200' size L entry (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianTrampleDice",
+   "value": 10,
+   "comment": "the reptilian gargantua trample - if moving upright, trample for 10d10 points of damage (print capture p. 265)"
+  },
+  {
+   "name": "dkbReptilianTrampleSides",
+   "value": 10,
+   "comment": "the reptilian gargantua trample sides - the d10 of the 10d10 (print capture p. 265)"
+  },
+  {
+   "name": "dkbReptilianTailSweepFt",
+   "value": 90,
+   "comment": "the reptilian gargantua tail - sweeps the ground behind them, 90 feet to either side (print capture p. 265)"
+  },
+  {
+   "name": "dkbReptilianTailDmgDice",
+   "value": 8,
+   "comment": "the reptilian gargantua tail damage - the 8d10 points of damage on a failed save vs. death (print capture p. 265)"
+  },
+  {
+   "name": "dkbReptilianTailDmgSides",
+   "value": 10,
+   "comment": "the reptilian gargantua tail damage sides - the d10 of the 8d10 (print capture p. 265)"
+  },
+  {
+   "name": "dkbReptilianXPBase",
+   "value": 22600,
+   "comment": "the reptilian gargantua experience - the Level X (all) 22,600 + 35/hp (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianXPPerHP",
+   "value": 35,
+   "comment": "the reptilian gargantua experience per hit point - the + 35/hp (print capture p. 264)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkbGargantuaMonstrousClass",
+   "value": 1,
+   "comment": "the gargantua nature - a class of truly monstrous creatures in proportion and ferocity, the most frequent forms gigantic humanoids, insects, and reptiles (print capture p. 264)"
+  },
+  {
+   "name": "dkbGargantuaOriginUnknown",
+   "value": 1,
+   "comment": "the gargantua origin - aberrations of natural processes, throwbacks, or crazed magical experiments, unknown; all that is known is they exist and occasionally appear to ravage the land (print capture p. 264)"
+  },
+  {
+   "name": "dkbGargantuaMindlessBrutes",
+   "value": 1,
+   "comment": "the gargantua temperament - some degree of intelligence but the actions most often those of mindless brutes bent on destruction for destruction sake (print capture p. 264)"
+  },
+  {
+   "name": "dkbGargantuaGroundTrembles",
+   "value": 1,
+   "comment": "the gargantua detection - the ground trembles when they walk, so they cannot surprise creatures at all (print capture p. 264)"
+  },
+  {
+   "name": "dkbGargantuaEasilySpotted",
+   "value": 1,
+   "comment": "the gargantua sightline - their height makes them easily spotted at a distance (print capture p. 264)"
+  },
+  {
+   "name": "dkbGargantuaSquealingRoars",
+   "value": 1,
+   "comment": "the gargantua noise - the habit of emitting squealing roars as they move and fight makes it almost impossible to ignore their presence (print capture p. 264)"
+  },
+  {
+   "name": "dkbGargantuaNationalEmergency",
+   "value": 1,
+   "comment": "the gargantua rarity - fortunately rare and seldom bother humans; when they appear the arrival is often treated as a national or at least regional emergency with every resource mobilized (print capture p. 265)"
+  },
+  {
+   "name": "dkbHumanoidVeryRare",
+   "value": 1,
+   "comment": "the humanoid gargantua frequency - the very rare of the stat block (print capture p. 263)"
+  },
+  {
+   "name": "dkbHumanoidLairNil",
+   "value": 1,
+   "comment": "the humanoid gargantua in-lair percentage - the Nil of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidTreasureNil",
+   "value": 1,
+   "comment": "the humanoid gargantua treasure - the Nil of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidTrample",
+   "value": 1,
+   "comment": "the humanoid gargantua special attack - the trample of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidPsionicNil",
+   "value": 1,
+   "comment": "the humanoid gargantua psionics - the Nil of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidLeastIntelligent",
+   "value": 1,
+   "comment": "the humanoid gargantua rank - the least intelligent of their kind (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidSometimesFurred",
+   "value": 1,
+   "comment": "the humanoid gargantua hide - sometimes covered with fur (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidNoOwnLanguage",
+   "value": 1,
+   "comment": "the humanoid gargantua speech - no language of their own (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidHumanEmpathy",
+   "value": 1,
+   "comment": "the humanoid gargantua empathy - comprehend other languages 25% of the time because of a strong empathy for human emotions (print capture p. 264)"
+  },
+  {
+   "name": "dkbHumanoidMountainIslandLair",
+   "value": 1,
+   "comment": "the humanoid gargantua habitat - jagged remote mountains or tiny islands far out at sea (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidRare",
+   "value": 1,
+   "comment": "the insectoid gargantua frequency - the rare of the stat block (print capture p. 263)"
+  },
+  {
+   "name": "dkbInsectoidLairNil",
+   "value": 1,
+   "comment": "the insectoid gargantua in-lair percentage - the Nil of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidTreasureNil",
+   "value": 1,
+   "comment": "the insectoid gargantua treasure - the Nil of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidSpecialDefenseRegeneration",
+   "value": 1,
+   "comment": "the insectoid gargantua special defense - the regeneration of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidMRStandard",
+   "value": 1,
+   "comment": "the insectoid gargantua magic resistance - the standard of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidIntLow",
+   "value": 1,
+   "comment": "the insectoid gargantua intelligence - the Low of the stat block (the garble Lo settled by the Low read) (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidChaoticNeutral",
+   "value": 1,
+   "comment": "the insectoid gargantua alignment - the chaotic neutral of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidPsionicNil",
+   "value": 1,
+   "comment": "the insectoid gargantua psionics - the Nil of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidGrowthStages",
+   "value": 1,
+   "comment": "the insectoid gargantua life cycle - the gigantic egg hatching into a gigantic larva, the pupae stage, and the final moth form (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidSilkEntangles",
+   "value": 1,
+   "comment": "the insectoid larva silk - exceptionally strong and sticky, adhering to whatever it hits, entangling and immobilizing creatures (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidSilkSeverBendBars",
+   "value": 1,
+   "comment": "the insectoid larva silk rule - a strand severed with a successful bend bars/lift gates roll (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidMothLosesSilk",
+   "value": 1,
+   "comment": "the insectoid moth limitation - lost the ability to spin silk (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidWindstormByFlapping",
+   "value": 1,
+   "comment": "the insectoid moth windstorm - created by flapping its wings, all within the path must be solidly anchored or save (print capture p. 264)"
+  },
+  {
+   "name": "dkbInsectoidWarmMountains",
+   "value": 1,
+   "comment": "the insectoid gargantua habitat - warm mountainous regions (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianRare",
+   "value": 1,
+   "comment": "the reptilian gargantua frequency - the rare of the stat block (print capture p. 263)"
+  },
+  {
+   "name": "dkbReptilianLairNil",
+   "value": 1,
+   "comment": "the reptilian gargantua in-lair percentage - the Nil of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianTreasureNil",
+   "value": 1,
+   "comment": "the reptilian gargantua treasure - the Nil of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianPsionicNil",
+   "value": 1,
+   "comment": "the reptilian gargantua psionics - the Nil of the stat block (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianGiganticBipedal",
+   "value": 1,
+   "comment": "the reptilian gargantua form - gigantic often bipedal reptiles, truly magnificent, towering above all other creatures (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianUnableToSpeak",
+   "value": 1,
+   "comment": "the reptilian gargantua speech - unable to speak (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianSimpleEmpathy",
+   "value": 1,
+   "comment": "the reptilian gargantua empathy - a simple empathy able to sense the emotions and desires of other creatures (print capture p. 264)"
+  },
+  {
+   "name": "dkbReptilianClawsAndBite",
+   "value": 1,
+   "comment": "the reptilian gargantua attack form - the front claws and the bite (print capture p. 265)"
+  },
+  {
+   "name": "dkbReptilianTailSweepSaveVsDeath",
+   "value": 1,
+   "comment": "the reptilian gargantua tail - any creature in the area must make a successful saving throw vs. death or suffer the 8d10 (print capture p. 265)"
+  },
+  {
+   "name": "dkbReptilianTropicalIslands",
+   "value": 1,
+   "comment": "the reptilian gargantua habitat - tropical islands far out at sea (print capture p. 265)"
+  },
+  {
+   "name": "dkbReptilianSwims",
+   "value": 1,
+   "comment": "the reptilian gargantua mobility - they can swim, so isolation does not cut them off from the rest of the world (print capture p. 265)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the shared gargantua doctrine",
+   "expr": "m['dkbGargantuaTypeCount']() != 3 or m['dkbGargantuaRegenPerRound']() != 4 or m['dkbGargantuaMonstrousClass']() != 1 or m['dkbGargantuaOriginUnknown']() != 1 or m['dkbGargantuaMindlessBrutes']() != 1 or m['dkbGargantuaGroundTrembles']() != 1 or m['dkbGargantuaEasilySpotted']() != 1 or m['dkbGargantuaSquealingRoars']() != 1 or m['dkbGargantuaNationalEmergency']() != 1"
+  },
+  {
+   "note": "the humanoid gargantua",
+   "expr": "m['dkbHumanoidNoAppMin']() != 1 or m['dkbHumanoidNoAppMax']() != 2 or m['dkbHumanoidAC']() != 4 or m['dkbHumanoidMove']() != 21 or m['dkbHumanoidHD']() != 35 or m['dkbHumanoidAttacks']() != 2 or m['dkbHumanoidFistDmgMin']() != 4 or m['dkbHumanoidFistDmgMax']() != 40 or m['dkbHumanoidTrampleDmgMin']() != 10 or m['dkbHumanoidTrampleDmgMax']() != 100 or m['dkbHumanoidSizeMinFt']() != 80 or m['dkbHumanoidSizeMaxFt']() != 100 or m['dkbHumanoidHeightMinFt']() != 60 or m['dkbHumanoidHeightMaxFt']() != 100 or m['dkbHumanoidComprehendPct']() != 25 or m['dkbHumanoidXPBase']() != 16600 or m['dkbHumanoidXPPerHP']() != 35 or m['dkbHumanoidVeryRare']() != 1 or m['dkbHumanoidLairNil']() != 1 or m['dkbHumanoidTreasureNil']() != 1 or m['dkbHumanoidTrample']() != 1 or m['dkbHumanoidPsionicNil']() != 1 or m['dkbHumanoidLeastIntelligent']() != 1 or m['dkbHumanoidSometimesFurred']() != 1 or m['dkbHumanoidNoOwnLanguage']() != 1 or m['dkbHumanoidHumanEmpathy']() != 1 or m['dkbHumanoidMountainIslandLair']() != 1"
+  },
+  {
+   "note": "the insectoid gargantua",
+   "expr": "m['dkbInsectoidNoAppMin']() != 1 or m['dkbInsectoidNoAppMax']() != 3 or m['dkbInsectoidAC']() != 6 or m['dkbInsectoidMoveGround']() != 6 or m['dkbInsectoidMoveFly']() != 36 or m['dkbInsectoidAttacks']() != 1 or m['dkbInsectoidDmgMin']() != 3 or m['dkbInsectoidDmgMax']() != 30 or m['dkbInsectoidSizeFt']() != 60 or m['dkbInsectoidLarvaHD']() != 20 or m['dkbInsectoidGrowthPerWeek']() != 1 or m['dkbInsectoidPupationHD']() != 25 or m['dkbInsectoidPupaeWeeksDice']() != 2 or m['dkbInsectoidPupaeWeeksSides']() != 4 or m['dkbInsectoidMothHD']() != 30 or m['dkbInsectoidSilkRangeFt']() != 60 or m['dkbInsectoidSilkSeverDmg']() != 20 or m['dkbInsectoidSilkSeverHDMonster']() != 10 or m['dkbInsectoidWindstormWidthFt']() != 6 or m['dkbInsectoidWindstormSavePenalty']() != 4 or m['dkbInsectoidBlowbackMinFt']() != 10 or m['dkbInsectoidBlowbackMaxFt']() != 40 or m['dkbInsectoidBlowbackDmgPerFt']() != 6 or m['dkbInsectoidXP20HDBase']() != 11100 or m['dkbInsectoidXP20HDPerHP']() != 30 or m['dkbInsectoidXP21HDBase']() != 13600 or m['dkbInsectoidXP21HDPerHP']() != 35 or m['dkbInsectoidRare']() != 1 or m['dkbInsectoidLairNil']() != 1 or m['dkbInsectoidTreasureNil']() != 1 or m['dkbInsectoidSpecialDefenseRegeneration']() != 1 or m['dkbInsectoidMRStandard']() != 1 or m['dkbInsectoidIntLow']() != 1 or m['dkbInsectoidChaoticNeutral']() != 1 or m['dkbInsectoidPsionicNil']() != 1 or m['dkbInsectoidGrowthStages']() != 1 or m['dkbInsectoidSilkEntangles']() != 1 or m['dkbInsectoidSilkSeverBendBars']() != 1 or m['dkbInsectoidMothLosesSilk']() != 1 or m['dkbInsectoidWindstormByFlapping']() != 1 or m['dkbInsectoidWarmMountains']() != 1"
+  },
+  {
+   "note": "the reptilian gargantua",
+   "expr": "m['dkbReptilianNoAppMin']() != 1 or m['dkbReptilianNoAppMax']() != 2 or m['dkbReptilianAC']() != 2 or m['dkbReptilianMoveWalk']() != 18 or m['dkbReptilianMoveSwim']() != 12 or m['dkbReptilianHD']() != 50 or m['dkbReptilianAttacks']() != 3 or m['dkbReptilianClawDmgMin']() != 3 or m['dkbReptilianClawDmgMax']() != 30 or m['dkbReptilianBiteDmgMin']() != 6 or m['dkbReptilianBiteDmgMax']() != 60 or m['dkbReptilianSizeMinFt']() != 100 or m['dkbReptilianSizeMaxFt']() != 200 or m['dkbReptilianTrampleDice']() != 10 or m['dkbReptilianTrampleSides']() != 10 or m['dkbReptilianTailSweepFt']() != 90 or m['dkbReptilianTailDmgDice']() != 8 or m['dkbReptilianTailDmgSides']() != 10 or m['dkbReptilianXPBase']() != 22600 or m['dkbReptilianXPPerHP']() != 35 or m['dkbReptilianRare']() != 1 or m['dkbReptilianLairNil']() != 1 or m['dkbReptilianTreasureNil']() != 1 or m['dkbReptilianPsionicNil']() != 1 or m['dkbReptilianGiganticBipedal']() != 1 or m['dkbReptilianUnableToSpeak']() != 1 or m['dkbReptilianSimpleEmpathy']() != 1 or m['dkbReptilianClawsAndBite']() != 1 or m['dkbReptilianTailSweepSaveVsDeath']() != 1 or m['dkbReptilianTropicalIslands']() != 1 or m['dkbReptilianSwims']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the shared gargantua doctrine": [
+   {
+    "kind": "const",
+    "name": "dkbGargantuaTypeCount"
+   },
+   {
+    "kind": "const",
+    "name": "dkbGargantuaRegenPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbGargantuaMonstrousClass"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbGargantuaOriginUnknown"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbGargantuaMindlessBrutes"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbGargantuaGroundTrembles"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbGargantuaEasilySpotted"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbGargantuaSquealingRoars"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbGargantuaNationalEmergency"
+   }
+  ],
+  "the humanoid gargantua": [
+   {
+    "kind": "const",
+    "name": "dkbHumanoidNoAppMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidNoAppMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidMove"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidHD"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidFistDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidFistDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidTrampleDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidTrampleDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidSizeMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidSizeMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidHeightMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidHeightMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidComprehendPct"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidXPBase"
+   },
+   {
+    "kind": "const",
+    "name": "dkbHumanoidXPPerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbHumanoidVeryRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbHumanoidLairNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbHumanoidTreasureNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbHumanoidTrample"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbHumanoidPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbHumanoidLeastIntelligent"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbHumanoidSometimesFurred"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbHumanoidNoOwnLanguage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbHumanoidHumanEmpathy"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbHumanoidMountainIslandLair"
+   }
+  ],
+  "the insectoid gargantua": [
+   {
+    "kind": "const",
+    "name": "dkbInsectoidNoAppMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidNoAppMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidMoveGround"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidMoveFly"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidSizeFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidLarvaHD"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidGrowthPerWeek"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidPupationHD"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidPupaeWeeksDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidPupaeWeeksSides"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidMothHD"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidSilkRangeFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidSilkSeverDmg"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidSilkSeverHDMonster"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidWindstormWidthFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidWindstormSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidBlowbackMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidBlowbackMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidBlowbackDmgPerFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidXP20HDBase"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidXP20HDPerHP"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidXP21HDBase"
+   },
+   {
+    "kind": "const",
+    "name": "dkbInsectoidXP21HDPerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidLairNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidTreasureNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidSpecialDefenseRegeneration"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidMRStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidIntLow"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidChaoticNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidGrowthStages"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidSilkEntangles"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidSilkSeverBendBars"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidMothLosesSilk"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidWindstormByFlapping"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbInsectoidWarmMountains"
+   }
+  ],
+  "the reptilian gargantua": [
+   {
+    "kind": "const",
+    "name": "dkbReptilianNoAppMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianNoAppMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianMoveWalk"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianMoveSwim"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianHD"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianClawDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianClawDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianBiteDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianBiteDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianSizeMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianSizeMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianTrampleDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianTrampleSides"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianTailSweepFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianTailDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianTailDmgSides"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianXPBase"
+   },
+   {
+    "kind": "const",
+    "name": "dkbReptilianXPPerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianLairNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianTreasureNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianGiganticBipedal"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianUnableToSpeak"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianSimpleEmpathy"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianClawsAndBite"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianTailSweepSaveVsDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianTropicalIslands"
+   },
+   {
+    "kind": "bool",
+    "name": "dkbReptilianSwims"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the gargantua box",
+   "from": "  - [ ] Gargantua (capture pp. 263-265) - the",
+   "to": "  - [x] Gargantua (capture pp. 263-265) - the\n    - R714: the dkb gargantua pins - the\n    shared doctrine (the monstrous class, the\n    unknown origin, the mindless brutes, the\n    ground-trembling no-surprise rule, the\n    squealing roars, the 4-per-round\n    regeneration, the national-emergency\n    rarity), the humanoid (the very rare, the\n    AC 4, the move 21, the HD 35, the 2\n    fists of 4-40, the 10-100 trample, the\n    25% comprehension by empathy, the\n    mountain-island lair, the 16,600 +\n    35/hp), the insectoid (the rare, the AC 6, the\n    move 6/36 MC E, the 3-30, the egg-larva\n    20 HD growing 1 per week to the 25 HD\n    cocoon and the 2d4-week pupae, the 30 HD\n    moth, the 60-foot silk severed at 20\n    damage or bend bars, the -4 save\n    windstorm blowing 10-40 for 1d6 per\n    foot, the 20 HD 11,100 + 30 and the 21\n    + HD 13,600 + 35), the reptilian (the\n    rare, the AC 2, the move 18/12, the HD\n    50, the 3 attacks of 3-30/3-30/6-60,\n    the 10d10 upright trample, the 90-foot\n    tail sweep with the save vs. death or\n    8d10, the swimming tropical islands, the\n    Level X 22,600 + 35); single-pass pins\n    per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 167,
+  "open": 68
+ },
+ "include_comment": "the OA Gargantua pins",
+ "include_after": "#include \"rules/oa84gaki.h\"  // R713: the OA Gaki pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R713 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R713 LANDED 2026-10-21: commit 0124fd4ca300c5abf57005f5bedc018b4b1f0947",
+  "  (census 635 -> 636, pushed 683d2c6..0124fd4), OA MONSTERS - the",
+  "  Gaki, Lesser Spirit, capture pp. 262-263 print:",
+  "  rules/oa84gaki.h, prefix dka (verified free at 683d2c6), ONE",
+  "  gap flip, gap census 166/69 - OA round one hundred, the",
+  "  four hungry spirits riding one flip. 56 consts + 42 bools",
+  "  (98 inlines): the shared doctrine (the spirits of the",
+  "  wicked, the crimes determine the type, the compelled evil,",
+  "  the never-sated hunger, the invisible and the insect",
+  "  polymorph at will, the passwall three per day, the mental",
+  "  spell immunity with the spirit spell vulnerability); the",
+  "  jiki-ketsu (the very rare, the AC 2, the HD 8, the 3",
+  "  attacks of 1-3/1-3/1-8, the VII/1,075 + 10, the vampiric",
+  "  gripped bite draining 1-10 per round, the +3 weapons, the",
+  "  1-per-round regeneration, the cold and fire immunity, the",
+  "  night activity); the jiki-niku (the rare, the AC 6, the",
+  "  HD 3, the II/50 + 3, the flesh eating, the graveyard",
+  "  haunts, the 1-per-turn regeneration); the shikki (the",
+  "  uncommon, the AC 4, the HD 5, the IV/245 + 5, the save vs.",
+  "  poison per hit, the 2d6-turn onset delirium at 1 hp per",
+  "  hour for 2-5 days, the +1 weapons, the 2-per-turn",
+  "  regeneration); the shinen (the uncommon, the AC 0, the",
+  "  HD 4, the move 0, the III/135 + 4, the moving fire luring",
+  "  to the circle of flame, the 1d10 fire damage, the -2",
+  "  water save with the +1 per die, the +2 weapons, the",
+  "  3-per-turn regeneration). Zero false starts, first rverify",
+  "  GREEN, 98 mutants, 0 missed. Spec md5",
+  "  453cbba52b2ee04f0ab1007a9a9a799f (authored-plus-newline md5",
+  "  b4e1c086c1dc376f4fc7458e52b05887, the ritual gate, matched",
+  "  byte-exact; canvas md5 4230843d82b31ded684dffaaa2c24e5e).",
+  "  NEXT - R714: the Gargantua (capture pp. 263-265), prefix",
+  "  dkb (verified free at 0124fd4), audit \"R714 OA monsters",
+  "  Gargantua audit\", include after rules/oa84gaki.h."
+ ]
+}
