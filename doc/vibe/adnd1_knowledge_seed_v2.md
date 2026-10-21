@@ -15916,6 +15916,45 @@ when both halves land.
   canvas md5 16ab54c79da166edfaa3c4c27fa720de). NEXT - R699: Table 72 the
   monthly events grid (capture p. 238), prefix djm (verified free at c729f3c),
   audit "R699 OA monthly events audit", include after rules/oa71explain.h
+- R699 LANDED 2026-10-21: commit 11ae6a806d4d410734972a3c17a0e33a78192eb9
+  (census 621 -> 622, pushed c729f3c..11ae6a8), OA TABLE 72 - the monthly
+  events, capture p. 238 print: rules/oa72monthly.h, prefix djm (verified free
+  at c729f3c), ONE gap flip, gap census 151/84 -> 152/83. 8 consts + 3 bools +
+  the 40x5 grid djmOA72Grid (16 inlines): the forty die-range rows of the
+  percentile die contiguous 1-100 across the three columns - the war months
+  (the first column: Bandit Activity 06-10, Birth 11-15, Death 16-20,
+  Excessive Taxes 21-25, Famous Person 26-27, Fire Major the lone 28, Haunting
+  29-30, Horrendous Monster 31-33, Incursion Major 34-41, Incursion Minor
+  42-51, Injustice 52-54, Major Battle 55-60, Notorious Criminal the lone 61,
+  Recruiting 62-66, Troop Movements 67-73, Uprising 74-78, Vengeful Stranger
+  79-80, No Event 81-100), the natural disaster months (the second: Bad
+  Harvest 06-15, Bad Weather 16-22, Bandit Activity 23-30, Birth 33-37, Death
+  38-44, Earthquake Minor 45-49, Excessive Taxes 50-54, Fire Minor 55-60,
+  Flooding 61-66, Haunting 67-69, Horrendous Monster 70-73, Injustice 74-78,
+  Landslide 79-82, Maneater 83-87, Plague 88-92, Uprising the lone 93, VIP
+  Visit the lone 94, No Event 95-100), the other months (the third: Bad
+  Harvest 06-07, Bad Weather 08-10, Bandit Activity 11-15, Birth 16-27, Death
+  28-30, Famous Person 31-35, Fire Minor 36-40, Haunting 41-43, Injustice
+  44-51, Maiden of Virtue 51-55, Maneater 56-60, Marriage 61-68, Notorious
+  Criminal 69-78, Vengeful Stranger 79-83, VIP Visit 84-92, No Event 93-100);
+  the thirty event names by ordinal (Accident 1, Bandit Activity 2, Bad
+  Harvest 3, Bad Weather 4, Birth 5, Death 6, Earthquake Minor 7, Excessive
+  Taxes 8, Famous Person 9, Fire Major 10, Fire Minor 11, Flooding 12,
+  Haunting 13, Horrendous Monster 14, Incursion Major 15, Incursion Minor 16,
+  Injustice 17, Landslide 18, Maiden of Virtue 19, Major Battle 20, Maneater
+  21, Marriage 22, No Event 23, Notorious Criminal 24, Plague 25, Recruiting
+  26, Troop Movements 27, Uprising 28, Vengeful Stranger 29, VIP Visit 30),
+  Accident 01-05 and No Event 95-100 in all three columns; the duplicate
+  62-65/66 rows preserved; the column steering by the yearly event, one roll
+  per month, the DM free to substitute and to add beyond the list; the OCR
+  Horrendous Monster- hyphen artifact resolved. Single-pass pins per the
+  Chapter 9 provenance shift. rverify GREEN first try at c729f3c, 211 mutants,
+  0 missed. Spec md5 d73b981cee0d80a59471ae7bd852c7b7 (authored-plus-newline
+  md5 055cf707292aa5c3d79233afc8ba4f39 - the value the ritual gated and
+  matched; canvas md5 ac636264943d5a59da573a41ee58577a). NEXT - R700: the
+  Monthly Events prose and explanations (capture pp. 238-247), prefix djn
+  (verified free at 11ae6a8), audit "R700 OA monthly events prose audit",
+  include after rules/oa72monthly.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

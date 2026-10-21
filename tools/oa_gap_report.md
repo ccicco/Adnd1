@@ -1798,8 +1798,63 @@ description riding the same round.
     per land of involvement; single-pass
     pins per the Chapter 9
     provenance shift
-  - [ ] Monthly Events prose and explanations
-    (capture pp. 238-247)
+  - [x] Monthly Events prose and
+    explanations (capture pp. 238-247)
+    - R700: the djn monthly explanation pins
+    the twenty-eight events explained: the
+    Accident (the DM's choice, the
+    inconvenience-to-calamity range), the
+    Bad Harvest (25% income, 5% famine, the
+    50% food, the blamed ruler), the Bad
+    Weather (the 50% movement, the 15%
+    desertion, the 15% farm income), the
+    Bandit Activity (the 20-200 bandits,
+    the 50% caravans, the 80% lone
+    travelers, the spies, the boast rule),
+    the Birth (95% noble, 5% miraculous,
+    nine months), the Death (the 30% other
+    heir, the 2-7-week official, the
+    suspended duties), the Earthquake
+    Minor (the 5-mile radius, 50%
+    damaged, the 20/30 fires, the doubled
+    materials 1-2 months), the Excessive
+    Taxes (30% uprising, 70% bandits), the
+    Famous Person (the quiet 1d6-week
+    stay), the Fire Minor (the 10-40%
+    city, 50-70% town, 80-100% village),
+    the Flooding (the 5d4-foot wave, the
+    101-200 feet wide, the 1d6 miles, the
+    3d2 inches), the Haunting (real or not
+    the DM's choice), the Horrendous
+    Monster (the evil-god offerings, the
+    appearing kin), the Incursions (the
+    major sudden and permanent, the minor
+    smaller), the Injustice (the 5%/20%
+    accusations), the Landslide (the hills
+    only, the 1-2 weeks), the Maiden of
+    Virtue (the 50/30/10/10 origins, the
+    13s, the arts), the Major Battle (the
+    BATTLESYSTEM), the Maneater (1-2
+    strikes a week), the Marriage (the
+    accepted proposal, the feasting), the
+    Notorious Criminal (the possible
+    rumor), the Plague (see the yearly),
+    the Recruiting (the 20% sweep), the
+    Troop Movements (the 10% spy arrest,
+    the 40% ninja orders, no repayment),
+    the Uprising (10% armored, 60%
+    monasteries, the 2-4-month training,
+    70% heard, 70% bandits 1-3 months), the
+    Vengeful Stranger (the 70% found, the
+    ancestral feud), the VIP Visit (the
+    disguise, the banquets); the rigidity:
+    the monthly events rerolled when the
+    players change them, the yearly NEVER
+    (the R698 pin); the worked example (the
+    82 Rebellion, the month 5, the 3-month
+    duration, the 4/3/5 column split);
+    single-pass pins per the Chapter 9
+    provenance shift
   - [x] Table 72: Monthly Events (capture
     p. 238)
     - R699: the djm monthly events grid
