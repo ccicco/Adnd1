@@ -2641,7 +2641,65 @@ description riding the same round.
     hit point per round, the three
     languages); single-pass
     pins per the Chapter 9 provenance shift
-  - [ ] Oni, Lesser Spirit (capture pp. 280-281)
+  - [x] Oni, Lesser Spirit (capture pp. 280-281)
+    - R728: the dkp oni pins - the stat
+    grid (the common of the common oni and
+    the very rare of the go-zu and the
+    me-zu; the appearing 1-100 of the
+    common with the capture misreading
+    i-100 and the 1-20 of both bull and
+    horse columns; the AC 4, 0, and 2;
+    the moves 9, 9, and 12; the HD 8,
+    12 + 8, and 10 + 5; the lairs 10%,
+    nil, and nil; the A and S and S
+    treasures; the 2, 3, and 2 attacks of
+    the 3-10/3-10, the 6-16 twice and
+    1-10, and the 3-18/3-18 of the capture
+    misreading 310/310 and 3-1813-18; the
+    spells and the see-below specials; the
+    nil and regeneration defenses; the
+    standard, 20%, and 40% MR; the average
+    and high and high wits; the lawful evil
+    and the lawful neutral pair; the L
+    sizes; the nil psionics; the 650 + 10,
+    5,250 + 16, and 3,150 + 14 xp); the
+    fearsome spirit (the desolate haunts,
+    the seven to eight feet, the one to
+    three eyes, the one or two horns, the
+    coarse hair, the dirty talons, the red
+    skins of the five colors, the blue
+    ogre magi, the ragged imitation dress);
+    the common oni (the mountain and ruin
+    and graveyard haunts, the highway
+    shrine terror, the bloodthirsty
+    cruelty, the one-hand two-handed sword,
+    the thrice polymorph and thrice fly,
+    the twice invisible, the once cloud
+    trapeze, the fear at will, the command
+    of the bakemono and goblin rats and
+    gaki, the 10% summon of the 2d10, the
+    4d10 lair court, the five languages);
+    the go-zu (the eight to nine feet with
+    the bull heads, the Celestial soldiers,
+    the Emperor army bulk, the lands of
+    the dead, the soldier dress, the
+    five-weapon roster, the two attacks and
+    the horn gore, the at-will powers with
+    the fire shuriken, the twice cloud
+    trapeze, the automatic invisible
+    detection, the 3-per-round regeneration,
+    the hill giant strength, the six
+    language rosters); the me-zu (the
+    horse heads, the higher rank, the whips
+    and lassos, the at-will powers, the
+    twice ethereal or astral, the thrice
+    cloud trapeze, the wu jen spellcasting
+    of the hit-dice level, the true seeing
+    at all times, the any language, the
+    3-per-round regeneration, the stone
+    giant strength, the unbending Celestial
+    mission); single-pass
+    pins per the Chapter 9 provenance shift
   - [ ] P'oh, Lesser Spirit (capture pp. 281-282)
   - [ ] Shan Sao (capture p. 282)
   - [ ] Shirokinukatsukami, Greater Spirit

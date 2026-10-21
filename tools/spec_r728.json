@@ -1,0 +1,811 @@
+{
+ "round": 728,
+ "title": "OA MONSTERS - the Oni: the common, go-zu, and me-zu spirits of the desolate places",
+ "prefix": "dkp",
+ "header_file": "rules/oa99oni.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 650,
+ "inline_count": 77,
+ "audit_label": "R728 OA monsters Oni audit",
+ "audit_comment": "OA round one hundred fifteen (capture pp. 280-281): the Chapter 12 monster roster - the oni, the three-column stat grid of the common, the go-zu, and the me-zu riding together with the fearsome spirit descriptions, the capture misreads pinned against the print, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE ONI, printed capture pp. 280-281 - the fearsome spirit round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 181 closed, 54 open - the oni box flips (census 650 -> 651); NEXT - R729: the P oh, the Lesser Spirit (capture pp. 281-282), prefix dkq (verify free at the landing), audit \"R729 OA monsters P oh audit\", include after rules/oa99oni.h"
+ },
+ "consts": [
+  {
+   "name": "dkpOniCount",
+   "value": 3,
+   "comment": "the oni table row count - the common, the go-zu, and the me-zu of the stat grid (print capture p. 280)"
+  },
+  {
+   "name": "dkpCommonRegenPerRound",
+   "value": 3,
+   "comment": "the regeneration rate - the go-zu and me-zu regenerate 3 hit points per round (print capture p. 281)"
+  },
+  {
+   "name": "dkpCommonSummonDice",
+   "value": 10,
+   "comment": "the summon die - when encountered there is a 10% chance the oni is accompanied by 2d10 of these creatures, the die of the 2d10 (print capture p. 280)"
+  },
+  {
+   "name": "dkpCommonSummonChancePct",
+   "value": 10,
+   "comment": "the summon chance - the 10% chance the common oni commands lesser creatures (print capture p. 280)"
+  },
+  {
+   "name": "dkpLairGuardDice",
+   "value": 10,
+   "comment": "the lair guard die - in their lair there are always 4d10 bakemono or goblin rats present, the die of the 4d10 (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuHeightMinFt",
+   "value": 8,
+   "comment": "the go-zu height minimum - the eight of the eight to nine feet tall (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuHeightMaxFt",
+   "value": 9,
+   "comment": "the go-zu height maximum - the nine of the eight to nine feet tall (print capture p. 281)"
+  },
+  {
+   "name": "dkpPolymorphSelfPerDay",
+   "value": 3,
+   "comment": "the common oni polymorph uses - polymorph self three times per day (print capture p. 280)"
+  },
+  {
+   "name": "dkpFlyPerDay",
+   "value": 3,
+   "comment": "the common oni fly uses - fly as per the spell three times per day (print capture p. 280)"
+  },
+  {
+   "name": "dkpInvisiblePerDay",
+   "value": 2,
+   "comment": "the common oni invisible uses - become invisible two times per day (print capture p. 280)"
+  },
+  {
+   "name": "dkpCloudTrapezePerDay",
+   "value": 1,
+   "comment": "the common oni cloud trapeze uses - for themselves only once per day (print capture p. 280)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkpCommonOniCommon",
+   "value": 1,
+   "comment": "the common oni frequency - the common of the stat grid header (print capture p. 280)"
+  },
+  {
+   "name": "dkpGoZuVeryRare",
+   "value": 1,
+   "comment": "the go-zu frequency - the very rare of the stat grid header (print capture p. 280)"
+  },
+  {
+   "name": "dkpMeZuVeryRare",
+   "value": 1,
+   "comment": "the me-zu frequency - the very rare of the stat grid header (print capture p. 280)"
+  },
+  {
+   "name": "dkpCommonChaoticEvil",
+   "value": 1,
+   "comment": "the common oni alignment - the lawful evil of the stat grid, the capture row reading Lawful evil (print capture p. 280)"
+  },
+  {
+   "name": "dkpGoZuMeZuLawfulNeutral",
+   "value": 1,
+   "comment": "the go-zu and me-zu alignment - the lawful neutral of both columns of the stat grid (print capture p. 280)"
+  },
+  {
+   "name": "dkpCommonIntAverage",
+   "value": 1,
+   "comment": "the common oni intelligence - the average of the stat grid (print capture p. 280)"
+  },
+  {
+   "name": "dkpGoZuMeZuIntHigh",
+   "value": 1,
+   "comment": "the go-zu and me-zu intelligence - the high of both columns (print capture p. 280)"
+  },
+  {
+   "name": "dkpSizeLarge",
+   "value": 1,
+   "comment": "the size class - the L of all three columns of the stat grid (print capture p. 280)"
+  },
+  {
+   "name": "dkpPsionicNil",
+   "value": 1,
+   "comment": "the psionic ability - the nil of all three columns (print capture p. 280)"
+  },
+  {
+   "name": "dkpModesNil",
+   "value": 1,
+   "comment": "the attack and defense modes - the nil of all three columns (print capture p. 280)"
+  },
+  {
+   "name": "dkpCommonSpecialAttacksSpells",
+   "value": 1,
+   "comment": "the common oni special attacks - the spells of the stat grid (print capture p. 280)"
+  },
+  {
+   "name": "dkpGoZuMeZuSpecialSeeBelow",
+   "value": 1,
+   "comment": "the go-zu and me-zu special attacks - the see below of both columns (print capture p. 280)"
+  },
+  {
+   "name": "dkpCommonDefensesNil",
+   "value": 1,
+   "comment": "the common oni special defenses - the nil of the stat grid (print capture p. 280)"
+  },
+  {
+   "name": "dkpGoZuMeZuRegeneration",
+   "value": 1,
+   "comment": "the go-zu and me-zu special defenses - the regeneration of both columns (print capture p. 280)"
+  },
+  {
+   "name": "dkpCommonMRStandard",
+   "value": 1,
+   "comment": "the common oni magic resistance - the standard of the stat grid (print capture p. 280)"
+  },
+  {
+   "name": "dkpFearsomeSpirits",
+   "value": 1,
+   "comment": "the nature - the oni are fearsome spirits who dwell in desolate and forbidding places (print capture p. 280)"
+  },
+  {
+   "name": "dkpSevenToEightFeet",
+   "value": 1,
+   "comment": "the common height - stand seven to eight feet tall (print capture p. 280)"
+  },
+  {
+   "name": "dkpOneToThreeEyes",
+   "value": 1,
+   "comment": "the eyes - have one to three eyes (print capture p. 280)"
+  },
+  {
+   "name": "dkpOneOrTwoHorns",
+   "value": 1,
+   "comment": "the horns - one or two horns on their head (print capture p. 280)"
+  },
+  {
+   "name": "dkpCoarseHairLimbs",
+   "value": 1,
+   "comment": "the limbs - arms and legs covered with coarse hair (print capture p. 280)"
+  },
+  {
+   "name": "dkpDirtyThickTalons",
+   "value": 1,
+   "comment": "the hands - they end in dirty, thick talons (print capture p. 280)"
+  },
+  {
+   "name": "dkpSkinNormallyRed",
+   "value": 1,
+   "comment": "the skin - normally red, but other colors including green, black, orange, and purple have been seen (print capture p. 280)"
+  },
+  {
+   "name": "dkpBlueSkinnedOgreMagi",
+   "value": 1,
+   "comment": "the blue skins - there are also blue-skinned oni, although these are more commonly known as ogre magi (print capture p. 280)"
+  },
+  {
+   "name": "dkpDressImitatesHumans",
+   "value": 1,
+   "comment": "the dress - imitates that of the local human population, although more ragged and dirty than their human counterparts (print capture p. 280)"
+  },
+  {
+   "name": "dkpCommonHaunts",
+   "value": 1,
+   "comment": "the common haunts - found living in rocky mountain regions, deserted ruins, graveyards, and other sites commonly considered haunted (print capture p. 280)"
+  },
+  {
+   "name": "dkpHighwayShrineTerror",
+   "value": 1,
+   "comment": "the highway clause - occasionally they take up residence along a lonely highway at a shrine or gate, terrorizing all who go by (print capture p. 280)"
+  },
+  {
+   "name": "dkpBloodthirstyCruel",
+   "value": 1,
+   "comment": "the temper - bloodthirsty and cruel, attacking for food and the sheer delight of cruelty (print capture p. 280)"
+  },
+  {
+   "name": "dkpTwoHandedSwordOrClaws",
+   "value": 1,
+   "comment": "the common weapons - they commonly fight with two-handed swords wielded in one hand or their powerful claws (print capture p. 280)"
+  },
+  {
+   "name": "dkpCauseFearAtWill",
+   "value": 1,
+   "comment": "the fear power - cause fear at will (print capture p. 280)"
+  },
+  {
+   "name": "dkpCommandsLesserCreatures",
+   "value": 1,
+   "comment": "the command - frequently found in command of lesser creatures such as bakemono, goblin rats, and gaki (print capture p. 280)"
+  },
+  {
+   "name": "dkpLairCourt",
+   "value": 1,
+   "comment": "the lair court - encountered in their lair there are always 4d10 bakemono or goblin rats present, attending the court of the more powerful oni (print capture p. 281)"
+  },
+  {
+   "name": "dkpCommonSpeaksFive",
+   "value": 1,
+   "comment": "the common languages - able to speak the language of their kind and the languages of tengu, bakemono, hengeyokai, and the local human population (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuBullHeads",
+   "value": 1,
+   "comment": "the go-zu heads - stand eight to nine feet tall with a hulking body and the heads of bulls (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuCelestialSoldiers",
+   "value": 1,
+   "comment": "the go-zu standing - unlike the common oni, servants and soldiers of the Celestial Empire (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuMeZuEmperorsArmy",
+   "value": 1,
+   "comment": "the army clause - the go-zu and the me-zu form the bulk of the Celestial Emperor army in times of trouble and insurrection (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuOverseeLandsOfDead",
+   "value": 1,
+   "comment": "the dead lands - they also oversee the lands of the dead and escort the reluctant departed there (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuSoldierDress",
+   "value": 1,
+   "comment": "the go-zu dress - they dress in armor and robes appropriate to their position as soldiers of the Celestial Emperor (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuWeaponRoster",
+   "value": 1,
+   "comment": "the go-zu weapons - they fight with two-handed swords, spears, naginata, halberds, and tridents (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuTwoAttacksAndGore",
+   "value": 1,
+   "comment": "the go-zu combat - able to make two attacks with a weapon or their hands per round and gore with their horns (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuAtWillPowers",
+   "value": 1,
+   "comment": "the go-zu at-will powers - polymorph self, cause fear, become invisible, fly, and cast fire shuriken (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuCloudTrapezeTwicePerDay",
+   "value": 1,
+   "comment": "the go-zu cloud trapeze - twice per day (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuAutoDetectInvisible",
+   "value": 1,
+   "comment": "the go-zu detection - they can automatically detect invisible creatures and objects (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuHillGiantStrength",
+   "value": 1,
+   "comment": "the go-zu strength - equal to that of a hill giant (print capture p. 281)"
+  },
+  {
+   "name": "dkpGoZuLanguages",
+   "value": 1,
+   "comment": "the go-zu languages - all human languages and those of tengu, oni, bakemono, animals, and the Celestial Court (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuMostImportant",
+   "value": 1,
+   "comment": "the me-zu standing - the most important of all oni (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuHorseHeads",
+   "value": 1,
+   "comment": "the me-zu look - ogre sized with the heads of horses (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuHigherRank",
+   "value": 1,
+   "comment": "the me-zu rank - like the go-zu, servants and soldiers of the Celestial Emperor, although generally holding positions of higher rank within his army (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuWhipsAndLassos",
+   "value": 1,
+   "comment": "the me-zu extra tools - in addition to the weapons used by the go-zu oni, they are also known to use whips and lassos to deal with their victims (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuAtWillPowers",
+   "value": 1,
+   "comment": "the me-zu at-will powers - polymorph self, become invisible, cause fear, and fly (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuEtherealAstralTwicePerDay",
+   "value": 1,
+   "comment": "the me-zu plane shifts - become ethereal or astral two times per day (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuCloudTrapezeThricePerDay",
+   "value": 1,
+   "comment": "the me-zu cloud trapeze - three times per day (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuWuJenSpellcasting",
+   "value": 1,
+   "comment": "the me-zu spellcasting - the spell casting ability of a wu jen of the same experience level as their hit dice (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuTrueSeeingAlways",
+   "value": 1,
+   "comment": "the me-zu sight - the sight abilities as per the true seeing spell in effect at all times (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuAnyLanguage",
+   "value": 1,
+   "comment": "the me-zu languages - able to speak and understand any language (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuStoneGiantStrength",
+   "value": 1,
+   "comment": "the me-zu strength - equal to that of a stone giant (print capture p. 281)"
+  },
+  {
+   "name": "dkpMeZuOnCelestialMission",
+   "value": 1,
+   "comment": "the me-zu errand - when encountered they are on some mission assigned by the Celestial Empire and do not brook any interference or delay to this mission (print capture p. 281)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dkpOni",
+   "tag": "Oni",
+   "count": "dkpOniCount",
+   "comment": "the oni stat grid - the common, the go-zu, and the me-zu, row by row, the frequencies riding the capture header (print capture p. 280)",
+   "cols": [
+    "dkpOniAppearMin",
+    "dkpOniAppearMax",
+    "dkpOniAC",
+    "dkpOniMove",
+    "dkpOniHD",
+    "dkpOniHDBonus",
+    "dkpOniAttacks",
+    "dkpOniMRPct",
+    "dkpOniXPBase",
+    "dkpOniXPPerHP"
+   ],
+   "col_comments": [
+    "the appearing minimum - the 1 of the 1-100, 1-20, and 1-20; the capture misreads i-100 for the 1-100 of the common (print capture p. 280)",
+    "the appearing maximum - the 100 and the 20 and the 20 of the three columns (print capture p. 280)",
+    "the armor class - the 4, the 0, and the 2 of the three columns (print capture p. 280)",
+    "the move - the 9, the 9, and the 12 (print capture p. 280)",
+    "the hit dice - the 8, the 12, and the 10 of the three columns (print capture p. 280)",
+    "the hit dice bonus - the 0 of the common, the 8 of the 12 + 8, and the 5 of the 10 + 5 (print capture p. 280)",
+    "the attack count - the 2, the 3, and the 2 (print capture p. 280)",
+    "the magic resistance - the 0 of the common standard, the 20%, and the 40% (print capture p. 280)",
+    "the xp base - the 650 of the VI/650 + 10, the 5,250 of the VIII/5,250 + 16, and the 3,150 of the VIII/3,150 + 14 (print capture p. 280)",
+    "the xp per hit point - the 10, the 16, and the 14 of the three xp lines (print capture p. 280)"
+   ],
+   "data": [
+    [
+     1,
+     100,
+     4,
+     9,
+     8,
+     0,
+     2,
+     0,
+     650,
+     10
+    ],
+    [
+     1,
+     20,
+     0,
+     9,
+     12,
+     8,
+     3,
+     20,
+     5250,
+     16
+    ],
+    [
+     1,
+     20,
+     2,
+     12,
+     10,
+     5,
+     2,
+     40,
+     3150,
+     14
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the stat grid - the per-type lines, healthy values, each condition false",
+   "expr": "m['dkpCommonOniCommon']() != 1 or m['dkpGoZuVeryRare']() != 1 or m['dkpMeZuVeryRare']() != 1 or m['dkpCommonChaoticEvil']() != 1 or m['dkpGoZuMeZuLawfulNeutral']() != 1 or m['dkpCommonIntAverage']() != 1 or m['dkpGoZuMeZuIntHigh']() != 1 or m['dkpSizeLarge']() != 1 or m['dkpPsionicNil']() != 1 or m['dkpModesNil']() != 1 or m['dkpCommonSpecialAttacksSpells']() != 1 or m['dkpGoZuMeZuSpecialSeeBelow']() != 1 or m['dkpCommonDefensesNil']() != 1 or m['dkpGoZuMeZuRegeneration']() != 1 or m['dkpCommonMRStandard']() != 1"
+  },
+  {
+   "note": "the oni grid - the three-column stat table, audited cell by cell by the table audit",
+   "expr": "m['dkpOniCount']() != 3"
+  },
+  {
+   "note": "the fearsome spirit - the look and the dress, healthy values, each condition false",
+   "expr": "m['dkpFearsomeSpirits']() != 1 or m['dkpSevenToEightFeet']() != 1 or m['dkpOneToThreeEyes']() != 1 or m['dkpOneOrTwoHorns']() != 1 or m['dkpCoarseHairLimbs']() != 1 or m['dkpDirtyThickTalons']() != 1 or m['dkpSkinNormallyRed']() != 1 or m['dkpBlueSkinnedOgreMagi']() != 1 or m['dkpDressImitatesHumans']() != 1"
+  },
+  {
+   "note": "the common oni - the haunts, the powers, and the court, healthy values, each condition false",
+   "expr": "m['dkpCommonHaunts']() != 1 or m['dkpHighwayShrineTerror']() != 1 or m['dkpBloodthirstyCruel']() != 1 or m['dkpTwoHandedSwordOrClaws']() != 1 or m['dkpPolymorphSelfPerDay']() != 3 or m['dkpFlyPerDay']() != 3 or m['dkpInvisiblePerDay']() != 2 or m['dkpCloudTrapezePerDay']() != 1 or m['dkpCauseFearAtWill']() != 1 or m['dkpCommandsLesserCreatures']() != 1 or m['dkpCommonSummonChancePct']() != 10 or m['dkpCommonSummonDice']() != 10 or m['dkpLairCourt']() != 1 or m['dkpLairGuardDice']() != 10 or m['dkpCommonSpeaksFive']() != 1"
+  },
+  {
+   "note": "the go-zu oni - the bull-headed soldiers of the Celestial Empire, healthy values, each condition false",
+   "expr": "m['dkpGoZuBullHeads']() != 1 or m['dkpGoZuHeightMinFt']() != 8 or m['dkpGoZuHeightMaxFt']() != 9 or m['dkpGoZuCelestialSoldiers']() != 1 or m['dkpGoZuMeZuEmperorsArmy']() != 1 or m['dkpGoZuOverseeLandsOfDead']() != 1 or m['dkpGoZuSoldierDress']() != 1 or m['dkpGoZuWeaponRoster']() != 1 or m['dkpGoZuTwoAttacksAndGore']() != 1 or m['dkpGoZuAtWillPowers']() != 1 or m['dkpGoZuCloudTrapezeTwicePerDay']() != 1 or m['dkpGoZuAutoDetectInvisible']() != 1 or m['dkpCommonRegenPerRound']() != 3 or m['dkpGoZuHillGiantStrength']() != 1 or m['dkpGoZuLanguages']() != 1"
+  },
+  {
+   "note": "the me-zu oni - the horse-headed officers, healthy values, each condition false",
+   "expr": "m['dkpMeZuMostImportant']() != 1 or m['dkpMeZuHorseHeads']() != 1 or m['dkpMeZuHigherRank']() != 1 or m['dkpMeZuWhipsAndLassos']() != 1 or m['dkpMeZuAtWillPowers']() != 1 or m['dkpMeZuEtherealAstralTwicePerDay']() != 1 or m['dkpMeZuCloudTrapezeThricePerDay']() != 1 or m['dkpMeZuWuJenSpellcasting']() != 1 or m['dkpMeZuTrueSeeingAlways']() != 1 or m['dkpMeZuAnyLanguage']() != 1 or m['dkpMeZuStoneGiantStrength']() != 1 or m['dkpMeZuOnCelestialMission']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat grid": [
+   {
+    "kind": "const",
+    "name": "dkpOniCount"
+   },
+   {
+    "kind": "table",
+    "name": "dkpOni"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpCommonOniCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuVeryRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuVeryRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpCommonChaoticEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuMeZuLawfulNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpCommonIntAverage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuMeZuIntHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpSizeLarge"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpModesNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpCommonSpecialAttacksSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuMeZuSpecialSeeBelow"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpCommonDefensesNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuMeZuRegeneration"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpCommonMRStandard"
+   }
+  ],
+  "the fearsome spirit": [
+   {
+    "kind": "bool",
+    "name": "dkpFearsomeSpirits"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpSevenToEightFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpOneToThreeEyes"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpOneOrTwoHorns"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpCoarseHairLimbs"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpDirtyThickTalons"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpSkinNormallyRed"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpBlueSkinnedOgreMagi"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpDressImitatesHumans"
+   }
+  ],
+  "the common oni": [
+   {
+    "kind": "bool",
+    "name": "dkpCommonHaunts"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpHighwayShrineTerror"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpBloodthirstyCruel"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpTwoHandedSwordOrClaws"
+   },
+   {
+    "kind": "const",
+    "name": "dkpPolymorphSelfPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dkpFlyPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dkpInvisiblePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dkpCloudTrapezePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpCauseFearAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpCommandsLesserCreatures"
+   },
+   {
+    "kind": "const",
+    "name": "dkpCommonSummonChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "dkpCommonSummonDice"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpLairCourt"
+   },
+   {
+    "kind": "const",
+    "name": "dkpLairGuardDice"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpCommonSpeaksFive"
+   }
+  ],
+  "the go-zu oni": [
+   {
+    "kind": "bool",
+    "name": "dkpGoZuBullHeads"
+   },
+   {
+    "kind": "const",
+    "name": "dkpGoZuHeightMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkpGoZuHeightMaxFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuCelestialSoldiers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuMeZuEmperorsArmy"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuOverseeLandsOfDead"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuSoldierDress"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuWeaponRoster"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuTwoAttacksAndGore"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuAtWillPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuCloudTrapezeTwicePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuAutoDetectInvisible"
+   },
+   {
+    "kind": "const",
+    "name": "dkpCommonRegenPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuHillGiantStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpGoZuLanguages"
+   }
+  ],
+  "the me-zu oni": [
+   {
+    "kind": "bool",
+    "name": "dkpMeZuMostImportant"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuHorseHeads"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuHigherRank"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuWhipsAndLassos"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuAtWillPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuEtherealAstralTwicePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuCloudTrapezeThricePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuWuJenSpellcasting"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuTrueSeeingAlways"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuAnyLanguage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuStoneGiantStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "dkpMeZuOnCelestialMission"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the oni box",
+   "from": "  - [ ] Oni, Lesser Spirit (capture pp. 280-281)",
+   "to": "  - [x] Oni, Lesser Spirit (capture pp. 280-281)\n    - R728: the dkp oni pins - the stat\n    grid (the common of the common oni and\n    the very rare of the go-zu and the\n    me-zu; the appearing 1-100 of the\n    common with the capture misreading\n    i-100 and the 1-20 of both bull and\n    horse columns; the AC 4, 0, and 2;\n    the moves 9, 9, and 12; the HD 8,\n    12 + 8, and 10 + 5; the lairs 10%,\n    nil, and nil; the A and S and S\n    treasures; the 2, 3, and 2 attacks of\n    the 3-10/3-10, the 6-16 twice and\n    1-10, and the 3-18/3-18 of the capture\n    misreading 310/310 and 3-1813-18; the\n    spells and the see-below specials; the\n    nil and regeneration defenses; the\n    standard, 20%, and 40% MR; the average\n    and high and high wits; the lawful evil\n    and the lawful neutral pair; the L\n    sizes; the nil psionics; the 650 + 10,\n    5,250 + 16, and 3,150 + 14 xp); the\n    fearsome spirit (the desolate haunts,\n    the seven to eight feet, the one to\n    three eyes, the one or two horns, the\n    coarse hair, the dirty talons, the red\n    skins of the five colors, the blue\n    ogre magi, the ragged imitation dress);\n    the common oni (the mountain and ruin\n    and graveyard haunts, the highway\n    shrine terror, the bloodthirsty\n    cruelty, the one-hand two-handed sword,\n    the thrice polymorph and thrice fly,\n    the twice invisible, the once cloud\n    trapeze, the fear at will, the command\n    of the bakemono and goblin rats and\n    gaki, the 10% summon of the 2d10, the\n    4d10 lair court, the five languages);\n    the go-zu (the eight to nine feet with\n    the bull heads, the Celestial soldiers,\n    the Emperor army bulk, the lands of\n    the dead, the soldier dress, the\n    five-weapon roster, the two attacks and\n    the horn gore, the at-will powers with\n    the fire shuriken, the twice cloud\n    trapeze, the automatic invisible\n    detection, the 3-per-round regeneration,\n    the hill giant strength, the six\n    language rosters); the me-zu (the\n    horse heads, the higher rank, the whips\n    and lassos, the at-will powers, the\n    twice ethereal or astral, the thrice\n    cloud trapeze, the wu jen spellcasting\n    of the hit-dice level, the true seeing\n    at all times, the any language, the\n    3-per-round regeneration, the stone\n    giant strength, the unbending Celestial\n    mission); single-pass\n    pins per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 181,
+  "open": 54
+ },
+ "include_comment": "the OA Oni pins",
+ "include_after": "#include \"rules/oa98ningyo.h\"  // R727: the OA Ningyo pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R727 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R727 LANDED 2026-10-21: commit",
+  "  d583601b54e40af14622c60d70e6a6051a862fda",
+  "  (census 649 -> 650, pushed 15687f2..d583601), OA",
+  "  MONSTERS, the Ningyo (capture pp. 279-280",
+  "  print): rules/oa98ningyo.h, prefix dko",
+  "  (verified free at 15687f2), ONE gap flip, gap",
+  "  census 180/55 - the ningyo box. A consts round.",
+  "  17 consts + 25 bools (42 inlines): the stat",
+  "  block (the rare, the 2 to 20, the AC 7, the",
+  "  swim 18 of the doubled-slash capture, the HD 2",
+  "  to 5, the 30% lair, the I treasure, the 1",
+  "  attack by weapon, the spells of both specials,",
+  "  the standard MR, the very wits, the chaotic",
+  "  good, the nil psionics); the xp ladder (the",
+  "  73 + 2, the 105 + 3, the 150 + 4, the 205 + 5,",
+  "  the capture misreading 111 for the III rung);",
+  "  the sea folk (the merman kin, the flaming red",
+  "  hair, the under-the-waves home, the Sea Lord",
+  "  service, the kindly helpful temper, the sailor",
+  "  protectors and the storm offerings); the",
+  "  bearing (the normally unarmed, the trident or",
+  "  spear when armed, the peaceful non-combative",
+  "  nature, the fight if forced, the shukenja and",
+  "  wu jen spellcasting of the hit-dice level); the",
+  "  life (the no undersea communities, the roaming",
+  "  with the currents and the fish schools, the",
+  "  cannot survive out of water with the 1 hit",
+  "  point per round, the three languages). Zero",
+  "  false starts, first rverify GREEN, 42 mutants,",
+  "  0 missed. Spec md5",
+  "  d421acc148f7af9766fa112e92635723",
+  "  (authored-plus-newline md5",
+  "  882df80d248d91ab1a0727bbed357e58, the ritual",
+  "  gate, matched byte-exact; canvas md5",
+  "  d5da4cb83a32999cc1d30a1a5d2caf60). NEXT -",
+  "  R728: the Oni, the Lesser Spirit (capture",
+  "  pp. 280-281), prefix dkp (verified free at",
+  "  d583601), audit \"R728 OA monsters Oni audit\",",
+  "  include after rules/oa98ningyo.h."
+ ]
+}

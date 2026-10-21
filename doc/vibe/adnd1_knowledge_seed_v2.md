@@ -16895,6 +16895,45 @@ when both halves land.
   (verified free at 15687f2), audit "R727 OA
   monsters Ningyo audit", include after
   rules/oa97naturespirit.h.
+- R727 LANDED 2026-10-21: commit
+  d583601b54e40af14622c60d70e6a6051a862fda
+  (census 649 -> 650, pushed 15687f2..d583601), OA
+  MONSTERS, the Ningyo (capture pp. 279-280
+  print): rules/oa98ningyo.h, prefix dko
+  (verified free at 15687f2), ONE gap flip, gap
+  census 180/55 - the ningyo box. A consts round.
+  17 consts + 25 bools (42 inlines): the stat
+  block (the rare, the 2 to 20, the AC 7, the
+  swim 18 of the doubled-slash capture, the HD 2
+  to 5, the 30% lair, the I treasure, the 1
+  attack by weapon, the spells of both specials,
+  the standard MR, the very wits, the chaotic
+  good, the nil psionics); the xp ladder (the
+  73 + 2, the 105 + 3, the 150 + 4, the 205 + 5,
+  the capture misreading 111 for the III rung);
+  the sea folk (the merman kin, the flaming red
+  hair, the under-the-waves home, the Sea Lord
+  service, the kindly helpful temper, the sailor
+  protectors and the storm offerings); the
+  bearing (the normally unarmed, the trident or
+  spear when armed, the peaceful non-combative
+  nature, the fight if forced, the shukenja and
+  wu jen spellcasting of the hit-dice level); the
+  life (the no undersea communities, the roaming
+  with the currents and the fish schools, the
+  cannot survive out of water with the 1 hit
+  point per round, the three languages). Zero
+  false starts, first rverify GREEN, 42 mutants,
+  0 missed. Spec md5
+  d421acc148f7af9766fa112e92635723
+  (authored-plus-newline md5
+  882df80d248d91ab1a0727bbed357e58, the ritual
+  gate, matched byte-exact; canvas md5
+  d5da4cb83a32999cc1d30a1a5d2caf60). NEXT -
+  R728: the Oni, the Lesser Spirit (capture
+  pp. 280-281), prefix dkp (verified free at
+  d583601), audit "R728 OA monsters Oni audit",
+  include after rules/oa98ningyo.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
