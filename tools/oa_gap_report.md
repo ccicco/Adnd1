@@ -2418,7 +2418,38 @@ description riding the same round.
     tribes and own-kind tongues);
     single-pass pins per the Chapter 9
     provenance shift
-  - [ ] Kappa (capture p. 273)
+  - [x] Kappa (capture p. 273)
+    - R722: the dkj kappa pins - the paired
+    Common/Vampiric stat table (the rare
+    1-6 and very rare 1-2, the AC 3/0 with
+    the -2 shell, the move 6/9 swim 18,
+    the HD 4 and 7+7, the 70% and 80% lair,
+    the D treasure, the 2 and 3 attacks of
+    5-10, the nil and strength drain, the
+    regeneration, the chaotic evil, the S
+    size, the III/135 + 4 and VI/1,000 +
+    10), the water sprite (the two-foot
+    boy build, the tortoise shell, the
+    concave water bowl, the red glowing
+    eyes), the strength and the arts (the
+    18/00 with the +3 to hit, the one
+    martial arts style with the 1d6
+    maneuvers, the clawed hands), the
+    vampiric grip (the retained bite, the
+    one Strength point per round, the three
+    releases, the death at zero, the 50%
+    disease, the 1-3 drain, the 2-5
+    recovery), the bowl (the water power,
+    the emptied weakness at 2 per round,
+    the bow trick, the bend bars and
+    throw spills, the agility guard, the
+    water spell immunity), the lair (the
+    rocks and bridges, the lone travelers,
+    the horseflesh, the melons and
+    cucumbers, the offering custom), the
+    1-per-round regeneration; single-pass
+    pins per the Chapter 9 provenance
+    shift
   - [ ] Kuei, Lesser Spirit (capture p. 274)
   - [ ] Men Wako, the Sea Pirate (capture p. 275)
   - [ ] Nat, Lesser Spirit (capture pp. 276-278)

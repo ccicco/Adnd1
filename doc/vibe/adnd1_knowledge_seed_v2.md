@@ -16610,6 +16610,42 @@ when both halves land.
   Kala (capture p. 272), prefix dki (verified free at
   5058dcf), audit "R721 OA monsters Kala audit", include
   after rules/oa91huhuien.h.
+- R721 LANDED 2026-10-21: commit 7c917a1cd39e05d6d131af74552e5256e1ccd585
+  (census 643 -> 644, pushed 5058dcf..7c917a1), OA MONSTERS,
+  the Kala (capture pp. 272-273 print): rules/oa92kala.h,
+  prefix dki (verified free at 5058dcf), ONE gap flip, gap
+  census 174/61 - the kala box. A TABLES round. 17
+  consts + 29 bools + 8 table cols (54 inlines): the
+  paired CKala[2][8] stat table (the Cave 1-10, the AC
+  -1, the move 9, the HD 8, the 30% lair, the 1-8; the
+  Earth 1-12, the AC 2, the move 12, the HD 6, the 25%
+  lair, the 1-6); the shared stat lines (the rare, the 2
+  attacks, the nil defenses, the standard MR, the low
+  intelligence, the neutral, the M size, the nil
+  psionics, the 825 + 10 and the 1,275 + 6 xp ladders);
+  the spirit race (the pointed heads, the snow feet,
+  the loincloth hardiness, the ferocious cannibal
+  raids); the hunters (the 80% tracking base, the
+  clawed hands, the two stone axes); the cave kala
+  pain ladder (the round one headache, the -1/+1,
+  the -2/+2, the -4/+4, the round five incapacitation,
+  the 1-3 turns); the earth kala disease breath (the
+  five by two foot cone, the 1d6 hit points per day,
+  the healing block); the lairs (the hidden forest
+  caves, the seasonal nomad camps, the two tongues).
+  Two wiring stumbles caught by the in-generator
+  gates before delivery: a duplicated dkiKalaCount
+  const and two stray appear consts the table
+  columns already pin. First rverify GREEN after the
+  fixes, 62 mutants, 0 missed. Spec md5
+  03468c6db0749ed23d7ea469dde82ecf
+  (authored-plus-newline md5
+  579f0578c54aa4af9de24f3a1f132fda, the ritual gate,
+  matched byte-exact; canvas md5
+  6c15e56670933aaf3a7036fa55f4581a). NEXT - R722: the
+  Kappa (capture p. 273), prefix dkj (verified free
+  at 7c917a1), audit "R722 OA monsters Kappa audit",
+  include after rules/oa92kala.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

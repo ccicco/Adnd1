@@ -1,0 +1,814 @@
+{
+ "round": 722,
+ "title": "OA MONSTERS - the Kappa: the bowl and the grip",
+ "prefix": "dkj",
+ "header_file": "rules/oa93kappa.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 644,
+ "inline_count": 77,
+ "audit_label": "R722 OA monsters Kappa audit",
+ "audit_comment": "OA round one hundred nine (capture pp. 273-274): the Chapter 12 monster roster - the kappa, the paired Common and Vampiric stat table riding one flip, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE KAPPA, printed capture p. 273 - the paired columns round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 175 closed, 60 open - the kappa box flips (census 644 -> 645); NEXT - R723: the Kuei, Lesser Spirit (capture p. 274), prefix dkk (verify free at the landing), audit \"R723 OA monsters Kuei audit\", include after rules/oa93kappa.h"
+ },
+ "consts": [
+  {
+   "name": "dkjKappaCount",
+   "value": 2,
+   "comment": "the kappa type count - the Common and the Vampiric of the two-column stat block (print capture p. 273)"
+  },
+  {
+   "name": "dkjStrength",
+   "value": 18,
+   "comment": "the kappa strength - the 18/00 of the incredible Strength (print capture p. 274)"
+  },
+  {
+   "name": "dkjToHitBonus",
+   "value": 3,
+   "comment": "the strength to-hit - the +3 on the chance to hit in combat (print capture p. 274)"
+  },
+  {
+   "name": "dkjManeuverDice",
+   "value": 1,
+   "comment": "the maneuver dice - the 1d6 special maneuvers of their martial arts style (print capture p. 274)"
+  },
+  {
+   "name": "dkjManeuverSides",
+   "value": 6,
+   "comment": "the maneuver sides - the 1d6 special maneuvers of their martial arts style (print capture p. 274)"
+  },
+  {
+   "name": "dkjDrainPerRound",
+   "value": 1,
+   "comment": "the drain rate - one point of Strength each round of the retained bite grip (print capture p. 274)"
+  },
+  {
+   "name": "dkjDiseaseChancePct",
+   "value": 50,
+   "comment": "the disease chance - the 50% chance of contracting a debilitating disease from the bite (print capture p. 274)"
+  },
+  {
+   "name": "dkjDiseaseMinPerDay",
+   "value": 1,
+   "comment": "the disease drain minimum - the 1 of the 1-3 Strength points per day (print capture p. 274)"
+  },
+  {
+   "name": "dkjDiseaseMaxPerDay",
+   "value": 3,
+   "comment": "the disease drain maximum - the 3 of the 1-3 Strength points per day (print capture p. 274)"
+  },
+  {
+   "name": "dkjRecoveryMinPerDay",
+   "value": 2,
+   "comment": "the recovery minimum - the 2 of the 2-5 Strength points per day of rest (print capture p. 274)"
+  },
+  {
+   "name": "dkjRecoveryMaxPerDay",
+   "value": 5,
+   "comment": "the recovery maximum - the 5 of the 2-5 Strength points per day of rest (print capture p. 274)"
+  },
+  {
+   "name": "dkjRegenPerRound",
+   "value": 1,
+   "comment": "the regeneration - the 1 hit point per round of all kappa (print capture p. 274)"
+  },
+  {
+   "name": "dkjDehydratePerRound",
+   "value": 2,
+   "comment": "the empty-bowl loss - the kappa loses hit points at the rate of 2 per round until the water is restored (print capture p. 274)"
+  },
+  {
+   "name": "dkjHeightFeet",
+   "value": 2,
+   "comment": "the height - the approximately two feet of the little creatures (print capture p. 274)"
+  },
+  {
+   "name": "dkjCommonXPBase",
+   "value": 135,
+   "comment": "the common xp base - the 135 of the III/135 + 4 per hp (print capture p. 273)"
+  },
+  {
+   "name": "dkjCommonXPPerHP",
+   "value": 4,
+   "comment": "the common xp per hit point - the 4 of the III/135 + 4/hp (print capture p. 273)"
+  },
+  {
+   "name": "dkjVampXPBase",
+   "value": 1000,
+   "comment": "the vampiric xp base - the 1,000 of the VI/1,000 + 10 per hp (print capture p. 273)"
+  },
+  {
+   "name": "dkjVampXPPerHP",
+   "value": 10,
+   "comment": "the vampiric xp per hit point - the 10 of the VI/1,000 + 10/hp (print capture p. 273)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkjFrequencyRare",
+   "value": 1,
+   "comment": "the common frequency - the rare of the first column (print capture p. 273)"
+  },
+  {
+   "name": "dkjVampFrequencyVeryRare",
+   "value": 1,
+   "comment": "the vampiric frequency - the very rare of the second column (print capture p. 273)"
+  },
+  {
+   "name": "dkjTreasureTypeD",
+   "value": 1,
+   "comment": "the treasure type - the D of both columns (print capture p. 273)"
+  },
+  {
+   "name": "dkjSpecialAttackNil",
+   "value": 1,
+   "comment": "the common special attacks - the nil of the first column (print capture p. 273)"
+  },
+  {
+   "name": "dkjVampStrengthDrain",
+   "value": 1,
+   "comment": "the vampiric special attack - the strength drain of the second column (print capture p. 273)"
+  },
+  {
+   "name": "dkjSpecialDefenseRegeneration",
+   "value": 1,
+   "comment": "the special defenses - the regeneration of both columns (print capture p. 273)"
+  },
+  {
+   "name": "dkjMagicResistStandard",
+   "value": 1,
+   "comment": "the magic resistance - the standard of both columns (print capture p. 273)"
+  },
+  {
+   "name": "dkjIntelligenceLowToAverage",
+   "value": 1,
+   "comment": "the common intelligence - the low to average of the first column (print capture p. 273)"
+  },
+  {
+   "name": "dkjVampIntelligenceAverage",
+   "value": 1,
+   "comment": "the vampiric intelligence - the average of the second column (print capture p. 273)"
+  },
+  {
+   "name": "dkjAlignmentChaoticEvil",
+   "value": 1,
+   "comment": "the alignment - the chaotic evil of both columns (print capture p. 273)"
+  },
+  {
+   "name": "dkjSizeSmall",
+   "value": 1,
+   "comment": "the size class - the S of both columns (print capture p. 273)"
+  },
+  {
+   "name": "dkjPsionicNil",
+   "value": 1,
+   "comment": "the psionic ability - the nil and the nil attack/defense modes of both columns (print capture p. 273)"
+  },
+  {
+   "name": "dkjCommonLevelIII",
+   "value": 1,
+   "comment": "the common xp level - the III of the III/135 + 4/hp (print capture p. 273)"
+  },
+  {
+   "name": "dkjVampLevelVI",
+   "value": 1,
+   "comment": "the vampiric xp level flag - the VI of the VI/1,000 + 10/hp (print capture p. 273)"
+  },
+  {
+   "name": "dkjAmphibiousHumanoids",
+   "value": 1,
+   "comment": "the race - amphibious humanoid creatures of fresh water (print capture p. 274)"
+  },
+  {
+   "name": "dkjFreshWaterHabitat",
+   "value": 1,
+   "comment": "the waters - the lakes, ponds, rivers, and streams of fresh water (print capture p. 274)"
+  },
+  {
+   "name": "dkjBoyProportions",
+   "value": 1,
+   "comment": "the build - the general proportions of a young boy (print capture p. 274)"
+  },
+  {
+   "name": "dkjTortoiseShell",
+   "value": 1,
+   "comment": "the shell - the thick tortoise-like shell on the back, the AC -2 for back attacks (print capture p. 274)"
+  },
+  {
+   "name": "dkjConcaveBowlHead",
+   "value": 1,
+   "comment": "the bowl - the concave top of the head, a small bowl filled with water (print capture p. 274)"
+  },
+  {
+   "name": "dkjVampRedGlowingEyes",
+   "value": 1,
+   "comment": "the vampiric tell - eyes which glow with a red fire (print capture p. 274)"
+  },
+  {
+   "name": "dkjMartialArtsMasters",
+   "value": 1,
+   "comment": "the style - masters of one style of martial arts (print capture p. 274)"
+  },
+  {
+   "name": "dkjClawedHands",
+   "value": 1,
+   "comment": "the common arms - fight with their clawed hands, rending the opponent (print capture p. 274)"
+  },
+  {
+   "name": "dkjVampBiteAttack",
+   "value": 1,
+   "comment": "the vampiric arms - also attack with their bite (print capture p. 274)"
+  },
+  {
+   "name": "dkjVampRetainsGrip",
+   "value": 1,
+   "comment": "the bite grip - once a successful bite is scored, the vampiric kappa retain the grip (print capture p. 274)"
+  },
+  {
+   "name": "dkjGripNoFurtherDamage",
+   "value": 1,
+   "comment": "the grip clause - draining one point of Strength each round but causing no further damage (print capture p. 274)"
+  },
+  {
+   "name": "dkjGripBrokenBySlaying",
+   "value": 1,
+   "comment": "the first release - the grip can only be broken by slaying the vampiric kappa (print capture p. 274)"
+  },
+  {
+   "name": "dkjGripBrokenByEmptyBowl",
+   "value": 1,
+   "comment": "the second release - or emptying the bowl in the top of its head (print capture p. 274)"
+  },
+  {
+   "name": "dkjGripBrokenByBendBars",
+   "value": 1,
+   "comment": "the third release - or a successful bend bars/lift gates roll (print capture p. 274)"
+  },
+  {
+   "name": "dkjSlainAtZeroStrength",
+   "value": 1,
+   "comment": "the death clause - if the Strength reaches 0, the victim is slain (print capture p. 274)"
+  },
+  {
+   "name": "dkjBiteDisease",
+   "value": 1,
+   "comment": "the bite disease - the debilitating disease from the bite (print capture p. 274)"
+  },
+  {
+   "name": "dkjDiseaseDrainsUntilCured",
+   "value": 1,
+   "comment": "the disease course - the loss of 1-3 Strength points per day until cured or the victim dies (print capture p. 274)"
+  },
+  {
+   "name": "dkjDiseaseRecoveredByRest",
+   "value": 1,
+   "comment": "the disease recovery - if cured, Strength points recovered at 2-5 per day of rest (print capture p. 274)"
+  },
+  {
+   "name": "dkjPowerFromWater",
+   "value": 1,
+   "comment": "the power source - a water-dwelling race that draws its power from water (print capture p. 274)"
+  },
+  {
+   "name": "dkjBowlFilledFromLair",
+   "value": 1,
+   "comment": "the bowl water - filled from the particular stream or lake that is the lair (print capture p. 274)"
+  },
+  {
+   "name": "dkjPowersWhileFilled",
+   "value": 1,
+   "comment": "the filled clause - so long as the bowl remains filled, the kappa possesses its powers (print capture p. 274)"
+  },
+  {
+   "name": "dkjLosesPowersWhenEmptied",
+   "value": 1,
+   "comment": "the emptied clause - should the bowl ever be emptied, the kappa loses its powers (print capture p. 274)"
+  },
+  {
+   "name": "dkjEmptyStrengthNormal",
+   "value": 1,
+   "comment": "the emptied strength - its Strength becomes normal (print capture p. 274)"
+  },
+  {
+   "name": "dkjEmptyLosesRegeneration",
+   "value": 1,
+   "comment": "the emptied regeneration - loses the ability to regenerate damage (print capture p. 274)"
+  },
+  {
+   "name": "dkjEmptyLosesHPPerRound",
+   "value": 1,
+   "comment": "the emptied drain - loses hit points at 2 per round until the water is restored (print capture p. 274)"
+  },
+  {
+   "name": "dkjTrickedByBowing",
+   "value": 1,
+   "comment": "the bow - can infrequently be tricked into bowing, thus spilling the water (print capture p. 274)"
+  },
+  {
+   "name": "dkjCleverAboutBowTrick",
+   "value": 1,
+   "comment": "the wariness - most kappa are more clever than the bow trick (print capture p. 274)"
+  },
+  {
+   "name": "dkjSpillByBendBars",
+   "value": 1,
+   "comment": "the first spill - the water can be spilled if the opponent makes a successful bend bars/lift gates roll (print capture p. 274)"
+  },
+  {
+   "name": "dkjSpillByThrowManeuver",
+   "value": 1,
+   "comment": "the second spill - or a martial arts throw special maneuver (print capture p. 274)"
+  },
+  {
+   "name": "dkjAgilityPreventsSpillage",
+   "value": 1,
+   "comment": "the guard - the natural agility and grace are sufficient to prevent spillage (print capture p. 274)"
+  },
+  {
+   "name": "dkjImmuneToWaterSpells",
+   "value": 1,
+   "comment": "the immunity - immune to water-based spells (print capture p. 274)"
+  },
+  {
+   "name": "dkjLairsUnderRocksAndBridges",
+   "value": 1,
+   "comment": "the lair - under rocks and bridges in bodies of fresh water (print capture p. 274)"
+  },
+  {
+   "name": "dkjWaylaysLoneTravelers",
+   "value": 1,
+   "comment": "the ambush - normally appear to waylay lone travelers, dragging them underwater to their doom (print capture p. 274)"
+  },
+  {
+   "name": "dkjFondOfHorseflesh",
+   "value": 1,
+   "comment": "the first craving - particularly fond of horseflesh, often grabbing and dragging horses underwater (print capture p. 274)"
+  },
+  {
+   "name": "dkjFondOfMelonsAndCucumbers",
+   "value": 1,
+   "comment": "the second craving - fond of melons and cucumbers, appeased by offerings (print capture p. 274)"
+  },
+  {
+   "name": "dkjOfferingsBeforeCrossing",
+   "value": 1,
+   "comment": "the custom - throwing a few fruits into the water before crossing a bridge or straying near the bank (print capture p. 274)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dkjKappa",
+   "tag": "Kappa",
+   "count": "dkjKappaCount",
+   "comment": "the kappa stat table - the Common and Vampiric columns of the paired stat block (print capture p. 273)",
+   "cols": [
+    "dkjKappaAppearMin",
+    "dkjKappaAppearMax",
+    "dkjKappaFrontAC",
+    "dkjKappaMove",
+    "dkjKappaHD",
+    "dkjKappaLairPct",
+    "dkjKappaAttacks",
+    "dkjKappaClawMin",
+    "dkjKappaClawMax"
+   ],
+   "col_comments": [
+    "the appearing minimum - the 1 of both columns (print capture p. 273)",
+    "the appearing maximum - the 6 of the Common, the 2 of the Vampiric (print capture p. 273)",
+    "the front armor class - the 3 of the Common, the 0 of the Vampiric (print capture p. 273)",
+    "the move rate - the 6 of the Common, the 9 of the Vampiric, both swimming 18 (print capture p. 273)",
+    "the hit dice - the 4 of the Common, the 7 of the Vampiric (print capture p. 273)",
+    "the in-lair percentage - the 70% of the Common, the 80% of the Vampiric (print capture p. 273)",
+    "the attack count - the 2 of the Common, the 3 of the Vampiric (print capture p. 273)",
+    "the claw damage minimum - the 5 of both columns (print capture p. 273)",
+    "the claw damage maximum - the 10 of both columns (print capture p. 273)"
+   ],
+   "data": [
+    [
+     1,
+     6,
+     3,
+     6,
+     4,
+     70,
+     2,
+     5,
+     10
+    ],
+    [
+     1,
+     2,
+     0,
+     9,
+     7,
+     80,
+     3,
+     5,
+     10
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the stat table - the paired stat columns, audited cell by cell by the table audit",
+   "expr": "m['dkjKappaCount']() != 2"
+  },
+  {
+   "note": "the shared stat lines - the column lines, healthy values, each condition false",
+   "expr": "m['dkjFrequencyRare']() != 1 or m['dkjVampFrequencyVeryRare']() != 1 or m['dkjTreasureTypeD']() != 1 or m['dkjSpecialAttackNil']() != 1 or m['dkjVampStrengthDrain']() != 1 or m['dkjSpecialDefenseRegeneration']() != 1 or m['dkjMagicResistStandard']() != 1 or m['dkjIntelligenceLowToAverage']() != 1 or m['dkjVampIntelligenceAverage']() != 1 or m['dkjAlignmentChaoticEvil']() != 1 or m['dkjSizeSmall']() != 1 or m['dkjPsionicNil']() != 1 or m['dkjCommonLevelIII']() != 1 or m['dkjCommonXPBase']() != 135 or m['dkjCommonXPPerHP']() != 4 or m['dkjVampLevelVI']() != 1 or m['dkjVampXPBase']() != 1000 or m['dkjVampXPPerHP']() != 10"
+  },
+  {
+   "note": "the water sprite - the bowl-headed sprite, healthy values, each condition false",
+   "expr": "m['dkjAmphibiousHumanoids']() != 1 or m['dkjFreshWaterHabitat']() != 1 or m['dkjHeightFeet']() != 2 or m['dkjBoyProportions']() != 1 or m['dkjTortoiseShell']() != 1 or m['dkjConcaveBowlHead']() != 1 or m['dkjVampRedGlowingEyes']() != 1"
+  },
+  {
+   "note": "the strength and the arts - the 18/00 strength and the maneuvers, healthy values, each condition false",
+   "expr": "m['dkjStrength']() != 18 or m['dkjToHitBonus']() != 3 or m['dkjMartialArtsMasters']() != 1 or m['dkjManeuverDice']() != 1 or m['dkjManeuverSides']() != 6 or m['dkjClawedHands']() != 1 or m['dkjVampBiteAttack']() != 1"
+  },
+  {
+   "note": "the vampiric grip - the bite grip and the disease, healthy values, each condition false",
+   "expr": "m['dkjVampRetainsGrip']() != 1 or m['dkjGripNoFurtherDamage']() != 1 or m['dkjDrainPerRound']() != 1 or m['dkjGripBrokenBySlaying']() != 1 or m['dkjGripBrokenByEmptyBowl']() != 1 or m['dkjGripBrokenByBendBars']() != 1 or m['dkjSlainAtZeroStrength']() != 1 or m['dkjBiteDisease']() != 1 or m['dkjDiseaseChancePct']() != 50 or m['dkjDiseaseMinPerDay']() != 1 or m['dkjDiseaseMaxPerDay']() != 3 or m['dkjDiseaseDrainsUntilCured']() != 1 or m['dkjDiseaseRecoveredByRest']() != 1 or m['dkjRecoveryMinPerDay']() != 2 or m['dkjRecoveryMaxPerDay']() != 5"
+  },
+  {
+   "note": "the bowl and the water - the power source and the spill, healthy values, each condition false",
+   "expr": "m['dkjPowerFromWater']() != 1 or m['dkjBowlFilledFromLair']() != 1 or m['dkjPowersWhileFilled']() != 1 or m['dkjLosesPowersWhenEmptied']() != 1 or m['dkjEmptyStrengthNormal']() != 1 or m['dkjEmptyLosesRegeneration']() != 1 or m['dkjEmptyLosesHPPerRound']() != 1 or m['dkjDehydratePerRound']() != 2 or m['dkjTrickedByBowing']() != 1 or m['dkjCleverAboutBowTrick']() != 1 or m['dkjSpillByBendBars']() != 1 or m['dkjSpillByThrowManeuver']() != 1 or m['dkjAgilityPreventsSpillage']() != 1 or m['dkjImmuneToWaterSpells']() != 1"
+  },
+  {
+   "note": "the lair and the cravings - the bridges and the cucumbers, healthy values, each condition false",
+   "expr": "m['dkjLairsUnderRocksAndBridges']() != 1 or m['dkjWaylaysLoneTravelers']() != 1 or m['dkjFondOfHorseflesh']() != 1 or m['dkjFondOfMelonsAndCucumbers']() != 1 or m['dkjOfferingsBeforeCrossing']() != 1"
+  },
+  {
+   "note": "the regeneration - the 1-per-round regeneration, healthy value, the condition false",
+   "expr": "m['dkjRegenPerRound']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat table": [
+   {
+    "kind": "const",
+    "name": "dkjKappaCount"
+   },
+   {
+    "kind": "table",
+    "name": "dkjKappa"
+   }
+  ],
+  "the shared stat lines": [
+   {
+    "kind": "bool",
+    "name": "dkjFrequencyRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjVampFrequencyVeryRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjTreasureTypeD"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjSpecialAttackNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjVampStrengthDrain"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjSpecialDefenseRegeneration"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjMagicResistStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjIntelligenceLowToAverage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjVampIntelligenceAverage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjAlignmentChaoticEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjSizeSmall"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjCommonLevelIII"
+   },
+   {
+    "kind": "const",
+    "name": "dkjCommonXPBase"
+   },
+   {
+    "kind": "const",
+    "name": "dkjCommonXPPerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjVampLevelVI"
+   },
+   {
+    "kind": "const",
+    "name": "dkjVampXPBase"
+   },
+   {
+    "kind": "const",
+    "name": "dkjVampXPPerHP"
+   }
+  ],
+  "the water sprite": [
+   {
+    "kind": "bool",
+    "name": "dkjAmphibiousHumanoids"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjFreshWaterHabitat"
+   },
+   {
+    "kind": "const",
+    "name": "dkjHeightFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjBoyProportions"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjTortoiseShell"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjConcaveBowlHead"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjVampRedGlowingEyes"
+   }
+  ],
+  "the strength and the arts": [
+   {
+    "kind": "const",
+    "name": "dkjStrength"
+   },
+   {
+    "kind": "const",
+    "name": "dkjToHitBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjMartialArtsMasters"
+   },
+   {
+    "kind": "const",
+    "name": "dkjManeuverDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkjManeuverSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjClawedHands"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjVampBiteAttack"
+   }
+  ],
+  "the vampiric grip": [
+   {
+    "kind": "bool",
+    "name": "dkjVampRetainsGrip"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjGripNoFurtherDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dkjDrainPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjGripBrokenBySlaying"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjGripBrokenByEmptyBowl"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjGripBrokenByBendBars"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjSlainAtZeroStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjBiteDisease"
+   },
+   {
+    "kind": "const",
+    "name": "dkjDiseaseChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "dkjDiseaseMinPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dkjDiseaseMaxPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjDiseaseDrainsUntilCured"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjDiseaseRecoveredByRest"
+   },
+   {
+    "kind": "const",
+    "name": "dkjRecoveryMinPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dkjRecoveryMaxPerDay"
+   }
+  ],
+  "the bowl and the water": [
+   {
+    "kind": "bool",
+    "name": "dkjPowerFromWater"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjBowlFilledFromLair"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjPowersWhileFilled"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjLosesPowersWhenEmptied"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjEmptyStrengthNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjEmptyLosesRegeneration"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjEmptyLosesHPPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dkjDehydratePerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjTrickedByBowing"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjCleverAboutBowTrick"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjSpillByBendBars"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjSpillByThrowManeuver"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjAgilityPreventsSpillage"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjImmuneToWaterSpells"
+   }
+  ],
+  "the lair and the cravings": [
+   {
+    "kind": "bool",
+    "name": "dkjLairsUnderRocksAndBridges"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjWaylaysLoneTravelers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjFondOfHorseflesh"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjFondOfMelonsAndCucumbers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkjOfferingsBeforeCrossing"
+   }
+  ],
+  "the regeneration": [
+   {
+    "kind": "const",
+    "name": "dkjRegenPerRound"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the kappa box",
+   "from": "  - [ ] Kappa (capture p. 273)",
+   "to": "  - [x] Kappa (capture p. 273)\n    - R722: the dkj kappa pins - the paired\n    Common/Vampiric stat table (the rare\n    1-6 and very rare 1-2, the AC 3/0 with\n    the -2 shell, the move 6/9 swim 18,\n    the HD 4 and 7+7, the 70% and 80% lair,\n    the D treasure, the 2 and 3 attacks of\n    5-10, the nil and strength drain, the\n    regeneration, the chaotic evil, the S\n    size, the III/135 + 4 and VI/1,000 +\n    10), the water sprite (the two-foot\n    boy build, the tortoise shell, the\n    concave water bowl, the red glowing\n    eyes), the strength and the arts (the\n    18/00 with the +3 to hit, the one\n    martial arts style with the 1d6\n    maneuvers, the clawed hands), the\n    vampiric grip (the retained bite, the\n    one Strength point per round, the three\n    releases, the death at zero, the 50%\n    disease, the 1-3 drain, the 2-5\n    recovery), the bowl (the water power,\n    the emptied weakness at 2 per round,\n    the bow trick, the bend bars and\n    throw spills, the agility guard, the\n    water spell immunity), the lair (the\n    rocks and bridges, the lone travelers,\n    the horseflesh, the melons and\n    cucumbers, the offering custom), the\n    1-per-round regeneration; single-pass\n    pins per the Chapter 9 provenance\n    shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 175,
+  "open": 60
+ },
+ "include_comment": "the OA Kappa pins",
+ "include_after": "#include \"rules/oa92kala.h\"  // R721: the OA Kala pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R721 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R721 LANDED 2026-10-21: commit 7c917a1cd39e05d6d131af74552e5256e1ccd585",
+  "  (census 643 -> 644, pushed 5058dcf..7c917a1), OA MONSTERS,",
+  "  the Kala (capture pp. 272-273 print): rules/oa92kala.h,",
+  "  prefix dki (verified free at 5058dcf), ONE gap flip, gap",
+  "  census 174/61 - the kala box. A TABLES round. 17",
+  "  consts + 29 bools + 8 table cols (54 inlines): the",
+  "  paired CKala[2][8] stat table (the Cave 1-10, the AC",
+  "  -1, the move 9, the HD 8, the 30% lair, the 1-8; the",
+  "  Earth 1-12, the AC 2, the move 12, the HD 6, the 25%",
+  "  lair, the 1-6); the shared stat lines (the rare, the 2",
+  "  attacks, the nil defenses, the standard MR, the low",
+  "  intelligence, the neutral, the M size, the nil",
+  "  psionics, the 825 + 10 and the 1,275 + 6 xp ladders);",
+  "  the spirit race (the pointed heads, the snow feet,",
+  "  the loincloth hardiness, the ferocious cannibal",
+  "  raids); the hunters (the 80% tracking base, the",
+  "  clawed hands, the two stone axes); the cave kala",
+  "  pain ladder (the round one headache, the -1/+1,",
+  "  the -2/+2, the -4/+4, the round five incapacitation,",
+  "  the 1-3 turns); the earth kala disease breath (the",
+  "  five by two foot cone, the 1d6 hit points per day,",
+  "  the healing block); the lairs (the hidden forest",
+  "  caves, the seasonal nomad camps, the two tongues).",
+  "  Two wiring stumbles caught by the in-generator",
+  "  gates before delivery: a duplicated dkiKalaCount",
+  "  const and two stray appear consts the table",
+  "  columns already pin. First rverify GREEN after the",
+  "  fixes, 62 mutants, 0 missed. Spec md5",
+  "  03468c6db0749ed23d7ea469dde82ecf",
+  "  (authored-plus-newline md5",
+  "  579f0578c54aa4af9de24f3a1f132fda, the ritual gate,",
+  "  matched byte-exact; canvas md5",
+  "  6c15e56670933aaf3a7036fa55f4581a). NEXT - R722: the",
+  "  Kappa (capture p. 273), prefix dkj (verified free",
+  "  at 7c917a1), audit \"R722 OA monsters Kappa audit\",",
+  "  include after rules/oa92kala.h."
+ ]
+}
