@@ -2765,8 +2765,50 @@ description riding the same round.
     of the bursting bamboo, the three
     languages); single-pass
     pins per the Chapter 9 provenance shift
-  - [ ] Shirokinukatsukami, Greater Spirit
+  - [x] Shirokinukatsukami, Greater Spirit
     (capture p. 283)
+    - R731: the dks shirokinukatsukami pins -
+    the stat block (the very rare, the 1
+    appearing, the AC -2, the 18/18 move of
+    the A class with the capture doubling,
+    the HD 12, the nil lair and treasure,
+    the 3 attacks of 2-5/2-5 and the 3-18
+    tusks, the see-below specials, the 50%
+    MR, the genius wits, the lawful good,
+    the L size, the nil psionics, the
+    1,200 + 16 xp of the capture misreading
+    1X for IX); the Eater of Dreams (the
+    kindly power, the horse and lion and
+    elephant and cow and tiger composite,
+    the baku resemblance, the staunch foe of
+    evil spirits and sendings, the homeless
+    roaming of the night world and the
+    Celestial lands, the no more than four
+    in existence); the combat (the front
+    paws and goring tusks, the 2d4 back-paw
+    rake on the double paw hit, the normal
+    hit rolls for the rake); the powers (the
+    constant detect evil and shapechanger
+    and charm and harmony and ESP; the
+    at-will invisibility and astral and
+    dream sight and dream vision and
+    protection from evil and the no-error
+    teleport and the smoke form; the
+    thrice-daily dispel evil and cloud
+    trapeze and pacify and exorcise and
+    obedience; the daily restore spirit and
+    heal); the immunities (the +3 weapon
+    floor, the 2-per-round regeneration, the
+    air immunity, the half-or-no fire, the
+    poison immunity); the bedside guardian
+    (the night arrival invisible or in
+    smoke form, the slipped bedchamber, the
+    head-of-bed vigil, the destroyed or
+    driven-away evil spirits, the first-
+    light departure, the night-only hours,
+    the Celestial Emperor dispatches);
+    single-pass
+    pins per the Chapter 9 provenance shift
   - [ ] Tengu (capture p. 284)
 
 - [ ] **Chapter 13: Treasure and Magical Items**

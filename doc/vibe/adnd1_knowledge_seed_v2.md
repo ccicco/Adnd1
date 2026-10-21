@@ -17054,6 +17054,51 @@ when both halves land.
   prefix dkr (verified free at 96a5de9), audit
   "R730 OA monsters Shan Sao audit", include
   after rules/oa100poh.h.
+- R730 LANDED 2026-10-21: commit
+  981038137da8b53d3f3d0b37c29883de5b0fa34b
+  (census 652 -> 653, pushed 96a5de9..9810381), OA
+  MONSTERS, the Shan Sao (capture pp. 282-283
+  print): rules/oa101shansao.h, prefix dkr
+  (verified free at 96a5de9), ONE gap flip, gap
+  census 183/52 - the shan sao box. A consts
+  round. 29 consts + 29 bools (58 inlines): the
+  stat block (the uncommon, the 1 to 10 with
+  the x3 lair multiplier, the AC 4, the moves
+  6 and 15 of the A class, the HD 2 to 4, the
+  10% lair, the B treasure, the 1 attack of
+  1-6, the disease special, the tiger summons
+  and the fear immunity, the standard MR, the
+  average wits, the chaotic neutral, the S
+  size, the nil psionics); the xp ladder (the
+  36 + 2, the 65 + 3, the 110 + 4 of the
+  capture misreading 111 for the III rung); the
+  woodlanders (the one-foot build, the woodland
+  hills, the fearless private character, the
+  quick offense and return, the defensive
+  adeptness); the powers (the thrice bird
+  polymorph, the short swords and darts and
+  uchi-ne, the once-per-day point disease of
+  the 10-foot range, the once-per-day 1 to 3
+  tiger summons of the half-mile radius and the
+  1d6 arrival, the loyal tigers, the 5% wu jen
+  spellcasters); the village (the bamboo grove
+  hearts, the thatched houses and the communal
+  cooking pot, the 50% bonus females of the
+  1 HD who defend, the 10% guard of the 1 to 2
+  lairing tigers, the dislike of the bursting
+  bamboo, the three languages). Zero false
+  starts, first rverify GREEN, 58 mutants, 0
+  missed. Spec md5
+  12747c3c147b1646e7a1a6b2b6c3acbf
+  (authored-plus-newline md5
+  8f4cd389daff6f299516af05395e43df, the ritual
+  gate, matched byte-exact; canvas md5
+  d249ce0a90dde0fc501d1e277661663a). NEXT -
+  R731: the Shirokinukatsukami, the Greater
+  Spirit (capture pp. 283-284), prefix dks
+  (verified free at 9810381), audit "R731 OA
+  monsters Shirokinukatsukami audit", include
+  after rules/oa101shansao.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
