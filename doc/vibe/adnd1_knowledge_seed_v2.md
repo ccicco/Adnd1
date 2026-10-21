@@ -17010,6 +17010,50 @@ when both halves land.
   pp. 281-282), prefix dkq (verified free at
   a20e85a), audit "R729 OA monsters P oh
   audit", include after rules/oa99oni.h.
+- R729 LANDED 2026-10-21: commit
+  96a5de9fee7516f2ec6b53665622cb2eaead84b9
+  (census 651 -> 652, pushed a20e85a..96a5de9), OA
+  MONSTERS, the P oh, the Lesser Spirit (capture
+  pp. 281-282 print): rules/oa100poh.h, prefix
+  dkq (verified free at a20e85a), ONE gap flip,
+  gap census 182/53 - the p oh box (the
+  apostrophe of the print kept to the gap box
+  and comments, the title and audit label stay
+  shell-safe). A consts round. 14 consts + 35
+  bools (49 inlines): the stat block (the very
+  rare, the 1 appearing, the AC 4, the move 6,
+  the HD 5, the 30% lair, the Q treasure, the
+  1 attack of 1-6 or by weapon, the drought
+  special, the +1 weapon floor, the standard MR,
+  the high wits, the chaotic evil, the S size,
+  the nil psionics); the xp line (the 280 + 5);
+  the wandering spirit (the two to three feet,
+  the ruddy bronze skin, the red hair, the day
+  and night activity, the common folk fear, the
+  gifts and offerings, the agricultural lands);
+  the drying touch (the withered tree club, the
+  iron rod, the save vs. spell on each hit,
+  the no-effect save, the dessication of one
+  Constitution point, the unable floor at 2,
+  the death at 0, the invisibility at will); the
+  drought (the wu jen drought once per week,
+  the 5-mile diameter, the cancel or slay or
+  ice blight end, the secure lair arrival, the
+  venerate-or-else announcement, the invisible
+  collection, the satisfied truce, the angered
+  drought, the country road shrines, the
+  Celestial Emperor punishments, the two
+  languages). Zero false starts, first rverify
+  GREEN, 49 mutants, 0 missed. Spec md5
+  90c6db8025bb5f2567ba75f2b4dde2b2
+  (authored-plus-newline md5
+  d9a5c04a78573e8f03553ba960b97ad3, the ritual
+  gate, matched byte-exact; canvas md5
+  46ffc9b29a2ffb9bafda7a9d5932854a). NEXT -
+  R730: the Shan Sao (capture pp. 282-283),
+  prefix dkr (verified free at 96a5de9), audit
+  "R730 OA monsters Shan Sao audit", include
+  after rules/oa100poh.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

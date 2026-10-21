@@ -2732,7 +2732,39 @@ description riding the same round.
     punishments, the two languages);
     single-pass
     pins per the Chapter 9 provenance shift
-  - [ ] Shan Sao (capture p. 282)
+  - [x] Shan Sao (capture p. 282)
+    - R730: the dkr shan sao pins - the
+    stat block (the uncommon, the 1 to 10
+    appearing with the x3 lair
+    multiplier, the AC 4, the moves 6 and
+    15 of the A class, the HD 2 to 4, the
+    10% lair, the B treasure, the 1 attack
+    of 1-6, the disease special, the tiger
+    summons and the fear immunity, the
+    standard MR, the average wits, the
+    chaotic neutral, the S size, the nil
+    psionics); the xp ladder (the 36 + 2,
+    the 65 + 3, the 110 + 4 of the capture
+    misreading 111 for the III rung); the
+    woodlanders (the one-foot build, the
+    woodland hills, the fearless private
+    character, the quick offense and
+    return, the defensive adeptness); the
+    powers (the thrice bird polymorph, the
+    short swords and darts and uchi-ne, the
+    once-per-day point disease of the
+    10-foot range, the once-per-day 1 to 3
+    tiger summons of the half-mile radius
+    and the 1d6 arrival, the loyal tigers,
+    the 5% wu jen spellcasters); the
+    village (the bamboo grove hearts, the
+    thatched houses and the communal
+    cooking pot, the 50% bonus females of
+    the 1 HD who defend, the 10% guard of
+    the 1 to 2 lairing tigers, the dislike
+    of the bursting bamboo, the three
+    languages); single-pass
+    pins per the Chapter 9 provenance shift
   - [ ] Shirokinukatsukami, Greater Spirit
     (capture p. 283)
   - [ ] Tengu (capture p. 284)
