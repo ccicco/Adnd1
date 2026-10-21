@@ -2079,7 +2079,30 @@ description riding the same round.
     dangerous expeditions); single-pass
     pins per the Chapter 9 provenance
     shift
-  - [ ] Con-Tinh, Lesser Spirit (capture p. 258)
+  - [x] Con-Tinh, Lesser Spirit (capture p. 258)
+    - R710: the djx con-tinh pins - the
+    stat block (the rare, the 1-2, the
+    AC 7, the move 12, the HD 6, the
+    100% lair, the treasure I, the 1
+    attack of 1-6, the laugh, the 20%
+    MR, the VI/600 + 6/hp), the nature
+    (the evil spirit of the maiden
+    folklore, the young-girl appearance,
+    the night-only schedule, the 100-foot tree
+    lifeforce with the damage and the
+    destruction rules, the feared and
+    shunned reputation, the daytime
+    hiding, the night ambushing), the
+    special attacks (the three-per-night
+    laugh within 20 feet with the save
+    vs. death or insanity, the Int and
+    Wis 2 floor until heal, the
+    once-per-night possession into
+    daytime, the +2 weapon requirement,
+    the exorcism destruction, the
+    tree-slayer ancient curse); single
+    pass pins per the Chapter 9
+    provenance shift
   - [ ] Doc Cu'o'c, Greater Spirit (capture p. 259)
   - [ ] Dragons, Oriental (capture pp. 259-262) - the
     six true dragons: Chiang Lung the river dragon,

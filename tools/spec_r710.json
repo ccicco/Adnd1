@@ -1,0 +1,473 @@
+{
+ "round": 710,
+ "title": "OA MONSTERS - the Con-Tinh, Lesser Spirit: the stat block, the tree lifeforce, and the two special attacks",
+ "prefix": "djx",
+ "header_file": "rules/oa81continh.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 632,
+ "inline_count": 42,
+ "audit_label": "R710 OA monsters Con-Tinh audit",
+ "audit_comment": "OA round ninety-seven (capture pp. 258-259): the Chapter 12 monster roster - the con-tinh, the stat block and the description riding together, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE CON-TINH, LESSER SPIRIT, printed capture pp. 258-259 - the maiden spirit round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 163 closed, 72 open - the con-tinh box flips (census 632 -> 633); NEXT - R711: the Doc Cu'o'c, Greater Spirit (capture p. 259), prefix djy (verify free at the landing), audit \"R711 OA monsters Doc Cu'o'c audit\", include after rules/oa81continh.h"
+ },
+ "consts": [
+  {
+   "name": "djxConTinhNoAppearingMin",
+   "value": 1,
+   "comment": "the con-tinh appearance minimum - the 1 of the 1-2 of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhNoAppearingMax",
+   "value": 2,
+   "comment": "the con-tinh appearance maximum - the 2 of the 1-2 of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhAC",
+   "value": 7,
+   "comment": "the con-tinh armor class - the AC 7 of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhMove",
+   "value": 12,
+   "comment": "the con-tinh movement rate - the move 12 of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhHD",
+   "value": 6,
+   "comment": "the con-tinh hit dice - the HD 6 of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhAttacks",
+   "value": 1,
+   "comment": "the con-tinh attacks per round - the 1 of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhDmgMin",
+   "value": 1,
+   "comment": "the con-tinh damage minimum - the 1 of the 1-6 of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhDmgMax",
+   "value": 6,
+   "comment": "the con-tinh damage maximum - the 6 of the 1-6 of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhMRPct",
+   "value": 20,
+   "comment": "the con-tinh magic resistance - the 20% of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhXPBase",
+   "value": 600,
+   "comment": "the con-tinh base experience - the 600 of the VI/600 (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhXPPerHP",
+   "value": 6,
+   "comment": "the con-tinh experience per hit point - the 6/hp of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhTreeRadiusFt",
+   "value": 100,
+   "comment": "the con-tinh lifeforce tree - always found within 100 feet of the old tree (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhLaughRadiusFt",
+   "value": 20,
+   "comment": "the con-tinh laugh - those within 20 feet when it laughs must save (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhLaughsPerNight",
+   "value": 3,
+   "comment": "the con-tinh laugh - the weird laugh it can do three times a night (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhInsanityFloor",
+   "value": 2,
+   "comment": "the con-tinh insanity - the Intelligence and Wisdom reduced to 2 until a heal spell is cast (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhWeaponPlusRequired",
+   "value": 2,
+   "comment": "the con-tinh defense - can only be hit by weapons of +2 or greater (print capture p. 258)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djxConTinhRare",
+   "value": 1,
+   "comment": "the con-tinh frequency - the rare of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhLair100",
+   "value": 1,
+   "comment": "the con-tinh in-lair percentage - the 100% of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhTreasureI",
+   "value": 1,
+   "comment": "the con-tinh treasure - the type I of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhLaughAttack",
+   "value": 1,
+   "comment": "the con-tinh special attack - the laugh of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhIntStandard",
+   "value": 1,
+   "comment": "the con-tinh intelligence - the standard of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhChaoticEvil",
+   "value": 1,
+   "comment": "the con-tinh alignment - the chaotic evil of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhSizeM",
+   "value": 1,
+   "comment": "the con-tinh size - the M of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhPsionicNil",
+   "value": 1,
+   "comment": "the con-tinh psionics - the Nil ability and the Nil attack/defense modes of the stat block (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhEvilSpirit",
+   "value": 1,
+   "comment": "the con-tinh nature - an evil spirit creature (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhMaidenSpirits",
+   "value": 1,
+   "comment": "the con-tinh folklore - spirits of maidens who died before their time (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhYoungGirlAppearance",
+   "value": 1,
+   "comment": "the con-tinh appearance - much like that of a young girl (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhNightOnly",
+   "value": 1,
+   "comment": "the con-tinh schedule - only appear at night (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhTreeLifeforce",
+   "value": 1,
+   "comment": "the con-tinh anchor - always found within 100 feet of an old tree, which is their life force (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhTreeDamageHurts",
+   "value": 1,
+   "comment": "the con-tinh lifeforce rule - should the tree be damaged, the con-tinh suffers an appropriate amount of damage (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhTreeDestroyedDestroys",
+   "value": 1,
+   "comment": "the con-tinh lifeforce limit - if the tree is destroyed, the con-tinh is destroyed (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhFearedAndShunned",
+   "value": 1,
+   "comment": "the con-tinh reputation - greatly feared by commoners, the rumored areas shunned, especially at night (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhHidesInTreeByDay",
+   "value": 1,
+   "comment": "the con-tinh daytime habit - hide within the branches of their tree (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhNightAmbusher",
+   "value": 1,
+   "comment": "the con-tinh predation - at night they come out hoping to catch travelers and foolish locals (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhNotFierceButSpecial",
+   "value": 1,
+   "comment": "the con-tinh combat - not particularly fierce, but with two special attacks used to great effect (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhLaughSaveVsDeath",
+   "value": 1,
+   "comment": "the con-tinh laugh - those within 20 feet must make a successful saving throw vs. death or be stricken with insanity (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhHealRestoresInsanity",
+   "value": 1,
+   "comment": "the con-tinh insanity cure - the reduction lasts until a heal spell is cast (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhPossessionOncePerNight",
+   "value": 1,
+   "comment": "the con-tinh possession - the power to possess, as per the spell, once per night (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhPossessionDaytimeToo",
+   "value": 1,
+   "comment": "the con-tinh possession - can be maintained even during daytime (print capture p. 258)"
+  },
+  {
+   "name": "djxConTinhExorcismDestroys",
+   "value": 1,
+   "comment": "the con-tinh bane - a successful exorcism spell destroys the creature (print capture p. 259)"
+  },
+  {
+   "name": "djxConTinhTreeSlayerCursed",
+   "value": 1,
+   "comment": "the con-tinh curse - any person who destroys the tree must make a saving throw vs. spell or suffer an ancient curse (print capture p. 259)"
+  },
+  {
+   "name": "djxConTinhCurseDayOrNight",
+   "value": 1,
+   "comment": "the con-tinh curse - the power is automatic and can occur day or night (print capture p. 259)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the stat block - the rare, the 1-2, the AC 7, the move 12, the HD 6, the 100% lair, the treasure I, the 1 attack of 1-6, the laugh, the 20% MR, the standard, the chaotic evil, the M, the Nil psionics, the VI/600 + 6/hp",
+   "expr": "m['djxConTinhNoAppearingMin']() != 1 or m['djxConTinhNoAppearingMax']() != 2 or m['djxConTinhAC']() != 7 or m['djxConTinhMove']() != 12 or m['djxConTinhHD']() != 6 or m['djxConTinhAttacks']() != 1 or m['djxConTinhDmgMin']() != 1 or m['djxConTinhDmgMax']() != 6 or m['djxConTinhMRPct']() != 20 or m['djxConTinhXPBase']() != 600 or m['djxConTinhXPPerHP']() != 6 or m['djxConTinhRare']() != 1 or m['djxConTinhLair100']() != 1 or m['djxConTinhTreasureI']() != 1 or m['djxConTinhLaughAttack']() != 1 or m['djxConTinhIntStandard']() != 1 or m['djxConTinhChaoticEvil']() != 1 or m['djxConTinhSizeM']() != 1 or m['djxConTinhPsionicNil']() != 1"
+  },
+  {
+   "note": "the nature - the evil spirit, the maiden folklore, the young-girl appearance, the night only, the 100-foot tree lifeforce with the damage and destruction rules, the feared-and-shunned reputation, the daytime hiding, the night ambushing",
+   "expr": "m['djxConTinhTreeRadiusFt']() != 100 or m['djxConTinhEvilSpirit']() != 1 or m['djxConTinhMaidenSpirits']() != 1 or m['djxConTinhYoungGirlAppearance']() != 1 or m['djxConTinhNightOnly']() != 1 or m['djxConTinhTreeLifeforce']() != 1 or m['djxConTinhTreeDamageHurts']() != 1 or m['djxConTinhTreeDestroyedDestroys']() != 1 or m['djxConTinhFearedAndShunned']() != 1 or m['djxConTinhHidesInTreeByDay']() != 1 or m['djxConTinhNightAmbusher']() != 1"
+  },
+  {
+   "note": "the special attacks - the not-fierce-but-two- attacks doctrine, the 20-foot laugh with the save vs. death or insanity, the Int and Wis 2 floor until heal, the once-per-night possession maintained into daytime, the +2-or-greater weapon requirement, the exorcism destruction, the tree-slayer ancient curse, automatic day or night",
+   "expr": "m['djxConTinhLaughRadiusFt']() != 20 or m['djxConTinhLaughsPerNight']() != 3 or m['djxConTinhInsanityFloor']() != 2 or m['djxConTinhWeaponPlusRequired']() != 2 or m['djxConTinhNotFierceButSpecial']() != 1 or m['djxConTinhLaughSaveVsDeath']() != 1 or m['djxConTinhHealRestoresInsanity']() != 1 or m['djxConTinhPossessionOncePerNight']() != 1 or m['djxConTinhPossessionDaytimeToo']() != 1 or m['djxConTinhExorcismDestroys']() != 1 or m['djxConTinhTreeSlayerCursed']() != 1 or m['djxConTinhCurseDayOrNight']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat block": [
+   {
+    "kind": "const",
+    "name": "djxConTinhNoAppearingMin"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhNoAppearingMax"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhAC"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhMove"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhHD"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhMRPct"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhXPBase"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhXPPerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhRare"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhLair100"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhTreasureI"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhLaughAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhIntStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhChaoticEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhSizeM"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhPsionicNil"
+   }
+  ],
+  "the nature": [
+   {
+    "kind": "const",
+    "name": "djxConTinhTreeRadiusFt"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhEvilSpirit"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhMaidenSpirits"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhYoungGirlAppearance"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhNightOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhTreeLifeforce"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhTreeDamageHurts"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhTreeDestroyedDestroys"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhFearedAndShunned"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhHidesInTreeByDay"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhNightAmbusher"
+   }
+  ],
+  "the special attacks": [
+   {
+    "kind": "const",
+    "name": "djxConTinhLaughRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhLaughsPerNight"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhInsanityFloor"
+   },
+   {
+    "kind": "const",
+    "name": "djxConTinhWeaponPlusRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhNotFierceButSpecial"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhLaughSaveVsDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhHealRestoresInsanity"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhPossessionOncePerNight"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhPossessionDaytimeToo"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhExorcismDestroys"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhTreeSlayerCursed"
+   },
+   {
+    "kind": "bool",
+    "name": "djxConTinhCurseDayOrNight"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the con-tinh box",
+   "from": "  - [ ] Con-Tinh, Lesser Spirit (capture p. 258)",
+   "to": "  - [x] Con-Tinh, Lesser Spirit (capture p. 258)\n    - R710: the djx con-tinh pins - the\n    stat block (the rare, the 1-2, the\n    AC 7, the move 12, the HD 6, the\n    100% lair, the treasure I, the 1\n    attack of 1-6, the laugh, the 20%\n    MR, the VI/600 + 6/hp), the nature\n    (the evil spirit of the maiden\n    folklore, the young-girl appearance,\n    the night-only schedule, the 100-foot tree\n    lifeforce with the damage and the\n    destruction rules, the feared and\n    shunned reputation, the daytime\n    hiding, the night ambushing), the\n    special attacks (the three-per-night\n    laugh within 20 feet with the save\n    vs. death or insanity, the Int and\n    Wis 2 floor until heal, the\n    once-per-night possession into\n    daytime, the +2 weapon requirement,\n    the exorcism destruction, the\n    tree-slayer ancient curse); single\n    pass pins per the Chapter 9\n    provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 163,
+  "open": 72
+ },
+ "include_comment": "the OA Con-Tinh pins",
+ "include_after": "#include \"rules/oa80carp.h\"  // R709: the OA Giant Carp pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R709 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R709 LANDED 2026-10-21: commit b7a2dad2e184a8cf83d1600dc0d68e9638614a71",
+  "  (census 631 -> 632, pushed 8361dca..b7a2dad), OA MONSTERS - the",
+  "  Carp, Giant, capture pp. 257-258 print: rules/oa80carp.h,",
+  "  prefix djw (verified free at 8361dca), ONE gap flip, gap",
+  "  census 162/73. 28 consts + 19 bools (47 inlines): the stat",
+  "  block (the uncommon, the 1-4, the AC 6, the move 18, the",
+  "  8-12, the Nil lair, the Nil treasure, the 1 attack of 2-20,",
+  "  the swallow whole, the standard MR, the animal, the neutral,",
+  "  the L of 20-30 feet, the Nil psionics) with the first",
+  "  four-row XP table of the roster (the 8 HD VI/650 + 10, the",
+  "  9 HD VI/1,000 + 12, the 10 HD VII/1,500 + 14, the 11 and 12",
+  "  HD VII/2,150 + 16); the nature (the overgrown cousin of the",
+  "  food-fish, the freshwater habitat of substantial depth, the",
+  "  temperate-to-tropical range, the scavenger feeding, the",
+  "  surfacing attacks, the fishhook bait); the swallow rules",
+  "  (the 12-point threshold, the five swallow tiers down to the",
+  "  12 HD small oni or ogre, the 1 hp per round digestion, the",
+  "  5% cumulative suffocation, the rescue-or-cut-free rule, the",
+  "  50% hp freedom trigger, the outside -2 to hit, the 20%",
+  "  thrust chance, the village supply, the dangerous",
+  "  expeditions). Zero false starts, first rverify GREEN, 47",
+  "  mutants, 0 missed. Spec md5 e04abed6f7da71eff21e6e8233e8d42e",
+  "  (authored-plus-newline md5 3a8e6d52e4d91dad463de70594f2e486 ",
+  "  the ritual gate, matched byte-exact; canvas md5",
+  "  be1cf09bb972c8d2db2e3824aed5b634). NEXT - R710: the",
+  "  Con-Tinh, Lesser Spirit (capture pp. 258-259), prefix djx",
+  "  (verified free at b7a2dad), audit \"R710 OA monsters Con-Tinh",
+  "  audit\", include after rules/oa80carp.h."
+ ]
+}

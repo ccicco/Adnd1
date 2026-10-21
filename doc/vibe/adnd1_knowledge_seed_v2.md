@@ -16226,6 +16226,34 @@ when both halves land.
   NEXT - R709: the Carp, Giant (capture p. 257), prefix djw
   (verified free at 8361dca), audit "R709 OA monsters Giant
   Carp audit", include after rules/oa79buso.h.
+- R709 LANDED 2026-10-21: commit b7a2dad2e184a8cf83d1600dc0d68e9638614a71
+  (census 631 -> 632, pushed 8361dca..b7a2dad), OA MONSTERS - the
+  Carp, Giant, capture pp. 257-258 print: rules/oa80carp.h,
+  prefix djw (verified free at 8361dca), ONE gap flip, gap
+  census 162/73. 28 consts + 19 bools (47 inlines): the stat
+  block (the uncommon, the 1-4, the AC 6, the move 18, the
+  8-12, the Nil lair, the Nil treasure, the 1 attack of 2-20,
+  the swallow whole, the standard MR, the animal, the neutral,
+  the L of 20-30 feet, the Nil psionics) with the first
+  four-row XP table of the roster (the 8 HD VI/650 + 10, the
+  9 HD VI/1,000 + 12, the 10 HD VII/1,500 + 14, the 11 and 12
+  HD VII/2,150 + 16); the nature (the overgrown cousin of the
+  food-fish, the freshwater habitat of substantial depth, the
+  temperate-to-tropical range, the scavenger feeding, the
+  surfacing attacks, the fishhook bait); the swallow rules
+  (the 12-point threshold, the five swallow tiers down to the
+  12 HD small oni or ogre, the 1 hp per round digestion, the
+  5% cumulative suffocation, the rescue-or-cut-free rule, the
+  50% hp freedom trigger, the outside -2 to hit, the 20%
+  thrust chance, the village supply, the dangerous
+  expeditions). Zero false starts, first rverify GREEN, 47
+  mutants, 0 missed. Spec md5 e04abed6f7da71eff21e6e8233e8d42e
+  (authored-plus-newline md5 3a8e6d52e4d91dad463de70594f2e486
+  the ritual gate, matched byte-exact; canvas md5
+  be1cf09bb972c8d2db2e3824aed5b634). NEXT - R710: the
+  Con-Tinh, Lesser Spirit (capture pp. 258-259), prefix djx
+  (verified free at b7a2dad), audit "R710 OA monsters Con-Tinh
+  audit", include after rules/oa80carp.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
