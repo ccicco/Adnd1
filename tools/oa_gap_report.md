@@ -2128,7 +2128,31 @@ description riding the same round.
     rule and the leaves-forever
     departure); single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Dragons, Oriental (capture pp. 259-262) - the
+  - [x] Dragons, Oriental (capture pp. 259-262) - the
+    - R712: the djz oriental dragons pins - the
+    Celestial Bureaucracy (the seven offices
+    from the li lung earth energies to the tun
+    mi lung ocean storms, the yearly palace
+    report with the censors and the dreams, the
+    yu lung exclusion, the two FF Tome
+    additions), the chiang lung river dragon
+    (the rare, the 1-2, the AC 2, the move
+    12/18/24, the 10-12, the 80% lair, the
+    treasure F, the 3 attacks of 1-6/1-6/
+    3-36, the 10% MR, the VII/13,750 + 14 and
+    the VIII/5,400 + 16, the pearl flight, the
+    rain-cloud breath, the seven at-will
+    spells, the underwater escort, the palace
+    under the waves with the stolen-goods
+    rule, the daughter marriages), the tun mi
+    lung typhoon dragon (the very rare, the
+    1, the AC -1, the move 9, the 10-12, the
+    20% lair, the 3 attacks of 1-3/1-3/
+    2-20, the VII/14,400 + 16, the divine wind
+    of five miles per age level once per week,
+    the no-breath-weapon, the water and air
+    immunity); single-pass pins per the
+    Chapter 9 provenance shift
     six true dragons: Chiang Lung the river dragon,
     Li Lung, Pan Lung, Shen Lung, T'ien Lung and Tun
     Mi Lung the typhoon dragon

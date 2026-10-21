@@ -16280,6 +16280,34 @@ when both halves land.
   Doc Cu'o'c, Greater Spirit (capture p. 259), prefix djy
   (verified free at b200a70), audit "R711 OA monsters Doc
   Cu'o'c audit", include after rules/oa81continh.h.
+- R711 LANDED 2026-10-21: commit 878365a250e4ddb0f492a2013a590dba74b05782
+  (census 633 -> 634, pushed b200a70..878365a), OA MONSTERS - the
+  Doc Cu'o'c, Greater Spirit, capture p. 259 print:
+  rules/oa82doccuoc.h, prefix djy (verified free at b200a70),
+  ONE gap flip, gap census 164/71. 16 consts + 22 bools (38
+  inlines): the stat block (the very rare, the 1, the AC -3,
+  the move 24, the HD 10, the 10% lair, the treasure G, the
+  2 attacks of 1-8/1-8 + special, the 70% MR, the genius, the
+  chaotic good, the M, the Nil psionics, the VIII/3,600 +
+  14/hp); the nature (the half-man one-leg form, the
+  always-carried axe, the offering-and-worship covenant, the
+  countryside protectorship, the see-invisible, the invisible
+  at will, the evil-spirit enmity, the crop-weather doctrine,
+  the seldom-direct-involvement restraint, the
+  land-not-people priority); the axe and the lair (the 1d8
+  axe, the electrical shock at current hit points with the
+  save vs. spell for half, the +3 weapon requirement, the five
+  once-per-day cures, the two thrice-per-day powers, the
+  Astral Plane lair, the robbery-havoc rule, the
+  leaves-forever departure). Zero false starts, first rverify
+  GREEN, 38 mutants, 0 missed. Spec md5
+  a034dcce2ec3c3902f0b0220665d3fa5 (authored-plus-newline md5
+  5cc74d3f35209cf2f872bbc4b362e092, the ritual gate, matched
+  byte-exact; canvas md5 5714b16ad4d81962be4bec1de39d44fd).
+  NEXT - R712: the Oriental Dragons (capture pp. 259-260),
+  prefix djz (verified free at 878365a), audit "R712 OA
+  monsters Oriental Dragons audit", include after
+  rules/oa82doccuoc.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
