@@ -16086,6 +16086,35 @@ when both halves land.
   Groupings with Creatures from Previous Books (capture p. 252),
   prefix djr (verified free at f4c28d7), audit "R704 OA climate
   groupings audit", include after rules/oa74terrain.h
+- R704 LANDED 2026-10-21: commit 966d0e6d759e77210f9cd8f4635535e73dd64aea
+  (census 626 -> 627, pushed f4c28d7..966d0e6), OA CLIMATE
+  GROUPINGS, capture pp. 252-253 print: rules/oa75climate.h,
+  prefix djr (verified free at f4c28d7), ONE gap flip, gap
+  census 156/79 -> 157/78. 14 consts + 8 bools (22 inlines):
+  the seven climate groupings with the game creature counts
+  (the Sub-Arctic Forests 18, the Temperate Plain/Forest 20,
+  the Steppelands 13, the Sub-Tropical Forest 18, the
+  Tropical Forest 18, the Cold Oceans 6, the Warm Oceans 4,
+  the 61 distinct creatures); the Creatures from Previous
+  Books the 124 cross-referenced entries (59 MMI, 18 FF, 46
+  MMII, 1 LL), the list aids the DM and is not exclusive;
+  the doctrine (the unique-to-Kara-Tur creatures, the
+  held-at-bay geography, the groupings by climate, the game
+  creatures off the encounter tables); the Celestial
+  Bureaucracy with its yearly-examined replaceable
+  officials. THE R703 PATTERN ROUTINE: the group lists and
+  the cross-reference table parsed from the OCR pages, every
+  example built from the parsed data - zero false starts,
+  first rverify GREEN, 22 mutants, 0 missed. Spec md5
+  be4f13c352a321a4a1292135788d83b0
+  (authored-plus-newline md5
+  e370682df9265d66117baf5d9e38282e - the value the ritual
+  gated and matched byte-exact at the landing; canvas md5
+  6e13e38bcc88f8293c2ba82cad571cd4). NEXT - R705: the
+  Chapter 12 monster roster opener - the Bajang, Lesser
+  Spirit (capture pp. 253-254), prefix djs (verified free
+  at 966d0e6), audit "R705 OA monsters Bajang audit",
+  include after rules/oa75climate.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

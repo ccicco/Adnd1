@@ -1978,7 +1978,21 @@ description riding the same round.
   - [ ] The Celestial Emperor and the Celestial
     Bureaucracy (capture p. 253) - the spirit-world
     framing doctrine
-  - [ ] Bajang, Lesser Spirit (capture p. 253)
+  - [x] Bajang, Lesser Spirit (capture p. 253)
+    - R705: the djs Bajang pins - the stat
+    block (the very rare, the 1, the AC 2,
+    the move 12, the HD 6, the 20% lair, the
+    treasure P, the 2 claws of 1-4, the
+    spells and poison, the 10% MR, the V/500
+    + 6 per hp), the eight spells three per
+    day with the ancient curse once, the
+    claw poison the -1 for 2-7 rounds
+    cumulative, the wildcat shape the
+    common form, the tree lifeforce, the
+    night village predation, the evil
+    sorcerer's familiar service;
+    single-pass pins per the Chapter 9
+    provenance shift
   - [ ] Bakemono (capture p. 254)
   - [ ] Bisan, Lesser Spirit (capture p. 255)
   - [ ] Buso (capture p. 256)
