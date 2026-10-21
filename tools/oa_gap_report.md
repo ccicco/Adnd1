@@ -1993,7 +1993,24 @@ description riding the same round.
     sorcerer's familiar service;
     single-pass pins per the Chapter 9
     provenance shift
-  - [ ] Bakemono (capture p. 254)
+  - [x] Bakemono (capture p. 254)
+    - R706: the djt Bakemono pins - the stat
+    block (the 1-100, the AC 6, the move 6, the
+    HD 1-1, the 40% lair, the treasure A, the
+    1 attack of 1-6, the 1/10 + 1 per hp), the
+    band organization (the oni or ogre mage
+    rule, the lieutenant per 20 at HD 2 AC 4
+    the 1-8, the absolute command), the
+    abandoned-temple lair with the 40%
+    stockade, the seven-row scavenged
+    equipment table (the katana 5, the
+    naginata 20, the spear 40, the tetsubo
+    10, the short sword and bow 10, the chain
+    and shuriken 5, the kusari-gama 10), the
+    20% at AC 5 unusable by player characters,
+    the four languages, the easily tricked,
+    the sake weakness; single-pass pins per
+    the Chapter 9 provenance shift
   - [ ] Bisan, Lesser Spirit (capture p. 255)
   - [ ] Buso (capture p. 256)
   - [ ] Carp, Giant (capture p. 257)

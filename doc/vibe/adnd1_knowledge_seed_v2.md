@@ -16115,6 +16115,35 @@ when both halves land.
   Spirit (capture pp. 253-254), prefix djs (verified free
   at 966d0e6), audit "R705 OA monsters Bajang audit",
   include after rules/oa75climate.h
+- R705 LANDED 2026-10-21: commit 2b9c1e303628193089e6cf104ef7e30419eef700
+  (census 627 -> 628, pushed 966d0e6..2b9c1e3), OA MONSTERS - the
+  Bajang, the lesser spirit, capture pp. 253-254 print:
+  rules/oa76bajang.h, prefix djs (verified free at 966d0e6), ONE
+  gap flip, gap census 157/78 -> 158/77. 19 consts + 9 bools (28
+  inlines): the stat block (the very rare, the 1, the AC 2, the
+  move 12, the HD 6, the 20% lair, the treasure P, the 2 claws of
+  1-4, the spells and poison, the 10% MR, the V/500 + 6 per hp);
+  the eight spells three per day (the curse, the omen, the
+  divination, the fate, the ghost light, the wind breath, the
+  steam breath, the transfix) with the ancient curse once; the
+  claw poison the -1 for 2-7 rounds cumulative; the wildcat shape
+  the common form; the tree lifeforce (the tree destroyed, the
+  bajang instantly slain, the location concealed); the night
+  village predation, the sorcerer's-familiar service, the
+  devious intelligence. THE CHAPTER 12 MONSTER ROSTER OPENED: per
+  monster the stat block and the description ride the same
+  round. One generator-side false start: the True-token assert
+  tripped on the pin name djsBajangTrueFormHumanoid (a substring,
+  not a literal) - the assert was wrong, not the spec; fixed to a
+  word-boundary check. First rverify GREEN, 28 mutants, 0
+  missed. Spec md5 392766035cd31ceee2fd27cae48e7a36
+  (authored-plus-newline md5 9c5ced229b5fa40b56f74163817a18f8
+  - the value the ritual gated and matched byte-exact at the
+  landing; canvas md5
+  a79fd647104bc81e545e273eeb9fdf14). NEXT - R706: the Bakemono
+  (capture pp. 254-255), prefix djt (verified free at 2b9c1e3),
+  audit "R706 OA monsters Bakemono audit", include after
+  rules/oa76bajang.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
