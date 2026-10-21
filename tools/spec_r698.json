@@ -1,0 +1,958 @@
+{
+ "round": 698,
+ "title": "OA EXPLANATION OF YEARLY EVENTS - the nineteen event explanations: the ambassadors and assassinations, the disasters and wars, with their durations, chances and price effects",
+ "prefix": "djl",
+ "header_file": "rules/oa71explain.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 620,
+ "inline_count": 92,
+ "audit_label": "R698 OA yearly events prose audit",
+ "audit_comment": "OA round eighty-five (capture pp. 240-243): the Explanation of Yearly Events - the nineteen Table 71 events explained with their durations, chances and effects, plus the never-rerolled rule, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA EXPLANATION OF YEARLY EVENTS, printed capture pp. 240-243 - the yearly explanations round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE RIGIDITY: the events not accounting for the player characters, the outcomes changeable, but the yearly event NEVER rerolled - prevented meaning no yearly event for the year; the season check after the month roll. THE EXPLANATIONS: the Ambassador of the 50/50 direction staying 3d10 months, the 10% gaijin, the court ceremonies; the Assassination with the 30% taken-alive, the 1% accusation, the 20% succession struggle and the 1d6-month turmoil; the Birth celebrated for days; the Comet of the 1d4 weeks, the portent, the DM's second event to follow; the Death of a Lord with the Assassination's succession; the Major Earthquake of the 50-mile radius, the 70% fire and the 40% plague, the earthquake spell effects, the few hours; the Famine of the 2-7 months, the food at 10 to 100 times, the 25% next-year income, the 60% uprising, the 5% monthly population loss, the 20% plague; the Major Fire of the 50% to 80% city, the 10% to 40% population, the 20% plague, the 10% famine, the 10x lumber for four months, the doubled food for one; the Flood of the 5d6-foot crest, the half foot per hour, the 4d6-hour high, the signs 2-5 days ahead, the dikes, the 50% planting-season and 80% harvest losses, the 40% famine, the 20% plague, no deserts; the Major Incursion of the 1d12 months, proportionate, remaining until driven out; the Marriage diplomatic and festive; the New Religion with the 75% hostility, the 60% ruler's favor, the 40% ban, the 2-7 month arrival, the feuds of centuries; the Plague of the 2d6 months, the 40% and 60% contagion, the 5% monthly loss, the 5x imports, the moving scythe; the Political Plot with the 40% and 80% accusations, the 20% noble rising, the 1-3 month turmoil; the Rebellion of the 1d6 months, the BATTLESYSTEM recommendation, no mercy for the captured; the Tsunami of the 50-mile coast, the 100-200 feet, the 70% population loss, the landlocked no-event, the 10% plague, the 3x building materials; the Visitation of the revered pilgrim site or the despised 5-mile shunning; the Volcano of the 70/30 origin, the 5-mile destruction, the 30-mile ash, the 1d12-month activity, the 10% monthly re-eruption; the War of the 50/50 direction, the 2-5 month campaign in the summer, the 1-3 years, the 50% farm loss, the press gangs. The explanations codify per the R431 calculus",
+  "sentinel": "the gap census after this round: 151 closed, 84 open - the Yearly Events prose box flips (census 620 -> 621); NEXT - R699: Table 72 the monthly events grid (capture p. 238), prefix djm (verify free at the landing), audit \"R699 OA monthly events audit\", include after rules/oa71explain.h"
+ },
+ "consts": [
+  {
+   "name": "djlAmbassadorStayDiceCount",
+   "value": 3,
+   "comment": "the Ambassador stay - the 3d10 months the ambassador remains in the land (print capture p. 240)"
+  },
+  {
+   "name": "djlAmbassadorStayDieSize",
+   "value": 10,
+   "comment": "the Ambassador stay die - the d10 of the 3d10 months (print capture p. 240)"
+  },
+  {
+   "name": "djlAmbassadorGaijinPct",
+   "value": 10,
+   "comment": "the Ambassador gaijin chance - 10% that any arriving ambassador is a gaijin from the distant lands beyond Kara-Tur (print capture p. 240)"
+  },
+  {
+   "name": "djlAssassinAlivePct",
+   "value": 30,
+   "comment": "the Assassination capture chance - 30% that the assassin is taken alive (print capture p. 240)"
+  },
+  {
+   "name": "djlAssassinAccusePct",
+   "value": 1,
+   "comment": "the Assassination accusation - 1% chance the taken-alive assassin accuses the player characters connected to the slain (print capture p. 240)"
+  },
+  {
+   "name": "djlAssassinNoSuccessorPct",
+   "value": 20,
+   "comment": "the Assassination succession - 20% chance the slain lord has no clear successor, the power struggle ensuing (print capture p. 240)"
+  },
+  {
+   "name": "djlAssassinTurmoilDie",
+   "value": 6,
+   "comment": "the Assassination turmoil die - the 1d6 months of the power struggle or of the court turmoil before things return to normal (print capture p. 240)"
+  },
+  {
+   "name": "djlCometDieSize",
+   "value": 4,
+   "comment": "the Comet sighting - the bright comet in the sky for 1d4 weeks (print capture p. 240)"
+  },
+  {
+   "name": "djlQuakeRadiusMi",
+   "value": 50,
+   "comment": "the Major Earthquake radius - extensive destruction within the 50-mile-radius area, the center point the DM's choice (print capture p. 241)"
+  },
+  {
+   "name": "djlQuakeFirePct",
+   "value": 70,
+   "comment": "the Major Earthquake fire chance - 70% that a major fire occurs in any town or city of the radius (print capture p. 241)"
+  },
+  {
+   "name": "djlQuakePlaguePct",
+   "value": 40,
+   "comment": "the Major Earthquake plague chance - 40% that a plague will occur in a populated area (print capture p. 241)"
+  },
+  {
+   "name": "djlFamineMinMonths",
+   "value": 2,
+   "comment": "the Famine duration minimum - the 2 of the 2-7 months (print capture p. 241)"
+  },
+  {
+   "name": "djlFamineMaxMonths",
+   "value": 7,
+   "comment": "the Famine duration maximum - the 7 of the 2-7 months (print capture p. 241)"
+  },
+  {
+   "name": "djlFaminePriceMaxX",
+   "value": 100,
+   "comment": "the Famine price spiral - the food price skyrocketing 10, 50 or even 100 times its normal price (print capture p. 241)"
+  },
+  {
+   "name": "djlFamineNextYearPct",
+   "value": 25,
+   "comment": "the Famine farm recovery - no income for the year, only 25% of normal income in the next year (print capture p. 241)"
+  },
+  {
+   "name": "djlFamineUprisingPct",
+   "value": 60,
+   "comment": "the Famine uprising chance - 60% that the peasants rise unless steps are taken to relieve the suffering (print capture p. 241)"
+  },
+  {
+   "name": "djlFaminePopPct",
+   "value": 5,
+   "comment": "the Famine population loss - the area's population reduced by 5% per month of famine (print capture p. 241)"
+  },
+  {
+   "name": "djlFaminePlaguePct",
+   "value": 20,
+   "comment": "the Famine plague chance - 20% (print capture p. 241)"
+  },
+  {
+   "name": "djlFireMinPct",
+   "value": 50,
+   "comment": "the Major Fire destruction minimum - the 50% of the 50% to 80% of the city destroyed (print capture p. 241)"
+  },
+  {
+   "name": "djlFireMaxPct",
+   "value": 80,
+   "comment": "the Major Fire destruction maximum - the 80% of the 50% to 80% (print capture p. 241)"
+  },
+  {
+   "name": "djlFirePopMinPct",
+   "value": 10,
+   "comment": "the Major Fire population minimum - the city's population reduced by 10% to 40% (print capture p. 241)"
+  },
+  {
+   "name": "djlFirePopMaxPct",
+   "value": 40,
+   "comment": "the Major Fire population maximum - the 40% of the 10% to 40% (print capture p. 241)"
+  },
+  {
+   "name": "djlFirePlaguePct",
+   "value": 20,
+   "comment": "the Major Fire plague chance - 20% (print capture p. 241)"
+  },
+  {
+   "name": "djlFireFaminePct",
+   "value": 10,
+   "comment": "the Major Fire famine chance - 10% (print capture p. 241)"
+  },
+  {
+   "name": "djlFireLumberX",
+   "value": 10,
+   "comment": "the Major Fire lumber price - 10 times normal for the next four months (print capture p. 241)"
+  },
+  {
+   "name": "djlFireLumberMonths",
+   "value": 4,
+   "comment": "the Major Fire lumber duration - the four months of the 10x lumber and building materials (print capture p. 241)"
+  },
+  {
+   "name": "djlFloodMaxFt",
+   "value": 30,
+   "comment": "the Flood crest - the waters rising 5-30 feet (the 5d6), a half foot per hour until the maximum is reached (print capture p. 241)"
+  },
+  {
+   "name": "djlFloodHighDieSize",
+   "value": 6,
+   "comment": "the Flood high point - the waters remaining at crest for 4d6 hours, subsiding at one foot per day (print capture p. 241)"
+  },
+  {
+   "name": "djlFloodFarmPlantPct",
+   "value": 50,
+   "comment": "the Flood planting season - the farms' income reduced by 50% for the year (print capture p. 241)"
+  },
+  {
+   "name": "djlFloodFarmHarvestPct",
+   "value": 80,
+   "comment": "the Flood harvest season - 80% of all farm income lost (print capture p. 241)"
+  },
+  {
+   "name": "djlFloodHarvestFaminePct",
+   "value": 40,
+   "comment": "the Flood harvest famine - 40% chance of famine in 1-3 months unless prevented (print capture p. 241)"
+  },
+  {
+   "name": "djlFloodPlaguePct",
+   "value": 20,
+   "comment": "the Flood plague chance - all floods 20% (print capture p. 241)"
+  },
+  {
+   "name": "djlIncursionDieSize",
+   "value": 12,
+   "comment": "the Major Incursion duration - the migration occurring over 1d12 months (print capture p. 241)"
+  },
+  {
+   "name": "djlNewReligionHostilityPct",
+   "value": 75,
+   "comment": "the New Religion hostility - 75% chance of feuding with the established religions, the skirmishing, temple burning and warrior monk battles (print capture p. 241)"
+  },
+  {
+   "name": "djlNewReligionRulerFavorPct",
+   "value": 60,
+   "comment": "the New Religion ruler - 60% chance the ruler comes out in favor of the new religion (print capture p. 242)"
+  },
+  {
+   "name": "djlNewReligionBanPct",
+   "value": 40,
+   "comment": "the New Religion ban - 40% chance the ruler bans the other religions, temples burned, clerics killed or banished (print capture p. 242)"
+  },
+  {
+   "name": "djlNewReligionArrivalMin",
+   "value": 2,
+   "comment": "the New Religion arrival minimum - the 2 of the 2-7 months of the initial arrival (print capture p. 242)"
+  },
+  {
+   "name": "djlNewReligionArrivalMax",
+   "value": 7,
+   "comment": "the New Religion arrival maximum - the 7 of the 2-7 months, the feuding possibly lasting for centuries (print capture p. 242)"
+  },
+  {
+   "name": "djlPlagueDieCount",
+   "value": 2,
+   "comment": "the Plague duration dice - the 2 of the 2d6 months, the disease sweeping faster than the clerics can check it (print capture p. 242)"
+  },
+  {
+   "name": "djlPlagueDieSize",
+   "value": 6,
+   "comment": "the Plague duration die - the d6 of the 2d6 months (print capture p. 242)"
+  },
+  {
+   "name": "djlPlagueCatchPct",
+   "value": 40,
+   "comment": "the Plague contagion - 40% chance per month spent in the plague-ridden lands (print capture p. 242)"
+  },
+  {
+   "name": "djlPlagueCatchCompanyPct",
+   "value": 60,
+   "comment": "the Plague company contagion - 60% chance of contracting it in the company of a diseased person (print capture p. 242)"
+  },
+  {
+   "name": "djlPlaguePopPct",
+   "value": 5,
+   "comment": "the Plague population loss - the area's population reduced by 5% per month (print capture p. 242)"
+  },
+  {
+   "name": "djlPlagueImportX",
+   "value": 5,
+   "comment": "the Plague prices - the imported goods five times normal, the normal goods doubled, traders staying out (print capture p. 242)"
+  },
+  {
+   "name": "djlPlotAccusePct",
+   "value": 40,
+   "comment": "the Political Plot accusation - 40% that player characters in government or political affairs are accused of complicity (print capture p. 242)"
+  },
+  {
+   "name": "djlPlotAccuseEnemiesPct",
+   "value": 80,
+   "comment": "the Political Plot accusation with enemies - the chance increased to 80% for characters with powerful enemies (print capture p. 242)"
+  },
+  {
+   "name": "djlPlotRebellionPct",
+   "value": 20,
+   "comment": "the Political Plot rebellion - 20% chance that a noble or group of nobles rises (print capture p. 242)"
+  },
+  {
+   "name": "djlPlotTurmoilMaxMonths",
+   "value": 3,
+   "comment": "the Political Plot turmoil - the 3 of the 1-3 months of the political turmoil, spies and secret police everywhere (print capture p. 242)"
+  },
+  {
+   "name": "djlRebellionDieSize",
+   "value": 6,
+   "comment": "the Rebellion duration without the BATTLESYSTEM supplement - the 1d6 months before the unlikely success or the failure (print capture p. 242)"
+  },
+  {
+   "name": "djlTsunamiCoastMi",
+   "value": 50,
+   "comment": "the Tsunami strike - a 50-mile section of coastline, the great wave as per the spell (print capture p. 242)"
+  },
+  {
+   "name": "djlTsunamiHeightMinFt",
+   "value": 100,
+   "comment": "the Tsunami height minimum - the 100 of the 100 to 200 feet when it hits (print capture p. 242)"
+  },
+  {
+   "name": "djlTsunamiHeightMaxFt",
+   "value": 200,
+   "comment": "the Tsunami height maximum - the 200 feet, striking with little warning (print capture p. 242)"
+  },
+  {
+   "name": "djlTsunamiPopPct",
+   "value": 70,
+   "comment": "the Tsunami population loss - the area's population reduced by 70% (print capture p. 242)"
+  },
+  {
+   "name": "djlTsunamiPlaguePct",
+   "value": 10,
+   "comment": "the Tsunami aftermath plague - 10% chance (print capture p. 242)"
+  },
+  {
+   "name": "djlTsunamiBuildX",
+   "value": 3,
+   "comment": "the Tsunami prices - building materials triple, all other goods double, for the 1-2 months of the aftermath (print capture p. 242)"
+  },
+  {
+   "name": "djlVisitationRadiusMi",
+   "value": 5,
+   "comment": "the Visitation despised radius - the fortunes of those within a 5-mile radius falling, the area shunned (print capture p. 242)"
+  },
+  {
+   "name": "djlVolcanoDormantPct",
+   "value": 70,
+   "comment": "the Volcano origin - 70% a dormant volcano erupts, 30% a new volcano appears, the eruption preceded by the tremors of a major earthquake (print capture p. 242)"
+  },
+  {
+   "name": "djlVolcanoRadiusMi",
+   "value": 5,
+   "comment": "the Volcano destruction - all within a 5-mile radius destroyed (print capture p. 242)"
+  },
+  {
+   "name": "djlVolcanoAshMi",
+   "value": 30,
+   "comment": "the Volcano ash - the thick clouds raining down up to 30 miles downwind, the smoke and ash for the remainder of the month (print capture p. 242)"
+  },
+  {
+   "name": "djlVolcanoActiveDieSize",
+   "value": 12,
+   "comment": "the Volcano activity - remaining active for 1d12 months (print capture p. 242)"
+  },
+  {
+   "name": "djlVolcanoReEruptPct",
+   "value": 10,
+   "comment": "the Volcano re-eruption - 10% chance per month of another major eruption (print capture p. 242)"
+  },
+  {
+   "name": "djlWarCampaignMinMonths",
+   "value": 2,
+   "comment": "the War campaign minimum - the 2 of the 2-5 months of the one major campaign per year, generally in the summer (print capture p. 243)"
+  },
+  {
+   "name": "djlWarCampaignMaxMonths",
+   "value": 5,
+   "comment": "the War campaign maximum - the 5 of the 2-5 months (print capture p. 243)"
+  },
+  {
+   "name": "djlWarDurationMaxYears",
+   "value": 3,
+   "comment": "the War duration - the war lasting 1-3 years, the armies in the thousands or tens of thousands (print capture p. 243)"
+  },
+  {
+   "name": "djlWarFarmPct",
+   "value": 50,
+   "comment": "the War farm income - the farms in the area fought over reduced by 50%, the prices on the campaign trail doubled or tripled (print capture p. 243)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djlAmbassadorEitherDirection",
+   "value": true,
+   "comment": "the Ambassador direction - arriving from another land or sent to one, 50/50; sent to prevent war, form an alliance, arrange a marriage, pay tribute, promote trade or gain culture, the arrival a major court event of ceremonies and banquets (print capture p. 240)"
+  },
+  {
+   "name": "djlAssassinPcSuspicion",
+   "value": true,
+   "comment": "the Assassination suspicion - the player characters suspected as vassals or dealing partners of the slain, automatically if known enemies (print capture p. 240)"
+  },
+  {
+   "name": "djlAssassinStruggleMayWar",
+   "value": true,
+   "comment": "the Assassination power struggle - lasting 1d6 months and possibly resulting in war if the DM desires (print capture p. 240)"
+  },
+  {
+   "name": "djlBirthCelebration",
+   "value": true,
+   "comment": "the Birth - the noble line continued, the happy event with feasting and ceremonies lasting several days (print capture p. 240)"
+  },
+  {
+   "name": "djlCometPortentSecond",
+   "value": true,
+   "comment": "the Comet portent - the bright comet sighted 1d4 weeks, a portent of some great event: a second yearly event chosen by the DM and occurring shortly after the comet passes (print capture p. 240)"
+  },
+  {
+   "name": "djlDeathSameAsAssassination",
+   "value": true,
+   "comment": "the Death of a Lord - the noble dying in battle, misadventure, disease or peacefully in bed, the succession effects the same as the Assassination's (print capture p. 241)"
+  },
+  {
+   "name": "djlQuakeLesserTremors",
+   "value": true,
+   "comment": "the Major Earthquake tremors - the series of lesser tremors before and after, slight damage per the DM (print capture p. 241)"
+  },
+  {
+   "name": "djlQuakeSpellEffects",
+   "value": true,
+   "comment": "the Major Earthquake effects - the player characters and property in the radius affected as by an earthquake spell, the severity the DM's choice; the quake lasting only a few hours, destroying cities and reshaping lakes, coastlines and rivers (print capture p. 241)"
+  },
+  {
+   "name": "djlFamineSigns",
+   "value": true,
+   "comment": "the Famine signs - the crops withering, animals dying, the poor hungering; the marauder groups scavenging for food of any type (print capture p. 241)"
+  },
+  {
+   "name": "djlFirePcPropertyBurned",
+   "value": true,
+   "comment": "the Major Fire property - the player characters' property burned to the ground at the percentage chance equal to the amount of the city destroyed (print capture p. 241)"
+  },
+  {
+   "name": "djlFloodLevees",
+   "value": true,
+   "comment": "the Flood warning - the signs obvious 2-5 days in advance, the levees and dikes buildable to protect against the rising waters (print capture p. 241)"
+  },
+  {
+   "name": "djlFloodNoDesert",
+   "value": true,
+   "comment": "the Flood limit - floods never occurring in desert or arid regions (print capture p. 241)"
+  },
+  {
+   "name": "djlIncursionProportionate",
+   "value": true,
+   "comment": "the Major Incursion scale - the migration in proportion to the kingdom, the several hundred creatures of a small province or the several thousand of a large kingdom; humans, humanoids or monsters, not necessarily war (print capture p. 241)"
+  },
+  {
+   "name": "djlIncursionRemainsUntilDrivenOut",
+   "value": true,
+   "comment": "the Major Incursion settlement - the creatures remaining until driven out, the old habits and language retained, gradually adopted into the regular part of life if allowed to stay (print capture p. 241)"
+  },
+  {
+   "name": "djlMarriageDiplomatic",
+   "value": true,
+   "comment": "the Marriage - the ruler's important diplomatic marriage of himself or his children, securing alliances, controlling smaller kingdoms, settling disputes or appeasing overlords; festivals and feasting (print capture p. 241)"
+  },
+  {
+   "name": "djlNewReligionRulersTool",
+   "value": true,
+   "comment": "the New Religion politics - the rulers supporting the new religions as a tool for breaking the political power of the established ones, both sides seeking the ruler's support (print capture p. 242)"
+  },
+  {
+   "name": "djlPlagueSweeps",
+   "value": true,
+   "comment": "the Plague movement - not the whole country at once but sweeping from town to town like a moving scythe: not yet hit, in the throes, or suffered and survived (print capture p. 242)"
+  },
+  {
+   "name": "djlPlotProveInnocence",
+   "value": true,
+   "comment": "the Political Plot justice - the accused proving innocence or suffering the consequences, the nobles stripped of rank, banished or executed (print capture p. 242)"
+  },
+  {
+   "name": "djlRebellionBattlesystem",
+   "value": true,
+   "comment": "the Rebellion battles - the BATTLESYSTEM supplement recommended for the military battles, the players managing the strategy of either side; the captured and defeated rebels expecting no mercy (print capture p. 242)"
+  },
+  {
+   "name": "djlTsunamiNoCoastNoEvent",
+   "value": true,
+   "comment": "the Tsunami limit - countries without coastlines treating the event as no event for the year (print capture p. 242)"
+  },
+  {
+   "name": "djlVisitationPaths",
+   "value": true,
+   "comment": "the Visitation - the major deity appearing for good or ill; the revered site becoming pilgrim and temple ground, the despised site shunned, the fortunes falling, the secret meeting place of evil followers and monsters (print capture p. 242)"
+  },
+  {
+   "name": "djlWarEitherDirection",
+   "value": true,
+   "comment": "the War direction - the ruler's campaign against a neighboring land or the invasion from one, 50/50; the causes, forces and outcome the DM's (print capture p. 243)"
+  },
+  {
+   "name": "djlWarPcRoles",
+   "value": true,
+   "comment": "the War player characters - readily accepted into the ranks, quickly rising in rank per their actions, possibly given commands with the BATTLESYSTEM supplement (print capture p. 243)"
+  },
+  {
+   "name": "djlWarHomefront",
+   "value": true,
+   "comment": "the War home front - away from the front the rebellion or uprising, the press gangs roaming, the younger sons deserting for soldier's fame, the civilians moving away (print capture p. 243)"
+  },
+  {
+   "name": "djlYearlyNeverRerolled",
+   "value": true,
+   "comment": "the event rigidity - the events not accounting for the player characters' actions; the player characters may change the outcomes but the YEARLY event is never rerolled (print capture p. 240)"
+  },
+  {
+   "name": "djlYearlyPreventedNone",
+   "value": true,
+   "comment": "the prevented yearly event - if the player characters manage to prevent it, no yearly event occurs for that year; the monthly events simply rerolled or decided when changed (print capture p. 240)"
+  },
+  {
+   "name": "djlYearlySeasonCheck",
+   "value": true,
+   "comment": "the season check - the exact description of the event giving the range of time over which it occurs, the monthly events checked for after the yearly month is determined (print capture p. 238)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the ambassador and the assassination - the 3d10 stay, the gaijin 10, the alive 30, the accusation 1, the successor 20",
+   "expr": "m['djlAmbassadorStayDiceCount']() != 3 or m['djlAmbassadorStayDieSize']() != 10 or m['djlAmbassadorGaijinPct']() != 10 or m['djlAssassinAlivePct']() != 30 or m['djlAssassinAccusePct']() != 1 or m['djlAssassinNoSuccessorPct']() != 20 or m['djlAssassinTurmoilDie']() != 6"
+  },
+  {
+   "note": "the earthquake and the famine - the 50-mile radius, the 70/40 chances, the 2-7 months, the 100x food, the 60% uprising",
+   "expr": "m['djlQuakeRadiusMi']() != 50 or m['djlQuakeFirePct']() != 70 or m['djlQuakePlaguePct']() != 40 or m['djlFamineMinMonths']() != 2 or m['djlFamineMaxMonths']() != 7 or m['djlFaminePriceMaxX']() != 100 or m['djlFamineUprisingPct']() != 60"
+  },
+  {
+   "note": "the fire and the flood - the 50-80 city, the 10x lumber, the 30-foot crest, the 50/80 farm losses",
+   "expr": "m['djlFireMinPct']() != 50 or m['djlFireMaxPct']() != 80 or m['djlFireLumberX']() != 10 or m['djlFireLumberMonths']() != 4 or m['djlFloodMaxFt']() != 30 or m['djlFloodHighDieSize']() != 6 or m['djlFloodFarmPlantPct']() != 50 or m['djlFloodFarmHarvestPct']() != 80"
+  },
+  {
+   "note": "the new religion and the plague - the 75/60/40 chances, the 2-7 arrival, the 2d6 plague, the 40/60 contagion, the 5x imports",
+   "expr": "m['djlNewReligionHostilityPct']() != 75 or m['djlNewReligionRulerFavorPct']() != 60 or m['djlNewReligionBanPct']() != 40 or m['djlNewReligionArrivalMin']() != 2 or m['djlNewReligionArrivalMax']() != 7 or m['djlPlagueDieCount']() != 2 or m['djlPlagueDieSize']() != 6 or m['djlPlagueCatchPct']() != 40 or m['djlPlagueCatchCompanyPct']() != 60 or m['djlPlagueImportX']() != 5"
+  },
+  {
+   "note": "the plot, the rebellion and the tsunami - the 40/80 accusations, the 1d6 rebellion, the 70% tsunami loss, the 100-200 feet",
+   "expr": "m['djlPlotAccusePct']() != 40 or m['djlPlotAccuseEnemiesPct']() != 80 or m['djlPlotRebellionPct']() != 20 or m['djlPlotTurmoilMaxMonths']() != 3 or m['djlRebellionDieSize']() != 6 or m['djlTsunamiPopPct']() != 70 or m['djlTsunamiHeightMinFt']() != 100 or m['djlTsunamiHeightMaxFt']() != 200"
+  },
+  {
+   "note": "the volcano and the war - the 70/30 origin, the 5-mile radius, the 30-mile ash, the 2-5 month campaign, the 1-3 years",
+   "expr": "m['djlVolcanoDormantPct']() != 70 or m['djlVolcanoRadiusMi']() != 5 or m['djlVolcanoAshMi']() != 30 or m['djlVolcanoActiveDieSize']() != 12 or m['djlVolcanoReEruptPct']() != 10 or m['djlWarCampaignMinMonths']() != 2 or m['djlWarCampaignMaxMonths']() != 5 or m['djlWarDurationMaxYears']() != 3 or m['djlWarFarmPct']() != 50"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the court and the calamities": [
+   {
+    "kind": "const",
+    "name": "djlAmbassadorStayDiceCount"
+   },
+   {
+    "kind": "const",
+    "name": "djlAmbassadorStayDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "djlAmbassadorGaijinPct"
+   },
+   {
+    "kind": "bool",
+    "name": "djlAmbassadorEitherDirection"
+   },
+   {
+    "kind": "const",
+    "name": "djlAssassinAlivePct"
+   },
+   {
+    "kind": "const",
+    "name": "djlAssassinAccusePct"
+   },
+   {
+    "kind": "const",
+    "name": "djlAssassinNoSuccessorPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlAssassinTurmoilDie"
+   },
+   {
+    "kind": "bool",
+    "name": "djlAssassinPcSuspicion"
+   },
+   {
+    "kind": "bool",
+    "name": "djlAssassinStruggleMayWar"
+   },
+   {
+    "kind": "bool",
+    "name": "djlBirthCelebration"
+   },
+   {
+    "kind": "const",
+    "name": "djlCometDieSize"
+   },
+   {
+    "kind": "bool",
+    "name": "djlCometPortentSecond"
+   },
+   {
+    "kind": "bool",
+    "name": "djlDeathSameAsAssassination"
+   },
+   {
+    "kind": "const",
+    "name": "djlQuakeRadiusMi"
+   },
+   {
+    "kind": "const",
+    "name": "djlQuakeFirePct"
+   },
+   {
+    "kind": "const",
+    "name": "djlQuakePlaguePct"
+   },
+   {
+    "kind": "bool",
+    "name": "djlQuakeLesserTremors"
+   },
+   {
+    "kind": "bool",
+    "name": "djlQuakeSpellEffects"
+   }
+  ],
+  "the famine, the fire and the flood": [
+   {
+    "kind": "const",
+    "name": "djlFamineMinMonths"
+   },
+   {
+    "kind": "const",
+    "name": "djlFamineMaxMonths"
+   },
+   {
+    "kind": "const",
+    "name": "djlFaminePriceMaxX"
+   },
+   {
+    "kind": "const",
+    "name": "djlFamineNextYearPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFamineUprisingPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFaminePopPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFaminePlaguePct"
+   },
+   {
+    "kind": "bool",
+    "name": "djlFamineSigns"
+   },
+   {
+    "kind": "const",
+    "name": "djlFireMinPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFireMaxPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFirePopMinPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFirePopMaxPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFirePlaguePct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFireFaminePct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFireLumberX"
+   },
+   {
+    "kind": "const",
+    "name": "djlFireLumberMonths"
+   },
+   {
+    "kind": "bool",
+    "name": "djlFirePcPropertyBurned"
+   },
+   {
+    "kind": "const",
+    "name": "djlFloodMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "djlFloodHighDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "djlFloodFarmPlantPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFloodFarmHarvestPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFloodHarvestFaminePct"
+   },
+   {
+    "kind": "const",
+    "name": "djlFloodPlaguePct"
+   },
+   {
+    "kind": "bool",
+    "name": "djlFloodLevees"
+   },
+   {
+    "kind": "bool",
+    "name": "djlFloodNoDesert"
+   }
+  ],
+  "the incursion, the religion and the plague": [
+   {
+    "kind": "const",
+    "name": "djlIncursionDieSize"
+   },
+   {
+    "kind": "bool",
+    "name": "djlIncursionProportionate"
+   },
+   {
+    "kind": "bool",
+    "name": "djlIncursionRemainsUntilDrivenOut"
+   },
+   {
+    "kind": "bool",
+    "name": "djlMarriageDiplomatic"
+   },
+   {
+    "kind": "const",
+    "name": "djlNewReligionHostilityPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlNewReligionRulerFavorPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlNewReligionBanPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlNewReligionArrivalMin"
+   },
+   {
+    "kind": "const",
+    "name": "djlNewReligionArrivalMax"
+   },
+   {
+    "kind": "bool",
+    "name": "djlNewReligionRulersTool"
+   },
+   {
+    "kind": "const",
+    "name": "djlPlagueDieCount"
+   },
+   {
+    "kind": "const",
+    "name": "djlPlagueDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "djlPlagueCatchPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlPlagueCatchCompanyPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlPlaguePopPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlPlagueImportX"
+   },
+   {
+    "kind": "bool",
+    "name": "djlPlagueSweeps"
+   }
+  ],
+  "the plot, the rebellion, the disasters and the war": [
+   {
+    "kind": "const",
+    "name": "djlPlotAccusePct"
+   },
+   {
+    "kind": "const",
+    "name": "djlPlotAccuseEnemiesPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlPlotRebellionPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlPlotTurmoilMaxMonths"
+   },
+   {
+    "kind": "bool",
+    "name": "djlPlotProveInnocence"
+   },
+   {
+    "kind": "const",
+    "name": "djlRebellionDieSize"
+   },
+   {
+    "kind": "bool",
+    "name": "djlRebellionBattlesystem"
+   },
+   {
+    "kind": "const",
+    "name": "djlTsunamiCoastMi"
+   },
+   {
+    "kind": "const",
+    "name": "djlTsunamiHeightMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "djlTsunamiHeightMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "djlTsunamiPopPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlTsunamiPlaguePct"
+   },
+   {
+    "kind": "const",
+    "name": "djlTsunamiBuildX"
+   },
+   {
+    "kind": "bool",
+    "name": "djlTsunamiNoCoastNoEvent"
+   },
+   {
+    "kind": "const",
+    "name": "djlVisitationRadiusMi"
+   },
+   {
+    "kind": "bool",
+    "name": "djlVisitationPaths"
+   },
+   {
+    "kind": "const",
+    "name": "djlVolcanoDormantPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlVolcanoRadiusMi"
+   },
+   {
+    "kind": "const",
+    "name": "djlVolcanoAshMi"
+   },
+   {
+    "kind": "const",
+    "name": "djlVolcanoActiveDieSize"
+   },
+   {
+    "kind": "const",
+    "name": "djlVolcanoReEruptPct"
+   },
+   {
+    "kind": "const",
+    "name": "djlWarCampaignMinMonths"
+   },
+   {
+    "kind": "const",
+    "name": "djlWarCampaignMaxMonths"
+   },
+   {
+    "kind": "const",
+    "name": "djlWarDurationMaxYears"
+   },
+   {
+    "kind": "const",
+    "name": "djlWarFarmPct"
+   },
+   {
+    "kind": "bool",
+    "name": "djlWarEitherDirection"
+   },
+   {
+    "kind": "bool",
+    "name": "djlWarPcRoles"
+   },
+   {
+    "kind": "bool",
+    "name": "djlWarHomefront"
+   }
+  ],
+  "the event rigidity": [
+   {
+    "kind": "bool",
+    "name": "djlYearlyNeverRerolled"
+   },
+   {
+    "kind": "bool",
+    "name": "djlYearlyPreventedNone"
+   },
+   {
+    "kind": "bool",
+    "name": "djlYearlySeasonCheck"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Yearly Events prose box closes",
+   "from": "  - [ ] Yearly Events prose and explanations\n    (capture pp. 237-243)",
+   "to": "  - [x] Yearly Events prose and\n    explanations (capture pp. 237-243)\n    - R698: the djl yearly explanation pins\n    the nineteen events explained: the\n    Ambassador (50/50 direction, the\n    3d10-month stay, the 10% gaijin, the\n    court ceremonies), the Assassination\n    (30% taken alive, 1% accusation, 20%\n    succession struggle, the 1d6-month\n    turmoil, the DM's optional war), the\n    celebrated Birth, the Comet (1d4\n    weeks, the portent, the DM's second\n    event), the Death with the\n    Assassination's succession, the Major\n    Earthquake (50-mile radius, 70% fire,\n    40% plague, the spell effects), the\n    Famine (2-7 months, the 10-to-100x\n    food, the 25% next-year income, 60%\n    uprising, 5% monthly population, 20%\n    plague), the Major Fire (the 50-80%\n    city, 10-40% population, 20% plague,\n    10% famine, the 10x lumber for four\n    months), the Flood (the 5d6 crest,\n    the signs 2-5 days ahead, the dikes,\n    the 50%/80% farm losses, 40% famine,\n    20% plague, no deserts), the Major\n    Incursion (proportionate, the\n    1d12-month migration, remaining until\n    driven out), the diplomatic Marriage,\n    the New Religion (75% hostility, 60%\n    ruler favor, 40% ban, the 2-7 month\n    arrival, the feuds of centuries), the\n    Plague (2d6 months, 40%/60% contagion,\n    5% monthly loss, 5x imports, the\n    moving scythe), the Political Plot\n    (40%/80% accusations, 20% rising,\n    1-3-month turmoil), the Rebellion\n    (1d6 months, the BATTLESYSTEM\n    recommendation, no mercy), the\n    Tsunami (the 50-mile coast, 100-200\n    feet, 70% population loss, landlocked\n    no event, 10% plague, 3x building\n    materials), the Visitation (revered\n    pilgrim site or despised 5-mile\n    shunning), the Volcano (70/30 origin,\n    the 5-mile destruction, 30-mile ash,\n    1d12-month activity, 10% monthly\n    re-eruption), the War (50/50\n    direction, the 2-5-month summer\n    campaign, 1-3 years, 50% farm loss,\n    the press gangs); the rigidity - the\n    yearly event never rerolled, the\n    prevented event meaning no yearly\n    event for the year; single-pass pins\n    per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 151,
+  "open": 84
+ },
+ "include_comment": "the OA yearly events explanation pins",
+ "include_after": "#include \"rules/oa71yearly.h\"  // R697: the OA Table 71 yearly events pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R697 LANDED 2026-10-20: commit",
+ "prev_record": [
+  "- R697 LANDED 2026-10-20: commit",
+  "  491c0a60cea1d054dfd64749ab74777588",
+  "  341675 (census 619 -> 620, pushed",
+  "  918b6cb..491c0a6), OA TABLE 71 - the",
+  "  yearly events, capture p. 237 print:",
+  "  rules/oa71yearly.h, prefix djk",
+  "  (verified free at 918b6cb), ONE gap",
+  "  flip, gap census 149/86 -> 150/85. 3",
+  "  consts + 3 bools + the 19x2 grid",
+  "  OA71Data (8 inlines): the nineteen",
+  "  events of the percentile die, the",
+  "  ranges contiguous 1-100 (Ambassador",
+  "  1-10, Assassination of a Lord 11-15,",
+  "  Birth 16-30, Comet the lone 31,",
+  "  Death of a Lord 32-40, Earthquake",
+  "  Major 41-43, Famine 44-47, Fire",
+  "  Major 48-52, Flood 53-57, Incursion",
+  "  Major the lone 58, Marriage 59-68,",
+  "  New Religion the lone 69, Plague",
+  "  70-74, Political Plot 75-78,",
+  "  Rebellion 79-85, Tsunami the lone 86,",
+  "  Visitation the lone 87, Volcano the",
+  "  lone 88, War the 89-100 - the widest",
+  "  range, the likeliest year); the",
+  "  six single-roll events; the use",
+  "  rules (the one event per year",
+  "  determined first with the whole-year",
+  "  effect steering the monthly type,",
+  "  the 1d12 occurrence month, the",
+  "  campaign-area scope with an event",
+  "  per land of involvement); the",
+  "  contiguity proven in-example (each",
+  "  row beginning where the last ended,",
+  "  the 100 the close). Single-pass pins",
+  "  per the Chapter 9 provenance shift.",
+  "  rverify GREEN first try at 918b6cb,",
+  "  44 mutants, 0 missed. Spec md5 148c47",
+  "  fd7ef600df579584bb307ced57",
+  "  (authored-plus-newline md5 5a7bed7c",
+  "  215545a18c24f87253fb8759 - the value",
+  "  the ritual gated and matched; canvas",
+  "  md5 d35c230e48280e52104ff9ce072011b1).",
+  "  NEXT - R698: the Yearly Events prose",
+  "  and explanations (capture pp. 237-243),",
+  "  prefix djl (verified free at 491c0a6),",
+  "  audit \"R698 OA yearly events prose",
+  "  audit\", include after rules/oa71yearly.h"
+ ]
+}

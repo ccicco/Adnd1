@@ -15841,6 +15841,53 @@ when both halves land.
   djk (verified free at 918b6cb),
   audit "R697 OA yearly events audit",
   include after rules/oacalendar.h
+- R697 LANDED 2026-10-20: commit
+  491c0a60cea1d054dfd64749ab74777588
+  341675 (census 619 -> 620, pushed
+  918b6cb..491c0a6), OA TABLE 71 - the
+  yearly events, capture p. 237 print:
+  rules/oa71yearly.h, prefix djk
+  (verified free at 918b6cb), ONE gap
+  flip, gap census 149/86 -> 150/85. 3
+  consts + 3 bools + the 19x2 grid
+  OA71Data (8 inlines): the nineteen
+  events of the percentile die, the
+  ranges contiguous 1-100 (Ambassador
+  1-10, Assassination of a Lord 11-15,
+  Birth 16-30, Comet the lone 31,
+  Death of a Lord 32-40, Earthquake
+  Major 41-43, Famine 44-47, Fire
+  Major 48-52, Flood 53-57, Incursion
+  Major the lone 58, Marriage 59-68,
+  New Religion the lone 69, Plague
+  70-74, Political Plot 75-78,
+  Rebellion 79-85, Tsunami the lone 86,
+  Visitation the lone 87, Volcano the
+  lone 88, War the 89-100 - the widest
+  range, the likeliest year); the
+  six single-roll events; the use
+  rules (the one event per year
+  determined first with the whole-year
+  effect steering the monthly type,
+  the 1d12 occurrence month, the
+  campaign-area scope with an event
+  per land of involvement); the
+  contiguity proven in-example (each
+  row beginning where the last ended,
+  the 100 the close). Single-pass pins
+  per the Chapter 9 provenance shift.
+  rverify GREEN first try at 918b6cb,
+  44 mutants, 0 missed. Spec md5 148c47
+  fd7ef600df579584bb307ced57
+  (authored-plus-newline md5 5a7bed7c
+  215545a18c24f87253fb8759 - the value
+  the ritual gated and matched; canvas
+  md5 d35c230e48280e52104ff9ce072011b1).
+  NEXT - R698: the Yearly Events prose
+  and explanations (capture pp. 237-243),
+  prefix djl (verified free at 491c0a6),
+  audit "R698 OA yearly events prose
+  audit", include after rules/oa71yearly.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

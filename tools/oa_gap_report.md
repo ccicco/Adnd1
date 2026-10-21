@@ -1718,8 +1718,61 @@ description riding the same round.
     observances simple, the excuse for
     a feast; single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Yearly Events prose and explanations
-    (capture pp. 237-243)
+  - [x] Yearly Events prose and
+    explanations (capture pp. 237-243)
+    - R698: the djl yearly explanation pins
+    the nineteen events explained: the
+    Ambassador (50/50 direction, the
+    3d10-month stay, the 10% gaijin, the
+    court ceremonies), the Assassination
+    (30% taken alive, 1% accusation, 20%
+    succession struggle, the 1d6-month
+    turmoil, the DM's optional war), the
+    celebrated Birth, the Comet (1d4
+    weeks, the portent, the DM's second
+    event), the Death with the
+    Assassination's succession, the Major
+    Earthquake (50-mile radius, 70% fire,
+    40% plague, the spell effects), the
+    Famine (2-7 months, the 10-to-100x
+    food, the 25% next-year income, 60%
+    uprising, 5% monthly population, 20%
+    plague), the Major Fire (the 50-80%
+    city, 10-40% population, 20% plague,
+    10% famine, the 10x lumber for four
+    months), the Flood (the 5d6 crest,
+    the signs 2-5 days ahead, the dikes,
+    the 50%/80% farm losses, 40% famine,
+    20% plague, no deserts), the Major
+    Incursion (proportionate, the
+    1d12-month migration, remaining until
+    driven out), the diplomatic Marriage,
+    the New Religion (75% hostility, 60%
+    ruler favor, 40% ban, the 2-7 month
+    arrival, the feuds of centuries), the
+    Plague (2d6 months, 40%/60% contagion,
+    5% monthly loss, 5x imports, the
+    moving scythe), the Political Plot
+    (40%/80% accusations, 20% rising,
+    1-3-month turmoil), the Rebellion
+    (1d6 months, the BATTLESYSTEM
+    recommendation, no mercy), the
+    Tsunami (the 50-mile coast, 100-200
+    feet, 70% population loss, landlocked
+    no event, 10% plague, 3x building
+    materials), the Visitation (revered
+    pilgrim site or despised 5-mile
+    shunning), the Volcano (70/30 origin,
+    the 5-mile destruction, 30-mile ash,
+    1d12-month activity, 10% monthly
+    re-eruption), the War (50/50
+    direction, the 2-5-month summer
+    campaign, 1-3 years, 50% farm loss,
+    the press gangs); the rigidity - the
+    yearly event never rerolled, the
+    prevented event meaning no yearly
+    event for the year; single-pass pins
+    per the Chapter 9 provenance shift
   - [x] Table 71: Yearly Events (capture
     p. 237) - R697: the djk yearly events
     grid pins - the nineteen events of
