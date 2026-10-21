@@ -2215,8 +2215,31 @@ description riding the same round.
     Level X 22,600 + 35); single-pass pins
     per the Chapter 9 provenance shift
     insectoid, reptilian and humanoid types
-  - [ ] Generals of the Animal Kings, Greater
+  - [x] Generals of the Animal Kings, Greater
     Spirits (capture p. 265)
+    - R715: the dkc animal generals pins - the
+    shared doctrine (the giant humanoid animals, the
+    five at-will powers, the five always-on senses,
+    the +5 weapon requirement, the 29th-level wu
+    jen, the 1,000-creature cloud trapeze, the
+    5-per-round regeneration, the instant
+    succession), the Tiger (the AC -6, the move
+    36/24 MC A, the HD 30, the 3 attacks of
+    1-10/1-10/2-20, the 80% MR, the X/27,400, the
+    24' panic aura below 3 HD, the vorpal sword
+    +5 at 2d6 + 12, the +3 to hit +8 with the
+    sword, the 100-tiger host), the Ox (the AC -8,
+    the move 18/21, the HD 36, the 2 attacks of
+    2-12/2-20, the X/24,400 + 35, the earthquake
+    hooves once per turn, the meteor-swarm mace
+    +5 at 1d10 + 9, the +4 to hit +9 with the
+    mace, the 10d4 gozu-oni host), the Monkey (the
+    AC -4, the move 48/36, the HD 24, the 2
+    attacks of 2-12/2-12, the X/24,800 + 35, the
+    20th-level ninja, the rod of lordly might, the
+    +4 to hit and +5 damage, the 50% 10d6 monkey
+    host); single-pass pins per the Chapter 9
+    provenance shift
   - [ ] Goblin Rat (capture p. 266)
   - [ ] Goblin Spider (capture p. 267)
   - [ ] Hai Nu (capture p. 268)

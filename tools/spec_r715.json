@@ -1,0 +1,877 @@
+{
+ "round": 715,
+ "title": "OA MONSTERS - the Generals of the Animal Kings: the shared powers and the three generals",
+ "prefix": "dkc",
+ "header_file": "rules/oa86generals.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 637,
+ "inline_count": 85,
+ "audit_label": "R715 OA monsters Animal Generals audit",
+ "audit_comment": "OA round one hundred two (capture pp. 265-266): the Chapter 12 monster roster - the animal generals, the stat block and the description riding together, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE GENERALS OF THE ANIMAL KINGS, printed capture pp. 265-266 - the three generals round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 168 closed, 67 open - the animal generals box flips (census 637 -> 638); NEXT - R716: the Goblin Rat (capture p. 266), prefix dkd (verify free at the landing), audit \"R716 OA monsters Goblin Rat audit\", include after rules/oa86generals.h"
+ },
+ "consts": [
+  {
+   "name": "dkcGeneralTypeCount",
+   "value": 3,
+   "comment": "the general type count - the Tiger, the Ox, the Monkey of the three-column stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralWeaponPlusRequired",
+   "value": 5,
+   "comment": "the general defense - can only be hit by +5 weapons or better (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralWuJenLevel",
+   "value": 29,
+   "comment": "the general spell casting - the ability of a 29th-level wu jen, knowing all spells of that class (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralCloudTrapezeCreatures",
+   "value": 1000,
+   "comment": "the general cloud trapeze - once per day, powerful enough to transport themselves and 1,000 other creatures (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralRegenPerRound",
+   "value": 5,
+   "comment": "the general regeneration - able to regenerate 5 hit points per round (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralAtWillCount",
+   "value": 5,
+   "comment": "the general at-will battery - the invisible, the ethereal, the astral, the shapechange, the teleport no error, usable once per round at will (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralAlwaysOnCount",
+   "value": 5,
+   "comment": "the general always-on battery - the ESP, the comprehend languages, the tongues, the detect magic, the know history, in effect at all times (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerAC",
+   "value": -6,
+   "comment": "the general tiger armor class - the AC -6 of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerMoveFly",
+   "value": 36,
+   "comment": "the general tiger fly rate - the 36' of the move 36'/24' (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerMoveGround",
+   "value": 24,
+   "comment": "the general tiger ground rate - the 24' of the move 36'/24' maneuver class A (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerHD",
+   "value": 30,
+   "comment": "the general tiger hit dice - the HD 30 of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerAttacks",
+   "value": 3,
+   "comment": "the general tiger attacks per round - the 3 of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerClawDmgMin",
+   "value": 1,
+   "comment": "the general tiger claw damage minimum - the 1 of the 1-10/1-10/2-20 (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerClawDmgMax",
+   "value": 10,
+   "comment": "the general tiger claw damage maximum - the 10 of the 1-10/1-10/2-20 (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerBiteDmgMin",
+   "value": 2,
+   "comment": "the general tiger bite damage minimum - the 2 of the 1-10/1-10/2-20 (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerBiteDmgMax",
+   "value": 20,
+   "comment": "the general tiger bite damage maximum - the 20 of the 1-10/1-10/2-20 (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerMRPct",
+   "value": 80,
+   "comment": "the general tiger magic resistance - the 80% of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerPanicRadiusFt",
+   "value": 24,
+   "comment": "the general tiger mien - all creatures within 24' with less than 3 hit dice or levels must save vs. spell or flee in panic (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerPanicHDLimit",
+   "value": 3,
+   "comment": "the general tiger panic rule - the less than 3 hit dice or levels threshold (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerPanicTurnsDice",
+   "value": 1,
+   "comment": "the general tiger panic duration - the 1d4 turns of fleeing (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerPanicTurnsSides",
+   "value": 4,
+   "comment": "the general tiger panic duration sides - the d4 of the 1d4 turns (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerSwordDmgDice",
+   "value": 2,
+   "comment": "the general tiger vorpal sword +5 - the 2d6 + 12 points of damage on a successful hit (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerSwordDmgSides",
+   "value": 6,
+   "comment": "the general tiger vorpal sword sides - the d6 of the 2d6 + 12 (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerSwordDmgBonus",
+   "value": 12,
+   "comment": "the general tiger vorpal sword bonus - the + 12 of the 2d6 + 12 (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerToHitBonus",
+   "value": 3,
+   "comment": "the general tiger accuracy - the +3 on his chance to hit, +8 when using the sword (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerSwordToHitBonus",
+   "value": 8,
+   "comment": "the general tiger sword accuracy - the +8 when using the sword (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerHostCount",
+   "value": 100,
+   "comment": "the general tiger host - accompanied by a host of 100 tigers, absolutely loyal and instinctively understanding his every command (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerXPBase",
+   "value": 27400,
+   "comment": "the general tiger experience - the 27,400 of the X/27,400 (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxAC",
+   "value": -8,
+   "comment": "the general ox armor class - the AC -8 of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxMoveWalk",
+   "value": 18,
+   "comment": "the general ox walking rate - the 18' of the move 18'/21' (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxMoveCharge",
+   "value": 21,
+   "comment": "the general ox charge rate - the 21' of the move 18'/21' (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxHD",
+   "value": 36,
+   "comment": "the general ox hit dice - the HD 36 of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxAttacks",
+   "value": 2,
+   "comment": "the general ox attacks per round - the 2 of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxGoreDmgMin",
+   "value": 2,
+   "comment": "the general ox gore damage minimum - the 2 of the 2-12/2-20 (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxGoreDmgMax",
+   "value": 12,
+   "comment": "the general ox gore damage maximum - the 12 of the 2-12/2-20 (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxBiteDmgMin",
+   "value": 2,
+   "comment": "the general ox bite damage minimum - the 2 of the 2-20 of the second attack (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxBiteDmgMax",
+   "value": 20,
+   "comment": "the general ox bite damage maximum - the 20 of the 2-20 (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxMaceDmgDice",
+   "value": 1,
+   "comment": "the general ox mace +5 - the 1d10 + 9 points of damage on a successful hit (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxMaceDmgSides",
+   "value": 10,
+   "comment": "the general ox mace sides - the d10 of the 1d10 + 9 (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxMaceDmgBonus",
+   "value": 9,
+   "comment": "the general ox mace bonus - the + 9 of the 1d10 + 9 (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxToHitBonus",
+   "value": 4,
+   "comment": "the general ox accuracy - the +4 on his chance to hit, +9 with the mace (print capture p. 266)"
+  },
+  {
+   "name": "dkcOxMaceToHitBonus",
+   "value": 9,
+   "comment": "the general ox mace accuracy - the +9 with the mace (print capture p. 266)"
+  },
+  {
+   "name": "dkcOxHostDice",
+   "value": 10,
+   "comment": "the general ox host - the 10 of the 10d4 gozu-oni accompanying him (print capture p. 266)"
+  },
+  {
+   "name": "dkcOxHostSides",
+   "value": 4,
+   "comment": "the general ox host sides - the d4 of the 10d4 gozu-oni (print capture p. 266)"
+  },
+  {
+   "name": "dkcOxXPBase",
+   "value": 24400,
+   "comment": "the general ox experience - the 24,400 of the X/24,400 (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxXPPerHP",
+   "value": 35,
+   "comment": "the general ox experience per hit point - the + 35/hp (print capture p. 265)"
+  },
+  {
+   "name": "dkcMonkeyAC",
+   "value": -4,
+   "comment": "the general monkey armor class - the AC -4 of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcMonkeyMoveFly",
+   "value": 48,
+   "comment": "the general monkey fly rate - the 48' of the move 48'/36' (print capture p. 265)"
+  },
+  {
+   "name": "dkcMonkeyMoveGround",
+   "value": 36,
+   "comment": "the general monkey ground rate - the 36' of the move 48'/36' (print capture p. 265)"
+  },
+  {
+   "name": "dkcMonkeyHD",
+   "value": 24,
+   "comment": "the general monkey hit dice - the HD 24 of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcMonkeyAttacks",
+   "value": 2,
+   "comment": "the general monkey attacks per round - the 2 of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcMonkeyDmgMin",
+   "value": 2,
+   "comment": "the general monkey damage minimum - the 2 of the 2-12/2-12 (print capture p. 265)"
+  },
+  {
+   "name": "dkcMonkeyDmgMax",
+   "value": 12,
+   "comment": "the general monkey damage maximum - the 12 of the 2-12/2-12 (print capture p. 265)"
+  },
+  {
+   "name": "dkcMonkeyNinjaLevel",
+   "value": 20,
+   "comment": "the general monkey abilities - all the abilities of a 20th-level ninja (print capture p. 266)"
+  },
+  {
+   "name": "dkcMonkeyToHitBonus",
+   "value": 4,
+   "comment": "the general monkey accuracy - the +4 on his chance to hit (print capture p. 266)"
+  },
+  {
+   "name": "dkcMonkeyDmgBonus",
+   "value": 5,
+   "comment": "the general monkey damage bonus - the +5 on damage (print capture p. 266)"
+  },
+  {
+   "name": "dkcMonkeyHostPct",
+   "value": 50,
+   "comment": "the general monkey host - 50% of the time accompanied by 10d6 intelligent monkeys (print capture p. 266)"
+  },
+  {
+   "name": "dkcMonkeyHostDice",
+   "value": 10,
+   "comment": "the general monkey host - the 10 of the 10d6 intelligent monkeys (print capture p. 266)"
+  },
+  {
+   "name": "dkcMonkeyHostSides",
+   "value": 6,
+   "comment": "the general monkey host - the d6 of the 10d6 monkeys (print capture p. 266)"
+  },
+  {
+   "name": "dkcMonkeyHostAC",
+   "value": 7,
+   "comment": "the general monkey host troops - the AC 7, move 12, HD 1, 1 attack, armed with swords and spears (print capture p. 266)"
+  },
+  {
+   "name": "dkcMonkeyXPBase",
+   "value": 24800,
+   "comment": "the general monkey experience - the 24,800 of the X/24,800 (print capture p. 265)"
+  },
+  {
+   "name": "dkcMonkeyXPPerHP",
+   "value": 35,
+   "comment": "the general monkey experience per hit point - the + 35/hp (print capture p. 265)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkcGeneralGiantHumanoidAnimals",
+   "value": 1,
+   "comment": "the general form - giant-sized humanoid animals of the same type as their name, dressed in armor, robes, and weapons befitting a lord of the Animal Kings court (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralAtWillPowers",
+   "value": 1,
+   "comment": "the general powers - become invisible, ethereal, or astral at will, shapechange, and teleport no error (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralAlwaysOnPowers",
+   "value": 1,
+   "comment": "the general senses - ESP, comprehend languages, tongues, detect magic, and know history at all times (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralReplacedWhenSlain",
+   "value": 1,
+   "comment": "the general succession - should one be slain, the Animal Kings instantly appoint a new general from the ranks of animals, the creature gaining all the powers of that type (print capture p. 266)"
+  },
+  {
+   "name": "dkcGeneralFewAtATime",
+   "value": 1,
+   "comment": "the general scarcity - the Animal Kings only appoint a few generals of each type at any given time (print capture p. 266)"
+  },
+  {
+   "name": "dkcGeneralLairNil",
+   "value": 1,
+   "comment": "the general in-lair percentage - the Nil of all three columns (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralTreasureNil",
+   "value": 1,
+   "comment": "the general treasure - the Nil of all three columns (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralIntGenius",
+   "value": 1,
+   "comment": "the general intelligence - the genius of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralLawfulNeutral",
+   "value": 1,
+   "comment": "the general alignment - the lawful neutral of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralSizeL",
+   "value": 1,
+   "comment": "the general size - the L of the stat block (print capture p. 265)"
+  },
+  {
+   "name": "dkcGeneralPsionicNil",
+   "value": 1,
+   "comment": "the general psionics - the Nil attack/defense modes of all three columns (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerSuppressesRebellions",
+   "value": 1,
+   "comment": "the general tiger duty - most frequently dispatched to suppress rebellions or carry out orders of punishment (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerSwordOrClaws",
+   "value": 1,
+   "comment": "the general tiger attack options - 3 attacks per round with the weapon or the clawed hands and bite (print capture p. 265)"
+  },
+  {
+   "name": "dkcTigerProudHotBlooded",
+   "value": 1,
+   "comment": "the general tiger temperament - extremely proud, hot-tempered, and blood-thirsty (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxAidAndAssistDuty",
+   "value": 1,
+   "comment": "the general ox duty - sent when General Tiger needs assistance or to aid a particularly righteous human emperor in a great endeavor (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxEarthquakeHooves",
+   "value": 1,
+   "comment": "the general ox power - once per turn, crash his hooves to the ground with all the effects of an earthquake spell (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxMeteorSwarmMace",
+   "value": 1,
+   "comment": "the general ox mace +5 - able to fire a meteor swarm once per day (print capture p. 265)"
+  },
+  {
+   "name": "dkcOxMaceAndGoreSameRound",
+   "value": 1,
+   "comment": "the general ox attack options - attack with the mace and gore with his horns in the same round (print capture p. 266)"
+  },
+  {
+   "name": "dkcOxSlowThinker",
+   "value": 1,
+   "comment": "the general ox temperament - extremely intelligent but not a quick thinker, sometimes outwitted by clever wit; extremely patient and stubborn, never breaking off combat unless ordered by his lord (print capture p. 266)"
+  },
+  {
+   "name": "dkcOxLoyalGozuOniHost",
+   "value": 1,
+   "comment": "the general ox host - the gozu-oni absolutely loyal to him (print capture p. 266)"
+  },
+  {
+   "name": "dkcMonkeyCleverStealthMissions",
+   "value": 1,
+   "comment": "the general monkey duty - sent on missions which require cleverness and stealth (print capture p. 266)"
+  },
+  {
+   "name": "dkcMonkeyRodOfLordlyMight",
+   "value": 1,
+   "comment": "the general monkey armament - carries a rod of lordly might at all times (print capture p. 266)"
+  },
+  {
+   "name": "dkcMonkeyTricksAndPranks",
+   "value": 1,
+   "comment": "the general monkey temperament - noted for tricks and pranks, of all the generals the most likely to challenge or disregard his orders; intensely curious, sometimes bribed with interesting information or magic (print capture p. 266)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the shared general doctrine",
+   "expr": "m['dkcGeneralTypeCount']() != 3 or m['dkcGeneralWeaponPlusRequired']() != 5 or m['dkcGeneralWuJenLevel']() != 29 or m['dkcGeneralCloudTrapezeCreatures']() != 1000 or m['dkcGeneralRegenPerRound']() != 5 or m['dkcGeneralAtWillCount']() != 5 or m['dkcGeneralAlwaysOnCount']() != 5 or m['dkcGeneralGiantHumanoidAnimals']() != 1 or m['dkcGeneralAtWillPowers']() != 1 or m['dkcGeneralAlwaysOnPowers']() != 1 or m['dkcGeneralReplacedWhenSlain']() != 1 or m['dkcGeneralFewAtATime']() != 1"
+  },
+  {
+   "note": "the shared stat block",
+   "expr": "m['dkcGeneralLairNil']() != 1 or m['dkcGeneralTreasureNil']() != 1 or m['dkcGeneralIntGenius']() != 1 or m['dkcGeneralLawfulNeutral']() != 1 or m['dkcGeneralSizeL']() != 1 or m['dkcGeneralPsionicNil']() != 1"
+  },
+  {
+   "note": "the general tiger",
+   "expr": "m['dkcTigerAC']() != -6 or m['dkcTigerMoveFly']() != 36 or m['dkcTigerMoveGround']() != 24 or m['dkcTigerHD']() != 30 or m['dkcTigerAttacks']() != 3 or m['dkcTigerClawDmgMin']() != 1 or m['dkcTigerClawDmgMax']() != 10 or m['dkcTigerBiteDmgMin']() != 2 or m['dkcTigerBiteDmgMax']() != 20 or m['dkcTigerMRPct']() != 80 or m['dkcTigerPanicRadiusFt']() != 24 or m['dkcTigerPanicHDLimit']() != 3 or m['dkcTigerPanicTurnsDice']() != 1 or m['dkcTigerPanicTurnsSides']() != 4 or m['dkcTigerSwordDmgDice']() != 2 or m['dkcTigerSwordDmgSides']() != 6 or m['dkcTigerSwordDmgBonus']() != 12 or m['dkcTigerToHitBonus']() != 3 or m['dkcTigerSwordToHitBonus']() != 8 or m['dkcTigerHostCount']() != 100 or m['dkcTigerXPBase']() != 27400 or m['dkcTigerSuppressesRebellions']() != 1 or m['dkcTigerSwordOrClaws']() != 1 or m['dkcTigerProudHotBlooded']() != 1"
+  },
+  {
+   "note": "the general ox",
+   "expr": "m['dkcOxAC']() != -8 or m['dkcOxMoveWalk']() != 18 or m['dkcOxMoveCharge']() != 21 or m['dkcOxHD']() != 36 or m['dkcOxAttacks']() != 2 or m['dkcOxGoreDmgMin']() != 2 or m['dkcOxGoreDmgMax']() != 12 or m['dkcOxBiteDmgMin']() != 2 or m['dkcOxBiteDmgMax']() != 20 or m['dkcOxMaceDmgDice']() != 1 or m['dkcOxMaceDmgSides']() != 10 or m['dkcOxMaceDmgBonus']() != 9 or m['dkcOxToHitBonus']() != 4 or m['dkcOxMaceToHitBonus']() != 9 or m['dkcOxHostDice']() != 10 or m['dkcOxHostSides']() != 4 or m['dkcOxXPBase']() != 24400 or m['dkcOxXPPerHP']() != 35 or m['dkcOxAidAndAssistDuty']() != 1 or m['dkcOxEarthquakeHooves']() != 1 or m['dkcOxMeteorSwarmMace']() != 1 or m['dkcOxMaceAndGoreSameRound']() != 1 or m['dkcOxSlowThinker']() != 1 or m['dkcOxLoyalGozuOniHost']() != 1"
+  },
+  {
+   "note": "the general monkey",
+   "expr": "m['dkcMonkeyAC']() != -4 or m['dkcMonkeyMoveFly']() != 48 or m['dkcMonkeyMoveGround']() != 36 or m['dkcMonkeyHD']() != 24 or m['dkcMonkeyAttacks']() != 2 or m['dkcMonkeyDmgMin']() != 2 or m['dkcMonkeyDmgMax']() != 12 or m['dkcMonkeyNinjaLevel']() != 20 or m['dkcMonkeyToHitBonus']() != 4 or m['dkcMonkeyDmgBonus']() != 5 or m['dkcMonkeyHostPct']() != 50 or m['dkcMonkeyHostDice']() != 10 or m['dkcMonkeyHostSides']() != 6 or m['dkcMonkeyHostAC']() != 7 or m['dkcMonkeyXPBase']() != 24800 or m['dkcMonkeyXPPerHP']() != 35 or m['dkcMonkeyCleverStealthMissions']() != 1 or m['dkcMonkeyRodOfLordlyMight']() != 1 or m['dkcMonkeyTricksAndPranks']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the shared general doctrine": [
+   {
+    "kind": "const",
+    "name": "dkcGeneralTypeCount"
+   },
+   {
+    "kind": "const",
+    "name": "dkcGeneralWeaponPlusRequired"
+   },
+   {
+    "kind": "const",
+    "name": "dkcGeneralWuJenLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dkcGeneralCloudTrapezeCreatures"
+   },
+   {
+    "kind": "const",
+    "name": "dkcGeneralRegenPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dkcGeneralAtWillCount"
+   },
+   {
+    "kind": "const",
+    "name": "dkcGeneralAlwaysOnCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcGeneralGiantHumanoidAnimals"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcGeneralAtWillPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcGeneralAlwaysOnPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcGeneralReplacedWhenSlain"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcGeneralFewAtATime"
+   }
+  ],
+  "the shared stat block": [
+   {
+    "kind": "bool",
+    "name": "dkcGeneralLairNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcGeneralTreasureNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcGeneralIntGenius"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcGeneralLawfulNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcGeneralSizeL"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcGeneralPsionicNil"
+   }
+  ],
+  "the general tiger": [
+   {
+    "kind": "const",
+    "name": "dkcTigerAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerMoveFly"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerMoveGround"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerHD"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerClawDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerClawDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerBiteDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerBiteDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerMRPct"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerPanicRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerPanicHDLimit"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerPanicTurnsDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerPanicTurnsSides"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerSwordDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerSwordDmgSides"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerSwordDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerSwordToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerHostCount"
+   },
+   {
+    "kind": "const",
+    "name": "dkcTigerXPBase"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcTigerSuppressesRebellions"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcTigerSwordOrClaws"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcTigerProudHotBlooded"
+   }
+  ],
+  "the general ox": [
+   {
+    "kind": "const",
+    "name": "dkcOxAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxMoveWalk"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxMoveCharge"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxHD"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxGoreDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxGoreDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxBiteDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxBiteDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxMaceDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxMaceDmgSides"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxMaceDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxMaceToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxHostDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxHostSides"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxXPBase"
+   },
+   {
+    "kind": "const",
+    "name": "dkcOxXPPerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcOxAidAndAssistDuty"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcOxEarthquakeHooves"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcOxMeteorSwarmMace"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcOxMaceAndGoreSameRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcOxSlowThinker"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcOxLoyalGozuOniHost"
+   }
+  ],
+  "the general monkey": [
+   {
+    "kind": "const",
+    "name": "dkcMonkeyAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyMoveFly"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyMoveGround"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyHD"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyNinjaLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyHostPct"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyHostDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyHostSides"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyHostAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyXPBase"
+   },
+   {
+    "kind": "const",
+    "name": "dkcMonkeyXPPerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcMonkeyCleverStealthMissions"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcMonkeyRodOfLordlyMight"
+   },
+   {
+    "kind": "bool",
+    "name": "dkcMonkeyTricksAndPranks"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the animal generals box",
+   "from": "  - [ ] Generals of the Animal Kings, Greater\n    Spirits (capture p. 265)",
+   "to": "  - [x] Generals of the Animal Kings, Greater\n    Spirits (capture p. 265)\n    - R715: the dkc animal generals pins - the\n    shared doctrine (the giant humanoid animals, the\n    five at-will powers, the five always-on senses,\n    the +5 weapon requirement, the 29th-level wu\n    jen, the 1,000-creature cloud trapeze, the\n    5-per-round regeneration, the instant\n    succession), the Tiger (the AC -6, the move\n    36/24 MC A, the HD 30, the 3 attacks of\n    1-10/1-10/2-20, the 80% MR, the X/27,400, the\n    24' panic aura below 3 HD, the vorpal sword\n    +5 at 2d6 + 12, the +3 to hit +8 with the\n    sword, the 100-tiger host), the Ox (the AC -8,\n    the move 18/21, the HD 36, the 2 attacks of\n    2-12/2-20, the X/24,400 + 35, the earthquake\n    hooves once per turn, the meteor-swarm mace\n    +5 at 1d10 + 9, the +4 to hit +9 with the\n    mace, the 10d4 gozu-oni host), the Monkey (the\n    AC -4, the move 48/36, the HD 24, the 2\n    attacks of 2-12/2-12, the X/24,800 + 35, the\n    20th-level ninja, the rod of lordly might, the\n    +4 to hit and +5 damage, the 50% 10d6 monkey\n    host); single-pass pins per the Chapter 9\n    provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 168,
+  "open": 67
+ },
+ "include_comment": "the OA Animal Generals pins",
+ "include_after": "#include \"rules/oa85gargantua.h\"  // R714: the OA Gargantua pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R714 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R714 LANDED 2026-10-21: commit 9f0a277da0798dcf5e5c1e10de8ef51af01448f3",
+  "  (census 636 -> 637, pushed 0124fd4..9f0a277), OA MONSTERS - the",
+  "  Gargantua, capture pp. 263-265 print: rules/oa85gargantua.h,",
+  "  prefix dkb (verified free at 0124fd4), ONE gap flip, gap",
+  "  census 167/68 - the kaiju round, the three behemoths riding",
+  "  one flip. 66 consts + 42 bools (108 inlines): the shared",
+  "  doctrine (the monstrous class, the unknown origin, the",
+  "  mindless brutes, the ground-trembling no-surprise rule, the",
+  "  squealing roars, the 4-per-round regeneration, the",
+  "  national-emergency rarity); the humanoid (the very rare,",
+  "  the AC 4, the move 21, the HD 35, the 2 fists of 4-40, the",
+  "  10-100 trample, the 25% comprehension by empathy, the",
+  "  mountain-island lair, the 16,600 + 35/hp); the insectoid",
+  "  (the rare, the AC 6, the move 6/36 MC E, the HD 20 with the",
+  "  200 garble settled, the 3-30, the egg-larva-pupae-moth",
+  "  cycle with the 60-foot silk severed at 20 damage or bend",
+  "  bars, the 1 HD per week growth, the 25 HD cocoon, the",
+  "  2d4-week pupae, the 30 HD moth, the -4 save windstorm",
+  "  blowing 10-40 for 1d6 per foot with the -24 extent garble",
+  "  noted unpinned, the 20 HD 11,100 + 30 and the 21 + HD",
+  "  13,600 + 35); the reptilian (the rare, the AC 2, the move",
+  "  18/12, the HD 50, the 3 attacks of 3-30/3-30/6-60, the",
+  "  10d10 upright trample, the 90-foot tail sweep with the save",
+  "  vs. death or 8d10, the swimming tropical islands, the",
+  "  Level X 22,600 + 35). Zero false starts, first rverify",
+  "  GREEN, 108 mutants, 0 missed. Spec md5",
+  "  b371378b08c270c12aff9b87064a065b (authored-plus-newline md5",
+  "  5f1dcaad7b485d3a0118a6aa99c0da6d, the ritual gate, matched",
+  "  byte-exact; canvas md5 6b78ba63a602c8f62f0c5dffb0d3e00a).",
+  "  NEXT - R715: the Generals of the Animal Kings, Greater",
+  "  Spirits (capture p. 265), prefix dkc (verified free at",
+  "  9f0a277), audit \"R715 OA monsters Animal Generals audit\",",
+  "  include after rules/oa85gargantua.h."
+ ]
+}

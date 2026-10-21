@@ -16380,6 +16380,39 @@ when both halves land.
   NEXT - R714: the Gargantua (capture pp. 263-265), prefix
   dkb (verified free at 0124fd4), audit "R714 OA monsters
   Gargantua audit", include after rules/oa84gaki.h.
+- R714 LANDED 2026-10-21: commit 9f0a277da0798dcf5e5c1e10de8ef51af01448f3
+  (census 636 -> 637, pushed 0124fd4..9f0a277), OA MONSTERS - the
+  Gargantua, capture pp. 263-265 print: rules/oa85gargantua.h,
+  prefix dkb (verified free at 0124fd4), ONE gap flip, gap
+  census 167/68 - the kaiju round, the three behemoths riding
+  one flip. 66 consts + 42 bools (108 inlines): the shared
+  doctrine (the monstrous class, the unknown origin, the
+  mindless brutes, the ground-trembling no-surprise rule, the
+  squealing roars, the 4-per-round regeneration, the
+  national-emergency rarity); the humanoid (the very rare,
+  the AC 4, the move 21, the HD 35, the 2 fists of 4-40, the
+  10-100 trample, the 25% comprehension by empathy, the
+  mountain-island lair, the 16,600 + 35/hp); the insectoid
+  (the rare, the AC 6, the move 6/36 MC E, the HD 20 with the
+  200 garble settled, the 3-30, the egg-larva-pupae-moth
+  cycle with the 60-foot silk severed at 20 damage or bend
+  bars, the 1 HD per week growth, the 25 HD cocoon, the
+  2d4-week pupae, the 30 HD moth, the -4 save windstorm
+  blowing 10-40 for 1d6 per foot with the -24 extent garble
+  noted unpinned, the 20 HD 11,100 + 30 and the 21 + HD
+  13,600 + 35); the reptilian (the rare, the AC 2, the move
+  18/12, the HD 50, the 3 attacks of 3-30/3-30/6-60, the
+  10d10 upright trample, the 90-foot tail sweep with the save
+  vs. death or 8d10, the swimming tropical islands, the
+  Level X 22,600 + 35). Zero false starts, first rverify
+  GREEN, 108 mutants, 0 missed. Spec md5
+  b371378b08c270c12aff9b87064a065b (authored-plus-newline md5
+  5f1dcaad7b485d3a0118a6aa99c0da6d, the ritual gate, matched
+  byte-exact; canvas md5 6b78ba63a602c8f62f0c5dffb0d3e00a).
+  NEXT - R715: the Generals of the Animal Kings, Greater
+  Spirits (capture p. 265), prefix dkc (verified free at
+  9f0a277), audit "R715 OA monsters Animal Generals audit",
+  include after rules/oa85gargantua.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
