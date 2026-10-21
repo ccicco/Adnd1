@@ -16016,6 +16016,44 @@ when both halves land.
   and explanations (capture pp. 247-251), prefix djp (verified free at
   708d681), audit "R702 OA daily events prose audit", include after
   rules/oa73daily.h
+- R702 LANDED 2026-10-21: commit eb09e6093e81b7ec6fbf4e0243afd3216eea39cb
+  (census 624 -> 625, pushed 708d681..eb09e60), OA EXPLANATION OF DAILY
+  EVENTS, capture pp. 247-251 print: rules/oa73explain.h, prefix djp
+  (verified free at 708d681), ONE gap flip, gap census 154/81 -> 155/80.
+  59 consts + 34 bools (93 inlines): the daily frame (the three events
+  max per day, the providers of the action); the twenty-nine events
+  explained (the Bandits 2d10 camp-edge with the two warners, the 3d10
+  mounted scouts who avoid the fight and pose as travelers; the Becalmed
+  rowed; the Contest the judged formal party, the two honor points; the
+  Crime the adventure seed; the Duel the shukenja exempt; the Entreaty
+  the pay or bribe; the Fire small the 70% arson, the home building, the
+  70% spread; the Haunting see-monthly; the Illness the 20/80 target, the
+  2d6 course, the save versus death, the rest rule; the Insult the court
+  complaint, the long-term enemy; the Invitation the refusal the insult;
+  the Kidnapping the lovers guise; the Land uncharted danger; the
+  Monster the table roll; the Mystery the 60%; the Nobles 2d10 bushi,
+  1d6 samurai, the 1-3 of rank, the 80/20 open and disguised, the
+  palanquins; the Pirates 1-3 wako ships; the Plot the adventure basis;
+  the Ruins 01-10 temple 70%, 11-60 farmhouse 20%, 61-90 shrine 50%,
+  91-100 stockade 30%; the Ship 30% ghost, 50% merchant, 20% warship,
+  10% gajin; the Shrine 10% bless the 24 hours, 80% curse; the Special
+  the mission start; the Storm 5d6 hours, the 1-2 per hour, the desert
+  sandstorm; the Stranger the 30% with the seven 10s; the Traveler the
+  DM devises; the VIP 20d6 bushi, 10d4 samurai, the announced arrival,
+  the impudent cut down). THE OCR REPAIR: the merchant misprint 509-6
+  read as 50 per the roll band. THE R701 LESSON APPLIED: every example
+  built programmatically from the pin table (name -> value), so a band
+  note cannot drift from its value - first rverify GREEN, 93 mutants,
+  0 missed. Spec md5 b3aeab5c6132e116b0b2341709ad7cc7
+  (authored-plus-newline md5 748b6dc4cf43f5d91e01b3d25ceb055c - the
+  value the ritual gated and matched byte-exact at the landing, the
+  trailing-newline form this time; canvas md5
+  5233d32a37ca682db80872b1fc7be0fd). NEXT - R703: the Chapter 11
+  terrain encounter tables (capture pp. 251-252 - sixteen terrain
+  columns of the 2-20 roll grid; the climate groupings box follows),
+  prefix djq (verified
+  free at eb09e60), audit "R703 OA terrain encounter tables audit",
+  include after rules/oa73explain.h
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1923,8 +1923,33 @@ description riding the same round.
 - [ ] **Chapter 11: Encounter Tables by Terrain
   Type** (capture pp. 251-252) - the terrain encounter
   tables
-  - [ ] The terrain encounter tables (capture pp.
-    251-252) - the full terrain grid
+  - [x] The terrain encounter tables (capture
+    pp. 251-252) - the full terrain grid
+    - R703: the djq terrain encounter table
+    pins - the sixteen terrain columns of
+    the 2-20 roll grid (the City/Town, the
+    Tropical/Sub-tropical Mountains, the
+    Tropical/Sub-tropical Ocean, the
+    Temperate Swamp, the Rural, the
+    Tropical/Sub-tropical Forest, the
+    Temperate Mountain, the Temperate
+    Freshwater, the Steppes, the
+    Tropical/Sub-tropical Swamp, the
+    Temperate Forest, the Temperate
+    Ocean, the Aerial, the
+    Tropical/Sub-tropical Freshwater, the
+    Temperate Plain, the Cold Regions the
+    all-terrain-types column), the 164
+    encounter names by ordinal, each column
+    the nineteen rolls 2-20; the OCR
+    repairs (the City/Town 15 Busho read as the
+    Buso tigbauna, the Temperate Mountain 9
+    Giang read as the Giant hill, the hai nu
+    capitalization at both ocean 16s), the
+    Temperate Ocean the School of fish
+    twice and the Men, wako twice as
+    printed; single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Climate Groupings with Creatures from
     Previous Books (capture p. 252) - the climate
     doctrine and the earlier-books cross-reference
