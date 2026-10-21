@@ -16646,6 +16646,48 @@ when both halves land.
   Kappa (capture p. 273), prefix dkj (verified free
   at 7c917a1), audit "R722 OA monsters Kappa audit",
   include after rules/oa92kala.h.
+- R722 LANDED 2026-10-21: commit 29b807ea99a6b6643cd5f1a101c3c608444832d5
+  (census 644 -> 645, pushed 7c917a1..29b807e), OA MONSTERS,
+  the Kappa (capture pp. 273-274 print): rules/oa93kappa.h,
+  prefix dkj (verified free at 7c917a1), ONE gap flip, gap
+  census 175/60 - the kappa box. A TABLES round. 18
+  consts + 50 bools + 9 table cols (77 inlines): the
+  paired CKappa[2][9] stat table (the Common 1-6, the AC
+  3 with the -2 shell, the move 6/18, the HD 4, the 70%
+  lair, the 2 attacks of 5-10; the Vampiric 1-2, the AC 0
+  with the -2 shell, the move 9/18, the HD 7+7, the 80%
+  lair, the 3 attacks of 5-10 and 1-6); the column lines
+  (the rare and very rare, the D treasure, the nil and
+  strength drain, the regeneration, the chaotic evil,
+  the S size, the III/135 + 4 and the VI/1,000 + 10);
+  the water sprite (the two-foot boy build, the tortoise
+  shell, the concave water bowl, the red glowing eyes);
+  the strength and the arts (the 18/00 with the +3 to
+  hit, the one martial arts style with the 1d6
+  maneuvers, the clawed hands); the vampiric grip (the
+  retained bite, the one Strength point per round, the
+  three releases, the death at zero, the 50% disease
+  with the 1-3 drain and the 2-5 recovery); the bowl
+  (the water power, the emptied weakness at 2 per
+  round, the bow trick, the bend bars and throw
+  spills, the agility guard, the water spell immunity);
+  the lair (the rocks and bridges, the lone travelers,
+  the horseflesh, the melons and cucumbers, the
+  offering custom); the 1-per-round regeneration. One
+  wiring stumble caught in-authored: the AC 0 of the
+  Vampiric column collides with the table sentinel, so
+  the front-AC column sentinel census is 1, not 0 (an
+  R707-class find, the healthy base flagged exactly 1
+  bad). First rverify GREEN after the fix, 86 mutants,
+  0 missed. Spec md5
+  899d31318e3c00a6eb38c1bfaba73a28
+  (authored-plus-newline md5
+  eedd2e5939371de96898ef08960639a1, the ritual gate,
+  matched byte-exact; canvas md5
+  d32407eee144c143225d9f4f84e89620). NEXT - R723: the
+  Kuei, Lesser Spirit (capture p. 274), prefix dkk
+  (verified free at 29b807e), audit "R723 OA monsters
+  Kuei audit", include after rules/oa93kappa.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

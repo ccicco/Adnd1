@@ -2450,7 +2450,34 @@ description riding the same round.
     1-per-round regeneration; single-pass
     pins per the Chapter 9 provenance
     shift
-  - [ ] Kuei, Lesser Spirit (capture p. 274)
+  - [x] Kuei, Lesser Spirit (capture p. 274)
+    - R723: the dkk kuei pins - the stat
+    block (the rare 1, the AC -4, the move
+    18, the HD 3 to 6, the nil lair and
+    treasure, the 1 attack of 1-6/1-8/
+    1-10 or 1-12, the possession, the 10%
+    MR, the average-to-very, the M size,
+    the nil psionics), the xp ladder (the
+    180 + 3, the 275 + 4, the 405 + 5, the
+    725 + 6), the demon ghost (the
+    unburied, the unfulfilled, and the
+    unavenged deaths, the solid seeming
+    body, the harmless pass-through, the
+    night activity, the task alignment),
+    the powers table (the +1 to +4 weapon
+    ladder, the 1-6 to 1-12 damage ladder
+    by hit dice), the immunities (the
+    ethereal at will, the possession three
+    per day, the ESP, the charm and
+    enchantment and illusion and water
+    spells, the psionic attacks, the
+    normal fire and cold, the half magical
+    fire and cold), the possession (the
+    takeover, the vengeance, the oath, the
+    temple ceremonies, the sister marriage
+    tale, the three releases, the victim
+    who remembers nothing); single-pass
+    pins per the Chapter 9 provenance shift
   - [ ] Men Wako, the Sea Pirate (capture p. 275)
   - [ ] Nat, Lesser Spirit (capture pp. 276-278)
   - [ ] Nature Spirits (capture pp. 278-279) - the
