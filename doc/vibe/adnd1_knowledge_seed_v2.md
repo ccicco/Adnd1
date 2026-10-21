@@ -16308,6 +16308,45 @@ when both halves land.
   prefix djz (verified free at 878365a), audit "R712 OA
   monsters Oriental Dragons audit", include after
   rules/oa82doccuoc.h.
+- R712 LANDED 2026-10-21: commit 683d2c6d6f9fc2b22e3f8a53cbf75d53d22a81e5
+  (census 634 -> 635, pushed 878365a..683d2c6), OA MONSTERS - the
+  Oriental Dragons, capture pp. 259-262 print:
+  rules/oa83dragons.h, prefix djz (verified free at 878365a),
+  ONE gap flip, gap census 165/70 - the whole six-dragon box
+  rides one flip (the four FF Tome types are cross-refs). 58
+  consts + 51 bools (109 inlines, the largest round of the
+  roster): the Celestial Bureaucracy (the seven offices from
+  the li lung earth energies to the tun mi lung ocean storms,
+  the yearly palace report with the censors, the
+  corrupt-dragon replacement announced by dreams, the human
+  procession, the yu lung exclusion, the two FF additions);
+  the chiang lung river dragon (the rare, the 1-2, the AC 2,
+  the move 12/18/24, the 10-12, the 80% lair, the treasure F,
+  the 3 attacks of 1-6/1-6/3-36, the 10% MR, the VII/13,750
+  + 14 and the VIII/5,400 + 16 with the VII113,750 garble
+  settled, the pearl flight, the rain-cloud breath, the
+  1-sq-mile-per-age lower water, the seven at-will spells,
+  the underwater escort, the tsunami on orders, the +5 sword
+  with the bend-bars gate, the palace under the waves with
+  the stolen-goods rule, the 1d6 shen bodyguard, the 2d4
+  children, the 75/40 outside escorts, the scholar boats,
+  the daughter marriages with spirit-folk children); the tun
+  mi lung typhoon dragon (the very rare, the 1, the AC -1,
+  the move 9, the 10-12, the 20% lair, the 3 attacks of
+  1-3/1-3/2-20, the VII/14,400 + 16 with the V11114,400
+  garble settled, the divine wind of 5 miles per age once per
+  week for 6d4 hours, the malicious rampages, the no breath
+  weapon, the water and air immunity, the remote lair). The
+  36,770-byte spec landed byte-exact through the canvas copy
+  - the R608 clip concern is retired for this size. Zero
+  false starts, first rverify GREEN, 109 mutants, 0 missed.
+  Spec md5 5b74a4161ab1482c5972d070df339045
+  (authored-plus-newline md5 3f6423459b8a4748832ea09aee5865c8,
+  the ritual gate, matched byte-exact; canvas md5
+  4755c5a24ed838bb7afcfe0183eb3254). NEXT - R713: the Gaki,
+  Lesser Spirit (capture pp. 262-263), prefix dka (verified
+  free at 683d2c6), audit "R713 OA monsters Gaki audit",
+  include after rules/oa83dragons.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -2156,7 +2156,33 @@ description riding the same round.
     six true dragons: Chiang Lung the river dragon,
     Li Lung, Pan Lung, Shen Lung, T'ien Lung and Tun
     Mi Lung the typhoon dragon
-  - [ ] Gaki, Lesser Spirit (capture pp. 262-263) -
+  - [x] Gaki, Lesser Spirit (capture pp. 262-263) -
+    - R713: the dka gaki pins - the shared
+    doctrine (the spirits of the wicked, the
+    crimes determine the type, the compelled
+    evil, the never-sated hunger, the
+    invisible and insect polymorph at will,
+    the passwall three per day, the mental
+    spell immunity with the spirit spell
+    vulnerability), the jiki-ketsu (the very
+    rare, the AC 2, the HD 8, the 3 attacks,
+    the 1-10 blood drain with the gripped
+    bite, the 1-per-round regeneration, the
+    +3 weapons, the cold and fire immunity,
+    the VII/1,075 + 10), the jiki-niku (the
+    rare, the AC 6, the HD 3, the flesh
+    eating, the graveyard haunts, the
+    II/50 + 3), the shikki (the uncommon,
+    the AC 4, the HD 5, the save vs. poison
+    per hit, the 2d6-turn onset delirium at
+    1 hp per hour for 2-5 days, the +1
+    weapons, the IV/245 + 5), the shinen
+    (the uncommon, the AC 0, the HD 4, the
+    move 0, the moving-fire luring to the
+    circle of flame, the -2 water save with
+    the +1 per die, the +2 weapons, the
+    III/135 + 4); single-pass pins per the
+    Chapter 9 provenance shift
     the four types: jiki-ketsu-gaki the vampiric,
     jiki-niku-gaki the flesh-eater, shikki-gaki the
     diseased, shinen-gaki the fire spirit
