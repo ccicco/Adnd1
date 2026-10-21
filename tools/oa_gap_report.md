@@ -2478,7 +2478,41 @@ description riding the same round.
     tale, the three releases, the victim
     who remembers nothing); single-pass
     pins per the Chapter 9 provenance shift
-  - [ ] Men Wako, the Sea Pirate (capture p. 275)
+  - [x] Men Wako, the Sea Pirate (capture p. 275)
+    - R724: the dkl men wako pins - the
+    stat block (the uncommon, the 30 to 180,
+    the AC see below, the move 12, the HD 1
+    with the 2 to 7 hit points, the 100%
+    lair, the A treasure, the 1 attack by
+    weapon, the leader-type attacks and
+    defenses, the standard MR, the
+    average-to-very, the lawful evil, the M
+    size, the leader-type psionics, the 14
+    + 1 xp), the sea raiders (the warm
+    seas, the boarded ships, the raided
+    coastal towns, the feared scourge, the
+    low-class origins, the western pirate
+    fear), the ferocity (the disregard for
+    death, the fight to the last man, the
+    no prisoners but the women, the utterly
+    ferocious, the +2 to hit, the +1 to
+    damage), the leaders (the 5th-level
+    bushi per 30, the 7th-level barbarian
+    per 60, the in-addition rule, the
+    always-led samurai of the 10th level,
+    the 8th-level lieutenant, the 1 to 3
+    sixth-level mates, the 5% wu jen of the
+    6th to 9th level), the arms table (the
+    50 hara-ate-gawa and sword, the 10 sword
+    and bow, the 15 do-maru and sword, the
+    10 kote and spear, the 5 kote and do-maru
+    and sword and bow, the 10 haramaki and
+    sword and spear and bow, the o-yoroi of
+    the leaders), the lair (the permanent
+    settlement, the sponsoring lord lands,
+    the walled defense and patrol);
+    single-pass
+    pins per the Chapter 9 provenance shift
   - [ ] Nat, Lesser Spirit (capture pp. 276-278)
   - [ ] Nature Spirits (capture pp. 278-279) - the
     greater and lesser types

@@ -16688,6 +16688,41 @@ when both halves land.
   Kuei, Lesser Spirit (capture p. 274), prefix dkk
   (verified free at 29b807e), audit "R723 OA monsters
   Kuei audit", include after rules/oa93kappa.h.
+- R723 LANDED 2026-10-21: commit
+  a4ed27f5cf39a0b1d743ff1af2c340620c5db5d5
+  (census 645 -> 646, pushed 29b807e..a4ed27f), OA
+  MONSTERS, the Kuei (capture pp. 274-275 print):
+  rules/oa94kuei.h, prefix dkk (verified free at
+  29b807e), ONE gap flip, gap census 176/59 - the kuei
+  box. A TABLES round. 18 consts + 39 bools + 3 table
+  cols (60 inlines): the stat block (the rare 1, the
+  AC -4, the move 18, the HD 3 to 6, the nil lair and
+  treasure, the 1 attack of 1-6/1-8/1-10 or 1-12, the
+  possession, the 10% MR, the average-to-very, the M
+  size, the nil psionics); the xp ladder (180 + 3,
+  275 + 4, 405 + 5, 725 + 6); the demon ghost (the
+  unburied, unfulfilled, unavenged deaths, the solid
+  seeming body, the harmless pass-through, the night
+  activity, the task alignment); the powers table,
+  CPowers[4][3] (the +1 to +4 weapon ladder, the
+  1-6 to 1-12 damage ladder); the immunities (the
+  ethereal at will, the possession 3/day, the ESP,
+  the charm/enchantment/illusion/water, the psionic
+  attacks, the normal fire and cold, the half
+  magical fire and cold); the possession (the
+  takeover, the vengeance/oath/temple tasks, the
+  sister marriage tale, the three releases, the
+  victim who remembers nothing). Zero false starts,
+  first rverify GREEN, 69 mutants, 0 missed. Spec md5
+  524ae8297a5a6a6ddef607ac33fbf6ce
+  (authored-plus-newline md5
+  0c56cd5b685618175fd427b7a66479d9, the ritual gate,
+  matched byte-exact; canvas md5
+  24163d292d46d903849191a1434022d9). NEXT - R724: the
+  Men Wako, the Sea Pirate (capture p. 275), prefix
+  dkl (verified free at a4ed27f), audit "R724 OA
+  monsters Men Wako audit", include after
+  rules/oa94kuei.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
