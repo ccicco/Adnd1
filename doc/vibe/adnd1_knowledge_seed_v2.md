@@ -16413,6 +16413,36 @@ when both halves land.
   Spirits (capture p. 265), prefix dkc (verified free at
   9f0a277), audit "R715 OA monsters Animal Generals audit",
   include after rules/oa85gargantua.h.
+- R715 LANDED 2026-10-21: commit 1669743004a121807de54b6430f0bd5250658af2
+  (census 637 -> 638, pushed 9f0a277..1669743), OA MONSTERS - the
+  Generals of the Animal Kings, Greater Spirits (capture pp.
+  265-266 print): rules/oa86generals.h, prefix dkc (verified
+  free at 9f0a277), ONE gap flip, gap census 168/67 - the
+  animal generals box, the three commanders riding one flip.
+  62 consts + 23 bools (85 inlines): the shared doctrine (the
+  giant humanoid animals, the at-will and always-on powers,
+  the +3 weapon to hit, the 5th-level wu-jen spellcraft, the
+  cloud trapeze, the regeneration, the replacement when
+  slain, the few at a time, the nil lair and treasure, the
+  genius lawful-neutral psionic-nil profile); the Tiger (the
+  AC 3, the fly 18 ground 15, the HD 22, the claw/bite
+  spread, the 30% MR, the panic aura with the HD limit and
+  1d6 turns, the sword damage dice, the to-hit bonuses, the
+  host, the XP base); the Ox (the AC 0, the walk/charge, the
+  HD 22, the gore/bite spread, the mace dice, the earthquake
+  hooves, the meteor swarm mace, the mace-and-gore same
+  round, the slow thinker, the gozu-oni host dice, the XP
+  base + per-hp); the Monkey (the AC 5, the fly/ground, the
+  HD 18, the 1-8 damage, the 7th-level ninja, the rod of
+  lordly might, the tricks and pranks, the host dice and AC,
+  the XP base + per-hp). Zero false starts, first rverify
+  GREEN, 85 mutants, 0 missed. Spec md5
+  4de752a355ac9b7be5433ade12c035bf (authored-plus-newline md5
+  4c2ac9a261e44566f484e222008026de, the ritual gate, matched
+  byte-exact; canvas md5 2ef459de722a16d1de59f69196b38cac).
+  NEXT - R716: the Goblin Rat (capture p. 266), prefix dkd
+  (verified free at 1669743), audit "R716 OA monsters Goblin
+  Rat audit", include after rules/oa86generals.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

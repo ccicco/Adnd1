@@ -2240,7 +2240,29 @@ description riding the same round.
     +4 to hit and +5 damage, the 50% 10d6 monkey
     host); single-pass pins per the Chapter 9
     provenance shift
-  - [ ] Goblin Rat (capture p. 266)
+  - [x] Goblin Rat (capture p. 266)
+    - R716: the dkd goblin rat pins - the
+    stat block (the rare 1-20, the AC 7, the
+    move 9, the HD 3, the 20% lair, the B
+    treasure, the 1-8 bite or by weapon, the
+    nil special attacks, the shapechange
+    defense, the 10% MR, the low-to-standard
+    intelligence, the lawful evil, the S 3-4
+    size, the nil psionics, the VI/1,000 +
+    10 per hp), the shapechanger (the
+    hengeyokai kin, the two forms, the foul
+    giant rat and the ratman, the full hp in
+    either form), the disease bite (the 5%
+    disease chance, the cholera plague
+    fevers), the ratman arms (the weapons
+    and armor, the spear, the naginata, the
+    two-handed sword), the king (the 10-plus
+    group, the 5 HD, the AC 4, the +2 bite),
+    the feline fear (the save vs.
+    paralyzation, the panic flight, the +1
+    cat to-hit, the life-like cat paintings
+    of quality); single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Goblin Spider (capture p. 267)
   - [ ] Hai Nu (capture p. 268)
   - [ ] Hsing-Sing (capture p. 269)
