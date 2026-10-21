@@ -17155,6 +17155,37 @@ when both halves land.
   (verified free at a6d8c55), audit "R732 OA
   monsters Tengu audit", include after
   rules/oa102shiro.h.
+- R732 LANDED 2026-10-21: commit
+  d8cf893886be07623a596e599f8969c484d9fd6a
+  (census 654 -> 655, pushed a6d8c55..d8cf893), OA
+  MONSTERS, the Tengu, capture pp. 284-285,
+  header rules/oa103tengu.h, prefix dkt
+  (verified free at a6d8c55), one gap flip
+  (the Tengu box, capture p. 284), gap census
+  now 185 closed / 50 open. Round type: the
+  Chapter 12 monster roster, single-pass pins
+  per the R679 provenance shift. Inlines: 78
+  = 9 consts + 54 bools + 15 table cols;
+  three tables: dktTengu[2] (an 11-col stat
+  grid - appear, AC, ground/fly move, HD,
+  lair, attacks, damage), dktXPCrow[4], and
+  dktXPHum[6], plus the two-variant crow and
+  humanoid description bools. Stumbles: the
+  12 1/2 humanoid ground move cannot pin as
+  a float - the ints-only splice mirror
+  rejected 12.5 (the R732 lesson: pin 12
+  whole plus a dktHumMoveHalf bool); also
+  NCOLS miscounted 11 vs 15. Battery 105
+  mutants, 0 missed. spec md5
+  8f4b0c9731476bb58c5edf883cddbd15, gate
+  md5 4068f618dc61cb0488c7096949b190a6,
+  canvas md5 735d0402270ecddb57d94736b82e6
+  1b4. NEXT - R733: the Chapter 13 treasure
+  opener, the Magical Items Usable By Class
+  table (capture p. 285), prefix dku
+  (verify free at the landing), audit "R733
+  OA treasure class usage audit", include
+  after rules/oa103tengu.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1,0 +1,367 @@
+{
+ "round": 733,
+ "title": "OA TREASURE - the Magical Items Usable by Character Class: the eight class mappings",
+ "prefix": "dku",
+ "header_file": "rules/oa104classuse.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 655,
+ "inline_count": 25,
+ "audit_label": "R733 OA treasure class usage audit",
+ "audit_comment": "OA round one hundred twenty (capture p. 285): the Chapter 13 treasure opener - the Magical Items Usable by Character Class table, the eight Oriental classes pinned to their DMG usability codes, the sohei staves exception carried in the split code, the opener prose riding along, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - THE MAGICAL ITEMS USABLE BY CLASS, printed capture p. 285 - the Chapter 13 opener round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 186 closed, 49 open - the class usage box flips (census 655 -> 656); NEXT - R734: the Random Treasure Determination prose (capture pp. 285-286), prefix dkv (verify free at the landing), audit \"R734 OA random treasure prose audit\", include after rules/oa104classuse.h"
+ },
+ "consts": [
+  {
+   "name": "dkuClassCount",
+   "value": 8,
+   "comment": "the class table row count - the eight Oriental classes of the mapping table (print capture p. 285)"
+  },
+  {
+   "name": "dkuCodeFighter",
+   "value": 1,
+   "comment": "the fighter code - the samurai, bushi, and kensai mapping, and the sohei half (print capture p. 285)"
+  },
+  {
+   "name": "dkuCodeCleric",
+   "value": 2,
+   "comment": "the cleric code - the shukenja mapping, and the sohei half except staves (print capture p. 285)"
+  },
+  {
+   "name": "dkuCodeMagicUser",
+   "value": 3,
+   "comment": "the magic-user code - the wu jen mapping (print capture p. 285)"
+  },
+  {
+   "name": "dkuCodeThief",
+   "value": 4,
+   "comment": "the thief code - the ninja and yakuza mappings (print capture p. 285)"
+  },
+  {
+   "name": "dkuCodeSoheiSplit",
+   "value": 5,
+   "comment": "the sohei split code - the fighter and cleric-except-staves of the sohei row (print capture p. 285)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkuChapterOpener",
+   "value": 1,
+   "comment": "the chapter opener - the treasure and magical items chapter of the goal of accumulating treasure (print capture p. 285)"
+  },
+  {
+   "name": "dkuMoneyMagicPower",
+   "value": 1,
+   "comment": "the power line - money and magic is power (print capture p. 285)"
+  },
+  {
+   "name": "dkuPowerToInfluenceDestiny",
+   "value": 1,
+   "comment": "the power to influence destiny - the first half of the power line (print capture p. 285)"
+  },
+  {
+   "name": "dkuPowerToInfluenceOthers",
+   "value": 1,
+   "comment": "the power to influence others - the second half of the power line (print capture p. 285)"
+  },
+  {
+   "name": "dkuTreasureGivesAccess",
+   "value": 1,
+   "comment": "the access - the treasure found gives access to the power, the use being another matter (print capture p. 285)"
+  },
+  {
+   "name": "dkuSupplementsDMG",
+   "value": 1,
+   "comment": "the DMG relation - the information supplements the Dungeon Masters Guide (print capture p. 285)"
+  },
+  {
+   "name": "dkuMostDMGItemsFound",
+   "value": 1,
+   "comment": "the overlap - most DMG magic items can be found in the world of the Orient (print capture p. 285)"
+  },
+  {
+   "name": "dkuPeculiarItemsGiven",
+   "value": 1,
+   "comment": "the peculiar items - the magical items peculiar to the Oriental world given here (print capture p. 285)"
+  },
+  {
+   "name": "dkuIntegrationTables",
+   "value": 1,
+   "comment": "the integration - the necessary tables and information to integrate them into a campaign (print capture p. 285)"
+  },
+  {
+   "name": "dkuDMGRestrictionsApply",
+   "value": 1,
+   "comment": "the restrictions clause - the DMG item restrictions by class applied for Oriental characters as follows (print capture p. 285)"
+  },
+  {
+   "name": "dkuSamuraiFighter",
+   "value": 1,
+   "comment": "the samurai mapping - the fighter items (print capture p. 285)"
+  },
+  {
+   "name": "dkuSoheiFighterClericExceptStaves",
+   "value": 1,
+   "comment": "the sohei mapping - the fighter and cleric items except for staves (print capture p. 285)"
+  },
+  {
+   "name": "dkuShukenjaCleric",
+   "value": 1,
+   "comment": "the shukenja mapping - the cleric items (print capture p. 285)"
+  },
+  {
+   "name": "dkuBushiFighter",
+   "value": 1,
+   "comment": "the bushi mapping - the fighter items (print capture p. 285)"
+  },
+  {
+   "name": "dkuKensaiFighter",
+   "value": 1,
+   "comment": "the kensai mapping - the fighter items (print capture p. 285)"
+  },
+  {
+   "name": "dkuWuJenMagicUser",
+   "value": 1,
+   "comment": "the wu jen mapping - the magic-user items (print capture p. 285)"
+  },
+  {
+   "name": "dkuNinjaThief",
+   "value": 1,
+   "comment": "the ninja mapping - the thief items (print capture p. 285)"
+  },
+  {
+   "name": "dkuYakuzaThief",
+   "value": 1,
+   "comment": "the yakuza mapping - the thief items (print capture p. 285)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dkuClassUse",
+   "tag": "ClassUse",
+   "count": "dkuClassCount",
+   "comment": "the class usage table - the eight Oriental classes row by row, each pinned to its DMG usability code (print capture p. 285)",
+   "cols": [
+    "dkuUsableCode"
+   ],
+   "col_comments": [
+    "the usable-by code - the fighter 1 of the samurai, bushi, and kensai; the sohei split 5; the cleric 2 of the shukenja; the magic-user 3 of the wu jen; the thief 4 of the ninja and yakuza (print capture p. 285)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     5
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     4
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the opener prose - the Chapter 13 intro paragraph, healthy values, each condition false",
+   "expr": "m['dkuChapterOpener']() != 1 or m['dkuMoneyMagicPower']() != 1 or m['dkuPowerToInfluenceDestiny']() != 1 or m['dkuPowerToInfluenceOthers']() != 1 or m['dkuTreasureGivesAccess']() != 1 or m['dkuSupplementsDMG']() != 1 or m['dkuMostDMGItemsFound']() != 1 or m['dkuPeculiarItemsGiven']() != 1 or m['dkuIntegrationTables']() != 1"
+  },
+  {
+   "note": "the codes - the five usability codes and the row count, healthy values, each condition false",
+   "expr": "m['dkuCodeFighter']() != 1 or m['dkuCodeCleric']() != 2 or m['dkuCodeMagicUser']() != 3 or m['dkuCodeThief']() != 4 or m['dkuCodeSoheiSplit']() != 5 or m['dkuClassCount']() != 8"
+  },
+  {
+   "note": "the mappings and the restrictions clause, healthy values, each condition false",
+   "expr": "m['dkuDMGRestrictionsApply']() != 1 or m['dkuSamuraiFighter']() != 1 or m['dkuSoheiFighterClericExceptStaves']() != 1 or m['dkuShukenjaCleric']() != 1 or m['dkuBushiFighter']() != 1 or m['dkuKensaiFighter']() != 1 or m['dkuWuJenMagicUser']() != 1 or m['dkuNinjaThief']() != 1 or m['dkuYakuzaThief']() != 1"
+  },
+  {
+   "note": "the grid - the eight-row class table, audited cell by cell by the table audit",
+   "expr": "m['dkuClassCount']() != 8"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the chapter 13 opener": [
+   {
+    "kind": "bool",
+    "name": "dkuChapterOpener"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuMoneyMagicPower"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuPowerToInfluenceDestiny"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuPowerToInfluenceOthers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuTreasureGivesAccess"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuSupplementsDMG"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuMostDMGItemsFound"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuPeculiarItemsGiven"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuIntegrationTables"
+   }
+  ],
+  "the restrictions and the codes": [
+   {
+    "kind": "bool",
+    "name": "dkuDMGRestrictionsApply"
+   },
+   {
+    "kind": "const",
+    "name": "dkuCodeFighter"
+   },
+   {
+    "kind": "const",
+    "name": "dkuCodeCleric"
+   },
+   {
+    "kind": "const",
+    "name": "dkuCodeMagicUser"
+   },
+   {
+    "kind": "const",
+    "name": "dkuCodeThief"
+   },
+   {
+    "kind": "const",
+    "name": "dkuCodeSoheiSplit"
+   }
+  ],
+  "the class table": [
+   {
+    "kind": "const",
+    "name": "dkuClassCount"
+   },
+   {
+    "kind": "table",
+    "name": "dkuClassUse"
+   }
+  ],
+  "the per-class mappings": [
+   {
+    "kind": "bool",
+    "name": "dkuSamuraiFighter"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuSoheiFighterClericExceptStaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuShukenjaCleric"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuBushiFighter"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuKensaiFighter"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuWuJenMagicUser"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuNinjaThief"
+   },
+   {
+    "kind": "bool",
+    "name": "dkuYakuzaThief"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the class usage box",
+   "from": "  - [ ] Magical Items Usable by Character Class\n    (capture p. 285)",
+   "to": "  - [x] Magical Items Usable by Character Class\n    (capture p. 285)\n    - R733: the dku class usage pins - the\n    eight-row mapping table (the samurai,\n    sohei, shukenja, bushi, kensai, wu jen,\n    ninja, yakuza); the five usability codes\n    (the fighter 1, the cleric 2, the\n    magic-user 3, the thief 4, the sohei\n    split 5 of the fighter and cleric\n    except staves); the restrictions clause;\n    the Chapter 13 opener prose (the goal of\n    treasure, the money and magic power over\n    destiny and others, the DMG supplement\n    and the peculiar Oriental items); single\n    pass pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 186,
+  "open": 49
+ },
+ "include_comment": "the OA class usage pins",
+ "include_after": "#include \"rules/oa103tengu.h\"  // R732: the OA Tengu pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R732 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R732 LANDED 2026-10-21: commit",
+  "  d8cf893886be07623a596e599f8969c484d9fd6a",
+  "  (census 654 -> 655, pushed a6d8c55..d8cf893), OA",
+  "  MONSTERS, the Tengu, capture pp. 284-285,",
+  "  header rules/oa103tengu.h, prefix dkt",
+  "  (verified free at a6d8c55), one gap flip",
+  "  (the Tengu box, capture p. 284), gap census",
+  "  now 185 closed / 50 open. Round type: the",
+  "  Chapter 12 monster roster, single-pass pins",
+  "  per the R679 provenance shift. Inlines: 78",
+  "  = 9 consts + 54 bools + 15 table cols;",
+  "  three tables: dktTengu[2] (an 11-col stat",
+  "  grid - appear, AC, ground/fly move, HD,",
+  "  lair, attacks, damage), dktXPCrow[4], and",
+  "  dktXPHum[6], plus the two-variant crow and",
+  "  humanoid description bools. Stumbles: the",
+  "  12 1/2 humanoid ground move cannot pin as",
+  "  a float - the ints-only splice mirror",
+  "  rejected 12.5 (the R732 lesson: pin 12",
+  "  whole plus a dktHumMoveHalf bool); also",
+  "  NCOLS miscounted 11 vs 15. Battery 105",
+  "  mutants, 0 missed. spec md5",
+  "  8f4b0c9731476bb58c5edf883cddbd15, gate",
+  "  md5 4068f618dc61cb0488c7096949b190a6,",
+  "  canvas md5 735d0402270ecddb57d94736b82e6",
+  "  1b4. NEXT - R733: the Chapter 13 treasure",
+  "  opener, the Magical Items Usable By Class",
+  "  table (capture p. 285), prefix dku",
+  "  (verify free at the landing), audit \"R733",
+  "  OA treasure class usage audit\", include",
+  "  after rules/oa103tengu.h."
+ ]
+}

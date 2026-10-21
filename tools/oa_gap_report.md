@@ -2866,8 +2866,21 @@ description riding the same round.
 
 - [ ] **Chapter 13: Treasure and Magical Items**
   (capture pp. 285-301) - the treasure system
-  - [ ] Magical Items Usable by Character Class
+  - [x] Magical Items Usable by Character Class
     (capture p. 285)
+    - R733: the dku class usage pins - the
+    eight-row mapping table (the samurai,
+    sohei, shukenja, bushi, kensai, wu jen,
+    ninja, yakuza); the five usability codes
+    (the fighter 1, the cleric 2, the
+    magic-user 3, the thief 4, the sohei
+    split 5 of the fighter and cleric
+    except staves); the restrictions clause;
+    the Chapter 13 opener prose (the goal of
+    treasure, the money and magic power over
+    destiny and others, the DMG supplement
+    and the peculiar Oriental items); single
+    pass pins per the R679 provenance shift
   - [ ] Random Treasure Determination prose
     (capture p. 285-286)
   - [ ] Table 74: Monetary Treasure And Magical Items
