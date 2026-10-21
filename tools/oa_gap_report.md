@@ -2103,7 +2103,31 @@ description riding the same round.
     tree-slayer ancient curse); single
     pass pins per the Chapter 9
     provenance shift
-  - [ ] Doc Cu'o'c, Greater Spirit (capture p. 259)
+  - [x] Doc Cu'o'c, Greater Spirit (capture p. 259)
+    - R711: the djy doc cu'o'c pins - the
+    stat block (the very rare, the 1, the
+    AC -3, the move 24, the HD 10, the
+    10% lair, the treasure G, the 2
+    attacks of 1-8/1-8 + special, the
+    70% MR, the genius, the chaotic good,
+    the VIII/3,600 + 14/hp), the nature
+    (the half-man one-leg form, the
+    always-carried axe, the offering
+    covenant, the countryside
+    protectorship, the see-invisible, the
+    invisible at will, the evil-spirit
+    enmity, the crop-weather doctrine,
+    the land-not-people priority), the
+    axe and the lair (the 1d8 axe, the
+    electrical shock at current hit
+    points with the save vs. spell for
+    half, the +3 weapon requirement, the
+    five once-per-day cures, the two
+    thrice-per-day powers, the Astral
+    Plane lair with the robbery-havoc
+    rule and the leaves-forever
+    departure); single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Dragons, Oriental (capture pp. 259-262) - the
     six true dragons: Chiang Lung the river dragon,
     Li Lung, Pan Lung, Shen Lung, T'ien Lung and Tun

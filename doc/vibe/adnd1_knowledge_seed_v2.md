@@ -16254,6 +16254,32 @@ when both halves land.
   Con-Tinh, Lesser Spirit (capture pp. 258-259), prefix djx
   (verified free at b7a2dad), audit "R710 OA monsters Con-Tinh
   audit", include after rules/oa80carp.h.
+- R710 LANDED 2026-10-21: commit b200a70c8f3ef318cbb47dec313e9eef57fa3833
+  (census 632 -> 633, pushed b7a2dad..b200a70), OA MONSTERS - the
+  Con-Tinh, Lesser Spirit, capture pp. 258-259 print:
+  rules/oa81continh.h, prefix djx (verified free at b7a2dad),
+  ONE gap flip, gap census 163/72. 16 consts + 26 bools (42
+  inlines): the stat block (the rare, the 1-2, the AC 7, the
+  move 12, the HD 6, the 100% lair, the treasure I, the 1
+  attack of 1-6, the laugh, the 20% MR, the standard, the
+  chaotic evil, the M, the Nil psionics, the VI/600 + 6/hp);
+  the nature (the evil spirit of the maiden folklore, the
+  young-girl appearance, the night-only schedule, the 100-foot
+  tree lifeforce with the damage and the destruction rules,
+  the feared-and-shunned reputation, the daytime hiding, the
+  night ambushing); the special attacks (the three-per-night
+  laugh within 20 feet with the save vs. death or insanity,
+  the Int and Wis 2 floor until heal, the once-per-night
+  possession into daytime, the +2 weapon requirement, the
+  exorcism destruction, the tree-slayer ancient curse).
+  Zero false starts, first rverify GREEN, 42 mutants, 0
+  missed. Spec md5 0a7cd4dd815dab931637e7fc0b64e84e
+  (authored-plus-newline md5 d6c76e4fb25276195d42bce4cb4f618a
+  the ritual gate, matched byte-exact; canvas md5
+  d0a1bea4300e873d62245c76d827710b). NEXT - R711: the
+  Doc Cu'o'c, Greater Spirit (capture p. 259), prefix djy
+  (verified free at b200a70), audit "R711 OA monsters Doc
+  Cu'o'c audit", include after rules/oa81continh.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
