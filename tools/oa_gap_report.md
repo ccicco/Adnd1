@@ -2391,7 +2391,33 @@ description riding the same round.
     earthquake, the take to the air), the
     2-tael ichor; single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Kala (capture p. 272)
+  - [x] Kala (capture p. 272)
+    - R721: the dki kala pins - the paired
+    Cave/Earth stat table (the rare 1-10
+    and 1-12, the AC -1 and 2, the move 9
+    and 12, the HD 8 and 6, the 30% and 25%
+    lair, the O and P treasure, the 2
+    attacks of 1-8 and 1-6, the nil
+    defenses, the standard MR, the low
+    intelligence, the neutral, the M size,
+    the nil psionics, the 825 + 10 and
+    1,275 + 6 xp), the spirit race (the
+    pointed heads, the snow feet, the
+    loincloth hardiness, the ferocious
+    cannibal raids), the hunters (the 80%
+    tracking base, the clawed hands, the
+    two stone axes), the cave kala pain
+    ladder (the round one headache, the
+    -1/+1, the -2/+2, the -4/+4, the round
+    five incapacitation, the 1-3 turns),
+    the earth kala disease breath (the
+    five-foot two-foot cone, the 1d6 hit
+    points per day, the healing block),
+    the lairs (the hidden forest caves,
+    the seasonal nomad camps, the northern
+    tribes and own-kind tongues);
+    single-pass pins per the Chapter 9
+    provenance shift
   - [ ] Kappa (capture p. 273)
   - [ ] Kuei, Lesser Spirit (capture p. 274)
   - [ ] Men Wako, the Sea Pirate (capture p. 275)

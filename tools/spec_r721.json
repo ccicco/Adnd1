@@ -1,0 +1,611 @@
+{
+ "round": 721,
+ "title": "OA MONSTERS - the Kala: the Cave and Earth spirit race",
+ "prefix": "dki",
+ "header_file": "rules/oa92kala.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 643,
+ "inline_count": 54,
+ "audit_label": "R721 OA monsters Kala audit",
+ "audit_comment": "OA round one hundred eight (capture pp. 272-273): the Chapter 12 monster roster - the kala, the paired Cave and Earth stat table riding one flip, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE KALA, printed capture pp. 272-273 - the paired columns round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 174 closed, 61 open - the kala box flips (census 643 -> 644); NEXT - R722: the Kappa (capture p. 273), prefix dkj (verify free at the landing), audit \"R722 OA monsters Kappa audit\", include after rules/oa92kala.h"
+ },
+ "consts": [
+  {
+   "name": "dkiKalaCount",
+   "value": 2,
+   "comment": "the kala type count - the Cave and the Earth of the two-column stat block (print capture p. 272)"
+  },
+  {
+   "name": "dkiAttackCount",
+   "value": 2,
+   "comment": "the attack count - the 2 of the number of attacks (print capture p. 272)"
+  },
+  {
+   "name": "dkiXP6Base",
+   "value": 825,
+   "comment": "the 6 HD xp base - the 825 of the VI/825 + 10 per hp (print capture p. 273)"
+  },
+  {
+   "name": "dkiXP6PerHP",
+   "value": 10,
+   "comment": "the 6 HD xp per hit point - the 10 of the VI/825 + 10/hp (print capture p. 273)"
+  },
+  {
+   "name": "dkiXP8Base",
+   "value": 1275,
+   "comment": "the 8 HD xp base - the 1,275 of the VII/1,275 + 6 per hp (print capture p. 273)"
+  },
+  {
+   "name": "dkiXP8PerHP",
+   "value": 6,
+   "comment": "the 8 HD xp per hit point - the 6 of the VII/1,275 + 6/hp (print capture p. 273)"
+  },
+  {
+   "name": "dkiTrackBasePct",
+   "value": 80,
+   "comment": "the tracking base - the base 80% chance of following a trail (print capture p. 273)"
+  },
+  {
+   "name": "dkiPainRounds",
+   "value": 5,
+   "comment": "the pain ladder length - the five rounds of the cave kala poison (print capture p. 273)"
+  },
+  {
+   "name": "dkiPainTurnsMin",
+   "value": 1,
+   "comment": "the pain duration minimum - the 1 of the 1-3 turns (print capture p. 273)"
+  },
+  {
+   "name": "dkiPainTurnsMax",
+   "value": 3,
+   "comment": "the pain duration maximum - the 3 of the 1-3 turns (print capture p. 273)"
+  },
+  {
+   "name": "dkiPainRound2ToHitPenalty",
+   "value": 1,
+   "comment": "the round two penalty - the -1 to hit and damage with the +1 on saving throws (print capture p. 273)"
+  },
+  {
+   "name": "dkiPainRound3Penalty",
+   "value": 2,
+   "comment": "the round three penalty - the -2/+2 spread (print capture p. 273)"
+  },
+  {
+   "name": "dkiPainRound4Penalty",
+   "value": 4,
+   "comment": "the round four penalty - the excruciating -4/+4 spread (print capture p. 273)"
+  },
+  {
+   "name": "dkiDiseaseRangeFeet",
+   "value": 5,
+   "comment": "the disease breath range - the five feet of the earth kala breath (print capture p. 273)"
+  },
+  {
+   "name": "dkiDiseaseWidthFeet",
+   "value": 2,
+   "comment": "the disease breath width - the two feet of the earth kala breath (print capture p. 273)"
+  },
+  {
+   "name": "dkiDiseaseDmgDice",
+   "value": 1,
+   "comment": "the disease damage dice - the 1d6 hit points lost per day (print capture p. 273)"
+  },
+  {
+   "name": "dkiDiseaseDmgSides",
+   "value": 6,
+   "comment": "the disease damage sides - the 1d6 hit points lost per day (print capture p. 273)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkiFrequencyRare",
+   "value": 1,
+   "comment": "the frequency - the rare of both columns (print capture p. 272)"
+  },
+  {
+   "name": "dkiSpecialDefensesNil",
+   "value": 1,
+   "comment": "the special defenses - the nil of both columns (print capture p. 272)"
+  },
+  {
+   "name": "dkiMagicResistStandard",
+   "value": 1,
+   "comment": "the magic resistance - the standard of both columns (print capture p. 272)"
+  },
+  {
+   "name": "dkiIntelligenceLow",
+   "value": 1,
+   "comment": "the intelligence - the low of both columns (print capture p. 273)"
+  },
+  {
+   "name": "dkiAlignmentNeutral",
+   "value": 1,
+   "comment": "the alignment - the neutral of both columns (print capture p. 273)"
+  },
+  {
+   "name": "dkiSizeMedium",
+   "value": 1,
+   "comment": "the size class - the M of both columns (print capture p. 273)"
+  },
+  {
+   "name": "dkiPsionicNil",
+   "value": 1,
+   "comment": "the psionic ability - the nil and the nil attack/defense modes of both columns (print capture p. 273)"
+  },
+  {
+   "name": "dkiAncientPrimitiveSpiritRace",
+   "value": 1,
+   "comment": "the race - an ancient and primitive spirit race of humanoids (print capture p. 273)"
+  },
+  {
+   "name": "dkiColdWastelands",
+   "value": 1,
+   "comment": "the range - found in the cold wastelands (print capture p. 273)"
+  },
+  {
+   "name": "dkiSimilarToHumans",
+   "value": 1,
+   "comment": "the look - appear similar to normal humans (print capture p. 273)"
+  },
+  {
+   "name": "dkiPointedHeads",
+   "value": 1,
+   "comment": "the first tell - the pointed heads (print capture p. 273)"
+  },
+  {
+   "name": "dkiLargeFeet",
+   "value": 1,
+   "comment": "the second tell - the large feet that aid moving through the snow (print capture p. 273)"
+  },
+  {
+   "name": "dkiInuredToCold",
+   "value": 1,
+   "comment": "the hardiness - inured to the cold, never wearing more than a loincloth (print capture p. 273)"
+  },
+  {
+   "name": "dkiFerocious",
+   "value": 1,
+   "comment": "the temper - quite ferocious (print capture p. 273)"
+  },
+  {
+   "name": "dkiCannibalistic",
+   "value": 1,
+   "comment": "the diet - cannibalistic, raiding camps and villages for their food (print capture p. 273)"
+  },
+  {
+   "name": "dkiExpertTrackers",
+   "value": 1,
+   "comment": "the first craft - expert trackers and hunters (print capture p. 273)"
+  },
+  {
+   "name": "dkiExpertHunters",
+   "value": 1,
+   "comment": "the second craft - hunters of the cold wastelands (print capture p. 273)"
+  },
+  {
+   "name": "dkiClawedHands",
+   "value": 1,
+   "comment": "the first arms - the clawed hands (print capture p. 273)"
+  },
+  {
+   "name": "dkiStoneAxes",
+   "value": 1,
+   "comment": "the second arms - the primitive stone axes, one held in each hand (print capture p. 273)"
+  },
+  {
+   "name": "dkiCaveBitePoison",
+   "value": 1,
+   "comment": "the cave kala bite - injects a terrible poison causing wracking pains unless the save vs. poison is made (print capture p. 273)"
+  },
+  {
+   "name": "dkiPainBuildsSlowly",
+   "value": 1,
+   "comment": "the pain onset - the pains begin slowly and build in intensity (print capture p. 273)"
+  },
+  {
+   "name": "dkiPainRound1Headache",
+   "value": 1,
+   "comment": "the round one pain - the discomfort of a strong headache (print capture p. 273)"
+  },
+  {
+   "name": "dkiPainRound5Incapacitated",
+   "value": 1,
+   "comment": "the round five pain - the victim is incapacitated, unable to take any action (print capture p. 273)"
+  },
+  {
+   "name": "dkiEarthBreathDisease",
+   "value": 1,
+   "comment": "the earth kala breath - causes disease in all who fail the saving throw vs. death (print capture p. 273)"
+  },
+  {
+   "name": "dkiDiseaseBlocksHealing",
+   "value": 1,
+   "comment": "the disease clause - the victim cannot heal or benefit from magical healing (print capture p. 273)"
+  },
+  {
+   "name": "dkiCaveLairsInCaves",
+   "value": 1,
+   "comment": "the cave kala lair - hidden caves deep in the forest (print capture p. 273)"
+  },
+  {
+   "name": "dkiEarthNomadic",
+   "value": 1,
+   "comment": "the earth kala life - nomadic, moving their camps according to the season and the hunting (print capture p. 273)"
+  },
+  {
+   "name": "dkiSpeaksNorthernTribes",
+   "value": 1,
+   "comment": "the first tongue - the language of the northern tribes (print capture p. 273)"
+  },
+  {
+   "name": "dkiSpeaksOwnKind",
+   "value": 1,
+   "comment": "the second tongue - the language of their own kind (print capture p. 273)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dkiKala",
+   "tag": "Kala",
+   "count": "dkiKalaCount",
+   "comment": "the kala stat table - the Cave and Earth columns of the paired stat block (print capture pp. 272-273)",
+   "cols": [
+    "dkiKalaAppearMin",
+    "dkiKalaAppearMax",
+    "dkiKalaAC",
+    "dkiKalaMove",
+    "dkiKalaHD",
+    "dkiKalaLairPct",
+    "dkiKalaDmgMin",
+    "dkiKalaDmgMax"
+   ],
+   "col_comments": [
+    "the appearing minimum - the 1 of both columns (print capture p. 272)",
+    "the appearing maximum - the 10 of the Cave, the 12 of the Earth (print capture p. 272)",
+    "the armor class - the -1 of the Cave, the 2 of the Earth (print capture p. 272)",
+    "the move - the 9 of the Cave, the 12 of the Earth (print capture p. 272)",
+    "the hit dice - the 8 of the Cave, the 6 of the Earth (print capture p. 272)",
+    "the in-lair percentage - the 30% of the Cave, the 25% of the Earth (print capture p. 272)",
+    "the damage minimum - the 1 of both columns (print capture p. 272)",
+    "the damage maximum - the 8 of the Cave, the 6 of the Earth (print capture p. 272)"
+   ],
+   "data": [
+    [
+     1,
+     10,
+     -1,
+     9,
+     8,
+     30,
+     1,
+     8
+    ],
+    [
+     1,
+     12,
+     2,
+     12,
+     6,
+     25,
+     1,
+     6
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the stat table - the paired stat columns, audited cell by cell by the table audit",
+   "expr": "m['dkiKalaCount']() != 2"
+  },
+  {
+   "note": "the shared stat lines - the lines shared by both columns, healthy values, each condition false",
+   "expr": "m['dkiFrequencyRare']() != 1 or m['dkiAttackCount']() != 2 or m['dkiSpecialDefensesNil']() != 1 or m['dkiMagicResistStandard']() != 1 or m['dkiIntelligenceLow']() != 1 or m['dkiAlignmentNeutral']() != 1 or m['dkiSizeMedium']() != 1 or m['dkiPsionicNil']() != 1 or m['dkiXP6Base']() != 825 or m['dkiXP6PerHP']() != 10 or m['dkiXP8Base']() != 1275 or m['dkiXP8PerHP']() != 6"
+  },
+  {
+   "note": "the spirit race - the pointed heads and large feet, healthy values, each condition false",
+   "expr": "m['dkiAncientPrimitiveSpiritRace']() != 1 or m['dkiColdWastelands']() != 1 or m['dkiSimilarToHumans']() != 1 or m['dkiPointedHeads']() != 1 or m['dkiLargeFeet']() != 1 or m['dkiInuredToCold']() != 1 or m['dkiFerocious']() != 1 or m['dkiCannibalistic']() != 1"
+  },
+  {
+   "note": "the hunters - the tracking and the axes, healthy values, each condition false",
+   "expr": "m['dkiExpertTrackers']() != 1 or m['dkiExpertHunters']() != 1 or m['dkiTrackBasePct']() != 80 or m['dkiClawedHands']() != 1 or m['dkiStoneAxes']() != 1"
+  },
+  {
+   "note": "the cave kala pain ladder - the five-round poison ladder, healthy values, each condition false",
+   "expr": "m['dkiCaveBitePoison']() != 1 or m['dkiPainBuildsSlowly']() != 1 or m['dkiPainRounds']() != 5 or m['dkiPainRound1Headache']() != 1 or m['dkiPainRound2ToHitPenalty']() != 1 or m['dkiPainRound3Penalty']() != 2 or m['dkiPainRound4Penalty']() != 4 or m['dkiPainRound5Incapacitated']() != 1 or m['dkiPainTurnsMin']() != 1 or m['dkiPainTurnsMax']() != 3"
+  },
+  {
+   "note": "the earth kala disease breath - the disease breath, healthy values, each condition false",
+   "expr": "m['dkiEarthBreathDisease']() != 1 or m['dkiDiseaseRangeFeet']() != 5 or m['dkiDiseaseWidthFeet']() != 2 or m['dkiDiseaseDmgDice']() != 1 or m['dkiDiseaseDmgSides']() != 6 or m['dkiDiseaseBlocksHealing']() != 1"
+  },
+  {
+   "note": "the lairs and tongues - the cave den and the nomad camp, healthy values, each condition false",
+   "expr": "m['dkiCaveLairsInCaves']() != 1 or m['dkiEarthNomadic']() != 1 or m['dkiSpeaksNorthernTribes']() != 1 or m['dkiSpeaksOwnKind']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat table": [
+   {
+    "kind": "const",
+    "name": "dkiKalaCount"
+   },
+   {
+    "kind": "table",
+    "name": "dkiKala"
+   }
+  ],
+  "the shared stat lines": [
+   {
+    "kind": "bool",
+    "name": "dkiFrequencyRare"
+   },
+   {
+    "kind": "const",
+    "name": "dkiAttackCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiSpecialDefensesNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiMagicResistStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiIntelligenceLow"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiAlignmentNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiSizeMedium"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiPsionicNil"
+   },
+   {
+    "kind": "const",
+    "name": "dkiXP6Base"
+   },
+   {
+    "kind": "const",
+    "name": "dkiXP6PerHP"
+   },
+   {
+    "kind": "const",
+    "name": "dkiXP8Base"
+   },
+   {
+    "kind": "const",
+    "name": "dkiXP8PerHP"
+   }
+  ],
+  "the spirit race": [
+   {
+    "kind": "bool",
+    "name": "dkiAncientPrimitiveSpiritRace"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiColdWastelands"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiSimilarToHumans"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiPointedHeads"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiLargeFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiInuredToCold"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiFerocious"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiCannibalistic"
+   }
+  ],
+  "the hunters": [
+   {
+    "kind": "bool",
+    "name": "dkiExpertTrackers"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiExpertHunters"
+   },
+   {
+    "kind": "const",
+    "name": "dkiTrackBasePct"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiClawedHands"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiStoneAxes"
+   }
+  ],
+  "the cave kala pain ladder": [
+   {
+    "kind": "bool",
+    "name": "dkiCaveBitePoison"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiPainBuildsSlowly"
+   },
+   {
+    "kind": "const",
+    "name": "dkiPainRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiPainRound1Headache"
+   },
+   {
+    "kind": "const",
+    "name": "dkiPainRound2ToHitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dkiPainRound3Penalty"
+   },
+   {
+    "kind": "const",
+    "name": "dkiPainRound4Penalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiPainRound5Incapacitated"
+   },
+   {
+    "kind": "const",
+    "name": "dkiPainTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkiPainTurnsMax"
+   }
+  ],
+  "the earth kala disease breath": [
+   {
+    "kind": "bool",
+    "name": "dkiEarthBreathDisease"
+   },
+   {
+    "kind": "const",
+    "name": "dkiDiseaseRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dkiDiseaseWidthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dkiDiseaseDmgDice"
+   },
+   {
+    "kind": "const",
+    "name": "dkiDiseaseDmgSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiDiseaseBlocksHealing"
+   }
+  ],
+  "the lairs and tongues": [
+   {
+    "kind": "bool",
+    "name": "dkiCaveLairsInCaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiEarthNomadic"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiSpeaksNorthernTribes"
+   },
+   {
+    "kind": "bool",
+    "name": "dkiSpeaksOwnKind"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the kala box",
+   "from": "  - [ ] Kala (capture p. 272)",
+   "to": "  - [x] Kala (capture p. 272)\n    - R721: the dki kala pins - the paired\n    Cave/Earth stat table (the rare 1-10\n    and 1-12, the AC -1 and 2, the move 9\n    and 12, the HD 8 and 6, the 30% and 25%\n    lair, the O and P treasure, the 2\n    attacks of 1-8 and 1-6, the nil\n    defenses, the standard MR, the low\n    intelligence, the neutral, the M size,\n    the nil psionics, the 825 + 10 and\n    1,275 + 6 xp), the spirit race (the\n    pointed heads, the snow feet, the\n    loincloth hardiness, the ferocious\n    cannibal raids), the hunters (the 80%\n    tracking base, the clawed hands, the\n    two stone axes), the cave kala pain\n    ladder (the round one headache, the\n    -1/+1, the -2/+2, the -4/+4, the round\n    five incapacitation, the 1-3 turns),\n    the earth kala disease breath (the\n    five-foot two-foot cone, the 1d6 hit\n    points per day, the healing block),\n    the lairs (the hidden forest caves,\n    the seasonal nomad camps, the northern\n    tribes and own-kind tongues);\n    single-pass pins per the Chapter 9\n    provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 174,
+  "open": 61
+ },
+ "include_comment": "the OA Kala pins",
+ "include_after": "#include \"rules/oa91huhuien.h\"  // R720: the OA Hu Hsien pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R720 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R720 LANDED 2026-10-21: commit 5058dcf91e073706a6e6ebbaae88f615ea4d4113",
+  "  (census 642 -> 643, pushed de4c144..5058dcf), OA MONSTERS,",
+  "  the Hu Hsien box (capture pp. 269-272 print): rules/",
+  "  oa91huhuien.h, prefix dkh (verified free at de4c144),",
+  "  ONE gap flip, gap census 173/62, the triple round, the",
+  "  fox spirit, the ikiryo, and the jishin mushi riding one",
+  "  flip. 61 consts + 123 bools (184 inlines, 14 sections,",
+  "  the biggest battery yet). The hu hsien: the stat block",
+  "  (the rare, the AC 7, the move 15, the HD 6, the 10% lair,",
+  "  the I S T treasure, the 1 attack of 1-6 or by weapon, the",
+  "  50% MR, the genius chaotic evil, the VII/1,150 + 6); the",
+  "  fox forms (the two forms, the upright fox, the human",
+  "  maiden at 18 Charisma 25 Comeliness, the tail that never",
+  "  changes, the +3 weapon, the 2-per-hour regeneration); the",
+  "  power roster (the 12 at-will one per round, the 3 daily,",
+  "  the 3-per-week reward or ancient curse, the",
+  "  fascination); the defenses (the fire immunity, the half",
+  "  cold, the double electrical, the thunderstorm fear); the",
+  "  life drain (the one level per day, the unaware victim);",
+  "  the character (the wine and the reversion, the tricks);",
+  "  the lair (the village edge, the illusion house, the fox",
+  "  den mansion). The ikiryo: the nil block with the 200-260",
+  "  psionics and the B C D E F G H modes, the VIII/3,500; the",
+  "  projection nature with the detection and countermeasure",
+  "  ladder; the drain (the one point per score per day, the",
+  "  death at zero, the one-per-day recovery); the dm",
+  "  guidance. The jishin mushi: the stat block (the very",
+  "  rare 1-3, the AC 3, the move 9/13, the HD 5+4, the 2-16,",
+  "  the V/275 + 6); the earthquake beetle (the blue-green",
+  "  carapace, the oxen raids, the mandibles); the tremor",
+  "  rounds (the 5-foot knockdown, the growing radii, the",
+  "  round-six earthquake, the take to the air); the 2-tael",
+  "  ichor. Zero false starts, first rverify GREEN, 184",
+  "  mutants, 0 missed. Spec md5",
+  "  4ca7418d4b6f98526c1b77f879b4c8de",
+  "  (authored-plus-newline md5",
+  "  e22ab5ff12b9ca9b56dbe115f55f893d, the ritual gate,",
+  "  matched byte-exact; canvas md5",
+  "  71ae8572b5c060f753a385fd321c1b83). NEXT - R721: the",
+  "  Kala (capture p. 272), prefix dki (verified free at",
+  "  5058dcf), audit \"R721 OA monsters Kala audit\", include",
+  "  after rules/oa91huhuien.h."
+ ]
+}

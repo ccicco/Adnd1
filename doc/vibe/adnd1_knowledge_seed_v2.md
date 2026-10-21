@@ -16568,6 +16568,48 @@ when both halves land.
   Hu Hsien, Lesser Spirit (capture pp. 269-272), prefix
   dkh (verified free at de4c144), audit "R720 OA monsters
   Hu Hsien audit", include after rules/oa90hsingsing.h.
+- R720 LANDED 2026-10-21: commit 5058dcf91e073706a6e6ebbaae88f615ea4d4113
+  (census 642 -> 643, pushed de4c144..5058dcf), OA MONSTERS,
+  the Hu Hsien box (capture pp. 269-272 print): rules/
+  oa91huhuien.h, prefix dkh (verified free at de4c144),
+  ONE gap flip, gap census 173/62, the triple round, the
+  fox spirit, the ikiryo, and the jishin mushi riding one
+  flip. 61 consts + 123 bools (184 inlines, 14 sections,
+  the biggest battery yet). The hu hsien: the stat block
+  (the rare, the AC 7, the move 15, the HD 6, the 10% lair,
+  the I S T treasure, the 1 attack of 1-6 or by weapon, the
+  50% MR, the genius chaotic evil, the VII/1,150 + 6); the
+  fox forms (the two forms, the upright fox, the human
+  maiden at 18 Charisma 25 Comeliness, the tail that never
+  changes, the +3 weapon, the 2-per-hour regeneration); the
+  power roster (the 12 at-will one per round, the 3 daily,
+  the 3-per-week reward or ancient curse, the
+  fascination); the defenses (the fire immunity, the half
+  cold, the double electrical, the thunderstorm fear); the
+  life drain (the one level per day, the unaware victim);
+  the character (the wine and the reversion, the tricks);
+  the lair (the village edge, the illusion house, the fox
+  den mansion). The ikiryo: the nil block with the 200-260
+  psionics and the B C D E F G H modes, the VIII/3,500; the
+  projection nature with the detection and countermeasure
+  ladder; the drain (the one point per score per day, the
+  death at zero, the one-per-day recovery); the dm
+  guidance. The jishin mushi: the stat block (the very
+  rare 1-3, the AC 3, the move 9/13, the HD 5+4, the 2-16,
+  the V/275 + 6); the earthquake beetle (the blue-green
+  carapace, the oxen raids, the mandibles); the tremor
+  rounds (the 5-foot knockdown, the growing radii, the
+  round-six earthquake, the take to the air); the 2-tael
+  ichor. Zero false starts, first rverify GREEN, 184
+  mutants, 0 missed. Spec md5
+  4ca7418d4b6f98526c1b77f879b4c8de
+  (authored-plus-newline md5
+  e22ab5ff12b9ca9b56dbe115f55f893d, the ritual gate,
+  matched byte-exact; canvas md5
+  71ae8572b5c060f753a385fd321c1b83). NEXT - R721: the
+  Kala (capture p. 272), prefix dki (verified free at
+  5058dcf), audit "R721 OA monsters Kala audit", include
+  after rules/oa91huhuien.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
