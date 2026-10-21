@@ -2809,7 +2809,60 @@ description riding the same round.
     the Celestial Emperor dispatches);
     single-pass
     pins per the Chapter 9 provenance shift
-  - [ ] Tengu (capture p. 284)
+  - [x] Tengu (capture p. 284)
+    - R732: the dkt tengu pins - the stat
+    grid (the rare of both columns; the
+    appearing 1-4 and 1-3; the AC 6 and 4;
+    the moves 9/24 and the 12 1/2/15 of
+    capture misreading 12 1; the C classes;
+    the HD 2 to 5 and 5 to 10; the lairs
+    10% and 20%; the C treasures; the 1 and
+    2 attacks of the 1-8 and the 1-6 or by
+    weapon; the spells of both and the
+    humanoid invisibility; the standard MR;
+    the low-to-average and high-to-very
+    wits; the chaotic evil and chaotic
+    neutral; the S sizes; the nil psionics);
+    the crow xp ladder (the 28 + 2, the
+    50 + 3, the 85 + 4, the 130 + 5 of the
+    capture misreading 11 for the II and
+    III rungs); the humanoid xp ladder (the
+    360 + 5, the 625 + 6, the 950 + 8, the
+    1,450 + 10, the 2,300 + 12, the 3,450 +
+    14 of the capture misreading 70 for the
+    10 HD rung); the race (the birdlike
+    humanoids of the uninhabited mountains,
+    the original inhabitants lore, the
+    human displacement, the glades and
+    meadows and stream banks, the no
+    villages); the crow-headed (the two to
+    three feet with the crow head and beak,
+    the shoulder wings, the evil malice,
+    the katana and wakizashi, the three
+    languages, the perfect voice mimicry,
+    the thrice polymorph and shout, the
+    lower status and deference); the
+    humanoid (the three to four feet, the
+    red or blue skin and the long noses, the
+    stunted wings, the thrice polymorph and
+    shout and phantasmal force, the
+    invisibility at will, the weekly reward
+    or ancient curse, the misdirection per
+    turn, the ghost light per round, the
+    perfect mimicry, the three languages,
+    the shukenja spellcasting and kensai
+    combat of the hit-dice level, the one
+    martial style of the 2 to 5 maneuvers,
+    the feather fan as the folded katana,
+    the gale wind and quickgrowth and the
+    facial growth tricks, the cruel tricks,
+    the liking for the sword specialists,
+    the 1 to 3 month kensai tutoring of the
+    1,000 XP); the ways (the secretive
+    capriciousness, the little-known life,
+    the sake bribes, the flute and drum);
+    single-pass
+    pins per the Chapter 9 provenance shift
 
 - [ ] **Chapter 13: Treasure and Magical Items**
   (capture pp. 285-301) - the treasure system

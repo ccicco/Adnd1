@@ -1,0 +1,879 @@
+{
+ "round": 732,
+ "title": "OA MONSTERS - the Tengu: the crow-headed and the humanoid mountain spirits",
+ "prefix": "dkt",
+ "header_file": "rules/oa103tengu.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 654,
+ "inline_count": 78,
+ "audit_label": "R732 OA monsters Tengu audit",
+ "audit_comment": "OA round one hundred nineteen (capture pp. 284-285): the Chapter 12 monster roster - the tengu, the paired stat grid and the two xp ladders riding together with the crow and humanoid descriptions, the capture misreads pinned against the print, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE TENGU, printed capture pp. 284-285 - the mountain spirit round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 185 closed, 50 open - the tengu box flips (census 654 -> 655); NEXT - R733: the Chapter 13 treasure opener, the Magical Items Usable By Class table (capture p. 285), prefix dku (verify free at the landing), audit \"R733 OA treasure class usage audit\", include after rules/oa103tengu.h"
+ },
+ "consts": [
+  {
+   "name": "dktTenguCount",
+   "value": 2,
+   "comment": "the tengu table row count - the crow-headed and the humanoid of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowXPCount",
+   "value": 4,
+   "comment": "the crow xp rung count - the 2 to 5 HD ladder of the crow-headed tengu (print capture p. 284)"
+  },
+  {
+   "name": "dktHumXPCount",
+   "value": 6,
+   "comment": "the humanoid xp rung count - the 5 to 10 HD ladder of the humanoid tengu, the capture misreading 70 for the 10 HD rung (print capture p. 284)"
+  },
+  {
+   "name": "dktPolymorphPerDay",
+   "value": 3,
+   "comment": "the polymorph uses - the crow tengu use polymorph self and shout three times per day; the humanoid tengu use polymorph self, shout, and phantasmal force three times per day (print capture p. 284)"
+  },
+  {
+   "name": "dktManeuverCountMin",
+   "value": 2,
+   "comment": "the martial arts minimum - the humanoid tengu know one style with two to five special maneuvers, the 2 of the 2-5 (print capture p. 285)"
+  },
+  {
+   "name": "dktManeuverCountMax",
+   "value": 5,
+   "comment": "the martial arts maximum - the 5 of the 2 to 5 special maneuvers in that style (print capture p. 285)"
+  },
+  {
+   "name": "dktKensaiTutorMonthsMin",
+   "value": 1,
+   "comment": "the tutoring minimum - the sword kensai tutoring takes 1 to 3 months, the 1 of the 1-3 (print capture p. 285)"
+  },
+  {
+   "name": "dktKensaiTutorMonthsMax",
+   "value": 3,
+   "comment": "the tutoring maximum - the 3 of the 1 to 3 months (print capture p. 285)"
+  },
+  {
+   "name": "dktKensaiTutorXP",
+   "value": 1000,
+   "comment": "the tutoring reward - such tutoring automatically earns the kensai character 1,000 XP (print capture p. 285)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dktCrowRare",
+   "value": 1,
+   "comment": "the crow frequency - the rare of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktHumRare",
+   "value": 1,
+   "comment": "the humanoid frequency - the rare of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktMCC",
+   "value": 1,
+   "comment": "the maneuver class - the C of both move lines of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktTreasureC",
+   "value": 1,
+   "comment": "the treasure type - the C of both columns (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowSpecialAttacksSpells",
+   "value": 1,
+   "comment": "the crow special attacks - the spells of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktHumSpecialAttacksSpells",
+   "value": 1,
+   "comment": "the humanoid special attacks - the spells of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowDefensesNil",
+   "value": 1,
+   "comment": "the crow special defenses - the nil of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktHumInvisibility",
+   "value": 1,
+   "comment": "the humanoid special defense - the invisibility of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktMRStandard",
+   "value": 1,
+   "comment": "the magic resistance - the standard of both columns (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowIntLowToAverage",
+   "value": 1,
+   "comment": "the crow intelligence - the low to average of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktHumIntHighToVery",
+   "value": 1,
+   "comment": "the humanoid intelligence - the high to very of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowChaoticEvil",
+   "value": 1,
+   "comment": "the crow alignment - the chaotic evil of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktHumChaoticNeutral",
+   "value": 1,
+   "comment": "the humanoid alignment - the chaotic neutral of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktSizeSmall",
+   "value": 1,
+   "comment": "the size class - the S of both columns (print capture p. 284)"
+  },
+  {
+   "name": "dktPsionicNil",
+   "value": 1,
+   "comment": "the psionic ability - the nil of both columns (print capture p. 284)"
+  },
+  {
+   "name": "dktModesNil",
+   "value": 1,
+   "comment": "the attack and defense modes - the nil of both columns (print capture p. 284)"
+  },
+  {
+   "name": "dktHumMoveHalf",
+   "value": 1,
+   "comment": "the half of the humanoid ground move - the print 12 1/2 pinned whole as 12 with the half here, the ints-only splice mirror (print capture p. 284)"
+  },
+  {
+   "name": "dktHumDamageByWeapon",
+   "value": 1,
+   "comment": "the humanoid damage clause - the 1-6 or by weapon type of the stat grid (print capture p. 284)"
+  },
+  {
+   "name": "dktBirdlikeHumanoids",
+   "value": 1,
+   "comment": "the nature - a race of birdlike humanoid creatures found in uninhabited mountain areas, though not far from settled lands (print capture p. 284)"
+  },
+  {
+   "name": "dktOriginalInhabitants",
+   "value": 1,
+   "comment": "the lore - many people believe they were the original inhabitants of the land before the arrival of humans (print capture p. 284)"
+  },
+  {
+   "name": "dktPushedIntoMountains",
+   "value": 1,
+   "comment": "the displacement - once the humans arrived with their organization and culture, the tengu were pushed deeper and deeper into the mountains (print capture p. 284)"
+  },
+  {
+   "name": "dktGladesAndBanks",
+   "value": 1,
+   "comment": "the haunts - they now dwell in forest glades, meadows, and on the banks of streams and ponds (print capture p. 284)"
+  },
+  {
+   "name": "dktNoVillages",
+   "value": 1,
+   "comment": "the society - somewhat solitary creatures who do not form villages or permanent communities (print capture p. 284)"
+  },
+  {
+   "name": "dktTwoTypes",
+   "value": 1,
+   "comment": "the split - there are two types of tengu, the crow-headed and the humanoid (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowTwoToThreeFeet",
+   "value": 1,
+   "comment": "the crow build - a humanoid two to three feet tall with the head and beak of a crow (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowFeatheredWings",
+   "value": 1,
+   "comment": "the crow wings - feathered wings sprout from between their shoulder blades (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowEvilMalicious",
+   "value": 1,
+   "comment": "the crow temper - evil and malicious, seeking to cause harm to all humans who stray into their territory (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowKatanaWakizashi",
+   "value": 1,
+   "comment": "the crow weapons - they fight with katana and wakizashi (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowSpeaksThree",
+   "value": 1,
+   "comment": "the crow languages - the language of tengu, that of animals, and the human language of the area (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowPerfectMimicry",
+   "value": 1,
+   "comment": "the crow mimicry - able to perfectly mimic voices of those they have heard (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowPolymorphAndShout",
+   "value": 1,
+   "comment": "the crow spells - able to use polymorph self and shout spells three times per day (print capture p. 284)"
+  },
+  {
+   "name": "dktCrowLowerStatus",
+   "value": 1,
+   "comment": "the crow standing - they have lower status than the humanoid tengu and follow orders from these creatures in deference to their rank (print capture p. 284)"
+  },
+  {
+   "name": "dktHumThreeToFourFeet",
+   "value": 1,
+   "comment": "the humanoid build - stand from three to four feet tall (print capture p. 284)"
+  },
+  {
+   "name": "dktHumLongNoses",
+   "value": 1,
+   "comment": "the humanoid look - normal human faces except that the skin is red or blue and their noses are exceptionally long (print capture p. 284)"
+  },
+  {
+   "name": "dktHumStuntedWings",
+   "value": 1,
+   "comment": "the humanoid wings - they may or may not have stunted feathered wings on their backs, growing between their shoulder blades (print capture p. 284)"
+  },
+  {
+   "name": "dktHumThricePowers",
+   "value": 1,
+   "comment": "the humanoid thrice powers - polymorph self, shout, and phantasmal force three times per day (print capture p. 284)"
+  },
+  {
+   "name": "dktHumInvisibleAtWill",
+   "value": 1,
+   "comment": "the humanoid invisibility - become invisible at will (print capture p. 284)"
+  },
+  {
+   "name": "dktHumWeeklyPowers",
+   "value": 1,
+   "comment": "the humanoid weekly powers - reward or ancient curse once per week (print capture p. 284)"
+  },
+  {
+   "name": "dktHumMisdirectionPerTurn",
+   "value": 1,
+   "comment": "the humanoid misdirection - use misdirection once per turn (print capture p. 284)"
+  },
+  {
+   "name": "dktHumGhostLightPerRound",
+   "value": 1,
+   "comment": "the humanoid ghost light - use ghost light once per round (print capture p. 284)"
+  },
+  {
+   "name": "dktHumPerfectMimicry",
+   "value": 1,
+   "comment": "the humanoid mimicry - they can mimic any human or animal sound perfectly (print capture p. 285)"
+  },
+  {
+   "name": "dktHumSpeaksThree",
+   "value": 1,
+   "comment": "the humanoid languages - the language of their own kind, that of the local human population, and the languages of animals (print capture p. 285)"
+  },
+  {
+   "name": "dktHumShukenjaAndKensai",
+   "value": 1,
+   "comment": "the humanoid dual ability - the spellcasting ability of a shukenja and the combat ability of a kensai, both of the same experience level as their hit dice (print capture p. 285)"
+  },
+  {
+   "name": "dktHumOneMartialStyle",
+   "value": 1,
+   "comment": "the humanoid arts - they know one martial arts style with two to five special maneuvers in that style (print capture p. 285)"
+  },
+  {
+   "name": "dktHumFeatherFan",
+   "value": 1,
+   "comment": "the humanoid fan - they always carry a fan made of brightly colored feathers (print capture p. 285)"
+  },
+  {
+   "name": "dktHumFanAsKatana",
+   "value": 1,
+   "comment": "the folded fan - the fan has magical properties, allowing it to be used as a normal katana when folded (print capture p. 285)"
+  },
+  {
+   "name": "dktHumFanWindAndGrowth",
+   "value": 1,
+   "comment": "the fanned fan - when fanned it can create a wind equal to a strong gale as per wind breath, cast a quickgrowth spell, or cause abnormal growth or shrinkage of a facial feature, the nose or ears most common (print capture p. 285)"
+  },
+  {
+   "name": "dktHumCruelTricks",
+   "value": 1,
+   "comment": "the humanoid temper - while not evil, they are not overly fond of humans and often play cruel tricks upon humans (print capture p. 285)"
+  },
+  {
+   "name": "dktHumLikesSwordSpecialists",
+   "value": 1,
+   "comment": "the humanoid liking - they have a liking for shukenja, wu jen, and kensai who specialize in the sword (print capture p. 285)"
+  },
+  {
+   "name": "dktHumTutorsKensai",
+   "value": 1,
+   "comment": "the humanoid tutoring - on rare occasions they tutor a sword kensai, teaching him the secrets of their skill, which takes 1 to 3 months and earns the kensai 1,000 XP (print capture p. 285)"
+  },
+  {
+   "name": "dktSecretiveCapricious",
+   "value": 1,
+   "comment": "the character - all tengu are extremely secretive and capricious (print capture p. 285)"
+  },
+  {
+   "name": "dktLittleKnown",
+   "value": 1,
+   "comment": "the mystery - little is known about their way of life (print capture p. 285)"
+  },
+  {
+   "name": "dktFondOfSake",
+   "value": 1,
+   "comment": "the bribe - quite fond of strong drink and can be bribed, appeased, or befriended with large offerings of sake (print capture p. 285)"
+  },
+  {
+   "name": "dktTasteForMusic",
+   "value": 1,
+   "comment": "the music - they also have a taste for music, particularly that of the flute and drum (print capture p. 285)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dktTengu",
+   "tag": "Tengu",
+   "count": "dktTenguCount",
+   "comment": "the tengu stat grid - the crow-headed and the humanoid, row by row (print capture p. 284)",
+   "cols": [
+    "dktTenguAppearMin",
+    "dktTenguAppearMax",
+    "dktTenguAC",
+    "dktTenguMoveGround",
+    "dktTenguMoveFly",
+    "dktTenguHDMin",
+    "dktTenguHDMax",
+    "dktTenguLairPct",
+    "dktTenguAttacks",
+    "dktTenguDmgMin",
+    "dktTenguDmgMax"
+   ],
+   "col_comments": [
+    "the appearing minimum - the 1 of the 1-4 and the 1-3 (print capture p. 284)",
+    "the appearing maximum - the 4 and the 3 of the two columns (print capture p. 284)",
+    "the armor class - the 6 of the crow and the 4 of the humanoid (print capture p. 284)",
+    "the ground move - the 9 of the crow and the 12 whole of the humanoid, the half pinned as dktHumMoveHalf below, the capture misreading 12 1 for the 12 1/2 (print capture p. 284)",
+    "the fly move - the 24 of the crow and the 15 of the humanoid (print capture p. 284)",
+    "the hit dice minimum - the 2 of the 2 to 5 and the 5 of the 5 to 10 (print capture p. 284)",
+    "the hit dice maximum - the 5 and the 10 of the two ladders (print capture p. 284)",
+    "the in-lair percent - the 10% and the 20% (print capture p. 284)",
+    "the attack count - the 1 of the crow and the 2 of the humanoid (print capture p. 284)",
+    "the damage minimum - the 1 of the 1-8 and the 1-6 (print capture p. 284)",
+    "the damage maximum - the 8 of the 1-8 and the 6 of the 1-6 (print capture p. 284)"
+   ],
+   "data": [
+    [
+     1,
+     4,
+     6,
+     9,
+     24,
+     2,
+     5,
+     10,
+     1,
+     1,
+     8
+    ],
+    [
+     1,
+     3,
+     4,
+     12,
+     15,
+     5,
+     10,
+     20,
+     2,
+     1,
+     6
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dktXPCrow",
+   "tag": "XPCrow",
+   "count": "dktCrowXPCount",
+   "comment": "the crow xp ladder table - the four rungs of the 2 to 5 HD ladder (print capture p. 284)",
+   "cols": [
+    "dktXPCrowBase",
+    "dktXPCrowPerHP"
+   ],
+   "col_comments": [
+    "the crow xp base - the 28, 50, 85, and 130 of the four rungs, the capture misreading 11 for the II and III rungs (print capture p. 284)",
+    "the crow xp per hit point - the 2, 3, 4, and 5 of the four rungs (print capture p. 284)"
+   ],
+   "data": [
+    [
+     28,
+     2
+    ],
+    [
+     50,
+     3
+    ],
+    [
+     85,
+     4
+    ],
+    [
+     130,
+     5
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dktXPHum",
+   "tag": "XPHum",
+   "count": "dktHumXPCount",
+   "comment": "the humanoid xp ladder table - the six rungs of the 5 to 10 HD ladder, the capture misreading 70 for the 10 HD rung (print capture p. 284)",
+   "cols": [
+    "dktXPHumBase",
+    "dktXPHumPerHP"
+   ],
+   "col_comments": [
+    "the humanoid xp base - the 360, 625, 950, 1,450, 2,300, and 3,450 of the six rungs (print capture p. 284)",
+    "the humanoid xp per hit point - the 5, 6, 8, 10, 12, and 14 of the six rungs (print capture p. 284)"
+   ],
+   "data": [
+    [
+     360,
+     5
+    ],
+    [
+     625,
+     6
+    ],
+    [
+     950,
+     8
+    ],
+    [
+     1450,
+     10
+    ],
+    [
+     2300,
+     12
+    ],
+    [
+     3450,
+     14
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the stat grid - the per-column lines, healthy values, each condition false",
+   "expr": "m['dktCrowRare']() != 1 or m['dktHumRare']() != 1 or m['dktMCC']() != 1 or m['dktTreasureC']() != 1 or m['dktCrowSpecialAttacksSpells']() != 1 or m['dktHumSpecialAttacksSpells']() != 1 or m['dktCrowDefensesNil']() != 1 or m['dktHumInvisibility']() != 1 or m['dktMRStandard']() != 1 or m['dktCrowIntLowToAverage']() != 1 or m['dktHumIntHighToVery']() != 1 or m['dktCrowChaoticEvil']() != 1 or m['dktHumChaoticNeutral']() != 1 or m['dktSizeSmall']() != 1 or m['dktPsionicNil']() != 1 or m['dktModesNil']() != 1 or m['dktHumMoveHalf']() != 1 or m['dktHumDamageByWeapon']() != 1"
+  },
+  {
+   "note": "the grids - the paired stat table and the two xp ladders, audited cell by cell by the table audit",
+   "expr": "m['dktTenguCount']() != 2 or m['dktCrowXPCount']() != 4 or m['dktHumXPCount']() != 6"
+  },
+  {
+   "note": "the race - the mountain dwellers, healthy values, each condition false",
+   "expr": "m['dktBirdlikeHumanoids']() != 1 or m['dktOriginalInhabitants']() != 1 or m['dktPushedIntoMountains']() != 1 or m['dktGladesAndBanks']() != 1 or m['dktNoVillages']() != 1 or m['dktTwoTypes']() != 1"
+  },
+  {
+   "note": "the crow-headed tengu - the build, the malice, and the powers, healthy values, each condition false",
+   "expr": "m['dktCrowTwoToThreeFeet']() != 1 or m['dktCrowFeatheredWings']() != 1 or m['dktCrowEvilMalicious']() != 1 or m['dktCrowKatanaWakizashi']() != 1 or m['dktCrowSpeaksThree']() != 1 or m['dktCrowPerfectMimicry']() != 1 or m['dktCrowPolymorphAndShout']() != 1 or m['dktPolymorphPerDay']() != 3 or m['dktCrowLowerStatus']() != 1"
+  },
+  {
+   "note": "the humanoid tengu - the look, the powers, and the fan, healthy values, each condition false",
+   "expr": "m['dktHumThreeToFourFeet']() != 1 or m['dktHumLongNoses']() != 1 or m['dktHumStuntedWings']() != 1 or m['dktHumThricePowers']() != 1 or m['dktHumInvisibleAtWill']() != 1 or m['dktHumWeeklyPowers']() != 1 or m['dktHumMisdirectionPerTurn']() != 1 or m['dktHumGhostLightPerRound']() != 1 or m['dktHumPerfectMimicry']() != 1 or m['dktHumSpeaksThree']() != 1 or m['dktHumShukenjaAndKensai']() != 1 or m['dktHumOneMartialStyle']() != 1 or m['dktManeuverCountMin']() != 2 or m['dktManeuverCountMax']() != 5 or m['dktHumFeatherFan']() != 1 or m['dktHumFanAsKatana']() != 1 or m['dktHumFanWindAndGrowth']() != 1"
+  },
+  {
+   "note": "the tricks and the tutoring - the temper and the kensai lessons, healthy values, each condition false",
+   "expr": "m['dktHumCruelTricks']() != 1 or m['dktHumLikesSwordSpecialists']() != 1 or m['dktHumTutorsKensai']() != 1 or m['dktKensaiTutorMonthsMin']() != 1 or m['dktKensaiTutorMonthsMax']() != 3 or m['dktKensaiTutorXP']() != 1000 or m['dktSecretiveCapricious']() != 1 or m['dktLittleKnown']() != 1 or m['dktFondOfSake']() != 1 or m['dktTasteForMusic']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat grid": [
+   {
+    "kind": "const",
+    "name": "dktTenguCount"
+   },
+   {
+    "kind": "table",
+    "name": "dktTengu"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dktMCC"
+   },
+   {
+    "kind": "bool",
+    "name": "dktTreasureC"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowSpecialAttacksSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumSpecialAttacksSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowDefensesNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumInvisibility"
+   },
+   {
+    "kind": "bool",
+    "name": "dktMRStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowIntLowToAverage"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumIntHighToVery"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowChaoticEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumChaoticNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "dktSizeSmall"
+   },
+   {
+    "kind": "bool",
+    "name": "dktPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dktModesNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumDamageByWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumMoveHalf"
+   }
+  ],
+  "the crow xp ladder": [
+   {
+    "kind": "const",
+    "name": "dktCrowXPCount"
+   },
+   {
+    "kind": "table",
+    "name": "dktXPCrow"
+   }
+  ],
+  "the humanoid xp ladder": [
+   {
+    "kind": "const",
+    "name": "dktHumXPCount"
+   },
+   {
+    "kind": "table",
+    "name": "dktXPHum"
+   }
+  ],
+  "the race": [
+   {
+    "kind": "bool",
+    "name": "dktBirdlikeHumanoids"
+   },
+   {
+    "kind": "bool",
+    "name": "dktOriginalInhabitants"
+   },
+   {
+    "kind": "bool",
+    "name": "dktPushedIntoMountains"
+   },
+   {
+    "kind": "bool",
+    "name": "dktGladesAndBanks"
+   },
+   {
+    "kind": "bool",
+    "name": "dktNoVillages"
+   },
+   {
+    "kind": "bool",
+    "name": "dktTwoTypes"
+   }
+  ],
+  "the crow-headed tengu": [
+   {
+    "kind": "bool",
+    "name": "dktCrowTwoToThreeFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowFeatheredWings"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowEvilMalicious"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowKatanaWakizashi"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowSpeaksThree"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowPerfectMimicry"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowPolymorphAndShout"
+   },
+   {
+    "kind": "const",
+    "name": "dktPolymorphPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dktCrowLowerStatus"
+   }
+  ],
+  "the humanoid tengu": [
+   {
+    "kind": "bool",
+    "name": "dktHumThreeToFourFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumLongNoses"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumStuntedWings"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumThricePowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumInvisibleAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumWeeklyPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumMisdirectionPerTurn"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumGhostLightPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumPerfectMimicry"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumSpeaksThree"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumShukenjaAndKensai"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumOneMartialStyle"
+   },
+   {
+    "kind": "const",
+    "name": "dktManeuverCountMin"
+   },
+   {
+    "kind": "const",
+    "name": "dktManeuverCountMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumFeatherFan"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumFanAsKatana"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumFanWindAndGrowth"
+   }
+  ],
+  "the tricks and the tutoring": [
+   {
+    "kind": "bool",
+    "name": "dktHumCruelTricks"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumLikesSwordSpecialists"
+   },
+   {
+    "kind": "bool",
+    "name": "dktHumTutorsKensai"
+   },
+   {
+    "kind": "const",
+    "name": "dktKensaiTutorMonthsMin"
+   },
+   {
+    "kind": "const",
+    "name": "dktKensaiTutorMonthsMax"
+   },
+   {
+    "kind": "const",
+    "name": "dktKensaiTutorXP"
+   },
+   {
+    "kind": "bool",
+    "name": "dktSecretiveCapricious"
+   },
+   {
+    "kind": "bool",
+    "name": "dktLittleKnown"
+   },
+   {
+    "kind": "bool",
+    "name": "dktFondOfSake"
+   },
+   {
+    "kind": "bool",
+    "name": "dktTasteForMusic"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the tengu box",
+   "from": "  - [ ] Tengu (capture p. 284)",
+   "to": "  - [x] Tengu (capture p. 284)\n    - R732: the dkt tengu pins - the stat\n    grid (the rare of both columns; the\n    appearing 1-4 and 1-3; the AC 6 and 4;\n    the moves 9/24 and the 12 1/2/15 of\n    capture misreading 12 1; the C classes;\n    the HD 2 to 5 and 5 to 10; the lairs\n    10% and 20%; the C treasures; the 1 and\n    2 attacks of the 1-8 and the 1-6 or by\n    weapon; the spells of both and the\n    humanoid invisibility; the standard MR;\n    the low-to-average and high-to-very\n    wits; the chaotic evil and chaotic\n    neutral; the S sizes; the nil psionics);\n    the crow xp ladder (the 28 + 2, the\n    50 + 3, the 85 + 4, the 130 + 5 of the\n    capture misreading 11 for the II and\n    III rungs); the humanoid xp ladder (the\n    360 + 5, the 625 + 6, the 950 + 8, the\n    1,450 + 10, the 2,300 + 12, the 3,450 +\n    14 of the capture misreading 70 for the\n    10 HD rung); the race (the birdlike\n    humanoids of the uninhabited mountains,\n    the original inhabitants lore, the\n    human displacement, the glades and\n    meadows and stream banks, the no\n    villages); the crow-headed (the two to\n    three feet with the crow head and beak,\n    the shoulder wings, the evil malice,\n    the katana and wakizashi, the three\n    languages, the perfect voice mimicry,\n    the thrice polymorph and shout, the\n    lower status and deference); the\n    humanoid (the three to four feet, the\n    red or blue skin and the long noses, the\n    stunted wings, the thrice polymorph and\n    shout and phantasmal force, the\n    invisibility at will, the weekly reward\n    or ancient curse, the misdirection per\n    turn, the ghost light per round, the\n    perfect mimicry, the three languages,\n    the shukenja spellcasting and kensai\n    combat of the hit-dice level, the one\n    martial style of the 2 to 5 maneuvers,\n    the feather fan as the folded katana,\n    the gale wind and quickgrowth and the\n    facial growth tricks, the cruel tricks,\n    the liking for the sword specialists,\n    the 1 to 3 month kensai tutoring of the\n    1,000 XP); the ways (the secretive\n    capriciousness, the little-known life,\n    the sake bribes, the flute and drum);\n    single-pass\n    pins per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 185,
+  "open": 50
+ },
+ "include_comment": "the OA Tengu pins",
+ "include_after": "#include \"rules/oa102shiro.h\"  // R731: the OA Shirokinukatsukami pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R731 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R731 LANDED 2026-10-21: commit",
+  "  a6d8c5540b8e5f59eddffb0feb14b5811486ab75",
+  "  (census 653 -> 654, pushed 9810381..a6d8c55), OA",
+  "  MONSTERS, the Shirokinukatsukami, Greater",
+  "  Spirit (capture pp. 283-284 print):",
+  "  rules/oa102shiro.h, prefix dks (verified free",
+  "  at 9810381), ONE gap flip, gap census 184/51 -",
+  "  the shirokinukatsukami box (its two-line wrap",
+  "  handled, the from spanned both lines). A",
+  "  consts round. 18 consts + 46 bools (64",
+  "  inlines): the stat block (the very rare, the",
+  "  1 appearing, the AC -2, the 18/18 move of",
+  "  the A class with the capture doubling, the",
+  "  HD 12, the nil lair and treasure, the 3",
+  "  attacks of 2-5/2-5 and the 3-18 tusks, the",
+  "  see-below specials, the 50% MR, the genius",
+  "  wits, the lawful good, the L size, the nil",
+  "  psionics, the 1,200 + 16 xp of the capture",
+  "  misreading 1X for IX); the Eater of Dreams",
+  "  (the kindly power, the horse and lion and",
+  "  elephant and cow and tiger composite, the",
+  "  baku resemblance, the staunch foe of evil",
+  "  spirits and sendings, the homeless roaming of",
+  "  the night world and the Celestial lands, the",
+  "  no more than four in existence); the combat",
+  "  (the front paws and goring tusks, the 2d4",
+  "  back-paw rake on the double paw hit, the",
+  "  normal hit rolls for the rake); the powers",
+  "  (the constant detect evil and shapechanger",
+  "  and charm and harmony and ESP; the at-will",
+  "  invisibility and astral and dream sight and",
+  "  dream vision and protection from evil and",
+  "  the no-error teleport and the smoke form; the",
+  "  thrice-daily dispel evil and cloud trapeze",
+  "  and pacify and exorcise and obedience; the",
+  "  daily restore spirit and heal); the",
+  "  immunities (the +3 weapon floor, the",
+  "  2-per-round regeneration, the air immunity,",
+  "  the half-or-no fire, the poison immunity);",
+  "  the bedside guardian (the night arrival",
+  "  invisible or in smoke form, the slipped",
+  "  bedchamber, the head-of-bed vigil, the",
+  "  destroyed or driven-away evil spirits, the",
+  "  first-light departure, the night-only hours,",
+  "  the Celestial Emperor dispatches). Zero false",
+  "  starts, first rverify GREEN, 64 mutants, 0",
+  "  missed. Spec md5",
+  "  1c609dd90b338aa029717e93c543ee6f",
+  "  (authored-plus-newline md5",
+  "  fee04bc810120e054b2c78573b375827, the ritual",
+  "  gate, matched byte-exact; canvas md5",
+  "  f95483eac19df088093e0bf8b47fdb22). NEXT -",
+  "  R732: the Tengu (capture p. 284), prefix dkt",
+  "  (verified free at a6d8c55), audit \"R732 OA",
+  "  monsters Tengu audit\", include after",
+  "  rules/oa102shiro.h."
+ ]
+}

@@ -17099,6 +17099,62 @@ when both halves land.
   (verified free at 9810381), audit "R731 OA
   monsters Shirokinukatsukami audit", include
   after rules/oa101shansao.h.
+- R731 LANDED 2026-10-21: commit
+  a6d8c5540b8e5f59eddffb0feb14b5811486ab75
+  (census 653 -> 654, pushed 9810381..a6d8c55), OA
+  MONSTERS, the Shirokinukatsukami, Greater
+  Spirit (capture pp. 283-284 print):
+  rules/oa102shiro.h, prefix dks (verified free
+  at 9810381), ONE gap flip, gap census 184/51 -
+  the shirokinukatsukami box (its two-line wrap
+  handled, the from spanned both lines). A
+  consts round. 18 consts + 46 bools (64
+  inlines): the stat block (the very rare, the
+  1 appearing, the AC -2, the 18/18 move of
+  the A class with the capture doubling, the
+  HD 12, the nil lair and treasure, the 3
+  attacks of 2-5/2-5 and the 3-18 tusks, the
+  see-below specials, the 50% MR, the genius
+  wits, the lawful good, the L size, the nil
+  psionics, the 1,200 + 16 xp of the capture
+  misreading 1X for IX); the Eater of Dreams
+  (the kindly power, the horse and lion and
+  elephant and cow and tiger composite, the
+  baku resemblance, the staunch foe of evil
+  spirits and sendings, the homeless roaming of
+  the night world and the Celestial lands, the
+  no more than four in existence); the combat
+  (the front paws and goring tusks, the 2d4
+  back-paw rake on the double paw hit, the
+  normal hit rolls for the rake); the powers
+  (the constant detect evil and shapechanger
+  and charm and harmony and ESP; the at-will
+  invisibility and astral and dream sight and
+  dream vision and protection from evil and
+  the no-error teleport and the smoke form; the
+  thrice-daily dispel evil and cloud trapeze
+  and pacify and exorcise and obedience; the
+  daily restore spirit and heal); the
+  immunities (the +3 weapon floor, the
+  2-per-round regeneration, the air immunity,
+  the half-or-no fire, the poison immunity);
+  the bedside guardian (the night arrival
+  invisible or in smoke form, the slipped
+  bedchamber, the head-of-bed vigil, the
+  destroyed or driven-away evil spirits, the
+  first-light departure, the night-only hours,
+  the Celestial Emperor dispatches). Zero false
+  starts, first rverify GREEN, 64 mutants, 0
+  missed. Spec md5
+  1c609dd90b338aa029717e93c543ee6f
+  (authored-plus-newline md5
+  fee04bc810120e054b2c78573b375827, the ritual
+  gate, matched byte-exact; canvas md5
+  f95483eac19df088093e0bf8b47fdb22). NEXT -
+  R732: the Tengu (capture p. 284), prefix dkt
+  (verified free at a6d8c55), audit "R732 OA
+  monsters Tengu audit", include after
+  rules/oa102shiro.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
