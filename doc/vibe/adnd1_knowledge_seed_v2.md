@@ -16193,6 +16193,39 @@ when both halves land.
   (verified free at 2a2f67a - only lowercase djvu prose, no
   pins), audit "R708 OA monsters Buso audit", include after
   rules/oa78bisan.h.
+- R708 LANDED 2026-10-21: commit 8361dca91baf5ef64f20c5bfb672692fa245b4ca
+  (census 630 -> 631, pushed 2a2f67a..8361dca), OA MONSTERS - the
+  Buso, capture pp. 256-257 print: rules/oa79buso.h, prefix djv
+  (verified free at 2a2f67a), ONE gap flip, gap census 161/74
+  (the engine counts every checkbox occurrence - the pre-flip
+  160/75 went to 161/74, not the 161/75 first guessed; the R708
+  lesson: trust the engine count, not the grep count). 20
+  consts + 33 bools (53 inlines): the two-column stat block
+  (the uncommon, the 1-6, the tigbanua AC 4 the move 12 the
+  8 + 2 the 3 attacks of 1-6/1-6/1-10 the VII/1,400 + 12/hp,
+  the tagamaling AC 5 the HD special the 3 attacks of
+  1-4/1-4/1-8, the Nil lair, the Nil treasure, the standard MR,
+  the animal, the chaotic evil, the M, the Nil psionics); the
+  nature (the ghoul-like, the cemetery habitat, the
+  once-friendly now-enemies history, the night predation, the
+  tall lean build, the single red or yellow eye); the tigbanua
+  (the ferocious, the 10-foot fear aura with the under-1-HD
+  auto-paralysis and the save vs. paralyzation, the paralyzed
+  until out of radius, the save-granted encounter immunity,
+  the claws and fangs, the claw disease with the save vs.
+  death, the infected become tagamaling, the low intelligence);
+  the tagamaling (the infected person, the 1% cumulative
+  nightly transformation, the savage mindless devouring, the
+  same HD and HP, the powers unusable, the no memory, the
+  100% incurable limit with the every-night transformation).
+  One generator-side false start (the gap census count), first
+  published rverify GREEN, 53 mutants, 0 missed. Spec md5
+  148d322dcd093fc40d736bdb2ea91a70 (authored-plus-newline md5
+  66e8f6cc191e6216bde721939910f703 - the ritual gate, matched
+  byte-exact; canvas md5 94313a263837d5020ca2b6fdca4bc554).
+  NEXT - R709: the Carp, Giant (capture p. 257), prefix djw
+  (verified free at 8361dca), audit "R709 OA monsters Giant
+  Carp audit", include after rules/oa79buso.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1,0 +1,523 @@
+{
+ "round": 709,
+ "title": "OA MONSTERS - the Carp, Giant: the stat block, the four-row XP table, and the swallow rules",
+ "prefix": "djw",
+ "header_file": "rules/oa80carp.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 631,
+ "inline_count": 47,
+ "audit_label": "R709 OA monsters Giant Carp audit",
+ "audit_comment": "OA round ninety-six (capture pp. 257-258): the Chapter 12 monster roster - the giant carp, the stat block and the description riding together, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE CARP, GIANT, printed capture pp. 257-258 - the overgrown fish round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 162 closed, 73 open - the giant carp box flips (census 631 -> 632); NEXT - R710: the Con-Tinh, Lesser Spirit (capture pp. 258-259), prefix djx (verify free at the landing), audit \"R710 OA monsters Con-Tinh audit\", include after rules/oa80carp.h"
+ },
+ "consts": [
+  {
+   "name": "djwCarpNoAppearingMin",
+   "value": 1,
+   "comment": "the giant carp appearance minimum - the 1 of the 1-4 of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpNoAppearingMax",
+   "value": 4,
+   "comment": "the giant carp appearance maximum - the 4 of the 1-4 of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpAC",
+   "value": 6,
+   "comment": "the giant carp armor class - the AC 6 of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpMove",
+   "value": 18,
+   "comment": "the giant carp movement rate - the move 18 of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpHDMin",
+   "value": 8,
+   "comment": "the giant carp hit-dice minimum - the 8 of the 8-12 of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpHDMax",
+   "value": 12,
+   "comment": "the giant carp hit-dice maximum - the 12 of the 8-12 of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpAttacks",
+   "value": 1,
+   "comment": "the giant carp attacks per round - the 1 of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpDmgMin",
+   "value": 2,
+   "comment": "the giant carp damage minimum - the 2 of the 2-20 of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpDmgMax",
+   "value": 20,
+   "comment": "the giant carp damage maximum - the 20 of the 2-20 of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpSwallowDmgThreshold",
+   "value": 12,
+   "comment": "the giant carp swallow rule - the attack causing 12 or more points of damage may swallow whole (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpSizeMinFt",
+   "value": 20,
+   "comment": "the giant carp length minimum - the 20 of the 20-30 feet size L entry (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpSizeMaxFt",
+   "value": 30,
+   "comment": "the giant carp length maximum - the 30 of the 20-30 feet size L entry (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpXPTableRows",
+   "value": 4,
+   "comment": "the giant carp experience table - the four HD-tiered rows: the 8 HD VI/650 + 10, the 9 HD VI/1,000 + 12, the 10 HD VII/1,500 + 14, the 11 and 12 HD VII/2,150 + 16 (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpXP8HDBase",
+   "value": 650,
+   "comment": "the giant carp 8 HD experience - the VI/650 + 10 per hp tier (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpXP8HDPerHP",
+   "value": 10,
+   "comment": "the giant carp 8 HD experience per hit point - the + 10 of the VI/650 tier (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpXP9HDBase",
+   "value": 1000,
+   "comment": "the giant carp 9 HD experience - the VI/1,000 + 12 per hp tier (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpXP9HDPerHP",
+   "value": 12,
+   "comment": "the giant carp 9 HD experience per hit point - the + 12 of the VI/1,000 tier (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpXP10HDBase",
+   "value": 1500,
+   "comment": "the giant carp 10 HD experience - the VII/1,500 + 14 per hp tier (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpXP10HDPerHP",
+   "value": 14,
+   "comment": "the giant carp 10 HD experience per hit point - the + 14 of the VII/1,500 tier (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpXP11HDLevel",
+   "value": 7,
+   "comment": "the giant carp 11 and 12 HD experience level - the VII of the VII/2,150 tier (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpXP11HDBase",
+   "value": 2150,
+   "comment": "the giant carp 11 and 12 HD experience - the VII/2,150 + 16 per hp tier (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpXP11HDPerHP",
+   "value": 16,
+   "comment": "the giant carp 11 and 12 HD experience per hit point - the + 16 of the VII/2,150 tier (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpSwallowTiers",
+   "value": 5,
+   "comment": "the giant carp swallow-capacity tiers - the 8 HD dog, the 9 HD large dog or colt, the 10 HD small man, the 11 HD normal-sized man, the 12 HD small oni or ogre (print capture p. 258)"
+  },
+  {
+   "name": "djwCarpDigestDmgPerRound",
+   "value": 1,
+   "comment": "the swallowed victim damage - the 1 hp per round thereafter from the carp digestive juices (print capture p. 258)"
+  },
+  {
+   "name": "djwCarpSuffocateChancePct",
+   "value": 5,
+   "comment": "the swallowed victim suffocation - the 5% cumulative chance per round of suffocating (print capture p. 258)"
+  },
+  {
+   "name": "djwCarpFreeAtHPPct",
+   "value": 50,
+   "comment": "the swallow rescue rule - when the carp has suffered a loss of 50% of its hit points, the victim can be freed (print capture p. 258)"
+  },
+  {
+   "name": "djwCarpOutsideToHitPenalty",
+   "value": 2,
+   "comment": "the outside rescuers penalty - the -2 on their chance to hit, aiming a series of blows to the same area (print capture p. 258)"
+  },
+  {
+   "name": "djwCarpThrustHitSwallowedPct",
+   "value": 20,
+   "comment": "the thrusting and stabbing weapons - the 20% chance of striking the swallowed victim (print capture p. 258)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djwCarpUncommon",
+   "value": 1,
+   "comment": "the giant carp frequency - the uncommon of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpLairNil",
+   "value": 1,
+   "comment": "the giant carp in-lair percentage - the Nil of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpTreasureNil",
+   "value": 1,
+   "comment": "the giant carp treasure - the Nil of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpSwallowWhole",
+   "value": 1,
+   "comment": "the giant carp special attack - the swallow whole of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpMRStandard",
+   "value": 1,
+   "comment": "the giant carp magic resistance - the standard of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpIntAnimal",
+   "value": 1,
+   "comment": "the giant carp intelligence - the animal of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpNeutral",
+   "value": 1,
+   "comment": "the giant carp alignment - the neutral of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpSizeL",
+   "value": 1,
+   "comment": "the giant carp size - the L of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpPsionicNil",
+   "value": 1,
+   "comment": "the giant carp psionics - the Nil ability and the Nil attack/defense modes of the stat block (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpOvergrownCousin",
+   "value": 1,
+   "comment": "the giant carp nature - an overgrown cousin of the common carp, a food-fish favored by many people (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpFreshwaterDepth",
+   "value": 1,
+   "comment": "the giant carp habitat - all types of fresh water lakes and rivers, if they are of substantial depth (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpTemperateToTropical",
+   "value": 1,
+   "comment": "the giant carp range - from colder temperate waters to tropical climes (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpScavenger",
+   "value": 1,
+   "comment": "the giant carp feeding - a scavenger, primarily digging through the ooze on the bottom (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpSurfacesToAttack",
+   "value": 1,
+   "comment": "the giant carp aggression - known to surface to attack small boats or swimmers (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpTakesBait",
+   "value": 1,
+   "comment": "the giant carp vulnerability - some have even taken the bait of a simple fishhook (print capture p. 257)"
+  },
+  {
+   "name": "djwCarpRescueOutsideOrCutFree",
+   "value": 1,
+   "comment": "the swallow rescue - characters swallowed can be rescued from the outside or cut free with some type of sharp-edged weapon (print capture p. 258)"
+  },
+  {
+   "name": "djwCarpInsideNoPenalty",
+   "value": 1,
+   "comment": "the swallowed victim attacks - those on the inside suffer no penalty when making these attacks (print capture p. 258)"
+  },
+  {
+   "name": "djwCarpVillageSupply",
+   "value": 1,
+   "comment": "the giant carp value - a single giant carp can supply the needs of a village for quite some time (print capture p. 258)"
+  },
+  {
+   "name": "djwCarpFishingExpeditions",
+   "value": 1,
+   "comment": "the giant carp hunting - fishermen sometimes organize expeditions, highly dangerous and often resulting in loss of life (print capture p. 258)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the stat block - the uncommon, the 1-4, the AC 6, the move 18, the 8-12, the Nil lair, the Nil treasure, the 1 attack of 2-20, the swallow whole, the standard MR, the animal, the neutral, the L of 20-30 feet, the Nil psionics, the four-row XP table (the 8 HD VI/650 + 10, the 9 HD VI/1,000 + 12, the 10 HD VII/1,500 + 14, the 11 and 12 HD VII/2,150 + 16)",
+   "expr": "m['djwCarpNoAppearingMin']() != 1 or m['djwCarpNoAppearingMax']() != 4 or m['djwCarpAC']() != 6 or m['djwCarpMove']() != 18 or m['djwCarpHDMin']() != 8 or m['djwCarpHDMax']() != 12 or m['djwCarpAttacks']() != 1 or m['djwCarpDmgMin']() != 2 or m['djwCarpDmgMax']() != 20 or m['djwCarpSwallowDmgThreshold']() != 12 or m['djwCarpSizeMinFt']() != 20 or m['djwCarpSizeMaxFt']() != 30 or m['djwCarpXPTableRows']() != 4 or m['djwCarpXP8HDBase']() != 650 or m['djwCarpXP8HDPerHP']() != 10 or m['djwCarpXP9HDBase']() != 1000 or m['djwCarpXP9HDPerHP']() != 12 or m['djwCarpXP10HDBase']() != 1500 or m['djwCarpXP10HDPerHP']() != 14 or m['djwCarpXP11HDLevel']() != 7 or m['djwCarpXP11HDBase']() != 2150 or m['djwCarpXP11HDPerHP']() != 16 or m['djwCarpUncommon']() != 1 or m['djwCarpLairNil']() != 1 or m['djwCarpTreasureNil']() != 1 or m['djwCarpSwallowWhole']() != 1 or m['djwCarpMRStandard']() != 1 or m['djwCarpIntAnimal']() != 1 or m['djwCarpNeutral']() != 1 or m['djwCarpSizeL']() != 1 or m['djwCarpPsionicNil']() != 1"
+  },
+  {
+   "note": "the nature - the overgrown cousin of the food-fish, the freshwater lakes and rivers of substantial depth, the temperate-to-tropical range, the scavenger digging the ooze, the surfacing to attack boats and swimmers, the simple-fishhook bait",
+   "expr": "m['djwCarpOvergrownCousin']() != 1 or m['djwCarpFreshwaterDepth']() != 1 or m['djwCarpTemperateToTropical']() != 1 or m['djwCarpScavenger']() != 1 or m['djwCarpSurfacesToAttack']() != 1 or m['djwCarpTakesBait']() != 1"
+  },
+  {
+   "note": "the swallow rules - the 12-point swallow threshold, the five swallow tiers (the dog, the large dog or colt, the small man, the normal man, the small oni or ogre), the 1 hp per round digestion, the 5% cumulative suffocation, the rescue from outside or cutting free, the 50% hp freedom rule, the inside no-penalty, the outside -2 to hit, the 20% thrust strike chance, the village supply, the dangerous fishing expeditions",
+   "expr": "m['djwCarpSwallowTiers']() != 5 or m['djwCarpDigestDmgPerRound']() != 1 or m['djwCarpSuffocateChancePct']() != 5 or m['djwCarpFreeAtHPPct']() != 50 or m['djwCarpOutsideToHitPenalty']() != 2 or m['djwCarpThrustHitSwallowedPct']() != 20 or m['djwCarpRescueOutsideOrCutFree']() != 1 or m['djwCarpInsideNoPenalty']() != 1 or m['djwCarpVillageSupply']() != 1 or m['djwCarpFishingExpeditions']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat block": [
+   {
+    "kind": "const",
+    "name": "djwCarpNoAppearingMin"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpNoAppearingMax"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpAC"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpMove"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpHDMin"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpHDMax"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpSwallowDmgThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpSizeMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpSizeMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpXPTableRows"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpXP8HDBase"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpXP8HDPerHP"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpXP9HDBase"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpXP9HDPerHP"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpXP10HDBase"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpXP10HDPerHP"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpXP11HDLevel"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpXP11HDBase"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpXP11HDPerHP"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpUncommon"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpLairNil"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpTreasureNil"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpSwallowWhole"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpMRStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpIntAnimal"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpSizeL"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpPsionicNil"
+   }
+  ],
+  "the nature": [
+   {
+    "kind": "bool",
+    "name": "djwCarpOvergrownCousin"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpFreshwaterDepth"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpTemperateToTropical"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpScavenger"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpSurfacesToAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpTakesBait"
+   }
+  ],
+  "the swallow rules": [
+   {
+    "kind": "const",
+    "name": "djwCarpSwallowTiers"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpDigestDmgPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpSuffocateChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpFreeAtHPPct"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpOutsideToHitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "djwCarpThrustHitSwallowedPct"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpRescueOutsideOrCutFree"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpInsideNoPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpVillageSupply"
+   },
+   {
+    "kind": "bool",
+    "name": "djwCarpFishingExpeditions"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the giant carp box",
+   "from": "  - [ ] Carp, Giant (capture p. 257)",
+   "to": "  - [x] Carp, Giant (capture p. 257)\n    - R709: the djw giant carp pins - the\n    stat block (the uncommon, the 1-4, the\n    AC 6, the move 18, the 8-12, the Nil\n    lair, the Nil treasure, the 1 attack\n    of 2-20, the swallow whole, the L of\n    20-30 feet, the four-row XP table\n    with the 8 HD VI/650 + 10, the 9 HD\n    VI/1,000 + 12, the 10 HD VII/1,500\n    + 14, the 11 and 12 HD VII/2,150 +\n    16), the nature (the freshwater\n    habitat of substantial depth, the\n    temperate-to-tropical range, the\n    scavenger feeding, the surfacing\n    attacks, the fishhook bait), the\n    swallow rules (the 12-point threshold, the\n    five tiers, the 1 hp per round\n    digestion, the 5% cumulative\n    suffocation, the 50% hp freedom rule,\n    the outside -2, the 20% thrust\n    chance, the village supply, the\n    dangerous expeditions); single-pass\n    pins per the Chapter 9 provenance\n    shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 162,
+  "open": 73
+ },
+ "include_comment": "the OA Giant Carp pins",
+ "include_after": "#include \"rules/oa79buso.h\"  // R708: the OA Buso pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R708 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R708 LANDED 2026-10-21: commit 8361dca91baf5ef64f20c5bfb672692fa245b4ca",
+  "  (census 630 -> 631, pushed 2a2f67a..8361dca), OA MONSTERS - the",
+  "  Buso, capture pp. 256-257 print: rules/oa79buso.h, prefix djv",
+  "  (verified free at 2a2f67a), ONE gap flip, gap census 161/74",
+  "  (the engine counts every checkbox occurrence - the pre-flip",
+  "  160/75 went to 161/74, not the 161/75 first guessed; the R708",
+  "  lesson: trust the engine count, not the grep count). 20",
+  "  consts + 33 bools (53 inlines): the two-column stat block",
+  "  (the uncommon, the 1-6, the tigbanua AC 4 the move 12 the",
+  "  8 + 2 the 3 attacks of 1-6/1-6/1-10 the VII/1,400 + 12/hp,",
+  "  the tagamaling AC 5 the HD special the 3 attacks of",
+  "  1-4/1-4/1-8, the Nil lair, the Nil treasure, the standard MR,",
+  "  the animal, the chaotic evil, the M, the Nil psionics); the",
+  "  nature (the ghoul-like, the cemetery habitat, the",
+  "  once-friendly now-enemies history, the night predation, the",
+  "  tall lean build, the single red or yellow eye); the tigbanua",
+  "  (the ferocious, the 10-foot fear aura with the under-1-HD",
+  "  auto-paralysis and the save vs. paralyzation, the paralyzed",
+  "  until out of radius, the save-granted encounter immunity,",
+  "  the claws and fangs, the claw disease with the save vs.",
+  "  death, the infected become tagamaling, the low intelligence);",
+  "  the tagamaling (the infected person, the 1% cumulative",
+  "  nightly transformation, the savage mindless devouring, the",
+  "  same HD and HP, the powers unusable, the no memory, the",
+  "  100% incurable limit with the every-night transformation).",
+  "  One generator-side false start (the gap census count), first",
+  "  published rverify GREEN, 53 mutants, 0 missed. Spec md5",
+  "  148d322dcd093fc40d736bdb2ea91a70 (authored-plus-newline md5",
+  "  66e8f6cc191e6216bde721939910f703 - the ritual gate, matched",
+  "  byte-exact; canvas md5 94313a263837d5020ca2b6fdca4bc554).",
+  "  NEXT - R709: the Carp, Giant (capture p. 257), prefix djw",
+  "  (verified free at 8361dca), audit \"R709 OA monsters Giant",
+  "  Carp audit\", include after rules/oa79buso.h."
+ ]
+}

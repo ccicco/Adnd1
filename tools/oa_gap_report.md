@@ -2055,7 +2055,30 @@ description riding the same round.
     powers unusable, the no memory, the
     100% incurable limit); single-pass pins
     per the Chapter 9 provenance shift
-  - [ ] Carp, Giant (capture p. 257)
+  - [x] Carp, Giant (capture p. 257)
+    - R709: the djw giant carp pins - the
+    stat block (the uncommon, the 1-4, the
+    AC 6, the move 18, the 8-12, the Nil
+    lair, the Nil treasure, the 1 attack
+    of 2-20, the swallow whole, the L of
+    20-30 feet, the four-row XP table
+    with the 8 HD VI/650 + 10, the 9 HD
+    VI/1,000 + 12, the 10 HD VII/1,500
+    + 14, the 11 and 12 HD VII/2,150 +
+    16), the nature (the freshwater
+    habitat of substantial depth, the
+    temperate-to-tropical range, the
+    scavenger feeding, the surfacing
+    attacks, the fishhook bait), the
+    swallow rules (the 12-point threshold, the
+    five tiers, the 1 hp per round
+    digestion, the 5% cumulative
+    suffocation, the 50% hp freedom rule,
+    the outside -2, the 20% thrust
+    chance, the village supply, the
+    dangerous expeditions); single-pass
+    pins per the Chapter 9 provenance
+    shift
   - [ ] Con-Tinh, Lesser Spirit (capture p. 258)
   - [ ] Doc Cu'o'c, Greater Spirit (capture p. 259)
   - [ ] Dragons, Oriental (capture pp. 259-262) - the
